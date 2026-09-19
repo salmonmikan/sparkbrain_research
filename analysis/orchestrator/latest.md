@@ -1,185 +1,186 @@
-# SparkBrain Evidence Analyst — 2026-09-19 17:02 JST
+# SparkBrain Evidence Analyst — 2026-09-19 18:20 JST
 
 ## Decision
 
-**No new formal repository scientific evidence. FORMAL remains on HOLD, but programme-wide research inactivity is no longer justified.**
+**No new FORMAL repository scientific evidence. The four-layer funnel remains active.** Two NON_EVIDENTIARY lower-layer results now materially change the research queue:
 
-Two new lower-layer inputs materially change allocation:
+1. MAIN completed the prospectively fixed `CAND-TOPK-PA-01` Architecture Study cycle 1 with `PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL` and stopped at the required Analyst boundary. This is architecture/system-integration information only, not a new-computational-principle or mechanistic-distinctness result.
+2. SUB completed `STRUCTURAL_ORDER_PATH_DEPENDENCE_DISCOVERY` cycle 1. The synthetic controller is strongly order/path dependent under module operations and that dependence survives a generous event-budget control; edge-only updates are order invariant in the bounded harness. This is strictly NON_EVIDENTIARY Discovery.
 
-1. SUB completed a bounded `DISCOVERY` cycle on hard top-k router margin/churn. The raw selection phenomenon is fully reduced to ordinary linear top-k boundary geometry in the synthetic probe, but it exposed a useful architecture question: whether SparkBrain's actual persistent recurrent state produces **delayed amplification after a hard routing-set swap** beyond the immediate ordinary boundary effect.
-2. The first Methodology Calibration Audit classifies the programme as `MIXED_CALIBRATION`: formal integrity gates are mostly well calibrated, but the recent `NO_HIGH_VALUE_FORMAL_OBJECT -> programme-wide HOLD/no-op` operational pattern was too conservative. The correct response is to keep FORMAL strict while restoring bounded DISCOVERY / ARCHITECTURE_STUDY / PRE_FORMAL throughput.
+The MAIN result is strong enough to justify **one independent-seed replication Architecture Study cycle, with the cycle-1 protocol and decision thresholds otherwise unchanged**. The SUB result is classified exactly as **`PROMOTE_TO_ARCHITECTURE_STUDY`**, but it is queued behind MAIN's replication and SUB must not perform the promoted architecture follow-up.
 
-Therefore the current SUB Discovery candidate is classified exactly as **`PROMOTE_TO_ARCHITECTURE_STUDY`**. MAIN now owns one bounded, NON_EVIDENTIARY architecture study on router-boundary/persistence coupling. This is an architecture/system-integration question, **not** a new-computational-principle claim and not a rescue of any consumed line.
-
-`main_lane: TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE1`  
+`main_lane: TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE2_REPLICATION`  
 `sub_lane: BOUNDED_SECONDARY_DISCOVERY`  
-`sub_fallback: null`
+`sub_fallback: NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON`
 
 ## Authoritative state re-fetched
 
 - `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; `main` remains unprotected.
-- Control Brain tip consumed as strategic prior: `6ed239b241a39f7d3e934e37751454c8bf3ebb4c`. Its latest durable state still says `NO_HIGH_VALUE_OBJECT`, but it predates both the 16:21 methodology audit and the 16:42 SUB Discovery result.
-- MAIN state commit consumed: `34a150c67f56bb084f50af40e17601eb0870873c` (16:31 state). MAIN has no active formal object/identity/STARTED/research workflow.
-- SUB state commit consumed: `29cbee592cc257f3a1de6573d8fd00fc0ff75edc` (16:42). Mode `discovery`; cycle `1/3`; exploratory branch `research/exploratory-sub-topk-margin-churn-20260919@2d6152601ebb395822b763990f6dfaf19110453c`.
-- Literature mailbox tip remains `ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0`; latest Literature state is 15:32 and unchanged since the prior Analyst handoff.
-- Independent Audit remains NI01 at 10:32; no newer audit result.
-- Methodology Calibration tip consumed: `46ec11ae9490857668e227c42bc497ce6db17ecd`, first durable audit at 16:21, classification `MIXED_CALIBRATION`.
-- Repository Steward tip remains `6791bbef63e6d6360ed352dcc929d663cd26f851` (13:50 advisory only).
-- Exactly five annotated `evidence/*` tags remain; `formal/*`, `sealed/*`, and tag-based `freeze/*` remain empty. Historical control/preserve refs remain present; no new one-way identity was observed.
-- Repository rulesets remain `0`; PR #148/#149 remain open governance work. No research PR was merged.
+- Control Brain consumed as strategic prior only: state commit `e2b9f9a8958454c9f597dba76f2bac330734ece9` (14:50 JST). It predates the lower-layer funnel's latest results, so current evidence wins.
+- MAIN latest/report commit consumed: `9fcd1b85f753092273fe695ce5552c4c79b9bbdb`; current state commit `4022abf915f520d0796a596e2e9acea2f0b75e2f`. MAIN is stopped on the valid cycle-1 result awaiting this Analyst review.
+- MAIN research branch is independently re-fetched at `research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909`; exact execution workflow `35432088902` is `completed/success` at that head.
+- SUB latest/report/state commit consumed: `548d4492e7c26dc33ce6bc2d6ac47c2ea63b49b4`; mode `discovery`.
+- SUB exploratory branch independently re-fetched at `research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e`; corrected CI `35432992040` is `completed/success` at that head.
+- Literature latest commit consumed: `03da6309e6fc4990160f9a380a60d73fd3652ae0` (15:32 JST), unchanged this Analyst run.
+- Independent Audit latest commit consumed: `baa5bfbc2ac2a3532fc4ac67bedcecc2c5a409da` (NI01, 10:32 JST), unchanged this Analyst run.
+- Methodology Calibration latest commit consumed: `069bcdfa71705fa785a2a365c99ffdd2f403758a` (17:20 JST), independent methodology input only.
+- Repository Steward branch tip observed: `e8f5199079ced9080b5d74eda32bdace367a0f22`; its 13:50 latest/state remain governance advisory only.
+- Analyst branch was re-fetched immediately before write at prior tip `3e83f1eb683ce80e326b756fa304e96688fdd3fe`.
+- Five authoritative annotated `evidence/*` tags remain; `formal/*`, `sealed/*`, and tag-based `freeze/*` remain empty; 13 legacy `freeze/*` branches remain preserved. Historical `control/*` and `preserve/*` refs remain present. No fresh formal identity/STARTED/evidence authority was observed.
 
 ## New repository evidence
 
-**None.** The SUB result is explicitly `NON_EVIDENTIARY`. It created no formal identity, STARTED, preserve/evidence tag, official score, or formal claim.
+**No new FORMAL evidence.** The two new results are lower-layer and NON_EVIDENTIARY.
+
+MAIN cycle 1 used exact source `main@ebed6abf...` and exact execution head `97f542d...`; after mechanical pre-outcome CI fixes, the successful fixed run produced 1152 paired cases and 37 turnover cases. Median full/no-persistent state-AUC ratios at perturbation magnitudes `0.01 / 0.05 / 0.10` were `2.0297 / 1.4654 / 2.0326`; probability-AUC ratios were `35.5036 / 10.1260 / 7.8192`. The predeclared architecture signal criterion therefore cleared at `0.01` and `0.10`. Raw/metadata/summary were archived before final interpretation and metadata records `test_manifest_opened: false`. No formal identity, STARTED, formal preserve/evidence ref, consumed identity, or merge was created.
+
+SUB Discovery used a standalone synthetic structural-controller probe. Across five fixed seeds and 120 permutations per fixed frame multiset, path dependence concentrated in stateful module operations: at budget 16, `full` averaged `116.4/120` unique final graphs and `module_only` `95.6/120`, while `edge_only` converged to one final graph in every seed. At budget 64, strong full/module order dependence remained despite roughly 40 unused events, so total event-budget exhaustion did not explain it. This does not establish real-DEV behavior, functional value/harm, novelty, or mechanistic distinctness.
 
 ## Research-layer state
 
 ### DISCOVERY
 
-**OPEN / ACTIVE AS SECONDARY FUNNEL.** SUB's cycle-1 top-k probe is complete and reviewed. Raw selected-set churn is exactly predicted by ordinary hyperplane crossings in the synthetic linear router (`96,000/96,000` correct boundary predictions). At epsilon `0.05`, turnover rises from about `1.67%` at 8 modules to `4.13%` at 48 modules; at epsilon `0.10`, from `3.4%` to `8.1%`. Turnover produces an O(1) synthetic pooled-state jump (~`1.6-1.7` L2), while smooth pooling remains continuous. This is a useful diagnostic, not novelty.
+**OPEN / SUB-default.** The structural-order cycle-1 output has been reviewed and promoted out of Discovery. SUB may choose at most one new independent synthetic/development/read-only observable-level question per run. If none has real information value, no-op is valid with a concrete observable-level duplication/low-value reason.
 
 ### ARCHITECTURE_STUDY
 
-**ACTIVE / MAIN-owned / NON_EVIDENTIARY.** Promote the top-k candidate to one bounded real-model DEV-only study asking whether sparse routing-set swaps interact with persistent recurrent state to create delayed state/output amplification beyond the immediate boundary discontinuity.
+**ACTIVE / MAIN-owned / NON_EVIDENTIARY.** `CAND-TOPK-PA-01` gets exactly one prospectively fixed cycle-2 independent-seed replication. `CAND-STRUCTURAL-ORDER-PATH-01` is promoted into the Architecture queue but is not yet authorized for execution; it waits until MAIN cycle 2 stops or a later Analyst explicitly reprioritizes.
 
 ### PRE_FORMAL
 
-**EMPTY / HOLD.** H7 remains a possible future pre-formal direction only if an independently arising native online/local responsibility-sensitive mechanism appears. No such mechanism exists now. H9/C07 remains under-specified and is not activated by this run.
+**EMPTY / HOLD.** A repeatable architecture signal is necessary but not sufficient. Promotion requires a fresh, explicit mechanistic/reduction question, prospectively specified matched comparators/resources/privileges, and development-only signal/reduction criteria. H7 remains conditional on an independently arising native responsibility-sensitive mechanism.
 
 ### FORMAL
 
-**EMPTY / HOLD.** No fresh formal identity, STARTED, official TEST, scorer/preserver binding, or formal experiment is authorized. All consumed evidence remains immutable.
+**EMPTY / HOLD.** No fresh FORMAL object, identity, STARTED, official TEST, formal scorer/preserver binding, or formal execution authority exists.
 
 ## SUB Discovery review — `PROMOTE_TO_ARCHITECTURE_STUDY`
 
-The exploratory candidate is **not rejected merely because its raw selection event is reducible**. That reduction closes the novelty question for the selection event itself, but the architecture/system question remains independently useful because current `SparseRoutingModel` combines hard top-k routing with selected-node GRU updates and persistent `module_state`. The main source at `main@ebed6abf...` confirms `active_k=4` by default, hard `torch.topk` routing, selected-node recurrent updates, and persistence (`0.75` default). This gives a clean, non-rescue system-integration question.
+Candidate: `CAND-STRUCTURAL-ORDER-PATH-01`.
 
-Promotion boundary:
-- carry forward only the architecture question; do **not** carry exploratory tuning/results as evidence;
-- no formal identity or STARTED;
-- no TEST manifest or consumed preserved/evidence material;
-- no novelty claim;
-- one fixed cycle, then return to Analyst review before any re-tuning, scale sweep, new comparator, or second cycle.
+The synthetic result is useful because it isolates a real system characteristic — structural topology can depend on observation order even when the frame multiset and total budget are fixed — and the effect is localized to stateful module operations rather than edge-only updates. It is **not** formal evidence and does not establish a new principle. Ordinary reduction risk is high: explicit module age/order/provenance state may explain the whole effect.
+
+Carry forward only the architecture question: on fresh DEV-only real-model/control trajectories, can matched current content with different structural history/order produce reproducible topology or output differences after resource- and identity-neutral matching? Before any such study, a future Analyst must fix the DEV surface, matched-history construction, graph identity matching, functional/output metric, horizon, event-count/resource comparator, and handling of homeostatic router-bias updates. SUB must not continue this candidate after promotion.
 
 ## Candidate pool
 
 ### `CAND-TOPK-PA-01` — `ARCHITECTURE_STUDY`
-- **Question:** Does a hard top-k selected-set swap in the trained `SparseRoutingModel` create delayed persistent-state/output amplification beyond the immediate ordinary top-k boundary effect?
-- **Not rescue:** new architecture observable discovered on synthetic-only data; unrelated to repairing C19/PD01/NI01/H5/LP01 outcomes.
-- **Target layer:** `ARCHITECTURE_STUDY`.
-- **Expected information gain:** HIGH; directly characterizes routing × persistence interaction in the shipped learned architecture.
-- **Ordinary reduction risks:** immediate churn is already fully reduced to top-k geometry; delayed behavior may be fully explained by ordinary GRU/persistence dynamics.
+- **Question:** Is the observed persistence-coupled delayed amplification after hard-router turnover repeatable across an independently trained checkpoint/model seed under the unchanged cycle-1 perturbation contract?
+- **Not rescue:** clean architecture characterization originating from lower-layer Discovery; no consumed formal outcome is being repaired.
+- **Target layer / claim:** `ARCHITECTURE_STUDY`; architecture/system-integration value only.
+- **Expected information gain:** HIGH.
+- **Ordinary reduction risks:** hard top-k boundary geometry plus ordinary GRU/recurrent persistence may fully explain the phenomenon.
 - **Implementation distance:** NEAR.
-- **Scientific choices still open:** none for cycle 1 after this handoff; cycle-2 choices remain closed until fresh review.
-- **Exploration cycles:** Discovery `1/3`; promoted, so architecture cycle count starts at `0/3`.
-- **Promotion/rejection:** promote toward PRE_FORMAL only if a fresh mechanistic question is prospectively specified after a robust delayed interaction signal; reject the persistence-amplification candidate if realistic DEV turnover is negligible or delayed divergence is not materially larger than the no-persistent-state control.
+- **Scientific choices still open:** none for cycle 2 except the prospectively fixed independent model seed `42`; any later mechanistic comparator/intervention is closed until fresh post-cycle review.
+- **Exploration cycles:** Discovery `1`; Architecture `1/3` complete, cycle 2 authorized.
+- **Promotion/rejection:** unchanged-signal replication makes the candidate **eligible for PRE_FORMAL review only**, not automatically promoted. Low turnover/mixed results -> HOLD/reframe; ordinary-boundary-only -> reject mechanistic-distinctness interpretation while retaining architecture characterization.
+
+### `CAND-STRUCTURAL-ORDER-PATH-01` — `ARCHITECTURE_STUDY`
+- **Question:** In actual SparkBrain DEV execution, can matched current content but different hidden structural history/order produce distinct future topology/state/output behavior?
+- **Not rescue:** fresh structural-system observable; no consumed line is being reopened.
+- **Target layer / claim:** `ARCHITECTURE_STUDY`; architecture/system integration.
+- **Expected information gain:** MEDIUM-HIGH.
+- **Ordinary reduction risks:** explicit age/order/provenance state may account for all path dependence.
+- **Implementation distance:** NEAR-MEDIUM.
+- **Scientific choices still open:** fresh DEV task/regime surface, matched-current-state construction, identity-neutral graph matching, output/horizon metric, event/resource comparator, homeostatic-bias factor.
+- **Exploration cycles:** Discovery `1/3` complete; Architecture `0/3`.
+- **Promotion/rejection:** actual-model DEV-only divergence under fixed matched-state/resource controls supports architecture characterization; trivial explicit age/order reduction plus no functional divergence -> HOLD or reject any mechanistic-distinctness claim.
 
 ### `CAND-H5-AUDIT-01` — `HOLD`
 - **Question:** Does H5's terminal `FAIL_NO_USEFUL_WORK_REDUCTION` remain narrow and well supported under independent read-only audit of one-way integrity, accounting semantics, and claim boundary?
-- **Not rescue:** audit-only; no rerun, retune, rescore, or new H5 outcome.
-- **Target layer:** `DISCOVERY` (read-only audit diagnostic, owned by Independent Audit rather than MAIN/SUB).
-- **Expected information gain:** HIGH.
-- **Ordinary reduction risks:** accounting definition may narrow interpretation without changing canonical token.
-- **Implementation distance:** NEAR.
-- **Scientific choices still open:** blind attack ordering belongs to Independent Audit.
-- **Exploration cycles:** `0/3`.
-- **Promotion/rejection:** never formalize from audit; use only to narrow interpretation/prospective future contracts.
+- **Not rescue:** audit-only; no rerun/retune/rescore/new H5 outcome.
+- **Target layer:** read-only diagnostic owned by Independent Audit, not MAIN/SUB.
+- **Expected information gain / distance:** HIGH / NEAR.
+- **Cycles:** `0/3`.
+- **Condition:** never formalize from audit; use only to narrow interpretation and prospective future contracts.
 
 ### `CAND-H7-RESP-01` — `HOLD`
-- **Question:** Can a native online/local lineage mechanism track responsibility-changing interventions under matched privilege and survive ordinary local-learning/recurrent/plastic reductions?
-- **Not rescue:** admissible only if an independently arising mechanism appears; cannot be engineered as LP01 rescue or literature-driven successor.
-- **Target layer:** `PRE_FORMAL`.
-- **Expected information gain:** VERY HIGH IF OBJECT APPEARS.
-- **Ordinary reduction risks:** provenance/event-structure/dynamic-slicing, eligibility/recurrent/plastic/local-diffusion reductions, plus stronger-privilege actual-cause/COMA/C3/RUDDER-TVT ceilings.
-- **Implementation distance:** FAR / event-dependent.
-- **Scientific choices still open:** mechanism, intervention, matched comparator/resource contract, positive-signal gate, numeric falsifier.
-- **Exploration cycles:** `0/3`.
-- **Promotion/rejection:** PRE_FORMAL only after independent native mechanism + positive DEV signal + privilege-matched reduction test can be prospectively fixed.
+- **Question:** Can an independently arising native online/local lineage mechanism track responsibility-changing interventions under matched privilege and survive ordinary local-learning/recurrent/plastic reductions?
+- **Not rescue:** cannot be engineered as LP01 rescue or literature-driven successor.
+- **Target layer:** `PRE_FORMAL` only if the mechanism first appears independently.
+- **Expected information gain / distance:** VERY HIGH IF OBJECT APPEARS / FAR-EVENT-DEPENDENT.
+- **Ordinary reduction risks:** provenance/event structures/dynamic slicing; eligibility/recurrent/plastic/local-diffusion mechanisms; stronger-privilege actual-cause/COMA/C3/RUDDER-TVT ceilings.
+- **Cycles:** `0/3`.
+- **Condition:** remain HOLD until mechanism, intervention, matched comparator/resource contract, positive-signal gate, and numeric falsifier can be prospectively fixed.
 
-## MAIN lane — architecture cycle 1
+## MAIN lane — cycle-2 replication
 
-MAIN owns **all** implementation, harness, DEV-training, instrumentation, CI, and candidate-specific fixes. SUB must not take any part MAIN needs to complete this study.
+MAIN owns all implementation, harness changes needed to parameterize the fixed replication, DEV training, CI, and candidate-specific fixes. SUB must not take any dependency MAIN needs.
 
-Prospective cycle-1 binding:
-- source: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`;
-- model/config surface: `SparseRoutingModel` + `configs/experiments/phase2/main.json` (`seed=41`, `event_dim=24`, `hidden_dim=24`, `module_count=12`, `active_k=4`, 48 DEV train episodes, 12 disjoint DEV calibration episodes; default persistence `0.75`);
-- data: `configs/experiments/phase1/manifests/dev-v1.json` only; **do not read or evaluate the TEST manifest**;
-- checkpoint: fresh DEV-only training from the fixed config/seed; no formal/preserved checkpoint;
-- probe episodes: the fixed 12 DEV calibration episodes after the 48 training episodes;
-- probe steps: `6, 12, 18, 24` where continuation length permits;
-- perturbation surface: EventEncoder output only, deterministic unit directions from fixed seed `20260919`, magnitudes `0.01`, `0.05`, `0.10` times the unperturbed encoded-vector L2 norm; 8 directions per probe/magnitude;
-- paired replay: unperturbed twin and perturbed twin start from identical replayed runtime state; after the single perturbed encoded step, both receive the identical unperturbed DEV continuation for 6 steps;
-- conditions: `full` and the existing `no_persistent_state` ablation using the same learned weights and event sequence;
-- record before interpretation: router k/(k+1) margin, selected-set turnover, normalized module-state L2 divergence, probability L1 divergence, action-logit L2 divergence for horizon `0..6`;
-- derived descriptive statistic: divergence AUC `0..6` and full/no-persistent AUC ratio among turnover cases.
+Prospective cycle-2 binding:
+- continuation base/harness: `research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909`, whose scientific source is `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`;
+- model/config semantics remain `SparseRoutingModel` + `configs/experiments/phase2/main.json` and `configs/experiments/phase1/manifests/dev-v1.json` only;
+- **only independent replication choice:** model/training seed `42` instead of cycle-1 seed `41`;
+- keep unchanged: 48 DEV training episodes, 12 disjoint DEV calibration episodes, probe steps `6/12/18/24`, perturbation seed `20260919`, relative magnitudes `0.01/0.05/0.10`, 8 directions per probe/magnitude, horizon 6, `full` vs `no_persistent_state`, raw metrics, AUC construction, turnover minimum `20`, signal thresholds state ratio `>=2.0` and probability ratio `>=1.5` at at least 2/3 magnitudes, and ordinary threshold state ratio `<1.25` plus probability ratio `<1.5` at all magnitudes;
+- exact-head ordinary CI must be green before running the DEV architecture study;
+- capture/upload raw diagnostic artifact before final interpretation;
+- TEST manifest/evaluation, formal identity, STARTED, formal preserve/scoring/evidence, consumed formal raw, and research merge are forbidden.
 
-Prospective interpretation:
-- `<20` total turnover cases across all fixed probes -> `ARCHITECTURE_INCONCLUSIVE_LOW_TURNOVER`; STOP, no epsilon tuning.
-- if median state-AUC ratio `full / no_persistent_state >= 2.0` at at least 2/3 fixed magnitudes **and** probability-AUC ratio >= `1.5` in the same magnitudes -> `PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL`; report as architecture signal only and STOP for Analyst review.
-- if state-AUC ratio `<1.25` at all three magnitudes and delayed output divergence does not exceed the no-persistent control materially -> `ORDINARY_ROUTER_BOUNDARY_EFFECT_ONLY`; reject this candidate as a persistence-amplification question, while retaining the engineering diagnostic.
-- otherwise -> `MIXED_ARCHITECTURE_RESULT`; STOP for Analyst review.
+Cycle-2 outcomes all STOP for Analyst:
+- unchanged signal criterion -> `PERSISTENCE_SIGNAL_REPLICATED`; candidate becomes eligible for a **fresh PRE_FORMAL review**, not automatic promotion;
+- total turnover `<20` -> `ARCHITECTURE_INCONCLUSIVE_LOW_TURNOVER`; HOLD, no epsilon rescue;
+- unchanged ordinary criterion -> `ORDINARY_ROUTER_BOUNDARY_EFFECT_ONLY`; reject mechanistic-distinctness interpretation, keep descriptive architecture value;
+- anything else -> `MIXED_ARCHITECTURE_RESULT`; HOLD/reframe only through a later fresh decision.
 
-No threshold, metric, horizon, perturbation magnitude, model seed, comparator, or data split may be changed after outcome inspection in this cycle.
+No metric, threshold, magnitude, horizon, comparator, data split, resource contract, or runtime/model family may be redesigned from cycle-2 outcome knowledge.
 
 ## SUB lane
 
 `BOUNDED_SECONDARY_DISCOVERY`
 
-SUB remains the default Discovery worker and is **not** globally no-op. It may self-select at most one bounded synthetic/development/read-only question per run if it is genuinely independent and nonduplicative. It must not work on:
-- `CAND-TOPK-PA-01` or any router-persistence follow-up reserved to MAIN;
-- H5 audit reserved to the Independent Audit stream;
-- H7 mechanism/comparator construction reserved to future MAIN admission;
-- consumed-line rescue, held-out TEST, preserved formal raw, scorer/target surfaces, identities/STARTED, or MAIN blockers.
+SUB may self-select at most one bounded, genuinely independent synthetic/development/read-only observable question per run. It must not work on MAIN's top-k replication, the now-promoted structural-order Architecture follow-up, H5 Independent Audit, H7 mechanism/comparator construction, consumed-line rescue, held-out TEST, preserved formal raw, target/scorer surfaces, identities/STARTED, or any MAIN blocker.
 
-If no such question exists at observable/question level, SUB should no-op and state that concrete exhaustion reason. Any Discovery result returns to Analyst for promotion/reject classification; no direct jump to FORMAL.
+Fallback: `NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON`.
 
-## External / methodology inputs
+## Literature / Audit / Methodology
 
-### Literature — unchanged this run
-The 15:32 C3/COMA/stochastic-responsibility findings remain prospective novelty calibration only. Stronger-privilege counterfactual solvers are ceilings, not automatic equal-privilege reject gates.
+**Literature — unchanged.** The 15:32 C3/COMA/concurrent-responsibility update still narrows H7 novelty to a native local/online responsibility-sensitive mechanism without centralized/replay/oracle privilege. Stronger-privilege counterfactual solvers are ceilings, not equal-privilege reject gates.
 
-### Independent Audit — unchanged this run
-NI01 canonical FAIL remains valid; programme wording remains `NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION`. Equal-privilege generic abstention reduction is not established. The blocked world-blind sensitivity remains closed.
+**Independent Audit — unchanged.** NI01's canonical terminal evidence remains intact; safe programme wording remains `NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION`. Next audit priority remains H5. The blocked NI01 world-blind sensitivity stays closed.
 
-### Methodology Calibration — NEW
-`MIXED_CALIBRATION`: keep formal integrity strict; split research worthiness by claim type; relax programme-wide no-op; use candidate pool; keep the three-cycle budget; require observable-level rather than family-level exhaustion; distinguish equal-privilege reductions from stronger-privilege ceilings. This directly supports the current promotion and allocation change.
+**Methodology Calibration — consumed 17:20 update.** Classification is `SLIGHTLY_OVERCONSERVATIVE`. It confirms the four-layer funnel and claim-type separation are improving allocation without weakening FORMAL integrity. Its key prospective constraint is that Architecture -> PRE_FORMAL requires a **repeatable architecture signal plus a clear mechanistic/reduction question**; architecture cutoffs must not be laundered into novelty/formal thresholds.
 
 ## Consumed identities / do not touch
 
 No retry/reuse: `c19-external-v2-official-v4`, `c19-r1-revision-authority-official-v1`, `c19-r1-revision-authority-official-v2`, `c19-r2-fsa-state-tracker-official-v1`, `pd01-long-history-fading-memory-official-v1`, `ni01-no-ignition-selective-prediction-official-v1`, `h5-event-routing-work-reduction-official-v1`.
 
-Do not touch consumed STARTED/control refs, immutable evidence tags/commits, preserved formal raw except allowed read-only audit, sealed/one-way TEST surfaces, canonical terminal statistics/tokens, frozen protocols, research PR merges, scheduler definitions, or retroactively apply Literature/Methodology/Discovery findings to consumed evidence.
+Do not rerun, retune, rescore, reopen, or mutate consumed STARTED/control refs, preserved formal raw except separately authorized read-only audit, immutable evidence refs/tags/commits, frozen protocols/statistical decisions, NI01 post-terminal scoring sensitivity, or H5 terminal scoring. Do not use TEST in Discovery/Architecture/PRE_FORMAL. Do not create identity/STARTED for non-evidentiary work. Do not let SUB take MAIN blockers or the promoted structural Architecture candidate. Literature/Audit/Methodology/Discovery/Architecture findings never retroactively alter consumed evidence.
 
 ## Top 3
 
-1. **MAIN — HIGH / NEAR:** execute exactly one bounded DEV-only `CAND-TOPK-PA-01` architecture cycle under the fixed protocol above; no formal identity/STARTED/TEST.
-2. **INDEPENDENT AUDIT — HIGH / NEAR:** audit H5 terminal integrity/accounting/claim boundary read-only; do not rerun/rescore H5.
-3. **SUB — MEDIUM / NEAR-OPTIONAL:** continue bounded secondary Discovery only on a genuinely independent uncovered observable; otherwise no-op with observable-level exhaustion justification.
+1. **MAIN — HIGH / NEAR:** run exactly one fixed DEV-only independent-seed cycle-2 replication of `CAND-TOPK-PA-01` under the unchanged cycle-1 decision contract.
+2. **INDEPENDENT AUDIT — HIGH / NEAR:** audit H5 one-way integrity, resource-accounting interpretation, and narrow claim boundary read-only; do not rerun/rescore.
+3. **SUB — MEDIUM / OPTIONAL:** one fresh bounded independent Discovery question; otherwise no-op with concrete observable-level reason.
 
 ## #1 GO / STOP
 
-**GO:** architecture study only, on exact `main@ebed6abf...`, fixed DEV-only config/data/probe/metrics above. No formal identity is created; STARTED/no-clobber and formal raw-before-score machinery are **not armed** because this is NON_EVIDENTIARY architecture characterization. Reproducibility still requires exact source/config/seed/data binding and recording raw diagnostic rows before summary interpretation.
+**GO:** NON_EVIDENTIARY Architecture cycle 2 only. Exact continuation head and source are fixed above; model seed is prospectively changed once to `42`, every other scientific choice and threshold remains unchanged, exact-head CI must be green, and raw diagnostic artifacts must precede interpretation. No FORMAL identity/STARTED/raw-before-score machinery is armed because this is not FORMAL.
 
-**STOP:** any need for TEST/preserved consumed material; any post-outcome change to epsilon/horizon/metric/control/seed/data; fewer than 20 turnover cases; ordinary-boundary-only result; mixed result; or architecture signal. Every valid outcome stops at Analyst review. A later PRE_FORMAL or FORMAL object requires a fresh prospective definition and, for FORMAL, a fresh unconsumed identity, exact bindings, dedicated pre-START review, exactly-once STARTED/no-clobber, raw-before-score, immutable preserve-before-read/scoring, and fixed falsifiers.
+**STOP:** any semantic/protocol gap; any need for TEST/consumed evidence; any outcome-responsive redesign; any valid cycle-2 classification; any post-execution failure after scientific diagnostics become observable. Mechanical pre-start implementation/CI defects may be fixed by MAIN only if scientific semantics stay unchanged, followed by exact-head CI recheck.
 
 ## Prospective contingency tree
 
-Root: `TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE1`.
+Root: `TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE2_REPLICATION`.
 
-- `PRE_START_BLOCKER_MECHANICAL` -> MAIN may fix only outcome-independent harness/CI/binding defects, preserving the fixed scientific protocol, then recheck.
-- `PRE_START_SEMANTIC_OR_PROTOCOL_GAP` -> STOP for Analyst review.
-- `RUN_VALID` ->
-  - `ARCHITECTURE_INCONCLUSIVE_LOW_TURNOVER` -> STOP; no epsilon rescue.
-  - `PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL` -> STOP; retain architecture claim only, no same-run PRE_FORMAL/FORMAL promotion.
-  - `ORDINARY_ROUTER_BOUNDARY_EFFECT_ONLY` -> STOP; reject this persistence-amplification candidate.
-  - `MIXED_ARCHITECTURE_RESULT` -> STOP; no same-run redesign.
-- `INVALID_DEV_BOUNDARY_OR_TEST_LEAKAGE` -> discard non-evidentiary result and STOP.
+- `PRE_START_BLOCKER_MECHANICAL` -> MAIN may fix outcome-independent implementation/CI defects under the same fixed protocol, then exact-head CI recheck.
+- `PRE_START_SEMANTIC_OR_PROTOCOL_GAP` -> STOP for Analyst.
+- `INVALID_DEV_BINDING_OR_TEST_LEAKAGE` -> discard result and STOP.
+- `POST_EXECUTION_FAILURE_AFTER_DIAGNOSTICS_VISIBLE` -> STOP; no same-run rerun/redesign.
+- valid run ->
+  - `PERSISTENCE_SIGNAL_REPLICATED` -> STOP; eligible for fresh PRE_FORMAL review only;
+  - `ARCHITECTURE_INCONCLUSIVE_LOW_TURNOVER` -> STOP/HOLD, no perturbation rescue;
+  - `ORDINARY_ROUTER_BOUNDARY_EFFECT_ONLY` -> STOP; reject mechanistic-distinctness interpretation only;
+  - `MIXED_ARCHITECTURE_RESULT` -> STOP/HOLD.
 - FORMAL `PASS/FAIL/INCONCLUSIVE/INVALID_EVIDENCE/POST_START_FAILURE` remain `UNARMED_NO_FORMAL_OBJECT`.
 
 ## Governance advisory
 
-No new Steward output this run. Fresh verification still shows five authoritative evidence tags and zero repository rulesets. `main` is unprotected. PR #148/#149 remain governance-only. Preserve 13 legacy freeze branches until protected migration exists; keep scientific semantics research-local and promote only neutral reusable substrate through ordinary reviewed PRs.
+Repository Steward remains advisory only. Fresh independent checks confirm Issue #139 still tracks exactly five evidence tags and the protection gap; repository rulesets remain `0`; `main` remains unprotected; 13 legacy freeze branches remain preserved. PR #148/#149 remain open, mergeable and unmerged; Steward's `DEFER_PENDING_REVIEW_FIX` remains appropriate and neither is a scientific blocker. Neutral main-promotion candidates remain only outcome-independent substrate; scientific H5/NI01/H7/Architecture semantics remain research-local.
 
 ## Utility request
 
-None created. MAIN owns the architecture-study critical path; H5 belongs to Independent Audit; no bounded orphan task requires Utility Orchestrator.
+**None created.** MAIN owns the active Architecture replication, Independent Audit owns H5, and SUB owns independent Discovery; no useful orphan task exists.
+
+## Persistence scope
+
+Persist only this handoff, state, and append-only history on `ops/evidence-analyst-handoff`. No scientific workflow, identity, evidence, PR merge, scheduler, or immutable ref is changed by this Analyst run.

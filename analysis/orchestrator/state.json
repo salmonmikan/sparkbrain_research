@@ -1,93 +1,111 @@
 {
-  "timestamp": "2026-09-19T17:02:36+09:00",
+  "timestamp": "2026-09-19T18:20:52+09:00",
   "change_summary": {
     "new_formal_repository_evidence": false,
+    "new_main_architecture_information": true,
     "new_sub_discovery": true,
+    "new_literature_input": false,
+    "new_audit_input": false,
     "new_methodology_input": true,
     "allocation_changed": true,
-    "decision": "PROMOTE_TOPK_DISCOVERY_TO_MAIN_ARCHITECTURE_STUDY_KEEP_FORMAL_HOLD_OPEN_BOUNDED_SUB_DISCOVERY"
+    "decision": "AUTHORIZE_TOPK_ARCHITECTURE_CYCLE2_REPLICATION_PROMOTE_STRUCTURAL_ORDER_DISCOVERY_TO_ARCHITECTURE_QUEUE_KEEP_FORMAL_HOLD"
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_protected": false,
-    "control_brain_tip": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
-    "orchestrator_mailbox_tip": "29cbee592cc257f3a1de6573d8fd00fc0ff75edc",
-    "external_research_audit_tip": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
-    "methodology_calibration_tip": "46ec11ae9490857668e227c42bc497ce6db17ecd",
-    "repository_steward_tip": "6791bbef63e6d6360ed352dcc929d663cd26f851",
-    "analyst_prior_tip_reconciled_before_write": "d8974f662e2fd36000125b643ae908030c3e8aac",
-    "exploratory_topk_branch": "2d6152601ebb395822b763990f6dfaf19110453c",
+    "control_brain_state_commit": "e2b9f9a8958454c9f597dba76f2bac330734ece9",
+    "main_report_commit": "9fcd1b85f753092273fe695ce5552c4c79b9bbdb",
+    "main_state_commit": "4022abf915f520d0796a596e2e9acea2f0b75e2f",
+    "sub_report_state_commit": "548d4492e7c26dc33ce6bc2d6ac47c2ea63b49b4",
+    "literature_commit": "03da6309e6fc4990160f9a380a60d73fd3652ae0",
+    "audit_commit": "baa5bfbc2ac2a3532fc4ac67bedcecc2c5a409da",
+    "methodology_commit": "069bcdfa71705fa785a2a365c99ffdd2f403758a",
+    "repository_steward_tip": "e8f5199079ced9080b5d74eda32bdace367a0f22",
+    "analyst_prior_tip_reconciled_before_write": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+    "main_architecture_branch": "research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909",
+    "main_architecture_workflow": "35432088902:completed/success",
+    "sub_discovery_branch": "research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e",
+    "sub_discovery_ci": "35432992040:completed/success",
     "evidence_tag_count": 5,
+    "legacy_freeze_branch_count": 13,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "repository_ruleset_count": 0,
-    "open_prs": [148, 149]
+    "open_prs": [148, 149],
+    "open_governance_issue": 139
   },
-  "control_brain_commit": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
-  "main_report_commit_consumed": "34a150c67f56bb084f50af40e17601eb0870873c",
-  "sub_report_commit_consumed": "29cbee592cc257f3a1de6573d8fd00fc0ff75edc",
+  "control_brain_commit": "e2b9f9a8958454c9f597dba76f2bac330734ece9",
+  "main_report_commit_consumed": "9fcd1b85f753092273fe695ce5552c4c79b9bbdb",
+  "sub_report_commit_consumed": "548d4492e7c26dc33ce6bc2d6ac47c2ea63b49b4",
   "sub_operating_mode_observed": "discovery",
   "sub_discovery_review": {
-    "candidate": "TOPK_ROUTER_MARGIN_CHURN_STABILITY_DISCOVERY",
+    "candidate": "CAND-STRUCTURAL-ORDER-PATH-01",
+    "source_target": "STRUCTURAL_ORDER_PATH_DEPENDENCE_DISCOVERY",
     "classification": "PROMOTE_TO_ARCHITECTURE_STUDY",
     "evidentiary_status": "NON_EVIDENTIARY",
     "cycle": 1,
-    "branch": "research/exploratory-sub-topk-margin-churn-20260919",
-    "commit": "2d6152601ebb395822b763990f6dfaf19110453c",
-    "key_observation": "Synthetic hard top-k set turnover was predicted exactly by ordinary linear hyperplane crossing geometry across all 96000 probes; module-count scaling increased turnover frequency and turnover produced O(1) pooled-state jumps.",
-    "promotion_boundary": "Carry forward only the real-model routing-persistence architecture question. Do not relabel cycle-1 observations as evidence or novelty."
+    "branch": "research/exploratory-sub-structural-order-path-dependence-20260919",
+    "commit": "8156bba7b119fb831b7c28eac7cd900746f9876e",
+    "key_observation": "Fixed synthetic frame multisets produce strongly order-dependent final topology under stateful module operations; the effect survives a generous event-budget control, while edge-only updates converge to a single graph.",
+    "ordinary_reduction_risk": "HIGH_EXPLICIT_AGE_ORDER_PROVENANCE_STATE_MAY_EXPLAIN_ALL",
+    "promotion_boundary": "Carry forward only a freshly specified real-model DEV architecture question. SUB may not continue the promoted architecture candidate and no exploratory result is relabeled as evidence."
   },
-  "literature_handoff_commit_consumed": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
-  "audit_handoff_commit_consumed": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
+  "literature_handoff_commit_consumed": "03da6309e6fc4990160f9a380a60d73fd3652ae0",
+  "audit_handoff_commit_consumed": "baa5bfbc2ac2a3532fc4ac67bedcecc2c5a409da",
   "methodology_calibration": {
-    "commit_consumed": "46ec11ae9490857668e227c42bc497ce6db17ecd",
-    "timestamp": "2026-09-19T16:21:00+09:00",
-    "classification": "MIXED_CALIBRATION",
-    "authority": "methodology_input_not_scientific_evidence",
-    "impact": "Keep FORMAL integrity/novelty gates strict, but split research worthiness by claim type and restore bounded Discovery/Architecture/Pre-formal throughput. Candidate-pool and observable-level exhaustion are required; stronger-privilege ceilings are not automatic matched mechanistic reject gates."
+    "commit_consumed": "069bcdfa71705fa785a2a365c99ffdd2f403758a",
+    "timestamp": "2026-09-19T17:20:00+09:00",
+    "classification": "SLIGHTLY_OVERCONSERVATIVE",
+    "authority": "METHODOLOGY_INPUT_NOT_SCIENTIFIC_EVIDENCE",
+    "impact": "Keep FORMAL integrity strict; maintain claim-type separation and lower-layer throughput. Architecture-to-PRE_FORMAL requires repeatable architecture signal plus a fresh clear mechanistic/reduction question. Do not launder architecture cutoffs into novelty/formal thresholds."
   },
   "repository_steward": {
-    "commit_consumed": "6791bbef63e6d6360ed352dcc929d663cd26f851",
+    "commit_state_consumed": "e8f5199079ced9080b5d74eda32bdace367a0f22",
     "timestamp": "2026-09-19T13:50:00+09:00",
-    "authority": "governance_advisory_only",
-    "fresh_this_run": false
+    "authority": "GOVERNANCE_ADVISORY_ONLY",
+    "fresh_facts_independently_verified": true
   },
   "external_input": {
     "literature": {
       "changed_this_run": false,
-      "timestamp": "2026-09-19T15:32:48+09:00",
-      "mailbox_tip": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
-      "impact": "Future H7 novelty remains narrowed to native online/local responsibility sensitivity under matched privilege. COMA/C3/actual-cause and related stronger-privilege solvers remain ceilings, not automatic equal-privilege reject gates."
+      "timestamp": "2026-09-19T15:32:00+09:00",
+      "commit": "03da6309e6fc4990160f9a380a60d73fd3652ae0",
+      "affected_lines": ["H7_LINEAGE_CAUSAL_CREDIT_RESIDUAL", "LP01_PREFORMAL_CLOSEOUT", "FUTURE_OBJECT_ADMISSION"],
+      "impact": "Keep H7 narrowed to an independently arising native local/online responsibility-sensitive mechanism. COMA/C3/explicit responsibility and related replay/global-critic solvers are stronger-privilege ceilings unless privilege is actually matched; they do not authorize a literature-driven successor.",
+      "allocation_change": false
     },
     "audit": {
       "changed_this_run": false,
+      "timestamp": "2026-09-19T10:32:00+09:00",
+      "commit": "baa5bfbc2ac2a3532fc4ac67bedcecc2c5a409da",
       "latest_target": "NI01",
-      "timestamp": "2026-09-19T10:32:25+09:00",
-      "classification": "WEAKENED",
+      "classification": "WEAKENED_INTERPRETATION_ROBUST_INTEGRITY",
       "safe_programme_interpretation": "NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION",
-      "next_priority": "H5 independent audit"
+      "next_priority": "H5_INDEPENDENT_READONLY_AUDIT",
+      "allocation_change": false
     }
   },
   "research_layer_state": {
     "DISCOVERY": {
       "status": "OPEN_SECONDARY_FUNNEL",
       "owner": "SUB_DEFAULT",
-      "latest_completed_candidate": "CAND-TOPK-PA-01_DISCOVERY_CYCLE1",
+      "latest_completed_candidate": "CAND-STRUCTURAL-ORDER-PATH-01_DISCOVERY_CYCLE1",
       "latest_review": "PROMOTE_TO_ARCHITECTURE_STUDY",
       "evidentiary_status": "NON_EVIDENTIARY"
     },
     "ARCHITECTURE_STUDY": {
-      "status": "ACTIVE_AUTHORIZED",
+      "status": "ACTIVE",
       "owner": "MAIN",
-      "candidate": "CAND-TOPK-PA-01",
-      "evidentiary_status": "NON_EVIDENTIARY",
-      "formal_claim_armed": false
+      "active_candidate": "CAND-TOPK-PA-01",
+      "active_cycle": 2,
+      "queued_candidate": "CAND-STRUCTURAL-ORDER-PATH-01",
+      "evidentiary_status": "NON_EVIDENTIARY"
     },
     "PRE_FORMAL": {
       "status": "EMPTY_HOLD",
       "active_candidate": null,
-      "conditional_future_candidate": "CAND-H7-RESP-01"
+      "promotion_gate": "REPEATABLE_ARCHITECTURE_SIGNAL_PLUS_FRESH_CLEAR_MECHANISTIC_REDUCTION_QUESTION_OR_INDEPENDENTLY_ARISING_NATIVE_H7_MECHANISM"
     },
     "FORMAL": {
       "status": "EMPTY_HOLD",
@@ -101,17 +119,32 @@
     {
       "id": "CAND-TOPK-PA-01",
       "classification": "ARCHITECTURE_STUDY",
-      "question": "Does a hard top-k selected-set swap in the trained SparseRoutingModel create delayed persistent-state/output amplification beyond the immediate ordinary top-k boundary effect?",
-      "not_rescue_reason": "New architecture observable from synthetic-only Discovery; no consumed outcome is being repaired or reopened.",
+      "question": "Is persistence-coupled delayed amplification after hard-router turnover repeatable across an independently trained checkpoint/model seed under the unchanged cycle-1 perturbation contract?",
+      "not_rescue_reason": "Clean architecture characterization originating from lower-layer Discovery; no consumed formal result is being repaired or reopened.",
       "target_layer": "ARCHITECTURE_STUDY",
       "claim_type": "architecture_system_integration_value",
       "expected_information_gain": "HIGH",
-      "ordinary_reduction_risks": ["raw turnover already exactly reduced to top-k hyperplane geometry", "delayed effect may be ordinary GRU/persistence dynamics"],
+      "ordinary_reduction_risks": ["ordinary hard top-k boundary geometry", "ordinary GRU/recurrent persistence may fully explain the signal"],
       "implementation_distance": "NEAR",
-      "scientific_choices_still_open": [],
-      "exploration_cycle_count": {"discovery": 1, "architecture": 0, "default_max_per_candidate": 3},
-      "promotion_condition": "After fixed cycle 1, only consider PRE_FORMAL if a robust delayed routing-persistence interaction exists and a fresh mechanistic question can be prospectively specified.",
-      "rejection_condition": "Reject persistence-amplification candidate if realistic DEV turnover is negligible or delayed divergence is not materially larger than the no-persistent-state control."
+      "scientific_choices_still_open": ["after cycle 2 only: fresh mechanistic comparator/intervention question; closed until Analyst review"],
+      "exploration_cycle_count": {"discovery": 1, "architecture_completed": 1, "architecture_authorized_next": 2, "default_max": 3},
+      "promotion_condition": "If the unchanged cycle-1 signal criterion replicates at fixed seed 42, become eligible for a fresh PRE_FORMAL review only; no automatic promotion.",
+      "rejection_condition": "Ordinary-boundary-only rejects mechanistic-distinctness interpretation; low-turnover or mixed results HOLD/reframe without same-run tuning."
+    },
+    {
+      "id": "CAND-STRUCTURAL-ORDER-PATH-01",
+      "classification": "ARCHITECTURE_STUDY",
+      "question": "In actual SparkBrain DEV execution, can matched current content but different hidden structural history/order produce distinct future topology/state/output behavior?",
+      "not_rescue_reason": "Fresh structural-system observable independent of consumed C19/PD01/NI01/H5/LP01 outcomes.",
+      "target_layer": "ARCHITECTURE_STUDY",
+      "claim_type": "architecture_system_integration_value",
+      "expected_information_gain": "MEDIUM_HIGH",
+      "ordinary_reduction_risks": ["explicit age/order/provenance state may fully explain the effect"],
+      "implementation_distance": "NEAR_MEDIUM",
+      "scientific_choices_still_open": ["fresh DEV task/regime surface", "matched-current-state construction", "identity-neutral graph matching", "output/horizon metric", "event/resource comparator", "homeostatic router-bias factor"],
+      "exploration_cycle_count": {"discovery": 1, "architecture": 0, "default_max": 3},
+      "promotion_condition": "Fresh prospectively fixed real-model DEV architecture study shows reproducible topology/output divergence under matched current-state/resource controls.",
+      "rejection_condition": "Explicit age/order state fully accounts for the effect and functional/output behavior is effectively invariant; then HOLD or reject mechanistic-distinctness claim."
     },
     {
       "id": "CAND-H5-AUDIT-01",
@@ -131,8 +164,8 @@
     {
       "id": "CAND-H7-RESP-01",
       "classification": "HOLD",
-      "question": "Can a native online/local lineage mechanism track responsibility-changing interventions under matched privilege and survive ordinary local-learning/recurrent/plastic reductions?",
-      "not_rescue_reason": "Admissible only if an independently arising mechanism appears; cannot be engineered as LP01 rescue or literature-driven successor.",
+      "question": "Can an independently arising native online/local lineage mechanism track responsibility-changing interventions under matched privilege and survive ordinary local-learning/recurrent/plastic reductions?",
+      "not_rescue_reason": "Cannot be engineered as LP01 rescue or literature-driven successor.",
       "target_layer": "PRE_FORMAL",
       "claim_type": "mechanistic_distinctness_and_possible_new_principle",
       "expected_information_gain": "VERY_HIGH_IF_OBJECT_APPEARS",
@@ -140,28 +173,27 @@
       "implementation_distance": "FAR_EVENT_DEPENDENT",
       "scientific_choices_still_open": ["native mechanism", "responsibility-changing intervention", "matched comparator/resource contract", "positive-signal gate", "numeric falsifier"],
       "exploration_cycle_count": {"preformal": 0, "default_max": 3},
-      "promotion_condition": "PRE_FORMAL only after independent native mechanism plus positive DEV signal and privilege-matched reduction test can be fixed prospectively.",
-      "rejection_condition": "Hold or reject if only literature-driven construction/rescue is available or ordinary matched mechanisms fully explain the signal."
+      "promotion_condition": "PRE_FORMAL only after an independent native mechanism exists and a positive DEV signal plus privilege-matched reduction test can be fixed prospectively.",
+      "rejection_condition": "Hold/reject if only literature-driven construction/rescue is available or ordinary matched mechanisms fully explain the signal."
     }
   ],
+  "active_main_sub_claims_observed": {
+    "MAIN": "Cycle 1 yielded PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL on DEV only; current MAIN is stopped awaiting Analyst review and created no formal evidence.",
+    "SUB": "Synthetic structural-controller final topology is order/path dependent under module operations, survives generous event-budget control, and is edge-order invariant in this bounded harness; NON_EVIDENTIARY only."
+  },
   "main_lane": {
-    "name": "TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE1",
+    "name": "TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE2_REPLICATION",
     "owner": "MAIN",
     "layer": "ARCHITECTURE_STUDY",
-    "status": "AUTHORIZED_ONE_BOUNDED_CYCLE",
+    "status": "AUTHORIZED_ONE_BOUNDED_REPLICATION_CYCLE",
     "evidentiary_status": "NON_EVIDENTIARY",
-    "formal_identity_required": false,
-    "formal_execution_authorized": false,
-    "source_binding": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "continuation_head": "research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909",
+    "scientific_source": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "config_binding": "configs/experiments/phase2/main.json",
     "dev_manifest": "configs/experiments/phase1/manifests/dev-v1.json",
     "test_access_forbidden": true,
-    "fixed_protocol": {
-      "seed": 41,
-      "model": "SparseRoutingModel",
-      "module_count": 12,
-      "active_k": 4,
-      "persistence": 0.75,
+    "cycle2_only_changed_scientific_choice": "model_training_seed_42_instead_of_41",
+    "unchanged_contract": {
       "train_dev_episodes": 48,
       "probe_dev_calibration_episodes": 12,
       "probe_steps": [6, 12, 18, 24],
@@ -170,9 +202,15 @@
       "directions_per_probe_magnitude": 8,
       "continuation_horizon": 6,
       "conditions": ["full", "no_persistent_state"],
-      "metrics": ["router_margin", "selected_set_turnover", "normalized_module_state_l2", "probability_l1", "action_logit_l2", "divergence_auc_0_6"]
+      "turnover_minimum": 20,
+      "signal_state_auc_ratio_min": 2.0,
+      "signal_probability_auc_ratio_min": 1.5,
+      "signal_required_magnitudes": 2,
+      "ordinary_state_auc_ratio_max_exclusive": 1.25,
+      "ordinary_probability_auc_ratio_max_exclusive": 1.5
     },
-    "stop_point": "ANALYST_REVIEW_AFTER_FIRST_VALID_ARCHITECTURE_RESULT"
+    "integrity_gates": ["exact-head ordinary CI green before DEV execution", "raw diagnostic artifact uploaded before final interpretation", "no TEST", "no formal identity/STARTED/preserve/scoring/evidence", "no post-outcome redesign"],
+    "stop_point": "ANALYST_REVIEW_AFTER_ANY_VALID_CYCLE2_RESULT"
   },
   "sub_lane": {
     "name": "BOUNDED_SECONDARY_DISCOVERY",
@@ -180,50 +218,63 @@
     "layer": "DISCOVERY",
     "status": "AUTHORIZED_IF_SAFE",
     "fixed_target": null,
-    "selection_policy": "At most one genuinely independent bounded synthetic/development/read-only observable-level question per run; do not take MAIN-reserved top-k persistence work, H5 Independent Audit, H7 mechanism construction, consumed-line rescue, held-out TEST or one-way surfaces.",
     "evidentiary_status": "NON_EVIDENTIARY",
+    "selection_policy": "At most one genuinely independent bounded synthetic/development/read-only observable-level question per run; do not take MAIN cycle2, promoted structural-order Architecture follow-up, H5 Independent Audit, H7 mechanism construction, consumed-line rescue, TEST/one-way surfaces, or MAIN blockers.",
     "default_cycle_max": 3
   },
-  "sub_fallback": null,
-  "blocked_until": {
-    "FORMAL": "A fresh prospectively defined formal object clears identity/binding/privilege/positive-signal/integrity gates.",
-    "PRE_FORMAL_H7": "An independently arising native online/local responsibility-sensitive mechanism appears; no literature-driven successor engineering.",
-    "MAIN_ARCHITECTURE_CYCLE2": "Fresh Analyst review of cycle-1 architecture result.",
-    "SUB": "No global block; bounded Discovery remains allowed only under explicit independence/nonduplication/integrity rules."
-  },
-  "do_not_touch": [
-    "consumed identities",
-    "consumed STARTED/control refs",
-    "immutable evidence refs/tags/commits",
-    "preserved formal raw except independent allowed read-only audit",
-    "sealed/one-way TEST targets and scorers",
-    "canonical C19/PD01/NI01/H5 tokens/statistics",
-    "frozen protocols/statistical decisions",
-    "post-outcome retuning/rescoring/rescue",
-    "LP01 as formal evidence",
-    "legacy freeze refs",
-    "research PR merges",
-    "scientific formal workflow dispatch",
-    "scheduler definitions",
-    "retroactive import of Literature/Methodology/Discovery into consumed evidence"
-  ],
+  "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
   "outcome_contingencies": {
-    "root": "TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE1",
-    "PRE_START_BLOCKER_MECHANICAL": "MAIN may fix only outcome-independent harness/CI/binding defects without changing scientific protocol, then recheck.",
+    "root": "TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE2_REPLICATION",
+    "PRE_START_BLOCKER_MECHANICAL": "MAIN may fix only outcome-independent implementation/CI defects under unchanged scientific semantics, then exact-head CI recheck.",
     "PRE_START_SEMANTIC_OR_PROTOCOL_GAP": "STOP_FOR_ANALYST_REVIEW",
+    "INVALID_DEV_BINDING_OR_TEST_LEAKAGE": "DISCARD_NON_EVIDENTIARY_RESULT_AND_STOP",
+    "POST_EXECUTION_FAILURE_AFTER_DIAGNOSTICS_VISIBLE": "STOP_NO_SAME_RUN_RERUN_OR_REDESIGN",
     "RUN_VALID": {
-      "ARCHITECTURE_INCONCLUSIVE_LOW_TURNOVER": "STOP_NO_EPSILON_RESCUE",
-      "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL": "STOP_ARCHITECTURE_SIGNAL_ONLY_NO_SAME_RUN_PROMOTION",
-      "ORDINARY_ROUTER_BOUNDARY_EFFECT_ONLY": "STOP_REJECT_PERSISTENCE_AMPLIFICATION_CANDIDATE",
-      "MIXED_ARCHITECTURE_RESULT": "STOP_NO_SAME_RUN_REDESIGN"
+      "PERSISTENCE_SIGNAL_REPLICATED": "STOP_ELIGIBLE_FOR_FRESH_PRE_FORMAL_REVIEW_NOT_AUTOMATIC_PROMOTION",
+      "ARCHITECTURE_INCONCLUSIVE_LOW_TURNOVER": "STOP_HOLD_NO_EPSILON_RESCUE",
+      "ORDINARY_ROUTER_BOUNDARY_EFFECT_ONLY": "STOP_REJECT_MECHANISTIC_DISTINCTNESS_INTERPRETATION_RETAIN_ARCHITECTURE_CHARACTERIZATION",
+      "MIXED_ARCHITECTURE_RESULT": "STOP_HOLD_OR_FRESH_REFRAME_ONLY"
     },
-    "INVALID_DEV_BOUNDARY_OR_TEST_LEAKAGE": "DISCARD_NON_EVIDENTIARY_RESULT_AND_STOP",
     "FORMAL_PASS": "UNARMED_NO_FORMAL_OBJECT",
     "FORMAL_FAIL": "UNARMED_NO_FORMAL_OBJECT",
     "FORMAL_INCONCLUSIVE": "UNARMED_NO_FORMAL_OBJECT",
     "FORMAL_INVALID_EVIDENCE": "UNARMED_NO_FORMAL_OBJECT",
     "FORMAL_POST_START_FAILURE": "UNARMED_NO_FORMAL_OBJECT"
   },
+  "blocked_until": {
+    "TOPK_PRE_FORMAL": "Cycle-2 replication stops and a fresh Analyst defines a clear mechanistic/reduction question with prospective comparators/resources/privileges; architecture thresholds are not formal novelty thresholds.",
+    "STRUCTURAL_ORDER_ARCHITECTURE": "MAIN cycle 2 stops or a later Analyst explicitly reprioritizes and prospectively fixes its real-model DEV study.",
+    "FORMAL": "A fresh PRE_FORMAL object clears positive-signal, ordinary-reduction, exact binding, privilege/resource, and one-way integrity gates with a fresh unconsumed identity.",
+    "H5": "Independent Audit ownership only; no MAIN/SUB rerun or rescore.",
+    "H7": "An independently arising native responsibility-sensitive mechanism appears; no rescue/literature-driven construction.",
+    "NI01_WORLD_BLIND_SENSITIVITY": "Closed unless a pre-existing safe noncanonical sufficient-statistic surface exists without target exposure/evidence mutation; do not create a new one post-terminal."
+  },
+  "do_not_touch": [
+    "consumed identities and STARTED/control refs",
+    "immutable evidence refs/tags/commits",
+    "preserved formal raw except separately authorized read-only audit",
+    "sealed/one-way TEST targets and scorers",
+    "canonical C19/PD01/NI01/H5 terminal tokens/statistics",
+    "frozen protocols/statistical decisions",
+    "post-outcome rerun/retune/rescore/rescue",
+    "TEST in DISCOVERY/ARCHITECTURE_STUDY/PRE_FORMAL",
+    "identity/STARTED creation for non-evidentiary work",
+    "NI01 post-terminal world-blind sensitivity scoring",
+    "H5 rerun/rescore",
+    "LP01/H7 rescue-driven formalization",
+    "MAIN cycle2 blockers by SUB",
+    "promoted structural-order Architecture follow-up by SUB",
+    "legacy freeze refs",
+    "research PR merges",
+    "scheduler definitions",
+    "retroactive import of Literature/Audit/Methodology/Discovery/Architecture results into consumed evidence"
+  ],
+  "top_recommendation": "MAIN should run exactly one unchanged-contract DEV-only independent-seed cycle-2 replication of CAND-TOPK-PA-01 at model seed 42, then stop for Analyst regardless of result.",
+  "top_3": [
+    {"rank": 1, "owner": "MAIN", "action": "Run one fixed DEV-only CAND-TOPK-PA-01 cycle-2 independent-seed replication under unchanged cycle-1 metrics/thresholds and stop.", "information_value": "HIGH", "distance": "NEAR"},
+    {"rank": 2, "owner": "INDEPENDENT_AUDIT", "action": "Audit H5 one-way integrity, resource-accounting interpretation and claim boundary read-only without rerun/rescore.", "information_value": "HIGH", "distance": "NEAR"},
+    {"rank": 3, "owner": "SUB", "action": "Run at most one fresh bounded independent Discovery question; otherwise no-op with observable-level reason.", "information_value": "MEDIUM", "distance": "OPTIONAL"}
+  ],
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "c19-r1-revision-authority-official-v1",
@@ -234,28 +285,36 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "real_blockers": [
-    "No fresh formal object exists; FORMAL remains correctly empty.",
-    "Top-k architecture candidate has not yet been tested on the real DEV-trained recurrent model under the fixed cycle-1 protocol.",
+    "FORMAL has no fresh admitted object or identity.",
+    "Top-k PRE_FORMAL promotion requires independent replication plus a fresh mechanistic/reduction question; cycle-1 architecture signal alone is insufficient.",
+    "Structural-order architecture follow-up is not prospectively specified and MAIN capacity is reserved to top-k cycle2.",
     "H5 independent audit has not yet run.",
     "H7 has no independently arising native responsibility-sensitive mechanism."
   ],
-  "top_3": [
-    {"rank": 1, "owner": "MAIN", "action": "Run exactly one fixed DEV-only CAND-TOPK-PA-01 architecture cycle", "information_value": "HIGH", "distance": "NEAR"},
-    {"rank": 2, "owner": "INDEPENDENT_AUDIT", "action": "Audit H5 one-way/accounting/claim-boundary read-only", "information_value": "HIGH", "distance": "NEAR"},
-    {"rank": 3, "owner": "SUB", "action": "One bounded independent secondary Discovery question if safe; otherwise observable-level no-op", "information_value": "MEDIUM", "distance": "NEAR_OPTIONAL"}
-  ],
-  "top_recommendation": "PROMOTE_SUB_TOPK_DISCOVERY_TO_MAIN_ARCHITECTURE_STUDY_CYCLE1_WITH_FORMAL_HOLD_UNCHANGED",
-  "go_stop_1": {
-    "GO": "NON_EVIDENTIARY architecture cycle only on exact main/config/DEV binding with fixed perturbations, metrics, horizon and controls; record raw diagnostic rows before interpretation; no formal identity or STARTED.",
-    "STOP": "Any TEST/consumed-preserve need, any post-outcome protocol change, low-turnover gate, ordinary-boundary-only result, mixed result, or architecture signal. Every valid result returns to Analyst before cycle 2 or PRE_FORMAL."
+  "go_stop_number_1": {
+    "go": "NON_EVIDENTIARY_ARCHITECTURE_CYCLE2_ONLY",
+    "identity_freshness": "NOT_APPLICABLE_NO_FORMAL_IDENTITY_CREATED",
+    "source_protocol_package_input_binding": "research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909 + main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d + configs/experiments/phase2/main.json + DEV manifest only; seed 42 is the sole prospective scientific change",
+    "started_no_clobber": "UNARMED_NON_EVIDENTIARY",
+    "raw_before_interpretation": true,
+    "ci_review": "EXACT_HEAD_CI_GREEN_REQUIRED_BEFORE_DEV_EXECUTION; ANALYST_REVIEW_REQUIRED_AFTER_ANY_RESULT",
+    "scientific_falsifiers": ["total turnover <20 -> inconclusive/HOLD", "unchanged ordinary criterion -> reject mechanistic-distinctness interpretation", "signal fails to replicate -> mixed/HOLD", "TEST/leakage/binding violation -> invalid/discard"],
+    "stop": "Every valid or invalid result returns to Analyst; no same-run PRE_FORMAL/FORMAL promotion or outcome-responsive redesign."
   },
   "governance_advisory": {
-    "evidence_tags": 5,
-    "rulesets": 0,
+    "issue_139": "OPEN_CURRENT_FIVE_EVIDENCE_TAGS_RULESET_GAP",
+    "repository_ruleset_count": 0,
     "main_protected": false,
-    "legacy_freeze_branches": 13,
-    "open_prs": [148,149],
-    "steward_fresh_this_run": false
+    "legacy_freeze_branch_count": 13,
+    "pr_148": "OPEN_MERGEABLE_DEFER_PENDING_REVIEW_FIX",
+    "pr_149": "OPEN_MERGEABLE_DEFER_PENDING_REVIEW_FIX",
+    "outcome_independent_main_promotion_candidates": ["generic event/distribution primitives", "architecture-neutral comparator protocol shape", "snapshot/restore invariants", "descriptive resource accounting", "generic privilege/leakage/transcript guards", "generic one-way integrity helpers"],
+    "scientific_semantics_remain_research_local": true
   },
-  "utility_request": null
+  "utility_request_created": null,
+  "persistence_scope": {
+    "allowed_paths": ["analysis/orchestrator/latest.md", "analysis/orchestrator/state.json", "analysis/orchestrator/history/2026-09-19/1820.md"],
+    "force_push": false,
+    "scientific_execution_mutation": false
+  }
 }
