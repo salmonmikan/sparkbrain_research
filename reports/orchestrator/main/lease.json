@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260920T0115JST",
+  "run_id": "sparkbrain-main-primary-20260920T0215JST",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-20T01:15:06+09:00",
-  "heartbeat_at": "2026-09-20T01:25:42+09:00",
-  "analyst_commit": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
-  "active_branch": "research/main-temporal-batch-partition-arch-study-20260920",
+  "status": "RUNNING",
+  "started_at": "2026-09-20T02:15:05+09:00",
+  "heartbeat_at": "2026-09-20T02:15:05+09:00",
+  "analyst_commit": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
+  "active_branch": null,
   "active_identity": null,
   "active_step": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
-  "workflow_run_id": 35451528895,
-  "expected_next_action": "Await a fresh Evidence Analyst handoff that prospectively authorizes a genuinely fresh central Architecture/PRE_FORMAL/FORMAL object. Do not run Temporal cycle 2, reinterpret or rebind the completed cycle 1, manufacture a successor, or absorb SUB Discovery.",
+  "workflow_run_id": null,
+  "expected_next_action": "Reconcile the fresh Evidence Analyst HOLD, verify no fresh central MAIN object exists, persist the control-plane checkpoint, and await a prospectively authorized central Architecture/PRE_FORMAL/FORMAL object. Do not absorb SUB config-binding Discovery or reopen completed/rejected candidates.",
   "owner": "main"
 }
