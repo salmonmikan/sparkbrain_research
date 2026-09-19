@@ -1,16 +1,18 @@
 {
-  "timestamp": "2026-09-20T00:30:00+09:00",
+  "timestamp": "2026-09-20T03:30:00+09:00",
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot_jst": "00:30",
+  "schedule_slot_jst": "03:30",
   "schedule_inference_used": false,
   "control_plane_mailbox_semantics_respected": true,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_temporal_batch_architecture": "research/main-temporal-batch-partition-arch-study-20260920@7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+    "active_v05_topology_config_architecture": "research/main-v05-topology-config-contract-arch-study-20260920@4a15a91edb8e92b89cda960f533590f7b46a70f2",
+    "temporal_batch_partition_hold": "research/main-temporal-batch-partition-arch-study-20260920@7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
     "topk_hold": "research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601",
-    "sub_temporal_batch_discovery": "research/exploratory-sub-temporal-expectation-batch-partition-20260919@7aa5d681a400173c09c55603a459d63a6aaf7b43",
     "authoritative_evidence_tag_count": 5,
     "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
     "legacy_freeze_branch_count": 13,
     "fresh_formal_identity_observed": false,
     "fresh_started_observed": false,
@@ -18,136 +20,147 @@
     "fresh_formal_evidence_observed": false
   },
   "source_blobs_inspected": {
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v05/topology.py": "d9d292bdedc1288a929d1e53f03b9fc182b45a36",
     "src/sparkbrain/v04/brain.py": "25fd56b082168a9ea71f313023451858d00b6184",
-    "src/sparkbrain/v04/transduction.py": "1b88027fbcc0a1f8506fb644fd251c14039ef8a4"
+    "configs/v05_reference.json": "d3c82d0279c3bce09d76ddf0ad2df1ec74bc2d7f"
   },
-  "control_brain_commit_consumed": "c737fbcbcbceacdd906780fcb7f020658cd19422",
-  "evidence_analyst_commit_consumed": "862dd62cdce58f06e5c782b4b54212d93e40212e",
-  "orchestrator_report_branch_ref_observed": "afd8c8e5443ca8493ad39dd94f1f742284ab7d45",
-  "main_report_blob_consumed": "532c35bc12b492a209af13edd48f5fb4d0f2fc9d",
-  "main_state_blob_consumed": "15c575712ab949246bfee9b9e31bd754ea757a41",
-  "sub_report_blob_consumed": "52dc0aa5b754b4ddd9784cd97328725e64a53865",
+  "control_brain_commit_consumed": "84a2cbbb11f2820dcedd6fee53137d1de439de62",
+  "evidence_analyst_commit_consumed": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
+  "orchestrator_report_branch_ref_observed": "9b985e0bededad87ef33b0f9e9da694360582f5c",
+  "main_report_blob_consumed": "4cd5f127a00ff769647d3202e0275d09bf245ec3",
+  "main_state_blob_consumed": "d13bf0f1ab140ca998301e759f2695da3c73f50b",
+  "sub_report_blob_consumed": "aa8976547a38eb362893a05d8b46a3867708438c",
+  "sub_state_blob_consumed": "45f08a173ffaae9569ab2d91c143c15a32838049",
   "newest_role_history_consumed": [
-    "reports/orchestrator/history/2026-09-20/0023-main.md",
-    "reports/orchestrator/history/2026-09-19/2346-sub.md",
-    "reports/orchestrator/history/2026-09-19/2348-main.md"
+    "reports/orchestrator/history/2026-09-20/0324-main.md",
+    "reports/orchestrator/history/2026-09-20/0243-sub.md"
   ],
-  "prior_literature_handoff_tip_before_run": "fbb06db5913b8f48844ea1e21e0ce02be08f289c",
-  "prior_literature_latest_consumed": "2026-09-19T21:30:00+09:00",
+  "prior_literature_handoff_tip_before_run": "96dd0cd2fb9a932d29ddfecf7c791b122f6461bb",
+  "prior_literature_latest_consumed": "2026-09-20T00:30:00+09:00",
   "fresh_architecture_workflow_observed": {
-    "run_id": 35451528895,
-    "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+    "run_id": 35460876580,
+    "head": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
     "status": "completed",
     "conclusion": "success",
-    "artifact_id": 10587410697,
-    "artifact_digest": "sha256:22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
-    "mapped_outcome_from_artifact_summary": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
-    "raw_row_count": 6,
-    "raw_sha256": "71d4d8fddbe6b683b4ad93951c0f95fc1dfa5df74645743bfd39fba5b33c54ef",
+    "artifact_id": 10589564435,
+    "artifact_digest": "sha256:e73909be3e647566540a06a4da94829b4737c3de3a24c5e0e54c697245be1970",
+    "contract_sha256": "85539052afe90f86b47480e12d2d867d5a3ca912210b1d4708e5c8447c74fa1a",
+    "raw_sha256": "bb0af4fc22241f41108abf50e471eaf2f1f0ff4a5c94782779a858efbed02f51",
+    "mapped_outcome": "SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE",
+    "config_count": 5,
+    "unique_realized_topology_signature_count": 1,
+    "construction_error_count": 0,
+    "nondefault_warning_count": 0,
+    "explicit_contract_hit_count": 0,
+    "all_roundtrip_declared_config_preserved": true,
+    "all_roundtrip_realized_topology_preserved": true,
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "fresh_analyst_review_pending": true
+    "fresh_analyst_review_required": true
   },
   "genuinely_new_information": true,
   "current_repository_interpretation": {
     "new_formal_scientific_evidence": false,
-    "main_lane": "TEMPORAL_EXPECTATION_BATCH_PARTITION_ARCHITECTURE_STUDY_CYCLE1",
-    "temporal_batch_partition": "EXACT_HEAD_WORKFLOW_COMPLETED_FUNCTIONAL_BATCH_PARTITION_EFFECT_PENDING_FRESH_ANALYST_REVIEW",
-    "topk": "HOLD_UTILITY_MIXED_NO_CYCLE3_NO_PRE_FORMAL",
-    "assembly_prototype_lockin": "REJECT_NO_OR_LOW_SUPPORT",
+    "main_lane": "V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+    "v05_topology_config_contract": "EXACT_HEAD_TERMINAL_ARCHITECTURE_ARTIFACT_OBSERVED_SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE_PENDING_FRESH_ANALYST_REVIEW",
+    "temporal_batch_partition": "HOLD_CURRENT_OBJECT_COMPLETE",
+    "topk": "HOLD_NO_CYCLE3",
     "pre_formal": "EMPTY_HOLD",
     "formal": "EMPTY_HOLD"
   },
   "findings": [
     {
-      "id": "TEMPORAL_NON_ANTICIPATION_REDUCTION",
-      "summary": "If time_ms is intended as event/physical time and omission pulses are online prediction errors, allowing a future-dated row already present in the same API batch to alter whether an earlier omission is emitted is an ordinary non-anticipation/causality violation or explicit look-ahead privilege, not a novel cognitive mechanism.",
+      "id": "CONFIGURATION_OBSERVATIONAL_EQUIVALENCE_REDUCTION",
+      "summary": "Configurable-software studies show that many distinct configuration values can collapse into much smaller behavioral equivalence classes. The current five prospectively factorized width/height/receptor_rows settings collapse to one realized topology signature on the integrated v0.5 path, so these fields are currently non-operative with respect to topology construction rather than evidence of a new architecture mechanism.",
       "sources": [
-        "Classical causal/non-anticipative systems semantics: output at time t depends only on present/past inputs",
-        "SparkBrain main source blobs brain.py@25fd56b... and transduction.py@1b88027..."
+        "Reisner et al., Using Symbolic Evaluation to Understand Behavior in Configurable Software Systems, ICSE 2010, DOI 10.1145/1806799.1806864",
+        "Raue et al., Structural and practical identifiability analysis, Bioinformatics 2009, DOI 10.1093/bioinformatics/btp358"
       ],
-      "direct_applicability_confidence": "HIGH_AS_SEMANTIC_REDUCTION_IF_OMISSIONS_ARE_INTENDED_ONLINE_EVENT_TIME_OUTPUTS"
+      "direct_applicability_confidence": "HIGH_FOR_CONFIGURATION_BEHAVIOR_EQUIVALENCE; IDENTIFIABILITY_IS_CROSS_DOMAIN_ANALOGY_ONLY"
     },
     {
-      "id": "EVENT_TIME_PROGRESS_BASELINE",
-      "summary": "Dataflow/event-time models and discrete-event simulation separate modeled event time from processing/batching time and use explicit event-time progress/chronological scheduling. This supplies a mature ordinary reference for the EVENT_TIME_CAUSAL arm and for partition-invariance requirements.",
+      "id": "SILENT_CONFIGURATION_CONTRACT_FAILURE_REDUCTION",
+      "summary": "Misconfiguration research treats configuration as a first-class interface and identifies silent failures/error-prone constraints as ordinary system-design problems. Accepting and persisting non-default geometry-like values while the runtime ignores them and emits no warning is therefore naturally reduced to configuration validation/contract semantics.",
       "sources": [
-        "Akidau et al., The Dataflow Model, PVLDB 8(12), 2015, DOI 10.14778/2824032.2824076",
-        "Winter Simulation Conference literature on DES chronology and causal ordering"
+        "Xu et al., Do Not Blame Users for Misconfigurations, SOSP 2013, DOI 10.1145/2517349.2522727"
       ],
-      "direct_applicability_confidence": "HIGH_AS_ARCHITECTURE_SEMANTICS_BASELINE"
+      "direct_applicability_confidence": "HIGH_AS_ARCHITECTURE_AND_API_REDUCTION"
     },
     {
-      "id": "DETERMINISTIC_STREAM_PARTITION_INVARIANCE_BASELINE",
-      "summary": "Kahn-style deterministic stream models establish the broader principle that transport/scheduling choices need not alter logical outputs. For SparkBrain, if API chunking is not a modeled input, legal repartitioning of the same timestamped stream should be a metamorphic invariance property.",
+      "id": "CONFIGURATION_INTERACTION_TESTING_BASELINE",
+      "summary": "Configuration-option effects and interactions are a mature testing problem. The current baseline plus width-only, height-only, receptor-only and combined matrix already provides a bounded factorized check; because all five map to one topology signature and source localization is explicit, expanding the same object would mainly re-measure the same omission. Fresh interaction testing is appropriate only after an intentional operative binding exists.",
       "sources": [
-        "Gonnord et al., A Survey on Parallelism and Determinism, ACM Computing Surveys 55(10), 2023, DOI 10.1145/3564529",
-        "Gilles Kahn, The Semantics of a Simple Language for Parallel Programming, 1974"
+        "Nguyen & Nguyen, GenTree, ICSE 2021",
+        "Luo et al., AutoCCAG, ICSE 2021, DOI 10.1109/ICSE43902.2021.00030"
       ],
-      "direct_applicability_confidence": "HIGH_AS_SEMANTIC_TEST; DIRECT_KPN_EQUIVALENCE_NOT_CLAIMED"
+      "direct_applicability_confidence": "HIGH_AS_TESTING_METHODOLOGY"
     },
     {
-      "id": "OMISSION_EVENT_TIME_SCIENTIFIC_BAR",
-      "summary": "Current omission-response neuroscience treats omission activity as tied to the expected time of a missing event and distinguishes ordinary local regularity mechanisms from richer model-based prediction. This makes event-time deadline adjudication scientifically meaningful while providing no novelty rescue for the batching effect.",
+      "id": "CHECKPOINT_DECLARED_REALIZED_REPRODUCIBILITY_RISK",
+      "summary": "Reproducibility literature stresses robust reporting and experiment context; 2026 ML logging research reports practitioner concern about missing hyperparameter/context logging. Inference for SparkBrain: faithfully persisting declared geometry values is not sufficient if those values do not govern the realized topology; checkpoint semantics should make compatibility-only or operative binding explicit.",
       "sources": [
-        "Yaron et al., Nothing Really Matters: What Omission Responses Reveal About the Predictive Brain, European Journal of Neuroscience 63(10), 2026, DOI 10.1111/ejn.70566"
+        "Pineau et al., Improving Reproducibility in Machine Learning Research, JMLR 2021",
+        "Foalem et al., Empirical Characterization of Logging Smells in Machine Learning Code, arXiv:2603.23769, 2026 preprint"
       ],
-      "direct_applicability_confidence": "MODERATE_TO_HIGH_FOR_SCIENTIFIC_TIMING_BAR; NOT_A_DIRECT_MECHANISTIC_EQUIVALENCE"
+      "direct_applicability_confidence": "MODERATE_TO_HIGH_FOR_REPRODUCIBILITY_BAR; EXACT_SPARKBRAIN_FAILURE_MODE_IS_INFERENCE"
     }
   ],
   "affected_lines": [
-    "CAND_TEMPORAL_BATCH_PARTITION_01",
-    "TEMPORAL_EXPECTATION_V04",
-    "ARCHITECTURE_REPRODUCIBILITY",
-    "EVENT_TIME_CAUSALITY",
+    "CAND_V05_TOPOLOGY_CONFIG_BINDING_01",
+    "V05_CONFIGURATION_SEMANTICS",
+    "CHECKPOINT_REPRODUCIBILITY",
+    "ARCHITECTURE_API_CORRECTNESS",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "non-anticipative event-time causal scheduling",
-    "event-time versus processing-time separation with explicit progress/watermark semantics",
-    "partition-invariance metamorphic testing over the same timestamped stream",
-    "chronological discrete-event execution with fixed equal-time ordering",
-    "omission-at-expected-time semantics"
+    "configuration-option liveness/effect mapping",
+    "configuration equivalence classes by realized topology signature",
+    "explicit supported-value constraint validation or compatibility-only declaration",
+    "fresh combinatorial interaction testing only after intentional operative binding",
+    "checkpoint declared-versus-realized semantics consistency"
   ],
   "confidence": {
     "external_prior_art_exists": "HIGH",
-    "novelty_bar_impact": "HIGH_FOR_TEMPORAL_BATCH_PARTITION_LINE",
-    "direct_equivalence_to_sparkbrain": "NOT_CLAIMED",
+    "novelty_bar_impact": "HIGH_FOR_V05_CONFIG_CONTRACT_LINE",
+    "direct_equivalence_to_sparkbrain": "CONFIGURATION_REDUCTION_HIGH; IDENTIFIABILITY_AND_REPRODUCIBILITY_ANALOGIES_QUALIFIED",
     "supports_architecture_correctness_interpretation": "YES",
     "supports_preformal_or_formal_promotion": "NO",
     "supports_outcome_responsive_cycle2": "NO"
   },
-  "novelty_or_reduction_impact": "STRONG_ORDINARY_ARCHITECTURE_REDUCTION: the observed batching sensitivity is naturally explained by non-anticipation, event-time progress and deterministic stream-semantics failures. Future-dated rows in one host-language batch can update expectation state before an earlier omission deadline is adjudicated. The completed Architecture artifact therefore supports an API/reproducibility issue, not a new cognitive principle.",
+  "novelty_or_reduction_impact": "STRONG_ORDINARY_ARCHITECTURE_REDUCTION: the completed silent declared/realized geometry divergence is naturally explained by inactive configuration parameters, configuration-contract validation failures, and reproducibility/provenance semantics. It is useful Architecture/API correctness information and does not support mechanistic or computational-principle novelty.",
+  "audit_classification": null,
   "prospective_baselines_or_discriminators": [
-    "explicit non-anticipative event-time scheduler/reference",
-    "partition-invariance metamorphic property over the same timestamped stream",
-    "discrete-event chronological processing with prospectively fixed equal-time ordering",
-    "event-time versus processing-time separation with an explicit progress/watermark concept",
-    "omission-at-expected-time analysis that forbids retrospective suppression by later event-time observations"
+    "configuration-option liveness/effect mapping from declared field to realized topology",
+    "explicit constraint/validation contract for supported versus compatibility-only values",
+    "configuration-equivalence classes based on realized topology signatures",
+    "fresh t-wise/interaction testing only after fields become intentionally operative",
+    "checkpoint schema/provenance check that declared config and realized topology semantics agree"
   ],
   "questions_for_evidence_analyst": [
-    "If the completed exact-head artifact is accepted, classify FUNCTIONAL_BATCH_PARTITION_EFFECT as Architecture/API causality-reproducibility evidence rather than mechanism evidence?",
-    "Make partition invariance under fixed event-time history an explicit future correctness invariant for temporal expectations?",
-    "Keep EVENT_TIME_CAUSAL as a stronger semantic reference and require any atomic-batch alternative to state its look-ahead privilege explicitly?"
+    "Accept the exact-head terminal Architecture label SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE and stop the current object for semantic/engineering review?",
+    "Treat width/height/receptor_rows as currently non-operative for topology construction unless an explicit supported contract says otherwise?",
+    "Require any future implementation object to prospectively choose one semantic policy: operative binding, explicit rejection, or documented compatibility metadata, rather than infer the answer from this result?"
   ],
   "questions_for_control_brain": [
-    "Add non-anticipation and event-time/processing-time separation to the ordinary temporal-expectation reduction ladder?",
-    "Treat batching boundaries as non-semantic by default unless an API contract says otherwise?",
-    "Keep PRE_FORMAL/FORMAL empty for this line and require fresh Analyst authority before any further Architecture cycle or implementation change?"
+    "Keep this line at Architecture/API correctness and out of PRE_FORMAL/FORMAL novelty accounting?",
+    "Add configuration-option liveness plus declared-versus-realized checkpoint consistency to the ordinary architecture reduction/reproducibility checklist?",
+    "Avoid a same-object cycle 2 or broad config fuzzing because source localization plus the fixed five-config result already resolves the current question?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
-    "CAND-TEMPORAL-BATCH-PARTITION-01 cycle-1 prospective contract, exact-head result and mapped label; no rerun, retune, relabel or outcome-responsive cycle-2 extension before fresh review",
-    "completed CAND-TOPK-PA-01 Architecture cycles/HOLD boundary; no cycle-3 rescue",
-    "rejected Assembly and Structural current questions; no literature-driven rescue",
+    "CAND-V05-TOPOLOGY-CONFIG-BINDING-01 prospective cycle-1 contract, exact research head, raw artifact, mapped outcome and stop boundary",
+    "no outcome-responsive implementation fix, cycle 2, extra configuration search, PRE_FORMAL or FORMAL promotion before fresh review",
+    "completed Temporal and Top-k current-object HOLD boundaries and rejected Assembly/Structural current questions",
     "no official TEST, new formal identity/STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
   ],
   "utility_request_created": null,
-  "existing_relevant_utility_request": "SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT",
   "legacy_shared_latest_state_updated": false,
   "persistence": {
-    "history_path": "analysis/external_research_audit/history/2026-09-20/0030-LITERATURE_REDUCTION_SCOUT.md",
-    "history_commit": "c10e915532885f96a47804c1d05031a552714079",
-    "latest_commit": "fa2c35656b92a2bb958682e2ba1a294453105d96"
+    "history_path": "analysis/external_research_audit/history/2026-09-20/0330-LITERATURE_REDUCTION_SCOUT.md",
+    "history_commit": "3c3071a72d42ef361047d87d9416abfd2f250c4d",
+    "latest_commit": "0bea84ec479ccbaa8ed74ec1819ddc9e58956dfb",
+    "state_commit": "this update",
+    "force_push_used": false
   }
 }
