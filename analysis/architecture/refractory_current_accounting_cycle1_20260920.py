@@ -70,6 +70,22 @@ def named_assignment(node: ast.AST, target: str) -> ast.Assign | None:
     return None
 
 
+def normalized_full_line_comment_blocks(source: str) -> tuple[str, ...]:
+    blocks: list[str] = []
+    current: list[str] = []
+    for line in source.splitlines():
+        stripped = line.lstrip()
+        if stripped.startswith("#"):
+            current.append(stripped[1:].strip())
+            continue
+        if current:
+            blocks.append(" ".join(current))
+            current = []
+    if current:
+        blocks.append(" ".join(current))
+    return tuple(blocks)
+
+
 def machine_facts(contract: dict[str, Any]) -> dict[str, bool]:
     source = bound_text(contract, "src/sparkbrain/v04/field.py")
     tree = ast.parse(source)
@@ -131,6 +147,7 @@ def machine_facts(contract: dict[str, Any]) -> dict[str, bool]:
         negative_assign
     )
     source_comment = contract["supported_contract_scope"]["bound_source_comment"]
+    normalized_comments = normalized_full_line_comment_blocks(source)
 
     return {
         "deliver_group_groups_same_time_arrivals_by_target": same_time_grouping,
@@ -141,7 +158,9 @@ def machine_facts(contract: dict[str, Any]) -> dict[str, bool]:
         "schedule_arrival_accepts_signed_current_without_sign_rejection": (
             not schedule_current_sign_checks
         ),
-        "bound_positive_drive_ignored_comment_present": source_comment in source,
+        "bound_positive_drive_ignored_comment_present": (
+            source_comment in normalized_comments
+        ),
     }
 
 
