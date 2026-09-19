@@ -1,4 +1,4 @@
-# SparkBrain Literature Reduction Scout — 2026-09-20 00:30 JST
+# SparkBrain Literature Reduction Scout — 2026-09-20 03:30 JST
 
 ## Role
 
@@ -6,59 +6,57 @@
 
 ## Repository and control-plane state
 
-Repository state was independently re-fetched before reading control-plane interpretation. `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; exactly five authoritative `evidence/*` tags remain; tag-based `formal/*` remains empty; the 13 legacy `freeze/*` branches remain untouched. No fresh FORMAL identity, STARTED, official TEST authority, immutable formal preserve/scorer/evidence ref, or merge into `main` was observed.
+Repository state was independently re-fetched before consuming the designated control-plane mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; exactly five authoritative `evidence/*` tags remain and no tag-based `formal/*`, `sealed/*`, or `freeze/*` state was observed. The current lower-funnel object is `CAND-V05-TOPOLOGY-CONFIG-BINDING-01` on `research/main-v05-topology-config-contract-arch-study-20260920@4a15a91edb8e92b89cda960f533590f7b46a70f2` under Evidence Analyst authority `9bb852bc1461755814d6a9a0e7ea561f1858a0da`.
 
-The newest active lower-funnel object is `CAND-TEMPORAL-BATCH-PARTITION-01` on `research/main-temporal-batch-partition-arch-study-20260920@7fa4391bbf34cf25e10b708ce64acddf07bf7f42`. Evidence Analyst `862dd62cdce58f06e5c782b4b54212d93e40212e` promoted the independent SUB batching Discovery to one prospectively bound NON_EVIDENTIARY Architecture cycle and kept PRE_FORMAL/FORMAL empty/HOLD. MAIN report/state on `ops/orchestrator-run-report` was consumed only at the designated MAIN paths; SUB was consumed only at its designated SUB paths/history. The `ops/*` mailboxes were not treated as repository snapshots.
+The designated Control Brain, Evidence Analyst, MAIN, SUB, and role-suffixed report histories were read only from their mailbox paths; no `ops/*` branch was treated as a repository snapshot. Prior role-specific Literature state through 00:30 JST was read before searching, so the earlier temporal non-anticipation/event-time, Top-k, reservoir, causal-credit, provenance, eligibility, WTA, graph-rewrite, and other already-covered reductions are not recycled here.
 
-Since those handoffs were written, exact-head workflow `35451528895` has completed successfully on the fixed research head. The artifact is bound to the prospective contract and maps the six raw rows to `FUNCTIONAL_BATCH_PARTITION_EFFECT`: `noisy_motif_stream_defaults` differs in both omission schedule and isolated downstream replay across partition arms, while `repetition_train_defaults` is invariant. This remains NON_EVIDENTIARY Architecture information pending fresh Evidence Analyst/orchestrator review; this scout does not promote or relabel it.
+A fresh read-only collection of exact-head workflow `35460876580` shows it completed successfully after the pre-diagnostic lint-only repair. Artifact `10589564435` (`sha256:e73909be3e647566540a06a4da94829b4737c3de3a24c5e0e54c697245be1970`) is bound to exact head `4a15a91edb8e92b89cda960f533590f7b46a70f2`. Its immutable run artifact maps the already-fixed cycle-1 contract to `SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE`: all five prospectively fixed configurations are accepted with zero construction errors/warnings; all share one realized topology signature; no explicit supported fixed-topology contract is found; and checkpoint round-trip preserves both the varying declared config values and the identical realized topology. This remains NON_EVIDENTIARY Architecture information and must stop for fresh Evidence Analyst review; this scout does not relabel or extend the object.
 
-The current source mechanism is explicit. `IntegratedV04Brain.ingest_pulses()` sorts all rows in the supplied API batch, schedules them, and calls `TemporalExpectationTracker.observe()` for every non-omission row before the tracker is polled through the batch end. `observe()` updates `last_time`, the learned interval, observation count, and clears the emitted-deadline marker. Therefore a later event-time row already present in the same Python call can change whether an omission at an earlier event time is emitted. This is the active architecture line to which the literature search below is targeted.
-
-Prior Literature history through 21:30 JST was read first. Previously covered reductions — PSR/epsilon-machines, reservoir/fading memory, automata extraction, provenance/actual causality, Petri/event structures, dynamic slicing, eligibility/three-factor/e-prop/GLE/SAL, cascading traces, diffusive neuromodulation, RUDDER/TVT, COMA/C3, stochastic responsibility, hard Top-k switching, non-normal transient gain, graph-rewrite confluence, border-collision/basin selection, WTA hysteresis and discontinuity-supported piecewise contraction — are not recycled here.
+Current source independently explains the result. `V05BrainConfig` exposes `width`, `height`, and `receptor_rows`, copies them into the nested `V04BrainConfig`, and serializes them in `state_dict()`, but `IntegratedV05Brain` supplies `IntegratedV04Brain` an explicit `layered_reservoir_topology(seed=...)` without forwarding those fields. The topology constructor defaults to 16 receptors and an 8x6 reservoir. `load_checkpoint()` reconstructs the declared v0.5 config and then restores the saved v0.4 field, so a checkpoint can faithfully preserve both a non-default declared geometry tuple and the same fixed realized field.
 
 ## Genuinely new external literature findings
 
-### 1. The batching effect is naturally reduced to non-anticipation / causal-system semantics
+### 1. The five-config collapse is an ordinary inactive-configuration / observational-equivalence phenomenon, not architecture novelty
 
-Classical systems theory defines a causal or non-anticipative system so that output at time `t` can depend only on inputs at or before `t`, not on a future input. Under that standard, an online omission generated at an expected event time should not be suppressed merely because an event at a later timestamp was already handed to the implementation in the same host-language batch.
+Reisner et al. (ICSE 2010, DOI `10.1145/1806799.1806864`) used symbolic evaluation to ask how run-time configuration options affect program behavior and found that apparently huge configuration spaces often collapse into much smaller groups of behaviorally equivalent configurations. That is a very direct ordinary reference for the current v0.5 object: the five prospectively factorized values differ at the declared interface but collapse to one realized topology signature on the current construction path.
 
-This does **not** prove that SparkBrain is mathematically required to use that semantics; an API is free to define a whole batch as simultaneously available information. But if `time_ms` is intended to represent physical/event time and omission pulses are interpreted as online prediction errors, the current observe-all-then-poll behavior is better described as **batch-level look-ahead privilege** than as a novel predictive mechanism.
+A useful cross-domain analogy comes from structural identifiability. Raue et al. (Bioinformatics 2009, DOI `10.1093/bioinformatics/btp358`) and later identifiability literature formalize the problem of parameters that cannot be uniquely recovered from observed behavior; a particularly strong failure is when parameter variation leaves the relevant model output unchanged. Direct mathematical equivalence is not claimed here, but the diagnostic principle transfers cleanly: before treating `width`, `height`, or `receptor_rows` as operative scientific parameters, demonstrate a prospectively specified causal effect on the realized topology or an explicitly declared compatibility-only semantics.
 
-**Reduction impact for `CAND-TEMPORAL-BATCH-PARTITION-01`:** the strongest ordinary explanation is not a new cognitive state interaction. It is that the API currently lets future-dated rows update predictor state before earlier deadlines are adjudicated. A scientifically meaningful reference should therefore make the information filtration explicit: at event time `t`, only the prefix with timestamps `<= t` is available.
+**Reduction impact:** under the current integrated path, these fields are best treated as non-operative/inactive with respect to topology construction. The Architecture value is API truthfulness and reproducibility, not a new computational mechanism.
 
-### 2. Event-time / watermark models provide a mature ordinary architecture for separating logical time from processing batches
+### 2. Silent acceptance of non-operative configuration has strong prior art as a configuration vulnerability / contract failure
 
-Akidau et al.'s Dataflow Model explicitly separates **event time** (when events occur in the modeled domain) from **processing time** (when the implementation happens to process them), and uses watermarks/triggers to reason about progress through event time. The same conceptual separation is exactly what the current Architecture object needs: host-language chunking should not silently redefine the modeled temporal history.
+Xu et al., *Do Not Blame Users for Misconfigurations* (SOSP 2013, DOI `10.1145/2517349.2522727`), treat configuration as a first-class interface problem and show that bad reactions to configuration errors include silent failures. Their Spex work infers configuration constraints from source and found hundreds of misconfiguration vulnerabilities and error-prone constraints across real systems. The broader configuration-error literature likewise emphasizes validating parameter values/relationships before they silently create incorrect behavior.
 
-Discrete-event simulation makes the same point from a different tradition: events are processed according to their simulation timestamps so that the engine reproduces a chronology and preserves causal order; future events remain queued until simulation time reaches them.
+The current v0.5 result is narrower than a production outage, but the structural pattern is ordinary: exported dimension-like parameters are accepted and persisted, while the current runtime construction path ignores them and emits no warning. The clean prospective alternatives are therefore engineering semantics: either (a) explicitly declare the fields compatibility metadata/non-operative for v0.5, (b) reject unsupported non-default values, or (c) in a fresh implementation decision, bind them to the topology constructor. Which option is correct is a product/API decision, not something this outcome can choose retrospectively.
 
-**Reduction impact:** `EVENT_TIME_CAUSAL` is not merely a convenient ad-hoc comparator. It corresponds to a well-established ordinary execution semantics. For future architecture correctness, a strong invariant is **partition invariance under fixed event-time history**: if two calls present the same timestamped stream in the same event-time order, changing only API chunk boundaries should not change omission history unless the API contract explicitly declares boundaries to be semantic inputs.
+**Reduction impact:** `SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE` should remain an Architecture/configuration-contract finding. It is strongly subsumed by ordinary configuration-validation and interface-design concerns.
 
-### 3. Deterministic dataflow/process-network theory sharpens the correct metamorphic test
+### 3. The current factorized matrix is already close to the right ordinary configuration-testing methodology; expanding the same object would add little
 
-Kahn process networks are a classic example of deterministic stream semantics: under their restrictions, a fixed input stream determines the output stream independently of process execution timing/scheduling. Modern surveys of deterministic parallel models retain this as a canonical construction.
+Configurable-software research has long treated option effects and interactions as a testing problem. Reisner et al. directly map option values to behavior; GenTree (ICSE 2021) learns logical interactions between configuration settings and program behavior; constrained covering-array work such as AutoCCAG (ICSE 2021, DOI `10.1109/ICSE43902.2021.00030`) exists because exhaustive configuration testing is usually infeasible and interaction coverage is the standard alternative.
 
-SparkBrain's temporal expectation tracker is not a Kahn network, so direct equivalence is not claimed. The useful transfer is the **semantic test**: if batch boundaries are intended only as transport/scheduling choices rather than modeled observations, then the same logical input stream should yield the same logical output stream across legal partitions. A chunking-sensitive output means either (a) chunk boundaries are part of the model and must be documented as such, or (b) the implementation violates the intended stream semantics.
+For the present object, the prospectively fixed baseline plus width-only, height-only, receptor-only, and combined configurations already separates first-order field effects and one combined interaction. Because all five configurations map to exactly one topology signature and the source path shows why, a same-object combinatorial expansion would mostly re-measure an already-localized wiring omission. If a future version intentionally makes these fields operative, interaction testing becomes useful again and should be a fresh prospective correctness object.
 
-This suggests a cleaner prospective architecture property than adding more hand-picked split points: a bounded metamorphic partition-invariance test over the same fixed timestamped pulse stream, with equal-time groups kept atomic or given a prospectively specified microstep order.
+**Reduction impact:** no cycle-2 rescue or broader fuzzing is justified from this result. The next decision is semantic ownership/validation, not more measurements on the unchanged constructor.
 
-### 4. 2026 omission-response neuroscience raises the bar for treating omission timing as an event-time phenomenon, but does not rescue novelty
+### 4. Checkpoint reproducibility requires configuration metadata to describe the operative experiment, not merely be serialized
 
-A 2026 European Journal of Neuroscience review synthesizes omission paradigms across species and reports that anticipatory/omission-related neural activity often peaks around the expected time of the missing event; the review explicitly separates simpler local regularity mechanisms from richer model-based prediction. Recent 2026 omission studies likewise treat responses as time-locked to when a stimulus was expected but absent.
+Pineau et al. (JMLR 2021) frame reproducibility as obtaining comparable results from the same code/data and emphasize robust experimental workflows and complete reporting. A 2026 empirical study of 444 ML repositories by Foalem et al. (`arXiv:2603.23769`) reports that practitioners view missing hyperparameter logging and context-poor logging as materially harmful to reproducibility and trustworthiness.
 
-**Reduction impact:** this literature strengthens the scientific relevance of evaluating SparkBrain omissions at the event-time deadline rather than retrospectively after all future rows in a batch have been observed. It does **not** support novelty. On the contrary, temporally precise omission responses already have multiple ordinary neural explanations — local adaptation/resonance and model-based prediction among them — so the present batching phenomenon should remain an API/event-time correctness question, not a computational-principle claim.
+Those papers do not directly study SparkBrain's exact failure mode, so the following is an inference rather than an external fact: faithfully serializing a declared configuration is insufficient when the declared parameter does not govern the realized object. In the current checkpoint path, different declared geometry tuples survive round-trip while the same realized topology survives too. That creates a provenance ambiguity unless the checkpoint schema or documentation makes the compatibility-only semantics explicit or records/validates the realized topology contract.
+
+**Reduction impact:** this strengthens the Architecture/reproducibility interpretation, but does not support PRE_FORMAL or FORMAL promotion. Any schema/versioning or validation change is a separate fresh engineering decision.
 
 ## Inference for SparkBrain
 
-The new Architecture artifact is valuable because it shows that the API-level temporal semantics can propagate beyond the tracker into fixed downstream replay on at least one prospectively chosen repository-reference family. But the external literature makes the interpretation narrower, not broader:
+The exact-head Architecture result is useful and should be retained exactly as produced, but the literature sharply limits its scientific meaning. The current line is best summarized as:
 
-`same event-time pulse history -> host-language partition choice -> different predictor state before an earlier deadline -> different omission stream -> downstream divergence`
+`public geometry-like config -> accepted + checkpoint-persisted -> explicit fixed layered topology constructor bypasses those fields -> multiple declared configs collapse to one realized topology -> checkpoint round-trip preserves the declared/realized mismatch`
 
-is an ordinary **causality / event-time execution semantics** failure mode.
+That chain is well explained by ordinary configurable-software semantics, validation, and reproducibility concerns. It is not evidence for a new cognitive or dynamical mechanism.
 
-If fresh Analyst review retains the Architecture concern, the highest-value next engineering/scientific invariant is not another success-seeking cycle. It is a fresh prospective statement that call partitioning is non-semantic and therefore outputs must be invariant to legal repartitioning of the same timestamped stream, with event-time progress and equal-timestamp ordering fixed explicitly. If the product/API instead intentionally treats a whole call as an atomic observation batch, that must be stated explicitly and omission pulses from within that batch should not be interpreted as real-time prediction errors without qualification.
-
-No new Utility request is created. `SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT` already covers whether supported callsites exercise deadline-straddling batches, and the just-completed Architecture cycle already contains an event-time-causal reference. Creating a broader partition-fuzz request before fresh Analyst review would be an outcome-responsive extension of the same object.
+The highest-value next step is fresh Evidence Analyst interpretation of the completed terminal Architecture artifact. Do not extend the same object to additional configs, implement a fix, or infer the intended geometry formula from the observed mismatch. No Utility request is created because the fixed cycle has already produced its terminal diagnostic and the contract explicitly requires fresh Analyst review before any successor; an extra request now would be outcome-responsive duplication.
 
 ## Knowledge-flow contract
 
@@ -66,46 +64,49 @@ No new Utility request is created. `SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCH
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - CAND_TEMPORAL_BATCH_PARTITION_01
-  - TEMPORAL_EXPECTATION_V04
-  - ARCHITECTURE_REPRODUCIBILITY
-  - EVENT_TIME_CAUSALITY
+  - CAND_V05_TOPOLOGY_CONFIG_BINDING_01
+  - V05_CONFIGURATION_SEMANTICS
+  - CHECKPOINT_REPRODUCIBILITY
+  - ARCHITECTURE_API_CORRECTNESS
   - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
   STRONG_ORDINARY_ARCHITECTURE_REDUCTION.
-  The observed batching sensitivity is naturally explained by non-anticipation,
-  event-time progress, and deterministic stream-semantics failures: future-dated
-  rows in the same host-language batch can update expectation state before an
-  earlier omission deadline is adjudicated. The completed Architecture artifact
-  therefore supports an API/reproducibility issue, not a new cognitive principle.
+  The completed silent declared/realized geometry divergence is naturally
+  explained by inactive configuration parameters, configuration-contract
+  validation failures, and reproducibility/provenance semantics. The result is
+  valuable Architecture/API correctness information but supplies no mechanistic
+  or computational-principle novelty.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - explicit non-anticipative event-time scheduler/reference
-  - partition-invariance metamorphic property over the same timestamped stream
-  - discrete-event chronological processing with prospectively fixed equal-time ordering
-  - event-time versus processing-time separation with an explicit progress/watermark concept
-  - omission-at-expected-time analysis; do not let later event-time observations retrospectively suppress earlier online omissions
+  - configuration-option liveness/effect mapping from declared field to realized topology
+  - explicit constraint/validation contract for supported versus compatibility-only values
+  - configuration-equivalence classes based on realized topology signatures
+  - fresh t-wise/interaction testing only after fields become intentionally operative
+  - checkpoint schema/provenance check that declared config and realized topology semantics agree
 questions_for_evidence_analyst:
-  - If the completed exact-head artifact is accepted, classify FUNCTIONAL_BATCH_PARTITION_EFFECT as Architecture/API causality-reproducibility evidence rather than mechanism evidence?
-  - Make partition invariance under fixed event-time history an explicit future correctness invariant for temporal expectations?
-  - Keep EVENT_TIME_CAUSAL as a stronger semantic reference and require any atomic-batch alternative to state its look-ahead privilege explicitly?
+  - Accept the exact-head terminal Architecture label SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE and stop the current object for semantic/engineering review?
+  - Treat width/height/receptor_rows as currently non-operative for topology construction unless an explicit supported contract says otherwise?
+  - Require any future implementation object to prospectively choose one semantic policy: operative binding, explicit rejection, or documented compatibility metadata, rather than infer the answer from this result?
 questions_for_control_brain:
-  - Add non-anticipation and event-time/processing-time separation to the ordinary temporal-expectation reduction ladder?
-  - Treat batching boundaries as non-semantic by default unless an API contract says otherwise?
-  - Keep PRE_FORMAL/FORMAL empty for this line and require fresh Analyst authority before any further Architecture cycle or implementation change?
+  - Keep this line at Architecture/API correctness and out of PRE_FORMAL/FORMAL novelty accounting?
+  - Add configuration-option liveness plus declared-versus-realized checkpoint consistency to the ordinary architecture reduction/reproducibility checklist?
+  - Avoid a same-object cycle 2 or broad config fuzzing because source localization plus the fixed five-config result already resolves the current question?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
   - all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs
-  - CAND-TEMPORAL-BATCH-PARTITION-01 cycle-1 prospective contract, exact-head result and mapped label; no rerun, retune, relabel or outcome-responsive cycle-2 extension before fresh review
-  - completed CAND-TOPK-PA-01 Architecture cycles/HOLD boundary; no cycle-3 rescue
-  - rejected Assembly and Structural current questions; no literature-driven rescue
+  - CAND-V05-TOPOLOGY-CONFIG-BINDING-01 prospective cycle-1 contract, exact research head, raw artifact, mapped outcome and stop boundary
+  - no outcome-responsive implementation fix, cycle 2, extra configuration search, PRE_FORMAL or FORMAL promotion before fresh review
+  - completed Temporal and Top-k current-object HOLD boundaries and rejected Assembly/Structural current questions
   - no official TEST, new formal identity/STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change
 utility_request_created: null
 ```
 
 ## Sources
 
-- Akidau et al., *The Dataflow Model: A Practical Approach to Balancing Correctness, Latency, and Cost in Massive-Scale, Unbounded, Out-of-Order Data Processing*, PVLDB 8(12), 2015, DOI 10.14778/2824032.2824076.
-- Gonnord, Henrio, Morel & Radanne, *A Survey on Parallelism and Determinism*, ACM Computing Surveys 55(10), 2023, DOI 10.1145/3564529; Kahn process-network discussion and the 1974 Kahn semantics lineage.
-- Winter Simulation Conference literature on discrete-event simulation causal ordering and chronological timestamp processing, including Jefferson-style causal ordering discussions.
-- Yaron, Shiramatsu, Takahashi & Chao, *“Nothing” Really Matters: What Omission Responses Reveal About the Predictive Brain*, European Journal of Neuroscience 63(10), 2026, DOI 10.1111/ejn.70566.
+- Reisner, Song, Ma, Foster & Porter, *Using Symbolic Evaluation to Understand Behavior in Configurable Software Systems*, ICSE 2010, DOI `10.1145/1806799.1806864`.
+- Raue et al., *Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood*, Bioinformatics 25(15), 2009, DOI `10.1093/bioinformatics/btp358`.
+- Xu et al., *Do Not Blame Users for Misconfigurations*, SOSP 2013, DOI `10.1145/2517349.2522727`.
+- Nguyen & Nguyen, *GenTree: Using Decision Trees to Learn Interactions for Configurable Software*, ICSE 2021.
+- Luo et al., *AutoCCAG: An Automated Approach to Constrained Covering Array Generation*, ICSE 2021, DOI `10.1109/ICSE43902.2021.00030`.
+- Pineau et al., *Improving Reproducibility in Machine Learning Research*, JMLR 22(164), 2021.
+- Foalem et al., *Empirical Characterization of Logging Smells in Machine Learning Code*, arXiv:2603.23769, 2026 (preprint).
