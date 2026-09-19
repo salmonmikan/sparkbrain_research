@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-09-19T17:35:00+09:00",
+  "timestamp": "2026-09-19T18:16:20+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "analyst_commit": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
   "research_layer": "ARCHITECTURE_STUDY",
   "current_lane": "TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE1",
-  "current_phase": "VALID_CYCLE1_OUTCOME_STOPPED_FOR_ANALYST_REVIEW",
+  "current_phase": "VALID_CYCLE1_OUTCOME_AWAITING_FRESH_ANALYST_REVIEW",
   "candidate_question": "CAND-TOPK-PA-01: on fixed DEV replay, does hard top-k selected-set turnover coupled with persistent module state produce delayed state/output amplification beyond the existing no_persistent_state control?",
   "exploration_cycle_count": {
     "candidate": "CAND-TOPK-PA-01",
@@ -13,13 +13,7 @@
     "default_programme_budget": 3,
     "additional_cycle_authorized": false
   },
-  "consumed_contingency_branches": [
-    "ARCHITECTURE_INCONCLUSIVE_LOW_TURNOVER",
-    "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
-    "ORDINARY_ROUTER_BOUNDARY_EFFECT_ONLY",
-    "MIXED_ARCHITECTURE_RESULT"
-  ],
-  "active_claim": "The prospectively fixed DEV-only architecture study produced PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL. This is NON_EVIDENTIARY architecture characterization, not FORMAL scientific evidence. The observed result reaches the fixed Analyst-review stop boundary and cannot be adaptively promoted, retuned, redesigned, or extended in this same run.",
+  "active_claim": "The previously completed prospectively fixed DEV-only cycle 1 produced PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL. This remains NON_EVIDENTIARY architecture characterization only. No fresh Analyst handoff has reviewed/extended that result, so no further MAIN scientific action is authorized.",
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst_handoff": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
@@ -30,117 +24,54 @@
     "formal_preserve_ref": null,
     "formal_evidence_ref": null,
     "workflow_run_id": 35432088902,
-    "workflow_artifact_id": 10581155271,
-    "workflow_artifact_digest": "sha256:62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83"
+    "workflow_artifact_id": 10581155271
   },
   "fast_path_used": true,
   "full_reconciliation_triggered": false,
   "full_reconciliation_reason": null,
   "branches_prs_advanced": {
-    "branches": [
-      {
-        "branch": "research/main-topk-persistent-amplification-arch-study-20260919",
-        "base": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-        "head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
-        "ahead_by": 4,
-        "diff_files": [
-          ".github/workflows/ci.yml",
-          "scripts/architecture_studies/topk_persistent_amplification_cycle1.py"
-        ]
-      }
+    "research_mutation_this_run": false,
+    "research_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
+    "head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+    "ahead_of_main_by": 4,
+    "behind_main_by": 0,
+    "diff_files": [
+      ".github/workflows/ci.yml",
+      "scripts/architecture_studies/topk_persistent_amplification_cycle1.py"
     ],
-    "prs": [],
+    "prs_advanced": [],
     "merged_to_main": false
   },
   "workflows_experiments": {
+    "new_workflow_dispatched_this_run": false,
     "formal_experiment_dispatched": false,
     "official_test_accessed": false,
-    "architecture_study_dispatched": true,
-    "preflight_attempts": [
-      {
-        "run_id": 35431681822,
-        "head": "08c284e14d36e22d8b7b357b6f76b385daef40bd",
-        "result": "failure",
-        "reason": "mechanical Ruff B905 only; fixed before any study outcome"
-      },
-      {
-        "run_id": 35431862804,
-        "head": "1fb23d1750ff09c855ee252ca7c70c523ceba883",
-        "result": "failure",
-        "reason": "mechanical Ruff E501 only; fixed before any study outcome"
-      },
-      {
-        "run_id": 35431971254,
-        "head": "cde99b5a4f0aef7e3a8b2ce94052ce580c174c51",
-        "result": "success",
-        "python_versions": ["3.11", "3.13"]
-      }
-    ],
-    "execution": {
+    "prior_architecture_execution": {
       "run_id": 35432088902,
       "head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
       "status": "completed",
       "conclusion": "success",
-      "python_3_11_study_step": "success",
-      "python_3_13_study_step": "skipped_by_fixed_matrix_condition",
-      "artifact_uploaded": true
+      "artifact_id": 10581155271
     }
   },
   "observations_results": {
+    "new_observation_this_run": false,
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "classification": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
-    "total_paired_cases": 1152,
-    "total_raw_rows": 2304,
-    "total_turnover_cases": 37,
-    "fixed_turnover_minimum": 20,
-    "fixed_signal_rule": "median state-AUC full/no-persistent ratio >=2.0 and median probability-AUC ratio >=1.5 at at least two of three fixed magnitudes",
-    "magnitude_summary": [
-      {
-        "magnitude": 0.01,
-        "turnover_cases": 1,
-        "median_state_auc_ratio": 2.029666675181907,
-        "median_probability_auc_ratio": 35.503615825433144,
-        "median_action_logit_auc_ratio": 125.14311595359966,
-        "signal_rule_met": true
-      },
-      {
-        "magnitude": 0.05,
-        "turnover_cases": 11,
-        "median_state_auc_ratio": 1.4653520785633158,
-        "median_probability_auc_ratio": 10.126039295887697,
-        "median_action_logit_auc_ratio": 30.888407652832203,
-        "signal_rule_met": false
-      },
-      {
-        "magnitude": 0.1,
-        "turnover_cases": 25,
-        "median_state_auc_ratio": 2.032640896310804,
-        "median_probability_auc_ratio": 7.81916889018252,
-        "median_action_logit_auc_ratio": 16.849307179499174,
-        "signal_rule_met": true
-      }
-    ],
-    "formal_scientific_evidence_generated": false,
-    "formal_scientific_information_generated": false,
-    "architecture_information_generated": true,
-    "interpretation": "Persistence-coupled delayed amplification cleared the prospectively fixed architecture-study signal threshold at magnitudes 0.01 and 0.10. This is a system-characterization signal only and creates no formal claim or identity."
-  },
-  "artifact_verification": {
-    "artifact_id": 10581155271,
-    "name": "topk-persistent-amplification-cycle1",
-    "size_bytes": 411429,
-    "archive_digest": "sha256:62ee402e9e7c5a1cd41e65eebcbbe183d2be0625e4e66c2157ae207317f93f83",
-    "downloaded_and_read_by_main": true,
-    "metadata_sha256": "3603010917e2e693b93e1023e778c64b89b07c69b69867754cfa09079177ee78",
-    "raw_rows_sha256": "316498f99ff60c59e1a1eb146c1e498972539402820cea48202ab4bf420c3b00",
-    "summary_sha256": "783578fbe6f2187d02c0b078a078b83e101bf1b7a345dedbedcf3d545b3ee861",
-    "metadata_test_manifest_opened": false,
-    "dev_manifest": "configs/experiments/phase1/manifests/dev-v1.json",
-    "dev_manifest_sha256": "968593ff7c5f4274aaeb416bd58200e8625218d1a0179a1dff8a31d1b82a85a8"
+    "prior_classification": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
+    "prior_total_paired_cases": 1152,
+    "prior_total_turnover_cases": 37,
+    "formal_scientific_evidence_generated_this_run": false,
+    "pre_formal_development_evidence_generated_this_run": false,
+    "architecture_information_generated_this_run": false,
+    "interpretation": "No new result was generated. The prior architecture signal is unchanged and remains at the prospectively mandated Analyst-review stop boundary."
   },
   "consumed_identities": [],
   "integrity_state": {
-    "status": "CLEAN_VALID_NON_EVIDENTIARY_OUTCOME_STOP_BOUNDARY_REACHED",
+    "status": "CLEAN_STOP_BOUNDARY_RECONFIRMED",
+    "analyst_tip_rechecked": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+    "main_tip_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "research_head_rechecked": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+    "workflow_rechecked": "35432088902:completed/success",
     "official_test_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
@@ -150,37 +81,34 @@
     "immutable_evidence_modified": false,
     "main_modified": false,
     "protocol_changed_after_outcome": false,
-    "outcome_responsive_retuning": false,
-    "raw_before_summary_interpretation": true,
-    "artifact_preserved_before_final_reporting": true,
-    "analyst_tip_rechecked_after_outcome": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
-    "main_tip_rechecked_after_outcome": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "research_head_rechecked_after_outcome": "97f542d86dcd3a609cd039379fcda41ba61e0909"
+    "outcome_responsive_retuning": false
   },
-  "critical_path_fixes": [
-    "Added Ruff B905 strict=False to AUC zip call before any architecture outcome; no scientific semantics changed.",
-    "Wrapped a Ruff E501 turnover-count expression before any architecture outcome; no scientific semantics changed."
+  "critical_path_fixes": [],
+  "same_run_steps": [
+    "Read fresh Analyst handoff, MAIN state/lease, and current SUB report.",
+    "Confirmed prior MAIN lease was COMPLETED and acquired a fresh PRIMARY lease before reporting mutation.",
+    "Re-fetched authoritative main, exact research branch/head, and exact completed workflow.",
+    "Confirmed Analyst authority has not advanced after the valid cycle-1 outcome.",
+    "Applied the prospectively fixed STOP-for-Analyst-review contingency and performed no scientific mutation."
   ],
   "lease_collision_reconciliation": {
     "fresh_main_running_collision_found_at_start": false,
     "primary_lease_acquired": true,
-    "lease_rechecked_before_mutations": true,
     "same_branch_identity_collision_found": false,
-    "final_lease_status": "COMPLETED",
-    "completion_lease_commit": "a598ffc9a7b5c75deccac3ae84ff6c74467ce06a"
+    "stale_lease_recovery_needed": false,
+    "final_lease_status": "COMPLETED"
   },
-  "stop_reason": "VALID_ARCHITECTURE_OUTCOME_STOP_FOR_ANALYST_REVIEW",
-  "work_left_for_SUB": "SUB remains responsible only for independently Analyst-authorized Discovery/secondary work. No MAIN critical-path work was delegated to SUB and MAIN did not absorb SUB's independent lane.",
+  "stop_reason": "AWAITING_FRESH_ANALYST_REVIEW_AFTER_VALID_ARCHITECTURE_SIGNAL",
+  "work_left_for_SUB": "SUB remains independently responsible for Analyst-authorized BOUNDED_SECONDARY_DISCOVERY. MAIN did not absorb, depend on, or wait for SUB work.",
   "utility_request_created": null,
-  "lane_repartition_reason": null,
-  "next_MAIN_action": "Wait for a fresh prospective Evidence Analyst handoff reviewing exact NON_EVIDENTIARY result CAND-TOPK-PA-01 at research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909. Do not run cycle 2, retune/redesign metrics or thresholds, create a successor, formalize, create STARTED/evidence refs, or merge based on the observed outcome without fresh authority.",
+  "next_MAIN_action": "Consume a fresh prospective Evidence Analyst handoff reviewing CAND-TOPK-PA-01 cycle 1 at research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909. Until fresh authority exists, do not run cycle 2, retune/redesign, promote to PRE_FORMAL/FORMAL, create identity/STARTED/evidence refs, merge, or construct an outcome-responsive successor.",
   "persistence_result": {
     "status": "DURABLE",
-    "latest_commit": "f42bbf5fb64238e0cf139f76abd0249ca4eb24f7",
-    "history_path": "reports/orchestrator/history/2026-09-19/1733-main.md",
-    "history_commit": "4e2d5136a7ea4dd9134a40b3d23a8396d7ff6830",
-    "completion_lease_commit": "a598ffc9a7b5c75deccac3ae84ff6c74467ce06a",
+    "latest_commit": "9fcd1b85f753092273fe695ce5552c4c79b9bbdb",
+    "history_path": "reports/orchestrator/history/2026-09-19/1816-main.md",
+    "history_commit": "830bf2651da3617e47101aeb2ccbd5ea5efd2e49",
     "state_commit": "THIS_WRITE",
+    "completion_lease_commit": "PENDING_FINAL_WRITE",
     "force_push_used": false
   }
 }
