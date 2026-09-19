@@ -1,55 +1,73 @@
 {
   "schema_version": 1,
-  "timestamp": "2026-09-20T00:22:00+09:00",
-  "run_disposition": "MATERIAL_CALIBRATION_CONFIRMATION",
-  "overall_classification": "WELL_CALIBRATED",
+  "timestamp": "2026-09-20T01:20:00+09:00",
+  "run_disposition": "MATERIAL_INTERPRETATION_FIDELITY_DEFECT",
+  "overall_classification": "MIXED_CALIBRATION",
+  "previous_classification": "WELL_CALIBRATED",
   "confidence": "HIGH",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main_protected": false,
     "evidence_tag_count": 5,
+    "formal_tag_count": 0,
     "c19_r2_evidence_tag_object": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
     "c19_r2_terminal_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
     "h5_evidence_tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
     "h5_terminal_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
-    "assembly_architecture_head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
-    "assembly_workflow_run": 35448815310,
-    "assembly_result": "NO_OR_LOW_SUPPORT",
-    "assembly_candidate_state": "REJECT_NO_RESCUE",
-    "topk_cross_seed_diagnostic": "MIXED",
-    "topk_candidate_state": "HOLD_NO_CYCLE3_NO_PREFORMAL",
-    "temporal_batch_architecture_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-    "temporal_batch_workflow_run": 35451528895,
-    "temporal_batch_status": "RUNNING_NO_OUTCOME_AT_AUDIT_TIME"
+    "temporal_architecture_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+    "temporal_workflow_run": 35451528895,
+    "temporal_workflow_conclusion": "success",
+    "temporal_artifact_id": 10587410697,
+    "temporal_artifact_zip_digest": "sha256:22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
+    "temporal_artifact_contract_sha256": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
+    "temporal_artifact_raw_sha256": "71d4d8fddbe6b683b4ad93951c0f95fc1dfa5df74645743bfd39fba5b33c54ef",
+    "temporal_artifact_mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+    "temporal_artifact_family_summary": {
+      "noisy_motif_stream_defaults": {
+        "schedule_differs_across_arms": true,
+        "replay_differs_across_arms": true
+      },
+      "repetition_train_defaults": {
+        "schedule_differs_across_arms": false,
+        "replay_differs_across_arms": false
+      }
+    }
   },
   "control_plane_consumed": {
-    "control_brain_latest_timestamp": "2026-09-19T22:50:00+09:00",
-    "control_brain_latest_file_sha": "a68d7c72fabbd5177b30ccf8980b0f403d061e54",
-    "evidence_analyst_branch_commit": "862dd62cdce58f06e5c782b4b54212d93e40212e",
-    "evidence_analyst_latest_timestamp": "2026-09-20T00:00:00+09:00",
+    "control_brain_commit": "3b2ff0f8ecb845c486b6e5806d58c36df24657de",
+    "control_brain_latest_timestamp": "2026-09-20T00:50:00+09:00",
+    "evidence_analyst_commit": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
+    "evidence_analyst_latest_timestamp": "2026-09-20T01:15:00+09:00",
     "main_latest_timestamp": "2026-09-20T00:23:00+09:00",
-    "sub_latest_timestamp": "2026-09-19T23:46:00+09:00",
-    "literature_latest_timestamp": "2026-09-19T21:30:00+09:00",
+    "sub_latest_timestamp": "2026-09-20T00:41:00+09:00",
+    "literature_commit": "96dd0cd2fb9a932d29ddfecf7c791b122f6461bb",
+    "literature_latest_timestamp": "2026-09-20T00:30:00+09:00",
+    "independent_audit_commit": "c24ec86447a0030cbe1d072bf8796f8f78f7b2dd",
     "independent_audit_latest_timestamp": "2026-09-19T22:31:00+09:00",
     "repository_steward_latest_timestamp": "2026-09-19T19:50:00+09:00",
-    "utility_assignment": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT",
-    "utility_assignment_status": "COMPLETED",
-    "utility_diagnostic_classification": "MIXED"
+    "utility_assignment_status": "COMPLETED_NO_ACTIVE_ASSIGNMENT",
+    "utility_previous_assignment": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT"
   },
   "gate_changes_reviewed": [
     {
-      "change": "Fresh support-aware Assembly Architecture object returned NO_OR_LOW_SUPPORT on both fixed DEV seeds and was rejected without cycle-2 rescue",
-      "direction": "VALIDATES_FALSE_POSITIVE_CONTROL",
-      "assessment": "MATERIAL_CONFIRMATION"
+      "change": "Temporal Architecture cycle completed successfully under a prospectively fixed one-cycle NON_EVIDENTIARY contract and was held with no cycle2 or PRE_FORMAL/FORMAL escalation",
+      "direction": "VALIDATES_SCIENTIFIC_STOP_AND_CLAIM_SEPARATION",
+      "assessment": "KEEP"
     },
     {
-      "change": "Top-k cross-seed read-only support diagnostic returned MIXED and Evidence Analyst retained HOLD with no cycle 3 or PRE_FORMAL promotion",
-      "direction": "VALIDATES_QUARANTINE_AND_STOP_REVIEW_GATE",
-      "assessment": "MATERIAL_CONFIRMATION"
+      "change": "Evidence Analyst durable closure recorded a contract digest different from the authoritative artifact metadata",
+      "direction": "REVEALS_RESULT_PROVENANCE_FIDELITY_DEFECT",
+      "assessment": "TIGHTEN"
     },
     {
-      "change": "Temporal expectation batching was promoted as Architecture/engineering/reproducibility work despite ordinary API/event-time mechanism, with a fresh prospectively fixed contract before outcome visibility",
-      "direction": "VALIDATES_CLAIM_TYPE_SEPARATION_AND_FALSE_NEGATIVE_CONTROL",
-      "assessment": "MATERIAL_CONFIRMATION"
+      "change": "Evidence Analyst durable narrative reversed which Temporal timeline family exhibited schedule and downstream replay divergence relative to the authoritative machine artifact",
+      "direction": "REVEALS_FINE_GRAINED_INTERPRETATION_FIDELITY_DEFECT",
+      "assessment": "TIGHTEN"
+    },
+    {
+      "change": "High-level machine outcome token and conservative HOLD/no-promotion allocation remained correct despite the fine-grained mismatch",
+      "direction": "DEFECT_CONTAINED_BY_EXISTING_STOP_GATES",
+      "assessment": "MIXED"
     }
   ],
   "gate_by_gate_classifications": {
@@ -77,27 +95,52 @@
     "outcome_informed_selection_of_future_support_rule": "CLARIFY",
     "negative_evidence_claim_boundary_narrowing": "KEEP",
     "architecture_value_survives_novelty_rejection": "KEEP",
-    "fresh_architecture_contract_before_outcome_visibility": "KEEP"
+    "fresh_architecture_contract_before_outcome_visibility": "KEEP",
+    "machine_artifact_to_durable_handoff_value_fidelity": "TIGHTEN",
+    "embedded_contract_and_artifact_digest_binding_in_interpretation_handoff": "TIGHTEN",
+    "fail_closed_reconciliation_on_artifact_handoff_mismatch": "TIGHTEN",
+    "local_architecture_existence_vs_cross_family_generality": "CLARIFY"
+  },
+  "artifact_handoff_mismatch": {
+    "candidate": "CAND-TEMPORAL-BATCH-PARTITION-01",
+    "workflow": 35451528895,
+    "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+    "machine_artifact": {
+      "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+      "contract_sha256": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
+      "noisy_motif_stream_defaults": "SCHEDULE_AND_REPLAY_DIFFER",
+      "repetition_train_defaults": "SCHEDULE_AND_REPLAY_INVARIANT"
+    },
+    "evidence_analyst_handoff": {
+      "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+      "recorded_contract_sha256": "681c21e31c686be7d8beb10e927ef65510ce82689c2cc81ae5fd9fedc179c06d",
+      "narrated_repetition_train_defaults": "SCHEDULE_AND_REPLAY_DIFFER",
+      "narrated_noisy_motif_stream_defaults": "SCHEDULE_DIFFERS_REPLAY_INVARIANT",
+      "allocation": "HOLD_NO_CYCLE2_NO_PREFORMAL"
+    },
+    "control_and_literature_direction": "MATCH_MACHINE_FAMILY_DIRECTION",
+    "scientific_escalation_caused": false,
+    "required_prospective_response": "MACHINE_BOUND_HANDOFF_VALIDATION_AND_FAIL_CLOSED_DISPUTED_FIELD_RECONCILIATION"
   },
   "false_positive_risks": [
+    "A future artifact-to-handoff mismatch could select the wrong successor family, comparator, or engineering target if fine-grained narrative fields are trusted without machine binding",
     "Completed Top-k local labels could still be over-read if the HOLD/fresh-object boundary is bypassed",
-    "A future universal support threshold could be outcome-fit from completed Top-k cases",
     "Local Architecture cutoffs could be laundered into novelty or FORMAL admission rules",
     "Stronger-reference ceilings could be mistaken for equal-resource mechanistic comparators"
   ],
   "false_negative_risks": [
-    "Generalizing Assembly-specific low-support outcome or local numeric thresholds to unrelated Architecture families",
-    "Globally tightening Discovery/Architecture because of the historical Top-k support defect",
-    "Using new-principle novelty as the threshold for engineering/reproducibility questions such as temporal batching",
+    "Overreacting to the fidelity defect by requiring cross-family replication for every bounded Architecture existence claim",
+    "Globally tightening Discovery/Architecture instead of fixing provenance and result-ingestion fidelity",
+    "Using new-principle novelty as the threshold for engineering/reproducibility questions",
     "Treating robust H5 failure as a general no-go theorem beyond its registered aggregate work metric"
   ],
   "duplicate_guards": {
-    "assessment": "NO_SCIENTIFIC_PURPOSE_SHOULD_BE_REMOVED",
-    "recommendation": "Operational consolidation may be considered separately; preserve distinct integrity purposes."
+    "assessment": "ARTIFACT_HANDOFF_FIDELITY_IS_DISTINCT_FROM_ONE_WAY_EXECUTION_INTEGRITY",
+    "recommendation": "Do not remove scientific integrity guards. Add machine-bound interpretation validation rather than duplicating execution gates."
   },
   "moving_goalpost_assessment": {
     "classification": "LOW",
-    "basis": "No completed result was reclassified. Assembly was rejected under its prospectively fixed mapping; Top-k labels remain unchanged and HOLD follows the read-only MIXED diagnostic; the new Temporal Architecture contract is fixed before outcome visibility."
+    "basis": "Temporal ran under a precommitted outcome map; the machine result was not rerun or relabeled; Analyst held the object and did not authorize outcome-responsive continuation. The defect is transcription/provenance fidelity, not a changed success criterion."
   },
   "pass_reachability_assessment": {
     "classification": "REACHABLE_BUT_NARROW",
@@ -107,40 +150,44 @@
       "support/uncertainty adequate to the local question",
       "matched equal-privilege comparators for mechanistic claims",
       "survive ordinary implementation and dynamical reductions",
+      "machine-bound faithful result ingestion and interpretation",
       "fixed intervention and numeric falsifier",
       "one-way preserved formal evidence"
     ],
-    "effect_of_active_lower_funnel": "OBJECT_DISCOVERY_AND_ENGINEERING_CHARACTERIZATION_WITHOUT_WEAKENING_FORMAL_PATH",
-    "current_limit": "No current FORMAL or PRE_FORMAL object; Top-k remains HOLD, Assembly current object is REJECT, Temporal batching is NON_EVIDENTIARY Architecture work."
+    "effect_of_new_fidelity_guard": "IMPROVES_INTERPRETATION_RELIABILITY_WITHOUT_RAISING_THE_SCIENTIFIC_NOVELTY_BAR",
+    "current_limit": "No active PRE_FORMAL or FORMAL object. Temporal is HOLD Architecture/engineering-only; Top-k remains HOLD; current Assembly object is REJECT."
   },
   "claim_type_separation_findings": {
     "control_state": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
+    "temporal_state": "HOLD_AFTER_FUNCTIONAL_BATCH_PARTITION_EFFECT_ARCHITECTURE_ONLY",
+    "temporal_new_principle": "UNSUPPORTED",
+    "temporal_mechanistic_distinctness": "UNSUPPORTED",
+    "temporal_architecture_value": "SUPPORTED_LOCAL_API_EFFECT_WITH_FINE_GRAINED_HANDOFF_MISMATCH",
     "topk_state": "HOLD_AFTER_MIXED_CROSS_SEED_SUPPORT",
-    "assembly_state": "REJECT_AFTER_NO_OR_LOW_SUPPORT_ARCHITECTURE_CYCLE1",
-    "temporal_batch_state": "NON_EVIDENTIARY_ARCHITECTURE_CYCLE1_RUNNING_UNDER_PROSPECTIVE_CONTRACT",
     "h5_state": "TERMINAL_NEGATIVE_EVIDENCE_PRESERVED_WITH_NARROW_INTERPRETATION_CAP",
-    "remaining_risk": "LOCAL_THRESHOLD_PORTABILITY_AND_FUTURE_SUPPORT_RULE_GENERALIZATION_NOT_PROGRAMME_WIDE_PERMISSIVENESS"
+    "remaining_risk": "RESULT_INGESTION_FIDELITY_NOT_CLAIM_TYPE_CONFLATION"
   },
   "external_calibration": {
+    "literature_commit": "96dd0cd2fb9a932d29ddfecf7c791b122f6461bb",
+    "literature": "Temporal batching is strongly ordinarily reducible to non-anticipation, event-time versus processing-time, discrete-event chronology, and partition-invariance semantics. The Literature handoff's family direction matches the machine artifact.",
+    "independent_audit_commit": "c24ec86447a0030cbe1d072bf8796f8f78f7b2dd",
     "independent_audit": "H5 terminal FAIL remains robust for the exact registered aggregate algorithmic-work claim; interpretation remains implementation/counter-vocabulary specific.",
-    "literature": "Top-k ordinary reduction pressure now explicitly includes switching geometry, border/basin selection, recurrent WTA hysteresis, and within-branch transient dynamics; these are prospective reduction inputs only.",
-    "use_rule": "External findings calibrate future comparators, reduction ladders, and claim boundaries prospectively only."
+    "use_rule": "External findings calibrate prospective reductions and claim boundaries; they do not override authoritative machine artifacts or rewrite consumed results."
   },
-  "opportunity_cost_assessment": "Balanced: low-support candidates can be rejected cleanly, mixed candidates held, and ordinary-mechanism engineering/reproducibility questions still studied without weakening FORMAL standards.",
-  "utility_request_created": null,
-  "utility_request_status": {
-    "completed_assignment": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT",
-    "diagnostic_classification": "MIXED",
-    "reason_no_new_request": "Top-k has been answered at the currently authorized methodology level and Temporal batching is already active MAIN Architecture work; a new request would duplicate work."
+  "opportunity_cost_assessment": "Balanced if the programme adds cheap machine-bound handoff validation rather than additional scientific gating or reruns. Provenance/fidelity tightening has high expected value and low research-throughput cost.",
+  "utility_request_created": {
+    "request_id": "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY",
+    "commit": "1e28e558a985db1c05bf81ef1033028b39ee9018",
+    "mode": "READ_ONLY_ARTIFACT_HANDOFF_CONSISTENCY_AUDIT",
+    "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_FIDELITY_DIAGNOSTIC"
   },
   "prospective_recommendations": [
     "Keep the four-layer funnel and FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL doctrine.",
-    "Keep Assembly current object REJECT; do not rescue it by adding seeds, permutations, corpora or thresholds.",
-    "Keep Top-k HOLD after the MIXED cross-seed diagnostic; no cycle 3 or PRE_FORMAL under current authority.",
-    "Any Top-k successor must be a fresh prospectively fixed ordinary-reduction Architecture object, not a same-object repetition.",
-    "Keep the Temporal batching contract fixed through its first diagnostic and stop for fresh Analyst review on every mapped result.",
-    "Keep event-time-causal scheduling labeled as a stronger Architecture/API reference ceiling, not an equal-resource mechanistic comparator.",
-    "Do not port local Architecture numeric thresholds across candidate families without independent prospective rationale.",
+    "Keep Temporal current object HOLD; do not rerun, relabel, repair, create cycle2 or promote it because of this audit.",
+    "Require future interpretation handoffs to bind workflow/head, artifact ID/digest, embedded candidate ID, contract digest, mapped outcome, raw digest and narrated machine-summary fields.",
+    "On artifact/handoff mismatch, fail closed for downstream use of disputed fields until reconciled; do not automatically invalidate an internally consistent artifact.",
+    "Do not respond to a provenance defect by globally requiring cross-family replication or tightening the novelty bar.",
+    "Keep Top-k HOLD and do not fit a universal support threshold from completed outcomes.",
     "Preserve the complete one-way integrity floor."
   ],
   "hard_integrity_floor_confirmation": {
@@ -157,13 +204,13 @@
     ]
   },
   "questions_for_control_brain": [
-    "Keep Top-k on HOLD and prevent same-object cycle 3/PRE_FORMAL escalation from the MIXED support result.",
-    "Treat Assembly rejection as confirmation that support-aware lower-funnel gates can terminate candidates cleanly rather than as a reason for global tightening.",
-    "Keep Temporal batching in Architecture/engineering scope unless a genuinely new independently justified mechanistic question appears."
+    "Treat the Temporal fine-grained handoff/digest discrepancy as a result-ingestion fidelity defect, not as authority to rerun or extend the scientific object?",
+    "Require machine-bound artifact/handoff consistency before disputed fine-grained fields can drive a successor or promotion?",
+    "Consider the new read-only Utility request only if it is nonduplicative; no live Utility reconfiguration is required."
   ],
   "questions_for_evidence_analyst": [
-    "Preserve Assembly REJECT without rescue tuning.",
-    "Preserve Top-k HOLD and require any successor to be a fresh prospective reduction object rather than selecting a replacement support rule to favor completed outcomes.",
-    "For Temporal batching, apply the already-fixed outcome map exactly once and stop for fresh review before any cycle 2 or promotion."
+    "Keep Temporal HOLD and its high-level NON_EVIDENTIARY mapped token, but reconcile machine artifact versus durable family-level narrative/digest before using those details prospectively?",
+    "For future lower-funnel closures, bind exact artifact metadata and machine summary values rather than re-transcribing result-bearing fields manually?",
+    "Do not convert the fidelity defect into stricter global Architecture support thresholds."
   ]
 }
