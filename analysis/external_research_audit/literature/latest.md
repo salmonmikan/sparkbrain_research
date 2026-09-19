@@ -1,4 +1,4 @@
-# SparkBrain Literature Reduction Scout — 2026-09-20 03:30 JST
+# SparkBrain Literature Reduction Scout — 2026-09-20 06:30 JST
 
 ## Role
 
@@ -6,57 +6,59 @@
 
 ## Repository and control-plane state
 
-Repository state was independently re-fetched before consuming the designated control-plane mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; exactly five authoritative `evidence/*` tags remain and no tag-based `formal/*`, `sealed/*`, or `freeze/*` state was observed. The current lower-funnel object is `CAND-V05-TOPOLOGY-CONFIG-BINDING-01` on `research/main-v05-topology-config-contract-arch-study-20260920@4a15a91edb8e92b89cda960f533590f7b46a70f2` under Evidence Analyst authority `9bb852bc1461755814d6a9a0e7ea561f1858a0da`.
+Repository state was independently re-fetched before consuming the designated control-plane mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative tag namespace still contains exactly five annotated `evidence/*` tags and no `formal/*`, `sealed/*`, or tag-based `freeze/*` refs. Thirteen legacy `freeze/*` branches remain, while historical `control/*` and `preserve/*` refs remain present and unchanged in role; no fresh FORMAL identity or STARTED authority was observed. PR #148 and PR #149 remain open, mergeable, and unmerged.
 
-The designated Control Brain, Evidence Analyst, MAIN, SUB, and role-suffixed report histories were read only from their mailbox paths; no `ops/*` branch was treated as a repository snapshot. Prior role-specific Literature state through 00:30 JST was read before searching, so the earlier temporal non-anticipation/event-time, Top-k, reservoir, causal-credit, provenance, eligibility, WTA, graph-rewrite, and other already-covered reductions are not recycled here.
+The current lower-funnel object is `CAND-REFRACTORY-CURRENT-ACCOUNTING-01` on `research/main-refractory-current-accounting-arch-study-20260920@4ac9aeead78ec8d053291f922096fab7e31f6070`, prospectively bound by Evidence Analyst authority `eb1c305017d32c8c3efb0794e547b889e5a80461`. Stable source `src/sparkbrain/v04/field.py@e2279d69cd04030238317361d5ee3abdc1009c32` first sums same-time positive and negative arrivals into `net_current`, then during refractory applies only `min(0.0, net_current)` to membrane potential, while the adjacent comment says positive drive is ignored during the absolute refractory window.
 
-A fresh read-only collection of exact-head workflow `35460876580` shows it completed successfully after the pre-diagnostic lint-only repair. Artifact `10589564435` (`sha256:e73909be3e647566540a06a4da94829b4737c3de3a24c5e0e54c697245be1970`) is bound to exact head `4a15a91edb8e92b89cda960f533590f7b46a70f2`. Its immutable run artifact maps the already-fixed cycle-1 contract to `SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE`: all five prospectively fixed configurations are accepted with zero construction errors/warnings; all share one realized topology signature; no explicit supported fixed-topology contract is found; and checkpoint round-trip preserves both the varying declared config values and the identical realized topology. This remains NON_EVIDENTIARY Architecture information and must stop for fresh Evidence Analyst review; this scout does not relabel or extend the object.
+The designated Control Brain, Evidence Analyst, MAIN and SUB mailbox streams were read only from their report paths, including current state files and the newest role-suffixed histories. Prior role-specific Literature through 03:30 JST was read before searching, so configuration semantics, event-time batching, Top-k switching/hysteresis, H7 causal-credit, provenance, eligibility, reservoir and other already-covered reductions are not recycled here.
 
-Current source independently explains the result. `V05BrainConfig` exposes `width`, `height`, and `receptor_rows`, copies them into the nested `V04BrainConfig`, and serializes them in `state_dict()`, but `IntegratedV05Brain` supplies `IntegratedV04Brain` an explicit `layered_reservoir_topology(seed=...)` without forwarding those fields. The topology constructor defaults to 16 receptors and an 8x6 reservoir. `load_checkpoint()` reconstructs the declared v0.5 config and then restores the saved v0.4 field, so a checkpoint can faithfully preserve both a non-default declared geometry tuple and the same fixed realized field.
+A fresh repository-side workflow check after the latest MAIN mailbox checkpoint found that exact-head Architecture workflow `35470259892` and ordinary CI `35470259884` both advanced from `in_progress` to `completed/failure` on exact head `4ac9aee...`. The Architecture workflow failed in its exact-head CI jobs at `Compile and lint Architecture harness`; the outcome-bearing `architecture-study` job was skipped. Therefore there is **no valid Architecture terminal result yet and no outcome-bearing artifact to interpret**. This scout does not repair, rerun, dispatch, or relabel that cycle. Under the prospectively fixed contract, this remains a pre-outcome mechanical blocker for MAIN/Relay to handle within its own authority, if still allowed after fresh reconciliation.
 
 ## Genuinely new external literature findings
 
-### 1. The five-config collapse is an ordinary inactive-configuration / observational-equivalence phenomenon, not architecture novelty
+### 1. “Absolute refractory” does not determine one universal input-handling semantics
 
-Reisner et al. (ICSE 2010, DOI `10.1145/1806799.1806864`) used symbolic evaluation to ask how run-time configuration options affect program behavior and found that apparently huge configuration spaces often collapse into much smaller groups of behaviorally equivalent configurations. That is a very direct ordinary reference for the current v0.5 object: the five prospectively factorized values differ at the declared interface but collapse to one realized topology signature on the current construction path.
+Established simulators explicitly expose multiple legitimate refractory policies. Brian 2 allows individual state equations to be marked `(unless refractory)`: a clamped membrane variable becomes read-only to incoming synapses during refractoriness while other variables, such as adaptation, may continue evolving. NEST's current-based `iaf_psc_delta` takes another explicit policy: membrane potential is clamped during the refractory interval, incoming spikes are discarded by default, and an optional `refractory_input` mode instead accumulates their effect for application at the end of refractoriness.
 
-A useful cross-domain analogy comes from structural identifiability. Raue et al. (Bioinformatics 2009, DOI `10.1093/bioinformatics/btp358`) and later identifiability literature formalize the problem of parameters that cannot be uniquely recovered from observed behavior; a particularly strong failure is when parameter variation leaves the relevant model output unchanged. Direct mathematical equivalence is not claimed here, but the diagnostic principle transfers cleanly: before treating `width`, `height`, or `receptor_rows` as operative scientific parameters, demonstrate a prospectively specified causal effect on the realized topology or an explicitly declared compatibility-only semantics.
+This is directly relevant to the current SparkBrain question. The phrase `absolute refractory` alone cannot resolve whether excitation should be discarded, inhibition retained, all membrane updates clamped, or inputs stored for later. That behavior must be an explicit model/API contract.
 
-**Reduction impact:** under the current integrated path, these fields are best treated as non-operative/inactive with respect to topology construction. The Architecture value is API truthfulness and reproducibility, not a new computational mechanism.
+**Reduction impact:** the SparkBrain discrepancy is best treated as a refractory-state semantics/interface question. It is not evidence for a new dynamical principle merely because different policies produce different later spikes.
 
-### 2. Silent acceptance of non-operative configuration has strong prior art as a configuration vulnerability / contract failure
+### 2. Netting excitation and inhibition before a refractory gate is ordinary current arithmetic; SparkBrain’s negative-only membrane update is the unusual hybrid to characterize
 
-Xu et al., *Do Not Blame Users for Misconfigurations* (SOSP 2013, DOI `10.1145/2517349.2522727`), treat configuration as a first-class interface problem and show that bad reactions to configuration errors include silent failures. Their Spex work infers configuration constraints from source and found hundreds of misconfiguration vulnerabilities and error-prone constraints across real systems. The broader configuration-error literature likewise emphasizes validating parameter values/relationships before they silently create incorrect behavior.
+NEST's current-based `iaf_psc_alpha`/`iaf_psc_exp` models define total synaptic current as the sum of excitatory and inhibitory components. In the same model family, however, membrane voltage itself is clamped to `V_reset` throughout the refractory interval. Thus two distinct choices are normally separated: how signed inputs are aggregated, and what state variables are allowed to respond while refractory.
 
-The current v0.5 result is narrower than a production outage, but the structural pattern is ordinary: exported dimension-like parameters are accepted and persisted, while the current runtime construction path ignores them and emits no warning. The clean prospective alternatives are therefore engineering semantics: either (a) explicitly declare the fields compatibility metadata/non-operative for v0.5, (b) reject unsupported non-default values, or (c) in a fresh implementation decision, bind them to the topology constructor. Which option is correct is a product/API decision, not something this outcome can choose retrospectively.
+SparkBrain currently combines ordinary signed-current netting with an asymmetric post-net gate: if refractory, only a negative `net_current` changes membrane potential. Equal same-time `+0.5/-0.5` inputs therefore cancel before the positive component can be “ignored.” That behavior follows directly from operator ordering; no extra memory or adaptation mechanism is needed.
 
-**Reduction impact:** `SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE` should remain an Architecture/configuration-contract finding. It is strongly subsumed by ordinary configuration-validation and interface-design concerns.
+**Reduction impact:** the strongest ordinary baseline is not simply “ignore positive” versus “net current.” It is an explicit family of refractory contracts: full voltage clamp/discard, deferred input, spike-only refractory with continued integration, and SparkBrain’s current negative-only clamp. The current prospectively bound shadow remains useful for the exact Architecture question, but no one policy should be retroactively declared biologically canonical.
 
-### 3. The current factorized matrix is already close to the right ordinary configuration-testing methodology; expanding the same object would add little
+### 3. A later post-refractory spike difference is ordinary retained-state behavior, not evidence of a special memory mechanism
 
-Configurable-software research has long treated option effects and interactions as a testing problem. Reisner et al. directly map option values to behavior; GenTree (ICSE 2021) learns logical interactions between configuration settings and program behavior; constrained covering-array work such as AutoCCAG (ICSE 2021, DOI `10.1109/ICSE43902.2021.00030`) exists because exhaustive configuration testing is usually infeasible and interaction coverage is the standard alternative.
+Brian 2 explicitly demonstrates that adaptation can continue to evolve while voltage is clamped, and generalized integrate-and-fire models treat refractory/reset behavior and spike-history-dependent response kernels as configurable state dynamics. In other words, a transient input received around a spike can alter a state that survives into the first post-refractory response without requiring any distinct long-term memory mechanism.
 
-For the present object, the prospectively fixed baseline plus width-only, height-only, receptor-only, and combined configurations already separates first-order field effects and one combined interaction. Because all five configurations map to exactly one topology signature and the source path shows why, a same-object combinatorial expansion would mostly re-measure an already-localized wiring omission. If a future version intentionally makes these fields operative, interaction testing becomes useful again and should be a fresh prospective correctness object.
+For SparkBrain, the Discovery observation — inhibition-only leaves a lower potential than paired excitation/inhibition, which then changes a fixed probe spike — is therefore naturally explained by ordinary state retention under the chosen refractory operator. The scientifically useful question is contract fidelity and supported runtime prevalence, not whether a novel persistent-memory mechanism has appeared.
 
-**Reduction impact:** no cycle-2 rescue or broader fuzzing is justified from this result. The next decision is semantic ownership/validation, not more measurements on the unchanged constructor.
+**Reduction impact:** any future interpretation should separate (a) what state variables are permitted to change during refractory, (b) whether their effects are retained across refractory exit, and (c) downstream functional sensitivity. Persistence across the window alone is not novelty evidence.
 
-### 4. Checkpoint reproducibility requires configuration metadata to describe the operative experiment, not merely be serialized
+### 4. Equal-and-opposite current cancellation is specific to a current-based abstraction; conductance-based inhibition provides a decisive boundary on biological interpretation
 
-Pineau et al. (JMLR 2021) frame reproducibility as obtaining comparable results from the same code/data and emphasize robust experimental workflows and complete reporting. A 2026 empirical study of 444 ML repositories by Foalem et al. (`arXiv:2603.23769`) reports that practitioners view missing hyperparameter logging and context-poor logging as materially harmful to reproducibility and trustworthiness.
+Conductance-based leaky integrate-and-fire models compute synaptic current from membrane voltage, reversal potentials, and excitatory/inhibitory conductances rather than from a simple fixed current sum. NEST's `iaf_cond_exp`, for example, uses voltage-dependent excitatory and inhibitory synaptic currents with distinct reversal potentials. Foundational shunting-inhibition work likewise shows that excitation/inhibition interaction can be nonlinear and depends on conductance and voltage rather than exact arithmetic cancellation of equal nominal inputs.
 
-Those papers do not directly study SparkBrain's exact failure mode, so the following is an inference rather than an external fact: faithfully serializing a declared configuration is insufficient when the declared parameter does not govern the realized object. In the current checkpoint path, different declared geometry tuples survive round-trip while the same realized topology survives too. That creates a provenance ambiguity unless the checkpoint schema or documentation makes the compatibility-only semantics explicit or records/validates the realized topology contract.
+SparkBrain's v0.4 field is explicitly documented in source as an engineering abstraction, not a claim of biological neuron equivalence. That boundary should be preserved. The fixed `+0.5/-0.5` matched-current Architecture study is appropriate for testing its own API semantics, but it should not be generalized into a statement about biological absolute refractoriness or synaptic inhibition.
 
-**Reduction impact:** this strengthens the Architecture/reproducibility interpretation, but does not support PRE_FORMAL or FORMAL promotion. Any schema/versioning or validation change is a separate fresh engineering decision.
+**Reduction impact:** if a future line ever makes a biological or neuromorphic claim about refractory E/I interaction, it would need a fresh prospective current-vs-conductance discriminator. That is not needed to answer the present Architecture/API question and should not be added to the current cycle post hoc.
 
 ## Inference for SparkBrain
 
-The exact-head Architecture result is useful and should be retained exactly as produced, but the literature sharply limits its scientific meaning. The current line is best summarized as:
+The ordinary reduction ladder for this line is now clearer:
 
-`public geometry-like config -> accepted + checkpoint-persisted -> explicit fixed layered topology constructor bypasses those fields -> multiple declared configs collapse to one realized topology -> checkpoint round-trip preserves the declared/realized mismatch`
+`same-time signed-current aggregation`
+→ `explicit refractory input policy (discard / defer / clamp / integrate)`
+→ `state variables permitted to evolve or be retained during refractory`
+→ `post-refractory functional sensitivity`
+→ only then any residual mechanism claim.
 
-That chain is well explained by ordinary configurable-software semantics, validation, and reproducibility concerns. It is not evidence for a new cognitive or dynamical mechanism.
-
-The highest-value next step is fresh Evidence Analyst interpretation of the completed terminal Architecture artifact. Do not extend the same object to additional configs, implement a fix, or infer the intended geometry formula from the observed mismatch. No Utility request is created because the fixed cycle has already produced its terminal diagnostic and the contract explicitly requires fresh Analyst review before any successor; an extra request now would be outcome-responsive duplication.
+At present, the repository source already explains the Discovery effect through the first three steps, and established simulator semantics show that these are standard modeling choices. The current line therefore remains high-value Architecture/API characterization and low-value novelty evidence. No Utility request is created: MAIN already owns a prospectively bound comparator for precisely this semantic difference, and the exact-head run is presently blocked before outcome by lint/compile. Creating a parallel diagnostic would duplicate the active object and risk contaminating its fixed stop boundary.
 
 ## Knowledge-flow contract
 
@@ -64,49 +66,48 @@ The highest-value next step is fresh Evidence Analyst interpretation of the comp
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - CAND_V05_TOPOLOGY_CONFIG_BINDING_01
-  - V05_CONFIGURATION_SEMANTICS
-  - CHECKPOINT_REPRODUCIBILITY
-  - ARCHITECTURE_API_CORRECTNESS
+  - CAND_REFRACTORY_CURRENT_ACCOUNTING_01
+  - V04_REFRACTORY_SEMANTICS
+  - ARCHITECTURE_API_STATE_SEMANTICS
+  - BIOLOGICAL_INTERPRETATION_BOUNDARY
   - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
   STRONG_ORDINARY_ARCHITECTURE_REDUCTION.
-  The completed silent declared/realized geometry divergence is naturally
-  explained by inactive configuration parameters, configuration-contract
-  validation failures, and reproducibility/provenance semantics. The result is
-  valuable Architecture/API correctness information but supplies no mechanistic
-  or computational-principle novelty.
+  Established spiking simulators expose multiple explicit refractory input/state
+  policies; signed E/I netting and post-refractory retained-state effects are
+  ordinary model semantics. SparkBrain's current negative-only post-net clamp is
+  an API/state-transition choice to characterize, not a new computational principle.
+  Equal-current cancellation also must not be generalized to conductance-based biology.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - configuration-option liveness/effect mapping from declared field to realized topology
-  - explicit constraint/validation contract for supported versus compatibility-only values
-  - configuration-equivalence classes based on realized topology signatures
-  - fresh t-wise/interaction testing only after fields become intentionally operative
-  - checkpoint schema/provenance check that declared config and realized topology semantics agree
+  - full membrane clamp with refractory inputs discarded
+  - deferred refractory-input semantics with application at refractory exit
+  - spike-only refractory gate with explicitly declared continued state integration
+  - SparkBrain negative-only post-net clamp as the production-specific contract
+  - future current-based versus conductance-based E/I discriminator only if a biological claim independently appears
 questions_for_evidence_analyst:
-  - Accept the exact-head terminal Architecture label SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE and stop the current object for semantic/engineering review?
-  - Treat width/height/receptor_rows as currently non-operative for topology construction unless an explicit supported contract says otherwise?
-  - Require any future implementation object to prospectively choose one semantic policy: operative binding, explicit rejection, or documented compatibility metadata, rather than infer the answer from this result?
+  - Keep the current object at Architecture/API semantics regardless of which valid fixed terminal it eventually reaches?
+  - Treat “absolute refractory” as insufficient to infer input semantics and require the supported contract to explicitly name discard/defer/clamp/integrate behavior?
+  - Preserve the current-based engineering-abstraction boundary and avoid biological interpretation from the balanced +/- current arm?
 questions_for_control_brain:
-  - Keep this line at Architecture/API correctness and out of PRE_FORMAL/FORMAL novelty accounting?
-  - Add configuration-option liveness plus declared-versus-realized checkpoint consistency to the ordinary architecture reduction/reproducibility checklist?
-  - Avoid a same-object cycle 2 or broad config fuzzing because source localization plus the fixed five-config result already resolves the current question?
+  - Add explicit refractory input/state policy to the ordinary architecture reduction checklist?
+  - Keep PRE_FORMAL/FORMAL empty for this line unless an independently new mechanism survives these ordinary state-semantics reductions?
+  - Let MAIN/Relay own the pre-outcome lint/compile blocker under the existing fixed contract rather than creating a duplicate Utility diagnostic?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
   - all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs
-  - CAND-V05-TOPOLOGY-CONFIG-BINDING-01 prospective cycle-1 contract, exact research head, raw artifact, mapped outcome and stop boundary
-  - no outcome-responsive implementation fix, cycle 2, extra configuration search, PRE_FORMAL or FORMAL promotion before fresh review
-  - completed Temporal and Top-k current-object HOLD boundaries and rejected Assembly/Structural current questions
+  - CAND-REFRACTORY-CURRENT-ACCOUNTING-01 prospective contract commit c32ec231e217f4229b761f2ccf426f3ecd7ed582
+  - exact research head 4ac9aeead78ec8d053291f922096fab7e31f6070 and its failed pre-outcome workflow/CI record
+  - no literature-driven harness repair, rerun, comparator change, current/timing/probe change, terminal-map change, cycle 2, PRE_FORMAL or FORMAL promotion
   - no official TEST, new formal identity/STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change
 utility_request_created: null
 ```
 
 ## Sources
 
-- Reisner, Song, Ma, Foster & Porter, *Using Symbolic Evaluation to Understand Behavior in Configurable Software Systems*, ICSE 2010, DOI `10.1145/1806799.1806864`.
-- Raue et al., *Structural and practical identifiability analysis of partially observed dynamical models by exploiting the profile likelihood*, Bioinformatics 25(15), 2009, DOI `10.1093/bioinformatics/btp358`.
-- Xu et al., *Do Not Blame Users for Misconfigurations*, SOSP 2013, DOI `10.1145/2517349.2522727`.
-- Nguyen & Nguyen, *GenTree: Using Decision Trees to Learn Interactions for Configurable Software*, ICSE 2021.
-- Luo et al., *AutoCCAG: An Automated Approach to Constrained Covering Array Generation*, ICSE 2021, DOI `10.1109/ICSE43902.2021.00030`.
-- Pineau et al., *Improving Reproducibility in Machine Learning Research*, JMLR 22(164), 2021.
-- Foalem et al., *Empirical Characterization of Logging Smells in Machine Learning Code*, arXiv:2603.23769, 2026 (preprint).
+- NEST Simulator, `iaf_psc_delta` documentation, v3.9: absolute refractory clamp; refractory input discarded by default or deferred with `refractory_input=true`.
+- NEST Simulator, `iaf_psc_alpha` / `iaf_psc_exp` documentation, current-based LIF with explicit E/I current components and fixed refractory clamp.
+- Brian 2 documentation, `Refractoriness`: `(unless refractory)` state-variable semantics and read-only clamped voltage with other state variables allowed to continue.
+- Jolivet et al., *Generalized Integrate-and-Fire Models of Neuronal Activity Approximate Spike Trains of a Detailed Model to a High Degree of Accuracy*, Journal of Neurophysiology 2004/2005, DOI `10.1152/jn.00190.2004`.
+- NEST Simulator, `iaf_cond_exp` documentation: conductance-based E/I currents depend on membrane voltage and reversal potentials.
+- Tuckwell, *On shunting inhibition*, Biological Cybernetics 55, 1986, DOI `10.1007/BF00341923`.
