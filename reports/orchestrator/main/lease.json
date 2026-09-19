@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-relay-20260919T184525JST",
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-19T18:45:25+09:00",
-  "heartbeat_at": "2026-09-19T18:45:25+09:00",
+  "heartbeat_at": "2026-09-19T18:48:41+09:00",
   "analyst_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
   "active_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
   "active_identity": null,
-  "active_step": "CYCLE2_REPLICATION_PACKAGING_PRE_PUSH",
-  "workflow_run_id": null,
-  "expected_next_action": "Create one science-invariant cycle-2 wrapper/workflow commit from exact cycle-1 head 97f542d86dcd3a609cd039379fcda41ba61e0909, changing only model/training seed 41->42 while preserving the fixed protocol; then observe the exact push CI and stop WAITING_EXTERNAL if still running.",
+  "active_step": "CYCLE2_EXACT_HEAD_WORKFLOW_IN_PROGRESS",
+  "workflow_run_id": 35435714352,
+  "expected_next_action": "Collect exact-head workflow 35435714352. If valid, verify uploaded raw diagnostics/metadata before interpretation, apply only the prospectively fixed cycle-2 outcome mapping, persist the terminal NON_EVIDENTIARY result, and STOP for fresh Analyst review. If a pre-execution mechanical CI defect occurs, only science-invariant repair plus exact-head recheck is allowed; semantic/protocol gaps, TEST leakage, or post-execution failure after diagnostics are visible must STOP without same-run redesign.",
   "owner": "main"
 }

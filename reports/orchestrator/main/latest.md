@@ -1,32 +1,32 @@
-# PRIMARY MAIN — CAND-TOPK-PA-01 remains stopped for fresh Analyst review
+# RELAY MAIN — CAND-TOPK-PA-01 cycle-2 replication dispatched; waiting for exact-head CI/workflow
 
-Timestamp: `2026-09-19 18:16 JST`  
+Timestamp: `2026-09-19 18:48 JST`  
 Worker role: `main`  
-Execution mode: `PRIMARY`  
-Evidence Analyst authority: `3e83f1eb683ce80e326b756fa304e96688fdd3fe`  
+Execution mode: `RELAY`  
+Evidence Analyst authority: `5b63d21f44812ef8d4938c9ad968bb8ab481b3c5`  
 Research layer: `ARCHITECTURE_STUDY`  
 Evidentiary status: `NON_EVIDENTIARY`
 
-## Frontier
+## Continuation performed
 
-FAST PATH reconciliation found no fresh Evidence Analyst handoff after MAIN's valid cycle-1 result. The Analyst mailbox still points to `3e83f1eb683ce80e326b756fa304e96688fdd3fe`, whose prospective contingency requires every valid `CAND-TOPK-PA-01` cycle-1 outcome to STOP for Analyst review. The completed MAIN result is already `PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL` from `research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909`.
+Fresh Evidence Analyst authority prospectively authorized exactly one independent-seed replication of `CAND-TOPK-PA-01` from `research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909`. The only authorized scientific change is model/training seed `41 -> 42`; DEV surface, 48 training episodes, 12 disjoint calibration episodes, probe positions `6/12/18/24`, perturbation seed `20260919`, relative magnitudes `0.01/0.05/0.10`, 8 directions, horizon 6, `full` vs `no_persistent_state`, turnover minimum 20, signal thresholds, and ordinary-reduction thresholds remain unchanged. TEST and all FORMAL surfaces remain forbidden.
 
-Authoritative `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The research branch is unchanged at `97f542d86dcd3a609cd039379fcda41ba61e0909`, exactly four commits ahead of that source, with only `.github/workflows/ci.yml` and `scripts/architecture_studies/topk_persistent_amplification_cycle1.py` changed. Exact execution workflow `35432088902` remains `completed/success` on that head.
+RELAY created one fast-forward research commit, `04ced2b97ed088bb2cdb086d164a86212741e601`, directly on the authorized continuation head. The diff is limited to:
+- adding `scripts/architecture_studies/topk_persistent_amplification_cycle2.py`, a science-invariant wrapper that reuses the accepted cycle-1 implementation, asserts the fixed contract, and changes only the in-memory model seed from 41 to 42 while binding fresh Analyst authority;
+- changing `.github/workflows/ci.yml` so the Python 3.11 tail step runs/uploads cycle 2 instead of rerunning cycle 1.
 
-No fresh authority exists for cycle 2, retuning, redesign, PRE_FORMAL promotion, FORMAL identity/STARTED creation, merge, successor construction, or reinterpretation from the observed outcome. MAIN therefore performed no scientific/research mutation in this run.
+No cycle-1 rerun was dispatched as an intermediate commit; the two-file change was committed atomically before the branch ref moved.
 
-## Integrity / collision
+## Workflow / integrity
 
-MAIN acquired a fresh PRIMARY lease after confirming the prior lease was `COMPLETED`; no competing fresh MAIN `RUNNING` lease existed. The exact target branch/head, `main`, Analyst tip, and completed workflow remained coherent, so repository-wide reconciliation was not triggered.
+Push CI/workflow run `35435714352` is on exact head `04ced2b97ed088bb2cdb086d164a86212741e601`, attempt 1. At checkpoint both `test (3.11)` and `test (3.13)` jobs are `in_progress`; checkout succeeded and Python setup is in progress. Lint, readiness, tests, bundle validation, the cycle-2 DEV execution, and raw artifact upload have not yet completed.
 
-SUB remains on independent `BOUNDED_SECONDARY_DISCOVERY` work. Its latest report explicitly avoided `CAND-TOPK-PA-01`; MAIN did not absorb or wait on SUB work.
+The architecture step is ordered after ordinary lint/readiness/test/bundle validation in the same exact-head workflow. No result has yet become visible and no scientific interpretation has been made. No formal identity, STARTED/control authority, formal preserve/scoring/evidence ref, official TEST access, consumed formal raw, merge, retune, redesign, or Utility request was created.
 
-No official TEST, consumed preserved material, formal identity, STARTED/control authority, formal preserve/evidence ref, or immutable evidence was opened or modified. No Utility request was created.
+Collision reconciliation: prior PRIMARY lease was `COMPLETED`; no fresh PRIMARY `RUNNING` lease or same-object mutation was present. SUB remains on independent work and does not own this MAIN candidate.
 
-## Result / stop
+## Stop
 
-No new FORMAL scientific evidence and no new PRE_FORMAL or ARCHITECTURE_STUDY observation were generated in this run. The prior NON_EVIDENTIARY architecture signal remains unchanged and must not be adaptively extended before fresh Analyst review.
+Lease ends `WAITING_EXTERNAL`. Stop reason: `EXACT_HEAD_CYCLE2_CI_AND_DEV_WORKFLOW_IN_PROGRESS`.
 
-Stop reason: `AWAITING_FRESH_ANALYST_REVIEW_AFTER_VALID_ARCHITECTURE_SIGNAL`.
-
-Lease ends `COMPLETED`. Relay continuation is not expected because no external workflow is pending and no prospectively authorized MAIN action remains. Next MAIN action is to consume a fresh Evidence Analyst handoff reviewing the exact cycle-1 result; until then, do not run cycle 2, retune/redesign, formalize, merge, or create an outcome-responsive successor.
+Next MAIN action: collect workflow `35435714352` only. If a pre-execution mechanical CI defect occurs before diagnostics are visible, apply only a science-invariant fix and recheck exact-head CI. If any semantic/protocol gap, TEST leakage, or post-execution failure after diagnostics become visible occurs, STOP for Analyst. If the run is valid, first verify the uploaded raw artifact and metadata, then classify strictly under the prospectively fixed cycle-2 mapping and STOP for fresh Analyst review. No same-run retuning or successor construction is authorized.

@@ -1,114 +1,99 @@
 {
-  "timestamp": "2026-09-19T18:16:20+09:00",
+  "timestamp": "2026-09-19T18:48:41+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
-  "analyst_commit": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+  "execution_mode": "RELAY",
+  "analyst_commit": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE1",
-  "current_phase": "VALID_CYCLE1_OUTCOME_AWAITING_FRESH_ANALYST_REVIEW",
-  "candidate_question": "CAND-TOPK-PA-01: on fixed DEV replay, does hard top-k selected-set turnover coupled with persistent module state produce delayed state/output amplification beyond the existing no_persistent_state control?",
-  "exploration_cycle_count": {
-    "candidate": "CAND-TOPK-PA-01",
-    "cycle_index_completed": 1,
-    "default_programme_budget": 3,
-    "additional_cycle_authorized": false
-  },
-  "active_claim": "The previously completed prospectively fixed DEV-only cycle 1 produced PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL. This remains NON_EVIDENTIARY architecture characterization only. No fresh Analyst handoff has reviewed/extended that result, so no further MAIN scientific action is authorized.",
+  "current_lane": "TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE2_REPLICATION",
+  "current_phase": "CYCLE2_EXACT_HEAD_WORKFLOW_IN_PROGRESS",
+  "active_claim": "Exactly one NON_EVIDENTIARY independent-seed replication is prospectively authorized. Only model/training seed changes from 41 to 42; all other cycle-1 scientific choices and decision thresholds remain fixed.",
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
+    "evidence_analyst_handoff": "5b63d21f44812ef8d4938c9ad968bb8ab481b3c5",
+    "authorized_continuation_head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
     "research_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
-    "research_head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+    "research_head": "04ced2b97ed088bb2cdb086d164a86212741e601",
+    "workflow_run_id": 35435714352,
     "formal_identity": null,
     "started_ref": null,
     "formal_preserve_ref": null,
-    "formal_evidence_ref": null,
-    "workflow_run_id": 35432088902,
-    "workflow_artifact_id": 10581155271
+    "formal_evidence_ref": null
   },
-  "fast_path_used": true,
-  "full_reconciliation_triggered": false,
-  "full_reconciliation_reason": null,
-  "branches_prs_advanced": {
-    "research_mutation_this_run": false,
-    "research_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
-    "head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
-    "ahead_of_main_by": 4,
-    "behind_main_by": 0,
-    "diff_files": [
+  "lease_collision_reconciliation": {
+    "prior_lease_status": "COMPLETED",
+    "prior_primary_run_id": "sparkbrain-main-primary-20260919T181620JST",
+    "fresh_primary_running_collision_found": false,
+    "same_branch_identity_collision_found": false,
+    "relay_lease_acquired": true,
+    "final_lease_status": "WAITING_EXTERNAL"
+  },
+  "contingency_consumed": "FRESH_ANALYST_GO_FOR_EXACTLY_ONE_CYCLE2_INDEPENDENT_SEED_REPLICATION",
+  "critical_path_actions_performed": [
+    "Read fresh Analyst latest/state and newest MAIN state/latest/history/lease.",
+    "Re-fetched exact authorized research branch at 97f542d86dcd3a609cd039379fcda41ba61e0909 and confirmed no competing mutation.",
+    "Acquired RELAY MAIN lease before research mutation.",
+    "Created one atomic two-file research commit from the exact authorized continuation head.",
+    "Added a cycle-2 wrapper that reuses cycle-1 science and asserts fixed constants while changing only model/training seed 41 to 42 in memory.",
+    "Changed the CI tail from cycle-1 execution/upload to cycle-2 execution/upload so the push dispatches exactly one replication rather than rerunning cycle 1.",
+    "Fast-forwarded the research branch to 04ced2b97ed088bb2cdb086d164a86212741e601.",
+    "Observed exact-head push workflow 35435714352 and checkpointed without waiting for completion."
+  ],
+  "research_diff_verification": {
+    "base": "97f542d86dcd3a609cd039379fcda41ba61e0909",
+    "head": "04ced2b97ed088bb2cdb086d164a86212741e601",
+    "ahead_by": 1,
+    "behind_by": 0,
+    "files": [
       ".github/workflows/ci.yml",
-      "scripts/architecture_studies/topk_persistent_amplification_cycle1.py"
+      "scripts/architecture_studies/topk_persistent_amplification_cycle2.py"
     ],
-    "prs_advanced": [],
-    "merged_to_main": false
+    "science_change": "ONLY_MODEL_TRAINING_SEED_41_TO_42",
+    "other_protocol_changes": false
   },
-  "workflows_experiments": {
-    "new_workflow_dispatched_this_run": false,
-    "formal_experiment_dispatched": false,
-    "official_test_accessed": false,
-    "prior_architecture_execution": {
-      "run_id": 35432088902,
-      "head": "97f542d86dcd3a609cd039379fcda41ba61e0909",
-      "status": "completed",
-      "conclusion": "success",
-      "artifact_id": 10581155271
-    }
+  "workflow_check_result": {
+    "run_id": 35435714352,
+    "head_sha": "04ced2b97ed088bb2cdb086d164a86212741e601",
+    "event": "push",
+    "attempt": 1,
+    "status": "in_progress",
+    "conclusion": null,
+    "python_3_11_job": "in_progress",
+    "python_3_13_job": "in_progress",
+    "cycle2_architecture_step": "pending",
+    "raw_artifact_upload_step": "pending"
   },
-  "observations_results": {
-    "new_observation_this_run": false,
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "prior_classification": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
-    "prior_total_paired_cases": 1152,
-    "prior_total_turnover_cases": 37,
-    "formal_scientific_evidence_generated_this_run": false,
-    "pre_formal_development_evidence_generated_this_run": false,
-    "architecture_information_generated_this_run": false,
-    "interpretation": "No new result was generated. The prior architecture signal is unchanged and remains at the prospectively mandated Analyst-review stop boundary."
-  },
-  "consumed_identities": [],
+  "scientific_result": null,
+  "new_scientific_information": false,
+  "current_object_consumed_identity": null,
+  "consumed_identities_do_not_touch": [
+    "c19-external-v2-official-v4",
+    "c19-r1-revision-authority-official-v1",
+    "c19-r1-revision-authority-official-v2",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "pd01-long-history-fading-memory-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "h5-event-routing-work-reduction-official-v1"
+  ],
   "integrity_state": {
-    "status": "CLEAN_STOP_BOUNDARY_RECONFIRMED",
-    "analyst_tip_rechecked": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
-    "main_tip_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "research_head_rechecked": "97f542d86dcd3a609cd039379fcda41ba61e0909",
-    "workflow_rechecked": "35432088902:completed/success",
+    "status": "CLEAN_WAITING_EXTERNAL_BEFORE_SCIENTIFIC_RESULT",
     "official_test_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
     "formal_preserve_created": false,
+    "formal_scoring_created": false,
     "formal_evidence_created": false,
-    "consumed_identity_reused": false,
     "immutable_evidence_modified": false,
-    "main_modified": false,
-    "protocol_changed_after_outcome": false,
-    "outcome_responsive_retuning": false
+    "consumed_identity_reused": false,
+    "research_merge_performed": false,
+    "outcome_responsive_retuning": false,
+    "raw_diagnostics_visible": false
   },
-  "critical_path_fixes": [],
-  "same_run_steps": [
-    "Read fresh Analyst handoff, MAIN state/lease, and current SUB report.",
-    "Confirmed prior MAIN lease was COMPLETED and acquired a fresh PRIMARY lease before reporting mutation.",
-    "Re-fetched authoritative main, exact research branch/head, and exact completed workflow.",
-    "Confirmed Analyst authority has not advanced after the valid cycle-1 outcome.",
-    "Applied the prospectively fixed STOP-for-Analyst-review contingency and performed no scientific mutation."
-  ],
-  "lease_collision_reconciliation": {
-    "fresh_main_running_collision_found_at_start": false,
-    "primary_lease_acquired": true,
-    "same_branch_identity_collision_found": false,
-    "stale_lease_recovery_needed": false,
-    "final_lease_status": "COMPLETED"
-  },
-  "stop_reason": "AWAITING_FRESH_ANALYST_REVIEW_AFTER_VALID_ARCHITECTURE_SIGNAL",
-  "work_left_for_SUB": "SUB remains independently responsible for Analyst-authorized BOUNDED_SECONDARY_DISCOVERY. MAIN did not absorb, depend on, or wait for SUB work.",
   "utility_request_created": null,
-  "next_MAIN_action": "Consume a fresh prospective Evidence Analyst handoff reviewing CAND-TOPK-PA-01 cycle 1 at research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909. Until fresh authority exists, do not run cycle 2, retune/redesign, promote to PRE_FORMAL/FORMAL, create identity/STARTED/evidence refs, merge, or construct an outcome-responsive successor.",
+  "stop_reason": "EXACT_HEAD_CYCLE2_CI_AND_DEV_WORKFLOW_IN_PROGRESS",
+  "next_MAIN_action": "Collect workflow 35435714352 on exact head 04ced2b97ed088bb2cdb086d164a86212741e601. Pre-execution mechanical CI defects may be fixed only under unchanged scientific semantics and exact-head recheck. Semantic/protocol gaps, TEST leakage, or post-execution failure after diagnostics are visible STOP for Analyst. For a valid run, verify raw artifact/metadata first, map the fixed outcome, and STOP for fresh Analyst review.",
   "persistence_result": {
-    "status": "DURABLE",
-    "latest_commit": "9fcd1b85f753092273fe695ce5552c4c79b9bbdb",
-    "history_path": "reports/orchestrator/history/2026-09-19/1816-main.md",
-    "history_commit": "830bf2651da3617e47101aeb2ccbd5ea5efd2e49",
-    "state_commit": "THIS_WRITE",
-    "completion_lease_commit": "PENDING_FINAL_WRITE",
+    "status": "DURABLE_CHECKPOINT_REQUESTED",
+    "history_path": "reports/orchestrator/history/2026-09-19/1848-main.md",
     "force_push_used": false
   }
 }
