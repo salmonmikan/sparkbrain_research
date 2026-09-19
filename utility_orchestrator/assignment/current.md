@@ -2,65 +2,63 @@
 
 status: ASSIGNED
 active_assignment: true
-assignment_id: CTRL-20260920-0450-HANDOFF-BINDING-GUARD
+assignment_id: CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY
 issued_by: control_brain
-issued_at: 2026-09-20T04:50:00+09:00
-expires_at: 2026-09-20T07:00:00+09:00
+issued_at: 2026-09-20T06:50:00+09:00
+expires_at: 2026-09-20T09:00:00+09:00
 max_runs: 1
 run_count: 0
 source_request_ids:
-- EVA-20260920-0401-HANDOFF-BINDING-GUARD
+- EVA-20260920-0502-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY
 
 objective: >-
-  Design and validate one bounded prospective machine-checkable handoff-binding
-  schema/checker for future outcome-bearing lower-funnel closures. Demonstrate
-  fail-closed detection on the known completed Temporal and Top-k handoff
-  mismatches and successful validation on at least one faithful binding/fixture.
+  Read-only audit the already-completed CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01
+  cycle-1 machine artifact against its exact prospective contract, harness, workflow
+  metadata, and bound source blobs. Determine whether decision-relevant static_facts
+  fields faithfully encode source semantics, especially
+  restore_restores_original_base_threshold, and report exact matches/mismatches and
+  whether those fields are trustworthy for future successor design.
 
-temporary_role: READ_ONLY_CONTROL_PLANE_HANDOFF_GUARD_PROTOTYPE
+temporary_role: READ_ONLY_STATIC_DETECTOR_CONSISTENCY_AUDIT
 target_branch: ops/utility-orchestrator-requests
-target_object: utility_orchestrator/prototypes/handoff_binding_guard_v1/
+target_object: CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01_COMPLETED_CYCLE1
 
-fixture_scope:
-- completed CAND-TEMPORAL-BATCH-PARTITION-01 cycle 1 NON_EVIDENTIARY artifact/handoff chain
-- completed CAND-TOPK-PA-01 cycle 1 NON_EVIDENTIARY artifact/handoff chain
-- completed v0.5 topology-config Architecture artifact may be used only as a safe positive-control fixture if already accessible
-- exclude the currently active MAIN suppression-semantics Architecture object from fixture generation and outcome interpretation
+safe_input_scope:
+- completed NON_EVIDENTIARY suppression cycle-1 artifact and machine summary only
+- exact prospectively bound contract and harness for that completed cycle
+- exact bound source blobs and ordinary workflow metadata already referenced by the contract
+- no active MAIN refractory-current-accounting object
+- no current SUB discovery object
 
-minimum_bindings_when_present:
-- workflow run ID and exact producing head
-- artifact ID/name and archive digest
-- embedded candidate/study identity
-- embedded Analyst/contract/interpretation identity or digest
-- raw digest and row/cardinality count
-- exact mapped outcome/classification
-- canonical digest of the complete machine summary object used for interpretation
-- every family/stratum boolean, count, ratio, threshold application, or other machine-summary field copied into durable narrative/state
+required_checks:
+- enumerate decision-relevant static_facts fields used by the completed suppression cycle
+- compare each field to exact bound source semantics using deterministic source-level/AST/structural inspection where practical
+- explicitly verify restore_restores_original_base_threshold
+- distinguish artifact extractor mismatch from artifact-to-handoff mismatch
+- report whether disputed fields are trustworthy for future successor decisions without changing the completed mapped outcome
 
 allowed_actions:
-- read only already-produced safe NON_EVIDENTIARY completed artifacts and designated control-plane handoffs
-- create or update bounded prototype/design files only under utility_orchestrator/prototypes/handoff_binding_guard_v1/ on this control-plane branch
-- implement deterministic canonicalization/digest and validation logic or an equivalent validation design
-- demonstrate fail-closed mismatch detection on the known Temporal and Top-k defects
-- demonstrate successful validation on at least one faithful binding/fixture
+- read only the safe completed NON_EVIDENTIARY suppression cycle-1 chain
+- use deterministic source-level, AST, structural, or invariant inspection against exact bound source blobs
 - write the normal single Utility result and state update for this assignment
 
 forbidden_actions:
 - dispatch or rerun scientific workflows
-- retrain, reprobe, rescore, retune, regenerate, relabel, or repair scientific results
+- execute dynamic pulses, probes, training, or experiments
+- modify or repair the completed artifact, contract, harness, research branch, MAIN, or source
+- relabel AMBIGUOUS_CONTRACT or rescore, retune, regenerate, reinterpret, or replace the completed terminal result
 - access official TEST or consumed/formal raw evidence
-- edit or repair prior MAIN/Relay/Evidence Analyst/Control/request/decision/result records
-- mutate main, research branches, immutable/freeze/sealed/formal/evidence/control/preserve refs, or existing scientific artifacts
+- edit prior MAIN/Relay/Evidence Analyst/Control/Methodology/request/decision/result records
+- mutate main, research branches, immutable/freeze/sealed/formal/evidence/control/preserve refs
 - choose or change scientific thresholds, comparators, metrics, seeds, candidate status, successors, or allocations
 - create PRE_FORMAL or FORMAL authority, identities, STARTED markers, preserve/evidence anchors
-- wire the prototype into live research workflows or scheduler definitions
+- use the active MAIN refractory object or SUB discovery as fixtures/dependencies
 - mutate schedulers or self-approve follow-up work
 
 stop_condition: >-
-  Stop after one completed result demonstrating the bounded validator/design, or
-  return BLOCKED if safe fixtures or required control-plane inputs are unavailable.
-  Do not broaden scope or self-extend beyond one run.
+  Stop after one completed read-only consistency result, or return BLOCKED if safe
+  inputs are unavailable. Do not broaden scope or self-extend beyond one run.
 
 reporting_destination: utility_orchestrator/results/2026-09-20/
-evidentiary_status: NON_EVIDENTIARY_CONTROL_PLANE_METHOD_PROTOTYPE
+evidentiary_status: NON_EVIDENTIARY_METHODOLOGY_DIAGNOSTIC
 follow_up_authority: NONE_WITHOUT_FRESH_CONTROL_DECISION
