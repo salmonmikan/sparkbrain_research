@@ -1,45 +1,50 @@
 {
-  "timestamp": "2026-09-20T01:25:02+09:00",
+  "timestamp": "2026-09-20T02:23:30+09:00",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
-  "analyst_commit": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
+  "analyst_commit": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
   "research_layer": "HOLD",
   "current_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
-  "current_phase": "POST_ARCHITECTURE_FULL_RECONCILIATION_HOLD",
-  "candidate": {
-    "id": "CAND-TEMPORAL-BATCH-PARTITION-01",
-    "question": "For identical repository-reference external pulse timelines, does API batch partitioning alone alter temporal-expectation omission scheduling and fixed downstream replay observables under current temporal-expectation semantics?",
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "reviewed_classification": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
-    "exploration_cycle_count": {
-      "discovery_completed": 1,
-      "architecture_completed": 1,
-      "architecture_next_authorized": false,
-      "programme_default_budget": 3
-    }
+  "current_phase": "POST_RECONCILIATION_EXPLICIT_CENTRAL_OBJECT_HOLD",
+  "candidate_question": {
+    "id": null,
+    "question": "No active MAIN execution object. Await a genuinely fresh prospectively specified central Architecture/PRE_FORMAL/FORMAL object.",
+    "exploration_cycle_count": null,
+    "evidentiary_status": "NO_NEW_SCIENTIFIC_RESULT_THIS_RUN"
   },
   "research_layer_state": {
-    "DISCOVERY": "OPEN_SUB_DEFAULT_NON_EVIDENTIARY",
-    "ARCHITECTURE_STUDY": "HOLD_NO_ACTIVE_MAIN_OBJECT",
-    "PRE_FORMAL": "EMPTY_HOLD",
-    "FORMAL": "EMPTY_HOLD"
+    "DISCOVERY": {
+      "state": "ACTIVE",
+      "owner": "SUB",
+      "current_object": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
+      "status": "NON_EVIDENTIARY"
+    },
+    "ARCHITECTURE_STUDY": {
+      "state": "HOLD_NO_ACTIVE_MAIN_OBJECT",
+      "owner": "MAIN"
+    },
+    "PRE_FORMAL": {
+      "state": "EMPTY_HOLD",
+      "owner": "MAIN"
+    },
+    "FORMAL": {
+      "state": "EMPTY_HOLD",
+      "owner": "MAIN"
+    }
   },
   "candidate_pool": {
+    "CAND-V05-TOPOLOGY-CONFIG-BINDING-01": "DISCOVERY_SUB_ONLY_CYCLE0_OF3",
     "CAND-TEMPORAL-BATCH-PARTITION-01": "HOLD_CURRENT_QUESTION_COMPLETE_NO_CYCLE2",
     "CAND-TOPK-PA-01": "HOLD_NO_CYCLE3_FRESH_REDUCTION_OBJECT_REQUIRED",
     "CAND-H7-RESP-01": "HOLD_NO_NATIVE_OBJECT",
-    "CAND-FIELD-SOURCE-LINEAGE-CAP-01": "REJECT_DISCOVERY_EXACT_BOOKKEEPING_REDUCTION"
+    "CAND-TOPOLOGY-FANOUT-ALIAS-01": "REJECT_DISCOVERY_EXACT_MODULAR_REDUCTION_CURRENT_PATH_IRRELEVANT"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
+    "evidence_analyst_handoff": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
     "temporal_research_branch": "research/main-temporal-batch-partition-arch-study-20260920",
     "temporal_research_head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-    "temporal_contract_commit": "7d41c8a5ba53c7bb84a7f5fda8d46d59f1d5c4a7",
-    "temporal_harness_commit": "819e0b9ea6a7b93c0b8d3f22c6cf95065068297f",
-    "architecture_workflow_run_id": 35451528895,
-    "ordinary_ci_run_id": 35451528944,
-    "artifact_id": 10587410697,
+    "temporal_artifact_id": 10587410697,
     "evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
@@ -47,86 +52,40 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
     ],
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
     "formal_identity": null,
     "started_ref": null,
     "formal_preserve_ref": null,
     "formal_evidence_ref": null,
-    "sub_reserved_lane": "BOUNDED_SECONDARY_DISCOVERY"
+    "sub_reserved_lane": "V05_TOPOLOGY_DIMENSION_BINDING_DISCOVERY_CYCLE1"
   },
-  "fast_path_used": false,
-  "full_reconciliation_reason": "ANALYST_ARTIFACT_DESCRIPTIVE_MISMATCH_CONTRACT_DIGEST_AND_TIMELINE_ALLOCATION",
-  "full_reconciliation_scope": [
-    "current main",
-    "active temporal research branch/head",
-    "exact architecture workflow and ordinary CI",
-    "exact workflow artifact and artifact digests",
-    "evidence tag namespace",
-    "legacy freeze/control namespaces",
-    "broader active research branches and recent workflows",
-    "PR #148 and PR #149",
-    "Issue #139",
-    "current SUB ownership/report",
-    "consumed identities"
-  ],
+  "fast_path_used": true,
+  "full_reconciliation_reason": null,
   "branches_prs_advanced": {
     "research_branch_mutations_this_run": [],
     "pull_requests_merged": [],
     "control_plane_only": true
   },
-  "workflows_experiments": [
-    {
+  "workflows_experiments": {
+    "dispatched_this_run": [],
+    "main_scientific_workflow_state": "NONE_ACTIVE",
+    "completed_temporal_reference": {
       "run_id": 35451528895,
-      "name": "Temporal batch partition Architecture cycle 1",
       "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-      "status": "completed",
-      "conclusion": "success",
-      "artifact_id": 10587410697,
+      "result": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
       "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY"
-    },
-    {
-      "run_id": 35451528944,
-      "name": "ci",
-      "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-      "status": "completed",
-      "conclusion": "success",
-      "scientific_role": "none"
-    },
-    {
-      "run_id": 35454544902,
-      "name": "Evidence Analyst ci",
-      "head": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
-      "status": "completed",
-      "conclusion": "success",
-      "scientific_role": "control_plane_only"
     }
-  ],
+  },
   "observations_results": {
     "formal_scientific_evidence": "NONE_NEW",
     "pre_formal_development_evidence": "NONE_NEW",
-    "architecture_study_result": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
-    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "artifact_archive_sha256": "22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
-    "artifact_metadata_contract_sha256": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
-    "artifact_raw_sha256": "71d4d8fddbe6b683b4ad93951c0f95fc1dfa5df74645743bfd39fba5b33c54ef",
-    "official_test_opened": false,
-    "started": false,
-    "raw_before_interpretation": true,
-    "repetition_train_defaults": {
-      "schedule_differs_across_arms": false,
-      "replay_differs_across_arms": false,
-      "common_omission_schedule": ["omission:tick@99.6ms"],
-      "whole": {"ignitions": 0, "bursts": 0, "cascades": 5, "spikes": 10},
-      "midpoint_two_batch": {"ignitions": 0, "bursts": 0, "cascades": 5, "spikes": 10},
-      "event_time_causal": {"ignitions": 0, "bursts": 0, "cascades": 5, "spikes": 10}
-    },
-    "noisy_motif_stream_defaults": {
-      "schedule_differs_across_arms": true,
-      "replay_differs_across_arms": true,
-      "whole": {"omissions": 8, "ignitions": 4, "bursts": 46, "cascades": 11, "spikes": 89},
-      "midpoint_two_batch": {"omissions": 9, "ignitions": 5, "bursts": 61, "cascades": 8, "spikes": 104},
-      "event_time_causal": {"omissions": 11, "ignitions": 5, "bursts": 64, "cascades": 8, "spikes": 108}
-    },
-    "claim_boundary": "Architecture/API batching semantics only; no new computational principle or mechanistic distinctness established."
+    "architecture_study_observation": "NONE_NEW_THIS_RUN",
+    "control_plane_information": "Fresh Analyst authority reconciled the prior Temporal family-level narrative and contract-digest transcription defect to exact machine artifact values without rerun or relabel; scientific classification and HOLD allocation are unchanged.",
+    "sub_discovery_review": "CAND-TOPOLOGY-FANOUT-ALIAS-01_REJECT_EXACT_MODULAR_REDUCTION_AND_CURRENT_PATH_IRRELEVANCE",
+    "claim_boundary": "No new scientific claim from MAIN this run."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -138,16 +97,9 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "integrity_state": {
-    "status": "YELLOW_NON_DECISION_CHANGING_ANALYST_DESCRIPTIVE_MISMATCH",
+    "status": "CLEAN_RECONCILED_CONTROL_PLANE_FIDELITY",
     "scientific_execution_integrity": "CLEAN",
-    "analyst_narrative_mismatch": {
-      "analyst_reports": "repetition partition-dependent functional effect; noisy-motif schedule-only effect",
-      "exact_artifact_reports": "repetition no partition effect; noisy-motif partition-dependent functional effect",
-      "analyst_contract_digest": "681c21e31c686be7d8beb10e927ef65510ce82689c2cc81ae5fd9fedc179c06d",
-      "artifact_metadata_contract_digest": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
-      "decision_impact": "NONE: both exact artifact and Analyst classify FUNCTIONAL_BATCH_PARTITION_EFFECT and Analyst explicitly HOLDs without cycle 2."
-    },
-    "contract_fixed_before_outcome_visibility": true,
+    "prior_temporal_handoff_mismatch": "RECONCILED_BY_ANALYST_7dd9d9d4d02febe2547a4cc547b31891a0bc285f_WITHOUT_SCIENTIFIC_RERUN_OR_RELABEL",
     "official_test_accessed": false,
     "consumed_preserve_raw_accessed": false,
     "formal_identity_created": false,
@@ -161,41 +113,60 @@
     "outcome_responsive_redesign_performed": false,
     "rerun_or_retune_performed": false
   },
+  "outcome_contingencies_consumed": {
+    "NO_FRESH_CENTRAL_OBJECT": "MAIN_HOLD",
+    "FRESH_SUB_DISCOVERY": "FRESH_ANALYST_REVIEW_BEFORE_ANY_PROMOTION",
+    "FRESH_CENTRAL_ARCH_OR_PRE_FORMAL_OBJECT": "PROSPECTIVE_MAIN_EXECUTION_ONLY_AFTER_FRESH_AUTHORITY",
+    "FORMAL": "UNARMED_NO_FORMAL_OBJECT"
+  },
+  "blocked_until": {
+    "FORMAL": "fresh high-value object, fresh collision-free identity, complete prospective bindings, pre-START review, exactly-once STARTED/no-clobber, raw-before-score/preserve-before-read authority",
+    "PRE_FORMAL": "fresh mechanistic/reduction question with adequate lower-layer support",
+    "ARCHITECTURE_STUDY": "genuinely fresh central object with information value beyond exact ordinary/static consequence"
+  },
+  "do_not_touch": [
+    "Temporal cycle 2",
+    "Top-k cycle 3",
+    "synthetic resonant fanout follow-up",
+    "H7 queue-filler construction",
+    "SUB V05 topology config-binding Discovery",
+    "consumed identities",
+    "official TEST/formal scoring surfaces without fresh authority",
+    "immutable evidence/freeze/preserve refs",
+    "research merges",
+    "scheduler definitions"
+  ],
   "lease_collision_reconciliation": {
-    "prior_status": "WAITING_EXTERNAL",
-    "prior_heartbeat": "2026-09-20T00:23:00+09:00",
-    "stale_over_20_minutes": true,
+    "prior_status": "COMPLETED",
     "fresh_same_object_running_collision_found": false,
-    "research_head_reconciled_before_recovery": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-    "main_ref_reconciled_before_recovery": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_ref_reconciled_before_recovery": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
-    "primary_lease_acquire_commit": "e018db208696b93ae039d66a96a819e2f4e7b603",
+    "main_ref_reconciled_before_acquire": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "analyst_ref_reconciled_before_acquire": "7dd9d9d4d02febe2547a4cc547b31891a0bc285f",
+    "primary_lease_acquire_commit": "c4408e2f00917d368535428cda5e7ac24c1de86f",
+    "final_lease_commit": "a3c77ae2c3730c145cb7d0043b837ec285798655",
     "sub_collision": false
   },
   "critical_path_fixes": [],
   "same_run_steps": [
-    "Consumed fresh Analyst HOLD authority and candidate/layer/contingency state.",
-    "Re-fetched current main, exact temporal branch/head, workflow and CI state.",
-    "Recovered stale WAITING_EXTERNAL lease only after collision/ref reconciliation.",
-    "Downloaded exact workflow artifact 10587410697 and verified metadata/raw/summary digests and fixed mapped outcome.",
-    "Detected timeline-level and contract-digest mismatch between Analyst narrative/state and the exact artifact.",
-    "Escalated from FAST PATH to FULL RECONCILIATION and inspected broader research/ref/workflow/governance/consumed state.",
-    "Confirmed no fresh MAIN execution object, no FORMAL identity/evidence, and no decision-changing integrity conflict.",
-    "Persisted the exact NON_EVIDENTIARY result and HOLD without modifying scientific branches or Analyst-owned files."
+    "Consumed fresh Analyst commit 7dd9d9d4d02febe2547a4cc547b31891a0bc285f including main_lane, layer state, candidate pool, blocked-until, do-not-touch, GO/STOP and contingency tree.",
+    "Read prior MAIN latest/state/terminal lease and current SUB report for collision avoidance.",
+    "Re-fetched authoritative main, completed Temporal exact head, evidence tags, and empty formal/sealed/freeze tag namespaces.",
+    "Acquired a fresh PRIMARY lease only after confirming no fresh RUNNING MAIN collision.",
+    "Confirmed Analyst explicitly has no safe/high-information central MAIN target and reserved the only active Discovery object to SUB.",
+    "Performed no scientific mutation or experiment and persisted the explicit HOLD via MAIN-owned control-plane paths."
   ],
-  "stop_reason": "ANALYST_EXPLICIT_HOLD_AFTER_FUNCTIONAL_BATCH_PARTITION_EFFECT_FULL_RECONCILIATION_DESCRIPTIVE_MISMATCH",
-  "work_left_for_sub": "Independent bounded NON_EVIDENTIARY Discovery only; no repartition. MAIN does not absorb SUB work.",
+  "stop_reason": "ANALYST_EXPLICIT_MAIN_HOLD_NO_FRESH_CENTRAL_OBJECT_AFTER_TEMPORAL_RECONCILIATION",
+  "work_left_for_sub": "Exactly one bounded NON_EVIDENTIARY `CAND-V05-TOPOLOGY-CONFIG-BINDING-01` Discovery cycle under lane `V05_TOPOLOGY_DIMENSION_BINDING_DISCOVERY_CYCLE1`, then fresh Analyst review. MAIN does not absorb it.",
   "lane_repartition_reason": null,
   "utility_request_created": null,
-  "existing_utility_request": "SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT",
-  "next_MAIN_action": "Await a fresh Evidence Analyst handoff that prospectively authorizes a genuinely fresh central Architecture/PRE_FORMAL/FORMAL object. Do not execute Temporal cycle 2, reinterpret or rebind the completed Temporal cycle, manufacture a successor, or absorb SUB Discovery.",
+  "existing_utility_request": "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY",
+  "next_MAIN_action": "Await a fresh Evidence Analyst handoff that prospectively authorizes a genuinely fresh central Architecture/PRE_FORMAL/FORMAL object. Do not reopen completed/rejected candidates or absorb SUB work.",
   "persistence_result": {
-    "primary_lease_acquire_commit": "e018db208696b93ae039d66a96a819e2f4e7b603",
-    "history_commit": "8d4bcc2d5e329a4143f39baa5682f1e9927a0700",
-    "history_path": "reports/orchestrator/history/2026-09-20/0124-main.md",
-    "latest_md_commit": "288ed1d7ca7093eda752f8b37c6bbe3a407debfe",
+    "primary_lease_acquire_commit": "c4408e2f00917d368535428cda5e7ac24c1de86f",
+    "history_commit": "038c6bc1a837f4b56edb13f76c983dcec4d739ee",
+    "history_path": "reports/orchestrator/history/2026-09-20/0222-main.md",
+    "latest_md_commit": "57c85862906277b1a4cfba1854fb965e948e6098",
+    "final_lease_commit": "a3c77ae2c3730c145cb7d0043b837ec285798655",
     "state_json": "this update",
-    "final_lease_commit": "follows state persistence",
     "force_push_used": false
   }
 }
