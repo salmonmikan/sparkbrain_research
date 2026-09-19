@@ -1,106 +1,151 @@
 {
-  "timestamp": "2026-09-19T15:33:10+09:00",
+  "timestamp": "2026-09-19T16:42:00+09:00",
   "worker_role": "sub",
-  "mode": "no_op",
-  "evidence_analyst_commit": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
-  "consumed_lanes": [
-    "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY:CLOSED_BY_ANALYST_INTEGRITY_BLOCKED"
-  ],
+  "mode": "discovery",
+  "evidence_analyst_commit": "d8974f662e2fd36000125b643ae908030c3e8aac",
+  "consumed_lanes": [],
   "selected_independent_lane": null,
-  "exploratory_target": null,
-  "reservation_status": null,
+  "exploratory_target": "TOPK_ROUTER_MARGIN_CHURN_STABILITY_DISCOVERY",
+  "candidate_pool_id": null,
+  "candidate_pool_status": "CURRENT_ANALYST_HANDOFF_HAS_NO_USABLE_CANDIDATE_POOL_FIELD_OR_TARGET; SELF_SELECTED_UNDER_DISCOVERY_FALLBACK",
+  "research_layer_state": "DISCOVERY_NON_EVIDENTIARY",
+  "exploration_cycle": 1,
+  "exploration_cycle_max": 3,
   "independent_of_main_critical_path": true,
   "depends_on_main_outcome": false,
   "execution_allowed": false,
-  "sub_active_claim": "No active SUB claim. Current Analyst allocation has no formal lane/fallback and no safe useful non-duplicative incubator target.",
+  "sub_active_claim": "Bounded synthetic architecture Discovery of hard top-k router perturbation churn; no formal authority and no dependency for MAIN.",
+  "why_independent_of_main": "MAIN has no admitted object/identity/branch/STARTED/workflow. Probe uses only synthetic linear routers and synthetic module-state vectors and does not touch any candidate, blocker, successor or consumed line.",
   "main_work_explicitly_avoided": [
     "fresh-object admission and primary candidate selection",
-    "successor/comparator/mechanism design for MAIN frontier",
-    "candidate-specific bugs and verifier/harness/runner/binding/CI/readiness fixes",
+    "future H7/causal-credit mechanism or comparator construction",
+    "candidate-specific bugs and verifier/harness/runner/binding/CI fixes",
     "preservation/scoring/execution blockers",
     "consumed-line rescue/retry/retune/rescore/reinterpretation",
-    "future causal-credit critical-path construction",
-    "creation of post-terminal NI01 TEST-target or scoring access"
+    "sealed or one-way TEST surfaces"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
+    "evidence_analyst": "d8974f662e2fd36000125b643ae908030c3e8aac",
     "control_brain": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
-    "orchestrator_parent_tip_before_persistence": "313da06cdafd8cbaf82c19a1f82c9e9e2a234827",
-    "main_latest_state_analyst": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
-    "formal_tags": [],
-    "sealed_tags": [],
-    "tag_freeze_refs": [],
+    "orchestrator_parent_tip_before_persistence": "5f037440607580fbfb4c1e1829bd127131d54c33",
+    "main_latest_state_analyst": "d8974f662e2fd36000125b643ae908030c3e8aac",
     "authoritative_evidence_tag_count": 5,
-    "legacy_freeze_branch_count": 13,
-    "methodology_calibration_mailbox": "97c2d17c3e6b097311626cce1058e2d56e889cef"
+    "formal_tags_count": 0,
+    "sealed_tags_count": 0,
+    "tag_freeze_count": 0,
+    "legacy_freeze_branch_count": 13
   },
+  "question_or_hypothesis": "Can small perturbations near hard top-k router boundaries create discrete selected-set churn and O(1) pooled-state changes, with boundary density increasing as module count grows at fixed k=4; and is the churn fully reducible to ordinary linear top-k hyperplane geometry?",
+  "inputs_used": {
+    "surface": "synthetic_only",
+    "event_dim": 24,
+    "active_k": 4,
+    "module_counts": [8, 12, 24, 48],
+    "epsilons": [0.005, 0.01, 0.05, 0.1],
+    "samples_per_cell": 6000,
+    "total_samples": 96000,
+    "seed": 20260919,
+    "repository_dataset_used": false,
+    "trained_checkpoint_used": false,
+    "formal_or_preserved_test_material_used": false
+  },
+  "implementation_or_experiment_performed": {
+    "branch": "research/exploratory-sub-topk-margin-churn-20260919",
+    "commit": "2d6152601ebb395822b763990f6dfaf19110453c",
+    "script": "scripts/exploratory_topk_router_margin_churn.py",
+    "handoff_artifact": "analysis/exploratory/sub/topk-router-margin-churn-cycle1.md",
+    "method": "Synthetic Gaussian linear router; exact analytic first top-k crossing radius along a random perturbation direction; compare hard selected-set turnover and pooled-state jump with smooth softmax-weighted pooling."
+  },
+  "observations": {
+    "boundary_predictor_accuracy_all_96000": 1.0,
+    "interpretation": "Raw hard top-k selected-set churn is exactly reduced to ordinary linear hyperplane crossing geometry in this synthetic setting.",
+    "turnover_rate_epsilon_0_05": {
+      "modules_8": 0.016666666666666666,
+      "modules_12": 0.023,
+      "modules_24": 0.029666666666666668,
+      "modules_48": 0.04133333333333333
+    },
+    "turnover_rate_epsilon_0_10": {
+      "modules_8": 0.034,
+      "modules_12": 0.04833333333333333,
+      "modules_24": 0.06516666666666666,
+      "modules_48": 0.081
+    },
+    "median_margin_epsilon_0_05": {
+      "modules_8": 0.2232190057121843,
+      "modules_12": 0.16848310136463923,
+      "modules_24": 0.11499528213234989,
+      "modules_48": 0.09582355456271974
+    },
+    "mean_turnover_state_jump_range": "approximately 1.6-1.7 L2",
+    "soft_pooling_behavior": "continuous / smooth under same perturbations",
+    "scientific_claim": false
+  },
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "what_would_falsify_or_reduce_it": "On a prospectively specified DEV-only trained SparseRoutingModel study, reject/reduce if delayed state/output divergence is fully predicted by router margin plus selected-set turnover and is not meaningfully larger than a privilege-matched smooth or margin-matched baseline, or if realistic DEV margins make turnover negligible.",
+  "candidate_next_research_layer": "ARCHITECTURE_STUDY",
+  "scientific_choices_still_open": [
+    "perturbation norm and semantic axis",
+    "random initialization versus DEV-trained checkpoint",
+    "state/output divergence metric and horizon",
+    "smooth-router versus margin-matched comparator",
+    "router-margin normalization across module counts",
+    "prospective conditioning on selected-set turnover",
+    "resource matching for comparator"
+  ],
+  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "branches_prs_advanced": {
-    "research_branches_by_sub": [],
-    "prs_by_sub": [],
-    "open_prs_observed": [148, 149],
-    "open_non_pr_issues_observed": [139],
-    "research_20260919_branches_observed": []
+    "research_branches_by_sub": ["research/exploratory-sub-topk-margin-churn-20260919"],
+    "research_commit": "2d6152601ebb395822b763990f6dfaf19110453c",
+    "prs_by_sub": []
   },
   "workflows_experiments": {
-    "sub_dispatched": [],
-    "formal_experiment_by_sub": "NOT_STARTED",
-    "official_test_accessed_by_sub": false,
-    "official_scoring_produced_by_sub": false,
-    "latest_control_plane_ci_observed": {
-      "run_id": 35426665138,
-      "branch": "ops/scheduler-registry",
-      "head_sha": "349704fd5e144fc42df11c780ed0a20caf003144",
-      "status": "completed",
-      "conclusion": "success",
-      "scientific_relevance": "none"
+    "formal_experiment_dispatched": false,
+    "scientific_workflow_dispatched": false,
+    "official_test_accessed": false,
+    "official_scoring_produced": false,
+    "ordinary_branch_ci": {
+      "run_id": 35430020142,
+      "status_when_observed": "queued",
+      "scientific_relevance": "repository CI only; not formal/scientific execution"
     }
   },
   "scientific_readiness_exploratory_results": {
     "sub_new_formal_result": false,
-    "sub_new_exploratory_result": false,
+    "sub_new_exploratory_result": true,
     "new_formal_scientific_information": false,
-    "allocation_change_this_run": false,
-    "incubator_selection_result": "NO_SAFE_USEFUL_NON_DUPLICATIVE_TARGET",
-    "canonical_ni01_result_unchanged": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
-    "methodology_calibration_result_available": false
+    "raw_selection_phenomenon_reduced": true,
+    "new_architecture_diagnostic": true
   },
-  "evidentiary_status": "NONE_FOR_SUB",
   "consumed_identities": {
     "by_sub": [],
     "closed_or_historical_identities_reused": false
   },
   "blockers": [
-    "Scientific-object availability: no genuinely independent prospectively complete SUB object is reserved.",
-    "No safe useful non-duplicative synthetic/development-only incubator target exists after comparison with current exploratory SUB history and Analyst active-line review.",
-    "NI01 world-label-privilege sensitivity remains closed and may not be revived by creating TEST-target/scoring access around a consumed identity."
+    "No formal SUB lane/fallback is allocated; Discovery only.",
+    "Any cycle-2 DEV architecture study requires fresh Analyst acceptance/promotion and prospective choices before execution."
   ],
   "collision_reconciliation": {
-    "report_branch_tip_before_persistence": "313da06cdafd8cbaf82c19a1f82c9e9e2a234827",
-    "latest_main_checkpoint_time": "2026-09-19T15:16:45+09:00",
-    "latest_main_checkpoint_analyst_commit": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
+    "report_branch_tip_before_persistence": "5f037440607580fbfb4c1e1829bd127131d54c33",
     "fresh_analyst_tip_rechecked": true,
-    "fresh_analyst_tip": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
+    "fresh_analyst_tip": "d8974f662e2fd36000125b643ae908030c3e8aac",
     "main_ref_rechecked": true,
-    "research_refs_rechecked": true,
+    "research_target_branch_prechecked_absent": true,
     "evidence_formal_sealed_freeze_control_preserve_refs_rechecked": true,
-    "prs_issues_workflows_rechecked": true,
-    "sub_collision_detected": false,
+    "prs_workflows_rechecked": true,
+    "main_collision_detected": false,
     "append_only_history_path_prechecked_absent": true
   },
-  "integrity_state": "CLEAN_NO_OP_NO_MAIN_MUTATION_NO_FORMAL_BOUNDARY_NO_TEST_TARGET_ACCESS_NO_IDENTITY_CONSUMPTION_NO_OFFICIAL_SCORING_CANONICAL_EVIDENCE_UNCHANGED",
-  "completion_target": "Reconcile fresh authority and repository state, avoid MAIN collision, select formal/fallback/incubator work only if valid, otherwise persist a justified no-op SUB checkpoint.",
-  "completion_target_status": "ACHIEVED_NO_OP_BY_DESIGN",
-  "fallback_status": "ABSENT",
+  "integrity_state": "CLEAN_DISCOVERY_SYNTHETIC_ONLY_NO_MAIN_DEPENDENCY_NO_FORMAL_BOUNDARY_NO_TEST_ACCESS_NO_IDENTITY_CONSUMPTION_NO_OFFICIAL_SCORING_CANONICAL_EVIDENCE_UNCHANGED",
+  "completion_target": "Select and execute one bounded high-information Discovery target, record NON_EVIDENTIARY observations and reduction test, and hand it to Evidence Analyst for promotion/rejection without touching MAIN or formal one-way surfaces.",
+  "completion_target_status": "ACHIEVED_DISCOVERY_CYCLE_1",
+  "fallback_status": "FORMAL_SUB_FALLBACK_ABSENT_DISCOVERY_FALLBACK_USED",
   "rejected_lane": null,
   "lane_rejected_reason": null,
-  "candidate_formal_question": null,
-  "suggested_prospective_object": null,
-  "promotion_recommendation": "NONE",
-  "incubator_handoff": null,
-  "proposed_handoff_to_analyst": "Keep SUB null/no-op until a genuinely independent prospectively complete secondary object is reserved or a clearly distinct synthetic/development-only NON_EVIDENTIARY question appears outside existing SUB exploratory coverage and MAIN critical-path construction. Do not revive NI01 by manufacturing target/scoring access.",
+  "proposed_handoff_to_analyst": "PROMOTE_TO_ARCHITECTURE_STUDY if a DEV-only recurrent/persistence follow-up is judged useful. Do not promote raw top-k churn as novelty: cycle 1 already reduces selection turnover exactly to ordinary top-k boundary geometry. A future cycle should ask only whether recurrent persistent-state dynamics create delayed amplification beyond that ordinary boundary effect.",
   "report_persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-19/1533-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-19/1642-sub.md",
     "sub_latest_path": "reports/orchestrator/sub/latest.md",
     "sub_state_path": "reports/orchestrator/sub/state.json",
     "atomic_git_commit_requested": true,
