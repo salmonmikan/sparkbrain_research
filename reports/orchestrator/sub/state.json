@@ -1,82 +1,127 @@
 {
-  "timestamp": "2026-09-19T22:41:00+09:00",
+  "timestamp": "2026-09-19T23:46:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
-  "evidence_analyst_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
+  "evidence_analyst_commit": "982e5686524c9fc2b665efcf44069fef49196333",
   "consumed_lane": "BOUNDED_SECONDARY_DISCOVERY",
   "formal_sub_lane": null,
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "exploratory_target": "ASSEMBLY_PROTOTYPE_LOCKIN_ORDER_SENSITIVITY_DISCOVERY",
+  "exploratory_target": "TEMPORAL_EXPECTATION_BATCH_PARTITION_SENSITIVITY_DISCOVERY",
   "candidate_pool_id": null,
   "exploration_cycle": "1/3",
-  "why_independent_of_main": "Standalone v0.5 TemporalAssemblyMemory representation-order semantics; no dependency on MAIN Top-k/Structural work, H5 Audit, H7, formal surfaces, or MAIN outcomes.",
-  "question": "Can frozen first-exemplar prototypes make mature assembly cardinality depend on episode order for an identical multiset of patterns?",
+  "why_independent_of_main": "Stable v0.4 temporal expectation/transduction integration; independent of MAIN's active v0.5 assembly prototype-lockin Architecture study and all reserved candidate/formal surfaces.",
+  "question": "Can the exact same external pulse timeline produce a different internally generated omission history and field trajectory solely because it is partitioned differently across IntegratedV04Brain.ingest_pulses calls?",
   "inputs_used": {
     "type": "synthetic_only",
-    "pattern_types": 3,
-    "episodes_per_pattern": 3,
-    "total_episodes": 9,
-    "unique_episode_orders": 1680,
-    "similarity_threshold": 0.66,
-    "mature_episodes": 3,
+    "channel": "A",
+    "external_pulse_times_ms": [0.0, 10.0, 20.0, 100.0],
+    "magnitude": 0.72,
+    "settle_ms": 35.0,
+    "expectations_enabled": true,
+    "plasticity_enabled": false,
     "repository_dataset": false,
     "trained_checkpoint": false,
     "formal_raw": false,
-    "heldout_test": false
+    "heldout_test": false,
+    "official_scorer": false
   },
   "implementation_experiment": {
-    "branch": "research/exploratory-sub-assembly-prototype-lockin-20260919",
-    "head": "1a62f81eeb0295a94101c6bfe205c460fd9eedfc",
+    "branch": "research/exploratory-sub-temporal-expectation-batch-partition-20260919",
+    "head": "7aa5d681a400173c09c55603a459d63a6aaf7b43",
     "artifacts": [
-      "analysis/discovery/assembly_prototype_lockin_order_sensitivity_20260919.py",
-      "analysis/discovery/assembly_prototype_lockin_order_sensitivity_20260919.json",
-      "analysis/discovery/assembly_prototype_lockin_order_sensitivity_20260919.md"
+      "tests/discovery/test_temporal_expectation_batch_partition_20260919.py",
+      "analysis/discovery/temporal_expectation_batch_partition_20260919.json",
+      "analysis/discovery/temporal_expectation_batch_partition_20260919.md"
     ],
-    "workflow_run": 35446343263,
-    "workflow_status_at_snapshot": "completed_success"
+    "workflow_run": 35449503678,
+    "workflow_status_at_snapshot": "completed_success_python_3_11_and_3_13"
   },
   "observations": {
-    "pairwise_similarity": {
-      "A_B": 0.7250000000000001,
-      "B_C": 0.7250000000000001,
-      "A_C": 0.45
+    "batched": {
+      "calls": [[0.0, 10.0, 20.0, 100.0]],
+      "final_end_ms": 135.0,
+      "omission_times_ms": [],
+      "final_expected_interval_ms": 34.5,
+      "final_last_observation_ms": 100.0
     },
-    "one_mature_assembly_orders": 560,
-    "two_mature_assembly_orders": 1120,
-    "outcomes": [
-      {"prototype_order": ["A", "C"], "episode_counts": [6, 3], "mature_assemblies": 2, "orders": 560},
-      {"prototype_order": ["B"], "episode_counts": [9], "mature_assemblies": 1, "orders": 560},
-      {"prototype_order": ["C", "A"], "episode_counts": [6, 3], "mature_assemblies": 2, "orders": 560}
-    ],
-    "order_invariant_similarity_graph_components": 1,
-    "interpretation": "The connected thresholded similarity graph does not force the split. Greedy matching against a prototype that is never updated makes the first exemplar determine whether bridging pattern B joins A/C into one mature assembly or A/C seed two mature assemblies."
+    "split": {
+      "calls": [[0.0, 10.0, 20.0], [100.0]],
+      "final_end_ms": 135.0,
+      "omission_times_ms": [33.0],
+      "final_expected_interval_ms": 34.5,
+      "final_last_observation_ms": 100.0
+    },
+    "final_field_state_hash_equal": false,
+    "mechanistic_reduction": "ingest_pulses observes every supplied external row before polling omission deadlines. A later observation inside the same batch can therefore replace a deadline that would have emitted if polling occurred causally between observations. This is current integration/batching semantics, not evidence of a new cognitive mechanism."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "A fresh prospectively specified DEV-only Architecture Study should reduce this to representation bookkeeping if matched episode-order permutations change assembly identity/cardinality but not downstream prediction/action behavior beyond an order-invariant clustering comparator.",
+  "what_would_falsify_or_reduce_it": "A fresh prospectively specified DEV-only Architecture study should reduce it to an API artifact if supported callers cannot create deadline-straddling batches or if an event-time-causal comparator shows no material downstream behavior difference for otherwise-identical timelines.",
   "candidate_next_research_layer": "ARCHITECTURE_STUDY",
   "scientific_choices_still_open": [
-    "DEV input family",
-    "episode-order permutation family",
-    "assembly identity matching",
-    "functional metric and horizon",
-    "order-invariant clustering comparator",
+    "supported ingestion/batching contract",
+    "DEV pulse families and channel cadences",
+    "deadline-straddling partition family",
+    "event-time-causal comparator semantics",
+    "downstream functional observable and horizon",
     "resource matching"
   ],
   "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
+  "research_layer_state": {
+    "DISCOVERY": "OPEN_SUB_DEFAULT_NON_EVIDENTIARY",
+    "ARCHITECTURE_STUDY": "ACTIVE_MAIN_ASSEMBLY_PROTOTYPE_LOCKIN_CYCLE1",
+    "PRE_FORMAL": "EMPTY_HOLD",
+    "FORMAL": "EMPTY_HOLD"
+  },
+  "candidate_pool_snapshot": {
+    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01": "ARCHITECTURE_STUDY_MAIN_RESERVED",
+    "CAND-TOPK-PA-01": "HOLD",
+    "CAND-H7-RESP-01": "HOLD",
+    "CAND-STRUCTURAL-ORDER-PATH-01": "REJECT"
+  },
+  "blocked_until": {
+    "main_architecture_execution": "MAIN-owned exact prospective binding/preflight conditions only",
+    "topk_further_work": "existing cross-seed Utility result plus fresh Analyst prospective reduction question",
+    "pre_formal": "sufficient lower-layer support plus independently motivated mechanistic/reduction question",
+    "formal": "genuinely fresh object with full prospective one-way authority"
+  },
   "main_work_explicitly_avoided": [
-    "CAND-TOPK-PA-01 support/reduction",
-    "CAND-STRUCTURAL-ORDER-PATH-01 follow-up",
-    "CAND-H5-AUDIT-01",
-    "CAND-H7-RESP-01",
-    "MAIN critical path",
-    "formal/TEST/evidence work"
+    "CAND-ASSEMBLY-PROTOTYPE-LOCKIN-01 active Architecture cycle and workflow",
+    "CAND-TOPK-PA-01",
+    "CAND-STRUCTURAL-ORDER-PATH-01",
+    "H5",
+    "H7",
+    "MAIN blockers and outcome-dependent successors",
+    "FORMAL/TEST/scoring/identity surfaces"
+  ],
+  "do_not_touch_respected": [
+    "consumed C19-v4 identity/evidence",
+    "consumed C19-R1 revision-authority v1/v2 identities",
+    "consumed C19-R2 identity/evidence",
+    "consumed PD01 identity/evidence",
+    "consumed NI01 identity/evidence",
+    "consumed H5 identity/evidence",
+    "official TEST/formal raw/scoring surfaces without fresh authority",
+    "immutable evidence refs/tags",
+    "research PR merges",
+    "scheduler definitions"
   ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
-    "control_brain": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
-    "orchestrator_parent_before_final_persistence": "41f4cad3071a234f7a4d39e6ee17930d3592c7c4",
-    "evidence_tag_count": 5
+    "evidence_analyst": "982e5686524c9fc2b665efcf44069fef49196333",
+    "control_brain_observed": "c737fbcbcbceacdd906780fcb7f020658cd19422",
+    "main_active_research_branch": "research/main-assembly-prototype-lockin-arch-study-20260919",
+    "main_active_research_head": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
+    "sub_research_branch": "research/exploratory-sub-temporal-expectation-batch-partition-20260919",
+    "sub_research_head": "7aa5d681a400173c09c55603a459d63a6aaf7b43",
+    "orchestrator_parent_before_persistence": "0198d6f36d050b7ba5852fda7711aafd99f70b5a",
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0
+  },
+  "utility_request_created": {
+    "request_id": "SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT",
+    "commit": "ab0609cb37b83d84b5ee9d1701feebb8273956fe",
+    "dedupe_key": "temporal-expectation-batching-callsite-audit-v1",
+    "status": "PROPOSAL_ONLY_NONBLOCKING"
   },
   "consumed_identities": [],
   "formal_identity_created": false,
@@ -84,11 +129,18 @@
   "official_test_accessed": false,
   "formal_scoring_or_evidence_created": false,
   "immutable_evidence_modified": false,
-  "utility_request_created": null,
+  "research_merge_performed": false,
+  "collision_reconciliation": {
+    "analyst_ref_rechecked": "982e5686524c9fc2b665efcf44069fef49196333",
+    "main_ref_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main_active_research_head_rechecked": "7d9b90e58ee088ff2b4187d3c62c5e568148e6aa",
+    "orchestrator_parent_rechecked": "0198d6f36d050b7ba5852fda7711aafd99f70b5a",
+    "collision_found": false
+  },
   "blockers": [
-    "Fresh Evidence Analyst promotion and a prospective Architecture Study specification are required before any continuation."
+    "Fresh Evidence Analyst classification and prospective Architecture Study specification are required before any continuation beyond this Discovery cycle."
   ],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_RETURNED_PROMOTION_CANDIDATE_FOR_FRESH_ANALYST_REVIEW",
+  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_RETURNED_ARCHITECTURE_PROMOTION_CANDIDATE_WITH_OPTIONAL_READ_ONLY_UTILITY_AUDIT",
   "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY",
-  "persistence_result": "atomic_sub_report_commit_final_ci_snapshot"
+  "persistence_result": "pending_atomic_sub_report_commit"
 }
