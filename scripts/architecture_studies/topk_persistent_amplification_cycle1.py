@@ -251,7 +251,9 @@ def _probe_condition(
                     "selected_baseline": sorted(base_selected),
                     "selected_perturbed": sorted(changed_selected),
                     "selected_set_turnover": base_selected != changed_selected,
-                    "turnover_count": len(base_selected.symmetric_difference(changed_selected)) // 2,
+                    "turnover_count": (
+                        len(base_selected.symmetric_difference(changed_selected)) // 2
+                    ),
                     **_metrics(baseline, changed),
                 }
             )
