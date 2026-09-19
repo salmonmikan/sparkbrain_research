@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import math
 
-from sparkbrain.v04.contracts import SynapticArrival
+from sparkbrain.v04.contracts import SpikeEvent, SynapticArrival
 from sparkbrain.v04.field import ExcitableFieldConfig, TemporalExcitableField
 from sparkbrain.v04.topology import UnitState, explicit_topology
 
@@ -38,7 +38,7 @@ def _arrival(current: float, pulse_id: str, *, time_ms: float) -> SynapticArriva
     )
 
 
-def _run_arm(currents: tuple[float, ...]) -> tuple[float, tuple[object, ...], float]:
+def _run_arm(currents: tuple[float, ...]) -> tuple[float, tuple[SpikeEvent, ...], float]:
     field = _field()
     for index, current in enumerate(currents):
         field.schedule_arrival(_arrival(current, f"load-{index}", time_ms=1.0))
@@ -56,9 +56,9 @@ def test_refractory_positive_current_cancels_same_time_inhibition() -> None:
     excitation_potential, excitation_spikes, excitation_final = _run_arm((0.5,))
 
     # No arm may spike while the unit is inside its absolute refractory window.
-    assert all(getattr(spike, "time_ms") > 5.0 for spike in inhibition_spikes)
-    assert all(getattr(spike, "time_ms") > 5.0 for spike in paired_spikes)
-    assert all(getattr(spike, "time_ms") > 5.0 for spike in excitation_spikes)
+    assert all(spike.time_ms > 5.0 for spike in inhibition_spikes)
+    assert all(spike.time_ms > 5.0 for spike in paired_spikes)
+    assert all(spike.time_ms > 5.0 for spike in excitation_spikes)
 
     # Current implementation nets positive and negative arrivals before applying
     # the refractory clamp, so paired input retains the same membrane state as
