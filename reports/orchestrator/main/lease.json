@@ -3,12 +3,12 @@
   "execution_mode": "PRIMARY",
   "status": "RUNNING",
   "started_at": "2026-09-19T17:15:00+09:00",
-  "heartbeat_at": "2026-09-19T17:24:00+09:00",
+  "heartbeat_at": "2026-09-19T17:26:00+09:00",
   "analyst_commit": "3e83f1eb683ce80e326b756fa304e96688fdd3fe",
   "active_branch": "research/main-topk-persistent-amplification-arch-study-20260919",
   "active_identity": null,
-  "active_step": "HARNESS_PREFLIGHT_CI_RERUN_AFTER_MECHANICAL_LINT_FIX",
-  "workflow_run_id": 35431862804,
-  "expected_next_action": "If exact-head preflight CI for 1fb23d1750ff09c855ee252ca7c70c523ceba883 succeeds, arm the already-fixed DEV-only architecture study on the same research branch via an outcome-independent CI step, execute once, preserve raw diagnostics as a workflow artifact before interpretation, then stop for Analyst review on any valid outcome. Do not change the fixed scientific protocol. The only preflight defect fixed so far was Ruff B905 in the AUC helper.",
+  "active_step": "HARNESS_PREFLIGHT_CI_AFTER_SECOND_MECHANICAL_LINT_FIX",
+  "workflow_run_id": 35431971254,
+  "expected_next_action": "If exact-head preflight CI for cde99b5a4f0aef7e3a8b2ce94052ce580c174c51 succeeds, arm and execute the already-fixed DEV-only architecture study without scientific protocol changes, preserve raw diagnostics as a workflow artifact before interpretation, and stop for Analyst review on any valid outcome. Mechanical fixes so far: Ruff B905 strict argument and E501 line wrapping only.",
   "owner": "main"
 }
