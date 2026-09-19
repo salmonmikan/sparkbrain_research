@@ -1,306 +1,228 @@
 {
-  "timestamp": "2026-09-19T16:12:04+09:00",
+  "timestamp": "2026-09-19T17:02:36+09:00",
   "change_summary": {
     "new_formal_repository_evidence": false,
-    "scientific_state_changed": false,
-    "allocation_changed": false,
-    "new_literature_finding": true,
-    "new_independent_audit_finding": false,
-    "new_repository_steward_advisory": false,
-    "decision": "KEEP_MAIN_HOLD_KEEP_SUB_NULL_NO_OP_INTEGRATE_PRIVILEGE_TIERED_COUNTERFACTUAL_CEILINGS_PRIORITIZE_H5_AUDIT"
+    "new_sub_discovery": true,
+    "new_methodology_input": true,
+    "allocation_changed": true,
+    "decision": "PROMOTE_TOPK_DISCOVERY_TO_MAIN_ARCHITECTURE_STUDY_KEEP_FORMAL_HOLD_OPEN_BOUNDED_SUB_DISCOVERY"
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_protected": false,
-    "control_brain_branch_tip": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
-    "control_brain_latest_commit": "c560d01886f18ee43548de038177ae1dce3c6ff3",
-    "orchestrator_mailbox_tip": "e0a59e4bdb7611ebea2e643cebf89609d05f03b1",
-    "external_research_audit_mailbox_tip": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
-    "repository_steward_branch_tip": "6791bbef63e6d6360ed352dcc929d663cd26f851",
-    "evidence_analyst_prior_tip_reconciled_before_write": "8e8aa0924ff5c7dae99332d9babe7f3dd748f25b",
-    "research_lp01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
-    "research_ni01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-    "research_h5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-    "research_h9_c07": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
-    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "h5_terminal_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
-    "ni01_started": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-    "ni01_raw_preserve": "8a39cf70e397bb7588f948910f01ec58672ac814",
-    "ni01_terminal_evidence_commit": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
-    "evidence_tags_count": 5,
-    "formal_tags_count": 0,
-    "sealed_tags_count": 0,
-    "tag_freeze_count": 0,
-    "legacy_freeze_branches_count": 13,
-    "repository_rulesets_count": 0,
-    "issue_139_current": true,
-    "open_prs": [148, 149],
-    "latest_workflow_observed": {
-      "id": 35427097016,
-      "kind": "control_plane_ci",
-      "branch": "ops/external-research-audit-handoff",
-      "conclusion": "success",
-      "fresh_research_experiment_workflow_observed": false
-    }
+    "control_brain_tip": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
+    "orchestrator_mailbox_tip": "29cbee592cc257f3a1de6573d8fd00fc0ff75edc",
+    "external_research_audit_tip": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
+    "methodology_calibration_tip": "46ec11ae9490857668e227c42bc497ce6db17ecd",
+    "repository_steward_tip": "6791bbef63e6d6360ed352dcc929d663cd26f851",
+    "analyst_prior_tip_reconciled_before_write": "d8974f662e2fd36000125b643ae908030c3e8aac",
+    "exploratory_topk_branch": "2d6152601ebb395822b763990f6dfaf19110453c",
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "repository_ruleset_count": 0,
+    "open_prs": [148, 149]
   },
   "control_brain_commit": "6ed239b241a39f7d3e934e37751454c8bf3ebb4c",
-  "main_report_commit_consumed": "e13d2e9fb2b90a38edfa8845003d0c6256d0810e",
-  "sub_report_commit_consumed": "e0a59e4bdb7611ebea2e643cebf89609d05f03b1",
-  "sub_operating_mode_observed": "no_op",
-  "sub_exploratory_review": null,
-  "literature_handoff_commit_consumed": "03da6309e6fc4990160f9a380a60d73fd3652ae0",
-  "audit_handoff_commit_consumed": "baa5bfbc2ac2a3532fc4ac67bedcecc2c5a409da",
+  "main_report_commit_consumed": "34a150c67f56bb084f50af40e17601eb0870873c",
+  "sub_report_commit_consumed": "29cbee592cc257f3a1de6573d8fd00fc0ff75edc",
+  "sub_operating_mode_observed": "discovery",
+  "sub_discovery_review": {
+    "candidate": "TOPK_ROUTER_MARGIN_CHURN_STABILITY_DISCOVERY",
+    "classification": "PROMOTE_TO_ARCHITECTURE_STUDY",
+    "evidentiary_status": "NON_EVIDENTIARY",
+    "cycle": 1,
+    "branch": "research/exploratory-sub-topk-margin-churn-20260919",
+    "commit": "2d6152601ebb395822b763990f6dfaf19110453c",
+    "key_observation": "Synthetic hard top-k set turnover was predicted exactly by ordinary linear hyperplane crossing geometry across all 96000 probes; module-count scaling increased turnover frequency and turnover produced O(1) pooled-state jumps.",
+    "promotion_boundary": "Carry forward only the real-model routing-persistence architecture question. Do not relabel cycle-1 observations as evidence or novelty."
+  },
+  "literature_handoff_commit_consumed": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
+  "audit_handoff_commit_consumed": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
+  "methodology_calibration": {
+    "commit_consumed": "46ec11ae9490857668e227c42bc497ce6db17ecd",
+    "timestamp": "2026-09-19T16:21:00+09:00",
+    "classification": "MIXED_CALIBRATION",
+    "authority": "methodology_input_not_scientific_evidence",
+    "impact": "Keep FORMAL integrity/novelty gates strict, but split research worthiness by claim type and restore bounded Discovery/Architecture/Pre-formal throughput. Candidate-pool and observable-level exhaustion are required; stronger-privilege ceilings are not automatic matched mechanistic reject gates."
+  },
   "repository_steward": {
     "commit_consumed": "6791bbef63e6d6360ed352dcc929d663cd26f851",
-    "state_commit_consumed": "0c8285dd60b42796eb67debf94de70e6776bc1be",
-    "state_timestamp": "2026-09-19T13:50:00+09:00",
+    "timestamp": "2026-09-19T13:50:00+09:00",
     "authority": "governance_advisory_only",
-    "material_repository_facts_independently_verified": true
+    "fresh_this_run": false
   },
   "external_input": {
     "literature": {
-      "changed_this_run": true,
+      "changed_this_run": false,
       "timestamp": "2026-09-19T15:32:48+09:00",
-      "latest_commit": "03da6309e6fc4990160f9a380a60d73fd3652ae0",
-      "state_commit": "73625d18654263531a2395def95354941561fe75",
       "mailbox_tip": "ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0",
-      "affected_lines": [
-        "H7_LINEAGE_CAUSAL_CREDIT_RESIDUAL",
-        "LP01_PREFORMAL_CLOSEOUT",
-        "PROGRAMME_NOVELTY",
-        "FUTURE_OBJECT_ADMISSION",
-        "CAUSAL_CREDIT_REDUCTION_LADDER"
-      ],
-      "new_findings": [
-        {
-          "id": "C3_FIXED_CONTEXT_COUNTERFACTUAL_REPLAY_CEILING",
-          "interpretation": "Historical-event substitution with fixed-context/fixed-continuation replay is an ordinary counterfactual-credit construction but has stronger replay/rewind privilege than a strict local online mechanism."
-        },
-        {
-          "id": "COMA_COUNTERFACTUAL_MARGINAL_CONTRIBUTION_BASELINE",
-          "interpretation": "Counterfactual marginal contribution is an established ordinary MARL principle; a centralized critic is stronger privilege unless explicitly matched."
-        },
-        {
-          "id": "CONCURRENT_STOCHASTIC_RESPONSIBILITY_FORMAL_BASELINE",
-          "interpretation": "Retrospective counterfactual responsibility in stochastic concurrent systems has an explicit formal/Shapley baseline, so stochastic concurrency is not sufficient novelty."
-        }
-      ],
-      "equal_privilege_mechanistic_reductions": [
-        "eligibility / three-factor / e-prop / cascading traces",
-        "ordinary recurrent/plastic state",
-        "local diffusive credit",
-        "explicit local state machines where applicable"
-      ],
-      "trace_influence_reductions": [
-        "provenance/ancestry",
-        "causal nets/event structures",
-        "causally consistent dynamic slicing"
-      ],
-      "stronger_privilege_counterfactual_ceilings": [
-        "explicit actual-cause/responsibility solvers",
-        "COMA-style centralized counterfactual critic",
-        "C3 fixed-context/fixed-continuation replay",
-        "RUDDER/Temporal Value Transport where their information surface is stronger"
-      ],
-      "narrowed_possible_residual": "Native online/local lineage-specific credit that tracks responsibility-changing interventions among co-eligible histories without centralized world/task labels, global causal-graph lookup, explicit replay/rewind, or oracle counterfactual critic privilege, while surviving matched ordinary local-learning/recurrent/plastic reductions.",
-      "prospective_discriminator": "Responsibility-changing / local-observation-preserving paired interventions with timing, current/recent local observations, activity, eligibility, reward, local neighborhood and resource budget matched while responsibility changes via substitution, preemption, backup or overdetermination.",
-      "allocation_changed": false,
-      "lp01_reopened": false,
-      "frozen_results_modified": false,
-      "successor_engineering_authorized": false
+      "impact": "Future H7 novelty remains narrowed to native online/local responsibility sensitivity under matched privilege. COMA/C3/actual-cause and related stronger-privilege solvers remain ceilings, not automatic equal-privilege reject gates."
     },
     "audit": {
       "changed_this_run": false,
       "latest_target": "NI01",
-      "latest_commit": "baa5bfbc2ac2a3532fc4ac67bedcecc2c5a409da",
-      "latest_timestamp": "2026-09-19T10:32:25+09:00",
-      "integrity_status": "ROBUST_SO_FAR",
-      "registered_result_status": "CONTRACT_VALID",
-      "audit_classification": "WEAKENED",
-      "canonical_result_class": "FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION",
-      "candidate_loss": 0.2119466145833332,
-      "comparator_loss": 0.21146918402777773,
-      "effect": -0.00047743055555544517,
-      "effect_ci95": [-0.0024414062499999965, 0.0014756944444444355],
-      "coverage_guard_pass": true,
+      "timestamp": "2026-09-19T10:32:25+09:00",
+      "classification": "WEAKENED",
       "safe_programme_interpretation": "NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION",
-      "not_established": "EQUAL_PRIVILEGE_GENERIC_CONFIDENCE_ABSTENTION_MECHANISTIC_REDUCTION",
-      "canonical_evidence_modified": false,
-      "rerun_relabel_rescore_authorized": false,
       "next_priority": "H5 independent audit"
     }
   },
-  "active_main_claims_observed": {
-    "latest_report_timestamp": "2026-09-19T15:14:00+09:00",
-    "mode": "PRIMARY",
-    "lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
-    "fresh_object_admitted": false,
-    "active_research_branch": null,
-    "active_identity": null,
-    "formal_identity_created": false,
-    "started_created": false,
-    "research_workflow_dispatched": false,
-    "official_test_accessed": false,
-    "evidence_created": false
+  "research_layer_state": {
+    "DISCOVERY": {
+      "status": "OPEN_SECONDARY_FUNNEL",
+      "owner": "SUB_DEFAULT",
+      "latest_completed_candidate": "CAND-TOPK-PA-01_DISCOVERY_CYCLE1",
+      "latest_review": "PROMOTE_TO_ARCHITECTURE_STUDY",
+      "evidentiary_status": "NON_EVIDENTIARY"
+    },
+    "ARCHITECTURE_STUDY": {
+      "status": "ACTIVE_AUTHORIZED",
+      "owner": "MAIN",
+      "candidate": "CAND-TOPK-PA-01",
+      "evidentiary_status": "NON_EVIDENTIARY",
+      "formal_claim_armed": false
+    },
+    "PRE_FORMAL": {
+      "status": "EMPTY_HOLD",
+      "active_candidate": null,
+      "conditional_future_candidate": "CAND-H7-RESP-01"
+    },
+    "FORMAL": {
+      "status": "EMPTY_HOLD",
+      "active_identity": null,
+      "started": null,
+      "official_test": false,
+      "formal_execution_authorized": false
+    }
   },
-  "active_sub_claims_observed": {
-    "latest_report_timestamp": "2026-09-19T15:33:00+09:00",
-    "mode": "no_op",
-    "reported_sub_lane": null,
-    "reported_sub_fallback": null,
-    "execution_allowed": false,
-    "incubator_candidate": null,
-    "incubator_considered": true,
-    "incubator_selection_result": "NO_SAFE_USEFUL_NON_DUPLICATIVE_TARGET",
-    "new_exploratory_observation": false,
-    "new_formal_result": false,
-    "scientific_mutation": false
-  },
+  "candidate_pool": [
+    {
+      "id": "CAND-TOPK-PA-01",
+      "classification": "ARCHITECTURE_STUDY",
+      "question": "Does a hard top-k selected-set swap in the trained SparseRoutingModel create delayed persistent-state/output amplification beyond the immediate ordinary top-k boundary effect?",
+      "not_rescue_reason": "New architecture observable from synthetic-only Discovery; no consumed outcome is being repaired or reopened.",
+      "target_layer": "ARCHITECTURE_STUDY",
+      "claim_type": "architecture_system_integration_value",
+      "expected_information_gain": "HIGH",
+      "ordinary_reduction_risks": ["raw turnover already exactly reduced to top-k hyperplane geometry", "delayed effect may be ordinary GRU/persistence dynamics"],
+      "implementation_distance": "NEAR",
+      "scientific_choices_still_open": [],
+      "exploration_cycle_count": {"discovery": 1, "architecture": 0, "default_max_per_candidate": 3},
+      "promotion_condition": "After fixed cycle 1, only consider PRE_FORMAL if a robust delayed routing-persistence interaction exists and a fresh mechanistic question can be prospectively specified.",
+      "rejection_condition": "Reject persistence-amplification candidate if realistic DEV turnover is negligible or delayed divergence is not materially larger than the no-persistent-state control."
+    },
+    {
+      "id": "CAND-H5-AUDIT-01",
+      "classification": "HOLD",
+      "question": "Does H5 terminal FAIL_NO_USEFUL_WORK_REDUCTION remain narrow and supported under independent read-only one-way/accounting/claim-boundary audit?",
+      "not_rescue_reason": "Audit-only; no rerun, retune, rescore or new H5 outcome.",
+      "target_layer": "DISCOVERY",
+      "claim_type": "audit_interpretation_boundary",
+      "expected_information_gain": "HIGH",
+      "ordinary_reduction_risks": ["resource-accounting semantics may narrow interpretation"],
+      "implementation_distance": "NEAR",
+      "scientific_choices_still_open": ["blind attack ordering belongs to Independent Audit"],
+      "exploration_cycle_count": {"discovery": 0, "default_max": 3},
+      "promotion_condition": "Never formalize from audit; use only to narrow interpretation and future contracts.",
+      "rejection_condition": "If audit finds no material weakness, retain canonical H5 and close audit target."
+    },
+    {
+      "id": "CAND-H7-RESP-01",
+      "classification": "HOLD",
+      "question": "Can a native online/local lineage mechanism track responsibility-changing interventions under matched privilege and survive ordinary local-learning/recurrent/plastic reductions?",
+      "not_rescue_reason": "Admissible only if an independently arising mechanism appears; cannot be engineered as LP01 rescue or literature-driven successor.",
+      "target_layer": "PRE_FORMAL",
+      "claim_type": "mechanistic_distinctness_and_possible_new_principle",
+      "expected_information_gain": "VERY_HIGH_IF_OBJECT_APPEARS",
+      "ordinary_reduction_risks": ["provenance/event-structure/dynamic-slicing", "eligibility/recurrent/plastic/local-diffusion", "stronger-privilege actual-cause/COMA/C3/RUDDER-TVT ceilings"],
+      "implementation_distance": "FAR_EVENT_DEPENDENT",
+      "scientific_choices_still_open": ["native mechanism", "responsibility-changing intervention", "matched comparator/resource contract", "positive-signal gate", "numeric falsifier"],
+      "exploration_cycle_count": {"preformal": 0, "default_max": 3},
+      "promotion_condition": "PRE_FORMAL only after independent native mechanism plus positive DEV signal and privilege-matched reduction test can be fixed prospectively.",
+      "rejection_condition": "Hold or reject if only literature-driven construction/rescue is available or ordinary matched mechanisms fully explain the signal."
+    }
+  ],
   "main_lane": {
-    "name": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "name": "TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE1",
     "owner": "MAIN",
-    "status": "HOLD",
+    "layer": "ARCHITECTURE_STUDY",
+    "status": "AUTHORIZED_ONE_BOUNDED_CYCLE",
+    "evidentiary_status": "NON_EVIDENTIARY",
+    "formal_identity_required": false,
     "formal_execution_authorized": false,
-    "scope": "Fresh-object admission only. If a future primary object is prospectively admitted, MAIN owns the candidate/mechanism implementation, comparators, candidate-specific bugs, verifier/harness/runner, exact source/package/runtime/input binding, CI/preflight, review fixes, preservation/scoring/execution blockers and exact-head integration.",
-    "stop_point": "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW"
+    "source_binding": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "config_binding": "configs/experiments/phase2/main.json",
+    "dev_manifest": "configs/experiments/phase1/manifests/dev-v1.json",
+    "test_access_forbidden": true,
+    "fixed_protocol": {
+      "seed": 41,
+      "model": "SparseRoutingModel",
+      "module_count": 12,
+      "active_k": 4,
+      "persistence": 0.75,
+      "train_dev_episodes": 48,
+      "probe_dev_calibration_episodes": 12,
+      "probe_steps": [6, 12, 18, 24],
+      "perturb_seed": 20260919,
+      "perturbation_magnitudes_relative_encoded_l2": [0.01, 0.05, 0.1],
+      "directions_per_probe_magnitude": 8,
+      "continuation_horizon": 6,
+      "conditions": ["full", "no_persistent_state"],
+      "metrics": ["router_margin", "selected_set_turnover", "normalized_module_state_l2", "probability_l1", "action_logit_l2", "divergence_auc_0_6"]
+    },
+    "stop_point": "ANALYST_REVIEW_AFTER_FIRST_VALID_ARCHITECTURE_RESULT"
   },
-  "sub_lane": null,
+  "sub_lane": {
+    "name": "BOUNDED_SECONDARY_DISCOVERY",
+    "owner": "SUB",
+    "layer": "DISCOVERY",
+    "status": "AUTHORIZED_IF_SAFE",
+    "fixed_target": null,
+    "selection_policy": "At most one genuinely independent bounded synthetic/development/read-only observable-level question per run; do not take MAIN-reserved top-k persistence work, H5 Independent Audit, H7 mechanism construction, consumed-line rescue, held-out TEST or one-way surfaces.",
+    "evidentiary_status": "NON_EVIDENTIARY",
+    "default_cycle_max": 3
+  },
   "sub_fallback": null,
-  "no_sub_lane_reason": "No prospectively complete independent formal SUB object exists. Existing exploratory families cover the obvious nearby spaces; remaining live questions are consumed/closed, under-specified, duplicative, accounting-sensitive, or potentially future-MAIN-critical. New literature narrows H7 but does not create a native independent mechanism or safe secondary formal object.",
-  "blocked_until": "Formal scientific execution is blocked until a genuinely fresh independently motivated native reduction-resistant object is prospectively admitted. H7 additionally requires a native online/local responsibility-sensitive mechanism to appear independently rather than being constructed as a literature-driven successor.",
+  "blocked_until": {
+    "FORMAL": "A fresh prospectively defined formal object clears identity/binding/privilege/positive-signal/integrity gates.",
+    "PRE_FORMAL_H7": "An independently arising native online/local responsibility-sensitive mechanism appears; no literature-driven successor engineering.",
+    "MAIN_ARCHITECTURE_CYCLE2": "Fresh Analyst review of cycle-1 architecture result.",
+    "SUB": "No global block; bounded Discovery remains allowed only under explicit independence/nonduplication/integrity rules."
+  },
   "do_not_touch": [
     "consumed identities",
-    "STARTED/control refs for consumed identities",
+    "consumed STARTED/control refs",
     "immutable evidence refs/tags/commits",
-    "raw preserve bytes except ordinary read-only inspection",
-    "sealed/one-way TEST targets",
+    "preserved formal raw except independent allowed read-only audit",
+    "sealed/one-way TEST targets and scorers",
     "canonical C19/PD01/NI01/H5 tokens/statistics",
-    "frozen protocol/statistical decisions",
-    "post-outcome retuning/rescoring/terminal successor rescue",
+    "frozen protocols/statistical decisions",
+    "post-outcome retuning/rescoring/rescue",
     "LP01 as formal evidence",
     "legacy freeze refs",
     "research PR merges",
-    "scientific workflow dispatch",
+    "scientific formal workflow dispatch",
     "scheduler definitions",
-    "retrofit of Literature/Audit/Steward findings into consumed experiments"
+    "retroactive import of Literature/Methodology/Discovery into consumed evidence"
   ],
   "outcome_contingencies": {
-    "root": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
-    "NO_FRESH_OBJECT": {
-      "action": "MAIN_HOLD",
-      "formal_identity": false,
-      "workflow": false,
-      "evidence": false
+    "root": "TOPK_ROUTER_PERSISTENT_AMPLIFICATION_ARCHITECTURE_STUDY_CYCLE1",
+    "PRE_START_BLOCKER_MECHANICAL": "MAIN may fix only outcome-independent harness/CI/binding defects without changing scientific protocol, then recheck.",
+    "PRE_START_SEMANTIC_OR_PROTOCOL_GAP": "STOP_FOR_ANALYST_REVIEW",
+    "RUN_VALID": {
+      "ARCHITECTURE_INCONCLUSIVE_LOW_TURNOVER": "STOP_NO_EPSILON_RESCUE",
+      "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL": "STOP_ARCHITECTURE_SIGNAL_ONLY_NO_SAME_RUN_PROMOTION",
+      "ORDINARY_ROUTER_BOUNDARY_EFFECT_ONLY": "STOP_REJECT_PERSISTENCE_AMPLIFICATION_CANDIDATE",
+      "MIXED_ARCHITECTURE_RESULT": "STOP_NO_SAME_RUN_REDESIGN"
     },
-    "FRESH_OBJECT_CANDIDATE": {
-      "owner": "MAIN",
-      "allowed": "bounded prospective NON_EVIDENTIARY specification/readiness only",
-      "PRE_START_BLOCKER": "MAIN may resolve only outcome-independent mechanical/specification blockers and then recheck integrity.",
-      "CANDIDATE_UNDERSPECIFIED": "MAIN may continue bounded readiness/specification only.",
-      "PRE_START_SEMANTIC_GAP": "STOP",
-      "REDUCIBLE_OR_ASYMMETRIC_OR_OUTCOME_CONDITIONED": "STOP",
-      "H7_LIKE_SPECIAL_GATE": {
-        "prospectively_fix_before_review": [
-          "equal-privilege local eligibility/recurrent/plastic/local-credit baselines",
-          "trace/influence provenance/event-structure/dynamic-slicing baselines",
-          "explicit stochastic retrospective responsibility baseline",
-          "stronger-privilege ceilings including actual-cause solver, COMA, C3 and relevant RUDDER/TVT",
-          "responsibility-changing/local-observation-preserving intervention pairs",
-          "positive candidate-signal gate",
-          "exact source/protocol/package/input/runtime/checkpoint/candidate/comparator/intervention/scorer/preserver/workflow bindings",
-          "fixed numeric PASS/FAIL/INCONCLUSIVE criteria and scientific falsifiers"
-        ],
-        "no_replay_global_critic_world_label_oracle_privilege_for_native_residual": true
-      },
-      "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW": "STOP for fresh Analyst authority"
-    },
-    "NI01_SENSITIVITY_BLOCKED_BY_ONE_WAY_SCORE_BOUNDARY": {
-      "action": "KEEP_CLOSED_SUB_NO_OP",
-      "same_run_authority_escalation": false,
-      "canonical_ni01_change": false
-    },
-    "PASS": "UNARMED_NO_FORMAL_OBJECT",
-    "FAIL": "UNARMED_NO_FORMAL_OBJECT",
-    "INCONCLUSIVE": "UNARMED_NO_FORMAL_OBJECT",
-    "INVALID_EVIDENCE": "UNARMED_NO_FORMAL_OBJECT",
-    "POST_START_FAILURE": "UNARMED_NO_FORMAL_OBJECT"
-  },
-  "active_line_review": {
-    "A01": "MIXED_PROGRAMME_CLOSED; fresh independent programme only",
-    "RV01": "DEVELOPMENT_POSITIVE_REDUCIBLE / exploratory budget exhausted; fresh independent question only",
-    "RV02": "TERMINAL_CONSTRUCTION_NEGATIVE; fresh object only",
-    "CX_CX01": "TERMINAL_FORMAL_NEGATIVE; fresh independent object only",
-    "H8_C08": "terminal negative; distinct fresh object only",
-    "H9_C07": "PRE_START_UNDERSPECIFIED; stronger native question plus exact state/reset/resource/backend-equivalence contract",
-    "C19_v4": "narrow immutable PASS / weakened; no rerun",
-    "C19_R1": "scientifically unresolved / operationally terminated; no rescue v3",
-    "C19_R2": "TERMINAL_REDUCED_BY_FSA / ROBUST_SO_FAR_AUDITED; STOP",
-    "PD01": "canonical FAIL; mechanistic interpretation CONFOUNDED; no rerun",
-    "NI01_H4": "canonical FAIL; no registered incremental native advantage over world-conditioned confidence abstention; equal-privilege reduction not established; sensitivity closed",
-    "H5": "TERMINAL_FAIL_NO_USEFUL_WORK_REDUCTION; independent audit priority",
-    "H3": "unresolved / scalar-reduction pressure; fresh independent object only",
-    "H6": "unresolved / accounting-sensitive; fresh independently motivated quality/cost contract",
-    "H7": "strongest conceptual residual but counterfactual responsibility itself is ordinary and no native local irreducible mechanism exists; independently arising native online/local responsibility-sensitive mechanism first",
-    "LP01": "NO_HIGH_VALUE_OBJECT pre-formal closeout complete; STOP",
-    "PROGRAMME": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE"
-  },
-  "top_recommendation": "Keep MAIN on architecture/testbed HOLD and SUB null/no-op. Integrate the new privilege-tiered counterfactual ceilings into future H7 admission without manufacturing a successor. The next currently actionable independent information-increasing task is the H5 read-only audit.",
-  "top_3": [
-    {
-      "rank": 1,
-      "owner": "MAIN",
-      "action": "Maintain architecture/testbed HOLD and fresh-object admission only; add COMA/C3/stochastic-responsibility ceilings to future H7 privilege-tiered admission and STOP at fresh Analyst review.",
-      "information_value": "VERY_HIGH_IF_OBJECT_APPEARS",
-      "distance": "EVENT_DEPENDENT"
-    },
-    {
-      "rank": 2,
-      "owner": "INDEPENDENT_AUDIT",
-      "action": "Audit H5 terminal one-way integrity, resource-accounting interpretation, and narrow work-reduction claim boundary without reopening/rerunning/retuning H5.",
-      "information_value": "HIGH",
-      "distance": "NEAR"
-    },
-    {
-      "rank": 3,
-      "owner": "SUB",
-      "action": "Remain no-op; use Exploratory Incubator only for a genuinely independent bounded nonduplicative NON_EVIDENTIARY question.",
-      "information_value": "LOW_TO_MEDIUM",
-      "distance": "OPTIONAL"
-    }
-  ],
-  "go_stop_number_1": {
-    "current_go": "FRESH_OBJECT_ADMISSION_AND_PROSPECTIVE_SPECIFICATION_ONLY",
-    "formal_execution_go": false,
-    "future_go_requires": [
-      "fresh/unconsumed/collision-free identity",
-      "exact source/protocol/package/input/runtime/checkpoint/candidate/comparator/intervention/scorer/preserver/workflow binding",
-      "matched information/readout/resource/task/world/regime-label privilege",
-      "prospectively fixed positive candidate-signal gate where mechanistic reduction is claimed",
-      "numeric PASS/FAIL/INCONCLUSIVE and scientific falsifiers fixed before outcome",
-      "same-final-SHA CI + dedicated pre-START + fresh Analyst review",
-      "exactly-once STARTED/no-clobber before official TEST",
-      "target/scoring-blind raw acquisition",
-      "immutable raw preserve before scoring",
-      "independent remote refetch/digest/cardinality",
-      "fail-closed joins/invariants",
-      "preregistered scoring only after preserved-raw integrity"
-    ],
-    "h7_extra_requirements": [
-      "separate equal-privilege mechanistic baselines from stronger-privilege counterfactual ceilings",
-      "responsibility-changing/local-observation-preserving intervention pairs",
-      "native local/online response without replay/global critic/world-label/oracle access",
-      "ordinary matched local-learning/recurrent/plastic mechanisms fail to reproduce the positive candidate effect"
-    ],
-    "stop_if": [
-      "object exists only to rescue a consumed/negative line",
-      "ordinary matched local eligibility/recurrent/plastic/state reduction succeeds",
-      "candidate requires centralized/replay/oracle/world-label privilege unavailable to the matched comparator",
-      "no prospectively positive native responsibility-sensitive signal exists",
-      "outcome knowledge is required to choose comparator/resource/metric/threshold",
-      "no native causal path or high-information falsifiable object exists"
-    ]
+    "INVALID_DEV_BOUNDARY_OR_TEST_LEAKAGE": "DISCARD_NON_EVIDENTIARY_RESULT_AND_STOP",
+    "FORMAL_PASS": "UNARMED_NO_FORMAL_OBJECT",
+    "FORMAL_FAIL": "UNARMED_NO_FORMAL_OBJECT",
+    "FORMAL_INCONCLUSIVE": "UNARMED_NO_FORMAL_OBJECT",
+    "FORMAL_INVALID_EVIDENCE": "UNARMED_NO_FORMAL_OBJECT",
+    "FORMAL_POST_START_FAILURE": "UNARMED_NO_FORMAL_OBJECT"
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -311,49 +233,29 @@
     "ni01-no-ignition-selective-prediction-official-v1",
     "h5-event-routing-work-reduction-official-v1"
   ],
-  "blockers": [
-    "No genuinely fresh independently motivated native reduction-resistant primary object exists.",
-    "H7 lacks an independently arising native online/local responsibility-sensitive mechanism and now faces explicit ordinary/stronger-privilege counterfactual baselines.",
-    "NI01 world-blind sensitivity remains closed by the one-way scoring boundary.",
-    "H9 remains under-specified; H3/H6 remain reduction/accounting-sensitive rather than prospectively complete formal objects."
+  "real_blockers": [
+    "No fresh formal object exists; FORMAL remains correctly empty.",
+    "Top-k architecture candidate has not yet been tested on the real DEV-trained recurrent model under the fixed cycle-1 protocol.",
+    "H5 independent audit has not yet run.",
+    "H7 has no independently arising native responsibility-sensitive mechanism."
   ],
-  "governance_advisory": {
-    "issue_139_canonical_source_drift": false,
-    "issue_139_evidence_tag_count": 5,
-    "repository_ruleset_count": 0,
-    "main_protected": false,
-    "authoritative_tag_update_delete_protection_gap": true,
-    "legacy_freeze_branch_count": 13,
-    "freeze_tag_count": 0,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_migration": "DEFER; preserve legacy freeze refs exactly until protected migration semantics exist",
-    "pr_148": "OPEN_MERGEABLE_DEFER_PENDING_REVIEW_FIX",
-    "pr_149": "OPEN_MERGEABLE_DEFER_PENDING_REVIEW_FIX",
-    "main_promotion_candidates": [
-      "architecture-neutral event/distribution primitives",
-      "generic comparator protocol shape",
-      "snapshot/restore invariants",
-      "descriptive resource accounting",
-      "generic privilege/leakage guards",
-      "external transcript validation",
-      "one-way integrity helpers"
-    ],
-    "research_local": [
-      "H5/LP01/NI01 scientific semantics",
-      "H7 lineage/actual-responsibility scientific semantics",
-      "future COMA/C3/responsibility discriminator semantics"
-    ]
+  "top_3": [
+    {"rank": 1, "owner": "MAIN", "action": "Run exactly one fixed DEV-only CAND-TOPK-PA-01 architecture cycle", "information_value": "HIGH", "distance": "NEAR"},
+    {"rank": 2, "owner": "INDEPENDENT_AUDIT", "action": "Audit H5 one-way/accounting/claim-boundary read-only", "information_value": "HIGH", "distance": "NEAR"},
+    {"rank": 3, "owner": "SUB", "action": "One bounded independent secondary Discovery question if safe; otherwise observable-level no-op", "information_value": "MEDIUM", "distance": "NEAR_OPTIONAL"}
+  ],
+  "top_recommendation": "PROMOTE_SUB_TOPK_DISCOVERY_TO_MAIN_ARCHITECTURE_STUDY_CYCLE1_WITH_FORMAL_HOLD_UNCHANGED",
+  "go_stop_1": {
+    "GO": "NON_EVIDENTIARY architecture cycle only on exact main/config/DEV binding with fixed perturbations, metrics, horizon and controls; record raw diagnostic rows before interpretation; no formal identity or STARTED.",
+    "STOP": "Any TEST/consumed-preserve need, any post-outcome protocol change, low-turnover gate, ordinary-boundary-only result, mixed result, or architecture signal. Every valid result returns to Analyst before cycle 2 or PRE_FORMAL."
   },
-  "orchestrator_handoff": {
-    "main": "MAIN takes architecture/testbed HOLD plus fresh-object admission and owns ALL critical-path fixes for any future admitted primary object.",
-    "formal_sub": null,
-    "sub_rule": "SUB remains no-op and may incubate only a genuinely independent bounded synthetic/development-only NON_EVIDENTIARY question.",
-    "fallback": null,
-    "main_must_not_absorb": "Any future explicitly reserved SUB work.",
-    "sub_must_not_take": "Any MAIN blocker or future H7 central critical-path construction.",
-    "neither_touches": "Consumed identities, immutable evidence/raw, sealed TEST surfaces, frozen protocols, LP01-as-evidence, legacy freeze refs, research PR merges, scheduler definitions.",
-    "repartition_trigger": "A genuinely independent prospectively complete secondary object or a bounded incubator proposal that survives fresh Analyst review; literature alone does not repartition.",
-    "same_run_main_continuation": "Only prospectively fixed outcome-independent pre-start mechanical/specification branches after fresh integrity checks; no formal result branch is armed."
-  }
+  "governance_advisory": {
+    "evidence_tags": 5,
+    "rulesets": 0,
+    "main_protected": false,
+    "legacy_freeze_branches": 13,
+    "open_prs": [148,149],
+    "steward_fresh_this_run": false
+  },
+  "utility_request": null
 }
