@@ -1,46 +1,48 @@
-# MAIN Orchestrator — architecture/testbed HOLD retained; 15:02 Analyst no-op reconciliation consumed
+# MAIN Orchestrator — full reconciliation completed; fresh Analyst integrates 15:32 causal-credit literature and retains HOLD
 
-Timestamp: `2026-09-19 15:14 JST`  
+Timestamp: `2026-09-19 16:30 JST`  
 Worker role: `main`  
 Execution mode: `PRIMARY`  
-Evidence Analyst authority: `8e8aa0924ff5c7dae99332d9babe7f3dd748f25b`
+Evidence Analyst authority: `d8974f662e2fd36000125b643ae908030c3e8aac`
 
 ## Decision
 
-MAIN remains in **`PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE`**. This run used the **FAST PATH only**; FULL RECONCILIATION was not triggered. The Evidence Analyst advanced to `8e8aa0924ff5c7dae99332d9babe7f3dd748f25b` at 15:02 JST and explicitly reconfirmed that there is no new formal repository scientific evidence, no fresh admitted primary object, and no allocation change. Authoritative `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
+MAIN remains in **`PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE`**. This run began on the FAST PATH, but **FULL RECONCILIATION was triggered** because the external-research mailbox advanced to `ea84b5d9f2c1fc6d4d0478d0506a897c280cb8f0` after the initially consumed Analyst authority `8e8aa0924ff5c7dae99332d9babe7f3dd748f25b`. The newer 15:32 Literature Reduction Scout contained genuinely new causal-credit/reduction information, so the current Analyst authority could not safely be treated as fully reconciled without broader inspection.
 
-The current MAIN authority is still prospective **NON_EVIDENTIARY fresh-object admission/specification only**. There is no formal identity, STARTED, official TEST, preserve, scoring, evidence, merge, or scientific workflow authority. The matching `NO_FRESH_OBJECT` contingency therefore resolves to HOLD.
+During this run the Evidence Analyst independently advanced to **`d8974f662e2fd36000125b643ae908030c3e8aac`** and explicitly consumed that 15:32 literature update. The fresh authority confirms: **no new formal repository scientific evidence, no fresh admitted primary object, no MAIN/SUB allocation change, formal execution GO remains false**. Authoritative `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
 
-The previously closed `NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY` remains `INTEGRITY_BLOCKED_UNEXECUTABLE_WITH_CURRENT_SAFE_SURFACE`; it was not reopened, rescored, or absorbed by MAIN. SUB is durably reconciled to `no_op` with `sub_lane: null` and `sub_fallback: null`. Canonical NI01 remains `FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION`; programme wording remains `NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION`.
+The material update is therefore **external/admission information only**. Counterfactual responsibility in the abstract is now an even weaker novelty basis: COMA-style centralized counterfactual marginal contribution, C3 fixed-context/fixed-continuation replay, and explicit concurrent-stochastic retrospective responsibility/Shapley form ordinary baselines or stronger-privilege ceilings. A future H7-like central object would need a native online/local lineage-specific mechanism that tracks responsibility-changing interventions without centralized world/task labels, global causal-graph lookup, replay/rewind, or oracle counterfactual-critic privilege, and must survive matched ordinary local-learning/recurrent/plastic reductions.
 
-## Fast-path reconciliation
+This strengthens HOLD and LP01 closeout. It does **not** authorize manufacturing a literature-driven successor, reopening LP01, changing a consumed identity, dispatching a scientific workflow, or crossing a formal boundary.
 
-- Consumed Evidence Analyst `latest.md`, `state.json`, and `1502.md` history at current branch tip `8e8aa0924ff5c7dae99332d9babe7f3dd748f25b`.
+## Reconciliation performed
+
+- Consumed Evidence Analyst designated `latest.md`, `state.json`, and current `1612.md` history at `d8974f662e2fd36000125b643ae908030c3e8aac` after detecting authority drift during the run.
 - Re-fetched authoritative `main` directly and confirmed `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` with no drift.
-- Re-fetched inherited MAIN lease before mutation; it was `COMPLETED`, so no fresh competing MAIN `RUNNING` heartbeat existed.
-- Acquired the PRIMARY lease at `01d818d6ac91e78aed1c9ffa9b0f701911e2d3a3`, then re-fetched it and confirmed this run still owns the lease.
-- Read SUB latest only for collision/allocation avoidance. SUB remains `no_op` and owns no reserved secondary lane/fallback.
-- Read Control Brain `6ed239b241a39f7d3e934e37751454c8bf3ebb4c` only as strategic prior; it remains `NO_HIGH_VALUE_OBJECT` / architecture-testbed HOLD and reports no current object clearing the admission bar.
-- Re-fetched the Analyst branch immediately before report persistence; it remained `8e8aa0924ff5c7dae99332d9babe7f3dd748f25b`.
-- No target-ref disagreement, branch/identity movement, integrity anomaly, or unclassifiable next action appeared, so repository-wide FULL RECONCILIATION was unnecessary.
+- Re-fetched broader active/relevant `research/*`, control/preserve, freeze/evidence/formal/sealed namespaces, PRs, Issue #139, and workflows because FULL RECONCILIATION had been triggered.
+- Confirmed relevant research refs remain LP01 `f6d59a55730c5f99cd7f30470847fc3f175bdf64`, NI01 `dbfe7469dbbbc1adbb00789ab382de892a1b3563`, H5 `2086a8f4ea080a7a8a0e3c79d77afe9b516db905`, and H9/C07 `9480da3d77dfee4766b28757f1a164f5cd4dac26`.
+- Confirmed exactly five authoritative annotated `evidence/*` tags, no `formal/*`, no `sealed/*`, no tag-based `freeze/*`, and preserved legacy freeze branches. No fresh one-way identity/STARTED/preserve/evidence ref appeared.
+- PR #148 and #149 remain open/mergeable governance work against unchanged `main`; Issue #139 remains governance-only and is not a scientific blocker.
+- Read SUB only for collision/allocation avoidance: no reserved formal lane or fallback is active. Control Brain remains a strategic prior at `NO_HIGH_VALUE_OBJECT` / architecture-testbed HOLD.
+- No concurrent MAIN collision was found. This run acquired and maintained its PRIMARY lease; the fresh Analyst authority was reconciled into the lease heartbeat before final persistence.
 
 ## Critical path / workflow state
 
-No MAIN candidate implementation, comparator work, candidate-specific bug fix, verifier/harness/runner repair, source/runtime/package/input binding, research CI/preflight, preservation, scoring, execution blocker, exact-head integration, or merge work was authorized because no fresh primary object exists.
+No MAIN candidate implementation, comparator work, candidate-specific bug fix, verifier/harness/runner repair, source/runtime/package/input binding, research CI/preflight, preservation, scoring, execution blocker, exact-head integration, or merge work is authorized because there is still no admitted primary object.
 
 MAIN performed **no research/scientific mutation**, dispatched **no research workflow/experiment**, crossed **no formal boundary**, and created no new identity, STARTED/control ref, preserve/scoring output, or evidence ref.
 
-Evidence Analyst CI run `35425862538` on exact authority `8e8aa0924ff5c7dae99332d9babe7f3dd748f25b` completed successfully. The MAIN lease-write control-plane CI `35426018120` was still in progress when observed. It has no scientific relevance, so MAIN did not occupy the run waiting for it.
+The 15:32 Literature mailbox CI run `35427097016` completed successfully. MAIN's own lease-write control-plane CI `35429014641` was observed in progress; it is not a research experiment and has no scientific relevance, so MAIN did not occupy the run waiting for it.
 
-New formal scientific information this run: **none**.  
-New repository scientific evidence this run: **none**.  
-Material scientific allocation change this run: **none**.  
+New **formal scientific information** this run: **none**.  
+New **repository scientific evidence** this run: **none**.  
+New **external/admission information** this run: **yes — privilege-tiered counterfactual-credit/replay/responsibility reduction pressure, now consumed by fresh Analyst authority**.  
 Current SUB allocation: **`sub_lane: null`, `sub_fallback: null`**.
 
 ## Lease / stop
 
 Final lease target: **`COMPLETED`**.
 
-Stop reason: `PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_ANALYST_1502_RECONFIRMED`.
+Stop reason: `PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_FRESH_ANALYST_CONSUMED_1532_CAUSAL_CREDIT_LITERATURE`.
 
-Relay continuation is **not expected**. MAIN remains on HOLD until a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object. If one appears, MAIN owns its full authorized critical path and must stop at that handoff's review boundary. Do not reopen consumed lines, manufacture a NI01 score surface, reopen LP01, or reuse consumed identities.
+Relay continuation is **not expected**. MAIN remains on architecture/testbed HOLD. The next MAIN action is only to act on a future fresh Evidence Analyst handoff that prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object. For any H7-like object, the new privilege-tiered counterfactual ceilings and responsibility-changing/local-observation-preserving intervention gate must be fixed prospectively before Analyst review. Do not reopen consumed lines or create a successor merely from literature pressure.
