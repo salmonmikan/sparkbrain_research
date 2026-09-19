@@ -1,120 +1,126 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-19 19:20 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-19 20:22 JST
 
 ## Overall classification
 
 **`SLIGHTLY_TOO_PERMISSIVE`**
 
-The programme-wide overconservative defect identified in earlier audits has now been materially corrected: Control Brain explicitly retired the stale programme-wide HOLD interpretation and now treats `NO_HIGH_VALUE_FORMAL_OBJECT` as **FORMAL HOLD only**, while allowing bounded DISCOVERY, ARCHITECTURE_STUDY and PRE_FORMAL work. The four-layer funnel is producing both promotion and rejection without weakening the formal integrity floor.
+The programme is still only **locally** too permissive, not broadly permissive. The FORMAL integrity floor, claim-type separation, stop/review boundaries, ordinary-reduction discipline, and active lower-layer funnel are behaving well. The remaining calibration error is the Top-k Architecture Study's local categorical signal gate: an under-supported magnitude stratum can cast the same full vote as a well-supported one.
 
-The remaining material calibration error is now mostly one-directional and local: the current Architecture Study categorical signal gate is **too permissive with respect to per-stratum support**. That weakness has now repeated independently in cycle 2. Cycle 1 classified a positive architecture signal using qualifying turnover-support strata `n=1` and `n=25`; cycle 2 replicated the same categorical signal using qualifying strata `n=2` and `n=26`, while the third stratum had `n=0`. Each magnitude still casts an equal full vote once its median ratios clear the fixed threshold, with no per-magnitude support or uncertainty requirement.
+This run materially strengthens that conclusion because the accepted read-only Utility diagnostic has now completed. It finds that cycle-1's canonical `PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL` is not leave-one-stratum robust, becomes `MIXED` under each example support-eligibility rule `n>=3`, `n>=5`, and `n>=10`, and is sensitive to episode composition. At the same time, the diagnostic shows that the large probability/output amplification is **not** a `1e-12` denominator-floor artifact and is substantially more robust than the state-amplification vote. The correct interpretation is therefore more specific than before: **strong output amplification with mixed / threshold-sensitive state amplification**, while the exact future support or uncertainty rule remains uncalibrated.
 
-This is **not** a FORMAL integrity failure and does not invalidate either Architecture Study result. Both cycles were prospectively specified, DEV-only, explicitly NON_EVIDENTIARY, exact-head bound, and stopped at the required fresh-Analyst boundary. The calibration issue is narrower: the lower-layer signal label and promotion triage can look more robust than the actual stratified support warrants.
+A second material update pushes in the opposite direction and argues against global tightening: MAIN's independent structural-order Architecture Study prospectively returned `EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES` and stopped. The ordinary control reproduced the bounded order-dependent behavior sufficiently to trigger the predeclared reduction branch. This is healthy funnel behavior: a fresh architecture question was allowed to run, an ordinary control explained it at the current layer, and no rescue cycle or promotion was initiated.
 
-## Material change since the prior audit
+## Material changes since the prior audit
 
-1. **Control Brain has reconciled the prior overconservative doctrine lag.** The 18:50 Control handoff explicitly changes operating doctrine to `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`, accepts the four-layer funnel, treats research stagnation as a throughput defect when safe lower-layer work exists, and consumes the prior Methodology Calibration support concern.
-2. **MAIN completed the prospectively fixed cycle-2 replication without changing the scientific contract.** Exact research head is `research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601`; workflow `35435714352` completed successfully. Cycle 2 remains `NON_EVIDENTIARY ARCHITECTURE_STUDY` and terminally maps to `PERSISTENCE_SIGNAL_REPLICATED` under the predeclared rule.
-3. **The support-adequacy defect independently recurred.** Cycle-2 turnover support was `0 / 2 / 26` at magnitudes `0.01 / 0.05 / 0.10`. The categorical signal passed because the `n=2` and `n=26` strata both cleared state-AUC ratio `>=2.0` and probability-AUC ratio `>=1.5`. Cycle 1 had passed using `n=1` and `n=25` qualifying strata. Thus sparse strata are not a one-off accident; they can materially determine the 2-of-3 categorical label across independent model seeds.
-4. **The stop/review guard worked again.** MAIN stopped after cycle 2 and explicitly refused cycle 3, PRE_FORMAL work, comparator/intervention redesign, retuning, FORMAL identity/STARTED creation, or merge without fresh Evidence Analyst authority.
-5. **Lower-layer false-negative control is functioning.** SUB independently ran `PLASTICITY_UPDATE_CAP_SCALING_BIAS_DISCOVERY`, reduced the effect to ordinary `sorted numeric edge keys + fixed successful-update cap`, classified it NON_EVIDENTIARY, and `REJECT`ed the scientific candidate after one cycle rather than rescue-tuning it.
-6. **External reduction pressure increased without being treated as automatic authority.** Literature now gives ordinary reduction ladders for the active Top-k line—hard switching geometry followed by ordinary recurrent/non-normal transient gain—and for structural-order path dependence—explicit rewrite-relevant state followed by graph-rewrite non-confluence/critical-pair analysis. These raise future mechanistic bars but do not change the fixed completed Architecture results.
-7. **The prior Methodology Utility request has been accepted, so no duplicate request is created.** Control assigned `CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS`, a one-run read-only cycle-1 support/denominator robustness diagnostic. Utility state has not yet recorded execution/result.
+1. **The prior Utility support diagnostic completed successfully and confirms the local Top-k support defect.** It used only the existing cycle-1 DEV artifact, reran no model/probe, accessed no TEST/formal evidence, mutated no research state, and left the canonical NON_EVIDENTIARY label unchanged.
+2. **Cycle-1 support robustness is now characterized rather than merely suspected.** Turnover support is `1 / 11 / 25`; the signal votes are the `n=1` and `n=25` strata. Leave-one-magnitude-out retains SIGNAL in only one of three views, and that retained view still relies on `n=1`.
+3. **Example prospective support floors all change the diagnostic interpretation to MIXED.** Requiring `n>=3`, `n>=5`, or `n>=10` before a magnitude can vote removes the single-case stratum. These are sensitivity checks, not recommendations to adopt any one threshold.
+4. **Episode-cluster robustness is materially uncertain.** Under the current gate applied to cluster-resampled episodes, the diagnostic outcome is about `56.9% SIGNAL`, `9.7% low-turnover/inconclusive`, and `33.4% mixed/other`. This is descriptive methodology evidence, not a formal sampling claim.
+5. **Denominator-floor concern is largely resolved.** No turnover-case denominator is clipped by the canonical `1e-12` floor; minimum control state AUC is about `0.3485` and minimum control probability AUC about `4.60e-4`. Large probability ratios persist under deliberately larger diagnostic floors. The weak point is state-ratio support/threshold stability, not numerical clipping.
+6. **Evidence Analyst has requested a cross-seed read-only support diagnostic.** `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT` asks for cycle-1/cycle-2 support and uncertainty analysis without rerun, threshold optimization, retroactive relabeling, or PRE_FORMAL authority. This is the right next calibration step and makes a duplicate Methodology Utility request unnecessary.
+7. **Structural-order Architecture Study cycle 1 completed and reduced to an ordinary control at the bounded architecture layer.** After a pre-diagnostic Ruff-only failure, MAIN made only style/lint changes; the exact-head workflow passed and returned `EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES`. `edge_only_budget64` diverged topologically in `11/12` pairs and produced mean probability-L1 `0.02658`, satisfying the prospectively fixed ordinary-control branch. MAIN stopped for fresh Analyst review with no cycle 2 or promotion authority.
+8. **The pre-start mechanical repair boundary worked correctly.** The repair removed an unused import and reformatted long lines only. No scientific parameter, seed, metric, threshold, condition, or outcome mapping changed before the successful run.
+9. **SUB again rejected an ordinary implementation effect without rescue tuning.** Reward omission behavior reduced to the explicit reward-trace recurrence and was stopped after one Discovery cycle.
+10. **No new FORMAL evidence appeared.** The authoritative evidence-tag set remains five items, including the C19-R2 `REDUCED_BY_FSA` result. The programme's strict FORMAL path remains separate from these lower-layer diagnostics.
 
 ## Gate calibration
 
 | Gate / rule | Classification | Current finding |
 | --- | --- | --- |
-| No rerun/retune/rescore; immutable evidence; raw-before-score / preserve-before-read | `KEEP` | Hard integrity floor remains justified and operationally intact. |
-| Prospective protocol / exact binding / STARTED no-clobber for FORMAL | `KEEP` | No weakening is warranted. |
+| No rerun/retune/rescore; immutable evidence; raw-before-score / preserve-before-read | `KEEP` | Hard integrity floor remains justified and intact. |
+| Prospective protocol / exact binding / STARTED no-clobber for FORMAL | `KEEP` | No weakening warranted. |
 | Positive candidate signal before strong mechanistic `REDUCED_BY_*` language | `KEEP` | Still needed to separate absent signal from explanatory reduction. |
-| Equal-privilege comparator matching, including task/world/regime labels | `KEEP` | NI01 remains concrete evidence that hidden regime privilege can overstate reduction. |
-| Stronger-privilege replay/global-critic/actual-cause ceilings | `CLARIFY` | Keep as stronger-privilege ceilings unless information/resource privilege is actually matched. |
+| Equal-privilege comparator matching, including task/world/regime labels | `KEEP` | NI01 remains concrete evidence that hidden regime privilege can overstate mechanistic reduction. |
+| Stronger-privilege replay/global-causal methods | `CLARIFY` | Treat as ceilings unless information/resource privilege is matched. |
 | New-computational-principle novelty bar | `KEEP` | Appropriate for the strongest claim. |
-| Applying the same novelty bar to architecture/system/testbed value | `SPLIT_BY_CLAIM_TYPE` | Current funnel now separates these claims in practice. |
-| `NO_HIGH_VALUE_FORMAL_OBJECT => programme-wide HOLD/no-op` | `RELAX` | The correction is now adopted by Control and should remain prospective doctrine. |
-| Observable/question-level exhaustion rather than family-level exhaustion | `CLARIFY` | Fresh lower-layer questions continue to produce useful reductions/rejections. |
+| Applying the same novelty bar to architecture/system/testbed value | `SPLIT_BY_CLAIM_TYPE` | Current funnel now separates these claims operationally. |
+| `NO_HIGH_VALUE_FORMAL_OBJECT => programme-wide HOLD` | `RELAX` | Control's correction to active lower layers is well calibrated and should remain. |
+| Observable/question-level exhaustion rather than family-level exhaustion | `CLARIFY` | Fresh bounded questions continue to produce useful reductions. |
 | Fresh independently motivated object requirement | `CLARIFY` | Preserve anti-rescue purpose without banning fresh architecture questions. |
-| Default three-cycle exploratory budget | `KEEP` | Useful upper bound; early reduction correctly stops before budget exhaustion. |
-| Stop new-principle claim after convincing ordinary reduction | `SPLIT_BY_CLAIM_TYPE` | Reduction may close novelty while architecture/system value remains researchable. |
-| Stop after each Architecture Study cycle for fresh Analyst review | `KEEP` | Validated again after cycle 2. |
-| Architecture-signal support adequacy across strata | `TIGHTEN` | Sparse `n=1` in cycle 1 and `n=2` in cycle 2 each cast a full decisive magnitude vote. |
-| Exact replacement support floor / uncertainty rule | `INSUFFICIENT_EVIDENCE` | A guard is clearly needed, but the correct minimum `n`, interval rule, weighting or robust aggregate should be chosen prospectively after the pending read-only diagnostic rather than guessed now. |
-| Architecture AUC-ratio cutoffs as novelty/formal-admission thresholds | `CLARIFY` | `2.0 / 1.5` remain local bounded triage aids only, not calibrated novelty thresholds. |
-| Control-plane adoption of active lower-layer doctrine | `KEEP` | Previously stale; now explicitly reconciled in the 18:50 Control handoff. |
-| Architecture -> PRE_FORMAL automatic promotion after replication | `KEEP` as **forbidden** | Replication makes a candidate eligible for fresh review only; it does not auto-promote. |
+| Default three-cycle exploration budget | `KEEP` | Useful upper bound; ordinary reductions correctly stop early. |
+| Stop new-principle claim after convincing ordinary reduction | `SPLIT_BY_CLAIM_TYPE` | Novelty may close while architecture/engineering information remains useful. |
+| Stop after each Architecture Study cycle for fresh Analyst review | `KEEP` | Worked for Top-k and structural-order lines. |
+| Architecture-signal per-stratum support adequacy | `TIGHTEN` | Utility confirms the current Top-k rule can depend decisively on `n=1`; cycle 2 had an analogous `n=2` decisive vote. |
+| Exact replacement minimum support / interval / weighting rule | `INSUFFICIENT_EVIDENCE` | Need for a guard is now strong; exact rule must not be selected by fitting completed Top-k outcomes. |
+| Architecture local cutoffs as general novelty/formal thresholds | `CLARIFY` | Top-k `2.0/1.5` and structural-order `9/12`, `0.01` are local triage contracts, not programme-wide novelty thresholds. |
+| Automatic PRE_FORMAL promotion after replicated Architecture label | `KEEP` | The prohibition should remain: replication only triggers fresh review. |
+| Pre-start science-invariant repair before any diagnostic visibility | `KEEP` | Structural-order lint-only continuation was a clean valid example. |
+| Ordinary-control-first reduction in Architecture Study | `KEEP` | Structural-order edge/homeostasis control reproduced the phenomenon and correctly stopped escalation. |
+| Choosing future support rule after observing current line outcomes | `CLARIFY` | Prospective calibration may use completed cases diagnostically, but must avoid outcome-fitting a rule solely to flip or preserve these labels. |
 
 ## Mandatory calibration dimensions
 
 ### `gate_drift`
 
-The main drift is now scientifically healthy: allocation was relaxed from global HOLD to a four-layer funnel **without relaxing evidence integrity**. Control Brain has caught up with Analyst/MAIN/SUB. The opposite-direction drift is localized to lower-layer triage: a 2-of-3 equal-vote architecture criterion was prospectively fixed but does not account for per-stratum support, and that weakness now affects both independent cycles.
+The major programme drift remains healthy: FORMAL HOLD is separated from lower-layer research, without changing the one-way evidence bar. The new drift is diagnostic refinement rather than a new scientific gate: support adequacy for lower-layer Architecture labels is now empirically shown to matter. Structural-order simultaneously demonstrates that ordinary controls can reduce fresh lower-layer phenomena without reintroducing blanket HOLD.
 
 ### `justification_trace`
 
-The FORMAL hard floor has strong traceability to actual failure modes: comparator privilege, reduction by ordinary mechanisms, no-rerun/one-way requirements, and preservation/target-blindness. The Architecture signal threshold has a weaker trace. Its `2.0 / 1.5`, total-turnover `>=20`, equal magnitude voting and lack of per-stratum support were fixed prospectively—which protects against post-hoc tuning—but there is still no demonstrated calibration that a magnitude with one or two turnover cases should carry the same categorical weight as one with 25–26 cases.
+The hard FORMAL gates remain traceable to concrete failure modes: one-way integrity and preservation protect post-outcome contamination; equal privilege is justified by NI01's world-label asymmetry; ordinary reduction is justified by terminal cases such as C19-R2 `REDUCED_BY_FSA`.
 
-The repeated cycle-1/cycle-2 pattern now provides a concrete justification for adding a prospective support/uncertainty guard. It does **not** yet justify selecting an exact replacement rule without the pending read-only robustness analysis.
+The need for an Architecture support guard now has direct traceability too. Cycle 1's decisive sparse vote is `n=1`; the read-only robustness diagnostic shows leave-one-stratum instability, support-floor sensitivity and episode-composition sensitivity. What remains weakly justified is the **exact replacement rule**. The programme should not mistake evidence that “some guard is needed” for evidence that `n=3`, `n=5`, `n=10`, a particular confidence interval, or a specific weighting scheme is optimal.
 
 ### `false_positive_control`
 
-FORMAL false-positive control remains strong. Lower-layer false-positive triage risk is now reproducible: a sparse stratum can supply one of the two required categorical signal votes. If this label were allowed to trigger automatic PRE_FORMAL escalation, it would overstate robustness. The current mandatory Analyst boundary prevents that escalation, so the programme remains contained rather than broadly permissive.
+FORMAL false-positive control remains strong. Lower-layer false-positive **triage** risk is real but contained. A sparse stratum can still create a categorical signal label, but mandatory fresh Analyst review prevented that label from automatically becoming PRE_FORMAL or novelty evidence. Structural-order provides a complementary healthy example: the prospectively fixed ordinary control reproduced the phenomenon and the line stopped rather than escalating.
 
 ### `false_negative_risk`
 
-Materially improved. Control now recognizes FORMAL HOLD plus active lower layers, SUB is generating fresh bounded questions, ordinary reductions cause early rejection rather than whole-programme shutdown, and Architecture value is separated from new-principle novelty. No evidence supports re-tightening the whole programme.
+Still materially improved. The programme is generating fresh lower-layer questions, reducing ordinary effects early, and retaining architecture/engineering information after novelty closes. Global tightening in response to the Top-k support issue would recreate the prior stagnation defect and is not justified.
 
 ### `duplicate_guards`
 
-No scientific-integrity purpose should be removed. Prospective binding, no-rerun, target blindness, preservation order, exact identity binding and immutable evidence protect different failure modes. Implementation can be simplified, but not by collapsing their scientific purposes.
+No hard-integrity purpose should be removed. Some implementation checks can be consolidated, but prospective binding, no-rerun, target blindness, preservation order, exact identity binding and immutable evidence protect distinct failure modes.
 
 ### `moving_goalposts`
 
-**LOW_RETROACTIVE_RISK.** Cycle 2 reused the prospectively fixed cycle-1 decision rule and changed only the authorized independent model/training seed. After the replicated positive label, MAIN stopped. The proposed support-adequacy change therefore applies **prospectively only**. Cycle 1 and cycle 2 retain their original NON_EVIDENTIARY labels and terminal mappings under the contracts that generated them.
+**`LOW_RETROACTIVE_RISK_WITH_PROSPECTIVE_RULE_SELECTION_WARNING`**. Completed Top-k cycles retain their original NON_EVIDENTIARY labels. The Utility analysis is explicitly diagnostic and did not rescore canonical results. Structural-order mapping was fixed before outcome and its lint repair was science-invariant. The new caution is prospective: a future support/uncertainty rule should be selected for a general methodological rationale and frozen for future work, not optimized against cycle-1/cycle-2 outcomes and then presented as independently calibrated.
 
 ### `pass_reachability`
 
-**`REACHABLE_BUT_NARROW`**. The plausible FORMAL path remains: prospectively positive native signal -> fresh exact-bound object -> equal-privilege matched comparators -> survive ordinary reductions -> fixed intervention and numeric falsifier -> one-way preserved evidence. Active lower layers improve the probability of finding a suitable object without lowering that bar.
+**`REACHABLE_BUT_NARROW`**. A genuine FORMAL PASS path remains: prospectively positive native signal -> fresh exact-bound object -> matched equal-privilege comparators -> survive ordinary reductions -> fixed intervention/numeric falsifier -> one-way preserved evidence. The active lower funnel improves object discovery without lowering this bar.
 
 ### `comparator_calibration`
 
-Equal-privilege matching remains correct. Literature's hard-switch/non-normal transient and graph-rewrite reductions are appropriate **ordinary prospective baselines** for future mechanistic questions. Stronger-privilege replay/global-causal methods remain ceilings unless privilege is matched; they should not become automatic reject gates.
+Equal-privilege matching remains correct. Top-k future mechanistic work should separate hard-switch geometry and ordinary recurrent/non-normal transient gain before claiming a persistence-specific residual. Structural-order now directly shows why ordinary controls belong early: an edge/homeostatic control reproduced the bounded phenomenon. Stronger-privilege methods remain ceilings unless privilege is matched.
 
 ### `signal_before_reduction`
 
-The ordering remains appropriate, but the word `signal` must be scoped carefully. `PERSISTENCE_SIGNAL_REPLICATED` means the **fixed Architecture Study categorical rule replicated**, not that a robust new-principle signal has been established. Support adequacy and ordinary-reduction questions remain open before PRE_FORMAL.
+The ordering is still correct, but Architecture “signal” must not imply robust mechanism. For Top-k, the current support-aware picture is strong output amplification with mixed/threshold-sensitive state amplification. For structural-order, the observed architecture phenomenon exists but is already reproduced by an ordinary control. Both are useful lower-layer outcomes and neither is a new-principle signal.
 
 ### `claim_type_separation`
 
-Substantially improved and now operational. MAIN explicitly calls both cycles NON_EVIDENTIARY Architecture Study; Control states that architecture research value can remain even when ordinary reductions win; SUB rejects an ordinary implementation artifact as a scientific candidate without treating the whole architecture as worthless.
+Healthy and operational. Top-k and structural-order are explicitly NON_EVIDENTIARY; SUB ordinary reductions are retained as engineering information; no lower-layer result entered canonical FORMAL evidence. The current methodology problem is confidence calibration in local triage, not novelty/research-worthiness conflation.
 
 ### `research_worthiness_vs_novelty`
 
-No current material conflation is observed in Control/Analyst/MAIN/SUB. The remaining calibration problem is confidence in the lower-layer categorical label, not using FORMAL novelty to suppress research-worthiness.
+No material current conflation is observed. The structural-order line is particularly informative: the programme allowed the question to be studied, learned that an ordinary control reproduces it, and stopped novelty escalation while retaining the architecture result.
 
 ### `external_calibration`
 
-The 18:30 Literature Scout adds stronger ordinary reduction candidates but does not change consumed evidence or current Architecture contracts. The latest Independent Audit remains NI01 `WEAKENED`: canonical FAIL integrity is robust, while equal-privilege mechanistic reduction is not established because of world-label privilege. Both inputs support the existing doctrine rather than a broader tightening.
+Literature continues to support prospective ordinary-reduction ladders rather than automatic rejection. Independent Audit keeps NI01 canonical integrity robust while weakening equal-privilege mechanistic interpretation because of world-label privilege. These inputs support strict comparator semantics and lower-layer research, not a broader tightening.
 
 ### `opportunity_cost`
 
-Global tightening would recreate the prior stagnation defect. The low-cost/high-value move is local: tighten future Architecture signal support/uncertainty handling while preserving the active lower-layer funnel and mandatory fresh review boundaries.
+The best tradeoff remains local calibration. Add a future support/uncertainty guard to Architecture triage; keep fresh-review boundaries and ordinary controls; do not slow Discovery/Architecture globally. The cross-seed read-only diagnostic has high information gain because it can refine the guard without new scientific execution.
 
 ## Prospective recommendations
 
-1. **Keep the four-layer funnel and the 18:50 Control interpretation: FORMAL HOLD does not imply programme-wide HOLD.**
-2. **Do not retroactively alter cycle 1 or cycle 2.** Both remain valid NON_EVIDENTIARY Architecture Study results under their prospectively fixed criteria.
-3. **Do not start cycle 3 or PRE_FORMAL solely because cycle 2 mapped to `PERSISTENCE_SIGNAL_REPLICATED`.** Wait for fresh Evidence Analyst review.
-4. **Before any PRE_FORMAL promotion, explicitly review support adequacy across both cycles.** The repeated decisive sparse strata (`n=1` and `n=2`) are now a methodological fact, not a one-cycle anomaly.
-5. **Prospectively tighten future Architecture signal gates with a per-stratum support or uncertainty-aware rule.** Do not choose the exact minimum `n`, weighting or interval rule by intuition; use the already accepted read-only Utility diagnostic to inform a future prospective rule.
-6. **Keep the stop-after-cycle Analyst boundary exactly as-is.** It is the main reason the permissive lower-layer label did not become permissive scientific inference.
-7. **Keep Architecture `2.0 / 1.5` ratios local to the current bounded contract.** Never launder them into PRE_FORMAL/FORMAL novelty criteria without independent prospective calibration.
-8. **If the Top-k line advances after fresh review, require ordinary reduction in the order suggested by current evidence/literature:** hard Top-k switching geometry -> recurrent/non-normal transient gain -> only then any unexplained persistence-specific residual.
-9. **Keep equal-privilege reductions distinct from stronger-privilege ceilings and preserve the full one-way hard integrity floor.**
-10. **Continue early rejection of lower-layer objects that reduce cleanly to ordinary implementation mechanisms**, as SUB did with the plasticity update-cap scaling bias.
+1. **Keep `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL` and the four-layer funnel.**
+2. **Keep all completed Top-k cycle labels unchanged.** Use Utility robustness only as methodology input.
+3. **Treat cycle-1 Utility result as sufficient evidence that future Top-k-like Architecture signal gates need a per-stratum support or uncertainty guard.**
+4. **Do not yet freeze an exact minimum support number or interval rule.** Consume the already-requested cross-seed diagnostic first, and choose any future rule for a general prospective rationale rather than to optimize completed labels.
+5. **Do not start Top-k cycle 3 or PRE_FORMAL solely from `PERSISTENCE_SIGNAL_REPLICATED`.** Support adequacy and ordinary switch/recurrent reductions remain open.
+6. **Keep stop-after-cycle fresh Analyst review exactly as-is.** It is successfully containing lower-layer permissiveness.
+7. **Keep structural-order `EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES` as an ordinary-control reduction at Architecture level.** Do not rescue it with cycle-2 redesign unless a fresh, independently motivated residual question is prospectively specified.
+8. **Preserve science-invariant pre-start mechanical repair authority only when no diagnostic/outcome has been exposed.** Structural-order lint repair is a valid model for this boundary.
+9. **Keep local Architecture thresholds local.** Do not generalize Top-k `2.0/1.5` or structural-order `9/12` / `0.01` into novelty or FORMAL admission criteria without independent calibration.
+10. **Keep equal-privilege reductions distinct from stronger-privilege ceilings and preserve the full one-way integrity floor.**
+11. **Continue early rejection when ordinary implementation mechanisms explain a Discovery candidate**, as seen in update-cap and reward-omission probes.
 
 ## Utility request
 
-**No new request created.** The prior request `METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT` has already been accepted by Control Brain and bound to assignment `CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS`. Creating another request now would duplicate the same methodology question. The assignment remains read-only, NON_EVIDENTIARY and cycle-1-only; Utility state has not yet recorded a result.
+**No new request created.** The prior Methodology assignment `CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS` is now complete and returned `MIXED / ADD_PER_STRATUM_SUPPORT`. Evidence Analyst has already created `EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT`, which directly asks the next required methodology question using only existing cycle-1/cycle-2 DEV artifacts. Creating another Methodology request would duplicate it.
 
 ## Hard-integrity-floor confirmation
 
@@ -122,10 +128,11 @@ Confirmed unchanged: no rerun/retune/rescore of consumed identities; frozen/pros
 
 ## Questions for Control Brain / Evidence Analyst
 
-- Treat `PERSISTENCE_SIGNAL_REPLICATED` as replication of a **local Architecture triage rule**, not sufficient evidence for PRE_FORMAL promotion by itself.
-- On fresh review, explicitly decide whether repeated sparse decisive strata make the line `under-supported`, `mixed`, or still worth a prospectively redefined next layer after the Utility robustness result.
-- If a new Architecture support rule is adopted, freeze it only for future objects/cycles; do not rescore or relabel the completed cycles.
+- Consume the completed Utility result as methodology input: it supports **adding a future support guard**, not retroactively changing Top-k cycles.
+- Resolve the cross-seed support request before any Top-k PRE_FORMAL consideration; keep it nonblocking for unrelated MAIN work.
+- If a support rule is chosen, state the general rationale and prospective scope explicitly so the rule is not merely fitted to the completed Top-k outcomes.
+- Treat structural-order's edge/homeostasis reproduction as a successful ordinary reduction unless a fresh residual question arises independently; do not spend cycles mechanically.
 
 ## Bottom line
 
-The programme is no longer best described as globally overconservative. The anti-stall correction is working and the FORMAL integrity floor is still strong. The clearest current imbalance is now the other direction but narrowly contained: **Architecture Study signal triage is slightly too permissive because sparse strata can cast decisive full votes**. The correct programme-level classification is therefore `SLIGHTLY_TOO_PERMISSIVE`, with a targeted prospective tightening of lower-layer support calibration—not a return to global conservatism.
+The methodology remains **`SLIGHTLY_TOO_PERMISSIVE`**, but the defect is now sharply diagnosed and well contained. The FORMAL path is not too loose. The lower-layer funnel is not too loose in general. The specific weakness is that the Top-k Architecture categorical gate lets sparse strata cast decisive full votes. Read-only robustness confirms that this makes the state-amplification label fragile, while output amplification itself is substantially more robust. At the same time, structural-order shows the programme can admit a fresh question, reduce it prospectively with an ordinary control, and stop cleanly. The correct fix is targeted prospective support calibration—not a return to global conservatism.
