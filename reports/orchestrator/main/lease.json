@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260920T0312JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-20T03:12:38+09:00",
-  "heartbeat_at": "2026-09-20T03:15:00+09:00",
+  "heartbeat_at": "2026-09-20T03:21:00+09:00",
   "analyst_commit": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
   "active_branch": "research/main-v05-topology-config-contract-arch-study-20260920",
   "active_identity": null,
-  "active_step": "V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_PROSPECTIVE_BINDING",
-  "workflow_run_id": null,
-  "expected_next_action": "Create the fresh Architecture Study branch from exact main ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d, bind the fixed five-config matrix/topology seed/checkpoint-roundtrip schema/outcome mapping before any outcome-bearing diagnostic, run exact-head ordinary CI/readiness, then execute at most one NON_EVIDENTIARY Architecture cycle and stop for fresh Analyst review on any valid outcome.",
+  "active_step": "V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_EXACT_HEAD_CI",
+  "workflow_run_id": 35460700075,
+  "expected_next_action": "Collect workflow 35460700075 only for exact head 03296eb1f986838567db82b36a2f342b0181fe5c. If pre-diagnostic CI fails, apply only science-invariant mechanical fixes and require a fresh exact-head green run before the first valid diagnostic. If the fixed diagnostic completes validly, verify artifact/head/workflow/contract/raw provenance, apply the already-fixed terminal mapping once, persist the NON_EVIDENTIARY Architecture result, and stop for fresh Evidence Analyst review. Do not perform a same-run post-outcome code fix, cycle 2, PRE_FORMAL, or FORMAL promotion.",
   "owner": "main"
 }
