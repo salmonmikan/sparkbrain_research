@@ -29,3 +29,15 @@ jobs:
         run: python -m pytest -q
       - name: Validate bundle
         run: python scripts/validate_bundle.py
+      - name: Architecture study cycle 1
+        if: matrix.python-version == '3.11'
+        run: >-
+          python scripts/architecture_studies/topk_persistent_amplification_cycle1.py
+          --output artifacts/architecture_studies/topk-persistent-amplification-cycle1
+      - name: Upload architecture study cycle 1
+        if: matrix.python-version == '3.11'
+        uses: actions/upload-artifact@v4
+        with:
+          name: topk-persistent-amplification-cycle1
+          path: artifacts/architecture_studies/topk-persistent-amplification-cycle1
+          if-no-files-found: error
