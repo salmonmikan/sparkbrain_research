@@ -1,55 +1,60 @@
 {
   "schema_version": 1,
-  "timestamp": "2026-09-19T22:18:00+09:00",
-  "run_disposition": "NO_MATERIAL_CALIBRATION_CHANGE",
-  "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
-  "confidence": "HIGH_ON_LOCAL_PERMISSIVENESS_MEDIUM_ON_EXACT_REPLACEMENT_RULE",
+  "timestamp": "2026-09-19T23:21:00+09:00",
+  "run_disposition": "MATERIAL_CALIBRATION_IMPROVEMENT",
+  "overall_classification": "WELL_CALIBRATED",
+  "confidence": "MEDIUM_HIGH",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_tag_count": 5,
-    "evidence_tag_set_unchanged": true,
-    "topk_cycle1_result": "PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL",
-    "topk_cycle2_result": "PERSISTENCE_SIGNAL_REPLICATED",
-    "topk_evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "structural_order_result": "EDGE_OR_HOMEOSTASIS_CONTROL_REPRODUCES",
-    "structural_order_analyst_disposition": "REJECT_CURRENT_QUESTION",
-    "homeostasis_window_partition_branch": "cb8ea52a917e91b2aac6f1cd3de7c2a5e7573000",
-    "homeostasis_window_partition_result": "REJECT_EXACT_PER_WINDOW_IMPLEMENTATION_REDUCTION",
-    "c19_r2_result": "REDUCED_BY_FSA"
+    "c19_r2_evidence_tag_object": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+    "c19_r2_terminal_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+    "c19_r2_result": "REDUCED_BY_FSA",
+    "h5_evidence_tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+    "h5_terminal_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+    "assembly_discovery_head": "1a62f81eeb0295a94101c6bfe205c460fd9eedfc",
+    "assembly_architecture_contract_commit": "df834699cd5d06c0929f990794426dee69553ff7",
+    "assembly_architecture_harness_head": "1c5814d5670128430b3ae958027a0eb06311f9aa",
+    "assembly_architecture_evidentiary_status": "NON_EVIDENTIARY",
+    "topk_historical_support_issue": "KNOWN_AND_QUARANTINED_PENDING_READ_ONLY_DIAGNOSTIC"
   },
   "control_plane_consumed": {
-    "control_brain_commit": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
-    "evidence_analyst_branch_commit": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
-    "evidence_analyst_latest_timestamp": "2026-09-19T21:02:00+09:00",
-    "orchestrator_branch_commit": "dfb86ffc7ef0158b24abf118eef0b71fab81f50b",
-    "main_latest_timestamp": "2026-09-19T21:16:00+09:00",
-    "sub_latest_timestamp": "2026-09-19T21:46:00+09:00",
-    "literature_audit_branch_commit": "94ae4abf7b310faefa7244a03cda2a597dba4dca",
-    "literature_latest_timestamp": "2026-09-19T21:30:00+09:00",
-    "independent_audit_latest_timestamp": "2026-09-19T10:32:00+09:00",
-    "repository_steward_commit": "7f77044f3159e7db15b45c9a471ae983c2a64284",
-    "repository_steward_latest_timestamp": "2026-09-19T19:50:00+09:00",
-    "utility_branch_commit": "4d8a98637e07e8a7f560b47012c573f34c643068",
-    "completed_utility_assignment": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
-    "completed_utility_result": "MIXED / ADD_PER_STRATUM_SUPPORT",
-    "pending_cross_seed_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
-    "pending_cross_seed_assignment_status": "NOT_YET_CONTROL_ASSIGNED"
+    "control_brain_latest_timestamp": "2026-09-19T22:50:00+09:00",
+    "control_brain_latest_file_sha": "a68d7c72fabbd5177b30ccf8980b0f403d061e54",
+    "evidence_analyst_branch_commit": "982e5686524c9fc2b665efcf44069fef49196333",
+    "evidence_analyst_latest_timestamp": "2026-09-19T22:57:18+09:00",
+    "orchestrator_branch_tip_observed": "b5b1f518a01403c4614523190c36ee0a87509e89",
+    "main_live_lease": {
+      "run_id": "sparkbrain-main-primary-20260919T2317JST",
+      "status": "RUNNING",
+      "active_branch": "research/main-assembly-prototype-lockin-arch-study-20260919",
+      "active_step": "PRE_START_SPEC_AND_BINDING",
+      "analyst_commit": "982e5686524c9fc2b665efcf44069fef49196333"
+    },
+    "sub_latest_timestamp": "2026-09-19T22:41:00+09:00",
+    "sub_latest_result": "ASSEMBLY_PROTOTYPE_LOCKIN_ORDER_SENSITIVITY_DISCOVERY_PROMOTE_TO_ARCHITECTURE_STUDY",
+    "independent_audit_latest_timestamp": "2026-09-19T22:31:00+09:00",
+    "independent_audit_target": "H5_EVENT_ROUTING_WORK_REDUCTION",
+    "independent_audit_classification": "ROBUST_SO_FAR",
+    "utility_assignment": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT",
+    "utility_assignment_status": "ASSIGNED_NOT_YET_RESULT_AT_AUDIT_TIME",
+    "utility_previous_result": "MIXED / ADD_PER_STRATUM_SUPPORT"
   },
   "gate_changes_reviewed": [
     {
-      "change": "SUB homeostasis-window-partition Discovery produced a real threshold shift but reduced exactly to per-observe target subtraction and per-call EMA decay",
-      "direction": "CONFIRMS_EXISTING_EARLY_ORDINARY_REDUCTION_AND_STOP_RULE",
-      "assessment": "NO_NEW_CALIBRATION_CHANGE"
+      "change": "Top-k local permissiveness is now quarantined behind a read-only cross-seed support diagnostic and fresh Analyst review; cycle 3 and PRE_FORMAL remain forbidden",
+      "direction": "TIGHTEN_EFFECTIVE_ADMISSION_WITHOUT_RETROACTIVE_RELABEL",
+      "assessment": "MATERIAL_IMPROVEMENT"
     },
     {
-      "change": "21:30 Literature added border-collision / branch-basin selection / WTA hysteresis as ordinary explanations for durable post-routing divergence",
-      "direction": "SHARPENS_PROSPECTIVE_TOPK_REDUCTION_LADDER",
-      "assessment": "NO_GATE_CLASSIFICATION_CHANGE"
+      "change": "Fresh Assembly Architecture object prospectively fixes per-seed support, repeated order-pair support, functional consequences, comparator role, and stop mapping before outcome visibility",
+      "direction": "SUPPORT_AWARE_PROSPECTIVE_LOCAL_TRIAGE",
+      "assessment": "MATERIAL_IMPROVEMENT"
     },
     {
-      "change": "No new formal evidence, identity, STARTED authority, TEST access, scorer/preserve path, or evidence anchor appeared",
-      "direction": "FORMAL_INTEGRITY_UNCHANGED",
-      "assessment": "NO_NEW_CALIBRATION_CHANGE"
+      "change": "H5 independent audit preserves canonical terminal FAIL while narrowing interpretation to the exact registered aggregate algorithmic-work claim",
+      "direction": "IMPROVED_CLAIM_BOUNDARY_DISCIPLINE",
+      "assessment": "CONFIRMS_CALIBRATION"
     }
   ],
   "gate_by_gate_classifications": {
@@ -57,7 +62,7 @@
     "prospective_protocol_and_exact_binding": "KEEP",
     "positive_signal_before_mechanistic_reduction": "KEEP",
     "equal_privilege_comparator_matching": "KEEP",
-    "stronger_privilege_counterfactual_ceilings": "CLARIFY",
+    "stronger_privilege_reduction_ceiling_labeling": "KEEP",
     "new_computational_principle_novelty_bar": "KEEP",
     "same_novelty_bar_for_architecture_testbed_research": "SPLIT_BY_CLAIM_TYPE",
     "no_high_value_formal_object_implies_programme_wide_hold": "RELAX",
@@ -66,83 +71,81 @@
     "default_three_cycle_exploration_budget": "KEEP",
     "stop_new_principle_claim_after_convincing_ordinary_reduction": "SPLIT_BY_CLAIM_TYPE",
     "stop_after_architecture_cycle_for_analyst_review": "KEEP",
-    "architecture_signal_support_adequacy_across_strata": "TIGHTEN",
-    "exact_replacement_support_or_uncertainty_rule": "INSUFFICIENT_EVIDENCE",
+    "legacy_topk_architecture_support_gate": "TIGHTEN",
+    "topk_exact_replacement_support_or_uncertainty_rule": "INSUFFICIENT_EVIDENCE",
+    "prospective_support_aware_architecture_triage": "KEEP",
+    "assembly_local_numeric_threshold_portability": "CLARIFY",
     "architecture_local_thresholds_as_formal_or_novelty_thresholds": "CLARIFY",
-    "automatic_preformal_promotion_after_architecture_replication": "KEEP",
+    "automatic_preformal_promotion_after_architecture_signal": "KEEP",
     "pre_start_science_invariant_repair_before_diagnostic_visibility": "KEEP",
     "ordinary_control_first_architecture_reduction": "KEEP",
     "outcome_informed_selection_of_future_support_rule": "CLARIFY",
-    "routing_persistence_ordinary_reduction_scope": "CLARIFY"
+    "negative_evidence_claim_boundary_narrowing": "KEEP"
   },
   "false_positive_risks": [
-    "Top-k Architecture triage can still receive a decisive full magnitude-level vote from an under-supported stratum",
-    "replicated local Architecture labels could be over-read as PRE_FORMAL or novelty evidence if fresh review is bypassed",
-    "an exact future support rule could be outcome-fitted to completed Top-k cases",
-    "local Architecture thresholds could be laundered into programme-wide novelty or FORMAL admission criteria",
-    "stronger-privilege replay/global-causal ceilings could be mistaken for equal-privilege reductions",
-    "durable post-routing divergence could be over-interpreted as intrinsic long-memory if branch/basin selection or WTA hysteresis is not excluded prospectively"
+    "Completed Top-k local labels could still be over-read if the new cross-seed hold/review gate is bypassed",
+    "Assembly local thresholds could be laundered into general Architecture, novelty, or FORMAL admission rules",
+    "Stronger-privilege reduction ceilings could be mistaken for equal-privilege mechanistic baselines",
+    "A future Top-k replacement support rule could be outcome-fitted if selected from completed cases"
   ],
   "false_negative_risks": [
-    "globally re-tightening Discovery/Architecture because of a local support-calibration defect",
-    "using prior family coverage as blanket observable-level exhaustion",
-    "using new-principle novelty as the threshold for architecture/testbed research-worthiness",
-    "treating exact ordinary reductions as evidence that similar but independently motivated future questions should be forbidden a priori"
+    "Generalizing Assembly's stringent local support numbers to unrelated effects with different variance/support structure",
+    "Globally tightening Discovery/Architecture because of the historical Top-k support defect",
+    "Using new-principle novelty as the threshold for architecture/system/testbed research-worthiness",
+    "Treating robust H5 failure under its registered aggregate counter vocabulary as a general no-go theorem for event routing/lazy execution"
   ],
   "duplicate_guards": {
     "assessment": "NO_SCIENTIFIC_PURPOSE_SHOULD_BE_REMOVED",
-    "recommendation": "Implementation consolidation may be considered separately, but the distinct integrity purposes remain justified."
+    "recommendation": "Operational consolidation may be considered separately; retain distinct integrity purposes."
   },
   "moving_goalpost_assessment": {
-    "classification": "LOW_RETROACTIVE_RISK_WITH_PROSPECTIVE_RULE_SELECTION_WARNING",
-    "basis": "No completed lower-layer or FORMAL label was retroactively rewritten. New literature only sharpens future reduction questions. Any future Top-k support guard or basin/hysteresis discriminator must be prospectively justified and must not be selected to flip or preserve completed outcomes."
+    "classification": "LOW",
+    "basis": "No completed result was reclassified. Top-k remains frozen/HOLD. The Assembly order family, DEV seeds, comparator, metrics, support mapping, and stop conditions were committed before outcome-bearing diagnostic execution."
   },
   "pass_reachability_assessment": {
     "classification": "REACHABLE_BUT_NARROW",
     "required_path": [
       "prospectively positive native signal",
       "fresh exact-bound object and protocol",
-      "matched equal-privilege comparators",
-      "survive ordinary implementation and dynamical reductions including routing-boundary/basin explanations when relevant",
+      "support/uncertainty adequate to the local question",
+      "matched equal-privilege comparators for mechanistic claims",
+      "survive ordinary implementation and dynamical reductions",
       "fixed intervention and numeric falsifier",
       "one-way preserved formal evidence"
     ],
     "effect_of_active_lower_funnel": "IMPROVES_OBJECT_DISCOVERY_WITHOUT_WEAKENING_FORMAL_PATH",
-    "current_limit": "Top-k support adequacy and ordinary reductions remain unresolved; no central MAIN object is presently justified."
+    "current_limit": "No current FORMAL object; Top-k support remains under read-only review and Assembly is only NON_EVIDENTIARY Architecture work."
   },
   "claim_type_separation_findings": {
     "control_state": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
-    "main_state": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
-    "discovery_state": "OPEN_FOR_SUB_BOUNDED_NON_EVIDENTIARY_WORK",
-    "topk_state": "NON_EVIDENTIARY_ARCHITECTURE_HOLD_PENDING_SUPPORT_DIAGNOSTIC_AND_FRESH_REDUCTION_QUESTION",
-    "structural_order_state": "REJECT_CURRENT_QUESTION_AFTER_ORDINARY_CONTROL_REPRODUCTION; ARCHITECTURE_OBSERVATION_RETAINED",
-    "homeostasis_window_partition_state": "REJECTED_SCIENTIFIC_CANDIDATE; ENGINEERING_PROTOCOL_CONSTRAINT_RETAINED",
-    "remaining_risk": "LOCAL_LOWER_LAYER_CONFIDENCE_CALIBRATION_NOT_NOVELTY_RESEARCH_WORTHINESS_CONFLATION"
+    "topk_state": "HOLD_PENDING_CROSS_SEED_SUPPORT_AND_FRESH_ANALYST_REVIEW",
+    "assembly_state": "NON_EVIDENTIARY_ARCHITECTURE_CYCLE1_PROSPECTIVELY_BOUND",
+    "structural_state": "REJECT_CURRENT_QUESTION_AFTER_ORDINARY_CONTROL_REPRODUCTION",
+    "h5_state": "TERMINAL_NEGATIVE_EVIDENCE_PRESERVED_WITH_NARROW_INTERPRETATION_CAP",
+    "remaining_risk": "LOCAL_THRESHOLD_PORTABILITY_AND_PENDING_TOPK_GENERAL_SUPPORT_RULE_NOT_PROGRAMME_WIDE_PERMISSIVENESS"
   },
   "external_calibration": {
-    "literature": "21:30 Literature adds border-collision, branch/basin selection, recurrent WTA hysteresis and discontinuity-driven global dynamics as ordinary Top-k persistence reductions. This prospectively sharpens the reduction ladder without changing completed evidence or gate classifications.",
-    "independent_audit": "No newer Audit result since 10:32; NI01 canonical integrity remains robust while equal-privilege mechanistic reduction remains weakened by world-label privilege.",
-    "use_rule": "External findings calibrate future comparators and reduction ladders prospectively, never rewrite consumed evidence."
+    "independent_audit": "H5 terminal FAIL remains robust for the exact registered aggregate algorithmic-work claim; globally eager eligibility maintenance is an architecture bottleneck, not a basis to rewrite the evidence or generalize to all event-routing efficiency claims.",
+    "literature": "Previously consumed routing-persistence literature remains prospective reduction input only; no external finding rewrites completed evidence.",
+    "use_rule": "External findings calibrate future comparators, reduction ladders, and claim boundaries prospectively only."
   },
-  "opportunity_cost_assessment": "No material change: keep the calibration fix local to Top-k support/uncertainty and future routing-persistence reductions; avoid global tightening. Allow bounded Discovery questions and stop them early on exact ordinary reduction.",
+  "opportunity_cost_assessment": "Balanced: keep lower-funnel Discovery/Architecture active, use local support-aware prospective gates and fresh review, and avoid global tightening or low-value governance work while FORMAL remains empty.",
   "utility_request_created": null,
   "utility_request_status": {
-    "completed_methodology_request": "METHCAL-20260919-1818-ARCH-SIGNAL-SUPPORT",
-    "completed_assignment": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
-    "completed_result": "MIXED / ADD_PER_STRATUM_SUPPORT",
-    "pending_next_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
-    "reason_no_duplicate": "The existing Evidence Analyst request already targets the next decision-relevant calibration question; basin/hysteresis reduction design should wait until support robustness and fresh Analyst review."
+    "active_assignment": "CTRL-20260919-2250-TOPK-CROSS-SEED-SUPPORT",
+    "source_request": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
+    "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_ARCHITECTURE_DIAGNOSTIC",
+    "reason_no_duplicate": "It directly addresses the remaining Top-k support-calibration uncertainty; another request would duplicate current work."
   },
   "prospective_recommendations": [
     "Keep the four-layer funnel and FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL doctrine.",
-    "Do not alter completed Top-k cycle labels retroactively.",
-    "Require future Top-k-like Architecture signal gates to address per-stratum support or uncertainty, but do not choose the exact rule by fitting completed outcomes.",
-    "Consume the existing cross-seed read-only support diagnostic before any Top-k PRE_FORMAL decision.",
-    "If Top-k support remains sufficient for a fresh question, prospectively test hard-routing branch/basin selection and hysteresis before persistence-specific mechanistic interpretation.",
-    "Keep stop-after-cycle fresh Analyst review exactly as-is.",
-    "Continue early rejection of Discovery candidates when ordinary implementation semantics exactly explain them, as with homeostasis window partitioning.",
-    "Keep local Architecture thresholds local and separate from novelty/FORMAL admission.",
-    "Keep equal-privilege reductions separate from stronger-privilege ceilings and preserve all one-way integrity safeguards."
+    "Preserve completed Top-k labels unchanged and consume the assigned cross-seed read-only diagnostic before any fresh Top-k object.",
+    "If Top-k is support-robust, permit only a fresh prospective ordinary-reduction Architecture question; do not jump directly to PRE_FORMAL.",
+    "Retain support-aware local Architecture design: per-seed/repeated-pair support, functional-consequence criteria, MIXED/HOLD outcomes, and fresh Analyst review.",
+    "Do not port the Assembly contract's exact 4/12, 8/12, or 2/16 cutoffs to unrelated lines without independent prospective rationale.",
+    "Keep stronger-privilege reduction ceilings explicitly separate from equal-privilege mechanistic comparators.",
+    "Preserve H5 exact negative evidence and scope any future efficiency successor as a fresh object.",
+    "Preserve the complete one-way integrity floor."
   ],
   "hard_integrity_floor_confirmation": {
     "confirmed": true,
@@ -158,13 +161,13 @@
     ]
   },
   "questions_for_control_brain": [
-    "When the cross-seed support request is reviewed, keep it methodology-only and nonblocking for unrelated research.",
-    "If a future support rule is adopted, require an explicit general prospective rationale and scope rather than fitting completed Top-k outcomes.",
-    "If Top-k support survives, add branch/basin selection and WTA hysteresis to the ordinary reduction ladder before any persistence-specific mechanistic escalation."
+    "Keep the active Top-k Utility assignment strictly read-only and return every classification to fresh Analyst review without automatic escalation.",
+    "Treat the new Assembly support-aware contract as a good local pattern, not a universal threshold template.",
+    "Continue preserving negative evidence such as H5 while narrowing only unsupported interpretation breadth."
   ],
   "questions_for_evidence_analyst": [
-    "Keep Top-k on HOLD until the existing cross-seed support diagnostic is consumed and a fresh reduction question is prospectively fixed.",
-    "If support is sufficient, require a future routing-persistence object to exclude branch/basin selection and hysteresis rather than treating within-region contraction alone as a novelty-positive result.",
-    "Continue separating engineering/architecture information from novelty after exact ordinary reductions such as the new homeostasis window-partition result."
+    "After the Top-k cross-seed result, choose any future support/reduction object prospectively rather than selecting a rule to preserve or flip completed labels.",
+    "For Assembly, keep the committed support mapping fixed through the first diagnostic and stop for fresh review on every valid mapped outcome.",
+    "Do not generalize Assembly's local numeric thresholds to other candidate families without a separate rationale."
   ]
 }
