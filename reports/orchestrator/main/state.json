@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-09-20T03:50:48+09:00",
+  "timestamp": "2026-09-20T04:13:23+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "analyst_commit": "9bb852bc1461755814d6a9a0e7ea561f1858a0da",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "current_lane": "V05_TOPOLOGY_CONFIG_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STOPPED_PENDING_FRESH_ANALYST_REVIEW",
   "candidate_question": {
     "id": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
     "question": "Are exported v0.5 width/height/receptor_rows fields coherently bound to realized topology and checkpoint semantics, or silently accepted while runtime geometry remains fixed?",
@@ -23,7 +23,6 @@
     "research_branch": "research/main-v05-topology-config-contract-arch-study-20260920",
     "research_head": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
     "prospective_contract_commit": "94b312ab5998b6e929b7498473bfc6e7459f4a1c",
-    "mechanical_lint_fix_commit": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
     "source_blobs": {
       "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
       "src/sparkbrain/v05/topology.py": "d9d292bdedc1288a929d1e53f03b9fc182b45a36",
@@ -31,67 +30,44 @@
       "configs/v05_reference.json": "d3c82d0279c3bce09d76ddf0ad2df1ec74bc2d7f"
     }
   },
-  "prospective_architecture_contract": {
-    "topology_seed": 41,
-    "config_matrix": [[8,8,1],[12,8,1],[8,10,1],[8,8,2],[12,10,2]],
-    "outcomes": [
-      "INTENTIONAL_FIXED_TOPOLOGY_EXPLICIT_CONTRACT",
-      "SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE",
-      "PARTIAL_BINDING_OR_INCONSISTENT_ROUNDTRIP",
-      "AMBIGUOUS_CONTRACT",
-      "INVALID_DIAGNOSTIC"
-    ],
-    "raw_before_interpretation": true,
-    "valid_outcome_requires_fresh_analyst_review": true
+  "fast_path_reconciliation": {
+    "status": "FAST_PATH_COMPLETE_NO_FULL_RECONCILIATION",
+    "reason": "Refs, completed workflow/head, artifact binding, current Analyst authority, and MAIN/SUB ownership are internally consistent.",
+    "inherited_main_lease": "RELAY_COMPLETED",
+    "fresh_main_collision_found": false,
+    "sub_collision_found": false,
+    "fresh_analyst_authority_after_terminal_outcome_found": false
   },
-  "workflow_check_result": {
-    "replacement_architecture_workflow": {
+  "branches_prs_advanced": {
+    "research_branches_advanced": [],
+    "prs_advanced": [],
+    "main_mutated": false,
+    "research_merge_performed": false
+  },
+  "workflow_experiments": {
+    "new_workflow_dispatched_this_primary_run": false,
+    "revalidated_completed_architecture_workflow": {
       "run_id": 35460876580,
       "head": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
       "status": "completed",
       "conclusion": "success",
-      "python_3_11": "success",
-      "python_3_13": "success",
-      "architecture_study": "success"
-    },
-    "replacement_ordinary_ci": {
-      "run_id": 35460876614,
-      "head": "4a15a91edb8e92b89cda960f533590f7b46a70f2",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "first_architecture_workflow": {
-      "run_id": 35460700075,
-      "conclusion": "failure",
-      "outcome_bearing": false,
-      "failure_stage": "pre-diagnostic lint"
+      "artifact_id": 10589564435,
+      "artifact_digest": "sha256:e73909be3e647566540a06a4da94829b4737c3de3a24c5e0e54c697245be1970"
     }
-  },
-  "artifact_provenance": {
-    "artifact_id": 10589564435,
-    "artifact_name": "v05-topology-config-contract-cycle1-4a15a91edb8e92b89cda960f533590f7b46a70f2",
-    "archive_digest": "sha256:e73909be3e647566540a06a4da94829b4737c3de3a24c5e0e54c697245be1970",
-    "contract_sha256": "85539052afe90f86b47480e12d2d867d5a3ca912210b1d4708e5c8447c74fa1a",
-    "raw_sha256": "bb0af4fc22241f41108abf50e471eaf2f1f0ff4a5c94782779a858efbed02f51",
-    "raw_sha256_independently_recomputed": true,
-    "summary_sha256": "8608f3e90889aa6654be65f0c781ff4f1ad0f2f9f8cd7097f1da0a8d2a41033a",
-    "raw_read_before_summary": true
   },
   "observations_results": {
     "formal_scientific_evidence": "NONE_NEW",
     "pre_formal_development_evidence": "NONE_NEW",
-    "new_lower_funnel_information": true,
-    "architecture_study_outcome": "SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE",
-    "architecture_outcome_evidentiary_status": "NON_EVIDENTIARY",
+    "new_primary_architecture_observation": "NONE_NEW",
+    "persisted_relay_architecture_outcome": "SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE",
+    "persisted_relay_outcome_evidentiary_status": "NON_EVIDENTIARY",
     "config_count": 5,
-    "construction_error_count": 0,
-    "nondefault_warning_count": 0,
     "all_roundtrip_declared_config_preserved": true,
     "all_roundtrip_realized_topology_preserved": true,
     "explicit_contract_hit_count": 0,
     "unique_realized_topology_signatures": ["d92b79779dd89f99e32a7f72d0be176f34cbcc936af901edd55a2d3b65d95519"],
     "realized_topology_summary": {"total_unit_count": 64, "receptor_count": 16, "reservoir_count": 48, "connection_count": 326},
-    "claim_boundary": "Architecture/API correctness signal only. No replacement geometry formula, implementation fix, deprecation policy, backward-compatibility decision, PRE_FORMAL claim, or FORMAL claim is authorized by this result."
+    "claim_boundary": "Architecture/API correctness signal only. No geometry formula, code fix, deprecation/backward-compatibility policy, PRE_FORMAL claim, or FORMAL claim is authorized by the completed result."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -103,56 +79,40 @@
     "h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
   ],
   "integrity_state": {
-    "status": "CLEAN_VALID_NON_EVIDENTIARY_ARCHITECTURE_OUTCOME_STOPPED",
-    "prospective_contract_committed_before_outcome_visibility": true,
-    "exact_head_verified": true,
-    "ordinary_ci_green": true,
-    "prospective_binding_green": true,
-    "raw_before_summary_verified": true,
-    "official_test_accessed": false,
-    "consumed_preserve_raw_accessed": false,
-    "formal_identity_created": false,
-    "started_created": false,
-    "formal_preserve_or_evidence_created": false,
-    "immutable_evidence_modified": false,
-    "research_merge_performed": false,
-    "outcome_responsive_redesign_performed": false,
-    "rerun_or_retune_performed": false,
-    "post_outcome_code_fix_performed": false
+    "status": "CLEAN_STOPPED_PENDING_FRESH_ANALYST_AUTHORITY",
+    "exact_main_verified": true,
+    "exact_research_head_verified": true,
+    "completed_workflow_exact_head_verified": true,
+    "artifact_run_head_binding_verified": true,
+    "authoritative_evidence_tag_count": 5,
+    "official_test_accessed_this_run": false,
+    "formal_identity_created_this_run": false,
+    "started_created_this_run": false,
+    "formal_preserve_or_evidence_created_this_run": false,
+    "immutable_evidence_modified_this_run": false,
+    "outcome_responsive_redesign_performed_this_run": false,
+    "rerun_or_retune_performed_this_run": false,
+    "post_outcome_code_fix_performed_this_run": false
   },
-  "lease_collision_reconciliation": {
-    "inherited_status": "WAITING_EXTERNAL",
-    "inherited_execution_mode": "PRIMARY",
-    "inherited_heartbeat_at": "2026-09-20T03:25:00+09:00",
-    "fresh_same_object_primary_running_collision_found": false,
-    "sub_collision_found": false
-  },
-  "outcome_contingencies_consumed": {
-    "PRE_START_MECHANICAL_BLOCKER": "ALREADY_CONSUMED_BY_PRIMARY_SCIENCE_INVARIANT_REPAIR",
-    "PRE_START_CONTRACT_COMPLETE_AND_CI_GREEN": "COMPLETED_EXACTLY_ONE_FIXED_DEVELOPMENT_ONLY_DIAGNOSTIC_CYCLE",
-    "ANY_VALID_TERMINAL_ARCHITECTURE_OUTCOME": "STOP_FOR_FRESH_EVIDENCE_ANALYST_REVIEW",
-    "POST_DIAGNOSTIC_FIX_OR_REDESIGN": "NOT_AUTHORIZED_NOT_PERFORMED",
-    "PRE_FORMAL_OR_FORMAL_AUTO_PROMOTION": "NOT_AUTHORIZED_NOT_PERFORMED"
-  },
+  "critical_path_fixes": [],
   "critical_path_actions_performed": [
-    "Re-fetched exact MAIN lease/state/latest and latest Evidence Analyst authority.",
-    "Verified stable main and exact research branch head remained unchanged.",
-    "Collected replacement workflow 35460876580 and ordinary CI 35460876614; both exact-head successful.",
-    "Verified workflow job sequence through preflight, one fixed DEV diagnostic, and raw-before-summary upload.",
-    "Fetched artifact 10589564435 and verified workflow/head, contract binding, archive digest, raw digest, and machine-summary consistency.",
-    "Read raw diagnostic before summary and applied the prospectively fixed terminal mapping exactly once.",
-    "Persisted terminal NON_EVIDENTIARY Architecture outcome and stopped for fresh Analyst review."
+    "Read latest Evidence Analyst handoff, MAIN latest/state/lease, and current SUB report.",
+    "Acquired fresh PRIMARY MAIN lease after confirming inherited RELAY lease was completed.",
+    "Re-fetched stable main, exact active research branch, completed Architecture workflow, artifact identity/digest, authoritative tags, and open PR state.",
+    "Confirmed no fresh Evidence Analyst authority exists after the valid terminal Architecture result.",
+    "Applied the already-bound stop contingency and performed no research mutation or successor design."
   ],
-  "stop_reason": "VALID_TERMINAL_ARCHITECTURE_OUTCOME_SILENT_DECLARED_REALIZED_GEOMETRY_DIVERGENCE_STOP_FOR_FRESH_ANALYST_REVIEW",
-  "work_left_for_sub": "Independent bounded Discovery only; SUB must not continue the MAIN v0.5 config-contract object.",
+  "stop_reason": "NO_FRESH_ANALYST_AUTHORITY_AFTER_VALID_TERMINAL_ARCHITECTURE_OUTCOME",
+  "work_left_for_sub": "Independent bounded Discovery only. SUB's unit-suppression latent-state candidate remains SUB-owned pending fresh Analyst review and is not absorbed by MAIN.",
   "utility_request_created": null,
-  "next_MAIN_action": "STOP until fresh Evidence Analyst review. Do not implement geometry semantics, run Architecture cycle 2, or enter PRE_FORMAL/FORMAL without new prospective authority.",
+  "next_MAIN_action": "Wait for fresh Evidence Analyst review/classification of the completed v0.5 config-contract Architecture result and any prospective successor authority. Do not implement geometry semantics, run Architecture cycle 2, or enter PRE_FORMAL/FORMAL before that handoff exists.",
   "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/0350-main.md",
-    "history_commit": "06288b2564e11fedba8a7cc20fba88a3910d25f0",
-    "latest_md_commit": "21387bd7b12851e80ad0deb36a3fff4f8ea83524",
+    "history_path": "reports/orchestrator/history/2026-09-20/0413-main.md",
+    "history_commit": "03227e88713964390e21fe8162c469dce94331c6",
+    "latest_md_commit": "e78f7268773d8cc1af79ef0a6770b45f759358b5",
     "state_json": "this update",
-    "lease_json": "pending final update",
+    "lease_acquisition_commit": "a0c62798e1b94af80340584fb3ca19966420febc",
+    "lease_final": "pending final update",
     "force_push_used": false
   }
 }
