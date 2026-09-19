@@ -1,13 +1,14 @@
 {
-  "timestamp_jst": "2026-09-19T13:50:00+09:00",
+  "timestamp_jst": "2026-09-19T19:50:00+09:00",
   "worker_role": "repository_steward",
-  "selected_slot_jst": "13:50",
+  "selected_slot_jst": "19:50",
   "role_inferred": false,
   "repository": "salmonmikan/sparkbrain_research",
   "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "control_brain_commit": "1914db5b9b58b4d53bd0406adda062189d688cb8",
-  "evidence_analyst_commit": "34911078061f83099a74d45868c665ac2b30c6da",
-  "orchestrator_report_commit_observed": "4ff7b982c509c4c0538a8b06248ad4c779b29e8c",
+  "control_brain_commit": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
+  "evidence_analyst_commit": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
+  "orchestrator_report_commit_observed": "075144b199c3d0f863c131b886012dba34f20e8b",
+  "utility_request_bus_commit_observed": "4d8a98637e07e8a7f560b47012c573f34c643068",
   "current_remote_authority": {
     "main_protected": false,
     "repository_ruleset_count": 0,
@@ -16,34 +17,63 @@
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
-    "programme_state": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+    "programme_state": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
     "new_formal_object_since_prior_steward": false,
     "new_authoritative_evidence_since_prior_steward": false
   },
   "upstream_change_since_prior_steward": {
-    "type": "prospective_doctrine_and_bounded_noncanonical_sub_diagnostic",
-    "description": "Evidence Analyst consumed the NI01 privilege audit and 12:30 causal-credit literature; canonical NI01 remains untouched, programme interpretation is narrowed to world-conditioned confidence abstention, future H7 admission bar is strengthened, and exactly one read-only NON_EVIDENTIARY SUB sensitivity diagnostic is reserved.",
+    "type": "active_lower_funnel_architecture_replication_and_discovery_reduction",
+    "description": "Control retired programme-wide HOLD in favor of FORMAL hold with active lower funnel. Evidence Analyst reviewed a NON_EVIDENTIARY Top-k Architecture replication, held it at Architecture Study because support robustness remains mixed, promoted structural-order path dependence to one DEV-only Architecture cycle, and rejected reward-omission Discovery after exact implementation reduction.",
     "scientific_evidence_change": false,
     "repository_governance_mutation_required": false
   },
   "orchestrator_reports": {
     "main": {
-      "time_jst": "2026-09-19 13:17",
+      "time_jst": "2026-09-19 19:14",
       "mode": "PRIMARY",
-      "decision": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
+      "research_layer": "ARCHITECTURE_STUDY",
+      "target": "CAND-TOPK-PA-01 cycle 2",
+      "research_head": "04ced2b97ed088bb2cdb086d164a86212741e601",
+      "workflow_run": 35435714352,
+      "workflow_conclusion": "success",
+      "decision": "PERSISTENCE_SIGNAL_REPLICATED_STOP_FOR_FRESH_ANALYST_REVIEW",
+      "evidentiary_status": "NON_EVIDENTIARY",
       "formal_identity_created": false,
       "started_created": false,
-      "formal_evidence_created": false,
-      "research_workflow_dispatched": false
+      "formal_evidence_created": false
     },
     "sub": {
-      "time_jst": "2026-09-19 10:32",
-      "mode": "no_op",
-      "report_predates_reserved_diagnostic": true,
-      "reserved_lane_from_latest_analyst": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
-      "reserved_lane_evidentiary_status": "NON_EVIDENTIARY_NON_CANONICAL",
+      "time_jst": "2026-09-19 19:42",
+      "mode": "discovery",
+      "target": "PLASTICITY_REWARD_OMISSION_BASELINE_DISCOVERY",
+      "research_head": "bdcd068db2f7d645e323d6fc7e4e2172bcc6d1cb",
+      "workflow_run": 35437912586,
+      "workflow_conclusion": "success",
+      "decision": "REJECT_EXACT_IMPLEMENTATION_REDUCTION",
+      "evidentiary_status": "NON_EVIDENTIARY",
       "main_frontier_touched": false
     }
+  },
+  "evidence_analyst_allocation": {
+    "formal": "EMPTY_HOLD",
+    "topk_candidate": "CAND-TOPK-PA-01_ARCHITECTURE_STUDY_HOLD",
+    "main_next": "CAND-STRUCTURAL-ORDER-PATH-01_ARCHITECTURE_STUDY_CYCLE1",
+    "main_next_source_branch": "research/exploratory-sub-structural-order-path-dependence-20260919",
+    "main_next_source_head_observed": "8156bba7b119fb831b7c28eac7cd900746f9876e",
+    "sub_default": "BOUNDED_SECONDARY_DISCOVERY",
+    "new_formal_authority": false
+  },
+  "utility": {
+    "branch_tip": "4d8a98637e07e8a7f560b47012c573f34c643068",
+    "completed_assignment": "CTRL-20260919-1850-ARCH-SIGNAL-ROBUSTNESS",
+    "completed_assignment_status": "COMPLETED_ONE_BOUNDED_RUN",
+    "diagnostic_classification": "MIXED",
+    "methodology_recommendation": "ADD_PER_STRATUM_SUPPORT",
+    "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_DIAGNOSTIC",
+    "research_or_evidence_mutation": false,
+    "fresh_unhandled_request_observed": "EVA-20260919-1943-TOPK-CROSS-SEED-SUPPORT",
+    "fresh_request_disposition_owner": "CONTROL_BRAIN",
+    "current_assignment_presentation_lag": "assignment/current.md still says ASSIGNED while state.json says COMPLETED; no Steward write authorized"
   },
   "repository_state": {
     "open_pr_numbers": [148, 149],
@@ -54,19 +84,20 @@
     "legacy_freeze_branch_count": 13,
     "main_protected": false
   },
-  "doctrine_status": "partially_compliant_science_separated_protection_gap_remains",
+  "doctrine_status": "partially_compliant_science_separated_protection_deferred_by_human_direction",
   "doctrine_findings": {
     "main_frontier_separation": "compliant",
+    "lower_funnel_research_scoped": "compliant",
+    "lower_layer_not_promoted_to_formal_evidence": "compliant",
+    "utility_non_evidentiary_isolation": "compliant",
     "terminal_evidence_annotated_tags": "compliant_five_authoritative_tags",
     "canonical_science_vs_issues": "compliant_issue_139_current",
-    "main_sub_boundary": "compliant_main_hold_sub_reserved_readonly_noncanonical_diagnostic",
-    "programme_interpretation_vs_canonical_evidence": "compliant_ni01_canonical_untouched",
-    "server_side_protection": "missing",
+    "server_side_protection": "missing_but_deferred_read_only_under_accepted_human_direction",
     "legacy_freeze_preservation": "compliant"
   },
   "issue_changes": [],
   "issue_audit": {
-    "139": "open_current_five_evidence_tags_ruleset_gap_remains_no_change_needed",
+    "139": "open_current_five_evidence_tags_ruleset_gap_remains_priority_deferred_no_change_needed",
     "new_issues_created": 0
   },
   "freeze_migration": {
@@ -81,16 +112,24 @@
   "tag_protection": {
     "repository_ruleset_count": 0,
     "main_protected": false,
-    "status": "governance_gap",
+    "status": "real_gap_but_deferred_read_only",
     "tracking_issue": 139,
+    "human_direction": "do_not_prioritize_or_implement_absent_materially_changed_concrete_risk_or_new_human_directive",
     "scheduled_stewardship_boundary": "read_only_only_no_ruleset_mutation"
   },
   "preserve_index": {
     "mapping_changed": false,
     "new_direct_evidence_anchors_observed": 0,
     "scientific_mappings_changed": 0,
-    "reserved_ni01_sensitivity_must_remain_noncanonical": true,
-    "existing_preserve_control_evidence_refs_modified_by_stewardship": 0
+    "topk_architecture_cycles_are_noncanonical": true,
+    "structural_order_candidate_is_noncanonical": true,
+    "reward_omission_discovery_is_noncanonical": true,
+    "utility_methodology_diagnostic_is_noncanonical": true,
+    "existing_preserve_control_evidence_refs_modified_by_stewardship": 0,
+    "verified_h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "verified_h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "verified_ni01_started": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
+    "verified_ni01_raw_preserve": "8a39cf70e397bb7588f948910f01ec58672ac814"
   },
   "main_promotion_review": {
     "promotions_performed": 0,
@@ -103,11 +142,13 @@
       "external-only transcript hashing/validation"
     ],
     "research_only": [
-      "H5/LP01/NI01 scientific semantics",
-      "NI01 world-label privilege read-only sensitivity diagnostic",
+      "CAND-TOPK-PA-01 persistence/amplification scientific semantics",
+      "CAND-STRUCTURAL-ORDER-PATH-01 architecture-study semantics",
+      "plasticity reward-omission discovery semantics",
+      "support/robustness methodology diagnostics",
       "future lineage/actual-causality causal-credit discriminator semantics"
     ],
-    "recommended_integration_shape": "small neutral current-main extraction with fresh CI; no wholesale research-branch cherry-pick"
+    "recommended_integration_shape": "small neutral current-main extraction with fresh CI only when worth the opportunity cost; no wholesale research-branch cherry-pick"
   },
   "open_pr_review": {
     "148": {
@@ -142,11 +183,13 @@
   "scientific_freezes_decided": 0,
   "research_prs_merged": 0,
   "scheduler_definitions_modified": 0,
+  "ruleset_or_protection_mutations": 0,
   "deferred": [
-    "install authoritative tag namespace protection/rulesets outside scheduled stewardship",
-    "preserve legacy freeze branches exactly until a protected migration procedure exists",
-    "keep NI01 sensitivity read-only/noncanonical and out of scientific preservation indexes",
+    "keep authoritative tag namespace protection/rulesets as read-only deferred governance state unless concrete integrity risk or human direction changes",
+    "preserve legacy freeze branches exactly; do not mass-mirror or migrate merely for tidiness",
+    "keep Top-k, structural-order, SUB Discovery, and Utility diagnostics out of canonical evidence mappings",
     "keep scientific mechanism/discriminator semantics research-local",
-    "resolve PR #148/#149 review blockers through ordinary PR maintenance before main promotion"
+    "resolve PR #148/#149 review blockers through ordinary PR maintenance before main promotion",
+    "leave Utility request disposition and assignment/current lifecycle to Control Brain"
   ]
 }
