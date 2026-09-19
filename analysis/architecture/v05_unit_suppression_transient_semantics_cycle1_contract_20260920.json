@@ -1,0 +1,88 @@
+{
+  "schema": "sparkbrain-architecture-study-contract-v1",
+  "candidate_id": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
+  "lane": "V05_UNIT_SUPPRESSION_TRANSIENT_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "question": "Is public transient suppress_units / clear_unit_suppression explicitly state-preserving, state-neutral, or silent/ambiguous in a way that can confound future causal/recovery studies?",
+  "analyst_authority": "493573eb3b8c38d88f251db7c04dfe1a586c6ff0",
+  "source_binding": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
+    "tests/v05/test_v05_brain.py": "6a81994ac82a3f0660585ef0d95495aaaa336629"
+  },
+  "deterministic_scope_enumeration": {
+    "repository_ref": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "exact_tokens": [
+      "suppress_units",
+      "clear_unit_suppression",
+      "suppressed_unit_ids"
+    ],
+    "matched_paths_union": [
+      "src/sparkbrain/v05/brain.py",
+      "src/sparkbrain/v05/evaluation.py",
+      "tests/v05/test_v05_brain.py"
+    ],
+    "docs_exact_symbol_hits": [],
+    "scope_rule": "Interpret only the blob-bound matched paths plus canonical public contract statements that explicitly mention this transient suppression surface. Do not replay exploratory pulses or inspect formal/TEST/consumed artifacts."
+  },
+  "static_facts_to_record_before_mapping": [
+    "whether suppress_units exists as a public callable surface",
+    "whether clear_unit_suppression exists as a public callable surface",
+    "what persistent selector/state suppress_units mutates",
+    "what processing-time state is changed while suppression is active",
+    "whether processing-time state is restored after an episode",
+    "what clear_unit_suppression clears or resets",
+    "whether canonical tests exercise only selector reversibility or also hidden-state reset/neutrality",
+    "whether canonical evaluator/callsite use is persistent-only or includes clear/recovery",
+    "whether an explicit supported contract states state-preserving semantics",
+    "whether an explicit supported contract states state-neutral/reset semantics",
+    "whether supported contract statements conflict"
+  ],
+  "terminal_mapping": {
+    "EXPLICIT_STATE_PRESERVING_TRANSIENT_CONTRACT": "Public suppress/clear exists and supported canonical contract material explicitly defines transient suppression as state-preserving/output-or-threshold blockade with later clear restoring availability without hidden-state reset; implementation is consistent with that contract.",
+    "EXPLICIT_STATE_NEUTRAL_CONTRACT_VIOLATED": "Supported canonical contract material explicitly requires state-neutral/reset/clamped transient ablation semantics, while the blob-bound implementation preserves or later exposes state contrary to that requirement.",
+    "PUBLIC_TRANSIENT_API_SILENT_STATE_PRESERVATION": "Public suppress/clear exists; blob-bound implementation preserves underlying dynamic state across suppression/clear or only blocks expression; canonical supported contract material does not explicitly define that state-preserving behavior and does not explicitly require state-neutral reset semantics.",
+    "NO_SUPPORTED_TRANSIENT_CLEAR_SURFACE": "No supported public transient clear/recovery surface is present in the blob-bound canonical API/callsite/test scope.",
+    "AMBIGUOUS_CONTRACT": "Supported canonical statements conflict, or static blob-bound source/tests/callsites are insufficient to determine whether the supported transient contract is state-preserving or state-neutral without choosing semantics after observation.",
+    "INVALID_DIAGNOSTIC": "Any source/blob binding mismatch, scope drift, forbidden formal/TEST/consumed access, or inability to complete the fixed static characterization without changing semantic choices."
+  },
+  "precedence": [
+    "INVALID_DIAGNOSTIC",
+    "NO_SUPPORTED_TRANSIENT_CLEAR_SURFACE",
+    "EXPLICIT_STATE_NEUTRAL_CONTRACT_VIOLATED",
+    "EXPLICIT_STATE_PRESERVING_TRANSIENT_CONTRACT",
+    "PUBLIC_TRANSIENT_API_SILENT_STATE_PRESERVATION",
+    "AMBIGUOUS_CONTRACT"
+  ],
+  "machine_handoff_fields_required": [
+    "analyst_authority",
+    "candidate_id",
+    "lane",
+    "research_layer",
+    "evidentiary_status",
+    "source_binding",
+    "scope_paths",
+    "scope_blob_verification",
+    "static_facts",
+    "terminal_mapping_version",
+    "mapped_outcome",
+    "git_head",
+    "contract_sha256",
+    "raw_sha256",
+    "workflow_run_id"
+  ],
+  "forbidden_inputs": [
+    "SUB exploratory pulse result as Architecture evidence",
+    "trained checkpoint",
+    "official TEST",
+    "retained confirmatory datasets",
+    "consumed FORMAL raw",
+    "formal scorer",
+    "consumed identities",
+    "completed topology-config Architecture artifact as successor authority"
+  ],
+  "stop_condition": "Any valid terminal Architecture classification stops cycle 1 for fresh Evidence Analyst review. No same-run implementation fix, dynamic cycle 2, PRE_FORMAL, or FORMAL continuation. Pre-interpretation mechanical defects may be fixed only if science-invariant, followed by exact re-binding and ordinary exact-head validation.",
+  "formal_paths": "UNARMED_NO_FORMAL_OBJECT"
+}
