@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-09-19T19:55:04+09:00",
+  "timestamp": "2026-09-19T19:59:30+09:00",
   "worker_role": "main",
   "execution_mode": "RELAY",
   "analyst_commit": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
   "research_layer": "ARCHITECTURE_STUDY",
   "current_lane": "STRUCTURAL_ORDER_PATH_DEPENDENCE_ARCHITECTURE_STUDY_CYCLE1",
-  "current_phase": "EXACT_HEAD_CI_IN_PROGRESS_BEFORE_OUTCOME_DIAGNOSTICS",
+  "current_phase": "PRE_DIAGNOSTIC_MECHANICAL_LINT_REPAIRED_EXACT_HEAD_CI_IN_PROGRESS",
   "candidate": {
     "id": "CAND-STRUCTURAL-ORDER-PATH-01",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
@@ -16,8 +16,8 @@
     "evidence_analyst_handoff": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
     "discovery_reference": "research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e",
     "research_branch": "research/main-structural-order-path-arch-study-20260919",
-    "research_head": "16389e70352336b9d0ea539bdb5951a54f79ff2e",
-    "workflow_run_id": 35438684016,
+    "research_head": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
+    "workflow_run_id": 35438868911,
     "formal_identity": null,
     "started_ref": null,
     "formal_preserve_ref": null,
@@ -25,17 +25,21 @@
   },
   "lease_collision_reconciliation": {
     "observed_prior_lease": {
-      "run_id": "sparkbrain-main-primary-20260919T191428JST",
-      "execution_mode": "PRIMARY",
-      "status": "COMPLETED",
-      "heartbeat_at": "2026-09-19T19:14:28+09:00"
+      "run_id": "sparkbrain-main-relay-20260919T195504JST",
+      "execution_mode": "RELAY",
+      "status": "WAITING_EXTERNAL",
+      "heartbeat_at": "2026-09-19T19:55:04+09:00",
+      "workflow_run_id": 35438684016
     },
     "fresh_same_object_primary_running_collision_found": false,
-    "main_ref_reconciled": true,
-    "analyst_ref_reconciled": true,
-    "sub_collision_check": "SUB latest explicitly left structural-order candidate untouched"
+    "research_head_before_repair": "16389e70352336b9d0ea539bdb5951a54f79ff2e",
+    "analyst_ref_before_repair": "9c6302d83f71ab22d45c5f6290951a48902d9c1e",
+    "same_relay_continuation": true
   },
-  "contingency_consumed": "GO_NON_EVIDENTIARY_EXACTLY_ONE_STRUCTURAL_ORDER_PATH_ARCHITECTURE_STUDY_CYCLE1",
+  "contingencies_consumed": [
+    "GO_NON_EVIDENTIARY_EXACTLY_ONE_STRUCTURAL_ORDER_PATH_ARCHITECTURE_STUDY_CYCLE1",
+    "PRE_START_BLOCKER_MECHANICAL -> SCIENCE_INVARIANT_LINT_REPAIR_AND_FRESH_EXACT_HEAD_CI"
+  ],
   "prospective_binding": {
     "model_training_seed": 43,
     "structural_seed": 83,
@@ -51,23 +55,46 @@
     "formal_allowed": false
   },
   "critical_path_actions_performed": [
-    "Read latest Analyst handoff/state and MAIN latest/state/lease; checked SUB latest for collision only.",
-    "Re-fetched exact main and Analyst refs and confirmed no fresh PRIMARY RUNNING collision.",
-    "Re-fetched the promoted structural Discovery reference as non-authoritative implementation context only.",
-    "Created a fresh MAIN research branch from exact current main.",
-    "Added only the prospectively fixed DEV-only cycle-1 harness and exact-head CI execution wiring.",
-    "Separated raw acquisition/upload from terminal mapping so raw diagnostic material is archived before interpretation.",
-    "Launched exact-head workflow 35438684016 via the research-branch push and confirmed it is in progress."
+    "Collected exact workflow 35438684016 and confirmed both matrix jobs failed at Ruff lint before readiness/tests/contract validation and before the gated Architecture Study job.",
+    "Inspected the exact 3.13 traceback/log and identified one unused-import finding plus five line-length findings in the new harness only.",
+    "Re-fetched lease, exact research head, and Analyst mailbox before mutation and found no fresh PRIMARY RUNNING collision or authority change.",
+    "Applied only the science-invariant Ruff repair: removed the unused import and wrapped the five long lines; no behavior or prospective binding changed.",
+    "Advanced the research branch by fast-forward from 16389e70352336b9d0ea539bdb5951a54f79ff2e to 6a53ee36259bca31b77024245e5ab0a9ef5ec405.",
+    "Verified the repair commit modifies only the Architecture Study harness file.",
+    "Collected the newly triggered exact-head workflow id 35438868911 and confirmed both ordinary matrix jobs are in progress while the Architecture job remains gated."
   ],
-  "workflow_check": {
-    "run_id": 35438684016,
-    "head_sha": "16389e70352336b9d0ea539bdb5951a54f79ff2e",
-    "status": "in_progress",
-    "conclusion": null,
-    "python_3_11": "in_progress",
-    "python_3_13": "in_progress",
-    "architecture_job_started": false,
-    "outcome_bearing_diagnostics_visible": false
+  "workflow_checks": [
+    {
+      "run_id": 35438684016,
+      "head_sha": "16389e70352336b9d0ea539bdb5951a54f79ff2e",
+      "status": "completed",
+      "conclusion": "failure",
+      "python_3_11": "lint failure",
+      "python_3_13": "lint failure",
+      "architecture_job_started": false,
+      "outcome_bearing_diagnostics_visible": false,
+      "classification": "PRE_START_BLOCKER_MECHANICAL"
+    },
+    {
+      "run_id": 35438868911,
+      "head_sha": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
+      "status": "in_progress",
+      "conclusion": null,
+      "python_3_11": "in_progress",
+      "python_3_13": "in_progress",
+      "architecture_job_started": false,
+      "outcome_bearing_diagnostics_visible": false
+    }
+  ],
+  "mechanical_fix": {
+    "commit": "6a53ee36259bca31b77024245e5ab0a9ef5ec405",
+    "changed_file": "scripts/architecture_studies/structural_order_path_dependence_cycle1.py",
+    "changes": [
+      "remove unused dataclasses.replace import",
+      "wrap five Ruff E501 lines only"
+    ],
+    "scientific_behavior_changed": false,
+    "prospective_contract_changed": false
   },
   "scientific_result": null,
   "new_scientific_information": false,
@@ -82,7 +109,7 @@
   ],
   "current_object_consumed_identity": null,
   "integrity_state": {
-    "status": "CLEAN_PRE_DIAGNOSTIC_WAIT",
+    "status": "CLEAN_PRE_DIAGNOSTIC_MECHANICAL_REPAIR_WAIT",
     "official_test_accessed": false,
     "formal_identity_created": false,
     "started_created": false,
@@ -92,16 +119,17 @@
     "immutable_evidence_modified": false,
     "consumed_identity_reused": false,
     "research_merge_performed": false,
-    "outcome_responsive_change": false
+    "outcome_responsive_change": false,
+    "outcome_bearing_diagnostics_visible_before_repair": false
   },
   "utility_request_created": null,
-  "stop_reason": "EXACT_HEAD_CI_AND_GATED_ARCHITECTURE_WORKFLOW_IN_PROGRESS",
-  "next_MAIN_action": "Collect workflow 35438684016 only. If it fails before any outcome-bearing diagnostic for a science-invariant mechanical reason, repair only that blocker and re-run exact-head ordinary CI. If outcome-bearing diagnostics became visible, do not rerun or redesign. If valid and successful, independently validate raw/result artifact bindings, accept only the prospectively fixed six-way local Architecture label, persist it, and STOP for fresh Analyst review.",
+  "stop_reason": "REPAIRED_PRE_DIAGNOSTIC_MECHANICAL_BLOCKER_NEW_EXACT_HEAD_CI_IN_PROGRESS",
+  "next_MAIN_action": "Collect workflow 35438868911 only. A further repair is allowed only if failure remains wholly pre-diagnostic, mechanical, science-invariant, and within the fixed Analyst contingency. If outcome-bearing diagnostics become visible, do not rerun or redesign. If valid and successful, independently validate raw/result artifact bindings, accept only the prospectively fixed six-way NON_EVIDENTIARY Architecture label, persist it, and STOP for fresh Analyst review.",
   "persistence_result": {
-    "latest_md_commit": "061c4471945eab7d9d533cc90d4382e870b4b5d8",
+    "latest_md_commit": "1f04e75b3e3ae73278ec5508ef23186b1b8aee39",
+    "history_path": "reports/orchestrator/history/2026-09-19/1959-main.md",
     "state_json": "this update",
     "lease_json": "WAITING_EXTERNAL update follows",
-    "history_path": "reports/orchestrator/history/2026-09-19/1955-main.md",
     "force_push_used": false
   }
 }
