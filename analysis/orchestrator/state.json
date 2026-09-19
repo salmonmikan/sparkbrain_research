@@ -1,12 +1,24 @@
 {
-  "timestamp": "2026-09-20T01:15:21+09:00",
+  "timestamp": "2026-09-20T02:01:14+09:00",
   "new_repository_evidence": false,
-  "new_lower_funnel_result": true,
+  "new_formal_scientific_evidence": false,
+  "new_lower_funnel_information": true,
   "allocation_changed": true,
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_protected": false,
-    "evidence_tags": ["evidence/c19-checkpoint-selector-v4", "evidence/c19-r2-fsa", "evidence/h5-event-routing-work-reduction", "evidence/ni01-native-ignition", "evidence/pd01-persistence-discriminant"],
+    "active_research_refs": {
+      "temporal_batch_partition": "research/main-temporal-batch-partition-arch-study-20260920@7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
+      "topk_persistent_amplification": "research/main-topk-persistent-amplification-arch-study-20260919@04ced2b97ed088bb2cdb086d164a86212741e601",
+      "sub_topology_fanout_aliasing": "research/exploratory-sub-topology-fanout-aliasing-20260920@daaf9a865d4ba5911640d127f55dc8d44a75e078"
+    },
+    "evidence_tags": [
+      "evidence/c19-official-v4-c19-external-v2-official-v4",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
+    ],
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
@@ -15,97 +27,185 @@
     "repository_rulesets": 0,
     "issue_139": "open",
     "pr_148": {"state": "open", "merged": false},
-    "pr_149": {"state": "open", "merged": false}
+    "pr_149": {"state": "open", "merged": false},
+    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "ni01_started": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
+    "ni01_raw_preserve": "8a39cf70e397bb7588f948910f01ec58672ac814"
   },
-  "control_brain": {"commit_consumed": "3b2ff0f8ecb845c486b6e5806d58c36df24657de", "role": "strategic_prior_only"},
+  "control_brain": {
+    "commit_consumed": "3b2ff0f8ecb845c486b6e5806d58c36df24657de",
+    "latest_timestamp": "2026-09-20T00:50:00+09:00",
+    "role": "strategic_prior_only",
+    "programme_position": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL"
+  },
+  "orchestrator": {
+    "branch_tip_consumed": "c98c06554123ee561b82843deec91af341afddc0",
+    "main_report_commit_consumed": "c98c06554123ee561b82843deec91af341afddc0",
+    "main_latest_blob": "09bf45b3ab95ebd79f38caaf565d84308261b0eb",
+    "main_state_blob": "3f261643da62e28491ed18d1a294b95cad335498",
+    "sub_report_commit_consumed": "c98c06554123ee561b82843deec91af341afddc0",
+    "sub_latest_blob": "ee1cc2d41564c4075752074979e6ac5b2333426f",
+    "sub_state_blob": "ce7162f5e21e1e370f82a500a18ecd9fc43ee94c"
+  },
   "main_report": {
-    "commit_consumed": "4b80e8cf6c46ae4e771039c0a62c835e7b9a3877",
-    "reported_state": "waiting/pre-result",
-    "current_result_independently_verified": {
+    "timestamp": "2026-09-20T01:25:02+09:00",
+    "operating_mode": "PRIMARY",
+    "current_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+    "research_layer": "HOLD",
+    "temporal_result": {
+      "candidate": "CAND-TEMPORAL-BATCH-PARTITION-01",
       "workflow": 35451528895,
       "head": "7fa4391bbf34cf25e10b708ce64acddf07bf7f42",
-      "conclusion": "success",
-      "classification": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
+      "artifact_id": 10587410697,
+      "artifact_archive_sha256": "22a5c650a58501a1dc8303118c366845201f9eba8453a22996f5fb4ca4d6428f",
+      "artifact_contract_sha256": "eb4aa28cd4b7299302ac31a65c73586c4e5a17e5487b1d1ddf43757cee901049",
+      "raw_sha256": "71d4d8fddbe6b683b4ad93951c0f95fc1dfa5df74645743bfd39fba5b33c54ef",
+      "mapped_outcome": "FUNCTIONAL_BATCH_PARTITION_EFFECT",
       "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-      "contract_sha256": "681c21e31c686be7d8beb10e927ef65510ce82689c2cc81ae5fd9fedc179c06d",
-      "artifact_id": 10587410697
+      "official_test_opened": false,
+      "started": false,
+      "raw_before_interpretation": true,
+      "repetition_train_defaults": {
+        "schedule_differs_across_arms": false,
+        "replay_differs_across_arms": false,
+        "common_omission_schedule": ["omission:tick@99.6ms"],
+        "whole": {"ignitions": 0, "bursts": 0, "cascades": 5, "spikes": 10},
+        "midpoint_two_batch": {"ignitions": 0, "bursts": 0, "cascades": 5, "spikes": 10},
+        "event_time_causal": {"ignitions": 0, "bursts": 0, "cascades": 5, "spikes": 10}
+      },
+      "noisy_motif_stream_defaults": {
+        "schedule_differs_across_arms": true,
+        "replay_differs_across_arms": true,
+        "whole": {"omissions": 8, "ignitions": 4, "bursts": 46, "cascades": 11, "spikes": 89},
+        "midpoint_two_batch": {"omissions": 9, "ignitions": 5, "bursts": 61, "cascades": 8, "spikes": 104},
+        "event_time_causal": {"omissions": 11, "ignitions": 5, "bursts": 64, "cascades": 8, "spikes": 108}
+      }
+    },
+    "analyst_reconciliation": {
+      "prior_analyst_commit": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
+      "prior_contract_sha256_recorded": "681c21e31c686be7d8beb10e927ef65510ce82689c2cc81ae5fd9fedc179c06d",
+      "defect": "PRIOR_ANALYST_REVERSED_TEMPORAL_FAMILY_EFFECTS_AND_RECORDED_WRONG_CONTRACT_DIGEST",
+      "decision_impact": "NONE",
+      "status_after_this_handoff": "RECONCILED_TO_MACHINE_ARTIFACT_WITHOUT_RERUN_OR_RELABEL"
     }
   },
   "sub_report": {
-    "commit_consumed": "f61e48079a3359ea7b1aa2c5fba8b83ccf9205ce",
-    "timestamp": "2026-09-20T00:41:00+09:00",
+    "timestamp": "2026-09-20T01:47:00+09:00",
     "operating_mode_observed": "discovery",
-    "candidate": "FIELD_SOURCE_LINEAGE_CAP_PERMUTATION_SENSITIVITY_DISCOVERY",
-    "research_head": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
-    "workflow": 35452444346,
+    "candidate": "TOPOLOGY_RECEPTOR_FANOUT_ALIASING_DISCOVERY",
+    "research_head": "daaf9a865d4ba5911640d127f55dc8d44a75e078",
+    "workflow": 35455915055,
+    "workflow_conclusion": "success",
     "evidentiary_status": "NON_EVIDENTIARY",
-    "recommendation_observed": "REJECT"
+    "recommendation_observed": "PROMOTE_TO_ARCHITECTURE_STUDY",
+    "observed_reduction": "FIXED_STRIDE_11_MODULAR_ALIASING_N_OVER_GCD_N_11"
   },
   "sub_discovery_review": {
     "classification": "REJECT",
-    "candidate_id": "CAND-FIELD-SOURCE-LINEAGE-CAP-01",
-    "reason": "Enqueue order changes only bounded retained source-ID provenance and full serialized hash; physical spike observables/state are invariant and current production code has no source-ID consumer that changes dynamics.",
-    "formal_boundary": "NON_EVIDENTIARY; no cycle2 and no promotion."
+    "candidate_id": "CAND-TOPOLOGY-FANOUT-ALIAS-01",
+    "reason": "The physical wiring collapse is real but exactly determined by modular routing. Current IntegratedV05Brain calls layered_reservoir_topology(seed=...) without passing V05BrainConfig dimensions, so the integrated topology remains default 8x6/N=48, which is non-resonant. No other current integrated callsite supplying resonant dimensions was found. A resonant synthetic dynamic follow-up would add little beyond the deterministic mechanism and is not worth a MAIN Architecture cycle.",
+    "claim_type": "ENGINEERING_SCALING_CONSTRAINT_RETAINED",
+    "formal_boundary": "NON_EVIDENTIARY; no cycle2; no Architecture promotion of this current candidate."
   },
   "external_input": {
     "literature": {
       "commit_consumed": "96dd0cd2fb9a932d29ddfecf7c791b122f6461bb",
-      "changed_since_prior_analyst": true,
-      "latest_finding": "Temporal batching sensitivity reduces first to discrete-event scheduling/batching semantics and online-vs-batch stream processing; canonical event-time semantics are the engineering direction.",
-      "affected_lines": ["CAND-TEMPORAL-BATCH-PARTITION-01"],
-      "allocation_effect": "close current Architecture cycle at HOLD; no PRE_FORMAL promotion"
+      "timestamp": "2026-09-20T00:30:00+09:00",
+      "changed_since_prior_analyst": false,
+      "latest_finding": "Temporal batching is ordinarily reducible to non-anticipation, event-time versus processing-time, discrete-event chronology, and partition-invariance semantics. The Literature family-level direction matches the exact machine artifact: noisy motif diverges; repetition train is invariant.",
+      "affected_lines": ["CAND-TEMPORAL-BATCH-PARTITION-01", "TEMPORAL_EXPECTATION_V04", "ARCHITECTURE_REPRODUCIBILITY"],
+      "allocation_effect": "Temporal remains HOLD; no cycle2 and no PRE_FORMAL/FORMAL promotion."
     },
     "audit": {
       "commit_consumed": "c24ec86447a0030cbe1d072bf8796f8f78f7b2dd",
+      "timestamp": "2026-09-19T22:31:21+09:00",
       "changed_since_prior_analyst": false,
-      "latest_finding": "H5 chain robust; exact registered aggregate-work implementation failed, but eager all-edge eligibility maintenance limits generalization.",
-      "affected_lines": ["H5", "future_efficiency_contracts"],
-      "allocation_effect": "none; H5 remains consumed/closed"
+      "latest_finding": "H5 one-way chain and FAIL_NO_USEFUL_WORK_REDUCTION remain ROBUST_SO_FAR for the exact registered aggregate algorithmic-work metric; globally eager all-edge eligibility maintenance dominates sparse candidate work and caps generalization.",
+      "affected_lines": ["H5_EVENT_ROUTING_WORK_REDUCTION", "PROGRAMME_ARCHITECTURE_EFFICIENCY", "FUTURE_WORK_REDUCTION_CONTRACTS"],
+      "allocation_effect": "none; consumed H5 remains closed"
     },
     "methodology": {
-      "commit_consumed": "fdf51b3f60b638e6beb41b9decbd5cf3397f09e5",
-      "changed_since_prior_analyst": false,
-      "overall": "WELL_CALIBRATED",
-      "effect": "retain hard FORMAL floor, four-layer funnel, claim separation, stop-after-cycle review, and prospective support-aware Architecture gates"
+      "commit_consumed": "5cf3b26d645b658c13b9549ca9d28e63d43ac901",
+      "timestamp": "2026-09-20T01:20:00+09:00",
+      "changed_since_prior_analyst": true,
+      "overall": "MIXED_CALIBRATION",
+      "finding": "Core scientific gates remain sound, but machine artifact to durable handoff value fidelity, embedded digest binding, and fail-closed mismatch reconciliation must be tightened.",
+      "allocation_effect": "No scientific escalation; correct Temporal Analyst description now and require machine-bound future handoffs.",
+      "utility_request": "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY"
     }
   },
   "repository_steward": {
-    "branch_tip_observed": "0c1b41ee7f2d8600688169db1fd6a5c90efb6f62",
-    "state_path": "reports/repository_steward/state.json",
-    "state_blob_observed": "db11614ddb823979fbd422a9c858b798fb4b7467",
-    "state_timestamp": "2026-09-19T19:50:00+09:00",
-    "role": "governance_advisory_only"
+    "commit_consumed": "877a5d4ea077e48863c46019445c5bc696ce43ef",
+    "state_blob_consumed": "f9700c8fd9a8c8f1ef08d5906164745c852b6426",
+    "timestamp": "2026-09-20T01:50:00+09:00",
+    "role": "governance_advisory_only",
+    "findings_consumed": [
+      "Temporal artifact/handoff mismatch is a control-plane fidelity defect, not a scientific result change or immutable-ref incident.",
+      "SUB topology aliasing stays research-local/noncanonical.",
+      "main unprotected; rulesets zero; five evidence tags; thirteen legacy freeze branches; PR 148/149 deferred pending correctness fixes."
+    ]
   },
   "research_layer_state": {
-    "DISCOVERY": {"state": "OPEN", "owner": "SUB", "status": "NON_EVIDENTIARY"},
-    "ARCHITECTURE_STUDY": {"state": "HOLD_NO_ACTIVE_MAIN_OBJECT", "owner": "MAIN", "status": "NON_EVIDENTIARY"},
-    "PRE_FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "reason": "no fresh mechanistic/reduction object with sufficient lower-layer support"},
-    "FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "reason": "no fresh identity/STARTED/TEST/scorer/preserve/evidence authority"}
+    "DISCOVERY": {
+      "state": "ACTIVE",
+      "owner": "SUB",
+      "current_object": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
+      "status": "NON_EVIDENTIARY"
+    },
+    "ARCHITECTURE_STUDY": {
+      "state": "HOLD_NO_ACTIVE_MAIN_OBJECT",
+      "owner": "MAIN",
+      "status": "NON_EVIDENTIARY"
+    },
+    "PRE_FORMAL": {
+      "state": "EMPTY_HOLD",
+      "owner": "MAIN",
+      "reason": "no fresh mechanistic/reduction object with sufficient lower-layer support"
+    },
+    "FORMAL": {
+      "state": "EMPTY_HOLD",
+      "owner": "MAIN",
+      "reason": "no fresh identity/STARTED/TEST/scorer/preserve/evidence authority"
+    }
   },
   "candidate_pool": [
+    {
+      "id": "CAND-V05-TOPOLOGY-CONFIG-BINDING-01",
+      "classification": "DISCOVERY",
+      "question": "Do v0.5 width/height/receptor_rows configuration fields have intended runtime topology semantics that are bypassed by explicit layered_reservoir_topology(seed=...) injection?",
+      "not_rescue_reason": "Fresh configuration/API semantics question; it does not attempt to recover the rejected resonant aliasing candidate or any consumed formal line.",
+      "target_layer": "DISCOVERY",
+      "expected_information_gain": "MEDIUM_HIGH",
+      "ordinary_reduction_risks": ["intentional fixed-topology design", "metadata-only config redundancy", "documentation mismatch"],
+      "implementation_distance": "VERY_NEAR",
+      "scientific_choices_still_open": ["which current docs/tests/callsites define intended public configuration semantics"],
+      "exploration_cycle_count": {"DISCOVERY": 0},
+      "promotion_rejection_condition": "After one bounded cycle, promote only if a current supported configuration promise is contradicted by actual constructed topology; otherwise REJECT/NO_ACTION. No resonant functional rescue."
+    },
     {
       "id": "CAND-TEMPORAL-BATCH-PARTITION-01",
       "classification": "HOLD",
       "question": "Does API call partition alter temporal-expectation omission scheduling and downstream behavior for identical external timelines?",
-      "not_rescue_reason": "Fresh API/event-time architecture issue independent of consumed formal lines.",
+      "not_rescue_reason": "Fresh API/event-time Architecture question independent of consumed formal lines.",
       "target_layer": "ARCHITECTURE_STUDY",
       "expected_information_gain": "RESOLVED_CURRENT_QUESTION_HIGH_ENGINEERING_VALUE_LOW_NOVELTY",
-      "ordinary_reduction_risks": ["discrete-event scheduling", "batching semantics", "online-vs-batch stream processing", "deadline polling order"],
-      "implementation_distance": "COMPLETED_CURRENT_CYCLE",
-      "scientific_choices_still_open": ["fresh API-invariance contract only if independently justified", "fresh downstream reliability scope only if independently justified"],
+      "ordinary_reduction_risks": ["non-anticipation", "event-time versus processing-time", "discrete-event scheduling", "partition semantics"],
+      "implementation_distance": "CURRENT_CYCLE_COMPLETE",
+      "scientific_choices_still_open": ["future fresh partition-invariance/reliability object only if independently justified"],
       "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 1},
-      "promotion_rejection_condition": "Current cycle complete; no cycle2 rescue or automatic PRE_FORMAL. A future object must be freshly specified around API/event-time invariance or reliability."
+      "promotion_rejection_condition": "Current object remains HOLD; no cycle2 and no automatic PRE_FORMAL. Any successor is a new prospective object."
     },
     {
       "id": "CAND-TOPK-PA-01",
       "classification": "HOLD",
-      "question": "Does the replicated high-magnitude Top-k signal contain residual beyond ordinary switching/basin/hysteresis/recurrent-transient dynamics?",
-      "not_rescue_reason": "Existing lower-layer characterization; same-object cycle3 prohibited.",
+      "question": "Does the narrow replicated high-magnitude Top-k signal contain residual beyond ordinary switching/basin/hysteresis/recurrent-transient dynamics?",
+      "not_rescue_reason": "Existing lower-layer characterization; same-object cycle3 is prohibited.",
       "target_layer": "ARCHITECTURE_STUDY",
       "expected_information_gain": "HIGH_IF_FRESH_REDUCTION_OBJECT",
       "ordinary_reduction_risks": ["hard switching geometry", "border collision", "branch/basin selection", "WTA hysteresis", "recurrent/non-normal transient gain"],
       "implementation_distance": "MEDIUM",
-      "scientific_choices_still_open": ["fresh reduction discriminator", "matched-state/reset control", "prospective uncertainty rule"],
+      "scientific_choices_still_open": ["fresh reduction discriminator", "matched-state/reset control", "prospective support/uncertainty rule"],
       "exploration_cycle_count": {"DISCOVERY": 1, "ARCHITECTURE_STUDY": 2, "UTILITY_READ_ONLY": 1},
       "promotion_rejection_condition": "Remain HOLD; no cycle3 and no PRE_FORMAL until a genuinely fresh reduction object exists."
     },
@@ -116,56 +216,151 @@
       "not_rescue_reason": "Must arise independently and cannot be engineered to rescue LP01 or another consumed negative.",
       "target_layer": "PRE_FORMAL",
       "expected_information_gain": "VERY_HIGH_IF_NATIVE_OBJECT_APPEARS",
-      "ordinary_reduction_risks": ["provenance/event structure", "dynamic slicing", "actual-cause solvers", "eligibility/e-prop/cascading traces", "recurrent/plastic state", "local diffusion", "stronger-privilege counterfactual ceilings"],
+      "ordinary_reduction_risks": ["provenance/event structure", "dynamic slicing", "actual-cause solvers", "eligibility/e-prop/cascading traces", "recurrent/plastic state", "stronger-privilege counterfactual ceilings"],
       "implementation_distance": "FAR_EVENT_DEPENDENT",
       "scientific_choices_still_open": ["candidate mechanism", "matched baseline", "responsibility intervention", "resource contract", "positive-signal gate"],
       "exploration_cycle_count": {},
-      "promotion_rejection_condition": "Remain HOLD until a genuinely native mechanism appears independently."
+      "promotion_rejection_condition": "Remain HOLD until a genuinely native mechanism independently appears."
     },
     {
-      "id": "CAND-FIELD-SOURCE-LINEAGE-CAP-01",
+      "id": "CAND-TOPOLOGY-FANOUT-ALIAS-01",
       "classification": "REJECT",
-      "question": "Can enqueue order above max_sources_per_unit change retained lineage and state hash while physical field dynamics remain invariant?",
-      "not_rescue_reason": "Fresh bounded synthetic provenance question, independent of consumed lines and MAIN.",
+      "question": "Does fixed stride-11 receptor routing create scale-specific first-hop projection aliasing at reservoir sizes sharing a factor with 11?",
+      "not_rescue_reason": "Fresh bounded static topology question independent of MAIN and consumed lines.",
       "target_layer": "DISCOVERY",
       "expected_information_gain": "RESOLVED",
-      "ordinary_reduction_risks": ["bounded provenance buffer", "insertion-order retention", "serialization/hash bookkeeping"],
+      "ordinary_reduction_risks": ["deterministic modular routing", "unsupported synthetic scaling regime"],
       "implementation_distance": "COMPLETED",
       "scientific_choices_still_open": [],
       "exploration_cycle_count": {"DISCOVERY": 1},
-      "promotion_rejection_condition": "Exact bookkeeping reduction with physical dynamics invariant; no cycle2."
+      "promotion_rejection_condition": "Reject current research candidate: exact modular reduction plus current integrated N48 non-resonant path. Preserve engineering scaling constraint only."
     }
   ],
-  "main_lane": {"name": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT", "owner": "MAIN", "evidentiary_status": "NO_ACTIVE_EXECUTION_OBJECT", "critical_path_ownership": "all future central Architecture/PRE_FORMAL/FORMAL fixes remain MAIN-owned"},
-  "sub_lane": {"name": "BOUNDED_SECONDARY_DISCOVERY", "owner": "SUB", "max_per_run": 1, "status": "NON_EVIDENTIARY"},
+  "main_lane": {
+    "name": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
+    "owner": "MAIN",
+    "evidentiary_status": "NO_ACTIVE_EXECUTION_OBJECT",
+    "critical_path_ownership": "all future central Architecture/PRE_FORMAL/FORMAL implementation and blockers remain MAIN-owned"
+  },
+  "sub_lane": {
+    "name": "V05_TOPOLOGY_DIMENSION_BINDING_DISCOVERY_CYCLE1",
+    "owner": "SUB",
+    "status": "NON_EVIDENTIARY",
+    "max_cycles_this_handoff": 1,
+    "allowed": ["current main source inspection", "current docs/tests/callsite inspection", "synthetic/development-only configuration instantiation metadata"],
+    "must_stop_after_cycle": true
+  },
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
   "outcome_contingencies": {
     "root": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_OBJECT",
-    "NO_FRESH_CENTRAL_OBJECT": "MAIN_HOLD_SUB_MAY_DISCOVER",
+    "SUB_CONFIG_BINDING_DISCOVERY": {
+      "INTENTIONAL_FIXED_TOPOLOGY_DOCUMENTED": "REJECT_OR_NO_ACTION_ENGINEERING_NOTE_ONLY",
+      "CONFIG_ACCEPTED_BUT_TOPOLOGY_UNBOUND_WITH_USER_FACING_EXPECTATION": "STOP_FOR_FRESH_ANALYST_REVIEW_MAY_DEFINE_NEW_ARCHITECTURE_API_CORRECTNESS_OBJECT",
+      "AMBIGUOUS_CONTRACT": "HOLD_DOCUMENT_MISSING_SEMANTICS_NO_SUCCESS_SEEKING_PROBE",
+      "NEEDS_RESONANT_FUNCTIONAL_RESCUE": "STOP_DO_NOT_CONTINUE_REJECTED_ALIASING_CANDIDATE"
+    },
+    "NO_FRESH_CENTRAL_OBJECT": "MAIN_HOLD",
     "FRESH_SUB_DISCOVERY": "STOP_FOR_FRESH_ANALYST_REVIEW_BEFORE_PROMOTION",
-    "TEMPORAL_CALLSITE_AUDIT": {"BROAD_SUPPORTED": "MAY_MOTIVATE_FRESH_API_INVARIANCE_ARCH_OBJECT_NOT_PRE_FORMAL", "NARROW_LOCAL": "DOCUMENT_ENGINEERING_CONSTRAINT_AND_HOLD", "MISSING_SAFE_INPUT": "HOLD_NO_REGENERATION"},
-    "FRESH_CENTRAL_ARCH_OR_PRE_FORMAL_OBJECT": {"PRE_START_MECHANICAL_BLOCKER": "MAIN_MAY_FIX_OUTCOME_INDEPENDENTLY_AND_RECHECK_CI", "SEMANTIC_OR_PROTOCOL_GAP": "STOP", "INVALID_OR_LEAKY_INPUT": "DISCARD_STOP", "ANY_VALID_OUTCOME": "STOP_FRESH_ANALYST_REVIEW"},
+    "FRESH_CENTRAL_ARCH_OR_PRE_FORMAL_OBJECT": {
+      "PRE_START_MECHANICAL_BLOCKER": "MAIN_MAY_FIX_OUTCOME_INDEPENDENTLY_AND_RECHECK_EXACT_HEAD_CI",
+      "SEMANTIC_OR_PROTOCOL_GAP": "STOP",
+      "INVALID_OR_LEAKY_INPUT": "DISCARD_STOP",
+      "ANY_VALID_OUTCOME": "STOP_FRESH_ANALYST_REVIEW"
+    },
     "FORMAL": "UNARMED_NO_FORMAL_OBJECT"
   },
   "blocked_until": {
     "FORMAL": "fresh high-value object plus fresh identity and complete prospective formal binding/STARTED/raw-preserve authority",
     "PRE_FORMAL": "fresh mechanistic/reduction question with sufficient lower-layer support",
-    "TEMPORAL": "new prospectively specified API/event-time-invariance or reliability question; no current-object cycle2 rescue",
+    "MAIN_ARCHITECTURE": "genuinely fresh central object with information value beyond an exact ordinary/static consequence",
+    "TEMPORAL": "new independently specified event-time/partition-invariance or reliability question; no current-object cycle2",
     "TOPK": "fresh ordinary-reduction Architecture object; no same-object cycle3",
-    "H7": "independently arising native responsibility-sensitive mechanism"
+    "H7": "independently arising native responsibility-sensitive mechanism",
+    "TEMPORAL_FINE_GRAINED_SUCCESSOR_USE": "machine-bound artifact values only; prior erroneous family narrative/digest must not drive successor design"
   },
-  "do_not_touch": ["all consumed identities", "official TEST/formal held-out surfaces without fresh authority", "immutable evidence refs/tags", "legacy freeze refs", "STARTED/control and preserve refs", "formal scorer/evidence surfaces", "research PR merges", "scheduler definitions"],
-  "active_claims_observed": {"MAIN": "FUNCTIONAL_BATCH_PARTITION_EFFECT_NON_EVIDENTIARY_ARCHITECTURE_ENGINEERING_ONLY", "SUB": "FIELD_SOURCE_LINEAGE_CAP_EXACT_BOOKKEEPING_REDUCTION_REJECT"},
-  "top_recommendation": "Hold MAIN pending a genuinely fresh central lower-funnel object; keep Temporal result as Architecture/engineering constraint only; allow SUB one independent bounded Discovery question.",
-  "top3": [
-    {"rank": 1, "action": "Fresh-object admission / MAIN HOLD", "information_value": "VERY_HIGH_IF_OBJECT_APPEARS", "distance": "EVENT_DEPENDENT"},
-    {"rank": 2, "action": "Existing SUB-20260919-2344 Temporal batching callsite audit proposal", "information_value": "MEDIUM_HIGH", "distance": "VERY_NEAR_READ_ONLY_NONBLOCKING"},
-    {"rank": 3, "action": "SUB one independent bounded Discovery or reasoned no-op", "information_value": "MEDIUM_OPTIONAL", "distance": "NEAR_OPTIONAL"}
+  "do_not_touch": [
+    "all consumed identities",
+    "official TEST/formal held-out surfaces without fresh authority",
+    "immutable evidence refs/tags",
+    "legacy freeze refs",
+    "STARTED/control and preserve refs",
+    "formal scorer/evidence surfaces",
+    "research PR merges",
+    "scheduler definitions",
+    "completed Temporal artifact/contract/result",
+    "rejected topology-aliasing candidate as a resonant functional rescue"
   ],
-  "go_stop_top1": {"GO": "prospective admission/specification only; future execution requires fixed outcome-independent bindings and falsifiers", "STOP": "no current MAIN execution GO; stop if outcome knowledge is needed to choose candidate/comparator/metric/threshold/resources/runtime/identity or if object rescues consumed evidence"},
-  "consumed_identities": ["c19-external-v2-official-v4", "c19-r1-revision-authority-official-v1", "c19-r1-revision-authority-official-v2", "c19-r2-fsa-state-tracker-official-v1", "pd01-long-history-fading-memory-official-v1", "ni01-no-ignition-selective-prediction-official-v1", "h5-event-routing-work-reduction-official-v1"],
-  "blockers": ["FORMAL has no fresh high-value object", "PRE_FORMAL has no fresh mechanistic/reduction object with sufficient support", "Temporal current question is complete and ordinarily reducible; any successor must be fresh", "Top-k breadth/generalization remains mixed", "H7 has no independently arising native mechanism"],
-  "governance_advisory": {"issue_139": "open/current", "repository_rulesets": 0, "main_protected": false, "legacy_freeze_branch_count": 13, "pr_148": "open/unmerged governance review", "pr_149": "open/unmerged governance review"},
-  "utility": {"existing_request": "SUB-20260919-2344-TEMPORAL-EXPECTATION-BATCHING-CALLSITE-AUDIT", "new_request_created_this_run": null, "status": "REQUEST_EXISTS_NO_DUPLICATE_CREATED"},
-  "persistence": {"parent_before_write": "862dd62cdce58f06e5c782b4b54212d93e40212e", "paths": ["analysis/orchestrator/latest.md", "analysis/orchestrator/state.json", "analysis/orchestrator/history/2026-09-20/0115.md"], "force_push": false}
+  "active_claims_observed": {
+    "MAIN": "FUNCTIONAL_BATCH_PARTITION_EFFECT_NON_EVIDENTIARY_ARCHITECTURE_ENGINEERING_ONLY_WITH_MACHINE_ARTIFACT_RECONCILED",
+    "SUB": "TOPOLOGY_FANOUT_MODULAR_ALIASING_NON_EVIDENTIARY_EXACT_REDUCTION_CURRENT_CANDIDATE_REJECTED"
+  },
+  "top_recommendation": "Keep MAIN on HOLD, correct all future handoffs to machine-bound artifact values, reject the current resonant fanout follow-up as low-information/current-path-inactive, and let SUB answer one fresh configuration-binding Discovery question.",
+  "top3": [
+    {
+      "rank": 1,
+      "action": "SUB one bounded CAND-V05-TOPOLOGY-CONFIG-BINDING-01 Discovery cycle",
+      "information_value": "MEDIUM_HIGH",
+      "distance": "VERY_NEAR"
+    },
+    {
+      "rank": 2,
+      "action": "Existing METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY Utility proposal",
+      "information_value": "HIGH",
+      "distance": "NEAR_READ_ONLY_PENDING_CONTROL_DISPOSITION"
+    },
+    {
+      "rank": 3,
+      "action": "Fresh central-object admission / MAIN HOLD",
+      "information_value": "VERY_HIGH_IF_OBJECT_APPEARS",
+      "distance": "EVENT_DEPENDENT"
+    }
+  ],
+  "go_stop_top1": {
+    "GO": "one NON_EVIDENTIARY SUB Discovery cycle on current source/config/docs/tests and synthetic/development instantiation metadata only",
+    "STOP": "after one bounded answer, or immediately if resolution needs resonant functional rescue, outcome-dependent parameter choice, production mutation, official/formal data, consumed evidence, or MAIN critical-path work"
+  },
+  "consumed_identities": [
+    "c19-external-v2-official-v4",
+    "c19-r1-revision-authority-official-v1",
+    "c19-r1-revision-authority-official-v2",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "pd01-long-history-fading-memory-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "h5-event-routing-work-reduction-official-v1"
+  ],
+  "blockers": [
+    "FORMAL has no fresh high-value object",
+    "PRE_FORMAL has no fresh mechanistic/reduction object with sufficient support",
+    "MAIN has no central Architecture object whose expected information gain exceeds exact ordinary/static consequences",
+    "Temporal current object is complete and ordinary event-time semantics explain the effect",
+    "Top-k breadth/generalization remains mixed",
+    "H7 has no independently arising native mechanism",
+    "artifact-to-handoff fidelity requires machine-bound prospective guard before disputed fields can drive successor design"
+  ],
+  "governance_advisory": {
+    "repository_steward_commit": "877a5d4ea077e48863c46019445c5bc696ce43ef",
+    "issue_139": "open/current",
+    "repository_rulesets": 0,
+    "main_protected": false,
+    "legacy_freeze_branch_count": 13,
+    "authoritative_evidence_tag_count": 5,
+    "pr_148": "open/unmerged/defer_pending_review_fix",
+    "pr_149": "open/unmerged/defer_pending_review_fix",
+    "artifact_handoff_fidelity": "YELLOW_NON_DECISION_CHANGING_CONTROL_PLANE_DEFECT_RECONCILED_IN_THIS_ANALYST_HANDOFF"
+  },
+  "utility": {
+    "existing_request": "METHCAL-20260920-0120-ARTIFACT-HANDOFF-FIDELITY",
+    "request_branch_tip_observed": "1e28e558a985db1c05bf81ef1033028b39ee9018",
+    "new_request_created_this_run": null,
+    "status": "EXISTING_NON_DUPLICATIVE_REQUEST_PENDING_CONTROL_DISPOSITION"
+  },
+  "persistence": {
+    "parent_before_write": "e781202e8c7ae4562c10fa46cdddfb3b0eb1bc08",
+    "paths": [
+      "analysis/orchestrator/latest.md",
+      "analysis/orchestrator/state.json",
+      "analysis/orchestrator/history/2026-09-20/0201.md"
+    ],
+    "force_push": false
+  }
 }
