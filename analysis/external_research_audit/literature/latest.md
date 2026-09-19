@@ -1,4 +1,4 @@
-# SparkBrain Literature Reduction Scout — 2026-09-19 15:32 JST
+# SparkBrain Literature Reduction Scout — 2026-09-19 18:30 JST
 
 ## Role
 
@@ -6,62 +6,70 @@
 
 ## Repository evidence inspected
 
-Repository state was re-fetched independently from all control-plane mailboxes. `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The active LP01 branch remains `research/lp01-actual-lineage-causal-credit-spec-20260918@f6d59a55730c5f99cd7f30470847fc3f175bdf64`. Its current reference implementation still represents lineage explicitly as append-only parent/child relations (`ActualLineageIndex`) and includes an ordinary explicit transitive-ancestor comparator (`ExplicitParentTable`) plus a bounded recent-window comparator. No fresh formal identity, STARTED marker, formal TEST, immutable scientific evidence, or new research workflow was observed.
+Repository scientific state was re-fetched independently of control-plane mailboxes. Authoritative `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; the existing five annotated `evidence/*` tags remain the complete formal evidence set and no fresh `formal/*`, `sealed/*`, tag-based `freeze/*`, formal identity or STARTED authority was observed. Legacy freeze/control/preserve refs remain historical/immutable inputs only.
 
-Authoritative evidence remains exactly five annotated `evidence/*` tags (C19-v4, C19-R2, PD01, NI01, H5); `formal/*`, `sealed/*`, and tag-based `freeze/*` remain absent, while 13 legacy `freeze/*` branches remain preserved. Relevant open PRs #148 and #149 remain open/mergeable governance work and do not alter current science.
+Two new NON_EVIDENTIARY lower-layer lines are now materially active:
 
-Control-plane mailboxes were read only at designated paths. Control Brain `6ed239b241a39f7d3e934e37751454c8bf3ebb4c` retains `NO_HIGH_VALUE_OBJECT` / experimental-cognitive-architecture-testbed framing. Evidence Analyst `8e8aa0924ff5c7dae99332d9babe7f3dd748f25b` reports no new formal repository scientific evidence and leaves MAIN on HOLD and SUB at `no_op`. The current orchestrator report branch state through `313da06cdafd8cbaf82c19a1f82c9e9e2a234827` likewise has no active research branch/identity or formal execution GO; newest relevant role histories are MAIN `1512-main.md` and SUB `1437-sub.md`.
+- MAIN `CAND-TOPK-PA-01` cycle 1 at `research/main-topk-persistent-amplification-arch-study-20260919@97f542d86dcd3a609cd039379fcda41ba61e0909` produced `PERSISTENCE_COUPLED_DELAYED_AMPLIFICATION_SIGNAL` on DEV only. The fixed study had 1152 paired cases / 37 top-k turnover cases. It perturbs encoder state across hard-router boundaries and compares `full` with `no_persistent_state`; this is Architecture Study information, not formal evidence.
+- SUB `STRUCTURAL_ORDER_PATH_DEPENDENCE_DISCOVERY` at `research/exploratory-sub-structural-order-path-dependence-20260919@8156bba7b119fb831b7c28eac7cd900746f9876e` found strong same-multiset/different-order final-topology divergence in a synthetic structural-controller harness, localized to stateful module duplicate/prune and active-slot history rather than edge-only update order or total-event-budget exhaustion. This is Discovery information only.
 
-Recent Literature history was read before search. Prior runs already covered provenance/actual causality, query-answer responsibility, Petri/event structures, dynamic slicing, GLE/SAL, cascading eligibility, diffusive neuromodulatory credit, RUDDER/TVT, predictive-state/causal-state reductions, reservoirs, and automata extraction. Those findings are not repeated below.
+Evidence Analyst's current designated handoff (18:20 JST) authorizes exactly one unchanged independent-seed cycle-2 replication for `CAND-TOPK-PA-01`, and promotes the structural-order question into the Architecture queue behind it. PRE_FORMAL and FORMAL remain empty/HOLD. This Literature run does not change those prospective contracts.
+
+Control Brain designated state remains testbed/strict-admission oriented; its 14:50 mailbox predates the newly completed lower-layer results, so repository evidence and the newer Evidence Analyst handoff control current interpretation. MAIN's 18:16 report is still stopped at its pre-Analyst boundary; SUB's latest completed Discovery is the structural-order result. These are mailbox summaries only, not repository source-of-truth snapshots.
+
+Prior role-specific Literature history was read before search. Previous runs already covered revision authority, finite-state/state-complexity reductions, PSR/epsilon-machines, reservoirs, automata extraction, provenance/actual causality, causal nets/event structures, dynamic slicing, eligibility/three-factor/e-prop/GLE/SAL, cascading traces, diffusive neuromodulation, RUDDER/TVT, COMA/C3 and stochastic responsibility. Those results are not recycled below.
 
 ## Genuinely new external literature findings
 
-### 1. Fixed-context counterfactual replay supplies a strong functional ceiling for lineage-specific credit
+### 1. Hard Top-k turnover is directly an ordinary discontinuous-switch mechanism; hybrid sensitivity tools give the correct reduction language
 
-Chen et al. (2026), *Contextual Counterfactual Credit Assignment for Multi-Agent Reinforcement Learning in LLM Collaboration* (C3; arXiv:2603.06859), explicitly freezes the transcript-derived context, substitutes an alternative upstream message, and evaluates it with fixed-continuation replay plus a leave-one-out baseline. The paper reports that this isolates decision-level marginal credit from sparse terminal feedback and improves performance across five math/coding benchmarks under matched budgets.
+Tran Huu et al. (2026), *Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts* (arXiv:2606.19036), formalize hard Top-k expert selection as a piecewise-smooth map with discontinuity surfaces where the selected set changes. They show that ordinary pairwise Top-k boundary crossings are the dominant discontinuity class and explicitly motivate smoothing because arbitrarily small input changes near those surfaces can cause large output jumps.
 
-**Reduction impact:** the conceptual operation `change one historical event while holding downstream context as fixed as possible, then measure outcome change` is not itself a Spark-specific idea. It is already an ordinary counterfactual-credit construction. C3 has much stronger replay/rewind privilege than a strict local online SparkBrain mechanism, so it should be treated as a **stronger-privilege functional ceiling**, not an equal-privilege mechanistic reduction.
+Separately, Kong et al. (Proceedings of the IEEE, 2024), *Saltation Matrices: The Essential Tool for Linearizing Hybrid Dynamical Systems*, review the saltation matrix as the first-order sensitivity update across a discrete switching/jump event in a hybrid dynamical system.
 
-**Prospective discriminator value:** if a native H7 mechanism ever appears, a paired intervention that holds present state, local activity envelope, timing, eligibility and continuation distribution fixed while changing only one historical lineage/event is a much sharper test than ancestor recovery. SparkBrain would need to change credit in the same responsibility-sensitive direction without receiving C3-style replay privilege.
+**Reduction impact for `CAND-TOPK-PA-01`:** the immediate turnover/jump component is not novel and should be treated as ordinary switching geometry. Saltation language is useful conceptually, but SparkBrain's router is discrete-time; an exact future diagnostic should use the model's piecewise/discrete Jacobian or finite-difference equivalent rather than forcing continuous-time saltation assumptions. The important discriminator is whether anything remains after separating the boundary-switch jump from subsequent recurrent propagation.
 
-Source: Chen et al., arXiv:2603.06859 (2026).
+### 2. Large delayed amplification can arise from ordinary non-normal recurrent dynamics even when the recurrent system is asymptotically stable
 
-### 2. COMA shows that counterfactual marginal contribution under fixed peers is already a foundational ordinary credit baseline
+Hennequin, Vogels & Gerstner (Physical Review E 86, 011909, 2012) show that recurrent systems can exhibit strong transient amplification because the connectivity/operator is **non-normal**: perturbations can grow substantially for a finite horizon even without near-critical unstable eigenvalues. Schur decomposition separates this transient mechanism from conventional dynamical slowing.
 
-Foerster et al. (AAAI 2018), *Counterfactual Multi-Agent Policy Gradients*, use a centralized critic and a counterfactual baseline that marginalizes one agent's action while keeping the other agents' actions fixed. The method was designed specifically to address multi-agent credit assignment while retaining decentralized actors.
+This is highly relevant to the current MAIN observation because the reported architecture signal is specifically a ratio of downstream state/output divergence after a hard Top-k turnover, and the `full` model retains recurrent/persistent state while `no_persistent_state` removes that route.
 
-**Reduction impact:** `credit by comparing what happened with what would have happened if one contributor acted differently while peers are fixed` has a well-established algorithmic baseline. This further narrows H7: novelty cannot rest on counterfactual marginal contribution itself. The possible residual is an **online/local implementation of responsibility-sensitive credit under matched privilege**, rather than access to a centralized critic or explicit counterfactual evaluator.
+**Reduction impact:** a large delayed `full / no_persistent_state` AUC ratio does not by itself identify a Spark-specific persistence mechanism. A strong ordinary explanation is `hard routing switch -> state perturbation -> recurrent transient gain`. Before any mechanistic-distinctness/PRE_FORMAL interpretation, a future fresh review should ask whether local finite-horizon Jacobian/JVP or singular-value/transient-gain calculations predict most of the observed amplification. This does not alter the already fixed cycle-2 replication.
 
-**Privilege warning:** COMA's centralized critic is deliberately stronger than a local anonymous mechanism. It therefore belongs beside RUDDER/TVT/C3 in a privilege-tiered ceiling family unless a future contract can actually match the information surface.
+### 3. Same-multiset/different-order structural topology is textbook non-confluence territory; critical-pair analysis is the sharper ordinary baseline
 
-Source: Foerster et al., AAAI 2018, DOI 10.1609/aaai.v32i1.11794.
+Graph-transformation theory treats order-dependent final graphs as a **confluence / conflict** problem. Critical-pair analysis identifies minimal overlapping rule applications that can lead to divergent states; Campbell & Plump's confluence work for graph transformation generalizes the critical-pair approach, and the broader graph-transformation literature uses conflict/dependency analysis to localize rule interactions.
 
-### 3. Concurrent stochastic responsibility now has an explicit formal counterfactual baseline
+**Reduction impact for `CAND-STRUCTURAL-ORDER-PATH-01`:** the synthetic observation that duplicate/prune operations yield different final graphs under permutations of the same input multiset is interesting architecture behavior, but path dependence itself is not a new dynamical principle. The next ordinary reduction should first model duplicate/prune/grow/prune operations as graph/state rewrite rules and identify the minimal non-commuting/critical pairs. If the observed order dependence is fully predicted by explicit age/slot state and a small set of non-joinable rule overlaps, mechanistic novelty is reduced while architecture implications remain useful.
 
-Mu & Najib (IJCAI 2026), *Counterfactual Reasoning for Responsibility Attribution in Probabilistic Multi-Agent Systems*, model concurrent stochastic multi-player games and define retrospective/backward counterfactual responsibility for outcomes under a strategy profile. They then use the Shapley value to allocate responsibility and establish fairness/consistency properties.
-
-**Reduction impact:** stochasticity, concurrency and distributed contribution do not by themselves make lineage responsibility a novel computational object. There is now a direct formal comparator for retrospective responsibility in concurrent stochastic systems. This complements the previously identified Halpern-Pearl / database-causality baselines by moving closer to multi-agent competition under stochastic outcomes.
-
-**Prospective discriminator value:** future preemption/backup/overdetermination tests should include stochastic variants where ancestry and co-eligibility are held similar but backward counterfactual responsibility differs. A Spark-specific residual would need to track that distinction through its native dynamics rather than through an explicit global responsibility solver.
-
-Source: Mu & Najib, IJCAI 2026, DOI 10.24963/ijcai.2026/33; arXiv:2605.13077.
+A stronger future discriminator is not merely `different order -> different graph`, but whether two histories that are matched on the explicit rewrite-relevant state still diverge in future topology/output. If explicit age/slot/provenance state suffices, the phenomenon is ordinary stateful non-confluence.
 
 ## Inference for SparkBrain
 
-These findings do **not** justify reopening LP01 or manufacturing a successor. They strengthen the current close/HOLD decision.
+The new lower-layer results are worth studying, but the external literature raises the reduction bar **before** either line can become a mechanistic novelty candidate.
 
-The remaining H7 hypothesis should be narrowed one step further. The scientifically interesting residual is no longer merely `actual causal responsibility` in the abstract, because explicit counterfactual evaluators already compute that. The possible Spark-specific residual is:
+For the top-k line, the clean reduction ladder is now:
 
-> **A native online/local mechanism that assigns lineage-specific credit in the direction of counterfactual actual responsibility among co-eligible histories, without centralized world/task labels, global causal-graph lookup, explicit replay/rewind, or an oracle counterfactual critic, and that survives matched ordinary eligibility/recurrent/plastic baselines.**
+`hard Top-k switching geometry` → `immediate piecewise/hybrid jump sensitivity` → `ordinary recurrent/non-normal transient gain` → only then any unexplained persistence-coupled residual.
 
-This suggests a clearer privilege-tiered reduction ladder for any future independently arising object:
+For the structural-order line:
 
-1. **Equal-privilege mechanistic reductions:** eligibility/three-factor/e-prop/cascading traces, recurrent/plastic state, local diffusive credit, explicit local state machines where applicable.
-2. **Trace/influence reductions:** provenance, event structures/causal nets, dynamic slicing.
-3. **Stronger-privilege counterfactual ceilings:** explicit actual-cause/responsibility solvers, COMA-style centralized counterfactual critics, C3 fixed-context replay, RUDDER/TVT where privilege is stronger.
-4. **Only then:** a possible Spark-specific residual if the native local mechanism tracks responsibility-sensitive interventions despite lacking those oracle privileges.
+`explicit age/slot/provenance state` → `rewrite-rule noncommutativity / critical pairs / non-confluence` → functional/output consequence under matched current explicit state → only then any unexplained structural-history residual.
 
-The most decisive future discriminator, only if a native mechanism independently appears, is therefore a **responsibility-changing / local-observation-preserving intervention pair**: match timing, current/recent observations, activity, eligibility, reward, resource budget and local neighborhood while changing actual responsibility through substitution, preemption, backup or overdetermination. Do not construct such a formal object merely because the literature suggests it while `NO_HIGH_VALUE_OBJECT` remains in force.
+This is compatible with the current four-layer funnel. It does not justify changing cycle-2, promoting anything automatically, or constructing a formal successor from literature.
+
+## Utility request
+
+Created one deduplicated proposal on `ops/utility-orchestrator-requests`:
+
+- request: `LIT-20260919-1830-TOPK-HYBRID-TRANSIENT`
+- path: `utility_orchestrator/requests/2026-09-19/LIT-20260919-1830-topk-hybrid-transient-decomposition.md`
+- request commit: `a9c53c4307bfc36a8166371abdf69380e929d0e3`
+- purpose: bounded NON_EVIDENTIARY diagnostic that decomposes existing/future-safe DEV top-k amplification into immediate hard-switch contribution and subsequent recurrent/non-normal transient gain.
+- explicit boundary: must not alter/delay the authorized cycle-2 replication; if safe existing inputs are insufficient, Utility must return `BLOCKED_MISSING_SAFE_INPUT` rather than rerunning/retraining scientific work.
+
+An existing Methodology Calibration Utility request already covers support-count/denominator robustness of the cycle-1 signal; this new request is intentionally mechanistic and non-duplicative.
 
 ## Knowledge-flow contract
 
@@ -69,43 +77,48 @@ The most decisive future discriminator, only if a native mechanism independently
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - H7_LINEAGE_CAUSAL_CREDIT_RESIDUAL
-  - LP01_PREFORMAL_CLOSEOUT
+  - CAND_TOPK_PA_01
+  - TOPK_ROUTER_PERSISTENT_AMPLIFICATION
+  - CAND_STRUCTURAL_ORDER_PATH_01
+  - ARCHITECTURE_STUDY_REDUCTION
   - PROGRAMME_NOVELTY
-  - FUTURE_OBJECT_ADMISSION
-  - CAUSAL_CREDIT_REDUCTION_LADDER
 novelty_or_reduction_impact: >
-  STRONGER_REDUCTION_AND_PRIVILEGE_PRESSURE. Counterfactual marginal credit itself is
-  established in ordinary multi-agent learning (COMA), exact-context/fixed-continuation
-  replay now provides a strong decision-level counterfactual credit ceiling (C3), and
-  concurrent stochastic responsibility has an explicit formal counterfactual framework.
-  The remaining possible Spark-specific residual is a native online/local implementation
-  of responsibility-sensitive lineage credit without centralized/replay/oracle privilege.
+  STRONGER_ORDINARY_REDUCTION_PRESSURE_ON_NEW_ARCHITECTURE_LINES.
+  Hard Top-k selected-set turnover is an ordinary discontinuity/switching phenomenon;
+  delayed amplification can arise from ordinary non-normal recurrent transient gain;
+  and same-multiset/different-order graph outcomes are ordinary non-confluence/conflict
+  phenomena addressable by critical-pair analysis. Architecture value remains, but
+  mechanistic novelty requires residual effects after these reductions.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - COMA-style centralized counterfactual marginal-contribution ceiling, explicitly marked stronger-privilege unless matched
-  - C3-style fixed-context / fixed-continuation replay ceiling, explicitly marked stronger-privilege unless matched
-  - explicit concurrent-stochastic retrospective responsibility / Shapley baseline
-  - paired responsibility-changing interventions with current/local observations, timing, eligibility, reward and resources matched
-  - preserve the equal-privilege local eligibility/recurrent/plastic reduction ladder before any novelty claim
+  - piecewise/discrete switching sensitivity or finite-difference boundary-jump decomposition for hard Top-k turnover
+  - finite-horizon recurrent Jacobian/JVP and non-normal transient-gain analysis, matched full vs no_persistent_state
+  - predicted-versus-observed delayed divergence under boundary-jump x recurrent-gain decomposition
+  - graph-rewrite critical-pair / commutation / joinability analysis for duplicate-prune-grow-prune operations
+  - structural-history tests matched on explicit age/slot/provenance/rewrite-relevant state
 questions_for_evidence_analyst:
-  - Keep LP01 closed; counterfactual responsibility itself is not sufficient novelty because explicit ordinary solvers and replay methods already compute it.
-  - Should future H7 admission require explicit separation of equal-privilege mechanistic baselines from stronger-privilege counterfactual ceilings?
-  - Require a future native H7 mechanism to track responsibility-changing interventions without replay/global critic/world-label access before formal review?
+  - Keep the already authorized CAND-TOPK-PA-01 cycle-2 replication unchanged; if it replicates, should fresh PRE_FORMAL review require an ordinary switching-plus-recurrent-transient reduction before any mechanistic-distinctness claim?
+  - For CAND-STRUCTURAL-ORDER-PATH-01, should the first Architecture reduction explicitly test whether a small set of rewrite critical pairs and explicit age/slot state explains the path dependence?
+  - Treat architecture signal replication as necessary but not sufficient, with these external reductions evaluated only after a fresh stop/review?
 questions_for_control_brain:
-  - Narrow the residual from intervention-validated responsibility in general to native local/online responsibility sensitivity under matched privilege?
-  - Add COMA/C3/concurrent-stochastic responsibility to the stronger-privilege ceiling tier of the reduction doctrine?
-  - Retain NO_HIGH_VALUE_OBJECT until this residual appears natively rather than engineering a literature-driven successor?
+  - Add hard-switch geometry plus recurrent transient/non-normal gain to the ordinary-reduction doctrine for routing-persistence claims?
+  - Add graph-rewrite confluence/critical-pair analysis to the ordinary-reduction doctrine for structural path-dependence claims?
+  - Preserve the current FORMAL/H7 novelty bar while allowing these lower-layer architecture lines to proceed as testbed characterization?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - canonical PD01/NI01/H5 terminal classifications
+  - canonical PD01/NI01/H5 terminal classifications and all consumed STARTED/control/preserve/evidence refs
   - all consumed A01/RV01/RV02/CX identities and legacy immutable refs
-  - LP01 remains pre-formal and is not upgraded by this literature
-  - no outcome-responsive successor, identity, STARTED, official TEST, rerun, retune, rescore, research merge, immutable-ref/tag mutation, or scheduler change
+  - CAND-TOPK-PA-01 cycle-2 fixed replication contract, thresholds, metrics, seed choice, DEV split, comparator and stop boundary
+  - no outcome-responsive retune/redesign, official TEST, formal identity/STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change
+utility_request_created:
+  request_id: LIT-20260919-1830-TOPK-HYBRID-TRANSIENT
+  commit: a9c53c4307bfc36a8166371abdf69380e929d0e3
 ```
 
 ## Sources
 
-- Chen et al., *Contextual Counterfactual Credit Assignment for Multi-Agent Reinforcement Learning in LLM Collaboration*, arXiv:2603.06859 (2026).
-- Foerster et al., *Counterfactual Multi-Agent Policy Gradients*, AAAI 2018, DOI 10.1609/aaai.v32i1.11794.
-- Mu & Najib, *Counterfactual Reasoning for Responsibility Attribution in Probabilistic Multi-Agent Systems*, IJCAI 2026, DOI 10.24963/ijcai.2026/33; arXiv:2605.13077.
+- Tran Huu et al., *Geometric and Stochastic Analysis of Discontinuities in Sparse Mixture-of-Experts*, arXiv:2606.19036 (2026).
+- Kong et al., *Saltation Matrices: The Essential Tool for Linearizing Hybrid Dynamical Systems*, Proceedings of the IEEE 112(6), 585–608 (2024), DOI 10.1109/JPROC.2024.3440211.
+- Hennequin, Vogels & Gerstner, *Non-normal amplification in random balanced neuronal networks*, Physical Review E 86, 011909 (2012), DOI 10.1103/PhysRevE.86.011909.
+- Campbell & Plump, *Confluence up to Garbage in Graph Transformation*, graph-transformation confluence/critical-pair framework (2020/2021).
+- Lambers et al., *Granularity of conflicts and dependencies in graph transformation systems: A two-dimensional approach*, Journal of Logical and Algebraic Methods in Programming 103 (2019), 105–129.
