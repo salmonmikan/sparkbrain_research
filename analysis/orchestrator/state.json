@@ -1,26 +1,31 @@
 {
-  "timestamp": "2026-09-19T12:58:44+09:00",
+  "timestamp": "2026-09-19T13:58:50+09:00",
   "change_summary": {
     "new_formal_repository_evidence": false,
-    "allocation_changed": false,
-    "allocation_change_reason": null,
-    "new_literature_finding": true,
+    "allocation_changed": true,
+    "allocation_change_reason": "Fresh SUB 13:53 report established that the reserved NI01 world-label sensitivity cannot produce its numeric TEST effect/CI under the current one-way integrity boundary: preserved raw is target-blind and scoring requires post-preservation TEST target materialization that SUB is not authorized to access. The diagnostic is therefore closed as an active lane rather than weakening integrity.",
+    "new_literature_finding": false,
     "new_independent_audit_finding": false,
-    "new_repository_steward_advisory": false,
+    "new_sub_readiness_finding": true,
+    "new_repository_steward_advisory": true,
     "repository_steward_material_state_change": false,
-    "decision": "KEEP_MAIN_HOLD_RETAIN_SUB_DIAGNOSTIC_STRENGTHEN_CAUSAL_CREDIT_REDUCTION_LADDER",
+    "decision": "KEEP_MAIN_HOLD_CLOSE_INTEGRITY_BLOCKED_NI01_SUB_DIAGNOSTIC_RETURN_SUB_NO_OP",
     "user_notification_worthy_change": true
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_protected": false,
     "control_brain_branch_tip": "1914db5b9b58b4d53bd0406adda062189d688cb8",
-    "orchestrator_mailbox_tip": "f55fe8250c14c65b0ae91bd8b0bb5511f794e49e",
+    "orchestrator_mailbox_tip": "317e2ec3abf4ab028e009299909030ea962f6445",
     "external_research_audit_mailbox_tip": "52c14035b246c664938901fa7bbc559007cfc924",
-    "repository_steward_branch_tip": "af98bf1af700df7fe6502335df5c3971143d2a15",
-    "evidence_analyst_prior_tip_reconciled_before_write": "2c1caa7063feabde079725e198e09b273d005a80",
+    "repository_steward_branch_tip": "6791bbef63e6d6360ed352dcc929d663cd26f851",
+    "evidence_analyst_prior_tip_reconciled_before_write": "34911078061f83099a74d45868c665ac2b30c6da",
     "research_ni01": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
     "ni01_contract_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
+    "ni01_started": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
+    "ni01_raw_preserve": "8a39cf70e397bb7588f948910f01ec58672ac814",
+    "ni01_evidence_tag_object": "185b741e69ea8a0ce0d076153d36e9296a748765",
+    "ni01_terminal_evidence_commit": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
     "research_h5": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
     "research_lp01": "f6d59a55730c5f99cd7f30470847fc3f175bdf64",
     "research_h9_c07": "9480da3d77dfee4766b28757f1a164f5cd4dac26",
@@ -38,49 +43,42 @@
     "repository_rulesets_count": 0,
     "issue_139_current": true,
     "open_prs": [148, 149],
-    "h5_evidence_tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-    "h5_terminal_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5"
+    "latest_sub_control_plane_ci": {
+      "run_id": 35422599562,
+      "head_sha": "317e2ec3abf4ab028e009299909030ea962f6445",
+      "status": "completed",
+      "conclusion": "success",
+      "scientific_relevance": "none"
+    }
   },
   "control_brain_commit": "1914db5b9b58b4d53bd0406adda062189d688cb8",
-  "main_report_commit_consumed": "f76258c9885e7b1ac2e97eae7dc6d5bc6a194e42",
-  "sub_report_commit_consumed": "44284b5de7240bd794633ec5d1543c22dfb216f4",
-  "sub_operating_mode_observed": "no_op",
+  "main_report_commit_consumed": "a1a6063259eb5ae8870f8d5ec7a822ae054269eb",
+  "sub_report_commit_consumed": "317e2ec3abf4ab028e009299909030ea962f6445",
+  "sub_operating_mode_observed": "formal_sub_lane",
   "sub_exploratory_review": null,
   "literature_handoff_commit_consumed": "52c14035b246c664938901fa7bbc559007cfc924",
   "audit_handoff_commit_consumed": "baa5bfbc2ac2a3532fc4ac67bedcecc2c5a409da",
   "repository_steward": {
-    "commit_consumed": "af98bf1af700df7fe6502335df5c3971143d2a15",
-    "state_timestamp": "2026-09-19T07:52:00+09:00",
+    "commit_consumed": "6791bbef63e6d6360ed352dcc929d663cd26f851",
+    "state_timestamp": "2026-09-19T13:50:00+09:00",
     "authority": "governance_advisory_only",
     "material_facts_independently_verified": true,
-    "material_change_since_prior_analyst_handoff": false
+    "material_change_since_prior_analyst_handoff": false,
+    "stale_sub_observation_superseded": "Steward observed the pre-13:53 SUB state; current Analyst independently consumed the newer 13:53 SUB report."
   },
   "external_input": {
     "literature": {
-      "changed_this_run": true,
+      "changed_this_run": false,
       "latest_durable_stream": "2026-09-19 12:30 JST Literature Reduction Scout",
       "latest_commit": "52c14035b246c664938901fa7bbc559007cfc924",
-      "genuinely_new_information": true,
+      "genuinely_new_information_in_latest_stream": true,
+      "already_consumed_prior_analyst_run": true,
       "affected_lines": [
         "H7_LINEAGE_CAUSAL_CREDIT_RESIDUAL",
         "LP01_PREFORMAL_CLOSEOUT",
         "PROGRAMME_NOVELTY",
         "FUTURE_OBJECT_ADMISSION",
         "CAUSAL_CREDIT_REDUCTION_LADDER"
-      ],
-      "findings": [
-        {
-          "id": "CASCADING_ELIGIBILITY_LONG_DELAY_REDUCTION",
-          "impact": "Long-delay, temporally precise local eligibility can be carried by ordinary cascading eligibility-state dynamics; delay/history sensitivity alone is not lineage-specific novelty."
-        },
-        {
-          "id": "DIFFUSIVE_NEUROMODULATORY_CREDIT_REDUCTION",
-          "impact": "Spatially local or biologically flavored sparse credit propagation has an ordinary diffusive-neuromodulatory mechanism class and cannot by itself support a Spark-specific residual."
-        },
-        {
-          "id": "FUNCTIONAL_REWARD_VALUE_TRANSPORT_CEILINGS",
-          "impact": "RUDDER and Temporal Value Transport are stronger-privilege functional ceiling baselines for delayed credit, not automatically equal-privilege mechanistic reductions."
-        }
       ],
       "history_influence_reduction_axis": [
         "provenance/ancestry",
@@ -98,7 +96,7 @@
         "RUDDER reward redistribution",
         "Temporal Value Transport"
       ],
-      "prospective_discriminator": "Orthogonalize eligibility from counterfactual responsibility by matching timing, local activity, eligibility strength, delay, reward, and relevant spatial/diffusion neighborhood while changing actual responsibility through preemption, backup, or overdetermination.",
+      "prospective_discriminator": "Orthogonalize temporal/spatial eligibility from counterfactual responsibility while matching timing, activity, eligibility strength, delay, reward and relevant spatial/diffusion conditions; change only responsibility via preemption, backup or overdetermination.",
       "allocation_changed": false,
       "lp01_reopened": false,
       "frozen_results_modified": false
@@ -117,17 +115,16 @@
       "effect": -0.00047743055555544517,
       "effect_ci95": [-0.0024414062499999965, 0.0014756944444444355],
       "coverage_guard_pass": true,
-      "material_finding": "The frozen comparator used one target-free DEV-derived threshold per explicit world identity while the candidate did not receive symbolic world identity; equal-privilege generic confidence-abstention mechanistic reduction is not established.",
       "safe_programme_interpretation": "NO_REGISTERED_INCREMENTAL_NATIVE_ADVANTAGE_OVER_WORLD_CONDITIONED_CONFIDENCE_ABSTENTION",
       "not_established": "EQUAL_PRIVILEGE_GENERIC_CONFIDENCE_ABSTENTION_MECHANISTIC_REDUCTION",
-      "future_contract_change": "Match or prospectively justify task/world/regime-label privilege in addition to information/readout/resources, and keep ABSENT_SIGNAL distinct from EXPLAINED_BY_REDUCTION with a prospective positive candidate-signal gate where meaningful.",
+      "future_contract_change": "Match or prospectively justify task/world/regime-label privilege in addition to information/readout/resources and keep ABSENT_SIGNAL distinct from EXPLAINED_BY_REDUCTION.",
       "canonical_evidence_modified": false,
       "rerun_relabel_rescore_authorized": false,
-      "allocation_effect": "Retain the already-reserved independent read-only SUB sensitivity diagnostic; MAIN remains unchanged."
+      "allocation_effect_this_run": "The diagnostic suggested by the audit is closed as an active SUB lane because the fresh SUB report established that current safe data/authority cannot compute it without crossing the one-way TEST scoring boundary."
     }
   },
   "active_main_claims_observed": {
-    "latest_report_timestamp": "2026-09-19T12:20:00+09:00",
+    "latest_report_timestamp": "2026-09-19T13:17:08+09:00",
     "mode": "PRIMARY",
     "lane": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "phase": "NO_ACTIVE_FORMAL_FRONTIER_FRESH_OBJECT_ADMISSION_GATE_ONLY",
@@ -141,74 +138,52 @@
     "reserved_sub_lane_not_absorbed": true
   },
   "active_sub_claims_observed": {
-    "latest_report_timestamp": "2026-09-19T10:32:00+09:00",
-    "mode": "no_op",
-    "reported_sub_lane": null,
+    "latest_report_timestamp": "2026-09-19T13:53:01+09:00",
+    "mode": "formal_sub_lane",
+    "reported_sub_lane": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
     "reported_sub_fallback": null,
+    "execution_allowed": false,
     "incubator_candidate": null,
     "new_exploratory_observation": false,
+    "new_formal_result": false,
     "scientific_mutation": false,
-    "report_predates_current_allocation": true,
-    "current_reserved_lane_from_analyst": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY"
+    "protocol_recovered": true,
+    "numeric_diagnostic_status": "BLOCKED_BY_CURRENT_INTEGRITY_AUTHORITY_NOT_BY_PROTOCOL_AMBIGUITY",
+    "canonical_ni01_unchanged": true,
+    "proposed_handoff": "Authorize/provide a strictly non-canonical safe score surface/sufficient statistics or close the lane. Analyst chooses closure under current evidence rather than relaxing one-way integrity."
   },
   "main_lane": {
     "name": "PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE",
     "owner": "MAIN",
     "status": "HOLD",
     "formal_execution_authorized": false,
-    "scope": "Fresh-object admission only. If a genuinely fresh independently motivated native reduction-resistant object appears, MAIN owns all candidate implementation, comparators, candidate-specific bugs, verifier/harness/runner, exact bindings, CI/preflight, review, preservation/scoring/execution blockers, and exact-head integration.",
+    "scope": "Fresh-object admission only. If a genuinely fresh independently motivated native reduction-resistant object appears, MAIN owns all candidate implementation, comparators, candidate-specific bugs, verifier/harness/runner, exact source/package/runtime/input bindings, CI/preflight, review, preservation/scoring/execution blockers and exact-head integration.",
     "stop_point": "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW"
   },
-  "sub_lane": {
-    "name": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
-    "owner": "SUB",
-    "status": "READY_INDEPENDENT_READ_ONLY_DIAGNOSTIC",
-    "scientific_evidentiary_status": "NON_EVIDENTIARY_NON_CANONICAL",
-    "formal_scientific_execution_authorized": false,
-    "identity_required": false,
-    "started_ref_required": false,
-    "research_workflow_dispatch_allowed": false,
-    "canonical_evidence_mutation_allowed": false,
-    "main_dependency": false,
-    "scientific_question": "Would the registered NI01 candidate-vs-comparator effect materially change if the comparator used one world-blind threshold derived from pooled target-free DEV coverage rather than separate explicit-world thresholds?",
-    "bindings": {
-      "exact_package_commit": "dbfe7469dbbbc1adbb00789ab382de892a1b3563",
-      "frozen_contract_blob": "3dc90b08f85e0e7c459e0c17e86ab338901fd4c6",
-      "protocol_id": "ni01-no-ignition-selective-prediction-protocol-v1",
-      "consumed_identity_read_only": "ni01-no-ignition-selective-prediction-official-v1",
-      "bootstrap_resamples": 10000,
-      "bootstrap_seed": 74017,
-      "quantile": "Type-7",
-      "coverage_guard_per_world": 0.03
-    },
-    "procedure": [
-      "Use frozen target-free DEV rows from all three worlds and pool candidate decided flags plus max-probability confidences before threshold selection.",
-      "Derive exactly one threshold with the frozen coverage_matched_threshold implementation and its exact tie-break; world labels and targets may not select parameters.",
-      "Apply the same threshold to every TEST probability vector; world may be used only for deterministic joins, reporting, and the frozen equal-world statistic.",
-      "Generate comparator predictions before target materialization/scoring; immutable raw/preserve material is read-only.",
-      "Score with frozen selective-decision loss and frozen episode-cluster bootstrap.",
-      "Report per-world candidate/comparator coverage and coverage differences.",
-      "Run exactly one sensitivity; no alternate thresholds, per-world fallback, TEST calibration, parameter sweep, or outcome-responsive sequel."
-    ],
-    "prospective_interpretation": {
-      "guard_pass_and_ci_upper_le_0_005": "World-label privilege does not appear outcome-decisive in this one diagnostic; canonical NI01 remains unchanged and no mechanistic REDUCED_BY upgrade is allowed.",
-      "any_world_coverage_guard_fail": "INCONCLUSIVE_PRIVILEGE_SENSITIVITY; STOP; no retuning.",
-      "guard_pass_result_leaves_fail_region": "World-label privilege is materially outcome-sensitive for interpretation; canonical NI01 remains unchanged; no novelty claim and no reopening.",
-      "integrity_failure": "INVALID_DIAGNOSTIC; STOP."
-    },
-    "stop_point": "ONE_DIAGNOSTIC_REPORT_THEN_RETURN_TO_NO_OP"
-  },
+  "sub_lane": null,
   "sub_fallback": null,
-  "no_sub_lane_reason": null,
-  "blocked_until": "Formal scientific execution is blocked until a genuinely fresh independently motivated native reduction-resistant object is prospectively admitted. MAIN remains on HOLD. The SUB diagnostic is independently allowed but cannot unblock MAIN or create a successor.",
+  "no_sub_lane_reason": "The only currently reserved independent diagnostic, NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY, is protocol-resolved but cannot compute its numeric TEST effect/CI from the target-blind preserved raw without accessing post-preservation sealed/one-way TEST targets or creating a new scoring path around a consumed identity. H5 audit belongs to the independent-audit stream; H7/H9 and successor construction overlap future MAIN admission; no other formal independent lane is prospectively complete.",
+  "closed_sub_diagnostic": {
+    "name": "NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY",
+    "closure": "INTEGRITY_BLOCKED_UNEXECUTABLE_WITH_CURRENT_SAFE_SURFACE",
+    "evidentiary_status": "NON_EVIDENTIARY_NON_CANONICAL",
+    "protocol_ambiguity_remaining": false,
+    "numeric_result_produced": false,
+    "reason": "Preserved raw is deliberately target-blind. Frozen scoring materializes TEST truth/decision-justified information only after raw preservation. Current authority forbids that one-way TEST target/scoring access, and terminal evidence provides aggregate results rather than alternate-threshold sufficient statistics.",
+    "may_be_reconsidered_only_if": "A safe already-separated NON_CANONICAL read-only score surface or precomputed sufficient statistics becomes available without sealed TEST-target exposure, canonical rescoring, consumed-identity rerun or evidence mutation, followed by a fresh prospective Analyst decision.",
+    "main_dependency": false,
+    "canonical_ni01_effect": "NONE"
+  },
+  "blocked_until": "Formal scientific execution is blocked until a genuinely fresh independently motivated native reduction-resistant object is prospectively admitted. MAIN remains on HOLD. NI01 sensitivity is separately blocked unless a safe non-canonical scoring surface or sufficient-stat source independently exists without sealed target exposure/rescoring; this blocked diagnostic cannot unblock MAIN.",
   "do_not_touch": [
     "consumed identities",
     "STARTED/control refs for consumed identities",
     "immutable evidence refs/tags/commits",
-    "immutable raw preserve bytes except read-only access",
+    "raw preserve bytes except ordinary read-only inspection",
+    "sealed/one-way TEST targets",
     "canonical NI01/H5/PD01/C19 result tokens/statistics",
     "frozen protocol/statistical decisions",
-    "post-outcome retuning or terminal successor rescue",
+    "post-outcome retuning, rescoring or terminal successor rescue",
     "LP01 as formal evidence",
     "legacy freeze refs",
     "scheduler definitions",
@@ -233,64 +208,72 @@
       "REDUCIBLE_OR_ASYMMETRIC_OR_OUTCOME_CONDITIONED": "STOP",
       "NEXT_OBJECT_READY_FOR_ANALYST_REVIEW": "STOP for fresh Analyst authority"
     },
-    "FUTURE_LINEAGE_CAUSAL_RESPONSIBILITY_OBJECT": {
-      "required_before_review": [
-        "provenance/ancestry baseline",
-        "causal/occurrence-net or event-structure baseline",
-        "causally consistent dynamic-slicing baseline",
-        "explicit counterfactual actual-cause/responsibility baseline",
-        "ordinary eligibility / three-factor / e-prop baseline",
-        "cascading eligibility-state baseline",
-        "GLE / SAL / ordinary recurrent-plastic comparator where relevant",
-        "local diffusive neuromodulatory credit comparator where relevant",
-        "preemption, backup, and overdetermination cases",
-        "eligibility-matched but responsibility-different paired histories",
-        "ancestry-preserving responsibility-changing interventions",
-        "explicit privilege tiering for RUDDER / Temporal Value Transport ceilings",
-        "matched information/readout/task/world/regime-label/resource privilege",
-        "positive intervention-validated candidate signal",
-        "fixed numeric falsifiers"
-      ]
+    "NI01_SENSITIVITY_BLOCKED_BY_ONE_WAY_SCORE_BOUNDARY": {
+      "action": "CLOSE_SUB_LANE_RETURN_NO_OP",
+      "same_run_authority_escalation": false,
+      "canonical_ni01_change": false,
+      "reopen_condition": "safe separate non-canonical score surface/sufficient statistics plus fresh prospective Analyst decision"
     },
-    "SUB_NI01_PRIVILEGE_DIAGNOSTIC": {
-      "GLOBAL_THRESHOLD_DIAGNOSTIC_VALID": "Report diagnostic only, preserve canonical NI01 unchanged, return SUB to no-op.",
-      "COVERAGE_GUARD_FAILS": "INCONCLUSIVE_PRIVILEGE_SENSITIVITY; STOP with no retuning.",
-      "WORLD_LABEL_SENSITIVE_RESULT": "Record interpretation sensitivity only; canonical NI01 unchanged; STOP.",
-      "DIAGNOSTIC_INTEGRITY_FAILURE": "INVALID_DIAGNOSTIC; STOP.",
-      "may_trigger_main_continuation": false,
-      "may_trigger_formal_execution": false
-    },
-    "PASS": "UNARMED",
-    "FAIL": "UNARMED",
-    "INCONCLUSIVE": "UNARMED",
-    "INVALID_EVIDENCE": "UNARMED",
-    "POST_START_FAILURE": "UNARMED",
-    "same_run_formal_execution": false
+    "PASS": "UNARMED_NO_FORMAL_OBJECT",
+    "FAIL": "UNARMED_NO_FORMAL_OBJECT",
+    "INCONCLUSIVE": "UNARMED_NO_FORMAL_OBJECT",
+    "INVALID_EVIDENCE": "UNARMED_NO_FORMAL_OBJECT",
+    "POST_START_FAILURE": "UNARMED_NO_FORMAL_OBJECT"
   },
-  "top_recommendation": "Keep MAIN in architecture/testbed HOLD and retain the one-shot NI01 SUB diagnostic. Integrate the 12:30 literature by strengthening future H7 admission: actual causal responsibility must be separated from eligibility and survive cascading-eligibility/local-diffusion reductions, with stronger-privilege functional baselines explicitly tiered.",
+  "top_recommendation": "Preserve the one-way boundary: keep MAIN on architecture/testbed HOLD and close the NI01 world-label sensitivity as an active SUB lane rather than authorizing post-terminal TEST-target materialization/rescoring. SUB returns to no-op; the next high-value independent action is H5 audit.",
   "top_3": [
     {
       "rank": 1,
       "owner": "MAIN",
-      "action": "Maintain architecture/testbed HOLD and fresh-object admission only; incorporate the strengthened causal-credit reduction ladder and own every critical-path fix for any future admitted primary object, stopping at fresh Analyst review.",
-      "information_value": "VERY_HIGH",
+      "action": "Maintain architecture/testbed HOLD and fresh-object admission only; apply the full two-axis reduction/privilege gate to any future object and STOP at fresh Analyst review.",
+      "information_value": "VERY_HIGH_IF_OBJECT_APPEARS",
       "distance": "EVENT_DEPENDENT"
     },
     {
       "rank": 2,
-      "owner": "SUB",
-      "action": "Run exactly the reserved NI01 world-blind global-threshold sensitivity once, read-only and NON_EVIDENTIARY, then report and return to no-op.",
-      "information_value": "MEDIUM_TO_HIGH",
+      "owner": "INDEPENDENT_AUDIT",
+      "action": "Audit H5 terminal one-way integrity and narrow work-reduction claim boundary without reopening/rerunning H5.",
+      "information_value": "HIGH",
       "distance": "NEAR"
     },
     {
       "rank": 3,
-      "owner": "INDEPENDENT_AUDIT",
-      "action": "Audit H5 terminal one-way integrity and narrow work-reduction claim boundary without reopening or rerunning H5.",
-      "information_value": "HIGH",
-      "distance": "NEAR"
+      "owner": "SUB",
+      "action": "Return to no-op; use Exploratory Incubator only for a genuinely independent bounded NON_EVIDENTIARY question. Do not continue NI01 sensitivity absent a safe score surface/sufficient stats and fresh Analyst reservation.",
+      "information_value": "LOW_TO_MEDIUM",
+      "distance": "OPTIONAL"
     }
   ],
+  "go_stop_top_1": {
+    "current_go": "PROSPECTIVE_ADMISSION_AND_SPECIFICATION_ONLY",
+    "formal_execution_go": false,
+    "identity_freshness": "No active fresh identity exists. Any future formal object must use a fresh, unconsumed, collision-free identity.",
+    "binding_requirements": [
+      "exact source",
+      "protocol",
+      "package",
+      "input",
+      "runtime/checkpoint",
+      "candidate",
+      "comparator/intervention",
+      "scorer",
+      "preserver",
+      "workflow"
+    ],
+    "privilege_requirements": "Match information, readout, task/world/regime-label and resource privilege or prospectively justify a tiered stronger-privilege ceiling.",
+    "ci_review": "same-final-SHA CI plus dedicated pre-START plus fresh Analyst review",
+    "started_no_clobber": "exactly-once STARTED/no-clobber before official TEST",
+    "raw_before_score": "target/scoring-blind raw acquisition then immutable raw preserve, independent remote refetch/digest/cardinality, fail-closed joins/invariants, then preregistered scoring",
+    "scientific_falsifiers": [
+      "consumed-line rescue motivation",
+      "ordinary matched-privilege provenance/event-structure/dynamic-slice/actual-cause reconstruction",
+      "ordinary eligibility/cascading-eligibility/local-diffusion/recurrent-plastic reduction",
+      "required asymmetric privilege misrepresented as matched",
+      "absent prospectively positive candidate signal where mechanistic reduction is claimed",
+      "outcome-conditioned comparator/resource/metric/threshold selection",
+      "no native causal path or no high-information falsifiable object"
+    ]
+  },
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "c19-r1-revision-authority-official-v1",
@@ -301,59 +284,60 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "blockers": [
-    "Scientific object scarcity: no current native high-information reduction-resistant primary object clears the strengthened admission gate.",
-    "Future H7/causal-credit admission must separate eligibility from actual responsibility and survive both history/influence and learning/locality reductions under matched privilege.",
-    "Formal execution remains blocked by fresh Analyst admission/review; current authority does not permit identity creation or STARTED for a new formal object."
+    "Scientific object availability: no genuinely fresh independently motivated native reduction-resistant primary object is currently admitted.",
+    "NI01 sensitivity: numeric scoring is integrity-blocked because target-blind preserved raw does not contain TEST truth/decision-justified fields and current authority forbids sealed/one-way post-preservation target materialization or official scoring.",
+    "Governance debt: authoritative tag namespaces have no server-side ruleset protection and main remains unprotected; this is advisory/non-scientific and not a reason to weaken science boundaries."
   ],
   "governance_advisory": {
-    "issue_139": "CURRENT_AND_ACCURATE_FOR_FIVE_EVIDENCE_TAGS",
+    "issue_139": "CURRENT",
+    "evidence_tag_count": 5,
     "ruleset_count": 0,
     "main_protected": false,
     "legacy_freeze_branch_count": 13,
-    "tag_protection_gap": "Server-side update/delete protection for freeze/*, sealed/*, formal/*, and evidence/* remains absent.",
-    "freeze_migration": "DEFER until protected migration semantics exist; preserve all legacy freeze branches exactly.",
-    "pr_148": "OPEN_MERGEABLE_DEFER_PENDING_REVIEW_FIX",
-    "pr_149": "OPEN_MERGEABLE_DEFER_PENDING_REVIEW_FIX",
+    "freeze_tag_count": 0,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "pr_148": "OPEN_DEFER_PENDING_REVIEW_FIX",
+    "pr_149": "OPEN_DEFER_PENDING_REVIEW_FIX",
+    "freeze_migration": "DEFER_UNTIL_PROTECTED_MIGRATION_SEMANTICS",
     "outcome_independent_main_promotion_candidates": [
-      "generic event/distribution primitives",
-      "architecture-neutral comparator protocol shape",
+      "architecture-neutral event/distribution primitives",
+      "generic comparator protocol shape",
       "snapshot/restore invariants",
       "descriptive resource accounting",
-      "generic privilege/leakage/transcript guards",
-      "generic one-way integrity helpers"
+      "generic privilege/leakage/transcript validation",
+      "generic one-way-integrity helpers"
     ],
-    "research_only": [
-      "H5 scientific comparator/counter/statistical semantics",
-      "NI01 scientific threshold/result semantics",
-      "LP01 lineage semantics",
-      "future H7 actual-cause/responsibility discriminator semantics"
+    "research_local": [
+      "H5 semantics",
+      "LP01 semantics",
+      "NI01 semantics",
+      "blocked NI01 sensitivity diagnostic",
+      "future lineage/actual-causality scientific discriminators"
     ]
   },
   "orchestrator_handoff": {
-    "main": "MAIN takes architecture/testbed HOLD plus fresh-object admission and owns ALL critical-path fixes for any future admitted primary object; it must not absorb or wait on SUB's NI01 diagnostic.",
-    "sub": "SUB takes exactly NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY once, read-only, NON_EVIDENTIARY/NON_CANONICAL; it creates no identity, STARTED, research workflow, preserve, or evidence and then returns to no-op.",
+    "main": "MAIN takes PROGRAMME_NO_HIGH_VALUE_OBJECT_ARCHITECTURE_TESTBED_MODE and owns ALL critical-path fixes for any future admitted primary object.",
+    "formal_sub": "None. SUB returns to no-op; incubator is allowed only for genuinely distinct NON_EVIDENTIARY work.",
     "fallback": null,
-    "main_must_not_absorb_reserved_sub_work": true,
-    "sub_must_not_take_main_blockers": true,
-    "neither_touches": "consumed identities, immutable evidence/raw bytes except permitted read-only diagnostic access, frozen protocols, LP01 as evidence, legacy freeze refs, scheduler definitions, research PR merges, or terminal-result rescue",
-    "repartition_conditions": [
-      "a fresh independently motivated primary object clears the strengthened admission bar",
-      "a separately prospectively complete independent secondary object appears",
-      "a future external/incubator finding materially changes expected information gain without depending on the current MAIN result"
+    "main_must_not": "Absorb future reserved SUB work or create an audit/literature-driven successor.",
+    "sub_must_not": "Take MAIN admission/fixup blockers, access sealed TEST targets, rescore consumed NI01, or create canonical evidence.",
+    "neither_touches": "Consumed identities, consumed STARTED/control refs, immutable evidence/raw, frozen protocols, legacy freeze refs, research PR merges, scheduler definitions.",
+    "repartition_triggers": [
+      "fresh native high-information object independently clears prospective admission",
+      "new external/audit evidence materially changes expected information gain or reduction risk",
+      "safe separate non-canonical NI01 score surface/sufficient-stat source appears and a fresh Analyst decision re-reserves the bounded diagnostic"
     ],
-    "same_run_main_result_branches_allowed": [],
-    "sub_result_branches": "diagnostic report only; all branches STOP and return to no-op"
+    "same_run_main_continuation": "Only prospectively fixed outcome-independent pre-start specification/mechanical branches; no PASS/FAIL/INCONCLUSIVE/INVALID/POST_START formal result branch is armed."
   },
-  "persistence_scope": {
-    "branch": "ops/evidence-analyst-handoff",
-    "allowed_paths": [
+  "persistence": {
+    "paths": [
       "analysis/orchestrator/latest.md",
       "analysis/orchestrator/state.json",
-      "analysis/orchestrator/history/2026-09-19/1258.md"
+      "analysis/orchestrator/history/2026-09-19/1358.md"
     ],
-    "scientific_refs_mutated": false,
-    "scheduler_definitions_mutated": false,
-    "research_prs_merged": false,
-    "force_push_used": false
+    "force_push": false,
+    "scientific_refs_modified": false,
+    "scheduler_modified": false
   }
 }
