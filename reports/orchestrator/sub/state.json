@@ -142,5 +142,10 @@
   ],
   "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_DISCOVERY_CYCLE_AND_RETURNED_ARCHITECTURE_PROMOTION_CANDIDATE_WITH_OPTIONAL_READ_ONLY_UTILITY_AUDIT",
   "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY",
-  "persistence_result": "pending_atomic_sub_report_commit"
+  "persistence_result": {
+    "atomic_snapshot_commit": "a797612f3540d5080360b8ff758f3f4fb28dafdf",
+    "history_path": "reports/orchestrator/history/2026-09-19/2346-sub.md",
+    "final_state_commit": "this update",
+    "force_push_used": false
+  }
 }
