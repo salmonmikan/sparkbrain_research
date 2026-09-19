@@ -1,14 +1,14 @@
 {
-  "run_id": "sparkbrain-main-primary-20260919T101249JST",
+  "run_id": "sparkbrain-main-primary-20260919T111324JST",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-19T10:12:49+09:00",
-  "heartbeat_at": "2026-09-19T10:19:00+09:00",
+  "status": "RUNNING",
+  "started_at": "2026-09-19T11:13:24+09:00",
+  "heartbeat_at": "2026-09-19T11:13:24+09:00",
   "analyst_commit": "8ee6d305acdc8310335e65c5bd3f35d121f35280",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_NO_FRESH_OBJECT_LINEAGE_ADMISSION_BAR_STRENGTHENED",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_FAST_PATH_RECONCILE",
   "workflow_run_id": null,
-  "expected_next_action": "Remain in architecture/testbed HOLD. If and only if a genuinely fresh independently motivated native reduction-resistant object independently appears, MAIN may perform bounded prospective NON_EVIDENTIARY specification/readiness for at most one object, applying the strengthened lineage/causal-credit reduction and intervention bar where relevant, and must STOP at NEXT_OBJECT_READY_FOR_ANALYST_REVIEW. No formal identity, STARTED, official TEST, preserve/scoring, evidence, or outcome-responsive/literature-driven successor is authorized under the current handoff.",
+  "expected_next_action": "Reconcile the current Evidence Analyst HOLD against current main, SUB collision state, and Control Brain strategic prior. The newer 10:32 NI01 audit is pending Evidence Analyst consumption, so MAIN must not independently reinterpret NI01 or create a successor. If no fresh Analyst-admitted object appears, apply NO_FRESH_OBJECT -> HOLD and persist completion.",
   "owner": "main"
 }
