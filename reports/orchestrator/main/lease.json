@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260919T121739JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-19T12:17:39+09:00",
-  "heartbeat_at": "2026-09-19T12:18:00+09:00",
+  "heartbeat_at": "2026-09-19T12:22:00+09:00",
   "analyst_commit": "2c1caa7063feabde079725e198e09b273d005a80",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_HOLD_FAST_RECONCILIATION",
+  "active_step": "PROGRAMME_ARCHITECTURE_TESTBED_HOLD_NO_FRESH_OBJECT_NO_CHANGE",
   "workflow_run_id": null,
-  "expected_next_action": "Reconcile the unchanged Evidence Analyst authority, authoritative main ref, SUB collision state, and Control Brain strategic prior. If no fresh primary object or integrity anomaly appears, persist a no-change MAIN checkpoint and return the lease to COMPLETED without absorbing the reserved SUB NI01 diagnostic.",
+  "expected_next_action": "Remain in architecture/testbed HOLD. Do not absorb or wait on NI01_WORLD_LABEL_PRIVILEGE_READONLY_SENSITIVITY, which remains independently reserved to SUB. Continue only if a fresh Evidence Analyst handoff prospectively admits a genuinely fresh independently motivated native reduction-resistant primary object; then MAIN owns the full authorized critical path and stops at the specified review boundary. Do not reopen consumed identities or create audit-driven/literature-driven successors.",
   "owner": "main"
 }
