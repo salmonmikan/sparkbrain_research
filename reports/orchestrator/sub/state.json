@@ -1,242 +1,153 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
-  "produced_at": "2026-09-20T11:44:00+09:00",
-  "producer_run_id": "SUB-RUN-20260920T113704+0900-ASMFB-6D2A91C4",
-  "worker_role": "sub",
-  "mode": "discovery",
-  "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
+  "generation_id": "SUB-20260920T124445+0900-THEORY-PARTIAL-4E8A1C73",
+  "produced_at": "2026-09-20T12:44:45+09:00",
+  "producer_run_id": "SUB-RUN-20260920T123548+0900-PARTIAL-4E8A1C73",
   "authority_scope": "BOUNDED_SECONDARY_DISCOVERY_ONLY_NON_EVIDENTIARY",
-  "supersedes_generation_id": "SUB-20260920T104200+0900-CKPT-7F3C2A91",
+  "supersedes_generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
-      "branch": "ops/evidence-analyst-handoff",
-      "handoff_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e"
+      "generation_id": "EVA-20260920T115704+0900-R12-A6B8DE50",
+      "commit": "dcaa02fc25506ff4e8b14d7540b6c754a8a6da98"
     },
     "main": {
-      "generation_id": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1",
-      "mailbox_branch": "ops/orchestrator-run-report",
-      "research_branch": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920",
-      "research_head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6"
+      "generation_id": "MAIN-20260920T121227+0900-PRIMARY-FUNNEL21-HOLD-7C41A2D9",
+      "lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
+      "mailbox_commit_observed_before_sub_persistence": "0d1371bee14b95e126cef203f516c0033d538363"
     },
     "control_brain": {
       "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "strategy_commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a"
+      "commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260920T104200+0900-CKPT-7F3C2A91",
-      "handoff_commit": "e438faff528fb73a33a201cb31fa3a935192d4fd",
-      "previous_target": "V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1"
+      "generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
+      "last_known_persistence_commit": "ea5f5b921fee2f9254328e7a05a945b7270f59f9"
     }
-  },
-  "same_generation_autonomous_progress_reason": "The current schema-v2 Evidence Analyst generation remained unchanged and explicitly leaves SUB on BOUNDED_SECONDARY_DISCOVERY. No named candidate was independently executable by SUB. One new theory-backward causal question was selected outside MAIN Assembly lifecycle ownership, all named exclusions and prior answered objects, with cycle budget 1/3 and no rescue reuse.",
-  "analyst_optional_fields_status": {
-    "funnel_metrics": "ABSENT_IN_CONSUMED_GENERATION",
-    "candidate_claim_ceiling": "ABSENT_IN_CONSUMED_GENERATION",
-    "candidate_preformal_eligible": "ABSENT_IN_CONSUMED_GENERATION",
-    "candidate_hold_class": "ABSENT_IN_CONSUMED_GENERATION",
-    "handling": "SUB did not invent Analyst-owned values; prospective Discovery typing proposals are recorded separately for fresh Analyst review."
-  },
-  "main_lane": "ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
-  "sub_lane": "BOUNDED_SECONDARY_DISCOVERY",
-  "formal_sub_lane": null,
-  "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "exploratory_target": "V05_ASSEMBLY_FEEDBACK_CAUSALITY_DISCOVERY_CYCLE1",
-  "candidate_pool_id": "NONE_SELF_SELECTED",
-  "exploration_cycle": "1/3",
-  "theory_backward_rolling_accounting": {
-    "preceding_autonomous_selections": [
-      {
-        "target": "HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1",
-        "classified_mode_for_supply_accounting": "SYSTEM_DISCOVERY"
-      },
-      {
-        "target": "RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1",
-        "classified_mode_for_supply_accounting": "SYSTEM_DISCOVERY"
-      },
-      {
-        "target": "V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1",
-        "classified_mode_for_supply_accounting": "SYSTEM_DISCOVERY"
-      }
-    ],
-    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
-    "supply_rule_satisfied": true,
-    "theory_backward_exception_reason": null
-  },
-  "why_independent_of_main": "MAIN owns CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01, specifically max_candidates lifecycle/budget/saturation contract and supported saturation reachability. This Discovery does not inspect, mutate or continue max_candidates, pruning, saturation, turnover, MAIN outcome/blocker/successor or MAIN branch. It asks a distinct causal-direction question: whether already-present mature Assembly state feeds back into lower recurrent Spark/Cascade dynamics under matched physical input.",
-  "question": "Can mature v0.5 Assembly state causally alter or regenerate lower Spark/Cascade generation rather than acting only as a post-field recognizer/readout?",
-  "reduction_question": "If a mature Assembly is actually recognized, and Assembly suppression changes only Assembly activation status while exact lower v04_result and field state remain identical to matched controls, does current v0.5 Assembly reduce to post-field recognition/readout for the proposed regeneration/completion mechanism?",
-  "inputs_used": {
-    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "development_world_generator": "training_episodes(seed=913,count=1)",
-    "template_pattern_source": "first internal ActivityPattern from fixed DEV episode",
-    "maturation": "three direct TemporalAssemblyMemory.observe calls under distinct synthetic episode IDs",
-    "matched_physical_input": true,
-    "homeostasis_enabled": false,
-    "weight_learning_enabled": false,
-    "delay_learning_enabled": false,
-    "reward_modulation_enabled": false,
-    "prediction_enabled": false,
-    "action_enabled": false,
-    "repository_evidence_bundle": false,
-    "heldout_or_formal_test": false,
-    "official_scorer": false,
-    "consumed_identity": false,
-    "main_outcome_artifact": false
-  },
-  "implementation_experiment": {
-    "branch": "research/exploratory-sub-assembly-feedback-mechanism-20260920",
-    "prospective_binding_commit": "69455754924d207f21da3702f0606d8339437f5d",
-    "diagnostic_commit": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
-    "head": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
-    "production_source_modified": false,
-    "fixed_procedure": [
-      "derive one internal pattern from a fixed DEV episode without Assembly or field learning",
-      "construct physically identical mature-Assembly and empty-Assembly brains",
-      "mature the fixed pattern only in Assembly memory of the mature arm without touching field/receptor/plasticity state",
-      "apply identical physical pulses to both arms with learn_assembly=false, learn_field=false and explore_action=false",
-      "require mature Assembly recognition in the mature arm and no Assembly activation in the empty arm",
-      "compare exact v04_result.as_dict and exact lower field state_dict",
-      "repeat with two identically matured arms while suppressing the mature Assembly only in one arm",
-      "require suppression-status divergence but exact lower v04_result and field state equality"
-    ],
-    "ordinary_ci_run": 35484589732,
-    "ordinary_ci_status": "completed",
-    "ordinary_ci_conclusion": "success",
-    "python_3_11": "success",
-    "python_3_13": "success",
-    "lint": "success",
-    "local_readiness": "success",
-    "tests": "success",
-    "bundle_validation": "success"
-  },
-  "observations": {
-    "mature_assembly_reached": true,
-    "mature_arm_activation_present": true,
-    "empty_arm_activation_absent": true,
-    "mature_vs_empty_v04_result_exactly_equal": true,
-    "mature_vs_empty_field_state_exactly_equal": true,
-    "suppressed_arm_activation_marked_suppressed": true,
-    "unsuppressed_arm_activation_marked_usable": true,
-    "suppressed_vs_unsuppressed_v04_result_exactly_equal": true,
-    "suppressed_vs_unsuppressed_field_state_exactly_equal": true,
-    "mapped_terminal": "ASSEMBLY_RECOGNIZED_BUT_FIELD_IDENTICAL",
-    "interpretation": "In this prospectively fixed bounded matched DEV probe, current v0.5 Assembly memory changes recognition/readout status but does not causally alter lower Spark/Cascade field dynamics. The ordinary recurrent field and matched physical input fully account for lower activity. This is a negative mechanism reduction for current v0.5, not novelty evidence and not a statement about future architectures that could prospectively add feedback."
-  },
-  "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "The pre-bound positive falsifier for the reduction was any lower v04_result or field-state difference caused solely by mature Assembly presence or suppression under matched field/input state. No such difference occurred. The current-v0.5 native Assembly-feedback mechanism is therefore reduced after cycle 1; no rescue cycle is justified.",
-  "proposed_claim_ceiling": "MECHANISM",
-  "proposed_preformal_eligible": false,
-  "preliminary_preformal_readiness": {
-    "status": "NOT_READY",
-    "supported_reachability": "PARTIAL_NEGATIVE: mature recognized Assembly is reachable in the fixed DEV probe, but the hypothesized Assembly-to-field causal effect is absent",
-    "functional_consequence": "ABSENT_ON_LOWER_FIELD: Assembly/readout status differs while lower Spark/Cascade result and field state do not",
-    "ordinary_reductions": "ORDINARY_RECURRENT_FIELD_EXPLANATION_SUFFICIENT",
-    "comparator_status": "MATCHED_EMPTY_ASSEMBLY_AND_MATCHED_SUPPRESSION_COMPARATORS_COMPLETE_FOR_THIS_CAUSAL_DIRECTION",
-    "support_breadth": "ONE_DETERMINISTIC_DEV_PATTERN_INPUT_AND_CURRENT_V05_ARCHITECTURE",
-    "falsifier": "Any lower v04_result or field-state difference caused solely by mature/suppressed Assembly state; not observed",
-    "open_scientific_choices": "A future Assembly-to-field feedback design is a fresh architecture/mechanism object, not continuation or rescue tuning of this current-v0.5 candidate",
-    "formal_claim_ceiling": "NONE_FOR_CURRENT_NEGATIVE_RESULT"
-  },
-  "candidate_next_research_layer": "NONE",
-  "scientific_choices_still_open": [
-    "A future prospectively specified architecture may introduce Assembly-to-field feedback, but it would be a new object and cannot relabel this negative Discovery."
-  ],
-  "proposed_hold_class": null,
-  "recommendation": "REJECT",
-  "research_layer_state": {
-    "DISCOVERY": "OPEN_SUB_TARGET_COMPLETED_NEGATIVE_MECHANISM_REDUCTION_STOPPED_FOR_ANALYST_REVIEW",
-    "ARCHITECTURE_STUDY": "MAIN_ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CURRENT_OBJECT_RESERVED",
-    "PRE_FORMAL": "EMPTY_HOLD",
-    "FORMAL": "EMPTY_HOLD"
-  },
-  "blocked_until": {
-    "main": "MAIN owns Assembly mature-capacity lifecycle current object and its immediate successor decision",
-    "sub_continuation": "No continuation justified for the reduced current-v0.5 Assembly-feedback candidate; any feedback architecture requires a new prospective object",
-    "pre_formal": "A fresh supported positive mechanism survives ordinary reductions with functional consequence and comparator readiness",
-    "formal": "A fresh prospectively admissible object plus one-way authority exists"
-  },
-  "main_work_explicitly_avoided": [
-    "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 lifecycle/budget/saturation current branch/outcome/blocker/successor",
-    "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
-    "V05 checkpoint-continuation reduced candidate",
-    "Homeostasis population-semantics continuation",
-    "delayed-outcome attribution continuation",
-    "Refractory current-accounting follow-up",
-    "unit-suppression follow-up",
-    "Top-k and H7 construction",
-    "completed Temporal/topology-config/cross-cascade/fanout objects",
-    "FORMAL/TEST/scoring/identity/preserve/evidence surfaces"
-  ],
-  "do_not_touch_respected": [
-    "all consumed identities",
-    "immutable evidence/control/preserve refs",
-    "completed lower-funnel artifacts/outcomes",
-    "official TEST/formal scorer surfaces",
-    "scheduler definitions",
-    "PR governance work"
-  ],
-  "authority_reconciliation": {
-    "analyst_generation_status": "SCHEMA_V2_CURRENT",
-    "analyst_generation": "EVA-20260920T105721+0900-R11-4B7D91C2",
-    "analyst_tip_rechecked_before_branch_creation": true,
-    "analyst_tip_rechecked_before_diagnostic_mutation": true,
-    "analyst_tip_rechecked_before_each_persistence_mutation": true,
-    "analyst_tip": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
-    "allocation_changed_during_run": false,
-    "selected_target_invalidated": false,
-    "stable_main_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_generation_status": "SCHEMA_V2_CURRENT",
-    "main_generation": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1",
-    "main_exact_head_observed": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
-    "main_candidate_observed": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
-    "main_outcome_used_to_tune_or_modify_sub_work": false,
-    "sub_collision_found": false,
-    "control_brain_read_as_strategy_only": true
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
-    "evidence_analyst_generation": "EVA-20260920T105721+0900-R11-4B7D91C2",
-    "control_brain_handoff": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
-    "main_research_branch": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920",
-    "main_research_head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
-    "sub_research_branch": "research/exploratory-sub-assembly-feedback-mechanism-20260920",
-    "sub_research_head": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
-    "orchestrator_tip_immediately_before_state_persistence": "03c8981d86ce0086cf5a01798a80e8275e58b711"
+    "analyst_handoff": "dcaa02fc25506ff4e8b14d7540b6c754a8a6da98",
+    "control_brain": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
+    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0
   },
-  "utility_request_created": null,
-  "consumed_identities": [],
-  "global_consumed_no_retry_set_untouched": [
-    "c19-external-v2-official-v4",
-    "C19-R1 revision-authority official-v1",
-    "C19-R1 revision-authority official-v2",
-    "c19-r2-fsa-state-tracker-official-v1",
-    "pd01-long-history-fading-memory-official-v1",
-    "ni01-no-ignition-selective-prediction-official-v1",
-    "h5-event-routing-work-reduction-official-v1"
-  ],
+  "mode": "discovery",
+  "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
+  "exploratory_target": "V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION_DISCOVERY_CYCLE1",
+  "candidate_pool_id": "NONE_SELF_SELECTED",
+  "exploration_cycle": "1/3",
+  "same_generation_autonomous_progress_reason": "The consumed Analyst generation explicitly authorizes one bounded autonomous SUB Discovery while MAIN has no coherent central object; current candidate exclusions, nonduplication constraints, exploration budgets and theory-backward supply all passed prospectively.",
+  "main_frontier_avoided": {
+    "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
+    "active_main_object": null,
+    "avoided": [
+      "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+      "CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01",
+      "CAND-H7-RESP-01",
+      "FORMAL_TEST_SCORING",
+      "CONSUMED_FROZEN_IDENTITIES"
+    ]
+  },
+  "theory_backward_accounting": {
+    "pre_selection_last_three": [
+      "SYSTEM_DISCOVERY:V05_RECEPTOR_SIMULTANEITY_ORDERING",
+      "SYSTEM_DISCOVERY:V05_CHECKPOINT_CONTINUATION_EQUIVALENCE",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_FEEDBACK_CAUSALITY"
+    ],
+    "pre_selection_qualifying_count": 1,
+    "pre_selection_window_size": 3,
+    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION",
+    "post_selection_last_three": [
+      "SYSTEM_DISCOVERY:V05_CHECKPOINT_CONTINUATION_EQUIVALENCE",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_FEEDBACK_CAUSALITY",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION"
+    ],
+    "post_selection_qualifying_count": 2,
+    "theory_backward_exception": null
+  },
+  "question": "Can a mature Assembly learned from a full pre-semantic spatiotemporal pattern express learned prediction/action from an ordered partial observation in a way not reducible to a matched fixed-prototype nearest-neighbor plus identical lookup comparator?",
+  "reduction_question": "Is all functional partial recognition exactly determined by production pattern_similarity against the fixed full prototype and the same learned event/action lookup?",
+  "falsifier": "A distinct current-object completion mechanism requires the Assembly path to accept or produce a functional output that the prospectively matched fixed-prototype nearest-neighbor plus identical lookup comparator cannot reproduce.",
+  "inputs_used": {
+    "kind": "SYNTHETIC_DEV_ONLY",
+    "full_pattern": {
+      "ordered_units": [10, 11, 12, 13],
+      "relative_bins": [0, 2, 4, 6]
+    },
+    "partial_pattern": {
+      "ordered_units": [10, 12, 13],
+      "relative_bins": [0, 4, 6]
+    },
+    "scrambled_control": {
+      "ordered_units": [13, 12, 10],
+      "relative_bins": [0, 4, 6]
+    },
+    "formal_or_held_out_test_used": false,
+    "official_scorer_used": false,
+    "consumed_identity_used": false
+  },
+  "implementation": {
+    "branch": "research/exploratory-sub-assembly-readout-completion-20260920",
+    "prospective_binding_commit": "9222d4a5f9f2d010b50c8047788cdd03483c4afe",
+    "diagnostic_commit": "81d3bc66628ed00be00e3e3f6ea4f125020ea103",
+    "final_research_head": "20810fdd0c56a6ced99df4d46fade42798d3f4a0",
+    "production_source_modified": false,
+    "diagnostic_ci": 35487109954,
+    "final_head_ci": 35487245559,
+    "ci_conclusion": "success"
+  },
+  "observations": {
+    "partial_similarity": 0.8,
+    "scrambled_similarity": 0.325,
+    "threshold": 0.66,
+    "partial_assembly_activation": true,
+    "partial_mature": true,
+    "partial_prediction": "future-X",
+    "partial_prediction_confidence": 1.0,
+    "partial_action": "action-0",
+    "ordinary_comparator_partial_accept": true,
+    "ordinary_comparator_prediction": "future-X",
+    "ordinary_comparator_action": "action-0",
+    "scrambled_assembly_activation": false,
+    "ordinary_comparator_scrambled_accept": false,
+    "terminal": "FUNCTIONAL_PARTIAL_RECOGNITION_MATCHED_BY_NN_LOOKUP"
+  },
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "proposed_claim_ceiling": "MECHANISM",
+  "proposed_preformal_eligible": false,
+  "preliminary_preformal_readiness": {
+    "claim_type": "NATIVE_ASSEMBLY_MEDIATED_FUNCTIONAL_PARTIAL_COMPLETION",
+    "supported_reachability": "PARTIAL_RECOGNITION_REACHABLE_SYNTHETIC_DEV_ONLY",
+    "functional_consequence": "PRESENT_AS_PREDICTION_AND_ACTION_READOUT_ON_ORDERED_PARTIAL",
+    "ordinary_reductions_specified_controlled": "MATCHED_FIXED_PROTOTYPE_NEAREST_NEIGHBOR_PLUS_IDENTICAL_LOOKUP",
+    "reductions_unresolved": "NONE_FOR_THIS_CURRENT_OBJECT; MATCHED_ORDINARY_REDUCTION_SUCCEEDED",
+    "comparator_status": "COMPLETE_AND_OUTPUT_MATCHED",
+    "qualitative_support_breadth": "ONE_DETERMINISTIC_SYNTHETIC_FULL_PARTIAL_SCRAMBLED_PATTERN_SET",
+    "falsifier_definition": "MECHANISM REQUIRED COMPARATOR FAILURE_OR_OUTPUT_DIVERGENCE; NOT_OBSERVED",
+    "open_scientific_choices": "Any stateful or generative completion mechanism beyond fixed similarity matching requires a fresh prospectively specified candidate and cannot rescue this object.",
+    "formal_claim_ceiling": "NONE_FOR_CURRENT_REDUCED_RESULT",
+    "status": "NOT_READY"
+  },
+  "proposed_hold_dimensions": {
+    "hold_class": null,
+    "hold_reason": null,
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "queue_state": "NOT_QUEUED"
+  },
+  "candidate_next_research_layer": "NONE",
+  "recommendation": "REJECT",
+  "utility_request": null,
+  "consumed_identities_this_run": [],
   "new_formal_results": 0,
-  "formal_identity_created": false,
-  "started_or_control_created": false,
-  "official_test_accessed": false,
-  "formal_scoring_or_evidence_created": false,
-  "immutable_evidence_modified": false,
-  "research_merge_performed": false,
-  "main_modified": false,
   "blockers": [
-    "Fresh Evidence Analyst review may accept/close the REJECT handoff; no execution blocker remains and no same-candidate continuation is justified."
+    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_OR_CLOSURE_ONLY"
   ],
-  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_ASSEMBLY_FEEDBACK_DISCOVERY_CYCLE_AND_REDUCED_CURRENT_V05_TO_POST_FIELD_READOUT_NO_NATIVE_REGENERATION",
-  "completion_target_achieved": true,
-  "integrity_state": "CLEAN_NON_EVIDENTIARY_THEORY_BACKWARD_DISCOVERY_COMPLETED_NEGATIVE_REDUCTION_RECONCILED_AND_STOPPED",
-  "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/1144-sub.md",
-    "history_commit": "e2e6f519e175ff59b06008ec4977938db0e60370",
-    "latest_md_commit": "03c8981d86ce0086cf5a01798a80e8275e58b711",
-    "state_json_commit": "this update",
-    "force_push_used": false,
-    "main_or_legacy_shared_latest_state_modified": false
-  }
+  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_ASSEMBLY_PARTIAL_FUNCTION_DISCOVERY_CYCLE_AND_REDUCED_TO_FIXED_SIMILARITY_LOOKUP",
+  "completion_status": "ACHIEVED",
+  "history_path": "reports/orchestrator/history/2026-09-20/1244-sub.md",
+  "persistence_limitations": []
 }
