@@ -1,160 +1,127 @@
-# SparkBrain Evidence Analyst — 2026-09-20 11:57 JST
+# SparkBrain Evidence Analyst — 2026-09-20 12:58 JST
 
-schema_version: 2  
-generation_id: `EVA-20260920T115704+0900-R12-A6B8DE50`  
-producer_run_id: `evidence-analyst-auto-20260920T115704+0900-R12-A6B8DE50`  
-authority_scope: `EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION`  
-supersedes_generation_id: `EVA-20260920T105721+0900-R11-4B7D91C2`
+- schema_version: `2`
+- generation_id: `EVA-20260920T125840+0900-R13-5D7A2C91`
+- producer_run_id: `evidence-analyst-auto-20260920T125840+0900-R13-5D7A2C91`
+- authority_scope: `EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION`
+- supersedes_generation_id: `EVA-20260920T115704+0900-R12-A6B8DE50`
+- new_formal_scientific_evidence: `false`
+- new_repository_evidence: `true`
 
 ## Executive decision
 
-No new FORMAL scientific evidence exists. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative `evidence/*` remains five annotated tags; tag-based `formal/*`, `sealed/*`, and `freeze/*` remain empty. H5 STARTED and raw preserve remain `058e90227cd48e1c10c6ecbaed01efdec1217d0e` and `ce5797eb584344db7a512e585506fb6c59ea475b`. No one-way identity was consumed in this run.
+The material scientific delta is a fresh SUB theory-backward MECHANISM Discovery, `V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION_DISCOVERY_CYCLE1`, at `research/exploratory-sub-assembly-readout-completion-20260920@20810fdd0c56a6ced99df4d46fade42798d3f4a0`. Exact-head CI `35487245559` completed `success`.
 
-Two lower-funnel results materially change allocation.
+The current object asked whether a mature Assembly trained on a full pre-semantic pattern could express learned prediction/action from an ordered partial observation in a way not reducible to a matched fixed-prototype nearest-neighbor plus identical lookup comparator. The partial pattern activated the mature Assembly and produced `future-X` / `action-0`, but the prospectively matched ordinary comparator accepted the same partial pattern and produced the same outputs. Terminal: `FUNCTIONAL_PARTIAL_RECOGNITION_MATCHED_BY_NN_LOOKUP`.
 
-1. MAIN completed `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` on `research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920@13239163f6fecb2b61ea2189a5a94ba12b6cb3d6`. Its prospectively mapped static terminal is `LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED`; ordinary CI `35483714573` is green. Stable source has `max_candidates=256`, capacity blocks new candidate creation after an immature-only stale prune, and mature candidates have no current reclamation path. But stable docs/callers do not define the budget as lifetime memory versus active working set, do not promise continued acquisition after saturation, and do not establish supported/default saturation. This is a **SYSTEM** object and is now `HOLD_SYSTEM_TERMINAL`; no same-object saturation experiment, turnover comparator, or PRE_FORMAL path is authorized.
+Analyst disposition: **`REJECT`** for current object `CAND-V05-ASSEMBLY-PARTIAL-COMPLETION-FUNCTION-01`, with `claim_ceiling=MECHANISM`, `preformal_eligible=false`, `terminal_state=TERMINAL_FOR_CURRENT_OBJECT`, `queue_state=NOT_QUEUED`. This is useful negative mechanism information, not FORMAL evidence. Do not rescue the object into SYSTEM or tune a second completion cycle. Any future stateful/generative/recurrent/feedback completion hypothesis requires a fresh candidate ID, fresh prospective question, fresh reduction/comparator and fresh falsifier.
 
-2. SUB completed a qualifying theory-backward `V05_ASSEMBLY_FEEDBACK_CAUSALITY_DISCOVERY_CYCLE1` on `research/exploratory-sub-assembly-feedback-mechanism-20260920@83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801`; CI `35484589732` is green. In matched DEV-only comparisons, a mature Assembly was recognized, and suppression changed only Assembly readout status, while exact lower `v04_result` and lower field state remained identical. Stable v0.5 `process_episode()` also computes the lower field before Assembly observation/readout. The current feedback/regeneration object therefore maps to `ASSEMBLY_RECOGNIZED_BUT_FIELD_IDENTICAL` and is **REJECTED**. It was legitimately a `MECHANISM`-ceiling Discovery, but `preformal_eligible=false` after the falsifying cycle; no cycle-2 rescue.
-
-The combination leaves **no active or queued Architecture object, zero PRE_FORMAL-eligible candidates, zero PRE_FORMAL READY candidates, and zero viable executable MECHANISM candidates**. MAIN is intentionally held idle rather than filled with a low-value SYSTEM object. SUB remains the default Discovery worker.
+Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Five authoritative `evidence/*` tags remain present; `formal/*` and `sealed/*` tags remain empty. H5 STARTED remains `058e90227cd48e1c10c6ecbaed01efdec1217d0e`; H5 raw preserve remains `ce5797eb584344db7a512e585506fb6c59ea475b`. No one-way identity was consumed in this run.
 
 ## Four-layer funnel
 
-| Layer | State | Ownership / disposition |
-| --- | --- | --- |
-| `DISCOVERY` | `OPEN` | SUB; strictly `NON_EVIDENTIARY`; bounded candidate supply continues. |
-| `ARCHITECTURE_STUDY` | `EMPTY_HOLD` | MAIN; active MECHANISM 0 / SYSTEM 0; queued MECHANISM 0 / SYSTEM 0. |
-| `PRE_FORMAL` | `EMPTY_HOLD` | Eligible 0; READY 0. |
-| `FORMAL` | `EMPTY_HOLD` | No fresh object, identity, STARTED, TEST/scorer, or preserve authority. |
+| Layer | State | MECHANISM / SYSTEM |
+|---|---|---|
+| DISCOVERY | `OPEN` | SUB owns bounded NON_EVIDENTIARY candidate supply |
+| ARCHITECTURE_STUDY | `EMPTY_HOLD` | active M=0 / S=0; queued M=0 / S=0 |
+| PRE_FORMAL | `EMPTY_HOLD` | eligible=0; READY=0 |
+| FORMAL | `EMPTY_HOLD` | no fresh identity / STARTED / TEST / scorer / preserve authority |
 
-`main_lane = LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`  
-`sub_lane = BOUNDED_SECONDARY_DISCOVERY_WITH_THEORY_BACKWARD_ACCOUNTING`  
-`sub_fallback = NO_OP_WITH_NO_COHERENT_SAFE_NONDUPLICATIVE_TARGET`
+Material portfolio: **MECHANISM 3 / SYSTEM 5**. There is no viable executable MECHANISM candidate now. `CAND-H7-RESP-01` remains the only nonterminal MECHANISM hold, but it lacks a native executable object, supported reachability, a fixed comparator and a fixed falsifier.
 
-No SYSTEM-over-comparable-MECHANISM exception is being used in this generation. The previous Assembly SYSTEM allocation predates Funnel v2.1 and is not retroactively re-justified or relabeled.
+## Candidate pool — Funnel v2.1
 
-## Discovery review — theory-backward Assembly feedback
+| Candidate | Class | Ceiling | PF eligible / readiness | Hold dimensions |
+|---|---|---|---|---|
+| `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` | `HOLD` | SYSTEM | false / N/A | `HOLD_SYSTEM_TERMINAL`; terminal; not queued |
+| `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` | `REJECT` | MECHANISM | false / NOT_READY | no hold; terminal; not queued |
+| `CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01` | `HOLD` | SYSTEM | false / N/A | `HOLD_SYSTEM_TERMINAL`; terminal; not queued |
+| `CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01` | `REJECT` | SYSTEM | false / N/A | no hold; terminal; not queued |
+| `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01` | `HOLD` | SYSTEM | false / N/A | `HOLD_SYSTEM_TERMINAL`; terminal; not queued |
+| `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` | `HOLD` | SYSTEM | false / N/A | `HOLD_METHOD_LIMITED`; terminal; not queued |
+| `CAND-H7-RESP-01` | `HOLD` | MECHANISM | false / NOT_READY | `HOLD_MECHANISM_UNRESOLVED`; nonterminal; not queued |
+| `CAND-V05-ASSEMBLY-PARTIAL-COMPLETION-FUNCTION-01` | `REJECT` | MECHANISM | false / NOT_READY | no hold; terminal; not queued |
 
-Review classification: `REJECT`.
+All **8/8** material candidates have the mandatory v2.1 fields in `state.json`. Current-object ceilings are not family labels: future Assembly mechanism work is possible only through a new independently motivated object.
 
-Current-object typing:
-- `claim_ceiling = MECHANISM`
-- `preformal_eligible = false`
-- `hold_class = null`
-- `terminal_state = TERMINAL_FOR_CURRENT_OBJECT`
-- `queue_state = NOT_QUEUED`
-- PRE_FORMAL readiness: `NOT_READY`
-
-The fixed falsifier was whether mature/suppressed Assembly state alone, under matched physical input and lower-field state, changes the lower `v04_result` or lower field state. It did not. The matched empty-Assembly and suppression comparisons were sufficient for this narrow causal direction, and stable source ordering is consistent with Assemblies acting after lower-field dynamics. This does **not** claim that no future architecture could add Assembly-to-field feedback; such a design would be a fresh candidate and fresh prospective object.
-
-## Candidate pool — Funnel Correction v2.1
-
-| Candidate | Classification | Ceiling | PF eligible / readiness | HOLD dimensions |
-| --- | --- | --- | --- | --- |
-| `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` | `HOLD` | `SYSTEM` | false / N/A | `HOLD_SYSTEM_TERMINAL`; `TERMINAL_FOR_CURRENT_OBJECT`; not queued. Reasons: lifecycle contract unspecified; supported saturation unestablished. |
-| `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` | `REJECT` | `MECHANISM` | false / `NOT_READY` | no HOLD; terminal current object. Functional consequence on lower field was absent under fixed matched DEV controls. |
-| `CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01` | `HOLD` | `SYSTEM` | false / N/A | `HOLD_SYSTEM_TERMINAL`; supported exact-key reachability and public order semantics unestablished. |
-| `CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01` | `REJECT` | `SYSTEM` | false / N/A | terminal current object; fixed continuation equivalence passed. |
-| `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01` | `HOLD` | `SYSTEM` | false / N/A | `HOLD_SYSTEM_TERMINAL`; whole-field implementation confirmed, public regulated-population semantics unspecified. |
-| `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` | `HOLD` | `SYSTEM` | false / N/A | `HOLD_METHOD_LIMITED`; historical terminal immutable after confirmed static-extractor false negative. |
-| `CAND-H7-RESP-01` | `HOLD` | `MECHANISM` | false / `NOT_READY` | `HOLD_MECHANISM_UNRESOLVED`; no native executable object, reachability, comparator, or frozen falsifier. |
-
-All 7 material candidates have the mandatory v2.1 fields. No historical consumed object is backfilled or relabeled to create an apparent conversion.
-
-## MECHANISM / SYSTEM portfolio
-
-**MECHANISM view.** The new Assembly-feedback Discovery was a real theory-backward mechanism question, but its fixed causal consequence was absent and the object is terminally rejected. H7 remains the only material unresolved mechanism family, but there is no native executable object and therefore no justified PRE_FORMAL allocation. `preformal_eligible=false` and readiness=`NOT_READY` are deliberate: eligibility is not being conflated with prestige or future importance.
-
-**SYSTEM view.** Assembly mature-capacity lifecycle remains a legitimate resource/lifecycle finding, but its current static question is complete and terminal. Receptor ordering, Homeostasis population semantics, checkpoint continuation, and suppression semantics retain API/reproducibility/testbed value without being laundered into mechanism novelty.
+For the fresh partial-completion MECHANISM object, development readiness is `NOT_READY`: supported reachability is only `PARTIAL` on one synthetic DEV pattern set; functional prediction/action readout is present, but the fixed ordinary comparator is complete and reproduces the effect; the fixed mechanism falsifier therefore fails. No PRE_FORMAL promotion is legitimate.
 
 ## Funnel metrics
 
-- Discovery dispositions over the latest three safe, nonduplicative autonomous SUB selections: `PROMOTE_TO_ARCHITECTURE_STUDY=1`, `REJECT=2`, `PROMOTE_TO_PRE_FORMAL=0`, `CONTINUE_EXPLORING=0`.
-- Rolling theory-backward window: receptor ordering=`SYSTEM`, checkpoint continuity=`SYSTEM`, Assembly feedback=`MECHANISM`; qualifying share **1/3**, no no-target exception. The prospective supply rule is currently satisfied.
-- Architecture portfolio: active `MECHANISM=0`, active `SYSTEM=0`, queued `MECHANISM=0`, queued `SYSTEM=0`.
-- Architecture dispositions in the material pool: `REJECT=0`; `HOLD_SYSTEM_TERMINAL=3`; `HOLD_METHOD_LIMITED=1`; other HOLD classes=0.
-- Terminal states: `ACTIVE=0`, `NONTERMINAL_HOLD=1`, `TERMINAL_FOR_CURRENT_OBJECT=6`.
-- PRE_FORMAL eligible: **0**. PRE_FORMAL READY: **0**.
-- Viable executable MECHANISM candidates: **0**.
-- Last three completed MAIN Architecture objects are all `SYSTEM` (Homeostasis, receptor ordering, Assembly lifecycle): cycle split `SYSTEM=3 / MECHANISM=0`. Comparable full-cycle elapsed time is not durably recorded; CI elapsed time is not substituted as research-cycle time.
-- SYSTEM-over-MECHANISM exceptions this generation: **0**.
-- Classification completeness: **7/7 material candidates** have all mandatory v2.1 fields; no partially classified conversion rate is used as policy evidence.
+- rolling last-3 safe autonomous SUB dispositions: `REJECT=3`, `PROMOTE_TO_ARCHITECTURE_STUDY=0`, `PROMOTE_TO_PRE_FORMAL=0`, `CONTINUE_EXPLORING=0`.
+- rolling theory-backward supply: `SYSTEM, MECHANISM, MECHANISM` = **2/3 qualifying**; no `NO_COHERENT_MECHANISM_TARGET` exception was needed.
+- Architecture portfolio: active M=0/S=0; queued M=0/S=0.
+- Architecture HOLD dispositions in the material pool: `HOLD_SYSTEM_TERMINAL=3`, `HOLD_METHOD_LIMITED=1`; Architecture `REJECT=0`.
+- terminal states: `ACTIVE=0`, `NONTERMINAL_HOLD=1`, `TERMINAL_FOR_CURRENT_OBJECT=7`.
+- PRE_FORMAL eligible=0; PRE_FORMAL READY=0; viable executable MECHANISM=0.
+- recent completed MAIN Architecture cycles: SYSTEM=3 / MECHANISM=0. Durable comparable wall-clock research time is unavailable; CI duration is not used as a proxy.
+- SYSTEM-over-MECHANISM priority exceptions this generation: 0.
+- classification completeness: **8/8**.
 
-## Methodology / Literature / Independent Audit
+## External inputs
 
-Methodology generation `METHCAL-20260920T112723+0900-R11-E3968ACE` is `MIXED_CALIBRATION`, not because the scientific hard floor weakened, but because Funnel v2 candidate-supply and observability fields were not yet persisted end-to-end. This generation prospectively adopts the clarified v2.1 semantics: current-object claim ceiling, eligibility distinct from readiness, orthogonal HOLD reason/terminal/queue state, explicit system-priority exceptions, theory-backward accounting, and funnel metrics. This does not retroactively alter any consumed or completed object.
+**Control Brain** generation `CTRL-20260920T125000+0900-R13-9C4F2B71` remains strategic prior only. It independently agrees that the fresh partial-completion object is strong negative MECHANISM information, should close as REJECT absent contradictory authoritative evidence, and should not be rescued into SYSTEM. It keeps MAIN idle and Utility idle.
 
-Literature remains the 09:32 Homeostasis population/source reduction update; it adds no reason to reopen the completed Assembly SYSTEM object or rescue the rejected Assembly-feedback mechanism object.
+**Literature** generation `LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B` strengthens the ordinary reduction ladder: bounded prototype memory with pruning/replacement and stability-plasticity/category recruitment are established system mechanisms; genuine pattern completion requires a causal recurrent/top-down/feedback consequence rather than post-field recognition/readout alone. This supports both the prior Assembly-feedback rejection and the present nearest-neighbor+lookup reduction. Literature does not create scientific evidence or a PRE_FORMAL path.
 
-Independent Audit remains H5 `ROBUST_SO_FAR` for the exact registered aggregate algorithmic-work claim only. The all-edge eligibility-maintenance bottleneck remains architecture information, not a general no-go theorem and not a rescue rationale. H5 remains consumed/closed.
+**Independent Audit** remains legacy-generation H5 `ROBUST_SO_FAR`: the canonical H5 FAIL is robust for the exact registered aggregate algorithmic-work claim and exact implementation/counter vocabulary only. It is not a general no-go theorem for event routing, lazy execution, wall-clock, memory or energy.
 
-Repository Steward remains governance advisory only. Fresh remote state still has five annotated evidence tags, zero tag-based formal/sealed/freeze refs, zero repository rulesets, Issue #139 open, and PR #148/#149 open/unmerged/mergeable. None changes scientific authority.
+**Methodology Calibration** generation `METHCAL-20260920T122251+0900-R12-7C4D91A2` is `WELL_CALIBRATED`. Funnel-v2.1 current-object ceilings, fresh-successor semantics, eligibility-vs-readiness separation, multidimensional HOLD, MAIN MECHANISM priority and theory-backward quality floor should be kept. The first real `preformal_eligible=true` / `READY -> PRE_FORMAL` transition remains untested.
 
-## Theory-backward supply
+**Repository Steward** remains governance advisory only. Rulesets remain 0; Issue #139 remains open; PR #148/#149 remain open, unmerged and mergeable. This is not a science blocker.
 
-The immediately prior SYSTEM-heavy baseline motivated the new supply rule. The latest SUB choice is a genuine `THEORY_BACKWARD_MECHANISM_DISCOVERY`: it fixed a causal feedback question and a falsifier before execution rather than renaming an API issue. Its negative result still counts as a healthy mechanism-supply attempt.
-
-Current rolling share is **1/3** and compliant. The next SUB selection may be SYSTEM or MECHANISM if it is safe, coherent, independent, and nonduplicative; prefer MECHANISM when comparably informative. Do not manufacture a mechanism target. If a future rolling window would otherwise violate the supply rule and no coherent target exists, persist `NO_COHERENT_MECHANISM_TARGET` rather than game the label.
+**Utility** is idle. No new Utility request is warranted.
 
 ## MAIN / SUB allocation
 
-MAIN has **no scientific object** this generation. This is intentional. There is no comparably executable/informative MECHANISM candidate, and no remaining SYSTEM question with enough independent information value to justify queue filling after Assembly lifecycle closure.
+`main_lane = LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`
 
-SUB may select at most one fresh bounded Discovery target under the existing integrity floor. Candidate typing must occur prospectively:
-- a `MECHANISM` target needs a coherent mechanism-level claim, falsifier, and ordinary-reduction question before execution;
-- otherwise it is `SYSTEM`;
-- Discovery stays `NON_EVIDENTIARY`;
-- no outcome-responsive retuning, no consumed-line rescue, and no FORMAL surfaces.
+MAIN remains scientifically idle. There is no coherent central executable MECHANISM object and no integrity-protecting SYSTEM object with enough independent information value to justify filling MAIN. No SYSTEM priority exception is in use.
 
-## Top 3 / exact GO-STOP
+`sub_lane = BOUNDED_SECONDARY_DISCOVERY_WITH_THEORY_BACKWARD_ACCOUNTING`
 
-1. **SUB bounded Discovery candidate supply** — candidate-specific ceiling (`MECHANISM` preferred when coherent; otherwise `SYSTEM`) — `HIGH / NEAR_IF_TARGET_EXISTS` — **GO_DISCOVERY_ONLY_WITH_PROSPECTIVE_TYPING**.
-2. **MAIN remain idle and immediately review the next genuinely central candidate** — MECHANISM preferred — `HIGH opportunity-cost control / WAIT` — **STOP_NO_CURRENT_MAIN_OBJECT**.
-3. **H7 responsibility family** — `MECHANISM` — `VERY_HIGH_IF_NATIVE_OBJECT_APPEARS / FAR` — **STOP_UNTIL_NATIVE_OBJECT**.
+`sub_fallback = NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON`
 
-#1 GO only if the target is safe, nonduplicative, development/synthetic/read-only; its question, claim ceiling, mechanism falsifier/reduction logic where applicable, bounded cycle, and stop condition are fixed before outcome visibility. STOP/no-op if no coherent target exists; if the target merely renames an API/config/reproducibility question as MECHANISM; if outcome knowledge would be needed to redesign claim ceiling/comparator/metric/threshold/support/model/identity; or if official TEST, consumed raw, formal scoring, STARTED, preserve/evidence mutation, or scheduler changes would be required.
+SUB may select at most one fresh safe nonduplicative synthetic/development/read-only Discovery object. The theory-backward rolling share is already 2/3, so the next selection should maximize information value rather than manufacture another MECHANISM label. Any MECHANISM selection still requires a coherent prospectively fixed mechanism-level falsifier and ordinary-reduction question.
+
+## Top 3 / GO-STOP
+
+1. **SUB fresh bounded Discovery supply** — claim ceiling prospectively `MECHANISM` or `SYSTEM` per object; `HIGH_IF_COHERENT / NEAR`. **GO: `GO_DISCOVERY_ONLY_WITH_PROSPECTIVE_TYPING`.**
+2. **MAIN intentional scientific idle** — no current claim ceiling/object; `HIGH_OPPORTUNITY_COST_PROTECTION / NOW`. `STOP_NO_CURRENT_MAIN_OBJECT`.
+3. **H7 native responsibility-sensitive mechanism watch** — `MECHANISM`; `VERY_HIGH_IF_NATIVE_OBJECT_APPEARS / FAR`. `STOP_UNTIL_NATIVE_OBJECT`.
+
+For #1, GO only if the question is safe/nonduplicative, uses synthetic/development/read-only input, and fixes the question, claim ceiling, cycle budget, reduction question and stop condition before outcomes. STOP if an API/config SYSTEM question is merely relabeled MECHANISM, outcome knowledge is required to redesign the ceiling/comparator/metric/threshold/support rule/runtime/model/identity/readiness, Formal or consumed surfaces would be needed, or no coherent bounded target exists.
 
 ## Prospective contingency tree
 
-- `FRESH_COHERENT_MECHANISM_OBJECT` → fresh Analyst review; if safely executable/informative, prioritize it over SYSTEM.
-- `FRESH_SYSTEM_OBJECT_PROTECTING_TESTBED_OR_EVIDENCE` → fresh Analyst review; log a prospective SYSTEM priority exception only if a comparable executable MECHANISM object also exists.
-- `NO_FRESH_COHERENT_MAIN_OBJECT` → MAIN no-op.
-- `SUB_SAFE_COHERENT_TARGET` → one prospectively bound Discovery cycle.
-- `SUB_NO_COHERENT_TARGET` → no-op; use `NO_COHERENT_MECHANISM_TARGET` only when theory-backward accounting requires an explicit exception.
-- `OUTCOME_REQUIRES_REDESIGN` → STOP for fresh Analyst review.
-- FORMAL → `UNARMED_NO_FORMAL_OBJECT`.
+- fresh coherent MECHANISM Discovery object -> one bounded NON_EVIDENTIARY cycle only -> if not ordinarily reduced and development-readiness becomes assessable, STOP for fresh Analyst review before PRE_FORMAL.
+- fresh high-value SYSTEM Discovery object -> lower-funnel characterization allowed -> any MAIN Architecture allocation requires fresh Analyst review; if a comparable executable MECHANISM object exists, write a prospective `system_priority_exception` before execution.
+- matched ordinary reduction reproduces the proposed mechanism -> `REJECT`, `TERMINAL_FOR_CURRENT_OBJECT`, no rescue cycle.
+- no safe nonduplicative Discovery target -> SUB no-op; if theory-backward supply cannot be met coherently, persist `NO_COHERENT_MECHANISM_TARGET` rather than manufacture work.
+- first genuine eligibility+READY case -> STOP for fresh Analyst authority; READY remains test-readiness, not scientific pre-success.
+- any FORMAL proposal -> STOP until a fresh one-way identity, STARTED, prospective TEST/scorer/preserve authority and complete binding exist.
 
-## Integrity / blockers
+## Integrity / consumed identities / blockers
 
-Consumed/no-retry identities remain unchanged: `c19-external-v2-official-v4`; C19-R1 revision-authority official-v1/v2; `c19-r2-fsa-state-tracker-official-v1`; `pd01-long-history-fading-memory-official-v1`; `ni01-no-ignition-selective-prediction-official-v1`; `h5-event-routing-work-reduction-official-v1`.
+Consumed/no-retry identities remain unchanged: `c19-external-v2-official-v4`, C19-R1 revision-authority official-v1/v2, `c19-r2-fsa-state-tracker-official-v1`, `pd01-long-history-fading-memory-official-v1`, `ni01-no-ignition-selective-prediction-official-v1`, `h5-event-routing-work-reduction-official-v1`.
 
-Real blockers:
-- no viable executable MECHANISM candidate exists;
-- H7 lacks a native executable mechanism, supported reachability, comparator, and frozen falsifier;
-- no active SYSTEM question has enough independent information value to justify MAIN queue filling;
-- PRE_FORMAL eligible=0 and READY=0;
-- FORMAL has no fresh one-way object/authority.
+Real blockers are: no coherent executable central MECHANISM object; no native H7 responsibility mechanism; PRE_FORMAL eligible=0; PRE_FORMAL READY=0; no fresh FORMAL one-way authority; and the fresh Assembly partial-completion current object has been reduced to the matched fixed-prototype nearest-neighbor plus identical lookup comparator.
 
-No Utility request was created. There is no bounded orphan task that should bypass MAIN/SUB ownership.
+## Generation / freshness
 
-## Generation freshness
+`generation_id = EVA-20260920T125840+0900-R13-5D7A2C91`.
 
-Input generations consumed:
-- Control: `LEGACY_GENERATION_UNKNOWN` @ `b35068cbee426c99c3cc1f6dd23053778a2bd88a`
-- MAIN: `MAIN-20260920T114602+0900-RELAY-ASSEMBLY-CI-COMPLETE` @ `4f6eb1c5fa78c4f220489f56253e78f09c31d1f1`
-- SUB: `SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4` @ `03c8981d86ce0086cf5a01798a80e8275e58b711`
-- Literature: `LEGACY_GENERATION_UNKNOWN` @ `f399e9d14ef6d491135d19161b8c1d7986b94e5b`
+Consumed generations:
+- Control: `CTRL-20260920T125000+0900-R13-9C4F2B71` @ `2aa866e406e5a3c7549c6d31d512e33626026dee`
+- MAIN: `MAIN-20260920T121227+0900-PRIMARY-FUNNEL21-HOLD-7C41A2D9` @ `0d1371bee14b95e126cef203f516c0033d538363`
+- SUB: `SUB-20260920T124445+0900-THEORY-PARTIAL-4E8A1C73` @ `4662db7e897c0ada02cf28e8fc2851d1ea6ca0bf`
+- Literature: `LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B` @ `639ceaca54150a3f82796c241c8129d821b55fe1`
 - Independent Audit: `LEGACY_GENERATION_UNKNOWN` @ `d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56`
-- Methodology: `METHCAL-20260920T112723+0900-R11-E3968ACE` @ `8e96c0a87022687e7c1aabb474538fdf55a8c835`
+- Methodology: `METHCAL-20260920T122251+0900-R12-7C4D91A2` @ `05d80534a274a7ae8d75cf9fcf7009f85de141fc`
 - Utility: `utility-state-20260920T1027JST-lifecycle-bootstrap` @ `d4d0f75f1a57df1298e49e67448158ab12a2754f`
 - Repository Steward: `LEGACY_GENERATION_UNKNOWN` @ `e53df976b98d56b8e37a5cbfc20f1aeb84caadeb`
-- Previous Evidence Analyst: `EVA-20260920T105721+0900-R11-4B7D91C2` @ `6617b28dd983a4ada1ebb0622bada869ff17b19e`
+- superseded Analyst: `EVA-20260920T115704+0900-R12-A6B8DE50` @ `dcaa02fc25506ff4e8b14d7540b6c754a8a6da98`
 
 ## Persistence
 
-Write authority is restricted to:
-- `analysis/orchestrator/latest.md`
-- `analysis/orchestrator/state.json`
-- append-only `analysis/orchestrator/history/2026-09-20/1157.md`
-
-No scientific experiment/workflow dispatch, one-way identity consumption, research PR merge, immutable evidence/control/preserve mutation, force-push, or scheduler-definition mutation is authorized.
+Write authority is limited to `analysis/orchestrator/latest.md`, `analysis/orchestrator/state.json`, and append-only `analysis/orchestrator/history/2026-09-20/1258.md` on `ops/evidence-analyst-handoff`. No Utility request is created. No scientific workflow, experiment, one-way identity, PR merge, immutable evidence mutation or scheduler mutation is authorized or performed by this Analyst generation.
