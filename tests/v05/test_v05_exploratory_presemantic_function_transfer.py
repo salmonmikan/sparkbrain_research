@@ -1,11 +1,11 @@
-from __future__ import annotations
-
 """EXPLORATORY / NON_EVIDENTIARY.
 
 Bounded SUB Discovery probe for CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01.
 The fixed contract lives in
 analysis/exploratory/v05_presemantic_function_transfer/PROSPECTIVE.md.
 """
+
+from __future__ import annotations
 
 from sparkbrain.v05 import (
     ActivityPattern,
