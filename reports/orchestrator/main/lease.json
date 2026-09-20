@@ -11,9 +11,10 @@
     "sub_observed_for_collision": "SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-21T01:12:33+09:00",
   "heartbeat_at": "2026-09-21T01:12:33+09:00",
+  "completed_at": "2026-09-21T01:12:33+09:00",
   "analyst_generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
   "analyst_commit": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
   "analyst_branch_tip_observed": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
@@ -38,17 +39,18 @@
     "reason_detail": "No comparably executable/informative MECHANISM object exists and this SYSTEM object directly protects reproducibility/evidence interpretation.",
     "compared_mechanism_candidate_ids": []
   },
+  "dimension_preservation_note": "Analyst-assigned hold/terminal/queue dimensions remain unchanged pending fresh Analyst canonicalization. MAIN records TIMEBASE_CONTRACT_AMBIGUOUS as the prospectively mapped architecture terminal observation without inventing new HOLD dimensions.",
   "freshness_reconciliation": {
-    "previous_blocker": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
-    "resolved_by_analyst_generation": "EVA-20260921T005854+0900-R23-9C4E71A2",
-    "consumed_sub_generation": "SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
-    "scientific_execution_authorized": true,
-    "authorized_scope": "STATIC_READ_ONLY_ARCHITECTURE_ONLY"
+    "controlling_analyst_still_current_at_finalization": true,
+    "controlling_analyst_commit": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
+    "authoritative_main_still_current_at_finalization": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "material_supersession_during_run": false,
+    "scientific_execution_scope": "STATIC_READ_ONLY_ARCHITECTURE_ONLY"
   },
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "STATIC_ARCHITECTURE_INSPECTION_SOURCE_DOCS_TESTS_CALLSITES",
+  "active_step": "STOP_AFTER_PROSPECTIVELY_MAPPED_TIMEBASE_CONTRACT_AMBIGUOUS",
   "workflow_run_id": null,
   "workflow_head": null,
   "workflow_status": null,
@@ -62,9 +64,27 @@
     "active_identity_collision": false,
     "sub_active_main_frontier_collision": false
   },
-  "evidentiary_status": "IN_PROGRESS_NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_STATIC_ONLY",
-  "stop_reason": null,
-  "expected_next_action": "Inspect exact stable-main plasticity.py, brain.py, relevant docs/tests/callsites under the R23 prospective terminal tree; do not dispatch dynamic diagnostics or workflows.",
+  "observations": {
+    "mapped_terminal": "TIMEBASE_CONTRACT_AMBIGUOUS",
+    "evidentiary_status": "NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_OBSERVATION",
+    "implemented_decay_clock": "one eligibility_decay multiplication per V05PlasticityController.apply() call; IntegratedV05Brain calls apply once per learn_field=true process_episode and skips it for learn_field=false",
+    "elapsed_time_decay_contract_found": false,
+    "explicit_episode_or_apply_count_contract_found": false,
+    "dynamic_partition_test_performed": false
+  },
+  "evidentiary_status": "FORMAL=0; PRE_FORMAL=0; MECHANISM_ARCHITECTURE=0; SYSTEM_ARCHITECTURE=1_NON_EVIDENTIARY; NEW_IDENTITY_CONSUMPTION=0",
+  "stop_reason": "R23_STATIC_SYSTEM_TERMINAL_TIMEBASE_CONTRACT_AMBIGUOUS_STOP_FRESH_ANALYST_REVIEW",
+  "expected_next_action": "Stop this current object. Fresh Evidence Analyst review must canonicalize TIMEBASE_CONTRACT_AMBIGUOUS and its Funnel dimensions. Any dynamic partition/timebase diagnostic requires a fresh successor candidate ID and fresh prospective Analyst authority.",
   "utility_request_created": null,
+  "persistence": {
+    "lease_acquire_commit": "fcbb78c2838da4fe0a5a885e65ad19bdccea2a96",
+    "state_commit": "9baedf3ccdb3bdc02d009786bd02f83b87e9bc1d",
+    "latest_commit": "6acbe89ccbde9a942f278fa853a909399bd8ff00",
+    "history_commit": "476df21a4e724dc84e21c56c3979b5f7865204cc",
+    "history_path": "reports/orchestrator/history/2026-09-21/0112-main.md",
+    "final_lease_commit": "THIS_COMMIT",
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
+    "result": "COMPLETED_STATIC_SYSTEM_ARCHITECTURE_TERMINAL_PENDING_FRESH_ANALYST"
+  },
   "owner": "main"
 }
