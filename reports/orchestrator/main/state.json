@@ -1,81 +1,108 @@
 {
-  "timestamp": "2026-09-20T08:48:00+09:00",
+  "timestamp": "2026-09-20T09:20:03+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "analyst_commit": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
+  "execution_mode": "PRIMARY",
+  "analyst_commit": "df12559698c0f6bc0165c550a55c62f7287a86bd",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_COMPLETED_STOPPED_FOR_ANALYST_REVIEW",
+  "current_lane": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_VALID_STATIC_TERMINAL_WAITING_EXACT_HEAD_CI",
   "candidate_question": {
-    "id": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
-    "question": "Is learn_outcome explicitly immediate-only, explicitly delayed/interleaved, or publicly unspecified, given a single mutable pending credit state?",
+    "id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
+    "question": "Does public v0.5 homeostatic liveness/stability intentionally represent whole-field activity including receptors, or is reservoir/internal-computation liveness expected to be separately represented?",
     "exploration_cycle_count": {
       "DISCOVERY": 1,
       "ARCHITECTURE_STUDY": 1
     },
-    "mapped_outcome": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
+    "mapped_outcome": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
-    "research_branch": "research/main-v05-delayed-outcome-caller-contract-arch-study-20260920",
-    "research_head": "c79c5434222a6d018931dc1752e7f0074c23854b",
-    "prospective_contract_commit": "25cdd7db1d5a546b38810c40ffdc75085c8d196a",
-    "raw_facts_commit": "d226f5993b69f0d0c98c1e1cd7b049e2ba3ded49",
+    "evidence_analyst_handoff": "df12559698c0f6bc0165c550a55c62f7287a86bd",
+    "research_branch": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
+    "research_head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
+    "prospective_contract_commit": "4930d894af5b0880d9e443f7582db3a96c206a4e",
+    "raw_facts_commit": "8f5d7e23b6896d9352daa77f885a4a1cc52ae820",
     "source_blobs": {
+      "src/sparkbrain/v05/homeostasis.py": "67b87a4b4c91a7dba41670087a2d1803bb6e3e6c",
       "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+      "src/sparkbrain/v05/contracts.py": "048b93cddb16dbe9276a0e2c0f972406291c1cb2",
       "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
-      "tests/v05/test_v05_brain.py": "6a81994ac82a3f0660585ef0d95495aaaa336629",
-      "examples/v05_assembly_demo.py": "e4bab1adf0bfc66db3d6c72ba8d934d151cbeaf1"
+      "src/sparkbrain/v05/__init__.py": "bb45b132bbd4d8ad203911ad46eafffdf63820c4",
+      "tests/v05/test_v05_homeostasis_plasticity.py": "ba1763c8ceb441cc91ce7510a313548acbb29db9",
+      "docs/THEORY_SPEC_v0.5.md": "c1d3dbd041476428a103324b58616d3cc6534885",
+      "docs/V05_MASTER_PLAN.md": "0812069c4e19d8a25364ff8476870b770cee15c9",
+      "docs/V05_EXPERIMENT_PROTOCOL.md": "fce01cd448ad00e1d420e3cb73f6d0f32768df5d"
     },
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "legacy_freeze_branch_count": 13,
     "active_formal_identity": null,
     "active_started_ref": null,
     "active_preserve_ref": null,
     "active_evidence_ref": null
   },
-  "lease_collision_reconciliation": {
-    "primary_lease_observed_status": "WAITING_EXTERNAL",
-    "primary_heartbeat_observed": "2026-09-20T08:21:00+09:00",
-    "fresh_primary_running_collision": false,
-    "relay_lease_acquired_commit": "29744b31086eaff2f003f21bf8e6c60a333843cb",
-    "exact_research_head_rechecked": true,
-    "analyst_tip_rechecked": true,
-    "sub_state_rechecked_for_collision": true,
-    "sub_collision": false,
-    "sub_independent_target": "HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1"
+  "fast_path_reconciliation": {
+    "status": "FAST_PATH_CONSISTENT_NO_FULL_RECONCILIATION",
+    "main_ref_rechecked": true,
+    "analyst_tip_rechecked_after_contract": true,
+    "evidence_formal_sealed_freeze_namespaces_rechecked": true,
+    "legacy_freeze_control_preserve_refs_rechecked": true,
+    "main_latest_state_lease_rechecked": true,
+    "sub_latest_rechecked": true,
+    "fresh_same_object_collision": false,
+    "allocation_unclear": false,
+    "integrity_anomaly": false
+  },
+  "branches_prs_advanced": {
+    "research_branch_created": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
+    "research_commits": [
+      "4930d894af5b0880d9e443f7582db3a96c206a4e",
+      "8f5d7e23b6896d9352daa77f885a4a1cc52ae820",
+      "81af6ac56c31d169b591bc30854d0efa9d0bac8c"
+    ],
+    "research_pr_created_or_merged": false,
+    "main_modified": false
   },
   "workflow_check_result": {
     "ordinary_ci": {
-      "run_id": 35475862604,
-      "head_branch": "research/main-v05-delayed-outcome-caller-contract-arch-study-20260920",
-      "head": "c79c5434222a6d018931dc1752e7f0074c23854b",
-      "status": "completed",
-      "conclusion": "success"
+      "run_id": 35478448679,
+      "head_branch": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
+      "head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
+      "status": "in_progress",
+      "conclusion": null,
+      "last_observed_jobs": [
+        "test (3.11): in_progress",
+        "test (3.13): in_progress"
+      ],
+      "role": "repository_integrity_only"
     },
     "outcome_bearing_workflow": null,
     "dynamic_probe_executed": false,
-    "characterization_mode": "STATIC_READ_ONLY_REPOSITORY_CALLSITE_AND_SOURCE_CONTRACT"
+    "characterization_mode": "STATIC_READ_ONLY_SOURCE_DOCS_TESTS_CALLSITE_CONTRACT"
   },
   "observations_results": {
     "new_formal_scientific_evidence": false,
     "new_pre_formal_development_evidence": false,
-    "new_scientific_information_from_relay": false,
-    "existing_non_evidentiary_architecture_observation": true,
-    "mapped_outcome": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
+    "new_non_evidentiary_architecture_observation": true,
+    "mapped_outcome": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
     "raw_facts": {
-      "learn_outcome_occurrences_on_bound_surface": 4,
-      "implementation_definition_occurrences": 1,
-      "caller_occurrences": 3,
-      "all_observed_callers_after_outcome_known": true,
-      "supported_callsite_with_intervening_process_episode": false,
-      "process_episode_calls_learn_outcome": false,
-      "process_episode_overwrites_pending_activation": true,
-      "process_episode_overwrites_pending_action": true,
-      "learn_outcome_has_episode_or_decision_identity": false,
-      "explicit_immediate_only_public_contract": false,
-      "explicit_delayed_or_interleaved_support": false
+      "implementation_counts_all_supplied_spikes_without_receptor_filter": true,
+      "implementation_updates_rate_ema_and_threshold_for_all_field_units": true,
+      "dead_streak_resets_on_any_supplied_spike": true,
+      "active_unit_fraction_denominator_is_all_field_units": true,
+      "brain_passes_unfiltered_base_result_spikes_to_homeostasis": true,
+      "assembly_extraction_separately_excludes_receptor_ids": true,
+      "homeostasis_test_explicitly_adapts_receptor_unit_threshold": true,
+      "explicit_whole_field_liveness_population_contract_found": false,
+      "explicit_reservoir_only_liveness_population_contract_found": false,
+      "material_contract_contradiction_found": false,
+      "evaluation_consumes_dead": true,
+      "evaluation_aggregates_dead_rate": true,
+      "supported_active_unit_fraction_consumer_found": false
     },
-    "interpretation": "Current bound usage is immediate and coherent, but delayed/interleaved behavior is publicly unspecified. Mutable pending credit state plus no feedback identity is an API-contract ambiguity, not a demonstrated dynamic failure. Exact-head CI success adds repository-integrity confirmation only."
+    "interpretation": "The implementation is unambiguously all-field/receptor-inclusive for Homeostasis liveness accounting and active-unit fraction, and receptor units are explicitly part of threshold homeostasis in the test surface. The supported public docs/contracts/tests do not explicitly define whether dead/dead-field and active_unit_fraction represent whole-field versus internal-reservoir liveness. Evaluation consumes dead as dead_rate. This is an API/observability population-semantics ambiguity, not a new stability mechanism or computational-principle result."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -87,10 +114,12 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "integrity_state": {
-    "status": "VALID_NON_EVIDENTIARY_STATIC_TERMINAL_EXACT_HEAD_CI_SUCCESS_COMPLETED",
+    "status": "VALID_NON_EVIDENTIARY_STATIC_TERMINAL_WAITING_EXACT_HEAD_CI",
     "prospective_binding_before_interpretation": true,
     "raw_facts_persisted_before_terminal_mapping": true,
-    "source_blob_verification": true,
+    "terminal_mapping_applied_once": true,
+    "all_bound_source_blobs_match": true,
+    "fact_type_appropriate_structural_validation_used": true,
     "production_source_modified": false,
     "official_test_accessed": false,
     "formal_identity_created": false,
@@ -99,31 +128,37 @@
     "consumed_identity_mutated": false,
     "outcome_responsive_redesign": false,
     "same_object_cycle2_started": false,
-    "sub_reserved_work_mutated": false
+    "sub_reserved_work_mutated": false,
+    "utility_request_created": false
   },
+  "critical_path_fixes": [],
   "critical_path_actions_performed": [
-    "reconciled stale WAITING_EXTERNAL PRIMARY lease against fresh remote state",
-    "re-fetched exact active research branch/head and fresh Evidence Analyst tip",
-    "re-fetched SUB state for collision avoidance only",
-    "collected ordinary CI 35475862604",
-    "verified completed/success on exact head c79c5434222a6d018931dc1752e7f0074c23854b",
-    "persisted terminal completion without altering scientific mapping"
+    "acquired PRIMARY MAIN lease before mutation",
+    "created fresh research branch from exact stable main",
+    "prospectively bound exact source/docs/tests/callsite surface and fixed terminal mapping",
+    "inventoried decision-relevant Homeostasis, StabilitySnapshot, dead/dead_rate, active_unit_fraction, tests and docs",
+    "persisted raw facts before interpretation",
+    "applied the pre-bound terminal mapping once",
+    "triggered and bound ordinary CI 35478448679 to exact final research head"
   ],
   "outcome_contingency_consumed": {
-    "terminal": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
-    "required_action": "STOP_HOLD_API_CONTRACT_AMBIGUOUS_NO_DYNAMIC_CONTINUATION",
+    "terminal": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
+    "required_action": "STOP_HOLD_API_OBSERVABILITY_AMBIGUITY",
     "terminal_mapping_applied_once": true,
-    "relay_changed_terminal": false
+    "dynamic_continuation_authorized": false
   },
+  "work_left_for_sub": "Independent bounded Discovery only under current Evidence Analyst boundary. Do not absorb this Homeostasis successor path or the queued Assembly mature-capacity Architecture object.",
   "utility_request_created": null,
-  "stop_reason": "VALID_STATIC_TERMINAL_AND_EXACT_HEAD_CI_SUCCESS_STOP_FOR_FRESH_ANALYST_REVIEW",
-  "next_MAIN_action": "Wait for a fresh Evidence Analyst handoff. Do not run dynamic interleaving, semantic redesign, cycle 2, PRE_FORMAL, or FORMAL on this object without new prospective authority.",
+  "stop_reason": "VALID_STATIC_TERMINAL_MAPPED_WAITING_EXACT_HEAD_ORDINARY_CI",
+  "next_MAIN_action": "Collect only ordinary CI 35478448679 on exact head 81af6ac56c31d169b591bc30854d0efa9d0bac8c. If success, set lease COMPLETED and STOP for fresh Evidence Analyst review. No dynamic receptor-aware comparator, population-policy change, cycle 2, PRE_FORMAL, or FORMAL continuation without fresh prospective authority.",
   "persistence_result": {
-    "latest_md_commit": "e1c2c024ab826e75eafdb0864e6b956df78802c9",
-    "history_path": "reports/orchestrator/history/2026-09-20/0848-main.md",
-    "history_commit": "9060b7a10560c5b2432937b7a1e0bb0673d1b014",
+    "lease_acquire_commit": "25bfbdd79416e280e0a75807d94884a30beaf8d1",
+    "latest_md_commit": "05532f468862faa8c4c0308cc20d510bad4333fd",
+    "history_path": "reports/orchestrator/history/2026-09-20/0919-main.md",
+    "history_commit": "007da9ddb68e5505bc329e9d42dba2f6c0dae255",
+    "lease_waiting_external_commit": "d02b44cbe6b9de15ca5c1ce03fa2152e1aaca964",
     "state_json": "this update",
-    "final_lease_status": "COMPLETED",
+    "final_lease_status": "WAITING_EXTERNAL",
     "force_push_used": false
   }
 }
