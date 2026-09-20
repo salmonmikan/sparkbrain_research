@@ -11,10 +11,10 @@
     "sub_observed_for_collision": "SUB-20260920T144110+0900-SYSTEM-EVALORDER-6F2C91A8"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-20T15:14:32+09:00",
   "heartbeat_at": "2026-09-20T15:14:32+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-20T15:14:32+09:00",
   "analyst_generation_id": "EVA-20260920T150234+0900-R15-8F3C1A72",
   "analyst_commit": "095caeb07c23094bf9fc68c8e7022f88d45baa74",
   "analyst_branch_tip_observed": "ad8290dfab6d79be984f960d48dcf34a8213aefb",
@@ -38,9 +38,9 @@
   },
   "active_branch": null,
   "active_identity": null,
-  "active_step": "CONTROL_PLANE_RECONCILIATION_NO_CURRENT_SCIENTIFIC_OBJECT",
+  "active_step": "FUNNEL_V2_1_EXPLICIT_MAIN_HOLD_NO_CURRENT_SCIENTIFIC_OBJECT_COMPLETED",
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "stop_reason": null,
-  "expected_next_action": "Verify current refs and persist MAIN no-op completion unless a materially newer Analyst generation allocates a fresh object.",
+  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
+  "expected_next_action": "Remain scientifically idle. Wait for a fresh Analyst generation allocating a fresh coherent executable MECHANISM object or a high-value SYSTEM object; then re-read allocation, claim ceiling/readiness/hold dimensions/system priority exception and exact refs before any scientific mutation or workflow dispatch.",
   "owner": "main"
 }
