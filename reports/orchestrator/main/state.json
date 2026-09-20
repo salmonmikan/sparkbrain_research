@@ -1,23 +1,23 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260920T221704+0900-PRIMARY-FUNNEL21-HOLD-R21-9C2A7E41",
-  "produced_at": "2026-09-20T22:17:04+09:00",
-  "producer_run_id": "sparkbrain-main-primary-20260920T221704JST-R21-HOLD",
+  "generation_id": "MAIN-20260920T231646+0900-PRIMARY-FUNNEL21-FAILCLOSED-R21-6E4A2C91",
+  "produced_at": "2026-09-20T23:16:46+09:00",
+  "producer_run_id": "sparkbrain-main-primary-20260920T231646JST-R21-FAILCLOSED",
   "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_RECONCILIATION_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "MAIN-20260920T215000+0900-RELAY-FUNNEL21-FAILCLOSED-R20-D13B7A4C",
+  "supersedes_generation_id": "MAIN-20260920T221704+0900-PRIMARY-FUNNEL21-HOLD-R21-9C2A7E41",
   "input_generations": {
     "evidence_analyst": "EVA-20260920T215718+0900-R21-4F8C2A71",
-    "main": "MAIN-20260920T215000+0900-RELAY-FUNNEL21-FAILCLOSED-R20-D13B7A4C",
-    "sub_observed_for_collision": "SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17"
+    "main": "MAIN-20260920T221704+0900-PRIMARY-FUNNEL21-HOLD-R21-9C2A7E41",
+    "sub_observed_for_collision": "SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2"
   },
   "consumed_analyst_generation_id": "EVA-20260920T215718+0900-R21-4F8C2A71",
   "consumed_analyst_commit": "f85692e6e207ae622282116779b559108085ede8",
-  "consumed_main_generation_id": "MAIN-20260920T215000+0900-RELAY-FUNNEL21-FAILCLOSED-R20-D13B7A4C",
+  "consumed_main_generation_id": "MAIN-20260920T221704+0900-PRIMARY-FUNNEL21-HOLD-R21-9C2A7E41",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
+  "status": "BLOCKED",
   "research_layer": null,
-  "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
+  "main_lane": "FAIL_CLOSED_PENDING_FRESH_ANALYST_AFTER_SUB_GENERATION_ADVANCE",
   "candidate_id": null,
   "candidate_question": null,
   "exploration_cycle_count": null,
@@ -32,45 +32,54 @@
   "analyst_system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No SYSTEM object allocated to MAIN; no comparable executable MECHANISM exists.",
+    "reason_detail": "R21 allocates no SYSTEM object to MAIN; no priority exception may be invented for the unreviewed SUB proposal.",
     "compared_mechanism_candidate_ids": []
   },
   "freshness_reconciliation": {
-    "prior_fail_closed_blocker_resolved": true,
-    "resolved_by_analyst_generation": "EVA-20260920T215718+0900-R21-4F8C2A71",
-    "resolved_sub_generation": "SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17",
-    "resolved_candidate_id": "CAND-V05-ENDOGENOUS-PREDICTION-ERROR-MODULATION-01",
-    "resolved_canonical_disposition": {
-      "classification": "REJECT",
-      "claim_ceiling": "MECHANISM",
-      "preformal_eligible": false,
-      "preformal_readiness": {"status": "NOT_READY"},
+    "analyst_generation_still_current": "EVA-20260920T215718+0900-R21-4F8C2A71",
+    "analyst_commit_still_current": "f85692e6e207ae622282116779b559108085ede8",
+    "analyst_last_consumed_sub_generation": "SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17",
+    "newer_unreviewed_sub_generation_observed": true,
+    "material_supersession_after_r21": true,
+    "unreviewed_sub_generation": "SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2",
+    "unreviewed_candidate_id": "CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01",
+    "unreviewed_candidate_status": "SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL",
+    "sub_proposed_disposition": "REJECT",
+    "sub_proposed_claim_ceiling": "MECHANISM",
+    "sub_proposed_preformal_eligible": false,
+    "sub_proposed_preformal_readiness": {"status": "NOT_READY"},
+    "sub_proposed_hold_dimensions": {
       "hold_class": null,
       "hold_reason": null,
       "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-      "queue_state": "NOT_QUEUED",
-      "terminal": "CALLER_SUPPLIED_PREDICTION_ERROR_REDUCTION"
+      "queue_state": "NOT_QUEUED"
     },
-    "fresh_sub_research_head": "ae88a7bd5b6497b0b104eb87ffc55d07877865fa",
-    "fresh_sub_exact_head_ci": 35511350033,
-    "fresh_sub_exact_head_ci_conclusion": "success",
-    "newer_unreviewed_sub_generation_observed": false,
-    "material_supersession_after_r21": false,
-    "scientific_execution_authorized": false
+    "sub_proposed_terminal": "ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION",
+    "sub_research_branch": "research/exploratory-sub-eligibility-history-specificity-20260920",
+    "sub_prospective_contract_commit": "e466bd89cfd4ab80dc970173a183638af815fe8b",
+    "sub_outcome_bearing_commit": "bd071d9023058d01f58d6f7ddacf35e820de51b6",
+    "sub_research_head": "6ddcb7fec39dd017fbfe172885a994a98b503021",
+    "sub_final_exact_head_ci": 35514340688,
+    "sub_final_exact_head_ci_status": "completed",
+    "sub_final_exact_head_ci_conclusion": "success",
+    "scientific_execution_authorized": false,
+    "reconciliation_action": "FAIL_CLOSED_FOR_FRESH_ANALYST_CLASSIFICATION"
   },
   "research_layer_state": {
-    "DISCOVERY": {"state": "OPEN", "owner": "SUB", "status": "NON_EVIDENTIARY_SUPPLY"},
-    "ARCHITECTURE_STUDY": {"state": "EMPTY_HOLD", "owner": "MAIN", "active_mechanism_count": 0, "active_system_count": 0, "queued_mechanism_count": 0, "queued_system_count": 0},
-    "PRE_FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "preformal_eligible_count": 0, "preformal_ready_count": 0},
-    "FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "fresh_identity": null, "started": null, "test_authority": false, "scorer_authority": false, "preserve_authority": false}
+    "DISCOVERY": {"state": "OPEN", "owner": "SUB", "status": "NON_EVIDENTIARY_SUPPLY_WITH_NEW_UNREVIEWED_RESULT"},
+    "ARCHITECTURE_STUDY": {"state": "EMPTY_HOLD_PER_LAST_CANONICAL_ANALYST_R21", "owner": "MAIN", "active_mechanism_count": 0, "active_system_count": 0, "queued_mechanism_count": 0, "queued_system_count": 0},
+    "PRE_FORMAL": {"state": "EMPTY_HOLD_PER_LAST_CANONICAL_ANALYST_R21", "owner": "MAIN", "preformal_eligible_count": 0, "preformal_ready_count": 0},
+    "FORMAL": {"state": "EMPTY_HOLD_PER_LAST_CANONICAL_ANALYST_R21", "owner": "MAIN", "fresh_identity": null, "started": null, "test_authority": false, "scorer_authority": false, "preserve_authority": false}
   },
   "candidate_pool_summary": {
+    "canonical_source": "EVIDENCE_ANALYST_R21_ONLY_PENDING_REFRESH",
     "portfolio": {"MECHANISM": 9, "SYSTEM": 8},
     "active_count": 0,
     "nonterminal_hold_count": 1,
     "terminal_for_current_object_count": 16,
     "viable_executable_mechanism_count": 0,
     "current_main_object_count": 0,
+    "unreviewed_sub_candidate_excluded_from_canonical_counts": "CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01",
     "only_nonterminal_mechanism_hold": {
       "candidate_id": "CAND-H7-RESP-01",
       "classification": "HOLD",
@@ -80,45 +89,36 @@
       "hold_reason": ["NO_FRESH_NATIVE_OBJECT", "SUBOBJECTS_REDUCED", "COMPARATOR_AND_FALSIFIER_UNFIXED"],
       "terminal_state": "NONTERMINAL_HOLD",
       "queue_state": "NOT_QUEUED",
-      "preformal_readiness": {
-        "claim_type": "mechanism",
-        "supported_reachability": "UNESTABLISHED",
-        "functional_consequence": "ABSENT",
-        "ordinary_reductions_specified_or_controlled": ["reactivation-gated reward", "one-slot last action"],
-        "ordinary_reductions_unresolved": ["ordinary eligibility", "state-machine causality", "privilege"],
-        "matched_comparator_status": "NOT_READY",
-        "falsifier_fixed": false,
-        "status": "NOT_READY"
-      }
+      "preformal_readiness": {"status": "NOT_READY"}
     }
   },
   "funnel_metrics": {
+    "canonical_generation": "EVA-20260920T215718+0900-R21-4F8C2A71",
     "material_portfolio": {"MECHANISM": 9, "SYSTEM": 8},
     "terminal_states": {"ACTIVE": 0, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 16},
-    "classification_completeness": "17/17",
+    "classification_completeness": "17/17_CANONICAL_R21_PLUS_1_UNREVIEWED_SUB_PROPOSAL",
     "preformal_eligible_count": 0,
     "preformal_ready_count": 0,
     "viable_executable_mechanism_count": 0,
     "architecture_active": {"MECHANISM": 0, "SYSTEM": 0},
     "architecture_queued": {"MECHANISM": 0, "SYSTEM": 0},
-    "system_over_mechanism_exceptions_this_generation": 0,
-    "recent_discovery_dispositions": {"REJECT": 2, "PROMOTE_TO_ARCHITECTURE_STUDY": 1},
-    "rolling_autonomous_selection_window": ["SYSTEM", "MECHANISM", "MECHANISM"]
+    "system_over_mechanism_exceptions_this_generation": 0
   },
   "outcome_contingencies": [
-    "Exact ordinary-reduction or falsifier closure maps to REJECT / TERMINAL_FOR_CURRENT_OBJECT.",
+    "Do not canonically classify or execute the unreviewed SUB proposal until a fresh Evidence Analyst generation consumes it.",
     "Any redesign requires a fresh candidate ID and fresh Analyst authority.",
-    "If a fresh MECHANISM survives ordinary reductions and becomes development-ready, stop for fresh Analyst review before PRE_FORMAL.",
-    "If SYSTEM is ever allocated over a comparable executable MECHANISM, the Analyst must record system_priority_exception before execution.",
+    "PRE_FORMAL requires Analyst MECHANISM authority, preformal_eligible=true, and preformal_readiness.status=READY.",
+    "SYSTEM execution over a comparable executable MECHANISM requires a prospectively recorded system_priority_exception.",
     "FORMAL remains stopped until a fresh identity/STARTED/TEST/scorer/preserve one-way authority chain exists."
   ],
   "blocked_until": {
-    "main_science": "FRESH_ANALYST_ALLOCATION_OF_A_COHERENT_PROSPECTIVE_MAIN_OBJECT",
+    "main_science": "FRESH_EVIDENCE_ANALYST_GENERATION_EXPLICITLY_CONSUMES_AND_CLASSIFIES_SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2_AND_ALLOCATES_MAIN",
     "h7": "FRESH_NATIVE_RESPONSIBILITY_MECHANISM_WITH_FIXED_INTERVENTION_COMPARATOR_RESOURCE_CONTRACT_AND_FALSIFIER",
     "preformal": "ANALYST_MECHANISM_OBJECT_WITH_PREFORMAL_ELIGIBLE_TRUE_AND_PREFORMAL_READINESS_READY",
     "formal": "FRESH_ONE_WAY_IDENTITY_STARTED_TEST_SCORER_PRESERVE_AUTHORITY_CHAIN"
   },
   "do_not_touch": [
+    "CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01_UNTIL_ANALYST_CANONICALIZATION",
     "ALL_TERMINAL_CURRENT_OBJECTS_WITHOUT_FRESH_SUCCESSOR_IDS",
     "ALL_CONSUMED_FORMAL_IDENTITIES",
     "AUTHORITATIVE_EVIDENCE_AND_PRESERVE_CONTROL_REFS",
@@ -128,34 +128,36 @@
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_handoff": "f85692e6e207ae622282116779b559108085ede8",
-    "fresh_sub_research_head": "ae88a7bd5b6497b0b104eb87ffc55d07877865fa",
-    "fresh_sub_exact_head_ci": 35511350033,
-    "fresh_sub_exact_head_ci_conclusion": "success",
+    "unreviewed_sub_generation": "SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2",
+    "unreviewed_sub_research_head": "6ddcb7fec39dd017fbfe172885a994a98b503021",
+    "unreviewed_sub_exact_head_ci": 35514340688,
+    "unreviewed_sub_exact_head_ci_conclusion": "success",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "pr_148": "OPEN_UNMERGED_MERGEABLE_PER_ANALYST_R21",
-    "pr_149": "OPEN_UNMERGED_MERGEABLE_PER_ANALYST_R21"
+    "pr_148": "OPEN_UNMERGED_MERGEABLE",
+    "pr_149": "OPEN_UNMERGED_MERGEABLE"
   },
   "lease_collision_reconciliation": {
-    "prior_lease_status": "BLOCKED",
-    "prior_lease_execution_mode": "RELAY",
-    "prior_heartbeat_at": "2026-09-20T21:50:00+09:00",
+    "prior_lease_status": "COMPLETED",
+    "prior_lease_execution_mode": "PRIMARY",
+    "prior_heartbeat_at": "2026-09-20T22:17:04+09:00",
     "fresh_primary_running_collision": false,
     "prior_active_branch": null,
     "prior_active_identity": null,
-    "sub_active_main_frontier_collision": false
+    "sub_active_main_frontier_collision": false,
+    "sub_state_has_no_main_object_ownership": true
   },
   "fast_path_reconciliation": {
-    "status": "R21_FRESHNESS_BLOCKER_RESOLVED_INTENTIONAL_MAIN_IDLE",
+    "status": "FAIL_CLOSED_MATERIAL_ANALYST_DEPENDENCY_ADVANCE",
     "full_reconciliation_required": false,
     "ref_disagreement": false,
     "integrity_anomaly": false,
     "collision_anomaly": false,
-    "allocation_ambiguity": false
+    "allocation_ambiguity": true
   },
   "branches_prs_advanced": [],
   "workflows_experiments": {
@@ -164,15 +166,15 @@
     "formal_started_transitions": [],
     "preserve_actions": [],
     "scoring_actions": [],
-    "observed_external_sub_ci": {"run_id": 35511350033, "head": "ae88a7bd5b6497b0b104eb87ffc55d07877865fa", "status": "completed", "conclusion": "success"}
+    "observed_external_sub_ci": {"run_id": 35514340688, "head": "6ddcb7fec39dd017fbfe172885a994a98b503021", "status": "completed", "conclusion": "success"}
   },
   "observations_results": [
     {
-      "source": "EVIDENCE_ANALYST_CANONICALIZED_SUB_DISCOVERY",
-      "candidate_id": "CAND-V05-ENDOGENOUS-PREDICTION-ERROR-MODULATION-01",
-      "terminal": "CALLER_SUPPLIED_PREDICTION_ERROR_REDUCTION",
-      "summary": "Matched learned predictor states did not change receptor/lower-field response when caller prediction_error was fixed at zero; caller-supplied prediction_error positive control changed receptor emission.",
-      "evidentiary_status": "NON_EVIDENTIARY_DISCOVERY_NOT_MAIN_EXECUTION"
+      "source": "SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL",
+      "candidate_id": "CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01",
+      "proposed_terminal": "ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION",
+      "summary": "Two matched-current-activity edges with different stored eligibility histories received different native reward-modulated updates, but both eligibility values and weight deltas were exactly reproduced by the prospectively fixed ordinary per-edge decaying eligibility recurrence under a common reward scalar.",
+      "evidentiary_status": "NON_EVIDENTIARY_DISCOVERY_EXTERNAL_TO_MAIN_AND_UNREVIEWED_BY_ANALYST"
     }
   ],
   "evidentiary_status": {
@@ -182,18 +184,18 @@
     "new_system_architecture_observations": 0,
     "new_discovery_results_by_main": 0,
     "new_scientific_information_by_main": false,
-    "external_non_evidentiary_discovery_canonicalized_by_analyst": 1
+    "external_unreviewed_non_evidentiary_discovery_observed": 1
   },
   "ordinary_reductions": [
     {
-      "candidate_id": "CAND-V05-ENDOGENOUS-PREDICTION-ERROR-MODULATION-01",
-      "reduction": "CALLER_SUPPLIED_SIGNALPULSE_PREDICTION_ERROR_SCALAR",
-      "terminal": "CALLER_SUPPLIED_PREDICTION_ERROR_REDUCTION",
-      "status": "ANALYST_CANONICAL_REJECT_TERMINAL",
+      "candidate_id": "CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01",
+      "reduction": "PER_EDGE_DECAYING_ELIGIBILITY_TRACE_WITH_COMMON_REWARD_SCALAR",
+      "terminal": "ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION",
+      "status": "SUB_PROPOSED_PENDING_ANALYST_CANONICALIZATION",
       "evidentiary_status": "NON_EVIDENTIARY_DISCOVERY"
     }
   ],
-  "support_breadth": "NO_NEW_MAIN_SCIENTIFIC_OBJECT_EXECUTED; R21 ONLY CLOSES THE PRIOR UNREVIEWED SUB DEPENDENCY AND RETURNS MAIN TO INTENTIONAL IDLE",
+  "support_breadth": "NO_NEW_MAIN_SCIENTIFIC_OBJECT_EXECUTED; ONE UNREVIEWED SUB DEV-ONLY TWO-EDGE MATCHED-CURRENT-ACTIVITY DISCOVERY WAS OBSERVED AND FAIL-CLOSED",
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "C19-R1 revision-authority official-v1",
@@ -204,18 +206,18 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "new_identity_consumption": 0,
-  "integrity_state": "CLEAN_AUTHORITATIVE_REFS_OBSERVED; ANALYST_R21_RESOLVES_PRIOR_SUB_FRESHNESS_DEPENDENCY; NO_CURRENT_MAIN_OBJECT; NO_MAIN_SCIENTIFIC_MUTATION",
+  "integrity_state": "CLEAN_AUTHORITATIVE_REFS_OBSERVED; MAIN_STABLE; EVIDENCE_TAGS_5; FORMAL_SEALED_FREEZE_TAGS_0; SUB_EXACT_HEAD_CI_SUCCESS; MATERIAL_FRESHNESS_DEPENDENCY_ADVANCED_BEYOND_ANALYST_R21",
   "critical_path_fixes": [],
-  "contingency_consumed": "STOP_NO_CURRENT_MAIN_OBJECT",
-  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
-  "work_left_for_sub": "SUB retains independent bounded NON_EVIDENTIARY Discovery ownership; MAIN does not absorb it.",
+  "contingency_consumed": "FAIL_CLOSED_ON_MATERIAL_SUPERSEDING_SUB_GENERATION",
+  "stop_reason": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
+  "work_left_for_sub": "SUB retains independent bounded NON_EVIDENTIARY Discovery ownership; MAIN does not absorb the lane or canonically classify its new result.",
   "utility_request_created": null,
-  "next_main_action": "Consume a fresh Evidence Analyst generation. Execute only if it prospectively allocates a coherent FORMAL, PRE_FORMAL, or ARCHITECTURE_STUDY object with all Funnel-v2.1 fields and required authority; otherwise remain intentionally idle.",
+  "next_main_action": "Consume a fresh Evidence Analyst generation that explicitly reviews SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2. Re-read exact refs and Funnel-v2.1 allocation, and execute only prospectively authorized MAIN work.",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "lease_acquire_commit": "1e934d13fd147be4a276521386fc31ef2c0600a6",
-    "history_path": "reports/orchestrator/history/2026-09-20/2217-main.md",
+    "lease_acquire_commit": "089eb9004609f9c7c43b5b27d84339e3c0f6108a",
+    "history_path": "reports/orchestrator/history/2026-09-20/2316-main.md",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result": "R21_INTENTIONAL_IDLE_PERSISTENCE_IN_PROGRESS"
+    "result": "FAIL_CLOSED_STATE_PERSISTED"
   }
 }
