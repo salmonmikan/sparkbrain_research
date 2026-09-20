@@ -1,0 +1,40 @@
+{
+  "schema": "sparkbrain-architecture-study-summary-v1",
+  "candidate_id": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+  "analyst_authority_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+  "analyst_generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
+  "contract_commit": "9d0016f8700f46e38dbff04d66da23cabf2cfa38",
+  "raw_facts_commit": "1f9edc0cc9a0276dd4f254b822daef7098af0ab4",
+  "terminal": "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED",
+  "mapping_applied_once": true,
+  "rationale": [
+    "Stable source fixes max_candidates=256 and blocks new candidate creation at capacity after an immature-only stale prune; default mature candidates have no reclamation path.",
+    "Stable supported docs do not define max_candidates as a lifetime mature-memory cap, active working-set budget, or cache, and do not explicitly make mature candidates permanent.",
+    "The v0.5 Master Plan mentions Assembly stability/decay plus candidate decay and candidate budget as anti-proliferation design language, but it does not specify that mature candidates must be reclaimed; the existing immature-prune path is therefore not contradicted by an explicit mature-lifecycle contract.",
+    "Supported/default callers do not override max_candidates=256. The retained protocol has bounded learning horizons (48 training episodes per seed; 24 for plasticity ablation) and held-out evaluation does not learn Assemblies.",
+    "No supported test/caller promises continued acquisition of novel patterns after capacity saturation, and no supported default test deliberately reaches saturation.",
+    "Static source also does not prove saturation impossible within the bounded horizon because one episode may yield multiple candidate patterns. Saturation is therefore unestablished rather than structurally unreachable.",
+    "Checkpoint serialization preserves candidate state but stable docs/source do not elevate persistence mechanics into a lifetime lifecycle contract."
+  ],
+  "claim_boundary": {
+    "new_computational_principle": false,
+    "formal_scientific_evidence": false,
+    "pre_formal_development_evidence": false,
+    "architecture_resource_lifecycle_finding": true,
+    "supported_saturation_failure_demonstrated": false,
+    "mature_turnover_requirement_established": false
+  },
+  "forbidden_followup_respected": {
+    "saturation_experiment": false,
+    "turnover_comparator": false,
+    "dynamic_candidate_generation_probe": false,
+    "production_mutation": false,
+    "official_test_or_formal_surface": false,
+    "same_run_cycle2": false,
+    "automatic_pre_formal_or_formal_promotion": false
+  },
+  "stop_reason": "VALID_STATIC_TERMINAL_REACHED_STOP_FOR_FRESH_EVIDENCE_ANALYST_REVIEW",
+  "next_action": "STOP current object for fresh Evidence Analyst review. Do not manufacture saturation, add mature eviction, run a turnover comparator, or start cycle 2 under this authority."
+}
