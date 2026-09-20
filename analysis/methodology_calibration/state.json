@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T03:19:45+09:00",
-  "generation_id": "METHCAL-20260921T031945+0900-R26-A7D3C9E4",
-  "produced_at": "2026-09-21T03:19:45+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260921T031945+0900-R26-A7D3C9E4",
+  "timestamp": "2026-09-21T04:19:01+09:00",
+  "generation_id": "METHCAL-20260921T041901+0900-R27-E4A1B73C",
+  "produced_at": "2026-09-21T04:19:01+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260921T041901+0900-R27-E4A1B73C",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "METHCAL-20260921T021921+0900-R25-4C8E2A71",
-  "previous_methodology_tip": "8a8c1dec757822734d7a8c78ef51954f08dfd8b4",
+  "supersedes_generation_id": "METHCAL-20260921T031945+0900-R26-A7D3C9E4",
+  "previous_methodology_tip": "b620285448fd0430f7e0d8c39bc94a9d8fe6bd94",
   "run_disposition": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "WELL_CALIBRATED",
   "input_generations": {
@@ -15,49 +15,58 @@
       "commit": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T031129+0900-R25-1E24780E",
-      "commit": "258406668f86b24f54dd1a88f18da37e457a001b"
+      "generation_id": "EVA-20260921T040050+0900-R26-6A3F8C21",
+      "commit": "455522cde0a7e5eae1d2b04d779a5783f6351585"
     },
-    "sub_no_target": {
-      "generation_id": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
-      "commit": "71826e37165705647d9fd13b7b1698422d557fb5",
+    "sub_second_no_target": {
+      "generation_id": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91",
+      "latest_commit": "162ad0f3d02209350231c76be0ddc41bb70ed1f5",
+      "state_commit": "9fcf417c50c3d5f3b7fb8e6104d8b6f24b145f2f",
       "mode": "no_op",
       "exception_code": "NO_COHERENT_MECHANISM_TARGET"
     },
-    "main_current_primary_lease": {
-      "generation_id": "MAIN-20260921T031700+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGPART-R25-7A4C91E2",
-      "commit": "e1d7b9649d3d471d76f8f6e43b16f6f47041501e",
-      "status_at_audit": "RUNNING_PRE_PROSPECTIVE_CONTRACT_MUTATION"
+    "main_completed_reconciliation": {
+      "generation_id": "MAIN-20260921T041632+0900-PRIMARY-FUNNEL21-HOLD-R26-5D8A31C4",
+      "commit": "99a4cc6e8f0212c1745002a5d2d3873bfee0dc55",
+      "status": "COMPLETED_INTENTIONAL_SCIENTIFIC_IDLE"
+    },
+    "literature": {
+      "generation_id": "LIT-20260921T032811+0900-R16-ELIGIBILITY-CLOCK-2F8C71A4",
+      "commit": "84bb39f359404d8f94a4007116d5a0cad929eeb8"
     },
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T021921+0900-R25-4C8E2A71",
-      "commit": "8a8c1dec757822734d7a8c78ef51954f08dfd8b4"
+      "generation_id": "METHCAL-20260921T031945+0900-R26-A7D3C9E4",
+      "commit": "b620285448fd0430f7e0d8c39bc94a9d8fe6bd94"
     }
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_handoff_tip": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4",
-    "evidence_analyst_handoff_tip": "258406668f86b24f54dd1a88f18da37e457a001b",
-    "sub_no_target_state_commit": "71826e37165705647d9fd13b7b1698422d557fb5",
-    "main_orchestrator_tip_observed": "e1d7b9649d3d471d76f8f6e43b16f6f47041501e",
-    "methodology_prewrite_tip": "8a8c1dec757822734d7a8c78ef51954f08dfd8b4",
+    "evidence_analyst_handoff_tip": "455522cde0a7e5eae1d2b04d779a5783f6351585",
+    "sub_second_no_target_latest": "162ad0f3d02209350231c76be0ddc41bb70ed1f5",
+    "sub_second_no_target_state": "9fcf417c50c3d5f3b7fb8e6104d8b6f24b145f2f",
+    "main_orchestrator_tip_observed": "99a4cc6e8f0212c1745002a5d2d3873bfee0dc55",
+    "system_prospective_contract": "37eb6f1985d77d9caac5da51ce1348ed5c6a9228",
+    "system_initial_diagnostic": "e66bf9faf01edb916a6bbd976d53acdddc67538e",
+    "system_final_lint_only_head": "0430e98e241ae543a03bc750a3c977fe55d17bb7",
+    "methodology_prewrite_tip": "b620285448fd0430f7e0d8c39bc94a9d8fe6bd94",
     "evidence_tags_count": 5,
     "formal_tags_count": 0,
     "sealed_tags_count": 0,
     "freeze_tags_count": 0
   },
   "material_findings": [
-    "The first live NO_COHERENT_MECHANISM_TARGET exception occurred exactly at the prior 1/3 theory-backward boundary identified by Methodology R25.",
-    "SUB created no candidate, research branch, scientific workflow, claim ceiling, readiness state, or consumed identity and did not count the exception as MECHANISM work.",
-    "The exception rationale names concrete excluded alternatives: unfixed H7 native contract/falsifier, MAIN-owned SYSTEM work, terminal/exactly-reduced nearby mechanism families, and low-information source-transparent recurrence/readout probes.",
-    "SUB requires fresh opportunity-local reassessment rather than mechanically copying the exception.",
-    "Evidence Analyst and Control independently classify the first live exception as credible while preserving the actual-selection window at 1/3 and canonical candidate population at 22/22.",
-    "Current MAIN SYSTEM lease records system_priority_exception.used=false and the no-comparable-MECHANISM basis before prospective-contract mutation; this is not a genuine SYSTEM-over-comparable-MECHANISM exception."
+    "A second consecutive autonomous SUB opportunity used NO_COHERENT_MECHANISM_TARGET after a fresh no-delta/coherence reassessment, created no candidate or workflow, and remained outside theory-backward and conversion denominators.",
+    "The actual scientific-selection window remains MECHANISM/SYSTEM/SYSTEM=1/3 while separately visible no-target events increased from 1 to 2; the ratio alone must not be interpreted as ongoing healthy mechanism supply.",
+    "The prospectively SYSTEM eligibility-timebase partition object completed exactly one bounded diagnostic, reduced exactly to the preregistered ordinary per-apply recurrence, and was canonically closed HOLD_SYSTEM_TERMINAL with no same-object upgrade or continuation.",
+    "The initial diagnostic CI failed in lint before scientific test execution; the sole follow-up changed line wrapping only, so no outcome-exposed repair occurred.",
+    "MAIN consumed the fresh Analyst terminal and returned to intentional scientific idle rather than manufacture or continue scientific work."
   ],
   "gate_by_gate_classifications": {
     "hard_integrity_floor": "KEEP",
     "prospective_terminal_semantic_binding": "KEEP",
     "producer_terminal_api_source_conformance_preflight": "KEEP",
+    "pre_outcome_science_invariant_mechanical_repair_handling": "KEEP",
     "outcome_exposed_repair_containment": "KEEP",
     "claim_ceiling_current_object": "KEEP",
     "same_object_system_to_mechanism_upgrade_ban": "KEEP",
@@ -76,6 +85,8 @@
     "theory_backward_quality_floor": "KEEP",
     "no_coherent_mechanism_target_rule": "KEEP",
     "first_no_coherent_mechanism_target_use": "KEEP",
+    "repeated_opportunity_local_no_coherent_mechanism_target_use": "KEEP",
+    "no_target_sequence_opportunity_observability": "KEEP",
     "system_value_under_mechanism_priority": "KEEP",
     "equal_privilege_comparator_general": "KEEP",
     "ordinary_reduction_first": "KEEP",
@@ -91,43 +102,48 @@
     "legacy_topk_sparse_support": "TIGHTEN"
   },
   "false_positive_risks": [
-    "Repeated NO_COHERENT_MECHANISM_TARGET no-ops could make the actual-selection rolling window remain at 1/3 indefinitely unless exception opportunities are separately observable and freshly justified.",
-    "A future SYSTEM-over-comparable-MECHANISM run could still be post-hoc justified unless its machine-readable exception is persisted before execution; no genuine live exception has yet occurred.",
-    "SYSTEM reproducibility work could be over-read as mechanism/novelty evidence unless claim-type separation remains enforced.",
+    "A frozen actual-selection ratio of 1/3 can look healthy while no-target opportunities accumulate; current separate event counting mitigates this but the ratio must never be read alone.",
+    "Repeated NO_COHERENT_MECHANISM_TARGET decisions could become an escape hatch if a future source/Analyst delta creates a coherent target and the new surface is not explicitly reconsidered.",
+    "A future SYSTEM-over-comparable-MECHANISM run could still be post-hoc justified unless the machine-readable exception is persisted before execution; no genuine live exception has yet occurred.",
+    "SYSTEM reproducibility/clock-semantics observations could be over-read as mechanism or novelty evidence unless claim-type separation remains enforced.",
     "External-validation effects can be overinterpreted when the reference is degenerate or relevant simple reductions/source clustering are omitted."
   ],
   "false_negative_risks": [
-    "Do not force a MECHANISM object merely to satisfy the rolling floor; a specifically justified no-target no-op is preferable when all available targets are incoherent, duplicative, MAIN-colliding, terminal, or reduction-by-construction.",
+    "Do not force a MECHANISM object merely to move the rolling share above 1/3; a fresh specifically justified no-target no-op is preferable when all available targets are incoherent, duplicative, MAIN-colliding, terminal, or reduction-by-construction.",
+    "Do not convert the existence of two no-target opportunities into a universal exception-rate cutoff; n=2 does not calibrate a numeric threshold.",
     "Do not suppress bounded SYSTEM architecture/reproducibility work when no comparable executable/informative MECHANISM exists.",
     "Do not require positive signal or prior comparator/reduction victory merely to become preformal_eligible or READY.",
     "Do not universalize claim-specific external-validation comparator/resampling requirements to unrelated bounded Discovery."
   ],
   "moving_goalpost_assessment": {
     "level": "LOW",
-    "finding": "The first no-target event changes no historical candidate, consumed identity, score, claim ceiling, or disposition. It is an opportunity-local control-plane event only."
+    "finding": "No historical candidate, consumed identity, score, claim ceiling, terminal disposition, evidence ref, or scientific threshold was rewritten. The second no-target event and SYSTEM terminal are prospective/control-plane additions only."
   },
   "pass_reachability_assessment": {
     "status": "REACHABLE_BUT_NARROW",
-    "finding": "Prior fresh MECHANISM objects demonstrate prospective preformal_eligible=true can coexist with NOT_READY before outcome. Canonical eligible=0 and READY=0 remain current; first READY-to-PRE_FORMAL transition is still unobserved."
+    "finding": "Historical fresh MECHANISM objects demonstrate prospective preformal_eligible=true can coexist with NOT_READY before outcome. Canonical eligible=0 and READY=0 remain current; first READY-to-PRE_FORMAL transition is still unobserved."
   },
-  "claim_type_separation_findings": "Healthy. The no-target event creates no scientific object and therefore no claim type. The active MAIN successor remains prospectively SYSTEM/NON_EVIDENTIARY; no same-object mechanism upgrade is observed.",
+  "claim_type_separation_findings": "Healthy. The completed eligibility-timebase object was prospectively SYSTEM, remained SYSTEM after outcome, and was reduced to clock/reproducibility semantics rather than upgraded to mechanism novelty. No-target events create no scientific object or claim type.",
   "mechanism_supply_health": {
-    "status": "HEALTHY_FIRST_EXCEPTION_CREDIBLE_AT_1_OF_3_WITH_REASSESS_EACH_OPPORTUNITY",
+    "status": "QUALITY_FLOOR_HEALTHY_BUT_SUPPLY_STALLED_AT_1_OF_3_WITH_TWO_CONSECUTIVE_NO_TARGET_OPPORTUNITIES_VISIBLE",
     "canonical_analyst_population": "MECHANISM=10,SYSTEM=12,22/22_complete",
     "observed_actual_selection_window": "MECHANISM,SYSTEM,SYSTEM",
     "theory_backward_share": "1/3",
-    "no_coherent_target_exception_count": 1,
+    "no_coherent_target_exception_count": 2,
+    "consecutive_no_target_opportunity_count": 2,
     "exception_counts_as_mechanism_work": false,
-    "first_exception_assessment": "CREDIBLE",
-    "finding": "The quality floor successfully prevented quota-driven label inflation. Durability is not yet established; each future opportunity must reassess coherence and exception events must remain separately observable."
+    "repeated_exception_assessment": "CREDIBLE_BUT_LONG_RUN_DURABILITY_UNTESTED",
+    "finding": "The quality floor is working because quota pressure did not cause label inflation, but mechanism supply is currently stalled rather than expanding. Separate exception counting prevents the frozen 1/3 window from hiding the stall."
   },
   "funnel_observability": {
-    "status": "GOOD_V2_1_22_OF_22_CANONICAL_PLUS_SEPARATE_NO_TARGET_EVENT_AND_PREEXECUTION_SYSTEM_BASIS",
+    "status": "GOOD_V2_1_22_OF_22_CANONICAL_PLUS_TWO_SEPARATE_NO_TARGET_OPPORTUNITIES_AND_TERMINAL_SYSTEM_LINEAGE",
     "classification_completeness": "22/22_reviewed_canonical_analyst",
     "candidate_population_excludes_no_target_events": true,
-    "active_architecture": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01_SYSTEM",
-    "policy_population_rule": "Use Analyst-reviewed canonical candidate dimensions for conversion/policy conclusions; report no-target exceptions separately and do not infer universal numeric thresholds from counts.",
-    "finding": "Candidate classification is complete and the first exception is observable without contaminating candidate conversion metrics."
+    "active_architecture": "NONE",
+    "terminal_system_object": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
+    "no_target_event_count": 2,
+    "policy_population_rule": "Use Analyst-reviewed canonical candidate dimensions for conversion/policy conclusions; report no-target opportunities separately from the last-three scientific-selection ratio; infer no universal numeric readiness/support/exception-rate threshold.",
+    "finding": "Candidate classification remains complete, repeated no-target opportunities are separately visible, and the finished SYSTEM object's prospective-to-terminal lineage is explicit."
   },
   "preformal_gate_calibration": {
     "status": "ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED",
@@ -140,44 +156,47 @@
   "system_priority_exception_audit": {
     "used_genuine_exception": false,
     "count_observed_genuine_exception": 0,
-    "current_main_generation": "MAIN-20260921T031700+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGPART-R25-7A4C91E2",
-    "current_preexecution_record": "e1d7b9649d3d471d76f8f6e43b16f6f47041501e",
-    "current_system_priority_exception_used": false,
-    "current_basis": "No comparably executable/informative MECHANISM exists; active SYSTEM successor protects reproducibility/evidence interpretation.",
-    "recorded_before_prospective_contract_mutation": true,
-    "finding": "Current SYSTEM execution is a clean no-exception case, not SYSTEM-over-comparable-MECHANISM. First genuine exception remains unobserved.",
+    "completed_system_object": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
+    "system_priority_exception_used": false,
+    "basis": "No comparably executable/informative MECHANISM existed at allocation; viable executable MECHANISM was zero.",
+    "recorded_before_scientific_execution": true,
+    "finding": "The completed SYSTEM execution is a clean no-exception case, not SYSTEM-over-comparable-MECHANISM. First genuine exception remains unobserved.",
     "first_live_use": "INSUFFICIENT_EVIDENCE"
   },
   "no_coherent_target_audit": {
-    "exception_used_current_window": true,
     "exception_code": "NO_COHERENT_MECHANISM_TARGET",
-    "generation_id": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
-    "commit": "71826e37165705647d9fd13b7b1698422d557fb5",
+    "exception_count_observed": 2,
+    "consecutive_opportunity_count": 2,
+    "latest_generation_id": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91",
+    "latest_commit": "162ad0f3d02209350231c76be0ddc41bb70ed1f5",
+    "latest_state_commit": "9fcf417c50c3d5f3b7fb8e6104d8b6f24b145f2f",
     "candidate_created": false,
     "scientific_execution": false,
     "counts_as_mechanism_work": false,
     "observed_theory_backward_share_actual_selections": "1/3",
-    "rationale_quality": "SPECIFIC_AND_OPPORTUNITY_LOCAL",
+    "rationale_quality": "FRESH_REASSESSMENT_SPECIFIC_NO_DELTA_AND_OPPORTUNITY_LOCAL",
     "copy_forward_allowed": false,
-    "finding": "First live use is credible: it refused manufactured mechanism work at the exact floor while naming concrete reasons each available family was incoherent, duplicative, MAIN-colliding, terminal, or reduction-by-construction.",
+    "finding": "Second live use remains credible because it explicitly re-fetched the current landscape, recorded no stable-main/evidence delta, reconsidered H7/terminal-reduced/source-transparent/MAIN-owned alternatives, and again refused manufactured work. Long-run repeated-use durability remains a watchpoint.",
     "first_live_use": "KEEP",
-    "confidence": "MODERATE_HIGH_SINGLE_LIVE_CASE"
+    "repeated_live_use": "KEEP",
+    "confidence": "MODERATE_HIGH_TWO_CONSECUTIVE_LIVE_CASES"
   },
   "classification_completeness": {
     "classified_reviewed": 22,
     "material_reviewed_population": 22,
     "ratio_reviewed": 1.0,
     "pending_unreviewed_new_candidate_count": 0,
-    "active_candidate_count": 1,
-    "no_target_control_plane_event_count": 1,
+    "active_candidate_count": 0,
+    "no_target_control_plane_event_count": 2,
     "no_target_event_in_candidate_denominator": false,
-    "active_included_as_completed_conversion": false,
-    "policy_use": "Use 22/22 Analyst-reviewed canonical candidate population; report no-target events separately; infer no universal numeric readiness/support/exception-rate threshold."
+    "completed_system_terminal_included_in_canonical_population": true,
+    "policy_use": "Use 22/22 Analyst-reviewed canonical candidate population; report two no-target opportunities separately; infer no universal numeric readiness/support/exception-rate threshold."
   },
   "external_calibration": {
-    "status": "CLAIM_TYPE_SPECIFIC_TIGHTENING_FROM_C19_V4_R2_AUDIT_UNCHANGED",
+    "status": "CLAIM_TYPE_SPECIFIC_TIGHTENING_FROM_C19_V4_R2_UNCHANGED_PLUS_CLOCK_SEMANTICS_REDUCTION_SUPPORT",
     "historical_result_policy": "PRESERVE_C19_V4_EXACT_PASS_NO_RESCORE_NO_RELABEL",
     "programme_interpretation": "C19_V4_REDUCIBLE_FOR_SPARKBRAIN_SPECIFIC_MECHANISM_NOVELTY_AFTER_C19_R2",
+    "fresh_clock_finding": "Eligibility partition dependence reduces to semantic-clock choice; discrete apply/episode clocks, elapsed-time exponential traces, and timestamp-lazy event-driven traces are ordinary alternatives depending on intended semantics.",
     "prospective_requirements": [
       "competent nondegenerate reference for superiority/novelty claims",
       "relevant simple FSA/state-tracker reduction under matched information/resource privilege",
@@ -187,15 +206,16 @@
   },
   "prospective_recommendations": [
     "Keep scientific admission, novelty/reduction, comparator, PRE_FORMAL readiness, claim-type separation and hard-integrity floors unchanged.",
-    "Keep one-in-three as a minimum with a quality floor. Reassess each SUB opportunity independently; use a specific no-target no-op only when a genuine bounded MECHANISM target is not coherent.",
-    "Keep no-target events outside candidate/conversion denominators but expose their count and, if repeated, consecutive/opportunity-local rationale so a frozen 1/3 actual-selection window cannot hide persistent mechanism-supply collapse.",
-    "Do not create a universal numeric exception-rate threshold from the first live case.",
-    "Continue auditing first READY-to-PRE_FORMAL and first genuine SYSTEM-over-comparable-MECHANISM exception.",
-    "For the currently running SYSTEM partition object, preserve the prospectively recorded no-exception comparison basis and do not consume its scientific result before designated Analyst review."
+    "Keep one-in-three as a minimum with a quality floor. Do not force MECHANISM work simply because the scientific-selection window remains at 1/3.",
+    "Keep no-target events outside candidate/conversion denominators, but expose total and consecutive autonomous-opportunity count alongside the frozen last-three scientific-selection ratio.",
+    "For every future no-target opportunity, re-fetch source/evidence/Analyst state and persist the delta since the prior exception; explicitly address any new candidate surface before reusing the exception.",
+    "Do not create a universal numeric exception-rate threshold from two live cases.",
+    "Do not reopen the completed eligibility-partition SYSTEM object; semantic-clock specification or implementation-change questions require a fresh prospective object.",
+    "Continue auditing first READY-to-PRE_FORMAL and first genuine SYSTEM-over-comparable-MECHANISM exception."
   ],
   "utility_request": {
     "created": false,
-    "reason": "The live first no-target exception is already the higher-information methodology calibration event; the active SYSTEM successor is MAIN-owned."
+    "reason": "The second live no-target opportunity and completed SYSTEM terminal are higher-information live calibration evidence than a synthetic methodology probe."
   },
   "hard_floor_confirmation": {
     "status": "CONFIRMED_DO_NOT_RELAX",
@@ -210,15 +230,17 @@
   },
   "confidence": {
     "overall": "HIGH",
-    "first_no_target_use": "MODERATE_HIGH_SINGLE_LIVE_CASE",
+    "repeated_no_target_use": "MODERATE_HIGH_TWO_CONSECUTIVE_LIVE_CASES",
     "classification_completeness": "HIGH",
-    "mechanism_supply_health": "MODERATE_HIGH",
+    "mechanism_supply_health": "MODERATE_HIGH_CURRENT_STALL_VISIBLE_LONG_RUN_DURABILITY_UNTESTED",
+    "system_terminal_stop_discipline": "HIGH",
     "first_ready_to_preformal": "INSUFFICIENT_EVIDENCE",
     "first_genuine_system_priority_exception": "INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_analyst": [
-    "Keep the first no-target event separate from candidate metrics; if exceptions recur, expose consecutive/opportunity count and fresh rationale so actual-selection 1/3 cannot hide persistent supply collapse.",
-    "Persist the first READY object's pre-outcome readiness rationale so READY-to-PRE_FORMAL can be audited as development/test readiness rather than prior success.",
-    "For a future SYSTEM-over-comparable-MECHANISM execution, require the machine-readable exception before execution; the current SYSTEM object is a no-exception case because comparable executable/informative MECHANISM is zero."
+    "Continue exposing no-target total and consecutive autonomous-opportunity count separately from the last-three actual scientific-selection ratio; the ratio remains 1/3 while exceptions are now 2.",
+    "On each future no-target opportunity, persist the source/evidence/Analyst delta since the previous exception and explicitly address any newly available candidate surface before reusing the exception.",
+    "Preserve the first READY object's pre-outcome readiness rationale so READY-to-PRE_FORMAL can be audited as development/test readiness rather than prior scientific success.",
+    "For any future SYSTEM-over-comparable-MECHANISM execution, require the machine-readable exception before execution; genuine live exception count remains zero."
   ]
 }
