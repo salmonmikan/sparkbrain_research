@@ -1,21 +1,21 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91",
-  "produced_at": "2026-09-20T18:44:10+09:00",
-  "producer_run_id": "SUB-RUN-20260920T184410+0900-CONTEXTPRED-7A4C2E91",
-  "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_THEORY_BACKWARD_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260920T173914+0900-NOOP-ANALYSTWAIT-CA15738F",
+  "generation_id": "SUB-20260920T194640+0900-SYSTEM-ASMORDER-BA8FDEBE",
+  "produced_at": "2026-09-20T19:46:40+09:00",
+  "producer_run_id": "SUB-RUN-20260920T194640+0900-ASMORDER-BA8FDEBE",
+  "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_SYSTEM_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
+  "supersedes_generation_id": "SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T180852+0900-R17-152262F6",
-      "handoff_commit": "4dc5a5b43f26789f32567eb69cbb4a26b9cd6825",
-      "branch_tip_observed": "4dc5a5b43f26789f32567eb69cbb4a26b9cd6825"
+      "generation_id": "EVA-20260920T190536+0900-R18-AC1DB49E",
+      "handoff_commit": "fec9320a8e8c868f4df91dafb1af75c640ae995a",
+      "branch_tip_observed": "fec9320a8e8c868f4df91dafb1af75c640ae995a"
     },
     "main": {
-      "generation_id": "MAIN-20260920T181208+0900-PRIMARY-FUNNEL21-HOLD-4F2C91A7",
+      "generation_id": "MAIN-20260920T191546+0900-PRIMARY-FUNNEL21-HOLD-R18-8C2F41D7",
       "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
       "active_scientific_object": null,
-      "mailbox_branch_tip_observed": "40195a517226507141ee2dd0ca2a3d5b2997e8c4"
+      "mailbox_branch_tip_observed": "9d2bb49356d4ad3c009ce7a049f3a2285035a5e4"
     },
     "control_brain": {
       "generation_id": "CTRL-20260920T165000+0900-R15-6C2F8A41",
@@ -23,22 +23,22 @@
       "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260920T173914+0900-NOOP-ANALYSTWAIT-CA15738F",
-      "mode": "no_op"
+      "generation_id": "SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91",
+      "mode": "discovery"
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_commit": "4dc5a5b43f26789f32567eb69cbb4a26b9cd6825",
-    "analyst_generation": "EVA-20260920T180852+0900-R17-152262F6",
-    "main_mailbox_tip_before_persistence": "40195a517226507141ee2dd0ca2a3d5b2997e8c4",
+    "analyst_handoff_commit": "fec9320a8e8c868f4df91dafb1af75c640ae995a",
+    "analyst_generation": "EVA-20260920T190536+0900-R18-AC1DB49E",
+    "main_mailbox_tip_before_persistence": "9d2bb49356d4ad3c009ce7a049f3a2285035a5e4",
     "control_handoff_commit": "64611f391391844d60659732a50a22cf009a5797",
-    "research_branch": "research/exploratory-sub-context-conditioned-prediction-20260920",
-    "prospective_contract_commit": "01d4cc8daf07be67b8f633434030241276a0a4b0",
-    "diagnostic_commit": "38c6f3cc972898c170fdf5853190ca33de8f6882",
-    "diagnostic_ci": 35502813034,
-    "research_head": "f0a4157d869561e4201aca1c37663305bc5c8a5d",
-    "final_exact_head_ci": 35502970668,
+    "research_branch": "research/exploratory-sub-assembly-cluster-order-20260920",
+    "prospective_contract_commit": "7e2646cfb1a83f5cbbec0b22c5dcf2a706f8022d",
+    "pre_outcome_lint_correction_commit": "fca8ad5a5214cc9ca67c157ef45c5d129a3f66d7",
+    "research_head": "6f14715a856f3ae308d9dbe2d5bb35534823372c",
+    "corrected_diagnostic_ci": 35505715764,
+    "final_exact_head_ci": 35505873447,
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
     "evidence_tag_count": 5,
@@ -47,20 +47,17 @@
     "freeze_tag_count": 0
   },
   "mode": "discovery",
-  "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
-  "exploratory_target": "V05_CONTEXT_CONDITIONED_PREDICTION_DISCOVERY_CYCLE1",
-  "candidate_pool_id": "CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01",
+  "discovery_mode": "SYSTEM_DISCOVERY",
+  "exploratory_target": "V05_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE_DISCOVERY_CYCLE1",
+  "candidate_pool_id": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-DEPENDENCE-01",
   "candidate_status": "SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL",
   "exploration_cycle": "1/3",
-  "same_generation_autonomous_progress_reason": "Analyst R17 explicitly cleared the prior freshness blocker and authorized at most one fresh bounded safe nonduplicative SUB Discovery; MAIN had no active scientific object; nonduplication, exclusions, Control R15 semantic-preflight, and cycle-budget checks passed.",
+  "same_generation_autonomous_progress_reason": "Analyst R18 explicitly leaves bounded fresh SUB Discovery available; no formal sub_lane/fallback or usable candidate-pool target existed, MAIN had no active object, and this bounded SYSTEM question was nonduplicative with exclusions and cycle budget satisfied.",
   "main_frontier_avoided": {
     "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
     "active_main_object": null,
     "avoided": [
       "CAND-H7-RESP-01",
-      "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
-      "CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01",
-      "CAND-V05-ENDOGENOUS-CONTINUATION-01",
       "ALL_ANALYST_TERMINAL_CURRENT_OBJECTS",
       "FORMAL_TEST_SCORING",
       "CONSUMED_FROZEN_IDENTITIES",
@@ -70,135 +67,104 @@
   },
   "theory_backward_accounting": {
     "previous_last_three_autonomous_selections": [
-      "SYSTEM_DISCOVERY:V05_NONLEARNING_EVAL_ORDER_DEPENDENCE",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_CONTINUATION",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_PRESEMANTIC_FUNCTION_TRANSFER"
-    ],
-    "previous_qualifying_count": 2,
-    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_CONTEXT_CONDITIONED_PREDICTION",
-    "last_three_autonomous_selections": [
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_CONTINUATION",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_PRESEMANTIC_FUNCTION_TRANSFER",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_CONTEXT_CONDITIONED_PREDICTION"
     ],
-    "qualifying_count": 3,
+    "previous_qualifying_count": 3,
+    "current_selection": "SYSTEM_DISCOVERY:V05_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE",
+    "last_three_autonomous_selections": [
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_PRESEMANTIC_FUNCTION_TRANSFER",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_CONTEXT_CONDITIONED_PREDICTION",
+      "SYSTEM_DISCOVERY:V05_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE"
+    ],
+    "qualifying_count": 2,
     "window_size": 3,
-    "theory_backward_exception": null,
-    "note": "Current target had a coherent mechanism-level question and explicit ordinary reduction/falsifier before execution; it was not quota-manufactured."
+    "theory_backward_exception": null
   },
-  "question": "After balanced training where identical current mature Assembly X is paired with different outcomes depending on immediately preceding mature context A versus B, can native v0.5 prediction emit different predictions for X solely from that preceding context?",
-  "hypothesis": "A persistent/context-sensitive prediction mechanism would make identical current X yield context-specific future-A versus future-B under immediately preceding A versus B context.",
-  "reduction_question": "Can all outputs be reproduced by ordinary first-order current-Assembly frequency lookup using the predictor's exact X table and deterministic tie rule?",
-  "falsifier": "X-after-A and X-after-B fail to differ context-specifically, or a fixed first-order current-Assembly lookup reproduces both outputs exactly.",
+  "question": "Can TemporalAssemblyMemory assign a different candidate partition to the same multiset of DEV patterns solely because the immutable first-seen prototype differs with presentation order?",
+  "hypothesis": "Immutable first-prototype anchoring makes non-transitive similarity bridge sets partition differently under different presentation orders.",
+  "reduction_question": "Is the observed partition difference fully explained as deterministic SYSTEM-level first-prototype threshold clustering, without any mechanism-level interpretation?",
+  "falsifier": "Candidate count and pattern membership are equivalent modulo assembly-ID renaming across the prospectively fixed ABC and BAC arms.",
   "inputs_used": {
-    "scientific_inputs": "DEV_ONLY_DIRECT_SYNTHETIC_MATURE_ASSEMBLY_ACTIVATIONS_A_B_X_AND_STABLE_MAIN_PREDICTION_COMPONENT",
-    "stable_main_contracts_blob": "048b93cddb16dbe9276a0e2c0f972406291c1cb2",
-    "stable_main_prediction_blob": "9805031fb8db235d2f3cf4c81421b896d2597af4",
+    "scientific_inputs": "DEV_ONLY_SYNTHETIC_ACTIVITY_PATTERN_TRIAD_A_B_C_AND_STABLE_MAIN_TEMPORAL_ASSEMBLY_MEMORY",
     "formal_or_sealed_test_used": false,
     "official_scorer_used": false,
     "consumed_identity_used": false
   },
-  "control_r15_semantic_preflight": {
-    "completed_before_first_outcome_bearing_execution": true,
-    "terminal_fields_bound": [
-      "PredictionDecision.assembly_id",
-      "PredictionDecision.value",
-      "PredictionDecision.confidence",
-      "AssemblyPredictor.state_dict().counts"
-    ],
-    "post_outcome_terminal_semantic_repair": false
-  },
   "implementation": {
     "research_branch_created_or_modified": true,
-    "prospective_contract_commit": "01d4cc8daf07be67b8f633434030241276a0a4b0",
-    "diagnostic_commit": "38c6f3cc972898c170fdf5853190ca33de8f6882",
-    "result_commit": "f0a4157d869561e4201aca1c37663305bc5c8a5d",
-    "diagnostic_ci": {
-      "run_id": 35502813034,
-      "python_3_11": "completed_success",
-      "python_3_13": "completed_success"
+    "prospective_contract_commit": "7e2646cfb1a83f5cbbec0b22c5dcf2a706f8022d",
+    "initial_test_commit": "79de3cccca7f71375466abc6d5ba0aa3ca79c67e",
+    "initial_ci": {
+      "run_id": 35505600594,
+      "outcome": "lint_failure_before_test_no_scientific_outcome"
     },
+    "pre_outcome_science_invariant_correction": "fca8ad5a5214cc9ca67c157ef45c5d129a3f66d7",
+    "corrected_ci": {
+      "run_id": 35505715764,
+      "outcome": "completed_success"
+    },
+    "result_commit": "6f14715a856f3ae308d9dbe2d5bb35534823372c",
     "final_exact_head_ci": {
-      "run_id": 35502970668,
+      "run_id": 35505873447,
+      "outcome": "completed_success",
       "python_3_11": "completed_success",
       "python_3_13": "completed_success",
       "lint": "success",
       "local_readiness": "success",
       "full_tests": "success",
       "bundle_validation": "success"
-    },
-    "training_schedule": "4x predict(A) then observe(X,future-A); 4x predict(B) then observe(X,future-B)",
-    "evaluation_schedule": "no learning; predict(A)->predict(X), then predict(B)->predict(X)"
+    }
   },
   "observations": {
-    "predictor_counts": {
-      "assembly-X": {
-        "future-A": 4,
-        "future-B": 4
-      }
+    "similarities": {
+      "A_B": 0.7625,
+      "B_C": 0.7625,
+      "A_C": 0.625
     },
-    "context_a_call_mutated_predictor_state": false,
-    "context_b_call_mutated_predictor_state": false,
-    "x_after_a": {
-      "assembly_id": "assembly-X",
-      "value": "future-A",
-      "confidence": 0.5
+    "threshold": 0.66,
+    "ABC": {
+      "candidate_count": 2,
+      "partition": "A+B | C"
     },
-    "x_after_b": {
-      "assembly_id": "assembly-X",
-      "value": "future-A",
-      "confidence": 0.5
+    "BAC": {
+      "candidate_count": 1,
+      "partition": "A+B+C"
     },
-    "ordinary_first_order_comparator_value": "future-A",
-    "terminal": "FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS",
-    "scientific_result": "NO_CONTEXT_CONDITIONED_DIFFERENTIATION_DETECTED; CURRENT_OBJECT_REDUCES_EXACTLY_TO_FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP"
+    "terminal": "ORDER_DEPENDENT_CLUSTER_PARTITION",
+    "scientific_result": "SAME_PATTERN_MULTISET_PARTITIONS_DIFFERENTLY_BY_PRESENTATION_ORDER_DUE_TO_IMMUTABLE_FIRST_PROTOTYPE_ANCHORING"
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "proposed_claim_ceiling": "MECHANISM",
+  "proposed_claim_ceiling": "SYSTEM",
   "proposed_preformal_eligible": false,
-  "preliminary_preformal_readiness": {
-    "claim_type": "MECHANISM",
-    "supported_reachability": "MATURE_CONTEXT_ACTIVATIONS_AND_BALANCED_X_OUTCOME_TABLE_REACHED",
-    "functional_consequence": "ABSENT_CONTEXT_CONDITIONED_DIFFERENTIATION_FOR_IDENTICAL_CURRENT_X",
-    "ordinary_reductions_specified_controlled": [
-      "FIRST_ORDER_CURRENT_ASSEMBLY_FREQUENCY_LOOKUP_WITH_EXACT_NATIVE_TIE_RULE"
-    ],
-    "reductions_unresolved": [],
-    "comparator_status": "COMPLETE_AND_EXACTLY_REPRODUCES_BOTH_CONTEXT_ARMS",
-    "qualitative_support_breadth": "ONE_FIXED_COMPONENT_LEVEL_SYNTHETIC_A_B_X_CONSTRUCTION; BALANCED_4_4_OUTCOMES",
-    "falsifier_definition": "X_AFTER_A_AND_X_AFTER_B_DIFFER_WITH_CONTEXT_MATCHED_VALUES_WHILE_FIRST_ORDER_LOOKUP_CANNOT_REPRODUCE",
-    "open_scientific_choices": "Any stronger integrated recurrent/sequence-context discriminator requires a fresh candidate and fresh prospective contract; do not rescue this object.",
-    "formal_claim_ceiling": "NONE_FOR_CURRENT_REDUCED_RESULT",
-    "status": "NOT_READY"
-  },
+  "preliminary_preformal_readiness": "N/A_FOR_SYSTEM_OBJECT",
   "proposed_hold_dimensions": {
     "hold_class": null,
     "hold_reason": null,
-    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-    "queue_state": "NOT_QUEUED"
+    "terminal_state": "ACTIVE",
+    "queue_state": "QUEUED"
   },
   "system_priority_exception": {
     "used": false
   },
-  "candidate_next_research_layer": "NONE",
-  "open_scientific_choices": "A stronger integrated recurrent or sequence-state context discriminator may be scientifically interesting only as a fresh candidate with a fresh prospectively frozen comparator and terminal semantics.",
-  "recommendation": "REJECT",
+  "candidate_next_research_layer": "ARCHITECTURE_STUDY_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE_CONTRACT",
+  "open_scientific_choices": "Supported integrated reachability of bridge triads; whether presentation order is intended semantics; sensitivity breadth; downstream functional consequence. Any mitigation or mechanism successor requires a fresh object.",
+  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
   "blockers": [
-    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_AND_CLOSURE_OF_CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01"
+    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_AND_PROMOTION_DECISION_FOR_CAND-V05-ASSEMBLY-CLUSTER-ORDER-DEPENDENCE-01"
   ],
-  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_CONTEXT_CONDITIONED_PREDICTION_DISCOVERY_CYCLE_AND_REDUCED_TO_FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP",
+  "completion_target": "ACHIEVED_ONE_BOUNDED_SYSTEM_ASSEMBLY_CLUSTER_ORDER_DISCOVERY_CYCLE_AND_FOUND_FIRST_PROTOTYPE_ORDER_DEPENDENT_PARTITION",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-20/1844-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-20/1946-sub.md",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "base_mailbox_tip": "40195a517226507141ee2dd0ca2a3d5b2997e8c4",
-    "history_commit": "5536ee66403043a2a9f894c205696f04fef93404",
-    "latest_commit": "8a90af450ff3f76ae4b45ed120f476d62fbc3df8"
+    "base_mailbox_tip": "9d2bb49356d4ad3c009ce7a049f3a2285035a5e4"
   },
   "persistence_limitations": []
 }
