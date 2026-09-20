@@ -1,43 +1,36 @@
-# MAIN latest — R29 matched-load comparator feasibility
+# MAIN latest — R30 action-policy evaluation-isolation contract audit
 
-Generation: `MAIN-20260921T071418+0900-PRIMARY-FUNNEL21-MECH-ASMMATCH-R29-8E4C21A7`  
-Analyst: `EVA-20260921T065846+0900-R29-7B2C91E4@de3de2fcf0f21aa33ebfe417d210df1e96889a90`  
+Generation: `MAIN-20260921T081624+0900-PRIMARY-FUNNEL21-SYSTEM-ACTEVAL-R30-5C7A21E4`  
+Analyst: `EVA-20260921T075832+0900-R30-9A4C2E71@773c88edcaf799140830f3d204d0f0ff82c9bcad`  
 Stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`  
-Candidate: `CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01`  
-Layer / ceiling: `ARCHITECTURE_STUDY / MECHANISM`  
-Research branch/head: `research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921@b2547429823be29a2547419c80c40fb2138dfdc9`
+Candidate: `CAND-V05-ACTION-POLICY-EVALUATION-ISOLATION-CONTRACT-01`  
+Layer / ceiling: `ARCHITECTURE_STUDY / SYSTEM`
 
 ## Result
 
-Prospective comparator-feasibility terminal: **`EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE`**.
+Prospective static-audit terminal: **`MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT`**. Analyst-mapped action: **`HOLD_CONTRACT_AMBIGUITY_AND_STOP`**.
 
-Before opening any feasibility result, MAIN fixed an outcome-independent contract on the two source-defined DEV seeds `(501, 502)`: full selected Assembly prototype, exact same-cardinality aggregate baseline activity load, exact structural topology-load signature, deterministic sham/random-control definitions, and no intervention/suppression outcome in this cycle.
+The exact stable implementation is unambiguous: `AssemblyActionPolicy.choose()` increments `visits[assembly_id]` and sets `pending` after selecting an action even when `explore=false`. `IntegratedV05Brain.process_episode()` always calls that policy when action support is enabled; `explore_action=false` changes action selection but does not make the call observational. Action-policy state and `pending_action` are included in checkpoint/state hashing.
 
-Both fixed DEV seeds were valid and produced the same pre-intervention target:
+The retained evaluation callsites intentionally disable learning (`learn=False`, `learn_assembly=False`, `learn_field=False`, `explore_action=False`) and skip `learn_outcome()` on held-out episodes. `run_seed()` deep-copies the trained brain separately for each held-out condition, and ablation branches are also copied, so policy-state mutation is isolated between those top-level evaluation branches. Within a condition, however, held-out episodes run sequentially on one copy, so visit/pending state can advance across evaluation episodes.
 
-- Assembly `assembly-0001`
-- target units `[45, 56, 63]`
-- baseline prediction `outcome-0`
-- baseline similarity `0.9433062621147579`
-- baseline total spikes `9`
-- exact target load signature: probe spikes `3`, excitatory units `2`, incoming edges `18`, outgoing edges `15`, receptor-incoming edges `8`, summed two-hop incoming reach `43`, summed two-hop outgoing reach `55`
-- eligible nonmember pool `45`
-- all `14,190 = C(45,3)` same-cardinality comparator sets exhausted per seed
-- exact matched-load comparator found: **false** on seed 501 and seed 502
+The public scientific contract does not resolve whether that action-policy advance is intended. `THEORY_SPEC_v0.5.md` separates training from evaluation and permits held-out reactivation to feed prediction or action; `V05_EXPERIMENT_PROTOCOL.md` defines held-out budgets/gates. Neither those documents nor the Master Plan, status/completion reports, action API, or current unit tests explicitly states that held-out action choices are either (a) real policy visits that should consume visit/pending state or (b) observational probes whose policy state must remain immutable. The held-out unit test asserts only that the episode runs and has a state hash; it does not assert policy-state isolation.
 
-No `suppress_units`, `suppress_assembly`, or intervention outcome was executed. No rescue tuning or comparator redesign followed the result.
+Therefore MAIN does **not** infer either semantic contract post hoc. This is a bounded, NON_EVIDENTIARY SYSTEM Architecture observation only. No dynamic evaluation-interleaving probe is authorized or executed in this run.
 
-The preregistered Analyst contingency for this terminal is `HOLD_MECHANISM_UNRESOLVED_AND_STOP`. MAIN therefore stops for fresh Analyst review. Canonical Funnel dimensions are not invented post hoc: current Analyst-provided `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE` remain recorded until the fresh Analyst canonicalizes the reached contingency. `preformal_eligible=true` remains only in-principle eligibility; readiness remains `NOT_READY` and PRE_FORMAL is not authorized.
+Canonical Funnel dimensions are not invented post hoc: Analyst-provided `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE` remain recorded until fresh Analyst canonicalization. `claim_ceiling=SYSTEM`, `preformal_eligible=false`, and `system_priority_exception.used=false` remain unchanged.
 
 ## Workflow / integrity
 
-- Comparator-feasibility workflow `35541396714`: `completed / success`, exact head `b2547429823be29a2547419c80c40fb2138dfdc9`; artifact `10615006426`, digest `sha256:b19ba9fa5832c45beca9135e917acb18c0dee3aabe24127a1b0f83928bd0a52d`.
-- Exact-head CI `35541396705`: `completed / success`.
-- New scientific counts: FORMAL `0`; PRE_FORMAL `0`; MECHANISM Architecture observations `1`; SYSTEM Architecture observations `0`; identity consumption `0`.
+- No research branch created; no workflow dispatched; no dynamic scientific execution.
+- Previous MAIN research workflow `35541396714` and exact-head CI `35541396705` remain `completed / success` at `b2547429823be29a2547419c80c40fb2138dfdc9`.
+- New scientific counts: FORMAL `0`; PRE_FORMAL `0`; MECHANISM Architecture observations `0`; SYSTEM Architecture observations `1`; identity consumption `0`.
 - Stable main unchanged; authoritative `evidence/*` count `5`; `formal/*`, `sealed/*`, `freeze/*` tag counts `0`.
+- Control/preserve anchors independently re-fetched; H5 STARTED remains `058e90227cd48e1c10c6ecbaed01efdec1217d0e` and H5 raw preserve remains `ce5797eb584344db7a512e585506fb6c59ea475b`.
 - PR #148 and #149 remain open, unmerged, mergeable.
+- No SUB collision was present at acquisition; latest observed SUB generation was `SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2`.
 
 Final lease: `COMPLETED`.  
-Stop reason: `R29_EXACT_MATCH_INFEASIBLE_HOLD_MECHANISM_UNRESOLVED_CONTINGENCY_STOP_FRESH_ANALYST_REVIEW`.
+Stop reason: `R30_STATIC_SYSTEM_TERMINAL_MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT_HOLD_CONTRACT_AMBIGUITY_STOP_FRESH_ANALYST_REVIEW`.
 
-Next action: fresh Evidence Analyst must canonicalize the reached unresolved-mechanism hold, including exact hold reason / terminal / queue dimensions, before any continuation. No same-object intervention outcome is authorized from this generation.
+Next action: fresh Evidence Analyst must canonicalize the reached `HOLD_CONTRACT_AMBIGUITY` contingency before any continuation. Do not run dynamic evaluation interleaving from this generation, and do not upgrade this SYSTEM object into MECHANISM.
