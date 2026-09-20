@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T01:23:48+09:00",
-  "generation_id": "METHCAL-20260921T012348+0900-R24-B1F340B6",
-  "produced_at": "2026-09-21T01:23:48+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260921T012348+0900-R24-B1F340B6",
+  "timestamp": "2026-09-21T02:19:21+09:00",
+  "generation_id": "METHCAL-20260921T021921+0900-R25-4C8E2A71",
+  "produced_at": "2026-09-21T02:19:21+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260921T021921+0900-R25-4C8E2A71",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "METHCAL-20260921T002430+0900-R23-A7D24C91",
-  "previous_methodology_tip": "087fbab8af304b7703dec575b6f9230446024506",
+  "supersedes_generation_id": "METHCAL-20260921T012348+0900-R24-B1F340B6",
+  "previous_methodology_tip": "8d9d5cbbaf7090ea922b23956e72b69a864faf99",
   "run_disposition": "NO_MATERIAL_CALIBRATION_CHANGE",
   "overall_classification": "WELL_CALIBRATED",
   "input_generations": {
@@ -15,50 +15,59 @@
       "commit": "393cc5b5965a2a2753f19e240ad15d6b3b09a939"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
-      "commit": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be"
+      "generation_id": "EVA-20260921T020159+0900-R24-D7A4C291",
+      "commit": "314e94cae6c6d7636c434d26b4525483c09eaf88"
     },
     "sub_scientific": {
-      "generation_id": "SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
-      "handoff_commit": "12f2999994d465e4b1c49c38f6bd73f2620d09db",
-      "prospective_binding": "fcfb04d540a437378126d86c3ad66600714fbf99",
-      "research_head": "83d11ba6e0e8aca3f6cda9e4ab9592c851cc0306",
-      "exact_head_ci": 35520275001
+      "generation_id": "SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
+      "prospective_binding": "f0ebfc02605ccdccea371dbb908aac879a6de5f8",
+      "outcome_bearing_commit": "e15e37d0163e3b37973177c29cbeb72728c7e057",
+      "research_head": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
+      "exact_head_ci": 35523434869
     },
-    "main_orchestrator": {
+    "main_scientific_primary": {
       "generation_id": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
       "prospective_lease_commit": "fcbb78c2838da4fe0a5a885e65ad19bdccea2a96",
-      "final_commit": "a20207308c7203c597791c2371a3085d639a4a74",
-      "scientific_execution": "STATIC_READ_ONLY_SYSTEM_ARCHITECTURE_NON_EVIDENTIARY"
+      "final_commit": "a20207308c7203c597791c2371a3085d639a4a74"
+    },
+    "main_latest_relay": {
+      "generation_id": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
+      "commit": "f7b52a3edb8ae1a0fe05f1d0039379a3117ee04d"
     },
     "literature": {
       "generation_id": "LIT-20260921T003000+0900-R15-ELIGIBILITY-TIMEBASE-5A7C2E91",
       "commit": "31f6705c56489e0c7907b8f8b3eecb80c4355982"
     },
+    "utility": {
+      "generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+      "commit": "0eac79b207280753a96412e484a8dc028090c681"
+    },
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T002430+0900-R23-A7D24C91",
-      "commit": "087fbab8af304b7703dec575b6f9230446024506"
+      "generation_id": "METHCAL-20260921T012348+0900-R24-B1F340B6",
+      "commit": "8d9d5cbbaf7090ea922b23956e72b69a864faf99"
     }
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_handoff_tip": "393cc5b5965a2a2753f19e240ad15d6b3b09a939",
-    "evidence_analyst_handoff_tip": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
-    "sub_state_hash_branch": "research/exploratory-sub-step-state-hash-semantics-20260921@83d11ba6e0e8aca3f6cda9e4ab9592c851cc0306",
-    "sub_state_hash_prospective_binding": "fcfb04d540a437378126d86c3ad66600714fbf99",
-    "main_final": "a20207308c7203c597791c2371a3085d639a4a74",
-    "methodology_prewrite_tip": "087fbab8af304b7703dec575b6f9230446024506",
+    "evidence_analyst_handoff_tip": "314e94cae6c6d7636c434d26b4525483c09eaf88",
+    "sub_action_visit_branch": "research/exploratory-sub-nonlearning-action-visit-carryover-20260921@d4c23f6c15b504a89a420b26d0f0d185138a5bda",
+    "sub_action_visit_prospective_binding": "f0ebfc02605ccdccea371dbb908aac879a6de5f8",
+    "sub_action_visit_outcome_commit": "e15e37d0163e3b37973177c29cbeb72728c7e057",
+    "main_timebase_final": "a20207308c7203c597791c2371a3085d639a4a74",
+    "methodology_prewrite_tip": "8d9d5cbbaf7090ea922b23956e72b69a864faf99",
     "evidence_tags_count": 5,
     "formal_tags_count": 0,
     "sealed_tags_count": 0,
     "freeze_tags_count": 0
   },
   "gate_changes_reviewed": [
-    "Fresh SYSTEM state-hash Discovery was prospectively typed and reduced without terminal repair or same-object upgrade.",
-    "Canonical Funnel-v2.1 completeness is 20/20 at Analyst R23; rolling supply is 2/3 MECHANISM after genuine SYSTEM diversification.",
-    "MAIN prospectively persisted a no-exception comparison basis before executing one static SYSTEM Architecture cycle because no comparable executable/informative MECHANISM existed.",
-    "MAIN stopped at TIMEBASE_CONTRACT_AMBIGUOUS without dynamic continuation; fresh Analyst review is required for any successor.",
-    "No new methodology gate change is supported."
+    "Evidence Analyst canonically closes the prior static eligibility-timebase SYSTEM Architecture object at TIMEBASE_CONTRACT_AMBIGUOUS with no same-object dynamic continuation.",
+    "Fresh action-visit Discovery is prospectively SYSTEM with a fixed ordinary integer visit-counter comparator and closes without claim-type upgrade or post-outcome repair.",
+    "Canonical Funnel-v2.1 completeness advances to 22/22; portfolio is MECHANISM=10,SYSTEM=12.",
+    "Rolling autonomous SUB supply is now exactly 1/3 MECHANISM, making the next selection a live boundary test of genuine theory-backward supply versus explicit NO_COHERENT_MECHANISM_TARGET no-op.",
+    "A fresh SYSTEM partition-invariance Architecture successor is allocated because viable comparable MECHANISM=0; no post-R24 MAIN execution is yet observed.",
+    "No methodology gate change is supported."
   ],
   "gate_by_gate_classifications": {
     "hard_integrity_floor": "KEEP",
@@ -97,40 +106,40 @@
     "legacy_topk_sparse_support": "TIGHTEN"
   },
   "false_positive_risks": [
+    "At the exact 1/3 theory-backward floor, a producer could manufacture a MECHANISM label instead of using the explicit no-target exception; the next autonomous SUB selection is therefore a high-information watchpoint.",
     "A future SYSTEM-over-comparable-MECHANISM allocation could be justified post hoc unless system_priority_exception is persisted before execution; first genuine live use remains unobserved.",
-    "Non-evidentiary Utility output could be over-read as scientific Architecture evidence unless fresh Analyst authority and a fresh successor are required.",
-    "External-validation effects can be overinterpreted when the reference is degenerate or relevant simple reductions are omitted.",
-    "Pair-IID inference can overstate certainty when observations share an atomic/source unit."
+    "Non-evidentiary SYSTEM/Utility work could be over-read as scientific mechanism or novelty evidence unless fresh claim-type authority is required.",
+    "External-validation effects can be overinterpreted when the reference is degenerate or relevant simple reductions/source clustering are omitted."
   ],
   "false_negative_risks": [
+    "Do not force a MECHANISM object merely because the rolling supply window is at 1/3; use NO_COHERENT_MECHANISM_TARGET if no coherent bounded target exists.",
     "Do not suppress bounded SYSTEM architecture/reproducibility work when no comparable executable/informative MECHANISM exists.",
     "Do not require positive signal or prior comparator/reduction victory merely to become preformal_eligible or READY.",
-    "Do not universalize external-validation FSA/state-tracker or source-cluster requirements to unrelated bounded Discovery.",
-    "Do not treat Utility diagnostics as forbidden engineering information; keep them non-evidentiary and outside scientific promotion unless fresh authority is created."
+    "Do not universalize external-validation FSA/state-tracker or source-cluster requirements to unrelated bounded Discovery."
   ],
   "moving_goalpost_assessment": {
     "level": "LOW",
-    "finding": "No consumed/frozen object was rerun, rescored, relabeled, upgraded, or invalidated. Fresh state-hash and timebase objects use prospective boundaries and stop rules."
+    "finding": "No consumed/frozen object was rerun, rescored, relabeled, upgraded, or invalidated. Fresh SYSTEM objects remain within prospectively fixed claim ceilings and stronger questions are separated into fresh successors."
   },
   "pass_reachability_assessment": {
     "status": "REACHABLE_BUT_NARROW",
     "finding": "Prior fresh MECHANISM objects show eligible=true can coexist with NOT_READY before outcome; current canonical eligible=0 and READY=0, so first READY-to-PRE_FORMAL remains unobserved."
   },
-  "claim_type_separation_findings": "Healthy. State-hash and eligibility-timebase are prospectively SYSTEM, remain SYSTEM, and are not used to manufacture MECHANISM novelty. Prior C19-v4 exact PASS remains separate from later programme-level REDUCIBLE interpretation.",
+  "claim_type_separation_findings": "Healthy. Action-visit and eligibility-timebase objects are prospectively SYSTEM and remain SYSTEM; fresh successor creation is used instead of same-object upgrade. Prior C19-v4 exact PASS remains separate from later programme-level REDUCIBLE interpretation.",
   "mechanism_supply_health": {
-    "status": "HEALTHY_BALANCED_SMALL_N_2_OF_3_SYSTEM_DIVERSIFICATION_CONFIRMED",
-    "canonical_analyst_population": "MECHANISM=10,SYSTEM=10,20/20_complete",
-    "observed_rolling_window": "MECHANISM,MECHANISM,SYSTEM",
-    "theory_backward_share": "2/3",
+    "status": "HEALTHY_AT_MINIMUM_FLOOR_WITH_EXPLICIT_NEXT_SELECTION_GUARD",
+    "canonical_analyst_population": "MECHANISM=10,SYSTEM=12,22/22_complete",
+    "observed_rolling_window": "MECHANISM,SYSTEM,SYSTEM",
+    "theory_backward_share": "1/3",
     "no_coherent_target_exception_used": false,
-    "finding": "The floor is met without quota gaming; the fresh SYSTEM object demonstrates diversification after the prior 3/3 mechanism window."
+    "finding": "The minimum is exactly met. The next SUB selection must be genuinely mechanism-level if coherent, otherwise explicit NO_COHERENT_MECHANISM_TARGET + no-op; the floor must not become a prestige target."
   },
   "funnel_observability": {
-    "status": "GOOD_V2_1_20_OF_20_CANONICAL_COMPLETE_WITH_MAIN_TERMINAL_PENDING_ANALYST_REVIEW",
-    "classification_completeness": "20/20_reviewed_canonical_analyst",
-    "pending_transition": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01_MAIN_MAPPED_TIMEBASE_CONTRACT_AMBIGUOUS_PENDING_ANALYST_CANONICALIZATION",
-    "policy_population_rule": "Use Analyst-reviewed canonical dimensions for funnel/conversion conclusions; do not silently inject the post-Analyst MAIN terminal transition into rates.",
-    "finding": "Classification completeness is strong and freshness separation is explicit."
+    "status": "GOOD_V2_1_22_OF_22_CANONICAL_COMPLETE_WITH_ONE_ACTIVE_SYSTEM_SUCCESSOR",
+    "classification_completeness": "22/22_reviewed_canonical_analyst",
+    "active_architecture": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01_SYSTEM",
+    "policy_population_rule": "Use Analyst-reviewed canonical dimensions for funnel/conversion conclusions; represent active work as active rather than as completed conversion.",
+    "finding": "Classification completeness is strong; current active/terminal/queue separation is explicit."
   },
   "preformal_gate_calibration": {
     "status": "ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED",
@@ -143,25 +152,28 @@
   "system_priority_exception_audit": {
     "used": false,
     "count_observed_genuine_exception": 0,
-    "latest_system_run": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
-    "prospective_record_commit": "fcbb78c2838da4fe0a5a885e65ad19bdccea2a96",
-    "compared_mechanism_candidate_ids": [],
-    "finding": "SYSTEM ran only because no comparably executable/informative MECHANISM existed; the no-exception comparison basis was persisted before execution.",
+    "latest_completed_system_run": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
+    "latest_completed_pre_execution_record": "fcbb78c2838da4fe0a5a885e65ad19bdccea2a96",
+    "active_authorized_system_successor": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
+    "active_successor_compared_mechanism_candidate_ids": [],
+    "active_successor_execution_observed": false,
+    "finding": "No comparable executable/informative MECHANISM exists. Genuine exception count remains zero; the active successor must persist its no-exception basis before any execution.",
     "first_live_use": "INSUFFICIENT_EVIDENCE"
   },
   "no_coherent_target_audit": {
     "exception_used_current_window": false,
-    "finding": "Explicit SUB NO_COHERENT_MECHANISM_TARGET remains unused; current rolling window satisfies the one-in-three floor at 2/3.",
+    "observed_theory_backward_share": "1/3",
+    "finding": "The explicit SUB exception remains unused. Because the rolling window is now exactly at the minimum, the next selection is the first especially informative test of whether NO_COHERENT_MECHANISM_TARGET is used sparingly/credibly rather than as an escape hatch or avoided via label gaming.",
     "first_live_use": "INSUFFICIENT_EVIDENCE"
   },
   "classification_completeness": {
-    "classified_reviewed": 20,
-    "material_reviewed_population": 20,
+    "classified_reviewed": 22,
+    "material_reviewed_population": 22,
     "ratio_reviewed": 1.0,
     "pending_unreviewed_new_candidate_count": 0,
-    "post_analyst_transition_pending_canonicalization": 1,
-    "pending_included_in_policy_rates": false,
-    "policy_use": "Use 20/20 Analyst-reviewed canonical population; no universal numeric readiness/support threshold is inferred from counts."
+    "active_candidate_count": 1,
+    "active_included_as_completed_conversion": false,
+    "policy_use": "Use 22/22 Analyst-reviewed canonical population; no universal numeric readiness/support threshold is inferred from counts."
   },
   "external_calibration": {
     "status": "CLAIM_TYPE_SPECIFIC_TIGHTENING_FROM_C19_V4_R2_AUDIT_UNCHANGED",
@@ -176,15 +188,16 @@
   },
   "prospective_recommendations": [
     "Keep scientific admission, novelty/reduction, PRE_FORMAL readiness, claim-type separation and hard-integrity floors unchanged.",
-    "Keep one-in-three as a minimum rather than a target; current 2/3 window needs no quota response.",
-    "Allow bounded SYSTEM reproducibility work when no comparable executable/informative MECHANISM exists, but persist the no-exception comparison basis before execution.",
-    "Canonicalize MAIN TIMEBASE_CONTRACT_AMBIGUOUS with fresh Analyst review before using it in funnel rates.",
-    "Keep existing Utility timebase work non-evidentiary; any scientific dynamic successor requires fresh Analyst authority and a fresh prospective object."
+    "Keep one-in-three as a minimum rather than a target. At the current 1/3 boundary, select a genuine mechanism-level falsifier/reduction target only if coherent; otherwise persist NO_COHERENT_MECHANISM_TARGET and no-op.",
+    "Keep the active eligibility-timebase partition successor SYSTEM/NON_EVIDENTIARY and one-cycle bounded; persist the no-exception MECHANISM comparison basis before execution.",
+    "Do not convert action-visit evaluation-isolation semantics into a MECHANISM claim on the same object; any stronger claim requires a fresh successor.",
+    "Continue auditing first READY-to-PRE_FORMAL, first genuine SYSTEM-priority exception, and first NO_COHERENT_MECHANISM_TARGET use."
   ],
   "utility_request": {
     "created": false,
     "existing_programme_assignment_observed": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
-    "reason": "Methodology creates no new request; live rollout remains the higher-information calibration path."
+    "existing_utility_state": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+    "reason": "Methodology creates no new request; fresh Analyst/MAIN ownership and live rollout are higher-information."
   },
   "hard_floor_confirmation": {
     "status": "CONFIRMED_DO_NOT_RELAX",
@@ -199,15 +212,16 @@
   },
   "confidence": {
     "overall": "HIGH",
-    "system_priority_no_exception_handling": "HIGH",
     "classification_completeness": "HIGH",
+    "claim_type_separation": "HIGH",
+    "mechanism_supply_health": "MODERATE_HIGH_AT_1_OF_3_BOUNDARY",
     "ready_to_preformal": "INSUFFICIENT_EVIDENCE",
     "first_system_priority_exception": "INSUFFICIENT_EVIDENCE",
     "first_no_coherent_target": "INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_analyst": [
     "Persist the first READY object's pre-outcome readiness rationale so READY-to-PRE_FORMAL can be audited as development/test readiness rather than prior success.",
-    "Keep external-validation competent-reference, matched-simple-reduction, and source-cluster requirements claim-type-specific.",
-    "Canonicalize MAIN TIMEBASE_CONTRACT_AMBIGUOUS before policy metrics and keep any Utility dynamic diagnostic non-evidentiary unless a fresh Analyst-authorized scientific successor is created."
+    "At the current 1/3 theory-backward boundary, require the next SUB choice to be genuinely mechanism-level if coherent or explicitly no-op with NO_COHERENT_MECHANISM_TARGET; do not manufacture quota compliance.",
+    "Before executing CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01, persist the no-exception MECHANISM comparison basis and keep the diagnostic SYSTEM/NON_EVIDENTIARY."
   ]
 }
