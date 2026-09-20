@@ -1,30 +1,31 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1",
-  "produced_at": "2026-09-20T11:21:00+09:00",
-  "producer_run_id": "sparkbrain-main-primary-20260920T111421JST",
-  "authority_scope": "MAIN_PRIMARY_ARCHITECTURE_STUDY_EXECUTION",
-  "supersedes_generation_id": "MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE",
+  "generation_id": "MAIN-20260920T114602+0900-RELAY-ASSEMBLY-CI-COMPLETE",
+  "produced_at": "2026-09-20T11:46:02+09:00",
+  "producer_run_id": "sparkbrain-main-relay-20260920T114602JST",
+  "authority_scope": "MAIN_RELAY_EXACT_HEAD_CI_COLLECTION_ONLY",
+  "supersedes_generation_id": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1",
   "input_generations": {
     "evidence_analyst": {
       "generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
       "handoff_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e"
     },
     "main": {
-      "generation_id": "MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE",
-      "handoff_commit": "02d765d0305d63a2d040decdaaa2e0343acf36ed"
+      "generation_id": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1"
     },
-    "sub": {
-      "generation_id": "SUB-20260920T104200+0900-CKPT-7F3C2A91",
-      "handoff_commit": "e438faff528fb73a33a201cb31fa3a935192d4fd"
+    "sub_collision_only": {
+      "generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
+      "research_branch": "research/exploratory-sub-assembly-feedback-mechanism-20260920",
+      "research_head": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801"
     }
   },
   "consumed_analyst_generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
   "consumed_analyst_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+  "consumed_main_generation_id": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "research_layer": "ARCHITECTURE_STUDY",
-  "active_phase": "ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_WAITING_EXACT_HEAD_CI",
+  "active_phase": "ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_COMPLETED_EXACT_HEAD_CI_GREEN",
   "current_lane": "ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
   "candidate_question": {
     "id": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
@@ -36,19 +37,28 @@
     "mapped_outcome": "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY"
   },
+  "funnel_correction_v2": {
+    "analyst_owned_funnel_fields": {
+      "claim_ceiling": {"present_in_controlling_analyst_or_inherited_main": false},
+      "preformal_eligible": {"present_in_controlling_analyst_or_inherited_main": false},
+      "hold_class": {"present_in_controlling_analyst_or_inherited_main": false},
+      "preformal_readiness": {"present_in_controlling_analyst_or_inherited_main": false}
+    },
+    "handling": "Preserved absence exactly; RELAY did not infer, create, upgrade, or change Analyst-owned funnel values.",
+    "preformal_continuation_attempted": false,
+    "readiness_marked_ready_by_relay": false
+  },
   "generation_reconciliation": {
     "analyst_generation": "EVA-20260920T105721+0900-R11-4B7D91C2",
     "analyst_commit_at_start": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
-    "analyst_commit_before_mutations": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
-    "prior_main_generation": "MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE",
-    "prior_main_status": "COMPLETED",
+    "analyst_commit_immediately_before_mutations": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+    "consumed_main_generation": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1",
+    "prior_main_status": "WAITING_EXTERNAL",
     "fresh_primary_running_collision": false,
     "sub_collision": false,
     "material_supersession_detected": false,
     "equivalent_supersession_refresh_used": false,
-    "fast_path": true,
-    "full_reconciliation": false,
-    "basis": "Fresh schema-v2 Analyst generation explicitly allocated a new independent Assembly static Architecture object. Stable main and all bound core blobs matched; prior MAIN was completed; SUB remained independent; no immutable-evidence or allocation anomaly required repository-wide reconciliation."
+    "basis": "The current Analyst generation still authorizes the same static Assembly Architecture object. The prior PRIMARY handed off WAITING_EXTERNAL with an exact next action to collect CI 35483714573 only. Exact main/research refs remained unchanged and the CI is now completed/success."
   },
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -70,24 +80,20 @@
     "active_preserve_ref": null,
     "active_evidence_ref": null
   },
-  "branches_prs_advanced": {
-    "research_branch_created": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920",
-    "research_commits": [
-      "9d0016f8700f46e38dbff04d66da23cabf2cfa38",
-      "1f9edc0cc9a0276dd4f254b822daef7098af0ab4",
-      "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6"
-    ],
-    "pull_request_created_or_merged": false,
-    "main_modified": false,
-    "immutable_evidence_modified": false
-  },
   "workflow_check_result": {
     "ordinary_ci": {
       "run_id": 35483714573,
       "head_branch": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920",
       "head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
+      "python_3_11": "success",
+      "python_3_13": "success",
+      "install": "success",
+      "lint": "success",
+      "local_readiness": "success",
+      "tests": "success",
+      "bundle_validation": "success",
       "repository_integrity_only": true
     },
     "outcome_bearing_workflow": null,
@@ -97,24 +103,14 @@
   "observations_results": {
     "terminal": "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-    "facts": [
-      "Default AssemblyConfig uses max_candidates=256, mature_episodes=3, stale_after_ms=50000 and immature_stale_episodes=2.",
-      "At capacity, a novel unmatched candidate triggers prune() and is refused if capacity remains full.",
-      "The only current v0.5 prune path removes stale candidates only while episode_count <= immature_stale_episodes; default mature candidates therefore have no reclamation path.",
-      "Stable supported docs/tests/callers do not define max_candidates as lifetime mature-memory, active working set, or cache and do not explicitly make mature candidates permanent.",
-      "V05_MASTER_PLAN mentions Assembly stability/decay plus candidate decay and candidate budget, but does not bind mature-candidate reclamation semantics.",
-      "Supported/default callers do not override max_candidates=256.",
-      "Retained learning horizons are bounded at 48 training episodes per seed and 24 ablation-training episodes; held-out evaluation does not learn Assemblies.",
-      "No supported test/caller promises continued novel-pattern acquisition after saturation and no default supported test deliberately reaches saturation.",
-      "Static source does not prove saturation unreachable because patterns_from_step may emit multiple candidate patterns in one episode.",
-      "Checkpoint persistence is state serialization/reproducibility behavior, not an explicit lifetime lifecycle contract."
-    ],
+    "new_scientific_information_this_relay": false,
     "new_formal_scientific_evidence": false,
     "new_pre_formal_development_evidence": false,
     "new_computational_principle": false,
     "supported_saturation_failure_demonstrated": false,
     "mature_turnover_requirement_established": false,
-    "formal_claim": "NONE"
+    "formal_claim": "NONE",
+    "terminal_changed_by_relay": false
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -127,12 +123,11 @@
   ],
   "consumed_identities_this_run": [],
   "integrity_state": {
-    "status": "GREEN_STATIC_TERMINAL_PENDING_EXACT_HEAD_CI",
-    "prospective_binding_before_interpretation": true,
-    "raw_before_interpretation": true,
-    "terminal_mapping_applied_once": true,
+    "status": "GREEN_STATIC_TERMINAL_EXACT_HEAD_CI_SUCCESS",
+    "prospective_binding_preserved": true,
     "source_bindings_match": true,
-    "analyst_freshness_checked_before_mutations": true,
+    "research_head_match": true,
+    "analyst_freshness_checked_before_control_plane_mutations": true,
     "production_source_modified": false,
     "official_test_accessed": false,
     "formal_or_held_out_outcome_artifact_inspected": false,
@@ -143,32 +138,30 @@
     "outcome_responsive_redesign": false,
     "same_object_cycle2_started": false,
     "sub_reserved_work_mutated": false,
-    "utility_request_created": false
+    "utility_request_created": false,
+    "funnel_typing_modified_by_relay": false
   },
   "critical_path_fixes": [],
   "critical_path_actions_performed": [
-    "read fresh schema-v2 Evidence Analyst handoff including allocation, candidate pool, contingencies, exclusions and generation metadata",
-    "read prior MAIN latest/state/lease and current SUB report for collision avoidance",
-    "re-fetched stable main and exact core source blobs",
-    "acquired PRIMARY MAIN lease before research mutation",
-    "created fresh research branch from exact stable main",
-    "prospectively fixed static inventory, validation policy, terminal map and stop conditions",
-    "performed deterministic stable-main source/docs/tests/caller/config inventory without formal or held-out result inspection",
-    "persisted raw static facts before interpretation",
-    "applied the prospective terminal mapping once",
-    "observed exact-head ordinary CI run 35483714573 and left it as an external integrity wait"
+    "read current schema-v2 Evidence Analyst state/history and the inherited MAIN latest/state/lease/history",
+    "read current SUB state only for collision avoidance",
+    "re-fetched exact stable main and exact active research head",
+    "collected only ordinary CI run 35483714573 and its exact-head job results",
+    "verified CI completed success on exact research head with Python 3.11 and 3.13 jobs green",
+    "preserved the pre-mapped static terminal without scientific or funnel-typing changes",
+    "persisted MAIN-owned RELAY completion checkpoint"
   ],
-  "work_left_for_SUB": "Only genuinely independent bounded Discovery under the current Analyst allocation. SUB must not continue the Assembly mature-capacity lifecycle candidate or any MAIN critical-path work.",
+  "work_left_for_SUB": "Independent bounded Discovery only; SUB must not continue the Assembly mature-capacity lifecycle object.",
   "utility_request_created": null,
-  "stop_reason": "VALID_STATIC_TERMINAL_MAPPED_WAITING_EXACT_HEAD_ORDINARY_CI",
-  "next_MAIN_action": "Collect only ordinary CI run 35483714573 for exact head 13239163f6fecb2b61ea2189a5a94ba12b6cb3d6. If success, persist COMPLETED and STOP for fresh Evidence Analyst review. If failure, fail closed for fresh review. Do not manufacture saturation, implement mature eviction, run a turnover comparator, start cycle 2, or advance PRE_FORMAL/FORMAL under this authority.",
+  "stop_reason": "VALID_STATIC_TERMINAL_AND_EXACT_HEAD_CI_SUCCESS_STOP_FOR_FRESH_ANALYST_REVIEW",
+  "next_MAIN_action": "STOP and wait for fresh Evidence Analyst review. Do not remap the terminal, manufacture saturation, implement mature eviction, run a turnover comparator, start cycle 2, or advance PRE_FORMAL/FORMAL under the consumed authority.",
   "persistence_result": {
     "branch": "ops/orchestrator-run-report",
-    "latest_md_commit": "fdcd48e480fe31dd7646742f61e3c6285b8e949d",
-    "history_path": "reports/orchestrator/history/2026-09-20/1121-main.md",
-    "history_commit": "304e2e152ffbdfac404ac91197d351f53f0da3ab",
+    "latest_md_commit": "4f6eb1c5fa78c4f220489f56253e78f09c31d1f1",
+    "history_path": "reports/orchestrator/history/2026-09-20/1146-main.md",
+    "history_commit": "8a51985564d75044773c20799fb8d225469edcb4",
     "state_json": "this update",
-    "final_lease_target": "WAITING_EXTERNAL",
+    "final_lease_target": "COMPLETED",
     "force_push_used": false
   }
 }
