@@ -1,23 +1,23 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260920T161602+0900-PRIMARY-FUNNEL21-HOLD-6D2B8C41",
-  "produced_at": "2026-09-20T16:16:02+09:00",
-  "producer_run_id": "sparkbrain-main-primary-20260920T161602JST-6D2B8C41",
-  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_ALLOCATION_RECONCILIATION_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "MAIN-20260920T151432+0900-PRIMARY-FUNNEL21-HOLD-A84D6C2F",
+  "generation_id": "MAIN-20260920T171704+0900-PRIMARY-FUNNEL21-FAILCLOSED-91E6C4A2",
+  "produced_at": "2026-09-20T17:17:04+09:00",
+  "producer_run_id": "sparkbrain-main-primary-20260920T171704JST-91E6C4A2",
+  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_FAIL_CLOSED_RECONCILIATION_AND_CONTROL_PLANE_PERSISTENCE",
+  "supersedes_generation_id": "MAIN-20260920T161602+0900-PRIMARY-FUNNEL21-HOLD-6D2B8C41",
   "input_generations": {
     "evidence_analyst": {"generation_id":"EVA-20260920T160240+0900-R16-3D7A91C4","handoff_commit":"eea87c0e67807605c8fdd10408650da4192fb06b","branch_tip_observed":"eea87c0e67807605c8fdd10408650da4192fb06b"},
-    "main": {"generation_id":"MAIN-20260920T151432+0900-PRIMARY-FUNNEL21-HOLD-A84D6C2F","mailbox_tip_before_lease":"5f11e8c47c33f91c36c3d4d5a874b0884161fc14"},
-    "sub_collision_only": {"generation_id":"SUB-20260920T155600+0900-THEORY-ENDOCONT-4C7A2E91","research_branch":"research/exploratory-sub-endogenous-continuation-20260920","research_head":"af201c25d3a5e7f1fde15b07b82aa0aad77cbd3f"}
+    "main": {"generation_id":"MAIN-20260920T161602+0900-PRIMARY-FUNNEL21-HOLD-6D2B8C41"},
+    "sub_collision_only": {"generation_id":"SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71","research_branch":"research/exploratory-sub-presemantic-function-transfer-20260920","research_head":"c68da076d846d85ad556f875d632ab6f68d68453","final_head_ci_run":35497715398}
   },
   "consumed_analyst_generation_id": "EVA-20260920T160240+0900-R16-3D7A91C4",
   "consumed_analyst_commit": "eea87c0e67807605c8fdd10408650da4192fb06b",
-  "consumed_main_generation_id": "MAIN-20260920T151432+0900-PRIMARY-FUNNEL21-HOLD-A84D6C2F",
+  "consumed_main_generation_id": "MAIN-20260920T161602+0900-PRIMARY-FUNNEL21-HOLD-6D2B8C41",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "research_layer": "NONE",
   "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-  "active_phase": "FUNNEL_V2_1_EXPLICIT_MAIN_HOLD_NO_CURRENT_SCIENTIFIC_OBJECT",
+  "active_phase": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
   "candidate_question": null,
   "exploration_cycle_count": null,
   "claim_ceiling": null,
@@ -27,9 +27,14 @@
   "terminal_state": null,
   "queue_state": null,
   "preformal_readiness": null,
-  "system_priority_exception": {"used":false,"reason_code":null,"reason_detail":"MAIN has no active scientific object; the fresh MECHANISM object is terminally negative and no comparable executable MECHANISM or high-value integrity-protecting SYSTEM object is allocated.","compared_mechanism_candidate_ids":[]},
+  "system_priority_exception": {
+    "used": false,
+    "reason_code": null,
+    "reason_detail": "Controlling Analyst R16 allocates no MAIN scientific object. A newer SUB Discovery generation exists but is not yet consumed/classified by a newer Analyst generation; MAIN therefore cannot adopt its proposed MECHANISM candidate, disposition, claim ceiling, or readiness as authoritative.",
+    "compared_mechanism_candidate_ids": []
+  },
   "research_layer_state": {
-    "DISCOVERY":{"state":"OPEN","owner":"SUB","status":"NON_EVIDENTIARY","latest_review":"ENDOGENOUS_CONTINUATION_MECHANISM_REJECTED_AFTER_CYCLE1"},
+    "DISCOVERY":{"state":"OPEN","owner":"SUB","status":"NON_EVIDENTIARY","latest_analyst_review":"ENDOGENOUS_CONTINUATION_MECHANISM_REJECTED_AFTER_CYCLE1","newer_unreviewed_sub_generation":"SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71"},
     "ARCHITECTURE_STUDY":{"state":"EMPTY_HOLD","owner":"MAIN","active_mechanism_count":0,"active_system_count":0,"queued_mechanism_count":0,"queued_system_count":0},
     "PRE_FORMAL":{"state":"EMPTY_HOLD","owner":"MAIN","preformal_eligible_count":0,"preformal_ready_count":0},
     "FORMAL":{"state":"EMPTY_HOLD","owner":"MAIN","fresh_identity":null,"started":null,"test_authority":false,"scorer_authority":false,"preserve_authority":false}
@@ -47,8 +52,32 @@
     {"id":"CAND-V05-NONLEARNING-EVAL-ORDER-DEPENDENCE-01","classification":"REJECT","claim_ceiling":"SYSTEM","preformal_eligible":false,"hold_class":null,"hold_reason":null,"terminal_state":"TERMINAL_FOR_CURRENT_OBJECT","queue_state":"NOT_QUEUED","preformal_readiness":null,"system_priority_exception":{"used":false}},
     {"id":"CAND-V05-ENDOGENOUS-CONTINUATION-01","classification":"REJECT","claim_ceiling":"MECHANISM","preformal_eligible":false,"hold_class":null,"hold_reason":null,"terminal_state":"TERMINAL_FOR_CURRENT_OBJECT","queue_state":"NOT_QUEUED","preformal_readiness":{"status":"NOT_READY"},"system_priority_exception":{"used":false}}
   ],
+  "pending_unreviewed_sub_result": {
+    "generation_id":"SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71",
+    "candidate_id":"CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01",
+    "proposed_claim_ceiling":"MECHANISM",
+    "proposed_preformal_eligible":false,
+    "proposed_preformal_readiness":{"status":"NOT_READY"},
+    "proposed_hold_class":null,
+    "proposed_hold_reason":null,
+    "proposed_terminal_state":"TERMINAL_FOR_CURRENT_OBJECT",
+    "proposed_queue_state":"NOT_QUEUED",
+    "proposed_system_priority_exception":{"used":false},
+    "recommendation":"REJECT",
+    "authority_status":"NON_AUTHORITATIVE_UNTIL_FRESH_EVIDENCE_ANALYST_CLASSIFICATION",
+    "question":"Can a pre-semantic Assembly acquire a later function from one cluster member and transfer it to a never-labeled member below direct labeled-exemplar similarity threshold?",
+    "observed_terminal":"CLUSTER_LOOKUP_EXPLAINS_TRANSFER",
+    "ordinary_reduction":"FIXED_PRESEMANTIC_PROTOTYPE_CLUSTER_PLUS_ORDINARY_LABEL_LOOKUP_REPRODUCED_TRANSFER_EXACTLY",
+    "support_breadth":"ONE_FIXED_SYNTHETIC_PATTERN_TRIPLET; DEFAULT_SIMILARITY_THRESHOLD; ONE_LABEL",
+    "research_branch":"research/exploratory-sub-presemantic-function-transfer-20260920",
+    "research_head":"c68da076d846d85ad556f875d632ab6f68d68453",
+    "final_head_ci_run":35497715398,
+    "final_head_ci":"COMPLETED_SUCCESS",
+    "evidentiary_status":"NON_EVIDENTIARY_DISCOVERY"
+  },
   "funnel_metrics": {
-    "discovery_dispositions":{"window_basis":"last_3_safe_nonduplicative_autonomous_SUB_selections","REJECT":3},
+    "authority":"EVIDENCE_ANALYST_R16_SNAPSHOT_NOT_RECOMPUTED_PENDING_NEW_SUB_REVIEW",
+    "discovery_dispositions":{"window_basis":"last_3_safe_nonduplicative_autonomous_SUB_selections_at_R16","REJECT":3},
     "rolling_theory_backward_selection":{"window_size":3,"qualifying_count":2,"share":"2/3","explicit_no_target_exception_count":0},
     "architecture_portfolio":{"active":{"MECHANISM":0,"SYSTEM":0},"queued":{"MECHANISM":0,"SYSTEM":0}},
     "architecture_hold_dispositions":{"HOLD_SYSTEM_TERMINAL":3,"HOLD_METHOD_LIMITED":1,"REJECT":0},
@@ -65,21 +94,29 @@
     {"condition":"FRESH_COHERENT_MECHANISM_DISCOVERY","action":"ALLOW_ONE_BOUNDED_NON_EVIDENTIARY_DISCOVERY_CYCLE; STOP_FOR_FRESH_ANALYST_BEFORE_PRE_FORMAL_IF_READINESS_BECOMES_ASSESSABLE"},
     {"condition":"FRESH_HIGH_VALUE_SYSTEM_DISCOVERY","action":"ALLOW_LOWER_FUNNEL_CHARACTERIZATION; MAIN_ALLOCATION_REQUIRES_FRESH_ANALYST; REQUIRE_PROSPECTIVE_SYSTEM_PRIORITY_EXCEPTION_IF_COMPARABLE_MECHANISM_EXISTS"},
     {"condition":"MATCHED_ORDINARY_REDUCTION_OR_FIXED_NEGATIVE_FALSIFIER_CLOSES_MECHANISM","action":"REJECT_TERMINAL_FOR_CURRENT_OBJECT_NO_RESCUE_CYCLE"},
-    {"condition":"BROADER_ENDOGENOUS_CONTINUATION_QUESTION","action":"REQUIRE_FRESH_CANDIDATE_ID_AND_FRESH_PROSPECTIVE_CONTRACT_NO_CYCLE2_RESCUE"},
     {"condition":"FIRST_MECHANISM_ELIGIBLE_AND_READY","action":"STOP_FOR_FRESH_ANALYST_AUTHORITY; DO_NOT_AUTO_PROMOTE"},
     {"condition":"ANY_FORMAL_PROPOSAL","action":"STOP_UNTIL_FRESH_ONE_WAY_IDENTITY_STARTED_TEST_SCORER_PRESERVE_AUTHORITY_AND_COMPLETE_BINDING"}
   ],
-  "blocked_until": ["A_FRESH_COHERENT_EXECUTABLE_MECHANISM_OR_INDEPENDENTLY_HIGH_INFORMATION_INTEGRITY_PROTECTING_SYSTEM_OBJECT_RECEIVES_FRESH_ANALYST_ALLOCATION","H7_NATIVE_EXECUTABLE_RESPONSIBILITY_SENSITIVE_OBJECT_EXISTS_WITH_FIXED_CLAIM_REDUCTION_COMPARATOR_FALSIFIER","FORMAL_REQUIRES_FRESH_ONE_WAY_IDENTITY_AND_AUTHORITY"],
-  "do_not_touch": ["ALL_CONSUMED_IDENTITIES_AND_IMMUTABLE_EVIDENCE_REFS","CAND-V05-ENDOGENOUS-CONTINUATION-01_SAME_OBJECT_CYCLE2_OR_RESCUE","ALL_OTHER_TERMINAL_CURRENT_OBJECTS_WITHOUT_FRESH_CANDIDATE_ID","CAND-H7-RESP-01_BEFORE_NATIVE_EXECUTABLE_OBJECT"],
+  "blocked_until": [
+    "FRESH_EVIDENCE_ANALYST_GENERATION_CONSUMES_AND_CLASSIFIES_SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71",
+    "A_FRESH_COHERENT_EXECUTABLE_MECHANISM_OR_INDEPENDENTLY_HIGH_INFORMATION_INTEGRITY_PROTECTING_SYSTEM_OBJECT_RECEIVES_FRESH_ANALYST_ALLOCATION",
+    "FORMAL_REQUIRES_FRESH_ONE_WAY_IDENTITY_AND_AUTHORITY"
+  ],
+  "do_not_touch": [
+    "ALL_CONSUMED_IDENTITIES_AND_IMMUTABLE_EVIDENCE_REFS",
+    "CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01_PENDING_ANALYST_CLASSIFICATION_NO_MAIN_ADOPTION_OR_RESCUE",
+    "ALL_TERMINAL_CURRENT_OBJECTS_WITHOUT_FRESH_CANDIDATE_ID",
+    "CAND-H7-RESP-01_BEFORE_NATIVE_EXECUTABLE_OBJECT"
+  ],
   "authoritative_refs": {
     "main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst_handoff_commit":"eea87c0e67807605c8fdd10408650da4192fb06b",
     "evidence_analyst_generation":"EVA-20260920T160240+0900-R16-3D7A91C4",
-    "sub_research_branch":"research/exploratory-sub-endogenous-continuation-20260920",
-    "sub_research_binding_commit":"edd8dc67f1b1ab22fc8b2914cab774c1aadf49de",
-    "sub_research_harness_correction":"d039f0012b0cbe3826146ed76ae6b791b4abe848",
-    "sub_research_head":"af201c25d3a5e7f1fde15b07b82aa0aad77cbd3f",
-    "sub_research_ci_run":35495326487,
+    "sub_latest_generation":"SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71",
+    "sub_research_branch":"research/exploratory-sub-presemantic-function-transfer-20260920",
+    "sub_research_binding_commit":"e4f30b4655d483ac0d64c28798122abd7b241b02",
+    "sub_research_head":"c68da076d846d85ad556f875d632ab6f68d68453",
+    "sub_research_ci_run":35497715398,
     "sub_research_ci":"COMPLETED_SUCCESS",
     "evidence_tags":{"evidence/c19-official-v4-c19-external-v2-official-v4":"4d6c0bd9a6c06c17352941d3fa730502e72b8540","evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1":"82b88f3e2ad524fed8b72300dcba46053c1f2c7e","evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1":"e7d99cc806206ac27ced225d4779c9fc5bb67ff5","evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1":"185b741e69ea8a0ce0d076153d36e9296a748765","evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1":"e4c4e6428d8ef9e09e92cae231041de0788162e2"},
     "evidence_tag_count":5,
@@ -91,7 +128,7 @@
     "pr_148":"OPEN_UNMERGED",
     "pr_149":"OPEN_UNMERGED"
   },
-  "fast_path_reconciliation_status":"FAST_PATH_CONFIRMED_NO_REF_DISAGREEMENT_NO_COLLISION_NO_ALLOCATION_AMBIGUITY",
+  "fast_path_reconciliation_status":"ESCALATED_TO_RECONCILIATION_BECAUSE_ANALYST_DEPENDENCY_ADVANCED; REFS_AND_INTEGRITY_CLEAN; SCIENTIFIC_AUTHORITY_FAIL_CLOSED_PENDING_ANALYST_REVIEW",
   "branches_or_prs_advanced":[],
   "workflows_or_experiments":[],
   "observations": {
@@ -99,17 +136,17 @@
     "new_preformal_development_evidence":0,
     "new_mechanism_architecture_observations":0,
     "new_system_architecture_observations":0,
-    "new_repository_evidence_reviewed":"SUB MECHANISM Discovery CAND-V05-ENDOGENOUS-CONTINUATION-01 reached a driven functional state, then produced zero lower-field spikes, zero internal patterns, no mature Assembly activation, no prediction, and an already-empty field queue on the fixed immediate empty-input step. Analyst normalized terminal to NO_INPUT_FREE_CONTINUATION_AT_DEFAULT_SETTLE and disposition REJECT. NON_EVIDENTIARY Discovery only."
+    "new_unreviewed_sub_discovery":"SUB observed function transfer to a never-labeled member below direct labeled-exemplar similarity threshold, but the prospectively fixed pre-semantic prototype-cluster plus ordinary label lookup reproduced the transfer exactly. This is NON_EVIDENTIARY Discovery and is not Analyst-classified yet."
   },
-  "ordinary_reductions":{"current_main_object":null,"latest_sub_object":"PENDING_FIELD_QUEUE_CARRYOVER_WAS_PROSPECTIVELY_CONTROLLED; QUEUE_ALREADY_EMPTY_AND_NO_INTERNAL_CONTINUATION_OCCURRED"},
-  "support_breadth":"One fixed default supported v0.5 configuration; seed 907; 16 training episodes; one jitter DEV probe; one immediate empty-input step. Broader seed/configuration/timing/settle/self-trigger questions require a fresh candidate ID.",
+  "ordinary_reductions":{"current_main_object":null,"pending_sub_object":"FIXED_PRESEMANTIC_PROTOTYPE_CLUSTER_PLUS_ORDINARY_LABEL_LOOKUP_REPRODUCED_TRANSFER_EXACTLY"},
+  "support_breadth":"Pending SUB object: one fixed synthetic pattern triplet, default similarity threshold, one semantic label. No generalization or mechanism novelty is inferred by MAIN.",
   "consumed_identities":["c19-external-v2-official-v4","C19-R1 revision-authority official-v1/v2","c19-r2-fsa-state-tracker-official-v1","pd01-long-history-fading-memory-official-v1","ni01-no-ignition-selective-prediction-official-v1","h5-event-routing-work-reduction-official-v1"],
   "consumed_identities_this_run":[],
-  "integrity_state":"CLEAN_UNCHANGED; main exact; five evidence tags exact; formal/sealed/freeze tag prefixes empty; H5 STARTED and raw preserve exact; SUB exact head and CI success; PR148/149 open/unmerged.",
+  "integrity_state":"CLEAN_REFS_WITH_AUTHORITY_FRESHNESS_BLOCK: main exact; SUB branch/head and final CI exact; five evidence tags exact; formal/sealed/freeze tag prefixes empty; H5 STARTED and raw preserve unchanged; PR 148/149 open unmerged. Analyst R16 is latest but predates the new SUB generation.",
   "critical_path_fixes":[],
-  "stop_reason":"ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
-  "work_left_for_sub":"SUB retains independent bounded NON_EVIDENTIARY Discovery supply under Analyst typing; no MAIN-owned critical-path work is delegated.",
+  "stop_reason":"FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
+  "work_left_for_sub":"NONE_FROM_MAIN; latest SUB Discovery is complete and awaits Analyst classification.",
   "utility_request_created":null,
-  "next_main_action":"Remain scientifically idle until a fresh Analyst generation allocates a fresh coherent executable MECHANISM object or an independently high-information integrity-protecting SYSTEM object. Re-read claim ceiling/readiness/hold dimensions/system-priority exception and exact refs before any scientific mutation.",
-  "persistence_result":{"lease_acquired_commit":"cb349a093a58eb14b628bd6831099fd6615f1a64","mode":"SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD","status":"STATE_WRITE_IN_PROGRESS_FINAL_TIP_RECORDED_BY_FINAL_LEASE"}
+  "next_main_action":"Wait for a fresh Evidence Analyst generation that explicitly consumes SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71. Then re-read allocation, candidate fields, claim ceiling/readiness/hold dimensions/system-priority exception and exact refs before any scientific mutation or workflow dispatch.",
+  "persistence_result":{"status":"IN_PROGRESS","branch":"ops/orchestrator-run-report","lease_acquire_commit":"11e312d6067d26da8732b2c26d3c94bab2ea19be","history_path":"reports/orchestrator/history/2026-09-20/1717-main.md","mode":"SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"}
 }
