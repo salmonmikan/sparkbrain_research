@@ -10,7 +10,7 @@
 - exploration_cycle: `1/3`
 - authority: `EVA-20260920T150234+0900-R15-8F3C1A72@ad8290dfab6d79be984f960d48dcf34a8213aefb`
 - stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- MAIN observed: `MAIN-20260920T141403+0900-PRIMARY-FUNNEL21-HOLD-08EEC5A7@dcb76a79f4219d6a4b41eadb2ed88c5cee96c9eb`
+- MAIN at final reconciliation: `MAIN-20260920T151432+0900-PRIMARY-FUNNEL21-HOLD-A84D6C2F`
 - previous SUB: `SUB-20260920T144110+0900-SYSTEM-EVALORDER-6F2C91A8@656e478ff9146a3d5561c1f2482becc1252bf2d0`
 
 ## Independence / exclusions
@@ -25,6 +25,13 @@ Pre-selection rolling autonomous window:
 3. `SYSTEM_DISCOVERY:V05_NONLEARNING_EVAL_ORDER_DEPENDENCE`
 
 Theory-backward share before selection: `2/3`. Quota does not force a mechanism selection. This object is nevertheless selected because endogenous continuation from persistent internal state is a central SparkBrain mechanism discriminator and is prospectively distinct from the prior Assembly-feedback/readout and delayed-credit questions.
+
+Post-selection rolling window:
+1. `THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_REWARD_ELIGIBILITY`
+2. `SYSTEM_DISCOVERY:V05_NONLEARNING_EVAL_ORDER_DEPENDENCE`
+3. `THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_CONTINUATION`
+
+Post-selection theory-backward share: `2/3`.
 
 `theory_backward_exception = null`.
 
@@ -62,7 +69,7 @@ If the ordinary queue comparator is needed, record the same empty-step observabl
 
 ## Prospective contingency / terminals
 
-1. `NO_INPUT_FREE_CONTINUATION_AT_DEFAULT_SETTLE`: empty step has zero lower-field spikes, zero internal patterns, no mature Assembly activation, no prediction, and no action. Stop/reject current object.
+1. `NO_INPUT_FREE_CONTINUATION_AT_DEFAULT_SETTLE`: empty step has zero lower-field spikes, zero internal patterns, no mature Assembly activation, no prediction, and no causal action selected from an Assembly. Stop/reject current object.
 2. `CONTINUATION_REDUCED_TO_PENDING_FIELD_QUEUE`: empty step has continuation, but the queue-cleared matched arm removes all prospectively relevant continuation/function. Stop/reject current object as ordinary finite event-queue carryover.
 3. `CONTINUATION_SURVIVES_QUEUE_CLEAR`: prospectively relevant continuation/function remains after queue clear. Stop immediately and return to Evidence Analyst; do not tune or advance automatically.
 
@@ -90,3 +97,60 @@ The current native endogenous-continuation mechanism claim is reduced if termina
   - status: `NOT_READY`
 - proposed hold dimensions before outcome: `hold_class=null; hold_reason=null; terminal_state=ACTIVE; queue_state=ACTIVE`
 - recommendation before outcome: `NONE`
+
+## Result / Analyst handoff
+
+The prospectively fixed DEV trajectory reached a functional driven state: the driven probe produced `9` lower-field spikes, `1` internal pattern, mature `assembly-0001`, prediction `outcome-0`, and action `action-0`. The immediately following empty-input probe produced `0` lower-field spikes, `0` internal patterns, no mature Assembly activation, and no prediction. The field pending-event queue was already empty immediately before the empty probe and remained empty afterward.
+
+The empty step returned action label `withhold`. This is not evidence of endogenous continuation: stable `AssemblyActionPolicy.choose()` returns `ActionDecision(None, "withhold", 1.0)` when activation is absent/suppressed/immature. The first diagnostic execution (`8df025745b803fbfac326072b0283719b59ec082`, CI `35494974118`) failed only because the harness incorrectly asserted `None` for this API-default action. The science-invariant correction commit `d039f0012b0cbe3826146ed76ae6b791b4abe848` changed only that expectation to the stable public/source contract and added assertions for the already prospectively observed empty queue; seed, timing, input, training, metrics, thresholds, state, and scientific terminal were unchanged. Corrected CI `35495129863` completed successfully on Python 3.11 and 3.13, including lint, local readiness, full tests, and bundle validation.
+
+Because there was no lower-field continuation and no pending recurrent event to explain away, the conditional queue-clear comparator was not invoked. Cycle 1 therefore terminates at the scientific substance of prospective terminal `NO_INPUT_FREE_CONTINUATION_AT_DEFAULT_SETTLE`, with the literal `withhold` label classified as the null-activation API default rather than a causal action selected from persistent internal activity.
+
+### Observations
+
+- driven lower-field spikes: `9`
+- driven internal patterns: `1`
+- driven mature Assembly: `assembly-0001`
+- driven prediction/action: `outcome-0` / `action-0`
+- empty lower-field spikes: `0`
+- empty internal patterns: `0`
+- empty mature Assemblies: `[]`
+- empty prediction: `null`
+- empty action label: `withhold` (`assembly_id=null`; default null-activation policy output)
+- pending field queue immediately before empty step: `0`
+- pending field queue after empty step: `0`
+- terminal: `NO_INPUT_FREE_CONTINUATION_AT_DEFAULT_SETTLE_WITH_DEFAULT_WITHHOLD_ONLY`
+
+### Discovery typing after outcome
+
+- evidentiary_status: `NON_EVIDENTIARY`
+- proposed claim_ceiling: `MECHANISM` (current object type remains prospectively fixed; this is not an outcome-driven upgrade)
+- proposed preformal_eligible: `false`
+- preliminary preformal_readiness:
+  - claim_type: `mechanism`
+  - supported_reachability: `DRIVEN_FUNCTIONAL_STATE_REACHED; INPUT_FREE_CONTINUATION_NOT_REACHED_ON_FIXED_PROBE`
+  - functional_consequence: `ABSENT_INPUT_FREE_INTERNAL_CONTINUATION`
+  - ordinary reductions specified/controlled: `PENDING_FIELD_QUEUE_CARRYOVER`
+  - reductions unresolved: `NONE_FOR_CURRENT_FIXED_PROBE`
+  - comparator status: `CONDITIONAL_QUEUE_CLEAR_NOT_REQUIRED_BECAUSE_QUEUE_ALREADY_EMPTY_AND_CONTINUATION_ABSENT`
+  - qualitative support breadth: `ONE_FIXED_DEFAULT_SUPPORTED_CONFIG; SEED_907; 16_TRAINING_EPISODES; ONE_JITTER_DEV_PROBE; ONE_IMMEDIATE_EMPTY_STEP`
+  - falsifier definition: `NO_INPUT_FREE_CONTINUATION_OR_COMPLETE_QUEUE_CARRYOVER_REDUCTION`
+  - open scientific choices: `BROADER_SEED_CONFIG_TIMING_OR_SELF_TRIGGER_QUESTIONS_REQUIRE_A_FRESH_CANDIDATE_ID_AND_PROSPECTIVE_CONTRACT; NO_CYCLE2_RESCUE`
+  - formal claim ceiling: `NONE_FOR_CURRENT_NEGATIVE_RESULT`
+  - status: `NOT_READY`
+- proposed hold_class: `null`
+- proposed hold_reason: `null`
+- proposed terminal_state: `TERMINAL_FOR_CURRENT_OBJECT`
+- proposed queue_state: `NOT_QUEUED`
+- candidate next research layer: `NONE`
+- recommendation: `REJECT`
+- utility request: `null`
+- consumed identities this run: `[]`
+- new FORMAL results: `0`
+- production source modified: `false`
+
+### Completion
+
+`ACHIEVED_ONE_THEORY_BACKWARD_ENDOGENOUS_CONTINUATION_DISCOVERY_CYCLE_AND_REDUCED_TO_NO_INPUT_FREE_INTERNAL_CONTINUATION_AT_DEFAULT_SETTLE`
+
+No cycle 2 is authorized or scientifically justified for this object. Any broader endogenous-continuation question must be a fresh candidate with a fresh prospective contract and fresh Evidence Analyst allocation.
