@@ -1,13 +1,45 @@
 {
-  "timestamp": "2026-09-20T09:32:39+09:00",
+  "timestamp": "2026-09-20T12:30:00+09:00",
+  "schema_version": 2,
+  "generation_id": "LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B",
+  "producer_run_id": "external-literature-auto-20260920T123000+0900-R11-7E4A1C2B",
+  "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
+  "supersedes_generation_id": "LEGACY_GENERATION_UNKNOWN",
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot_jst": "09:30",
+  "schedule_slot_jst": "12:30",
   "schedule_inference_used": false,
   "control_plane_mailbox_semantics_respected": true,
+  "input_generations": {
+    "control_brain": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
+      "produced_at": "2026-09-20T08:50:00+09:00"
+    },
+    "evidence_analyst": {
+      "generation_id": "EVA-20260920T115704+0900-R12-A6B8DE50",
+      "handoff_commit": "dcaa02fc25506ff4e8b14d7540b6c754a8a6da98",
+      "produced_at": "2026-09-20T11:57:04+09:00"
+    },
+    "main_orchestrator": {
+      "generation_id": "MAIN-20260920T121227+0900-PRIMARY-FUNNEL21-HOLD-7C41A2D9",
+      "handoff_commit": "0d1371bee14b95e126cef203f516c0033d538363",
+      "produced_at": "2026-09-20T12:16:00+09:00"
+    },
+    "sub_orchestrator": {
+      "generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
+      "handoff_commit": "03c8981d86ce0086cf5a01798a80e8275e58b711",
+      "produced_at": "2026-09-20T11:44:00+09:00"
+    },
+    "prior_literature": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "f399e9d14ef6d491135d19161b8c1d7986b94e5b",
+      "produced_at": "2026-09-20T09:32:39+09:00"
+    }
+  },
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_homeostasis_architecture": "research/main-v05-homeostasis-population-contract-arch-study-20260920@81af6ac56c31d169b591bc30854d0efa9d0bac8c",
-    "homeostasis_discovery": "research/exploratory-sub-homeostasis-receptor-dead-mask-20260920@8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f",
+    "assembly_lifecycle_architecture": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920@13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
+    "assembly_feedback_discovery": "research/exploratory-sub-assembly-feedback-mechanism-20260920@83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
     "authoritative_evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
@@ -19,124 +51,127 @@
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "legacy_freeze_branch_count": 13,
-    "preserve_refs_present": true,
-    "control_refs_present": true,
+    "legacy_freeze_refs_refetched": true,
+    "preserve_refs_refetched": true,
+    "control_refs_refetched": true,
+    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
     "fresh_formal_identity_observed": false,
     "fresh_started_observed": false,
     "fresh_formal_test_authority_observed": false,
     "fresh_formal_evidence_observed": false,
-    "pr_148": "open_unmerged",
-    "pr_149": "open_unmerged_per_latest_control_reconciliation"
+    "pr_148": "OPEN_UNMERGED_MERGEABLE",
+    "pr_149": "OPEN_UNMERGED_MERGEABLE"
   },
   "source_blobs_inspected": {
-    "src/sparkbrain/v05/homeostasis.py": "67b87a4b4c91a7dba41670087a2d1803bb6e3e6c",
-    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-    "architecture_summary_head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c"
+    "src/sparkbrain/v05/assemblies.py": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+    "assembly_lifecycle_terminal_commit": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
+    "assembly_feedback_research_head": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801"
   },
   "control_brain_commit_consumed": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
-  "evidence_analyst_commit_consumed": "df12559698c0f6bc0165c550a55c62f7287a86bd",
-  "orchestrator_report_branch_ref_observed": "e594848c0177179f42599355a7406ec2ed9116aa",
-  "main_report_blob_consumed": "7fec4cb40e75f2e079bbf0f5657fec7c8ef59bb8",
-  "main_state_blob_consumed": "377225cedae930ede3a4bdb2ca136eecaad31d24",
-  "sub_report_blob_consumed": "ebca262b0de5f74065afaeea1a69f082960c482b",
+  "evidence_analyst_commit_consumed": "dcaa02fc25506ff4e8b14d7540b6c754a8a6da98",
+  "main_report_commit_consumed": "0d1371bee14b95e126cef203f516c0033d538363",
+  "sub_report_commit_consumed": "03c8981d86ce0086cf5a01798a80e8275e58b711",
   "newest_role_history_consumed": [
-    "reports/orchestrator/history/2026-09-20/0919-main.md",
-    "reports/orchestrator/history/2026-09-20/0846-sub.md"
+    "analysis/control_brain/history/2026-09-20/0850.md",
+    "analysis/orchestrator/history/2026-09-20/1157.md",
+    "reports/orchestrator/history/2026-09-20/1212-main.md",
+    "reports/orchestrator/history/2026-09-20/1144-sub.md"
   ],
-  "prior_literature_handoff_tip_before_run": "a39f0007a55000efd7a237f05e21d381176e47f1",
-  "prior_literature_latest_consumed": "2026-09-20T06:30:00+09:00",
-  "fresh_repository_workflow_observed": {
-    "ordinary_ci_run_id": 35478448679,
-    "head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
-    "status": "completed",
-    "conclusion": "success",
-    "role": "repository_integrity_only",
-    "mailbox_last_observed_status": "in_progress",
-    "interpretation": "CI_WAIT_CLOSED_WITHOUT_CHANGING_PROSPECTIVELY_MAPPED_STATIC_TERMINAL"
-  },
   "genuinely_new_information": true,
   "current_repository_interpretation": {
     "new_formal_scientific_evidence": false,
-    "main_lane": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_COMPLETE_STATIC_TERMINAL",
-    "candidate": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
-    "mapped_outcome": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
+    "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
+    "architecture_study": "EMPTY_HOLD",
     "pre_formal": "EMPTY_HOLD",
     "formal": "EMPTY_HOLD",
-    "claim_boundary": "NON_EVIDENTIARY Architecture/API population-observability characterization only; exact-head CI is now successful and the object remains stopped for fresh Evidence Analyst review."
+    "assembly_lifecycle": "SYSTEM/HOLD_SYSTEM_TERMINAL/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED",
+    "assembly_lifecycle_terminal": "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED",
+    "assembly_feedback": "MECHANISM/REJECT/TERMINAL_FOR_CURRENT_OBJECT",
+    "assembly_feedback_terminal": "ASSEMBLY_RECOGNIZED_BUT_FIELD_IDENTICAL"
   },
   "findings": [
     {
-      "id": "EXTERNAL_INPUT_AND_RECURRENT_LIVENESS_ARE_DISTINCT",
-      "summary": "Homeostatically regulated recurrent-network literature treats external input as a separate control variable that can sustain population spiking while placing the recurrent network in a different dynamical regime. Aggregate nonzero activity therefore does not establish recurrent/internal liveness.",
+      "id": "BOUNDED_PROTOTYPE_MEMORY_HAS_ORDINARY_PRUNING_LIFECYCLES",
+      "summary": "DenStream establishes decay/pruning of streaming micro-clusters under limited memory, and Dynamic Cluster Memory (CVPR 2024) expands memory on novelty while pruning overlapping clusters to maintain fixed capacity. Mature-candidate turnover would therefore be ordinary lifecycle/resource management rather than a novel computational principle.",
       "sources": [
-        "Zierenberg, Wilting & Priesemann, Physical Review X 2018, DOI 10.1103/PhysRevX.8.031018"
+        "Cao et al., SDM 2006, DOI 10.1137/1.9781611972764.29",
+        "Ye & Bors, CVPR 2024, DOI 10.1109/CVPR52733.2024.02476"
       ],
       "direct_applicability_confidence": "HIGH"
     },
     {
-      "id": "AFFERENT_VS_RECURRENT_ATTRIBUTION_HAS_ORDINARY_BASELINE",
-      "summary": "The reverberating branching-model literature explicitly decomposes afferent external activation from recurrent internal activation, with external fraction h/<A> = 1-m in the model. This supplies an ordinary conceptual baseline for source-stratified liveness rather than one all-field dead flag.",
+      "id": "STABILITY_PLASTICITY_AND_CATEGORY_RECRUITMENT_ARE_ESTABLISHED",
+      "summary": "Adaptive Resonance Theory and related recurrent category-learning models explicitly preserve learned categories while mismatch can reset/search and recruit new representational resources. Future Assembly continual-acquisition claims therefore require matched resource and retention/adaptation comparisons rather than category persistence alone.",
       "sources": [
-        "Wilting & Priesemann, Cerebral Cortex 2019, DOI 10.1093/cercor/bhz049"
+        "Layher et al., Frontiers in Psychology 2014, DOI 10.3389/fpsyg.2014.01287",
+        "Grossberg ART literature on mismatch-triggered reset/search/category recruitment"
       ],
-      "direct_applicability_confidence": "HIGH_AS_CONCEPTUAL_REDUCTION"
+      "direct_applicability_confidence": "HIGH"
     },
     {
-      "id": "HOMEOSTATIC_POPULATION_BOUNDARY_IS_A_MODEL_CHOICE",
-      "summary": "Homeostatic plasticity spans neuron-own firing-rate sensing, local adaptation, cell-autonomous scaling/structural plasticity and network-wide regulation. Pooling receptor and reservoir units under one target, denominator and liveness detector is therefore not a canonical consequence of homeostasis and should be an explicit contract choice.",
+      "id": "PATTERN_COMPLETION_REQUIRES_CAUSAL_FEEDBACK_OR_EQUIVALENT_RECURRENCE",
+      "summary": "Associative pattern completion in CA3 and recurrent category-learning models depends on recurrent/top-down causal interactions. A post-field Assembly recognizer that changes readout without changing lower field dynamics is not itself a completion/regeneration mechanism.",
       "sources": [
-        "Turrigiano, Cold Spring Harbor Perspectives in Biology 2012, DOI 10.1101/cshperspect.a005736",
-        "Lu et al., eLife Version of Record 2025-07-04, DOI 10.7554/eLife.88376.3"
+        "Le Duigou et al., Frontiers in Cellular Neuroscience 2014, DOI 10.3389/fncel.2013.00262",
+        "Layher et al., Frontiers in Psychology 2014, DOI 10.3389/fpsyg.2014.01287"
       ],
-      "direct_applicability_confidence": "HIGH_FOR_API_POPULATION_SEMANTICS"
+      "direct_applicability_confidence": "HIGH"
     },
     {
-      "id": "STABILITY_IS_MULTI_OBSERVABLE",
-      "summary": "Firing-rate recovery and correlation/network-structure recovery can depend on different homeostatic mechanisms and recover independently. A single dead boolean or active-unit fraction therefore should not be interpreted as generic network stability without a named observable contract.",
+      "id": "BIOLOGICAL_ENGRAM_ANALOGY_DOES_NOT_IMPLY_PERMANENCE",
+      "summary": "Natural forgetting literature frames engram accessibility as dynamically remodeled and environmentally sensitive. Biological assembly/en​gram analogy therefore cannot justify permanent mature entries; persistence versus decay/remodeling must be an explicit computational lifecycle contract.",
       "sources": [
-        "Wu et al., PNAS 2020, DOI 10.1073/pnas.1918368117"
+        "Ryan & Frankland, Nature Reviews Neuroscience 2022, DOI 10.1038/s41583-021-00548-3"
       ],
-      "direct_applicability_confidence": "HIGH_FOR_INTERPRETATION_BOUNDARY"
+      "direct_applicability_confidence": "MEDIUM_HIGH"
     }
   ],
   "affected_lines": [
-    "CAND_V05_HOMEOSTASIS_POPULATION_SEMANTICS_01",
-    "V05_HOMEOSTASIS_POPULATION_CONTRACT",
-    "ARCHITECTURE_STABILITY_OBSERVABILITY",
-    "RECURRENT_VS_AFFERENT_ACTIVITY_ATTRIBUTION",
+    "CAND_ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_01",
+    "CAND_V05_ASSEMBLY_FEEDBACK_CAUSALITY_01",
+    "V05_ASSEMBLY_MEMORY_LIFECYCLE",
+    "FUTURE_ASSEMBLY_PATTERN_COMPLETION",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "source-stratified receptor/afferent versus recurrent/reservoir activity telemetry",
-    "recurrent-contribution or branching-style attribution baseline where scientifically appropriate",
-    "explicit per-population homeostatic targets and active-fraction denominators",
-    "separate whole-field liveness, internal-reservoir liveness, firing-rate and correlation/stability observables"
+    "DENSTREAM_STYLE_DECAY_AND_PRUNING_UNDER_LIMITED_MEMORY",
+    "DYNAMIC_CLUSTER_MEMORY_FIXED_CAPACITY_EXPANSION_AND_PRUNING",
+    "ART_MATCH_RESET_AND_CATEGORY_RECRUITMENT",
+    "EXPLICIT_RECURRENT_OR_TOP_DOWN_CAUSAL_FEEDBACK_FOR_PATTERN_COMPLETION"
   ],
-  "confidence": "HIGH_FOR_ARCHITECTURE_REDUCTION_MODERATE_FOR_DIRECT_QUANTITATIVE_TRANSFER_OF_BRANCHING_MODEL",
+  "novelty_or_reduction_impact": "STRONG_ORDINARY_LIFECYCLE_AND_ASSOCIATIVE_MEMORY_REDUCTION; current lifecycle remains SYSTEM/HOLD and current-v0.5 Assembly-feedback remains REJECTED; no PRE_FORMAL or FORMAL support restored.",
+  "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "source-stratified receptor/afferent versus recurrent/reservoir activity telemetry",
-    "recurrent-contribution or branching-style attribution baseline where scientifically appropriate",
-    "explicit per-population homeostatic targets and active-fraction denominators",
-    "separate whole-field liveness, internal-reservoir liveness, firing-rate and correlation/stability observables",
-    "matched receptor-aware comparator only in a genuinely fresh prospectively authorized object"
+    "DenStream/DCM-style bounded prototype memory with decay/pruning/merge/replacement under matched memory budget",
+    "ART-style match/reset/category recruitment under matched similarity and resource constraints",
+    "prospectively fixed retention-versus-adaptation/load curve only for a genuinely fresh supported saturation object",
+    "explicit recurrent/top-down causal-feedback comparator for any future Assembly completion/regeneration claim"
   ],
   "questions_for_evidence_analyst": [
-    "Close the current static object at WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED now that exact-head CI has succeeded, without same-object dynamic continuation?",
-    "Require any future stability contract to bind both the regulated population and the named stability observable rather than treating dead/active_unit_fraction as generic network health?",
-    "If a fresh successor is warranted, use source-stratified afferent/recurrent accounting as an ordinary baseline rather than framing receptor masking as a novel mechanism?"
+    "Keep the lifecycle object terminal SYSTEM/HOLD and prohibit same-object saturation/turnover rescue?",
+    "If supported saturation later becomes independently relevant, require matched bounded-memory lifecycle baselines and a prospectively fixed retention/adaptation objective?",
+    "Preserve current-v0.5 Assembly-feedback REJECT and require a fresh causal feedback path before any future completion/regeneration mechanism claim?"
   ],
   "questions_for_control_brain": [
-    "Add afferent-versus-recurrent activity attribution and population-specific homeostatic targets to the ordinary architecture reduction checklist?",
-    "Keep this line outside PRE_FORMAL/FORMAL novelty accounting unless a distinct mechanism survives source/population and multi-observable stability reductions?",
-    "Preserve the current stop boundary and let fresh Analyst review decide whether any successor has enough supported-system relevance to justify MAIN time?"
+    "Add bounded prototype lifecycle, stability-plasticity/category recruitment, and explicit feedback-path requirements to the ordinary Assembly reduction ladder?",
+    "Keep MAIN idle rather than create a literature-driven successor while no supported saturation/feedback object exists?",
+    "Keep PRE_FORMAL/FORMAL empty until a native positive mechanism survives these ordinary reductions under matched resources?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
-    "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01 prospective contract commit 4930d894af5b0880d9e443f7582db3a96c206a4e",
-    "raw facts commit 8f5d7e23b6896d9352daa77f885a4a1cc52ae820 and mapped terminal head 81af6ac56c31d169b591bc30854d0efa9d0bac8c",
-    "exact-head CI 35478448679 successful repository-integrity record",
-    "no literature-driven dynamic comparator, population-policy change, cycle 2, PRE_FORMAL/FORMAL promotion, official TEST, new formal identity/STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
+    "canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
+    "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 contract/raw/terminal and no same-object saturation or turnover experiment",
+    "CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01 negative Discovery result and no cycle-2 rescue",
+    "no official TEST, fresh FORMAL identity/STARTED, rescore, retune, research merge, immutable-ref/tag mutation, or scheduler change"
   ],
-  "utility_request_created": null
+  "utility_request_created": null,
+  "persistence": {
+    "branch": "ops/external-research-audit-handoff",
+    "history_path": "analysis/external_research_audit/history/2026-09-20/1230-LITERATURE_REDUCTION_SCOUT.md",
+    "latest_path": "analysis/external_research_audit/literature/latest.md",
+    "state_path": "analysis/external_research_audit/literature/state.json",
+    "legacy_shared_latest_state_updated": false,
+    "force_push": false
+  }
 }
