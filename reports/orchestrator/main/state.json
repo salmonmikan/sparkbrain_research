@@ -1,174 +1,135 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T071418+0900-PRIMARY-FUNNEL21-MECH-ASMMATCH-R29-8E4C21A7",
-  "producer_run_id": "sparkbrain-main-primary-20260921T071418JST-R29-ASMMATCH",
-  "produced_at": "2026-09-21T07:26:00+09:00",
+  "generation_id": "MAIN-20260921T081624+0900-PRIMARY-FUNNEL21-SYSTEM-ACTEVAL-R30-5C7A21E4",
+  "producer_run_id": "sparkbrain-main-primary-20260921T081624JST-R30-ACTEVAL",
+  "produced_at": "2026-09-21T08:16:24+09:00",
   "mode": "PRIMARY",
   "status": "COMPLETED",
-  "analyst_generation_id": "EVA-20260921T065846+0900-R29-7B2C91E4",
-  "analyst_commit": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
-  "supersedes_generation_id": "MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7",
-  "main_lane": "V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_MATCHED_LOAD_ARCHITECTURE_CYCLE1_COMPARATOR_FEASIBILITY",
+  "analyst_generation_id": "EVA-20260921T075832+0900-R30-9A4C2E71",
+  "analyst_commit": "773c88edcaf799140830f3d204d0f0ff82c9bcad",
+  "supersedes_generation_id": "MAIN-20260921T071418+0900-PRIMARY-FUNNEL21-MECH-ASMMATCH-R29-8E4C21A7",
+  "main_lane": "V05_ACTION_POLICY_EVALUATION_ISOLATION_CONTRACT_ARCHITECTURE_STATIC_CYCLE1",
   "research_layer": "ARCHITECTURE_STUDY",
-  "candidate_id": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01",
+  "candidate_id": "CAND-V05-ACTION-POLICY-EVALUATION-ISOLATION-CONTRACT-01",
   "cycle_count": 1,
-  "claim_ceiling": "MECHANISM",
-  "preformal_eligible": true,
+  "claim_ceiling": "SYSTEM",
+  "preformal_eligible": false,
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "ACTIVE",
   "queue_state": "ACTIVE",
-  "preformal_readiness": {
-    "claim_type": "mechanism",
-    "supported_reachability": "PARTIAL",
-    "functional_consequence": "PARTIAL",
-    "ordinary_reductions_specified_or_controlled": [
-      "predecessor equal-cardinality nearest-activity nonmember lesion"
-    ],
-    "ordinary_reductions_unresolved": [
-      "exact activity-load matching",
-      "graph centrality/topological load",
-      "sham/random lesion equivalence",
-      "selection privilege"
-    ],
-    "matched_comparator_status": "NOT_READY",
-    "support_breadth": "predecessor single DEV probe only; successor comparator-feasibility observation is NON_EVIDENTIARY",
-    "falsifier_fixed": true,
-    "falsifier_definition": "If prospectively matched nonmember/sham lesion produces comparable functional loss, ordinary lesion-load reduction wins.",
-    "open_scientific_choices": [
-      "outcome-independent exact activity/topology comparator definition and feasibility"
-    ],
-    "formal_claim_ceiling": "Assembly-member causal selectivity beyond prospectively matched ordinary lesion load; no stronger novelty claim.",
-    "status": "NOT_READY"
-  },
+  "preformal_readiness": null,
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "R29 allocates the active MECHANISM successor; no SYSTEM-over-MECHANISM exception is applicable.",
-    "compared_mechanism_candidate_ids": [
-      "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01"
-    ]
+    "reason_detail": "No comparably executable/informative MECHANISM remains; protects reproducibility/evidence interpretation.",
+    "compared_mechanism_candidate_ids": []
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_tip": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
-    "research_branch": "research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921",
-    "research_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
-    "prospective_contract_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
-    "predecessor_sub_head": "0c857a73cf34b58b737f686fd9af60769de3d306",
-    "predecessor_sub_contract": "eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42",
-    "predecessor_sub_outcome": "1a571db21ff82001407f01cb2c5449f253bfd4e5"
+    "analyst_tip": "773c88edcaf799140830f3d204d0f0ff82c9bcad",
+    "research_branch": null,
+    "research_head": null,
+    "latest_completed_main_research_branch": "research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921",
+    "latest_completed_main_research_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
+    "latest_observed_sub_generation": "SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2",
+    "latest_observed_sub_research_head": null
   },
-  "prospective_contract": {
-    "authorized_step": "NON_EVIDENTIARY_COMPARATOR_FEASIBILITY_AND_CONTRACT_DEFINITION_ONLY",
-    "same_run_outcome_bearing_intervention_authorized": false,
-    "development_seeds_fixed_order": [501, 502],
-    "train_count": 24,
-    "probe_index": 24,
-    "target_selection": "highest positive mature motif_x-minus-motif_y Assembly; entire prototype, cardinality 1..4",
-    "exact_activity_load": "aggregate baseline-probe spike count",
-    "exact_topology_load": [
-      "excitatory unit count",
-      "incoming edge count",
-      "outgoing edge count",
-      "receptor incoming edge count",
-      "summed two-hop directed outgoing reach",
-      "summed two-hop directed incoming reach"
-    ],
-    "primary_comparator": "lexicographically first equal-cardinality nonmember set with exact aggregate load signature",
-    "sham_control": "no suppressed units",
-    "random_control": "deterministic same-cardinality eligible nonmember draw using Random(7919 + seed)",
-    "future_surface_selection": "first fixed development seed with an exact comparator"
+  "authorized_contract": {
+    "authorized_step": "STATIC_READ_ONLY_SOURCE_DOCS_TESTS_CALLSITES_CONTRACT_AUDIT_ONLY",
+    "same_run_dynamic_evaluation_interleaving_authorized": false,
+    "prospective_branches": {
+      "EXPLICIT_REAL_VISIT_SEMANTICS": "HOLD_SYSTEM_TERMINAL_AND_STOP",
+      "EXPLICIT_OBSERVATIONAL_ISOLATION_SEMANTICS_IMPLEMENTATION_MUTATES_POLICY_STATE": "HOLD_SYSTEM_TERMINAL_CONTRACT_IMPLEMENTATION_MISMATCH_AND_STOP",
+      "EXPLICIT_OBSERVATIONAL_ISOLATION_AND_IMPLEMENTATION_MATCHES": "REJECT_CURRENT_OBJECT_AND_STOP",
+      "MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT": "HOLD_CONTRACT_AMBIGUITY_AND_STOP"
+    },
+    "stop_if_outcome_knowledge_needed_to_redesign": true
   },
-  "workflows": [
+  "workflows": [],
+  "observed_prior_workflows": [
     {
       "run_id": 35541396714,
       "name": "main v05 matched-load comparator feasibility",
       "head_sha": "b2547429823be29a2547419c80c40fb2138dfdc9",
       "status": "completed",
       "conclusion": "success",
-      "artifact_id": 10615006426,
-      "artifact_digest": "sha256:b19ba9fa5832c45beca9135e917acb18c0dee3aabe24127a1b0f83928bd0a52d"
+      "role": "PRIOR_COMPLETED_REFERENCE_ONLY"
     },
     {
       "run_id": 35541396705,
       "name": "ci",
       "head_sha": "b2547429823be29a2547419c80c40fb2138dfdc9",
       "status": "completed",
-      "conclusion": "success"
+      "conclusion": "success",
+      "role": "PRIOR_COMPLETED_REFERENCE_ONLY"
     }
   ],
   "observations": {
-    "comparator_feasibility_terminal": "EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE",
-    "prospective_contingency_branch": "HOLD_MECHANISM_UNRESOLVED_AND_STOP",
+    "architecture_observation_terminal": "MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT",
+    "prospective_contingency_branch": "HOLD_CONTRACT_AMBIGUITY_AND_STOP",
     "canonical_hold_dimensions_pending_fresh_analyst": true,
-    "intervention_outcomes_executed": 0,
-    "suppression_calls_authorized": false,
-    "same_run_scientific_redesign": false,
-    "seed_501": {
-      "status": "VALID",
-      "selected_assembly_id": "assembly-0001",
-      "target_units": [45, 56, 63],
-      "baseline_prediction": "outcome-0",
-      "baseline_similarity": 0.9433062621147579,
-      "baseline_total_spikes": 9,
-      "target_signature": {
-        "baseline_probe_spikes": 3,
-        "excitatory_units": 2,
-        "incoming_edges": 18,
-        "outgoing_edges": 15,
-        "receptor_incoming_edges": 8,
-        "two_hop_in_reach_sum": 43,
-        "two_hop_out_reach_sum": 55
-      },
-      "eligible_pool_size": 45,
-      "same_cardinality_combinations_exhausted": 14190,
-      "exact_comparator_found": false
+    "source_behavior": {
+      "action_choose_explore_false_mutates_visits": true,
+      "action_choose_explore_false_sets_pending": true,
+      "policy_visits_and_pending_are_checkpointed_state": true,
+      "brain_pending_action_is_checkpointed_state": true
     },
-    "seed_502": {
-      "status": "VALID",
-      "selected_assembly_id": "assembly-0001",
-      "target_units": [45, 56, 63],
-      "baseline_prediction": "outcome-0",
-      "baseline_similarity": 0.9433062621147579,
-      "baseline_total_spikes": 9,
-      "target_signature": {
-        "baseline_probe_spikes": 3,
-        "excitatory_units": 2,
-        "incoming_edges": 18,
-        "outgoing_edges": 15,
-        "receptor_incoming_edges": 8,
-        "two_hop_in_reach_sum": 43,
-        "two_hop_out_reach_sum": 55
-      },
-      "eligible_pool_size": 45,
-      "same_cardinality_combinations_exhausted": 14190,
-      "exact_comparator_found": false
-    }
+    "evaluation_callsite_behavior": {
+      "held_out_calls_learn_false": true,
+      "held_out_calls_explore_action_false": true,
+      "held_out_skips_learn_outcome": true,
+      "run_seed_deepcopies_training_snapshot_per_condition": true,
+      "within_condition_held_out_episodes_share_one_evaluation_copy": true,
+      "causal_ablation_branches_use_copies": true
+    },
+    "public_contract_audit": {
+      "theory_spec_training_and_evaluation_occurrences_separated": true,
+      "theory_spec_held_out_reactivation_may_feed_prediction_or_action": true,
+      "retained_protocol_defines_held_out_counts_and_gates": true,
+      "explicit_real_policy_visit_semantics_found": false,
+      "explicit_observational_policy_state_isolation_semantics_found": false,
+      "explicit_visit_pending_mutation_rule_for_evaluation_found": false,
+      "tests_assert_evaluation_policy_state_immutability": false,
+      "tests_assert_nonlearning_action_visit_mutation_as_contract": false
+    },
+    "dynamic_interleaving_executed": false,
+    "research_mutation_executed": false,
+    "workflow_dispatched": false,
+    "same_run_scientific_redesign": false
   },
   "evidentiary_status": {
     "formal_scientific_evidence": 0,
     "preformal_development_evidence": 0,
-    "mechanism_architecture_observations": 1,
-    "system_architecture_observations": 0,
+    "mechanism_architecture_observations": 0,
+    "system_architecture_observations": 1,
     "new_identity_consumption": 0,
-    "current_work": "NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_COMPARATOR_FEASIBILITY"
+    "current_work": "NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_STATIC_CONTRACT_AUDIT"
   },
   "ordinary_reductions": {
-    "prospectively_fixed_this_cycle": [
-      "exact aggregate baseline activity load",
-      "exact structural topology load",
-      "same-cardinality deterministic generic random lesion definition",
-      "sham definition",
-      "outcome-independent target/comparator selection"
-    ],
-    "result": "NO_EXACT_MATCHED_NONMEMBER_SET_ON_EITHER_FIXED_DEV_SEED",
-    "status": "UNRESOLVED_COMPARATOR_FEASIBILITY",
-    "no_rescue_tuning": true
+    "integer_visit_counter": "IMPLEMENTATION_CONFIRMED",
+    "pending_last_action_register": "IMPLEMENTATION_CONFIRMED",
+    "snapshot_copy_isolation": "CONDITION_AND_ABLATION_BRANCH_LEVEL_ONLY",
+    "evaluation_policy_state_semantics": "PUBLIC_CONTRACT_UNRESOLVED",
+    "no_dynamic_probe_needed_or_authorized_this_cycle": true
   },
   "support_breadth": {
-    "predecessor": "one fixed DEV seed/probe selective signal only",
-    "current": "two fixed development seeds (501, 502), baseline/pre-intervention comparator feasibility only; both valid and both exact-match infeasible"
+    "source": [
+      "src/sparkbrain/v05/action.py",
+      "src/sparkbrain/v05/brain.py",
+      "src/sparkbrain/v05/evaluation.py"
+    ],
+    "docs": [
+      "docs/THEORY_SPEC_v0.5.md",
+      "docs/V05_EXPERIMENT_PROTOCOL.md",
+      "docs/V05_MASTER_PLAN.md",
+      "docs/V05_STATUS.md",
+      "docs/V05_COMPLETION_REPORT.md"
+    ],
+    "tests": [
+      "tests/v05/test_v05_brain.py"
+    ],
+    "scope": "static/read-only source-docs-tests-callsites audit on exact stable main"
   },
   "consumed_identities": [],
   "integrity": {
@@ -179,6 +140,8 @@
     "freeze_tag_count": 0,
     "c19_v4_started": "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
     "c19_v4_raw_preserve": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "c19_r1_started_v1": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
+    "c19_r1_started_v2": "a230e250021cea113c42d674da2bfc31dc0a3549",
     "c19_r2_started": "41df2685fe015140c8afa13e646554dd2e8c836b",
     "c19_r2_raw_preserve": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
@@ -190,17 +153,19 @@
     "pr_148": "open_unmerged_mergeable",
     "pr_149": "open_unmerged_mergeable",
     "sub_collision": false,
-    "exact_head_ci_success": true
+    "research_branch_created": false,
+    "dynamic_science_executed": false,
+    "formal_identity_opened": false
   },
   "freshness": {
-    "analyst_tip_at_acquire": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
-    "analyst_tip_before_research_ref_update": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
-    "analyst_tip_before_result_mapping_and_persistence": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
-    "orchestrator_tip_at_acquire": "dd0a61766f90418365c6158e8bed1996f8b17d5a",
-    "orchestrator_tip_before_final_persistence": "c386e3d676a3bd84a0e921b36c53451290d55598"
+    "analyst_tip_at_acquire": "773c88edcaf799140830f3d204d0f0ff82c9bcad",
+    "analyst_tip_before_result_mapping_and_persistence": "773c88edcaf799140830f3d204d0f0ff82c9bcad",
+    "main_tip_before_result_mapping_and_persistence": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "orchestrator_tip_before_acquire": "958f2d961627b86c39f3d60b3ae39f63f685571f",
+    "orchestrator_tip_after_lease_acquire": "358d475a7adc2eefbf8c38b9643b058a8fb37580"
   },
-  "stop_reason": "R29_EXACT_MATCH_INFEASIBLE_HOLD_MECHANISM_UNRESOLVED_CONTINGENCY_STOP_FRESH_ANALYST_REVIEW",
-  "next_action": "Fresh Evidence Analyst must canonicalize the reached HOLD_MECHANISM_UNRESOLVED contingency, including exact hold_reason/terminal_state/queue_state, before any continuation. Do not run suppression/intervention outcomes, do not rescue-tune the comparator, and do not reinterpret preformal_eligible=true as READY.",
+  "stop_reason": "R30_STATIC_SYSTEM_TERMINAL_MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT_HOLD_CONTRACT_AMBIGUITY_STOP_FRESH_ANALYST_REVIEW",
+  "next_action": "Fresh Evidence Analyst must canonicalize the reached HOLD_CONTRACT_AMBIGUITY contingency. Do not run dynamic evaluation interleaving, do not infer observational or real-visit semantics post hoc, and do not create a MECHANISM successor without a fresh candidate ID and Analyst authority.",
   "utility_request_created": null,
   "owner": "main"
 }
