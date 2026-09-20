@@ -1,23 +1,23 @@
 {
-  "timestamp": "2026-09-20T08:46:00+09:00",
+  "timestamp": "2026-09-20T09:42:00+09:00",
   "worker_role": "sub",
   "mode": "discovery",
-  "evidence_analyst_commit": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
+  "evidence_analyst_commit": "df12559698c0f6bc0165c550a55c62f7287a86bd",
   "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "main_lane": "V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "main_lane": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
   "sub_lane": "BOUNDED_SECONDARY_DISCOVERY",
   "consumed_lane": "BOUNDED_SECONDARY_DISCOVERY_SELF_SELECTED",
   "formal_sub_lane": null,
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "exploratory_target": "HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1",
+  "exploratory_target": "RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1",
   "candidate_pool_id": "NONE_SELF_SELECTED",
   "exploration_cycle": "1/3",
-  "why_independent_of_main": "MAIN owns CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01 and its complete caller-contract Architecture critical path. This bounded Discovery touches only stable v0.5 homeostatic stability accounting on synthetic field/spike values and does not continue or mutate delayed-outcome work, the queued Assembly mature-capacity/lifecycle object, Refractory follow-up, suppression methodology, Top-k, H7, or any FORMAL/TEST/scoring/identity/preserve/evidence surface.",
-  "question": "When the internal reservoir is completely silent but receptor units continue to spike, does the public v0.5 homeostatic dead flag remain false because HomeostaticController.observe() counts all field spikes, while a receptor-filtered shadow reaches dead=true under the same six-window horizon?",
-  "reduction_question": "If receptor-only activity masks reservoir silence, is the effect fully explained by all-field spike accounting and dead-streak reset semantics rather than an additional stability mechanism?",
+  "why_independent_of_main": "MAIN owns CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01 and its complete static/read-only Architecture critical path. This bounded Discovery touches only stable-main v0.5 receptor-bank same-time ordering and adaptive-gain semantics, does not inspect or mutate the Homeostasis branch/outcome/blocker/successor, and does not continue queued Assembly mature-capacity or any completed do-not-touch lower-funnel object.",
+  "question": "For two pulses with the same timestamp and channel and the same input multiset, is MultiTimescaleReceptorBank.process() permutation-invariant, or can caller iterable order alter physical emitted drive because same-key ties are processed sequentially through adaptive gain?",
+  "reduction_question": "If physical order sensitivity exists while final receptor state is identical, is it fully explained by stable tie ordering plus sequential bounded gain rather than a new receptor-memory mechanism?",
   "inputs_used": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "synthetic_field_and_spikes_only": true,
+    "synthetic_pulses_only": true,
     "repository_dataset": false,
     "world_generator": false,
     "trained_checkpoint": false,
@@ -28,27 +28,28 @@
     "main_architecture_outcome_artifact": false
   },
   "implementation_experiment": {
-    "branch": "research/exploratory-sub-homeostasis-receptor-dead-mask-20260920",
-    "prospective_binding_commit": "550636870dc564297d567efddab919ea31b37044",
-    "diagnostic_commit": "ae5856d26d7a24e77a17bf564e491b293057d55b",
-    "head": "8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f",
-    "result_handoff_commit": "8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f",
+    "branch": "research/exploratory-sub-receptor-sametime-permutation-20260920",
+    "prospective_binding_commit": "79f7c35ffb2a0330f1218453aa178009c5e4ffaa",
+    "diagnostic_commit": "28a66c5b76481544d262fc443f645f6e0c84bfbb",
+    "head": "61d1f740c9b83f4d327e22630c499145a1eeb453",
+    "result_handoff_commit": "61d1f740c9b83f4d327e22630c499145a1eeb453",
     "production_source_modified": false,
-    "field": {
-      "receptor_unit": 0,
-      "internal_reservoir_unit": 1,
-      "connections": 0,
-      "initial_base_threshold": 0.5
-    },
-    "homeostasis_config": "default",
-    "dead_windows_before_flag": 6,
-    "arms": [
-      "RECEPTOR_ONLY_PRODUCTION_ACCOUNTING: one receptor spike per window for six windows",
-      "EMPTY_CONTROL: zero spikes per window for six windows",
-      "RECEPTOR_FILTERED_SHADOW: same receptor spike stream with field.receptor_ids removed before an independent controller"
+    "receptor_config": "default",
+    "fixed_input_multiset": [
+      "SignalPulse(time_ms=0.0, channel=A, magnitude=1.0, polarity=+1)",
+      "SignalPulse(time_ms=0.0, channel=A, magnitude=0.2, polarity=+1)"
     ],
-    "diagnostic_workflow_run": 35476754216,
-    "final_workflow_run": 35476878641,
+    "arms": [
+      "LARGE_THEN_SMALL: [1.0, 0.2]",
+      "SMALL_THEN_LARGE: [0.2, 1.0]"
+    ],
+    "fixed_observables": [
+      "final receptor state_dict equality",
+      "final fast/medium/slow/gain values",
+      "emitted pulse magnitudes and polarities",
+      "total signed emitted drive"
+    ],
+    "final_workflow_run": 35479308798,
     "final_workflow_status": "completed",
     "final_workflow_conclusion": "success",
     "python_3_11": "success",
@@ -59,55 +60,51 @@
     "bundle_validation": "success"
   },
   "observations": {
-    "receptor_only_production": {
-      "dead": false,
-      "dead_streak": 0,
-      "active_unit_fraction": 0.5,
-      "internal_reservoir_rate_ema": 0.0
+    "final_receptor_state_equal": true,
+    "final_trace_values_equal": true,
+    "large_then_small": {
+      "emitted_magnitudes": [1.14, 0.19],
+      "signed_emitted_drive_sum": 1.33
     },
-    "empty_control": {
-      "dead": true,
-      "dead_streak": 6,
-      "active_unit_fraction": 0.0
+    "small_then_large": {
+      "emitted_magnitudes": [0.456, 0.95],
+      "signed_emitted_drive_sum": 1.406
     },
-    "receptor_filtered_shadow": {
-      "dead": true,
-      "dead_streak": 6,
-      "active_unit_fraction": 0.0
-    },
-    "mechanistic_reduction": "HomeostaticController.observe() builds rows from every supplied spike, resets dead_streak whenever rows is non-empty, computes active_unit_fraction from every spiking unit ID, and updates rate/threshold state for every field unit. It does not exclude field.receptor_ids. IntegratedV05Brain.process_episode() passes base_result.spikes directly to observe(), while Assembly extraction later explicitly excludes receptor IDs for internal_reservoir patterns.",
-    "interpretation": "Continuing receptor/input activity can mask complete internal-reservoir silence in the public stability signal under the fixed synthetic probe. This is an Architecture/API observability-semantics concern, not a new stability mechanism or scientific novelty evidence."
+    "absolute_signed_drive_difference": 0.076,
+    "relative_difference_vs_large_then_small": 0.05714285714285714,
+    "mechanistic_reduction": "MultiTimescaleReceptorBank.process() sorts only by (time_ms, channel), leaving exact-key ties in caller iterable order. _observe_one() sequentially updates mean_abs and then computes bounded adaptive gain. A first 1.0 pulse sees gain 1.2, a first 0.2 pulse reaches the 2.4 cap, and the second pulse in either arm sees final gain 1.0. Thus emitted physical drive is order-sensitive while the accumulated receptor endpoint is identical. IntegratedV05Brain.process_episode() also sorts raw pulses only by (time_ms, channel), so it does not normalize the tie.",
+    "interpretation": "The fixed synthetic probe exposes an Architecture/API simultaneity-ordering degree of freedom at the receptor boundary. It is fully reducible to sequential adaptive-gain and tie-order semantics, not a new receptor-memory mechanism or scientific novelty evidence."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "Reduce to REJECT/ENGINEERING_NOTE_ONLY if whole-field silence including receptor activity is explicitly the intended supported meaning of dead and no supported monitoring/adaptation consumer requires internal-reservoir liveness; if receptor-only activity with a silent reservoir is unreachable in supported runtime paths; or if a fresh matched receptor-aware comparator changes no prospectively fixed stability/adaptation behavior of interest.",
-  "candidate_next_research_layer": "ARCHITECTURE_STUDY_STABILITY_OBSERVABILITY_SEMANTICS",
+  "what_would_falsify_or_reduce_it": "Reduce to REJECT/ENGINEERING_NOTE_ONLY if a fresh static contract study establishes that same-time same-channel pulses are intentionally ordered events and caller iterable order is semantic; if supported callers cannot generate same-key multiplicity; or if a future prospectively specified aggregation comparator preserves all pre-bound downstream observables of interest.",
+  "candidate_next_research_layer": "ARCHITECTURE_STUDY_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT",
   "scientific_choices_still_open": [
-    "whether StabilitySnapshot.dead represents whole-field silence or internal-computation/reservoir silence",
-    "whether receptor units should share reservoir rate/threshold homeostatic targets",
-    "which population is represented by active_unit_fraction and its denominator",
-    "which supported caller or monitoring decision consumes StabilitySnapshot.dead"
+    "whether same timestamp plus same channel denotes an ordered sequence or an unordered simultaneous multiset",
+    "whether supported callers can produce multiple pulses with identical (time_ms, channel)",
+    "whether adaptive gain should be computed once per timestamp/channel aggregate or sequentially per pulse if simultaneity is intended",
+    "which downstream observable must be prospectively bound before any comparator"
   ],
   "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "research_layer_state": {
     "DISCOVERY": "OPEN_SUB_TARGET_COMPLETED_STOPPED_FOR_ANALYST_REVIEW",
-    "ARCHITECTURE_STUDY": "MAIN_DELAYED_OUTCOME_CALLER_CONTRACT_CYCLE_ACTIVE_OR_TERMINAL_PENDING_FRESH_ANALYST",
+    "ARCHITECTURE_STUDY": "MAIN_HOMEOSTASIS_STATIC_CONTRACT_CYCLE_TERMINAL_WITH_EXACT_HEAD_CI_SUCCESS_PENDING_FRESH_ANALYST_REVIEW",
     "PRE_FORMAL": "EMPTY_HOLD",
     "FORMAL": "EMPTY_HOLD"
   },
   "blocked_until": {
-    "main": "fresh Evidence Analyst review of delayed-outcome caller-contract Architecture result",
-    "sub_continuation": "fresh Evidence Analyst classification and prospective stability-observability Architecture contract",
+    "main": "fresh Evidence Analyst review of Homeostasis static Architecture terminal",
+    "sub_continuation": "fresh Evidence Analyst classification and prospective receptor simultaneity/ordering Architecture contract",
     "pre_formal": "fresh supported mechanistic/reduction object exists",
     "formal": "fresh prospectively admissible object plus one-way authority exists"
   },
   "main_work_explicitly_avoided": [
-    "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01 branch/caller-contract blocker/outcome/successor",
+    "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01 branch/static-contract outcome/blocker/successor",
     "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 continuation",
+    "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01 continuation",
     "CAND-REFRACTORY-CURRENT-ACCOUNTING-01 follow-up",
-    "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01 methodology/follow-up",
-    "CAND-TOPK-PA-01 follow-up",
-    "CAND-H7-RESP-01 construction",
-    "completed Temporal/topology-config/Assembly segmentation objects",
+    "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01 follow-up",
+    "CAND-TOPK-PA-01 and CAND-H7-RESP-01",
+    "completed Temporal/topology-config/Assembly/fanout objects",
     "consumed-line repair or reinterpretation",
     "FORMAL/TEST/scoring/identity/preserve/evidence surfaces"
   ],
@@ -120,12 +117,13 @@
     "PR #148/#149 governance work"
   ],
   "authority_reconciliation": {
-    "fresh_analyst_tip_rechecked_before_research_result_and_persistence": true,
-    "analyst_tip": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
+    "fresh_analyst_tip_rechecked_before_persistence": true,
+    "analyst_tip": "df12559698c0f6bc0165c550a55c62f7287a86bd",
     "allocation_changed_during_run": false,
     "selected_target_invalidated": false,
     "stable_main_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_exact_head_observed": "c79c5434222a6d018931dc1752e7f0074c23854b",
+    "main_exact_head_observed": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
+    "main_exact_head_ci_run": 35478448679,
     "main_exact_head_ci_observed_success": true,
     "main_outcome_used_to_tune_or_modify_sub_work": false,
     "sub_collision_found": false,
@@ -133,10 +131,12 @@
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "850b4502cf15d3f6118a487c5ab4ba81fbf7b75e",
-    "sub_research_branch": "research/exploratory-sub-homeostasis-receptor-dead-mask-20260920",
-    "sub_research_head": "8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f",
-    "orchestrator_tip_before_sub_persistence": "ebbb574fe66889150becffc24fcefb782ee7ec24"
+    "evidence_analyst": "df12559698c0f6bc0165c550a55c62f7287a86bd",
+    "main_research_branch": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
+    "main_research_head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
+    "sub_research_branch": "research/exploratory-sub-receptor-sametime-permutation-20260920",
+    "sub_research_head": "61d1f740c9b83f4d327e22630c499145a1eeb453",
+    "orchestrator_tip_before_sub_persistence": "e594848c0177179f42599355a7406ec2ed9116aa"
   },
   "utility_request_created": null,
   "consumed_identities": [],
@@ -149,15 +149,15 @@
   "research_merge_performed": false,
   "main_modified": false,
   "blockers": [
-    "fresh Evidence Analyst classification and prospective stability-observability Architecture contract required before any continuation"
+    "fresh Evidence Analyst classification and prospective receptor simultaneity/ordering Architecture contract required before any continuation"
   ],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_HOMEOSTASIS_STABILITY_OBSERVABILITY_DISCOVERY_CYCLE_AND_RETURNED_ARCHITECTURE_PROMOTION_CANDIDATE",
+  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_RECEPTOR_SIMULTANEITY_DISCOVERY_CYCLE_AND_RETURNED_ORDERING_CONTRACT_PROMOTION_CANDIDATE",
   "completion_target_achieved": true,
   "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_COMPLETED_RECONCILED_AND_STOPPED_FOR_REVIEW",
   "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/0846-sub.md",
-    "history_commit": "561ef8f062b1a02945e49843d1b65856f6804319",
-    "latest_md_commit": "bec24a6286ca7c9f45f89cbfd56c2dfb78c1b6a3",
+    "history_path": "reports/orchestrator/history/2026-09-20/0942-sub.md",
+    "history_commit": "927057a702e1211cf89296f65fefe6db91927fe1",
+    "latest_md_commit": "46c5b212be67f2a0849be16c0fa411877dc99bff",
     "state_json_commit": "this update",
     "force_push_used": false,
     "main_or_legacy_shared_latest_state_modified": false
