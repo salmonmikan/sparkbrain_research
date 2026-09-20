@@ -1,11 +1,11 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-20 21:22 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-20 23:20 JST
 
 schema_version: `2`  
-generation_id: `METHCAL-20260920T212247+0900-R21-5A8C21D4`  
-produced_at: `2026-09-20T21:22:47+09:00`  
-producer_run_id: `methodology-calibration-auto-20260920T212247+0900-R21-5A8C21D4`  
+generation_id: `METHCAL-20260920T232040+0900-R22-6D3A91E4`  
+produced_at: `2026-09-20T23:20:40+09:00`  
+producer_run_id: `methodology-calibration-auto-20260920T232040+0900-R22-6D3A91E4`  
 authority_scope: `METHODOLOGY_ADVISORY_ONLY`  
-supersedes_generation_id: `METHCAL-20260920T202031+0900-R20-74B1C6E3`
+supersedes_generation_id: `METHCAL-20260920T212247+0900-R21-5A8C21D4`
 
 ## Run disposition
 
@@ -15,119 +15,135 @@ supersedes_generation_id: `METHCAL-20260920T202031+0900-R20-74B1C6E3`
 
 **`WELL_CALIBRATED`** — unchanged overall.
 
-The material update is a Funnel-v2.1 **schema-applicability clarification**, not a change to scientific admission, novelty, reduction, comparator, readiness, or integrity thresholds. Fresh Control R16 treated `hold_class=null` / `hold_reason=null` on a terminal `REJECT` candidate as an incomplete v2.1 classification and therefore described a pending 15/16-complete view. Fresh Evidence Analyst R20 independently rejected that interpretation: `hold_class` and `hold_reason` apply when `classification=HOLD`; a `REJECT` object correctly keeps those fields null while still requiring `terminal_state` and `queue_state`. On that canonical applicability rule the reviewed pool is 16/16 complete.
+Two material calibration updates are supported.
 
-This cross-role disagreement can create false funnel incompleteness and unnecessary policy blocking even when the scientific object is fully classified, so the applicability mask should be made explicit and machine-readable. It does **not** justify weakening HOLD observability: HOLD objects still require a primary `hold_class`, explanatory `hold_reason`, and orthogonal terminal/queue state.
+First, the Funnel-v2.1 HOLD-field applicability defect identified in R21 is now prospectively resolved across the designated control plane. Control R17 explicitly corrects its earlier R16 interpretation and adopts the Evidence Analyst rule: `hold_class` and `hold_reason` are required iff `classification=HOLD`; non-HOLD dispositions such as `REJECT` correctly keep them null, while `terminal_state` and `queue_state` remain required. Canonical Evidence Analyst R21 is therefore 17/17 complete. The previous `CLARIFY` recommendation can move to `KEEP` for the multidimensional HOLD model and its applicability semantics.
 
-## Strongest new evidence
+Second, fresh Independent Audit R3 provides a consequential external-calibration example. C19-v4's immutable exact PASS remains valid for its registered truth-free-surface versus local-compositional contrast, but the registered reference is a zero-performing path and later authoritative C19-R2 evidence shows a fixed seven-state FSA substantially exceeds it under cluster-aware inference. This does not retroactively invalidate or rescore C19-v4. It does support prospective claim-type-specific tightening for future external-validation superiority claims: use a competent nondegenerate reference, include the simple FSA/state-tracker reduction when relevant, match information/resource privilege, and use source/atomic-unit cluster-aware inference when multiple observations share one source unit.
 
-`CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01` is a clean fresh theory-backward MECHANISM Discovery. Its prospective binding `c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab` fixed exact stable-main API/source semantics, two controls, terminal observables, a one-slot last-action comparator, falsifier, and no-rescue stop before outcome. The outcome-bearing cycle then found that `choose(A) -> choose(B) -> reward(+1)` updated only B; the fixed one-slot pending-register comparator reproduced the behavior exactly. Final research head `411913e0b3a0493595969513bf0b7829c49cc248` therefore closes the current object as `REJECT / MECHANISM / preformal_eligible=false / NOT_READY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`, with no cycle-2 rescue and no SYSTEM relabel.
+Scientific admission, general discovery comparator rules, PRE_FORMAL readiness semantics, and the hard integrity floor remain unchanged.
 
-This is also a second clean post-adoption example of the terminal/API semantic preflight. No terminal-relevant representation was repaired after outcome exposure.
+## Strongest current evidence
 
-The new mechanism question is not merely the earlier delayed-reward-eligibility object relabeled: the earlier object tested field-edge eligibility receiving delayed reward without reactivation, whereas the new object tests action-policy responsibility surviving an intervening eligible action. They hit different native state surfaces and ordinary reductions. Still, the programme should keep using marginal information gain rather than serially mining nearby credit-state microcases once distinct mechanism information is exhausted.
+### 1. HOLD applicability is now aligned rather than merely clarified
 
-## Funnel v2.1 status
+Control `CTRL-20260920T225013+0900-R17-3F8C61A2` explicitly states that its prior R16 15/16 view was incorrect and adopts applicability-aware semantics. Evidence Analyst `EVA-20260920T215718+0900-R21-4F8C2A71` already applies the same rule and reports 17/17 classification completeness. This closes the cross-role schema disagreement that could have manufactured false funnel incompleteness.
 
-- `claim_ceiling` current-object semantics: `KEEP` — fresh SUB was prospectively `MECHANISM`; completed SYSTEM Architecture remained SYSTEM-only.
-- same-object SYSTEM→MECHANISM upgrade ban: `KEEP` — no in-place upgrade or novelty laundering observed.
-- fresh successor discipline: `KEEP` — completed Assembly cluster-order Discovery and its supported-reachability Architecture study remained separate objects.
-- `preformal_eligible` vs READY: `KEEP` — current authoritative eligible=0 / READY=0; prior prospective history still demonstrates eligible=true can coexist with NOT_READY before outcome.
-- READY semantics: `KEEP`; `HIDDEN_SECOND_FORMAL_GATE=false`; first READY→PRE_FORMAL remains `INSUFFICIENT_EVIDENCE`.
-- HOLD multidimensional model: `CLARIFY` — retain the model, but specify field applicability: `hold_class` and `hold_reason` are required iff `classification=HOLD`; non-HOLD dispositions such as `REJECT` should use null HOLD fields, while `terminal_state` and `queue_state` remain mandatory for all material objects.
-- classification-completeness gating: `KEEP`, with the same applicability mask used by validators and policy metrics. Canonical Analyst population is `16/16`, not Control's transient `15/16` interpretation.
-- MAIN MECHANISM priority: `KEEP` — the latest completed MAIN SYSTEM Architecture study was allocated when viable executable MECHANISM count was 0; no priority exception was needed.
-- prospective `system_priority_exception`: `KEEP`; first genuine use remains `INSUFFICIENT_EVIDENCE`.
-- rolling one-in-three theory-backward supply: `KEEP`; current window `MECHANISM / SYSTEM / MECHANISM = 2/3` satisfies the floor without turning it into a target ratio.
-- theory-backward quality floor: `KEEP` — the new action-responsibility question was prospectively falsifiable and accepted its exact ordinary reduction.
-- `NO_COHERENT_MECHANISM_TARGET`: `KEEP`; still unused, so first-use calibration remains `INSUFFICIENT_EVIDENCE`.
-- SYSTEM value under MECHANISM priority: `KEEP` — MAIN completed a bounded static SYSTEM Architecture study and stopped at unsupported reachability/contract ambiguity rather than forcing a dynamic experiment.
-- no universal numeric readiness/support threshold: `KEEP`.
-- equal-privilege comparator / ordinary-reduction-first / signal-before-strong-claim / claim-type separation: `KEEP`.
-- terminal/API semantic preflight and outcome-exposed-repair containment: `KEEP`.
-- freshness dependency fail-close: `KEEP` — fresh MAIN correctly executed no science when a newer SUB generation had not yet been reviewed by Analyst.
-- legacy Top-k sparse-support weakness: `TIGHTEN` — unchanged local historical issue; do not generalize a replacement numeric threshold programme-wide.
+Canonical policy metrics must use the 17/17 Analyst-reviewed population. A fresh SUB object exists after Analyst R21; it is candidate-locally complete but remains pending independent Analyst incorporation, so it must not silently change canonical conversion counts.
 
-## Calibration assessment
+### 2. Fresh theory-backward supply is genuinely mechanistic and prospectively falsifiable
 
-`gate_drift`: **no scientific gate drift**; one cross-role schema-applicability interpretation drift was observed and should be clarified.  
-`justification_trace`: strong; Control's 15/16 view and Analyst's explicit non-adoption are both durably visible.  
-`false_positive_control`: strong; prospective semantic binding, exact ordinary reduction, fresh-object discipline, and fail-closed Analyst freshness remain intact.  
-`false_negative_risk`: low-to-moderate only at the observability layer: forcing HOLD fields onto REJECT objects could falsely mark fully classified objects incomplete and delay policy updates. Do not solve this by weakening actual HOLD detail.  
-`duplicate_guards`: no scientific duplicate guard identified; HOLD fields and terminal/queue fields are orthogonal only when their applicability is explicit.  
-`moving_goalposts`: `LOW`; no consumed/frozen object was rescored, repaired, upgraded, or invalidated.  
-`pass_reachability`: `REACHABLE_BUT_NARROW`; unchanged because no READY object exists yet.  
-`comparator_calibration`: healthy; the new MECHANISM object used a simple claim-matched one-slot pending-register reduction fixed before outcome.  
-`signal_before_reduction`: healthy; bounded Discovery did not require positive signal merely to ask a falsifiable mechanism question, while promotion remains signal/reduction constrained.  
+`CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01` was bound before outcome at `e466bd89cfd4ab80dc970173a183638af815fe8b` as a fresh `MECHANISM` object, with `preformal_eligible=true in principle`, readiness=`NOT_READY`, exact current-object question, ordinary per-edge eligibility-trace comparator, falsifier, terminal mapping and no-rescue boundary. Stable-main `V05PlasticityController.apply()` independently confirms the prospectively modeled decay-plus-current-delta eligibility semantics.
+
+Final research head `6ddcb7fec39dd017fbfe172885a994a98b503021` records exact reduction to the fixed ordinary recurrence and proposes `REJECT / MECHANISM / preformal_eligible=false / NOT_READY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`, with null HOLD-only fields and no cycle 2. No same-object SYSTEM rescue or upgrade occurred.
+
+The pre-selection rolling SUB window was already compliant at 2/3 MECHANISM, so this object was not required for quota compliance. After it, the observed window is 3/3. Treat 3/3 as an incidental outcome, not a target. Because several recent probes cluster around responsibility/credit surfaces, keep an opportunity-cost watch and switch domains/no-op when marginal mechanism information falls.
+
+### 3. Independent external audit sharpens comparator calibration without rewriting history
+
+Independent Audit `AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9` finds no one-way-integrity failure in C19-v4 and preserves its exact PASS. The authoritative evidence tag resolves to `a0f83318356ced1c84863737803080d0dc69d208`, whose evidence explicitly disallows winner claims over unmatched learned/recurrent/transformer baselines. Separate authoritative C19-R2 evidence `6197fa801a78a0c5de4c2b6ff5d03216ac5539db` records `REDUCED_BY_FSA`, primary paired `atomic_idx` cluster bootstrap over 204 clusters, and observed C19-v4-minus-FSA effect about `-0.24623`.
+
+Methodological lesson: research-worthiness and an exact registered PASS are not equivalent to surviving mechanism/novelty support. Future external-validation advantage claims should prospectively face competent references, simple reduction baselines and the correct independent resampling unit. This is a claim-type-specific tightening, not a programme-wide numeric threshold.
+
+## Funnel v2.1 audit
+
+1. `claim_ceiling` current-object semantics: **KEEP**. Fresh SUB is prospectively MECHANISM for the current object; no prestige/topic relabeling observed.
+2. same-object SYSTEM→MECHANISM upgrade ban: **KEEP**. No completed SYSTEM object was upgraded in place.
+3. `preformal_eligible` vs READY: **KEEP**. Fresh prospective history again shows `eligible=true` can coexist with `NOT_READY` before outcome.
+4. READY semantics: **KEEP**; `HIDDEN_SECOND_FORMAL_GATE=false`. First Analyst-authoritative READY→PRE_FORMAL remains **INSUFFICIENT_EVIDENCE**.
+5. HOLD multidimensional model and applicability mask: **KEEP**. Cross-role disagreement is now corrected: HOLD fields iff HOLD; terminal/queue fields for all material objects.
+6. MAIN SYSTEM-over-MECHANISM rule: **KEEP**. No genuine exception has been used; first live use remains **INSUFFICIENT_EVIDENCE**.
+7. `NO_COHERENT_MECHANISM_TARGET`: **KEEP**. Still unused; first live use remains **INSUFFICIENT_EVIDENCE**.
+8. theory-backward selection quality: **KEEP**. Fresh object is mechanism-level, falsifiable and accepts an ordinary reduction; not a relabeled SYSTEM question.
+9. SYSTEM value under MECHANISM priority: **KEEP**. Recent bounded SYSTEM Architecture work retained testbed/architecture value and stopped rather than being inflated into novelty.
+10. PRE_FORMAL/PASS reachability: **REACHABLE_BUT_NARROW**. No evidence that v2.1 requires prior scientific victory merely to become READY, but no READY object exists yet.
+11. classification-completeness gating: **KEEP**. Policy conclusions use 17/17 reviewed canonical population; fresh unreviewed object is excluded pending Analyst review.
+12. first READY→PRE_FORMAL empirical semantics: **INSUFFICIENT_EVIDENCE**.
+
+## Material gate classifications
+
+- hard integrity floor: `KEEP`
+- prospective terminal/API semantic binding: `KEEP`
+- outcome-exposed repair containment: `KEEP`
+- current-object `claim_ceiling`: `KEEP`
+- same-object SYSTEM→MECHANISM upgrade ban: `KEEP`
+- fresh-successor discipline: `KEEP`
+- `preformal_eligible` / READY separation: `KEEP`
+- READY development-readiness semantics: `KEEP`
+- HOLD multidimensional model: `KEEP`
+- HOLD field applicability mask: `KEEP`
+- classification-completeness applicability semantics: `KEEP`
+- MAIN MECHANISM priority: `KEEP`
+- prospective SYSTEM-priority exception: `KEEP`
+- rolling one-in-three theory-backward supply: `KEEP`
+- theory-backward quality floor: `KEEP`
+- `NO_COHERENT_MECHANISM_TARGET`: `KEEP`
+- SYSTEM architecture/testbed/reproducibility value: `KEEP`
+- general equal-privilege comparator / ordinary-reduction-first: `KEEP`
+- external-validation competent-reference requirement for superiority/novelty claims: `TIGHTEN`
+- external-validation source/atomic-unit resampling when observations are clustered: `TIGHTEN`
+- historical immutable-result interpretation ceiling: `KEEP`
+- research-worthiness vs novelty separation: `KEEP`
+- no universal numeric readiness/support threshold: `KEEP`
+- legacy Top-k sparse-support weakness: `TIGHTEN`
+- first READY→PRE_FORMAL: `INSUFFICIENT_EVIDENCE`
+- first genuine SYSTEM-priority exception: `INSUFFICIENT_EVIDENCE`
+- first `NO_COHERENT_MECHANISM_TARGET` use: `INSUFFICIENT_EVIDENCE`
+
+## Calibration dimensions
+
+`gate_drift`: no current scientific gate drift; prior HOLD applicability drift is resolved.  
+`justification_trace`: strong; the Control correction, Analyst canonical semantics, fresh SUB prospective contract, and independent external audit are all visible.  
+`false_positive_control`: strong, with one prospective tightening for external-validation advantage claims where degenerate references or wrong resampling units could inflate interpretation.  
+`false_negative_risk`: low-to-moderate; do not universalize FSA or cluster-bootstrap requirements to unrelated bounded Discovery questions.  
+`duplicate_guards`: none material.  
+`moving_goalposts`: `LOW`; C19-v4 remains immutable PASS and is not rescored/relabelled; programme interpretation narrows only by separate later evidence.  
+`pass_reachability`: `REACHABLE_BUT_NARROW`.  
+`comparator_calibration`: healthy for current lower-funnel Discovery; external-validation superiority claims need the tightened competent-reference/reduction rule prospectively.  
+`signal_before_reduction`: healthy.  
 `claim_type_separation`: healthy.  
-`research_worthiness_vs_novelty`: healthy; SYSTEM Architecture work retained value without novelty inflation, and the new MECHANISM negative was not rescued as SYSTEM.  
-`external_calibration`: unchanged; current literature strengthens prospective ordinary reductions without creating a universal threshold.  
-`opportunity_cost`: healthy; MAIN is now idle after the bounded SYSTEM study, while SUB remains the bounded candidate-supply lane.
-
-## Mechanism-supply health
-
-**`HEALTHY_BALANCED_SMALL_N_DISTINCT_MECHANISM_SUPPLY_16_OF_16_COMPLETE`**.
-
-Analyst-reviewed portfolio is `MECHANISM=8 / SYSTEM=8`. Rolling autonomous SUB window is `MECHANISM, SYSTEM, MECHANISM` (`2/3`), with no `NO_COHERENT_MECHANISM_TARGET` exception. The latest MECHANISM object is genuinely falsifiable and distinct from the earlier field-eligibility object, so there is no current evidence of quota-manufactured mechanism work. The next selections should nevertheless maximize marginal information gain rather than chase a higher MECHANISM share.
-
-## Funnel observability
-
-**`GOOD_V2_1_COMPLETE_16_OF_16_WITH_HOLD_FIELD_APPLICABILITY_CLARIFICATION`**.
-
-Canonical Analyst classification is complete at 16/16. The observed Control/Analyst disagreement shows that completeness must be computed over **applicable required fields**, not by demanding HOLD-only fields from REJECT objects. Recommended schema semantics prospectively:
-
-- `classification=HOLD` -> `hold_class` non-null + `hold_reason` non-null, plus `terminal_state` and `queue_state`;
-- `classification!=HOLD` -> `hold_class=null` and `hold_reason=null`, while `terminal_state` and `queue_state` remain required;
-- completeness metrics must expose the applicability rule/version so cross-role validators cannot disagree silently.
-
-## PRE_FORMAL gate calibration
-
-**`ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED`**.
-
-Current authoritative eligible=0 and READY=0. `HIDDEN_SECOND_FORMAL_GATE=false`. No evidence suggests READY has become prior scientific success, but the first Analyst-authoritative READY→PRE_FORMAL transition remains the highest-information unresolved calibration event.
-
-## SYSTEM-priority-exception audit
-
-`system_priority_exception.used=false`. The just-completed SYSTEM Architecture cycle had no comparable executable/informative MECHANISM candidate according to the preceding Analyst allocation, so normal priority logic applies. First genuine exception use remains `INSUFFICIENT_EVIDENCE`.
-
-## NO_COHERENT_MECHANISM_TARGET audit
-
-The exception remains unused. Current 2/3 rolling theory-backward supply meets the floor without it. First live use remains `INSUFFICIENT_EVIDENCE`; when it occurs, require a concrete quality-floor failure rather than a generic lack-of-ideas assertion.
+`research_worthiness_vs_novelty`: strengthened by the C19-v4/R2 example.  
+`external_calibration`: materially improved.  
+`opportunity_cost`: healthy with a watch on serial near-neighbor responsibility/credit probes.  
+`mechanism_supply_health`: `HEALTHY_SMALL_N_3_OF_3_WITH_NEAR_NEIGHBOR_OPPORTUNITY_COST_WATCH`.  
+`funnel_observability`: `GOOD_V2_1_17_OF_17_CANONICAL_PLUS_1_PENDING_APPLICABILITY_ALIGNED`.  
+`preformal_gate_calibration`: `ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED`.
 
 ## Prospective recommendations
 
-1. Keep scientific admission, novelty, reduction, comparator, readiness, and hard-integrity thresholds unchanged.
-2. Clarify Funnel-v2.1 field applicability in the shared schema/validator: HOLD fields required iff classification is HOLD; terminal/queue fields required for all material objects; completeness computed against applicable fields.
-3. Preserve the one-in-three rule as a minimum supply floor only. Do not treat the current 2/3 or any future 3/3 as a target.
-4. Keep choosing SUB Discovery by marginal information gain; avoid serial near-neighbor responsibility/credit probes once they cease to separate distinct mechanisms.
-5. Audit the first READY→PRE_FORMAL, first genuine MAIN SYSTEM-over-comparable-MECHANISM exception, and first `NO_COHERENT_MECHANISM_TARGET` use.
-6. Continue exact terminal/API source binding and outcome-exposed-repair containment prospectively.
+1. Keep the scientific admission, lower-funnel novelty/reduction, PRE_FORMAL readiness, and hard-integrity floors unchanged.
+2. Treat the HOLD applicability rule as settled shared semantics: HOLD fields required iff HOLD; terminal/queue fields required for every material object; completeness computed over applicable fields.
+3. For fresh external-validation superiority/novelty claims, prospectively require a competent nondegenerate reference and relevant simple reduction comparator under matched information/resource privilege. Where multiple observations share an atomic/source unit, bind source-level clustered inference prospectively.
+4. Do not apply those external-validation requirements as universal gates to unrelated bounded Discovery questions.
+5. Keep one-in-three as a minimum. The current 3/3 mechanism window is not a target; select next SUB work by marginal information gain and use credible no-target/no-op semantics instead of serial low-yield credit microprobes.
+6. Audit the first READY→PRE_FORMAL, first genuine MAIN SYSTEM-over-comparable-MECHANISM exception, and first `NO_COHERENT_MECHANISM_TARGET` use.
 
 ## Utility request
 
-None created. The live Control/Analyst disagreement already supplies the needed methodology-calibration evidence; a synthetic probe would add less information than normal rollout.
+None created. Live rollout plus the fresh independent external audit already provide higher-information calibration evidence than a synthetic methodology probe.
 
 ## Hard-integrity-floor confirmation
 
-**CONFIRMED / DO NOT RELAX.** No recommendation weakens no-rerun/no-retune consumed identities, prospective/frozen protocols, raw-before-score, preserve-before-read, exact identity/source/package/runtime/input binding, immutable evidence, evaluator/target leakage controls, or the prohibition on silent post-outcome repair.
+**CONFIRMED / DO NOT RELAX.** No recommendation changes consumed/frozen identities, rerun/retune rules, prospective/frozen protocols, raw-before-score, preserve-before-read, exact identity/source/package/runtime/input binding, immutable evidence, leakage controls, or the prohibition on silent post-outcome repair.
 
-## Current inputs / refs
+## Current inputs / authoritative refs
 
 - stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- previous Methodology `METHCAL-20260920T202031+0900-R20-74B1C6E3@81219767e2024f9f42f85eaee2ae50c13666e0a8`
-- Control `CTRL-20260920T205000+0900-R16-5E9A71C3@016a248143dc71380fca28128d564d74aeb4c3f3`
-- Evidence Analyst `EVA-20260920T211647+0900-R20-B6B0AAA2@2d7841171377226d2962424b5926ca4c4b68a2e7`
-- MAIN freshness generation `MAIN-20260920T211206+0900-PRIMARY-FUNNEL21-FAILCLOSED-R19-7F4A92C1`; handoff/state tip `dab812ab5cc50768b86522c2c5205f40bf691e8b`; finalized mailbox lease tip `02c4466b6be68014caf91ba523ceee46b3329e74`
-- MAIN scientific terminal generation `MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731@d779929417663fcd029e6f91742ab73002c41f5e`; research head `7a8fb2698da33ca07203123d1c5ad7dc510ac8e1`; prospective binding `82396b7969fc0f1fe6b4afb18bdc07b947396dab`; exact-head CI `35507809211` success
-- SUB `SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29@59026d651bb141fbfc8a4e99f4c5826531e2af65`; research head `411913e0b3a0493595969513bf0b7829c49cc248`; prospective binding `c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab`; exact-head CI `35508632370` success
-- Literature `LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4@4a1dfcaef0dfcdbf132156f7656088f7f90a3c96`
-- Independent Audit `LEGACY_GENERATION_UNKNOWN@d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56`
-- Repository Steward `STEWARD-20260920T195000+0900-G1-4C9A7E21@266eac62e3565adb70d1871831612848b5b82141`
-- Utility request bus `d4d0f75f1a57df1298e49e67448158ab12a2754f`
+- previous Methodology `METHCAL-20260920T212247+0900-R21-5A8C21D4@72c703feaf54e5c1ed1667c3d1c221686793492a`
+- Control `CTRL-20260920T225013+0900-R17-3F8C61A2@90c088f5fc3f6064f883d308ba5e1af9fd076441`
+- Evidence Analyst `EVA-20260920T215718+0900-R21-4F8C2A71@f85692e6e207ae622282116779b559108085ede8`
+- fresh SUB `SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2`; prospective binding `e466bd89cfd4ab80dc970173a183638af815fe8b`; research head `6ddcb7fec39dd017fbfe172885a994a98b503021`; exact-head CI `35514340688` success
+- Independent Audit `AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9@2edf544763d699ccfe81dd52044f776e5425a90d`
+- C19-v4 evidence tag object `4d6c0bd9a6c06c17352941d3fa730502e72b8540` -> evidence commit `a0f83318356ced1c84863737803080d0dc69d208`
+- C19-R2 FSA evidence tag object `82b88f3e2ad524fed8b72300dcba46053c1f2c7e` -> evidence commit `6197fa801a78a0c5de4c2b6ff5d03216ac5539db`
 - authoritative `evidence/*` tags: 5; `formal/*`: 0; `sealed/*`: 0; tag-based `freeze/*`: 0
-- H5 STARTED `058e90227cd48e1c10c6ecbaed01efdec1217d0e`; raw preserve `ce5797eb584344db7a512e585506fb6c59ea475b`
-- PR #148 and #149 remain open/unmerged.
 
 ## Confidence
 
-**HIGH** in the overall `WELL_CALIBRATED` classification and the 16/16 canonical completeness finding; **HIGH** that HOLD-field applicability needs explicit cross-role clarification; **MODERATE_HIGH** on continuing mechanism-supply health because the sample remains small; **INSUFFICIENT_EVIDENCE** remains for first READY→PRE_FORMAL, first MAIN SYSTEM-priority exception, and first no-coherent-target use.
+**HIGH** in overall `WELL_CALIBRATED`, in the resolution of HOLD applicability semantics, and in the claim-type-specific external-validation tightening. **MODERATE_HIGH** on mechanism-supply health because the current 3/3 window is genuine but increasingly clustered around credit/responsibility questions. **INSUFFICIENT_EVIDENCE** remains for first READY→PRE_FORMAL, first genuine MAIN SYSTEM-priority exception, and first no-coherent-target use.
+
+## Questions for Control / Analyst
+
+- Should competent-reference, matched-simple-reduction, and source-cluster inference requirements be persisted as an explicit claim-type-specific external-validation schema rather than left only in narrative synthesis?
+- When Analyst next consumes the fresh eligibility-history SUB and Audit R3, preserve canonical funnel metrics on reviewed objects only and keep C19-v4 exact PASS separate from programme-level `REDUCIBLE` novelty interpretation.
+- Continue reporting the first READY object with its pre-outcome readiness rationale so the READY→PRE_FORMAL semantics can be audited empirically.
