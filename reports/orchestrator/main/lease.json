@@ -11,10 +11,10 @@
     "sub_observed_for_collision": "SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-20T22:17:04+09:00",
   "heartbeat_at": "2026-09-20T22:17:04+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-20T22:17:04+09:00",
   "analyst_generation_id": "EVA-20260920T215718+0900-R21-4F8C2A71",
   "analyst_commit": "f85692e6e207ae622282116779b559108085ede8",
   "analyst_branch_tip_observed": "f85692e6e207ae622282116779b559108085ede8",
@@ -40,14 +40,6 @@
     "reason_detail": "No SYSTEM object allocated to MAIN; no comparable executable MECHANISM exists.",
     "compared_mechanism_candidate_ids": []
   },
-  "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "active_branch": null,
-  "active_identity": null,
-  "active_step": "R21_FRESHNESS_RECONCILIATION_AND_INTENTIONAL_MAIN_IDLE",
-  "workflow_run_id": null,
-  "workflow_head": null,
-  "workflow_status": null,
-  "workflow_conclusion": null,
   "freshness_reconciliation": {
     "prior_blocker": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
     "resolved_by_analyst_generation": "EVA-20260920T215718+0900-R21-4F8C2A71",
@@ -57,6 +49,14 @@
     "newer_unreviewed_sub_generation_observed": false,
     "scientific_execution_authorized": false
   },
+  "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "active_branch": null,
+  "active_identity": null,
+  "active_step": "STOP_NO_CURRENT_MAIN_OBJECT",
+  "workflow_run_id": null,
+  "workflow_head": null,
+  "workflow_status": null,
+  "workflow_conclusion": null,
   "lease_collision_reconciliation": {
     "prior_status": "BLOCKED",
     "prior_execution_mode": "RELAY",
@@ -66,8 +66,18 @@
     "active_identity_collision": false
   },
   "evidentiary_status": "NO_NEW_MAIN_SCIENTIFIC_EXECUTION; R21_RESOLVES_PRIOR_FRESHNESS_BLOCKER_AND_ALLOCATES_NO_CURRENT_MAIN_OBJECT",
-  "stop_reason": null,
-  "expected_next_action": "Persist R21 intentional-idle MAIN state after independently reconciling authoritative refs; do not execute science unless a fresh Analyst allocates a prospective FORMAL, PRE_FORMAL, or ARCHITECTURE_STUDY object.",
+  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
+  "expected_next_action": "Consume a fresh Evidence Analyst generation and execute only if it prospectively allocates a coherent FORMAL, PRE_FORMAL, or ARCHITECTURE_STUDY object with complete Funnel-v2.1 authority; otherwise remain intentionally idle.",
   "utility_request_created": null,
+  "persistence": {
+    "lease_acquire_commit": "1e934d13fd147be4a276521386fc31ef2c0600a6",
+    "state_commit": "53f0f1749a2b0dbc92335a19fd5facd661c36ea0",
+    "latest_commit": "e6b6e71fa86583d5816cc4e4d7a87a6c8062f950",
+    "history_commit": "b94fc673d76ea39c549026d2ead196837bd84f58",
+    "history_path": "reports/orchestrator/history/2026-09-20/2217-main.md",
+    "final_lease_commit": "THIS_COMMIT",
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
+    "result": "COMPLETED_INTENTIONAL_MAIN_IDLE_AFTER_R21_FRESHNESS_RECONCILIATION"
+  },
   "owner": "main"
 }
