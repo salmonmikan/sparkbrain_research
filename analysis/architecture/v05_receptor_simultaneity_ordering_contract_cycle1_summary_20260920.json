@@ -1,0 +1,30 @@
+{
+  "schema": "sparkbrain-architecture-study-summary-v1",
+  "candidate_id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
+  "lane": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_authority": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+  "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "prospective_contract_commit": "00ab02d9b9acd9a68090858cac21f1ea2fa5e244",
+  "raw_facts_commit": "6dbc696e4e8b2b4bab62067c3297edb02da9605e",
+  "terminal": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED",
+  "terminal_rationale": [
+    "SignalPulse and the public receptor/brain API do not forbid duplicate exact (time_ms, channel) keys.",
+    "Both MultiTimescaleReceptorBank.process() and IntegratedV05Brain.process_episode() sort only by (time_ms, channel), so equal-key ordering is not normalized by a secondary key.",
+    "No supported stable-main contract or receptor test was found that declares caller iterable order for exact-key ties to be semantic, or that declares exact-key simultaneous pulses to be an unordered multiset.",
+    "Canonical v0.5 worlds/callers do not intentionally demonstrate duplicate exact (time_ms, channel) receptor events. The v0.4 named simultaneous case uses distinct channels at one timestamp; the v0.5 order_shuffle multiset is a temporal-order control, not an exact-key tie contract.",
+    "Therefore public permissiveness exists, but supported same-key reachability is not established strongly enough to choose the reachable-ambiguity terminal."
+  ],
+  "architecture_interpretation": "The current public receptor boundary has an unspecified exact-key ordering/reproducibility corner. Stable sorting plus sequential adaptive gain makes input iterable order operational if such ties occur, but this cycle does not establish that supported workloads produce those ties and does not authorize an aggregation or permutation comparator.",
+  "scientific_claim": "NONE",
+  "formal_scientific_evidence_created": false,
+  "pre_formal_development_evidence_created": false,
+  "official_test_accessed": false,
+  "formal_identity_created_or_consumed": false,
+  "production_source_mutated": false,
+  "dynamic_diagnostic_run": false,
+  "same_run_cycle2_authorized": false,
+  "next_action": "STOP for fresh Evidence Analyst review. Any dynamic permutation/aggregation comparator or API-policy change is a fresh object requiring prospective authority.",
+  "integrity_state": "GREEN_STATIC_CHARACTERIZATION_PENDING_FINAL_HEAD_CI"
+}
