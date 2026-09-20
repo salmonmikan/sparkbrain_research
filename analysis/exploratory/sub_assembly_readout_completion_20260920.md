@@ -64,3 +64,36 @@ A positive native partial-completion mechanism is reduced if all downstream func
 - open scientific choices: `NONE_FOR_THIS_CYCLE; threshold, patterns, comparator, outputs and stop mapping are fixed above`
 - formal claim ceiling: `AT_MOST_NATIVE_ASSEMBLY_MEDIATED_FUNCTIONAL_PARTIAL_COMPLETION_IF_REDUCTION_SURVIVES`
 - readiness status: `NOT_READY`
+
+## Cycle 1 result
+
+The fixed ordered partial was accepted by the mature Assembly and inherited the learned `future-X` prediction at confidence `1.0` plus deterministic `action-0`. The scrambled control was rejected. However, the prospectively matched ordinary comparator made exactly the same decisions and outputs: `pattern_similarity(full, partial)=0.8`, above the default threshold `0.66`, while `pattern_similarity(full, scrambled)=0.325`, below threshold. Routing the accepted ordinary match to the same learned lookup therefore reproduced the Assembly path's prediction/action exactly.
+
+Mapped terminal: `FUNCTIONAL_PARTIAL_RECOGNITION_MATCHED_BY_NN_LOOKUP`.
+
+This is a functional partial-recognition effect but not evidence for a distinct completion mechanism on the current object. The current native path is fully reduced by fixed-prototype similarity classification plus learned lookup for this prospectively fixed synthetic DEV discriminator. No cycle-2 rescue is justified.
+
+Ordinary CI on diagnostic head `81d3bc66628ed00be00e3e3f6ea4f125020ea103`, run `35487109954`, passed Python 3.11 and 3.13 lint, local readiness, full tests, and bundle validation. CI has no evidentiary authority.
+
+## Handoff typing after result
+
+- recommendation: `REJECT`
+- evidentiary_status: `NON_EVIDENTIARY`
+- proposed claim_ceiling: `MECHANISM` for this prospectively typed current object; no positive mechanism claim survives
+- proposed preformal_eligible: `false`
+- preliminary readiness status: `NOT_READY`
+- claim_type: `NATIVE_ASSEMBLY_MEDIATED_FUNCTIONAL_PARTIAL_COMPLETION`
+- supported_reachability: `PARTIAL_RECOGNITION_REACHABLE_SYNTHETIC_DEV_ONLY`
+- functional_consequence: `PRESENT_AS_PREDICTION_AND_ACTION_READOUT_ON_ORDERED_PARTIAL`
+- ordinary reductions specified/controlled: `MATCHED_FIXED_PROTOTYPE_NEAREST_NEIGHBOR_PLUS_IDENTICAL_LOOKUP`
+- reductions unresolved: `NONE_FOR_THIS_CURRENT_OBJECT; MATCHED_ORDINARY_REDUCTION_SUCCEEDED`
+- comparator status: `COMPLETE_AND_OUTPUT_MATCHED`
+- qualitative support breadth: `ONE_DETERMINISTIC_SYNTHETIC_FULL_PARTIAL_SCRAMBLED_PATTERN_SET`
+- falsifier definition: `MECHANISM REQUIRED COMPARATOR FAILURE OR OUTPUT DIVERGENCE; NOT OBSERVED`
+- open scientific choices: `Any stateful/generative completion mechanism beyond fixed similarity matching requires a fresh prospectively specified candidate and cannot rescue this object.`
+- formal claim ceiling: `NONE_FOR_CURRENT_REDUCED_RESULT`
+- proposed hold_class: `null`
+- proposed hold_reason: `null`
+- proposed terminal_state: `TERMINAL_FOR_CURRENT_OBJECT`
+- proposed queue_state: `NOT_QUEUED`
+- candidate next research layer: `NONE`
