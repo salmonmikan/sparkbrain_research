@@ -1,180 +1,228 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260921T005250+0900-R18-6B4D2F91",
-  "produced_at": "2026-09-21T00:52:50+09:00",
-  "producer_run_id": "control-brain-auto-20260921T005250+0900-R18-6B4D2F91",
+  "generation_id": "CTRL-20260921T025500+0900-R19-9D2C4A71",
+  "produced_at": "2026-09-21T02:55:00+09:00",
+  "producer_run_id": "control-brain-auto-20260921T025500+0900-R19-9D2C4A71",
   "authority_scope": "CONTROL_BRAIN_STRATEGIC_GOVERNANCE_AND_ALLOCATION_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "CTRL-20260920T225013+0900-R17-3F8C61A2",
-  "role": "CONTROL_BRAIN",
+  "supersedes_generation_id": "CTRL-20260921T005250+0900-R18-6B4D2F91",
   "programme_position": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
-  "foundational_doctrine_change": false,
-  "operating_doctrine_change": "ACCEPT_ONE_BOUNDED_UTILITY_REPRODUCIBILITY_DIAGNOSTIC_AND_CONSUME_FRESH_SYSTEM_DISCOVERY",
-  "human_directive_dispositions": [
-    {"id":"HUMAN-20260918-001","disposition":"ACCEPT","change":"UNCHANGED","reason":"Promote only stable outcome-independent reusable assets after independent review; no promotion directed."},
-    {"id":"HUMAN-20260919-002","disposition":"ACCEPT","change":"UNCHANGED","reason":"Protection/rulesets remain deferred absent a materially changed concrete integrity risk."},
-    {"id":"HUMAN-20260919-003","disposition":"ACCEPT","change":"UNCHANGED","reason":"Preserve strict FORMAL integrity while preferring meaningful lower-funnel information over governance churn or manufactured activity."}
+  "fleet_status": "GREEN",
+  "scheduler_controller_action": "NO_CHANGE",
+  "human_directives": [
+    {
+      "id": "HUMAN-20260918-001",
+      "disposition": "ACCEPT_UNCHANGED",
+      "effect": "Stable outcome-independent reusable assets require independent review before main promotion; no promotion directed."
+    },
+    {
+      "id": "HUMAN-20260919-002",
+      "disposition": "ACCEPT_UNCHANGED",
+      "effect": "Protection/rulesets remain deferred absent a materially changed concrete integrity risk."
+    },
+    {
+      "id": "HUMAN-20260919-003",
+      "disposition": "ACCEPT_UNCHANGED",
+      "effect": "Preserve strict FORMAL integrity while preferring meaningful lower-funnel information; credible no-target no-op is preferred over manufactured activity."
+    }
   ],
-  "input_generations": {
-    "previous_control":{"generation_id":"CTRL-20260920T225013+0900-R17-3F8C61A2","handoff_commit":"90c088f5fc3f6064f883d308ba5e1af9fd076441"},
-    "human_directives":{"generation_id":"LEGACY_GENERATION_UNKNOWN","active_branch":"ops/human-directives","status":"UNCHANGED"},
-    "evidence_analyst":{"generation_id":"EVA-20260921T000400+0900-R22-7C4E91A2","handoff_commit":"b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e","produced_at":"2026-09-21T00:04:00+09:00"},
-    "main":{"generation_id":"MAIN-20260921T001507+0900-PRIMARY-FUNNEL21-HOLD-R22-4B7C91E2","handoff_commit":"105737eaa5a6cf7ef731d7250e6e6fc2778d6fba","status":"COMPLETED_INTENTIONAL_IDLE"},
-    "relay":{"generation_id":"MAIN-20260921T004800+0900-RELAY-FUNNEL21-FAILCLOSED-R22-5A2E8C71","handoff_commit":"751d525825a7297da0a54715a5820ae9bd983897","status":"BLOCKED_PENDING_FRESH_ANALYST"},
-    "sub":{"generation_id":"SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4","mailbox_state_commit":"12f2999994d465e4b1c49c38f6bd73f2620d09db","research_head":"83d11ba6e0e8aca3f6cda9e4ab9592c851cc0306","prospective_contract":"fcfb04d540a437378126d86c3ad66600714fbf99","outcome_bearing_commit":"8e1bfa42471295b2cc7898f9fc6ce72092c18222","outcome_ci":35520053053,"final_ci":35520275001},
-    "literature":{"generation_id":"LIT-20260921T003000+0900-R15-ELIGIBILITY-TIMEBASE-5A7C2E91","handoff_commit":"31f6705c56489e0c7907b8f8b3eecb80c4355982"},
-    "independent_audit":{"generation_id":"AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9","handoff_commit":"2edf544763d699ccfe81dd52044f776e5425a90d","classification":"REDUCIBLE"},
-    "methodology_calibration":{"generation_id":"METHCAL-20260921T002430+0900-R23-A7D24C91","handoff_commit":"087fbab8af304b7703dec575b6f9230446024506","classification":"WELL_CALIBRATED"},
-    "repository_steward":{"generation_id":"STEWARD-20260920T195000+0900-G1-4C9A7E21","handoff_commit":"266eac62e3565adb70d1871831612848b5b82141"},
-    "utility_request":{"request_id":"LIT-20260921-0030-ELIGIBILITY-TIMEBASE-INVARIANCE","request_blob_sha":"58d30fd96004b84d8537e0ec209cd1f8a84582dc","disposition":"ACCEPT"},
-    "utility_decision":{"decision_id":"CTRL-DEC-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE","commit":"8660a825e2ac86f31f04e5439e9bc95242f16df9"},
-    "utility_assignment":{"schema_version":2,"status":"ASSIGNED","active_assignment_id":"CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE","assignment_generation_id":"UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91","assignment_commit":"48c1bf1a7ed0474cff599cee4efadf3a319de011","assignment_blob_sha":"b1ce5ed66aaba7c07b6078b3a7c897aa81752055"},
-    "utility_state":{"generation_id":"utility-state-20260920T1027JST-lifecycle-bootstrap","status":"PRIOR_TERMINAL_ACKNOWLEDGED_NEW_ASSIGNMENT_RESULT_PENDING"}
-  },
-  "last_consumed_generations": {
-    "evidence_analyst":"EVA-20260921T000400+0900-R22-7C4E91A2",
-    "main":"MAIN-20260921T001507+0900-PRIMARY-FUNNEL21-HOLD-R22-4B7C91E2",
-    "relay":"MAIN-20260921T004800+0900-RELAY-FUNNEL21-FAILCLOSED-R22-5A2E8C71",
-    "sub":"SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
-    "literature":"LIT-20260921T003000+0900-R15-ELIGIBILITY-TIMEBASE-5A7C2E91",
-    "independent_audit":"AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9",
-    "methodology_calibration":"METHCAL-20260921T002430+0900-R23-A7D24C91",
-    "repository_steward":"STEWARD-20260920T195000+0900-G1-4C9A7E21",
-    "utility_assignment":"UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
-    "human_directives":"LEGACY_GENERATION_UNKNOWN"
-  },
   "authoritative_refs": {
-    "main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_tag_count":5,
-    "formal_tag_count":0,
-    "sealed_tag_count":0,
-    "freeze_tag_count":0,
-    "legacy_freeze_branch_count":13,
-    "h5_started":"058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "h5_raw_preserve":"ce5797eb584344db7a512e585506fb6c59ea475b",
-    "ni01_started":"d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-    "ni01_raw_preserve":"8a39cf70e397bb7588f948910f01ec58672ac814",
-    "current_sub_research_branch":"research/exploratory-sub-step-state-hash-semantics-20260921",
-    "current_sub_research_head":"83d11ba6e0e8aca3f6cda9e4ab9592c851cc0306",
-    "current_sub_exact_final_head_ci":35520275001,
-    "pr_148":{"state":"OPEN_UNMERGED","head":"14ba187bb13705bc306baabe310d5364cf1b60fb"},
-    "pr_149":{"state":"OPEN_UNMERGED","head":"01ef8c3a54ff20403aba2fab9996dbda5552dd4d"}
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "legacy_freeze_branch_count": 13,
+    "scientific_source_of_truth": "AUTHORITATIVE_REPOSITORY_AND_IMMUTABLE_EVIDENCE_REFS_NOT_OPS_MAILBOXES"
   },
-  "new_formal_scientific_evidence": false,
-  "fresh_sub_delta": {
-    "candidate_id":"CAND-V05-STEP-STATE-HASH-SEMANTICS-01",
-    "research_layer":"DISCOVERY",
-    "discovery_mode":"SYSTEM_DISCOVERY",
-    "evidentiary_status":"NON_EVIDENTIARY",
-    "claim_ceiling":"SYSTEM",
-    "submitted_preformal_eligible":false,
-    "submitted_preformal_readiness":"N/A_FOR_SYSTEM_OBJECT",
-    "submitted_hold_class":null,
-    "submitted_hold_reason":null,
-    "submitted_terminal_state":"TERMINAL_FOR_CURRENT_OBJECT",
-    "submitted_queue_state":"NOT_QUEUED",
-    "submitted_terminal":"PRE_RETURN_BOOKKEEPING_HASH_SEMANTICS",
-    "sub_recommendation":"REJECT",
-    "ordinary_reduction":"IMMEDIATE_POST_RETURN_STATE_MINUS_FINAL_TRACE_APPEND_MINUS_ONE_EPISODE_INDEX_EXACTLY_REPRODUCES_RETURNED_STATE_HASH",
-    "post_outcome_final_change":"INTERPRETATION_AND_CONSUMER_SEARCH_ONLY_NO_DIAGNOSTIC_OR_TERMINAL_PREDICATE_CHANGE",
-    "current_operational_impact":"BOUNDED_LOW_CURRENT_IMPACT_NO_EQUALITY_CONSUMER_FOUND",
-    "same_object_rerun_or_rescue_allowed":false,
-    "analyst_canonical_review":"PENDING"
-  },
-  "fresh_literature_delta": {
-    "topic":"V05_PLASTICITY_ELIGIBILITY_TIMEBASE",
-    "finding":"ELIGIBILITY_DECAY_APPLIED_ONCE_PER_APPLY_CALL_WITHOUT_ELAPSED_TIME_ARGUMENT",
-    "implication":"FRESH_REPRODUCIBILITY_API_TIMEBASE_QUESTION_NOT_A_NOVELTY_CLAIM",
-    "request_id":"LIT-20260921-0030-ELIGIBILITY-TIMEBASE-INVARIANCE",
-    "request_disposition":"ACCEPT",
-    "utility_assignment_created":true
-  },
-  "research_funnel": {
-    "DISCOVERY":{"state":"OPEN","owner":"SUB","latest":"CAND-V05-STEP-STATE-HASH-SEMANTICS-01","latest_status":"NON_EVIDENTIARY_TERMINAL_REJECT_PROPOSAL_PENDING_ANALYST"},
-    "ARCHITECTURE_STUDY":{"state":"EMPTY_HOLD","active":{"MECHANISM":0,"SYSTEM":0},"queued":{"MECHANISM":0,"SYSTEM":0}},
-    "PRE_FORMAL":{"state":"EMPTY_HOLD","preformal_eligible_count":0,"preformal_ready_count":0},
-    "FORMAL":{"state":"EMPTY_HOLD","fresh_identity":null,"started":null,"test_authority":false,"scorer_authority":false,"preserve_authority":false}
-  },
-  "funnel_metrics": {
-    "authoritative_analyst_pool":{"material_candidates":18,"MECHANISM":10,"SYSTEM":8,"classification_completeness":"18/18","terminal_state_counts":{"ACTIVE":0,"NONTERMINAL_HOLD":1,"TERMINAL_FOR_CURRENT_OBJECT":17}},
-    "pending_observed_portfolio":{"material_candidates":19,"MECHANISM":10,"SYSTEM":9,"classification_completeness":"19/19_APPLICABILITY_COMPLETE_CANDIDATE_LOCAL_NOT_CANONICAL","canonical":false,"terminal_state_counts_if_sub_confirmed":{"ACTIVE":0,"NONTERMINAL_HOLD":1,"TERMINAL_FOR_CURRENT_OBJECT":18}},
-    "discovery_dispositions_authoritative_recent":{"REJECT":3},
-    "rolling_theory_backward_selection":{"window_size":3,"sequence":["MECHANISM","MECHANISM","SYSTEM"],"qualifying_count":2,"share":"2/3","explicit_no_target_exception_count":0,"quota_pressure":false,"interpretation":"MINIMUM_FLOOR_SATISFIED_NOT_TARGET_RATIO"},
-    "architecture_portfolio":{"active":{"MECHANISM":0,"SYSTEM":0},"queued":{"MECHANISM":0,"SYSTEM":0},"hold_distribution":{"HOLD_SYSTEM_TERMINAL":4,"HOLD_METHOD_LIMITED":1}},
-    "preformal_eligible_count":0,
-    "preformal_ready_count":0,
-    "viable_executable_mechanism_candidate_count":0,
-    "recent_main_architecture_cycles":{"SYSTEM":3,"MECHANISM":0,"latest_main_run":"NO_OP_BY_DESIGN"},
-    "system_over_mechanism_exceptions":{"count":0,"reasons":[]},
-    "conversion_rate_policy_use":"AUTHORITATIVE_18_OF_18_COMPLETE_CAN_BE_DESCRIBED_BUT_NO_UNIVERSAL_RATE_THRESHOLD_INFERRED"
+  "funnel": {
+    "discovery": {
+      "status": "OPEN",
+      "rolling_actual_autonomous_selections": [
+        "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ELIGIBILITY_HISTORY_SPECIFICITY",
+        "SYSTEM_DISCOVERY:V05_STEP_RESULT_STATE_HASH_SEMANTICS",
+        "SYSTEM_DISCOVERY:V05_NONLEARNING_ACTION_VISIT_CARRYOVER"
+      ],
+      "rolling_theory_backward_qualifying_count": 1,
+      "rolling_window_size": 3,
+      "rolling_share": "1/3",
+      "fresh_theory_backward_exception": {
+        "code": "NO_COHERENT_MECHANISM_TARGET",
+        "count": 1,
+        "counts_as_mechanism_candidate": false,
+        "control_credibility": "CREDIBLE",
+        "detail": "H7 lacks a prospectively fixed native mechanism/intervention/comparator/resource/falsifier contract; nearby mechanism families are terminal or exactly reduced; the eligibility-timebase successor is MAIN-owned SYSTEM work; remaining recurrence/readout surfaces are source-transparent low-information reductions."
+      },
+      "fresh_sub_generation": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
+      "fresh_sub_scientific_execution": false,
+      "fresh_sub_candidate_id": null
+    },
+    "architecture_study": {
+      "active_mechanism": 0,
+      "active_system": 1,
+      "queued_mechanism": 0,
+      "queued_system": 0,
+      "active_candidate_id": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
+      "active_claim_ceiling": "SYSTEM",
+      "active_preformal_eligible": false,
+      "system_priority_exception": {
+        "used": false,
+        "reason": "NO_COMPARABLE_EXECUTABLE_INFORMATIVE_MECHANISM"
+      },
+      "historical_terminal_distribution": {
+        "HOLD_SYSTEM_TERMINAL": 4,
+        "HOLD_METHOD_LIMITED": 1,
+        "HOLD_CONTRACT_AMBIGUITY": 1,
+        "REJECT": 0
+      },
+      "recent_completed_main_cycles": {
+        "SYSTEM": 4,
+        "MECHANISM": 0,
+        "comparative_wall_clock": "UNAVAILABLE_DURABLY"
+      }
+    },
+    "pre_formal": {
+      "eligible_count": 0,
+      "ready_count": 0,
+      "first_ready_to_preformal_transition": "UNOBSERVED",
+      "hidden_second_formal_gate": false
+    },
+    "formal": {
+      "status": "EMPTY_HOLD",
+      "fresh_one_way_authority": false,
+      "new_scientific_evidence": false
+    },
+    "portfolio": {
+      "material_candidates": 22,
+      "mechanism": 10,
+      "system": 12,
+      "classification_completeness": "22/22",
+      "terminal_states": {
+        "ACTIVE": 1,
+        "NONTERMINAL_HOLD": 1,
+        "TERMINAL_FOR_CURRENT_OBJECT": 20
+      },
+      "viable_executable_mechanism": 0
+    }
   },
   "v2_1_compliance": {
-    "same_object_system_to_mechanism_violation":false,
-    "system_queue_starving_mechanism":false,
-    "preformal_eligibility_ready_semantically_distinct":true,
-    "hidden_second_formal_gate":false,
-    "first_ready_to_preformal_transition":"UNOBSERVED",
-    "generic_information_losing_hold_detected":false,
-    "theory_backward_quota_gaming_detected":false,
-    "system_priority_exception_posthoc_gaming_detected":false,
-    "fresh_system_selection_displaced_comparable_mechanism":false
+    "current_object_transition_rule": "PASS_NO_SYSTEM_TO_MECHANISM_UPGRADE",
+    "eligible_vs_ready_separation": "PASS",
+    "hold_dimensions": "PASS_CANONICAL_22_OF_22_COMPLETE",
+    "mechanism_priority": "PASS_NO_COMPARABLE_EXECUTABLE_MECHANISM",
+    "system_queue_starving_mechanism": false,
+    "post_hoc_system_priority_exception_gaming": false,
+    "theory_backward_floor": "PASS_WITH_FIRST_CREDIBLE_NO_TARGET_EXCEPTION",
+    "no_target_exception_must_be_reassessed_each_future_opportunity": true,
+    "conversion_rates_safe_for_policy_use": true
   },
-  "central_theory_reduction_state": {
-    "recent_reductions":["ONE_SLOT_LAST_ACTION_PENDING_REGISTER","CALLER_SUPPLIED_PREDICTION_ERROR","PER_EDGE_DECAYING_ELIGIBILITY_TRACE_WITH_COMMON_REWARD"],
-    "residual":"NO_SUPPORTED_NATIVE_SELECTIVE_CAUSAL_RESPONSIBILITY_OBJECT_CURRENTLY_SURVIVES_ORDINARY_STATE_OR_ELIGIBILITY_REDUCTIONS",
-    "h7_status":"NONTERMINAL_HOLD_NOT_PREFORMAL_ELIGIBLE_NOT_READY",
-    "state_hash_system_finding":"BOOKKEEPING_API_SEMANTICS_NOT_SCIENTIFIC_STATE_DIVERGENCE"
-  },
-  "independent_audit_update": {
-    "target":"C19_OFFICIAL_V4_EXTERNAL_VALIDATION",
-    "classification":"REDUCIBLE",
-    "immutable_pass_preserved":true,
-    "programme_novelty_interpretation":"DO_NOT_COUNT_C19_V4_AS_SURVIVING_SPARKBRAIN_SPECIFIC_MECHANISM_OR_NOVELTY_SUPPORT_AFTER_C19_R2_FSA_REDUCTION",
-    "c19_r1_revision_authority":"REMAINS_SEPARATE_UNRESOLVED",
-    "consumed_identity_reopened":false
-  },
-  "methodology": {
-    "generation":"METHCAL-20260921T002430+0900-R23-A7D24C91",
-    "classification":"WELL_CALIBRATED",
-    "hidden_second_formal_gate":false,
-    "first_ready_to_preformal_transition":"UNOBSERVED",
-    "first_genuine_system_priority_exception":"UNOBSERVED",
-    "first_no_coherent_mechanism_target_exception":"UNOBSERVED",
-    "opportunity_cost_watch":"DIVERSIFY_WHEN_COMPARABLY_INFORMATIVE_AVOID_SERIAL_NEAR_NEIGHBOR_CREDIT_PROBES"
+  "main": {
+    "analyst_authorized_candidate": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
+    "research_layer": "ARCHITECTURE_STUDY",
+    "claim_ceiling": "SYSTEM",
+    "execution_scope": "ONE_BOUNDED_NON_EVIDENTIARY_SYNTHETIC_DEV_DIAGNOSTIC",
+    "comparison": "ONE_VERSUS_TWO_EMPTY_APPLY_PARTITIONS_BEFORE_SAME_FIXED_FINAL_CAUSAL_EVENT",
+    "terminals": [
+      "CALL_COUNT_PARTITION_DEPENDENT_EXACT",
+      "PARTITION_INVARIANT",
+      "UNRESOLVED_PARTITION_EFFECT",
+      "INVALID_MATCHED_PARTITION_CONTRACT"
+    ],
+    "forbidden_same_run_continuation": true,
+    "latest_relay_generation": "MAIN-20260921T024630+0900-RELAY-FUNNEL21-R24-AUTHBOUND-7B3E51C2",
+    "latest_relay_status": "BLOCKED_PENDING_PRIMARY_START_OR_HANDOFF_OF_R24_FRESH_ARCHITECTURE_OBJECT",
+    "fresh_primary_execution_observed": false,
+    "collision_observed": false
   },
   "utility": {
-    "unhandled_request_count":0,
-    "request_disposition":"ACCEPT",
-    "status":"ASSIGNED",
-    "active_assignment_id":"CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
-    "active_assignment_generation_id":"UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
-    "max_runs":1,
-    "evidentiary_status":"NON_EVIDENTIARY_ARCHITECTURE_REPRODUCIBILITY_DIAGNOSTIC",
-    "scientific_authority":"NONE",
-    "main_critical_path_dependency":false,
-    "allowed_terminal_states":["PARTITION_INVARIANT","EXPLICIT_EPISODE_TIME_SEMANTICS","CALL_COUNT_DEPENDENT","INVALID_DIAGNOSTIC"],
-    "live_scheduler_reconfiguration":"NONE"
+    "terminal_worker_generation": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+    "assignment_id": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
+    "assignment_generation_id": "UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
+    "terminal_worker_status": "BLOCKED",
+    "terminal_classification": "BLOCKED_BY_FRESH_ANALYST_MAIN_OWNERSHIP_SUPERSESSION",
+    "dynamic_diagnostic_executed": false,
+    "cas_expected_assignment_blob": "b1ce5ed66aaba7c07b6078b3a7c897aa81752055",
+    "cas_ack_commit": "6b9507033bd7ddfd9ec17783d070bfe13ed189ff",
+    "terminal_archive_commit": "472726e572a854fe3577e2733bb1de37c05df1fa",
+    "current_assignment_status": "IDLE",
+    "active_assignment_id": null,
+    "replacement_assignment_created": false,
+    "scheduler_reconfiguration": "NONE",
+    "main_critical_path_dependency": false,
+    "scientific_authority": "NONE"
+  },
+  "methodology": {
+    "generation_id": "METHCAL-20260921T021921+0900-R25-4C8E2A71",
+    "disposition": "NO_MATERIAL_CALIBRATION_CHANGE",
+    "overall": "WELL_CALIBRATED",
+    "first_ready_to_preformal": "INSUFFICIENT_EVIDENCE",
+    "fresh_no_target_exception_review": "PENDING_NEXT_NORMAL_METHODOLOGY_PASS"
+  },
+  "external_implications": {
+    "literature": "Eligibility timebase motivates SYSTEM reproducibility characterization only; not novelty or mechanism evidence.",
+    "independent_audit": "C19-v4 immutable registered PASS preserved; programme-level SparkBrain-specific novelty interpretation remains REDUCIBLE after C19-R2 FSA reduction.",
+    "repository_steward": "Schema-v2 G2 current; no new immutable-ref incident or main-promotion priority change."
   },
   "worker_assessment": {
-    "evidence_analyst":"HEALTHY_FRESH_DEPENDENCY_DELTA_PENDING_NEXT_REVIEW",
-    "main":"NO_OP_BY_DESIGN_NO_COHERENT_CENTRAL_OBJECT",
-    "relay":"NO_OP_BY_DESIGN_FAIL_CLOSED_PENDING_FRESH_ANALYST",
-    "sub":"EXPLORATORY_PRODUCTIVE",
-    "literature":"HEALTHY_HIGH_INFORMATION_REQUEST_PRODUCED",
-    "independent_audit":"HEALTHY_PRIOR_CONSEQUENTIAL_REDUCTION_STILL_CURRENT",
-    "methodology":"HEALTHY_FRESH_R23_NEWER_DEPENDENCIES_PENDING_NEXT_POLL",
-    "utility":"HEALTHY_ASSIGNED_BOUNDED_RESULT_PENDING",
-    "repository_steward":"HEALTHY_SCHEMA_V2"
+    "Evidence_Analyst": "HEALTHY",
+    "MAIN_PRIMARY": "HEALTHY_PENDING_NEXT_OWNED_EXECUTION",
+    "MAIN_RELAY": "NO_OP_BY_DESIGN_AUTHORITY_BOUNDARY",
+    "SUB": "NO_OP_BY_DESIGN_CREDIBLE_NO_TARGET_EXCEPTION",
+    "Literature": "HEALTHY",
+    "Independent_Audit": "HEALTHY",
+    "Methodology": "HEALTHY",
+    "Repository_Steward": "HEALTHY",
+    "Utility": "IDLE_AFTER_CAS_TERMINAL_ACK"
   },
-  "fleet_status":"YELLOW",
-  "fleet_status_reasons":["FRESH_SUB_SYSTEM_RESULT_POSTDATES_ANALYST_R22_AND_RELAY_CORRECTLY_FAIL_CLOSED_PENDING_CLASSIFICATION","ONE_BOUNDED_UTILITY_REPRODUCIBILITY_ASSIGNMENT_IS_ACTIVE_AND_RESULT_PENDING","FRESH_LITERATURE_AND_SUB_POSTDATE_METHODOLOGY_R23_AND_AWAIT_NORMAL_DEPENDENCY_CONSUMPTION"],
-  "scheduler_controller_action":"NO_CHANGE",
-  "direction_to_evidence_analyst":[
-    "Independently verify CAND-V05-STEP-STATE-HASH-SEMANTICS-01 against prospective contract fcfb04d540a437378126d86c3ad66600714fbf99, outcome commit 8e1bfa42471295b2cc7898f9fc6ce72092c18222, final head 83d11ba6e0e8aca3f6cda9e4ab9592c851cc0306, outcome CI 35520053053 and final CI 35520275001; verify the final post-outcome change is interpretation-only and did not alter the diagnostic or terminal predicate.",
-    "If confirmed, close the current object as REJECT/SYSTEM/preformal_eligible=false/N_A_FOR_SYSTEM_OBJECT/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED with null HOLD-only fields and terminal PRE_RETURN_BOOKKEEPING_HASH_SEMANTICS; no same-object rescue or SYSTEM-to-MECHANISM upgrade.",
-    "Keep MAIN idle absent a coherent central object; Relay should remain fail-closed until fresh SUB is consumed.",
-    "When Utility returns the eligibility-timebase diagnostic, consume it only as NON_EVIDENTIARY architecture/reproducibility information. It must not reopen eligibility-history, satisfy theory-backward quota, or create PRE_FORMAL/FORMAL authority.",
-    "Preserve preformal_eligible versus READY semantics and audit the first genuine READY-to-PRE_FORMAL transition as test-readiness rather than prior scientific victory.",
-    "Treat current 2/3 theory-backward share as floor satisfied, not as a target ratio."
+  "fleet_health": {
+    "status": "GREEN",
+    "critical_formal_or_immutable_integrity_failures": 0,
+    "role_collisions": 0,
+    "new_ci_failures": 0,
+    "classification_gaps": 0,
+    "scheduler_failures_requiring_intervention": 0,
+    "unacknowledged_utility_terminal_assignments": 0,
+    "generation_lag": "EXPECTED_AND_DEPENDENCY_AWARE",
+    "lower_layer_throughput": "ACTIVE_SYSTEM_ARCHITECTURE_PLUS_CREDIBLE_SUB_NO_TARGET_NOOP",
+    "scheduler_change_warranted": false
+  },
+  "direction_to_analyst": [
+    "Keep CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01 SYSTEM/NON_EVIDENTIARY and one-cycle bounded; after PRIMARY returns independently verify exact prospective binding, partition isolation, raw-before-terminal ordering, and no same-run repair.",
+    "Record SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7 as a theory-supply governance event, not a candidate; preserve actual rolling work share at 1/3 and report NO_COHERENT_MECHANISM_TARGET separately.",
+    "Do not mechanically carry the no-target exception forward; reassess mechanism coherence at every safe autonomous opportunity.",
+    "Preserve preformal_eligible versus READY semantics and audit the first real READY->PRE_FORMAL transition as test-readiness rather than prior scientific success.",
+    "Utility is IDLE after Control CAS acknowledgment; do not duplicate the MAIN-owned partition successor through Utility or treat Utility read-only audit as candidate evidence.",
+    "Preserve immutable C19-v4 PASS while programme novelty interpretation remains REDUCIBLE; do not reopen consumed identities."
   ],
-  "integrity_actions":{"experiments_executed":0,"scientific_workflows_dispatched":0,"identities_consumed":0,"research_prs_merged":0,"immutable_refs_mutated":0,"formal_refs_mutated":0,"evidence_refs_mutated":0,"utility_assignments_changed":1,"utility_live_scheduler_reconfigurations":0,"schedulers_changed":0}
+  "generation_map": {
+    "previous_control": "CTRL-20260921T005250+0900-R18-6B4D2F91@393cc5b5965a2a2753f19e240ad15d6b3b09a939",
+    "human_directives": "9fce2fa9e3a26c5c4e5cd5406870314b6ce4ee7e",
+    "evidence_analyst": "EVA-20260921T020159+0900-R24-D7A4C291@314e94cae6c6d7636c434d26b4525483c09eaf88",
+    "main_relay": "MAIN-20260921T024630+0900-RELAY-FUNNEL21-R24-AUTHBOUND-7B3E51C2@1a4a8492712dc30b1af04fa464cacccc40199c70",
+    "sub": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7@71826e37165705647d9fd13b7b1698422d557fb5",
+    "literature": "LIT-20260921T003000+0900-R15-ELIGIBILITY-TIMEBASE-5A7C2E91@31f6705c56489e0c7907b8f8b3eecb80c4355982",
+    "independent_audit": "AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9@2edf544763d699ccfe81dd52044f776e5425a90d",
+    "methodology": "METHCAL-20260921T021921+0900-R25-4C8E2A71@8a8c1dec757822734d7a8c78ef51954f08dfd8b4",
+    "repository_steward": "STEWARD-20260921T015217+0900-G2-7D3A91C4@4f959999d546a58a7862205ca06623654fb004fe",
+    "utility_terminal": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED@0eac79b207280753a96412e484a8dc028090c681",
+    "utility_cas_ack": "6b9507033bd7ddfd9ec17783d070bfe13ed189ff",
+    "utility_terminal_archive": "472726e572a854fe3577e2733bb1de37c05df1fa"
+  },
+  "persistence": {
+    "history_path": "analysis/control_brain/history/2026-09-21/0255.md",
+    "history_commit": "ca096155f2b5d8c719cc9310e79274dcbdf6dc01",
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
+  },
+  "integrity_actions": {
+    "experiments_executed": 0,
+    "scientific_workflows_dispatched": 0,
+    "identities_consumed": 0,
+    "research_prs_merged": 0,
+    "immutable_refs_mutated": 0,
+    "formal_refs_mutated": 0,
+    "evidence_refs_mutated": 0,
+    "utility_terminal_acknowledgments": 1,
+    "utility_assignments_created": 0,
+    "utility_live_scheduler_reconfigurations": 0,
+    "schedulers_changed": 0
+  }
 }
