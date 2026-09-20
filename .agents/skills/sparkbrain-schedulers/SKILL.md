@@ -69,9 +69,25 @@ For history purposes capture at minimum:
 - schedule;
 - timing mode;
 - timezone;
-- live `updated_at` when available.
+- live `updated_at` when available as observation metadata only.
 
 Preserve the exact prompt text. Do not summarize prompt bodies in the current definition file.
+
+### Stable definition identity
+
+Definition drift is determined ONLY from these stable fields:
+
+- task ID;
+- title;
+- enabled state;
+- exact prompt;
+- exact schedule;
+- timing mode;
+- timezone.
+
+Live `updated_at` and `last_run_time` are volatile observations and MUST NOT create definition drift by themselves. Record them for provenance only.
+
+The registry manifest should keep a SHA-256 fingerprint over canonical JSON of the stable definition fields.
 
 ## Drift reconciliation before a requested change
 
@@ -111,10 +127,13 @@ If this write fails, STOP. Do not call the scheduler mutation.
 
 ### Phase 2 — mutate live ChatGPT scheduler
 
-1. Re-check that the target task ID is still the same live object.
-2. Apply only the requested change.
-3. Do not make unrelated cadence/prompt edits.
-4. If the live update fails, append a `FAILED` history record when possible and leave registry current unchanged.
+1. Immediately before mutation, re-read the FULL live stable definition, not just the task ID or `updated_at`.
+2. Compare it with the exact stable definition captured for PRE_CHANGE.
+3. If ANY stable field changed, STOP, record/reconcile concurrent drift, and do not overwrite the newer live definition.
+4. A change only in volatile `updated_at` / `last_run_time` does not block the mutation.
+5. Apply only the requested change.
+6. Do not make unrelated cadence/prompt edits.
+7. If the live update fails, append a `FAILED` history record when possible and leave registry current unchanged.
 
 ### Phase 3 — APPLIED
 
@@ -197,7 +216,8 @@ Each `current/<task-id>.md` must contain:
 - enabled;
 - timing mode;
 - timezone;
-- updated_at;
+- observed live updated_at as provenance only;
+- stable-definition SHA-256 in the manifest;
 - full iCal schedule;
 - exact full prompt.
 
