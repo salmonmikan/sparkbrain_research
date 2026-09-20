@@ -11,10 +11,10 @@
     "sub_observed_for_collision": "SUB-20260920T124445+0900-THEORY-PARTIAL-4E8A1C73"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-20T13:17:43+09:00",
   "heartbeat_at": "2026-09-20T13:17:43+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-20T13:17:43+09:00",
   "analyst_generation_id": "EVA-20260920T125840+0900-R13-5D7A2C91",
   "analyst_commit": "c7b46081c2dcc980bd7856b37437012842bcce04",
   "consumed_analyst_generation_id": "EVA-20260920T125840+0900-R13-5D7A2C91",
@@ -37,9 +37,9 @@
   },
   "active_branch": null,
   "active_identity": null,
-  "active_step": "FUNNEL_V2_1_EXPLICIT_MAIN_HOLD_NO_CURRENT_SCIENTIFIC_OBJECT",
+  "active_step": "FUNNEL_V2_1_EXPLICIT_MAIN_HOLD_NO_CURRENT_SCIENTIFIC_OBJECT_COMPLETED",
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "stop_reason": null,
-  "expected_next_action": "Reconcile fresh Analyst R13 allocation and exact refs; with no current MAIN object, perform no scientific mutation and persist COMPLETED hold state.",
+  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
+  "expected_next_action": "Remain scientifically idle. Wait for a fresh Analyst generation allocating a fresh coherent MECHANISM object or a high-value SYSTEM object; then re-read authority, v2.1 funnel fields, system priority exception, and exact refs before any scientific mutation or workflow dispatch.",
   "owner": "main"
 }
