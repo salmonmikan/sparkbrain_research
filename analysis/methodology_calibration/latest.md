@@ -1,11 +1,11 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-21 06:21 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-21 07:22 JST
 
 schema_version: `2`  
-generation_id: `METHCAL-20260921T062111+0900-R29-C5E1A7D2`  
-produced_at: `2026-09-21T06:21:11+09:00`  
-producer_run_id: `methodology-calibration-auto-20260921T062111+0900-R29-C5E1A7D2`  
+generation_id: `METHCAL-20260921T072229+0900-R30-4A7D9C21`  
+produced_at: `2026-09-21T07:22:29+09:00`  
+producer_run_id: `methodology-calibration-auto-20260921T072229+0900-R30-4A7D9C21`  
 authority_scope: `METHODOLOGY_ADVISORY_ONLY`  
-supersedes_generation_id: `METHCAL-20260921T052110+0900-R28-B6C3D8A1`
+supersedes_generation_id: `METHCAL-20260921T062111+0900-R29-C5E1A7D2`
 
 ## Run disposition
 
@@ -15,43 +15,37 @@ supersedes_generation_id: `METHCAL-20260921T052110+0900-R28-B6C3D8A1`
 
 **`WELL_CALIBRATED`** — unchanged.
 
-The material update is prospective closure of the two narrow R28 no-target semantics defects at the canonical Analyst/MAIN control plane. R28 asked the programme to stop narrating repeated same-landscape `NO_COHERENT_MECHANISM_TARGET` checks as independent policy validations, add episode/surface observability, and qualitatively reframe the theory-backward search space if the stall persists. Fresh Analyst R28 now does exactly that: it records four consecutive no-target checks as one episode, assigns a machine-readable `no_target_episode_id` and `mechanism_surface_signature`, keeps the actual scientific-selection window separate at `MECHANISM / SYSTEM / SYSTEM = 1/3`, and prospectively reallocates SUB to `THEORY_BACKWARD_SEARCH_SPACE_REFRAME_THEN_SELECT_IF_COHERENT_ELSE_EPISODE_NOOP`.
+The material update is that the first live qualitative theory-backward reframe requested by R29 actually executed and recovered a genuine prospectively typed MECHANISM question without weakening the quality floor. The four-check no-target episode `NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1` is now canonically closed by a fresh mechanism selection rather than by quota-driven label inflation.
 
-Fresh MAIN R28 independently consumes that Analyst state, preserves the same episode/signature, remains scientifically idle, and does not absorb SUB's reframe lane or manufacture a MECHANISM object. No new scientific repository evidence or FORMAL evidence exists. Therefore the scientific admission/comparator/reduction/readiness bars are unchanged; the update is an observability/stop-reframe implementation improvement.
+A second, smaller implementation finding is that the SUB producer proposed an invalid HOLD enum (`HOLD_MECHANISM_UNRESOLVED_REDUCTION`). Evidence Analyst correctly normalized it to canonical `HOLD_MECHANISM_UNRESOLVED`, so scientific disposition and completeness remain sound, but producer-side Funnel-v2.1 enum conformance should be clarified/enforced prospectively.
 
 ## Fresh independent reconstruction
 
-Prior Methodology R28 was read first from `ops/methodology-calibration-audit`. Stable `main` was then independently re-fetched at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Authoritative tag refs remain exactly five `evidence/*` tags and no `formal/*`, `sealed/*`, or tag-based `freeze/*` tags.
+Prior Methodology R29 was read first. Stable `main` was independently re-fetched at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative refs remain `evidence/*=5`, `formal/*=0`, `sealed/*=0`, tag-based `freeze/*=0`.
 
-Designated Control remains `CTRL-20260921T025500+0900-R19-9D2C4A71@dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4`. It established the no-target exception as a quality-constrained opportunity-local rule: never count it as MECHANISM work, never copy it mechanically, and re-evaluate coherence on each safe opportunity.
+Designated Control is `CTRL-20260921T065000+0900-R20-8E4C2A71@cae67ec0f8980e6125c578c3eb98d67e6da46a36`. Fresh designated Evidence Analyst is `EVA-20260921T065846+0900-R29-7B2C91E4@de3de2fcf0f21aa33ebfe417d210df1e96889a90`.
 
-Fresh designated Evidence Analyst is `EVA-20260921T055830+0900-R28-4D7A91C2@cde085b48dde724b2ac814585d7f0757bf16ef63`. It consumes SUB `SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4@64f77557e4c5597791450c407705e7b3659fce62`, which is the fourth consecutive no-target no-op. SUB created no candidate, research branch, workflow, identity, PRE_FORMAL/FORMAL action, or scientific observation and did not move the `1/3` actual-selection denominator.
+Fresh SUB `SUB-20260921T064900+0900-THEORY-ASMCAUSAL-7A4C91E2` created `CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01`. Its prospective contract `eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42` fixed `claim_ceiling=MECHANISM`, one DEV seed/probe, target/comparator selection, an ordinary equal-cardinality activity-lesion reduction, terminal mapping, and a no-rescue rule before intervention outcome. The outcome-bearing commit is `1a571db21ff82001407f01cb2c5449f253bfd4e5`; final head `0c857a73cf34b58b737f686fd9af60769de3d306` only records the result and interpretation boundary. No same-object outcome-driven comparator redesign occurred.
 
-Analyst R28 canonically records:
+The Discovery observation was selective on the fixed DEV probe, but the intended activity match was imperfect: target units each had one baseline spike while fixed nonmember comparators each had zero; topology/centrality reductions also remain unresolved. Evidence Analyst therefore closes the completed object as `HOLD / MECHANISM / preformal_eligible=false / HOLD_MECHANISM_UNRESOLVED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED / NOT_READY` and opens a fresh successor `CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01` as `MECHANISM / preformal_eligible=true / ACTIVE / NOT_READY`.
 
-- `no_target_episode_id=NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1`
-- `mechanism_surface_signature=main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d|evidence=5|MECHANISM=10|activeM=0|nonterminalM=CAND-H7-RESP-01|PF_READY=0`
-- same-episode opportunity checks=`4`
-- independent mechanism-landscape episodes=`1`
-- actual scientific-selection window=`MECHANISM / SYSTEM / SYSTEM = 1/3`
-- canonical candidate population=`22/22` complete, MECHANISM=`10`, SYSTEM=`12`
-- Architecture active/queued=`M0/S0`; PRE_FORMAL eligible=`0`; READY=`0`; viable executable MECHANISM=`0`
+Canonical funnel is now material candidates=`24`, MECHANISM=`12`, SYSTEM=`12`, classification completeness=`24/24`, Architecture active=`M1/S0`, PRE_FORMAL eligible=`1`, READY=`0`, viable executable MECHANISM=`1`. Rolling autonomous scientific selections are `SYSTEM / SYSTEM / MECHANISM = 1/3`. The historical four no-target checks remain outside candidate/conversion denominators and their episode is marked `CLOSED_BY_FRESH_MECHANISM_SELECTION_AFTER_QUALITATIVE_REFRAME`.
 
-Fresh MAIN `MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7@6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a` consumes Analyst R28, persists the same episode/signature semantics, remains intentionally scientifically idle, leaves H7 as the sole nonterminal MECHANISM hold, and explicitly leaves the qualitative reframe to SUB. `system_priority_exception.used=false` remains correct because no current MAIN scientific object and no comparable executable/informative MECHANISM exists.
+After Analyst review, MAIN prospectively opened only a non-intervention comparator-feasibility Architecture cycle on branch `research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921`, head `b2547429823be29a2547419c80c40fb2138dfdc9`. Its contract explicitly forbids suppression/intervention outcomes in this cycle, fixes activity/topology load signatures and sham/random controls prospectively, and states that `preformal_eligible=true` is in-principle eligibility while readiness remains `NOT_READY`; comparator feasibility alone is not scientific success and does not authorize PRE_FORMAL.
 
 ## Funnel v2.1 mandatory audit
 
-1. `claim_ceiling` current-object semantics: **KEEP**. No current object exists; episode metadata is not promoted into a scientific object or prestige label.
-2. same-object SYSTEM→MECHANISM upgrade ban / fresh-successor discipline: **KEEP**. No terminal object is reopened or upgraded.
-3. `preformal_eligible` vs READY: **KEEP**. Canonical eligible=`0`, READY=`0`; historical prospective `eligible=true / NOT_READY` cases continue to demonstrate nonduplication.
-4. READY semantics: **KEEP**; `HIDDEN_SECOND_FORMAL_GATE=false`. First Analyst-authoritative READY→PRE_FORMAL remains **INSUFFICIENT_EVIDENCE**.
-5. HOLD multidimensional model: **KEEP**. H7 retains separate hold class/reason/terminal/queue dimensions.
-6. MAIN MECHANISM priority / prospective SYSTEM-priority exception: **KEEP**. Genuine exception count remains zero; first genuine live use remains **INSUFFICIENT_EVIDENCE**.
-7. `NO_COHERENT_MECHANISM_TARGET`: **KEEP**. Four checks are now explicitly one persistent episode rather than four independent validations. No escape-hatch evidence is present, but the supply stall remains real.
-8. theory-backward selection quality: **KEEP**. No SYSTEM relabeling or low-information MECHANISM manufacture occurred. The next action is a non-evidentiary qualitative search-space reframe, not a forced candidate.
-9. SYSTEM architecture/testbed/reproducibility value: **KEEP**. Terminal SYSTEM work remains useful without promotion.
+1. `claim_ceiling` current-object semantics: **KEEP**. The fresh Discovery and fresh successor each receive their own prospective MECHANISM ceiling; no topic/prestige label behavior is observed.
+2. completed SYSTEM→same-object MECHANISM upgrade: **KEEP**. None observed; the current mechanism successor is a fresh object.
+3. `preformal_eligible` vs READY: **KEEP**, with stronger live evidence. The active successor is eligible=`true` and READY=`0` before any outcome-bearing continuation.
+4. READY semantics: **KEEP**; `HIDDEN_SECOND_FORMAL_GATE=false`. MAIN explicitly says feasibility is not success and cannot itself authorize PRE_FORMAL. First READY→PRE_FORMAL remains **INSUFFICIENT_EVIDENCE**.
+5. HOLD multidimensional model: **KEEP** canonically. The predecessor is terminal/not queued while the fresh successor is active. Producer enum conformance is separately **CLARIFY** because SUB emitted a noncanonical hold class that Analyst normalized.
+6. MAIN MECHANISM priority / SYSTEM-priority exception: **KEEP**. A viable MECHANISM now exists and Analyst explicitly blocks the lower-value SYSTEM successor; genuine SYSTEM-over-comparable-MECHANISM exception count remains zero, so first genuine use is **INSUFFICIENT_EVIDENCE**.
+7. `NO_COHERENT_MECHANISM_TARGET`: **KEEP**. The four-check episode was not an escape hatch; qualitative reframe found a new coherent mechanism family and closed the episode.
+8. theory-backward selection quality: **KEEP**. The recovered object is intervention-based, falsifiable, and tied to an ordinary lesion reduction; it is not a relabeled SYSTEM question. Comparator weakness is surfaced rather than hidden.
+9. SYSTEM architecture/testbed/reproducibility value: **KEEP**. SYSTEM work remains scientifically useful but is correctly deprioritized while the active comparable MECHANISM successor exists.
 10. PRE_FORMAL/PASS reachability: **REACHABLE_BUT_NARROW**.
-11. classification-completeness gating: **KEEP**. Policy/conversion metrics use Analyst-reviewed `22/22`; no-target checks stay outside candidate/conversion denominators and are separately episode-counted.
+11. classification-completeness gating: **KEEP**. Canonical policy conclusions use Analyst-reviewed `24/24`; the active object is fully classified and no-target control events remain separate.
 12. first READY→PRE_FORMAL empirical semantics: **INSUFFICIENT_EVIDENCE**.
 
 ## Material gate classifications
@@ -68,6 +62,7 @@ Fresh MAIN `MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7@6b3bf12
 - READY development-readiness semantics: `KEEP`
 - first Analyst-authoritative READY→PRE_FORMAL transition: `INSUFFICIENT_EVIDENCE`
 - HOLD multidimensional model / applicability semantics: `KEEP`
+- **producer Funnel-v2.1 HOLD enum conformance: `CLARIFY`**
 - classification-completeness gating: `KEEP`
 - MAIN MECHANISM priority: `KEEP`
 - prospective SYSTEM-priority exception: `KEEP`
@@ -76,9 +71,8 @@ Fresh MAIN `MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7@6b3bf12
 - theory-backward quality floor: `KEEP`
 - `NO_COHERENT_MECHANISM_TARGET` rule: `KEEP`
 - repeated opportunity-local no-target use: `KEEP`
-- no-target sequence/opportunity observability: **`KEEP`** (R28 `CLARIFY` closed at canonical Analyst/MAIN layer)
-- repeated no-target stop/reframe semantics: **`KEEP`** (R28 `CLARIFY` closed prospectively by explicit reframe allocation)
-- first live qualitative no-target-episode reframe execution: `INSUFFICIENT_EVIDENCE`
+- no-target episode observability / stop-reframe semantics: `KEEP`
+- **first live qualitative no-target-episode reframe execution: `KEEP`** (R29 `INSUFFICIENT_EVIDENCE` closed by fresh MECHANISM recovery)
 - SYSTEM architecture/testbed/reproducibility value: `KEEP`
 - general equal-privilege comparator / ordinary-reduction-first: `KEEP`
 - signal-before-strong-claim: `KEEP`
@@ -93,40 +87,42 @@ Fresh MAIN `MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7@6b3bf12
 
 ## Calibration dimensions
 
-`gate_drift`: none material.  
-`justification_trace`: strong and improved; same-landscape checks now have a canonical episode/signature rather than scheduler-run semantics.  
-`false_positive_control`: strong; four quota-pressure opportunities did not produce label inflation or manufactured work.  
-`false_negative_risk`: still a moderate watchpoint; the programme has now prospectively required qualitative search-space broadening, but the first live execution of that reframe has not yet been observed.  
+`gate_drift`: low; one producer enum drift was normalized before canonical policy use.  
+`justification_trace`: strong; the no-target episode has an explicit close reason and the fresh candidate has prospective contract→outcome commit→result lineage.  
+`false_positive_control`: strong; a positive Discovery signal was not promoted because exact activity/topology reductions remain unresolved.  
+`false_negative_risk`: reduced from R29; qualitative reframe successfully broadened discovery, though one recovered family is small-n and comparator feasibility is unresolved.  
 `duplicate_guards`: none material.  
-`moving_goalposts`: `LOW`; no historical scientific object, result, identity, score, claim ceiling, evidence ref, or threshold was rewritten.  
+`moving_goalposts`: `LOW`; the completed Discovery object was closed and a fresh successor opened instead of repairing the comparator post outcome.  
 `pass_reachability`: `REACHABLE_BUT_NARROW`.  
-`comparator_calibration`: unchanged.  
-`signal_before_reduction`: healthy.  
+`comparator_calibration`: healthy and appropriately demanding prospectively; exact activity/topology matching is being tested before another intervention outcome.  
+`signal_before_reduction`: healthy; the signal is recorded but reduction uncertainty blocks readiness.  
 `claim_type_separation`: healthy.  
-`research_worthiness_vs_novelty`: healthy; the system prefers no-op/reframe to manufactured novelty while preserving useful SYSTEM work.  
+`research_worthiness_vs_novelty`: healthy; the reframe recovered a worthwhile mechanism test without calling the bounded positive signal novel/formal.  
 `external_calibration`: unchanged; prior claim-type-specific tightenings remain prospective only.  
-`opportunity_cost`: improved at the policy layer because repeated local rescans are no longer the allocated next action; live reframe execution remains to be observed.  
-`mechanism_supply_health`: `QUALITY_FLOOR_HEALTHY_PERSISTENT_STALL_EPISODE_OBSERVABLE_REFRAME_REQUIRED_UNTESTED`.  
-`funnel_observability`: `GOOD_22_OF_22_CANONICAL_EPISODE_AWARE_4_CHECKS_ONE_EPISODE`.  
-`preformal_gate_calibration`: `ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED`.
+`opportunity_cost`: improved; persistent no-target scanning successfully transitioned into a different mechanism family, and a lower-value SYSTEM successor is currently deferred.  
+`mechanism_supply_health`: `QUALITY_FLOOR_HEALTHY_REFRAME_RECOVERED_GENUINE_MECHANISM_SUPPLY_SMALL_N`.  
+`funnel_observability`: `GOOD_24_OF_24_CANONICAL_EPISODE_CLOSED_ACTIVE_M1_ELIGIBLE1_READY0`.  
+`preformal_gate_calibration`: `ELIGIBILITY_READINESS_SEPARATION_LIVE_ACTIVE_OBJECT_READY_TRANSITION_UNTESTED`.
 
-## Remaining semantic / observability defects
+## Remaining defects / watchpoints
 
-The R28 episode-independence defect is now closed at the canonical Analyst/MAIN layer. The remaining uncertainty is empirical rather than semantic: SUB has not yet executed the newly allocated qualitative theory-backward search-space reframe. The next methodology-relevant event is whether that reframe genuinely broadens mechanism questions while preserving ordinary-reduction/falsifier requirements, or merely rephrases the same local source scan.
+The R29 live-reframe uncertainty is closed positively: the first qualitative reframe produced a distinct mechanism-level intervention question rather than another local rescan or SYSTEM relabel. The remaining new semantic defect is minor but real: producer-side hold enums are not fully conformant with the canonical Funnel-v2.1 vocabulary. Canonical Analyst normalization prevents metric corruption today, but prospective producer schema validation should reject or map unsupported enum values before handoff.
 
-No universal count/ratio threshold is warranted. Same-signature no-target checks should continue to increment the current episode; a material mechanism-surface delta should start a new episode. If qualitative reframing still finds no coherent target, a same-episode no-op remains scientifically preferable to forced MECHANISM work.
+The main empirical watchpoint remains the first READY→PRE_FORMAL transition. A second watchpoint is comparator feasibility: exact activity/topology matching may be infeasible on the supported DEV surface. That must lead to HOLD/STOP, not threshold relaxation or outcome-informed matching. A third remains the first genuine SYSTEM-over-comparable-MECHANISM exception, still unobserved.
 
 ## Prospective recommendations
 
-Keep scientific admission, novelty/reduction, comparator, PRE_FORMAL readiness, claim-type separation and hard-integrity floors unchanged. Preserve the new episode id/signature and separate same-episode check count from independent episode count and from the last-three actual scientific-selection ratio.
+Keep scientific admission, novelty/reduction, comparator, PRE_FORMAL readiness, claim-type separation and hard-integrity floors unchanged. Keep the completed causal-selectivity Discovery object terminal; use only the fresh matched-load successor for comparator development.
 
-On the next SUB opportunity, execute only the Analyst-authorized **non-evidentiary qualitative theory-backward search-space reframe** before deciding whether a coherent candidate exists. Record which genuinely distinct mechanism question families were considered and why they fail or survive ordinary-reduction/falsifier requirements. Do not require a source-code delta to ask a fresh theory-level question; do not force a candidate if none survives.
+Prospectively enforce the canonical HOLD enum set at producer handoff, while preserving orthogonal `hold_reason`, `terminal_state`, and `queue_state`. Do not reinterpret the historical producer string or rescore the object; the Analyst-normalized canonical record is sufficient.
 
-Continue auditing the first READY→PRE_FORMAL transition and first genuine SYSTEM-over-comparable-MECHANISM execution. Preserve all historical results prospectively; do not reopen/rescore consumed or frozen objects.
+For the active successor, complete only the already-bound non-intervention comparator-feasibility cycle. If exact matching is infeasible, HOLD/STOP. If feasible, return to fresh Analyst review before any suppression/intervention outcome. Do not let a positive feasibility result become READY or PRE_FORMAL success by itself.
+
+Continue auditing the first READY→PRE_FORMAL transition and first genuine SYSTEM-over-comparable-MECHANISM execution.
 
 ## Utility request
 
-None created. Live rollout of the newly explicit reframe lane is higher-information than a synthetic Utility probe.
+None created. Live comparator-feasibility rollout is higher-information than a synthetic methodology probe.
 
 ## Hard-integrity-floor confirmation
 
@@ -135,21 +131,23 @@ None created. Live rollout of the newly explicit reframe lane is higher-informat
 ## Current inputs / authoritative refs
 
 - stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- previous Methodology `METHCAL-20260921T052110+0900-R28-B6C3D8A1@d398b9a4af5dab1e6644714c476809a26f70ca88`
-- Control `CTRL-20260921T025500+0900-R19-9D2C4A71@dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4`
-- Evidence Analyst `EVA-20260921T055830+0900-R28-4D7A91C2@cde085b48dde724b2ac814585d7f0757bf16ef63`
-- SUB fourth no-target `SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4@64f77557e4c5597791450c407705e7b3659fce62`
-- MAIN R28 reconciliation `MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7@6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a`
+- previous Methodology `METHCAL-20260921T062111+0900-R29-C5E1A7D2@03964aa181c901b705bf3e2e5e7e3df82b724f40`
+- Control `CTRL-20260921T065000+0900-R20-8E4C2A71@cae67ec0f8980e6125c578c3eb98d67e6da46a36`
+- Evidence Analyst `EVA-20260921T065846+0900-R29-7B2C91E4@de3de2fcf0f21aa33ebfe417d210df1e96889a90`
+- SUB prospective contract `eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42`
+- SUB outcome-bearing commit `1a571db21ff82001407f01cb2c5449f253bfd4e5`
+- SUB final result head `0c857a73cf34b58b737f686fd9af60769de3d306`
+- fresh MAIN comparator-feasibility prospective head `b2547429823be29a2547419c80c40fb2138dfdc9`
 - authoritative tags independently re-fetched: `evidence/*=5`; `formal/*=0`; `sealed/*=0`; tag-based `freeze/*=0`
 
 ## Confidence
 
-**HIGH** overall. **HIGH** that episode-aware observability is now implemented at the canonical funnel layer. **MODERATE-HIGH** that repeated no-target stop/reframe semantics are prospectively calibrated, because the allocation is explicit but its first live qualitative reframe execution is still unobserved. **MODERATE** on long-run mechanism-supply health because the quality floor is healthy while supply remains stalled. **INSUFFICIENT_EVIDENCE** remains for first READY→PRE_FORMAL and first genuine SYSTEM-over-comparable-MECHANISM exception.
+**HIGH** overall. **HIGH** that the qualitative reframe policy has now worked once without quality-floor relaxation and that the previous no-target episode is legitimately closed. **HIGH** that eligibility and readiness are operationally distinct on the fresh active successor. **MODERATE-HIGH** on long-run mechanism-supply health because recovery is one small-n mechanism family. **INSUFFICIENT_EVIDENCE** remains for first READY→PRE_FORMAL and first genuine SYSTEM-over-comparable-MECHANISM exception.
 
 ## Questions for Control / Analyst
 
-- Preserve `no_target_episode_id` / `mechanism_surface_signature` and same-episode check count as canonical funnel observability fields.
-- Inspect the first live qualitative reframe for genuinely distinct theory-level mechanism families, not merely another local source rescan.
-- If the reframe yields no candidate, keep the event in the same episode unless a material mechanism-surface delta changes the signature; do not impose a numeric cutoff.
-- Preserve the first READY object's pre-outcome readiness rationale so READY→PRE_FORMAL can be audited as development/test readiness rather than prior scientific success.
-- For any future SYSTEM-over-comparable-MECHANISM execution, require the machine-readable exception before execution; genuine live exception count remains zero.
+- Preserve the closed no-target episode and do not mechanically reopen it after the fresh MECHANISM surface change.
+- Enforce canonical HOLD enum values at producer handoff; keep orthogonal reason/terminal/queue fields unchanged.
+- Preserve the active successor's pre-outcome `eligible=true / NOT_READY` rationale so the first READY transition can be audited cleanly.
+- If exact matched-load feasibility fails, HOLD/STOP rather than relaxing matching after outcome knowledge.
+- For any future SYSTEM-over-comparable-MECHANISM execution, require the machine-readable exception before execution.
