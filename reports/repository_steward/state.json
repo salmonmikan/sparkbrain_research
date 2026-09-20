@@ -1,47 +1,49 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260921T015217+0900-G2-7D3A91C4",
-  "produced_at": "2026-09-21T01:52:17+09:00",
-  "producer_run_id": "repository-steward-auto-20260921T015217+0900-G2-7D3A91C4",
+  "generation_id": "STEWARD-20260921T075030+0900-G3-A6C4E291",
+  "produced_at": "2026-09-21T07:50:30+09:00",
+  "producer_run_id": "repository-steward-auto-20260921T075030+0900-G3-A6C4E291",
   "authority_scope": "REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY",
-  "supersedes_generation_id": "STEWARD-20260920T195000+0900-G1-4C9A7E21",
+  "supersedes_generation_id": "STEWARD-20260921T015217+0900-G2-7D3A91C4",
   "repository": "salmonmikan/sparkbrain_research",
   "input_generations": {
     "control": {
-      "generation_id": "CTRL-20260921T005250+0900-R18-6B4D2F91",
-      "handoff_commit": "393cc5b5965a2a2753f19e240ad15d6b3b09a939"
+      "generation_id": "CTRL-20260921T065000+0900-R20-8E4C2A71",
+      "handoff_commit": "cae67ec0f8980e6125c578c3eb98d67e6da46a36"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
-      "handoff_commit": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be"
+      "generation_id": "EVA-20260921T065846+0900-R29-7B2C91E4",
+      "handoff_commit": "de3de2fcf0f21aa33ebfe417d210df1e96889a90"
     },
     "main": {
-      "generation_id": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
-      "primary_generation_id": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
+      "generation_id": "MAIN-20260921T071418+0900-PRIMARY-FUNNEL21-MECH-ASMMATCH-R29-8E4C21A7",
       "mailbox_branch": "ops/orchestrator-run-report",
-      "mailbox_head": "f7b52a3edb8ae1a0fe05f1d0039379a3117ee04d",
-      "status": "BLOCKED_PENDING_FRESH_ANALYST_CANONICALIZATION"
+      "mailbox_commit": "d6d330f9d1dc5a098878000953bfa1ea16d3ac21",
+      "research_branch": "research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921",
+      "research_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
+      "status": "COMPLETED_PENDING_FRESH_ANALYST_CANONICALIZATION",
+      "reported_terminal": "EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE"
     },
     "sub": {
-      "generation_id": "SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
+      "generation_id": "SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2",
       "mailbox_branch": "ops/orchestrator-run-report",
-      "mailbox_head": "f7b52a3edb8ae1a0fe05f1d0039379a3117ee04d",
-      "research_branch": "research/exploratory-sub-nonlearning-action-visit-carryover-20260921",
-      "research_head": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
-      "analyst_status": "PENDING_FRESH_ANALYST_CLASSIFICATION"
+      "mailbox_head": "958f2d961627b86c39f3d60b3ae39f63f685571f",
+      "mode": "NO_OP",
+      "research_branch": null,
+      "candidate_id": null
     },
     "utility": {
-      "generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
-      "handoff_commit": "0eac79b207280753a96412e484a8dc028090c681",
-      "status": "BLOCKED",
-      "assignment_status": "ASSIGNED",
-      "active_assignment_id": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
-      "active_assignment_generation_id": "UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
-      "run_count": 1
+      "assignment_branch": "ops/utility-orchestrator-requests",
+      "handoff_commit": "472726e572a854fe3577e2733bb1de37c05df1fa",
+      "assignment_status": "IDLE",
+      "active_assignment_id": null,
+      "active_assignment_generation_id": null,
+      "last_worker_generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+      "terminal_acknowledged_by_control": true
     },
     "previous_steward": {
-      "generation_id": "STEWARD-20260920T195000+0900-G1-4C9A7E21",
-      "handoff_commit": "266eac62e3565adb70d1871831612848b5b82141"
+      "generation_id": "STEWARD-20260921T015217+0900-G2-7D3A91C4",
+      "handoff_commit": "4f959999d546a58a7862205ca06623654fb004fe"
     }
   },
   "authoritative_refs": {
@@ -74,15 +76,25 @@
     }
   },
   "governance_context": {
-    "main_primary_generation": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
-    "main_primary_status": "COMPLETED_STATIC_ARCHITECTURE_STOPPED_FOR_FRESH_ANALYST_REVIEW",
-    "main_current_relay_generation": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
-    "main_current_status": "BLOCKED_FAIL_CLOSED_PENDING_FRESH_ANALYST",
-    "fresh_sub_research_branch": "research/exploratory-sub-nonlearning-action-visit-carryover-20260921",
-    "fresh_sub_research_head": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
-    "fresh_sub_candidate": "CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01",
-    "fresh_sub_evidentiary_status": "NON_EVIDENTIARY",
-    "fresh_sub_analyst_status": "PENDING_FRESH_ANALYST_CLASSIFICATION",
+    "analyst_current_architecture_candidate": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01",
+    "analyst_status": "ACTIVE_MECHANISM_ARCHITECTURE_AT_R29",
+    "main_current_status": "COMPLETED_FEASIBILITY_STOPPED_FOR_FRESH_ANALYST",
+    "main_research_branch": "research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921",
+    "main_research_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
+    "main_reported_terminal": "EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE",
+    "main_workflow": {
+      "run_id": 35541396714,
+      "head_sha": "b2547429823be29a2547419c80c40fb2138dfdc9",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "main_ci": {
+      "run_id": 35541396705,
+      "head_sha": "b2547429823be29a2547419c80c40fb2138dfdc9",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "sub_current_status": "NO_OP_NO_RESEARCH_ARTIFACT",
     "main_or_evidence_promotion_from_current_research": false
   },
   "audit": {
@@ -92,8 +104,7 @@
     "protection_gap": "MISSING_BUT_DEFERRED_READ_ONLY",
     "preserve_indexes": "UNCHANGED_VERIFIED_CURRENT_EVIDENCE_ANCHORS",
     "main_promotion_candidates": [],
-    "utility_assignment_lifecycle": "TERMINAL_BLOCKED_MATCHING_ASSIGNMENT_AWAITING_CONTROL_CAS_ACK",
-    "utility_assignment_identity_match": true,
+    "utility_assignment_lifecycle": "COMPLIANT_SCHEMA_V2_IDLE_AFTER_CONTROL_CAS_ACK",
     "immutable_ref_incident": false,
     "schema_v2_steward_persistence": "ACTIVE"
   },
@@ -123,20 +134,21 @@
   },
   "utility_lifecycle": {
     "assignment_pointer_schema_version": 2,
-    "assignment_pointer_status": "ASSIGNED",
-    "assignment_id": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
-    "assignment_generation_id": "UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
-    "utility_generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
-    "utility_status": "BLOCKED",
-    "utility_run_count": 1,
-    "assignment_and_utility_identity_match": true,
-    "control_cas_acknowledgement_pending": true,
+    "assignment_pointer_status": "IDLE",
+    "active_assignment_id": null,
+    "active_assignment_generation_id": null,
+    "last_terminal_assignment_id": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
+    "last_terminal_assignment_generation_id": "UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
+    "last_utility_generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+    "control_cas_acknowledged": true,
+    "replacement_assignment_created": false,
     "steward_action": "READ_ONLY_NO_POINTER_MUTATION"
   },
   "mutations": {
     "experiments_executed": 0,
     "research_workflows_dispatched": 0,
     "identities_consumed": 0,
+    "outcomes_reinterpreted": 0,
     "scientific_freezes_decided": 0,
     "research_prs_merged": 0,
     "scheduler_definitions_modified": 0,
@@ -146,19 +158,19 @@
     "main_promotions_performed": 0
   },
   "persistence": {
-    "history_path": "reports/repository_steward/history/2026-09-21/0150.md",
-    "history_commit": "b25a738c68b2050428230ce08f8f206a8dfceeac",
+    "history_path": "reports/repository_steward/history/2026-09-21/0750.md",
+    "history_commit": "dca70b474776c5f4832586c5a98b8c4d453ec178",
     "latest_path": "reports/repository_steward/latest.md",
-    "latest_commit": "15ea890bc71c9142f7e03b0d48c2672a044c0c0b",
+    "latest_commit": "68f6bcf1a5a65544b24fe1426ee1ed1125ae0ee0",
     "state_path": "reports/repository_steward/state.json",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
   },
   "next_priorities": [
-    "Preserve main/research/evidence separation while current MAIN and SUB objects await fresh Evidence Analyst canonicalization.",
+    "Preserve main/research/evidence separation while the completed MAIN comparator-feasibility object awaits fresh Evidence Analyst canonicalization.",
     "Keep evidence/freeze/control/preserve refs unchanged.",
-    "Observe the matching Utility BLOCKED terminal state; Control alone owns compare-and-swap acknowledgement and assignment-pointer archival.",
+    "Keep Utility IDLE unless Control creates a new schema-v2 assignment; Steward must not self-assign or close work.",
     "Continue read-only tracking of Issue #139 and protection/ruleset status without displacing scientific information gain.",
-    "Keep PR #148/#149 deferred until their previously identified review blockers are resolved on their PR heads.",
+    "Keep PR #148/#149 deferred until their previously identified review blockers are resolved on their unchanged heads.",
     "Promote to main only stable outcome-independent reusable components after independent review; none qualify in this run."
   ]
 }
