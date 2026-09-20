@@ -1,41 +1,18 @@
 {
   "schema_version": 2,
   "generation_id": "MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731",
-  "produced_at": "2026-09-20T20:27:00+09:00",
+  "produced_at": "2026-09-20T20:29:00+09:00",
   "producer_run_id": "sparkbrain-main-primary-20260920T201624JST-R19-ARCHSYS",
   "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_STATIC_EXECUTION_AND_CONTROL_PLANE_PERSISTENCE",
   "supersedes_generation_id": "MAIN-20260920T191546+0900-PRIMARY-FUNNEL21-HOLD-R18-8C2F41D7",
   "input_generations": {
-    "evidence_analyst": {
-      "generation_id": "EVA-20260920T195817+0900-R19-B6E2F41A",
-      "handoff_commit": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433"
-    },
-    "main": {
-      "generation_id": "MAIN-20260920T191546+0900-PRIMARY-FUNNEL21-HOLD-R18-8C2F41D7",
-      "handoff_commit": "a379206380b533610aecb178ba1ca33b6cddba34"
-    },
-    "sub_collision_only": {
-      "generation_id": "SUB-20260920T194640+0900-SYSTEM-ASMORDER-BA8FDEBE",
-      "research_branch": "research/exploratory-sub-assembly-cluster-order-20260920",
-      "research_head": "6f14715a856f3ae308d9dbe2d5bb35534823372c",
-      "final_head_ci_run": 35505873447
-    },
-    "control_brain": {
-      "generation_id": "CTRL-20260920T165000+0900-R15-6C2F8A41",
-      "handoff_commit": "64611f391391844d60659732a50a22cf009a5797"
-    },
-    "methodology": {
-      "generation_id": "METHCAL-20260920T192400+0900-R19-3E7B5C91",
-      "handoff_commit": "0792d18cc41c353390f53df03b211e1135d02b0a"
-    },
-    "literature": {
-      "generation_id": "LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4",
-      "handoff_commit": "4a1dfcaef0dfcdbf132156f7656088f7f90a3c96"
-    },
-    "repository_steward": {
-      "generation_id": "STEWARD-20260920T195000+0900-G1-4C9A7E21",
-      "handoff_commit": "266eac62e3565adb70d1871831612848b5b82141"
-    }
+    "evidence_analyst": {"generation_id":"EVA-20260920T195817+0900-R19-B6E2F41A","handoff_commit":"8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433"},
+    "main": {"generation_id":"MAIN-20260920T191546+0900-PRIMARY-FUNNEL21-HOLD-R18-8C2F41D7","handoff_tip":"a379206380b533610aecb178ba1ca33b6cddba34"},
+    "sub_collision_only": {"generation_id":"SUB-20260920T194640+0900-SYSTEM-ASMORDER-BA8FDEBE","research_branch":"research/exploratory-sub-assembly-cluster-order-20260920","research_head":"6f14715a856f3ae308d9dbe2d5bb35534823372c","final_head_ci_run":35505873447},
+    "control_brain": {"generation_id":"CTRL-20260920T165000+0900-R15-6C2F8A41","handoff_commit":"64611f391391844d60659732a50a22cf009a5797"},
+    "methodology": {"generation_id":"METHCAL-20260920T192400+0900-R19-3E7B5C91","handoff_commit":"0792d18cc41c353390f53df03b211e1135d02b0a"},
+    "literature": {"generation_id":"LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4","handoff_commit":"4a1dfcaef0dfcdbf132156f7656088f7f90a3c96"},
+    "repository_steward": {"generation_id":"STEWARD-20260920T195000+0900-G1-4C9A7E21","handoff_commit":"266eac62e3565adb70d1871831612848b5b82141"}
   },
   "consumed_analyst_generation_id": "EVA-20260920T195817+0900-R19-B6E2F41A",
   "consumed_analyst_commit": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
@@ -44,20 +21,14 @@
   "execution_mode": "PRIMARY",
   "research_layer": "ARCHITECTURE_STUDY",
   "main_lane": "ASSEMBLY_CLUSTER_ORDER_SUPPORTED_REACHABILITY_ARCHITECTURE_STUDY_CYCLE1_STATIC",
-  "active_phase": "STATIC_SYSTEM_ARCHITECTURE_TERMINAL_MAPPED_WAITING_EXACT_HEAD_CI",
+  "active_phase": "STATIC_SYSTEM_ARCHITECTURE_TERMINAL_COMPLETE_EXACT_HEAD_CI_SUCCESS_STOP_FRESH_ANALYST_REVIEW",
   "candidate_id": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
   "candidate_question": "Is first-prototype order-dependent Assembly partition reachable and semantically relevant on supported integrated v0.5 paths?",
-  "exploration_cycle_count": {
-    "DISCOVERY": 0,
-    "ARCHITECTURE_STUDY": 1
-  },
+  "exploration_cycle_count": {"DISCOVERY":0,"ARCHITECTURE_STUDY":1},
   "claim_ceiling": "SYSTEM",
   "preformal_eligible": false,
   "hold_class": "HOLD_SYSTEM_TERMINAL",
-  "hold_reason": [
-    "CROSS_PATTERN_PRESENTATION_ORDER_CONTRACT_UNSPECIFIED",
-    "SUPPORTED_NONTRANSITIVE_BRIDGE_PATTERN_REACHABILITY_UNESTABLISHED"
-  ],
+  "hold_reason": ["CROSS_PATTERN_PRESENTATION_ORDER_CONTRACT_UNSPECIFIED","SUPPORTED_NONTRANSITIVE_BRIDGE_PATTERN_REACHABILITY_UNESTABLISHED"],
   "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
   "queue_state": "NOT_QUEUED",
   "preformal_readiness": null,
@@ -69,45 +40,19 @@
   },
   "hold_dimensions_status": "MAIN_MAPPED_FROM_PROSPECTIVELY_AUTHORIZED_ANALYST_R19_CONTINGENCY_PENDING_FRESH_CANONICAL_ANALYST_REVIEW",
   "research_layer_state": {
-    "DISCOVERY": {
-      "state": "OPEN",
-      "owner": "SUB",
-      "status": "NON_EVIDENTIARY",
-      "latest_review": "PROMOTE_TO_ARCHITECTURE_STUDY_VIA_FRESH_SYSTEM_SUCCESSOR"
-    },
-    "ARCHITECTURE_STUDY": {
-      "state": "ACTIVE_TERMINAL_MAPPED_WAITING_EXACT_HEAD_CI_AND_FRESH_ANALYST_REVIEW",
-      "owner": "MAIN",
-      "active_mechanism_count": 0,
-      "active_system_count": 1,
-      "queued_mechanism_count": 0,
-      "queued_system_count": 0
-    },
-    "PRE_FORMAL": {
-      "state": "EMPTY_HOLD",
-      "owner": "MAIN",
-      "preformal_eligible_count": 0,
-      "preformal_ready_count": 0
-    },
-    "FORMAL": {
-      "state": "EMPTY_HOLD",
-      "owner": "MAIN",
-      "fresh_identity": null,
-      "started": null,
-      "test_authority": false,
-      "scorer_authority": false,
-      "preserve_authority": false
-    }
+    "DISCOVERY": {"state":"OPEN","owner":"SUB","status":"NON_EVIDENTIARY","latest_review":"ASSEMBLY_CLUSTER_ORDER_DISCOVERY_PROMOTED_VIA_FRESH_SYSTEM_SUCCESSOR"},
+    "ARCHITECTURE_STUDY": {"state":"TERMINAL_COMPLETE_PENDING_FRESH_ANALYST_REVIEW","owner":"MAIN","active_mechanism_count":0,"active_system_count":0,"queued_mechanism_count":0,"queued_system_count":0},
+    "PRE_FORMAL": {"state":"EMPTY_HOLD","owner":"MAIN","preformal_eligible_count":0,"preformal_ready_count":0},
+    "FORMAL": {"state":"EMPTY_HOLD","owner":"MAIN","fresh_identity":null,"started":null,"test_authority":false,"scorer_authority":false,"preserve_authority":false}
   },
   "funnel_metrics": {
-    "material_portfolio": {"MECHANISM": 7, "SYSTEM": 8},
-    "classification_completeness": {"total_material_candidates": 15, "complete_mandatory_v2_1_fields": 15, "incomplete_candidates": []},
-    "terminal_state_counts_before_main_result": {"ACTIVE": 1, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 13},
+    "material_portfolio_before_current_terminal_mapping": {"MECHANISM":7,"SYSTEM":8},
+    "classification_completeness": {"total_material_candidates":15,"complete_mandatory_v2_1_fields":15,"incomplete_candidates":[]},
     "preformal_eligible_count": 0,
     "preformal_ready_count": 0,
     "viable_executable_mechanism_count": 0,
-    "rolling_theory_backward_selection": {"window_size": 3, "sequence": ["MECHANISM", "MECHANISM", "SYSTEM"], "qualifying_count": 2, "share": "2/3"},
-    "system_over_mechanism_exceptions": {"count_this_generation": 0, "reasons": []}
+    "rolling_theory_backward_selection": {"window_size":3,"sequence":["MECHANISM","MECHANISM","SYSTEM"],"qualifying_count":2,"share":"2/3"},
+    "system_over_mechanism_exceptions": {"count_this_generation":0,"reasons":[]}
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -118,7 +63,7 @@
     "static_facts_commit": "f0e12fd12e81bdbc539d7f1a489ad112a39ca8d5",
     "research_final_head": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1",
     "exact_head_ci_run": 35507809211,
-    "exact_head_ci_status_at_persistence": "IN_PROGRESS",
+    "exact_head_ci_status": "COMPLETED_SUCCESS",
     "stable_assemblies_blob": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
     "stable_brain_blob": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
     "stable_assembly_tests_blob": "99d847dae4aa8b394680acbb44ae01e72a5d9d4f",
@@ -145,44 +90,28 @@
     "allocation_ambiguity": false,
     "previous_lease_status": "COMPLETED",
     "sub_generation_consumed_by_analyst": true,
-    "analyst_generation_rechecked_before_each_scientific_mutation": true
+    "analyst_generation_rechecked_before_mutations": true
   },
   "branches_prs_advanced": [
-    {
-      "branch": "research/main-assembly-cluster-order-supported-reachability-arch-study-20260920",
-      "base": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "prospective_contract_commit": "82396b7969fc0f1fe6b4afb18bdc07b947396dab",
-      "static_facts_commit": "f0e12fd12e81bdbc539d7f1a489ad112a39ca8d5",
-      "terminal_summary_commit": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1"
-    }
+    {"branch":"research/main-assembly-cluster-order-supported-reachability-arch-study-20260920","base":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d","prospective_contract_commit":"82396b7969fc0f1fe6b4afb18bdc07b947396dab","static_facts_commit":"f0e12fd12e81bdbc539d7f1a489ad112a39ca8d5","terminal_summary_commit":"7a8fb2698da33ca07203123d1c5ad7dc510ac8e1"}
   ],
   "workflows_experiments": {
     "scientific_experiments_dispatched": [],
     "dynamic_integrated_permutation_experiment_run": false,
-    "ordinary_exact_head_ci": {
-      "run_id": 35507809211,
-      "head": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1",
-      "status": "in_progress",
-      "conclusion": null,
-      "purpose": "REPOSITORY_INTEGRITY_ONLY_NOT_SCIENTIFIC_EVIDENCE"
-    }
+    "ordinary_exact_head_ci": {"run_id":35507809211,"head":"7a8fb2698da33ca07203123d1c5ad7dc510ac8e1","status":"completed","conclusion":"success","purpose":"REPOSITORY_INTEGRITY_ONLY_NOT_SCIENTIFIC_EVIDENCE"}
   },
   "observations_results": [
     {
-      "source": "MAIN_STATIC_SYSTEM_ARCHITECTURE_STUDY",
-      "candidate_id": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
-      "terminal": "ORDER_UNSPECIFIED_AND_SUPPORTED_REACHABILITY_UNESTABLISHED",
-      "classification": "HOLD",
-      "claim_ceiling": "SYSTEM",
-      "evidentiary_status": "NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_OBSERVATION",
-      "observation": "Stable TemporalAssemblyMemory uses immutable first-seen prototypes and sequentially consumes integrated ActivityPatterns, but stable supported docs/tests/callsites do not specify cross-pattern presentation-order semantics or statically establish an integrated non-transitive bridge-pattern set reaching the online clusterer in alternative orders. Assembly partition identity is consumed downstream by predictor/action/suppression/evaluation/checkpoint state, so a reachable partition difference would not be merely cosmetic ID renaming.",
-      "ordinary_reductions": [
-        "FIRST_PROTOTYPE_THRESHOLD_CLUSTERING",
-        "CHRONOLOGICAL_CASCADE_TO_PATTERN_PRESENTATION",
-        "ASSEMBLY_ID_KEYED_PREDICTION_AND_ACTION_STATE"
-      ],
-      "support_breadth": "STATIC_STABLE_MAIN_SOURCE_DOC_TEST_CALLSITE_INVENTORY_ONLY; NO_DYNAMIC_INTEGRATED_BRIDGE_REACHABILITY_PROBE",
-      "claim_boundary": "SYSTEM-only supported-reachability/reproducibility characterization. No MECHANISM novelty, PRE_FORMAL evidence, FORMAL evidence, dynamic discriminator, mitigation patch, or cycle 2."
+      "source":"MAIN_STATIC_SYSTEM_ARCHITECTURE_STUDY",
+      "candidate_id":"CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
+      "terminal":"ORDER_UNSPECIFIED_AND_SUPPORTED_REACHABILITY_UNESTABLISHED",
+      "classification":"HOLD",
+      "claim_ceiling":"SYSTEM",
+      "evidentiary_status":"NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_OBSERVATION",
+      "observation":"Stable TemporalAssemblyMemory uses immutable first-seen prototypes and sequentially consumes integrated ActivityPatterns, but stable supported docs/tests/callsites do not specify cross-pattern presentation-order semantics or statically establish an integrated non-transitive bridge-pattern set reaching the online clusterer in alternative orders. Assembly partition identity is consumed downstream by predictor/action/suppression/evaluation/checkpoint state, so a reachable partition difference would not be merely cosmetic ID renaming.",
+      "ordinary_reductions":["FIRST_PROTOTYPE_THRESHOLD_CLUSTERING","CHRONOLOGICAL_CASCADE_TO_PATTERN_PRESENTATION","ASSEMBLY_ID_KEYED_PREDICTION_AND_ACTION_STATE"],
+      "support_breadth":"STATIC_STABLE_MAIN_SOURCE_DOC_TEST_CALLSITE_INVENTORY_ONLY; NO_DYNAMIC_INTEGRATED_BRIDGE_REACHABILITY_PROBE",
+      "claim_boundary":"SYSTEM-only supported-reachability/reproducibility characterization. No MECHANISM novelty, PRE_FORMAL evidence, FORMAL evidence, dynamic discriminator, mitigation patch, or cycle 2."
     }
   ],
   "evidentiary_status": {
@@ -192,60 +121,34 @@
     "new_system_architecture_observations": 1,
     "main_scientific_execution": "ONE_BOUNDED_STATIC_SYSTEM_ARCHITECTURE_CYCLE"
   },
-  "ordinary_reductions": {
-    "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01": [
-      "FIRST_PROTOTYPE_THRESHOLD_CLUSTERING",
-      "CHRONOLOGICAL_CASCADE_TO_PATTERN_PRESENTATION",
-      "ASSEMBLY_ID_KEYED_PREDICTION_AND_ACTION_STATE"
-    ]
-  },
-  "support_breadth": {
-    "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01": "STATIC_STABLE_MAIN_SOURCE_DOC_TEST_CALLSITE_INVENTORY_ONLY; NO_DYNAMIC_INTEGRATED_BRIDGE_REACHABILITY_PROBE"
-  },
-  "consumed_identities": [
-    "c19-external-v2-official-v4",
-    "C19-R1 revision-authority official-v1",
-    "C19-R1 revision-authority official-v2",
-    "c19-r2-fsa-state-tracker-official-v1",
-    "pd01-long-history-fading-memory-official-v1",
-    "ni01-no-ignition-selective-prediction-official-v1",
-    "h5-event-routing-work-reduction-official-v1"
-  ],
+  "ordinary_reductions": {"CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01":["FIRST_PROTOTYPE_THRESHOLD_CLUSTERING","CHRONOLOGICAL_CASCADE_TO_PATTERN_PRESENTATION","ASSEMBLY_ID_KEYED_PREDICTION_AND_ACTION_STATE"]},
+  "support_breadth": {"CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01":"STATIC_STABLE_MAIN_SOURCE_DOC_TEST_CALLSITE_INVENTORY_ONLY; NO_DYNAMIC_INTEGRATED_BRIDGE_REACHABILITY_PROBE"},
+  "consumed_identities": ["c19-external-v2-official-v4","C19-R1 revision-authority official-v1","C19-R1 revision-authority official-v2","c19-r2-fsa-state-tracker-official-v1","pd01-long-history-fading-memory-official-v1","ni01-no-ignition-selective-prediction-official-v1","h5-event-routing-work-reduction-official-v1"],
   "new_identity_consumption": 0,
-  "integrity_state": "CLEAN_AUTHORITATIVE_SCIENTIFIC_REFS_UNCHANGED; EXACT_HEAD_ORDINARY_CI_IN_PROGRESS",
+  "integrity_state": "CLEAN_AUTHORITATIVE_SCIENTIFIC_REFS_UNCHANGED; EXACT_HEAD_ORDINARY_CI_COMPLETED_SUCCESS",
   "critical_path_fixes": [],
   "outcome_contingencies": [
-    "Current static terminal is fixed and must not be redesigned after outcome knowledge.",
-    "Exact-head ordinary CI success permits only transition to COMPLETED followed by fresh Evidence Analyst review.",
-    "Exact-head ordinary CI failure does not reopen the scientific terminal; only an outcome-independent repository-integrity correction within MAIN authority may be considered, otherwise fail closed for fresh review.",
+    "Current static terminal is fixed and cannot be redesigned after outcome knowledge.",
+    "Exact-head ordinary CI has succeeded; current object is complete and stops for fresh Evidence Analyst review.",
     "Any dynamic integrated order discriminator, supported bridge generator, mitigation/canonicalization patch, mechanism successor, PRE_FORMAL, FORMAL, or same-object cycle 2 requires a fresh candidate/object and fresh prospective Analyst authority."
   ],
-  "blocked_until": [
-    "MAIN_DYNAMIC_ORDER_DISCRIMINATOR_BLOCKED_UNTIL_STATIC_ARCHITECTURE_TERMINAL_AND_FRESH_ANALYST_REVIEW",
-    "H7_BLOCKED_UNTIL_NATIVE_EXECUTABLE_RESPONSIBILITY_OBJECT",
-    "PRE_FORMAL_BLOCKED_UNTIL_MECHANISM_ELIGIBLE_AND_READY",
-    "FORMAL_BLOCKED_UNTIL_FRESH_ONE_WAY_AUTHORITY_CHAIN"
-  ],
-  "do_not_touch": [
-    "ALL_CONSUMED_IDENTITIES",
-    "ALL_IMMUTABLE_EVIDENCE_AND_PRESERVE_REFS",
-    "CAND-V05-ASSEMBLY-CLUSTER-ORDER-DEPENDENCE-01_SAME_OBJECT_CYCLE2",
-    "ALL_OTHER_TERMINAL_CURRENT_OBJECTS",
-    "CURRENT_SUCCESSOR_DYNAMIC_CYCLE2_OR_IMPLEMENTATION_PATCH_WITHOUT_FRESH_ANALYST_AUTHORITY"
-  ],
-  "stop_reason": "VALID_STATIC_SYSTEM_TERMINAL_MAPPED_WAITING_EXACT_HEAD_ORDINARY_CI",
+  "blocked_until": ["MAIN_DYNAMIC_ORDER_DISCRIMINATOR_BLOCKED_UNTIL_STATIC_ARCHITECTURE_TERMINAL_AND_FRESH_ANALYST_REVIEW","H7_BLOCKED_UNTIL_NATIVE_EXECUTABLE_RESPONSIBILITY_OBJECT","PRE_FORMAL_BLOCKED_UNTIL_MECHANISM_ELIGIBLE_AND_READY","FORMAL_BLOCKED_UNTIL_FRESH_ONE_WAY_AUTHORITY_CHAIN"],
+  "do_not_touch": ["ALL_CONSUMED_IDENTITIES","ALL_IMMUTABLE_EVIDENCE_AND_PRESERVE_REFS","CAND-V05-ASSEMBLY-CLUSTER-ORDER-DEPENDENCE-01_SAME_OBJECT_CYCLE2","ALL_OTHER_TERMINAL_CURRENT_OBJECTS","CURRENT_SUCCESSOR_DYNAMIC_CYCLE2_OR_IMPLEMENTATION_PATCH_WITHOUT_FRESH_ANALYST_AUTHORITY"],
+  "stop_reason": "VALID_STATIC_SYSTEM_TERMINAL_MAPPED_EXACT_HEAD_CI_SUCCESS_STOP_FRESH_ANALYST_REVIEW",
   "work_left_for_sub": "Independent bounded Discovery only under its own Analyst lane. SUB must not continue, rerun, dynamically extend, or patch CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01.",
   "utility_request_created": null,
-  "next_main_action": "Relay or next MAIN run must inspect ordinary CI run 35507809211 for exact head 7a8fb2698da33ca07203123d1c5ad7dc510ac8e1 only. If success, transition lease to COMPLETED and STOP for fresh Evidence Analyst review without more science. If failure, keep the scientific terminal fixed and fail closed except for a clearly outcome-independent repository-integrity correction already within MAIN authority.",
+  "next_main_action": "STOP this object. A subsequent MAIN run must first consume a fresh Evidence Analyst generation. No dynamic continuation, patch, PRE_FORMAL, FORMAL, or same-object cycle 2 is authorized by R19.",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
     "lease_acquire_commit": "6308874ff537f0180a6252e6430fc27a0c86626d",
-    "state_commit": "PENDING_THIS_WRITE",
-    "latest_commit": null,
-    "history_commit": null,
+    "initial_state_commit": "b71f43339cf86c96385341265feadf23231f4be5",
+    "latest_commit_before_ci_completion": "1fdbeeadcbe93fb8727c046883a94bdad808ed38",
+    "history_commit": "129bed817fb3de78cfb83e779833d5ef39c4c062",
     "history_path": "reports/orchestrator/history/2026-09-20/2027-main.md",
+    "final_state_commit": "PENDING_THIS_WRITE",
+    "final_latest_commit": null,
     "final_lease_commit": null,
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result": "STATE_PERSISTING_BEFORE_WAITING_EXTERNAL_FINAL_LEASE"
+    "result": "SCIENCE_AND_EXACT_HEAD_CI_COMPLETE; FINAL_LATEST_AND_LEASE_PERSISTENCE_PENDING"
   }
 }
