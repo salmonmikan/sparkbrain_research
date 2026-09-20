@@ -1,24 +1,25 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T024630+0900-RELAY-FUNNEL21-R24-AUTHBOUND-7B3E51C2",
-  "produced_at": "2026-09-21T02:46:30+09:00",
-  "producer_run_id": "sparkbrain-main-relay-20260921T024630JST-R24-AUTHBOUND",
-  "authority_scope": "MAIN_RELAY_FUNNEL_V2_1_CONTROL_PLANE_RECONCILIATION_ONLY",
-  "supersedes_generation_id": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
+  "generation_id": "MAIN-20260921T031700+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGPART-R25-7A4C91E2",
+  "produced_at": "2026-09-21T03:21:00+09:00",
+  "producer_run_id": "sparkbrain-main-primary-20260921T031700JST-R25-ELIGPART",
+  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_ARCHITECTURE_EXECUTION",
+  "supersedes_generation_id": "MAIN-20260921T024630+0900-RELAY-FUNNEL21-R24-AUTHBOUND-7B3E51C2",
   "input_generations": {
-    "evidence_analyst": "EVA-20260921T020159+0900-R24-D7A4C291",
-    "main": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
+    "evidence_analyst": "EVA-20260921T031129+0900-R25-1E24780E",
+    "main": "MAIN-20260921T024630+0900-RELAY-FUNNEL21-R24-AUTHBOUND-7B3E51C2",
     "sub_observed_for_freshness": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7"
   },
-  "consumed_analyst_generation_id": "EVA-20260921T020159+0900-R24-D7A4C291",
-  "consumed_analyst_commit": "314e94cae6c6d7636c434d26b4525483c09eaf88",
-  "consumed_main_generation_id": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
+  "consumed_analyst_generation_id": "EVA-20260921T031129+0900-R25-1E24780E",
+  "consumed_analyst_commit": "258406668f86b24f54dd1a88f18da37e457a001b",
+  "consumed_main_generation_id": "MAIN-20260921T024630+0900-RELAY-FUNNEL21-R24-AUTHBOUND-7B3E51C2",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "status": "BLOCKED",
+  "execution_mode": "PRIMARY",
+  "status": "WAITING_EXTERNAL",
   "research_layer": "ARCHITECTURE_STUDY",
   "main_lane": "V05_ELIGIBILITY_TIMEBASE_PARTITION_INVARIANCE_ARCHITECTURE_STUDY_CYCLE1",
   "candidate_id": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
+  "cycle_count": 1,
   "claim_ceiling": "SYSTEM",
   "preformal_eligible": false,
   "preformal_readiness": null,
@@ -29,34 +30,27 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No comparable executable/informative MECHANISM; protects reproducibility/evidence interpretation.",
+    "reason_detail": "No comparably executable/informative MECHANISM exists; active SYSTEM successor protects reproducibility/evidence interpretation.",
     "compared_mechanism_candidate_ids": []
   },
-  "dimension_preservation_note": "Funnel v2.1 dimensions are copied exactly from controlling Evidence Analyst R24 for the fresh MAIN-owned candidate. RELAY does not reinterpret or upgrade them.",
+  "dimension_preservation_note": "Funnel v2.1 dimensions remain exactly the controlling Analyst R25 values. No terminal/hold dimension is inferred while exact-head outcome CI remains pending.",
   "analyst_authorized_scope": {
-    "go": "GO_ONE_BOUNDED_NON_EVIDENTIARY_SYNTHETIC_ARCHITECTURE_DIAGNOSTIC",
+    "go": "GO_ONE_BOUNDED_NON_EVIDENTIARY_SYNTHETIC_ARCHITECTURE_DIAGNOSTIC_ONLY_WHEN_PRIMARY_STARTS_EXACT_CONTRACT",
     "authoritative_source": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "input_scope": "fresh synthetic DEV controller/field only; no evidence datasets or consumed identities",
     "matched_state": "one fixed causal event creates identical initial eligibility; clone exact state; reward_trace=1.0",
-    "partition_difference": "one versus two empty apply() calls before the same final causal event",
+    "partition_difference": "one versus two empty apply() calls before the same fixed final causal event",
     "fixed_final_event": "same source/target IDs and absolute timestamps",
     "observables": ["target-edge eligibility", "target-edge weight", "update count"],
     "ordinary_comparator": "per-apply eligibility_decay recurrence with no elapsed-time term",
     "no_sweep": true,
     "same_run_continuation": "NONE_AFTER_FIRST_OUTCOME",
-    "terminals": {
-      "CALL_COUNT_PARTITION_DEPENDENT_EXACT": "STOP; terminal SYSTEM finding; no same-run repair/sweep.",
-      "PARTITION_INVARIANT": "STOP; REJECT current SYSTEM object.",
-      "UNRESOLVED_PARTITION_EFFECT": "STOP for fresh Analyst review; no redesign.",
-      "INVALID_MATCHED_PARTITION_CONTRACT": "STOP; fresh contract required."
-    }
-  },
-  "relay_authority_reconciliation": {
-    "fresh_successor_created_by_analyst": true,
-    "primary_started_this_candidate": false,
-    "primary_handoff_for_this_candidate": false,
-    "relay_may_initiate_fresh_architecture_object": false,
-    "result": "CONTROL_PLANE_RECONCILED_ONLY_NO_SCIENTIFIC_START"
+    "terminals": [
+      "CALL_COUNT_PARTITION_DEPENDENT_EXACT",
+      "PARTITION_INVARIANT",
+      "UNRESOLVED_PARTITION_EFFECT",
+      "INVALID_MATCHED_PARTITION_CONTRACT"
+    ]
   },
   "research_layer_state": {
     "DISCOVERY": {"state": "OPEN", "owner": "SUB"},
@@ -66,47 +60,60 @@
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "314e94cae6c6d7636c434d26b4525483c09eaf88",
-    "analyst_generation": "EVA-20260921T020159+0900-R24-D7A4C291",
-    "orchestrator_tip_observed_before_relay": "71826e37165705647d9fd13b7b1698422d557fb5",
+    "analyst_handoff": "258406668f86b24f54dd1a88f18da37e457a001b",
+    "analyst_generation": "EVA-20260921T031129+0900-R25-1E24780E",
+    "research_branch": "research/main-eligibility-timebase-partition-invariance-20260921",
+    "prospective_contract_commit": "37eb6f1985d77d9caac5da51ce1348ed5c6a9228",
+    "first_outcome_head_with_lint_failure": "e66bf9faf01edb916a6bbd976d53acdddc67538e",
+    "current_exact_head": "0430e98e241ae543a03bc750a3c977fe55d17bb7",
     "sub_generation": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
     "sub_scientific_execution": false,
-    "sub_candidate_id": null
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "h5_started_control_ref": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "h5_raw_preserve_ref": "ce5797eb584344db7a512e585506fb6c59ea475b"
   },
-  "lease_collision_reconciliation": {
-    "prior_lease_status": "BLOCKED",
-    "prior_lease_execution_mode": "RELAY",
-    "prior_heartbeat_at": "2026-09-21T01:50:11+09:00",
-    "fresh_primary_running_collision": false,
-    "prior_active_branch": null,
-    "prior_active_identity": null,
-    "same_object_primary_running": false
+  "implementation": {
+    "research_branch_created": true,
+    "production_science_code_changed": false,
+    "prospective_contract_path": "reports/architecture/cand-v05-eligibility-timebase-partition-invariance-01/preregistered_contract.md",
+    "diagnostic_path": "tests/v05/test_v05_eligibility_timebase_partition_invariance_dev.py",
+    "prospective_contract_commit": "37eb6f1985d77d9caac5da51ce1348ed5c6a9228",
+    "initial_outcome_bearing_commit": "e66bf9faf01edb916a6bbd976d53acdddc67538e",
+    "lint_only_repair_commit": "0430e98e241ae543a03bc750a3c977fe55d17bb7",
+    "lint_only_repair_detail": "The first exact-head CI stopped at ruff E501 before tests executed. Only line wrapping was changed; hypothesis, matched construction, comparator, observables, assertions, thresholds, source/runtime, and terminal mapping were unchanged. No scientific outcome was exposed before the repair.",
+    "no_sweep_or_rescue_tuning": true
   },
-  "newer_sub_freshness": {
-    "generation_id": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
-    "mode": "no_op",
-    "candidate_id": null,
-    "evidentiary_status": "NON_EVIDENTIARY",
-    "scientific_result": "NO_SCIENTIFIC_EXECUTION",
-    "no_op_reason": "NO_SAFE_USEFUL_NONDUPLICATIVE_COHERENT_THEORY_BACKWARD_MECHANISM_TARGET",
-    "material_superseding_scientific_generation": false,
-    "freshness_effect": "RECORDED_NONMATERIAL_NOOP_REFRESH"
+  "workflows": {
+    "initial_exact_head_ci": {
+      "run_id": 35528584663,
+      "head": "e66bf9faf01edb916a6bbd976d53acdddc67538e",
+      "status": "completed",
+      "conclusion": "failure",
+      "failure_stage": "Lint",
+      "test_stage_executed": false,
+      "scientific_outcome_exposed": false
+    },
+    "current_exact_head_ci": {
+      "run_id": 35528770185,
+      "head": "0430e98e241ae543a03bc750a3c977fe55d17bb7",
+      "status": "in_progress",
+      "conclusion": null
+    }
   },
-  "workflows_experiments": {
-    "scientific_experiments_dispatched_by_relay": [],
-    "workflow_dispatches_by_relay": [],
-    "formal_started_transitions": [],
-    "preserve_actions": [],
-    "scoring_actions": [],
-    "research_branch_mutations": []
+  "observations": {
+    "terminal_observation": null,
+    "scientific_outcome_known": false,
+    "ordinary_reductions": ["per-apply eligibility_decay recurrence with no elapsed-time term"],
+    "support_breadth": "one prospectively fixed synthetic matched one-versus-two empty-apply contract; exact-head CI outcome pending",
+    "formal_scientific_evidence": 0,
+    "preformal_development_evidence": 0,
+    "mechanism_architecture_observations": 0,
+    "system_architecture_observations": 0
   },
-  "evidentiary_status": {
-    "new_formal_scientific_evidence_by_relay": 0,
-    "new_preformal_development_evidence_by_relay": 0,
-    "new_mechanism_architecture_observations_by_relay": 0,
-    "new_system_architecture_observations_by_relay": 0,
-    "new_identity_consumption": 0
-  },
+  "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_IN_PROGRESS; NEW_FORMAL=0; NEW_PRE_FORMAL=0; NEW_MECHANISM_ARCHITECTURE=0; NEW_SYSTEM_ARCHITECTURE=0; NEW_IDENTITY_CONSUMPTION=0",
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "C19-R1 revision-authority official-v1",
@@ -117,14 +124,14 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "new_identity_consumption": 0,
-  "integrity_state": "FAIL_CLOSED_RELAY_AUTHORITY_BOUNDARY; ANALYST_R24_CURRENT; STABLE_MAIN_UNCHANGED; NO_FRESH_PRIMARY_RUNNING_COLLISION; R24_CANDIDATE_NOT_STARTED_BY_PRIMARY; SUB_R24_REFRESH_IS_NOOP_WITH_NO_SCIENTIFIC_EXECUTION; NO_RESEARCH_BRANCH_OR_WORKFLOW_MUTATION; NO_ONE_WAY_ACTION",
-  "stop_reason": "RELAY_AUTHORITY_BOUNDARY_FRESH_ANALYST_ALLOCATED_ARCHITECTURE_OBJECT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY",
-  "next_main_action": "PRIMARY must start only the exact R24-authorized one-shot synthetic DEV Architecture diagnostic for CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01. RELAY may resume only after PRIMARY safely hands off/stops mutating that same object, or to collect/repair an already-started exact workflow within the pre-fixed contingency.",
+  "integrity_state": "ANALYST_R25_CURRENT; STABLE_MAIN_UNCHANGED; SUB_NOOP_NONCOLLIDING; PROSPECTIVE_CONTRACT_PRECEDES_OUTCOME_TEST; FIRST_CI_FAILED_BEFORE_TEST_AT_LINT; LINT_ONLY_FORMAT_REPAIR_NO_SCIENCE_CHANGE; CURRENT_EXACT_HEAD_CI_IN_PROGRESS; NO_FORMAL_OR_EVIDENCE_REF_MUTATION; NO_PRODUCTION_SCIENCE_CODE_MUTATION",
+  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_35528770185",
+  "next_main_action": "After re-reading Analyst generation and exact refs, inspect only CI run 35528770185 at head 0430e98e241ae543a03bc750a3c977fe55d17bb7. If the run completes successfully, map exactly one prospectively fixed terminal and STOP for fresh Analyst review. If it fails before exposing the scientific outcome, only a science-invariant mechanical CI/harness repair may continue; otherwise fail closed without redesign or sweep.",
   "utility_request_created": null,
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-21/0246-main.md",
+    "history_path": "reports/orchestrator/history/2026-09-21/0321-main.md",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result": "BLOCKED_RELAY_AUTHORITY_BOUNDARY_PENDING_PRIMARY_START"
+    "result": "WAITING_EXTERNAL_EXACT_HEAD_CI"
   }
 }
