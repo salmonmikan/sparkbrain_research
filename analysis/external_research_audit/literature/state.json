@@ -1,178 +1,142 @@
 {
-  "timestamp": "2026-09-20T15:30:56+09:00",
+  "timestamp": "2026-09-20T18:42:00+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71",
-  "producer_run_id": "external-literature-auto-20260920T153056+0900-R12-4D8C2A71",
+  "generation_id": "LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4",
+  "producer_run_id": "external-literature-20260920T184200+0900-R13-3B7D91E4",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B",
-  "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot_jst": "15:30",
-  "schedule_inference_used": false,
-  "control_plane_mailbox_semantics_respected": true,
+  "supersedes_generation_id": "LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260920T145000+0900-R14-7B3E2D91",
-      "handoff_commit": "14285844f80fa844b5aaac9ccf4d2fed95b6fb35",
-      "produced_at": "2026-09-20T14:50:00+09:00"
+      "generation_id": "CTRL-20260920T165000+0900-R15-6C2F8A41",
+      "handoff_commit": "64611f391391844d60659732a50a22cf009a5797"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T150234+0900-R15-8F3C1A72",
-      "handoff_commit": "ad8290dfab6d79be984f960d48dcf34a8213aefb",
-      "state_payload_commit": "095caeb07c23094bf9fc68c8e7022f88d45baa74",
-      "produced_at": "2026-09-20T15:02:34+09:00"
+      "generation_id": "EVA-20260920T180852+0900-R17-152262F6",
+      "handoff_commit": "4dc5a5b43f26789f32567eb69cbb4a26b9cd6825"
     },
-    "main_orchestrator": {
-      "generation_id": "MAIN-20260920T151432+0900-PRIMARY-FUNNEL21-HOLD-A84D6C2F",
-      "handoff_commit": "8af4b20aa8e3386197a53317eaf4885942d509b3",
-      "produced_at": "2026-09-20T15:14:32+09:00"
+    "main_report": {
+      "generation_id": "MAIN-20260920T181208+0900-PRIMARY-FUNNEL21-HOLD-4F2C91A7",
+      "handoff_commit": "95c73d858caa4ef89d4348c425fa73d0920147c1"
     },
-    "sub_orchestrator": {
-      "generation_id": "SUB-20260920T144110+0900-SYSTEM-EVALORDER-6F2C91A8",
-      "handoff_commit": "656e478ff9146a3d5561c1f2482becc1252bf2d0",
-      "research_head": "4ed6de26ac0bf584189823a64abf6532b3291f59",
-      "produced_at": "2026-09-20T14:41:10+09:00"
+    "sub_report": {
+      "generation_id": "SUB-20260920T173914+0900-NOOP-ANALYSTWAIT-CA15738F",
+      "handoff_commit": "2cdb0c5625857443f4775e3d6819eb67504862dc"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B",
-      "handoff_commit": "639ceaca54150a3f82796c241c8129d821b55fe1",
-      "produced_at": "2026-09-20T12:30:00+09:00"
+      "generation_id": "LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71",
+      "handoff_commit": "a66abf755d859da60bbc98f61950053f66a6d9c1"
     }
   },
+  "role": "LITERATURE_REDUCTION_SCOUT",
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "selected_research_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920@705b652f0eb426c7e39a75a9f901be10483d0e63",
-    "selected_research_terminal": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED",
-    "selected_research_exact_head_ci": "35481067945:completed/success",
-    "authoritative_evidence_tags": [
-      "evidence/c19-official-v4-c19-external-v2-official-v4",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
+    "active_research": {
+      "research/exploratory-sub-context-conditioned-prediction-20260920": "f0a4157d869561e4201aca1c37663305bc5c8a5d"
+    },
+    "prospective_binding": "01d4cc8daf07be67b8f633434030241276a0a4b0",
+    "diagnostic_head": "38c6f3cc972898c170fdf5853190ca33de8f6882",
+    "result_head": "f0a4157d869561e4201aca1c37663305bc5c8a5d",
+    "authoritative_evidence_refs": [
+      "refs/tags/evidence/c19-official-v4-c19-external-v2-official-v4",
+      "refs/tags/evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+      "refs/tags/evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
+      "refs/tags/evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
+      "refs/tags/evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
     ],
-    "authoritative_evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13,
-    "legacy_freeze_refs_refetched": true,
-    "preserve_refs_refetched": true,
-    "control_refs_refetched": true,
-    "fresh_formal_identity_observed": false,
-    "fresh_started_observed": false,
-    "fresh_formal_test_authority_observed": false,
-    "fresh_formal_evidence_observed": false,
-    "open_prs_refetched": true
+    "formal_refs": [],
+    "sealed_refs": [],
+    "freeze_tags": [],
+    "preserve_control_legacy_freeze_refs": "independently re-fetched; no authoritative movement affecting this line"
   },
-  "source_blobs_inspected": {
-    "src/sparkbrain/v05/receptors.py": "86c1cfea1ea70cada5c277d8f5047c32ea611a5c",
-    "src/sparkbrain/v04/contracts.py": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
-    "architecture_summary": "6ed003fccb7822c24d182408d60a5264055c5cc8"
+  "workflow_state": {
+    "diagnostic_ci": {
+      "run_id": 35502813034,
+      "head": "38c6f3cc972898c170fdf5853190ca33de8f6882",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "result_head_ci": {
+      "run_id": 35502970668,
+      "head": "f0a4157d869561e4201aca1c37663305bc5c8a5d",
+      "status_at_inspection": "in_progress",
+      "conclusion": null
+    }
   },
-  "control_brain_commit_consumed": "14285844f80fa844b5aaac9ccf4d2fed95b6fb35",
-  "evidence_analyst_commit_consumed": "ad8290dfab6d79be984f960d48dcf34a8213aefb",
-  "main_report_commit_consumed": "8af4b20aa8e3386197a53317eaf4885942d509b3",
-  "sub_report_commit_consumed": "656e478ff9146a3d5561c1f2482becc1252bf2d0",
-  "newest_role_history_consumed": [
-    "analysis/control_brain/latest.md@CTRL-20260920T145000+0900-R14-7B3E2D91",
-    "analysis/orchestrator/latest.md@EVA-20260920T150234+0900-R15-8F3C1A72",
-    "reports/orchestrator/main/latest.md@MAIN-20260920T151432+0900-PRIMARY-FUNNEL21-HOLD-A84D6C2F",
-    "reports/orchestrator/sub/latest.md@SUB-20260920T144110+0900-SYSTEM-EVALORDER-6F2C91A8",
-    "reports/orchestrator/history/2026-09-20/1342-sub.md@SUB-20260920T134240+0900-THEORY-REWARD-ADA731B2"
-  ],
   "genuinely_new_information": true,
-  "current_repository_interpretation": {
-    "new_formal_scientific_evidence": false,
-    "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-    "architecture_study": "EMPTY_HOLD",
-    "pre_formal": "EMPTY_HOLD",
-    "formal": "EMPTY_HOLD",
-    "receptor_simultaneity_ordering": "SYSTEM/HOLD_SYSTEM_TERMINAL/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED",
-    "receptor_simultaneity_terminal": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED"
-  },
   "findings": [
     {
-      "id": "SIMULTANEOUS_EVENT_ORDER_IS_EXPLICIT_MODEL_SEMANTICS",
-      "summary": "Discrete-event simulation literature treats equal-time non-commutative events as requiring an explicit total ordering/tie policy for determinism. NESTML likewise documents that exactly simultaneous pre/post synaptic events are order-sensitive and fixes post-before-pre processing in the reference/default generated code.",
-      "sources": [
-        "McGlohon & Carothers, WSC 2021 / arXiv:2105.00069",
-        "NESTML active dendrite third-factor STDP tutorial, Case 7"
-      ],
-      "direct_applicability_confidence": "HIGH"
+      "type": "repository_evidence",
+      "finding": "CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01 reached prospectively fixed FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS: X after A and X after B both returned future-A at confidence 0.5, context calls did not mutate predictor state, and the exact first-order comparator reproduced both arms.",
+      "impact": "Current v0.5 prediction-component context conditioning is reduced; recommendation REJECT and no same-object cycle-2 rescue."
     },
     {
-      "id": "SAME_TIME_MULTIPLICITY_HAS_ESTABLISHED_EXPLICIT_REPRESENTATIONS",
-      "summary": "NEST spike_generator explicitly interprets repeated identical times as multiple events, while mip_generator can collapse n same-step spikes into one event with n-fold weight. Multiplicity/aggregation is therefore an ordinary declared event representation, not something that should silently inherit host-language iterable order.",
+      "type": "external_literature",
+      "finding": "Variable-order Markov models, Prediction Suffix Trees, CTW and PPM are established sequence predictors that condition on recent suffix/history; immediate-predecessor-conditioned prediction is therefore ordinary prior art.",
       "sources": [
-        "NEST Simulator stable spike_generator documentation",
-        "NEST Simulator stable mip_generator documentation"
-      ],
-      "direct_applicability_confidence": "HIGH"
+        "Begleiter, El-Yaniv & Yona, On Prediction Using Variable Order Markov Models, JAIR 22 (2004), DOI 10.1613/JAIR.1491",
+        "Pereira, Singer & Tishby, Beyond Word N-Grams (1996), prediction suffix trees"
+      ]
     },
     {
-      "id": "ZERO_LAG_TIES_HAVE_MODEL_SPECIFIC_POLICIES",
-      "summary": "NESTML stdp_nn_symm_synapse discards exactly coincident zero-delta-t pairs, demonstrating that discard, explicit order and multiplicity are all legitimate model-defined policies. There is no universal exact-tie semantics to infer from simultaneity alone.",
+      "type": "external_literature",
+      "finding": "Computational-mechanics causal states group histories by identical future conditional distributions and provide minimal predictively sufficient state; this is a sharper baseline than raw history sensitivity and has been applied directly to spike trains.",
       "sources": [
-        "NESTML stdp_nn_symm_synapse documentation"
-      ],
-      "direct_applicability_confidence": "HIGH"
+        "Crutchfield & Shalizi, Phys. Rev. E 59, 275 (1999), DOI 10.1103/PhysRevE.59.275",
+        "The Computational Structure of Spike Trains, PMC (2010)"
+      ]
     },
     {
-      "id": "SEQUENTIAL_ADAPTIVE_EVENT_UPDATES_ARE_ORDINARY_REDUCTION",
-      "summary": "Foundational event-driven spiking/dynamical-synapse work treats events as state-transition points. SparkBrain v0.5 updates receptor traces and adaptive gain after each pulse, so any future exact-key permutation effect is first explained by sequential state jumps under an unspecified tie policy.",
+      "type": "external_literature",
+      "finding": "Predictive State Representations and belief-state methods make history-conditioned prediction under observation aliasing foundational; contemporary NeurIPS 2025 work continues to learn compact predictive belief representations under partial observability.",
       "sources": [
-        "Mattia & Del Giudice, Neural Computation 2000, DOI 10.1162/089976600300014953",
-        "stable-main src/sparkbrain/v05/receptors.py"
-      ],
-      "direct_applicability_confidence": "HIGH"
+        "Littman, Sutton & Singh, Predictive Representations of State, NeurIPS 2001",
+        "Kuo et al., Predictive Coding Enhances Meta-RL To Achieve Interpretable Bayes-Optimal Belief Representation Under Partial Observability, NeurIPS 2025"
+      ]
     }
   ],
   "affected_lines": [
-    "CAND_V05_RECEPTOR_SIMULTANEITY_ORDERING_01",
-    "V05_RECEPTOR_EVENT_SEMANTICS",
-    "SAME_TIMESTAMP_MULTIPLICITY_CONTRACT",
-    "ARCHITECTURE_REPRODUCIBILITY",
+    "CAND_V05_CONTEXT_CONDITIONED_PREDICTION_01",
+    "V05_PREDICTION_COMPONENT",
+    "FUTURE_SEQUENCE_CONTEXT_PREDICTION",
+    "PREDICTIVE_STATE_REDUCTION_LADDER",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "EXPLICIT_SIMULTANEOUS_EVENT_TIE_POLICY",
-    "EXACT_KEY_UNIQUENESS_AND_DUPLICATE_REJECTION",
-    "MULTIPLICITY_OR_COMMUTATIVE_AGGREGATION_SEMANTICS",
-    "SEQUENTIAL_ADAPTIVE_STATE_UPDATE_REDUCTION"
+    "first-order current-Assembly frequency lookup",
+    "fixed second-order (previous,current) Markov lookup",
+    "variable-order Markov / Prediction Suffix Tree / CTW-style predictor",
+    "epsilon-machine / causal-state minimal predictive partition",
+    "matched-information Predictive State Representation / belief-state baseline"
   ],
-  "novelty_or_reduction_impact": "STRONG_ORDINARY_EVENT_SEMANTICS_REDUCTION; current terminal remains SYSTEM/HOLD with no mechanistic novelty support and no supported exact-key reachability established.",
+  "novelty_or_reduction_impact": "STRONGER_SEQUENCE_STATE_REDUCTION. The current v0.5 object is exactly reduced by first-order current-Assembly lookup. Any future positive sequence-context result must first survive fixed/variable-order Markov suffix models, minimal causal-state predictive partitions, and predictive/belief-state representations under matched information/resource privilege. Mere same-current-state/history-conditioned prediction is established prior art.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "explicit exact-key uniqueness contract with duplicate rejection",
-    "explicit multiplicity/commutative aggregation semantics when scientifically justified",
-    "explicit deterministic secondary tie-break only when ordering is itself semantic",
-    "fresh permutation-invariance metamorphic test only after supported exact-key reachability is independently established",
-    "distinguish cross-channel biological synchrony from same-channel duplicate-event multiplicity"
+    "exact second-order (previous,current) -> next-distribution Markov baseline",
+    "variable-order Markov / Prediction Suffix Tree / CTW-style baseline",
+    "epsilon-machine / causal-state minimal predictive-state baseline on the same event alphabet",
+    "matched-information PSR or belief-state baseline",
+    "predictive-equivalence collapse/split tests across multiple history lengths in a fresh object only",
+    "explicit privilege matching for global history dictionaries, task labels, or latent-state access"
   ],
   "questions_for_evidence_analyst": [
-    "Keep CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 terminal SYSTEM/HOLD with no same-object dynamic rescue?",
-    "If supported exact-key duplicates later appear, require a fresh prospective choice among uniqueness, multiplicity/aggregation, or explicit ordered semantics before testing?",
-    "Treat cross-channel coincidence and same-channel duplicate-key multiplicity as separate semantic questions?"
+    "Accept FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS as a closed negative current-component mechanism result with no cycle-2 rescue?",
+    "If a fresh integrated sequence-state successor is independently warranted, require Markov-suffix plus causal-state/PSR reductions before mechanistic-distinctness interpretation?",
+    "Require predictive-equivalence, not mere history sensitivity, as the stronger future discriminator?"
   ],
   "questions_for_control_brain": [
-    "Add simultaneous-event tie/multiplicity semantics to the ordinary Architecture reproducibility checklist?",
-    "Keep MAIN idle and avoid a literature-driven successor while supported duplicate-key reachability is absent?",
-    "Keep PRE_FORMAL/FORMAL unaffected by this API/event-semantics issue?"
+    "Add fixed/variable-order Markov, causal-state, and PSR/belief-state models to the ordinary sequence-prediction reduction ladder?",
+    "Keep PRE_FORMAL/FORMAL unaffected by the current reduced result?",
+    "Avoid a literature-driven successor until a native supported-system mechanism or independently motivated integrated question exists?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
-    "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 contract/raw/terminal and no same-object dynamic permutation or aggregation comparator",
-    "no literature-driven API repair, cycle 2, PRE_FORMAL/FORMAL promotion, official TEST, new STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
+    "all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
+    "CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01 prospective binding 01d4cc8daf07be67b8f633434030241276a0a4b0",
+    "diagnostic head 38c6f3cc972898c170fdf5853190ca33de8f6882 and successful diagnostic CI 35502813034",
+    "result commit f0a4157d869561e4201aca1c37663305bc5c8a5d and mapped FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS terminal",
+    "no same-object cycle 2, context-length sweep, integrated rescue, retune, relabel, PRE_FORMAL/FORMAL promotion, official TEST, new STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
   ],
   "utility_request_created": null,
-  "persistence": {
-    "branch": "ops/external-research-audit-handoff",
-    "history_path": "analysis/external_research_audit/history/2026-09-20/1530-LITERATURE_REDUCTION_SCOUT.md",
-    "latest_path": "analysis/external_research_audit/literature/latest.md",
-    "state_path": "analysis/external_research_audit/literature/state.json",
-    "legacy_shared_latest_state_updated": false,
-    "force_push": false
-  }
+  "persistence_notes": "Role-separated literature stream only. Legacy shared latest/state not updated. No immutable scientific refs or scheduler changes."
 }
