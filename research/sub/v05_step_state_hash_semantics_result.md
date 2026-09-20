@@ -19,6 +19,8 @@ The mismatch is reproduced exactly by the fixed bookkeeping reduction: starting 
 
 No learning-outcome call, alternate seed, threshold adjustment, retry condition, or scientific rescue tuning was used.
 
+A stable-main usage search found no v0.5 consumer relying on equality between the returned `result.state_hash` and the immediate post-return brain hash; the existing v0.5 brain test only requires that `result.state_hash` be non-empty. That keeps the observed semantic mismatch bounded and currently low-impact.
+
 ## Terminal
 
 `PRE_RETURN_BOOKKEEPING_HASH_SEMANTICS`
@@ -27,7 +29,7 @@ The result hash names an internal state captured after runtime dynamics/predicti
 
 ## Proposed disposition
 
-- recommendation: `ARCHITECTURE_STUDY` only if Evidence Analyst judges post-return hash identity to be an important reproducibility/API contract; otherwise close as SYSTEM semantics
+- recommendation: `REJECT`
 - proposed_claim_ceiling: `SYSTEM`
 - proposed_preformal_eligible: `false`
 - preliminary_readiness: `N/A_FOR_SYSTEM_OBJECT`
@@ -35,6 +37,7 @@ The result hash names an internal state captured after runtime dynamics/predicti
 - proposed_hold_reason: `null`
 - terminal_state: `TERMINAL_FOR_CURRENT_OBJECT`
 - queue_state: `NOT_QUEUED`
-- next_layer: `NONE_BY_DEFAULT`
+- next_layer: `NONE`
+- open_scientific_choices: `[]`
 
 A change to when `state_hash` is captured, or a separate explicit pre-bookkeeping/post-return hash API, would be a fresh implementation object. Same-object cycle 2 is stopped.
