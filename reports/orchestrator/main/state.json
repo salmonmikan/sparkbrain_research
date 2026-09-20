@@ -1,24 +1,24 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
-  "produced_at": "2026-09-21T01:48:09+09:00",
-  "producer_run_id": "sparkbrain-main-relay-20260921T014809JST-R23-FAILCLOSED",
-  "authority_scope": "MAIN_RELAY_FUNNEL_V2_1_FAIL_CLOSED_CONTROL_PLANE_PERSISTENCE_ONLY",
-  "supersedes_generation_id": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
+  "generation_id": "MAIN-20260921T024630+0900-RELAY-FUNNEL21-R24-AUTHBOUND-7B3E51C2",
+  "produced_at": "2026-09-21T02:46:30+09:00",
+  "producer_run_id": "sparkbrain-main-relay-20260921T024630JST-R24-AUTHBOUND",
+  "authority_scope": "MAIN_RELAY_FUNNEL_V2_1_CONTROL_PLANE_RECONCILIATION_ONLY",
+  "supersedes_generation_id": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
   "input_generations": {
-    "evidence_analyst": "EVA-20260921T005854+0900-R23-9C4E71A2",
-    "main": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
-    "sub_observed_for_freshness": "SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2"
+    "evidence_analyst": "EVA-20260921T020159+0900-R24-D7A4C291",
+    "main": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
+    "sub_observed_for_freshness": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7"
   },
-  "consumed_analyst_generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
-  "consumed_analyst_commit": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
-  "consumed_main_generation_id": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
+  "consumed_analyst_generation_id": "EVA-20260921T020159+0900-R24-D7A4C291",
+  "consumed_analyst_commit": "314e94cae6c6d7636c434d26b4525483c09eaf88",
+  "consumed_main_generation_id": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
   "worker_role": "main",
   "execution_mode": "RELAY",
   "status": "BLOCKED",
   "research_layer": "ARCHITECTURE_STUDY",
-  "main_lane": "V05_ELIGIBILITY_TIMEBASE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STATIC",
-  "candidate_id": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
+  "main_lane": "V05_ELIGIBILITY_TIMEBASE_PARTITION_INVARIANCE_ARCHITECTURE_STUDY_CYCLE1",
+  "candidate_id": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
   "claim_ceiling": "SYSTEM",
   "preformal_eligible": false,
   "preformal_readiness": null,
@@ -29,55 +29,68 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No comparably executable/informative MECHANISM object exists and this SYSTEM object directly protects reproducibility/evidence interpretation.",
+    "reason_detail": "No comparable executable/informative MECHANISM; protects reproducibility/evidence interpretation.",
     "compared_mechanism_candidate_ids": []
   },
-  "dimension_preservation_note": "Preserved exactly from controlling Evidence Analyst R23 / PRIMARY MAIN. RELAY does not canonicalize the mapped TIMEBASE_CONTRACT_AMBIGUOUS observation and does not adopt SUB-proposed Funnel dimensions.",
-  "primary_handoff": {
-    "primary_status": "COMPLETED",
-    "primary_completed_at": "2026-09-21T01:12:33+09:00",
-    "mapped_observation": "TIMEBASE_CONTRACT_AMBIGUOUS",
-    "evidentiary_status": "NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_OBSERVATION",
-    "same_object_continuation": "STOP_FOR_FRESH_ANALYST_REVIEW",
-    "active_branch": null,
-    "active_identity": null,
-    "workflow_run_id": null
+  "dimension_preservation_note": "Funnel v2.1 dimensions are copied exactly from controlling Evidence Analyst R24 for the fresh MAIN-owned candidate. RELAY does not reinterpret or upgrade them.",
+  "analyst_authorized_scope": {
+    "go": "GO_ONE_BOUNDED_NON_EVIDENTIARY_SYNTHETIC_ARCHITECTURE_DIAGNOSTIC",
+    "authoritative_source": "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "input_scope": "fresh synthetic DEV controller/field only; no evidence datasets or consumed identities",
+    "matched_state": "one fixed causal event creates identical initial eligibility; clone exact state; reward_trace=1.0",
+    "partition_difference": "one versus two empty apply() calls before the same final causal event",
+    "fixed_final_event": "same source/target IDs and absolute timestamps",
+    "observables": ["target-edge eligibility", "target-edge weight", "update count"],
+    "ordinary_comparator": "per-apply eligibility_decay recurrence with no elapsed-time term",
+    "no_sweep": true,
+    "same_run_continuation": "NONE_AFTER_FIRST_OUTCOME",
+    "terminals": {
+      "CALL_COUNT_PARTITION_DEPENDENT_EXACT": "STOP; terminal SYSTEM finding; no same-run repair/sweep.",
+      "PARTITION_INVARIANT": "STOP; REJECT current SYSTEM object.",
+      "UNRESOLVED_PARTITION_EFFECT": "STOP for fresh Analyst review; no redesign.",
+      "INVALID_MATCHED_PARTITION_CONTRACT": "STOP; fresh contract required."
+    }
   },
-  "newer_sub_freshness": {
-    "generation_id": "SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
-    "candidate_id": "CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01",
-    "evidentiary_status": "NON_EVIDENTIARY",
-    "analyst_canonical": false,
-    "research_branch": "research/exploratory-sub-nonlearning-action-visit-carryover-20260921",
-    "research_head": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
-    "exact_head_ci": 35523434869,
-    "exact_head_ci_status": "completed",
-    "exact_head_ci_conclusion": "success",
-    "relay_adopts_sub_proposed_funnel_fields": false
+  "relay_authority_reconciliation": {
+    "fresh_successor_created_by_analyst": true,
+    "primary_started_this_candidate": false,
+    "primary_handoff_for_this_candidate": false,
+    "relay_may_initiate_fresh_architecture_object": false,
+    "result": "CONTROL_PLANE_RECONCILED_ONLY_NO_SCIENTIFIC_START"
   },
   "research_layer_state": {
     "DISCOVERY": {"state": "OPEN", "owner": "SUB"},
-    "ARCHITECTURE_STUDY": {"state": "ACTIVE_AT_ANALYST_R23", "owner": "MAIN", "active_mechanism_count": 0, "active_system_count": 1, "queued_mechanism_count": 0, "queued_system_count": 0},
+    "ARCHITECTURE_STUDY": {"state": "ACTIVE", "owner": "MAIN", "active_mechanism_count": 0, "active_system_count": 1, "queued_mechanism_count": 0, "queued_system_count": 0},
     "PRE_FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "preformal_eligible_count": 0, "preformal_ready_count": 0},
     "FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "fresh_identity": null, "started": null, "test_authority": false, "scorer_authority": false, "preserve_authority": false}
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
-    "analyst_generation": "EVA-20260921T005854+0900-R23-9C4E71A2",
-    "orchestrator_tip_observed_before_relay": "0ce2b06e68c664e0411713d1723588665c458719",
-    "sub_generation": "SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
-    "sub_research_head": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
-    "sub_exact_head_ci": 35523434869,
-    "sub_exact_head_ci_conclusion": "success"
+    "analyst_handoff": "314e94cae6c6d7636c434d26b4525483c09eaf88",
+    "analyst_generation": "EVA-20260921T020159+0900-R24-D7A4C291",
+    "orchestrator_tip_observed_before_relay": "71826e37165705647d9fd13b7b1698422d557fb5",
+    "sub_generation": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
+    "sub_scientific_execution": false,
+    "sub_candidate_id": null
   },
   "lease_collision_reconciliation": {
-    "prior_lease_status": "COMPLETED",
-    "prior_lease_execution_mode": "PRIMARY",
-    "prior_heartbeat_at": "2026-09-21T01:12:33+09:00",
+    "prior_lease_status": "BLOCKED",
+    "prior_lease_execution_mode": "RELAY",
+    "prior_heartbeat_at": "2026-09-21T01:50:11+09:00",
     "fresh_primary_running_collision": false,
     "prior_active_branch": null,
-    "prior_active_identity": null
+    "prior_active_identity": null,
+    "same_object_primary_running": false
+  },
+  "newer_sub_freshness": {
+    "generation_id": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
+    "mode": "no_op",
+    "candidate_id": null,
+    "evidentiary_status": "NON_EVIDENTIARY",
+    "scientific_result": "NO_SCIENTIFIC_EXECUTION",
+    "no_op_reason": "NO_SAFE_USEFUL_NONDUPLICATIVE_COHERENT_THEORY_BACKWARD_MECHANISM_TARGET",
+    "material_superseding_scientific_generation": false,
+    "freshness_effect": "RECORDED_NONMATERIAL_NOOP_REFRESH"
   },
   "workflows_experiments": {
     "scientific_experiments_dispatched_by_relay": [],
@@ -104,14 +117,14 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "new_identity_consumption": 0,
-  "integrity_state": "FAIL_CLOSED; ANALYST_R23_STILL_CURRENT; PRIMARY_COMPLETED_AND_STOPPED; STABLE_MAIN_UNCHANGED; NEWER_SUB_GENERATION_UNREVIEWED_BY_ANALYST; SUB_EXACT_HEAD_CI_SUCCESS_VERIFIED; NO_SCIENTIFIC_WORKFLOW_OR_RESEARCH_MUTATION; NO_ONE_WAY_ACTION",
-  "stop_reason": "FAIL_CLOSED_CURRENT_MAIN_OBJECT_PENDING_ANALYST_CANONICALIZATION_AND_NEWER_SUB_GENERATION_UNREVIEWED",
-  "next_main_action": "Remain blocked until a fresh Evidence Analyst generation canonicalizes the current MAIN TIMEBASE_CONTRACT_AMBIGUOUS observation and explicitly consumes/classifies SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2, then follow only the fresh prospective MAIN allocation.",
+  "integrity_state": "FAIL_CLOSED_RELAY_AUTHORITY_BOUNDARY; ANALYST_R24_CURRENT; STABLE_MAIN_UNCHANGED; NO_FRESH_PRIMARY_RUNNING_COLLISION; R24_CANDIDATE_NOT_STARTED_BY_PRIMARY; SUB_R24_REFRESH_IS_NOOP_WITH_NO_SCIENTIFIC_EXECUTION; NO_RESEARCH_BRANCH_OR_WORKFLOW_MUTATION; NO_ONE_WAY_ACTION",
+  "stop_reason": "RELAY_AUTHORITY_BOUNDARY_FRESH_ANALYST_ALLOCATED_ARCHITECTURE_OBJECT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY",
+  "next_main_action": "PRIMARY must start only the exact R24-authorized one-shot synthetic DEV Architecture diagnostic for CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01. RELAY may resume only after PRIMARY safely hands off/stops mutating that same object, or to collect/repair an already-started exact workflow within the pre-fixed contingency.",
   "utility_request_created": null,
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-21/0148-main.md",
+    "history_path": "reports/orchestrator/history/2026-09-21/0246-main.md",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result": "BLOCKED_FAIL_CLOSED_PENDING_FRESH_ANALYST"
+    "result": "BLOCKED_RELAY_AUTHORITY_BOUNDARY_PENDING_PRIMARY_START"
   }
 }
