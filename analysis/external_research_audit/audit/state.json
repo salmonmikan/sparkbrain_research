@@ -1,113 +1,138 @@
 {
-  "timestamp": "2026-09-19T22:31:21+09:00",
+  "timestamp": "2026-09-20T22:31:10+09:00",
+  "schema_version": 2,
+  "generation_id": "AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9",
+  "producer_run_id": "external-audit-auto-20260920T223110+0900-R3-C19V4-6B4E21D9",
+  "authority_scope": "INDEPENDENT_AUDITOR_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
+  "supersedes_generation_id": "LEGACY_GENERATION_UNKNOWN",
   "role": "INDEPENDENT_AUDITOR",
   "phase_ordering_confirmed": true,
   "control_plane_mailbox_semantics_respected": true,
-  "schedule_slot_jst": "22:30",
-  "schedule_inference_used": false,
+  "input_generations": {
+    "control_brain": {"generation_id": "CTRL-20260920T205000+0900-R16-5E9A71C3", "handoff_commit": "016a248143dc71380fca28128d564d74aeb4c3f3"},
+    "evidence_analyst": {"generation_id": "EVA-20260920T215718+0900-R21-4F8C2A71", "handoff_commit": "f85692e6e207ae622282116779b559108085ede8"},
+    "main_report": {"generation_id": "MAIN-20260920T221704+0900-PRIMARY-FUNNEL21-HOLD-R21-9C2A7E41", "handoff_commit": "e2cf88dc98d00f20df73789e4824a81325eb0c0f"},
+    "sub_report": {"generation_id": "SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17", "handoff_commit": "3cc5daa65b0decbbd689a9181e94602de5e395f9"},
+    "literature": {"generation_id": "LIT-20260920T213000+0900-R14-DELAYED-CREDIT-9C4E71B2", "handoff_commit": "d2047294508816007249f23e06f3b8c3687628df"},
+    "prior_audit": {"generation_id": "LEGACY_GENERATION_UNKNOWN", "handoff_commit": "d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56"}
+  },
   "blind_target_selection": {
-    "target": "H5 h5-event-routing-work-reduction-official-v1 terminal FAIL_NO_USEFUL_WORK_REDUCTION",
+    "target": "C19 official-v4 c19-external-v2-official-v4 PASS / truth_free_surface_structural_representation_gain_only",
+    "selected_before_control_plane_summaries": true,
     "authoritative_refs_inspected": [
       "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "exact package@2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-      "control/h5-event-routing-work-reduction-started-v1-20260918@058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-      "raw preserve@ce5797eb584344db7a512e585506fb6c59ea475b",
-      "terminal evidence@61aff6d74b82b68a326f3d90505d70bcd4071fd5",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1"
+      "evidence/c19-official-v4-c19-external-v2-official-v4 tag object@4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "C19-v4 evidence commit@a0f83318356ced1c84863737803080d0dc69d208",
+      "C19-v4 exact package@74bfe6b4a39758656f291baaa3f16236e3e71964",
+      "C19-v4 STARTED@3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
+      "C19-v4 raw preserve@d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+      "workflow 35217655980 attempt 1 completed success",
+      "C19-R2 evidence tag object@82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "C19-R2 evidence commit@6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+      "workflow 35288390550 attempt 1 completed success",
+      "prior auditor history through H5 2026-09-19 22:31 JST"
     ],
     "attack_hypotheses": [
-      "authority/package/STARTED/preserve/evidence mismatch",
-      "target/evaluator leakage",
-      "comparator information/resource privilege mismatch",
-      "seed fragility or pseudo-replication",
-      "insufficient ablation or simple accounting explanation",
-      "post-outcome tuning or protocol drift",
+      "authority/package/STARTED/raw/evidence mismatch or post-START drift",
+      "scorer/evaluator target leakage",
+      "degenerate reference or comparator privilege mismatch",
+      "pseudo-replication / wrong independent resampling unit",
+      "seed dependence",
+      "unmatched baseline/resource comparison",
+      "simpler fixed-state/FSA reduction",
       "stale/duplicate evidence",
-      "claim-boundary overreach from algorithmic work to general compute efficiency"
+      "broader-than-registered causal/mechanistic/novelty interpretation"
     ],
-    "why_consequential": "H5 is a consumed terminal architecture-efficiency result not previously independently audited; its aggregate FAIL can be overgeneralized beyond the exact registered counter metric."
+    "why_consequential": "C19-v4 is one of five authoritative evidence tags and the central positive external-validation result; later authoritative C19-R2 directly tests a simpler fixed-state reduction."
   },
   "blind_target_change_reason": null,
-  "repository_refs_inspected": [
-    "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active research/* and authoritative evidence/control/preserve refs",
-    "H5 package@2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-    "H5 STARTED@058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "H5 raw preserve@ce5797eb584344db7a512e585506fb6c59ea475b",
-    "H5 terminal evidence@61aff6d74b82b68a326f3d90505d70bcd4071fd5",
-    "H5 evidence annotated tag",
-    "workflow run 35338995888 attempt 1 success",
-    "prior audit role history through NI01 2026-09-19 10:32 JST"
-  ],
-  "control_brain_commit_consumed": "566f3b7c590fcfe2b9e8aaa0415da964989b1124",
-  "evidence_analyst_commit_consumed": "a3ec861d71c0965625fc1d2e5e8f65f4ce47f834",
-  "orchestrator_report_branch_tip_consumed": "40f43d747bdac156113be7812fc0623a86f99c60",
-  "main_report_commit_consumed": "b02e07e9229de0f9c5be7b93a487369717dd43f7",
-  "sub_report_commit_consumed": "40f43d747bdac156113be7812fc0623a86f99c60",
-  "literature_handoff_commit_consumed": "94ae4abf7b310faefa7244a03cda2a597dba4dca",
+  "repository_refs_inspected": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "authoritative_evidence_tag_count": 5,
+    "formal_tags": [],
+    "sealed_tags": [],
+    "freeze_tags": [],
+    "c19_v4": {
+      "tag_object": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
+      "exact_package": "74bfe6b4a39758656f291baaa3f16236e3e71964",
+      "started": "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
+      "raw_preserve": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+      "workflow_run_id": 35217655980,
+      "workflow_conclusion": "success",
+      "raw_sha256": "692f8a5dba48f604eb1f5518a8545b80da01e1a00a9e2d2b6b1c0567355d65af"
+    },
+    "c19_r2": {
+      "tag_object": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "evidence_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+      "exact_package": "5bfa3962c777fa5bc915bb21e20801ab8294778a",
+      "raw_preserve": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
+      "workflow_run_id": 35288390550,
+      "workflow_conclusion": "success"
+    }
+  },
+  "control_brain_commit_consumed": "016a248143dc71380fca28128d564d74aeb4c3f3",
+  "evidence_analyst_commit_consumed": "f85692e6e207ae622282116779b559108085ede8",
+  "orchestrator_report_branch_tip_consumed": "e2cf88dc98d00f20df73789e4824a81325eb0c0f",
+  "main_report_commit_consumed": "e2cf88dc98d00f20df73789e4824a81325eb0c0f",
+  "sub_report_commit_consumed": "3cc5daa65b0decbbd689a9181e94602de5e395f9",
+  "literature_handoff_commit_consumed": "d2047294508816007249f23e06f3b8c3687628df",
   "genuinely_new_information": true,
   "findings": [
-    {
-      "id": "h5_integrity_chain",
-      "status": "ROBUST_SO_FAR",
-      "summary": "Exact package, STARTED, one-shot workflow, raw-before-score preservation and terminal evidence bindings are coherent. No retry, post-START scientific drift, leakage or identity mismatch found."
-    },
-    {
-      "id": "h5_registered_result",
-      "status": "CONTRACT_VALID",
-      "summary": "Primary mean reduction 0.023826074023772813 with CI [0.02379403660851484, 0.023859665012124307]; frozen rule validly yields FAIL_NO_USEFUL_WORK_REDUCTION. Activity means are 0.05927001218870528, 0.009811966841371046 and 0.0023962430412420807 at 1%, 5% and 15% activity."
-    },
-    {
-      "id": "h5_global_eligibility_bottleneck",
-      "status": "NEW_INTERPRETATION_CAP",
-      "summary": "Candidate and dense comparator both perform per-event all-edge eligibility decay. In the first 128-node/1%-bursty raw cell, eligibility touches+multiplications are 122880 of 124062 candidate work (99.05%), swamping the candidate's node-state lazy-materialization saving."
-    },
-    {
-      "id": "h5_claim_boundary",
-      "status": "ROBUST_NARROW_CLAIM",
-      "summary": "H5 supports failure to reach the prospectively defined useful aggregate algorithmic-work gate for this exact implementation/counter vocabulary. It is not a wall-clock, energy, or general event-routing no-go result."
-    }
+    {"id": "c19_v4_integrity_chain", "status": "ROBUST_SO_FAR", "summary": "Exact package, STARTED, one-shot workflow, target-blind raw-before-score preservation, evaluator join and terminal evidence are coherent; no retry, leakage, identity mismatch or post-START scientific retuning found."},
+    {"id": "c19_v4_exact_pass", "status": "CONTRACT_VALID_NARROW", "summary": "Frozen primary contrast effect 0.10044748325412106 with pair-bootstrap 95% CI [0.09457740578201118,0.10647303483001931]. Read-only mean primary BREU is 0.10044748325412045; registered I1/G1 reference BREU/BU/BM is exactly zero in all five seeds."},
+    {"id": "c19_v4_baseline_boundary", "status": "NO_GENERAL_SUPERIORITY_AUTHORIZED", "summary": "Scorer records parameter/compute matching as unasserted and winner_claim_allowed=false for learned/recurrent/transformer baselines; those rows are descriptive only."},
+    {"id": "c19_r2_fsa_reduction", "status": "REDUCED_BY_FSA", "summary": "Authoritative C19-R2 fixed seven-state FSA mean BREU is 0.34667834014286114. C19-v4 minus R2 effect is -0.2462308568887407 with atomic_idx-cluster bootstrap 95% CI [-0.2554750732756702,-0.23690126111231016]."},
+    {"id": "c19_independence_unit", "status": "INFERENCE_METHOD_CEILING", "summary": "C19-v4 froze pair-IID bootstrap over 1744 pairs. C19-R2 later uses 204 unique atomic_idx clusters as primary and pair-IID only as sensitivity. This does not invalidate frozen v4 PASS but limits its CI as the strongest available uncertainty statement."},
+    {"id": "c19_r1_ceiling", "status": "UNRESOLVED_SEPARATE_QUESTION", "summary": "R2 explicitly limits its conclusion to the fixed seven-state FSA reduction and leaves C19-R1 revision-authority scientifically unresolved."}
   ],
   "affected_lines": [
-    "H5_EVENT_ROUTING_WORK_REDUCTION",
-    "PROGRAMME_ARCHITECTURE_EFFICIENCY",
-    "FUTURE_WORK_REDUCTION_CONTRACTS",
-    "PROGRAMME_NOVELTY"
+    "C19_OFFICIAL_V4_EXTERNAL_VALIDATION",
+    "C19_R2_FSA_REDUCTION",
+    "PROGRAMME_EXTERNAL_VALIDATION",
+    "PROGRAMME_NOVELTY",
+    "FUTURE_EXTERNAL_VALIDATION_STATISTICS"
   ],
-  "audit_classification": "ROBUST_SO_FAR",
+  "audit_classification": "REDUCIBLE",
   "confidence": "HIGH",
-  "novelty_or_reduction_impact": "H5_CANONICAL_FAIL_ROBUST_FOR_REGISTERED_ALGORITHMIC_WORK_METRIC; INTERPRETATION_MUST_REMAIN_IMPLEMENTATION_AND_COUNTER_VOCABULARY_SPECIFIC; GLOBAL_ALL_EDGE_ELIGIBILITY_MAINTENANCE_DOMINATES_SPARSE_CANDIDATE_WORK; NO_POSITIVE_NOVELTY_SUPPORT_RESTORED",
+  "novelty_or_reduction_impact": "C19-v4's immutable PASS remains valid only for its exact truth-free-surface versus local-compositional reference contrast. It does not survive as SparkBrain-specific mechanistic novelty: the registered reference is zero-performing, general learned-baseline superiority was never authorized, and authoritative C19-R2 shows a fixed seven-state FSA substantially exceeds the C19-v4 primary result under cluster-aware inference.",
+  "read_only_recompute": {
+    "completed": "IMMUTABLE_SUMMARY_RECOMPUTE_ONLY",
+    "c19_v4_primary_seed_mean_breu": 0.10044748325412045,
+    "c19_v4_reference_seed_mean_breu": 0.0,
+    "c19_r2_seed_mean_breu": 0.34667834014286114,
+    "c19_v4_minus_r2": -0.2462308568887407,
+    "detail": "Computed only from immutable reported per-seed metrics; no raw evidence, scorer, canonical statistic, label or classification was modified."
+  },
   "prospective_baselines_or_discriminators": [
-    "Do not rerun, retune, rescore, relabel or reopen canonical H5.",
-    "Future fresh efficiency objects should prospectively report component-wise work shares as well as aggregate reduction.",
-    "Separate node-state locality, routing work and eligibility-maintenance complexity, and explicitly declare whether eligibility maintenance is globally eager or localized.",
-    "If runtime/energy claims are desired, bind a separate prospective wall-clock/memory/cache/energy methodology rather than reinterpreting H5 counters.",
-    "Use prospective scaling analysis across size/activity only in a genuinely fresh object if independently justified."
+    "Keep C19-v4 and C19-R2 immutable; never rerun, rescore, relabel or reopen canonical results.",
+    "For any fresh external-validation successor, prospectively use atomic/source-level cluster-aware inference when multiple observations share one source unit.",
+    "Require a competent nondegenerate reference path rather than a zero-performing reference if claiming representational or mechanistic advantage.",
+    "Include the fixed seven-state FSA as an ordinary comparator under matched information and resource privilege.",
+    "Require actual parameter/optimization/compute matching before superiority claims over learned, recurrent or transformer baselines.",
+    "Keep C19-R1 revision-authority as a separate unresolved question."
   ],
   "questions_for_evidence_analyst": [
-    "Keep H5 synthesis explicitly scoped to the registered algorithmic-work metric and exact all-edge-eligibility implementation?",
-    "Record global eligibility maintenance as the principal architectural bottleneck revealed by H5 without treating it as a rescue rationale?",
-    "Require component-wise resource accounting in future fresh efficiency contracts?"
+    "Annotate C19-v4 synthesis as an exact-contrast PASS but programme-level REDUCIBLE result once C19-R2 is considered?",
+    "Preserve the frozen pair-bootstrap statistic as historical evidence while treating cluster-aware inference as the prospective standard for fresh successors?",
+    "Keep C19-R1 revision-authority explicitly unresolved and separate from the seven-state FSA reduction?"
   ],
   "questions_for_control_brain": [
-    "Continue counting H5 as a robust negative result for the exact efficiency claim while avoiding a general no-go statement about event routing/lazy execution?",
-    "Treat H5 as architecture bottleneck information rather than mechanistic novelty evidence?",
-    "Keep consumed H5 fully closed; any optimized/local-eligibility efficiency question must be a genuinely fresh prospective object if independently justified?"
+    "Avoid counting C19-v4 as positive SparkBrain-specific mechanism or novelty support; retain it as a narrow historical representation-surface effect?",
+    "Require competent nonzero reference behavior plus matched FSA/resource baselines before any future external-validation promotion?",
+    "Keep FORMAL/PRE_FORMAL unaffected by this audit and reopen no consumed identity?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "h5-event-routing-work-reduction-official-v1",
-    "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-    "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
-    "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
-    "canonical H5 statistics and FAIL_NO_USEFUL_WORK_REDUCTION token",
-    "all other consumed C19/R1/R2/PD01/NI01/A01/RV01/RV02/CX identities and immutable evidence"
+    "c19-external-v2-official-v4 and its evidence tag",
+    "74bfe6b4a39758656f291baaa3f16236e3e71964",
+    "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
+    "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "a0f83318356ced1c84863737803080d0dc69d208 and canonical C19-v4 PASS statistics",
+    "c19-r2-fsa-state-tracker-official-v1 and 6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+    "all C19-R1 consumed identities and unresolved revision-authority ceiling",
+    "all other consumed PD01/NI01/H5 identities and immutable evidence"
   ],
-  "read_only_recompute": {
-    "completed": "PARTIAL_COMPONENT_RECOMPUTE",
-    "detail": "Verified terminal classification from frozen score/report and independently decomposed preserved raw work counters for representative sparse cells; no canonical scoring or artifacts changed."
-  },
   "utility_request_created": null,
-  "legacy_shared_latest_state_updated": false
+  "legacy_shared_latest_state_updated": false,
+  "persistence_notes": "Role-separated audit stream only. No immutable scientific refs, research branches, official scorers, consumed identities, Utility assignments or scheduler state changed."
 }
