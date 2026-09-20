@@ -1,27 +1,24 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
-  "produced_at": "2026-09-21T01:44:00+09:00",
-  "producer_run_id": "SUB-RUN-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
+  "generation_id": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
+  "produced_at": "2026-09-21T02:33:00+09:00",
+  "producer_run_id": "SUB-RUN-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
+  "supersedes_generation_id": "SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
-      "handoff_commit": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
-      "branch_tip_observed_before_persistence": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
-      "main_lane": "V05_ELIGIBILITY_TIMEBASE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STATIC",
-      "sub_lane": "BOUNDED_SECONDARY_DISCOVERY_WITH_THEORY_BACKWARD_ACCOUNTING",
-      "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON"
+      "generation_id": "EVA-20260921T020159+0900-R24-D7A4C291",
+      "handoff_commit": "314e94cae6c6d7636c434d26b4525483c09eaf88",
+      "main_lane": "V05_ELIGIBILITY_TIMEBASE_PARTITION_INVARIANCE_ARCHITECTURE_STUDY_CYCLE1",
+      "sub_lane": "THEORY_BACKWARD_MECHANISM_DISCOVERY_IF_COHERENT_ELSE_NO_TARGET_NOOP",
+      "sub_fallback": "NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET"
     },
     "main": {
-      "generation_id": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
-      "status": "COMPLETED",
-      "main_lane": "V05_ELIGIBILITY_TIMEBASE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STATIC",
-      "active_scientific_object": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
-      "mapped_terminal_observation": "TIMEBASE_CONTRACT_AMBIGUOUS",
-      "stop_reason": "R23_STATIC_SYSTEM_TERMINAL_TIMEBASE_CONTRACT_AMBIGUOUS_STOP_FRESH_ANALYST_REVIEW",
-      "mailbox_branch_tip_observed_before_persistence": "a20207308c7203c597791c2371a3085d639a4a74"
+      "latest_mailbox_generation_id": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
+      "mailbox_tip_observed": "f7b52a3edb8ae1a0fe05f1d0039379a3117ee04d",
+      "mailbox_is_stale_relative_to_analyst_r24": true,
+      "analyst_r24_owned_lane": "V05_ELIGIBILITY_TIMEBASE_PARTITION_INVARIANCE_ARCHITECTURE_STUDY_CYCLE1",
+      "analyst_r24_owned_candidate": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01"
     },
     "control_brain": {
       "generation_id": "CTRL-20260921T005250+0900-R18-6B4D2F91",
@@ -29,37 +26,35 @@
       "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
+      "generation_id": "SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
       "mode": "discovery",
-      "candidate_id": "CAND-V05-STEP-STATE-HASH-SEMANTICS-01"
+      "candidate_id": "CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01"
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_commit": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
-    "analyst_generation": "EVA-20260921T005854+0900-R23-9C4E71A2",
-    "main_generation": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
-    "main_mailbox_tip_before_persistence": "a20207308c7203c597791c2371a3085d639a4a74",
+    "analyst_handoff_commit": "314e94cae6c6d7636c434d26b4525483c09eaf88",
+    "analyst_generation": "EVA-20260921T020159+0900-R24-D7A4C291",
+    "orchestrator_tip_before_sub_persistence": "f7b52a3edb8ae1a0fe05f1d0039379a3117ee04d",
     "control_handoff_commit": "393cc5b5965a2a2753f19e240ad15d6b3b09a939",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0
   },
-  "mode": "discovery",
-  "discovery_mode": "SYSTEM_DISCOVERY",
-  "exploratory_target": "V05_NONLEARNING_ACTION_VISIT_CARRYOVER_DISCOVERY_CYCLE1",
-  "candidate_pool_id": "CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01",
-  "candidate_status": "SUB_PROPOSED_PENDING_ANALYST_CLASSIFICATION",
-  "exploration_cycle": "1/3",
-  "same_generation_autonomous_progress_reason": "R23 consumed the prior SUB result and left bounded secondary Discovery open while MAIN owned the independent eligibility-timebase Architecture object; no comparably executable/informative MECHANISM object was available and the selected SYSTEM target was nonduplicative and preserved the rolling 1/3 theory-backward floor.",
-  "no_op_reason": null,
+  "mode": "no_op",
+  "discovery_mode": null,
+  "exploratory_target": null,
+  "candidate_pool_id": null,
+  "candidate_status": "NO_CURRENT_OBJECT",
+  "exploration_cycle": null,
+  "no_op_reason": "NO_SAFE_USEFUL_NONDUPLICATIVE_COHERENT_THEORY_BACKWARD_MECHANISM_TARGET",
   "main_frontier_avoided": {
-    "main_lane": "V05_ELIGIBILITY_TIMEBASE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STATIC",
-    "active_main_object": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
+    "main_lane": "V05_ELIGIBILITY_TIMEBASE_PARTITION_INVARIANCE_ARCHITECTURE_STUDY_CYCLE1",
+    "active_main_object": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
     "avoided": [
-      "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
-      "ANY_DYNAMIC_ELIGIBILITY_TIMEBASE_SUCCESSOR",
+      "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
+      "ANY_OUTCOME_DEPENDENT_MAIN_SUCCESSOR",
       "CAND-H7-RESP-01_AS_HELD_OBJECT",
       "ALL_ANALYST_TERMINAL_CURRENT_OBJECTS",
       "FORMAL_TEST_SCORING",
@@ -70,12 +65,12 @@
   },
   "theory_backward_accounting": {
     "previous_last_three_autonomous_selections": [
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_PREDICTION_ERROR_MODULATION",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ELIGIBILITY_HISTORY_SPECIFICITY",
-      "SYSTEM_DISCOVERY:V05_STEP_RESULT_STATE_HASH_SEMANTICS"
+      "SYSTEM_DISCOVERY:V05_STEP_RESULT_STATE_HASH_SEMANTICS",
+      "SYSTEM_DISCOVERY:V05_NONLEARNING_ACTION_VISIT_CARRYOVER"
     ],
-    "previous_qualifying_count": 2,
-    "current_selection": "SYSTEM_DISCOVERY:V05_NONLEARNING_ACTION_VISIT_CARRYOVER",
+    "previous_qualifying_count": 1,
+    "current_selection": null,
     "last_three_autonomous_selections": [
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ELIGIBILITY_HISTORY_SPECIFICITY",
       "SYSTEM_DISCOVERY:V05_STEP_RESULT_STATE_HASH_SEMANTICS",
@@ -83,90 +78,93 @@
     ],
     "qualifying_count": 1,
     "window_size": 3,
-    "theory_backward_exception": null,
-    "next_selection_process_note": "A next safe autonomous selection should be THEORY_BACKWARD_MECHANISM_DISCOVERY if a coherent bounded mechanism target exists; otherwise persist NO_COHERENT_MECHANISM_TARGET rather than manufacturing one."
+    "theory_backward_exception": {
+      "code": "NO_COHERENT_MECHANISM_TARGET",
+      "detail": "R24 requires a genuine prospectively falsifiable mechanism target. Independent review found only the held H7 family with unfixed native mechanism/intervention/comparator/resource contract/falsifier, already-terminal or exactly reduced near-range mechanism objects, the MAIN-owned eligibility-timebase SYSTEM successor, and source-transparent ordinary recurrence/readout surfaces. Selecting any of these as a fresh MECHANISM object would be duplicative, MAIN-colliding, low-value reduction-by-construction, or manufactured."
+    },
+    "exception_counts_as_mechanism_candidate": false,
+    "next_selection_process_note": "Await a fresh Analyst/source delta; on the next safe autonomous opportunity prefer a genuine theory-backward mechanism target if one becomes coherent, otherwise re-evaluate the no-target condition rather than copying this exception mechanically."
   },
-  "question": "Can a deliberately non-learning/non-exploratory action selection mutate AssemblyActionPolicy.visits and thereby shift the next exploratory action when training resumes?",
-  "hypothesis": "One mature choose(..., explore=false) call consumes one visit slot despite no exploration, so the immediately following explore=true call advances by one action slot relative to a matched control.",
-  "reduction_question": "Can the downstream action difference be reproduced exactly by an ordinary integer visit-counter model in which every mature choose() increments visits while exploration indexes actions[visits % len(actions)] only when enabled?",
-  "falsifier": "The carryover explanation is falsified if the non-exploratory call leaves visits unchanged or if the next exploratory action remains identical to the matched control despite the fixed one-visit offset.",
+  "question": null,
+  "hypothesis": null,
+  "reduction_question": null,
+  "falsifier": null,
   "inputs_used": {
-    "scientific_inputs": "TWO_FRESH_DEFAULT_ASSEMBLY_ACTION_POLICIES_PLUS_ONE_FIXED_SYNTHETIC_MATURE_UNSUPPRESSED_ASSEMBLY_ACTIVATION",
-    "reward_called": false,
+    "scientific_inputs": "NONE",
+    "control_plane_inputs": [
+      "EVA_R24_ALLOCATION_AND_STATE",
+      "LATEST_MAIN_SUB_CONTROL_MAILBOXES",
+      "STABLE_MAIN_V05_SOURCE",
+      "CURRENT_MAIN_REF",
+      "CURRENT_EVIDENCE_TAG_REFS"
+    ],
     "formal_or_sealed_test_used": false,
     "official_scorer_used": false,
     "consumed_identity_used": false,
-    "repository_evidence_dataset_used": false,
-    "alternate_action_order_or_threshold_tuning": false
+    "repository_evidence_dataset_used": false
   },
   "implementation": {
-    "research_branch": "research/exploratory-sub-nonlearning-action-visit-carryover-20260921",
-    "prospective_contract_commit": "f0ebfc02605ccdccea371dbb908aac879a6de5f8",
-    "outcome_bearing_commit": "e15e37d0163e3b37973177c29cbeb72728c7e057",
-    "outcome_ci": 35523219740,
-    "outcome_ci_status": "COMPLETED_SUCCESS",
-    "final_research_head": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
-    "exact_final_head_ci": 35523434869,
-    "exact_final_head_ci_status": "COMPLETED_SUCCESS",
-    "research_branch_created_or_modified": true,
+    "research_branch": null,
+    "prospective_contract_commit": null,
+    "outcome_bearing_commit": null,
+    "outcome_ci": null,
+    "final_research_head": null,
+    "exact_final_head_ci": null,
+    "research_branch_created_or_modified": false,
     "scientific_workflow_dispatched": false,
-    "control_plane_persistence_only": false
+    "control_plane_persistence_only": true
   },
   "observations": {
-    "scientific_result": "NONLEARNING_VISIT_CARRYOVER_SHIFTS_FUTURE_EXPLORATION",
-    "control_first_exploratory_action": "action-0",
-    "control_visits_after_training": 1,
-    "treated_nonexploratory_action": "action-0",
-    "treated_visits_after_evaluation": 1,
-    "treated_resumed_exploratory_action": "action-1",
-    "treated_visits_after_resumed_training": 2,
-    "fixed_integer_visit_counter_reduction_exact": true,
-    "integrated_semantics": "PROCESS_EPISODE_DEFAULTS_ACTION_EXPLORE_TO_LEARN_ASSEMBLY_BUT_ACTION_POLICY_VISIT_BOOKKEEPING_INCREMENTS_REGARDLESS_OF_EXPLORE",
-    "impact": "EVALUATION_STYLE_CALL_CAN_SHIFT_LATER_TRAINING_EXPLORATION"
+    "scientific_result": "NO_SCIENTIFIC_EXECUTION",
+    "selection_result": "NO_COHERENT_SAFE_USEFUL_NONDUPLICATIVE_MECHANISM_TARGET",
+    "source_reconciliation": [
+      "Assembly observation occurs after v0.4 lower-field execution and supplies no Assembly-to-field feedback path; regeneration relabeling would overlap terminal Assembly feedback/partial-completion work.",
+      "Receptor persistent state is an explicit exponential multi-timescale recurrence; homeostatic persistent state is an explicit EMA/threshold recurrence, so candidateizing those source-transparent equations would be low-information reduction-by-construction.",
+      "Action/prediction/eligibility near-range mechanism families already have terminal ordinary reductions in the R24 candidate pool."
+    ]
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "proposed_claim_ceiling": "SYSTEM",
-  "proposed_preformal_eligible": false,
+  "proposed_claim_ceiling": null,
+  "proposed_preformal_eligible": null,
   "preliminary_preformal_readiness": {
-    "status": "N/A_FOR_SYSTEM_OBJECT"
+    "status": "N/A_NO_CURRENT_OBJECT"
   },
   "proposed_hold_dimensions": {
     "hold_class": null,
     "hold_reason": null,
-    "terminal_state": "ACTIVE",
-    "queue_state": "QUEUED"
+    "terminal_state": null,
+    "queue_state": null,
+    "applicability": "N/A_NO_CURRENT_OBJECT"
   },
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason": "R23 reported no comparably executable/informative MECHANISM object; this nonduplicative SYSTEM selection remained within the rolling theory-backward 1/3 floor."
+    "reason": "No SYSTEM selection occurred; R24 MAIN-owned SYSTEM work remains separate."
   },
-  "candidate_next_research_layer": "ARCHITECTURE_STUDY_NONLEARNING_ACTION_VISIT_SEMANTICS",
-  "open_scientific_choices": [
-    "WHETHER_NONLEARNING_OR_EVALUATION_EPISODES_SHOULD_CONSUME_ACTION_POLICY_VISITS",
-    "WHETHER_EVALUATION_TRAINING_INTERLEAVING_SHOULD_PRESERVE_FUTURE_EXPLORATION_SCHEDULE",
-    "WHETHER_VISIT_BOOKKEEPING_REQUIRES_AN_EXPLICIT_UPDATE_GATE_DISTINCT_FROM_EXPLORE"
-  ],
-  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
+  "candidate_next_research_layer": null,
+  "open_scientific_choices": [],
+  "recommendation": "NONE",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
   "blockers": [
-    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_AND_ARCHITECTURE_PROMOTION_DECISION_FOR_CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01"
+    "NO_COHERENT_SAFE_USEFUL_NONDUPLICATIVE_THEORY_BACKWARD_MECHANISM_TARGET",
+    "H7_NATIVE_MECHANISM_INTERVENTION_COMPARATOR_RESOURCE_CONTRACT_AND_FALSIFIER_UNFIXED",
+    "MAIN_OWNS_CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01"
   ],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_SYSTEM_NONLEARNING_ACTION_VISIT_CARRYOVER_DISCOVERY_CYCLE_AND_FOUND_ONE_VISIT_SHIFT_IN_FUTURE_EXPLORATION",
+  "completion_target": "FAIL_CLOSED_NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-21/0144-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-21/0233-sub.md",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "base_mailbox_tip": "a20207308c7203c597791c2371a3085d639a4a74",
-    "history_commit": "9a600bcefd8d728226a4625fc6a986eab862e0bb",
-    "latest_commit": "925c1469ea2155a2de83d3420b0ab7d4471a95ef",
+    "base_mailbox_tip": "f7b52a3edb8ae1a0fe05f1d0039379a3117ee04d",
+    "history_commit": "a32287712d3a006eb2b99c35dd1cd3cbb1e1afed",
+    "latest_commit": "ecd726b9db2dc7aa6c875d496299f6aebc0f6b8c",
     "final_state_commit": "THIS_COMMIT",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result": "SUB_DISCOVERY_HISTORY_LATEST_STATE_PERSISTED"
+    "result": "SUB_NOOP_HISTORY_LATEST_STATE_PERSISTED"
   },
   "persistence_limitations": []
 }
