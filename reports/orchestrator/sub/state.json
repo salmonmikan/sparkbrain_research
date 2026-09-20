@@ -1,64 +1,58 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260920T233629+0900-NOOP-ANALYSTWAIT-7C2E91A4",
-  "produced_at": "2026-09-20T23:36:29+09:00",
-  "producer_run_id": "SUB-RUN-20260920T233629+0900-ANALYSTWAIT-7C2E91A4",
-  "authority_scope": "SUB_FAIL_CLOSED_RECONCILIATION_AND_CONTROL_PLANE_PERSISTENCE_ONLY",
-  "supersedes_generation_id": "SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2",
+  "generation_id": "SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
+  "produced_at": "2026-09-21T00:43:00+09:00",
+  "producer_run_id": "SUB-RUN-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
+  "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
+  "supersedes_generation_id": "SUB-20260920T233629+0900-NOOP-ANALYSTWAIT-7C2E91A4",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T215718+0900-R21-4F8C2A71",
-      "handoff_commit": "f85692e6e207ae622282116779b559108085ede8",
-      "last_consumed_sub_generation": "SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17",
-      "branch_tip_observed_before_persistence": "f85692e6e207ae622282116779b559108085ede8"
+      "generation_id": "EVA-20260921T000400+0900-R22-7C4E91A2",
+      "handoff_commit": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e",
+      "branch_tip_observed_before_persistence": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e",
+      "sub_lane": "BOUNDED_SECONDARY_DISCOVERY_WITH_THEORY_BACKWARD_ACCOUNTING",
+      "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON"
     },
     "main": {
-      "generation_id": "MAIN-20260920T231646+0900-PRIMARY-FUNNEL21-FAILCLOSED-R21-6E4A2C91",
-      "status": "BLOCKED",
-      "main_lane": "FAIL_CLOSED_PENDING_FRESH_ANALYST_AFTER_SUB_GENERATION_ADVANCE",
+      "generation_id": "MAIN-20260921T001507+0900-PRIMARY-FUNNEL21-HOLD-R22-4B7C91E2",
+      "status": "COMPLETED",
+      "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
       "active_scientific_object": null,
-      "stop_reason": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
-      "mailbox_branch_tip_observed_before_persistence": "621da29a0bb5ff9cac403aa643d1daced6eae69f"
+      "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
+      "mailbox_branch_tip_observed_before_persistence": "105737eaa5a6cf7ef731d7250e6e6fc2778d6fba"
     },
     "control_brain": {
       "generation_id": "CTRL-20260920T225013+0900-R17-3F8C61A2",
       "handoff_commit": "90c088f5fc3f6064f883d308ba5e1af9fd076441",
-      "role": "STRATEGY_ONLY",
-      "fresh_sub_observed": "SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2"
+      "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2",
-      "mode": "discovery",
-      "candidate_id": "CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01",
-      "candidate_status": "SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL",
-      "research_head": "6ddcb7fec39dd017fbfe172885a994a98b503021",
-      "exact_head_ci": 35514340688
+      "generation_id": "SUB-20260920T233629+0900-NOOP-ANALYSTWAIT-7C2E91A4",
+      "mode": "no_op",
+      "candidate_id": null
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_commit": "f85692e6e207ae622282116779b559108085ede8",
-    "analyst_generation": "EVA-20260920T215718+0900-R21-4F8C2A71",
-    "main_generation": "MAIN-20260920T231646+0900-PRIMARY-FUNNEL21-FAILCLOSED-R21-6E4A2C91",
-    "main_mailbox_tip_before_persistence": "621da29a0bb5ff9cac403aa643d1daced6eae69f",
+    "analyst_handoff_commit": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e",
+    "analyst_generation": "EVA-20260921T000400+0900-R22-7C4E91A2",
+    "main_generation": "MAIN-20260921T001507+0900-PRIMARY-FUNNEL21-HOLD-R22-4B7C91E2",
+    "main_mailbox_tip_before_persistence": "105737eaa5a6cf7ef731d7250e6e6fc2778d6fba",
     "control_handoff_commit": "90c088f5fc3f6064f883d308ba5e1af9fd076441",
-    "previous_sub_research_head": "6ddcb7fec39dd017fbfe172885a994a98b503021",
-    "previous_sub_exact_head_ci": 35514340688,
     "evidence_tag_count": 5
   },
-  "mode": "no_op",
-  "discovery_mode": null,
-  "exploratory_target": null,
-  "candidate_pool_id": null,
-  "candidate_status": null,
-  "exploration_cycle": null,
-  "same_generation_autonomous_progress_reason": null,
-  "no_op_reason": "The latest canonical Evidence Analyst generation predates and has not consumed the immediately previous SUB generation. MAIN independently entered freshness fail-closed on that exact unreviewed SUB result. Under reconciled ownership there is no safely authorized new SUB scientific target until Analyst classifies the previous result and republishes allocation.",
+  "mode": "discovery",
+  "discovery_mode": "SYSTEM_DISCOVERY",
+  "exploratory_target": "V05_STEP_RESULT_STATE_HASH_SEMANTICS_DISCOVERY_CYCLE1",
+  "candidate_pool_id": "CAND-V05-STEP-STATE-HASH-SEMANTICS-01",
+  "candidate_status": "SUB_PROPOSED_PENDING_ANALYST_CLASSIFICATION",
+  "exploration_cycle": "1/3",
+  "same_generation_autonomous_progress_reason": "R22 consumed the prior SUB result, reopened bounded Discovery supply, MAIN has no active object, rolling theory-backward share was 3/3, and Analyst explicitly preferred domain diversification when comparably informative.",
+  "no_op_reason": null,
   "main_frontier_avoided": {
-    "main_lane": "FAIL_CLOSED_PENDING_FRESH_ANALYST_AFTER_SUB_GENERATION_ADVANCE",
+    "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
     "active_main_object": null,
     "avoided": [
-      "UNREVIEWED_PREVIOUS_SUB_OBJECT",
       "CAND-H7-RESP-01_AS_HELD_MAIN_BLOCKER_OR_SUCCESSOR",
       "ALL_ANALYST_TERMINAL_CURRENT_OBJECTS",
       "FORMAL_TEST_SCORING",
@@ -74,65 +68,88 @@
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ELIGIBILITY_HISTORY_SPECIFICITY"
     ],
     "previous_qualifying_count": 3,
-    "current_selection": null,
+    "current_selection": "SYSTEM_DISCOVERY:V05_STEP_RESULT_STATE_HASH_SEMANTICS",
     "last_three_autonomous_selections": [
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_ACTION_RESPONSIBILITY",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_PREDICTION_ERROR_MODULATION",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ELIGIBILITY_HISTORY_SPECIFICITY"
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ELIGIBILITY_HISTORY_SPECIFICITY",
+      "SYSTEM_DISCOVERY:V05_STEP_RESULT_STATE_HASH_SEMANTICS"
     ],
-    "qualifying_count": 3,
+    "qualifying_count": 2,
     "window_size": 3,
     "theory_backward_exception": null
   },
-  "question": null,
-  "hypothesis": null,
-  "reduction_question": null,
-  "falsifier": null,
+  "question": "Does V05StepResult.state_hash identify the externally observable brain state immediately after IntegratedV05Brain.process_episode() returns, or an internal transient state captured before final post-result bookkeeping?",
+  "hypothesis": "result.state_hash differs from immediate post-return brain.state_hash() because the result hash is captured before brain.trace append and _episode_index increment.",
+  "reduction_question": "Can the mismatch be reproduced exactly from immediate post-return state_dict() by removing only the just-appended final trace row and decrementing only episode_index by one before recomputing canonical SHA-256?",
+  "falsifier": "Immediate equality, or a mismatch not exactly reproduced by the fixed two-field bookkeeping reversal, falsifies the bookkeeping explanation.",
   "inputs_used": {
-    "scientific_inputs": "NONE",
+    "scientific_inputs": "DEFAULT IntegratedV05Brain plus exactly training_episodes(seed=501, count=1)[0]",
+    "learn_outcome_called": false,
     "formal_or_sealed_test_used": false,
     "official_scorer_used": false,
     "consumed_identity_used": false,
-    "repository_evidence_dataset_used": false
+    "repository_evidence_dataset_used": false,
+    "alternate_seed_or_threshold_tuning": false
   },
   "implementation": {
-    "research_branch_created_or_modified": false,
+    "research_branch": "research/exploratory-sub-step-state-hash-semantics-20260921",
+    "prospective_contract_commit": "fcfb04d540a437378126d86c3ad66600714fbf99",
+    "outcome_bearing_commit": "8e1bfa42471295b2cc7898f9fc6ce72092c18222",
+    "outcome_ci": 35520053053,
+    "final_research_head": "83d11ba6e0e8aca3f6cda9e4ab9592c851cc0306",
+    "exact_final_head_ci": 35520275001,
+    "exact_final_head_ci_status": "COMPLETED_SUCCESS",
+    "research_branch_created_or_modified": true,
     "scientific_workflow_dispatched": false,
-    "control_plane_persistence_only": true
+    "control_plane_persistence_only": false
   },
   "observations": {
-    "scientific_result": "NO_NEW_SCIENTIFIC_EXECUTION",
-    "analyst_freshness": "R21_HAS_NOT_CONSUMED_PREVIOUS_SUB_GENERATION",
-    "main_status": "FAIL_CLOSED_PENDING_FRESH_ANALYST"
+    "scientific_result": "PRE_RETURN_BOOKKEEPING_HASH_SEMANTICS",
+    "result_hash_equals_immediate_post_return_brain_hash": false,
+    "fixed_bookkeeping_reduction_exact": true,
+    "reduction": "POST_RETURN_STATE_DICT_MINUS_FINAL_TRACE_AND_MINUS_ONE_EPISODE_INDEX",
+    "stable_main_v05_equality_consumers_found": 0,
+    "existing_v05_test_contract": "ONLY_REQUIRES_RESULT_STATE_HASH_NONEMPTY",
+    "impact": "BOUNDED_LOW_CURRENT_OPERATIONAL_IMPACT"
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "proposed_claim_ceiling": null,
-  "proposed_preformal_eligible": null,
-  "preliminary_preformal_readiness": null,
-  "proposed_hold_dimensions": null,
-  "system_priority_exception": null,
-  "candidate_next_research_layer": null,
-  "open_scientific_choices": null,
-  "recommendation": "NONE",
+  "proposed_claim_ceiling": "SYSTEM",
+  "proposed_preformal_eligible": false,
+  "preliminary_preformal_readiness": {
+    "status": "N/A_FOR_SYSTEM_OBJECT"
+  },
+  "proposed_hold_dimensions": {
+    "hold_class": null,
+    "hold_reason": null,
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "queue_state": "NOT_QUEUED"
+  },
+  "system_priority_exception": {
+    "used": false,
+    "reason": "No comparable Analyst-authorized executable MECHANISM object existed; R22 explicitly preferred domain diversification from a 3/3 theory-backward window when comparably informative."
+  },
+  "candidate_next_research_layer": "NONE",
+  "open_scientific_choices": [],
+  "recommendation": "REJECT",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
   "blockers": [
-    "FRESH_EVIDENCE_ANALYST_GENERATION_MUST_CONSUME_AND_CLASSIFY_SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2_AND_REPUBLISH_ALLOCATION"
+    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_AND_CLOSURE_OF_CAND-V05-STEP-STATE-HASH-SEMANTICS-01"
   ],
-  "completion_target": "FAIL_CLOSED_WITHOUT_SCIENTIFIC_MUTATION_PENDING_FRESH_ANALYST_CLASSIFICATION_OF_PRIOR_SUB_RESULT",
+  "completion_target": "ACHIEVED_ONE_BOUNDED_SYSTEM_STEP_STATE_HASH_SEMANTICS_DISCOVERY_CYCLE_AND_REDUCED_TO_PRE_RETURN_BOOKKEEPING_ORDER",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-20/2336-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-21/0043-sub.md",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "base_mailbox_tip": "621da29a0bb5ff9cac403aa643d1daced6eae69f",
-    "history_commit": "9d8b20c0fdb2095fc5f464c609019a206fece44f",
-    "latest_commit": "5d28401e8a515e7095eec7cdceaacb247872c3c4",
+    "base_mailbox_tip": "105737eaa5a6cf7ef731d7250e6e6fc2778d6fba",
+    "history_commit": "13168ca33c288c8fb5c57f7ffc8400188984d2eb",
+    "latest_commit": "5a62e1741cac526e42752236b6deccfb08d1a48a",
     "final_state_commit": "THIS_COMMIT",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result": "SUB_NOOP_HISTORY_LATEST_STATE_PERSISTED"
+    "result": "SUB_DISCOVERY_HISTORY_LATEST_STATE_PERSISTED"
   },
   "persistence_limitations": []
 }
