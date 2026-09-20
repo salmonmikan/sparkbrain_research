@@ -11,10 +11,10 @@
     "sub_observed_for_collision": "SUB-20260920T233629+0900-NOOP-ANALYSTWAIT-7C2E91A4"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-21T00:15:07+09:00",
   "heartbeat_at": "2026-09-21T00:15:07+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-21T00:15:07+09:00",
   "analyst_generation_id": "EVA-20260921T000400+0900-R22-7C4E91A2",
   "analyst_commit": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e",
   "analyst_branch_tip_observed": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e",
@@ -40,10 +40,17 @@
     "reason_detail": "R22 allocates no SYSTEM or MECHANISM object to MAIN; MAIN is intentional idle.",
     "compared_mechanism_candidate_ids": []
   },
+  "freshness_reconciliation": {
+    "previous_blocker": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
+    "resolved_by_analyst_generation": "EVA-20260921T000400+0900-R22-7C4E91A2",
+    "consumed_sub_generation": "SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2",
+    "material_supersession_after_r22": false,
+    "scientific_execution_authorized": false
+  },
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "RECONCILE_R22_AND_PERSIST_INTENTIONAL_IDLE",
+  "active_step": "STOP_INTENTIONAL_IDLE_NO_CURRENT_MAIN_OBJECT",
   "workflow_run_id": null,
   "workflow_head": null,
   "workflow_status": null,
@@ -59,15 +66,20 @@
     "sub_latest_generation": "SUB-20260920T233629+0900-NOOP-ANALYSTWAIT-7C2E91A4",
     "sub_latest_mode": "no_op"
   },
-  "evidentiary_status": "NO_NEW_MAIN_SCIENTIFIC_EXECUTION; R22_RESOLVES_PRIOR_FRESHNESS_BLOCKER_AND_RETURNS_MAIN_TO_INTENTIONAL_IDLE",
-  "stop_reason": null,
-  "expected_next_action": "Finish R22 reconciliation and persist COMPLETED intentional-idle state unless Analyst generation materially supersedes before final persistence.",
+  "evidentiary_status": "NO_NEW_MAIN_SCIENTIFIC_EXECUTION; FORMAL=0; PRE_FORMAL=0; MECHANISM_ARCHITECTURE=0; SYSTEM_ARCHITECTURE=0",
+  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
+  "expected_next_action": "Remain intentional idle until a fresh Evidence Analyst generation prospectively allocates a coherent executable MAIN object; then re-read exact refs before any scientific mutation.",
   "utility_request_created": null,
   "persistence": {
     "base_mailbox_tip": "011515421ea914547c57bb1314bd45042509b27f",
-    "lease_acquire_commit": "THIS_COMMIT",
+    "lease_acquire_commit": "f8322719b7aece55b7228734f5032641fb950deb",
+    "state_commit": "a0dbdf41db8ae135dc8a8ef16b502e1e1610de97",
+    "latest_commit": "f3501cd2f5885210f9b2d3cd3ce3e4a5394eeea9",
+    "history_commit": "eb2f6d202f04db6a26df8a8667004f6566db2d4c",
+    "history_path": "reports/orchestrator/history/2026-09-21/0015-main.md",
+    "final_lease_commit": "THIS_COMMIT",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result": "LEASE_ACQUIRED"
+    "result": "COMPLETED_INTENTIONAL_IDLE_R22_RECONCILIATION"
   },
   "owner": "main"
 }
