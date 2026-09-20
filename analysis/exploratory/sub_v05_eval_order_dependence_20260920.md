@@ -57,3 +57,39 @@ The SYSTEM concern is reduced if the supported `220 ms` spacing makes non-learni
 - open choices: `NONE_FOR_CYCLE1; seed, train count, condition, count, spacing, observables and terminals are fixed above`
 - recommendation before outcome: `NONE`
 - proposed hold dimensions before outcome: `hold_class=null; hold_reason=null; terminal_state=ACTIVE; queue_state=ACTIVE`
+
+## Cycle-1 observation / terminal
+
+Prospective binding commit: `7906566eb6bf64c7add085b9d68085ddeea13d71`. Exact diagnostic head: `e0731b3d9e60b0779456cc6d93ea3f1a67a1a403`. Ordinary CI run `35492043654` completed successfully on Python 3.11 and 3.13 through lint, local readiness, full tests and bundle validation.
+
+The forward and reverse arms matched exactly for every prospectively selected keyed functional/runtime observable: action, prediction, spike count, internal pattern count, mature Assembly IDs/similarities/episode counts, runaway flag and dead flag. The prospectively selected aggregate metrics also matched exactly across the same eight-episode multiset: action accuracy, prediction accuracy, prediction coverage, Assembly activation rate, mean mature similarity, runaway rate and dead rate.
+
+The diagnostic deliberately excluded trace/state hashes and absolute timestamps, so this equality is not a bookkeeping artifact. Both arms started from the same trained state, used the same DEV episode multiset, kept per-episode content and `220 ms` spacing fixed, disabled field/Assembly learning and action exploration, and differed only in the assignment of episode content to chronological evaluation slots.
+
+Mapped terminal: `ORDER_INVARIANT_AT_SUPPORTED_SPACING`.
+
+## Interpretation / reduction
+
+Although a non-learning `process_episode()` still evolves receptor and recurrent runtime state, this fixed supported-spacing probe found no functional evaluation-order sensitivity in the selected observables. Therefore the current SYSTEM concern is reduced for the reference-like `220 ms` spacing and this deterministic DEV trajectory.
+
+This is not a proof of order invariance for all spacings, conditions, seeds or observables. It specifically says that one high-value supported-protocol discriminator did not expose hidden order dependence, so cycle 2 parameter search would be rescue tuning rather than new information for this current object.
+
+## Post-result typing / handoff
+
+- evidentiary_status: `NON_EVIDENTIARY`
+- recommendation: `REJECT`
+- candidate next research layer: `NONE`
+- proposed claim_ceiling: `SYSTEM`
+- proposed preformal_eligible: `false`
+- preliminary readiness: `N/A_FOR_SYSTEM_OBJECT`
+- system question class: `EVALUATION_REPRODUCIBILITY_AND_STATE_ISOLATION`
+- comparator status: `COMPLETE_FORWARD_VS_REVERSE_SAME_MULTISET_EXACT_MATCH`
+- qualitative support breadth: `ONE_DETERMINISTIC_DEV_SEED; JITTER; EIGHT_EPISODES; SUPPORTED_220MS_SPACING`
+- falsifier/reduction result: `ORDER_INVARIANT_AT_SUPPORTED_SPACING`
+- open scientific choices: `ANY DIFFERENT-SPACING_OR_CROSS-CONDITION_ORDER QUESTION_REQUIRES_A_FRESH CANDIDATE/CONTRACT; DO_NOT RESCUE THIS OBJECT`
+- hold_class: `null`
+- hold_reason: `null`
+- terminal_state: `TERMINAL_FOR_CURRENT_OBJECT`
+- queue_state: `NOT_QUEUED`
+
+Cycle 2 is not executed. No Utility request is warranted. No consumed/frozen/formal identity was touched or created.
