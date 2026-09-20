@@ -1,0 +1,37 @@
+name: main v05 matched-load comparator feasibility
+
+on:
+  push:
+    branches:
+      - research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921
+
+permissions:
+  contents: read
+
+env:
+  RESULT_PATH: analysis/architecture/main-v05-assembly-unit-causal-selectivity-matched-load-20260921/FEASIBILITY_RESULT.json
+
+jobs:
+  feasibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[dev,learned,spiking]"
+      - name: Lint feasibility program
+        run: python -m ruff check analysis/architecture/main-v05-assembly-unit-causal-selectivity-matched-load-20260921/run_feasibility.py
+      - name: Run non-intervention comparator feasibility
+        run: |
+          python analysis/architecture/main-v05-assembly-unit-causal-selectivity-matched-load-20260921/run_feasibility.py --output "$RESULT_PATH"
+          cat "$RESULT_PATH"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: main-v05-assembly-unit-causal-selectivity-matched-load-feasibility
+          path: ${{ env.RESULT_PATH }}
+          if-no-files-found: error
