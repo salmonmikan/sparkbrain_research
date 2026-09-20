@@ -11,9 +11,10 @@
     "sub_observed_for_collision": "SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91"
   },
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "BLOCKED",
   "started_at": "2026-09-20T18:47:16+09:00",
   "heartbeat_at": "2026-09-20T18:47:16+09:00",
+  "blocked_at": "2026-09-20T18:47:16+09:00",
   "analyst_generation_id": "EVA-20260920T180852+0900-R17-152262F6",
   "analyst_commit": "4dc5a5b43f26789f32567eb69cbb4a26b9cd6825",
   "analyst_branch_tip_observed": "4dc5a5b43f26789f32567eb69cbb4a26b9cd6825",
@@ -37,7 +38,7 @@
   },
   "active_branch": null,
   "active_identity": null,
-  "active_step": "FAIL_CLOSED_RECONCILE_NEWER_UNREVIEWED_SUB_GENERATION",
+  "active_step": "BLOCKED_PENDING_FRESH_ANALYST_CLASSIFICATION",
   "workflow_run_id": 35502970668,
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "freshness_blocker": {
@@ -50,6 +51,16 @@
     "final_exact_head_ci": "COMPLETED_SUCCESS",
     "authority_status": "SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL"
   },
-  "expected_next_action": "Re-read Evidence Analyst generation, MAIN generation/lease, stable main, SUB research head and exact-head CI; if Analyst still has not consumed SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91, persist MAIN as BLOCKED pending fresh Analyst classification without adopting SUB-proposed Funnel fields.",
+  "stop_reason": "BLOCKED_PENDING_FRESH_ANALYST_CLASSIFICATION_OF_NEWER_SUB_GENERATION",
+  "expected_next_action": "Wait for a fresh Evidence Analyst generation to consume and classify SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91. Do not adopt its proposed claim ceiling, preformal eligibility/readiness, hold, terminal, queue, or system-priority fields; do not create a successor; and do not begin PRE_FORMAL or FORMAL work without fresh authority. Re-read all controlling generations and authoritative refs before any future mutation.",
+  "persistence": {
+    "lease_acquire_commit": "9c3165d85a56d6be00a9b6385cb5e0294b2ad921",
+    "state_commit": "e83c0f1258792e1df9248b2bc797518125e80172",
+    "latest_commit": "da4215d99983cb416a01b7f722ae40a5bf22d14d",
+    "history_commit": "6e5cabc93e570ceda6f9c6adbb72670a63672686",
+    "history_path": "reports/orchestrator/history/2026-09-20/1847-main.md",
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
+    "result": "DURABLE_MAIN_REPORT_PERSISTED; FINAL_LEASE_BLOCKED"
+  },
   "owner": "main"
 }
