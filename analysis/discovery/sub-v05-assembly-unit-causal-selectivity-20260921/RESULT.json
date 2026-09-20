@@ -1,0 +1,41 @@
+{
+  "activity_matched_nonmember": {
+    "prediction": "outcome-0",
+    "spike_count": 9,
+    "strongest_assembly_id": "assembly-0001",
+    "strongest_similarity": 0.9433062621147579
+  },
+  "activity_matches": [
+    {"comparator_baseline_spikes": 0, "comparator_unit": 16, "target_baseline_spikes": 1, "target_unit": 45},
+    {"comparator_baseline_spikes": 0, "comparator_unit": 17, "target_baseline_spikes": 1, "target_unit": 56},
+    {"comparator_baseline_spikes": 0, "comparator_unit": 18, "target_baseline_spikes": 1, "target_unit": 63}
+  ],
+  "baseline": {
+    "prediction": "outcome-0",
+    "spike_count": 9,
+    "strongest_assembly_id": "assembly-0001",
+    "strongest_similarity": 0.9433062621147579
+  },
+  "candidate_id": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01",
+  "comparator_units": [16, 17, 18],
+  "cycle": 1,
+  "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "k": 3,
+  "probe_episode_id": "seed-501-episode-24-motif",
+  "prototype_unit_count": 3,
+  "seed": 501,
+  "selected_assembly_delta": 10,
+  "selected_assembly_id": "assembly-0001",
+  "selected_assembly_motif_x_count": 10,
+  "selected_assembly_motif_y_count": 0,
+  "target_units": [45, 56, 63],
+  "targeted": {
+    "prediction": null,
+    "spike_count": 6,
+    "strongest_assembly_id": null,
+    "strongest_similarity": 0.0
+  },
+  "terminal": "SELECTIVE_TARGETED_FUNCTION_LOSS",
+  "train_count": 24
+}
