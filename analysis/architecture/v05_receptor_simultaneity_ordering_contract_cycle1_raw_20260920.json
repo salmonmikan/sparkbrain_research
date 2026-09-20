@@ -1,0 +1,88 @@
+{
+  "schema": "sparkbrain-architecture-study-raw-v1",
+  "candidate_id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
+  "lane": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_authority": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+  "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "prospective_contract_commit": "00ab02d9b9acd9a68090858cac21f1ea2fa5e244",
+  "source_binding_verified": {
+    "src/sparkbrain/v05/receptors.py": "86c1cfea1ea70cada5c277d8f5047c32ea611a5c",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v04/contracts.py": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
+    "src/sparkbrain/v05/worlds.py": "454b05c0347a58687b7d0c50c3a56dd744164946",
+    "tests/v05/test_v05_receptors.py": "acab9ff77f9abfbe5a5961b5f8ef88ac980b94a3"
+  },
+  "machine_facts": {
+    "signalpulse_validation_prohibits_duplicate_time_channel_keys": false,
+    "signalpulse_validation_scope": "Per-instance validation checks finite/non-negative time, non-empty channel, non-negative magnitude, polarity, location and metadata. No collection-level uniqueness key exists.",
+    "receptor_process_sort_key": ["time_ms", "channel"],
+    "receptor_process_has_secondary_tiebreak_beyond_time_channel": false,
+    "integrated_brain_sort_key": ["time_ms", "channel"],
+    "integrated_brain_has_secondary_tiebreak_beyond_time_channel": false,
+    "exact_key_tie_order_behavior": "Python stable sorting therefore retains input iterable order for equal (time_ms, channel) keys; this is implementation behavior, not treated here as a documented semantic contract.",
+    "receptor_update_is_sequential_per_pulse": true,
+    "receptor_update_detail": "_observe_one mutates fast/medium/slow/mean_abs and computes gain after incorporating each individual pulse before the next pulse is observed.",
+    "iterable_order_for_exact_key_ties_explicitly_documented_as_semantic": false,
+    "iterable_order_for_exact_key_ties_explicitly_tested_as_semantic": false,
+    "supported_contract_explicitly_forbids_duplicate_time_channel_keys": false,
+    "supported_contract_explicitly_describes_exact_key_simultaneous_events_as_unordered_multiset": false,
+    "supported_contract_explicitly_describes_exact_key_simultaneous_events_as_ordered_sequence": false,
+    "supported_world_or_canonical_caller_demonstrates_duplicate_exact_time_channel_keys": false,
+    "supported_world_structurally_precludes_duplicate_exact_time_channel_keys": false,
+    "supported_same_key_reachability_established": false,
+    "decision_relevant_contract_conflict_found": false
+  },
+  "inventory": {
+    "SignalPulse_constructor_search": {
+      "relevant_files": [
+        "src/sparkbrain/v04/worlds.py",
+        "src/sparkbrain/v04/transduction.py",
+        "src/sparkbrain/v05/worlds.py",
+        "src/sparkbrain/v05/receptors.py",
+        "tests/v05/test_v05_receptors.py",
+        "docs/V04_IMPLEMENTATION_GUIDE.md"
+      ],
+      "finding": "No stable-main supported example/test located that constructs two pulses with both identical time_ms and identical channel for receptor processing."
+    },
+    "v05_process_episode_callers": {
+      "relevant_files": [
+        "examples/v05_assembly_demo.py",
+        "src/sparkbrain/v05/evaluation.py",
+        "tests/v05/test_v05_brain.py",
+        "src/sparkbrain/v05/brain.py"
+      ],
+      "finding": "Observed supported/canonical callers feed episode.pulses produced by v0.5 worlds; no exact-key multiplicity contract is asserted at these callsites."
+    },
+    "v05_worlds": {
+      "finding": "Motif offsets are distinct and canonical motif channels are distinct. Noise times are drawn independently from a continuous RNG and noise channels may repeat, so exact-key duplicates are neither intentionally generated nor structurally rejected. Generated episodes are sorted only by (time_ms, channel)."
+    },
+    "v04_simultaneous_world": {
+      "finding": "The named simultaneous case creates A, B and C at one timestamp, demonstrating same-time multi-channel input but not same-time/same-channel multiplicity."
+    },
+    "v05_protocol": {
+      "finding": "The retained protocol discusses temporal order and an order_shuffle condition as the same event multiset with a different canonical temporal order. It does not define ordering semantics for exact same-time/same-channel ties."
+    },
+    "multiset_term_inventory": {
+      "finding": "Stable-main receptor-adjacent use of 'multiset' is the v0.5 order_shuffle protocol; it does not specify exact-key simultaneity or permutation invariance inside one (time_ms, channel) key."
+    },
+    "simultaneous_term_inventory": {
+      "finding": "Relevant v0.4 theory/world material preserves event time and includes same-time events across distinct channels, but no exact same-channel tie contract was found for the v0.5 receptor public boundary."
+    },
+    "duplicate_term_inventory": {
+      "finding": "Repository 'duplicate' occurrences are dominated by other evidence/validation domains; no supported receptor contract forbidding or defining duplicate exact (time_ms, channel) SignalPulse keys was found."
+    }
+  },
+  "raw_terminal_inputs": {
+    "explicit_ordered_event_contract": false,
+    "same_key_multiplicity_unsupported_by_contract": false,
+    "explicit_unordered_simultaneous_multiset_contract": false,
+    "same_key_supported_reachability_established": false,
+    "public_api_allows_same_key_multiplicity": true,
+    "material_contract_conflict": false,
+    "static_characterization_valid": true
+  },
+  "forbidden_actions_observed": [],
+  "formal_identity_consumed": null
+}
