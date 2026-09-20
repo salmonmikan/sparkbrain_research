@@ -1,37 +1,74 @@
-# MAIN RELAY — Receptor simultaneity ordering Architecture cycle 1 completed
+# MAIN PRIMARY — Assembly mature-capacity lifecycle Architecture cycle 1
 
-Timestamp: `2026-09-20 10:47 JST`  
+Timestamp: `2026-09-20 11:21 JST`  
 Worker role: `main`  
-Execution mode: `RELAY`  
-Evidence Analyst authority: `639a5f7baba926502965bc9fea4cdcfb9f749068`  
-Analyst generation: `LEGACY_GENERATION_UNKNOWN`  
-Consumed MAIN generation: `LEGACY_GENERATION_UNKNOWN`  
-New MAIN generation: `MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE`  
+Execution mode: `PRIMARY`  
+Schema version: `2`  
+MAIN generation: `MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1`  
+Producer run: `sparkbrain-main-primary-20260920T111421JST`  
+Authority scope: `MAIN_PRIMARY_ARCHITECTURE_STUDY_EXECUTION`  
+Evidence Analyst generation: `EVA-20260920T105721+0900-R11-4B7D91C2`  
+Evidence Analyst commit: `6617b28dd983a4ada1ebb0622bada869ff17b19e`  
+Supersedes MAIN generation: `MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE`  
 Research layer: `ARCHITECTURE_STUDY`  
-Candidate: `CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01`
+Candidate: `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01`  
+Exploration cycles: `DISCOVERY=1 / ARCHITECTURE_STUDY=1`
 
-## Lease / generation reconciliation
+## Authority / collision / fast path
 
-The prior PRIMARY lease was `WAITING_EXTERNAL`, not `RUNNING`, with heartbeat `2026-09-20T10:20:00+09:00`. No fresh same-object PRIMARY collision existed. The Analyst and prior MAIN control-plane files predate generation schema v2, so both are treated as `LEGACY_GENERATION_UNKNOWN`; authority was reconciled against current authoritative refs rather than timestamp order. Immediately before continuation, the Analyst tip remained `639a5f7baba926502965bc9fea4cdcfb9f749068`, stable `main` remained `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, and the exact research branch remained `research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920@705b652f0eb426c7e39a75a9f901be10483d0e63`.
+The fresh schema-v2 Analyst handoff explicitly promoted the independent Assembly mature-capacity lifecycle question to MAIN for exactly one static/read-only Architecture cycle. PRE_FORMAL and FORMAL remain EMPTY_HOLD. Prior MAIN was `COMPLETED`; SUB's checkpoint-continuation Discovery is independent and rejected. MAIN acquired its role-unique lease before mutation and found no fresh same-object collision.
 
-SUB is on a separate bounded checkpoint-continuation Discovery object and explicitly avoided the receptor-ordering MAIN lane; no collision exists.
+Stable `main` independently remained `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Exact Analyst bindings were verified for `assemblies.py`, `brain.py`, `evaluation.py`, and `test_v05_assemblies.py`. The controlling Analyst generation and authoritative refs were re-read before every repository/control-plane mutation performed in this run. They did not materially change, so the run remained on the FAST PATH; no repository-wide reconciliation was required.
 
-## Exact continuation performed
+## Prospectively bound static study
 
-RELAY performed only the continuation prospectively fixed by PRIMARY and still authorized by the current Analyst handoff: collect ordinary exact-head CI run `35481067945` and, on success, mark the current MAIN object complete and STOP for fresh Analyst review.
+Fresh research branch: `research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920`, created directly from exact stable main.
 
-Run `35481067945` completed **successfully** on exact head `705b652f0eb426c7e39a75a9f901be10483d0e63`. Both Python `3.11` and `3.13` jobs completed successfully, including install, lint, local readiness, tests, and bundle validation.
+- prospective contract: `9d0016f8700f46e38dbff04d66da23cabf2cfa38`
+- raw static facts: `1f9edc0cc9a0276dd4f254b822daef7098af0ab4`
+- mapped summary / current exact head: `13239163f6fecb2b61ea2189a5a94ba12b6cb3d6`
 
-The already-fixed NON_EVIDENTIARY Architecture terminal remains **`ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED`**. No terminal remapping, dynamic permutation diagnostic, aggregation comparator, cycle 2, production change, official TEST, PRE_FORMAL, FORMAL identity, STARTED, scorer, preserve/evidence mutation, consumed-identity retry, research merge, or Utility request occurred.
+The contract fixed source/docs/tests/caller/config inventory, fact-validity methods, all Analyst terminals, precedence, forbidden dynamic actions, and STOP conditions before interpretation. No saturation experiment, turnover comparator, dynamic candidate-generation probe, production mutation, official TEST, held-out/formal outcome artifact, FORMAL identity/scorer/preserve/evidence operation, or merge was used.
 
-New scientific information in this RELAY continuation: **none**. The CI result is repository-integrity confirmation only and does not alter the previously mapped Architecture result.
+## Static observation and fixed terminal
 
-## Stop state
+The predeclared terminal maps once to **`LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED`**.
 
-Integrity status: **`GREEN_STATIC_TERMINAL_EXACT_HEAD_CI_SUCCESS`**.  
-Stop reason: **`VALID_STATIC_TERMINAL_AND_EXACT_HEAD_CI_SUCCESS_STOP_FOR_FRESH_ANALYST_REVIEW`**.  
-Final lease target: **`COMPLETED`**.  
-Next MAIN action: wait for a fresh Evidence Analyst generation/commit. Do not automatically continue this receptor object, run a dynamic comparator, start cycle 2, or advance PRE_FORMAL/FORMAL.
+Static facts:
 
-Utility request created: `none`.  
-Persistence: MAIN-owned `latest.md`, `state.json`, append-only history, and `lease.json` only on `ops/orchestrator-run-report`; no force push.
+- default `AssemblyConfig` is `max_candidates=256`, `mature_episodes=3`, `immature_stale_episodes=2`, `stale_after_ms=50000`;
+- at capacity a novel unmatched pattern triggers `prune()`, then is rejected if capacity remains full;
+- the only v0.5 prune path removes stale candidates only when `episode_count <= immature_stale_episodes`; therefore default mature candidates have no current reclamation path;
+- stable supported source/docs/tests do **not** define `max_candidates` as a lifetime mature-memory cap, an active working-set budget, or a cache, and they do not explicitly declare mature candidates permanent;
+- `V05_MASTER_PLAN` does contain general Assembly `stability / decay` language plus `candidate decay` and `candidate budget` as anti-proliferation mitigations, but it does not say mature candidates must decay or be reclaimed, so it is not enough to bind an active-working-set contract;
+- supported/default callers do not override `max_candidates=256`;
+- retained protocol learning horizons are bounded (48 train episodes/seed; 24 in the secondary plasticity ablation), while held-out evaluation does not learn Assemblies;
+- no supported test/caller promises continued novel-pattern acquisition after saturation and no default supported test intentionally reaches saturation;
+- static source cannot prove saturation structurally impossible either, because one episode can yield multiple extracted patterns/candidates;
+- checkpoint serialization restores candidates but is specified as reproducibility/state continuation, not as an explicit lifetime lifecycle contract.
+
+Accordingly, this cycle establishes a **NON_EVIDENTIARY Architecture/resource-policy ambiguity**, not a supported saturation failure and not a requirement for mature turnover. No new computational principle is supported.
+
+## Evidentiary status / integrity
+
+- FORMAL scientific evidence created: `none`
+- PRE_FORMAL development evidence created: `none`
+- Architecture result: `NON_EVIDENTIARY_ARCHITECTURE_STUDY`
+- consumed one-way identities in this cycle: `none`
+- global no-retry identities: unchanged
+- production source modified: `false`
+- official TEST/formal held-out result inspected: `false`
+- terminal remapped after visibility: `false`
+- same-object cycle 2 started: `false`
+- Utility request: `none`
+- SUB work absorbed: `none`
+
+Exact-head ordinary CI run **`35483714573`** is currently `in_progress` on head `13239163f6fecb2b61ea2189a5a94ba12b6cb3d6`. This CI has repository-integrity authority only; it cannot change the mapped Architecture terminal.
+
+## Stop / continuation
+
+Stop reason: `VALID_STATIC_TERMINAL_MAPPED_WAITING_EXACT_HEAD_ORDINARY_CI`.
+
+Final lease target for this PRIMARY handoff: **`WAITING_EXTERNAL`**. Relay/next MAIN may collect only CI `35483714573` for exact head `13239163f...`. If it succeeds, persist `COMPLETED` and STOP for a fresh Evidence Analyst review. Do not manufacture saturation, add mature eviction, run a turnover comparator, start cycle 2, or promote this object to PRE_FORMAL/FORMAL under the current authority. If exact-head CI fails, fail closed and return the integrity failure for fresh review rather than changing the scientific terminal.
+
+Work left for SUB: only genuinely independent bounded Discovery under the current Analyst allocation; Assembly lifecycle remains MAIN-owned and closed to SUB.
