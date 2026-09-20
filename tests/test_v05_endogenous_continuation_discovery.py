@@ -52,10 +52,11 @@ def test_default_supported_step_has_no_input_free_functional_continuation() -> N
     Prospective contract and contingency tree:
     analysis/exploratory/sub_v05_endogenous_continuation_20260920.md
 
-    This first fixed probe tests terminal
-    NO_INPUT_FREE_CONTINUATION_AT_DEFAULT_SETTLE. If it fails, the assertion
-    payload exposes the pre-bound observations and the already-bound queue-clear
-    comparator is the only permitted next diagnostic within this cycle.
+    The first execution exposed only a harness-level contract mismatch: the
+    action policy returns literal ``withhold`` for a null/suppressed/immature
+    activation rather than ``None``. Stable production source fixes that
+    behavior independently of this probe. No seed, timing, input, metric,
+    threshold, state, or scientific terminal is changed here.
     """
 
     trained = _train_dev_brain()
@@ -95,5 +96,7 @@ def test_default_supported_step_has_no_input_free_functional_continuation() -> N
         "pattern_count": 0,
         "mature_assemblies": (),
         "prediction": None,
-        "action": None,
+        "action": "withhold",
     }, json.dumps(payload, sort_keys=True)
+    assert queue_before == [], json.dumps(payload, sort_keys=True)
+    assert queue_after == [], json.dumps(payload, sort_keys=True)
