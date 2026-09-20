@@ -11,10 +11,10 @@
     "sub_observed_for_freshness": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-21T04:16:32+09:00",
   "heartbeat_at": "2026-09-21T04:16:32+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-21T04:16:32+09:00",
   "analyst_generation_id": "EVA-20260921T040050+0900-R26-6A3F8C21",
   "analyst_commit": "455522cde0a7e5eae1d2b04d779a5783f6351585",
   "analyst_branch_tip_observed": "455522cde0a7e5eae1d2b04d779a5783f6351585",
@@ -40,10 +40,11 @@
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "active_branch": null,
   "active_identity": null,
-  "active_step": "RECONCILE_R26_AND_PERSIST_INTENTIONAL_IDLE",
+  "active_step": "INTENTIONAL_SCIENTIFIC_IDLE_PENDING_FRESH_ANALYST_ALLOCATION",
   "freshness_reconciliation": {
-    "analyst_tip": "455522cde0a7e5eae1d2b04d779a5783f6351585",
-    "orchestrator_tip_before_acquire": "58b87fbe259f84fa29dd36a8027764a9292162ca",
+    "analyst_tip_at_acquire": "455522cde0a7e5eae1d2b04d779a5783f6351585",
+    "analyst_tip_before_state_persistence": "455522cde0a7e5eae1d2b04d779a5783f6351585",
+    "analyst_tip_before_finalization": "455522cde0a7e5eae1d2b04d779a5783f6351585",
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "latest_sub_generation": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91",
     "latest_sub_scientific_execution": false,
@@ -52,9 +53,21 @@
     "completed_workflow_status": "completed",
     "completed_workflow_conclusion": "success"
   },
+  "last_completed_object_canonical": {
+    "candidate_id": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
+    "classification": "HOLD",
+    "claim_ceiling": "SYSTEM",
+    "preformal_eligible": false,
+    "preformal_readiness": "NOT_APPLICABLE",
+    "hold_class": "HOLD_SYSTEM_TERMINAL",
+    "hold_reason": ["CALL_COUNT_PARTITION_DEPENDENT_EXACT", "EXACT_PER_APPLY_ELIGIBILITY_DECAY_REDUCTION", "CURRENT_SYSTEM_ARCHITECTURE_QUESTION_COMPLETE", "PUBLIC_SEMANTIC_CLOCK_CONTRACT_REMAINS_AMBIGUOUS"],
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "queue_state": "NOT_QUEUED",
+    "same_object_continuation_authorized": false
+  },
   "evidentiary_status": "CONTROL_PLANE_RECONCILIATION_ONLY; NEW_FORMAL=0; NEW_PRE_FORMAL=0; NEW_MECHANISM_ARCHITECTURE=0; NEW_SYSTEM_ARCHITECTURE=0; NEW_IDENTITY_CONSUMPTION=0",
-  "stop_reason": null,
-  "expected_next_action": "Persist R26 canonical terminal dimensions for the completed SYSTEM object as historical context, then end MAIN in intentional idle. Do not continue or redesign the completed object; await fresh Analyst allocation for any new scientific work.",
+  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
+  "expected_next_action": "Remain intentionally scientifically idle. On the next run re-read fresh Analyst generation and exact repository refs, and execute only a newly allocated prospective MAIN object. Do not continue, redesign, rescue, sweep, or upgrade the terminal eligibility-partition object.",
   "utility_request_created": null,
   "owner": "main"
 }
