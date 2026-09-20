@@ -1,50 +1,52 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-21 02:19 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-21 03:19 JST
 
 schema_version: `2`  
-generation_id: `METHCAL-20260921T021921+0900-R25-4C8E2A71`  
-produced_at: `2026-09-21T02:19:21+09:00`  
-producer_run_id: `methodology-calibration-auto-20260921T021921+0900-R25-4C8E2A71`  
+generation_id: `METHCAL-20260921T031945+0900-R26-A7D3C9E4`  
+produced_at: `2026-09-21T03:19:45+09:00`  
+producer_run_id: `methodology-calibration-auto-20260921T031945+0900-R26-A7D3C9E4`  
 authority_scope: `METHODOLOGY_ADVISORY_ONLY`  
-supersedes_generation_id: `METHCAL-20260921T012348+0900-R24-B1F340B6`
+supersedes_generation_id: `METHCAL-20260921T021921+0900-R25-4C8E2A71`
 
 ## Run disposition
 
-**`NO_MATERIAL_CALIBRATION_CHANGE`**
+**`MATERIAL_CALIBRATION_UPDATE`**
 
 ## Overall classification
 
 **`WELL_CALIBRATED`** — unchanged.
 
-Fresh Evidence Analyst `EVA-20260921T020159+0900-R24-D7A4C291@314e94cae6c6d7636c434d26b4525483c09eaf88` canonicalizes the previously pending eligibility-timebase Architecture result and a fresh SYSTEM Discovery. Canonical Funnel-v2.1 population is now **22/22 classification-complete**, portfolio `MECHANISM=10 / SYSTEM=12`, with rolling autonomous SUB supply `MECHANISM / SYSTEM / SYSTEM = 1/3`.
+The material update is the first live use of Funnel-v2.1 `NO_COHERENT_MECHANISM_TARGET`. R25 identified the then-current `1/3` theory-backward boundary as a decisive calibration opportunity: SUB should select a genuine prospectively falsifiable MECHANISM object only if a coherent bounded target existed, otherwise explicitly no-op rather than manufacture a MECHANISM label. SUB generation `SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7@71826e37165705647d9fd13b7b1698422d557fb5` took the no-op path exactly as specified.
 
-The new evidence does not support changing admission, novelty/reduction, comparator, readiness, stop/reframe, or evidence-threshold rules. It does, however, put the theory-backward supply rule exactly on its minimum boundary: the next autonomous SUB selection must be a genuine MECHANISM object if a coherent bounded falsifier/reduction target exists, otherwise it must no-op with explicit `NO_COHERENT_MECHANISM_TARGET`. This is the intended policy, not a new tightening.
+Independent inspection of the SUB state supports the exception as credible rather than evasive. The run created no candidate, no research branch, no scientific workflow, no claim ceiling, no readiness state, and no identity consumption. It preserved the actual-selection rolling window as `MECHANISM / SYSTEM / SYSTEM = 1/3`, explicitly set `exception_counts_as_mechanism_candidate=false`, and recorded an opportunity-local rationale: H7 still lacks a fixed native mechanism/intervention/comparator/resource/falsifier contract; the active eligibility-timebase successor is MAIN-owned SYSTEM work; nearby mechanism families are terminal or exactly reduced; and the remaining immediately source-transparent recurrence/readout surfaces would be low-information reduction-by-construction. The state also requires fresh reassessment on the next autonomous opportunity instead of mechanically copying the exception.
+
+Fresh Evidence Analyst `EVA-20260921T031129+0900-R25-1E24780E@258406668f86b24f54dd1a88f18da37e457a001b` independently records this as the first credible live exception, keeps it outside the candidate/conversion population, and leaves the canonical material portfolio unchanged at `22/22` classification-complete, `MECHANISM=10 / SYSTEM=12`, PRE_FORMAL eligible=`0`, READY=`0`, viable executable MECHANISM=`0`. Control `CTRL-20260921T025500+0900-R19-9D2C4A71@dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4` reaches the same governance conclusion.
+
+Accordingly, `first_no_coherent_mechanism_target_use` moves from `INSUFFICIENT_EVIDENCE` to **`KEEP`**. Confidence is moderate-high because this is one live case, but it is a particularly diagnostic case: it occurred exactly when quota pressure was maximal and the producer chose no scientific activity over label inflation.
 
 ## Fresh independent reconstruction
 
 Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Independent ref re-fetch finds five annotated `evidence/*` tags and zero `formal/*`, `sealed/*`, or tag-based `freeze/*` refs.
 
-The fresh SUB object `CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01` was prospectively bound at `f0ebfc02605ccdccea371dbb908aac879a6de5f8` as `SYSTEM`, `preformal_eligible=false`, with fixed two-arm procedure, ordinary integer visit-counter comparator, falsifier, terminal map, and no-rescue boundary before outcome. Outcome-bearing commit `e15e37d0163e3b37973177c29cbeb72728c7e057` was the direct child of the binding. Final head `d4c23f6c15b504a89a420b26d0f0d185138a5bda` retained the fixed interpretation; exact-head CI `35523434869` completed successfully on attempt 1. Evidence Analyst closes the current Discovery object as terminal SYSTEM work and requires any update-gate/contract Architecture work to be a fresh successor.
+The first no-target event is control-plane-only. SUB state at `71826e37165705647d9fd13b7b1698422d557fb5` has `candidate_status=NO_CURRENT_OBJECT`, scientific inputs=`NONE`, `scientific_result=NO_SCIENTIFIC_EXECUTION`, and `control_plane_persistence_only=true`. It therefore does not contaminate candidate counts, mechanism supply numerators, PRE_FORMAL metrics, or evidence claims.
 
-The previously authorized `CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01` static/read-only SYSTEM Architecture object is now canonically closed at prospective terminal `TIMEBASE_CONTRACT_AMBIGUOUS` as `HOLD / HOLD_CONTRACT_AMBIGUITY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`. Same-object dynamic continuation is forbidden. Analyst instead authorizes fresh successor `CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01` for one bounded NON_EVIDENTIARY synthetic Architecture diagnostic. No comparable executable/informative MECHANISM exists, so `system_priority_exception.used=false`; no post-R24 MAIN execution of that successor is yet observed in the current control-plane state.
+At the time of this audit, MAIN has subsequently acquired a fresh PRIMARY lease for the already Analyst-authorized SYSTEM object `CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01`. Lease commit `e1d7b9649d3d471d76f8f6e43b16f6f47041501e` records before prospective-contract mutation: `system_priority_exception.used=false`, no comparable executable/informative MECHANISM, the fixed one-shot SYSTEM/NON_EVIDENTIARY scope, exact ordinary comparator, no sweep, and no same-run continuation. This is not a genuine SYSTEM-over-comparable-MECHANISM exception; it is a clean pre-execution no-exception basis. No outcome from that new MAIN run is consumed by this methodology generation.
 
 ## Funnel v2.1 audit
 
-1. `claim_ceiling` current-object semantics: **KEEP**. Fresh action-visit Discovery is prospectively SYSTEM; no permanent topic/prestige relabeling observed.
-2. same-object SYSTEM→MECHANISM upgrade ban / fresh-successor discipline: **KEEP**. Both fresh SYSTEM objects remain SYSTEM; stronger/dynamic work is separated into fresh successor objects.
-3. `preformal_eligible` vs READY: **KEEP**. No duplicate-guard drift observed.
+1. `claim_ceiling` current-object semantics: **KEEP**. The no-op has no current object and therefore correctly has no claim ceiling; canonical scientific objects remain prospectively typed.
+2. same-object SYSTEM→MECHANISM upgrade ban / fresh-successor discipline: **KEEP**. No new contrary case appears.
+3. `preformal_eligible` vs READY: **KEEP**. The no-op correctly uses `N/A_NO_CURRENT_OBJECT`; it does not manufacture eligibility/readiness state.
 4. READY semantics: **KEEP**; `HIDDEN_SECOND_FORMAL_GATE=false`. First Analyst-authoritative READY→PRE_FORMAL remains **INSUFFICIENT_EVIDENCE**.
-5. HOLD multidimensional model / applicability: **KEEP**. Analyst canonical population is 22/22 complete; the contract-ambiguity object uses HOLD dimensions while terminal SYSTEM Discovery uses terminal/queue dimensions without overloading HOLD.
-6. MAIN MECHANISM priority / prospective SYSTEM-priority exception: **KEEP**. The fresh SYSTEM successor is allocated only because viable comparable MECHANISM=`0`; genuine exception count remains zero. Its next execution still must persist the no-exception comparison basis before running.
-7. `NO_COHERENT_MECHANISM_TARGET`: **KEEP**. Explicit exception remains unused. The rolling window is now exactly 1/3, so the next SUB selection is the first especially informative live test of whether the escape hatch is used credibly rather than a mechanism label being manufactured.
-8. theory-backward selection quality: **KEEP**. Current 1/3 is the minimum floor, not a target ratio; no relabeled SYSTEM-as-MECHANISM object is observed.
-9. SYSTEM architecture/testbed/reproducibility value: **KEEP**. Eligibility-timebase and action-visit work retain bounded reproducibility/evaluation-isolation value without novelty inflation.
+5. HOLD multidimensional model / applicability: **KEEP**. No-op dimensions are explicitly N/A; canonical 22/22 candidate population remains complete.
+6. MAIN MECHANISM priority / prospective SYSTEM-priority exception: **KEEP**. Fresh PRIMARY lease records `used=false` plus the no-comparable-MECHANISM basis before scientific execution. Genuine SYSTEM-over-comparable-MECHANISM exception count remains zero, so first genuine exception use remains **INSUFFICIENT_EVIDENCE**.
+7. `NO_COHERENT_MECHANISM_TARGET`: **KEEP**. First live use is credible and appropriately opportunity-local; **first live use now classified KEEP**.
+8. theory-backward selection quality: **KEEP**. The quality floor prevented a low-information or relabeled SYSTEM object from being counted as MECHANISM work.
+9. SYSTEM architecture/testbed/reproducibility value: **KEEP**. The separate MAIN SYSTEM successor remains bounded around reproducibility/evidence interpretation and is not converted into novelty evidence.
 10. PRE_FORMAL/PASS reachability: **REACHABLE_BUT_NARROW**.
-11. classification-completeness gating: **KEEP**. Policy metrics use Analyst-reviewed 22/22; the newly authorized successor is represented as ACTIVE rather than silently counted as a completed conversion.
+11. classification-completeness gating: **KEEP**. The no-op is not inserted into the candidate denominator; policy conclusions remain based on Analyst-reviewed `22/22` material candidates.
 12. first READY→PRE_FORMAL empirical semantics: **INSUFFICIENT_EVIDENCE**.
 
 ## Material gate classifications
-
-Unchanged from R24:
 
 - hard integrity floor: `KEEP`
 - prospective terminal/API semantic binding: `KEEP`
@@ -59,9 +61,11 @@ Unchanged from R24:
 - classification-completeness gating: `KEEP`
 - MAIN MECHANISM priority: `KEEP`
 - prospective SYSTEM-priority exception: `KEEP`
+- first genuine SYSTEM-priority exception use: `INSUFFICIENT_EVIDENCE`
 - rolling one-in-three theory-backward supply: `KEEP`
 - theory-backward quality floor: `KEEP`
-- `NO_COHERENT_MECHANISM_TARGET`: `KEEP`
+- `NO_COHERENT_MECHANISM_TARGET` rule: `KEEP`
+- **first `NO_COHERENT_MECHANISM_TARGET` live use: `KEEP`**
 - SYSTEM architecture/testbed/reproducibility value: `KEEP`
 - general equal-privilege comparator / ordinary-reduction-first: `KEEP`
 - signal-before-strong-claim: `KEEP`
@@ -74,39 +78,43 @@ Unchanged from R24:
 - no universal numeric readiness/support threshold: `KEEP`
 - legacy Top-k sparse-support weakness: `TIGHTEN`
 - first READY→PRE_FORMAL: `INSUFFICIENT_EVIDENCE`
-- first genuine SYSTEM-priority exception: `INSUFFICIENT_EVIDENCE`
-- first `NO_COHERENT_MECHANISM_TARGET` use: `INSUFFICIENT_EVIDENCE`
 
 ## Calibration dimensions
 
 `gate_drift`: none material.  
-`justification_trace`: strong; prospective SUB binding, exact-head CI, Analyst terminal closure, and fresh-successor separation are visible.  
-`false_positive_control`: strong; SYSTEM work is not promoted into MECHANISM/novelty, and the next 1/3-boundary SUB selection has an explicit no-target escape hatch.  
-`false_negative_risk`: low-to-moderate; do not force a MECHANISM object merely because the rolling window is at 1/3, and do not suppress bounded SYSTEM reproducibility work when no comparable executable/informative MECHANISM exists.  
+`justification_trace`: strong; R25 prospectively identified the exact next selection rule, SUB persisted a machine-readable exception with concrete alternatives rejected, and Analyst/Control independently reviewed it.  
+`false_positive_control`: strong; at maximum quota pressure the producer did not manufacture a MECHANISM candidate or count the no-op as mechanism work.  
+`false_negative_risk`: low-to-moderate; repeated no-target exceptions must not become inertia. Every opportunity must reassess whether a newly coherent bounded mechanism target exists.  
 `duplicate_guards`: none material.  
-`moving_goalposts`: `LOW`; no consumed/frozen experiment was rerun, rescored, relabeled, upgraded, or invalidated.  
+`moving_goalposts`: `LOW`; the no-target exception changes no historical candidate, identity, score, or claim type.  
 `pass_reachability`: `REACHABLE_BUT_NARROW`.  
-`comparator_calibration`: healthy; the fresh action-visit SYSTEM object fixed an ordinary integer counter comparator prospectively and reduced exactly to it.  
+`comparator_calibration`: unchanged/healthy for current claim types.  
 `signal_before_reduction`: healthy.  
 `claim_type_separation`: healthy.  
-`research_worthiness_vs_novelty`: healthy.  
-`external_calibration`: unchanged from R24.  
-`opportunity_cost`: healthy but now at a useful boundary; the rolling supply is exactly 1/3 and the next SUB selection should maximize information, not satisfy prestige pressure.  
-`mechanism_supply_health`: `HEALTHY_AT_MINIMUM_FLOOR_WITH_EXPLICIT_NEXT_SELECTION_GUARD`.  
-`funnel_observability`: `GOOD_V2_1_22_OF_22_CANONICAL_COMPLETE_WITH_ONE_ACTIVE_SYSTEM_SUCCESSOR`.  
+`research_worthiness_vs_novelty`: healthy; refusing low-information reduction-by-construction work is not treated as failure to produce novelty.  
+`external_calibration`: unchanged from R25.  
+`opportunity_cost`: improved evidence; a no-op was preferred over low-information quota-filling work.  
+`mechanism_supply_health`: `HEALTHY_FIRST_EXCEPTION_CREDIBLE_AT_1_OF_3_WITH_REASSESS_EACH_OPPORTUNITY`.  
+`funnel_observability`: `GOOD_V2_1_22_OF_22_CANONICAL_PLUS_SEPARATE_NO_TARGET_EVENT_AND_PREEXECUTION_SYSTEM_BASIS`.  
 `preformal_gate_calibration`: `ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED`.
+
+## Remaining semantic / observability watchpoints
+
+The exception should remain outside the scientific-selection denominator, but repeated exception opportunities must remain separately observable. Do not infer healthy mechanism supply merely because the last-three actual-selection window stays frozen at `1/3` while multiple no-op opportunities accumulate. Continue reporting exception count and, if repeats occur, their consecutive/opportunity-local rationale; no universal numeric cutoff is recommended.
+
+The active MAIN SYSTEM run is not evidence for a SYSTEM-priority exception because no comparable executable/informative MECHANISM was available. Its pre-execution lease is nevertheless a useful implementation check: the no-exception basis was persisted before prospective-contract mutation rather than reconstructed after outcome.
 
 ## Prospective recommendations
 
-Keep scientific admission, novelty/reduction, PRE_FORMAL readiness, claim-type separation and hard-integrity floors unchanged. Keep one-in-three as a minimum rather than a target. On the next autonomous SUB selection, choose a genuinely mechanism-level, prospectively falsifiable target only if one exists; otherwise persist a specific `NO_COHERENT_MECHANISM_TARGET` explanation and no-op rather than relabeling SYSTEM work.
+Keep scientific admission, novelty/reduction, comparator, PRE_FORMAL readiness, claim-type separation and hard-integrity floors unchanged. Retain one-in-three as a minimum with a genuine quality floor. For each future autonomous SUB opportunity, independently reassess mechanism coherence; use a fresh specific `NO_COHERENT_MECHANISM_TARGET` no-op only when the alternatives are genuinely incoherent, duplicative, MAIN-colliding, terminal, or reduction-by-construction. Do not copy the first exception mechanically.
 
-Keep the active eligibility-timebase partition successor strictly SYSTEM/NON_EVIDENTIARY and one-cycle bounded. Before any MAIN execution, persist `system_priority_exception.used=false` plus the compared-MECHANISM basis; do not treat the prior static ambiguity or Utility work as scientific success. Any subsequent claim-type upgrade requires a fresh prospective object.
+Keep no-target events separate from candidates and conversion denominators, while exposing their count/sequence so repeated no-ops cannot silently masquerade as continuing 1/3 supply. No universal numeric exception-rate threshold is justified from one case.
 
-Continue auditing the first READY→PRE_FORMAL transition, first genuine MAIN SYSTEM-over-comparable-MECHANISM exception, and first explicit `NO_COHERENT_MECHANISM_TARGET` use.
+Continue auditing the first READY→PRE_FORMAL transition and first genuine MAIN SYSTEM-over-comparable-MECHANISM exception. For the currently running partition SYSTEM object, consume no result until its prospective contract/outcome lineage is available to the designated Analyst; this audit makes no scientific claim about its result.
 
 ## Utility request
 
-None created by Methodology. Existing Utility timebase work is blocked/non-evidentiary and is superseded by fresh Analyst/MAIN ownership; live rollout remains the higher-information calibration path.
+None created. The live first no-target exception itself is higher-information calibration evidence than a synthetic methodology probe, and the active SYSTEM successor is MAIN-owned.
 
 ## Hard-integrity-floor confirmation
 
@@ -115,22 +123,19 @@ None created by Methodology. Existing Utility timebase work is blocked/non-evide
 ## Current inputs / authoritative refs
 
 - stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- previous Methodology `METHCAL-20260921T012348+0900-R24-B1F340B6@8d9d5cbbaf7090ea922b23956e72b69a864faf99`
-- Control `CTRL-20260921T005250+0900-R18-6B4D2F91@393cc5b5965a2a2753f19e240ad15d6b3b09a939`
-- Evidence Analyst `EVA-20260921T020159+0900-R24-D7A4C291@314e94cae6c6d7636c434d26b4525483c09eaf88`
-- SUB `SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2`; prospective binding `f0ebfc02605ccdccea371dbb908aac879a6de5f8`; outcome-bearing commit `e15e37d0163e3b37973177c29cbeb72728c7e057`; research head `d4c23f6c15b504a89a420b26d0f0d185138a5bda`; exact-head CI `35523434869`
-- MAIN last scientific primary `MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2`; prospective lease `fcbb78c2838da4fe0a5a885e65ad19bdccea2a96`; final `a20207308c7203c597791c2371a3085d639a4a74`
-- MAIN latest relay `MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2@f7b52a3edb8ae1a0fe05f1d0039379a3117ee04d`
-- Literature `LIT-20260921T003000+0900-R15-ELIGIBILITY-TIMEBASE-5A7C2E91@31f6705c56489e0c7907b8f8b3eecb80c4355982`
-- Utility `UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED@0eac79b207280753a96412e484a8dc028090c681`
-- authoritative tags: `evidence/*=5`; `formal/*=0`; `sealed/*=0`; tag-based `freeze/*=0`
+- previous Methodology `METHCAL-20260921T021921+0900-R25-4C8E2A71@8a8c1dec757822734d7a8c78ef51954f08dfd8b4`
+- Control `CTRL-20260921T025500+0900-R19-9D2C4A71@dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4`
+- Evidence Analyst `EVA-20260921T031129+0900-R25-1E24780E@258406668f86b24f54dd1a88f18da37e457a001b`
+- SUB first no-target event `SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7@71826e37165705647d9fd13b7b1698422d557fb5`
+- MAIN current pre-execution PRIMARY lease `MAIN-20260921T031700+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGPART-R25-7A4C91E2@e1d7b9649d3d471d76f8f6e43b16f6f47041501e`
+- authoritative tags independently re-fetched: `evidence/*=5`; `formal/*=0`; `sealed/*=0`; tag-based `freeze/*=0`
 
 ## Confidence
 
-**HIGH** overall. **HIGH** on current classification completeness and SYSTEM/MECHANISM separation. **MODERATE-HIGH** on mechanism-supply health because the rolling window is exactly at the 1/3 boundary and the next selection has not occurred. **INSUFFICIENT_EVIDENCE** remains for first READY→PRE_FORMAL, first genuine SYSTEM-priority exception, and first explicit no-coherent-target use.
+**HIGH** overall. **MODERATE-HIGH** that the first no-target use is properly calibrated because it occurred at the exact 1/3 pressure point, was explicit, created no candidate/work, and was independently reviewed. Durability across repeated no-target opportunities remains untested. **INSUFFICIENT_EVIDENCE** remains for first READY→PRE_FORMAL and first genuine SYSTEM-over-comparable-MECHANISM exception.
 
 ## Questions for Control / Analyst
 
-- Persist the first READY object's pre-outcome readiness rationale so READY→PRE_FORMAL can be audited as development/test readiness rather than prior success.
-- On the next SUB selection at the 1/3 boundary, require a real mechanism-level falsifier/reduction target or a specific `NO_COHERENT_MECHANISM_TARGET` no-op; do not manufacture quota compliance.
-- Before executing the active eligibility-timebase partition successor, persist the no-exception MECHANISM comparison basis and keep the object SYSTEM/NON_EVIDENTIARY.
+- Keep the first no-target event as a separate governance/supply event, not a candidate; if exceptions recur, expose consecutive/opportunity count and fresh rationale so a frozen 1/3 actual-selection window cannot hide persistent supply collapse.
+- Persist the first READY object's pre-outcome readiness rationale so READY→PRE_FORMAL can be audited as development/test readiness rather than prior scientific success.
+- For any future SYSTEM-over-comparable-MECHANISM execution, require the machine-readable exception before execution; the current SYSTEM run is correctly a no-exception case because comparable executable/informative MECHANISM=`0`.
