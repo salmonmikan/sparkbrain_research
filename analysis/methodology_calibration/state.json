@@ -1,58 +1,58 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T05:21:10+09:00",
-  "generation_id": "METHCAL-20260921T052110+0900-R28-B6C3D8A1",
-  "produced_at": "2026-09-21T05:21:10+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260921T052110+0900-R28-B6C3D8A1",
+  "timestamp": "2026-09-21T06:21:11+09:00",
+  "generation_id": "METHCAL-20260921T062111+0900-R29-C5E1A7D2",
+  "produced_at": "2026-09-21T06:21:11+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260921T062111+0900-R29-C5E1A7D2",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "METHCAL-20260921T041901+0900-R27-E4A1B73C",
-  "previous_methodology_tip": "44869d4e1d031d91581becdde878ab9b7a62d0e2",
+  "supersedes_generation_id": "METHCAL-20260921T052110+0900-R28-B6C3D8A1",
+  "previous_methodology_tip": "d398b9a4af5dab1e6644714c476809a26f70ca88",
   "run_disposition": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "WELL_CALIBRATED",
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T041901+0900-R27-E4A1B73C",
-      "commit": "44869d4e1d031d91581becdde878ab9b7a62d0e2"
+      "generation_id": "METHCAL-20260921T052110+0900-R28-B6C3D8A1",
+      "commit": "d398b9a4af5dab1e6644714c476809a26f70ca88"
     },
     "control_brain": {
       "generation_id": "CTRL-20260921T025500+0900-R19-9D2C4A71",
       "commit": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T045900+0900-R27-8C4E21A7",
-      "commit": "28021769b1b9211921356a3eb2a2bc36fcb8cfbe"
+      "generation_id": "EVA-20260921T055830+0900-R28-4D7A91C2",
+      "commit": "cde085b48dde724b2ac814585d7f0757bf16ef63"
     },
-    "sub_third_no_target": {
-      "generation_id": "SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
-      "commit": "d55b5adb43899a7dc5edc76008e855802293f5bb",
+    "sub_fourth_no_target": {
+      "generation_id": "SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
+      "commit": "64f77557e4c5597791450c407705e7b3659fce62",
       "mode": "no_op",
       "exception_code": "NO_COHERENT_MECHANISM_TARGET",
-      "exception_event_ordinal": 3
+      "exception_event_ordinal": 4
     },
-    "main_completed_reconciliation": {
-      "generation_id": "MAIN-20260921T051321+0900-PRIMARY-FUNNEL21-HOLD-R27-6C2A91E4",
-      "commit": "48773f14ef96832103fa3e84b510a92d93c0c5c6",
-      "status": "COMPLETED_INTENTIONAL_SCIENTIFIC_IDLE"
+    "main_reconciliation": {
+      "generation_id": "MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7",
+      "commit": "6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a",
+      "status": "COMPLETED"
     }
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_handoff_tip": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4",
-    "evidence_analyst_handoff_tip": "28021769b1b9211921356a3eb2a2bc36fcb8cfbe",
-    "sub_third_no_target_commit": "d55b5adb43899a7dc5edc76008e855802293f5bb",
-    "main_orchestrator_tip_observed": "48773f14ef96832103fa3e84b510a92d93c0c5c6",
-    "methodology_prewrite_tip": "44869d4e1d031d91581becdde878ab9b7a62d0e2",
+    "evidence_analyst_handoff_tip": "cde085b48dde724b2ac814585d7f0757bf16ef63",
+    "sub_fourth_no_target_commit": "64f77557e4c5597791450c407705e7b3659fce62",
+    "main_orchestrator_tip_observed": "6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a",
+    "methodology_prewrite_tip": "d398b9a4af5dab1e6644714c476809a26f70ca88",
     "evidence_tags_count": 5,
     "formal_tags_count": 0,
     "sealed_tags_count": 0,
     "freeze_tags_count": 0
   },
   "material_findings": [
-    "A third consecutive autonomous SUB opportunity emitted NO_COHERENT_MECHANISM_TARGET after a fresh R26/Main/source reconciliation, created no candidate, research branch, workflow, identity or scientific observation, and stayed outside MECHANISM and conversion denominators.",
-    "The scientific-selection window remains MECHANISM/SYSTEM/SYSTEM=1/3 while no-target checks increased to three; the ratio alone cannot characterize ongoing mechanism-supply health.",
-    "The third event remains credible because it records the fresh canonical closure of the prior SYSTEM object, separately reconsiders H7, terminal/exactly-reduced families and source-transparent surfaces, and does not silently copy the prior exception.",
-    "Repeated no-target checks under essentially the same mechanism-relevant landscape should not be narrated as independent confirmations of methodology calibration; they constitute a persistent supply-stall episode unless a material mechanism-surface delta occurs.",
-    "Fresh MAIN consumed Analyst R27 and remained intentionally scientifically idle rather than manufacture a candidate or reopen terminal work."
+    "Fresh Analyst R28 canonically groups four same-surface NO_COHERENT_MECHANISM_TARGET checks into one persistent supply-stall episode rather than four independent policy validations.",
+    "Analyst R28 now persists a machine-readable no_target_episode_id and mechanism_surface_signature, with same-episode check count=4 and independent episode count=1, while keeping the scientific-selection window separately at MECHANISM/SYSTEM/SYSTEM=1/3.",
+    "Analyst R28 prospectively changes the SUB lane from repeated local reassessment to a NON_EVIDENTIARY qualitative theory-backward search-space reframe before any fresh candidate decision.",
+    "Fresh MAIN R28 consumes the episode/signature semantics, remains scientifically idle, does not absorb SUB reframe work, and does not manufacture a candidate.",
+    "No new scientific repository evidence or FORMAL evidence exists; the update concerns funnel observability and stop/reframe semantics only."
   ],
   "gate_by_gate_classifications": {
     "hard_integrity_floor": "KEEP",
@@ -78,8 +78,9 @@
     "no_coherent_mechanism_target_rule": "KEEP",
     "first_no_coherent_mechanism_target_use": "KEEP",
     "repeated_opportunity_local_no_coherent_mechanism_target_use": "KEEP",
-    "no_target_sequence_opportunity_observability": "CLARIFY",
-    "repeated_no_target_stop_reframe_semantics": "CLARIFY",
+    "no_target_sequence_opportunity_observability": "KEEP",
+    "repeated_no_target_stop_reframe_semantics": "KEEP",
+    "first_live_qualitative_no_target_episode_reframe_execution": "INSUFFICIENT_EVIDENCE",
     "system_value_under_mechanism_priority": "KEEP",
     "equal_privilege_comparator_general": "KEEP",
     "ordinary_reduction_first": "KEEP",
@@ -95,49 +96,52 @@
     "legacy_topk_sparse_support": "TIGHTEN"
   },
   "false_positive_risks": [
-    "The frozen 1/3 actual-selection ratio can look healthy while no-target checks accumulate; current separate event counting mitigates this but episode independence is not explicit.",
-    "Repeated scheduler opportunities under the same mechanism landscape can be over-read as independent evidence that NO_COHERENT_MECHANISM_TARGET is increasingly validated.",
-    "Repeated NO_COHERENT_MECHANISM_TARGET use could become an escape hatch if a future mechanism-surface delta creates a coherent target and that surface is not explicitly reconsidered.",
-    "A future SYSTEM-over-comparable-MECHANISM run could be post-hoc justified unless the machine-readable exception is persisted before execution.",
+    "The frozen 1/3 actual-selection ratio can still be mistaken for healthy ongoing supply unless it is read together with same-episode no-target checks; canonical Analyst state now mitigates this with episode-aware reporting.",
+    "Episode ids/signatures could be gamed by cosmetic signature churn; a new episode should require a material mechanism-surface delta, not a scheduler run or control-plane wording change.",
+    "A future SYSTEM-over-comparable-MECHANISM run could be post-hoc justified unless the machine-readable exception remains prospective.",
     "External-validation effects can be overinterpreted when a reference is degenerate or relevant simple reductions/source clustering are omitted."
   ],
   "false_negative_risks": [
-    "Repeated no-op can become discovery inertia if unchanged source/code is treated as sufficient reason not to perform genuine theory-backward reframing; source delta is not a prerequisite for a new theory-level question.",
-    "Do not force a MECHANISM object merely to move the rolling share above 1/3; a well-justified no-target no-op remains preferable to manufactured or duplicative work.",
-    "Do not turn three no-target checks into a universal numeric exception-rate cutoff; the appropriate response is qualitative episode-aware reframe/observability, not a hard threshold.",
-    "Do not suppress bounded SYSTEM architecture/reproducibility work when no comparable executable/informative MECHANISM exists.",
+    "The first qualitative search-space reframe has not yet executed; if it merely repeats local source scans, discovery inertia remains possible despite improved semantics.",
+    "Do not require a source-code delta before asking a fresh theory-level mechanism question.",
+    "Do not force a MECHANISM object merely to move the rolling share above 1/3; a same-episode no-target no-op remains preferable if no coherent target survives the reframe.",
+    "Do not turn four checks into a universal numeric exception-rate or reframe threshold.",
     "Do not require positive signal or prior comparator/reduction victory merely to become preformal_eligible or READY."
   ],
   "moving_goalpost_assessment": {
     "level": "LOW",
-    "finding": "No historical candidate, consumed identity, score, claim ceiling, terminal disposition, evidence ref or scientific threshold was rewritten. The third no-target event is control-plane supply evidence only."
+    "finding": "No historical candidate, consumed identity, score, claim ceiling, terminal disposition, evidence ref or scientific threshold was rewritten. Episode grouping changes only prospective/control-plane interpretation of repeated no-target checks."
   },
   "pass_reachability_assessment": {
     "status": "REACHABLE_BUT_NARROW",
     "finding": "Historical fresh MECHANISM objects demonstrate prospective preformal_eligible=true can coexist with NOT_READY before outcome. Current canonical eligible=0 and READY=0; first READY-to-PRE_FORMAL transition remains unobserved."
   },
-  "claim_type_separation_findings": "Healthy. No new scientific object exists; terminal SYSTEM work remains SYSTEM, H7 remains a MECHANISM hold without execution, and no-target events carry no claim ceiling. No same-object upgrade or prestige relabeling is observed.",
+  "claim_type_separation_findings": "Healthy. No current scientific object exists; terminal SYSTEM work remains SYSTEM, H7 remains a MECHANISM hold without execution, and no-target episode metadata carries no claim ceiling and is not promoted into science.",
   "mechanism_supply_health": {
-    "status": "QUALITY_FLOOR_HEALTHY_BUT_PERSISTENT_SUPPLY_STALL_AT_1_OF_3_WITH_THREE_CONSECUTIVE_NO_TARGET_CHECKS",
+    "status": "QUALITY_FLOOR_HEALTHY_PERSISTENT_STALL_EPISODE_OBSERVABLE_REFRAME_REQUIRED_UNTESTED",
     "canonical_analyst_population": "MECHANISM=10,SYSTEM=12,22/22_complete",
     "observed_actual_selection_window": "MECHANISM,SYSTEM,SYSTEM",
     "theory_backward_share": "1/3",
-    "no_coherent_target_exception_count": 3,
-    "consecutive_no_target_check_count": 3,
+    "no_coherent_target_exception_count": 4,
+    "consecutive_no_target_check_count": 4,
+    "no_target_episode_id": "NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1",
+    "mechanism_surface_signature": "main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d|evidence=5|MECHANISM=10|activeM=0|nonterminalM=CAND-H7-RESP-01|PF_READY=0",
+    "same_episode_check_count": 4,
+    "independent_episode_count": 1,
     "exception_counts_as_mechanism_work": false,
-    "repeated_exception_assessment": "CREDIBLE_PERSISTENT_STALL_NOT_THREE_INDEPENDENT_VALIDATIONS",
-    "finding": "The quality floor is functioning because repeated quota pressure does not create label inflation. Ongoing mechanism supply is nevertheless stalled. The third event should increase concern about supply/reframe durability, not be counted as an independent validation replicate of the exception rule."
+    "finding": "The quality floor remains healthy because quota pressure still does not create label inflation. Supply remains stalled, but the stall is now episode-aware and the next prospectively allocated action is a qualitative theory-backward reframe rather than another mechanical local rescan."
   },
   "funnel_observability": {
-    "status": "GOOD_22_OF_22_CANONICAL_WITH_THREE_NO_TARGET_EVENTS_VISIBLE_BUT_EPISODE_INDEPENDENCE_SEMANTICS_NEEDS_CLARIFICATION",
+    "status": "GOOD_22_OF_22_CANONICAL_EPISODE_AWARE_4_CHECKS_ONE_EPISODE",
     "classification_completeness": "22/22_reviewed_canonical_analyst",
     "candidate_population_excludes_no_target_events": true,
     "active_architecture": "NONE",
-    "no_target_event_count": 3,
-    "no_target_episode_semantics_present": false,
-    "recommended_episode_semantics": "Persist a mechanism-surface signature/no-target episode id, episode check count, specific delta, and surfaces reconsidered; a material mechanism-surface delta starts a new episode.",
-    "policy_population_rule": "Use Analyst-reviewed canonical candidate dimensions for conversion/policy conclusions; report no-target checks separately from the scientific-selection ratio; do not infer a universal numeric readiness/support/exception-rate threshold.",
-    "finding": "Candidate classification is complete and no-target checks are separately visible, but current observability does not distinguish repeated checks of essentially the same mechanism landscape from independent post-delta supply opportunities."
+    "no_target_event_count": 4,
+    "no_target_episode_count": 1,
+    "no_target_episode_id": "NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1",
+    "mechanism_surface_signature_present": true,
+    "policy_population_rule": "Use Analyst-reviewed canonical candidate dimensions for conversion/policy conclusions; report actual selections, same-episode no-target checks and independent episode count separately; do not infer a universal numeric readiness/support/exception-rate threshold.",
+    "finding": "The R28 episode-independence observability defect is closed at the canonical Analyst/MAIN layer."
   },
   "preformal_gate_calibration": {
     "status": "ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED",
@@ -151,30 +155,33 @@
     "used_genuine_exception": false,
     "count_observed_genuine_exception": 0,
     "system_priority_exception_used_current": false,
-    "basis": "No current MAIN object exists and viable executable MECHANISM is zero; no SYSTEM-over-comparable-MECHANISM execution occurred.",
+    "basis": "No current MAIN scientific object exists and no comparable executable/informative MECHANISM exists.",
     "recorded_before_scientific_execution": "NOT_APPLICABLE_CURRENTLY",
     "finding": "No post-hoc priority gaming is observed. First genuine exception remains unobserved.",
     "first_live_use": "INSUFFICIENT_EVIDENCE"
   },
   "no_coherent_target_audit": {
     "exception_code": "NO_COHERENT_MECHANISM_TARGET",
-    "exception_count_observed": 3,
-    "consecutive_check_count": 3,
-    "latest_generation_id": "SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
-    "latest_commit": "d55b5adb43899a7dc5edc76008e855802293f5bb",
+    "exception_count_observed": 4,
+    "consecutive_check_count": 4,
+    "latest_generation_id": "SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
+    "latest_commit": "64f77557e4c5597791450c407705e7b3659fce62",
     "candidate_created": false,
     "scientific_execution": false,
     "counts_as_mechanism_work": false,
     "observed_theory_backward_share_actual_selections": "1/3",
-    "rationale_quality": "FRESH_RECONCILIATION_WITH_SPECIFIC_CONTROL_PLANE_DELTA_AND_SURFACE_RECONSIDERATION",
+    "episode_id": "NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1",
+    "same_episode_check_count": 4,
+    "independent_episode_count": 1,
+    "rationale_quality": "CREDIBLE_SAME_SURFACE_REASSESSMENT_CANONICALLY_EPISODE_GROUPED",
     "copy_forward_allowed": false,
-    "episode_independence_semantics": "NOT_EXPLICIT",
-    "finding": "Third live use remains credible and not an escape hatch on current evidence. It re-fetched the landscape, named the newly terminal SYSTEM object and reconsidered H7/nearby/source-transparent surfaces. However, because the mechanism-relevant scientific landscape remains largely unchanged, the three checks should be treated as a persistent stall episode rather than three independent validation events.",
+    "finding": "Fourth live use remains credible and not an escape hatch on current evidence. Analyst now correctly treats all four checks as one persistent stall episode and prospectively requires qualitative search-space reframe rather than another mechanical local scan.",
     "first_live_use": "KEEP",
     "repeated_live_use": "KEEP",
-    "sequence_observability": "CLARIFY",
-    "stop_reframe_semantics": "CLARIFY",
-    "confidence": "HIGH_EVENT_CREDIBILITY_MODERATE_LONG_RUN_SUPPLY_DURABILITY"
+    "sequence_observability": "KEEP",
+    "stop_reframe_semantics": "KEEP",
+    "first_live_reframe_execution": "INSUFFICIENT_EVIDENCE",
+    "confidence": "HIGH_EVENT_AND_EPISODE_OBSERVABILITY_MODERATE_LONG_RUN_SUPPLY_DURABILITY"
   },
   "classification_completeness": {
     "classified_reviewed": 22,
@@ -182,9 +189,10 @@
     "ratio_reviewed": 1.0,
     "pending_unreviewed_new_candidate_count": 0,
     "active_candidate_count": 0,
-    "no_target_control_plane_event_count": 3,
+    "no_target_control_plane_event_count": 4,
+    "no_target_episode_count": 1,
     "no_target_event_in_candidate_denominator": false,
-    "policy_use": "Use 22/22 Analyst-reviewed canonical candidate population; report three no-target checks separately; do not treat same-landscape repeated checks as independent candidate or conversion evidence."
+    "policy_use": "Use 22/22 Analyst-reviewed canonical candidate population; report four no-target checks as one episode separately from scientific-selection and conversion metrics."
   },
   "external_calibration": {
     "status": "CLAIM_TYPE_SPECIFIC_TIGHTENING_UNCHANGED",
@@ -198,52 +206,44 @@
     "universalization_forbidden": true
   },
   "stop_reframe_calibration": {
-    "status": "CORE_STOP_RULES_HEALTHY_REPEATED_NO_TARGET_REFRAME_SEMANTICS_NEEDS_CLARIFICATION",
-    "finding": "MAIN correctly idles and SUB correctly no-ops rather than continue terminal work. The remaining semantic gap is how a persistent no-target episode causes a qualitative broadening/reframe of theory-backward search without a numeric cutoff or quality-floor relaxation."
+    "status": "CORE_STOP_RULES_HEALTHY_EPISODE_AWARE_REFRAME_SEMANTICS_PROSPECTIVELY_EXPLICIT_LIVE_EXECUTION_UNTESTED",
+    "finding": "MAIN correctly idles and terminal work is not reopened. Analyst now explicitly assigns a non-evidentiary qualitative theory-backward search-space reframe before any next candidate decision. First live execution remains to be audited."
   },
   "prospective_recommendations": [
     "Keep admission, comparator, reduction, claim-type, readiness and hard-integrity floors unchanged.",
-    "Keep NO_COHERENT_MECHANISM_TARGET outside candidate/conversion denominators and do not force a MECHANISM object to improve the 1/3 ratio.",
-    "Add a machine-readable mechanism-surface signature or no-target episode id to distinguish repeated same-landscape checks from independent post-delta opportunities.",
-    "Persist episode check count, specific mechanism-relevant delta since the prior check, and candidate surfaces actually reconsidered.",
-    "When the same no-target episode persists, qualitatively broaden/reframe theory-backward search or document intentional exhaustion; do not use a universal numeric exception-rate threshold.",
-    "Continue auditing first READY-to-PRE_FORMAL and first genuine SYSTEM-over-comparable-MECHANISM exception prospectively.",
-    "Never reopen, rescore, rerun, invalidate or upgrade consumed/frozen historical objects solely because of methodology changes."
+    "Preserve no_target_episode_id/mechanism_surface_signature and report same-episode checks, independent episodes and actual scientific selections separately.",
+    "On the next SUB opportunity perform the Analyst-authorized non-evidentiary qualitative theory-backward search-space reframe before candidate selection; record distinct mechanism question families considered and their reduction/falsifier disposition.",
+    "Do not require source-code delta for fresh theory-level questions and do not force a candidate if none survives quality requirements.",
+    "Continue auditing first READY-to-PRE_FORMAL and first genuine SYSTEM-priority exception live use."
   ],
-  "utility_request": null,
+  "utility_request": {
+    "created": false,
+    "reason": "Live rollout of the newly explicit no-target reframe lane is higher-information than a synthetic methodology probe."
+  },
   "hard_floor_confirmation": {
     "status": "CONFIRMED_DO_NOT_RELAX",
     "no_rerun_retune_consumed_identities": true,
     "prospective_frozen_protocols": true,
     "raw_before_score": true,
     "preserve_before_read": true,
-    "exact_identity_source_package_runtime_input_binding": true,
+    "exact_binding": true,
     "immutable_evidence": true,
     "no_evaluator_target_leakage": true,
     "no_silent_post_outcome_repair": true
   },
   "confidence": {
     "overall": "HIGH",
-    "third_no_target_event_credibility": "HIGH",
-    "long_run_mechanism_supply_health": "MODERATE",
+    "episode_observability": "HIGH",
+    "stop_reframe_semantics": "MODERATE_HIGH_PROSPECTIVE_RULE_EXPLICIT_LIVE_REFRAME_UNTESTED",
+    "long_run_mechanism_supply": "MODERATE",
     "first_ready_to_preformal": "INSUFFICIENT_EVIDENCE",
-    "first_genuine_system_priority_exception": "INSUFFICIENT_EVIDENCE"
+    "first_system_priority_exception": "INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_analyst": [
-    "Add a machine-readable mechanism-surface signature / no-target episode id so same-landscape repeated checks are distinguishable from independent post-delta opportunities.",
-    "Continue reporting total and consecutive no-target checks separately from the last-three scientific-selection ratio, but do not treat every same-episode check as an independent calibration validation.",
-    "If a no-target episode persists under an unchanged mechanism landscape, qualitatively broaden/reframe the theory-backward search space or document why it is intentionally exhausted; do not force a candidate and do not introduce a numeric cutoff.",
-    "Preserve the first READY object's pre-outcome readiness rationale for development-readiness audit.",
-    "Persist any future SYSTEM-over-comparable-MECHANISM exception before execution."
-  ],
-  "persistence": {
-    "branch": "ops/methodology-calibration-audit",
-    "latest_path": "analysis/methodology_calibration/latest.md",
-    "state_path": "analysis/methodology_calibration/state.json",
-    "history_path": "analysis/methodology_calibration/history/2026-09-21/0521.md",
-    "latest_commit": "54885278f5b6fa48619dd6c8b78df70630f92faa",
-    "state_commit": "THIS_COMMIT",
-    "history_commit": "PENDING_APPEND_ONLY_CREATE",
-    "force_push": false
-  }
+    "Preserve no_target_episode_id, mechanism_surface_signature and same-episode check count as canonical funnel fields.",
+    "Audit the first live qualitative reframe for genuinely distinct theory-level mechanism families rather than another local source rescan.",
+    "If the reframe yields no candidate, keep it in the same episode unless a material mechanism-surface delta changes the signature; do not impose a numeric cutoff.",
+    "Preserve the first READY object's pre-outcome readiness rationale so READY-to-PRE_FORMAL can be audited as development/test readiness rather than prior success.",
+    "For any future SYSTEM-over-comparable-MECHANISM execution, require the machine-readable exception before execution."
+  ]
 }
