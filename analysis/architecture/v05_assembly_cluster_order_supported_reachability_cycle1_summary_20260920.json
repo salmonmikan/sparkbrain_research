@@ -1,0 +1,48 @@
+{
+  "schema": "sparkbrain-architecture-study-summary-v1",
+  "candidate_id": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
+  "lane": "ASSEMBLY_CLUSTER_ORDER_SUPPORTED_REACHABILITY_ARCHITECTURE_STUDY_CYCLE1_STATIC",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "claim_ceiling": "SYSTEM",
+  "evidentiary_status": "NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_OBSERVATION",
+  "analyst_generation": "EVA-20260920T195817+0900-R19-B6E2F41A",
+  "analyst_authority_commit": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
+  "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "prospective_contract_commit": "82396b7969fc0f1fe6b4afb18bdc07b947396dab",
+  "static_facts_commit": "f0e12fd12e81bdbc539d7f1a489ad112a39ca8d5",
+  "terminal": "ORDER_UNSPECIFIED_AND_SUPPORTED_REACHABILITY_UNESTABLISHED",
+  "mapped_disposition": "HOLD",
+  "mapped_hold_class": "HOLD_SYSTEM_TERMINAL",
+  "mapped_hold_reason": [
+    "CROSS_PATTERN_PRESENTATION_ORDER_CONTRACT_UNSPECIFIED",
+    "SUPPORTED_NONTRANSITIVE_BRIDGE_PATTERN_REACHABILITY_UNESTABLISHED"
+  ],
+  "mapped_terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+  "mapped_queue_state": "NOT_QUEUED",
+  "terminal_rationale": [
+    "Stable TemporalAssemblyMemory is first-prototype threshold clustering: the first observed ActivityPattern becomes candidate.prototype and later matches update counts/lineage without replacing that prototype.",
+    "The integrated path is deterministic about local chronology: CascadeTracker sorts spikes by (time_ms, unit_id), patterns_from_step preserves cascade iteration order, and IntegratedV05Brain observes the returned patterns sequentially. The reference world also sorts pulses and uses a fixed alternating training-episode sequence.",
+    "Stable v0.5 docs/tests define ordered activity inside an Assembly pattern as meaningful, but do not define whether the sequence in which multiple ActivityPattern observations reach the online clusterer is itself an intended clustering semantic or must be partition-invariant.",
+    "The retained protocol's order_shuffle control changes event-symbol order inside held-out episodes; it does not reorder the same learned ActivityPattern multiset into TemporalAssemblyMemory and therefore does not establish the component bridge effect on the supported integrated learning path.",
+    "No fixed-surface stable-main doc/test/callsite statically precludes non-transitive bridge-like ActivityPattern similarity sets, but none explicitly demonstrates or guarantees that such a bridge set is produced and presented in order-varying form by the supported integrated v0.5 path.",
+    "Assembly partition identity is semantically consumed downstream: prediction counts and action scores/visits are keyed by assembly_id, suppression/evaluation target assembly IDs, and checkpoint state preserves Assembly candidates plus predictor/action state. Thus a reachable partition difference could matter beyond cosmetic renaming, but supported bridge-like reachability is not established in this static cycle."
+  ],
+  "architecture_interpretation": "The component-level first-prototype order effect is real SYSTEM information, but the supported integrated v0.5 surface does not currently establish that an equivalent non-transitive ActivityPattern multiset can reach TemporalAssemblyMemory in alternative presentation orders. Cross-pattern presentation-order semantics are also not explicitly specified. Downstream state is assembly-partition conditioned, so the issue is not dismissed as mere ID naming; it remains a terminal supported-reachability/contract uncertainty for this object.",
+  "ordinary_reductions": [
+    "FIRST_PROTOTYPE_THRESHOLD_CLUSTERING",
+    "CHRONOLOGICAL_CASCADE_TO_PATTERN_PRESENTATION",
+    "ASSEMBLY_ID_KEYED_PREDICTION_AND_ACTION_STATE"
+  ],
+  "support_breadth": "STATIC_STABLE_MAIN_SOURCE_DOC_TEST_CALLSITE_INVENTORY_ONLY; NO_DYNAMIC_INTEGRATED_BRIDGE_REACHABILITY_PROBE",
+  "formal_scientific_evidence_created": false,
+  "pre_formal_development_evidence_created": false,
+  "mechanism_architecture_observation_created": false,
+  "system_architecture_observation_created": true,
+  "official_test_accessed": false,
+  "formal_identity_created_or_consumed": false,
+  "production_source_mutated": false,
+  "dynamic_integrated_permutation_experiment_run": false,
+  "same_run_cycle2_authorized": false,
+  "next_action": "STOP for fresh Evidence Analyst review. Any dynamic integrated discriminator, supported bridge generator, canonicalization/mitigation patch, mechanism successor, or cycle 2 requires a fresh object and fresh prospective authority.",
+  "integrity_state": "GREEN_STATIC_CHARACTERIZATION_PENDING_EXACT_HEAD_ORDINARY_CI"
+}
