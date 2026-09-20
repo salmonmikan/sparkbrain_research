@@ -1,13 +1,13 @@
 {
-  "timestamp": "2026-09-20T06:30:00+09:00",
+  "timestamp": "2026-09-20T09:32:39+09:00",
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot_jst": "06:30",
+  "schedule_slot_jst": "09:30",
   "schedule_inference_used": false,
   "control_plane_mailbox_semantics_respected": true,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_refractory_architecture": "research/main-refractory-current-accounting-arch-study-20260920@4ac9aeead78ec8d053291f922096fab7e31f6070",
-    "refractory_discovery_source": "research/exploratory-sub-refractory-inhibition-cancellation-20260920@7b1dff2b1b3677c4af37969364b74d119bd942a8",
+    "active_homeostasis_architecture": "research/main-v05-homeostasis-population-contract-arch-study-20260920@81af6ac56c31d169b591bc30854d0efa9d0bac8c",
+    "homeostasis_discovery": "research/exploratory-sub-homeostasis-receptor-dead-mask-20260920@8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f",
     "authoritative_evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
@@ -18,7 +18,6 @@
     "authoritative_evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
     "legacy_freeze_branch_count": 13,
     "preserve_refs_present": true,
     "control_refs_present": true,
@@ -26,125 +25,118 @@
     "fresh_started_observed": false,
     "fresh_formal_test_authority_observed": false,
     "fresh_formal_evidence_observed": false,
-    "pr_148": "open_unmerged_mergeable",
-    "pr_149": "open_unmerged_mergeable"
+    "pr_148": "open_unmerged",
+    "pr_149": "open_unmerged_per_latest_control_reconciliation"
   },
   "source_blobs_inspected": {
-    "src/sparkbrain/v04/field.py": "e2279d69cd04030238317361d5ee3abdc1009c32"
+    "src/sparkbrain/v05/homeostasis.py": "67b87a4b4c91a7dba41670087a2d1803bb6e3e6c",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "architecture_summary_head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c"
   },
-  "control_brain_commit_consumed": "98155846394925730997fc35389fd6ad1b53f710",
-  "evidence_analyst_commit_consumed": "eb1c305017d32c8c3efb0794e547b889e5a80461",
-  "orchestrator_report_branch_ref_observed": "da28a2314ad08704c3e2b183cce8bd63a0360c68",
-  "main_report_blob_consumed": "89630f92f394cd2c66c287a5c0bc6174a22b1f45",
-  "main_state_blob_consumed": "1802420d3f43654a31c987af0764e1a6e01105ca",
-  "sub_report_blob_consumed": "c7de49c033d5f0d90a718678c074ec88f0e7ee8e",
-  "sub_state_blob_consumed": "544bf969d42fdee6611a3dab9c417126c01ecbf8",
+  "control_brain_commit_consumed": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
+  "evidence_analyst_commit_consumed": "df12559698c0f6bc0165c550a55c62f7287a86bd",
+  "orchestrator_report_branch_ref_observed": "e594848c0177179f42599355a7406ec2ed9116aa",
+  "main_report_blob_consumed": "7fec4cb40e75f2e079bbf0f5657fec7c8ef59bb8",
+  "main_state_blob_consumed": "377225cedae930ede3a4bdb2ca136eecaad31d24",
+  "sub_report_blob_consumed": "ebca262b0de5f74065afaeea1a69f082960c482b",
   "newest_role_history_consumed": [
-    "reports/orchestrator/history/2026-09-20/0624-main.md",
-    "reports/orchestrator/history/2026-09-20/0544-sub.md"
+    "reports/orchestrator/history/2026-09-20/0919-main.md",
+    "reports/orchestrator/history/2026-09-20/0846-sub.md"
   ],
-  "prior_literature_handoff_tip_before_run": "123b05253edbe3247cf4979e0bae1e230de0b4e6",
-  "prior_literature_latest_consumed": "2026-09-20T03:30:00+09:00",
+  "prior_literature_handoff_tip_before_run": "a39f0007a55000efd7a237f05e21d381176e47f1",
+  "prior_literature_latest_consumed": "2026-09-20T06:30:00+09:00",
   "fresh_repository_workflow_observed": {
-    "architecture_run_id": 35470259892,
-    "ordinary_ci_run_id": 35470259884,
-    "head": "4ac9aeead78ec8d053291f922096fab7e31f6070",
-    "architecture_status": "completed",
-    "architecture_conclusion": "failure",
-    "ordinary_ci_status": "completed",
-    "ordinary_ci_conclusion": "failure",
-    "failure_stage": "compile_and_lint_architecture_harness",
-    "outcome_bearing_architecture_job": "skipped",
-    "valid_architecture_terminal_result": false,
-    "outcome_bearing_artifact_observed": false,
-    "interpretation": "PRE_OUTCOME_MECHANICAL_BLOCKER_ONLY_NO_SCIENTIFIC_RESULT"
+    "ordinary_ci_run_id": 35478448679,
+    "head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
+    "status": "completed",
+    "conclusion": "success",
+    "role": "repository_integrity_only",
+    "mailbox_last_observed_status": "in_progress",
+    "interpretation": "CI_WAIT_CLOSED_WITHOUT_CHANGING_PROSPECTIVELY_MAPPED_STATIC_TERMINAL"
   },
   "genuinely_new_information": true,
   "current_repository_interpretation": {
     "new_formal_scientific_evidence": false,
-    "main_lane": "REFRACTORY_CURRENT_ACCOUNTING_ARCHITECTURE_STUDY_CYCLE1_PRE_OUTCOME_BLOCKED",
-    "candidate": "CAND-REFRACTORY-CURRENT-ACCOUNTING-01",
+    "main_lane": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_COMPLETE_STATIC_TERMINAL",
+    "candidate": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
+    "mapped_outcome": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
     "pre_formal": "EMPTY_HOLD",
     "formal": "EMPTY_HOLD",
-    "claim_boundary": "Architecture/API state-semantics characterization only; no terminal Architecture result exists yet because the exact-head workflow failed before outcome execution."
+    "claim_boundary": "NON_EVIDENTIARY Architecture/API population-observability characterization only; exact-head CI is now successful and the object remains stopped for fresh Evidence Analyst review."
   },
   "findings": [
     {
-      "id": "REFRACTORY_POLICY_IS_EXPLICIT_MODEL_SEMANTICS",
-      "summary": "Established simulators do not assign one universal input policy to the phrase absolute refractory. Brian 2 can freeze selected state variables while allowing others to evolve; NEST iaf_psc_delta discards refractory input by default or can defer it to refractory exit. SparkBrain therefore needs an explicit discard/defer/clamp/integrate contract rather than inferring semantics from the label alone.",
+      "id": "EXTERNAL_INPUT_AND_RECURRENT_LIVENESS_ARE_DISTINCT",
+      "summary": "Homeostatically regulated recurrent-network literature treats external input as a separate control variable that can sustain population spiking while placing the recurrent network in a different dynamical regime. Aggregate nonzero activity therefore does not establish recurrent/internal liveness.",
       "sources": [
-        "Brian 2 Refractoriness documentation",
-        "NEST Simulator iaf_psc_delta documentation v3.9"
+        "Zierenberg, Wilting & Priesemann, Physical Review X 2018, DOI 10.1103/PhysRevX.8.031018"
       ],
       "direct_applicability_confidence": "HIGH"
     },
     {
-      "id": "NETTING_THEN_REFRACTORY_GATE_IS_ORDINARY_OPERATOR_ORDERING",
-      "summary": "Current-based LIF references algebraically combine excitatory and inhibitory currents while separately defining refractory voltage clamping. SparkBrain's production path uses ordinary signed-current netting followed by a custom negative-only refractory membrane update, so balanced excitation can cancel inhibition before the gate without any additional memory mechanism.",
+      "id": "AFFERENT_VS_RECURRENT_ATTRIBUTION_HAS_ORDINARY_BASELINE",
+      "summary": "The reverberating branching-model literature explicitly decomposes afferent external activation from recurrent internal activation, with external fraction h/<A> = 1-m in the model. This supplies an ordinary conceptual baseline for source-stratified liveness rather than one all-field dead flag.",
       "sources": [
-        "NEST Simulator iaf_psc_alpha documentation",
-        "NEST Simulator iaf_psc_exp documentation"
+        "Wilting & Priesemann, Cerebral Cortex 2019, DOI 10.1093/cercor/bhz049"
       ],
-      "direct_applicability_confidence": "HIGH_AS_ARCHITECTURE_REDUCTION"
+      "direct_applicability_confidence": "HIGH_AS_CONCEPTUAL_REDUCTION"
     },
     {
-      "id": "POST_REFRACTORY_EFFECT_IS_RETAINED_STATE_SEMANTICS",
-      "summary": "Standard generalized integrate-and-fire and simulator models allow different state variables to evolve or retain history across refractory intervals. A later probe-spike difference caused by a refractory-time input is therefore ordinary retained-state behavior unless a distinct residual remains after explicit state-policy controls.",
+      "id": "HOMEOSTATIC_POPULATION_BOUNDARY_IS_A_MODEL_CHOICE",
+      "summary": "Homeostatic plasticity spans neuron-own firing-rate sensing, local adaptation, cell-autonomous scaling/structural plasticity and network-wide regulation. Pooling receptor and reservoir units under one target, denominator and liveness detector is therefore not a canonical consequence of homeostasis and should be an explicit contract choice.",
       "sources": [
-        "Brian 2 Refractoriness documentation",
-        "Jolivet et al., Generalized Integrate-and-Fire Models, Journal of Neurophysiology, DOI 10.1152/jn.00190.2004"
+        "Turrigiano, Cold Spring Harbor Perspectives in Biology 2012, DOI 10.1101/cshperspect.a005736",
+        "Lu et al., eLife Version of Record 2025-07-04, DOI 10.7554/eLife.88376.3"
       ],
-      "direct_applicability_confidence": "HIGH"
+      "direct_applicability_confidence": "HIGH_FOR_API_POPULATION_SEMANTICS"
     },
     {
-      "id": "CURRENT_CANCELLATION_NOT_BIOLOGICALLY_GENERAL",
-      "summary": "Conductance-based neuron models compute E/I effects from membrane voltage and reversal potentials, and shunting-inhibition theory shows nonlinear excitation-inhibition interactions. Equal nominal positive/negative current cancellation is therefore specific to the current-based engineering abstraction and should not be generalized biologically.",
+      "id": "STABILITY_IS_MULTI_OBSERVABLE",
+      "summary": "Firing-rate recovery and correlation/network-structure recovery can depend on different homeostatic mechanisms and recover independently. A single dead boolean or active-unit fraction therefore should not be interpreted as generic network stability without a named observable contract.",
       "sources": [
-        "NEST Simulator iaf_cond_exp documentation v3.9",
-        "Tuckwell, On shunting inhibition, Biological Cybernetics 1986, DOI 10.1007/BF00341923"
+        "Wu et al., PNAS 2020, DOI 10.1073/pnas.1918368117"
       ],
       "direct_applicability_confidence": "HIGH_FOR_INTERPRETATION_BOUNDARY"
     }
   ],
   "affected_lines": [
-    "CAND_REFRACTORY_CURRENT_ACCOUNTING_01",
-    "V04_REFRACTORY_SEMANTICS",
-    "ARCHITECTURE_API_STATE_SEMANTICS",
-    "BIOLOGICAL_INTERPRETATION_BOUNDARY",
+    "CAND_V05_HOMEOSTASIS_POPULATION_SEMANTICS_01",
+    "V05_HOMEOSTASIS_POPULATION_CONTRACT",
+    "ARCHITECTURE_STABILITY_OBSERVABILITY",
+    "RECURRENT_VS_AFFERENT_ACTIVITY_ATTRIBUTION",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "full membrane clamp with refractory input discarded",
-    "deferred refractory input applied at refractory exit",
-    "spike-only refractory gate with continued state integration",
-    "production-specific negative-only post-net membrane update",
-    "future current-based versus conductance-based E/I discriminator only if a biological claim independently appears"
+    "source-stratified receptor/afferent versus recurrent/reservoir activity telemetry",
+    "recurrent-contribution or branching-style attribution baseline where scientifically appropriate",
+    "explicit per-population homeostatic targets and active-fraction denominators",
+    "separate whole-field liveness, internal-reservoir liveness, firing-rate and correlation/stability observables"
   ],
-  "confidence": "HIGH_FOR_ARCHITECTURE_REDUCTION_MODERATE_TO_HIGH_FOR_CROSS_SIMULATOR_GENERALIZATION",
+  "confidence": "HIGH_FOR_ARCHITECTURE_REDUCTION_MODERATE_FOR_DIRECT_QUANTITATIVE_TRANSFER_OF_BRANCHING_MODEL",
   "prospective_baselines_or_discriminators": [
-    "full membrane clamp with refractory inputs discarded",
-    "deferred refractory-input semantics with application at refractory exit",
-    "spike-only refractory gate with explicitly declared continued state integration",
-    "SparkBrain negative-only post-net clamp as production-specific contract",
-    "future current-based versus conductance-based E/I discriminator only for a fresh biological claim"
+    "source-stratified receptor/afferent versus recurrent/reservoir activity telemetry",
+    "recurrent-contribution or branching-style attribution baseline where scientifically appropriate",
+    "explicit per-population homeostatic targets and active-fraction denominators",
+    "separate whole-field liveness, internal-reservoir liveness, firing-rate and correlation/stability observables",
+    "matched receptor-aware comparator only in a genuinely fresh prospectively authorized object"
   ],
   "questions_for_evidence_analyst": [
-    "Keep the current object at Architecture/API semantics regardless of which valid fixed terminal it eventually reaches?",
-    "Treat absolute refractory as insufficient to infer input semantics and require the supported contract to explicitly name discard/defer/clamp/integrate behavior?",
-    "Preserve the current-based engineering-abstraction boundary and avoid biological interpretation from the balanced plus/minus current arm?"
+    "Close the current static object at WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED now that exact-head CI has succeeded, without same-object dynamic continuation?",
+    "Require any future stability contract to bind both the regulated population and the named stability observable rather than treating dead/active_unit_fraction as generic network health?",
+    "If a fresh successor is warranted, use source-stratified afferent/recurrent accounting as an ordinary baseline rather than framing receptor masking as a novel mechanism?"
   ],
   "questions_for_control_brain": [
-    "Add explicit refractory input/state policy to the ordinary architecture reduction checklist?",
-    "Keep PRE_FORMAL/FORMAL empty for this line unless an independently new mechanism survives these ordinary state-semantics reductions?",
-    "Let MAIN/Relay own the pre-outcome lint/compile blocker under the existing fixed contract rather than creating a duplicate Utility diagnostic?"
+    "Add afferent-versus-recurrent activity attribution and population-specific homeostatic targets to the ordinary architecture reduction checklist?",
+    "Keep this line outside PRE_FORMAL/FORMAL novelty accounting unless a distinct mechanism survives source/population and multi-observable stability reductions?",
+    "Preserve the current stop boundary and let fresh Analyst review decide whether any successor has enough supported-system relevance to justify MAIN time?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
-    "CAND-REFRACTORY-CURRENT-ACCOUNTING-01 prospective contract commit c32ec231e217f4229b761f2ccf426f3ecd7ed582",
-    "exact research head 4ac9aeead78ec8d053291f922096fab7e31f6070 and failed pre-outcome workflow/CI record",
-    "no literature-driven repair/rerun/comparator-current-time-probe-terminal-map mutation/cycle2/PRE_FORMAL/FORMAL promotion",
-    "no official TEST, new formal identity/STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
+    "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01 prospective contract commit 4930d894af5b0880d9e443f7582db3a96c206a4e",
+    "raw facts commit 8f5d7e23b6896d9352daa77f885a4a1cc52ae820 and mapped terminal head 81af6ac56c31d169b591bc30854d0efa9d0bac8c",
+    "exact-head CI 35478448679 successful repository-integrity record",
+    "no literature-driven dynamic comparator, population-policy change, cycle 2, PRE_FORMAL/FORMAL promotion, official TEST, new formal identity/STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
   ],
   "utility_request_created": null
 }
