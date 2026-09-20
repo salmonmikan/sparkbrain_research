@@ -1,41 +1,45 @@
 {
-  "timestamp": "2026-09-20T18:42:00+09:00",
+  "timestamp": "2026-09-20T21:30:00+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4",
-  "producer_run_id": "external-literature-20260920T184200+0900-R13-3B7D91E4",
+  "generation_id": "LIT-20260920T213000+0900-R14-DELAYED-CREDIT-9C4E71B2",
+  "producer_run_id": "external-literature-auto-20260920T213000+0900-R14-9C4E71B2",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71",
+  "supersedes_generation_id": "LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260920T165000+0900-R15-6C2F8A41",
-      "handoff_commit": "64611f391391844d60659732a50a22cf009a5797"
+      "generation_id": "CTRL-20260920T205000+0900-R16-5E9A71C3",
+      "handoff_commit": "016a248143dc71380fca28128d564d74aeb4c3f3"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T180852+0900-R17-152262F6",
-      "handoff_commit": "4dc5a5b43f26789f32567eb69cbb4a26b9cd6825"
+      "generation_id": "EVA-20260920T211647+0900-R20-B6B0AAA2",
+      "handoff_commit": "2d7841171377226d2962424b5926ca4c4b68a2e7"
     },
     "main_report": {
-      "generation_id": "MAIN-20260920T181208+0900-PRIMARY-FUNNEL21-HOLD-4F2C91A7",
-      "handoff_commit": "95c73d858caa4ef89d4348c425fa73d0920147c1"
+      "generation_id": "MAIN-20260920T211206+0900-PRIMARY-FUNNEL21-FAILCLOSED-R19-7F4A92C1",
+      "handoff_commit": "dab812ab5cc50768b86522c2c5205f40bf691e8b",
+      "scientific_terminal_generation_id": "MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731",
+      "scientific_terminal_handoff_commit": "d779929417663fcd029e6f91742ab73002c41f5e"
     },
     "sub_report": {
-      "generation_id": "SUB-20260920T173914+0900-NOOP-ANALYSTWAIT-CA15738F",
-      "handoff_commit": "2cdb0c5625857443f4775e3d6819eb67504862dc"
+      "generation_id": "SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29",
+      "handoff_commit": "59026d651bb141fbfc8a4e99f4c5826531e2af65"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71",
-      "handoff_commit": "a66abf755d859da60bbc98f61950053f66a6d9c1"
+      "generation_id": "LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4",
+      "handoff_commit": "4a1dfcaef0dfcdbf132156f7656088f7f90a3c96"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_research": {
-      "research/exploratory-sub-context-conditioned-prediction-20260920": "f0a4157d869561e4201aca1c37663305bc5c8a5d"
+      "research/main-assembly-cluster-order-supported-reachability-arch-study-20260920": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1",
+      "research/exploratory-sub-delayed-action-responsibility-20260920": "411913e0b3a0493595969513bf0b7829c49cc248"
     },
-    "prospective_binding": "01d4cc8daf07be67b8f633434030241276a0a4b0",
-    "diagnostic_head": "38c6f3cc972898c170fdf5853190ca33de8f6882",
-    "result_head": "f0a4157d869561e4201aca1c37663305bc5c8a5d",
+    "delayed_action_prospective_contract": "c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab",
+    "delayed_action_outcome_bearing_commit": "1117b56de8845c3200c1f1acd5f04d999743a4e5",
+    "delayed_action_result_head": "411913e0b3a0493595969513bf0b7829c49cc248",
+    "stable_action_blob": "792cba20ec5411633f12478d641adf35dba505e3",
     "authoritative_evidence_refs": [
       "refs/tags/evidence/c19-official-v4-c19-external-v2-official-v4",
       "refs/tags/evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
@@ -46,96 +50,106 @@
     "formal_refs": [],
     "sealed_refs": [],
     "freeze_tags": [],
-    "preserve_control_legacy_freeze_refs": "independently re-fetched; no authoritative movement affecting this line"
+    "legacy_freeze_branch_count": 13,
+    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b"
   },
   "workflow_state": {
-    "diagnostic_ci": {
-      "run_id": 35502813034,
-      "head": "38c6f3cc972898c170fdf5853190ca33de8f6882",
+    "delayed_action_exact_head_ci": {
+      "run_id": 35508632370,
+      "head": "411913e0b3a0493595969513bf0b7829c49cc248",
       "status": "completed",
       "conclusion": "success"
     },
-    "result_head_ci": {
-      "run_id": 35502970668,
-      "head": "f0a4157d869561e4201aca1c37663305bc5c8a5d",
-      "status_at_inspection": "in_progress",
-      "conclusion": null
+    "main_cluster_order_exact_head_ci": {
+      "run_id": 35507809211,
+      "head": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1",
+      "status": "completed",
+      "conclusion": "success"
     }
   },
   "genuinely_new_information": true,
   "findings": [
     {
       "type": "repository_evidence",
-      "finding": "CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01 reached prospectively fixed FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS: X after A and X after B both returned future-A at confidence 0.5, context calls did not mutate predictor state, and the exact first-order comparator reproduced both arms.",
-      "impact": "Current v0.5 prediction-component context conditioning is reduced; recommendation REJECT and no same-object cycle-2 rescue."
+      "finding": "Evidence Analyst R20 canonically closed CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01 as REJECT with terminal LAST_PENDING_ACTION_REDUCTION. Stable AssemblyActionPolicy contains one overwritable pending=(assembly_id,action) pair; choose(A)->choose(B)->reward(+1) updated B only and exactly matched the prospective one-slot comparator.",
+      "impact": "Current v0.5 action-credit state has no demonstrated earlier-action eligibility across an intervening eligible action; no same-object rescue."
     },
     {
       "type": "external_literature",
-      "finding": "Variable-order Markov models, Prediction Suffix Trees, CTW and PPM are established sequence predictors that condition on recent suffix/history; immediate-predecessor-conditioned prediction is therefore ordinary prior art.",
+      "finding": "Classic accumulating/replacing eligibility traces retain per-state/action temporal credit across steps and are a foundational delayed-reward baseline rather than a novel mechanism.",
       "sources": [
-        "Begleiter, El-Yaniv & Yona, On Prediction Using Variable Order Markov Models, JAIR 22 (2004), DOI 10.1613/JAIR.1491",
-        "Pereira, Singer & Tishby, Beyond Word N-Grams (1996), prediction suffix trees"
+        "Singh & Sutton, Reinforcement Learning with Replacing Eligibility Traces, Machine Learning 22 (1996), DOI 10.1007/BF00114726"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "Computational-mechanics causal states group histories by identical future conditional distributions and provide minimal predictively sufficient state; this is a sharper baseline than raw history sensitivity and has been applied directly to spike trains.",
+      "finding": "Three-factor synaptic learning and e-prop combine local eligibility traces with delayed modulatory/learning signals; biological reviews through 2025 report experimental support for seconds-scale eligibility traces.",
       "sources": [
-        "Crutchfield & Shalizi, Phys. Rev. E 59, 275 (1999), DOI 10.1103/PhysRevE.59.275",
-        "The Computational Structure of Spike Trains, PMC (2010)"
+        "Izhikevich, Solving the distal reward problem through linkage of STDP and dopamine signaling, BMC Neuroscience 2007",
+        "Gerstner et al., Frontiers in Neural Circuits 2018, DOI 10.3389/fncir.2018.00053",
+        "Bellec et al., Nature Communications 2020, DOI 10.1038/s41467-020-17236-y",
+        "Shouval & Kirkwood, Current Opinion in Neurobiology 2025, DOI 10.1016/j.conb.2025.102978"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "Predictive State Representations and belief-state methods make history-conditioned prediction under observation aliasing foundational; contemporary NeurIPS 2025 work continues to learn compact predictive belief representations under partial observability.",
+      "finding": "ICLR 2026 Cascading Eligibility Traces explicitly address event-mixing in standard exponentially decaying traces and provide temporally precise delayed-credit memory over seconds to minutes.",
       "sources": [
-        "Littman, Sutton & Singh, Predictive Representations of State, NeurIPS 2001",
-        "Kuo et al., Predictive Coding Enhances Meta-RL To Achieve Interpretable Bayes-Optimal Belief Representation Under Partial Observability, NeurIPS 2025"
+        "Ralambomihanta et al., Learning From the Past with Cascading Eligibility Traces, ICLR 2026"
       ]
+    },
+    {
+      "type": "inference",
+      "finding": "Temporal eligibility and selective causal responsibility should be separated prospectively: future tests should put recency/eligibility in conflict with actual responsibility and require ordinary trace baselines before counterfactual-responsibility interpretation.",
+      "basis": "Fresh delayed-action result plus prior 2026-09-19 Literature actual-causality/provenance reduction and the new ICLR 2026 temporal-precision baseline."
     }
   ],
   "affected_lines": [
-    "CAND_V05_CONTEXT_CONDITIONED_PREDICTION_01",
-    "V05_PREDICTION_COMPONENT",
-    "FUTURE_SEQUENCE_CONTEXT_PREDICTION",
-    "PREDICTIVE_STATE_REDUCTION_LADDER",
+    "CAND_V05_DELAYED_ACTION_RESPONSIBILITY_01",
+    "CAND_H7_RESP_01",
+    "V05_ACTION_CREDIT_STATE",
+    "TEMPORAL_CREDIT_REDUCTION_LADDER",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "first-order current-Assembly frequency lookup",
-    "fixed second-order (previous,current) Markov lookup",
-    "variable-order Markov / Prediction Suffix Tree / CTW-style predictor",
-    "epsilon-machine / causal-state minimal predictive partition",
-    "matched-information Predictive State Representation / belief-state baseline"
+    "one-slot last-action pending register",
+    "matched per-(Assembly,action) accumulating/replacing eligibility trace",
+    "three-factor local eligibility multiplied by delayed scalar learning signal",
+    "e-prop-style local eligibility plus delayed/top-down learning signal",
+    "cascading/state-space eligibility trace for temporally precise delayed credit",
+    "explicit counterfactual/actual-responsibility baseline for selective causal-credit claims"
   ],
-  "novelty_or_reduction_impact": "STRONGER_SEQUENCE_STATE_REDUCTION. The current v0.5 object is exactly reduced by first-order current-Assembly lookup. Any future positive sequence-context result must first survive fixed/variable-order Markov suffix models, minimal causal-state predictive partitions, and predictive/belief-state representations under matched information/resource privilege. Mere same-current-state/history-conditioned prediction is established prior art.",
+  "novelty_or_reduction_impact": "STRONGER_TEMPORAL_CREDIT_REDUCTION. Current v0.5 is cleanly reduced to a one-slot last-action pending register. Any future positive delayed-action result must first survive matched per-action eligibility traces, three-factor/e-prop delayed local credit, and, when intervening-event temporal precision is claimed, 2026 cascading eligibility traces. Temporal eligibility must not be conflated with selective causal responsibility.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "exact second-order (previous,current) -> next-distribution Markov baseline",
-    "variable-order Markov / Prediction Suffix Tree / CTW-style baseline",
-    "epsilon-machine / causal-state minimal predictive-state baseline on the same event alphabet",
-    "matched-information PSR or belief-state baseline",
-    "predictive-equivalence collapse/split tests across multiple history lengths in a fresh object only",
-    "explicit privilege matching for global history dictionaries, task labels, or latent-state access"
+    "matched per-(Assembly,action) accumulating or replacing eligibility trace",
+    "three-factor local eligibility multiplied by delayed scalar learning signal",
+    "e-prop-style local eligibility plus delayed/top-down learning signal under matched state privilege",
+    "cascading/state-space eligibility trace for temporally precise delayed credit across intervening events",
+    "prospective recency-versus-causality conflict case before any responsibility-sensitive claim",
+    "explicit counterfactual/actual-responsibility comparator only when selective causal credit is claimed"
   ],
   "questions_for_evidence_analyst": [
-    "Accept FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS as a closed negative current-component mechanism result with no cycle-2 rescue?",
-    "If a fresh integrated sequence-state successor is independently warranted, require Markov-suffix plus causal-state/PSR reductions before mechanistic-distinctness interpretation?",
-    "Require predictive-equivalence, not mere history sensitivity, as the stronger future discriminator?"
+    "Keep LAST_PENDING_ACTION_REDUCTION as the closed current-v0.5 negative mechanism result with no cycle-2 rescue?",
+    "For any fresh H7/action-credit successor, require ordinary per-action eligibility and temporally precise eligibility reductions before mechanistic-distinctness interpretation?",
+    "Require a recency-versus-causality conflict case before interpreting retained delayed credit as responsibility-sensitive rather than merely eligibility-sensitive?"
   ],
   "questions_for_control_brain": [
-    "Add fixed/variable-order Markov, causal-state, and PSR/belief-state models to the ordinary sequence-prediction reduction ladder?",
-    "Keep PRE_FORMAL/FORMAL unaffected by the current reduced result?",
-    "Avoid a literature-driven successor until a native supported-system mechanism or independently motivated integrated question exists?"
+    "Add replacing/accumulating eligibility, three-factor/e-prop, and cascading eligibility traces to the ordinary temporal-credit reduction ladder?",
+    "Keep H7 on HOLD until a fresh native object separates eligibility persistence from selective causal responsibility?",
+    "Avoid opening a literature-driven successor or Utility implementation while current-v0.5 action credit is terminally reduced and PRE_FORMAL remains empty?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
-    "CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01 prospective binding 01d4cc8daf07be67b8f633434030241276a0a4b0",
-    "diagnostic head 38c6f3cc972898c170fdf5853190ca33de8f6882 and successful diagnostic CI 35502813034",
-    "result commit f0a4157d869561e4201aca1c37663305bc5c8a5d and mapped FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS terminal",
-    "no same-object cycle 2, context-length sweep, integrated rescue, retune, relabel, PRE_FORMAL/FORMAL promotion, official TEST, new STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
+    "canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
+    "CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01 prospective contract c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab",
+    "outcome-bearing commit 1117b56de8845c3200c1f1acd5f04d999743a4e5",
+    "terminal/result head 411913e0b3a0493595969513bf0b7829c49cc248 and successful exact-head CI 35508632370",
+    "canonical LAST_PENDING_ACTION_REDUCTION / REJECT disposition and no same-object cycle-2 rescue",
+    "CAND-H7-RESP-01 remains HOLD/nonterminal with no fresh native object admitted by this literature",
+    "no literature-driven implementation patch, retune, rerun, PRE_FORMAL/FORMAL promotion, new STARTED, official TEST, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
   ],
   "utility_request_created": null,
   "persistence_notes": "Role-separated literature stream only. Legacy shared latest/state not updated. No immutable scientific refs or scheduler changes."
