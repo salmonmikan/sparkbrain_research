@@ -11,9 +11,10 @@
     "sub_observed_for_collision": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4"
   },
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-20T11:46:02+09:00",
   "heartbeat_at": "2026-09-20T11:46:02+09:00",
+  "completed_at": "2026-09-20T11:46:02+09:00",
   "analyst_generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
   "analyst_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
   "consumed_analyst_generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
@@ -30,7 +31,7 @@
   },
   "active_branch": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920",
   "active_identity": null,
-  "active_step": "ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CYCLE1_EXACT_HEAD_CI_COLLECTED_PERSISTING_COMPLETION",
+  "active_step": "ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CYCLE1_COMPLETED_EXACT_HEAD_CI_GREEN_STOP_FOR_FRESH_ANALYST_REVIEW",
   "research_head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
   "prospective_contract_commit": "9d0016f8700f46e38dbff04d66da23cabf2cfa38",
   "raw_facts_commit": "1f9edc0cc9a0276dd4f254b822daef7098af0ab4",
@@ -39,6 +40,6 @@
   "workflow_run_id": 35483714573,
   "workflow_status": "completed",
   "workflow_conclusion": "success",
-  "expected_next_action": "Persist COMPLETED for the already-mapped static terminal and STOP for fresh Evidence Analyst review. Do not alter funnel typing, manufacture saturation, implement mature eviction, run a turnover comparator, start cycle 2, or advance PRE_FORMAL/FORMAL under this authority.",
+  "expected_next_action": "STOP and wait for fresh Evidence Analyst review. Do not alter funnel typing, remap the terminal, manufacture saturation, implement mature eviction, run a turnover comparator, start cycle 2, or advance PRE_FORMAL/FORMAL under this authority.",
   "owner": "main"
 }
