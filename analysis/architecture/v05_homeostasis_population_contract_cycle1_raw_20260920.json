@@ -1,0 +1,83 @@
+{
+  "schema": "sparkbrain-architecture-static-characterization-raw-v1",
+  "candidate_id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_authority": "df12559698c0f6bc0165c550a55c62f7287a86bd",
+  "bound_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "prospective_contract_commit": "4930d894af5b0880d9e443f7582db3a96c206a4e",
+  "source_blob_verification": {
+    "src/sparkbrain/v05/homeostasis.py": {"expected": "67b87a4b4c91a7dba41670087a2d1803bb6e3e6c", "observed": "67b87a4b4c91a7dba41670087a2d1803bb6e3e6c", "match": true},
+    "src/sparkbrain/v05/brain.py": {"expected": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c", "observed": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c", "match": true},
+    "src/sparkbrain/v05/contracts.py": {"expected": "048b93cddb16dbe9276a0e2c0f972406291c1cb2", "observed": "048b93cddb16dbe9276a0e2c0f972406291c1cb2", "match": true},
+    "src/sparkbrain/v05/evaluation.py": {"expected": "efd52d236708aea3bf23b6139d8717b1ac1d0559", "observed": "efd52d236708aea3bf23b6139d8717b1ac1d0559", "match": true},
+    "src/sparkbrain/v05/__init__.py": {"expected": "bb45b132bbd4d8ad203911ad46eafffdf63820c4", "observed": "bb45b132bbd4d8ad203911ad46eafffdf63820c4", "match": true},
+    "tests/v05/test_v05_homeostasis_plasticity.py": {"expected": "ba1763c8ceb441cc91ce7510a313548acbb29db9", "observed": "ba1763c8ceb441cc91ce7510a313548acbb29db9", "match": true},
+    "docs/THEORY_SPEC_v0.5.md": {"expected": "c1d3dbd041476428a103324b58616d3cc6534885", "observed": "c1d3dbd041476428a103324b58616d3cc6534885", "match": true},
+    "docs/V05_MASTER_PLAN.md": {"expected": "0812069c4e19d8a25364ff8476870b770cee15c9", "observed": "0812069c4e19d8a25364ff8476870b770cee15c9", "match": true},
+    "docs/V05_EXPERIMENT_PROTOCOL.md": {"expected": "fce01cd448ad00e1d420e3cb73f6d0f32768df5d", "observed": "fce01cd448ad00e1d420e3cb73f6d0f32768df5d", "match": true}
+  },
+  "repository_inventory": {
+    "HomeostaticController": ["src/sparkbrain/v05/homeostasis.py", "src/sparkbrain/v05/__init__.py", "src/sparkbrain/v05/brain.py", "tests/v05/test_v05_homeostasis_plasticity.py"],
+    "HomeostasisConfig": ["src/sparkbrain/v05/homeostasis.py", "src/sparkbrain/v05/__init__.py", "src/sparkbrain/v05/brain.py"],
+    "active_unit_fraction": ["src/sparkbrain/v05/homeostasis.py", "src/sparkbrain/v05/contracts.py"],
+    "stability.dead": ["src/sparkbrain/v05/evaluation.py"],
+    "dead_rate": ["src/sparkbrain/v05/evaluation.py", "generated/reference-result surfaces"],
+    "dead-field": ["docs/THEORY_SPEC_v0.5.md", "docs/V05_MASTER_PLAN.md", "docs/V05_EXPERIMENT_PROTOCOL.md"],
+    "rate_ema": ["src/sparkbrain/v05/homeostasis.py"]
+  },
+  "machine_facts": {
+    "observe_materializes_all_supplied_spikes_as_rows": true,
+    "observe_counts_spikes_by_unit_id_without_receptor_filter": true,
+    "observe_updates_rate_ema_for_every_field_unit": true,
+    "observe_updates_base_threshold_for_every_field_unit": true,
+    "observe_references_field_receptor_ids": false,
+    "dead_streak_resets_when_any_supplied_row_exists": true,
+    "dead_streak_increment_condition_is_empty_all_supplied_rows": true,
+    "active_unit_fraction_numerator_is_unique_spiking_unit_ids": true,
+    "active_unit_fraction_denominator_is_all_field_units": true,
+    "snapshot_active_unit_fraction_denominator_is_all_field_units": true,
+    "brain_process_episode_passes_base_result_spikes_directly_to_homeostasis_observe": true,
+    "brain_homeostasis_observe_call_has_receptor_filter": false,
+    "brain_assembly_pattern_extraction_separately_excludes_field_receptor_ids": true,
+    "stability_snapshot_fields_are_population_unqualified": ["spike_count", "active_unit_fraction", "runaway", "dead", "mean_threshold"],
+    "evaluation_reads_result_stability_dead": true,
+    "evaluation_aggregates_dead_rate_from_episode_dead": true,
+    "evaluation_reads_active_unit_fraction": false
+  },
+  "test_surface_facts": {
+    "homeostasis_test_field_marks_unit_0_as_receptor": true,
+    "homeostasis_threshold_test_supplies_spikes_only_from_receptor_unit_0": true,
+    "homeostasis_threshold_test_asserts_receptor_unit_0_threshold_increases": true,
+    "test_explicitly_asserts_receptor_activity_counts_toward_dead": false,
+    "test_explicitly_asserts_receptor_activity_counts_toward_active_unit_fraction": false,
+    "test_defines_whole_field_liveness_population": false,
+    "test_defines_reservoir_only_liveness_population": false
+  },
+  "public_contract_facts": {
+    "theory_spec_calls_homeostasis_a_bounded_controller_adjusting_unit_thresholds": true,
+    "theory_spec_requires_active_unit_fraction_exposure": true,
+    "theory_spec_requires_dead_field_and_runaway_diagnostics": true,
+    "theory_spec_explicitly_says_receptors_count_toward_dead_or_active_fraction": false,
+    "theory_spec_explicitly_says_receptors_are_excluded_from_dead_or_active_fraction": false,
+    "master_plan_requires_dead_field_episode_rate_and_active_unit_fraction_diagnostics": true,
+    "master_plan_explicit_population_definition_for_dead_or_active_fraction": false,
+    "experiment_protocol_gate_a_uses_dead_field_rate": true,
+    "experiment_protocol_primary_assembly_source_excludes_receptor_units": true,
+    "experiment_protocol_extends_that_receptor_exclusion_to_homeostatic_dead_or_active_fraction": false,
+    "explicit_whole_field_liveness_population_contract_found": false,
+    "explicit_reservoir_only_liveness_population_contract_found": false,
+    "material_contract_contradiction_found": false
+  },
+  "supported_consumers": {
+    "dead": ["src/sparkbrain/v05/evaluation.py::_run_episode", "src/sparkbrain/v05/evaluation.py::summarize_rows(dead_rate)"],
+    "active_unit_fraction": [],
+    "rate_ema": [],
+    "mean_threshold": ["serialized StabilitySnapshot/result surfaces only on bound source surface"]
+  },
+  "forbidden_surface_accessed": false,
+  "dynamic_probe_executed": false,
+  "production_source_modified": false,
+  "formal_or_test_surface_consumed": false,
+  "interpretation_applied": false
+}
