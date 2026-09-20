@@ -82,6 +82,56 @@ No parameter sweep, rescue tuning, alternate lag, alternate reward, alternate ed
 - open scientific choices: `NONE_FOR_THIS_CYCLE; edge-selection rule, lag, reward, comparator, clipping and terminal mapping are fixed above`
 - formal claim ceiling: `AT_MOST_LOCAL_HISTORY_SENSITIVE_CREDIT_BEYOND_ORDINARY_ELIGIBILITY_IF_THE_FIXED_RECURRENCE_FAILS`
 
+## Cycle-1 observation / terminal
+
+Prospective contract commit: `e466bd89cfd4ab80dc970173a183638af815fe8b`.
+
+Outcome-bearing diagnostic head: `bd071d9023058d01f58d6f7ddacf35e820de51b6`. CI run `35514176121` completed successfully for Python 3.11 and 3.13 through lint, local readiness, full tests, and bundle validation.
+
+The deterministic priming event gave target edge A a stored positive eligibility of `exp(-1/18) ≈ 0.94595947`, while disjoint target edge B had no stored target-edge eligibility. In the common rewarded step both A and B then received exactly one new `+1 ms` causal pair under the same `reward_trace=-2.0`.
+
+The fixed ordinary comparator therefore predicts:
+
+- A post-step eligibility: `0.90 * 0.94595947 + 0.94595947 ≈ 1.79732299`;
+- B post-step eligibility: `0.94595947`;
+- A unclipped weight delta at learning rate `0.001`: approximately `-0.00359465`;
+- B unclipped weight delta: approximately `-0.00189192`.
+
+Native v0.5 matched those two target-edge eligibility values and target-edge weight changes exactly within the prospectively fixed numerical comparator. A consequently received a larger-magnitude reward-modulated update than B, so stored local history is functionally expressed, but the entire differential is explained by the ordinary decaying per-edge eligibility trace plus the common scalar reward. No additional responsibility-sensitive state is required for this result.
+
+Mapped terminal: `ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION`.
+
+## Reduction / source-semantic interpretation
+
+The result agrees directly with stable `V05PlasticityController.apply()`: existing per-edge eligibility is first multiplied by `eligibility_decay`; the current edge-local STDP delta is then added; and the weight update is `learning_rate * reward_trace * eligibility`. The matched-current-activity two-edge intervention therefore exposes genuine history sensitivity but not mechanistic distinctness beyond an ordinary eligibility-trace baseline.
+
+This is a bounded negative mechanism result. It does not execute or close held `CAND-H7-RESP-01`, does not claim that eligibility traces are scientifically uninteresting, and does not generalize beyond the current native v0.5 local plasticity object. Any candidate claiming richer responsibility-sensitive assignment beyond this recurrence requires a fresh candidate ID and fresh prospective intervention/comparator contract.
+
+## Post-result typing / handoff
+
+- evidentiary_status: `NON_EVIDENTIARY`
+- recommendation: `REJECT`
+- candidate next research layer: `NONE`
+- proposed claim_ceiling: `MECHANISM`
+- proposed preformal_eligible: `false`
+- preliminary readiness status: `NOT_READY`
+- claim_type: `NATIVE_LOCAL_HISTORY_SENSITIVE_REWARD_CREDIT_BEYOND_ORDINARY_ELIGIBILITY`
+- supported_reachability: `PARTIAL_SYNTHETIC_DEV_ONLY`
+- functional_consequence: `DIFFERENTIAL_HISTORY_SENSITIVE_WEIGHT_UPDATE_PRESENT_BUT_EXACTLY_REDUCED`
+- ordinary reductions specified/controlled: `PER_EDGE_DECAYING_ELIGIBILITY_TRACE_WITH_COMMON_REWARD_SCALAR`
+- reductions unresolved: `NONE_FOR_CURRENT_OBJECT; REDUCTION_SUCCEEDED`
+- comparator status: `COMPLETE_AND_EXACT_FOR_BOTH_MATCHED_CURRENT_ACTIVITY_TARGET_EDGES`
+- qualitative support breadth: `ONE_DETERMINISTIC_TWO_EDGE_MATCHED_CURRENT_ACTIVITY_DEV_INTERVENTION`
+- falsifier definition: `EXACT_MATCH_TO_FIXED_PER_EDGE_ELIGIBILITY_RECURRENCE_FOR_BOTH_TARGET_EDGES`
+- open scientific choices: `NONE_FOR_CURRENT_OBJECT`
+- formal claim ceiling: `NONE_FOR_CURRENT_REDUCED_RESULT`
+- hold_class: `null`
+- hold_reason: `null`
+- terminal_state: `TERMINAL_FOR_CURRENT_OBJECT`
+- queue_state: `NOT_QUEUED`
+
+Cycle 2 is not executed. No Utility request is warranted. No consumed/frozen/formal identity was touched or created.
+
 ## Hard boundaries
 
 Discovery is strictly `NON_EVIDENTIARY`. No stable-main mutation, research merge, STARTED/formal ref, official TEST/scorer, held-out tuning, consumed/frozen identity, evidence/preserve/control ref mutation, or novelty claim is authorized. Any redesign after outcome requires a fresh candidate ID and fresh prospective contract.
