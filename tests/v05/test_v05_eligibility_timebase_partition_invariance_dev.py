@@ -68,8 +68,12 @@ def test_dev_eligibility_timebase_partition_invariance_fixed_contract() -> None:
 
     expected_one_eligibility = delta * decay**2 + delta
     expected_two_eligibility = delta * decay**3 + delta
-    expected_one_weight = shared_post_initial_weight + config.learning_rate * expected_one_eligibility
-    expected_two_weight = shared_post_initial_weight + config.learning_rate * expected_two_eligibility
+    expected_one_weight = (
+        shared_post_initial_weight + config.learning_rate * expected_one_eligibility
+    )
+    expected_two_weight = (
+        shared_post_initial_weight + config.learning_rate * expected_two_eligibility
+    )
 
     actual_one_eligibility = arm_one_controller.eligibility[key]
     actual_two_eligibility = arm_two_controller.eligibility[key]
@@ -79,8 +83,18 @@ def test_dev_eligibility_timebase_partition_invariance_fixed_contract() -> None:
     # Prospectively fixed CALL_COUNT_PARTITION_DEPENDENT_EXACT terminal.
     assert actual_one_eligibility != actual_two_eligibility
     assert actual_one_weight != actual_two_weight
-    assert math.isclose(actual_one_eligibility, expected_one_eligibility, rel_tol=1e-12, abs_tol=1e-12)
-    assert math.isclose(actual_two_eligibility, expected_two_eligibility, rel_tol=1e-12, abs_tol=1e-12)
+    assert math.isclose(
+        actual_one_eligibility,
+        expected_one_eligibility,
+        rel_tol=1e-12,
+        abs_tol=1e-12,
+    )
+    assert math.isclose(
+        actual_two_eligibility,
+        expected_two_eligibility,
+        rel_tol=1e-12,
+        abs_tol=1e-12,
+    )
     assert math.isclose(actual_one_weight, expected_one_weight, rel_tol=1e-12, abs_tol=1e-12)
     assert math.isclose(actual_two_weight, expected_two_weight, rel_tol=1e-12, abs_tol=1e-12)
     assert arm_one_controller.update_count == arm_two_controller.update_count == 2
