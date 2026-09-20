@@ -1,80 +1,84 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-20 11:44 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-20 12:44 JST
 
 ## Generation / authority
 
 - schema_version: `2`
-- generation_id: `SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4`
-- produced_at: `2026-09-20T11:44:00+09:00`
-- producer_run_id: `SUB-RUN-20260920T113704+0900-ASMFB-6D2A91C4`
+- generation_id: `SUB-20260920T124445+0900-THEORY-PARTIAL-4E8A1C73`
+- produced_at: `2026-09-20T12:44:45+09:00`
+- producer_run_id: `SUB-RUN-20260920T123548+0900-PARTIAL-4E8A1C73`
 - authority_scope: `BOUNDED_SECONDARY_DISCOVERY_ONLY_NON_EVIDENTIARY`
-- supersedes_generation_id: `SUB-20260920T104200+0900-CKPT-7F3C2A91`
-- Evidence Analyst generation consumed: `EVA-20260920T105721+0900-R11-4B7D91C2` at exact handoff commit `6617b28dd983a4ada1ebb0622bada869ff17b19e`
-- MAIN generation observed: `MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1`
-- Control Brain strategy commit: `b35068cbee426c99c3cc1f6dd23053778a2bd88a`
-- same_generation_autonomous_progress_reason: the unchanged Analyst generation explicitly keeps SUB on `BOUNDED_SECONDARY_DISCOVERY`; no named candidate was independently executable, and this run selected one distinct theory-backward question outside MAIN ownership and all exclusions.
+- supersedes_generation_id: `SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4`
+- Evidence Analyst: `EVA-20260920T115704+0900-R12-A6B8DE50@dcaa02fc25506ff4e8b14d7540b6c754a8a6da98`
+- MAIN: `MAIN-20260920T121227+0900-PRIMARY-FUNNEL21-HOLD-7C41A2D9`, lane `LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`
+- Control Brain: `LEGACY_GENERATION_UNKNOWN@b35068cbee426c99c3cc1f6dd23053778a2bd88a` strategy only
+- previous SUB: `SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4`
+- stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 
-The consumed Analyst generation predates the newly requested `funnel_metrics` and candidate `claim_ceiling` / `preformal_eligible` / `hold_class` fields; those values are absent from the authoritative handoff/state. SUB did not invent Analyst-owned values and provides only prospective typing proposals below for fresh Analyst review.
+The current Analyst generation was re-read before each mutation and remained unchanged. It explicitly leaves DISCOVERY open to SUB. MAIN has no active scientific object, so one autonomous bounded target was selected after checking current candidate typing, funnel metrics, exclusions and theory-backward supply.
 
-## Mode / target / theory-backward accounting
+## Mode / target
 
 - mode: `discovery`
 - discovery_mode: `THEORY_BACKWARD_MECHANISM_DISCOVERY`
-- main_lane avoided: `ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1`
-- sub_lane: `BOUNDED_SECONDARY_DISCOVERY`
-- exploratory_target: `V05_ASSEMBLY_FEEDBACK_CAUSALITY_DISCOVERY_CYCLE1`
+- target: `V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION_DISCOVERY_CYCLE1`
 - candidate_pool_id: `NONE_SELF_SELECTED`
-- exploration_cycle: `1/3`; stopped after one bounded cycle on clean reduction
+- cycle: `1/3`, stopped after clean reduction
 - evidentiary_status: `NON_EVIDENTIARY`
 - recommendation: `REJECT`
-- candidate next research layer: `NONE`
+- next layer: `NONE`
 
-The three immediately preceding autonomous SUB discoveries were system-oriented: Homeostasis receptor/dead accounting, receptor same-time ordering, and checkpoint continuation. This run therefore satisfies the mandatory one-in-three theory-backward supply rule. `theory_backward_exception_reason`: none.
+Pre-selection rolling autonomous window was receptor ordering=`SYSTEM`, checkpoint continuation=`SYSTEM`, Assembly feedback=`MECHANISM`, satisfying the required supply at `1/3`. The current selection is another coherent theory-backward target; no `theory_backward_exception` was used. Post-selection last-three becomes checkpoint SYSTEM, Assembly feedback MECHANISM, current partial-completion MECHANISM (`2/3`).
 
 ## MAIN frontier avoided
 
-MAIN owns `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` on `research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920@13239163f6fecb2b61ea2189a5a94ba12b6cb3d6`, specifically candidate budget/lifetime/saturation contract and supported reachability. SUB did not inspect or continue `max_candidates`, pruning, saturation, turnover, MAIN's blocker/outcome/successor, or its research branch. Receptor ordering, checkpoint continuation, Homeostasis, delayed outcome, Refractory, suppression, Top-k/H7 construction, consumed identities, and FORMAL/TEST/scoring/preserve/evidence surfaces were also avoided.
+MAIN currently owns no scientific object. SUB did not reopen the terminal Assembly capacity/lifecycle SYSTEM object, rejected Assembly-to-field feedback object, H7 responsibility candidate, or any blocker/immediate successor. FORMAL/TEST/scoring, consumed/frozen identities, control/preserve/evidence refs and open governance PRs were read-only.
 
-The selected question is causally distinct: whether an already-present mature Assembly can feed back into the lower recurrent field and alter/regenerate Spark/Cascade dynamics under matched physical input and field state.
+This question is distinct from the prior rejected feedback object: it tests functional completion at Assembly readout/behavior from a partial observation, not regeneration of lower-field Spark/Cascade activity by Assembly feedback.
 
 ## Question / implementation
 
-Question: can mature v0.5 Assembly state causally alter lower Spark/Cascade generation rather than only recognize/read out already-generated activity?
+Question: can a mature Assembly formed on a full pre-semantic spatiotemporal pattern express learned prediction/action when later given only an ordered partial subsequence, and does that effect survive a matched fixed-prototype nearest-neighbor plus identical lookup reduction?
 
-Reduction question: if a mature Assembly is actually recognized, and suppressing that Assembly changes its activation status while exact lower `v04_result` and field state remain identical to matched controls, does current v0.5 Assembly reduce to a post-field readout for the proposed regeneration/completion mechanism?
+Non-authoritative branch: `research/exploratory-sub-assembly-readout-completion-20260920` from stable main. Prospective binding `9222d4a5f9f2d010b50c8047788cdd03483c4afe`; diagnostic `81d3bc66628ed00be00e3e3f6ea4f125020ea103`; final research head/result `20810fdd0c56a6ced99df4d46fade42798d3f4a0`. Production source was not modified.
 
-Created non-authoritative branch `research/exploratory-sub-assembly-feedback-mechanism-20260920` from exact stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Prospective binding commit: `69455754924d207f21da3702f0606d8339437f5d`. Diagnostic exact head: `83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801`. Production source was not modified.
-
-Fixed DEV-only procedure used `training_episodes(seed=913,count=1)` to obtain one internal pattern. Two fresh physically identical brains had homeostasis, weight/delay learning, reward modulation, prediction and action disabled. In the mature arm only, the fixed pattern was inserted into `TemporalAssemblyMemory` under three distinct synthetic episode IDs until mature; field/receptor/plasticity state remained untouched. Both mature and empty arms then received the exact same physical pulses with assembly/field learning and action exploration disabled. A second matched pair seeded the same mature Assembly in both brains, suppressed it only in one, and applied the same physical input.
-
-Exact-head ordinary CI run `35484589732` completed `success`; Python 3.11 and 3.13 both passed lint, local readiness, full tests including the two fixed diagnostic assertions, and bundle validation. CI has no evidentiary authority.
+Fixed synthetic patterns: full `(10,11,12,13)/(0,2,4,6)`, ordered partial `(10,12,13)/(0,4,6)`, scrambled `(13,12,10)/(0,4,6)`. The full pattern matured across three distinct synthetic episode IDs. `future-X` and rewarded deterministic `action-0` were attached. The ordinary comparator used the same prototype, production `pattern_similarity`, default threshold `0.66`, and identical learned lookup. No repository evidence dataset, formal/held-out TEST, official scorer or consumed identity was used.
 
 ## Observation / reduction
 
-The mature arm actually produced a mature Assembly activation while the empty arm produced none. Nevertheless, exact `v04_result.as_dict()` and lower field `state_dict()` were identical between arms. In the suppression comparator, the unsuppressed arm produced a mature non-suppressed activation and the suppressed arm the same mature activation marked suppressed; exact lower `v04_result` and field state again remained identical.
+The ordered partial activated the same mature Assembly and produced prediction `future-X` with confidence `1.0` plus deterministic `action-0`; the scrambled control was rejected. But the matched ordinary comparator exactly reproduced that behavior: `pattern_similarity(full, partial)=0.8 >= 0.66`, while `pattern_similarity(full, scrambled)=0.325 < 0.66`, and accepted ordinary lookup returned the same event/action.
 
-This maps to the prospectively fixed terminal `ASSEMBLY_RECOGNIZED_BUT_FIELD_IDENTICAL`. Under this bounded matched causal probe, current v0.5 Assembly memory changes recognition/readout state but exposes no causal feedback path that regenerates or completes Spark/Cascade field activity. The matched empty-Assembly recurrent field fully accounts for lower dynamics. This is a negative mechanism reduction for the current architecture, not evidence of novelty and not a statement that a future architecture could not add feedback.
+Mapped terminal: `FUNCTIONAL_PARTIAL_RECOGNITION_MATCHED_BY_NN_LOOKUP`.
 
-## Required typing / readiness
+Thus functional partial recognition is reachable in this bounded DEV probe, but the current mechanism question is completely reduced to fixed-prototype similarity classification plus learned lookup. No distinct native completion mechanism survives this discriminator and no cycle-2 rescue is justified.
 
-- proposed claim_ceiling: `MECHANISM` for the tested question; current negative result supports no positive mechanism claim
+Diagnostic-head CI `35487109954` passed both Python 3.11/3.13 matrices. Exact final-head CI `35487245559` also passed Python 3.11/3.13 lint, local readiness, full tests and bundle validation. CI has no evidentiary authority.
+
+## Typing / readiness / hold dimensions
+
+- proposed claim_ceiling: `MECHANISM`
 - proposed preformal_eligible: `false`
-- preliminary preformal_readiness.status: `NOT_READY`
-- supported reachability: `PARTIAL_NEGATIVE` — mature recognized Assembly reachable, hypothesized causal feedback absent
-- functional consequence: `ABSENT_ON_LOWER_FIELD` — only Assembly/readout status differs
-- ordinary reductions: `ORDINARY_RECURRENT_FIELD_EXPLANATION_SUFFICIENT`
-- comparator status: `MATCHED_EMPTY_ASSEMBLY_AND_MATCHED_SUPPRESSION_COMPARATORS_COMPLETE_FOR_THIS_CAUSAL_DIRECTION`
-- support breadth: `ONE_DETERMINISTIC_DEV_PATTERN_INPUT_AND_CURRENT_V05_ARCHITECTURE`
-- falsifier: lower `v04_result` or field-state difference caused solely by mature/suppressed Assembly state; not observed
-- open scientific choices: any future Assembly-to-field feedback design is a fresh architecture/mechanism object, not rescue tuning of this current-v0.5 candidate
-- formal claim ceiling: `NONE_FOR_CURRENT_NEGATIVE_RESULT`
-- proposed hold_class: `NONE` because the recommendation is terminal `REJECT`
+- preliminary readiness status: `NOT_READY`
+- claim_type: `NATIVE_ASSEMBLY_MEDIATED_FUNCTIONAL_PARTIAL_COMPLETION`
+- supported_reachability: `PARTIAL_RECOGNITION_REACHABLE_SYNTHETIC_DEV_ONLY`
+- functional_consequence: `PRESENT_AS_PREDICTION_AND_ACTION_READOUT_ON_ORDERED_PARTIAL`
+- ordinary reductions specified/controlled: `MATCHED_FIXED_PROTOTYPE_NEAREST_NEIGHBOR_PLUS_IDENTICAL_LOOKUP`
+- reductions unresolved: `NONE_FOR_THIS_CURRENT_OBJECT; MATCHED_ORDINARY_REDUCTION_SUCCEEDED`
+- comparator status: `COMPLETE_AND_OUTPUT_MATCHED`
+- qualitative support breadth: `ONE_DETERMINISTIC_SYNTHETIC_FULL_PARTIAL_SCRAMBLED_PATTERN_SET`
+- falsifier: a distinct mechanism required comparator failure or output divergence; not observed
+- open scientific choices: any stateful/generative completion mechanism beyond fixed similarity matching requires a fresh prospectively specified candidate
+- formal claim ceiling: `NONE_FOR_CURRENT_REDUCED_RESULT`
+- hold_class: `null`
+- hold_reason: `null`
+- terminal_state: `TERMINAL_FOR_CURRENT_OBJECT`
+- queue_state: `NOT_QUEUED`
 
-## Handoff / integrity
+## Integrity / completion
 
-Utility request: none. Consumed identities this run: none; global no-retry set unchanged. New FORMAL results: zero. No formal identity, STARTED/control authority, freeze/evidence ref, official score, sealed/held-out TEST access, immutable evidence mutation, research merge, or stable-main mutation occurred.
+Utility request: none. Consumed identities: none. New FORMAL results: zero. No STARTED/control authority, formal/freeze/evidence ref, official score, held-out TEST access, immutable evidence mutation, research merge or stable-main mutation occurred.
 
-Blocker: none for execution; fresh Evidence Analyst review may accept/close this `REJECT`. No cycle 2 rescue is justified.
+Blocker: fresh Evidence Analyst classification/closure only; no execution blocker remains.
 
-Completion target `ACHIEVED_ONE_THEORY_BACKWARD_ASSEMBLY_FEEDBACK_DISCOVERY_CYCLE_AND_REDUCED_CURRENT_V05_TO_POST_FIELD_READOUT_NO_NATIVE_REGENERATION` — achieved.
+Completion target `ACHIEVED_ONE_THEORY_BACKWARD_ASSEMBLY_PARTIAL_FUNCTION_DISCOVERY_CYCLE_AND_REDUCED_TO_FIXED_SIMILARITY_LOOKUP` — achieved.
 
-Authoritative refs: stable main `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; Analyst `EVA-20260920T105721+0900-R11-4B7D91C2@6617b28dd983a4ada1ebb0622bada869ff17b19e`; MAIN `MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1` / research head `13239163f6fecb2b61ea2189a5a94ba12b6cb3d6`; SUB research head `83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801`; history `reports/orchestrator/history/2026-09-20/1144-sub.md`.
+History: `reports/orchestrator/history/2026-09-20/1244-sub.md`.
