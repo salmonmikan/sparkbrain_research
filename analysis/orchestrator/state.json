@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-20T08:59:41+09:00",
+  "timestamp": "2026-09-20T10:01:35+09:00",
   "new_repository_evidence": true,
   "new_formal_scientific_evidence": false,
   "authoritative_state": {
@@ -10,59 +10,51 @@
     "freeze_tag_count": 0,
     "legacy_freeze_branch_count": 13,
     "repository_rulesets": 0,
-    "main_protected": false,
     "issue_139": "open",
-    "pr_148": "open_unmerged",
-    "pr_149": "open_unmerged",
+    "pr_148": "open_unmerged_mergeable",
+    "pr_149": "open_unmerged_mergeable",
     "new_one_way_identity": false
   },
   "latest_streams": {
     "main": {
-      "mailbox_timestamp_jst": "2026-09-20 08:48",
-      "candidate": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
-      "research_branch": "research/main-v05-delayed-outcome-caller-contract-arch-study-20260920",
-      "research_head": "c79c5434222a6d018931dc1752e7f0074c23854b",
-      "contract_commit": "25cdd7db1d5a546b38810c40ffdc75085c8d196a",
-      "raw_facts_commit": "d226f5993b69f0d0c98c1e1cd7b049e2ba3ded49",
-      "ordinary_ci": 35475862604,
+      "mailbox_timestamp_jst": "2026-09-20 09:45",
+      "candidate": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
+      "research_branch": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
+      "research_head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
+      "prospective_contract_commit": "4930d894af5b0880d9e443f7582db3a96c206a4e",
+      "raw_facts_commit": "8f5d7e23b6896d9352daa77f885a4a1cc52ae820",
+      "ordinary_ci": 35478448679,
       "ordinary_ci_state": "completed_success",
-      "terminal": "IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED",
+      "terminal": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
       "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
-      "facts": {
-        "learn_outcome_occurrences": 4,
-        "supported_callers": 3,
-        "observed_callers_immediate_after_outcome": true,
-        "supported_intervening_process_episode_caller": false,
-        "process_episode_overwrites_pending_credit_state": true,
-        "learn_outcome_has_episode_or_decision_identity": false,
-        "explicit_public_immediate_only_contract": false,
-        "explicit_public_delayed_or_interleaved_support": false
-      },
       "analyst_disposition": "HOLD_CURRENT_QUESTION_CLOSED_NO_SAME_OBJECT_DYNAMIC_CYCLE"
     },
     "sub": {
-      "mailbox_timestamp_jst": "2026-09-20 08:46",
-      "latest_target": "HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1",
-      "research_branch": "research/exploratory-sub-homeostasis-receptor-dead-mask-20260920",
-      "prospective_binding_commit": "550636870dc564297d567efddab919ea31b37044",
-      "research_head": "8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f",
-      "ordinary_ci": 35476878641,
+      "mailbox_timestamp_jst": "2026-09-20 09:42",
+      "latest_target": "RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1",
+      "research_branch": "research/exploratory-sub-receptor-sametime-permutation-20260920",
+      "prospective_binding_commit": "79f7c35ffb2a0330f1218453aa178009c5e4ffaa",
+      "diagnostic_commit": "28a66c5b76481544d262fc443f645f6e0c84bfbb",
+      "research_head": "61d1f740c9b83f4d327e22630c499145a1eeb453",
+      "ordinary_ci": 35479308798,
       "ordinary_ci_state": "completed_success",
-      "evidentiary_status": "NON_EVIDENTIARY",
+      "evidentiary_status": "NON_EVIDENTIARY_DISCOVERY",
       "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
       "analyst_review": "PROMOTE_TO_ARCHITECTURE_STUDY",
-      "candidate_id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
+      "candidate_id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
       "observations": {
-        "receptor_only_production_dead": false,
-        "receptor_only_production_dead_streak": 0,
-        "receptor_only_active_unit_fraction": 0.5,
-        "receptor_only_internal_reservoir_rate_ema": 0.0,
-        "empty_control_dead": true,
-        "empty_control_dead_streak": 6,
-        "receptor_filtered_shadow_dead": true,
-        "receptor_filtered_shadow_dead_streak": 6
+        "fixed_input_multiset": [
+          "SignalPulse(time_ms=0.0, channel=A, magnitude=1.0, polarity=+1)",
+          "SignalPulse(time_ms=0.0, channel=A, magnitude=0.2, polarity=+1)"
+        ],
+        "final_receptor_state_equal": true,
+        "final_trace_values_equal": true,
+        "large_then_small_signed_drive": 1.33,
+        "small_then_large_signed_drive": 1.406,
+        "absolute_difference": 0.076,
+        "relative_difference": 0.05714285714285714
       },
-      "ordinary_reduction": "HomeostaticController observes all supplied field spikes, resets dead_streak on any nonempty rows, computes active_unit_fraction over all field units, and has no receptor filter; evaluation consumes stability.dead as dead_rate."
+      "ordinary_reduction": "Stable sort preserves exact (time_ms, channel) tie order; sequential _observe_one updates mean_abs before bounded adaptive gain, so emitted per-pulse drive is order-sensitive although endpoint receptor state can match."
     }
   },
   "external_inputs": {
@@ -70,24 +62,26 @@
       "timestamp_jst": "2026-09-20 08:50",
       "role": "strategic_prior_only",
       "programme_position": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
-      "operating_doctrine_change": "NO_NEW_CHANGE"
+      "doctrine_change": false,
+      "central_residual": "H7-like native causal responsibility under matched privilege"
     },
     "literature": {
-      "timestamp_jst": "2026-09-20 06:30",
-      "material_to_current_ranking": false,
-      "finding": "Latest material literature concerns ordinary Refractory state/input policy reductions; no newer Homeostasis/Assembly-specific result."
+      "timestamp_jst": "2026-09-20 09:30",
+      "material_update": true,
+      "finding": "Homeostasis liveness is strongly ordinarily reducible to source/population mixing; afferent/recurrent activity, population-specific homeostatic targets and named stability observables should be separated. Close current Homeostasis static object without same-object dynamic continuation."
     },
     "independent_audit": {
       "timestamp_jst": "2026-09-19 22:31",
       "classification": "ROBUST_SO_FAR",
-      "finding": "H5 remains robust only for the exact registered aggregate algorithmic-work claim; global eligibility maintenance is a bottleneck finding, not a general event-routing no-go theorem."
+      "finding": "H5 remains robust only for the exact registered aggregate algorithmic-work claim; global all-edge eligibility maintenance is an implementation bottleneck, not a general event-routing/lazy-execution no-go theorem."
     },
     "methodology": {
-      "timestamp_jst": "2026-09-20 08:20:39",
-      "overall": "MIXED_CALIBRATION",
+      "timestamp_jst": "2026-09-20 09:17",
+      "overall": "WELL_CALIBRATED",
+      "changed_from": "MIXED_CALIBRATION",
       "scientific_hard_floor_change": false,
       "novelty_threshold_change": false,
-      "finding": "Keep prospective exact binding, raw-before-interpretation, claim-type separation and stop-after-Architecture-cycle; tighten decision-relevant machine-fact extractor validity and handoff fidelity using fact-type-appropriate structural/AST/typed/runtime checks."
+      "finding": "Stronger fact-type-appropriate structural extraction, exact binding, raw-before-interpretation, machine-bound handoff and fresh-Analyst STOP have now completed end-to-end on a real successor object. Historical extractor failures remain closed calibration examples."
     },
     "repository_steward": {
       "timestamp_jst": "2026-09-20 07:50",
@@ -109,7 +103,7 @@
     "ARCHITECTURE_STUDY": {
       "state": "ACTIVE_AUTHORIZED_PENDING_MAIN_PROSPECTIVE_BINDING",
       "owner": "MAIN",
-      "current_object": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
+      "current_object": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
       "queued_object": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
       "status": "NON_EVIDENTIARY"
     },
@@ -122,40 +116,42 @@
       "owner": "MAIN",
       "fresh_identity": null,
       "started": null,
-      "test_authority": false
+      "test_authority": false,
+      "scorer_authority": false,
+      "preserve_authority": false
     }
   },
   "candidate_pool": [
     {
-      "id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
+      "id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
       "classification": "ARCHITECTURE_STUDY",
-      "question": "Does public v0.5 homeostatic liveness/stability intentionally represent whole-field activity including receptors, or is reservoir/internal-computation liveness expected to be separately represented?",
-      "not_rescue_reason": "Fresh independent Homeostasis observability/accounting Discovery unrelated to consumed evidence or prior completed Architecture lines.",
+      "question": "Are exact same-time/same-channel pulses ordered events or an unordered simultaneous multiset at the supported public receptor boundary?",
+      "not_rescue_reason": "Fresh independent SUB Discovery on receptor input ordering, unrelated to consumed identities or completed Homeostasis/Temporal/Assembly lines.",
       "target_layer": "ARCHITECTURE_STUDY",
-      "expected_information_gain": "HIGH_ARCHITECTURE_TESTBED_RELIABILITY_LOW_NOVELTY",
+      "expected_information_gain": "HIGH_ARCHITECTURE_API_REPRODUCIBILITY_LOW_NOVELTY",
       "ordinary_reduction_risks": [
-        "all-field accounting may be intentional",
-        "receptor-only silent-reservoir state may be an edge condition",
-        "dead may be monitoring-only rather than a control primitive",
-        "per-unit rate adaptation already distinguishes silent reservoir rate even while global dead_streak is reset"
+        "stable tie ordering",
+        "sequential adaptive-gain update",
+        "same-key multiplicity may be unsupported or unreachable",
+        "caller iterable order may intentionally be semantic"
       ],
       "implementation_distance": "VERY_NEAR_STATIC_ONLY",
       "scientific_choices_still_open": [
-        "whole-field versus reservoir population represented by dead",
-        "population and denominator represented by active_unit_fraction",
-        "whether receptor units intentionally share homeostatic targets",
-        "supported consumer relevance of dead/dead_rate"
+        "ordered event sequence versus unordered simultaneous multiset semantics",
+        "supported same-key multiplicity reachability",
+        "whether iterable order is part of the public contract",
+        "future aggregation comparator and downstream observable only if separately authorized"
       ],
       "exploration_cycle_count": {
         "DISCOVERY": 1,
         "ARCHITECTURE_STUDY": 0
       },
-      "promotion_rejection_condition": "Run one static source/docs/tests/callsite contract cycle. Explicit whole-field contract closes as engineering note; explicit reservoir-liveness requirement with accounting gap returns for fresh Architecture review; unspecified/mixed public semantics HOLD. No same-run dynamic comparator."
+      "promotion_rejection_condition": "Run one static source/docs/tests/callsite contract cycle. Explicit ordered semantics or unsupported same-key multiplicity closes/rejects the supported-path concern; explicit unordered semantics with implementation gap or reachable-but-unspecified ordering returns for fresh review; no same-run comparator."
     },
     {
       "id": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
       "classification": "ARCHITECTURE_STUDY",
-      "question": "Does mature-candidate retention turn max_candidates into a hard lifetime learning cap under supported DEV horizons, or is permanent mature retention the intended bounded-memory contract?",
+      "question": "Does mature-candidate retention turn max_candidates into a hard lifetime learning cap under supported horizons, or is permanent mature retention the intended bounded-memory contract?",
       "not_rescue_reason": "Fresh resource/lifecycle semantics question distinct from prior Assembly prototype-lockin and cross-cascade lines.",
       "target_layer": "ARCHITECTURE_STUDY",
       "expected_information_gain": "MEDIUM_HIGH_ARCHITECTURE_LIFELONG_PLASTICITY_LOW_NOVELTY",
@@ -179,27 +175,27 @@
       "promotion_rejection_condition": "Remain queued behind current MAIN. First bind lifecycle intent and plausible supported saturation. Reject/engineering-note if permanence is intended or supported workloads cannot plausibly approach capacity; otherwise fresh Analyst may authorize a comparator cycle."
     },
     {
-      "id": "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01",
+      "id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
       "classification": "HOLD",
-      "question": "Is delayed/interleaved outcome credit part of the supported public contract despite single mutable pending credit state?",
-      "not_rescue_reason": "Fresh public-API bookkeeping question independent of consumed evidence.",
+      "question": "What population does public homeostatic liveness/stability represent?",
+      "not_rescue_reason": "Fresh independent Homeostasis observability line; current object is now closed rather than rescued.",
       "target_layer": "ARCHITECTURE_STUDY",
-      "expected_information_gain": "RESOLVED_CURRENT_SUPPORTED_CALLSITE_SCOPE",
+      "expected_information_gain": "RESOLVED_CURRENT_STATIC_SCOPE",
       "ordinary_reduction_risks": [
-        "immediate-only observed caller usage",
-        "single-slot pending bookkeeping",
-        "unsupported asynchronous use",
-        "identity-token API semantics"
+        "all-field source/population mixing",
+        "whole-field liveness may be intentional",
+        "dead is only one stability observable",
+        "reservoir-specific monitoring requires a separately supported requirement"
       ],
       "implementation_distance": "COMPLETED_STATIC_CURRENT_QUESTION",
       "scientific_choices_still_open": [
-        "fresh supported delayed/interleaved requirement only if independent repository evidence appears"
+        "fresh independently supported reservoir-specific liveness requirement only"
       ],
       "exploration_cycle_count": {
         "DISCOVERY": 1,
         "ARCHITECTURE_STUDY": 1
       },
-      "promotion_rejection_condition": "Terminal IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED closes the current object. No same-object dynamic cycle. A future delayed/interleaved test requires a genuinely fresh supported-contract object."
+      "promotion_rejection_condition": "Terminal WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED closes current object. No same-object dynamic cycle. Fresh successor only if independent supported requirement appears and binds population plus named stability observable prospectively."
     },
     {
       "id": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
@@ -212,7 +208,7 @@
         "threshold-only blockade",
         "retained state",
         "lazy decay",
-        "brittle extractor"
+        "historical brittle extractor"
       ],
       "implementation_distance": "HOLD",
       "scientific_choices_still_open": [
@@ -252,45 +248,75 @@
   ],
   "sub_discovery_review": {
     "new_review_this_run": true,
-    "source_target": "HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1",
+    "source_target": "RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1",
     "classification": "PROMOTE_TO_ARCHITECTURE_STUDY",
-    "candidate_id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
-    "prospective_boundary": "Fresh NON_EVIDENTIARY static population/consumer contract characterization only. Discovery output is not evidence and cannot be relabeled Architecture evidence."
+    "candidate_id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
+    "prospective_boundary": "Fresh NON_EVIDENTIARY static ordering/reachability contract characterization only. Discovery diagnostic is not Architecture evidence and cannot be relabeled."
   },
-  "main_lane": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "main_lane": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
   "sub_lane": "BOUNDED_SECONDARY_DISCOVERY",
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
   "outcome_contingencies": {
-    "PRE_START_BINDING_COMPLETE": "MAIN may perform exactly one static/read-only Homeostasis population-contract Architecture characterization under exact stable source/docs/tests/callsite bindings and pre-bound fact-validity methods.",
+    "PRE_START_BINDING_COMPLETE": "MAIN may perform exactly one static/read-only receptor simultaneity/ordering Architecture characterization under exact stable source/docs/tests/callsite bindings and pre-bound fact-validity methods.",
     "PRE_START_MECHANICAL_BLOCKER": "MAIN may repair only science-invariant lint/import/harness representation issues before decision-relevant facts are observed, then rebind exact head and rerun readiness under the unchanged contract.",
     "PRE_START_SEMANTIC_OR_SCOPE_GAP": "STOP_TO_FRESH_ANALYST",
-    "EXPLICIT_WHOLE_FIELD_STABILITY_CONTRACT": "STOP_REJECT_CURRENT_CONCERN_AS_ARCHITECTURE_ENGINEERING_NOTE_NO_DYNAMIC_CYCLE",
-    "EXPLICIT_RESERVOIR_LIVENESS_CONTRACT_WITH_ACCOUNTING_GAP": "STOP_FRESH_ANALYST_REVIEW_ANY_DYNAMIC_COMPARATOR_REQUIRES_NEW_AUTHORITY",
-    "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED": "STOP_HOLD_API_OBSERVABILITY_AMBIGUITY",
-    "MIXED_OR_CONTRADICTORY_STABILITY_POPULATION_CONTRACT": "STOP_HOLD",
+    "EXPLICIT_ORDERED_EVENT_CONTRACT": "STOP_REJECT_SUPPORTED_PATH_CONCERN_AS_ARCHITECTURE_ENGINEERING_NOTE",
+    "SAME_KEY_MULTIPLICITY_UNSUPPORTED_BY_CONTRACT": "STOP_REJECT_SUPPORTED_PATH_CONCERN_AS_ARCHITECTURE_ENGINEERING_NOTE",
+    "EXPLICIT_UNORDERED_SIMULTANEOUS_MULTISET_CONTRACT_WITH_IMPLEMENTATION_GAP": "STOP_FRESH_ANALYST_REVIEW_ANY_COMPARATOR_REQUIRES_NEW_AUTHORITY",
+    "ORDER_UNSPECIFIED_AND_SAME_KEY_REACHABLE": "STOP_HOLD_API_REPRODUCIBILITY_AMBIGUITY",
+    "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED": "STOP_HOLD_DO_NOT_MANUFACTURE_COMPARATOR",
+    "MIXED_OR_CONTRADICTORY_RECEPTOR_ORDERING_CONTRACT": "STOP_HOLD",
     "INVALID_STATIC_CHARACTERIZATION": "DISCARD_AND_STOP",
-    "DYNAMIC_RECEPTOR_AWARE_COMPARATOR_DESIRED": "STOP_NEW_PROSPECTIVE_OBJECT_REQUIRED",
+    "DYNAMIC_PERMUTATION_OR_AGGREGATION_COMPARATOR_DESIRED": "STOP_NEW_PROSPECTIVE_OBJECT_REQUIRED",
     "OFFICIAL_TEST_CONSUMED_OR_FORMAL_SURFACE_NEEDED": "STOP",
     "FORMAL": "UNARMED_NO_FORMAL_OBJECT"
   },
   "blocked_until": {
-    "homeostasis_dynamic_comparator": "static supported population/consumer contract reaches a valid terminal and fresh Analyst separately admits any dynamic comparator",
-    "assembly_capacity_lifecycle": "current MAIN Homeostasis static cycle stops and fresh Analyst re-ranks it after lifecycle intent plus plausible supported saturation are prospectively characterized",
-    "delayed_outcome_dynamic_question": "fresh independent repository evidence establishes delayed/interleaved outcome credit as a supported requirement and a new prospective object is admitted",
+    "receptor_dynamic_comparator": "static supported ordering/reachability contract reaches a valid terminal and fresh Analyst separately admits any comparator",
+    "assembly_capacity_lifecycle": "current MAIN receptor static cycle stops and fresh Analyst re-ranks it after lifecycle intent plus plausible supported saturation are prospectively characterized",
+    "homeostasis_dynamic_question": "fresh independent repository evidence establishes a supported reservoir-specific liveness requirement and a new prospective object binds population plus named stability observable",
     "pre_formal": "fresh supported mechanism/reduction object survives ordinary reductions",
     "formal": "fresh prospectively admissible object plus one-way identity/STARTED/TEST/scorer/preserve authority exists"
   },
   "do_not_touch": [
-    "all consumed identities and their frozen protocols/results",
-    "all immutable evidence/control/preserve refs",
-    "official TEST and formal scorer surfaces",
-    "completed delayed-outcome current object dynamic continuation",
-    "completed Refractory current-accounting same-object continuation",
-    "completed suppression artifact repair/relabel/rerun",
-    "completed Temporal batching, Top-k, topology-config, Assembly cross-cascade/prototype-lockin, fanout-alias and other answered/rejected lower-funnel objects unless materially reframed as fresh questions",
-    "PR #148/#149 governance work",
+    "all consumed identities and authoritative evidence tags",
+    "all immutable control/preserve/evidence refs",
+    "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01 same-object cycle 2 or dynamic comparator",
+    "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01 same-object dynamic continuation",
+    "CAND-REFRACTORY-CURRENT-ACCOUNTING-01 same-object cycle 2",
+    "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01 historical artifact repair/relabel/rerun",
+    "completed Temporal/Top-k/topology-config/Assembly cross-cascade/prototype-lockin/fanout objects absent genuine fresh reframing",
+    "H5 consumed identity and canonical terminal",
+    "official TEST/formal scorer surfaces without fresh FORMAL authority",
     "scheduler definitions"
   ],
+  "top_3": [
+    {
+      "rank": 1,
+      "action": "MAIN static receptor simultaneity/ordering contract Architecture cycle 1",
+      "information_value": "HIGH",
+      "distance": "VERY_NEAR",
+      "decision": "GO_NON_EVIDENTIARY_STATIC_ARCHITECTURE_ONLY"
+    },
+    {
+      "rank": 2,
+      "action": "Queue Assembly mature-capacity/lifecycle contract and supported-saturation characterization until #1 fresh review",
+      "information_value": "MEDIUM_HIGH",
+      "distance": "NEAR_MEDIUM",
+      "decision": "HOLD_QUEUED_NO_PARALLEL_MAIN_EXECUTION"
+    },
+    {
+      "rank": 3,
+      "action": "SUB one independent bounded Discovery or explicit no-op",
+      "information_value": "MEDIUM",
+      "distance": "OPTIONAL",
+      "decision": "DISCOVERY_ONLY"
+    }
+  ],
+  "go_stop_1": {
+    "go": "Exact stable source/docs/tests/callsite scope, fixed terminal mapping, fact-validity methods and machine-bound handoff fields are prospectively bound; ordinary exact-head CI/readiness is green; static/read-only characterization only.",
+    "stop": "Any semantic answer must be invented; a dynamic permutation/aggregation comparator is desired; supported scope cannot be deterministically bound; official TEST/consumed/formal surface is required; binding mismatch occurs; or any valid terminal is reached."
+  },
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "C19-R1 revision-authority official-v1",
@@ -301,40 +327,20 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "real_blockers": [
-    "Homeostasis public population semantics and supported consumer meaning are not yet prospectively bound",
-    "Assembly mature-memory lifecycle intent and supported/default saturation relevance remain unresolved",
-    "No fresh PRE_FORMAL mechanism currently survives ordinary reductions",
-    "No fresh FORMAL object, collision-free identity, STARTED, TEST, scorer or preserve authority exists",
-    "Delayed/interleaved outcome support is not established on supported repository paths"
-  ],
-  "top3": [
-    {
-      "rank": 1,
-      "action": "MAIN static Homeostasis population-contract Architecture cycle 1",
-      "information_value": "HIGH",
-      "distance": "VERY_NEAR",
-      "go_stop": "GO_NON_EVIDENTIARY_STATIC_ARCHITECTURE_ONLY"
-    },
-    {
-      "rank": 2,
-      "action": "Assembly mature-capacity/lifecycle contract and reachability characterization after #1 fresh review",
-      "information_value": "MEDIUM_HIGH",
-      "distance": "NEAR_MEDIUM",
-      "go_stop": "HOLD_QUEUED_NO_PARALLEL_MAIN_EXECUTION"
-    },
-    {
-      "rank": 3,
-      "action": "SUB one genuinely independent bounded Discovery or explicit no-op",
-      "information_value": "MEDIUM",
-      "distance": "OPTIONAL",
-      "go_stop": "DISCOVERY_ONLY"
-    }
+    "receptor same-key multiplicity supported reachability is unresolved",
+    "receptor exact-key ordering semantics are unresolved",
+    "Assembly mature-memory lifecycle intent and default/supported saturation relevance are unresolved",
+    "no fresh PRE_FORMAL mechanism beyond ordinary reductions",
+    "no fresh FORMAL object or one-way execution authority"
   ],
   "utility_request_created": null,
-  "persistence_scope": [
-    "analysis/orchestrator/latest.md",
-    "analysis/orchestrator/state.json",
-    "analysis/orchestrator/history/2026-09-20/0859.md"
-  ],
-  "persistence_limitation": null
+  "persistence": {
+    "branch": "ops/evidence-analyst-handoff",
+    "paths": [
+      "analysis/orchestrator/latest.md",
+      "analysis/orchestrator/state.json",
+      "analysis/orchestrator/history/2026-09-20/1001.md"
+    ],
+    "force_push_allowed": false
+  }
 }
