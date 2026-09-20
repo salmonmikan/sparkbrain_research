@@ -1,38 +1,24 @@
-# SparkBrain MAIN — 2026-09-21 02:46 JST
+# SparkBrain MAIN — 2026-09-21 03:21 JST
 
 - schema_version: `2`
-- generation_id: `MAIN-20260921T024630+0900-RELAY-FUNNEL21-R24-AUTHBOUND-7B3E51C2`
-- execution_mode: `RELAY`
-- analyst: `EVA-20260921T020159+0900-R24-D7A4C291@314e94cae6c6d7636c434d26b4525483c09eaf88`
-- prior MAIN: `MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2`
+- generation_id: `MAIN-20260921T031700+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGPART-R25-7A4C91E2`
+- execution_mode: `PRIMARY`
+- analyst: `EVA-20260921T031129+0900-R25-1E24780E@258406668f86b24f54dd1a88f18da37e457a001b`
 - authoritative main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 - research layer: `ARCHITECTURE_STUDY`
 - candidate: `CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01`
-- status: `BLOCKED`
+- status: `WAITING_EXTERNAL`
 
-Fresh Evidence Analyst R24 has resolved the prior R23 freshness block. It canonically closes the old timebase-contract object and the SUB action-visit object, then prospectively allocates a fresh MAIN-owned SYSTEM Architecture successor: `CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01`.
+PRIMARY started exactly the R25-authorized bounded NON_EVIDENTIARY SYSTEM Architecture cycle. Funnel dimensions remain exactly the Analyst values: `claim_ceiling=SYSTEM`, `preformal_eligible=false`, `preformal_readiness=null`, `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE`, and `system_priority_exception.used=false` because no comparably executable/informative MECHANISM exists.
 
-The exact R24 scope is one bounded NON_EVIDENTIARY synthetic DEV diagnostic on stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`: create identical initial controller/field state from one fixed causal event, clone exact state with `reward_trace=1.0`, vary only one versus two empty `apply()` calls before the same fixed final causal event, and observe target-edge eligibility, target-edge weight, and update count against the exact per-apply `eligibility_decay` recurrence. No sweep, API repair, metric redesign, threshold change, evidence dataset, consumed identity, or same-run continuation is authorized.
+A fresh branch `research/main-eligibility-timebase-partition-invariance-20260921` was created from exact stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Before any outcome-bearing diagnostic, the prospective contract was persisted at commit `37eb6f1985d77d9caac5da51ce1348ed5c6a9228`. It fixes one synthetic one-edge DEV field/controller, identical initial state from one causal event, exact cloning with `reward_trace=1.0`, Arm A with one empty `apply()`, Arm B with two empty `apply()` calls, the same final causal event/timestamps, observables limited to target-edge eligibility/weight/update-count, and the ordinary comparator as the exact per-apply `eligibility_decay` recurrence with no elapsed-time term. No sweep or same-run redesign is allowed.
 
-Funnel v2.1 dimensions are preserved exactly from Analyst R24:
-- `claim_ceiling=SYSTEM`
-- `preformal_eligible=false`
-- `preformal_readiness=null`
-- `hold_class=null`
-- `hold_reason=null`
-- `terminal_state=ACTIVE`
-- `queue_state=ACTIVE`
-- `system_priority_exception.used=false`
-- `system_priority_exception.reason_code=null`
-- `system_priority_exception.reason_detail=No comparable executable/informative MECHANISM; protects reproducibility/evidence interpretation.`
-- `system_priority_exception.compared_mechanism_candidate_ids=[]`
+The first diagnostic head `e66bf9faf01edb916a6bbd976d53acdddc67538e` triggered CI `35528584663`, but both Python jobs stopped at Ruff lint before the test stage executed. Therefore no scientific outcome was exposed. MAIN applied one transparent science-invariant mechanical repair only: four over-length expressions were line-wrapped without changing the hypothesis, construction, comparator, observables, assertions, thresholds, runtime/source, or terminal mapping. The repaired exact head is `0430e98e241ae543a03bc750a3c977fe55d17bb7`.
 
-Prospective terminals are preserved exactly: `CALL_COUNT_PARTITION_DEPENDENT_EXACT` -> STOP terminal SYSTEM with no same-run repair/sweep; `PARTITION_INVARIANT` -> STOP and REJECT current SYSTEM object; `UNRESOLVED_PARTITION_EFFECT` -> STOP for fresh Analyst review; `INVALID_MATCHED_PARTITION_CONTRACT` -> STOP and require fresh contract.
+Exact-head CI `35528770185` for `0430e98e241ae543a03bc750a3c977fe55d17bb7` is currently `in_progress`. Until that exact run completes, no prospectively fixed terminal is mapped. Current new-result counts therefore remain: FORMAL scientific evidence `0`, PRE_FORMAL development evidence `0`, MECHANISM Architecture observations `0`, SYSTEM Architecture observations `0`, and new identity consumption `0`.
 
-Collision/freshness reconciliation: the prior MAIN lease is stale `BLOCKED` RELAY state from 01:50 JST, with no active branch or identity and no fresh PRIMARY `RUNNING` lease. The newer SUB generation `SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7` consumed R24 only to persist an explicit no-target no-op; it created no candidate, ran no scientific workflow, and is a nonmaterial freshness refresh for the MAIN object.
+Repository integrity remains fail-closed and clean for this wait state: stable main is unchanged; the latest SUB is the non-scientific no-op `SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7`; authoritative evidence/formal/sealed/freeze tag counts remain `5/0/0/0`; no production science code, official identity, STARTED, preserve, scoring, or evidence ref was changed.
 
-RELAY did not start the fresh R24 Architecture object. Under relay authority, a fresh Analyst-created Architecture object must first be started by PRIMARY; RELAY may only continue an already-started/handover critical path, collect its workflow, inspect a fixed failure, apply a pre-fixed science-invariant mechanical repair, or continue an explicitly authorized one-way chain. Accordingly RELAY performed no scientific execution, workflow dispatch, research-branch mutation, STARTED transition, preserve/scoring action, successor creation, PRE_FORMAL/FORMAL action, or identity consumption.
+Stop reason: `WAITING_EXTERNAL_EXACT_HEAD_CI_35528770185`.
 
-Stop reason: `RELAY_AUTHORITY_BOUNDARY_FRESH_ANALYST_ALLOCATED_ARCHITECTURE_OBJECT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY`.
-
-Next MAIN action: PRIMARY starts only the exact R24-authorized one-shot synthetic DEV Architecture diagnostic for `CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01`. RELAY may resume only after PRIMARY safely hands off/stops mutating that same object, or for collection/repair of an already-started exact workflow within the fixed contingency.
+Next MAIN action: after re-reading the Evidence Analyst generation and exact refs, inspect only CI `35528770185` at head `0430e98e241ae543a03bc750a3c977fe55d17bb7`. On exact-head success, map exactly one preregistered terminal and STOP for fresh Analyst review. No redesign, sweep, rescue tuning, SYSTEM-to-MECHANISM upgrade, PRE_FORMAL promotion, or formal/evidence action is authorized.
