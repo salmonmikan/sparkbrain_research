@@ -1,25 +1,26 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260920T184716+0900-RELAY-FUNNEL21-FAILCLOSED-CONTEXTPRED",
-  "produced_at": "2026-09-20T18:47:16+09:00",
-  "producer_run_id": "sparkbrain-main-relay-20260920T184716JST-CONTEXTPRED",
-  "authority_scope": "MAIN_RELAY_FUNNEL_V2_1_FAIL_CLOSED_FRESHNESS_RECONCILIATION_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "MAIN-20260920T181208+0900-PRIMARY-FUNNEL21-HOLD-4F2C91A7",
+  "generation_id": "MAIN-20260920T191546+0900-PRIMARY-FUNNEL21-HOLD-R18-8C2F41D7",
+  "produced_at": "2026-09-20T19:15:46+09:00",
+  "producer_run_id": "sparkbrain-main-primary-20260920T191546JST-R18-HOLD",
+  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_RECONCILIATION_AND_CONTROL_PLANE_PERSISTENCE",
+  "supersedes_generation_id": "MAIN-20260920T184716+0900-RELAY-FUNNEL21-FAILCLOSED-CONTEXTPRED",
   "input_generations": {
-    "evidence_analyst": {"generation_id":"EVA-20260920T180852+0900-R17-152262F6","handoff_commit":"4dc5a5b43f26789f32567eb69cbb4a26b9cd6825","branch_tip_observed":"4dc5a5b43f26789f32567eb69cbb4a26b9cd6825"},
-    "main": {"generation_id":"MAIN-20260920T181208+0900-PRIMARY-FUNNEL21-HOLD-4F2C91A7"},
+    "evidence_analyst": {"generation_id":"EVA-20260920T190536+0900-R18-AC1DB49E","handoff_commit":"fec9320a8e8c868f4df91dafb1af75c640ae995a"},
+    "main": {"generation_id":"MAIN-20260920T184716+0900-RELAY-FUNNEL21-FAILCLOSED-CONTEXTPRED"},
     "sub_collision_only": {"generation_id":"SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91","research_branch":"research/exploratory-sub-context-conditioned-prediction-20260920","research_head":"f0a4157d869561e4201aca1c37663305bc5c8a5d","final_head_ci_run":35502970668},
     "control_brain": {"generation_id":"CTRL-20260920T165000+0900-R15-6C2F8A41","handoff_commit":"64611f391391844d60659732a50a22cf009a5797"},
-    "methodology": {"generation_id":"METHCAL-20260920T172730+0900-R17-A3D8F6C1","handoff_commit":"45942d81f18040b9c73ad6e498805d84fb9d16e6"}
+    "methodology": {"generation_id":"METHCAL-20260920T182012+0900-R18-6B2F9C41","handoff_commit":"820bb63ca6a0ad117d9e2f6ff971bb692d7efcf1"},
+    "literature": {"generation_id":"LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4","handoff_commit":"4a1dfcaef0dfcdbf132156f7656088f7f90a3c96"}
   },
-  "consumed_analyst_generation_id": "EVA-20260920T180852+0900-R17-152262F6",
-  "consumed_analyst_commit": "4dc5a5b43f26789f32567eb69cbb4a26b9cd6825",
-  "consumed_main_generation_id": "MAIN-20260920T181208+0900-PRIMARY-FUNNEL21-HOLD-4F2C91A7",
+  "consumed_analyst_generation_id": "EVA-20260920T190536+0900-R18-AC1DB49E",
+  "consumed_analyst_commit": "fec9320a8e8c868f4df91dafb1af75c640ae995a",
+  "consumed_main_generation_id": "MAIN-20260920T184716+0900-RELAY-FUNNEL21-FAILCLOSED-CONTEXTPRED",
   "worker_role": "main",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "research_layer": "NONE",
   "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-  "active_phase": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
+  "active_phase": "ANALYST_R18_RECONCILED_INTENTIONAL_SCIENTIFIC_IDLE",
   "candidate_question": null,
   "exploration_cycle_count": null,
   "claim_ceiling": null,
@@ -32,14 +33,14 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "Fresh Analyst R17 allocates no MAIN scientific object. The previously pending pre-semantic function-transfer object is now terminal HOLD_METHOD_LIMITED; H7 remains non-executable; no integrity-protecting SYSTEM object currently merits MAIN.",
+    "reason_detail": "Analyst R18 allocates no MAIN scientific object; the fresh context-conditioned prediction MECHANISM object is terminally reduced, H7 remains non-executable, and no integrity-protecting SYSTEM object justifies MAIN occupancy.",
     "compared_mechanism_candidate_ids": []
   },
   "research_layer_state": {
-    "DISCOVERY":{"state":"OPEN","owner":"SUB","status":"NON_EVIDENTIARY","latest_analyst_review":"PRESEMANTIC_FUNCTION_TRANSFER_METHOD_LIMITED_AFTER_OUTCOME_EXPOSED_TERMINAL_API_REPAIR","newer_unreviewed_sub_generation":"SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91"},
-    "ARCHITECTURE_STUDY":{"state":"EMPTY_HOLD","owner":"MAIN","active_mechanism_count":0,"active_system_count":0,"queued_mechanism_count":0,"queued_system_count":0},
-    "PRE_FORMAL":{"state":"EMPTY_HOLD","owner":"MAIN","preformal_eligible_count":0,"preformal_ready_count":0},
-    "FORMAL":{"state":"EMPTY_HOLD","owner":"MAIN","fresh_identity":null,"started":null,"test_authority":false,"scorer_authority":false,"preserve_authority":false}
+    "DISCOVERY": {"state":"OPEN","owner":"SUB","status":"NON_EVIDENTIARY","latest_review":"CONTEXT_CONDITIONED_PREDICTION_REJECT_FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS"},
+    "ARCHITECTURE_STUDY": {"state":"EMPTY_HOLD","owner":"MAIN","active_mechanism_count":0,"active_system_count":0,"queued_mechanism_count":0,"queued_system_count":0},
+    "PRE_FORMAL": {"state":"EMPTY_HOLD","owner":"MAIN","preformal_eligible_count":0,"preformal_ready_count":0},
+    "FORMAL": {"state":"EMPTY_HOLD","owner":"MAIN","fresh_identity":null,"started":null,"test_authority":false,"scorer_authority":false,"preserve_authority":false}
   },
   "candidate_pool_snapshot": [
     {"id":"CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01","classification":"HOLD","claim_ceiling":"SYSTEM","preformal_eligible":false,"hold_class":"HOLD_SYSTEM_TERMINAL","hold_reason":["LIFECYCLE_CONTRACT_UNSPECIFIED","SUPPORTED_SATURATION_UNESTABLISHED"],"terminal_state":"TERMINAL_FOR_CURRENT_OBJECT","queue_state":"NOT_QUEUED","preformal_readiness":null,"system_priority_exception":{"used":false}},
@@ -53,140 +54,116 @@
     {"id":"CAND-V05-DELAYED-REWARD-ELIGIBILITY-01","classification":"REJECT","claim_ceiling":"MECHANISM","preformal_eligible":false,"hold_class":null,"hold_reason":null,"terminal_state":"TERMINAL_FOR_CURRENT_OBJECT","queue_state":"NOT_QUEUED","preformal_readiness":{"status":"NOT_READY"},"system_priority_exception":{"used":false}},
     {"id":"CAND-V05-NONLEARNING-EVAL-ORDER-DEPENDENCE-01","classification":"REJECT","claim_ceiling":"SYSTEM","preformal_eligible":false,"hold_class":null,"hold_reason":null,"terminal_state":"TERMINAL_FOR_CURRENT_OBJECT","queue_state":"NOT_QUEUED","preformal_readiness":null,"system_priority_exception":{"used":false}},
     {"id":"CAND-V05-ENDOGENOUS-CONTINUATION-01","classification":"REJECT","claim_ceiling":"MECHANISM","preformal_eligible":false,"hold_class":null,"hold_reason":null,"terminal_state":"TERMINAL_FOR_CURRENT_OBJECT","queue_state":"NOT_QUEUED","preformal_readiness":{"status":"NOT_READY"},"system_priority_exception":{"used":false}},
-    {"id":"CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01","classification":"HOLD","claim_ceiling":"MECHANISM","preformal_eligible":false,"hold_class":"HOLD_METHOD_LIMITED","hold_reason":["OUTCOME_EXPOSED_TERMINAL_REPRESENTATION_REPAIR_AFTER_API_CONFORMANCE_MISS"],"terminal_state":"TERMINAL_FOR_CURRENT_OBJECT","queue_state":"NOT_QUEUED","preformal_readiness":{"status":"NOT_READY"},"system_priority_exception":{"used":false}}
+    {"id":"CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01","classification":"HOLD","claim_ceiling":"MECHANISM","preformal_eligible":false,"hold_class":"HOLD_METHOD_LIMITED","hold_reason":["OUTCOME_EXPOSED_TERMINAL_REPRESENTATION_REPAIR_AFTER_API_CONFORMANCE_MISS"],"terminal_state":"TERMINAL_FOR_CURRENT_OBJECT","queue_state":"NOT_QUEUED","preformal_readiness":{"status":"NOT_READY"},"system_priority_exception":{"used":false}},
+    {"id":"CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01","classification":"REJECT","claim_ceiling":"MECHANISM","preformal_eligible":false,"hold_class":null,"hold_reason":null,"terminal_state":"TERMINAL_FOR_CURRENT_OBJECT","queue_state":"NOT_QUEUED","preformal_readiness":{"status":"NOT_READY"},"system_priority_exception":{"used":false}}
   ],
-  "pending_unreviewed_sub_result": {
-    "generation_id":"SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91",
-    "candidate_id":"CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01",
-    "candidate_status":"SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL",
-    "proposed_claim_ceiling":"MECHANISM",
-    "proposed_preformal_eligible":false,
-    "proposed_preformal_readiness":{"status":"NOT_READY"},
-    "proposed_hold_class":null,
-    "proposed_hold_reason":null,
-    "proposed_terminal_state":"TERMINAL_FOR_CURRENT_OBJECT",
-    "proposed_queue_state":"NOT_QUEUED",
-    "proposed_system_priority_exception":{"used":false},
-    "recommendation":"REJECT",
-    "authority_status":"NON_AUTHORITATIVE_UNTIL_FRESH_EVIDENCE_ANALYST_CLASSIFICATION",
-    "question":"After balanced training where identical current mature Assembly X is paired with different outcomes depending on immediately preceding mature context A versus B, can native v0.5 prediction emit different predictions for X solely from that preceding context?",
-    "observed_terminal":"FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS",
-    "observed_scientific_result":"NO_CONTEXT_CONDITIONED_DIFFERENTIATION_DETECTED; CURRENT_OBJECT_REDUCES_EXACTLY_TO_FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP",
-    "ordinary_reduction":"FIRST_ORDER_CURRENT_ASSEMBLY_FREQUENCY_LOOKUP_WITH_EXACT_NATIVE_TIE_RULE",
-    "support_breadth":"ONE_FIXED_COMPONENT_LEVEL_SYNTHETIC_A_B_X_CONSTRUCTION; BALANCED_4_4_OUTCOMES",
-    "semantic_preflight":"COMPLETED_BEFORE_FIRST_OUTCOME_BEARING_EXECUTION; NO_POST_OUTCOME_TERMINAL_SEMANTIC_REPAIR_REPORTED_BY_SUB",
-    "research_branch":"research/exploratory-sub-context-conditioned-prediction-20260920",
-    "prospective_contract_commit":"01d4cc8daf07be67b8f633434030241276a0a4b0",
-    "diagnostic_commit":"38c6f3cc972898c170fdf5853190ca33de8f6882",
-    "research_head":"f0a4157d869561e4201aca1c37663305bc5c8a5d",
-    "final_head_ci_run":35502970668,
-    "final_head_ci":"COMPLETED_SUCCESS",
-    "evidentiary_status":"NON_EVIDENTIARY_DISCOVERY"
-  },
   "funnel_metrics": {
-    "authority":"EVIDENCE_ANALYST_R17_SNAPSHOT_NOT_RECOMPUTED_PENDING_NEW_SUB_REVIEW",
-    "discovery_dispositions":{"window_basis":"last_3_autonomous_scientific_SUB_selections_at_R17","REJECT":2,"HOLD_METHOD_LIMITED":1},
-    "rolling_theory_backward_selection":{"window_size":3,"qualifying_count":2,"share":"2/3","theory_backward_exception":null},
-    "architecture_portfolio":{"active":{"MECHANISM":0,"SYSTEM":0},"queued":{"MECHANISM":0,"SYSTEM":0}},
-    "architecture_hold_dispositions":{"HOLD_SYSTEM_TERMINAL":3,"HOLD_METHOD_LIMITED":1,"REJECT":0},
-    "terminal_state_counts":{"ACTIVE":0,"NONTERMINAL_HOLD":1,"TERMINAL_FOR_CURRENT_OBJECT":11},
+    "material_portfolio":{"MECHANISM":7,"SYSTEM":6},
+    "classification_completeness":{"total_material_candidates":13,"complete_mandatory_v2_1_fields":13,"incomplete_candidates":[]},
+    "terminal_state_counts":{"ACTIVE":0,"NONTERMINAL_HOLD":1,"TERMINAL_FOR_CURRENT_OBJECT":12},
     "preformal_eligible_count":0,
     "preformal_ready_count":0,
     "viable_mechanism_candidate_count":0,
-    "material_portfolio":{"MECHANISM":6,"SYSTEM":6},
+    "rolling_theory_backward_selection":{"window_size":3,"qualifying_count":3,"share":"3/3","theory_backward_exception":null},
+    "recent_scientific_dispositions":{"REJECT":2,"HOLD_METHOD_LIMITED":1},
     "recent_main_split":{"cycle_count":{"SYSTEM":3,"MECHANISM":0},"time_split":"NOT_COMPARABLE_FROM_DURABLE_STREAM; CI_DURATION_NOT_USED_AS_RESEARCH_TIME_PROXY"},
-    "system_over_mechanism_exceptions":{"count_this_generation":0,"reasons":[]},
-    "classification_completeness":{"total_material_candidates":12,"complete_mandatory_v2_1_fields":12,"incomplete_candidates":[]}
+    "system_over_mechanism_exceptions":{"count_this_generation":0,"reasons":[]}
   },
+  "authoritative_refs": {
+    "main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "analyst_handoff":"fec9320a8e8c868f4df91dafb1af75c640ae995a",
+    "context_prediction_branch":"research/exploratory-sub-context-conditioned-prediction-20260920",
+    "context_prediction_binding_commit":"01d4cc8daf07be67b8f633434030241276a0a4b0",
+    "context_prediction_final_head":"f0a4157d869561e4201aca1c37663305bc5c8a5d",
+    "context_prediction_final_ci_run":35502970668,
+    "context_prediction_final_ci":"COMPLETED_SUCCESS",
+    "evidence_tag_count":5,
+    "formal_tag_count":0,
+    "sealed_tag_count":0,
+    "freeze_tag_count":0,
+    "h5_started":"058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "h5_raw_preserve":"ce5797eb584344db7a512e585506fb6c59ea475b",
+    "pr_148":"OPEN_UNMERGED",
+    "pr_149":"OPEN_UNMERGED"
+  },
+  "fast_path_reconciliation": {
+    "status":"FAST_PATH_CLEAN",
+    "full_reconciliation_required":false,
+    "ref_disagreement":false,
+    "integrity_anomaly":false,
+    "collision_anomaly":false,
+    "allocation_ambiguity":false,
+    "previous_lease_status":"BLOCKED",
+    "sub_generation_consumed_by_analyst":true
+  },
+  "branches_prs_advanced": [],
+  "workflows_experiments": {
+    "main_dispatched": [],
+    "observed_sub_exact_head_ci":{"run_id":35502970668,"head":"f0a4157d869561e4201aca1c37663305bc5c8a5d","status":"completed","conclusion":"success"}
+  },
+  "observations_results": [
+    {
+      "source":"EVIDENCE_ANALYST_CANONICAL_REVIEW_OF_SUB_DISCOVERY",
+      "candidate_id":"CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01",
+      "terminal":"FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS",
+      "classification":"REJECT",
+      "evidentiary_status":"NON_EVIDENTIARY_DISCOVERY",
+      "observation":"Balanced future-A/future-B training for identical current mature Assembly X under immediately preceding A versus B context produced the same native prediction future-A at confidence 0.5 in both arms; context calls did not mutate predictor state.",
+      "ordinary_reduction":"FIRST_ORDER_CURRENT_ASSEMBLY_FREQUENCY_LOOKUP_WITH_EXACT_NATIVE_TIE_RULE",
+      "support_breadth":"ONE_FIXED_COMPONENT_LEVEL_SYNTHETIC_A_B_X_CONSTRUCTION; BALANCED_4_4_OUTCOMES",
+      "claim_boundary":"Closes only the fixed component-level immediate-predecessor context object; no integrated extension, context-length sweep, cycle-2 rescue, PRE_FORMAL promotion, or SYSTEM relabel is authorized."
+    }
+  ],
+  "evidentiary_status": {
+    "new_formal_scientific_evidence":0,
+    "new_preformal_development_evidence":0,
+    "new_mechanism_architecture_observations":0,
+    "new_system_architecture_observations":0,
+    "main_scientific_execution":"NONE"
+  },
+  "ordinary_reductions": {
+    "CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01":"FIRST_ORDER_CURRENT_ASSEMBLY_FREQUENCY_LOOKUP_WITH_EXACT_NATIVE_TIE_RULE"
+  },
+  "support_breadth": {
+    "CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01":"ONE_FIXED_COMPONENT_LEVEL_SYNTHETIC_A_B_X_CONSTRUCTION; BALANCED_4_4_OUTCOMES"
+  },
+  "consumed_identities": [
+    "c19-external-v2-official-v4",
+    "C19-R1 revision-authority official-v1",
+    "C19-R1 revision-authority official-v2",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "pd01-long-history-fading-memory-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "h5-event-routing-work-reduction-official-v1"
+  ],
+  "new_identity_consumption": 0,
+  "integrity_state": "CLEAN_UNCHANGED_AUTHORITATIVE_SCIENTIFIC_REFS",
+  "critical_path_fixes": [],
   "outcome_contingencies": [
-    {"condition":"FRESH_COHERENT_MECHANISM_DISCOVERY_AFTER_SEMANTIC_PREFLIGHT","action":"ALLOW_ONE_BOUNDED_NON_EVIDENTIARY_DISCOVERY_CYCLE_UNDER_SUB; IF_READINESS_BECOMES_ASSESSABLE_STOP_FOR_FRESH_ANALYST_BEFORE_PRE_FORMAL"},
-    {"condition":"FRESH_HIGH_VALUE_SYSTEM_DISCOVERY","action":"LOWER_FUNNEL_CHARACTERIZATION_ALLOWED; MAIN_SYSTEM_ALLOCATION_REQUIRES_FRESH_ANALYST_AND_PROSPECTIVE_SYSTEM_PRIORITY_EXCEPTION_IF_COMPARABLE_EXECUTABLE_MECHANISM_EXISTS"},
-    {"condition":"MATCHED_ORDINARY_REDUCTION_OR_FIXED_NEGATIVE_FALSIFIER_CLEANLY_CLOSES_PROSPECTIVELY_VALID_OBJECT","action":"REJECT_TERMINAL_FOR_CURRENT_OBJECT_NO_RESCUE_CYCLE"},
-    {"condition":"TERMINAL_RELEVANT_API_OR_REPRESENTATION_DEFECT_FOUND_BEFORE_OUTCOME","action":"MECHANICAL_FIX_ALLOWED_BEFORE_OUTCOME_ONLY; REBIND_EXACTLY_AND_REPEAT_PREFLIGHT_BEFORE_EXECUTION"},
-    {"condition":"TERMINAL_RELEVANT_DEFECT_FOUND_AFTER_OUTCOME","action":"STOP_CURRENT_OBJECT_AS_METHOD_LIMITED_TERMINAL; CLEAN_CONFIRMATION_REQUIRES_FRESH_OBJECT"},
-    {"condition":"FIRST_MECHANISM_ELIGIBLE_AND_READY","action":"STOP_FOR_FRESH_ANALYST_AUTHORITY; DO_NOT_AUTO_PROMOTE"},
-    {"condition":"ANY_FORMAL_PROPOSAL","action":"STOP_UNTIL_FRESH_ONE_WAY_IDENTITY_STARTED_TEST_SCORER_PRESERVE_AUTHORITY_AND_COMPLETE_BINDING"}
+    "Fresh coherent MECHANISM Discovery may receive at most one bounded NON_EVIDENTIARY SUB cycle under fresh prospective typing and semantic preflight.",
+    "A first eligible+READY MECHANISM object returns to fresh Analyst; MAIN does not auto-promote to PRE_FORMAL.",
+    "A SYSTEM allocation over a comparable executable MECHANISM requires a prospective Analyst system_priority_exception.",
+    "FORMAL remains stopped absent a fresh one-way identity/STARTED/TEST/scorer/preserve authority chain."
   ],
   "blocked_until": [
-    "FRESH_EVIDENCE_ANALYST_GENERATION_CONSUMES_AND_CLASSIFIES_SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91",
     "A_FRESH_COHERENT_EXECUTABLE_MECHANISM_OR_INDEPENDENTLY_HIGH_INFORMATION_INTEGRITY_PROTECTING_SYSTEM_OBJECT_RECEIVES_FRESH_ANALYST_ALLOCATION",
     "CAND_H7_REQUIRES_NATIVE_EXECUTABLE_RESPONSIBILITY_SENSITIVE_OBJECT_WITH_SUPPORTED_REACHABILITY_AND_FIXED_COMPARATOR_AND_FALSIFIER",
     "FORMAL_REQUIRES_FRESH_ONE_WAY_IDENTITY_AND_AUTHORITY"
   ],
   "do_not_touch": [
     "ALL_CONSUMED_IDENTITIES_AND_IMMUTABLE_EVIDENCE_REFS",
-    "CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01_PENDING_ANALYST_CLASSIFICATION_NO_MAIN_ADOPTION_OR_RESCUE",
+    "CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01_TERMINAL_NO_CYCLE2_RESCUE_OR_INTEGRATED_EXTENSION",
     "CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01_TERMINAL_METHOD_LIMITED_NO_SAME_OBJECT_RERUN_OR_RESCUE",
     "ALL_TERMINAL_CURRENT_OBJECTS_WITHOUT_FRESH_CANDIDATE_ID",
     "CAND-H7-RESP-01_BEFORE_NATIVE_EXECUTABLE_OBJECT"
   ],
-  "ordinary_reductions": {
-    "current_main_object": null,
-    "latest_analyst_classified_sub_object": "FIXED_PRESEMANTIC_PROTOTYPE_CLUSTER_PLUS_ORDINARY_LABEL_LOOKUP_REPRODUCED_APPARENT_TRANSFER_BUT_SAME_OBJECT_TERMINAL_CREDIT_IS_METHOD_LIMITED_BY_POST_OUTCOME_API_REPAIR",
-    "pending_unreviewed_sub_object_reported_reduction": "FIRST_ORDER_CURRENT_ASSEMBLY_FREQUENCY_LOOKUP_WITH_EXACT_NATIVE_TIE_RULE"
-  },
-  "support_breadth": {
-    "current_main_object": null,
-    "latest_analyst_classified_sub_observation": "ONE_FIXED_SYNTHETIC_PATTERN_TRIPLET; DEFAULT_SIMILARITY_THRESHOLD; ONE_LABEL; NON_EVIDENTIARY",
-    "pending_unreviewed_sub_observation": "ONE_FIXED_COMPONENT_LEVEL_SYNTHETIC_A_B_X_CONSTRUCTION; BALANCED_4_4_OUTCOMES; NON_EVIDENTIARY"
-  },
-  "workflow_check": {
-    "run_id":35502970668,
-    "head_branch":"research/exploratory-sub-context-conditioned-prediction-20260920",
-    "head_sha":"f0a4157d869561e4201aca1c37663305bc5c8a5d",
-    "status":"completed",
-    "conclusion":"success",
-    "role":"OBSERVED_SUB_FRESHNESS_DEPENDENCY_ONLY_NOT_MAIN_EXECUTION"
-  },
-  "authoritative_refs": {
-    "main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff_commit":"4dc5a5b43f26789f32567eb69cbb4a26b9cd6825",
-    "evidence_analyst_generation":"EVA-20260920T180852+0900-R17-152262F6",
-    "sub_latest_generation":"SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91",
-    "sub_research_branch":"research/exploratory-sub-context-conditioned-prediction-20260920",
-    "sub_research_binding_commit":"01d4cc8daf07be67b8f633434030241276a0a4b0",
-    "sub_research_head":"f0a4157d869561e4201aca1c37663305bc5c8a5d",
-    "sub_research_ci_run":35502970668,
-    "sub_research_ci":"COMPLETED_SUCCESS",
-    "evidence_tag_count":5,
-    "formal_tag_count":0,
-    "sealed_tag_count":0,
-    "freeze_tag_count":0,
-    "h5_started":"058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "h5_raw_preserve":"ce5797eb584344db7a512e585506fb6c59ea475b"
-  },
-  "collision_reconciliation": {
-    "prior_main_lease_status":"COMPLETED",
-    "fresh_primary_running_same_object":false,
-    "active_main_object":null,
-    "sub_collision":"NONE_MAIN_HAS_NO_ACTIVE_SCIENTIFIC_OBJECT",
-    "freshness_issue":"NEWER_SUB_SCIENTIFIC_GENERATION_POSTDATES_CONTROLLING_ANALYST_AND_REQUIRES_FRESH_ANALYST_CLASSIFICATION"
-  },
-  "critical_path_actions_performed": [
-    "READ_ANALYST_R17_AND_MAIN_PRIMARY_1812_STATE_LEASE_REPORT",
-    "REFETCH_STABLE_MAIN_AND_NEW_SUB_RESEARCH_HEAD",
-    "REFETCH_EXACT_HEAD_CI_35502970668_COMPLETED_SUCCESS",
-    "PRESERVE_MAIN_FUNNEL_V2_1_FIELDS_WITHOUT_ADOPTING_SUB_PROPOSALS",
-    "FAIL_CLOSED_MAIN_PENDING_FRESH_ANALYST_CLASSIFICATION"
-  ],
-  "scientific_result": null,
-  "new_scientific_information_from_relay": false,
-  "new_unreviewed_sub_repository_information": true,
-  "evidentiary_status": "NO_NEW_MAIN_EVIDENCE; SUB_RESULT_NON_EVIDENTIARY_AND_NOT_ANALYST_CANONICAL",
-  "consumed_identities": [],
-  "consumed_identities_note": "No identity consumed by RELAY. Existing no-retry identities remain untouched.",
-  "integrity_status": "PASS_FAIL_CLOSED_NO_SCIENTIFIC_MUTATION_NO_FORMAL_ACTION_NO_IMMUTABLE_REF_MUTATION",
-  "stop_reason": "BLOCKED_PENDING_FRESH_ANALYST_CLASSIFICATION_OF_NEWER_SUB_GENERATION",
-  "next_main_action": "Wait for a fresh Evidence Analyst generation to consume and classify SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91. Do not adopt its proposed claim ceiling/readiness/terminal/queue/hold fields, do not create a successor, and do not begin PRE_FORMAL or FORMAL work without fresh authority.",
+  "work_left_for_sub": "Independent bounded Discovery only under Analyst R18 prospective typing, terminal/public-API semantic preflight, ordinary-reduction ladder, fixed falsifier where MECHANISM, and STOP mapping; no MAIN critical-path work is delegated.",
   "utility_request_created": null,
-  "persistence": {
-    "branch":"ops/orchestrator-run-report",
-    "lease_acquire_commit":"9c3165d85a56d6be00a9b6385cb5e0294b2ad921",
-    "state_path":"reports/orchestrator/main/state.json",
-    "latest_path":"reports/orchestrator/main/latest.md",
-    "history_path":"reports/orchestrator/history/2026-09-20/1847-main.md",
-    "lease_path":"reports/orchestrator/main/lease.json",
-    "mode":"SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result":"IN_PROGRESS_UNTIL_FINAL_LEASE_BLOCKED"
+  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
+  "next_main_action": "Remain scientifically idle until a fresh Evidence Analyst generation prospectively assigns a coherent MAIN object. Re-read Analyst generation and all authoritative refs before any future mutation or scientific action.",
+  "persistence_result": {
+    "lease_acquire_commit":"121590676aea77e69684411756e46807fcea5499",
+    "mode":"MAIN_OWNED_CONTROL_PLANE_ONLY",
+    "status":"STATE_PERSISTED; LATEST_HISTORY_FINAL_LEASE_FOLLOW"
   }
 }
