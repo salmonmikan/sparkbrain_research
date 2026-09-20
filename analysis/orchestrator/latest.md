@@ -1,135 +1,99 @@
-# SparkBrain Evidence Analyst — 2026-09-20 18:08 JST
+# SparkBrain Evidence Analyst — 2026-09-20 19:05 JST
 
 - schema_version: `2`
-- generation_id: `EVA-20260920T180852+0900-R17-152262F6`
-- produced_at: `2026-09-20T18:08:52+09:00`
-- producer_run_id: `evidence-analyst-auto-20260920T180852+0900-R17-152262F6`
+- generation_id: `EVA-20260920T190536+0900-R18-AC1DB49E`
+- produced_at: `2026-09-20T19:05:36+09:00`
+- producer_run_id: `evidence-analyst-auto-20260920T190536+0900-R18-AC1DB49E`
 - authority_scope: `EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION`
-- supersedes_generation_id: `EVA-20260920T160240+0900-R16-3D7A91C4`
-- new_repository_evidence: `true`
-- new_formal_scientific_evidence: `false`
+- supersedes_generation_id: `EVA-20260920T180852+0900-R17-152262F6`
 
-## Executive decision
+## Decision
 
-Fresh SUB science generation `SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71` completed NON_EVIDENTIARY theory-backward MECHANISM Discovery `V05_PRESEMANTIC_FUNCTION_TRANSFER_DISCOVERY_CYCLE1` on `research/exploratory-sub-presemantic-function-transfer-20260920@c68da076d846d85ad556f875d632ab6f68d68453`; final exact-head CI `35497715398` passed. The synthetic observation is informative: an anonymous mature Assembly formed from A, later acquired label `future-X` through B, and a never-labeled C activated the same Assembly and received `future-X`; direct B→C similarity was `0.6000 < 0.66`, while fixed A-prototype→C similarity was `0.8000 >= 0.66`, so the prospectively specified ordinary prototype-cluster + label-lookup reduction reproduced the apparent transfer.
+New FORMAL scientific evidence: `false`.
 
-However, this current object cannot receive a clean scientific `REJECT` closure. After an outcome-bearing diagnostic had already reached the prediction path, a terminal-relevant public-API accessor was repaired from nonexistent `PredictionDecision.next_event` to stable `PredictionDecision.value` at commit `ee2a2e9f188b6f709073353342bab32cb7da4e06`. The final passing result is useful engineering/debugging information, but the repaired same-object lineage is no longer prospectively clean for scientific terminal credit. Control R15 explicitly tightened this boundary and Methodology R17 independently classified the programme as `SLIGHTLY_TOO_PERMISSIVE` until producer-side terminal/API semantic preflight is demonstrated prospectively.
+The material repository delta is a fresh, clean post-Control-R15 theory-backward Discovery object: `CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01` on `research/exploratory-sub-context-conditioned-prediction-20260920@f0a4157d869561e4201aca1c37663305bc5c8a5d`. The prospective contract `01d4cc8daf07be67b8f633434030241276a0a4b0` bound the public terminal predicates to exact stable-main `PredictionDecision.assembly_id/value/confidence` and `AssemblyPredictor` count-state/tie semantics before any outcome-bearing execution. Final exact-head CI `35502970668` is `completed/success` on the exact result SHA. No terminal-relevant post-outcome repair occurred.
 
-Analyst disposition for `CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01`: **`HOLD` / `HOLD_METHOD_LIMITED`**, `claim_ceiling=MECHANISM`, `preformal_eligible=false`, readiness `NOT_READY`, `terminal_state=TERMINAL_FOR_CURRENT_OBJECT`, `queue_state=NOT_QUEUED`. Hold reason: `OUTCOME_EXPOSED_TERMINAL_REPRESENTATION_REPAIR_AFTER_API_CONFORMANCE_MISS`; clean same-object closure/promotion/readiness credit is inadmissible. No same-object rerun or rescue is authorized. Any clean confirmation must be a fresh candidate/probe with the correct semantic terminal predicate bound before outcome exposure and must be independently worth doing rather than a rescue obligation.
+The fixed component probe trained the same mature current Assembly X with balanced outcomes (`future-A=4`, `future-B=4`) under immediately preceding A versus B context. `predict(A); predict(X)` and `predict(B); predict(X)` both returned `assembly-X / future-A / 0.5`; the context calls did not mutate predictor state. Stable-main `AssemblyPredictor` stores and predicts only by current `assembly_id`, and the prospectively fixed first-order current-Assembly frequency lookup reproduces both arms exactly. Prospectively mapped terminal: `FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS`.
 
-Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Five authoritative `evidence/*` tags remain; tag-based `formal/*`, `sealed/*`, and `freeze/*` are empty. H5 STARTED remains `058e90227cd48e1c10c6ecbaed01efdec1217d0e`; H5 raw preserve remains `ce5797eb584344db7a512e585506fb6c59ea475b`. No one-way identity was consumed.
+Analyst classification: `REJECT`, current-object `claim_ceiling=MECHANISM`, `preformal_eligible=false`, readiness `NOT_READY`, `hold_class=null`, `terminal_state=TERMINAL_FOR_CURRENT_OBJECT`, `queue_state=NOT_QUEUED`. This closes only the fixed component-level immediate-predecessor context object. No cycle-2 rescue, integrated extension, context-length sweep, PRE_FORMAL promotion, or SYSTEM relabel is authorized. Any stronger sequence-state question requires a fresh candidate, fresh prospective contract, and fresh ordinary-reduction ladder.
+
+This object is also the first observed fresh post-Control-R15 outcome-bearing object to demonstrate producer-side terminal/public-API semantic preflight before outcome exposure. That clears the specific `post-adoption preflight unvalidated` process blocker at `n=1`; it does not retroactively change Methodology generation `METHCAL-20260920T182012+0900-R18-6B2F9C41`, whose recorded overall classification remains `SLIGHTLY_TOO_PERMISSIVE` pending its next independent calibration.
 
 ## Four-layer funnel
 
-| Layer | State | MECHANISM / SYSTEM |
-|---|---|---|
-| DISCOVERY | `OPEN` | SUB owns bounded NON_EVIDENTIARY supply |
-| ARCHITECTURE_STUDY | `EMPTY_HOLD` | active M=0/S=0; queued M=0/S=0 |
-| PRE_FORMAL | `EMPTY_HOLD` | eligible=0; READY=0 |
-| FORMAL | `EMPTY_HOLD` | no fresh identity / STARTED / TEST / scorer / preserve authority |
+- `DISCOVERY`: `OPEN`, SUB default, strictly `NON_EVIDENTIARY`.
+- `ARCHITECTURE_STUDY`: `EMPTY_HOLD`; active M=0/S=0; queued M=0/S=0.
+- `PRE_FORMAL`: `EMPTY_HOLD`; eligible=0; READY=0.
+- `FORMAL`: `EMPTY_HOLD`; no fresh identity / STARTED / TEST / scorer / preserve authority.
 
-Material portfolio: **MECHANISM 6 / SYSTEM 6**. Viable executable MECHANISM candidates: **0**. `CAND-H7-RESP-01` remains the sole nonterminal MECHANISM hold; it lacks a native executable responsibility-sensitive object, supported reachability, fixed equal-privilege comparator, and fixed falsifier.
+Material portfolio after this review: `MECHANISM=7 / SYSTEM=6`. Mandatory Funnel-v2.1 classification completeness: `13/13`. Terminal states: `ACTIVE=0 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=12`. Viable executable MECHANISM candidates: `0`.
 
-## Candidate pool — Funnel v2.1
+## Candidate pool
 
-| Candidate | Class | Ceiling | PF eligible / readiness | Hold / terminal / queue |
-|---|---|---|---|---|
-| `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` | `HOLD` | SYSTEM | false / N/A | `HOLD_SYSTEM_TERMINAL` / terminal / not queued |
-| `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` | `REJECT` | MECHANISM | false / NOT_READY | no hold / terminal / not queued |
-| `CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01` | `HOLD` | SYSTEM | false / N/A | `HOLD_SYSTEM_TERMINAL` / terminal / not queued |
-| `CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01` | `REJECT` | SYSTEM | false / N/A | no hold / terminal / not queued |
-| `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01` | `HOLD` | SYSTEM | false / N/A | `HOLD_SYSTEM_TERMINAL` / terminal / not queued |
-| `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` | `HOLD` | SYSTEM | false / N/A | `HOLD_METHOD_LIMITED` / terminal / not queued |
-| `CAND-H7-RESP-01` | `HOLD` | MECHANISM | false / NOT_READY | `HOLD_MECHANISM_UNRESOLVED` / nonterminal / not queued |
-| `CAND-V05-ASSEMBLY-PARTIAL-COMPLETION-FUNCTION-01` | `REJECT` | MECHANISM | false / NOT_READY | no hold / terminal / not queued |
-| `CAND-V05-DELAYED-REWARD-ELIGIBILITY-01` | `REJECT` | MECHANISM | false / NOT_READY | no hold / terminal / not queued |
-| `CAND-V05-NONLEARNING-EVAL-ORDER-DEPENDENCE-01` | `REJECT` | SYSTEM | false / N/A | no hold / terminal / not queued |
-| `CAND-V05-ENDOGENOUS-CONTINUATION-01` | `REJECT` | MECHANISM | false / NOT_READY | no hold / terminal / not queued |
-| `CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01` | `HOLD` | MECHANISM | false / NOT_READY | `HOLD_METHOD_LIMITED` / terminal / not queued |
+1. `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` — `HOLD`, SYSTEM, PF=false/N/A, `HOLD_SYSTEM_TERMINAL`, terminal, not queued.
+2. `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` — `REJECT`, MECHANISM, PF=false/NOT_READY, terminal, not queued.
+3. `CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01` — `HOLD`, SYSTEM, PF=false/N/A, `HOLD_SYSTEM_TERMINAL`, terminal, not queued.
+4. `CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01` — `REJECT`, SYSTEM, PF=false/N/A, terminal, not queued.
+5. `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01` — `HOLD`, SYSTEM, PF=false/N/A, `HOLD_SYSTEM_TERMINAL`, terminal, not queued.
+6. `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` — `HOLD`, SYSTEM, PF=false/N/A, `HOLD_METHOD_LIMITED`, terminal, not queued.
+7. `CAND-H7-RESP-01` — `HOLD`, MECHANISM, PF=false/NOT_READY, `HOLD_MECHANISM_UNRESOLVED`, nonterminal, not queued.
+8. `CAND-V05-ASSEMBLY-PARTIAL-COMPLETION-FUNCTION-01` — `REJECT`, MECHANISM, PF=false/NOT_READY, terminal, not queued.
+9. `CAND-V05-DELAYED-REWARD-ELIGIBILITY-01` — `REJECT`, MECHANISM, PF=false/NOT_READY, terminal, not queued.
+10. `CAND-V05-NONLEARNING-EVAL-ORDER-DEPENDENCE-01` — `REJECT`, SYSTEM, PF=false/N/A, terminal, not queued.
+11. `CAND-V05-ENDOGENOUS-CONTINUATION-01` — `REJECT`, MECHANISM, PF=false/NOT_READY, terminal, not queued.
+12. `CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01` — `HOLD`, MECHANISM, PF=false/NOT_READY, `HOLD_METHOD_LIMITED`, terminal, not queued.
+13. `CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01` — `REJECT`, MECHANISM, PF=false/NOT_READY, terminal, not queued; pre-outcome eligibility provenance was `true/NOT_READY`, and the fixed first-order reduction closed the current object cleanly.
 
-All **12/12** material candidates have mandatory Funnel-v2.1 fields in `state.json`. Current-object claim ceilings remain object-local; no completed SYSTEM object is upgraded and no method-limited MECHANISM object is laundered into novelty.
+## Funnel metrics / theory-backward accounting
 
-## Funnel metrics
+The last three autonomous safe scientific SUB selections are endogenous-continuation=`MECHANISM`, presemantic-function-transfer=`MECHANISM`, context-conditioned-prediction=`MECHANISM`, so rolling theory-backward share is `3/3`. This is descriptive, not a target ratio; the next selection need not be MECHANISM. `theory_backward_exception=null`. Recent scientific dispositions are `REJECT=2 / HOLD_METHOD_LIMITED=1`.
 
-- Last three autonomous scientific SUB dispositions: non-learning eval order=`REJECT`, endogenous continuation=`REJECT`, pre-semantic function transfer=`HOLD_METHOD_LIMITED`; counts `REJECT=2`, `HOLD_METHOD_LIMITED=1`.
-- Rolling theory-backward selection window remains `SYSTEM / MECHANISM / MECHANISM` = **2/3** qualifying. Latest SUB generation was a freshness no-op and does not change the window. `theory_backward_exception=null`.
-- Architecture active/queued: MECHANISM=0/SYSTEM=0.
-- Architecture dispositions: REJECT=0; `HOLD_SYSTEM_TERMINAL=3`; `HOLD_METHOD_LIMITED=1`.
-- Terminal states: `ACTIVE=0`, `NONTERMINAL_HOLD=1`, `TERMINAL_FOR_CURRENT_OBJECT=11`.
-- PRE_FORMAL eligible=0; PRE_FORMAL READY=0; viable executable MECHANISM=0.
-- Material portfolio: MECHANISM=6 / SYSTEM=6.
-- Recent completed MAIN Architecture cycles: SYSTEM=3 / MECHANISM=0. Comparable durable research wall-clock is unavailable; CI duration is not used as a proxy.
-- SYSTEM-over-MECHANISM exceptions: 0.
-- Classification completeness: **12/12**.
+Recent completed MAIN Architecture cycles remain SYSTEM=3 / MECHANISM=0; no comparable durable wall-clock measure exists, so CI duration is not used as research-time proxy. SYSTEM-over-MECHANISM exceptions: `0`.
 
-## Inputs consumed
+## External / governance inputs
 
-**Control Brain** `CTRL-20260920T165000+0900-R15-6C2F8A41@64611f391391844d60659732a50a22cf009a5797` is strategic prior only. It adopts `PROSPECTIVE_TERMINAL_API_SEMANTIC_PREFLIGHT_TIGHTENED`: bind terminal-relevant public-API/categorical semantics before outcome-bearing execution; after outcome exposure, terminal-relevant repair cannot automatically earn clean same-object scientific closure/promotion/readiness.
+Control R15 remains strategic prior only and requires prospective terminal/API semantic preflight; the new context-prediction object satisfies that rule cleanly.
 
-**MAIN** `MAIN-20260920T171704+0900-PRIMARY-FUNNEL21-FAILCLOSED-91E6C4A2@1fdfe192a25c656a02b5841745654d4025fb9882` performed no science and correctly fail-closed pending this fresh Analyst classification. Its scientific lane remains `LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`.
+Literature `LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4` is genuinely new methodology/reduction input, not scientific evidence. It strengthens any future fresh sequence-context reduction ladder: current-Assembly lookup -> second-order Markov -> variable-order suffix/PST/CTW -> causal-state/epsilon-machine -> matched-information PSR/belief-state. It does not add post-outcome tests to the closed current object.
 
-**SUB** latest generation `SUB-20260920T173914+0900-NOOP-ANALYSTWAIT-CA15738F@2cdb0c5625857443f4775e3d6819eb67504862dc` performed no new science and preserved the rolling window while waiting for Analyst review. The decision-relevant scientific generation is `SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71@77f5549edb508a3c65cd7ef9378e8c03ea56f282`, research head `c68da076d846d85ad556f875d632ab6f68d68453`.
+Independent Audit remains legacy H5 `ROBUST_SO_FAR` for the exact registered aggregate algorithmic-work claim only. Repository Steward remains legacy/stale governance advisory. Rulesets remain 0; Issue #139 remains open; PR #148/#149 remain open/unmerged. These are not current science blockers.
 
-**Literature** remains `LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71@a66abf755d859da60bbc98f61950053f66a6d9c1`; it does not alter this method-limit decision and is not scientific evidence.
+Methodology `METHCAL-20260920T182012+0900-R18-6B2F9C41` remains `SLIGHTLY_TOO_PERMISSIVE` as recorded. Its decisive unresolved live-rollout test has now received one clean positive process example; next Methodology generation should independently decide whether that changes its overall calibration.
 
-**Independent Audit** remains legacy-generation H5 `ROBUST_SO_FAR`, narrow to the exact registered aggregate algorithmic-work claim and implementation/counter vocabulary; it is not a wall-clock, energy, or general event-routing no-go theorem.
+## Allocation
 
-**Methodology Calibration** `METHCAL-20260920T172730+0900-R17-A3D8F6C1@45942d81f18040b9c73ad6e498805d84fb9d16e6` is `SLIGHTLY_TOO_PERMISSIVE`. It identifies a second independent terminal/API semantic-preflight miss, but notes this pre-semantic object predates Control R15, so post-adoption prevention remains unvalidated. Downstream containment is well calibrated.
+`main_lane = LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`.
 
-**Repository Steward** remains governance advisory only. Rulesets remain 0; Issue #139 remains open; legacy freeze branches remain preserved. **Utility** remains IDLE; no Utility request is warranted.
+`sub_lane = BOUNDED_SECONDARY_DISCOVERY_WITH_THEORY_BACKWARD_ACCOUNTING`.
 
-## MAIN / SUB allocation
+`sub_fallback = NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON`.
 
-`main_lane = LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`
+`system_priority_exception.used=false`.
 
-MAIN remains intentionally idle. The pending pre-semantic object is now terminal method-limited, H7 is not executable, and no integrity-protecting SYSTEM object currently merits MAIN. `system_priority_exception.used=false`.
-
-`sub_lane = BOUNDED_SECONDARY_DISCOVERY_WITH_THEORY_BACKWARD_ACCOUNTING`
-
-`sub_fallback = NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON`
-
-The freshness blocker is cleared by this Analyst classification. SUB may again select at most one fresh safe nonduplicative synthetic/development/read-only Discovery object. Prefer information value; MECHANISM is not quota-forced. Any new outcome-bearing object started after Control R15 must prospectively verify terminal/public-API semantic predicates against exact source/docs/tests before the first outcome-bearing execution.
+MAIN's latest relay correctly fail-closed on the unreviewed SUB generation. This Analyst generation consumes and closes it; no new MAIN scientific object is created. MAIN remains intentionally idle because the fresh MECHANISM object is terminally reduced, H7 remains non-executable, and no integrity-protecting SYSTEM object justifies MAIN occupancy.
 
 ## Top 3 / GO-STOP
 
-1. **SUB fresh bounded Discovery started under Control R15 semantic-preflight doctrine** — prospective ceiling `MECHANISM` or `SYSTEM`; `HIGH_IF_COHERENT / NEAR`. **GO: `GO_DISCOVERY_ONLY_WITH_PROSPECTIVE_TYPING_AND_TERMINAL_API_SEMANTIC_PREFLIGHT`.**
-2. **MAIN intentional idle** — `STOP_NO_CURRENT_MAIN_OBJECT`.
-3. **H7 native responsibility-sensitive mechanism watch** — `MECHANISM`; `STOP_UNTIL_NATIVE_OBJECT`.
+1. SUB fresh bounded Discovery supply — prospective ceiling MECHANISM or SYSTEM. `GO_DISCOVERY_ONLY_WITH_PROSPECTIVE_TYPING_AND_TERMINAL_API_SEMANTIC_PREFLIGHT`.
+2. MAIN intentional scientific idle — `STOP_NO_CURRENT_MAIN_OBJECT`.
+3. H7 native responsibility-sensitive mechanism watch — MECHANISM, `STOP_UNTIL_NATIVE_OBJECT`.
 
-For #1, GO only if question, current-object ceiling, cycle budget, reductions, MECHANISM falsifier where applicable, terminal semantic predicates, and STOP conditions are fixed before outcomes. A pre-outcome mechanical API mismatch may be corrected only before outcome exposure and then rebound prospectively. Any terminal-relevant mismatch first discovered after outcome exposure forces STOP and method-limit handling; no repaired same-object scientific closure.
+For #1, GO only when question, current-object ceiling, bounded cycle, ordinary reductions, MECHANISM falsifier, terminal/public-API semantic predicates, and STOP mapping are fixed before outcome exposure. If a terminal-relevant mismatch is found pre-outcome, a science-invariant mechanical correction plus exact rebind may proceed before any outcome; if first discovered after outcome exposure, STOP and method-limit the current object. Any outcome-driven redesign of ceiling/comparator/metric/threshold/support/runtime/model/identity/readiness also forces STOP.
 
-## Prospective contingency tree
+Prospective contingencies: clean fresh MECHANISM -> at most one bounded Discovery and fresh Analyst review when readiness becomes assessable; clean fixed reduction/falsifier closure -> REJECT/terminal; post-outcome terminal semantic repair -> HOLD_METHOD_LIMITED/terminal; high-value SYSTEM may run lower-funnel, but MAIN SYSTEM-over-comparable-MECHANISM requires prospective exception; first eligible+READY object returns to fresh Analyst rather than auto-PRE_FORMAL; FORMAL remains stopped absent a fresh one-way authority chain.
 
-- fresh coherent MECHANISM Discovery after semantic preflight -> one bounded NON_EVIDENTIARY cycle -> if readiness becomes assessable, STOP for fresh Analyst before PRE_FORMAL.
-- fresh high-value SYSTEM Discovery -> lower-funnel characterization allowed; MAIN SYSTEM allocation needs fresh Analyst and a prospective exception if a comparable executable MECHANISM exists.
-- fixed ordinary reduction/falsifier cleanly closes a prospectively valid object -> `REJECT`, terminal, no rescue cycle.
-- terminal-relevant API/representation defect found **before** outcome -> mechanical fix allowed only before outcome, then exact rebind and fresh preflight.
-- terminal-relevant defect found **after** outcome -> STOP; current object becomes method-limited/terminal; any clean confirmation is a fresh object.
-- no safe target -> SUB no-op; do not manufacture MECHANISM supply.
-- first `MECHANISM + preformal_eligible=true + READY` -> STOP for fresh Analyst; no automatic PRE_FORMAL.
-- any FORMAL proposal -> STOP until fresh one-way identity, STARTED, TEST/scorer/preserve authority, and exact binding exist.
+## Integrity / identities / blockers
 
-## Integrity / blockers
+Consumed/no-retry identities unchanged: `c19-external-v2-official-v4`; C19-R1 revision-authority official-v1/v2; `c19-r2-fsa-state-tracker-official-v1`; `pd01-long-history-fading-memory-official-v1`; `ni01-no-ignition-selective-prediction-official-v1`; `h5-event-routing-work-reduction-official-v1`. New identity consumption: `0`.
 
-Consumed/no-retry identities remain unchanged: `c19-external-v2-official-v4`, C19-R1 revision-authority official-v1/v2, `c19-r2-fsa-state-tracker-official-v1`, `pd01-long-history-fading-memory-official-v1`, `ni01-no-ignition-selective-prediction-official-v1`, `h5-event-routing-work-reduction-official-v1`. New identity consumption: 0.
+Authoritative repository state: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; evidence tags=5; formal tags=0; sealed tags=0; freeze tags=0; legacy freeze branches=13; H5 STARTED=`058e90227cd48e1c10c6ecbaed01efdec1217d0e`; H5 raw preserve=`ce5797eb584344db7a512e585506fb6c59ea475b`.
 
-Real blockers: no coherent executable central MECHANISM; H7 has no native executable object; PRE_FORMAL eligible=0; PRE_FORMAL READY=0; no fresh FORMAL one-way authority. Methodologically, producer-side terminal/API semantic-preflight effectiveness after Control R15 remains unvalidated; this is a process-calibration gap, not a reason to relax or tighten the scientific novelty bar.
+Real blockers: no coherent executable central MECHANISM; H7 lacks native executable responsibility mechanism; PRE_FORMAL eligible=0/READY=0; no fresh FORMAL one-way authority. The prior post-R15 producer-preflight validation blocker is no longer open for this single live example.
+
+Utility request created: `none`.
 
 ## Generation / freshness
 
-`generation_id = EVA-20260920T180852+0900-R17-152262F6`
+Consumed generations: Control=`CTRL-20260920T165000+0900-R15-6C2F8A41@64611f391391844d60659732a50a22cf009a5797`; MAIN=`MAIN-20260920T184716+0900-RELAY-FUNNEL21-FAILCLOSED-CONTEXTPRED@da4215d99983cb416a01b7f722ae40a5bf22d14d`; SUB=`SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91@8a90af450ff3f76ae4b45ed120f476d62fbc3df8`; Literature=`LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4@4a1dfcaef0dfcdbf132156f7656088f7f90a3c96`; Independent Audit=`LEGACY_GENERATION_UNKNOWN@d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56`; Methodology=`METHCAL-20260920T182012+0900-R18-6B2F9C41@820bb63ca6a0ad117d9e2f6ff971bb692d7efcf1`; Utility=`utility-state-20260920T1027JST-lifecycle-bootstrap@d4d0f75f1a57df1298e49e67448158ab12a2754f`; Repository Steward=`LEGACY_GENERATION_UNKNOWN@e53df976b98d56b8e37a5cbfc20f1aeb84caadeb`; previous Analyst=`EVA-20260920T180852+0900-R17-152262F6@4dc5a5b43f26789f32567eb69cbb4a26b9cd6825`.
 
-Consumed generations:
-- Control: `CTRL-20260920T165000+0900-R15-6C2F8A41` @ `64611f391391844d60659732a50a22cf009a5797`
-- MAIN: `MAIN-20260920T171704+0900-PRIMARY-FUNNEL21-FAILCLOSED-91E6C4A2` @ `1fdfe192a25c656a02b5841745654d4025fb9882`
-- SUB latest: `SUB-20260920T173914+0900-NOOP-ANALYSTWAIT-CA15738F` @ `2cdb0c5625857443f4775e3d6819eb67504862dc`; scientific generation consumed: `SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71` @ `77f5549edb508a3c65cd7ef9378e8c03ea56f282`, research `c68da076d846d85ad556f875d632ab6f68d68453`
-- Literature: `LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71` @ `a66abf755d859da60bbc98f61950053f66a6d9c1`
-- Independent Audit: `LEGACY_GENERATION_UNKNOWN` @ `d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56`
-- Methodology: `METHCAL-20260920T172730+0900-R17-A3D8F6C1` @ `45942d81f18040b9c73ad6e498805d84fb9d16e6`
-- Utility: `utility-state-20260920T1027JST-lifecycle-bootstrap` @ `d4d0f75f1a57df1298e49e67448158ab12a2754f`
-- Repository Steward: `LEGACY_GENERATION_UNKNOWN` @ `e53df976b98d56b8e37a5cbfc20f1aeb84caadeb`
-- superseded Analyst: `EVA-20260920T160240+0900-R16-3D7A91C4` @ `eea87c0e67807605c8fdd10408650da4192fb06b`
-
-## Utility / persistence
-
-No Utility request created. Persistence authority is limited to the designated Evidence Analyst latest/state/history paths. No scientific experiment/workflow was executed or dispatched, no identity consumed, no research PR merged, no immutable evidence/control/preserve ref mutated, no force-push performed, and no scheduler definition changed.
+Immediately before persistence, `main`, Analyst handoff, orchestrator mailbox, Control, Literature/Audit mailbox, Methodology and Utility refs were re-fetched; no dependency advanced beyond the generations above. Persistence is limited to the three designated Evidence Analyst paths. No Utility request is needed.
