@@ -1,0 +1,95 @@
+{
+  "schema": "sparkbrain-architecture-study-contract-v1",
+  "candidate_id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
+  "lane": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_authority": "df12559698c0f6bc0165c550a55c62f7287a86bd",
+  "question": "Does public v0.5 homeostatic liveness/stability intentionally represent whole-field activity including receptors, or is reservoir/internal-computation liveness expected to be separately represented?",
+  "source_binding": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v05/homeostasis.py": "67b87a4b4c91a7dba41670087a2d1803bb6e3e6c",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v05/contracts.py": "048b93cddb16dbe9276a0e2c0f972406291c1cb2",
+    "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
+    "src/sparkbrain/v05/__init__.py": "bb45b132bbd4d8ad203911ad46eafffdf63820c4",
+    "tests/v05/test_v05_homeostasis_plasticity.py": "ba1763c8ceb441cc91ce7510a313548acbb29db9",
+    "docs/THEORY_SPEC_v0.5.md": "c1d3dbd041476428a103324b58616d3cc6534885",
+    "docs/V05_MASTER_PLAN.md": "0812069c4e19d8a25364ff8476870b770cee15c9",
+    "docs/V05_EXPERIMENT_PROTOCOL.md": "fce01cd448ad00e1d420e3cb73f6d0f32768df5d"
+  },
+  "fixed_supported_surface": [
+    "src/sparkbrain/v05/homeostasis.py",
+    "src/sparkbrain/v05/brain.py",
+    "src/sparkbrain/v05/contracts.py",
+    "src/sparkbrain/v05/evaluation.py",
+    "src/sparkbrain/v05/__init__.py",
+    "tests/v05/test_v05_homeostasis_plasticity.py",
+    "docs/THEORY_SPEC_v0.5.md",
+    "docs/V05_MASTER_PLAN.md",
+    "docs/V05_EXPERIMENT_PROTOCOL.md"
+  ],
+  "repository_inventory_queries": [
+    "HomeostaticController",
+    "HomeostasisConfig",
+    "active_unit_fraction",
+    "stability.dead",
+    "dead_rate",
+    "dead-field",
+    "rate_ema"
+  ],
+  "facts_to_record_before_interpretation": [
+    "observe_counts_all_supplied_spikes_without_receptor_filter",
+    "observe_updates_rate_ema_and_threshold_for_all_field_units",
+    "dead_streak_resets_on_any_nonempty_supplied_spike_rows",
+    "active_unit_fraction_denominator_is_all_field_units",
+    "brain_supplies_unfiltered_base_result_spikes_to_homeostasis_observe",
+    "public_stability_snapshot_population_is_explicitly_qualified_or_unqualified",
+    "supported_docs_explicitly_define_dead_as_whole_field_or_reservoir_liveness",
+    "supported_docs_explicitly_define_active_unit_fraction_population",
+    "tests_explicitly_include_receptor_units_in_homeostatic_threshold_adaptation",
+    "tests_explicitly_assert_receptor_activity_counts_toward_dead_or_active_unit_fraction",
+    "supported_callers_consume_dead_or_active_unit_fraction",
+    "any_supported_contract_materially_contradicts_all_field_implementation"
+  ],
+  "machine_fact_policy": {
+    "method": "AST_STRUCTURAL_PLUS_EXACT_BLOB_HASHES_AND_EXACT_TERM_INVENTORY",
+    "required": [
+      "HomeostaticController.observe spike-count construction and field-unit update loop are validated structurally",
+      "dead_streak branch condition and active-unit denominator are validated structurally",
+      "IntegratedV05Brain.process_episode homeostasis call argument is validated structurally",
+      "StabilitySnapshot fields and evaluation dead consumer are validated structurally",
+      "decision-relevant public/test text is inventoried on the exact bound surface and repository-wide exact-term searches"
+    ],
+    "invalid_on_mismatch": true,
+    "post_outcome_repair_forbidden": true
+  },
+  "terminal_mapping": {
+    "EXPLICIT_WHOLE_FIELD_STABILITY_CONTRACT": "Implementation and supported public/test contract explicitly agree that receptor/input-layer activity is part of the population represented by liveness/dead and active-unit fraction.",
+    "EXPLICIT_RESERVOIR_LIVENESS_CONTRACT_WITH_ACCOUNTING_GAP": "Supported public/test contract explicitly requires reservoir/internal-computation liveness while implementation accounts all supplied field activity including receptors.",
+    "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED": "Implementation accounts all supplied field activity including receptors, while supported public meaning of dead/active-unit population is not explicitly defined as whole-field or reservoir-specific.",
+    "MIXED_OR_CONTRADICTORY_STABILITY_POPULATION_CONTRACT": "Supported docs/tests/callers materially disagree about the population represented by liveness/dead or active-unit fraction.",
+    "INVALID_STATIC_CHARACTERIZATION": "Any source/blob/head/surface/inventory/structural-binding mismatch, incomplete decision-relevant inventory, or need for a new semantic choice beyond this contract."
+  },
+  "precedence": [
+    "INVALID_STATIC_CHARACTERIZATION",
+    "MIXED_OR_CONTRADICTORY_STABILITY_POPULATION_CONTRACT",
+    "EXPLICIT_RESERVOIR_LIVENESS_CONTRACT_WITH_ACCOUNTING_GAP",
+    "EXPLICIT_WHOLE_FIELD_STABILITY_CONTRACT",
+    "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED"
+  ],
+  "forbidden": [
+    "dynamic receptor-aware comparator",
+    "homeostasis population policy change",
+    "production source mutation",
+    "official TEST",
+    "consumed/formal surface",
+    "STARTED identity",
+    "formal scorer",
+    "preserve/evidence mutation",
+    "rerun or retune after terminal visibility",
+    "same-run cycle 2",
+    "automatic PRE_FORMAL or FORMAL promotion"
+  ],
+  "stop_condition": "Any valid terminal or INVALID_STATIC_CHARACTERIZATION stops for fresh Evidence Analyst review. No dynamic continuation is authorized in this cycle."
+}
