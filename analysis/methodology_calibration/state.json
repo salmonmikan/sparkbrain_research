@@ -1,35 +1,36 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-20T15:22:43+09:00",
-  "generation_id": "METHCAL-20260920T152243+0900-R15-91C4E7B2",
-  "produced_at": "2026-09-20T15:22:43+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260920T152243+0900-R15-91C4E7B2",
+  "timestamp": "2026-09-20T16:20:49+09:00",
+  "generation_id": "METHCAL-20260920T162049+0900-R16-E7C19A42",
+  "produced_at": "2026-09-20T16:20:49+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260920T162049+0900-R16-E7C19A42",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "METHCAL-20260920T141923+0900-R14-5F2A9C7E",
-  "previous_methodology_tip": "c0b2cba04b60529661bba4eb2473a7174773e266",
+  "supersedes_generation_id": "METHCAL-20260920T152243+0900-R15-91C4E7B2",
+  "previous_methodology_tip": "bdad7ed95d39dd5053b5449748df8f899791c671",
   "input_generations": {
     "control_brain": {
       "generation_id": "CTRL-20260920T145000+0900-R14-7B3E2D91",
       "commit": "14285844f80fa844b5aaac9ccf4d2fed95b6fb35"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T150234+0900-R15-8F3C1A72",
-      "commit": "ad8290dfab6d79be984f960d48dcf34a8213aefb"
+      "generation_id": "EVA-20260920T160240+0900-R16-3D7A91C4",
+      "commit": "eea87c0e67807605c8fdd10408650da4192fb06b"
     },
     "main": {
-      "generation_id": "MAIN-20260920T151432+0900-PRIMARY-FUNNEL21-HOLD-A84D6C2F",
-      "commit": "223216eb2dcf08f744a91ba58821e3dc53d41f58",
-      "mailbox_tip_observed": "8af4b20aa8e3386197a53317eaf4885942d509b3"
+      "generation_id": "MAIN-20260920T161602+0900-PRIMARY-FUNNEL21-HOLD-6D2B8C41",
+      "commit": "12626287db4e75abb029f7dc5b1a875e756ae450"
     },
     "sub": {
-      "generation_id": "SUB-20260920T144110+0900-SYSTEM-EVALORDER-6F2C91A8",
-      "commit": "2f27e638936c5455c17d778f2d801533f17ead87",
-      "research_head": "4ed6de26ac0bf584189823a64abf6532b3291f59",
-      "prospective_binding": "7906566eb6bf64c7add085b9d68085ddeea13d71"
+      "generation_id": "SUB-20260920T155600+0900-THEORY-ENDOCONT-4C7A2E91",
+      "commit": "46ef5643dc1f9f53790f83de504c3a85e6efbc1c",
+      "research_head": "af201c25d3a5e7f1fde15b07b82aa0aad77cbd3f",
+      "prospective_binding": "edd8dc67f1b1ab22fc8b2914cab774c1aadf49de",
+      "initial_diagnostic": "8df025745b803fbfac326072b0283719b59ec082",
+      "harness_correction": "d039f0012b0cbe3826146ed76ae6b791b4abe848"
     },
     "literature": {
-      "generation_id": "LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B",
-      "commit": "639ceaca54150a3f82796c241c8129d821b55fe1"
+      "generation_id": "LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71",
+      "commit": "a66abf755d859da60bbc98f61950053f66a6d9c1"
     },
     "independent_audit": {
       "generation_id": "LEGACY_GENERATION_UNKNOWN",
@@ -42,20 +43,37 @@
     "utility": {
       "generation_id": "utility-state-20260920T1027JST-lifecycle-bootstrap",
       "commit": "d4d0f75f1a57df1298e49e67448158ab12a2754f"
+    },
+    "previous_methodology": {
+      "generation_id": "METHCAL-20260920T152243+0900-R15-91C4E7B2",
+      "commit": "bdad7ed95d39dd5053b5449748df8f899791c671"
     }
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "fresh_sub_research": "research/exploratory-sub-eval-order-dependence-20260920@4ed6de26ac0bf584189823a64abf6532b3291f59",
-    "fresh_sub_prospective_binding": "7906566eb6bf64c7add085b9d68085ddeea13d71",
-    "fresh_sub_exact_head_ci": "35492181051:success:attempt1",
-    "orchestrator_run_report_tip": "8af4b20aa8e3386197a53317eaf4885942d509b3",
+    "fresh_sub_research": "research/exploratory-sub-endogenous-continuation-20260920@af201c25d3a5e7f1fde15b07b82aa0aad77cbd3f",
+    "fresh_sub_prospective_binding": "edd8dc67f1b1ab22fc8b2914cab774c1aadf49de",
+    "fresh_sub_initial_diagnostic": "8df025745b803fbfac326072b0283719b59ec082",
+    "fresh_sub_harness_correction": "d039f0012b0cbe3826146ed76ae6b791b4abe848",
+    "fresh_sub_initial_ci": "35494974118:failure:attempt1",
+    "fresh_sub_corrected_ci": "35495129863:success:attempt1",
+    "fresh_sub_exact_head_ci": "35495326487:success:attempt1",
+    "orchestrator_run_report_tip": "12626287db4e75abb029f7dc5b1a875e756ae450",
     "control_handoff_tip": "14285844f80fa844b5aaac9ccf4d2fed95b6fb35",
-    "evidence_analyst_handoff_tip": "ad8290dfab6d79be984f960d48dcf34a8213aefb",
-    "literature_audit_tip": "639ceaca54150a3f82796c241c8129d821b55fe1",
+    "evidence_analyst_handoff_tip": "eea87c0e67807605c8fdd10408650da4192fb06b",
+    "literature_audit_tip": "a66abf755d859da60bbc98f61950053f66a6d9c1",
     "repository_steward_tip": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
     "utility_request_bus_tip": "d4d0f75f1a57df1298e49e67448158ab12a2754f",
-    "evidence_tags": 5,
+    "evidence_tags": {
+      "count": 5,
+      "refs": {
+        "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+        "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+        "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+        "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
+        "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
+      }
+    },
     "formal_tags": 0,
     "sealed_tags": 0,
     "freeze_tags": 0,
@@ -64,15 +82,18 @@
     "relevant_open_prs": [148, 149]
   },
   "gate_changes_reviewed": [
-    "No new scientific threshold or doctrine change was observed.",
-    "After a rolling 3/3 MECHANISM SUB window, a prospectively typed high-information SYSTEM reproducibility object was selected, demonstrating that one-in-three remains a minimum floor rather than a mechanism-share target.",
-    "Fresh SYSTEM object fixed claim_ceiling=SYSTEM, comparator, supported spacing, observables and terminal map before outcome and remained SYSTEM after a clean negative/reduction terminal.",
-    "Classification completeness increased from 9/9 to 10/10 without funnel conversion rates being promoted into scientific thresholds.",
-    "Fresh MAIN consumed the new Analyst generation and remained intentionally idle with system_priority_exception.used=false; the newest SYSTEM work was SUB Discovery, so the first MAIN SYSTEM-priority exception remains untested."
+    "No new Control doctrine or programme-wide scientific threshold was introduced.",
+    "A fresh theory-backward MECHANISM Discovery prospectively bound a literal terminal requiring no action, but stable main already encoded null activation as literal action=withhold.",
+    "The first outcome-bearing diagnostic failed after exposure; the harness was then changed from action=None to action=withhold and rerun successfully on the same prospective object.",
+    "Evidence Analyst normalized the suffix-bearing raw terminal to the intended semantic negative and closed the same object REJECT; no positive rescue, cycle 2, PRE_FORMAL, FORMAL or identity consumption occurred.",
+    "Funnel-v2.1 classification completeness increased from 10/10 to 11/11; rolling theory-backward supply remains 2/3 and no SYSTEM-priority or no-coherent-target exception was used."
   ],
-  "overall_classification": "WELL_CALIBRATED",
+  "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
   "gate_by_gate_classifications": {
     "hard_integrity_floor": "KEEP",
+    "prospective_terminal_semantic_binding": "TIGHTEN",
+    "terminal_relevant_api_source_conformance_preflight": "TIGHTEN",
+    "post_outcome_representation_repair_policy": "TIGHTEN",
     "claim_ceiling_current_object": "KEEP",
     "same_object_system_to_mechanism_upgrade_ban": "KEEP",
     "fresh_mechanism_successor_from_system": "KEEP",
@@ -100,38 +121,38 @@
     "programme_wide_numeric_support_threshold_prohibition": "KEEP"
   },
   "false_positive_risks": [
-    "A bounded SYSTEM negative such as ORDER_INVARIANT_AT_SUPPORTED_SPACING could be overgeneralized into a global order-invariance theorem; current Analyst explicitly restricts scope to one deterministic DEV seed/condition/supported spacing and requires fresh objects for broader questions.",
-    "A future SYSTEM priority exception could still be rationalized post hoc unless persisted before MAIN execution; no actual exception has yet been used.",
-    "Small-N funnel conversion counts could be overinterpreted even at 10/10 classification completeness; current Analyst keeps them descriptive only.",
-    "The rolling mechanism fraction could become a prestige score in either direction; current 3/3-to-2/3 transition correctly demonstrates that no preferred ratio should be inferred."
+    "If outcome-exposed terminal-relevant representation repairs are accepted as prospectively clean without qualification, future unexpected outputs could be normalized post hoc into a favorable terminal even when the semantic equivalence is less clear than the current null-withhold case.",
+    "A future corrected rerun could inadvertently acquire promotion/readiness credit despite the executable terminal predicate having changed after outcome exposure.",
+    "Small-N funnel conversion counts could still be overinterpreted despite 11/11 completeness; current Analyst appropriately keeps them descriptive.",
+    "A future SYSTEM priority exception could be rationalized post hoc unless persisted before MAIN execution; no live exception exists yet."
   ],
   "false_negative_risks": [
-    "A future READY checklist could become a hidden second Formal gate if comparator/reduction/falsifier are interpreted as already won; no READY case exists yet.",
-    "MECHANISM priority could suppress testbed/reproducibility work if SYSTEM value is treated as second-class; the fresh evaluation-order selection is counterevidence and should remain the model behavior.",
-    "A 2/3 or 3/3 rolling mechanism fraction must not become an allocation target that crowds out higher-information SYSTEM work.",
-    "Repeated bounded negative results must remain object-local and not be generalized into topic-family no-go conclusions."
+    "A method-repaired negative can prematurely close a genuinely worthwhile mechanism object if the corrected rerun is treated as equivalent to a clean prospectively frozen test; when scientific disposition materially depends on the repair, fresh prospective confirmation is safer.",
+    "Requiring a fresh object for every benign NON_EVIDENTIARY representation mismatch would add unnecessary throughput cost; the prospective rule should preserve engineering/debugging use while withholding clean closure/promotion/readiness credit when terminal semantics were outcome-exposed.",
+    "A future READY checklist could still become a hidden second Formal gate if comparator/reduction/falsifier are interpreted as already won; no READY case exists yet.",
+    "Mechanism priority must not suppress independently high-information SYSTEM/testbed work; current rolling 2/3 supply and prior SYSTEM selection remain healthy counterevidence."
   ],
   "moving_goalpost_assessment": {
-    "level": "LOW",
-    "finding": "The fresh evaluation-order object fixed SYSTEM typing, seed, condition, count, supported 220 ms spacing, observables, forward/reverse comparator, terminal map and stop rule at prospective binding 7906566 before diagnostic/result commits. No cycle-2 outcome-responsive search, rerun of consumed identity, rescore, relabel or same-object upgrade occurred."
+    "level": "LOCALIZED_MODERATE_CONCERN",
+    "finding": "No programme-wide threshold drift or positive-result rescue occurred. However, prospective terminal 1 literally required no action, the first diagnostic operationalized that as action=None and exposed outcomes, then the same-object harness was changed to action=withhold before rerun and terminal closure. Stable main had made the null-withhold convention knowable before execution. The correction was transparent and science-invariant in intent, but it is still a localized post-outcome change to a terminal-relevant predicate."
   },
   "pass_reachability_assessment": {
     "status": "REACHABLE_BUT_NARROW",
-    "finding": "Prior fresh MECHANISM objects have demonstrated preformal_eligible=true while readiness remained NOT_READY, so lane admissibility does not require prior success. No READY candidate or Analyst-authoritative READY-to-PRE_FORMAL transition exists yet; that remains the highest-information unresolved calibration event."
+    "finding": "Fresh MECHANISM objects repeatedly demonstrate preformal_eligible=true while readiness remains NOT_READY, so lane admissibility does not require prior success. No READY candidate or Analyst-authoritative READY-to-PRE_FORMAL transition exists. Tightening terminal-semantic preflight does not add a scientific success threshold and should not materially reduce PASS reachability."
   },
-  "claim_type_separation_findings": "Healthy. The fresh evaluation-order question was prospectively SYSTEM/testbed/reproducibility and remained SYSTEM after a negative reduction; it received no mechanism novelty credit. Prior rejected MECHANISM objects were not rescued into SYSTEM, while independently valuable SYSTEM work remains selectable when information gain justifies it.",
+  "claim_type_separation_findings": "Healthy. The endogenous-continuation object was prospectively MECHANISM and remained MECHANISM through a negative disposition; it was not rescued into SYSTEM. Independently useful SYSTEM architecture/testbed/reproducibility objects remain preserved. The new concern is protocol cleanliness, not claim-type conflation.",
   "mechanism_supply_health": {
-    "status": "HEALTHY_BALANCED_SMALL_N_SYSTEM_VALUE_PRESERVED",
-    "rolling_window": "MECHANISM,MECHANISM,SYSTEM",
+    "status": "HEALTHY_BALANCED_SMALL_N_WITH_METHOD_REPAIR_CAUTION",
+    "rolling_window": "MECHANISM,SYSTEM,MECHANISM",
     "qualifying_share": "2/3",
-    "preselection_window_for_latest": "MECHANISM,MECHANISM,MECHANISM",
+    "preselection_window_for_latest": "MECHANISM,MECHANISM,SYSTEM",
     "no_coherent_target_exception_used": false,
-    "finding": "The latest autonomous selection deliberately chose a coherent SYSTEM reproducibility/testbed question after the mechanism floor had already been exceeded. This is direct evidence that one-in-three is a minimum quality-controlled supply floor rather than a target, and that SYSTEM value is not being suppressed."
+    "finding": "The newest autonomous selection was a genuine theory-backward mechanism discriminator chosen while the minimum floor was already satisfied at 2/3. It had a prospective falsifier and ordinary reduction and accepted a negative outcome. Candidate-supply quality remains healthy; the concern is only terminal-test repair discipline."
   },
   "funnel_observability": {
-    "status": "GOOD_V2_1_IMPLEMENTATION_10_OF_10",
-    "classification_completeness": "10/10",
-    "finding": "All material current candidates have mandatory v2.1 fields. The newest SYSTEM object has prospective/current-object ceiling, preformal status, terminal and queue state visible through closure. Funnel metrics remain descriptive small-N statistics rather than thresholds."
+    "status": "GOOD_V2_1_IMPLEMENTATION_11_OF_11_WITH_REPAIR_LINEAGE_VISIBLE",
+    "classification_completeness": "11/11",
+    "finding": "All material candidates have mandatory v2.1 fields. The latest object's prospective binding, failed diagnostic, harness correction, final head, terminal normalization and disposition are durably visible, so the repair was not silent. This supports observability while exposing the need to distinguish repaired same-object diagnostics from prospectively clean terminal tests."
   },
   "preformal_gate_calibration": {
     "status": "ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED",
@@ -140,48 +161,53 @@
     "current_ready_count": 0,
     "prospective_true_not_ready_examples": [
       "CAND-V05-ASSEMBLY-PARTIAL-COMPLETION-FUNCTION-01@9222d4a5f9f2d010b50c8047788cdd03483c4afe",
-      "CAND-V05-DELAYED-REWARD-ELIGIBILITY-01@fff0ddeb8e613a27ef9eac6fc6623addad56f82d"
+      "CAND-V05-DELAYED-REWARD-ELIGIBILITY-01@fff0ddeb8e613a27ef9eac6fc6623addad56f82d",
+      "CAND-V05-ENDOGENOUS-CONTINUATION-01@edd8dc67f1b1ab22fc8b2914cab774c1aadf49de"
     ],
-    "finding": "No new READY evidence exists. The existing prospective MECHANISM examples continue to show eligibility without readiness or prior scientific success. The first Analyst-authoritative READY-to-PRE_FORMAL transition remains untested."
+    "finding": "The latest object again demonstrates eligibility without readiness or prior scientific success. No READY object exists, so the first READY-to-PRE_FORMAL transition remains untested. The post-outcome harness correction did not create READY or PRE_FORMAL credit."
   },
   "system_priority_exception_audit": {
     "count_current_generation": 0,
-    "latest_system_work_context": "SUB_DISCOVERY_NOT_MAIN_PRIORITY_EXCEPTION",
-    "finding": "The fresh SYSTEM evaluation-order object was autonomous SUB Discovery after the mechanism supply floor was already satisfied. Fresh MAIN remained idle and did not run SYSTEM ahead of a comparable MECHANISM. The first real prospective MAIN system_priority_exception remains insufficient evidence."
+    "latest_main_generation": "MAIN-20260920T161602+0900-PRIMARY-FUNNEL21-HOLD-6D2B8C41",
+    "finding": "Fresh MAIN consumed Analyst R16 and remained idle with system_priority_exception.used=false. No SYSTEM was run ahead of a comparable executable MECHANISM. First live use remains insufficient evidence."
   },
   "no_coherent_target_audit": {
     "exception_used_current_window": false,
-    "finding": "No NO_COHERENT_MECHANISM_TARGET escape-hatch use is observed. The rolling window remains above the supply floor without invoking the exception; calibration of its first actual use remains insufficient evidence."
+    "finding": "No NO_COHERENT_MECHANISM_TARGET exception is observed. The rolling window remains above the theory-backward floor without invoking the escape hatch; first-use calibration remains insufficient evidence."
   },
   "classification_completeness": {
-    "classified": 10,
-    "material_population": 10,
+    "classified": 11,
+    "material_population": 11,
     "ratio": 1.0,
-    "policy_use": "Conversion and disposition rates may be described for this fully classified current population but remain small-N descriptive statistics, not scientific, readiness or allocation thresholds."
+    "policy_use": "Conversion and disposition counts are descriptive for the fully classified current population but remain small-N and must not become universal scientific, readiness or allocation thresholds."
   },
+  "preformal_gate_hidden_second_formal_gate": false,
   "prospective_recommendations": [
-    "Keep Funnel v2.1 scientific gates unchanged and do not add universal numeric support/readiness thresholds.",
-    "Treat one-in-three theory-backward supply strictly as a minimum quality-controlled floor; with the current 2/3 window, subsequent SUB selection should still maximize expected information gain rather than target a mechanism ratio.",
-    "Preserve genuinely high-value SYSTEM work for testbed validity, evidence interpretation, reachability, reproducibility and Formal integrity when independently justified.",
-    "Keep SYSTEM conclusions object-local; any broader or different-spacing evaluation-order question must be a fresh prospectively typed object, not cycle-2 rescue.",
-    "Audit the first actual MAIN system_priority_exception, first NO_COHERENT_MECHANISM_TARGET use, and first Analyst-authoritative READY-to-PRE_FORMAL transition.",
-    "Continue gating funnel-rate policy conclusions on classification completeness and small-N interpretation."
+    "Tighten terminal-semantic preflight rather than tightening admission, novelty, reduction or readiness science bars.",
+    "Before first outcome-bearing execution, verify every terminal-relevant categorical/public-API output against exact bound source/docs/tests and bind a semantic predicate; bind a literal representation only when the representation itself is claim-relevant.",
+    "After outcome exposure, persist whether a terminal-relevant harness mismatch occurred, the repair class, whether the semantic predicate changed, and outcome_exposed=true. Corrected reruns may remain NON_EVIDENTIARY engineering/debugging information but should not automatically receive prospectively clean closure, promotion or readiness credit for the same object.",
+    "If a repaired result materially determines scientific disposition or next-layer allocation, require a fresh candidate/probe with the corrected prospective semantic contract. Apply this only prospectively; do not rewrite, rescore or relabel the current endogenous-continuation history.",
+    "Keep Funnel v2.1 claim-ceiling, eligibility/readiness, HOLD, mechanism-supply, SYSTEM-value and no-universal-numeric-threshold rules otherwise unchanged.",
+    "Audit the first actual MAIN system_priority_exception, first NO_COHERENT_MECHANISM_TARGET use and first Analyst-authoritative READY-to-PRE_FORMAL transition."
   ],
   "utility_request_created": null,
   "hard_integrity_floor_confirmation": true,
   "confidence": {
     "overall": "HIGH",
+    "localized_post_outcome_repair_finding": "HIGH",
     "current_object_claim_typing": "HIGH",
-    "system_value_under_mechanism_priority": "HIGH_FOR_CURRENT_CASE",
-    "long_run_mechanism_supply": "MODERATE_SMALL_N",
+    "mechanism_supply": "HIGH_FOR_CURRENT_WINDOW_MODERATE_LONG_RUN_SMALL_N",
+    "funnel_observability": "HIGH",
+    "future_non_evidentiary_repair_boundary": "MODERATE_POLICY_CALIBRATION",
     "first_ready_to_preformal_transition": "INSUFFICIENT_EVIDENCE",
     "first_system_priority_exception": "INSUFFICIENT_EVIDENCE",
     "first_no_coherent_target_use": "INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_evidence_analyst": [
-    "At the first MAIN SYSTEM-over-comparable-MECHANISM allocation, is system_priority_exception durably written before execution with a claim-relevant integrity/opportunity-cost reason?",
-    "At the first NO_COHERENT_MECHANISM_TARGET, is the quality-floor failure recorded without manufacturing a filler candidate?",
+    "For future outcome-exposed terminal-relevant harness mismatches, will corrected reruns be marked method-limited for clean prospective closure/promotion/readiness purposes unless a fresh prospectively bound object confirms the result?",
+    "Can terminal-relevant categorical API outputs be source/docs/test-conformance-checked before the first outcome-bearing diagnostic so representation mismatches are caught in preflight?",
     "At the first READY object, is READY granted from a prospectively frozen informative next test rather than requiring prior comparator/reduction/falsifier success?",
-    "With the rolling window now 2/3 after a legitimate SYSTEM selection, do future selections continue to optimize marginal information gain rather than treating any mechanism share as a target?"
+    "At the first MAIN SYSTEM-over-comparable-MECHANISM allocation, is system_priority_exception durably written before execution with a legitimate claim-relevant reason?",
+    "At the first NO_COHERENT_MECHANISM_TARGET, is the quality-floor failure recorded without manufacturing a filler mechanism candidate?"
   ]
 }
