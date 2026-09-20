@@ -1,10 +1,10 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-20 11:27 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-20 12:22 JST
 
 schema_version: `2`  
-generation_id: `METHCAL-20260920T112723+0900-R11-E3968ACE`  
-producer_run_id: `methodology-calibration-auto-20260920T112723+0900-R11-E3968ACE`  
+generation_id: `METHCAL-20260920T122251+0900-R12-7C4D91A2`  
+producer_run_id: `methodology-calibration-auto-20260920T122251+0900-R12-7C4D91A2`  
 authority_scope: `METHODOLOGY_ADVISORY_ONLY`  
-supersedes_generation_id: `LEGACY_GENERATION_UNKNOWN`
+supersedes_generation_id: `METHCAL-20260920T112723+0900-R11-E3968ACE`
 
 ## Run disposition
 
@@ -12,221 +12,153 @@ supersedes_generation_id: `LEGACY_GENERATION_UNKNOWN`
 
 ## Overall classification
 
-**`MIXED_CALIBRATION`** — downgraded from `WELL_CALIBRATED`.
+**`WELL_CALIBRATED`** — upgraded from `MIXED_CALIBRATION`.
 
-The scientific integrity floor, novelty bar, comparator discipline, reduction-first practice, and post-Architecture STOP behavior remain broadly well calibrated. The material change is the prospective **Funnel Correction v2**. Its motivation is supported by the recent lower-funnel history, but its field-level implementation is not yet observable in the current Control / Evidence Analyst / MAIN handoffs, and several v2 fields need semantic separation to avoid becoming a hidden second Formal gate.
+The prior mixed finding was specifically about Funnel-v2 rollout rather than the scientific hard floor. Funnel v2.1 is now live enough to resolve that concern: seven material current candidates are completely typed, the MECHANISM/SYSTEM split is demonstrably object-local, the rolling theory-backward rule produced a genuinely falsifiable MECHANISM Discovery rather than a relabeled SYSTEM edge case, its negative result was accepted without rescue, HOLD dimensions are orthogonalized, and funnel metrics are explicitly conditioned on classification completeness rather than converted into universal thresholds.
 
-This downgrade is therefore about **candidate-supply and funnel-observability calibration**, not about weakening or repudiating the existing scientific bar.
+This upgrade is prospective only. No consumed/frozen historical experiment is rescored, relabeled, rerun, invalidated, or upgraded.
 
-## Authoritative state independently re-fetched
+## Strongest calibration evidence
 
-- stable `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- annotated `evidence/*`: 5 authoritative tags
-- tag-based `formal/*`: 0
-- tag-based `sealed/*`: 0
-- tag-based `freeze/*`: 0
-- preserve/control refs remain present; no new one-way Formal identity or evidence observed
-- Control Brain: `b35068cbee426c99c3cc1f6dd23053778a2bd88a`
-- Evidence Analyst generation: `EVA-20260920T105721+0900-R11-4B7D91C2` @ branch tip `6617b28dd983a4ada1ebb0622bada869ff17b19e`
-- MAIN generation: `MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1` @ report branch `5d232d6a5b771478b9d5ecb8b62df85955dd0fd6`
-- SUB generation: `SUB-20260920T104200+0900-CKPT-7F3C2A91`
-- Literature: `f399e9d14ef6d491135d19161b8c1d7986b94e5b`
-- Independent Audit: `d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56`
-- Repository Steward: `e53df976b98d56b8e37a5cbfc20f1aeb84caadeb`
-- latest Assembly static Architecture head: `13239163f6fecb2b61ea2189a5a94ba12b6cb3d6`
-- Assembly exact-head ordinary CI `35483714573`: `completed/success`
-- open PRs remain #148/#149; no science authority change inferred from them
+### 1. Object-local claim ceilings are working
 
-## What materially changed
+The Assembly family now contains two distinct prospective objects with different ceilings without laundering one into the other:
 
-### 1. Funnel Correction v2 addresses a real candidate-supply imbalance
+- `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01`: `SYSTEM`, terminal HOLD; lifecycle intent and supported saturation remain unspecified.
+- `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01`: fresh `MECHANISM` Discovery with a prospectively fixed causal falsifier; rejected after the lower field remained identical under matched Assembly suppression.
 
-The recent autonomous SUB window is strongly SYSTEM-heavy:
+The completed SYSTEM object was not upgraded post-outcome. The MECHANISM question was created as a fresh object and failed cleanly. This is the intended v2.1 transition pattern.
 
-1. `HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1` — Architecture/API observability semantics; ordinary all-field accounting reduction.
-2. `RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1` — Architecture/API/reproducibility ordering semantics; ordinary stable tie-order + sequential gain reduction.
-3. `V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1` — engineering/reproducibility correctness; reduced and REJECTED.
+### 2. Theory-backward supply improved without manufacturing novelty
 
-That is **0/3 theory-backward MECHANISM selections** in the latest three safe, nonduplicative autonomous SUB selections. The immediately preceding delayed-outcome attribution line is also SYSTEM/API bookkeeping. This is not a retrospective violation — v2 is prospective — but it gives the new one-in-three theory-backward supply rule a traceable empirical motivation.
+The immediately preceding autonomous SUB window was SYSTEM-heavy. The latest three safe nonduplicative selections are receptor ordering=`SYSTEM`, checkpoint continuity=`SYSTEM`, Assembly feedback=`MECHANISM`, so the rolling theory-backward share is now `1/3` with no `NO_COHERENT_MECHANISM_TARGET` exception.
 
-The correction is therefore not merely accumulated caution. It targets an observed opportunity-cost problem: productive API/config/reproducibility work can fill the lower funnel while central-theory mechanism supply remains empty.
+The new MECHANISM object was scientifically substantive: it asked whether mature Assembly state feeds back causally into lower-field computation and fixed a falsifier before execution. The falsifier failed. No cycle-2 rescue, SYSTEM relabel, or PRE_FORMAL promotion followed. A negative but coherent mechanism test counts as healthy candidate supply.
 
-### 2. v2 funnel observability is not yet operationally complete
+### 3. Funnel observability is now complete for the live v2.1 pool
 
-Current Evidence Analyst state already uses `schema_version=2` for generation metadata, but its material candidate records do **not** yet persist `claim_ceiling`, `preformal_eligible`, v2 HOLD subtype, readiness status, or `funnel_metrics`. Current MAIN's fresh Assembly object likewise has no `claim_ceiling` or `preformal_eligible` field.
+Evidence Analyst reports seven material candidates and `classification_completeness=7/7`. Mandatory current-object ceiling, `preformal_eligible`, readiness, HOLD/terminal/queue dimensions are populated. Conversion counts are explicitly descriptive and are not used to infer a universal scientific threshold.
 
-Therefore schema-v2 generation metadata must not be mistaken for Funnel Correction v2 adoption. At this audit boundary the correction is **directionally justified but not yet end-to-end observable**.
+The HOLD model is materially better than the former overloaded enum: terminal SYSTEM work, a method-limited historical object, unresolved MECHANISM work, queue state, and terminal state remain distinguishable.
 
-This is the strongest reason for `MIXED_CALIBRATION`.
+### 4. MAIN opportunity-cost control is behaving sensibly
 
-### 3. Current MAIN behavior remains scientifically conservative without suppressing SYSTEM value
+There is currently no active/queued Architecture object, no PRE_FORMAL-eligible object, and no viable executable MECHANISM object. MAIN is held idle rather than filled with a low-value SYSTEM object. No SYSTEM-over-comparable-MECHANISM exception is in use. The previous Assembly SYSTEM allocation predated v2.1 and is not retroactively justified under the new policy.
 
-MAIN's current Assembly mature-capacity Architecture object mapped prospectively to `LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED`. It records the real resource-policy ambiguity — mature candidates have no current reclamation path — while refusing to manufacture saturation, turnover, a dynamic comparator, or novelty. Exact-head CI subsequently completed successfully.
+This is preferable to manufacturing throughput merely to keep MAIN busy.
 
-Under v2 this object is naturally **SYSTEM**, not MECHANISM. It remains worth doing because it protects resource semantics and supported-reachability interpretation. That is exactly the kind of SYSTEM exception the new priority rule should preserve.
+## Funnel v2.1 audit
 
-## Funnel Correction v2 calibration
+| Gate / behavior | Classification | Calibration finding |
+| --- | --- | --- |
+| hard one-way scientific integrity floor | `KEEP` | No relaxation justified. |
+| current-object `claim_ceiling` | `KEEP` | Object-local behavior now demonstrated. |
+| same-object SYSTEM→MECHANISM upgrade ban | `KEEP` | Fresh Assembly MECHANISM successor pattern works. |
+| `preformal_eligible` distinct from readiness | `KEEP` | Semantically and structurally separate; no evidence of prestige labeling. |
+| PRE_FORMAL `READY` semantics | `KEEP` | Defined as development/test readiness, not prior scientific success. |
+| first live `READY -> PRE_FORMAL` transition | `INSUFFICIENT_EVIDENCE` | No eligible/READY candidate yet; transition itself remains unobserved. |
+| HOLD multidimensional state | `KEEP` | Current pool preserves reason/terminal/queue distinctions. |
+| MAIN MECHANISM priority | `KEEP` | No comparable MECHANISM was bypassed in current allocation. |
+| prospective `system_priority_exception` | `KEEP` | No current exception; rule remains necessary when comparable MECHANISM exists. |
+| rolling one-in-three theory-backward supply | `KEEP` | First live qualifying selection was coherent/falsifiable and accepted a negative result. |
+| theory-backward quality floor | `KEEP` | Latest object was not a relabeled API/config issue. |
+| `NO_COHERENT_MECHANISM_TARGET` exception | `KEEP` | No current escape-hatch use observed; retain explicit accounting. |
+| classification-completeness-gated funnel metrics | `KEEP` | `7/7`; rates not overinterpreted. |
+| universal numeric readiness/support threshold prohibition | `KEEP` | No evidence supports a programme-wide scalar cutoff. |
+| equal-privilege comparator discipline | `KEEP` | Claim-local matching remains appropriate. |
+| signal-before-strong-claim | `KEEP` | Theory-backward question generation need not await signal, but promotion does. |
+| ordinary-control/reduction-first interpretation | `KEEP` | Negative/reduced outcomes are not rescued. |
+| claim-type separation / research worthiness vs novelty | `KEEP` | SYSTEM value survives without mechanism novelty credit. |
+| legacy Top-k sparse-support weakness | `TIGHTEN` | Historical local calibration issue remains a caution; do not universalize its number. |
 
-### `claim_ceiling=MECHANISM|SYSTEM` — `CLARIFY`
+## Mandatory v2.1 questions
 
-The split is useful, but it must mean the **strongest defensible claim ceiling of the current prospective object**, not the topic's origin, prestige, or research worthiness. A SYSTEM object may generate a *fresh, independently motivated* MECHANISM successor if new mechanism evidence appears. The consumed SYSTEM object itself must not be upgraded post-outcome.
+1. **Claim ceiling gaming:** not observed. The Assembly family demonstrates object-local typing rather than permanent topic prestige.
+2. **Completed SYSTEM upgraded to MECHANISM:** not observed. The mechanism object was fresh and prospectively typed.
+3. **Eligibility vs READY duplication:** not currently duplicated. Eligibility is lane admissibility; readiness is development-state completeness. Live stress-testing remains limited because eligible=0.
+4. **Hidden second Formal gate:** not observed. READY requires a well-defined informative next PRE_FORMAL test, not that comparator/reduction/falsifier have already been won.
+5. **HOLD observability:** improved and currently complete. Primary class no longer has to encode queue/terminal dimensions by itself.
+6. **SYSTEM priority exceptions:** none this generation; no comparable executable/informative MECHANISM was bypassed.
+7. **No-coherent-target escape hatch:** no abuse observed; current rolling window needed no exception.
+8. **Theory-backward authenticity:** current Assembly feedback object was mechanism-level and falsifiable, then cleanly rejected.
+9. **SYSTEM research value:** preserved. Lifecycle, receptor ordering, homeostasis, checkpoint and suppression retain architecture/API/reproducibility value without novelty inflation.
+10. **PRE_FORMAL/PASS reachability:** `REACHABLE_BUT_NARROW`; structurally coherent, but no first v2.1 READY transition yet.
+11. **Funnel metrics:** policy conclusions are explicitly gated by `classification_completeness=7/7` and small-N scope.
+12. **First READY→PRE_FORMAL:** `INSUFFICIENT_EVIDENCE`; no such transition exists yet, so do not infer calibration from absence alone.
 
-Without this transition rule, the binary split creates false-negative risk for legitimate SYSTEM -> fresh-MECHANISM transitions. With it, the split improves claim discipline.
+## General calibration
 
-### `preformal_eligible` — `CLARIFY`
-
-This field should mean: *the object is a MECHANISM object that may in principle enter PRE_FORMAL once development choices are sufficiently closed*. It should **not** mean `READY` already, and it should not be granted merely because a candidate sounds mechanistic.
-
-If `preformal_eligible=true` is only ever set when readiness is already `READY`, the two fields become duplicate guards. If it is set at first speculative mechanism wording, it becomes too permissive. Keep the states distinct.
-
-### HOLD subtype taxonomy — `CLARIFY`
-
-The required enum improves observability, especially `HOLD_SYSTEM_TERMINAL` versus `HOLD_MECHANISM_UNRESOLVED`, but the current values mix orthogonal dimensions:
-
-- `HOLD_SYSTEM_TERMINAL` = claim/lifecycle disposition
-- `HOLD_CONTRACT_AMBIGUITY` = epistemic reason
-- `HOLD_METHOD_LIMITED` = methodological reason
-- `HOLD_QUEUED` = scheduling state
-- `HOLD_MECHANISM_UNRESOLVED` = claim-development state
-
-These can logically co-occur. A terminal SYSTEM result can also be contract-ambiguous; a mechanism can be queued and method-limited. Keep the required primary subtype, but prospectively record separate machine-readable `hold_reason` and queue/terminal flags so the enum is not strategically selected to hide another state.
-
-### Architecture portfolio MECHANISM / SYSTEM split — `KEEP`
-
-This is scientifically useful so long as SYSTEM results retain genuine Architecture/system/engineering/testbed value and are not treated as failed mechanisms.
-
-### MAIN MECHANISM priority with SYSTEM integrity exceptions — `KEEP`
-
-The priority is a sensible opportunity-cost correction. Require a machine-readable exception reason whenever MAIN chooses SYSTEM over a comparably executable/informative MECHANISM object. Valid exceptions include testbed validity, evidence interpretation, supported reachability, reproducibility, Formal integrity, or no coherent MECHANISM target.
-
-The current Assembly object would qualify through resource/reachability interpretation plus the absence of a coherent mechanism object.
-
-### SUB one-in-three theory-backward Discovery — `CLARIFY`
-
-The rule is evidence-driven by the 0/3 SYSTEM-heavy baseline, but its **effectiveness is not yet demonstrated prospectively**. It should count only safe, nonduplicative autonomous selections. A qualifying theory-backward selection must have a coherent mechanism-level falsifier/reduction question; naming a low-quality API question "mechanism" must not satisfy the quota.
-
-When no coherent target exists, record the explicit no-target reason rather than manufacture one. The next rolling windows should be audited for information gain, not merely quota compliance.
-
-### PRE_FORMAL readiness checklist — `CLARIFY`
-
-The checklist is well motivated if it makes the old development gate explicit. It becomes overconservative if `READY` silently requires scientific success that PRE_FORMAL is supposed to test.
-
-Interpret the fields prospectively as:
-
-- support: claim-local adequacy to justify the next test, not a universal numeric support floor;
-- reductions: ordinary alternatives have been specified/controlled enough to make the test informative, not already defeated conclusively;
-- comparator: claim-local, matched and frozen where the claim requires one, not an overmatched alternative system;
-- reachability: supported possibility appropriate to the claim, not prevalence unless prevalence is claimed;
-- falsifier: prospectively specified, not already survived;
-- open-choice accounting: outcome-responsive degrees of freedom are closed or explicitly bounded.
-
-`READY` should mean **development readiness**, not likely-to-PASS.
-
-### No universal numeric readiness threshold — `KEEP`
-
-This is an important protection against accidental moving goalposts and against turning heterogeneous mechanism claims into one arbitrary conversion-rate gate.
+- `gate_drift`: current changes are traceable to observed SYSTEM-heavy candidate supply and observability ambiguity, not accumulated caution for its own sake.
+- `justification_trace`: strong for object-local ceilings, fresh-successor rule, theory-backward supply, multidimensional HOLD, and completeness gating.
+- `false_positive_control`: strong; no post-outcome upgrade, rescue, prevalence inflation, or universal thresholding observed.
+- `false_negative_risk`: acceptably controlled; SYSTEM work retains value, MAIN may still prioritize integrity-critical SYSTEM work, and fresh SYSTEM→MECHANISM succession remains possible.
+- `duplicate_guards`: no material duplicate guard identified. Eligibility and readiness protect different decisions.
+- `moving_goalposts`: **LOW**. v2.1 is prospective and historical terminals remain immutable.
+- `pass_reachability`: **REACHABLE_BUT_NARROW**. No new success predicate has been inserted before PRE_FORMAL.
+- `comparator_calibration`: claim-local matching remains appropriate; do not require a comparator when the immediate development question does not need one.
+- `claim_type_separation`: healthy.
+- `external_calibration`: Literature/Audit provide ordinary baselines and narrow claim-boundary checks, not authority for a new universal gate.
+- `opportunity_cost`: improved by allowing MAIN to idle instead of filling the queue with low-value SYSTEM work.
 
 ## Mechanism-supply health
 
-**`AT_RISK_SYSTEM_HEAVY_BASELINE`**
+**`IMPROVING_AND_CURRENTLY_HEALTHY_SMALL_N`**.
 
-The latest three autonomous SUB Discovery selections are all SYSTEM/engineering/API questions. That strongly justifies a supply correction, but there is not yet enough post-v2 evidence to conclude that the one-in-three rule improves mechanism quality rather than merely changing labels.
-
-The correct audit target for the next runs is the **quality and fate** of theory-backward selections: whether they are coherent, independently motivated, falsifiable, and not forced queue-fillers.
+The correction has now produced one genuine theory-backward mechanism attempt in the rolling three-selection window. It was negative, which is methodologically reassuring: quota compliance did not require a positive result or post-hoc relabel. Continue watching subsequent windows before drawing throughput-rate conclusions.
 
 ## Funnel observability
 
-**`INCOMPLETE_V2_NOT_YET_PERSISTED`**
+**`GOOD_INITIAL_V2_1_IMPLEMENTATION`**.
 
-Current durable Evidence Analyst / MAIN state lacks the mandatory v2 candidate fields. This is an observability gap, not a scientific-integrity breach. It should be fixed prospectively before using funnel conversion or readiness metrics for policy conclusions.
-
-Do not backfill consumed historical candidates merely to make dashboards look complete.
+Seven of seven material current candidates have the mandatory v2.1 classification fields. Metrics are scoped to the classified population. Do not backfill consumed history merely to improve denominators.
 
 ## PRE_FORMAL gate calibration
 
-**`CONCEPTUALLY_SOUND_BUT_NOT_YET_EMPIRICALLY_CALIBRATED_UNDER_V2`**
+**`SEMANTICALLY_WELL_CALIBRATED_EMPIRICAL_TRANSITION_UNTESTED`**.
 
-No current PRE_FORMAL object exists, so no v2 `READY -> PRE_FORMAL` transition has yet demonstrated pass reachability. The checklist is appropriate if interpreted as development readiness. It would become a hidden second Formal gate if "reductions", "comparator", or "falsifier" are read as already-successful outcomes.
-
-## Gate classifications
-
-| Gate / rule | Classification | Finding |
-| --- | --- | --- |
-| Hard one-way integrity floor | `KEEP` | Unchanged and non-negotiable. |
-| Prospective protocol / raw-before-score / preserve-before-read / exact binding | `KEEP` | No reason to weaken. |
-| New-computational-principle novelty bar | `KEEP` | Still appropriate for strongest claim type. |
-| Architecture/System value separate from novelty | `KEEP` | Existing lower funnel demonstrates the distinction. |
-| `claim_ceiling=MECHANISM|SYSTEM` | `CLARIFY` | Current-object ceiling; allow only fresh prospective SYSTEM->MECHANISM successor, not post-outcome upgrade. |
-| `preformal_eligible` | `CLARIFY` | Distinguish eligibility from `READY`. |
-| HOLD subtype enum | `CLARIFY` | Useful primary state, but reason/queue/terminal dimensions should be separately observable. |
-| Mandatory persistence of v2 funnel fields / metrics | `TIGHTEN` | Current durable streams do not yet expose them. |
-| Architecture MECHANISM/SYSTEM portfolio split | `KEEP` | Improves claim separation. |
-| MAIN MECHANISM priority | `KEEP` | Good opportunity-cost correction with explicit SYSTEM exceptions. |
-| SYSTEM-over-MECHANISM exception logging | `TIGHTEN` | Needed to detect strategic gaming. |
-| SUB one-in-three theory-backward rule | `CLARIFY` | Keep quality floor/no-target exception; effectiveness not yet demonstrated. |
-| PRE_FORMAL readiness checklist | `CLARIFY` | Development readiness only, not prior scientific success. |
-| No universal numeric readiness threshold | `KEEP` | Prevents hidden global gate inflation. |
-| Equal-privilege comparator | `KEEP` | Still appropriate. |
-| Comparator as claim-local readiness item | `CLARIFY` | Do not require irrelevant/overmatched comparator. |
-| Signal-before-reduction | `KEEP` | For promotion/positive claims. Theory-backward Discovery selection may precede signal. |
-| Ordinary-control-first reduction | `KEEP` | Prevents novelty inflation. |
-| Fresh Analyst STOP after Architecture | `KEEP` | Continues to prevent rescue. |
-| Public API permissiveness vs supported reachability | `KEEP` | Recent receptor case demonstrates correct use. |
-| Legacy Top-k sparse-support gate | `TIGHTEN` | Historical local weakness remains. |
-| Programme-wide replacement numeric support threshold | `INSUFFICIENT_EVIDENCE` | v2 explicitly should not create one. |
-| Brittle literal/format-sensitive semantic detector | `TIGHTEN` | Historical extractor warning remains. |
-
-## False-positive / false-negative balance
-
-False-positive control remains strong: SYSTEM edge effects have repeatedly been reduced to ordinary API/resource/serialization semantics rather than laundered into novelty. v2 should further reduce novelty inflation if `claim_ceiling` is assigned before outcome-visible successor choice.
-
-The new false-negative risk is mostly semantic: a rigid binary label could trap a scientifically useful SYSTEM observation even after it motivates a new mechanism question; `preformal_eligible` plus `READY` could duplicate each other; and a readiness comparator could become overmatched. The prospective fresh-successor rule and development-readiness interpretation resolve these risks without weakening integrity.
-
-## Moving goalposts
-
-**`LOW`**, conditional on prospective-only rollout.
-
-Funnel v2 must not rescore, invalidate, upgrade, or relabel consumed/frozen historical experiments. Historical H5 and other one-way results remain calibration examples only. The correction is justified by candidate-supply/observability evidence, not by an attempt to rescue an inconvenient scientific outcome.
-
-## PASS / PRE_FORMAL reachability
-
-**`REACHABLE_BUT_NARROW`**, with one new qualification: **not yet demonstrated under Funnel v2**.
-
-A genuine mechanism still has a realistic prospective path:
-
-theory/native mechanism signal -> fresh `claim_ceiling=MECHANISM` object -> `preformal_eligible=true` once the mechanism question is coherent -> claim-local support/reductions/comparator/reachability/falsifier/open choices made development-ready -> machine-readable `READY` -> PRE_FORMAL -> one-way FORMAL integrity chain.
-
-The historical H5 process demonstrates that the one-way Formal machinery itself is operational, but v2's new readiness transition has not yet been exercised. Do not make `READY` require that the candidate already survived the very falsifier or comparator that PRE_FORMAL/FORMAL is intended to test.
-
-## Novelty versus research worthiness
-
-Still well separated. Homeostasis, receptor ordering, delayed attribution, Assembly lifecycle, and checkpoint correctness all retain or resolve SYSTEM/engineering value without receiving mechanism/new-principle novelty credit. Funnel v2 should make this separation more explicit, not suppress SYSTEM research.
-
-## External calibration
-
-Current Literature and Independent Audit do not justify a stricter global admission threshold. Literature supports ordinary source/population and contract reductions; the H5 audit supports the exact registered algorithmic-work conclusion while explicitly narrowing its interpretation. External evidence should continue to calibrate claim scope and ordinary controls, not define universal readiness numbers.
+`READY` should continue to mean that the next PRE_FORMAL test is prospectively specifiable, informative and interpretable: claim-local support is adequate, relevant ordinary alternatives are identified enough for a discriminating test, any needed comparator can be frozen fairly, reachability is adequate for the claim, the falsifier is fixed, and open choices are accounted for. It must not mean that the candidate has already beaten those tests.
 
 ## Prospective recommendations
 
-1. Implement the mandatory v2 fields in Evidence Analyst candidate records and successor handoffs before treating `funnel_metrics` as policy evidence.
-2. Define `claim_ceiling` as a current-object claim ceiling. Permit SYSTEM -> MECHANISM only through a fresh independently motivated prospective successor; never same-object post-outcome upgrade.
-3. Keep `preformal_eligible` distinct from `READY`.
-4. Keep the required HOLD subtype, but also persist orthogonal hold reason, terminal/nonterminal state, and queued/active state.
-5. Log the reason whenever MAIN selects SYSTEM over a comparably executable/informative MECHANISM candidate.
-6. Apply the one-in-three SUB rule with a mechanism-quality floor and explicit `NO_COHERENT_MECHANISM_TARGET` exception; audit the next rolling windows for information gain rather than quota compliance.
-7. Treat readiness as development readiness. Do not require the candidate to have already won its comparator, reduction, or falsifier.
-8. Do not add a programme-wide numeric readiness/support threshold.
-9. Preserve SYSTEM Architecture value and testbed-integrity exceptions; do not turn mechanism priority into a ban on systems research.
-10. Keep all v2 changes prospective. Do not backfill/rescore consumed historical results for cosmetic funnel completeness.
+1. Keep Funnel v2.1 as currently specified; do not add a universal numeric readiness/support threshold.
+2. Preserve current-object claim ceilings and require fresh prospective successors for SYSTEM→MECHANISM transitions.
+3. Continue rolling theory-backward accounting, but score success by coherent/falsifiable candidate creation rather than positive outcomes.
+4. Persist `NO_COHERENT_MECHANISM_TARGET` rather than inventing a mechanism candidate when no quality-floor target exists.
+5. Keep MAIN idle when neither a comparable MECHANISM nor integrity-protecting high-value SYSTEM object exists.
+6. Audit the first real `READY -> PRE_FORMAL` transition when it occurs; that is now the highest-information unresolved calibration event.
+7. Do not reinterpret v2.1 conversion rates until multiple fully classified windows exist.
 
 ## Utility request
 
-No new Methodology Utility request created. The highest-information calibration evidence will come from the first few live v2 candidate allocations, the next rolling SUB selections, and the first `READY -> PRE_FORMAL` transition. A separate synthetic prototype would duplicate the live prospective rollout.
+None created. Live v2.1 rollout and the eventual first READY→PRE_FORMAL transition provide more information than a synthetic Utility prototype at this point.
 
 ## Hard-integrity-floor confirmation
 
-Confirmed unchanged: no rerun/retune of consumed identities; frozen/prospective protocols; raw-before-score; preserve-before-read; exact identity/source/package/runtime/input binding; immutable evidence; no evaluator/target leakage; no silent post-outcome repair.
+**CONFIRMED / DO NOT RELAX.** No recommendation changes the one-way constraints on consumed identities, prospective/frozen protocol, raw-before-score, preserve-before-read, exact identity/source/package/runtime/input binding, immutable evidence, leakage control, or post-outcome repair.
 
-## Bottom line
+## Confidence
 
-The programme's **scientific bar remains well calibrated**, but the new candidate-supply/readiness correction is not yet sufficiently implemented or empirically exercised to call the *overall methodology* well calibrated. `MIXED_CALIBRATION` is the appropriate current classification: keep the hard science gates, tighten funnel observability, and clarify v2 semantics before judging its conversion rates or raising/lowering the scientific bar.
+**HIGH for current v2.1 implementation quality; MODERATE for long-run candidate-supply calibration because N is small; INSUFFICIENT_EVIDENCE for the first READY→PRE_FORMAL transition.**
+
+## Questions for Control / Evidence Analyst
+
+- When the first `preformal_eligible=true` object appears, can the durable record show a state with eligibility true but readiness not yet READY if appropriate, preserving their operational distinction?
+- At the first SYSTEM-over-comparable-MECHANISM allocation, is `system_priority_exception` durably written before execution rather than reconstructed afterward?
+- At the first `NO_COHERENT_MECHANISM_TARGET`, is the quality-floor failure itself recorded without creating a filler candidate?
+
+## Authoritative/current refs inspected
+
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
+- current Evidence Analyst `EVA-20260920T115704+0900-R12-A6B8DE50` on `ops/evidence-analyst-handoff@dcaa02fc25506ff4e8b14d7540b6c754a8a6da98`
+- MAIN input `MAIN-20260920T114602+0900-RELAY-ASSEMBLY-CI-COMPLETE@4f6eb1c5fa78c4f220489f56253e78f09c31d1f1`
+- SUB input `SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4@03c8981d86ce0086cf5a01798a80e8275e58b711`
+- `research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920@13239163f6fecb2b61ea2189a5a94ba12b6cb3d6`
+- `research/exploratory-sub-assembly-feedback-mechanism-20260920@83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801`
+- Control mailbox `b35068cbee426c99c3cc1f6dd23053778a2bd88a` (legacy generation metadata)
+- Literature mailbox/input `f399e9d14ef6d491135d19161b8c1d7986b94e5b` (legacy generation metadata)
+- Independent Audit mailbox/input `d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56` (legacy generation metadata)
+- Repository Steward `ops/repository-steward@e53df976b98d56b8e37a5cbfc20f1aeb84caadeb`
+- `ops/orchestrator-run-report@0d1371bee14b95e126cef203f516c0033d538363`; latest CI on that report branch succeeded
+- authoritative annotated `evidence/*`: 5; `formal/*`: 0; `sealed/*`: 0; tag-based `freeze/*`: 0; `preserve/*` heads: 0
+- open PRs include #148/#149; no observed merge changes scientific authority
+
