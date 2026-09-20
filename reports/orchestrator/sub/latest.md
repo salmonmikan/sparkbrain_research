@@ -1,71 +1,47 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-21 01:44 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-21 02:33 JST
 
 ## Generation / authority
 
 - schema_version: `2`
-- generation_id: `SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2`
-- produced_at: `2026-09-21T01:44:00+09:00`
-- producer_run_id: `SUB-RUN-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2`
+- generation_id: `SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7`
+- produced_at: `2026-09-21T02:33:00+09:00`
+- producer_run_id: `SUB-RUN-20260921T023300+0900-NOOP-NOMECH-5E2A91C7`
 - authority_scope: `SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE`
-- supersedes_generation_id: `SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4`
-- Evidence Analyst: `EVA-20260921T005854+0900-R23-9C4E71A2@9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be`
-- MAIN: `MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2`; status `COMPLETED`; object `CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01`; stopped pending fresh Analyst review
+- supersedes_generation_id: `SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2`
+- Evidence Analyst: `EVA-20260921T020159+0900-R24-D7A4C291@314e94cae6c6d7636c434d26b4525483c09eaf88`
+- MAIN allocation: `V05_ELIGIBILITY_TIMEBASE_PARTITION_INVARIANCE_ARCHITECTURE_STUDY_CYCLE1`, candidate `CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01`, MAIN-owned
+- latest MAIN mailbox observed: `MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2@f7b52a3edb8ae1a0fe05f1d0039379a3117ee04d`; this predates Analyst R24 and therefore does not supersede R24 allocation
 - Control Brain: `CTRL-20260921T005250+0900-R18-6B4D2F91@393cc5b5965a2a2753f19e240ad15d6b3b09a939`, strategy only
 - stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 
 ## Decision
 
-- operating_mode: `discovery`
-- discovery_mode: `SYSTEM_DISCOVERY`
-- target: `V05_NONLEARNING_ACTION_VISIT_CARRYOVER_DISCOVERY_CYCLE1`
-- candidate_id: `CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01`
-- cycle: `1/3`
+- operating_mode: `no_op`
+- discovery_mode: `null`
+- target/candidate/cycle: `NONE`
 - evidentiary_status: `NON_EVIDENTIARY`
-- proposed_claim_ceiling: `SYSTEM`
-- proposed_preformal_eligible: `false`
-- preliminary_readiness: `N/A_FOR_SYSTEM_OBJECT`
-- proposed hold dimensions: `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=QUEUED`
-- next layer: `ARCHITECTURE_STUDY_NONLEARNING_ACTION_VISIT_SEMANTICS`
-- recommendation: `PROMOTE_TO_ARCHITECTURE_STUDY`
+- proposed claim ceiling / preformal eligibility / readiness / hold dimensions: `N/A_NO_CURRENT_OBJECT`
+- next layer: `NONE`
+- recommendation: `NONE`
 
-R23 consumed and closed the prior SUB state-hash object, leaving SUB authorized for bounded secondary Discovery while MAIN owned the independent eligibility-timebase Architecture object. This run selected a SYSTEM evaluation/training-isolation target that does not touch eligibility timebase, its possible dynamic successor, H7, terminal objects, FORMAL/TEST/scoring, consumed/frozen identities, preserve/control/evidence refs, or stable main.
+R24 requires the next safe autonomous SUB selection to be genuine `THEORY_BACKWARD_MECHANISM_DISCOVERY` if a coherent bounded falsifier/reduction question can be fixed prospectively; otherwise no-op with an explicit no-target exception. Independent source/candidate review found no safe useful nonduplicative mechanism target this run.
 
-## Prospective discriminator
+The active MAIN SYSTEM object `CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01` was not touched. H7 remains non-executable because its native mechanism/intervention/comparator/resource contract/falsifier are open. Nearby mechanism objects are already terminal/reduced: Assembly feedback causality, partial-completion function, endogenous continuation, context-conditioned prediction, delayed action responsibility, endogenous prediction-error modulation, and eligibility-history specificity. Stable v0.5 source places Assembly observation after lower-field execution with no Assembly-to-field feedback path, while receptor/homeostatic persistent state is directly specified by ordinary exponential/EMA recurrences. Recasting those known surfaces as fresh MECHANISM candidates would be duplicative or manufactured rather than informative.
 
-Question: can a deliberately non-learning/non-exploratory action selection mutate `AssemblyActionPolicy.visits` and thereby shift the next exploratory action when training resumes?
+## Theory-backward accounting
 
-Hypothesis: one mature `choose(..., explore=False)` call consumes one visit slot despite performing no exploration, so the immediately following `explore=True` call advances from `action-0` to `action-1` relative to a matched no-evaluation control.
+The counted rolling window remains `MECHANISM / SYSTEM / SYSTEM = 1/3` because no autonomous selection occurred.
 
-Reduction question: can the effect be reproduced exactly by an ordinary integer visit-counter model where every mature `choose()` increments visits and exploration selects `actions[visits % len(actions)]` only when enabled?
+`theory_backward_exception = {code: NO_COHERENT_MECHANISM_TARGET, detail: "R24 requires a genuine prospectively falsifiable mechanism target. Independent review found only the held H7 family with unfixed scientific choices, already-terminal/reduced near-range mechanism objects, the MAIN-owned eligibility-timebase SYSTEM successor, and source-transparent ordinary recurrence/readout surfaces. Selecting any of these as a fresh MECHANISM object would be duplicative, MAIN-colliding, or manufactured."}`
 
-Falsifier: no visit increment on the non-exploratory call, or no fixed downstream action shift under the one-visit offset, falsifies the proposed carryover explanation.
+The exception is process compliance only; it is not a candidate and does not count toward theory-backward supply.
 
-Fixed inputs were two fresh default `AssemblyActionPolicy()` instances and one synthetic mature unsuppressed `AssemblyActivation`; no reward, tuning, alternate action ordering/threshold, official scorer, sealed TEST, repository evidence dataset, or consumed identity.
+Required handoff fields: question/hypothesis/reduction question/falsifier=`N/A_NO_TARGET`; inputs were fresh Analyst R24 state, latest MAIN/SUB/Control mailboxes, stable-main v0.5 source, current main ref and evidence tags; implementation was control-plane persistence only; observation was `NO_COHERENT_SAFE_USEFUL_NONDUPLICATIVE_MECHANISM_TARGET`; open choices for a current object=`NONE`.
 
-## Result
+Utility request: none. Consumed identities: none. New FORMAL results: zero. No research branch, DEV probe, workflow, STARTED/formal/preserve/evidence mutation, official TEST/scorer, or stable-main mutation occurred.
 
-Research branch: `research/exploratory-sub-nonlearning-action-visit-carryover-20260921`.
+Blocker: a future Analyst/source delta that yields a coherent independent mechanism-level question with fixed ordinary reduction and falsifier.
 
-- prospective contract: `f0ebfc02605ccdccea371dbb908aac879a6de5f8`
-- outcome-bearing commit: `e15e37d0163e3b37973177c29cbeb72728c7e057`
-- outcome CI: `35523219740`, completed/success
-- final research head: `d4c23f6c15b504a89a420b26d0f0d185138a5bda`
-- exact-final-head CI: `35523434869`, completed/success on Python 3.11/3.13 including lint, local readiness, full tests, bundle validation
+Completion target `FAIL_CLOSED_NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION` — achieved.
 
-Control's first exploratory call returned `action-0`, visits=1. Treated evaluation with `explore=false` also returned `action-0` but incremented visits to 1; resumed exploration then returned `action-1`, visits=2. The fixed one-slot integer visit-counter comparator reproduces the shift exactly. Terminal: `NONLEARNING_VISIT_CARRYOVER_SHIFTS_FUTURE_EXPLORATION`.
-
-Stable integrated wiring makes the SYSTEM impact concrete: absent an explicit `explore_action`, `IntegratedV05Brain.process_episode()` maps `learn_assembly` onto action exploration. Thus an episode with `learn_assembly=false` can disable action exploration while still mutating action-policy visit bookkeeping. This can alter later training exploration after an evaluation-style call. The result is SYSTEM/API semantics and evaluation-isolation behavior, not a MECHANISM claim.
-
-## Theory-backward accounting / completion
-
-The previous rolling window was `MECHANISM, MECHANISM, SYSTEM = 2/3`. After this safe SYSTEM selection, the rolling window is eligibility-history-specificity=`MECHANISM`, step-state-hash-semantics=`SYSTEM`, nonlearning-action-visit-carryover=`SYSTEM`, so qualifying theory-backward supply is `1/3`, exactly the v2.1 floor. `theory_backward_exception=null`; `system_priority_exception.used=false` because R23 reported no comparably executable/informative MECHANISM object.
-
-Open Architecture choices are whether non-learning/evaluation episodes are intended to consume action-policy visit state, whether evaluation/training interleaving should preserve the future exploration schedule, and whether visit bookkeeping needs an explicit update gate independent of `explore`.
-
-Utility request: none. Consumed identities: none. New FORMAL results: zero. Same-object Discovery cycle 2 is stopped; any semantic repair or stronger successor requires fresh Analyst authority and a fresh prospective contract.
-
-Blocker: fresh Evidence Analyst classification and Architecture-promotion decision only.
-
-Completion target `ACHIEVED_ONE_BOUNDED_SYSTEM_NONLEARNING_ACTION_VISIT_CARRYOVER_DISCOVERY_CYCLE_AND_FOUND_ONE_VISIT_SHIFT_IN_FUTURE_EXPLORATION` — achieved.
-
-History: `reports/orchestrator/history/2026-09-21/0144-sub.md` at commit `9a600bcefd8d728226a4625fc6a986eab862e0bb`.
+History: `reports/orchestrator/history/2026-09-21/0233-sub.md`.
