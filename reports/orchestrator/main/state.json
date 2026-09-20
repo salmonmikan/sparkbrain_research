@@ -1,10 +1,11 @@
 {
-  "timestamp": "2026-09-20T09:20:03+09:00",
+  "timestamp": "2026-09-20T09:45:33+09:00",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "analyst_commit": "df12559698c0f6bc0165c550a55c62f7287a86bd",
   "research_layer": "ARCHITECTURE_STUDY",
-  "current_lane": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_VALID_STATIC_TERMINAL_WAITING_EXACT_HEAD_CI",
+  "active_phase": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_COMPLETED",
+  "current_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_ANALYST_REVIEW",
   "candidate_question": {
     "id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
     "question": "Does public v0.5 homeostatic liveness/stability intentionally represent whole-field activity including receptors, or is reservoir/internal-computation liveness expected to be separately represented?",
@@ -15,94 +16,54 @@
     "mapped_outcome": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY"
   },
-  "authoritative_refs": {
+  "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_analyst_handoff": "df12559698c0f6bc0165c550a55c62f7287a86bd",
     "research_branch": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
     "research_head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
     "prospective_contract_commit": "4930d894af5b0880d9e443f7582db3a96c206a4e",
     "raw_facts_commit": "8f5d7e23b6896d9352daa77f885a4a1cc52ae820",
-    "source_blobs": {
-      "src/sparkbrain/v05/homeostasis.py": "67b87a4b4c91a7dba41670087a2d1803bb6e3e6c",
-      "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-      "src/sparkbrain/v05/contracts.py": "048b93cddb16dbe9276a0e2c0f972406291c1cb2",
-      "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
-      "src/sparkbrain/v05/__init__.py": "bb45b132bbd4d8ad203911ad46eafffdf63820c4",
-      "tests/v05/test_v05_homeostasis_plasticity.py": "ba1763c8ceb441cc91ce7510a313548acbb29db9",
-      "docs/THEORY_SPEC_v0.5.md": "c1d3dbd041476428a103324b58616d3cc6534885",
-      "docs/V05_MASTER_PLAN.md": "0812069c4e19d8a25364ff8476870b770cee15c9",
-      "docs/V05_EXPERIMENT_PROTOCOL.md": "fce01cd448ad00e1d420e3cb73f6d0f32768df5d"
-    },
-    "evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13,
     "active_formal_identity": null,
     "active_started_ref": null,
     "active_preserve_ref": null,
     "active_evidence_ref": null
   },
-  "fast_path_reconciliation": {
-    "status": "FAST_PATH_CONSISTENT_NO_FULL_RECONCILIATION",
+  "lease_collision_reconciliation": {
+    "prior_run_id": "sparkbrain-main-primary-20260920T0914JST",
+    "prior_execution_mode": "PRIMARY",
+    "prior_status": "WAITING_EXTERNAL",
+    "prior_heartbeat_at": "2026-09-20T09:20:03+09:00",
+    "fresh_primary_running_same_object": false,
+    "analyst_tip_rechecked": true,
+    "research_head_rechecked": true,
     "main_ref_rechecked": true,
-    "analyst_tip_rechecked_after_contract": true,
-    "evidence_formal_sealed_freeze_namespaces_rechecked": true,
-    "legacy_freeze_control_preserve_refs_rechecked": true,
-    "main_latest_state_lease_rechecked": true,
-    "sub_latest_rechecked": true,
-    "fresh_same_object_collision": false,
-    "allocation_unclear": false,
-    "integrity_anomaly": false
-  },
-  "branches_prs_advanced": {
-    "research_branch_created": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
-    "research_commits": [
-      "4930d894af5b0880d9e443f7582db3a96c206a4e",
-      "8f5d7e23b6896d9352daa77f885a4a1cc52ae820",
-      "81af6ac56c31d169b591bc30854d0efa9d0bac8c"
-    ],
-    "research_pr_created_or_merged": false,
-    "main_modified": false
+    "relay_lease_acquired": true,
+    "relay_lease_acquire_commit": "5583a503abc7880ba9db89e6ab7f73a5296bbfce"
   },
   "workflow_check_result": {
     "ordinary_ci": {
       "run_id": 35478448679,
       "head_branch": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
       "head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
-      "status": "in_progress",
-      "conclusion": null,
-      "last_observed_jobs": [
-        "test (3.11): in_progress",
-        "test (3.13): in_progress"
-      ],
-      "role": "repository_integrity_only"
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": {
+        "test (3.11)": "completed_success",
+        "test (3.13)": "completed_success"
+      },
+      "repository_integrity_only": true
     },
     "outcome_bearing_workflow": null,
     "dynamic_probe_executed": false,
     "characterization_mode": "STATIC_READ_ONLY_SOURCE_DOCS_TESTS_CALLSITE_CONTRACT"
   },
-  "observations_results": {
+  "scientific_result": {
     "new_formal_scientific_evidence": false,
     "new_pre_formal_development_evidence": false,
-    "new_non_evidentiary_architecture_observation": true,
-    "mapped_outcome": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
-    "raw_facts": {
-      "implementation_counts_all_supplied_spikes_without_receptor_filter": true,
-      "implementation_updates_rate_ema_and_threshold_for_all_field_units": true,
-      "dead_streak_resets_on_any_supplied_spike": true,
-      "active_unit_fraction_denominator_is_all_field_units": true,
-      "brain_passes_unfiltered_base_result_spikes_to_homeostasis": true,
-      "assembly_extraction_separately_excludes_receptor_ids": true,
-      "homeostasis_test_explicitly_adapts_receptor_unit_threshold": true,
-      "explicit_whole_field_liveness_population_contract_found": false,
-      "explicit_reservoir_only_liveness_population_contract_found": false,
-      "material_contract_contradiction_found": false,
-      "evaluation_consumes_dead": true,
-      "evaluation_aggregates_dead_rate": true,
-      "supported_active_unit_fraction_consumer_found": false
-    },
-    "interpretation": "The implementation is unambiguously all-field/receptor-inclusive for Homeostasis liveness accounting and active-unit fraction, and receptor units are explicitly part of threshold homeostasis in the test surface. The supported public docs/contracts/tests do not explicitly define whether dead/dead-field and active_unit_fraction represent whole-field versus internal-reservoir liveness. Evaluation consumes dead as dead_rate. This is an API/observability population-semantics ambiguity, not a new stability mechanism or computational-principle result."
+    "new_non_evidentiary_architecture_information_this_relay": false,
+    "existing_mapped_outcome": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
+    "interpretation_unchanged": true,
+    "summary": "Exact-head CI succeeded. The pre-existing Architecture terminal remains a non-evidentiary API/observability population-semantics ambiguity: implementation is whole-field/receptor-inclusive, while the supported public population contract is unspecified."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -113,13 +74,26 @@
     "ni01-no-ignition-selective-prediction-official-v1",
     "h5-event-routing-work-reduction-official-v1"
   ],
-  "integrity_state": {
-    "status": "VALID_NON_EVIDENTIARY_STATIC_TERMINAL_WAITING_EXACT_HEAD_CI",
-    "prospective_binding_before_interpretation": true,
-    "raw_facts_persisted_before_terminal_mapping": true,
+  "contingency_consumed": {
+    "terminal": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
+    "required_action": "STOP_HOLD_API_OBSERVABILITY_AMBIGUITY",
     "terminal_mapping_applied_once": true,
-    "all_bound_source_blobs_match": true,
-    "fact_type_appropriate_structural_validation_used": true,
+    "dynamic_continuation_authorized": false,
+    "relay_authorized_continuation": "collect exact-head ordinary CI and close cycle if success"
+  },
+  "critical_path_actions_performed": [
+    "read latest Evidence Analyst handoff, MAIN state/latest/lease, and re-fetched exact authoritative refs",
+    "confirmed no fresh PRIMARY RUNNING collision on the same object",
+    "re-fetched exact research branch head and stable main",
+    "collected ordinary CI 35478448679",
+    "confirmed both Python 3.11 and Python 3.13 jobs completed successfully on exact head",
+    "persisted terminal MAIN completion without scientific mutation"
+  ],
+  "integrity_status": {
+    "status": "VALID_NON_EVIDENTIARY_STATIC_TERMINAL_EXACT_HEAD_CI_SUCCESS_COMPLETED",
+    "prospective_binding_unchanged": true,
+    "raw_facts_unchanged": true,
+    "terminal_mapping_unchanged": true,
     "production_source_modified": false,
     "official_test_accessed": false,
     "formal_identity_created": false,
@@ -131,34 +105,15 @@
     "sub_reserved_work_mutated": false,
     "utility_request_created": false
   },
-  "critical_path_fixes": [],
-  "critical_path_actions_performed": [
-    "acquired PRIMARY MAIN lease before mutation",
-    "created fresh research branch from exact stable main",
-    "prospectively bound exact source/docs/tests/callsite surface and fixed terminal mapping",
-    "inventoried decision-relevant Homeostasis, StabilitySnapshot, dead/dead_rate, active_unit_fraction, tests and docs",
-    "persisted raw facts before interpretation",
-    "applied the pre-bound terminal mapping once",
-    "triggered and bound ordinary CI 35478448679 to exact final research head"
-  ],
-  "outcome_contingency_consumed": {
-    "terminal": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
-    "required_action": "STOP_HOLD_API_OBSERVABILITY_AMBIGUITY",
-    "terminal_mapping_applied_once": true,
-    "dynamic_continuation_authorized": false
-  },
-  "work_left_for_sub": "Independent bounded Discovery only under current Evidence Analyst boundary. Do not absorb this Homeostasis successor path or the queued Assembly mature-capacity Architecture object.",
   "utility_request_created": null,
-  "stop_reason": "VALID_STATIC_TERMINAL_MAPPED_WAITING_EXACT_HEAD_ORDINARY_CI",
-  "next_MAIN_action": "Collect only ordinary CI 35478448679 on exact head 81af6ac56c31d169b591bc30854d0efa9d0bac8c. If success, set lease COMPLETED and STOP for fresh Evidence Analyst review. No dynamic receptor-aware comparator, population-policy change, cycle 2, PRE_FORMAL, or FORMAL continuation without fresh prospective authority.",
+  "stop_reason": "VALID_STATIC_TERMINAL_AND_EXACT_HEAD_CI_SUCCESS_STOP_FOR_FRESH_ANALYST_REVIEW",
+  "next_MAIN_action": "Wait for a fresh Evidence Analyst handoff. Do not run a dynamic receptor-aware comparator, change population semantics, start cycle 2, advance PRE_FORMAL/FORMAL, or automatically consume the queued Assembly object without fresh prospective authority.",
   "persistence_result": {
-    "lease_acquire_commit": "25bfbdd79416e280e0a75807d94884a30beaf8d1",
-    "latest_md_commit": "05532f468862faa8c4c0308cc20d510bad4333fd",
-    "history_path": "reports/orchestrator/history/2026-09-20/0919-main.md",
-    "history_commit": "007da9ddb68e5505bc329e9d42dba2f6c0dae255",
-    "lease_waiting_external_commit": "d02b44cbe6b9de15ca5c1ce03fa2152e1aaca964",
+    "relay_lease_acquire_commit": "5583a503abc7880ba9db89e6ab7f73a5296bbfce",
+    "latest_md_commit": "20a99f842ef3d75e06c12f68b9ae1280d1f488c3",
+    "history_path": "reports/orchestrator/history/2026-09-20/0945-main.md",
     "state_json": "this update",
-    "final_lease_status": "WAITING_EXTERNAL",
+    "final_lease_status": "COMPLETED",
     "force_push_used": false
   }
 }
