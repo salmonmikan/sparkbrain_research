@@ -1,53 +1,73 @@
-# SparkBrain Research Orchestrator MAIN — Analyst R18 reconciled; intentional scientific idle
+# SparkBrain Research Orchestrator MAIN — R19 static SYSTEM Architecture terminal mapped; exact-head CI pending
 
-- timestamp: `2026-09-20T19:15:46+09:00`
+- timestamp: `2026-09-20T20:27:00+09:00`
+- schema_version: `2`
+- generation_id: `MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731`
 - worker_role: `main`
 - execution_mode: `PRIMARY`
-- schema_version: `2`
-- generation_id: `MAIN-20260920T191546+0900-PRIMARY-FUNNEL21-HOLD-R18-8C2F41D7`
-- producer_run_id: `sparkbrain-main-primary-20260920T191546JST-R18-HOLD`
-- supersedes_generation_id: `MAIN-20260920T184716+0900-RELAY-FUNNEL21-FAILCLOSED-CONTEXTPRED`
-- consumed Analyst: `EVA-20260920T190536+0900-R18-AC1DB49E` @ `fec9320a8e8c868f4df91dafb1af75c640ae995a`
-- research_layer: `NONE`
-- main_lane: `LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`
-- current MAIN candidate/question: `NONE`
-- claim_ceiling: `null`
-- preformal_eligible: `null`
+- Evidence Analyst: `EVA-20260920T195817+0900-R19-B6E2F41A@8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433`
+- consumed Analyst generation/commit: same as above
+- supersedes MAIN: `MAIN-20260920T191546+0900-PRIMARY-FUNNEL21-HOLD-R18-8C2F41D7`
+- stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
+- reconciliation: `FAST_PATH_CLEAN_R19`; no ref disagreement, integrity anomaly, collision, or allocation ambiguity
+
+## Assigned object
+
+- main_lane: `ASSEMBLY_CLUSTER_ORDER_SUPPORTED_REACHABILITY_ARCHITECTURE_STUDY_CYCLE1_STATIC`
+- research_layer: `ARCHITECTURE_STUDY`
+- candidate: `CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01`
+- question: Is first-prototype order-dependent Assembly partition reachable and semantically relevant on supported integrated v0.5 paths?
+- exploration cycle: `ARCHITECTURE_STUDY 1/3` programme-default budget; no cycle 2 authorized
+- claim_ceiling: `SYSTEM`
+- preformal_eligible: `false`
 - preformal_readiness: `null`
-- hold_class: `null`
-- hold_reason: `null`
-- terminal_state: `null`
-- queue_state: `null`
-- system_priority_exception: `used=false`
+- system_priority_exception.used: `false`; no comparable executable/informative MECHANISM object exists
 
-## Fresh Analyst delta
+## Prospectively bound execution
 
-Analyst R18 consumed and canonically classified the previously unreviewed SUB generation `SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91`. The object `CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01` is now `REJECT / MECHANISM / preformal_eligible=false / NOT_READY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED` with no hold class.
+Fresh research branch was created from exact stable main:
 
-The prospectively fixed component probe used balanced outcomes for identical current mature Assembly X under immediately preceding A versus B context. Both arms returned the same native decision `future-A` at confidence `0.5`; the context calls did not mutate predictor state. The prospectively fixed ordinary first-order current-Assembly frequency lookup reproduces both arms exactly. Canonical terminal: `FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS`. This is `NON_EVIDENTIARY_DISCOVERY`, not FORMAL evidence, PRE_FORMAL development evidence, or Architecture evidence. Support breadth is one fixed component-level synthetic A/B/X construction with balanced 4/4 outcomes.
+`research/main-assembly-cluster-order-supported-reachability-arch-study-20260920`
 
-No cycle-2 rescue, integrated extension, context-length sweep, PRE_FORMAL promotion, SYSTEM relabel, or same-object redesign is authorized. Any stronger sequence-state question requires a fresh candidate ID, fresh prospective contract, and fresh Analyst authority.
+Prospective static contract was committed before interpretation at `82396b7969fc0f1fe6b4afb18bdc07b947396dab`. It bound exact stable-main source/docs/tests/callsites, fact fields, terminal mapping, and the prohibition on dynamic integrated permutation experiments, source patches, official TEST/STARTED/scoring/preserve actions, PRE_FORMAL/FORMAL promotion, outcome-responsive redesign, and same-object cycle 2.
 
-## Funnel / priority
+Static raw facts were persisted before terminal interpretation at `f0e12fd12e81bdbc539d7f1a489ad112a39ca8d5`. Final mapped summary head is `7a8fb2698da33ca07203123d1c5ad7dc510ac8e1`.
 
-Architecture remains `EMPTY_HOLD`: active M=0/S=0, queued M=0/S=0. PRE_FORMAL remains `EMPTY_HOLD`: eligible=0, READY=0. FORMAL remains `EMPTY_HOLD`: no fresh identity, STARTED, TEST, scorer, or preserve authority. Material portfolio is `MECHANISM=7 / SYSTEM=6`; mandatory Funnel-v2.1 classification completeness is `13/13`; terminal counts are `ACTIVE=0 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=12`; viable executable MECHANISM candidates=`0`.
+## Static findings
 
-`CAND-H7-RESP-01` remains the only nonterminal MECHANISM hold: `HOLD_MECHANISM_UNRESOLVED / preformal_eligible=false / NOT_READY / NOT_QUEUED`, blocked on a native executable responsibility-sensitive object with supported reachability and fixed comparator/falsifier. No SYSTEM-priority exception is used because no SYSTEM object is assigned.
+Stable `TemporalAssemblyMemory` is ordinary first-prototype threshold clustering: the first observed `ActivityPattern` is retained as the candidate prototype; later matches update occurrence/episode lineage and similarity totals without replacing that prototype. `CascadeTracker` deterministically sorts spikes by `(time_ms, unit_id)`, `patterns_from_step` preserves cascade iteration order without a final pattern sort, and `IntegratedV05Brain` sends those patterns sequentially to Assembly memory.
 
-## Independent integrity reconciliation
+Supported v0.5 worlds sort input pulses by `(time_ms, channel)` and the retained training generator uses a fixed alternating motif-X/motif-Y episode sequence. The stable Theory Specification says ordered activity *within* an Assembly pattern is a clustering feature, but no fixed-surface supported doc/test/callsite specifies whether the sequence in which multiple `ActivityPattern` observations are presented to the online clusterer is intentionally semantic or must be partition-invariant. The retained protocol's `order_shuffle` changes event-symbol order inside held-out episodes; it is not a same-pattern-multiset learning-order test.
 
-FAST PATH is clean. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Context-prediction research head remains `f0a4157d869561e4201aca1c37663305bc5c8a5d`; exact-head CI `35502970668` is `completed/success` on that SHA. Authoritative `evidence/*` tags remain 5; `formal/*`, `sealed/*`, and `freeze/*` tags remain 0. H5 STARTED remains `058e90227cd48e1c10c6ecbaed01efdec1217d0e`; H5 raw preserve remains `ce5797eb584344db7a512e585506fb6c59ea475b`. PR #148 and #149 remain open/unmerged. No ref disagreement, integrity anomaly, allocation ambiguity, or MAIN/SUB collision was found.
+The fixed static inventory neither explicitly precludes non-transitive bridge-like `ActivityPattern` similarity sets nor establishes that the integrated supported v0.5 path produces and presents such a bridge set in alternative orders. Downstream Assembly partition identity is nevertheless semantically consumed: predictor counts and action scores/visits are keyed by `assembly_id`; suppression/evaluation target Assembly IDs; checkpoint state preserves candidates plus predictor/action state. Therefore a genuinely reachable partition difference would not be merely cosmetic renaming.
 
-## MAIN action / evidentiary status
+## Terminal and evidentiary status
 
-MAIN opened no research branch, dispatched no workflow/experiment, consumed no identity, changed no scientific ref, performed no PRE_FORMAL, Architecture, FORMAL acquisition, preserve, scoring, merge, or Utility request. New MAIN outputs are therefore: FORMAL scientific evidence=`0`; PRE_FORMAL development evidence=`0`; MECHANISM Architecture observations=`0`; SYSTEM Architecture observations=`0`.
+Prospectively mapped terminal: `ORDER_UNSPECIFIED_AND_SUPPORTED_REACHABILITY_UNESTABLISHED`.
 
-Work left for SUB remains independent bounded Discovery only under prospective typing, terminal/public-API semantic preflight, ordinary-reduction ladder, fixed MECHANISM falsifier where applicable, and prospectively fixed STOP mapping. MAIN delegates no critical-path work.
+- classification: `HOLD`
+- hold_class: `HOLD_SYSTEM_TERMINAL`
+- hold_reason: `CROSS_PATTERN_PRESENTATION_ORDER_CONTRACT_UNSPECIFIED`, `SUPPORTED_NONTRANSITIVE_BRIDGE_PATTERN_REACHABILITY_UNESTABLISHED`
+- terminal_state: `TERMINAL_FOR_CURRENT_OBJECT`
+- queue_state: `NOT_QUEUED`
+- hold dimensions are the MAIN application of Analyst R19's precommitted outcome contingency and await fresh canonical Analyst review
 
-## Stop
+This is exactly one **NON_EVIDENTIARY SYSTEM Architecture observation**. New FORMAL scientific evidence: `0`. New PRE_FORMAL development evidence: `0`. New MECHANISM Architecture observations: `0`. New SYSTEM Architecture observations: `1`. New consumed identity: `0`.
 
-- lease target: `COMPLETED`
-- stop_reason: `ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT`
-- next MAIN action: remain scientifically idle until a fresh Evidence Analyst generation prospectively assigns a coherent MAIN object; re-read Analyst generation and all authoritative refs before any future mutation or scientific action.
+Ordinary reductions/characterization: `FIRST_PROTOTYPE_THRESHOLD_CLUSTERING`, `CHRONOLOGICAL_CASCADE_TO_PATTERN_PRESENTATION`, `ASSEMBLY_ID_KEYED_PREDICTION_AND_ACTION_STATE`. Support breadth is static stable-main source/doc/test/callsite inventory only; no dynamic integrated bridge-reachability probe was run.
 
-Persistence is MAIN-owned control-plane only. No scientific source-of-truth mutation occurred.
+## Integrity / workflow
+
+Authoritative evidence remains five `evidence/*` tags; `formal/*`, `sealed/*`, and tag-based `freeze/*` remain empty. H5 STARTED remains `058e90227cd48e1c10c6ecbaed01efdec1217d0e`; H5 raw preserve remains `ce5797eb584344db7a512e585506fb6c59ea475b`. No immutable evidence/preserve/control ref was modified.
+
+Ordinary CI for the exact final research head is run `35507809211` on `7a8fb2698da33ca07203123d1c5ad7dc510ac8e1`; status at persistence is `in_progress`. This CI is repository-integrity checking only and cannot change the already mapped Architecture terminal.
+
+## Stop / next action
+
+Stop reason: `VALID_STATIC_SYSTEM_TERMINAL_MAPPED_WAITING_EXACT_HEAD_ORDINARY_CI`.
+
+MAIN lease is transitioning to `WAITING_EXTERNAL`. Relay or next MAIN may inspect only CI run `35507809211` for the exact head above. On success, mark the run `COMPLETED` and STOP for fresh Evidence Analyst review without additional science. A CI failure does not reopen or redesign the scientific terminal; only a clearly outcome-independent repository-integrity correction already within MAIN authority may be considered. Dynamic order discriminators, supported bridge generators, mitigation/canonicalization patches, mechanism successors, PRE_FORMAL, FORMAL, and same-object cycle 2 all require fresh prospective Analyst authority.
+
+SUB work left: independent bounded Discovery only; SUB must not continue this MAIN object. Utility request: none.
+
+Persistence: lease acquisition commit `6308874ff537f0180a6252e6430fc27a0c86626d`; state commit `b71f43339cf86c96385341265feadf23231f4be5`; latest/history/final-lease persistence continues sequentially on `ops/orchestrator-run-report`.
