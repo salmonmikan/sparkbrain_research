@@ -1,26 +1,26 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91",
-  "produced_at": "2026-09-21T03:35:00+09:00",
-  "producer_run_id": "SUB-RUN-20260921T033500+0900-NOOP-NOMECH-A64D2C91",
+  "generation_id": "SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
+  "produced_at": "2026-09-21T04:35:00+09:00",
+  "producer_run_id": "SUB-RUN-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
+  "supersedes_generation_id": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T031129+0900-R25-1E24780E",
-      "handoff_commit": "258406668f86b24f54dd1a88f18da37e457a001b",
-      "main_lane": "V05_ELIGIBILITY_TIMEBASE_PARTITION_INVARIANCE_ARCHITECTURE_STUDY_CYCLE1",
+      "generation_id": "EVA-20260921T040050+0900-R26-6A3F8C21",
+      "handoff_commit": "455522cde0a7e5eae1d2b04d779a5783f6351585",
+      "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
       "sub_lane": "REASSESS_THEORY_BACKWARD_MECHANISM_IF_COHERENT_ELSE_FRESH_NO_TARGET_NOOP",
       "sub_fallback": "NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET"
     },
     "main": {
-      "latest_mailbox_generation_id": "MAIN-20260921T031700+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGPART-R25-7A4C91E2",
-      "mailbox_tip_observed": "a1d401a4ac8bd65525907e3074a9a508b7f4c102",
-      "status": "WAITING_EXTERNAL",
-      "owned_lane": "V05_ELIGIBILITY_TIMEBASE_PARTITION_INVARIANCE_ARCHITECTURE_STUDY_CYCLE1",
-      "owned_candidate": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
-      "active_branch": "research/main-eligibility-timebase-partition-invariance-20260921",
-      "workflow_run_id": 35528770185
+      "latest_mailbox_generation_id": "MAIN-20260921T041632+0900-PRIMARY-FUNNEL21-HOLD-R26-5D8A31C4",
+      "mailbox_tip_observed": "99a4cc6e8f0212c1745002a5d2d3873bfee0dc55",
+      "status": "COMPLETED",
+      "owned_lane": null,
+      "owned_candidate": null,
+      "active_branch": null,
+      "workflow_run_id": null
     },
     "control_brain": {
       "generation_id": "CTRL-20260921T025500+0900-R19-9D2C4A71",
@@ -28,16 +28,16 @@
       "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260921T023300+0900-NOOP-NOMECH-5E2A91C7",
+      "generation_id": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91",
       "mode": "no_op",
       "candidate_id": null
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_commit": "258406668f86b24f54dd1a88f18da37e457a001b",
-    "analyst_generation": "EVA-20260921T031129+0900-R25-1E24780E",
-    "orchestrator_tip_before_sub_persistence": "a1d401a4ac8bd65525907e3074a9a508b7f4c102",
+    "analyst_handoff_commit": "455522cde0a7e5eae1d2b04d779a5783f6351585",
+    "analyst_generation": "EVA-20260921T040050+0900-R26-6A3F8C21",
+    "orchestrator_tip_before_sub_persistence": "99a4cc6e8f0212c1745002a5d2d3873bfee0dc55",
     "control_handoff_commit": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
@@ -52,12 +52,11 @@
   "exploration_cycle": null,
   "no_op_reason": "NO_SAFE_USEFUL_NONDUPLICATIVE_COHERENT_THEORY_BACKWARD_MECHANISM_TARGET",
   "main_frontier_avoided": {
-    "main_lane": "V05_ELIGIBILITY_TIMEBASE_PARTITION_INVARIANCE_ARCHITECTURE_STUDY_CYCLE1",
-    "active_main_object": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
+    "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
+    "active_main_object": null,
     "avoided": [
-      "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
-      "MAIN_ACTIVE_RESEARCH_BRANCH_AND_CI",
-      "ANY_OUTCOME_DEPENDENT_MAIN_SUCCESSOR",
+      "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01_TERMINAL_OBJECT",
+      "ANY_OUTCOME_DEPENDENT_SUCCESSOR_OF_TERMINAL_ELIGIBILITY_TIMEBASE_OBJECT",
       "CAND-H7-RESP-01_AS_HELD_OBJECT",
       "ALL_ANALYST_TERMINAL_CURRENT_OBJECTS",
       "FORMAL_TEST_SCORING",
@@ -83,9 +82,9 @@
     "window_size": 3,
     "theory_backward_exception": {
       "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "Fresh R25 reassessment found no new scientific/source delta yielding a bounded independent mechanism discriminator. H7 remains scientifically under-specified; nearby mechanism families remain terminal or exactly reduced; stable source-transparent recurrence/readout surfaces would be reduction-by-construction; and the only active fresh object is MAIN-owned SYSTEM eligibility-timebase partition invariance. Selecting a MECHANISM object here would be duplicative, MAIN-colliding, low-information, or manufactured."
+      "detail": "Fresh R26 opportunity-specific reassessment found no coherent safe useful nonduplicative mechanism discriminator. Stable main and authoritative evidence are unchanged; R26 closed the only fresh MAIN SYSTEM object as terminal exact per-apply reduction; H7 remains under-specified without a fixed native mechanism/intervention/comparator/resource/falsifier contract; and nearby mechanism families remain terminal or exactly reduced. A MECHANISM selection here would require terminal-object rescue, relabeling, or manufactured novelty."
     },
-    "exception_event_ordinal": 2,
+    "exception_event_ordinal": 3,
     "exception_counts_as_mechanism_candidate": false,
     "next_selection_process_note": "Reassess from fresh Analyst/source state on the next safe autonomous opportunity; do not mechanically copy this exception. Prefer genuine theory-backward mechanism work immediately if a coherent independent discriminator appears."
   },
@@ -96,11 +95,11 @@
   "inputs_used": {
     "scientific_inputs": "NONE",
     "control_plane_inputs": [
-      "EVA_R25_ALLOCATION_AND_STATE",
-      "LATEST_MAIN_SUB_CONTROL_MAILBOXES",
+      "EVA_R26_ALLOCATION_PORTFOLIO_AND_V21_FIELDS",
+      "LATEST_MAIN_R26_SUB_CONTROL_MAILBOXES",
       "STABLE_MAIN_V05_SOURCE_INVENTORY",
       "CURRENT_MAIN_REF",
-      "CURRENT_AUTHORITATIVE_PORTFOLIO"
+      "CURRENT_AUTHORITATIVE_EVIDENCE_FORMAL_SEALED_FREEZE_REFS"
     ],
     "formal_or_sealed_test_used": false,
     "official_scorer_used": false,
@@ -123,9 +122,10 @@
     "selection_result": "NO_COHERENT_SAFE_USEFUL_NONDUPLICATIVE_MECHANISM_TARGET",
     "source_reconciliation": [
       "Stable main remains unchanged at ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d, so there is no new implementation substrate since the prior no-target opportunity.",
-      "R25 confirms viable executable MECHANISM=0, PRE_FORMAL eligible=0, READY=0 and keeps H7 stopped until a fresh native object exists.",
-      "Nearby mechanism families remain terminal or exactly reduced; source-transparent receptor/homeostasis recurrence/readout surfaces remain low-information reduction-by-construction.",
-      "The only active fresh scientific object is MAIN-owned SYSTEM eligibility-timebase partition invariance and is excluded from SUB work."
+      "Authoritative annotated evidence tags remain five; formal, sealed, and tag-based freeze remain zero.",
+      "R26 reports material candidates=22, MECHANISM=10, SYSTEM=12, Architecture active/queued=0/0, PRE_FORMAL eligible=0, READY=0, and viable executable MECHANISM=0.",
+      "R26 canonically closed the eligibility-timebase partition object as SYSTEM HOLD_SYSTEM_TERMINAL with exact per-apply eligibility-decay reduction and no authorized same-object continuation or SYSTEM-to-MECHANISM upgrade.",
+      "H7 remains the sole nonterminal MECHANISM hold and lacks a fresh native mechanism/intervention/comparator/resource/falsifier contract; nearby mechanism families remain terminal or exactly reduced."
     ]
   },
   "evidentiary_status": "NON_EVIDENTIARY",
@@ -144,7 +144,7 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason": "No SYSTEM selection occurred; MAIN-owned SYSTEM Architecture work remains separate."
+    "reason": "No SYSTEM selection occurred; R26 system_priority_exception.used remains false."
   },
   "candidate_next_research_layer": null,
   "open_scientific_choices": [],
@@ -155,20 +155,20 @@
   "blockers": [
     "NO_COHERENT_SAFE_USEFUL_NONDUPLICATIVE_THEORY_BACKWARD_MECHANISM_TARGET",
     "H7_NATIVE_MECHANISM_INTERVENTION_COMPARATOR_RESOURCE_CONTRACT_AND_FALSIFIER_UNFIXED",
-    "MAIN_OWNS_CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01"
+    "NO_NEW_STABLE_MAIN_OR_AUTHORITATIVE_EVIDENCE_DELTA"
   ],
   "completion_target": "FAIL_CLOSED_NOOP_WITH_FRESH_NO_COHERENT_MECHANISM_TARGET_EXCEPTION",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-21/0335-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-21/0435-sub.md",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "base_mailbox_tip": "a1d401a4ac8bd65525907e3074a9a508b7f4c102",
-    "history_commit": "20bf85d53db2ec8116d8d6ad3ac019f61bc4abfb",
-    "latest_commit": "162ad0f3d02209350231c76be0ddc41bb70ed1f5",
+    "base_mailbox_tip": "99a4cc6e8f0212c1745002a5d2d3873bfee0dc55",
+    "history_commit": "THIS_COMMIT",
+    "latest_commit": "THIS_COMMIT",
     "final_state_commit": "THIS_COMMIT",
-    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
+    "mode": "SINGLE_ATOMIC_GIT_TREE_FAST_FORWARD",
     "result": "SUB_NOOP_HISTORY_LATEST_STATE_PERSISTED"
   },
   "persistence_limitations": []
