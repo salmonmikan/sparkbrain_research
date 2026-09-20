@@ -1,82 +1,110 @@
 {
   "schema_version": 2,
-  "generation_id": "utility-state-20260920T1027JST-lifecycle-bootstrap",
-  "produced_at": "2026-09-20T10:27:00+09:00",
-  "producer_run_id": "control-plane-migration-20260920T1027JST",
-  "authority_scope": "UTILITY_TERMINAL_STATE_MIGRATION_ONLY",
-  "supersedes_generation_id": null,
+  "generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+  "produced_at": "2026-09-21T01:23:13+09:00",
+  "producer_run_id": "utility-auto-20260921T012313+0900-eligibility-timebase",
+  "authority_scope": "UTILITY_ASSIGNMENT_READ_ONLY_AUDIT_AND_TERMINAL_STATE_ONLY",
+  "supersedes_generation_id": "utility-state-20260920T1027JST-lifecycle-bootstrap",
   "input_generations": {
     "assignment": {
-      "assignment_id": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
-      "assignment_generation_id": null,
-      "generation_status": "LEGACY_GENERATION_UNKNOWN",
-      "assignment_blob_sha": "a900ed9372dabc517596eb1e1971e71a9bb91241"
-    }
+      "assignment_id": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
+      "assignment_generation_id": "UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
+      "assignment_blob_sha": "b1ce5ed66aaba7c07b6078b3a7c897aa81752055",
+      "status_observed": "ASSIGNED"
+    },
+    "evidence_analyst": {
+      "generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
+      "handoff_head": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
+      "ownership": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01_MAIN_STATIC_ARCHITECTURE"
+    },
+    "main_relay": {
+      "head": "a20207308c7203c597791c2371a3085d639a4a74",
+      "status": "COMPLETED_STATIC_TIMEBASE_ARCHITECTURE",
+      "mapped_observation": "TIMEBASE_CONTRACT_AMBIGUOUS"
+    },
+    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
   },
-  "assignment_generation_id": null,
-  "legacy_assignment_generation": "LEGACY_GENERATION_UNKNOWN",
-  "lifecycle_status": "TERMINAL_ACKNOWLEDGED_BY_CONTROL_MIGRATION",
-  "status": "COMPLETED",
-  "assignment_id": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
+  "assignment_id": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
+  "assignment_generation_id": "UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
+  "lifecycle_status": "UTILITY_TERMINAL_BLOCKED_CONTROL_POINTER_UNCHANGED",
+  "status": "BLOCKED",
   "run_count": 1,
-  "updated_at": "2026-09-20T07:25:00+09:00",
-  "last_result": "utility_orchestrator/results/2026-09-20/CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY-0725.md",
-  "result_commit": "f30da2ea3ba0a4cc064be4847c2e2945344c6aa2",
-  "evidentiary_status": "NON_EVIDENTIARY_METHODOLOGY_DIAGNOSTIC",
-  "classification": "STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED",
-  "artifact_provenance": {
-    "workflow_run": 35465512928,
-    "head_sha": "2ef4b24f8e7ef8577ebbcb0328e7b3476bc24336",
-    "artifact_id": 10591265966,
-    "archive_sha256": "d4dd67e97132229fc60c1cf13b6dbc9366bfa22a2568aa7de116667b41d33669",
-    "raw_sha256": "220eb06b051273680726b8f0f4ad318a95863fcc1e9909daeb23ffd745ec6805",
-    "contract_sha256": "4d688d4d6ed4e7998d6e4a14ddb0cb9442474168f22996608acceae60fd8a51a"
-  },
+  "updated_at": "2026-09-21T01:23:13+09:00",
+  "last_result": "utility_orchestrator/results/2026-09-21/CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE.md",
+  "result_commit": "cfb175f0316881a2f74724c247e7cb75f176f1a2",
+  "evidentiary_status": "NON_EVIDENTIARY_READ_ONLY_ARCHITECTURE_AUDIT_ONLY",
+  "scientific_authority": "NONE",
+  "classification": "BLOCKED_BY_FRESH_ANALYST_MAIN_OWNERSHIP_SUPERSESSION",
+  "assignment_terminal_classification": null,
   "source_binding": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v05/plasticity.py": "bb04eaac527aaa6343018ffb49347d087c6a29e5",
     "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-    "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
+    "docs/THEORY_SPEC_v0.5.md": "c1d3dbd041476428a103324b58616d3cc6534885",
+    "docs/V05_EXPERIMENT_PROTOCOL.md": "fce01cd448ad00e1d420e3cb73f6d0f32768df5d",
+    "tests/v05/test_v05_homeostasis_plasticity.py": "ba1763c8ceb441cc91ce7510a313548acbb29db9",
     "tests/v05/test_v05_brain.py": "6a81994ac82a3f0660585ef0d95495aaaa336629"
   },
   "audit": {
-    "restore_restores_original_base_threshold": {
-      "artifact": false,
-      "source_semantics": true,
-      "status": "FALSE_NEGATIVE_CONFIRMED"
+    "implemented_decay_clock": "ONE_ELIGIBILITY_DECAY_MULTIPLICATION_PER_APPLY_CALL",
+    "apply_has_elapsed_time_argument": false,
+    "process_episode_apply_semantics": "ONCE_WHEN_LEARN_FIELD_TRUE_ZERO_WHEN_FALSE",
+    "explicit_episode_or_apply_count_contract_found": false,
+    "explicit_elapsed_or_model_time_contract_found": false,
+    "partition_invariance_test_executed": false,
+    "read_only_conclusion": "CURRENT_V05_CONTRACT_SURFACE_DOES_NOT_EXPLICITLY_BIND_DECAY_CLOCK"
+  },
+  "preserved_funnel_v2_1": {
+    "candidate_id": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
+    "analyst_generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
+    "claim_ceiling": "SYSTEM",
+    "preformal_eligible": false,
+    "preformal_readiness": {
+      "field_presence_in_analyst_record": false,
+      "utility_synthesized_value": false
     },
-    "implementation_state_preserving": {
-      "artifact": false,
-      "source_semantics_under_fixed_conjunction": true,
-      "status": "DERIVED_FALSE_NEGATIVE"
-    },
-    "other_decision_relevant_fields": "MATCH",
-    "artifact_to_handoff_mismatch": false,
-    "extractor_mismatch": true
+    "hold_class": null,
+    "hold_reason": null,
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "system_priority_exception": {
+      "used": false,
+      "reason_code": null,
+      "reason_detail": "SYSTEM work protects reproducibility/evidence interpretation; no comparable executable/informative MECHANISM exists.",
+      "compared_mechanism_candidate_ids": []
+    }
   },
   "collision_context": {
-    "evidence_analyst_head_observed": "7e7d425948a86d0eec306b1a75bfc07165d9afa1",
-    "main_refractory_head_observed": "4589192d927e40cf7a05cf8a94207efb42ebbc65",
-    "active_main_or_sub_fixture_used": false,
-    "collision_found": false
+    "collision_found": true,
+    "collision_type": "FRESH_ANALYST_MAIN_OWNERSHIP_SUPERSESSION",
+    "evidence_analyst_head_observed": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
+    "main_relay_head_observed": "a20207308c7203c597791c2371a3085d639a4a74",
+    "main_static_object": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
+    "main_static_observation": "TIMEBASE_CONTRACT_AMBIGUOUS",
+    "dynamic_diagnostic_authorized_after_latest_analyst": false,
+    "active_main_or_sub_fixture_used": false
   },
-  "recommendation": "DO_NOT_USE_DISPUTED_STATIC_FACTS_AS_SUCCESSOR_SEMANTIC_AUTHORITY",
-  "stop_reason": "COMPLETED_ONE_READ_ONLY_CONSISTENCY_RESULT_MAX_RUNS_REACHED",
+  "stop_reason": "BLOCKED_BY_FRESH_ANALYST_MAIN_OWNERSHIP_SUPERSESSION",
+  "follow_up_recommendation": "FRESH_ANALYST_CANONICALIZATION_THEN_CONTROL_MAY_ISSUE_FRESH_SUCCESSOR_ASSIGNMENT_IF_DYNAMIC_DIAGNOSTIC_REMAINS_USEFUL",
   "follow_up_request": null,
   "integrity": {
     "scientific_workflow_rerun": false,
     "workflow_dispatch": false,
-    "dynamic_pulses_probes_training_executed": false,
-    "artifact_contract_harness_or_research_branch_modified": false,
-    "official_test_accessed": false,
+    "dynamic_diagnostic_executed": false,
+    "diagnostic_branch_created": false,
+    "prospective_dynamic_contract_created": false,
+    "training_executed": false,
+    "official_test_or_scorer_accessed": false,
     "formal_or_consumed_raw_accessed": false,
     "historical_scientific_result_repaired_or_relabelled": false,
     "research_or_main_branch_mutated": false,
     "immutable_or_scientific_control_refs_mutated": false,
     "prior_control_plane_records_edited": false,
-    "threshold_metric_comparator_seed_candidate_successor_changed": false,
+    "candidate_typing_or_readiness_changed": false,
     "preformal_or_formal_authority_created": false,
     "active_main_or_sub_used_as_fixture": false,
     "scheduler_mutated": false,
-    "self_approved_follow_up": false
+    "self_approved_follow_up": false,
+    "control_assignment_pointer_mutated": false
   }
 }
