@@ -5,6 +5,7 @@ from __future__ import annotations
 import pytest
 
 from sparkbrain.v04.contracts import SpikeEvent
+from sparkbrain.v04.field import TemporalExcitableField
 from sparkbrain.v05.brain import IntegratedV05Brain
 from sparkbrain.v05.plasticity import V05PlasticityConfig, V05PlasticityController
 
@@ -25,7 +26,7 @@ def _spike(time_ms: float, unit_id: int) -> SpikeEvent:
     )
 
 
-def _setup() -> tuple[V05PlasticityController, object, tuple[int, int]]:
+def _setup() -> tuple[V05PlasticityController, TemporalExcitableField, tuple[int, int]]:
     brain = IntegratedV05Brain()
     field = brain.base.field
     edge_key = min(key for key, edge in field.connections.items() if edge.plastic)
@@ -52,7 +53,9 @@ def test_delayed_reward_requires_edge_reactivation_for_weight_effect() -> None:
         (rewarded_controller, rewarded_field),
         (neutral_controller, neutral_field),
     ):
-        assert controller.apply(field, first_pair) == 1
+        # The selected directed edge is guaranteed to update. A reverse connection
+        # between the same two units may also update from the same two synthetic spikes.
+        assert controller.apply(field, first_pair) >= 1
 
     eligibility_key = f"{edge_key[0]}:{edge_key[1]}"
     initial_weight = no_activity_field.connections[edge_key].weight
@@ -74,8 +77,8 @@ def test_delayed_reward_requires_edge_reactivation_for_weight_effect() -> None:
     # The same delayed reward has an effect only once that same edge is active again.
     second_pair = _causal_pair(edge_key, 10.0)
     rewarded_controller.reward(-2.0)
-    assert rewarded_controller.apply(rewarded_field, second_pair) == 1
-    assert neutral_controller.apply(neutral_field, second_pair) == 1
+    assert rewarded_controller.apply(rewarded_field, second_pair) >= 1
+    assert neutral_controller.apply(neutral_field, second_pair) >= 1
 
     rewarded_weight = rewarded_field.connections[edge_key].weight
     neutral_weight = neutral_field.connections[edge_key].weight
