@@ -44,3 +44,22 @@ No Utility assignment or request may authorize:
 - bypass of Evidence Analyst formal authorization or one-way scientific integrity.
 
 Control Brain may broadly reconfigure the Utility scheduler itself, but the hard floor remains binding.
+
+## Assignment lifecycle v1
+
+`utility_orchestrator/assignment/current.md` is an active-assignment pointer owned only by Control Brain.
+
+For every NEW active assignment it must contain:
+- `schema_version: 2`
+- `status: ASSIGNED` (or `RUNNING` if Control explicitly advances it)
+- non-null `active_assignment_id`
+- a unique non-null `assignment_generation_id`
+- the bounded authority/scope/expiry/max_runs/stop condition.
+
+`status: IDLE` grants no Utility work authority and must use null active assignment ID/generation.
+
+Utility may write its own state/results, including terminal states `COMPLETED | BLOCKED | EXPIRED | CANCELLED`, but Utility must never edit/close/archive/replace the Control-owned current assignment pointer.
+
+When Control observes a terminal Utility state, it MUST re-read current assignment and Utility state immediately before closure and close only if the expected assignment ID and assignment generation still match. Then it archives the terminal assignment and atomically returns current to an IDLE pointer. This is compare-and-swap behavior and prevents an older completion from erasing a newer assignment.
+
+Legacy terminal assignments that predate assignment generations may be closed exactly once using `LEGACY_TERMINAL_BOOTSTRAP` only when assignment ID, terminal state, result, and run_count/max_runs are mutually consistent and no newer active assignment exists.

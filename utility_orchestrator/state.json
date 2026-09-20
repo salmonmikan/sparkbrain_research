@@ -1,4 +1,21 @@
 {
+  "schema_version": 2,
+  "generation_id": "utility-state-20260920T1027JST-lifecycle-bootstrap",
+  "produced_at": "2026-09-20T10:27:00+09:00",
+  "producer_run_id": "control-plane-migration-20260920T1027JST",
+  "authority_scope": "UTILITY_TERMINAL_STATE_MIGRATION_ONLY",
+  "supersedes_generation_id": null,
+  "input_generations": {
+    "assignment": {
+      "assignment_id": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
+      "assignment_generation_id": null,
+      "generation_status": "LEGACY_GENERATION_UNKNOWN",
+      "assignment_blob_sha": "a900ed9372dabc517596eb1e1971e71a9bb91241"
+    }
+  },
+  "assignment_generation_id": null,
+  "legacy_assignment_generation": "LEGACY_GENERATION_UNKNOWN",
+  "lifecycle_status": "TERMINAL_ACKNOWLEDGED_BY_CONTROL_MIGRATION",
   "status": "COMPLETED",
   "assignment_id": "CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY",
   "run_count": 1,
