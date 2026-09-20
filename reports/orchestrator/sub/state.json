@@ -1,45 +1,40 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71",
-  "produced_at": "2026-09-20T16:47:59+09:00",
-  "producer_run_id": "SUB-RUN-20260920T163348+0900-PRESEM-5A8C2D71",
-  "authority_scope": "BOUNDED_SECONDARY_DISCOVERY_ONLY_NON_EVIDENTIARY",
-  "supersedes_generation_id": "SUB-20260920T155600+0900-THEORY-ENDOCONT-4C7A2E91",
+  "generation_id": "SUB-20260920T173914+0900-NOOP-ANALYSTWAIT-CA15738F",
+  "produced_at": "2026-09-20T17:39:14+09:00",
+  "producer_run_id": "SUB-RUN-20260920T173914+0900-ANALYSTWAIT-CA15738F",
+  "authority_scope": "SUB_FAIL_CLOSED_RECONCILIATION_AND_CONTROL_PLANE_PERSISTENCE_ONLY",
+  "supersedes_generation_id": "SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71",
   "input_generations": {
     "evidence_analyst": {
       "generation_id": "EVA-20260920T160240+0900-R16-3D7A91C4",
-      "state_handoff_commit": "eea87c0e67807605c8fdd10408650da4192fb06b",
-      "branch_tip": "eea87c0e67807605c8fdd10408650da4192fb06b"
+      "handoff_commit": "eea87c0e67807605c8fdd10408650da4192fb06b",
+      "branch_tip_observed": "eea87c0e67807605c8fdd10408650da4192fb06b"
     },
     "main": {
-      "generation_id": "MAIN-20260920T161602+0900-PRIMARY-FUNNEL21-HOLD-6D2B8C41",
-      "lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-      "mailbox_commit_observed_before_sub_persistence": "12626287db4e75abb029f7dc5b1a875e756ae450"
+      "generation_id": "MAIN-20260920T171704+0900-PRIMARY-FUNNEL21-FAILCLOSED-91E6C4A2",
+      "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
+      "active_phase": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
+      "mailbox_branch_tip_observed": "1fdfe192a25c656a02b5841745654d4025fb9882"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260920T145000+0900-R14-7B3E2D91",
-      "commit": "14285844f80fa844b5aaac9ccf4d2fed95b6fb35"
+      "generation_id": "CTRL-20260920T165000+0900-R15-6C2F8A41",
+      "handoff_commit": "64611f391391844d60659732a50a22cf009a5797",
+      "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260920T155600+0900-THEORY-ENDOCONT-4C7A2E91",
-      "last_known_persistence_commit": "5f11e8c47c33f91c36c3d4d5a874b0884161fc14"
+      "generation_id": "SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71",
+      "research_head": "c68da076d846d85ad556f875d632ab6f68d68453"
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_state_commit": "eea87c0e67807605c8fdd10408650da4192fb06b",
-    "analyst_branch_tip": "eea87c0e67807605c8fdd10408650da4192fb06b",
-    "control_brain": "14285844f80fa844b5aaac9ccf4d2fed95b6fb35",
-    "research_branch": "research/exploratory-sub-presemantic-function-transfer-20260920",
-    "research_binding_commit": "e4f30b4655d483ac0d64c28798122abd7b241b02",
-    "research_initial_diagnostic_head": "1875dfac036512f771c5ffad304595d89bff42a8",
-    "research_lint_harness_correction_head": "fe1459d5b58d20a8efed150e7c102759def83927",
-    "research_api_contract_harness_correction_head": "ee2a2e9f188b6f709073353342bab32cb7da4e06",
-    "research_final_head": "c68da076d846d85ad556f875d632ab6f68d68453",
-    "initial_diagnostic_ci_run": 35497326039,
-    "lint_corrected_ci_run": 35497444115,
-    "corrected_diagnostic_ci_run": 35497584012,
-    "final_head_ci_run": 35497715398,
+    "analyst_handoff_commit": "eea87c0e67807605c8fdd10408650da4192fb06b",
+    "analyst_generation": "EVA-20260920T160240+0900-R16-3D7A91C4",
+    "main_mailbox_tip_before_persistence": "1fdfe192a25c656a02b5841745654d4025fb9882",
+    "control_handoff_commit": "64611f391391844d60659732a50a22cf009a5797",
+    "pending_previous_sub_research_branch": "research/exploratory-sub-presemantic-function-transfer-20260920",
+    "pending_previous_sub_research_head": "c68da076d846d85ad556f875d632ab6f68d68453",
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
     "evidence_tag_count": 5,
@@ -47,20 +42,21 @@
     "sealed_tag_count": 0,
     "freeze_tag_count": 0
   },
-  "mode": "discovery",
-  "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
-  "exploratory_target": "V05_PRESEMANTIC_FUNCTION_TRANSFER_DISCOVERY_CYCLE1",
-  "proposed_candidate_id": "CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01",
-  "candidate_pool_id": "NONE_SELF_SELECTED",
-  "exploration_cycle": "1/3",
-  "same_generation_autonomous_progress_reason": "Analyst R16 explicitly keeps bounded autonomous SUB Discovery open, MAIN has no active scientific object, and this pre-semantic function-transfer question is a fresh coherent theory-backward discriminator with prospectively fixed ordinary reductions distinct from prior Assembly feedback, partial-completion, delayed-credit and endogenous-continuation objects; nonduplication and cycle budgets passed.",
+  "mode": "no_op",
+  "discovery_mode": null,
+  "exploratory_target": null,
+  "candidate_pool_id": null,
+  "exploration_cycle": null,
+  "no_op_reason": "FAIL_CLOSED_PENDING_FRESH_ANALYST_CLASSIFICATION_OF_PREVIOUS_SUB_AFTER_MATERIAL_MAIN_AND_CONTROL_RECONCILIATION",
+  "same_generation_autonomous_progress_reason": null,
   "main_frontier_avoided": {
     "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
     "active_main_object": null,
+    "main_fail_closed": true,
     "avoided": [
+      "CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01_PENDING_ANALYST_REVIEW",
       "CAND-H7-RESP-01",
       "ALL_TERMINAL_CURRENT_OBJECTS",
-      "MAIN_BLOCKERS_AND_OUTCOME_DEPENDENT_SUCCESSORS",
       "FORMAL_TEST_SCORING",
       "CONSUMED_FROZEN_IDENTITIES",
       "PRESERVE_CONTROL_EVIDENCE_REFS",
@@ -68,126 +64,70 @@
     ]
   },
   "theory_backward_accounting": {
-    "pre_selection_last_three": [
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_REWARD_ELIGIBILITY",
-      "SYSTEM_DISCOVERY:V05_NONLEARNING_EVAL_ORDER_DEPENDENCE",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_CONTINUATION"
-    ],
-    "pre_selection_qualifying_count": 2,
-    "pre_selection_window_size": 3,
-    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_PRESEMANTIC_FUNCTION_TRANSFER",
-    "post_selection_last_three": [
+    "last_three_autonomous_selections": [
       "SYSTEM_DISCOVERY:V05_NONLEARNING_EVAL_ORDER_DEPENDENCE",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_CONTINUATION",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_PRESEMANTIC_FUNCTION_TRANSFER"
     ],
-    "post_selection_qualifying_count": 2,
-    "theory_backward_exception": null
+    "qualifying_count": 2,
+    "window_size": 3,
+    "current_selection": null,
+    "theory_backward_exception": null,
+    "note": "No autonomous Discovery selection occurred; rolling accounting is unchanged."
   },
-  "question": "Can an anonymous Assembly formed before any semantic outcome association later acquire a function from one member of its pre-existing cluster and transfer that function to another member that was never outcome-labeled and is below direct similarity threshold to the labeled exemplar?",
-  "hypothesis": "A pre-semantic Assembly identity can later acquire a functional association from one cluster member and transfer that function to another never-labeled member in a way that may exceed direct labeled-exemplar similarity.",
-  "reduction_question": "Is any observed transfer fully reproduced either by direct labeled-exemplar nearest-neighbor similarity or by a fixed pre-semantic prototype cluster plus ordinary label lookup?",
-  "falsifier": "The current mechanism object is reduced if transfer is absent, if direct labeled-exemplar similarity explains it, or if the prospectively fixed pre-semantic prototype-cluster lookup reproduces it exactly.",
+  "question": null,
+  "hypothesis": null,
+  "reduction_question": null,
+  "falsifier": null,
   "inputs_used": {
-    "kind": "SYNTHETIC_DEVELOPMENT_ONLY",
-    "assembly_similarity_threshold": 0.66,
-    "mature_episodes": 3,
-    "prototype_a_ordered_units": [1, 2, 3, 4],
-    "labeled_b_ordered_units": [1, 1, 2, 3],
-    "transfer_c_ordered_units": [1, 1, 3, 4],
-    "relative_bins": [0, 1, 2, 3],
-    "semantic_label": "future-X",
+    "scientific_inputs": "NONE",
     "formal_or_sealed_test_used": false,
     "official_scorer_used": false,
-    "repository_evidence_dataset_used": false,
     "consumed_identity_used": false
   },
   "implementation": {
-    "branch": "research/exploratory-sub-presemantic-function-transfer-20260920",
-    "prospective_binding_commit": "e4f30b4655d483ac0d64c28798122abd7b241b02",
-    "initial_diagnostic_commit": "1875dfac036512f771c5ffad304595d89bff42a8",
-    "lint_harness_correction_commit": "fe1459d5b58d20a8efed150e7c102759def83927",
-    "api_contract_harness_correction_commit": "ee2a2e9f188b6f709073353342bab32cb7da4e06",
-    "final_research_head": "c68da076d846d85ad556f875d632ab6f68d68453",
-    "production_source_modified": false,
-    "initial_diagnostic_ci": 35497326039,
-    "initial_diagnostic_ci_conclusion": "failure_lint_layout_only",
-    "lint_corrected_ci": 35497444115,
-    "lint_corrected_ci_conclusion": "failure_harness_api_field_mismatch_only",
-    "corrected_diagnostic_ci": 35497584012,
-    "corrected_diagnostic_ci_conclusion": "success_python_3_11_and_3_13",
-    "final_head_ci": 35497715398,
-    "final_head_ci_conclusion": "success_python_3_11_and_3_13"
+    "scientific_mutation": false,
+    "research_branch_created_or_modified": false,
+    "workflow_dispatched": false,
+    "control_plane_action": "RECONCILE_AND_PERSIST_SUB_NO_OP_ONLY"
   },
   "observations": {
-    "similarities": {
-      "prototype_a_to_labeled_b": 0.6625,
-      "prototype_a_to_transfer_c": 0.8,
-      "labeled_b_to_transfer_c": 0.6,
-      "threshold": 0.66
-    },
-    "presemantic_phase": {
-      "mature_assembly_reached": true,
-      "semantic_associations_before_maturity": 0
-    },
-    "label_phase": {
-      "labeled_b_activated_preexisting_assembly": true,
-      "label_attached": "future-X"
-    },
-    "transfer_phase": {
-      "transfer_c_was_outcome_labeled": false,
-      "same_assembly_as_labeled_b": true,
-      "prediction": "future-X",
-      "prediction_confidence": 1.0
-    },
-    "direct_labeled_exemplar_reduction": "FAILED_TO_EXPLAIN_BECAUSE_0_6000_LT_0_66",
-    "fixed_presemantic_cluster_lookup_reduction": "REPRODUCED_TRANSFER_EXACTLY_BECAUSE_A_TO_C_0_8000_GE_0_66_AND_SHARED_CLUSTER_LABEL_FUTURE_X",
-    "terminal": "CLUSTER_LOOKUP_EXPLAINS_TRANSFER",
-    "harness_corrections_science_invariant": true
+    "analyst_generation_unchanged": true,
+    "analyst_has_not_consumed_previous_sub_generation": true,
+    "main_current_state": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
+    "control_current_strategy": "DEFER_PRESEMANTIC_OBJECT_TO_EVIDENCE_ANALYST_WITH_METHOD_LIMIT",
+    "previous_sub_method_issue": "TERMINAL_RELEVANT_API_REPRESENTATION_REPAIR_OCCURRED_AFTER_OUTCOME_EXPOSURE",
+    "scientific_result_this_run": "NONE"
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "proposed_claim_ceiling": "MECHANISM",
-  "proposed_preformal_eligible": false,
-  "preliminary_preformal_readiness": {
-    "claim_type": "mechanism",
-    "supported_reachability": "MATURE_PRESEMANTIC_ASSEMBLY_REACHED; LATER_SINGLE_LABEL_ASSOCIATION_REACHED; NEVER_LABELED_TARGET_FUNCTION_TRANSFER_REACHED",
-    "functional_consequence": "FUTURE_X_TRANSFER_TO_NEVER_OUTCOME_LABELED_TARGET_BELOW_DIRECT_LABELED_EXEMPLAR_THRESHOLD",
-    "ordinary_reductions_specified_or_controlled": [
-      "DIRECT_LABELED_EXEMPLAR_SIMILARITY",
-      "FIXED_PRESEMANTIC_PROTOTYPE_CLUSTER_PLUS_LABEL_LOOKUP"
-    ],
-    "reductions_unresolved": [],
-    "comparator_status": "FIXED_PROTOTYPE_CLUSTER_LOOKUP_REPRODUCES_TRANSFER_EXACTLY",
-    "qualitative_support_breadth": "ONE_FIXED_SYNTHETIC_PATTERN_TRIPLET; DEFAULT_SIMILARITY_THRESHOLD; ONE_LABEL",
-    "falsifier_definition": "NO_FUNCTION_TRANSFER_OR_EXACT_ORDINARY_REDUCTION",
-    "open_scientific_choices": "Any stateful, generative, or context-sensitive transfer beyond fixed prototype clustering requires a fresh candidate ID and fresh prospective contract; no same-object cycle-2 rescue.",
-    "formal_claim_ceiling": "NONE_FOR_CURRENT_REDUCED_RESULT",
-    "status": "NOT_READY"
-  },
+  "proposed_claim_ceiling": null,
+  "proposed_preformal_eligible": null,
+  "preliminary_preformal_readiness": null,
   "proposed_hold_dimensions": {
     "hold_class": null,
     "hold_reason": null,
-    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-    "queue_state": "NOT_QUEUED"
+    "terminal_state": null,
+    "queue_state": null
   },
-  "system_priority_exception": {
-    "used": false,
-    "reason": "NOT_APPLICABLE_TO_MECHANISM_DISCOVERY"
-  },
-  "candidate_next_research_layer": "NONE",
-  "recommendation": "REJECT",
+  "system_priority_exception": null,
+  "candidate_next_research_layer": null,
+  "open_scientific_choices": "Deferred until a fresh Evidence Analyst generation consumes and classifies the previous SUB generation and reconciles the Control method-limit concern.",
+  "recommendation": "NONE",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
   "blockers": [
-    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_OR_CLOSURE_ONLY"
+    "FRESH_EVIDENCE_ANALYST_GENERATION_MUST_CONSUME_AND_CLASSIFY_SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71",
+    "FRESH_EVIDENCE_ANALYST_MUST_RECONCILE_CTRL-20260920T165000+0900-R15-6C2F8A41_METHOD_LIMIT"
   ],
-  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_PRESEMANTIC_FUNCTION_TRANSFER_DISCOVERY_CYCLE_AND_REDUCED_TO_FIXED_PROTOTYPE_CLUSTER_LOOKUP",
+  "completion_target": "FAIL_CLOSED_WITHOUT_SCIENTIFIC_MUTATION_PENDING_FRESH_ANALYST_CLASSIFICATION_OF_PRIOR_SUB_RESULT",
   "completion_status": "ACHIEVED",
   "persistence": {
-    "history_path": "reports/orchestrator/history/2026-09-20/1647-sub.md",
-    "history_commit": "cf49596461001cf42ffd3e5ade1c4783d66e6603",
-    "latest_commit": "5f3dcfb1beec52dd04bb26957248498c74f51e4e"
+    "branch": "ops/orchestrator-run-report",
+    "history_path": "reports/orchestrator/history/2026-09-20/1739-sub.md",
+    "latest_path": "reports/orchestrator/sub/latest.md",
+    "state_path": "reports/orchestrator/sub/state.json",
+    "base_mailbox_tip": "1fdfe192a25c656a02b5841745654d4025fb9882"
   },
   "persistence_limitations": []
 }
