@@ -1,64 +1,60 @@
 {
   "schema_version": 1,
-  "timestamp": "2026-09-20T09:17:00+09:00",
+  "timestamp": "2026-09-20T10:20:00+09:00",
   "run_disposition": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "WELL_CALIBRATED",
-  "previous_classification": "MIXED_CALIBRATION",
+  "previous_classification": "WELL_CALIBRATED",
   "confidence": "HIGH",
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
     "preserve_refs_present": true,
     "control_refs_present": true,
-    "delayed_outcome_architecture_head": "c79c5434222a6d018931dc1752e7f0074c23854b",
-    "delayed_outcome_contract_commit": "25cdd7db1d5a546b38810c40ffdc75085c8d196a",
-    "delayed_outcome_raw_facts_commit": "d226f5993b69f0d0c98c1e1cd7b049e2ba3ded49",
-    "homeostasis_architecture_contract_commit": "4930d894af5b0880d9e443f7582db3a96c206a4e",
-    "homeostasis_architecture_raw_head": "8f5d7e23b6896d9352daa77f885a4a1cc52ae820",
-    "homeostasis_ci": 35478394955,
-    "homeostasis_ci_state_at_audit": "in_progress",
+    "homeostasis_architecture_head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
+    "receptor_ordering_contract_commit": "00ab02d9b9acd9a68090858cac21f1ea2fa5e244",
+    "receptor_ordering_raw_facts_commit": "6dbc696e4e8b2b4bab62067c3297edb02da9605e",
+    "receptor_ordering_summary_head": "705b652f0eb426c7e39a75a9f901be10483d0e63",
+    "receptor_ordering_ci": 35481067945,
+    "receptor_ordering_ci_state_at_audit": "completed_success",
     "control_brain_ref": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
-    "evidence_analyst_ref": "df12559698c0f6bc0165c550a55c62f7287a86bd",
-    "main_orchestrator_ref": "25bfbdd79416e280e0a75807d94884a30beaf8d1",
-    "external_research_audit_ref": "a39f0007a55000efd7a237f05e21d381176e47f1",
+    "evidence_analyst_ref": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+    "main_orchestrator_ref": "f0fd040b252c8b9f0ffac62913c192397d22f7c1",
+    "external_research_audit_ref": "f399e9d14ef6d491135d19161b8c1d7986b94e5b",
     "repository_steward_ref": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
     "utility_bus_ref": "7321568e67b1c17ef37e028e342ae0ace08c5f94",
     "open_prs": [148, 149]
   },
   "control_plane_consumed": {
     "control_brain_commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
-    "control_brain_latest_timestamp": "2026-09-20T08:50:00+09:00",
     "control_operating_doctrine_change": "NO_NEW_CHANGE",
-    "evidence_analyst_commit": "df12559698c0f6bc0165c550a55c62f7287a86bd",
-    "evidence_analyst_latest_timestamp": "2026-09-20T08:59:41+09:00",
-    "main_orchestrator_commit": "25bfbdd79416e280e0a75807d94884a30beaf8d1",
-    "main_latest_timestamp": "2026-09-20T09:14:05+09:00",
-    "literature_commit": "a39f0007a55000efd7a237f05e21d381176e47f1",
-    "independent_audit_latest_timestamp": "2026-09-19T22:31:00+09:00",
+    "evidence_analyst_commit": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+    "evidence_analyst_latest_timestamp": "2026-09-20T10:01:00+09:00",
+    "main_orchestrator_commit": "f0fd040b252c8b9f0ffac62913c192397d22f7c1",
+    "main_latest_timestamp": "2026-09-20T10:19:30+09:00",
+    "sub_latest_timestamp": "2026-09-20T09:42:00+09:00",
+    "literature_commit": "f399e9d14ef6d491135d19161b8c1d7986b94e5b",
+    "literature_latest_timestamp": "2026-09-20T09:32:39+09:00",
     "repository_steward_commit": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
     "utility_request_bus_commit": "7321568e67b1c17ef37e028e342ae0ace08c5f94"
   },
   "gate_changes_reviewed": [
     {
-      "change": "Delayed-outcome Architecture object completed a real fresh Evidence Analyst successor decision after prospectively using stronger structural extraction and raw-before-interpretation",
-      "direction": "CLOSES_PREVIOUS_END_TO_END_CALIBRATION_GAP",
+      "change": "Homeostasis completed its valid static terminal and fresh Evidence Analyst closure at HOLD with no same-object dynamic continuation",
+      "direction": "CORROBORATES_STOP_AND_CLAIM_TYPE_SEPARATION",
       "assessment": "KEEP"
     },
     {
-      "change": "Fresh Analyst preserved delayed-outcome machine facts and mapped terminal, HOLDed the object, and prohibited same-object dynamic continuation absent a genuinely fresh supported requirement",
-      "direction": "CORROBORATES_HANDOFF_FIDELITY_STOP_AND_CLAIM_SCOPE",
+      "change": "Receptor simultaneity produced a real positive synthetic signal that was fully reduced to stable tie ordering plus sequential adaptive gain and admitted only to one static Architecture contract study",
+      "direction": "CORROBORATES_FALSE_POSITIVE_CONTROL_WITHOUT_ERASING_ARCHITECTURE_VALUE",
       "assessment": "KEEP"
     },
     {
-      "change": "Homeostasis Architecture object independently repeated exact source binding plus structural AST/exact-term inventory and raw-before-interpretation on a new question",
-      "direction": "CORROBORATES_PROSPECTIVE_EXTRACTOR_SAFEGUARD_GENERALIZATION",
-      "assessment": "KEEP"
-    },
-    {
-      "change": "Homeostasis Discovery was promoted only to static contract characterization despite ordinary reduction to all-field accounting; dynamic comparator was withheld until intended population semantics are characterized",
-      "direction": "CORROBORATES_CLAIM_TYPE_SEPARATION_AND_COMPARATOR_CALIBRATION",
-      "assessment": "KEEP"
+      "change": "Receptor static characterization prospectively separated public API permissiveness from supported/canonical workload reachability and withheld a dynamic comparator when reachability was unestablished",
+      "direction": "CLARIFIES_REACHABILITY_AND_COMPARATOR_CALIBRATION",
+      "assessment": "CLARIFY"
     }
   ],
   "gate_by_gate_classifications": {
@@ -69,6 +65,8 @@
     "post_outcome_semantic_or_protocol_repair_of_consumed_object": "KEEP",
     "positive_signal_before_mechanistic_claims": "KEEP",
     "equal_privilege_comparator_matching": "KEEP",
+    "supported_reachability_before_stronger_dynamic_comparator_allocation": "KEEP",
+    "public_api_permissiveness_vs_supported_workload_reachability": "CLARIFY",
     "comparator_semantics_matched_to_claim_and_intended_resource_policy": "CLARIFY",
     "new_computational_principle_novelty_bar": "KEEP",
     "same_novelty_bar_for_architecture_system_engineering_testbed_value": "SPLIT_BY_CLAIM_TYPE",
@@ -94,34 +92,35 @@
     "post_outcome_invalid_diagnostic_fail_closed_handling": "KEEP"
   },
   "false_positive_risks": [
-    "Architecture/API effects could be laundered into mechanistic novelty if claim-type boundaries are ignored",
-    "A comparator chosen before the actual supported contract or intended resource policy is bound could answer a different question",
-    "A future extractor could still be semantically wrong if fact-type-appropriate validation is not actually followed"
+    "A synthetic or DEV-only positive could be laundered into supported-path prevalence, mechanistic distinctness, or novelty if supported reachability is not kept separate from public API permissiveness",
+    "An API-contract ambiguity could trigger a comparator before intended semantics and relevant workload are prospectively bound",
+    "A future extractor could still produce a wrong machine fact if fact-type-appropriate validation is not actually followed"
   ],
   "false_negative_risks": [
-    "Reintroducing brittle literal or representation-sensitive detectors could again block valid measurement",
-    "Fail-closed handling would become overconservative if one disputed fact automatically rejected the candidate rather than only blocking dependent continuation",
-    "Global replication/support threshold inflation would suppress useful Architecture/testbed work without addressing a demonstrated current failure mode"
+    "Requiring demonstrated canonical workload prevalence for every public-boundary Architecture question would wrongly erase legitimate API/reproducibility ambiguities",
+    "Fail-closed handling would become overconservative if one disputed fact automatically rejected a candidate rather than only blocking dependent continuation",
+    "Global replication or support-threshold inflation would suppress useful Architecture/testbed work without addressing a demonstrated current failure mode"
   ],
   "duplicate_guards": {
     "assessment": "NO_MATERIAL_DUPLICATE_GUARD_TO_MERGE",
     "notes": [
       "exact provenance binding validates identity and inputs",
-      "machine-fact extractor validation checks whether artifact fields represent bound source/runtime semantics",
+      "machine-fact extractor validation checks whether recorded fields represent bound source/runtime semantics",
+      "supported-reachability characterization constrains prevalence and comparator allocation",
       "artifact-to-handoff binding checks transfer into durable control-plane state",
       "fresh Analyst review governs interpretation and successor allocation"
     ]
   },
   "moving_goalpost_assessment": {
     "classification": "LOW",
-    "basis": "Historical Suppression/Refractory results were not repaired or relabeled; delayed-outcome fixed extraction method, raw-fact order, terminal map and STOP before interpretation; Homeostasis repeated the strengthened policy prospectively."
+    "basis": "Receptor source scope, machine-fact validity method, raw-before-interpretation order, terminal map and STOP were fixed before terminal interpretation; Homeostasis was closed without same-object rescue; no historical consumed result was repaired or relabeled."
   },
   "pass_reachability_assessment": {
     "classification": "REACHABLE_BUT_NARROW",
     "required_path": [
       "prospectively positive native signal",
       "fresh exact-bound object and protocol",
-      "claim-local adequate support",
+      "claim-local adequate support and supported reachability where relevant",
       "matched equal-privilege comparator where required by claim type",
       "survive ordinary implementation and dynamical reductions",
       "fact-type-appropriate semantically valid machine extraction",
@@ -129,13 +128,14 @@
       "fixed intervention and falsifier",
       "one-way preserved FORMAL evidence"
     ],
-    "current_limit": "No active PRE_FORMAL or FORMAL object; current lower-funnel work is architecture/API characterization rather than a mechanism candidate."
+    "current_limit": "No active PRE_FORMAL or FORMAL object; current lower-funnel work remains Architecture/API characterization rather than a mechanism candidate."
   },
   "claim_type_separation_findings": {
     "control_state": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
-    "delayed_outcome_state": "HOLD_AFTER_FAITHFUL_STATIC_SUCCESSOR_REVIEW_NO_DYNAMIC_CONTINUATION",
-    "homeostasis_state": "ACTIVE_STATIC_ARCHITECTURE_CONTRACT_CHARACTERIZATION_RAW_FACTS_RECORDED_BEFORE_INTERPRETATION",
+    "homeostasis_state": "HOLD_AFTER_VALID_STATIC_TERMINAL_NO_SAME_OBJECT_DYNAMIC_CONTINUATION",
+    "receptor_ordering_state": "VALID_STATIC_TERMINAL_ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED_EXACT_HEAD_CI_SUCCESS_PENDING_FRESH_ANALYST_REVIEW",
     "assembly_mature_capacity_state": "QUEUED_ARCHITECTURE_CHARACTERIZATION_AFTER_ORDINARY_RESOURCE_POLICY_REDUCTION",
+    "delayed_outcome_state": "HOLD_AFTER_FAITHFUL_STATIC_SUCCESSOR_REVIEW_NO_DYNAMIC_CONTINUATION",
     "suppression_state": "HISTORICAL_AMBIGUOUS_CONTRACT_UNCHANGED_EXTRACTOR_FALSE_NEGATIVE_CALIBRATION_ONLY",
     "topk_state": "HOLD_MIXED_WITH_HISTORICAL_SUPPORT_CAVEAT",
     "temporal_state": "HOLD_ARCHITECTURE_API_REPRODUCIBILITY_ONLY",
@@ -145,12 +145,13 @@
     "remaining_risk": "IMPLEMENTATION_COVERAGE_MONITORING_NOT_CURRENT_CALIBRATION_DEFECT"
   },
   "external_calibration": {
-    "literature_commit": "a39f0007a55000efd7a237f05e21d381176e47f1",
+    "literature_commit": "f399e9d14ef6d491135d19161b8c1d7986b94e5b",
+    "homeostasis_findings": "AFFERENT_RECURRENT_SEPARATION_POPULATION_BOUNDARY_MODEL_CHOICE_AND_STABILITY_MULTI_OBSERVABLE",
     "independent_audit_assessment": "H5_ROBUST_SO_FAR_FOR_REGISTERED_ALGORITHMIC_WORK_METRIC_WITH_NARROW_INTERPRETATION_CAP",
     "overall_assessment": "NO_EXTERNAL_RESULT_JUSTIFIES_STRICTER_OR_LOOSER_SCIENTIFIC_ADMISSION_THRESHOLDS",
-    "use_rule": "External literature and audit calibrate ordinary reductions, comparator scope and claim boundaries; they do not override machine artifacts or rewrite consumed evidence."
+    "use_rule": "External literature and audit calibrate ordinary reductions, comparator scope, supported semantics and claim boundaries; they do not override machine artifacts or rewrite consumed evidence."
   },
-  "opportunity_cost_assessment": "Additional global scientific strictness now has low expected information gain and would suppress useful lower-funnel characterization. Highest value is continued application of the calibrated extraction/handoff/STOP safeguards on real objects and claim-matched comparator design.",
+  "opportunity_cost_assessment": "The receptor case shows that withholding a low-information dynamic comparator when supported reachability is unestablished preserves rigor without deleting the unresolved API question. Additional global scientific strictness would now have low expected information gain and would suppress useful lower-funnel characterization.",
   "utility_request_created": null,
   "utility_requests_observed": [
     {
@@ -168,12 +169,11 @@
   ],
   "prospective_recommendations": [
     "Keep the current scientific admission, novelty, reduction, comparator and FORMAL bars unchanged.",
-    "Continue prospectively binding a fact-type-appropriate validity method for every decision-relevant machine fact; do not reintroduce brittle raw-string or formatting-sensitive detectors.",
-    "Keep source/runtime-to-machine-fact validity distinct from machine-artifact-to-durable-handoff fidelity.",
-    "Keep fresh Analyst STOP after every Architecture cycle and require genuinely fresh prospective authority for any dynamic continuation from an ambiguous static contract result.",
-    "Finish Homeostasis static characterization under its already-bound terminal map; only a fresh review may authorize any receptor-aware comparator.",
-    "For Assembly mature-capacity, bind intended memory lifecycle and plausible supported saturation before selecting a turnover comparator or learnability threshold.",
-    "Treat historical Suppression/Refractory/Temporal/Top-k defects as calibration examples only; never rerun, rescore, relabel, invalidate or upgrade them because safeguards improved.",
+    "Preserve an explicit distinction between public API permissiveness and supported/canonical workload reachability: the former can justify an Architecture/API question; the latter is required for prevalence or stronger resource-allocation claims.",
+    "Keep positive synthetic diagnostics NON_EVIDENTIARY until an independently bound Architecture question is admitted; never relabel the Discovery output itself as Architecture evidence.",
+    "When supported reachability is unestablished, prefer HOLD plus bounded static contract characterization over either automatic REJECT or a manufactured dynamic comparator.",
+    "Continue fact-type-appropriate machine-fact validation, machine-bound handoff fidelity, and fresh Analyst STOP after every Architecture cycle.",
+    "Keep historical Suppression/Refractory/Temporal/Top-k outcomes unchanged and use them only as calibration examples.",
     "Do not add programme-wide support or replication thresholds based on local Architecture outcomes."
   ],
   "hard_integrity_floor_confirmation": {
@@ -190,11 +190,11 @@
     ]
   },
   "questions_for_control_brain": [
-    "Will fact-type-appropriate extraction and handoff fidelity remain separate prospective integrity guards rather than being collapsed into a single generic check?",
-    "Will lower-funnel allocation continue to rank supported-system relevance and information gain rather than promoting every API discrepancy?"
+    "Will public API permissiveness continue to preserve Architecture/API research worthiness without being treated as evidence of supported-path prevalence?",
+    "Will stronger dynamic comparator allocation continue to require explicit supported reachability or a genuinely fresh supported requirement?"
   ],
   "questions_for_evidence_analyst": [
-    "Will Homeostasis remain a static contract question until its valid terminal is reviewed, with no receptor-aware comparator chosen in advance?",
-    "Will future Architecture objects continue to preserve claim-type separation and require a validity method appropriate to each decision-relevant machine fact?"
+    "At fresh review, will receptor ordering remain HOLD at the mapped terminal unless independent evidence establishes supported same-key reachability or an explicit simultaneity contract?",
+    "Will future Architecture reviews continue to keep lack of canonical prevalence distinct from lack of API-contract research value?"
   ]
 }
