@@ -1,50 +1,84 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260920T104200+0900-CKPT-7F3C2A91",
-  "produced_at": "2026-09-20T10:42:00+09:00",
-  "producer_run_id": "SUB-AUTO-20260920T103526+0900-R11-7F3C2A91",
+  "generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
+  "produced_at": "2026-09-20T11:44:00+09:00",
+  "producer_run_id": "SUB-RUN-20260920T113704+0900-ASMFB-6D2A91C4",
   "worker_role": "sub",
   "mode": "discovery",
+  "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
   "authority_scope": "BOUNDED_SECONDARY_DISCOVERY_ONLY_NON_EVIDENTIARY",
-  "supersedes_generation_id": "LEGACY_GENERATION_UNKNOWN",
+  "supersedes_generation_id": "SUB-20260920T104200+0900-CKPT-7F3C2A91",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
       "branch": "ops/evidence-analyst-handoff",
-      "handoff_commit": "639a5f7baba926502965bc9fea4cdcfb9f749068"
+      "handoff_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e"
     },
     "main": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "generation_id": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1",
       "mailbox_branch": "ops/orchestrator-run-report",
-      "research_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
-      "research_head": "705b652f0eb426c7e39a75a9f901be10483d0e63"
+      "research_branch": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920",
+      "research_head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6"
     },
     "control_brain": {
       "generation_id": "LEGACY_GENERATION_UNKNOWN",
       "strategy_commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a"
     },
     "previous_sub": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "previous_target": "RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1"
+      "generation_id": "SUB-20260920T104200+0900-CKPT-7F3C2A91",
+      "handoff_commit": "e438faff528fb73a33a201cb31fa3a935192d4fd",
+      "previous_target": "V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1"
     }
   },
-  "same_generation_autonomous_progress_reason": "Evidence Analyst handoff remained unchanged and explicitly leaves DISCOVERY open to SUB under BOUNDED_SECONDARY_DISCOVERY. One new bounded checkpoint-continuation question was selected outside MAIN receptor-ordering ownership, queued Assembly lifecycle, all completed lower-funnel objects, do-not-touch surfaces, and the prior receptor permutation Discovery; this is cycle 1 for a new candidate and does not reuse a rescue cycle.",
-  "main_lane": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "same_generation_autonomous_progress_reason": "The current schema-v2 Evidence Analyst generation remained unchanged and explicitly leaves SUB on BOUNDED_SECONDARY_DISCOVERY. No named candidate was independently executable by SUB. One new theory-backward causal question was selected outside MAIN Assembly lifecycle ownership, all named exclusions and prior answered objects, with cycle budget 1/3 and no rescue reuse.",
+  "analyst_optional_fields_status": {
+    "funnel_metrics": "ABSENT_IN_CONSUMED_GENERATION",
+    "candidate_claim_ceiling": "ABSENT_IN_CONSUMED_GENERATION",
+    "candidate_preformal_eligible": "ABSENT_IN_CONSUMED_GENERATION",
+    "candidate_hold_class": "ABSENT_IN_CONSUMED_GENERATION",
+    "handling": "SUB did not invent Analyst-owned values; prospective Discovery typing proposals are recorded separately for fresh Analyst review."
+  },
+  "main_lane": "ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
   "sub_lane": "BOUNDED_SECONDARY_DISCOVERY",
-  "consumed_lane": "BOUNDED_SECONDARY_DISCOVERY_SELF_SELECTED",
   "formal_sub_lane": null,
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "exploratory_target": "V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1",
+  "exploratory_target": "V05_ASSEMBLY_FEEDBACK_CAUSALITY_DISCOVERY_CYCLE1",
   "candidate_pool_id": "NONE_SELF_SELECTED",
   "exploration_cycle": "1/3",
-  "why_independent_of_main": "MAIN owns CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 and its receptor public-boundary contract study. This Discovery touches only stable-main v0.5 checkpoint serialization/restoration and deterministic continuation, does not inspect or continue receptor simultaneity/ordering, and does not work queued Assembly lifecycle or any completed do-not-touch lower-funnel object.",
-  "question": "After a fixed DEV-only warmup prefix, does a v0.5 checkpoint round-trip preserve deterministic future execution, not merely equality of the immediately restored state_dict?",
-  "reduction_question": "If immediate state and fixed subsequent step/outcome transitions remain identical after restore, can the candidate be reduced to ordinary checkpoint correctness rather than a missing-runtime-state Architecture object?",
+  "theory_backward_rolling_accounting": {
+    "preceding_autonomous_selections": [
+      {
+        "target": "HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1",
+        "classified_mode_for_supply_accounting": "SYSTEM_DISCOVERY"
+      },
+      {
+        "target": "RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1",
+        "classified_mode_for_supply_accounting": "SYSTEM_DISCOVERY"
+      },
+      {
+        "target": "V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1",
+        "classified_mode_for_supply_accounting": "SYSTEM_DISCOVERY"
+      }
+    ],
+    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
+    "supply_rule_satisfied": true,
+    "theory_backward_exception_reason": null
+  },
+  "why_independent_of_main": "MAIN owns CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01, specifically max_candidates lifecycle/budget/saturation contract and supported saturation reachability. This Discovery does not inspect, mutate or continue max_candidates, pruning, saturation, turnover, MAIN outcome/blocker/successor or MAIN branch. It asks a distinct causal-direction question: whether already-present mature Assembly state feeds back into lower recurrent Spark/Cascade dynamics under matched physical input.",
+  "question": "Can mature v0.5 Assembly state causally alter or regenerate lower Spark/Cascade generation rather than acting only as a post-field recognizer/readout?",
+  "reduction_question": "If a mature Assembly is actually recognized, and Assembly suppression changes only Assembly activation status while exact lower v04_result and field state remain identical to matched controls, does current v0.5 Assembly reduce to post-field recognition/readout for the proposed regeneration/completion mechanism?",
   "inputs_used": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "development_world_generator": "training_episodes(seed=777,count=6)",
-    "warmup_episode_indices": [0, 1, 2, 3],
-    "continuation_episode_indices": [4, 5],
+    "development_world_generator": "training_episodes(seed=913,count=1)",
+    "template_pattern_source": "first internal ActivityPattern from fixed DEV episode",
+    "maturation": "three direct TemporalAssemblyMemory.observe calls under distinct synthetic episode IDs",
+    "matched_physical_input": true,
+    "homeostasis_enabled": false,
+    "weight_learning_enabled": false,
+    "delay_learning_enabled": false,
+    "reward_modulation_enabled": false,
+    "prediction_enabled": false,
+    "action_enabled": false,
     "repository_evidence_bundle": false,
     "heldout_or_formal_test": false,
     "official_scorer": false,
@@ -52,21 +86,22 @@
     "main_outcome_artifact": false
   },
   "implementation_experiment": {
-    "branch": "research/exploratory-sub-checkpoint-continuation-20260920",
-    "prospective_binding_commit": "360fbb60c31670cf8c677290c431dbf8e6521dc1",
-    "diagnostic_commit": "693a68f82b706c17b1d3848f9ac79f57794b57d6",
-    "head": "693a68f82b706c17b1d3848f9ac79f57794b57d6",
+    "branch": "research/exploratory-sub-assembly-feedback-mechanism-20260920",
+    "prospective_binding_commit": "69455754924d207f21da3702f0606d8339437f5d",
+    "diagnostic_commit": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
+    "head": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
     "production_source_modified": false,
     "fixed_procedure": [
-      "warm original brain through episodes 0..3 using process_episode plus immediate learn_outcome",
-      "save checkpoint and restore into a second brain",
-      "require immediate restored state_dict equality",
-      "apply episodes 4..5 identically to original and restored brains",
-      "for each continuation episode require V05StepResult.as_dict equality",
-      "require state equality immediately before outcome learning",
-      "apply the identical next_event and reward rule, then require state equality again"
+      "derive one internal pattern from a fixed DEV episode without Assembly or field learning",
+      "construct physically identical mature-Assembly and empty-Assembly brains",
+      "mature the fixed pattern only in Assembly memory of the mature arm without touching field/receptor/plasticity state",
+      "apply identical physical pulses to both arms with learn_assembly=false, learn_field=false and explore_action=false",
+      "require mature Assembly recognition in the mature arm and no Assembly activation in the empty arm",
+      "compare exact v04_result.as_dict and exact lower field state_dict",
+      "repeat with two identically matured arms while suppressing the mature Assembly only in one arm",
+      "require suppression-status divergence but exact lower v04_result and field state equality"
     ],
-    "ordinary_ci_run": 35481937270,
+    "ordinary_ci_run": 35484589732,
     "ordinary_ci_status": "completed",
     "ordinary_ci_conclusion": "success",
     "python_3_11": "success",
@@ -77,39 +112,61 @@
     "bundle_validation": "success"
   },
   "observations": {
-    "immediate_restored_state_equal": true,
-    "continuation_step_result_equal_for_two_fixed_episodes": true,
-    "continuation_pre_outcome_state_equal_for_two_fixed_episodes": true,
-    "continuation_post_outcome_state_equal_for_two_fixed_episodes": true,
-    "continuation_divergence_observed": false,
-    "interpretation": "For this prospectively fixed bounded deterministic DEV trajectory, checkpoint serialization/restoration preserves immediate state and the next two complete process/outcome transitions exactly. The candidate reduces to ordinary checkpoint correctness; this is not evidence of a new memory or Architecture phenomenon and does not prove equivalence for every possible state/caller."
+    "mature_assembly_reached": true,
+    "mature_arm_activation_present": true,
+    "empty_arm_activation_absent": true,
+    "mature_vs_empty_v04_result_exactly_equal": true,
+    "mature_vs_empty_field_state_exactly_equal": true,
+    "suppressed_arm_activation_marked_suppressed": true,
+    "unsuppressed_arm_activation_marked_usable": true,
+    "suppressed_vs_unsuppressed_v04_result_exactly_equal": true,
+    "suppressed_vs_unsuppressed_field_state_exactly_equal": true,
+    "mapped_terminal": "ASSEMBLY_RECOGNIZED_BUT_FIELD_IDENTICAL",
+    "interpretation": "In this prospectively fixed bounded matched DEV probe, current v0.5 Assembly memory changes recognition/readout status but does not causally alter lower Spark/Cascade field dynamics. The ordinary recurrent field and matched physical input fully account for lower activity. This is a negative mechanism reduction for current v0.5, not novelty evidence and not a statement about future architectures that could prospectively add feedback."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "The prospectively bound falsifier was any mismatch after immediate restoration, on either fixed continuation result, before either outcome update, or after either identical outcome update. No mismatch occurred; the pre-bound terminal mapping therefore reduces the candidate and stops cycle 1.",
+  "what_would_falsify_or_reduce_it": "The pre-bound positive falsifier for the reduction was any lower v04_result or field-state difference caused solely by mature Assembly presence or suppression under matched field/input state. No such difference occurred. The current-v0.5 native Assembly-feedback mechanism is therefore reduced after cycle 1; no rescue cycle is justified.",
+  "proposed_claim_ceiling": "MECHANISM",
+  "proposed_preformal_eligible": false,
+  "preliminary_preformal_readiness": {
+    "status": "NOT_READY",
+    "supported_reachability": "PARTIAL_NEGATIVE: mature recognized Assembly is reachable in the fixed DEV probe, but the hypothesized Assembly-to-field causal effect is absent",
+    "functional_consequence": "ABSENT_ON_LOWER_FIELD: Assembly/readout status differs while lower Spark/Cascade result and field state do not",
+    "ordinary_reductions": "ORDINARY_RECURRENT_FIELD_EXPLANATION_SUFFICIENT",
+    "comparator_status": "MATCHED_EMPTY_ASSEMBLY_AND_MATCHED_SUPPRESSION_COMPARATORS_COMPLETE_FOR_THIS_CAUSAL_DIRECTION",
+    "support_breadth": "ONE_DETERMINISTIC_DEV_PATTERN_INPUT_AND_CURRENT_V05_ARCHITECTURE",
+    "falsifier": "Any lower v04_result or field-state difference caused solely by mature/suppressed Assembly state; not observed",
+    "open_scientific_choices": "A future Assembly-to-field feedback design is a fresh architecture/mechanism object, not continuation or rescue tuning of this current-v0.5 candidate",
+    "formal_claim_ceiling": "NONE_FOR_CURRENT_NEGATIVE_RESULT"
+  },
   "candidate_next_research_layer": "NONE",
-  "scientific_choices_still_open": [],
+  "scientific_choices_still_open": [
+    "A future prospectively specified architecture may introduce Assembly-to-field feedback, but it would be a new object and cannot relabel this negative Discovery."
+  ],
+  "proposed_hold_class": null,
   "recommendation": "REJECT",
   "research_layer_state": {
-    "DISCOVERY": "OPEN_SUB_TARGET_COMPLETED_REDUCED_STOPPED_FOR_ANALYST_REVIEW",
-    "ARCHITECTURE_STUDY": "MAIN_RECEPTOR_SIMULTANEITY_ORDERING_CURRENT_OBJECT_RESERVED",
+    "DISCOVERY": "OPEN_SUB_TARGET_COMPLETED_NEGATIVE_MECHANISM_REDUCTION_STOPPED_FOR_ANALYST_REVIEW",
+    "ARCHITECTURE_STUDY": "MAIN_ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CURRENT_OBJECT_RESERVED",
     "PRE_FORMAL": "EMPTY_HOLD",
     "FORMAL": "EMPTY_HOLD"
   },
   "blocked_until": {
-    "main": "MAIN owns receptor simultaneity/ordering current object and its immediate successor decision",
-    "sub_continuation": "no continuation justified for this reduced checkpoint candidate; any materially different checkpoint question requires a fresh prospective object",
-    "pre_formal": "fresh supported mechanistic/reduction object exists",
-    "formal": "fresh prospectively admissible object plus one-way authority exists"
+    "main": "MAIN owns Assembly mature-capacity lifecycle current object and its immediate successor decision",
+    "sub_continuation": "No continuation justified for the reduced current-v0.5 Assembly-feedback candidate; any feedback architecture requires a new prospective object",
+    "pre_formal": "A fresh supported positive mechanism survives ordinary reductions with functional consequence and comparator readiness",
+    "formal": "A fresh prospectively admissible object plus one-way authority exists"
   },
   "main_work_explicitly_avoided": [
-    "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 current branch/outcome/blocker/successor",
-    "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 queued continuation",
+    "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 lifecycle/budget/saturation current branch/outcome/blocker/successor",
+    "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
+    "V05 checkpoint-continuation reduced candidate",
     "Homeostasis population-semantics continuation",
     "delayed-outcome attribution continuation",
     "Refractory current-accounting follow-up",
     "unit-suppression follow-up",
-    "Top-k and H7",
-    "completed Temporal/topology-config/Assembly/fanout objects",
+    "Top-k and H7 construction",
+    "completed Temporal/topology-config/cross-cascade/fanout objects",
     "FORMAL/TEST/scoring/identity/preserve/evidence surfaces"
   ],
   "do_not_touch_respected": [
@@ -121,30 +178,33 @@
     "PR governance work"
   ],
   "authority_reconciliation": {
-    "analyst_generation_status": "LEGACY_GENERATION_UNKNOWN",
+    "analyst_generation_status": "SCHEMA_V2_CURRENT",
+    "analyst_generation": "EVA-20260920T105721+0900-R11-4B7D91C2",
     "analyst_tip_rechecked_before_branch_creation": true,
     "analyst_tip_rechecked_before_diagnostic_mutation": true,
     "analyst_tip_rechecked_before_each_persistence_mutation": true,
-    "analyst_tip": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+    "analyst_tip": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
     "allocation_changed_during_run": false,
     "selected_target_invalidated": false,
     "stable_main_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_generation_status": "LEGACY_GENERATION_UNKNOWN",
-    "main_exact_head_observed": "705b652f0eb426c7e39a75a9f901be10483d0e63",
-    "main_candidate_observed": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
+    "main_generation_status": "SCHEMA_V2_CURRENT",
+    "main_generation": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1",
+    "main_exact_head_observed": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
+    "main_candidate_observed": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
     "main_outcome_used_to_tune_or_modify_sub_work": false,
     "sub_collision_found": false,
     "control_brain_read_as_strategy_only": true
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+    "evidence_analyst_handoff": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+    "evidence_analyst_generation": "EVA-20260920T105721+0900-R11-4B7D91C2",
     "control_brain_handoff": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
-    "main_research_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
-    "main_research_head": "705b652f0eb426c7e39a75a9f901be10483d0e63",
-    "sub_research_branch": "research/exploratory-sub-checkpoint-continuation-20260920",
-    "sub_research_head": "693a68f82b706c17b1d3848f9ac79f57794b57d6",
-    "orchestrator_tip_before_sub_persistence": "5ecf2e2d50406b051bb99aa09f9e2bb5fcbba77e"
+    "main_research_branch": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920",
+    "main_research_head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
+    "sub_research_branch": "research/exploratory-sub-assembly-feedback-mechanism-20260920",
+    "sub_research_head": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
+    "orchestrator_tip_immediately_before_state_persistence": "03c8981d86ce0086cf5a01798a80e8275e58b711"
   },
   "utility_request_created": null,
   "consumed_identities": [],
@@ -168,13 +228,13 @@
   "blockers": [
     "Fresh Evidence Analyst review may accept/close the REJECT handoff; no execution blocker remains and no same-candidate continuation is justified."
   ],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_CHECKPOINT_CONTINUATION_DISCOVERY_CYCLE_AND_REDUCED_TO_ORDINARY_CHECKPOINT_CORRECTNESS",
+  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_ASSEMBLY_FEEDBACK_DISCOVERY_CYCLE_AND_REDUCED_CURRENT_V05_TO_POST_FIELD_READOUT_NO_NATIVE_REGENERATION",
   "completion_target_achieved": true,
-  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_COMPLETED_REDUCED_RECONCILED_AND_STOPPED",
+  "integrity_state": "CLEAN_NON_EVIDENTIARY_THEORY_BACKWARD_DISCOVERY_COMPLETED_NEGATIVE_REDUCTION_RECONCILED_AND_STOPPED",
   "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/1042-sub.md",
-    "history_commit": "b353b5bc14459b4f51b486959c1b5f854abaa749",
-    "latest_md_commit": "861bc50356b89dbc85e6ab78ff559d08448851a9",
+    "history_path": "reports/orchestrator/history/2026-09-20/1144-sub.md",
+    "history_commit": "e2e6f519e175ff59b06008ec4977938db0e60370",
+    "latest_md_commit": "03c8981d86ce0086cf5a01798a80e8275e58b711",
     "state_json_commit": "this update",
     "force_push_used": false,
     "main_or_legacy_shared_latest_state_modified": false
