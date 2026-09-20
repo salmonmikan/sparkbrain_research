@@ -1,39 +1,47 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260920T195000+0900-G1-4C9A7E21",
-  "produced_at": "2026-09-20T19:50:00+09:00",
-  "producer_run_id": "repository-steward-auto-20260920T195000+0900-G1-4C9A7E21",
+  "generation_id": "STEWARD-20260921T015217+0900-G2-7D3A91C4",
+  "produced_at": "2026-09-21T01:52:17+09:00",
+  "producer_run_id": "repository-steward-auto-20260921T015217+0900-G2-7D3A91C4",
   "authority_scope": "REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY",
-  "supersedes_generation_id": null,
-  "bootstrap_from_legacy_commit": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
+  "supersedes_generation_id": "STEWARD-20260920T195000+0900-G1-4C9A7E21",
   "repository": "salmonmikan/sparkbrain_research",
   "input_generations": {
     "control": {
-      "generation_id": "CTRL-20260920T165000+0900-R15-6C2F8A41",
-      "handoff_commit": "64611f391391844d60659732a50a22cf009a5797"
+      "generation_id": "CTRL-20260921T005250+0900-R18-6B4D2F91",
+      "handoff_commit": "393cc5b5965a2a2753f19e240ad15d6b3b09a939"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T190536+0900-R18-AC1DB49E",
-      "handoff_commit": "fec9320a8e8c868f4df91dafb1af75c640ae995a"
+      "generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
+      "handoff_commit": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be"
     },
     "main": {
-      "generation_id": "MAIN-20260920T191546+0900-PRIMARY-FUNNEL21-HOLD-R18-8C2F41D7",
+      "generation_id": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
+      "primary_generation_id": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
       "mailbox_branch": "ops/orchestrator-run-report",
-      "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT"
+      "mailbox_head": "f7b52a3edb8ae1a0fe05f1d0039379a3117ee04d",
+      "status": "BLOCKED_PENDING_FRESH_ANALYST_CANONICALIZATION"
     },
     "sub": {
-      "generation_id": "SUB-20260920T194640+0900-SYSTEM-ASMORDER-BA8FDEBE",
-      "handoff_commit": "a379206380b533610aecb178ba1ca33b6cddba34"
+      "generation_id": "SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
+      "mailbox_branch": "ops/orchestrator-run-report",
+      "mailbox_head": "f7b52a3edb8ae1a0fe05f1d0039379a3117ee04d",
+      "research_branch": "research/exploratory-sub-nonlearning-action-visit-carryover-20260921",
+      "research_head": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
+      "analyst_status": "PENDING_FRESH_ANALYST_CLASSIFICATION"
     },
     "utility": {
-      "generation_id": "utility-state-20260920T1027JST-lifecycle-bootstrap",
-      "handoff_commit": "d4d0f75f1a57df1298e49e67448158ab12a2754f",
-      "assignment_status": "IDLE",
-      "active_assignment_id": null
+      "generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+      "handoff_commit": "0eac79b207280753a96412e484a8dc028090c681",
+      "status": "BLOCKED",
+      "assignment_status": "ASSIGNED",
+      "active_assignment_id": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
+      "active_assignment_generation_id": "UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
+      "run_count": 1
     },
     "previous_steward": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "handoff_commit": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb"
+      "generation_id": "STEWARD-20260920T195000+0900-G1-4C9A7E21",
+      "handoff_commit": "266eac62e3565adb70d1871831612848b5b82141"
     }
   },
   "authoritative_refs": {
@@ -52,31 +60,42 @@
     "freeze_tag_count": 0,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
-    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "ni01_started": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-    "ni01_raw_preserve": "8a39cf70e397bb7588f948910f01ec58672ac814"
+    "control_preserve_anchors": {
+      "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+      "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
+      "ni01_started": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
+      "ni01_raw_preserve": "8a39cf70e397bb7588f948910f01ec58672ac814",
+      "c19_v4_started": "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
+      "c19_v4_raw_preserve": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+      "c19_r2_started": "41df2685fe015140c8afa13e646554dd2e8c836b",
+      "c19_r2_raw_preserve": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
+      "pd01_started": "0569e348b9d93aeee53fc58daf4b71ee92303d6c",
+      "pd01_raw_preserve": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881"
+    }
   },
   "governance_context": {
-    "main_active_scientific_object": null,
-    "fresh_sub_research_branch": "research/exploratory-sub-assembly-cluster-order-20260920",
-    "fresh_sub_research_head": "6f14715a856f3ae308d9dbe2d5bb35534823372c",
-    "fresh_sub_candidate": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-DEPENDENCE-01",
-    "fresh_sub_claim_ceiling": "SYSTEM",
+    "main_primary_generation": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
+    "main_primary_status": "COMPLETED_STATIC_ARCHITECTURE_STOPPED_FOR_FRESH_ANALYST_REVIEW",
+    "main_current_relay_generation": "MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2",
+    "main_current_status": "BLOCKED_FAIL_CLOSED_PENDING_FRESH_ANALYST",
+    "fresh_sub_research_branch": "research/exploratory-sub-nonlearning-action-visit-carryover-20260921",
+    "fresh_sub_research_head": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
+    "fresh_sub_candidate": "CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01",
     "fresh_sub_evidentiary_status": "NON_EVIDENTIARY",
     "fresh_sub_analyst_status": "PENDING_FRESH_ANALYST_CLASSIFICATION",
-    "main_or_evidence_promotion_from_fresh_sub": false
+    "main_or_evidence_promotion_from_current_research": false
   },
   "audit": {
     "main_research_evidence_separation": "COMPLIANT",
     "canonical_docs_vs_issues": "COMPLIANT_ISSUE_139_OPERATIONAL_ONLY",
     "freeze_tag_mapping": "COMPLIANT_NO_MIGRATION",
     "protection_gap": "MISSING_BUT_DEFERRED_READ_ONLY",
-    "preserve_indexes": "UNCHANGED_VERIFIED_H5_NI01",
+    "preserve_indexes": "UNCHANGED_VERIFIED_CURRENT_EVIDENCE_ANCHORS",
     "main_promotion_candidates": [],
-    "utility_assignment_lifecycle": "COMPLIANT_SCHEMA_V2_IDLE",
+    "utility_assignment_lifecycle": "TERMINAL_BLOCKED_MATCHING_ASSIGNMENT_AWAITING_CONTROL_CAS_ACK",
+    "utility_assignment_identity_match": true,
     "immutable_ref_incident": false,
-    "schema_v2_steward_persistence": "BOOTSTRAPPED"
+    "schema_v2_steward_persistence": "ACTIVE"
   },
   "issues": {
     "139": {
@@ -88,15 +107,31 @@
   "pull_requests": {
     "148": {
       "state": "open",
+      "merged": false,
+      "mergeable": true,
       "head": "14ba187bb13705bc306baabe310d5364cf1b60fb",
       "classification": "DEFER_PENDING_REVIEW_FIX"
     },
     "149": {
       "state": "open",
+      "merged": false,
+      "mergeable": true,
       "head": "01ef8c3a54ff20403aba2fab9996dbda5552dd4d",
       "classification": "DEFER_PENDING_REVIEW_FIX"
     },
     "merged_by_steward": 0
+  },
+  "utility_lifecycle": {
+    "assignment_pointer_schema_version": 2,
+    "assignment_pointer_status": "ASSIGNED",
+    "assignment_id": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
+    "assignment_generation_id": "UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
+    "utility_generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+    "utility_status": "BLOCKED",
+    "utility_run_count": 1,
+    "assignment_and_utility_identity_match": true,
+    "control_cas_acknowledgement_pending": true,
+    "steward_action": "READ_ONLY_NO_POINTER_MUTATION"
   },
   "mutations": {
     "experiments_executed": 0,
@@ -110,11 +145,20 @@
     "preserve_or_evidence_mappings_modified": 0,
     "main_promotions_performed": 0
   },
+  "persistence": {
+    "history_path": "reports/repository_steward/history/2026-09-21/0150.md",
+    "history_commit": "b25a738c68b2050428230ce08f8f206a8dfceeac",
+    "latest_path": "reports/repository_steward/latest.md",
+    "latest_commit": "15ea890bc71c9142f7e03b0d48c2672a044c0c0b",
+    "state_path": "reports/repository_steward/state.json",
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
+  },
   "next_priorities": [
-    "Preserve main/research/evidence separation while the fresh SUB SYSTEM candidate awaits Analyst review.",
+    "Preserve main/research/evidence separation while current MAIN and SUB objects await fresh Evidence Analyst canonicalization.",
     "Keep evidence/freeze/control/preserve refs unchanged.",
+    "Observe the matching Utility BLOCKED terminal state; Control alone owns compare-and-swap acknowledgement and assignment-pointer archival.",
     "Continue read-only tracking of Issue #139 and protection/ruleset status without displacing scientific information gain.",
-    "Keep PR #148/#149 deferred until their reviewed correctness blockers are resolved on their PR heads.",
-    "Continue schema-v2 governance generations prospectively without rewriting legacy Steward history."
+    "Keep PR #148/#149 deferred until their previously identified review blockers are resolved on their PR heads.",
+    "Promote to main only stable outcome-independent reusable components after independent review; none qualify in this run."
   ]
 }
