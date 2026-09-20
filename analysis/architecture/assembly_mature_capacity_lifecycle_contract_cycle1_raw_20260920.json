@@ -1,0 +1,131 @@
+{
+  "schema": "sparkbrain-architecture-study-static-facts-v1",
+  "candidate_id": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_authority_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+  "analyst_generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
+  "contract_commit": "9d0016f8700f46e38dbff04d66da23cabf2cfa38",
+  "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "source_binding_verified": {
+    "src/sparkbrain/v05/assemblies.py": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
+    "tests/v05/test_v05_assemblies.py": "99d847dae4aa8b394680acbb44ae01e72a5d9d4f"
+  },
+  "source_facts": {
+    "assembly_config_defaults": {
+      "similarity_threshold": 0.66,
+      "mature_episodes": 3,
+      "max_candidates": 256,
+      "stale_after_ms": 50000.0,
+      "immature_stale_episodes": 2
+    },
+    "capacity_path": "When observe() sees a non-matching learnable pattern at len(candidates) >= max_candidates, it calls prune(time_ms); if still at capacity, observe() returns None and does not create a new candidate.",
+    "prune_path": "prune() removes only candidates whose episode_count <= immature_stale_episodes and whose last_seen age exceeds stale_after_ms.",
+    "default_mature_reclamation": false,
+    "reason_default_mature_reclamation_false": "Default maturity is episode_count >= 3 while default stale-prune eligibility requires episode_count <= 2; no other v0.5 source path found that evicts, compacts, ages out, or replaces mature candidates.",
+    "default_brain_config": "IntegratedV05Brain accepts optional assembly_config but otherwise constructs TemporalAssemblyMemory(AssemblyConfig()).",
+    "checkpoint_behavior": "state_dict serializes all candidates/config/next_id/suppressed; load_checkpoint restores TemporalAssemblyMemory.from_state_dict(). No source-level lifecycle meaning is attached to persistence.",
+    "pattern_multiplicity_per_episode": "patterns_from_step may produce one pattern per cascade and therefore the static source does not give a one-candidate-per-episode upper bound."
+  },
+  "repository_inventory": {
+    "max_candidates": {
+      "matches": ["src/sparkbrain/v05/assemblies.py"],
+      "supported_docs_or_tests_defining_semantics": []
+    },
+    "AssemblyConfig": {
+      "matches": [
+        "src/sparkbrain/v05/assemblies.py",
+        "src/sparkbrain/v05/__init__.py",
+        "src/sparkbrain/v05/brain.py",
+        "tests/v05/test_v05_assemblies.py"
+      ],
+      "supported_default_max_candidates_overrides": [],
+      "test_override": "tests/v05/test_v05_assemblies.py overrides mature_episodes only; it does not set max_candidates."
+    },
+    "TemporalAssemblyMemory": {
+      "matches": [
+        "src/sparkbrain/v05/assemblies.py",
+        "src/sparkbrain/v05/__init__.py",
+        "src/sparkbrain/v05/brain.py",
+        "tests/v05/test_v05_assemblies.py"
+      ]
+    },
+    "stale_after_ms": ["src/sparkbrain/v05/assemblies.py"],
+    "immature_stale_episodes": ["src/sparkbrain/v05/assemblies.py"],
+    "prune_in_v05_source": ["src/sparkbrain/v05/assemblies.py"],
+    "evict_in_v05_source": [],
+    "reclaim_in_v05_source": [],
+    "compact_in_v05_source_decision_relevant": [],
+    "lifetime_in_v05_docs": [],
+    "cache_in_v05_docs": [],
+    "working_set_in_v05_docs": [],
+    "post_saturation_novel_pattern_promise": [],
+    "assembly_count_reporting": ["src/sparkbrain/v05/evaluation.py"],
+    "candidate_count_reporting": ["src/sparkbrain/v05/evaluation.py"]
+  },
+  "supported_docs_facts": {
+    "docs/V05_MASTER_PLAN.md": [
+      "Assembly Layer design language includes candidate formation, recurrence tracking, selectivity evaluation, and stability / decay.",
+      "The Assembly-candidate proliferation risk section lists null false-positive gate, candidate decay, minimum recurrence, candidate budget, and matched-noise calibration as mitigations.",
+      "The plan does not define max_candidates as a lifetime cap, active working set, or cache and does not specify mature-candidate reclamation semantics.",
+      "Checkpoint/replay is described as reproducibility/integration behavior, not as a promise that candidate persistence is permanent lifecycle policy."
+    ],
+    "docs/THEORY_SPEC_v0.5.md": [
+      "Assembly Candidate is an unlabeled recurring spatiotemporal Cascade cluster.",
+      "A candidate must satisfy preregistered recurrence, episode, stability, and false-positive conditions before being accepted.",
+      "Candidate-count proliferation under null noise is a failure condition.",
+      "No lifetime-cap, working-set, cache, mature-eviction, or post-saturation acquisition contract is stated."
+    ],
+    "docs/V05_EXPERIMENT_PROTOCOL.md": [
+      "Development seeds are 501 and 502; training episodes per seed are 48; held-out episodes per condition per seed are 16.",
+      "Secondary plasticity-ablation training episodes are 24 and held-out episodes are 8.",
+      "Gate B constrains mean mature candidates learned from null noise to at most 1.0.",
+      "The protocol does not state a saturation target, post-saturation learning requirement, or max_candidates lifecycle contract."
+    ],
+    "docs/V05_CLAIM_BOUNDARIES.md": [
+      "Permitted engineering claim includes clustering unlabeled Cascade observations into Assembly Candidates.",
+      "No lifecycle or capacity semantics are declared."
+    ]
+  },
+  "tests_facts": {
+    "tests/v05/test_v05_assemblies.py": [
+      "Tests maturation only across distinct episodes.",
+      "Tests order-sensitive pattern similarity.",
+      "Tests suppression and state round-trip preserving episode lineage.",
+      "Contains no max_candidates, saturation, mature reclamation, capacity turnover, or post-saturation novel-acquisition assertion."
+    ]
+  },
+  "caller_and_horizon_facts": {
+    "default_evaluation_assembly_config_override": false,
+    "train_brain_default_learning_horizon": 48,
+    "held_out_default_per_condition": 16,
+    "held_out_learn_assembly": false,
+    "ablation_training_horizon": 24,
+    "null_train_learning_horizon": "uses the provided count; run_seed supplies train_count, default 48",
+    "supported_saturation_structurally_established": false,
+    "supported_saturation_structurally_precluded": false,
+    "why_saturation_not_structurally_precluded": "The learning horizon is bounded, but patterns_from_step can yield multiple Assembly patterns per episode and no stable supported contract proves a candidate upper bound below 256.",
+    "why_saturation_not_structurally_established": "No stable supported default caller overrides max_candidates=256, no supported test constructs capacity saturation, and no supported doc/caller promises continued novel-pattern acquisition after saturation."
+  },
+  "facts_to_record": {
+    "max_candidates_public_semantics_is_explicit_lifetime_cap": false,
+    "max_candidates_public_semantics_is_explicit_active_working_set_or_cache": false,
+    "max_candidates_public_semantics_is_unspecified": true,
+    "mature_candidates_have_supported_reclamation_path": false,
+    "mature_candidates_are_explicitly_permanent_by_contract": false,
+    "default_integrated_brain_uses_max_candidates_256": true,
+    "supported_default_callers_override_max_candidates_256": false,
+    "supported_saturation_is_structurally_established": false,
+    "supported_saturation_is_structurally_precluded_within_bound_scope": false,
+    "supported_saturation_reachability_is_unestablished": true,
+    "supported_test_or_caller_promises_continued_novel_pattern_acquisition_after_saturation": false,
+    "checkpoint_candidate_persistence_is_explicit_lifecycle_contract": false,
+    "checkpoint_candidate_persistence_is_serialization_only_or_semantically_unspecified": true,
+    "decision_relevant_docs_tests_callers_materially_conflict": false
+  },
+  "dynamic_probe_executed": false,
+  "formal_or_held_out_outcome_artifact_inspected": false,
+  "production_source_modified": false
+}
