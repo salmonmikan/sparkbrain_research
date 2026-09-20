@@ -1,86 +1,119 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE",
-  "produced_at": "2026-09-20T10:47:00+09:00",
-  "producer_run_id": "sparkbrain-main-relay-20260920T1047JST",
-  "supersedes_generation_id": "LEGACY_GENERATION_UNKNOWN",
-  "consumed_analyst_generation_id": "LEGACY_GENERATION_UNKNOWN",
-  "consumed_analyst_commit": "639a5f7baba926502965bc9fea4cdcfb9f749068",
-  "consumed_main_generation_id": "LEGACY_GENERATION_UNKNOWN",
+  "generation_id": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1",
+  "produced_at": "2026-09-20T11:21:00+09:00",
+  "producer_run_id": "sparkbrain-main-primary-20260920T111421JST",
+  "authority_scope": "MAIN_PRIMARY_ARCHITECTURE_STUDY_EXECUTION",
+  "supersedes_generation_id": "MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE",
+  "input_generations": {
+    "evidence_analyst": {
+      "generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
+      "handoff_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e"
+    },
+    "main": {
+      "generation_id": "MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE",
+      "handoff_commit": "02d765d0305d63a2d040decdaaa2e0343acf36ed"
+    },
+    "sub": {
+      "generation_id": "SUB-20260920T104200+0900-CKPT-7F3C2A91",
+      "handoff_commit": "e438faff528fb73a33a201cb31fa3a935192d4fd"
+    }
+  },
+  "consumed_analyst_generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
+  "consumed_analyst_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
   "worker_role": "main",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "research_layer": "ARCHITECTURE_STUDY",
-  "active_phase": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_COMPLETED",
-  "current_lane": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "active_phase": "ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_WAITING_EXACT_HEAD_CI",
+  "current_lane": "ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
   "candidate_question": {
-    "id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
-    "question": "At the supported public receptor boundary, are exact same-time/same-channel SignalPulse events intentionally ordered events, an unordered simultaneous multiset, unsupported duplicate keys, or an unspecified case whose supported reachability is or is not established?",
+    "id": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+    "question": "Is max_candidates a hard lifetime mature-memory cap or an active working-set budget, and is mature-capacity saturation relevant/reachable under stable-main supported configurations and bounded development/evaluation workloads?",
     "exploration_cycle_count": {
       "DISCOVERY": 1,
       "ARCHITECTURE_STUDY": 1
     },
-    "mapped_outcome": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED",
+    "mapped_outcome": "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY"
   },
   "generation_reconciliation": {
-    "analyst_generation": "LEGACY_GENERATION_UNKNOWN",
-    "analyst_commit_at_start": "639a5f7baba926502965bc9fea4cdcfb9f749068",
-    "analyst_commit_before_persistence": "639a5f7baba926502965bc9fea4cdcfb9f749068",
-    "prior_main_generation": "LEGACY_GENERATION_UNKNOWN",
-    "prior_main_status": "WAITING_EXTERNAL",
-    "prior_main_heartbeat_at": "2026-09-20T10:20:00+09:00",
-    "material_supersession_detected": false,
-    "equivalent_supersession_refresh_used": false,
+    "analyst_generation": "EVA-20260920T105721+0900-R11-4B7D91C2",
+    "analyst_commit_at_start": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+    "analyst_commit_before_mutations": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+    "prior_main_generation": "MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE",
+    "prior_main_status": "COMPLETED",
     "fresh_primary_running_collision": false,
     "sub_collision": false,
-    "reconciliation_basis": "Legacy Analyst/MAIN generation metadata was reconciled against exact current Analyst tip, stable main, exact research branch/head and exact workflow identity/result; age alone was not used as authority."
+    "material_supersession_detected": false,
+    "equivalent_supersession_refresh_used": false,
+    "fast_path": true,
+    "full_reconciliation": false,
+    "basis": "Fresh schema-v2 Analyst generation explicitly allocated a new independent Assembly static Architecture object. Stable main and all bound core blobs matched; prior MAIN was completed; SUB remained independent; no immutable-evidence or allocation anomaly required repository-wide reconciliation."
   },
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "639a5f7baba926502965bc9fea4cdcfb9f749068",
-    "research_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
-    "research_head": "705b652f0eb426c7e39a75a9f901be10483d0e63",
-    "prospective_contract_commit": "00ab02d9b9acd9a68090858cac21f1ea2fa5e244",
-    "raw_facts_commit": "6dbc696e4e8b2b4bab62067c3297edb02da9605e",
-    "summary_commit": "705b652f0eb426c7e39a75a9f901be10483d0e63",
+    "evidence_analyst_handoff": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+    "evidence_analyst_generation": "EVA-20260920T105721+0900-R11-4B7D91C2",
+    "research_branch": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920",
+    "research_head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
+    "prospective_contract_commit": "9d0016f8700f46e38dbff04d66da23cabf2cfa38",
+    "raw_facts_commit": "1f9edc0cc9a0276dd4f254b822daef7098af0ab4",
+    "summary_commit": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
+    "core_blob_bindings": {
+      "src/sparkbrain/v05/assemblies.py": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+      "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+      "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
+      "tests/v05/test_v05_assemblies.py": "99d847dae4aa8b394680acbb44ae01e72a5d9d4f"
+    },
     "active_formal_identity": null,
     "active_started_ref": null,
     "active_preserve_ref": null,
     "active_evidence_ref": null
   },
+  "branches_prs_advanced": {
+    "research_branch_created": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920",
+    "research_commits": [
+      "9d0016f8700f46e38dbff04d66da23cabf2cfa38",
+      "1f9edc0cc9a0276dd4f254b822daef7098af0ab4",
+      "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6"
+    ],
+    "pull_request_created_or_merged": false,
+    "main_modified": false,
+    "immutable_evidence_modified": false
+  },
   "workflow_check_result": {
     "ordinary_ci": {
-      "run_id": 35481067945,
-      "head_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
-      "head": "705b652f0eb426c7e39a75a9f901be10483d0e63",
-      "status": "completed",
-      "conclusion": "success",
-      "repository_integrity_only": true,
-      "python_3_11": "success",
-      "python_3_13": "success",
-      "lint": "success",
-      "local_readiness": "success",
-      "tests": "success",
-      "bundle_validation": "success"
+      "run_id": 35483714573,
+      "head_branch": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920",
+      "head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
+      "status": "in_progress",
+      "conclusion": null,
+      "repository_integrity_only": true
     },
     "outcome_bearing_workflow": null,
     "dynamic_probe_executed": false,
-    "characterization_mode": "STATIC_READ_ONLY_SOURCE_DOCS_TESTS_CALLSITE_CONTRACT"
+    "characterization_mode": "STATIC_READ_ONLY_CONTRACT_AND_SUPPORTED_REACHABILITY_CHARACTERIZATION"
   },
-  "contingency_consumed": "PRIMARY expected_next_action authorized collection of exact-head ordinary CI 35481067945 and, on success, persistence of COMPLETED followed by STOP for fresh Evidence Analyst review.",
   "observations_results": {
-    "terminal": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED",
+    "terminal": "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
     "facts": [
-      "SignalPulse validation has no duplicate (time_ms, channel) uniqueness rule.",
-      "Receptor and integrated brain sorting use only (time_ms, channel); equal keys retain caller iterable order under stable sort.",
-      "Receptor state/gain is updated sequentially per pulse.",
-      "No supported stable-main docs/tests explicitly define exact-key tie order as semantic or exact-key simultaneous events as an unordered multiset.",
-      "Canonical stable-main v0.5 worlds/callers do not intentionally demonstrate duplicate exact (time_ms, channel) events; supported reachability remains unestablished."
+      "Default AssemblyConfig uses max_candidates=256, mature_episodes=3, stale_after_ms=50000 and immature_stale_episodes=2.",
+      "At capacity, a novel unmatched candidate triggers prune() and is refused if capacity remains full.",
+      "The only current v0.5 prune path removes stale candidates only while episode_count <= immature_stale_episodes; default mature candidates therefore have no reclamation path.",
+      "Stable supported docs/tests/callers do not define max_candidates as lifetime mature-memory, active working set, or cache and do not explicitly make mature candidates permanent.",
+      "V05_MASTER_PLAN mentions Assembly stability/decay plus candidate decay and candidate budget, but does not bind mature-candidate reclamation semantics.",
+      "Supported/default callers do not override max_candidates=256.",
+      "Retained learning horizons are bounded at 48 training episodes per seed and 24 ablation-training episodes; held-out evaluation does not learn Assemblies.",
+      "No supported test/caller promises continued novel-pattern acquisition after saturation and no default supported test deliberately reaches saturation.",
+      "Static source does not prove saturation unreachable because patterns_from_step may emit multiple candidate patterns in one episode.",
+      "Checkpoint persistence is state serialization/reproducibility behavior, not an explicit lifetime lifecycle contract."
     ],
-    "new_scientific_information_this_relay": false,
     "new_formal_scientific_evidence": false,
     "new_pre_formal_development_evidence": false,
+    "new_computational_principle": false,
+    "supported_saturation_failure_demonstrated": false,
+    "mature_turnover_requirement_established": false,
     "formal_claim": "NONE"
   },
   "consumed_identities": [
@@ -92,13 +125,17 @@
     "ni01-no-ignition-selective-prediction-official-v1",
     "h5-event-routing-work-reduction-official-v1"
   ],
+  "consumed_identities_this_run": [],
   "integrity_state": {
-    "status": "GREEN_STATIC_TERMINAL_EXACT_HEAD_CI_SUCCESS",
+    "status": "GREEN_STATIC_TERMINAL_PENDING_EXACT_HEAD_CI",
     "prospective_binding_before_interpretation": true,
     "raw_before_interpretation": true,
     "terminal_mapping_applied_once": true,
+    "source_bindings_match": true,
+    "analyst_freshness_checked_before_mutations": true,
     "production_source_modified": false,
     "official_test_accessed": false,
+    "formal_or_held_out_outcome_artifact_inspected": false,
     "formal_identity_created": false,
     "started_created": false,
     "preserve_or_evidence_mutated": false,
@@ -108,25 +145,30 @@
     "sub_reserved_work_mutated": false,
     "utility_request_created": false
   },
+  "critical_path_fixes": [],
   "critical_path_actions_performed": [
-    "read latest Evidence Analyst handoff and current MAIN latest/state/lease",
-    "reconciled legacy generation metadata against exact authoritative refs",
-    "confirmed no fresh PRIMARY RUNNING collision on the same object",
-    "confirmed exact research branch remains at 705b652f0eb426c7e39a75a9f901be10483d0e63",
-    "collected ordinary CI run 35481067945",
-    "confirmed Python 3.11 and 3.13 CI jobs plus lint/readiness/tests/bundle validation all succeeded",
-    "preserved the already-fixed terminal without remapping or new experiment"
+    "read fresh schema-v2 Evidence Analyst handoff including allocation, candidate pool, contingencies, exclusions and generation metadata",
+    "read prior MAIN latest/state/lease and current SUB report for collision avoidance",
+    "re-fetched stable main and exact core source blobs",
+    "acquired PRIMARY MAIN lease before research mutation",
+    "created fresh research branch from exact stable main",
+    "prospectively fixed static inventory, validation policy, terminal map and stop conditions",
+    "performed deterministic stable-main source/docs/tests/caller/config inventory without formal or held-out result inspection",
+    "persisted raw static facts before interpretation",
+    "applied the prospective terminal mapping once",
+    "observed exact-head ordinary CI run 35483714573 and left it as an external integrity wait"
   ],
-  "work_left_for_SUB": "Only genuinely independent bounded Discovery under current Analyst allocation; SUB must not continue receptor simultaneity/ordering or any MAIN critical-path work.",
+  "work_left_for_SUB": "Only genuinely independent bounded Discovery under the current Analyst allocation. SUB must not continue the Assembly mature-capacity lifecycle candidate or any MAIN critical-path work.",
   "utility_request_created": null,
-  "stop_reason": "VALID_STATIC_TERMINAL_AND_EXACT_HEAD_CI_SUCCESS_STOP_FOR_FRESH_ANALYST_REVIEW",
-  "next_MAIN_action": "Wait for a fresh Evidence Analyst generation/commit. Do not automatically continue CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01, run a dynamic permutation/aggregation comparator, start cycle 2, or advance PRE_FORMAL/FORMAL.",
+  "stop_reason": "VALID_STATIC_TERMINAL_MAPPED_WAITING_EXACT_HEAD_ORDINARY_CI",
+  "next_MAIN_action": "Collect only ordinary CI run 35483714573 for exact head 13239163f6fecb2b61ea2189a5a94ba12b6cb3d6. If success, persist COMPLETED and STOP for fresh Evidence Analyst review. If failure, fail closed for fresh review. Do not manufacture saturation, implement mature eviction, run a turnover comparator, start cycle 2, or advance PRE_FORMAL/FORMAL under this authority.",
   "persistence_result": {
     "branch": "ops/orchestrator-run-report",
-    "latest_md_commit": "c0cfbd9d7176918c6458ad03f15622e53bdcf583",
-    "history_path": "reports/orchestrator/history/2026-09-20/1047-main.md",
+    "latest_md_commit": "fdcd48e480fe31dd7646742f61e3c6285b8e949d",
+    "history_path": "reports/orchestrator/history/2026-09-20/1121-main.md",
+    "history_commit": "304e2e152ffbdfac404ac91197d351f53f0da3ab",
     "state_json": "this update",
-    "final_lease_status": "COMPLETED",
+    "final_lease_target": "WAITING_EXTERNAL",
     "force_push_used": false
   }
 }
