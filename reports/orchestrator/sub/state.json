@@ -1,57 +1,74 @@
 {
-  "timestamp": "2026-09-20T09:42:00+09:00",
+  "schema_version": 2,
+  "generation_id": "SUB-20260920T104200+0900-CKPT-7F3C2A91",
+  "produced_at": "2026-09-20T10:42:00+09:00",
+  "producer_run_id": "SUB-AUTO-20260920T103526+0900-R11-7F3C2A91",
   "worker_role": "sub",
   "mode": "discovery",
-  "evidence_analyst_commit": "df12559698c0f6bc0165c550a55c62f7287a86bd",
-  "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "main_lane": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "authority_scope": "BOUNDED_SECONDARY_DISCOVERY_ONLY_NON_EVIDENTIARY",
+  "supersedes_generation_id": "LEGACY_GENERATION_UNKNOWN",
+  "input_generations": {
+    "evidence_analyst": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "branch": "ops/evidence-analyst-handoff",
+      "handoff_commit": "639a5f7baba926502965bc9fea4cdcfb9f749068"
+    },
+    "main": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "mailbox_branch": "ops/orchestrator-run-report",
+      "research_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
+      "research_head": "705b652f0eb426c7e39a75a9f901be10483d0e63"
+    },
+    "control_brain": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "strategy_commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a"
+    },
+    "previous_sub": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "previous_target": "RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1"
+    }
+  },
+  "same_generation_autonomous_progress_reason": "Evidence Analyst handoff remained unchanged and explicitly leaves DISCOVERY open to SUB under BOUNDED_SECONDARY_DISCOVERY. One new bounded checkpoint-continuation question was selected outside MAIN receptor-ordering ownership, queued Assembly lifecycle, all completed lower-funnel objects, do-not-touch surfaces, and the prior receptor permutation Discovery; this is cycle 1 for a new candidate and does not reuse a rescue cycle.",
+  "main_lane": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
   "sub_lane": "BOUNDED_SECONDARY_DISCOVERY",
   "consumed_lane": "BOUNDED_SECONDARY_DISCOVERY_SELF_SELECTED",
   "formal_sub_lane": null,
   "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "exploratory_target": "RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1",
+  "exploratory_target": "V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1",
   "candidate_pool_id": "NONE_SELF_SELECTED",
   "exploration_cycle": "1/3",
-  "why_independent_of_main": "MAIN owns CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01 and its complete static/read-only Architecture critical path. This bounded Discovery touches only stable-main v0.5 receptor-bank same-time ordering and adaptive-gain semantics, does not inspect or mutate the Homeostasis branch/outcome/blocker/successor, and does not continue queued Assembly mature-capacity or any completed do-not-touch lower-funnel object.",
-  "question": "For two pulses with the same timestamp and channel and the same input multiset, is MultiTimescaleReceptorBank.process() permutation-invariant, or can caller iterable order alter physical emitted drive because same-key ties are processed sequentially through adaptive gain?",
-  "reduction_question": "If physical order sensitivity exists while final receptor state is identical, is it fully explained by stable tie ordering plus sequential bounded gain rather than a new receptor-memory mechanism?",
+  "why_independent_of_main": "MAIN owns CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 and its receptor public-boundary contract study. This Discovery touches only stable-main v0.5 checkpoint serialization/restoration and deterministic continuation, does not inspect or continue receptor simultaneity/ordering, and does not work queued Assembly lifecycle or any completed do-not-touch lower-funnel object.",
+  "question": "After a fixed DEV-only warmup prefix, does a v0.5 checkpoint round-trip preserve deterministic future execution, not merely equality of the immediately restored state_dict?",
+  "reduction_question": "If immediate state and fixed subsequent step/outcome transitions remain identical after restore, can the candidate be reduced to ordinary checkpoint correctness rather than a missing-runtime-state Architecture object?",
   "inputs_used": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "synthetic_pulses_only": true,
-    "repository_dataset": false,
-    "world_generator": false,
-    "trained_checkpoint": false,
-    "formal_raw": false,
-    "heldout_or_confirmatory_test": false,
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "development_world_generator": "training_episodes(seed=777,count=6)",
+    "warmup_episode_indices": [0, 1, 2, 3],
+    "continuation_episode_indices": [4, 5],
+    "repository_evidence_bundle": false,
+    "heldout_or_formal_test": false,
     "official_scorer": false,
     "consumed_identity": false,
-    "main_architecture_outcome_artifact": false
+    "main_outcome_artifact": false
   },
   "implementation_experiment": {
-    "branch": "research/exploratory-sub-receptor-sametime-permutation-20260920",
-    "prospective_binding_commit": "79f7c35ffb2a0330f1218453aa178009c5e4ffaa",
-    "diagnostic_commit": "28a66c5b76481544d262fc443f645f6e0c84bfbb",
-    "head": "61d1f740c9b83f4d327e22630c499145a1eeb453",
-    "result_handoff_commit": "61d1f740c9b83f4d327e22630c499145a1eeb453",
+    "branch": "research/exploratory-sub-checkpoint-continuation-20260920",
+    "prospective_binding_commit": "360fbb60c31670cf8c677290c431dbf8e6521dc1",
+    "diagnostic_commit": "693a68f82b706c17b1d3848f9ac79f57794b57d6",
+    "head": "693a68f82b706c17b1d3848f9ac79f57794b57d6",
     "production_source_modified": false,
-    "receptor_config": "default",
-    "fixed_input_multiset": [
-      "SignalPulse(time_ms=0.0, channel=A, magnitude=1.0, polarity=+1)",
-      "SignalPulse(time_ms=0.0, channel=A, magnitude=0.2, polarity=+1)"
+    "fixed_procedure": [
+      "warm original brain through episodes 0..3 using process_episode plus immediate learn_outcome",
+      "save checkpoint and restore into a second brain",
+      "require immediate restored state_dict equality",
+      "apply episodes 4..5 identically to original and restored brains",
+      "for each continuation episode require V05StepResult.as_dict equality",
+      "require state equality immediately before outcome learning",
+      "apply the identical next_event and reward rule, then require state equality again"
     ],
-    "arms": [
-      "LARGE_THEN_SMALL: [1.0, 0.2]",
-      "SMALL_THEN_LARGE: [0.2, 1.0]"
-    ],
-    "fixed_observables": [
-      "final receptor state_dict equality",
-      "final fast/medium/slow/gain values",
-      "emitted pulse magnitudes and polarities",
-      "total signed emitted drive"
-    ],
-    "final_workflow_run": 35479308798,
-    "final_workflow_status": "completed",
-    "final_workflow_conclusion": "success",
+    "ordinary_ci_run": 35481937270,
+    "ordinary_ci_status": "completed",
+    "ordinary_ci_conclusion": "success",
     "python_3_11": "success",
     "python_3_13": "success",
     "lint": "success",
@@ -60,52 +77,39 @@
     "bundle_validation": "success"
   },
   "observations": {
-    "final_receptor_state_equal": true,
-    "final_trace_values_equal": true,
-    "large_then_small": {
-      "emitted_magnitudes": [1.14, 0.19],
-      "signed_emitted_drive_sum": 1.33
-    },
-    "small_then_large": {
-      "emitted_magnitudes": [0.456, 0.95],
-      "signed_emitted_drive_sum": 1.406
-    },
-    "absolute_signed_drive_difference": 0.076,
-    "relative_difference_vs_large_then_small": 0.05714285714285714,
-    "mechanistic_reduction": "MultiTimescaleReceptorBank.process() sorts only by (time_ms, channel), leaving exact-key ties in caller iterable order. _observe_one() sequentially updates mean_abs and then computes bounded adaptive gain. A first 1.0 pulse sees gain 1.2, a first 0.2 pulse reaches the 2.4 cap, and the second pulse in either arm sees final gain 1.0. Thus emitted physical drive is order-sensitive while the accumulated receptor endpoint is identical. IntegratedV05Brain.process_episode() also sorts raw pulses only by (time_ms, channel), so it does not normalize the tie.",
-    "interpretation": "The fixed synthetic probe exposes an Architecture/API simultaneity-ordering degree of freedom at the receptor boundary. It is fully reducible to sequential adaptive-gain and tie-order semantics, not a new receptor-memory mechanism or scientific novelty evidence."
+    "immediate_restored_state_equal": true,
+    "continuation_step_result_equal_for_two_fixed_episodes": true,
+    "continuation_pre_outcome_state_equal_for_two_fixed_episodes": true,
+    "continuation_post_outcome_state_equal_for_two_fixed_episodes": true,
+    "continuation_divergence_observed": false,
+    "interpretation": "For this prospectively fixed bounded deterministic DEV trajectory, checkpoint serialization/restoration preserves immediate state and the next two complete process/outcome transitions exactly. The candidate reduces to ordinary checkpoint correctness; this is not evidence of a new memory or Architecture phenomenon and does not prove equivalence for every possible state/caller."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "what_would_falsify_or_reduce_it": "Reduce to REJECT/ENGINEERING_NOTE_ONLY if a fresh static contract study establishes that same-time same-channel pulses are intentionally ordered events and caller iterable order is semantic; if supported callers cannot generate same-key multiplicity; or if a future prospectively specified aggregation comparator preserves all pre-bound downstream observables of interest.",
-  "candidate_next_research_layer": "ARCHITECTURE_STUDY_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT",
-  "scientific_choices_still_open": [
-    "whether same timestamp plus same channel denotes an ordered sequence or an unordered simultaneous multiset",
-    "whether supported callers can produce multiple pulses with identical (time_ms, channel)",
-    "whether adaptive gain should be computed once per timestamp/channel aggregate or sequentially per pulse if simultaneity is intended",
-    "which downstream observable must be prospectively bound before any comparator"
-  ],
-  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
+  "what_would_falsify_or_reduce_it": "The prospectively bound falsifier was any mismatch after immediate restoration, on either fixed continuation result, before either outcome update, or after either identical outcome update. No mismatch occurred; the pre-bound terminal mapping therefore reduces the candidate and stops cycle 1.",
+  "candidate_next_research_layer": "NONE",
+  "scientific_choices_still_open": [],
+  "recommendation": "REJECT",
   "research_layer_state": {
-    "DISCOVERY": "OPEN_SUB_TARGET_COMPLETED_STOPPED_FOR_ANALYST_REVIEW",
-    "ARCHITECTURE_STUDY": "MAIN_HOMEOSTASIS_STATIC_CONTRACT_CYCLE_TERMINAL_WITH_EXACT_HEAD_CI_SUCCESS_PENDING_FRESH_ANALYST_REVIEW",
+    "DISCOVERY": "OPEN_SUB_TARGET_COMPLETED_REDUCED_STOPPED_FOR_ANALYST_REVIEW",
+    "ARCHITECTURE_STUDY": "MAIN_RECEPTOR_SIMULTANEITY_ORDERING_CURRENT_OBJECT_RESERVED",
     "PRE_FORMAL": "EMPTY_HOLD",
     "FORMAL": "EMPTY_HOLD"
   },
   "blocked_until": {
-    "main": "fresh Evidence Analyst review of Homeostasis static Architecture terminal",
-    "sub_continuation": "fresh Evidence Analyst classification and prospective receptor simultaneity/ordering Architecture contract",
+    "main": "MAIN owns receptor simultaneity/ordering current object and its immediate successor decision",
+    "sub_continuation": "no continuation justified for this reduced checkpoint candidate; any materially different checkpoint question requires a fresh prospective object",
     "pre_formal": "fresh supported mechanistic/reduction object exists",
     "formal": "fresh prospectively admissible object plus one-way authority exists"
   },
   "main_work_explicitly_avoided": [
-    "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01 branch/static-contract outcome/blocker/successor",
-    "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 continuation",
-    "CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01 continuation",
-    "CAND-REFRACTORY-CURRENT-ACCOUNTING-01 follow-up",
-    "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01 follow-up",
-    "CAND-TOPK-PA-01 and CAND-H7-RESP-01",
+    "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 current branch/outcome/blocker/successor",
+    "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 queued continuation",
+    "Homeostasis population-semantics continuation",
+    "delayed-outcome attribution continuation",
+    "Refractory current-accounting follow-up",
+    "unit-suppression follow-up",
+    "Top-k and H7",
     "completed Temporal/topology-config/Assembly/fanout objects",
-    "consumed-line repair or reinterpretation",
     "FORMAL/TEST/scoring/identity/preserve/evidence surfaces"
   ],
   "do_not_touch_respected": [
@@ -114,32 +118,45 @@
     "completed lower-funnel artifacts/outcomes",
     "official TEST/formal scorer surfaces",
     "scheduler definitions",
-    "PR #148/#149 governance work"
+    "PR governance work"
   ],
   "authority_reconciliation": {
-    "fresh_analyst_tip_rechecked_before_persistence": true,
-    "analyst_tip": "df12559698c0f6bc0165c550a55c62f7287a86bd",
+    "analyst_generation_status": "LEGACY_GENERATION_UNKNOWN",
+    "analyst_tip_rechecked_before_branch_creation": true,
+    "analyst_tip_rechecked_before_diagnostic_mutation": true,
+    "analyst_tip_rechecked_before_each_persistence_mutation": true,
+    "analyst_tip": "639a5f7baba926502965bc9fea4cdcfb9f749068",
     "allocation_changed_during_run": false,
     "selected_target_invalidated": false,
     "stable_main_rechecked": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_exact_head_observed": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
-    "main_exact_head_ci_run": 35478448679,
-    "main_exact_head_ci_observed_success": true,
+    "main_generation_status": "LEGACY_GENERATION_UNKNOWN",
+    "main_exact_head_observed": "705b652f0eb426c7e39a75a9f901be10483d0e63",
+    "main_candidate_observed": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
     "main_outcome_used_to_tune_or_modify_sub_work": false,
     "sub_collision_found": false,
     "control_brain_read_as_strategy_only": true
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst": "df12559698c0f6bc0165c550a55c62f7287a86bd",
-    "main_research_branch": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
-    "main_research_head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
-    "sub_research_branch": "research/exploratory-sub-receptor-sametime-permutation-20260920",
-    "sub_research_head": "61d1f740c9b83f4d327e22630c499145a1eeb453",
-    "orchestrator_tip_before_sub_persistence": "e594848c0177179f42599355a7406ec2ed9116aa"
+    "evidence_analyst_handoff": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+    "control_brain_handoff": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
+    "main_research_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
+    "main_research_head": "705b652f0eb426c7e39a75a9f901be10483d0e63",
+    "sub_research_branch": "research/exploratory-sub-checkpoint-continuation-20260920",
+    "sub_research_head": "693a68f82b706c17b1d3848f9ac79f57794b57d6",
+    "orchestrator_tip_before_sub_persistence": "5ecf2e2d50406b051bb99aa09f9e2bb5fcbba77e"
   },
   "utility_request_created": null,
   "consumed_identities": [],
+  "global_consumed_no_retry_set_untouched": [
+    "c19-external-v2-official-v4",
+    "C19-R1 revision-authority official-v1",
+    "C19-R1 revision-authority official-v2",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "pd01-long-history-fading-memory-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "h5-event-routing-work-reduction-official-v1"
+  ],
   "new_formal_results": 0,
   "formal_identity_created": false,
   "started_or_control_created": false,
@@ -149,15 +166,15 @@
   "research_merge_performed": false,
   "main_modified": false,
   "blockers": [
-    "fresh Evidence Analyst classification and prospective receptor simultaneity/ordering Architecture contract required before any continuation"
+    "Fresh Evidence Analyst review may accept/close the REJECT handoff; no execution blocker remains and no same-candidate continuation is justified."
   ],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_RECEPTOR_SIMULTANEITY_DISCOVERY_CYCLE_AND_RETURNED_ORDERING_CONTRACT_PROMOTION_CANDIDATE",
+  "completion_target": "ACHIEVED_ONE_BOUNDED_INDEPENDENT_CHECKPOINT_CONTINUATION_DISCOVERY_CYCLE_AND_REDUCED_TO_ORDINARY_CHECKPOINT_CORRECTNESS",
   "completion_target_achieved": true,
-  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_COMPLETED_RECONCILED_AND_STOPPED_FOR_REVIEW",
+  "integrity_state": "CLEAN_NON_EVIDENTIARY_DISCOVERY_COMPLETED_REDUCED_RECONCILED_AND_STOPPED",
   "persistence_result": {
-    "history_path": "reports/orchestrator/history/2026-09-20/0942-sub.md",
-    "history_commit": "927057a702e1211cf89296f65fefe6db91927fe1",
-    "latest_md_commit": "46c5b212be67f2a0849be16c0fa411877dc99bff",
+    "history_path": "reports/orchestrator/history/2026-09-20/1042-sub.md",
+    "history_commit": "b353b5bc14459b4f51b486959c1b5f854abaa749",
+    "latest_md_commit": "861bc50356b89dbc85e6ab78ff559d08448851a9",
     "state_json_commit": "this update",
     "force_push_used": false,
     "main_or_legacy_shared_latest_state_modified": false
