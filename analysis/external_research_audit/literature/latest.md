@@ -1,74 +1,101 @@
-# External Literature Reduction Scout — Context-conditioned prediction / predictive-state reduction
+# External Literature Reduction Scout — Delayed action credit / eligibility-state reduction
 
 - schema_version: `2`
-- generation_id: `LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4`
-- produced_at: `2026-09-20T18:42:00+09:00`
-- producer_run_id: `external-literature-20260920T184200+0900-R13-3B7D91E4`
+- generation_id: `LIT-20260920T213000+0900-R14-DELAYED-CREDIT-9C4E71B2`
+- produced_at: `2026-09-20T21:30:00+09:00`
+- producer_run_id: `external-literature-auto-20260920T213000+0900-R14-9C4E71B2`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71`
+- supersedes_generation_id: `LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4`
 - role: `LITERATURE_REDUCTION_SCOUT`
 - genuinely_new_information: `true`
 
-## Inputs and ordering
+## Inputs and authoritative repository state
 
-Repository evidence was re-fetched independently from control-plane mailboxes. `ops/*` branches were used only for their designated handoff/report paths. The current scientific source of truth remained `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; the five authoritative `evidence/*` tags were unchanged and `formal/*`, `sealed/*`, and `freeze/*` tags remained empty. Preserve/control and legacy freeze refs were also independently inspected.
+Repository evidence was re-fetched independently from control-plane mailboxes. `ops/*` branches were read only at their designated handoff/report paths; no non-handoff file on an ops branch was treated as repository state.
+
+Authoritative scientific state inspected:
+
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
+- MAIN research head `research/main-assembly-cluster-order-supported-reachability-arch-study-20260920@7a8fb2698da33ca07203123d1c5ad7dc510ac8e1`
+- SUB research head `research/exploratory-sub-delayed-action-responsibility-20260920@411913e0b3a0493595969513bf0b7829c49cc248`
+- delayed-action prospective contract `c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab`
+- delayed-action outcome-bearing commit `1117b56de8845c3200c1f1acd5f04d999743a4e5`
+- stable `src/sparkbrain/v05/action.py` blob `792cba20ec5411633f12478d641adf35dba505e3`
+- five authoritative `evidence/*` tags unchanged
+- `formal/*=0`, `sealed/*=0`, tag-based `freeze/*=0`
+- H5 STARTED `058e90227cd48e1c10c6ecbaed01efdec1217d0e`; H5 raw preserve `ce5797eb584344db7a512e585506fb6c59ea475b`
+- delayed-action exact-head CI `35508632370`: completed/success
+- MAIN cluster-order exact-head CI `35507809211`: completed/success
 
 Consumed control-plane generations:
 
-- Control Brain: `CTRL-20260920T165000+0900-R15-6C2F8A41` @ `64611f391391844d60659732a50a22cf009a5797`
-- Evidence Analyst: `EVA-20260920T180852+0900-R17-152262F6` @ `4dc5a5b43f26789f32567eb69cbb4a26b9cd6825`
-- MAIN report: `MAIN-20260920T181208+0900-PRIMARY-FUNNEL21-HOLD-4F2C91A7` @ `95c73d858caa4ef89d4348c425fa73d0920147c1`
-- SUB report: `SUB-20260920T173914+0900-NOOP-ANALYSTWAIT-CA15738F` @ `2cdb0c5625857443f4775e3d6819eb67504862dc`
-- prior Literature: `LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71` @ `a66abf755d859da60bbc98f61950053f66a6d9c1`
+- Control Brain: `CTRL-20260920T205000+0900-R16-5E9A71C3` @ `016a248143dc71380fca28128d564d74aeb4c3f3`
+- Evidence Analyst: `EVA-20260920T211647+0900-R20-B6B0AAA2` @ `2d7841171377226d2962424b5926ca4c4b68a2e7`
+- MAIN report: `MAIN-20260920T211206+0900-PRIMARY-FUNNEL21-FAILCLOSED-R19-7F4A92C1` @ `dab812ab5cc50768b86522c2c5205f40bf691e8b`
+- MAIN scientific terminal source: `MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731` @ `d779929417663fcd029e6f91742ab73002c41f5e`
+- SUB report: `SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29` @ `59026d651bb141fbfc8a4e99f4c5826531e2af65`
+- prior Literature: `LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4` @ `4a1dfcaef0dfcdbf132156f7656088f7f90a3c96`
 
-The newest role-suffixed MAIN/SUB history was inspected. After those control-plane generations, repository evidence advanced on `research/exploratory-sub-context-conditioned-prediction-20260920`; repository evidence therefore controls the interpretation below.
+Newest role-suffixed MAIN/SUB histories `2112-main.md` and `2046-sub.md` were read. Recent role-specific Literature history from 2026-09-19 and 2026-09-20 was inspected before search to avoid recycling prior H7 provenance/actual-cause, Top-k, temporal batching, refractory, homeostasis, Assembly, receptor-tie, and predictive-state findings.
 
-## New repository evidence
+## Repository result being sharpened
 
-`CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01` was prospectively bound at `01d4cc8daf07be67b8f633434030241276a0a4b0`, with a fixed first-order current-Assembly lookup reduction and no same-object rescue. A diagnostic head `38c6f3cc972898c170fdf5853190ca33de8f6882` completed CI successfully (`35502813034`). The branch then advanced to result commit `f0a4157d869561e4201aca1c37663305bc5c8a5d`.
+Evidence Analyst R20 has canonically closed `CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01` as `REJECT / MECHANISM / preformal_eligible=false / NOT_READY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`, terminal `LAST_PENDING_ACTION_REDUCTION`; no cycle-2 rescue.
 
-The result is negative and exact: after balanced training, the native predictor state for X was `{"assembly-X": {"future-A": 4, "future-B": 4}}`; `predict(A)` then `predict(X)` and `predict(B)` then `predict(X)` both returned `future-A` at confidence 0.5, and the context calls did not mutate predictor state. The prospectively fixed first-order current-Assembly lookup reproduced both arms exactly. The mapped terminal is `FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS`, recommendation `REJECT`, with no cycle-2 rescue. At persistence time, final-head CI `35502970668` for the result commit was still in progress; the outcome-bearing diagnostic CI was already successful.
+Stable `AssemblyActionPolicy.choose()` stores one `pending=(assembly_id, action)` pair and a later eligible choice overwrites it; `reward(value)` updates only the current pending pair. In the fixed probe, immediate reward after A changed `assembly-A/action-0` from 0 to 0.30, while `choose(A) -> choose(B) -> reward(+1)` left A at 0 and changed only B to 0.30. The prospectively fixed one-slot comparator reproduced the delayed arm exactly.
 
-This current object therefore does not expose immediate-predecessor-conditioned prediction in the v0.5 prediction component. That is current-component negative mechanism information, not a claim that the integrated system or future architectures cannot carry sequence context.
+The literature below does not rescue this object. It raises the ordinary-reduction bar for any genuinely fresh future H7/action-credit object.
 
 ## High-value external findings
 
-### 1. Immediate-predecessor-conditioned prediction is classical Markov/suffix memory, not a novel prediction principle
+### 1. Per-state/action eligibility traces are the direct established baseline missing from a one-slot pending register
 
-Variable-order Markov models, including Prediction Suffix Trees, Context Tree Weighting, and PPM, explicitly condition next-symbol prediction on a suffix of recent history whose length may vary by context. Begleiter, El-Yaniv & Yona (JAIR 22, 2004, DOI `10.1613/JAIR.1491`) survey and compare these mechanisms; prediction-suffix-tree sequence models were already established in the 1990s.
+Singh & Sutton (Machine Learning 22, 1996, DOI `10.1007/BF00114726`) explicitly frame eligibility traces as a basic mechanism for delayed reward. Prior state/action events retain decaying eligibility instead of being overwritten wholesale by the next action. Replacing and accumulating variants differ in repeated-event semantics, but both ordinarily preserve more than one recent eligible state/action.
 
-**Impact on SparkBrain:** if a fresh future object made X-after-A and X-after-B predict differently, the first ordinary baseline is not merely the current first-order table. A fixed second-order lookup `(previous,current) -> P(next)` and then a variable-order suffix/PST model directly subsume the claimed information pattern. Context sensitivity alone cannot carry novelty.
+Because SparkBrain already keys scores by `(assembly_id, action)`, a future matched baseline can keep one scalar trace per `(assembly_id, action)` without task labels, replay, or semantic privilege beyond information already available to the native policy. Therefore merely making A update after B would be ordinary temporal-credit functionality, not mechanistic novelty.
 
-### 2. Causal-state / epsilon-machine theory gives a sharper discriminator than “does history matter?”
+Source: https://link.springer.com/article/10.1007/BF00114726
 
-Computational mechanics groups histories into the same causal state exactly when they induce the same conditional distribution over futures; the causal-state representation is a minimal predictively sufficient state. Crutchfield & Shalizi’s causal-state work formalizes this minimal predictive representation, and the framework has been applied directly to spike trains: histories with identical future distributions collapse into one state, while histories with different predictive futures must split.
+### 2. Delayed local credit through a third-factor reward/modulatory signal is established computational and biological prior art
 
-**Impact on SparkBrain:** a future sequence-state claim should be judged by predictive equivalence, not by raw history identity. In the present synthetic construction, A→X and B→X would warrant distinct predictive states only if their future distributions really differ. A strong ordinary baseline is therefore the minimal causal-state/epsilon-machine partition reconstructed from the same event alphabet. Merely storing more history than needed is not a scientific residual.
+Izhikevich (2007) linked STDP-induced eligibility to delayed dopamine. Gerstner et al. (Frontiers in Neural Circuits 2018, DOI `10.3389/fncir.2018.00053`) review experimental support for neo-Hebbian three-factor rules in which local pre/post coactivity sets a trace and later reward/punishment/surprise gates plasticity. Shouval & Kirkwood (Current Opinion in Neurobiology 2025, DOI `10.1016/j.conb.2025.102978`) review slowly decaying eligibility traces across multiple neural systems. Bellec et al. (Nature Communications 2020, DOI `10.1038/s41467-020-17236-y`) derive e-prop, combining local eligibility traces with later learning signals in recurrent spiking networks.
 
-### 3. Predictive-state and belief-state representations make history-conditioned prediction under observation aliasing foundational prior art
+A future native SparkBrain mechanism that only stores fading local eligibility and multiplies it by later scalar reward is therefore strongly reducible to established three-factor/e-prop mechanisms.
 
-Littman, Sutton & Singh’s Predictive State Representation work (NeurIPS 2001) represents dynamical state by predictions of future observations and explicitly compares predictive state with k-order Markov and POMDP state representations. The basic problem—identical current observation but different optimal predictions because of history—is therefore a canonical partial-observability/state-estimation problem.
+Sources:
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC4437488/
+- https://www.frontiersin.org/journals/neural-circuits/articles/10.3389/fncir.2018.00053/full
+- https://pubmed.ncbi.nlm.nih.gov/39965463/
+- https://www.nature.com/articles/s41467-020-17236-y
 
-A contemporary result raises rather than lowers this bar: Kuo et al., NeurIPS 2025, `Predictive Coding Enhances Meta-RL To Achieve Interpretable Bayes-Optimal Belief Representation Under Partial Observability`, reports compact history representations approximating Bayes-optimal belief states through predictive objectives.
+### 3. ICLR 2026 raises the baseline from fading traces to temporally precise delayed-credit memory
 
-**Impact on SparkBrain:** even a positive future integrated result would not be novel merely because recurrent/local state disambiguates identical current X. The residual would need to survive matched-information predictive-state/belief-state comparators and make a sharper claim about locality, online update, resource/privilege constraints, or a distinct mechanism.
+Ralambomihanta et al., `Learning From the Past with Cascading Eligibility Traces`, ICLR 2026, identify a limitation of standard exponentially decaying traces: events occurring during a long feedback delay become mixed together. Their cascading/state-space eligibility traces provide temporally precise memory and demonstrate delayed credit at behavioral time-scales from seconds to minutes.
+
+This directly matters to the A→B→reward construction. Even if a fresh architecture later preserves A across intervening B, it cannot be compared only with a one-slot register or a single exponential trace if the claim involves selecting an earlier temporally specific event across intervening eligible activity.
+
+Source: https://proceedings.iclr.cc/paper_files/paper/2026/hash/e647dad9086b5a4cc136e1d1926cc172-Abstract-Conference.html
+
+### 4. Temporal eligibility and causal responsibility remain different claims
+
+This is a new synthesis of the fresh action-credit result with the already-consumed 2026-09-19 Literature finding on provenance versus actual causality, not a new external-paper claim by itself. Eligibility traces answer which recent events remain updateable when a delayed signal arrives; they do not establish which earlier event was the actual difference-making cause. Cascading traces improve temporal precision but still do not supply causal semantics.
+
+For a future responsibility-sensitive claim, the strongest prospective discriminator is therefore a conflict case where an earlier A is causally necessary while a later B is temporally closer/eligible but interventionally irrelevant. The reduction ladder should compare one-slot pending state, ordinary eligibility, temporally precise eligibility, and then explicit counterfactual responsibility. Updating A is insufficient if an ordinary trace also does it; updating both A and B is temporal credit, not selective causal responsibility.
 
 ## Reduction consequence
 
-The current `CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01` REJECT is aligned with both repository evidence and external prior art: v0.5’s current prediction component is exactly reducible to first-order current-Assembly frequency lookup on the fixed discriminator.
+Current `LAST_PENDING_ACTION_REDUCTION` is strengthened, not weakened. Current v0.5 exposes no earlier-action eligibility state in this path.
 
-For any **fresh** sequence-context successor that arises independently, the ordinary reduction ladder should be:
+For a genuinely fresh successor admitted independently, use:
 
-`current-symbol / current-Assembly frequency lookup`
-→ `fixed second-order (previous,current) Markov lookup`
-→ `variable-order suffix / PST / CTW-style predictor`
-→ `minimal causal-state / epsilon-machine predictive partition`
-→ `PSR / belief-state representation under matched information and resource privilege`
-→ only then a Spark-specific residual, if any.
+`one-slot last-action pending register`
+→ `per-(Assembly,action) accumulating/replacing eligibility trace`
+→ `three-factor / e-prop-style local eligibility × delayed learning signal`
+→ `temporally precise state-space/cascading eligibility trace when intervening events matter`
+→ `counterfactual/actual-responsibility baseline when selective causal credit is claimed`
+→ only then a Spark-specific residual.
 
-A fresh successor should also test predictive-equivalence collapse: distinct histories that imply the same future distribution should map to the same effective predictive state, while histories with different future distributions should separate. If SparkBrain claims locality/anonymity, explicit global history dictionaries or latent-state labels must be privilege-matched rather than silently granted to the baseline.
-
-No Utility request was created. The current object is already outcome-bearing and terminal for its fixed question; adding a context-length sweep, suffix baseline, or integrated recurrent-context probe now would be a literature-driven same-object extension. Any such test must be a fresh prospectively bound object after independent Analyst/Control selection.
+No Utility request was created. The current object is terminal and same-object cycle-2 rescue is prohibited; a literature-driven trace implementation or new discriminator would be an outcome-responsive successor unless independently admitted as a fresh object.
 
 ## Knowledge-flow contract
 
@@ -76,40 +103,42 @@ No Utility request was created. The current object is already outcome-bearing an
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - CAND_V05_CONTEXT_CONDITIONED_PREDICTION_01
-  - V05_PREDICTION_COMPONENT
-  - FUTURE_SEQUENCE_CONTEXT_PREDICTION
-  - PREDICTIVE_STATE_REDUCTION_LADDER
+  - CAND_V05_DELAYED_ACTION_RESPONSIBILITY_01
+  - CAND_H7_RESP_01
+  - V05_ACTION_CREDIT_STATE
+  - TEMPORAL_CREDIT_REDUCTION_LADDER
   - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
-  STRONGER_SEQUENCE_STATE_REDUCTION. The current v0.5 object is exactly reduced
-  by first-order current-Assembly lookup. Any future positive sequence-context
-  result must first survive fixed/variable-order Markov suffix models,
-  minimal causal-state predictive partitions, and predictive/belief-state
-  representations under matched information/resource privilege. Mere
-  same-current-state/history-conditioned prediction is established prior art.
+  STRONGER_TEMPORAL_CREDIT_REDUCTION. Current v0.5 is cleanly reduced to a
+  one-slot last-action pending register. A future positive delayed-action result
+  must first survive matched per-action eligibility traces, three-factor/e-prop
+  delayed local credit, and—where temporal precision across intervening events
+  is claimed—2026 cascading eligibility traces. Temporal eligibility must not
+  be conflated with selective causal responsibility.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - exact second-order (previous,current) -> next-distribution Markov baseline
-  - variable-order Markov / Prediction Suffix Tree / CTW-style baseline
-  - epsilon-machine / causal-state minimal predictive-state baseline on the same event alphabet
-  - matched-information PSR or belief-state baseline
-  - predictive-equivalence collapse/split tests across multiple history lengths in a fresh object only
-  - explicit privilege matching for global history dictionaries, task labels, or latent-state access
+  - matched per-(Assembly,action) accumulating or replacing eligibility trace
+  - three-factor local eligibility multiplied by delayed scalar learning signal
+  - e-prop-style local eligibility plus delayed/top-down learning signal under matched state privilege
+  - cascading/state-space eligibility trace for temporally precise delayed credit across intervening events
+  - prospective recency-versus-causality conflict case before any responsibility-sensitive claim
+  - explicit counterfactual/actual-responsibility comparator only when selective causal credit is claimed
 questions_for_evidence_analyst:
-  - Accept FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS as a closed negative current-component mechanism result with no cycle-2 rescue?
-  - If a fresh integrated sequence-state successor is independently warranted, require Markov-suffix plus causal-state/PSR reductions before mechanistic-distinctness interpretation?
-  - Require predictive-equivalence, not mere history sensitivity, as the stronger future discriminator?
+  - Keep LAST_PENDING_ACTION_REDUCTION as the closed current-v0.5 negative mechanism result with no cycle-2 rescue?
+  - For any fresh H7/action-credit successor, require ordinary per-action eligibility and temporally precise eligibility reductions before mechanistic-distinctness interpretation?
+  - Require a recency-versus-causality conflict case before interpreting retained delayed credit as responsibility-sensitive rather than merely eligibility-sensitive?
 questions_for_control_brain:
-  - Add fixed/variable-order Markov, causal-state, and PSR/belief-state models to the ordinary sequence-prediction reduction ladder?
-  - Keep PRE_FORMAL/FORMAL unaffected by the current reduced result?
-  - Avoid a literature-driven successor until a native supported-system mechanism or independently motivated integrated question exists?
+  - Add replacing/accumulating eligibility, three-factor/e-prop, and cascading eligibility traces to the ordinary temporal-credit reduction ladder?
+  - Keep H7 on HOLD until a fresh native object separates eligibility persistence from selective causal responsibility?
+  - Avoid opening a literature-driven successor or Utility implementation while current-v0.5 action credit is terminally reduced and PRE_FORMAL remains empty?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs
-  - CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01 prospective binding 01d4cc8daf07be67b8f633434030241276a0a4b0
-  - diagnostic head 38c6f3cc972898c170fdf5853190ca33de8f6882 and its successful diagnostic CI
-  - result commit f0a4157d869561e4201aca1c37663305bc5c8a5d and mapped FIRST_ORDER_CURRENT_ASSEMBLY_LOOKUP_EXPLAINS terminal
-  - no same-object cycle 2, context-length sweep, integrated rescue, retune, relabel, PRE_FORMAL/FORMAL promotion, official TEST, new STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change
+  - canonical terminal classifications and consumed STARTED/control/preserve/evidence refs
+  - CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01 prospective contract c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab
+  - outcome-bearing commit 1117b56de8845c3200c1f1acd5f04d999743a4e5
+  - terminal/result head 411913e0b3a0493595969513bf0b7829c49cc248 and successful exact-head CI 35508632370
+  - canonical LAST_PENDING_ACTION_REDUCTION / REJECT disposition and no same-object cycle-2 rescue
+  - CAND-H7-RESP-01 remains HOLD/nonterminal with no fresh native object admitted by this literature
+  - no literature-driven implementation patch, retune, rerun, PRE_FORMAL/FORMAL promotion, new STARTED, official TEST, rescore, research merge, immutable-ref/tag mutation, or scheduler change
 utility_request_created: null
 ```
