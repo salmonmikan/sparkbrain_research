@@ -1,308 +1,98 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-20T11:27:23+09:00",
-  "generation_id": "METHCAL-20260920T112723+0900-R11-E3968ACE",
-  "produced_at": "2026-09-20T11:27:23+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260920T112723+0900-R11-E3968ACE",
+  "timestamp": "2026-09-20T12:22:51+09:00",
+  "generation_id": "METHCAL-20260920T122251+0900-R12-7C4D91A2",
+  "produced_at": "2026-09-20T12:22:51+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260920T122251+0900-R12-7C4D91A2",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "LEGACY_GENERATION_UNKNOWN",
-  "previous_methodology_tip": "762f4ab71a5d140f308e94a5c8b4ba1f4a0fa8f6",
+  "supersedes_generation_id": "METHCAL-20260920T112723+0900-R11-E3968ACE",
+  "previous_methodology_tip": "8e96c0a87022687e7c1aabb474538fdf55a8c835",
   "input_generations": {
-    "control_brain": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "handoff_commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
-      "role": "STRATEGIC_PRIOR_ONLY"
-    },
-    "evidence_analyst": {
-      "generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
-      "handoff_branch_tip": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
-      "produced_at": "2026-09-20T10:57:21+09:00"
-    },
-    "main": {
-      "generation_id": "MAIN-20260920T111421+0900-PRIMARY-ASSEMBLY-LIFECYCLE-C1",
-      "report_branch_tip": "5d232d6a5b771478b9d5ecb8b62df85955dd0fd6",
-      "candidate": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
-      "research_head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6"
-    },
-    "sub": {
-      "generation_id": "SUB-20260920T104200+0900-CKPT-7F3C2A91",
-      "handoff_commit": "e438faff528fb73a33a201cb31fa3a935192d4fd",
-      "candidate": "V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1",
-      "research_head": "693a68f82b706c17b1d3848f9ac79f57794b57d6"
-    },
-    "literature": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "handoff_commit": "f399e9d14ef6d491135d19161b8c1d7986b94e5b",
-      "produced_at": "2026-09-20T09:32:39+09:00"
-    },
-    "independent_audit": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "handoff_commit": "d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56",
-      "latest_scope": "H5 exact registered aggregate algorithmic-work claim"
-    },
-    "repository_steward": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "handoff_commit": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
-      "produced_at": "2026-09-20T07:50:00+09:00"
-    },
-    "utility": {
-      "generation_id": "utility-state-20260920T1027JST-lifecycle-bootstrap",
-      "handoff_commit": "d4d0f75f1a57df1298e49e67448158ab12a2754f",
-      "status": "COMPLETED_TERMINAL_ACKNOWLEDGED_ASSIGNMENT_IDLE"
-    },
-    "previous_methodology": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "state_commit": "9c5b625e81cd7a3213b352d9f0d4f889978455b1",
-      "branch_tip": "762f4ab71a5d140f308e94a5c8b4ba1f4a0fa8f6",
-      "overall_classification": "WELL_CALIBRATED"
-    }
+    "control_brain": {"generation_id":"LEGACY_GENERATION_UNKNOWN","commit":"b35068cbee426c99c3cc1f6dd23053778a2bd88a"},
+    "evidence_analyst": {"generation_id":"EVA-20260920T115704+0900-R12-A6B8DE50","commit":"dcaa02fc25506ff4e8b14d7540b6c754a8a6da98"},
+    "main": {"generation_id":"MAIN-20260920T114602+0900-RELAY-ASSEMBLY-CI-COMPLETE","commit":"4f6eb1c5fa78c4f220489f56253e78f09c31d1f1","research_head":"13239163f6fecb2b61ea2189a5a94ba12b6cb3d6"},
+    "sub": {"generation_id":"SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4","commit":"03c8981d86ce0086cf5a01798a80e8275e58b711","research_head":"83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801"},
+    "literature": {"generation_id":"LEGACY_GENERATION_UNKNOWN","commit":"f399e9d14ef6d491135d19161b8c1d7986b94e5b"},
+    "independent_audit": {"generation_id":"LEGACY_GENERATION_UNKNOWN","commit":"d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56"},
+    "repository_steward": {"generation_id":"LEGACY_GENERATION_UNKNOWN","commit":"e53df976b98d56b8e37a5cbfc20f1aeb84caadeb"}
   },
   "authoritative_refs_inspected": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_tags": {
-      "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
-    },
-    "evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "preserve_refs_present": true,
-    "control_refs_present": true,
-    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "h5_terminal_evidence": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
-    "assembly_architecture_head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
-    "assembly_ci_run": 35483714573,
-    "assembly_ci_state": "completed_success",
-    "control_brain_tip": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
-    "evidence_analyst_tip": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
-    "orchestrator_report_tip": "5d232d6a5b771478b9d5ecb8b62df85955dd0fd6",
-    "literature_commit": "f399e9d14ef6d491135d19161b8c1d7986b94e5b",
-    "independent_audit_commit": "d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56",
-    "repository_steward_commit": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
-    "open_prs": [
-      148,
-      149
-    ]
+    "main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main_research":"research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920@13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
+    "sub_research":"research/exploratory-sub-assembly-feedback-mechanism-20260920@83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
+    "orchestrator_run_report":"0d1371bee14b95e126cef203f516c0033d538363",
+    "evidence_tags":5,
+    "formal_tags":0,
+    "sealed_tags":0,
+    "freeze_tags":0,
+    "preserve_heads":0,
+    "recent_workflow_run":"35486178917:success",
+    "relevant_open_prs":[148,149]
   },
-  "run_disposition": "MATERIAL_CALIBRATION_UPDATE",
-  "overall_classification": "MIXED_CALIBRATION",
-  "previous_classification": "WELL_CALIBRATED",
-  "confidence": "HIGH_ON_CURRENT_OBSERVABILITY_AND_BASELINE_MEDIUM_ON_PROSPECTIVE_V2_EFFECTIVENESS",
   "gate_changes_reviewed": [
-    {
-      "change": "Funnel Correction v2 adds MECHANISM/SYSTEM claim ceilings, preformal eligibility, HOLD subtypes, portfolio split, mechanism-priority allocation, one-in-three theory-backward SUB supply, and machine-readable PRE_FORMAL readiness without a universal numeric threshold",
-      "direction": "SUPPLY_AND_OBSERVABILITY_CORRECTION",
-      "justification_trace": "Recent lower-funnel autonomous SUB selections are SYSTEM/API/engineering heavy while PRE_FORMAL has no surviving mechanism object",
-      "assessment": "MIXED_KEEP_CLARIFY_TIGHTEN"
-    },
-    {
-      "change": "Current durable Evidence Analyst and MAIN candidate records do not yet persist the mandatory Funnel v2 fields or funnel_metrics",
-      "direction": "IMPLEMENTATION_OBSERVABILITY_GAP",
-      "assessment": "TIGHTEN"
-    },
-    {
-      "change": "Current Assembly static Architecture study preserves a SYSTEM resource/reachability question without manufacturing a dynamic comparator, saturation failure, or novelty claim",
-      "direction": "CORROBORATES_SYSTEM_EXCEPTION_AND_CLAIM_SEPARATION",
-      "assessment": "KEEP"
-    }
+    "Funnel v2.1 current-object claim ceilings now live across the material pool",
+    "fresh SYSTEM-to-MECHANISM successor pattern demonstrated without same-object upgrade",
+    "rolling theory-backward mechanism supply produced a genuine falsifiable MECHANISM Discovery",
+    "orthogonal HOLD/terminal/queue fields and classification completeness now persisted",
+    "READY semantics explicitly remain development readiness, not prior scientific success"
   ],
+  "overall_classification": "WELL_CALIBRATED",
   "gate_by_gate_classifications": {
-    "hard_one_way_integrity_floor": "KEEP",
-    "prospective_protocol_raw_before_score_preserve_before_read_exact_binding": "KEEP",
-    "new_computational_principle_novelty_bar": "KEEP",
-    "architecture_system_engineering_testbed_value_separate_from_novelty": "KEEP",
-    "claim_ceiling_mechanism_system": "CLARIFY",
-    "preformal_eligible": "CLARIFY",
-    "hold_subtype_taxonomy": "CLARIFY",
-    "v2_funnel_field_and_metrics_persistence": "TIGHTEN",
-    "architecture_portfolio_mechanism_system_split": "KEEP",
-    "main_mechanism_priority_with_system_integrity_exceptions": "KEEP",
-    "system_over_mechanism_exception_logging": "TIGHTEN",
-    "sub_one_in_three_theory_backward_rule": "CLARIFY",
-    "preformal_readiness_checklist": "CLARIFY",
-    "no_programme_wide_universal_numeric_readiness_threshold": "KEEP",
-    "equal_privilege_comparator_matching": "KEEP",
-    "claim_local_comparator_readiness_semantics": "CLARIFY",
-    "signal_before_reduction_for_promotion_and_positive_claims": "KEEP",
-    "theory_backward_discovery_may_precede_positive_signal": "CLARIFY",
-    "ordinary_control_first_reduction": "KEEP",
-    "fresh_analyst_stop_after_architecture": "KEEP",
-    "public_api_permissiveness_vs_supported_workload_reachability": "KEEP",
-    "legacy_topk_sparse_support_gate": "TIGHTEN",
-    "programme_wide_replacement_numeric_support_threshold": "INSUFFICIENT_EVIDENCE",
-    "brittle_literal_or_format_sensitive_machine_fact_detector": "TIGHTEN",
-    "decision_relevant_machine_fact_extractor_fidelity": "KEEP"
+    "hard_integrity_floor":"KEEP",
+    "claim_ceiling_current_object":"KEEP",
+    "same_object_system_to_mechanism_upgrade_ban":"KEEP",
+    "fresh_mechanism_successor_from_system":"KEEP",
+    "preformal_eligible_distinct_from_readiness":"KEEP",
+    "preformal_ready_semantics":"KEEP",
+    "first_ready_to_preformal_transition":"INSUFFICIENT_EVIDENCE",
+    "hold_multidimensional_model":"KEEP",
+    "main_mechanism_priority":"KEEP",
+    "prospective_system_priority_exception":"KEEP",
+    "rolling_one_in_three_theory_backward_supply":"KEEP",
+    "theory_backward_quality_floor":"KEEP",
+    "no_coherent_mechanism_target_exception":"KEEP",
+    "classification_completeness_gating":"KEEP",
+    "universal_numeric_readiness_threshold_prohibition":"KEEP",
+    "equal_privilege_comparator":"KEEP",
+    "signal_before_strong_claim":"KEEP",
+    "ordinary_reduction_first":"KEEP",
+    "claim_type_separation":"KEEP",
+    "legacy_topk_sparse_support":"TIGHTEN",
+    "programme_wide_numeric_support_threshold":"KEEP"
   },
   "false_positive_risks": [
-    "MECHANISM labels could be strategically assigned to quota-fill SYSTEM/API questions unless claim_ceiling is prospectively justified and auditable",
-    "preformal_eligible could be set too early from mechanism-sounding language rather than a coherent claim-local mechanism question",
-    "READY could become a hidden success criterion if reductions/comparator/falsifier are interpreted as already won rather than prospectively specified and development-ready",
-    "SYSTEM-over-MECHANISM priority exceptions could become unbounded unless the reason is machine-readable",
-    "raw funnel conversion rates could be mistaken for scientific thresholds despite v2 explicitly rejecting a universal numeric readiness threshold"
+    "Future quota pressure could relabel weak SYSTEM/API questions as MECHANISM; current Assembly case did not.",
+    "Future SYSTEM priority exceptions could be rationalized post hoc unless written prospectively; no current exception is in use.",
+    "Small-N funnel conversion rates could be overread despite 7/7 completeness; current Evidence explicitly avoids this."
   ],
   "false_negative_risks": [
-    "A rigid SYSTEM label could block a legitimate later mechanism question if fresh SYSTEM-to-MECHANISM successor creation is not explicitly allowed",
-    "SYSTEM research could be suppressed if mechanism priority is treated as absolute rather than preserving testbed/evidence/reachability/reproducibility/Formal-integrity exceptions",
-    "preformal_eligible and READY could become duplicate guards and make PRE_FORMAL practically unreachable",
-    "readiness comparator requirements could overmatch the mechanism and remove the target phenomenon",
-    "the one-in-three quota could manufacture low-quality mechanism questions if NO_COHERENT_MECHANISM_TARGET is not an explicit auditable exception"
+    "MECHANISM priority could suppress integrity-critical SYSTEM work if exception semantics are ignored; current policy preserves the exception.",
+    "A future READY checklist could become a hidden second Formal gate if READY is interpreted as prior comparator/reduction/falsifier success; current semantics do not do this.",
+    "The theory-backward quota could manufacture low-quality mechanism candidates; first live case was coherent and negative, so this risk is not currently realized."
   ],
-  "duplicate_guards": {
-    "assessment": "POTENTIAL_DUPLICATION_REQUIRES_SEMANTIC_SEPARATION",
-    "pairs": [
-      {
-        "fields": [
-          "claim_ceiling",
-          "preformal_eligible",
-          "readiness_status"
-        ],
-        "finding": "Do not merge if semantics are distinct: claim type, in-principle PF eligibility, and current development readiness. If eligibility is only set at READY they become redundant."
-      }
-    ],
-    "other_guards": "provenance, machine-fact validity, handoff fidelity and fresh Analyst review remain distinct and should not be merged"
-  },
-  "moving_goalpost_assessment": {
-    "classification": "LOW",
-    "basis": "Funnel v2 is audited prospectively as a supply/observability correction. No consumed/frozen historical object is to be rescored, upgraded, invalidated or relabeled solely because of v2."
-  },
-  "pass_reachability_assessment": {
-    "classification": "REACHABLE_BUT_NARROW",
-    "v2_qualification": "NOT_YET_DEMONSTRATED_UNDER_V2",
-    "required_path": [
-      "coherent theory/native mechanism signal or question",
-      "fresh prospective claim_ceiling=MECHANISM object",
-      "preformal_eligible=true once a genuine mechanism claim is coherent",
-      "claim-local support/reductions/comparator/reachability/falsifier/open-choice accounting become development-ready",
-      "machine-readable readiness_status=READY",
-      "PRE_FORMAL",
-      "one-way FORMAL integrity chain and preserved evidence"
-    ],
-    "circularity_warning": "READY must not require already surviving the comparator/falsifier/reduction outcome that PRE_FORMAL or FORMAL is intended to test.",
-    "historical_formal_machinery_evidence": "H5 demonstrates the one-way Formal execution/preserve/evidence chain is operational, but is not retroactively relabeled under v2."
-  },
-  "claim_type_separation_findings": {
-    "assessment": "HEALTHY_SCIENTIFIC_SEPARATION_V2_TRANSITION_RULE_NEEDED",
-    "research_worthiness_vs_novelty": "SEPARATED",
-    "recent_system_value_examples": [
-      "Homeostasis population observability semantics",
-      "Receptor exact-key simultaneity/order semantics",
-      "Delayed outcome attribution API semantics",
-      "Assembly mature-capacity lifecycle/resource semantics",
-      "Checkpoint continuation correctness"
-    ],
-    "mechanism_transition_rule": "A SYSTEM object may motivate a fresh independently prospective MECHANISM successor; the consumed SYSTEM object itself must not be upgraded post-outcome."
-  },
-  "mechanism_supply_health": {
-    "status": "AT_RISK_SYSTEM_HEAVY_BASELINE",
-    "recent_safe_nonduplicative_autonomous_sub_window": [
-      {
-        "time_jst": "2026-09-20T08:46:00+09:00",
-        "selection": "HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1",
-        "auditor_claim_type": "SYSTEM",
-        "outcome": "PROMOTE_TO_ARCHITECTURE_STUDY_FOR_API_OBSERVABILITY"
-      },
-      {
-        "time_jst": "2026-09-20T09:42:00+09:00",
-        "selection": "RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1",
-        "auditor_claim_type": "SYSTEM",
-        "outcome": "PROMOTE_TO_STATIC_ARCHITECTURE_CONTRACT"
-      },
-      {
-        "time_jst": "2026-09-20T10:42:00+09:00",
-        "selection": "V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1",
-        "auditor_claim_type": "SYSTEM",
-        "outcome": "REJECT_ORDINARY_CHECKPOINT_CORRECTNESS"
-      }
-    ],
-    "theory_backward_mechanism_count_in_window": 0,
-    "window_size": 3,
-    "v2_compliance_assessment": "NOT_APPLICABLE_RETROSPECTIVELY",
-    "v2_effectiveness": "INSUFFICIENT_EVIDENCE_NOT_YET_OBSERVED",
-    "risk": "API/config/reproducibility throughput can starve central-theory mechanism supply even while producing legitimate SYSTEM value."
-  },
-  "funnel_observability": {
-    "status": "INCOMPLETE_V2_NOT_YET_PERSISTED",
-    "evidence_analyst_schema_version": 2,
-    "generation_schema_is_not_funnel_v2": true,
-    "missing_in_current_material_candidate_records": [
-      "claim_ceiling",
-      "preformal_eligible",
-      "v2_hold_subtype",
-      "readiness_status",
-      "funnel_metrics"
-    ],
-    "main_current_object_missing": [
-      "claim_ceiling",
-      "preformal_eligible",
-      "readiness_status"
-    ],
-    "recommendation": "Persist mandatory v2 fields prospectively before using funnel_metrics or conversion rates to judge policy. Do not cosmetically backfill consumed history."
-  },
-  "preformal_gate_calibration": {
-    "status": "CONCEPTUALLY_SOUND_BUT_NOT_YET_EMPIRICALLY_CALIBRATED_UNDER_V2",
-    "current_preformal_state": "EMPTY_HOLD",
-    "ready_case_observed": false,
-    "healthy_interpretation": {
-      "support": "claim-local adequacy to justify the next test, not universal numeric support",
-      "reductions": "ordinary alternatives specified/controlled enough for an informative test, not conclusively defeated already",
-      "comparator": "claim-local matched comparator where the claim requires one",
-      "reachability": "supported possibility appropriate to the claim, not prevalence unless prevalence is claimed",
-      "falsifier": "prospectively specified, not already survived",
-      "open_choice_accounting": "outcome-responsive degrees of freedom closed or explicitly bounded"
-    },
-    "hidden_formal_gate_risk": "HIGH_IF_READY_IS_INTERPRETED_AS_ALREADY_SUCCESSFUL_LOW_IF_USED_AS_DEVELOPMENT_READINESS"
-  },
-  "external_calibration": {
-    "literature_commit": "f399e9d14ef6d491135d19161b8c1d7986b94e5b",
-    "independent_audit_commit": "d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56",
-    "finding": "No current external result justifies a universal numeric readiness threshold or a stricter global admission bar. External work supports claim-local ordinary reductions and narrow claim boundaries."
-  },
-  "opportunity_cost": {
-    "assessment": "MECHANISM_SUPPLY_CORRECTION_HAS_HIGH_EXPECTED_INFORMATION_GAIN_IF_QUALITY_FLOOR_IS_PRESERVED",
-    "system_value_protection": "SYSTEM priority exceptions are necessary because some system work protects testbed validity, evidence interpretation, supported reachability, reproducibility or Formal integrity.",
-    "additional_global_strictness": "LOW_EXPECTED_INFORMATION_GAIN_HIGH_FALSE_NEGATIVE_COST"
-  },
+  "moving_goalpost_assessment": {"level":"LOW","finding":"Funnel v2.1 is prospective; completed/consumed objects are not backfilled, rescored, relabeled, rerun, invalidated, or upgraded."},
+  "pass_reachability_assessment": {"status":"REACHABLE_BUT_NARROW","finding":"No hidden success predicate is currently inserted before PRE_FORMAL, but the first live READY-to-PRE_FORMAL transition has not yet occurred."},
+  "claim_type_separation_findings": "Healthy. The Assembly SYSTEM lifecycle object retained architecture/resource value while a fresh Assembly-feedback MECHANISM object was independently tested and rejected; neither was used to launder the other claim type.",
+  "mechanism_supply_health": {"status":"IMPROVING_AND_CURRENTLY_HEALTHY_SMALL_N","rolling_window":"SYSTEM,SYSTEM,MECHANISM","qualifying_share":"1/3","no_coherent_target_exception_used":false,"finding":"The qualifying MECHANISM selection was theory-backward, prospectively falsifiable, and accepted a negative result without rescue."},
+  "funnel_observability": {"status":"GOOD_INITIAL_V2_1_IMPLEMENTATION","classification_completeness":"7/7","finding":"All material current candidates have mandatory v2.1 fields; rates are scoped to the complete classified population and are not policy thresholds."},
+  "preformal_gate_calibration": {"status":"SEMANTICALLY_WELL_CALIBRATED_EMPIRICAL_TRANSITION_UNTESTED","hidden_second_formal_gate":false,"eligible_count":0,"ready_count":0,"finding":"READY means the next PRE_FORMAL test is well-defined and informative, not that the candidate has already succeeded scientifically."},
+  "system_priority_exception_audit": {"count_current_generation":0,"finding":"No comparable executable/informative MECHANISM candidate was bypassed. Previous Assembly SYSTEM allocation predates v2.1 and was not retroactively justified."},
+  "no_coherent_target_audit": {"exception_used_current_window":false,"finding":"No escape-hatch behavior observed; current rolling window met the mechanism-supply rule with a real MECHANISM object."},
+  "classification_completeness": {"classified":7,"material_population":7,"ratio":1.0,"policy_use":"Conversion rates may be described for this population but must not be treated as universal thresholds."},
   "prospective_recommendations": [
-    "Persist claim_ceiling, preformal_eligible, HOLD subtype, readiness status and funnel_metrics prospectively in Evidence Analyst candidate records and successor handoffs before using funnel conversion as policy evidence.",
-    "Define claim_ceiling as a current-object ceiling; allow SYSTEM-to-MECHANISM only via a fresh independently motivated prospective successor.",
-    "Keep preformal_eligible distinct from readiness_status=READY.",
-    "Keep the required HOLD primary subtype but also record orthogonal hold_reason, terminal/nonterminal and queue/active fields.",
-    "Require a machine-readable exception reason whenever MAIN selects SYSTEM over a comparably executable/informative MECHANISM candidate.",
-    "Apply the one-in-three SUB rule only to safe nonduplicative autonomous selections; require a coherent falsifiable theory-backward mechanism question and allow an explicit NO_COHERENT_MECHANISM_TARGET exception.",
-    "Treat readiness as development readiness, not evidence that the candidate has already won its comparator, reductions or falsifier.",
-    "Do not add a programme-wide universal numeric readiness/support threshold.",
-    "Preserve SYSTEM Architecture/testbed/reproducibility value and integrity exceptions under mechanism priority.",
-    "Keep all v2 changes prospective; do not backfill/rescore consumed historical results for cosmetic completeness."
+    "Keep v2.1 current-object ceilings and fresh-successor semantics.",
+    "Keep the one-in-three rule but judge it by coherent/falsifiable mechanism supply, not positive results.",
+    "Keep MAIN idle when no central MECHANISM or integrity-protecting high-value SYSTEM object exists.",
+    "Persist SYSTEM priority exceptions prospectively whenever a comparable MECHANISM object actually exists.",
+    "Audit the first real READY-to-PRE_FORMAL transition; do not make READY a pre-success gate.",
+    "Do not add a universal numeric support/readiness threshold from small-N funnel metrics."
   ],
   "utility_request_created": null,
-  "utility_request_reason": "No bounded synthetic Utility check currently has higher information gain than observing the first live v2 allocations, rolling SUB window and first READY-to-PRE_FORMAL transition.",
-  "hard_integrity_floor_confirmation": {
-    "confirmed": true,
-    "protected_purposes": [
-      "no rerun/retune of consumed identities",
-      "prospective/frozen protocols",
-      "raw-before-score",
-      "preserve-before-read",
-      "exact identity/source/package/runtime/input binding",
-      "immutable evidence",
-      "no evaluator/target leakage",
-      "no silent post-outcome repair"
-    ]
-  },
-  "questions_for_control_brain": [
-    "Will SYSTEM-over-MECHANISM priority exceptions be persisted machine-readably so allocation cannot be strategically justified after the fact?",
-    "Will SYSTEM-to-MECHANISM movement require a fresh prospective successor rather than mutating a consumed SYSTEM object's claim ceiling?",
-    "How will NO_COHERENT_MECHANISM_TARGET be represented when the rolling SUB theory-backward slot has no scientifically coherent target?"
-  ],
-  "questions_for_evidence_analyst": [
-    "Will preformal_eligible represent in-principle MECHANISM eligibility separately from current readiness_status=READY?",
-    "Will HOLD subtype be supplemented by orthogonal hold reason and queue/terminal fields to avoid losing information?",
-    "Will funnel_metrics report completeness and missing-v2-field counts so conversion rates cannot be interpreted from partially classified populations?",
-    "Will READY mean development readiness rather than already passing the comparator/reduction/falsifier?"
+  "hard_integrity_floor_confirmation": true,
+  "confidence": {"overall":"HIGH","long_run_mechanism_supply":"MODERATE_SMALL_N","first_ready_to_preformal_transition":"INSUFFICIENT_EVIDENCE"},
+  "questions_for_control_evidence_analyst": [
+    "When first eligibility=true occurs, will a legitimate eligibility=true/readiness=NOT_READY state be durably representable?",
+    "When first SYSTEM-over-comparable-MECHANISM allocation occurs, will system_priority_exception be written before execution?",
+    "When first NO_COHERENT_MECHANISM_TARGET exception is used, will the quality-floor failure be recorded without a filler candidate?"
   ]
 }
