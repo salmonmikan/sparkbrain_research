@@ -11,10 +11,10 @@
     "sub_observed_for_freshness": "SUB-20260921T064900+0900-THEORY-ASMCAUSAL-7A4C91E2"
   },
   "execution_mode": "PRIMARY",
-  "status": "ACTIVE",
+  "status": "COMPLETED",
   "started_at": "2026-09-21T07:14:18+09:00",
-  "heartbeat_at": "2026-09-21T07:14:18+09:00",
-  "completed_at": null,
+  "heartbeat_at": "2026-09-21T07:26:00+09:00",
+  "completed_at": "2026-09-21T07:26:00+09:00",
   "analyst_generation_id": "EVA-20260921T065846+0900-R29-7B2C91E4",
   "analyst_commit": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
   "analyst_branch_tip_observed": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
@@ -33,7 +33,7 @@
     "ordinary_reductions_specified_or_controlled": ["predecessor equal-cardinality nearest-activity nonmember lesion"],
     "ordinary_reductions_unresolved": ["exact activity-load matching", "graph centrality/topological load", "sham/random lesion equivalence", "selection privilege"],
     "matched_comparator_status": "NOT_READY",
-    "support_breadth": "predecessor single DEV probe only; successor has no outcome-bearing observation",
+    "support_breadth": "predecessor single DEV probe only; successor comparator-feasibility observation is NON_EVIDENTIARY",
     "falsifier_fixed": true,
     "falsifier_definition": "If prospectively matched nonmember/sham lesion produces comparable functional loss, ordinary lesion-load reduction wins.",
     "open_scientific_choices": ["outcome-independent exact activity/topology comparator definition and feasibility"],
@@ -52,20 +52,48 @@
   },
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "active_branch": "research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921",
+  "active_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
   "active_identity": null,
-  "active_step": "ACQUIRED_COMPARATOR_FEASIBILITY_AND_PROSPECTIVE_CONTRACT_DEFINITION_ONLY_NO_INTERVENTION_OUTCOME",
+  "active_step": "COMPARATOR_FEASIBILITY_TERMINAL_MAPPED_NO_INTERVENTION_STOP_FRESH_ANALYST_REVIEW",
+  "workflows": {
+    "feasibility": {
+      "run_id": 35541396714,
+      "head_sha": "b2547429823be29a2547419c80c40fb2138dfdc9",
+      "status": "completed",
+      "conclusion": "success",
+      "artifact_id": 10615006426,
+      "artifact_digest": "sha256:b19ba9fa5832c45beca9135e917acb18c0dee3aabe24127a1b0f83928bd0a52d"
+    },
+    "ci": {
+      "run_id": 35541396705,
+      "head_sha": "b2547429823be29a2547419c80c40fb2138dfdc9",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  },
+  "observation_terminal": "EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE",
+  "prospective_contingency_branch": "HOLD_MECHANISM_UNRESOLVED_AND_STOP",
+  "canonical_hold_dimensions_pending_fresh_analyst": true,
   "freshness_reconciliation": {
     "analyst_tip_at_acquire": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
+    "analyst_tip_before_research_ref_update": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
+    "analyst_tip_before_result_mapping_and_persistence": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "latest_sub_generation": "SUB-20260921T064900+0900-THEORY-ASMCAUSAL-7A4C91E2",
     "latest_sub_scientific_execution": true,
     "latest_sub_candidate": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01",
     "sub_collision": false,
-    "orchestrator_tip_at_acquire": "dd0a61766f90418365c6158e8bed1996f8b17d5a"
+    "research_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "orchestrator_tip_at_acquire": "dd0a61766f90418365c6158e8bed1996f8b17d5a",
+    "orchestrator_tip_before_final_persistence": "c386e3d676a3bd84a0e921b36c53451290d55598"
   },
-  "evidentiary_status": "NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_COMPARATOR_FEASIBILITY_ONLY; INTERVENTION_OUTCOME_FORBIDDEN_THIS_RUN; NEW_FORMAL=0; NEW_PRE_FORMAL=0; NEW_IDENTITY_CONSUMPTION=0",
-  "stop_reason": null,
-  "expected_next_action": "Create a fresh research branch from exact stable main, prospectively fix an outcome-independent activity/topology/sham comparator feasibility contract, execute only baseline/pre-intervention feasibility inspection, then STOP for fresh Analyst review. Do not execute suppression/intervention outcomes in this run.",
+  "evidentiary_status": "NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_OBSERVATION=1; INTERVENTION_OUTCOME_EXECUTED=0; NEW_FORMAL=0; NEW_PRE_FORMAL=0; NEW_SYSTEM_ARCHITECTURE=0; NEW_IDENTITY_CONSUMPTION=0",
+  "stop_reason": "R29_EXACT_MATCH_INFEASIBLE_HOLD_MECHANISM_UNRESOLVED_CONTINGENCY_STOP_FRESH_ANALYST_REVIEW",
+  "expected_next_action": "Fresh Evidence Analyst must canonicalize the reached HOLD_MECHANISM_UNRESOLVED contingency, including exact hold_reason/terminal_state/queue_state, before any continuation. Do not run suppression/intervention outcomes or rescue-tune the comparator.",
   "utility_request_created": null,
   "owner": "main"
 }

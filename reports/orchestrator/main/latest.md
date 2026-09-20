@@ -1,57 +1,43 @@
-# SparkBrain MAIN — 2026-09-21 06:15 JST
+# MAIN latest — R29 matched-load comparator feasibility
 
-- schema_version: `2`
-- generation_id: `MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7`
-- mode: `PRIMARY`
-- status: `COMPLETED`
-- Evidence Analyst: `EVA-20260921T055830+0900-R28-4D7A91C2@cde085b48dde724b2ac814585d7f0757bf16ef63`
-- supersedes MAIN: `MAIN-20260921T051321+0900-PRIMARY-FUNNEL21-HOLD-R27-6C2A91E4`
+Generation: `MAIN-20260921T071418+0900-PRIMARY-FUNNEL21-MECH-ASMMATCH-R29-8E4C21A7`  
+Analyst: `EVA-20260921T065846+0900-R29-7B2C91E4@de3de2fcf0f21aa33ebfe417d210df1e96889a90`  
+Stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`  
+Candidate: `CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01`  
+Layer / ceiling: `ARCHITECTURE_STUDY / MECHANISM`  
+Research branch/head: `research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921@b2547429823be29a2547419c80c40fb2138dfdc9`
 
 ## Result
 
-Fresh R28 assigns no current MAIN scientific object: `main_lane=LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`. Architecture remains active/queued `M0/S0` / `0/0`; PRE_FORMAL eligible=`0`, READY=`0`; FORMAL has no fresh one-way authority; `system_priority_exception.used=false`.
+Prospective comparator-feasibility terminal: **`EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE`**.
 
-R28's material delta is control-plane mechanism-supply semantics. SUB `SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4` recorded the fourth same-surface `NO_COHERENT_MECHANISM_TARGET` opportunity. Methodology and Analyst now canonicalize the repeated checks as **one persistent supply-stall episode**, not four independent validation events:
+Before opening any feasibility result, MAIN fixed an outcome-independent contract on the two source-defined DEV seeds `(501, 502)`: full selected Assembly prototype, exact same-cardinality aggregate baseline activity load, exact structural topology-load signature, deterministic sham/random-control definitions, and no intervention/suppression outcome in this cycle.
 
-- `no_target_episode_id=NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1`
-- `mechanism_surface_signature=main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d|evidence=5|MECHANISM=10|activeM=0|nonterminalM=CAND-H7-RESP-01|PF_READY=0`
-- same-episode checks=`4`
-- independent mechanism-landscape episodes=`1`
-- actual scientific selection window remains `MECHANISM / SYSTEM / SYSTEM = 1/3`
+Both fixed DEV seeds were valid and produced the same pre-intervention target:
 
-MAIN does not absorb SUB's newly allocated qualitative theory-backward search-space reframe and does not manufacture a MECHANISM candidate to improve the rolling ratio. `CAND-H7-RESP-01` remains the sole nonterminal hold: `HOLD / MECHANISM / preformal_eligible=false / NOT_READY / HOLD_MECHANISM_UNRESOLVED / NONTERMINAL_HOLD / NOT_QUEUED`.
+- Assembly `assembly-0001`
+- target units `[45, 56, 63]`
+- baseline prediction `outcome-0`
+- baseline similarity `0.9433062621147579`
+- baseline total spikes `9`
+- exact target load signature: probe spikes `3`, excitatory units `2`, incoming edges `18`, outgoing edges `15`, receptor-incoming edges `8`, summed two-hop incoming reach `43`, summed two-hop outgoing reach `55`
+- eligible nonmember pool `45`
+- all `14,190 = C(45,3)` same-cardinality comparator sets exhausted per seed
+- exact matched-load comparator found: **false** on seed 501 and seed 502
 
-Current prospective-object Funnel fields remain intentionally null because no MAIN object exists. No terminal predecessor, SUB no-target check, or episode metadata is promoted into a current scientific object.
+No `suppress_units`, `suppress_assembly`, or intervention outcome was executed. No rescue tuning or comparator redesign followed the result.
 
-## Independent reconciliation
+The preregistered Analyst contingency for this terminal is `HOLD_MECHANISM_UNRESOLVED_AND_STOP`. MAIN therefore stops for fresh Analyst review. Canonical Funnel dimensions are not invented post hoc: current Analyst-provided `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE` remain recorded until the fresh Analyst canonicalizes the reached contingency. `preformal_eligible=true` remains only in-principle eligibility; readiness remains `NOT_READY` and PRE_FORMAL is not authorized.
 
-- stable `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- active MAIN research branch: none
-- last completed research branch/head: `research/main-eligibility-timebase-partition-invariance-20260921@0430e98e241ae543a03bc750a3c977fe55d17bb7`
-- exact-head CI `35528770185`: `completed/success`
-- authoritative annotated `evidence/*` tags: `5`
-- `formal/*`: `0`; `sealed/*`: `0`; tag-based `freeze/*`: `0`
-- H5 STARTED/raw preserve: `058e90227cd48e1c10c6ecbaed01efdec1217d0e` / `ce5797eb584344db7a512e585506fb6c59ea475b`
-- C19-v4 STARTED/raw preserve: `3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e` / `d8fcc5216ff24940836972816cb0ec8f11e4ba06`
-- C19-R2 STARTED/raw preserve: `41df2685fe015140c8afa13e646554dd2e8c836b` / `3628694294a6eb33b18a0b42a56bb5ad77fe7b94`
-- rulesets: `0`
-- PR #148 / #149: open, unmerged
-- SUB latest: `SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4`, non-scientific and non-colliding
+## Workflow / integrity
 
-## Evidentiary accounting
+- Comparator-feasibility workflow `35541396714`: `completed / success`, exact head `b2547429823be29a2547419c80c40fb2138dfdc9`; artifact `10615006426`, digest `sha256:b19ba9fa5832c45beca9135e917acb18c0dee3aabe24127a1b0f83928bd0a52d`.
+- Exact-head CI `35541396705`: `completed / success`.
+- New scientific counts: FORMAL `0`; PRE_FORMAL `0`; MECHANISM Architecture observations `1`; SYSTEM Architecture observations `0`; identity consumption `0`.
+- Stable main unchanged; authoritative `evidence/*` count `5`; `formal/*`, `sealed/*`, `freeze/*` tag counts `0`.
+- PR #148 and #149 remain open, unmerged, mergeable.
 
-This MAIN run performed control-plane reconciliation only:
+Final lease: `COMPLETED`.  
+Stop reason: `R29_EXACT_MATCH_INFEASIBLE_HOLD_MECHANISM_UNRESOLVED_CONTINGENCY_STOP_FRESH_ANALYST_REVIEW`.
 
-- FORMAL scientific evidence: `0`
-- PRE_FORMAL development evidence: `0`
-- MECHANISM Architecture observations: `0`
-- SYSTEM Architecture observations: `0`
-- new identity consumption: `0`
-
-The last completed SYSTEM Architecture object remains terminal and is not re-executed or upgraded. Consumed identities and immutable control/preserve/evidence chains remain untouched.
-
-## Stop
-
-`ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT`
-
-MAIN remains intentionally scientifically idle. SUB owns the non-evidentiary qualitative search-space reframe. A later MAIN run may execute only a fresh Analyst-allocated prospective object with prospectively fixed Funnel-v2.1 fields and any required priority exception.
+Next action: fresh Evidence Analyst must canonicalize the reached unresolved-mechanism hold, including exact hold reason / terminal / queue dimensions, before any continuation. No same-object intervention outcome is authorized from this generation.
