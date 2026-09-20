@@ -1,37 +1,43 @@
-# SparkBrain Evidence Analyst — 2026-09-21 04:59 JST
+# SparkBrain Evidence Analyst — 2026-09-21 05:58 JST
 
 - schema_version: `2`
-- generation_id: `EVA-20260921T045900+0900-R27-8C4E21A7`
-- produced_at: `2026-09-21T04:59:00+09:00`
-- producer_run_id: `evidence-analyst-auto-20260921T045900+0900-R27-8C4E21A7`
+- generation_id: `EVA-20260921T055830+0900-R28-4D7A91C2`
+- produced_at: `2026-09-21T05:58:30+09:00`
+- producer_run_id: `evidence-analyst-auto-20260921T055830+0900-R28-4D7A91C2`
 - authority_scope: `EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION`
-- supersedes_generation_id: `EVA-20260921T040050+0900-R26-6A3F8C21`
+- supersedes_generation_id: `EVA-20260921T045900+0900-R27-8C4E21A7`
 
 ## Material update
 
-There is **no new scientific repository evidence and no new FORMAL evidence**. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative annotated `evidence/*` tags remain five; `formal/*`, `sealed/*`, and tag-based `freeze/*` remain zero. Existing STARTED/control/preserve/evidence chains and consumed identities are unchanged.
+There is **no new scientific repository evidence and no new FORMAL evidence**. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; the authoritative annotated `evidence/*` set remains exactly five; tag-based `formal/*`, `sealed/*`, and `freeze/*` remain zero. Control/STARTED and raw-preserve anchors are unchanged. The last completed lower-funnel research head remains `research/main-eligibility-timebase-partition-invariance-20260921@0430e98e241ae543a03bc750a3c977fe55d17bb7`; exact-head CI `35528770185` remains `completed/success`.
 
-The material delta is control-plane candidate-supply evidence. MAIN generation `MAIN-20260921T041632+0900-PRIMARY-FUNNEL21-HOLD-R26-5D8A31C4` consumed R26 and ended `COMPLETED` with no active object. It did not re-execute the terminal eligibility-timebase object. SUB then performed a fresh autonomous supply reassessment at 04:35 and again found no coherent safe useful nonduplicative mechanism discriminator. `SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91` therefore persisted `NO_COHERENT_MECHANISM_TARGET` and no-op'd without creating a candidate, research branch, workflow, or identity.
+The fresh delta is mechanism-supply control-plane evidence. MAIN `MAIN-20260921T051321+0900-PRIMARY-FUNNEL21-HOLD-R27-6C2A91E4` is intentionally idle and executed no science. SUB `SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4` independently re-fetched the stable source/evidence surface and persisted a **fourth consecutive opportunity-local `NO_COHERENT_MECHANISM_TARGET`** no-op. It created no candidate, research branch, workflow, or identity and therefore does not enter the candidate pool, conversion denominator, or theory-backward selection denominator.
 
-This is the **third consecutive opportunity-local no-target exception event**. It is not a candidate, does not count as theory-backward work, and remains outside candidate/conversion denominators. The last-three actual autonomous scientific selections therefore stay frozen at `MECHANISM / SYSTEM / SYSTEM = 1/3`.
+Fresh Methodology `METHCAL-20260921T052110+0900-R28-B6C3D8A1` materially clarifies how repeated no-target events should be interpreted. Under an essentially unchanged mechanism landscape, repeated checks are **one persistent mechanism-supply stall episode with multiple opportunity checks**, not independent confirmations that the policy is well-calibrated. The no-target quality floor remains valid. R28 prospectively asks for a machine-readable mechanism-surface signature / episode identifier and qualitative search-space reframe when the episode persists, without numeric cutoffs and without manufacturing a candidate. R28 reviewed the first three events; the fourth occurred afterwards, but the scientific/source surface did not materially change, so this Analyst records event 4 as the same episode rather than a new independent validation event.
 
-Fresh Methodology `METHCAL-20260921T041901+0900-R27-E4A1B73C` independently reviewed the first two consecutive no-target opportunities and kept the rule and separate opportunity observability. It explicitly warns that a frozen `1/3` ratio is not evidence of healthy ongoing mechanism supply. The third no-target event occurred after that audit, so it is reported as fresh supply-stall evidence pending the next normal Methodology pass; no new numeric exception threshold is inferred.
+Canonical episode observability is now:
+
+- `no_target_episode_id=NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1`
+- `mechanism_surface_signature=main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d|evidence=5|MECHANISM=10|activeM=0|nonterminalM=CAND-H7-RESP-01|PF_READY=0`
+- same-episode opportunity checks=`4`
+- independent mechanism-landscape episodes=`1`
+- actual scientific selection window remains `MECHANISM / SYSTEM / SYSTEM = 1/3`
 
 ## Four-layer funnel
 
-- DISCOVERY: `OPEN`, SUB-owned bounded NON_EVIDENTIARY supply.
-- ARCHITECTURE_STUDY: `EMPTY_HOLD`, active MECHANISM=`0`, SYSTEM=`0`, queued=`0/0`.
-- PRE_FORMAL: `EMPTY_HOLD`, eligible=`0`, READY=`0`.
-- FORMAL: `EMPTY_HOLD`, no fresh one-way authority.
+- DISCOVERY: `OPEN`, SUB-owned candidate supply.
+- ARCHITECTURE_STUDY: `EMPTY_HOLD`; active M=`0`, S=`0`; queued M=`0`, S=`0`.
+- PRE_FORMAL: `EMPTY_HOLD`; eligible=`0`; READY=`0`.
+- FORMAL: `EMPTY_HOLD`; no fresh one-way identity/STARTED/TEST/scorer/preserve authority.
 
 Canonical material portfolio remains `22`: MECHANISM=`10`, SYSTEM=`12`. Classification completeness remains `22/22`. Terminal states remain ACTIVE=`0`, NONTERMINAL_HOLD=`1`, TERMINAL_FOR_CURRENT_OBJECT=`21`. Viable executable MECHANISM=`0`.
 
 ## Candidate lifecycle snapshot
 
 1. `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` — HOLD / SYSTEM / false / N/A / HOLD_SYSTEM_TERMINAL / terminal.
-2. `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` — REJECT / MECHANISM / false / NOT_READY / no hold / terminal.
+2. `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` — REJECT / MECHANISM / false / NOT_READY / terminal.
 3. `CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01` — HOLD / SYSTEM / false / N/A / HOLD_SYSTEM_TERMINAL / terminal.
-4. `CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01` — REJECT / SYSTEM / false / N/A / no hold / terminal.
+4. `CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01` — REJECT / SYSTEM / false / N/A / terminal.
 5. `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01` — HOLD / SYSTEM / false / N/A / HOLD_SYSTEM_TERMINAL / terminal.
 6. `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` — HOLD / SYSTEM / false / N/A / HOLD_METHOD_LIMITED / terminal.
 7. `CAND-H7-RESP-01` — HOLD / MECHANISM / false / NOT_READY / HOLD_MECHANISM_UNRESOLVED / NONTERMINAL_HOLD.
@@ -51,65 +57,54 @@ Canonical material portfolio remains `22`: MECHANISM=`10`, SYSTEM=`12`. Classifi
 21. `CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01` — HOLD / SYSTEM / false / N/A / HOLD_SYSTEM_TERMINAL / terminal.
 22. `CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01` — HOLD / SYSTEM / false / N/A / HOLD_SYSTEM_TERMINAL / terminal.
 
-All 22 material candidates retain every mandatory Funnel-v2.1 field in durable state. All 10 MECHANISM candidates retain full `preformal_readiness` records.
+Every material candidate retains all mandatory Funnel-v2.1 fields in `state.json`. All ten MECHANISM records retain full `preformal_readiness` objects.
 
 ## Funnel metrics / theory-backward accounting
 
-No new scientific Discovery selection occurred. Last-three actual scientific Discovery disposition remains `REJECT=2 / HOLD_SYSTEM_TERMINAL=1`. Actual autonomous selection window remains `MECHANISM / SYSTEM / SYSTEM`, qualifying theory-backward share=`1/3`.
+No new scientific Discovery selection occurred, so recent actual Discovery disposition remains `REJECT=2 / HOLD_SYSTEM_TERMINAL=1`. Actual autonomous selection window remains `MECHANISM / SYSTEM / SYSTEM`, qualifying share=`1/3`. No-target checks now total `4`, consecutive=`4`, but they are all recorded under one unchanged-surface episode and remain outside candidate/conversion denominators.
 
-No-target supply events now total `3`, consecutive opportunity-local no-target events=`3`. They are separately observable, outside the candidate/conversion denominator, and do not count as MECHANISM work. The newest event explicitly re-fetched stable main/evidence/Analyst state and found no material candidate surface delta.
+Architecture active/queued remains M=`0/0`, S=`0/0`. Historical Architecture terminal dispositions remain `HOLD_SYSTEM_TERMINAL=5`, `HOLD_METHOD_LIMITED=1`, `HOLD_CONTRACT_AMBIGUITY=1`, `REJECT=0`. PRE_FORMAL eligible=`0`, READY=`0`; viable MECHANISM=`0`. Recent completed MAIN Architecture cycles remain SYSTEM=`5`, MECHANISM=`0`; durable comparable wall-clock is unavailable and CI duration is not used as a research-time proxy. SYSTEM-over-comparable-MECHANISM exception count remains `0`.
 
-Architecture active/queued remains `M0/S0` and `0/0`. Historical Architecture terminal dispositions remain `HOLD_SYSTEM_TERMINAL=5`, `HOLD_METHOD_LIMITED=1`, `HOLD_CONTRACT_AMBIGUITY=1`, `REJECT=0`. PRE_FORMAL eligible=`0`, READY=`0`; viable executable MECHANISM=`0`. Recent completed MAIN Architecture cycles remain SYSTEM=`5`, MECHANISM=`0`; durable comparative research wall-clock is unavailable. SYSTEM-over-comparable-MECHANISM exception count remains `0`.
+## Literature / Independent Audit / Methodology / Steward
 
-## Literature / Audit / Methodology / Steward
+Literature remains `LIT-20260921T032811+0900-R16-ELIGIBILITY-CLOCK-2F8C71A4`: eligibility call-count dependence is a SYSTEM clock/reproducibility issue, not mechanism novelty; elapsed-time and timestamp-lazy eligibility are ordinary alternatives. It does not reopen any terminal current object.
 
-Literature remains `LIT-20260921T032811+0900-R16-ELIGIBILITY-CLOCK-2F8C71A4`. It treats the completed eligibility call-count result as ordinary clock/reproducibility semantics, not mechanism novelty. Continuous-time elapsed-duration decay and timestamp-lazy event-driven eligibility remain ordinary alternatives when model/event time is intended. The public semantic-clock contract is still unspecified.
+Independent Audit remains `AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9`. C19-v4's immutable registered PASS remains valid for its exact narrow contrast, while programme-level SparkBrain-specific novelty remains `REDUCIBLE` because authoritative C19-R2's fixed seven-state FSA is the decisive ordinary reduction. No consumed result is rerun, rescored, or relabeled.
 
-Independent Audit remains `AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9`. C19-v4's immutable registered PASS remains valid only for its exact narrow registered contrast; programme-level SparkBrain-specific novelty interpretation remains `REDUCIBLE` because authoritative C19-R2's fixed seven-state FSA is the decisive ordinary reduction. No consumed identity is reopened, rescored, or relabeled.
+Methodology R28 is `WELL_CALIBRATED` with a material calibration clarification: repeated no-target checks under unchanged mechanism surface are one stall episode, not independent policy validations. Persist surface/episode observability and qualitatively broaden/reframe the theory-backward search space; do not infer a numeric threshold and do not lower the candidate quality floor.
 
-Methodology is now `METHCAL-20260921T041901+0900-R27-E4A1B73C`, overall `WELL_CALIBRATED`, with a material observability update: repeated no-target use is `KEEP`, no-target opportunity sequence visibility is `KEEP`, and the frozen 1/3 selection ratio must not be presented alone as healthy mechanism supply. R27 observed two consecutive events; the third event is newer and awaits a normal subsequent calibration pass.
-
-Repository Steward remains `STEWARD-20260921T015217+0900-G2-7D3A91C4`, governance advisory only. Independent checks still show rulesets=`0`, PR #148/#149 open and unmerged, no immutable-ref incident, and no main-promotion candidate.
+Repository Steward `STEWARD-20260921T015217+0900-G2-7D3A91C4` is governance advisory only. Its repository reconciliation remains useful for unchanged evidence/freeze/ruleset state but it predates the later Utility CAS closure; current Utility ref is independently re-fetched and IDLE. Rulesets remain zero; PR #148/#149 remain open and unmerged. No immutable-ref incident or main-promotion candidate is observed.
 
 ## MAIN / SUB allocation
 
-`main_lane = LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`
+`main_lane=LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`
 
-`sub_lane = REASSESS_THEORY_BACKWARD_MECHANISM_IF_COHERENT_ELSE_FRESH_NO_TARGET_NOOP`
+`sub_lane=THEORY_BACKWARD_SEARCH_SPACE_REFRAME_THEN_SELECT_IF_COHERENT_ELSE_EPISODE_NOOP`
 
-`sub_fallback = NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET`
+`sub_fallback=NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET`
 
-`system_priority_exception.used = false`.
+`system_priority_exception.used=false`
 
-MAIN remains intentionally scientifically idle. SUB must reassess theory-backward supply on every safe opportunity and may choose a MECHANISM Discovery only when a genuinely fresh bounded mechanism question, ordinary reduction and falsifier can be fixed prospectively. Reusing the exception mechanically is forbidden; manufacturing a mechanism-looking API/config question is also forbidden.
+MAIN remains intentional scientific idle. SUB's next useful action is no longer to mechanically repeat the same local candidate-surface scan. It should perform a qualitative theory-backward search-space reframe across genuinely distinct mechanism questions while preserving all ordinary-reduction and falsifier requirements. That reframe is NON_EVIDENTIARY and is not itself a candidate. Scientific Discovery may proceed only if it yields a genuinely fresh current object with a prospectively fixed mechanism-level question, ordinary reduction and falsifier; otherwise the next no-target record stays in the same episode unless the mechanism surface materially changes.
 
 ## Top 3 / GO-STOP
 
-1. SUB — MECHANISM — **STOP on current evidence: `NO_COHERENT_MECHANISM_TARGET`; conditional GO only after a genuinely fresh coherent object appears.**
-2. MAIN — no active ceiling — `STOP_NO_CURRENT_MAIN_OBJECT`; intentional scientific idle.
-3. H7 native responsibility-sensitive mechanism watch — MECHANISM — `STOP_UNTIL_FRESH_NATIVE_OBJECT`.
+1. `SUB qualitative theory-backward search-space reframe under current no-target episode` — no current claim ceiling; **GO_NON_EVIDENTIARY_SEARCH_SPACE_REFRAME_ONLY**. Scientific MECHANISM Discovery is conditional GO only after a fresh coherent object is prospectively bound.
+2. `MAIN intentional scientific idle` — `STOP_NO_CURRENT_MAIN_OBJECT`.
+3. `H7 native responsibility-sensitive mechanism watch` — MECHANISM — `STOP_UNTIL_FRESH_NATIVE_OBJECT`.
 
-There is no current MAIN prospective contingency tree because no MAIN object is allocated. Any future MAIN allocation must be prospectively typed before outcome. A future SYSTEM allocation while a comparable executable/informative MECHANISM exists requires a machine-readable priority exception before execution. Any first `MECHANISM + preformal_eligible=true + READY` object returns to fresh Analyst review before PRE_FORMAL execution. FORMAL remains stopped until a fresh one-way identity/STARTED/TEST/scorer/preserve authority chain exists.
+Prospective contingency: same-surface no-target increments the current episode check count only; a material main/evidence/mechanism-surface delta starts a new episode/signature. A fresh MECHANISM object must bind ID/question/claim ceiling/reduction/falsifier/API semantics before execution. Any need to redesign candidate, comparator, metric, threshold, support rule, resource contract, runtime/model, identity or readiness after outcome knowledge forces STOP + fresh object. PRE_FORMAL remains gated by MECHANISM + eligible + READY plus fresh Analyst review. FORMAL remains STOP until a fresh one-way identity/STARTED/TEST/scorer/preserve chain is independently bound.
 
-## Utility / identities / blockers
+## Integrity / consumed identities / blockers
 
-No Utility request is created. `ops/utility-orchestrator-requests` remains at its terminal/IDLE state; MAIN/SUB-owned work must not be duplicated through Utility.
+Consumed/no-retry identities are unchanged: `c19-external-v2-official-v4`, C19-R1 revision-authority official-v1/v2, `c19-r2-fsa-state-tracker-official-v1`, `pd01-long-history-fading-memory-official-v1`, `ni01-no-ignition-selective-prediction-official-v1`, `h5-event-routing-work-reduction-official-v1`. New identity consumption=`0`.
 
-Consumed/no-retry identities remain: `c19-external-v2-official-v4`; C19-R1 revision-authority official-v1/v2; `c19-r2-fsa-state-tracker-official-v1`; `pd01-long-history-fading-memory-official-v1`; `ni01-no-ignition-selective-prediction-official-v1`; `h5-event-routing-work-reduction-official-v1`. New identity consumption=`0`.
+Current blockers: no coherent executable central MECHANISM; H7 has no fresh native responsibility-sensitive object; PRE_FORMAL eligible=`0`; PRE_FORMAL READY=`0`; no fresh FORMAL one-way authority; eligibility public semantic clock remains unspecified; and mechanism supply is in one persistent no-target stall episode with four checks under the same scientific surface.
 
-Programme blockers remain: no coherent executable central MECHANISM; H7 has no fresh native responsibility object; PRE_FORMAL eligible=`0`; PRE_FORMAL READY=`0`; no fresh FORMAL one-way authority. A line-local reproducibility blocker also remains: eligibility's public semantic clock is unspecified, so `eligibility_decay` must not be interpreted as elapsed/biological time without a fresh explicit contract. Mechanism-supply durability is now an explicit watchpoint after three consecutive no-target opportunities, but it is not a reason to relax the quality floor.
+Utility request: **none**. Current Utility assignment is IDLE; Utility must not be used to manufacture MECHANISM candidates or bypass MAIN/SUB authority.
 
-## Inputs / freshness
+## Generation / inputs / persistence target
 
-- Control strategic prior: `CTRL-20260921T025500+0900-R19-9D2C4A71@dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4`
-- MAIN latest: `MAIN-20260921T041632+0900-PRIMARY-FUNNEL21-HOLD-R26-5D8A31C4@99a4cc6e8f0212c1745002a5d2d3873bfee0dc55`
-- MAIN last scientific primary: `MAIN-20260921T031700+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGPART-R25-7A4C91E2`; contract `37eb6f1985d77d9caac5da51ce1348ed5c6a9228`; exact head `0430e98e241ae543a03bc750a3c977fe55d17bb7`; CI `35528770185`
-- SUB latest: `SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91@d55b5adb43899a7dc5edc76008e855802293f5bb`; last scientific selection remains `SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2`
-- Literature: `LIT-20260921T032811+0900-R16-ELIGIBILITY-CLOCK-2F8C71A4@84bb39f359404d8f94a4007116d5a0cad929eeb8`
-- Independent Audit: `AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9`
-- Methodology: `METHCAL-20260921T041901+0900-R27-E4A1B73C@44869d4e1d031d91581becdde878ab9b7a62d0e2`
-- Repository Steward: `STEWARD-20260921T015217+0900-G2-7D3A91C4@4f959999d546a58a7862205ca06623654fb004fe`
-- Utility branch: `ops/utility-orchestrator-requests@472726e572a854fe3577e2733bb1de37c05df1fa`
-- previous Evidence Analyst: `EVA-20260921T040050+0900-R26-6A3F8C21@455522cde0a7e5eae1d2b04d779a5783f6351585`
+Inputs: Control `CTRL-20260921T025500+0900-R19-9D2C4A71@dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4`; MAIN `MAIN-20260921T051321+0900-PRIMARY-FUNNEL21-HOLD-R27-6C2A91E4@48773f14ef96832103fa3e84b510a92d93c0c5c6`; last scientific MAIN `MAIN-20260921T031700+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGPART-R25-7A4C91E2`; SUB `SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4@64f77557e4c5597791450c407705e7b3659fce62`; Literature R16 / Audit R3 at `84bb39f359404d8f94a4007116d5a0cad929eeb8`; Methodology `METHCAL-20260921T052110+0900-R28-B6C3D8A1@d398b9a4af5dab1e6644714c476809a26f70ca88`; Steward G2 `@4f959999d546a58a7862205ca06623654fb004fe`; Utility `@472726e572a854fe3577e2733bb1de37c05df1fa`; previous Analyst `EVA-20260921T045900+0900-R27-8C4E21A7@28021769b1b9211921356a3eb2a2bc36fcb8cfbe`.
 
-Immediately before this persistence, the Analyst branch, orchestrator mailbox and Methodology mailbox were re-fetched. This generation performs no experiment, workflow dispatch, one-way identity consumption, research PR merge, immutable evidence mutation, force-push, or scheduler-definition change.
+Persistence target is only `ops/evidence-analyst-handoff` designated `latest.md`, `state.json`, and append-only `history/2026-09-21/0558.md`, in one atomic fast-forward commit. No scientific execution, workflow dispatch, identity consumption, research PR merge, immutable evidence/control/preserve mutation, force-push, or scheduler-definition change is authorized or performed.
