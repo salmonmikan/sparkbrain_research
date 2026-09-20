@@ -2,7 +2,12 @@ from __future__ import annotations
 
 import pytest
 
-from sparkbrain.v05 import ActivityPattern, AssemblyConfig, TemporalAssemblyMemory, pattern_similarity
+from sparkbrain.v05 import (
+    ActivityPattern,
+    AssemblyConfig,
+    TemporalAssemblyMemory,
+    pattern_similarity,
+)
 
 
 def _pattern(name: str, ordered: tuple[int, ...]) -> ActivityPattern:
