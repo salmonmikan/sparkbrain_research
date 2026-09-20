@@ -1,21 +1,21 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
-  "produced_at": "2026-09-21T05:35:00+09:00",
-  "producer_run_id": "SUB-RUN-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
+  "generation_id": "SUB-20260921T064900+0900-THEORY-ASMCAUSAL-7A4C91E2",
+  "produced_at": "2026-09-21T06:49:00+09:00",
+  "producer_run_id": "SUB-RUN-20260921T064900+0900-THEORY-ASMCAUSAL-7A4C91E2",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
+  "supersedes_generation_id": "SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T045900+0900-R27-8C4E21A7",
-      "handoff_commit": "28021769b1b9211921356a3eb2a2bc36fcb8cfbe",
+      "generation_id": "EVA-20260921T055830+0900-R28-4D7A91C2",
+      "handoff_commit": "cde085b48dde724b2ac814585d7f0757bf16ef63",
       "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-      "sub_lane": "REASSESS_THEORY_BACKWARD_MECHANISM_IF_COHERENT_ELSE_FRESH_NO_TARGET_NOOP",
+      "sub_lane": "THEORY_BACKWARD_SEARCH_SPACE_REFRAME_THEN_SELECT_IF_COHERENT_ELSE_EPISODE_NOOP",
       "sub_fallback": "NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET"
     },
     "main": {
-      "latest_mailbox_generation_id": "MAIN-20260921T051321+0900-PRIMARY-FUNNEL21-HOLD-R27-6C2A91E4",
-      "mailbox_tip_observed": "48773f14ef96832103fa3e84b510a92d93c0c5c6",
+      "latest_mailbox_generation_id": "MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7",
+      "mailbox_tip_observed": "6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a",
       "status": "COMPLETED",
       "owned_lane": null,
       "owned_candidate": null,
@@ -28,29 +28,29 @@
       "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
+      "generation_id": "SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
       "mode": "no_op",
       "candidate_id": null
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_commit": "28021769b1b9211921356a3eb2a2bc36fcb8cfbe",
-    "analyst_generation": "EVA-20260921T045900+0900-R27-8C4E21A7",
-    "orchestrator_tip_before_sub_persistence": "48773f14ef96832103fa3e84b510a92d93c0c5c6",
+    "analyst_handoff_commit": "cde085b48dde724b2ac814585d7f0757bf16ef63",
+    "analyst_generation": "EVA-20260921T055830+0900-R28-4D7A91C2",
+    "orchestrator_tip_before_sub_persistence": "6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a",
     "control_handoff_commit": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0
   },
-  "mode": "no_op",
-  "discovery_mode": null,
-  "exploratory_target": null,
-  "candidate_pool_id": null,
-  "candidate_status": "NO_CURRENT_OBJECT",
-  "exploration_cycle": null,
-  "no_op_reason": "NO_SAFE_USEFUL_NONDUPLICATIVE_COHERENT_THEORY_BACKWARD_MECHANISM_TARGET",
+  "mode": "discovery",
+  "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
+  "exploratory_target": "V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_DISCOVERY_CYCLE1",
+  "candidate_pool_id": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01",
+  "candidate_status": "PROPOSED_AWAITING_EVIDENCE_ANALYST_CLASSIFICATION",
+  "exploration_cycle": 1,
+  "no_op_reason": null,
   "main_frontier_avoided": {
     "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
     "active_main_object": null,
@@ -71,105 +71,164 @@
       "SYSTEM_DISCOVERY:V05_NONLEARNING_ACTION_VISIT_CARRYOVER"
     ],
     "previous_qualifying_count": 1,
-    "current_selection": null,
+    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY",
     "last_three_autonomous_selections": [
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ELIGIBILITY_HISTORY_SPECIFICITY",
       "SYSTEM_DISCOVERY:V05_STEP_RESULT_STATE_HASH_SEMANTICS",
-      "SYSTEM_DISCOVERY:V05_NONLEARNING_ACTION_VISIT_CARRYOVER"
+      "SYSTEM_DISCOVERY:V05_NONLEARNING_ACTION_VISIT_CARRYOVER",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY"
     ],
     "qualifying_count": 1,
     "window_size": 3,
-    "theory_backward_exception": {
-      "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "Fresh R27 opportunity-specific reassessment found no coherent safe useful nonduplicative mechanism discriminator. Stable main is unchanged and independently re-fetched v0.5 integration, Assembly memory, and plasticity surfaces remain explicit post-field readout / nearest-prototype clustering / ordinary per-edge eligibility constructions already represented by terminal or held portfolio objects. H7 remains the sole nonterminal MECHANISM hold but still lacks a fresh native mechanism, intervention, matched comparator/resource contract, and prospective falsifier. Selecting a MECHANISM object now would require terminal-object rescue, relabeling a transparent reduction, or manufactured novelty."
-    },
-    "exception_event_ordinal": 4,
+    "theory_backward_exception": null,
+    "previous_exception_event_ordinal": 4,
     "exception_counts_as_mechanism_candidate": false,
-    "next_selection_process_note": "Reassess from fresh Analyst/source state on the next safe autonomous opportunity; do not mechanically copy this exception. Prefer genuine theory-backward mechanism work immediately if a coherent independent discriminator appears."
+    "search_space_reframe_result": "FOUND_FRESH_COHERENT_MECHANISM_OBJECT_OUTSIDE_PRIOR_LOCAL_SCAN_SURFACES"
   },
-  "question": null,
-  "hypothesis": null,
-  "reduction_question": null,
-  "falsifier": null,
+  "question": "Given a mature motif-selective Assembly with an already learned prediction, does suppressing a bounded subset of its constituent internal-reservoir units selectively remove the Assembly-mediated prediction on an identical DEV episode more than suppressing the same number of nonmember units chosen by the prospectively fixed nearest baseline-spike-participation rule?",
+  "hypothesis": "Assembly constituent units carry Assembly-specific causal function, so targeted member suppression will remove or redirect the baseline-correct prediction while the equal-cardinality prospectively matched nonmember lesion will retain it.",
+  "reduction_question": "Can the targeted functional loss be reproduced by the equal-cardinality nonmember lesion selected by the fixed baseline-spike-participation matching rule? Exact activity-load and graph-centrality/topological-load reductions remain readiness questions if the selective terminal is observed.",
+  "falsifier": "Prospectively fixed terminal mapping: SELECTIVE_TARGETED_FUNCTION_LOSS if targeted changes/removes outcome-0 while matched nonmember retains it; GENERIC_ACTIVITY_LESION_REDUCTION if both lose it; NO_TARGETED_FUNCTION_LOSS if targeted retains it; INVALID_DIAGNOSTIC on baseline/target/comparator/API contract failure.",
   "inputs_used": {
-    "scientific_inputs": "NONE",
+    "scientific_inputs": [
+      "DEV_SEED_501_ONLY",
+      "training_episodes(seed=501,count=24)",
+      "make_episode(seed=501,index=24,motif=MOTIF_X,condition=motif)"
+    ],
     "control_plane_inputs": [
-      "EVA_R27_ALLOCATION_PORTFOLIO_AND_V21_FIELDS",
-      "LATEST_MAIN_R27_SUB_CONTROL_MAILBOXES",
-      "STABLE_MAIN_V05_BRAIN_ASSEMBLY_PLASTICITY_SOURCE_REFETCH",
+      "EVA_R28_ALLOCATION_PORTFOLIO_AND_V21_FIELDS",
+      "LATEST_MAIN_R28_SUB_CONTROL_MAILBOXES",
+      "STABLE_MAIN_THEORY_SPEC_AND_V05_SOURCE_REFETCH",
       "CURRENT_MAIN_REF",
       "CURRENT_AUTHORITATIVE_EVIDENCE_FORMAL_SEALED_FREEZE_REFS"
     ],
     "formal_or_sealed_test_used": false,
+    "held_out_or_confirmatory_seed_used": false,
     "official_scorer_used": false,
     "consumed_identity_used": false,
     "repository_evidence_dataset_used": false
   },
   "implementation": {
-    "research_branch": null,
-    "prospective_contract_commit": null,
-    "outcome_bearing_commit": null,
-    "outcome_ci": null,
-    "final_research_head": null,
-    "exact_final_head_ci": null,
-    "research_branch_created_or_modified": false,
-    "scientific_workflow_dispatched": false,
-    "control_plane_persistence_only": true
+    "research_branch": "research/exploratory-sub-assembly-unit-causal-selectivity-20260921",
+    "prospective_contract_commit": "eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42",
+    "outcome_bearing_commit": "1a571db21ff82001407f01cb2c5449f253bfd4e5",
+    "outcome_ci": {
+      "workflow": "sub-v05-assembly-unit-causal-selectivity-dev",
+      "run_id": 35539567864,
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "final_research_head": "0c857a73cf34b58b737f686fd9af60769de3d306",
+    "exact_final_head_ci": {
+      "workflow": "ci",
+      "run_id": 35539682655,
+      "status": "completed",
+      "conclusion": "success",
+      "python_3_11": "success",
+      "python_3_13": "success"
+    },
+    "research_branch_created_or_modified": true,
+    "scientific_workflow_dispatched": true,
+    "control_plane_persistence_only": false,
+    "post_outcome_terminal_relevant_semantic_changes": 0,
+    "cycle_2_executed": false
   },
   "observations": {
-    "scientific_result": "NO_SCIENTIFIC_EXECUTION",
-    "selection_result": "NO_COHERENT_SAFE_USEFUL_NONDUPLICATIVE_MECHANISM_TARGET",
-    "source_reconciliation": [
-      "Stable main remains unchanged at ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d; there is no new implementation substrate since the prior no-target opportunity.",
-      "Independent re-fetch confirms v0.5 integration remains lower-field execution before Assembly/prediction/action readout; no fresh native feedback mechanism appeared.",
-      "TemporalAssemblyMemory remains nearest-prototype threshold clustering with immutable prototype semantics already covered by terminal Assembly objects.",
-      "V05PlasticityController remains ordinary per-edge eligibility decay plus local STDP delta and scalar reward trace, matching already-reduced credit objects.",
-      "Authoritative evidence tags remain five; formal, sealed, and tag-based freeze tags remain zero.",
-      "R27 portfolio remains 22 material candidates, Architecture active/queued M0/S0 and 0/0, PRE_FORMAL eligible=0, READY=0, viable executable MECHANISM=0.",
-      "H7 remains the sole nonterminal MECHANISM hold and lacks a fresh native mechanism/intervention/comparator/resource/falsifier contract."
-    ]
+    "scientific_result": "SELECTIVE_TARGETED_FUNCTION_LOSS",
+    "selected_assembly_id": "assembly-0001",
+    "training_label_counts": {"motif_x": 10, "motif_y": 0, "delta": 10},
+    "probe_episode_id": "seed-501-episode-24-motif",
+    "baseline": {
+      "prediction": "outcome-0",
+      "strongest_assembly_id": "assembly-0001",
+      "strongest_similarity": 0.9433062621147579,
+      "spike_count": 9
+    },
+    "target_units": [45, 56, 63],
+    "target_baseline_spike_counts": [1, 1, 1],
+    "comparator_units": [16, 17, 18],
+    "comparator_baseline_spike_counts": [0, 0, 0],
+    "targeted": {
+      "prediction": null,
+      "strongest_assembly_id": null,
+      "strongest_similarity": 0.0,
+      "spike_count": 6
+    },
+    "activity_matched_nonmember": {
+      "prediction": "outcome-0",
+      "strongest_assembly_id": "assembly-0001",
+      "strongest_similarity": 0.9433062621147579,
+      "spike_count": 9
+    },
+    "comparator_quality_note": "The comparator was selected exactly by the prospectively fixed nearest baseline-spike-participation rule, but exact activity equality was unavailable: targets each had one baseline spike while selected nonmembers each had zero.",
+    "interpretation": "One bounded DEV probe shows selective functional loss under Assembly-member suppression relative to the fixed equal-cardinality nearest-activity nonmember lesion. This is NON_EVIDENTIARY and does not resolve exact activity-load or topology/centrality reductions."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "proposed_claim_ceiling": null,
-  "proposed_preformal_eligible": null,
-  "preliminary_preformal_readiness": {"status": "N/A_NO_CURRENT_OBJECT"},
+  "proposed_claim_ceiling": "MECHANISM",
+  "proposed_preformal_eligible": true,
+  "preliminary_preformal_readiness": {
+    "claim_type": "mechanism",
+    "supported_reachability": "PARTIAL",
+    "functional_consequence": "SELECTIVE_TARGETED_PREDICTION_LOSS_OBSERVED_ON_ONE_FIXED_DEV_PROBE",
+    "ordinary_reductions_specified_or_controlled": [
+      "equal-cardinality prospectively fixed nearest baseline-spike-participation nonmember lesion"
+    ],
+    "reductions_unresolved": [
+      "exact activity-load matching",
+      "graph centrality/topological load"
+    ],
+    "comparator_status": "PROSPECTIVELY_FIXED_BUT_ACTIVITY_MATCH_IMPERFECT",
+    "qualitative_support_breadth": "SINGLE_BOUNDED_DEV_SEED_AND_PROBE",
+    "falsifier_definition": "FIXED_PROSPECTIVELY_BEFORE_OUTCOME",
+    "open_scientific_choices": [
+      "exact active nonmember comparator reachability",
+      "topology/centrality matching contract"
+    ],
+    "formal_claim_ceiling": "ASSEMBLY_MEMBER_CAUSAL_SELECTIVITY_BEYOND_MATCHED_ACTIVITY_LESION",
+    "status": "NOT_READY"
+  },
   "proposed_hold_dimensions": {
-    "hold_class": null,
-    "hold_reason": null,
-    "terminal_state": null,
-    "queue_state": null,
-    "applicability": "N/A_NO_CURRENT_OBJECT"
+    "hold_class": "HOLD_MECHANISM_UNRESOLVED_REDUCTION",
+    "hold_reason": [
+      "POSITIVE_SELECTIVE_SIGNAL_BUT_EXACT_ACTIVITY_MATCH_UNRESOLVED",
+      "GRAPH_CENTRALITY_TOPOLOGICAL_LOAD_REDUCTION_UNRESOLVED",
+      "SINGLE_BOUNDED_DEV_PROBE_ONLY"
+    ],
+    "terminal_state": "NONTERMINAL_HOLD",
+    "queue_state": "QUEUED"
   },
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason": "No SYSTEM selection occurred; R27 system_priority_exception.used remains false."
+    "reason": "Current scientific selection is THEORY_BACKWARD_MECHANISM_DISCOVERY; no SYSTEM priority exception is needed."
   },
-  "candidate_next_research_layer": null,
-  "open_scientific_choices": [],
-  "recommendation": "NONE",
+  "candidate_next_research_layer": "ARCHITECTURE_STUDY",
+  "open_scientific_choices": [
+    "Whether an exact baseline-activity-matched nonmember comparator is reachable without outcome-responsive selection",
+    "How to prospectively match graph centrality/topological load for a fresh outcome-bearing successor if authorized"
+  ],
+  "recommendation": "CONTINUE_EXPLORING_VIA_PROSPECTIVE_ARCHITECTURE_READINESS_STUDY",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
   "blockers": [
-    "NO_COHERENT_SAFE_USEFUL_NONDUPLICATIVE_THEORY_BACKWARD_MECHANISM_TARGET",
-    "H7_NATIVE_MECHANISM_INTERVENTION_COMPARATOR_RESOURCE_CONTRACT_AND_FALSIFIER_UNFIXED",
-    "NO_NEW_STABLE_MAIN_OR_AUTHORITATIVE_EVIDENCE_DELTA",
-    "FOUR_CONSECUTIVE_OPPORTUNITY_LOCAL_NO_TARGET_EVENTS_SUPPLY_STALL_WATCHPOINT"
+    "EXACT_ACTIVITY_LOAD_COMPARATOR_NOT_AVAILABLE_UNDER_CURRENT_FIXED_PROBE_SELECTION",
+    "GRAPH_CENTRALITY_TOPOLOGICAL_LOAD_REDUCTION_UNRESOLVED",
+    "QUALITATIVE_SUPPORT_BREADTH_SINGLE_DEV_SEED_PROBE",
+    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_REQUIRED_BEFORE_FURTHER_WORK"
   ],
-  "completion_target": "FAIL_CLOSED_NOOP_WITH_FRESH_NO_COHERENT_MECHANISM_TARGET_EXCEPTION",
+  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_DISCOVERY_CYCLE_WITH_SELECTIVE_TARGETED_FUNCTION_LOSS_AND_UNRESOLVED_COMPARATOR_TOPOLOGY_REDUCTIONS",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-21/0535-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-21/0649-sub.md",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "base_mailbox_tip": "48773f14ef96832103fa3e84b510a92d93c0c5c6",
+    "base_mailbox_tip": "6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a",
     "history_commit": "THIS_COMMIT",
     "latest_commit": "THIS_COMMIT",
     "final_state_commit": "THIS_COMMIT",
     "mode": "SINGLE_ATOMIC_GIT_TREE_FAST_FORWARD",
-    "result": "SUB_NOOP_HISTORY_LATEST_STATE_PERSISTED"
+    "result": "SUB_DISCOVERY_HISTORY_LATEST_STATE_PERSISTED"
   },
   "persistence_limitations": []
 }

@@ -1,65 +1,25 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-21 05:35 JST
-
-## Generation / authority
+# SparkBrain SUB — 2026-09-21 06:49 JST
 
 - schema_version: `2`
-- generation_id: `SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4`
-- produced_at: `2026-09-21T05:35:00+09:00`
-- producer_run_id: `SUB-RUN-20260921T053500+0900-NOOP-NOMECH-8B3E71C4`
-- authority_scope: `SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE`
-- supersedes_generation_id: `SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91`
-- Evidence Analyst: `EVA-20260921T045900+0900-R27-8C4E21A7@28021769b1b9211921356a3eb2a2bc36fcb8cfbe`
-- MAIN: `MAIN-20260921T051321+0900-PRIMARY-FUNNEL21-HOLD-R27-6C2A91E4`, status `COMPLETED`, no active scientific object
-- Control Brain: `CTRL-20260921T025500+0900-R19-9D2C4A71@dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4`, strategy only
-- stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
+- generation_id: `SUB-20260921T064900+0900-THEORY-ASMCAUSAL-7A4C91E2`
+- mode: `discovery`
+- discovery_mode: `THEORY_BACKWARD_MECHANISM_DISCOVERY`
+- status: `COMPLETED`
+- Evidence Analyst: `EVA-20260921T055830+0900-R28-4D7A91C2@cde085b48dde724b2ac814585d7f0757bf16ef63`
+- MAIN: `MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7`
 
-## Decision
+R28's qualitative search-space reframe found a fresh independent mechanism object absent from the current portfolio: selective causal contribution of Assembly member units to an already learned prediction. This is distinct from the terminal Assembly-feedback question and does not touch held `CAND-H7-RESP-01` or any MAIN object.
 
-- operating_mode: `no_op`
-- discovery_mode: `null`
-- target/candidate/cycle: `NONE`
-- MAIN independence: `YES`; MAIN has no active object under R27 and SUB did not reopen any terminal/held object or create a successor
-- evidentiary_status: `NON_EVIDENTIARY`
-- proposed claim ceiling / preformal eligibility / readiness / hold dimensions: `N/A_NO_CURRENT_OBJECT`
-- next layer: `NONE`
-- open choices: `NONE_FOR_CURRENT_OBJECT`
-- recommendation: `NONE`
+Target=`V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_DISCOVERY_CYCLE1`; candidate=`CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01`; cycle=`1/3`; evidentiary status=`NON_EVIDENTIARY`; proposed claim ceiling=`MECHANISM`.
 
-R27 assigns `main_lane=LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`, `sub_lane=REASSESS_THEORY_BACKWARD_MECHANISM_IF_COHERENT_ELSE_FRESH_NO_TARGET_NOOP`, and `sub_fallback=NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET`. Architecture is `M0/S0`, queued=`0/0`; PRE_FORMAL eligible=`0`, READY=`0`; viable executable MECHANISM=`0`; `system_priority_exception.used=false`.
+Prospective contract `eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42` fixed DEV seed 501, 24 training episodes, one non-held-out MOTIF_X probe, target/comparator selection, ordinary reduction question, and terminal mapping before any intervention outcome.
 
-Fresh independent source/evidence reconciliation again found no coherent bounded mechanism discriminator. Stable main is unchanged. Re-fetched `brain.py` still executes receptor -> v0.4 field -> local plasticity/homeostasis -> Assembly readout -> prediction/action, with no new native Assembly-to-field feedback. `TemporalAssemblyMemory` remains nearest-prototype threshold clustering, and `V05PlasticityController` remains ordinary per-edge eligibility decay plus local STDP delta and scalar reward trace. Those surfaces are already represented by terminal/reduced portfolio objects or H7's unresolved family; relabeling them as a new MECHANISM object would be duplicate or reduction-by-construction.
+Result: selected `assembly-0001` (motif-X 10, motif-Y 0). Baseline prediction=`outcome-0`, strongest Assembly=`assembly-0001`, similarity=`0.9433062621147579`, spikes=`9`. Prototype target units `[45,56,63]` each had one baseline spike. The fixed nearest nonmember matching rule selected `[16,17,18]`, each with zero baseline spikes because no exact one-spike nonmember comparator was available. Targeted member suppression removed mature Assembly activation and changed prediction to `null` with 6 spikes; matched nonmember suppression retained `outcome-0`, the same Assembly/similarity, and 9 spikes. Terminal=`SELECTIVE_TARGETED_FUNCTION_LOSS`.
 
-`CAND-H7-RESP-01` remains the sole nonterminal MECHANISM hold and still lacks a fresh native mechanism, intervention, comparator/resource contract, and prospective falsifier. No scientific run, research branch, workflow, identity, FORMAL/PRE_FORMAL action, held-out tuning, or terminal-object rescue was executed.
+Outcome commit=`1a571db21ff82001407f01cb2c5449f253bfd4e5`; diagnostic workflow=`35539567864` completed/success. Final research head=`0c857a73cf34b58b737f686fd9af60769de3d306`; exact-head CI=`35539682655` completed/success on Python 3.11 and 3.13 through lint, readiness, tests, and bundle validation.
 
-## Theory-backward accounting
+Funnel proposal: `preformal_eligible=true`, but readiness=`NOT_READY`. The prospective nearest-activity comparator was imperfect (1 baseline spike per target vs 0 per comparator), and exact activity-load plus graph-centrality/topological-load reductions remain unresolved. Proposed `hold_class=HOLD_MECHANISM_UNRESOLVED_REDUCTION`, `terminal_state=NONTERMINAL_HOLD`, `queue_state=QUEUED`, next layer=`ARCHITECTURE_STUDY`, recommendation=`CONTINUE_EXPLORING_VIA_PROSPECTIVE_ARCHITECTURE_READINESS_STUDY`. No PRE_FORMAL promotion is recommended yet.
 
-The counted rolling window remains `MECHANISM / SYSTEM / SYSTEM = 1/3` because no autonomous scientific selection occurred.
+Rolling actual scientific selections become `SYSTEM / SYSTEM / MECHANISM` (`1/3` theory-backward); `theory_backward_exception=null`; `system_priority_exception.used=false`.
 
-`theory_backward_exception = {code: NO_COHERENT_MECHANISM_TARGET, detail: "Fresh R27 opportunity-specific reassessment found no coherent safe useful nonduplicative mechanism discriminator. Stable main is unchanged and the independently re-fetched v0.5 integration, Assembly memory, and plasticity surfaces remain explicit post-field readout / nearest-prototype clustering / ordinary per-edge eligibility constructions already represented by terminal or held portfolio objects. H7 remains the sole nonterminal MECHANISM hold but still lacks a fresh native mechanism, intervention, matched comparator/resource contract, and prospective falsifier. Selecting a MECHANISM object now would require terminal-object rescue, relabeling a transparent reduction, or manufactured novelty."}`
-
-This is the **fourth consecutive opportunity-local no-target exception event**. It is not a candidate, does not enter the autonomous-selection denominator, and does not satisfy theory-backward work. R27 already marked three consecutive events as a mechanism-supply watchpoint; this fourth event strengthens that control-plane supply-stall observation but is not permission to lower the quality floor.
-
-## Required handoff
-
-- question: `N/A_NO_TARGET`
-- hypothesis: `N/A_NO_TARGET`
-- reduction question: `N/A_NO_TARGET`
-- falsifier: `N/A_NO_TARGET`
-- inputs: fresh Analyst R27 allocation/state, MAIN R27 mailbox, previous SUB state, Control R19 strategy, stable-main `brain.py` / `assemblies.py` / `plasticity.py`, and authoritative evidence/formal/sealed/freeze refs
-- implementation: control-plane persistence only
-- observations: `NO_COHERENT_SAFE_USEFUL_NONDUPLICATIVE_MECHANISM_TARGET`
-- proposed claim_ceiling: `N/A_NO_CURRENT_OBJECT`
-- proposed preformal_eligible: `N/A_NO_CURRENT_OBJECT`
-- preliminary readiness: `N/A_NO_CURRENT_OBJECT`
-- proposed hold dimensions: `N/A_NO_CURRENT_OBJECT`
-- next layer: `NONE`
-- open scientific choices: `NONE_FOR_CURRENT_OBJECT`
-- recommendation: `NONE`
-
-Utility request: none. Consumed identities: none. New FORMAL results: zero.
-
-Blocker: a future Analyst/source delta that yields a genuinely fresh coherent independent mechanism-level question with a prospectively fixed ordinary reduction and falsifier.
-
-Completion target `FAIL_CLOSED_NOOP_WITH_FRESH_NO_COHERENT_MECHANISM_TARGET_EXCEPTION` — achieved.
-
-History: `reports/orchestrator/history/2026-09-21/0535-sub.md`.
+No cycle-2 rescue, alternate seed/probe, held-out/confirmatory use, official scorer, FORMAL/PRE_FORMAL execution, Utility request, consumed identity, or stable-main/evidence/preserve/control mutation occurred. Fresh Evidence Analyst classification is required before further work.
