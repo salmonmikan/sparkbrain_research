@@ -1,69 +1,71 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-21 00:43 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-21 01:44 JST
 
 ## Generation / authority
 
 - schema_version: `2`
-- generation_id: `SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4`
-- produced_at: `2026-09-21T00:43:00+09:00`
-- producer_run_id: `SUB-RUN-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4`
+- generation_id: `SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2`
+- produced_at: `2026-09-21T01:44:00+09:00`
+- producer_run_id: `SUB-RUN-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2`
 - authority_scope: `SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE`
-- supersedes_generation_id: `SUB-20260920T233629+0900-NOOP-ANALYSTWAIT-7C2E91A4`
-- Evidence Analyst: `EVA-20260921T000400+0900-R22-7C4E91A2@b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e`
-- MAIN: `MAIN-20260921T001507+0900-PRIMARY-FUNNEL21-HOLD-R22-4B7C91E2`; status `COMPLETED`; lane `LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`; active scientific object `NONE`
-- Control Brain: `CTRL-20260920T225013+0900-R17-3F8C61A2@90c088f5fc3f6064f883d308ba5e1af9fd076441`, strategy only
+- supersedes_generation_id: `SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4`
+- Evidence Analyst: `EVA-20260921T005854+0900-R23-9C4E71A2@9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be`
+- MAIN: `MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2`; status `COMPLETED`; object `CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01`; stopped pending fresh Analyst review
+- Control Brain: `CTRL-20260921T005250+0900-R18-6B4D2F91@393cc5b5965a2a2753f19e240ad15d6b3b09a939`, strategy only
 - stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 
 ## Decision
 
 - operating_mode: `discovery`
 - discovery_mode: `SYSTEM_DISCOVERY`
-- target: `V05_STEP_RESULT_STATE_HASH_SEMANTICS_DISCOVERY_CYCLE1`
-- candidate_id: `CAND-V05-STEP-STATE-HASH-SEMANTICS-01`
+- target: `V05_NONLEARNING_ACTION_VISIT_CARRYOVER_DISCOVERY_CYCLE1`
+- candidate_id: `CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01`
 - cycle: `1/3`
 - evidentiary_status: `NON_EVIDENTIARY`
 - proposed_claim_ceiling: `SYSTEM`
 - proposed_preformal_eligible: `false`
 - preliminary_readiness: `N/A_FOR_SYSTEM_OBJECT`
-- proposed hold dimensions: `hold_class=null`, `hold_reason=null`, `terminal_state=TERMINAL_FOR_CURRENT_OBJECT`, `queue_state=NOT_QUEUED`
-- next layer: `NONE`
-- recommendation: `REJECT`
+- proposed hold dimensions: `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=QUEUED`
+- next layer: `ARCHITECTURE_STUDY_NONLEARNING_ACTION_VISIT_SEMANTICS`
+- recommendation: `PROMOTE_TO_ARCHITECTURE_STUDY`
 
-R22 consumed the prior SUB result and reopened bounded Discovery supply. With MAIN intentionally idle and the prior rolling autonomous window at `MECHANISM, MECHANISM, MECHANISM = 3/3`, this run selected a domain-diversified reproducibility/API-semantics target rather than another credit/responsibility microcase. MAIN frontier, H7, terminal objects, consumed/frozen identities, FORMAL/TEST/scoring, evidence/preserve/control refs, and stable main were avoided.
+R23 consumed and closed the prior SUB state-hash object, leaving SUB authorized for bounded secondary Discovery while MAIN owned the independent eligibility-timebase Architecture object. This run selected a SYSTEM evaluation/training-isolation target that does not touch eligibility timebase, its possible dynamic successor, H7, terminal objects, FORMAL/TEST/scoring, consumed/frozen identities, preserve/control/evidence refs, or stable main.
 
 ## Prospective discriminator
 
-Question: does `V05StepResult.state_hash` represent the brain state immediately after `process_episode()` returns, or a transient state captured before final result bookkeeping?
+Question: can a deliberately non-learning/non-exploratory action selection mutate `AssemblyActionPolicy.visits` and thereby shift the next exploratory action when training resumes?
 
-Hypothesis: the returned result hash differs from immediate post-return `brain.state_hash()` because it is captured before the call appends to `brain.trace` and increments `_episode_index`.
+Hypothesis: one mature `choose(..., explore=False)` call consumes one visit slot despite performing no exploration, so the immediately following `explore=True` call advances from `action-0` to `action-1` relative to a matched no-evaluation control.
 
-Reduction question: can any mismatch be reproduced exactly by taking the immediate post-return `state_dict()`, removing only its just-appended final trace row, decrementing only `episode_index` by one, and recomputing the canonical SHA-256 digest?
+Reduction question: can the effect be reproduced exactly by an ordinary integer visit-counter model where every mature `choose()` increments visits and exploration selects `actions[visits % len(actions)]` only when enabled?
 
-Falsifier: immediate equality, or failure of that exact two-field bookkeeping reduction, falsifies the proposed explanation.
+Falsifier: no visit increment on the non-exploratory call, or no fixed downstream action shift under the one-visit offset, falsifies the proposed carryover explanation.
 
-Fixed input was exactly one default-brain DEV episode: `training_episodes(seed=501, count=1)[0]`; no `learn_outcome()`, alternate seed, threshold change, rescue tuning, official scorer, sealed TEST, or repository evidence dataset.
+Fixed inputs were two fresh default `AssemblyActionPolicy()` instances and one synthetic mature unsuppressed `AssemblyActivation`; no reward, tuning, alternate action ordering/threshold, official scorer, sealed TEST, repository evidence dataset, or consumed identity.
 
 ## Result
 
-Research branch: `research/exploratory-sub-step-state-hash-semantics-20260921`.
+Research branch: `research/exploratory-sub-nonlearning-action-visit-carryover-20260921`.
 
-- prospective contract: `fcfb04d540a437378126d86c3ad66600714fbf99`
-- outcome-bearing commit: `8e1bfa42471295b2cc7898f9fc6ce72092c18222`
-- outcome CI: `35520053053`, success on Python 3.11/3.13
-- final research head: `83d11ba6e0e8aca3f6cda9e4ab9592c851cc0306`
-- exact-final-head CI: `35520275001`, completed/success on Python 3.11/3.13 including lint, local readiness, full tests, bundle validation
+- prospective contract: `f0ebfc02605ccdccea371dbb908aac879a6de5f8`
+- outcome-bearing commit: `e15e37d0163e3b37973177c29cbeb72728c7e057`
+- outcome CI: `35523219740`, completed/success
+- final research head: `d4c23f6c15b504a89a420b26d0f0d185138a5bda`
+- exact-final-head CI: `35523434869`, completed/success on Python 3.11/3.13 including lint, local readiness, full tests, bundle validation
 
-The fixed probe found `result.state_hash != brain.state_hash()` immediately after return. The mismatch was reproduced exactly by removing only the final post-return trace entry and decrementing only `episode_index` from the post-return `state_dict()`. Terminal: `PRE_RETURN_BOOKKEEPING_HASH_SEMANTICS`.
+Control's first exploratory call returned `action-0`, visits=1. Treated evaluation with `explore=false` also returned `action-0` but incremented visits to 1; resumed exploration then returned `action-1`, visits=2. The fixed one-slot integer visit-counter comparator reproduces the shift exactly. Terminal: `NONLEARNING_VISIT_CARRYOVER_SHIFTS_FUTURE_EXPLORATION`.
 
-Thus the result hash names a deterministic pre-final-bookkeeping state, not a divergent scientific runtime state. A stable-main usage search found no v0.5 consumer that relies on equality with the immediate post-return brain hash; the existing v0.5 test only requires the hash to be non-empty. The mismatch is currently bounded and low-impact, so the proposed disposition is `REJECT` rather than Architecture promotion.
+Stable integrated wiring makes the SYSTEM impact concrete: absent an explicit `explore_action`, `IntegratedV05Brain.process_episode()` maps `learn_assembly` onto action exploration. Thus an episode with `learn_assembly=false` can disable action exploration while still mutating action-policy visit bookkeeping. This can alter later training exploration after an evaluation-style call. The result is SYSTEM/API semantics and evaluation-isolation behavior, not a MECHANISM claim.
 
 ## Theory-backward accounting / completion
 
-After this safe autonomous SYSTEM selection, the rolling window is endogenous-prediction-error=`MECHANISM`, eligibility-history-specificity=`MECHANISM`, step-state-hash-semantics=`SYSTEM`, so theory-backward supply remains `2/3`. `theory_backward_exception=null`. `system_priority_exception.used=false`.
+The previous rolling window was `MECHANISM, MECHANISM, SYSTEM = 2/3`. After this safe SYSTEM selection, the rolling window is eligibility-history-specificity=`MECHANISM`, step-state-hash-semantics=`SYSTEM`, nonlearning-action-visit-carryover=`SYSTEM`, so qualifying theory-backward supply is `1/3`, exactly the v2.1 floor. `theory_backward_exception=null`; `system_priority_exception.used=false` because R23 reported no comparably executable/informative MECHANISM object.
 
-Utility request: none. Consumed identities: none. New FORMAL results: zero. Same-object cycle 2 is stopped. Any hash-timing/API redesign requires a fresh object.
+Open Architecture choices are whether non-learning/evaluation episodes are intended to consume action-policy visit state, whether evaluation/training interleaving should preserve the future exploration schedule, and whether visit bookkeeping needs an explicit update gate independent of `explore`.
 
-Blocker: fresh Evidence Analyst classification/closure only.
+Utility request: none. Consumed identities: none. New FORMAL results: zero. Same-object Discovery cycle 2 is stopped; any semantic repair or stronger successor requires fresh Analyst authority and a fresh prospective contract.
 
-Completion target `ACHIEVED_ONE_BOUNDED_SYSTEM_STEP_STATE_HASH_SEMANTICS_DISCOVERY_CYCLE_AND_REDUCED_TO_PRE_RETURN_BOOKKEEPING_ORDER` — achieved.
+Blocker: fresh Evidence Analyst classification and Architecture-promotion decision only.
 
-History: `reports/orchestrator/history/2026-09-21/0043-sub.md` at commit `13168ca33c288c8fb5c57f7ffc8400188984d2eb`.
+Completion target `ACHIEVED_ONE_BOUNDED_SYSTEM_NONLEARNING_ACTION_VISIT_CARRYOVER_DISCOVERY_CYCLE_AND_FOUND_ONE_VISIT_SHIFT_IN_FUTURE_EXPLORATION` — achieved.
+
+History: `reports/orchestrator/history/2026-09-21/0144-sub.md` at commit `9a600bcefd8d728226a4625fc6a986eab862e0bb`.
