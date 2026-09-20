@@ -62,5 +62,48 @@ The current delayed responsibility-sensitive mechanism is falsified/reduced if s
 - qualitative support breadth: `NONE_BEFORE_EXECUTION`
 - falsifier definition: `NO_WEIGHT_CHANGE_FROM_DELAYED_REWARD_WITHOUT_REACTIVATION`
 - open scientific choices: `NONE_FOR_THIS_CYCLE; edge selection, spike times, reward, comparator and stop mapping are fixed above`
-- formal claim ceiling: `AT_MOST_NATIVE_DELAYED_LOCAL_ELIGIBILITY_CREDIT_IF_NO-REACTIVATION EFFECT EXISTS`
+- formal claim ceiling: `AT_MOST_NATIVE_DELAYED_LOCAL_ELIGIBILITY_CREDIT_IF_NO-REACTIVATION EFFECT_EXISTS`
 - readiness status: `NOT_READY`
+
+## Cycle-1 observation / terminal
+
+Exact diagnostic head before this result note: `77bd51d3913c9751ca23cd4a2468d97bebe2983f`. Ordinary CI run `35489566146` completed successfully on both Python 3.11 and 3.13 through lint, local readiness, full tests and bundle validation.
+
+The first causal pre/post pair created a positive local eligibility trace and changed the selected edge under the default neutral reward trace. After that event, delayed reward `-2.0` followed by `apply(field, ())` produced zero plastic updates: the previously eligible edge weight was unchanged while the stored eligibility merely decayed by the configured factor `0.90`.
+
+In the matched reactivation arm, the same delayed reward became behaviorally relevant only when a second pre/post pair reactivated that same edge. Relative to the neutral-reward matched reactivation control, the rewarded edge moved in the opposite direction and ended lower. Thus the reward modulation surface is functional, but the stored eligibility is not itself consumed by delayed reward in the absence of fresh same-edge causal activity.
+
+Mapped terminal: `REWARD_INERT_UNTIL_EDGE_REACTIVATION`.
+
+## Reduction / source-semantic interpretation
+
+This effect is directly explained by the current `V05PlasticityController.apply()` control flow. Existing eligibility entries are decayed first, but an edge reaches the weight-update statement only when current `pre_times` and `post_times` are both non-empty and the newly computed STDP delta is nonzero. `reward()` only changes the global scalar `reward_trace`; it does not iterate or apply stored eligible edges itself.
+
+The integrated v0.5 call order is consistent with the same reduction: `process_episode()` performs field plasticity before `learn_outcome()` can call `plasticity.reward(reward)`. Therefore the current episode's later reward cannot directly modulate the already-completed weight update for that episode. A future episode can inherit the reward scalar and prior eligibility, but a particular edge still requires fresh qualifying activity to be updated.
+
+This is a bounded negative mechanism result, not a claim that eligibility traces are useless in general and not a global resolution of H7. It only shows that the current native v0.5 implementation does not provide the prospectively tested delayed reward-to-stored-local-eligibility effect without edge reactivation.
+
+## Post-result typing / handoff
+
+- evidentiary_status: `NON_EVIDENTIARY`
+- recommendation: `REJECT`
+- candidate next research layer: `NONE`
+- proposed claim_ceiling: `MECHANISM`
+- proposed preformal_eligible: `false`
+- preliminary readiness status: `NOT_READY`
+- claim_type: `NATIVE_DELAYED_LOCAL_RESPONSIBILITY_SENSITIVE_ELIGIBILITY_CREDIT`
+- supported_reachability: `STORED_ELIGIBILITY_REACHABLE_SYNTHETIC_DEV_ONLY`
+- functional_consequence: `ABSENT_FOR_DELAYED_REWARD_WITHOUT_REACTIVATION`
+- ordinary reductions specified/controlled: `GLOBAL_REWARD_STATE_GATING_ONLY_ON_CURRENT_EDGE_ACTIVITY`
+- reductions unresolved: `NONE_FOR_CURRENT_OBJECT; REDUCTION_SUCCEEDED`
+- comparator status: `COMPLETE_REACTIVATION_VS_NEUTRAL_REWARD_CONTROL`
+- qualitative support breadth: `ONE_DETERMINISTIC_SYNTHETIC_EDGE_CAUSAL_REWARD_REACTIVATION_PROBE`
+- falsifier definition: `NO_WEIGHT_CHANGE_FROM_DELAYED_REWARD_WITHOUT_REACTIVATION`
+- open scientific choices: `ANY_GENUINELY_DELAYED_REWARD_TO_ELIGIBILITY_MECHANISM_REQUIRES_FRESH_CANDIDATE_AND_PROSPECTIVE_CONTRACT`
+- formal claim ceiling: `NONE_FOR_CURRENT_REDUCED_RESULT`
+- hold_class: `null`
+- hold_reason: `null`
+- terminal_state: `TERMINAL_FOR_CURRENT_OBJECT`
+- queue_state: `NOT_QUEUED`
+
+Cycle 2 is not executed. No Utility request is warranted. No consumed/frozen/formal identity was touched or created.
