@@ -1,110 +1,109 @@
-# SparkBrain Literature Reduction Scout — 2026-09-20 12:30 JST
+# SparkBrain Literature Reduction Scout — 2026-09-20 15:30 JST
 
 - schema_version: `2`
-- generation_id: `LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B`
-- produced_at: `2026-09-20T12:30:00+09:00`
-- producer_run_id: `external-literature-auto-20260920T123000+0900-R11-7E4A1C2B`
+- generation_id: `LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71`
+- produced_at: `2026-09-20T15:30:56+09:00`
+- producer_run_id: `external-literature-auto-20260920T153056+0900-R12-4D8C2A71`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LEGACY_GENERATION_UNKNOWN`
+- supersedes_generation_id: `LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B`
 - role: `LITERATURE_REDUCTION_SCOUT`
-- selected_slot_jst: `12:30`
+- selected_slot_jst: `15:30`
 - schedule_inference_used: `false`
 
 ## Input generations / exact handoffs
 
-- Control Brain: `LEGACY_GENERATION_UNKNOWN` @ `b35068cbee426c99c3cc1f6dd23053778a2bd88a`
-- Evidence Analyst: `EVA-20260920T115704+0900-R12-A6B8DE50` @ `dcaa02fc25506ff4e8b14d7540b6c754a8a6da98`
-- MAIN: `MAIN-20260920T121227+0900-PRIMARY-FUNNEL21-HOLD-7C41A2D9` @ `0d1371bee14b95e126cef203f516c0033d538363`
-- SUB: `SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4` @ `03c8981d86ce0086cf5a01798a80e8275e58b711`
-- Prior Literature stream: `LEGACY_GENERATION_UNKNOWN` @ `f399e9d14ef6d491135d19161b8c1d7986b94e5b`
+- Control Brain: `CTRL-20260920T145000+0900-R14-7B3E2D91` @ `14285844f80fa844b5aaac9ccf4d2fed95b6fb35`
+- Evidence Analyst: `EVA-20260920T150234+0900-R15-8F3C1A72` @ handoff tip `ad8290dfab6d79be984f960d48dcf34a8213aefb` (state/latest payload commit observed by MAIN: `095caeb07c23094bf9fc68c8e7022f88d45baa74`)
+- MAIN: `MAIN-20260920T151432+0900-PRIMARY-FUNNEL21-HOLD-A84D6C2F` @ shared mailbox tip `8af4b20aa8e3386197a53317eaf4885942d509b3`
+- SUB: `SUB-20260920T144110+0900-SYSTEM-EVALORDER-6F2C91A8` @ generation handoff `656e478ff9146a3d5561c1f2482becc1252bf2d0`
+- Prior Literature: `LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B` @ `639ceaca54150a3f82796c241c8129d821b55fe1`
 
 ## Repository state independently re-fetched
 
-Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative `evidence/*` tag set remains five entries; tag-based `formal/*` and `sealed/*` remain empty. Legacy `freeze/*` branches, `preserve/*` refs, and `control/*` refs were independently re-fetched and remain present; no fresh FORMAL identity, STARTED transition, or immutable-evidence mutation was observed. PR #148 and #149 remain open, unmerged, and mergeable.
+Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative annotated `evidence/*` tag set remains five entries; `formal/*`, `sealed/*`, and tag-based `freeze/*` are empty. Legacy freeze branches remain 13 and preserve/control refs were independently re-fetched. No fresh FORMAL identity, STARTED, official TEST authority, or immutable-evidence mutation was observed.
 
-The most relevant completed lower-funnel repository object is `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` on `research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920@13239163f6fecb2b61ea2189a5a94ba12b6cb3d6`, terminal `LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED`. Stable source fixes `max_candidates=256`; on a new unmatched pattern at capacity it prunes stale immature candidates and, if still full, declines to create a new candidate. The prune condition does not reclaim mature candidates. The repository result explicitly does not establish that supported/default execution reaches saturation or that mature turnover is required.
+The selected lower-funnel line is `CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01` on `research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920@705b652f0eb426c7e39a75a9f901be10483d0e63`. Its terminal is `ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED`. Exact-head CI `35481067945` is completed/success.
 
-Fresh Evidence Analyst generation `EVA-20260920T115704+0900-R12-A6B8DE50` classifies this as `SYSTEM / HOLD_SYSTEM_TERMINAL / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED / preformal_eligible=false`; it also rejects `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` after a matched DEV-only probe found mature/suppressed Assembly recognition changed readout status but not the exact lower `v04_result` or lower field state. Current MAIN is intentionally idle with no active/queued Architecture object; SUB retains bounded Discovery ownership. No current object clears PRE_FORMAL or FORMAL.
+Repository source makes the ambiguity concrete. `SignalPulse` permits duplicate exact `(time_ms, channel)` keys. `MultiTimescaleReceptorBank.process()` sorts only by `(time_ms, channel)`, and `_observe_one()` mutates fast/medium/slow/mean_abs state and computes derivative/novelty/adaptive gain after each individual pulse. Therefore exact-key ties inherit stable caller iterable order and can be non-commutative if they ever occur. The completed Architecture object correctly stops because supported stable-main workloads do not establish that such exact-key duplicates are actually reached.
 
-Prior Literature through 09:30 was read first. This run does not recycle the earlier Homeostasis population/source, refractory, temporal batching, topology-config, Top-k/hysteresis, H7 causal-credit, eligibility, reservoir, or provenance reductions.
+Prior Literature through 12:30 was read before searching. This run does not recycle the prior Assembly lifecycle, homeostasis, refractory, temporal batching, topology-config, Top-k/hysteresis, H7 causal-credit, eligibility, reservoir, or provenance literature.
 
 ## Genuinely new external literature findings
 
-### 1. Bounded prototype/category memory with explicit pruning is an established streaming-learning design, not a novel lifecycle principle
+### 1. Simultaneous-event order is an explicit model-semantic choice in stateful event systems, not a novel mechanism
 
-Cao et al., *Density-Based Clustering over an Evolving Data Stream with Noise* (SDM 2006, DOI `10.1137/1.9781611972764.29`) introduced DenStream for one-pass evolving streams under limited memory. It maintains compact potential/outlier micro-clusters and uses a pruning strategy tied to decayed support. More recently, Ye & Bors, *Online Task-Free Continual Generative and Discriminative Learning via Dynamic Cluster Memory* (CVPR 2024, DOI `10.1109/CVPR52733.2024.02476`) explicitly expands cluster memory when incoming knowledge is novel and prunes overlapping clusters to keep a fixed memory capacity while retaining diversity.
+McGlohon & Carothers, *Toward Unbiased Deterministic Total Orderings of Parallel Simulations with Simultaneous Events* (WSC 2021 / arXiv:2105.00069), formalize the generic problem: when simultaneous events produce non-commutative state changes, deterministic simulation requires an explicit total ordering or tie-breaking policy. NESTML gives a neural/plasticity-specific example: for a pre- and postsynaptic spike arriving at a synapse at exactly the same time, processing order matters, and its reference/default generated code explicitly fixes postsynaptic-before-presynaptic processing.
 
-**Reduction impact:** if a future supported SparkBrain use case actually requires continual acquisition beyond Assembly capacity, `decay/prune/merge/replace under a matched fixed memory budget` is an ordinary baseline. Merely adding mature-candidate turnover would be engineering/lifecycle design, not computational-principle novelty. The current static terminal should remain closed rather than be rescued with a post-outcome saturation experiment.
+**Reduction impact:** if SparkBrain exact-key ties later become supported, permutation sensitivity would first be ordinary stateful-event semantics. Silent inheritance of Python iterable order is an API/reproducibility issue, not evidence for a new cognitive or neural principle.
 
-### 2. Stability–plasticity and category recruitment already have a mature ordinary mechanism family
+### 2. Same-time multiplicity is already represented explicitly in established simulators
 
-Adaptive Resonance Theory and related recurrent category-learning models were designed around the stability–plasticity problem: preserve learned categories while admitting new ones. Layher et al., *Adaptive learning in a compartmental model of visual cortex—how feedback enables stable category learning and refinement* (Frontiers in Psychology 2014, DOI `10.3389/fpsyg.2014.01287`) uses learned bottom-up/top-down category representations; a sufficiently large mismatch triggers recruitment of new representational resources and creation/refinement of categories. ART literature likewise uses mismatch-triggered reset/search for a better existing or novel category.
+Current NEST `spike_generator` documentation states that repeated occurrences of the same spike time represent more than one event at that time. NEST's MIP generator uses another explicit policy: when several spikes occur in one child process within a simulation step, it may emit one spike with n-fold synaptic weight for efficiency.
 
-**Reduction impact:** a future claim that SparkBrain stably accumulates new Assembly categories while preserving old ones must beat ordinary match/reset/recruitment or bounded-prototype mechanisms under matched memory/resources. The interesting quantity is the prospective retention–adaptation trade-off under an explicit resource policy, not category persistence alone.
+**Reduction impact:** there is no need to invent an implicit caller-order interpretation for duplicate timestamps. A future SparkBrain contract can explicitly choose uniqueness/rejection, event multiplicity, aggregation, or an ordered representation. Which policy is scientifically appropriate must be fixed prospectively from the meaning of `channel` and the supported caller surface.
 
-### 3. Pattern completion/regeneration requires a causal feedback/recurrent path; a post-field Assembly readout is not an associative-completion mechanism
+### 3. There is no universal biological or simulator rule for exact zero-lag ties
 
-Le Duigou et al., *Recurrent synapses and circuits in the CA3 region of the hippocampus: an associative network* (Frontiers in Cellular Neuroscience 2014, DOI `10.3389/fncel.2013.00262`) reviews sparse recurrent CA3 connectivity as the substrate for associative representations and recall of ensemble patterns from partial cues. Layher et al. likewise realizes associative/category effects through learned feedforward and feedback interactions, with top-down feedback modulating earlier representations.
+NESTML's `stdp_nn_symm_synapse` adopts yet another legitimate semantics: exactly coincident pre/post pairs yielding zero delta-t are discarded and pairing falls back to earlier spikes. Together with the explicit post-before-pre rule above and NEST multiplicity semantics, this shows that exact simultaneity is model-definition territory rather than a universal fact that can be inferred from the word “simultaneous.”
 
-**Reduction impact:** the rejected current-v0.5 Assembly-feedback candidate is consistent with a straightforward architectural distinction: recognition after lower-field computation is a readout, whereas pattern completion/regeneration requires a causal recurrent/top-down route (or an explicitly equivalent mechanism). Any future positive Assembly-completion claim must be a fresh prospective architecture/mechanism object with such a causal path; it cannot reinterpret the current negative Discovery.
+**Reduction impact:** the present terminal `ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED` is well calibrated. Before any dynamic permutation/aggregation study, a fresh supported object would need to state what an exact `(time_ms, channel)` duplicate means and which equivalence class should be invariant.
 
-### 4. Biological engram/assembly persistence does not imply permanent mature entries
+### 4. Event-driven dynamical synapse literature makes sequential state jumps an ordinary explanation
 
-Ryan & Frankland, *Forgetting as a form of adaptive engram cell plasticity* (Nature Reviews Neuroscience 2022, DOI `10.1038/s41583-021-00548-3`) frames natural forgetting as circuit remodeling that can move engram cells between accessible and inaccessible states, with forgetting rates sensitive to environmental conditions.
+Mattia & Del Giudice, *Efficient event-driven simulation of large networks of spiking neurons and dynamical synapses* (Neural Computation 2000, DOI `10.1162/089976600300014953`) is foundational prior art for event-driven networks whose state evolves between events and jumps at events. In SparkBrain's receptor code, adaptive traces and gain are updated after every pulse; therefore two equal-time same-channel pulses need not commute unless the model deliberately defines a simultaneous-set reduction.
 
-**Reduction impact:** a biological “cell assembly” analogy cannot justify `mature == permanent`. Both persistence and adaptive loss/remodeling are established biological possibilities. SparkBrain therefore needs an explicit computational lifecycle contract—lifetime store, bounded working set, decay, consolidation, replacement, or another policy—before mature-candidate persistence can carry scientific interpretation.
+**Reduction impact:** if future supported reachability demonstrates order dependence, the first reduction is simply `sequential adaptive state update under an unspecified tie policy`. Mechanistic novelty would require a residual beyond an explicitly defined simultaneous-event semantics, not merely a permutation effect.
 
 ## Synthesis
 
-The new literature strengthens the current Funnel v2.1 disposition rather than opening a successor. `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` has useful SYSTEM information, but the literature supplies several ordinary solutions if continual bounded acquisition ever becomes a supported requirement. `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` should remain rejected for the current architecture because the causal route required for completion/regeneration is absent in the bounded matched probe and source ordering.
+The literature strengthens the existing SYSTEM/HOLD terminal rather than opening a successor. The current object found a real public-contract ambiguity but did not establish supported reachability. Established simulation and neural-model practice offers several ordinary semantics for ties—explicit deterministic ordering, multiplicity/aggregation, zero-lag discard, or uniqueness/rejection. Consequently, no dynamic comparator, API repair, or Utility task should be launched from this literature alone.
 
-A future fresh Assembly object should first prospectively bind: (1) supported learning horizon and whether saturation is reachable/relevant, (2) memory-resource budget, (3) retention versus adaptation objective, (4) lifecycle policy for mature versus immature prototypes, and, for pattern-completion claims, (5) an actual causal feedback/recurrent route. None of these should be retrofitted into the completed objects.
+If exact-key duplicate reachability independently becomes supported later, a fresh prospective object should first bind the event ontology: whether one `channel` denotes a single simple spike source, an aggregate receptor path capable of multiplicity, or an ordered stream with a semantic secondary key. Only then should permutation-invariance or aggregation comparators be run.
 
 ## Machine-usable handoff
 
 ```yaml
 schema_version: 2
-generation_id: LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B
-produced_at: 2026-09-20T12:30:00+09:00
-producer_run_id: external-literature-auto-20260920T123000+0900-R11-7E4A1C2B
+generation_id: LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71
+produced_at: 2026-09-20T15:30:56+09:00
+producer_run_id: external-literature-auto-20260920T153056+0900-R12-4D8C2A71
 authority_scope: EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF
-supersedes_generation_id: LEGACY_GENERATION_UNKNOWN
+supersedes_generation_id: LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - CAND_ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_01
-  - CAND_V05_ASSEMBLY_FEEDBACK_CAUSALITY_01
-  - V05_ASSEMBLY_MEMORY_LIFECYCLE
-  - FUTURE_ASSEMBLY_PATTERN_COMPLETION
+  - CAND_V05_RECEPTOR_SIMULTANEITY_ORDERING_01
+  - V05_RECEPTOR_EVENT_SEMANTICS
+  - SAME_TIMESTAMP_MULTIPLICITY_CONTRACT
+  - ARCHITECTURE_REPRODUCIBILITY
   - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
-  STRONG_ORDINARY_LIFECYCLE_AND_ASSOCIATIVE_MEMORY_REDUCTION. Bounded streaming
-  prototype memory already uses decay/pruning/merge or fixed-capacity memory
-  management; stability-plasticity/category recruitment is an established
-  mechanism family; and associative pattern completion requires a causal
-  recurrent/feedback path. The completed Assembly lifecycle object remains
-  SYSTEM/HOLD and the current-v0.5 Assembly-feedback mechanism remains REJECTED.
+  STRONG_ORDINARY_EVENT_SEMANTICS_REDUCTION. Exact-time non-commutative events,
+  explicit tie-breaking, multiplicity/aggregation, and zero-lag special handling
+  are established simulator/model semantics. The current SparkBrain terminal is
+  therefore best treated as a public event-contract/reproducibility ambiguity;
+  no mechanistic novelty is supported and supported exact-key reachability remains unestablished.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - DenStream/DCM-style bounded prototype memory with decay/pruning/merge/replacement under matched memory budget
-  - ART-style match/reset/category recruitment under matched similarity and resource constraints
-  - prospectively fixed retention-versus-adaptation/load curve only for a genuinely fresh supported saturation object
-  - explicit recurrent/top-down causal-feedback comparator for any future Assembly completion/regeneration claim
+  - explicit exact-key uniqueness contract with duplicate rejection
+  - explicit multiplicity/commutative aggregation semantics when scientifically justified
+  - explicit deterministic secondary tie-break only when ordering is itself semantic
+  - fresh permutation-invariance metamorphic test only after supported exact-key reachability is independently established
+  - distinguish cross-channel biological synchrony from same-channel duplicate-event multiplicity
 questions_for_evidence_analyst:
-  - Keep the lifecycle object terminal SYSTEM/HOLD and prohibit same-object saturation/turnover rescue?
-  - If supported saturation later becomes independently relevant, require matched bounded-memory lifecycle baselines and a prospectively fixed retention/adaptation objective?
-  - Preserve current-v0.5 Assembly-feedback REJECT; require a fresh causal feedback path before any future completion/regeneration mechanism claim?
+  - Keep CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 terminal SYSTEM/HOLD with no same-object dynamic rescue?
+  - If supported exact-key duplicates later appear, require a fresh prospective choice among uniqueness, multiplicity/aggregation, or explicit ordered semantics before testing?
+  - Treat cross-channel coincidence and same-channel duplicate-key multiplicity as separate semantic questions?
 questions_for_control_brain:
-  - Add bounded prototype lifecycle, stability-plasticity/category recruitment, and explicit feedback-path requirements to the ordinary Assembly reduction ladder?
-  - Keep MAIN idle rather than create a literature-driven successor while no supported saturation/feedback object exists?
-  - Keep PRE_FORMAL/FORMAL empty until a native positive mechanism survives these ordinary reductions under matched resources?
+  - Add simultaneous-event tie/multiplicity semantics to the ordinary Architecture reproducibility checklist?
+  - Keep MAIN idle and do not manufacture a literature-driven successor while supported duplicate-key reachability is absent?
+  - Keep PRE_FORMAL/FORMAL unaffected by this API/event-semantics issue?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
   - canonical terminal classifications and consumed STARTED/control/preserve/evidence refs
-  - CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 contract/raw/terminal and no same-object saturation or turnover experiment
-  - CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01 negative Discovery result and no cycle-2 rescue
-  - no official TEST, fresh FORMAL identity/STARTED, rescore, retune, research merge, immutable-ref/tag mutation, or scheduler change
+  - CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 contract/raw/terminal and no same-object dynamic permutation or aggregation comparator
+  - no literature-driven API repair, cycle 2, PRE_FORMAL/FORMAL promotion, official TEST, new STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change
 utility_request_created: null
 ```
 
-No Utility request was created. The obvious implementation ideas (saturation/turnover comparators or adding Assembly feedback) are explicitly outside the completed-object authority and would be outcome-responsive rescue if launched now.
+No Utility request was created. A dynamic tie-permutation or aggregation diagnostic would be premature while supported exact-key reachability is unestablished and would extend a terminal object post-outcome.
