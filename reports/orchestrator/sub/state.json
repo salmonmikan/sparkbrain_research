@@ -1,21 +1,21 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
-  "produced_at": "2026-09-21T04:35:00+09:00",
-  "producer_run_id": "SUB-RUN-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
+  "generation_id": "SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
+  "produced_at": "2026-09-21T05:35:00+09:00",
+  "producer_run_id": "SUB-RUN-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91",
+  "supersedes_generation_id": "SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T040050+0900-R26-6A3F8C21",
-      "handoff_commit": "455522cde0a7e5eae1d2b04d779a5783f6351585",
+      "generation_id": "EVA-20260921T045900+0900-R27-8C4E21A7",
+      "handoff_commit": "28021769b1b9211921356a3eb2a2bc36fcb8cfbe",
       "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
       "sub_lane": "REASSESS_THEORY_BACKWARD_MECHANISM_IF_COHERENT_ELSE_FRESH_NO_TARGET_NOOP",
       "sub_fallback": "NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET"
     },
     "main": {
-      "latest_mailbox_generation_id": "MAIN-20260921T041632+0900-PRIMARY-FUNNEL21-HOLD-R26-5D8A31C4",
-      "mailbox_tip_observed": "99a4cc6e8f0212c1745002a5d2d3873bfee0dc55",
+      "latest_mailbox_generation_id": "MAIN-20260921T051321+0900-PRIMARY-FUNNEL21-HOLD-R27-6C2A91E4",
+      "mailbox_tip_observed": "48773f14ef96832103fa3e84b510a92d93c0c5c6",
       "status": "COMPLETED",
       "owned_lane": null,
       "owned_candidate": null,
@@ -28,16 +28,16 @@
       "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91",
+      "generation_id": "SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
       "mode": "no_op",
       "candidate_id": null
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_commit": "455522cde0a7e5eae1d2b04d779a5783f6351585",
-    "analyst_generation": "EVA-20260921T040050+0900-R26-6A3F8C21",
-    "orchestrator_tip_before_sub_persistence": "99a4cc6e8f0212c1745002a5d2d3873bfee0dc55",
+    "analyst_handoff_commit": "28021769b1b9211921356a3eb2a2bc36fcb8cfbe",
+    "analyst_generation": "EVA-20260921T045900+0900-R27-8C4E21A7",
+    "orchestrator_tip_before_sub_persistence": "48773f14ef96832103fa3e84b510a92d93c0c5c6",
     "control_handoff_commit": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
@@ -55,10 +55,9 @@
     "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
     "active_main_object": null,
     "avoided": [
-      "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01_TERMINAL_OBJECT",
-      "ANY_OUTCOME_DEPENDENT_SUCCESSOR_OF_TERMINAL_ELIGIBILITY_TIMEBASE_OBJECT",
       "CAND-H7-RESP-01_AS_HELD_OBJECT",
       "ALL_ANALYST_TERMINAL_CURRENT_OBJECTS",
+      "ANY_OUTCOME_DEPENDENT_SUCCESSOR_OF_TERMINAL_OBJECT",
       "FORMAL_TEST_SCORING",
       "CONSUMED_FROZEN_IDENTITIES",
       "PRESERVE_CONTROL_EVIDENCE_REFS",
@@ -82,9 +81,9 @@
     "window_size": 3,
     "theory_backward_exception": {
       "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "Fresh R26 opportunity-specific reassessment found no coherent safe useful nonduplicative mechanism discriminator. Stable main and authoritative evidence are unchanged; R26 closed the only fresh MAIN SYSTEM object as terminal exact per-apply reduction; H7 remains under-specified without a fixed native mechanism/intervention/comparator/resource/falsifier contract; and nearby mechanism families remain terminal or exactly reduced. A MECHANISM selection here would require terminal-object rescue, relabeling, or manufactured novelty."
+      "detail": "Fresh R27 opportunity-specific reassessment found no coherent safe useful nonduplicative mechanism discriminator. Stable main is unchanged and independently re-fetched v0.5 integration, Assembly memory, and plasticity surfaces remain explicit post-field readout / nearest-prototype clustering / ordinary per-edge eligibility constructions already represented by terminal or held portfolio objects. H7 remains the sole nonterminal MECHANISM hold but still lacks a fresh native mechanism, intervention, matched comparator/resource contract, and prospective falsifier. Selecting a MECHANISM object now would require terminal-object rescue, relabeling a transparent reduction, or manufactured novelty."
     },
-    "exception_event_ordinal": 3,
+    "exception_event_ordinal": 4,
     "exception_counts_as_mechanism_candidate": false,
     "next_selection_process_note": "Reassess from fresh Analyst/source state on the next safe autonomous opportunity; do not mechanically copy this exception. Prefer genuine theory-backward mechanism work immediately if a coherent independent discriminator appears."
   },
@@ -95,9 +94,9 @@
   "inputs_used": {
     "scientific_inputs": "NONE",
     "control_plane_inputs": [
-      "EVA_R26_ALLOCATION_PORTFOLIO_AND_V21_FIELDS",
-      "LATEST_MAIN_R26_SUB_CONTROL_MAILBOXES",
-      "STABLE_MAIN_V05_SOURCE_INVENTORY",
+      "EVA_R27_ALLOCATION_PORTFOLIO_AND_V21_FIELDS",
+      "LATEST_MAIN_R27_SUB_CONTROL_MAILBOXES",
+      "STABLE_MAIN_V05_BRAIN_ASSEMBLY_PLASTICITY_SOURCE_REFETCH",
       "CURRENT_MAIN_REF",
       "CURRENT_AUTHORITATIVE_EVIDENCE_FORMAL_SEALED_FREEZE_REFS"
     ],
@@ -121,19 +120,19 @@
     "scientific_result": "NO_SCIENTIFIC_EXECUTION",
     "selection_result": "NO_COHERENT_SAFE_USEFUL_NONDUPLICATIVE_MECHANISM_TARGET",
     "source_reconciliation": [
-      "Stable main remains unchanged at ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d, so there is no new implementation substrate since the prior no-target opportunity.",
-      "Authoritative annotated evidence tags remain five; formal, sealed, and tag-based freeze remain zero.",
-      "R26 reports material candidates=22, MECHANISM=10, SYSTEM=12, Architecture active/queued=0/0, PRE_FORMAL eligible=0, READY=0, and viable executable MECHANISM=0.",
-      "R26 canonically closed the eligibility-timebase partition object as SYSTEM HOLD_SYSTEM_TERMINAL with exact per-apply eligibility-decay reduction and no authorized same-object continuation or SYSTEM-to-MECHANISM upgrade.",
-      "H7 remains the sole nonterminal MECHANISM hold and lacks a fresh native mechanism/intervention/comparator/resource/falsifier contract; nearby mechanism families remain terminal or exactly reduced."
+      "Stable main remains unchanged at ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d; there is no new implementation substrate since the prior no-target opportunity.",
+      "Independent re-fetch confirms v0.5 integration remains lower-field execution before Assembly/prediction/action readout; no fresh native feedback mechanism appeared.",
+      "TemporalAssemblyMemory remains nearest-prototype threshold clustering with immutable prototype semantics already covered by terminal Assembly objects.",
+      "V05PlasticityController remains ordinary per-edge eligibility decay plus local STDP delta and scalar reward trace, matching already-reduced credit objects.",
+      "Authoritative evidence tags remain five; formal, sealed, and tag-based freeze tags remain zero.",
+      "R27 portfolio remains 22 material candidates, Architecture active/queued M0/S0 and 0/0, PRE_FORMAL eligible=0, READY=0, viable executable MECHANISM=0.",
+      "H7 remains the sole nonterminal MECHANISM hold and lacks a fresh native mechanism/intervention/comparator/resource/falsifier contract."
     ]
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "proposed_claim_ceiling": null,
   "proposed_preformal_eligible": null,
-  "preliminary_preformal_readiness": {
-    "status": "N/A_NO_CURRENT_OBJECT"
-  },
+  "preliminary_preformal_readiness": {"status": "N/A_NO_CURRENT_OBJECT"},
   "proposed_hold_dimensions": {
     "hold_class": null,
     "hold_reason": null,
@@ -144,7 +143,7 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason": "No SYSTEM selection occurred; R26 system_priority_exception.used remains false."
+    "reason": "No SYSTEM selection occurred; R27 system_priority_exception.used remains false."
   },
   "candidate_next_research_layer": null,
   "open_scientific_choices": [],
@@ -155,16 +154,17 @@
   "blockers": [
     "NO_COHERENT_SAFE_USEFUL_NONDUPLICATIVE_THEORY_BACKWARD_MECHANISM_TARGET",
     "H7_NATIVE_MECHANISM_INTERVENTION_COMPARATOR_RESOURCE_CONTRACT_AND_FALSIFIER_UNFIXED",
-    "NO_NEW_STABLE_MAIN_OR_AUTHORITATIVE_EVIDENCE_DELTA"
+    "NO_NEW_STABLE_MAIN_OR_AUTHORITATIVE_EVIDENCE_DELTA",
+    "FOUR_CONSECUTIVE_OPPORTUNITY_LOCAL_NO_TARGET_EVENTS_SUPPLY_STALL_WATCHPOINT"
   ],
   "completion_target": "FAIL_CLOSED_NOOP_WITH_FRESH_NO_COHERENT_MECHANISM_TARGET_EXCEPTION",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-21/0435-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-21/0535-sub.md",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "base_mailbox_tip": "99a4cc6e8f0212c1745002a5d2d3873bfee0dc55",
+    "base_mailbox_tip": "48773f14ef96832103fa3e84b510a92d93c0c5c6",
     "history_commit": "THIS_COMMIT",
     "latest_commit": "THIS_COMMIT",
     "final_state_commit": "THIS_COMMIT",
