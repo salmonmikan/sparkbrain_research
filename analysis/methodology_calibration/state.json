@@ -1,58 +1,60 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T06:21:11+09:00",
-  "generation_id": "METHCAL-20260921T062111+0900-R29-C5E1A7D2",
-  "produced_at": "2026-09-21T06:21:11+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260921T062111+0900-R29-C5E1A7D2",
+  "timestamp": "2026-09-21T07:22:29+09:00",
+  "generation_id": "METHCAL-20260921T072229+0900-R30-4A7D9C21",
+  "produced_at": "2026-09-21T07:22:29+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260921T072229+0900-R30-4A7D9C21",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "METHCAL-20260921T052110+0900-R28-B6C3D8A1",
-  "previous_methodology_tip": "d398b9a4af5dab1e6644714c476809a26f70ca88",
+  "supersedes_generation_id": "METHCAL-20260921T062111+0900-R29-C5E1A7D2",
+  "previous_methodology_tip": "03964aa181c901b705bf3e2e5e7e3df82b724f40",
   "run_disposition": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "WELL_CALIBRATED",
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T052110+0900-R28-B6C3D8A1",
-      "commit": "d398b9a4af5dab1e6644714c476809a26f70ca88"
+      "generation_id": "METHCAL-20260921T062111+0900-R29-C5E1A7D2",
+      "commit": "03964aa181c901b705bf3e2e5e7e3df82b724f40"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260921T025500+0900-R19-9D2C4A71",
-      "commit": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4"
+      "generation_id": "CTRL-20260921T065000+0900-R20-8E4C2A71",
+      "commit": "cae67ec0f8980e6125c578c3eb98d67e6da46a36"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T055830+0900-R28-4D7A91C2",
-      "commit": "cde085b48dde724b2ac814585d7f0757bf16ef63"
+      "generation_id": "EVA-20260921T065846+0900-R29-7B2C91E4",
+      "commit": "de3de2fcf0f21aa33ebfe417d210df1e96889a90"
     },
-    "sub_fourth_no_target": {
-      "generation_id": "SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
-      "commit": "64f77557e4c5597791450c407705e7b3659fce62",
-      "mode": "no_op",
-      "exception_code": "NO_COHERENT_MECHANISM_TARGET",
-      "exception_event_ordinal": 4
+    "sub_reframe_mechanism": {
+      "generation_id": "SUB-20260921T064900+0900-THEORY-ASMCAUSAL-7A4C91E2",
+      "prospective_contract": "eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42",
+      "outcome_bearing_commit": "1a571db21ff82001407f01cb2c5449f253bfd4e5",
+      "final_head": "0c857a73cf34b58b737f686fd9af60769de3d306"
     },
-    "main_reconciliation": {
-      "generation_id": "MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7",
-      "commit": "6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a",
-      "status": "COMPLETED"
+    "main_matched_load_feasibility": {
+      "commit": "b2547429823be29a2547419c80c40fb2138dfdc9",
+      "status": "PROSPECTIVE_NON_INTERVENTION_FEASIBILITY_BOUND"
     }
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_handoff_tip": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4",
-    "evidence_analyst_handoff_tip": "cde085b48dde724b2ac814585d7f0757bf16ef63",
-    "sub_fourth_no_target_commit": "64f77557e4c5597791450c407705e7b3659fce62",
-    "main_orchestrator_tip_observed": "6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a",
-    "methodology_prewrite_tip": "d398b9a4af5dab1e6644714c476809a26f70ca88",
+    "control_handoff_tip": "cae67ec0f8980e6125c578c3eb98d67e6da46a36",
+    "evidence_analyst_handoff_tip": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
+    "sub_prospective_contract": "eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42",
+    "sub_outcome_bearing_commit": "1a571db21ff82001407f01cb2c5449f253bfd4e5",
+    "sub_final_head": "0c857a73cf34b58b737f686fd9af60769de3d306",
+    "main_matched_load_feasibility_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
+    "methodology_prewrite_tip": "03964aa181c901b705bf3e2e5e7e3df82b724f40",
     "evidence_tags_count": 5,
     "formal_tags_count": 0,
     "sealed_tags_count": 0,
     "freeze_tags_count": 0
   },
   "material_findings": [
-    "Fresh Analyst R28 canonically groups four same-surface NO_COHERENT_MECHANISM_TARGET checks into one persistent supply-stall episode rather than four independent policy validations.",
-    "Analyst R28 now persists a machine-readable no_target_episode_id and mechanism_surface_signature, with same-episode check count=4 and independent episode count=1, while keeping the scientific-selection window separately at MECHANISM/SYSTEM/SYSTEM=1/3.",
-    "Analyst R28 prospectively changes the SUB lane from repeated local reassessment to a NON_EVIDENTIARY qualitative theory-backward search-space reframe before any fresh candidate decision.",
-    "Fresh MAIN R28 consumes the episode/signature semantics, remains scientifically idle, does not absorb SUB reframe work, and does not manufacture a candidate.",
-    "No new scientific repository evidence or FORMAL evidence exists; the update concerns funnel observability and stop/reframe semantics only."
+    "The first live qualitative theory-backward reframe after the four-check no-target episode recovered a distinct prospectively typed MECHANISM intervention question rather than another local rescan or SYSTEM relabel.",
+    "The recovered Discovery object was prospectively bound before intervention outcome with a fixed DEV surface, comparator selection, ordinary lesion reduction, falsifier/terminal map and no-rescue rule.",
+    "The positive Discovery signal was not promoted: imperfect activity matching and unresolved topology/centrality reductions caused terminal HOLD for the completed object and a fresh successor rather than same-object post-outcome comparator redesign.",
+    "Evidence Analyst canonically closes no-target episode NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1 as CLOSED_BY_FRESH_MECHANISM_SELECTION_AFTER_QUALITATIVE_REFRAME.",
+    "Canonical funnel is 24/24 complete with MECHANISM=12, SYSTEM=12, Architecture active M1/S0, PRE_FORMAL eligible=1 and READY=0.",
+    "Fresh MAIN comparator-feasibility work is prospectively non-intervention-only and explicitly keeps eligible=true distinct from NOT_READY; feasibility cannot itself authorize PRE_FORMAL.",
+    "SUB proposed a noncanonical HOLD enum HOLD_MECHANISM_UNRESOLVED_REDUCTION; Analyst normalized it to HOLD_MECHANISM_UNRESOLVED, revealing a minor producer-side schema-conformance defect without corrupting canonical state."
   ],
   "gate_by_gate_classifications": {
     "hard_integrity_floor": "KEEP",
@@ -62,12 +64,13 @@
     "outcome_exposed_repair_containment": "KEEP",
     "claim_ceiling_current_object": "KEEP",
     "same_object_system_to_mechanism_upgrade_ban": "KEEP",
-    "fresh_mechanism_successor_from_system": "KEEP",
+    "fresh_mechanism_successor_from_system_or_terminal_object": "KEEP",
     "preformal_eligible_distinct_from_readiness": "KEEP",
     "preformal_ready_semantics": "KEEP",
     "first_analyst_authoritative_ready_to_preformal_transition": "INSUFFICIENT_EVIDENCE",
     "hold_multidimensional_model": "KEEP",
     "hold_field_applicability_mask": "KEEP",
+    "producer_funnel_v2_1_hold_enum_conformance": "CLARIFY",
     "classification_completeness_applicability_semantics": "KEEP",
     "classification_completeness_gating": "KEEP",
     "main_mechanism_priority": "KEEP",
@@ -80,7 +83,7 @@
     "repeated_opportunity_local_no_coherent_mechanism_target_use": "KEEP",
     "no_target_sequence_opportunity_observability": "KEEP",
     "repeated_no_target_stop_reframe_semantics": "KEEP",
-    "first_live_qualitative_no_target_episode_reframe_execution": "INSUFFICIENT_EVIDENCE",
+    "first_live_qualitative_no_target_episode_reframe_execution": "KEEP",
     "system_value_under_mechanism_priority": "KEEP",
     "equal_privilege_comparator_general": "KEEP",
     "ordinary_reduction_first": "KEEP",
@@ -96,103 +99,101 @@
     "legacy_topk_sparse_support": "TIGHTEN"
   },
   "false_positive_risks": [
-    "The frozen 1/3 actual-selection ratio can still be mistaken for healthy ongoing supply unless it is read together with same-episode no-target checks; canonical Analyst state now mitigates this with episode-aware reporting.",
-    "Episode ids/signatures could be gamed by cosmetic signature churn; a new episode should require a material mechanism-surface delta, not a scheduler run or control-plane wording change.",
+    "A selective lesion result can be overinterpreted when target and comparator differ in baseline activity or structural/topological load; canonical Analyst handling currently blocks that promotion.",
+    "Producer-side noncanonical HOLD enum strings could fragment funnel metrics if they bypass Analyst normalization; prospective producer schema validation should map/reject unsupported values.",
     "A future SYSTEM-over-comparable-MECHANISM run could be post-hoc justified unless the machine-readable exception remains prospective.",
     "External-validation effects can be overinterpreted when a reference is degenerate or relevant simple reductions/source clustering are omitted."
   ],
   "false_negative_risks": [
-    "The first qualitative search-space reframe has not yet executed; if it merely repeats local source scans, discovery inertia remains possible despite improved semantics.",
-    "Do not require a source-code delta before asking a fresh theory-level mechanism question.",
-    "Do not force a MECHANISM object merely to move the rolling share above 1/3; a same-episode no-target no-op remains preferable if no coherent target survives the reframe.",
-    "Do not turn four checks into a universal numeric exception-rate or reframe threshold.",
-    "Do not require positive signal or prior comparator/reduction victory merely to become preformal_eligible or READY."
+    "Do not require exact comparator feasibility to have succeeded merely for a fresh MECHANISM object to remain preformal_eligible; eligibility and readiness must remain distinct.",
+    "If exact activity/topology matching is infeasible on the bounded DEV surface, HOLD/STOP rather than silently broadening or retuning the comparator after outcome knowledge.",
+    "Do not infer from one successful qualitative reframe that mechanism supply is permanently healthy; recovery is one small-n family.",
+    "Do not require source-code delta before asking a fresh theory-level mechanism question.",
+    "Do not require positive signal or prior comparator/reduction victory merely to become READY."
   ],
   "moving_goalpost_assessment": {
     "level": "LOW",
-    "finding": "No historical candidate, consumed identity, score, claim ceiling, terminal disposition, evidence ref or scientific threshold was rewritten. Episode grouping changes only prospective/control-plane interpretation of repeated no-target checks."
+    "finding": "The completed Discovery object was terminalized with its original fixed comparator. Unresolved exact matching/topology questions were moved to a fresh successor before further outcome-bearing work. No historical result, consumed identity, score, claim ceiling, evidence ref or scientific threshold was rewritten."
   },
   "pass_reachability_assessment": {
     "status": "REACHABLE_BUT_NARROW",
-    "finding": "Historical fresh MECHANISM objects demonstrate prospective preformal_eligible=true can coexist with NOT_READY before outcome. Current canonical eligible=0 and READY=0; first READY-to-PRE_FORMAL transition remains unobserved."
+    "finding": "The fresh active successor is preformal_eligible=true while readiness remains NOT_READY before any new intervention outcome, directly demonstrating that eligibility is not success. First READY-to-PRE_FORMAL transition remains unobserved."
   },
-  "claim_type_separation_findings": "Healthy. No current scientific object exists; terminal SYSTEM work remains SYSTEM, H7 remains a MECHANISM hold without execution, and no-target episode metadata carries no claim ceiling and is not promoted into science.",
+  "claim_type_separation_findings": "Healthy. The reframe recovered a genuinely mechanism-level causal intervention question. The predecessor remains MECHANISM and terminal; the fresh successor is separately MECHANISM. SYSTEM work is not relabeled and a lower-value SYSTEM successor is explicitly deferred while M1 is active.",
   "mechanism_supply_health": {
-    "status": "QUALITY_FLOOR_HEALTHY_PERSISTENT_STALL_EPISODE_OBSERVABLE_REFRAME_REQUIRED_UNTESTED",
-    "canonical_analyst_population": "MECHANISM=10,SYSTEM=12,22/22_complete",
-    "observed_actual_selection_window": "MECHANISM,SYSTEM,SYSTEM",
+    "status": "QUALITY_FLOOR_HEALTHY_REFRAME_RECOVERED_GENUINE_MECHANISM_SUPPLY_SMALL_N",
+    "canonical_analyst_population": "MECHANISM=12,SYSTEM=12,24/24_complete",
+    "observed_actual_selection_window": "SYSTEM,SYSTEM,MECHANISM",
     "theory_backward_share": "1/3",
-    "no_coherent_target_exception_count": 4,
-    "consecutive_no_target_check_count": 4,
-    "no_target_episode_id": "NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1",
-    "mechanism_surface_signature": "main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d|evidence=5|MECHANISM=10|activeM=0|nonterminalM=CAND-H7-RESP-01|PF_READY=0",
-    "same_episode_check_count": 4,
-    "independent_episode_count": 1,
-    "exception_counts_as_mechanism_work": false,
-    "finding": "The quality floor remains healthy because quota pressure still does not create label inflation. Supply remains stalled, but the stall is now episode-aware and the next prospectively allocated action is a qualitative theory-backward reframe rather than another mechanical local rescan."
+    "prior_no_target_episode_id": "NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1",
+    "prior_same_episode_check_count": 4,
+    "prior_independent_episode_count": 1,
+    "prior_episode_status": "CLOSED_BY_FRESH_MECHANISM_SELECTION_AFTER_QUALITATIVE_REFRAME",
+    "active_mechanism_candidate": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01",
+    "finding": "Quality floor held through the stall and the first qualitative reframe recovered a distinct falsifiable mechanism family without quota-driven relabeling. Long-run durability remains small-n."
   },
   "funnel_observability": {
-    "status": "GOOD_22_OF_22_CANONICAL_EPISODE_AWARE_4_CHECKS_ONE_EPISODE",
-    "classification_completeness": "22/22_reviewed_canonical_analyst",
+    "status": "GOOD_24_OF_24_CANONICAL_EPISODE_CLOSED_ACTIVE_M1_ELIGIBLE1_READY0",
+    "classification_completeness": "24/24_reviewed_canonical_analyst",
     "candidate_population_excludes_no_target_events": true,
-    "active_architecture": "NONE",
-    "no_target_event_count": 4,
+    "active_architecture": "M1,S0",
+    "preformal_eligible_count": 1,
+    "preformal_ready_count": 0,
+    "no_target_event_count_historical_episode": 4,
     "no_target_episode_count": 1,
-    "no_target_episode_id": "NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1",
-    "mechanism_surface_signature_present": true,
-    "policy_population_rule": "Use Analyst-reviewed canonical candidate dimensions for conversion/policy conclusions; report actual selections, same-episode no-target checks and independent episode count separately; do not infer a universal numeric readiness/support/exception-rate threshold.",
-    "finding": "The R28 episode-independence observability defect is closed at the canonical Analyst/MAIN layer."
+    "no_target_episode_status": "CLOSED_BY_FRESH_MECHANISM_SELECTION_AFTER_QUALITATIVE_REFRAME",
+    "policy_population_rule": "Use Analyst-reviewed canonical candidate dimensions for conversion/policy conclusions; keep historical no-target checks outside candidate/conversion denominators; do not infer universal numeric readiness/support/exception-rate thresholds.",
+    "finding": "Classification completeness is full and the transition from stalled no-target episode to fresh MECHANISM selection is explicitly observable."
   },
   "preformal_gate_calibration": {
-    "status": "ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED",
+    "status": "ELIGIBILITY_READINESS_SEPARATION_LIVE_ACTIVE_OBJECT_READY_TRANSITION_UNTESTED",
     "hidden_second_formal_gate": false,
-    "current_canonical_eligible_count": 0,
+    "current_canonical_eligible_count": 1,
     "current_canonical_ready_count": 0,
     "first_ready_to_preformal": "INSUFFICIENT_EVIDENCE",
-    "finding": "READY remains defined as development/test readiness. No live READY-to-PRE_FORMAL transition exists yet to test implementation semantics."
+    "finding": "Fresh active successor is eligible=true/NOT_READY and MAIN explicitly states comparator feasibility is not scientific success and cannot authorize PRE_FORMAL. READY remains development/test readiness; the first live READY transition is still unobserved."
   },
   "system_priority_exception_audit": {
     "used_genuine_exception": false,
     "count_observed_genuine_exception": 0,
     "system_priority_exception_used_current": false,
-    "basis": "No current MAIN scientific object exists and no comparable executable/informative MECHANISM exists.",
-    "recorded_before_scientific_execution": "NOT_APPLICABLE_CURRENTLY",
-    "finding": "No post-hoc priority gaming is observed. First genuine exception remains unobserved.",
+    "basis": "A viable active MECHANISM successor now exists; Analyst allocates it to MAIN and explicitly stops a lower-value SYSTEM successor, so no exception is needed.",
+    "recorded_before_scientific_execution": "NOT_APPLICABLE_NO_EXCEPTION",
+    "finding": "MECHANISM priority is operating as intended. First genuine SYSTEM-over-comparable-MECHANISM exception remains unobserved.",
     "first_live_use": "INSUFFICIENT_EVIDENCE"
   },
   "no_coherent_target_audit": {
     "exception_code": "NO_COHERENT_MECHANISM_TARGET",
     "exception_count_observed": 4,
     "consecutive_check_count": 4,
-    "latest_generation_id": "SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
-    "latest_commit": "64f77557e4c5597791450c407705e7b3659fce62",
-    "candidate_created": false,
-    "scientific_execution": false,
-    "counts_as_mechanism_work": false,
-    "observed_theory_backward_share_actual_selections": "1/3",
     "episode_id": "NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1",
     "same_episode_check_count": 4,
     "independent_episode_count": 1,
-    "rationale_quality": "CREDIBLE_SAME_SURFACE_REASSESSMENT_CANONICALLY_EPISODE_GROUPED",
+    "episode_status": "CLOSED_BY_FRESH_MECHANISM_SELECTION_AFTER_QUALITATIVE_REFRAME",
+    "candidate_created_during_exception_checks": false,
+    "counts_as_mechanism_work": false,
+    "observed_theory_backward_share_after_recovery": "1/3",
+    "rationale_quality": "CREDIBLE_AND_EPISODE_CLOSED_BY_DISTINCT_MECHANISM_RECOVERY",
     "copy_forward_allowed": false,
-    "finding": "Fourth live use remains credible and not an escape hatch on current evidence. Analyst now correctly treats all four checks as one persistent stall episode and prospectively requires qualitative search-space reframe rather than another mechanical local scan.",
+    "finding": "The exception did not become an escape hatch. The required qualitative reframe recovered a prospectively typed mechanism question and closed the persistent episode.",
     "first_live_use": "KEEP",
     "repeated_live_use": "KEEP",
     "sequence_observability": "KEEP",
     "stop_reframe_semantics": "KEEP",
-    "first_live_reframe_execution": "INSUFFICIENT_EVIDENCE",
-    "confidence": "HIGH_EVENT_AND_EPISODE_OBSERVABILITY_MODERATE_LONG_RUN_SUPPLY_DURABILITY"
+    "first_live_reframe_execution": "KEEP",
+    "confidence": "HIGH_FOR_CURRENT_EPISODE_MODERATE_HIGH_LONG_RUN_DURABILITY"
   },
   "classification_completeness": {
-    "classified_reviewed": 22,
-    "material_reviewed_population": 22,
+    "classified_reviewed": 24,
+    "material_reviewed_population": 24,
     "ratio_reviewed": 1.0,
     "pending_unreviewed_new_candidate_count": 0,
-    "active_candidate_count": 0,
-    "no_target_control_plane_event_count": 4,
+    "active_candidate_count": 1,
+    "active_candidate_id": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01",
+    "no_target_control_plane_event_count_historical_episode": 4,
     "no_target_episode_count": 1,
     "no_target_event_in_candidate_denominator": false,
-    "policy_use": "Use 22/22 Analyst-reviewed canonical candidate population; report four no-target checks as one episode separately from scientific-selection and conversion metrics."
+    "policy_use": "Use 24/24 Analyst-reviewed canonical candidate population; report historical no-target episode separately."
   },
   "external_calibration": {
     "status": "CLAIM_TYPE_SPECIFIC_TIGHTENING_UNCHANGED",
@@ -206,19 +207,20 @@
     "universalization_forbidden": true
   },
   "stop_reframe_calibration": {
-    "status": "CORE_STOP_RULES_HEALTHY_EPISODE_AWARE_REFRAME_SEMANTICS_PROSPECTIVELY_EXPLICIT_LIVE_EXECUTION_UNTESTED",
-    "finding": "MAIN correctly idles and terminal work is not reopened. Analyst now explicitly assigns a non-evidentiary qualitative theory-backward search-space reframe before any next candidate decision. First live execution remains to be audited."
+    "status": "HEALTHY_REFRAME_LIVE_RECOVERY_OBSERVED_FRESH_SUCCESSOR_DISCIPLINE_HELD",
+    "finding": "The persistent no-target episode triggered a qualitative theory-backward reframe that recovered a distinct mechanism family. The positive but comparator-limited predecessor was terminalized and unresolved reductions moved to a fresh successor rather than repaired post outcome."
   },
   "prospective_recommendations": [
-    "Keep admission, comparator, reduction, claim-type, readiness and hard-integrity floors unchanged.",
-    "Preserve no_target_episode_id/mechanism_surface_signature and report same-episode checks, independent episodes and actual scientific selections separately.",
-    "On the next SUB opportunity perform the Analyst-authorized non-evidentiary qualitative theory-backward search-space reframe before candidate selection; record distinct mechanism question families considered and their reduction/falsifier disposition.",
-    "Do not require source-code delta for fresh theory-level questions and do not force a candidate if none survives quality requirements.",
-    "Continue auditing first READY-to-PRE_FORMAL and first genuine SYSTEM-priority exception live use."
+    "Keep admission, novelty/reduction, comparator, claim-type, readiness and hard-integrity floors unchanged.",
+    "Keep the completed causal-selectivity Discovery object terminal; use only the fresh matched-load successor for further comparator development.",
+    "Prospectively enforce canonical HOLD enum values at producer handoff while preserving separate hold_reason, terminal_state and queue_state fields.",
+    "Complete only the already-bound non-intervention comparator-feasibility cycle. If exact matching is infeasible, HOLD/STOP; if feasible, return to fresh Analyst review before any suppression/intervention outcome.",
+    "Do not promote comparator feasibility, selective DEV signal, or preformal_eligible=true into READY or PRE_FORMAL success.",
+    "Continue auditing the first READY-to-PRE_FORMAL transition and first genuine prospective SYSTEM-priority exception."
   ],
   "utility_request": {
     "created": false,
-    "reason": "Live rollout of the newly explicit no-target reframe lane is higher-information than a synthetic methodology probe."
+    "reason": "Live comparator-feasibility rollout is higher-information than a synthetic methodology probe."
   },
   "hard_floor_confirmation": {
     "status": "CONFIRMED_DO_NOT_RELAX",
@@ -226,24 +228,24 @@
     "prospective_frozen_protocols": true,
     "raw_before_score": true,
     "preserve_before_read": true,
-    "exact_binding": true,
+    "exact_binding_required": true,
     "immutable_evidence": true,
     "no_evaluator_target_leakage": true,
     "no_silent_post_outcome_repair": true
   },
   "confidence": {
     "overall": "HIGH",
-    "episode_observability": "HIGH",
-    "stop_reframe_semantics": "MODERATE_HIGH_PROSPECTIVE_RULE_EXPLICIT_LIVE_REFRAME_UNTESTED",
-    "long_run_mechanism_supply": "MODERATE",
-    "first_ready_to_preformal": "INSUFFICIENT_EVIDENCE",
-    "first_system_priority_exception": "INSUFFICIENT_EVIDENCE"
+    "live_reframe_calibration": "HIGH_FOR_FIRST_ROLLOUT",
+    "preformal_eligibility_readiness_separation": "HIGH",
+    "mechanism_supply_long_run": "MODERATE_HIGH_SMALL_N",
+    "ready_to_preformal_transition": "INSUFFICIENT_EVIDENCE",
+    "system_priority_exception_live_use": "INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_analyst": [
-    "Preserve no_target_episode_id, mechanism_surface_signature and same-episode check count as canonical funnel fields.",
-    "Audit the first live qualitative reframe for genuinely distinct theory-level mechanism families rather than another local source rescan.",
-    "If the reframe yields no candidate, keep it in the same episode unless a material mechanism-surface delta changes the signature; do not impose a numeric cutoff.",
-    "Preserve the first READY object's pre-outcome readiness rationale so READY-to-PRE_FORMAL can be audited as development/test readiness rather than prior success.",
-    "For any future SYSTEM-over-comparable-MECHANISM execution, require the machine-readable exception before execution."
+    "Preserve the closed no-target episode and do not mechanically reopen it after the fresh MECHANISM surface change.",
+    "Enforce canonical HOLD enum values at producer handoff; keep orthogonal reason/terminal/queue fields unchanged.",
+    "Preserve the active successor's pre-outcome eligible=true/NOT_READY rationale for later READY-transition audit.",
+    "If exact matched-load feasibility fails, HOLD/STOP rather than relaxing matching after outcome knowledge.",
+    "For any future SYSTEM-over-comparable-MECHANISM execution, record the machine-readable exception before execution."
   ]
 }
