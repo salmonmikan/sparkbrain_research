@@ -11,7 +11,7 @@
     "sub_observed_for_collision": "SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2"
   },
   "execution_mode": "PRIMARY",
-  "status": "ACTIVE",
+  "status": "COMPLETED",
   "started_at": "2026-09-21T08:16:24+09:00",
   "heartbeat_at": "2026-09-21T08:16:24+09:00",
   "analyst_generation_id": "EVA-20260921T075832+0900-R30-9A4C2E71",
@@ -43,13 +43,18 @@
   "active_identity": null,
   "active_step": "STATIC_READ_ONLY_SOURCE_DOCS_TESTS_CALLSITES_CONTRACT_AUDIT_ONLY",
   "same_run_dynamic_evaluation_interleaving_authorized": false,
+  "observation_terminal": "MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT",
+  "prospective_contingency_branch": "HOLD_CONTRACT_AMBIGUITY_AND_STOP",
+  "canonical_hold_dimensions_pending_fresh_analyst": true,
   "freshness_reconciliation": {
     "analyst_tip_at_acquire": "773c88edcaf799140830f3d204d0f0ff82c9bcad",
-    "orchestrator_tip_before_acquire": "958f2d961627b86c39f3d60b3ae39f63f685571f",
+    "analyst_tip_before_final_lease": "773c88edcaf799140830f3d204d0f0ff82c9bcad",
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "latest_sub_generation": "SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2",
     "sub_collision": false
   },
-  "evidentiary_status": "ACTIVE_NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_STATIC_CONTRACT_AUDIT",
+  "evidentiary_status": "NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_STATIC_CONTRACT_AUDIT_COMPLETE",
+  "stop_reason": "R30_STATIC_SYSTEM_TERMINAL_MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT_HOLD_CONTRACT_AMBIGUITY_STOP_FRESH_ANALYST_REVIEW",
+  "next_action": "Fresh Evidence Analyst must canonicalize HOLD_CONTRACT_AMBIGUITY before any continuation; no dynamic evaluation interleaving or SYSTEM-to-MECHANISM upgrade is authorized from this generation.",
   "owner": "main"
 }
