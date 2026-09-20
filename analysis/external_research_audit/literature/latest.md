@@ -1,107 +1,110 @@
-# SparkBrain Literature Reduction Scout — 2026-09-20 09:30 JST
+# SparkBrain Literature Reduction Scout — 2026-09-20 12:30 JST
 
-## Role
+- schema_version: `2`
+- generation_id: `LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B`
+- produced_at: `2026-09-20T12:30:00+09:00`
+- producer_run_id: `external-literature-auto-20260920T123000+0900-R11-7E4A1C2B`
+- authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
+- supersedes_generation_id: `LEGACY_GENERATION_UNKNOWN`
+- role: `LITERATURE_REDUCTION_SCOUT`
+- selected_slot_jst: `12:30`
+- schedule_inference_used: `false`
 
-`LITERATURE_REDUCTION_SCOUT`
+## Input generations / exact handoffs
 
-## Repository and control-plane state
+- Control Brain: `LEGACY_GENERATION_UNKNOWN` @ `b35068cbee426c99c3cc1f6dd23053778a2bd88a`
+- Evidence Analyst: `EVA-20260920T115704+0900-R12-A6B8DE50` @ `dcaa02fc25506ff4e8b14d7540b6c754a8a6da98`
+- MAIN: `MAIN-20260920T121227+0900-PRIMARY-FUNNEL21-HOLD-7C41A2D9` @ `0d1371bee14b95e126cef203f516c0033d538363`
+- SUB: `SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4` @ `03c8981d86ce0086cf5a01798a80e8275e58b711`
+- Prior Literature stream: `LEGACY_GENERATION_UNKNOWN` @ `f399e9d14ef6d491135d19161b8c1d7986b94e5b`
 
-Repository evidence was re-fetched independently before interpreting the designated control-plane mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative namespace still contains exactly five annotated `evidence/*` tags and no `formal/*` or `sealed/*` tags; no fresh FORMAL identity, STARTED authority, or immutable scientific evidence was observed.
+## Repository state independently re-fetched
 
-The currently relevant lower-funnel object is `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01` on `research/main-v05-homeostasis-population-contract-arch-study-20260920@81af6ac56c31d169b591bc30854d0efa9d0bac8c`. The repository-side prospectively mapped terminal is `WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED`. Its committed decision facts state that production Homeostasis counts all supplied field spikes without a receptor filter, updates rate/threshold state for all field units, resets `dead_streak` on any supplied field spike, and uses all field units in the active-fraction denominator, while no explicit public whole-field or reservoir-only liveness population contract was found. Stable `main` source independently confirms that `HomeostaticController.observe()` counts every supplied spike and that `IntegratedV05Brain.process_episode()` passes unfiltered `base_result.spikes` to Homeostasis while Assembly extraction separately excludes receptor IDs.
+Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative `evidence/*` tag set remains five entries; tag-based `formal/*` and `sealed/*` remain empty. Legacy `freeze/*` branches, `preserve/*` refs, and `control/*` refs were independently re-fetched and remain present; no fresh FORMAL identity, STARTED transition, or immutable-evidence mutation was observed. PR #148 and #149 remain open, unmerged, and mergeable.
 
-The designated Control Brain (`b35068cbee426c99c3cc1f6dd23053778a2bd88a`), Evidence Analyst (`df12559698c0f6bc0165c550a55c62f7287a86bd`), MAIN and SUB streams, and newest role-suffixed histories were read only from their designated paths. Prior Literature history through 06:30 JST was read before searching, so refractory, configuration, temporal batching, Top-k/hysteresis, H7 causal-credit, provenance, eligibility/GLE/SAL, reservoir basics, RUDDER/TVT and other already-covered reductions are not recycled here.
+The most relevant completed lower-funnel repository object is `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` on `research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920@13239163f6fecb2b61ea2189a5a94ba12b6cb3d6`, terminal `LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED`. Stable source fixes `max_candidates=256`; on a new unmatched pattern at capacity it prunes stale immature candidates and, if still full, declines to create a new candidate. The prune condition does not reclaim mature candidates. The repository result explicitly does not establish that supported/default execution reaches saturation or that mature turnover is required.
 
-A fresh repository-side workflow check found that exact-head ordinary CI `35478448679` on `81af6ac56c31d169b591bc30854d0efa9d0bac8c`, which MAIN last reported as in progress, has now completed successfully. This does not change the prospectively mapped scientific/API terminal; it closes only the repository-integrity wait. The current Architecture object therefore remains stopped for fresh Evidence Analyst review, with no dynamic receptor-aware comparator or same-object cycle 2 authorized.
+Fresh Evidence Analyst generation `EVA-20260920T115704+0900-R12-A6B8DE50` classifies this as `SYSTEM / HOLD_SYSTEM_TERMINAL / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED / preformal_eligible=false`; it also rejects `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` after a matched DEV-only probe found mature/suppressed Assembly recognition changed readout status but not the exact lower `v04_result` or lower field state. Current MAIN is intentionally idle with no active/queued Architecture object; SUB retains bounded Discovery ownership. No current object clears PRE_FORMAL or FORMAL.
+
+Prior Literature through 09:30 was read first. This run does not recycle the earlier Homeostasis population/source, refractory, temporal batching, topology-config, Top-k/hysteresis, H7 causal-credit, eligibility, reservoir, or provenance reductions.
 
 ## Genuinely new external literature findings
 
-### 1. Overall spike activity can remain present while the recurrent network is in a very different dynamical state because external drive is a separate control variable
+### 1. Bounded prototype/category memory with explicit pruning is an established streaming-learning design, not a novel lifecycle principle
 
-Zierenberg, Wilting & Priesemann, *Homeostatic Plasticity and External Input Shape Neural Network Dynamics* (Physical Review X 8, 031018; published 20 July 2018; DOI `10.1103/PhysRevX.8.031018`) explicitly separates external input from recurrent propagation. In their homeostatically regulated spiking model, changing external input strength shifts the collective dynamical regime even when the network is governed by the same local dynamics and homeostatic rule. The paper treats external input rate as a control variable and estimates the fraction of spikes imposed externally versus generated through recurrent activation.
+Cao et al., *Density-Based Clustering over an Evolving Data Stream with Noise* (SDM 2006, DOI `10.1137/1.9781611972764.29`) introduced DenStream for one-pass evolving streams under limited memory. It maintains compact potential/outlier micro-clusters and uses a pruning strategy tied to decayed support. More recently, Ye & Bors, *Online Task-Free Continual Generative and Discriminative Learning via Dynamic Cluster Memory* (CVPR 2024, DOI `10.1109/CVPR52733.2024.02476`) explicitly expands cluster memory when incoming knowledge is novel and prunes overlapping clusters to keep a fixed memory capacity while retaining diversity.
 
-**Reduction impact:** an all-field nonzero spike count is not equivalent to evidence that the recurrent/internal computation is alive. SparkBrain's receptor-only/non-dead observation is therefore naturally reduced to population/source mixing unless the public contract intentionally defines liveness over the whole field.
+**Reduction impact:** if a future supported SparkBrain use case actually requires continual acquisition beyond Assembly capacity, `decay/prune/merge/replace under a matched fixed memory budget` is an ordinary baseline. Merely adding mature-candidate turnover would be engineering/lifecycle design, not computational-principle novelty. The current static terminal should remain closed rather than be rescued with a post-outcome saturation experiment.
 
-### 2. Afferent versus recurrent activation already has a direct ordinary decomposition baseline
+### 2. Stability–plasticity and category recruitment already have a mature ordinary mechanism family
 
-Wilting & Priesemann, *Between Perfectly Critical and Fully Irregular: A Reverberating Model Captures and Predicts Cortical Spike Propagation* (Cerebral Cortex 29, 2759–2770; published 11 March 2019; DOI `10.1093/cercor/bhz049`) explicitly asks what fraction of population activity is generated by external afferent input versus recurrent internal activation. In its branching-model approximation, the externally generated fraction is `h/<A> = 1 - m`, with the remainder attributed to recurrent propagation.
+Adaptive Resonance Theory and related recurrent category-learning models were designed around the stability–plasticity problem: preserve learned categories while admitting new ones. Layher et al., *Adaptive learning in a compartmental model of visual cortex—how feedback enables stable category learning and refinement* (Frontiers in Psychology 2014, DOI `10.3389/fpsyg.2014.01287`) uses learned bottom-up/top-down category representations; a sufficiently large mismatch triggers recruitment of new representational resources and creation/refinement of categories. ART literature likewise uses mismatch-triggered reset/search for a better existing or novel category.
 
-**Reduction impact:** a future fresh SparkBrain discriminator does not need to invent a new notion of “internal liveness.” A source-stratified or recurrent-contribution baseline is established ordinary methodology. The current static object should not be extended post hoc, but any fresh successor can prospectively separate receptor/afferent activity from recurrent/reservoir activity rather than using one aggregate `dead` flag.
+**Reduction impact:** a future claim that SparkBrain stably accumulates new Assembly categories while preserving old ones must beat ordinary match/reset/recruitment or bounded-prototype mechanisms under matched memory/resources. The interesting quantity is the prospective retention–adaptation trade-off under an explicit resource policy, not category persistence alone.
 
-### 3. Homeostatic feedback is naturally local, cell-autonomous, population-specific, and network-wide at different scales; one global population boundary is not canonical
+### 3. Pattern completion/regeneration requires a causal feedback/recurrent path; a post-field Assembly readout is not an associative-completion mechanism
 
-Turrigiano's 2012 review *Homeostatic Synaptic Plasticity: Local and Global Mechanisms for Stabilizing Neuronal Function* (Cold Spring Harbor Perspectives in Biology 4:a005736; DOI `10.1101/cshperspect.a005736`) emphasizes that synaptic scaling can let neurons detect changes in their own firing rates, while other homeostatic mechanisms operate locally or network-wide over different spatial and temporal scales. A recent Version of Record, Lu et al., *The interplay between homeostatic synaptic scaling and homeostatic structural plasticity maintains the robust firing rate of neural networks* (eLife, 4 July 2025; DOI `10.7554/eLife.88376.3`), likewise models homeostatic synaptic scaling and structural plasticity as cell-autonomous activity-dependent feedback mechanisms and shows that multiple ordinary mechanisms can compensate for each other.
+Le Duigou et al., *Recurrent synapses and circuits in the CA3 region of the hippocampus: an associative network* (Frontiers in Cellular Neuroscience 2014, DOI `10.3389/fncel.2013.00262`) reviews sparse recurrent CA3 connectivity as the substrate for associative representations and recall of ensemble patterns from partial cues. Layher et al. likewise realizes associative/category effects through learned feedforward and feedback interactions, with top-down feedback modulating earlier representations.
 
-**Reduction impact:** whether receptor units and reservoir units should share the same target, threshold adaptation surface, active-fraction denominator, and dead detector is a model/API population-policy choice. The literature does not provide a canonical justification for pooling them; it instead raises the bar to make the regulated population and setpoint explicit.
+**Reduction impact:** the rejected current-v0.5 Assembly-feedback candidate is consistent with a straightforward architectural distinction: recognition after lower-field computation is a readout, whereas pattern completion/regeneration requires a causal recurrent/top-down route (or an explicitly equivalent mechanism). Any future positive Assembly-completion claim must be a fresh prospective architecture/mechanism object with such a causal path; it cannot reinterpret the current negative Discovery.
 
-### 4. “Network stability” is multi-observable: restoring firing rate and restoring correlation/network structure can require different homeostatic mechanisms
+### 4. Biological engram/assembly persistence does not imply permanent mature entries
 
-Wu et al., *Homeostatic mechanisms regulate distinct aspects of cortical circuit dynamics* (PNAS 117, 24514–24525; published online 11 September 2020; DOI `10.1073/pnas.1918368117`) found experimentally and in modeling that intrinsic plasticity was essential for recovery of firing rates, whereas synaptic scaling was crucial for recovery of correlation structure and network organization. These quantities can recover independently.
+Ryan & Frankland, *Forgetting as a form of adaptive engram cell plasticity* (Nature Reviews Neuroscience 2022, DOI `10.1038/s41583-021-00548-3`) frames natural forgetting as circuit remodeling that can move engram cells between accessible and inaccessible states, with forgetting rates sensitive to environmental conditions.
 
-**Reduction impact:** even after the population boundary is specified, a single `dead` boolean or `active_unit_fraction` cannot by itself stand in for generic “network stability.” A future supported contract should state which observable it represents: any-field activity, reservoir liveness, target-rate maintenance, recurrent propagation, correlation structure, or another explicitly named property.
+**Reduction impact:** a biological “cell assembly” analogy cannot justify `mature == permanent`. Both persistence and adaptive loss/remodeling are established biological possibilities. SparkBrain therefore needs an explicit computational lifecycle contract—lifetime store, bounded working set, decay, consolidation, replacement, or another policy—before mature-candidate persistence can carry scientific interpretation.
 
-## Inference for SparkBrain
+## Synthesis
 
-The ordinary reduction ladder for the active line is now sharper:
+The new literature strengthens the current Funnel v2.1 disposition rather than opening a successor. `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` has useful SYSTEM information, but the literature supplies several ordinary solutions if continual bounded acquisition ever becomes a supported requirement. `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` should remain rejected for the current architecture because the causal route required for completion/regeneration is absent in the bounded matched probe and source ordering.
 
-`source/population definition (receptor/afferent vs recurrent/reservoir)`
-→ `activity attribution or source-stratified telemetry`
-→ `cell/population-specific homeostatic target and denominator`
-→ `explicit stability observable (rate/liveness/correlation/etc.)`
-→ only then any residual mechanism or novelty claim.
+A future fresh Assembly object should first prospectively bind: (1) supported learning horizon and whether saturation is reachable/relevant, (2) memory-resource budget, (3) retention versus adaptation objective, (4) lifecycle policy for mature versus immature prototypes, and, for pattern-completion claims, (5) an actual causal feedback/recurrent route. None of these should be retrofitted into the completed objects.
 
-The current repository result already sits at the first step: the implementation is clearly all-field while the public population meaning is unspecified. The literature strongly supports treating this as observability/configuration-of-the-regulated-population semantics rather than a new stability mechanism. No current PRE_FORMAL or FORMAL conclusion should change.
-
-No Utility request is created. The current static Architecture object has already reached a valid fixed terminal and exact-head CI success, and its contract explicitly forbids same-object dynamic receptor-aware comparison. A literature-driven diagnostic request before fresh Evidence Analyst closure would duplicate or contaminate the active stop boundary.
-
-## Knowledge-flow contract
+## Machine-usable handoff
 
 ```yaml
+schema_version: 2
+generation_id: LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B
+produced_at: 2026-09-20T12:30:00+09:00
+producer_run_id: external-literature-auto-20260920T123000+0900-R11-7E4A1C2B
+authority_scope: EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF
+supersedes_generation_id: LEGACY_GENERATION_UNKNOWN
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - CAND_V05_HOMEOSTASIS_POPULATION_SEMANTICS_01
-  - V05_HOMEOSTASIS_POPULATION_CONTRACT
-  - ARCHITECTURE_STABILITY_OBSERVABILITY
-  - RECURRENT_VS_AFFERENT_ACTIVITY_ATTRIBUTION
+  - CAND_ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_01
+  - CAND_V05_ASSEMBLY_FEEDBACK_CAUSALITY_01
+  - V05_ASSEMBLY_MEMORY_LIFECYCLE
+  - FUTURE_ASSEMBLY_PATTERN_COMPLETION
   - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
-  STRONG_ORDINARY_ARCHITECTURE_REDUCTION.
-  Established neural-network literature explicitly separates external/afferent
-  drive from recurrently generated activity, treats homeostatic targets at
-  multiple cell/population scales, and shows that distinct stability observables
-  can require different homeostatic mechanisms. The current all-field dead/active
-  signal is therefore an API/population-observability policy, not a new stability
-  mechanism or computational-principle result.
+  STRONG_ORDINARY_LIFECYCLE_AND_ASSOCIATIVE_MEMORY_REDUCTION. Bounded streaming
+  prototype memory already uses decay/pruning/merge or fixed-capacity memory
+  management; stability-plasticity/category recruitment is an established
+  mechanism family; and associative pattern completion requires a causal
+  recurrent/feedback path. The completed Assembly lifecycle object remains
+  SYSTEM/HOLD and the current-v0.5 Assembly-feedback mechanism remains REJECTED.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - source-stratified receptor/afferent versus recurrent/reservoir activity telemetry
-  - recurrent-contribution or branching-style attribution baseline where scientifically appropriate
-  - explicit per-population homeostatic targets and active-fraction denominators
-  - separate whole-field liveness, internal-reservoir liveness, firing-rate and correlation/stability observables
-  - matched receptor-aware comparator only in a genuinely fresh prospectively authorized object
+  - DenStream/DCM-style bounded prototype memory with decay/pruning/merge/replacement under matched memory budget
+  - ART-style match/reset/category recruitment under matched similarity and resource constraints
+  - prospectively fixed retention-versus-adaptation/load curve only for a genuinely fresh supported saturation object
+  - explicit recurrent/top-down causal-feedback comparator for any future Assembly completion/regeneration claim
 questions_for_evidence_analyst:
-  - Close the current static object at WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED now that exact-head CI has succeeded, without same-object dynamic continuation?
-  - Require any future stability contract to bind both the regulated population and the named stability observable rather than treating dead/active_unit_fraction as generic network health?
-  - If a fresh successor is warranted, use source-stratified afferent/recurrent accounting as an ordinary baseline rather than framing receptor masking as a novel mechanism?
+  - Keep the lifecycle object terminal SYSTEM/HOLD and prohibit same-object saturation/turnover rescue?
+  - If supported saturation later becomes independently relevant, require matched bounded-memory lifecycle baselines and a prospectively fixed retention/adaptation objective?
+  - Preserve current-v0.5 Assembly-feedback REJECT; require a fresh causal feedback path before any future completion/regeneration mechanism claim?
 questions_for_control_brain:
-  - Add afferent-versus-recurrent activity attribution and population-specific homeostatic targets to the ordinary architecture reduction checklist?
-  - Keep this line outside PRE_FORMAL/FORMAL novelty accounting unless a distinct mechanism survives source/population and multi-observable stability reductions?
-  - Preserve the current stop boundary and let fresh Analyst review decide whether any successor has enough supported-system relevance to justify MAIN time?
+  - Add bounded prototype lifecycle, stability-plasticity/category recruitment, and explicit feedback-path requirements to the ordinary Assembly reduction ladder?
+  - Keep MAIN idle rather than create a literature-driven successor while no supported saturation/feedback object exists?
+  - Keep PRE_FORMAL/FORMAL empty until a native positive mechanism survives these ordinary reductions under matched resources?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs
-  - CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01 prospective contract commit 4930d894af5b0880d9e443f7582db3a96c206a4e
-  - raw facts commit 8f5d7e23b6896d9352daa77f885a4a1cc52ae820 and mapped terminal head 81af6ac56c31d169b591bc30854d0efa9d0bac8c
-  - exact-head CI 35478448679 successful repository-integrity record
-  - no literature-driven dynamic comparator, population-policy change, cycle 2, PRE_FORMAL/FORMAL promotion, official TEST, new formal identity/STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change
+  - canonical terminal classifications and consumed STARTED/control/preserve/evidence refs
+  - CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 contract/raw/terminal and no same-object saturation or turnover experiment
+  - CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01 negative Discovery result and no cycle-2 rescue
+  - no official TEST, fresh FORMAL identity/STARTED, rescore, retune, research merge, immutable-ref/tag mutation, or scheduler change
 utility_request_created: null
 ```
 
-## Sources
-
-- Zierenberg J, Wilting J, Priesemann V. *Homeostatic Plasticity and External Input Shape Neural Network Dynamics*. Physical Review X 8, 031018. Published 20 July 2018. DOI `10.1103/PhysRevX.8.031018`.
-- Wilting J, Priesemann V. *Between Perfectly Critical and Fully Irregular: A Reverberating Model Captures and Predicts Cortical Spike Propagation*. Cerebral Cortex 29(6):2759–2770. Published 11 March 2019. DOI `10.1093/cercor/bhz049`.
-- Turrigiano G. *Homeostatic Synaptic Plasticity: Local and Global Mechanisms for Stabilizing Neuronal Function*. Cold Spring Harbor Perspectives in Biology 4:a005736. 2012. DOI `10.1101/cshperspect.a005736`.
-- Wu YK, Hengen KB, Turrigiano GG, Gjorgjieva J. *Homeostatic mechanisms regulate distinct aspects of cortical circuit dynamics*. PNAS 117(39):24514–24525. Published online 11 September 2020. DOI `10.1073/pnas.1918368117`.
-- Lu H, Diaz-Pier S, Lenz M, Vlachos A. *The interplay between homeostatic synaptic scaling and homeostatic structural plasticity maintains the robust firing rate of neural networks*. eLife. Version of Record 4 July 2025. DOI `10.7554/eLife.88376.3`.
+No Utility request was created. The obvious implementation ideas (saturation/turnover comparators or adding Assembly feedback) are explicitly outside the completed-object authority and would be outcome-responsive rescue if launched now.
