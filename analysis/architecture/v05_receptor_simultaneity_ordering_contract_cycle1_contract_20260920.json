@@ -1,0 +1,95 @@
+{
+  "schema": "sparkbrain-architecture-study-contract-v1",
+  "candidate_id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
+  "lane": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_authority": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+  "question": "At the supported public receptor boundary, are exact same-time/same-channel SignalPulse events intentionally ordered events, an unordered simultaneous multiset, unsupported duplicate keys, or an unspecified case whose supported reachability is or is not established?",
+  "source_binding": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v05/receptors.py": "86c1cfea1ea70cada5c277d8f5047c32ea611a5c",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v04/contracts.py": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
+    "src/sparkbrain/v05/worlds.py": "454b05c0347a58687b7d0c50c3a56dd744164946",
+    "tests/v05/test_v05_receptors.py": "acab9ff77f9abfbe5a5961b5f8ef88ac980b94a3"
+  },
+  "fixed_supported_surface": [
+    "src/sparkbrain/v05/receptors.py",
+    "src/sparkbrain/v05/brain.py",
+    "src/sparkbrain/v04/contracts.py",
+    "src/sparkbrain/v05/worlds.py",
+    "tests/v05/test_v05_receptors.py",
+    "deterministic repository inventory of stable-main docs/tests/callers defining or consuming SignalPulse, receptor processing, same-time/same-channel multiplicity, simultaneous-event semantics, or ordering semantics"
+  ],
+  "repository_inventory_queries": [
+    "SignalPulse(",
+    "MultiTimescaleReceptorBank",
+    ".process(raw)",
+    "sorted(pulses",
+    "time_ms, row.channel",
+    "same-time",
+    "same channel",
+    "simultaneous",
+    "duplicate",
+    "ordering",
+    "ordered",
+    "multiset"
+  ],
+  "facts_to_record_before_interpretation": [
+    "signalpulse_validation_prohibits_duplicate_time_channel_keys",
+    "receptor_process_sort_key_contains_secondary_tiebreak_beyond_time_channel",
+    "integrated_brain_sort_key_contains_secondary_tiebreak_beyond_time_channel",
+    "iterable_order_for_exact_key_ties_is_explicitly_documented_or_tested_as_semantic",
+    "supported_world_or_public_caller_can_generate_duplicate_exact_time_channel_keys",
+    "supported_world_or_public_caller_structurally_precludes_duplicate_exact_time_channel_keys",
+    "supported_contract_describes_simultaneous_pulses_as_ordered_sequence",
+    "supported_contract_describes_simultaneous_pulses_as_unordered_multiset",
+    "tests_assert_permutation_invariance_or_order_dependence_for_exact_key_ties",
+    "decision_relevant_docs_tests_callers_materially_conflict"
+  ],
+  "machine_fact_policy": {
+    "method": "AST_STRUCTURAL_PLUS_EXACT_BLOB_HASHES_AND_DETERMINISTIC_REPOSITORY_TERM_INVENTORY",
+    "required": [
+      "SignalPulse validation is checked structurally for uniqueness constraints",
+      "MultiTimescaleReceptorBank.process and IntegratedV05Brain.process_episode sort keys are checked structurally",
+      "supported v0.5 world construction is checked structurally for exact-key multiplicity reachability",
+      "receptor tests are checked for exact-key tie semantics",
+      "decision-relevant docs/tests/callers are inventoried deterministically on stable main using the fixed queries"
+    ],
+    "invalid_on_mismatch": true,
+    "post_outcome_repair_forbidden": true
+  },
+  "terminal_mapping": {
+    "EXPLICIT_ORDERED_EVENT_CONTRACT": "Iterable order for exact-key ties is an intentional supported semantic.",
+    "SAME_KEY_MULTIPLICITY_UNSUPPORTED_BY_CONTRACT": "Supported inputs explicitly forbid or structurally cannot produce duplicate (time_ms, channel) events.",
+    "EXPLICIT_UNORDERED_SIMULTANEOUS_MULTISET_CONTRACT_WITH_IMPLEMENTATION_GAP": "Supported contract treats exact-key events as unordered/simultaneous while production preserves caller order and sequential gain can alter output.",
+    "ORDER_UNSPECIFIED_AND_SAME_KEY_REACHABLE": "Supported same-key multiplicity is reachable but order semantics are unspecified.",
+    "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED": "Public API does not forbid same-key multiplicity but supported reachability is not established.",
+    "MIXED_OR_CONTRADICTORY_RECEPTOR_ORDERING_CONTRACT": "Docs/tests/callers conflict materially about ordering or multiplicity semantics.",
+    "INVALID_STATIC_CHARACTERIZATION": "Any source/blob/head/surface/inventory/structural-binding mismatch, incomplete decision-relevant inventory, or need for a new semantic choice beyond this contract."
+  },
+  "precedence": [
+    "INVALID_STATIC_CHARACTERIZATION",
+    "MIXED_OR_CONTRADICTORY_RECEPTOR_ORDERING_CONTRACT",
+    "EXPLICIT_UNORDERED_SIMULTANEOUS_MULTISET_CONTRACT_WITH_IMPLEMENTATION_GAP",
+    "EXPLICIT_ORDERED_EVENT_CONTRACT",
+    "SAME_KEY_MULTIPLICITY_UNSUPPORTED_BY_CONTRACT",
+    "ORDER_UNSPECIFIED_AND_SAME_KEY_REACHABLE",
+    "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED"
+  ],
+  "forbidden": [
+    "dynamic permutation diagnostic",
+    "aggregation comparator",
+    "production source mutation",
+    "official TEST",
+    "consumed/formal surface",
+    "STARTED identity",
+    "formal scorer",
+    "preserve/evidence mutation",
+    "rerun or retune after terminal visibility",
+    "same-run cycle 2",
+    "automatic PRE_FORMAL or FORMAL promotion"
+  ],
+  "stop_condition": "Any valid terminal or INVALID_STATIC_CHARACTERIZATION stops for fresh Evidence Analyst review. No dynamic continuation is authorized in this cycle."
+}
