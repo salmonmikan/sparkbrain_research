@@ -1,69 +1,79 @@
 {
-  "timestamp": "2026-09-20T09:45:33+09:00",
+  "timestamp": "2026-09-20T10:19:30+09:00",
   "worker_role": "main",
-  "execution_mode": "RELAY",
-  "analyst_commit": "df12559698c0f6bc0165c550a55c62f7287a86bd",
+  "execution_mode": "PRIMARY",
+  "analyst_commit": "639a5f7baba926502965bc9fea4cdcfb9f749068",
   "research_layer": "ARCHITECTURE_STUDY",
-  "active_phase": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_COMPLETED",
-  "current_lane": "LOWER_FUNNEL_MAIN_HOLD_PENDING_FRESH_ANALYST_REVIEW",
+  "active_phase": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_WAITING_CI",
+  "current_lane": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
   "candidate_question": {
-    "id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
-    "question": "Does public v0.5 homeostatic liveness/stability intentionally represent whole-field activity including receptors, or is reservoir/internal-computation liveness expected to be separately represented?",
+    "id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
+    "question": "At the supported public receptor boundary, are exact same-time/same-channel SignalPulse events intentionally ordered events, an unordered simultaneous multiset, unsupported duplicate keys, or an unspecified case whose supported reachability is or is not established?",
     "exploration_cycle_count": {
       "DISCOVERY": 1,
       "ARCHITECTURE_STUDY": 1
     },
-    "mapped_outcome": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
+    "mapped_outcome": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY"
   },
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_handoff": "df12559698c0f6bc0165c550a55c62f7287a86bd",
-    "research_branch": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
-    "research_head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
-    "prospective_contract_commit": "4930d894af5b0880d9e443f7582db3a96c206a4e",
-    "raw_facts_commit": "8f5d7e23b6896d9352daa77f885a4a1cc52ae820",
+    "evidence_analyst_handoff": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+    "research_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
+    "research_head": "705b652f0eb426c7e39a75a9f901be10483d0e63",
+    "prospective_contract_commit": "00ab02d9b9acd9a68090858cac21f1ea2fa5e244",
+    "raw_facts_commit": "6dbc696e4e8b2b4bab62067c3297edb02da9605e",
+    "summary_commit": "705b652f0eb426c7e39a75a9f901be10483d0e63",
     "active_formal_identity": null,
     "active_started_ref": null,
     "active_preserve_ref": null,
     "active_evidence_ref": null
   },
-  "lease_collision_reconciliation": {
-    "prior_run_id": "sparkbrain-main-primary-20260920T0914JST",
-    "prior_execution_mode": "PRIMARY",
-    "prior_status": "WAITING_EXTERNAL",
-    "prior_heartbeat_at": "2026-09-20T09:20:03+09:00",
-    "fresh_primary_running_same_object": false,
-    "analyst_tip_rechecked": true,
-    "research_head_rechecked": true,
+  "fast_path_reconciliation": {
+    "status": "FAST_PATH",
+    "full_reconciliation_triggered": false,
+    "reason": "Analyst allocation, stable main, source blobs, prior MAIN completion lease, current SUB handoff, research ancestry, evidence tags, preserve/control presence, PRs and workflow identity were mutually consistent.",
+    "prior_main_status": "COMPLETED",
+    "fresh_main_collision": false,
+    "sub_collision": false,
+    "analyst_tip_rechecked_after_raw": true,
     "main_ref_rechecked": true,
-    "relay_lease_acquired": true,
-    "relay_lease_acquire_commit": "5583a503abc7880ba9db89e6ab7f73a5296bbfce"
+    "evidence_refs_rechecked": true,
+    "preserve_refs_rechecked": true,
+    "open_prs_rechecked": true
+  },
+  "branches_prs_advanced": {
+    "research_branch_created": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
+    "research_head": "705b652f0eb426c7e39a75a9f901be10483d0e63",
+    "prs_created_or_modified": [],
+    "open_unrelated_prs_observed": [148, 149]
   },
   "workflow_check_result": {
     "ordinary_ci": {
-      "run_id": 35478448679,
-      "head_branch": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
-      "head": "81af6ac56c31d169b591bc30854d0efa9d0bac8c",
-      "status": "completed",
-      "conclusion": "success",
-      "jobs": {
-        "test (3.11)": "completed_success",
-        "test (3.13)": "completed_success"
-      },
+      "run_id": 35481067945,
+      "head_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
+      "head": "705b652f0eb426c7e39a75a9f901be10483d0e63",
+      "status": "in_progress",
+      "conclusion": null,
       "repository_integrity_only": true
     },
     "outcome_bearing_workflow": null,
     "dynamic_probe_executed": false,
     "characterization_mode": "STATIC_READ_ONLY_SOURCE_DOCS_TESTS_CALLSITE_CONTRACT"
   },
-  "scientific_result": {
+  "observations_results": {
+    "terminal": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED",
+    "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+    "facts": [
+      "SignalPulse validation has no duplicate (time_ms, channel) uniqueness rule.",
+      "Receptor and integrated brain sorting use only (time_ms, channel); equal keys therefore retain caller iterable order under stable sort.",
+      "Receptor state/gain is updated sequentially per pulse.",
+      "No supported stable-main docs/tests explicitly define exact-key tie order as semantic or exact-key simultaneous events as an unordered multiset.",
+      "Canonical stable-main v0.5 worlds/callers do not intentionally demonstrate duplicate exact (time_ms, channel) events; supported reachability is therefore unestablished rather than established or forbidden."
+    ],
     "new_formal_scientific_evidence": false,
     "new_pre_formal_development_evidence": false,
-    "new_non_evidentiary_architecture_information_this_relay": false,
-    "existing_mapped_outcome": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
-    "interpretation_unchanged": true,
-    "summary": "Exact-head CI succeeded. The pre-existing Architecture terminal remains a non-evidentiary API/observability population-semantics ambiguity: implementation is whole-field/receptor-inclusive, while the supported public population contract is unspecified."
+    "formal_claim": "NONE"
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -74,26 +84,11 @@
     "ni01-no-ignition-selective-prediction-official-v1",
     "h5-event-routing-work-reduction-official-v1"
   ],
-  "contingency_consumed": {
-    "terminal": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED",
-    "required_action": "STOP_HOLD_API_OBSERVABILITY_AMBIGUITY",
+  "integrity_state": {
+    "status": "GREEN_STATIC_TERMINAL_PENDING_EXACT_HEAD_CI",
+    "prospective_binding_before_interpretation": true,
+    "raw_before_interpretation": true,
     "terminal_mapping_applied_once": true,
-    "dynamic_continuation_authorized": false,
-    "relay_authorized_continuation": "collect exact-head ordinary CI and close cycle if success"
-  },
-  "critical_path_actions_performed": [
-    "read latest Evidence Analyst handoff, MAIN state/latest/lease, and re-fetched exact authoritative refs",
-    "confirmed no fresh PRIMARY RUNNING collision on the same object",
-    "re-fetched exact research branch head and stable main",
-    "collected ordinary CI 35478448679",
-    "confirmed both Python 3.11 and Python 3.13 jobs completed successfully on exact head",
-    "persisted terminal MAIN completion without scientific mutation"
-  ],
-  "integrity_status": {
-    "status": "VALID_NON_EVIDENTIARY_STATIC_TERMINAL_EXACT_HEAD_CI_SUCCESS_COMPLETED",
-    "prospective_binding_unchanged": true,
-    "raw_facts_unchanged": true,
-    "terminal_mapping_unchanged": true,
     "production_source_modified": false,
     "official_test_accessed": false,
     "formal_identity_created": false,
@@ -105,15 +100,28 @@
     "sub_reserved_work_mutated": false,
     "utility_request_created": false
   },
+  "critical_path_fixes": [],
+  "critical_path_actions_performed": [
+    "read fresh Evidence Analyst handoff, MAIN latest/state/lease, and SUB report",
+    "acquired PRIMARY MAIN lease before scientific mutation",
+    "re-fetched exact stable main and bound source blobs",
+    "created fresh research branch from exact main",
+    "persisted prospective static contract before interpretation",
+    "performed deterministic source/docs/tests/caller inventory without dynamic diagnostic",
+    "persisted raw facts before interpretation",
+    "applied fixed terminal mapping exactly once",
+    "confirmed exact-head ordinary CI run 35481067945 is in progress"
+  ],
+  "work_left_for_SUB": "Only genuinely independent bounded Discovery under current Analyst allocation; SUB must not continue receptor simultaneity/ordering or any MAIN critical-path work.",
   "utility_request_created": null,
-  "stop_reason": "VALID_STATIC_TERMINAL_AND_EXACT_HEAD_CI_SUCCESS_STOP_FOR_FRESH_ANALYST_REVIEW",
-  "next_MAIN_action": "Wait for a fresh Evidence Analyst handoff. Do not run a dynamic receptor-aware comparator, change population semantics, start cycle 2, advance PRE_FORMAL/FORMAL, or automatically consume the queued Assembly object without fresh prospective authority.",
+  "stop_reason": "VALID_STATIC_TERMINAL_MAPPED_WAITING_EXACT_HEAD_ORDINARY_CI",
+  "next_MAIN_action": "Collect only ordinary CI run 35481067945 for exact head 705b652f0eb426c7e39a75a9f901be10483d0e63. If successful, persist COMPLETED and STOP for fresh Evidence Analyst review. Do not run a dynamic permutation diagnostic, aggregation comparator, cycle 2, PRE_FORMAL, or FORMAL continuation.",
   "persistence_result": {
-    "relay_lease_acquire_commit": "5583a503abc7880ba9db89e6ab7f73a5296bbfce",
-    "latest_md_commit": "20a99f842ef3d75e06c12f68b9ae1280d1f488c3",
-    "history_path": "reports/orchestrator/history/2026-09-20/0945-main.md",
+    "branch": "ops/orchestrator-run-report",
+    "latest_md_commit": "02d1d28fb2ffadf2d9c9398f5fdf23c2da567ab6",
+    "history_path": "reports/orchestrator/history/2026-09-20/1019-main.md",
     "state_json": "this update",
-    "final_lease_status": "COMPLETED",
+    "final_lease_status": "WAITING_EXTERNAL",
     "force_push_used": false
   }
 }
