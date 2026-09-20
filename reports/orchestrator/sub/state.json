@@ -1,72 +1,76 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29",
-  "produced_at": "2026-09-20T20:46:49+09:00",
-  "producer_run_id": "SUB-RUN-20260920T204649+0900-ACTRESP-B71C4E29",
+  "generation_id": "SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17",
+  "produced_at": "2026-09-20T21:46:00+09:00",
+  "producer_run_id": "SUB-RUN-20260920T214600+0900-PREDERR-5C8A2F17",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_THEORY_BACKWARD_MECHANISM_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260920T194640+0900-SYSTEM-ASMORDER-BA8FDEBE",
+  "supersedes_generation_id": "SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T195817+0900-R19-B6E2F41A",
-      "handoff_commit": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
-      "branch_tip_observed": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433"
+      "generation_id": "EVA-20260920T211647+0900-R20-B6B0AAA2",
+      "handoff_commit": "2d7841171377226d2962424b5926ca4c4b68a2e7",
+      "branch_tip_observed": "2d7841171377226d2962424b5926ca4c4b68a2e7"
     },
     "main": {
-      "generation_id": "MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731",
-      "main_lane": "ASSEMBLY_CLUSTER_ORDER_SUPPORTED_REACHABILITY_ARCHITECTURE_STUDY_CYCLE1_STATIC",
-      "active_scientific_object": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
-      "status": "COMPLETED_STOP_FRESH_ANALYST_REVIEW",
-      "mailbox_branch_tip_observed": "d779929417663fcd029e6f91742ab73002c41f5e"
+      "generation_id": "MAIN-20260920T211206+0900-PRIMARY-FUNNEL21-FAILCLOSED-R19-7F4A92C1",
+      "main_lane": "FAIL_CLOSED_PENDING_FRESH_ANALYST_AFTER_SUB_GENERATION_ADVANCE",
+      "active_scientific_object": null,
+      "status": "R19_FRESHNESS_STOP_EXPLICITLY_RESOLVED_BY_ANALYST_R20_FOR_CURRENT_SUB_ALLOCATION",
+      "mailbox_branch_tip_observed_before_sub_persistence": "02c4466b6be68014caf91ba523ceee46b3329e74",
+      "last_scientific_terminal_generation_id": "MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731",
+      "last_scientific_terminal_object": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
+      "last_scientific_research_head": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260920T165000+0900-R15-6C2F8A41",
-      "handoff_commit": "64611f391391844d60659732a50a22cf009a5797",
+      "generation_id": "CTRL-20260920T205000+0900-R16-5E9A71C3",
+      "handoff_commit": "016a248143dc71380fca28128d564d74aeb4c3f3",
       "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260920T194640+0900-SYSTEM-ASMORDER-BA8FDEBE",
+      "generation_id": "SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29",
+      "handoff_commit": "59026d651bb141fbfc8a4e99f4c5826531e2af65",
       "mode": "discovery"
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_commit": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
-    "analyst_generation": "EVA-20260920T195817+0900-R19-B6E2F41A",
-    "main_generation": "MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731",
-    "main_mailbox_tip_before_persistence": "d779929417663fcd029e6f91742ab73002c41f5e",
-    "control_handoff_commit": "64611f391391844d60659732a50a22cf009a5797",
-    "research_branch": "research/exploratory-sub-delayed-action-responsibility-20260920",
-    "prospective_contract_commit": "c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab",
-    "outcome_bearing_commit": "1117b56de8845c3200c1f1acd5f04d999743a4e5",
-    "research_head": "411913e0b3a0493595969513bf0b7829c49cc248",
-    "diagnostic_ci": 35508500991,
-    "final_exact_head_ci": 35508632370,
-    "stable_action_blob": "792cba20ec5411633f12478d641adf35dba505e3",
-    "stable_contracts_blob": "048b93cddb16dbe9276a0e2c0f972406291c1cb2",
+    "analyst_handoff_commit": "2d7841171377226d2962424b5926ca4c4b68a2e7",
+    "analyst_generation": "EVA-20260920T211647+0900-R20-B6B0AAA2",
+    "main_generation": "MAIN-20260920T211206+0900-PRIMARY-FUNNEL21-FAILCLOSED-R19-7F4A92C1",
+    "main_mailbox_tip_before_persistence": "02c4466b6be68014caf91ba523ceee46b3329e74",
+    "control_handoff_commit": "016a248143dc71380fca28128d564d74aeb4c3f3",
+    "research_branch": "research/exploratory-sub-endogenous-prediction-error-modulation-20260920",
+    "prospective_contract_commit": "f54780589cbd5d18352c91d8b8e5c0266e8104f9",
+    "outcome_bearing_commit": "7de878bc98f2547a24c95d506ab62ec96fca18d9",
+    "research_head": "ae88a7bd5b6497b0b104eb87ffc55d07877865fa",
+    "outcome_ci": 35511156776,
+    "final_exact_head_ci": 35511350033,
     "stable_brain_blob": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "stable_receptors_blob": "86c1cfea1ea70cada5c277d8f5047c32ea611a5c",
+    "stable_v04_contracts_blob": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
+    "stable_prediction_blob": "9805031fb8db235d2f3cf4c81421b896d2597af4",
+    "stable_v05_contracts_blob": "048b93cddb16dbe9276a0e2c0f972406291c1cb2",
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13
+    "freeze_tag_count": 0
   },
   "mode": "discovery",
   "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
-  "exploratory_target": "V05_DELAYED_ACTION_RESPONSIBILITY_DISCOVERY_CYCLE1",
-  "candidate_pool_id": "CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01",
+  "exploratory_target": "V05_ENDOGENOUS_PREDICTION_ERROR_MODULATION_DISCOVERY_CYCLE1",
+  "candidate_pool_id": "CAND-V05-ENDOGENOUS-PREDICTION-ERROR-MODULATION-01",
   "candidate_status": "SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL",
   "exploration_cycle": "1/3",
-  "same_generation_autonomous_progress_reason": "Analyst R19 explicitly leaves SUB on independent bounded Discovery, with no reserved formal sub_lane or concrete sub_fallback object. The selected native action-credit discriminator is nonduplicative with MAIN's completed cluster-order SYSTEM Architecture object, respects all exclusions and cycle budgets, and the rolling theory-backward floor was already satisfied.",
+  "same_generation_autonomous_progress_reason": "Analyst R20 explicitly authorizes one independent bounded SUB Discovery selected by information gain with prospective typing and terminal/API semantic preflight; MAIN has no active scientific object, and this predictor-to-receptor causal discriminator is nonduplicative with all terminal current objects.",
   "main_frontier_avoided": {
-    "main_lane": "ASSEMBLY_CLUSTER_ORDER_SUPPORTED_REACHABILITY_ARCHITECTURE_STUDY_CYCLE1_STATIC",
-    "active_main_object": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
-    "main_status": "COMPLETED_STOP_FRESH_ANALYST_REVIEW",
+    "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
+    "active_main_object": null,
+    "last_terminal_main_object": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
     "avoided": [
-      "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
-      "ITS_RESEARCH_BRANCH_AND_IMMEDIATE_OUTCOME_DEPENDENT_SUCCESSOR",
-      "CAND-H7-RESP-01_AS_FORMAL_OR_PREFORMAL_OBJECT",
+      "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01_AND_ANY_DYNAMIC_SUCCESSOR",
+      "CAND-H7-RESP-01_AS_ACTIVE_FORMAL_OR_PREFORMAL_OBJECT",
       "ALL_ANALYST_TERMINAL_CURRENT_OBJECTS",
       "FORMAL_TEST_SCORING",
       "CONSUMED_FROZEN_IDENTITIES",
@@ -76,27 +80,27 @@
   },
   "theory_backward_accounting": {
     "previous_last_three_autonomous_selections": [
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_PRESEMANTIC_FUNCTION_TRANSFER",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_CONTEXT_CONDITIONED_PREDICTION",
-      "SYSTEM_DISCOVERY:V05_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE"
-    ],
-    "previous_qualifying_count": 2,
-    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_ACTION_RESPONSIBILITY",
-    "last_three_autonomous_selections": [
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_CONTEXT_CONDITIONED_PREDICTION",
       "SYSTEM_DISCOVERY:V05_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_ACTION_RESPONSIBILITY"
+    ],
+    "previous_qualifying_count": 2,
+    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_PREDICTION_ERROR_MODULATION",
+    "last_three_autonomous_selections": [
+      "SYSTEM_DISCOVERY:V05_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_ACTION_RESPONSIBILITY",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_PREDICTION_ERROR_MODULATION"
     ],
     "qualifying_count": 2,
     "window_size": 3,
     "theory_backward_exception": null
   },
-  "question": "Can native v0.5 action-credit state preserve causal responsibility for an earlier Assembly/action when scalar reward arrives only after a distinct later eligible Assembly/action has occurred?",
-  "hypothesis": "If native action credit carries responsibility beyond the most recent action, delayed reward can still selectively update the earlier Assembly/action across an intervening eligible choice without extra identity, replay, or privilege.",
-  "reduction_question": "Does the native action-credit behavior reduce exactly to a one-slot last-action pending register in which the later eligible choice overwrites the earlier one?",
-  "falsifier": "After choose(A), choose(B), reward(+1), the earlier A score must change while B remains unchanged for earlier-responsibility persistence; an exact A=0/B=+0.30 match to the fixed one-slot last-action comparator reduces the mechanism object.",
+  "question": "Can learned internal predictive state in native v0.5 causally modulate early sensory processing for an otherwise identical subsequent physical pulse without caller-supplied SignalPulse.prediction_error?",
+  "hypothesis": "If endogenous top-down predictive modulation exists, matched brains differing only in learned predictor state should differ in receptor and/or lower-field response to the same physical pulse with caller prediction_error fixed at zero.",
+  "reduction_question": "Does the prediction-error pathway reduce exactly to an exogenous caller-supplied SignalPulse.prediction_error scalar, with learned predictor state causally disconnected from the earlier receptor/field path?",
+  "falsifier": "Different learned predictor states leave matched receptor/lower-field observables identical while a fixed positive-control pulse differing only by caller prediction_error=1.0 changes receptor emission.",
   "inputs_used": {
-    "scientific_inputs": "DEV_ONLY_SYNTHETIC_MATURE_ASSEMBLY_ACTIVATIONS_AND_STABLE_MAIN_ACTION_POLICY",
+    "scientific_inputs": "DEV_ONLY_SYNTHETIC_PREDICTOR_STATE_INTERVENTION_AND_STABLE_MAIN_RUNTIME_SOURCE",
     "formal_or_sealed_test_used": false,
     "official_scorer_used": false,
     "consumed_identity_used": false,
@@ -106,15 +110,17 @@
     "research_branch_created_or_modified": true,
     "semantic_api_preflight_completed_before_outcome": true,
     "terminal_relevant_post_outcome_repairs": 0,
-    "prospective_contract_commit": "c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab",
-    "outcome_bearing_commit": "1117b56de8845c3200c1f1acd5f04d999743a4e5",
-    "diagnostic_ci": {
-      "run_id": 35508500991,
-      "outcome": "completed_success"
+    "prospective_contract_commit": "f54780589cbd5d18352c91d8b8e5c0266e8104f9",
+    "outcome_bearing_commit": "7de878bc98f2547a24c95d506ab62ec96fca18d9",
+    "outcome_ci": {
+      "run_id": 35511156776,
+      "outcome": "completed_success",
+      "python_3_11": "completed_success",
+      "python_3_13": "completed_success"
     },
-    "result_commit": "411913e0b3a0493595969513bf0b7829c49cc248",
+    "result_commit": "ae88a7bd5b6497b0b104eb87ffc55d07877865fa",
     "final_exact_head_ci": {
-      "run_id": 35508632370,
+      "run_id": 35511350033,
       "outcome": "completed_success",
       "python_3_11": "completed_success",
       "python_3_13": "completed_success",
@@ -125,24 +131,23 @@
     }
   },
   "observations": {
-    "immediate_A_positive_control": {
-      "chosen_action": "action-0",
-      "score_before": 0.0,
-      "score_after_reward_plus_1": 0.3
+    "matched_internal_predictor_arms": {
+      "arm_A_predictor": "future-A x4",
+      "arm_B_predictor": "future-B x4",
+      "caller_prediction_error": 0.0,
+      "first_receptor_trace_equal": true,
+      "emitted_pulses_equal": true,
+      "lower_v04_result_equal": true,
+      "lower_spikes_equal": true
     },
-    "delayed_A_after_B": {
-      "A_action": "action-0",
-      "B_action": "action-0",
-      "pending_before_reward": ["assembly-B", "action-0"],
-      "A_score_after_reward": 0.0,
-      "B_score_after_reward": 0.3
+    "caller_supplied_positive_control": {
+      "prediction_error": 1.0,
+      "receptor_emitted": true,
+      "emitted_magnitude_strictly_greater_than_zero_error_arm": true,
+      "emitted_pulse_preserved_prediction_error": true
     },
-    "ordinary_last_pending_comparator": {
-      "assembly-A": 0.0,
-      "assembly-B": 0.3
-    },
-    "terminal": "LAST_PENDING_ACTION_REDUCTION",
-    "scientific_result": "EARLIER_ACTION_RESPONSIBILITY_NOT_PRESERVED_ACROSS_INTERVENING_ELIGIBLE_ACTION;_DELAYED_REWARD_UPDATES_MOST_RECENT_PENDING_PAIR_ONLY"
+    "terminal": "CALLER_SUPPLIED_PREDICTION_ERROR_REDUCTION",
+    "scientific_result": "LEARNED_INTERNAL_PREDICTOR_STATE_DID_NOT_MODULATE_EARLY_RECEPTOR_OR_LOWER_FIELD_PATH;_EXPLICIT_CALLER_SIGNALPULSE_PREDICTION_ERROR_DID"
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "proposed_claim_ceiling": "MECHANISM",
@@ -150,12 +155,14 @@
   "preliminary_preformal_readiness": {
     "claim_type": "mechanism",
     "supported_reachability": "PARTIAL",
-    "functional_consequence": "ABSENT_FOR_EARLIER_RESPONSIBILITY_ACROSS_INTERVENING_ACTION",
-    "ordinary_reductions_specified_or_controlled": ["ONE_SLOT_LAST_ACTION_PENDING_REGISTER"],
+    "functional_consequence": "ABSENT_FOR_ENDOGENOUS_PREDICTOR_TO_RECEPTOR_MODULATION",
+    "ordinary_reductions_specified_or_controlled": [
+      "CALLER_SUPPLIED_SIGNALPULSE_PREDICTION_ERROR_SCALAR"
+    ],
     "ordinary_reductions_unresolved": [],
-    "matched_comparator_status": "COMPLETE_AND_EXACT",
-    "qualitative_support_breadth": "one prospectively fixed two-Assembly synthetic DEV component discriminator plus immediate positive control",
-    "falsifier_definition": "Earlier A must receive delayed reward across B without extra caller-supplied identity, replay, or privilege.",
+    "matched_comparator_status": "COMPLETE_AND_EXACT_FOR_MATCHED_INTERNAL_PREDICTOR_ARMS_WITH_POSITIVE_EXTERNAL_ERROR_CONTROL",
+    "qualitative_support_breadth": "one prospectively fixed matched two-predictor-state DEV intervention plus one caller-supplied prediction-error positive control",
+    "falsifier_definition": "Different learned predictor state must alter receptor/lower-field response under identical physical pulse with caller prediction_error fixed at zero.",
     "open_scientific_choices": [],
     "formal_claim_ceiling": "NONE_FOR_CURRENT_REDUCED_RESULT",
     "status": "NOT_READY"
@@ -176,18 +183,21 @@
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
   "blockers": [
-    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_AND_CLOSURE_FOR_CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01"
+    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_AND_CLOSURE_FOR_CAND-V05-ENDOGENOUS-PREDICTION-ERROR-MODULATION-01"
   ],
-  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_DELAYED_ACTION_RESPONSIBILITY_DISCOVERY_CYCLE_AND_REDUCED_TO_ONE_SLOT_LAST_ACTION_PENDING_REGISTER",
+  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_ENDOGENOUS_PREDICTION_ERROR_MODULATION_DISCOVERY_CYCLE_AND_REDUCED_TO_CALLER_SUPPLIED_PREDICTION_ERROR",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-20/2046-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-20/2146-sub.md",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "base_mailbox_tip": "d779929417663fcd029e6f91742ab73002c41f5e",
-    "history_commit": "3a2fb7e9098ebf35f8d604dd6616227a5ac29efa",
-    "latest_commit": "cc2df68758783a8d35c91343935ded3f88b218b3"
+    "base_mailbox_tip": "02c4466b6be68014caf91ba523ceee46b3329e74",
+    "history_commit": "383a56398170f9432f8a01668350d640fc800522",
+    "latest_commit": "5c746ae6fd9e35dada4447030039ef5a1537108e",
+    "final_state_commit": "THIS_COMMIT",
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
+    "result": "SUB_HISTORY_LATEST_STATE_PERSISTED"
   },
   "persistence_limitations": []
 }
