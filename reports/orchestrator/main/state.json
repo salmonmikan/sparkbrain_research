@@ -12,7 +12,6 @@
   },
   "consumed_analyst_generation_id": "EVA-20260920T195817+0900-R19-B6E2F41A",
   "consumed_analyst_commit": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
-  "consumed_main_generation_id": "MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "status": "BLOCKED",
@@ -32,7 +31,7 @@
   "last_terminal_main_object": {
     "candidate_id": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
     "research_layer": "ARCHITECTURE_STUDY",
-    "exploration_cycle_count": {"DISCOVERY":0,"ARCHITECTURE_STUDY":1},
+    "exploration_cycle_count": {"ARCHITECTURE_STUDY":1},
     "claim_ceiling": "SYSTEM",
     "preformal_eligible": false,
     "hold_class": "HOLD_SYSTEM_TERMINAL",
@@ -42,10 +41,10 @@
     "preformal_readiness": null,
     "system_priority_exception": {"used":false},
     "terminal": "ORDER_UNSPECIFIED_AND_SUPPORTED_REACHABILITY_UNESTABLISHED",
-    "evidentiary_status": "NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_OBSERVATION",
     "research_head": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1",
     "exact_head_ci_run": 35507809211,
-    "exact_head_ci_conclusion": "success"
+    "exact_head_ci_conclusion": "success",
+    "evidentiary_status": "NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_OBSERVATION"
   },
   "unreviewed_dependency": {
     "type": "SUB_GENERATION_ADVANCED_AFTER_ANALYST_INPUT",
@@ -54,8 +53,8 @@
     "candidate_id": "CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01",
     "candidate_status": "SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL",
     "research_head": "411913e0b3a0493595969513bf0b7829c49cc248",
-    "final_exact_head_ci_run": 35508632370,
-    "final_exact_head_ci_conclusion": "success",
+    "exact_head_ci_run": 35508632370,
+    "exact_head_ci_conclusion": "success",
     "terminal": "LAST_PENDING_ACTION_REDUCTION",
     "proposed_claim_ceiling": "MECHANISM",
     "proposed_preformal_eligible": false,
@@ -63,38 +62,22 @@
     "proposed_hold_reason": null,
     "proposed_terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
     "proposed_queue_state": "NOT_QUEUED",
-    "proposed_preformal_readiness": {
-      "status": "NOT_READY",
-      "ordinary_reductions_specified_or_controlled": ["ONE_SLOT_LAST_ACTION_PENDING_REGISTER"],
-      "ordinary_reductions_unresolved": [],
-      "matched_comparator_status": "COMPLETE_AND_EXACT"
-    },
+    "proposed_preformal_readiness": {"status":"NOT_READY","ordinary_reductions_specified_or_controlled":["ONE_SLOT_LAST_ACTION_PENDING_REGISTER"],"ordinary_reductions_unresolved":[],"matched_comparator_status":"COMPLETE_AND_EXACT"},
     "recommendation": "REJECT",
     "canonical_analyst_status": "UNREVIEWED"
   },
   "research_layer_state": {
     "DISCOVERY": {"state":"OPEN_WITH_UNREVIEWED_FRESH_SUB_RESULT","owner":"SUB","status":"NON_EVIDENTIARY"},
-    "ARCHITECTURE_STUDY": {"state":"LAST_MAIN_OBJECT_TERMINAL_COMPLETE; NO_FRESH_AUTHORITY_FOR_SUCCESSOR","owner":"MAIN","active_mechanism_count":0,"active_system_count":0,"queued_mechanism_count":0,"queued_system_count":0},
+    "ARCHITECTURE_STUDY": {"state":"LAST_MAIN_OBJECT_TERMINAL_COMPLETE_NO_FRESH_SUCCESSOR_AUTHORITY","owner":"MAIN"},
     "PRE_FORMAL": {"state":"EMPTY_HOLD_PER_LAST_ANALYST","owner":"MAIN","preformal_eligible_count":0,"preformal_ready_count":0},
     "FORMAL": {"state":"EMPTY_HOLD_PER_LAST_ANALYST","owner":"MAIN","fresh_identity":null,"started":null,"test_authority":false,"scorer_authority":false,"preserve_authority":false}
   },
-  "funnel_metrics": {
-    "last_canonical_material_portfolio": {"MECHANISM":7,"SYSTEM":8},
-    "last_canonical_preformal_eligible_count": 0,
-    "last_canonical_preformal_ready_count": 0,
-    "last_canonical_viable_executable_mechanism_count": 0,
-    "new_unreviewed_sub_candidate_count": 1,
-    "system_over_mechanism_exceptions": {"count_this_generation":0,"reasons":[]}
-  },
+  "funnel_metrics": {"last_canonical_material_portfolio":{"MECHANISM":7,"SYSTEM":8},"last_canonical_preformal_eligible_count":0,"last_canonical_preformal_ready_count":0,"last_canonical_viable_executable_mechanism_count":0,"new_unreviewed_sub_candidate_count":1},
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_handoff": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
-    "last_main_research_branch": "research/main-assembly-cluster-order-supported-reachability-arch-study-20260920",
-    "last_main_research_final_head": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1",
-    "last_main_exact_head_ci_run": 35507809211,
-    "fresh_sub_research_branch": "research/exploratory-sub-delayed-action-responsibility-20260920",
+    "last_main_research_head": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1",
     "fresh_sub_research_head": "411913e0b3a0493595969513bf0b7829c49cc248",
-    "fresh_sub_exact_head_ci_run": 35508632370,
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
@@ -102,31 +85,11 @@
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b"
   },
-  "fast_path_reconciliation": {
-    "status": "FAIL_CLOSED_FRESHNESS_RECONCILIATION_R19",
-    "full_reconciliation_required": false,
-    "ref_disagreement": false,
-    "integrity_anomaly": false,
-    "collision_anomaly": false,
-    "allocation_ambiguity": true,
-    "reason": "Evidence Analyst R19 predates and has not consumed SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29; prior MAIN object is already terminal and R19 authorizes no successor after its result."
-  },
+  "fast_path_reconciliation": {"status":"FAIL_CLOSED_FRESHNESS_RECONCILIATION_R19","full_reconciliation_required":false,"ref_disagreement":false,"integrity_anomaly":false,"collision_anomaly":false,"allocation_ambiguity":true},
   "branches_prs_advanced": [],
-  "workflows_experiments": {
-    "scientific_experiments_dispatched": [],
-    "workflow_dispatches": [],
-    "formal_started_transitions": [],
-    "preserve_actions": [],
-    "scoring_actions": []
-  },
+  "workflows_experiments": {"scientific_experiments_dispatched":[],"workflow_dispatches":[],"formal_started_transitions":[],"preserve_actions":[],"scoring_actions":[]},
   "observations_results": [],
-  "evidentiary_status": {
-    "new_formal_scientific_evidence": 0,
-    "new_preformal_development_evidence": 0,
-    "new_mechanism_architecture_observations": 0,
-    "new_system_architecture_observations": 0,
-    "new_discovery_results_by_main": 0
-  },
+  "evidentiary_status": {"new_formal_scientific_evidence":0,"new_preformal_development_evidence":0,"new_mechanism_architecture_observations":0,"new_system_architecture_observations":0,"new_discovery_results_by_main":0},
   "ordinary_reductions": [],
   "support_breadth": "NO_NEW_MAIN_SCIENTIFIC_OBJECT_EXECUTED; ONLY FRESHNESS_AND_COLLISION_RECONCILIATION",
   "consumed_identities": ["c19-external-v2-official-v4","C19-R1 revision-authority official-v1","C19-R1 revision-authority official-v2","c19-r2-fsa-state-tracker-official-v1","pd01-long-history-fading-memory-official-v1","ni01-no-ignition-selective-prediction-official-v1","h5-event-routing-work-reduction-official-v1"],
@@ -134,17 +97,19 @@
   "integrity_state": "CLEAN_AUTHORITATIVE_REFS_OBSERVED; NO_MAIN_SCIENTIFIC_MUTATION; FRESH_SUB_GENERATION_AWAITS_ANALYST_CLASSIFICATION",
   "critical_path_fixes": [],
   "stop_reason": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
-  "work_left_for_sub": "No MAIN takeover. SUB result remains independent and must be classified by Evidence Analyst before any MAIN successor can be authorized.",
+  "work_left_for_sub": "No MAIN takeover; keep independent ownership and await Analyst classification.",
   "utility_request_created": null,
-  "next_main_action": "Consume a fresh Evidence Analyst generation that explicitly includes SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29 in input_generations/last_consumed_generations. Then re-read canonical candidate dimensions and any new MAIN allocation before mutation.",
+  "next_main_action": "Consume a fresh Evidence Analyst generation that explicitly includes SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29 before any new scientific mutation.",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
     "lease_acquire_commit": "28cfa41647cc6ce7861c2a91b75f53861b54e09f",
-    "state_commit": "THIS_COMMIT",
-    "latest_commit": null,
-    "history_commit": null,
-    "final_lease_commit": null,
+    "initial_state_commit": "e06baf24493db72127bd70da3f47804c65dfdd51",
+    "latest_commit": "cd54a84c3c68b588d29fa92bc646cb52de37c662",
+    "history_commit": "32f78a8ab19e14209f9052709bf836308bc0583e",
+    "history_path": "reports/orchestrator/history/2026-09-20/2112-main.md",
+    "final_state_commit": "THIS_COMMIT",
+    "final_lease_commit": "PENDING_FINAL_LEASE_WRITE",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result": "FAIL_CLOSED_STATE_PERSISTED_PENDING_LATEST_HISTORY_FINAL_LEASE"
+    "result": "MAIN_STATE_LATEST_HISTORY_PERSISTED; FINAL_BLOCKED_LEASE_PENDING"
   }
 }
