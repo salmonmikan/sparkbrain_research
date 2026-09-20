@@ -1,59 +1,66 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
-  "produced_at": "2026-09-21T00:43:00+09:00",
-  "producer_run_id": "SUB-RUN-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
+  "generation_id": "SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
+  "produced_at": "2026-09-21T01:44:00+09:00",
+  "producer_run_id": "SUB-RUN-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260920T233629+0900-NOOP-ANALYSTWAIT-7C2E91A4",
+  "supersedes_generation_id": "SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T000400+0900-R22-7C4E91A2",
-      "handoff_commit": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e",
-      "branch_tip_observed_before_persistence": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e",
+      "generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
+      "handoff_commit": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
+      "branch_tip_observed_before_persistence": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
+      "main_lane": "V05_ELIGIBILITY_TIMEBASE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STATIC",
       "sub_lane": "BOUNDED_SECONDARY_DISCOVERY_WITH_THEORY_BACKWARD_ACCOUNTING",
       "sub_fallback": "NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON"
     },
     "main": {
-      "generation_id": "MAIN-20260921T001507+0900-PRIMARY-FUNNEL21-HOLD-R22-4B7C91E2",
+      "generation_id": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
       "status": "COMPLETED",
-      "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-      "active_scientific_object": null,
-      "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
-      "mailbox_branch_tip_observed_before_persistence": "105737eaa5a6cf7ef731d7250e6e6fc2778d6fba"
+      "main_lane": "V05_ELIGIBILITY_TIMEBASE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STATIC",
+      "active_scientific_object": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
+      "mapped_terminal_observation": "TIMEBASE_CONTRACT_AMBIGUOUS",
+      "stop_reason": "R23_STATIC_SYSTEM_TERMINAL_TIMEBASE_CONTRACT_AMBIGUOUS_STOP_FRESH_ANALYST_REVIEW",
+      "mailbox_branch_tip_observed_before_persistence": "a20207308c7203c597791c2371a3085d639a4a74"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260920T225013+0900-R17-3F8C61A2",
-      "handoff_commit": "90c088f5fc3f6064f883d308ba5e1af9fd076441",
+      "generation_id": "CTRL-20260921T005250+0900-R18-6B4D2F91",
+      "handoff_commit": "393cc5b5965a2a2753f19e240ad15d6b3b09a939",
       "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260920T233629+0900-NOOP-ANALYSTWAIT-7C2E91A4",
-      "mode": "no_op",
-      "candidate_id": null
+      "generation_id": "SUB-20260921T004300+0900-SYSTEM-STATEHASH-2E7C91A4",
+      "mode": "discovery",
+      "candidate_id": "CAND-V05-STEP-STATE-HASH-SEMANTICS-01"
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_commit": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e",
-    "analyst_generation": "EVA-20260921T000400+0900-R22-7C4E91A2",
-    "main_generation": "MAIN-20260921T001507+0900-PRIMARY-FUNNEL21-HOLD-R22-4B7C91E2",
-    "main_mailbox_tip_before_persistence": "105737eaa5a6cf7ef731d7250e6e6fc2778d6fba",
-    "control_handoff_commit": "90c088f5fc3f6064f883d308ba5e1af9fd076441",
-    "evidence_tag_count": 5
+    "analyst_handoff_commit": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
+    "analyst_generation": "EVA-20260921T005854+0900-R23-9C4E71A2",
+    "main_generation": "MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2",
+    "main_mailbox_tip_before_persistence": "a20207308c7203c597791c2371a3085d639a4a74",
+    "control_handoff_commit": "393cc5b5965a2a2753f19e240ad15d6b3b09a939",
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0
   },
   "mode": "discovery",
   "discovery_mode": "SYSTEM_DISCOVERY",
-  "exploratory_target": "V05_STEP_RESULT_STATE_HASH_SEMANTICS_DISCOVERY_CYCLE1",
-  "candidate_pool_id": "CAND-V05-STEP-STATE-HASH-SEMANTICS-01",
+  "exploratory_target": "V05_NONLEARNING_ACTION_VISIT_CARRYOVER_DISCOVERY_CYCLE1",
+  "candidate_pool_id": "CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01",
   "candidate_status": "SUB_PROPOSED_PENDING_ANALYST_CLASSIFICATION",
   "exploration_cycle": "1/3",
-  "same_generation_autonomous_progress_reason": "R22 consumed the prior SUB result, reopened bounded Discovery supply, MAIN has no active object, rolling theory-backward share was 3/3, and Analyst explicitly preferred domain diversification when comparably informative.",
+  "same_generation_autonomous_progress_reason": "R23 consumed the prior SUB result and left bounded secondary Discovery open while MAIN owned the independent eligibility-timebase Architecture object; no comparably executable/informative MECHANISM object was available and the selected SYSTEM target was nonduplicative and preserved the rolling 1/3 theory-backward floor.",
   "no_op_reason": null,
   "main_frontier_avoided": {
-    "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-    "active_main_object": null,
+    "main_lane": "V05_ELIGIBILITY_TIMEBASE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_STATIC",
+    "active_main_object": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
     "avoided": [
-      "CAND-H7-RESP-01_AS_HELD_MAIN_BLOCKER_OR_SUCCESSOR",
+      "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
+      "ANY_DYNAMIC_ELIGIBILITY_TIMEBASE_SUCCESSOR",
+      "CAND-H7-RESP-01_AS_HELD_OBJECT",
       "ALL_ANALYST_TERMINAL_CURRENT_OBJECTS",
       "FORMAL_TEST_SCORING",
       "CONSUMED_FROZEN_IDENTITIES",
@@ -63,54 +70,59 @@
   },
   "theory_backward_accounting": {
     "previous_last_three_autonomous_selections": [
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_ACTION_RESPONSIBILITY",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_PREDICTION_ERROR_MODULATION",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ELIGIBILITY_HISTORY_SPECIFICITY"
-    ],
-    "previous_qualifying_count": 3,
-    "current_selection": "SYSTEM_DISCOVERY:V05_STEP_RESULT_STATE_HASH_SEMANTICS",
-    "last_three_autonomous_selections": [
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_PREDICTION_ERROR_MODULATION",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ELIGIBILITY_HISTORY_SPECIFICITY",
       "SYSTEM_DISCOVERY:V05_STEP_RESULT_STATE_HASH_SEMANTICS"
     ],
-    "qualifying_count": 2,
+    "previous_qualifying_count": 2,
+    "current_selection": "SYSTEM_DISCOVERY:V05_NONLEARNING_ACTION_VISIT_CARRYOVER",
+    "last_three_autonomous_selections": [
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ELIGIBILITY_HISTORY_SPECIFICITY",
+      "SYSTEM_DISCOVERY:V05_STEP_RESULT_STATE_HASH_SEMANTICS",
+      "SYSTEM_DISCOVERY:V05_NONLEARNING_ACTION_VISIT_CARRYOVER"
+    ],
+    "qualifying_count": 1,
     "window_size": 3,
-    "theory_backward_exception": null
+    "theory_backward_exception": null,
+    "next_selection_process_note": "A next safe autonomous selection should be THEORY_BACKWARD_MECHANISM_DISCOVERY if a coherent bounded mechanism target exists; otherwise persist NO_COHERENT_MECHANISM_TARGET rather than manufacturing one."
   },
-  "question": "Does V05StepResult.state_hash identify the externally observable brain state immediately after IntegratedV05Brain.process_episode() returns, or an internal transient state captured before final post-result bookkeeping?",
-  "hypothesis": "result.state_hash differs from immediate post-return brain.state_hash() because the result hash is captured before brain.trace append and _episode_index increment.",
-  "reduction_question": "Can the mismatch be reproduced exactly from immediate post-return state_dict() by removing only the just-appended final trace row and decrementing only episode_index by one before recomputing canonical SHA-256?",
-  "falsifier": "Immediate equality, or a mismatch not exactly reproduced by the fixed two-field bookkeeping reversal, falsifies the bookkeeping explanation.",
+  "question": "Can a deliberately non-learning/non-exploratory action selection mutate AssemblyActionPolicy.visits and thereby shift the next exploratory action when training resumes?",
+  "hypothesis": "One mature choose(..., explore=false) call consumes one visit slot despite no exploration, so the immediately following explore=true call advances by one action slot relative to a matched control.",
+  "reduction_question": "Can the downstream action difference be reproduced exactly by an ordinary integer visit-counter model in which every mature choose() increments visits while exploration indexes actions[visits % len(actions)] only when enabled?",
+  "falsifier": "The carryover explanation is falsified if the non-exploratory call leaves visits unchanged or if the next exploratory action remains identical to the matched control despite the fixed one-visit offset.",
   "inputs_used": {
-    "scientific_inputs": "DEFAULT IntegratedV05Brain plus exactly training_episodes(seed=501, count=1)[0]",
-    "learn_outcome_called": false,
+    "scientific_inputs": "TWO_FRESH_DEFAULT_ASSEMBLY_ACTION_POLICIES_PLUS_ONE_FIXED_SYNTHETIC_MATURE_UNSUPPRESSED_ASSEMBLY_ACTIVATION",
+    "reward_called": false,
     "formal_or_sealed_test_used": false,
     "official_scorer_used": false,
     "consumed_identity_used": false,
     "repository_evidence_dataset_used": false,
-    "alternate_seed_or_threshold_tuning": false
+    "alternate_action_order_or_threshold_tuning": false
   },
   "implementation": {
-    "research_branch": "research/exploratory-sub-step-state-hash-semantics-20260921",
-    "prospective_contract_commit": "fcfb04d540a437378126d86c3ad66600714fbf99",
-    "outcome_bearing_commit": "8e1bfa42471295b2cc7898f9fc6ce72092c18222",
-    "outcome_ci": 35520053053,
-    "final_research_head": "83d11ba6e0e8aca3f6cda9e4ab9592c851cc0306",
-    "exact_final_head_ci": 35520275001,
+    "research_branch": "research/exploratory-sub-nonlearning-action-visit-carryover-20260921",
+    "prospective_contract_commit": "f0ebfc02605ccdccea371dbb908aac879a6de5f8",
+    "outcome_bearing_commit": "e15e37d0163e3b37973177c29cbeb72728c7e057",
+    "outcome_ci": 35523219740,
+    "outcome_ci_status": "COMPLETED_SUCCESS",
+    "final_research_head": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
+    "exact_final_head_ci": 35523434869,
     "exact_final_head_ci_status": "COMPLETED_SUCCESS",
     "research_branch_created_or_modified": true,
     "scientific_workflow_dispatched": false,
     "control_plane_persistence_only": false
   },
   "observations": {
-    "scientific_result": "PRE_RETURN_BOOKKEEPING_HASH_SEMANTICS",
-    "result_hash_equals_immediate_post_return_brain_hash": false,
-    "fixed_bookkeeping_reduction_exact": true,
-    "reduction": "POST_RETURN_STATE_DICT_MINUS_FINAL_TRACE_AND_MINUS_ONE_EPISODE_INDEX",
-    "stable_main_v05_equality_consumers_found": 0,
-    "existing_v05_test_contract": "ONLY_REQUIRES_RESULT_STATE_HASH_NONEMPTY",
-    "impact": "BOUNDED_LOW_CURRENT_OPERATIONAL_IMPACT"
+    "scientific_result": "NONLEARNING_VISIT_CARRYOVER_SHIFTS_FUTURE_EXPLORATION",
+    "control_first_exploratory_action": "action-0",
+    "control_visits_after_training": 1,
+    "treated_nonexploratory_action": "action-0",
+    "treated_visits_after_evaluation": 1,
+    "treated_resumed_exploratory_action": "action-1",
+    "treated_visits_after_resumed_training": 2,
+    "fixed_integer_visit_counter_reduction_exact": true,
+    "integrated_semantics": "PROCESS_EPISODE_DEFAULTS_ACTION_EXPLORE_TO_LEARN_ASSEMBLY_BUT_ACTION_POLICY_VISIT_BOOKKEEPING_INCREMENTS_REGARDLESS_OF_EXPLORE",
+    "impact": "EVALUATION_STYLE_CALL_CAN_SHIFT_LATER_TRAINING_EXPLORATION"
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "proposed_claim_ceiling": "SYSTEM",
@@ -121,32 +133,37 @@
   "proposed_hold_dimensions": {
     "hold_class": null,
     "hold_reason": null,
-    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-    "queue_state": "NOT_QUEUED"
+    "terminal_state": "ACTIVE",
+    "queue_state": "QUEUED"
   },
   "system_priority_exception": {
     "used": false,
-    "reason": "No comparable Analyst-authorized executable MECHANISM object existed; R22 explicitly preferred domain diversification from a 3/3 theory-backward window when comparably informative."
+    "reason_code": null,
+    "reason": "R23 reported no comparably executable/informative MECHANISM object; this nonduplicative SYSTEM selection remained within the rolling theory-backward 1/3 floor."
   },
-  "candidate_next_research_layer": "NONE",
-  "open_scientific_choices": [],
-  "recommendation": "REJECT",
+  "candidate_next_research_layer": "ARCHITECTURE_STUDY_NONLEARNING_ACTION_VISIT_SEMANTICS",
+  "open_scientific_choices": [
+    "WHETHER_NONLEARNING_OR_EVALUATION_EPISODES_SHOULD_CONSUME_ACTION_POLICY_VISITS",
+    "WHETHER_EVALUATION_TRAINING_INTERLEAVING_SHOULD_PRESERVE_FUTURE_EXPLORATION_SCHEDULE",
+    "WHETHER_VISIT_BOOKKEEPING_REQUIRES_AN_EXPLICIT_UPDATE_GATE_DISTINCT_FROM_EXPLORE"
+  ],
+  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
   "blockers": [
-    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_AND_CLOSURE_OF_CAND-V05-STEP-STATE-HASH-SEMANTICS-01"
+    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_AND_ARCHITECTURE_PROMOTION_DECISION_FOR_CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01"
   ],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_SYSTEM_STEP_STATE_HASH_SEMANTICS_DISCOVERY_CYCLE_AND_REDUCED_TO_PRE_RETURN_BOOKKEEPING_ORDER",
+  "completion_target": "ACHIEVED_ONE_BOUNDED_SYSTEM_NONLEARNING_ACTION_VISIT_CARRYOVER_DISCOVERY_CYCLE_AND_FOUND_ONE_VISIT_SHIFT_IN_FUTURE_EXPLORATION",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-21/0043-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-21/0144-sub.md",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "base_mailbox_tip": "105737eaa5a6cf7ef731d7250e6e6fc2778d6fba",
-    "history_commit": "13168ca33c288c8fb5c57f7ffc8400188984d2eb",
-    "latest_commit": "5a62e1741cac526e42752236b6deccfb08d1a48a",
+    "base_mailbox_tip": "a20207308c7203c597791c2371a3085d639a4a74",
+    "history_commit": "9a600bcefd8d728226a4625fc6a986eab862e0bb",
+    "latest_commit": "925c1469ea2155a2de83d3420b0ab7d4471a95ef",
     "final_state_commit": "THIS_COMMIT",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
     "result": "SUB_DISCOVERY_HISTORY_LATEST_STATE_PERSISTED"
