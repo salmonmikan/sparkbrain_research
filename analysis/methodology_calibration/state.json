@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-20T23:20:40+09:00",
-  "generation_id": "METHCAL-20260920T232040+0900-R22-6D3A91E4",
-  "produced_at": "2026-09-20T23:20:40+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260920T232040+0900-R22-6D3A91E4",
+  "timestamp": "2026-09-21T00:24:30+09:00",
+  "generation_id": "METHCAL-20260921T002430+0900-R23-A7D24C91",
+  "produced_at": "2026-09-21T00:24:30+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260921T002430+0900-R23-A7D24C91",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "METHCAL-20260920T212247+0900-R21-5A8C21D4",
-  "previous_methodology_tip": "72c703feaf54e5c1ed1667c3d1c221686793492a",
-  "run_disposition": "MATERIAL_CALIBRATION_UPDATE",
+  "supersedes_generation_id": "METHCAL-20260920T232040+0900-R22-6D3A91E4",
+  "previous_methodology_tip": "5148736c8b350f671084cdd8e37f728cba7238bc",
+  "run_disposition": "NO_MATERIAL_CALIBRATION_CHANGE",
   "overall_classification": "WELL_CALIBRATED",
   "input_generations": {
     "control_brain": {
@@ -15,11 +15,22 @@
       "commit": "90c088f5fc3f6064f883d308ba5e1af9fd076441"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T215718+0900-R21-4F8C2A71",
-      "commit": "f85692e6e207ae622282116779b559108085ede8"
+      "generation_id": "EVA-20260921T000400+0900-R22-7C4E91A2",
+      "commit": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e"
     },
-    "sub": {
+    "main_orchestrator": {
+      "generation_id": "MAIN-20260921T001507+0900-PRIMARY-FUNNEL21-IDLE-R22",
+      "commit": "105737eaa5a6cf7ef731d7250e6e6fc2778d6fba",
+      "scientific_execution": false
+    },
+    "sub_latest": {
+      "generation_id": "SUB-20260920T233629+0900-NOOP-ANALYSTWAIT-7C2E91A4",
+      "commit": "011515421ea914547c57bb1314bd45042509b27f",
+      "mode": "no_op"
+    },
+    "sub_scientific": {
       "generation_id": "SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2",
+      "handoff_commit": "5d28401e8a515e7095eec7cdceaacb247872c3c4",
       "research_head": "6ddcb7fec39dd017fbfe172885a994a98b503021",
       "prospective_binding": "e466bd89cfd4ab80dc970173a183638af815fe8b",
       "exact_head_ci": 35514340688
@@ -29,35 +40,29 @@
       "commit": "2edf544763d699ccfe81dd52044f776e5425a90d"
     },
     "previous_methodology": {
-      "generation_id": "METHCAL-20260920T212247+0900-R21-5A8C21D4",
-      "commit": "72c703feaf54e5c1ed1667c3d1c221686793492a"
+      "generation_id": "METHCAL-20260920T232040+0900-R22-6D3A91E4",
+      "commit": "5148736c8b350f671084cdd8e37f728cba7238bc"
     }
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "stable_main_plasticity_source": "src/sparkbrain/v05/plasticity.py@bb04eaac527aaa6343018ffb49347d087c6a29e5",
     "sub_eligibility_history_branch": "research/exploratory-sub-eligibility-history-specificity-20260920@6ddcb7fec39dd017fbfe172885a994a98b503021",
     "sub_eligibility_history_prospective_binding": "e466bd89cfd4ab80dc970173a183638af815fe8b",
-    "c19_v4_evidence_tag_object": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-    "c19_v4_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
-    "c19_r2_fsa_evidence_tag_object": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-    "c19_r2_fsa_evidence_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
     "control_handoff_tip": "90c088f5fc3f6064f883d308ba5e1af9fd076441",
-    "evidence_analyst_handoff_tip": "f85692e6e207ae622282116779b559108085ede8",
+    "evidence_analyst_handoff_tip": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e",
+    "orchestrator_tip": "105737eaa5a6cf7ef731d7250e6e6fc2778d6fba",
     "independent_audit_tip": "2edf544763d699ccfe81dd52044f776e5425a90d",
-    "methodology_prewrite_tip": "72c703feaf54e5c1ed1667c3d1c221686793492a",
+    "methodology_prewrite_tip": "5148736c8b350f671084cdd8e37f728cba7238bc",
     "evidence_tags_count": 5,
     "formal_tags_count": 0,
     "sealed_tags_count": 0,
     "freeze_tags_count": 0
   },
   "gate_changes_reviewed": [
-    "Control R17 explicitly corrected R16 and adopted applicability-aware HOLD semantics already used by Evidence Analyst R21: hold_class/hold_reason required iff classification=HOLD; terminal_state/queue_state required for all material objects.",
-    "The prior cross-role HOLD applicability disagreement is therefore resolved prospectively; hold_multidimensional_model, hold_field_applicability_mask, and completeness applicability semantics move from CLARIFY to KEEP.",
-    "Fresh eligibility-history Discovery was prospectively MECHANISM with eligible=true in principle and NOT_READY before outcome, then accepted an exact ordinary per-edge eligibility-trace reduction and REJECT with no rescue.",
-    "Independent Audit R3 preserves C19-v4 immutable PASS but finds programme-level mechanistic novelty reducible by authoritative C19-R2 fixed seven-state FSA evidence.",
-    "Future external-validation superiority/novelty claims should prospectively use competent nondegenerate references and relevant simple reduction baselines under matched privilege; when observations share an atomic/source unit, inference should be clustered at that unit.",
-    "No universal numeric readiness/support threshold and no retroactive rescore/relabel of consumed evidence is recommended."
+    "Fresh Evidence Analyst R22 independently incorporates the previously pending eligibility-history object without changing its prospective typing or methodological interpretation.",
+    "Canonical Funnel-v2.1 classification completeness moves from 17/17 plus one pending to 18/18 reviewed; this is state reconciliation, not a new gate change.",
+    "MAIN consumes Analyst R22 and returns to intentional scientific idle; no SYSTEM-priority exception is used and no comparable MECHANISM is displaced.",
+    "Authoritative main and evidence/formal/sealed/freeze tag state are unchanged; R22 external-validation claim-type-specific tightenings remain appropriate and unchanged."
   ],
   "gate_by_gate_classifications": {
     "hard_integrity_floor": "KEEP",
@@ -96,48 +101,45 @@
     "legacy_topk_sparse_support": "TIGHTEN"
   },
   "false_positive_risks": [
-    "An external-validation effect can be overinterpreted as mechanism/novelty support when the registered reference is degenerate or zero-performing and simpler state-machine reductions are not prospectively included.",
-    "Pair-IID resampling can overstate certainty when multiple pair observations share an atomic/source unit; use source-cluster inference prospectively when such dependence exists.",
-    "A future SYSTEM-over-comparable-MECHANISM allocation could still be justified post hoc unless system_priority_exception is persisted before allocation; first live use remains unobserved.",
-    "A 3/3 recent MECHANISM window could become a prestige/target ratio if operators forget that one-in-three is a minimum only."
+    "External-validation effects can be overinterpreted as mechanism or novelty support when the registered reference is degenerate or zero-performing and relevant simple reductions are omitted.",
+    "Pair-IID resampling can overstate certainty when observations share an atomic/source unit; source-cluster inference remains prospectively required for that dependency structure.",
+    "A future SYSTEM-over-comparable-MECHANISM allocation could still be justified post hoc unless system_priority_exception is persisted before execution; first live use remains unobserved.",
+    "The current 3/3 MECHANISM window could become a prestige or target ratio if the one-in-three minimum is misread as an optimization target."
   ],
   "false_negative_risks": [
-    "Do not universalize FSA/state-tracker comparators or cluster bootstrap to unrelated bounded Discovery questions; apply the tightening to external-validation superiority/novelty claims with the relevant dependency structure.",
-    "Do not require a positive signal or prior comparator victory merely to become preformal_eligible or READY.",
-    "Do not suppress useful SYSTEM architecture/testbed/reproducibility work simply because recent MECHANISM supply is 3/3.",
+    "Do not universalize FSA/state-tracker comparators or cluster bootstrap to unrelated bounded Discovery questions; the external-validation tightening is claim-type-specific.",
+    "Do not require a positive signal or prior comparator/reduction victory merely to become preformal_eligible or READY.",
+    "Do not suppress useful SYSTEM architecture/testbed/reproducibility work simply because recent autonomous supply is 3/3 MECHANISM.",
     "Do not treat the C19-v4 programme-level REDUCIBLE interpretation as retroactive invalidation of its exact immutable registered PASS.",
-    "Avoid serial near-neighbor responsibility/credit microprobes once they stop separating distinct mechanisms; choose by marginal information gain or use no-target/no-op semantics."
+    "Avoid serial near-neighbor responsibility/credit microprobes when they cease to separate distinct mechanisms; select by marginal information gain or use a credible no-target/no-op path."
   ],
   "moving_goalpost_assessment": {
     "level": "LOW",
-    "finding": "No consumed or frozen object was rerun, rescored, relabeled, upgraded, or invalidated. C19-v4 keeps its exact PASS; only programme-level interpretation narrows based on separate later FSA evidence."
+    "finding": "No consumed or frozen object was rerun, rescored, relabeled, upgraded, or invalidated. Fresh Analyst review only resolves the pending eligibility-history classification exactly as prospectively expected."
   },
   "pass_reachability_assessment": {
     "status": "REACHABLE_BUT_NARROW",
-    "finding": "Prospective MECHANISM objects repeatedly show preformal_eligible=true can coexist with NOT_READY before outcome. Current canonical eligible=0 and READY=0, so the first READY-to-PRE_FORMAL transition remains unobserved."
+    "finding": "Prospective MECHANISM objects repeatedly demonstrate that preformal_eligible=true can coexist with NOT_READY before outcome. Current canonical eligible=0 and READY=0, so the first READY-to-PRE_FORMAL transition remains unobserved."
   },
-  "claim_type_separation_findings": "Healthy. Fresh SUB is prospectively MECHANISM and remains MECHANISM at negative closure; no SYSTEM rescue occurs. C19-v4 retains a narrow exact registered representation-surface PASS while separate R2 evidence removes programme-level SparkBrain-specific mechanism/novelty support without rewriting the original result.",
+  "claim_type_separation_findings": "Healthy. Eligibility-history was prospectively MECHANISM, remains MECHANISM at negative closure, and is not rescued as SYSTEM. C19-v4 exact registered PASS remains separate from later programme-level REDUCIBLE mechanism/novelty interpretation.",
   "mechanism_supply_health": {
     "status": "HEALTHY_SMALL_N_3_OF_3_WITH_NEAR_NEIGHBOR_OPPORTUNITY_COST_WATCH",
-    "canonical_analyst_population": "MECHANISM=9,SYSTEM=8,17/17_complete",
-    "pending_unreviewed_fresh_sub": 1,
-    "observed_rolling_window_after_fresh_sub": "MECHANISM,MECHANISM,MECHANISM",
-    "pre_selection_window_for_fresh_sub": "SYSTEM,MECHANISM,MECHANISM",
-    "pre_selection_qualifying_share": "2/3",
+    "canonical_analyst_population": "MECHANISM=10,SYSTEM=8,18/18_complete",
+    "pending_unreviewed_fresh_sub": 0,
+    "observed_rolling_window": "MECHANISM,MECHANISM,MECHANISM",
     "no_coherent_target_exception_used": false,
-    "finding": "Fresh eligibility-history work is genuinely mechanism-level and falsifiable, and quota compliance already existed before selection. The 3/3 window is therefore not evidence of quota manufacturing, but the recent responsibility/credit clustering merits an opportunity-cost watch."
+    "finding": "The 3/3 window consists of genuinely mechanism-level falsifiable selections, but remains an incidental observation rather than a target. Recent credit/responsibility clustering continues to justify domain-diversification and marginal-information-gain discipline."
   },
   "funnel_observability": {
-    "status": "GOOD_V2_1_17_OF_17_CANONICAL_PLUS_1_PENDING_APPLICABILITY_ALIGNED",
-    "classification_completeness": "17/17_reviewed_canonical_analyst",
-    "pending_unreviewed_count": 1,
-    "pending_candidate_local_completeness": "COMPLETE_UNDER_APPLICABILITY_AWARE_RULE",
-    "policy_population_rule": "Use reviewed canonical 17/17 for policy/conversion conclusions until fresh Analyst consumes pending object.",
+    "status": "GOOD_V2_1_18_OF_18_CANONICAL_COMPLETE_APPLICABILITY_ALIGNED",
+    "classification_completeness": "18/18_reviewed_canonical_analyst",
+    "pending_unreviewed_count": 0,
+    "policy_population_rule": "Use the complete Analyst-reviewed 18/18 canonical population for funnel/conversion conclusions; infer no universal numeric threshold from these counts.",
     "hold_applicability_rule": {
       "classification_HOLD": "hold_class and hold_reason REQUIRED; terminal_state and queue_state REQUIRED",
       "classification_non_HOLD": "hold_class and hold_reason MUST_BE_NULL; terminal_state and queue_state REQUIRED"
     },
-    "finding": "The prior Control/Analyst ambiguity is resolved prospectively; remaining observability discipline is to exclude the one fresh unreviewed object from canonical conversion metrics until Analyst incorporation."
+    "finding": "R22 Analyst review removes the last pending object and preserves applicability-aware completeness semantics without changing policy gates."
   },
   "preformal_gate_calibration": {
     "status": "ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED",
@@ -145,30 +147,30 @@
     "current_canonical_eligible_count": 0,
     "current_canonical_ready_count": 0,
     "first_ready_to_preformal": "INSUFFICIENT_EVIDENCE",
-    "finding": "Fresh SUB again demonstrates eligible=true in principle with NOT_READY before outcome. No evidence makes READY synonymous with prior success; the first actual READY-to-PRE_FORMAL transition remains the highest-information unresolved gate test."
+    "finding": "Eligibility-history preserves explicit pre-outcome provenance of eligible=true with NOT_READY, reinforcing that eligibility is not readiness. No evidence makes READY synonymous with prior scientific success; the first actual READY-to-PRE_FORMAL transition remains unobserved."
   },
   "system_priority_exception_audit": {
     "used": false,
     "count_observed": 0,
-    "latest_finding": "No comparable executable MECHANISM was displaced by recent SYSTEM MAIN work; no exception was required.",
+    "latest_finding": "MAIN consumed Analyst R22 and completed intentional idle; no SYSTEM object was allocated and no comparable executable MECHANISM was displaced.",
     "first_live_use": "INSUFFICIENT_EVIDENCE"
   },
   "no_coherent_target_audit": {
     "exception_used_current_window": false,
-    "finding": "NO_COHERENT_MECHANISM_TARGET remains unused. Pre-selection theory-backward supply was already 2/3 and the fresh mechanism object was independently coherent.",
+    "finding": "The explicit SUB NO_COHERENT_MECHANISM_TARGET exception remains unused. MAIN's no-coherent-central-object intentional idle is a different lower-funnel allocation condition and is not counted as use of the SUB exception.",
     "first_live_use": "INSUFFICIENT_EVIDENCE"
   },
   "classification_completeness": {
-    "classified_reviewed": 17,
-    "material_reviewed_population": 17,
+    "classified_reviewed": 18,
+    "material_reviewed_population": 18,
     "ratio_reviewed": 1.0,
-    "pending_unreviewed": 1,
+    "pending_unreviewed": 0,
     "pending_included_in_policy_rates": false,
     "applicability_semantics_aligned": true,
-    "policy_use": "Policy conclusions are gated on the complete 17/17 Analyst-reviewed canonical population. The fresh SUB proposal is not added to conversion rates until Analyst review. No universal numeric threshold is inferred from these counts."
+    "policy_use": "Policy conclusions are gated on the complete 18/18 Analyst-reviewed canonical population. No universal numeric readiness/support threshold is inferred from the counts."
   },
   "external_calibration": {
-    "status": "CLAIM_TYPE_SPECIFIC_TIGHTENING_FROM_C19_V4_R2_AUDIT",
+    "status": "CLAIM_TYPE_SPECIFIC_TIGHTENING_FROM_C19_V4_R2_AUDIT_UNCHANGED",
     "historical_result_policy": "PRESERVE_C19_V4_EXACT_PASS_NO_RESCORE_NO_RELABEL",
     "programme_interpretation": "C19_V4_REDUCIBLE_FOR_SPARKBRAIN_SPECIFIC_MECHANISM_NOVELTY_AFTER_C19_R2",
     "prospective_requirements": [
@@ -179,16 +181,15 @@
     "not_universal": true
   },
   "prospective_recommendations": [
-    "Keep scientific admission, lower-funnel novelty/reduction, PRE_FORMAL readiness and hard-integrity floors unchanged.",
-    "Treat HOLD applicability semantics as settled and shared across Control/Analyst validators.",
-    "For fresh external-validation superiority/novelty claims, prospectively bind competent references, relevant simple reductions and source-cluster inference when dependency structure requires it.",
-    "Do not apply those external-validation requirements as universal gates to unrelated Discovery questions.",
-    "Keep one-in-three as a minimum only; do not target the current 3/3 ratio and avoid serial low-yield responsibility/credit microprobes.",
-    "Audit first READY-to-PRE_FORMAL, first genuine SYSTEM-priority exception and first NO_COHERENT_MECHANISM_TARGET use."
+    "Keep scientific admission, lower-funnel novelty/reduction, PRE_FORMAL readiness, claim-type separation, and hard-integrity floors unchanged.",
+    "Keep HOLD applicability semantics as settled shared schema and compute completeness only over applicable fields.",
+    "Preserve R22's external-validation competent-reference, relevant-simple-reduction, and source-cluster requirements prospectively and only for the applicable claim type.",
+    "Treat one-in-three as a minimum only; do not target the current 3/3 MECHANISM share and prefer domain-diversified or higher-marginal-information SUB work next.",
+    "Audit the first READY-to-PRE_FORMAL transition, first genuine MAIN SYSTEM-over-comparable-MECHANISM exception, and first explicit NO_COHERENT_MECHANISM_TARGET use."
   ],
   "utility_request": {
     "created": false,
-    "reason": "Live rollout plus the fresh independent external audit provide higher-information calibration evidence than a synthetic methodology probe."
+    "reason": "Live rollout remains the higher-information methodology-calibration path; no bounded synthetic utility probe is currently justified."
   },
   "hard_floor_confirmation": {
     "status": "CONFIRMED_DO_NOT_RELAX",
@@ -211,8 +212,8 @@
     "first_no_coherent_target": "INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_analyst": [
-    "Should competent-reference, matched-simple-reduction and source-cluster inference requirements be persisted as an explicit claim-type-specific external-validation schema rather than narrative synthesis only?",
-    "When Analyst consumes fresh eligibility-history SUB and Audit R3, preserve canonical funnel metrics on reviewed objects only and keep C19-v4 exact PASS separate from programme-level REDUCIBLE novelty interpretation.",
-    "For the first READY object, persist the pre-outcome readiness rationale so READY-to-PRE_FORMAL can be audited as development/test readiness rather than prior success."
+    "Persist the first READY object's pre-outcome readiness rationale so READY-to-PRE_FORMAL can be audited as development/test readiness rather than prior success.",
+    "Keep competent-reference, matched-simple-reduction, and source-cluster requirements explicit and claim-type-specific for future external-validation superiority/novelty claims.",
+    "Do not convert the observed 3/3 MECHANISM supply share into a target ratio; continue selection by marginal information gain."
   ]
 }
