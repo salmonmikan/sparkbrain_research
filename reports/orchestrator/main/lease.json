@@ -11,10 +11,10 @@
     "sub_observed_for_collision": "SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "BLOCKED",
   "started_at": "2026-09-20T17:17:04+09:00",
   "heartbeat_at": "2026-09-20T17:17:04+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-20T17:17:04+09:00",
   "analyst_generation_id": "EVA-20260920T160240+0900-R16-3D7A91C4",
   "analyst_commit": "eea87c0e67807605c8fdd10408650da4192fb06b",
   "analyst_branch_tip_observed": "eea87c0e67807605c8fdd10408650da4192fb06b",
@@ -33,12 +33,12 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "Controlling Analyst R16 allocates no MAIN scientific object. A newer SUB Discovery generation exists but has not yet been consumed or classified by a newer Analyst generation, so MAIN cannot adopt its proposed candidate or disposition.",
+    "reason_detail": "Controlling Analyst R16 allocates no MAIN scientific object. The newer SUB pre-semantic function-transfer Discovery is not yet consumed/classified by a newer Analyst generation, so MAIN cannot adopt its proposed MECHANISM candidate, disposition, readiness, or any successor.",
     "compared_mechanism_candidate_ids": []
   },
   "active_branch": null,
   "active_identity": null,
-  "active_step": "FAIL_CLOSED_RECONCILIATION_NEWER_SUB_DEPENDENCY_UNREVIEWED_BY_ANALYST",
+  "active_step": "BLOCKED_PENDING_FRESH_ANALYST_CLASSIFICATION_OF_NEWER_SUB_GENERATION",
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "pending_unreviewed_sub_generation": {
     "generation_id": "SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71",
@@ -47,17 +47,20 @@
     "research_head": "c68da076d846d85ad556f875d632ab6f68d68453",
     "final_head_ci_run": 35497715398,
     "final_head_ci": "COMPLETED_SUCCESS",
+    "reported_terminal": "CLUSTER_LOOKUP_EXPLAINS_TRANSFER",
+    "reported_evidentiary_status": "NON_EVIDENTIARY_DISCOVERY",
     "status": "AWAITING_FRESH_EVIDENCE_ANALYST_CLASSIFICATION"
   },
-  "stop_reason": null,
-  "expected_next_action": "Complete control-plane persistence only, then block. A fresh Evidence Analyst generation must consume SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71 and explicitly classify/allocate any successor before MAIN may perform scientific mutation or workflow dispatch.",
+  "stop_reason": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
+  "expected_next_action": "Wait for a fresh Evidence Analyst generation that explicitly consumes SUB-20260920T164759+0900-THEORY-PRESEM-5A8C2D71. Then re-read allocation, claim ceiling/readiness/hold dimensions/system-priority exception and exact refs before any scientific mutation or workflow dispatch.",
   "persistence": {
-    "lease_acquire_commit": null,
-    "state_commit": null,
-    "latest_commit": null,
-    "history_commit": null,
+    "lease_acquire_commit": "11e312d6067d26da8732b2c26d3c94bab2ea19be",
+    "state_commit": "3da09e1b7cdd69824dbf708e95e767da0da217d4",
+    "latest_commit": "fa64c30bed7413d0afa78c1b5b20a3027c920e37",
+    "history_commit": "a5bb3e72311a920ec59903c9bfa8a3c66e62f34b",
     "history_path": "reports/orchestrator/history/2026-09-20/1717-main.md",
-    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
+    "result": "DURABLE_MAIN_REPORT_PERSISTED; FINAL_LEASE_BLOCKED"
   },
   "owner": "main"
 }
