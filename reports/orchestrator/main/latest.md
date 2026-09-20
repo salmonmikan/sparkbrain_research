@@ -1,22 +1,20 @@
-# SparkBrain MAIN — 2026-09-20 23:16 JST
+# SparkBrain MAIN — 2026-09-21 00:15 JST
 
 - schema_version: `2`
-- generation_id: `MAIN-20260920T231646+0900-PRIMARY-FUNNEL21-FAILCLOSED-R21-6E4A2C91`
-- analyst: `EVA-20260920T215718+0900-R21-4F8C2A71@f85692e6e207ae622282116779b559108085ede8`
+- generation_id: `MAIN-20260921T001507+0900-PRIMARY-FUNNEL21-HOLD-R22-4B7C91E2`
+- analyst: `EVA-20260921T000400+0900-R22-7C4E91A2@b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e`
 - authoritative main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- status: `BLOCKED`
-- main_lane: `FAIL_CLOSED_PENDING_FRESH_ANALYST_AFTER_SUB_GENERATION_ADVANCE`
+- status: `COMPLETED`
+- main_lane: `LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`
 
-Evidence Analyst R21 is still the latest canonical generation. R21 last consumed SUB generation `SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17` and allocated no current MAIN scientific object. After R21, SUB independently completed a newer generation `SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2`, so the Analyst dependency has materially advanced and MAIN must fail-closed before any scientific execution.
+Evidence Analyst R22 consumed and canonicalized the previously unreviewed SUB result, so the prior MAIN freshness blocker is resolved. `CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01` is now canonical `REJECT / MECHANISM / preformal_eligible=false / NOT_READY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`, terminal `ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION`. The observed history-sensitive update difference was exactly reproduced by the prospectively fixed ordinary per-edge decaying eligibility recurrence under a common scalar reward, so same-object continuation is stopped.
 
-The unreviewed SUB object is `CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01`. SUB proposes `REJECT / MECHANISM / preformal_eligible=false / NOT_READY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`, terminal `ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION`, but these are explicitly `SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL` and are not copied into MAIN current-object fields. The DEV-only two-edge discriminator observed different native updates from different stored eligibility histories, while both post-step eligibilities and weight deltas exactly matched the prospectively fixed ordinary per-edge decaying eligibility recurrence under a common reward scalar.
+R22 creates no new MAIN scientific object. Funnel state is Architecture active/queued M=0/S=0, PRE_FORMAL eligible=0/READY=0, and FORMAL has no fresh one-way identity/STARTED/TEST/scorer/preserve authority. Portfolio is MECHANISM=10 / SYSTEM=8, with one nonterminal hold (`CAND-H7-RESP-01`) and 17 terminal current objects. `system_priority_exception.used=false` because no SYSTEM execution is allocated.
 
-SUB research branch is `research/exploratory-sub-eligibility-history-specificity-20260920`, prospective contract `e466bd89cfd4ab80dc970173a183638af815fe8b`, outcome-bearing commit `bd071d9023058d01f58d6f7ddacf35e820de51b6`, final research head `6ddcb7fec39dd017fbfe172885a994a98b503021`. Exact-head CI `35514340688` is `completed / success` on that exact head. This is NON_EVIDENTIARY Discovery and not MAIN scientific evidence.
+R22 also narrows programme-level interpretation of immutable C19-v4: its exact registered `PASS` remains preserved, but SparkBrain-specific mechanism/novelty support is `REDUCIBLE` because authoritative C19-R2's fixed seven-state FSA is substantially stronger. No C19 identity was reopened, rescored, relabeled, or rerun.
 
-Canonical R21 Funnel state remains the last authority pending refresh: Architecture active/queued M=0/S=0, PRE_FORMAL eligible=0/READY=0, FORMAL has no fresh one-way authority. The canonical portfolio remains MECHANISM=9 / SYSTEM=8 with one nonterminal hold (`CAND-H7-RESP-01`) and 16 terminal current objects; the new SUB proposal is excluded from those canonical counts until Analyst review.
+Independent repository reconciliation found stable `main` unchanged at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; exactly five authoritative `evidence/*` tags; zero `formal/*`, `sealed/*`, and `freeze/*` tags; H5 STARTED at `058e90227cd48e1c10c6ecbaed01efdec1217d0e`; and H5 raw preserve at `ce5797eb584344db7a512e585506fb6c59ea475b`. The canonical SUB research head remains `6ddcb7fec39dd017fbfe172885a994a98b503021`, with exact-head CI `35514340688` completed successfully. PR #148 and #149 remain open and unmerged.
 
-Independent repository reconciliation found stable `main` unchanged at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, exactly five authoritative `evidence/*` tags, and zero `formal/*`, `sealed/*`, and tag-based `freeze/*` tags. PR #148 and #149 remain open, unmerged, and mergeable. No MAIN/SUB branch or identity collision was found.
+This MAIN run executed no FORMAL, PRE_FORMAL, MECHANISM Architecture, or SYSTEM Architecture science; dispatched no scientific workflow; consumed no identity; and changed no research branch, evidence ref, preserve ref, scorer, STARTED state, or stable main. Counts: FORMAL scientific evidence=0; PRE_FORMAL development evidence=0; MECHANISM Architecture observations=0; SYSTEM Architecture observations=0.
 
-This MAIN run executed no FORMAL, PRE_FORMAL, MECHANISM Architecture, or SYSTEM Architecture science; dispatched no scientific workflow; consumed no identity; changed no research branch, evidence ref, preserve ref, scorer, STARTED state, or stable main. Counts: FORMAL scientific evidence=0; PRE_FORMAL development evidence=0; MECHANISM Architecture observations=0; SYSTEM Architecture observations=0.
-
-Stop reason: `FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION`. The blocker clears only when a fresh Evidence Analyst generation explicitly consumes and classifies `SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2` and prospectively supplies any new MAIN allocation/authority.
+Stop reason: `ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT`. MAIN is intentionally idle until a fresh Evidence Analyst generation prospectively allocates a coherent executable MAIN object.
