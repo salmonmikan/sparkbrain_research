@@ -25,7 +25,7 @@ Earlier scheduler versions are **not reconstructed by guesswork**. Old one-time 
 
 ## Managed fleet
 
-The registry currently manages the eight enabled SparkBrain schedulers:
+The registry currently manages the nine enabled SparkBrain schedulers:
 
 1. SparkBrain Control & Repository Steward
 2. SparkBrain Evidence Analyst
@@ -35,8 +35,9 @@ The registry currently manages the eight enabled SparkBrain schedulers:
 6. SparkBrain External Research & Audit
 7. SparkBrain 現在状態ブリーフ
 8. SparkBrain Methodology Calibration Auditor
+9. SparkBrain Utility Orchestrator
 
-Disabled legacy/maintenance tasks may be recorded separately, but they are not part of the current seven-task fleet.
+Disabled legacy/maintenance tasks may be recorded separately, but they are not part of the current nine-task fleet.
 
 ## Directory contract
 
@@ -91,3 +92,11 @@ Ordinary run-time output does not count as a scheduler-definition change.
 This registry records what the scheduler definition is and how it changed. It does not itself authorize scientific execution or reinterpret scientific results.
 
 Scheduler definitions on the ChatGPT automation service remain the live execution authority; this branch is the durable mirrored history and reconciliation source.
+
+## Stable-definition comparison
+
+Scheduler execution timestamps are observation metadata, not definition state. Live `updated_at` and `last_run_time` may move during ordinary execution and MUST NOT create drift by themselves.
+
+Definition drift uses only task ID, title, enabled state, exact prompt, exact schedule, timing mode, and timezone. The manifest stores a SHA-256 fingerprint of those stable fields. Observation timestamps remain provenance only.
+
+After PRE_CHANGE persistence and immediately before a live mutation, re-read the full live stable definition. If any stable field differs from the PRE_CHANGE live snapshot, abort and reconcile rather than overwriting a concurrent human/control-plane change.
