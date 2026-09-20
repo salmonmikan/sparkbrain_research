@@ -1,10 +1,16 @@
 {
-  "timestamp": "2026-09-20T10:19:30+09:00",
+  "schema_version": 2,
+  "generation_id": "MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE",
+  "produced_at": "2026-09-20T10:47:00+09:00",
+  "producer_run_id": "sparkbrain-main-relay-20260920T1047JST",
+  "supersedes_generation_id": "LEGACY_GENERATION_UNKNOWN",
+  "consumed_analyst_generation_id": "LEGACY_GENERATION_UNKNOWN",
+  "consumed_analyst_commit": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+  "consumed_main_generation_id": "LEGACY_GENERATION_UNKNOWN",
   "worker_role": "main",
-  "execution_mode": "PRIMARY",
-  "analyst_commit": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+  "execution_mode": "RELAY",
   "research_layer": "ARCHITECTURE_STUDY",
-  "active_phase": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_WAITING_CI",
+  "active_phase": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_COMPLETED",
   "current_lane": "V05_RECEPTOR_SIMULTANEITY_ORDERING_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
   "candidate_question": {
     "id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
@@ -15,6 +21,19 @@
     },
     "mapped_outcome": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY"
+  },
+  "generation_reconciliation": {
+    "analyst_generation": "LEGACY_GENERATION_UNKNOWN",
+    "analyst_commit_at_start": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+    "analyst_commit_before_persistence": "639a5f7baba926502965bc9fea4cdcfb9f749068",
+    "prior_main_generation": "LEGACY_GENERATION_UNKNOWN",
+    "prior_main_status": "WAITING_EXTERNAL",
+    "prior_main_heartbeat_at": "2026-09-20T10:20:00+09:00",
+    "material_supersession_detected": false,
+    "equivalent_supersession_refresh_used": false,
+    "fresh_primary_running_collision": false,
+    "sub_collision": false,
+    "reconciliation_basis": "Legacy Analyst/MAIN generation metadata was reconciled against exact current Analyst tip, stable main, exact research branch/head and exact workflow identity/result; age alone was not used as authority."
   },
   "authoritative_target_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -29,48 +48,37 @@
     "active_preserve_ref": null,
     "active_evidence_ref": null
   },
-  "fast_path_reconciliation": {
-    "status": "FAST_PATH",
-    "full_reconciliation_triggered": false,
-    "reason": "Analyst allocation, stable main, source blobs, prior MAIN completion lease, current SUB handoff, research ancestry, evidence tags, preserve/control presence, PRs and workflow identity were mutually consistent.",
-    "prior_main_status": "COMPLETED",
-    "fresh_main_collision": false,
-    "sub_collision": false,
-    "analyst_tip_rechecked_after_raw": true,
-    "main_ref_rechecked": true,
-    "evidence_refs_rechecked": true,
-    "preserve_refs_rechecked": true,
-    "open_prs_rechecked": true
-  },
-  "branches_prs_advanced": {
-    "research_branch_created": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
-    "research_head": "705b652f0eb426c7e39a75a9f901be10483d0e63",
-    "prs_created_or_modified": [],
-    "open_unrelated_prs_observed": [148, 149]
-  },
   "workflow_check_result": {
     "ordinary_ci": {
       "run_id": 35481067945,
       "head_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920",
       "head": "705b652f0eb426c7e39a75a9f901be10483d0e63",
-      "status": "in_progress",
-      "conclusion": null,
-      "repository_integrity_only": true
+      "status": "completed",
+      "conclusion": "success",
+      "repository_integrity_only": true,
+      "python_3_11": "success",
+      "python_3_13": "success",
+      "lint": "success",
+      "local_readiness": "success",
+      "tests": "success",
+      "bundle_validation": "success"
     },
     "outcome_bearing_workflow": null,
     "dynamic_probe_executed": false,
     "characterization_mode": "STATIC_READ_ONLY_SOURCE_DOCS_TESTS_CALLSITE_CONTRACT"
   },
+  "contingency_consumed": "PRIMARY expected_next_action authorized collection of exact-head ordinary CI 35481067945 and, on success, persistence of COMPLETED followed by STOP for fresh Evidence Analyst review.",
   "observations_results": {
     "terminal": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED",
     "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
     "facts": [
       "SignalPulse validation has no duplicate (time_ms, channel) uniqueness rule.",
-      "Receptor and integrated brain sorting use only (time_ms, channel); equal keys therefore retain caller iterable order under stable sort.",
+      "Receptor and integrated brain sorting use only (time_ms, channel); equal keys retain caller iterable order under stable sort.",
       "Receptor state/gain is updated sequentially per pulse.",
       "No supported stable-main docs/tests explicitly define exact-key tie order as semantic or exact-key simultaneous events as an unordered multiset.",
-      "Canonical stable-main v0.5 worlds/callers do not intentionally demonstrate duplicate exact (time_ms, channel) events; supported reachability is therefore unestablished rather than established or forbidden."
+      "Canonical stable-main v0.5 worlds/callers do not intentionally demonstrate duplicate exact (time_ms, channel) events; supported reachability remains unestablished."
     ],
+    "new_scientific_information_this_relay": false,
     "new_formal_scientific_evidence": false,
     "new_pre_formal_development_evidence": false,
     "formal_claim": "NONE"
@@ -85,7 +93,7 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "integrity_state": {
-    "status": "GREEN_STATIC_TERMINAL_PENDING_EXACT_HEAD_CI",
+    "status": "GREEN_STATIC_TERMINAL_EXACT_HEAD_CI_SUCCESS",
     "prospective_binding_before_interpretation": true,
     "raw_before_interpretation": true,
     "terminal_mapping_applied_once": true,
@@ -100,28 +108,25 @@
     "sub_reserved_work_mutated": false,
     "utility_request_created": false
   },
-  "critical_path_fixes": [],
   "critical_path_actions_performed": [
-    "read fresh Evidence Analyst handoff, MAIN latest/state/lease, and SUB report",
-    "acquired PRIMARY MAIN lease before scientific mutation",
-    "re-fetched exact stable main and bound source blobs",
-    "created fresh research branch from exact main",
-    "persisted prospective static contract before interpretation",
-    "performed deterministic source/docs/tests/caller inventory without dynamic diagnostic",
-    "persisted raw facts before interpretation",
-    "applied fixed terminal mapping exactly once",
-    "confirmed exact-head ordinary CI run 35481067945 is in progress"
+    "read latest Evidence Analyst handoff and current MAIN latest/state/lease",
+    "reconciled legacy generation metadata against exact authoritative refs",
+    "confirmed no fresh PRIMARY RUNNING collision on the same object",
+    "confirmed exact research branch remains at 705b652f0eb426c7e39a75a9f901be10483d0e63",
+    "collected ordinary CI run 35481067945",
+    "confirmed Python 3.11 and 3.13 CI jobs plus lint/readiness/tests/bundle validation all succeeded",
+    "preserved the already-fixed terminal without remapping or new experiment"
   ],
   "work_left_for_SUB": "Only genuinely independent bounded Discovery under current Analyst allocation; SUB must not continue receptor simultaneity/ordering or any MAIN critical-path work.",
   "utility_request_created": null,
-  "stop_reason": "VALID_STATIC_TERMINAL_MAPPED_WAITING_EXACT_HEAD_ORDINARY_CI",
-  "next_MAIN_action": "Collect only ordinary CI run 35481067945 for exact head 705b652f0eb426c7e39a75a9f901be10483d0e63. If successful, persist COMPLETED and STOP for fresh Evidence Analyst review. Do not run a dynamic permutation diagnostic, aggregation comparator, cycle 2, PRE_FORMAL, or FORMAL continuation.",
+  "stop_reason": "VALID_STATIC_TERMINAL_AND_EXACT_HEAD_CI_SUCCESS_STOP_FOR_FRESH_ANALYST_REVIEW",
+  "next_MAIN_action": "Wait for a fresh Evidence Analyst generation/commit. Do not automatically continue CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01, run a dynamic permutation/aggregation comparator, start cycle 2, or advance PRE_FORMAL/FORMAL.",
   "persistence_result": {
     "branch": "ops/orchestrator-run-report",
-    "latest_md_commit": "02d1d28fb2ffadf2d9c9398f5fdf23c2da567ab6",
-    "history_path": "reports/orchestrator/history/2026-09-20/1019-main.md",
+    "latest_md_commit": "c0cfbd9d7176918c6458ad03f15622e53bdcf583",
+    "history_path": "reports/orchestrator/history/2026-09-20/1047-main.md",
     "state_json": "this update",
-    "final_lease_status": "WAITING_EXTERNAL",
+    "final_lease_status": "COMPLETED",
     "force_push_used": false
   }
 }
