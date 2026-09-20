@@ -1,45 +1,48 @@
 {
-  "timestamp": "2026-09-20T12:30:00+09:00",
+  "timestamp": "2026-09-20T15:30:56+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B",
-  "producer_run_id": "external-literature-auto-20260920T123000+0900-R11-7E4A1C2B",
+  "generation_id": "LIT-20260920T153056+0900-R12-RECEPTOR-TIES-4D8C2A71",
+  "producer_run_id": "external-literature-auto-20260920T153056+0900-R12-4D8C2A71",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LEGACY_GENERATION_UNKNOWN",
+  "supersedes_generation_id": "LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B",
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot_jst": "12:30",
+  "schedule_slot_jst": "15:30",
   "schedule_inference_used": false,
   "control_plane_mailbox_semantics_respected": true,
   "input_generations": {
     "control_brain": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "handoff_commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
-      "produced_at": "2026-09-20T08:50:00+09:00"
+      "generation_id": "CTRL-20260920T145000+0900-R14-7B3E2D91",
+      "handoff_commit": "14285844f80fa844b5aaac9ccf4d2fed95b6fb35",
+      "produced_at": "2026-09-20T14:50:00+09:00"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T115704+0900-R12-A6B8DE50",
-      "handoff_commit": "dcaa02fc25506ff4e8b14d7540b6c754a8a6da98",
-      "produced_at": "2026-09-20T11:57:04+09:00"
+      "generation_id": "EVA-20260920T150234+0900-R15-8F3C1A72",
+      "handoff_commit": "ad8290dfab6d79be984f960d48dcf34a8213aefb",
+      "state_payload_commit": "095caeb07c23094bf9fc68c8e7022f88d45baa74",
+      "produced_at": "2026-09-20T15:02:34+09:00"
     },
     "main_orchestrator": {
-      "generation_id": "MAIN-20260920T121227+0900-PRIMARY-FUNNEL21-HOLD-7C41A2D9",
-      "handoff_commit": "0d1371bee14b95e126cef203f516c0033d538363",
-      "produced_at": "2026-09-20T12:16:00+09:00"
+      "generation_id": "MAIN-20260920T151432+0900-PRIMARY-FUNNEL21-HOLD-A84D6C2F",
+      "handoff_commit": "8af4b20aa8e3386197a53317eaf4885942d509b3",
+      "produced_at": "2026-09-20T15:14:32+09:00"
     },
     "sub_orchestrator": {
-      "generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
-      "handoff_commit": "03c8981d86ce0086cf5a01798a80e8275e58b711",
-      "produced_at": "2026-09-20T11:44:00+09:00"
+      "generation_id": "SUB-20260920T144110+0900-SYSTEM-EVALORDER-6F2C91A8",
+      "handoff_commit": "656e478ff9146a3d5561c1f2482becc1252bf2d0",
+      "research_head": "4ed6de26ac0bf584189823a64abf6532b3291f59",
+      "produced_at": "2026-09-20T14:41:10+09:00"
     },
     "prior_literature": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "handoff_commit": "f399e9d14ef6d491135d19161b8c1d7986b94e5b",
-      "produced_at": "2026-09-20T09:32:39+09:00"
+      "generation_id": "LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B",
+      "handoff_commit": "639ceaca54150a3f82796c241c8129d821b55fe1",
+      "produced_at": "2026-09-20T12:30:00+09:00"
     }
   },
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "assembly_lifecycle_architecture": "research/main-assembly-mature-capacity-lifecycle-contract-arch-study-20260920@13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
-    "assembly_feedback_discovery": "research/exploratory-sub-assembly-feedback-mechanism-20260920@83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
+    "selected_research_branch": "research/main-v05-receptor-simultaneity-ordering-contract-arch-study-20260920@705b652f0eb426c7e39a75a9f901be10483d0e63",
+    "selected_research_terminal": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED",
+    "selected_research_exact_head_ci": "35481067945:completed/success",
     "authoritative_evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
@@ -50,33 +53,32 @@
     "authoritative_evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
     "legacy_freeze_branch_count": 13,
     "legacy_freeze_refs_refetched": true,
     "preserve_refs_refetched": true,
     "control_refs_refetched": true,
-    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
     "fresh_formal_identity_observed": false,
     "fresh_started_observed": false,
     "fresh_formal_test_authority_observed": false,
     "fresh_formal_evidence_observed": false,
-    "pr_148": "OPEN_UNMERGED_MERGEABLE",
-    "pr_149": "OPEN_UNMERGED_MERGEABLE"
+    "open_prs_refetched": true
   },
   "source_blobs_inspected": {
-    "src/sparkbrain/v05/assemblies.py": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
-    "assembly_lifecycle_terminal_commit": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
-    "assembly_feedback_research_head": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801"
+    "src/sparkbrain/v05/receptors.py": "86c1cfea1ea70cada5c277d8f5047c32ea611a5c",
+    "src/sparkbrain/v04/contracts.py": "9d3ae216a518ff6d409a67cd02f34f1dc20a8ab8",
+    "architecture_summary": "6ed003fccb7822c24d182408d60a5264055c5cc8"
   },
-  "control_brain_commit_consumed": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
-  "evidence_analyst_commit_consumed": "dcaa02fc25506ff4e8b14d7540b6c754a8a6da98",
-  "main_report_commit_consumed": "0d1371bee14b95e126cef203f516c0033d538363",
-  "sub_report_commit_consumed": "03c8981d86ce0086cf5a01798a80e8275e58b711",
+  "control_brain_commit_consumed": "14285844f80fa844b5aaac9ccf4d2fed95b6fb35",
+  "evidence_analyst_commit_consumed": "ad8290dfab6d79be984f960d48dcf34a8213aefb",
+  "main_report_commit_consumed": "8af4b20aa8e3386197a53317eaf4885942d509b3",
+  "sub_report_commit_consumed": "656e478ff9146a3d5561c1f2482becc1252bf2d0",
   "newest_role_history_consumed": [
-    "analysis/control_brain/history/2026-09-20/0850.md",
-    "analysis/orchestrator/history/2026-09-20/1157.md",
-    "reports/orchestrator/history/2026-09-20/1212-main.md",
-    "reports/orchestrator/history/2026-09-20/1144-sub.md"
+    "analysis/control_brain/latest.md@CTRL-20260920T145000+0900-R14-7B3E2D91",
+    "analysis/orchestrator/latest.md@EVA-20260920T150234+0900-R15-8F3C1A72",
+    "reports/orchestrator/main/latest.md@MAIN-20260920T151432+0900-PRIMARY-FUNNEL21-HOLD-A84D6C2F",
+    "reports/orchestrator/sub/latest.md@SUB-20260920T144110+0900-SYSTEM-EVALORDER-6F2C91A8",
+    "reports/orchestrator/history/2026-09-20/1342-sub.md@SUB-20260920T134240+0900-THEORY-REWARD-ADA731B2"
   ],
   "genuinely_new_information": true,
   "current_repository_interpretation": {
@@ -85,90 +87,89 @@
     "architecture_study": "EMPTY_HOLD",
     "pre_formal": "EMPTY_HOLD",
     "formal": "EMPTY_HOLD",
-    "assembly_lifecycle": "SYSTEM/HOLD_SYSTEM_TERMINAL/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED",
-    "assembly_lifecycle_terminal": "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED",
-    "assembly_feedback": "MECHANISM/REJECT/TERMINAL_FOR_CURRENT_OBJECT",
-    "assembly_feedback_terminal": "ASSEMBLY_RECOGNIZED_BUT_FIELD_IDENTICAL"
+    "receptor_simultaneity_ordering": "SYSTEM/HOLD_SYSTEM_TERMINAL/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED",
+    "receptor_simultaneity_terminal": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED"
   },
   "findings": [
     {
-      "id": "BOUNDED_PROTOTYPE_MEMORY_HAS_ORDINARY_PRUNING_LIFECYCLES",
-      "summary": "DenStream establishes decay/pruning of streaming micro-clusters under limited memory, and Dynamic Cluster Memory (CVPR 2024) expands memory on novelty while pruning overlapping clusters to maintain fixed capacity. Mature-candidate turnover would therefore be ordinary lifecycle/resource management rather than a novel computational principle.",
+      "id": "SIMULTANEOUS_EVENT_ORDER_IS_EXPLICIT_MODEL_SEMANTICS",
+      "summary": "Discrete-event simulation literature treats equal-time non-commutative events as requiring an explicit total ordering/tie policy for determinism. NESTML likewise documents that exactly simultaneous pre/post synaptic events are order-sensitive and fixes post-before-pre processing in the reference/default generated code.",
       "sources": [
-        "Cao et al., SDM 2006, DOI 10.1137/1.9781611972764.29",
-        "Ye & Bors, CVPR 2024, DOI 10.1109/CVPR52733.2024.02476"
+        "McGlohon & Carothers, WSC 2021 / arXiv:2105.00069",
+        "NESTML active dendrite third-factor STDP tutorial, Case 7"
       ],
       "direct_applicability_confidence": "HIGH"
     },
     {
-      "id": "STABILITY_PLASTICITY_AND_CATEGORY_RECRUITMENT_ARE_ESTABLISHED",
-      "summary": "Adaptive Resonance Theory and related recurrent category-learning models explicitly preserve learned categories while mismatch can reset/search and recruit new representational resources. Future Assembly continual-acquisition claims therefore require matched resource and retention/adaptation comparisons rather than category persistence alone.",
+      "id": "SAME_TIME_MULTIPLICITY_HAS_ESTABLISHED_EXPLICIT_REPRESENTATIONS",
+      "summary": "NEST spike_generator explicitly interprets repeated identical times as multiple events, while mip_generator can collapse n same-step spikes into one event with n-fold weight. Multiplicity/aggregation is therefore an ordinary declared event representation, not something that should silently inherit host-language iterable order.",
       "sources": [
-        "Layher et al., Frontiers in Psychology 2014, DOI 10.3389/fpsyg.2014.01287",
-        "Grossberg ART literature on mismatch-triggered reset/search/category recruitment"
+        "NEST Simulator stable spike_generator documentation",
+        "NEST Simulator stable mip_generator documentation"
       ],
       "direct_applicability_confidence": "HIGH"
     },
     {
-      "id": "PATTERN_COMPLETION_REQUIRES_CAUSAL_FEEDBACK_OR_EQUIVALENT_RECURRENCE",
-      "summary": "Associative pattern completion in CA3 and recurrent category-learning models depends on recurrent/top-down causal interactions. A post-field Assembly recognizer that changes readout without changing lower field dynamics is not itself a completion/regeneration mechanism.",
+      "id": "ZERO_LAG_TIES_HAVE_MODEL_SPECIFIC_POLICIES",
+      "summary": "NESTML stdp_nn_symm_synapse discards exactly coincident zero-delta-t pairs, demonstrating that discard, explicit order and multiplicity are all legitimate model-defined policies. There is no universal exact-tie semantics to infer from simultaneity alone.",
       "sources": [
-        "Le Duigou et al., Frontiers in Cellular Neuroscience 2014, DOI 10.3389/fncel.2013.00262",
-        "Layher et al., Frontiers in Psychology 2014, DOI 10.3389/fpsyg.2014.01287"
+        "NESTML stdp_nn_symm_synapse documentation"
       ],
       "direct_applicability_confidence": "HIGH"
     },
     {
-      "id": "BIOLOGICAL_ENGRAM_ANALOGY_DOES_NOT_IMPLY_PERMANENCE",
-      "summary": "Natural forgetting literature frames engram accessibility as dynamically remodeled and environmentally sensitive. Biological assembly/en​gram analogy therefore cannot justify permanent mature entries; persistence versus decay/remodeling must be an explicit computational lifecycle contract.",
+      "id": "SEQUENTIAL_ADAPTIVE_EVENT_UPDATES_ARE_ORDINARY_REDUCTION",
+      "summary": "Foundational event-driven spiking/dynamical-synapse work treats events as state-transition points. SparkBrain v0.5 updates receptor traces and adaptive gain after each pulse, so any future exact-key permutation effect is first explained by sequential state jumps under an unspecified tie policy.",
       "sources": [
-        "Ryan & Frankland, Nature Reviews Neuroscience 2022, DOI 10.1038/s41583-021-00548-3"
+        "Mattia & Del Giudice, Neural Computation 2000, DOI 10.1162/089976600300014953",
+        "stable-main src/sparkbrain/v05/receptors.py"
       ],
-      "direct_applicability_confidence": "MEDIUM_HIGH"
+      "direct_applicability_confidence": "HIGH"
     }
   ],
   "affected_lines": [
-    "CAND_ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_01",
-    "CAND_V05_ASSEMBLY_FEEDBACK_CAUSALITY_01",
-    "V05_ASSEMBLY_MEMORY_LIFECYCLE",
-    "FUTURE_ASSEMBLY_PATTERN_COMPLETION",
+    "CAND_V05_RECEPTOR_SIMULTANEITY_ORDERING_01",
+    "V05_RECEPTOR_EVENT_SEMANTICS",
+    "SAME_TIMESTAMP_MULTIPLICITY_CONTRACT",
+    "ARCHITECTURE_REPRODUCIBILITY",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "DENSTREAM_STYLE_DECAY_AND_PRUNING_UNDER_LIMITED_MEMORY",
-    "DYNAMIC_CLUSTER_MEMORY_FIXED_CAPACITY_EXPANSION_AND_PRUNING",
-    "ART_MATCH_RESET_AND_CATEGORY_RECRUITMENT",
-    "EXPLICIT_RECURRENT_OR_TOP_DOWN_CAUSAL_FEEDBACK_FOR_PATTERN_COMPLETION"
+    "EXPLICIT_SIMULTANEOUS_EVENT_TIE_POLICY",
+    "EXACT_KEY_UNIQUENESS_AND_DUPLICATE_REJECTION",
+    "MULTIPLICITY_OR_COMMUTATIVE_AGGREGATION_SEMANTICS",
+    "SEQUENTIAL_ADAPTIVE_STATE_UPDATE_REDUCTION"
   ],
-  "novelty_or_reduction_impact": "STRONG_ORDINARY_LIFECYCLE_AND_ASSOCIATIVE_MEMORY_REDUCTION; current lifecycle remains SYSTEM/HOLD and current-v0.5 Assembly-feedback remains REJECTED; no PRE_FORMAL or FORMAL support restored.",
+  "novelty_or_reduction_impact": "STRONG_ORDINARY_EVENT_SEMANTICS_REDUCTION; current terminal remains SYSTEM/HOLD with no mechanistic novelty support and no supported exact-key reachability established.",
+  "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "DenStream/DCM-style bounded prototype memory with decay/pruning/merge/replacement under matched memory budget",
-    "ART-style match/reset/category recruitment under matched similarity and resource constraints",
-    "prospectively fixed retention-versus-adaptation/load curve only for a genuinely fresh supported saturation object",
-    "explicit recurrent/top-down causal-feedback comparator for any future Assembly completion/regeneration claim"
+    "explicit exact-key uniqueness contract with duplicate rejection",
+    "explicit multiplicity/commutative aggregation semantics when scientifically justified",
+    "explicit deterministic secondary tie-break only when ordering is itself semantic",
+    "fresh permutation-invariance metamorphic test only after supported exact-key reachability is independently established",
+    "distinguish cross-channel biological synchrony from same-channel duplicate-event multiplicity"
   ],
   "questions_for_evidence_analyst": [
-    "Keep the lifecycle object terminal SYSTEM/HOLD and prohibit same-object saturation/turnover rescue?",
-    "If supported saturation later becomes independently relevant, require matched bounded-memory lifecycle baselines and a prospectively fixed retention/adaptation objective?",
-    "Preserve current-v0.5 Assembly-feedback REJECT and require a fresh causal feedback path before any future completion/regeneration mechanism claim?"
+    "Keep CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 terminal SYSTEM/HOLD with no same-object dynamic rescue?",
+    "If supported exact-key duplicates later appear, require a fresh prospective choice among uniqueness, multiplicity/aggregation, or explicit ordered semantics before testing?",
+    "Treat cross-channel coincidence and same-channel duplicate-key multiplicity as separate semantic questions?"
   ],
   "questions_for_control_brain": [
-    "Add bounded prototype lifecycle, stability-plasticity/category recruitment, and explicit feedback-path requirements to the ordinary Assembly reduction ladder?",
-    "Keep MAIN idle rather than create a literature-driven successor while no supported saturation/feedback object exists?",
-    "Keep PRE_FORMAL/FORMAL empty until a native positive mechanism survives these ordinary reductions under matched resources?"
+    "Add simultaneous-event tie/multiplicity semantics to the ordinary Architecture reproducibility checklist?",
+    "Keep MAIN idle and avoid a literature-driven successor while supported duplicate-key reachability is absent?",
+    "Keep PRE_FORMAL/FORMAL unaffected by this API/event-semantics issue?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
-    "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 contract/raw/terminal and no same-object saturation or turnover experiment",
-    "CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01 negative Discovery result and no cycle-2 rescue",
-    "no official TEST, fresh FORMAL identity/STARTED, rescore, retune, research merge, immutable-ref/tag mutation, or scheduler change"
+    "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 contract/raw/terminal and no same-object dynamic permutation or aggregation comparator",
+    "no literature-driven API repair, cycle 2, PRE_FORMAL/FORMAL promotion, official TEST, new STARTED, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
   ],
   "utility_request_created": null,
   "persistence": {
     "branch": "ops/external-research-audit-handoff",
-    "history_path": "analysis/external_research_audit/history/2026-09-20/1230-LITERATURE_REDUCTION_SCOUT.md",
+    "history_path": "analysis/external_research_audit/history/2026-09-20/1530-LITERATURE_REDUCTION_SCOUT.md",
     "latest_path": "analysis/external_research_audit/literature/latest.md",
     "state_path": "analysis/external_research_audit/literature/state.json",
     "legacy_shared_latest_state_updated": false,
