@@ -1,45 +1,46 @@
 {
-  "timestamp": "2026-09-20T21:30:00+09:00",
+  "timestamp": "2026-09-21T00:30:00+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260920T213000+0900-R14-DELAYED-CREDIT-9C4E71B2",
-  "producer_run_id": "external-literature-auto-20260920T213000+0900-R14-9C4E71B2",
+  "generation_id": "LIT-20260921T003000+0900-R15-ELIGIBILITY-TIMEBASE-5A7C2E91",
+  "producer_run_id": "external-literature-auto-20260921T003000+0900-R15-5A7C2E91",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4",
+  "supersedes_generation_id": "LIT-20260920T213000+0900-R14-DELAYED-CREDIT-9C4E71B2",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260920T205000+0900-R16-5E9A71C3",
-      "handoff_commit": "016a248143dc71380fca28128d564d74aeb4c3f3"
+      "generation_id": "CTRL-20260920T225013+0900-R17-3F8C61A2",
+      "handoff_commit": "90c088f5fc3f6064f883d308ba5e1af9fd076441"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T211647+0900-R20-B6B0AAA2",
-      "handoff_commit": "2d7841171377226d2962424b5926ca4c4b68a2e7"
+      "generation_id": "EVA-20260921T000400+0900-R22-7C4E91A2",
+      "handoff_commit": "b4a2d1625f0b2f2a5cffffd7fe015b6ad60c797e"
     },
     "main_report": {
-      "generation_id": "MAIN-20260920T211206+0900-PRIMARY-FUNNEL21-FAILCLOSED-R19-7F4A92C1",
-      "handoff_commit": "dab812ab5cc50768b86522c2c5205f40bf691e8b",
-      "scientific_terminal_generation_id": "MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731",
-      "scientific_terminal_handoff_commit": "d779929417663fcd029e6f91742ab73002c41f5e"
+      "generation_id": "MAIN-20260921T001507+0900-PRIMARY-FUNNEL21-HOLD-R22-4B7C91E2",
+      "handoff_commit": "105737eaa5a6cf7ef731d7250e6e6fc2778d6fba"
     },
     "sub_report": {
-      "generation_id": "SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29",
-      "handoff_commit": "59026d651bb141fbfc8a4e99f4c5826531e2af65"
+      "generation_id": "SUB-20260920T233629+0900-NOOP-ANALYSTWAIT-7C2E91A4",
+      "handoff_commit": "011515421ea914547c57bb1314bd45042509b27f",
+      "scientific_generation_id": "SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2",
+      "scientific_history_commit": "71e208eff4d6d343fb91df51543bc42331b34078",
+      "scientific_state_commit": "8c0672a17b38bf39ab160ad361794f2f88655153"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4",
-      "handoff_commit": "4a1dfcaef0dfcdbf132156f7656088f7f90a3c96"
+      "generation_id": "LIT-20260920T213000+0900-R14-DELAYED-CREDIT-9C4E71B2",
+      "handoff_commit": "d2047294508816007249f23e06f3b8c3687628df"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_research": {
-      "research/main-assembly-cluster-order-supported-reachability-arch-study-20260920": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1",
-      "research/exploratory-sub-delayed-action-responsibility-20260920": "411913e0b3a0493595969513bf0b7829c49cc248"
+      "research/exploratory-sub-eligibility-history-specificity-20260920": "6ddcb7fec39dd017fbfe172885a994a98b503021"
     },
-    "delayed_action_prospective_contract": "c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab",
-    "delayed_action_outcome_bearing_commit": "1117b56de8845c3200c1f1acd5f04d999743a4e5",
-    "delayed_action_result_head": "411913e0b3a0493595969513bf0b7829c49cc248",
-    "stable_action_blob": "792cba20ec5411633f12478d641adf35dba505e3",
+    "prospective_contract": "e466bd89cfd4ab80dc970173a183638af815fe8b",
+    "outcome_bearing_commit": "bd071d9023058d01f58d6f7ddacf35e820de51b6",
+    "result_head": "6ddcb7fec39dd017fbfe172885a994a98b503021",
+    "stable_plasticity_blob": "bb04eaac527aaa6343018ffb49347d087c6a29e5",
+    "stable_v05_brain_blob": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
     "authoritative_evidence_refs": [
       "refs/tags/evidence/c19-official-v4-c19-external-v2-official-v4",
       "refs/tags/evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
@@ -52,18 +53,24 @@
     "freeze_tags": [],
     "legacy_freeze_branch_count": 13,
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b"
+    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "relevant_prs": {
+      "148": {
+        "state": "open",
+        "merged": false,
+        "head": "14ba187bb13705bc306baabe310d5364cf1b60fb"
+      },
+      "149": {
+        "state": "open",
+        "merged": false,
+        "head": "01ef8c3a54ff20403aba2fab9996dbda5552dd4d"
+      }
+    }
   },
   "workflow_state": {
-    "delayed_action_exact_head_ci": {
-      "run_id": 35508632370,
-      "head": "411913e0b3a0493595969513bf0b7829c49cc248",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "main_cluster_order_exact_head_ci": {
-      "run_id": 35507809211,
-      "head": "7a8fb2698da33ca07203123d1c5ad7dc510ac8e1",
+    "eligibility_history_exact_head_ci": {
+      "run_id": 35514340688,
+      "head": "6ddcb7fec39dd017fbfe172885a994a98b503021",
       "status": "completed",
       "conclusion": "success"
     }
@@ -72,85 +79,91 @@
   "findings": [
     {
       "type": "repository_evidence",
-      "finding": "Evidence Analyst R20 canonically closed CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01 as REJECT with terminal LAST_PENDING_ACTION_REDUCTION. Stable AssemblyActionPolicy contains one overwritable pending=(assembly_id,action) pair; choose(A)->choose(B)->reward(+1) updated B only and exactly matched the prospective one-slot comparator.",
-      "impact": "Current v0.5 action-credit state has no demonstrated earlier-action eligibility across an intervening eligible action; no same-object rescue."
+      "finding": "Evidence Analyst R22 canonically closed CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01 at ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION. With matched current +1 ms activity and a common reward, different stored per-edge eligibility histories caused different updates, and the prospectively fixed ordinary recurrence reproduced both target edges exactly.",
+      "impact": "Current result is terminal REJECT and should not be rescued."
     },
     {
       "type": "external_literature",
-      "finding": "Classic accumulating/replacing eligibility traces retain per-state/action temporal credit across steps and are a foundational delayed-reward baseline rather than a novel mechanism.",
+      "finding": "Three-factor learning theory explicitly obtains synaptic specificity from local eligibility flags even when the third-factor neuromodulatory signal is broadly shared. This is a direct ordinary reduction of the fresh history-specificity phenomenon.",
       "sources": [
-        "Singh & Sutton, Reinforcement Learning with Replacing Eligibility Traces, Machine Learning 22 (1996), DOI 10.1007/BF00114726"
+        "Gerstner et al., Frontiers in Neural Circuits 2018, DOI 10.3389/fncir.2018.00053"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "Three-factor synaptic learning and e-prop combine local eligibility traces with delayed modulatory/learning signals; biological reviews through 2025 report experimental support for seconds-scale eligibility traces.",
+      "finding": "Cortical experiments demonstrate distinct transient LTP and LTD eligibility traces converted by specific monoaminergic receptors; a single scalar history trace is therefore not biologically distinctive.",
       "sources": [
-        "Izhikevich, Solving the distal reward problem through linkage of STDP and dopamine signaling, BMC Neuroscience 2007",
-        "Gerstner et al., Frontiers in Neural Circuits 2018, DOI 10.3389/fncir.2018.00053",
-        "Bellec et al., Nature Communications 2020, DOI 10.1038/s41467-020-17236-y",
-        "Shouval & Kirkwood, Current Opinion in Neurobiology 2025, DOI 10.1016/j.conb.2025.102978"
+        "He et al., Neuron 2015, DOI 10.1016/j.neuron.2015.09.037"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "ICLR 2026 Cascading Eligibility Traces explicitly address event-mixing in standard exponentially decaying traces and provide temporally precise delayed-credit memory over seconds to minutes.",
+      "finding": "A 2026 Physiological Reviews synthesis treats eligibility traces/synaptic tags as temporary synapse-specific memories acted on by later neuromodulation across striatum, hippocampus and cortex.",
       "sources": [
-        "Ralambomihanta et al., Learning From the Past with Cascading Eligibility Traces, ICLR 2026"
+        "Long-term potentiation in the brain: a synaptic memory mechanism, Physiological Reviews 2026, DOI 10.1152/physrev.00028.2025"
       ]
     },
     {
-      "type": "inference",
-      "finding": "Temporal eligibility and selective causal responsibility should be separated prospectively: future tests should put recency/eligibility in conflict with actual responsibility and require ordinary trace baselines before counterfactual-responsibility interpretation.",
-      "basis": "Fresh delayed-action result plus prior 2026-09-19 Literature actual-causality/provenance reduction and the new ICLR 2026 temporal-precision baseline."
+      "type": "repository_plus_literature_inference",
+      "finding": "Stable v0.5 decays eligibility by multiplying by 0.90 once per V05PlasticityController.apply() call, and IntegratedV05Brain calls apply once per learning episode; no elapsed-time argument participates. Standard eligibility formulations use elapsed-time decay constants, so API/episode partition count is a fresh reproducibility/timebase question unless episode count is explicitly the intended semantic clock.",
+      "sources": [
+        "Gerstner et al. 2018",
+        "Wang et al., Nature Communications 2026, DOI 10.1038/s41467-026-69898-9"
+      ],
+      "impact": "Separate fresh Architecture/API diagnostic warranted; no change to current terminal mechanism object."
     }
   ],
   "affected_lines": [
-    "CAND_V05_DELAYED_ACTION_RESPONSIBILITY_01",
+    "CAND_V05_ELIGIBILITY_HISTORY_SPECIFICITY_01",
+    "V05_PLASTICITY_ELIGIBILITY_TIMEBASE",
+    "ARCHITECTURE_REPRODUCIBILITY",
     "CAND_H7_RESP_01",
-    "V05_ACTION_CREDIT_STATE",
-    "TEMPORAL_CREDIT_REDUCTION_LADDER",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "one-slot last-action pending register",
-    "matched per-(Assembly,action) accumulating/replacing eligibility trace",
-    "three-factor local eligibility multiplied by delayed scalar learning signal",
-    "e-prop-style local eligibility plus delayed/top-down learning signal",
-    "cascading/state-space eligibility trace for temporally precise delayed credit",
-    "explicit counterfactual/actual-responsibility baseline for selective causal-credit claims"
+    "ordinary synapse-local eligibility plus global scalar third factor",
+    "elapsed-time exponential eligibility trace with prospectively fixed time constant",
+    "explicit episode-count semantic-clock baseline",
+    "partition-invariance under identical event-time/reward history",
+    "distinct LTP/LTD or sign-specific eligibility for biological-equivalence claims",
+    "cascading/state-space eligibility and counterfactual responsibility only for stronger future claims"
   ],
-  "novelty_or_reduction_impact": "STRONGER_TEMPORAL_CREDIT_REDUCTION. Current v0.5 is cleanly reduced to a one-slot last-action pending register. Any future positive delayed-action result must first survive matched per-action eligibility traces, three-factor/e-prop delayed local credit, and, when intervening-event temporal precision is claimed, 2026 cascading eligibility traces. Temporal eligibility must not be conflated with selective causal responsibility.",
+  "novelty_or_reduction_impact": "STRONGER_ORDINARY_THREE_FACTOR_REDUCTION_PLUS_FRESH_TIMEBASE_SEMANTICS_ISSUE. The history-specific differential is canonical local eligibility plus a global third factor and supplies no new responsibility mechanism. Separately, stable v0.5 eligibility decays once per apply/episode call rather than explicitly by elapsed model time, creating a fresh partition/timebase reproducibility question unless episode count is intentionally semantic.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "matched per-(Assembly,action) accumulating or replacing eligibility trace",
-    "three-factor local eligibility multiplied by delayed scalar learning signal",
-    "e-prop-style local eligibility plus delayed/top-down learning signal under matched state privilege",
-    "cascading/state-space eligibility trace for temporally precise delayed credit across intervening events",
-    "prospective recency-versus-causality conflict case before any responsibility-sensitive claim",
-    "explicit counterfactual/actual-responsibility comparator only when selective causal credit is claimed"
+    "ordinary synapse-local eligibility plus global scalar third factor",
+    "elapsed-time exponential trace with prospectively fixed tau under matched event history",
+    "explicit episode-count clock baseline if episode boundary is intentionally semantic",
+    "partition-invariance test for identical event-time/reward history under different non-semantic call chunking",
+    "distinct LTP/LTD or sign-specific eligibility only when making biological-equivalence claims",
+    "cascading/state-space trace and counterfactual responsibility only for stronger future claims"
   ],
   "questions_for_evidence_analyst": [
-    "Keep LAST_PENDING_ACTION_REDUCTION as the closed current-v0.5 negative mechanism result with no cycle-2 rescue?",
-    "For any fresh H7/action-credit successor, require ordinary per-action eligibility and temporally precise eligibility reductions before mechanistic-distinctness interpretation?",
-    "Require a recency-versus-causality conflict case before interpreting retained delayed credit as responsibility-sensitive rather than merely eligibility-sensitive?"
+    "Keep ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION closed with no same-object rescue?",
+    "Treat the apply-count versus elapsed-time clock as a separate Architecture/API reproducibility question rather than a mechanism continuation?",
+    "Require an explicit declared trace timebase before future biological or behavioral-timescale interpretation of eligibility_decay?"
   ],
   "questions_for_control_brain": [
-    "Add replacing/accumulating eligibility, three-factor/e-prop, and cascading eligibility traces to the ordinary temporal-credit reduction ladder?",
-    "Keep H7 on HOLD until a fresh native object separates eligibility persistence from selective causal responsibility?",
-    "Avoid opening a literature-driven successor or Utility implementation while current-v0.5 action credit is terminally reduced and PRE_FORMAL remains empty?"
+    "Add eligibility-clock/timebase semantics to the ordinary plasticity Architecture checklist?",
+    "Keep H7 HOLD and PRE_FORMAL/FORMAL unchanged; do not infer responsibility from synapse-specific eligibility under a common reward?",
+    "Allow the Utility diagnostic only as a fresh NON_EVIDENTIARY partition-invariance check, not as a rescue of the terminal object?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
-    "CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01 prospective contract c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab",
-    "outcome-bearing commit 1117b56de8845c3200c1f1acd5f04d999743a4e5",
-    "terminal/result head 411913e0b3a0493595969513bf0b7829c49cc248 and successful exact-head CI 35508632370",
-    "canonical LAST_PENDING_ACTION_REDUCTION / REJECT disposition and no same-object cycle-2 rescue",
-    "CAND-H7-RESP-01 remains HOLD/nonterminal with no fresh native object admitted by this literature",
-    "no literature-driven implementation patch, retune, rerun, PRE_FORMAL/FORMAL promotion, new STARTED, official TEST, rescore, research merge, immutable-ref/tag mutation, or scheduler change"
+    "CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01 prospective contract e466bd89cfd4ab80dc970173a183638af815fe8b",
+    "outcome-bearing commit bd071d9023058d01f58d6f7ddacf35e820de51b6",
+    "result head 6ddcb7fec39dd017fbfe172885a994a98b503021 and exact-head CI 35514340688",
+    "canonical ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION / REJECT disposition",
+    "no same-object cycle 2, retune, relabel, production fix, PRE_FORMAL/FORMAL promotion, STARTED, TEST, rescore, research merge, immutable-ref mutation, or scheduler change"
   ],
-  "utility_request_created": null,
-  "persistence_notes": "Role-separated literature stream only. Legacy shared latest/state not updated. No immutable scientific refs or scheduler changes."
+  "utility_request_created": {
+    "request_id": "LIT-20260921-0030-ELIGIBILITY-TIMEBASE-INVARIANCE",
+    "requester": "literature_scout",
+    "path": "utility_orchestrator/requests/2026-09-21/LIT-20260921-0030-ELIGIBILITY-TIMEBASE-INVARIANCE.md",
+    "commit": "52db0bc1d87289ddecbe967484488b8a2602d675",
+    "dedupe_key": "v05-plasticity-eligibility-decay-timebase-partition-invariance-v1"
+  },
+  "persistence_notes": "Role-separated literature stream only. Legacy shared latest/state not updated. No immutable scientific refs, research result, or scheduler changes."
 }
