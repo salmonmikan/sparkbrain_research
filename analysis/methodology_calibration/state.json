@@ -1,30 +1,30 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-20T13:17:07+09:00",
-  "generation_id": "METHCAL-20260920T131707+0900-R13-B84E2D61",
-  "produced_at": "2026-09-20T13:17:07+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260920T131707+0900-R13-B84E2D61",
+  "timestamp": "2026-09-20T14:19:23+09:00",
+  "generation_id": "METHCAL-20260920T141923+0900-R14-5F2A9C7E",
+  "produced_at": "2026-09-20T14:19:23+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260920T141923+0900-R14-5F2A9C7E",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "METHCAL-20260920T122251+0900-R12-7C4D91A2",
-  "previous_methodology_tip": "05d80534a274a7ae8d75cf9fcf7009f85de141fc",
+  "supersedes_generation_id": "METHCAL-20260920T131707+0900-R13-B84E2D61",
+  "previous_methodology_tip": "2087e82cf0ff7e75962e5622fe224c183fc52ce5",
   "input_generations": {
     "control_brain": {
       "generation_id": "CTRL-20260920T125000+0900-R13-9C4F2B71",
       "commit": "2aa866e406e5a3c7549c6d31d512e33626026dee"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T125840+0900-R13-5D7A2C91",
-      "commit": "c7b46081c2dcc980bd7856b37437012842bcce04"
+      "generation_id": "EVA-20260920T140028+0900-R14-C91E4A27",
+      "commit": "79ca80206e1305ceedee0be7baf3d9c002555c1d"
     },
     "main": {
-      "generation_id": "MAIN-20260920T121227+0900-PRIMARY-FUNNEL21-HOLD-7C41A2D9",
-      "commit": "0d1371bee14b95e126cef203f516c0033d538363"
+      "generation_id": "MAIN-20260920T141403+0900-PRIMARY-FUNNEL21-HOLD-08EEC5A7",
+      "commit": "dcb76a79f4219d6a4b41eadb2ed88c5cee96c9eb"
     },
     "sub": {
-      "generation_id": "SUB-20260920T124445+0900-THEORY-PARTIAL-4E8A1C73",
-      "commit": "4662db7e897c0ada02cf28e8fc2851d1ea6ca0bf",
-      "research_head": "20810fdd0c56a6ced99df4d46fade42798d3f4a0",
-      "prospective_binding": "9222d4a5f9f2d010b50c8047788cdd03483c4afe"
+      "generation_id": "SUB-20260920T134240+0900-THEORY-REWARD-ADA731B2",
+      "commit": "ceb6bfdc36b63972fa954e29d79989cc153b3810",
+      "research_head": "391b8b958e9869d3b10f2ca7c8d784353cc0ff2c",
+      "prospective_binding": "fff0ddeb8e613a27ef9eac6fc6623addad56f82d"
     },
     "literature": {
       "generation_id": "LIT-20260920T123000+0900-R11-ASSEMBLY-LIFECYCLE-7E4A1C2B",
@@ -41,12 +41,14 @@
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "fresh_sub_research": "research/exploratory-sub-assembly-readout-completion-20260920@20810fdd0c56a6ced99df4d46fade42798d3f4a0",
-    "fresh_sub_prospective_binding": "9222d4a5f9f2d010b50c8047788cdd03483c4afe",
-    "fresh_sub_exact_head_ci": "35487245559:success",
-    "orchestrator_run_report_tip": "4662db7e897c0ada02cf28e8fc2851d1ea6ca0bf",
+    "fresh_sub_research": "research/exploratory-sub-delayed-reward-eligibility-20260920@391b8b958e9869d3b10f2ca7c8d784353cc0ff2c",
+    "fresh_sub_prospective_binding": "fff0ddeb8e613a27ef9eac6fc6623addad56f82d",
+    "fresh_sub_exact_head_ci": "35489706078:success",
+    "orchestrator_run_report_tip": "dcb76a79f4219d6a4b41eadb2ed88c5cee96c9eb",
     "control_handoff_tip": "2aa866e406e5a3c7549c6d31d512e33626026dee",
-    "evidence_analyst_handoff_tip": "c7b46081c2dcc980bd7856b37437012842bcce04",
+    "evidence_analyst_handoff_tip": "79ca80206e1305ceedee0be7baf3d9c002555c1d",
+    "literature_audit_tip": "639ceaca54150a3f82796c241c8129d821b55fe1",
+    "repository_steward_tip": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
     "evidence_tags": 5,
     "formal_tags": 0,
     "sealed_tags": 0,
@@ -56,11 +58,11 @@
     "relevant_open_prs": [148, 149]
   },
   "gate_changes_reviewed": [
-    "No new scientific gate; fresh v2.1 evidence tests the distinction between preformal eligibility and readiness.",
-    "Fresh theory-backward MECHANISM object prospectively recorded preformal eligibility in principle=true while readiness=NOT_READY before outcome.",
-    "Matched ordinary reduction then closed the current object as terminal REJECT with current preformal_eligible=false and no rescue into SYSTEM.",
-    "Rolling theory-backward supply moved from SYSTEM,SYSTEM,MECHANISM to SYSTEM,MECHANISM,MECHANISM without quota necessity for the second mechanism selection.",
-    "Classification completeness increased from 7/7 to 8/8 material candidates."
+    "No new scientific threshold; prior eligibility/readiness transition-provenance clarification is now implemented in the fresh Evidence Analyst handoff.",
+    "Fresh delayed-reward MECHANISM object prospectively recorded preformal_eligible=true in principle with readiness=NOT_READY before outcome, then transitioned to false after its fixed ordinary reduction.",
+    "Rolling theory-backward supply moved from SYSTEM,MECHANISM,MECHANISM to MECHANISM,MECHANISM,MECHANISM even though the one-in-three floor was already satisfied before selection.",
+    "Classification completeness increased from 8/8 to 9/9 material candidates without conversion rates becoming policy thresholds.",
+    "MAIN consumed the fresh Analyst generation and remained intentionally idle with system_priority_exception.used=false."
   ],
   "overall_classification": "WELL_CALIBRATED",
   "gate_by_gate_classifications": {
@@ -70,7 +72,7 @@
     "fresh_mechanism_successor_from_system": "KEEP",
     "preformal_eligible_distinct_from_readiness": "KEEP",
     "preformal_eligible_timing": "KEEP",
-    "eligibility_transition_provenance": "CLARIFY",
+    "eligibility_transition_provenance": "KEEP",
     "preformal_ready_semantics": "KEEP",
     "first_analyst_authoritative_ready_to_preformal_transition": "INSUFFICIENT_EVIDENCE",
     "hold_multidimensional_model": "KEEP",
@@ -90,84 +92,87 @@
     "programme_wide_numeric_support_threshold_prohibition": "KEEP"
   },
   "false_positive_risks": [
-    "A future MECHANISM-supply quota could still be gamed by relabeling SYSTEM/API work; the two recent mechanism objects do not show that behavior.",
-    "preformal_eligible=true could be misread as positive evidence or prestige rather than prospective lane admissibility; the fresh true/NOT_READY state argues against that interpretation.",
+    "The rolling 3/3 MECHANISM window could become a prestige or throughput target if the one-in-three floor is misread; current Analyst explicitly rejects that interpretation.",
+    "preformal_eligible=true in principle could still be misread as positive evidence rather than lane admissibility; explicit transition provenance and NOT_READY semantics currently prevent this.",
     "Future SYSTEM priority exceptions could be rationalized post hoc unless persisted before execution; no exception has yet been used.",
-    "Small-N funnel conversion rates could be overread despite 8/8 completeness; current Analyst explicitly avoids universal thresholding."
+    "Small-N funnel conversion counts could be overinterpreted despite 9/9 completeness; current Analyst keeps them descriptive only."
   ],
   "false_negative_risks": [
-    "A future READY checklist could become a hidden second Formal gate if comparator/reduction/falsifier are interpreted as already won; current semantics and fresh eligibility-before-outcome example do not do this.",
-    "Mechanism priority could suppress integrity-critical SYSTEM work if exception semantics are ignored; no such suppression is observed.",
-    "A decisive negative reduction should close the current mechanism object without implying that all future fresh mechanism hypotheses in the topic family are invalid; current fresh-successor rule preserves that distinction.",
-    "Over-fulfilling the one-in-three rule could become a prestige bias if 2/3 is treated as a target; current Control/Analyst correctly direct subsequent SUB selection by information gain."
+    "A future READY checklist could become a hidden second Formal gate if comparator/reduction/falsifier are interpreted as already won; no READY case exists yet.",
+    "Mechanism priority could suppress integrity-critical SYSTEM work if the prospective exception path is ignored; no such suppression is currently observed.",
+    "Repeated negative mechanism reductions must remain object-local and not be generalized into a topic-family no-go theorem; current fresh-successor semantics preserve this.",
+    "A 3/3 rolling mechanism window must not become an expectation that crowds out high-value SYSTEM/testbed work; current next-selection guidance correctly returns to information gain."
   ],
   "moving_goalpost_assessment": {
     "level": "LOW",
-    "finding": "The fresh mechanism question, comparator, terminal map, falsifier, preliminary eligibility/readiness semantics and stop rule were prospectively committed before diagnostic/result commits. No consumed/frozen result was rerun, rescored, relabeled, invalidated or upgraded."
+    "finding": "The delayed-reward mechanism question, synthetic procedure, ordinary reduction, terminal map, falsifier, preformal eligibility/readiness state and stop rule were prospectively committed at fff0ddeb before diagnostic/result commits. No consumed/frozen result was rerun, rescored, relabeled, invalidated or upgraded."
   },
   "pass_reachability_assessment": {
     "status": "REACHABLE_BUT_NARROW",
-    "finding": "A durable prospective object has now represented eligibility-in-principle=true while readiness remained NOT_READY, demonstrating one intermediate funnel state. No READY candidate or Analyst-authoritative READY-to-PRE_FORMAL transition exists yet."
+    "finding": "Two fresh MECHANISM objects have now prospectively represented preformal_eligible=true in principle while readiness remained NOT_READY, demonstrating lane admissibility without pre-success. No READY candidate or Analyst-authoritative READY-to-PRE_FORMAL transition exists yet."
   },
-  "claim_type_separation_findings": "Healthy. The fresh Assembly partial-completion object remained MECHANISM when rejected and was not rescued into SYSTEM; separately valuable SYSTEM objects remain terminal SYSTEM/HOLD or SYSTEM/REJECT without novelty inflation. Fresh stronger mechanism hypotheses require new prospective objects.",
+  "claim_type_separation_findings": "Healthy. The delayed-reward object remained MECHANISM when rejected and was not rescued into SYSTEM; terminal SYSTEM work remains separately valuable for architecture/testbed/reproducibility. Stronger delayed-credit mechanisms require fresh prospectively typed objects.",
   "mechanism_supply_health": {
-    "status": "HEALTHY_SMALL_N_QUALITY_CONFIRMED_2_OF_3",
-    "rolling_window": "SYSTEM,MECHANISM,MECHANISM",
-    "qualifying_share": "2/3",
+    "status": "HEALTHY_SMALL_N_QUALITY_CONFIRMED_3_OF_3_NOT_A_TARGET",
+    "rolling_window": "MECHANISM,MECHANISM,MECHANISM",
+    "qualifying_share": "3/3",
+    "preselection_window_for_latest": "SYSTEM,MECHANISM,MECHANISM",
     "no_coherent_target_exception_used": false,
-    "finding": "The second recent theory-backward MECHANISM selection was made after the 1-in-3 floor was already satisfied, had a prospectively fixed mechanism-level discriminator and ordinary reduction, and accepted a negative result without rescue. Do not treat 2/3 as a target."
+    "finding": "The latest theory-backward selection was made after the one-in-three floor was already satisfied, had a prospectively fixed mechanism-level falsifier and ordinary reduction, and accepted a negative result without rescue. The next selection should maximize information gain; 3/3 is not a target."
   },
   "funnel_observability": {
-    "status": "GOOD_V2_1_IMPLEMENTATION_8_OF_8_WITH_TRANSITION_PROVENANCE_CLARIFICATION",
-    "classification_completeness": "8/8",
-    "finding": "All material current candidates have mandatory v2.1 fields. The fresh object's pre-outcome eligibility-in-principle=true/NOT_READY state is durable on its exact research branch while current Analyst state correctly shows terminal eligibility=false; future transitions would be easier to audit if prior state and transition reason are explicitly retained in candidate history."
+    "status": "GOOD_V2_1_IMPLEMENTATION_9_OF_9_TRANSITION_PROVENANCE_IMPLEMENTED",
+    "classification_completeness": "9/9",
+    "finding": "All material current candidates have mandatory v2.1 fields. Fresh Analyst state now centrally preserves prior eligibility/readiness, current state, and the terminal transition reason for the delayed-reward object. Conversion counts remain descriptive only."
   },
   "preformal_gate_calibration": {
-    "status": "ELIGIBILITY_READINESS_SEPARATION_DEMONSTRATED_READY_TRANSITION_UNTESTED",
+    "status": "ELIGIBILITY_READINESS_SEPARATION_REPLICATED_READY_TRANSITION_UNTESTED",
     "hidden_second_formal_gate": false,
     "current_eligible_count": 0,
     "current_ready_count": 0,
-    "prospective_true_not_ready_example": "CAND-V05-ASSEMBLY-PARTIAL-COMPLETION-FUNCTION-01@9222d4a5f9f2d010b50c8047788cdd03483c4afe",
-    "finding": "Eligibility can be granted in principle to a coherent MECHANISM object before scientific success while readiness remains NOT_READY. The later matched reduction terminally closed the current object. First Analyst-authoritative READY-to-PRE_FORMAL remains untested."
+    "prospective_true_not_ready_examples": [
+      "CAND-V05-ASSEMBLY-PARTIAL-COMPLETION-FUNCTION-01@9222d4a5f9f2d010b50c8047788cdd03483c4afe",
+      "CAND-V05-DELAYED-REWARD-ELIGIBILITY-01@fff0ddeb8e613a27ef9eac6fc6623addad56f82d"
+    ],
+    "finding": "Lane eligibility can be true in principle for a coherent MECHANISM object before scientific success while READY remains false. The fresh delayed-reward object then lost current eligibility after its fixed reduction. First Analyst-authoritative READY-to-PRE_FORMAL remains untested."
   },
   "system_priority_exception_audit": {
     "count_current_generation": 0,
-    "finding": "No SYSTEM object ran ahead of a comparable executable/informative MECHANISM object. First real prospective exception use remains untested."
+    "finding": "MAIN consumed the fresh Analyst generation and remained idle; no SYSTEM object ran ahead of a comparable executable/informative MECHANISM object. First prospective exception use remains untested."
   },
   "no_coherent_target_audit": {
     "exception_used_current_window": false,
-    "finding": "No escape-hatch behavior observed. Because the exception has not yet been used, calibration of its first actual use remains insufficient evidence."
+    "finding": "No NO_COHERENT_MECHANISM_TARGET escape-hatch use is observed. Because the exception has not yet been used, calibration of its first actual use remains insufficient evidence."
   },
   "classification_completeness": {
-    "classified": 8,
-    "material_population": 8,
+    "classified": 9,
+    "material_population": 9,
     "ratio": 1.0,
-    "policy_use": "Conversion rates may be described for this fully classified current population but remain small-N descriptive statistics, not scientific thresholds."
+    "policy_use": "Conversion rates may be described for this fully classified current population but remain small-N descriptive statistics, not scientific or allocation thresholds."
   },
   "prospective_recommendations": [
     "Keep Funnel v2.1 scientific gates unchanged and do not add universal numeric support/readiness thresholds.",
-    "Keep preformal_eligible as prospective lane admissibility for coherent MECHANISM objects and READY as later development/test readiness.",
-    "When eligibility/readiness changes, prospectively retain prior state, transition reason and timing so the funnel history is auditable without manual branch reconstruction.",
-    "Treat one-in-three theory-backward supply as a minimum quality-controlled floor, not a target or prestige score; with the current 2/3 window, subsequent SUB selection should maximize information gain.",
-    "Keep MAIN idle when no coherent central MECHANISM or integrity-protecting high-value SYSTEM object exists.",
-    "Require system_priority_exception before the first SYSTEM-over-comparable-MECHANISM execution and audit that first use.",
-    "Persist the quality-floor reason at the first NO_COHERENT_MECHANISM_TARGET instead of creating filler work.",
-    "Audit the first Analyst-authoritative READY-to-PRE_FORMAL transition; READY must remain test-readiness rather than prior scientific victory."
+    "Continue centrally preserving prior eligibility/readiness state plus transition reason and timing for future state changes.",
+    "Treat one-in-three theory-backward supply as a minimum quality-controlled floor, not a target or prestige score; with the current 3/3 window, subsequent SUB selection should maximize information gain and may be SYSTEM.",
+    "Preserve prospective SYSTEM-priority exceptions for testbed validity, evidence interpretation, reachability, reproducibility and Formal integrity.",
+    "Audit the first actual system_priority_exception, first NO_COHERENT_MECHANISM_TARGET use, and first Analyst-authoritative READY-to-PRE_FORMAL transition.",
+    "Keep negative reductions object-local; do not generalize the delayed-reward result to H7 or future fresh mechanisms."
   ],
   "utility_request_created": null,
   "hard_integrity_floor_confirmation": true,
   "confidence": {
     "overall": "HIGH",
     "eligibility_readiness_separation": "HIGH",
+    "eligibility_transition_provenance": "HIGH",
     "long_run_mechanism_supply": "MODERATE_SMALL_N",
     "first_ready_to_preformal_transition": "INSUFFICIENT_EVIDENCE",
     "first_system_priority_exception": "INSUFFICIENT_EVIDENCE",
     "first_no_coherent_target_use": "INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_evidence_analyst": [
-    "Can future candidate history retain prior eligibility/readiness state plus transition reason when preformal_eligible changes, so the prospective true/NOT_READY phase remains centrally observable?",
-    "At the first SYSTEM-over-comparable-MECHANISM allocation, will system_priority_exception be durably written before execution?",
-    "At the first NO_COHERENT_MECHANISM_TARGET, will the quality-floor failure be recorded without a filler candidate?",
-    "At the first READY object, will READY be granted from a prospectively frozen informative next test rather than requiring prior comparator/reduction/falsifier success?"
+    "At the first SYSTEM-over-comparable-MECHANISM allocation, is system_priority_exception durably written before execution with a claim-relevant integrity/opportunity-cost reason?",
+    "At the first NO_COHERENT_MECHANISM_TARGET, is the quality-floor failure recorded without manufacturing a filler candidate?",
+    "At the first READY object, is READY granted from a prospectively frozen informative next test rather than requiring prior comparator/reduction/falsifier success?",
+    "With the rolling mechanism window now 3/3, do future selections continue to optimize information gain rather than preserving an elevated mechanism share?"
   ]
 }
