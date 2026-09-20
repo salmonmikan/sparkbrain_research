@@ -1,33 +1,39 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260920T134240+0900-THEORY-REWARD-ADA731B2",
-  "produced_at": "2026-09-20T13:42:40+09:00",
-  "producer_run_id": "SUB-RUN-20260920T133307+0900-REWARD-ADA731B2",
+  "generation_id": "SUB-20260920T144110+0900-SYSTEM-EVALORDER-6F2C91A8",
+  "produced_at": "2026-09-20T14:41:10+09:00",
+  "producer_run_id": "SUB-RUN-20260920T143230+0900-EVALORDER-6F2C91A8",
   "authority_scope": "BOUNDED_SECONDARY_DISCOVERY_ONLY_NON_EVIDENTIARY",
-  "supersedes_generation_id": "SUB-20260920T124445+0900-THEORY-PARTIAL-4E8A1C73",
+  "supersedes_generation_id": "SUB-20260920T134240+0900-THEORY-REWARD-ADA731B2",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T125840+0900-R13-5D7A2C91",
-      "commit": "c7b46081c2dcc980bd7856b37437012842bcce04"
+      "generation_id": "EVA-20260920T140028+0900-R14-C91E4A27",
+      "commit": "79ca80206e1305ceedee0be7baf3d9c002555c1d"
     },
     "main": {
-      "generation_id": "MAIN-20260920T131743+0900-PRIMARY-FUNNEL21-HOLD-93C7A1E4",
+      "generation_id": "MAIN-20260920T141403+0900-PRIMARY-FUNNEL21-HOLD-08EEC5A7",
       "lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-      "mailbox_commit_observed_before_sub_persistence": "0adef264d4f9b328be78281c18ddb19a047eedd0"
+      "mailbox_commit_observed_before_sub_persistence": "dcb76a79f4219d6a4b41eadb2ed88c5cee96c9eb"
     },
     "control_brain": {
       "generation_id": "CTRL-20260920T125000+0900-R13-9C4F2B71",
       "commit": "2aa866e406e5a3c7549c6d31d512e33626026dee"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260920T124445+0900-THEORY-PARTIAL-4E8A1C73",
-      "last_known_persistence_commit": "4662db7e897c0ada02cf28e8fc2851d1ea6ca0bf"
+      "generation_id": "SUB-20260920T134240+0900-THEORY-REWARD-ADA731B2",
+      "last_known_persistence_commit": "ceb6bfdc36b63972fa954e29d79989cc153b3810"
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "c7b46081c2dcc980bd7856b37437012842bcce04",
+    "analyst_handoff": "79ca80206e1305ceedee0be7baf3d9c002555c1d",
     "control_brain": "2aa866e406e5a3c7549c6d31d512e33626026dee",
+    "research_branch": "research/exploratory-sub-eval-order-dependence-20260920",
+    "research_binding_commit": "7906566eb6bf64c7add085b9d68085ddeea13d71",
+    "research_diagnostic_head": "e0731b3d9e60b0779456cc6d93ea3f1a67a1a403",
+    "research_final_head": "4ed6de26ac0bf584189823a64abf6532b3291f59",
+    "diagnostic_ci_run": 35492043654,
+    "final_head_ci_run": 35492181051,
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
     "evidence_tag_count": 5,
@@ -36,8 +42,8 @@
     "freeze_tag_count": 0
   },
   "mode": "discovery",
-  "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
-  "exploratory_target": "V05_DELAYED_REWARD_ELIGIBILITY_DISCOVERY_CYCLE1",
+  "discovery_mode": "SYSTEM_DISCOVERY",
+  "exploratory_target": "V05_NONLEARNING_EVAL_ORDER_DEPENDENCE_DISCOVERY_CYCLE1",
   "candidate_pool_id": "NONE_SELF_SELECTED",
   "exploration_cycle": "1/3",
   "same_generation_autonomous_progress_reason": null,
@@ -45,85 +51,100 @@
     "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
     "active_main_object": null,
     "avoided": [
-      "CAND-V05-ASSEMBLY-PARTIAL-COMPLETION-FUNCTION-01",
-      "CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01",
+      "TERMINAL_CURRENT_OBJECTS",
       "CAND-H7-RESP-01",
       "FORMAL_TEST_SCORING",
-      "CONSUMED_FROZEN_IDENTITIES"
+      "CONSUMED_FROZEN_IDENTITIES",
+      "PRESERVE_CONTROL_EVIDENCE_REFS"
     ]
   },
   "theory_backward_accounting": {
     "pre_selection_last_three": [
-      "SYSTEM_DISCOVERY:V05_CHECKPOINT_CONTINUATION_EQUIVALENCE",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_FEEDBACK_CAUSALITY",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION"
-    ],
-    "pre_selection_qualifying_count": 2,
-    "pre_selection_window_size": 3,
-    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_REWARD_ELIGIBILITY",
-    "post_selection_last_three": [
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_FEEDBACK_CAUSALITY",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_REWARD_ELIGIBILITY"
     ],
-    "post_selection_qualifying_count": 3,
+    "pre_selection_qualifying_count": 3,
+    "pre_selection_window_size": 3,
+    "current_selection": "SYSTEM_DISCOVERY:V05_NONLEARNING_EVAL_ORDER_DEPENDENCE",
+    "post_selection_last_three": [
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_REWARD_ELIGIBILITY",
+      "SYSTEM_DISCOVERY:V05_NONLEARNING_EVAL_ORDER_DEPENDENCE"
+    ],
+    "post_selection_qualifying_count": 2,
     "theory_backward_exception": null
   },
-  "question": "Can a local eligibility trace written by a causal pre/post event receive later scalar reward and selectively modify that previously eligible synapse without requiring fresh same-edge causal activity?",
-  "reduction_question": "Does current v0.5 instead reduce delayed reward modulation to a global reward scalar that affects an edge only when current pre/post activity re-enters that edge into the plasticity update loop, with old eligibility merely carried and decayed?",
-  "falsifier": "The current delayed local responsibility-sensitive mechanism is falsified if delayed reward followed by an apply step with no new edge activity leaves the previously eligible edge weight unchanged.",
+  "question": "Does reference-like v0.5 non-learning evaluation change keyed functional/runtime outputs or aggregate metrics when the exact same fixed DEV episode multiset is presented in a different order because receptor/recurrent runtime state still evolves across episodes?",
+  "reduction_question": "At the supported 220 ms episode spacing, is the fixed non-learning DEV evaluation functionally order invariant for the prospectively selected observables?",
+  "falsifier": "The current SYSTEM order-dependence concern is reduced if forward versus reverse presentation of the same fixed episode multiset gives exact equality for every selected keyed functional/runtime observable and aggregate metric after excluding timestamps and hashes.",
   "inputs_used": {
-    "kind": "SYNTHETIC_DEV_ONLY",
-    "first_causal_pair_ms": [1.0, 2.0],
-    "delayed_reward": -2.0,
-    "reactivation_pair_ms": [11.0, 12.0],
-    "delay_learning_enabled": false,
-    "weight_learning_enabled": true,
-    "formal_or_held_out_test_used": false,
+    "kind": "SYNTHETIC_DEVELOPMENT_ONLY",
+    "development_seed": 501,
+    "training_episode_count": 16,
+    "evaluation_condition": "jitter",
+    "evaluation_episode_count": 8,
+    "episode_spacing_ms": 220.0,
+    "development_generator": "held_out_episodes USED AS DEV GENERATOR ONLY",
+    "formal_or_sealed_test_used": false,
     "official_scorer_used": false,
     "consumed_identity_used": false
   },
   "implementation": {
-    "branch": "research/exploratory-sub-delayed-reward-eligibility-20260920",
-    "prospective_binding_commit": "fff0ddeb8e613a27ef9eac6fc6623addad56f82d",
-    "diagnostic_commit": "77bd51d3913c9751ca23cd4a2468d97bebe2983f",
-    "final_research_head": "391b8b958e9869d3b10f2ca7c8d784353cc0ff2c",
+    "branch": "research/exploratory-sub-eval-order-dependence-20260920",
+    "prospective_binding_commit": "7906566eb6bf64c7add085b9d68085ddeea13d71",
+    "diagnostic_commit": "e0731b3d9e60b0779456cc6d93ea3f1a67a1a403",
+    "final_research_head": "4ed6de26ac0bf584189823a64abf6532b3291f59",
     "production_source_modified": false,
-    "diagnostic_ci": 35489566146,
-    "final_head_ci": 35489706078,
-    "ci_conclusion": "success"
+    "learn_assembly": false,
+    "learn_field": false,
+    "explore_action": false,
+    "learn_outcome_called_during_eval": false,
+    "diagnostic_ci": 35492043654,
+    "final_head_ci": 35492181051,
+    "ci_conclusion": "success_python_3_11_and_3_13"
   },
   "observations": {
-    "initial_causal_eligibility_expected": 0.9459594689067654,
-    "eligibility_after_no_activity_decay_expected": 0.8513635220160889,
-    "no_activity_update_count": 0,
-    "no_activity_weight_change": false,
-    "reactivation_reward_effect": true,
-    "rewarded_reactivation_direction": "DOWN",
-    "neutral_reactivation_direction": "UP",
-    "terminal": "REWARD_INERT_UNTIL_EDGE_REACTIVATION"
+    "keyed_observables_compared": [
+      "action",
+      "prediction",
+      "spike_count",
+      "internal_pattern_count",
+      "mature_assembly_ids_similarity_episode_count",
+      "runaway",
+      "dead"
+    ],
+    "aggregate_metrics_compared": [
+      "action_accuracy",
+      "prediction_accuracy",
+      "prediction_coverage",
+      "assembly_activation_rate",
+      "mean_mature_similarity",
+      "runaway_rate",
+      "dead_rate"
+    ],
+    "keyed_forward_reverse_exact_match": true,
+    "aggregate_forward_reverse_exact_match": true,
+    "hashes_and_absolute_timestamps_excluded": true,
+    "terminal": "ORDER_INVARIANT_AT_SUPPORTED_SPACING"
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "proposed_claim_ceiling": "MECHANISM",
+  "proposed_claim_ceiling": "SYSTEM",
   "proposed_preformal_eligible": false,
-  "preliminary_preformal_readiness": {
-    "claim_type": "NATIVE_DELAYED_LOCAL_RESPONSIBILITY_SENSITIVE_ELIGIBILITY_CREDIT",
-    "supported_reachability": "STORED_ELIGIBILITY_REACHABLE_SYNTHETIC_DEV_ONLY",
-    "functional_consequence": "ABSENT_FOR_DELAYED_REWARD_WITHOUT_REACTIVATION",
-    "ordinary_reductions_specified_controlled": "GLOBAL_REWARD_STATE_GATING_ONLY_ON_CURRENT_EDGE_ACTIVITY",
-    "reductions_unresolved": "NONE_FOR_CURRENT_OBJECT; REDUCTION_SUCCEEDED",
-    "comparator_status": "COMPLETE_REACTIVATION_VS_NEUTRAL_REWARD_CONTROL",
-    "qualitative_support_breadth": "ONE_DETERMINISTIC_SYNTHETIC_EDGE_CAUSAL_REWARD_REACTIVATION_PROBE",
-    "falsifier_definition": "NO_WEIGHT_CHANGE_FROM_DELAYED_REWARD_WITHOUT_REACTIVATION",
-    "open_scientific_choices": "Any genuinely delayed reward-to-stored-eligibility mechanism requires a fresh prospectively specified candidate and cannot rescue this object.",
-    "formal_claim_ceiling": "NONE_FOR_CURRENT_REDUCED_RESULT",
-    "status": "NOT_READY"
-  },
+  "preliminary_preformal_readiness": "N/A_FOR_SYSTEM_OBJECT",
+  "system_question_class": "EVALUATION_REPRODUCIBILITY_AND_STATE_ISOLATION",
+  "comparator_status": "COMPLETE_FORWARD_VS_REVERSE_SAME_MULTISET_EXACT_MATCH",
+  "qualitative_support_breadth": "ONE_DETERMINISTIC_DEV_SEED; JITTER; EIGHT_EPISODES; SUPPORTED_220MS_SPACING",
+  "open_scientific_choices": "Any different-spacing or cross-condition order-sensitivity question requires a fresh candidate ID and prospective contract; current object is not rescued into cycle 2.",
   "proposed_hold_dimensions": {
     "hold_class": null,
     "hold_reason": null,
     "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
     "queue_state": "NOT_QUEUED"
+  },
+  "system_priority_exception": {
+    "used": false,
+    "reason": "NOT_APPLICABLE_TO_SUB_AUTONOMOUS_DISCOVERY; ANALYST_ROLLING_THEORY_FLOOR_ALREADY_3_OF_3"
   },
   "candidate_next_research_layer": "NONE",
   "recommendation": "REJECT",
@@ -133,8 +154,12 @@
   "blockers": [
     "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_OR_CLOSURE_ONLY"
   ],
-  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_DELAYED_REWARD_ELIGIBILITY_DISCOVERY_CYCLE_AND_REDUCED_TO_REACTIVATION_GATED_GLOBAL_REWARD_STATE",
+  "completion_target": "ACHIEVED_ONE_BOUNDED_SYSTEM_NONLEARNING_EVAL_ORDER_DISCOVERY_CYCLE_AND_REDUCED_AT_SUPPORTED_SPACING",
   "completion_status": "ACHIEVED",
-  "history_path": "reports/orchestrator/history/2026-09-20/1342-sub.md",
+  "persistence": {
+    "history_path": "reports/orchestrator/history/2026-09-20/1441-sub.md",
+    "history_commit": "bcfe10158efd31d14f0b6140fa98e39574d340ee",
+    "latest_commit": "2f27e638936c5455c17d778f2d801533f17ead87"
+  },
   "persistence_limitations": []
 }
