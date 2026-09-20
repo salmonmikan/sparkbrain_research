@@ -1,33 +1,33 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260920T124445+0900-THEORY-PARTIAL-4E8A1C73",
-  "produced_at": "2026-09-20T12:44:45+09:00",
-  "producer_run_id": "SUB-RUN-20260920T123548+0900-PARTIAL-4E8A1C73",
+  "generation_id": "SUB-20260920T134240+0900-THEORY-REWARD-ADA731B2",
+  "produced_at": "2026-09-20T13:42:40+09:00",
+  "producer_run_id": "SUB-RUN-20260920T133307+0900-REWARD-ADA731B2",
   "authority_scope": "BOUNDED_SECONDARY_DISCOVERY_ONLY_NON_EVIDENTIARY",
-  "supersedes_generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
+  "supersedes_generation_id": "SUB-20260920T124445+0900-THEORY-PARTIAL-4E8A1C73",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T115704+0900-R12-A6B8DE50",
-      "commit": "dcaa02fc25506ff4e8b14d7540b6c754a8a6da98"
+      "generation_id": "EVA-20260920T125840+0900-R13-5D7A2C91",
+      "commit": "c7b46081c2dcc980bd7856b37437012842bcce04"
     },
     "main": {
-      "generation_id": "MAIN-20260920T121227+0900-PRIMARY-FUNNEL21-HOLD-7C41A2D9",
+      "generation_id": "MAIN-20260920T131743+0900-PRIMARY-FUNNEL21-HOLD-93C7A1E4",
       "lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-      "mailbox_commit_observed_before_sub_persistence": "0d1371bee14b95e126cef203f516c0033d538363"
+      "mailbox_commit_observed_before_sub_persistence": "0adef264d4f9b328be78281c18ddb19a047eedd0"
     },
     "control_brain": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a"
+      "generation_id": "CTRL-20260920T125000+0900-R13-9C4F2B71",
+      "commit": "2aa866e406e5a3c7549c6d31d512e33626026dee"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
-      "last_known_persistence_commit": "ea5f5b921fee2f9254328e7a05a945b7270f59f9"
+      "generation_id": "SUB-20260920T124445+0900-THEORY-PARTIAL-4E8A1C73",
+      "last_known_persistence_commit": "4662db7e897c0ada02cf28e8fc2851d1ea6ca0bf"
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "dcaa02fc25506ff4e8b14d7540b6c754a8a6da98",
-    "control_brain": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
+    "analyst_handoff": "c7b46081c2dcc980bd7856b37437012842bcce04",
+    "control_brain": "2aa866e406e5a3c7549c6d31d512e33626026dee",
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
     "evidence_tag_count": 5,
@@ -37,15 +37,15 @@
   },
   "mode": "discovery",
   "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
-  "exploratory_target": "V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION_DISCOVERY_CYCLE1",
+  "exploratory_target": "V05_DELAYED_REWARD_ELIGIBILITY_DISCOVERY_CYCLE1",
   "candidate_pool_id": "NONE_SELF_SELECTED",
   "exploration_cycle": "1/3",
-  "same_generation_autonomous_progress_reason": "The consumed Analyst generation explicitly authorizes one bounded autonomous SUB Discovery while MAIN has no coherent central object; current candidate exclusions, nonduplication constraints, exploration budgets and theory-backward supply all passed prospectively.",
+  "same_generation_autonomous_progress_reason": null,
   "main_frontier_avoided": {
     "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
     "active_main_object": null,
     "avoided": [
-      "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+      "CAND-V05-ASSEMBLY-PARTIAL-COMPLETION-FUNCTION-01",
       "CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01",
       "CAND-H7-RESP-01",
       "FORMAL_TEST_SCORING",
@@ -54,81 +54,68 @@
   },
   "theory_backward_accounting": {
     "pre_selection_last_three": [
-      "SYSTEM_DISCOVERY:V05_RECEPTOR_SIMULTANEITY_ORDERING",
-      "SYSTEM_DISCOVERY:V05_CHECKPOINT_CONTINUATION_EQUIVALENCE",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_FEEDBACK_CAUSALITY"
-    ],
-    "pre_selection_qualifying_count": 1,
-    "pre_selection_window_size": 3,
-    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION",
-    "post_selection_last_three": [
       "SYSTEM_DISCOVERY:V05_CHECKPOINT_CONTINUATION_EQUIVALENCE",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_FEEDBACK_CAUSALITY",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION"
     ],
-    "post_selection_qualifying_count": 2,
+    "pre_selection_qualifying_count": 2,
+    "pre_selection_window_size": 3,
+    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_REWARD_ELIGIBILITY",
+    "post_selection_last_three": [
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_FEEDBACK_CAUSALITY",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_PARTIAL_COMPLETION_FUNCTION",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_REWARD_ELIGIBILITY"
+    ],
+    "post_selection_qualifying_count": 3,
     "theory_backward_exception": null
   },
-  "question": "Can a mature Assembly learned from a full pre-semantic spatiotemporal pattern express learned prediction/action from an ordered partial observation in a way not reducible to a matched fixed-prototype nearest-neighbor plus identical lookup comparator?",
-  "reduction_question": "Is all functional partial recognition exactly determined by production pattern_similarity against the fixed full prototype and the same learned event/action lookup?",
-  "falsifier": "A distinct current-object completion mechanism requires the Assembly path to accept or produce a functional output that the prospectively matched fixed-prototype nearest-neighbor plus identical lookup comparator cannot reproduce.",
+  "question": "Can a local eligibility trace written by a causal pre/post event receive later scalar reward and selectively modify that previously eligible synapse without requiring fresh same-edge causal activity?",
+  "reduction_question": "Does current v0.5 instead reduce delayed reward modulation to a global reward scalar that affects an edge only when current pre/post activity re-enters that edge into the plasticity update loop, with old eligibility merely carried and decayed?",
+  "falsifier": "The current delayed local responsibility-sensitive mechanism is falsified if delayed reward followed by an apply step with no new edge activity leaves the previously eligible edge weight unchanged.",
   "inputs_used": {
     "kind": "SYNTHETIC_DEV_ONLY",
-    "full_pattern": {
-      "ordered_units": [10, 11, 12, 13],
-      "relative_bins": [0, 2, 4, 6]
-    },
-    "partial_pattern": {
-      "ordered_units": [10, 12, 13],
-      "relative_bins": [0, 4, 6]
-    },
-    "scrambled_control": {
-      "ordered_units": [13, 12, 10],
-      "relative_bins": [0, 4, 6]
-    },
+    "first_causal_pair_ms": [1.0, 2.0],
+    "delayed_reward": -2.0,
+    "reactivation_pair_ms": [11.0, 12.0],
+    "delay_learning_enabled": false,
+    "weight_learning_enabled": true,
     "formal_or_held_out_test_used": false,
     "official_scorer_used": false,
     "consumed_identity_used": false
   },
   "implementation": {
-    "branch": "research/exploratory-sub-assembly-readout-completion-20260920",
-    "prospective_binding_commit": "9222d4a5f9f2d010b50c8047788cdd03483c4afe",
-    "diagnostic_commit": "81d3bc66628ed00be00e3e3f6ea4f125020ea103",
-    "final_research_head": "20810fdd0c56a6ced99df4d46fade42798d3f4a0",
+    "branch": "research/exploratory-sub-delayed-reward-eligibility-20260920",
+    "prospective_binding_commit": "fff0ddeb8e613a27ef9eac6fc6623addad56f82d",
+    "diagnostic_commit": "77bd51d3913c9751ca23cd4a2468d97bebe2983f",
+    "final_research_head": "391b8b958e9869d3b10f2ca7c8d784353cc0ff2c",
     "production_source_modified": false,
-    "diagnostic_ci": 35487109954,
-    "final_head_ci": 35487245559,
+    "diagnostic_ci": 35489566146,
+    "final_head_ci": 35489706078,
     "ci_conclusion": "success"
   },
   "observations": {
-    "partial_similarity": 0.8,
-    "scrambled_similarity": 0.325,
-    "threshold": 0.66,
-    "partial_assembly_activation": true,
-    "partial_mature": true,
-    "partial_prediction": "future-X",
-    "partial_prediction_confidence": 1.0,
-    "partial_action": "action-0",
-    "ordinary_comparator_partial_accept": true,
-    "ordinary_comparator_prediction": "future-X",
-    "ordinary_comparator_action": "action-0",
-    "scrambled_assembly_activation": false,
-    "ordinary_comparator_scrambled_accept": false,
-    "terminal": "FUNCTIONAL_PARTIAL_RECOGNITION_MATCHED_BY_NN_LOOKUP"
+    "initial_causal_eligibility_expected": 0.9459594689067654,
+    "eligibility_after_no_activity_decay_expected": 0.8513635220160889,
+    "no_activity_update_count": 0,
+    "no_activity_weight_change": false,
+    "reactivation_reward_effect": true,
+    "rewarded_reactivation_direction": "DOWN",
+    "neutral_reactivation_direction": "UP",
+    "terminal": "REWARD_INERT_UNTIL_EDGE_REACTIVATION"
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "proposed_claim_ceiling": "MECHANISM",
   "proposed_preformal_eligible": false,
   "preliminary_preformal_readiness": {
-    "claim_type": "NATIVE_ASSEMBLY_MEDIATED_FUNCTIONAL_PARTIAL_COMPLETION",
-    "supported_reachability": "PARTIAL_RECOGNITION_REACHABLE_SYNTHETIC_DEV_ONLY",
-    "functional_consequence": "PRESENT_AS_PREDICTION_AND_ACTION_READOUT_ON_ORDERED_PARTIAL",
-    "ordinary_reductions_specified_controlled": "MATCHED_FIXED_PROTOTYPE_NEAREST_NEIGHBOR_PLUS_IDENTICAL_LOOKUP",
-    "reductions_unresolved": "NONE_FOR_THIS_CURRENT_OBJECT; MATCHED_ORDINARY_REDUCTION_SUCCEEDED",
-    "comparator_status": "COMPLETE_AND_OUTPUT_MATCHED",
-    "qualitative_support_breadth": "ONE_DETERMINISTIC_SYNTHETIC_FULL_PARTIAL_SCRAMBLED_PATTERN_SET",
-    "falsifier_definition": "MECHANISM REQUIRED COMPARATOR FAILURE_OR_OUTPUT_DIVERGENCE; NOT_OBSERVED",
-    "open_scientific_choices": "Any stateful or generative completion mechanism beyond fixed similarity matching requires a fresh prospectively specified candidate and cannot rescue this object.",
+    "claim_type": "NATIVE_DELAYED_LOCAL_RESPONSIBILITY_SENSITIVE_ELIGIBILITY_CREDIT",
+    "supported_reachability": "STORED_ELIGIBILITY_REACHABLE_SYNTHETIC_DEV_ONLY",
+    "functional_consequence": "ABSENT_FOR_DELAYED_REWARD_WITHOUT_REACTIVATION",
+    "ordinary_reductions_specified_controlled": "GLOBAL_REWARD_STATE_GATING_ONLY_ON_CURRENT_EDGE_ACTIVITY",
+    "reductions_unresolved": "NONE_FOR_CURRENT_OBJECT; REDUCTION_SUCCEEDED",
+    "comparator_status": "COMPLETE_REACTIVATION_VS_NEUTRAL_REWARD_CONTROL",
+    "qualitative_support_breadth": "ONE_DETERMINISTIC_SYNTHETIC_EDGE_CAUSAL_REWARD_REACTIVATION_PROBE",
+    "falsifier_definition": "NO_WEIGHT_CHANGE_FROM_DELAYED_REWARD_WITHOUT_REACTIVATION",
+    "open_scientific_choices": "Any genuinely delayed reward-to-stored-eligibility mechanism requires a fresh prospectively specified candidate and cannot rescue this object.",
     "formal_claim_ceiling": "NONE_FOR_CURRENT_REDUCED_RESULT",
     "status": "NOT_READY"
   },
@@ -146,8 +133,8 @@
   "blockers": [
     "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_OR_CLOSURE_ONLY"
   ],
-  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_ASSEMBLY_PARTIAL_FUNCTION_DISCOVERY_CYCLE_AND_REDUCED_TO_FIXED_SIMILARITY_LOOKUP",
+  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_DELAYED_REWARD_ELIGIBILITY_DISCOVERY_CYCLE_AND_REDUCED_TO_REACTIVATION_GATED_GLOBAL_REWARD_STATE",
   "completion_status": "ACHIEVED",
-  "history_path": "reports/orchestrator/history/2026-09-20/1244-sub.md",
+  "history_path": "reports/orchestrator/history/2026-09-20/1342-sub.md",
   "persistence_limitations": []
 }
