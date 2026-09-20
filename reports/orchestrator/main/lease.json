@@ -11,9 +11,10 @@
     "sub_observed_for_collision": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-20T12:12:27+09:00",
-  "heartbeat_at": "2026-09-20T12:12:27+09:00",
+  "heartbeat_at": "2026-09-20T12:16:00+09:00",
+  "completed_at": "2026-09-20T12:16:00+09:00",
   "analyst_generation_id": "EVA-20260920T115704+0900-R12-A6B8DE50",
   "analyst_commit": "dcaa02fc25506ff4e8b14d7540b6c754a8a6da98",
   "consumed_analyst_generation_id": "EVA-20260920T115704+0900-R12-A6B8DE50",
@@ -30,13 +31,15 @@
   "preformal_readiness": null,
   "system_priority_exception": {
     "used": false,
+    "reason_code": null,
     "reason_detail": "No MAIN scientific object is allocated in this generation. The prior Assembly SYSTEM allocation predates Funnel v2.1 and is not retroactively re-justified; no comparably executable coherent MECHANISM target exists now.",
     "compared_mechanism_candidate_ids": ["CAND-H7-RESP-01"]
   },
   "active_branch": null,
   "active_identity": null,
-  "active_step": "FUNNEL_V2_1_EXPLICIT_MAIN_HOLD_NO_CURRENT_SCIENTIFIC_OBJECT",
+  "active_step": "FUNNEL_V2_1_EXPLICIT_MAIN_HOLD_NO_CURRENT_SCIENTIFIC_OBJECT_COMPLETED",
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "expected_next_action": "No-op scientifically. Wait for a fresh Analyst generation allocating a fresh coherent MECHANISM object or a high-value SYSTEM object; then re-read authority and exact refs before any scientific mutation or workflow dispatch.",
+  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
+  "expected_next_action": "Remain scientifically idle. Wait for a fresh Analyst generation allocating a fresh coherent MECHANISM object or a high-value SYSTEM object; then re-read authority, v2.1 funnel fields, system priority exception, and exact refs before any scientific mutation or workflow dispatch.",
   "owner": "main"
 }
