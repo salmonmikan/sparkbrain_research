@@ -1,0 +1,108 @@
+{
+  "schema": "sparkbrain-architecture-study-contract-v1",
+  "candidate_id": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+  "lane": "ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_authority_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+  "analyst_generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
+  "question": "Is max_candidates a hard lifetime mature-memory cap or an active working-set budget, and is mature-capacity saturation relevant/reachable under stable-main supported configurations and bounded development/evaluation workloads?",
+  "source_binding": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v05/assemblies.py": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "src/sparkbrain/v05/evaluation.py": "efd52d236708aea3bf23b6139d8717b1ac1d0559",
+    "tests/v05/test_v05_assemblies.py": "99d847dae4aa8b394680acbb44ae01e72a5d9d4f"
+  },
+  "fixed_supported_surface": [
+    "src/sparkbrain/v05/assemblies.py",
+    "src/sparkbrain/v05/brain.py",
+    "src/sparkbrain/v05/evaluation.py",
+    "tests/v05/test_v05_assemblies.py",
+    "deterministic stable-main inventory of docs/tests/callers/configuration mentioning or consuming AssemblyConfig, TemporalAssemblyMemory, max_candidates, prune, stale lifecycle, maturation, checkpoint persistence, assembly candidate counts, training/evaluation horizons, or continued novel-pattern acquisition"
+  ],
+  "repository_inventory_queries": [
+    "max_candidates",
+    "AssemblyConfig",
+    "TemporalAssemblyMemory",
+    "stale_after_ms",
+    "immature_stale_episodes",
+    ".prune(",
+    "assembly_count",
+    "candidate_count",
+    "mature candidate",
+    "working set",
+    "lifetime",
+    "cache",
+    "evict",
+    "reclaim",
+    "compact",
+    "checkpoint",
+    "train_count",
+    "held_out_count",
+    "novel pattern",
+    "new assembly"
+  ],
+  "facts_to_record_before_interpretation": [
+    "max_candidates_public_semantics_is_explicit_lifetime_cap",
+    "max_candidates_public_semantics_is_explicit_active_working_set_or_cache",
+    "max_candidates_public_semantics_is_unspecified",
+    "mature_candidates_have_supported_reclamation_path",
+    "mature_candidates_are_explicitly_permanent_by_contract",
+    "default_integrated_brain_uses_max_candidates_256",
+    "supported_default_callers_override_max_candidates_256",
+    "bounded_supported_learning_horizons_and_counts",
+    "supported_saturation_is_structurally_established",
+    "supported_saturation_is_structurally_precluded_within_bound_scope",
+    "supported_saturation_reachability_is_unestablished",
+    "supported_test_or_caller_promises_continued_novel_pattern_acquisition_after_saturation",
+    "checkpoint_candidate_persistence_is_explicit_lifecycle_contract",
+    "checkpoint_candidate_persistence_is_serialization_only_or_semantically_unspecified",
+    "decision_relevant_docs_tests_callers_materially_conflict"
+  ],
+  "machine_fact_policy": {
+    "method": "EXACT_BLOB_HASHES_PLUS_STRUCTURAL_SOURCE_REVIEW_AND_DETERMINISTIC_REPOSITORY_TERM_INVENTORY",
+    "required": [
+      "AssemblyConfig defaults and TemporalAssemblyMemory observe/prune behavior are checked from exact stable-main source",
+      "IntegratedV05Brain assembly_config default and checkpoint serialization/restore are checked from exact stable-main source",
+      "V05 development/evaluation protocol learning horizons are checked from exact stable-main evaluation source without reading FORMAL or held-out outcome artifacts",
+      "assembly tests are checked for lifecycle/capacity intent",
+      "supported docs/tests/callers/configuration are inventoried deterministically on stable main using the fixed queries"
+    ],
+    "invalid_on_mismatch": true,
+    "post_outcome_repair_forbidden": true
+  },
+  "terminal_mapping": {
+    "EXPLICIT_LIFETIME_MATURE_MEMORY_CAP": "Supported contract explicitly defines max_candidates/mature candidates as a permanent or lifetime-bounded memory cap; no turnover comparator is justified.",
+    "ACTIVE_WORKING_SET_CONTRACT_WITH_MATURE_RECLAMATION_GAP": "Supported contract explicitly expects an active/reclaimable working set, while production lacks mature reclamation.",
+    "WORKING_SET_EXPECTATION_UNSPECIFIED_BUT_SUPPORTED_SATURATION_REACHABLE": "Lifecycle semantics are not explicit, but stable supported paths structurally establish reaching mature capacity where continued acquisition matters.",
+    "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED": "Lifecycle semantics are unspecified and stable supported/default surfaces do not establish mature-capacity saturation reachability or a post-saturation acquisition promise.",
+    "SUPPORTED_SATURATION_UNREACHABLE_OR_OUTSIDE_BOUND_SCOPE": "Within the bounded supported scope, saturation is structurally precluded or explicitly outside the contract; reduce to resource-policy engineering note.",
+    "MIXED_OR_CONTRADICTORY_ASSEMBLY_LIFECYCLE_CONTRACT": "Decision-relevant docs/tests/callers materially conflict about lifetime versus working-set semantics or saturation guarantees.",
+    "INVALID_STATIC_CHARACTERIZATION": "Any source/blob/head/surface/inventory mismatch, incomplete decision-relevant inventory, need for dynamic evidence, or need to invent lifecycle semantics beyond this contract."
+  },
+  "precedence": [
+    "INVALID_STATIC_CHARACTERIZATION",
+    "MIXED_OR_CONTRADICTORY_ASSEMBLY_LIFECYCLE_CONTRACT",
+    "ACTIVE_WORKING_SET_CONTRACT_WITH_MATURE_RECLAMATION_GAP",
+    "EXPLICIT_LIFETIME_MATURE_MEMORY_CAP",
+    "WORKING_SET_EXPECTATION_UNSPECIFIED_BUT_SUPPORTED_SATURATION_REACHABLE",
+    "SUPPORTED_SATURATION_UNREACHABLE_OR_OUTSIDE_BOUND_SCOPE",
+    "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED"
+  ],
+  "forbidden": [
+    "saturation experiment",
+    "turnover comparator",
+    "dynamic candidate-generation diagnostic",
+    "production source mutation",
+    "official TEST",
+    "consumed raw or formal held-out outcome artifact inspection",
+    "FORMAL identity or STARTED",
+    "formal scorer",
+    "preserve/evidence mutation",
+    "rerun or retune after terminal visibility",
+    "same-run cycle 2",
+    "automatic PRE_FORMAL or FORMAL promotion"
+  ],
+  "stop_condition": "Any valid terminal or INVALID_STATIC_CHARACTERIZATION stops for fresh Evidence Analyst review. No dynamic saturation/turnover continuation is authorized in this cycle."
+}
