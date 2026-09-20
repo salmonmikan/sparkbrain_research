@@ -1,124 +1,161 @@
-# SparkBrain Control Brain — 2026-09-20 20:50 JST
+# SparkBrain Control Brain — 2026-09-20 22:50 JST
 
 - schema_version: `2`
-- generation_id: `CTRL-20260920T205000+0900-R16-5E9A71C3`
-- produced_at: `2026-09-20T20:50:13+09:00`
-- producer_run_id: `control-brain-auto-20260920T205013+0900-R16-5E9A71C3`
+- generation_id: `CTRL-20260920T225013+0900-R17-3F8C61A2`
+- produced_at: `2026-09-20T22:50:13+09:00`
+- producer_run_id: `control-brain-auto-20260920T225013+0900-R17-3F8C61A2`
 - authority_scope: `CONTROL_BRAIN_STRATEGIC_GOVERNANCE_AND_ALLOCATION_ONLY_NO_SCIENTIFIC_EXECUTION`
-- supersedes_generation_id: `CTRL-20260920T165000+0900-R15-6C2F8A41`
+- supersedes_generation_id: `CTRL-20260920T205000+0900-R16-5E9A71C3`
 - programme_position: `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`
-- foundational_doctrine_change: `NO`
-- operating_doctrine_change: `NO_NEW_CHANGE`
+- operating_doctrine_change: `SCHEMA_APPLICABILITY_CORRECTION_AND_C19_PROGRAMME_SYNTHESIS_UPDATE`
 - fleet_status: `YELLOW`
 - scheduler_controller_action: `NO_CHANGE`
 - utility_action: `KEEP_IDLE_NO_ASSIGNMENT`
 
 ## Control conclusion
 
-FORMAL remains correctly on hold. Lower-funnel throughput is scientifically productive without weakening one-way integrity: MAIN completed one bounded SYSTEM Architecture static study, and SUB then produced a distinct theory-backward MECHANISM negative result. No fresh PRE_FORMAL-eligible or READY object exists, so there is no basis for PRE_FORMAL or FORMAL allocation.
+FORMAL remains correctly on hold. PRE_FORMAL eligible=`0`, READY=`0`, viable executable MECHANISM=`0`, and no fresh one-way FORMAL authority exists. MAIN should remain intentionally idle rather than manufacturing SYSTEM cleanup; SUB remains the bounded candidate-supply lane.
 
-The material control issue is not scientific integrity failure but freshness/classification closure. Evidence Analyst R19 predates both MAIN's completed Architecture terminal and SUB's new delayed-action result. The fresh SUB candidate also persists `hold_class=null` and `hold_reason=null`, which is incomplete under Funnel v2.1 even though the candidate is already terminal-for-current-object and proposed REJECT. Analyst must fill those dimensions before canonical inclusion.
+Two material control updates are adopted without changing consumed science.
 
-No experiment, scientific workflow dispatch, consumed-identity action, research merge, immutable/formal/evidence mutation, Utility assignment, or scheduler mutation was performed.
+First, Funnel-v2.1 applicability is corrected. `hold_class` and `hold_reason` are required iff `classification=HOLD`; a terminal `REJECT` correctly keeps them null. Previous Control R16 incorrectly treated null HOLD-only fields on a REJECT proposal as incomplete. Evidence Analyst R21 is canonical at `17/17` complete under the applicability-aware rule, and the fresh SUB proposal is candidate-locally complete under that same rule. No scientific threshold changed.
+
+Second, fresh blind Independent Audit classifies C19 official-v4 as `REDUCIBLE` at programme-novelty level while preserving its immutable exact PASS. C19-v4 remains valid for the registered truth-free-surface versus local-compositional reference contrast, but it must not be counted as surviving SparkBrain-specific mechanism/novelty support after authoritative C19-R2 shows a fixed seven-state FSA substantially exceeds it. C19-R1 revision-authority remains separate and unresolved. No C19 identity is reopened, rescored, relabeled, or rerun.
+
+No experiment, scientific workflow dispatch, identity consumption, research PR merge, immutable/formal/evidence mutation, Utility assignment, or scheduler mutation occurred.
 
 ## Human Directive review
 
 No directive is new or materially changed.
 
-- `HUMAN-20260918-001`: `ACCEPT / UNCHANGED` — reusable main promotion remains limited to stable outcome-independent substrate after independent review; no promotion is directed this run.
-- `HUMAN-20260919-002`: `ACCEPT / UNCHANGED` — protection/rulesets remain deferred absent a materially changed concrete integrity risk.
-- `HUMAN-20260919-003`: `ACCEPT / UNCHANGED` — preserve strict FORMAL integrity while prioritizing meaningful lower-funnel scientific information over governance churn or activity manufacturing.
+- `HUMAN-20260918-001`: `ACCEPT / UNCHANGED` — reusable comparator assets may move toward main only after independent review confirms stable outcome-independent value; no promotion directed.
+- `HUMAN-20260919-002`: `ACCEPT / UNCHANGED` — repository protection/rulesets remain deferred absent a materially changed concrete integrity risk.
+- `HUMAN-20260919-003`: `ACCEPT / UNCHANGED` — preserve strict FORMAL integrity while prioritizing meaningful lower-funnel information over governance churn or activity manufacturing.
 
-## Fresh MAIN — SYSTEM Architecture closure
+## Fresh SUB — eligibility-history specificity
 
-MAIN generation `MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731` completed the Analyst-authorized static/read-only Architecture cycle for `CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01`.
+SUB generation `SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2` completed `CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01`, one bounded NON_EVIDENTIARY `THEORY_BACKWARD_MECHANISM_DISCOVERY`.
 
-Exact research head: `7a8fb2698da33ca07203123d1c5ad7dc510ac8e1`; exact-head CI `35507809211` succeeded. The current object maps to `ORDER_UNSPECIFIED_AND_SUPPORTED_REACHABILITY_UNESTABLISHED`, with `HOLD_SYSTEM_TERMINAL`, terminal-for-current-object, not queued.
+- prospective contract: `e466bd89cfd4ab80dc970173a183638af815fe8b`
+- final research head: `6ddcb7fec39dd017fbfe172885a994a98b503021`
+- exact-head CI: `35514340688`, success
+- proposed terminal: `ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION`
+- proposed disposition: `REJECT`
+- proposed typing: `MECHANISM / preformal_eligible=false / NOT_READY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`
+- HOLD-only fields: `null`, correctly so for the proposed non-HOLD REJECT
 
-The result is SYSTEM-only: clustering is first-prototype/order-sensitive in implementation; integrated observation order is deterministic; current supported surfaces do not establish whether cross-pattern presentation order is semantically required or partition-invariant, and they do not establish reachability of the nontransitive bridge discriminator. Downstream Assembly identity is functionally consumed, so a reachable difference would not be cosmetic.
+With identical current `+1 ms` causal activity and a common reward signal, primed and unprimed edges differed because of stored local history. The prospectively fixed recurrence `e_t = decay*e_(t-1)+delta_t`, `delta_w = learning_rate*reward_trace*e_t` reproduced both native target-edge eligibilities and both weight changes exactly. The phenomenon is therefore functional but fully reduced to an ordinary per-edge eligibility trace with a common scalar reward. It is not evidence for selective causal responsibility or a new computational principle.
 
-No dynamic permutation test, bridge generation, same-object cycle 2, mechanism promotion, PRE_FORMAL, or FORMAL continuation is authorized. Any such next question must be a fresh object selected by Evidence Analyst.
+No same-object cycle-2 rescue is warranted. A richer responsibility successor requires a fresh candidate ID, fresh prospective question, and reductions that go beyond ordinary eligibility/three-factor/cascading-trace explanations.
 
-This SYSTEM allocation did not starve a comparable mechanism: Analyst R19 had viable executable MECHANISM count 0, so `system_priority_exception.used=false` is appropriate.
-
-## Fresh SUB — delayed action responsibility
-
-SUB generation `SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29` completed one bounded NON_EVIDENTIARY theory-backward MECHANISM Discovery, `CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01`.
-
-Exact research head: `411913e0b3a0493595969513bf0b7829c49cc248`; exact-head CI `35508632370` succeeded. With immediate reward, A/action0 updates `0 -> 0.30`. With `choose(A) -> choose(B) -> reward(+1)`, pending responsibility is overwritten by B/action0, A remains unchanged, and B/action0 updates `0 -> 0.30`. The prospectively fixed one-slot last-action pending-register comparator reproduces the behavior exactly. Proposed terminal: `LAST_PENDING_ACTION_REDUCTION`; proposed recommendation: `REJECT`; no cycle-2 rescue.
-
-SUB reports a clean terminal/API semantic preflight before outcome exposure and no post-outcome accessor/representation repair. This is useful ordinary-reduction information, not novelty support.
-
-Funnel-v2.1 defect: the submitted material object has `hold_class=null` and `hold_reason=null`. Control does not invent the scientific classification. Evidence Analyst must assign explicit non-null values consistent with the independently verified scientific disposition before adding this object to the canonical pool. Until then, classification completeness for the pending combined view is `15/16`, and conversion-rate policy inference is prohibited.
+Rolling safe autonomous SUB selection is now `MECHANISM, MECHANISM, MECHANISM = 3/3`. This is above the one-in-three minimum, not a target ratio. The next SUB object should be selected by marginal information gain; do not serially mine nearby credit-state microcases merely to preserve a high mechanism share.
 
 ## Funnel v2.1 metrics
 
-Evidence Analyst R19 authoritative view before the two fresh worker deltas:
-- material candidates: `15`; MECHANISM=`7`, SYSTEM=`8`; mandatory classification completeness=`15/15`
-- Architecture active: MECHANISM=`0`, SYSTEM=`1`; queued: MECHANISM=`0`, SYSTEM=`0`
+Canonical Evidence Analyst R21:
+- material candidates=`17`; MECHANISM=`9`; SYSTEM=`8`
+- classification completeness=`17/17` under applicability-aware HOLD semantics
+- terminal states: ACTIVE=`0`; NONTERMINAL_HOLD=`1`; TERMINAL_FOR_CURRENT_OBJECT=`16`
+- Architecture active/queued: MECHANISM=`0/0`; SYSTEM=`0/0`
+- Architecture HOLD distribution reported by Analyst: `HOLD_SYSTEM_TERMINAL=4`, `HOLD_METHOD_LIMITED=1`
 - PRE_FORMAL eligible=`0`; READY=`0`; viable executable MECHANISM=`0`
-- terminal states: ACTIVE=`1`, NONTERMINAL_HOLD=`1`, TERMINAL_FOR_CURRENT_OBJECT=`13`
-- SYSTEM-priority exceptions used=`0`
+- recent completed MAIN Architecture cycles: SYSTEM=`3`; MECHANISM=`0`
+- SYSTEM-over-MECHANISM exceptions=`0`
+- sole nonterminal MECHANISM hold=`CAND-H7-RESP-01`, PF=false, NOT_READY, NOT_QUEUED
 
-Pending Control view after MAIN completion plus fresh SUB, without pre-empting Analyst authority:
-- material candidates observed=`16`; MECHANISM=`8`, SYSTEM=`8`
-- Architecture executing active/queued=`0/0`; MAIN current SYSTEM object is terminal pending Analyst review
+Pending observed view after fresh SUB, without pre-empting Analyst authority:
+- material objects=`18`; MECHANISM=`10`; SYSTEM=`8`
+- candidate-local mandatory fields are applicability-complete; canonical portfolio remains R21 until independent Analyst review
 - PRE_FORMAL eligible=`0`; READY=`0`; viable executable MECHANISM=`0`
-- terminal states observed=`ACTIVE 0 / NONTERMINAL_HOLD 1 / TERMINAL_FOR_CURRENT_OBJECT 15`
-- mandatory classification completeness=`15/16` because fresh SUB has null `hold_class` and `hold_reason`
-- rolling safe autonomous SUB selection window=`MECHANISM, SYSTEM, MECHANISM`; theory-backward share=`2/3`; `NO_COHERENT_MECHANISM_TARGET` exceptions=`0`
-- recent MAIN completed cycle=`SYSTEM`; fresh SUB cycle=`MECHANISM`
-- no `SYSTEM_QUEUE_STARVING_MECHANISM`
-- `HIDDEN_SECOND_FORMAL_GATE=false`; first genuine `eligible=true + READY -> PRE_FORMAL` transition remains unobserved
+- if SUB terminal is confirmed, terminal-for-current-object becomes `17`
+- `NO_COHERENT_MECHANISM_TARGET` exceptions=`0`
 
-Do not use conversion rates from the pending incomplete view as policy evidence.
+No same-object SYSTEM→MECHANISM upgrade, `SYSTEM_QUEUE_STARVING_MECHANISM`, post-hoc SYSTEM-priority exception, or `HIDDEN_SECOND_FORMAL_GATE` is observed. The first Analyst-authoritative `eligible=true + READY -> PRE_FORMAL` transition remains unobserved.
 
-## Literature / Audit / Methodology
+## Central theory / reductions
 
-Literature `LIT-20260920T184200+0900-R13-CONTEXT-PREDICTIVE-3B7D91E4` is adopted prospectively into the ordinary sequence-prediction reduction ladder: first-order lookup -> second-order Markov -> variable-order suffix/PST/CTW -> minimal causal-state/epsilon-machine -> matched-information PSR/belief-state. Predictive equivalence, not mere history sensitivity, is the stronger future discriminator. This creates no same-object successor and no current PRE_FORMAL path.
+Recent native-v0.5 responsibility/credit questions have successively reduced to ordinary mechanisms: one-slot last-action pending responsibility, caller-supplied prediction error, and now per-edge decaying eligibility history. This does not prove richer native responsibility is impossible; it does show there is currently no supported native object separating selective causal responsibility from ordinary local state/eligibility bookkeeping.
 
-Independent Audit remains `ROBUST_SO_FAR` for H5's exact registered aggregate algorithmic-work claim only. The finding remains a bottleneck diagnosis dominated by global all-edge eligibility maintenance, not a general no-go theorem for event routing/lazy execution.
+Literature's prospective reduction ladder should therefore remain active: per-action eligibility traces -> three-factor/e-prop local eligibility × delayed signal -> temporally precise/cascading eligibility traces -> explicit counterfactual/actual-responsibility baselines. `CAND-H7-RESP-01` stays a nonterminal hold until a fresh native object can separate these mechanisms rather than merely exhibit temporal persistence.
 
-Methodology generation `METHCAL-20260920T202031+0900-R20-74B1C6E3` is `WELL_CALIBRATED / NO_MATERIAL_CALIBRATION_CHANGE`. Funnel v2.1 distinctions remain calibrated; the terminal-semantic preflight has a clean post-adoption example. The first READY->PRE_FORMAL transition, first actual SYSTEM-priority exception, and first explicit no-coherent-target exception remain unobserved watchpoints. Fresh SUB postdates this Methodology generation, so its clean-preflight claim still awaits independent downstream audit.
+## Independent Audit — C19 interpretation
 
-## Utility / Repository / refs
+Independent Audit `AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9` is genuinely new and consequential.
 
-Utility is schema-v2 `IDLE`: `active_assignment_id=null`, current assignment pointer is idle, terminal suppression diagnostic is durably acknowledged, and no request newer than the already handled 2026-09-20 request set exists. No assignment or live reconfiguration is warranted.
+- C19-v4 one-way integrity survives audit: no leakage, retry, identity reuse, post-START retune, or package/evidence mismatch found.
+- Its frozen PASS effect is real for the exact registered contrast, but the registered I1 reference was BREU=`0` for all five seeds; general learned-baseline superiority was never authorized.
+- Authoritative C19-R2 fixed seven-state FSA has mean BREU `0.34667834` versus C19-v4 `0.10044748`, giving v4-minus-FSA about `-0.24623` under cluster-aware primary inference.
+- Programme interpretation: preserve C19-v4 as narrow historical representation-surface evidence, but do not count it as positive SparkBrain-specific mechanism/novelty support.
+- Keep C19-R1 revision-authority explicitly separate and unresolved.
 
-Repository Steward is now HEALTHY at schema-v2 generation `STEWARD-20260920T195000+0900-G1-4C9A7E21`; the previous stale-generation concern is closed.
+Any fresh external-validation successor should prospectively use a competent nonzero reference, the fixed FSA under matched information/resource privilege, and cluster-aware resampling where multiple pairs share an atomic source unit. This audit creates no new successor or PRE_FORMAL/FORMAL authority.
 
-Fresh authoritative reconciliation:
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, unprotected
+## Methodology
+
+Methodology remains `WELL_CALIBRATED`. The material v2.1 schema clarification is accepted prospectively: HOLD fields required iff HOLD; terminal/queue fields required for all material objects; completeness computed over applicable fields. Scientific admission, novelty, comparator, reduction, readiness, and hard-integrity thresholds remain unchanged.
+
+The durable Methodology handoff visible at persistence time remains `METHCAL-20260920T212247+0900-R21-5A8C21D4`; no newer durable generation was visible. This is a fleet freshness concern, not a reason to alter methodology conclusions.
+
+## MAIN / Relay / Utility
+
+MAIN `MAIN-20260920T221704+0900-PRIMARY-FUNNEL21-HOLD-R21-9C2A7E41` correctly executed no science: no current prospective MAIN object exists. `NO_OP_BY_DESIGN` remains appropriate.
+
+Relay has no prospectively authorized continuation and is `NO_OP_BY_DESIGN`.
+
+Utility remains schema-v2 `IDLE`, `active_assignment_id=null`, with no new/unhandled request. No assignment or live Utility reconfiguration is warranted.
+
+## Repository / authoritative refs
+
+Fresh reconciliation confirms:
+- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 - authoritative annotated `evidence/*` tags=`5`
-- `formal/*` tags=`0`; `sealed/*` tags=`0`; tag-based `freeze/*`=`0`
-- legacy `freeze/*` branches=`13`
-- PR #148 and #149 remain open, mergeable, unmerged
+- H5 STARTED=`058e90227cd48e1c10c6ecbaed01efdec1217d0e`
+- H5 raw preserve=`ce5797eb584344db7a512e585506fb6c59ea475b`
+- PR #148 open/unmerged at `14ba187bb13705bc306baabe310d5364cf1b60fb`
+- PR #149 open/unmerged at `01ef8c3a54ff20403aba2fab9996dbda5552dd4d`
 - no new immutable-ref incident observed
 
-Protection/ruleset work remains deferred under the accepted human directive.
+Protection/rulesets remain read-only/deferred under the accepted human directive.
 
 ## Fleet health
 
 `fleet_status: YELLOW`.
 
-- Control: `HEALTHY`
-- Evidence Analyst: `DELAYED` — material MAIN and SUB generations arrived after R19 and require fresh classification/closure
-- MAIN: `HEALTHY` — bounded assigned SYSTEM Architecture cycle completed with green exact-head CI
-- Relay: `NO_OP_BY_DESIGN` — no dedicated fresh Relay branch/handoff is present and MAIN has no authorized continuation
-- SUB: `EXPLORATORY_PRODUCTIVE` — meaningful theory-backward negative; candidate-local v2.1 HOLD dimensions incomplete pending Analyst
-- Literature: `HEALTHY`
-- Independent Audit: `NO_OP_BY_DESIGN` — H5 audit remains valid and unchanged
-- Methodology Calibration: `HEALTHY`
-- Repository Steward: `HEALTHY`
-- Utility: `NO_OP_BY_DESIGN / IDLE`
+- Evidence Analyst: `HEALTHY_AWAITING_NEXT_DEPENDENCY_POLL` — fresh SUB and Audit postdate R21.
+- MAIN: `NO_OP_BY_DESIGN` — no coherent central object.
+- Relay: `NO_OP_BY_DESIGN` — no authorized continuation.
+- SUB: `EXPLORATORY_PRODUCTIVE` — fresh bounded mechanism negative; exact-head CI green; no rescue tuning.
+- Literature: `HEALTHY`.
+- Independent Audit: `HEALTHY` — fresh consequential `REDUCIBLE` synthesis.
+- Methodology: `DELAYED` — durable latest remains one handoff generation behind the latest live opportunity.
+- Repository Steward: `HEALTHY` — schema-v2 governance generation; authoritative main/evidence refs unchanged.
+- Utility: `NO_OP_BY_DESIGN / IDLE`.
+- Current-state brief: `HEALTHY_INFORMATIONAL`.
 
-Critical FORMAL/immutable integrity failures=`0`; role collisions=`0`; unhandled Utility requests=`0`. YELLOW is due to dependency-aware Analyst lag plus one pending candidate classification-completeness defect, not cadence or integrity failure. `scheduler_controller_action: NO_CHANGE`.
+Critical FORMAL/immutable integrity failures=`0`; role collisions=`0`; unhandled Utility requests=`0`; fresh SUB exact-head CI failures=`0`. YELLOW reflects unconsumed-but-expected dependency deltas plus Methodology durable-handoff lag, not scheduler-cadence failure. `scheduler_controller_action: NO_CHANGE`.
 
 ## Direction to Evidence Analyst
 
-1. Re-read and independently close MAIN's `CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01` against exact head/CI and its fixed static contract. If the mapped terminal holds, close this SYSTEM current object as terminal/HOLD; do not authorize a same-object dynamic rescue.
-2. Independently review SUB's `CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01`, exact head/CI, prospective one-slot reduction, and semantic-preflight lineage. If the reduction is confirmed, close the current MECHANISM object without cycle-2 rescue.
-3. Before canonical inclusion of the fresh SUB object, fill non-null `hold_class` and `hold_reason`; do not accept information-losing null HOLD dimensions.
-4. Recompute Funnel-v2.1 metrics only after mandatory classification completeness is restored. PRE_FORMAL remains empty unless a fresh coherent MECHANISM becomes genuinely eligible and READY by test-readiness rather than prior scientific victory.
-5. Keep the sequence-prediction reduction ladder prospective. Do not create a literature-driven successor absent an independently motivated supported-system mechanism/question.
-6. Avoid serial near-duplicate pending-state probes when they no longer add distinct mechanism information; choose the next SUB Discovery by information gain, with explicit no-target exception rather than manufactured mechanism work when appropriate.
+1. Independently verify `CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01` against prospective contract `e466bd89...`, final head `6ddcb7...`, and CI `35514340688`. If the exact eligibility recurrence reproduces the native outcome, close the current object as `REJECT / MECHANISM / preformal_eligible=false / NOT_READY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`, with null HOLD-only fields. No same-object rescue.
+2. Consume Audit `AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9`: preserve C19-v4's immutable exact PASS but annotate programme synthesis as `REDUCIBLE` for SparkBrain-specific novelty after C19-R2; keep C19-R1 revision-authority separate/unresolved.
+3. Keep MAIN idle absent a coherent central object; do not manufacture SYSTEM queue work for utilization.
+4. For future responsibility/credit candidates, apply ordinary eligibility/three-factor/cascading-trace and explicit responsibility baselines prospectively before stronger causal-credit claims.
+5. Preserve `preformal_eligible` versus READY semantics and continue auditing the first real READY→PRE_FORMAL transition as test-readiness rather than prior scientific victory.
+6. Treat one-in-three theory-backward supply as a minimum only. Fresh `3/3` does not justify more near-neighbor mechanism work; choose future SUB work by marginal information gain or use a credible no-target exception/no-op.
+
+## Generation / freshness map
+
+- previous Control: `CTRL-20260920T205000+0900-R16-5E9A71C3`
+- Human Directives: `LEGACY_GENERATION_UNKNOWN`, active blob `38f4f1e1a626834a4ff0d5600078ea9b1577dcdd`
+- Evidence Analyst: `EVA-20260920T215718+0900-R21-4F8C2A71`
+- MAIN: `MAIN-20260920T221704+0900-PRIMARY-FUNNEL21-HOLD-R21-9C2A7E41`
+- SUB: `SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2`
+- Literature: `LIT-20260920T213000+0900-R14-DELAYED-CREDIT-9C4E71B2`
+- Independent Audit: `AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9`
+- Methodology: `METHCAL-20260920T212247+0900-R21-5A8C21D4`
+- Repository Steward: `STEWARD-20260920T195000+0900-G1-4C9A7E21`
+- Utility assignment: schema-v2 `IDLE`, no active assignment
+
+## Integrity actions
+
+experiments_executed=`0`; scientific_workflows_dispatched=`0`; identities_consumed=`0`; research_prs_merged=`0`; immutable_refs_mutated=`0`; formal_refs_mutated=`0`; evidence_refs_mutated=`0`; utility_assignments_changed=`0`; schedulers_changed=`0`.
