@@ -14,7 +14,7 @@
   "status": "BLOCKED",
   "started_at": "2026-09-20T21:12:06+09:00",
   "heartbeat_at": "2026-09-20T21:12:06+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-20T21:12:06+09:00",
   "analyst_generation_id": "EVA-20260920T195817+0900-R19-B6E2F41A",
   "analyst_commit": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
   "analyst_branch_tip_observed": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
@@ -36,7 +36,6 @@
   "system_priority_exception": null,
   "last_terminal_main_object": {
     "candidate_id": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
-    "research_layer": "ARCHITECTURE_STUDY",
     "claim_ceiling": "SYSTEM",
     "preformal_eligible": false,
     "hold_class": "HOLD_SYSTEM_TERMINAL",
@@ -50,7 +49,7 @@
     "exact_head_ci_run": 35507809211,
     "exact_head_ci_conclusion": "success"
   },
-  "new_unreviewed_sub_generation": {
+  "unreviewed_sub_generation": {
     "generation_id": "SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29",
     "candidate_id": "CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01",
     "research_head": "411913e0b3a0493595969513bf0b7829c49cc248",
@@ -73,13 +72,15 @@
   "stop_reason": "FAIL_CLOSED_ANALYST_DEPENDENCY_ADVANCED_UNREVIEWED_SUB_GENERATION",
   "expected_next_action": "Require a fresh Evidence Analyst generation that explicitly consumes and classifies SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29 before MAIN receives or executes any new FORMAL, PRE_FORMAL, or ARCHITECTURE_STUDY object.",
   "persistence": {
-    "lease_acquire_commit": "THIS_COMMIT",
-    "final_state_commit": null,
-    "final_latest_commit": null,
-    "history_commit": null,
-    "final_lease_commit": null,
+    "lease_acquire_commit": "28cfa41647cc6ce7861c2a91b75f53861b54e09f",
+    "initial_state_commit": "e06baf24493db72127bd70da3f47804c65dfdd51",
+    "latest_commit": "cd54a84c3c68b588d29fa92bc646cb52de37c662",
+    "history_commit": "32f78a8ab19e14209f9052709bf836308bc0583e",
+    "history_path": "reports/orchestrator/history/2026-09-20/2112-main.md",
+    "final_state_commit": "dab812ab5cc50768b86522c2c5205f40bf691e8b",
+    "final_lease_commit": "THIS_COMMIT",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result": "LEASE_ACQUIRED_FAIL_CLOSED_PENDING_REPORT_PERSISTENCE"
+    "result": "BLOCKED_AND_DURABLY_PERSISTED_PENDING_FRESH_ANALYST"
   },
   "owner": "main"
 }
