@@ -1,32 +1,33 @@
-# SparkBrain MAIN — 2026-09-21 01:12 JST
+# SparkBrain MAIN — 2026-09-21 01:48 JST
 
 - schema_version: `2`
-- generation_id: `MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2`
-- execution_mode: `PRIMARY`
+- generation_id: `MAIN-20260921T014809+0900-RELAY-FUNNEL21-FAILCLOSED-R23-6C4E91A2`
+- execution_mode: `RELAY`
 - analyst: `EVA-20260921T005854+0900-R23-9C4E71A2@9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be`
-- prior MAIN: `MAIN-20260921T004800+0900-RELAY-FUNNEL21-FAILCLOSED-R22-5A2E8C71`
+- prior MAIN: `MAIN-20260921T011233+0900-PRIMARY-FUNNEL21-SYSTEM-ELIGTIME-R23-4A7C91E2`
 - authoritative main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 - research layer: `ARCHITECTURE_STUDY`
 - candidate: `CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01`
-- claim ceiling: `SYSTEM`
-- preformal_eligible: `false`
-- cycle: `1`
-- status: `COMPLETED`
+- status: `BLOCKED`
 
-Evidence Analyst R23 resolved the prior SUB freshness blocker and prospectively authorized exactly one static/read-only SYSTEM Architecture cycle to determine whether v0.5 eligibility decay has an explicit episode/apply-count clock, an elapsed/model-time contract, or no authoritative timebase contract. No dynamic diagnostic, workflow, DEV probe, training, parameter sweep, implementation repair, PRE_FORMAL, FORMAL, STARTED, preserve, or scoring action was authorized.
+PRIMARY safely completed the only R23-authorized static/read-only SYSTEM Architecture cycle and stopped the current object after mapping the static observation `TIMEBASE_CONTRACT_AMBIGUOUS`; that observation remains NON_EVIDENTIARY and awaits fresh Evidence Analyst canonicalization. No dynamic successor, workflow, DEV probe, PRE_FORMAL, FORMAL, STARTED, preserve, scorer, implementation mutation, or identity consumption is authorized.
 
-The exact stable-main implementation is de facto call-count based: `V05PlasticityController.apply()` multiplies every stored eligibility by `eligibility_decay=0.90` once per call and accepts no elapsed-time argument. `IntegratedV05Brain.process_episode()` calls `plasticity.apply(...)` once when `learn_field=true` and skips it when `learn_field=false`. Spike `time_ms` participates in STDP lag calculation, but not in the eligibility decay factor.
+A newer SUB generation now exists after controlling Analyst R23: `SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2`, candidate `CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01`. Its research branch head is `d4c23f6c15b504a89a420b26d0f0d185138a5bda`; exact-head CI `35523434869` is `completed/success`. SUB marks the result NON_EVIDENTIARY and pending Analyst classification. RELAY does not adopt or canonicalize any SUB-proposed Funnel dimensions.
 
-Static inspection of the v0.5 theory specification, master plan, retained experiment protocol, v0.5 plasticity unit tests, and stable-main callsites found no authoritative statement defining `eligibility_decay` as an episode/apply-count clock, elapsed/model-time clock, or partition-invariant semantic contract. The master plan's `per-step update budget` does not specify the decay clock. Older v0.2 material mentioning episodes as an eligibility/reward-learning timescale is historical context, not an explicit retained v0.5 contract.
+Funnel v2.1 dimensions are preserved exactly from controlling Analyst R23 / PRIMARY MAIN:
+- `claim_ceiling=SYSTEM`
+- `preformal_eligible=false`
+- `preformal_readiness=null`
+- `hold_class=null`
+- `hold_reason=null`
+- `terminal_state=ACTIVE`
+- `queue_state=ACTIVE`
+- `system_priority_exception.used=false` with the existing R23 reason/detail unchanged.
 
-The prospectively fixed R23 tree therefore maps this static result to `TIMEBASE_CONTRACT_AMBIGUOUS`. This is one NON_EVIDENTIARY SYSTEM Architecture observation, not FORMAL or PRE_FORMAL evidence and not a MECHANISM result. MAIN did not run the dynamic partition-invariance diagnostic and did not create a successor.
+Collision reconciliation: prior PRIMARY lease is `COMPLETED` at `2026-09-21T01:12:33+09:00`; active branch and active identity are null; there is no fresh PRIMARY RUNNING collision. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
 
-Funnel dimensions are preserved exactly from the controlling Analyst pending fresh canonicalization: `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE`, `preformal_readiness=null`, and `system_priority_exception.used=false`. MAIN records the mapped terminal observation separately and does not invent post-result HOLD dimensions.
+RELAY performed no scientific execution, no workflow dispatch, no research-branch mutation, no preserve/scoring action, no one-way action, no successor creation, and no new identity consumption.
 
-No scientific/research branch was created or modified. No workflow was dispatched. No identity was consumed. Stable `main` and immutable/preserve/control scientific refs were not modified. Evidence tags remain five; tag-based `formal/*`, `sealed/*`, and `freeze/*` remain empty. PR #148 and #149 remain open and unmerged.
+Stop reason: `FAIL_CLOSED_CURRENT_MAIN_OBJECT_PENDING_ANALYST_CANONICALIZATION_AND_NEWER_SUB_GENERATION_UNREVIEWED`.
 
-Evidentiary counts for this MAIN run: FORMAL scientific evidence `0`; PRE_FORMAL development evidence `0`; MECHANISM Architecture observations `0`; SYSTEM Architecture observations `1` (NON_EVIDENTIARY).
-
-Stop reason: `R23_STATIC_SYSTEM_TERMINAL_TIMEBASE_CONTRACT_AMBIGUOUS_STOP_FRESH_ANALYST_REVIEW`.
-
-Next MAIN action: stop this current object. A fresh Evidence Analyst generation must canonicalize the `TIMEBASE_CONTRACT_AMBIGUOUS` result. Any dynamic partition/timebase diagnostic requires a fresh successor candidate ID and a fresh prospective Analyst contract.
+Next MAIN action: remain blocked until a fresh Evidence Analyst generation canonicalizes the current MAIN `TIMEBASE_CONTRACT_AMBIGUOUS` observation and explicitly consumes/classifies `SUB-20260921T014400+0900-SYSTEM-ACTVISIT-7C4E91A2`, then follow only the fresh prospective MAIN allocation.
