@@ -11,9 +11,10 @@
     "sub_observed_for_collision": "SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-20T19:15:46+09:00",
-  "heartbeat_at": "2026-09-20T19:15:46+09:00",
+  "heartbeat_at": "2026-09-20T19:23:00+09:00",
+  "completed_at": "2026-09-20T19:23:00+09:00",
   "analyst_generation_id": "EVA-20260920T190536+0900-R18-AC1DB49E",
   "analyst_commit": "fec9320a8e8c868f4df91dafb1af75c640ae995a",
   "analyst_branch_tip_observed": "fec9320a8e8c868f4df91dafb1af75c640ae995a",
@@ -32,15 +33,24 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "Analyst R18 allocates no MAIN scientific object; the fresh context-conditioned prediction object is terminally reduced, H7 remains non-executable, and no integrity-protecting SYSTEM object justifies MAIN occupancy.",
+    "reason_detail": "Analyst R18 allocates no MAIN scientific object; the fresh context-conditioned prediction MECHANISM object is terminally reduced, H7 remains non-executable, and no integrity-protecting SYSTEM object justifies MAIN occupancy.",
     "compared_mechanism_candidate_ids": []
   },
   "active_branch": null,
   "active_identity": null,
-  "active_step": "RECONCILE_ANALYST_R18_NO_MAIN_OBJECT",
+  "active_step": "COMPLETED_INTENTIONAL_SCIENTIFIC_IDLE",
   "workflow_run_id": null,
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "stop_reason": null,
-  "expected_next_action": "Complete fast-path integrity reconciliation and persist intentional MAIN scientific idle unless controlling authority materially changes.",
+  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
+  "expected_next_action": "Remain scientifically idle until a fresh Evidence Analyst generation prospectively assigns a coherent MAIN object. Re-read the controlling Analyst generation and all authoritative refs before any future repository mutation, workflow dispatch, STARTED transition, acquisition, preserve, scoring, or merge.",
+  "persistence": {
+    "lease_acquire_commit": "121590676aea77e69684411756e46807fcea5499",
+    "state_commit": "2c2a80df892912774c9bfb3e56517d06dff6ef8f",
+    "latest_commit": "b7fe449938508dcc6efbe977b2a6dfded2ee1f62",
+    "history_commit": "039c2a0e4df5d912d59375d7ba02db5b3c8aaac0",
+    "history_path": "reports/orchestrator/history/2026-09-20/1915-main.md",
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
+    "result": "DURABLE_MAIN_REPORT_PERSISTED; FINAL_LEASE_COMPLETED"
+  },
   "owner": "main"
 }
