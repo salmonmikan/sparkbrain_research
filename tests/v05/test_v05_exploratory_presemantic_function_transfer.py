@@ -77,7 +77,7 @@ def test_presemantic_cluster_function_transfer_reduces_to_fixed_prototype_lookup
     assert target_activation is not None and target_activation.mature
     assert target_activation.assembly_id == labeled_activation.assembly_id
     prediction = predictor.predict(target_activation)
-    assert prediction.next_event == "future-X"
+    assert prediction.value == "future-X"
     assert prediction.confidence == 1.0
 
     # Direct exemplar similarity cannot explain the transfer, but the fixed
@@ -85,4 +85,4 @@ def test_presemantic_cluster_function_transfer_reduces_to_fixed_prototype_lookup
     assert labeled_to_target < threshold
     assert prototype_to_target >= threshold
     ordinary_cluster_lookup_prediction = "future-X" if prototype_to_target >= threshold else None
-    assert ordinary_cluster_lookup_prediction == prediction.next_event
+    assert ordinary_cluster_lookup_prediction == prediction.value
