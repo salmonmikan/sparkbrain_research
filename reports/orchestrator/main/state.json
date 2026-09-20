@@ -1,18 +1,19 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T041632+0900-PRIMARY-FUNNEL21-HOLD-R26-5D8A31C4",
-  "produced_at": "2026-09-21T04:16:32+09:00",
-  "producer_run_id": "sparkbrain-main-primary-20260921T041632JST-R26-HOLD",
+  "generation_id": "MAIN-20260921T051321+0900-PRIMARY-FUNNEL21-HOLD-R27-6C2A91E4",
+  "produced_at": "2026-09-21T05:13:21+09:00",
+  "producer_run_id": "sparkbrain-main-primary-20260921T051321JST-R27-HOLD",
   "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_RECONCILIATION_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "MAIN-20260921T034400+0900-RELAY-FUNNEL21-SYSTEM-ELIGPART-R25-A7C4E291",
+  "supersedes_generation_id": "MAIN-20260921T041632+0900-PRIMARY-FUNNEL21-HOLD-R26-5D8A31C4",
   "input_generations": {
-    "evidence_analyst": "EVA-20260921T040050+0900-R26-6A3F8C21",
-    "main": "MAIN-20260921T034400+0900-RELAY-FUNNEL21-SYSTEM-ELIGPART-R25-A7C4E291",
-    "sub_observed_for_freshness": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91"
+    "evidence_analyst": "EVA-20260921T045900+0900-R27-8C4E21A7",
+    "main": "MAIN-20260921T041632+0900-PRIMARY-FUNNEL21-HOLD-R26-5D8A31C4",
+    "sub_observed_for_freshness": "SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
+    "methodology": "METHCAL-20260921T041901+0900-R27-E4A1B73C"
   },
-  "consumed_analyst_generation_id": "EVA-20260921T040050+0900-R26-6A3F8C21",
-  "consumed_analyst_commit": "455522cde0a7e5eae1d2b04d779a5783f6351585",
-  "consumed_main_generation_id": "MAIN-20260921T034400+0900-RELAY-FUNNEL21-SYSTEM-ELIGPART-R25-A7C4E291",
+  "consumed_analyst_generation_id": "EVA-20260921T045900+0900-R27-8C4E21A7",
+  "consumed_analyst_commit": "28021769b1b9211921356a3eb2a2bc36fcb8cfbe",
+  "consumed_main_generation_id": "MAIN-20260921T041632+0900-PRIMARY-FUNNEL21-HOLD-R26-5D8A31C4",
   "worker_role": "main",
   "execution_mode": "PRIMARY",
   "status": "COMPLETED",
@@ -30,10 +31,10 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No SYSTEM execution is allocated in R26; there is no current MAIN object.",
+    "reason_detail": "No current MAIN allocation and no comparable executable/informative MECHANISM exists under R27.",
     "compared_mechanism_candidate_ids": []
   },
-  "current_object_semantics": "NO_CURRENT_PROSPECTIVE_MAIN_OBJECT; current-object Funnel dimensions are intentionally null rather than copied from a terminal predecessor.",
+  "current_object_semantics": "NO_CURRENT_PROSPECTIVE_MAIN_OBJECT; current-object Funnel dimensions are intentionally null rather than copied from any terminal predecessor or SUB no-target event.",
   "last_completed_object": {
     "candidate_id": "CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01",
     "research_layer": "ARCHITECTURE_STUDY",
@@ -63,7 +64,7 @@
     "DISCOVERY": {"state": "OPEN", "owner": "SUB"},
     "ARCHITECTURE_STUDY": {"state": "EMPTY_HOLD", "owner": "MAIN", "active_mechanism_count": 0, "active_system_count": 0, "queued_mechanism_count": 0, "queued_system_count": 0},
     "PRE_FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "preformal_eligible_count": 0, "preformal_ready_count": 0},
-    "FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "fresh_identity": null, "started": null, "test_authority": false, "scorer_authority": false, "preserve_authority": false}
+    "FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "fresh_one_way_authority": false, "fresh_identity": null, "started": null, "test_authority": false, "scorer_authority": false, "preserve_authority": false}
   },
   "candidate_pool": {
     "material_candidates": 22,
@@ -79,8 +80,22 @@
       "classification": "HOLD",
       "claim_ceiling": "MECHANISM",
       "preformal_eligible": false,
-      "preformal_readiness": "NOT_READY",
+      "preformal_readiness": {
+        "claim_type": "mechanism",
+        "supported_reachability": "UNESTABLISHED",
+        "functional_consequence": "ABSENT",
+        "ordinary_reductions_specified_or_controlled": ["reactivation-gated reward", "one-slot last action", "per-edge decaying eligibility"],
+        "ordinary_reductions_unresolved": ["three-factor/e-prop eligibility", "cascading eligibility", "counterfactual responsibility", "privilege"],
+        "matched_comparator_status": "NOT_READY",
+        "support_breadth": "multiple negative native-adjacent subobjects",
+        "falsifier_fixed": false,
+        "falsifier_definition": null,
+        "open_scientific_choices": ["native mechanism", "intervention", "comparator", "resource contract", "falsifier"],
+        "formal_claim_ceiling": "mechanistic distinctness under matched privilege",
+        "status": "NOT_READY"
+      },
       "hold_class": "HOLD_MECHANISM_UNRESOLVED",
+      "hold_reason": ["NO_FRESH_NATIVE_OBJECT", "SUBOBJECTS_REDUCED", "COMPARATOR_AND_FALSIFIER_UNFIXED"],
       "terminal_state": "NONTERMINAL_HOLD",
       "queue_state": "NOT_QUEUED"
     }
@@ -97,13 +112,19 @@
     "system_over_comparable_mechanism_exception_count": 0,
     "sub_theory_backward_actual_selection_window": ["MECHANISM", "SYSTEM", "SYSTEM"],
     "sub_theory_backward_qualifying_share": "1/3",
-    "sub_no_target_exception_count": 2
+    "sub_no_target_exception_count": 3,
+    "sub_consecutive_no_target_opportunities": 3,
+    "no_target_events_count_as_candidates_or_mechanism_work": false,
+    "third_event_methodology_review_status": "PENDING_NEXT_NORMAL_PASS"
   },
   "outcome_contingencies": {
     "current_object": null,
+    "on_fresh_mechanism_object": "Require prospective typing, ordinary reduction/falsifier, and readiness. If claim_ceiling=MECHANISM, preformal_eligible=true and readiness=READY, return to fresh Analyst review before PRE_FORMAL execution.",
+    "on_fresh_system_object": "Allocate to MAIN only if high-information and no comparable executable/informative MECHANISM exists, or require a machine-readable system_priority_exception before execution.",
+    "on_outcome_knowledge_needed_for_redesign": "STOP_AND_CREATE_FRESH_OBJECT",
+    "on_fresh_formal_authority": "FORMAL remains STOP until a fresh identity and exact STARTED/TEST/scorer/preserve one-way chain are independently bound.",
     "last_completed_object_terminal": "CALL_COUNT_PARTITION_DEPENDENT_EXACT",
-    "same_object_continuation": "STOP",
-    "successor_rule": "Any semantic-clock specification, implementation change, new comparator/metric/threshold/support rule/runtime/resource contract, or SYSTEM-to-MECHANISM question requires a fresh candidate ID and fresh prospective Analyst authority."
+    "same_object_continuation": "STOP"
   },
   "blocked_until": [
     "FRESH_EVIDENCE_ANALYST_ALLOCATION_OF_A_NEW_COHERENT_MAIN_OBJECT",
@@ -119,14 +140,24 @@
     "IMMUTABLE_CONTROL_PRESERVE_EVIDENCE_CHAINS",
     "STABLE_MAIN_WITHOUT_EXPLICIT_PROMOTION_AUTHORITY"
   ],
+  "programme_blockers": [
+    "NO_COHERENT_EXECUTABLE_CENTRAL_MECHANISM",
+    "H7_NO_FRESH_NATIVE_RESPONSIBILITY_OBJECT",
+    "PRE_FORMAL_ELIGIBLE_ZERO",
+    "PRE_FORMAL_READY_ZERO",
+    "NO_FRESH_FORMAL_ONE_WAY_AUTHORITY",
+    "ELIGIBILITY_PUBLIC_SEMANTIC_CLOCK_UNSPECIFIED",
+    "MECHANISM_SUPPLY_STALLED_WITH_THREE_CONSECUTIVE_NO_TARGET_OPPORTUNITIES"
+  ],
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "455522cde0a7e5eae1d2b04d779a5783f6351585",
-    "analyst_generation": "EVA-20260921T040050+0900-R26-6A3F8C21",
+    "analyst_handoff": "28021769b1b9211921356a3eb2a2bc36fcb8cfbe",
+    "analyst_generation": "EVA-20260921T045900+0900-R27-8C4E21A7",
+    "active_research_branch": null,
     "completed_research_branch": "research/main-eligibility-timebase-partition-invariance-20260921",
     "completed_research_head": "0430e98e241ae543a03bc750a3c977fe55d17bb7",
     "completed_prospective_contract_commit": "37eb6f1985d77d9caac5da51ce1348ed5c6a9228",
-    "sub_generation": "SUB-20260921T033500+0900-NOOP-NOMECH-A64D2C91",
+    "sub_generation": "SUB-20260921T043500+0900-NOOP-NOMECH-3F7A2C91",
     "sub_scientific_execution": false,
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
@@ -134,8 +165,17 @@
     "freeze_tag_count": 0,
     "h5_started_control_ref": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve_ref": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "pr_148": {"state": "open", "merged": false, "mergeable": true, "head": "14ba187bb13705bc306baabe310d5364cf1b60fb"},
-    "pr_149": {"state": "open", "merged": false, "mergeable": true, "head": "01ef8c3a54ff20403aba2fab9996dbda5552dd4d"}
+    "c19_v4_started_control_ref": "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
+    "c19_v4_raw_preserve_ref": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+    "c19_r2_started_control_ref": "41df2685fe015140c8afa13e646554dd2e8c836b",
+    "c19_r2_raw_preserve_ref": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
+    "ni01_started_control_ref": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
+    "ni01_raw_preserve_ref": "8a39cf70e397bb7588f948910f01ec58672ac814",
+    "pd01_started_control_ref": "0569e348b9d93aeee53fc58daf4b71ee92303d6c",
+    "pd01_raw_preserve_ref": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
+    "ruleset_count": 0,
+    "pr_148": {"state": "open", "merged": false, "head": "14ba187bb13705bc306baabe310d5364cf1b60fb"},
+    "pr_149": {"state": "open", "merged": false, "head": "01ef8c3a54ff20403aba2fab9996dbda5552dd4d"}
   },
   "workflows": {
     "last_completed_scientific_ci": {
@@ -152,17 +192,21 @@
     "preformal_development_evidence_this_run": 0,
     "mechanism_architecture_observations_this_run": 0,
     "system_architecture_observations_this_run": 0,
+    "new_repository_scientific_evidence": false,
+    "new_control_plane_information": true,
+    "fresh_analyst_delta": "Third consecutive opportunity-local NO_COHERENT_MECHANISM_TARGET no-op recorded; no candidate classification, claim ceiling, readiness, terminal state, queue state, or hold dimension changed.",
     "last_completed_system_architecture_observation": "CALL_COUNT_PARTITION_DEPENDENT_EXACT",
-    "interpretation": "Eligibility state advances with apply() call count under the tested implementation; this is an ordinary clock-semantics reduction/reproducibility property and not mechanism novelty or by itself a defect.",
     "public_semantic_clock_contract": "AMBIGUOUS"
   },
   "ordinary_reductions": [
     "per-apply eligibility_decay recurrence with no elapsed-time term",
-    "continuous-time elapsed-duration decay as an ordinary alternative if model/event time is intended",
-    "timestamp-lazy event-driven eligibility as an ordinary alternative if model/event time is intended"
+    "reactivation-gated reward",
+    "one-slot last action pending register",
+    "per-edge decaying eligibility trace",
+    "fixed seven-state FSA as decisive C19-R2 ordinary reduction"
   ],
-  "support_breadth": "One prospectively fixed synthetic matched one-versus-two empty-apply SYSTEM Architecture diagnostic at exact head 0430e98e241ae543a03bc750a3c977fe55d17bb7 with CI 35528770185 success on Python 3.11 and 3.13; no additional same-object breadth is authorized.",
-  "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION_THIS_RUN; FORMAL=0; PRE_FORMAL=0; MECHANISM_ARCHITECTURE=0; SYSTEM_ARCHITECTURE=0; NEW_IDENTITY_CONSUMPTION=0; LAST_COMPLETED_SYSTEM_ARCHITECTURE_OBJECT_CANONICALIZED_BY_EVA_R26_AS_HOLD_SYSTEM_TERMINAL",
+  "support_breadth": "No current MAIN object. Last completed MAIN scientific object remains one prospectively fixed synthetic one-versus-two empty-apply SYSTEM Architecture diagnostic at exact head 0430e98e241ae543a03bc750a3c977fe55d17bb7 with CI 35528770185 success; no same-object continuation is authorized.",
+  "evidentiary_status": "CONTROL_PLANE_RECONCILIATION_ONLY; FORMAL=0; PRE_FORMAL=0; MECHANISM_ARCHITECTURE=0; SYSTEM_ARCHITECTURE=0; NEW_IDENTITY_CONSUMPTION=0",
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "C19-R1 revision-authority official-v1",
@@ -173,14 +217,14 @@
     "h5-event-routing-work-reduction-official-v1"
   ],
   "new_identity_consumption": 0,
-  "integrity_state": "EVA_R26_CURRENT_AT_455522C; STABLE_MAIN_UNCHANGED; COMPLETED_RESEARCH_HEAD_0430E98E_UNCHANGED; CI_35528770185_EXACT_HEAD_SUCCESS; EVIDENCE_TAGS_5; FORMAL_SEALED_FREEZE_TAGS_0_0_0; H5_STARTED_AND_RAW_PRESERVE_REFS_UNCHANGED; PR148_PR149_OPEN_UNMERGED; SUB_LATEST_IS_NOOP_NONSCIENTIFIC_NONCOLLIDING; NO_SCIENTIFIC_MUTATION; NO_IDENTITY_CONSUMPTION; NO_FORMAL_OR_EVIDENCE_REF_MUTATION",
+  "integrity_state": "EVA_R27_CURRENT_AT_28021769; STABLE_MAIN_UNCHANGED; ACTIVE_RESEARCH_NONE; LAST_COMPLETED_RESEARCH_HEAD_0430E98E_UNCHANGED; CI_35528770185_EXACT_HEAD_SUCCESS; EVIDENCE_TAGS_5; FORMAL_SEALED_FREEZE_TAGS_0_0_0; CONTROL_AND_RAW_PRESERVE_REFS_UNCHANGED; RULESETS_0; PR148_PR149_OPEN_UNMERGED; SUB_LATEST_IS_THIRD_NO_TARGET_NOOP_NONSCIENTIFIC_NONCOLLIDING; NO_SCIENTIFIC_MUTATION; NO_IDENTITY_CONSUMPTION; NO_FORMAL_OR_EVIDENCE_REF_MUTATION",
   "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
-  "next_main_action": "Intentional scientific idle. Re-read fresh Analyst generation and exact refs on the next run. Execute only a newly allocated prospective MAIN object; do not continue the terminal eligibility-partition object or manufacture a replacement.",
+  "next_main_action": "Remain intentionally scientifically idle. On the next run re-read fresh Analyst generation and exact repository refs. Execute only a newly allocated prospective MAIN object; do not manufacture a mechanism object merely to improve the 1/3 ratio, reopen H7 without a fresh native object, or continue any terminal object.",
   "utility_request_created": null,
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-21/0416-main.md",
-    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "result": "R26_RECONCILED_NO_CURRENT_MAIN_OBJECT_INTENTIONAL_IDLE"
+    "history_path": "reports/orchestrator/history/2026-09-21/0513-main.md",
+    "mode": "SINGLE_ATOMIC_GIT_TREE_FAST_FORWARD",
+    "result": "R27_RECONCILED_NO_CURRENT_MAIN_OBJECT_INTENTIONAL_IDLE"
   }
 }
