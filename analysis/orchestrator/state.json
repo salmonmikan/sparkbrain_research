@@ -1,132 +1,724 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
-  "produced_at": "2026-09-20T10:57:21+09:00",
-  "producer_run_id": "evidence-analyst-auto-20260920T105721+0900-R11-4B7D91C2",
+  "generation_id": "EVA-20260920T115704+0900-R12-A6B8DE50",
+  "produced_at": "2026-09-20T11:57:04+09:00",
+  "producer_run_id": "evidence-analyst-auto-20260920T115704+0900-R12-A6B8DE50",
   "authority_scope": "EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION",
-  "supersedes_generation_id": "LEGACY_GENERATION_UNKNOWN",
+  "supersedes_generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
   "input_generations": {
-    "control_brain": {"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"b35068cbee426c99c3cc1f6dd23053778a2bd88a","produced_at":"2026-09-20T08:50:00+09:00","observed_at":"2026-09-20T10:57:21+09:00","role":"strategic_prior_only"},
-    "main": {"generation_id":"MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE","handoff_commit":"02d765d0305d63a2d040decdaaa2e0343acf36ed","mailbox_branch_tip_observed":"80fbc5ae59e33fe495576d8cc23a5ca329b97e17","produced_at":"2026-09-20T10:47:00+09:00","observed_at":"2026-09-20T10:57:21+09:00"},
-    "sub": {"generation_id":"SUB-20260920T104200+0900-CKPT-7F3C2A91","handoff_commit":"e438faff528fb73a33a201cb31fa3a935192d4fd","mailbox_branch_tip_observed":"80fbc5ae59e33fe495576d8cc23a5ca329b97e17","produced_at":"2026-09-20T10:42:00+09:00","observed_at":"2026-09-20T10:57:21+09:00"},
-    "literature": {"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"f399e9d14ef6d491135d19161b8c1d7986b94e5b","produced_at":"2026-09-20T09:32:39+09:00","observed_at":"2026-09-20T10:57:21+09:00"},
-    "independent_audit": {"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56","produced_at":"2026-09-19T22:31:21+09:00","observed_at":"2026-09-20T10:57:21+09:00"},
-    "methodology_calibration": {"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"9c5b625e81cd7a3213b352d9f0d4f889978455b1","produced_at":"2026-09-20T10:20:00+09:00","observed_at":"2026-09-20T10:57:21+09:00"},
-    "utility": {"generation_id":"utility-state-20260920T1027JST-lifecycle-bootstrap","handoff_commit":"d4d0f75f1a57df1298e49e67448158ab12a2754f","produced_at":"2026-09-20T10:27:00+09:00","observed_at":"2026-09-20T10:57:21+09:00","status":"COMPLETED_TERMINAL_ACKNOWLEDGED_ASSIGNMENT_IDLE"},
-    "repository_steward": {"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"e53df976b98d56b8e37a5cbfc20f1aeb84caadeb","produced_at":"2026-09-20T07:50:00+09:00","observed_at":"2026-09-20T10:57:21+09:00","role":"governance_advisory_only"},
-    "previous_evidence_analyst": {"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"639a5f7baba926502965bc9fea4cdcfb9f749068","produced_at":"2026-09-20T10:01:35+09:00","observed_at":"2026-09-20T10:57:21+09:00"}
+    "control_brain": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
+      "produced_at": "2026-09-20T08:50:00+09:00",
+      "observed_at": "2026-09-20T11:57:04+09:00",
+      "role": "STRATEGIC_PRIOR_ONLY"
+    },
+    "main": {
+      "generation_id": "MAIN-20260920T114602+0900-RELAY-ASSEMBLY-CI-COMPLETE",
+      "handoff_commit": "4f6eb1c5fa78c4f220489f56253e78f09c31d1f1",
+      "mailbox_branch_tip_observed": "c41fb4d8baf587fc1489766fcf0287ad3c532f34",
+      "produced_at": "2026-09-20T11:46:02+09:00",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "sub": {
+      "generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
+      "handoff_commit": "03c8981d86ce0086cf5a01798a80e8275e58b711",
+      "mailbox_branch_tip_observed": "c41fb4d8baf587fc1489766fcf0287ad3c532f34",
+      "produced_at": "2026-09-20T11:44:00+09:00",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "literature": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "f399e9d14ef6d491135d19161b8c1d7986b94e5b",
+      "produced_at": "2026-09-20T09:32:39+09:00",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "independent_audit": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56",
+      "produced_at": "2026-09-19T22:31:21+09:00",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "methodology_calibration": {
+      "generation_id": "METHCAL-20260920T112723+0900-R11-E3968ACE",
+      "handoff_commit": "8e96c0a87022687e7c1aabb474538fdf55a8c835",
+      "produced_at": "2026-09-20T11:27:23+09:00",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "utility": {
+      "generation_id": "utility-state-20260920T1027JST-lifecycle-bootstrap",
+      "handoff_commit": "d4d0f75f1a57df1298e49e67448158ab12a2754f",
+      "produced_at": "2026-09-20T10:27:00+09:00",
+      "observed_at": "2026-09-20T11:57:04+09:00",
+      "status": "COMPLETED_TERMINAL_ACKNOWLEDGED_ASSIGNMENT_IDLE"
+    },
+    "repository_steward": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
+      "produced_at": "2026-09-20T07:50:00+09:00",
+      "observed_at": "2026-09-20T11:57:04+09:00",
+      "role": "GOVERNANCE_ADVISORY_ONLY"
+    },
+    "previous_evidence_analyst": {
+      "generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
+      "handoff_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+      "produced_at": "2026-09-20T10:57:21+09:00",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    }
   },
   "last_consumed_generations": {
-    "control_brain":{"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"b35068cbee426c99c3cc1f6dd23053778a2bd88a","observed_at":"2026-09-20T10:57:21+09:00"},
-    "main":{"generation_id":"MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE","handoff_commit":"02d765d0305d63a2d040decdaaa2e0343acf36ed","observed_at":"2026-09-20T10:57:21+09:00"},
-    "sub":{"generation_id":"SUB-20260920T104200+0900-CKPT-7F3C2A91","handoff_commit":"e438faff528fb73a33a201cb31fa3a935192d4fd","observed_at":"2026-09-20T10:57:21+09:00"},
-    "literature":{"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"f399e9d14ef6d491135d19161b8c1d7986b94e5b","observed_at":"2026-09-20T10:57:21+09:00"},
-    "independent_audit":{"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56","observed_at":"2026-09-20T10:57:21+09:00"},
-    "methodology_calibration":{"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"9c5b625e81cd7a3213b352d9f0d4f889978455b1","observed_at":"2026-09-20T10:57:21+09:00"},
-    "utility":{"generation_id":"utility-state-20260920T1027JST-lifecycle-bootstrap","handoff_commit":"d4d0f75f1a57df1298e49e67448158ab12a2754f","observed_at":"2026-09-20T10:57:21+09:00"},
-    "repository_steward":{"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"e53df976b98d56b8e37a5cbfc20f1aeb84caadeb","observed_at":"2026-09-20T10:57:21+09:00"},
-    "previous_evidence_analyst":{"generation_id":"LEGACY_GENERATION_UNKNOWN","handoff_commit":"639a5f7baba926502965bc9fea4cdcfb9f749068","observed_at":"2026-09-20T10:57:21+09:00"}
+    "control_brain": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "b35068cbee426c99c3cc1f6dd23053778a2bd88a",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "main": {
+      "generation_id": "MAIN-20260920T114602+0900-RELAY-ASSEMBLY-CI-COMPLETE",
+      "handoff_commit": "4f6eb1c5fa78c4f220489f56253e78f09c31d1f1",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "sub": {
+      "generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
+      "handoff_commit": "03c8981d86ce0086cf5a01798a80e8275e58b711",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "literature": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "f399e9d14ef6d491135d19161b8c1d7986b94e5b",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "independent_audit": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "methodology_calibration": {
+      "generation_id": "METHCAL-20260920T112723+0900-R11-E3968ACE",
+      "handoff_commit": "8e96c0a87022687e7c1aabb474538fdf55a8c835",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "utility": {
+      "generation_id": "utility-state-20260920T1027JST-lifecycle-bootstrap",
+      "handoff_commit": "d4d0f75f1a57df1298e49e67448158ab12a2754f",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "repository_steward": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "e53df976b98d56b8e37a5cbfc20f1aeb84caadeb",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    },
+    "previous_evidence_analyst": {
+      "generation_id": "EVA-20260920T105721+0900-R11-4B7D91C2",
+      "handoff_commit": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+      "observed_at": "2026-09-20T11:57:04+09:00"
+    }
   },
   "new_repository_evidence": true,
   "new_formal_scientific_evidence": false,
   "authoritative_refs": {
-    "main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_parent":"639a5f7baba926502965bc9fea4cdcfb9f749068",
-    "orchestrator_mailbox_tip_observed":"80fbc5ae59e33fe495576d8cc23a5ca329b97e17",
-    "main_receptor_research_head":"705b652f0eb426c7e39a75a9f901be10483d0e63",
-    "sub_checkpoint_research_head":"693a68f82b706c17b1d3848f9ac79f57794b57d6",
-    "assembly_capacity_discovery_head":"3cac844ca6a80725c87d7e681c23b703f35150c2",
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "evidence_analyst_parent": "6617b28dd983a4ada1ebb0622bada869ff17b19e",
+    "orchestrator_mailbox_tip_observed": "c41fb4d8baf587fc1489766fcf0287ad3c532f34",
+    "main_assembly_lifecycle_research_head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
+    "sub_assembly_feedback_research_head": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
+    "exploratory_field_source_lineage_ref_inspected": "21af9d2a5546cc081f4fe4472540ab8a17760c7c",
     "evidence_tags": {
-      "evidence/c19-official-v4-c19-external-v2-official-v4":"4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1":"82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1":"e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1":"185b741e69ea8a0ce0d076153d36e9296a748765",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1":"e4c4e6428d8ef9e09e92cae231041de0788162e2"
+      "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
-    "evidence_tag_count":5,
-    "formal_tag_count":0,
-    "sealed_tag_count":0,
-    "freeze_tag_count":0,
-    "legacy_freeze_branch_count":13,
-    "h5_started":"058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "h5_raw_preserve":"ce5797eb584344db7a512e585506fb6c59ea475b",
-    "h5_terminal_evidence":"61aff6d74b82b68a326f3d90505d70bcd4071fd5",
-    "repository_ruleset_count":0,
-    "issue_139":"OPEN",
-    "pr_148":"OPEN_UNMERGED",
-    "pr_149":"OPEN_UNMERGED"
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "h5_terminal_evidence": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+    "repository_ruleset_count": 0,
+    "issue_139": "OPEN",
+    "pr_148": "OPEN_UNMERGED_MERGEABLE",
+    "pr_149": "OPEN_UNMERGED_MERGEABLE"
   },
   "latest_streams": {
-    "main":{"generation_id":"MAIN-20260920T1047+0900-RELAY-RECEPTOR-CI-COMPLETE","candidate":"CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01","research_head":"705b652f0eb426c7e39a75a9f901be10483d0e63","terminal":"ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED","ordinary_ci_run":35481067945,"ordinary_ci":"COMPLETED_SUCCESS","evidentiary_status":"NON_EVIDENTIARY_ARCHITECTURE_STUDY","analyst_disposition":"HOLD_CURRENT_OBJECT_CLOSED_NO_DYNAMIC_CYCLE2"},
-    "sub":{"generation_id":"SUB-20260920T104200+0900-CKPT-7F3C2A91","target":"V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1","research_head":"693a68f82b706c17b1d3848f9ac79f57794b57d6","ordinary_ci_run":35481937270,"ordinary_ci":"COMPLETED_SUCCESS","evidentiary_status":"NON_EVIDENTIARY_DISCOVERY","recommendation":"REJECT","analyst_review":"REJECT","reduction":"All fixed immediate and two-episode continuation equality checks passed after checkpoint restore; bounded candidate reduces to ordinary checkpoint correctness."}
+    "main": {
+      "generation_id": "MAIN-20260920T114602+0900-RELAY-ASSEMBLY-CI-COMPLETE",
+      "candidate": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+      "research_head": "13239163f6fecb2b61ea2189a5a94ba12b6cb3d6",
+      "prospective_contract_commit": "9d0016f8700f46e38dbff04d66da23cabf2cfa38",
+      "raw_facts_commit": "1f9edc0cc9a0276dd4f254b822daef7098af0ab4",
+      "terminal": "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED",
+      "ordinary_ci_run": 35483714573,
+      "ordinary_ci": "COMPLETED_SUCCESS",
+      "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_STUDY",
+      "analyst_disposition": "HOLD_SYSTEM_TERMINAL"
+    },
+    "sub": {
+      "generation_id": "SUB-20260920T114400+0900-THEORY-ASMFB-6D2A91C4",
+      "target": "V05_ASSEMBLY_FEEDBACK_CAUSALITY_DISCOVERY_CYCLE1",
+      "candidate": "CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01",
+      "research_head": "83cdcfbf7fe6f41f92b211a612e5dbeef4fc1801",
+      "ordinary_ci_run": 35484589732,
+      "ordinary_ci": "COMPLETED_SUCCESS",
+      "terminal": "ASSEMBLY_RECOGNIZED_BUT_FIELD_IDENTICAL",
+      "evidentiary_status": "NON_EVIDENTIARY_DISCOVERY",
+      "recommendation": "REJECT",
+      "analyst_review": "REJECT",
+      "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY"
+    }
   },
   "external_inputs": {
-    "control_brain":{"programme_position":"FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL","doctrine_change":false,"role":"STRATEGIC_PRIOR_ONLY"},
-    "literature":{"latest_material_topic":"HOMEOSTASIS_POPULATION_REDUCTION","effect_on_current_allocation":"NO_CHANGE_TO_RECEPTOR_CLOSURE_OR_ASSEMBLY_PRIORITY"},
-    "independent_audit":{"classification":"ROBUST_SO_FAR","scope":"H5 exact registered aggregate algorithmic-work claim only","claim_boundary":"Not wall-clock, energy, or general event-routing/lazy-execution no-go"},
-    "methodology":{"overall":"WELL_CALIBRATED","finding":"Keep hard floor, claim separation, supported-reachability-before-dynamic-comparator, fact-type-appropriate extraction, and fresh-Analyst STOP; no stricter global threshold justified."},
-    "repository_steward":{"role":"GOVERNANCE_ADVISORY_ONLY","finding":"No FORMAL authority change; tag-protection gap remains governance-only."},
-    "utility":{"generation_id":"utility-state-20260920T1027JST-lifecycle-bootstrap","current_assignment":"IDLE","prior_result":"STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED","new_request_created":false}
+    "control_brain": {
+      "programme_position": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
+      "role": "STRATEGIC_PRIOR_ONLY",
+      "current_evidence_overrides_stale_science_snapshot": true
+    },
+    "literature": {
+      "latest_material_topic": "HOMEOSTASIS_POPULATION_REDUCTION",
+      "effect_on_current_decision": "NO_CHANGE_TO_ASSEMBLY_CLOSURES_OR_MECHANISM_REJECT"
+    },
+    "independent_audit": {
+      "classification": "ROBUST_SO_FAR",
+      "scope": "H5 exact registered aggregate algorithmic-work claim only",
+      "claim_boundary": "Not wall-clock, energy, or general event-routing/lazy-execution no-go"
+    },
+    "methodology": {
+      "overall": "MIXED_CALIBRATION",
+      "material_update": "FUNNEL_V2_SUPPLY_AND_OBSERVABILITY_CORRECTION",
+      "hard_floor_change": false,
+      "novelty_threshold_change": false,
+      "analyst_response": "ADOPT_V2_1_FIELDS_AND_METRICS_PROSPECTIVELY_WITHOUT_HISTORICAL_RELABEL"
+    },
+    "repository_steward": {
+      "role": "GOVERNANCE_ADVISORY_ONLY",
+      "finding": "No scientific authority change; tag-protection gap remains governance-only."
+    },
+    "utility": {
+      "generation_id": "utility-state-20260920T1027JST-lifecycle-bootstrap",
+      "current_assignment": "IDLE",
+      "new_request_created": false
+    }
   },
   "research_layer_state": {
-    "DISCOVERY":{"state":"OPEN","owner":"SUB","status":"NON_EVIDENTIARY","latest_review":"CHECKPOINT_CONTINUATION_REJECTED_AFTER_CYCLE1"},
-    "ARCHITECTURE_STUDY":{"state":"ACTIVE_AUTHORIZED_PENDING_MAIN_PROSPECTIVE_BINDING","owner":"MAIN","current_object":"CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01","status":"NON_EVIDENTIARY"},
-    "PRE_FORMAL":{"state":"EMPTY_HOLD","owner":"MAIN"},
-    "FORMAL":{"state":"EMPTY_HOLD","owner":"MAIN","fresh_identity":null,"started":null,"test_authority":false,"scorer_authority":false,"preserve_authority":false}
+    "DISCOVERY": {
+      "state": "OPEN",
+      "owner": "SUB",
+      "status": "NON_EVIDENTIARY",
+      "latest_review": "ASSEMBLY_FEEDBACK_MECHANISM_REJECTED_AFTER_CYCLE1"
+    },
+    "ARCHITECTURE_STUDY": {
+      "state": "EMPTY_HOLD",
+      "owner": "MAIN",
+      "active_mechanism_count": 0,
+      "active_system_count": 0,
+      "queued_mechanism_count": 0,
+      "queued_system_count": 0
+    },
+    "PRE_FORMAL": {
+      "state": "EMPTY_HOLD",
+      "owner": "MAIN",
+      "preformal_eligible_count": 0,
+      "preformal_ready_count": 0
+    },
+    "FORMAL": {
+      "state": "EMPTY_HOLD",
+      "owner": "MAIN",
+      "fresh_identity": null,
+      "started": null,
+      "test_authority": false,
+      "scorer_authority": false,
+      "preserve_authority": false
+    }
+  },
+  "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
+  "sub_lane": "BOUNDED_SECONDARY_DISCOVERY_WITH_THEORY_BACKWARD_ACCOUNTING",
+  "sub_fallback": "NO_OP_WITH_NO_COHERENT_SAFE_NONDUPLICATIVE_TARGET",
+  "system_priority_exception": {
+    "used": false,
+    "reason_detail": "No MAIN scientific object is allocated in this generation. The prior Assembly SYSTEM allocation predates Funnel v2.1 and is not retroactively re-justified; no comparably executable coherent MECHANISM target exists now.",
+    "compared_mechanism_candidate_ids": [
+      "CAND-H7-RESP-01"
+    ]
+  },
+  "theory_backward_accounting": {
+    "rolling_window_size": 3,
+    "window": [
+      {
+        "selection": "RECEPTOR_SAMETIME_PERMUTATION_DISCOVERY_CYCLE1",
+        "claim_ceiling": "SYSTEM",
+        "disposition": "PROMOTE_TO_ARCHITECTURE_STUDY"
+      },
+      {
+        "selection": "V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1",
+        "claim_ceiling": "SYSTEM",
+        "disposition": "REJECT"
+      },
+      {
+        "selection": "V05_ASSEMBLY_FEEDBACK_CAUSALITY_DISCOVERY_CYCLE1",
+        "claim_ceiling": "MECHANISM",
+        "disposition": "REJECT",
+        "qualifying_theory_backward": true
+      }
+    ],
+    "qualifying_theory_backward_count": 1,
+    "selection_share": "1/3",
+    "compliant": true,
+    "theory_backward_exception": null,
+    "next_selection_policy": "May choose any safe nonduplicative coherent Discovery; prefer MECHANISM when comparably informative. Do not relabel SYSTEM questions to satisfy supply accounting."
   },
   "candidate_pool": [
-    {"id":"CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01","classification":"ARCHITECTURE_STUDY","question":"Is max_candidates a hard lifetime mature-memory cap or an active working-set budget, and is mature-capacity saturation relevant/reachable under stable-main supported configurations and development workloads?","not_rescue_reason":"Fresh resource/lifecycle question originating from an independent SUB Discovery; it does not alter or rescue any consumed/formal line or completed Assembly objects.","target_layer":"ARCHITECTURE_STUDY","expected_information_gain":"HIGH_ARCHITECTURE_RESOURCE_LIFECYCLE_NEAR","ordinary_reduction_risks":["fixed resource budget","immature-only stale pruning","permanent mature-memory policy may be intentional","default max_candidates=256 saturation may be unsupported or unreachable"],"implementation_distance":"NEAR_STATIC_CONTRACT_AND_REACHABILITY_FIRST","scientific_choices_still_open":["lifetime cap versus reclaimable working-set semantics","mature age/compaction/eviction policy","supported horizon/workload","future resource-matched comparator","future downstream learnability observable"],"exploration_cycle_count":{"DISCOVERY":1,"ARCHITECTURE_STUDY":0},"promotion_rejection_condition":"One static source/docs/tests/callsite/config/reachability cycle only. Explicit lifetime-cap semantics or no plausible supported saturation closes dynamic concern; active-working-set gap or supported saturation with unspecified lifecycle returns to fresh Analyst. Dynamic comparator requires fresh object."},
-    {"id":"CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01","classification":"HOLD","question":"Are exact same-time/same-channel pulses ordered events or an unordered simultaneous multiset at the supported public receptor boundary?","not_rescue_reason":"Fresh independent receptor API/reproducibility line; current object is closed rather than rescued.","target_layer":"ARCHITECTURE_STUDY","expected_information_gain":"CURRENT_STATIC_QUESTION_RESOLVED_HOLD","ordinary_reduction_risks":["stable tie ordering","sequential adaptive-gain update","supported exact-key reachability unestablished"],"implementation_distance":"COMPLETED_STATIC_CURRENT_QUESTION","scientific_choices_still_open":["fresh independent supported same-key reachability","fresh explicit simultaneity/order contract"],"exploration_cycle_count":{"DISCOVERY":1,"ARCHITECTURE_STUDY":1},"promotion_rejection_condition":"ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED closes current object. No same-object dynamic comparator; reopen only with independent new support."},
-    {"id":"CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01","classification":"REJECT","question":"Does a v0.5 checkpoint round-trip preserve deterministic future execution after a fixed development-only warmup prefix?","not_rescue_reason":"Independent SUB Discovery unrelated to consumed evidence or MAIN receptor ordering.","target_layer":"DISCOVERY","expected_information_gain":"RESOLVED_ORDINARY_CHECKPOINT_CORRECTNESS","ordinary_reduction_risks":["ordinary serialization completeness","bounded deterministic trajectory"],"implementation_distance":"COMPLETED_DISCOVERY","scientific_choices_still_open":[],"exploration_cycle_count":{"DISCOVERY":1},"promotion_rejection_condition":"All pre-bound continuation equality checks passed. REJECT; no cycle 2."},
-    {"id":"CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01","classification":"HOLD","question":"What population does public homeostatic liveness/stability represent?","not_rescue_reason":"Independent Homeostasis observability line; current object is closed.","target_layer":"ARCHITECTURE_STUDY","expected_information_gain":"RESOLVED_CURRENT_STATIC_SCOPE","ordinary_reduction_risks":["all-field source/population mixing","whole-field liveness may be intentional","dead is only one stability observable"],"implementation_distance":"COMPLETED_STATIC_CURRENT_QUESTION","scientific_choices_still_open":["fresh independently supported reservoir-specific liveness requirement only"],"exploration_cycle_count":{"DISCOVERY":1,"ARCHITECTURE_STUDY":1},"promotion_rejection_condition":"WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED closes current object. No same-object dynamic cycle."},
-    {"id":"CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01","classification":"HOLD","question":"Historical suppression/clear API semantics after a confirmed decision-relevant static extractor false negative.","not_rescue_reason":"Historical object remains closed; Utility diagnosis changes trust in disputed fields, not the historical terminal.","target_layer":"ARCHITECTURE_STUDY","expected_information_gain":"METHODOLOGY_RESOLVED_SCIENCE_NOT_REOPENED","ordinary_reduction_risks":["threshold blockade","retained state","lazy decay","historical brittle extractor"],"implementation_distance":"HOLD","scientific_choices_still_open":["fresh independent API contract question only"],"exploration_cycle_count":{"DISCOVERY":1,"ARCHITECTURE_STUDY":1,"UTILITY_READ_ONLY":1},"promotion_rejection_condition":"Historical AMBIGUOUS_CONTRACT unchanged; no repair, rerun, rescore or relabel."},
-    {"id":"CAND-H7-RESP-01","classification":"HOLD","question":"Does a native online/local responsibility-sensitive mechanism independently appear under matched privilege?","not_rescue_reason":"Dormant future candidate; no current mechanism and no consumed-line rescue.","target_layer":"PRE_FORMAL","expected_information_gain":"VERY_HIGH_IF_NATIVE_MECHANISM_APPEARS","ordinary_reduction_risks":["counterfactual responsibility","actual causality","central-critic/replay privilege","ordinary local-learning reductions"],"implementation_distance":"FAR","scientific_choices_still_open":["native mechanism","equal-privilege comparator","fresh discriminator"],"exploration_cycle_count":{"PRE_FORMAL":0},"promotion_rejection_condition":"Remain HOLD; no queue-filler construction."}
+    {
+      "id": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+      "classification": "HOLD",
+      "question": "Is max_candidates a hard lifetime mature-memory cap or an active working-set budget, and is mature-capacity saturation relevant/reachable under stable-main supported configurations and bounded development/evaluation workloads?",
+      "phenomenon": "Mature candidates have no current reclamation path after capacity is reached, but supported saturation and lifecycle intent are not established.",
+      "not_rescue_reason": "Fresh SYSTEM resource/lifecycle question from independent Discovery; it does not alter or rescue consumed evidence or any completed mechanism line.",
+      "target_layer": "ARCHITECTURE_STUDY",
+      "claim_ceiling": "SYSTEM",
+      "preformal_eligible": false,
+      "expected_information_gain": "CURRENT_STATIC_QUESTION_RESOLVED_SYSTEM_VALUE_RETAINED",
+      "ordinary_reduction_risks": [
+        "fixed resource budget",
+        "immature-only stale pruning",
+        "permanent mature-memory policy may be intentional",
+        "default max_candidates=256 saturation may be unsupported or unreachable"
+      ],
+      "implementation_distance": "COMPLETED_STATIC_ARCHITECTURE_CYCLE1",
+      "scientific_choices_still_open": [],
+      "exploration_cycle_count": {
+        "DISCOVERY": 1,
+        "ARCHITECTURE_STUDY": 1
+      },
+      "promotion_rejection_condition": "Terminal LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED closes the current object. No same-object saturation experiment or turnover comparator; any new product requirement or supported saturation evidence requires a fresh candidate ID.",
+      "hold_class": "HOLD_SYSTEM_TERMINAL",
+      "hold_reason": [
+        "LIFECYCLE_CONTRACT_UNSPECIFIED",
+        "SUPPORTED_SATURATION_UNESTABLISHED",
+        "NO_SUPPORTED_CONTINUED_ACQUISITION_PROMISE_AFTER_CAPACITY"
+      ],
+      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "queue_state": "NOT_QUEUED",
+      "system_priority_exception": {
+        "used": false
+      }
+    },
+    {
+      "id": "CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01",
+      "classification": "REJECT",
+      "question": "Can an already-present mature Assembly causally alter or regenerate lower Spark/Cascade field dynamics under matched physical input and field state?",
+      "phenomenon": "Mature Assembly recognition and suppression status changed while exact lower v04_result and field state remained identical in matched DEV-only comparisons.",
+      "not_rescue_reason": "Fresh theory-backward mechanism question selected independently of MAIN and consumed lines; it tests a causal feedback direction rather than repairing a prior result.",
+      "target_layer": "DISCOVERY",
+      "claim_ceiling": "MECHANISM",
+      "preformal_eligible": false,
+      "expected_information_gain": "HIGH_MECHANISM_DISCRIMINATION_RESOLVED_NEGATIVE",
+      "ordinary_reduction_risks": [
+        "ordinary recurrent-field dynamics sufficient",
+        "Assembly is downstream post-field recognition/readout in current v0.5 process ordering"
+      ],
+      "implementation_distance": "COMPLETED_DISCOVERY_CYCLE1",
+      "scientific_choices_still_open": [],
+      "exploration_cycle_count": {
+        "DISCOVERY": 1
+      },
+      "promotion_rejection_condition": "ASSEMBLY_RECOGNIZED_BUT_FIELD_IDENTICAL rejects the current feedback/regeneration mechanism object. No cycle 2 rescue; any future Assembly-to-field feedback design is a fresh object.",
+      "hold_class": null,
+      "hold_reason": null,
+      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "queue_state": "NOT_QUEUED",
+      "preformal_readiness": {
+        "claim_type": "mechanism",
+        "supported_reachability": "PARTIAL",
+        "functional_consequence": "ABSENT",
+        "ordinary_reductions_specified_or_controlled": [
+          "MATCHED_EMPTY_ASSEMBLY_RECURRENT_FIELD",
+          "MATCHED_ASSEMBLY_SUPPRESSION",
+          "IDENTICAL_PHYSICAL_INPUT_AND_FIELD_STATE"
+        ],
+        "ordinary_reductions_unresolved": [],
+        "matched_comparator_status": "READY",
+        "support_breadth": "One deterministic DEV pattern/input family in the current v0.5 architecture; sufficient to falsify the narrow current causal-feedback direction, not a universal future-architecture claim.",
+        "falsifier_fixed": {
+          "value": true,
+          "definition": "With identical physical input and matched lower-field state, changing only mature/suppressed Assembly state changes lower v04_result or lower field state."
+        },
+        "open_scientific_choices": [],
+        "formal_claim_ceiling": "NONE_FOR_CURRENT_REJECTED_OBJECT",
+        "status": "NOT_READY"
+      }
+    },
+    {
+      "id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
+      "classification": "HOLD",
+      "question": "Are exact same-time/same-channel pulses ordered events or an unordered simultaneous multiset at the supported public receptor boundary?",
+      "phenomenon": "DEV order sensitivity exists through stable tie ordering plus sequential gain adaptation, but supported exact-key multiplicity is unestablished.",
+      "not_rescue_reason": "Independent SYSTEM API/reproducibility line; current object is closed rather than rescued.",
+      "target_layer": "ARCHITECTURE_STUDY",
+      "claim_ceiling": "SYSTEM",
+      "preformal_eligible": false,
+      "expected_information_gain": "CURRENT_STATIC_QUESTION_RESOLVED",
+      "ordinary_reduction_risks": [
+        "stable tie ordering",
+        "sequential adaptive-gain update",
+        "supported exact-key multiplicity unestablished"
+      ],
+      "implementation_distance": "COMPLETED_STATIC_ARCHITECTURE_CYCLE1",
+      "scientific_choices_still_open": [],
+      "exploration_cycle_count": {
+        "DISCOVERY": 1,
+        "ARCHITECTURE_STUDY": 1
+      },
+      "promotion_rejection_condition": "ORDER_UNSPECIFIED_AND_REACHABILITY_UNESTABLISHED closes the current object. A fresh object requires independent supported reachability or an explicit simultaneity/order contract.",
+      "hold_class": "HOLD_SYSTEM_TERMINAL",
+      "hold_reason": [
+        "ORDER_CONTRACT_UNSPECIFIED",
+        "SUPPORTED_EXACT_KEY_MULTIPLICITY_UNESTABLISHED"
+      ],
+      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "queue_state": "NOT_QUEUED",
+      "system_priority_exception": {
+        "used": false
+      }
+    },
+    {
+      "id": "CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01",
+      "classification": "REJECT",
+      "question": "Does a v0.5 checkpoint round-trip preserve deterministic future execution after a fixed development-only warmup prefix?",
+      "phenomenon": "Immediate state and the fixed two-episode continuation matched exactly after restore.",
+      "not_rescue_reason": "Independent SYSTEM reproducibility Discovery unrelated to consumed evidence.",
+      "target_layer": "DISCOVERY",
+      "claim_ceiling": "SYSTEM",
+      "preformal_eligible": false,
+      "expected_information_gain": "RESOLVED_ORDINARY_CHECKPOINT_CORRECTNESS",
+      "ordinary_reduction_risks": [
+        "ordinary serialization completeness",
+        "bounded deterministic trajectory"
+      ],
+      "implementation_distance": "COMPLETED_DISCOVERY_CYCLE1",
+      "scientific_choices_still_open": [],
+      "exploration_cycle_count": {
+        "DISCOVERY": 1
+      },
+      "promotion_rejection_condition": "All pre-bound continuation equality checks passed. REJECT current bounded object; no cycle 2.",
+      "hold_class": null,
+      "hold_reason": null,
+      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "queue_state": "NOT_QUEUED",
+      "system_priority_exception": {
+        "used": false
+      }
+    },
+    {
+      "id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
+      "classification": "HOLD",
+      "question": "What population does public homeostatic liveness/stability represent?",
+      "phenomenon": "Implementation uses whole-field activity including receptors while public population semantics remain unspecified.",
+      "not_rescue_reason": "Independent SYSTEM observability/API question; does not revise consumed evidence.",
+      "target_layer": "ARCHITECTURE_STUDY",
+      "claim_ceiling": "SYSTEM",
+      "preformal_eligible": false,
+      "expected_information_gain": "CURRENT_STATIC_QUESTION_RESOLVED",
+      "ordinary_reduction_risks": [
+        "whole-field source mixing",
+        "afferent/recurrent population distinction",
+        "public liveness population unspecified"
+      ],
+      "implementation_distance": "COMPLETED_STATIC_ARCHITECTURE_CYCLE1",
+      "scientific_choices_still_open": [],
+      "exploration_cycle_count": {
+        "DISCOVERY": 1,
+        "ARCHITECTURE_STUDY": 1
+      },
+      "promotion_rejection_condition": "WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED closes current object. Fresh supported reservoir-liveness requirement would require a new candidate.",
+      "hold_class": "HOLD_SYSTEM_TERMINAL",
+      "hold_reason": [
+        "PUBLIC_STABILITY_POPULATION_UNSPECIFIED",
+        "WHOLE_FIELD_IMPLEMENTATION_CONFIRMED"
+      ],
+      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "queue_state": "NOT_QUEUED",
+      "system_priority_exception": {
+        "used": false
+      }
+    },
+    {
+      "id": "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01",
+      "classification": "HOLD",
+      "question": "What state semantics does transient unit suppression expose?",
+      "phenomenon": "Historical Architecture terminal is AMBIGUOUS_CONTRACT, and a later read-only Utility audit confirmed a decision-relevant static extractor false negative.",
+      "not_rescue_reason": "SYSTEM API/state-semantics object remains historically closed; methodology finding is not used to relabel or rescue it.",
+      "target_layer": "ARCHITECTURE_STUDY",
+      "claim_ceiling": "SYSTEM",
+      "preformal_eligible": false,
+      "expected_information_gain": "HISTORICAL_OBJECT_CLOSED_METHOD_LIMIT_RECORDED",
+      "ordinary_reduction_risks": [
+        "threshold clamp",
+        "retained membrane state",
+        "lazy decay",
+        "extractor representation sensitivity"
+      ],
+      "implementation_distance": "COMPLETED_ARCHITECTURE_PLUS_READ_ONLY_UTILITY_AUDIT",
+      "scientific_choices_still_open": [],
+      "exploration_cycle_count": {
+        "DISCOVERY": 1,
+        "ARCHITECTURE_STUDY": 1,
+        "UTILITY_DIAGNOSTIC": 1
+      },
+      "promotion_rejection_condition": "Historical terminal remains immutable. Only a genuinely fresh independent object may revisit semantics; no repair/rerun/relabel.",
+      "hold_class": "HOLD_METHOD_LIMITED",
+      "hold_reason": [
+        "STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED",
+        "HISTORICAL_TERMINAL_IMMUTABLE_NO_RETROACTIVE_RELABEL"
+      ],
+      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "queue_state": "NOT_QUEUED",
+      "system_priority_exception": {
+        "used": false
+      }
+    },
+    {
+      "id": "CAND-H7-RESP-01",
+      "classification": "HOLD",
+      "question": "Does a native online/local responsibility-sensitive credit mechanism independently appear that survives actual-causality, ordinary local-learning/recurrent/plastic, and equal-privilege reductions?",
+      "phenomenon": "Central mechanism family remains conceptually important but no concrete native executable object is currently established.",
+      "not_rescue_reason": "The candidate is held specifically to avoid constructing a queue-filler rescue around consumed negative lines.",
+      "target_layer": "PRE_FORMAL",
+      "claim_ceiling": "MECHANISM",
+      "preformal_eligible": false,
+      "expected_information_gain": "VERY_HIGH_IF_NATIVE_OBJECT_APPEARS_BUT_CURRENTLY_NOT_EXECUTABLE",
+      "ordinary_reduction_risks": [
+        "ordinary actual-causality explanation",
+        "ordinary local learning",
+        "recurrent/plastic state",
+        "comparator information/resource privilege"
+      ],
+      "implementation_distance": "FAR_NO_NATIVE_OBJECT",
+      "scientific_choices_still_open": [
+        "native mechanism definition",
+        "intervention unit",
+        "matched comparator",
+        "claim-local task/support breadth",
+        "falsifier and resource contract"
+      ],
+      "exploration_cycle_count": {
+        "PRE_FORMAL": 0
+      },
+      "promotion_rejection_condition": "Remain HOLD until a native independently motivated mechanism object exists. Then create a fresh candidate and readiness record; do not construct one merely to fill the funnel.",
+      "hold_class": "HOLD_MECHANISM_UNRESOLVED",
+      "hold_reason": [
+        "NO_NATIVE_EXECUTABLE_RESPONSIBILITY_SENSITIVE_OBJECT",
+        "SUPPORTED_REACHABILITY_UNESTABLISHED",
+        "COMPARATOR_AND_FALSIFIER_NOT_FROZEN"
+      ],
+      "terminal_state": "NONTERMINAL_HOLD",
+      "queue_state": "NOT_QUEUED",
+      "preformal_readiness": {
+        "claim_type": "mechanism",
+        "supported_reachability": "UNESTABLISHED",
+        "functional_consequence": "ABSENT",
+        "ordinary_reductions_specified_or_controlled": [],
+        "ordinary_reductions_unresolved": [
+          "ACTUAL_CAUSALITY_REDUCTION",
+          "ORDINARY_LOCAL_LEARNING_REDUCTION",
+          "RECURRENT_OR_PLASTIC_STATE_REDUCTION",
+          "EQUAL_PRIVILEGE_COMPARATOR"
+        ],
+        "matched_comparator_status": "NOT_READY",
+        "support_breadth": "No native executable candidate; breadth is not assessable.",
+        "falsifier_fixed": {
+          "value": false,
+          "definition": "No executable native candidate exists yet, so no outcome-independent falsifier can be frozen without manufacturing the object."
+        },
+        "open_scientific_choices": [
+          "native mechanism definition",
+          "intervention unit",
+          "matched comparator",
+          "support/task breadth",
+          "resource contract"
+        ],
+        "formal_claim_ceiling": "NATIVE_LINEAGE_SPECIFIC_CAUSAL_RESPONSIBILITY_MECHANISTIC_DISTINCTNESS_OR_COMPUTATIONAL_PRINCIPLE_ONLY_IF_A_FRESH_OBJECT_LATER_BECOMES_READY",
+        "status": "NOT_READY"
+      }
+    }
   ],
-  "sub_discovery_review": {"new_review_this_run":true,"source_target":"V05_CHECKPOINT_CONTINUATION_EQUIVALENCE_DISCOVERY_CYCLE1","classification":"REJECT","candidate_id":"CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01","prospective_boundary":"Discovery remains NON_EVIDENTIARY. Equality on this fixed bounded trajectory supports ordinary checkpoint correctness only; no cycle 2 or promotion."},
-  "main_lane":"ASSEMBLY_MATURE_CAPACITY_LIFECYCLE_CONTRACT_ARCHITECTURE_STUDY_CYCLE1",
-  "sub_lane":"BOUNDED_SECONDARY_DISCOVERY",
-  "sub_fallback":"NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON",
-  "main_prospective_object": {
-    "candidate_id":"CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
-    "layer":"ARCHITECTURE_STUDY",
-    "mode":"STATIC_READ_ONLY_CONTRACT_AND_SUPPORTED_REACHABILITY_CHARACTERIZATION",
-    "stable_main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "core_source_bindings":{"src/sparkbrain/v05/assemblies.py":"a0a8c41e21db68cafc08ace8dac50b7a56607a52","src/sparkbrain/v05/brain.py":"652552f8dc6a53a68e441f593e9bfd82cebb9f7c","src/sparkbrain/v05/evaluation.py":"efd52d236708aea3bf23b6139d8717b1ac1d0559","tests/v05/test_v05_assemblies.py":"99d847dae4aa8b394680acbb44ae01e72a5d9d4f"},
-    "required_preinterpretation_facts":["public lifecycle meaning of max_candidates","mature eviction/aging/compaction paths","supported/default max_candidates overrides","bounded supported DEV/evaluation horizons and candidate counts from source/config/tests only","continued novel-pattern acquisition promises after saturation","checkpoint permanence versus lifecycle intent"],
-    "forbidden_same_run_actions":["dynamic saturation or turnover experiment","identity-neutral turnover comparator","production source change","official TEST or consumed raw access","formal identity/STARTED/scorer/preserve/evidence creation","PRE_FORMAL or FORMAL promotion"],
-    "terminal_map":["EXPLICIT_LIFETIME_MATURE_MEMORY_CAP","ACTIVE_WORKING_SET_CONTRACT_WITH_MATURE_RECLAMATION_GAP","WORKING_SET_EXPECTATION_UNSPECIFIED_BUT_SUPPORTED_SATURATION_REACHABLE","LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED","SUPPORTED_SATURATION_UNREACHABLE_OR_OUTSIDE_BOUND_SCOPE","MIXED_OR_CONTRADICTORY_ASSEMBLY_LIFECYCLE_CONTRACT","INVALID_STATIC_CHARACTERIZATION"]
+  "funnel_metrics": {
+    "discovery_dispositions": {
+      "window_basis": "last_3_safe_nonduplicative_autonomous_SUB_selections",
+      "PROMOTE_TO_ARCHITECTURE_STUDY": 1,
+      "REJECT": 2,
+      "PROMOTE_TO_PRE_FORMAL": 0,
+      "CONTINUE_EXPLORING": 0
+    },
+    "rolling_theory_backward_selection": {
+      "window_size": 3,
+      "qualifying_count": 1,
+      "share": "1/3",
+      "explicit_no_target_exception_count": 0,
+      "exceptions": []
+    },
+    "architecture_portfolio": {
+      "active": {
+        "MECHANISM": 0,
+        "SYSTEM": 0
+      },
+      "queued": {
+        "MECHANISM": 0,
+        "SYSTEM": 0
+      }
+    },
+    "architecture_dispositions_material_pool": {
+      "REJECT": 0,
+      "hold_class": {
+        "HOLD_MECHANISM_UNRESOLVED": 0,
+        "HOLD_SYSTEM_TERMINAL": 3,
+        "HOLD_CONTRACT_AMBIGUITY": 0,
+        "HOLD_METHOD_LIMITED": 1,
+        "HOLD_QUEUED": 0
+      }
+    },
+    "terminal_state_counts": {
+      "ACTIVE": 0,
+      "NONTERMINAL_HOLD": 1,
+      "TERMINAL_FOR_CURRENT_OBJECT": 6
+    },
+    "preformal_eligible_count": 0,
+    "preformal_ready_count": 0,
+    "viable_mechanism_candidate_count": 0,
+    "recent_main_split": {
+      "window_basis": "last_3_completed_MAIN_Architecture_objects",
+      "objects": [
+        {
+          "id": "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01",
+          "claim_ceiling": "SYSTEM"
+        },
+        {
+          "id": "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01",
+          "claim_ceiling": "SYSTEM"
+        },
+        {
+          "id": "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01",
+          "claim_ceiling": "SYSTEM"
+        }
+      ],
+      "cycle_count": {
+        "SYSTEM": 3,
+        "MECHANISM": 0
+      },
+      "time_split": {
+        "SYSTEM": null,
+        "MECHANISM": null,
+        "status": "NOT_DERIVABLE_FROM_COMPARABLE_DURABLE_FULL_CYCLE_RUNTIME",
+        "note": "CI elapsed time is not used as a proxy for scientific-cycle time."
+      }
+    },
+    "system_over_mechanism_exceptions": {
+      "count_this_generation": 0,
+      "reasons": []
+    },
+    "classification_completeness": {
+      "total_material_candidates": 7,
+      "complete_mandatory_v2_1_fields": 7,
+      "incomplete_candidates": [],
+      "conversion_rates_used_as_policy_evidence": false
+    }
   },
   "outcome_contingencies": {
-    "PRE_START_BINDING_COMPLETE":"MAIN may perform exactly one static/read-only Assembly lifecycle and supported-reachability Architecture characterization under exact core blobs plus deterministic stable-main docs/tests/callsite inventory and fact-type-appropriate validation fixed before interpretation.",
-    "PRE_START_MECHANICAL_BLOCKER":"MAIN may repair only science-invariant lint/import/harness representation issues before decision-relevant facts are observed, then rebind exact head and ordinary CI under unchanged semantic contract.",
-    "PRE_START_SEMANTIC_OR_SCOPE_GAP":"STOP_TO_FRESH_ANALYST",
-    "EXPLICIT_LIFETIME_MATURE_MEMORY_CAP":"STOP_HOLD_OR_ENGINEERING_NOTE_NO_DYNAMIC_TURNOVER_COMPARATOR",
-    "ACTIVE_WORKING_SET_CONTRACT_WITH_MATURE_RECLAMATION_GAP":"STOP_FRESH_ANALYST_REVIEW_DYNAMIC_SUCCESSOR_REQUIRES_NEW_PROSPECTIVE_AUTHORITY",
-    "WORKING_SET_EXPECTATION_UNSPECIFIED_BUT_SUPPORTED_SATURATION_REACHABLE":"STOP_HOLD_FRESH_ANALYST_REVIEW",
-    "LIFECYCLE_UNSPECIFIED_AND_SUPPORTED_SATURATION_UNESTABLISHED":"STOP_HOLD_DO_NOT_MANUFACTURE_SATURATION_OR_TURNOVER_COMPARATOR",
-    "SUPPORTED_SATURATION_UNREACHABLE_OR_OUTSIDE_BOUND_SCOPE":"STOP_REDUCE_TO_ENGINEERING_RESOURCE_POLICY_NOTE",
-    "MIXED_OR_CONTRADICTORY_ASSEMBLY_LIFECYCLE_CONTRACT":"STOP_HOLD",
-    "INVALID_STATIC_CHARACTERIZATION":"DISCARD_AND_STOP",
-    "DYNAMIC_TURNOVER_COMPARATOR_DESIRED":"STOP_NEW_PROSPECTIVE_OBJECT_REQUIRED",
-    "OFFICIAL_TEST_CONSUMED_OR_FORMAL_SURFACE_NEEDED":"STOP",
-    "FORMAL":"UNARMED_NO_FORMAL_OBJECT"
+    "MAIN_HOLD": {
+      "FRESH_COHERENT_MECHANISM_OBJECT": "Fresh Analyst review; if safely executable/informative, prioritize over SYSTEM.",
+      "FRESH_SYSTEM_OBJECT_PROTECTING_TESTBED_OR_EVIDENCE": "Fresh Analyst review; require prospective system_priority_exception if a comparable executable MECHANISM object exists.",
+      "NO_FRESH_COHERENT_OBJECT": "No-op; do not manufacture MAIN work."
+    },
+    "SUB_DISCOVERY": {
+      "SAFE_COHERENT_NONDUPLICATIVE_TARGET": "Bind question, claim_ceiling, falsifier/reduction logic, and bounded cycle prospectively; execute Discovery only under SUB authority.",
+      "NO_COHERENT_TARGET": "No-op with explicit NO_COHERENT_MECHANISM_TARGET only when theory-backward supply would otherwise require a mechanism selection.",
+      "OUTCOME_REQUIRES_REDESIGN": "STOP and return to fresh Analyst; no rescue tuning."
+    },
+    "FORMAL": "UNARMED_NO_FORMAL_OBJECT"
   },
-  "blocked_until": {
-    "assembly_dynamic_turnover":"static lifecycle/reachability cycle reaches a valid terminal and a fresh Analyst generation separately admits any dynamic comparator",
-    "receptor_dynamic_comparator":"independent evidence establishes supported exact-key multiplicity/reachability or an explicit simultaneity contract, then a fresh object is admitted",
-    "checkpoint_continuation":"no continuation; materially different checkpoint question requires a fresh object",
-    "pre_formal":"fresh supported mechanism/reduction object survives ordinary reductions",
-    "formal":"fresh prospectively admissible object plus one-way authority, identity, STARTED, TEST, scorer and preserve path exists"
-  },
-  "do_not_touch": ["all consumed identities and frozen/prospective protocols","authoritative evidence tags and immutable/legacy freeze, preserve and control refs","official TEST/formal scorer/held-out evidence surfaces without fresh formal authority","receptor same-object dynamic continuation","checkpoint continuation cycle 2","completed Homeostasis/Delayed-outcome/Refractory/Suppression/Temporal/Top-k/topology-config/Assembly cross-cascade/prototype-lock-in/fanout-aliasing unless materially reframed","scheduler definitions","open governance PRs/issues except read-only inspection"],
-  "consumed_identities": ["c19-external-v2-official-v4","C19-R1 revision-authority official-v1","C19-R1 revision-authority official-v2","c19-r2-fsa-state-tracker-official-v1","pd01-long-history-fading-memory-official-v1","ni01-no-ignition-selective-prediction-official-v1","h5-event-routing-work-reduction-official-v1"],
-  "real_blockers": ["Assembly lifecycle intent is unspecified and must be characterized before any turnover comparator.","Default/supported max_candidates=256 saturation relevance is not established.","Receptor exact-key supported reachability remains unestablished.","No fresh PRE_FORMAL mechanism survives ordinary reductions.","No fresh FORMAL object or one-way authority exists."],
-  "top3": [
-    {"rank":1,"action":"MAIN: static Assembly mature-capacity lifecycle and supported-reachability Architecture cycle 1","information_value":"HIGH","distance":"NEAR","go_stop":"GO_NON_EVIDENTIARY_STATIC_ARCHITECTURE_ONLY"},
-    {"rank":2,"action":"SUB: one genuinely independent bounded Discovery outside all named exclusions, otherwise explicit no-op","information_value":"MEDIUM","distance":"OPTIONAL","go_stop":"DISCOVERY_ONLY"},
-    {"rank":3,"action":"Keep receptor simultaneity HOLD; only re-admit on independent supported-reachability or explicit simultaneity-contract evidence","information_value":"CONDITIONAL_MEDIUM","distance":"WAIT_FOR_NEW_INFORMATION","go_stop":"STOP_CURRENT_OBJECT"}
+  "blocked_until": [
+    "A_FRESH_COHERENT_MECHANISM_OR_HIGH_VALUE_SYSTEM_OBJECT_IS_INDEPENDENTLY_MOTIVATED",
+    "H7_NATIVE_EXECUTABLE_RESPONSIBILITY_SENSITIVE_OBJECT_EXISTS_BEFORE_ANY_PREFORMAL_READINESS_REVIEW",
+    "FORMAL_REQUIRES_FRESH_ONE_WAY_IDENTITY_AND_AUTHORITY"
   ],
-  "number1_go_stop": {"decision":"GO_NON_EVIDENTIARY_STATIC_ARCHITECTURE_ONLY","go_conditions":["bind stable main/core blobs plus deterministic docs/tests/callsite/config inventory before interpretation","bind terminal map and fact-validity methods before interpretation","source/docs/tests/development configuration metadata only","ordinary exact-head CI/readiness green"],"stop_conditions":["lifecycle semantic must be invented","dynamic saturation/turnover comparator desired","official TEST/consumed/formal surface needed","binding mismatch or unsupported scope","any valid terminal reached"]},
+  "do_not_touch": [
+    "all consumed identities and their frozen/protected evidence",
+    "CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01 same-object saturation/turnover cycle2",
+    "CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01 cycle2 rescue or future feedback implementation under this object",
+    "CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01 same-object dynamic comparator",
+    "CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01 cycle2",
+    "CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01 same-object dynamic comparator",
+    "CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01 retroactive repair/rerun/relabel",
+    "historical Temporal, Top-k, topology-config, Refractory, delayed-outcome, Assembly cross-cascade/prototype-lock-in, fanout-aliasing objects without fresh candidate IDs",
+    "official TEST, formal scoring, STARTED, preserve/evidence mutation without fresh FORMAL authority",
+    "scheduler definitions"
+  ],
+  "consumed_identities": [
+    "c19-external-v2-official-v4",
+    "C19-R1 revision-authority official-v1",
+    "C19-R1 revision-authority official-v2",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "pd01-long-history-fading-memory-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "h5-event-routing-work-reduction-official-v1"
+  ],
+  "consumed_identities_this_run": [],
+  "real_blockers": [
+    "No viable executable MECHANISM candidate is currently available.",
+    "H7 lacks a native executable object, frozen falsifier, and comparator contract.",
+    "No active SYSTEM question has enough independent information value to justify MAIN queue filling after Assembly lifecycle closure.",
+    "PRE_FORMAL has zero eligible and zero READY objects.",
+    "FORMAL has no fresh object, identity, STARTED, TEST/scorer, or preserve authority."
+  ],
+  "top_3": [
+    {
+      "rank": 1,
+      "action": "SUB selects at most one fresh safe nonduplicative bounded Discovery target; mechanism supply is preferred when a coherent mechanism-level falsifier/reduction question exists, otherwise SYSTEM Discovery or explicit no-op is valid.",
+      "claim_ceiling": "CANDIDATE_SPECIFIC_PROSPECTIVE_MECHANISM_OR_SYSTEM",
+      "information_value": "HIGH_FOR_CANDIDATE_SUPPLY",
+      "distance": "NEAR_IF_COHERENT_TARGET_EXISTS",
+      "decision": "GO_DISCOVERY_ONLY_WITH_PROSPECTIVE_TYPING"
+    },
+    {
+      "rank": 2,
+      "action": "Keep MAIN idle rather than fill it with a low-value SYSTEM object; immediately review any newly surfaced coherent central candidate.",
+      "claim_ceiling": "MECHANISM_PREFERRED",
+      "information_value": "HIGH_OPPORTUNITY_COST_CONTROL",
+      "distance": "WAIT_FOR_FRESH_OBJECT",
+      "decision": "STOP_NO_CURRENT_MAIN_OBJECT"
+    },
+    {
+      "rank": 3,
+      "action": "Keep H7 responsibility line in unresolved mechanism hold until a native executable responsibility-sensitive object independently appears.",
+      "claim_ceiling": "MECHANISM",
+      "information_value": "VERY_HIGH_IF_OBJECT_APPEARS",
+      "distance": "FAR",
+      "decision": "STOP_UNTIL_NATIVE_OBJECT"
+    }
+  ],
+  "number_one_go_stop": {
+    "decision": "GO_DISCOVERY_ONLY_WITH_PROSPECTIVE_TYPING",
+    "owner": "SUB",
+    "go_if": [
+      "target is safe, nonduplicative, development/synthetic/read-only",
+      "question and claim_ceiling are assigned before outcome visibility",
+      "MECHANISM label has a coherent mechanism-level falsifier and ordinary-reduction question",
+      "bounded cycle and stop condition are fixed prospectively",
+      "target is independent of MAIN, consumed lines, formal surfaces, and completed-object rescue"
+    ],
+    "stop_if": [
+      "no coherent target exists",
+      "target would merely rename an API/config/reproducibility question as MECHANISM",
+      "outcome knowledge is needed to redesign claim ceiling, comparator, metric, threshold, support rule, model/runtime, or identity",
+      "official TEST, consumed raw, formal scoring, STARTED, preserve/evidence mutation, or scheduler changes would be required"
+    ],
+    "system_priority_exception_used": false
+  },
   "utility_request_created": null,
-  "persistence": {"branch":"ops/evidence-analyst-handoff","paths":["analysis/orchestrator/latest.md","analysis/orchestrator/state.json","analysis/orchestrator/history/2026-09-20/1057.md"],"force_push_allowed":false,"result_commit":null,"limitation":null}
+  "persistence_scope": [
+    "analysis/orchestrator/latest.md",
+    "analysis/orchestrator/state.json",
+    "analysis/orchestrator/history/2026-09-20/1157.md"
+  ],
+  "persistence_limitation": "Write only designated Evidence Analyst handoff paths; no scientific execution or immutable/control/preserve/scheduler mutation."
 }
