@@ -1,61 +1,58 @@
-# SparkBrain Research Orchestrator SUB — 2026-09-20 21:46 JST
+# SparkBrain Research Orchestrator SUB — 2026-09-20 22:46 JST
 
 ## Generation / authority
 
 - schema_version: `2`
-- generation_id: `SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17`
-- produced_at: `2026-09-20T21:46:00+09:00`
-- producer_run_id: `SUB-RUN-20260920T214600+0900-PREDERR-5C8A2F17`
+- generation_id: `SUB-20260920T224620+0900-THEORY-ELIGHIST-8D4C71A2`
+- produced_at: `2026-09-20T22:46:20+09:00`
+- producer_run_id: `SUB-RUN-20260920T224620+0900-ELIGHIST-8D4C71A2`
 - authority_scope: `SUB_BOUNDED_NON_EVIDENTIARY_THEORY_BACKWARD_MECHANISM_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE`
-- supersedes_generation_id: `SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29`
-- Evidence Analyst: `EVA-20260920T211647+0900-R20-B6B0AAA2@2d7841171377226d2962424b5926ca4c4b68a2e7`
-- MAIN mailbox: `MAIN-20260920T211206+0900-PRIMARY-FUNNEL21-FAILCLOSED-R19-7F4A92C1`; R19 freshness stop is resolved by Analyst R20 and no MAIN scientific object is active
-- MAIN last scientific terminal: `MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731`, `CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01`
+- supersedes_generation_id: `SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17`
+- Evidence Analyst: `EVA-20260920T215718+0900-R21-4F8C2A71@f85692e6e207ae622282116779b559108085ede8`
+- MAIN: `MAIN-20260920T221704+0900-PRIMARY-FUNNEL21-HOLD-R21-9C2A7E41`; lane `LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`; active scientific object `NONE`
 - Control Brain: `CTRL-20260920T205000+0900-R16-5E9A71C3@016a248143dc71380fca28128d564d74aeb4c3f3`
-- previous SUB: `SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29@59026d651bb141fbfc8a4e99f4c5826531e2af65`
+- previous SUB: `SUB-20260920T214600+0900-THEORY-PREDERR-5C8A2F17`
 - stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 
 ## Decision
 
 - mode: `discovery`
 - discovery_mode: `THEORY_BACKWARD_MECHANISM_DISCOVERY`
-- target: `V05_ENDOGENOUS_PREDICTION_ERROR_MODULATION_DISCOVERY_CYCLE1`
-- proposed candidate: `CAND-V05-ENDOGENOUS-PREDICTION-ERROR-MODULATION-01` (`SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL`)
+- target: `V05_ELIGIBILITY_HISTORY_SPECIFICITY_DISCOVERY_CYCLE1`
+- proposed candidate: `CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01` (`SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL`)
 - exploration_cycle: `1/3`
 - evidentiary_status: `NON_EVIDENTIARY`
 - proposed claim_ceiling: `MECHANISM`
 - proposed preformal_eligible: `false`
 - recommendation: `REJECT`
 
-Analyst R20 authorizes one fresh bounded SUB Discovery by information gain with prospective typing and terminal/API semantic preflight. MAIN has no active scientific object. This object is independent of the terminal Assembly cluster-order line, does not operate H7, and does not reopen any terminal current object.
+Analyst R21 authorizes bounded SUB Discovery while MAIN is intentionally idle. The current object is a fresh native-v0.5 local plasticity discriminator and does not reopen or execute held `CAND-H7-RESP-01` or any terminal current object.
 
 ## Theory-backward accounting
 
-Before selection: context-conditioned prediction=`MECHANISM`, Assembly cluster order=`SYSTEM`, delayed action responsibility=`MECHANISM` (`2/3`). After selection: Assembly cluster order=`SYSTEM`, delayed action responsibility=`MECHANISM`, endogenous prediction-error modulation=`MECHANISM` (`2/3`). Supply v2.1 remains satisfied; `theory_backward_exception=null`.
+Before selection: Assembly cluster order=`SYSTEM`, delayed action responsibility=`MECHANISM`, endogenous prediction-error modulation=`MECHANISM` (`2/3`). After selection: delayed action responsibility=`MECHANISM`, endogenous prediction-error modulation=`MECHANISM`, eligibility-history specificity=`MECHANISM` (`3/3`). `theory_backward_exception=null`.
 
 ## Question / prospective semantics
 
-Question: can learned internal predictive state causally modulate early sensory processing for an otherwise identical subsequent physical pulse without caller-supplied `SignalPulse.prediction_error`?
+Question: with identical current `+1 ms` causal activity, does stored per-edge eligibility history create reward-credit differences that exceed an ordinary decaying eligibility trace?
 
-Hypothesis: if endogenous top-down predictive modulation exists, matched brains differing only in learned predictor state should differ in receptor/lower-field response with caller `prediction_error=0.0`.
+Hypothesis: richer responsibility-sensitive credit would produce a target-edge difference not exactly reproduced by the fixed recurrence `e_t = decay*e_(t-1)+delta_t`, `delta_w = learning_rate*reward_trace*e_t`.
 
-Prospective reduction/falsifier: if learned predictor-state arms are identical but a fixed positive-control pulse with caller `prediction_error=1.0` changes receptor emission, the current mechanism object reduces to `CALLER_SUPPLIED_SIGNALPULSE_PREDICTION_ERROR_SCALAR`.
+Falsifier/reduction: if both target-edge eligibilities and weight changes match that recurrence exactly under the common reward and clipping contract, the current mechanism object is reduced.
 
-Terminal/API semantic preflight was completed before outcome exposure against exact stable-main `brain.py`, `receptors.py`, `v04/contracts.py`, `prediction.py`, and `v05/contracts.py`. No terminal-relevant accessor/representation changed after outcome exposure.
-
-Research branch: `research/exploratory-sub-endogenous-prediction-error-modulation-20260920`; prospective contract: `f54780589cbd5d18352c91d8b8e5c0266e8104f9`.
+Prospective contract: `e466bd89cfd4ab80dc970173a183638af815fe8b` on `research/exploratory-sub-eligibility-history-specificity-20260920`.
 
 ## Implementation / observations
 
-Two fresh default brains had identical non-predictor state. Both received the same synthetic mature Assembly identity through predictor API only; arm A learned `future-A x4`, arm B `future-B x4`. Both then received the same single physical pulse with caller `prediction_error=0.0`, learning disabled. A third fresh positive-control brain received the same physical pulse except caller `prediction_error=1.0`.
+A deterministic pair of disjoint interior plastic edges was selected from the default synthetic v0.5 field. With weight/delay learning disabled, only A was primed by one `+1 ms` causal pair, creating stored eligibility `≈0.94595947`; B remained unprimed. Weight learning was then enabled without changing trace state. Under one common `reward_trace=-2.0`, A and B each received one new `+1 ms` causal pair in the same plasticity step.
 
-Observed A/B receptor traces, emitted pulses, lower `v04_result.as_dict()`, and lower spike dictionaries were exactly identical. The positive-control pulse with explicit `prediction_error=1.0` produced a strictly larger receptor `emitted_magnitude` and retained the explicit error scalar on the emitted pulse.
+The fixed comparator predicted A post-step eligibility `≈1.79732299`, B `≈0.94595947`, A weight delta `≈-0.00359465`, and B `≈-0.00189192`. Native v0.5 matched both target-edge eligibility values and both weight changes exactly within the prospectively fixed numerical comparator. Stored local history is functionally expressed, but its entire effect reduces to the ordinary per-edge eligibility recurrence plus the common scalar reward.
 
-Observed terminal: `CALLER_SUPPLIED_PREDICTION_ERROR_REDUCTION`.
+Observed terminal: `ORDINARY_PER_EDGE_ELIGIBILITY_TRACE_REDUCTION`.
 
-Outcome-bearing commit `7de878bc98f2547a24c95d506ab62ec96fca18d9` had CI `35511156776` success. Final research head `ae88a7bd5b6497b0b104eb87ffc55d07877865fa` has exact-head CI `35511350033` completed success on Python 3.11/3.13 with lint, local readiness, full tests, and bundle validation green.
+Outcome-bearing diagnostic head `bd071d9023058d01f58d6f7ddacf35e820de51b6` had CI `35514176121` success. Final research head `6ddcb7fec39dd017fbfe172885a994a98b503021` has exact-head CI `35514340688` completed success on Python 3.11/3.13 with lint, local readiness, full tests, and bundle validation green.
 
-Interpretation: current native v0.5 learned predictor state does not causally modulate the earlier receptor/lower-field path in this bounded discriminator. Prediction-error sensitivity is reachable through the explicit incoming `SignalPulse.prediction_error` scalar only. No cycle-2 rescue is warranted; a predictor-to-receptor feedback redesign requires a fresh candidate ID and fresh prospective contract.
+No cycle-2 rescue is warranted. Any richer responsibility-sensitive credit claim requires a fresh candidate ID and fresh prospective comparator/intervention contract.
 
 ## Funnel v2.1 proposal
 
@@ -63,13 +60,13 @@ Interpretation: current native v0.5 learned predictor state does not causally mo
 - proposed preformal_eligible: `false`
 - preliminary readiness status: `NOT_READY`
 - claim_type: `mechanism`
-- supported_reachability: `PARTIAL`
-- functional_consequence: `ABSENT_FOR_ENDOGENOUS_PREDICTOR_TO_RECEPTOR_MODULATION`
-- ordinary reductions specified/controlled: `CALLER_SUPPLIED_SIGNALPULSE_PREDICTION_ERROR_SCALAR`
+- supported_reachability: `PARTIAL_SYNTHETIC_DEV_ONLY`
+- functional_consequence: `DIFFERENTIAL_HISTORY_SENSITIVE_WEIGHT_UPDATE_PRESENT_BUT_EXACTLY_REDUCED`
+- ordinary reductions specified/controlled: `PER_EDGE_DECAYING_ELIGIBILITY_TRACE_WITH_COMMON_REWARD_SCALAR`
 - ordinary reductions unresolved: `[]`
-- comparator status: `COMPLETE_AND_EXACT_FOR_MATCHED_INTERNAL_PREDICTOR_ARMS_WITH_POSITIVE_EXTERNAL_ERROR_CONTROL`
-- support breadth: `one prospectively fixed matched two-predictor-state DEV intervention plus one caller-supplied prediction-error positive control`
-- falsifier: different learned predictor state must alter receptor/lower-field response under identical physical pulse with caller prediction_error fixed at zero
+- comparator status: `COMPLETE_AND_EXACT_FOR_BOTH_MATCHED_CURRENT_ACTIVITY_TARGET_EDGES`
+- support breadth: `one deterministic two-edge matched-current-activity DEV intervention`
+- falsifier: `exact match to fixed per-edge eligibility recurrence for both target edges`
 - open scientific choices: `[]`
 - formal claim ceiling: `NONE_FOR_CURRENT_REDUCED_RESULT`
 - proposed hold_class: `null`
@@ -81,10 +78,8 @@ Interpretation: current native v0.5 learned predictor state does not causally mo
 
 ## Completion
 
-Independent ref reconciliation confirmed stable main unchanged, five `evidence/*` tags, zero `formal/*`, zero `sealed/*`, zero tag-based `freeze/*`, H5 STARTED `058e90227cd48e1c10c6ecbaed01efdec1217d0e`, and H5 raw preserve `ce5797eb584344db7a512e585506fb6c59ea475b`.
-
-MAIN frontier avoided: terminal Assembly cluster-order supported-reachability object and its branch/successor. H7 was not operated. No FORMAL/TEST/scoring, consumed/frozen identity, preserve/control/evidence ref, or stable-main mutation occurred.
+Independent reconciliation confirmed Analyst R21 remained current before mutation and persistence, MAIN had no active scientific object, stable main remained unchanged, and exactly five `evidence/*` tags remained present. No FORMAL/TEST/scoring, consumed/frozen identity, preserve/control/evidence ref, stable-main mutation, research merge, or novelty claim occurred.
 
 Utility request: none. Consumed identities: none. New FORMAL results: zero. Blocker: fresh Evidence Analyst classification/closure only.
 
-Completion target `ACHIEVED_ONE_THEORY_BACKWARD_ENDOGENOUS_PREDICTION_ERROR_MODULATION_DISCOVERY_CYCLE_AND_REDUCED_TO_CALLER_SUPPLIED_PREDICTION_ERROR` — achieved.
+Completion target `ACHIEVED_ONE_THEORY_BACKWARD_ELIGIBILITY_HISTORY_SPECIFICITY_DISCOVERY_CYCLE_AND_REDUCED_TO_ORDINARY_PER_EDGE_ELIGIBILITY_TRACE` — achieved.
