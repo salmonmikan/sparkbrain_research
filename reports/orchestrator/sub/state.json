@@ -1,21 +1,22 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260920T194640+0900-SYSTEM-ASMORDER-BA8FDEBE",
-  "produced_at": "2026-09-20T19:46:40+09:00",
-  "producer_run_id": "SUB-RUN-20260920T194640+0900-ASMORDER-BA8FDEBE",
-  "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_SYSTEM_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91",
+  "generation_id": "SUB-20260920T204649+0900-THEORY-ACTRESP-B71C4E29",
+  "produced_at": "2026-09-20T20:46:49+09:00",
+  "producer_run_id": "SUB-RUN-20260920T204649+0900-ACTRESP-B71C4E29",
+  "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_THEORY_BACKWARD_MECHANISM_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
+  "supersedes_generation_id": "SUB-20260920T194640+0900-SYSTEM-ASMORDER-BA8FDEBE",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260920T190536+0900-R18-AC1DB49E",
-      "handoff_commit": "fec9320a8e8c868f4df91dafb1af75c640ae995a",
-      "branch_tip_observed": "fec9320a8e8c868f4df91dafb1af75c640ae995a"
+      "generation_id": "EVA-20260920T195817+0900-R19-B6E2F41A",
+      "handoff_commit": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
+      "branch_tip_observed": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433"
     },
     "main": {
-      "generation_id": "MAIN-20260920T191546+0900-PRIMARY-FUNNEL21-HOLD-R18-8C2F41D7",
-      "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-      "active_scientific_object": null,
-      "mailbox_branch_tip_observed": "9d2bb49356d4ad3c009ce7a049f3a2285035a5e4"
+      "generation_id": "MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731",
+      "main_lane": "ASSEMBLY_CLUSTER_ORDER_SUPPORTED_REACHABILITY_ARCHITECTURE_STUDY_CYCLE1_STATIC",
+      "active_scientific_object": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
+      "status": "COMPLETED_STOP_FRESH_ANALYST_REVIEW",
+      "mailbox_branch_tip_observed": "d779929417663fcd029e6f91742ab73002c41f5e"
     },
     "control_brain": {
       "generation_id": "CTRL-20260920T165000+0900-R15-6C2F8A41",
@@ -23,41 +24,49 @@
       "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260920T184410+0900-THEORY-CONTEXTPRED-7A4C2E91",
+      "generation_id": "SUB-20260920T194640+0900-SYSTEM-ASMORDER-BA8FDEBE",
       "mode": "discovery"
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_commit": "fec9320a8e8c868f4df91dafb1af75c640ae995a",
-    "analyst_generation": "EVA-20260920T190536+0900-R18-AC1DB49E",
-    "main_mailbox_tip_before_persistence": "9d2bb49356d4ad3c009ce7a049f3a2285035a5e4",
+    "analyst_handoff_commit": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
+    "analyst_generation": "EVA-20260920T195817+0900-R19-B6E2F41A",
+    "main_generation": "MAIN-20260920T201624+0900-PRIMARY-FUNNEL21-ARCHSYS-R19-D4E9B731",
+    "main_mailbox_tip_before_persistence": "d779929417663fcd029e6f91742ab73002c41f5e",
     "control_handoff_commit": "64611f391391844d60659732a50a22cf009a5797",
-    "research_branch": "research/exploratory-sub-assembly-cluster-order-20260920",
-    "prospective_contract_commit": "7e2646cfb1a83f5cbbec0b22c5dcf2a706f8022d",
-    "pre_outcome_lint_correction_commit": "fca8ad5a5214cc9ca67c157ef45c5d129a3f66d7",
-    "research_head": "6f14715a856f3ae308d9dbe2d5bb35534823372c",
-    "corrected_diagnostic_ci": 35505715764,
-    "final_exact_head_ci": 35505873447,
+    "research_branch": "research/exploratory-sub-delayed-action-responsibility-20260920",
+    "prospective_contract_commit": "c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab",
+    "outcome_bearing_commit": "1117b56de8845c3200c1f1acd5f04d999743a4e5",
+    "research_head": "411913e0b3a0493595969513bf0b7829c49cc248",
+    "diagnostic_ci": 35508500991,
+    "final_exact_head_ci": 35508632370,
+    "stable_action_blob": "792cba20ec5411633f12478d641adf35dba505e3",
+    "stable_contracts_blob": "048b93cddb16dbe9276a0e2c0f972406291c1cb2",
+    "stable_brain_blob": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
-    "freeze_tag_count": 0
+    "freeze_tag_count": 0,
+    "legacy_freeze_branch_count": 13
   },
   "mode": "discovery",
-  "discovery_mode": "SYSTEM_DISCOVERY",
-  "exploratory_target": "V05_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE_DISCOVERY_CYCLE1",
-  "candidate_pool_id": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-DEPENDENCE-01",
+  "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
+  "exploratory_target": "V05_DELAYED_ACTION_RESPONSIBILITY_DISCOVERY_CYCLE1",
+  "candidate_pool_id": "CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01",
   "candidate_status": "SUB_PROPOSED_NOT_YET_ANALYST_CANONICAL",
   "exploration_cycle": "1/3",
-  "same_generation_autonomous_progress_reason": "Analyst R18 explicitly leaves bounded fresh SUB Discovery available; no formal sub_lane/fallback or usable candidate-pool target existed, MAIN had no active object, and this bounded SYSTEM question was nonduplicative with exclusions and cycle budget satisfied.",
+  "same_generation_autonomous_progress_reason": "Analyst R19 explicitly leaves SUB on independent bounded Discovery, with no reserved formal sub_lane or concrete sub_fallback object. The selected native action-credit discriminator is nonduplicative with MAIN's completed cluster-order SYSTEM Architecture object, respects all exclusions and cycle budgets, and the rolling theory-backward floor was already satisfied.",
   "main_frontier_avoided": {
-    "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-    "active_main_object": null,
+    "main_lane": "ASSEMBLY_CLUSTER_ORDER_SUPPORTED_REACHABILITY_ARCHITECTURE_STUDY_CYCLE1_STATIC",
+    "active_main_object": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
+    "main_status": "COMPLETED_STOP_FRESH_ANALYST_REVIEW",
     "avoided": [
-      "CAND-H7-RESP-01",
+      "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
+      "ITS_RESEARCH_BRANCH_AND_IMMEDIATE_OUTCOME_DEPENDENT_SUCCESSOR",
+      "CAND-H7-RESP-01_AS_FORMAL_OR_PREFORMAL_OBJECT",
       "ALL_ANALYST_TERMINAL_CURRENT_OBJECTS",
       "FORMAL_TEST_SCORING",
       "CONSUMED_FROZEN_IDENTITIES",
@@ -67,47 +76,45 @@
   },
   "theory_backward_accounting": {
     "previous_last_three_autonomous_selections": [
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ENDOGENOUS_CONTINUATION",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_PRESEMANTIC_FUNCTION_TRANSFER",
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_CONTEXT_CONDITIONED_PREDICTION"
-    ],
-    "previous_qualifying_count": 3,
-    "current_selection": "SYSTEM_DISCOVERY:V05_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE",
-    "last_three_autonomous_selections": [
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_PRESEMANTIC_FUNCTION_TRANSFER",
       "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_CONTEXT_CONDITIONED_PREDICTION",
       "SYSTEM_DISCOVERY:V05_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE"
+    ],
+    "previous_qualifying_count": 2,
+    "current_selection": "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_ACTION_RESPONSIBILITY",
+    "last_three_autonomous_selections": [
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_CONTEXT_CONDITIONED_PREDICTION",
+      "SYSTEM_DISCOVERY:V05_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE",
+      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_DELAYED_ACTION_RESPONSIBILITY"
     ],
     "qualifying_count": 2,
     "window_size": 3,
     "theory_backward_exception": null
   },
-  "question": "Can TemporalAssemblyMemory assign a different candidate partition to the same multiset of DEV patterns solely because the immutable first-seen prototype differs with presentation order?",
-  "hypothesis": "Immutable first-prototype anchoring makes non-transitive similarity bridge sets partition differently under different presentation orders.",
-  "reduction_question": "Is the observed partition difference fully explained as deterministic SYSTEM-level first-prototype threshold clustering, without any mechanism-level interpretation?",
-  "falsifier": "Candidate count and pattern membership are equivalent modulo assembly-ID renaming across the prospectively fixed ABC and BAC arms.",
+  "question": "Can native v0.5 action-credit state preserve causal responsibility for an earlier Assembly/action when scalar reward arrives only after a distinct later eligible Assembly/action has occurred?",
+  "hypothesis": "If native action credit carries responsibility beyond the most recent action, delayed reward can still selectively update the earlier Assembly/action across an intervening eligible choice without extra identity, replay, or privilege.",
+  "reduction_question": "Does the native action-credit behavior reduce exactly to a one-slot last-action pending register in which the later eligible choice overwrites the earlier one?",
+  "falsifier": "After choose(A), choose(B), reward(+1), the earlier A score must change while B remains unchanged for earlier-responsibility persistence; an exact A=0/B=+0.30 match to the fixed one-slot last-action comparator reduces the mechanism object.",
   "inputs_used": {
-    "scientific_inputs": "DEV_ONLY_SYNTHETIC_ACTIVITY_PATTERN_TRIAD_A_B_C_AND_STABLE_MAIN_TEMPORAL_ASSEMBLY_MEMORY",
+    "scientific_inputs": "DEV_ONLY_SYNTHETIC_MATURE_ASSEMBLY_ACTIVATIONS_AND_STABLE_MAIN_ACTION_POLICY",
     "formal_or_sealed_test_used": false,
     "official_scorer_used": false,
-    "consumed_identity_used": false
+    "consumed_identity_used": false,
+    "repository_evidence_dataset_used": false
   },
   "implementation": {
     "research_branch_created_or_modified": true,
-    "prospective_contract_commit": "7e2646cfb1a83f5cbbec0b22c5dcf2a706f8022d",
-    "initial_test_commit": "79de3cccca7f71375466abc6d5ba0aa3ca79c67e",
-    "initial_ci": {
-      "run_id": 35505600594,
-      "outcome": "lint_failure_before_test_no_scientific_outcome"
-    },
-    "pre_outcome_science_invariant_correction": "fca8ad5a5214cc9ca67c157ef45c5d129a3f66d7",
-    "corrected_ci": {
-      "run_id": 35505715764,
+    "semantic_api_preflight_completed_before_outcome": true,
+    "terminal_relevant_post_outcome_repairs": 0,
+    "prospective_contract_commit": "c2fed3a55fe3bde9af8245d1a0d0ce66f9b245ab",
+    "outcome_bearing_commit": "1117b56de8845c3200c1f1acd5f04d999743a4e5",
+    "diagnostic_ci": {
+      "run_id": 35508500991,
       "outcome": "completed_success"
     },
-    "result_commit": "6f14715a856f3ae308d9dbe2d5bb35534823372c",
+    "result_commit": "411913e0b3a0493595969513bf0b7829c49cc248",
     "final_exact_head_ci": {
-      "run_id": 35505873447,
+      "run_id": 35508632370,
       "outcome": "completed_success",
       "python_3_11": "completed_success",
       "python_3_13": "completed_success",
@@ -118,53 +125,69 @@
     }
   },
   "observations": {
-    "similarities": {
-      "A_B": 0.7625,
-      "B_C": 0.7625,
-      "A_C": 0.625
+    "immediate_A_positive_control": {
+      "chosen_action": "action-0",
+      "score_before": 0.0,
+      "score_after_reward_plus_1": 0.3
     },
-    "threshold": 0.66,
-    "ABC": {
-      "candidate_count": 2,
-      "partition": "A+B | C"
+    "delayed_A_after_B": {
+      "A_action": "action-0",
+      "B_action": "action-0",
+      "pending_before_reward": ["assembly-B", "action-0"],
+      "A_score_after_reward": 0.0,
+      "B_score_after_reward": 0.3
     },
-    "BAC": {
-      "candidate_count": 1,
-      "partition": "A+B+C"
+    "ordinary_last_pending_comparator": {
+      "assembly-A": 0.0,
+      "assembly-B": 0.3
     },
-    "terminal": "ORDER_DEPENDENT_CLUSTER_PARTITION",
-    "scientific_result": "SAME_PATTERN_MULTISET_PARTITIONS_DIFFERENTLY_BY_PRESENTATION_ORDER_DUE_TO_IMMUTABLE_FIRST_PROTOTYPE_ANCHORING"
+    "terminal": "LAST_PENDING_ACTION_REDUCTION",
+    "scientific_result": "EARLIER_ACTION_RESPONSIBILITY_NOT_PRESERVED_ACROSS_INTERVENING_ELIGIBLE_ACTION;_DELAYED_REWARD_UPDATES_MOST_RECENT_PENDING_PAIR_ONLY"
   },
   "evidentiary_status": "NON_EVIDENTIARY",
-  "proposed_claim_ceiling": "SYSTEM",
+  "proposed_claim_ceiling": "MECHANISM",
   "proposed_preformal_eligible": false,
-  "preliminary_preformal_readiness": "N/A_FOR_SYSTEM_OBJECT",
+  "preliminary_preformal_readiness": {
+    "claim_type": "mechanism",
+    "supported_reachability": "PARTIAL",
+    "functional_consequence": "ABSENT_FOR_EARLIER_RESPONSIBILITY_ACROSS_INTERVENING_ACTION",
+    "ordinary_reductions_specified_or_controlled": ["ONE_SLOT_LAST_ACTION_PENDING_REGISTER"],
+    "ordinary_reductions_unresolved": [],
+    "matched_comparator_status": "COMPLETE_AND_EXACT",
+    "qualitative_support_breadth": "one prospectively fixed two-Assembly synthetic DEV component discriminator plus immediate positive control",
+    "falsifier_definition": "Earlier A must receive delayed reward across B without extra caller-supplied identity, replay, or privilege.",
+    "open_scientific_choices": [],
+    "formal_claim_ceiling": "NONE_FOR_CURRENT_REDUCED_RESULT",
+    "status": "NOT_READY"
+  },
   "proposed_hold_dimensions": {
     "hold_class": null,
     "hold_reason": null,
-    "terminal_state": "ACTIVE",
-    "queue_state": "QUEUED"
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "queue_state": "NOT_QUEUED"
   },
   "system_priority_exception": {
     "used": false
   },
-  "candidate_next_research_layer": "ARCHITECTURE_STUDY_ASSEMBLY_CLUSTER_ORDER_DEPENDENCE_CONTRACT",
-  "open_scientific_choices": "Supported integrated reachability of bridge triads; whether presentation order is intended semantics; sensitivity breadth; downstream functional consequence. Any mitigation or mechanism successor requires a fresh object.",
-  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
+  "candidate_next_research_layer": "NONE",
+  "open_scientific_choices": [],
+  "recommendation": "REJECT",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
   "blockers": [
-    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_AND_PROMOTION_DECISION_FOR_CAND-V05-ASSEMBLY-CLUSTER-ORDER-DEPENDENCE-01"
+    "FRESH_EVIDENCE_ANALYST_CLASSIFICATION_AND_CLOSURE_FOR_CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01"
   ],
-  "completion_target": "ACHIEVED_ONE_BOUNDED_SYSTEM_ASSEMBLY_CLUSTER_ORDER_DISCOVERY_CYCLE_AND_FOUND_FIRST_PROTOTYPE_ORDER_DEPENDENT_PARTITION",
+  "completion_target": "ACHIEVED_ONE_THEORY_BACKWARD_DELAYED_ACTION_RESPONSIBILITY_DISCOVERY_CYCLE_AND_REDUCED_TO_ONE_SLOT_LAST_ACTION_PENDING_REGISTER",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-20/1946-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-20/2046-sub.md",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "base_mailbox_tip": "9d2bb49356d4ad3c009ce7a049f3a2285035a5e4"
+    "base_mailbox_tip": "d779929417663fcd029e6f91742ab73002c41f5e",
+    "history_commit": "3a2fb7e9098ebf35f8d604dd6616227a5ac29efa",
+    "latest_commit": "cc2df68758783a8d35c91343935ded3f88b218b3"
   },
   "persistence_limitations": []
 }
