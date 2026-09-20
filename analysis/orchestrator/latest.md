@@ -1,80 +1,98 @@
-# SparkBrain Evidence Analyst — 2026-09-20 07:59 JST
+# SparkBrain Evidence Analyst — 2026-09-20 08:59 JST
 
 ## Executive decision
 
-No new FORMAL scientific evidence exists. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative `evidence/*` remains five tags; `formal/*`, `sealed/*`, and tag-based `freeze/*` remain empty. The new material lower-funnel facts are: (1) MAIN completed `CAND-REFRACTORY-CURRENT-ACCOUNTING-01` with valid NON_EVIDENTIARY terminal `FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT`; (2) SUB completed `ASSEMBLY_MATURE_CAPACITY_LOCKOUT_DISCOVERY_CYCLE1` and exposed a resource-policy lockout that merits one fresh Architecture characterization; and (3) Utility confirmed the completed suppression artifact contains a deterministic static-extractor false negative, without changing its historical `AMBIGUOUS_CONTRACT` terminal.
+No new FORMAL scientific evidence exists. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative `evidence/*` remains five annotated tags; `formal/*`, `sealed/*`, and tag-based `freeze/*` remain empty. Fresh repository checks also show 13 legacy `freeze/*` branches, preserved `control/*` / `preserve/*` lines, zero repository rulesets, and no new one-way scientific identity.
 
-## MAIN result review
+Two lower-funnel updates are material. MAIN completed `CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01` with valid NON_EVIDENTIARY terminal `IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED`; current supported repository callsites are immediate, while the public contract does not explicitly promise delayed/interleaved credit. SUB independently completed `HOMEOSTASIS_RECEPTOR_DEAD_MASK_DISCOVERY_CYCLE1`: receptor-only spikes can keep public `StabilitySnapshot.dead=false` while the internal reservoir is silent because homeostasis accounts the entire field. This fresh Discovery is promoted to one static Architecture contract characterization as `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01`.
 
-MAIN exact head `4589192d927e40cf7a05cf8a94207efb42ebbc65` passed ordinary CI `35472786733` and Architecture workflow `35472786687`. Artifact `10593866036` has GitHub archive digest `sha256:b4dfbf04ab2f1dbb69fcee3833890ce6ad30d85a0c095a4699cde356c43e9115`; independently reconciled raw SHA-256 is `4587b7e0ee1404f3f78f8a0c83c8224fea3d632e8a25162cb0ae586dc4a5712e`. The narrow pre-outcome comment-detector normalization preserved the already-bound scientific contract and occurred before outcome visibility.
+## MAIN result review — delayed outcome
 
-The fixed balanced same-time refractory arm showed production retained potential `0.4729797344533827` versus shadow `-0.027020265546617295`, followed by one production post-refractory probe spike versus zero in the positive-ignore shadow. The prospectively fixed terminal is therefore `FUNCTIONAL_REFRACTORY_ACCOUNTING_EFFECT`.
+MAIN exact head `c79c5434222a6d018931dc1752e7f0074c23854b` passed ordinary CI `35475862604`. Cycle 1 was static/read-only: no dynamic interleaving probe and no outcome-bearing scientific workflow was run. Raw facts were committed before interpretation under exact bound source/callsite scope.
 
-Interpretation is claim-type separated. This supports architecture/API-state semantics, engineering/reproducibility value, and testbed value. It does not support a new computational principle, mechanistic distinctness, biological novelty, or broader prevalence. Literature independently supports ordinary reduction through signed-current aggregation, explicit refractory discard/defer/clamp/integrate policy, retained state, and post-refractory sensitivity. `CAND-REFRACTORY-CURRENT-ACCOUNTING-01` is now `HOLD`; same-object cycle 2 and automatic PRE_FORMAL promotion are prohibited.
+The fixed repository surface contains one `learn_outcome` definition and three supported callers. Every observed caller invokes `learn_outcome()` after the relevant outcome is known and without an intervening `process_episode()`. `process_episode()` does overwrite the single mutable pending activation/action credit state and `learn_outcome()` carries no episode/decision identity, but there is no explicit supported delayed/interleaved caller and no explicit public immediate-only contract either. The prospectively fixed terminal is therefore `IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED`.
 
-## SUB Discovery review
+Analyst disposition: `CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01 = HOLD`. This is an API-contract ambiguity / unsupported-use hazard, not a demonstrated supported-path credit defect and not mechanistic novelty. Same-object dynamic cycle 2 is not authorized. A future delayed/interleaved question requires a genuinely fresh prospective object only if independent repository evidence first establishes that delayed/interleaved credit is a supported requirement.
 
-SUB exact head `3cac844ca6a80725c87d7e681c23b703f35150c2` completed ordinary CI `35474327443` successfully on the independent NON_EVIDENTIARY target `ASSEMBLY_MATURE_CAPACITY_LOCKOUT_DISCOVERY_CYCLE1`.
+## SUB Discovery review — homeostasis population semantics
 
-With fixed synthetic `max_candidates=2`, two mature dissimilar candidates permanently occupy both slots and a third dissimilar pattern receives no candidate at 100 ms or 1000 ms. Under an otherwise matched condition where the second candidate is still immature, stale pruning removes it and admits the third pattern. Stable source explains the effect directly: at capacity `observe()` calls `prune()`, while `prune()` only removes stale candidates whose `episode_count <= immature_stale_episodes`; mature candidates are outside that reclamation path. Default configuration preserves the structural relation (`mature_episodes=3`, `immature_stale_episodes=2`, `max_candidates=256`), but supported/default workload saturation is not established.
+SUB exact head `8a2fa2efa7ac13ea7a1a835c14e8ea0f8013d71f` passed exact-head CI `35476878641` and stopped after one bounded NON_EVIDENTIARY Discovery cycle.
 
-Analyst review: `PROMOTE_TO_ARCHITECTURE_STUDY`. New candidate `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` is queued behind the current MAIN object. This is a resource/lifecycle semantics question, not a rescue of prior Assembly prototype-lock-in or cross-cascade lines. It remains NON_EVIDENTIARY and must first bind whether mature assemblies are intended to be permanent lifetime memory or a reclaimable working set, plus whether supported DEV horizons can plausibly approach saturation.
+The fixed synthetic field contained one receptor unit and one silent internal-reservoir unit. Across six windows, one receptor spike per window produced `dead=false`, `dead_streak=0`, and `active_unit_fraction=0.5` while the internal reservoir remained at `rate_ema=0.0`. Empty control and the matched receptor-filtered shadow both reached `dead=true`, `dead_streak=6`, `active_unit_fraction=0.0`.
 
-## Current MAIN object
+Stable source independently confirms the ordinary reduction. `HomeostaticController.observe()` counts every supplied spike, resets `dead_streak` on any nonempty row set, computes `active_unit_fraction` against all field units, and updates rate/threshold state for every unit; there is no receptor filter. The public evaluation path consumes `result.stability.dead` and aggregates `dead_rate`. Thus the effect is a real architecture/testbed observability-contract issue, but it is fully explainable by all-field accounting; it is not a new stability mechanism or computational principle.
 
-MAIN now owns `CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01` as `V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1`.
+SUB review classification: `PROMOTE_TO_ARCHITECTURE_STUDY`. New candidate `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01` is admitted for one static/read-only Architecture cycle. The scientific/API choices still open are the intended population represented by `dead` and `active_unit_fraction`, whether receptor units are intentionally part of the same homeostatic population, and whether supported monitoring/evaluation consumers require reservoir-specific liveness. No matched dynamic comparator is authorized in the same run because choosing a receptor-aware population policy before the supported contract is characterized would bake in a semantic answer.
 
-Cycle 1 is static/read-only Architecture characterization only. Bind stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, `src/sparkbrain/v05/brain.py@652552f8dc6a53a68e441f593e9bfd82cebb9f7c`, `src/sparkbrain/v05/evaluation.py@efd52d236708aea3bf23b6139d8717b1ac1d0559`, `tests/v05/test_v05_brain.py@6a81994ac82a3f0660585ef0d95495aaaa336629`, and `examples/v05_assembly_demo.py@e4bab1adf0bfc66db3d6c72ba8d934d151cbeaf1`. The fixed repository callsite surface is every `learn_outcome(` occurrence on stable main: implementation plus evaluation, test, and example callsites.
+Claim-type separation is explicit: potential architecture/system-integration, engineering/reproducibility, and research/testbed value are high enough to study; new computational-principle and mechanistic-distinctness support are absent.
 
-Record before interpretation: whether public/source docs explicitly constrain `learn_outcome` to the immediately preceding `process_episode`; whether delayed/interleaved use is explicitly supported; whether any supported callsite has an intervening `process_episode`; the presence and overwrite points of the single mutable `pending_activation` / action-policy pending state; and whether `learn_outcome` carries any episode/decision identity.
+## Research funnel and allocation
 
-Prospective terminal mapping is fixed to: `EXPLICIT_IMMEDIATE_ONLY_PUBLIC_CONTRACT`, `EXPLICIT_DELAYED_OR_INTERLEAVED_PUBLIC_CONTRACT_WITH_IDENTITY_GAP`, `IMMEDIATE_ONLY_USAGE_BUT_PUBLIC_CONTRACT_UNSPECIFIED`, `MIXED_OR_CONTRADICTORY_CALLER_CONTRACT`, or `INVALID_STATIC_CHARACTERIZATION`. Every terminal STOPs for fresh Analyst review. No dynamic interleaving run is authorized in this cycle. A future dynamic identity-bound comparator requires fresh prospective authority only if the static contract establishes a supported delayed/interleaved question that remains unresolved.
+- `DISCOVERY`: `OPEN`, SUB default, strictly `NON_EVIDENTIARY`.
+- `ARCHITECTURE_STUDY`: `ACTIVE_AUTHORIZED_PENDING_MAIN_PROSPECTIVE_BINDING`; MAIN current object `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01`; queued `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` remains behind fresh review.
+- `PRE_FORMAL`: `EMPTY_HOLD`; no fresh mechanism survives ordinary reductions strongly enough for admission.
+- `FORMAL`: `EMPTY_HOLD`; no fresh formal object, identity, STARTED, TEST, scorer, preserve, or evidence authority.
 
-## Funnel and allocation
-
-- `DISCOVERY`: `OPEN`, SUB default, strictly NON_EVIDENTIARY.
-- `ARCHITECTURE_STUDY`: `ACTIVE_AUTHORIZED_PENDING_MAIN_PROSPECTIVE_BINDING`, MAIN current object `CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01`; queued `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01`.
-- `PRE_FORMAL`: `EMPTY_HOLD`.
-- `FORMAL`: `EMPTY_HOLD`; no fresh identity, STARTED, TEST, scorer, preserve, or evidence authority.
-
-`main_lane = V05_DELAYED_OUTCOME_CALLER_CONTRACT_ARCHITECTURE_STUDY_CYCLE1`.
+`main_lane = V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1`.
 `sub_lane = BOUNDED_SECONDARY_DISCOVERY`.
 `sub_fallback = NO_OP_WITH_OBSERVABLE_LEVEL_DUPLICATION_OR_LOW_VALUE_REASON`.
 
-SUB must not continue the promoted Assembly-capacity object, the active delayed-outcome object, Refractory follow-up, suppression methodology work, Top-k/H7 construction, MAIN blockers, or any FORMAL/TEST/scoring/preserve/evidence surface.
+MAIN owns the entire static Architecture critical path: prospective exact-source/docs/tests/callsite binding, fact-type-appropriate structural extraction, CI/readiness, raw facts before interpretation, terminal mapping, and handoff fidelity. SUB must not continue Homeostasis, Assembly mature-capacity, delayed-outcome, Refractory, Suppression, Top-k/H7, MAIN blockers, Utility/control-plane tasks, or FORMAL/TEST/scoring/preserve/evidence surfaces.
 
-## Methodology / Utility / Audit / governance
+## Current MAIN prospective contract
 
-Methodology Calibration at 07:21 remains `MIXED_CALIBRATION`: keep the scientific hard floor and novelty bar unchanged; keep narrowly science-invariant pre-outcome representation repair under unchanged bindings; tighten decision-relevant machine-fact extractor validity and avoid brittle literal/format-sensitive semantic detectors.
+Cycle 1 is static/read-only only. Bind stable `main`, `src/sparkbrain/v05/homeostasis.py@67b87a4b4c91a7dba41670087a2d1803bb6e3e6c`, the v0.5 brain callsite that supplies `base_result.spikes`, the `StabilitySnapshot` contract, all stable-main evaluation/tests/docs that consume or define `dead`, `active_unit_fraction`, rate/threshold homeostasis, and exact source blobs before interpretation.
 
-Utility assignment `CTRL-20260920-0650-SUPPRESSION-STATIC-DETECTOR-CONSISTENCY` completed one read-only run with `STATIC_EXTRACTOR_FALSE_NEGATIVE_CONFIRMED`. Exact bound source restores the saved threshold, while the completed artifact recorded `restore_restores_original_base_threshold=false`; the derived `implementation_state_preserving=false` is therefore also not trustworthy as source-semantic authority. The historical `AMBIGUOUS_CONTRACT` terminal remains unchanged and must not be repaired, rerun, rescored, or relabeled. No new Utility request is created.
+Decision-relevant machine facts must use an extraction/validation method appropriate to the fact type; executable structure should prefer AST/typed/structural checks over brittle raw-string matching. Record whether the public/source contract explicitly defines whole-field versus reservoir liveness, whether receptor inclusion is documented or tested, which supported callers consume `dead`/`active_unit_fraction`, and whether any supported contract contradicts all-field implementation. No dynamic receptor-aware comparator, policy change, production modification, official TEST, consumed raw, or formal surface is authorized.
 
-Independent Audit remains H5 `ROBUST_SO_FAR` only for the exact registered aggregate algorithmic-work claim. H5 remains consumed/closed; global eligibility maintenance is an architecture bottleneck finding, not a general event-routing/lazy-execution no-go theorem.
+Prospective terminals are fixed before result inspection:
 
-Repository Steward at 07:50 is consumed as governance advisory only and independently agrees there is no FORMAL evidence change. Fresh repository checks show `main` unprotected, zero repository rulesets, Issue #139 open and current, and PR #148/#149 open, mergeable, and unmerged. These are governance gaps, not science blockers.
+- `EXPLICIT_WHOLE_FIELD_STABILITY_CONTRACT`: implementation and supported contract agree that receptor activity counts toward liveness; STOP and reduce current concern to architecture/engineering note only.
+- `EXPLICIT_RESERVOIR_LIVENESS_CONTRACT_WITH_ACCOUNTING_GAP`: supported contract requires reservoir/internal-computation liveness but implementation accounts all field activity; STOP for fresh Analyst review. Any matched dynamic comparator is a fresh object.
+- `WHOLE_FIELD_IMPLEMENTATION_WITH_PUBLIC_POPULATION_UNSPECIFIED`: implementation is all-field but supported public meaning is unspecified; STOP/HOLD as API/observability ambiguity.
+- `MIXED_OR_CONTRADICTORY_STABILITY_POPULATION_CONTRACT`: docs/tests/callers disagree materially; STOP/HOLD.
+- `INVALID_STATIC_CHARACTERIZATION`: discard and STOP.
+
+Every valid terminal returns to fresh Analyst review. No same-run dynamic continuation and no automatic PRE_FORMAL/FORMAL promotion.
 
 ## Candidate pool
 
-1. `CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01` — `ARCHITECTURE_STUDY`; active MAIN static caller-contract characterization; Discovery 1 / Architecture 0.
-2. `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` — `ARCHITECTURE_STUDY`; queued; Discovery 1 / Architecture 0; default/supported saturation relevance remains open.
-3. `CAND-REFRACTORY-CURRENT-ACCOUNTING-01` — `HOLD`; Discovery 1 / Architecture 1; valid functional Architecture effect, current question answered, no same-object cycle 2.
-4. `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` — `HOLD`; completed terminal remains `AMBIGUOUS_CONTRACT`; extractor false negative confirmed; only a genuinely fresh prospective semantics object may revisit the API if independently valuable.
-5. `CAND-H7-RESP-01` — `HOLD`; no native online/local responsibility-sensitive mechanism currently exists.
+| Candidate | Classification | Question / information value | Ordinary reduction / open choices | Cycles / promotion condition |
+| --- | --- | --- | --- | --- |
+| `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01` | `ARCHITECTURE_STUDY` | What population does public homeostatic liveness/stability represent? High Architecture/testbed value, very near. Fresh independent Discovery, not a consumed-line rescue. | All-field accounting may be intentional; receptor-only silent-reservoir state may be edge-case; supported population/consumer semantics are open. | D1/A0. One static contract cycle. Any valid terminal STOPs; dynamic comparator needs fresh authority. |
+| `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` | `ARCHITECTURE_STUDY` | Does mature retention create a hard lifetime learning cap under supported horizons? Medium-high Architecture value, near-medium. | Fixed resource budget, immature-only pruning, permanent-memory intent, and unsupported synthetic saturation. | D1/A0. Queued. First bind intended lifecycle and plausible default saturation; no comparator yet. |
+| `CAND-V05-DELAYED-OUTCOME-ATTRIBUTION-01` | `HOLD` | Is delayed/interleaved outcome credit supported? Static cycle found immediate usage but unspecified public contract. | Single pending-slot bookkeeping and unsupported async usage are ordinary explanations. | D1/A1. Closed current question; no dynamic cycle unless fresh supported requirement appears. |
+| `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` | `HOLD` | Historical suppression API semantics. | Threshold blockade, retained state, lazy decay; completed artifact also had confirmed static-extractor false negative. | D1/A1/U1. Historical `AMBIGUOUS_CONTRACT` unchanged; no repair/relabel/rerun. |
+| `CAND-H7-RESP-01` | `HOLD` | Native online/local responsibility-sensitive mechanism, if one independently appears. | Actual-causality and ordinary local-learning reductions; equal privilege unresolved because no native object exists. | PF0. No queue-filler construction. |
 
-Top-k, Temporal batching, topology-config, Assembly cross-cascade, fanout-alias, receptor-polarity and other answered/rejected lower-funnel objects remain historical `do_not_touch` unless materially reframed as fresh questions.
+Completed Refractory, Temporal, Top-k, topology-config, Assembly cross-cascade/prototype-lockin, fanout-aliasing and other answered/rejected lower-funnel objects remain historical `do_not_touch` unless materially reframed as genuinely fresh questions.
+
+## External / methodology inputs consumed
+
+Control Brain 08:50 remains a strategic prior only: `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`, no doctrine change, and it independently reports the delayed-outcome terminal plus fresh Homeostasis Discovery pending Analyst review. Current repository evidence above determines this allocation.
+
+Literature Scout has no newer run than 06:30; its latest material input remains the Refractory ordinary-reduction boundary and does not alter the current Homeostasis or Assembly ranking. Independent Audit remains H5 `ROBUST_SO_FAR` only for the exact registered aggregate algorithmic-work claim; H5 stays consumed/closed and does not imply a general event-routing/lazy-execution no-go theorem.
+
+Methodology Calibration at 08:20 remains `MIXED_CALIBRATION`. The scientific hard floor and novelty bar remain unchanged. Keep prospective exact binding, raw-before-interpretation, claim-type separation, and stop-after-Architecture-cycle. Tighten only decision-relevant machine-fact extractor fidelity and handoff binding; this Homeostasis static cycle is a suitable real successor decision on which to apply those prospective safeguards.
+
+Repository Steward 07:50 is governance advisory only. Fresh remote checks independently confirm five evidence tags, 13 legacy freeze branches, zero rulesets, Issue #139 open, and PR #148/#149 open/unmerged. These remain governance gaps rather than science blockers.
 
 ## Top 3 / GO-STOP
 
-1. MAIN: delayed-outcome caller-contract Architecture cycle 1 — `HIGH / VERY_NEAR` — **GO_NON_EVIDENTIARY_STATIC_ARCHITECTURE_ONLY**.
-2. Queued MAIN future: Assembly mature-capacity/lifecycle Architecture characterization after #1 fresh review — `MEDIUM_HIGH / NEAR_MEDIUM` — `HOLD_QUEUED_NO_PARALLEL_MAIN_EXECUTION`.
+1. MAIN: `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01` static Architecture contract cycle — `HIGH / VERY_NEAR` — **GO_NON_EVIDENTIARY_STATIC_ARCHITECTURE_ONLY**.
+2. MAIN future: `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` contract/reachability characterization after #1 fresh review — `MEDIUM_HIGH / NEAR_MEDIUM` — `HOLD_QUEUED_NO_PARALLEL_MAIN_EXECUTION`.
 3. SUB: one genuinely independent bounded Discovery or explicit no-op — `MEDIUM / OPTIONAL` — `DISCOVERY_ONLY`.
 
-#1 GO requires exact source/callsite scope, terminal mapping, and machine-readable narrative fields to be bound before interpretation. STOP if the supported API contract cannot be determined without making a new semantic choice, if additional dynamic probes are desired, if any official TEST/consumed/formal surface would be needed, or after any valid terminal. No same-run dynamic continuation.
+#1 GO requires exact stable source/docs/tests/callsite scope, terminal mapping, machine-fact validity method, and machine-bound handoff fields to be fixed before interpretation, with ordinary exact-head CI/readiness green. STOP if scope requires a new semantic choice, if a dynamic receptor-aware comparator is desired, if official TEST/consumed/formal surfaces would be needed, on any binding mismatch, or after any valid terminal.
 
-## Integrity / consumed identities
+## Integrity / blockers / Utility
 
-Consumed/no-retry identities remain unchanged: `c19-external-v2-official-v4`; C19-R1 revision-authority official-v1 and official-v2; `c19-r2-fsa-state-tracker-official-v1`; `pd01-long-history-fading-memory-official-v1`; `ni01-no-ignition-selective-prediction-official-v1`; `h5-event-routing-work-reduction-official-v1`. No rerun, retune, rescore, relabel, post-outcome repair, consumed-identity retry, immutable evidence mutation, research merge, or scheduler mutation is authorized.
+Consumed/no-retry identities are unchanged: `c19-external-v2-official-v4`; C19-R1 revision-authority official-v1 and official-v2; `c19-r2-fsa-state-tracker-official-v1`; `pd01-long-history-fading-memory-official-v1`; `ni01-no-ignition-selective-prediction-official-v1`; `h5-event-routing-work-reduction-official-v1`. No rerun, retune, rescore, relabel, post-outcome repair, consumed-identity retry, immutable evidence mutation, research merge, or scheduler mutation is authorized.
+
+Real blockers are: no fresh PRE_FORMAL mechanism beyond ordinary reductions; no fresh FORMAL object/one-way authority; Homeostasis public population semantics are not yet bound; Assembly mature-memory intent and supported/default saturation relevance remain unresolved; delayed-outcome delayed/interleaved support was not established and the current object is closed.
+
+No new Utility request is created. Existing methodology Utility assignments are completed/idle, and both the Homeostasis contract question and Assembly lifecycle question cleanly belong to MAIN scientific ownership rather than the Utility bus.
 
 ## Persistence
 
-Write only the designated Evidence Analyst handoff files in one fast-forward commit. No Utility request is created this run.
+Persist only `analysis/orchestrator/latest.md`, `analysis/orchestrator/state.json`, and append-only `analysis/orchestrator/history/2026-09-20/0859.md` on `ops/evidence-analyst-handoff` in one fast-forward commit. No immutable evidence/control/preserve ref is modified.
