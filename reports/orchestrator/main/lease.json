@@ -1,14 +1,14 @@
 {
   "run_id": "sparkbrain-main-primary-20260920T0914JST",
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-20T09:14:05+09:00",
-  "heartbeat_at": "2026-09-20T09:14:05+09:00",
+  "heartbeat_at": "2026-09-20T09:20:03+09:00",
   "analyst_commit": "df12559698c0f6bc0165c550a55c62f7287a86bd",
-  "active_branch": null,
+  "active_branch": "research/main-v05-homeostasis-population-contract-arch-study-20260920",
   "active_identity": null,
-  "active_step": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_PROSPECTIVE_BINDING",
-  "workflow_run_id": null,
-  "expected_next_action": "Bind exact stable source/docs/tests/callsite scope and fact-validity methods prospectively, then execute one static/read-only NON_EVIDENTIARY Architecture characterization under the fixed terminal mapping.",
+  "active_step": "V05_HOMEOSTASIS_POPULATION_CONTRACT_ARCHITECTURE_STUDY_CYCLE1_VALID_STATIC_TERMINAL_WAITING_EXACT_HEAD_CI",
+  "workflow_run_id": 35478448679,
+  "expected_next_action": "Collect only ordinary CI 35478448679 for exact head 81af6ac56c31d169b591bc30854d0efa9d0bac8c. If completed/success, mark cycle COMPLETED and stop for fresh Evidence Analyst review. Do not run dynamic comparator, semantic policy change, cycle 2, PRE_FORMAL, or FORMAL continuation without fresh authority.",
   "owner": "main"
 }
