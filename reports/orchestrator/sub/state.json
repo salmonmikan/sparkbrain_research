@@ -1,45 +1,44 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2",
-  "produced_at": "2026-09-21T07:39:00+09:00",
-  "producer_run_id": "SUB-RUN-20260921T073900+0900-NOOP-NOMECH-4C7A91E2",
+  "generation_id": "SUB-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4",
+  "produced_at": "2026-09-21T08:32:13+09:00",
+  "producer_run_id": "SUB-RUN-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260921T064900+0900-THEORY-ASMCAUSAL-7A4C91E2",
+  "supersedes_generation_id": "SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T065846+0900-R29-7B2C91E4",
-      "handoff_commit": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
-      "main_lane": "V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_MATCHED_LOAD_ARCHITECTURE_CYCLE1_COMPARATOR_FEASIBILITY",
-      "sub_lane": "BOUNDED_SECONDARY_DISCOVERY_BY_MARGINAL_INFORMATION_GAIN_NO_MAIN_DUPLICATION",
-      "sub_fallback": "NO_OP_WITH_OBSERVABLE_DUPLICATION_OR_LOW_INFORMATION_REASON"
+      "generation_id": "EVA-20260921T075832+0900-R30-9A4C2E71",
+      "handoff_commit": "773c88edcaf799140830f3d204d0f0ff82c9bcad",
+      "main_lane": "V05_ACTION_POLICY_EVALUATION_ISOLATION_CONTRACT_ARCHITECTURE_STATIC_CYCLE1",
+      "sub_lane": "THEORY_BACKWARD_SEARCH_SPACE_REFRAME_THEN_SELECT_IF_COHERENT_ELSE_FRESH_NO_TARGET_NOOP",
+      "sub_fallback": "NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET"
     },
     "main": {
-      "latest_mailbox_generation_id": "MAIN-20260921T071418+0900-PRIMARY-FUNNEL21-MECH-ASMMATCH-R29-8E4C21A7",
-      "mailbox_tip_observed": "d6d330f9d1dc5a098878000953bfa1ea16d3ac21",
+      "latest_mailbox_generation_id": "MAIN-20260921T081624+0900-PRIMARY-FUNNEL21-SYSTEM-ACTEVAL-R30-5C7A21E4",
+      "mailbox_tip_observed": "dc555ba104d44f52c9030f974c10b13a451d6831",
       "status": "COMPLETED",
-      "owned_lane": "V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_MATCHED_LOAD_ARCHITECTURE_CYCLE1_COMPARATOR_FEASIBILITY",
-      "owned_candidate": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01",
-      "terminal": "EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE",
-      "active_branch": "research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921",
-      "workflow_run_id": 35541396714
+      "owned_lane": "V05_ACTION_POLICY_EVALUATION_ISOLATION_CONTRACT_ARCHITECTURE_STATIC_CYCLE1",
+      "owned_candidate": "CAND-V05-ACTION-POLICY-EVALUATION-ISOLATION-CONTRACT-01",
+      "terminal": "MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT",
+      "next_action": "FRESH_ANALYST_CANONICALIZATION_ONLY"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260921T025500+0900-R19-9D2C4A71",
-      "handoff_commit": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4",
+      "generation_id": "CTRL-20260921T065000+0900-R20-8E4C2A71",
+      "handoff_commit": "cae67ec0f8980e6125c578c3eb98d67e6da46a36",
       "role": "STRATEGY_ONLY"
     },
     "previous_sub": {
-      "generation_id": "SUB-20260921T064900+0900-THEORY-ASMCAUSAL-7A4C91E2",
-      "mode": "discovery",
-      "candidate_id": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01"
+      "generation_id": "SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2",
+      "mode": "no_op",
+      "candidate_id": null
     }
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff_commit": "de3de2fcf0f21aa33ebfe417d210df1e96889a90",
-    "analyst_generation": "EVA-20260921T065846+0900-R29-7B2C91E4",
-    "orchestrator_tip_before_sub_persistence": "d6d330f9d1dc5a098878000953bfa1ea16d3ac21",
-    "control_handoff_commit": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4",
+    "analyst_handoff_commit": "773c88edcaf799140830f3d204d0f0ff82c9bcad",
+    "analyst_generation": "EVA-20260921T075832+0900-R30-9A4C2E71",
+    "orchestrator_tip_before_sub_persistence": "dc555ba104d44f52c9030f974c10b13a451d6831",
+    "control_handoff_commit": "cae67ec0f8980e6125c578c3eb98d67e6da46a36",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
@@ -51,14 +50,14 @@
   "candidate_pool_id": null,
   "candidate_status": null,
   "exploration_cycle": null,
-  "no_op_reason": "NO_SAFE_USEFUL_NONDUPLICATIVE_HIGH_INFORMATION_DISCOVERY_TARGET_UNDER_R29_AFTER_FRESH_SOURCE_AND_PORTFOLIO_REVIEW",
+  "no_op_reason": "NO_SAFE_USEFUL_NONDUPLICATIVE_COHERENT_MECHANISM_TARGET_AFTER_R30_CHANGED_LANDSCAPE_REFRAME",
   "main_frontier_avoided": {
-    "main_lane": "V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_MATCHED_LOAD_ARCHITECTURE_CYCLE1_COMPARATOR_FEASIBILITY",
-    "active_main_object": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01",
-    "latest_main_terminal_pending_analyst": "EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE",
+    "main_lane": "V05_ACTION_POLICY_EVALUATION_ISOLATION_CONTRACT_ARCHITECTURE_STATIC_CYCLE1",
+    "active_main_object": "CAND-V05-ACTION-POLICY-EVALUATION-ISOLATION-CONTRACT-01",
+    "latest_main_terminal_pending_analyst": "MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT",
     "avoided": [
-      "MAIN_OWNED_ASSEMBLY_MATCHED_LOAD_COMPARATOR_WORK",
-      "ANY_OUTCOME_DEPENDENT_SUCCESSOR_OF_MAIN_OBJECT",
+      "MAIN_OWNED_ACTION_POLICY_EVALUATION_ISOLATION_OBJECT_AND_ANY_DYNAMIC_SUCCESSOR",
+      "ASSEMBLY_MATCHED_LOAD_SAME_OBJECT_RELAXATION_OR_RESCUE",
       "CAND_H7_RESP_01_AS_UNCONTRACTED_HELD_OBJECT",
       "ALL_ANALYST_TERMINAL_CURRENT_OBJECTS",
       "FORMAL_TEST_SCORING",
@@ -84,11 +83,13 @@
     "window_size": 3,
     "theory_backward_exception": {
       "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "Independent stable-main/source and current portfolio review found no fresh bounded mechanism discriminator outside MAIN-owned Assembly matched-load work. Receptor multi-timescale state and frozen-field adaptation/refractory state are source-explicit ordinary finite-state/EMA recurrences, the remaining near-range mechanism families are terminal/reduced, H7 still lacks a prospectively fixed native mechanism/comparator/falsifier, and R29 explicitly withholds the action-policy SYSTEM successor. Selecting a new object would therefore be MAIN-colliding, duplicative, low-information reduction-by-construction, or manufactured."
+      "detail": "R30 changed-landscape reframe found no fresh independent mechanism object after matched-load infeasibility. Assembly comparator relaxation/surface redesign/intervention rescue is forbidden; MAIN owns the fresh action-policy contract ambiguity; remaining v0.5 predictor/plasticity/topology/Assembly-memory surfaces are source-explicit ordinary reductions or overlap terminal families; H7 remains without a prospectively fixed native object, comparator/resource contract, and falsifier."
     },
     "exception_counts_as_mechanism_candidate": false,
     "exception_counts_as_scientific_selection": false,
-    "search_space_reframe_result": "NO_FRESH_HIGH_INFORMATION_INDEPENDENT_MECHANISM_SUBSTRATE_FOUND_IN_CURRENT_STABLE_SOURCE"
+    "search_space_reframe_result": "NO_FRESH_COHERENT_INDEPENDENT_MECHANISM_TARGET_AFTER_R30_LANDSCAPE_CHANGE",
+    "landscape_episode_id": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1",
+    "prior_episode_status": "CLOSED_BY_R30_ANALYST"
   },
   "question": null,
   "hypothesis": null,
@@ -97,10 +98,12 @@
   "inputs_used": {
     "scientific_inputs": [],
     "control_plane_inputs": [
-      "EVA_R29_ALLOCATION_PORTFOLIO_AND_V21_FIELDS",
-      "LATEST_MAIN_R29_MAILBOX_WITH_EXACT_MATCH_INFEASIBILITY_TERMINAL",
-      "STABLE_MAIN_V05_BRAIN_RECEPTOR_SOURCE_REFETCH",
-      "FROZEN_V04_FIELD_SOURCE_REFETCH",
+      "EVA_R30_ALLOCATION_PORTFOLIO_FUNNEL_AND_V21_FIELDS",
+      "LATEST_MAIN_R30_ACTION_POLICY_STATIC_AUDIT_TERMINAL",
+      "STABLE_MAIN_V05_ASSEMBLIES_SOURCE_REFETCH",
+      "STABLE_MAIN_V05_PREDICTION_SOURCE_REFETCH",
+      "STABLE_MAIN_V05_PLASTICITY_SOURCE_REFETCH",
+      "STABLE_MAIN_V05_TOPOLOGY_SOURCE_REFETCH",
       "CURRENT_AUTHORITATIVE_REFS"
     ],
     "formal_or_sealed_test_used": false,
@@ -125,12 +128,15 @@
   "observations": {
     "scientific_result": null,
     "source_review": {
-      "v05_receptor_bank": "explicit per-channel fast/medium/slow/mean_abs exponential state with deterministic derivative/novelty/gain readout",
-      "v04_field": "explicit membrane/adaptation/refractory finite-state recurrence with deterministic delayed propagation",
-      "portfolio": "near-range mechanism candidates terminal/reduced except MAIN-owned Assembly successor and held uncontracted H7",
-      "action_policy_system_successor": "R29_STOP_NOT_ALLOCATED"
+      "assembly_causal_family": "matched-load exact comparator feasibility is terminal; same-object matching relaxation, topology redesign, surface change, or intervention rescue is forbidden",
+      "action_policy": "fresh SYSTEM contract object is MAIN-owned and reached mixed/unresolved public contract pending fresh Analyst canonicalization",
+      "assembly_predictor": "explicit assembly-keyed outcome-count table",
+      "plasticity": "explicit local STDP, per-edge decaying eligibility, scalar reward trace, and direct delay adaptation",
+      "topology": "fixed seeded receptor-to-reservoir and recurrent graph with ordinary delayed propagation",
+      "assembly_memory": "fixed-prototype nearest-match threshold clustering; near-range Assembly mechanism families already terminal or MAIN-excluded",
+      "h7": "nonterminal hold remains uncontracted at native-object/comparator/resource/falsifier level"
     },
-    "interpretation": "A new scientific object would currently be duplicative, MAIN-colliding, or an ordinary source-transparent reduction by construction, so fail-closed no-op is higher integrity than manufacturing a candidate."
+    "interpretation": "The R30 landscape change removes the prior Assembly comparator route but does not expose a fresh independent nontrivial mechanism discriminator. Manufacturing a new candidate from source-transparent count/trace/graph/prototype machinery would violate the reduction and duplication rules."
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "proposed_claim_ceiling": "N/A_NO_CURRENT_OBJECT",
@@ -151,32 +157,32 @@
   },
   "candidate_next_research_layer": "NONE",
   "open_scientific_choices": [
-    "Fresh Analyst canonicalization after MAIN exact-match comparator infeasibility",
-    "A genuinely new independent mechanism substrate with prospectively nontrivial reduction/falsifier if one appears"
+    "Fresh Analyst canonicalization of MAIN R30 action-policy contract ambiguity",
+    "A genuinely fresh Assembly successor only with a new candidate ID and a new prospectively fixed comparator/resource contract that is not a relaxation or rescue of the terminal matched-load object",
+    "A genuinely new independent mechanism substrate with a nontrivial prospective ordinary reduction and falsifier if one appears",
+    "H7 only after a fresh native object, comparator/resource contract, and falsifier are fixed prospectively"
   ],
-  "recommendation": "WAIT_FOR_FRESH_ANALYST_OR_GENUINELY_NEW_INDEPENDENT_SUBSTRATE",
+  "recommendation": "WAIT_FOR_FRESH_ANALYST_OR_GENUINELY_NEW_INDEPENDENT_MECHANISM_SUBSTRATE",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
   "blockers": [
-    "NO_FRESH_HIGH_INFORMATION_INDEPENDENT_MECHANISM_TARGET",
-    "MAIN_ASSEMBLY_MATCHED_LOAD_OBJECT_PENDING_FRESH_ANALYST_CANONICALIZATION",
-    "H7_NATIVE_OBJECT_COMPARATOR_FALSIFIER_UNFIXED",
-    "R29_ACTION_POLICY_SYSTEM_SUCCESSOR_NOT_ALLOCATED"
+    "NO_FRESH_COHERENT_INDEPENDENT_MECHANISM_TARGET_AFTER_R30_REFRAME",
+    "MAIN_R30_ACTION_POLICY_CONTRACT_AMBIGUITY_PENDING_FRESH_ANALYST_CANONICALIZATION",
+    "ASSEMBLY_MATCHED_LOAD_CURRENT_OBJECT_TERMINAL_NO_RELAXATION_OR_RESCUE",
+    "H7_NATIVE_OBJECT_COMPARATOR_RESOURCE_FALSIFIER_UNFIXED",
+    "PREFORMAL_ELIGIBLE_ZERO_READY_ZERO"
   ],
-  "completion_target": "FAIL_CLOSED_NOOP_WITH_FRESH_NO_COHERENT_MECHANISM_TARGET_EXCEPTION",
+  "completion_target": "FAIL_CLOSED_R30_CHANGED_LANDSCAPE_REFRAME_NOOP_WITH_FRESH_NO_COHERENT_MECHANISM_TARGET_EXCEPTION",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_path": "reports/orchestrator/history/2026-09-21/0739-sub.md",
+    "history_path": "reports/orchestrator/history/2026-09-21/0832-sub.md",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "base_mailbox_tip": "d6d330f9d1dc5a098878000953bfa1ea16d3ac21",
-    "history_commit": "THIS_COMMIT",
-    "latest_commit": "THIS_COMMIT",
-    "final_state_commit": "THIS_COMMIT",
+    "base_mailbox_tip": "dc555ba104d44f52c9030f974c10b13a451d6831",
     "mode": "SINGLE_ATOMIC_GIT_TREE_FAST_FORWARD",
-    "result": "SUB_NOOP_HISTORY_LATEST_STATE_PERSISTED"
+    "result": "PENDING_COMMIT_AT_STATE_CONSTRUCTION"
   },
   "persistence_limitations": []
 }
