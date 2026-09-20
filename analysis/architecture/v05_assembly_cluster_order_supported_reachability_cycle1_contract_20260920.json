@@ -1,0 +1,98 @@
+{
+  "schema": "sparkbrain-architecture-study-contract-v1",
+  "candidate_id": "CAND-V05-ASSEMBLY-CLUSTER-ORDER-SUPPORTED-REACHABILITY-01",
+  "lane": "ASSEMBLY_CLUSTER_ORDER_SUPPORTED_REACHABILITY_ARCHITECTURE_STUDY_CYCLE1_STATIC",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "claim_ceiling": "SYSTEM",
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "analyst_generation": "EVA-20260920T195817+0900-R19-B6E2F41A",
+  "analyst_authority_commit": "8a1729dcdedcf1fd645f6a3cfd68f9371ad8d433",
+  "question": "Is the first-prototype order-dependent TemporalAssemblyMemory partition observed at component level reachable through supported integrated v0.5 pattern-production/presentation semantics, and can resulting Assembly partition identity be consumed downstream in a semantically relevant way?",
+  "source_binding": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "src/sparkbrain/v05/assemblies.py": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "tests/v05/test_v05_assemblies.py": "99d847dae4aa8b394680acbb44ae01e72a5d9d4f"
+  },
+  "fixed_supported_surface": [
+    "src/sparkbrain/v05/assemblies.py",
+    "src/sparkbrain/v05/brain.py",
+    "tests/v05/test_v05_assemblies.py",
+    "deterministic stable-main inventory of docs/tests/callsites that construct, order, pass, observe, predict from, act from, serialize, restore, or otherwise consume ActivityPattern / AssemblyCandidate / assembly_id / TemporalAssemblyMemory"
+  ],
+  "repository_inventory_queries": [
+    "TemporalAssemblyMemory",
+    "ActivityPattern",
+    "AssemblyCandidate",
+    "assembly_id",
+    ".observe(",
+    "observe(pattern",
+    "patterns",
+    "extract_patterns",
+    "predict(",
+    "record_outcome",
+    "choose_action",
+    "assemblies",
+    "prototype",
+    "order",
+    "ordering",
+    "invariant",
+    "deterministic"
+  ],
+  "facts_to_record_before_interpretation": [
+    "assembly_match_compares_new_patterns_to_an_immutable_or_mutable_candidate_prototype",
+    "integrated_brain_presents_patterns_to_assembly_memory_in_a_defined_sequence",
+    "supported_pattern_producer_defines_or_canonicalizes_pattern_order_before_assembly_observation",
+    "supported_docs_or_tests_define_pattern_presentation_order_as_semantic",
+    "supported_docs_or_tests_require_assembly_partition_order_invariance",
+    "supported_paths_explicitly_preclude_bridge_like_nontransitive_pattern_sets",
+    "supported_paths_explicitly_demonstrate_or_guarantee_bridge_like_nontransitive_pattern_sets",
+    "assembly_partition_identity_or_membership_is_consumed_by_predictor_or_action_selection",
+    "downstream_consumption_is_only_cosmetic_id_renaming_or_can_change_grouping_conditioned_state",
+    "checkpoint_or_public_state_preserves_assembly_partition_identity",
+    "decision_relevant_docs_tests_callsites_materially_conflict"
+  ],
+  "machine_fact_policy": {
+    "method": "STATIC_SOURCE_DOC_TEST_CALLSITE_INVENTORY_WITH_EXACT_STABLE_MAIN_BINDING",
+    "required": [
+      "TemporalAssemblyMemory matching/update semantics are checked directly on stable-main source",
+      "IntegratedV05Brain pattern-to-Assembly call path and ordering are checked directly on stable-main source",
+      "supported producer/caller/docs/tests are inventoried for explicit canonicalization, prevention, reachability, or order contract",
+      "downstream prediction/action/checkpoint consumption of assembly identity or partition state is checked statically",
+      "no dynamic permutation or integrated diagnostic is executed"
+    ],
+    "invalid_on_binding_mismatch": true,
+    "post_outcome_repair_forbidden": true
+  },
+  "terminal_mapping": {
+    "EXPLICIT_ORDER_SENSITIVE_CLUSTERING_CONTRACT": "Supported contract explicitly declares presentation order significant for Assembly clustering; record SYSTEM/reproducibility characterization and STOP.",
+    "SUPPORTED_INTEGRATED_REACHABILITY_ESTABLISHED_ORDER_CONTRACT_UNSPECIFIED": "Supported integrated path establishes bridge-like order-varying pattern presentation while order semantics remain unspecified; HOLD_CONTRACT_AMBIGUITY and STOP.",
+    "SUPPORTED_PATH_CANONICALIZES_OR_PREVENTS_BRIDGE_ORDER_VARIATION": "Supported path canonically orders patterns or structurally prevents bridge-like order variation relevant to the component effect; REJECT current supported-risk successor and STOP.",
+    "ORDER_UNSPECIFIED_AND_SUPPORTED_REACHABILITY_UNESTABLISHED": "No explicit order contract/canonicalization/prevention is found, but static supported-path evidence does not establish bridge-like reachability; HOLD_SYSTEM_TERMINAL and STOP.",
+    "PUBLIC_ORDER_INVARIANCE_CONTRACT_WITH_IMPLEMENTATION_GAP": "Public/supported contract requires order invariance while stable implementation can retain first-prototype order sensitivity; record SYSTEM engineering/reproducibility finding and STOP for fresh review.",
+    "INVALID_STATIC_CHARACTERIZATION": "Any stable-main/source binding mismatch, incomplete decision-relevant inventory, material source/docs/tests conflict not resolvable by the fixed terminals, or need for a new semantic choice invalidates this cycle."
+  },
+  "precedence": [
+    "INVALID_STATIC_CHARACTERIZATION",
+    "PUBLIC_ORDER_INVARIANCE_CONTRACT_WITH_IMPLEMENTATION_GAP",
+    "EXPLICIT_ORDER_SENSITIVE_CLUSTERING_CONTRACT",
+    "SUPPORTED_PATH_CANONICALIZES_OR_PREVENTS_BRIDGE_ORDER_VARIATION",
+    "SUPPORTED_INTEGRATED_REACHABILITY_ESTABLISHED_ORDER_CONTRACT_UNSPECIFIED",
+    "ORDER_UNSPECIFIED_AND_SUPPORTED_REACHABILITY_UNESTABLISHED"
+  ],
+  "forbidden": [
+    "dynamic integrated permutation experiment",
+    "same-object dynamic discriminator",
+    "production source mutation",
+    "mitigation or canonicalization patch",
+    "official TEST",
+    "STARTED identity",
+    "formal scorer",
+    "preserve/evidence mutation",
+    "PRE_FORMAL promotion",
+    "FORMAL promotion",
+    "same-run cycle 2",
+    "outcome-responsive redesign"
+  ],
+  "stop_condition": "Any valid mapped terminal or INVALID_STATIC_CHARACTERIZATION stops for fresh Evidence Analyst review. No dynamic continuation or implementation patch is authorized in this object."
+}
