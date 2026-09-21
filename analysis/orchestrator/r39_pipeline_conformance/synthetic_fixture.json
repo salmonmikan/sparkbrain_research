@@ -1,0 +1,12 @@
+{
+  "fixture_id": "R39-SYNTHETIC-PIPELINE-001",
+  "seed": 39001,
+  "surface": "synthetic_non_scientific_pipeline_conformance",
+  "synthetic_only": true,
+  "values": [
+    2,
+    3,
+    5,
+    7
+  ]
+}
