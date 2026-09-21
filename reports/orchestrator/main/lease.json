@@ -14,11 +14,11 @@
     "sub": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "BLOCKED",
   "started_at": "2026-09-21T23:12:31+09:00",
   "heartbeat_at": "2026-09-21T23:12:31+09:00",
   "completed_at": null,
-  "blocked_at": null,
+  "blocked_at": "2026-09-21T23:12:31+09:00",
   "analyst_generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
   "analyst_commit": "fca9a4b0adb259b76a518605f611ff79e0c48680",
   "analyst_branch_tip_observed": "fca9a4b0adb259b76a518605f611ff79e0c48680",
@@ -39,18 +39,18 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No MAIN allocation is active; execution is fail-closed because material upstream Control/Audit/Methodology generations supersede the Analyst R44 input set.",
+    "reason_detail": "No MAIN allocation is active; Control R26, Audit R5, and Methodology R45 materially supersede the Analyst R44 input set and have not yet been canonicalized by a fresh Analyst generation.",
     "compared_mechanism_candidate_ids": []
   },
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "active_branch": null,
   "active_head": null,
   "active_identity": null,
-  "active_step": "RECONCILE_SUPERSEDING_UPSTREAM_GENERATIONS_FAIL_CLOSED",
+  "active_step": "BLOCKED_PENDING_FRESH_ANALYST_AFTER_UPSTREAM_SUPERSESSION",
   "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION",
   "terminal_observation": null,
   "workflows": [],
-  "stop_reason": null,
-  "next_action": "Re-read Analyst and authoritative refs, then fail closed unless a fresh Analyst generation has consumed Control R26, Audit R5, and Methodology R45.",
+  "stop_reason": "MATERIAL_SUPERSEDING_UPSTREAM_GENERATIONS_NOT_YET_CONSUMED_BY_EVIDENCE_ANALYST_FAIL_CLOSED",
+  "next_action": "Wait for a fresh Evidence Analyst generation that consumes Control R26, Audit R5, and Methodology R45 and issues a canonical allocation/disposition. Re-fetch exact refs before any subsequent acquisition or mutation. Do not execute PRE_FORMAL, FORMAL, ARCHITECTURE_STUDY, create a successor, reinterpret H5, or import upstream strategy directly into candidate state meanwhile.",
   "owner": "main"
 }
