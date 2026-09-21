@@ -1,34 +1,33 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260921T165000+0900-G6-8C4A21D7",
-  "produced_at": "2026-09-21T16:50:00+09:00",
-  "producer_run_id": "repository-steward-auto-20260921T165000+0900-G6-8C4A21D7",
+  "generation_id": "STEWARD-20260921T195000+0900-G7-7D2C91A4",
+  "produced_at": "2026-09-21T19:50:00+09:00",
+  "producer_run_id": "repository-steward-auto-20260921T195000+0900-G7-7D2C91A4",
   "authority_scope": "REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY",
-  "supersedes_generation_id": "STEWARD-20260921T135000+0900-G5-5C7A2E91",
+  "supersedes_generation_id": "STEWARD-20260921T165000+0900-G6-8C4A21D7",
   "repository": "salmonmikan/sparkbrain_research",
   "input_generations": {
     "control": {
-      "generation_id": "CTRL-20260921T145000+0900-R23-4F07AFBF",
-      "handoff_commit": "864ed484248fcb3adeac24f4615686eafda9c373"
+      "generation_id": "CTRL-20260921T185206+0900-R24-6B4D21C8",
+      "handoff_commit": "5f9348022b3af8ef6ac6c1bd9d15cb77380d7d92"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T162230+0900-R38-8A6D21C9",
-      "handoff_commit": "fbe6074f8ee7dbdc9d5ca00f14c35fa651d6fdb2"
+      "generation_id": "EVA-20260921T185902+0900-R41-8D3A21C7",
+      "handoff_commit": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91",
+      "snapshot_role": "AUTHORITATIVE_AT_G7_OBSERVATION_CUTOFF"
     },
     "main": {
-      "generation_id": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
+      "generation_id": "MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4",
       "mailbox_branch": "ops/orchestrator-run-report",
-      "mailbox_head": "8654b2988c12c0a7b65579df82f2483b9e3c293c",
-      "completed_predecessor_generation": "MAIN-20260921T151412+0900-PRIMARY-FUNNEL21-SYSTEM-PIPELINE-R37-6F3A91C2",
-      "completed_predecessor_mailbox_commit": "6002c976a1047fbe7974dd983cc88909ec51d584",
-      "completed_predecessor_terminal": "FOUR_STAGE_PIPELINE_FEASIBLE",
-      "candidate": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
-      "status": "RELAY_AUTHORITY_BOUNDARY_FRESH_R38_SYSTEM_ARCHITECTURE_OBJECT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY"
+      "latest_commit": "ed7412c76c0ab76f65d4b2256117ff1c42612dcf",
+      "history_commit": "3dc7e4b0e2fb97038247778730cb9a93c9e915c8",
+      "candidate": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
+      "status": "PROTECTED_OUTCOME_ENDPOINT_OVERRETURN_CONTAINED_FAIL_CLOSED_NO_TERMINAL"
     },
     "sub": {
-      "generation_id": "SUB-20260921T163517+0900-NOOP-R38NOMECH-7B4D21C9",
+      "generation_id": "SUB-20260921T193222+0900-NOOP-R41POSTMAIN-SCOPESTOP-2F8C41A7",
       "mailbox_branch": "ops/orchestrator-run-report",
-      "mailbox_snapshot_commit": "fc861a5bb47850ebb01578fc38053fe58e36d37b",
+      "mailbox_snapshot_commit": "4a1ec8f10bb77ec498993a8c8dc9d8d00dd3b1aa",
       "status": "NO_OP_NO_COHERENT_MECHANISM_TARGET",
       "new_research_artifact": false
     },
@@ -40,8 +39,8 @@
       "active_assignment_generation_id": null
     },
     "previous_steward": {
-      "generation_id": "STEWARD-20260921T135000+0900-G5-5C7A2E91",
-      "handoff_commit": "006840acf13d980c74f25416c71c6117941d7810"
+      "generation_id": "STEWARD-20260921T165000+0900-G6-8C4A21D7",
+      "handoff_commit": "61ffd353c74289af5b611ffffcadcbcedd5104ad"
     }
   },
   "authoritative_refs": {
@@ -70,9 +69,9 @@
   },
   "audit": {
     "main_research_evidence_separation": "COMPLIANT",
-    "fresh_preformal_nonconformance_governance": "CONTAINED_OUTSIDE_EVIDENCE_NO_STEWARD_REPAIR",
-    "pipeline_integrity_static_object": "CANONICAL_TERMINAL_NO_IMPLEMENTATION_ARTIFACT",
-    "fresh_outcome_blind_pipeline_successor": "SEPARATE_SYSTEM_ARCHITECTURE_RELAY_NOT_STARTED",
+    "r33_raw_before_score_nonconformance_governance": "CONTAINED_OUTSIDE_EVIDENCE_NO_STEWARD_REPAIR",
+    "r40_synthetic_pipeline_conformance": "NON_EVIDENTIARY_CANDIDATE_SPECIFIC_INTEGRITY_SCAFFOLDING_NO_MAIN_PROMOTION",
+    "r41_cross_generation_holdout_integrity": "SCOPE_OVERRETURN_CONTAINED_FAIL_CLOSED_PENDING_FRESH_ANALYST_AT_G7_CUTOFF",
     "sub_latest": "NO_OP_NO_NEW_RESEARCH_ARTIFACT",
     "canonical_docs_vs_issues": "COMPLIANT_ISSUE_139_OPERATIONAL_ONLY",
     "freeze_tag_mapping": "COMPLIANT_NO_MIGRATION",
@@ -121,17 +120,27 @@
     "main_promotions_performed": 0
   },
   "persistence": {
-    "history_path": "reports/repository_steward/history/2026-09-21/1650.md",
-    "history_commit": "078002b1bd0ea8e3464610627b76bdde3bc4f461",
+    "history_path": "reports/repository_steward/history/2026-09-21/1950.md",
+    "history_commit": "927959ec5c1e47e1112d15758d1bcb713c4a8551",
     "latest_path": "reports/repository_steward/latest.md",
-    "latest_commit": "8e43c68fdbb3f6aeae334797a348c456e2db5c7b",
+    "latest_commit": "7cfcb67a2232e654ce3a2f6501c6ad3ae5c80a2f",
     "state_path": "reports/repository_steward/state.json",
-    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
+    "persistence_repair": true,
+    "repair_reason": "G7 history/latest were persisted but state.json remained at G6; repaired without changing G7 scientific or governance interpretation."
   },
+  "post_snapshot_unconsumed_updates": [
+    {
+      "source": "ops/evidence-analyst-handoff",
+      "commit": "b8dc2ab5a203547cc9f663cf7fcfe1541091fc8e",
+      "generation_id": "EVA-20260921T200300+0900-R42-5F8C21A4",
+      "reason_not_folded_into_g7": "Arrived after the G7 observation cutoff; preserving generation/freshness semantics rather than retroactively rewriting G7."
+    }
+  ],
   "next_priorities": [
     "Keep the R33 raw-before-score nonconforming consumed object outside evidence promotion; do not repair or reinterpret it from Steward.",
-    "Keep the R37 terminal SYSTEM static feasibility result as governance context only; it produced no implementation artifact qualifying for main promotion.",
-    "Keep the fresh R38 outcome-blind four-stage pipeline successor separate and await authorized MAIN PRIMARY action.",
+    "Keep R40 synthetic pipeline conformance separate from R41/R42 cross-generation holdout-integrity metadata work.",
+    "Consume the post-G7 R42 Analyst generation only in the next authorized control/governance generation; do not retroactively rewrite G7 history/latest.",
     "Keep authoritative evidence/freeze/preserve refs unchanged.",
     "Continue read-only tracking of Issue #139 and protection/ruleset status.",
     "Keep PR #148/#149 deferred on unchanged heads.",
