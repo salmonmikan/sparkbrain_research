@@ -1,10 +1,10 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-21 14:22 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-21 15:25 JST
 
 schema_version: `2`  
-generation_id: `METHCAL-20260921T142240+0900-R37-01D67C87`  
-produced_at: `2026-09-21T14:22:40+09:00`  
+generation_id: `METHCAL-20260921T152500+0900-R38-6E4B2A91`  
+produced_at: `2026-09-21T15:25:00+09:00`  
 authority_scope: `METHODOLOGY_ADVISORY_ONLY`  
-supersedes_generation_id: `METHCAL-20260921T131711+0900-R36-3A8D6F21`
+supersedes_generation_id: `METHCAL-20260921T142240+0900-R37-01D67C87`
 
 ## Result
 
@@ -12,20 +12,18 @@ supersedes_generation_id: `METHCAL-20260921T131711+0900-R36-3A8D6F21`
 
 Overall classification remains **`MIXED_CALIBRATION`**.
 
-The material change is an audit-trace defect, not a scientific-gate change. Fresh repository inspection shows the prior R36 `state.json` explicit `authoritative_refs.evidence_tags` list (`evidence/exp-001-*`) does not match the current authoritative repository refs; a matching-ref query for `tags/evidence/exp-001` is empty. Current repository truth is still five annotated evidence refs, but with exact names/tag-object SHAs now rebound in R37 state. This **does not prove evidence-tag mutation**; absent independent ref-history evidence, it establishes that Methodology's exact-ref persistence was inaccurate/stale and must be tightened.
+The material change is positive pass-reachability evidence, not a relaxation of the integrity floor. Fresh MAIN reported `FOUR_STAGE_PIPELINE_FEASIBLE` for the SYSTEM Architecture object `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01`, then stopped for fresh Analyst review without implementation, scientific execution, identity consumption, R33 repair, preservation, or scoring. This result is still strategy-mailbox pending and does not change canonical funnel counts until Analyst consumes it.
 
-Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Fresh `formal/*=0`, `sealed/*=0`, tag-based `freeze/*=0`. Current annotated evidence refs are the C19/C19-R2/H5/NI01/PD01 five-ref set and are stored with their tag-object SHAs in `state.json`.
+Independent repository verification confirms the claimed precedent rather than relying on the mailbox. Authoritative H5 evidence tag `evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1@e7d99cc806206ac27ced225d4779c9fc5bb67ff5` points to terminal evidence commit `61aff6d74b82b68a326f3d90505d70bcd4071fd5`. Its bound raw-preserve commit `ce5797eb584344db7a512e585506fb6c59ea475b` is explicitly `RAW_UNSCORED`, and the bound one-way workflow at blob `37f8dc1817a4587749c0896727dc4f10187ff50e` performs raw acquisition, no-clobber durable preserve+digest, independent exact preserved-byte re-fetch/digest verification, scoring only from that preserved raw, then immutable scored evidence tagging. Thus the hard-floor sequence is operationally feasible in this repository.
 
-Designated Evidence Analyst is `EVA-20260921T135900+0900-R36-6C3A91E7@6e760daf8b1316489e5565bd799d3f462de390f4`; Control is `CTRL-20260921T125000+0900-R22-7C3A91E4@db53217770b72596bc4beaa3f8c34abea6473311`. Canonical funnel remains `29/29` complete, `MECHANISM=13 / SYSTEM=16`, Architecture `M0/S1`, PRE_FORMAL eligible=`0`, READY=`0`, viable executable MECHANISM=`0`.
+Accordingly, raw-before-score, preserve-before-score, and durable immutable PRE_FORMAL raw preservation remain **`TIGHTEN` for future PRE_FORMAL implementation conformance**, but they are no longer blocked by architecture feasibility. Do not rerun/repair/rescore the consumed R33 identity. The next informative event is a fresh prospectively bound implementation/live conformance under fresh authority after Analyst review.
 
-The active SYSTEM Architecture object remains `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01`; no PRIMARY cycle result yet demonstrates the prospective four-stage sequence `raw generation -> durable raw preserve+digest -> fixed scorer exact-blob read -> scored preserve`. Thus raw-before-score, preserve-before-score, and durable raw preservation remain **`TIGHTEN`**. READY semantics remain **`KEEP`**, the first READY->PRE_FORMAL transition remains consistent with development readiness, and `HIDDEN_SECOND_FORMAL_GATE=false`.
+PASS reachability is upgraded to **`PRE_FORMAL_REACHED_FOUR_STAGE_CLEAN_PIPELINE_ARCHITECTURALLY_FEASIBLE_PENDING_FRESH_PROSPECTIVE_IMPLEMENTATION_AND_LIVE_CONFORMANCE`**. READY semantics remain **`KEEP`**, first READY->PRE_FORMAL remains empirically consistent with development readiness, and `HIDDEN_SECOND_FORMAL_GATE=false`.
 
-Fresh SUB opened `NTE-20260921-R34-POST-REPLAY-v1` with check_count=`1`, no candidate/branch/workflow/probe/identity consumption, and the event excluded from candidate/conversion denominators. `NO_COHERENT_MECHANISM_TARGET` remains **`KEEP`** with no escape-hatch evidence. Rolling actual scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`.
+Designated Evidence Analyst is `EVA-20260921T145812+0900-R37-4E8C21A6@64c7adf88f807407eb817f3b45d0eb269458f534`; Control is `CTRL-20260921T145000+0900-R23-4F07AFBF@864ed484248fcb3adeac24f4615686eafda9c373`. Canonical funnel remains `29/29` complete, `MECHANISM=13 / SYSTEM=16`, Architecture `M0/S1`, PRE_FORMAL eligible=`0`, READY=`0`, viable executable MECHANISM=`0` until fresh Analyst review. The open no-target episode `NTE-20260921-R34-POST-REPLAY-v1` is now canonical check_count=`2`, excluded from candidate/selection/conversion denominators; no escape-hatch evidence is present.
 
-No genuine SYSTEM-over-comparable-MECHANISM priority exception has occurred; first live use remains `INSUFFICIENT_EVIDENCE`. Producer canonical HOLD-enum conformance remains `TIGHTEN`. Scientific admission, novelty/reduction/comparator, stop/reframe, claim-ceiling, fresh-successor, classification-completeness, and candidate-supply gate classifications otherwise remain unchanged.
+No genuine SYSTEM-over-comparable-MECHANISM priority exception has occurred; first live use remains `INSUFFICIENT_EVIDENCE`. Producer canonical HOLD-enum conformance remains `TIGHTEN`. Comparator/reduction/novelty/claim-type/candidate-supply thresholds otherwise remain unchanged.
 
-New gate: **`methodology_authoritative_reference_trace_accuracy = TIGHTEN`**. Each future methodology generation should independently bind exact ref names plus tag-object SHAs; mismatches must be surfaced, not carried forward or silently normalized.
+The R37 authoritative-ref correction is prospectively validated in this run: independent live fetch again returns the same five exact annotated evidence ref names and tag-object SHAs recorded by current Control/Analyst. Therefore `methodology_authoritative_reference_trace_accuracy` moves **`TIGHTEN -> KEEP` for current prospective generations**, while the historical R36 discrepancy remains an unresolved trace incident and is not evidence of tag mutation.
 
-PASS reachability remains **`PRE_FORMAL_REACHED_CLEAN_PASS_PENDING_PROSPECTIVE_PIPELINE_CONFORMANCE`**. Mechanism supply is **`QUALITY_FLOOR_HEALTHY_M13_S16_NO_VIABLE_EXECUTABLE_MECHANISM_OPEN_NO_TARGET_EPISODE_CHECK1_SMALL_N`**. Moving-goalposts risk remains LOW; confidence is HIGH on current state and MODERATE on the historical cause of the ref-name discrepancy.
-
-No Utility request. Hard floor remains **`CONFIRMED / DO NOT RELAX`**. Historical R33 PRE_FORMAL remains terminal; no same-identity rerun/repair/rescore is authorized.
+No Utility request. Hard floor remains **`CONFIRMED / DO NOT RELAX`**.
