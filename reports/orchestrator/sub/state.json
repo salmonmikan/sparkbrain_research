@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6",
-  "produced_at": "2026-09-22T00:35:26+09:00",
-  "producer_run_id": "SUB-RUN-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6",
+  "generation_id": "SUB-20260922T013609+0900-NOOP-R49POSTMAIN-9D4A21C7",
+  "produced_at": "2026-09-22T01:36:09+09:00",
+  "producer_run_id": "SUB-RUN-20260922T013609+0900-NOOP-R49POSTMAIN-9D4A21C7",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260921T234211+0900-NOOP-R46NOMECH-7C3A91E5",
+  "supersedes_generation_id": "SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T002600+0900-R48-8C4A21F6",
-      "handoff_commit": "86290dcbd85a45e89acc56263685cd9338963726",
-      "main_lane": "SEMANTIC_ACTIVE_WORK_LOCALIZATION_ARCHITECTURE_STATIC_CONTRACT_CYCLE1",
+      "generation_id": "EVA-20260922T011108+0900-R49-7E3C21A5",
+      "handoff_commit": "7c154b6203347a4f212746e2cfe4ee7f1be2e5a4",
+      "main_lane": "SEMANTIC_ACTIVE_WORK_LOCALIZATION_ARCHITECTURE_STATIC_CONTRACT_CYCLE1_R49_REDUCTION_SHARPENED",
       "main_candidate_id": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
       "sub_lane": "NO_TARGET_EPISODE_HOLD_UNTIL_MECHANISM_SURFACE_DELTA_THEN_THEORY_BACKWARD_REFRAME",
       "sub_fallback": "NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET",
@@ -48,7 +48,9 @@
       },
       "blockers": [
         "VIABLE_EXECUTABLE_MECHANISM_ZERO",
-        "SEMANTIC_ACTIVE_WORK_LOCALIZATION_STATIC_CONTRACT_NOT_YET_FIXED",
+        "SEMANTIC_ACTIVE_WORK_LOCALIZATION_SYNTHETIC_MEASUREMENT_NOT_YET_AUTHORIZED_AFTER_STATIC_CONTRACT",
+        "OPTIMIZED_EXACT_SEMANTICS_ORDINARY_COMPARATORS_BOUND_NOT_MEASURED",
+        "RESOURCE_VECTOR_AND_SCALING_CROSSOVER_BOUND_NOT_MEASURED",
         "CROSS_GENERATION_PROTECTED_SET_EXPOSURE_ACCOUNTING_METHOD_LIMITED_ON_CURRENT_SAFE_METADATA",
         "FUTURE_PROTECTED_SET_VALIDITY_REGIME_UNBOUND",
         "FUTURE_PROTECTED_FEEDBACK_VISIBILITY_MASKING_UNBOUND",
@@ -61,6 +63,7 @@
       ],
       "exclusions": [
         "MAIN_ACTIVE_OBJECT_BLOCKER_SUCCESSOR",
+        "SAME_GENERATION_SYNTHETIC_OUTCOME_FOR_CANDIDATE32",
         "CANDIDATE31_THIRD_CYCLE",
         "H5_RERUN_RESCORE_RETUNE_RELABEL_REOPEN",
         "TERMINAL_REDUCED_METHOD_LIMITED_IDENTITIES",
@@ -70,26 +73,33 @@
       ]
     },
     "main": {
-      "generation_id": "MAIN-20260922T001545+0900-PRIMARY-FUNNEL21-HOLD-R46-IDLE-5B7D21C9",
-      "mailbox_tip_observed": "c462af2cbea084f4cb1898c7c993c1e93eeccf8e",
+      "generation_id": "MAIN-20260922T012600+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R49-CYCLE1-7E3C21A5",
+      "mailbox_tip_observed": "0ed81db895a5fff57a5a9c66e14554c8d2df79c3",
       "status": "COMPLETED",
-      "candidate_id": null,
-      "research_layer": null,
-      "ownership_reconciled_to_analyst_r48": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01_IS_MAIN_OWNED_EVEN_THOUGH_DURABLE_MAIN_MAILBOX_PREDATES_R48",
-      "scientific_execution": false
+      "candidate_id": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
+      "research_layer": "ARCHITECTURE_STUDY",
+      "claim_ceiling": "SYSTEM",
+      "observation": "STATIC_CONTRACT_FEASIBLE_OUTCOME_INDEPENDENTLY",
+      "contract_id": "SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1",
+      "stop_reason": "R49_STATIC_CONTRACT_FEASIBLE_OUTCOME_INDEPENDENTLY_STOP_BEFORE_SYNTHETIC_MEASUREMENT",
+      "fresh_analyst_review_required": true,
+      "scientific_execution": false,
+      "synthetic_measurement": false,
+      "identity_consumption": false
     },
     "control": {
-      "generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
-      "tip": "0e38771af4dacefab079a9389dece4c6a48f1240",
-      "policy_note": "Do not manufacture activity; no-op/no-delta scans are not scientific progress; preserve mechanism quality floor."
+      "generation_id": "CTRL-20260922T010052+0900-R27-5C8A21F4",
+      "tip": "70161c64b6760dafa773051dabd9d839b9443cd8",
+      "programme_position": "FORMAL_HOLD_WITH_ACTIVE_SYSTEM_ARCHITECTURE_NO_VIABLE_MECHANISM",
+      "policy_note": "Do not manufacture activity; preserve the mechanism quality floor; no-target liveness is not scientific progress."
     },
-    "previous_sub": "SUB-20260921T234211+0900-NOOP-R46NOMECH-7C3A91E5"
+    "previous_sub": "SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "86290dcbd85a45e89acc56263685cd9338963726",
-    "orchestrator_tip_before_write": "c462af2cbea084f4cb1898c7c993c1e93eeccf8e",
-    "control_tip": "0e38771af4dacefab079a9389dece4c6a48f1240",
+    "analyst_handoff": "7c154b6203347a4f212746e2cfe4ee7f1be2e5a4",
+    "orchestrator_tip_before_write": "0ed81db895a5fff57a5a9c66e14554c8d2df79c3",
+    "control_tip": "70161c64b6760dafa773051dabd9d839b9443cd8",
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -106,7 +116,7 @@
   "cycle": null,
   "main_independence": {
     "status": "INDEPENDENT_FAIL_CLOSED_MAIN_ACTIVE_OBJECT_EXCLUDED",
-    "reason": "R48 allocates the only active canonical object exclusively to MAIN. SUB has no formal lane or fallback target and does not work MAIN's object, blocker, or successor."
+    "reason": "R49 assigns the sole active canonical SYSTEM object to MAIN. MAIN has completed only its authorized static contract cycle and awaits fresh Analyst review; SUB does not work the object, blocker, or successor."
   },
   "theory_backward_accounting": {
     "selection_status": "NO_AUTONOMOUS_SCIENTIFIC_SELECTION",
@@ -117,13 +127,13 @@
     "rolling_slot_assessment": "NEXT_SAFE_AUTONOMOUS_SELECTION_SHOULD_BE_THEORY_BACKWARD_MECHANISM_IF_A_COHERENT_TARGET_EXISTS",
     "theory_backward_exception": {
       "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "R48 admits one fresh SYSTEM Architecture object but assigns it to MAIN. Viable executable MECHANISM remains zero; H7 still lacks a fresh native object, matched comparator, resource contract, and falsifier; stable main and the five authoritative evidence refs are unchanged. Existing exploratory mechanism branches are already represented by consumed, terminal, reduced, method-limited, or unresolved lines. Selecting another SYSTEM edge case would violate the rolling supply intent, while relabeling the MAIN SYSTEM resource question or an API/config question as MECHANISM would manufacture quota credit."
+      "detail": "R49 reports viable executable MECHANISM zero. The only active canonical object is SYSTEM and MAIN-owned; H7 still lacks a fresh native object, matched comparator, resource contract, and falsifier; stable main and all five authoritative evidence refs are unchanged. MAIN's post-R49 static-contract feasibility observation is SYSTEM-only and pending fresh Analyst review. Existing exploratory mechanism branches are already represented by consumed, terminal, reduced, method-limited, or unresolved lines. Selecting another SYSTEM edge case would violate the rolling supply intent, while relabeling the resource contract, API/configuration work, or a terminal/reduced line as MECHANISM would manufacture quota credit."
     },
     "exception_counts_as_selection": false,
     "no_target_episode": {
       "id": "NTE-20260921-R34-POST-REPLAY-v1",
-      "analyst_canonical_check_count": 11,
-      "sub_local_check_count_after_run": 12,
+      "analyst_canonical_check_count": 12,
+      "sub_local_check_count_after_run": 13,
       "status": "OPEN",
       "counts_as_selection": false,
       "interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
@@ -134,13 +144,14 @@
   "reduction_question": "N/A_NO_CURRENT_SUB_OBJECT",
   "falsifier": "N/A_NO_CURRENT_SUB_OBJECT",
   "inputs": {
-    "analyst_generation": "EVA-20260922T002600+0900-R48-8C4A21F6",
+    "analyst_generation": "EVA-20260922T011108+0900-R49-7E3C21A5",
     "stable_main_refreshed": true,
     "authoritative_evidence_refs_refreshed": true,
     "main_mailbox_refreshed": true,
     "control_refreshed": true,
     "research_branch_inventory_refreshed": true,
     "material_mechanism_surface_delta": false,
+    "post_analyst_main_system_observation_pending_canonicalization": true,
     "formal_or_sealed_test_used": false,
     "held_out_or_confirmatory_seed_used": false,
     "official_scorer_used": false,
@@ -155,10 +166,11 @@
   "observations": {
     "scientific_result": "NO_TARGET_NO_OP",
     "mechanism_surface_delta": "NONE",
-    "control_plane_delta": "R47/R48 admitted the semantic-active-work localization shadow as a fresh canonical SYSTEM Architecture object and allocated it to MAIN only.",
+    "control_plane_delta": "MAIN completed the R49-authorized static/read-only SYSTEM contract cycle, fixed SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1 prospectively, and stopped before synthetic measurement for fresh Analyst review.",
     "stable_main_unchanged": true,
     "evidence_refs_unchanged": true,
-    "main_mailbox_predates_current_analyst": true
+    "main_mailbox_postdates_current_analyst": true,
+    "canonical_lifecycle_left_unchanged_pending_fresh_analyst": true
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "proposed_claim_ceiling": "N/A_NO_CURRENT_SUB_OBJECT",
@@ -174,19 +186,19 @@
   "system_priority_exception": {"used": false, "reason": "No SYSTEM scientific selection was made by SUB."},
   "next_layer": "NONE",
   "open_choices": [
-    "Wait for a material mechanism-surface delta or fresh explicit SUB handoff.",
+    "Wait for fresh Evidence Analyst review of MAIN's R49 static-contract observation or a material independent mechanism-surface delta.",
     "Do not infer a MECHANISM successor from CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01; same-object SYSTEM to MECHANISM upgrade is prohibited.",
     "H7 can only become actionable after a fresh native object, matched comparator, resource contract, and falsifier are prospectively fixed."
   ],
-  "recommendation": "REMAIN_INTENTIONALLY_IDLE; DO_NOT_TOUCH_MAIN_ACTIVE_OBJECT; WAIT_FOR_MATERIAL_MECHANISM_SURFACE_DELTA_OR_FRESH_EXPLICIT_SUB_HANDOFF",
+  "recommendation": "FAIL_CLOSED_PENDING_FRESH_ANALYST_REVIEW_AFTER_R49_MAIN_STATIC_CONTRACT_OR_MATERIAL_MECHANISM_SURFACE_DELTA",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
-  "completion_target": "NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION_UNDER_R48_MAIN_OWNERSHIP",
+  "completion_target": "NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION_AFTER_R49_MAIN_STATIC_CONTRACT",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_paths": ["reports/orchestrator/history/2026-09-22/0035-sub.md"],
+    "history_paths": ["reports/orchestrator/history/2026-09-22/0136-sub.md"],
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
     "mode": "SINGLE_FAST_FORWARD_COMMIT_SUB_OWNED_PATHS_ONLY"
