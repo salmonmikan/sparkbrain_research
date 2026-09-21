@@ -1,50 +1,40 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
-  "produced_at": "2026-09-21T22:34:22+09:00",
-  "producer_run_id": "SUB-RUN-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
+  "generation_id": "SUB-20260921T234211+0900-NOOP-R46NOMECH-7C3A91E5",
+  "produced_at": "2026-09-21T23:42:11+09:00",
+  "producer_run_id": "SUB-RUN-20260921T234211+0900-NOOP-R46NOMECH-7C3A91E5",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5",
+  "supersedes_generation_id": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
-      "handoff_commit": "fca9a4b0adb259b76a518605f611ff79e0c48680",
-      "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_INDEPENDENT_FRESH_INTEGRITY_OBJECT",
+      "generation_id": "EVA-20260921T234005+0900-R46-6D2A91F4",
+      "handoff_commit": "4d2eb7279acf5b60b184c7936a02166cef38fe3e",
+      "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_LATER_SHADOW_ADMISSION_OR_INDEPENDENT_FRESH_INTEGRITY_OBJECT",
       "sub_lane": "NO_TARGET_EPISODE_HOLD_UNTIL_MECHANISM_SURFACE_DELTA_THEN_THEORY_BACKWARD_REFRAME",
       "sub_fallback": "NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET",
       "candidate_pool": {
         "material_candidates_total": 31,
         "claim_ceiling_counts": {"MECHANISM": 13, "SYSTEM": 18},
-        "classification_complete": 31
+        "classification_complete": 31,
+        "terminal_state_counts": {"ACTIVE": 0, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 30},
+        "preformal_eligible": 0,
+        "preformal_ready": 0,
+        "viable_mechanism_candidates": 0,
+        "active_canonical_candidate": null
       },
       "research_layers": {
-        "DISCOVERY": {"M": 0, "S": 0},
-        "ARCHITECTURE_STUDY": {"M": 0, "S": 0, "QM": 0, "QS": 0},
-        "PRE_FORMAL": {"eligible": 0, "READY": 0},
-        "FORMAL": {"fresh_one_way_authority": false}
+        "DISCOVERY": {"state": "OPEN", "M": 0, "S": 0},
+        "ARCHITECTURE_STUDY": {"state": "EMPTY_HOLD", "M": 0, "S": 0, "QM": 0, "QS": 0},
+        "PRE_FORMAL": {"state": "EMPTY_HOLD", "eligible": 0, "READY": 0},
+        "FORMAL": {"state": "EMPTY_HOLD", "fresh_one_way_authority": false}
       },
-      "funnel_metrics": {
-        "terminal_state_counts": {"ACTIVE": 0, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 30},
-        "viable_mechanism_candidates": 0,
-        "rolling_theory_backward": {
-          "actual_scientific_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
-          "qualifying_count": 1,
-          "window_size": 3,
-          "share": "1/3",
-          "no_target_episode": {
-            "id": "NTE-20260921-R34-POST-REPLAY-v1",
-            "canonical_check_count": 9,
-            "status": "OPEN",
-            "counts_as_selection": false
-          }
-        }
-      },
-      "active_canonical_candidate": null,
-      "system_priority_exception": {
-        "used": false,
-        "reason_code": null,
-        "reason_detail": "No active MAIN or SUB scientific allocation and viable executable MECHANISM=0.",
-        "compared_mechanism_candidate_ids": []
+      "system_priority_exception": {"used": false, "reason_detail": "No active allocation and viable executable MECHANISM=0; retained shadow remains non-authorizing."},
+      "retained_shadow": {
+        "id": "SHADOW-PHENOM-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
+        "canonical_candidate": false,
+        "allocation_authority": false,
+        "execution_authority": false,
+        "note": "Carried from R45 for later independent admission review only; cannot be executed in R46."
       },
       "blockers": [
         "VIABLE_EXECUTABLE_MECHANISM_ZERO",
@@ -56,41 +46,41 @@
         "NO_FRESH_FORMAL_ONE_WAY_AUTHORITY",
         "ELIGIBILITY_PUBLIC_SEMANTIC_CLOCK_UNSPECIFIED",
         "ACTION_POLICY_EVALUATION_REAL_VISIT_VS_OBSERVATIONAL_PROBE_UNSPECIFIED",
-        "ASSEMBLY_UNIT_ATTRIBUTION_CONFOUNDED"
+        "ASSEMBLY_UNIT_ATTRIBUTION_CONFOUNDED",
+        "H5_BROAD_EVENT_ROUTING_LAZY_STATE_NO_GO_INTERPRETATION_PROHIBITED_WITHOUT_FRESH_COMPONENT_ATTRIBUTION"
       ],
       "exclusions": [
         "MAIN_ACTIVE_OBJECT_BLOCKER_SUCCESSOR",
-        "CANDIDATE31_THIRD_CYCLE_OR_PROTECTED_OUTCOME_RECONSTRUCTION",
+        "CANDIDATE31_THIRD_CYCLE",
+        "H5_RERUN_RESCORE_RETUNE_RELABEL_REOPEN",
+        "RETAINED_SHADOW_SAME_GENERATION_EXECUTION",
         "TERMINAL_REDUCED_METHOD_LIMITED_IDENTITIES",
         "FORMAL_TEST_STARTED_HELD_OUT_CONSUMED_IDENTITIES",
-        "SHADOW_IDEAS_NOT_EXECUTABLE",
         "PROTECTED_OUTCOME_READING"
       ]
     },
     "main": {
-      "generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
-      "mailbox_tip_observed": "4734a1d45b0ab888c07c10dfbb51710f4db41a16",
-      "status": "COMPLETED",
+      "generation_id": "MAIN-20260921T231231+0900-PRIMARY-FUNNEL21-BLOCKED-R44-STALEUPSTREAM-8D4C21A7",
+      "mailbox_tip_observed": "be3e82e0a3d18338dc10567f07f878cac54edcde",
+      "status": "BLOCKED",
       "candidate_id": null,
       "research_layer": null,
-      "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_INDEPENDENT_FRESH_INTEGRITY_OBJECT",
+      "ownership": "NO_ACTIVE_MAIN_OBJECT",
       "scientific_execution": false,
-      "stop_reason": "R44_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
-      "sub_collision": false
+      "note": "This MAIN generation predates Analyst R46; no MAIN-owned active scientific object exists and SUB does not infer a successor."
     },
     "control": {
-      "generation_id": "CTRL-20260921T205220+0900-R25-9C4E21A7",
-      "branch": "ops/control-brain-handoff",
-      "tip": "835c175de2db7220e22919a3a27c76406b8cef46",
-      "policy_note": "NO_OP_NO_DELTA_SCANS_ARE_NOT_PROGRESS; DO_NOT_MANUFACTURE_CANDIDATES; HARD_FLOORS_UNCHANGED; bounded Utility autonomy remains optional."
+      "generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
+      "tip": "0e38771af4dacefab079a9389dece4c6a48f1240",
+      "policy_note": "Remain intentionally idle scientifically until material mechanism-surface delta or independently motivated fresh object; no candidate manufacturing."
     },
-    "previous_sub": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5"
+    "previous_sub": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "fca9a4b0adb259b76a518605f611ff79e0c48680",
-    "orchestrator_tip_before_write": "4734a1d45b0ab888c07c10dfbb51710f4db41a16",
-    "control_tip": "835c175de2db7220e22919a3a27c76406b8cef46",
+    "analyst_handoff": "4d2eb7279acf5b60b184c7936a02166cef38fe3e",
+    "orchestrator_tip_before_write": "be3e82e0a3d18338dc10567f07f878cac54edcde",
+    "control_tip": "0e38771af4dacefab079a9389dece4c6a48f1240",
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -105,74 +95,42 @@
   "target": null,
   "candidate_id": null,
   "cycle": null,
-  "main_independence": {
-    "status": "INDEPENDENT_NO_MUTATION_FAIL_CLOSED",
-    "avoided": [
-      "NO_ACTIVE_MAIN_OBJECT_WAS_SYNTHESIZED_INTO_SUB_WORK",
-      "CANDIDATE31_TERMINAL_METHOD_LIMIT_RESCUE",
-      "H7_UNCONTRACTED_NATIVE_RESPONSIBILITY_OBJECT",
-      "TERMINAL_OR_REDUCED_MECHANISM_FAMILIES",
-      "FORMAL_TEST_STARTED_SCORING",
-      "HELD_OUT_CONFIRMATORY_MATERIAL",
-      "CONSUMED_FROZEN_IDENTITIES",
-      "PRESERVE_CONTROL_EVIDENCE_REFS",
-      "STABLE_MAIN_MUTATION"
-    ]
-  },
+  "main_independence": {"status": "INDEPENDENT_NO_MUTATION_FAIL_CLOSED", "reason": "No active MAIN object; Analyst R46 creates no executable SUB allocation and retained SYSTEM shadow is explicitly non-authorizing."},
   "theory_backward_accounting": {
     "selection_status": "NO_AUTONOMOUS_SCIENTIFIC_SELECTION",
-    "last_three": [
-      "THEORY_BACKWARD_MECHANISM_DISCOVERY:V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY",
-      "SYSTEM_DISCOVERY:V05_OUTCOME_REPLAY_CREDIT_SEMANTICS",
-      "SYSTEM_DISCOVERY:V05_OUTCOME_REPLAY_CREDIT_SEMANTICS_TIMESHIFT"
-    ],
+    "actual_scientific_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
     "qualifying_count": 1,
     "window_size": 3,
     "share": "1/3",
     "theory_backward_exception": {
       "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "R44 has no active canonical candidate, viable executable MECHANISM=0, and explicitly prefers intentional idle over manufactured activity. Independent refresh found stable main and all five authoritative evidence tags unchanged and no newly admitted independent mechanism substrate in the research branch inventory. H7 remains uncontracted; nearby mechanism families remain terminal, reduced, method-limited, or confounded. Literature R22 adds prospective validity-under-adaptivity constraints but does not create an internal coherent bounded mechanism question. Selecting a target now would manufacture activity, relabel an ordinary reduction, rescue a terminal object, or collide with reserved/consumed scope."
+      "detail": "Analyst R46 reconciles Control R26, Audit R5 and Methodology R46 and still reports viable executable MECHANISM=0, no active canonical candidate, H7 uncontracted, and no material mechanism-surface delta. The only retained shadow is SYSTEM-oriented semantic-active-work localization and is explicitly noncanonical/non-authorizing for this generation. A fourth autonomous SYSTEM selection would break the rolling theory-backward supply window; manufacturing a MECHANISM label would violate the quality floor."
     },
     "exception_counts_as_selection": false,
-    "no_target_episode": {
-      "id": "NTE-20260921-R34-POST-REPLAY-v1",
-      "analyst_canonical_check_count": 9,
-      "sub_local_check_count_after_run": 10,
-      "status": "OPEN"
-    },
-    "next_new_selection_requirement": "ONLY_AFTER_MATERIAL_MECHANISM_SURFACE_DELTA_OR_FRESH_EXPLICIT_ANALYST_SUB_HANDOFF_REASSESS_THEORY_BACKWARD_MECHANISM_SUPPLY"
+    "no_target_episode": {"id": "NTE-20260921-R34-POST-REPLAY-v1", "analyst_canonical_check_count": 10, "sub_local_check_count_after_run": 11, "status": "OPEN", "counts_as_selection": false}
   },
   "question": "N/A_NO_CURRENT_OBJECT",
   "hypothesis": "N/A_NO_CURRENT_OBJECT",
   "reduction_question": "N/A_NO_CURRENT_OBJECT",
   "falsifier": "N/A_NO_CURRENT_OBJECT",
   "inputs": {
-    "analyst_generation": "EVA-20260921T220541+0900-R44-7A3C21E8",
+    "analyst_generation": "EVA-20260921T234005+0900-R46-6D2A91F4",
     "stable_main_refreshed": true,
     "authoritative_evidence_refs_refreshed": true,
-    "authoritative_evidence_ref_count": 5,
-    "research_branch_inventory_refreshed": true,
     "main_mailbox_refreshed": true,
     "control_refreshed": true,
-    "material_post_analyst_main_event": true,
     "material_mechanism_surface_delta": false,
     "formal_or_sealed_test_used": false,
     "held_out_or_confirmatory_seed_used": false,
     "official_scorer_used": false,
     "consumed_identity_used": false
   },
-  "implementation": {
-    "research_branch": null,
-    "workflow": null,
-    "scientific_probe_executed": false,
-    "outcome_dispatch": false
-  },
+  "implementation": {"research_branch": null, "workflow": null, "scientific_probe_executed": false, "outcome_dispatch": false},
   "observations": {
     "scientific_result": "NO_TARGET_NO_OP",
     "mechanism_surface_delta": "NONE",
-    "control_plane_delta": "R44 sharpened future validity-under-adaptivity and feedback-visibility requirements without opening a candidate; MAIN R44 then completed intentional idle.",
-    "main_event": "MAIN consumed R44 and completed with no active object, candidate, workflow, or scientific execution.",
-    "reason": "No coherent bounded independent MECHANISM target exists under R44 or the independently refreshed repository/evidence surface.",
+    "control_plane_delta": "Analyst advanced through R45 to R46 during this SUB run, consuming Control R26, Audit R5, and Methodology R46. R46 preserves no-target allocation and carries one SYSTEM-oriented shadow for later review only.",
+    "h5_interpretation": "Official aggregate-work FAIL remains valid for the exact current implementation; broad event-routing/lazy-state causal no-go is prohibited without fresh component attribution.",
     "stable_main_unchanged": true,
     "evidence_refs_unchanged": true
   },
@@ -180,28 +138,24 @@
   "proposed_claim_ceiling": "N/A_NO_CURRENT_OBJECT",
   "proposed_preformal_eligible": "N/A_NO_CURRENT_OBJECT",
   "preliminary_readiness": {"status": "N/A_NO_CURRENT_OBJECT"},
-  "proposed_hold_dimensions": {
-    "hold_class": null,
-    "hold_reason": null,
-    "terminal_state": null,
-    "queue_state": null,
-    "status": "N/A_NO_CURRENT_OBJECT"
-  },
+  "proposed_hold_dimensions": {"hold_class": null, "hold_reason": null, "terminal_state": null, "queue_state": null, "status": "N/A_NO_CURRENT_OBJECT"},
   "system_priority_exception": {"used": false, "reason": "No SYSTEM scientific selection was made."},
   "next_layer": "NONE",
-  "open_choices": [],
-  "recommendation": "REMAIN_INTENTIONALLY_IDLE_UNTIL_MATERIAL_MECHANISM_SURFACE_DELTA_OR_FRESH_EXPLICIT_SUB_HANDOFF",
+  "open_choices": [
+    "Retained shadow may only be reconsidered after a later independent re-fetch and normal Analyst admission filter.",
+    "Any future resource-efficiency object must prospectively bind behaviorally consequential workload, subsystem accounting, equal-semantics comparators, and claim type."
+  ],
+  "recommendation": "REMAIN_INTENTIONALLY_IDLE_UNTIL_MATERIAL_MECHANISM_SURFACE_DELTA_OR_FRESH_EXPLICIT_SUB_HANDOFF; DO_NOT_EXECUTE_RETAINED_SHADOW_IN_R46",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
-  "completion_target": "NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION_UNDER_R44",
+  "completion_target": "NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION_UNDER_R46",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_paths": ["reports/orchestrator/history/2026-09-21/2234-sub.md"],
+    "history_paths": ["reports/orchestrator/history/2026-09-21/2342-sub.md"],
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
     "mode": "SINGLE_FAST_FORWARD_COMMIT_SUB_OWNED_PATHS_ONLY"
-  },
-  "persistence_limitations": []
+  }
 }
