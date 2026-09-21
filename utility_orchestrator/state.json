@@ -1,110 +1,89 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
-  "produced_at": "2026-09-21T01:23:13+09:00",
-  "producer_run_id": "utility-auto-20260921T012313+0900-eligibility-timebase",
-  "authority_scope": "UTILITY_ASSIGNMENT_READ_ONLY_AUDIT_AND_TERMINAL_STATE_ONLY",
-  "supersedes_generation_id": "utility-state-20260920T1027JST-lifecycle-bootstrap",
+  "generation_id": "UTILITY-20260921T232215+0900-AUTO-REGISTRY-RECON-RUNNING-6F2A9C41",
+  "produced_at": "2026-09-21T23:22:15+09:00",
+  "producer_run_id": "utility-auto-20260921T232215+0900-registry-reconciliation",
+  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_TOOLING_DIAGNOSTIC",
+  "supersedes_generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+  "assignment_mode": "AUTONOMOUS_IDLE",
+  "assignment_id": null,
+  "assignment_generation_id": null,
+  "autonomous_task_id": "AUTOUTIL-20260921T232215+0900-SCHEDREG-RECON-6F2A9C41",
+  "status": "RUNNING",
+  "run_count": 1,
+  "max_runs": 1,
+  "evidentiary_status": "NON_EVIDENTIARY",
+  "scientific_authority": "NONE",
+  "objective": "Read-only reconciliation diagnostic of scheduler_registry mirror metadata against current live scheduler definitions, limited to identifying drift and producing a bounded report; perform no scheduler mutation and no scientific/repository mutation outside Utility-owned state/results.",
+  "trigger_source": {
+    "control_generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
+    "control_observation": "registry_reconciliation_required=true; registry mirror is out of sync with approved live definitions",
+    "open_utility_request_selected": null
+  },
   "input_generations": {
-    "assignment": {
-      "assignment_id": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
-      "assignment_generation_id": "UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
-      "assignment_blob_sha": "b1ce5ed66aaba7c07b6078b3a7c897aa81752055",
-      "status_observed": "ASSIGNED"
+    "assignment_pointer": {
+      "status": "IDLE",
+      "active_assignment_id": null,
+      "active_assignment_generation_id": null,
+      "blob_sha": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
-      "handoff_head": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
-      "ownership": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01_MAIN_STATIC_ARCHITECTURE"
+      "generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
+      "branch_head": "fca9a4b0adb259b76a518605f611ff79e0c48680",
+      "active_canonical_candidate": null,
+      "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_INDEPENDENT_FRESH_INTEGRITY_OBJECT",
+      "sub_lane": "NO_TARGET_EPISODE_HOLD_UNTIL_MECHANISM_SURFACE_DELTA_THEN_THEORY_BACKWARD_REFRAME"
     },
-    "main_relay": {
-      "head": "a20207308c7203c597791c2371a3085d639a4a74",
-      "status": "COMPLETED_STATIC_TIMEBASE_ARCHITECTURE",
-      "mapped_observation": "TIMEBASE_CONTRACT_AMBIGUOUS"
+    "control": {
+      "generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
+      "branch_head": "0e38771af4dacefab079a9389dece4c6a48f1240",
+      "programme_position": "FORMAL_HOLD_WITH_INTENTIONAL_LOWER_FUNNEL_IDLE_NO_COHERENT_TARGET"
     },
-    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
-  },
-  "assignment_id": "CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE",
-  "assignment_generation_id": "UASSIGN-20260921T005250+0900-ELIGTIME-7D4A2C91",
-  "lifecycle_status": "UTILITY_TERMINAL_BLOCKED_CONTROL_POINTER_UNCHANGED",
-  "status": "BLOCKED",
-  "run_count": 1,
-  "updated_at": "2026-09-21T01:23:13+09:00",
-  "last_result": "utility_orchestrator/results/2026-09-21/CTRL-20260921-0050-ELIGIBILITY-TIMEBASE-INVARIANCE.md",
-  "result_commit": "cfb175f0316881a2f74724c247e7cb75f176f1a2",
-  "evidentiary_status": "NON_EVIDENTIARY_READ_ONLY_ARCHITECTURE_AUDIT_ONLY",
-  "scientific_authority": "NONE",
-  "classification": "BLOCKED_BY_FRESH_ANALYST_MAIN_OWNERSHIP_SUPERSESSION",
-  "assignment_terminal_classification": null,
-  "source_binding": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "src/sparkbrain/v05/plasticity.py": "bb04eaac527aaa6343018ffb49347d087c6a29e5",
-    "src/sparkbrain/v05/brain.py": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-    "docs/THEORY_SPEC_v0.5.md": "c1d3dbd041476428a103324b58616d3cc6534885",
-    "docs/V05_EXPERIMENT_PROTOCOL.md": "fce01cd448ad00e1d420e3cb73f6d0f32768df5d",
-    "tests/v05/test_v05_homeostasis_plasticity.py": "ba1763c8ceb441cc91ce7510a313548acbb29db9",
-    "tests/v05/test_v05_brain.py": "6a81994ac82a3f0660585ef0d95495aaaa336629"
-  },
-  "audit": {
-    "implemented_decay_clock": "ONE_ELIGIBILITY_DECAY_MULTIPLICATION_PER_APPLY_CALL",
-    "apply_has_elapsed_time_argument": false,
-    "process_episode_apply_semantics": "ONCE_WHEN_LEARN_FIELD_TRUE_ZERO_WHEN_FALSE",
-    "explicit_episode_or_apply_count_contract_found": false,
-    "explicit_elapsed_or_model_time_contract_found": false,
-    "partition_invariance_test_executed": false,
-    "read_only_conclusion": "CURRENT_V05_CONTRACT_SURFACE_DOES_NOT_EXPLICITLY_BIND_DECAY_CLOCK"
-  },
-  "preserved_funnel_v2_1": {
-    "candidate_id": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
-    "analyst_generation_id": "EVA-20260921T005854+0900-R23-9C4E71A2",
-    "claim_ceiling": "SYSTEM",
-    "preformal_eligible": false,
-    "preformal_readiness": {
-      "field_presence_in_analyst_record": false,
-      "utility_synthesized_value": false
+    "main": {
+      "generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
+      "ownership": "INTENTIONAL_IDLE_NO_ACTIVE_OBJECT"
     },
-    "hold_class": null,
-    "hold_reason": null,
-    "terminal_state": "ACTIVE",
-    "queue_state": "ACTIVE",
-    "system_priority_exception": {
-      "used": false,
-      "reason_code": null,
-      "reason_detail": "SYSTEM work protects reproducibility/evidence interpretation; no comparable executable/informative MECHANISM exists.",
-      "compared_mechanism_candidate_ids": []
-    }
+    "sub": {
+      "generation_id": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
+      "ownership": "NO_OP_NO_COHERENT_MECHANISM_TARGET"
+    },
+    "relay": {
+      "ownership": "NO_ACTIVE_CONTINUATION_NO_NEW_DURABLE_GENERATION"
+    },
+    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "scheduler_registry_branch_head_before_work": "840257b39e97a182fb07742d5a02f982751b4932"
   },
-  "collision_context": {
-    "collision_found": true,
-    "collision_type": "FRESH_ANALYST_MAIN_OWNERSHIP_SUPERSESSION",
-    "evidence_analyst_head_observed": "9efe48eea7e6655e7eae4b3f0afb3b0c0ed781be",
-    "main_relay_head_observed": "a20207308c7203c597791c2371a3085d639a4a74",
-    "main_static_object": "CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01",
-    "main_static_observation": "TIMEBASE_CONTRACT_AMBIGUOUS",
-    "dynamic_diagnostic_authorized_after_latest_analyst": false,
-    "active_main_or_sub_fixture_used": false
+  "ownership_checks": {
+    "collision_found": false,
+    "main_critical_dependency": false,
+    "active_or_queued_research_object_touched": false,
+    "consumed_or_protected_identity_targeted": false,
+    "candidate_typing_touched": false
   },
-  "stop_reason": "BLOCKED_BY_FRESH_ANALYST_MAIN_OWNERSHIP_SUPERSESSION",
-  "follow_up_recommendation": "FRESH_ANALYST_CANONICALIZATION_THEN_CONTROL_MAY_ISSUE_FRESH_SUCCESSOR_ASSIGNMENT_IF_DYNAMIC_DIAGNOSTIC_REMAINS_USEFUL",
+  "allowed_actions": [
+    "READ scheduler_registry mirror files",
+    "READ current live automation definitions",
+    "COMPARE mirror schedule/title/prompt metadata against live definitions where exact matching is possible",
+    "WRITE Utility-owned state and append-only result only"
+  ],
+  "forbidden_actions": [
+    "NO scheduler mutation",
+    "NO scheduler registry mutation",
+    "NO scientific workflow dispatch",
+    "NO research branch or evidence/control/preserve mutation",
+    "NO candidate typing/readiness changes",
+    "NO PRE_FORMAL or FORMAL work"
+  ],
+  "stop_condition": "Stop after one bounded reconciliation report or immediately on ownership/authority supersession, ambiguous live-to-registry mapping, or any need for scheduler mutation.",
   "follow_up_request": null,
   "integrity": {
     "scientific_workflow_rerun": false,
     "workflow_dispatch": false,
-    "dynamic_diagnostic_executed": false,
-    "diagnostic_branch_created": false,
-    "prospective_dynamic_contract_created": false,
-    "training_executed": false,
-    "official_test_or_scorer_accessed": false,
-    "formal_or_consumed_raw_accessed": false,
-    "historical_scientific_result_repaired_or_relabelled": false,
     "research_or_main_branch_mutated": false,
-    "immutable_or_scientific_control_refs_mutated": false,
-    "prior_control_plane_records_edited": false,
-    "candidate_typing_or_readiness_changed": false,
-    "preformal_or_formal_authority_created": false,
-    "active_main_or_sub_used_as_fixture": false,
     "scheduler_mutated": false,
-    "self_approved_follow_up": false,
+    "scheduler_registry_mutated": false,
+    "candidate_typing_changed": false,
+    "preformal_or_formal_authority_created": false,
     "control_assignment_pointer_mutated": false
   }
 }
