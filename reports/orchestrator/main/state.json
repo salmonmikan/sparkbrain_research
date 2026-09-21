@@ -1,157 +1,159 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T091756+0900-PRIMARY-FUNNEL21-HOLD-R31-7C2A91E4",
-  "producer_run_id": "sparkbrain-main-primary-20260921T091756JST-R31-HOLD",
-  "produced_at": "2026-09-21T09:17:56+09:00",
+  "generation_id": "MAIN-20260921T101710+0900-PRIMARY-FUNNEL21-MECH-ASMSET-R32-2F6C91A4",
+  "producer_run_id": "sparkbrain-main-primary-20260921T101710JST-R32-ASMSET-CONTRACT",
+  "produced_at": "2026-09-21T10:17:10+09:00",
   "mode": "PRIMARY",
-  "status": "COMPLETED",
-  "analyst_generation_id": "EVA-20260921T090300+0900-R31-3C7A91E4",
-  "analyst_commit": "060e7d7d150b5406124425348553c92b04fed253",
-  "supersedes_generation_id": "MAIN-20260921T081624+0900-PRIMARY-FUNNEL21-SYSTEM-ACTEVAL-R30-5C7A21E4",
-  "main_lane": "LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT",
-  "research_layer": null,
-  "candidate_id": null,
-  "cycle_count": 0,
-  "claim_ceiling": null,
-  "preformal_eligible": null,
+  "status": "WAITING_EXTERNAL",
+  "analyst_generation_id": "EVA-20260921T095900+0900-R32-6D2A91C4",
+  "analyst_commit": "6bf35ff0f08a981feb09abced00e157526a47cb0",
+  "supersedes_generation_id": "MAIN-20260921T091756+0900-PRIMARY-FUNNEL21-HOLD-R31-7C2A91E4",
+  "main_lane": "V05_ASSEMBLY_SET_CAUSAL_NECESSITY_DISTRIBUTIONAL_CONTROLS_ARCHITECTURE_CYCLE1_CONTRACT_FEASIBILITY",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "candidate_id": "CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01",
+  "cycle_count": 1,
+  "claim_ceiling": "MECHANISM",
+  "preformal_eligible": true,
   "hold_class": null,
   "hold_reason": null,
-  "terminal_state": null,
-  "queue_state": null,
-  "preformal_readiness": null,
+  "terminal_state": "ACTIVE",
+  "queue_state": "ACTIVE",
+  "preformal_readiness": {
+    "claim_type": "mechanism",
+    "supported_reachability": "PARTIAL",
+    "functional_consequence": "PARTIAL",
+    "ordinary_reductions_specified_or_controlled": [
+      "same-cardinality lesion distribution",
+      "pre-intervention balancing",
+      "perturbation-footprint diagnostic"
+    ],
+    "ordinary_reductions_unresolved": [
+      "distribution/seed schedule",
+      "balance/support rule",
+      "resource contract"
+    ],
+    "matched_comparator_status": "PARTIAL",
+    "support_breadth": "prior DEV signal + fresh literature; no new-contract outcome",
+    "falsifier_fixed": true,
+    "falsifier_definition": "targeted set must exceed preregistered lesion distribution after prespecified ordinary controls",
+    "open_scientific_choices": [
+      "distribution/seed schedule",
+      "balance variables",
+      "endpoint/footprint/support rule",
+      "resource contract"
+    ],
+    "formal_claim_ceiling": "set-level causal necessity/selectivity; not individual responsibility or new principle",
+    "status": "NOT_READY"
+  },
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No SYSTEM object is currently allocated. Viable executable MECHANISM count is zero; the prior SYSTEM audit is terminal and closed.",
+    "reason_detail": "MAIN object is MECHANISM.",
     "compared_mechanism_candidate_ids": []
   },
+  "blocked_until": null,
+  "do_not_touch": [
+    "terminal exact-match predecessor CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01",
+    "FORMAL/TEST/STARTED/evidence identities",
+    "consumed one-way identities",
+    "preserve/control/evidence refs",
+    "stable main",
+    "SUB Discovery lane"
+  ],
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_tip": "060e7d7d150b5406124425348553c92b04fed253",
-    "orchestrator_tip_at_lease_acquire": "0f61342975eda770c4216e5730c3d72da41c579a",
-    "research_branch": null,
-    "research_head": null,
-    "latest_completed_main_research_branch": "research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921",
-    "latest_completed_main_research_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
-    "latest_observed_sub_generation": "SUB-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4",
+    "analyst_tip": "6bf35ff0f08a981feb09abced00e157526a47cb0",
+    "orchestrator_tip_at_lease_acquire": "d4c91441e6cc12d5e4759a12814bdf6df3c94333",
+    "research_branch": "research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921",
+    "research_head": "52e14294d8e413a95c1dad387104bdeaa4468d39",
+    "prospective_contract_path": "analysis/architecture/main-v05-assembly-set-causal-necessity-distributional-controls-20260921/PROSPECTIVE_CONTRACT.md",
+    "latest_observed_sub_generation": "SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7",
     "latest_observed_sub_research_head": null
   },
   "research_layer_state": {
-    "DISCOVERY": {
-      "state": "OPEN",
-      "owner": "SUB"
-    },
+    "DISCOVERY": {"state": "OPEN", "owner": "SUB"},
     "ARCHITECTURE_STUDY": {
-      "state": "EMPTY_HOLD",
+      "state": "ACTIVE",
       "owner": "MAIN",
-      "active": {
-        "MECHANISM": 0,
-        "SYSTEM": 0
-      },
-      "queued": {
-        "MECHANISM": 0,
-        "SYSTEM": 0
-      }
+      "active": {"MECHANISM": 1, "SYSTEM": 0},
+      "queued": {"MECHANISM": 0, "SYSTEM": 0}
     },
-    "PRE_FORMAL": {
-      "state": "EMPTY_HOLD",
-      "owner": "MAIN",
-      "eligible": 0,
-      "READY": 0
-    },
-    "FORMAL": {
-      "state": "EMPTY_HOLD",
-      "owner": "MAIN",
-      "fresh_one_way_authority": false
-    }
+    "PRE_FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "eligible": 1, "READY": 0},
+    "FORMAL": {"state": "EMPTY_HOLD", "owner": "MAIN", "fresh_one_way_authority": false}
   },
-  "canonicalized_predecessor": {
-    "candidate_id": "CAND-V05-ACTION-POLICY-EVALUATION-ISOLATION-CONTRACT-01",
-    "classification": "HOLD",
-    "claim_ceiling": "SYSTEM",
-    "preformal_eligible": false,
-    "hold_class": "HOLD_CONTRACT_AMBIGUITY",
-    "hold_reason": [
-      "MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT",
-      "PUBLIC_EVALUATION_VISIT_SEMANTICS_UNSPECIFIED",
-      "IMPLEMENTATION_MUTATES_VISITS_AND_PENDING_WITH_EXPLORE_FALSE",
-      "SAME_OBJECT_DYNAMIC_ESCALATION_FORBIDDEN"
-    ],
-    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-    "queue_state": "NOT_QUEUED",
-    "preformal_readiness": "NOT_APPLICABLE",
-    "same_object_dynamic_interleaving_authorized": false,
-    "system_to_mechanism_upgrade_authorized": false
-  },
-  "workflows": [],
-  "observed_control_plane_workflows": [
+  "workflows": [
     {
-      "run_id": 35547240426,
+      "run_id": 35550692068,
       "name": "ci",
-      "head_branch": "ops/evidence-analyst-handoff",
-      "head_sha": "060e7d7d150b5406124425348553c92b04fed253",
-      "status_at_reconcile": "in_progress",
-      "role": "CONTROL_PLANE_CI_ONLY_NOT_SCIENTIFIC_EXECUTION"
-    }
-  ],
-  "observed_prior_scientific_workflows": [
-    {
-      "run_id": 35541396714,
-      "head_sha": "b2547429823be29a2547419c80c40fb2138dfdc9",
-      "status": "completed",
-      "conclusion": "success",
-      "role": "PRIOR_COMPLETED_REFERENCE_ONLY"
-    },
-    {
-      "run_id": 35541396705,
-      "name": "ci",
-      "head_sha": "b2547429823be29a2547419c80c40fb2138dfdc9",
-      "status": "completed",
-      "conclusion": "success",
-      "role": "PRIOR_COMPLETED_REFERENCE_ONLY"
+      "head_branch": "research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921",
+      "head_sha": "52e14294d8e413a95c1dad387104bdeaa4468d39",
+      "status": "in_progress",
+      "conclusion": null,
+      "role": "EXACT_HEAD_INTEGRITY_CI"
     }
   ],
   "observations": {
     "scientific_result_this_run": null,
-    "analyst_canonicalization_consumed": true,
-    "no_current_main_object": true,
-    "same_run_continuation_authorized": false,
-    "discovery_supply_status": "NO_COHERENT_MECHANISM_TARGET_ON_CURRENT_EVIDENCE",
-    "open_no_target_episode": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1",
+    "architecture_contract_terminal": "READY",
+    "architecture_contract_ready_semantics": "prospectively well-defined and informative only; no prior scientific success and no PRE_FORMAL readiness upgrade",
+    "set_level_claim_fixed": true,
+    "distribution_seed_schedule": [1701, 1702, 1703, 1704],
+    "distributional_comparator_fixed": true,
+    "uniform_same_cardinality_controls_per_surface": 64,
+    "balance_aware_controls_per_surface": 64,
+    "balance_variables_fixed": 7,
+    "primary_observable_fixed": "prediction accuracy impairment versus sham",
+    "perturbation_footprint_fixed": ["total spike-count delta", "per-unit spike-count L1"],
+    "resource_contract_fixed": "130 arms x 8 episodes per surface, 4 fixed surfaces, max 4160 episode evaluations",
+    "support_rule_fixed": true,
+    "falsifier_fixed": "D_uniform > 0 AND D_balanced > 0 AND target footprint within ordinary-control envelope on every fixed valid surface; otherwise reduced/unresolved as prospectively specified",
+    "intervention_outcome_executed": false,
+    "suppression_called": false,
+    "preformal_executed": false,
+    "formal_executed": false,
     "sub_collision": false,
-    "research_mutation_executed": false,
-    "scientific_workflow_dispatched": false,
-    "same_run_scientific_redesign": false
+    "same_run_outcome_responsive_redesign": false
   },
   "evidentiary_status": {
     "formal_scientific_evidence": 0,
     "preformal_development_evidence": 0,
-    "mechanism_architecture_observations": 0,
+    "mechanism_architecture_observations": 1,
     "system_architecture_observations": 0,
     "new_identity_consumption": 0,
-    "current_work": "NO_SCIENTIFIC_EXECUTION_R31_CONTROL_PLANE_RECONCILIATION"
+    "current_work": "NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_CONTRACT_FEASIBILITY_ONLY_NO_INTERVENTION"
   },
   "ordinary_reductions": {
-    "current_object": null,
-    "predecessor_action_policy": [
-      "ordinary integer visit counter",
-      "pending last-action register",
-      "evaluation protocol semantics remain publicly unresolved"
+    "current_object": [
+      "generic same-cardinality sparse-lesion effects",
+      "uniform nonmember lesion distribution",
+      "pre-intervention activity/topology covariate balance",
+      "distributed perturbation footprint"
     ],
-    "same_object_dynamic_escalation_forbidden": true
+    "predecessor_exact_match_status": "TERMINAL_AND_NOT_REOPENED",
+    "individual_responsibility_claim_authorized": false
   },
   "support_breadth": {
-    "scope": "R31 Analyst handoff plus independent repository/ref/tag/control/preserve/PR/workflow reconciliation; no scientific execution target",
+    "scope": "fresh four-surface development contract; no intervention outcome",
+    "fixed_surfaces": [1701, 1702, 1703, 1704],
+    "source_api_support": [
+      "train_brain arbitrary deterministic seed",
+      "mature Assembly prototype access",
+      "deep-copy evaluation",
+      "unit suppression API for future separately authorized work",
+      "held-out episode generation",
+      "prediction and v04 spike observables",
+      "static field graph"
+    ],
     "stable_main_refetched": true,
-    "active_research_target": null,
     "evidence_refs_refetched": true,
     "control_and_preserve_refs_refetched": true,
+    "prs_refetched": true,
     "sub_state_refetched": true
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
-    "c19-r1-revision-authority-official-v1",
-    "c19-r1-revision-authority-official-v2",
+    "C19-R1 revision-authority official-v1",
+    "C19-R1 revision-authority official-v2",
     "c19-r2-fsa-state-tracker-official-v1",
     "pd01-long-history-fading-memory-official-v1",
     "ni01-no-ignition-selective-prediction-official-v1",
@@ -159,91 +161,48 @@
   ],
   "consumed_identities_this_run": [],
   "funnel_metrics": {
-    "material_candidates": 25,
-    "portfolio_split": {
-      "MECHANISM": 12,
-      "SYSTEM": 13
-    },
-    "classification_completeness": "25/25",
-    "terminal_state_counts": {
-      "ACTIVE": 0,
-      "NONTERMINAL_HOLD": 1,
-      "TERMINAL_FOR_CURRENT_OBJECT": 24
-    },
-    "architecture_active": {
-      "MECHANISM": 0,
-      "SYSTEM": 0
-    },
-    "architecture_queued": {
-      "MECHANISM": 0,
-      "SYSTEM": 0
-    },
-    "preformal_eligible_count": 0,
+    "material_candidates": 26,
+    "portfolio_split": {"MECHANISM": 13, "SYSTEM": 13},
+    "classification_completeness": "26/26",
+    "terminal_state_counts": {"ACTIVE": 1, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 24},
+    "architecture_active": {"MECHANISM": 1, "SYSTEM": 0},
+    "architecture_queued": {"MECHANISM": 0, "SYSTEM": 0},
+    "preformal_eligible_count": 1,
     "preformal_ready_count": 0,
-    "viable_executable_mechanism_count": 0,
-    "rolling_autonomous_scientific_selection": [
-      "SYSTEM",
-      "SYSTEM",
-      "MECHANISM"
-    ],
-    "qualifying_theory_backward_share": "1/3",
-    "recent_main_architecture_cycles": {
-      "SYSTEM": 6,
-      "MECHANISM": 1
-    }
+    "viable_mechanism_candidate_count": 1,
+    "recent_main_cycles": {"SYSTEM": 6, "MECHANISM": 1},
+    "system_over_mechanism_exception_count": 0
   },
-  "blockers": [
-    "NO_COHERENT_EXECUTABLE_CENTRAL_MECHANISM",
-    "H7_NO_FRESH_NATIVE_RESPONSIBILITY_OBJECT_COMPARATOR_RESOURCE_FALSIFIER",
-    "PREFORMAL_ELIGIBLE_0_READY_0",
-    "NO_FRESH_FORMAL_ONE_WAY_AUTHORITY",
-    "ELIGIBILITY_PUBLIC_SEMANTIC_CLOCK_UNSPECIFIED",
-    "ACTION_POLICY_EVALUATION_REAL_VISIT_VS_OBSERVATIONAL_SEMANTICS_UNSPECIFIED"
-  ],
-  "explicit_stop_rules": [
-    "Do not manufacture a MECHANISM object to alter the selection ratio.",
-    "Do not continue the terminal action-policy SYSTEM object with dynamic interleaving.",
-    "Do not upgrade that SYSTEM object to MECHANISM.",
-    "Do not rerun, rescore or relabel consumed one-way identities.",
-    "Do not perform FORMAL action without a fresh one-way authority chain."
-  ],
   "integrity": {
     "stable_main_unchanged": true,
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
-    "c19_v4_started": "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
-    "c19_v4_raw_preserve": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
-    "c19_r1_started_v1": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
-    "c19_r1_started_v2": "a230e250021cea113c42d674da2bfc31dc0a3549",
-    "c19_r2_started": "41df2685fe015140c8afa13e646554dd2e8c836b",
-    "c19_r2_raw_preserve": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
     "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "ni01_started": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-    "ni01_raw_preserve": "8a39cf70e397bb7588f948910f01ec58672ac814",
-    "pd01_started": "0569e348b9d93aeee53fc58daf4b71ee92303d6c",
-    "pd01_raw_preserve": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
     "pr_148": "OPEN_UNMERGED_MERGEABLE",
     "pr_149": "OPEN_UNMERGED_MERGEABLE",
-    "sub_collision": false,
-    "research_branch_created": false,
-    "scientific_workflow_dispatched": false,
+    "research_branch_created": true,
+    "research_head_is_direct_child_of_stable_main": true,
     "dynamic_science_executed": false,
+    "intervention_outcome_opened": false,
     "formal_identity_opened": false,
-    "control_plane_only": true
+    "official_test_or_started_tag_created": false,
+    "preserve_or_evidence_mutated": false,
+    "stable_main_mutated": false
   },
   "freshness": {
-    "analyst_tip_at_acquire": "060e7d7d150b5406124425348553c92b04fed253",
-    "analyst_tip_before_final_persistence": "060e7d7d150b5406124425348553c92b04fed253",
+    "analyst_tip_at_acquire": "6bf35ff0f08a981feb09abced00e157526a47cb0",
+    "analyst_tip_immediately_before_research_mutation": "6bf35ff0f08a981feb09abced00e157526a47cb0",
+    "analyst_tip_before_final_persistence": "6bf35ff0f08a981feb09abced00e157526a47cb0",
+    "main_tip_before_research_mutation": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_tip_before_final_persistence": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "orchestrator_tip_before_final_persistence": "0f61342975eda770c4216e5730c3d72da41c579a",
-    "latest_sub_generation_before_final_persistence": "SUB-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4",
+    "latest_sub_generation": "SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7",
     "material_superseding_generation_detected": false
   },
-  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
-  "next_action": "Wait for fresh Evidence Analyst authority after a genuinely new independent mechanism substrate/material mechanism-surface delta or a fresh prospectively fixed SYSTEM semantic contract appears. On the next run, re-fetch all authoritative refs and allocations before any mutation.",
+  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_35550692068_AFTER_R32_CONTRACT_READY",
+  "next_action": "Collect exact-head CI run 35550692068 for 52e14294d8e413a95c1dad387104bdeaa4468d39. If success and Analyst generation remains R32, persist the contract-feasibility READY observation and STOP for fresh Evidence Analyst review without executing suppression/intervention. If CI fails before scientific outcome exposure, repair only mechanically without changing the fixed contract; any semantic redesign requires fresh Analyst authority.",
   "utility_request_created": false,
   "owner": "main"
 }
