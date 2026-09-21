@@ -1,27 +1,27 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260922T025652+0900-R28-9A9BFB1F",
-  "produced_at": "2026-09-22T02:56:52+09:00",
-  "producer_run_id": "control-brain-auto-20260922T0250JST-R28",
+  "generation_id": "CTRL-20260922T045653+0900-R29-7C4E91B2",
+  "produced_at": "2026-09-22T04:56:53+09:00",
+  "producer_run_id": "control-brain-auto-20260922T0450JST-R29",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "CTRL-20260922T010052+0900-R27-5C8A21F4",
-  "programme_position": "FORMAL_HOLD_WITH_ACTIVE_SYSTEM_ARCHITECTURE_NO_VIABLE_MECHANISM",
+  "supersedes_generation_id": "CTRL-20260922T025652+0900-R28-9A9BFB1F",
+  "programme_position": "FORMAL_HOLD_WITH_INTENTIONAL_LOWER_FUNNEL_IDLE_NO_COHERENT_TARGET",
   "input_generations": {
     "human_directives": "active.md@ee5dbf63a2b34117f42fdc4dd62e9813d06d7188",
-    "evidence_analyst": "EVA-20260922T011108+0900-R49-7E3C21A5@7c154b6203347a4f212746e2cfe4ee7f1be2e5a4",
-    "main": "MAIN-20260922T021601+0900-PRIMARY-FUNNEL21-BLOCKED-R49-PENDINGREVIEW-6B4D21C8",
-    "sub": "SUB-20260922T023800+0900-NOOP-R49PENDINGANALYST-6E4C21A8",
-    "literature": "LIT-20260922T010311+0900-R24-CONTSTATE-EVENTDRIVEN-4A7C91E2",
-    "audit": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
-    "methodology": "METHCAL-20260922T011904+0900-R48-2F7C91A4",
-    "steward": "STEWARD-20260922T015006+0900-G8-6B9D31F2",
+    "evidence_analyst": "EVA-20260922T040022+0900-R51-6B4D21F8@b82bef83494e0ef339de324476b23907bc992601",
+    "main": "MAIN-20260922T041800+0900-PRIMARY-FUNNEL21-IDLE-R51-6B4D21F8@13e30f3f4d52e0ba0066d3d101b17c865372e852",
+    "sub": "SUB-20260922T043500+0900-NOOP-R51INTENTIONALIDLE-8B4D21F6",
+    "relay": "NO_SEPARATE_DURABLE_ADVANCE_R51_NO_ACTIVE_MAIN_OBJECT",
+    "literature": "LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5@752cd466294c1be037fa896101f23ae7e3ab995a",
+    "audit": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4@c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48",
+    "methodology": "METHCAL-20260922T042110+0900-R50-6D2A91F4",
+    "steward": "STEWARD-20260922T015006+0900-G8-6B9D31F2@47262598da73c1b74e8b924fc004b3b0dd0843e7",
     "utility_assignment": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "utility_worker": "UTILITY-20260922T022900+0900-AUTO-SCHEDDELAY-CROSSSECTION-COMPLETED-5A8D1F3C",
-    "previous_control": "CTRL-20260922T010052+0900-R27-5C8A21F4@70161c64b6760dafa773051dabd9d839b9443cd8"
+    "utility_worker": "UTILITY-20260922T042950+0900-AUTO-SCHEDTELEM-CLOCKS-COMPLETED-8C4F2A71@e6309edeea903827092b452a971c8f8dba9ed610",
+    "previous_control": "CTRL-20260922T025652+0900-R28-9A9BFB1F@d2f0ffa7e263fd9b7b0210cf1d5c99574894f6e6"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_protected": false,
     "ruleset_count": 0,
     "evidence_tag_count": 5,
     "evidence_tags": {
@@ -35,20 +35,25 @@
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "legacy_freeze_branch_count": 13,
-    "immutable_ref_incident": false
+    "immutable_ref_incident": false,
+    "historical_candidate32_branch": "research/main-semantic-active-work-localization-r50-cycle2@d090fd2e57680c5a97b9fd0d036fc65a008078ec",
+    "current_active_canonical_research_target": null
   },
   "human_directive_dispositions": [
     {
       "directive": "HUMAN-20260918-001",
-      "disposition": "ACCEPT"
+      "disposition": "ACCEPT",
+      "detail": "Outcome-independent reusable comparator assets remain eligible for later main-promotion review; none currently qualify."
     },
     {
       "directive": "HUMAN-20260919-002",
-      "disposition": "ACCEPT"
+      "disposition": "ACCEPT",
+      "detail": "Protection/ruleset gap remains reported but deployment stays deferred."
     },
     {
       "directive": "HUMAN-20260919-003",
-      "disposition": "ACCEPT"
+      "disposition": "ACCEPT_ACTIVE_CONCERN",
+      "detail": "Scientific lower-funnel throughput is now intentionally idle after candidate32 terminalization; do not manufacture activity or weaken gates."
     },
     {
       "directive": "HUMAN-20260921-004",
@@ -57,7 +62,7 @@
     {
       "directive": "USER-20260921-UTILITY-AUTONOMY-APPROVAL",
       "disposition": "ACCEPT_APPLIED_AND_CONFORMANCE_REVALIDATED",
-      "detail": "Latest AUTONOMOUS_IDLE run remained one bounded NON_EVIDENTIARY read-only diagnostic with max_runs=1 and no research, candidate-typing, workflow, identity, or scheduler mutation."
+      "detail": "Latest AUTONOMOUS_IDLE run remained one bounded NON_EVIDENTIARY read-only operational diagnostic with max_runs=1 and no scientific, candidate-typing, workflow, identity, scheduler, frontier-branch or PR mutation."
     }
   ],
   "funnel_v2_1": {
@@ -88,7 +93,8 @@
       "no_target_exception": {
         "code": "NO_COHERENT_MECHANISM_TARGET",
         "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-        "analyst_canonical_check_count": 12,
+        "analyst_canonical_check_count": 15,
+        "latest_sub_local_check_count": 16,
         "counts_as_selection": false,
         "interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
       }
@@ -96,7 +102,7 @@
     "architecture": {
       "active": {
         "MECHANISM": 0,
-        "SYSTEM": 1
+        "SYSTEM": 0
       },
       "queued": {
         "MECHANISM": 0,
@@ -105,70 +111,78 @@
       "dispositions": {
         "REJECT": 0,
         "HOLD_SYSTEM_TERMINAL": 7,
-        "HOLD_METHOD_LIMITED": 2,
+        "HOLD_METHOD_LIMITED": 3,
         "HOLD_CONTRACT_AMBIGUITY": 2,
         "HOLD_MECHANISM_UNRESOLVED": 1
       }
     },
     "terminal_state_counts": {
-      "ACTIVE": 1,
+      "ACTIVE": 0,
       "NONTERMINAL_HOLD": 1,
-      "TERMINAL_FOR_CURRENT_OBJECT": 30
+      "TERMINAL_FOR_CURRENT_OBJECT": 31
     },
     "preformal_eligible_count": 0,
     "preformal_ready_count": 0,
     "viable_mechanism_candidate_count": 0,
     "recent_main_cycles": {
-      "canonical_at_analyst_r49": {
-        "SYSTEM": 9,
-        "MECHANISM": 3
-      },
-      "post_r49_pending_analyst_canonicalization": {
-        "SYSTEM_static_contract_cycles": 1,
-        "observation": "STATIC_CONTRACT_FEASIBLE_OUTCOME_INDEPENDENTLY"
-      },
+      "SYSTEM": 11,
+      "MECHANISM": 3,
       "time_split": "UNAVAILABLE_DO_NOT_USE_RUN_COUNT_AS_TIME_PROXY"
     },
     "system_priority_exception_count": 0,
     "system_priority_exception_reasons": [],
-    "active_canonical_candidate": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
+    "system_queue_starving_mechanism": false,
+    "active_canonical_candidate": null,
     "phenomenon_shadow": {
       "trigger_active": true,
+      "trigger_reason": [
+        "VIABLE_EXECUTABLE_MECHANISM_ZERO",
+        "NO_ACTIVE_ARCHITECTURE_OBJECT",
+        "SUB_NO_COHERENT_MECHANISM_TARGET"
+      ],
       "cumulative_generated": 5,
       "currently_retained": 0,
       "later_canonical_admissions": 1,
-      "canonical_executions_at_r49": 0,
-      "post_r49_static_contract_cycle_pending_analyst_canonicalization": 1,
-      "quota_credit": false
+      "later_executed_shadow_origin_candidates": 1,
+      "latest_execution_disposition": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
+      "quota_credit": false,
+      "same_generation_execution_allowed": false
     }
   },
-  "active_candidate": {
+  "candidate32_terminal": {
     "id": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
-    "layer": "ARCHITECTURE_STUDY",
     "candidate_source": "PHENOMENON_FIRST_SHADOW",
+    "layer": "ARCHITECTURE_STUDY",
+    "classification": "HOLD",
     "claim_ceiling": "SYSTEM",
     "preformal_eligible": false,
     "preformal_readiness": "NOT_APPLICABLE",
-    "hold_class": null,
-    "hold_reason": null,
-    "terminal_state": "ACTIVE",
-    "queue_state": "ACTIVE",
-    "system_priority_exception": {
-      "used": false,
-      "reason_code": null,
-      "reason_detail": "No comparably executable/informative MECHANISM candidate exists; viable executable MECHANISM remains zero."
-    },
-    "main_status": "STATIC_CONTRACT_COMPLETE_AWAITING_FRESH_ANALYST_AUTHORITY",
-    "contract_id": "SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1",
-    "main_observation": "STATIC_CONTRACT_FEASIBLE_OUTCOME_INDEPENDENTLY",
-    "synthetic_outcome_authorized_by_control": false,
-    "same_object_system_to_mechanism_upgrade_allowed": false
+    "hold_class": "HOLD_METHOD_LIMITED",
+    "hold_reason": [
+      "R50_FULL_TRAJECTORY_EQUIVALENCE_NOT_INDEPENDENTLY_MACHINE_VERIFIED",
+      "R50_EVENT_FIRE_IGNITION_PREDICTION_EQUIVALENCE_FIELDS_ASSERTED_TRUE_BY_CONSTRUCTION",
+      "R50_INTERMEDIATE_PER_REWARD_ELIGIBILITY_WEIGHT_CHECKPOINTS_NOT_INDEPENDENTLY_VERIFIED",
+      "R50_INTERPRETER_REDUCTION_SIGNAL_DEPENDED_ON_INCOMPLETE_EQUIVALENCE_VALIDITY",
+      "R50_OPENED_CYCLE_NO_RERUN_REPAIR_OR_TOLERANCE_RELAXATION"
+    ],
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "queue_state": "NOT_QUEUED",
+    "cycle_count": 2,
+    "research_head": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
+    "measurement_workflow_run": 35637961215,
+    "raw_artifact_digest": "sha256:7494fb60db1e7aca3fa86fd4a1359082da9d52e1733404bdbef8f27412fbfba8",
+    "summary_artifact_digest": "sha256:8e78b5496de153fc25ff92968fefaab5cb6af28556cd1c1b455aaacefd962375",
+    "observed_signal": "LARGE_ORDINARY_SPARSE_EVENT_DRIVEN_PRIMITIVE_COUNT_REDUCTION_SIGNAL_PRESENT_BUT_NOT_CONTRACT_VALID",
+    "signal_use_ceiling": "NON_EVIDENTIARY_FEASIBILITY_AND_METHOD_INFORMATION_ONLY",
+    "same_object_rerun_repair_rescore_retune_cycle3": "PROHIBITED",
+    "same_object_system_to_mechanism_upgrade": "PROHIBITED",
+    "fresh_successor_rule": "NEW_ID_PLUS_FRESH_PROSPECTIVE_QUESTION_CONTRACT_PLUS_FRESH_ANALYST_AUTHORITY_ONLY"
   },
   "readiness_and_hold_semantics": {
     "eligible_distinct_from_ready": true,
     "ready_means_test_readiness_not_prior_success": true,
     "hidden_second_formal_gate": false,
-    "first_ready_to_preformal": "CONSISTENT_WITH_DEVELOPMENT_READINESS_BUT_HISTORICAL_R33_RAW_BEFORE_SCORE_NONCONFORMING_TERMINAL_NO_RERUN",
+    "first_ready_to_preformal": "CONSISTENT_WITH_DEVELOPMENT_READINESS; HISTORICAL_R33_NONCONFORMING_RAW_BEFORE_SCORE_REMAINS_TERMINAL_NO_RERUN",
     "h7": {
       "claim_ceiling": "MECHANISM",
       "preformal_eligible": false,
@@ -186,33 +200,46 @@
     }
   },
   "external_methodology_implications": {
-    "literature_r24": "Exact continuous-time/plasticity state does not imply global traversal; future resource discrimination must include optimized event-driven history-archive/timestamp-lazy and sparse reductions with exact trajectory-equivalence plus retained-history/state cost.",
+    "literature_r25": {
+      "genuinely_new_information": true,
+      "effect": "R50 resource signal is not contract-valid; future fresh exact resource objects need independent trajectory/checkpoint verification plus support-turnover, cumulative distinct touched-edge, horizon, reset/lifetime, retained-history/timestamp, index and data-movement accounting; approximate retirement stays approximate unless proven exact."
+    },
     "audit_r5_h5": {
       "canonical_result": "FAIL_NO_USEFUL_WORK_REDUCTION_REMAINS_VALID_FOR_REGISTERED_AGGREGATE_ENDPOINT",
+      "audit_classification": "ROBUST_SO_FAR",
       "interpretation_ceiling": "DO_NOT_USE_AS_BROAD_EVENT_ROUTING_OR_LAZY_STATE_CAUSAL_NO_GO",
-      "future_rule": "Any fresh efficiency object must prospectively separate semantically active mechanism work from implementation/bookkeeping overhead; never rerun, retune, rescore, relabel, or rescue H5."
+      "future_rule": "Fresh efficiency objects must prospectively separate semantically active mechanism work from implementation/bookkeeping overhead; H5 remains no-rerun/no-rescore/no-retune/no-relabel/no-rescue."
     },
-    "methodology_r48": {
+    "methodology_r50": {
       "overall": "MIXED_CALIBRATION",
       "hard_floor": "KEEP",
-      "shadow_supply_separation": "KEEP",
-      "first_later_generation_system_admission": "POSITIVE_LIVE_CASE_FOR_SUPPLY_SEPARATION_NOT_MECHANISM_RECOVERY",
-      "system_shadow_counts_as_theory_backward_quota": false,
-      "same_generation_shadow_execution": "PROHIBITED",
-      "resource_claim_requirement": "SEMANTIC_ACTIVITY_COMPONENT_ATTRIBUTION_PLUS_EQUAL_PRIVILEGE_MULTI_RESOURCE_CROSSOVER",
-      "raw_before_score_and_protected_set_adaptivity": "PROSPECTIVE_HARD_CONCERNS"
+      "same_object_system_to_mechanism_ban": "KEEP",
+      "eligible_vs_ready": "KEEP",
+      "first_ready_to_preformal_semantics": "KEEP",
+      "hidden_second_formal_gate": false,
+      "candidate32_terminalization": "CALIBRATED_KEEP",
+      "tighten": [
+        "COMPARATOR_EQUIVALENCE_VERIFIER_INDEPENDENCE",
+        "CONTRACT_REQUIRED_EQUIVALENCE_MACHINE_VERIFIABILITY",
+        "INTERPRETER_SIGNAL_REQUIRES_VERIFIED_COMPARATOR_VALIDITY",
+        "RESULT_BEARING_WORKFLOW_RETRIGGER_ISOLATION",
+        "RESOURCE_EFFICIENCY_SEMANTIC_ACTIVITY_DECOMPOSITION",
+        "RAW_BEFORE_SCORE_AND_PRESERVE_BEFORE_SCORE_PLUMBING",
+        "PROTECTED_SET_VALIDITY_ADAPTIVE_REUSE_AND_FEEDBACK_VISIBILITY_MASKING"
+      ],
+      "false_negative_risk": "MODERATE_MECHANISM_SUPPLY_STALLED"
     }
   },
   "worker_assessment": {
-    "analyst": "R49 remains current canonical authority; 32/32 typing complete; one active SYSTEM Architecture object; viable executable MECHANISM remains zero.",
-    "main": "Completed the R49 outcome-independent static contract and correctly BLOCKED before synthetic measurement pending a fresh Analyst generation; no scientific outcome or identity consumption occurred.",
-    "relay": "Latest polling opportunity observed the same authority boundary and did not produce a new durable scientific generation.",
-    "sub": "Latest no-op/no-target remains credible, avoids the MAIN-owned SYSTEM object, and does not add quota credit or absence evidence.",
-    "utility": "Latest autonomous run completed one bounded read-only scheduler-delay diagnostic, NON_EVIDENTIARY, max_runs=1, with no research/candidate/scheduler mutation or hidden MAIN dependency.",
-    "literature": "R24 materially sharpens ordinary event-driven/history-lazy reductions and resource accounting for candidate #32.",
-    "audit": "R5 preserves H5 exact result while narrowing its causal interpretation.",
-    "methodology": "R48 validates later-generation shadow-to-SYSTEM admission separation while preserving all no-uplift/no-quota semantics.",
-    "steward": "G8 reports repository/evidence separation intact, no main-promotion candidate, no immutable incident, and protection deployment deferred by Human Directive."
+    "analyst": "R51 current canonical authority; candidate32 terminalized method-limited; 32/32 typing complete; no active candidate.",
+    "main": "R51 intentional no-target idle; no research branch/workflow/identity/protected-outcome action.",
+    "relay": "No active MAIN continuation authority; no durable scientific advancement or ownership collision observed.",
+    "sub": "R51 credible no-op/no-target; rolling theory-backward share remains 1/3 and no quota/absence-evidence credit is added.",
+    "utility": "Latest autonomous run completed one bounded read-only scheduler telemetry reconciliation, NON_EVIDENTIARY, max_runs=1, no scientific/candidate/scheduler/frontier mutation.",
+    "literature": "R25 materially sharpens equivalence and long-horizon support-turnover requirements for future fresh resource objects.",
+    "audit": "R5 keeps H5 exact endpoint valid and narrows its interpretation.",
+    "methodology": "R50 confirms current terminalization and prospectively tightens verifier, workflow-retrigger and adaptive-validity controls.",
+    "steward": "G8 governance facts remain valid; its active-science snapshot predates R50/R51 and is not treated as current science."
   },
   "utility_governance": {
     "assignment_status": "IDLE",
@@ -221,115 +248,109 @@
       "proposal_id": "SCHED-UTILITY-AUTONOMY-20260921-01",
       "status": "APPLIED_RESOLVED_BY_USER_APPROVAL",
       "live_prompt_updated": true,
-      "schedule_changed": false,
-      "latest_post_change_run_conformance": "PASS_BOUNDED_AUTONOMOUS_IDLE"
+      "schedule_changed": false
     },
     "latest_autonomous_task": {
-      "generation_id": "UTILITY-20260922T022900+0900-AUTO-SCHEDDELAY-CROSSSECTION-COMPLETED-5A8D1F3C",
+      "generation_id": "UTILITY-20260922T042950+0900-AUTO-SCHEDTELEM-CLOCKS-COMPLETED-8C4F2A71",
       "status": "COMPLETED",
+      "classification": "THIRD_WINDOW_CONFIRMS_TELEMETRY_CLOCK_DIVERGENCE_SAFE_PHASE_FIX_UNDERDETERMINED",
       "evidentiary_status": "NON_EVIDENTIARY",
       "max_runs": 1,
       "collision_found": false,
       "scientific_mutation": false,
-      "scheduler_mutation": false
+      "scheduler_mutation": false,
+      "hidden_main_dependency_created": false
     },
-    "autonomous_mode_constraints": {
-      "max_tasks_per_run": 1,
-      "default_max_runs": 1,
-      "evidentiary_status": "NON_EVIDENTIARY",
-      "preformal_formal_forbidden": true,
-      "typing_mutation_forbidden": true,
-      "quota_credit_forbidden": true,
-      "hidden_main_dependency_forbidden": true
-    }
+    "control_assignment_created_this_run": false,
+    "prospective_nonassignment_priority": "A generic outcome-independent equivalence-verifier schema/tooling investigation may be useful if Utility independently selects it safely, but it must not repair candidate32, create scientific authority, or become MAIN-critical."
   },
   "scheduler_health": {
     "fleet_status": "YELLOW",
     "scheduler_definition_drift_detected": true,
-    "scheduler_definition_drift_scope": "REGISTRY_MIRROR_OUT_OF_SYNC_WITH_APPROVED_LIVE_DEFINITIONS",
+    "scheduler_definition_drift_scope": "REGISTRY_MIRROR_OUT_OF_SYNC_WITH_APPROVED_LIVE_DEFINITION",
     "scheduler_definition_drift_details": [
-      "Live Current State Brief remains approved at :55 JST while scheduler registry manifest still records :45 JST.",
-      "Utility live definition and registry snapshot are aligned after the user-approved autonomy change.",
-      "Several other core-role registry stable-definition snapshots/observation metadata remain older than the live definitions; approved live definitions must not be reverted to the stale registry mirror."
+      "Live Current State Brief is explicitly approved at :55 JST while scheduler registry manifest still records :45 JST.",
+      "Utility live definition and registry definition are aligned after the approved autonomy change.",
+      "Approved live definitions must not be reverted to stale registry state; registry reconciliation is required before a later scheduler mutation."
     ],
     "scheduler_cadence_failure_detected": false,
-    "persistent_delay_signal": true,
-    "timing_telemetry_quality": "MIXED_EXACT_WORKER_START_TIMES_AND_COARSE_SCHEDULER_LAST_RUN_TIME",
+    "timing_telemetry_quality": "CLOCKS_DIVERGE_LAST_RUN_TIME_NOT_A_START_OR_QUEUE_TIMESTAMP",
     "autofix_observation_threshold_met": true,
     "exact_time_overlaps": [],
-    "collision_risks": "NO_DETERMINISTIC_TIME_COLLISION; QUEUE_RUNTIME_PRESSURE_OBSERVE",
-    "observed_exact_start_delays_minutes": {
-      "main": 1.0,
-      "control_current": 1.0
+    "collision_risks": "NO_DETERMINISTIC_SAME_MINUTE_COLLISION",
+    "observed_material_start_delays_minutes": {
+      "main_r51_exact_lease": 3.0
     },
-    "observed_coarse_last_run_offsets_minutes": {
-      "brief": 19.6,
-      "analyst": 12.1,
-      "main": 8.0,
-      "methodology": 4.8,
-      "utility": 5.4,
-      "sub": 7.9,
-      "relay": 6.8,
-      "external_research_audit_last_visible": 38.8,
-      "prior_steward": 7.1
-    },
-    "coarse_offsets_are_authoritative_start_delays": false,
+    "other_coarse_offsets_promoted_to_start_delay": false,
     "role_ownership_collision_count": 0,
     "recent_noop_idle_patterns": {
-      "main": "STATIC_CONTRACT_COMPLETE_THEN_BLOCKED_PENDING_FRESH_ANALYST",
-      "sub": "NO_OP_NO_COHERENT_MECHANISM_TARGET",
-      "relay": "NO_NEW_DURABLE_GENERATION_PENDING_ANALYST_AUTHORITY_DELTA",
-      "utility": "ONE_BOUNDED_AUTONOMOUS_IDLE_DIAGNOSTIC_COMPLETED"
+      "main": "INTENTIONAL_IDLE_NO_ACTIVE_OBJECT_R51",
+      "sub": "NO_OP_NO_COHERENT_MECHANISM_TARGET_R51",
+      "relay": "NO_ACTIVE_CONTINUATION_AUTHORITY_NO_DURABLE_ADVANCE",
+      "utility": "USEFUL_BOUNDED_AUTONOMOUS_DIAGNOSTIC_NOT_IDLE"
     },
-    "useful_result_cadence_vs_polling": "NONZERO_INFORMATION_ARRIVAL_BUT_MANY_POLL_OPPORTUNITIES_HAVE_NO_NEW_GENERATION: MAIN produced a bounded static-contract result and Utility produced a useful scheduler diagnostic; current Analyst/Methodology/SUB/Relay polling in the same window produced no new scientific generation.",
-    "generation_lag_assessment": {
-      "analyst": "R49 predates the completed MAIN R49 static contract and must consume it before outcome-bearing continuation.",
-      "main": "Current to R49 and fail-closed pending fresh Analyst review.",
-      "sub": "No independent target and no ownership collision.",
-      "utility": "Current autonomous diagnostic consumed R49/R27 context without scientific mutation.",
-      "severity": "YELLOW_BOUNDED_NO_STALE_SCIENTIFIC_EXECUTION"
+    "useful_result_cadence": {
+      "scientific_execution": "ZERO_CURRENT_ACTIVE_OBJECT_AFTER_CANDIDATE32_TERMINALIZATION",
+      "analyst": "MATERIAL_R51_TERMINALIZATION_AND_CANONICALIZATION",
+      "methodology": "MATERIAL_R50_CALIBRATION_UPDATE",
+      "literature": "GENUINELY_NEW_R25_SUPPORT_TURNOVER_EQUIVALENCE_FINDING",
+      "utility": "USEFUL_THIRD_WINDOW_TELEMETRY_CLOCK_RECONCILIATION"
     },
+    "generation_lag_assessment": "HEALTHY_DEPENDENCY_AWARE_NO_HARMFUL_STALE_SCIENCE_CONSUMPTION_OBSERVED",
     "active_sparkbrain_run_opportunities_per_day": 175,
     "scheduler_change_warranted": false,
     "scheduler_controller_action": "NO_CHANGE",
-    "safe_auto_fix_applied": false,
-    "safe_auto_fix_reason_not_applied": "The three-observation threshold is met, but fresh exact MAIN telemetry shows only about +1 minute start offset while coarse scheduler last_run_time is substantially later. This weakens the causal case for minute-shifting any single role. No deterministic collision or evidence-based phase target exists, so a SAFE_AUTO_FIX would be speculative.",
+    "scheduler_action_class": "NO_CHANGE",
     "scheduler_proposals": [],
-    "resolved_proposals": [
-      {
-        "proposal_id": "SCHED-UTILITY-AUTONOMY-20260921-01",
-        "resolution": "USER_APPROVED_AND_APPLIED"
-      }
-    ],
-    "registry_reconciliation_required": true,
-    "registry_reconciliation_instruction": "Reconcile the registry mirror from current live stable definitions before any future scheduler mutation. This is mirror hygiene only and must not alter approved live timing or scientific semantics.",
-    "next_observation_requirement": "Before any timing mutation collect exact nominal_due_at/queued_at/started_at/finished_or_blocked_at telemetry across at least three comparable dense windows; do not treat scheduler last_run_time as started_at."
+    "safe_autofix_reason_not_applied": "NO_HIGH_CONFIDENCE_REVERSIBLE_PHASE_TARGET; TELEMETRY_CLOCK_DIVERGENCE_MAKES_COARSE_OFFSET_CAUSAL_ATTRIBUTION_UNDERDETERMINED",
+    "structural_change_authority": "USER_APPROVAL_REQUIRED"
   },
-  "priorities": [
-    "Fresh Evidence Analyst review must independently consume the completed R49 MAIN static contract before any synthetic/outcome-bearing step.",
-    "Preserve candidate #32 as SYSTEM with preformal_eligible=false; no same-object SYSTEM-to-MECHANISM upgrade.",
-    "Keep viable MECHANISM supply active only when a coherent fresh mechanism-level question/falsifier exists; do not manufacture activity or count no-target polling as absence evidence.",
-    "Keep H5 consumed/no-retry and candidate #31 no-third-rescue.",
-    "Reconcile scheduler registry mirror from live stable definitions before any future scheduler mutation; do not revert live to stale registry state.",
-    "Observe exact scheduler due/queue/start/finish timing before proposing or applying a timing change."
-  ],
+  "generation_map": {
+    "control_current": "CTRL-20260922T045653+0900-R29-7C4E91B2",
+    "control_previous": "CTRL-20260922T025652+0900-R28-9A9BFB1F",
+    "analyst": "EVA-20260922T040022+0900-R51-6B4D21F8",
+    "main": "MAIN-20260922T041800+0900-PRIMARY-FUNNEL21-IDLE-R51-6B4D21F8",
+    "sub": "SUB-20260922T043500+0900-NOOP-R51INTENTIONALIDLE-8B4D21F6",
+    "literature": "LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5",
+    "audit": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
+    "methodology": "METHCAL-20260922T042110+0900-R50-6D2A91F4",
+    "steward": "STEWARD-20260922T015006+0900-G8-6B9D31F2",
+    "utility": "UTILITY-20260922T042950+0900-AUTO-SCHEDTELEM-CLOCKS-COMPLETED-8C4F2A71"
+  },
   "direction_to_analyst": [
-    "Independently consume MAIN-20260922T021601+0900-PRIMARY-FUNNEL21-BLOCKED-R49-PENDINGREVIEW-6B4D21C8 and verify SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1 was fixed outcome-independently before any synthetic outcome.",
-    "If the contract is complete, prospectively decide whether exactly one bounded SYSTEM Architecture measurement cycle is informative with optimized exact-semantics event-driven/sparse/history-lazy comparators, exact trajectory equivalence, the bound multi-resource vector, and the bound crossover/scaling grid; Control does not pre-authorize it.",
-    "If ordinary reductions exhaust the residual question or workload/equivalence/resource privilege cannot be fixed without outcome-responsive redesign, terminalize or HOLD the current SYSTEM object according to the prospective contingency rather than rescue it.",
-    "Preserve claim_ceiling=SYSTEM, preformal_eligible=false, and no same-object SYSTEM-to-MECHANISM movement; any MECHANISM successor requires a fresh candidate ID, question/contract, and fresh Analyst authority.",
-    "Canonicalize the post-R49 MAIN static cycle in funnel metrics only if independently accepted; do not use run count as a time proxy.",
-    "Keep H5 consumed/no-retry and candidate #31 third-cycle prohibition."
+    "Keep candidate32 terminal HOLD_METHOD_LIMITED / SYSTEM / NOT_QUEUED; prohibit R50 rerun, repair, tolerance relaxation, result-workflow retrigger, cycle3, same-object successor and mechanism uplift.",
+    "Maintain intentional no-target idle while viable executable MECHANISM remains zero. Phenomenon-first shadow stays proposal-only and same-generation execution remains prohibited; SYSTEM shadow work earns no theory-backward quota credit.",
+    "Any later resource successor must be a fresh SYSTEM object after a later independently motivated review and must prebind an independently computed complete equivalence-verifier certificate before result interpretation.",
+    "Future exact resource objects must bind event/fire/ignition/prediction trajectories, per-reward eligibility/weight checkpoints, support turnover/churn, cumulative distinct touched edges, horizon, reset/lifetime semantics, retained history/timestamps, and index/data-movement costs; approximate truncation remains separate.",
+    "Do not change global admission, novelty, comparator, reduction or READY thresholds in response to the R50 methodological failure.",
+    "Keep H5 consumed/no-retry with narrowed aggregate-work interpretation, candidate31 no-third-rescue, and no-target check counts liveness-only.",
+    "On a genuine new mechanism-surface delta, create a fresh MECHANISM object with fresh falsifier/reduction/comparator/resource contract; otherwise do not manufacture activity."
   ],
-  "control_actions": {
-    "scientific_experiments": 0,
-    "scientific_workflow_dispatches": 0,
-    "identity_consumption": 0,
-    "research_pr_merges": 0,
+  "control_priorities": [
+    "Recover high-quality MECHANISM candidate supply without weakening Funnel v2.1 or gaming theory-backward accounting.",
+    "Prospectively harden independent equivalence-verifier certificates and result-bearing workflow isolation for future resource objects.",
+    "Preserve intentional lower-funnel idle rather than serial low-value SYSTEM cleanup.",
+    "Keep scheduler timing unchanged until trustworthy exact timing telemetry identifies a reversible target.",
+    "Reconcile scheduler registry from approved live stable definitions before any future scheduler mutation."
+  ],
+  "mutations": {
+    "scientific_experiments_executed": 0,
+    "scientific_workflows_dispatched": 0,
+    "one_way_identities_consumed": 0,
+    "research_prs_merged": 0,
     "immutable_formal_evidence_mutations": 0,
     "utility_assignments_created": 0,
     "scheduler_mutations": 0,
     "scheduler_proposals_created": 0,
-    "ruleset_protection_mutations": 0
+    "ruleset_or_protection_mutations": 0
+  },
+  "persistence": {
+    "branch": "ops/control-brain-handoff",
+    "history_path": "analysis/control_brain/history/2026-09-22/0456.md",
+    "history_commit": "fa9069c91d5ef5b58dcd182745dcb71de320c0dd",
+    "latest_path": "analysis/control_brain/latest.md",
+    "latest_commit": "05f8c07149b0e2584e8341948b4b2eb983760ddd",
+    "state_path": "analysis/control_brain/state.json",
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
   }
 }
