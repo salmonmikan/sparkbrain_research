@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260922T013609+0900-NOOP-R49POSTMAIN-9D4A21C7",
-  "produced_at": "2026-09-22T01:36:09+09:00",
-  "producer_run_id": "SUB-RUN-20260922T013609+0900-NOOP-R49POSTMAIN-9D4A21C7",
+  "generation_id": "SUB-20260922T023800+0900-NOOP-R49PENDINGANALYST-6E4C21A8",
+  "produced_at": "2026-09-22T02:38:00+09:00",
+  "producer_run_id": "SUB-RUN-20260922T023800+0900-NOOP-R49PENDINGANALYST-6E4C21A8",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6",
+  "supersedes_generation_id": "SUB-20260922T013609+0900-NOOP-R49POSTMAIN-9D4A21C7",
   "input_generations": {
     "evidence_analyst": {
       "generation_id": "EVA-20260922T011108+0900-R49-7E3C21A5",
@@ -73,17 +73,17 @@
       ]
     },
     "main": {
-      "generation_id": "MAIN-20260922T012600+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R49-CYCLE1-7E3C21A5",
-      "mailbox_tip_observed": "0ed81db895a5fff57a5a9c66e14554c8d2df79c3",
-      "status": "COMPLETED",
+      "generation_id": "MAIN-20260922T021601+0900-PRIMARY-FUNNEL21-BLOCKED-R49-PENDINGREVIEW-6B4D21C8",
+      "mailbox_tip_observed": "c1984932296f921dd322495f26b518769f477409",
+      "status": "BLOCKED",
       "candidate_id": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
       "research_layer": "ARCHITECTURE_STUDY",
       "claim_ceiling": "SYSTEM",
-      "observation": "STATIC_CONTRACT_FEASIBLE_OUTCOME_INDEPENDENTLY",
+      "prior_observation": "STATIC_CONTRACT_FEASIBLE_OUTCOME_INDEPENDENTLY",
       "contract_id": "SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1",
-      "stop_reason": "R49_STATIC_CONTRACT_FEASIBLE_OUTCOME_INDEPENDENTLY_STOP_BEFORE_SYNTHETIC_MEASUREMENT",
+      "stop_reason": "NO_FRESH_EVIDENCE_ANALYST_AFTER_R49_STATIC_CONTRACT_FAIL_CLOSED",
       "fresh_analyst_review_required": true,
-      "scientific_execution": false,
+      "scientific_execution_this_generation": false,
       "synthetic_measurement": false,
       "identity_consumption": false
     },
@@ -93,12 +93,12 @@
       "programme_position": "FORMAL_HOLD_WITH_ACTIVE_SYSTEM_ARCHITECTURE_NO_VIABLE_MECHANISM",
       "policy_note": "Do not manufacture activity; preserve the mechanism quality floor; no-target liveness is not scientific progress."
     },
-    "previous_sub": "SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6"
+    "previous_sub": "SUB-20260922T013609+0900-NOOP-R49POSTMAIN-9D4A21C7"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_handoff": "7c154b6203347a4f212746e2cfe4ee7f1be2e5a4",
-    "orchestrator_tip_before_write": "0ed81db895a5fff57a5a9c66e14554c8d2df79c3",
+    "orchestrator_tip_before_write": "c1984932296f921dd322495f26b518769f477409",
     "control_tip": "70161c64b6760dafa773051dabd9d839b9443cd8",
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
@@ -107,7 +107,9 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
-    "evidence_tag_count": 5
+    "evidence_tag_count": 5,
+    "research_branch_inventory_count": 166,
+    "research_branch_inventory_complete": true
   },
   "operating_mode": "no_op",
   "discovery_mode": null,
@@ -116,7 +118,7 @@
   "cycle": null,
   "main_independence": {
     "status": "INDEPENDENT_FAIL_CLOSED_MAIN_ACTIVE_OBJECT_EXCLUDED",
-    "reason": "R49 assigns the sole active canonical SYSTEM object to MAIN. MAIN has completed only its authorized static contract cycle and awaits fresh Analyst review; SUB does not work the object, blocker, or successor."
+    "reason": "R49 assigns the sole active canonical SYSTEM object to MAIN. MAIN has completed its authorized static contract cycle and is now blocked pending fresh Analyst review; SUB does not work the object, blocker, or successor."
   },
   "theory_backward_accounting": {
     "selection_status": "NO_AUTONOMOUS_SCIENTIFIC_SELECTION",
@@ -127,13 +129,13 @@
     "rolling_slot_assessment": "NEXT_SAFE_AUTONOMOUS_SELECTION_SHOULD_BE_THEORY_BACKWARD_MECHANISM_IF_A_COHERENT_TARGET_EXISTS",
     "theory_backward_exception": {
       "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "R49 reports viable executable MECHANISM zero. The only active canonical object is SYSTEM and MAIN-owned; H7 still lacks a fresh native object, matched comparator, resource contract, and falsifier; stable main and all five authoritative evidence refs are unchanged. MAIN's post-R49 static-contract feasibility observation is SYSTEM-only and pending fresh Analyst review. Existing exploratory mechanism branches are already represented by consumed, terminal, reduced, method-limited, or unresolved lines. Selecting another SYSTEM edge case would violate the rolling supply intent, while relabeling the resource contract, API/configuration work, or a terminal/reduced line as MECHANISM would manufacture quota credit."
+      "detail": "R49 reports viable executable MECHANISM zero. The only active canonical object is SYSTEM and MAIN-owned; H7 still lacks a fresh native object, matched comparator, resource contract, and falsifier; stable main and all five authoritative evidence refs are unchanged; the complete research-branch refresh exposes no fresh nonduplicative bounded mechanism substrate; and MAIN's post-R49 state is only a freshness block after the already-completed SYSTEM static contract. Selecting another SYSTEM edge case would violate the rolling supply intent, while relabeling the resource contract, API/configuration work, or a terminal/reduced line as MECHANISM would manufacture quota credit."
     },
     "exception_counts_as_selection": false,
     "no_target_episode": {
       "id": "NTE-20260921-R34-POST-REPLAY-v1",
       "analyst_canonical_check_count": 12,
-      "sub_local_check_count_after_run": 13,
+      "sub_local_check_count_after_run": 14,
       "status": "OPEN",
       "counts_as_selection": false,
       "interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
@@ -150,6 +152,7 @@
     "main_mailbox_refreshed": true,
     "control_refreshed": true,
     "research_branch_inventory_refreshed": true,
+    "research_branch_inventory_complete": true,
     "material_mechanism_surface_delta": false,
     "post_analyst_main_system_observation_pending_canonicalization": true,
     "formal_or_sealed_test_used": false,
@@ -166,10 +169,10 @@
   "observations": {
     "scientific_result": "NO_TARGET_NO_OP",
     "mechanism_surface_delta": "NONE",
-    "control_plane_delta": "MAIN completed the R49-authorized static/read-only SYSTEM contract cycle, fixed SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1 prospectively, and stopped before synthetic measurement for fresh Analyst review.",
+    "control_plane_delta": "MAIN transitioned to a fail-closed freshness block pending a new Analyst generation after the already-completed R49 SYSTEM static contract; no new scientific result was produced.",
     "stable_main_unchanged": true,
     "evidence_refs_unchanged": true,
-    "main_mailbox_postdates_current_analyst": true,
+    "main_mailbox_postdates_previous_sub": true,
     "canonical_lifecycle_left_unchanged_pending_fresh_analyst": true
   },
   "evidentiary_status": "NON_EVIDENTIARY",
@@ -186,19 +189,19 @@
   "system_priority_exception": {"used": false, "reason": "No SYSTEM scientific selection was made by SUB."},
   "next_layer": "NONE",
   "open_choices": [
-    "Wait for fresh Evidence Analyst review of MAIN's R49 static-contract observation or a material independent mechanism-surface delta.",
+    "Wait for a fresh Evidence Analyst generation that consumes MAIN R49 or a material independent mechanism-surface delta.",
     "Do not infer a MECHANISM successor from CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01; same-object SYSTEM to MECHANISM upgrade is prohibited.",
     "H7 can only become actionable after a fresh native object, matched comparator, resource contract, and falsifier are prospectively fixed."
   ],
-  "recommendation": "FAIL_CLOSED_PENDING_FRESH_ANALYST_REVIEW_AFTER_R49_MAIN_STATIC_CONTRACT_OR_MATERIAL_MECHANISM_SURFACE_DELTA",
+  "recommendation": "REMAIN_NO_OP_PENDING_FRESH_ANALYST_AFTER_MAIN_R49_BLOCK_OR_MATERIAL_MECHANISM_SURFACE_DELTA",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
-  "completion_target": "NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION_AFTER_R49_MAIN_STATIC_CONTRACT",
+  "completion_target": "NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION_AFTER_MAIN_R49_FRESHNESS_BLOCK",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_paths": ["reports/orchestrator/history/2026-09-22/0136-sub.md"],
+    "history_paths": ["reports/orchestrator/history/2026-09-22/0238-sub.md"],
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
     "mode": "SINGLE_FAST_FORWARD_COMMIT_SUB_OWNED_PATHS_ONLY"
