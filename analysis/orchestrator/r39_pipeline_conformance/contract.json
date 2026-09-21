@@ -43,8 +43,8 @@
     "analysis/orchestrator/r39_pipeline_conformance/synthetic_fixture.json": "e8f8232b31b0d051db9262c27b16baf0f362510c11de726b35370d1e6a20727f",
     "scripts/outcome_blind_fixed_scorer.py": "6a6e2a63d67450f7da86a1580e200d09b27468c1c3e07030aabd0f7384f542d7",
     "scripts/outcome_blind_pipeline_conformance.py": "fa989eeb7f7fd25b0a63aa78050bbad45b6195485f88635a73be20fd090fd128",
-    "scripts/outcome_blind_raw_generator.py": "a4d7ce839b9ab5b1d0548ac6d47a50ff92397dc273b6521b5c733d4635b44cd5",
-    "tests/test_outcome_blind_pipeline_conformance.py": "5fc68ba6e486478160ad6808200551e40002a5052365dfb5e5fdcc6579796508"
+    "scripts/outcome_blind_raw_generator.py": "29c96a30ac7419249be35b8dfe5eeeff0755f1ea9621e4d4bfbae4e0a68ed22e",
+    "tests/test_outcome_blind_pipeline_conformance.py": "85eee5748117038bb64b36339134b43ca086e9f45fe3f5df14208bbd6617804b"
   },
   "negative_checks": [
     "mutated preserved raw must be rejected before scoring"
