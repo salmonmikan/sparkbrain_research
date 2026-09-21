@@ -1,66 +1,59 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T022900+0900-AUTO-SCHEDDELAY-CROSSSECTION-COMPLETED-5A8D1F3C",
-  "produced_at": "2026-09-22T02:29:00+09:00",
-  "producer_run_id": "utility-auto-20260922T022329+0900-scheduler-delay-crosssection",
+  "generation_id": "UTILITY-20260922T042654+0900-AUTO-SCHEDTELEM-CLOCKS-RUNNING-8C4F2A71",
+  "produced_at": "2026-09-22T04:26:54+09:00",
+  "producer_run_id": "utility-auto-20260922T042654+0900-scheduler-telemetry-clock-reconciliation",
   "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_OPERATIONAL_DIAGNOSTIC",
-  "supersedes_generation_id": "UTILITY-20260922T022329+0900-AUTO-SCHEDDELAY-CROSSSECTION-RUNNING-5A8D1F3C",
+  "supersedes_generation_id": "UTILITY-20260922T022900+0900-AUTO-SCHEDDELAY-CROSSSECTION-COMPLETED-5A8D1F3C",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
-  "autonomous_task_id": "AUTOUTIL-20260922T022329+0900-SCHEDDELAY-CROSSSECTION-5A8D1F3C",
-  "status": "COMPLETED",
+  "autonomous_task_id": "AUTOUTIL-20260922T042654+0900-SCHEDTELEM-CLOCKS-8C4F2A71",
+  "status": "RUNNING",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "objective": "One bounded read-only operational cross-section of the current SparkBrain scheduler-delay pattern, using a fresh live scheduler timing snapshot plus durable worker timestamps to test whether the prior broad queue-pressure diagnosis persists or instead localizes to a deterministic phase/role.",
-  "classification": "FRESH_CROSS_SECTION_CONFIRMS_BROAD_DELAY_WITH_ROLE_HETEROGENEITY_NO_MONOTONIC_CHAIN_PROOF",
-  "finding_summary": [
-    "Broad coarse lateness persisted in a fresh scheduler window, so the prior delay observation was not isolated to one window.",
-    "The fresh durable MAIN lease started at 02:16:01 JST for a nominal :15 phase, an exact start offset of about +1m01, then remained active until blocked at 02:21:30.",
-    "Large coarse offsets on Brief/Analyst coexist with a near-phase exact MAIN start and smaller Relay offset, weakening a simple monotonically accumulating five-minute phase-cascade explanation.",
-    "Role runtime heterogeneity and/or shared scheduler/backend queue pressure remain plausible; no exact deterministic collision or evidence-based single phase target was established.",
-    "Live scheduler last_run_time is not authoritative started_at/queued_at telemetry and may represent completion/recording; exact worker timestamps should be preferred when available."
-  ],
+  "objective": "Reconcile a third fresh scheduler-health timing window across nominal schedule, durable worker produced/started/completed timestamps, Git persistence timestamps, and scheduler last_run_time to determine which clocks are safe for queue-delay inference and whether any evidence-based narrow phase fix is now justified.",
   "trigger_source": {
-    "prior_utility_task": "AUTOUTIL-20260922T012800+0900-SCHEDDELAY-TOPOLOGY-3D7A9C52",
-    "prior_finding": "DENSE_PHASE_RUNTIME_OVERLAP_SUPPORTS_FLEET_QUEUE_PRESSURE_NO_SINGLE_PHASE_FIX_ESTABLISHED",
+    "prior_utility_task": "AUTOUTIL-20260922T022329+0900-SCHEDDELAY-CROSSSECTION-5A8D1F3C",
+    "prior_recommendation": "Collect exact due/queued/started/finished telemetry across at least three comparable windows before scheduler timing mutation.",
+    "control_scheduler_health": "CTRL-20260922T025652+0900-R28-9A9BFB1F reports YELLOW persistent-delay signal and no deterministic exact collision.",
     "open_utility_request_selected": null
   },
-  "freshness_check_before_terminal_persistence": {
+  "ownership_snapshot_before_work": {
     "assignment_pointer": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "evidence_analyst": "EVA-20260922T011108+0900-R49-7E3C21A5@7c154b6203347a4f212746e2cfe4ee7f1be2e5a4",
-    "control": "CTRL-20260922T010052+0900-R27-5C8A21F4@70161c64b6760dafa773051dabd9d839b9443cd8",
-    "main": "MAIN-20260922T021601+0900-PRIMARY-FUNNEL21-BLOCKED-R49-PENDINGREVIEW-6B4D21C8",
-    "sub": "SUB-20260922T013609+0900-NOOP-R49POSTMAIN-9D4A21C7",
-    "relay": "NO_SEPARATE_ACTIVE_RELAY_OWNERSHIP; MAIN state remained BLOCKED pending fresh Analyst review",
-    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "material_supersession_detected": false
+    "evidence_analyst": "EVA-20260922T040022+0900-R51-6B4D21F8@b82bef83494e0ef339de324476b23907bc992601",
+    "main": "MAIN-20260922T041800+0900-PRIMARY-FUNNEL21-IDLE-R51-6B4D21F8",
+    "sub": "SUB-20260922T033500+0900-NOOP-R50POSTMAIN-INTEGRITYSTOP-5A7C21E4",
+    "relay": "NO_SEPARATE_ACTIVE_RELAY_OWNERSHIP_OBSERVED; MAIN R51 lease terminal COMPLETED",
+    "control": "CTRL-20260922T025652+0900-R28-9A9BFB1F@d2f0ffa7e263fd9b7b0210cf1d5c99574894f6e6",
+    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
   },
+  "allowed_actions": [
+    "Read current live scheduler definitions/timing metadata.",
+    "Read designated control-plane durable worker timestamps and current authoritative repository refs.",
+    "Compare clock semantics and record one bounded NON_EVIDENTIARY operational result.",
+    "Update only Utility-owned state and append-only result paths."
+  ],
+  "forbidden_actions": [
+    "No scheduler mutation or registry mutation.",
+    "No scientific workflow dispatch or experiment.",
+    "No research/main/evidence/control/preserve ref mutation.",
+    "No candidate typing/readiness/lifecycle reinterpretation.",
+    "No consumed/protected identity use.",
+    "No MAIN/SUB/Relay critical-path work."
+  ],
+  "stop_condition": "Stop after one fresh timing-window reconciliation and classification; do not self-extend or apply scheduler changes.",
   "ownership_checks": {
     "collision_found": false,
     "main_critical_dependency": false,
     "active_or_queued_research_object_touched": false,
     "candidate_typing_touched": false
   },
-  "integrity_checks": {
-    "scheduler_mutation": false,
-    "scheduler_registry_mutation": false,
-    "scientific_workflow_or_experiment": false,
-    "research_main_evidence_control_preserve_mutation": false,
-    "consumed_or_protected_identity_used": false,
-    "hidden_main_dependency_created": false
-  },
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
     "preserved_fields": "NOT_APPLICABLE_NO_RESEARCH_CANDIDATE_TOUCHED",
     "typing_or_readiness_changed": false
-  },
-  "outputs": {
-    "result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T022329+0900-SCHEDDELAY-CROSSSECTION-5A8D1F3C-0223.md",
-    "result_commit": "e3a212b9ce7fe6f8038bbff557b6510832ca9fa8"
-  },
-  "follow_up_recommendation": "Before any scheduler timing mutation, collect exact nominal_due_at/queued_at/started_at/finished_at-or-blocked_at telemetry for at least three comparable dense windows. Prefer durable started_at/terminal timestamps over coarse scheduler last_run_time where available. No duplicate Utility request was added because Control already owns scheduler-health decisions and persistent-delay observation.",
-  "stop_reason": "BOUNDED_CROSS_SECTION_COMPLETE_MAX_RUNS_1_NO_SAFE_PHASE_FIX_IDENTIFIED"
+  }
 }
