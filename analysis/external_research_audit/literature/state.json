@@ -1,40 +1,41 @@
 {
-  "timestamp": "2026-09-21T21:30:03+09:00",
+  "timestamp": "2026-09-22T00:38:49+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9",
-  "producer_run_id": "external-literature-auto-20260921T213000+0900-R22-7C4A21E9",
+  "generation_id": "LIT-20260922T003849+0900-R23-EVENTSPARSE-6F3A91C8",
+  "producer_run_id": "external-literature-auto-20260922T003849+0900-R23-6F3A91C8",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260921T183800+0900-R21-HOLDOUT-EXHAUSTION-4E7C21A9",
-  "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "21:30 JST",
-  "schedule_inference": false,
+  "supersedes_generation_id": "LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260921T205220+0900-R25-9C4E21A7",
-      "handoff_commit": "e8441362f29e8369c549bf08fb6e32efafe72124",
-      "branch_tip_observed": "835c175de2db7220e22919a3a27c76406b8cef46"
+      "generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
+      "handoff_commit": "0e38771af4dacefab079a9389dece4c6a48f1240"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T205800+0900-R43-6E2A91C5",
-      "handoff_commit": "5692a1b3f210ae2be2cef80266b6e4fc1c7a14d4"
+      "generation_id": "EVA-20260922T002600+0900-R48-8C4A21F6",
+      "handoff_commit": "86290dcbd85a45e89acc56263685cd9338963726"
     },
     "main_report": {
-      "generation_id": "MAIN-20260921T212004+0900-PRIMARY-FUNNEL21-HOLD-R43-6A8C21D5",
-      "handoff_commit": "3087e24d3d3bdbdb768a33ba2a1c3e624777c11f",
-      "orchestrator_branch_tip_observed": "8b46f17398d96a0df1c9bae957211656311096fe"
+      "generation_id": "MAIN-20260922T001545+0900-PRIMARY-FUNNEL21-HOLD-R46-IDLE-5B7D21C9",
+      "handoff_commit": "c462af2cbea084f4cb1898c7c993c1e93eeccf8e"
     },
     "sub_report": {
-      "generation_id": "SUB-20260921T203533+0900-NOOP-R42POSTMAIN-METHODHOLD-3C7A21E5",
-      "handoff_commit": "3e77cbae214809d3e08f09d500ab4b661fe1f53b",
-      "orchestrator_branch_tip_observed": "8b46f17398d96a0df1c9bae957211656311096fe"
+      "generation_id": "SUB-20260921T234211+0900-NOOP-R46NOMECH-7C3A91E5",
+      "handoff_commit": "d6506817c0ad0db0d5817cd26092f6c6f59b4e92"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260921T183800+0900-R21-HOLDOUT-EXHAUSTION-4E7C21A9",
-      "handoff_commit": "e3908aae13ef167c603fa202d2e00bfc99916912"
+      "generation_id": "LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9",
+      "handoff_commit": "1c8cb3f86d1ef63a12c2b1b9ff984f717723ec7c"
     }
   },
-  "authoritative_refs_inspected": {
+  "role": "LITERATURE_REDUCTION_SCOUT",
+  "schedule_slot": "00:30 JST",
+  "schedule_inference": false,
+  "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "ops_control_tip": "0e38771af4dacefab079a9389dece4c6a48f1240",
+    "ops_evidence_analyst_tip": "86290dcbd85a45e89acc56263685cd9338963726",
+    "ops_orchestrator_tip": "c462af2cbea084f4cb1898c7c993c1e93eeccf8e",
+    "ops_external_tip_before_write": "c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48",
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -42,12 +43,14 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
-    "formal_tags": [],
-    "sealed_tags": [],
-    "freeze_tags": [],
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
     "legacy_freeze_branch_count": 13,
-    "preserve_namespaces_rechecked": true,
-    "research_refs_rechecked": true,
+    "active_candidate_research_branch": null,
+    "h5_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
     "prs": {
       "148": "OPEN_UNMERGED",
       "149": "OPEN_UNMERGED"
@@ -56,73 +59,83 @@
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "EXPOSURE_LEDGER_IS_OBSERVABILITY_NOT_VALIDITY",
-      "kind": "external_literature_fact_plus_inference",
-      "summary": "Adaptive-experiment inference requires guarantees that explicitly account for adaptivity; recording exposures alone does not supply those guarantees.",
-      "source": "Bibaut & Kallus 2025, Annual Review of Statistics and Its Application, DOI 10.1146/annurev-statistics-040522-015431"
+      "id": "EVENT_DRIVEN_EPROP_DIRECT_PRIOR_ART",
+      "type": "EXTERNAL_LITERATURE_FACT",
+      "source": "Korcsak-Gorzo et al. 2025, arXiv:2511.21674",
+      "finding": "Time-driven e-prop has already been translated into an event-driven recurrent-spiking implementation with continuous dynamics, weight updates, strict locality, sparse connectivity and reported scaling to millions of neurons without loss of learning performance.",
+      "impact": "Direct ordinary prior art for semantically active event-triggered eligibility localization; positive SparkBrain resource results do not imply mechanism novelty."
     },
     {
-      "id": "INDEPENDENT_CONFIRMATION_ROBUST_TO_OPAQUE_SELECTION",
-      "kind": "external_literature_fact_plus_inference",
-      "summary": "Data splitting permits an otherwise unconstrained selection procedure if selection remains independent of the inference split; it is a robust validity floor though not generally power-optimal.",
-      "source": "Goeman & Solari 2024, Biometrika, DOI 10.1093/biomet/asad078"
+      "id": "SPARSEPROP_EXACT_EVENT_SPARSE_BASELINE",
+      "type": "EXTERNAL_LITERATURE_FACT",
+      "source": "Engelken 2023, NeurIPS, DOI 10.52202/075280-0161",
+      "finding": "SparseProp gives numerically exact event-based sparse SNN simulation/training while avoiding full-neuron iteration per spike, with stated per-spike complexity reduction from O(N) to O(log N) and >4-orders-of-magnitude speedup in a million-neuron sparse LIF simulation.",
+      "impact": "A dense/current-implementation comparator alone is too weak for a broad efficiency claim; optimized exact sparse/event-driven data structures are an ordinary baseline."
     },
     {
-      "id": "REUSE_REQUIRES_BOUND_SELECTION_AWARE_REGIME",
-      "kind": "external_literature_fact_plus_inference",
-      "summary": "Selective inference, randomized selection, and safe/e-value testing offer validity under particular adaptive processes, but their guarantees are process-specific and do not automatically cover opaque outcome-responsive hypothesis generation.",
-      "sources": [
-        "Fithian, Sun & Taylor, Optimal Inference After Model Selection",
-        "Panigrahi, Fry & Taylor 2024, Biometrika, DOI 10.1093/biomet/asae019",
-        "Grunwald, de Heide & Koolen 2024, JRSS B, DOI 10.1093/jrsssb/qkae011"
-      ]
+      "id": "ETLP_THREE_FACTOR_LOCAL_TRIGGER_BASELINE",
+      "type": "EXTERNAL_LITERATURE_FACT",
+      "source": "Quintana et al. 2023, arXiv:2301.08281",
+      "finding": "ETLP implements three-factor local plasticity using pre-synaptic trace, post-synaptic voltage and a third factor that also acts as an update trigger, with reported computational-complexity advantage and FPGA proof of concept.",
+      "impact": "Delayed/global teaching signals do not require dense all-synapse visitation; trigger-driven local credit maintenance is established ordinary prior art."
     },
     {
-      "id": "EVIDENCE_VISIBILITY_IS_SEPARATE_CONTROL_PLANE",
-      "kind": "external_literature_fact_plus_inference",
-      "summary": "Evidence-state visibility can change experimenter behavior and protocol independently of statistical optional-stopping validity; protected feedback visibility should therefore be prospectively masked or bounded during candidate generation.",
-      "source": "Sadibolova & Terhune 2025, Behavior Research Methods, DOI 10.3758/s13428-025-02813-0"
+      "id": "SCALING_AND_EXACT_SEMANTICS_DISCRIMINATOR",
+      "type": "INFERENCE_FROM_REPOSITORY_AND_LITERATURE",
+      "finding": "Because stable SparkBrain globally decays every connection once per processed event while the strongest external baselines exploit sparse event structure, the meaningful discriminator is scaling/crossover under exact semantic equivalence across edge count, activity/event rate, active-degree, nonzero-eligibility-set size/lifetime and reward frequency.",
+      "impact": "A one-point sparse workload win is regime-specific SYSTEM evidence, not a general mechanism or architecture novelty claim."
     }
   ],
   "affected_lines": [
-    "CAND_PREFORMAL_CROSS_GENERATION_HOLDOUT_EXPOSURE_INTEGRITY_01",
-    "FUTURE_PREFORMAL_SELECTION_AWARE_VALIDITY",
-    "SCIENTIFIC_HOLDOUT_FEEDBACK_VISIBILITY",
-    "CROSS_GENERATION_CANDIDATE_ANCESTRY",
-    "PROGRAMME_EVIDENCE_INTEGRITY"
+    "CAND_RESOURCE_SEMANTIC_ACTIVE_WORK_LOCALIZATION_01",
+    "H5_EVENT_ROUTING_WORK_REDUCTION_INTERPRETATION",
+    "ELIGIBILITY_RESOURCE_ACCOUNTING",
+    "EVENT_DRIVEN_PLASTICITY_BASELINES",
+    "PROGRAMME_ARCHITECTURE_EFFICIENCY"
   ],
-  "novelty_or_reduction_impact": "SELECTION_AWARE_INFERENCE_AND_MASKING_SHARPENING_NO_SCIENTIFIC_NOVELTY_UPLIFT",
   "reduction_candidates": [
-    "fresh independent confirmatory set after outcome-blind candidate/scorer/falsifier binding",
-    "selection-aware inference with machine-checkable selection event and candidate ancestry",
-    "randomized-selection selective inference under prospectively fixed assumptions",
-    "always-valid/e-value continuation only for the adaptive process covered by the construction",
-    "masked/minimal protected-feedback interface during candidate generation"
+    "EVENT_DRIVEN_EPROP",
+    "EXACT_SPARSE_EVENT_SIMULATION_AND_TRAINING",
+    "EVENT_TRIGGERED_THREE_FACTOR_LOCAL_PLASTICITY",
+    "TIMESTAMP_OR_ACTIVE_SET_ELIGIBILITY_MATERIALIZATION"
   ],
-  "confidence": "HIGH_FOR_METHODOLOGY_SHARPENING_MEDIUM_FOR_WHICH_REUSE_METHOD_BEST_FITS_FUTURE_SPARKBRAIN_OBJECT",
+  "novelty_or_reduction_impact": "STRONG_ORDINARY_EVENT_DRIVEN_SPARSE_LOCALIZATION_REDUCTION_NO_MECHANISM_NOVELTY_UPLIFT. Modern event-driven e-prop, exact sparse event simulation/training and event-triggered three-factor local plasticity are strong ordinary baselines. A positive result against SparkBrain's current global scan remains SYSTEM/resource evidence unless it survives optimized equal-semantics comparators and a prospectively fixed scaling study.",
+  "audit_classification": null,
+  "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "fresh independent confirmatory set kept hidden until candidate/scorer/falsifier binding",
-    "cross-generation exposure ledger recording feedback class and observing agents",
-    "explicit candidate-choice ancestry from protected feedback to successor selection",
-    "prospectively specified selective-inference/randomized-selection regime when reuse is necessary",
-    "always-valid/e-value regime only for the stopping/continuation process actually covered by its guarantee",
-    "masked evidence interface exposing only prospectively allowed minimal decisions during candidate generation"
+    "exact-semantics current/global eligibility implementation versus timestamp/lazy or event-triggered eligibility with an active-eligibility set",
+    "event-driven e-prop-style baseline retaining all state/history required for delayed reward",
+    "SparseProp-style exact sparse/event-driven data-structure baseline rather than only a dense scan",
+    "ETLP-style third-factor-triggered local update baseline where applicable",
+    "prospective scaling/crossover sweep over total edges, active degree/event rate, nonzero-eligibility-set size/lifetime and reward frequency",
+    "equal event/reward timing and equivalent weight/prediction trajectory; no semantic or information-privilege reduction in exchange for speed",
+    "operation-count claim bound separately from wall-clock, memory, cache and energy claims"
   ],
   "questions_for_evidence_analyst": [
-    "Keep #31 terminal/no-third-rescue and treat this only as prospective design guidance?",
-    "For a fresh scientific successor, require both exposure observability and an explicit validity regime rather than treating a ledger as sufficient?",
-    "Prefer fresh independent confirmation when cross-agent selection ancestry cannot be faithfully represented for selective inference?"
+    "Keep CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01 SYSTEM-only and treat event-driven e-prop, SparseProp and ETLP as mandatory ordinary reductions before any uplift?",
+    "Require equal-semantics comparators to preserve delayed-reward/eligibility state and resulting weight/prediction trajectories, not merely final task accuracy?",
+    "Require a prospectively fixed scaling/crossover study so a positive result is not overgeneralized from one sparse regime?"
   ],
   "questions_for_control_brain": [
-    "Add observability != statistical validity and feedback-visibility masking to the evidence-integrity checklist?",
-    "Require future reusable-holdout/selective-inference proposals to state exactly which adaptive choices their guarantee covers?",
-    "Keep PRE_FORMAL/FORMAL empty and avoid manufacturing a SYSTEM implementation object solely from this literature?"
+    "Add modern event-driven eligibility and exact sparse simulation as ordinary efficiency baselines for future resource claims?",
+    "Keep H5 frozen/consumed and use it only as motivation for the fresh object, never as data to subtract/reweight or reopen?",
+    "Keep PRE_FORMAL/FORMAL unchanged and cap any current-object positive result at SYSTEM unless a residual survives optimized equal-semantics baselines?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "R33 terminal NONCONFORMING_RAW_BEFORE_SCORE / HOLD_METHOD_LIMITED disposition",
-    "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01 canonical R43 HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED disposition",
-    "no third #31 rescue, retrospective invalidation, protected-outcome reconstruction, rerun/rescore, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, Utility execution, or scheduler change"
+    "H5 exact package/STARTED/raw-preserve/evidence chain and canonical FAIL_NO_USEFUL_WORK_REDUCTION",
+    "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01 fresh-object boundary; no post-hoc H5 subtraction, rerun, rescore, relabel or reopen",
+    "no synthetic outcome in the current static-contract cycle",
+    "no STARTED/TEST/PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation or scheduler change by this role"
   ],
-  "utility_request_created": null
+  "utility_request_created": null,
+  "mutations": {
+    "scientific_experiments_executed": 0,
+    "scientific_workflows_dispatched": 0,
+    "one_way_identities_consumed": 0,
+    "research_prs_merged": 0,
+    "immutable_evidence_mutations": 0,
+    "scheduler_definition_changes": 0,
+    "utility_requests_created": 0
+  }
 }
