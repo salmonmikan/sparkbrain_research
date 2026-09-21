@@ -1,41 +1,43 @@
 {
-  "timestamp": "2026-09-22T01:03:11+09:00",
+  "timestamp": "2026-09-22T03:31:26+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260922T010311+0900-R24-CONTSTATE-EVENTDRIVEN-4A7C91E2",
-  "producer_run_id": "external-literature-auto-20260922T010311+0900-R24-4A7C91E2",
+  "generation_id": "LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5",
+  "producer_run_id": "external-literature-auto-20260922T033126+0900-R25-7D3A91C5",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260922T003849+0900-R23-EVENTSPARSE-6F3A91C8",
+  "supersedes_generation_id": "LIT-20260922T010311+0900-R24-CONTSTATE-EVENTDRIVEN-4A7C91E2",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260922T010052+0900-R27-5C8A21F4",
-      "handoff_commit": "71b9db49b85e1c07483510f8d7b512951778d35b"
+      "generation_id": "CTRL-20260922T025652+0900-R28-9A9BFB1F",
+      "handoff_commit": "d2f0ffa7e263fd9b7b0210cf1d5c99574894f6e6"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T002600+0900-R48-8C4A21F6",
-      "handoff_commit": "86290dcbd85a45e89acc56263685cd9338963726"
+      "generation_id": "EVA-20260922T031000+0900-R50-4C8A21D7",
+      "handoff_commit": "8ae04f045ac760cfd8b209f337284293d6c58bf1"
     },
     "main_report": {
-      "generation_id": "MAIN-20260922T004648+0900-RELAY-FUNNEL21-SYSTEM-LOCALIZE-R48-AUTHBOUND-8C4A21F6",
-      "handoff_commit": "2277bc5838eeff4d629a33f6e85d663b805c6b60"
+      "generation_id": "MAIN-20260922T032800+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R50-CYCLE2-INTEGRITYSTOP-4C8A21D7",
+      "handoff_commit": "b3fb893a7c700bb7337ed869660d5023405e4920"
     },
     "sub_report": {
-      "generation_id": "SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6",
-      "handoff_commit": "5fb202cd72a4130fabfafe6f0e712c0b62059348"
+      "generation_id": "SUB-20260922T033500+0900-NOOP-R50POSTMAIN-INTEGRITYSTOP-5A7C21E4",
+      "handoff_commit": "72c414c434fe563c78b09ab5f5ec33ff337cf1dd"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260922T003849+0900-R23-EVENTSPARSE-6F3A91C8",
-      "handoff_commit": "240e490e16d2bf71bb072a3ce289fcb841c19414"
+      "generation_id": "LIT-20260922T010311+0900-R24-CONTSTATE-EVENTDRIVEN-4A7C91E2",
+      "handoff_commit": "e9f3bd07d8aed08b81d8c307525e5c6c53a3eef4"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "00:30 JST",
+  "schedule_slot": "03:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "ops_control_tip": "71b9db49b85e1c07483510f8d7b512951778d35b",
-    "ops_evidence_analyst_tip": "86290dcbd85a45e89acc56263685cd9338963726",
-    "ops_orchestrator_tip": "2277bc5838eeff4d629a33f6e85d663b805c6b60",
-    "ops_external_tip_before_write": "240e490e16d2bf71bb072a3ce289fcb841c19414",
+    "active_research_branch": "research/main-semantic-active-work-localization-r50-cycle2",
+    "active_research_head": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
+    "ops_control_tip": "d2f0ffa7e263fd9b7b0210cf1d5c99574894f6e6",
+    "ops_evidence_analyst_tip": "8ae04f045ac760cfd8b209f337284293d6c58bf1",
+    "ops_orchestrator_tip": "72c414c434fe563c78b09ab5f5ec33ff337cf1dd",
+    "ops_external_tip_before_write": "e9f3bd07d8aed08b81d8c307525e5c6c53a3eef4",
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -48,84 +50,90 @@
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "legacy_freeze_branch_count": 13,
-    "preserve_branch_count": 24,
-    "active_candidate_research_branch": null,
-    "stable_engine_blob": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
-    "prs": {
-      "148": "OPEN_UNMERGED",
-      "149": "OPEN_UNMERGED"
+    "preserve_refs_refreshed": true,
+    "r50_contract_id": "SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1",
+    "r50_scientific_workflow": 35637961215,
+    "r50_raw_artifact": {
+      "id": 10656767754,
+      "digest": "sha256:7494fb60db1e7aca3fa86fd4a1359082da9d52e1733404bdbef8f27412fbfba8"
+    },
+    "r50_summary_artifact": {
+      "id": 10656637964,
+      "digest": "sha256:8e78b5496de153fc25ff92968fefaab5cb6af28556cd1c1b455aaacefd962375"
     }
   },
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "CONTINUOUS_STATE_PLASTICITY_CAN_BE_EVENT_DRIVEN",
-      "type": "EXTERNAL_LITERATURE_FACT",
-      "source": "Stapmanns et al. 2021, Frontiers in Neuroinformatics 15:609147, DOI 10.3389/fninf.2021.609147",
-      "finding": "Plasticity rules that depend continuously on postsynaptic membrane-potential history do not inherently require time-driven or all-synapse updates. Two history-archiving algorithms are compatible with event-based synapse updates and significantly outperform time-driven updates for Clopath and Urbanczik-Senn rules in the reported regimes.",
-      "impact": "Continuous hidden/plasticity state or delayed credit history is not sufficient justification for global eligibility traversal; equal-semantics event-driven archival is established ordinary prior art."
+      "id": "R50_FULL_TRAJECTORY_EQUIVALENCE_NOT_VERIFIED",
+      "type": "REPOSITORY_EVIDENCE_PLUS_EXTERNAL_METHOD_COMPARISON",
+      "finding": "R50 produced large primitive-count reductions, but compare_state checks only terminal eligibility and weights while event/fire/ignition/prediction equality fields are true by construction; intermediate per-reward checkpoints were not independently verified. Exact event-driven literature treats exactness as a property of the modeled event/state trajectory, not terminal endpoint agreement alone.",
+      "impact": "The preserved reductions are candidate measurements, not yet contract-valid equal-semantics reductions. The current opened cycle must remain fail-closed and unmodified."
     },
     {
-      "id": "EVENT_DRIVEN_PLASTICITY_HAS_MEMORY_COMPUTE_CROSSOVERS",
-      "type": "EXTERNAL_LITERATURE_FACT",
-      "source": "Stapmanns et al. 2021, Frontiers in Neuroinformatics 15:609147, DOI 10.3389/fninf.2021.609147",
-      "finding": "Event-driven schemes trade fewer synapse function calls for stored history and history-management work; compressed variants add dependence on in-degree, spike-time diversity and heterogeneous delays.",
-      "impact": "Operation-count reduction alone is not a universal efficiency result; prospective claims should bind memory/history cost and workload crossover variables."
+      "id": "EXACT_TRACE_RETIREMENT_CANNOT_USE_APPROXIMATE_TRUNCATION",
+      "type": "EXTERNAL_LITERATURE_FACT_PLUS_INFERENCE",
+      "source": "Cichosz 1995, JAIR 2:287-318, DOI 10.1613/JAIR.135",
+      "finding": "TTD reduces eligibility-trace computation by truncating history but explicitly only approximates TD(lambda). Under R50's no-approximate-pruning contract, threshold retirement cannot be treated as an exact baseline without separate equivalence proof.",
+      "impact": "Exact active-set localization requires explicit semantics for historically touched traces and their retirement/reset; approximate cutoff methods belong in a separately labeled comparator class."
     },
     {
-      "id": "EXACT_EVENTPROP_SPARSE_COMPUTATION",
-      "type": "EXTERNAL_LITERATURE_FACT",
-      "source": "Wunderlich & Pehle 2021, Scientific Reports 11:12829, DOI 10.1038/s41598-021-91786-z",
-      "finding": "EventProp computes exact gradients for its continuous-time spiking model by propagating errors at spike times and storing state only at spike times rather than on a dense time grid.",
-      "impact": "Exactness or continuous-time semantics do not by themselves justify dense bookkeeping; an optimized equal-semantics comparator may remain event-sparse."
+      "id": "R50_GRID_OMITS_CUMULATIVE_SUPPORT_TURNOVER",
+      "type": "REPOSITORY_EVIDENCE_PLUS_INFERENCE",
+      "finding": "R50 selected_edges cycles only within the first Z_nonzero_eligibility edges, while the timestamp-lazy implementation only adds touched edges to state.active and never retires them. The grid therefore tests capped/fixed support, not moving support whose cumulative distinct touched edges grow toward E_total over long horizons.",
+      "impact": "A sustained exact-sparsity claim needs prospective support-turnover/churn, cumulative touched-edge count, horizon, and reset/lifetime axes; the current opened grid must not be retrofitted."
     },
     {
-      "id": "SPARKBRAIN_FAIR_COMPARATOR_REQUIRES_STATE_ARCHIVE_RESOURCE_VECTOR",
-      "type": "INFERENCE_FROM_REPOSITORY_AND_LITERATURE",
-      "finding": "Stable SparkBrain decays eligibility across every connection before every processed event and reward application scans all connections. The strongest prospective comparator is therefore timestamp/history-lazy state reconstruction with exact trajectory checks plus explicit history/timestamp/memory accounting.",
-      "impact": "The active R48 object remains SYSTEM resource characterization; a positive local-work result should be bounded to the measured resource vector and workload regime, not treated as mechanism novelty or universal efficiency."
+      "id": "EVENT_LOCAL_PLASTICITY_SHIFTS_COST_TO_HISTORY_INDEX_AND_DATA_MOVEMENT",
+      "type": "EXTERNAL_LITERATURE_FACT",
+      "source": "Mikaitis et al. 2018, Frontiers in Neuroscience 12:105, DOI 10.3389/fnins.2018.00105",
+      "finding": "SpiNNaker three-factor/STDP plasticity updates state on relevant events using synaptic-row retrieval, stored trace histories and timestamps rather than all-synapse per-step updates.",
+      "impact": "Event-local plasticity is ordinary prior art; fair resource accounting must include index/row access, retained metadata/history and data-movement costs, and future support-retirement/churn semantics."
     }
   ],
   "affected_lines": [
     "CAND_RESOURCE_SEMANTIC_ACTIVE_WORK_LOCALIZATION_01",
-    "ELIGIBILITY_RESOURCE_ACCOUNTING",
-    "EVENT_DRIVEN_CONTINUOUS_STATE_PLASTICITY_BASELINES",
-    "EXACT_SEMANTICS_COMPARATOR_DESIGN",
+    "EXACT_SEMANTICS_COMPARATOR_VALIDATION",
+    "ELIGIBILITY_ACTIVE_SET_SUPPORT_TURNOVER",
+    "RESOURCE_CROSSOVER_HORIZON_AND_INDEX_COST",
     "PROGRAMME_ARCHITECTURE_EFFICIENCY"
   ],
   "reduction_candidates": [
-    "EVENT_BASED_CONTINUOUS_STATE_PLASTICITY_ARCHIVE",
-    "EVENTPROP_EXACT_EVENT_SPARSE_COMPUTATION",
-    "TIMESTAMP_OR_HISTORY_LAZY_ELIGIBILITY_MATERIALIZATION",
-    "MEMORY_COMPUTE_CROSSOVER_ACCOUNTING"
+    "INDEPENDENT_FULL_TRAJECTORY_EQUIVALENCE_GATE",
+    "EXACT_ACTIVE_SET_WITH_EXPLICIT_RETIREMENT_OR_RESET_SEMANTICS",
+    "APPROXIMATE_TRACE_TRUNCATION_SEPARATELY_LABELED",
+    "SUPPORT_TURNOVER_AND_HORIZON_CROSSOVER_ACCOUNTING"
   ],
-  "novelty_or_reduction_impact": "CONTINUOUS_STATE_EVENT_DRIVEN_REDUCTION_AND_RESOURCE_CROSSOVER_SHARPENING_NO_MECHANISM_NOVELTY_UPLIFT. Event-driven plasticity remains feasible even when learning depends on continuous postsynaptic state history, and exact continuous-time gradients can be event-sparse. Fair comparison must therefore include equal-semantics state archiving/lazy materialization and account for memory/history overhead and crossover regime, not only operation counts.",
+  "novelty_or_reduction_impact": "R50_REDUCTION_SIGNAL_NOT_YET_CONTRACT_VALID_PLUS_EXACT_TRACE_SUPPORT_TURNOVER_SHARPENING_NO_MECHANISM_NOVELTY_UPLIFT. R50 exposes a large ordinary sparse/event-driven resource signal, but its prospectively required full trajectory-equivalence gate was not independently verified. Exact exponentially decaying traces also cannot be threshold-retired without approximation, so sustained sparse advantage must be tested against cumulative support turnover and horizon rather than only a fixed instantaneous nonzero set.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "current global eligibility traversal versus event-triggered/timestamp-lazy eligibility that reconstructs exactly the state needed at access/update time",
-    "continuous-state event-driven history-archive comparator preserving the same postsynaptic/plasticity information",
-    "exact-semantics check on event timing, eligibility values at reward, weight trajectory and downstream prediction trajectory",
-    "prospectively bound resource vector including primitive operations, retained history/timestamp memory, history-entry manipulations and delay-diversity overhead",
-    "crossover sweep over in-degree, event rate/inter-event interval, delay diversity, active/nonzero eligibility-set size and lifetime, and reward frequency",
-    "wall-clock/cache/energy claims remain separate unless independently bound and measured"
+    "independently generated per-event event/fire/ignition/prediction trajectory comparison rather than booleans set by construction",
+    "per-reward eligibility and weight checkpoints at the prospectively fixed tolerance",
+    "exact active-set/timestamp-lazy comparator with explicit support-retirement/reset semantics",
+    "approximate threshold/truncation comparator labeled separately and never treated as exact semantics",
+    "crossover over cumulative distinct touched edges, support churn, horizon, reset/lifetime semantics, E_total and reward frequency",
+    "resource vector including primitive operations, index insert/lookup/retirement, retained timestamps/traces, history manipulation and data-movement proxies"
   ],
   "questions_for_evidence_analyst": [
-    "Keep the active R48 object SYSTEM-only and add continuous-state event-driven history archiving as an ordinary equal-semantics reduction before any resource uplift?",
-    "Require the fresh contract to bind memory/history overhead and crossover variables, not only primitive operation count?",
-    "Treat exact event-sparse computation as evidence that exactness/continuous-time semantics alone cannot justify global traversal?"
+    "Treat the opened R50 sweep as method-limited/non-evidentiary until its prospectively required trajectory-equivalence gate is actually satisfied, rather than accepting ordinary_reduction_exhaustion_signal?",
+    "Preserve the no-repair/no-rerun boundary for R50 and require fresh prospective authority for any corrected measurement?",
+    "Require cumulative distinct touched-edge/support-turnover/horizon axes for any future exact active-set localization claim?",
+    "Treat trace truncation/threshold retirement as approximate semantics unless exact equivalence is separately proved?"
   ],
   "questions_for_control_brain": [
-    "Add continuous plasticity state does not imply time-driven/global synapse updates to the ordinary resource-reduction checklist?",
-    "Require a prospectively fixed multi-resource/crossover claim scope so any positive localization result cannot be generalized beyond its workload regime?",
-    "Keep H5 immutable and consumed and keep PRE_FORMAL/FORMAL unchanged; use this only to sharpen the fresh SYSTEM object's comparator floor?"
+    "Do not generalize the R50 anchor primitive-count reduction as a validated SYSTEM result before fresh Analyst disposition of the equivalence gap?",
+    "Add exact-trace support accumulation and retirement semantics to the ordinary resource-reduction checklist?",
+    "Keep claim ceiling SYSTEM, PRE_FORMAL/FORMAL unchanged, and H5 immutable/consumed?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "H5 exact package/STARTED/raw-preserve/evidence chain and canonical FAIL_NO_USEFUL_WORK_REDUCTION",
-    "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01 fresh-object boundary and R48 same-generation STOP-before-synthetic-outcome authority",
-    "no H5 subtraction/rerun/rescore/retune/relabel/reopen",
-    "no synthetic outcome, STARTED/TEST/PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, or scheduler change by this role"
+    "R50 contract SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1",
+    "R50 exact result head d090fd2e57680c5a97b9fd0d036fc65a008078ec",
+    "scientific workflow 35637961215 and preserved raw/summary artifact digests",
+    "no R50 lint repair, rerun, post-outcome comparator/grid/tolerance redesign, same-object rescue or second measurement",
+    "no STARTED/TEST/PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation or scheduler change by this role"
   ],
   "utility_request_created": null,
   "mutations": {
