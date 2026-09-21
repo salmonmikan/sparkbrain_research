@@ -1,27 +1,20 @@
-# MAIN — 2026-09-21 18:27 JST
+# MAIN PRIMARY — R41 cross-generation holdout exposure integrity
 
-- schema_version: `2`
-- generation_id: `MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8`
-- execution_mode: `PRIMARY`
-- lease: `COMPLETED`
-- Evidence Analyst: `EVA-20260921T180006+0900-R40-7C4A21E9@cc75b2a7f1c398a393180dfed59305fcc03e7aee`
-- consumed MAIN: `MAIN-20260921T174556+0900-RELAY-FUNNEL21-SYSTEM-PIPECONF-R39-CIFAIL-3A7D21E6`
-- candidate: `CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01`
-- research layer: `ARCHITECTURE_STUDY`
-- claim_ceiling: `SYSTEM`
-- canonical Funnel fields: `preformal_eligible=false`, `preformal_readiness=null`, `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE`
-- SYSTEM priority exception: `used=false`, viable executable MECHANISM=`0`
+**schema_version:** `2`  
+**generation_id:** `MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4`  
+**Evidence Analyst:** `EVA-20260921T185902+0900-R41-8D3A21C7 @ ffc8672c01ed0f45b2d0fd998c36706b8a343a91`  
+**Candidate:** `CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01`  
+**Layer / ceiling:** `ARCHITECTURE_STUDY / SYSTEM`  
+**Lease:** `BLOCKED`
 
-R40 authorized read-only diagnosis of the exact R39 CI failure, followed by at most one bounded science-invariant mechanical correction if the defect was preflight-only and no result-bearing stage had been reached. The exact Python 3.11 job log for workflow `35578428792@5527ac14d4d19078a91aa40f8825d5a4f41f0a91` established exactly that: Ruff `I001` at `scripts/outcome_blind_raw_generator.py:1:1`, with one import-block formatting error; Local readiness, Test, and Validate bundle had not run.
+R41 authorized a static/read-only cycle-1 audit only. Canonical dimensions were preserved exactly: `preformal_eligible=false`, `preformal_readiness=NOT_APPLICABLE`, `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE`, `system_priority_exception.used=false`. No PRE_FORMAL or FORMAL authority exists.
 
-MAIN applied exactly one mechanical repair: removed the extra blank line after that standard-library import block. Executable semantics and every analysis-affecting choice remained unchanged. The raw-generator SHA256 moved from `29c96a30ac7419249be35b8dfe5eeeff0755f1ea9621e4d4bfbae4e0a68ed22e` to `a0358140d48c0ea9177f7290dacef77236d7e3fbf7b8ae7385d18fd847d3252f`, and the existing contract was refrozen only to that new digest. Both changes were made atomically in research commit `168883bd316985537e404c6aad3a7ac03202e28a` on `research/main-outcome-blind-four-stage-pipeline-conformance-arch-20260921`.
+Independent repository refresh confirmed stable `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, five authoritative `evidence/*` tags, zero `formal/*`, zero `sealed/*`, zero tag-level `freeze/*`, active research/control/preserve namespaces, and PR #148/#149 still open/unmerged/mergeable. MAIN created no research branch, ran no scientific workflow, consumed no identity, and mutated no scientific/control/preserve/evidence ref.
 
-Exact-head CI `35583071628@168883bd316985537e404c6aad3a7ac03202e28a` completed `success`. Both Python 3.11 and 3.13 jobs passed Install, Lint, Local readiness, Test, and Validate bundle. Under the prospectively fixed R40 contingency tree, this maps to the non-evidentiary SYSTEM Architecture terminal observation `SYNTHETIC_LIVE_CONFORMANCE_PASS` and requires an immediate stop for fresh Evidence Analyst review. No same-run PRE_FORMAL or FORMAL continuation is authorized.
+The metadata-only audit established several partial facts before terminal classification: V05 protocol metadata explicitly separates development seeds `501/502` from confirmatory seeds `601-604` and records the prior inspection of the development pair; the phase1 frozen test manifest machine-identifies a test split by `seed_start`/`episode_count`; and the default-branch one-way formal registration workflow already binds exact source SHA, candidate spec hash, control branch, candidate/freeze/seal/STARTED paths, and artifact root. These are useful building blocks for a prospective exposure ledger, but no terminal feasibility/method-limitation judgment is claimed in this run.
 
-Repository truth was independently refreshed: stable `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative `evidence/*` remains exactly five tags; `formal/*`, `sealed/*`, and tag-level `freeze/*` remain empty; H5 STARTED and raw-preserve anchors remain `058e90227cd48e1c10c6ecbaed01efdec1217d0e` and `ce5797eb584344db7a512e585506fb6c59ea475b`; PR #148/#149 remain open, unmerged, and mergeable; repository rulesets remain zero. SUB has no target and no collision with this MAIN object.
+During evidence-metadata inspection, a GitHub commit endpoint returned result-bearing evidence patch content in addition to the requested commit/file metadata. R41 explicitly forbids reading protected scientific outcomes. Although those returned result fields were not used for any architectural inference or scientific interpretation, MAIN fails closed rather than continue or claim a terminal. The prospective terminal is therefore **not reached**; `SYSTEM_Architecture_observations=0` for this run.
 
-New evidentiary delta: FORMAL evidence `0`; PRE_FORMAL development evidence `0`; MECHANISM Architecture observations `0`; SYSTEM Architecture observations `1`; new identity consumption `0`. No scientific or R33 data was used, no STARTED/FORMAL/PRE_FORMAL identity was created, and no evidence/control/preserve ref was mutated. The canonical `terminal_state` remains Analyst-owned `ACTIVE`; `SYNTHETIC_LIVE_CONFORMANCE_PASS` is recorded separately as the R40 Architecture observation pending fresh canonicalization.
+**Stop reason:** `R41_SCOPE_INVALID_PROTECTED_OUTCOME_ENDPOINT_OVERRETURN_FAIL_CLOSED_NO_TERMINAL_CLASSIFICATION`.
 
-Stop reason: `R40_SYNTHETIC_LIVE_CONFORMANCE_PASS_STOP_FRESH_ANALYST_REVIEW`.
-
-Next action: fresh Evidence Analyst must consume this SYSTEM Architecture conformance observation and canonicalize disposition or allocate a fresh successor. Do not continue this object in the same run, do not make a second repair, and do not upgrade this SYSTEM object into MECHANISM.
+Next action: fresh Evidence Analyst review. If re-authorized, retry this same static SYSTEM question using only refs, directory/file-path inventory, non-result manifests, protocol metadata, and workflow definitions; do not invoke commit/diff endpoints capable of returning result-bearing evidence patches. Preserve canonical ACTIVE/ACTIVE lifecycle fields unless the Analyst changes them.
