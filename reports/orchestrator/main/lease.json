@@ -11,10 +11,10 @@
     "sub": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6@fcab2e7c19d4030656ab632a03621d386a3fdbca"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-22T07:18:00+09:00",
   "heartbeat_at": "2026-09-22T07:18:00+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-22T07:18:00+09:00",
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260922T065809+0900-R55-5A8C21F7",
   "analyst_commit": "11e84b37dd8739c38f538f1231aab7234356c5d0",
@@ -43,11 +43,11 @@
   "active_branch": null,
   "active_head": null,
   "active_identity": null,
-  "active_step": "R55_RECONCILING_FRESH_ANALYST_NO_TARGET",
+  "active_step": "R55_INTENTIONAL_NO_TARGET_COMPLETE",
   "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION_INTENTIONAL_IDLE",
   "terminal_observation": null,
   "workflows": [],
-  "stop_reason": null,
-  "next_action": "Reconcile R55 freshness and persist intentional idle without manufacturing a candidate or executing science.",
+  "stop_reason": "R55_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+  "next_action": "Remain intentionally idle until a fresh later Evidence Analyst generation allocates a genuinely new prospective object after a material mechanism-surface delta or independently new non-rescue question/review. Treat R55 H7 guidance only as a future admission floor.",
   "owner": "main"
 }
