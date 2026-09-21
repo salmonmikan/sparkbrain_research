@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T212004+0900-PRIMARY-FUNNEL21-HOLD-R43-6A8C21D5",
-  "producer_run_id": "sparkbrain-main-primary-20260921T212004JST-R43",
-  "produced_at": "2026-09-21T21:20:04+09:00",
+  "generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
+  "producer_run_id": "sparkbrain-main-primary-20260921T221651JST-R44",
+  "produced_at": "2026-09-21T22:16:51+09:00",
   "execution_mode": "PRIMARY",
   "status": "COMPLETED",
-  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_R43_NO_ACTIVE_MAIN_OBJECT_CANONICALIZATION_RECONCILE",
-  "analyst_generation_id": "EVA-20260921T205800+0900-R43-6E2A91C5",
-  "analyst_commit": "5692a1b3f210ae2be2cef80266b6e4fc1c7a14d4",
-  "supersedes_generation_id": "MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4",
-  "consumed_main_generation_id": "MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4",
+  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_R44_NO_ACTIVE_MAIN_OBJECT_RECONCILE",
+  "analyst_generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
+  "analyst_commit": "fca9a4b0adb259b76a518605f611ff79e0c48680",
+  "supersedes_generation_id": "MAIN-20260921T212004+0900-PRIMARY-FUNNEL21-HOLD-R43-6A8C21D5",
+  "consumed_main_generation_id": "MAIN-20260921T212004+0900-PRIMARY-FUNNEL21-HOLD-R43-6A8C21D5",
   "input_generations": {
-    "evidence_analyst": "EVA-20260921T205800+0900-R43-6E2A91C5",
-    "main": "MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4",
-    "sub": "SUB-20260921T203533+0900-NOOP-R42POSTMAIN-METHODHOLD-3C7A21E5"
+    "evidence_analyst": "EVA-20260921T220541+0900-R44-7A3C21E8",
+    "main": "MAIN-20260921T212004+0900-PRIMARY-FUNNEL21-HOLD-R43-6A8C21D5",
+    "sub": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5"
   },
   "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_INDEPENDENT_FRESH_INTEGRITY_OBJECT",
   "research_layer": null,
@@ -29,13 +29,13 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No MAIN allocation is active; no comparably executable/informative MECHANISM exists.",
+    "reason_detail": "No MAIN allocation is active and viable executable MECHANISM is zero.",
     "compared_mechanism_candidate_ids": []
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_tip": "5692a1b3f210ae2be2cef80266b6e4fc1c7a14d4",
-    "latest_sub_generation": "SUB-20260921T203533+0900-NOOP-R42POSTMAIN-METHODHOLD-3C7A21E5",
+    "analyst_tip": "fca9a4b0adb259b76a518605f611ff79e0c48680",
+    "latest_sub_generation": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5",
     "target_research_branch": null,
     "target_research_head": null,
     "active_identity": null,
@@ -56,8 +56,8 @@
     "freeze_tags": [],
     "h5_started_control": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "pr_148": "OPEN_UNMERGED_MERGEABLE",
-    "pr_149": "OPEN_UNMERGED_MERGEABLE"
+    "pr_148": "OPEN_UNMERGED",
+    "pr_149": "OPEN_UNMERGED"
   },
   "research_layer_state": {
     "DISCOVERY": {"state": "OPEN", "M": 0, "S": 0},
@@ -73,46 +73,53 @@
     "viable_executable_mechanism": 0,
     "active_canonical_candidate": null
   },
-  "canonicalized_predecessor": {
-    "candidate_id": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
-    "classification": "HOLD",
-    "claim_ceiling": "SYSTEM",
-    "preformal_eligible": false,
-    "preformal_readiness": {"status": "NOT_APPLICABLE"},
-    "hold_class": "HOLD_METHOD_LIMITED",
-    "hold_reason": [
-      "SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK",
-      "FINAL_AUTHORIZED_METADATA_ONLY_CYCLE2_COMPLETED_WITHOUT_PROTECTED_OUTCOME_ACCESS",
-      "NO_THIRD_RESCUE_PER_PROSPECTIVE_R42_MAPPING",
-      "FUTURE_SCIENCE_REQUIRES_PROSPECTIVE_EXPOSURE_POLICY_BINDING"
-    ],
-    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-    "queue_state": "NOT_QUEUED",
-    "exploration_cycle_count": 2,
-    "system_priority_exception": {"used": false}
+  "portfolio_note": {
+    "candidate_31": {
+      "candidate_id": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
+      "classification": "HOLD",
+      "claim_ceiling": "SYSTEM",
+      "preformal_eligible": false,
+      "preformal_readiness": {"status": "NOT_APPLICABLE"},
+      "hold_class": "HOLD_METHOD_LIMITED",
+      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "queue_state": "NOT_QUEUED",
+      "third_cycle": "PROHIBITED"
+    },
+    "h7_responsibility": {
+      "claim_ceiling": "MECHANISM",
+      "preformal_eligible": false,
+      "preformal_readiness": {"status": "NOT_READY"},
+      "hold_class": "HOLD_MECHANISM_UNRESOLVED",
+      "terminal_state": "NONTERMINAL_HOLD",
+      "execution_status": "STOP_UNTIL_FRESH_NATIVE_OBJECT_COMPARATOR_RESOURCE_FALSIFIER"
+    }
   },
   "prospective_contingency_tree": {
     "material_mechanism_surface_delta": "CREATE_FRESH_CANDIDATE_ID_OBJECT_AND_FRESH_REDUCTION_FALSIFIER_CONTRACT_THEN_ANALYST_REVIEW",
     "independently_motivated_integrity_delta": "FRESH_SYSTEM_OBJECT_ONLY_IF_NOT_RESCUE_AND_AFTER_MECHANISM_PRIORITY_COMPARISON",
+    "future_scientific_successor": "BIND_FOUR_STAGE_LINEAGE_PLUS_PROTECTED_SET_IDENTITY_EXPOSURE_FEEDBACK_VISIBILITY_AND_VALIDITY_REGIME_BEFORE_RESULT_BEARING_ACCESS",
+    "selection_ancestry_not_machine_checkable": "PREFER_FRESH_INDEPENDENT_CONFIRMATORY_SET_HIDDEN_UNTIL_CANDIDATE_SCORER_FALSIFIER_BINDING",
+    "protected_data_reuse_needed": "PROSPECTIVELY_SPECIFY_SELECTION_AWARE_OR_ALWAYS_VALID_REGIME_AND_MACHINE_CHECK_WHICH_ADAPTIVE_CHOICES_ARE_COVERED",
+    "protected_feedback_visibility": "MASK_OR_REDUCE_TO_PROSPECTIVELY_ALLOWED_MINIMAL_SIGNALS_DURING_CANDIDATE_GENERATION",
     "no_material_delta": "REMAIN_INTENTIONALLY_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
     "candidate31_third_cycle": "PROHIBITED",
     "protected_outcome_read_for_ledger_reconstruction": "PROHIBITED",
-    "retroactive_evidence_invalidation": "PROHIBITED"
+    "retroactive_existing_evidence_invalidation_without_independent_repository_evidence": "PROHIBITED"
   },
   "workflows": [],
   "workflow_inventory_observation": {
-    "latest_seen_control_plane_run_id": 35597662017,
+    "latest_seen_control_plane_run_id": 35604664804,
     "name": "ci",
     "head_branch": "ops/evidence-analyst-handoff",
-    "head_sha": "5692a1b3f210ae2be2cef80266b6e4fc1c7a14d4",
+    "head_sha": "fca9a4b0adb259b76a518605f611ff79e0c48680",
     "status": "completed",
     "conclusion": "success",
     "scientific_workflow_dispatched_by_main": false
   },
   "observations": {
     "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION",
-    "material_update": "R43 canonicalized candidate #31 to HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED and removed the last active MAIN object.",
-    "idle_semantics": "Intentional no-target state. MAIN must not manufacture SYSTEM activity while no fresh coherent mechanism or independent integrity object is allocated.",
+    "material_update": "R44 adds prospective validity-under-adaptivity and protected-feedback visibility/masking requirements for future fresh scientific successors; it creates no active object and does not reopen candidate #31.",
+    "idle_semantics": "Intentional no-target state. MAIN must not manufacture scientific or SYSTEM activity while no fresh coherent mechanism or independent integrity object is allocated.",
     "sub_collision_status": "NO_COLLISION_SUB_NO_TARGET",
     "protected_outcome_content_accessed": false,
     "scientific_execution": false,
@@ -123,17 +130,17 @@
     "reductions": []
   },
   "support_breadth": {
-    "scope": "CONTROL_PLANE_CANONICALIZATION_AND_INDEPENDENT_SOURCE_OF_TRUTH_REFRESH_ONLY",
+    "scope": "CONTROL_PLANE_RECONCILIATION_AND_INDEPENDENT_SOURCE_OF_TRUTH_REFRESH_ONLY",
     "sources": [
-      "fresh R43 Evidence Analyst latest/state",
+      "fresh R44 Evidence Analyst latest/state",
       "stable main ref",
-      "research ref inventory and exact historical conformance ref",
+      "research/main-* ref inventory and historical conformance ref",
       "authoritative evidence tag inventory",
       "formal/sealed/freeze tag inventories",
       "control STARTED branch inventory",
       "preserve branch inventory",
       "PR #148/#149 metadata",
-      "recent workflow inventory",
+      "exact R44 Analyst CI run",
       "latest MAIN and SUB control-plane state"
     ],
     "scientific_outcomes_read": false
@@ -156,8 +163,8 @@
   ],
   "consumed_identities_this_run": [],
   "integrity": {
-    "analyst_generation_rechecked_before_acquisition": "EVA-20260921T205800+0900-R43-6E2A91C5",
-    "analyst_tip_rechecked_before_persistence": "5692a1b3f210ae2be2cef80266b6e4fc1c7a14d4",
+    "analyst_generation_rechecked_before_acquisition": "EVA-20260921T220541+0900-R44-7A3C21E8",
+    "analyst_tip_rechecked_before_persistence": "fca9a4b0adb259b76a518605f611ff79e0c48680",
     "stable_main_rechecked_before_persistence": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "research_refs_rechecked": true,
     "evidence_refs_rechecked": true,
@@ -180,8 +187,8 @@
     "protected_outcome_content_used_for_decision": false,
     "scope_fail_closed": false
   },
-  "stop_reason": "R43_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
-  "next_action": "Wait for a fresh Evidence Analyst allocation after a material mechanism-surface delta or independently motivated fresh integrity object. No third #31 cycle, no ledger implementation under #31, no protected-outcome read, no PRE_FORMAL/FORMAL, and no manufactured SYSTEM queue item.",
+  "stop_reason": "R44_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+  "next_action": "Remain intentionally idle until a fresh Evidence Analyst allocation follows a material mechanism-surface delta or independently motivated fresh integrity object. Any future scientific successor must prospectively bind four-stage lineage, protected-set identity/exposure, feedback visibility/masking, and a validity-under-adaptivity regime before result-bearing access. Do not reopen candidate #31, manufacture a successor, or enter PRE_FORMAL/FORMAL without fresh authority.",
   "utility_request": null,
   "owner": "main"
 }
