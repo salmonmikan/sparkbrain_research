@@ -1,53 +1,58 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T09:22:00+09:00",
-  "generation_id": "METHCAL-20260921T092200+0900-R32-5D8A3C71",
-  "produced_at": "2026-09-21T09:22:00+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260921T092200+0900-R32-5D8A3C71",
+  "timestamp": "2026-09-21T10:21:00+09:00",
+  "generation_id": "METHCAL-20260921T102100+0900-R33-7B2E4C91",
+  "produced_at": "2026-09-21T10:21:00+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260921T102100+0900-R33-7B2E4C91",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "METHCAL-20260921T082500+0900-R31-8F3C6A21",
-  "previous_methodology_tip": "350d6fd90920e400ad5ba744799b94fed7595418",
-  "run_disposition": "NO_MATERIAL_CALIBRATION_CHANGE",
+  "supersedes_generation_id": "METHCAL-20260921T092200+0900-R32-5D8A3C71",
+  "previous_methodology_tip": "92a3a1fdf1aaaec4c6f50d718c90e01e60101e27",
+  "run_disposition": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "WELL_CALIBRATED",
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T082500+0900-R31-8F3C6A21",
-      "commit": "350d6fd90920e400ad5ba744799b94fed7595418"
+      "generation_id": "METHCAL-20260921T092200+0900-R32-5D8A3C71",
+      "commit": "92a3a1fdf1aaaec4c6f50d718c90e01e60101e27"
     },
     "control_brain": {
       "generation_id": "CTRL-20260921T085000+0900-R21-4F7C2A91",
       "commit": "49ac783b5640b8250c19133f8842f0bf49867e8f"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T090300+0900-R31-3C7A91E4",
-      "commit": "060e7d7d150b5406124425348553c92b04fed253"
+      "generation_id": "EVA-20260921T095900+0900-R32-6D2A91C4",
+      "commit": "6bf35ff0f08a981feb09abced00e157526a47cb0"
     },
     "main_strategy": {
-      "generation_id": "MAIN-20260921T091756+0900-PRIMARY-FUNNEL21-HOLD-R31-7C2A91E4",
-      "commit": "ac4c2b80379d516c56ebb0a3ea25638bc8800bab"
+      "generation_id": "MAIN-20260921T101710+0900-PRIMARY-FUNNEL21-MECH-ASMSET-R32-2F6C91A4",
+      "commit": "d4c91441e6cc12d5e4759a12814bdf6df3c94333"
+    },
+    "literature": {
+      "generation_id": "LIT-20260921T093300+0900-R18-ASSEMBLY-CAUSAL-CONTROLS-8D4C71A2",
+      "commit": "00bd486f4230c9a89d3d584e8d685a00b9dfe2b8"
     },
     "latest_sub": {
-      "generation_id": "SUB-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4",
-      "no_target_episode": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1"
+      "generation_id": "SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7",
+      "closed_no_target_episode": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1"
     }
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "control_handoff_tip": "49ac783b5640b8250c19133f8842f0bf49867e8f",
-    "evidence_analyst_handoff_tip": "060e7d7d150b5406124425348553c92b04fed253",
-    "methodology_prewrite_tip": "350d6fd90920e400ad5ba744799b94fed7595418",
-    "orchestrator_run_report_tip": "ac4c2b80379d516c56ebb0a3ea25638bc8800bab",
+    "evidence_analyst_handoff_tip": "6bf35ff0f08a981feb09abced00e157526a47cb0",
+    "methodology_prewrite_tip": "92a3a1fdf1aaaec4c6f50d718c90e01e60101e27",
+    "orchestrator_run_report_tip": "d4c91441e6cc12d5e4759a12814bdf6df3c94333",
+    "literature_tip": "00bd486f4230c9a89d3d584e8d685a00b9dfe2b8",
     "evidence_tags_count": 5,
     "formal_tags_count": 0,
     "sealed_tags_count": 0,
     "freeze_tags_count": 0
   },
   "material_findings": [
-    "No material calibration change relative to R31.",
-    "Fresh Analyst R31 canonically closed the pending action-policy evaluation-isolation object as terminal SYSTEM HOLD_CONTRACT_AMBIGUITY without same-object dynamic escalation or SYSTEM-to-MECHANISM upgrade.",
-    "Canonical funnel is 25/25 complete with MECHANISM=12, SYSTEM=13, Architecture M0/S0, PRE_FORMAL eligible=0, READY=0, viable executable MECHANISM=0.",
-    "Fresh changed-landscape SUB no-op opened one new NO_COHERENT_MECHANISM_TARGET episode; it is excluded from candidate/conversion/scientific-selection denominators.",
-    "Fresh MAIN consumed Analyst R31 and remained intentionally scientifically idle rather than manufacturing work."
+    "Fresh external calibration shows that exact observational activity/topology equality is not a scientifically privileged universal proxy for equal causal load; comparator equivalence should be split by claim type rather than globally tightened or relaxed.",
+    "The terminal exact-match Assembly predecessor remains closed and unchanged; Analyst R32 admitted a fresh MECHANISM successor with a prospectively different distributional-control contract, avoiding post-outcome goalpost movement.",
+    "Canonical funnel is 26/26 complete with MECHANISM=13, SYSTEM=13, Architecture M1/S0, PRE_FORMAL eligible=1, READY=0, viable executable MECHANISM=1.",
+    "The prior NO_COHERENT_MECHANISM_TARGET episode closed when fresh R18 literature changed the landscape, supporting opportunity-local exception reevaluation rather than escape-hatch persistence.",
+    "Current MAIN R32 is active only for non-evidentiary contract feasibility and explicitly forbids lesion/intervention outcome before prospective comparator/resource/balance/footprint/falsifier fixation and fresh Analyst review."
   ],
   "gate_by_gate_classifications": {
     "hard_integrity_floor": "KEEP",
@@ -62,6 +67,8 @@
     "preformal_ready_semantics": "KEEP",
     "prospective_comparator_feasibility_before_intervention": "KEEP",
     "infeasible_comparator_hold_stop_without_post_outcome_relaxation": "KEEP",
+    "causal_comparator_equivalence_standard": "SPLIT_BY_CLAIM_TYPE",
+    "external_literature_driven_fresh_successor_after_terminal_infeasibility": "KEEP",
     "first_analyst_authoritative_ready_to_preformal_transition": "INSUFFICIENT_EVIDENCE",
     "hold_multidimensional_model": "KEEP",
     "hold_field_applicability_mask": "KEEP",
@@ -94,104 +101,114 @@
     "legacy_topk_sparse_support": "TIGHTEN"
   },
   "false_positive_risks": [
-    "Producer-side noncanonical HOLD enums could fragment metrics if they bypass Analyst normalization; producer handoff validation remains needed.",
-    "A future SYSTEM-over-comparable-MECHANISM run could be post-hoc justified unless its machine-readable exception is prospective.",
-    "External-validation effects can be overinterpreted when a reference is degenerate or relevant simple reductions/source clustering are omitted."
+    "A distributional lesion comparator would be too permissive if its distribution, seed/sample schedule, balance variables, endpoint, resource parity, support rule, or falsifier were chosen after seeing intervention outcomes.",
+    "A single hand-picked equal-cardinality comparator can miss generic sparse-perturbation effects and overstate target specificity.",
+    "Network-wide reconfiguration after local perturbation can confound a local causal-selectivity interpretation if perturbation footprint is ignored or used post hoc to choose controls.",
+    "Producer-side noncanonical HOLD enums could fragment metrics if they bypass Analyst normalization.",
+    "A future SYSTEM-over-comparable-MECHANISM run could be post-hoc justified unless its machine-readable exception is prospective."
   ],
   "false_negative_risks": [
-    "Do not let repeated no-target checks become discovery inertia if a genuinely new mechanism surface appears; re-evaluate opportunity-locally.",
+    "Universalizing exact observational activity/topology equality as a causal-load requirement would reject scientifically competent set-level necessity tests and recreate the matched-load stall.",
+    "No-target episodes must be re-evaluated when external evidence materially changes the comparator/design landscape; R18 demonstrates such a valid reopening path via a fresh object.",
     "Do not require prior scientific success for READY; the first READY-to-PRE_FORMAL transition remains unobserved.",
-    "Long-run mechanism supply remains small-n and presently has no coherent executable candidate."
+    "Long-run mechanism supply remains small-n despite the fresh recovered candidate."
   ],
   "moving_goalpost_assessment": {
     "level": "LOW",
-    "finding": "The pending SYSTEM ambiguity was canonicalized without dynamic escalation, semantic choice, threshold repair, or same-object claim upgrade."
+    "finding": "The exact-match predecessor remains terminal with its original comparator, seeds, surface and terminal interpretation. Fresh external information motivated a new candidate ID and new prospective comparator family before any new outcome."
   },
   "pass_reachability_assessment": {
     "status": "REACHABLE_BUT_NARROW",
-    "finding": "Eligibility and readiness remain operationally distinct, but the first READY-to-PRE_FORMAL transition is still unobserved."
+    "finding": "The canonical pool now contains one preformal-eligible but NOT_READY MECHANISM object, strengthening operational separation while the first READY-to-PRE_FORMAL transition remains unobserved."
   },
-  "claim_type_separation_findings": "Healthy. The action-policy object remains terminal SYSTEM and is not upgraded to MECHANISM; current MAIN object fields are null while scientifically idle.",
+  "claim_type_separation_findings": "Healthy. The fresh object is explicitly limited to set/coalition-level causal necessity/selectivity. It does not inherit individual-unit responsibility, new-principle novelty, or the terminal predecessor's exact-match claim.",
   "mechanism_supply_health": {
-    "status": "QUALITY_FLOOR_HEALTHY_BUT_CURRENTLY_NO_COHERENT_EXECUTABLE_MECHANISM_NEW_NO_TARGET_EPISODE_CHECK1",
-    "canonical_analyst_population": "MECHANISM=12,SYSTEM=13,25/25_complete",
+    "status": "QUALITY_FLOOR_HEALTHY_EXTERNAL_CALIBRATION_RECOVERED_FRESH_MECHANISM_M1_ELIGIBLE1_READY0_SMALL_N",
+    "canonical_analyst_population": "MECHANISM=13,SYSTEM=13,26/26_complete",
     "observed_actual_selection_window": "SYSTEM,SYSTEM,MECHANISM",
     "theory_backward_share": "1/3",
-    "open_no_target_episode_id": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1",
-    "open_no_target_episode_check_count": 1,
-    "finding": "No low-quality mechanism was manufactured. Supply is currently stalled but explicitly observable and quality-constrained."
+    "active_mechanism_candidate_id": "CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01",
+    "closed_no_target_episode_id": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1",
+    "closed_no_target_episode_check_count": 2,
+    "finding": "Fresh external calibration converted a genuine changed-landscape stall into one coherent fresh mechanism object without manufacturing a quota candidate or reopening a terminal predecessor."
   },
   "funnel_observability": {
-    "status": "GOOD_25_OF_25_CANONICAL_M0S0_ELIGIBLE0_READY0_NO_TARGET_EVENTS_EXCLUDED",
-    "classification_completeness": "25/25_reviewed_canonical_analyst",
+    "status": "GOOD_26_OF_26_CANONICAL_M1S0_ELIGIBLE1_READY0",
+    "classification_completeness": "26/26_reviewed_canonical_analyst",
     "candidate_population_excludes_no_target_events": true,
-    "active_architecture": "M0,S0",
-    "preformal_eligible_count": 0,
+    "active_architecture": "M1,S0",
+    "preformal_eligible_count": 1,
     "preformal_ready_count": 0,
-    "pending_unreviewed_main_result_count": 0,
-    "finding": "Fresh Analyst canonicalized the previously pending SYSTEM result and kept no-target process records outside candidate/conversion counts."
+    "active_current_object_count": 1,
+    "finding": "All material candidates have mandatory v2.1 fields; the active MAIN lease is contract-feasibility execution of the already-canonical candidate, not a new scientific outcome or conversion event."
   },
   "preformal_gate_calibration": {
-    "status": "ELIGIBILITY_AND_READINESS_EMPIRICALLY_SEPARATED_READY_TRANSITION_STILL_UNTESTED",
+    "status": "ELIGIBLE_TRUE_NOT_READY_ON_FRESH_MECHANISM_CONTRACT_FEASIBILITY_READY_TRANSITION_STILL_UNTESTED",
     "hidden_second_formal_gate": false,
-    "current_canonical_eligible_count": 0,
+    "current_canonical_eligible_count": 1,
     "current_canonical_ready_count": 0,
     "first_ready_to_preformal": "INSUFFICIENT_EVIDENCE",
-    "finding": "No new evidence changes R31: READY remains development/test readiness in policy and the first live transition is still unobserved."
+    "finding": "The current object is in-principle eligible while distribution/resource/balance/support choices remain open and no new-contract outcome exists. This is development readiness separation, not prior-success gating."
   },
   "system_priority_exception_audit": {
     "used_genuine_exception": false,
     "count_observed_genuine_exception": 0,
     "system_priority_exception_used_current": false,
-    "basis": "No current MAIN object is allocated; the completed SYSTEM object had viable executable MECHANISM=0 at allocation.",
+    "basis": "Current MAIN object is MECHANISM, so SYSTEM-over-MECHANISM exception is not applicable.",
     "recorded_before_scientific_execution": "NOT_APPLICABLE_NO_EXCEPTION",
     "finding": "MECHANISM priority remains intact; first genuine exception remains unobserved.",
     "first_live_use": "INSUFFICIENT_EVIDENCE"
   },
   "no_coherent_target_audit": {
     "exception_code": "NO_COHERENT_MECHANISM_TARGET",
-    "open_episode_id": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1",
-    "open_episode_check_count": 1,
-    "latest_opportunity_generation": "SUB-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4",
+    "latest_episode_id": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1",
+    "episode_status": "CLOSED_BY_FRESH_R18_LITERATURE_DRIVEN_MECHANISM_SUCCESSOR",
+    "final_check_count": 2,
+    "latest_opportunity_generation": "SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7",
     "latest_opportunity_counts_as_mechanism_work": false,
     "latest_opportunity_in_candidate_denominator": false,
-    "rationale_quality": "CREDIBLE",
-    "finding": "The changed-landscape reframe found no coherent candidate and opened one fresh episode; this is not an escape hatch on current evidence."
+    "rationale_quality": "CREDIBLE_AT_PRODUCTION_AND_RESPONSIVE_TO_NEW_INFORMATION",
+    "finding": "The exception did not become an escape hatch: once fresh external evidence supplied a coherent prospective design, Analyst closed the episode and admitted a fresh mechanism object."
   },
   "classification_completeness": {
-    "classified_reviewed": 25,
-    "material_reviewed_population": 25,
+    "classified_reviewed": 26,
+    "material_reviewed_population": 26,
     "ratio_reviewed": 1.0,
-    "pending_unreviewed_new_candidate_count": 0,
-    "active_candidate_count": 0,
+    "active_candidate_count": 1,
     "no_target_event_in_candidate_denominator": false,
-    "policy_use": "Use the 25/25 Analyst-reviewed canonical population for policy/conversion conclusions; exclude no-target control-plane events."
+    "policy_use": "Use the 26/26 Analyst-reviewed canonical population for policy/conversion conclusions; exclude no-target process records and do not treat the active contract-feasibility lease as a scientific outcome."
   },
   "external_calibration": {
-    "status": "CLAIM_TYPE_SPECIFIC_TIGHTENING_UNCHANGED",
-    "historical_result_policy": "PRESERVE_C19_V4_EXACT_PASS_NO_RESCORE_NO_RELABEL",
-    "programme_interpretation": "C19_V4_REDUCIBLE_FOR_SPARKBRAIN_SPECIFIC_MECHANISM_NOVELTY_AFTER_C19_R2",
-    "prospective_requirements": [
-      "competent nondegenerate reference for superiority/novelty claims",
-      "relevant simple FSA/state-tracker reduction under matched information/resource access when applicable",
-      "source/atomic-unit clustered inference when observations share a source unit"
+    "status": "MATERIALLY_IMPROVED_CLAIM_TYPE_SPECIFIC_CAUSAL_CONTROL_DESIGN",
+    "historical_result_policy": "PRESERVE_ALL_TERMINAL_AND_IMMUTABLE_PRIOR_OBJECTS_NO_RESCORE_NO_RELABEL",
+    "new_prospective_principle": "EXACT_OBSERVATIONAL_MATCHING_IS_NOT_A_UNIVERSAL_CAUSAL_LOAD_STANDARD",
+    "claim_type_split": {
+      "matched_observational_load_claim": "EXACT_OR_PROSPECTIVELY_DEFINED_MATCHING_MAY_BE_REQUIRED",
+      "set_coalition_causal_necessity_claim": "PROSPECTIVELY_FIXED_DISTRIBUTIONAL_SAME_CARDINALITY_RANDOM_OR_NONMEMBER_CONTROLS_WITH_BALANCE_AND_FOOTPRINT_DIAGNOSTICS",
+      "individual_unit_responsibility_claim": "FRESH_SINGLE_UNIT_FACTORIAL_OR_COALITIONAL_ATTRIBUTION_OBJECT_REQUIRED"
+    },
+    "supporting_external_sources": [
+      "Fakhar et al., Scientific Reports 2024, DOI 10.1038/s41598-024-52423-7",
+      "Park et al., Neuropsychopharmacology 2016, DOI 10.1038/npp.2016.73",
+      "Contextual Fear Memory Retrieval Is Vulnerable to Hippocampal Noise, Cerebral Cortex 2021, DOI 10.1093/cercor/bhaa257"
     ],
     "universalization_forbidden": true
   },
   "stop_reframe_calibration": {
-    "status": "HEALTHY_TERMINAL_SYSTEM_AMBIGUITY_CANONICALIZED_AND_MAIN_IDLE",
-    "finding": "The static SYSTEM ambiguity terminal was canonically closed without same-object dynamic escalation; MAIN then stopped with no coherent central object."
+    "status": "HEALTHY_FRESH_EXTERNAL_INFORMATION_MOTIVATED_NEW_OBJECT_WITHOUT_REOPENING_TERMINAL_PREDECESSOR",
+    "finding": "The exact-match object stayed terminal; the no-target episode was closed only because fresh external design information supported a distinct prospectively bounded mechanism successor."
   },
   "prospective_recommendations": [
-    "Keep the action-policy evaluation-isolation object terminal; any dynamic discriminator requires a fresh candidate ID and fresh prospective contract.",
-    "Keep MAIN scientifically idle until fresh Analyst authority identifies a coherent current object.",
-    "Continue excluding no-target events from candidate/conversion/scientific-selection denominators and re-evaluate open episodes opportunity-locally.",
-    "Enforce canonical HOLD enum values at producer handoff.",
-    "Continue auditing the first READY-to-PRE_FORMAL transition and first genuine SYSTEM-over-comparable-MECHANISM execution."
+    "Keep CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01 terminal and do not reinterpret R18 as retrospective comparator relaxation.",
+    "For the fresh set/coalition object, freeze the comparator distribution, sample/seed schedule, balance variables, primary endpoint, perturbation-footprint diagnostic, resource contract, support rule, and falsifier before any intervention outcome.",
+    "Treat comparator equivalence as claim-type-specific: do not universalize exact observational matching or distributional random controls across unrelated claim types.",
+    "Keep the current ceiling at set/coalition necessity; require a fresh attribution object for individual-unit responsibility.",
+    "Do not promote the current object to READY based on prior DEV signal or literature alone; READY remains development/test readiness for a fully specified informative next PRE_FORMAL test.",
+    "Enforce canonical HOLD enum values at producer handoff and continue auditing first READY-to-PRE_FORMAL plus first genuine SYSTEM-over-comparable-MECHANISM execution."
   ],
   "utility_request": {
     "created": false,
-    "reason": "Live rollout remains higher-information than a synthetic methodology probe."
+    "reason": "Live rollout of the active contract-feasibility Architecture cycle is higher-information than a synthetic methodology probe."
   },
   "hard_floor_confirmation": {
     "status": "CONFIRMED_DO_NOT_RELAX",
@@ -206,13 +223,16 @@
   },
   "confidence": {
     "overall": "HIGH",
+    "comparator_claim_type_split": "HIGH",
     "first_ready_to_preformal": "INSUFFICIENT_EVIDENCE",
     "first_genuine_system_priority_exception": "INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_analyst": [
-    "Preserve the completed action-policy evaluation-isolation object as terminal SYSTEM with no same-object dynamic escalation or MECHANISM upgrade.",
-    "Preserve no-target episode accounting outside candidate/conversion/scientific-selection denominators and re-evaluate opportunity-locally if the mechanism landscape changes.",
+    "Preserve the exact-match predecessor as terminal and never reinterpret R18 as retroactive comparator relaxation.",
+    "Freeze the fresh distributional comparator, sample/seed schedule, balance variables, endpoint, perturbation-footprint diagnostic, resources, support rule, and falsifier before intervention outcome.",
+    "Treat exact observational matching as claim-specific rather than a universal causal-load standard.",
+    "Preserve the current claim at set/coalition necessity and require a fresh object for individual-unit responsibility.",
     "Enforce canonical HOLD enums at producer handoff while retaining orthogonal reason/terminal/queue fields.",
-    "Require any future SYSTEM-over-comparable-MECHANISM exception to be machine-readable before execution."
+    "Require any future SYSTEM-over-comparable-MECHANISM exception to be machine-readable before execution and continue auditing the first READY-to-PRE_FORMAL transition."
   ]
 }
