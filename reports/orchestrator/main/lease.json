@@ -11,10 +11,10 @@
     "sub": "SUB-20260921T203533+0900-NOOP-R42POSTMAIN-METHODHOLD-3C7A21E5"
   },
   "execution_mode": "PRIMARY",
-  "status": "ACTIVE",
+  "status": "COMPLETED",
   "started_at": "2026-09-21T21:20:04+09:00",
   "heartbeat_at": "2026-09-21T21:20:04+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-21T21:20:04+09:00",
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260921T205800+0900-R43-6E2A91C5",
   "analyst_commit": "5692a1b3f210ae2be2cef80266b6e4fc1c7a14d4",
@@ -43,11 +43,11 @@
   "active_branch": null,
   "active_head": null,
   "active_identity": null,
-  "active_step": "ACQUIRED_R43_NO_ACTIVE_MAIN_OBJECT_RECONCILE_AND_PERSIST",
+  "active_step": "COMPLETE_R43_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE",
   "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION",
   "terminal_observation": null,
   "workflows": [],
-  "stop_reason": null,
-  "next_action": "Reconcile R43 canonical closure of candidate #31, persist no-active-object MAIN state, then stop COMPLETED. No third #31 cycle, ledger implementation, protected-outcome read, PRE_FORMAL, FORMAL, or manufactured SYSTEM activity.",
+  "stop_reason": "R43_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+  "next_action": "Wait for fresh Evidence Analyst allocation after a material mechanism-surface delta or independently motivated fresh integrity object. No third #31 cycle, no ledger implementation under #31, no protected-outcome read, no PRE_FORMAL/FORMAL, and no manufactured SYSTEM queue item.",
   "owner": "main"
 }
