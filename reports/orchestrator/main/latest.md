@@ -1,22 +1,22 @@
-# MAIN PRIMARY — R42 cross-generation holdout exposure integrity cycle 2
+# MAIN PRIMARY — R43 canonical no-target reconciliation
 
 **schema_version:** `2`  
-**generation_id:** `MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4`  
-**Evidence Analyst:** `EVA-20260921T200300+0900-R42-5F8C21A4 @ b8dc2ab5a203547cc9f663cf7fcfe1541091fc8e`  
-**Candidate:** `CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01`  
-**Layer / ceiling:** `ARCHITECTURE_STUDY / SYSTEM`  
+**generation_id:** `MAIN-20260921T212004+0900-PRIMARY-FUNNEL21-HOLD-R43-6A8C21D5`  
+**Evidence Analyst:** `EVA-20260921T205800+0900-R43-6E2A91C5 @ 5692a1b3f210ae2be2cef80266b6e4fc1c7a14d4`  
+**Current candidate:** `NONE`  
+**Layer / ceiling:** `NONE / NONE`  
 **Lease:** `COMPLETED`
 
-R42 authorized exactly one final bounded cycle using safe metadata-only endpoints and required STOP before implementation or science. MAIN used only ref/path/directory inventories, non-result manifests, protocol metadata, schema metadata and workflow definitions. No commit/diff/result-bearing endpoint was used, no protected scientific outcome was opened, and the R41 scope-boundary incident did not recur.
+R43 consumed R42 and canonically closed `CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01` as `HOLD / SYSTEM / preformal_eligible=false / HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`, with `preformal_readiness=NOT_APPLICABLE` and exploration cycle count `2`. The exact hold reasons are `SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK`, `FINAL_AUTHORIZED_METADATA_ONLY_CYCLE2_COMPLETED_WITHOUT_PROTECTED_OUTCOME_ACCESS`, `NO_THIRD_RESCUE_PER_PROSPECTIVE_R42_MAPPING`, and `FUTURE_SCIENCE_REQUIRES_PROSPECTIVE_EXPOSURE_POLICY_BINDING`.
 
-The terminal observation is **`SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK`**. V05 metadata does provide useful protected-set boundaries: development seeds `501/502` are explicitly recorded as previously inspected and development-only, while confirmatory seeds are `601-604`, with thresholds frozen before confirmatory inspection and no threshold edits after seed `601`. Phase1 frozen manifests likewise machine-identify non-overlapping dev/test ranges (`100000 + 200` versus `200000 + 1000`).
+There is now no active MAIN prospective object. Funnel state is DISCOVERY `M0/S0`, ARCHITECTURE `active M0/S0, queued M0/S0`, PRE_FORMAL `eligible=0, READY=0`, FORMAL `EMPTY_HOLD` with no fresh one-way authority, and viable executable MECHANISM=`0`. Because `claim_ceiling` and lifecycle fields apply only to the current prospective object, MAIN does not inherit the predecessor's SYSTEM/hold/terminal dimensions into the no-target state; current-object fields are null while the predecessor canonicalization is recorded separately.
 
-The residual gap is cross-generation exposure semantics. The phase1 run-manifest schema binds run/source/config/split/command/completion metadata but has no exposure-event or feedback-disclosure fields. The one-way formal registration workflow binds source SHA, candidate hash, control branch, candidate/freeze/seal/STARTED paths and artifact root but has no protected-set exposure event, feedback class/budget, cross-generation candidate-choice ancestry, or fresh/rotation/reuse policy. The stable-main schema inventory also exposes no exposure- or holdout-ledger-named schema. Existing split/provenance metadata therefore cannot machine-check whether later candidate selection depended on prior protected-set feedback.
+Independent refresh confirms stable `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; exactly five authoritative `evidence/*` tags; zero `formal/*`, `sealed/*`, and tag-level `freeze/*`; unchanged STARTED/control and raw-preserve namespaces including H5 `058e90227cd48e1c10c6ecbaed01efdec1217d0e` / `ce5797eb584344db7a512e585506fb6c59ea475b`; historical conformance ref `research/main-outcome-blind-four-stage-pipeline-conformance-arch-20260921@168883bd316985537e404c6aad3a7ac03202e28a`; and PR #148/#149 open, unmerged, mergeable. Latest observed Analyst control-plane CI `35597662017@5692a1b3f210ae2be2cef80266b6e4fc1c7a14d4` completed successfully. No MAIN scientific workflow is active or dispatched.
 
-Per the prospectively fixed R42 contingency, this maps to **`HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NO_THIRD_RESCUE`**. MAIN does not invent the missing canonical lifecycle dimensions: the Analyst's current `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE`, `preformal_eligible=false`, `preformal_readiness=NOT_APPLICABLE`, and `system_priority_exception.used=false` remain preserved exactly until a fresh Analyst canonicalizes the mapped terminal.
+Fresh SUB `SUB-20260921T203533+0900-NOOP-R42POSTMAIN-METHODHOLD-3C7A21E5` remains no-target and owns no overlapping candidate, so collision status is `NO_COLLISION`.
 
-No research branch was created or mutated; no scientific workflow, PRE_FORMAL, FORMAL, STARTED, preserve, scoring or identity action occurred. New counts are `FORMAL=0 / PRE_FORMAL=0 / MECHANISM Architecture=0 / SYSTEM Architecture=1 / identity consumption=0`. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative evidence remains five tags with zero `formal/*`, `sealed/*`, or tag-level `freeze/*`.
+This run performs only R43 control-plane reconciliation. New counts are `FORMAL=0 / PRE_FORMAL=0 / MECHANISM Architecture=0 / SYSTEM Architecture=0 / identity consumption=0`. No research branch mutation, scientific workflow, STARTED, preserve, scoring, merge, protected-outcome read, immutable evidence/control/preserve mutation, SYSTEM→MECHANISM upgrade, or retroactive evidence invalidation occurred.
 
-**Stop reason:** `R42_SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK_HOLD_METHOD_LIMITED_NO_THIRD_RESCUE_STOP_FRESH_ANALYST_REVIEW`.
+**Stop reason:** `R43_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY`.
 
-Next action: fresh Evidence Analyst canonicalization. Do not run a third rescue cycle, implement a ledger, execute science, open PRE_FORMAL/FORMAL, or alter existing evidence from this SYSTEM observation without fresh authority.
+Next action: remain intentionally idle until a fresh Evidence Analyst allocation follows a material mechanism-surface delta or independently motivated fresh integrity object. Do not run a third #31 cycle, implement a ledger under #31, manufacture a SYSTEM queue item, or enter PRE_FORMAL/FORMAL without fresh authority.
