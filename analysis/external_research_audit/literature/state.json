@@ -1,39 +1,40 @@
 {
-  "timestamp": "2026-09-21T15:30:38+09:00",
+  "timestamp": "2026-09-21T18:38:00+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260921T153038+0900-R20-BLIND-PROVENANCE-5D2A91C7",
-  "produced_at": "2026-09-21T15:30:38+09:00",
-  "producer_run_id": "external-literature-auto-20260921T153038+0900-R20-5D2A91C7",
+  "generation_id": "LIT-20260921T183800+0900-R21-HOLDOUT-EXHAUSTION-4E7C21A9",
+  "produced_at": "2026-09-21T18:38:00+09:00",
+  "producer_run_id": "external-literature-auto-20260921T183800+0900-R21-4E7C21A9",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260921T123000+0900-R19-OUTCOME-REPLAY-3C7A91E4",
+  "supersedes_generation_id": "LIT-20260921T153038+0900-R20-BLIND-PROVENANCE-5D2A91C7",
   "input_generations": {
     "control_brain": {
       "generation_id": "CTRL-20260921T145000+0900-R23-4F07AFBF",
       "handoff_commit": "864ed484248fcb3adeac24f4615686eafda9c373"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T145812+0900-R37-4E8C21A6",
-      "handoff_commit": "64c7adf88f807407eb817f3b45d0eb269458f534"
+      "generation_id": "EVA-20260921T180006+0900-R40-7C4A21E9",
+      "handoff_commit": "cc75b2a7f1c398a393180dfed59305fcc03e7aee"
     },
     "main_report": {
-      "generation_id": "MAIN-20260921T151412+0900-PRIMARY-FUNNEL21-SYSTEM-PIPELINE-R37-6F3A91C2",
-      "handoff_commit": "6002c976a1047fbe7974dd983cc88909ec51d584"
+      "generation_id": "MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8",
+      "handoff_commit": "561b844b74eac649efee5b015fd356a2c00d9c50",
+      "latest_commit": "0431b1923fbd54a43bb300b0b9d9f578e4b0a399",
+      "state_commit": "028d71f3082abcd8e51d42845181b8f008758dcf"
     },
     "sub_report": {
-      "generation_id": "SUB-20260921T153215+0900-NOOP-R37POSTMAIN-8C4A21E7",
-      "handoff_commit": "20ae80ff91f8e579856674047eb212dba0b3d998"
+      "generation_id": "SUB-20260921T183349+0900-NOOP-R40POSTMAINPASS-6D4A21C9",
+      "handoff_commit": "f80c82a803bc0972a333922f6815a0764222de55"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260921T123000+0900-R19-OUTCOME-REPLAY-3C7A91E4",
-      "handoff_commit": "b2d7dea18786062152b6c9bbc8fe11cce986cd95"
+      "generation_id": "LIT-20260921T153038+0900-R20-BLIND-PROVENANCE-5D2A91C7",
+      "handoff_commit": "b33727e9cefa18383679d9b2557388e44565dbcc"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_or_latest_research": {
-      "research/exploratory-sub-v05-outcome-replay-credit-semantics-timeshift-20260921": "5e5f04c27bb534fb31a81d25de0b6036e3854b73",
-      "research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921": "b907403e972af7df8a6502dfe4c54bdbb0d23475"
+    "active_research": {
+      "research/main-outcome-blind-four-stage-pipeline-conformance-arch-20260921": "168883bd316985537e404c6aad3a7ac03202e28a"
     },
     "authoritative_evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
@@ -46,14 +47,16 @@
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "legacy_freeze_branch_count_observed": 13,
-    "h5_precedent": {
-      "package_commit": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-      "raw_preserve_commit": "ce5797eb584344db7a512e585506fb6c59ea475b",
-      "scored_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5"
+    "preserve_refs_inspected": true,
+    "current_exact_head_ci": {
+      "run_id": 35583071628,
+      "head_sha": "168883bd316985537e404c6aad3a7ac03202e28a",
+      "status": "completed",
+      "conclusion": "success"
     },
     "relevant_prs": {
-      "148": {"state": "open", "merged": false, "scope": "human-directives governance skill"},
-      "149": {"state": "open", "merged": false, "scope": "scheduler-registry governance skill"}
+      "148": {"state": "open", "merged": false, "mergeable": true},
+      "149": {"state": "open", "merged": false, "mergeable": true}
     },
     "consumed_identities": [
       "c19-external-v2-official-v4",
@@ -67,96 +70,92 @@
   },
   "control_plane_commits_consumed": {
     "control_brain": "864ed484248fcb3adeac24f4615686eafda9c373",
-    "evidence_analyst": "64c7adf88f807407eb817f3b45d0eb269458f534",
-    "main_report": "6002c976a1047fbe7974dd983cc88909ec51d584",
-    "sub_report": "20ae80ff91f8e579856674047eb212dba0b3d998"
+    "evidence_analyst": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
+    "main_report": "561b844b74eac649efee5b015fd356a2c00d9c50",
+    "sub_report": "f80c82a803bc0972a333922f6815a0764222de55"
   },
   "genuinely_new_information": true,
   "findings": [
     {
       "type": "repository_evidence",
-      "finding": "MAIN R37 completed a static read-only SYSTEM Architecture cycle with terminal observation FOUR_STAGE_PIPELINE_FEASIBLE, identifying an existing H5 repository-native precedent for RAW_GENERATOR -> DURABLE_RAW_PRESERVE_DIGEST -> FIXED_SCORER_EXACT_BLOB -> SCORED_PRESERVE. The result is non-evidentiary and explicitly awaits fresh Analyst canonicalization.",
-      "impact": "The integrity architecture is feasible without reopening or repairing the consumed R33 PRE_FORMAL object."
-    },
-    {
-      "type": "repository_evidence",
-      "finding": "H5 terminal evidence binds exact package and implementation blobs, runtime, raw-preservation commit, raw SHA-256, scorer/workflow identities, and a scored report linked back to the preserved raw.",
-      "impact": "The repository already contains a strong provenance precedent for a future clean PRE_FORMAL pipeline."
+      "finding": "MAIN R40 completed the synthetic-only four-stage conformance pipeline after exactly one pre-result, outcome-independent Ruff formatting correction; exact-head CI 35583071628 succeeded and prospectively maps to SYNTHETIC_LIVE_CONFORMANCE_PASS. The observation is SYSTEM/non-evidentiary and awaits fresh Analyst canonicalization.",
+      "impact": "The repository now demonstrates live within-run pipeline conformance without using scientific or R33 data."
     },
     {
       "type": "external_literature",
-      "finding": "Blind-analysis literature treats hiding outcomes while analysis and debugging choices are fixed as a direct defense against experimenter bias.",
+      "finding": "Reusable-holdout theory shows that adaptively selecting later analyses using prior results on the same holdout can invalidate ordinary fixed-procedure guarantees even if each individual analysis is otherwise clean.",
       "sources": [
-        "MacCoun & Perlmutter, Nature 526:187-189 (2015), DOI 10.1038/526187a",
-        "Klein & Roodman, Annual Review of Nuclear and Particle Science 55:141-163 (2005)"
+        "Dwork et al., Science 349:636-638 (2015), DOI 10.1126/science.aaa9375",
+        "Dwork et al., STOC 2015, Preserving Statistical Validity in Adaptive Data Analysis"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "Preregistration distinguishes prediction from postdiction by specifying research questions and analysis plans before outcomes are observed.",
+      "finding": "Leaderboard/Generic Holdout work treats repeated score disclosure as an information channel and uses limited feedback or explicit exploration/holdout separation to reduce adaptive overfitting.",
       "sources": [
-        "Nosek et al., PNAS 115:2600-2606 (2018), DOI 10.1073/pnas.1708274114"
+        "Blum & Hardt, ICML 2015, The Ladder",
+        "Nakkiran & Blasiok, The Generic Holdout (2018)"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "Leakage can enter during preprocessing, modeling, selection, and evaluation; preserving raw before scoring does not by itself prevent outcome or held-out information from influencing analytic choices.",
+      "finding": "A 2026 biomedical study observed performance bias when identical test data were repeatedly reused during sequential model selection/integration; Thresholdout_AUC reduced the bias.",
       "sources": [
-        "Kapoor & Narayanan, Patterns 4:100804 (2023), DOI 10.1016/j.patter.2023.100804"
+        "Yamanaka, Nakaoka & Shimizu, Advanced Biomedical Engineering 15:76-84 (2026), DOI 10.14326/abe.15.76"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "Workflow-provenance systems record runtime/static configuration, software versions, arguments, and lineage because exact input and code hashes alone do not capture all reproducibility-relevant state.",
+      "finding": "NeurIPS 2024 Lifelong Benchmarks explicitly frames repeated testing as benchmark exhaustion and expands the evaluation surface to mitigate overfitting.",
       "sources": [
-        "Rupprecht et al., VLDB 2020, DOI 10.14778/3415478.3415556",
-        "RepeatFS, Bioinformatics 37:1292-1296 (2021), DOI 10.1093/bioinformatics/btaa950",
-        "Huber et al., Scientific Data 7:300 (2020), DOI 10.1038/s41597-020-00638-4"
+        "Prabhu et al., NeurIPS 2024, DOI 10.52202/079017-2357"
       ]
     },
     {
       "type": "inference",
-      "finding": "The repository four-stage pipeline is best interpreted as an ordinary scientific-integrity architecture. A future clean PRE_FORMAL successor should freeze scorer/transformation/decision rules while blinded and persist full runtime/configuration provenance; this is methodology strengthening, not mechanism novelty."
+      "finding": "Per-run raw-before-score/outcome blindness and cross-generation holdout independence are distinct integrity dimensions. A future confirmatory successor needs both when prior protected-set outcomes have influenced candidate supply."
     }
   ],
   "affected_lines": [
-    "CAND_PREFORMAL_RAW_PRESERVE_SCORER_PIPELINE_INTEGRITY_01",
-    "PREFORMAL_RAW_BEFORE_SCORE_INTEGRITY",
-    "ANALYSIS_BLINDING_AND_SCORER_FREEZE",
-    "SCIENTIFIC_WORKFLOW_PROVENANCE",
+    "CAND_PREFORMAL_OUTCOME_BLIND_FOUR_STAGE_PIPELINE_CONFORMANCE_01",
+    "PREFORMAL_CROSS_GENERATION_HOLDOUT_INTEGRITY",
+    "SCIENTIFIC_HOLDOUT_EXPOSURE_ACCOUNTING",
+    "EXTERNAL_VALIDATION_REUSE_CONTROL",
     "PROGRAMME_EVIDENCE_INTEGRITY"
   ],
   "reduction_candidates": [
-    "blind-analysis/outcome-hiding until scorer and scientific decision rules are frozen",
-    "preregistered transformation/threshold/exclusion/comparator/resource rules",
-    "end-to-end leakage audit across preprocessing/modeling/evaluation",
-    "machine-readable exact runtime/configuration/seed/workflow provenance"
+    "development/exploration versus protected confirmatory split",
+    "cross-generation holdout exposure ledger",
+    "limited-feedback reusable holdout / Thresholdout",
+    "fresh or rotated confirmatory set after adaptive candidate selection",
+    "synthetic pipeline-conformance fixtures isolated from scientific holdout exposure"
   ],
-  "novelty_or_reduction_impact": "METHODOLOGY_ALIGNMENT_NO_SCIENTIFIC_NOVELTY_UPLIFT. Blind-analysis, preregistration, leakage, and provenance literature support the four-stage raw-before-score architecture as ordinary evidence-integrity practice. Raw preservation alone is insufficient if outcome-sensitive transformations, scorer/threshold/comparator choices, or runtime/configuration lineage remain uncontrolled.",
+  "novelty_or_reduction_impact": "CROSS_GENERATION_HOLDOUT_EXHAUSTION_INTEGRITY_SHARPENING_NO_SCIENTIFIC_NOVELTY_UPLIFT. The four-stage pipeline supplies a within-run integrity floor but does not by itself protect statistical validity under adaptive repeated reuse of the same scientific holdout across candidate generations.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "outcome-blind freeze of scorer, transformations, thresholds, exclusions, comparator and resource rules before scoring",
-    "machine-verifiable raw-only preserve digest before any score/classification fields exist",
-    "exact preserved-blob re-fetch rather than runner-local mutable raw",
-    "complete source/package/scorer/runtime/configuration/seed provenance manifest",
-    "explicit exploratory-deviation record for any post-unblinding analysis change"
+    "explicit development/exploration set separated from protected confirmatory holdout",
+    "machine-readable ledger of every scientific holdout exposure and information released",
+    "fresh or rotated confirmatory holdout after adaptive candidate selection when feasible",
+    "reusable-holdout / Thresholdout-style limited-feedback protocol when protected-set reuse is necessary",
+    "keep synthetic infrastructure conformance completely separate from scientific holdout exposure"
   ],
   "questions_for_evidence_analyst": [
-    "Canonicalize MAIN's FOUR_STAGE_PIPELINE_FEASIBLE only as SYSTEM Architecture after fresh review, with no R33 rehabilitation?",
-    "For any fresh PRE_FORMAL successor, require outcome-blind binding of scorer/transformations/decision rules in addition to raw-before-score?",
-    "Require machine-readable runtime/configuration/seed provenance comparable to the existing H5 precedent?"
+    "After fresh review, canonicalize SYNTHETIC_LIVE_CONFORMANCE_PASS only as SYSTEM/non-evidentiary pipeline integrity, with no scientific uplift?",
+    "For future PRE_FORMAL successors, add cross-generation holdout-exposure accounting in addition to per-run raw-before-score/scorer freeze?",
+    "If prior protected-set outcomes influenced candidate selection, require a fresh/rotated holdout or prospectively controlled reusable-holdout mechanism before confirmatory interpretation?"
   ],
   "questions_for_control_brain": [
-    "Treat blind-analysis/preregistration/provenance literature as support for the evidence-integrity checklist, not as scientific novelty?",
-    "Keep R33 terminal and PRE_FORMAL/FORMAL empty until a genuinely fresh prospectively conforming object exists?",
-    "Avoid Utility implementation until fresh Analyst authority explicitly creates a successor rather than repairing the consumed object?"
+    "Add adaptive holdout reuse / benchmark exhaustion to the evidence-integrity checklist as a separate cross-generation failure mode?",
+    "Keep R33 terminal and PRE_FORMAL/FORMAL unchanged; do not use this literature to rehabilitate consumed objects?",
+    "Preserve an explicit distinction between synthetic pipeline-conformance fixtures and scientific holdout exposure?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "R33 Assembly-set PRE_FORMAL execution b907403e972af7df8a6502dfe4c54bdbb0d23475 and canonical NONCONFORMING_RAW_BEFORE_SCORE / HOLD_METHOD_LIMITED disposition",
-    "H5 package 2086a8f4ea080a7a8a0e3c79d77afe9b516db905, raw preserve ce5797eb584344db7a512e585506fb6c59ea475b, and evidence 61aff6d74b82b68a326f3d90505d70bcd4071fd5 as immutable precedent",
-    "no same-object R33 rerun, repair, rescore, redesign, pipeline implementation, scientific workflow, STARTED, TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, or scheduler change by this role"
+    "active synthetic conformance research head 168883bd316985537e404c6aad3a7ac03202e28a, exact-head CI 35583071628, and SYNTHETIC_LIVE_CONFORMANCE_PASS observation pending Analyst canonicalization",
+    "no retrospective invalidation solely from literature; require repository evidence before asserting adaptive holdout reuse in any consumed evidence line",
+    "no second same-object repair, scientific-data reuse, rerun/rescore, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
   ],
   "utility_request_created": null,
   "persistence_notes": "Role-separated literature stream only. Legacy shared latest/state not updated. No scientific workflow, research-result mutation, immutable-ref mutation, Utility request, or scheduler change."
