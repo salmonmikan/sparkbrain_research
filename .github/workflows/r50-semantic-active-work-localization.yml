@@ -1,0 +1,43 @@
+name: R50 semantic-active work localization
+
+on:
+  push:
+    branches:
+      - research/main-semantic-active-work-localization-r50-cycle2
+    paths:
+      - scripts/r50_credit_trace_measure.py
+      - scripts/r50_credit_trace_interpret.py
+      - .github/workflows/r50-semantic-active-work-localization.yml
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install package
+        run: python -m pip install -e .
+      - name: Run fixed raw measurement
+        run: python scripts/r50_credit_trace_measure.py --output artifacts/r50/raw_measurement.json
+      - name: Preserve raw development output before interpretation
+        uses: actions/upload-artifact@v4
+        with:
+          name: r50-credit-trace-raw-${{ github.sha }}
+          path: artifacts/r50/raw_measurement.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: Interpret only after raw preservation
+        run: python scripts/r50_credit_trace_interpret.py --raw artifacts/r50/raw_measurement.json --output artifacts/r50/summary.json
+      - name: Preserve interpreted summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: r50-credit-trace-summary-${{ github.sha }}
+          path: artifacts/r50/summary.json
+          if-no-files-found: error
+          retention-days: 30
