@@ -3,7 +3,7 @@
   "generation_id": "MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8",
   "run_id": "sparkbrain-main-primary-20260921T181649JST-R40-LINTFIX",
   "producer_run_id": "sparkbrain-main-primary-20260921T181649JST-R40-LINTFIX",
-  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_R40_PREFLIGHT_DIAGNOSIS_AND_ONE_BOUNDED_MECHANICAL_FIX",
+  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_R40_PREFLIGHT_DIAGNOSIS_ONE_BOUNDED_MECHANICAL_FIX_AND_EXACT_HEAD_CI_COLLECTION",
   "supersedes_generation_id": "MAIN-20260921T174556+0900-RELAY-FUNNEL21-SYSTEM-PIPECONF-R39-CIFAIL-3A7D21E6",
   "input_generations": {
     "evidence_analyst": "EVA-20260921T180006+0900-R40-7C4A21E9",
@@ -11,10 +11,10 @@
     "sub": "SUB-20260921T174210+0900-NOOP-R39POSTMAINCIFAIL-5E8A21C4"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-21T18:16:49+09:00",
-  "heartbeat_at": "2026-09-21T18:16:49+09:00",
-  "completed_at": null,
+  "heartbeat_at": "2026-09-21T18:27:30+09:00",
+  "completed_at": "2026-09-21T18:27:30+09:00",
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260921T180006+0900-R40-7C4A21E9",
   "analyst_commit": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
@@ -41,9 +41,9 @@
   },
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "active_branch": "research/main-outcome-blind-four-stage-pipeline-conformance-arch-20260921",
-  "active_head": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
+  "active_head": "168883bd316985537e404c6aad3a7ac03202e28a",
   "active_identity": null,
-  "active_step": "R40_EXACT_LINT_DIAGNOSIS_CONFIRMED_I001_PREFLIGHT_ONLY_ACQUIRED_FOR_ONE_BOUNDED_MECHANICAL_FIX",
+  "active_step": "R40_SYNTHETIC_LIVE_CONFORMANCE_PASS_STOP_FRESH_ANALYST_REVIEW",
   "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY",
   "workflows": [
     {
@@ -54,9 +54,17 @@
       "failure_stage": "lint_before_local_readiness_test_or_conformance_output",
       "exact_diagnostic": "Ruff I001 import block un-sorted or un-formatted at scripts/outcome_blind_raw_generator.py:1:1; one fixable formatting error; Local readiness/Test/Validate skipped",
       "result_bearing_stage_reached": false
+    },
+    {
+      "run_id": 35583071628,
+      "head_sha": "168883bd316985537e404c6aad3a7ac03202e28a",
+      "status": "completed",
+      "conclusion": "success",
+      "terminal_mapping": "SYNTHETIC_LIVE_CONFORMANCE_PASS",
+      "expected_next_action": "fresh Evidence Analyst review; no same-run continuation"
     }
   ],
-  "stop_reason": null,
-  "next_action": "Apply exactly one science-invariant import-formatting correction dictated by Ruff I001, refreeze the changed file SHA256 in the existing contract without altering any analysis choice, run exact-head CI, collect that result, then stop for fresh Analyst review. No PRE_FORMAL/FORMAL/scientific-data/identity action is authorized.",
+  "stop_reason": "R40_SYNTHETIC_LIVE_CONFORMANCE_PASS_STOP_FRESH_ANALYST_REVIEW",
+  "next_action": "Fresh Evidence Analyst must consume the R40 SYSTEM Architecture conformance observation and canonicalize disposition or allocate a fresh successor. No second repair, PRE_FORMAL, FORMAL, scientific-data reuse, identity action, or SYSTEM-to-MECHANISM upgrade is authorized in this run.",
   "owner": "main"
 }
