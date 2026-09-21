@@ -1,70 +1,64 @@
 {
-  "timestamp": "2026-09-21T12:30:00+09:00",
+  "timestamp": "2026-09-21T15:30:38+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260921T123000+0900-R19-OUTCOME-REPLAY-3C7A91E4",
-  "produced_at": "2026-09-21T12:30:00+09:00",
-  "producer_run_id": "external-literature-auto-20260921T123000+0900-R19-3C7A91E4",
+  "generation_id": "LIT-20260921T153038+0900-R20-BLIND-PROVENANCE-5D2A91C7",
+  "produced_at": "2026-09-21T15:30:38+09:00",
+  "producer_run_id": "external-literature-auto-20260921T153038+0900-R20-5D2A91C7",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260921T093300+0900-R18-ASSEMBLY-CAUSAL-CONTROLS-8D4C71A2",
+  "supersedes_generation_id": "LIT-20260921T123000+0900-R19-OUTCOME-REPLAY-3C7A91E4",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260921T085000+0900-R21-4F7C2A91",
-      "handoff_commit": "49ac783b5640b8250c19133f8842f0bf49867e8f"
+      "generation_id": "CTRL-20260921T145000+0900-R23-4F07AFBF",
+      "handoff_commit": "864ed484248fcb3adeac24f4615686eafda9c373"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T120207+0900-R34-2E7C91A4",
-      "handoff_commit": "d5554d45a62d0ef0a20d0443e40b0f4d11c0eea8"
+      "generation_id": "EVA-20260921T145812+0900-R37-4E8C21A6",
+      "handoff_commit": "64c7adf88f807407eb817f3b45d0eb269458f534"
     },
     "main_report": {
-      "generation_id": "MAIN-20260921T113236+0900-PRIMARY-FUNNEL21-PREFORMAL-ASMSET-R33-HOLD-5E8C31A7",
-      "handoff_commit": "44f2f12f469b57a6354d32fbc2a7b0d5dad1fc56"
+      "generation_id": "MAIN-20260921T151412+0900-PRIMARY-FUNNEL21-SYSTEM-PIPELINE-R37-6F3A91C2",
+      "handoff_commit": "6002c976a1047fbe7974dd983cc88909ec51d584"
     },
     "sub_report": {
-      "generation_id": "SUB-20260921T113509+0900-SYSTEM-OUTREPLAYTIMESHIFT-HOLD-4A7C91E2",
-      "handoff_commit": "44f2f12f469b57a6354d32fbc2a7b0d5dad1fc56"
+      "generation_id": "SUB-20260921T153215+0900-NOOP-R37POSTMAIN-8C4A21E7",
+      "handoff_commit": "20ae80ff91f8e579856674047eb212dba0b3d998"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260921T093300+0900-R18-ASSEMBLY-CAUSAL-CONTROLS-8D4C71A2",
-      "handoff_commit": "00bd486f4230c9a89d3d584e8d685a00b9dfe2b8"
+      "generation_id": "LIT-20260921T123000+0900-R19-OUTCOME-REPLAY-3C7A91E4",
+      "handoff_commit": "b2d7dea18786062152b6c9bbc8fe11cce986cd95"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_or_latest_research": {
-      "research/exploratory-sub-v05-outcome-replay-credit-semantics-timeshift-20260921": "50223b84e7e30cec2c4dcb136e58c0b4674df966",
-      "research/exploratory-sub-v05-outcome-replay-credit-semantics-20260921": "6fa2114ff5f68bb940abd21600a587b460293097",
+      "research/exploratory-sub-v05-outcome-replay-credit-semantics-timeshift-20260921": "5e5f04c27bb534fb31a81d25de0b6036e3854b73",
       "research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921": "b907403e972af7df8a6502dfe4c54bdbb0d23475"
     },
-    "authoritative_evidence_tags": [
-      "evidence/c19-official-v4-c19-external-v2-official-v4",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
-    ],
+    "authoritative_evidence_tags": {
+      "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
+    },
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "legacy_freeze_branch_count_observed": 13,
-    "preserve_branch_count_observed": 24,
-    "control_branch_count_observed": 20,
+    "h5_precedent": {
+      "package_commit": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+      "raw_preserve_commit": "ce5797eb584344db7a512e585506fb6c59ea475b",
+      "scored_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5"
+    },
     "relevant_prs": {
-      "148": {
-        "state": "open",
-        "merged": false,
-        "head": "14ba187bb13705bc306baabe310d5364cf1b60fb"
-      },
-      "149": {
-        "state": "open",
-        "merged": false,
-        "head": "01ef8c3a54ff20403aba2fab9996dbda5552dd4d"
-      }
+      "148": {"state": "open", "merged": false, "scope": "human-directives governance skill"},
+      "149": {"state": "open", "merged": false, "scope": "scheduler-registry governance skill"}
     },
     "consumed_identities": [
       "c19-external-v2-official-v4",
-      "C19-R1 revision-authority official-v1",
-      "C19-R1 revision-authority official-v2",
+      "c19-r1-revision-authority-official-v1",
+      "c19-r1-revision-authority-official-v2",
       "c19-r2-fsa-state-tracker-official-v1",
       "pd01-long-history-fading-memory-official-v1",
       "ni01-no-ignition-selective-prediction-official-v1",
@@ -72,98 +66,97 @@
     ]
   },
   "control_plane_commits_consumed": {
-    "control_brain": "49ac783b5640b8250c19133f8842f0bf49867e8f",
-    "evidence_analyst": "d5554d45a62d0ef0a20d0443e40b0f4d11c0eea8",
-    "main_report": "44f2f12f469b57a6354d32fbc2a7b0d5dad1fc56",
-    "sub_report": "44f2f12f469b57a6354d32fbc2a7b0d5dad1fc56"
+    "control_brain": "864ed484248fcb3adeac24f4615686eafda9c373",
+    "evidence_analyst": "64c7adf88f807407eb817f3b45d0eb269458f534",
+    "main_report": "6002c976a1047fbe7974dd983cc88909ec51d584",
+    "sub_report": "20ae80ff91f8e579856674047eb212dba0b3d998"
   },
   "genuinely_new_information": true,
   "findings": [
     {
       "type": "repository_evidence",
-      "finding": "Stable v0.5 process_episode stores pending activation/action state, while learn_outcome reuses those pending identities through predictor.observe and action_policy.reward without consuming or clearing them. The predictor increments the event count once per call and the action policy adds learning_rate*reward once per call.",
-      "impact": "The fresh one-versus-two outcome-call comparator is source-transparently expected to differ by one predictor count and one learning-rate reward increment if the fixed support episode yields pending state."
+      "finding": "MAIN R37 completed a static read-only SYSTEM Architecture cycle with terminal observation FOUR_STAGE_PIPELINE_FEASIBLE, identifying an existing H5 repository-native precedent for RAW_GENERATOR -> DURABLE_RAW_PRESERVE_DIGEST -> FIXED_SCORER_EXACT_BLOB -> SCORED_PRESERVE. The result is non-evidentiary and explicitly awaits fresh Analyst canonicalization.",
+      "impact": "The integrity architecture is feasible without reopening or repairing the consumed R33 PRE_FORMAL object."
     },
     {
       "type": "repository_evidence",
-      "finding": "The predecessor outcome-replay object terminated before outcome because its support episode violated monotonic-time semantics. The fresh timeshift successor is prospectively fixed at 50223b84e7e30cec2c4dcb136e58c0b4674df966 and, after R34 canonicalization, is ACTIVE/ACTIVE with no outcome yet exposed.",
-      "impact": "This scout must not execute, redesign, or pre-empt the fixed SUB diagnostic."
+      "finding": "H5 terminal evidence binds exact package and implementation blobs, runtime, raw-preservation commit, raw SHA-256, scorer/workflow identities, and a scored report linked back to the preserved raw.",
+      "impact": "The repository already contains a strong provenance precedent for a future clean PRE_FORMAL pipeline."
     },
     {
       "type": "external_literature",
-      "finding": "Experience replay has been an established reinforcement-learning mechanism since Lin 1992; later prioritized replay explicitly reuses selected past transitions more frequently.",
+      "finding": "Blind-analysis literature treats hiding outcomes while analysis and debugging choices are fixed as a direct defense against experimenter bias.",
       "sources": [
-        "Lin, Machine Learning 8 (1992), DOI 10.1007/BF00992699",
-        "Schaul et al., ICLR 2016, Prioritized Experience Replay"
+        "MacCoun & Perlmutter, Nature 526:187-189 (2015), DOI 10.1038/526187a",
+        "Klein & Roodman, Annual Review of Nuclear and Particle Science 55:141-163 (2005)"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "Replay ratio/update-to-data ratio is a fundamental algorithmic resource: changing the number of learning updates per experience materially changes performance in modern RL studies.",
+      "finding": "Preregistration distinguishes prediction from postdiction by specifying research questions and analysis plans before outcomes are observed.",
       "sources": [
-        "Fedus et al., ICML 2020, Revisiting Fundamentals of Experience Replay",
-        "Xu et al., IEEE CoG 2024, DOI 10.1109/CoG60054.2024.10645658"
+        "Nosek et al., PNAS 115:2600-2606 (2018), DOI 10.1073/pnas.1708274114"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "Prioritized replay treats replay frequency as deliberate sample weighting, with importance-sampling correction used when compensating for nonuniform sampling bias.",
+      "finding": "Leakage can enter during preprocessing, modeling, selection, and evaluation; preserving raw before scoring does not by itself prevent outcome or held-out information from influencing analytic choices.",
       "sources": [
-        "Schaul et al., ICLR 2016, Prioritized Experience Replay"
+        "Kapoor & Narayanan, Patterns 4:100804 (2023), DOI 10.1016/j.patter.2023.100804"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "Human/animal neural replay is defined around sequential reactivation of neural patterns linked to past events during offline periods; repeated reward application to unchanged pending state without internal reactivation is not equivalent to biological replay.",
+      "finding": "Workflow-provenance systems record runtime/static configuration, software versions, arguments, and lineage because exact input and code hashes alone do not capture all reproducibility-relevant state.",
       "sources": [
-        "Zhang, Ou & Liu, Annual Review of Neuroscience 48 (2025), DOI 10.1146/annurev-neuro-112723-024516"
+        "Rupprecht et al., VLDB 2020, DOI 10.14778/3415478.3415556",
+        "RepeatFS, Bioinformatics 37:1292-1296 (2021), DOI 10.1093/bioinformatics/btaa950",
+        "Huber et al., Scientific Data 7:300 (2020), DOI 10.1038/s41597-020-00638-4"
       ]
     },
     {
       "type": "inference",
-      "finding": "A positive fixed timeshift result would be strongly reduced to implicit experience reuse/sample reweighting plus an outcome-consumption API policy. Future comparisons should match update-to-data ratio, and biological replay claims should require an actual internally reactivated state or sequence."
+      "finding": "The repository four-stage pipeline is best interpreted as an ordinary scientific-integrity architecture. A future clean PRE_FORMAL successor should freeze scorer/transformation/decision rules while blinded and persist full runtime/configuration provenance; this is methodology strengthening, not mechanism novelty."
     }
   ],
   "affected_lines": [
-    "CAND_V05_OUTCOME_REPLAY_CREDIT_SEMANTICS_TIMESHIFT_01",
-    "V05_OUTCOME_CREDIT_CONSUMPTION",
-    "V05_EXPERIENCE_REPLAY_SEMANTICS",
-    "LEARNING_UPDATE_TO_DATA_RATIO",
-    "PROGRAMME_NOVELTY"
+    "CAND_PREFORMAL_RAW_PRESERVE_SCORER_PIPELINE_INTEGRITY_01",
+    "PREFORMAL_RAW_BEFORE_SCORE_INTEGRITY",
+    "ANALYSIS_BLINDING_AND_SCORER_FREEZE",
+    "SCIENTIFIC_WORKFLOW_PROVENANCE",
+    "PROGRAMME_EVIDENCE_INTEGRITY"
   ],
   "reduction_candidates": [
-    "one-shot/idempotent outcome-event consumption when replay is not intended",
-    "explicit replay event or replay-buffer identity when repeated credit is intended",
-    "matched outcome-update-to-new-experience ratio",
-    "uniform/prioritized replay and sample-weighting baselines",
-    "internal neural sequence reactivation for biological replay claims"
+    "blind-analysis/outcome-hiding until scorer and scientific decision rules are frozen",
+    "preregistered transformation/threshold/exclusion/comparator/resource rules",
+    "end-to-end leakage audit across preprocessing/modeling/evaluation",
+    "machine-readable exact runtime/configuration/seed/workflow provenance"
   ],
-  "novelty_or_reduction_impact": "STRONG_ORDINARY_EXPERIENCE_REPLAY_AND_UPDATE_RATIO_REDUCTION. Stable source already predicts repeated credit from unchanged pending state. External RL literature makes deliberate experience reuse and replay/update ratio ordinary mechanisms/resources. Repeated outcome callbacks without internal reactivation are therefore SYSTEM/API credit-consumption semantics, not evidence for a new responsibility or biological replay mechanism.",
+  "novelty_or_reduction_impact": "METHODOLOGY_ALIGNMENT_NO_SCIENTIFIC_NOVELTY_UPLIFT. Blind-analysis, preregistration, leakage, and provenance literature support the four-stage raw-before-score architecture as ordinary evidence-integrity practice. Raw preservation alone is insufficient if outcome-sensitive transformations, scorer/threshold/comparator choices, or runtime/configuration lineage remain uncontrolled.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "explicit one-shot outcome-event consumption/idempotency when replay is not intended",
-    "explicit replay event/buffer identity when repeated credit is intended",
-    "matched outcome-update-to-new-experience ratio across comparators",
-    "uniform versus prioritized replay/sample-weighting baseline with correction where appropriate",
-    "internally generated/reactivated sequence requirement for biological replay claims"
+    "outcome-blind freeze of scorer, transformations, thresholds, exclusions, comparator and resource rules before scoring",
+    "machine-verifiable raw-only preserve digest before any score/classification fields exist",
+    "exact preserved-blob re-fetch rather than runner-local mutable raw",
+    "complete source/package/scorer/runtime/configuration/seed provenance manifest",
+    "explicit exploratory-deviation record for any post-unblinding analysis change"
   ],
   "questions_for_evidence_analyst": [
-    "If the already-fixed timeshift cycle later matches the exact comparator, close it as ordinary pending-state/experience-reuse semantics with no mechanism uplift?",
-    "Require replay/update ratio to be counted as a resource in future credit-learning comparisons?",
-    "Keep API outcome replay distinct from biological/internal neural replay unless an actual reactivation process is identified?"
+    "Canonicalize MAIN's FOUR_STAGE_PIPELINE_FEASIBLE only as SYSTEM Architecture after fresh review, with no R33 rehabilitation?",
+    "For any fresh PRE_FORMAL successor, require outcome-blind binding of scorer/transformations/decision rules in addition to raw-before-score?",
+    "Require machine-readable runtime/configuration/seed provenance comparable to the existing H5 precedent?"
   ],
   "questions_for_control_brain": [
-    "Add outcome-event consumption/replay multiplicity and update-to-data ratio to the ordinary credit/replay reduction checklist?",
-    "Keep PRE_FORMAL/FORMAL and H7 unchanged by this SYSTEM/API line?",
-    "Avoid any duplicate Utility request while the fixed SUB timeshift object is active?"
+    "Treat blind-analysis/preregistration/provenance literature as support for the evidence-integrity checklist, not as scientific novelty?",
+    "Keep R33 terminal and PRE_FORMAL/FORMAL empty until a genuinely fresh prospectively conforming object exists?",
+    "Avoid Utility implementation until fresh Analyst authority explicitly creates a successor rather than repairing the consumed object?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "predecessor replay terminal 6fa2114ff5f68bb940abd21600a587b460293097",
-    "fresh timeshift prospective contract 50223b84e7e30cec2c4dcb136e58c0b4674df966",
-    "R33 Assembly-set PRE_FORMAL execution b907403e972af7df8a6502dfe4c54bdbb0d23475 and its R34 method-limited canonicalization",
-    "no outcome dispatch, contract edit, rescue, retune, rerun, rescore, STARTED, TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, or scheduler change by this role"
+    "R33 Assembly-set PRE_FORMAL execution b907403e972af7df8a6502dfe4c54bdbb0d23475 and canonical NONCONFORMING_RAW_BEFORE_SCORE / HOLD_METHOD_LIMITED disposition",
+    "H5 package 2086a8f4ea080a7a8a0e3c79d77afe9b516db905, raw preserve ce5797eb584344db7a512e585506fb6c59ea475b, and evidence 61aff6d74b82b68a326f3d90505d70bcd4071fd5 as immutable precedent",
+    "no same-object R33 rerun, repair, rescore, redesign, pipeline implementation, scientific workflow, STARTED, TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, or scheduler change by this role"
   ],
   "utility_request_created": null,
   "persistence_notes": "Role-separated literature stream only. Legacy shared latest/state not updated. No scientific workflow, research-result mutation, immutable-ref mutation, Utility request, or scheduler change."
