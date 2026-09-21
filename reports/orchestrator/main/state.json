@@ -1,1 +1,132 @@
-{"schema_version":2,"generation_id":"MAIN-20260921T113236+0900-PRIMARY-FUNNEL21-PREFORMAL-ASMSET-R33-HOLD-5E8C31A7","producer_run_id":"sparkbrain-main-primary-20260921T111650JST-R33-ASMSET-PREFORMAL","produced_at":"2026-09-21T11:32:36+09:00","mode":"PRIMARY","status":"COMPLETED","authority_scope":"MAIN_PRIMARY_FUNNEL_V2_1_DEVELOPMENT_ONLY_PRE_FORMAL_FIXED_CONTRACT_NO_FORMAL","analyst_generation_id":"EVA-20260921T105950+0900-R33-5A8C31E7","analyst_commit":"f22b345bceab464ac0fd593c11a7b6b99742af4f","supersedes_generation_id":"MAIN-20260921T104704+0900-RELAY-FUNNEL21-MECH-ASMSET-R32-CICOMPLETE-8D3C71A2","main_lane":"V05_ASSEMBLY_SET_CAUSAL_NECESSITY_DISTRIBUTIONAL_CONTROLS_PRE_FORMAL_CYCLE1_FIXED_CONTRACT","research_layer":"PRE_FORMAL","candidate_id":"CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01","cycle_count":1,"claim_ceiling":"MECHANISM","preformal_eligible":true,"hold_class":null,"hold_reason":null,"terminal_state":"ACTIVE","queue_state":"ACTIVE","canonicalization_pending":true,"preformal_readiness":{"claim_type":"mechanism","supported_reachability":"ESTABLISHED","functional_consequence":"PARTIAL","ordinary_reductions_specified_or_controlled":["64 uniform same-cardinality nonmember lesion controls per fixed surface","64 balance-aware same-cardinality nonmember lesion controls per fixed surface","sham and matched information/compute privilege","seven pre-intervention balance covariates","whole-field perturbation-footprint support envelope"],"ordinary_reductions_unresolved":["surface 1701 target impairment exceeded both ordinary-control medians but target perturbation footprint was outside ordinary-control support","surfaces 1702-1704 were prospectively not opened after the first terminal support failure"],"matched_comparator_status":"READY","support_breadth":"four fixed DEV surfaces 1701-1704; 8 episodes/arm prospectively fixed; 1/4 surfaces executed because seed 1701 hit a terminal branch","falsifier_fixed":true,"falsifier_definition":"D_uniform > 0 AND D_balanced > 0 AND target footprint within the ordinary-control envelope on every fixed valid surface; otherwise prospectively reduced/unresolved","open_scientific_choices":[],"formal_claim_ceiling":"set-level causal necessity/selectivity; not individual responsibility or new principle","status":"READY"},"system_priority_exception":{"used":false,"reason_code":null,"reason_detail":"MAIN object is MECHANISM.","compared_mechanism_candidate_ids":[]},"blocked_until":"FRESH_EVIDENCE_ANALYST_CANONICALIZATION_AFTER_R33_PREFORMAL_OUTCOME","do_not_touch":["terminal exact-match predecessor CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01","remaining R33 surfaces 1702-1704 until fresh Analyst authority","R33 comparator distribution/balance variables/endpoint/footprint/support rule/runtime/resource contract","FORMAL/TEST/STARTED/evidence identities","consumed one-way identities","preserve/control/evidence refs","stable main","SUB Discovery lane"],"refs":{"stable_main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d","analyst_tip":"f22b345bceab464ac0fd593c11a7b6b99742af4f","orchestrator_tip_before_final_persistence":"96b437574d9a5e06472511773337ef2e0377285f","research_branch":"research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921","prospective_contract_head":"52e14294d8e413a95c1dad387104bdeaa4468d39","pre_outcome_binding_head":"a6f445022b245dfe936a1306886783afa832e784","execution_head":"b907403e972af7df8a6502dfe4c54bdbb0d23475","artifact_id":10618883581,"artifact_name":"r33-assembly-distributional-preformal-b907403e972af7df8a6502dfe4c54bdbb0d23475","artifact_digest":"sha256:4cb9e43f7e4af1e85a8468462e34d896e51d7500aebec8e2db4d69886f290472","latest_observed_sub_generation":"SUB-20260921T104150+0900-SYSTEM-OUTREPLAYINVALID-7C2A91E4","latest_observed_sub_research_head":"6fa2114ff5f68bb940abd21600a587b460293097","h5_started_control":"058e90227cd48e1c10c6ecbaed01efdec1217d0e","h5_raw_preserve":"ce5797eb584344db7a512e585506fb6c59ea475b"},"research_layer_state":{"DISCOVERY":{"state":"OPEN","owner":"SUB"},"ARCHITECTURE_STUDY":{"state":"EMPTY_HOLD","owner":"MAIN","active":{"MECHANISM":0,"SYSTEM":0},"queued":{"MECHANISM":0,"SYSTEM":0}},"PRE_FORMAL":{"state":"ACTIVE","owner":"MAIN","eligible":1,"READY":1,"active":1,"outcome_terminal_pending_analyst_canonicalization":true},"FORMAL":{"state":"EMPTY_HOLD","owner":"MAIN","fresh_one_way_authority":false}},"workflows":[{"run_id":35554203269,"name":"R33 Assembly distributional PRE_FORMAL","head_branch":"research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921","head_sha":"b907403e972af7df8a6502dfe4c54bdbb0d23475","status":"completed","conclusion":"success","role":"DEVELOPMENT_ONLY_PREFORMAL_FIXED_CONTRACT"},{"run_id":35554203153,"name":"ci","head_branch":"research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921","head_sha":"b907403e972af7df8a6502dfe4c54bdbb0d23475","status":"completed","conclusion":"success","role":"EXACT_HEAD_INTEGRITY_CI"}],"observations":{"scientific_result_this_run":"PRE_FORMAL_DEVELOPMENT_ONLY","prospective_observed_terminal":"HOLD_MECHANISM_UNRESOLVED_TERMINAL","prospective_outcome_mapping":"HOLD_MECHANISM_UNRESOLVED","terminal_surface_seed":1701,"surfaces_executed":[1701],"surfaces_not_opened":[1702,1703,1704],"target_assembly_id":"assembly-0001","target_units":[45,56,63],"target_label_counts":{"motif_x":10,"motif_y":0},"baseline_prediction":"outcome-0","baseline_expected_prediction":"outcome-0","eligible_comparator_set_count":14190,"target_balance_vector":[3,2,18,15,8,58,46],"uniform_control_count":64,"balanced_control_count":64,"control_overlap_count":0,"episodes_per_arm":8,"sham_accuracy":1.0,"target_accuracy":0.0,"target_impairment":1.0,"uniform_median_impairment":0.0,"balanced_median_impairment":0.0,"D_uniform":1.0,"D_balanced":1.0,"target_footprint":[3.0,3.0],"ordinary_control_footprint_min":[0.0,0.0],"ordinary_control_footprint_max":[0.0,0.0],"target_footprint_in_ordinary_support":false,"interpretation":"Target lesion produced a prediction impairment not reproduced by the fixed ordinary same-cardinality controls on seed 1701, but its perturbation footprint lay wholly outside the ordinary-control support envelope; therefore the prospective mechanism object is unresolved rather than supported.","intervention_outcome_executed":true,"suppression_called":true,"same_run_outcome_responsive_redesign":false,"preformal_executed":true,"formal_executed":false,"formal_autopromotion":false},"evidentiary_status":{"formal_scientific_evidence":0,"preformal_development_evidence":1,"mechanism_architecture_observations":0,"system_architecture_observations":0,"new_identity_consumption":0,"current_work":"DEVELOPMENT_ONLY_PREFORMAL_TERMINAL_SUPPORT_MISMATCH_PENDING_FRESH_ANALYST"},"ordinary_reductions":{"surface_1701":{"uniform_same_cardinality_median_impairment":0.0,"balance_aware_same_cardinality_median_impairment":0.0,"D_uniform":1.0,"D_balanced":1.0,"target_footprint":[3.0,3.0],"ordinary_control_footprint_envelope":{"min":[0.0,0.0],"max":[0.0,0.0]},"support_status":"OUTSIDE_ORDINARY_CONTROL_SUPPORT"},"status":"ORDINARY_EFFECT_SIGN_DISCRIMINATOR_POSITIVE_BUT_PERTURBATION_SUPPORT_UNMATCHED","predecessor_exact_match_status":"TERMINAL_AND_NOT_REOPENED","individual_responsibility_claim_authorized":false},"support_breadth":{"prospective_fixed_surfaces":[1701,1702,1703,1704],"executed_fixed_surfaces":[1701],"stopped_before_surfaces":[1702,1703,1704],"fixed_arms_per_surface":130,"fixed_episodes_per_arm":8,"episode_evaluations_on_terminal_surface":1040,"runtime":{"python":"3.11.13","implementation":"CPython","platform":"Linux-6.17.0-1022-azure-x86_64-with-glibc2.39","project_version":"0.3.2.dev0"},"stable_main_refetched":true,"evidence_refs_refetched":true,"control_and_preserve_refs_refetched":true,"prs_refetched":true,"sub_state_refetched":true},"consumed_identities":["c19-external-v2-official-v4","C19-R1 revision-authority official-v1","C19-R1 revision-authority official-v2","c19-r2-fsa-state-tracker-official-v1","pd01-long-history-fading-memory-official-v1","ni01-no-ignition-selective-prediction-official-v1","h5-event-routing-work-reduction-official-v1"],"consumed_identities_this_run":[],"funnel_metrics":{"material_candidates":27,"portfolio_split":{"MECHANISM":13,"SYSTEM":14},"classification_completeness":"27/27","terminal_state_counts":{"ACTIVE":1,"NONTERMINAL_HOLD":1,"TERMINAL_FOR_CURRENT_OBJECT":25},"architecture_active":{"MECHANISM":0,"SYSTEM":0},"architecture_queued":{"MECHANISM":0,"SYSTEM":0},"preformal_eligible_count":1,"preformal_ready_count":1,"viable_mechanism_candidate_count":1,"recent_completed_main_architecture_cycles":{"SYSTEM":6,"MECHANISM":2},"system_over_mechanism_exception_count":0,"note":"Canonical counts are preserved from Analyst R33 pending fresh Analyst canonicalization of the PRE_FORMAL terminal observation."},"integrity":{"stable_main_unchanged":true,"evidence_tag_count":5,"formal_tag_count":0,"sealed_tag_count":0,"freeze_tag_count":0,"control_tags_namespace_count":0,"preserve_tags_namespace_count":0,"control_refs_are_branches":true,"preserve_refs_are_branches":true,"h5_started":"058e90227cd48e1c10c6ecbaed01efdec1217d0e","h5_raw_preserve":"ce5797eb584344db7a512e585506fb6c59ea475b","pr_148":"OPEN_UNMERGED_MERGEABLE","pr_149":"OPEN_UNMERGED_MERGEABLE","prospective_contract_head":"52e14294d8e413a95c1dad387104bdeaa4468d39","pre_outcome_binding_head":"a6f445022b245dfe936a1306886783afa832e784","execution_head":"b907403e972af7df8a6502dfe4c54bdbb0d23475","preformal_workflow_run":35554203269,"preformal_workflow_conclusion":"success","exact_head_ci_run":35554203153,"exact_head_ci_conclusion":"success","artifact_digest":"sha256:4cb9e43f7e4af1e85a8468462e34d896e51d7500aebec8e2db4d69886f290472","dynamic_science_executed":true,"intervention_outcome_opened":true,"formal_identity_opened":false,"official_test_or_started_tag_created":false,"preserve_or_evidence_mutated":false,"stable_main_mutated":false,"post_outcome_scientific_repair":false},"freshness":{"analyst_tip_at_start":"f22b345bceab464ac0fd593c11a7b6b99742af4f","analyst_tip_before_dispatch":"f22b345bceab464ac0fd593c11a7b6b99742af4f","analyst_tip_before_final_persistence":"f22b345bceab464ac0fd593c11a7b6b99742af4f","main_tip_before_final_persistence":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d","research_head_before_final_persistence":"b907403e972af7df8a6502dfe4c54bdbb0d23475","orchestrator_tip_before_final_persistence":"96b437574d9a5e06472511773337ef2e0377285f","material_superseding_generation_detected":false},"stop_reason":"R33_PREFORMAL_SURFACE1701_TARGET_FOOTPRINT_OUTSIDE_ORDINARY_CONTROL_SUPPORT_HOLD_MECHANISM_UNRESOLVED_STOP_FRESH_ANALYST_REVIEW","next_action":"Fresh Evidence Analyst must consume the R33 PRE_FORMAL development result/artifact and canonicalize hold_class/hold_reason/terminal_state/queue_state before any further science. Do not execute surfaces 1702-1704, redesign controls/support/metrics/runtime, rerun this PRE_FORMAL, create a successor, or enter FORMAL without fresh Analyst authority.","utility_request_created":false,"owner":"main"}
+{
+  "schema_version": 2,
+  "generation_id": "MAIN-20260921T124719+0900-RELAY-FUNNEL21-SYSTEM-PIPELINE-R34-AUTHBOUND-6B2D91E4",
+  "producer_run_id": "sparkbrain-main-relay-20260921T124719JST-R34-PIPELINE-AUTHBOUND",
+  "produced_at": "2026-09-21T12:47:19+09:00",
+  "mode": "RELAY",
+  "status": "BLOCKED",
+  "authority_scope": "MAIN_RELAY_FUNNEL_V2_1_RECONCILIATION_ONLY_NO_FRESH_OBJECT_START",
+  "analyst_generation_id": "EVA-20260921T120207+0900-R34-2E7C91A4",
+  "analyst_commit": "d5554d45a62d0ef0a20d0443e40b0f4d11c0eea8",
+  "supersedes_generation_id": "MAIN-20260921T113236+0900-PRIMARY-FUNNEL21-PREFORMAL-ASMSET-R33-HOLD-5E8C31A7",
+  "consumed_main_generation_id": "MAIN-20260921T113236+0900-PRIMARY-FUNNEL21-PREFORMAL-ASMSET-R33-HOLD-5E8C31A7",
+  "main_lane": "PREFORMAL_RAW_PRESERVE_SCORER_PIPELINE_INTEGRITY_ARCHITECTURE_STATIC_CYCLE1",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "candidate_id": "CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01",
+  "cycle_count": 0,
+  "claim_ceiling": "SYSTEM",
+  "preformal_eligible": false,
+  "preformal_readiness": null,
+  "hold_class": null,
+  "hold_reason": null,
+  "terminal_state": "ACTIVE",
+  "queue_state": "ACTIVE",
+  "system_priority_exception": {
+    "used": false
+  },
+  "relay_authority": {
+    "fresh_object_start_authorized": false,
+    "reason": "R34 allocates a fresh SYSTEM Architecture object. No PRIMARY execution, handoff, workflow wait, or same-object continuation exists yet for Relay to continue.",
+    "allowed_after_primary_handoff": "Only prospectively fixed continuation already started by PRIMARY, such as workflow collection or a pre-fixed science-invariant mechanical repair, after fresh reconciliation."
+  },
+  "blocked_until": "PRIMARY_STARTS_OR_SAFELY_HANDS_OFF_R34_CURRENT_OBJECT",
+  "do_not_touch": [
+    "R33 object CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01: do not rerun, repair, rescore, redesign, or open surfaces 1702-1704",
+    "do not implement a new scientific pipeline in the same run as the R34 static feasibility cycle",
+    "do not open any new scientific outcome, metric, comparator, threshold, runtime, resource, scorer, protocol, or success criterion",
+    "FORMAL/TEST/STARTED/evidence identities and all consumed one-way identities",
+    "immutable evidence/preserve/control refs and stable main",
+    "SUB-reserved timeshift Discovery work"
+  ],
+  "refs": {
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "analyst_tip": "d5554d45a62d0ef0a20d0443e40b0f4d11c0eea8",
+    "orchestrator_tip_before_relay_persistence": "44f2f12f469b57a6354d32fbc2a7b0d5dad1fc56",
+    "active_research_branch": null,
+    "active_research_head": null,
+    "prior_r33_preformal_head": "b907403e972af7df8a6502dfe4c54bdbb0d23475",
+    "prior_r33_workflow": 35554203269,
+    "prior_r33_exact_head_ci": 35554203153,
+    "prior_r33_artifact_id": 10618883581,
+    "prior_r33_artifact_digest": "sha256:4cb9e43f7e4af1e85a8468462e34d896e51d7500aebec8e2db4d69886f290472"
+  },
+  "research_layer_state": {
+    "DISCOVERY": {
+      "state": "ACTIVE",
+      "MECHANISM": 0,
+      "SYSTEM": 1
+    },
+    "ARCHITECTURE_STUDY": {
+      "state": "ACTIVE",
+      "active": {
+        "MECHANISM": 0,
+        "SYSTEM": 1
+      },
+      "queued": {
+        "MECHANISM": 0,
+        "SYSTEM": 0
+      }
+    },
+    "PRE_FORMAL": {
+      "state": "EMPTY_HOLD",
+      "eligible": 0,
+      "READY": 0
+    },
+    "FORMAL": {
+      "state": "EMPTY_HOLD",
+      "fresh_one_way_authority": false
+    }
+  },
+  "workflows": [],
+  "action": "FRESH_RECONCILIATION_ONLY",
+  "result": "R34_FRESH_SYSTEM_ARCHITECTURE_OBJECT_ALLOCATED_BUT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY",
+  "evidentiary_status": {
+    "formal_scientific_evidence": 0,
+    "preformal_scientific_inference_admitted": 0,
+    "new_architecture_observation_this_relay": 0,
+    "new_identity_consumption": 0,
+    "current_work": "NON_EVIDENTIARY_CONTROL_PLANE_RECONCILIATION"
+  },
+  "consumed_identities": [
+    "c19-external-v2-official-v4",
+    "c19-r1-revision-authority-official-v1",
+    "c19-r1-revision-authority-official-v2",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "pd01-long-history-fading-memory-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "h5-event-routing-work-reduction-official-v1"
+  ],
+  "consumed_identities_this_run": [],
+  "integrity": {
+    "r33_preformal_canonical_integrity": "NONCONFORMING_RAW_BEFORE_SCORE",
+    "r33_same_object_rerun_repair_rescore": false,
+    "prospective_future_sequence": [
+      "RAW",
+      "RAW_PRESERVE_DIGEST",
+      "FIXED_SCORER",
+      "SCORED_PRESERVE"
+    ],
+    "stable_main_unchanged": true,
+    "immutable_evidence_modified": false,
+    "consumed_identity_rerun_or_retune": false,
+    "started_created": false,
+    "scientific_workflow_dispatched": false,
+    "scientific_outcome_opened": false,
+    "research_branch_modified": false,
+    "material_superseding_generation_detected_before_persistence": false
+  },
+  "previous_object_canonicalization": {
+    "candidate_id": "CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01",
+    "classification": "HOLD",
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": false,
+    "preformal_readiness_status": "NOT_READY",
+    "hold_class": "HOLD_METHOD_LIMITED",
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "queue_state": "NOT_QUEUED",
+    "integrity_adjudication": "NONCONFORMING_RAW_BEFORE_SCORE"
+  },
+  "stop_reason": "RELAY_AUTHORITY_BOUNDARY_FRESH_R34_SYSTEM_ARCHITECTURE_OBJECT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY",
+  "next_action": "PRIMARY may start only the R34 prospectively allocated static/read-only contract-feasibility cycle for CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01. Relay may continue only after PRIMARY safely hands off or stops mutating that same object, or when a started workflow requires prospectively fixed collection/mechanical continuation.",
+  "owner": "main"
+}
