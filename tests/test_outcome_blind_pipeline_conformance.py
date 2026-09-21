@@ -1,3 +1,4 @@
+# ruff: noqa: E402, I001
 from __future__ import annotations
 
 import hashlib
@@ -14,8 +15,8 @@ SCRIPTS = REPO_ROOT / "scripts"
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
-from outcome_blind_fixed_scorer import score_preserved_raw  # noqa: E402
-from outcome_blind_pipeline_conformance import run_conformance  # noqa: E402
+from outcome_blind_fixed_scorer import score_preserved_raw
+from outcome_blind_pipeline_conformance import run_conformance
 
 
 CONTRACT_PATH = REPO_ROOT / "analysis/orchestrator/r39_pipeline_conformance/contract.json"
