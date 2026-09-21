@@ -1,19 +1,21 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
-  "producer_run_id": "sparkbrain-main-primary-20260921T221651JST-R44",
-  "produced_at": "2026-09-21T22:16:51+09:00",
+  "generation_id": "MAIN-20260921T231231+0900-PRIMARY-FUNNEL21-BLOCKED-R44-STALEUPSTREAM-8D4C21A7",
+  "producer_run_id": "sparkbrain-main-primary-20260921T231231JST-R44-stale-upstream",
+  "produced_at": "2026-09-21T23:12:31+09:00",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_R44_NO_ACTIVE_MAIN_OBJECT_RECONCILE",
+  "status": "BLOCKED",
+  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_FAIL_CLOSED_UPSTREAM_GENERATION_RECONCILIATION",
   "analyst_generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
   "analyst_commit": "fca9a4b0adb259b76a518605f611ff79e0c48680",
-  "supersedes_generation_id": "MAIN-20260921T212004+0900-PRIMARY-FUNNEL21-HOLD-R43-6A8C21D5",
-  "consumed_main_generation_id": "MAIN-20260921T212004+0900-PRIMARY-FUNNEL21-HOLD-R43-6A8C21D5",
+  "supersedes_generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
+  "consumed_main_generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
   "input_generations": {
-    "evidence_analyst": "EVA-20260921T220541+0900-R44-7A3C21E8",
-    "main": "MAIN-20260921T212004+0900-PRIMARY-FUNNEL21-HOLD-R43-6A8C21D5",
-    "sub": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5"
+    "evidence_analyst": "EVA-20260921T220541+0900-R44-7A3C21E8@fca9a4b0adb259b76a518605f611ff79e0c48680",
+    "control": "CTRL-20260921T230354+0900-R26-8D4C21A7@0e38771af4dacefab079a9389dece4c6a48f1240",
+    "audit": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4@c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48",
+    "methodology": "METHCAL-20260921T222227+0900-R45-B7E2C491@ac7afaa0add8af8aebb1be08798d1e3df4d3c8c0",
+    "sub": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4"
   },
   "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_INDEPENDENT_FRESH_INTEGRITY_OBJECT",
   "research_layer": null,
@@ -29,13 +31,16 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No MAIN allocation is active and viable executable MECHANISM is zero.",
+    "reason_detail": "No current MAIN object exists. Fresh Control R26 explicitly reports that Evidence Analyst R44 has not consumed Methodology R45, Audit R5, or Control R26, so no SYSTEM or MECHANISM execution may be inferred from the stale allocation.",
     "compared_mechanism_candidate_ids": []
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_tip": "fca9a4b0adb259b76a518605f611ff79e0c48680",
-    "latest_sub_generation": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5",
+    "control_tip": "0e38771af4dacefab079a9389dece4c6a48f1240",
+    "audit_tip": "c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48",
+    "methodology_tip": "ac7afaa0add8af8aebb1be08798d1e3df4d3c8c0",
+    "latest_sub_generation": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
     "target_research_branch": null,
     "target_research_head": null,
     "active_identity": null,
@@ -56,8 +61,8 @@
     "freeze_tags": [],
     "h5_started_control": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "pr_148": "OPEN_UNMERGED",
-    "pr_149": "OPEN_UNMERGED"
+    "pr_148": "OPEN_UNMERGED_MERGEABLE",
+    "pr_149": "OPEN_UNMERGED_MERGEABLE"
   },
   "research_layer_state": {
     "DISCOVERY": {"state": "OPEN", "M": 0, "S": 0},
@@ -71,57 +76,26 @@
     "classification_complete": "31/31",
     "terminal_state_counts": {"ACTIVE": 0, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 30},
     "viable_executable_mechanism": 0,
-    "active_canonical_candidate": null
-  },
-  "portfolio_note": {
-    "candidate_31": {
-      "candidate_id": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
-      "classification": "HOLD",
-      "claim_ceiling": "SYSTEM",
-      "preformal_eligible": false,
-      "preformal_readiness": {"status": "NOT_APPLICABLE"},
-      "hold_class": "HOLD_METHOD_LIMITED",
-      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-      "queue_state": "NOT_QUEUED",
-      "third_cycle": "PROHIBITED"
-    },
-    "h7_responsibility": {
-      "claim_ceiling": "MECHANISM",
-      "preformal_eligible": false,
-      "preformal_readiness": {"status": "NOT_READY"},
-      "hold_class": "HOLD_MECHANISM_UNRESOLVED",
-      "terminal_state": "NONTERMINAL_HOLD",
-      "execution_status": "STOP_UNTIL_FRESH_NATIVE_OBJECT_COMPARATOR_RESOURCE_FALSIFIER"
-    }
-  },
-  "prospective_contingency_tree": {
-    "material_mechanism_surface_delta": "CREATE_FRESH_CANDIDATE_ID_OBJECT_AND_FRESH_REDUCTION_FALSIFIER_CONTRACT_THEN_ANALYST_REVIEW",
-    "independently_motivated_integrity_delta": "FRESH_SYSTEM_OBJECT_ONLY_IF_NOT_RESCUE_AND_AFTER_MECHANISM_PRIORITY_COMPARISON",
-    "future_scientific_successor": "BIND_FOUR_STAGE_LINEAGE_PLUS_PROTECTED_SET_IDENTITY_EXPOSURE_FEEDBACK_VISIBILITY_AND_VALIDITY_REGIME_BEFORE_RESULT_BEARING_ACCESS",
-    "selection_ancestry_not_machine_checkable": "PREFER_FRESH_INDEPENDENT_CONFIRMATORY_SET_HIDDEN_UNTIL_CANDIDATE_SCORER_FALSIFIER_BINDING",
-    "protected_data_reuse_needed": "PROSPECTIVELY_SPECIFY_SELECTION_AWARE_OR_ALWAYS_VALID_REGIME_AND_MACHINE_CHECK_WHICH_ADAPTIVE_CHOICES_ARE_COVERED",
-    "protected_feedback_visibility": "MASK_OR_REDUCE_TO_PROSPECTIVELY_ALLOWED_MINIMAL_SIGNALS_DURING_CANDIDATE_GENERATION",
-    "no_material_delta": "REMAIN_INTENTIONALLY_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
-    "candidate31_third_cycle": "PROHIBITED",
-    "protected_outcome_read_for_ledger_reconstruction": "PROHIBITED",
-    "retroactive_existing_evidence_invalidation_without_independent_repository_evidence": "PROHIBITED"
+    "active_canonical_candidate": null,
+    "source": "Analyst R44 only; not re-canonicalized against Control R26 / Audit R5 / Methodology R45"
   },
   "workflows": [],
   "workflow_inventory_observation": {
-    "latest_seen_control_plane_run_id": 35604664804,
+    "latest_seen_run_id": 35610139971,
     "name": "ci",
-    "head_branch": "ops/evidence-analyst-handoff",
-    "head_sha": "fca9a4b0adb259b76a518605f611ff79e0c48680",
+    "head_branch": "ops/control-brain-handoff",
+    "head_sha": "0e38771af4dacefab079a9389dece4c6a48f1240",
     "status": "completed",
     "conclusion": "success",
     "scientific_workflow_dispatched_by_main": false
   },
   "observations": {
     "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION",
-    "material_update": "R44 adds prospective validity-under-adaptivity and protected-feedback visibility/masking requirements for future fresh scientific successors; it creates no active object and does not reopen candidate #31.",
-    "idle_semantics": "Intentional no-target state. MAIN must not manufacture scientific or SYSTEM activity while no fresh coherent mechanism or independent integrity object is allocated.",
-    "sub_collision_status": "NO_COLLISION_SUB_NO_TARGET",
-    "protected_outcome_content_accessed": false,
+    "material_update": "Upstream generation freshness changed after Analyst R44. Control R26 is newer and explicitly states Analyst R44 is missing Methodology R45, Audit R5, Control R26, and applied Utility-autonomy status. Audit R5 narrows the interpretation ceiling of existing H5 evidence without invalidating it. Methodology R45 is prospective calibration. MAIN therefore fails closed rather than importing these inputs into a scientific allocation on its own.",
+    "analyst_freshness": "STALE_RELATIVE_TO_MATERIAL_UPSTREAM_GENERATIONS",
+    "idle_semantics": "No current object is authorized. This blocked state is generation reconciliation, not scientific HOLD synthesis and not candidate manufacturing.",
+    "sub_collision_status": "NO_COLLISION_SUB_R44_NO_TARGET",
+    "protected_outcome_content_accessed_for_main_decision": false,
     "scientific_execution": false,
     "identity_consumed": false
   },
@@ -132,18 +106,19 @@
   "support_breadth": {
     "scope": "CONTROL_PLANE_RECONCILIATION_AND_INDEPENDENT_SOURCE_OF_TRUTH_REFRESH_ONLY",
     "sources": [
-      "fresh R44 Evidence Analyst latest/state",
-      "stable main ref",
-      "research/main-* ref inventory and historical conformance ref",
+      "Evidence Analyst R44 latest/state and exact branch tip",
+      "Control R26 exact state and CI",
+      "Independent Audit R5 exact tip",
+      "Methodology R45 exact tip",
+      "stable main exact ref",
+      "research/* branch inventory",
       "authoritative evidence tag inventory",
       "formal/sealed/freeze tag inventories",
-      "control STARTED branch inventory",
-      "preserve branch inventory",
+      "control/* and preserve/* ref inventories",
       "PR #148/#149 metadata",
-      "exact R44 Analyst CI run",
-      "latest MAIN and SUB control-plane state"
+      "latest MAIN/SUB mailbox"
     ],
-    "scientific_outcomes_read": false
+    "scientific_outcomes_used_to_redesign_or_allocate": false
   },
   "evidentiary_status": {
     "FORMAL_evidence": 0,
@@ -163,8 +138,11 @@
   ],
   "consumed_identities_this_run": [],
   "integrity": {
-    "analyst_generation_rechecked_before_acquisition": "EVA-20260921T220541+0900-R44-7A3C21E8",
-    "analyst_tip_rechecked_before_persistence": "fca9a4b0adb259b76a518605f611ff79e0c48680",
+    "analyst_generation_rechecked_before_acquisition": "EVA-20260921T220541+0900-R44-7A3C21E8@fca9a4b0adb259b76a518605f611ff79e0c48680",
+    "analyst_generation_rechecked_before_persistence": "EVA-20260921T220541+0900-R44-7A3C21E8@fca9a4b0adb259b76a518605f611ff79e0c48680",
+    "superseding_control_generation": "CTRL-20260921T230354+0900-R26-8D4C21A7@0e38771af4dacefab079a9389dece4c6a48f1240",
+    "superseding_audit_generation": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4@c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48",
+    "superseding_methodology_generation": "METHCAL-20260921T222227+0900-R45-B7E2C491@ac7afaa0add8af8aebb1be08798d1e3df4d3c8c0",
     "stable_main_rechecked_before_persistence": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "research_refs_rechecked": true,
     "evidence_refs_rechecked": true,
@@ -184,11 +162,10 @@
     "stable_main_unchanged": true,
     "system_to_mechanism_upgrade": false,
     "retroactive_evidence_invalidation_attempted": false,
-    "protected_outcome_content_used_for_decision": false,
-    "scope_fail_closed": false
+    "generation_freshness_fail_closed": true
   },
-  "stop_reason": "R44_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
-  "next_action": "Remain intentionally idle until a fresh Evidence Analyst allocation follows a material mechanism-surface delta or independently motivated fresh integrity object. Any future scientific successor must prospectively bind four-stage lineage, protected-set identity/exposure, feedback visibility/masking, and a validity-under-adaptivity regime before result-bearing access. Do not reopen candidate #31, manufacture a successor, or enter PRE_FORMAL/FORMAL without fresh authority.",
+  "stop_reason": "MATERIAL_SUPERSEDING_UPSTREAM_GENERATIONS_NOT_YET_CONSUMED_BY_EVIDENCE_ANALYST_FAIL_CLOSED",
+  "next_action": "Wait for a fresh Evidence Analyst generation that consumes Control R26, Audit R5, and Methodology R45 and issues a canonical allocation/disposition. Re-fetch exact refs before any subsequent acquisition or mutation. Do not execute PRE_FORMAL, FORMAL, ARCHITECTURE_STUDY, create a successor, reinterpret H5, or import upstream strategy directly into candidate state meanwhile.",
   "utility_request": null,
   "owner": "main"
 }
