@@ -1,43 +1,46 @@
 {
-  "timestamp": "2026-09-22T03:31:26+09:00",
+  "timestamp": "2026-09-22T06:31:57+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5",
-  "producer_run_id": "external-literature-auto-20260922T033126+0900-R25-7D3A91C5",
+  "generation_id": "LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8",
+  "producer_run_id": "external-literature-auto-20260922T063157+0900-R26-6F4A21D8",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260922T010311+0900-R24-CONTSTATE-EVENTDRIVEN-4A7C91E2",
+  "supersedes_generation_id": "LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260922T025652+0900-R28-9A9BFB1F",
-      "handoff_commit": "d2f0ffa7e263fd9b7b0210cf1d5c99574894f6e6"
+      "generation_id": "CTRL-20260922T045653+0900-R29-7C4E91B2",
+      "handoff_commit": "04af2dd036efbce5aa133df01eda569585d73476",
+      "latest_text_commit": "05f8c07149b0e2584e8341948b4b2eb983760ddd"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T031000+0900-R50-4C8A21D7",
-      "handoff_commit": "8ae04f045ac760cfd8b209f337284293d6c58bf1"
+      "generation_id": "EVA-20260922T060636+0900-R54-4E7C21A9",
+      "handoff_commit": "473bb7713c04b50dd9567472084301f2d1d07c69"
     },
     "main_report": {
-      "generation_id": "MAIN-20260922T032800+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R50-CYCLE2-INTEGRITYSTOP-4C8A21D7",
-      "handoff_commit": "b3fb893a7c700bb7337ed869660d5023405e4920"
+      "generation_id": "MAIN-20260922T061624+0900-PRIMARY-FUNNEL21-IDLE-R54-4E7C21A9",
+      "latest_commit": "3f6701296884a6d22f003cd29b0661bdcf3741fa",
+      "state_commit": "822c50998a1ae0d8564a6a3bf0dd02e2390ba0b4",
+      "branch_tip_observed": "796490f686a424151e23c59f253308e3abb150a6"
     },
     "sub_report": {
-      "generation_id": "SUB-20260922T033500+0900-NOOP-R50POSTMAIN-INTEGRITYSTOP-5A7C21E4",
-      "handoff_commit": "72c414c434fe563c78b09ab5f5ec33ff337cf1dd"
+      "generation_id": "SUB-20260922T053500+0900-NOOP-R53INTENTIONALIDLE-3F8A21D6",
+      "handoff_commit": "005b367ddf1b442e3a83b9e56e16e18e2ad2996d"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260922T010311+0900-R24-CONTSTATE-EVENTDRIVEN-4A7C91E2",
-      "handoff_commit": "e9f3bd07d8aed08b81d8c307525e5c6c53a3eef4"
+      "generation_id": "LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5",
+      "handoff_commit": "752cd466294c1be037fa896101f23ae7e3ab995a"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "03:30 JST",
+  "schedule_slot": "06:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_research_branch": "research/main-semantic-active-work-localization-r50-cycle2",
-    "active_research_head": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
-    "ops_control_tip": "d2f0ffa7e263fd9b7b0210cf1d5c99574894f6e6",
-    "ops_evidence_analyst_tip": "8ae04f045ac760cfd8b209f337284293d6c58bf1",
-    "ops_orchestrator_tip": "72c414c434fe563c78b09ab5f5ec33ff337cf1dd",
-    "ops_external_tip_before_write": "e9f3bd07d8aed08b81d8c307525e5c6c53a3eef4",
+    "h7_exploratory_trace_branch": "research/exploratory-sub-h7-trace-causality-20260917",
+    "h7_exploratory_trace_head": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
+    "ops_control_tip": "04af2dd036efbce5aa133df01eda569585d73476",
+    "ops_evidence_analyst_tip": "473bb7713c04b50dd9567472084301f2d1d07c69",
+    "ops_orchestrator_tip": "796490f686a424151e23c59f253308e3abb150a6",
+    "ops_external_tip_before_write": "752cd466294c1be037fa896101f23ae7e3ab995a",
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -50,90 +53,102 @@
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "legacy_freeze_branch_count": 13,
-    "preserve_refs_refreshed": true,
-    "r50_contract_id": "SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1",
-    "r50_scientific_workflow": 35637961215,
-    "r50_raw_artifact": {
-      "id": 10656767754,
-      "digest": "sha256:7494fb60db1e7aca3fa86fd4a1359082da9d52e1733404bdbef8f27412fbfba8"
+    "preserve_branch_count": 24,
+    "control_refs_refreshed": true,
+    "current_candidate_population": {
+      "total": 32,
+      "mechanism": 13,
+      "system": 19,
+      "active": 0,
+      "nonterminal_hold": 1,
+      "terminal_for_current_object": 31,
+      "preformal_eligible": 0,
+      "preformal_ready": 0,
+      "viable_executable_mechanism": 0,
+      "sole_nonterminal_hold": "H7_RESPONSIBILITY"
     },
-    "r50_summary_artifact": {
-      "id": 10656637964,
-      "digest": "sha256:8e78b5496de153fc25ff92968fefaab5cb6af28556cd1c1b455aaacefd962375"
+    "relevant_prs": {
+      "148": "OPEN_MERGEABLE_UNMERGED_GOVERNANCE",
+      "149": "OPEN_MERGEABLE_UNMERGED_GOVERNANCE"
+    },
+    "workflow_state": {
+      "no_current_scientific_research_execution": true,
+      "historical_r50_scientific_workflow": 35637961215,
+      "latest_repository_workflow_traffic_is_ops_utility_ci_not_scientific_evidence": true
     }
   },
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "R50_FULL_TRAJECTORY_EQUIVALENCE_NOT_VERIFIED",
-      "type": "REPOSITORY_EVIDENCE_PLUS_EXTERNAL_METHOD_COMPARISON",
-      "finding": "R50 produced large primitive-count reductions, but compare_state checks only terminal eligibility and weights while event/fire/ignition/prediction equality fields are true by construction; intermediate per-reward checkpoints were not independently verified. Exact event-driven literature treats exactness as a property of the modeled event/state trajectory, not terminal endpoint agreement alone.",
-      "impact": "The preserved reductions are candidate measurements, not yet contract-valid equal-semantics reductions. The current opened cycle must remain fail-closed and unmodified."
+      "id": "INTERVENTION_CAN_ACTIVATE_DORMANT_PARALLEL_PATH",
+      "type": "EXTERNAL_LITERATURE_FACT_PLUS_REPOSITORY_REDUCTION",
+      "source": "Makelov, Lange, Geiger & Nanda, ICLR 2024, Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching",
+      "finding": "A patch can have the intended end-to-end causal effect while acting through a dormant parallel pathway, including cases where the patched component is causally disconnected from normal output.",
+      "impact": "The H7 trace-causality toy already shows that an existing bypass can make a stable route non-necessary. This literature adds the converse diagnostic hazard: the intervention itself can manufacture an alternate path. Future route-faithfulness claims require intervention-support/realism controls and cross-intervention consistency."
     },
     {
-      "id": "EXACT_TRACE_RETIREMENT_CANNOT_USE_APPROXIMATE_TRUNCATION",
-      "type": "EXTERNAL_LITERATURE_FACT_PLUS_INFERENCE",
-      "source": "Cichosz 1995, JAIR 2:287-318, DOI 10.1613/JAIR.135",
-      "finding": "TTD reduces eligibility-trace computation by truncating history but explicitly only approximates TD(lambda). Under R50's no-approximate-pruning contract, threshold retirement cannot be treated as an exact baseline without separate equivalence proof.",
-      "impact": "Exact active-set localization requires explicit semantics for historically touched traces and their retirement/reset; approximate cutoff methods belong in a separately labeled comparator class."
-    },
-    {
-      "id": "R50_GRID_OMITS_CUMULATIVE_SUPPORT_TURNOVER",
-      "type": "REPOSITORY_EVIDENCE_PLUS_INFERENCE",
-      "finding": "R50 selected_edges cycles only within the first Z_nonzero_eligibility edges, while the timestamp-lazy implementation only adds touched edges to state.active and never retires them. The grid therefore tests capped/fixed support, not moving support whose cumulative distinct touched edges grow toward E_total over long horizons.",
-      "impact": "A sustained exact-sparsity claim needs prospective support-turnover/churn, cumulative touched-edge count, horizon, and reset/lifetime axes; the current opened grid must not be retrofitted."
-    },
-    {
-      "id": "EVENT_LOCAL_PLASTICITY_SHIFTS_COST_TO_HISTORY_INDEX_AND_DATA_MOVEMENT",
+      "id": "CAUSAL_ABSTRACTION_GRADED_FAITHFULNESS_FLOOR",
       "type": "EXTERNAL_LITERATURE_FACT",
-      "source": "Mikaitis et al. 2018, Frontiers in Neuroscience 12:105, DOI 10.3389/fnins.2018.00105",
-      "finding": "SpiNNaker three-factor/STDP plasticity updates state on relevant events using synaptic-row retrieval, stored trace histories and timestamps rather than all-synapse per-step updates.",
-      "impact": "Event-local plasticity is ordinary prior art; fair resource accounting must include index/row access, retained metadata/history and data-movement costs, and future support-retirement/churn semantics."
+      "source": "Geiger et al., JMLR 2025, Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability",
+      "finding": "Mechanistic explanations can be formalized as causal abstractions with graded faithfulness across intervention mappings, unifying path/activation patching and other causal interpretability methods.",
+      "impact": "Stable route identifiers or one deletion effect are weaker than a frozen high-level causal model whose intervention semantics faithfully match low-level behavior across a predeclared intervention family."
+    },
+    {
+      "id": "PATH_LOCALIZATION_NEEDS_PRECISION_COMPLETENESS_AND_CAUSAL_RECOVERY",
+      "type": "EXTERNAL_LITERATURE_FACT_PLUS_INFERENCE",
+      "source": "Mueller et al., ICML 2025, MIB: A Mechanistic Interpretability Benchmark",
+      "finding": "MIB separately evaluates recovery of relevant causal pathways/variables and favors precise, concise localization rather than prediction performance alone.",
+      "impact": "Future H7 tests should separately bind necessity, sufficiency, completeness/alternative-route coverage and conciseness. Deletion sensitivity alone cannot distinguish an incomplete explanation from legitimate redundancy."
+    },
+    {
+      "id": "PATH_SPECIFIC_PNS_STRONGER_PRIVILEGE_CEILING",
+      "type": "EXTERNAL_LITERATURE_FACT",
+      "source": "Kawakami & Tian, UAI 2025, Decomposition of Probabilities of Causation with Two Mediators",
+      "finding": "Path-specific probability of necessity and sufficiency decomposes total probability of causation into contributions along distinct causal paths.",
+      "impact": "Raw route deletion is a coarse responsibility statistic. Path-specific PNS provides an established formal ceiling for multiple mediators/bypasses, but requires an explicit causal model and should remain a stronger-privilege analysis baseline unless information privilege is matched."
     }
   ],
   "affected_lines": [
-    "CAND_RESOURCE_SEMANTIC_ACTIVE_WORK_LOCALIZATION_01",
-    "EXACT_SEMANTICS_COMPARATOR_VALIDATION",
-    "ELIGIBILITY_ACTIVE_SET_SUPPORT_TURNOVER",
-    "RESOURCE_CROSSOVER_HORIZON_AND_INDEX_COST",
-    "PROGRAMME_ARCHITECTURE_EFFICIENCY"
+    "H7_RESPONSIBILITY_NONTERMINAL_HOLD",
+    "H7_TRACE_CAUSAL_FAITHFULNESS",
+    "H7_BYPASS_AND_REDUNDANCY_CONTROLS",
+    "FUTURE_MECHANISM_OBJECT_ADMISSION",
+    "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "INDEPENDENT_FULL_TRAJECTORY_EQUIVALENCE_GATE",
-    "EXACT_ACTIVE_SET_WITH_EXPLICIT_RETIREMENT_OR_RESET_SEMANTICS",
-    "APPROXIMATE_TRACE_TRUNCATION_SEPARATELY_LABELED",
-    "SUPPORT_TURNOVER_AND_HORIZON_CROSSOVER_ACCOUNTING"
+    "INTERVENTION_SUPPORT_AND_DORMANT_PATH_CHECK",
+    "GRADED_CAUSAL_ABSTRACTION_FAITHFULNESS",
+    "NECESSITY_SUFFICIENCY_COMPLETENESS_CONCISENESS_DECOMPOSITION",
+    "PATH_SPECIFIC_PNS_STRONGER_PRIVILEGE_CEILING"
   ],
-  "novelty_or_reduction_impact": "R50_REDUCTION_SIGNAL_NOT_YET_CONTRACT_VALID_PLUS_EXACT_TRACE_SUPPORT_TURNOVER_SHARPENING_NO_MECHANISM_NOVELTY_UPLIFT. R50 exposes a large ordinary sparse/event-driven resource signal, but its prospectively required full trajectory-equivalence gate was not independently verified. Exact exponentially decaying traces also cannot be threshold-retired without approximation, so sustained sparse advantage must be tested against cumulative support turnover and horizon rather than only a fixed instantaneous nonzero set.",
+  "novelty_or_reduction_impact": "INTERVENTION_FAITHFULNESS_AND_PATH_COMPLETENESS_SHARPENING_NO_CURRENT_OBJECT_UPLIFT. Stable routes and even successful causal interventions are insufficient: interventions can activate dormant parallel pathways, and route explanations must be evaluated as faithful causal abstractions across an intervention family with separate necessity, sufficiency, completeness and path-specific responsibility checks.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "independently generated per-event event/fire/ignition/prediction trajectory comparison rather than booleans set by construction",
-    "per-reward eligibility and weight checkpoints at the prospectively fixed tolerance",
-    "exact active-set/timestamp-lazy comparator with explicit support-retirement/reset semantics",
-    "approximate threshold/truncation comparator labeled separately and never treated as exact semantics",
-    "crossover over cumulative distinct touched edges, support churn, horizon, reset/lifetime semantics, E_total and reward frequency",
-    "resource vector including primitive operations, index insert/lookup/retirement, retained timestamps/traces, history manipulation and data-movement proxies"
+    "predeclare intervention support/realism and test whether interventions activate dormant or otherwise unused routes",
+    "freeze a high-level causal abstraction and intervention mapping; score graded faithfulness across multiple intervention types",
+    "separate route necessity, route sufficiency, explanation completeness/alternative-route coverage and conciseness",
+    "include natural or minimally perturbed responsibility-changing pairs alongside synthetic deletion/replacement",
+    "use path-specific probability of necessity-and-sufficiency only as a stronger-privilege formal ceiling unless information privilege is matched",
+    "match timing, local observations, eligibility, recurrent state and resources while changing actual route responsibility through bypass, backup, preemption or overdetermination"
   ],
   "questions_for_evidence_analyst": [
-    "Treat the opened R50 sweep as method-limited/non-evidentiary until its prospectively required trajectory-equivalence gate is actually satisfied, rather than accepting ordinary_reduction_exhaustion_signal?",
-    "Preserve the no-repair/no-rerun boundary for R50 and require fresh prospective authority for any corrected measurement?",
-    "Require cumulative distinct touched-edge/support-turnover/horizon axes for any future exact active-set localization claim?",
-    "Treat trace truncation/threshold retirement as approximate semantics unless exact equivalence is separately proved?"
+    "Keep H7 as nonterminal HOLD and treat this literature only as future admission guidance, not as grounds to manufacture a successor?",
+    "Require intervention-faithfulness/support controls in addition to counterfactual responsibility for any future H7 object?",
+    "Require necessity, sufficiency and completeness/alternative-route metrics to be separately bound before interpreting route faithfulness?"
   ],
   "questions_for_control_brain": [
-    "Do not generalize the R50 anchor primitive-count reduction as a validated SYSTEM result before fresh Analyst disposition of the equivalence gap?",
-    "Add exact-trace support accumulation and retirement semantics to the ordinary resource-reduction checklist?",
-    "Keep claim ceiling SYSTEM, PRE_FORMAL/FORMAL unchanged, and H5 immutable/consumed?"
+    "Add dormant-path activation / intervention-induced bypass as an explicit failure mode in the H7 causal-credit reduction checklist?",
+    "Treat causal-abstraction faithfulness across an intervention family as the explanation floor before route-level novelty claims?",
+    "Preserve intentional idle until an independently arising native mechanism exposes this residual with a prospective comparator/resource/falsifier contract?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "H5 exact package/STARTED/raw-preserve/evidence chain and canonical FAIL_NO_USEFUL_WORK_REDUCTION",
-    "R50 contract SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1",
-    "R50 exact result head d090fd2e57680c5a97b9fd0d036fc65a008078ec",
-    "scientific workflow 35637961215 and preserved raw/summary artifact digests",
-    "no R50 lint repair, rerun, post-outcome comparator/grid/tolerance redesign, same-object rescue or second measurement",
-    "no STARTED/TEST/PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation or scheduler change by this role"
+    "canonical H5/PD01/NI01 terminal classifications and all consumed STARTED/control/preserve refs",
+    "H7 remains NONTERMINAL_HOLD / NOT_QUEUED with no current native object, comparator, resource contract or falsifier",
+    "exploratory H7 trace-causality branch remains NON_EVIDENTIARY and is not promoted or rerun",
+    "R50 candidate #32 remains HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT with no same-object repair or continuation",
+    "no STARTED/TEST/PRE_FORMAL/FORMAL promotion, scientific workflow dispatch, research merge, immutable-ref mutation or scheduler change by this role"
   ],
   "utility_request_created": null,
   "mutations": {
