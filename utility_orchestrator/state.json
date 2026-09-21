@@ -1,68 +1,56 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T042950+0900-AUTO-SCHEDTELEM-CLOCKS-COMPLETED-8C4F2A71",
-  "produced_at": "2026-09-22T04:29:50+09:00",
-  "producer_run_id": "utility-auto-20260922T042654+0900-scheduler-telemetry-clock-reconciliation",
-  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_OPERATIONAL_DIAGNOSTIC",
-  "supersedes_generation_id": "UTILITY-20260922T042654+0900-AUTO-SCHEDTELEM-CLOCKS-RUNNING-8C4F2A71",
+  "generation_id": "UTILITY-20260922T062900+0900-AUTO-EQUIV-SCHEMA-RUNNING-91C4B6E2",
+  "produced_at": "2026-09-22T06:29:00+09:00",
+  "producer_run_id": "utility-auto-20260922T0624+0900-equivalence-schema-tooling",
+  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_TOOLING_INVESTIGATION",
+  "supersedes_generation_id": "UTILITY-20260922T042950+0900-AUTO-SCHEDTELEM-CLOCKS-COMPLETED-8C4F2A71",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
-  "autonomous_task_id": "AUTOUTIL-20260922T042654+0900-SCHEDTELEM-CLOCKS-8C4F2A71",
-  "status": "COMPLETED",
+  "autonomous_task_id": "AUTOUTIL-20260922T0624+0900-EQUIV-SCHEMA-91C4B6E2",
+  "status": "IN_PROGRESS",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "objective": "Reconcile a third fresh scheduler-health timing window across nominal live schedule, durable worker produced/started/completed timestamps, Git persistence timestamps, and scheduler last_run_time to determine which clocks are safe for queue-delay inference and whether any evidence-based narrow phase fix is now justified.",
-  "classification": "THIRD_WINDOW_CONFIRMS_TELEMETRY_CLOCK_DIVERGENCE_SAFE_PHASE_FIX_UNDERDETERMINED",
-  "finding_summary": [
-    "Evidence Analyst R51 durable produced_at was 04:00:22 JST, its Git persistence commit was 04:18:05 JST, and scheduler last_run_time was about 04:20:25 JST; these clocks are not interchangeable worker-start or queue timestamps.",
-    "MAIN R51 durable lease started at 04:18:00 JST for nominal :15 and completed at 04:20:00 JST, giving an exact durable start offset of about +3 minutes and about 2 minutes runtime.",
-    "At the live scheduler snapshot, MAIN scheduler last_run_time still represented the prior cycle despite the R51 durable lease already being completed, proving scheduler last_run_time can lag authoritative worker state.",
-    "Runtime overlap across adjacent five-minute phases remains real, but three recent windows do not establish monotonic queue-delay accumulation or a deterministic exact-time collision.",
-    "A scheduler phase auto-fix remains underdetermined; authoritative due_at/queued_at/started_at/finished_at telemetry is needed before attributing coarse offsets to queue delay."
-  ],
+  "objective": "Characterize outcome-independent equivalence-verifier, exact-binding, and matched-resource schema/tooling on stable main; identify machine-checkable coverage and prospective gaps without touching candidates, outcomes, or scientific workflows.",
   "trigger_source": {
-    "prior_utility_task": "AUTOUTIL-20260922T022329+0900-SCHEDDELAY-CROSSSECTION-5A8D1F3C",
-    "prior_recommendation": "Collect exact due/queued/started/finished telemetry across at least three comparable windows before scheduler timing mutation.",
-    "control_scheduler_health": "CTRL-20260922T025652+0900-R28-9A9BFB1F reports YELLOW persistent-delay signal and no deterministic exact collision.",
-    "open_utility_request_selected": null
+    "control": "CTRL-20260922T045653+0900-R29-7C4E91B2 explicitly identifies generic outcome-independent equivalence-verifier schema/tooling investigation as potentially useful bounded Utility work",
+    "open_utility_request_selected": null,
+    "assignment_pointer": "clean schema-v2 IDLE"
   },
-  "freshness_check_before_terminal_persistence": {
+  "ownership_checks_at_start": {
     "assignment_pointer": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "evidence_analyst": "EVA-20260922T040022+0900-R51-6B4D21F8@b82bef83494e0ef339de324476b23907bc992601",
-    "control": "CTRL-20260922T025652+0900-R28-9A9BFB1F@d2f0ffa7e263fd9b7b0210cf1d5c99574894f6e6",
-    "main": "MAIN-20260922T041800+0900-PRIMARY-FUNNEL21-IDLE-R51-6B4D21F8@13e30f3f4d52e0ba0066d3d101b17c865372e852",
-    "sub": "SUB-20260922T033500+0900-NOOP-R50POSTMAIN-INTEGRITYSTOP-5A7C21E4",
-    "relay": "NO_SEPARATE_ACTIVE_RELAY_OWNERSHIP_OBSERVED; MAIN R51 terminal COMPLETED",
+    "evidence_analyst": "EVA-20260922T060636+0900-R54-4E7C21A9",
+    "control": "CTRL-20260922T045653+0900-R29-7C4E91B2@582a8b32ac8336b84c0aaa372c83258f7962fba5",
+    "main_sub": "Analyst R54: MAIN R53 and SUB R53 terminal intentional-idle/no-target; no active or queued Architecture object",
+    "relay": "Control R29: no active MAIN continuation authority; no Relay ownership collision",
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "material_supersession_detected": false
+    "collision_found": false
   },
-  "ownership_checks": {
-    "collision_found": false,
-    "main_critical_dependency": false,
-    "active_or_queued_research_object_touched": false,
-    "candidate_typing_touched": false
-  },
-  "integrity_checks": {
-    "scheduler_mutation": false,
-    "scheduler_registry_mutation": false,
-    "scientific_workflow_or_experiment": false,
-    "research_main_evidence_control_preserve_mutation": false,
-    "consumed_or_protected_identity_used": false,
-    "hidden_main_dependency_created": false,
-    "research_pr_merge": false
-  },
+  "allowed_actions": [
+    "read stable-main repository contracts, verifier/tooling code, tests, workflows, and documentation",
+    "map existing machine-verifiable equivalence/binding/resource coverage",
+    "write Utility-owned append-only NON_EVIDENTIARY result"
+  ],
+  "forbidden_actions": [
+    "candidate #32 repair/reopen/rerun or any candidate lifecycle change",
+    "PRE_FORMAL or FORMAL work",
+    "scientific or evidence workflow dispatch",
+    "protected or consumed identity as task target",
+    "immutable/formal/evidence/control/preserve mutation",
+    "scheduler mutation or research PR merge",
+    "hidden MAIN dependency"
+  ],
+  "stop_condition": "One bounded read-only repository characterization; stop on scientific outcome dependence, active-owner collision, or candidate-specific repair requirement.",
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
     "preserved_fields": "NOT_APPLICABLE_NO_RESEARCH_CANDIDATE_TOUCHED",
     "typing_or_readiness_changed": false
   },
   "outputs": {
-    "result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T042654+0900-SCHEDTELEM-CLOCKS-8C4F2A71-0426.md",
-    "result_commit": "e6309edeea903827092b452a971c8f8dba9ed610"
-  },
-  "follow_up_recommendation": "Do not repeat coarse scheduler last_run_time sampling as if it were queue telemetry. Prefer authoritative scheduler-side nominal_due_at/queued_at/started_at/finished_at data, or durable worker lease started_at/completed_at where available, before any phase mutation. No follow-up Utility request was added because Control already owns the persistent scheduler-health issue.",
-  "stop_reason": "BOUNDED_THIRD_WINDOW_RECONCILIATION_COMPLETE_MAX_RUNS_1_NO_SAFE_PHASE_FIX_JUSTIFIED"
+    "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0624+0900-EQUIV-SCHEMA-91C4B6E2-0629-start.md",
+    "start_result_commit": "b25185f99f4aa3cd265d9d08b92c9c699f49b4ff"
+  }
 }
