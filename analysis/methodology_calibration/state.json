@@ -1,44 +1,47 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-22T03:30:00+09:00",
+  "timestamp": "2026-09-22T04:21:10+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260922T033000+0900-R49-9B4E21C7",
-    "sequence": 49,
+    "generation_id": "METHCAL-20260922T042110+0900-R50-6D2A91F4",
+    "sequence": 50,
     "material_change": true,
-    "material_change_reason": "PREDECLARED_COMPARATOR_EQUIVALENCE_CONTRACT_WAS_NOT_FULLY_MACHINE_VERIFIED_IN_FIRST_BOUNDED_OUTCOME_BEARING_SYSTEM_ARCHITECTURE_CYCLE_AND_MAIN_FAIL_CLOSED_WITHOUT_POST_OUTCOME_REPAIR",
-    "supersedes_generation_id": "METHCAL-20260922T011904+0900-R48-2F7C91A4",
+    "material_change_reason": "FRESH_ANALYST_CANONICALIZED_RESULT_BEARING_VERIFIER_DEFECT_AS_METHOD_LIMITED_TERMINAL_AND_ENFORCED_NO_RERUN_NO_SAME_GENERATION_RESCUE",
+    "supersedes_generation_id": "METHCAL-20260922T033000+0900-R49-9B4E21C7",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260922T011904+0900-R48-2F7C91A4",
+      "generation_id": "METHCAL-20260922T033000+0900-R49-9B4E21C7",
       "branch": "ops/methodology-calibration-audit",
-      "commit": "f6ac58d233cddc5390024238cbc59074da62ce09"
+      "commit": "83de1d635e10eedd6e2e4aec30cbaf31f4fa50dd"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T031000+0900-R50-4C8A21D7",
+      "generation_id": "EVA-20260922T040022+0900-R51-6B4D21F8",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "8ae04f045ac760cfd8b209f337284293d6c58bf1",
+      "commit": "b82bef83494e0ef339de324476b23907bc992601",
       "role": "CURRENT_CANONICAL_FUNNEL_AUTHORITY"
     },
     "control_brain": {
       "generation_id": "CTRL-20260922T025652+0900-R28-9A9BFB1F",
       "branch": "ops/control-brain-handoff",
       "commit": "d2f0ffa7e263fd9b7b0210cf1d5c99574894f6e6",
-      "role": "DESIGNATED_CONTROL_HISTORY"
+      "role": "DESIGNATED_CONTROL_HISTORY_STRATEGIC_PRIOR"
     },
-    "main_strategy_mailbox": {
+    "main_strategy_consumed_by_analyst": {
       "generation_id": "MAIN-20260922T032800+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R50-CYCLE2-INTEGRITYSTOP-4C8A21D7",
-      "branch": "ops/orchestrator-run-report",
-      "commit": "cf58970822632fb18514915274ca272875434093",
-      "authoritative": false,
-      "status": "POST_ANALYST_NONCANONICAL_INTEGRITY_STOP_PENDING_FRESH_ANALYST"
+      "commit": "b3fb893a7c700bb7337ed869660d5023405e4920",
+      "authoritative": false
     },
-    "research_branch_methodology_evidence": {
-      "branch": "research/main-semantic-active-work-localization-r50-cycle2",
-      "head": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
-      "workflow_run": 35637961215,
-      "role": "DIRECT_IMPLEMENTATION_EVIDENCE_FOR_CONTRACT_ENFORCEMENT_AUDIT_ONLY"
+    "sub_strategy_consumed_by_analyst": {
+      "generation_id": "SUB-20260922T033500+0900-NOOP-R50POSTMAIN-INTEGRITYSTOP-5A7C21E4",
+      "branch_tip": "72c414c434fe563c78b09ab5f5ec33ff337cf1dd",
+      "authoritative": false
+    },
+    "literature": {
+      "generation_id": "LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5",
+      "branch": "ops/external-research-audit-handoff",
+      "commit": "752cd466294c1be037fa896101f23ae7e3ab995a",
+      "role": "EXTERNAL_CALIBRATION_INPUT_ONLY"
     }
   },
   "authoritative_refs": {
@@ -89,11 +92,16 @@
     "resource_efficiency_metric_semantic_activity_decomposition": "TIGHTEN",
     "aggregate_work_to_mechanism_inference": "TIGHTEN",
     "resource_efficiency_claim_type_separation": "SPLIT_BY_CLAIM_TYPE",
+    "resource_support_turnover_horizon_scope": "SPLIT_BY_CLAIM_TYPE",
     "comparator_equivalence_verifier_independence": "TIGHTEN",
     "contract_required_equivalence_machine_verifiability": "TIGHTEN",
     "interpreter_signal_requires_verified_comparator_validity": "TIGHTEN",
     "predeclared_integrity_stop_after_contract_verification_gap": "KEEP",
     "post_outcome_integrity_adjudication_without_rerun_repair": "KEEP",
+    "result_bearing_verification_failure_terminalization": "KEEP",
+    "post_outcome_same_object_repair_ban": "KEEP",
+    "same_generation_successor_rescue_prohibition": "KEEP",
+    "non_evidentiary_signal_use_ceiling": "KEEP",
     "result_branch_workflow_retrigger_isolation": "TIGHTEN",
     "raw_before_interpretation_synthetic_architecture": "KEEP",
     "raw_before_score_execution_order": "TIGHTEN",
@@ -107,26 +115,26 @@
     "selection_ancestry_or_independent_confirmation": "KEEP"
   },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_TO_MODERATE_WATCH. A predeclared strong comparator contract can still yield false reduction/exhaustion interpretation if equivalence predicates are asserted by construction rather than independently computed from preserved traces. The current MAIN run detected this and refused the signal.",
-    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM remains zero. Tightening verifier enforcement is necessary, but should not become a universal second readiness gate or invalidate SYSTEM Architecture questions that do not make causal/mechanism claims.",
-    "duplicate_guards": "LOW. Comparator design, equivalence verification, interpreter admission, claim ceiling, PRE_FORMAL readiness, and post-outcome repair prohibition answer distinct methodological questions.",
-    "opportunity_cost": "CONTROLLED_BUT_WATCH. One SYSTEM Architecture object is active canonically while no comparable executable MECHANISM exists; a fresh Analyst must decide the opened cycle's lifecycle without rescue.",
-    "moving_goalpost_risk": "LOW. Exact trajectory equivalence was fixed prospectively in R49/R50; the current finding is that implementation did not enforce the existing criterion. No new outcome-responsive threshold is being added."
+    "false_positive": "LOW_TO_MODERATE_WATCH. R51 correctly prevents an incompletely verified comparator bundle from becoming reduction-exhaustion or mechanism evidence, but the verifier/tooling gap remains unfixed for future objects.",
+    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM remains zero and all Architecture slots are empty. Fresh-successor discipline is necessary, but must not become a blanket ban on independently motivated later SYSTEM or MECHANISM objects.",
+    "duplicate_guards": "LOW. Claim ceiling, comparator design, equivalence verification, interpreter admission, lifecycle terminalization, readiness, and no-rerun rules address distinct failure modes.",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH. Intentional idle avoids manufactured SYSTEM work, but sustained mechanism-supply stall remains the principal opportunity-cost risk.",
+    "moving_goalpost_risk": "LOW. R51 applies the already fixed R49/R50 equivalence contract and predeclared stop tree; it does not add an outcome-responsive success threshold."
   },
   "moving_goalposts": "LOW",
   "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; CROSS_GENERATION_EXPOSURE_OBSERVABILITY_INSUFFICIENT; FUTURE_PROTECTED_REUSE_REQUIRES_SEPARATE_PROSPECTIVE_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY_CONTROL; CLEAN_SCIENTIFIC_PASS_REQUIRES_FRESH_PROSPECTIVE_IDENTITY_WITH_CONFORMING_PIPELINE_AND_VALIDITY_ASSUMPTIONS_MATCHED_TO_THE_ACTUAL_ADAPTIVE_PROCESS",
   "claim_type_findings": {
     "claim_ceiling_current_object_only": true,
     "same_object_system_to_mechanism_upgrade_observed": false,
-    "active_object_canonical": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
-    "active_object_ceiling": "SYSTEM",
-    "active_object_preformal_eligible": false,
-    "active_object_theory_backward_mechanism_quota_credit": false,
-    "post_r50_cycle_canonicalized": false,
-    "post_r50_cycle_interpretation_allowed_as_scientific_result": false,
-    "resource_claim_note": "A SYSTEM resource benchmark may be informative without mechanism uplift, but reduction/exhaustion conclusions require independently verified equal-semantics comparator validity."
+    "candidate32_status": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED",
+    "candidate32_ceiling": "SYSTEM",
+    "candidate32_preformal_eligible": false,
+    "candidate32_signal_use_ceiling": "NON_EVIDENTIARY_FEASIBILITY_AND_METHOD_INFORMATION_ONLY",
+    "candidate32_rerun_repair_allowed": false,
+    "active_canonical_candidate": null,
+    "resource_claim_note": "Future exact-decay resource claims should separate verifier-certified equal semantics from support-turnover/horizon/reset effects; this is claim-specific rather than a universal readiness bar."
   },
-  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED_M13_S19_NO_VIABLE_EXECUTABLE_MECHANISM_ONE_ACTIVE_SYSTEM_ARCHITECTURE_OBJECT_NO_TARGET_EPISODE_CHECK14_SMALL_N",
+  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED_M13_S19_NO_VIABLE_EXECUTABLE_MECHANISM_NO_ACTIVE_ARCHITECTURE_NO_TARGET_EPISODE_CHECK15_SMALL_N",
   "funnel_observability": {
     "canonical_population": 32,
     "classified_population": 32,
@@ -134,17 +142,20 @@
     "mechanism": 13,
     "system": 19,
     "terminal_states": {
-      "ACTIVE": 1,
+      "ACTIVE": 0,
       "NONTERMINAL_HOLD": 1,
-      "TERMINAL_FOR_CURRENT_OBJECT": 30
+      "TERMINAL_FOR_CURRENT_OBJECT": 31
     },
     "architecture_mechanism_active": 0,
-    "architecture_system_active": 1,
+    "architecture_system_active": 0,
+    "architecture_mechanism_queued": 0,
+    "architecture_system_queued": 0,
     "preformal_eligible": 0,
     "preformal_ready": 0,
     "viable_executable_mechanism": 0,
     "policy_conclusions_gated_by_classification_completeness": true,
-    "post_analyst_main_cycle_pending_canonicalization": true
+    "candidate32_opened_cycle_canonicalized": true,
+    "candidate32_outcome_signal_scientific_evidence": false
   },
   "classification_completeness": {
     "classified": 32,
@@ -162,13 +173,14 @@
   },
   "system_priority_exception_audit": {
     "used": false,
-    "comparable_executable_mechanism_present": false,
+    "comparable_executable_mechanism_present_at_r50_allocation": false,
+    "active_main_object_now": false,
     "post_hoc_justification_observed": false,
     "classification": "KEEP"
   },
   "no_coherent_target_audit": {
     "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-    "canonical_check_count": 14,
+    "canonical_check_count": 15,
     "counts_as_candidate_failure": false,
     "counts_as_absence_evidence": false,
     "counts_in_scientific_selection_denominator": false,
@@ -177,35 +189,36 @@
   },
   "general_calibration_dimensions": {
     "gate_drift": "LOW",
-    "justification_trace": "STRONG_WITH_DIRECT_BRANCH_IMPLEMENTATION_INSPECTION",
-    "false_positive_control": "GOOD_FAIL_CLOSED_BEHAVIOR_BUT_COMPARATOR_VERIFIER_ENFORCEMENT_DEFECT",
+    "justification_trace": "STRONG; PRIOR DIRECT IMPLEMENTATION AUDIT NOW CANONICALLY ADJUDICATED_BY_R51",
+    "false_positive_control": "GOOD_FAIL_CLOSED_TERMINALIZATION_BUT_FUTURE_VERIFIER_ENFORCEMENT_STILL_TIGHTEN",
     "false_negative_risk": "MODERATE_WATCH",
     "duplicate_guards": "LOW",
     "moving_goalposts": "LOW",
-    "pass_reachability": "REALISTIC_CONDITIONAL",
-    "comparator_calibration": "STRONG_PROSPECTIVE_DESIGN_WITH_INCOMPLETE_MACHINE_ENFORCEMENT",
-    "signal_before_reduction": "TIGHTEN_UNTIL_EQUIVALENCE_BUNDLE_IS_MACHINE_VERIFIED",
-    "claim_type_separation": "GOOD_CURRENT_SYSTEM_ONLY",
+    "pass_reachability": "REALISTIC_CONDITIONAL_BUT_NO_CURRENT_EXECUTABLE_CANDIDATE",
+    "comparator_calibration": "STRONG_PROSPECTIVE_DESIGN; CURRENT_OBJECT_TERMINAL_AFTER_INCOMPLETE_MACHINE_ENFORCEMENT",
+    "signal_before_reduction": "TIGHTEN_UNTIL_VERIFIER_CERTIFICATE_PRECEDES_INTERPRETATION",
+    "claim_type_separation": "GOOD_SYSTEM_ONLY_AND_NON_EVIDENTIARY_SIGNAL_CEILING",
     "research_worthiness_vs_novelty": "CALIBRATED",
-    "external_calibration": "UNCHANGED_FROM_R48",
-    "opportunity_cost": "CONTROLLED_BUT_WATCH",
+    "external_calibration": "R25_SUPPORT_TURNOVER_HORIZON_PRESSURE_APPLIES_TO_FUTURE_EXACT_DECAY_RESOURCE_CLAIMS_ONLY",
+    "opportunity_cost": "CONTROLLED_BY_INTENTIONAL_IDLE_BUT_SUPPLY_STALL_WATCH",
     "mechanism_supply_health": "STALLED_WITH_QUALITY_FLOOR_INTACT",
-    "funnel_observability": "COMPLETE_CANONICAL_POPULATION_32_OF_32_POST_ANALYST_MAIN_EVENT_EXPLICITLY_PENDING",
+    "funnel_observability": "COMPLETE_32_OF_32_WITH_OPENED_SYSTEM_CYCLE_CANONICALLY_TERMINALIZED",
     "preformal_gate_calibration": "SEMANTICALLY_CALIBRATED_EXECUTION_PLUMBING_STILL_TIGHTEN"
   },
   "prospective_recommendations": [
-    "Do not alter global admission, novelty, reduction, comparator, or READY thresholds from this event.",
-    "Do not repair, rerun, retune, or reinterpret the opened R50 cycle under the same authority; require fresh Analyst adjudication and fresh prospective authority for any corrected measurement.",
-    "For future equal-semantics resource comparisons, compute every predeclared trajectory/checkpoint equivalence predicate from execution traces; do not allow literal/by-construction validity flags to authorize downstream reduction or exhaustion interpretation.",
-    "Make the interpreter fail closed unless a complete verifier-certified equivalence bundle is present for each comparator and grid point.",
-    "Decouple mechanical lint/metadata fixes from automatic result-bearing workflow retriggers, or gate result-bearing execution behind explicit one-shot authority binding.",
-    "Keep current candidate #32 SYSTEM-only unless a fresh Analyst changes lifecycle; any future MECHANISM successor must be a fresh object with prospective MECHANISM ceiling."
+    "Do not alter global admission, novelty, comparator, reduction, or READY thresholds from this event.",
+    "Keep candidate #32 terminal; do not rerun, repair, retune, tolerance-relax, add cycle 3, or reinterpret its opened R50 signal as reduction-exhaustion or scientific evidence.",
+    "Do not allocate a same-generation resource-localization successor as an R50 rescue. A later independently motivated successor must receive a fresh object ID and prospective authority.",
+    "For any later equal-semantics resource comparison, compute every contract-required event/fire/ignition/prediction and intermediate eligibility/weight predicate from preserved traces and make the interpreter fail closed unless a complete verifier certificate is present.",
+    "For future exact-decay resource-localization claims, prospectively bind support-turnover/churn, cumulative distinct touched edges, horizon, reset/lifetime semantics, and label any truncation/retirement approximation explicitly.",
+    "Decouple mechanical lint/metadata fixes from result-bearing workflow retriggers or require explicit one-shot authority for result-bearing execution.",
+    "Treat no-target check_count=15 as liveness only and preserve intentional idle rather than manufacturing SYSTEM or relabeled MECHANISM activity."
   ],
   "utility_request": null,
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": "HIGH",
   "questions_for_control_analyst": [
-    "Should the opened R50 cycle be terminalized/HOLD_METHOD_LIMITED for the current object, or may a fresh prospective SYSTEM successor/authority repeat the fixed measurement with an independently computed equivalence verifier?",
-    "Should future result-bearing workflows require an explicit one-shot authority token or non-push dispatch path so mechanical CI repairs cannot implicitly retrigger measurements?"
+    "For later fresh resource objects, should a complete equivalence-verifier certificate be a schema-required prerequisite for interpreter execution rather than only a prospective contract clause?",
+    "Should result-bearing workflows require an explicit one-shot authority token or non-push dispatch path so mechanical branch fixes cannot implicitly retrigger opened measurements?"
   ]
 }
