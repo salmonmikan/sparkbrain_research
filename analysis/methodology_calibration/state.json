@@ -1,24 +1,24 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T16:22:14+09:00",
+  "timestamp": "2026-09-21T17:48:20+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260921T162214+0900-R39-5A7C3E91",
-    "sequence": 39,
+    "generation_id": "METHCAL-20260921T174820+0900-R40-4C8E21A7",
+    "sequence": 40,
     "material_change": true,
-    "material_change_reason": "ANALYST_CANONICALIZED_FOUR_STAGE_FEASIBILITY_AND_OPENED_OUTCOME_BLIND_SYNTHETIC_CONFORMANCE_SUCCESSOR",
-    "supersedes_generation_id": "METHCAL-20260921T152500+0900-R38-6E4B2A91",
+    "material_change_reason": "PHENOMENON_FIRST_SHADOW_SUPPLY_BOUNDARY_OBSERVED_AND_PREFLIGHT_REPAIR_VS_RESULT_BEARING_REPAIR_BOUNDARY_REQUIRES_CLARIFICATION",
+    "supersedes_generation_id": "METHCAL-20260921T162214+0900-R39-5A7C3E91",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T152500+0900-R38-6E4B2A91",
+      "generation_id": "METHCAL-20260921T162214+0900-R39-5A7C3E91",
       "branch": "ops/methodology-calibration-audit",
-      "prior_tip": "f48cc357e96e0597c51ea01c77a71078ef2d2993"
+      "prior_tip": "09b2d37dbd88b04564e1ce1301ba0d35a340d589"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T155941+0900-R38-7C4A91E2",
+      "generation_id": "EVA-20260921T170125+0900-R39-4B7D21C8",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "f3e65e6d0a48d406f99660db714100c42bc6d21a"
+      "commit": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25"
     },
     "control_brain": {
       "generation_id": "CTRL-20260921T145000+0900-R23-4F07AFBF",
@@ -27,10 +27,12 @@
     },
     "strategy_mailbox": {
       "branch": "ops/orchestrator-run-report",
-      "commit": "0c91185ddd93246335ee12c6cb4d7b1148fd7b4d",
-      "generation_id": "MAIN-20260921T161205+0900-PRIMARY-FUNNEL21-BLOCKED-R37POST-9B4D21C7",
+      "commit": "8fec682e899fcb829ead64cb8696503a5ab908a8",
+      "sub_generation_id": "SUB-20260921T174210+0900-NOOP-R39POSTMAINCIFAIL-5E8A21C4",
+      "main_generation_id": "MAIN-20260921T171655+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R39-7E4C21A9",
+      "main_mailbox_commit": "cdee210b67011329818e005c1d5b3a7feaae8f4e",
       "authoritative": false,
-      "relationship_to_fresh_analyst": "PREDATES_ANALYST_R38_BRANCH_PERSISTENCE; NO_POST_R38_MAIN_RESULT_YET"
+      "post_analyst_event": "EXACT_HEAD_CI_35578428792_FAILED_LINT_AT_5527AC14_AND_IS_NOT_YET_ANALYST_CANONICALIZED"
     }
   },
   "authoritative_refs": {
@@ -65,6 +67,7 @@
     "complete_analysis_provenance_binding_for_preformal": "KEEP",
     "synthetic_non_scientific_pipeline_conformance_before_live_preformal": "KEEP",
     "four_stage_pipeline_architecture_feasibility": "KEEP",
+    "pre_conformance_preflight_repair_boundary": "CLARIFY",
     "post_outcome_integrity_adjudication_without_rerun_repair": "KEEP",
     "no_silent_post_outcome_repair": "KEEP",
     "current_object_claim_ceiling": "KEEP",
@@ -82,6 +85,8 @@
     "rolling_one_in_three_theory_backward_supply": "KEEP",
     "theory_backward_quality_floor": "KEEP",
     "no_coherent_mechanism_target": "KEEP",
+    "phenomenon_first_shadow_supply_separation": "KEEP",
+    "shadow_to_mechanism_admission": "INSUFFICIENT_EVIDENCE",
     "system_architecture_testbed_reproducibility_value": "KEEP",
     "causal_comparator_equivalence": "SPLIT_BY_CLAIM_TYPE",
     "equal_privilege_comparator": "KEEP",
@@ -91,25 +96,27 @@
     "methodology_authoritative_reference_trace_accuracy": "KEEP"
   },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_TO_MODERATE: outcome-blind freezing of all analysis-affecting choices plus exact preserved-byte scoring is now canonically required for the fresh conformance successor, but live compliant PRE_FORMAL science has not yet been demonstrated.",
-    "false_negative": "MODERATE_WATCH: viable executable MECHANISM=0 and the open no-target episode is at canonical check 3. No evidence shows a coherent mechanism target is being suppressed; repeated no-delta checks remain excluded from scientific progress denominators.",
-    "duplicate_guards": "LOW: preformal_eligible and READY remain empirically distinct, and the first READY->PRE_FORMAL transition did not require prior scientific success.",
-    "opportunity_cost": "CONTROLLED: the active SYSTEM successor is non-evidentiary, synthetic-only integrity work while no comparably executable MECHANISM is canonical.",
-    "moving_goalpost_risk": "LOW: R33 remains terminal and the stricter integrity implementation is assigned only to a fresh SYSTEM successor; no historical result is rescored or upgraded."
+    "false_positive": "LOW_TO_MODERATE: hard-floor pipeline design is prospectively specified, but live synthetic conformance has still not reached a result-bearing stage and live compliant scientific PRE_FORMAL remains unobserved.",
+    "false_negative": "MODERATE_WATCH: viable executable MECHANISM=0 and the open no-target episode is at canonical check 4. Phenomenon-first shadow scouting broadens supply without lowering the quality floor, but no shadow-to-MECHANISM admission has yet been observed.",
+    "duplicate_guards": "LOW: preformal_eligible and READY remain empirically distinct; shadow ideas are also explicitly separated from canonical MECHANISM admission.",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH: bounded SYSTEM integrity work is legitimate while executable MECHANISM=0; repeated preflight CI repair must not become an unbounded substitute for scientific candidate supply.",
+    "moving_goalpost_risk": "LOW_TO_MODERATE_AT_PREFLIGHT_BOUNDARY: no result-bearing synthetic output has been reached, but repeated same-object CI repairs require an explicit machine-readable boundary so preflight repair cannot later mask output-driven redesign."
   },
-  "moving_goalposts": "LOW",
-  "pass_reachability": "PRE_FORMAL_REACHED_FOUR_STAGE_ARCHITECTURE_CANONICALIZED_FRESH_OUTCOME_BLIND_SYNTHETIC_CONFORMANCE_ACTIVE_LIVE_SCIENTIFIC_PASS_STILL_BLOCKED",
+  "moving_goalposts": "LOW_WITH_PREFLIGHT_BOUNDARY_WATCH",
+  "pass_reachability": "PRE_FORMAL_REACHED; CLEAN_FOUR_STAGE_ARCHITECTURE_FEASIBLE; LIVE_SYNTHETIC_CONFORMANCE_NOT_YET_REACHED_DUE_PREFLIGHT_CI_FAILURE; LIVE_SCIENTIFIC_PASS_BLOCKED_PENDING_FRESH_CONFORMING_PIPELINE",
   "hidden_second_formal_gate": false,
   "claim_type_findings": {
     "claim_ceiling_current_object_only": true,
     "same_object_system_to_mechanism_upgrade_observed": false,
     "system_value_retained": true,
-    "closed_static_integrity_object": "CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01",
     "active_integrity_conformance_object": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
     "active_integrity_conformance_ceiling": "SYSTEM",
-    "active_integrity_conformance_is_non_evidentiary": true
+    "active_integrity_conformance_is_non_evidentiary": true,
+    "retained_shadow_id": "SHADOW-PHENOM-SOURCE-RELIABILITY-ROLE-TRANSFER-01",
+    "retained_shadow_is_canonical_mechanism": false,
+    "retained_shadow_counts_for_one_in_three": false
   },
-  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_M13_S17_NO_VIABLE_EXECUTABLE_MECHANISM_OPEN_NO_TARGET_EPISODE_CHECK3_SYNTHETIC_INTEGRITY_CONFORMANCE_ACTIVE_SMALL_N",
+  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_M13_S17_NO_VIABLE_EXECUTABLE_MECHANISM_OPEN_NO_TARGET_EPISODE_CHECK4_NONCANONICAL_PHENOMENON_SHADOW_RETAINED_SMALL_N",
   "funnel_observability": {
     "canonical_population": 30,
     "classified_population": 30,
@@ -121,8 +128,13 @@
     "preformal_eligible": 0,
     "preformal_ready": 0,
     "policy_conclusions_gated_by_classification_completeness": true,
-    "pending_after_fresh_analyst": [],
+    "pending_post_analyst_events": [
+      "MAIN exact-head CI 35578428792 failed at Lint before readiness/test/validate and is not yet Analyst-canonicalized"
+    ],
     "active_object": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
+    "shadow_generated": 4,
+    "shadow_retained": 1,
+    "shadow_canonical_admissions": 0,
     "methodology_ref_trace_status": "PASS_CURRENT_EXACT_REF_BINDING"
   },
   "preformal_gate_calibration": {
@@ -131,14 +143,15 @@
     "first_ready_to_preformal_empirical_status": "CONSISTENT_WITH_DEVELOPMENT_READINESS",
     "raw_before_score_live_conformance": "FAILED_ON_HISTORICAL_FIRST_PRE_FORMAL; DO_NOT_REPAIR_OR_RERUN_SAME_IDENTITY",
     "four_stage_architecture_feasibility": "CANONICALIZED_TERMINAL_SYSTEM_PREDECESSOR",
-    "current_pipeline_integrity_architecture_status": "FRESH_SYSTEM_SUCCESSOR_ACTIVE_FOR_OUTCOME_BLIND_SYNTHETIC_LIVE_CONFORMANCE_ONLY",
-    "analysis_plan_freeze_scope": "BEFORE_ANY_RESULT_BEARING_SCORING_FREEZE_TRANSFORMATIONS_FILTERS_FEATURES_COMPARATORS_SEEDS_THRESHOLDS_BASELINES_EXCLUSIONS_RESOURCE_RULES_AND_PROVENANCE",
+    "current_pipeline_integrity_architecture_status": "FRESH_SYSTEM_SUCCESSOR_ACTIVE; EXACT_HEAD_CI CURRENTLY_FAILS_IN_PREFLIGHT_LINT_BEFORE_RESULT_BEARING_STAGES",
+    "analysis_plan_freeze_scope": "BEFORE_ANY_RESULT_BEARING_STAGE_FREEZE_TRANSFORMS_FILTERS_FEATURES_COMPARATORS_SEEDS_THRESHOLDS_BASELINES_EXCLUSIONS_RESOURCE_RULES_AND_PROVENANCE",
+    "preflight_repair_boundary": "ALLOW_IN_PLACE_ONLY_IF_MACHINE_CHECKED_RESULT_BEARING_STAGE_REACHED_FALSE_AND_CHANGE_IS_NONANALYSIS_PREFLIGHT_WITH_CHANGED_PATHS_AND_HASHES_RECORDED_AND_REFROZEN; OTHERWISE_TERMINALIZE_AND_FRESHEN",
     "clean_pass_inference": "BLOCKED_PENDING_FRESH_PROSPECTIVE_LIVE_CONFORMANCE_AND_THEN_SEPARATE_FRESH_SCIENTIFIC_PRE_FORMAL"
   },
   "system_priority_exception_audit": {
     "rule": "KEEP",
     "current_used": false,
-    "current_basis": "canonical viable executable MECHANISM=0; active SYSTEM work is bounded synthetic/non-scientific integrity conformance",
+    "current_basis": "canonical viable executable MECHANISM=0; active SYSTEM work is bounded non-evidentiary pipeline conformance",
     "first_genuine_use": "INSUFFICIENT_EVIDENCE",
     "post_hoc_justification_observed": false
   },
@@ -146,12 +159,14 @@
     "rule": "KEEP",
     "open_episode": true,
     "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-    "check_count": 3,
+    "canonical_check_count": 4,
+    "sub_local_no_delta_check_count": 5,
     "escape_hatch_evidence": false,
     "candidate_or_identity_consumption": false,
     "included_in_candidate_conversion_denominator": false,
     "rolling_scientific_selection": "MECHANISM / SYSTEM / SYSTEM = 1/3",
-    "interpretation": "THREE_NO_DELTA_CHECKS_IN_ONE_OPEN_EPISODE; NOT_THREE_INDEPENDENT_SCIENTIFIC_FAILURES_OR_SUCCESSES"
+    "shadow_supply_effect": "RETAINED_PHENOMENON_IS_NONCANONICAL_AND_DOES_NOT_CLOSE_EPISODE_OR_COUNT_AS_MECHANISM_SELECTION",
+    "interpretation": "FOUR_CANONICAL_NO_DELTA_CHECKS_IN_ONE_OPEN_EPISODE; SHADOW_SCOUTING_IS_PRESSURE_RELIEF_NOT_CANONICAL_PROGRESS"
   },
   "classification_completeness": {
     "complete": true,
@@ -162,23 +177,24 @@
   },
   "prospective_recommendations": [
     "Do not change scientific admission, novelty, comparator, reduction, or READY thresholds.",
-    "Keep R33 and the completed static integrity predecessor terminal; never rerun, repair, retune, rescore, or same-object upgrade them.",
-    "Use the fresh SYSTEM successor only for prospectively frozen synthetic/non-scientific conformance. Stop before scientific data, PRE_FORMAL reuse, or same-run science.",
-    "Before any result-bearing scoring, prospectively freeze and provenance-bind every analysis-affecting transformation, filter, feature, comparator, seed, threshold, baseline, exclusion, resource rule, source/package/scorer/workflow hash, runtime/environment/config, and fail-closed deviation condition.",
-    "Require raw-only durable no-clobber preservation plus digest before any scorer read; require the fixed scorer to read only independently re-fetched exact preserved bytes; preserve scored output separately with lineage back to the raw preserve.",
-    "If synthetic conformance requires redesign after output visibility, terminalize the current conformance object and use a fresh successor rather than repairing in place.",
-    "Validate or explicitly map canonical Funnel-v2.1 HOLD enums at producer handoff rather than relying on downstream Analyst normalization.",
-    "Keep no-target episode checks outside candidate/selection/conversion denominators; with check_count 3, continue opportunity-local re-evaluation and require qualitative reframe only when mechanism-surface information materially changes."
+    "Keep R33 terminal; never rerun, repair, retune, rescore, or upgrade that consumed identity.",
+    "Keep phenomenon-first shadow scouting noncanonical. A retained phenomenon must pass a fresh explicit mechanism bridge, ordinary reduction, resource/comparator contract, falsifier, prospective claim ceiling, and Analyst admission before it can become a MECHANISM object.",
+    "Never count a retained shadow as the one-in-three MECHANISM selection or as closure of a NO_COHERENT_MECHANISM_TARGET episode.",
+    "Replace ambiguous output-visibility repair language with a machine-readable result-bearing-stage boundary. Lint/build/import/preflight repair may remain in-place only when no fixture/raw/scorer/metric/classification stage has run and the change is demonstrably non-analysis.",
+    "For every permitted preflight repair record changed paths, old/new hashes, result_bearing_stage_reached=false, and prospectively refreeze affected bindings before retry. Any result-bearing stage reached must terminalize the object before redesign.",
+    "Complete fresh four-stage synthetic conformance before any separate fresh scientific PRE_FORMAL identity is considered.",
+    "Validate or explicitly map canonical Funnel-v2.1 HOLD enums at producer handoff rather than relying on downstream Analyst normalization."
   ],
   "utility_request": {
     "created": false,
-    "reason": "the fresh live synthetic conformance successor is the higher-information methodology path; no separate utility probe is warranted"
+    "reason": "live shadow-supply observation plus the active synthetic conformance rollout are higher-information methodology paths than an additional utility probe"
   },
   "hard_floor_confirmation": {
     "policy": "CONFIRMED_DO_NOT_RELAX",
     "historical_nonconformance": "first live PRE_FORMAL raw-before-score violation remains acknowledged and terminalized",
     "fresh_successor_integrity_scope": "OUTCOME_BLIND_SYNTHETIC_ONLY_NO_R33_REUSE_NO_SCIENTIFIC_DATA",
-    "rerun_or_retune_consumed_identity_observed": false,
+    "current_preflight_repairs_reached_result_bearing_stage": false,
+    "rerun_or_retune_consumed_scientific_identity_observed": false,
     "silent_post_outcome_repair_observed": false,
     "evaluator_target_leakage_observed": false
   },
@@ -186,13 +202,17 @@
     "current_calibration_state": "HIGH",
     "current_authoritative_refs": "HIGH",
     "canonical_funnel_state": "HIGH",
-    "future_synthetic_pipeline_conformance": "INSUFFICIENT_EVIDENCE_UNTIL_EXECUTED",
+    "phenomenon_shadow_separation": "HIGH",
+    "shadow_to_mechanism_admission": "INSUFFICIENT_EVIDENCE",
+    "preflight_repair_boundary": "MODERATE_HIGH",
+    "future_synthetic_pipeline_conformance": "INSUFFICIENT_EVIDENCE_UNTIL_RESULT_BEARING_STAGE_EXECUTES",
     "future_live_scientific_preformal_conformance": "INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_analyst": [
-    "After synthetic conformance, will any redesign triggered by visible conformance output force a fresh successor rather than in-place repair?",
-    "Will a future scientific PRE_FORMAL receive a separate fresh identity and authority after synthetic conformance, rather than inheriting or reusing the R33 identity?",
-    "On the next producer handoff, are noncanonical HOLD enums rejected or explicitly mapped before Analyst ingestion?",
-    "Keep NTE-20260921-R34-POST-REPLAY-v1 as one episode at check_count 3 and outside candidate/selection/conversion denominators unless a material mechanism-surface delta occurs."
+    "Make the preflight-versus-result-bearing boundary machine-readable: did any raw fixture, scorer, metric, or classification stage execute before an in-place repair?",
+    "If result-bearing execution occurs even on synthetic conformance, will redesign force terminalization and a fresh successor rather than another same-object repair?",
+    "Will the retained phenomenon-first shadow remain outside the one-in-three MECHANISM numerator and no-target closure until a fresh falsifiable mechanism object is explicitly admitted?",
+    "If the shadow is promoted later, require a named mechanism bridge and ordinary reduction/comparator/resource/falsifier contract rather than relabeling the phenomenon itself as MECHANISM.",
+    "On the next producer handoff, are noncanonical HOLD enums rejected or explicitly mapped before Analyst ingestion?"
   ]
 }
