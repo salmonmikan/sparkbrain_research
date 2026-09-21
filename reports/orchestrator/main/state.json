@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
-  "producer_run_id": "sparkbrain-main-relay-20260921T164444JST-R38-AUTHBOUND",
-  "produced_at": "2026-09-21T16:44:44+09:00",
-  "execution_mode": "RELAY",
-  "status": "BLOCKED",
-  "authority_scope": "MAIN_RELAY_FUNNEL_V2_1_CONTROL_PLANE_RECONCILIATION_NO_SCIENCE",
-  "analyst_generation_id": "EVA-20260921T162230+0900-R38-8A6D21C9",
-  "analyst_commit": "fbe6074f8ee7dbdc9d5ca00f14c35fa651d6fdb2",
-  "supersedes_generation_id": "MAIN-20260921T161205+0900-PRIMARY-FUNNEL21-BLOCKED-R37POST-9B4D21C7",
-  "consumed_main_generation_id": "MAIN-20260921T161205+0900-PRIMARY-FUNNEL21-BLOCKED-R37POST-9B4D21C7",
+  "generation_id": "MAIN-20260921T171655+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R39-7E4C21A9",
+  "producer_run_id": "sparkbrain-main-primary-20260921T171655JST-R39-PIPECONF",
+  "produced_at": "2026-09-21T17:34:00+09:00",
+  "execution_mode": "PRIMARY",
+  "status": "WAITING_EXTERNAL",
+  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_PIPELINE_CONFORMANCE",
+  "analyst_generation_id": "EVA-20260921T170125+0900-R39-4B7D21C8",
+  "analyst_commit": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
+  "supersedes_generation_id": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
+  "consumed_main_generation_id": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
   "main_lane": "PREFORMAL_OUTCOME_BLIND_FOUR_STAGE_PIPELINE_CONFORMANCE_ARCHITECTURE_CYCLE1",
   "research_layer": "ARCHITECTURE_STUDY",
   "candidate_id": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
-  "cycle_count": 0,
+  "cycle_count": 1,
   "claim_ceiling": "SYSTEM",
   "preformal_eligible": false,
   "preformal_readiness": null,
@@ -24,22 +24,22 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No comparably executable/informative MECHANISM exists; SYSTEM successor directly protects PRE_FORMAL/FORMAL integrity.",
+    "reason_detail": "No comparably executable/informative MECHANISM exists; active SYSTEM successor directly protects PRE_FORMAL/FORMAL integrity.",
     "compared_mechanism_candidate_ids": []
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_tip": "fbe6074f8ee7dbdc9d5ca00f14c35fa651d6fdb2",
-    "orchestrator_tip_before_this_run": "fc861a5bb47850ebb01578fc38053fe58e36d37b",
-    "previous_main_mailbox_commit": "0c91185ddd93246335ee12c6cb4d7b1148fd7b4d",
+    "analyst_tip": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
     "latest_sub_generation": "SUB-20260921T163517+0900-NOOP-R38NOMECH-7B4D21C9",
-    "active_research_branch": null,
-    "active_research_head": null,
+    "active_research_branch": "research/main-outcome-blind-four-stage-pipeline-conformance-arch-20260921",
+    "active_research_head": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
     "active_identity": null,
     "evidence_tags_count": 5,
     "formal_tags": [],
     "sealed_tags": [],
-    "freeze_tags": []
+    "freeze_tags": [],
+    "h5_started_control": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b"
   },
   "research_layer_state": {
     "DISCOVERY": {"state": "OPEN", "M": 0, "S": 0},
@@ -48,35 +48,65 @@
     "FORMAL": {"state": "EMPTY_HOLD", "fresh_one_way_authority": false}
   },
   "prospective_contingency_tree": {
-    "BEFORE_ANY_CONFORMANCE_OUTPUT": "Freeze raw schema/manifest, preserve namespace, all analysis-affecting transformations/filtering/features/comparators/baselines/thresholds/exclusions/resource rules, exact source/package/scorer/workflow hashes, runtime/env/config/seeds, synthetic fixture, fail-closed deviations.",
-    "SYNTHETIC_LIVE_CONFORMANCE_PASS": "STOP_AND_RETURN_TO_FRESH_ANALYST_REVIEW;CURRENT_SYSTEM_OBJECT_CAN_CLOSE_HOLD_SYSTEM_TERMINAL;DO_NOT_REOPEN_R33",
+    "BEFORE_ANY_CONFORMANCE_OUTPUT": "Freeze raw schema/manifest, preserve namespace, all analysis-affecting transforms/filters/features/comparators/baselines/thresholds/exclusions/resource rules, exact source/package/scorer/workflow hashes, runtime/env/config/seeds, synthetic fixture, and fail-closed deviations.",
+    "SYNTHETIC_LIVE_CONFORMANCE_PASS": "STOP_AND_RETURN_TO_FRESH_ANALYST_REVIEW; DO_NOT_REOPEN_R33; NO_SAME_RUN_PREFORMAL_OR_FORMAL",
     "MUTABLE_RAW_OR_UNPRESERVED_SCORER_INPUT": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
     "ANALYSIS_CHOICE_FIXED_AFTER_OUTPUT_VISIBILITY": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
     "LINEAGE_OR_PROVENANCE_INCOMPLETE": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
     "SCIENTIFIC_DATA_OR_R33_REUSE_REQUIRED": "SCOPE_INVALID_STOP",
     "REDESIGN_AFTER_CONFORMANCE_OUTPUT_REQUIRED": "STOP_FRESH_SUCCESSOR_NO_SAME_OBJECT_REPAIR",
-    "SAME_RUN_PREFORMAL_OR_FORMAL": "FORBIDDEN_STOP"
+    "RELAY_FRESH_START": "FORBIDDEN_AUTHORITY_BOUNDARY_STOP"
   },
-  "do_not_touch": [
-    "R33 object CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01: do not rerun, repair, rescore, redesign, or reuse its scientific data",
-    "R37 object CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01: terminal HOLD_SYSTEM_TERMINAL; do not reopen or reinterpret it",
-    "fresh R38 successor must not be started by Relay before PRIMARY starts/hands off the same object",
-    "no scientific data or R33 data in the R38 synthetic conformance cycle",
-    "no PRE_FORMAL rerun or FORMAL action in the same run",
-    "no output-driven redesign or post-output analysis-choice fixing",
-    "FORMAL/TEST/STARTED identities and all consumed one-way identities",
-    "immutable evidence/preserve/control refs and stable main",
-    "SUB independent no-target lane"
+  "implementation_binding": {
+    "contract_generation": "R39-PIPECONF-V1",
+    "synthetic_only": true,
+    "raw_schema_version": 1,
+    "preserve_namespace": "synthetic_preserve/r39_outcome_blind_four_stage/v1",
+    "scored_preserve_namespace": "synthetic_scored_preserve/r39_outcome_blind_four_stage/v1",
+    "analysis_plan": {
+      "transform": "identity",
+      "features": ["values"],
+      "comparator": "none",
+      "baseline": "none",
+      "score": "sum",
+      "threshold": 17,
+      "exclusions": [],
+      "resource_rule": "single_process_stdlib_only"
+    },
+    "runtime": {"os": "ubuntu-latest", "python_versions": ["3.11", "3.13"], "seed": 39001},
+    "workflow_git_blob": "25252b7674d6578ca27366867e6c530ce854053e",
+    "package_git_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
+    "post_output_analysis_changes_allowed": false
+  },
+  "workflows": [
+    {
+      "run_id": 35578056865,
+      "head_sha": "aa3102ee65d8c2cdfb6c59de4ee8b09c843a0450",
+      "kind": "CI_SYNTHETIC_ARCHITECTURE_CONFORMANCE",
+      "status": "completed",
+      "conclusion": "failure",
+      "failure_stage": "lint_before_test_or_conformance_output",
+      "scientific_dispatch": false,
+      "outcome_opened": false
+    },
+    {
+      "run_id": 35578428792,
+      "head_sha": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
+      "kind": "CI_SYNTHETIC_ARCHITECTURE_CONFORMANCE",
+      "status": "in_progress",
+      "conclusion": null,
+      "scientific_dispatch": false
+    }
   ],
-  "workflows": {
-    "scientific": [],
-    "current_run_scientific_dispatch": false,
-    "expected_next_action": "PRIMARY_START_EXACT_R38_NON_EVIDENTIARY_PIPELINE_CONFORMANCE_CYCLE"
+  "observations": {
+    "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY",
+    "terminal_observation": null,
+    "pre_output_ci_blocker": "Initial exact-head CI failed at ruff before Test; no synthetic conformance output was opened.",
+    "pre_output_repair": "Outcome-independent lint-only implementation repair; all analysis-affecting choices unchanged and exact hashes re-frozen before the next conformance attempt."
   },
-  "action": "FRESH_RECONCILIATION_AND_RELAY_AUTHORITY_CHECK_ONLY",
-  "result": "BLOCKED_AT_RELAY_AUTHORITY_BOUNDARY",
+  "ordinary_reductions": "NOT_APPLICABLE_METHOD_INTEGRITY_SYSTEM_OBJECT",
+  "support_breadth": "SYNTHETIC_NON_SCIENTIFIC_FIXTURE_ONLY_R39_PIPELINE_CONFORMANCE",
   "evidentiary_status": {
-    "class": "NON_EVIDENTIARY_CONTROL_PLANE_RECONCILIATION",
     "FORMAL_evidence": 0,
     "PRE_FORMAL_development_evidence": 0,
     "MECHANISM_Architecture_observations": 0,
@@ -94,34 +124,22 @@
   ],
   "consumed_identities_this_run": [],
   "integrity": {
+    "analyst_tip_rechecked_after_final_binding": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
     "stable_main_unchanged": true,
-    "analyst_tip_rechecked_before_mutation": "fbe6074f8ee7dbdc9d5ca00f14c35fa651d6fdb2",
-    "main_lease_rechecked_before_mutation": "MAIN-20260921T161205+0900-PRIMARY-FUNNEL21-BLOCKED-R37POST-9B4D21C7",
-    "orchestrator_tip_rechecked_before_mutation": "fc861a5bb47850ebb01578fc38053fe58e36d37b",
-    "fresh_primary_running_same_object": false,
-    "sub_collision_status": "NO_COLLISION_SUB_R38_IS_NO_TARGET_NO_OP_AND_EXPLICITLY_AVOIDS_MAIN_SYSTEM_SUCCESSOR",
-    "research_branch_modified": false,
-    "scientific_workflow_dispatched": false,
-    "started_created": false,
+    "sub_collision_status": "NO_COLLISION",
+    "scientific_data_used": false,
+    "r33_data_reused": false,
+    "formal_or_preformal_started": false,
+    "started_identity_created": false,
     "immutable_evidence_modified": false,
     "immutable_control_or_preserve_modified": false,
-    "scientific_outcome_opened": false,
-    "new_identity_consumption": 0,
+    "analysis_choices_changed_after_output": false,
     "system_to_mechanism_upgrade": false,
-    "preformal_or_formal_started": false
+    "initial_ci_failure_preceded_conformance_output": true,
+    "repair_was_outcome_independent": true
   },
-  "previous_object_canonical_disposition": {
-    "candidate_id": "CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01",
-    "classification": "HOLD",
-    "claim_ceiling": "SYSTEM",
-    "preformal_eligible": false,
-    "hold_class": "HOLD_SYSTEM_TERMINAL",
-    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-    "queue_state": "NOT_QUEUED",
-    "phenomenon": "FOUR_STAGE_PIPELINE_FEASIBLE"
-  },
-  "stop_reason": "RELAY_AUTHORITY_BOUNDARY_FRESH_R38_SYSTEM_ARCHITECTURE_OBJECT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY",
-  "next_action": "PRIMARY may start only R38's exact prospectively fixed, non-evidentiary outcome-blind four-stage pipeline binding/implementation/synthetic-conformance cycle. Relay may continue only after PRIMARY safely hands off/stops mutating this same object or a started workflow requires already-fixed collection/mechanical continuation. Stop before scientific data, R33 reuse, PRE_FORMAL rerun, FORMAL action, or output-driven redesign.",
+  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_R39_SYNTHETIC_CONFORMANCE",
+  "next_action": "Collect only workflow 35578428792 for exact head 5527ac14d4d19078a91aa40f8825d5a4f41f0a91. If success, record SYNTHETIC_LIVE_CONFORMANCE_PASS and stop for fresh Analyst review. If a frozen fail-closed condition is reached, stop without rescue tuning or same-object redesign. No PRE_FORMAL, FORMAL, R33 reuse, scientific data, or identity action.",
   "utility_request": null,
   "owner": "main"
 }
