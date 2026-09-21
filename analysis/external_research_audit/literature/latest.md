@@ -1,68 +1,73 @@
-# External Literature Reduction Scout — adaptive holdout reuse and benchmark exhaustion
+# External Literature Reduction Scout — selection-aware inference and evidence masking
 
 - schema_version: `2`
-- generation_id: `LIT-20260921T183800+0900-R21-HOLDOUT-EXHAUSTION-4E7C21A9`
-- produced_at: `2026-09-21T18:38:00+09:00`
-- producer_run_id: `external-literature-auto-20260921T183800+0900-R21-4E7C21A9`
+- generation_id: `LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9`
+- produced_at: `2026-09-21T21:30:03+09:00`
+- producer_run_id: `external-literature-auto-20260921T213000+0900-R22-7C4A21E9`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LIT-20260921T153038+0900-R20-BLIND-PROVENANCE-5D2A91C7`
+- supersedes_generation_id: `LIT-20260921T183800+0900-R21-HOLDOUT-EXHAUSTION-4E7C21A9`
 - role: `LITERATURE_REDUCTION_SCOUT`
+- schedule_slot: `21:30 JST`
+- schedule_inference: `false`
 - genuinely_new_information: `true`
 
 ## Inputs / authoritative state
 
-Repository evidence was re-fetched independently from all `ops/*` mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative namespace still contains exactly five annotated `evidence/*` tags and no `formal/*`, `sealed/*`, or tag-based `freeze/*` refs; 13 legacy `freeze/*` branches remain. Preserve families were independently enumerated, including immutable raw-preserve refs for C19-v4, C19-R2, H5, NI01, and PD01. PR #148 and #149 remain open, unmerged, and mergeable.
+Repository evidence was re-fetched independently from all `ops/*` mailboxes immediately before persistence. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; exactly five annotated `evidence/*` tags remain; `formal/*`, `sealed/*`, and tag-form `freeze/*` remain empty; 13 legacy `freeze/*` branches and preserve namespaces were independently rechecked. PR #148/#149 remain open and unmerged. No fresh FORMAL identity or scientific immutable-ref movement was observed.
 
-Consumed control-plane generations:
+Consumed control-plane generations and exact handoff commits:
 
-- Control Brain: `CTRL-20260921T145000+0900-R23-4F07AFBF` @ branch tip `864ed484248fcb3adeac24f4615686eafda9c373`
-- Evidence Analyst: `EVA-20260921T180006+0900-R40-7C4A21E9` @ `cc75b2a7f1c398a393180dfed59305fcc03e7aee`
-- MAIN: `MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8` @ mailbox lineage through `561b844b74eac649efee5b015fd356a2c00d9c50` (`latest.md` commit `0431b1923fbd54a43bb300b0b9d9f578e4b0a399`, `state.json` commit `028d71f3082abcd8e51d42845181b8f008758dcf`)
-- SUB: `SUB-20260921T183349+0900-NOOP-R40POSTMAINPASS-6D4A21C9` @ `f80c82a803bc0972a333922f6815a0764222de55`
-- prior Literature: `LIT-20260921T153038+0900-R20-BLIND-PROVENANCE-5D2A91C7` @ `b33727e9cefa18383679d9b2557388e44565dbcc`
+- Control Brain: `CTRL-20260921T205220+0900-R25-9C4E21A7` @ `e8441362f29e8369c549bf08fb6e32efafe72124` (branch tip observed `835c175de2db7220e22919a3a27c76406b8cef46`)
+- Evidence Analyst: `EVA-20260921T205800+0900-R43-6E2A91C5` @ `5692a1b3f210ae2be2cef80266b6e4fc1c7a14d4`
+- MAIN: `MAIN-20260921T212004+0900-PRIMARY-FUNNEL21-HOLD-R43-6A8C21D5` @ `3087e24d3d3bdbdb768a33ba2a1c3e624777c11f`
+- SUB: `SUB-20260921T203533+0900-NOOP-R42POSTMAIN-METHODHOLD-3C7A21E5` @ `3e77cbae214809d3e08f09d500ab4b661fe1f53b`
+- prior Literature: `LIT-20260921T183800+0900-R21-HOLDOUT-EXHAUSTION-4E7C21A9` @ `e3908aae13ef167c603fa202d2e00bfc99916912`
 
-The material repository/control-plane delta is MAIN R40's successful synthetic-only four-stage conformance run. After an outcome-independent Ruff import-format repair made before any result-bearing stage, exact-head CI `35583071628@168883bd316985537e404c6aad3a7ac03202e28a` passed both Python 3.11 and 3.13 Install/Lint/Local readiness/Test/Validate stages and mapped prospectively to `SYNTHETIC_LIVE_CONFORMANCE_PASS`. This remains non-evidentiary SYSTEM Architecture and is awaiting fresh Analyst canonicalization. SUB subsequently failed closed because this MAIN-owned SYSTEM result is not a mechanism-surface delta.
+The material repository/control-plane delta is now canonical: Evidence Analyst R43 closed `CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01` as `HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`, after MAIN's final prospectively allowed safe-metadata cycle could not machine-check protected-set exposure/feedback semantics. No third rescue is permitted. MAIN R43 is intentionally idle with no current object; SUB remains no-target. This Literature run does not reopen that terminal SYSTEM object.
 
 ## High-value external findings
 
-### 1. Per-run blinding does not solve cross-generation adaptive overfitting to the same holdout
+### 1. An exposure ledger is observability, not by itself a statistical validity mechanism
 
-Dwork et al., *Science* 2015, showed that the usual validity guarantees assume a procedure fixed before data are examined; when new analyses are chosen using results of earlier analyses on the same data, ordinary holdout reuse can generate spurious discoveries. Their reusable-holdout framework exists specifically to make repeated adaptive validation safer (DOI `10.1126/science.aaa9375`).
+Bibaut & Kallus, *Annual Review of Statistics and Its Application* 2025 (DOI `10.1146/annurev-statistics-040522-015431`), review inference after adaptive experiments and show that adaptivity can invalidate the ordinary asymptotic-normal approximations used in nonadaptive settings. Validity requires a method whose guarantees explicitly survive the adaptive process, such as suitable reweighting, always-valid inference, or direct characterization of the distribution induced by adaptivity.
 
-Impact: R20's raw-before-score / outcome-blind scorer freeze protects choices **inside one execution**, but it is not sufficient if later SparkBrain candidates are designed after seeing prior scores from the same scientific holdout. In that case the holdout becomes part of the optimization loop even when every individual run is perfectly preregistered.
+Impact: a future SparkBrain exposure ledger would be valuable because it makes prior protected-set interactions observable, but the ledger alone does not make a later score confirmatory. A clean successor must also bind the inferential regime that turns that recorded adaptivity into a valid claim.
 
-### 2. Repeated score disclosure is itself an information channel; limiting feedback is an established mitigation
+### 2. Independent confirmatory data are a particularly robust floor when candidate generation is opaque
 
-Blum & Hardt's *Ladder* (ICML 2015) formalizes how repeated leaderboard evaluation can overfit the hidden holdout and limits the feedback released after each submission. Nakkiran & Błasiok's Generic Holdout similarly separates exploration data from holdout data and exposes only a restricted pass/fail answer rather than the full degree of fit.
+Goeman & Solari, *Biometrika* 2024 (DOI `10.1093/biomet/asad078`), describe data splitting as a selective-inference construction in which one data part is used for selection and the other for inference. A distinctive property is that the selection procedure can be completely unconstrained as long as it remains independent of the inference part. They also show that basic splitting can be power-inefficient, so this is a robustness floor, not an optimality claim.
 
-Impact: future PRE_FORMAL / FORMAL integrity should account not only for `raw -> preserve -> score` ordering but also **how much information about the protected set is released across candidate generations**. A holdout exposure ledger, a bounded feedback rule, or a fresh confirmatory set are ordinary methodological controls.
+Impact: SparkBrain's candidate generator is distributed across Analyst/Control/MAIN/SUB and literature feedback. If that cross-agent selection mechanism is too complex to model faithfully, a fresh confirmatory set that stayed hidden until candidate/scorer/falsifier binding gives a simple ordinary validity boundary even when the upstream selection algorithm is effectively arbitrary.
 
-### 3. Fresh 2026 empirical evidence shows identical test-set reuse can create measurable performance bias in sequential model selection
+### 3. Reusing protected data requires binding the selection-aware inference mechanism, not merely recording that reuse occurred
 
-Yamanaka, Nakaoka & Shimizu, *Advanced Biomedical Engineering* 15:76-84 (2026), simulated repeated post-market model selection/integration using the same test set and observed performance bias; a differential-privacy-based `Thresholdout_AUC` reduced that bias (DOI `10.14326/abe.15.76`, available on J-STAGE 2026-02-21).
+Fithian, Sun & Taylor's selective-inference framework conditions error guarantees on the fact that a hypothesis/test was selected, while Panigrahi, Fry & Taylor's 2024 *Biometrika* paper (DOI `10.1093/biomet/asae019`) gives exact selective inference under randomized selection for a defined model class. Separately, Grünwald, de Heide & Koolen's *Safe testing* (*JRSS B* 2024, DOI `10.1093/jrsssb/qkae011`) shows e-values can preserve Type-I error guarantees under optional continuation when the e-value construction itself is valid.
 
-Impact: this is not only a theoretical leaderboard concern. Reusing an identical evaluation set while repeatedly selecting new model variants can create optimism even when the test set itself is never used for gradient training. That directly sharpens the bar for any future SparkBrain external-validation or PRE_FORMAL successor whose design has been informed by prior results on the same protected examples.
+Impact: these are prospective alternatives when reuse is scientifically necessary, but none is a generic license for opaque outcome-responsive hypothesis generation. A future contract must state which selection/stopping process the guarantee covers and preserve enough candidate ancestry/feedback metadata to verify those assumptions. If that cannot be represented, fresh independent confirmation is the safer ordinary comparator.
 
-### 4. Modern benchmark work treats repeated testing as a benchmark-exhaustion problem and refreshes/expands the evaluation surface
+### 4. Evidence visibility is a methodological control plane distinct from statistical stopping validity
 
-Prabhu et al., NeurIPS 2024, explicitly describe repeated testing as increasing overfitting risk and propose ever-expanding Lifelong Benchmarks to mitigate `benchmark exhaustion` (DOI `10.52202/079017-2357`).
+Sadibolova & Terhune, *Behavior Research Methods* 2025 (DOI `10.3758/s13428-025-02813-0`), argue that awareness of the current evidence state can itself alter experimenter behavior and protocol, creating an internal-validity confound even apart from the mathematics of optional stopping. They recommend explicit masked/unmasked phases and, where possible, limiting communication to minimal decisions rather than evidence magnitude/direction/trajectory.
 
-Impact: a fresh one-way identity does not automatically make a claim statistically fresh if it keeps querying a scientifically exhausted holdout after prior outcomes have influenced candidate supply. For genuinely confirmatory successors, fresh/rotated samples or a prospectively controlled reusable-holdout protocol are stronger ordinary baselines than unrestricted re-use of a fixed benchmark.
+Impact: in an agentic research loop, full protected-set score trajectories can influence later candidate design even if each individual scorer is preregistered. Future SparkBrain integrity should therefore distinguish `exposure occurred` from `what information was visible to candidate-design agents`. A ledger should record feedback class/visibility, and protected evidence should be masked or reduced to prospectively allowed signals until the next scientific object is fixed.
 
 ## Reduction consequence
 
-This is a **cross-generation evidence-integrity sharpening**, not a scientific novelty uplift and not a reason to retrospectively invalidate any existing immutable evidence without repository proof of adaptive holdout reuse. The current synthetic pipeline conformance result is unaffected because it uses synthetic non-scientific fixtures.
+This is a methodology/integrity sharpening, not a scientific novelty uplift and not evidence that any existing immutable result is invalid. R43's current holdout-exposure object remains terminal because its safe metadata cannot reconstruct the needed semantics; literature does not authorize a third rescue.
 
-For future clean PRE_FORMAL / FORMAL work, the integrity ladder should be interpreted as:
+For a genuinely fresh future PRE_FORMAL successor, the stronger ordinary integrity ladder is:
 
 `development/exploration data`
-→ `outcome-blind per-run analysis/scorer freeze`
+→ `outcome-blind candidate/scorer/falsifier binding`
 → `durable raw-only preserve + exact provenance`
-→ `protected scientific holdout exposure accounting across generations`
-→ `limited-feedback reusable holdout OR fresh/rotated confirmatory set after adaptive candidate selection`
+→ `cross-generation exposure + feedback-visibility ledger`
+→ **either** `fresh independent confirmatory data`
+→ **or** `prospectively specified selection-aware / always-valid reuse regime whose assumptions are machine-checkable`
 → `scored preserve / claim review`
 
-The key distinction is **within-run blindness versus across-run adaptivity**. Both must be controlled for a strong confirmatory interpretation.
+The decisive distinction is that **observability of adaptivity and validity under adaptivity are different requirements**.
+
+No Utility request is created. With no active scientific object and #31 explicitly terminal/no-third-rescue, an implementation request now would manufacture SYSTEM activity rather than test an independently admitted scientific question.
 
 ## Knowledge-flow contract
 
@@ -70,37 +75,37 @@ The key distinction is **within-run blindness versus across-run adaptivity**. Bo
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - CAND_PREFORMAL_OUTCOME_BLIND_FOUR_STAGE_PIPELINE_CONFORMANCE_01
-  - PREFORMAL_CROSS_GENERATION_HOLDOUT_INTEGRITY
-  - SCIENTIFIC_HOLDOUT_EXPOSURE_ACCOUNTING
-  - EXTERNAL_VALIDATION_REUSE_CONTROL
+  - CAND_PREFORMAL_CROSS_GENERATION_HOLDOUT_EXPOSURE_INTEGRITY_01
+  - FUTURE_PREFORMAL_SELECTION_AWARE_VALIDITY
+  - SCIENTIFIC_HOLDOUT_FEEDBACK_VISIBILITY
+  - CROSS_GENERATION_CANDIDATE_ANCESTRY
   - PROGRAMME_EVIDENCE_INTEGRITY
 novelty_or_reduction_impact: >
-  CROSS_GENERATION_HOLDOUT_EXHAUSTION_INTEGRITY_SHARPENING_NO_SCIENTIFIC_NOVELTY_UPLIFT.
-  The four-stage outcome-blind pipeline is a useful within-run integrity floor, but it does not by itself
-  protect statistical validity when successive candidate generations are adaptively chosen after seeing results
-  from the same scientific holdout. Reusable-holdout, limited-feedback, exposure-budget, or fresh/rotated
-  confirmatory-set controls are established ordinary methods for that distinct problem.
+  SELECTION_AWARE_INFERENCE_AND_MASKING_SHARPENING_NO_SCIENTIFIC_NOVELTY_UPLIFT.
+  Exposure accounting is necessary observability but is not itself a validity guarantee.
+  Future confirmatory work must either use protected data independent of candidate selection,
+  or prospectively bind a selection-aware/always-valid reuse mechanism whose assumptions
+  and feedback visibility are machine-checkable.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - explicit development/exploration set separated from protected confirmatory holdout
-  - machine-readable ledger of every scientific holdout exposure and information released
-  - fresh or rotated confirmatory holdout after adaptive candidate selection when feasible
-  - reusable-holdout / Thresholdout-style limited-feedback protocol when protected-set reuse is necessary
-  - keep synthetic infrastructure conformance completely separate from scientific holdout exposure
+  - fresh independent confirmatory set kept hidden until candidate/scorer/falsifier binding
+  - cross-generation exposure ledger that records feedback class and which agents could observe it
+  - explicit candidate-choice ancestry from protected feedback to successor selection
+  - prospectively specified selective-inference/randomized-selection regime when reuse is necessary
+  - always-valid/e-value regime only for the stopping/continuation process actually covered by its guarantee
+  - masked evidence interface exposing only prospectively allowed minimal decisions during candidate generation
 questions_for_evidence_analyst:
-  - After fresh review, canonicalize SYNTHETIC_LIVE_CONFORMANCE_PASS only as SYSTEM/non-evidentiary pipeline integrity, with no scientific uplift?
-  - For future PRE_FORMAL successors, add cross-generation holdout-exposure accounting in addition to per-run raw-before-score/scorer freeze?
-  - If prior protected-set outcomes influenced candidate selection, require a fresh/rotated holdout or prospectively controlled reusable-holdout mechanism before confirmatory interpretation?
+  - Keep #31 terminal/no-third-rescue and treat this only as prospective design guidance?
+  - For a fresh scientific successor, require both exposure observability and an explicit validity regime rather than treating a ledger as sufficient?
+  - Prefer fresh independent confirmation when cross-agent selection ancestry cannot be faithfully represented for selective inference?
 questions_for_control_brain:
-  - Add adaptive holdout reuse / benchmark exhaustion to the evidence-integrity checklist as a separate cross-generation failure mode?
-  - Keep R33 terminal and PRE_FORMAL/FORMAL unchanged; do not use this literature to rehabilitate consumed objects?
-  - Preserve an explicit distinction between synthetic pipeline-conformance fixtures and scientific holdout exposure?
+  - Add `observability != statistical validity` and feedback-visibility masking to the evidence-integrity checklist?
+  - Require future reusable-holdout/selective-inference proposals to state exactly which adaptive choices their guarantee covers?
+  - Keep PRE_FORMAL/FORMAL empty and avoid manufacturing a SYSTEM implementation object solely from this literature?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - R33 Assembly-set PRE_FORMAL execution b907403e972af7df8a6502dfe4c54bdbb0d23475 and canonical NONCONFORMING_RAW_BEFORE_SCORE / HOLD_METHOD_LIMITED disposition
-  - active synthetic conformance research head 168883bd316985537e404c6aad3a7ac03202e28a, exact-head CI 35583071628, and SYNTHETIC_LIVE_CONFORMANCE_PASS observation pending Analyst canonicalization
-  - no retrospective invalidation solely from literature; require repository evidence before asserting adaptive holdout reuse in any consumed evidence line
-  - no second same-object repair, scientific-data reuse, rerun/rescore, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role
+  - R33 terminal NONCONFORMING_RAW_BEFORE_SCORE / HOLD_METHOD_LIMITED disposition
+  - CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01 canonical R43 HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED disposition
+  - no third #31 rescue, retrospective invalidation, protected-outcome reconstruction, rerun/rescore, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, Utility execution, or scheduler change
 utility_request_created: null
 ```
