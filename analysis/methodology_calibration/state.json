@@ -1,121 +1,216 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T11:22:42+09:00",
-  "generation_id": "METHCAL-20260921T112242+0900-R34-9C4E2A71",
-  "produced_at": "2026-09-21T11:22:42+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260921T112242+0900-R34-9C4E2A71",
+  "timestamp": "2026-09-21T12:19:15+09:00",
+  "generation_id": "METHCAL-20260921T121915+0900-R35-6D2A8F41",
+  "produced_at": "2026-09-21T12:19:15+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260921T121915+0900-R35-6D2A8F41",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "METHCAL-20260921T102100+0900-R33-7B2E4C91",
-  "previous_methodology_tip": "27c6d7e7464b322267cb955ebc4914b2e8f60563",
+  "supersedes_generation_id": "METHCAL-20260921T112242+0900-R34-9C4E2A71",
+  "previous_methodology_tip": "7fa1c49edd81ec2e61affa4a2214fa2e377a465c",
   "run_disposition": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
   "input_generations": {
-    "previous_methodology": {"generation_id":"METHCAL-20260921T102100+0900-R33-7B2E4C91","commit":"27c6d7e7464b322267cb955ebc4914b2e8f60563"},
-    "control_brain": {"generation_id":"CTRL-20260921T085000+0900-R21-4F7C2A91","commit":"49ac783b5640b8250c19133f8842f0bf49867e8f"},
-    "evidence_analyst": {"generation_id":"EVA-20260921T105950+0900-R33-5A8C31E7","commit":"f22b345bceab464ac0fd593c11a7b6b99742af4f"},
-    "main_strategy": {"generation_id":"MAIN-20260921T111650+0900-PRIMARY-FUNNEL21-PREFORMAL-ASMSET-R33-4A7C91E2","commit":"96b437574d9a5e06472511773337ef2e0377285f"},
-    "preformal_contract": {"commit":"52e14294d8e413a95c1dad387104bdeaa4468d39"},
-    "preformal_execution": {"head":"b907403e972af7df8a6502dfe4c54bdbb0d23475","workflow_run_id":35554203269,"artifact_id":10618883581,"artifact_digest":"sha256:4cb9e43f7e4af1e85a8468462e34d896e51d7500aebec8e2db4d69886f290472"}
+    "previous_methodology": {
+      "generation_id": "METHCAL-20260921T112242+0900-R34-9C4E2A71",
+      "commit": "7fa1c49edd81ec2e61affa4a2214fa2e377a465c"
+    },
+    "control_brain": {
+      "generation_id": "CTRL-20260921T085000+0900-R21-4F7C2A91",
+      "commit": "49ac783b5640b8250c19133f8842f0bf49867e8f"
+    },
+    "evidence_analyst": {
+      "generation_id": "EVA-20260921T120207+0900-R34-2E7C91A4",
+      "commit": "d5554d45a62d0ef0a20d0443e40b0f4d11c0eea8"
+    },
+    "main_strategy": {
+      "generation_id": "MAIN-20260921T113236+0900-PRIMARY-FUNNEL21-PREFORMAL-ASMSET-R33-HOLD-5E8C31A7"
+    },
+    "sub_strategy": {
+      "generation_id": "SUB-20260921T113509+0900-SYSTEM-OUTREPLAYTIMESHIFT-HOLD-4A7C91E2"
+    },
+    "preformal_execution": {
+      "head": "b907403e972af7df8a6502dfe4c54bdbb0d23475",
+      "workflow_run_id": 35554203269,
+      "artifact_id": 10618883581,
+      "artifact_digest": "sha256:4cb9e43f7e4af1e85a8468462e34d896e51d7500aebec8e2db4d69886f290472"
+    }
   },
   "authoritative_refs_inspected": {
-    "main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_handoff_tip":"49ac783b5640b8250c19133f8842f0bf49867e8f",
-    "evidence_analyst_handoff_tip":"f22b345bceab464ac0fd593c11a7b6b99742af4f",
-    "orchestrator_run_report_tip":"96b437574d9a5e06472511773337ef2e0377285f",
-    "methodology_prewrite_tip":"27c6d7e7464b322267cb955ebc4914b2e8f60563",
-    "research_execution_head":"b907403e972af7df8a6502dfe4c54bdbb0d23475",
-    "evidence_tags_count":5,
-    "formal_tags_count":0,
-    "sealed_tags_count":0,
-    "freeze_tags_count":0
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "control_handoff_tip": "49ac783b5640b8250c19133f8842f0bf49867e8f",
+    "evidence_analyst_handoff_tip": "d5554d45a62d0ef0a20d0443e40b0f4d11c0eea8",
+    "methodology_prewrite_tip": "7fa1c49edd81ec2e61affa4a2214fa2e377a465c",
+    "research_execution_head": "b907403e972af7df8a6502dfe4c54bdbb0d23475",
+    "evidence_tags_count": 5,
+    "formal_tags_count": 0,
+    "sealed_tags_count": 0,
+    "freeze_tags_count": 0
   },
   "material_findings": [
-    "The first Analyst-authoritative READY-to-PRE_FORMAL transition is now observed and is correctly based on a fully specified informative next development test before intervention outcome; HIDDEN_SECOND_FORMAL_GATE remains false.",
-    "Canonical Analyst funnel is 27/27 complete with MECHANISM=13, SYSTEM=14, PRE_FORMAL eligible=1 and READY=1.",
-    "The live PRE_FORMAL binding and workflow preserve exact source/package/runtime/input constraints; the pre-outcome harness rename was zero-content and the exact-source verification step passed.",
-    "The live PRE_FORMAL harness computes discriminators, perturbation-footprint support and terminal classification before writing the combined result artifact. No separate raw-only preserved package exists before scoring/classification, violating the hard-floor raw-before-score execution order.",
-    "The Actions result artifact is digested and preserved after execution, but durable immutable raw-preserve-before-score is not demonstrated in the current authoritative refs."
+    "Fresh Evidence Analyst R34 independently confirms the R33 PRE_FORMAL raw-before-score defect and canonicalizes the object as HOLD/MECHANISM/preformal_eligible=false/HOLD_METHOD_LIMITED/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED.",
+    "The consumed R33 object is explicitly protected from rerun, repair, rescoring or redesign under the same identity; canonical adjudication therefore respects prospective-only methodology and strengthens no-silent-post-outcome-repair evidence.",
+    "A fresh SYSTEM Architecture object is opened only to test prospectively whether future PRE_FORMAL can enforce raw generator -> durable raw preserve/digest -> fixed scorer -> scored preserve; cycle 1 is static/read-only feasibility and does not authorize same-run science or repair.",
+    "Canonical Analyst population is now 29/29 complete with MECHANISM=13 and SYSTEM=16; PRE_FORMAL eligible=0 and READY=0, and the nonconforming PRE_FORMAL result is represented explicitly rather than omitted from the reviewed population.",
+    "A fresh SUB dependency HOLD again used a non-v2.1 producer enum before Analyst normalization, converting producer HOLD enum conformance from an ambiguity watchpoint to a demonstrated gate needing tightening."
   ],
   "gate_by_gate_classifications": {
-    "hard_integrity_floor_policy":"KEEP",
-    "preformal_raw_before_score_execution_order":"TIGHTEN",
-    "preformal_preserve_then_score_pipeline":"TIGHTEN",
-    "preformal_immutable_evidence_durability":"TIGHTEN",
-    "exact_source_package_runtime_input_binding":"KEEP",
-    "pre_outcome_science_invariant_mechanical_packaging_repair":"KEEP",
-    "no_silent_post_outcome_repair":"KEEP",
-    "claim_ceiling_current_object":"KEEP",
-    "same_object_system_to_mechanism_upgrade_ban":"KEEP",
-    "fresh_mechanism_successor_from_system_or_terminal_object":"KEEP",
-    "preformal_eligible_distinct_from_readiness":"KEEP",
-    "preformal_ready_semantics":"KEEP",
-    "first_analyst_authoritative_ready_to_preformal_transition":"KEEP",
-    "hold_multidimensional_model":"KEEP",
-    "hold_field_applicability_mask":"KEEP",
-    "producer_funnel_v2_1_hold_enum_conformance":"CLARIFY",
-    "classification_completeness_applicability_semantics":"KEEP",
-    "classification_completeness_gating":"KEEP",
-    "main_mechanism_priority":"KEEP",
-    "prospective_system_priority_exception":"KEEP",
-    "first_system_priority_exception_use":"INSUFFICIENT_EVIDENCE",
-    "rolling_one_in_three_theory_backward_supply":"KEEP",
-    "theory_backward_quality_floor":"KEEP",
-    "no_coherent_mechanism_target_rule":"KEEP",
-    "repeated_opportunity_local_no_coherent_mechanism_target_use":"KEEP",
-    "no_target_sequence_opportunity_observability":"KEEP",
-    "repeated_no_target_stop_reframe_semantics":"KEEP",
-    "system_value_under_mechanism_priority":"KEEP",
-    "causal_comparator_equivalence_standard":"SPLIT_BY_CLAIM_TYPE",
-    "equal_privilege_comparator_general":"KEEP",
-    "ordinary_reduction_first":"KEEP",
-    "signal_before_strong_claim":"KEEP",
-    "claim_type_separation":"KEEP",
-    "research_worthiness_vs_novelty":"KEEP",
-    "external_validation_competent_reference_for_superiority_novelty":"TIGHTEN",
-    "external_validation_simple_state_machine_reduction_when_relevant":"TIGHTEN",
-    "external_validation_source_cluster_resampling_when_shared_source_units_exist":"TIGHTEN",
-    "historical_immutable_result_interpretation_ceiling":"KEEP",
-    "universal_numeric_readiness_threshold_prohibition":"KEEP",
-    "programme_wide_numeric_support_threshold_prohibition":"KEEP",
-    "legacy_topk_sparse_support":"TIGHTEN"
+    "hard_integrity_floor_policy": "KEEP",
+    "preformal_raw_before_score_execution_order": "TIGHTEN",
+    "preformal_preserve_then_score_pipeline": "TIGHTEN",
+    "preformal_immutable_evidence_durability": "TIGHTEN",
+    "post_outcome_integrity_adjudication_without_rerun_or_repair": "KEEP",
+    "exact_source_package_runtime_input_binding": "KEEP",
+    "pre_outcome_science_invariant_mechanical_packaging_repair": "KEEP",
+    "no_silent_post_outcome_repair": "KEEP",
+    "claim_ceiling_current_object": "KEEP",
+    "same_object_system_to_mechanism_upgrade_ban": "KEEP",
+    "fresh_mechanism_successor_from_system_or_terminal_object": "KEEP",
+    "preformal_eligible_distinct_from_readiness": "KEEP",
+    "preformal_ready_semantics": "KEEP",
+    "first_analyst_authoritative_ready_to_preformal_transition": "KEEP",
+    "hold_multidimensional_model": "KEEP",
+    "hold_field_applicability_mask": "KEEP",
+    "producer_funnel_v2_1_hold_enum_conformance": "TIGHTEN",
+    "classification_completeness_applicability_semantics": "KEEP",
+    "classification_completeness_gating": "KEEP",
+    "main_mechanism_priority": "KEEP",
+    "prospective_system_priority_exception": "KEEP",
+    "first_system_priority_exception_use": "INSUFFICIENT_EVIDENCE",
+    "rolling_one_in_three_theory_backward_supply": "KEEP",
+    "theory_backward_quality_floor": "KEEP",
+    "no_coherent_mechanism_target_rule": "KEEP",
+    "repeated_opportunity_local_no_coherent_mechanism_target_use": "KEEP",
+    "no_target_sequence_opportunity_observability": "KEEP",
+    "repeated_no_target_stop_reframe_semantics": "KEEP",
+    "system_value_under_mechanism_priority": "KEEP",
+    "causal_comparator_equivalence_standard": "SPLIT_BY_CLAIM_TYPE",
+    "equal_privilege_comparator_general": "KEEP",
+    "ordinary_reduction_first": "KEEP",
+    "signal_before_strong_claim": "KEEP",
+    "claim_type_separation": "KEEP",
+    "research_worthiness_vs_novelty": "KEEP",
+    "external_validation_competent_reference_for_superiority_novelty": "TIGHTEN",
+    "external_validation_simple_state_machine_reduction_when_relevant": "TIGHTEN",
+    "external_validation_source_cluster_resampling_when_shared_source_units_exist": "TIGHTEN",
+    "historical_immutable_result_interpretation_ceiling": "KEEP",
+    "universal_numeric_readiness_threshold_prohibition": "KEEP",
+    "programme_wide_numeric_support_threshold_prohibition": "KEEP",
+    "legacy_topk_sparse_support": "TIGHTEN"
   },
   "false_positive_risks": [
-    "Scoring/classifying in the generator process before a separately preserved raw artifact weakens auditability and violates the programme's raw-before-score floor even when formulas are fixed prospectively.",
-    "A retention-limited transport artifact must not silently substitute for the programme's durable raw-preserve anchor if the result is used scientifically.",
-    "Future SYSTEM-over-comparable-MECHANISM work could still be post-hoc justified unless the exception is recorded prospectively.",
-    "Producer-side noncanonical HOLD enums can fragment funnel metrics if not normalized or rejected."
+    "Treating the R33 combined post-score artifact as clean PRE_FORMAL evidence despite the raw-before-score defect would overstate auditability; Analyst now blocks this by method-limited terminalization.",
+    "A future four-stage pipeline that is only documented but not machine-enforced could be mistaken for conformance before live prospective demonstration.",
+    "Producer-side noncanonical HOLD enums can fragment upstream funnel metrics or hide dependency state until Analyst normalization.",
+    "Future SYSTEM-over-comparable-MECHANISM work could still be post-hoc justified unless the exception is recorded prospectively."
   ],
   "false_negative_risks": [
-    "Do not respond to the execution-plumbing defect by requiring prior comparator/reduction success for READY; that would create HIDDEN_SECOND_FORMAL_GATE.",
-    "Do not rerun or retune the current PRE_FORMAL object solely to obtain a cleaner raw-preserve pipeline; prospective correction is the calibrated response.",
-    "Do not universalize exact observational comparator matching across claim types; the R33 claim-type split remains valid."
+    "Do not convert the execution-plumbing defect into a stricter READY requirement for prior comparator/reduction/falsifier success; that would create HIDDEN_SECOND_FORMAL_GATE.",
+    "Do not rerun, retune, repair or rescore the consumed R33 object merely to obtain a clean pipeline; prospective correction belongs to a fresh object.",
+    "Do not suppress bounded SYSTEM integrity Architecture work when no comparable executable MECHANISM exists; it has genuine reproducibility value.",
+    "Do not universalize exact observational comparator matching across claim types."
   ],
-  "moving_goalpost_assessment": {"level":"LOW","finding":"READY and the PRE_FORMAL scientific contract were fixed before intervention outcome; the pre-outcome harness rename changed zero scientific content, and no post-outcome redesign is observed."},
-  "pass_reachability_assessment": {"status":"PRE_FORMAL_REACHED_BUT_PIPELINE_INTEGRITY_DEFECT_BLOCKS_CLEAN_PASS_INFERENCE","finding":"The programme can reach PRE_FORMAL without prior scientific success, but future PASS interpretation requires a conformant raw-only preserve then fixed-score pipeline."},
-  "claim_type_separation_findings": "Healthy. Current object remains set/coalition-level MECHANISM; no individual-unit responsibility or new-principle upgrade is inherited.",
-  "mechanism_supply_health": {"status":"QUALITY_FLOOR_HEALTHY_M13_S14_READY1_PRE_FORMAL_REACHED_SMALL_N","canonical_analyst_population":"MECHANISM=13,SYSTEM=14,27/27_complete","observed_actual_selection_window":"SYSTEM,MECHANISM,SYSTEM","theory_backward_share":"1/3","finding":"A genuine falsifiable mechanism object reached READY/PRE_FORMAL without quota manufacturing; long-run supply remains small-n."},
-  "funnel_observability": {"status":"GOOD_27_OF_27_CANONICAL_PLUS_POST_ANALYST_PREFORMAL_RESULT_PENDING_REVIEW","classification_completeness":"27/27_reviewed_canonical_analyst","candidate_population_excludes_no_target_events":true,"preformal_eligible_count":1,"preformal_ready_count":1,"finding":"Canonical policy conclusions remain gated on the 27/27 Analyst-reviewed population; the later PRE_FORMAL result is not yet a fresh canonical Analyst disposition."},
-  "preformal_gate_calibration": {"status":"READY_SEMANTICS_VALIDATED_EXECUTION_EVIDENCE_ORDERING_NEEDS_TIGHTENING","hidden_second_formal_gate":false,"current_canonical_eligible_count":1,"current_canonical_ready_count":1,"first_ready_to_preformal":"OBSERVED_CONSISTENT_WITH_DEVELOPMENT_READINESS","finding":"The first READY transition occurred after all test-development choices were closed but before intervention outcome; this validates READY semantics while exposing a separate raw-before-score plumbing defect."},
-  "system_priority_exception_audit": {"used_genuine_exception":false,"count_observed_genuine_exception":0,"system_priority_exception_used_current":false,"recorded_before_scientific_execution":"NOT_APPLICABLE_CURRENT_OBJECT_MECHANISM","first_live_use":"INSUFFICIENT_EVIDENCE"},
-  "no_coherent_target_audit": {"exception_code":"NO_COHERENT_MECHANISM_TARGET","current_exception":null,"open_episode_count":0,"finding":"Prior no-target episodes remain opportunity-local and closed when fresh coherent mechanism work emerged; no escape-hatch evidence this run."},
-  "classification_completeness": {"classified_reviewed":27,"material_reviewed_population":27,"ratio_reviewed":1.0,"active_candidate_count":1,"no_target_event_in_candidate_denominator":false,"policy_use":"Use 27/27 Analyst-reviewed canonical population; do not treat the later unreviewed PRE_FORMAL terminal as a canonical conversion row yet."},
-  "stop_reframe_calibration": {"status":"SCIENTIFIC_TERMINAL_MAP_PROSPECTIVE_AND_UNCHANGED_EXECUTION_PIPELINE_ORDER_DEFECT_SEPARATE","finding":"The terminal map was fixed before outcome and no rescue is observed; the material defect is evidence ordering, not stop/reframe semantics."},
+  "moving_goalpost_assessment": {
+    "level": "LOW",
+    "finding": "The outcome was not used to alter the consumed object's comparator, support rule, claim ceiling or terminal map. Fresh Analyst instead records a method-limited terminal and opens a separate prospective SYSTEM integrity object."
+  },
+  "pass_reachability_assessment": {
+    "status": "PRE_FORMAL_REACHED_CLEAN_PASS_PENDING_PROSPECTIVE_PIPELINE_CONFORMANCE",
+    "finding": "READY/PRE_FORMAL admission is empirically reachable without prior success, but a clean future PASS cannot be inferred until a fresh object prospectively demonstrates durable raw-preserve-before-score and fixed-scorer consumption of the exact preserved digest."
+  },
+  "claim_type_separation_findings": "Healthy. The terminal R33 object remains a MECHANISM set/coalition claim; the fresh integrity successor is SYSTEM and is not promoted into scientific mechanism evidence. No same-object SYSTEM-to-MECHANISM upgrade is observed.",
+  "mechanism_supply_health": {
+    "status": "QUALITY_FLOOR_HEALTHY_M13_S16_NO_VIABLE_EXECUTABLE_MECHANISM_CURRENTLY_SMALL_N",
+    "canonical_analyst_population": "MECHANISM=13,SYSTEM=16,29/29_complete",
+    "observed_actual_selection_window": "MECHANISM,SYSTEM,SYSTEM",
+    "theory_backward_share": "1/3",
+    "viable_executable_mechanism": 0,
+    "finding": "Theory-backward floor remains met without weak-object manufacture. Current bounded SYSTEM integrity work is not displacing a comparable MECHANISM; the next new autonomous selection must reassess MECHANISM supply."
+  },
+  "funnel_observability": {
+    "status": "GOOD_29_OF_29_CANONICAL_WITH_PREFORMAL_NONCONFORMANCE_EXPLICITLY_CLASSIFIED",
+    "classification_completeness": "29/29_reviewed_canonical_analyst",
+    "candidate_population_excludes_no_target_events": true,
+    "preformal_eligible_count": 0,
+    "preformal_ready_count": 0,
+    "finding": "The prior post-Analyst PRE_FORMAL result is no longer pending outside the canonical population; it is explicitly classified as terminal HOLD_METHOD_LIMITED, preventing partial-population conversion overinterpretation."
+  },
+  "preformal_gate_calibration": {
+    "status": "READY_SEMANTICS_VALIDATED_EXECUTION_NONCONFORMANCE_CANONICALLY_TERMINAL_FUTURE_PIPELINE_FIX_PENDING",
+    "hidden_second_formal_gate": false,
+    "current_canonical_eligible_count": 0,
+    "current_canonical_ready_count": 0,
+    "first_ready_to_preformal": "OBSERVED_CONSISTENT_WITH_DEVELOPMENT_READINESS",
+    "historical_execution_integrity": "NONCONFORMING_RAW_BEFORE_SCORE",
+    "finding": "First READY transition remains a valid development-readiness example; the subsequent execution defect is separately canonicalized and must not be used to tighten READY itself."
+  },
+  "system_priority_exception_audit": {
+    "used_genuine_exception": false,
+    "count_observed_genuine_exception": 0,
+    "system_priority_exception_used_current": false,
+    "recorded_before_scientific_execution": "NOT_APPLICABLE_NO_COMPARABLE_EXECUTABLE_MECHANISM",
+    "first_live_use": "INSUFFICIENT_EVIDENCE",
+    "finding": "Fresh SYSTEM integrity Architecture is allocated with viable executable MECHANISM=0, so it does not require a priority exception."
+  },
+  "no_coherent_target_audit": {
+    "exception_code": "NO_COHERENT_MECHANISM_TARGET",
+    "current_exception": null,
+    "open_episode_count": 0,
+    "finding": "No current exception. Prior episodes remain opportunity-local; future new autonomous selection must reassess theory-backward MECHANISM supply rather than manufacture a weak object."
+  },
+  "classification_completeness": {
+    "classified_reviewed": 29,
+    "material_reviewed_population": 29,
+    "ratio_reviewed": 1.0,
+    "active_candidate_count": 2,
+    "no_target_event_in_candidate_denominator": false,
+    "policy_use": "Use the 29/29 fresh Analyst-reviewed canonical population; the nonconforming PRE_FORMAL object is included explicitly as terminal method-limited rather than omitted."
+  },
+  "stop_reframe_calibration": {
+    "status": "NONCONFORMING_PREFORMAL_TERMINALIZED_WITHOUT_SAME_OBJECT_RESCUE_FRESH_SYSTEM_INTEGRITY_OBJECT_SEPARATE",
+    "finding": "The programme responded to execution nonconformance by stopping the consumed object and opening a separate SYSTEM architecture object, not by changing the old scientific contract post-outcome."
+  },
   "prospective_recommendations": [
-    "For future PRE_FORMAL, split execution into raw generator -> durable immutable preserve/digest -> fixed scorer consuming that exact digest -> scored preserve.",
-    "Bind scorer version/hash prospectively and prohibit it from selecting targets, controls, surfaces or support rules after raw preservation.",
-    "Do not rerun, retune, repair or rescore the current PRE_FORMAL object solely because this methodology defect was found.",
-    "Keep READY as development/test readiness and do not require prior scientific success.",
-    "Keep current claim ceiling, comparator family, support envelope and terminal mapping frozen after outcome.",
-    "Keep post-R33 result outside canonical funnel conclusions until fresh Analyst review and integrity adjudication."
+    "Keep READY semantics unchanged; the plumbing defect belongs after admission, not inside READY.",
+    "For future PRE_FORMAL, require machine-checkable raw generator -> durable immutable preserve/digest -> prospectively fixed scorer consuming the exact digest -> scored preserve ordering.",
+    "Complete the fresh pipeline-integrity Architecture feasibility cycle as static/read-only work and stop for fresh Analyst review before any implementation or scientific run.",
+    "Do not rerun, retune, repair, rescore, invalidate or upgrade the consumed R33 object solely because the methodology defect was found.",
+    "Prospectively validate producer Funnel-v2.1 HOLD enums and reject or explicitly map noncanonical values before handoff.",
+    "Keep classification-completeness gating, one-in-three quality floor, no-target accounting, and prospective SYSTEM-priority exceptions unchanged."
   ],
-  "utility_request": {"created":false,"status":"NONE","reason":"Live first PRE_FORMAL rollout already supplies higher-information calibration evidence than a synthetic probe."},
-  "hard_floor_confirmation": {"status":"POLICY_CONFIRMED_IMPLEMENTATION_NONCONFORMANCE","do_not_relax":true,"conforming":["prospective scientific binding","exact source/package/runtime/input verification","no observed evaluator/target retuning","no silent post-outcome repair observed"],"nonconforming":["raw-before-score execution order","durable immutable raw-preserve-before-score not demonstrated"],"retrospective_action_forbidden":"NO_RERUN_RETUNE_REPAIR_RESCORE_SOLELY_FOR_METHODOLOGY_CHANGE"},
-  "confidence": {"overall":"HIGH","ready_transition":"HIGH","raw_before_score_defect":"HIGH","current_result_admissibility_until_control_analyst_review":"MODERATE"},
+  "utility_request": {
+    "created": false,
+    "status": "NONE",
+    "reason": "The live prospective pipeline-integrity Architecture path is higher-information than a synthetic calibration probe."
+  },
+  "hard_floor_confirmation": {
+    "status": "POLICY_CONFIRMED_HISTORICAL_IMPLEMENTATION_NONCONFORMANCE_CANONICALLY_ACKNOWLEDGED",
+    "do_not_relax": true,
+    "conforming": [
+      "prospective READY and scientific binding semantics",
+      "exact source/package/runtime/input verification on R33",
+      "fresh Analyst terminalization without same-object rescue",
+      "explicit prohibition on rerun, repair, rescoring and redesign of the consumed R33 identity"
+    ],
+    "nonconforming": [
+      "R33 raw-before-score execution order",
+      "R33 durable immutable raw-preserve-before-score not demonstrated"
+    ],
+    "retrospective_action_forbidden": "NO_RERUN_RETUNE_REPAIR_RESCORE_INVALIDATE_OR_UPGRADE_SOLELY_FOR_METHODOLOGY_CHANGE"
+  },
+  "confidence": {
+    "overall": "HIGH",
+    "canonical_integrity_adjudication": "HIGH",
+    "ready_transition": "HIGH",
+    "raw_before_score_defect": "HIGH",
+    "future_clean_pass_reachability": "MODERATE",
+    "producer_hold_enum_conformance_defect": "HIGH"
+  },
   "questions_for_control_analyst": [
-    "Adjudicate the existing R33 PRE_FORMAL result against the already-existing raw-before-score and durable preserve requirements without rerun or repair.",
-    "Require machine-checkable raw generator -> immutable preserve/digest -> fixed scorer -> scored preserve ordering for future PRE_FORMAL.",
-    "Keep READY semantics unchanged; do not convert the plumbing defect into a hidden prior-success gate.",
-    "Keep the current object and terminal/comparator contract frozen after outcome.",
-    "Continue classification-completeness gating until the post-R33 result is freshly canonicalized."
+    "Keep the R33 PRE_FORMAL object terminal and explicitly NONCONFORMING_RAW_BEFORE_SCORE; do not rerun, repair or rescore it under the same identity.",
+    "Require a machine-checkable raw generator -> durable immutable preserve/digest -> fixed scorer -> scored preserve sequence for future PRE_FORMAL/PASS inference.",
+    "Keep READY as development/test readiness and do not add prior-success requirements because of the execution-plumbing defect.",
+    "Add producer-side Funnel-v2.1 HOLD enum validation so noncanonical values are rejected or explicitly mapped before handoff rather than repaired only at Analyst ingestion.",
+    "Preserve 29/29 classification-completeness gating and keep NO_COHERENT_MECHANISM_TARGET events outside candidate/conversion denominators.",
+    "Keep SYSTEM priority exceptions prospective and machine-readable; the first genuine SYSTEM-over-comparable-MECHANISM use remains unobserved."
   ]
 }
