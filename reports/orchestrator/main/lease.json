@@ -11,10 +11,10 @@
     "sub": "SUB-20260921T143422+0900-NOOP-R36NOMECH-4D7A91C2"
   },
   "execution_mode": "PRIMARY",
-  "status": "ACTIVE",
+  "status": "COMPLETED",
   "started_at": "2026-09-21T15:14:12+09:00",
   "heartbeat_at": "2026-09-21T15:14:12+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-21T15:14:12+09:00",
   "analyst_generation_id": "EVA-20260921T145812+0900-R37-4E8C21A6",
   "analyst_commit": "64c7adf88f807407eb817f3b45d0eb269458f534",
   "analyst_branch_tip_observed": "64c7adf88f807407eb817f3b45d0eb269458f534",
@@ -42,10 +42,11 @@
   "active_branch": null,
   "active_head": null,
   "active_identity": null,
-  "active_step": "STATIC_READ_ONLY_FOUR_STAGE_PIPELINE_FEASIBILITY",
+  "active_step": "STATIC_READ_ONLY_FOUR_STAGE_PIPELINE_FEASIBILITY_COMPLETE",
   "evidentiary_status": "NON_EVIDENTIARY_SYSTEM_ARCHITECTURE",
+  "terminal_observation": "FOUR_STAGE_PIPELINE_FEASIBLE",
   "workflows": [],
-  "stop_reason": null,
-  "next_action": "Statically establish RAW_GENERATOR -> DURABLE_RAW_PRESERVE_DIGEST -> FIXED_SCORER_EXACT_BLOB -> SCORED_PRESERVE feasibility without scientific execution or R33 repair; then stop for fresh Analyst review.",
+  "stop_reason": "R37_STATIC_SYSTEM_TERMINAL_FOUR_STAGE_PIPELINE_FEASIBLE_STOP_FRESH_ANALYST_REVIEW",
+  "next_action": "STOP for fresh Evidence Analyst review. Do not implement the pipeline, reopen R33, execute PRE_FORMAL/FORMAL, create STARTED, preserve new science, or score anything without fresh prospective authority.",
   "owner": "main"
 }
