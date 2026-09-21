@@ -1,20 +1,22 @@
-# MAIN PRIMARY — R41 cross-generation holdout exposure integrity
+# MAIN PRIMARY — R42 cross-generation holdout exposure integrity cycle 2
 
 **schema_version:** `2`  
-**generation_id:** `MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4`  
-**Evidence Analyst:** `EVA-20260921T185902+0900-R41-8D3A21C7 @ ffc8672c01ed0f45b2d0fd998c36706b8a343a91`  
+**generation_id:** `MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4`  
+**Evidence Analyst:** `EVA-20260921T200300+0900-R42-5F8C21A4 @ b8dc2ab5a203547cc9f663cf7fcfe1541091fc8e`  
 **Candidate:** `CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01`  
 **Layer / ceiling:** `ARCHITECTURE_STUDY / SYSTEM`  
-**Lease:** `BLOCKED`
+**Lease:** `COMPLETED`
 
-R41 authorized a static/read-only cycle-1 audit only. Canonical dimensions were preserved exactly: `preformal_eligible=false`, `preformal_readiness=NOT_APPLICABLE`, `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE`, `system_priority_exception.used=false`. No PRE_FORMAL or FORMAL authority exists.
+R42 authorized exactly one final bounded cycle using safe metadata-only endpoints and required STOP before implementation or science. MAIN used only ref/path/directory inventories, non-result manifests, protocol metadata, schema metadata and workflow definitions. No commit/diff/result-bearing endpoint was used, no protected scientific outcome was opened, and the R41 scope-boundary incident did not recur.
 
-Independent repository refresh confirmed stable `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, five authoritative `evidence/*` tags, zero `formal/*`, zero `sealed/*`, zero tag-level `freeze/*`, active research/control/preserve namespaces, and PR #148/#149 still open/unmerged/mergeable. MAIN created no research branch, ran no scientific workflow, consumed no identity, and mutated no scientific/control/preserve/evidence ref.
+The terminal observation is **`SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK`**. V05 metadata does provide useful protected-set boundaries: development seeds `501/502` are explicitly recorded as previously inspected and development-only, while confirmatory seeds are `601-604`, with thresholds frozen before confirmatory inspection and no threshold edits after seed `601`. Phase1 frozen manifests likewise machine-identify non-overlapping dev/test ranges (`100000 + 200` versus `200000 + 1000`).
 
-The metadata-only audit established several partial facts before terminal classification: V05 protocol metadata explicitly separates development seeds `501/502` from confirmatory seeds `601-604` and records the prior inspection of the development pair; the phase1 frozen test manifest machine-identifies a test split by `seed_start`/`episode_count`; and the default-branch one-way formal registration workflow already binds exact source SHA, candidate spec hash, control branch, candidate/freeze/seal/STARTED paths, and artifact root. These are useful building blocks for a prospective exposure ledger, but no terminal feasibility/method-limitation judgment is claimed in this run.
+The residual gap is cross-generation exposure semantics. The phase1 run-manifest schema binds run/source/config/split/command/completion metadata but has no exposure-event or feedback-disclosure fields. The one-way formal registration workflow binds source SHA, candidate hash, control branch, candidate/freeze/seal/STARTED paths and artifact root but has no protected-set exposure event, feedback class/budget, cross-generation candidate-choice ancestry, or fresh/rotation/reuse policy. The stable-main schema inventory also exposes no exposure- or holdout-ledger-named schema. Existing split/provenance metadata therefore cannot machine-check whether later candidate selection depended on prior protected-set feedback.
 
-During evidence-metadata inspection, a GitHub commit endpoint returned result-bearing evidence patch content in addition to the requested commit/file metadata. R41 explicitly forbids reading protected scientific outcomes. Although those returned result fields were not used for any architectural inference or scientific interpretation, MAIN fails closed rather than continue or claim a terminal. The prospective terminal is therefore **not reached**; `SYSTEM_Architecture_observations=0` for this run.
+Per the prospectively fixed R42 contingency, this maps to **`HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NO_THIRD_RESCUE`**. MAIN does not invent the missing canonical lifecycle dimensions: the Analyst's current `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE`, `preformal_eligible=false`, `preformal_readiness=NOT_APPLICABLE`, and `system_priority_exception.used=false` remain preserved exactly until a fresh Analyst canonicalizes the mapped terminal.
 
-**Stop reason:** `R41_SCOPE_INVALID_PROTECTED_OUTCOME_ENDPOINT_OVERRETURN_FAIL_CLOSED_NO_TERMINAL_CLASSIFICATION`.
+No research branch was created or mutated; no scientific workflow, PRE_FORMAL, FORMAL, STARTED, preserve, scoring or identity action occurred. New counts are `FORMAL=0 / PRE_FORMAL=0 / MECHANISM Architecture=0 / SYSTEM Architecture=1 / identity consumption=0`. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative evidence remains five tags with zero `formal/*`, `sealed/*`, or tag-level `freeze/*`.
 
-Next action: fresh Evidence Analyst review. If re-authorized, retry this same static SYSTEM question using only refs, directory/file-path inventory, non-result manifests, protocol metadata, and workflow definitions; do not invoke commit/diff endpoints capable of returning result-bearing evidence patches. Preserve canonical ACTIVE/ACTIVE lifecycle fields unless the Analyst changes them.
+**Stop reason:** `R42_SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK_HOLD_METHOD_LIMITED_NO_THIRD_RESCUE_STOP_FRESH_ANALYST_REVIEW`.
+
+Next action: fresh Evidence Analyst canonicalization. Do not run a third rescue cycle, implement a ledger, execute science, open PRE_FORMAL/FORMAL, or alter existing evidence from this SYSTEM observation without fresh authority.
