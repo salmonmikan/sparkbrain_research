@@ -11,10 +11,10 @@
     "sub": "SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7@4faf5157e68ed8023cc11417f761621da4fcaeb1"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-22T08:14:55+09:00",
   "heartbeat_at": "2026-09-22T08:14:55+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-22T08:14:55+09:00",
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260922T075818+0900-R56-8B3D21F6",
   "analyst_commit": "9639f793a8c3d9733d46fa2d03e12ac889c5ac89",
@@ -43,11 +43,11 @@
   "active_branch": null,
   "active_head": null,
   "active_identity": null,
-  "active_step": "R56_RECONCILING_FRESH_ANALYST_NO_TARGET",
+  "active_step": "R56_INTENTIONAL_NO_TARGET_COMPLETE",
   "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION_INTENTIONAL_IDLE",
   "terminal_observation": null,
   "workflows": [],
-  "stop_reason": null,
-  "next_action": "Reconcile R56 freshness and persist intentional idle without manufacturing a candidate or executing science.",
+  "stop_reason": "R56_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+  "next_action": "Remain intentionally idle until a fresh later Evidence Analyst generation allocates a genuinely new prospective object after a material mechanism-surface delta or independently new non-rescue question/review. Treat R56 H7 claim-scoped methodology calibration and CX01 trigger-isolation findings as non-authorizing inputs only.",
   "owner": "main"
 }
