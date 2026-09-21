@@ -1,22 +1,22 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8",
-  "producer_run_id": "sparkbrain-main-primary-20260921T181649JST-R40-LINTFIX",
-  "produced_at": "2026-09-21T18:27:30+09:00",
+  "generation_id": "MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4",
+  "producer_run_id": "sparkbrain-main-primary-20260921T191520JST-R41",
+  "produced_at": "2026-09-21T19:23:40+09:00",
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_R40_PREFLIGHT_DIAGNOSIS_ONE_BOUNDED_MECHANICAL_FIX_AND_EXACT_HEAD_CI_COLLECTION",
-  "analyst_generation_id": "EVA-20260921T180006+0900-R40-7C4A21E9",
-  "analyst_commit": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
-  "supersedes_generation_id": "MAIN-20260921T174556+0900-RELAY-FUNNEL21-SYSTEM-PIPECONF-R39-CIFAIL-3A7D21E6",
-  "consumed_main_generation_id": "MAIN-20260921T174556+0900-RELAY-FUNNEL21-SYSTEM-PIPECONF-R39-CIFAIL-3A7D21E6",
-  "main_lane": "PREFORMAL_OUTCOME_BLIND_FOUR_STAGE_PIPELINE_CONFORMANCE_PREFLIGHT_DIAGNOSIS_R40",
+  "status": "BLOCKED",
+  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_R41_STATIC_READ_ONLY_CROSS_GENERATION_HOLDOUT_EXPOSURE_INTEGRITY",
+  "analyst_generation_id": "EVA-20260921T185902+0900-R41-8D3A21C7",
+  "analyst_commit": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91",
+  "supersedes_generation_id": "MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8",
+  "consumed_main_generation_id": "MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8",
+  "main_lane": "PREFORMAL_CROSS_GENERATION_HOLDOUT_EXPOSURE_INTEGRITY_ARCHITECTURE_STATIC_CYCLE1",
   "research_layer": "ARCHITECTURE_STUDY",
-  "candidate_id": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
+  "candidate_id": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
   "cycle_count": 1,
   "claim_ceiling": "SYSTEM",
   "preformal_eligible": false,
-  "preformal_readiness": null,
+  "preformal_readiness": {"status": "NOT_APPLICABLE"},
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "ACTIVE",
@@ -24,15 +24,15 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No comparably executable/informative MECHANISM exists; R40 reports viable executable MECHANISM=0 and authorizes this SYSTEM preflight-integrity continuation.",
+    "reason_detail": "No comparably executable/informative MECHANISM exists; active SYSTEM integrity object protects future PRE_FORMAL/FORMAL evidence validity.",
     "compared_mechanism_candidate_ids": []
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_tip": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
-    "latest_sub_generation": "SUB-20260921T174210+0900-NOOP-R39POSTMAINCIFAIL-5E8A21C4",
-    "active_research_branch": "research/main-outcome-blind-four-stage-pipeline-conformance-arch-20260921",
-    "active_research_head": "168883bd316985537e404c6aad3a7ac03202e28a",
+    "analyst_tip": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91",
+    "latest_sub_generation": "SUB-20260921T183349+0900-NOOP-R40POSTMAINPASS-6D4A21C9",
+    "target_research_branch": null,
+    "target_research_head": null,
     "active_identity": null,
     "evidence_tags_count": 5,
     "formal_tags": [],
@@ -41,8 +41,7 @@
     "h5_started_control": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
     "pr_148": "OPEN_UNMERGED_MERGEABLE",
-    "pr_149": "OPEN_UNMERGED_MERGEABLE",
-    "rulesets_count": 0
+    "pr_149": "OPEN_UNMERGED_MERGEABLE"
   },
   "research_layer_state": {
     "DISCOVERY": {"state": "OPEN", "M": 0, "S": 0},
@@ -51,95 +50,37 @@
     "FORMAL": {"state": "EMPTY_HOLD", "fresh_one_way_authority": false}
   },
   "prospective_contingency_tree": {
-    "EXACT_LINT_DIAGNOSTIC_PREFLIGHT_ONLY": "ONE_BOUNDED_SCIENCE_INVARIANT_MECHANICAL_CORRECTION_REFREEZE_AND_EXACT_HEAD_CI",
-    "SYNTHETIC_LIVE_CONFORMANCE_PASS": "STOP_AND_RETURN_TO_FRESH_ANALYST_REVIEW; NO_SAME_RUN_PREFORMAL_OR_FORMAL",
-    "RESULT_BEARING_STAGE_REACHED_BEFORE_REPAIR": "NO_SAME_OBJECT_REPAIR_STOP",
-    "ANALYSIS_AFFECTING_CHANGE_REQUIRED": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
-    "EXACT_DIAGNOSTIC_UNAVAILABLE": "STOP_DO_NOT_GUESS",
-    "POST_REPAIR_CI_ANY_TERMINAL": "STOP_AFTER_COLLECTION_FOR_FRESH_ANALYST_REVIEW"
+    "EXPOSURE_LEDGER_AND_POLICY_FEASIBLE_WITH_CURRENT_METADATA": "STOP_AND_RETURN_TO_FRESH_ANALYST_REVIEW; CURRENT_OBJECT_SYSTEM_TERMINAL; NO_SAME_RUN_IMPLEMENTATION_OR_SCIENCE",
+    "CURRENT_METADATA_ALREADY_EXPLICITLY_SUFFICIENT": "STOP_AND_RETURN_TO_FRESH_ANALYST_REVIEW; HOLD_SYSTEM_TERMINAL",
+    "PROTECTED_SET_IDENTITY_OR_FEEDBACK_EXPOSURE_NOT_MACHINE_CHECKABLE": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
+    "REQUIRES_READING_PROTECTED_OUTCOMES_OR_SCIENTIFIC_DATA": "SCOPE_INVALID_STOP",
+    "WOULD_REQUIRE_RETROACTIVE_INVALIDATION_OF_EXISTING_EVIDENCE": "STOP_NO_RETROACTIVE_INFERENCE_WITHOUT_INDEPENDENT_REPOSITORY_EVIDENCE"
   },
-  "implementation_binding": {
-    "contract_generation": "R39-PIPECONF-V1",
-    "synthetic_only": true,
-    "raw_schema_version": 1,
-    "preserve_namespace": "synthetic_preserve/r39_outcome_blind_four_stage/v1",
-    "scored_preserve_namespace": "synthetic_scored_preserve/r39_outcome_blind_four_stage/v1",
-    "analysis_plan": {
-      "transform": "identity",
-      "features": ["values"],
-      "comparator": "none",
-      "baseline": "none",
-      "score": "sum",
-      "threshold": 17,
-      "exclusions": [],
-      "resource_rule": "single_process_stdlib_only"
-    },
-    "runtime": {"os": "ubuntu-latest", "python_versions": ["3.11", "3.13"], "seed": 39001},
-    "workflow_git_blob": "25252b7674d6578ca27366867e6c530ce854053e",
-    "package_git_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
-    "post_output_analysis_changes_allowed": false,
-    "r40_mechanical_repair": {
-      "diagnostic": "Ruff I001 import block un-sorted or un-formatted at scripts/outcome_blind_raw_generator.py:1:1",
-      "result_bearing_stage_reached_before_repair": false,
-      "changed_paths": [
-        "scripts/outcome_blind_raw_generator.py",
-        "analysis/orchestrator/r39_pipeline_conformance/contract.json"
-      ],
-      "raw_generator_change": "remove one extra blank line after the standard-library import block; no executable semantics changed",
-      "raw_generator_sha256_before": "29c96a30ac7419249be35b8dfe5eeeff0755f1ea9621e4d4bfbae4e0a68ed22e",
-      "raw_generator_sha256_after": "a0358140d48c0ea9177f7290dacef77236d7e3fbf7b8ae7385d18fd847d3252f",
-      "contract_change": "refreeze only the raw-generator SHA256 to the mechanically formatted blob",
-      "analysis_choices_changed": false,
-      "research_commit": "168883bd316985537e404c6aad3a7ac03202e28a"
-    }
-  },
-  "workflows": [
-    {
-      "run_id": 35578056865,
-      "head_sha": "aa3102ee65d8c2cdfb6c59de4ee8b09c843a0450",
-      "kind": "CI_SYNTHETIC_ARCHITECTURE_CONFORMANCE",
-      "status": "completed",
-      "conclusion": "failure",
-      "failure_stage": "lint_before_test_or_conformance_output",
-      "scientific_dispatch": false,
-      "outcome_opened": false
-    },
-    {
-      "run_id": 35578428792,
-      "head_sha": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
-      "kind": "CI_SYNTHETIC_ARCHITECTURE_CONFORMANCE",
-      "status": "completed",
-      "conclusion": "failure",
-      "failure_stage": "lint_before_local_readiness_test_or_conformance_output",
-      "exact_diagnostic": "Ruff I001 at scripts/outcome_blind_raw_generator.py:1:1; one formatting error fixable by organizing imports",
-      "scientific_dispatch": false,
-      "outcome_opened": false
-    },
-    {
-      "run_id": 35583071628,
-      "head_sha": "168883bd316985537e404c6aad3a7ac03202e28a",
-      "kind": "CI_SYNTHETIC_ARCHITECTURE_CONFORMANCE_AFTER_R40_BOUNDED_PREFLIGHT_FIX",
-      "status": "completed",
-      "conclusion": "success",
-      "observed_steps": "Python 3.11 and 3.13 both passed Install, Lint, Local readiness, Test, and Validate bundle",
-      "scientific_dispatch": false,
-      "terminal_mapping": "SYNTHETIC_LIVE_CONFORMANCE_PASS"
-    }
-  ],
+  "workflows": [],
   "observations": {
-    "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY",
-    "terminal_observation": "SYNTHETIC_LIVE_CONFORMANCE_PASS",
-    "exact_lint_diagnosis": "Confirmed from exact Python 3.11 job log: Ruff 0.16.8 I001 import block un-sorted or un-formatted in scripts/outcome_blind_raw_generator.py; Local readiness/Test/Validate had not run, so no result-bearing stage had been reached.",
-    "mechanical_repair": "Applied exactly one outcome-independent formatting correction and refroze its SHA256; no fixture/raw schema/transform/features/comparator/baseline/scorer/threshold/exclusion/resource/runtime/input/terminal mapping changed.",
-    "post_repair_ci_result": "Exact-head workflow 35583071628 completed success; both Python matrix jobs passed Lint, Local readiness, Test, and Validate bundle. Under the R40 prospective tree this maps to SYNTHETIC_LIVE_CONFORMANCE_PASS and requires stop for fresh Analyst review."
+    "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_SCOPE_INVALID_NO_TERMINAL_OBSERVATION",
+    "terminal_observation": null,
+    "partial_static_characterization": [
+      "Stable-main V05 protocol metadata explicitly distinguishes development seeds 501/502 from confirmatory seeds 601-604 and records that 501/502 were inspected before retained execution.",
+      "A stable-main phase1 test manifest machine-identifies a frozen test split by seed_start and episode_count; tests enforce development/test disjointness.",
+      "The default-branch one-way formal registration workflow binds exact source SHA, candidate spec hash, control branch, candidate path, freeze manifest path, seal path, STARTED marker path, and artifact root.",
+      "Independent ref refresh confirms five evidence tags, no formal/sealed/freeze tags, and existing control/preserve namespaces with explicit identity-bearing ref names.",
+      "Before a valid terminal could be assigned, a GitHub commit-inspection endpoint over-returned result-bearing evidence content while MAIN was auditing evidence metadata. That content is excluded from all architectural inference and no scientific interpretation was performed. Because R41 explicitly forbids reading protected scientific outcomes, MAIN fails closed rather than claiming feasibility or method limitation from this attempt."
+    ],
+    "scope_integrity_incident": {
+      "type": "CONNECTOR_ENDPOINT_OVERRETURN_OF_RESULT_BEARING_EVIDENCE_PATCH",
+      "requested_purpose": "inspect evidence commit metadata/file inventory only",
+      "protected_outcome_content_used_for_decision": false,
+      "response_after_incident": "STOP_FAIL_CLOSED_NO_TERMINAL_CLASSIFICATION"
+    }
   },
-  "ordinary_reductions": "NOT_APPLICABLE_METHOD_INTEGRITY_SYSTEM_OBJECT",
-  "support_breadth": "SYNTHETIC_NON_SCIENTIFIC_FIXTURE_ONLY_R39_PIPELINE_CONFORMANCE",
+  "ordinary_reductions": "UNRESOLVED_DUE_SCOPE_INVALID_STOP",
+  "support_breadth": "STATIC_REPOSITORY_METADATA_ONLY_UNTIL_SCOPE_STOP",
   "evidentiary_status": {
     "FORMAL_evidence": 0,
     "PRE_FORMAL_development_evidence": 0,
     "MECHANISM_Architecture_observations": 0,
-    "SYSTEM_Architecture_observations": 1,
+    "SYSTEM_Architecture_observations": 0,
     "new_identity_consumption": 0
   },
   "consumed_identities": [
@@ -153,28 +94,33 @@
   ],
   "consumed_identities_this_run": [],
   "integrity": {
-    "analyst_tip_rechecked_before_acquisition": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
-    "analyst_tip_rechecked_immediately_before_research_mutation": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
-    "analyst_tip_rechecked_before_terminal_persistence": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
-    "research_branch_head_before_mutation": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
-    "research_branch_head_after_mutation": "168883bd316985537e404c6aad3a7ac03202e28a",
-    "exact_head_ci_collected": true,
-    "stable_main_unchanged": true,
+    "analyst_tip_rechecked_before_acquisition": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91",
+    "analyst_generation_rechecked_before_terminal_persistence": "EVA-20260921T185902+0900-R41-8D3A21C7",
+    "analyst_tip_rechecked_before_terminal_persistence": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91",
+    "orchestrator_tip_after_lease_acquisition": "886efbd8dd8a77db13baa01051aa39c3b34fde9c",
+    "stable_main_rechecked": true,
+    "research_refs_rechecked": true,
+    "evidence_refs_rechecked": true,
+    "control_refs_rechecked": true,
+    "preserve_refs_rechecked": true,
+    "pr_148_149_rechecked": true,
+    "workflow_inventory_rechecked": true,
     "sub_collision_status": "NO_COLLISION",
-    "scientific_data_used": false,
-    "r33_data_reused": false,
-    "formal_or_preformal_started": false,
+    "scientific_workflow_dispatched": false,
+    "scientific_protocol_executed": false,
+    "preformal_or_formal_started": false,
     "started_identity_created": false,
     "immutable_evidence_modified": false,
     "immutable_control_or_preserve_modified": false,
-    "analysis_choices_changed_after_output": false,
+    "research_branch_mutated": false,
+    "stable_main_unchanged": true,
     "system_to_mechanism_upgrade": false,
-    "conformance_output_opened_before_repair": false,
-    "bounded_mechanical_fix_count": 1,
-    "further_same_run_repair_authorized": false
+    "retroactive_evidence_invalidation_attempted": false,
+    "protected_outcome_content_used_for_architecture_decision": false,
+    "scope_fail_closed": true
   },
-  "stop_reason": "R40_SYNTHETIC_LIVE_CONFORMANCE_PASS_STOP_FRESH_ANALYST_REVIEW",
-  "next_action": "Fresh Evidence Analyst must consume the R40 SYSTEM Architecture conformance observation and canonicalize disposition or allocate a fresh successor. Do not continue this object in the same run; no PRE_FORMAL, FORMAL, second repair, scientific-data reuse, identity action, or SYSTEM-to-MECHANISM upgrade.",
+  "stop_reason": "R41_SCOPE_INVALID_PROTECTED_OUTCOME_ENDPOINT_OVERRETURN_FAIL_CLOSED_NO_TERMINAL_CLASSIFICATION",
+  "next_action": "Fresh Evidence Analyst review is required. If this SYSTEM object is re-authorized, repeat the static audit using path/ref/manifests/workflow metadata only and do not invoke commit/diff endpoints that can return result-bearing evidence patches. Preserve the current canonical ACTIVE/ACTIVE hold dimensions until Analyst canonicalizes otherwise.",
   "utility_request": null,
   "owner": "main"
 }
