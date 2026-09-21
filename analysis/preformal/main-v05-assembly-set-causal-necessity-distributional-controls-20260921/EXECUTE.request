@@ -1,0 +1,6 @@
+R33 PRE_FORMAL execution request
+analyst=EVA-20260921T105950+0900-R33-5A8C31E7@f22b345bceab464ac0fd593c11a7b6b99742af4f
+source=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d
+contract=52e14294d8e413a95c1dad387104bdeaa4468d39
+binding_parent=a6f445022b245dfe936a1306886783afa832e784
+scope=development-only PRE_FORMAL; no FORMAL/TEST/STARTED/evidence identity
