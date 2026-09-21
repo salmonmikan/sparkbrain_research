@@ -1,24 +1,23 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
-  "produced_at": "2026-09-21T23:03:54+09:00",
-  "producer_run_id": "control-brain-auto-20260921T2250JST-R26",
+  "generation_id": "CTRL-20260922T010052+0900-R27-5C8A21F4",
+  "produced_at": "2026-09-22T01:00:52+09:00",
+  "producer_run_id": "control-brain-auto-20260922T0050JST-R27",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "CTRL-20260921T205220+0900-R25-9C4E21A7",
-  "programme_position": "FORMAL_HOLD_WITH_INTENTIONAL_LOWER_FUNNEL_IDLE_NO_COHERENT_TARGET",
+  "supersedes_generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
+  "programme_position": "FORMAL_HOLD_WITH_ACTIVE_SYSTEM_ARCHITECTURE_NO_VIABLE_MECHANISM",
   "input_generations": {
-    "human_directives_branch": "ops/human-directives@00f63196873bb4248f37e5f685f5be0363c3d6ab",
-    "evidence_analyst": "EVA-20260921T220541+0900-R44-7A3C21E8@fca9a4b0adb259b76a518605f611ff79e0c48680",
-    "main": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
-    "sub": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
+    "human_directives_branch": "ops/human-directives@6dc3996e12526332dbb7b8b7a248322a02b19078",
+    "evidence_analyst": "EVA-20260922T002600+0900-R48-8C4A21F6@86290dcbd85a45e89acc56263685cd9338963726",
+    "main": "MAIN-20260922T004648+0900-RELAY-FUNNEL21-SYSTEM-LOCALIZE-R48-AUTHBOUND-8C4A21F6@2277bc5838eeff4d629a33f6e85d663b805c6b60",
+    "sub": "SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6",
     "literature": "LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9",
     "audit": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
-    "methodology": "METHCAL-20260921T222227+0900-R45-B7E2C491",
-    "steward": "STEWARD-20260921T195000+0900-G7-7D2C91A4",
+    "methodology": "METHCAL-20260922T001704+0900-R47-6C3A91E8@40409c9376c8ca345c8b2e8cf817e969f532ee51",
+    "steward": "STEWARD-20260921T195000+0900-G7-7D2C91A4@49dd571e802887637ecaea8071e2a695dda00a8c",
     "utility_assignment": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "utility_worker": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
-    "scheduler_registry_manifest": "ops/scheduler-registry@scheduler_registry/current/manifest.json#6f7fa138b09b093613e8eb98b18559ea94e16b59",
-    "previous_control": "CTRL-20260921T205220+0900-R25-9C4E21A7@835c175de2db7220e22919a3a27c76406b8cef46"
+    "utility_worker": "UTILITY-20260921T232215+0900-AUTO-REGISTRY-RECON-COMPLETED-6F2A9C41",
+    "previous_control": "CTRL-20260921T230354+0900-R26-8D4C21A7@0e38771af4dacefab079a9389dece4c6a48f1240"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -32,77 +31,40 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
-    "formal_tags": [],
-    "sealed_tags": [],
-    "freeze_tags": [],
-    "legacy_freeze_branch_count": 13
+    "immutable_ref_incident": false
   },
   "human_directive_dispositions": [
-    {
-      "directive": "HUMAN-20260918-001",
-      "disposition": "ACCEPT"
-    },
-    {
-      "directive": "HUMAN-20260919-002",
-      "disposition": "ACCEPT"
-    },
-    {
-      "directive": "HUMAN-20260919-003",
-      "disposition": "ACCEPT"
-    },
-    {
-      "directive": "HUMAN-20260921-004",
-      "disposition": "MODIFY_AND_ACCEPT_BOUNDED_AUTONOMOUS_UTILITY"
-    },
+    {"directive": "HUMAN-20260918-001", "disposition": "ACCEPT"},
+    {"directive": "HUMAN-20260919-002", "disposition": "ACCEPT"},
+    {"directive": "HUMAN-20260919-003", "disposition": "ACCEPT"},
+    {"directive": "HUMAN-20260921-004", "disposition": "MODIFY_AND_ACCEPT_BOUNDED_AUTONOMOUS_UTILITY"},
     {
       "directive": "USER-20260921-UTILITY-AUTONOMY-APPROVAL",
-      "disposition": "ACCEPT_APPLIED",
-      "detail": "User explicitly approved scheduler proposal SCHED-UTILITY-AUTONOMY-20260921-01. Live Utility prompt now permits bounded one-task AUTONOMOUS_IDLE mode while schedule remains hourly :25 JST. No post-change Utility run has yet been observed in durable state."
+      "disposition": "ACCEPT_APPLIED_AND_FIRST_DURABLE_RUN_VALIDATED",
+      "detail": "First observed AUTONOMOUS_IDLE run selected one bounded read-only registry diagnostic, remained NON_EVIDENTIARY, did not touch candidate typing, identities, scientific workflows, schedulers or research branches, and stopped at max_runs=1."
     }
   ],
   "funnel_v2_1": {
-    "material_candidates_total": 31,
-    "claim_ceiling_counts": {
-      "MECHANISM": 13,
-      "SYSTEM": 18
-    },
-    "classification_completeness": {
-      "complete": 31,
-      "total": 31,
-      "rate": 1.0
-    },
-    "discovery_dispositions": {
-      "REJECT": 2,
-      "HOLD_SYSTEM_TERMINAL": 1,
-      "HOLD_MECHANISM_UNRESOLVED": 1
-    },
+    "material_candidates_total": 32,
+    "claim_ceiling_counts": {"MECHANISM": 13, "SYSTEM": 19},
+    "classification_completeness": {"complete": 32, "total": 32, "rate": 1.0},
+    "discovery_dispositions": {"REJECT": 2, "HOLD_SYSTEM_TERMINAL": 1, "HOLD_MECHANISM_UNRESOLVED": 1},
     "rolling_theory_backward": {
-      "actual_scientific_selections": [
-        "MECHANISM",
-        "SYSTEM",
-        "SYSTEM"
-      ],
+      "actual_scientific_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
       "share": "1/3",
       "qualifying_count": 1,
       "window_size": 3,
       "no_target_exception": {
         "code": "NO_COHERENT_MECHANISM_TARGET",
         "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-        "analyst_canonical_check_count": 9,
-        "sub_local_check_count": 10,
+        "analyst_canonical_check_count": 11,
         "counts_as_selection": false,
-        "interpretation": "LIVENESS_ONLY_NOT_ABSENCE_EVIDENCE"
+        "interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
       }
     },
     "architecture": {
-      "active": {
-        "MECHANISM": 0,
-        "SYSTEM": 0
-      },
-      "queued": {
-        "MECHANISM": 0,
-        "SYSTEM": 0
-      },
+      "active": {"MECHANISM": 0, "SYSTEM": 1},
+      "queued": {"MECHANISM": 0, "SYSTEM": 0},
       "dispositions": {
         "REJECT": 0,
         "HOLD_SYSTEM_TERMINAL": 7,
@@ -111,38 +73,47 @@
         "HOLD_MECHANISM_UNRESOLVED": 1
       }
     },
-    "terminal_state_counts": {
-      "ACTIVE": 0,
-      "NONTERMINAL_HOLD": 1,
-      "TERMINAL_FOR_CURRENT_OBJECT": 30
-    },
+    "terminal_state_counts": {"ACTIVE": 1, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 30},
     "preformal_eligible_count": 0,
     "preformal_ready_count": 0,
     "viable_mechanism_candidate_count": 0,
-    "recent_main_cycles": {
-      "SYSTEM": 9,
-      "MECHANISM": 3,
-      "time_split": "UNAVAILABLE_DO_NOT_USE_RUN_COUNT_AS_TIME_PROXY"
-    },
+    "recent_main_cycles": {"SYSTEM": 9, "MECHANISM": 3, "time_split": "UNAVAILABLE_DO_NOT_USE_RUN_COUNT_AS_TIME_PROXY"},
     "system_priority_exception_count": 0,
     "system_priority_exception_reasons": [],
-    "active_canonical_candidate": null,
+    "active_canonical_candidate": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
     "phenomenon_shadow": {
       "trigger_active": true,
-      "current_generated": 0,
-      "current_retained": 0,
-      "cumulative_generated": 4,
-      "current_retained_total": 0,
-      "canonical_admissions": 0,
-      "executions": 0
+      "cumulative_generated": 5,
+      "currently_retained": 0,
+      "later_canonical_admissions": 1,
+      "executions": 0,
+      "quota_credit": false
     }
+  },
+  "active_candidate": {
+    "id": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
+    "layer": "ARCHITECTURE_STUDY",
+    "candidate_source": "PHENOMENON_FIRST_SHADOW",
+    "claim_ceiling": "SYSTEM",
+    "preformal_eligible": false,
+    "preformal_readiness": "NOT_APPLICABLE",
+    "hold_class": null,
+    "hold_reason": null,
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "system_priority_exception": {
+      "used": false,
+      "reason_code": null,
+      "reason_detail": "No comparably executable/informative MECHANISM candidate exists; viable executable MECHANISM remains zero."
+    },
+    "main_authority": "STATIC_READ_ONLY_ARCHITECTURE_CONTRACT_CYCLE1_ONLY_STOP_BEFORE_SYNTHETIC_OUTCOME",
+    "same_object_system_to_mechanism_upgrade_allowed": false
   },
   "readiness_and_hold_semantics": {
     "eligible_distinct_from_ready": true,
     "ready_means_test_readiness_not_prior_success": true,
     "hidden_second_formal_gate": false,
     "first_ready_to_preformal": "CONSISTENT_WITH_DEVELOPMENT_READINESS_BUT_HISTORICAL_R33_RAW_BEFORE_SCORE_NONCONFORMING_TERMINAL_NO_RERUN",
-    "current_active_candidate": null,
     "h7": {
       "claim_ceiling": "MECHANISM",
       "preformal_eligible": false,
@@ -152,8 +123,6 @@
     },
     "candidate31": {
       "claim_ceiling": "SYSTEM",
-      "preformal_eligible": false,
-      "preformal_readiness": "NOT_APPLICABLE",
       "hold_class": "HOLD_METHOD_LIMITED",
       "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
       "queue_state": "NOT_QUEUED",
@@ -161,33 +130,30 @@
     }
   },
   "external_methodology_implications": {
-    "literature_r22": "Exposure observability is not inferential validity. Future protected-set reuse must prospectively bind a validity-under-adaptivity regime covering actual adaptive choices/stopping, and separately bind feedback visibility/masking. Prefer fresh independent confirmation when ancestry cannot be represented.",
-    "methodology_r45": {
-      "overall": "MIXED_CALIBRATION",
-      "hard_floor": "KEEP",
-      "selection_aware_validity": "TIGHTEN",
-      "protected_feedback_visibility": "TIGHTEN",
-      "intentional_idle": "KEEP",
-      "moving_goalposts": "LOW"
-    },
+    "literature_r22": "Prospective resource claims should separate semantically active mechanism work from common bookkeeping and use equal-semantics comparison; cross-generation protected-set reuse still requires a valid adaptive-inference regime or fresh independent confirmation.",
     "audit_r5_h5": {
-      "classification": "ROBUST_SO_FAR",
       "canonical_result": "FAIL_NO_USEFUL_WORK_REDUCTION_REMAINS_VALID",
       "interpretation_ceiling": "DO_NOT_USE_AS_BROAD_EVENT_ROUTING_OR_LAZY_STATE_CAUSAL_NO_GO",
-      "new_attack": "SEMANTICALLY_INACTIVE_ELIGIBILITY_WORK_DOMINATES_REGISTERED_TOTAL_WORK_IN_REPRESENTATIVE_SPARSE_ROWS",
-      "future_rule": "Fresh efficiency objects should prospectively decompose semantically active mechanism-attributable work from implementation overhead; never rerun or rescore H5."
+      "future_rule": "Any fresh efficiency object must prospectively decompose semantically active work from implementation overhead; never rerun or rescore H5."
+    },
+    "methodology_r47": {
+      "overall": "MIXED_CALIBRATION",
+      "hard_floor": "KEEP",
+      "shadow_supply_separation": "KEEP",
+      "system_shadow_counts_as_theory_backward_quota": false,
+      "later_system_admission_after_fresh_review": "PERMISSIBLE",
+      "same_generation_shadow_execution": "PROHIBITED"
     }
   },
   "worker_assessment": {
-    "analyst": "R44 healthy; complete 31/31 typing; intentionally no active candidate; has not yet consumed Methodology R45, Audit R5, or this Control generation.",
-    "main": "R44 completed intentional idle with no scientific execution or identity consumption.",
-    "sub": "R44 no-op with credible NO_COHERENT_MECHANISM_TARGET; no new selection or artifact.",
-    "relay": "No current MAIN continuation object; latest live polling opportunity produced no new durable MAIN generation.",
-    "utility": "Control pointer is IDLE. User-approved AUTONOMOUS_IDLE semantics are live, but durable Utility state still predates the prompt change; first post-change behavior remains unobserved.",
-    "literature": "R22 genuinely new methodology sharpening already reflected by Analyst/Methodology.",
-    "audit": "R5 adds new H5 interpretation ceiling without invalidating evidence.",
-    "methodology": "R45 material prospective calibration update; no retroactive evidence change.",
-    "steward": "G7 governance healthy; main/evidence separation compliant; no promotion candidate; protection gap remains."
+    "analyst": "R48 healthy; complete 32/32 typing; one active SYSTEM Architecture object; no viable executable MECHANISM.",
+    "main_relay": "Relay consumed R48 and correctly blocked at PRIMARY-start authority boundary; no execution, workflow, branch mutation or identity consumption.",
+    "sub": "R48 no-op/no-target is credible and does not count as a new autonomous selection.",
+    "utility": "First post-change AUTONOMOUS_IDLE run validated bounded autonomy: one read-only diagnostic, NON_EVIDENTIARY, max_runs=1, no candidate/identity/workflow/scheduler mutation.",
+    "literature": "R22 materially sharpens resource accounting and adaptive protected-set validity.",
+    "audit": "R5 preserves H5 exact result while narrowing interpretation.",
+    "methodology": "Latest durable R47 remains prospective-only and compatible with R48 later-generation SYSTEM admission.",
+    "steward": "G7 governance-only; no promotion candidate; protection gap remains reported but deployment deferred by Human Directive."
   },
   "utility_governance": {
     "assignment_status": "IDLE",
@@ -197,7 +163,8 @@
       "status": "APPLIED_RESOLVED_BY_USER_APPROVAL",
       "live_prompt_updated": true,
       "schedule_changed": false,
-      "first_post_change_run_observed": false
+      "first_post_change_run_observed": true,
+      "first_post_change_run_conformance": "PASS_BOUNDED_AUTONOMOUS_IDLE"
     },
     "autonomous_mode_constraints": {
       "max_tasks_per_run": 1,
@@ -206,7 +173,7 @@
       "preformal_formal_forbidden": true,
       "typing_mutation_forbidden": true,
       "quota_credit_forbidden": true,
-      "main_dependency_forbidden": true
+      "hidden_main_dependency_forbidden": true
     }
   },
   "scheduler_health": {
@@ -214,102 +181,84 @@
     "scheduler_definition_drift_detected": true,
     "scheduler_definition_drift_scope": "REGISTRY_MIRROR_OUT_OF_SYNC_WITH_APPROVED_LIVE_DEFINITIONS",
     "scheduler_definition_drift_details": [
-      "Live Current State Brief is approved at :55 JST, but scheduler_registry/current/manifest.json still records :45 JST.",
-      "Utility registry entry is aligned with the newly approved autonomous-idle prompt.",
-      "Several non-Utility registry observation timestamps/hashes predate current live prompt edits; exact prompt reconciliation is required before any future scheduler mutation."
+      "Live Current State Brief remains approved at :55 JST while scheduler registry manifest still records :45 JST.",
+      "Utility live definition and registry snapshot are aligned after the user-approved autonomy change.",
+      "Utility read-only reconciliation confirmed prompt mirror drift for several other core role snapshots; live definitions must not be reverted to stale registry state."
     ],
     "scheduler_cadence_failure_detected": false,
     "persistent_start_delay_signal": true,
-    "start_delay_observation_sequence": "SECOND_CONSECUTIVE_CONTROL_OBSERVATION_WITH_BROAD_DELAYS",
+    "start_delay_observation_sequence": "THIRD_CONSECUTIVE_CONTROL_OBSERVATION_WITH_BROAD_DELAYS",
+    "autofix_observation_threshold_met": true,
     "exact_time_overlaps": [],
-    "collision_risks": "NO_DETERMINISTIC_TIME_COLLISION; QUEUE_PRESSURE_WATCH",
+    "collision_risks": "NO_DETERMINISTIC_TIME_COLLISION; BROAD_QUEUE_PRESSURE_WATCH",
     "observed_material_start_delays_minutes": {
       "brief": 8.8,
-      "analyst": 19.5,
-      "main": 10.8,
-      "methodology": 13.5,
-      "utility": 1.3,
-      "external_research_audit": 11.3,
-      "sub": 4.4,
-      "relay": 2.4,
-      "control_current_start": 2.0
+      "analyst": 27.5,
+      "main": 8.6,
+      "methodology": 4.0,
+      "utility": 3.0,
+      "external_research_audit_latest_visible": 11.0,
+      "sub": 6.4,
+      "relay": 12.8,
+      "control_current_start": 2.6
     },
     "role_ownership_collision_count": 0,
     "recent_noop_idle_patterns": {
-      "main": "INTENTIONAL_IDLE_NO_ACTIVE_OBJECT",
+      "main": "RELAY_BLOCKED_PRIMARY_START_AUTHORITY_BOUNDARY_NO_SCIENCE",
       "sub": "NO_OP_NO_COHERENT_MECHANISM_TARGET",
-      "relay": "NO_ACTIVE_CONTINUATION_NO_NEW_DURABLE_GENERATION",
-      "utility": "PRE_CHANGE_IDLE; POST_CHANGE_AUTONOMOUS_BEHAVIOR_NOT_YET_OBSERVED"
+      "relay": "FAIL_CLOSED_ON_FRESH_R48_OBJECT_WITHOUT_PRIMARY_START_HANDOFF",
+      "utility": "ONE_BOUNDED_AUTONOMOUS_IDLE_DIAGNOSTIC_COMPLETED"
     },
-    "useful_result_cadence_vs_polling": "SCIENTIFIC_EXECUTION_IDLE_BUT_INFORMATION_ARRIVAL_NONZERO: Analyst R44, Methodology R45, Literature R22 and Audit R5 were useful; do not optimize merely for fewer polls.",
+    "useful_result_cadence_vs_polling": "NONZERO_INFORMATION_ARRIVAL: Analyst R47/R48 admitted a fresh SYSTEM object, Utility produced a useful bounded registry diagnostic, and literature/audit/methodology remain informative. Do not optimize solely for fewer polls.",
     "generation_lag_assessment": {
-      "analyst_missing": [
-        "METHCAL_R45",
-        "AUDIT_R5",
-        "CONTROL_R26",
-        "UTILITY_AUTONOMY_APPLIED_STATUS"
-      ],
-      "main_sub": "CURRENT_TO_ANALYST_R44",
-      "utility": "DURABLE_STATE_PREDATES_APPROVED_PROMPT_CHANGE",
-      "severity": "YELLOW_BOUNDED_EXPECTED"
+      "analyst": "R48 consumed Control R26, MAIN/SUB, Literature R22, Audit R5, Methodology R47, Steward G7 and Utility autonomous result.",
+      "main": "Relay is current to Analyst R48 and safely blocked pending PRIMARY start.",
+      "utility": "First autonomous result is durable and consumed by Analyst R48.",
+      "severity": "YELLOW_BOUNDED_NO_STALE_SCIENTIFIC_EXECUTION"
     },
     "active_sparkbrain_run_opportunities_per_day": 175,
     "scheduler_change_warranted": false,
     "scheduler_controller_action": "NO_CHANGE",
     "safe_auto_fix_applied": false,
+    "safe_auto_fix_reason_not_applied": "Three-observation threshold is met, but there is no deterministic collision or evidence-based single phase target. Broad fleet/queue delay does not justify speculative minute-shifting; structural cadence changes require user approval and are not yet warranted while useful information continues to arrive.",
     "scheduler_proposals": [],
-    "resolved_proposals": [
-      {
-        "proposal_id": "SCHED-UTILITY-AUTONOMY-20260921-01",
-        "resolution": "USER_APPROVED_AND_APPLIED"
-      }
-    ],
+    "resolved_proposals": [{"proposal_id": "SCHED-UTILITY-AUTONOMY-20260921-01", "resolution": "USER_APPROVED_AND_APPLIED"}],
     "registry_reconciliation_required": true,
-    "registry_reconciliation_instruction": "Before any future scheduler mutation, reconcile scheduler_registry current definitions/manifest from live stable definitions. This is mirror hygiene, not authority to alter live timing or scientific semantics.",
-    "observation_before_autofix": "No timing change now. Broad delay pattern is repeated but has not produced role collision, missed critical handoff, or stale scientific consumption; continue one more comparable health observation before any non-urgent phase auto-fix."
+    "registry_reconciliation_instruction": "Reconcile registry mirror from live stable definitions before any future scheduler mutation. This is mirror hygiene, not authority to alter live timing or scientific semantics."
   },
   "priorities": [
-    "Keep all consumed identities and candidate #31 terminal; no rerun, repair, rescore or third rescue.",
-    "Remain intentionally idle scientifically until a material mechanism-surface delta or independently motivated fresh object appears.",
-    "Require future protected-set scientific successors to bind four-stage raw/preserve/score lineage, protected-set identity/exposure, feedback visibility and validity-under-adaptivity before result-bearing access.",
-    "Consume Audit R5 prospectively: retain H5 canonical FAIL but narrow its interpretation; require semantic-activity/component-attribution checks for any fresh efficiency object.",
-    "Observe first post-change Utility autonomous run for collision discipline, NON_EVIDENTIARY labeling and no quota/readiness leakage.",
-    "Reconcile scheduler registry mirror before any future scheduler mutation; do not change live scheduler merely to match stale registry."
+    "MAIN PRIMARY may perform only R48 static/read-only SYSTEM Architecture contract cycle 1 and must stop before synthetic outcome.",
+    "Preserve the current object as SYSTEM; any mechanism successor requires a fresh ID, question, contract and Analyst authority.",
+    "Keep SUB no-target checks as liveness only; do not manufacture theory-backward work or quota credit.",
+    "Prospectively separate semantically active mechanism work from bookkeeping and bind equal-semantics comparator/resource privilege for any future resource measurement.",
+    "Preserve H5 exact FAIL and its narrowed interpretation ceiling; no rerun/rescore/retune/reopen.",
+    "Treat Utility autonomous outputs as NON_EVIDENTIARY/NON_CANONICAL and monitor for scope creep or hidden MAIN dependency.",
+    "Future protected-set reuse requires validity-under-adaptivity plus protected-feedback visibility/masking before result-bearing access.",
+    "Do not modify scheduler timing merely because the registry mirror is stale."
   ],
   "direction_to_analyst": [
-    "Consume Methodology R45 and Audit R5 in the next fresh generation.",
-    "Do not reopen or rescore H5; retain FAIL_NO_USEFUL_WORK_REDUCTION while recording that it is aggregate current-implementation work evidence, not an isolated causal no-go for event routing/lazy state.",
-    "Keep candidate #31 HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED with no third rescue.",
-    "Keep no-target checks as liveness only, not accumulating absence evidence.",
-    "Treat Utility autonomous outputs, if any, as NON_EVIDENTIARY/NON_CANONICAL proposals or support artifacts until independently reviewed; they cannot create typing/readiness/quota credit.",
-    "If a fresh mechanism or integrity object appears, assign a fresh candidate ID and prospective contract; never upgrade a completed SYSTEM object."
+    "Consume any PRIMARY static-contract result only after independent fresh re-fetch; authorize no same-generation synthetic outcome.",
+    "Preserve SYSTEM current-object ceiling and fresh-successor rule.",
+    "Keep shadow-origin SYSTEM admission outside theory-backward quota and mechanism metrics.",
+    "Continue separate eligible-vs-READY semantics and reject hidden second formal gate behavior.",
+    "Maintain H5 interpretation ceiling and candidate #31 terminal no-rescue state.",
+    "Treat Utility output only as noncanonical support until independently classified."
   ],
-  "hard_floor_confirmation": {
-    "rerun_retune_rescore_consumed": false,
-    "immutable_evidence_mutation": false,
-    "evaluator_leakage": false,
-    "silent_post_outcome_repair": false,
-    "scientific_workflow_dispatch": false,
-    "identity_consumption": false,
-    "research_pr_merge": false,
-    "scheduler_mutation_this_control_run": false
-  },
   "mutations": {
-    "experiments_executed": 0,
+    "scientific_experiments_executed": 0,
     "scientific_workflows_dispatched": 0,
-    "identities_consumed": 0,
+    "one_way_identities_consumed": 0,
     "research_prs_merged": 0,
-    "immutable_or_formal_evidence_mutations": 0,
+    "immutable_evidence_mutations": 0,
     "utility_assignments_created": 0,
-    "scheduler_mutations": 0,
-    "control_persistence_only": true
+    "scheduler_definition_changes": 0
   },
   "persistence": {
-    "history_path": "analysis/control_brain/history/2026-09-21/2303.md",
+    "branch": "ops/control-brain-handoff",
+    "history_path": "analysis/control_brain/history/2026-09-22/0100.md",
     "latest_path": "analysis/control_brain/latest.md",
     "state_path": "analysis/control_brain/state.json",
-    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "history_commit": "d2a7a4b4f3034136ade345cf294e5bb9a64b9a7d",
-    "latest_commit": "c9b9cd0f3e1264dcdeae67f920d01253cb22d3ae"
+    "history_commit": "77fd38dc2df12f920e505b92e0f4bf1cbec055f4",
+    "latest_commit": "71b9db49b85e1c07483510f8d7b512951778d35b"
   }
 }
