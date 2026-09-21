@@ -3,8 +3,12 @@ from __future__ import annotations
 import json
 import warnings
 
-from sparkbrain.v05 import MOTIF_X, IntegratedV05Brain, make_episode, training_episodes
-
+from sparkbrain.v05 import (
+    MOTIF_X,
+    IntegratedV05Brain,
+    make_episode,
+    training_episodes,
+)
 
 EVENT = "sub-replay-event"
 REWARD = 1.0
