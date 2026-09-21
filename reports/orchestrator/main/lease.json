@@ -11,9 +11,10 @@
     "sub_observed_for_collision": "SUB-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4"
   },
   "execution_mode": "PRIMARY",
-  "status": "ACTIVE",
+  "status": "COMPLETED",
   "started_at": "2026-09-21T09:17:56+09:00",
   "heartbeat_at": "2026-09-21T09:17:56+09:00",
+  "completed_at": "2026-09-21T09:20:06+09:00",
   "analyst_generation_id": "EVA-20260921T090300+0900-R31-3C7A91E4",
   "analyst_commit": "060e7d7d150b5406124425348553c92b04fed253",
   "analyst_branch_tip_observed": "060e7d7d150b5406124425348553c92b04fed253",
@@ -34,7 +35,7 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No SYSTEM object is currently allocated; viable executable MECHANISM count is zero.",
+    "reason_detail": "No SYSTEM object is currently allocated. Viable executable MECHANISM count is zero.",
     "compared_mechanism_candidate_ids": []
   },
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -42,13 +43,26 @@
   "active_head": null,
   "active_identity": null,
   "active_step": "RECONCILE_R31_AND_PERSIST_INTENTIONAL_MAIN_IDLE",
+  "canonicalized_predecessor": {
+    "candidate_id": "CAND-V05-ACTION-POLICY-EVALUATION-ISOLATION-CONTRACT-01",
+    "hold_class": "HOLD_CONTRACT_AMBIGUITY",
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "queue_state": "NOT_QUEUED",
+    "same_object_dynamic_continuation_authorized": false
+  },
   "freshness_reconciliation": {
     "analyst_tip_at_acquire": "060e7d7d150b5406124425348553c92b04fed253",
+    "analyst_tip_before_final_lease": "060e7d7d150b5406124425348553c92b04fed253",
     "authoritative_main_at_acquire": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "authoritative_main_before_final_lease": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "orchestrator_tip_before_acquire": "198a833fd798abb9d1b91cd3d6ad993198be193b",
+    "orchestrator_tip_after_acquire": "0f61342975eda770c4216e5730c3d72da41c579a",
     "latest_sub_generation": "SUB-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4",
-    "sub_collision": false
+    "sub_collision": false,
+    "material_superseding_generation_detected": false
   },
-  "evidentiary_status": "NO_SCIENTIFIC_EXECUTION_CONTROL_PLANE_RECONCILIATION",
+  "evidentiary_status": "NO_SCIENTIFIC_EXECUTION_CONTROL_PLANE_RECONCILIATION_COMPLETE",
+  "stop_reason": "ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT",
+  "next_action": "Wait for fresh Evidence Analyst authority after a genuinely new independent mechanism substrate/material mechanism-surface delta or fresh prospectively fixed SYSTEM semantic contract; re-fetch all authoritative refs before future mutation.",
   "owner": "main"
 }
