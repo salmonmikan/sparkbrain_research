@@ -1,27 +1,27 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T171655+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R39-7E4C21A9",
-  "run_id": "sparkbrain-main-primary-20260921T171655JST-R39-PIPECONF",
-  "producer_run_id": "sparkbrain-main-primary-20260921T171655JST-R39-PIPECONF",
-  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_PIPELINE_CONFORMANCE",
-  "supersedes_generation_id": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
+  "generation_id": "MAIN-20260921T174556+0900-RELAY-FUNNEL21-SYSTEM-PIPECONF-R39-CIFAIL-3A7D21E6",
+  "run_id": "sparkbrain-main-relay-20260921T174556JST-R39-CIFAIL",
+  "producer_run_id": "sparkbrain-main-relay-20260921T174556JST-R39-CIFAIL",
+  "authority_scope": "MAIN_RELAY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_EXACT_HEAD_CI_COLLECTION",
+  "supersedes_generation_id": "MAIN-20260921T171655+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R39-7E4C21A9",
   "input_generations": {
     "evidence_analyst": "EVA-20260921T170125+0900-R39-4B7D21C8",
-    "main": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
-    "sub": "SUB-20260921T163517+0900-NOOP-R38NOMECH-7B4D21C9"
+    "main": "MAIN-20260921T171655+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R39-7E4C21A9",
+    "sub": "SUB-20260921T174210+0900-NOOP-R39POSTMAINCIFAIL-5E8A21C4"
   },
-  "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-21T17:16:55+09:00",
-  "heartbeat_at": "2026-09-21T17:34:00+09:00",
+  "execution_mode": "RELAY",
+  "status": "BLOCKED",
+  "started_at": "2026-09-21T17:45:56+09:00",
+  "heartbeat_at": "2026-09-21T17:45:56+09:00",
   "completed_at": null,
-  "blocked_at": null,
+  "blocked_at": "2026-09-21T17:45:56+09:00",
   "analyst_generation_id": "EVA-20260921T170125+0900-R39-4B7D21C8",
   "analyst_commit": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
   "analyst_branch_tip_observed": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
   "consumed_analyst_generation_id": "EVA-20260921T170125+0900-R39-4B7D21C8",
   "consumed_analyst_commit": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
-  "consumed_main_generation_id": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
+  "consumed_main_generation_id": "MAIN-20260921T171655+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R39-7E4C21A9",
   "research_layer": "ARCHITECTURE_STUDY",
   "main_lane": "PREFORMAL_OUTCOME_BLIND_FOUR_STAGE_PIPELINE_CONFORMANCE_ARCHITECTURE_CYCLE1",
   "candidate_id": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
@@ -43,18 +43,19 @@
   "active_branch": "research/main-outcome-blind-four-stage-pipeline-conformance-arch-20260921",
   "active_head": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
   "active_identity": null,
-  "active_step": "WAIT_EXACT_HEAD_CI_COLLECTION",
+  "active_step": "BLOCKED_EXACT_HEAD_CI_LINT_FAILURE_PENDING_EXACT_DIAGNOSTIC",
   "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY",
   "workflows": [
     {
       "run_id": 35578428792,
       "head_sha": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
-      "status": "in_progress",
-      "conclusion": null,
-      "expected_next_action": "collect exact-head CI only"
+      "status": "completed",
+      "conclusion": "failure",
+      "failure_stage": "lint_before_local_readiness_test_or_conformance_output",
+      "expected_next_action": "fresh PRIMARY or fresh Analyst must inspect exact Ruff diagnostics before any mechanical fix"
     }
   ],
-  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_R39_SYNTHETIC_CONFORMANCE",
-  "next_action": "Collect only workflow 35578428792 at head 5527ac14d4d19078a91aa40f8825d5a4f41f0a91. If successful, persist SYNTHETIC_LIVE_CONFORMANCE_PASS and stop for fresh Analyst review. Otherwise apply only the already-preregistered fail-closed contingency; no rescue tuning, output-driven redesign, PRE_FORMAL, FORMAL, R33 reuse, scientific data, or identity action.",
+  "stop_reason": "BLOCKED_EXACT_HEAD_CI_R39_LINT_FAILURE_EXACT_DIAGNOSTIC_REQUIRED_BEFORE_MECHANICAL_FIX",
+  "next_action": "Fresh PRIMARY or a fresher Evidence Analyst must inspect the exact Ruff diagnostics for workflow 35578428792 at head 5527ac14d4d19078a91aa40f8825d5a4f41f0a91 and prospectively authorize or perform only a science-invariant mechanical correction if the intended behavior is already fixed. Relay must not guess a repair. No PRE_FORMAL, FORMAL, R33 reuse, scientific data, identity action, output-driven redesign, or same-object scientific continuation.",
   "owner": "main"
 }
