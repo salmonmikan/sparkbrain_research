@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T101710+0900-PRIMARY-FUNNEL21-MECH-ASMSET-R32-2F6C91A4",
-  "producer_run_id": "sparkbrain-main-primary-20260921T101710JST-R32-ASMSET-CONTRACT",
-  "produced_at": "2026-09-21T10:17:10+09:00",
-  "mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
+  "generation_id": "MAIN-20260921T104704+0900-RELAY-FUNNEL21-MECH-ASMSET-R32-CICOMPLETE-8D3C71A2",
+  "producer_run_id": "sparkbrain-main-relay-20260921T104704JST-R32-ASMSET-CI-COLLECT",
+  "produced_at": "2026-09-21T10:47:04+09:00",
+  "mode": "RELAY",
+  "status": "COMPLETED",
   "analyst_generation_id": "EVA-20260921T095900+0900-R32-6D2A91C4",
   "analyst_commit": "6bf35ff0f08a981feb09abced00e157526a47cb0",
-  "supersedes_generation_id": "MAIN-20260921T091756+0900-PRIMARY-FUNNEL21-HOLD-R31-7C2A91E4",
+  "supersedes_generation_id": "MAIN-20260921T101710+0900-PRIMARY-FUNNEL21-MECH-ASMSET-R32-2F6C91A4",
   "main_lane": "V05_ASSEMBLY_SET_CAUSAL_NECESSITY_DISTRIBUTIONAL_CONTROLS_ARCHITECTURE_CYCLE1_CONTRACT_FEASIBILITY",
   "research_layer": "ARCHITECTURE_STUDY",
   "candidate_id": "CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01",
@@ -63,12 +63,12 @@
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_tip": "6bf35ff0f08a981feb09abced00e157526a47cb0",
-    "orchestrator_tip_at_lease_acquire": "d4c91441e6cc12d5e4759a12814bdf6df3c94333",
+    "orchestrator_tip_before_relay_persistence": "ce88ba1683117da2b569c99da3041171bd1b6988",
     "research_branch": "research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921",
     "research_head": "52e14294d8e413a95c1dad387104bdeaa4468d39",
     "prospective_contract_path": "analysis/architecture/main-v05-assembly-set-causal-necessity-distributional-controls-20260921/PROSPECTIVE_CONTRACT.md",
-    "latest_observed_sub_generation": "SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7",
-    "latest_observed_sub_research_head": null
+    "latest_observed_sub_generation": "SUB-20260921T104150+0900-SYSTEM-OUTREPLAYINVALID-7C2A91E4",
+    "latest_observed_sub_research_head": "6fa2114ff5f68bb940abd21600a587b460293097"
   },
   "research_layer_state": {
     "DISCOVERY": {"state": "OPEN", "owner": "SUB"},
@@ -87,8 +87,8 @@
       "name": "ci",
       "head_branch": "research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921",
       "head_sha": "52e14294d8e413a95c1dad387104bdeaa4468d39",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "role": "EXACT_HEAD_INTEGRITY_CI"
     }
   ],
@@ -112,7 +112,8 @@
     "preformal_executed": false,
     "formal_executed": false,
     "sub_collision": false,
-    "same_run_outcome_responsive_redesign": false
+    "same_run_outcome_responsive_redesign": false,
+    "exact_head_ci_collected_by_relay": true
   },
   "evidentiary_status": {
     "formal_scientific_evidence": 0,
@@ -120,7 +121,7 @@
     "mechanism_architecture_observations": 1,
     "system_architecture_observations": 0,
     "new_identity_consumption": 0,
-    "current_work": "NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_CONTRACT_FEASIBILITY_ONLY_NO_INTERVENTION"
+    "current_work": "NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_CONTRACT_READY_EXACT_HEAD_CI_SUCCESS_NO_INTERVENTION"
   },
   "ordinary_reductions": {
     "current_object": [
@@ -185,6 +186,10 @@
     "pr_149": "OPEN_UNMERGED_MERGEABLE",
     "research_branch_created": true,
     "research_head_is_direct_child_of_stable_main": true,
+    "research_head_unchanged_at_relay": true,
+    "exact_head_ci_run": 35550692068,
+    "exact_head_ci_status": "completed",
+    "exact_head_ci_conclusion": "success",
     "dynamic_science_executed": false,
     "intervention_outcome_opened": false,
     "formal_identity_opened": false,
@@ -193,16 +198,16 @@
     "stable_main_mutated": false
   },
   "freshness": {
-    "analyst_tip_at_acquire": "6bf35ff0f08a981feb09abced00e157526a47cb0",
-    "analyst_tip_immediately_before_research_mutation": "6bf35ff0f08a981feb09abced00e157526a47cb0",
-    "analyst_tip_before_final_persistence": "6bf35ff0f08a981feb09abced00e157526a47cb0",
-    "main_tip_before_research_mutation": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_tip_before_final_persistence": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "latest_sub_generation": "SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7",
+    "analyst_tip_at_relay": "6bf35ff0f08a981feb09abced00e157526a47cb0",
+    "analyst_tip_before_relay_persistence": "6bf35ff0f08a981feb09abced00e157526a47cb0",
+    "main_tip_before_relay_persistence": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "research_head_before_relay_persistence": "52e14294d8e413a95c1dad387104bdeaa4468d39",
+    "orchestrator_tip_before_relay_persistence": "ce88ba1683117da2b569c99da3041171bd1b6988",
+    "latest_sub_generation": "SUB-20260921T104150+0900-SYSTEM-OUTREPLAYINVALID-7C2A91E4",
     "material_superseding_generation_detected": false
   },
-  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_35550692068_AFTER_R32_CONTRACT_READY",
-  "next_action": "Collect exact-head CI run 35550692068 for 52e14294d8e413a95c1dad387104bdeaa4468d39. If success and Analyst generation remains R32, persist the contract-feasibility READY observation and STOP for fresh Evidence Analyst review without executing suppression/intervention. If CI fails before scientific outcome exposure, repair only mechanically without changing the fixed contract; any semantic redesign requires fresh Analyst authority.",
+  "stop_reason": "R32_CONTRACT_FEASIBILITY_READY_EXACT_HEAD_CI_SUCCESS_STOP_FOR_FRESH_ANALYST_REVIEW",
+  "next_action": "Fresh Evidence Analyst must review the prospectively fixed R32 contract-feasibility READY observation. No suppression/intervention, PRE_FORMAL, FORMAL, successor, Funnel-field change, comparator redesign, or same-object semantic change is authorized from this generation.",
   "utility_request_created": false,
   "owner": "main"
 }

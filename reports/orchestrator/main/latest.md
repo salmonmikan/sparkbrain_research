@@ -1,42 +1,46 @@
-# SparkBrain MAIN — 2026-09-21 10:17 JST
+# SparkBrain MAIN — 2026-09-21 10:47 JST
 
 - schema_version: `2`
-- generation_id: `MAIN-20260921T101710+0900-PRIMARY-FUNNEL21-MECH-ASMSET-R32-2F6C91A4`
-- status: `WAITING_EXTERNAL`
+- generation_id: `MAIN-20260921T104704+0900-RELAY-FUNNEL21-MECH-ASMSET-R32-CICOMPLETE-8D3C71A2`
+- execution_mode: `RELAY`
+- status: `COMPLETED`
 - analyst: `EVA-20260921T095900+0900-R32-6D2A91C4@6bf35ff0f08a981feb09abced00e157526a47cb0`
+- supersedes MAIN: `MAIN-20260921T101710+0900-PRIMARY-FUNNEL21-MECH-ASMSET-R32-2F6C91A4`
 - stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 - candidate: `CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01`
 - layer: `ARCHITECTURE_STUDY`
-- claim ceiling: `MECHANISM`
-- preformal eligible: `true`
-- preformal readiness: `NOT_READY`
-- canonical hold dimensions: `hold_class=null / hold_reason=null / terminal_state=ACTIVE / queue_state=ACTIVE`
-- system priority exception: `used=false`
+- research branch: `research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921`
+- exact research head: `52e14294d8e413a95c1dad387104bdeaa4468d39`
 
-## R32 contract-feasibility result
+## Funnel v2.1 — preserved
 
-Fresh R32 authority assigned MAIN a MECHANISM Architecture cycle restricted to prospective contract feasibility. No lesion/intervention outcome was authorized.
+- `claim_ceiling=MECHANISM`
+- `preformal_eligible=true`
+- `preformal_readiness.status=NOT_READY`
+- `hold_class=null`
+- `hold_reason=null`
+- `terminal_state=ACTIVE`
+- `queue_state=ACTIVE`
+- `system_priority_exception.used=false`
 
-MAIN created `research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921` directly from exact stable `main` and bound the complete prospective contract at `52e14294d8e413a95c1dad387104bdeaa4468d39` in `analysis/architecture/main-v05-assembly-set-causal-necessity-distributional-controls-20260921/PROSPECTIVE_CONTRACT.md`.
+Relay did not create, upgrade, or reinterpret any Funnel field. The previously observed Architecture terminal `READY` remains contract-feasibility-only: the prospectively fixed contract is well-defined/informative, but canonical PRE_FORMAL readiness remains `NOT_READY` and no ordinary-reduction/falsifier success is inferred.
 
-The contract fixes all Analyst-required choices before outcome: set-level claim, fixed development surfaces `1701..1704`, complete target-selection rule, same-cardinality eligible population, seven pre-intervention activity/topology balance variables, 64 uniform sparse-lesion controls per surface, 64 balance-aware controls per surface, sham, matched privilege, eight fixed evaluation episodes per arm, primary prediction-impairment observable, whole-field perturbation-footprint diagnostic, bounded CPU resource contract, conjunctive support rule, and sign-based falsifier/reduction rule.
+## Relay action/result
 
-The Architecture contingency reached `READY` **for the contract only**: it is prospectively well-defined and informative without requiring lesion outcome knowledge. This does not upgrade `preformal_readiness`, does not imply the candidate beat ordinary reductions, and does not mean likely PASS. `preformal_readiness.status` remains the Analyst value `NOT_READY` pending fresh review.
+PRIMARY had safely handed off at `WAITING_EXTERNAL` with exactly one authorized next action: collect exact-head CI `35550692068` for `52e14294d8e413a95c1dad387104bdeaa4468d39` and, on success under unchanged R32 authority, persist completion and stop for fresh Analyst review.
 
-No suppression call, intervention outcome, PRE_FORMAL, FORMAL, TEST/STARTED tag, scorer, preserve, identity consumption, or stable-main mutation occurred. The terminal exact-match predecessor was not reopened or relaxed.
+Fresh reconciliation found no superseding Evidence Analyst generation, no MAIN PRIMARY `RUNNING` collision on this object, stable `main` unchanged, and the research branch still exactly at the bound contract head. CI `35550692068` is `completed/success` on that exact head.
 
-## Independent integrity reconcile
+No suppression/lesion/intervention outcome was executed. No PRE_FORMAL or FORMAL action, TEST/STARTED/scorer, identity consumption, semantic repair, comparator redesign, successor creation, stable-main mutation, or immutable evidence/control/preserve mutation occurred. SUB's newer R32 Discovery generation is independent and did not collide with or alter the MAIN-owned Assembly object.
 
-Stable `main` independently remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Authoritative annotated `evidence/*` count is five; tag-based `formal/*`, `sealed/*`, and `freeze/*` are empty. Control/STARTED and preserve/raw refs were re-fetched independently; H5 remains `058e90227cd48e1c10c6ecbaed01efdec1217d0e` / `ce5797eb584344db7a512e585506fb6c59ea475b`. PR #148 and #149 remain open, unmerged, mergeable. SUB remains a no-target/no-branch/no-workflow lane and does not collide with MAIN.
+## Evidentiary status / integrity
 
-## Evidence accounting
+The result remains `NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_CONTRACT_READY_EXACT_HEAD_CI_SUCCESS_NO_INTERVENTION`. FORMAL scientific evidence=`0`; PRE_FORMAL development evidence=`0`; new identity consumption=`0`.
 
-FORMAL scientific evidence=`0`; PRE_FORMAL development evidence=`0`; MECHANISM Architecture observations=`1`; SYSTEM Architecture observations=`0`; new identity consumption=`0`.
+Exact bindings: Analyst `6bf35ff0f08a981feb09abced00e157526a47cb0`; stable main `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; research head `52e14294d8e413a95c1dad387104bdeaa4468d39`; CI `35550692068=completed/success`. Existing consumed identities remain unchanged.
 
-The observation is only that a bounded, prospective distributional-control mechanism contract is source-supported and fully specified. There is no causal outcome in this run.
+## Stop
 
-## External wait
+Stop reason: `R32_CONTRACT_FEASIBILITY_READY_EXACT_HEAD_CI_SUCCESS_STOP_FOR_FRESH_ANALYST_REVIEW`.
 
-Exact-head CI `35550692068` is running on `52e14294d8e413a95c1dad387104bdeaa4468d39`. MAIN stops with `WAITING_EXTERNAL` rather than proceeding to any intervention.
-
-Next action: collect only that exact-head CI. If it succeeds and R32 remains current, persist the contract-feasibility READY observation and return to fresh Evidence Analyst review. If it fails before any scientific outcome exposure, only a purely mechanical repair preserving the already-fixed scientific contract is permissible; semantic redesign requires fresh Analyst authority.
+Next MAIN action: fresh Evidence Analyst review of the prospectively fixed contract-feasibility `READY` observation. This generation authorizes no suppression/intervention, PRE_FORMAL, FORMAL, successor, Funnel-field change, comparator redesign, or same-object semantic continuation.
