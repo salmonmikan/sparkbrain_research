@@ -1,50 +1,64 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T13:17:11+09:00",
+  "timestamp": "2026-09-21T14:22:40+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260921T131711+0900-R36-3A8D6F21",
-    "sequence": 36,
-    "material_change": false,
-    "supersedes_generation_id": "METHCAL-20260921T121915+0900-R35-6D2A8F41",
+    "generation_id": "METHCAL-20260921T142240+0900-R37-01D67C87",
+    "sequence": 37,
+    "material_change": true,
+    "material_change_reason": "AUTHORITATIVE_REF_TRACE_CORRECTION",
+    "supersedes_generation_id": "METHCAL-20260921T131711+0900-R36-3A8D6F21",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T121915+0900-R35-6D2A8F41",
+      "generation_id": "METHCAL-20260921T131711+0900-R36-3A8D6F21",
       "branch": "ops/methodology-calibration-audit",
-      "prior_tip": "5f97f1c2b6c5ecfb83c6fede0a541755fad69244"
+      "prior_tip": "1081c1c8805f40b88129d0f3f17107ef2b7fca48"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T120207+0900-R34-18B7C4E2",
+      "generation_id": "EVA-20260921T135900+0900-R36-6C3A91E7",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "d5554d45a62d0ef0a20d0443e40b0f4d11c0eea8"
+      "commit": "6e760daf8b1316489e5565bd799d3f462de390f4"
     },
     "control_brain": {
       "generation_id": "CTRL-20260921T125000+0900-R22-7C3A91E4",
       "branch": "ops/control-brain-handoff",
-      "commit": "db532cc4b1a512961d9b203cdd84ac1fa916550c"
+      "commit": "db53217770b72596bc4beaa3f8c34abea6473311"
     },
     "strategy_mailbox": {
       "branch": "ops/orchestrator-run-report",
-      "commit": "ea31d32430d62a96fe5f5814b771cdc198d9c91e",
+      "commit": "cbec0e48eed211a767fb04baa080d356c10008cc",
       "authoritative": false
     }
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_tags": [
-      "evidence/exp-001-sequence-contact-20260419",
-      "evidence/exp-001-sequence-contact-policy-memory-r4-20260419",
-      "evidence/exp-001-sequence-contact-dead-bias-r13-20260420",
-      "evidence/exp-001-sequence-contact-dynamic-deadtime-r2-20260420",
-      "evidence/exp-001-sequence-contact-kernel-legal-target-r5-20260420"
+      "evidence/c19-official-v4-c19-external-v2-official-v4",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
     ],
+    "evidence_tag_objects": {
+      "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
+    },
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
-    "scientific_source_of_truth": "stable main plus annotated evidence refs; ops branches are mailboxes only"
+    "scientific_source_of_truth": "stable main plus independently fetched annotated evidence refs; ops branches are mailboxes only",
+    "prior_methodology_ref_trace_discrepancy": {
+      "prior_generation": "METHCAL-20260921T131711+0900-R36-3A8D6F21",
+      "prior_prefix": "evidence/exp-001-*",
+      "current_matching_refs_for_prefix": 0,
+      "interpretation": "METHODOLOGY_TRACE_INACCURACY_OR_STALENESS; NOT_PROOF_OF_EVIDENCE_MUTATION"
+    }
   },
-  "audit_result": "NO_MATERIAL_CALIBRATION_CHANGE",
+  "audit_result": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
   "gate_classifications": {
     "hard_integrity_policy": "KEEP",
@@ -73,13 +87,15 @@
     "equal_privilege_comparator": "KEEP",
     "ordinary_reduction_first": "KEEP",
     "external_competent_reference_and_clustered_inference": "TIGHTEN",
-    "legacy_topk_sparse_support": "TIGHTEN"
+    "legacy_topk_sparse_support": "TIGHTEN",
+    "methodology_authoritative_reference_trace_accuracy": "TIGHTEN"
   },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_TO_MODERATE: the known PRE_FORMAL plumbing defect can score before stand-alone immutable raw preservation; clean PASS inference remains blocked until prospective pipeline conformance is demonstrated.",
-    "false_negative": "MODERATE_WATCH: no viable executable MECHANISM is currently canonical, but there is no fresh evidence that supply/no-target rules are suppressing a coherent mechanism target.",
-    "duplicate_guards": "LOW: preformal_eligible and READY have been empirically distinct.",
-    "opportunity_cost": "CONTROLLED: SYSTEM architecture work is current only while no viable executable comparable MECHANISM is canonical."
+    "false_positive": "LOW_TO_MODERATE: clean PRE_FORMAL PASS inference remains blocked until a prospectively conforming raw-preserve-score-preserve pipeline is live-demonstrated.",
+    "false_negative": "MODERATE_WATCH: viable executable MECHANISM=0 and a fresh no-target episode is open at check 1, but there is no evidence yet that supply rules are suppressing a coherent mechanism target.",
+    "duplicate_guards": "LOW: preformal_eligible and READY remain empirically distinct.",
+    "opportunity_cost": "CONTROLLED: bounded SYSTEM integrity work is active only while no comparable viable executable MECHANISM is canonical.",
+    "audit_trace": "MODERATE: prior methodology exact evidence-ref names were stale/inaccurate relative to fresh repository refs; current state is rebound prospectively."
   },
   "moving_goalposts": "LOW",
   "pass_reachability": "PRE_FORMAL_REACHED_CLEAN_PASS_PENDING_PROSPECTIVE_PIPELINE_CONFORMANCE",
@@ -88,10 +104,10 @@
     "claim_ceiling_current_object_only": true,
     "same_object_system_to_mechanism_upgrade_observed": false,
     "system_value_retained": true,
-    "pending_post_analyst_object": "CAND-V05-OUTCOME-REPLAY-CREDIT-SEMANTICS-TIMESHIFT-01",
-    "pending_object_policy": "exclude from canonical funnel and conversion-policy inference until fresh Evidence Analyst review"
+    "replay_timeshift_object": "CANONICAL_TERMINAL_SYSTEM_REDUCTION",
+    "active_integrity_architecture_object": "CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01"
   },
-  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_M13_S16_NO_VIABLE_EXECUTABLE_MECHANISM_CURRENTLY_SMALL_N",
+  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_M13_S16_NO_VIABLE_EXECUTABLE_MECHANISM_OPEN_NO_TARGET_EPISODE_CHECK1_SMALL_N",
   "funnel_observability": {
     "canonical_population": 29,
     "classified_population": 29,
@@ -103,53 +119,64 @@
     "preformal_eligible": 0,
     "preformal_ready": 0,
     "policy_conclusions_gated_by_classification_completeness": true,
-    "pending_after_analyst": [
-      "CAND-V05-OUTCOME-REPLAY-CREDIT-SEMANTICS-TIMESHIFT-01"
-    ]
+    "pending_after_analyst": [],
+    "methodology_ref_trace_status": "TIGHTEN_EXACT_REF_BINDING"
   },
   "preformal_gate_calibration": {
     "eligible_distinct_from_ready": true,
     "ready_means_development_readiness_not_prior_success": true,
     "first_ready_to_preformal_empirical_status": "CONSISTENT_WITH_DEVELOPMENT_READINESS",
-    "raw_before_score_live_conformance": "FAILED_ON_HISTORICAL_FIRST_PRE_FORMAL; PROSPECTIVE FIX_NOT_YET_LIVE_VALIDATED",
-    "clean_pass_inference": "BLOCKED_PENDING_PROSPECTIVE_PIPELINE_CONFORMANCE"
+    "raw_before_score_live_conformance": "FAILED_ON_HISTORICAL_FIRST_PRE_FORMAL; PROSPECTIVE_FIX_NOT_YET_LIVE_VALIDATED",
+    "clean_pass_inference": "BLOCKED_PENDING_PROSPECTIVE_PIPELINE_CONFORMANCE",
+    "pipeline_integrity_architecture_status": "SYSTEM_ARCHITECTURE_ACTIVE_STATIC_READ_ONLY; NO_PRIMARY_CYCLE_RESULT_YET"
   },
   "system_priority_exception_audit": {
     "rule": "KEEP",
     "current_used": false,
-    "current_basis": "fresh Analyst and Control report no viable executable comparable MECHANISM",
+    "current_basis": "fresh Analyst reports viable executable MECHANISM=0 and active SYSTEM work directly protects PRE_FORMAL/FORMAL integrity",
     "first_genuine_use": "INSUFFICIENT_EVIDENCE",
     "post_hoc_justification_observed": false
   },
   "no_coherent_target_audit": {
     "rule": "KEEP",
-    "open_episode": false,
+    "open_episode": true,
+    "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
+    "check_count": 1,
     "escape_hatch_evidence": false,
+    "candidate_or_identity_consumption": false,
+    "included_in_candidate_conversion_denominator": false,
     "rolling_scientific_selection": "MECHANISM / SYSTEM / SYSTEM = 1/3"
   },
   "prospective_recommendations": [
-    "Do not change scientific admission or readiness thresholds.",
+    "Do not change scientific admission, comparator, reduction, or READY thresholds.",
     "Keep the consumed R33 PRE_FORMAL identity terminal; never rerun, repair, retune, or rescore it.",
-    "Continue the prospective static/non-evidentiary pipeline-integrity architecture only; require fresh Analyst review before any live PRE_FORMAL execution.",
-    "Future PRE_FORMAL execution must separate raw generation -> immutable raw preserve plus digest -> fixed scorer reading that exact digest -> scored-result preserve.",
+    "Continue only the authorized static/non-evidentiary pipeline-integrity architecture; require fresh Analyst review before implementation or any new live PRE_FORMAL execution.",
+    "Future PRE_FORMAL must separate raw generation -> durable immutable raw preserve plus digest -> fixed scorer reading that exact digest -> scored-result preserve.",
     "Validate or explicitly map canonical Funnel-v2.1 HOLD enums at producer handoff rather than relying on downstream Analyst normalization.",
-    "Do not include the fresh pending SYSTEM object in canonical funnel metrics until fresh Evidence Analyst review."
+    "Every methodology generation must independently bind exact authoritative ref names plus tag-object SHAs; never carry forward unverified ref names.",
+    "If a persisted authoritative-ref list disagrees with a fresh fetch, surface the discrepancy as an audit-trace defect and do not infer evidence mutation without independent ref-history evidence.",
+    "Keep no-target episode checks outside candidate/conversion denominators and re-evaluate opportunity-locally."
   ],
   "utility_request": {
     "created": false,
-    "reason": "live prospective pipeline-integrity rollout remains higher-information than a synthetic methodology probe"
+    "reason": "live prospective pipeline-integrity rollout and current no-target episode are higher-information than a synthetic methodology probe"
   },
   "hard_floor_confirmation": {
     "policy": "CONFIRMED_DO_NOT_RELAX",
-    "historical_nonconformance": "first live PRE_FORMAL raw-before-score violation is acknowledged and terminalized",
+    "historical_nonconformance": "first live PRE_FORMAL raw-before-score violation remains acknowledged and terminalized",
     "rerun_or_retune_consumed_identity_observed": false,
     "silent_post_outcome_repair_observed": false,
     "evaluator_target_leakage_observed": false
   },
-  "confidence": "HIGH",
+  "confidence": {
+    "current_calibration_state": "HIGH",
+    "current_authoritative_refs": "HIGH",
+    "historical_cause_of_ref_discrepancy": "MODERATE_INSUFFICIENT_TO_INFER_MUTATION"
+  },
   "questions_for_control_analyst": [
-    "Has the four-stage raw-preserve-score-preserve architecture been prospectively specified without reusing the consumed R33 identity?",
+    "Has the four-stage raw-preserve-score-preserve architecture become prospectively machine-checkable without reusing the consumed R33 identity?",
     "On the next producer handoff, are noncanonical HOLD enums rejected or explicitly mapped before Analyst ingestion?",
-    "When the pending fresh SYSTEM object is reviewed, does canonical population remain classification-complete before any conversion-policy inference?"
+    "Is there an independent repository/governance record explaining the prior Methodology R36 evidence/exp-001-* ref list versus the exact current annotated evidence refs? Until then treat this as methodology trace inaccuracy, not proven evidence mutation.",
+    "Keep the current no-target episode outside candidate/conversion denominators and require opportunity-local re-evaluation."
   ]
 }
