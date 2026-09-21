@@ -1,48 +1,48 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-22T06:25:30+09:00",
+  "timestamp": "2026-09-22T07:21:56+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260922T062530+0900-R52-5D8A21C7",
-    "sequence": 52,
-    "material_change": false,
-    "material_change_reason": "NO_NEW_CALIBRATION_EVIDENCE_FRESHNESS_LIVENESS_ONLY_NO_TARGET_CHECK_INCREMENT_16_TO_17",
-    "supersedes_generation_id": "METHCAL-20260922T051823+0900-R51-3E8A7C12",
+    "generation_id": "METHCAL-20260922T072156+0900-R53-7A4C21E9",
+    "sequence": 53,
+    "material_change": true,
+    "material_change_reason": "NEW_H7_CAUSAL_FAITHFULNESS_REDUCTION_FLOOR_IS_WELL_FOUNDED_BUT_MULTI_INTERVENTION_AND_CONCISENESS_REQUIRE_CLAIM_SCOPE_SPLIT",
+    "supersedes_generation_id": "METHCAL-20260922T062530+0900-R52-5D8A21C7",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260922T051823+0900-R51-3E8A7C12",
+      "generation_id": "METHCAL-20260922T062530+0900-R52-5D8A21C7",
       "branch": "ops/methodology-calibration-audit",
-      "commit": "7bd05fb8e2be90a00f21e45b9e51e12eb5b67865"
+      "commit": "cd3c77e6ed3e162d6008d4f0e3b66181f4e98da5"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T060636+0900-R54-4E7C21A9",
+      "generation_id": "EVA-20260922T065809+0900-R55-5A8C21F7",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "473bb7713c04b50dd9567472084301f2d1d07c69",
+      "commit": "11e84b37dd8739c38f538f1231aab7234356c5d0",
       "role": "CURRENT_CANONICAL_FUNNEL_AUTHORITY"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260922T045653+0900-R29-7C4E91B2",
+      "generation_id": "CTRL-20260922T065500+0900-R30-6F4C21A8",
       "branch": "ops/control-brain-handoff",
-      "commit": "04af2dd036efbce5aa133df01eda569585d73476",
+      "commit": "fc5297050c93bb67a9b69aae24179ce7d8888c15",
       "role": "DESIGNATED_CONTROL_HISTORY_STRATEGIC_PRIOR"
     },
     "main_strategy": {
-      "generation_id": "MAIN-20260922T061624+0900-PRIMARY-FUNNEL21-IDLE-R54-4E7C21A9",
+      "generation_id": "MAIN-20260922T071800+0900-PRIMARY-FUNNEL21-IDLE-R55-5A8C21F7",
       "branch": "ops/orchestrator-run-report",
-      "commit": "796490f686a424151e23c59f253308e3abb150a6",
+      "commit": "33051317c8898a33682a7a5a2f41027def4793fd",
       "authoritative": false
     },
     "sub_strategy": {
-      "generation_id": "SUB-20260922T053500+0900-NOOP-R53INTENTIONALIDLE-3F8A21D6",
+      "generation_id": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6",
       "branch": "ops/orchestrator-run-report",
-      "commit": "005b367ddf1b442e3a83b9e56e16e18e2ad2996",
+      "commit": "fcab2e7c19d4030656ab632a03621d386a3fdbca",
       "authoritative": false
     },
     "literature": {
-      "generation_id": "LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5",
+      "generation_id": "LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8",
       "branch": "ops/external-research-audit-handoff",
-      "commit": "752cd466294c1be037fa896101f23ae7e3ab995a",
+      "commit": "4c43d793067adf2a4d5c4e370c1d7e7d2be6eae3",
       "role": "EXTERNAL_CALIBRATION_INPUT_ONLY"
     },
     "independent_audit": {
@@ -65,7 +65,7 @@
     "freeze_tags": [],
     "scientific_source_of_truth": "stable main plus independently fetched annotated evidence refs; ops branches are mailboxes only"
   },
-  "audit_result": "NO_MATERIAL_CALIBRATION_CHANGE",
+  "audit_result": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
   "gate_classifications": {
     "hard_integrity_policy": "KEEP",
@@ -94,6 +94,14 @@
     "equal_privilege_comparator": "KEEP",
     "ordinary_reduction_first": "KEEP",
     "signal_before_reduction": "TIGHTEN",
+    "h7_intervention_support_and_dormant_path_control": "KEEP",
+    "h7_frozen_causal_abstraction_and_intervention_mapping": "KEEP",
+    "h7_multi_intervention_family_generalization": "SPLIT_BY_CLAIM_TYPE",
+    "h7_necessity_sufficiency_completeness_separation": "SPLIT_BY_CLAIM_TYPE",
+    "h7_conciseness_minimality_as_validity_gate": "SPLIT_BY_CLAIM_TYPE",
+    "h7_path_specific_pns_stronger_privilege_ceiling": "KEEP",
+    "h7_matched_privilege_local_residual": "KEEP",
+    "historical_h7_exploratory_non_evidentiary_no_rerun": "KEEP",
     "resource_comparator_reduction_floor_preoutcome_sharpening": "KEEP",
     "resource_multi_resource_crossover_scope": "KEEP",
     "resource_efficiency_metric_semantic_activity_decomposition": "TIGHTEN",
@@ -122,26 +130,28 @@
     "selection_ancestry_or_independent_confirmation": "KEEP"
   },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_TO_MODERATE_WATCH. Fail-closed terminalization remains intact; prospective verifier/tooling enforcement is still incomplete.",
-    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM remains zero; opportunity-cost risk comes from sustained high-quality mechanism-supply stall, not an overstrict READY gate.",
-    "duplicate_guards": "LOW. Claim ceiling, comparator design, equivalence verification, interpreter admission, lifecycle terminalization, readiness, and no-rerun rules address distinct failure modes.",
-    "opportunity_cost": "CONTROLLED_BUT_WATCH. Intentional idle avoids manufactured activity while mechanism supply remains stalled.",
-    "moving_goalpost_risk": "LOW. No admission, threshold, comparator, reduction, or readiness criterion changed; the only canonical movement is liveness check_count 16 to 17."
+    "false_positive": "LOW_TO_MODERATE_WATCH. R26's dormant-path/intervention-support controls improve protection against causal-attribution false positives, while generic comparator-verifier and protected-set tooling remain incomplete.",
+    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM remains zero. Treating multi-intervention-family testing or conciseness/minimality as universal admission gates would add avoidable false-negative/opportunity-cost risk beyond the intended claim scope.",
+    "duplicate_guards": "LOW_TO_MODERATE. Necessity/sufficiency/completeness can be distinct causal obligations, but conciseness/minimality overlaps research-worthiness/localization quality unless the claim explicitly asserts a minimal route.",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH. Intentional idle avoids manufactured activity; the remaining risk is sustained mechanism-supply stall plus possible overconstraint if future H7 guidance is universalized.",
+    "moving_goalpost_risk": "LOW. R26/R55 guidance is expressly prospective and does not reopen, rescore, rerun, upgrade, or invalidate current H7 or historical exploratory H7 artifacts."
   },
   "moving_goalposts": "LOW",
   "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; CROSS_GENERATION_EXPOSURE_OBSERVABILITY_INSUFFICIENT; FUTURE_PROTECTED_REUSE_REQUIRES_SEPARATE_PROSPECTIVE_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY_CONTROL; CLEAN_SCIENTIFIC_PASS_REQUIRES_FRESH_PROSPECTIVE_IDENTITY_WITH_CONFORMING_PIPELINE_AND_VALIDITY_ASSUMPTIONS_MATCHED_TO_THE_ACTUAL_ADAPTIVE_PROCESS",
   "claim_type_findings": {
     "claim_ceiling_current_object_only": true,
     "same_object_system_to_mechanism_upgrade_observed": false,
-    "candidate32_status": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED",
-    "candidate32_ceiling": "SYSTEM",
-    "candidate32_preformal_eligible": false,
-    "candidate32_signal_use_ceiling": "NON_EVIDENTIARY_FEASIBILITY_AND_METHOD_INFORMATION_ONLY",
-    "candidate32_rerun_repair_allowed": false,
+    "h7_current_status": "HOLD_MECHANISM_UNRESOLVED_NONTERMINAL_NOT_QUEUED_NOT_ELIGIBLE_NOT_READY",
+    "h7_current_record_changed_by_r26": false,
+    "h7_guidance_authorizing": false,
+    "h7_historical_exploratory_artifact": "EXPLORATORY_NON_EVIDENTIARY_NO_RERUN_NO_PROMOTION",
+    "h7_scope_split": "BROAD_OR_NORMAL_OPERATION_MECHANISM_CLAIMS_REQUIRE_BROADER_GRADED_INTERVENTION_FAITHFULNESS; EXPLICITLY_INTERVENTION_FAMILY_BOUNDED_CLAIMS_MAY_USE_ONE_FROZEN_FAMILY_IF_SUPPORT_MAPPING_PRIVILEGE_COMPARATOR_AND_FALSIFIER_ARE_PROSPECTIVELY_BOUND",
+    "h7_conciseness": "CAUSAL_VALIDITY_GATE_ONLY_IF_MINIMALITY_OR_CONCISENESS_IS_PART_OF_THE_CLAIM_OTHERWISE_QUALITY_RESEARCH_WORTHINESS_DIMENSION",
     "active_canonical_candidate": null,
-    "resource_claim_note": "Future exact-decay resource claims should separate verifier-certified equal semantics from support-turnover/horizon/reset effects; this remains claim-specific rather than a universal readiness bar."
+    "candidate32_status": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED",
+    "candidate32_signal_use_ceiling": "NON_EVIDENTIARY_FEASIBILITY_AND_METHOD_INFORMATION_ONLY"
   },
-  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED_M13_S19_NO_VIABLE_EXECUTABLE_MECHANISM_NO_ACTIVE_ARCHITECTURE_NO_TARGET_EPISODE_CHECK17_SMALL_N",
+  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED_M13_S19_NO_VIABLE_EXECUTABLE_MECHANISM_NO_ACTIVE_ARCHITECTURE_NO_TARGET_EPISODE_CHECK18_SMALL_N",
   "funnel_observability": {
     "canonical_population": 32,
     "classified_population": 32,
@@ -174,6 +184,7 @@
     "ready_means_development_readiness_not_prior_success": true,
     "first_ready_to_preformal_empirical_status": "CONSISTENT_WITH_DEVELOPMENT_READINESS",
     "hidden_second_formal_gate": false,
+    "h7_new_guidance_is_pre_execution_reduction_admission_scope_not_readiness_success_threshold": true,
     "live_scientific_four_stage_completion_observed": false,
     "programme_execution_plumbing": "TIGHTEN"
   },
@@ -186,7 +197,7 @@
   },
   "no_coherent_target_audit": {
     "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-    "canonical_check_count": 17,
+    "canonical_check_count": 18,
     "counts_as_candidate_failure": false,
     "counts_as_absence_evidence": false,
     "counts_in_scientific_selection_denominator": false,
@@ -194,37 +205,47 @@
     "classification": "KEEP"
   },
   "general_calibration_dimensions": {
-    "gate_drift": "LOW",
-    "justification_trace": "STRONG; ANALYST_R54_EXPLICITLY_MARKS_FRESHNESS_LIVENESS_ONLY_AND_MAIN_R54_COMPLETES_NO_TARGET_IDLE",
-    "false_positive_control": "GOOD_FAIL_CLOSED_TERMINALIZATION_UNCHANGED_FUTURE_VERIFIER_ENFORCEMENT_STILL_TIGHTEN",
-    "false_negative_risk": "MODERATE_WATCH",
-    "duplicate_guards": "LOW",
-    "moving_goalposts": "LOW",
+    "gate_drift": "LOW_BUT_NEW_H7_GUIDANCE_REQUIRES_SCOPE_GUARD",
+    "justification_trace": "STRONG; R26 IS EXPLICITLY_NONAUTHORIZING_AND_R55_PRESERVES_CURRENT_H7_LIFECYCLE_WHILE_RECORDING_PROSPECTIVE_CONTROLS",
+    "false_positive_control": "IMPROVED_FOR_CAUSAL_ROUTE_CLAIMS_BY_INTERVENTION_SUPPORT_DORMANT_PATH_AND_ABSTRACTION_CONTROLS",
+    "false_negative_risk": "MODERATE_WATCH_AVOID_UNIVERSALIZING_MULTI_FAMILY_OR_CONCISENESS_REQUIREMENTS",
+    "duplicate_guards": "LOW_TO_MODERATE_CONCISENESS_MINIMALITY_NEEDS_CLAIM_SCOPE",
+    "moving_goalposts": "LOW_PROSPECTIVE_ONLY",
     "pass_reachability": "REALISTIC_CONDITIONAL_BUT_NO_CURRENT_EXECUTABLE_CANDIDATE",
-    "comparator_calibration": "UNCHANGED_STRONG_PROSPECTIVE_DESIGN_WITH_CURRENT_OBJECT_TERMINAL_AFTER_INCOMPLETE_MACHINE_ENFORCEMENT",
+    "comparator_calibration": "GOOD_CLAIM_SPECIFIC_MATCHED_PRIVILEGE_DIRECTION_GENERIC_VERIFIER_ENFORCEMENT_STILL_TIGHTEN",
     "signal_before_reduction": "TIGHTEN_UNTIL_VERIFIER_CERTIFICATE_PRECEDES_INTERPRETATION",
-    "claim_type_separation": "GOOD_SYSTEM_ONLY_AND_NON_EVIDENTIARY_SIGNAL_CEILING",
-    "research_worthiness_vs_novelty": "CALIBRATED",
-    "external_calibration": "NO_NEW_DELTA; R25_SUPPORT_TURNOVER_HORIZON_PRESSURE_REMAINS_CLAIM_SPECIFIC",
-    "opportunity_cost": "CONTROLLED_BY_INTENTIONAL_IDLE_BUT_SUPPLY_STALL_WATCH",
+    "claim_type_separation": "GOOD_BUT_H7_INTERVENTION_BREADTH_AND_CONCISENESS_MUST_BE_SPLIT_BY_CLAIM_TYPE",
+    "research_worthiness_vs_novelty": "CALIBRATED_IF_CONCISENESS_IS_NOT_UNIVERSAL_CAUSAL_VALIDITY_GATE",
+    "external_calibration": "MATERIAL_R26_CAUSAL_FAITHFULNESS_INPUT_SUPPORTED_WITH_SCOPE_QUALIFICATION",
+    "opportunity_cost": "CONTROLLED_BY_INTENTIONAL_IDLE_BUT_MECHANISM_SUPPLY_STALL_AND_OVERCONSTRAINT_WATCH",
     "mechanism_supply_health": "STALLED_WITH_QUALITY_FLOOR_INTACT",
     "funnel_observability": "COMPLETE_32_OF_32_NO_ACTIVE_OBJECT",
-    "preformal_gate_calibration": "SEMANTICALLY_CALIBRATED_EXECUTION_PLUMBING_STILL_TIGHTEN"
+    "preformal_gate_calibration": "SEMANTICALLY_CALIBRATED_NO_HIDDEN_SECOND_GATE_EXECUTION_PLUMBING_STILL_TIGHTEN"
+  },
+  "external_calibration": {
+    "dormant_path_intervention_illusion": "SUPPORTS_KEEP_INTERVENTION_SUPPORT_AND_DORMANT_PATH_CONTROL",
+    "causal_abstraction_graded_faithfulness": "SUPPORTS_KEEP_FROZEN_ABSTRACTION_AND_INTERVENTION_MAPPING",
+    "intervention_domain_scope": "SUPPORTS_SPLIT_BY_CLAIM_TYPE_RATHER_THAN_UNIVERSAL_MULTI_FAMILY_REQUIREMENT",
+    "mechanistic_localization_conciseness": "SUPPORTS_QUALITY_DIMENSION_BUT_NOT_UNIVERSAL_CAUSAL_IDENTIFICATION_GATE",
+    "path_specific_pns": "SUPPORTS_KEEP_AS_STRONGER_PRIVILEGE_CEILING_UNLESS_PRIVILEGE_MATCHED"
   },
   "prospective_recommendations": [
     "Do not alter global admission, novelty, comparator, reduction, or READY thresholds.",
-    "Keep candidate #32 terminal; do not rerun, repair, retune, tolerance-relax, add cycle 3, or reinterpret its opened R50 signal as reduction-exhaustion or scientific evidence.",
-    "Do not allocate a same-generation resource-localization successor as an R50 rescue; any later independently motivated successor needs a fresh object ID and prospective authority.",
-    "For later equal-semantics resource comparison, compute every contract-required event/fire/ignition/prediction and intermediate eligibility/weight predicate from preserved traces, and fail closed unless a complete verifier certificate is present.",
-    "For future exact-decay resource-localization claims, prospectively bind support-turnover/churn, cumulative distinct touched edges, horizon, reset/lifetime semantics, and explicitly label truncation/retirement approximations.",
-    "Decouple mechanical lint/metadata fixes from result-bearing workflow retriggers or require explicit one-shot authority for result-bearing execution.",
-    "Treat no-target check_count=17 as liveness only and preserve intentional idle rather than manufacturing SYSTEM or relabeled MECHANISM activity."
+    "Keep current H7 (#7) unchanged, non-executable, non-eligible and NOT_READY; do not promote or rerun the historical exploratory H7 branch.",
+    "For a later genuinely fresh H7 object, prospectively bind an allowed intervention domain and a frozen high-level-to-low-level intervention mapping, plus intervention-support/realism and dormant-path activation controls.",
+    "Require graded faithfulness across multiple intervention families or natural counterfactual regimes when the claim generalizes beyond a single intervention family; do not make multi-family testing universal for a deliberately family-bounded claim.",
+    "Separate necessity, sufficiency and completeness/alternative-route coverage when those properties are entailed by the route-responsibility claim; do not require all three for unrelated mechanism claims.",
+    "Treat conciseness/minimality as a causal-validity gate only if the claim asserts minimality/conciseness; otherwise retain it as a research-worthiness/localization-quality metric.",
+    "Keep path-specific PNS as a stronger-privilege ceiling unless information and resource privilege are genuinely matched; the scientifically interesting residual remains local responsibility-sensitive behavior under matched privilege.",
+    "Keep candidate #32 terminal and all prior no-rerun/no-repair boundaries unchanged.",
+    "Treat no-target check_count=18 as liveness only and preserve intentional idle rather than manufacturing SYSTEM or relabeled MECHANISM activity."
   ],
   "utility_request": null,
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": "HIGH",
   "questions_for_control_analyst": [
-    "For later fresh resource objects, should a complete equivalence-verifier certificate be a schema-required prerequisite for interpreter execution rather than only a prospective contract clause?",
-    "Should result-bearing workflows require an explicit one-shot authority token or non-push dispatch path so mechanical branch fixes cannot implicitly retrigger opened measurements?"
+    "For future H7 contracts, should multi-intervention-family testing be explicitly scoped to the intended claim domain, with a single frozen family allowed only for an intervention-family-bounded claim?",
+    "Should conciseness/minimality be recorded as a localization-quality/research-worthiness axis unless the prospective claim explicitly asserts a minimal mechanism?",
+    "Should every future H7 object include an explicit allowed intervention domain and high-level-to-low-level intervention mapping in the prospective contract before any result-bearing execution?"
   ]
 }
