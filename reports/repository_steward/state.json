@@ -1,36 +1,36 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260921T135000+0900-G5-5C7A2E91",
-  "produced_at": "2026-09-21T13:50:00+09:00",
-  "producer_run_id": "repository-steward-auto-20260921T135000+0900-G5-5C7A2E91",
+  "generation_id": "STEWARD-20260921T165000+0900-G6-8C4A21D7",
+  "produced_at": "2026-09-21T16:50:00+09:00",
+  "producer_run_id": "repository-steward-auto-20260921T165000+0900-G6-8C4A21D7",
   "authority_scope": "REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY",
-  "supersedes_generation_id": "STEWARD-20260921T105047+0900-G4-B3E7C921",
+  "supersedes_generation_id": "STEWARD-20260921T135000+0900-G5-5C7A2E91",
   "repository": "salmonmikan/sparkbrain_research",
   "input_generations": {
     "control": {
-      "generation_id": "CTRL-20260921T125000+0900-R22-7C3A91E4",
-      "handoff_commit": "db53217770b72596bc4beaa3f8c34abea6473311"
+      "generation_id": "CTRL-20260921T145000+0900-R23-4F07AFBF",
+      "handoff_commit": "864ed484248fcb3adeac24f4615686eafda9c373"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T120207+0900-R34-2E7C91A4",
-      "handoff_commit": "d5554d45a62d0ef0a20d0443e40b0f4d11c0eea8"
+      "generation_id": "EVA-20260921T162230+0900-R38-8A6D21C9",
+      "handoff_commit": "fbe6074f8ee7dbdc9d5ca00f14c35fa651d6fdb2"
     },
     "main": {
-      "generation_id": "MAIN-20260921T124719+0900-RELAY-FUNNEL21-SYSTEM-PIPELINE-R34-AUTHBOUND-6B2D91E4",
+      "generation_id": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
       "mailbox_branch": "ops/orchestrator-run-report",
-      "mailbox_head": "cbec0e48eed211a767fb04baa080d356c10008cc",
-      "candidate": "CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01",
-      "status": "RELAY_AUTHORITY_BOUNDARY_FRESH_R34_SYSTEM_ARCHITECTURE_OBJECT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY"
+      "mailbox_head": "8654b2988c12c0a7b65579df82f2483b9e3c293c",
+      "completed_predecessor_generation": "MAIN-20260921T151412+0900-PRIMARY-FUNNEL21-SYSTEM-PIPELINE-R37-6F3A91C2",
+      "completed_predecessor_mailbox_commit": "6002c976a1047fbe7974dd983cc88909ec51d584",
+      "completed_predecessor_terminal": "FOUR_STAGE_PIPELINE_FEASIBLE",
+      "candidate": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
+      "status": "RELAY_AUTHORITY_BOUNDARY_FRESH_R38_SYSTEM_ARCHITECTURE_OBJECT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY"
     },
     "sub": {
-      "generation_id": "SUB-20260921T133207+0900-NOOP-NOMECH-6A3C91E7",
+      "generation_id": "SUB-20260921T163517+0900-NOOP-R38NOMECH-7B4D21C9",
       "mailbox_branch": "ops/orchestrator-run-report",
-      "mailbox_head": "cbec0e48eed211a767fb04baa080d356c10008cc",
+      "mailbox_snapshot_commit": "fc861a5bb47850ebb01578fc38053fe58e36d37b",
       "status": "NO_OP_NO_COHERENT_MECHANISM_TARGET",
-      "replay_research_branch": "research/exploratory-sub-v05-outcome-replay-credit-semantics-timeshift-20260921",
-      "replay_research_head": "5e5f04c27bb534fb31a81d25de0b6036e3854b73",
-      "replay_ci_run_id": 35558621719,
-      "replay_ci_conclusion": "success"
+      "new_research_artifact": false
     },
     "utility": {
       "assignment_branch": "ops/utility-orchestrator-requests",
@@ -40,8 +40,8 @@
       "active_assignment_generation_id": null
     },
     "previous_steward": {
-      "generation_id": "STEWARD-20260921T105047+0900-G4-B3E7C921",
-      "handoff_commit": "6cf252755c2432fb21f3d818b0f491ffaaed9509"
+      "generation_id": "STEWARD-20260921T135000+0900-G5-5C7A2E91",
+      "handoff_commit": "006840acf13d980c74f25416c71c6117941d7810"
     }
   },
   "authoritative_refs": {
@@ -71,9 +71,9 @@
   "audit": {
     "main_research_evidence_separation": "COMPLIANT",
     "fresh_preformal_nonconformance_governance": "CONTAINED_OUTSIDE_EVIDENCE_NO_STEWARD_REPAIR",
-    "fresh_pipeline_integrity_object": "SEPARATE_SYSTEM_ARCHITECTURE_NOT_STARTED_BY_MAIN_PRIMARY",
+    "pipeline_integrity_static_object": "CANONICAL_TERMINAL_NO_IMPLEMENTATION_ARTIFACT",
+    "fresh_outcome_blind_pipeline_successor": "SEPARATE_SYSTEM_ARCHITECTURE_RELAY_NOT_STARTED",
     "sub_latest": "NO_OP_NO_NEW_RESEARCH_ARTIFACT",
-    "sub_replay_branch_isolated_non_evidentiary": true,
     "canonical_docs_vs_issues": "COMPLIANT_ISSUE_139_OPERATIONAL_ONLY",
     "freeze_tag_mapping": "COMPLIANT_NO_MIGRATION",
     "protection_gap": "MISSING_BUT_DEFERRED_READ_ONLY",
@@ -121,17 +121,17 @@
     "main_promotions_performed": 0
   },
   "persistence": {
-    "history_path": "reports/repository_steward/history/2026-09-21/1350.md",
-    "history_commit": "886a4b2513036b6e3d6532a665639afca9a725a8",
+    "history_path": "reports/repository_steward/history/2026-09-21/1650.md",
+    "history_commit": "078002b1bd0ea8e3464610627b76bdde3bc4f461",
     "latest_path": "reports/repository_steward/latest.md",
-    "latest_commit": "2d94576f909e9c6cfaf0c1169330474f2368fb8e",
+    "latest_commit": "8e43c68fdbb3f6aeae334797a348c456e2db5c7b",
     "state_path": "reports/repository_steward/state.json",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
   },
   "next_priorities": [
-    "Keep the R34 raw-before-score nonconforming consumed object outside evidence promotion; do not repair or reinterpret it from Steward.",
-    "Keep the fresh pipeline-integrity SYSTEM Architecture object separate and await authorized MAIN PRIMARY action.",
-    "Keep SUB replay/timeshift artifact isolated and do not promote it.",
+    "Keep the R33 raw-before-score nonconforming consumed object outside evidence promotion; do not repair or reinterpret it from Steward.",
+    "Keep the R37 terminal SYSTEM static feasibility result as governance context only; it produced no implementation artifact qualifying for main promotion.",
+    "Keep the fresh R38 outcome-blind four-stage pipeline successor separate and await authorized MAIN PRIMARY action.",
     "Keep authoritative evidence/freeze/preserve refs unchanged.",
     "Continue read-only tracking of Issue #139 and protection/ruleset status.",
     "Keep PR #148/#149 deferred on unchanged heads.",
