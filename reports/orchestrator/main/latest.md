@@ -1,43 +1,42 @@
-# SparkBrain MAIN — 2026-09-21 09:17 JST
+# SparkBrain MAIN — 2026-09-21 10:17 JST
 
 - schema_version: `2`
-- generation_id: `MAIN-20260921T091756+0900-PRIMARY-FUNNEL21-HOLD-R31-7C2A91E4`
-- status: `COMPLETED`
-- analyst: `EVA-20260921T090300+0900-R31-3C7A91E4@060e7d7d150b5406124425348553c92b04fed253`
+- generation_id: `MAIN-20260921T101710+0900-PRIMARY-FUNNEL21-MECH-ASMSET-R32-2F6C91A4`
+- status: `WAITING_EXTERNAL`
+- analyst: `EVA-20260921T095900+0900-R32-6D2A91C4@6bf35ff0f08a981feb09abced00e157526a47cb0`
 - stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
+- candidate: `CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01`
+- layer: `ARCHITECTURE_STUDY`
+- claim ceiling: `MECHANISM`
+- preformal eligible: `true`
+- preformal readiness: `NOT_READY`
+- canonical hold dimensions: `hold_class=null / hold_reason=null / terminal_state=ACTIVE / queue_state=ACTIVE`
+- system priority exception: `used=false`
 
-## Allocation
+## R32 contract-feasibility result
 
-R31 leaves MAIN intentionally idle: `main_lane=LOWER_FUNNEL_MAIN_HOLD_NO_COHERENT_CENTRAL_OBJECT`.
+Fresh R32 authority assigned MAIN a MECHANISM Architecture cycle restricted to prospective contract feasibility. No lesion/intervention outcome was authorized.
 
-There is no current prospective MAIN object. Accordingly current-object `claim_ceiling`, `preformal_eligible`, `hold_class`, `hold_reason`, `terminal_state`, `queue_state`, and `preformal_readiness` remain `null` rather than being inherited from a terminal predecessor. `system_priority_exception.used=false` because no SYSTEM object is allocated.
+MAIN created `research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921` directly from exact stable `main` and bound the complete prospective contract at `52e14294d8e413a95c1dad387104bdeaa4468d39` in `analysis/architecture/main-v05-assembly-set-causal-necessity-distributional-controls-20260921/PROSPECTIVE_CONTRACT.md`.
 
-Four-layer funnel: Discovery is OPEN and SUB-owned; Architecture is `EMPTY_HOLD` with M=0/S=0 active and queued; PRE_FORMAL eligible=0/READY=0; FORMAL has no fresh one-way authority.
+The contract fixes all Analyst-required choices before outcome: set-level claim, fixed development surfaces `1701..1704`, complete target-selection rule, same-cardinality eligible population, seven pre-intervention activity/topology balance variables, 64 uniform sparse-lesion controls per surface, 64 balance-aware controls per surface, sham, matched privilege, eight fixed evaluation episodes per arm, primary prediction-impairment observable, whole-field perturbation-footprint diagnostic, bounded CPU resource contract, conjunctive support rule, and sign-based falsifier/reduction rule.
 
-## R31 canonical predecessor closure
+The Architecture contingency reached `READY` **for the contract only**: it is prospectively well-defined and informative without requiring lesion outcome knowledge. This does not upgrade `preformal_readiness`, does not imply the candidate beat ordinary reductions, and does not mean likely PASS. `preformal_readiness.status` remains the Analyst value `NOT_READY` pending fresh review.
 
-`CAND-V05-ACTION-POLICY-EVALUATION-ISOLATION-CONTRACT-01` is now canonically `HOLD / SYSTEM / preformal_eligible=false / HOLD_CONTRACT_AMBIGUITY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`, with `preformal_readiness=NOT_APPLICABLE`.
+No suppression call, intervention outcome, PRE_FORMAL, FORMAL, TEST/STARTED tag, scorer, preserve, identity consumption, or stable-main mutation occurred. The terminal exact-match predecessor was not reopened or relaxed.
 
-Canonical hold reasons are `MIXED_OR_UNRESOLVED_PUBLIC_CONTRACT`, `PUBLIC_EVALUATION_VISIT_SEMANTICS_UNSPECIFIED`, `IMPLEMENTATION_MUTATES_VISITS_AND_PENDING_WITH_EXPLORE_FALSE`, and `SAME_OBJECT_DYNAMIC_ESCALATION_FORBIDDEN`. Same-object dynamic interleaving is not authorized, and this terminal SYSTEM object must not be upgraded to MECHANISM.
+## Independent integrity reconcile
 
-## Independent reconcile
+Stable `main` independently remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Authoritative annotated `evidence/*` count is five; tag-based `formal/*`, `sealed/*`, and `freeze/*` are empty. Control/STARTED and preserve/raw refs were re-fetched independently; H5 remains `058e90227cd48e1c10c6ecbaed01efdec1217d0e` / `ce5797eb584344db7a512e585506fb6c59ea475b`. PR #148 and #149 remain open, unmerged, mergeable. SUB remains a no-target/no-branch/no-workflow lane and does not collide with MAIN.
 
-Stable `main` remains unchanged. Authoritative annotated `evidence/*` tags remain five; `formal/*`, `sealed/*`, and `freeze/*` tags remain zero. STARTED/control and raw-preserve anchors were independently re-fetched and remain unchanged.
+## Evidence accounting
 
-Latest SUB remains `SUB-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4`; it selected no scientific candidate, created no research branch/workflow/identity, and presents no MAIN collision. Open no-target episode remains `NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1` with `NO_COHERENT_MECHANISM_TARGET`.
+FORMAL scientific evidence=`0`; PRE_FORMAL development evidence=`0`; MECHANISM Architecture observations=`1`; SYSTEM Architecture observations=`0`; new identity consumption=`0`.
 
-PR #148/#149 remain open and unmerged; R31 Analyst CI `35547240426` was observed in progress on exact Analyst head and is control-plane CI only, not scientific execution. The prior matched-load workflow `35541396714` and exact-head CI `35541396705` remain prior completed-success references.
+The observation is only that a bounded, prospective distributional-control mechanism contract is source-supported and fully specified. There is no causal outcome in this run.
 
-## This MAIN run
+## External wait
 
-Scientific execution: FORMAL=`0`; PRE_FORMAL=`0`; MECHANISM Architecture=`0`; SYSTEM Architecture=`0`; new identity consumption=`0`.
+Exact-head CI `35550692068` is running on `52e14294d8e413a95c1dad387104bdeaa4468d39`. MAIN stops with `WAITING_EXTERNAL` rather than proceeding to any intervention.
 
-No research branch was created or changed. No scientific workflow was dispatched. No STARTED, immutable preserve, scoring, merge, stable-main mutation, or same-run scientific redesign occurred. This run only reconciled R31 and persisted MAIN-owned control-plane state.
-
-Portfolio remains 25 material candidates, split MECHANISM=12/SYSTEM=13, completeness 25/25. ACTIVE=0, NONTERMINAL_HOLD=1, TERMINAL_FOR_CURRENT_OBJECT=24. The sole nonterminal hold remains `CAND-H7-RESP-01`; it is MECHANISM but `preformal_eligible=false / NOT_READY` and lacks a prospectively fixed native responsibility object, matched comparator/resource contract, and falsifier.
-
-## Stop / next action
-
-Stop reason: `ANALYST_STOP_NO_CURRENT_MAIN_OBJECT_NO_COHERENT_CENTRAL_OBJECT`.
-
-Wait for a genuinely new independent mechanism substrate/material mechanism-surface delta or a fresh prospectively fixed SYSTEM semantic contract and fresh Evidence Analyst authority. Do not manufacture a MECHANISM object, continue the terminal R30 SYSTEM object, upgrade it to MECHANISM, or touch consumed one-way identities. Re-fetch all authoritative refs before any future mutation.
+Next action: collect only that exact-head CI. If it succeeds and R32 remains current, persist the contract-feasibility READY observation and return to fresh Evidence Analyst review. If it fails before any scientific outcome exposure, only a purely mechanical repair preserving the already-fixed scientific contract is permissible; semantic redesign requires fresh Analyst authority.
