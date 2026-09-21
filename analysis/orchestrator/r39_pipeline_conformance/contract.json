@@ -1,0 +1,82 @@
+{
+  "analysis_choices": {
+    "baseline": "none",
+    "comparator": "none",
+    "exclusions": [],
+    "features": [
+      "values"
+    ],
+    "post_output_changes_allowed": false,
+    "resource_rule": "single_process_stdlib_only",
+    "score": "sum",
+    "threshold": 17,
+    "transform": "identity"
+  },
+  "analysis_plan_path": "analysis/orchestrator/r39_pipeline_conformance/analysis_plan.json",
+  "analyst_commit": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
+  "analyst_generation": "EVA-20260921T170125+0900-R39-4B7D21C8",
+  "candidate_id": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
+  "claim_ceiling": "SYSTEM",
+  "contract_generation": "R39-PIPECONF-V1",
+  "fail_closed_conditions": [
+    "any frozen file hash mismatch",
+    "fixture not synthetic_only",
+    "seed mismatch",
+    "raw contains scoring fields",
+    "preserved raw digest mismatch",
+    "analysis plan differs from frozen transform/comparator/score/threshold",
+    "scored lineage raw digest differs from exact preserved blob",
+    "scientific or R33 data required",
+    "post-output redesign required"
+  ],
+  "fixture_path": "analysis/orchestrator/r39_pipeline_conformance/synthetic_fixture.json",
+  "forbidden_same_run": [
+    "PRE_FORMAL",
+    "FORMAL",
+    "scientific data",
+    "R33 data reuse",
+    "official evidence tags",
+    "STARTED identity"
+  ],
+  "frozen_sha256": {
+    "analysis/orchestrator/r39_pipeline_conformance/analysis_plan.json": "d960864e09cff04c56a45101b189023a1b1e1feeef37dcedc4ba91869fc5a868",
+    "analysis/orchestrator/r39_pipeline_conformance/synthetic_fixture.json": "e8f8232b31b0d051db9262c27b16baf0f362510c11de726b35370d1e6a20727f",
+    "scripts/outcome_blind_fixed_scorer.py": "6a6e2a63d67450f7da86a1580e200d09b27468c1c3e07030aabd0f7384f542d7",
+    "scripts/outcome_blind_pipeline_conformance.py": "fa989eeb7f7fd25b0a63aa78050bbad45b6195485f88635a73be20fd090fd128",
+    "scripts/outcome_blind_raw_generator.py": "a4d7ce839b9ab5b1d0548ac6d47a50ff92397dc273b6521b5c733d4635b44cd5",
+    "tests/test_outcome_blind_pipeline_conformance.py": "5fc68ba6e486478160ad6808200551e40002a5052365dfb5e5fdcc6579796508"
+  },
+  "negative_checks": [
+    "mutated preserved raw must be rejected before scoring"
+  ],
+  "package_git_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
+  "package_path": "pyproject.toml",
+  "pipeline_path": "scripts/outcome_blind_pipeline_conformance.py",
+  "preserve_namespace": "synthetic_preserve/r39_outcome_blind_four_stage/v1",
+  "raw_generator_path": "scripts/outcome_blind_raw_generator.py",
+  "raw_schema_version": 1,
+  "runtime": {
+    "config": "stdlib-only conformance implementation; no network/scientific datasets",
+    "environment": "GitHub Actions ci matrix; project installed with .[dev,learned,spiking]",
+    "os": "ubuntu-latest",
+    "python_versions": [
+      "3.11",
+      "3.13"
+    ],
+    "seed": 39001
+  },
+  "schema_version": 1,
+  "scored_preserve_namespace": "synthetic_scored_preserve/r39_outcome_blind_four_stage/v1",
+  "scorer_path": "scripts/outcome_blind_fixed_scorer.py",
+  "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "stages": [
+    "RAW_GENERATOR",
+    "DURABLE_RAW_ONLY_PRESERVE_DIGEST",
+    "FIXED_SCORER_EXACT_PRESERVED_BLOB",
+    "SCORED_PRESERVE_LINEAGE"
+  ],
+  "synthetic_only": true,
+  "test_path": "tests/test_outcome_blind_pipeline_conformance.py",
+  "workflow_git_blob": "25252b7674d6578ca27366867e6c530ce854053e",
+  "workflow_path": ".github/workflows/ci.yml"
+}
