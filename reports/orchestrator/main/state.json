@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T171655+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R39-7E4C21A9",
-  "producer_run_id": "sparkbrain-main-primary-20260921T171655JST-R39-PIPECONF",
-  "produced_at": "2026-09-21T17:34:00+09:00",
-  "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
-  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_PIPELINE_CONFORMANCE",
+  "generation_id": "MAIN-20260921T174556+0900-RELAY-FUNNEL21-SYSTEM-PIPECONF-R39-CIFAIL-3A7D21E6",
+  "producer_run_id": "sparkbrain-main-relay-20260921T174556JST-R39-CIFAIL",
+  "produced_at": "2026-09-21T17:45:56+09:00",
+  "execution_mode": "RELAY",
+  "status": "BLOCKED",
+  "authority_scope": "MAIN_RELAY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_EXACT_HEAD_CI_COLLECTION",
   "analyst_generation_id": "EVA-20260921T170125+0900-R39-4B7D21C8",
   "analyst_commit": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
-  "supersedes_generation_id": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
-  "consumed_main_generation_id": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
+  "supersedes_generation_id": "MAIN-20260921T171655+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R39-7E4C21A9",
+  "consumed_main_generation_id": "MAIN-20260921T171655+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R39-7E4C21A9",
   "main_lane": "PREFORMAL_OUTCOME_BLIND_FOUR_STAGE_PIPELINE_CONFORMANCE_ARCHITECTURE_CYCLE1",
   "research_layer": "ARCHITECTURE_STUDY",
   "candidate_id": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
@@ -30,7 +30,7 @@
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_tip": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
-    "latest_sub_generation": "SUB-20260921T163517+0900-NOOP-R38NOMECH-7B4D21C9",
+    "latest_sub_generation": "SUB-20260921T174210+0900-NOOP-R39POSTMAINCIFAIL-5E8A21C4",
     "active_research_branch": "research/main-outcome-blind-four-stage-pipeline-conformance-arch-20260921",
     "active_research_head": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
     "active_identity": null,
@@ -93,16 +93,20 @@
       "run_id": 35578428792,
       "head_sha": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
       "kind": "CI_SYNTHETIC_ARCHITECTURE_CONFORMANCE",
-      "status": "in_progress",
-      "conclusion": null,
-      "scientific_dispatch": false
+      "status": "completed",
+      "conclusion": "failure",
+      "failure_stage": "lint_before_local_readiness_test_or_conformance_output",
+      "failure_observation": "Both Python 3.11 and 3.13 jobs failed at Lint; Local readiness, Test, and Validate bundle were skipped. Check runs report three annotations each, but exact annotation text is not available through the current connector surface.",
+      "scientific_dispatch": false,
+      "outcome_opened": false
     }
   ],
   "observations": {
     "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY",
     "terminal_observation": null,
-    "pre_output_ci_blocker": "Initial exact-head CI failed at ruff before Test; no synthetic conformance output was opened.",
-    "pre_output_repair": "Outcome-independent lint-only implementation repair; all analysis-affecting choices unchanged and exact hashes re-frozen before the next conformance attempt."
+    "pre_output_ci_blocker": "Exact-head CI 35578428792 failed at Lint on both Python matrix jobs before Local readiness, Test, Validate bundle, or any synthetic conformance output.",
+    "pre_output_repair": "The earlier PRIMARY repair remains recorded as outcome-independent lint-only implementation repair with all analysis-affecting choices unchanged and hashes re-frozen before the second attempt.",
+    "relay_disposition": "No further mechanical fix was applied because the exact Ruff diagnostic is unavailable; guessing a fix would violate exact-failure inspection and no-redesign constraints."
   },
   "ordinary_reductions": "NOT_APPLICABLE_METHOD_INTEGRITY_SYSTEM_OBJECT",
   "support_breadth": "SYNTHETIC_NON_SCIENTIFIC_FIXTURE_ONLY_R39_PIPELINE_CONFORMANCE",
@@ -124,7 +128,10 @@
   ],
   "consumed_identities_this_run": [],
   "integrity": {
-    "analyst_tip_rechecked_after_final_binding": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
+    "analyst_tip_rechecked_before_relay_persistence": "773fb8a5b1a5cb87ff936c399872d6a5a2099b25",
+    "main_generation_rechecked_before_relay_persistence": "MAIN-20260921T171655+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R39-7E4C21A9",
+    "research_branch_head_rechecked_before_relay_persistence": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
+    "exact_head_ci_collected": true,
     "stable_main_unchanged": true,
     "sub_collision_status": "NO_COLLISION",
     "scientific_data_used": false,
@@ -135,11 +142,11 @@
     "immutable_control_or_preserve_modified": false,
     "analysis_choices_changed_after_output": false,
     "system_to_mechanism_upgrade": false,
-    "initial_ci_failure_preceded_conformance_output": true,
-    "repair_was_outcome_independent": true
+    "conformance_output_opened": false,
+    "mechanical_fix_applied_by_relay": false
   },
-  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_R39_SYNTHETIC_CONFORMANCE",
-  "next_action": "Collect only workflow 35578428792 for exact head 5527ac14d4d19078a91aa40f8825d5a4f41f0a91. If success, record SYNTHETIC_LIVE_CONFORMANCE_PASS and stop for fresh Analyst review. If a frozen fail-closed condition is reached, stop without rescue tuning or same-object redesign. No PRE_FORMAL, FORMAL, R33 reuse, scientific data, or identity action.",
+  "stop_reason": "BLOCKED_EXACT_HEAD_CI_R39_LINT_FAILURE_EXACT_DIAGNOSTIC_REQUIRED_BEFORE_MECHANICAL_FIX",
+  "next_action": "Fresh PRIMARY or a fresher Evidence Analyst must inspect the exact Ruff diagnostics for workflow 35578428792 at head 5527ac14d4d19078a91aa40f8825d5a4f41f0a91 and prospectively authorize or perform only a science-invariant mechanical correction if the intended behavior is already fixed. Relay must not guess a repair. No PRE_FORMAL, FORMAL, R33 reuse, scientific data, identity action, output-driven redesign, or same-object scientific continuation.",
   "utility_request": null,
   "owner": "main"
 }
