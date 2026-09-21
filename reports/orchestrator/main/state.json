@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T161205+0900-PRIMARY-FUNNEL21-BLOCKED-R37POST-9B4D21C7",
-  "producer_run_id": "sparkbrain-main-primary-20260921T161205JST-R37POST-BLOCKED",
-  "produced_at": "2026-09-21T16:12:05+09:00",
-  "mode": "PRIMARY",
+  "generation_id": "MAIN-20260921T164444+0900-RELAY-FUNNEL21-BLOCKED-R38AUTHBOUND-6C8A21D4",
+  "producer_run_id": "sparkbrain-main-relay-20260921T164444JST-R38-AUTHBOUND",
+  "produced_at": "2026-09-21T16:44:44+09:00",
+  "execution_mode": "RELAY",
   "status": "BLOCKED",
-  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_CONTROL_PLANE_RECONCILIATION_NO_SCIENCE",
-  "analyst_generation_id": "EVA-20260921T145812+0900-R37-4E8C21A6",
-  "analyst_commit": "64c7adf88f807407eb817f3b45d0eb269458f534",
-  "supersedes_generation_id": "MAIN-20260921T151412+0900-PRIMARY-FUNNEL21-SYSTEM-PIPELINE-R37-6F3A91C2",
-  "consumed_main_generation_id": "MAIN-20260921T151412+0900-PRIMARY-FUNNEL21-SYSTEM-PIPELINE-R37-6F3A91C2",
-  "main_lane": "PREFORMAL_RAW_PRESERVE_SCORER_PIPELINE_INTEGRITY_ARCHITECTURE_STATIC_CYCLE1",
+  "authority_scope": "MAIN_RELAY_FUNNEL_V2_1_CONTROL_PLANE_RECONCILIATION_NO_SCIENCE",
+  "analyst_generation_id": "EVA-20260921T162230+0900-R38-8A6D21C9",
+  "analyst_commit": "fbe6074f8ee7dbdc9d5ca00f14c35fa651d6fdb2",
+  "supersedes_generation_id": "MAIN-20260921T161205+0900-PRIMARY-FUNNEL21-BLOCKED-R37POST-9B4D21C7",
+  "consumed_main_generation_id": "MAIN-20260921T161205+0900-PRIMARY-FUNNEL21-BLOCKED-R37POST-9B4D21C7",
+  "main_lane": "PREFORMAL_OUTCOME_BLIND_FOUR_STAGE_PIPELINE_CONFORMANCE_ARCHITECTURE_CYCLE1",
   "research_layer": "ARCHITECTURE_STUDY",
-  "candidate_id": "CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01",
-  "cycle_count": 1,
+  "candidate_id": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
+  "cycle_count": 0,
   "claim_ceiling": "SYSTEM",
   "preformal_eligible": false,
   "preformal_readiness": null,
@@ -24,93 +24,64 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No comparably executable/informative MECHANISM object exists. The authorized R37 SYSTEM Architecture cycle has already reached its prospectively fixed stop condition and cannot be repeated without fresh Analyst authority.",
+    "reason_detail": "No comparably executable/informative MECHANISM exists; SYSTEM successor directly protects PRE_FORMAL/FORMAL integrity.",
     "compared_mechanism_candidate_ids": []
   },
-  "blocked_until": "FRESH_EVIDENCE_ANALYST_GENERATION_CONSUMES_MAIN_R37_FOUR_STAGE_PIPELINE_FEASIBLE",
-  "do_not_touch": [
-    "R33 object CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01: do not rerun, repair, rescore, redesign, or open surfaces 1702-1704",
-    "R37 object CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01: do not repeat cycle 1 or infer post-outcome implementation authority",
-    "do not implement a scientific pipeline under already-consumed R37 authority",
-    "FORMAL/TEST/STARTED/evidence identities and all consumed one-way identities",
-    "immutable evidence/preserve/control refs and stable main",
-    "SUB independent Discovery/no-target lane"
-  ],
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_tip": "64c7adf88f807407eb817f3b45d0eb269458f534",
-    "main_r37_result_mailbox_tip": "6002c976a1047fbe7974dd983cc88909ec51d584",
-    "orchestrator_tip_before_this_run": "20ae80ff91f8e579856674047eb212dba0b3d998",
-    "lease_block_commit": "25f1d99818bda97078c7f2e31f4608e18fda1e51",
+    "analyst_tip": "fbe6074f8ee7dbdc9d5ca00f14c35fa651d6fdb2",
+    "orchestrator_tip_before_this_run": "fc861a5bb47850ebb01578fc38053fe58e36d37b",
+    "previous_main_mailbox_commit": "0c91185ddd93246335ee12c6cb4d7b1148fd7b4d",
+    "latest_sub_generation": "SUB-20260921T163517+0900-NOOP-R38NOMECH-7B4D21C9",
     "active_research_branch": null,
     "active_research_head": null,
-    "prior_r33_preformal_head": "b907403e972af7df8a6502dfe4c54bdbb0d23475",
-    "evidence_tags": {
-      "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
-    },
+    "active_identity": null,
+    "evidence_tags_count": 5,
     "formal_tags": [],
     "sealed_tags": [],
-    "freeze_tags": [],
-    "started_refs": {
-      "c19_v4": "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
-      "c19_r1_v1": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
-      "c19_r1_v2": "a230e250021cea113c42d674da2bfc31dc0a3549",
-      "c19_r2": "41df2685fe015140c8afa13e646554dd2e8c836b",
-      "h5": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-      "ni01": "d3e4a5d6349e7e69f21ffc3554998aa72f1f9d3d",
-      "pd01": "0569e348b9d93aeee53fc58daf4b71ee92303d6c"
-    },
-    "raw_preserve_refs": {
-      "c19_v4": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
-      "c19_r2": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
-      "h5": "ce5797eb584344db7a512e585506fb6c59ea475b",
-      "ni01": "8a39cf70e397bb7588f948910f01ec58672ac814",
-      "pd01": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881"
-    },
-    "open_prs_rechecked": [148, 149]
+    "freeze_tags": []
   },
   "research_layer_state": {
     "DISCOVERY": {"state": "OPEN", "M": 0, "S": 0},
-    "ARCHITECTURE_STUDY": {"state": "ACTIVE_CANONICAL_PENDING_ANALYST_REVIEW", "M": 0, "S": 1, "QM": 0, "QS": 0},
+    "ARCHITECTURE_STUDY": {"state": "ACTIVE", "M": 0, "S": 1, "QM": 0, "QS": 0},
     "PRE_FORMAL": {"state": "EMPTY_HOLD", "M": 0, "eligible": 0, "READY": 0},
     "FORMAL": {"state": "EMPTY_HOLD", "fresh_one_way_authority": false}
   },
-  "funnel_metrics": {
-    "portfolio": {"total": 29, "MECHANISM": 13, "SYSTEM": 16},
-    "terminal_state_counts_canonical_R37": {"ACTIVE": 1, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 27},
-    "preformal_eligible": 0,
-    "preformal_ready": 0,
-    "viable_mechanism_candidates": 0,
-    "rolling_actual_scientific_selections": ["MECHANISM", "SYSTEM", "SYSTEM"]
+  "prospective_contingency_tree": {
+    "BEFORE_ANY_CONFORMANCE_OUTPUT": "Freeze raw schema/manifest, preserve namespace, all analysis-affecting transformations/filtering/features/comparators/baselines/thresholds/exclusions/resource rules, exact source/package/scorer/workflow hashes, runtime/env/config/seeds, synthetic fixture, fail-closed deviations.",
+    "SYNTHETIC_LIVE_CONFORMANCE_PASS": "STOP_AND_RETURN_TO_FRESH_ANALYST_REVIEW;CURRENT_SYSTEM_OBJECT_CAN_CLOSE_HOLD_SYSTEM_TERMINAL;DO_NOT_REOPEN_R33",
+    "MUTABLE_RAW_OR_UNPRESERVED_SCORER_INPUT": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
+    "ANALYSIS_CHOICE_FIXED_AFTER_OUTPUT_VISIBILITY": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
+    "LINEAGE_OR_PROVENANCE_INCOMPLETE": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
+    "SCIENTIFIC_DATA_OR_R33_REUSE_REQUIRED": "SCOPE_INVALID_STOP",
+    "REDESIGN_AFTER_CONFORMANCE_OUTPUT_REQUIRED": "STOP_FRESH_SUCCESSOR_NO_SAME_OBJECT_REPAIR",
+    "SAME_RUN_PREFORMAL_OR_FORMAL": "FORBIDDEN_STOP"
   },
+  "do_not_touch": [
+    "R33 object CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01: do not rerun, repair, rescore, redesign, or reuse its scientific data",
+    "R37 object CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01: terminal HOLD_SYSTEM_TERMINAL; do not reopen or reinterpret it",
+    "fresh R38 successor must not be started by Relay before PRIMARY starts/hands off the same object",
+    "no scientific data or R33 data in the R38 synthetic conformance cycle",
+    "no PRE_FORMAL rerun or FORMAL action in the same run",
+    "no output-driven redesign or post-output analysis-choice fixing",
+    "FORMAL/TEST/STARTED identities and all consumed one-way identities",
+    "immutable evidence/preserve/control refs and stable main",
+    "SUB independent no-target lane"
+  ],
   "workflows": {
     "scientific": [],
     "current_run_scientific_dispatch": false,
-    "latest_repo_workflow_observation": "No MAIN scientific workflow is active or authorized; recent repository CI is control-plane/incidental only for this run."
+    "expected_next_action": "PRIMARY_START_EXACT_R38_NON_EVIDENTIARY_PIPELINE_CONFORMANCE_CYCLE"
   },
-  "observations": {
-    "new_scientific_observation": null,
-    "prior_producer_terminal_observation": "FOUR_STAGE_PIPELINE_FEASIBLE",
-    "canonicalization_status": "PENDING_FRESH_EVIDENCE_ANALYST",
-    "evidentiary_class": "NO_NEW_SCIENCE_CONTROL_PLANE_RECONCILIATION",
-    "ordinary_reductions": [
-      "R37 already established repository-native raw durability via immutable/no-clobber preserve refs plus digests",
-      "R37 already established exact preserved-blob scorer binding feasibility via the H5 one-way precedent",
-      "No additional reduction question is authorized under the consumed R37 cycle"
-    ],
-    "support_breadth": "No new support was generated. Prior R37 support remains repository-native H5 precedent for the four-stage boundary; successor implementation/dynamic validation requires fresh Analyst authority."
-  },
+  "action": "FRESH_RECONCILIATION_AND_RELAY_AUTHORITY_CHECK_ONLY",
+  "result": "BLOCKED_AT_RELAY_AUTHORITY_BOUNDARY",
   "evidentiary_status": {
+    "class": "NON_EVIDENTIARY_CONTROL_PLANE_RECONCILIATION",
     "FORMAL_evidence": 0,
     "PRE_FORMAL_development_evidence": 0,
     "MECHANISM_Architecture_observations": 0,
     "SYSTEM_Architecture_observations": 0,
-    "new_identity_consumption": 0,
-    "current_work": "CONTROL_PLANE_ONLY_BLOCKED_PENDING_ANALYST"
+    "new_identity_consumption": 0
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -123,38 +94,34 @@
   ],
   "consumed_identities_this_run": [],
   "integrity": {
-    "r33_preformal_canonical_integrity": "NONCONFORMING_RAW_BEFORE_SCORE",
-    "r33_same_object_rerun_repair_rescore": false,
-    "r37_cycle1_repeated": false,
-    "r37_pipeline_implemented": false,
-    "scientific_outcome_opened": false,
+    "stable_main_unchanged": true,
+    "analyst_tip_rechecked_before_mutation": "fbe6074f8ee7dbdc9d5ca00f14c35fa651d6fdb2",
+    "main_lease_rechecked_before_mutation": "MAIN-20260921T161205+0900-PRIMARY-FUNNEL21-BLOCKED-R37POST-9B4D21C7",
+    "orchestrator_tip_rechecked_before_mutation": "fc861a5bb47850ebb01578fc38053fe58e36d37b",
+    "fresh_primary_running_same_object": false,
+    "sub_collision_status": "NO_COLLISION_SUB_R38_IS_NO_TARGET_NO_OP_AND_EXPLICITLY_AVOIDS_MAIN_SYSTEM_SUCCESSOR",
     "research_branch_modified": false,
     "scientific_workflow_dispatched": false,
     "started_created": false,
     "immutable_evidence_modified": false,
     "immutable_control_or_preserve_modified": false,
-    "stable_main_unchanged": true,
-    "material_superseding_generation_detected_before_persistence": false,
-    "analyst_tip_rechecked_before_persistence": "64c7adf88f807407eb817f3b45d0eb269458f534",
-    "sub_collision_status": "NO_COLLISION_SUB_IS_NO_TARGET_NO_OP_AND_EXPLICITLY_AVOIDS_R37_MAIN_OBJECT"
+    "scientific_outcome_opened": false,
+    "new_identity_consumption": 0,
+    "system_to_mechanism_upgrade": false,
+    "preformal_or_formal_started": false
   },
-  "previous_object_producer_result": {
+  "previous_object_canonical_disposition": {
     "candidate_id": "CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01",
-    "observation": "FOUR_STAGE_PIPELINE_FEASIBLE",
-    "evidentiary_class": "NON_EVIDENTIARY_SYSTEM_ARCHITECTURE_OBSERVATION",
-    "canonical_dimensions_still_from_analyst_R37": {
-      "claim_ceiling": "SYSTEM",
-      "preformal_eligible": false,
-      "preformal_readiness": null,
-      "hold_class": null,
-      "hold_reason": null,
-      "terminal_state": "ACTIVE",
-      "queue_state": "ACTIVE"
-    }
+    "classification": "HOLD",
+    "claim_ceiling": "SYSTEM",
+    "preformal_eligible": false,
+    "hold_class": "HOLD_SYSTEM_TERMINAL",
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "queue_state": "NOT_QUEUED",
+    "phenomenon": "FOUR_STAGE_PIPELINE_FEASIBLE"
   },
-  "result": "NO_NEW_AUTHORITY_FAIL_CLOSED_AFTER_COMPLETED_R37_CYCLE1",
-  "stop_reason": "NO_FRESH_ANALYST_AFTER_R37_COMPLETION_FAIL_CLOSED",
-  "next_action": "Await fresh Evidence Analyst canonicalization/allocation. Do not repeat the completed R37 Architecture cycle or infer implementation/PRE_FORMAL/FORMAL authority from FOUR_STAGE_PIPELINE_FEASIBLE.",
+  "stop_reason": "RELAY_AUTHORITY_BOUNDARY_FRESH_R38_SYSTEM_ARCHITECTURE_OBJECT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY",
+  "next_action": "PRIMARY may start only R38's exact prospectively fixed, non-evidentiary outcome-blind four-stage pipeline binding/implementation/synthetic-conformance cycle. Relay may continue only after PRIMARY safely hands off/stops mutating this same object or a started workflow requires already-fixed collection/mechanical continuation. Stop before scientific data, R33 reuse, PRE_FORMAL rerun, FORMAL action, or output-driven redesign.",
   "utility_request": null,
   "owner": "main"
 }
