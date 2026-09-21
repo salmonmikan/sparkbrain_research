@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260922T071800+0900-PRIMARY-FUNNEL21-IDLE-R55-5A8C21F7",
-  "producer_run_id": "sparkbrain-main-primary-20260922T071800JST-R55-idle",
-  "produced_at": "2026-09-22T07:18:00+09:00",
+  "generation_id": "MAIN-20260922T081455+0900-PRIMARY-FUNNEL21-IDLE-R56-8B3D21F6",
+  "producer_run_id": "sparkbrain-main-primary-20260922T081455JST-R56-idle",
+  "produced_at": "2026-09-22T08:14:55+09:00",
   "execution_mode": "PRIMARY",
   "status": "COMPLETED",
   "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_INTENTIONAL_NO_TARGET_IDLE",
-  "analyst_generation_id": "EVA-20260922T065809+0900-R55-5A8C21F7",
-  "analyst_commit": "11e84b37dd8739c38f538f1231aab7234356c5d0",
-  "supersedes_generation_id": "MAIN-20260922T061624+0900-PRIMARY-FUNNEL21-IDLE-R54-4E7C21A9",
+  "analyst_generation_id": "EVA-20260922T075818+0900-R56-8B3D21F6",
+  "analyst_commit": "9639f793a8c3d9733d46fa2d03e12ac889c5ac89",
+  "supersedes_generation_id": "MAIN-20260922T071800+0900-PRIMARY-FUNNEL21-IDLE-R55-5A8C21F7",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T065809+0900-R55-5A8C21F7@11e84b37dd8739c38f538f1231aab7234356c5d0",
-    "main": "MAIN-20260922T061624+0900-PRIMARY-FUNNEL21-IDLE-R54-4E7C21A9@796490f686a424151e23c59f253308e3abb150a6",
-    "sub": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6@fcab2e7c19d4030656ab632a03621d386a3fdbca"
+    "evidence_analyst": "EVA-20260922T075818+0900-R56-8B3D21F6@9639f793a8c3d9733d46fa2d03e12ac889c5ac89",
+    "main": "MAIN-20260922T071800+0900-PRIMARY-FUNNEL21-IDLE-R55-5A8C21F7@33051317c8898a33682a7a5a2f41027def4793fd",
+    "sub": "SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7@4faf5157e68ed8023cc11417f761621da4fcaeb1"
   },
   "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_LATER_FRESH_NONRESCUE_OBJECT",
   "research_layer": null,
@@ -51,6 +51,7 @@
       "preformal_eligible": false,
       "preformal_readiness": "NOT_READY",
       "hold_class": "HOLD_MECHANISM_UNRESOLVED",
+      "hold_reason": "Prospective native mechanism object remains unresolved; R56 claim-scoped methodology calibration is non-authorizing.",
       "terminal_state": "NONTERMINAL_HOLD",
       "queue_state": "NOT_QUEUED"
     },
@@ -65,7 +66,7 @@
       "queue_state": "NOT_QUEUED",
       "exploration_cycle_count": 2
     },
-    "source": "Evidence Analyst R55; no scientific or candidate-lifecycle delta; prospective H7 admission floor only"
+    "source": "Evidence Analyst R56; no scientific or candidate-lifecycle delta; H7 admission requirements calibrated by claim type"
   },
   "funnel_metrics": {
     "formal_evidence_this_run": 0,
@@ -74,38 +75,39 @@
     "system_architecture_observations_this_run": 0,
     "identity_consumption_this_run": 0,
     "synthetic_measurements_this_run": 0,
-    "no_target_episode_canonical_check_count": 18,
+    "no_target_episode_canonical_check_count": 19,
     "no_target_episode_interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
   },
-  "blocked_until": "Fresh later Evidence Analyst authority allocates a genuinely new prospective object after a material mechanism-surface delta or independently new non-rescue question/review. R55 H7 intervention-faithfulness guidance is non-authorizing and does not itself create an object.",
+  "blocked_until": "Fresh later Evidence Analyst authority allocates a genuinely new prospective object after a material mechanism-surface delta or independently new non-rescue question/review. R56 H7 claim-scoped causal-faithfulness guidance and the CX01 workflow-trigger isolation finding are non-authorizing.",
   "do_not_touch": [
     "Do not rerun, repair, retune, tolerance-relax, reinterpret, or continue candidate #32 into cycle 3.",
     "Do not mechanically lint-repair the R50 result branch when a push can retrigger its result-bearing workflow.",
     "Do not upgrade candidate #32 from SYSTEM to MECHANISM or infer PRE_FORMAL readiness/eligibility from R50 outputs.",
-    "Do not convert Literature R26 H7 guidance into a fresh candidate, shadow, PRE_FORMAL object, or rescue path without new independent Analyst authority.",
+    "Do not convert R56 H7 methodology calibration into a fresh candidate, shadow, PRE_FORMAL object, or rescue path without new independent Analyst authority.",
+    "Do not universalize claim-scaled H7 requirements into hidden READY/formal gates.",
     "Do not reopen or rerun the historical H7 exploratory trace branch.",
     "Do not rerun, rescore, retune, relabel, reopen, or rescue consumed H5 or any consumed one-way identity.",
+    "Do not repair legacy CX01 trigger-isolation by exercising historical write-capable scientific workflows.",
     "Do not treat repeated no-target liveness checks as accumulating evidence that no MECHANISM target exists."
   ],
   "outcome_contingencies": {
     "material_mechanism_surface_delta": "CREATE_FRESH_CANDIDATE_ID_AND_FRESH_REDUCTION_FALSIFIER_CONTRACT_THEN_REVIEW",
-    "future_fresh_h7_object": "REQUIRE_INTERVENTION_SUPPORT_REALISM_DORMANT_PATH_CHECKS_FROZEN_CAUSAL_ABSTRACTION_MAPPING_GRADED_FAITHFULNESS_MULTIPLE_INTERVENTION_FAMILIES_NECESSITY_SUFFICIENCY_COMPLETENESS_CONCISENESS_AND_MATCHED_PRIVILEGE_RESOURCES_BEFORE_EXECUTION",
-    "independent_new_resource_question": "LATER_FRESH_SYSTEM_ID_ONLY_AFTER_NONRESCUE_REVIEW_WITH_INDEPENDENT_COMPLETE_EQUIVALENCE_VERIFIER_AND_SUPPORT_TURNOVER_HORIZON_RESET_SEMANTICS_PREBOUND",
+    "future_fresh_h7_object": "BIND_INTERVENTION_SUPPORT_DORMANT_PATH_CONTROLS_FROZEN_CAUSAL_ABSTRACTION_MAPPING_MATCHED_PRIVILEGE_RESOURCES_ORDINARY_REDUCTIONS_AND_FALSIFIER; SCALE_MULTI_FAMILY_BREADTH_NECESSITY_SUFFICIENCY_COMPLETENESS_CONCISENESS_TO_CLAIM_SCOPE",
+    "governance_trigger_isolation": "SEPARATE_CANDIDATE_AGNOSTIC_STATIC_POLICY_OR_LINTER_AUTHORITY_ONLY; NEVER_EXERCISE_HISTORICAL_SCIENTIFIC_BRIDGES_TO_REPAIR",
     "no_material_delta": "REMAIN_INTENTIONALLY_IDLE",
     "candidate_32_cycle3": "PROHIBITED",
     "r50_rerun_repair_retune_tolerance_relaxation": "PROHIBITED",
     "h5_rerun_rescore_retune_relabel_reopen": "PROHIBITED",
     "historical_h7_exploratory_rerun_or_promotion": "PROHIBITED",
     "same_object_system_to_mechanism": "PROHIBITED",
-    "same_run_preformal_or_formal_from_r50": "PROHIBITED",
     "material_superseding_generation": "FAIL_CLOSED_RECONCILE_BEFORE_ANY_MUTATION_OR_DISPATCH"
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_tip": "11e84b37dd8739c38f538f1231aab7234356c5d0",
-    "orchestrator_tip_before_acquisition": "fcab2e7c19d4030656ab632a03621d386a3fdbca",
-    "lease_acquisition_commit": "1cb51d3954f63a88ed4b61b766dbd54c2fc0fd66",
-    "latest_sub_generation": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6",
+    "analyst_tip": "9639f793a8c3d9733d46fa2d03e12ac889c5ac89",
+    "orchestrator_tip_before_acquisition": "4faf5157e68ed8023cc11417f761621da4fcaeb1",
+    "lease_acquisition_commit": "0ee691f0a783268adeeb336a07bfee4f4b606256",
+    "latest_sub_generation": "SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7",
     "historical_r50_research_branch": "research/main-semantic-active-work-localization-r50-cycle2",
     "historical_r50_research_head": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
     "historical_h7_exploratory_branch": "research/exploratory-sub-h7-trace-causality-20260917",
@@ -121,8 +123,10 @@
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
-    "prs": {"148": "OPEN_UNMERGED_MERGEABLE", "149": "OPEN_UNMERGED_MERGEABLE"},
-    "latest_observed_ci": {"run_id": 35661413654, "head": "11e84b37dd8739c38f538f1231aab7234356c5d0", "status": "completed", "conclusion": "success"}
+    "consumed_h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "consumed_h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "prs": {"148": "OPEN_UNMERGED", "149": "OPEN_UNMERGED"},
+    "latest_observed_ci": {"run_id": 35666445152, "head": "9639f793a8c3d9733d46fa2d03e12ac889c5ac89", "status": "completed", "conclusion": "success"}
   },
   "workflows": [],
   "observations": {
@@ -132,7 +136,7 @@
     "protected_outcome_read": false,
     "research_branch_mutation": false,
     "immutable_scientific_ref_mutation": false,
-    "r55_reconciliation": "R55 introduces no scientific/candidate-lifecycle result. Literature R26 only raises the prospective H7 intervention-faithfulness/pathway-completeness admission floor; Utility tooling-gap information remains non-evidentiary and non-authorizing."
+    "r56_reconciliation": "R56 introduces no scientific/candidate-lifecycle result. It calibrates future H7 requirements by claim scope and records a governance-only CX01 trigger-isolation gap; neither creates scientific authority or an executable object."
   },
   "evidentiary_status": {
     "formal": "NONE_NEW",
@@ -143,12 +147,12 @@
   },
   "ordinary_reductions": {
     "current_object": null,
-    "future_h7_reduction_floor": "stable trace -> intervention-support check -> graded causal-abstraction faithfulness -> necessity/sufficiency/completeness/conciseness -> stronger-privilege path-specific responsibility ceiling -> possible native local responsibility residual",
+    "future_h7_reduction_floor": "intervention-support/dormant-path control -> frozen causal abstraction/intervention mapping -> matched-privilege ordinary reductions -> fixed falsifier -> claim-scoped breadth/necessity/sufficiency/completeness/conciseness",
     "historical_r50_status": "NON_EVIDENTIARY_FEASIBILITY_METHOD_INFORMATION_ONLY_CONTRACT_INVALID_FOR_REDUCTION_EXHAUSTION"
   },
   "support_breadth": {
     "current_object": null,
-    "future_h7_requirement": "Multiple predeclared intervention families or natural/minimally perturbed counterfactual regimes with matched privilege/resources before any fresh mechanism claim can advance.",
+    "future_h7_requirement": "Broad mechanism claims require multiple predeclared intervention families or natural counterfactual regimes; intervention-family-bounded claims may use one frozen family when support, mapping, comparator, resources, and falsifier are explicit.",
     "historical_r50_claim_validity": "LIMITED_BY_EQUIVALENCE_VERIFICATION_GAP"
   },
   "consumed_identities": [],
@@ -167,13 +171,13 @@
     "scoring_performed": false,
     "immutable_mutation": false
   },
-  "stop_reason": "R55_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
-  "next_action": "Remain intentionally idle until a fresh Evidence Analyst generation allocates a new prospective object after a material mechanism-surface delta or independent non-rescue review. Treat R55 H7 intervention-faithfulness guidance only as a future admission floor, not as an executable object.",
+  "stop_reason": "R56_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+  "next_action": "Remain intentionally idle until a fresh Evidence Analyst generation allocates a new prospective object after a material mechanism-surface delta or independent non-rescue review. Treat R56 H7 claim-scoped methodology calibration and CX01 trigger-isolation findings as non-authorizing inputs only.",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
     "latest_path": "reports/orchestrator/main/latest.md",
     "state_path": "reports/orchestrator/main/state.json",
     "lease_path": "reports/orchestrator/main/lease.json",
-    "history_path": "reports/orchestrator/main/history/2026-09-22/0718-main.md"
+    "history_path": "reports/orchestrator/main/history/2026-09-22/0814-main.md"
   }
 }
