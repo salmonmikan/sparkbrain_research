@@ -11,7 +11,7 @@
     "sub_observed_for_collision": "SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7"
   },
   "execution_mode": "PRIMARY",
-  "status": "ACTIVE",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-21T10:17:10+09:00",
   "heartbeat_at": "2026-09-21T10:17:10+09:00",
   "completed_at": null,
@@ -43,20 +43,31 @@
     "compared_mechanism_candidate_ids": []
   },
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-  "active_branch": null,
-  "active_head": null,
+  "active_branch": "research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921",
+  "active_head": "52e14294d8e413a95c1dad387104bdeaa4468d39",
   "active_identity": null,
-  "active_step": "ACQUIRED_RECONCILE_AND_DEFINE_PROSPECTIVE_DISTRIBUTIONAL_CONTROL_CONTRACT",
+  "active_step": "WAIT_EXACT_HEAD_CI_AFTER_PROSPECTIVE_CONTRACT_READY",
+  "workflow": {
+    "run_id": 35550692068,
+    "name": "ci",
+    "head_sha": "52e14294d8e413a95c1dad387104bdeaa4468d39",
+    "status": "in_progress",
+    "conclusion": null
+  },
+  "observed_contract_terminal": "READY",
+  "observed_contract_terminal_semantics": "contract is prospectively well-defined/informative only; canonical preformal readiness remains NOT_READY and no intervention outcome has been opened",
   "freshness_reconciliation": {
     "analyst_tip_at_acquire": "6bf35ff0f08a981feb09abced00e157526a47cb0",
+    "analyst_tip_before_research_mutation": "6bf35ff0f08a981feb09abced00e157526a47cb0",
+    "analyst_tip_before_wait_persistence": "6bf35ff0f08a981feb09abced00e157526a47cb0",
     "authoritative_main_at_acquire": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "orchestrator_tip_before_acquire": "ef4a2f0cf65e6143d10c6186075bb470b494539f",
+    "authoritative_main_before_wait_persistence": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "latest_sub_generation": "SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7",
     "sub_collision": false,
     "material_superseding_generation_detected": false
   },
-  "evidentiary_status": "NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_CONTRACT_FEASIBILITY_IN_PROGRESS",
-  "stop_reason": null,
-  "next_action": "Re-fetch exact stable-main target surface and authoritative refs, define only the prospectively fixed distributional comparator/resource/balance/footprint/falsifier contract, and stop before any lesion/intervention outcome.",
+  "evidentiary_status": "NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_CONTRACT_READY_WAITING_EXACT_HEAD_CI_NO_INTERVENTION",
+  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_35550692068_AFTER_R32_CONTRACT_READY",
+  "next_action": "Collect exact-head CI 35550692068. On success and unchanged Analyst authority, persist completion and stop for fresh Analyst review without suppression/intervention. Mechanical pre-outcome CI repair only if needed; semantic redesign requires fresh Analyst authority.",
   "owner": "main"
 }
