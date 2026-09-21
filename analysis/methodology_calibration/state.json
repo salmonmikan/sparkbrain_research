@@ -1,61 +1,53 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T08:25:00+09:00",
-  "generation_id": "METHCAL-20260921T082500+0900-R31-8F3C6A21",
-  "produced_at": "2026-09-21T08:25:00+09:00",
-  "producer_run_id": "methodology-calibration-auto-20260921T082500+0900-R31-8F3C6A21",
+  "timestamp": "2026-09-21T09:22:00+09:00",
+  "generation_id": "METHCAL-20260921T092200+0900-R32-5D8A3C71",
+  "produced_at": "2026-09-21T09:22:00+09:00",
+  "producer_run_id": "methodology-calibration-auto-20260921T092200+0900-R32-5D8A3C71",
   "authority_scope": "METHODOLOGY_ADVISORY_ONLY",
-  "supersedes_generation_id": "METHCAL-20260921T072229+0900-R30-4A7D9C21",
-  "previous_methodology_tip": "48523bbdffd2a2169bffd89d25ff40f6856a477a",
-  "run_disposition": "MATERIAL_CALIBRATION_UPDATE",
+  "supersedes_generation_id": "METHCAL-20260921T082500+0900-R31-8F3C6A21",
+  "previous_methodology_tip": "350d6fd90920e400ad5ba744799b94fed7595418",
+  "run_disposition": "NO_MATERIAL_CALIBRATION_CHANGE",
   "overall_classification": "WELL_CALIBRATED",
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T072229+0900-R30-4A7D9C21",
-      "commit": "48523bbdffd2a2169bffd89d25ff40f6856a477a"
+      "generation_id": "METHCAL-20260921T082500+0900-R31-8F3C6A21",
+      "commit": "350d6fd90920e400ad5ba744799b94fed7595418"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260921T065000+0900-R20-8E4C2A71",
-      "commit": "cae67ec0f8980e6125c578c3eb98d67e6da46a36"
+      "generation_id": "CTRL-20260921T085000+0900-R21-4F7C2A91",
+      "commit": "49ac783b5640b8250c19133f8842f0bf49867e8f"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T075832+0900-R30-9A4C2E71",
-      "commit": "773c88edcaf799140830f3d204d0f0ff82c9bcad"
+      "generation_id": "EVA-20260921T090300+0900-R31-3C7A91E4",
+      "commit": "060e7d7d150b5406124425348553c92b04fed253"
     },
-    "matched_load_main": {
-      "generation_id": "MAIN-20260921T071418+0900-PRIMARY-FUNNEL21-MECH-ASMMATCH-R29-8E4C21A7",
-      "research_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
-      "workflow": "35541396714",
-      "exact_head_ci": "35541396705",
-      "terminal": "EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE"
+    "main_strategy": {
+      "generation_id": "MAIN-20260921T091756+0900-PRIMARY-FUNNEL21-HOLD-R31-7C2A91E4",
+      "commit": "ac4c2b80379d516c56ebb0a3ea25638bc8800bab"
     },
     "latest_sub": {
-      "generation_id": "SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2"
-    },
-    "pending_main_strategy": {
-      "generation_id": "MAIN-20260921T081624+0900-PRIMARY-FUNNEL21-SYSTEM-ACTEVAL-R30-5C7A21E4",
-      "commit": "dc555ba104d44f52c9030f974c10b13a451d6831",
-      "canonical_status": "PENDING_FRESH_ANALYST_REVIEW"
+      "generation_id": "SUB-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4",
+      "no_target_episode": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1"
     }
   },
   "authoritative_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control_handoff_tip": "cae67ec0f8980e6125c578c3eb98d67e6da46a36",
-    "evidence_analyst_handoff_tip": "773c88edcaf799140830f3d204d0f0ff82c9bcad",
-    "methodology_prewrite_tip": "48523bbdffd2a2169bffd89d25ff40f6856a477a",
-    "orchestrator_run_report_tip": "dc555ba104d44f52c9030f974c10b13a451d6831",
+    "control_handoff_tip": "49ac783b5640b8250c19133f8842f0bf49867e8f",
+    "evidence_analyst_handoff_tip": "060e7d7d150b5406124425348553c92b04fed253",
+    "methodology_prewrite_tip": "350d6fd90920e400ad5ba744799b94fed7595418",
+    "orchestrator_run_report_tip": "ac4c2b80379d516c56ebb0a3ea25638bc8800bab",
     "evidence_tags_count": 5,
     "formal_tags_count": 0,
     "sealed_tags_count": 0,
     "freeze_tags_count": 0
   },
   "material_findings": [
-    "The prospectively authorized matched-load comparator-feasibility cycle exhausted all 14,190 same-cardinality nonmember sets per fixed DEV seed and found no exact comparator match.",
-    "No suppression/intervention outcome was executed; the current MECHANISM object was terminalized HOLD/STOP rather than repaired by relaxing matching, changing topology metrics, switching surface, or adding post-outcome comparator rules.",
-    "The object had been preformal_eligible=true/NOT_READY before feasibility and is canonically false/NOT_READY after infeasibility, strengthening empirical separation of eligibility from READY without observing READY itself.",
-    "Canonical funnel is 25/25 complete with MECHANISM=12, SYSTEM=13, Architecture M0/S1, PRE_FORMAL eligible=0, READY=0, viable executable MECHANISM=0.",
-    "A fresh SYSTEM evaluation-isolation contract object was allocated only after viable MECHANISM count returned to zero; system_priority_exception.used=false is therefore legitimate.",
-    "The later MAIN SYSTEM static audit stopped on its prospectively declared mixed/unresolved-contract terminal without dynamic evaluation-interleaving; it remains pending fresh Analyst canonicalization and is excluded from canonical counts."
+    "No material calibration change relative to R31.",
+    "Fresh Analyst R31 canonically closed the pending action-policy evaluation-isolation object as terminal SYSTEM HOLD_CONTRACT_AMBIGUITY without same-object dynamic escalation or SYSTEM-to-MECHANISM upgrade.",
+    "Canonical funnel is 25/25 complete with MECHANISM=12, SYSTEM=13, Architecture M0/S0, PRE_FORMAL eligible=0, READY=0, viable executable MECHANISM=0.",
+    "Fresh changed-landscape SUB no-op opened one new NO_COHERENT_MECHANISM_TARGET episode; it is excluded from candidate/conversion/scientific-selection denominators.",
+    "Fresh MAIN consumed Analyst R31 and remained intentionally scientifically idle rather than manufacturing work."
   ],
   "gate_by_gate_classifications": {
     "hard_integrity_floor": "KEEP",
@@ -102,91 +94,78 @@
     "legacy_topk_sparse_support": "TIGHTEN"
   },
   "false_positive_risks": [
-    "A selective intervention signal can be overinterpreted if equal-privilege activity/topology matching is unavailable; current handling blocks intervention continuation rather than relaxing the comparator after feasibility knowledge.",
-    "Producer-side noncanonical HOLD enum strings could fragment funnel metrics if they bypass Analyst normalization; producer handoff validation remains needed.",
-    "A future SYSTEM-over-comparable-MECHANISM run could be post-hoc justified unless the machine-readable exception remains prospective.",
+    "Producer-side noncanonical HOLD enums could fragment metrics if they bypass Analyst normalization; producer handoff validation remains needed.",
+    "A future SYSTEM-over-comparable-MECHANISM run could be post-hoc justified unless its machine-readable exception is prospective.",
     "External-validation effects can be overinterpreted when a reference is degenerate or relevant simple reductions/source clustering are omitted."
   ],
   "false_negative_risks": [
-    "Exact matching can make a worthwhile mechanism family untestable on a bounded DEV surface; respond with fresh prospective object/surface design when justified, not same-object threshold relaxation.",
-    "Do not reinterpret comparator infeasibility as evidence that the mechanism claim is false; it is a testability/resource limitation for the current object.",
-    "Do not require comparator feasibility or prior positive science merely to define preformal eligibility or READY; READY must remain test readiness, not success.",
-    "Long-run mechanism supply remains small-n after one qualitative reframe recovery and one comparator-infeasible successor."
+    "Do not let repeated no-target checks become discovery inertia if a genuinely new mechanism surface appears; re-evaluate opportunity-locally.",
+    "Do not require prior scientific success for READY; the first READY-to-PRE_FORMAL transition remains unobserved.",
+    "Long-run mechanism supply remains small-n and presently has no coherent executable candidate."
   ],
   "moving_goalpost_assessment": {
     "level": "LOW",
-    "finding": "The fixed matching signature, DEV seeds, surface and no-intervention scope were preserved through infeasibility. No comparator threshold, topology metric, claim ceiling, historical result, identity, or evidence ref was changed post outcome."
+    "finding": "The pending SYSTEM ambiguity was canonicalized without dynamic escalation, semantic choice, threshold repair, or same-object claim upgrade."
   },
   "pass_reachability_assessment": {
     "status": "REACHABLE_BUT_NARROW",
-    "finding": "Preformal eligibility was demonstrably reachable before feasibility without prior success, but exact comparator infeasibility terminalized this object before READY. The first READY-to-PRE_FORMAL transition remains unobserved."
+    "finding": "Eligibility and readiness remain operationally distinct, but the first READY-to-PRE_FORMAL transition is still unobserved."
   },
-  "claim_type_separation_findings": "Healthy. The matched-load object remains a terminal MECHANISM feasibility object; after viable MECHANISM count returned to zero, a fresh SYSTEM reproducibility/API-contract object was opened rather than relabeling or rescuing the MECHANISM object.",
+  "claim_type_separation_findings": "Healthy. The action-policy object remains terminal SYSTEM and is not upgraded to MECHANISM; current MAIN object fields are null while scientifically idle.",
   "mechanism_supply_health": {
-    "status": "QUALITY_FLOOR_HEALTHY_REFRAME_RECOVERED_MECHANISM_COMPARATOR_INFEASIBLE_SMALL_N_NEXT_LANDSCAPE_REFRAME_REQUIRED",
+    "status": "QUALITY_FLOOR_HEALTHY_BUT_CURRENTLY_NO_COHERENT_EXECUTABLE_MECHANISM_NEW_NO_TARGET_EPISODE_CHECK1",
     "canonical_analyst_population": "MECHANISM=12,SYSTEM=13,25/25_complete",
     "observed_actual_selection_window": "SYSTEM,SYSTEM,MECHANISM",
     "theory_backward_share": "1/3",
-    "prior_no_target_episode_id": "NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1",
-    "prior_episode_status": "CLOSED_BY_FRESH_MECHANISM_SELECTION_AFTER_QUALITATIVE_REFRAME",
-    "latest_no_target_generation": "SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2",
-    "finding": "Quality floor remains healthy: the recovered mechanism family was not pushed through an infeasible comparator. Supply is still small-n and the changed landscape requires fresh qualitative reframe before a new no-target episode is opened."
+    "open_no_target_episode_id": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1",
+    "open_no_target_episode_check_count": 1,
+    "finding": "No low-quality mechanism was manufactured. Supply is currently stalled but explicitly observable and quality-constrained."
   },
   "funnel_observability": {
-    "status": "GOOD_25_OF_25_CANONICAL_M0S1_ELIGIBLE0_READY0_PENDING_SYSTEM_RESULT_EXCLUDED",
+    "status": "GOOD_25_OF_25_CANONICAL_M0S0_ELIGIBLE0_READY0_NO_TARGET_EVENTS_EXCLUDED",
     "classification_completeness": "25/25_reviewed_canonical_analyst",
     "candidate_population_excludes_no_target_events": true,
-    "active_architecture": "M0,S1",
+    "active_architecture": "M0,S0",
     "preformal_eligible_count": 0,
     "preformal_ready_count": 0,
-    "pending_unreviewed_main_result": "MAIN-20260921T081624+0900-PRIMARY-FUNNEL21-SYSTEM-ACTEVAL-R30-5C7A21E4",
-    "policy_population_rule": "Use Analyst-reviewed canonical candidate dimensions for conversion/policy conclusions; exclude no-target control-plane events and pending MAIN strategy outcomes until fresh Analyst canonicalization.",
-    "finding": "Classification completeness is full and canonical counts do not absorb the later pending SYSTEM result prematurely."
+    "pending_unreviewed_main_result_count": 0,
+    "finding": "Fresh Analyst canonicalized the previously pending SYSTEM result and kept no-target process records outside candidate/conversion counts."
   },
   "preformal_gate_calibration": {
-    "status": "ELIGIBILITY_AND_READINESS_EMPIRICALLY_SEPARATED_BY_FAILED_FEASIBILITY_READY_TRANSITION_STILL_UNTESTED",
+    "status": "ELIGIBILITY_AND_READINESS_EMPIRICALLY_SEPARATED_READY_TRANSITION_STILL_UNTESTED",
     "hidden_second_formal_gate": false,
     "current_canonical_eligible_count": 0,
     "current_canonical_ready_count": 0,
     "first_ready_to_preformal": "INSUFFICIENT_EVIDENCE",
-    "finding": "The matched-load object was eligible=true/NOT_READY before its prospectively bounded feasibility check and was terminalized false/NOT_READY when exact matching failed. Feasibility was neither treated as prior success nor allowed to trigger READY."
+    "finding": "No new evidence changes R31: READY remains development/test readiness in policy and the first live transition is still unobserved."
   },
   "system_priority_exception_audit": {
     "used_genuine_exception": false,
     "count_observed_genuine_exception": 0,
     "system_priority_exception_used_current": false,
-    "basis": "Fresh SYSTEM allocation occurs only after viable executable MECHANISM count is zero; it protects evaluation semantics/reproducibility and therefore requires no exception.",
+    "basis": "No current MAIN object is allocated; the completed SYSTEM object had viable executable MECHANISM=0 at allocation.",
     "recorded_before_scientific_execution": "NOT_APPLICABLE_NO_EXCEPTION",
-    "finding": "MECHANISM priority remains intact. First genuine SYSTEM-over-comparable-MECHANISM exception remains unobserved.",
+    "finding": "MECHANISM priority remains intact; first genuine exception remains unobserved.",
     "first_live_use": "INSUFFICIENT_EVIDENCE"
   },
   "no_coherent_target_audit": {
     "exception_code": "NO_COHERENT_MECHANISM_TARGET",
-    "prior_episode_id": "NTE-20260921-STABLEMAIN-H7UNRESOLVED-v1",
-    "prior_episode_status": "CLOSED_BY_FRESH_MECHANISM_SELECTION_AFTER_QUALITATIVE_REFRAME",
-    "latest_opportunity_generation": "SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2",
+    "open_episode_id": "NTE-20260921-R30-POST-ASMMATCH-ACTEVAL-v1",
+    "open_episode_check_count": 1,
+    "latest_opportunity_generation": "SUB-20260921T083213+0900-NOOP-R30REFRAME-6E2C91A4",
     "latest_opportunity_counts_as_mechanism_work": false,
     "latest_opportunity_in_candidate_denominator": false,
-    "new_episode_opened": false,
-    "next_rule": "Reassess the changed landscape with a fresh qualitative theory-backward reframe before opening any new no-target episode.",
     "rationale_quality": "CREDIBLE",
-    "first_live_use": "KEEP",
-    "repeated_live_use": "KEEP",
-    "sequence_observability": "KEEP",
-    "stop_reframe_semantics": "KEEP",
-    "first_live_reframe_execution": "KEEP"
+    "finding": "The changed-landscape reframe found no coherent candidate and opened one fresh episode; this is not an escape hatch on current evidence."
   },
   "classification_completeness": {
     "classified_reviewed": 25,
     "material_reviewed_population": 25,
     "ratio_reviewed": 1.0,
     "pending_unreviewed_new_candidate_count": 0,
-    "active_candidate_count": 1,
-    "active_candidate_id": "CAND-V05-ACTION-POLICY-EVALUATION-ISOLATION-CONTRACT-01",
-    "pending_unreviewed_main_result_count": 1,
-    "pending_unreviewed_main_result_id": "MAIN-20260921T081624+0900-PRIMARY-FUNNEL21-SYSTEM-ACTEVAL-R30-5C7A21E4",
+    "active_candidate_count": 0,
     "no_target_event_in_candidate_denominator": false,
-    "policy_use": "Use 25/25 Analyst-reviewed canonical candidate population; keep pending MAIN result outside policy/conversion counts until fresh Analyst review."
+    "policy_use": "Use the 25/25 Analyst-reviewed canonical population for policy/conversion conclusions; exclude no-target control-plane events."
   },
   "external_calibration": {
     "status": "CLAIM_TYPE_SPECIFIC_TIGHTENING_UNCHANGED",
@@ -200,46 +179,40 @@
     "universalization_forbidden": true
   },
   "stop_reframe_calibration": {
-    "status": "HEALTHY_COMPARATOR_INFEASIBILITY_STOP_OBSERVED_FRESH_SYSTEM_SCOPE_BOUNDED",
-    "finding": "Matched-load comparator infeasibility terminalized the current MECHANISM object without intervention or same-object relaxation. The subsequent SYSTEM object is fresh and static/read-only; the latest MAIN strategy stopped on its predeclared ambiguity terminal pending fresh Analyst review."
+    "status": "HEALTHY_TERMINAL_SYSTEM_AMBIGUITY_CANONICALIZED_AND_MAIN_IDLE",
+    "finding": "The static SYSTEM ambiguity terminal was canonically closed without same-object dynamic escalation; MAIN then stopped with no coherent central object."
   },
   "prospective_recommendations": [
-    "Keep both completed Assembly causal-selectivity objects terminal; any future causal discriminator needs a fresh candidate ID and fresh comparator/resource contract.",
-    "Do not relax exact matching, topology metrics, DEV seeds or supported surface on the consumed matched-load object after feasibility knowledge.",
-    "Preserve preformal_eligible as in-principle admission distinct from READY; comparator feasibility is not scientific success.",
-    "Keep the current SYSTEM evaluation-isolation object within static/read-only scope until fresh Analyst canonicalization; if ambiguity is canonicalized, stop the current object and use a fresh prospective successor for any dynamic diagnostic.",
-    "Enforce canonical HOLD enum values at producer handoff while preserving orthogonal hold_reason, terminal_state and queue_state.",
+    "Keep the action-policy evaluation-isolation object terminal; any dynamic discriminator requires a fresh candidate ID and fresh prospective contract.",
+    "Keep MAIN scientifically idle until fresh Analyst authority identifies a coherent current object.",
+    "Continue excluding no-target events from candidate/conversion/scientific-selection denominators and re-evaluate open episodes opportunity-locally.",
+    "Enforce canonical HOLD enum values at producer handoff.",
     "Continue auditing the first READY-to-PRE_FORMAL transition and first genuine SYSTEM-over-comparable-MECHANISM execution."
   ],
   "utility_request": {
     "created": false,
-    "status": "NONE",
     "reason": "Live rollout remains higher-information than a synthetic methodology probe."
   },
   "hard_floor_confirmation": {
     "status": "CONFIRMED_DO_NOT_RELAX",
     "rerun_retune_consumed_identities": "PROHIBITED_UNCHANGED",
-    "prospective_frozen_protocols": "REQUIRED_UNCHANGED",
-    "raw_before_score": "REQUIRED_UNCHANGED",
-    "preserve_before_read": "REQUIRED_UNCHANGED",
-    "exact_binding": "REQUIRED_UNCHANGED",
-    "immutable_evidence": "REQUIRED_UNCHANGED",
+    "prospective_frozen_protocols": "CONFIRMED",
+    "raw_before_score": "CONFIRMED",
+    "preserve_before_read": "CONFIRMED",
+    "exact_binding": "CONFIRMED",
+    "immutable_evidence": "CONFIRMED",
     "evaluator_target_leakage": "PROHIBITED_UNCHANGED",
     "silent_post_outcome_repair": "PROHIBITED_UNCHANGED"
   },
   "confidence": {
     "overall": "HIGH",
-    "comparator_feasibility_stop_calibration": "HIGH",
-    "preformal_eligibility_vs_readiness_separation": "HIGH",
     "first_ready_to_preformal": "INSUFFICIENT_EVIDENCE",
-    "first_system_priority_exception": "INSUFFICIENT_EVIDENCE",
-    "long_run_mechanism_supply_health": "MODERATE_HIGH"
+    "first_genuine_system_priority_exception": "INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_analyst": [
-    "Preserve both completed Assembly causal-selectivity objects as terminal and forbid same-object comparator relaxation or intervention continuation.",
-    "Preserve the matched-load object's pre-feasibility eligible=true/NOT_READY history and post-feasibility false/NOT_READY terminal state for readiness auditing.",
-    "Canonicalize the pending evaluation-isolation SYSTEM static result before any continuation and do not let contract ambiguity trigger same-object dynamic evidence gathering.",
-    "Enforce canonical HOLD enum values at producer handoff.",
+    "Preserve the completed action-policy evaluation-isolation object as terminal SYSTEM with no same-object dynamic escalation or MECHANISM upgrade.",
+    "Preserve no-target episode accounting outside candidate/conversion/scientific-selection denominators and re-evaluate opportunity-locally if the mechanism landscape changes.",
+    "Enforce canonical HOLD enums at producer handoff while retaining orthogonal reason/terminal/queue fields.",
     "Require any future SYSTEM-over-comparable-MECHANISM exception to be machine-readable before execution."
   ]
 }
