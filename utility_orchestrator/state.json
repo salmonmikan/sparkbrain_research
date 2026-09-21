@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260921T232215+0900-AUTO-REGISTRY-RECON-RUNNING-6F2A9C41",
+  "generation_id": "UTILITY-20260921T232215+0900-AUTO-REGISTRY-RECON-COMPLETED-6F2A9C41",
   "produced_at": "2026-09-21T23:22:15+09:00",
   "producer_run_id": "utility-auto-20260921T232215+0900-registry-reconciliation",
   "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_TOOLING_DIAGNOSTIC",
-  "supersedes_generation_id": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+  "supersedes_generation_id": "UTILITY-20260921T232215+0900-AUTO-REGISTRY-RECON-RUNNING-6F2A9C41",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
   "autonomous_task_id": "AUTOUTIL-20260921T232215+0900-SCHEDREG-RECON-6F2A9C41",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
@@ -20,38 +20,68 @@
     "control_observation": "registry_reconciliation_required=true; registry mirror is out of sync with approved live definitions",
     "open_utility_request_selected": null
   },
-  "input_generations": {
+  "freshness_check_before_terminal_write": {
     "assignment_pointer": {
       "status": "IDLE",
       "active_assignment_id": null,
       "active_assignment_generation_id": null,
       "blob_sha": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7"
     },
-    "evidence_analyst": {
-      "generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
-      "branch_head": "fca9a4b0adb259b76a518605f611ff79e0c48680",
-      "active_canonical_candidate": null,
-      "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_INDEPENDENT_FRESH_INTEGRITY_OBJECT",
-      "sub_lane": "NO_TARGET_EPISODE_HOLD_UNTIL_MECHANISM_SURFACE_DELTA_THEN_THEORY_BACKWARD_REFRAME"
-    },
-    "control": {
-      "generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
-      "branch_head": "0e38771af4dacefab079a9389dece4c6a48f1240",
-      "programme_position": "FORMAL_HOLD_WITH_INTENTIONAL_LOWER_FUNNEL_IDLE_NO_COHERENT_TARGET"
-    },
-    "main": {
-      "generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
-      "ownership": "INTENTIONAL_IDLE_NO_ACTIVE_OBJECT"
-    },
-    "sub": {
-      "generation_id": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
-      "ownership": "NO_OP_NO_COHERENT_MECHANISM_TARGET"
-    },
-    "relay": {
-      "ownership": "NO_ACTIVE_CONTINUATION_NO_NEW_DURABLE_GENERATION"
-    },
+    "evidence_analyst_generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
+    "control_generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
+    "main_generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
+    "sub_generation_id": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
+    "relay_ownership": "NO_ACTIVE_CONTINUATION_NO_NEW_DURABLE_GENERATION",
+    "authority_unsuperseded": true,
+    "collision_found": false
+  },
+  "input_generations": {
+    "evidence_analyst": "EVA-20260921T220541+0900-R44-7A3C21E8@fca9a4b0adb259b76a518605f611ff79e0c48680",
+    "control": "CTRL-20260921T230354+0900-R26-8D4C21A7@0e38771af4dacefab079a9389dece4c6a48f1240",
+    "main": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
+    "sub": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "scheduler_registry_manifest_blob": "6f7fa138b09b093613e8eb98b18559ea94e16b59",
     "scheduler_registry_branch_head_before_work": "840257b39e97a182fb07742d5a02f982751b4932"
+  },
+  "finding": {
+    "classification": "REGISTRY_MIRROR_DRIFT_CONFIRMED_LIVE_SCHEDULERS_NO_CHANGE_REQUIRED",
+    "definite_schedule_drift": {
+      "task_id": "6aa9543b594c8191b44e2356a34719c1",
+      "title": "SparkBrain 現在状態ブリーフ",
+      "registry": "BYMINUTE=45",
+      "live": "BYMINUTE=55",
+      "interpretation": "registry stale; live :55 is approved phase policy and should not be reverted"
+    },
+    "other_core_schedule_comparison": "MATCHED_LIVE_FOR_CONTROL_ANALYST_MAIN_METHODOLOGY_UTILITY_EXTERNAL_SUB_RELAY",
+    "material_prompt_mirror_drift_confirmed_for": [
+      "SparkBrain Control & Repository Steward",
+      "SparkBrain Evidence Analyst",
+      "SparkBrain Research Orchestrator",
+      "SparkBrain Research Orchestrator Sub",
+      "SparkBrain Research Orchestrator Relay",
+      "SparkBrain Methodology Calibration Auditor",
+      "SparkBrain 現在状態ブリーフ"
+    ],
+    "utility_registry_snapshot": "MATCHED_CURRENT_AUTONOMOUS_IDLE_PROMPT_AND_HOURLY_25_SCHEDULE",
+    "live_scheduler_mutation_required": false,
+    "registry_refresh_recommended": true
+  },
+  "actions": [
+    "Read current scheduler registry manifest and per-task snapshots",
+    "Read current live SparkBrain automation definitions",
+    "Compared stable schedule fields fleet-wide",
+    "Spot-checked stored raw prompt snapshots against current live role semantics",
+    "Persisted append-only Utility result"
+  ],
+  "outputs": {
+    "result_path": "utility_orchestrator/results/2026-09-21/AUTOUTIL-20260921T232215+0900-SCHEDREG-RECON-6F2A9C41-2322.md",
+    "result_commit": "7bff63b8f50b2d8eb324bdca5e6fa604bec8db0c"
+  },
+  "funnel_v2_1_preservation": {
+    "candidate_touched": false,
+    "preserved_fields": "NOT_APPLICABLE_NO_RESEARCH_CANDIDATE_TOUCHED",
+    "typing_or_readiness_changed": false
   },
   "ownership_checks": {
     "collision_found": false,
@@ -60,22 +90,6 @@
     "consumed_or_protected_identity_targeted": false,
     "candidate_typing_touched": false
   },
-  "allowed_actions": [
-    "READ scheduler_registry mirror files",
-    "READ current live automation definitions",
-    "COMPARE mirror schedule/title/prompt metadata against live definitions where exact matching is possible",
-    "WRITE Utility-owned state and append-only result only"
-  ],
-  "forbidden_actions": [
-    "NO scheduler mutation",
-    "NO scheduler registry mutation",
-    "NO scientific workflow dispatch",
-    "NO research branch or evidence/control/preserve mutation",
-    "NO candidate typing/readiness changes",
-    "NO PRE_FORMAL or FORMAL work"
-  ],
-  "stop_condition": "Stop after one bounded reconciliation report or immediately on ownership/authority supersession, ambiguous live-to-registry mapping, or any need for scheduler mutation.",
-  "follow_up_request": null,
   "integrity": {
     "scientific_workflow_rerun": false,
     "workflow_dispatch": false,
@@ -85,5 +99,8 @@
     "candidate_typing_changed": false,
     "preformal_or_formal_authority_created": false,
     "control_assignment_pointer_mutated": false
-  }
+  },
+  "stop_reason": "COMPLETED_ONE_BOUNDED_AUTONOMOUS_RECONCILIATION_MAX_RUNS_REACHED",
+  "follow_up_recommendation": "Control or scheduler-registry governance should refresh the registry mirror from live stable definitions using the existing registry protocol; do not change live scheduler timing or scientific semantics. No duplicate Utility request was created because Control already records registry_reconciliation_required=true.",
+  "follow_up_request": null
 }
