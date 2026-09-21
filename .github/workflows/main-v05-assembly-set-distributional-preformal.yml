@@ -39,7 +39,7 @@ jobs:
 
       - name: Execute fixed development-only PRE_FORMAL harness
         run: |
-          python analysis/preformal/main-v05-assembly-set-causal-necessity-distributional-controls-20260921/run_preformal.py
+          python analysis/preformal/main-v05-assembly-set-causal-necessity-distributional-controls-20260921/run_preformal.py.txt
 
       - name: Upload development result
         if: always()
