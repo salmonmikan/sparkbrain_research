@@ -1,24 +1,24 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260922T065500+0900-R30-6F4C21A8",
-  "produced_at": "2026-09-22T06:55:00+09:00",
-  "producer_run_id": "control-brain-auto-20260922T0650JST-R30",
+  "generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219",
+  "produced_at": "2026-09-22T08:51:30+09:00",
+  "producer_run_id": "control-brain-auto-20260922T0850JST-R31",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "CTRL-20260922T045653+0900-R29-7C4E91B2",
+  "supersedes_generation_id": "CTRL-20260922T065500+0900-R30-6F4C21A8",
   "programme_position": "FORMAL_HOLD_WITH_INTENTIONAL_LOWER_FUNNEL_IDLE_NO_COHERENT_TARGET",
   "input_generations": {
-    "human_directives": "active.md@ee5dbf63a2b34117f42fdc4dd62e9813d06d7188",
-    "previous_control": "CTRL-20260922T045653+0900-R29-7C4E91B2",
-    "evidence_analyst": "EVA-20260922T060636+0900-R54-4E7C21A9",
-    "main": "MAIN-20260922T061624+0900-PRIMARY-FUNNEL21-IDLE-R54-4E7C21A9",
-    "sub": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6",
-    "relay": "NO_SEPARATE_DURABLE_ADVANCE_R54_NO_ACTIVE_MAIN_OBJECT",
+    "human_directives": "ops/human_directives/active.md@ee5dbf63a2b34117f42fdc4dd62e9813d06d7188",
+    "previous_control": "CTRL-20260922T065500+0900-R30-6F4C21A8",
+    "evidence_analyst": "EVA-20260922T075818+0900-R56-8B3D21F6",
+    "main": "MAIN-20260922T081455+0900-PRIMARY-FUNNEL21-IDLE-R56-8B3D21F6",
+    "sub": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6",
+    "relay": "NO_SEPARATE_DURABLE_ADVANCE_R56_NO_ACTIVE_MAIN_OBJECT",
     "literature": "LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8",
     "audit": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
-    "methodology": "METHCAL-20260922T062530+0900-R52-5D8A21C7",
-    "steward": "STEWARD-20260922T015006+0900-G8-6B9D31F2",
+    "methodology": "METHCAL-20260922T082026+0900-R54-8D3F21C6",
+    "steward": "STEWARD-20260922T075212+0900-G9-8C4E21D3",
     "utility_assignment": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "utility_worker": "UTILITY-20260922T063700+0900-AUTO-EQUIV-SCHEMA-COMPLETED-91C4B6E2",
+    "utility_worker": "UTILITY-20260922T083500+0900-AUTO-EQUIV-CERT-PROTOTYPE-COMPLETED-A42D7C19",
     "scheduler_registry_manifest": "blob@6f7fa138b09b093613e8eb98b18559ea94e16b59"
   },
   "authoritative_refs": {
@@ -34,30 +34,41 @@
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
     "immutable_ref_incident": false,
-    "current_active_canonical_research_target": null
+    "current_active_canonical_research_target": null,
+    "utility_equivalence_branch": {
+      "ref": "utility/equivalence-certificate-v0-1-A42D7C19",
+      "head": "710f397b1af36c73378f6029c27ccb44242f02b9",
+      "base": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+      "ahead_by": 2,
+      "behind_by": 0,
+      "files": [
+        "src/sparkbrain/equivalence_certificate.py",
+        "tests/test_equivalence_certificate.py"
+      ]
+    }
   },
   "human_directive_dispositions": [
     {
       "directive": "HUMAN-20260918-001",
       "disposition": "ACCEPT",
-      "current_action": "DEFER_PROMOTION_ACTION_PENDING_CLEAN_REVIEW_AND_FRESH_MAIN_ELIGIBILITY",
-      "detail": "Outcome-independent comparator assets remain promotion-eligible in principle; no fresh clean main-promotion candidate is established."
+      "current_action": "PROMOTION_CANDIDATE_IDENTIFIED_PENDING_STEWARD_REVIEW_AND_REVIEWED_INTEGRATION",
+      "detail": "The Utility equivalence-certificate prototype is candidate-agnostic, outcome-independent comparison/integrity infrastructure and potentially main-eligible. It is not approved for merge; require Steward/review/CI-quality assessment and keep the isolated branch unmerged meanwhile."
     },
     {
       "directive": "HUMAN-20260919-002",
       "disposition": "ACCEPT",
       "current_action": "DEFER_PROTECTION_DEPLOYMENT",
-      "detail": "Ruleset/protection absence remains a reported governance fact, not a current implementation task."
+      "detail": "Ruleset count remains zero. The workflow-trigger-isolation finding is reported separately and does not by itself override the explicit human deferral."
     },
     {
       "directive": "HUMAN-20260919-003",
       "disposition": "ACCEPT_ACTIVE_CONCERN",
-      "detail": "Executable MECHANISM supply remains stalled. Intentional MAIN/SUB idle is currently scientifically calibrated, but the programme must continue high-information candidate supply rather than normalize no-op activity as sufficient throughput."
+      "detail": "Executable MECHANISM supply remains stalled. MAIN/SUB intentional idle is scientifically calibrated on current evidence; Utility tooling progress is useful but does not count as scientific candidate throughput."
     },
     {
       "directive": "HUMAN-20260921-004",
       "disposition": "MODIFY_AND_ACCEPT_BOUNDED_AUTONOMOUS_UTILITY",
-      "detail": "Latest Utility autonomous verifier-gap characterization remained one-run, NON_EVIDENTIARY, collision-free, and without scientific or scheduler authority."
+      "detail": "Latest autonomous run remained max_runs=1, NON_EVIDENTIARY, candidate-independent and non-colliding, and advanced from diagnosis to an isolated development prototype as permitted."
     },
     {
       "directive": "USER-20260921-UTILITY-AUTONOMY-APPROVAL",
@@ -92,8 +103,8 @@
       "no_target_exception": {
         "code": "NO_COHERENT_MECHANISM_TARGET",
         "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-        "analyst_canonical_check_count": 17,
-        "latest_sub_local_check_count": 18,
+        "analyst_canonical_check_count": 19,
+        "latest_sub_local_check_count": 20,
         "counts_as_selection": false,
         "interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
       }
@@ -155,7 +166,8 @@
       "hold_class": "HOLD_MECHANISM_UNRESOLVED",
       "hold_reason": "NO_FRESH_NATIVE_MECHANISM_OBJECT_WITH_PROSPECTIVE_CAUSAL_COMPARATOR_RESOURCE_AND_FALSIFIER_CONTRACT",
       "terminal_state": "NONTERMINAL_HOLD",
-      "queue_state": "NOT_QUEUED"
+      "queue_state": "NOT_QUEUED",
+      "claim_scoped_methodology_calibration_is_authorizing": false
     },
     "candidate32": {
       "claim_ceiling": "SYSTEM",
@@ -171,66 +183,86 @@
   "external_methodology_implications": {
     "literature_r26": {
       "genuinely_new_information": true,
-      "affected_line": "H7_CAUSAL_ROUTE_FAITHFULNESS",
-      "effect": "Future fresh H7 admission must distinguish stable route labels from causally faithful abstractions; bind intervention support and dormant-path activation controls, frozen causal abstraction/intervention mapping, graded faithfulness across intervention families or natural counterfactuals, separate necessity/sufficiency/completeness/conciseness, and privilege-matched local resources before execution.",
-      "creates_candidate_or_execution_authority": false
+      "effect": "Future fresh H7 objects require intervention-support/dormant-path controls and claim-scoped causal-faithfulness discipline; no current execution authority."
     },
     "audit_r5_h5": {
       "canonical_result": "FAIL_NO_USEFUL_WORK_REDUCTION_REMAINS_VALID_FOR_REGISTERED_AGGREGATE_ENDPOINT",
       "audit_classification": "ROBUST_SO_FAR",
       "interpretation_ceiling": "DO_NOT_USE_AS_BROAD_EVENT_ROUTING_OR_LAZY_STATE_CAUSAL_NO_GO"
     },
-    "methodology_r52": {
+    "methodology_r54": {
       "overall": "MIXED_CALIBRATION",
-      "material_change": false,
+      "material_change": true,
+      "material_change_reason": "WRITE_CAPABLE_PUSH_TRIGGER_ISOLATION_GAP_CONFIRMED_WHILE_DURABLE_REFS_SELF_DISARM_HISTORICAL_REPLAY",
       "hard_floor": "KEEP",
       "hidden_second_formal_gate": false,
       "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED",
-      "false_positive_risk": "LOW_TO_MODERATE_WATCH",
-      "false_negative_opportunity_cost_risk": "MODERATE_WATCH",
-      "tighten": [
-        "COMPARATOR_EQUIVALENCE_VERIFIER_INDEPENDENCE_CERTIFICATION",
-        "RESULT_BEARING_WORKFLOW_RETRIGGER_ISOLATION",
-        "CLAIM_RELEVANT_RESOURCE_SEMANTIC_DECOMPOSITION",
-        "LIVE_RAW_BEFORE_SCORE_AND_PRESERVE_BEFORE_SCORE_PLUMBING",
-        "PROTECTED_SET_EXPOSURE_VALIDITY_AND_FEEDBACK_CONTROLS"
-      ]
+      "scientific_threshold_change": false,
+      "governance_action": "TIGHTEN_FUTURE_WRITE_CAPABLE_SCIENTIFIC_WORKFLOW_TRIGGER_ISOLATION_WITHOUT_EXERCISING_HISTORICAL_WORKFLOWS_OR_ADDING_A_SCIENTIFIC_GATE"
     },
-    "utility_equivalence_schema": {
-      "classification": "GENERIC_EQUIVALENCE_VERIFIER_GAP_WITH_REUSABLE_LOCAL_PRIMITIVES_CONFIRMED",
+    "utility_equivalence_prototype": {
+      "classification": "ISOLATED_GENERIC_EQUIVALENCE_CERTIFICATE_PROTOTYPE_VALIDATED_SYNTHETICALLY",
       "evidentiary_status": "NON_EVIDENTIARY",
       "candidate_touched": false,
-      "safe_future_direction": "ISOLATED_CANDIDATE_AGNOSTIC_FAIL_CLOSED_VERIFIER_PROTOTYPE_WITHOUT_SCIENTIFIC_AUTHORITY_OR_MAIN_DEPENDENCY",
-      "allowed_decision_surface": [
+      "branch_ahead_by": 2,
+      "changed_files": 2,
+      "synthetic_tests": "7 passed",
+      "verdict_surface": [
         "VALID_EQUIVALENT",
         "VALID_NOT_EQUIVALENT",
         "INVALID_CONTRACT"
-      ]
+      ],
+      "independent_control_review": "READ_ONLY_CODE_AND_DIFF_INSPECTION_CONFIRMS_CANDIDATE_AGNOSTIC_OUTCOME_INDEPENDENT_SCOPE",
+      "main_promotion_status": "REVIEW_ELIGIBLE_NOT_APPROVED"
     }
   },
   "worker_assessment": {
-    "analyst": "R54 canonical authority; freshness/liveness-only; 32/32 typing complete; no active candidate and no allocation change.",
-    "main": "R54 intentional no-target idle; no branch/workflow/identity/protected-outcome/scientific execution.",
-    "relay": "No active MAIN continuation authority and no separate durable scientific advance observed.",
-    "sub": "R54 credible no-op/no-target; local check_count 18 is liveness-only; theory-backward share remains 1/3.",
-    "literature": "R26 genuinely new; sharpens future H7 intervention/causal-faithfulness admission bar without authorizing execution.",
-    "audit": "R5 H5 endpoint robust; interpretation remains narrow.",
-    "methodology": "R52 no material calibration change; current gates remain calibrated but mechanism supply stalled.",
-    "steward": "G8 governance facts remain useful but science snapshot predates R54; no current main-promotion candidate.",
-    "utility": "Latest autonomous run completed one bounded NON_EVIDENTIARY read-only generic equivalence-schema/tooling characterization, max_runs=1, no collisions or prohibited mutation."
+    "analyst": "R56 canonical authority; 32/32 typing complete; no candidate lifecycle delta; no active candidate and no allocation.",
+    "main": "R56 intentional no-target idle; no experiment/workflow/identity/research mutation.",
+    "relay": "No active MAIN continuation authority and no separate durable scientific advance after the R56 idle state.",
+    "sub": "R56 credible no-op/no-target; local check_count 20 remains liveness-only; theory-backward share remains 1/3.",
+    "literature": "R26 genuinely new H7 causal-faithfulness reduction guidance; non-authorizing.",
+    "audit": "R5 H5 endpoint robust with narrow interpretation ceiling.",
+    "methodology": "R54 material governance/integrity calibration update on write-capable push-trigger isolation; scientific gates unchanged.",
+    "steward": "G9 independently confirmed the legacy CX01 trigger-isolation gap, current self-disarm, zero immutable incident, and no then-current promotion candidate.",
+    "utility": "Latest AUTONOMOUS_IDLE run completed one isolated generic equivalence-certificate prototype; two commits/two files, synthetic 7/7 tests, no scientific authority or collision."
   },
   "utility_governance": {
     "assignment_status": "IDLE",
     "active_assignment_id": null,
     "autonomy_status": "APPLIED_AND_CONFORMANT",
-    "latest_autonomous_task": "AUTOUTIL-20260922T0624+0900-EQUIV-SCHEMA-91C4B6E2",
+    "latest_autonomous_task": "AUTOUTIL-20260922T0824+0900-EQUIV-CERT-PROTOTYPE-A42D7C19",
     "latest_task_status": "COMPLETED",
     "latest_task_evidentiary_status": "NON_EVIDENTIARY",
     "latest_task_max_runs": 1,
     "hidden_main_dependency": false,
     "candidate_typing_changed": false,
     "theory_backward_quota_credit": false,
-    "scheduler_mutation": false
+    "scheduler_mutation": false,
+    "development_branch": "utility/equivalence-certificate-v0-1-A42D7C19",
+    "development_branch_head": "710f397b1af36c73378f6029c27ccb44242f02b9",
+    "next_control_posture": "LEAVE_ASSIGNMENT_POINTER_IDLE; DO_NOT_MERGE; ROUTE PROTOTYPE TO STEWARD/REVIEW AS A POSSIBLE MAIN-PROMOTION CANDIDATE; REAL SCIENTIFIC USE REQUIRES FRESH PROSPECTIVE BINDING"
+  },
+  "repository_governance": {
+    "workflow_trigger_isolation": {
+      "classification": "LEGACY_CX01_WRITE_CAPABLE_PUSH_TRIGGER_ISOLATION_GAP_SELF_DISARMED_GOVERNANCE_ONLY",
+      "current_scientific_effect": "NONE",
+      "current_replay_risk": "SELF_DISARMED_BY_EXISTING_CONTROL_AND_PRESERVE_REFS",
+      "future_policy": "PREFER_MANUAL_OR_ONE_SHOT_PROSPECTIVE_AUTHORITY_OR_MACHINE_READABLE_REVIEWED_EXCEPTION_FOR_WRITE_CAPABLE_SCIENTIFIC_TRIGGER_PATHS",
+      "historical_workflow_dispatch_for_validation": "PROHIBITED"
+    },
+    "ruleset_count": 0,
+    "protection_deployment": "DEFER_PER_HUMAN_DIRECTIVE",
+    "utility_equivalence_main_promotion_candidate": {
+      "status": "REVIEW_ELIGIBLE_NOT_APPROVED",
+      "rationale": "Candidate-independent exact binding/privilege/resource/equivalence infrastructure is outcome-independent and reusable; independent Control code/diff inspection found only a generic module and synthetic tests, but no reviewed integration/PR/CI approval exists.",
+      "required_before_merge": [
+        "Repository Steward structural promotion review",
+        "reviewed integration branch or PR",
+        "normal repository CI/static-quality checks",
+        "confirm no hidden scientific or candidate authority enters the stable API"
+      ]
+    }
   },
   "scheduler_health": {
     "fleet_status": "YELLOW",
@@ -240,15 +272,15 @@
     "exact_time_overlap_risks": [],
     "role_ownership_collision_count": 0,
     "observed_material_start_delays": [],
-    "start_delay_assessment": "NO_RELIABLE_MATERIAL_START_DELAY_ESTABLISHED; SCHEDULER_LAST_RUN_TIME_IS_NOT_A_START_TIMESTAMP_AND_DURABLE_PRODUCER_METADATA_SHOWS_MODEST_OFFSETS_WHERE_INFERABLE",
+    "start_delay_assessment": "NO_RELIABLE_MATERIAL_START_DELAY_ESTABLISHED; R56 MAIN PRODUCED_AT IS APPROXIMATELY ON ITS :15 PHASE, SUB EXACTLY :35, METHODOLOGY ABOUT 26S AFTER :20; SCHEDULER LAST_RUN_TIME REMAINS UNSUITABLE AS START TELEMETRY",
     "recent_noop_idle_patterns": {
       "MAIN": "REPEATED_INTENTIONAL_IDLE_NO_EXECUTABLE_TARGET",
       "SUB": "REPEATED_CREDIBLE_NO_TARGET_NO_OP",
       "Relay": "NO_ACTIVE_CONTINUATION_AUTHORITY_NO_DURABLE_ADVANCE",
-      "Utility": "USEFUL_AUTONOMOUS_NON_EVIDENTIARY_DIAGNOSTIC_TOOLING_RESULTS_NOT_IDLE"
+      "Utility": "USEFUL_AUTONOMOUS_NON_EVIDENTIARY_TOOLING_PROTOTYPE_COMPLETED"
     },
-    "useful_result_cadence_vs_polling_cadence": "CORE_SCIENTIFIC_USEFUL_RESULT_RATE_LOW_RELATIVE_TO_POLLING_DUE_NO_EXECUTABLE_MECHANISM; EXTERNAL_AND_UTILITY_INFORMATION_ARRIVAL_REMAINS_NONZERO_AND_USEFUL",
-    "generation_lag_assessment": "NO_STALE_GENERATION_SCIENTIFIC_ACTION_OBSERVED; R54 CONSUMED SAFELY BY MAIN_SUB_METHODOLOGY_AND_LITERATURE",
+    "useful_result_cadence_vs_polling_cadence": "CORE_SCIENTIFIC_USEFUL_RESULT_RATE_LOW_RELATIVE_TO_POLLING_DUE_NO_EXECUTABLE_MECHANISM; METHODOLOGY_LITERATURE_AND_UTILITY_INFORMATION_ARRIVAL_REMAINS_NONZERO_AND_USEFUL",
+    "generation_lag_assessment": "NO_STALE_GENERATION_SCIENTIFIC_ACTION_OBSERVED; R56 WAS CONSUMED BY MAIN_SUB_AND_METHODOLOGY; RELAY HAD NO CONTINUATION AUTHORITY",
     "active_sparkbrain_run_opportunities_per_day": 175,
     "registry_drift": {
       "confirmed": true,
@@ -264,35 +296,45 @@
     },
     "scheduler_change_warranted": false,
     "scheduler_controller_action": "NO_CHANGE",
+    "scheduler_action_class": "NO_CHANGE",
     "scheduler_proposals": []
   },
-  "programme_priorities": [
-    "Do not manufacture a mechanism object; preserve intentional scientific idle until a fresh coherent native mechanism surface appears.",
-    "Prospectively incorporate Literature R26 intervention-support and causal-faithfulness failure modes into any later fresh H7 admission contract.",
-    "Keep candidate32 terminal and no-rescue; any resource-localization successor must be a fresh non-rescue object with independently verifiable equivalence and claim-appropriate resource semantics.",
-    "Allow bounded candidate-agnostic Utility verifier/tooling work as independent NON_EVIDENTIARY programme infrastructure, never as hidden MAIN dependency or scientific authority.",
-    "Treat mechanism-supply scarcity as a real throughput concern while retaining the quality floor and Funnel v2.1 semantics.",
-    "Keep repository protection deployment deferred per human directive; report risk only.",
-    "Reconcile scheduler registry mirror before any later scheduler mutation transaction."
+  "generation_map": {
+    "control": "CTRL-20260922T085130+0900-R31-B7D4A219",
+    "analyst": "EVA-20260922T075818+0900-R56-8B3D21F6",
+    "main": "MAIN-20260922T081455+0900-PRIMARY-FUNNEL21-IDLE-R56-8B3D21F6",
+    "sub": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6",
+    "relay": "NO_SEPARATE_DURABLE_ADVANCE_R56_NO_ACTIVE_MAIN_OBJECT",
+    "literature": "LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8",
+    "audit": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
+    "methodology": "METHCAL-20260922T082026+0900-R54-8D3F21C6",
+    "steward": "STEWARD-20260922T075212+0900-G9-8C4E21D3",
+    "utility": "UTILITY-20260922T083500+0900-AUTO-EQUIV-CERT-PROTOTYPE-COMPLETED-A42D7C19"
+  },
+  "priorities": [
+    "Keep scientific MAIN/SUB intentionally idle until a genuinely fresh, prospectively falsifiable MECHANISM object or material mechanism-surface delta appears; do not manufacture activity.",
+    "Keep H7 nonterminal/unqueued and apply claim-scoped causal-faithfulness controls only to a fresh future object.",
+    "Keep candidate #32 terminal/no-rescue and H5 consumed/no-retry with narrow interpretation ceilings.",
+    "Treat Methodology R54 trigger-isolation as governance/integrity tooling, not a scientific admission/readiness gate; never exercise historical scientific workflows to validate a repair.",
+    "Route the isolated Utility equivalence-certificate prototype to Repository Steward/review as a possible main-promotion candidate without merging it or making MAIN depend on it.",
+    "Preserve bounded Utility autonomy while requiring one-run scope, collision checks, NON_EVIDENTIARY labeling for autonomous tooling, and no candidate/readiness/quota authority.",
+    "Keep scheduler live definitions unchanged; reconcile the stale registry mirror before any future scheduler mutation transaction."
   ],
-  "direction_to_evidence_analyst": [
-    "Consume Literature R26 prospectively as H7 reduction/admission guidance only; do not create or execute an object merely from literature.",
-    "Keep H7 MECHANISM / preformal_eligible=false / NOT_READY / HOLD_MECHANISM_UNRESOLVED / NONTERMINAL_HOLD / NOT_QUEUED until a fresh native mechanism object independently appears.",
-    "For any later H7 admission prospectively require intervention-support realism, dormant/alternate-path activation checks, frozen causal-abstraction mapping, multi-intervention faithfulness, separate necessity/sufficiency/completeness/conciseness, and privilege-matched resources.",
-    "Preserve candidate32 terminalization and same-object no-rerun/no-repair/no-retune/no-cycle3/no-uplift boundary.",
-    "Keep phenomenon-first shadow proposals outside the canonical denominator until later-generation admission; same-generation execution remains forbidden.",
-    "Treat Utility generic-equivalence findings as tooling information only, not candidate evidence, readiness, theory-backward credit, or scientific promotion support."
+  "direction_to_analyst": [
+    "Preserve R56 32/32 Funnel typing, H7 nonterminal hold, candidate #32 terminal/no-rescue and no-target liveness semantics.",
+    "Do not infer mechanism progress, PRE_FORMAL readiness, or candidate authority from the Utility equivalence-certificate prototype.",
+    "If a future comparator/resource question is independently admitted, generic verifier tooling may be considered only after governance/review; scientific contracts and matched privilege/resources must still be bound prospectively.",
+    "Keep Methodology R54 workflow-trigger isolation as governance/integrity calibration, separate from scientific readiness thresholds."
   ],
-  "control_actions_this_run": {
-    "experiments": 0,
-    "scientific_workflow_dispatches": 0,
-    "one_way_identity_consumptions": 0,
-    "research_pr_merges": 0,
+  "mutations_this_run": {
+    "experiments_executed": 0,
+    "scientific_workflows_dispatched": 0,
+    "identities_consumed": 0,
+    "research_prs_merged": 0,
     "immutable_formal_evidence_mutations": 0,
     "utility_assignment_mutations": 0,
     "scheduler_mutations": 0,
-    "ruleset_protection_mutations": 0,
-    "research_candidate_typing_mutations": 0,
-    "control_persistence_only": true
+    "ruleset_or_protection_mutations": 0,
+    "scientific_candidate_mutations": 0
   }
 }
