@@ -4,6 +4,8 @@ import argparse
 import hashlib
 import json
 import os
+import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -33,15 +35,33 @@ def _verify_hash(path: Path, expected: str) -> None:
         raise ValueError(f"frozen hash mismatch for {path}: {observed} != {expected}")
 
 
+def _git_blob(repo_root: Path, relative_path: str) -> str:
+    return subprocess.check_output(
+        ["git", "hash-object", relative_path],
+        cwd=repo_root,
+        text=True,
+    ).strip()
+
+
 def verify_frozen_contract(*, repo_root: Path, contract: dict[str, Any]) -> None:
     for relative_path, expected_sha256 in contract["frozen_sha256"].items():
         _verify_hash(repo_root / relative_path, expected_sha256)
+
+    if _git_blob(repo_root, contract["package_path"]) != contract["package_git_blob"]:
+        raise ValueError("package git blob differs from frozen contract")
+    if _git_blob(repo_root, contract["workflow_path"]) != contract["workflow_git_blob"]:
+        raise ValueError("workflow git blob differs from frozen contract")
+
+    runtime_version = f"{sys.version_info.major}.{sys.version_info.minor}"
+    if runtime_version not in contract["runtime"]["python_versions"]:
+        raise ValueError("runtime version is outside frozen matrix")
     if contract["synthetic_only"] is not True:
         raise ValueError("contract is not synthetic-only")
-    if contract["analysis_choices"]["transform"] != "identity":
-        raise ValueError("transform changed")
-    if contract["analysis_choices"]["comparator"] != "none":
-        raise ValueError("comparator changed")
+
+    plan = json.loads((repo_root / contract["analysis_plan_path"]).read_text(encoding="utf-8"))
+    for key, expected in contract["analysis_choices"].items():
+        if plan.get(key) != expected:
+            raise ValueError(f"analysis choice changed: {key}")
 
 
 def run_conformance(
