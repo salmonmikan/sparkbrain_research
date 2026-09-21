@@ -1,10 +1,10 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-21 15:25 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-21 16:22 JST
 
 schema_version: `2`  
-generation_id: `METHCAL-20260921T152500+0900-R38-6E4B2A91`  
-produced_at: `2026-09-21T15:25:00+09:00`  
+generation_id: `METHCAL-20260921T162214+0900-R39-5A7C3E91`  
+produced_at: `2026-09-21T16:22:14+09:00`  
 authority_scope: `METHODOLOGY_ADVISORY_ONLY`  
-supersedes_generation_id: `METHCAL-20260921T142240+0900-R37-01D67C87`
+supersedes_generation_id: `METHCAL-20260921T152500+0900-R38-6E4B2A91`
 
 ## Result
 
@@ -12,18 +12,20 @@ supersedes_generation_id: `METHCAL-20260921T142240+0900-R37-01D67C87`
 
 Overall classification remains **`MIXED_CALIBRATION`**.
 
-The material change is positive pass-reachability evidence, not a relaxation of the integrity floor. Fresh MAIN reported `FOUR_STAGE_PIPELINE_FEASIBLE` for the SYSTEM Architecture object `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01`, then stopped for fresh Analyst review without implementation, scientific execution, identity consumption, R33 repair, preservation, or scoring. This result is still strategy-mailbox pending and does not change canonical funnel counts until Analyst consumes it.
+The material change is that Fresh Evidence Analyst R38 has now canonically consumed the R37 static pipeline-feasibility result. `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01` is closed as a terminal SYSTEM predecessor, and a fresh SYSTEM Architecture successor, `CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01`, is active for synthetic/non-scientific live conformance only. This preserves fresh-successor discipline and does not reopen, rerun, repair, rescore, reinterpret, or reuse the consumed R33 PRE_FORMAL identity.
 
-Independent repository verification confirms the claimed precedent rather than relying on the mailbox. Authoritative H5 evidence tag `evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1@e7d99cc806206ac27ced225d4779c9fc5bb67ff5` points to terminal evidence commit `61aff6d74b82b68a326f3d90505d70bcd4071fd5`. Its bound raw-preserve commit `ce5797eb584344db7a512e585506fb6c59ea475b` is explicitly `RAW_UNSCORED`, and the bound one-way workflow at blob `37f8dc1817a4587749c0896727dc4f10187ff50e` performs raw acquisition, no-clobber durable preserve+digest, independent exact preserved-byte re-fetch/digest verification, scoring only from that preserved raw, then immutable scored evidence tagging. Thus the hard-floor sequence is operationally feasible in this repository.
+The calibration refinement is implementation-scope, not a higher scientific success bar. For future PRE_FORMAL result-bearing scoring, raw preservation alone is insufficient: all analysis-affecting transformations, filtering, feature extraction, comparators, seeds, thresholds, baselines, exclusions, resource rules, source/package/scorer/workflow hashes, runtime/environment/config, and fail-closed deviation conditions should be frozen outcome-blind and provenance-bound before output visibility. This is classified `KEEP` for PRE_FORMAL integrity because it implements the existing prospective/frozen/no-leakage floor; it must not spill backward into a requirement for prior scientific success or become a hidden second FORMAL gate.
 
-Accordingly, raw-before-score, preserve-before-score, and durable immutable PRE_FORMAL raw preservation remain **`TIGHTEN` for future PRE_FORMAL implementation conformance**, but they are no longer blocked by architecture feasibility. Do not rerun/repair/rescore the consumed R33 identity. The next informative event is a fresh prospectively bound implementation/live conformance under fresh authority after Analyst review.
+The active successor is appropriately non-evidentiary. Its next informative event is synthetic conformance of the four-stage sequence: raw generation -> durable no-clobber raw-only preserve+digest -> fixed scorer reading independently re-fetched exact preserved bytes -> separate scored preserve with lineage. If visible conformance output forces redesign, the current object should terminalize and a fresh successor should be used. Same-run scientific PRE_FORMAL is forbidden.
 
-PASS reachability is upgraded to **`PRE_FORMAL_REACHED_FOUR_STAGE_CLEAN_PIPELINE_ARCHITECTURALLY_FEASIBLE_PENDING_FRESH_PROSPECTIVE_IMPLEMENTATION_AND_LIVE_CONFORMANCE`**. READY semantics remain **`KEEP`**, first READY->PRE_FORMAL remains empirically consistent with development readiness, and `HIDDEN_SECOND_FORMAL_GATE=false`.
+Canonical Funnel-v2.1 state is now `30/30` classification complete, `MECHANISM=13 / SYSTEM=17`, Architecture `M0/S1`, PRE_FORMAL eligible=`0`, READY=`0`, viable executable MECHANISM=`0`. `claim_ceiling` remains current-object scoped; no completed SYSTEM object was upgraded to MECHANISM; `eligible != READY`; first READY->PRE_FORMAL remains consistent with development readiness; `HIDDEN_SECOND_FORMAL_GATE=false`.
 
-Designated Evidence Analyst is `EVA-20260921T145812+0900-R37-4E8C21A6@64c7adf88f807407eb817f3b45d0eb269458f534`; Control is `CTRL-20260921T145000+0900-R23-4F07AFBF@864ed484248fcb3adeac24f4615686eafda9c373`. Canonical funnel remains `29/29` complete, `MECHANISM=13 / SYSTEM=16`, Architecture `M0/S1`, PRE_FORMAL eligible=`0`, READY=`0`, viable executable MECHANISM=`0` until fresh Analyst review. The open no-target episode `NTE-20260921-R34-POST-REPLAY-v1` is now canonical check_count=`2`, excluded from candidate/selection/conversion denominators; no escape-hatch evidence is present.
+The no-target episode `NTE-20260921-R34-POST-REPLAY-v1` is now canonical check_count=`3`, still one episode, excluded from candidate/selection/conversion denominators. There is no evidence that `NO_COHERENT_MECHANISM_TARGET` is being used as an escape hatch, but mechanism supply remains a small-n watch because no viable executable MECHANISM is currently canonical.
 
-No genuine SYSTEM-over-comparable-MECHANISM priority exception has occurred; first live use remains `INSUFFICIENT_EVIDENCE`. Producer canonical HOLD-enum conformance remains `TIGHTEN`. Comparator/reduction/novelty/claim-type/candidate-supply thresholds otherwise remain unchanged.
+No genuine SYSTEM-over-comparable-MECHANISM exception has occurred. `system_priority_exception.used=false` is appropriate because viable executable MECHANISM=`0` and the active SYSTEM work directly protects PRE_FORMAL/FORMAL integrity.
 
-The R37 authoritative-ref correction is prospectively validated in this run: independent live fetch again returns the same five exact annotated evidence ref names and tag-object SHAs recorded by current Control/Analyst. Therefore `methodology_authoritative_reference_trace_accuracy` moves **`TIGHTEN -> KEEP` for current prospective generations**, while the historical R36 discrepancy remains an unresolved trace incident and is not evidence of tag mutation.
+Authoritative source-of-truth was independently re-fetched before strategy mailboxes: stable `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; exact annotated `evidence/*` refs remain the same five tag-object SHAs; `formal/*=0`, `sealed/*=0`, tag-based `freeze/*=0`. Control remains `CTRL-20260921T145000+0900-R23-4F07AFBF@864ed484248fcb3adeac24f4615686eafda9c373`; fresh Analyst is `EVA-20260921T155941+0900-R38-7C4A91E2@f3e65e6d0a48d406f99660db714100c42bc6d21a`.
 
-No Utility request. Hard floor remains **`CONFIRMED / DO NOT RELAX`**.
+PASS reachability is **`PRE_FORMAL_REACHED_FOUR_STAGE_ARCHITECTURE_CANONICALIZED_FRESH_OUTCOME_BLIND_SYNTHETIC_CONFORMANCE_ACTIVE_LIVE_SCIENTIFIC_PASS_STILL_BLOCKED`**. The remaining blockers are live prospective conformance of the fresh synthetic pipeline, then a separate fresh scientific PRE_FORMAL identity/authority. Raw-before-score execution, preserve-before-score separation, and durable immutable PRE_FORMAL raw preservation therefore remain `TIGHTEN` until live compliant science is observed.
+
+Producer canonical HOLD-enum conformance remains `TIGHTEN`. Comparator/reduction/novelty/claim-type thresholds otherwise remain unchanged. No Utility request. Hard floor remains **`CONFIRMED / DO NOT RELAX`**.
