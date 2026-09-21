@@ -1,19 +1,24 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4",
-  "producer_run_id": "sparkbrain-main-primary-20260921T191520JST-R41",
-  "produced_at": "2026-09-21T19:23:40+09:00",
+  "generation_id": "MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4",
+  "producer_run_id": "sparkbrain-main-primary-20260921T201520JST-R42",
+  "produced_at": "2026-09-21T20:22:28+09:00",
   "execution_mode": "PRIMARY",
-  "status": "BLOCKED",
-  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_R41_STATIC_READ_ONLY_CROSS_GENERATION_HOLDOUT_EXPOSURE_INTEGRITY",
-  "analyst_generation_id": "EVA-20260921T185902+0900-R41-8D3A21C7",
-  "analyst_commit": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91",
-  "supersedes_generation_id": "MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8",
-  "consumed_main_generation_id": "MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8",
-  "main_lane": "PREFORMAL_CROSS_GENERATION_HOLDOUT_EXPOSURE_INTEGRITY_ARCHITECTURE_STATIC_CYCLE1",
+  "status": "COMPLETED",
+  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_R42_STATIC_METADATA_ONLY_CROSS_GENERATION_HOLDOUT_EXPOSURE_INTEGRITY_CYCLE2",
+  "analyst_generation_id": "EVA-20260921T200300+0900-R42-5F8C21A4",
+  "analyst_commit": "b8dc2ab5a203547cc9f663cf7fcfe1541091fc8e",
+  "supersedes_generation_id": "MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4",
+  "consumed_main_generation_id": "MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4",
+  "input_generations": {
+    "evidence_analyst": "EVA-20260921T200300+0900-R42-5F8C21A4",
+    "main": "MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4",
+    "sub": "SUB-20260921T193222+0900-NOOP-R41POSTMAIN-SCOPESTOP-2F8C41A7"
+  },
+  "main_lane": "PREFORMAL_CROSS_GENERATION_HOLDOUT_EXPOSURE_INTEGRITY_ARCHITECTURE_STATIC_CYCLE2_METADATA_ALLOWLIST",
   "research_layer": "ARCHITECTURE_STUDY",
   "candidate_id": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
-  "cycle_count": 1,
+  "cycle_count": 2,
   "claim_ceiling": "SYSTEM",
   "preformal_eligible": false,
   "preformal_readiness": {"status": "NOT_APPLICABLE"},
@@ -24,13 +29,13 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No comparably executable/informative MECHANISM exists; active SYSTEM integrity object protects future PRE_FORMAL/FORMAL evidence validity.",
+    "reason_detail": "No comparably executable/informative MECHANISM exists; R42 authorized the final bounded SYSTEM metadata-only integrity cycle.",
     "compared_mechanism_candidate_ids": []
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_tip": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91",
-    "latest_sub_generation": "SUB-20260921T183349+0900-NOOP-R40POSTMAINPASS-6D4A21C9",
+    "analyst_tip": "b8dc2ab5a203547cc9f663cf7fcfe1541091fc8e",
+    "latest_sub_generation": "SUB-20260921T193222+0900-NOOP-R41POSTMAIN-SCOPESTOP-2F8C41A7",
     "target_research_branch": null,
     "target_research_head": null,
     "active_identity": null,
@@ -40,8 +45,8 @@
     "freeze_tags": [],
     "h5_started_control": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "pr_148": "OPEN_UNMERGED_MERGEABLE",
-    "pr_149": "OPEN_UNMERGED_MERGEABLE"
+    "pr_148": "OPEN_UNMERGED",
+    "pr_149": "OPEN_UNMERGED"
   },
   "research_layer_state": {
     "DISCOVERY": {"state": "OPEN", "M": 0, "S": 0},
@@ -50,37 +55,58 @@
     "FORMAL": {"state": "EMPTY_HOLD", "fresh_one_way_authority": false}
   },
   "prospective_contingency_tree": {
-    "EXPOSURE_LEDGER_AND_POLICY_FEASIBLE_WITH_CURRENT_METADATA": "STOP_AND_RETURN_TO_FRESH_ANALYST_REVIEW; CURRENT_OBJECT_SYSTEM_TERMINAL; NO_SAME_RUN_IMPLEMENTATION_OR_SCIENCE",
-    "CURRENT_METADATA_ALREADY_EXPLICITLY_SUFFICIENT": "STOP_AND_RETURN_TO_FRESH_ANALYST_REVIEW; HOLD_SYSTEM_TERMINAL",
-    "PROTECTED_SET_IDENTITY_OR_FEEDBACK_EXPOSURE_NOT_MACHINE_CHECKABLE": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
-    "REQUIRES_READING_PROTECTED_OUTCOMES_OR_SCIENTIFIC_DATA": "SCOPE_INVALID_STOP",
-    "WOULD_REQUIRE_RETROACTIVE_INVALIDATION_OF_EXISTING_EVIDENCE": "STOP_NO_RETROACTIVE_INFERENCE_WITHOUT_INDEPENDENT_REPOSITORY_EVIDENCE"
+    "SAFE_METADATA_SUFFICES": "STOP_AND_RETURN_TO_FRESH_ANALYST_REVIEW; TERMINAL_SYSTEM",
+    "SAFE_METADATA_CANNOT_ESTABLISH_EXPOSURE_SEMANTICS": "HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT; NO_THIRD_RESCUE",
+    "SECOND_SCOPE_BOUNDARY_FAILURE": "HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT; NO_THIRD_RESCUE",
+    "PROTECTED_OUTCOME_READING_OR_RETROACTIVE_INVALIDATION_REQUIRED": "SCOPE_INVALID_STOP"
   },
   "workflows": [],
   "observations": {
-    "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_SCOPE_INVALID_NO_TERMINAL_OBSERVATION",
-    "terminal_observation": null,
-    "partial_static_characterization": [
-      "Stable-main V05 protocol metadata explicitly distinguishes development seeds 501/502 from confirmatory seeds 601-604 and records that 501/502 were inspected before retained execution.",
-      "A stable-main phase1 test manifest machine-identifies a frozen test split by seed_start and episode_count; tests enforce development/test disjointness.",
-      "The default-branch one-way formal registration workflow binds exact source SHA, candidate spec hash, control branch, candidate path, freeze manifest path, seal path, STARTED marker path, and artifact root.",
-      "Independent ref refresh confirms five evidence tags, no formal/sealed/freeze tags, and existing control/preserve namespaces with explicit identity-bearing ref names.",
-      "Before a valid terminal could be assigned, a GitHub commit-inspection endpoint over-returned result-bearing evidence content while MAIN was auditing evidence metadata. That content is excluded from all architectural inference and no scientific interpretation was performed. Because R41 explicitly forbids reading protected scientific outcomes, MAIN fails closed rather than claiming feasibility or method limitation from this attempt."
+    "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY",
+    "terminal_observation": "SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK",
+    "analyst_mapped_disposition": "HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NO_THIRD_RESCUE",
+    "canonical_dimensions_note": "MAIN preserves the current Analyst canonical hold/lifecycle fields exactly (null/null/ACTIVE/ACTIVE). The prospective mapped disposition is recorded separately for fresh Analyst canonicalization because R42 did not provide a replacement hold_reason or queue_state.",
+    "safe_metadata_findings": [
+      "V05 protocol explicitly records that development seeds 501/502 were inspected during engineering, marks them development-only, separates confirmatory seeds 601-604, freezes primary thresholds before confirmatory inspection, and forbids threshold edits after seed 601 executes.",
+      "Phase1 frozen manifests machine-identify distinct dev and test sets: dev starts at seed 100000 for 200 episodes; test starts at seed 200000 for 1000 episodes; both are frozen.",
+      "The phase1 run-manifest schema binds run_id, git_commit, config_hash, split_hash, command, local_execution, completion and episode-count fields, but has no protected-set exposure-event, feedback-disclosure, ancestry, or holdout-reuse fields.",
+      "The one-way formal registration workflow binds source SHA, candidate spec hash, control branch, candidate/freeze/seal/STARTED paths and artifact root, but has no protected-set identity/exposure-event, feedback granularity/budget, cross-generation candidate-choice ancestry, or fresh/rotation/reuse policy fields.",
+      "The stable-main schema inventory contains no exposure- or holdout-ledger-named schema. Existing split/provenance metadata is therefore sufficient to identify some protected-set boundaries but not to machine-check cross-generation exposure and feedback semantics required by this candidate."
     ],
-    "scope_integrity_incident": {
-      "type": "CONNECTOR_ENDPOINT_OVERRETURN_OF_RESULT_BEARING_EVIDENCE_PATCH",
-      "requested_purpose": "inspect evidence commit metadata/file inventory only",
+    "scope_integrity": {
+      "allowlisted_endpoint_types_only": true,
+      "commit_or_diff_endpoints_used": false,
+      "result_bearing_files_opened": false,
       "protected_outcome_content_used_for_decision": false,
-      "response_after_incident": "STOP_FAIL_CLOSED_NO_TERMINAL_CLASSIFICATION"
+      "second_scope_boundary_failure": false
     }
   },
-  "ordinary_reductions": "UNRESOLVED_DUE_SCOPE_INVALID_STOP",
-  "support_breadth": "STATIC_REPOSITORY_METADATA_ONLY_UNTIL_SCOPE_STOP",
+  "ordinary_reductions": {
+    "status": "PARTIALLY_REDUCED_BUT_RESIDUAL_METHOD_GAP_REMAINS",
+    "reductions": [
+      "Frozen dev/test or dev/confirmatory splits solve set separation for individual protocols.",
+      "Git/source/candidate/control/path bindings solve part of provenance identity.",
+      "A simple append-only exposure ledger with explicit feedback classes, lineage and reuse policy could prospectively close the residual gap, but current safe metadata does not provide those semantics."
+    ]
+  },
+  "support_breadth": {
+    "scope": "STATIC_SAFE_METADATA_ONLY",
+    "sources": [
+      "stable-main refs and namespace inventories",
+      "docs/V05_EXPERIMENT_PROTOCOL.md",
+      "configs/experiments/phase1/manifests/dev-v1.json",
+      "configs/experiments/phase1/manifests/test-v1.json",
+      "schemas/phase1-run-manifest-v0.2.schema.json",
+      ".github/workflows/cx01-formal-one-way.yml",
+      "stable-main schemas/configs/docs directory inventories"
+    ],
+    "scientific_outcomes_read": false
+  },
   "evidentiary_status": {
     "FORMAL_evidence": 0,
     "PRE_FORMAL_development_evidence": 0,
     "MECHANISM_Architecture_observations": 0,
-    "SYSTEM_Architecture_observations": 0,
+    "SYSTEM_Architecture_observations": 1,
     "new_identity_consumption": 0
   },
   "consumed_identities": [
@@ -94,11 +120,9 @@
   ],
   "consumed_identities_this_run": [],
   "integrity": {
-    "analyst_tip_rechecked_before_acquisition": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91",
-    "analyst_generation_rechecked_before_terminal_persistence": "EVA-20260921T185902+0900-R41-8D3A21C7",
-    "analyst_tip_rechecked_before_terminal_persistence": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91",
-    "orchestrator_tip_after_lease_acquisition": "886efbd8dd8a77db13baa01051aa39c3b34fde9c",
-    "stable_main_rechecked": true,
+    "analyst_generation_rechecked_before_acquisition": "EVA-20260921T200300+0900-R42-5F8C21A4",
+    "analyst_tip_rechecked_before_terminal_persistence": "b8dc2ab5a203547cc9f663cf7fcfe1541091fc8e",
+    "stable_main_rechecked_before_terminal_persistence": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "research_refs_rechecked": true,
     "evidence_refs_rechecked": true,
     "control_refs_rechecked": true,
@@ -117,10 +141,10 @@
     "system_to_mechanism_upgrade": false,
     "retroactive_evidence_invalidation_attempted": false,
     "protected_outcome_content_used_for_architecture_decision": false,
-    "scope_fail_closed": true
+    "scope_fail_closed": false
   },
-  "stop_reason": "R41_SCOPE_INVALID_PROTECTED_OUTCOME_ENDPOINT_OVERRETURN_FAIL_CLOSED_NO_TERMINAL_CLASSIFICATION",
-  "next_action": "Fresh Evidence Analyst review is required. If this SYSTEM object is re-authorized, repeat the static audit using path/ref/manifests/workflow metadata only and do not invoke commit/diff endpoints that can return result-bearing evidence patches. Preserve the current canonical ACTIVE/ACTIVE hold dimensions until Analyst canonicalizes otherwise.",
+  "stop_reason": "R42_SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK_HOLD_METHOD_LIMITED_NO_THIRD_RESCUE_STOP_FRESH_ANALYST_REVIEW",
+  "next_action": "Fresh Evidence Analyst must canonicalize the prospectively mapped HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT disposition. Do not run a third rescue cycle, implement an exposure ledger, execute science, open PRE_FORMAL/FORMAL, or alter existing evidence based on this SYSTEM observation without fresh authority.",
   "utility_request": null,
   "owner": "main"
 }
