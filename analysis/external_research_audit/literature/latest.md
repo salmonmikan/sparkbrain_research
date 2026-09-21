@@ -1,79 +1,74 @@
-# External Literature Reduction Scout — Assembly causal controls beyond observational matching
+# External Literature Reduction Scout — outcome replay, reuse, and update multiplicity
 
 - schema_version: `2`
-- generation_id: `LIT-20260921T093300+0900-R18-ASSEMBLY-CAUSAL-CONTROLS-8D4C71A2`
-- produced_at: `2026-09-21T09:33:00+09:00`
-- producer_run_id: `external-literature-auto-20260921T093300+0900-R18-8D4C71A2`
+- generation_id: `LIT-20260921T123000+0900-R19-OUTCOME-REPLAY-3C7A91E4`
+- produced_at: `2026-09-21T12:30:00+09:00`
+- producer_run_id: `external-literature-auto-20260921T123000+0900-R19-3C7A91E4`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LIT-20260921T062846+0900-R17-ACTIONVISIT-6E3B91C4`
+- supersedes_generation_id: `LIT-20260921T093300+0900-R18-ASSEMBLY-CAUSAL-CONTROLS-8D4C71A2`
 - role: `LITERATURE_REDUCTION_SCOUT`
 - genuinely_new_information: `true`
 
 ## Inputs / authoritative state
 
-Repository evidence was re-fetched independently from all `ops/*` mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative annotated `evidence/*` set remains five; tag-based `formal/*`, `sealed/*`, and `freeze/*` remain empty. Consumed STARTED/raw-preserve anchors remain unchanged. PR #148 and #149 remain open and unmerged.
+Repository evidence was re-fetched independently from all `ops/*` mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; five authoritative `evidence/*` tags remain present; `formal/*`, `sealed/*`, and tag-based `freeze/*` remain empty; thirteen legacy `freeze/*` branches remain visible. Current PRs #148 and #149 remain open and unmerged. Control/preserve branch families and consumed identities were re-inspected; no new one-way scientific identity is present.
 
 Consumed control-plane generations:
 
 - Control Brain: `CTRL-20260921T085000+0900-R21-4F7C2A91` @ `49ac783b5640b8250c19133f8842f0bf49867e8f`
-- Evidence Analyst: `EVA-20260921T090300+0900-R31-3C7A91E4` @ `060e7d7d150b5406124425348553c92b04fed253`
-- MAIN: `MAIN-20260921T091756+0900-PRIMARY-FUNNEL21-HOLD-R31-7C2A91E4` @ `ac4c2b80379d516c56ebb0a3ea25638bc8800bab`
-- SUB: `SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7` @ `ef4a2f0cf65e6143d10c6186075bb470b494539f`
-- prior Literature: `LIT-20260921T062846+0900-R17-ACTIONVISIT-6E3B91C4` @ `c68021616b412a8ff6e94b72d57fb11ff609d4c2`
+- Evidence Analyst: `EVA-20260921T120207+0900-R34-2E7C91A4` @ `d5554d45a62d0ef0a20d0443e40b0f4d11c0eea8`
+- MAIN: `MAIN-20260921T113236+0900-PRIMARY-FUNNEL21-PREFORMAL-ASMSET-R33-HOLD-5E8C31A7` @ `44f2f12f469b57a6354d32fbc2a7b0d5dad1fc56`
+- SUB: `SUB-20260921T113509+0900-SYSTEM-OUTREPLAYTIMESHIFT-HOLD-4A7C91E2` @ `44f2f12f469b57a6354d32fbc2a7b0d5dad1fc56`
+- prior Literature: `LIT-20260921T093300+0900-R18-ASSEMBLY-CAUSAL-CONTROLS-8D4C71A2` @ `00bd486f4230c9a89d3d584e8d685a00b9dfe2b8`
 
-Fresh Analyst R31 and MAIN/SUB R31 contain no current scientific object: Architecture is empty, PRE_FORMAL eligible/READY are both zero, FORMAL remains empty, and `CAND-H7-RESP-01` remains the sole nonterminal MECHANISM hold. MAIN is intentionally idle and SUB reports no coherent mechanism target.
+Fresh Analyst R34 canonicalized the R33 Assembly-set PRE_FORMAL attempt as method-limited/nonconforming because no durable raw-only preserve existed before in-process scoring/classification; the current Assembly object is terminal and PRE_FORMAL is again empty. Independently, R34 restored the already-bound fresh SYSTEM Discovery `CAND-V05-OUTCOME-REPLAY-CREDIT-SEMANTICS-TIMESHIFT-01` to `ACTIVE / ACTIVE`, authorizing only its exact fixed cycle. The timeshift research branch remains at the prospective contract head `50223b84e7e30cec2c4dcb136e58c0b4674df966`; no replay outcome has yet been exposed.
 
 ## Repository fact being reduced
 
-The completed bounded Discovery `CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01` found a prospectively fixed selective effect on DEV seed 501. The selected Assembly prototype units `[45, 56, 63]` each produced one baseline probe spike; suppressing them changed the prediction from `outcome-0` to `null` and reduced lower-field spikes from 9 to 6. The prospectively fixed equal-cardinality nonmember comparator `[16, 17, 18]` had zero baseline spikes per unit and left the baseline prediction/trajectory unchanged. The result was explicitly NON_EVIDENTIARY and comparator quality was incomplete.
+Stable v0.5 source already makes the proposed replay surface unusually transparent. `process_episode()` stores a `pending_activation` and the action policy's pending `(assembly_id, action)`. `learn_outcome()` passes the unchanged pending activation to `AssemblyPredictor.observe()` and calls `AssemblyActionPolicy.reward()`. Neither path consumes or clears its pending association. Predictor observation increments the selected event count by one; action reward increments the pending score by `learning_rate * reward`.
 
-The fresh successor `CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01` prospectively required an exact seven-component aggregate activity/topology signature match before any intervention. On fixed DEV seeds 501 and 502, all 14,190 same-cardinality eligible nonmember triples per seed were exhausted without an exact match. Its canonical terminal is therefore `EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE`; no intervention outcome was executed. This object remains closed and must not be rescued by comparator relaxation, new topology metrics, or surface changes.
+The fresh prospective contract therefore compares one versus two identical `learn_outcome(next_event="sub-replay-event", reward=1.0)` calls after one valid support episode, with no intervening episode. Its fixed ordinary prediction is exact: replay-minus-single predictor count `+1`, pending-action score `+0.30`, episode-index difference `0`, and unchanged pending identities. The predecessor replay object remains terminal because its support episode violated monotonic-time semantics and never exposed an outcome.
 
 ## High-value external findings
 
-### 1. Observational activity similarity is not causal-contribution equivalence
+### 1. Reusing an already-observed experience is established experience replay, not a new credit mechanism
 
-Fakhar et al. (Scientific Reports, 2024, DOI `10.1038/s41598-024-52423-7`) systematically compared neural activity with causal functional contribution under perturbation. Across downstream transformations, especially nonlinear/recurrent ones, recorded activity could diverge substantially from causal contribution; reservoir-network examples showed nodes with similar-looking activity need not have similar causal importance.
+Lin's foundational 1992 work explicitly introduced **experience replay** as an extension to reinforcement learning (`Machine Learning` 8:293-321, DOI `10.1007/BF00992699`). Schaul et al. later summarized the same ordinary idea directly: experience replay lets online agents remember and reuse past experiences, with important transitions deliberately replayed more frequently (`ICLR 2016`, *Prioritized Experience Replay*).
 
-Impact: SparkBrain's exact activity/topology signature is a conservative prospective control definition, but it is not a scientifically privileged definition of causal-load equivalence. Failure to find that exact observational match closes the current fixed object; it does **not** establish that Assembly causality is intrinsically untestable on all future designs.
+Impact: if the fixed SparkBrain replay arm receives one extra predictor count and one extra action update from the same unchanged pending association, that result is best reduced to **implicit one-item experience reuse / repeated training on the same sample**. It does not establish selective causal responsibility, persistent cognition, or a new learning principle.
 
-### 2. Ensemble-target versus equal-count random controls are established ordinary necessity tests
+### 2. Replay/update multiplicity is itself an algorithmic resource that must be matched
 
-Park et al. (Neuropsychopharmacology, 2016, DOI `10.1038/npp.2016.73`) showed that silencing a small, learning-allocated dentate-gyrus ensemble impaired memory whereas silencing a similar number of random neurons did not. This is a close ordinary precedent for testing whether a selected ensemble has function beyond an equal-cardinality perturbation.
+Fedus et al. (`ICML 2020`, *Revisiting Fundamentals of Experience Replay*) identify the **replay ratio**—the ratio of learning updates to experience collected—as a fundamental property and empirically show that changing it materially affects deep-RL performance. Xu et al. (`IEEE CoG 2024`, DOI `10.1109/CoG60054.2024.10645658`) likewise increase gradient-update frequency per environment interaction and report improved sample efficiency.
 
-Impact: if a genuinely fresh Assembly successor is independently authorized, a prospectively fixed **distribution of same-cardinality random/nonmember lesions** is an ordinary primary baseline. It cannot be substituted into the already-terminal matched-load object after seeing its feasibility failure.
+Impact: future SparkBrain comparisons involving repeated outcomes must count `outcome updates / new environmental experience` as part of the resource contract. A system that updates twice from one experience has received more optimization/credit opportunities than a one-update comparator even if both saw the same physical episode.
 
-### 3. Equal cardinality alone does not control generic sparse-perturbation effects
+### 3. Repetition frequency can deliberately reweight learning, so uncontrolled duplicate callbacks are not neutral
 
-A contextual-fear study in Cerebral Cortex (2021; online 2020, DOI `10.1093/cercor/bhaa257`) found that nonselective activation of only tens of CA1 neurons could disrupt memory recall. Sparse perturbation itself can therefore produce a functional effect even without targeting the task-specific ensemble.
+Prioritized Experience Replay intentionally changes how often transitions are replayed according to priority. The literature treats that repetition policy as part of the learning algorithm rather than as an innocuous implementation detail; importance-sampling correction is used when one wants to compensate for nonuniform sampling bias.
 
-Impact: a future positive Assembly lesion result should be judged against a **distribution** of generic sparse lesions, not merely one hand-picked same-size comparator. Equal cardinality is useful but insufficient as the sole perturbation-load control.
+Impact: an unchanged pending pointer that accepts an arbitrary number of identical outcome callbacks implements an implicit sample-weighting policy. Unless replay is explicitly intended, a second callback is more naturally an API/event-consumption semantics issue. If replay is intended, its multiplicity/selection policy should be explicit and resource-matched.
 
-### 4. Local perturbations can induce distributed network reconfiguration
+### 4. Biological neural replay requires internal pattern reactivation, not merely repeated reward application
 
-Rabuffo et al. (PNAS, 2025, DOI `10.1073/pnas.2405706122`) reported that focal lesions or chemogenetic silencing can produce distributed changes in firing statistics and functional connectivity, with different intervention sites yielding different global reconfiguration signatures.
+The 2025 Annual Review of Neuroscience review *Replay and Ripples in Humans* defines replay around sequential reactivation of neural patterns linked to past events during rest/sleep and other offline periods, often involving hippocampal sharp-wave ripples and temporally compressed sequences (DOI `10.1146/annurev-neuro-112723-024516`).
 
-Impact: pre-intervention degree and two-hop reach are reasonable structural covariates, but they are proxies rather than guarantees of matched causal load. In a fresh prospective design, whole-field/downstream perturbation footprint should be measured as a separate outcome or balance diagnostic; it must not be used post hoc to select the winning control.
-
-### 5. Multi-unit perturbation supports coalition-level necessity, not individual responsibility
-
-Lepperød et al. (PLOS Computational Biology, 2023, DOI `10.1371/journal.pcbi.1011574`) emphasize that multi-neuron stimulation/perturbation complicates attribution because distributed activity and common effects can confound individual causal contributions. Fakhar et al. likewise use multi-site contribution methods such as Shapley-style analysis to separate contributions.
-
-Impact: suppressing the three-unit Assembly prototype can support a **set-level/coalition-level** selectivity claim against matched controls. It cannot by itself establish that each member unit has unique responsibility. Any future per-unit responsibility claim needs prospectively fixed single-unit/factorial/coalitional perturbation or another explicit causal-attribution method.
+Impact: two calls to `learn_outcome()` with no intervening field/Assembly processing, no new episode, and no internal sequence reactivation should not be interpreted as biological replay. A future biologically framed replay claim needs an internally generated/reactivated state or sequence and a prospectively defined relation between that reactivation and credit update.
 
 ## Reduction consequence
 
-The current `EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE` terminal remains valid and closed. The new literature changes the design bar for a *future independent* Assembly-causality object rather than reopening the current one.
+This is genuinely new reduction information relative to the recent eligibility/credit scouts: the relevant ordinary family is **experience reuse and update-to-data ratio**, not eligibility persistence. The current fresh SYSTEM object should remain exactly as bound; this scout does not execute it or change its terminal map.
 
-A stronger ordinary prospective ladder is:
+If its future fixed result is `ORDINARY_PENDING_STATE_REUSE_REDUCTION`, the literature supplies a strong interpretation ceiling:
 
-`same-cardinality random/nonmember lesion distribution`
-→ `pre-registered activity/topology stratification or covariate balancing under equal information privilege`
-→ `explicit measurement of network-wide perturbation footprint`
-→ `coalitional/factorial attribution only if individual responsibility is claimed`
-→ only then any residual Assembly-specific causal-selectivity claim.
+`one physical experience / pending association`
+→ `explicit outcome-event consumption or deliberate replay semantics`
+→ `matched update-to-data / replay ratio`
+→ `uniform or prioritized replay/sample weighting where applicable`
+→ `internal sequence reactivation only for biological replay claims`
+→ only then any residual SparkBrain-specific replay/credit mechanism.
 
-No Utility request is created. A diagnostic request now would be literature-driven continuation of a terminal family without fresh Analyst authority and would risk outcome-responsive comparator redesign.
+No Utility request is created because SUB already owns a prospectively fixed diagnostic for this exact surface. A second request would duplicate the active object and could contaminate its fixed interpretation.
 
 ## Knowledge-flow contract
 
@@ -81,38 +76,38 @@ No Utility request is created. A diagnostic request now would be literature-driv
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - CAND_V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_01
-  - CAND_V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_MATCHED_LOAD_01
-  - V05_ASSEMBLY_CAUSAL_SELECTIVITY
-  - CAUSAL_PERTURBATION_CONTROL_DESIGN
+  - CAND_V05_OUTCOME_REPLAY_CREDIT_SEMANTICS_TIMESHIFT_01
+  - V05_OUTCOME_CREDIT_CONSUMPTION
+  - V05_EXPERIENCE_REPLAY_SEMANTICS
+  - LEARNING_UPDATE_TO_DATA_RATIO
   - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
-  CONTROL_DESIGN_SHARPENING_NOT_NOVELTY_UPLIFT. The current exact-match
-  feasibility terminal remains valid and closed. External perturbation work
-  shows that observational activity/topology matching is not equivalent to
-  causal-load matching; ensemble-versus-random perturbation is an established
-  ordinary necessity baseline; sparse/focal perturbations can have distributed
-  effects; and multi-unit interventions establish coalition-level effects rather
-  than individual responsibility.
+  STRONG_ORDINARY_EXPERIENCE_REPLAY_AND_UPDATE_RATIO_REDUCTION. Stable source
+  already predicts repeated credit from unchanged pending state. External RL
+  literature makes intentional reuse of past experience and replay/update ratio
+  ordinary algorithmic mechanisms/resources. Repeated outcome callbacks without
+  internal reactivation are therefore SYSTEM/API credit-consumption semantics,
+  not evidence for a new responsibility or biological replay mechanism.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - prospectively fixed same-cardinality random/nonmember lesion distribution with equal target-selection privilege
-  - pre-registered stratified or covariate-balanced controls for baseline activity/topology in a fresh object
-  - whole-field/downstream perturbation-footprint measurement without post-outcome control selection
-  - single-unit/factorial/coalitional perturbation only for per-unit responsibility claims
-  - explicit separation of Assembly-set necessity from individual-unit causal responsibility
+  - explicit one-shot outcome-event consumption/idempotency when replay is not intended
+  - explicit replay event/buffer identity when repeated credit is intended
+  - matched outcome-update-to-new-experience ratio across comparators
+  - uniform versus prioritized replay/sample-weighting baseline with correction where appropriate
+  - internally generated/reactivated sequence requirement for biological replay claims
 questions_for_evidence_analyst:
-  - Keep the current matched-load object terminal and treat this literature only as future control-design guidance?
-  - For an independently motivated fresh successor, may a prospectively fixed distributional/random lesion baseline replace exact observational equality while preserving equal information privilege?
-  - Keep the claim ceiling at set-level causal selectivity unless individual responsibility is separately identified?
+  - If the already-fixed timeshift cycle later matches the exact comparator, close it as ordinary pending-state/experience-reuse semantics with no mechanism uplift?
+  - Require replay/update ratio to be counted as a resource in future credit-learning comparisons?
+  - Keep API outcome replay distinct from biological/internal neural replay unless an actual reactivation process is identified?
 questions_for_control_brain:
-  - Add "activity similarity is not causal-load equivalence" and distributed perturbation footprint to the ordinary Assembly causal-control checklist?
-  - Do not reopen the current terminal based on this literature; require a fresh independent substrate/object and prospective contract?
-  - Keep PRE_FORMAL/FORMAL unchanged?
+  - Add outcome-event consumption/replay multiplicity and update-to-data ratio to the ordinary credit/replay reduction checklist?
+  - Keep PRE_FORMAL/FORMAL and H7 unchanged by this SYSTEM/API line?
+  - Avoid any duplicate Utility request while the fixed SUB timeshift object is active?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - Assembly causal-selectivity contract eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42, outcome 1a571db21ff82001407f01cb2c5449f253bfd4e5, result head 0c857a73cf34b58b737f686fd9af60769de3d306
-  - matched-load prospective head b2547429823be29a2547419c80c40fb2138dfdc9, workflow 35541396714, CI 35541396705, and canonical exact-match-infeasible terminal
-  - no same-object comparator relaxation, new metric, new surface, intervention, cycle 2, STARTED, TEST, PRE_FORMAL/FORMAL promotion, rescore, research merge, immutable-ref mutation, or scheduler change
+  - predecessor replay terminal at 6fa2114ff5f68bb940abd21600a587b460293097
+  - fresh timeshift prospective contract 50223b84e7e30cec2c4dcb136e58c0b4674df966
+  - R33 Assembly-set PRE_FORMAL execution b907403e972af7df8a6502dfe4c54bdbb0d23475 and its R34 method-limited canonicalization
+  - no outcome dispatch, contract edit, rescue, retune, rerun, rescore, STARTED, TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, or scheduler change by this role
 utility_request_created: null
 ```
