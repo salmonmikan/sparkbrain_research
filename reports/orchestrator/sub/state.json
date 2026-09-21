@@ -1,22 +1,20 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7",
-  "produced_at": "2026-09-22T07:35:00+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7",
+  "generation_id": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6",
+  "produced_at": "2026-09-22T08:35:00+09:00",
+  "producer_run_id": "SUB-RUN-SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6",
+  "supersedes_generation_id": "SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T065809+0900-R55-5A8C21F7",
-      "handoff_commit": "11e84b37dd8739c38f538f1231aab7234356c5d0",
+      "generation_id": "EVA-20260922T075818+0900-R56-8B3D21F6",
+      "handoff_commit": "9639f793a8c3d9733d46fa2d03e12ac889c5ac89",
       "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_LATER_FRESH_NONRESCUE_OBJECT",
-      "main_candidate_id": null,
       "sub_lane": "NO_TARGET_EPISODE_HOLD_UNTIL_MECHANISM_SURFACE_DELTA_THEN_THEORY_BACKWARD_REFRAME",
       "sub_fallback": "NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET",
       "candidate_pool": {
         "material_candidates_total": 32,
         "claim_ceiling_counts": {"MECHANISM": 13, "SYSTEM": 19},
-        "classification_complete": 32,
         "terminal_state_counts": {"ACTIVE": 0, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 31},
         "preformal_eligible": 0,
         "preformal_ready": 0,
@@ -30,7 +28,6 @@
         "FORMAL": {"state": "EMPTY_HOLD", "fresh_one_way_authority": false}
       },
       "h7": {
-        "id": "H7_RESPONSIBILITY",
         "classification": "HOLD",
         "claim_ceiling": "MECHANISM",
         "preformal_eligible": false,
@@ -39,18 +36,10 @@
         "hold_reason": "NO_FRESH_NATIVE_MECHANISM_OBJECT_WITH_PROSPECTIVE_CAUSAL_COMPARATOR_RESOURCE_AND_FALSIFIER_CONTRACT",
         "terminal_state": "NONTERMINAL_HOLD",
         "queue_state": "NOT_QUEUED",
-        "r26_prospective_floor": [
-          "INTERVENTION_SUPPORT_REALISM_AND_DORMANT_PATH_ACTIVATION_CONTROLS",
-          "FROZEN_CAUSAL_ABSTRACTION_AND_INTERVENTION_MAPPING",
-          "GRADED_FAITHFULNESS_ACROSS_MULTIPLE_INTERVENTION_FAMILIES_OR_NATURAL_COUNTERFACTUALS",
-          "SEPARATE_NECESSITY_SUFFICIENCY_COMPLETENESS_CONCISENESS",
-          "MATCHED_TIMING_LOCAL_OBSERVATION_ELIGIBILITY_RECURRENT_STATE_INFORMATION_AND_RESOURCE_PRIVILEGE",
-          "PATH_SPECIFIC_PNS_ONLY_AS_STRONGER_PRIVILEGE_CEILING_UNLESS_GENUINELY_MATCHED"
-        ],
+        "claim_scoped_calibration": true,
         "creates_current_execution_authority": false
       },
       "candidate32": {
-        "id": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
         "classification": "HOLD",
         "claim_ceiling": "SYSTEM",
         "preformal_eligible": false,
@@ -61,53 +50,47 @@
         "exploration_cycle_count": 2,
         "same_object_continuation": "PROHIBITED"
       },
-      "system_priority_exception": {
-        "used": false,
-        "reason_detail": "No active SYSTEM object exists and no comparably executable/informative MECHANISM candidate exists."
-      },
+      "system_priority_exception": {"used": false},
       "blockers": [
         "VIABLE_EXECUTABLE_MECHANISM_ZERO",
         "NO_ACTIVE_OR_QUEUED_ARCHITECTURE_OBJECT",
-        "H7_FRESH_NATIVE_OBJECT_INTERVENTION_FAITHFULNESS_COMPARATOR_RESOURCE_FALSIFIER_UNFIXED",
+        "H7_FRESH_NATIVE_OBJECT_CAUSAL_COMPARATOR_RESOURCE_INTERVENTION_FALSIFIER_UNFIXED",
         "NO_FRESH_FORMAL_ONE_WAY_AUTHORITY"
       ],
       "exclusions": [
         "MAIN_ACTIVE_OR_JUST_COMPLETED_OBJECT_BLOCKER_SUCCESSOR",
         "CANDIDATE32_RERUN_REPAIR_REDESIGN_OR_SAME_OBJECT_SUCCESSOR",
-        "H5_RERUN_RESCORE_RETUNE_RELABEL_REOPEN",
         "TERMINAL_REDUCED_METHOD_LIMITED_IDENTITIES",
         "FORMAL_TEST_STARTED_HELD_OUT_CONSUMED_IDENTITIES",
         "PROTECTED_OUTCOME_READING",
         "SAME_OBJECT_SYSTEM_TO_MECHANISM_UPGRADE",
         "HISTORICAL_H7_EXPLORATORY_BRANCH_RERUN_OR_PROMOTION"
       ],
-      "material_delta": "PROSPECTIVE_H7_CAUSAL_FAITHFULNESS_AND_PATHWAY_COMPLETENESS_ADMISSION_FLOOR_ONLY_NO_CANDIDATE_OR_LIFECYCLE_CHANGE"
+      "material_delta": "NO_SCIENTIFIC_OR_LIFECYCLE_DELTA_H7_CLAIM_SCOPE_CALIBRATION_AND_GOVERNANCE_TRIGGER_ISOLATION_ONLY"
     },
     "main": {
-      "generation_id": "MAIN-20260922T071800+0900-PRIMARY-FUNNEL21-IDLE-R55-5A8C21F7",
-      "mailbox_tip_observed": "33051317c8898a33682a7a5a2f41027def4793fd",
+      "generation_id": "MAIN-20260922T081455+0900-PRIMARY-FUNNEL21-IDLE-R56-8B3D21F6",
+      "mailbox_tip_observed": "27a3ffdc9103c263d3a7eb043f8a004689a17b21",
       "status": "COMPLETED",
       "candidate_id": null,
       "research_layer": null,
       "claim_ceiling": null,
-      "active_branch": null,
-      "active_head": null,
       "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION_INTENTIONAL_IDLE",
-      "stop_reason": "R55_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+      "stop_reason": "R56_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
       "identity_consumption": false
     },
     "control": {
       "generation_id": "CTRL-20260922T065500+0900-R30-6F4C21A8",
       "tip": "fc5297050c93bb67a9b69aae24179ce7d8888c15",
       "programme_position": "FORMAL_HOLD_WITH_INTENTIONAL_LOWER_FUNNEL_IDLE_NO_COHERENT_TARGET",
-      "policy_note": "Strategic prior only; do not manufacture activity. Literature R26 H7 guidance is prospective/non-authorizing."
+      "policy_note": "Strategic prior only; do not manufacture activity."
     },
-    "previous_sub": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6"
+    "previous_sub": "SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "11e84b37dd8739c38f538f1231aab7234356c5d0",
-    "orchestrator_tip_before_write": "33051317c8898a33682a7a5a2f41027def4793fd",
+    "analyst_handoff": "9639f793a8c3d9733d46fa2d03e12ac889c5ac89",
+    "orchestrator_tip_before_write": "27a3ffdc9103c263d3a7eb043f8a004689a17b21",
     "control_tip": "fc5297050c93bb67a9b69aae24179ce7d8888c15",
     "historical_h7_exploratory_ref": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
     "evidence_tags": {
@@ -126,7 +109,7 @@
   "cycle": null,
   "main_independence": {
     "status": "INDEPENDENT_NO_ACTIVE_MAIN_OBJECT_AND_NO_SUCCESSOR_SELECTION",
-    "reason": "MAIN R55 completed intentional no-target idle. Analyst R55 authorizes no active object; R26 H7 guidance is future admission-floor material only and creates no SUB target."
+    "reason": "MAIN R56 completed intentional no-target idle and Analyst R56 authorizes no active object."
   },
   "theory_backward_accounting": {
     "selection_status": "NO_AUTONOMOUS_SCIENTIFIC_SELECTION",
@@ -137,13 +120,13 @@
     "rolling_slot_assessment": "NEXT_SAFE_AUTONOMOUS_SELECTION_SHOULD_BE_THEORY_BACKWARD_MECHANISM_IF_A_COHERENT_TARGET_EXISTS",
     "theory_backward_exception": {
       "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "R55 reports viable executable MECHANISM zero, no SUB Discovery object, and zero new shadow proposals. H7 remains nonterminal but R26 only raises the prospective causal-faithfulness/admission floor and does not fix a fresh native object, matched causal comparator/resource contract, intervention families, or falsifier. Candidate #32 and other terminal or consumed objects remain unavailable. Selecting now would manufacture activity or rescue/duplicate laundering."
+      "detail": "R56 reports viable executable MECHANISM zero and no SUB Discovery object. H7 claim-scoped methodology calibration does not fix a fresh native object, matched comparator/resource/intervention contract, or falsifier. Candidate #32 and other terminal/consumed objects remain unavailable; selecting now would manufacture activity or rescue/duplicate laundering."
     },
     "exception_counts_as_selection": false,
     "no_target_episode": {
       "id": "NTE-20260921-R34-POST-REPLAY-v1",
-      "analyst_canonical_check_count": 18,
-      "sub_local_check_count_after_run": 19,
+      "analyst_canonical_check_count": 19,
+      "sub_local_check_count_after_run": 20,
       "status": "OPEN",
       "counts_as_selection": false,
       "interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
@@ -154,15 +137,16 @@
   "reduction_question": "N/A_NO_CURRENT_SUB_OBJECT",
   "falsifier": "N/A_NO_CURRENT_SUB_OBJECT",
   "inputs": {
-    "analyst_generation": "EVA-20260922T065809+0900-R55-5A8C21F7",
+    "analyst_generation": "EVA-20260922T075818+0900-R56-8B3D21F6",
     "stable_main_refreshed": true,
     "authoritative_evidence_refs_refreshed": true,
     "historical_h7_ref_refreshed": true,
     "main_mailbox_refreshed": true,
     "control_refreshed": true,
     "material_mechanism_surface_delta": false,
-    "r26_h7_guidance_non_authorizing": true,
-    "main_r55_intentional_idle": true,
+    "r56_h7_calibration_non_authorizing": true,
+    "r56_trigger_isolation_non_authorizing": true,
+    "main_r56_intentional_idle": true,
     "formal_or_sealed_test_used": false,
     "held_out_or_confirmatory_seed_used": false,
     "official_scorer_used": false,
@@ -178,7 +162,7 @@
   "observations": {
     "scientific_result": "NO_SUB_TARGET_NO_OP",
     "mechanism_surface_delta": "NONE",
-    "control_plane_delta": "R55 adds a prospective H7 intervention-faithfulness/pathway-completeness reduction floor and generic verifier-gap tooling information, but changes no candidate lifecycle, allocation, eligibility, readiness, or execution authority. MAIN R55 completed intentional idle.",
+    "control_plane_delta": "R56 adds claim-scoped H7 methodology calibration and a governance-only CX01 trigger-isolation finding; neither changes candidate lifecycle, allocation, eligibility, readiness, or scientific execution authority. MAIN R56 completed intentional idle.",
     "stable_main_unchanged": true,
     "evidence_refs_unchanged": true,
     "historical_h7_ref_unchanged": true,
@@ -200,7 +184,7 @@
   "next_layer": "NONE_INTENTIONAL_IDLE",
   "open_choices": [
     "Wait for a material mechanism-surface delta or fresh explicit SUB handoff before selecting a scientific object.",
-    "Do not convert Literature R26 methodology into a fresh H7 object without an independently motivated native mechanism question and prospectively fixed intervention-faithfulness/comparator/resource/falsifier contract.",
+    "Do not turn R56 H7 claim-scope calibration into a fresh object without an independently motivated native mechanism question and prospective comparator/resource/intervention/falsifier contract.",
     "Do not rerun or promote the historical H7 exploratory branch.",
     "Do not rerun, repair, retune, reinterpret, or continue candidate #32; same-object SYSTEM to MECHANISM upgrade is prohibited."
   ],
@@ -208,11 +192,11 @@
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
-  "completion_target": "NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION_UNDER_R55",
+  "completion_target": "NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION_UNDER_R56",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_paths": ["reports/orchestrator/history/2026-09-22/0735-sub.md"],
+    "history_paths": ["reports/orchestrator/history/2026-09-22/0835-sub.md"],
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
     "mode": "SINGLE_FAST_FORWARD_COMMIT_SUB_OWNED_PATHS_ONLY"
