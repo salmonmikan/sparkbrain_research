@@ -1,24 +1,24 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T19:22:58+09:00",
+  "timestamp": "2026-09-21T20:21:00+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260921T192258+0900-R42-7F3A9C21",
-    "sequence": 42,
+    "generation_id": "METHCAL-20260921T202100+0900-R43-9D4B2C71",
+    "sequence": 43,
     "material_change": true,
-    "material_change_reason": "SYNTHETIC_FOUR_STAGE_CONFORMANCE_CANONICALIZED_AND_CROSS_GENERATION_HOLDOUT_INTEGRITY_OPENED_WITH_SCOPE_INVALID_OVERREAD_FAIL_CLOSED",
-    "supersedes_generation_id": "METHCAL-20260921T182131+0900-R41-C7A4D291",
+    "material_change_reason": "R42_CANONICALIZED_FIRST_PROTECTED_OUTCOME_SCOPE_STOP_AND_PROSPECTIVELY_BOUNDED_ONE_FINAL_METADATA_ONLY_RECOVERY_CYCLE_WITH_FIXED_TERMINAL_MAPPING",
+    "supersedes_generation_id": "METHCAL-20260921T192258+0900-R42-7F3A9C21",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T182131+0900-R41-C7A4D291",
+      "generation_id": "METHCAL-20260921T192258+0900-R42-7F3A9C21",
       "branch": "ops/methodology-calibration-audit",
-      "prior_tip": "e9fe5a398f467d20dc3b1566340f7c9f7a8bae17"
+      "prior_tip": "8af4b900a7ff663b18218f63c792f4384d4383fa"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T185902+0900-R41-8D3A21C7",
+      "generation_id": "EVA-20260921T200300+0900-R42-5F8C21A4",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91"
+      "commit": "b8dc2ab5a203547cc9f663cf7fcfe1541091fc8e"
     },
     "control_brain": {
       "generation_id": "CTRL-20260921T185206+0900-R24-6B4D21C8",
@@ -27,15 +27,11 @@
     },
     "strategy_mailbox": {
       "branch": "ops/orchestrator-run-report",
-      "commit": "3dc7e4b0e2fb97038247778730cb9a93c9e915c8",
-      "main_generation_id": "MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4",
-      "authoritative": false
-    },
-    "external_calibration": [
-      "Dwork et al. 2015 Generalization in Adaptive Data Analysis and Holdout Reuse",
-      "Nakkiran and Blasiok 2018 The Generic Holdout",
-      "Roelofs et al. 2019 A Meta-Analysis of Overfitting in Machine Learning"
-    ]
+      "commit": "19488f6df93b3f03c8e82ec344a4e8d7ae5e441d",
+      "main_generation_id": "MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4",
+      "authoritative": false,
+      "status": "ACTIVE_CYCLE2_LEASE_ONLY_NO_RESULT_YET"
+    }
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -49,8 +45,6 @@
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
-    "synthetic_pipeline_head": "168883bd316985537e404c6aad3a7ac03202e28a",
-    "synthetic_pipeline_ci_run_id": 35583071628,
     "scientific_source_of_truth": "stable main plus independently fetched annotated evidence refs; ops branches are mailboxes only"
   },
   "audit_result": "MATERIAL_CALIBRATION_UPDATE",
@@ -66,6 +60,8 @@
     "four_stage_pipeline_architecture_feasibility": "KEEP",
     "pre_conformance_preflight_repair_boundary": "KEEP",
     "scope_invalid_protected_outcome_overread_fail_closed": "KEEP",
+    "bounded_nonresult_scope_recovery": "KEEP",
+    "prospective_scope_failure_terminal_mapping": "KEEP",
     "metadata_only_holdout_exposure_endpoint_boundary": "TIGHTEN",
     "adaptive_cross_generation_holdout_reuse_control": "KEEP",
     "cross_generation_holdout_exposure_observability": "INSUFFICIENT_EVIDENCE",
@@ -99,28 +95,27 @@
     "methodology_authoritative_reference_trace_accuracy": "KEEP"
   },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_TO_MODERATE: synthetic four-stage conformance now passes and is canonicalized, but fresh scientific PRE_FORMAL use remains unobserved and cross-generation protected-set exposure accounting is not yet characterized.",
-    "false_negative": "MODERATE_WATCH: viable executable MECHANISM remains zero and one persistent no-target episode is at canonical check 6; the quality floor is credible but supply remains stalled.",
-    "duplicate_guards": "LOW: preformal_eligible and READY remain empirically distinct; synthetic integrity, holdout-exposure architecture, shadow supply, and scientific admission remain separate objects/gates.",
-    "opportunity_cost": "CONTROLLED_BUT_WATCH: SYSTEM integrity work has direct future PRE_FORMAL/FORMAL value while executable MECHANISM=0, but repeated no-delta checks must not substitute for scientific progress.",
-    "moving_goalpost_risk": "LOW: the only same-object synthetic repair was an exact pre-result Ruff I001 formatting fix with affected hash refrozen; current holdout audit failed closed after endpoint over-return rather than adapting criteria."
+    "false_positive": "LOW_TO_MODERATE: synthetic four-stage conformance is canonical, and first protected-outcome scope overread was contained without inference, but safe metadata-only exposure characterization and fresh scientific PRE_FORMAL conformance are still unobserved.",
+    "false_negative": "MODERATE_WATCH: viable executable MECHANISM remains zero; one no-target episode is now at canonical check 7. Quality floor remains credible, but supply remains stalled.",
+    "duplicate_guards": "LOW: eligible and READY remain distinct; integrity Architecture, protected-set exposure, shadow supply, and scientific admission are separated.",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH: one final bounded metadata-only SYSTEM recovery cycle has direct future validity value, while repeated no-delta no-target checks must not be treated as cumulative scientific evidence or progress.",
+    "moving_goalpost_risk": "LOW: the R41 scope failure was canonicalized without scientific interpretation, and cycle-2 scope plus terminal mapping were frozen prospectively before further access."
   },
   "moving_goalposts": "LOW",
-  "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; CLEAN_SCIENTIFIC_PASS_REACHABLE_ONLY_VIA_FRESH_PROSPECTIVE_IDENTITY_WITH_CONFORMING_PIPELINE_AND_PROSPECTIVELY_RESOLVED_PROTECTED_SET_EXPOSURE_POLICY",
+  "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; FIRST_PROTECTED_SET_SCOPE_FAILURE_CANONICALLY_CONTAINED_WITH_ONE_FINAL_PROSPECTIVE_METADATA_ONLY_RECOVERY_CYCLE_ACTIVE; CLEAN_SCIENTIFIC_PASS_PENDING_FRESH_CONFORMING_PIPELINE_AND_PROSPECTIVELY_RESOLVED_PROTECTED_SET_EXPOSURE_POLICY",
   "hidden_second_formal_gate": false,
   "claim_type_findings": {
     "claim_ceiling_current_object_only": true,
     "same_object_system_to_mechanism_upgrade_observed": false,
     "system_value_retained": true,
-    "completed_synthetic_pipeline_object": "CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01",
-    "completed_synthetic_pipeline_ceiling": "SYSTEM",
     "active_object": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
     "active_object_ceiling": "SYSTEM",
     "active_object_is_non_evidentiary": true,
-    "current_strategy_scope_stop": "R41_SCOPE_INVALID_PROTECTED_OUTCOME_ENDPOINT_OVERRETURN_FAIL_CLOSED_NO_TERMINAL_CLASSIFICATION",
-    "research_worthiness_note": "SYSTEM integrity objects are admitted for prospective evidence-validity value, not prestige or novelty inflation."
+    "cycle1_scope_failure": "CANONICALIZED_NONSCIENTIFIC_NO_TERMINAL_OBSERVATION",
+    "cycle2_scope": "ONE_FINAL_BOUNDED_SAFE_METADATA_ONLY_CHARACTERIZATION",
+    "research_worthiness_note": "SYSTEM integrity work remains justified by prospective evidence-validity value, not novelty prestige."
   },
-  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_SUPPLY_STALLED_M13_S18_NO_VIABLE_EXECUTABLE_MECHANISM_OPEN_NO_TARGET_EPISODE_CHECK6_CROSS_GENERATION_INTEGRITY_ACTIVE_SMALL_N",
+  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_SUPPLY_STALLED_M13_S18_NO_VIABLE_EXECUTABLE_MECHANISM_OPEN_NO_TARGET_EPISODE_CHECK7_CROSS_GENERATION_INTEGRITY_CYCLE2_ACTIVE_SMALL_N",
   "funnel_observability": {
     "canonical_population": 31,
     "classified_population": 31,
@@ -133,6 +128,8 @@
     "preformal_ready": 0,
     "policy_conclusions_gated_by_classification_completeness": true,
     "active_object": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
+    "canonical_exploration_cycle_count": 1,
+    "authorized_next_cycle": 2,
     "current_post_analyst_strategy_result_is_canonical": false,
     "current_post_analyst_strategy_result_terminal_classification": null,
     "shadow_generated_cumulative": 4,
@@ -146,10 +143,7 @@
     "first_ready_to_preformal_empirical_status": "CONSISTENT_WITH_DEVELOPMENT_READINESS",
     "raw_before_score_live_scientific_conformance": "FAILED_ON_HISTORICAL_FIRST_PRE_FORMAL; DO_NOT_REPAIR_OR_RERUN_SAME_IDENTITY",
     "synthetic_four_stage_conformance": "PASSED_AND_CANONICALIZED_SYSTEM_TERMINAL",
-    "synthetic_conformance_head": "168883bd316985537e404c6aad3a7ac03202e28a",
-    "synthetic_conformance_ci": 35583071628,
-    "preflight_repair_boundary": "EMPIRICALLY_CALIBRATED_KEEP_IF_RESULT_BEARING_STAGE_REACHED_FALSE_AND_CHANGE_IS_EXACTLY_ANALYSIS_INVARIANT_WITH_HASH_REFREEZE",
-    "cross_generation_holdout_integrity": "FRESH_SYSTEM_ARCHITECTURE_ACTIVE; FIRST_METADATA_ONLY_ATTEMPT_SCOPE_INVALID_DUE_ENDPOINT_OVERRETURN; NO_TERMINAL_OBSERVATION",
+    "cross_generation_holdout_integrity": "CYCLE1_SCOPE_INVALID_NO_TERMINAL_OBSERVATION_CANONICALIZED; ONE_FINAL_CYCLE2_SAFE_METADATA_ONLY_AUTHORIZED; NO_THIRD_RESCUE",
     "clean_pass_inference": "BLOCKED_FOR_SCIENCE_PENDING_FRESH_PROSPECTIVE_USE_AND_PROTECTED_SET_EXPOSURE_POLICY"
   },
   "system_priority_exception_audit": {
@@ -163,13 +157,13 @@
     "rule": "KEEP",
     "open_episode": true,
     "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-    "canonical_check_count": 6,
+    "canonical_check_count": 7,
     "escape_hatch_evidence": false,
     "candidate_or_identity_consumption": false,
     "included_in_candidate_conversion_denominator": false,
     "rolling_scientific_selection": "MECHANISM / SYSTEM / SYSTEM = 1/3",
     "shadow_supply_effect": "NO_CURRENT_RETAINED_OR_ADMITTED_SHADOW; EPISODE_REMAINS_OPEN",
-    "interpretation": "SIX_CANONICAL_NO_DELTA_CHECKS_IN_ONE_OPEN_EPISODE_NOT_SIX_INDEPENDENT_SCIENTIFIC_FAILURES; HOLD_UNTIL_MATERIAL_MECHANISM_SURFACE_DELTA"
+    "interpretation": "SEVEN_CANONICAL_NO_DELTA_CHECKS_IN_ONE_OPEN_EPISODE_NOT_SEVEN_INDEPENDENT_SCIENTIFIC_FAILURES; DO_NOT TREAT CHECK COUNT AS ACCUMULATING ABSENCE EVIDENCE"
   },
   "classification_completeness": {
     "complete": true,
@@ -181,23 +175,23 @@
   "prospective_recommendations": [
     "Do not change scientific admission, novelty, comparator, reduction, or READY thresholds.",
     "Keep R33 terminal; never rerun, repair, retune, rescore, or upgrade that consumed identity.",
-    "For the next fresh scientific PRE_FORMAL, bind the four-stage raw-preserve/scorer lineage prospectively and verify the exact protected-set exposure policy before any result-bearing access.",
-    "Do not impose a universal ban or numeric threshold on holdout reuse. Prospectively distinguish fresh/rotated protected sets from adaptively reused sets and use bounded-feedback/reusable-holdout methods only when their assumptions and exposure ledger are explicit.",
-    "For metadata-only holdout-exposure audits, use endpoint/path allowlists or payload validation that rejects result-bearing fields before they are available for inference; record protected_outcome_payload_received as a machine-readable scope flag.",
-    "Standardize the now-observed preflight repair boundary: same-object repair only before any result-bearing stage, only for demonstrably analysis-invariant defects, with exact changed paths/hashes and refreeze before retry.",
-    "Any result-bearing stage or protected outcome access must terminalize the current object before redesign or broader interpretation.",
-    "Do not repeat no-target no-delta scans as scientific progress; reopen theory-backward supply only after a material mechanism-surface delta or genuinely new prospectively safe search surface.",
+    "Complete at most the single prospectively authorized cycle-2 safe metadata-only holdout exposure characterization; no third rescue cycle.",
+    "Treat any second result-bearing payload/scope breach, or inability to establish exposure semantics from safe metadata, as HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT.",
+    "For future scientific PRE_FORMAL, prospectively bind the four-stage raw-preserve/scorer lineage and protected-set identity/exposure/feedback policy before any result-bearing access.",
+    "Do not impose a universal numeric holdout-reuse threshold; choose fresh/rotated or bounded-feedback handling prospectively according to exposure regime.",
+    "Do not treat no-target check_count as accumulating evidence of absence or as scientific progress; reopen theory-backward supply only after material mechanism-surface delta or genuinely new safe search surface.",
     "Validate or explicitly map canonical Funnel-v2.1 HOLD enums at producer handoff rather than relying on downstream Analyst normalization."
   ],
   "utility_request": {
     "created": false,
-    "reason": "live cross-generation holdout architecture plus the fresh scope-stop are higher-information methodology-calibration paths than an additional utility probe"
+    "reason": "the prospectively bounded live cycle-2 metadata-only integrity path is higher-information than an additional utility probe"
   },
   "hard_floor_confirmation": {
     "policy": "CONFIRMED_DO_NOT_RELAX",
     "historical_nonconformance": "first live PRE_FORMAL raw-before-score violation remains acknowledged and terminalized",
     "fresh_synthetic_pipeline": "PASSED_NON_EVIDENTIARY_ONLY_NO_R33_REUSE",
-    "current_scope_incident": "PROTECTED_OUTCOME_ENDPOINT_OVERRETURN_RECEIVED_BUT_EXCLUDED_FROM_INFERENCE_AND_FAIL_CLOSED",
+    "current_scope_incident": "FIRST_PROTECTED_OUTCOME_ENDPOINT_OVERRETURN_CANONICALIZED_AS_SCOPE_FAILURE_NO_INFERENCE_NO_TERMINAL_SCIENTIFIC_OBSERVATION",
+    "cycle2_guard": "SAFE_METADATA_ONLY_ONE_FINAL_BOUNDED_CYCLE_WITH_PROSPECTIVE_TERMINAL_MAPPING_AND_NO_THIRD_RESCUE",
     "rerun_or_retune_consumed_scientific_identity_observed": false,
     "silent_post_outcome_repair_observed": false,
     "evaluator_target_leakage_used_for_inference_observed": false,
@@ -205,14 +199,15 @@
   },
   "confidence": {
     "current_calibration_state": "HIGH",
-    "cross_generation_holdout_exposure_observability": "MEDIUM_LOW_PENDING_CLEAN_METADATA_ONLY_CHARACTERIZATION",
+    "cross_generation_holdout_exposure_observability": "MEDIUM_LOW_PENDING_CYCLE2_RESULT",
     "first_positive_shadow_to_mechanism_admission": "LOW_INSUFFICIENT_EVIDENCE",
     "first_genuine_system_priority_exception": "LOW_INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_analyst": [
-    "Can the cross-generation protected-set exposure ledger be characterized using only refs, path inventories, non-result manifests, protocol metadata, and workflow definitions without any endpoint that may embed result-bearing patches?",
-    "Will the next fresh scientific PRE_FORMAL bind protected-set identity, prior exposure history, and feedback granularity prospectively enough to distinguish fresh/rotated use from adaptive reuse before outcome access?",
-    "Can protected_outcome_payload_received and result_bearing_stage_reached become canonical machine-readable fields for Architecture/PRE_FORMAL scope enforcement?",
-    "Has producer-side canonical HOLD-enum validation been implemented yet, or is downstream Analyst normalization still required?"
+    "Can cycle 2 establish protected-set identity, exposure history, and feedback granularity using only allowlisted non-result metadata?",
+    "Will protected_outcome_payload_received and result_bearing_stage_reached become canonical machine-readable scope-enforcement fields?",
+    "If cycle 2 cannot establish exposure semantics without result-bearing access, will the fixed HOLD_METHOD_LIMITED terminal mapping be applied without a third rescue?",
+    "Has producer-side canonical HOLD-enum validation been implemented yet, or is downstream Analyst normalization still required?",
+    "Can future no-target checks be treated purely as liveness checks unless a material mechanism-surface delta occurs, so check_count is never interpreted as accumulating absence evidence?"
   ]
 }
