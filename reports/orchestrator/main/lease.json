@@ -11,9 +11,9 @@
     "sub": "SUB-20260921T163517+0900-NOOP-R38NOMECH-7B4D21C9"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-21T17:16:55+09:00",
-  "heartbeat_at": "2026-09-21T17:16:55+09:00",
+  "heartbeat_at": "2026-09-21T17:34:00+09:00",
   "completed_at": null,
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260921T170125+0900-R39-4B7D21C8",
@@ -41,12 +41,20 @@
   },
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "active_branch": "research/main-outcome-blind-four-stage-pipeline-conformance-arch-20260921",
-  "active_head": null,
+  "active_head": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
   "active_identity": null,
-  "active_step": "PROSPECTIVE_BINDING_BEFORE_CONFORMANCE_OUTPUT",
+  "active_step": "WAIT_EXACT_HEAD_CI_COLLECTION",
   "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY",
-  "workflows": [],
-  "stop_reason": null,
-  "next_action": "Freeze every R39-prescribed pipeline choice and exact hash prospectively, then execute synthetic-only live conformance. Stop on first terminal contingency and before any scientific data, R33 reuse, PRE_FORMAL, or FORMAL action.",
+  "workflows": [
+    {
+      "run_id": 35578428792,
+      "head_sha": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
+      "status": "in_progress",
+      "conclusion": null,
+      "expected_next_action": "collect exact-head CI only"
+    }
+  ],
+  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_R39_SYNTHETIC_CONFORMANCE",
+  "next_action": "Collect only workflow 35578428792 at head 5527ac14d4d19078a91aa40f8825d5a4f41f0a91. If successful, persist SYNTHETIC_LIVE_CONFORMANCE_PASS and stop for fresh Analyst review. Otherwise apply only the already-preregistered fail-closed contingency; no rescue tuning, output-driven redesign, PRE_FORMAL, FORMAL, R33 reuse, scientific data, or identity action.",
   "owner": "main"
 }
