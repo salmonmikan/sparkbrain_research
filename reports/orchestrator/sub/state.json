@@ -1,75 +1,63 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6",
-  "produced_at": "2026-09-22T06:37:05+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6",
+  "generation_id": "SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7",
+  "produced_at": "2026-09-22T07:35:00+09:00",
+  "producer_run_id": "SUB-RUN-SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7",
   "authority_scope": "SUB_BOUNDED_NON_EVIDENTIARY_DISCOVERY_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260922T053500+0900-NOOP-R53INTENTIONALIDLE-3F8A21D6",
+  "supersedes_generation_id": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6",
   "input_generations": {
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T060636+0900-R54-4E7C21A9",
-      "handoff_commit": "473bb7713c04b50dd9567472084301f2d1d07c69",
+      "generation_id": "EVA-20260922T065809+0900-R55-5A8C21F7",
+      "handoff_commit": "11e84b37dd8739c38f538f1231aab7234356c5d0",
       "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_LATER_FRESH_NONRESCUE_OBJECT",
       "main_candidate_id": null,
       "sub_lane": "NO_TARGET_EPISODE_HOLD_UNTIL_MECHANISM_SURFACE_DELTA_THEN_THEORY_BACKWARD_REFRAME",
       "sub_fallback": "NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET",
       "candidate_pool": {
         "material_candidates_total": 32,
-        "claim_ceiling_counts": {
-          "MECHANISM": 13,
-          "SYSTEM": 19
-        },
+        "claim_ceiling_counts": {"MECHANISM": 13, "SYSTEM": 19},
         "classification_complete": 32,
-        "terminal_state_counts": {
-          "ACTIVE": 0,
-          "NONTERMINAL_HOLD": 1,
-          "TERMINAL_FOR_CURRENT_OBJECT": 31
-        },
+        "terminal_state_counts": {"ACTIVE": 0, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 31},
         "preformal_eligible": 0,
         "preformal_ready": 0,
         "viable_mechanism_candidates": 0,
         "active_canonical_candidate": null
       },
       "research_layers": {
-        "DISCOVERY": {
-          "state": "OPEN",
-          "M": 0,
-          "S": 0
-        },
-        "ARCHITECTURE_STUDY": {
-          "state": "EMPTY_HOLD",
-          "M": 0,
-          "S": 0,
-          "QM": 0,
-          "QS": 0
-        },
-        "PRE_FORMAL": {
-          "state": "EMPTY_HOLD",
-          "eligible": 0,
-          "READY": 0
-        },
-        "FORMAL": {
-          "state": "EMPTY_HOLD",
-          "fresh_one_way_authority": false
-        }
+        "DISCOVERY": {"state": "OPEN", "M": 0, "S": 0},
+        "ARCHITECTURE_STUDY": {"state": "EMPTY_HOLD", "M": 0, "S": 0, "QM": 0, "QS": 0},
+        "PRE_FORMAL": {"state": "EMPTY_HOLD", "eligible": 0, "READY": 0},
+        "FORMAL": {"state": "EMPTY_HOLD", "fresh_one_way_authority": false}
+      },
+      "h7": {
+        "id": "H7_RESPONSIBILITY",
+        "classification": "HOLD",
+        "claim_ceiling": "MECHANISM",
+        "preformal_eligible": false,
+        "preformal_readiness": {"status": "NOT_READY"},
+        "hold_class": "HOLD_MECHANISM_UNRESOLVED",
+        "hold_reason": "NO_FRESH_NATIVE_MECHANISM_OBJECT_WITH_PROSPECTIVE_CAUSAL_COMPARATOR_RESOURCE_AND_FALSIFIER_CONTRACT",
+        "terminal_state": "NONTERMINAL_HOLD",
+        "queue_state": "NOT_QUEUED",
+        "r26_prospective_floor": [
+          "INTERVENTION_SUPPORT_REALISM_AND_DORMANT_PATH_ACTIVATION_CONTROLS",
+          "FROZEN_CAUSAL_ABSTRACTION_AND_INTERVENTION_MAPPING",
+          "GRADED_FAITHFULNESS_ACROSS_MULTIPLE_INTERVENTION_FAMILIES_OR_NATURAL_COUNTERFACTUALS",
+          "SEPARATE_NECESSITY_SUFFICIENCY_COMPLETENESS_CONCISENESS",
+          "MATCHED_TIMING_LOCAL_OBSERVATION_ELIGIBILITY_RECURRENT_STATE_INFORMATION_AND_RESOURCE_PRIVILEGE",
+          "PATH_SPECIFIC_PNS_ONLY_AS_STRONGER_PRIVILEGE_CEILING_UNLESS_GENUINELY_MATCHED"
+        ],
+        "creates_current_execution_authority": false
       },
       "candidate32": {
         "id": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
         "classification": "HOLD",
-        "candidate_source": "PHENOMENON_FIRST_SHADOW",
         "claim_ceiling": "SYSTEM",
         "preformal_eligible": false,
+        "preformal_readiness": "NOT_APPLICABLE_SYSTEM_OBJECT",
         "hold_class": "HOLD_METHOD_LIMITED",
-        "hold_reason": [
-          "R50_FULL_TRAJECTORY_EQUIVALENCE_NOT_INDEPENDENTLY_MACHINE_VERIFIED",
-          "R50_EVENT_FIRE_IGNITION_PREDICTION_EQUIVALENCE_FIELDS_ASSERTED_TRUE_BY_CONSTRUCTION",
-          "R50_INTERMEDIATE_PER_REWARD_ELIGIBILITY_WEIGHT_CHECKPOINTS_NOT_INDEPENDENTLY_VERIFIED",
-          "R50_INTERPRETER_REDUCTION_SIGNAL_DEPENDED_ON_INCOMPLETE_EQUIVALENCE_VALIDITY",
-          "R50_OPENED_CYCLE_NO_RERUN_REPAIR_OR_TOLERANCE_RELAXATION"
-        ],
         "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
         "queue_state": "NOT_QUEUED",
-        "preformal_readiness": "NOT_APPLICABLE_SYSTEM_OBJECT",
         "exploration_cycle_count": 2,
         "same_object_continuation": "PROHIBITED"
       },
@@ -79,26 +67,25 @@
       },
       "blockers": [
         "VIABLE_EXECUTABLE_MECHANISM_ZERO",
-        "CANDIDATE32_TERMINAL_METHOD_LIMITED_FULL_TRAJECTORY_EQUIVALENCE_NOT_MACHINE_VERIFIED",
-        "NO_CLEAN_SCIENTIFIC_PREFORMAL_SUCCESSOR_AUTHORIZED",
-        "H7_NATIVE_OBJECT_COMPARATOR_RESOURCE_FALSIFIER_UNFIXED",
+        "NO_ACTIVE_OR_QUEUED_ARCHITECTURE_OBJECT",
+        "H7_FRESH_NATIVE_OBJECT_INTERVENTION_FAITHFULNESS_COMPARATOR_RESOURCE_FALSIFIER_UNFIXED",
         "NO_FRESH_FORMAL_ONE_WAY_AUTHORITY"
       ],
       "exclusions": [
         "MAIN_ACTIVE_OR_JUST_COMPLETED_OBJECT_BLOCKER_SUCCESSOR",
         "CANDIDATE32_RERUN_REPAIR_REDESIGN_OR_SAME_OBJECT_SUCCESSOR",
-        "CANDIDATE31_THIRD_CYCLE",
         "H5_RERUN_RESCORE_RETUNE_RELABEL_REOPEN",
         "TERMINAL_REDUCED_METHOD_LIMITED_IDENTITIES",
         "FORMAL_TEST_STARTED_HELD_OUT_CONSUMED_IDENTITIES",
         "PROTECTED_OUTCOME_READING",
-        "SAME_OBJECT_SYSTEM_TO_MECHANISM_UPGRADE"
+        "SAME_OBJECT_SYSTEM_TO_MECHANISM_UPGRADE",
+        "HISTORICAL_H7_EXPLORATORY_BRANCH_RERUN_OR_PROMOTION"
       ],
-      "material_delta": "FRESHNESS_AND_LIVENESS_ONLY_NO_SCIENTIFIC_CANDIDATE_ALLOCATION_OR_GO_STOP_CHANGE"
+      "material_delta": "PROSPECTIVE_H7_CAUSAL_FAITHFULNESS_AND_PATHWAY_COMPLETENESS_ADMISSION_FLOOR_ONLY_NO_CANDIDATE_OR_LIFECYCLE_CHANGE"
     },
     "main": {
-      "generation_id": "MAIN-20260922T061624+0900-PRIMARY-FUNNEL21-IDLE-R54-4E7C21A9",
-      "mailbox_tip_observed": "796490f686a424151e23c59f253308e3abb150a6",
+      "generation_id": "MAIN-20260922T071800+0900-PRIMARY-FUNNEL21-IDLE-R55-5A8C21F7",
+      "mailbox_tip_observed": "33051317c8898a33682a7a5a2f41027def4793fd",
       "status": "COMPLETED",
       "candidate_id": null,
       "research_layer": null,
@@ -106,21 +93,23 @@
       "active_branch": null,
       "active_head": null,
       "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION_INTENTIONAL_IDLE",
-      "stop_reason": "R54_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+      "stop_reason": "R55_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
       "identity_consumption": false
     },
     "control": {
-      "generation_id": "CTRL-20260922T045653+0900-R29-7C4E91B2",
-      "tip": "04af2dd036efbce5aa133df01eda569585d73476",
-      "policy_note": "Strategic prior only; intentional lower-funnel idle is canonical and activity must not be manufactured. Evidence Analyst R54 and direct repository truth control scientific allocation."
+      "generation_id": "CTRL-20260922T065500+0900-R30-6F4C21A8",
+      "tip": "fc5297050c93bb67a9b69aae24179ce7d8888c15",
+      "programme_position": "FORMAL_HOLD_WITH_INTENTIONAL_LOWER_FUNNEL_IDLE_NO_COHERENT_TARGET",
+      "policy_note": "Strategic prior only; do not manufacture activity. Literature R26 H7 guidance is prospective/non-authorizing."
     },
-    "previous_sub": "SUB-20260922T053500+0900-NOOP-R53INTENTIONALIDLE-3F8A21D6"
+    "previous_sub": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "473bb7713c04b50dd9567472084301f2d1d07c69",
-    "orchestrator_tip_before_write": "796490f686a424151e23c59f253308e3abb150a6",
-    "control_tip": "04af2dd036efbce5aa133df01eda569585d73476",
+    "analyst_handoff": "11e84b37dd8739c38f538f1231aab7234356c5d0",
+    "orchestrator_tip_before_write": "33051317c8898a33682a7a5a2f41027def4793fd",
+    "control_tip": "fc5297050c93bb67a9b69aae24179ce7d8888c15",
+    "historical_h7_exploratory_ref": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -137,28 +126,24 @@
   "cycle": null,
   "main_independence": {
     "status": "INDEPENDENT_NO_ACTIVE_MAIN_OBJECT_AND_NO_SUCCESSOR_SELECTION",
-    "reason": "R54 allocates no active MAIN object and MAIN R54 completed intentional idle. Candidate #32 remains terminal SYSTEM and cannot be reused as a SUB blocker/successor. No independent mechanism-surface delta exists."
+    "reason": "MAIN R55 completed intentional no-target idle. Analyst R55 authorizes no active object; R26 H7 guidance is future admission-floor material only and creates no SUB target."
   },
   "theory_backward_accounting": {
     "selection_status": "NO_AUTONOMOUS_SCIENTIFIC_SELECTION",
-    "actual_scientific_selections": [
-      "MECHANISM",
-      "SYSTEM",
-      "SYSTEM"
-    ],
+    "actual_scientific_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
     "qualifying_count": 1,
     "window_size": 3,
     "share": "1/3",
     "rolling_slot_assessment": "NEXT_SAFE_AUTONOMOUS_SELECTION_SHOULD_BE_THEORY_BACKWARD_MECHANISM_IF_A_COHERENT_TARGET_EXISTS",
     "theory_backward_exception": {
       "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "R54 reports viable executable MECHANISM zero and no SUB Discovery object. H7 remains nonterminal but lacks a prospectively fixed native object, matched comparator, resource contract, and falsifier. Candidate #32 is terminal SYSTEM and same-object repair or fresh-ID rescue laundering is prohibited. R54 retains zero phenomenon-first shadows; stable main and all five authoritative evidence refs are unchanged. Selecting a target now would manufacture activity rather than satisfy a coherent bounded theory-backward contract."
+      "detail": "R55 reports viable executable MECHANISM zero, no SUB Discovery object, and zero new shadow proposals. H7 remains nonterminal but R26 only raises the prospective causal-faithfulness/admission floor and does not fix a fresh native object, matched causal comparator/resource contract, intervention families, or falsifier. Candidate #32 and other terminal or consumed objects remain unavailable. Selecting now would manufacture activity or rescue/duplicate laundering."
     },
     "exception_counts_as_selection": false,
     "no_target_episode": {
       "id": "NTE-20260921-R34-POST-REPLAY-v1",
-      "analyst_canonical_check_count": 17,
-      "sub_local_check_count_after_run": 18,
+      "analyst_canonical_check_count": 18,
+      "sub_local_check_count_after_run": 19,
       "status": "OPEN",
       "counts_as_selection": false,
       "interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
@@ -169,13 +154,15 @@
   "reduction_question": "N/A_NO_CURRENT_SUB_OBJECT",
   "falsifier": "N/A_NO_CURRENT_SUB_OBJECT",
   "inputs": {
-    "analyst_generation": "EVA-20260922T060636+0900-R54-4E7C21A9",
+    "analyst_generation": "EVA-20260922T065809+0900-R55-5A8C21F7",
     "stable_main_refreshed": true,
     "authoritative_evidence_refs_refreshed": true,
+    "historical_h7_ref_refreshed": true,
     "main_mailbox_refreshed": true,
     "control_refreshed": true,
     "material_mechanism_surface_delta": false,
-    "main_r54_intentional_idle": true,
+    "r26_h7_guidance_non_authorizing": true,
+    "main_r55_intentional_idle": true,
     "formal_or_sealed_test_used": false,
     "held_out_or_confirmatory_seed_used": false,
     "official_scorer_used": false,
@@ -191,18 +178,17 @@
   "observations": {
     "scientific_result": "NO_SUB_TARGET_NO_OP",
     "mechanism_surface_delta": "NONE",
-    "control_plane_delta": "R54 is a freshness/liveness-only reconciliation after MAIN and SUB R53 plus Methodology R51; it changes no scientific result, candidate lifecycle, allocation, or GO/STOP decision. MAIN R54 independently completed intentional no-target idle.",
+    "control_plane_delta": "R55 adds a prospective H7 intervention-faithfulness/pathway-completeness reduction floor and generic verifier-gap tooling information, but changes no candidate lifecycle, allocation, eligibility, readiness, or execution authority. MAIN R55 completed intentional idle.",
     "stable_main_unchanged": true,
     "evidence_refs_unchanged": true,
+    "historical_h7_ref_unchanged": true,
     "candidate32_terminal": true,
     "main_intentional_idle": true
   },
   "evidentiary_status": "NON_EVIDENTIARY",
   "proposed_claim_ceiling": "N/A_NO_CURRENT_SUB_OBJECT",
   "proposed_preformal_eligible": "N/A_NO_CURRENT_SUB_OBJECT",
-  "preliminary_readiness": {
-    "status": "N/A_NO_CURRENT_SUB_OBJECT"
-  },
+  "preliminary_readiness": {"status": "N/A_NO_CURRENT_SUB_OBJECT"},
   "proposed_hold_dimensions": {
     "hold_class": null,
     "hold_reason": null,
@@ -210,28 +196,23 @@
     "queue_state": null,
     "status": "N/A_NO_CURRENT_SUB_OBJECT"
   },
-  "system_priority_exception": {
-    "used": false,
-    "reason": "No SYSTEM scientific selection was made by SUB."
-  },
+  "system_priority_exception": {"used": false, "reason": "No SYSTEM scientific selection was made by SUB."},
   "next_layer": "NONE_INTENTIONAL_IDLE",
   "open_choices": [
     "Wait for a material mechanism-surface delta or fresh explicit SUB handoff before selecting a scientific object.",
-    "Do not rerun, repair, retune, tolerance-relax, reinterpret, or continue candidate #32; any later resource-localization object must be genuinely fresh and non-rescue under later Analyst authority.",
-    "Do not infer a MECHANISM successor from candidate #32; same-object SYSTEM to MECHANISM upgrade is prohibited.",
-    "H7 becomes actionable only after a fresh native object, matched comparator, resource contract, and falsifier are prospectively fixed."
+    "Do not convert Literature R26 methodology into a fresh H7 object without an independently motivated native mechanism question and prospectively fixed intervention-faithfulness/comparator/resource/falsifier contract.",
+    "Do not rerun or promote the historical H7 exploratory branch.",
+    "Do not rerun, repair, retune, reinterpret, or continue candidate #32; same-object SYSTEM to MECHANISM upgrade is prohibited."
   ],
   "recommendation": "REMAIN_INTENTIONALLY_IDLE_UNTIL_MATERIAL_MECHANISM_SURFACE_DELTA_OR_FRESH_EXPLICIT_SUB_HANDOFF",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
-  "completion_target": "NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION_UNDER_R54",
+  "completion_target": "NOOP_WITH_EXPLICIT_NO_COHERENT_MECHANISM_TARGET_EXCEPTION_UNDER_R55",
   "completion_status": "ACHIEVED",
   "persistence": {
     "branch": "ops/orchestrator-run-report",
-    "history_paths": [
-      "reports/orchestrator/history/2026-09-22/0637-sub.md"
-    ],
+    "history_paths": ["reports/orchestrator/history/2026-09-22/0735-sub.md"],
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
     "mode": "SINGLE_FAST_FORWARD_COMMIT_SUB_OWNED_PATHS_ONLY"
