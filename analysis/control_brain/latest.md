@@ -1,37 +1,62 @@
-# SparkBrain Control Brain — 2026-09-21 14:50 JST
+# SparkBrain Control Brain — 2026-09-21 18:52 JST
 
 - schema_version: `2`
-- generation_id: `CTRL-20260921T145000+0900-R23-4F07AFBF`
+- generation_id: `CTRL-20260921T185206+0900-R24-6B4D21C8`
+- supersedes_generation_id: `CTRL-20260921T145000+0900-R23-4F07AFBF`
 - selected_role: `CONTROL_BRAIN`
 - programme_position: `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`
 - fleet_status: `YELLOW`
-- scheduler_controller_action: `NO_CHANGE`
+- scheduler_controller_action: `USER_APPROVAL_REQUIRED`
 - authoritative main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 
 ## Strategic control result
 
-Evidence Analyst R36 has now canonicalized `CAND-V05-OUTCOME-REPLAY-CREDIT-SEMANTICS-TIMESHIFT-01` as a terminal ordinary SYSTEM reduction. The observed second `learn_outcome()` effect is ordinary pending-state reuse / experience-replay update multiplicity, not a new responsibility mechanism. The current canonical portfolio remains 29 candidates = MECHANISM 13 / SYSTEM 16, with mandatory Funnel v2.1 classification complete 29/29. Terminal states are ACTIVE=1, NONTERMINAL_HOLD=1, TERMINAL_FOR_CURRENT_OBJECT=27. PRE_FORMAL eligible=0, READY=0, viable executable MECHANISM=0.
+Evidence Analyst R40 remains canonical pending review of the newer MAIN result. Canonical Funnel: `30` candidates = `MECHANISM 13 / SYSTEM 17`, mandatory v2.1 fields complete `30/30`, terminal states `ACTIVE=1 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=28`. Discovery dispositions are `REJECT=2 / HOLD_SYSTEM_TERMINAL=1 / HOLD_MECHANISM_UNRESOLVED=1`. Architecture is active `M=0/S=1`, queued `M=0/S=0`, with disposition distribution `REJECT=0 / HOLD_SYSTEM_TERMINAL=6 / HOLD_METHOD_LIMITED=1 / HOLD_CONTRACT_AMBIGUITY=2 / HOLD_MECHANISM_UNRESOLVED=1`. PRE_FORMAL eligible=`0`, READY=`0`, viable executable MECHANISM=`0`. Rolling autonomous scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`; SYSTEM-over-comparable-MECHANISM exceptions=`0`, so `SYSTEM_QUEUE_STARVING_MECHANISM=false`.
 
-The only active central object remains `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01`: `ARCHITECTURE_STUDY / SYSTEM / preformal_eligible=false / ACTIVE / queue_state=ACTIVE / system_priority_exception.used=false`. MAIN may perform only the prospectively bounded static/read-only feasibility check for `RAW_GENERATOR -> DURABLE_RAW_PRESERVE_DIGEST -> FIXED_SCORER_EXACT_BLOB -> SCORED_PRESERVE`, then STOP for Analyst. No implementation or new science is authorized in the same cycle.
+R33 remains consumed terminal `HOLD_METHOD_LIMITED / NONCONFORMING_RAW_BEFORE_SCORE`; no same-ID rerun, repair, rescore, redesign, or continuation is authorized. The first READY->PRE_FORMAL transition remains a genuine test-readiness transition rather than prior scientific success, so `HIDDEN_SECOND_FORMAL_GATE=false`.
 
-R33 remains a consumed terminal PRE_FORMAL object with `HOLD_METHOD_LIMITED` because execution was `NONCONFORMING_RAW_BEFORE_SCORE`. No same-ID rerun, repair, rescore, redesign, or unopened-surface continuation is authorized. This defect remains contained outside FORMAL/immutable evidence.
+## Fresh MAIN delta
 
-## Theory-backward / anti-stall
+`CAND-PREFORMAL-OUTCOME-BLIND-FOUR-STAGE-PIPELINE-CONFORMANCE-01` remains the current SYSTEM Architecture integrity object. R40 had observed a pre-result Ruff import-order failure and prospectively allowed exactly one semantics-invariant mechanical preflight repair. MAIN `MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8` applied only that repair, re-froze the changed raw-generator digest before any result-bearing stage, and exact-head CI `35583071628@168883bd316985537e404c6aad3a7ac03202e28a` passed Python 3.11/3.13 install/lint/local-readiness/test/validate. Producer observation is `SYNTHETIC_LIVE_CONFORMANCE_PASS`.
 
-Rolling autonomous scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`. The open no-target episode `NTE-20260921-R34-POST-REPLAY-v1` remains credible. Latest SUB `SUB-20260921T143422+0900-NOOP-R36NOMECH-4D7A91C2` is a second local no-delta recheck, not a scientific selection and not throughput. H7 remains uncontracted because native object, matched comparator, resource contract, and falsifier are still open. SUB should remain held until a material mechanism-surface delta rather than manufacture activity or repeatedly relabel SYSTEM work.
+This remains NON_EVIDENTIARY SYSTEM Architecture pending fresh Analyst review. Control does not upgrade it to MECHANISM, eligible, READY, PRE_FORMAL or evidence. MAIN correctly stopped with identity consumption=`0` and no same-run continuation.
 
-## Methodology / authoritative-reference trace
+Latest SUB `SUB-20260921T183349+0900-NOOP-R40POSTMAINPASS-6D4A21C9` remains a credible `NO_COHERENT_MECHANISM_TARGET` no-op because the MAIN delta is SYSTEM pipeline integrity, not a mechanism-surface delta. It is excluded from the theory-backward denominator and is not counted as throughput.
 
-Methodology R37 made a material calibration update: the prior Methodology R36 persisted stale/inaccurate `evidence/exp-001-*`-style exact-reference names. Control independently re-fetched current authoritative refs and confirms exactly five `evidence/*` annotated tags, with tag-object SHAs bound in state.json. This is treated as a methodology trace-accuracy defect, not evidence mutation, absent independent ref-history evidence. Scientific admission, comparator, reduction, readiness, and Formal thresholds are unchanged.
+## Methodology / external implications
 
-## Fleet health
+Methodology R41 remains `MIXED_CALIBRATION / MATERIAL_CALIBRATION_UPDATE`; repeated no-target scans are not independent scientific evidence and the negative shadow->mechanism admission guard is functioning. It predates the fresh MAIN pass and is stale only on that newest outcome.
 
-YELLOW is retained for three bounded reasons: the contained R33 raw-before-score nonconformance still lacks a prospectively demonstrated clean pipeline; the active MAIN integrity object still has no durable PRIMARY cycle-1 result; and Methodology R37 plus the latest SUB no-target recheck postdate Analyst R36 and await consumption. Live scheduler cadence itself is healthy: PRIMARY, Relay, SUB, Analyst, Methodology, Utility, and Control remain enabled on the registered definitions, with no detected definition drift, role collision, CI failure, classification gap, Utility lifecycle leak, or scheduler failure requiring intervention.
+Literature R21 adds a distinct prospective integrity issue: per-run outcome blinding and raw-before-score do not prevent cross-generation adaptive overfitting when successive candidates repeatedly receive information from the same protected scientific holdout. Future clean PRE_FORMAL/FORMAL work should account for protected-set exposures and use bounded-feedback reusable-holdout or fresh/rotated confirmatory-set controls when adaptive reuse is material. This does not retroactively invalidate R33 or immutable evidence and does not affect the current synthetic-only conformance fixture.
 
-Human Directives remain `ACCEPT_UNCHANGED`. Repository protection/rulesets remain human-deferred; ruleset count is still zero. `formal/*`, `sealed/*`, and tag `freeze/*` are empty; 13 legacy `freeze/*` branches remain preserved. No new Utility assignment or scheduler change is warranted.
+Independent Audit R4 remains `CONFOUNDED` for historical Assembly-specific causal attribution because the original target/comparator had active-versus-inactive/load mismatch. Do not count that observation as resolved Assembly-specific mechanism or H7 uplift.
+
+## Human Directives
+
+`HUMAN-20260918-001=ACCEPT`, `HUMAN-20260919-002=ACCEPT`, `HUMAN-20260919-003=ACCEPT`.
+
+`HUMAN-20260921-004=MODIFY`: bounded Utility autonomy is accepted when no Control assignment exists, but autonomous work must use a durable fresh task record, conflict/ownership check, one-task limit, fail-closed conflicts, and NON_EVIDENTIARY proposal status for candidate-like outputs. Utility receives no authority over consumed/protected identities, candidate classification, claim ceiling/readiness, PRE_FORMAL/FORMAL, scientific evidence, or theory-backward quota.
+
+Control-owned Utility assignment pointer is schema-v2 `IDLE / active_assignment_id=null`; the prior terminal assignment was CAS-acknowledged. The Utility worker's old `state.json` still records its last BLOCKED execution, but that historical worker state does not override the Control-owned current pointer.
+
+## Scheduler health
+
+`fleet_status=YELLOW`, `scheduler_definition_drift_detected=true`, `scheduler_cadence_failure_detected=false`, exact deterministic overlaps=`0`, role/ownership collisions=`0`, active SparkBrain run opportunities/day=`175`.
+
+The definition drift is specific: the active Utility scheduler definition remains assignment-oriented while `HUMAN-20260921-004` now authorizes bounded no-assignment autonomy. Recent observed starts are roughly Analyst `+6s`, MAIN `+1m49s`, Methodology `+1m31s`, Literature `+8m`; the window does not establish a persistent cadence failure. MAIN produced a useful SYSTEM result and Literature produced genuinely new information, while SUB repeatedly no-ops, Relay commonly stops at authority boundaries, and Utility remains idle. Dense polling therefore warrants observation, not a cadence reduction proposal at this time.
+
+Generation lag is expected but material for canonicalization: Analyst R40 and Methodology R41 predate the fresh MAIN conformance pass; Literature R21 already consumed it. The approved Current State Brief :55 phase offset remains correctly separated from Relay :45.
+
+`scheduler_change_warranted=true` only for Utility semantic alignment. No SAFE_AUTO_FIX is allowed because this is a prompt-semantic change rather than timing hygiene. `scheduler_controller_action=USER_APPROVAL_REQUIRED`; no scheduler mutation was made.
+
+Open proposal `SCHED-UTILITY-AUTONOMY-20260921-01` (`RECOMMEND`, `USER_APPROVAL_REQUIRED`): keep Utility timing unchanged, but update its scheduler prompt so that when no assignment exists it may choose exactly one bounded complementary NON_EVIDENTIARY task after a durable conflict/ownership check, with assignment precedence, durable selection/state/evidence footprint, and the authority restrictions above. Expected effect is useful tooling/reproducibility/diagnostic/Discovery/Architecture work instead of assignment-only idling. Main risks are scope creep, duplicate outcome generation, protected-identity reuse and de-facto scientific authority. Rollback is restoration of the current assignment-only prompt with timing unchanged. User approval or rejection is required.
+
+## Authoritative repository state
+
+Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Exactly five annotated `evidence/*` tags remain bound to their current tag-object SHAs. `formal/*=0`, `sealed/*=0`, tag-form `freeze/*=0`, legacy `freeze/*` branches=`13`, repository rulesets=`0`. No immutable-ref incident was observed.
 
 ## Direction to Evidence Analyst
 
-Consume Methodology R37 prospectively and bind exact authoritative ref names + tag-object SHAs every generation. Treat the prior Methodology ref-list mismatch as a trace defect unless independent history proves mutation. Consume the latest SUB run only as a no-delta check; do not count it as a candidate or scientific selection. Keep the current pipeline-integrity object SYSTEM and active until MAIN PRIMARY returns its static feasibility result, then review before any implementation. Preserve R33 terminal status and the raw-before-score hard floor. Preserve `eligible != READY`, `READY = test-readiness`, `hidden_second_formal_gate=false`, the `1/3` rolling scientific selection, Audit R4's `CONFOUNDED` Assembly ceiling, and immutable C19-v4 historical PASS with programme novelty `REDUCIBLE`.
+Independently verify MAIN head `168883bd316985537e404c6aad3a7ac03202e28a`, CI `35583071628`, the predecessor pre-result failure, the single import-formatting repair, semantics invariance, and prospective digest re-freeze before result. Verify the full synthetic sequence `raw generator -> durable raw preserve/digest -> fixed scorer consuming exact preserved blob -> scored preserve`. If verified, close the current SYSTEM object as a terminal conformance characterization; never upgrade the same object to MECHANISM/eligible/READY/PRE_FORMAL/evidence. Preserve R33 terminal, consume Literature R21 prospectively as a separate cross-generation holdout-exhaustion dimension, preserve Audit R4's CONFOUNDED ceiling, and treat any future Utility autonomous candidate-like outputs only as NON_EVIDENTIARY proposals until independent classification.
 
-Control mutations this run: experiments=0, scientific workflows=0, identities consumed=0, research PR merges=0, immutable/formal/evidence mutations=0, Utility assignments=0, scheduler mutations=0.
+Control mutations this run: experiments=`0`, scientific workflows=`0`, identities consumed=`0`, research PR merges=`0`, immutable/formal/evidence mutations=`0`, Utility assignments=`0`, scheduler mutations=`0`.
