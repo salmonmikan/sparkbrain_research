@@ -11,10 +11,10 @@
     "sub": "SUB-20260921T193222+0900-NOOP-R41POSTMAIN-SCOPESTOP-2F8C41A7"
   },
   "execution_mode": "PRIMARY",
-  "status": "ACTIVE",
+  "status": "COMPLETED",
   "started_at": "2026-09-21T20:15:20+09:00",
-  "heartbeat_at": "2026-09-21T20:19:35+09:00",
-  "completed_at": null,
+  "heartbeat_at": "2026-09-21T20:24:06+09:00",
+  "completed_at": "2026-09-21T20:24:06+09:00",
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260921T200300+0900-R42-5F8C21A4",
   "analyst_commit": "b8dc2ab5a203547cc9f663cf7fcfe1541091fc8e",
@@ -36,17 +36,19 @@
   "system_priority_exception": {
     "used": false,
     "reason_code": null,
-    "reason_detail": "No comparably executable/informative MECHANISM exists; R42 authorizes one final bounded SYSTEM metadata-only integrity cycle.",
+    "reason_detail": "No comparably executable/informative MECHANISM exists; R42 authorized the final bounded SYSTEM metadata-only integrity cycle.",
     "compared_mechanism_candidate_ids": []
   },
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "active_branch": null,
   "active_head": null,
   "active_identity": null,
-  "active_step": "STATIC_METADATA_ALLOWLIST_AUDIT_CYCLE2",
-  "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_IN_PROGRESS",
+  "active_step": "COMPLETE_SAFE_METADATA_INSUFFICIENT_STOP_FRESH_ANALYST_REVIEW",
+  "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_TERMINAL_OBSERVATION",
+  "terminal_observation": "SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK",
+  "analyst_mapped_disposition": "HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NO_THIRD_RESCUE",
   "workflows": [],
-  "stop_reason": null,
-  "next_action": "Use only allowlisted refs, directory/file-path inventory, non-result manifests, protocol metadata, and workflow definitions to determine whether protected-set exposure and feedback semantics are machine-checkable. Stop before implementation or science.",
+  "stop_reason": "R42_SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK_HOLD_METHOD_LIMITED_NO_THIRD_RESCUE_STOP_FRESH_ANALYST_REVIEW",
+  "next_action": "Fresh Evidence Analyst canonicalization only. Do not run a third rescue cycle, implement an exposure ledger, execute science, open PRE_FORMAL/FORMAL, or alter existing evidence without fresh authority.",
   "owner": "main"
 }
