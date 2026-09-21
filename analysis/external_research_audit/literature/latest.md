@@ -1,65 +1,77 @@
-# External Literature Reduction Scout — exact equivalence and eligibility-support turnover
+# External Literature Reduction Scout — causal faithfulness beyond route stability
 
 - schema_version: `2`
-- generation_id: `LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5`
-- produced_at: `2026-09-22T03:31:26+09:00`
-- producer_run_id: `external-literature-auto-20260922T033126+0900-R25-7D3A91C5`
+- generation_id: `LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8`
+- produced_at: `2026-09-22T06:31:57+09:00`
+- producer_run_id: `external-literature-auto-20260922T063157+0900-R26-6F4A21D8`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LIT-20260922T010311+0900-R24-CONTSTATE-EVENTDRIVEN-4A7C91E2`
+- supersedes_generation_id: `LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5`
 - role: `LITERATURE_REDUCTION_SCOUT`
-- schedule_slot: `03:30 JST`
+- schedule_slot: `06:30 JST`
 - schedule_inference: `false`
 - genuinely_new_information: `true`
 
 ## Inputs / authoritative state
 
-Repository evidence was refreshed independently from all `ops/*` mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The five annotated `evidence/*` tags are unchanged; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty; 13 legacy `freeze/*` branches and preserve refs were refreshed. The new result branch `research/main-semantic-active-work-localization-r50-cycle2` remains at exact head `d090fd2e57680c5a97b9fd0d036fc65a008078ec`.
+Repository evidence was re-fetched independently from all `ops/*` control-plane mailboxes before interpretation and again before persistence. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative annotated `evidence/*` set remains exactly five; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty; 13 legacy `freeze/*` branches, 24 preserve refs and existing control/STARTED refs remain unchanged. PR #148 and #149 remain open, mergeable, unmerged governance work and do not alter repository science.
 
 Consumed control-plane generations and exact commits:
 
-- Control Brain: `CTRL-20260922T025652+0900-R28-9A9BFB1F` @ `d2f0ffa7e263fd9b7b0210cf1d5c99574894f6e6`
-- Evidence Analyst: `EVA-20260922T031000+0900-R50-4C8A21D7` @ `8ae04f045ac760cfd8b209f337284293d6c58bf1`
-- MAIN: `MAIN-20260922T032800+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R50-CYCLE2-INTEGRITYSTOP-4C8A21D7` @ `b3fb893a7c700bb7337ed869660d5023405e4920`
-- SUB: `SUB-20260922T033500+0900-NOOP-R50POSTMAIN-INTEGRITYSTOP-5A7C21E4` @ `72c414c434fe563c78b09ab5f5ec33ff337cf1dd`
-- prior Literature: `LIT-20260922T010311+0900-R24-CONTSTATE-EVENTDRIVEN-4A7C91E2` @ `e9f3bd07d8aed08b81d8c307525e5c6c53a3eef4`
+- Control Brain: `CTRL-20260922T045653+0900-R29-7C4E91B2`; current state/branch handoff tip `04af2dd036efbce5aa133df01eda569585d73476`, latest-text commit `05f8c07149b0e2584e8341948b4b2eb983760ddd`.
+- Evidence Analyst: `EVA-20260922T060636+0900-R54-4E7C21A9` @ `473bb7713c04b50dd9567472084301f2d1d07c69`.
+- MAIN: `MAIN-20260922T061624+0900-PRIMARY-FUNNEL21-IDLE-R54-4E7C21A9`; latest report commit `3f6701296884a6d22f003cd29b0661bdcf3741fa`, state commit `822c50998a1ae0d8564a6a3bf0dd02e2390ba0b4`, orchestrator branch tip observed `796490f686a424151e23c59f253308e3abb150a6`.
+- SUB: `SUB-20260922T053500+0900-NOOP-R53INTENTIONALIDLE-3F8A21D6` @ `005b367ddf1b442e3a83b9e56e16e18e2ad2996d`.
+- prior Literature: `LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5` @ `752cd466294c1be037fa896101f23ae7e3ab995a`.
 
-R50 is the material repository delta. Evidence Analyst R50 prospectively authorized exactly one bounded SYSTEM Architecture measurement under fixed contract `SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1`. MAIN ran all 38 fixed grid points and preserved raw output before interpretation. Scientific workflow `35637961215` succeeded on exact head `d090fd2e...`; raw artifact `10656767754` has digest `sha256:7494fb60db1e7aca3fa86fd4a1359082da9d52e1733404bdbef8f27412fbfba8`, and summary artifact `10656637964` has digest `sha256:8e78b5496de153fc25ff92968fefaab5cb6af28556cd1c1b455aaacefd962375`.
+There is no active scientific object. Evidence Analyst R54 keeps `ACTIVE=0`, `NONTERMINAL_HOLD=1`, `TERMINAL_FOR_CURRENT_OBJECT=31`, PRE_FORMAL eligible/READY `0/0`, and viable executable MECHANISM `0`. H7 remains the sole nonterminal MECHANISM hold and is not queued because there is still no prospectively fixed native object, matched comparator, resource contract, or falsifier. MAIN R54 and SUB R53 intentionally idle rather than manufacture activity.
 
-The generated summary reported a large ordinary-reduction signal: at the anchor, logical primitive counts were `REF_GLOBAL_SCAN=267200`, `ORD_ACTIVE_SET_TIMESTAMP_LAZY=2964`, `ORD_HISTORY_ARCHIVE_EXACT=3668`, and `ORD_SOURCE_INDEXED_SPARSE_EVENT=2964`. However MAIN correctly stopped fail-closed because the contract-required complete trajectory-equivalence gate was not actually verified: final eligibility and final weights were compared, while event/fire/ignition/prediction equality fields were set true by construction and intermediate per-reward checkpoints were not independently checked. This run does not promote or repair that opened result.
+The relevant repository antecedent is the historical, explicitly NON_EVIDENTIARY H7 trace-causality probe at `research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5`. In its fixed toy, route-ID stability and baseline accuracy stay perfect while increasing hidden-bypass coverage makes deletion/replacement sensitivity fall from 1 to 0. The artifact itself correctly warns that stable traces are not causal necessity and that low deletion sensitivity can also reflect legitimate redundancy. This run does not reopen that branch or turn it into evidence.
 
-R24 already established event-driven exact/continuous-state plasticity and compute↔history crossover. This run does not recycle that literature. The new question is whether the R50 exact-sparse reduction remains valid over long horizons and changing eligibility support, and what exactness requires from the comparator gate.
+Prior scouts already covered provenance versus actual causality, counterfactual responsibility, Petri/event structures, dynamic slicing, local/eligibility credit, cascading eligibility, RUDDER/TVT, COMA/C3 and stochastic responsibility. Those findings are not recycled here. The new search is narrower: what external work says about the *faithfulness of the intervention itself* and about complete route/path explanations when bypasses or redundancy exist.
 
-## High-value findings
+## High-value new findings
 
-### 1. The R50 equivalence gap is scientifically substantive, not merely reporting debt
+### 1. A positive intervention effect can itself be an illusion by activating a dormant parallel pathway
 
-Brette, *Exact simulation of integrate-and-fire models with synaptic conductances* (Neural Computation 18:2004–2027, 2006; DOI `10.1162/neco.2006.18.8.2004`) distinguishes exact event-driven simulation from time-step approximation precisely through exact state/event timing under the supported dynamics. Exactness is therefore a trajectory property of the modeled dynamics, not something established by matching only terminal endpoints.
+Makelov, Lange, Geiger & Nanda, *Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching* (ICLR 2024), construct and empirically demonstrate a failure mode where a patch has the intended end-to-end causal effect even though the patched component is causally disconnected from normal output: the intervention activates a dormant parallel pathway.
 
-Repository source agrees with MAIN's stop: `compare_state()` checks final eligibility and weights but hard-codes `discrete_event_schedule_equal`, `fire_order_equal`, `ignition_order_equal`, and `prediction_trajectory_equal` to true. The preserved primitive-count reductions are therefore useful candidate measurements, but they are not yet contract-valid equal-semantics reductions under the R50 contract.
+This is highly relevant to H7 because the repository toy currently emphasizes the opposite direction — an already-existing hidden bypass can make a neat reported route causally dispensable. Makelov et al. show that intervention success is not automatically safer: an artificial deletion/replacement/patch can move the system onto a route that is dormant or atypical under the unperturbed computation.
 
-Impact: any future fresh successor must generate and compare the required event/fire/ignition/prediction trajectories and per-reward eligibility/weight checkpoints independently. The already-opened R50 cycle must not be repaired or rerun under the same authority.
+**Reduction impact:** a future H7 object cannot establish trace faithfulness from one intervention family alone. It should prospectively bound intervention support/realism and cross-check the same route claim using multiple independently specified interventions or naturally occurring counterfactual cases. A route that looks causal only under an intervention-induced alternate pathway remains an interpretability artifact, not a lineage-specific mechanism.
 
-### 2. Exact exponentially decaying traces create a support-retirement problem that approximate truncation solves only by changing semantics
+### 2. The right target is a causal abstraction that is faithful over an intervention family, not merely a stable route label
 
-Cichosz, *Truncating Temporal Differences: On the Efficient Implementation of TD(λ) for Reinforcement Learning* (JAIR 2:287–318, 1995; DOI `10.1613/JAIR.135`), proposes TTD to avoid conventional eligibility-trace inefficiency, but explicitly states that TTD only approximates TD(λ).
+Geiger et al., *Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability* (JMLR 2025), formalize mechanistic explanations as causal abstractions and explicitly include graded faithfulness. Their framework unifies activation/path patching, causal mediation, causal scrubbing/tracing, circuit analysis and related intervention methods.
 
-This matters directly to R50. Its fixed contract forbids approximate pruning or changed learning rules. With positive trace increments and multiplicative decay `0.9^Δ`, a touched eligibility remains mathematically nonzero for finite Δ unless there is a semantic reset, exact closed-form representation, numerical underflow, or an approximation threshold. Therefore a purported exact active-set implementation cannot simply retire small traces using a cutoff while retaining exact semantics.
+**Reduction impact:** H7 route identity should be treated as a proposed high-level causal model. The prospective question is whether low-level SparkBrain behavior approximately commutes with the high-level intervention semantics over a frozen family of interventions, not whether one route ID is stable or whether one deletion changes output. This supplies a stronger ordinary formal baseline for explanation faithfulness than ad-hoc route stability.
 
-Impact: thresholded trace retirement is an ordinary approximate baseline, not an exact comparator. Exact localization must specify how inactive historical edges are represented and when, if ever, they can be removed without changing reward-time eligibility or weight trajectories.
+A future contract should therefore declare high-level variables/routes, allowed bypass/residual channels, the intervention mapping, and a graded faithfulness metric before outcomes are seen. This is prospective admission guidance only; no current H7 object is created.
 
-### 3. The current R50 grid under-tests cumulative support turnover and long-horizon saturation
+### 3. Circuit-localization benchmarks make precision/conciseness and causal-path recovery separate evaluation obligations
 
-Repository source chooses active edges only inside `[0, Z_nonzero_eligibility)` and the timestamp-lazy comparator monotonically adds touched indices to `state.active`; it does not retire them. This means the grid varies the instantaneous/capped `Z_nonzero_eligibility`, but does not test moving support where new distinct edges become eligible over time while old exact traces remain nonzero.
+Mueller et al., *MIB: A Mechanistic Interpretability Benchmark* (ICML 2025), evaluate methods that recover the components and connections most important for a task and explicitly favor precise, concise recovery of relevant causal pathways or causal variables.
 
-Inference: under a long sequence with changing support, an exact active-index set can grow toward `E_total` even when only a small number of edges are newly active at each event. A large anchor win at fixed `Z=16` therefore does not establish sustained sparse-resource advantage under support churn.
+**Reduction impact:** the repository toy correctly notes that deletion sensitivity alone cannot distinguish an incomplete explanation from a legitimately redundant mechanism. Future H7 evaluation should split at least three questions: whether the reported route is sufficient for the behavior under its declared context, whether removing/changing it has a causal effect, and whether important unreported alternative routes remain. A compact route that is sufficient but omits an equally active bypass is not a complete explanation; a broad trace containing many irrelevant routes is not concise.
 
-Impact: a future fresh resource object should include cumulative distinct touched edges, support-turnover/churn rate, horizon, and explicit reset/lifetime semantics as prospective crossover axes. This is not a request to mutate R50's already-opened grid.
+MIB is LLM-oriented and is not an equal-architecture comparator for SparkBrain, but it raises the methodology floor: causal pathway *localization quality* must be assessed independently from prediction accuracy or route-ID stability.
 
-### 4. Hardware/event-driven precedent reinforces that localization shifts cost into indexing, history, and data movement
+### 4. Path-specific probability of necessity and sufficiency supplies a stronger-privilege formal ceiling for route responsibility
 
-Mikaitis et al., *Neuromodulated Synaptic Plasticity on the SpiNNaker Neuromorphic System* (Frontiers in Neuroscience 12:105, 2018; DOI `10.3389/fnins.2018.00105`) implements trace-based STDP and three-factor plasticity by updating synaptic state on relevant events rather than every simulation step. The implementation relies on synaptic-row retrieval, locally stored post-synaptic trace histories, timestamps, and deferred updates; the motivation explicitly includes avoiding infeasible all-synapse per-step memory traffic.
+Kawakami & Tian, *Decomposition of Probabilities of Causation with Two Mediators* (UAI 2025), define path-specific probability of necessity and sufficiency (PNS) and decompose total PNS into causal-path components with two mediators.
 
-Impact: event-local plasticity is ordinary prior art, but its fair resource vector includes index/row lookup, retained timestamp/trace metadata, history manipulation, and data movement. R50 already counts some logical index/history operations; any future broader efficiency claim must also bind support-retirement/churn and must keep wall-clock/cache/bandwidth/energy separate unless prospectively measured.
+**Reduction impact:** raw deletion accuracy is a coarse route-responsibility statistic. For future H7 work with bypasses, redundancy or multiple mediating routes, path-specific necessity-and-sufficiency is an established formal way to separate whether a path is needed, enough, or one contributor among alternatives. It requires an explicit causal model and therefore belongs to the stronger-privilege analysis/ceiling tier rather than an equal-privilege local mechanism baseline.
+
+The useful discriminator is consequently not “can SparkBrain recover the same PNS formula locally?” It is whether a native local/anonymous mechanism, without world labels or a global causal solver, changes its credit/competition in the same direction across prospectively fixed cases whose path-specific responsibility differs while local observations, timing, eligibility and ordinary recurrent state are matched.
+
+## Synthesis
+
+This search does not produce a new executable object and does not weaken the intentional-idle decision. It sharpens the admission bar for the sole nonterminal H7 line:
+
+`stable trace / route label -> intervention-support check -> causal-abstraction faithfulness across a frozen intervention family -> sufficiency + necessity + completeness/alternative-route accounting -> stronger-privilege path-specific responsibility ceiling -> only then a possible native local lineage-responsibility residual`.
+
+The genuinely new point relative to prior causal-credit scouts is that *the diagnostic intervention itself can be misleading*. Counterfactual responsibility theory is not enough if the intervention creates a dormant alternate computation. A future H7 object therefore needs both responsibility-sensitive cases and intervention-faithfulness controls.
+
+No Utility request is created. With no current H7 object and explicit Control/Analyst instructions not to manufacture activity, a prototype or diagnostic request now would be literature-driven object construction rather than support for an independently admitted target.
 
 ## Knowledge-flow contract
 
@@ -67,40 +79,38 @@ Impact: event-local plasticity is ordinary prior art, but its fair resource vect
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - CAND_RESOURCE_SEMANTIC_ACTIVE_WORK_LOCALIZATION_01
-  - EXACT_SEMANTICS_COMPARATOR_VALIDATION
-  - ELIGIBILITY_ACTIVE_SET_SUPPORT_TURNOVER
-  - RESOURCE_CROSSOVER_HORIZON_AND_INDEX_COST
-  - PROGRAMME_ARCHITECTURE_EFFICIENCY
+  - H7_RESPONSIBILITY_NONTERMINAL_HOLD
+  - H7_TRACE_CAUSAL_FAITHFULNESS
+  - H7_BYPASS_AND_REDUNDANCY_CONTROLS
+  - FUTURE_MECHANISM_OBJECT_ADMISSION
+  - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
-  R50_REDUCTION_SIGNAL_NOT_YET_CONTRACT_VALID_PLUS_EXACT_TRACE_SUPPORT_TURNOVER_SHARPENING_NO_MECHANISM_NOVELTY_UPLIFT.
-  R50 exposes a large ordinary sparse/event-driven resource signal, but its required full trajectory-equivalence gate was not independently verified. In addition, exact exponentially decaying traces cannot be threshold-retired without approximation, so sustained sparse advantage must be tested against cumulative support turnover/horizon rather than only a fixed instantaneous nonzero set.
+  INTERVENTION_FAITHFULNESS_AND_PATH_COMPLETENESS_SHARPENING_NO_CURRENT_OBJECT_UPLIFT.
+  Stable routes and even successful causal interventions are insufficient: interventions can activate dormant
+  parallel pathways, and route explanations must be evaluated as faithful causal abstractions across an
+  intervention family with separate necessity, sufficiency, completeness and path-specific responsibility checks.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - independently generated per-event event/fire/ignition/prediction trajectory comparison rather than booleans set by construction
-  - per-reward eligibility and weight checkpoints at the prospectively fixed tolerance
-  - exact active-set/timestamp-lazy comparator with explicit support-retirement semantics
-  - approximate threshold/truncation comparator labeled separately and never treated as exact semantics
-  - crossover over cumulative distinct touched edges, support churn, horizon, reset/lifetime semantics, E_total and reward frequency
-  - resource vector including primitive operations, index insert/lookup/retirement, retained timestamps/traces, history manipulation and data-movement proxies
+  - predeclare intervention support/realism and test whether interventions activate dormant or otherwise unused routes
+  - freeze a high-level causal abstraction and intervention mapping; score graded faithfulness across multiple intervention types
+  - separate route necessity, route sufficiency, explanation completeness/alternative-route coverage and conciseness
+  - include natural or minimally perturbed responsibility-changing pairs alongside synthetic deletion/replacement
+  - use path-specific probability of necessity-and-sufficiency only as a stronger-privilege formal ceiling unless information privilege is matched
+  - match timing, local observations, eligibility, recurrent state and resources while changing actual route responsibility through bypass, backup, preemption or overdetermination
 questions_for_evidence_analyst:
-  - Treat the opened R50 sweep as method-limited/non-evidentiary until its prospectively required trajectory-equivalence gate is actually satisfied, rather than accepting ordinary_reduction_exhaustion_signal?
-  - Preserve the no-repair/no-rerun boundary for R50 and require fresh prospective authority for any corrected measurement?
-  - Require cumulative distinct touched-edge/support-turnover/horizon axes for any future exact active-set localization claim?
-  - Treat trace truncation/threshold retirement as approximate semantics unless exact equivalence is separately proved?
+  - Keep H7 as nonterminal HOLD and treat this literature only as future admission guidance, not as grounds to manufacture a successor?
+  - Require intervention-faithfulness/support controls in addition to counterfactual responsibility for any future H7 object?
+  - Require necessity, sufficiency and completeness/alternative-route metrics to be separately bound before interpreting route faithfulness?
 questions_for_control_brain:
-  - Do not generalize the R50 anchor primitive-count reduction as a validated SYSTEM result before fresh Analyst disposition of the equivalence gap?
-  - Add exact-trace support accumulation and retirement semantics to the ordinary resource-reduction checklist?
-  - Keep claim ceiling SYSTEM, PRE_FORMAL/FORMAL unchanged, and H5 immutable/consumed?
+  - Add dormant-path activation / intervention-induced bypass as an explicit failure mode in the H7 causal-credit reduction checklist?
+  - Treat causal-abstraction faithfulness across an intervention family as the explanation floor before route-level novelty claims?
+  - Preserve intentional idle until an independently arising native mechanism exposes this residual with a prospective comparator/resource/falsifier contract?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - H5 exact package/STARTED/raw-preserve/evidence chain and canonical FAIL_NO_USEFUL_WORK_REDUCTION
-  - R50 contract SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1
-  - R50 exact result head d090fd2e57680c5a97b9fd0d036fc65a008078ec
-  - scientific workflow 35637961215 and preserved raw/summary artifacts/digests
-  - no R50 lint repair, rerun, post-outcome comparator/grid/tolerance redesign, same-object rescue or second measurement
-  - no STARTED/TEST/PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation or scheduler change by this role
+  - canonical H5/PD01/NI01 terminal classifications and all consumed STARTED/control/preserve refs
+  - H7 remains NONTERMINAL_HOLD / NOT_QUEUED with no current native object, comparator, resource contract or falsifier
+  - exploratory H7 trace-causality branch remains NON_EVIDENTIARY and is not promoted or rerun
+  - R50 candidate #32 remains HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT with no same-object repair or continuation
+  - no STARTED/TEST/PRE_FORMAL/FORMAL promotion, scientific workflow dispatch, research merge, immutable-ref mutation or scheduler change by this role
 utility_request_created: null
 ```
-
-No Utility request is created. The result is already open, MAIN has stopped for fresh Analyst review, and a parallel diagnostic/request would duplicate authority and risk outcome-responsive redesign.
