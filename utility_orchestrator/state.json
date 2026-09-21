@@ -1,99 +1,59 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T013100+0900-AUTO-SCHEDDELAY-COMPLETED-3D7A9C52",
-  "produced_at": "2026-09-22T01:31:00+09:00",
-  "producer_run_id": "utility-auto-20260922T012800+0900-scheduler-delay-topology",
+  "generation_id": "UTILITY-20260922T022329+0900-AUTO-SCHEDDELAY-CROSSSECTION-RUNNING-5A8D1F3C",
+  "produced_at": "2026-09-22T02:23:29+09:00",
+  "producer_run_id": "utility-auto-20260922T022329+0900-scheduler-delay-crosssection",
   "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_OPERATIONAL_DIAGNOSTIC",
-  "supersedes_generation_id": "UTILITY-20260922T012800+0900-AUTO-SCHEDDELAY-RUNNING-3D7A9C52",
+  "supersedes_generation_id": "UTILITY-20260922T013100+0900-AUTO-SCHEDDELAY-COMPLETED-3D7A9C52",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
-  "autonomous_task_id": "AUTOUTIL-20260922T012800+0900-SCHEDDELAY-TOPOLOGY-3D7A9C52",
-  "status": "COMPLETED",
+  "autonomous_task_id": "AUTOUTIL-20260922T022329+0900-SCHEDDELAY-CROSSSECTION-5A8D1F3C",
+  "status": "RUNNING",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "objective": "Bounded read-only operational timing diagnostic to distinguish deterministic exact-time scheduler collision from broad fleet queue/serialization pressure using current live SparkBrain scheduler definitions, recent run timing, and durable worker generations; produce a reusable diagnosis without changing any scheduler or scientific/repository state outside Utility-owned state/results.",
+  "objective": "One bounded read-only operational cross-section of the current SparkBrain scheduler-delay pattern, using a fresh live scheduler timing snapshot plus durable worker timestamps to test whether the prior broad queue-pressure diagnosis persists or instead localizes to a deterministic phase/role.",
   "trigger_source": {
-    "control_generation_id": "CTRL-20260922T010052+0900-R27-5C8A21F4",
-    "control_observation": "Third consecutive broad-delay scheduler-health observation with no exact-time overlaps and no evidence-based single phase target.",
-    "open_utility_request_selected": null,
-    "prior_utility_task_deduplication": "Distinct from the completed scheduler-registry mirror reconciliation; no registry re-audit or registry mutation performed."
+    "prior_utility_task": "AUTOUTIL-20260922T012800+0900-SCHEDDELAY-TOPOLOGY-3D7A9C52",
+    "prior_finding": "DENSE_PHASE_RUNTIME_OVERLAP_SUPPORTS_FLEET_QUEUE_PRESSURE_NO_SINGLE_PHASE_FIX_ESTABLISHED",
+    "new_information_available": "A fresh 02:00-02:25 JST scheduler cross-section is available, including an exact durable MAIN lease started_at/blocked_at pair.",
+    "open_utility_request_selected": null
   },
-  "freshness_check_before_terminal_write": {
-    "assignment_pointer": {
-      "status": "IDLE",
-      "active_assignment_id": null,
-      "active_assignment_generation_id": null,
-      "blob_sha": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7"
-    },
+  "ownership_generations_at_start": {
+    "assignment_pointer": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
     "evidence_analyst": "EVA-20260922T011108+0900-R49-7E3C21A5@7c154b6203347a4f212746e2cfe4ee7f1be2e5a4",
     "control": "CTRL-20260922T010052+0900-R27-5C8A21F4@70161c64b6760dafa773051dabd9d839b9443cd8",
-    "main": "MAIN-20260922T012600+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R49-CYCLE1-7E3C21A5@0ed81db895a5fff57a5a9c66e14554c8d2df79c3",
-    "main_status": "COMPLETED_STOP_PRE_OUTCOME",
-    "sub": "SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6",
-    "relay_ownership": "NO_FRESH_ACTIVE_RELAY_CONTINUATION_OBSERVED; fresh Analyst review required before any synthetic measurement",
-    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "authority_unsuperseded": true,
-    "collision_found": false
+    "main": "MAIN-20260922T021601+0900-PRIMARY-FUNNEL21-BLOCKED-R49-PENDINGREVIEW-6B4D21C8",
+    "sub": "SUB-20260922T013609+0900-NOOP-R49POSTMAIN-9D4A21C7",
+    "relay": "NO_SEPARATE_ACTIVE_RELAY_OWNERSHIP; MAIN lease is BLOCKED pending fresh Analyst review",
+    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
   },
-  "finding": {
-    "classification": "DENSE_PHASE_RUNTIME_OVERLAP_SUPPORTS_FLEET_QUEUE_PRESSURE_NO_SINGLE_PHASE_FIX_ESTABLISHED",
-    "exact_time_collision_detected": false,
-    "dense_phase_window": "In busy hours the live core fleet occupies :15, :20, :25, :30, :35, :45, :50, :55 with repeated five-minute gaps.",
-    "durable_same_window_observation": "MAIN R49 lease started 01:19 for nominal :15 and completed 01:26; the seven-minute execution window crossed the nominal Methodology :20 and Utility :25 phases.",
-    "coarse_scheduler_lag_pattern": {
-      "utility": "+2m58s",
-      "main_prior_scheduler_record": "+8m35s",
-      "sub": "+6m22s",
-      "relay": "+9m26s",
-      "methodology": "+6m12s",
-      "evidence_analyst": "+19m14s",
-      "control": "+14m09s",
-      "current_state_brief": "+8m46s",
-      "external_research_audit_latest_selected_hour": "+38m48s"
-    },
-    "lag_metric_caveat": "Scheduler last_run_time was used only as a coarse operational-lag indicator and not asserted to be exact queued/start time.",
-    "interpretation": "Broad multi-role delay plus a concrete runtime window longer than adjacent five-minute phase gaps supports rolling runtime/queue contention as a plausible fleet-level cause; it does not identify a single role whose minute offset is a justified SAFE_AUTO_FIX target.",
-    "scheduler_change_warranted_by_utility": false,
-    "scheduler_mutation_performed": false
-  },
-  "actions": [
-    "Confirmed clean schema-v2 IDLE Control assignment pointer",
-    "Read latest Control, Evidence Analyst, MAIN, SUB and Relay-relevant ownership state",
-    "Re-fetched authoritative stable main",
-    "Compared current live core scheduler phases and recent scheduler-recorded timing",
-    "Cross-checked the current MAIN R49 durable started/completed window",
-    "Persisted one append-only NON_EVIDENTIARY Utility result"
+  "allowed_actions": [
+    "Read live scheduler definitions and recent run timestamps",
+    "Read durable Control/Analyst/MAIN/SUB/Relay-relevant state",
+    "Compare nominal phase to coarse live last-run timestamps and exact durable timestamps where available",
+    "Persist one NON_EVIDENTIARY Utility result and terminal Utility state"
   ],
-  "outputs": {
-    "result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T012800+0900-SCHEDDELAY-TOPOLOGY-3D7A9C52-0128.md",
-    "result_commit": "1c225c36a258d25274dcae01372e172e64849fae"
+  "forbidden_actions": [
+    "Any scheduler mutation",
+    "Any scheduler-registry mutation",
+    "Any scientific workflow dispatch or experiment",
+    "Any research/main/evidence/control/preserve mutation",
+    "Any candidate typing/readiness reinterpretation",
+    "Any use of consumed/protected scientific identity"
+  ],
+  "stop_condition": "Stop after one fresh cross-section classification; stop earlier on assignment/ownership supersession or collision.",
+  "ownership_checks": {
+    "collision_found": false,
+    "main_critical_dependency": false,
+    "active_or_queued_research_object_touched": false,
+    "candidate_typing_touched": false
   },
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
     "preserved_fields": "NOT_APPLICABLE_NO_RESEARCH_CANDIDATE_TOUCHED",
     "typing_or_readiness_changed": false
-  },
-  "ownership_checks": {
-    "collision_found": false,
-    "main_critical_dependency": false,
-    "active_or_queued_research_object_touched": false,
-    "consumed_or_protected_identity_targeted": false,
-    "candidate_typing_touched": false
-  },
-  "integrity": {
-    "scientific_workflow_rerun": false,
-    "workflow_dispatch": false,
-    "research_or_main_branch_mutated": false,
-    "scheduler_mutated": false,
-    "scheduler_registry_mutated": false,
-    "candidate_typing_changed": false,
-    "preformal_or_formal_authority_created": false,
-    "control_assignment_pointer_mutated": false
-  },
-  "stop_reason": "COMPLETED_ONE_BOUNDED_AUTONOMOUS_DELAY_TOPOLOGY_DIAGNOSTIC_MAX_RUNS_REACHED",
-  "follow_up_recommendation": "Before changing phase offsets, Control scheduler-health governance should obtain exact nominal_due_at/queued_at/started_at/finished_at timing for at least three comparable dense windows and test whether lag accumulates through the :15-:55 chain or concentrates in a single role. Do not make a speculative single-minute shift from this cross-section.",
-  "follow_up_request": null
+  }
 }
