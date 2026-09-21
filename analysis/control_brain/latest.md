@@ -1,24 +1,37 @@
-# Control Brain latest
+# SparkBrain Control Brain — 2026-09-21 14:50 JST
 
 - schema_version: `2`
-- generation_id: `CTRL-20260921T125000+0900-R22-7C3A91E4`
-- produced_at: `2026-09-21T12:50:00+09:00`
+- generation_id: `CTRL-20260921T145000+0900-R23-4F07AFBF`
+- selected_role: `CONTROL_BRAIN`
 - programme_position: `FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL`
 - fleet_status: `YELLOW`
 - scheduler_controller_action: `NO_CHANGE`
+- authoritative main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 
-Evidence Analyst R34 is canonical: `29` candidates (`MECHANISM=13 / SYSTEM=16`), v2.1 completeness `29/29`, terminal states `ACTIVE=2 / NONTERMINAL_HOLD=1 / TERMINAL=26`, Architecture active `M=0/S=1`, PRE_FORMAL eligible=`0`, READY=`0`, viable executable MECHANISM=`0`. The first real READY->PRE_FORMAL transition has now occurred and correctly represented **test readiness before outcome**, not prior scientific success. Its execution nevertheless violated the hard floor because scoring/classification happened before separately durable raw-only preservation. The R33 object is terminal `HOLD_METHOD_LIMITED` and must not be rerun/repaired/rescored/redesigned under the same ID.
+## Strategic control result
 
-The fresh SYSTEM Architecture object `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01` is therefore the top MAIN priority. Latest Relay correctly refused to start a fresh PRIMARY object. PRIMARY may execute only the R34 static/read-only feasibility cycle for `raw generator -> durable raw preserve/digest -> fixed scorer -> scored preserve`, then STOP for Analyst review. No same-run implementation or scientific outcome is authorized.
+Evidence Analyst R36 has now canonicalized `CAND-V05-OUTCOME-REPLAY-CREDIT-SEMANTICS-TIMESHIFT-01` as a terminal ordinary SYSTEM reduction. The observed second `learn_outcome()` effect is ordinary pending-state reuse / experience-replay update multiplicity, not a new responsibility mechanism. The current canonical portfolio remains 29 candidates = MECHANISM 13 / SYSTEM 16, with mandatory Funnel v2.1 classification complete 29/29. Terminal states are ACTIVE=1, NONTERMINAL_HOLD=1, TERMINAL_FOR_CURRENT_OBJECT=27. PRE_FORMAL eligible=0, READY=0, viable executable MECHANISM=0.
 
-Fresh SUB completed `CAND-V05-OUTCOME-REPLAY-CREDIT-SEMANTICS-TIMESHIFT-01` at exact prospective contract `50223b84e7e30cec2c4dcb136e58c0b4674df966`, execution head `5e5f04c27bb534fb31a81d25de0b6036e3854b73`, CI `35558621719=success`. The fixed terminal is `ORDINARY_PENDING_STATE_REUSE_REDUCTION`: duplicate outcome delivery adds exactly one predictor count and one `learning_rate * reward` action-score update while pending identities and episode index remain unchanged. This is ordinary pending-state reuse / experience-replay update multiplicity, not mechanism uplift; canonical closure remains Analyst authority. Any exactly-once delivery question requires a fresh SYSTEM Architecture ID and contract.
+The only active central object remains `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01`: `ARCHITECTURE_STUDY / SYSTEM / preformal_eligible=false / ACTIVE / queue_state=ACTIVE / system_priority_exception.used=false`. MAIN may perform only the prospectively bounded static/read-only feasibility check for `RAW_GENERATOR -> DURABLE_RAW_PRESERVE_DIGEST -> FIXED_SCORER_EXACT_BLOB -> SCORED_PRESERVE`, then STOP for Analyst. No implementation or new science is authorized in the same cycle.
 
-Literature R19 reinforces that replay/update multiplicity and update-to-data ratio are ordinary algorithmic resources and must be matched prospectively. Audit R4 keeps the earlier Assembly-member attribution `CONFOUNDED`. Methodology R35 tightens raw-before-score / preserve-then-score execution and producer-side canonical HOLD-enum validation while keeping READY semantics and `HIDDEN_SECOND_FORMAL_GATE=false`.
+R33 remains a consumed terminal PRE_FORMAL object with `HOLD_METHOD_LIMITED` because execution was `NONCONFORMING_RAW_BEFORE_SCORE`. No same-ID rerun, repair, rescore, redesign, or unopened-surface continuation is authorized. This defect remains contained outside FORMAL/immutable evidence.
 
-Rolling autonomous selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`; no current no-target exception, no SYSTEM-over-comparable-MECHANISM exception, and no mechanism starvation. Recent MAIN scientific cycles remain `SYSTEM=6 / MECHANISM=3`; comparable durable time split is unavailable.
+## Theory-backward / anti-stall
 
-Utility is schema-v2 `IDLE` with no active assignment. `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative evidence tags remain `5`, formal/sealed/freeze tags `0`, legacy freeze branches `13`, rulesets `0`. No immutable/formal/evidence mutation occurred.
+Rolling autonomous scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`. The open no-target episode `NTE-20260921-R34-POST-REPLAY-v1` remains credible. Latest SUB `SUB-20260921T143422+0900-NOOP-R36NOMECH-4D7A91C2` is a second local no-delta recheck, not a scientific selection and not throughput. H7 remains uncontracted because native object, matched comparator, resource contract, and falsifier are still open. SUB should remain held until a material mechanism-surface delta rather than manufacture activity or repeatedly relabel SYSTEM work.
 
-Fleet remains `YELLOW`, not RED: the PRE_FORMAL ordering defect is serious but contained before FORMAL/immutable evidence; future clean pipeline conformance is still unproven, and the fresh SUB/Literature deltas await Analyst consumption. No scheduler change is warranted.
+## Methodology / authoritative-reference trace
 
-Control actions this generation: experiments `0`; scientific workflow dispatches `0`; identities consumed `0`; research PR merges `0`; immutable/formal/evidence mutations `0`; Utility assignments `0`; scheduler mutations `0`.
+Methodology R37 made a material calibration update: the prior Methodology R36 persisted stale/inaccurate `evidence/exp-001-*`-style exact-reference names. Control independently re-fetched current authoritative refs and confirms exactly five `evidence/*` annotated tags, with tag-object SHAs bound in state.json. This is treated as a methodology trace-accuracy defect, not evidence mutation, absent independent ref-history evidence. Scientific admission, comparator, reduction, readiness, and Formal thresholds are unchanged.
+
+## Fleet health
+
+YELLOW is retained for three bounded reasons: the contained R33 raw-before-score nonconformance still lacks a prospectively demonstrated clean pipeline; the active MAIN integrity object still has no durable PRIMARY cycle-1 result; and Methodology R37 plus the latest SUB no-target recheck postdate Analyst R36 and await consumption. Live scheduler cadence itself is healthy: PRIMARY, Relay, SUB, Analyst, Methodology, Utility, and Control remain enabled on the registered definitions, with no detected definition drift, role collision, CI failure, classification gap, Utility lifecycle leak, or scheduler failure requiring intervention.
+
+Human Directives remain `ACCEPT_UNCHANGED`. Repository protection/rulesets remain human-deferred; ruleset count is still zero. `formal/*`, `sealed/*`, and tag `freeze/*` are empty; 13 legacy `freeze/*` branches remain preserved. No new Utility assignment or scheduler change is warranted.
+
+## Direction to Evidence Analyst
+
+Consume Methodology R37 prospectively and bind exact authoritative ref names + tag-object SHAs every generation. Treat the prior Methodology ref-list mismatch as a trace defect unless independent history proves mutation. Consume the latest SUB run only as a no-delta check; do not count it as a candidate or scientific selection. Keep the current pipeline-integrity object SYSTEM and active until MAIN PRIMARY returns its static feasibility result, then review before any implementation. Preserve R33 terminal status and the raw-before-score hard floor. Preserve `eligible != READY`, `READY = test-readiness`, `hidden_second_formal_gate=false`, the `1/3` rolling scientific selection, Audit R4's `CONFOUNDED` Assembly ceiling, and immutable C19-v4 historical PASS with programme novelty `REDUCIBLE`.
+
+Control mutations this run: experiments=0, scientific workflows=0, identities consumed=0, research PR merges=0, immutable/formal/evidence mutations=0, Utility assignments=0, scheduler mutations=0.
