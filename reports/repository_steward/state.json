@@ -1,46 +1,45 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260921T195000+0900-G7-7D2C91A4",
-  "produced_at": "2026-09-21T19:50:00+09:00",
-  "producer_run_id": "repository-steward-auto-20260921T195000+0900-G7-7D2C91A4",
+  "generation_id": "STEWARD-20260922T015006+0900-G8-6B9D31F2",
+  "produced_at": "2026-09-22T01:50:06+09:00",
+  "producer_run_id": "repository-steward-auto-20260922T015006+0900-G8-6B9D31F2",
   "authority_scope": "REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY",
-  "supersedes_generation_id": "STEWARD-20260921T165000+0900-G6-8C4A21D7",
+  "supersedes_generation_id": "STEWARD-20260921T195000+0900-G7-7D2C91A4",
   "repository": "salmonmikan/sparkbrain_research",
   "input_generations": {
     "control": {
-      "generation_id": "CTRL-20260921T185206+0900-R24-6B4D21C8",
-      "handoff_commit": "5f9348022b3af8ef6ac6c1bd9d15cb77380d7d92"
+      "generation_id": "CTRL-20260922T010052+0900-R27-5C8A21F4",
+      "handoff_commit": "70161c64b6760dafa773051dabd9d839b9443cd8"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T185902+0900-R41-8D3A21C7",
-      "handoff_commit": "ffc8672c01ed0f45b2d0fd998c36706b8a343a91",
-      "snapshot_role": "AUTHORITATIVE_AT_G7_OBSERVATION_CUTOFF"
+      "generation_id": "EVA-20260922T011108+0900-R49-7E3C21A5",
+      "handoff_commit": "7c154b6203347a4f212746e2cfe4ee7f1be2e5a4",
+      "status": "CANONICAL_STATE_UNCHANGED_FROM_R48_WITH_PREOUTCOME_CONTRACT_SHARPENING"
     },
     "main": {
-      "generation_id": "MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4",
-      "mailbox_branch": "ops/orchestrator-run-report",
-      "latest_commit": "ed7412c76c0ab76f65d4b2256117ff1c42612dcf",
-      "history_commit": "3dc7e4b0e2fb97038247778730cb9a93c9e915c8",
-      "candidate": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
-      "status": "PROTECTED_OUTCOME_ENDPOINT_OVERRETURN_CONTAINED_FAIL_CLOSED_NO_TERMINAL"
+      "generation_id": "MAIN-20260922T012600+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R49-CYCLE1-7E3C21A5",
+      "mailbox_tip_observed": "0ed81db895a5fff57a5a9c66e14554c8d2df79c3",
+      "candidate": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
+      "status": "COMPLETED_STATIC_CONTRACT_STOP_PRE_OUTCOME",
+      "target_research_branch": null,
+      "active_identity": null
     },
     "sub": {
-      "generation_id": "SUB-20260921T193222+0900-NOOP-R41POSTMAIN-SCOPESTOP-2F8C41A7",
-      "mailbox_branch": "ops/orchestrator-run-report",
-      "mailbox_snapshot_commit": "4a1ec8f10bb77ec498993a8c8dc9d8d00dd3b1aa",
+      "generation_id": "SUB-20260922T013609+0900-NOOP-R49POSTMAIN-9D4A21C7",
+      "state_blob_sha": "d310f0661498c005f278dfc187c12677a89419e6",
       "status": "NO_OP_NO_COHERENT_MECHANISM_TARGET",
       "new_research_artifact": false
     },
     "utility": {
-      "assignment_branch": "ops/utility-orchestrator-requests",
-      "handoff_commit": "472726e572a854fe3577e2733bb1de37c05df1fa",
+      "generation_id": "UTILITY-20260922T013100+0900-AUTO-SCHEDDELAY-COMPLETED-3D7A9C52",
+      "state_blob_sha": "30a6ebc2b9884d4f11eac9b4a69e3bd4a26b4de8",
       "assignment_status": "IDLE",
       "active_assignment_id": null,
-      "active_assignment_generation_id": null
+      "status": "COMPLETED_BOUNDED_NON_EVIDENTIARY_READ_ONLY_DIAGNOSTIC"
     },
     "previous_steward": {
-      "generation_id": "STEWARD-20260921T165000+0900-G6-8C4A21D7",
-      "handoff_commit": "61ffd353c74289af5b611ffffcadcbcedd5104ad"
+      "generation_id": "STEWARD-20260921T195000+0900-G7-7D2C91A4",
+      "handoff_commit": "49dd571e802887637ecaea8071e2a695dda00a8c"
     }
   },
   "authoritative_refs": {
@@ -65,18 +64,18 @@
       "c19_v4": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
       "c19_r2": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
       "pd01": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881"
-    }
+    },
+    "current_active_research_target_refs": []
   },
   "audit": {
     "main_research_evidence_separation": "COMPLIANT",
-    "r33_raw_before_score_nonconformance_governance": "CONTAINED_OUTSIDE_EVIDENCE_NO_STEWARD_REPAIR",
-    "r40_synthetic_pipeline_conformance": "NON_EVIDENTIARY_CANDIDATE_SPECIFIC_INTEGRITY_SCAFFOLDING_NO_MAIN_PROMOTION",
-    "r41_cross_generation_holdout_integrity": "SCOPE_OVERRETURN_CONTAINED_FAIL_CLOSED_PENDING_FRESH_ANALYST_AT_G7_CUTOFF",
+    "current_system_architecture_object": "STATIC_CONTRACT_ONLY_NO_RESEARCH_BRANCH_NO_IDENTITY_NO_OUTCOME_NO_MAIN_PROMOTION",
     "sub_latest": "NO_OP_NO_NEW_RESEARCH_ARTIFACT",
-    "canonical_docs_vs_issues": "COMPLIANT_ISSUE_139_OPERATIONAL_ONLY",
+    "utility_latest": "BOUNDED_READ_ONLY_NON_EVIDENTIARY_NO_REPOSITORY_OR_SCIENTIFIC_MUTATION",
+    "canonical_docs_vs_issues": "COMPLIANT_ISSUE_139_ONLY_AND_ALIGNED_WITH_AUTHORITATIVE_TAG_DOC",
     "freeze_tag_mapping": "COMPLIANT_NO_MIGRATION",
-    "protection_gap": "MISSING_BUT_DEFERRED_READ_ONLY",
-    "preserve_indexes": "CURRENT_EVIDENCE_RAW_PRESERVE_REFS_REFETCHED_UNCHANGED",
+    "protection_gap": "MISSING_RULESETS_READ_ONLY_GOVERNANCE_GAP",
+    "preserve_indexes": "EVIDENCE_FAMILY_RAW_PRESERVE_REFS_REFETCHED_UNCHANGED",
     "main_promotion_candidates": [],
     "utility_assignment_lifecycle": "COMPLIANT_SCHEMA_V2_IDLE",
     "immutable_ref_incident": false,
@@ -85,8 +84,9 @@
   "issues": {
     "139": {
       "state": "open",
-      "classification": "CURRENT_OPERATIONAL_GOVERNANCE_TRACKING_NO_CHANGE"
+      "classification": "CURRENT_OPERATIONAL_GOVERNANCE_TRACKING_ALIGNED_WITH_ZERO_RULESET_STATE"
     },
+    "open_issue_count": 1,
     "changes_this_run": []
   },
   "pull_requests": {
@@ -95,6 +95,7 @@
       "merged": false,
       "mergeable": true,
       "head": "14ba187bb13705bc306baabe310d5364cf1b60fb",
+      "current_unresolved_review_threads": 3,
       "classification": "DEFER_PENDING_REVIEW_FIX"
     },
     "149": {
@@ -102,9 +103,19 @@
       "merged": false,
       "mergeable": true,
       "head": "01ef8c3a54ff20403aba2fab9996dbda5552dd4d",
-      "classification": "DEFER_PENDING_REVIEW_FIX"
+      "current_unresolved_review_threads": 1,
+      "outdated_unresolved_review_threads": 1,
+      "classification": "DEFER_UNRESOLVED_REVIEW_THREAD_NO_STEWARD_MERGE"
     },
     "merged_by_steward": 0
+  },
+  "main_promotion_review": {
+    "scientific_or_research_candidates": [],
+    "current_r49_system_contract": "NOT_ELIGIBLE_CANDIDATE_SPECIFIC_NON_EVIDENTIARY_NO_IMPLEMENTATION_BRANCH",
+    "governance_prs": [
+      "PR148_DEFER_UNRESOLVED_REVIEW",
+      "PR149_DEFER_UNRESOLVED_REVIEW"
+    ]
   },
   "mutations": {
     "experiments_executed": 0,
@@ -115,35 +126,24 @@
     "research_prs_merged": 0,
     "scheduler_definitions_modified": 0,
     "ruleset_or_protection_mutations": 0,
+    "issues_mutated": 0,
     "immutable_refs_modified": 0,
     "preserve_or_evidence_mappings_modified": 0,
     "main_promotions_performed": 0
   },
   "persistence": {
-    "history_path": "reports/repository_steward/history/2026-09-21/1950.md",
-    "history_commit": "927959ec5c1e47e1112d15758d1bcb713c4a8551",
+    "history_path": "reports/repository_steward/history/2026-09-22/0150.md",
+    "history_commit": "6ab11c7b295fc3ca76527889310a0b304106d11f",
     "latest_path": "reports/repository_steward/latest.md",
-    "latest_commit": "7cfcb67a2232e654ce3a2f6501c6ad3ae5c80a2f",
+    "latest_commit": "5dc258c2c4e0928849f3e193ee4289ac61567dd6",
     "state_path": "reports/repository_steward/state.json",
-    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
-    "persistence_repair": true,
-    "repair_reason": "G7 history/latest were persisted but state.json remained at G6; repaired without changing G7 scientific or governance interpretation."
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
   },
-  "post_snapshot_unconsumed_updates": [
-    {
-      "source": "ops/evidence-analyst-handoff",
-      "commit": "b8dc2ab5a203547cc9f663cf7fcfe1541091fc8e",
-      "generation_id": "EVA-20260921T200300+0900-R42-5F8C21A4",
-      "reason_not_folded_into_g7": "Arrived after the G7 observation cutoff; preserving generation/freshness semantics rather than retroactively rewriting G7."
-    }
-  ],
   "next_priorities": [
-    "Keep the R33 raw-before-score nonconforming consumed object outside evidence promotion; do not repair or reinterpret it from Steward.",
-    "Keep R40 synthetic pipeline conformance separate from R41/R42 cross-generation holdout-integrity metadata work.",
-    "Consume the post-G7 R42 Analyst generation only in the next authorized control/governance generation; do not retroactively rewrite G7 history/latest.",
-    "Keep authoritative evidence/freeze/preserve refs unchanged.",
-    "Continue read-only tracking of Issue #139 and protection/ruleset status.",
-    "Keep PR #148/#149 deferred on unchanged heads.",
-    "Promote only reviewed stable outcome-independent reusable components; none qualify now."
+    "Keep current candidate #32 SYSTEM-only and outside main promotion; MAIN has only bound the static contract and must await fresh Analyst review before synthetic measurement.",
+    "Keep all authoritative evidence/freeze/preserve refs unchanged and continue independent re-fetch each Steward run.",
+    "Keep Issue #139 open while repository rulesets remain absent; Steward remains read-only for protection administration.",
+    "Keep PR #148/#149 deferred while current unresolved review threads remain.",
+    "Promote only independently reviewed stable outcome-independent reusable components; none qualify now."
   ]
 }
