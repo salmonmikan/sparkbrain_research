@@ -1,106 +1,71 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260921T232215+0900-AUTO-REGISTRY-RECON-COMPLETED-6F2A9C41",
-  "produced_at": "2026-09-21T23:22:15+09:00",
-  "producer_run_id": "utility-auto-20260921T232215+0900-registry-reconciliation",
-  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_TOOLING_DIAGNOSTIC",
-  "supersedes_generation_id": "UTILITY-20260921T232215+0900-AUTO-REGISTRY-RECON-RUNNING-6F2A9C41",
+  "generation_id": "UTILITY-20260922T012800+0900-AUTO-SCHEDDELAY-RUNNING-3D7A9C52",
+  "produced_at": "2026-09-22T01:28:00+09:00",
+  "producer_run_id": "utility-auto-20260922T012800+0900-scheduler-delay-topology",
+  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_OPERATIONAL_DIAGNOSTIC",
+  "supersedes_generation_id": "UTILITY-20260921T232215+0900-AUTO-REGISTRY-RECON-COMPLETED-6F2A9C41",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
-  "autonomous_task_id": "AUTOUTIL-20260921T232215+0900-SCHEDREG-RECON-6F2A9C41",
-  "status": "COMPLETED",
+  "autonomous_task_id": "AUTOUTIL-20260922T012800+0900-SCHEDDELAY-TOPOLOGY-3D7A9C52",
+  "status": "RUNNING",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "objective": "Read-only reconciliation diagnostic of scheduler_registry mirror metadata against current live scheduler definitions, limited to identifying drift and producing a bounded report; perform no scheduler mutation and no scientific/repository mutation outside Utility-owned state/results.",
+  "objective": "Bounded read-only operational timing diagnostic to distinguish deterministic exact-time scheduler collision from broad fleet queue/serialization pressure using current live SparkBrain scheduler definitions, recent run timing, and durable worker generations; produce a reusable diagnosis without changing any scheduler or scientific/repository state outside Utility-owned state/results.",
   "trigger_source": {
-    "control_generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
-    "control_observation": "registry_reconciliation_required=true; registry mirror is out of sync with approved live definitions",
-    "open_utility_request_selected": null
+    "control_generation_id": "CTRL-20260922T010052+0900-R27-5C8A21F4",
+    "control_observation": "Third consecutive Control scheduler-health observation reports broad start delays with no exact-time overlaps, autofix observation threshold met, but no evidence-based single phase target; scheduler_change_warranted=false.",
+    "open_utility_request_selected": null,
+    "prior_utility_task_deduplication": "Distinct from prior registry-mirror reconciliation: this task analyzes runtime delay topology only and does not re-audit registry content."
   },
-  "freshness_check_before_terminal_write": {
+  "prework_freshness": {
     "assignment_pointer": {
       "status": "IDLE",
       "active_assignment_id": null,
       "active_assignment_generation_id": null,
       "blob_sha": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7"
     },
-    "evidence_analyst_generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
-    "control_generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
-    "main_generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
-    "sub_generation_id": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
-    "relay_ownership": "NO_ACTIVE_CONTINUATION_NO_NEW_DURABLE_GENERATION",
-    "authority_unsuperseded": true,
-    "collision_found": false
-  },
-  "input_generations": {
-    "evidence_analyst": "EVA-20260921T220541+0900-R44-7A3C21E8@fca9a4b0adb259b76a518605f611ff79e0c48680",
-    "control": "CTRL-20260921T230354+0900-R26-8D4C21A7@0e38771af4dacefab079a9389dece4c6a48f1240",
-    "main": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
-    "sub": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
+    "evidence_analyst": "EVA-20260922T011108+0900-R49-7E3C21A5@7c154b6203347a4f212746e2cfe4ee7f1be2e5a4",
+    "control": "CTRL-20260922T010052+0900-R27-5C8A21F4@70161c64b6760dafa773051dabd9d839b9443cd8",
+    "main": "MAIN-20260922T012600+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R49-CYCLE1-7E3C21A5@0ed81db895a5fff57a5a9c66e14554c8d2df79c3",
+    "main_status": "COMPLETED_STOP_PRE_OUTCOME",
+    "sub": "SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6",
+    "relay_ownership": "NO_FRESH_ACTIVE_RELAY_CONTINUATION_OBSERVED; MAIN R49 completed static contract and requires fresh Analyst review before synthetic measurement",
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "scheduler_registry_manifest_blob": "6f7fa138b09b093613e8eb98b18559ea94e16b59",
-    "scheduler_registry_branch_head_before_work": "840257b39e97a182fb07742d5a02f982751b4932"
+    "utility_branch_head_before_task": "9eea338472db6454ba116f683db863ab18f2ebec",
+    "collision_found": false,
+    "authority_unsuperseded": true
   },
-  "finding": {
-    "classification": "REGISTRY_MIRROR_DRIFT_CONFIRMED_LIVE_SCHEDULERS_NO_CHANGE_REQUIRED",
-    "definite_schedule_drift": {
-      "task_id": "6aa9543b594c8191b44e2356a34719c1",
-      "title": "SparkBrain 現在状態ブリーフ",
-      "registry": "BYMINUTE=45",
-      "live": "BYMINUTE=55",
-      "interpretation": "registry stale; live :55 is approved phase policy and should not be reverted"
-    },
-    "other_core_schedule_comparison": "MATCHED_LIVE_FOR_CONTROL_ANALYST_MAIN_METHODOLOGY_UTILITY_EXTERNAL_SUB_RELAY",
-    "material_prompt_mirror_drift_confirmed_for": [
-      "SparkBrain Control & Repository Steward",
-      "SparkBrain Evidence Analyst",
-      "SparkBrain Research Orchestrator",
-      "SparkBrain Research Orchestrator Sub",
-      "SparkBrain Research Orchestrator Relay",
-      "SparkBrain Methodology Calibration Auditor",
-      "SparkBrain 現在状態ブリーフ"
-    ],
-    "utility_registry_snapshot": "MATCHED_CURRENT_AUTONOMOUS_IDLE_PROMPT_AND_HOURLY_25_SCHEDULE",
-    "live_scheduler_mutation_required": false,
-    "registry_refresh_recommended": true
-  },
-  "actions": [
-    "Read current scheduler registry manifest and per-task snapshots",
-    "Read current live SparkBrain automation definitions",
-    "Compared stable schedule fields fleet-wide",
-    "Spot-checked stored raw prompt snapshots against current live role semantics",
-    "Persisted append-only Utility result"
+  "allowed_actions": [
+    "Read current live SparkBrain scheduler definitions and last-run timestamps",
+    "Read current Control/Analyst/MAIN/SUB/Relay durable operational generations for collision/freshness context",
+    "Compute nominal phase spacing and observed start-delay pattern",
+    "Persist Utility-owned state and one append-only result"
   ],
-  "outputs": {
-    "result_path": "utility_orchestrator/results/2026-09-21/AUTOUTIL-20260921T232215+0900-SCHEDREG-RECON-6F2A9C41-2322.md",
-    "result_commit": "7bff63b8f50b2d8eb324bdca5e6fa604bec8db0c"
-  },
+  "forbidden_actions": [
+    "Any scheduler mutation or cadence/phase change",
+    "Any scientific workflow dispatch or experiment execution",
+    "Any mutation of main/research/evidence/control/preserve/formal/freeze refs",
+    "Any work on CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01 or its comparators/resource contract",
+    "Any Funnel typing/readiness/priority reinterpretation",
+    "Any creation or use of scientific identity"
+  ],
+  "stop_condition": "Stop after one cross-sectional delay-topology diagnosis, or immediately if assignment/current ceases to be clean IDLE or an ownership generation makes the diagnostic a hidden MAIN dependency.",
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
     "preserved_fields": "NOT_APPLICABLE_NO_RESEARCH_CANDIDATE_TOUCHED",
     "typing_or_readiness_changed": false
-  },
-  "ownership_checks": {
-    "collision_found": false,
-    "main_critical_dependency": false,
-    "active_or_queued_research_object_touched": false,
-    "consumed_or_protected_identity_targeted": false,
-    "candidate_typing_touched": false
   },
   "integrity": {
     "scientific_workflow_rerun": false,
     "workflow_dispatch": false,
     "research_or_main_branch_mutated": false,
     "scheduler_mutated": false,
-    "scheduler_registry_mutated": false,
     "candidate_typing_changed": false,
     "preformal_or_formal_authority_created": false,
     "control_assignment_pointer_mutated": false
-  },
-  "stop_reason": "COMPLETED_ONE_BOUNDED_AUTONOMOUS_RECONCILIATION_MAX_RUNS_REACHED",
-  "follow_up_recommendation": "Control or scheduler-registry governance should refresh the registry mirror from live stable definitions using the existing registry protocol; do not change live scheduler timing or scientific semantics. No duplicate Utility request was created because Control already records registry_reconciliation_required=true.",
-  "follow_up_request": null
+  }
 }
