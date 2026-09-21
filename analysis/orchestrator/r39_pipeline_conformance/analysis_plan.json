@@ -1,0 +1,13 @@
+{
+  "baseline": "none",
+  "comparator": "none",
+  "exclusions": [],
+  "features": ["values"],
+  "plan_id": "R39-OUTCOME-BLIND-PLAN-V1",
+  "post_output_changes_allowed": false,
+  "resource_rule": "single_process_stdlib_only",
+  "schema_version": 1,
+  "score": "sum",
+  "threshold": 17,
+  "transform": "identity"
+}
