@@ -1,39 +1,39 @@
 {
-  "timestamp": "2026-09-21T06:28:46+09:00",
+  "timestamp": "2026-09-21T09:33:00+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260921T062846+0900-R17-ACTIONVISIT-6E3B91C4",
-  "producer_run_id": "external-literature-auto-20260921T062846+0900-R17-6E3B91C4",
+  "generation_id": "LIT-20260921T093300+0900-R18-ASSEMBLY-CAUSAL-CONTROLS-8D4C71A2",
+  "produced_at": "2026-09-21T09:33:00+09:00",
+  "producer_run_id": "external-literature-auto-20260921T093300+0900-R18-8D4C71A2",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260921T032811+0900-R16-ELIGIBILITY-CLOCK-2F8C71A4",
+  "supersedes_generation_id": "LIT-20260921T062846+0900-R17-ACTIONVISIT-6E3B91C4",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260921T025500+0900-R19-9D2C4A71",
-      "handoff_commit": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4"
+      "generation_id": "CTRL-20260921T085000+0900-R21-4F7C2A91",
+      "handoff_commit": "49ac783b5640b8250c19133f8842f0bf49867e8f"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T055830+0900-R28-4D7A91C2",
-      "handoff_commit": "cde085b48dde724b2ac814585d7f0757bf16ef63"
+      "generation_id": "EVA-20260921T090300+0900-R31-3C7A91E4",
+      "handoff_commit": "060e7d7d150b5406124425348553c92b04fed253"
     },
     "main_report": {
-      "generation_id": "MAIN-20260921T061540+0900-PRIMARY-FUNNEL21-HOLD-R28-4C8A21D7",
-      "handoff_commit": "6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a"
+      "generation_id": "MAIN-20260921T091756+0900-PRIMARY-FUNNEL21-HOLD-R31-7C2A91E4",
+      "handoff_commit": "ac4c2b80379d516c56ebb0a3ea25638bc8800bab"
     },
     "sub_report": {
-      "generation_id": "SUB-20260921T053500+0900-NOOP-NOMECH-8B3E71C4",
-      "handoff_commit": "64f77557e4c5597791450c407705e7b3659fce62"
+      "generation_id": "SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7",
+      "handoff_commit": "ef4a2f0cf65e6143d10c6186075bb470b494539f"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260921T032811+0900-R16-ELIGIBILITY-CLOCK-2F8C71A4",
-      "handoff_commit": "84bb39f359404d8f94a4007116d5a0cad929eeb8"
+      "generation_id": "LIT-20260921T062846+0900-R17-ACTIONVISIT-6E3B91C4",
+      "handoff_commit": "c68021616b412a8ff6e94b72d57fb11ff609d4c2"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "latest_significant_research": {
-      "research/exploratory-sub-nonlearning-action-visit-carryover-20260921": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
-      "research/exploratory-sub-step-state-hash-semantics-20260921": "83d11ba6e0e8aca3f6cda9e4ab9592c851cc0306",
-      "research/main-eligibility-timebase-partition-invariance-20260921": "0430e98e241ae543a03bc750a3c977fe55d17bb7"
+    "active_or_latest_research": {
+      "research/exploratory-sub-assembly-unit-causal-selectivity-20260921": "0c857a73cf34b58b737f686fd9af60769de3d306",
+      "research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921": "b2547429823be29a2547419c80c40fb2138dfdc9"
     },
     "authoritative_evidence_tags": [
       "evidence/c19-official-v4-c19-external-v2-official-v4",
@@ -45,12 +45,12 @@
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13,
-    "preserve_branch_count_observed": 24,
-    "control_branch_count_observed": 20,
+    "legacy_freeze_branch_count_observed": 13,
     "consumed_identity_anchors": {
       "c19_v4_started": "3ebffb0c55ea9e5dac6c2a52d3d5c0ee6443d58e",
       "c19_v4_raw_preserve": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
+      "c19_r1_started_v1": "62e4f03a2b276fa00627c6c198fa4cd3b8d8c2f2",
+      "c19_r1_started_v2": "a230e250021cea113c42d674da2bfc31dc0a3549",
       "c19_r2_started": "41df2685fe015140c8afa13e646554dd2e8c836b",
       "c19_r2_raw_preserve": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
       "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
@@ -74,21 +74,21 @@
     }
   },
   "control_plane_commits_consumed": {
-    "control_brain": "dcdea1bbd1490da004bce69d4b7f4f7b4d37fbd4",
-    "evidence_analyst": "cde085b48dde724b2ac814585d7f0757bf16ef63",
-    "main_report": "6b3bf125b75e7bccc4eef670fb3ca7ee2df4e43a",
-    "sub_report": "64f77557e4c5597791450c407705e7b3659fce62"
+    "control_brain": "49ac783b5640b8250c19133f8842f0bf49867e8f",
+    "evidence_analyst": "060e7d7d150b5406124425348553c92b04fed253",
+    "main_report": "ac4c2b80379d516c56ebb0a3ea25638bc8800bab",
+    "sub_report": "ef4a2f0cf65e6143d10c6186075bb470b494539f"
   },
   "workflow_state": {
-    "nonlearning_action_visit_exact_head_ci": {
-      "run_id": 35523434869,
-      "head": "d4c23f6c15b504a89a420b26d0f0d185138a5bda",
+    "matched_load_feasibility": {
+      "run_id": 35541396714,
+      "head": "b2547429823be29a2547419c80c40fb2138dfdc9",
       "status": "completed",
       "conclusion": "success"
     },
-    "last_completed_main_architecture_ci": {
-      "run_id": 35528770185,
-      "head": "0430e98e241ae543a03bc750a3c977fe55d17bb7",
+    "matched_load_exact_head_ci": {
+      "run_id": 35541396705,
+      "head": "b2547429823be29a2547419c80c40fb2138dfdc9",
       "status": "completed",
       "conclusion": "success"
     }
@@ -97,77 +97,83 @@
   "findings": [
     {
       "type": "repository_evidence",
-      "finding": "Stable AssemblyActionPolicy increments visits[assembly_id] after every mature choose(), regardless of explore=False, while the exploratory branch chooses actions by visits modulo action count. The prospectively fixed Discovery therefore exactly reduces the shifted future action to ordinary integer exploration bookkeeping.",
-      "impact": "SYSTEM / evaluation-training-isolation semantics; not a mechanism novelty result."
+      "finding": "The bounded Assembly-unit Discovery observed selective prediction loss after suppressing the three selected Assembly members, but its prospectively fixed comparator had zero baseline spikes per unit while each target member had one. The fresh exact seven-component matched-load feasibility successor then exhaustively failed to find an exact nonmember comparator on fixed DEV seeds 501 and 502 without executing an intervention.",
+      "impact": "The current matched-load object is terminal and must not be repaired outcome-responsively."
     },
     {
       "type": "external_literature",
-      "finding": "Classical bandit and modern count-based exploration treat visitation counts or pseudocounts as algorithmically active exploration state that changes future action selection or exploration bonuses.",
+      "finding": "Fakhar et al. 2024 show that neural activity and causal functional contribution can dissociate after downstream nonlinear/recurrent transformations; observational activity similarity is not causal-equivalence.",
       "sources": [
-        "Auer, Cesa-Bianchi & Fischer 2002, Machine Learning 47:235-256, DOI 10.1023/A:1013689704352",
-        "Bellemare et al. 2016, NeurIPS 29, arXiv:1606.01868",
-        "Lobel, Bagaria & Konidaris 2023, ICML/PMLR 202:22594-22613"
+        "Fakhar et al., Scientific Reports 14 (2024), DOI 10.1038/s41598-024-52423-7"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "Modern episodic RL theory explicitly notes that many exploration algorithms use state-visit counts to determine episode lengths or exploration behavior, reinforcing that visit bookkeeping is not passive telemetry.",
+      "finding": "Engram-allocation experiments use selected-ensemble versus similar-number random-neuron silencing as an ordinary causal-necessity control, while separate work shows that even sparse nonselective perturbation can disrupt memory.",
       "sources": [
-        "Boone & Gaujal 2023, ICML/PMLR 202:2824-2856"
+        "Park et al., Neuropsychopharmacology 41 (2016), DOI 10.1038/npp.2016.73",
+        "Contextual fear memory retrieval is vulnerable to hippocampal noise, Cerebral Cortex 31 (2021), DOI 10.1093/cercor/bhaa257"
       ]
     },
     {
       "type": "external_literature",
-      "finding": "RL evaluation methodology treats evaluation policy/protocol choices as scientifically consequential and emphasizes standardized, reproducible evaluation rather than silently conflating training and evaluation behavior.",
+      "finding": "Focal perturbations can cause distributed network reconfiguration, so local degree/two-hop structural matching is a proxy rather than a guarantee of matched perturbation footprint.",
       "sources": [
-        "Machado et al. 2018, Journal of Artificial Intelligence Research 61:523-562, DOI 10.1613/jair.5699",
-        "Henderson et al. 2018, AAAI 32, DOI 10.1609/aaai.v32i1.11694"
+        "Rabuffo et al., PNAS 122 (2025), DOI 10.1073/pnas.2405706122"
+      ]
+    },
+    {
+      "type": "external_literature",
+      "finding": "Multi-neuron interventions identify coalition/set-level effects but complicate attribution of individual causal contribution; individual-responsibility claims require additional causal-attribution structure.",
+      "sources": [
+        "Lepperød et al., PLOS Computational Biology 19 (2023), DOI 10.1371/journal.pcbi.1011574",
+        "Fakhar et al., Scientific Reports 14 (2024), DOI 10.1038/s41598-024-52423-7"
       ]
     },
     {
       "type": "inference",
-      "finding": "If non-learning evaluation is intended to be observational, mutating visit/pending state is a reproducibility contract violation because merely interleaving evaluation deterministically changes later exploration. If every action choice is intended to be a real policy visit, the current behavior is legitimate but should be declared explicitly. Either interpretation is ordinary policy-state semantics, not a new cognitive mechanism."
+      "finding": "A future independently motivated Assembly-causality successor should not treat exact observational-signature equality as the only valid route. A prospectively fixed random/stratified lesion distribution with equal information privilege, plus explicit downstream perturbation-footprint measurement, is a stronger ordinary control ladder. This inference does not reopen the current terminal object."
     }
   ],
   "affected_lines": [
-    "CAND_V05_NONLEARNING_ACTION_VISIT_CARRYOVER_01",
-    "V05_ACTION_POLICY_EXPLORATION_STATE",
-    "EVALUATION_TRAINING_ISOLATION",
-    "ARCHITECTURE_REPRODUCIBILITY",
+    "CAND_V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_01",
+    "CAND_V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_MATCHED_LOAD_01",
+    "V05_ASSEMBLY_CAUSAL_SELECTIVITY",
+    "CAUSAL_PERTURBATION_CONTROL_DESIGN",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "ordinary integer visit-counter / round-robin exploration schedule",
-    "count-based / pseudocount exploration",
-    "explicit evaluation-versus-training policy-state isolation",
-    "observational evaluation snapshot/restore or explicit visit-update gate"
+    "same-cardinality random/nonmember lesion distribution",
+    "pre-registered activity/topology stratified or covariate-balanced lesion controls",
+    "whole-field/downstream perturbation-footprint accounting",
+    "coalitional/factorial causal attribution for per-unit responsibility claims"
   ],
-  "novelty_or_reduction_impact": "STRONG_ORDINARY_EXPLORATION_STATE_REDUCTION. The non-learning visit-carryover effect is exactly explained by a conventional stateful exploration counter: explore=False suppresses the exploratory branch but does not suppress visit-state mutation. Count-based exploration literature makes such counters ordinary policy state. The remaining issue is whether evaluation calls are observational or real visits; that is Architecture/API reproducibility semantics, not a new learning or responsibility mechanism.",
+  "novelty_or_reduction_impact": "CONTROL_DESIGN_SHARPENING_NOT_NOVELTY_UPLIFT. The current exact-match feasibility terminal remains valid and closed. External perturbation literature shows observational activity/topology matching is not equivalent to causal-load matching; ensemble-versus-random perturbation is an established ordinary necessity baseline; sparse/focal perturbations can have distributed effects; and multi-unit interventions establish coalition-level effects rather than individual responsibility.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "side-effect-free evaluation baseline that snapshots/restores visit and pending policy state when evaluation is declared observational",
-    "explicit separation of explore_action from whether visit/exploration bookkeeping mutates",
-    "metamorphic evaluation-interleaving test: inserting observational evaluation calls must not alter the next training exploration action",
-    "explicit alternative contract in which every mature action choice is a real policy visit and therefore intentionally consumes exploration budget",
-    "matched count-based / UCB / pseudocount explorer before any future novelty claim about visit-conditioned action selection"
+    "prospectively fixed same-cardinality random/nonmember lesion distribution with equal target-selection privilege",
+    "pre-registered stratified or covariate-balanced controls for baseline activity/topology in a fresh object",
+    "whole-field/downstream perturbation-footprint measurement without post-outcome control selection",
+    "single-unit/factorial/coalitional perturbation only for per-unit responsibility claims",
+    "explicit separation of Assembly-set necessity from individual-unit causal responsibility"
   ],
   "questions_for_evidence_analyst": [
-    "Keep CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01 at its canonical HOLD_SYSTEM_TERMINAL disposition with no same-object continuation?",
-    "Treat visit counters as exploration-policy state, not passive telemetry, and require evaluation semantics to state whether that state is allowed to mutate?",
-    "For any fresh implementation successor, require a prospective choice between observational evaluation isolation and intentional real-visit semantics before testing?"
+    "Keep the current matched-load object terminal and treat this literature only as future control-design guidance?",
+    "For an independently motivated fresh successor, allow a prospectively fixed distributional/random lesion baseline instead of exact observational equality while preserving equal information privilege?",
+    "Keep the claim ceiling at set-level causal selectivity unless individual responsibility is separately identified?"
   ],
   "questions_for_control_brain": [
-    "Add evaluation/training policy-state isolation to the Architecture reproducibility checklist alongside semantic-clock isolation?",
-    "Keep PRE_FORMAL/FORMAL and H7 unchanged because this line is ordinary exploration bookkeeping / API semantics rather than a responsibility mechanism?",
-    "Avoid a Utility request or literature-driven repair because the current object is already terminal and the ordinary reduction is source-transparent?"
+    "Add activity-similarity-is-not-causal-load-equivalence and distributed perturbation footprint to the ordinary Assembly causal-control checklist?",
+    "Do not reopen the current terminal based on this literature; require a fresh independent substrate/object and prospective contract?",
+    "Keep PRE_FORMAL/FORMAL unchanged?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "all canonical terminal classifications and consumed STARTED/control/preserve/evidence refs",
-    "CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01 prospective contract f0ebfc02605ccdccea371dbb908aac879a6de5f8, outcome-bearing commit e15e37d0163e3b37973177c29cbeb72728c7e057, result head d4c23f6c15b504a89a420b26d0f0d185138a5bda, and exact-head CI 35523434869",
-    "canonical HOLD_SYSTEM_TERMINAL disposition for the nonlearning-action visit object",
-    "no same-object cycle 2, action-order change, visit-counter repair, exploration-threshold retune, production patch, STARTED, TEST, PRE_FORMAL/FORMAL promotion, rescore, research merge, immutable-ref mutation, or scheduler change"
+    "Assembly causal-selectivity contract eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42, outcome 1a571db21ff82001407f01cb2c5449f253bfd4e5, result head 0c857a73cf34b58b737f686fd9af60769de3d306",
+    "matched-load prospective head b2547429823be29a2547419c80c40fb2138dfdc9, workflow 35541396714, CI 35541396705, and canonical EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE terminal",
+    "no same-object comparator relaxation, new metric, new surface, intervention, cycle 2, STARTED, TEST, PRE_FORMAL/FORMAL promotion, rescore, research merge, immutable-ref mutation, or scheduler change",
+    "no retroactive reinterpretation of the terminal based on external literature"
   ],
   "utility_request_created": null,
   "persistence_notes": "Role-separated literature stream only. Legacy shared latest/state not updated. No Utility request, scientific workflow, research result mutation, immutable-ref mutation, or scheduler change."
