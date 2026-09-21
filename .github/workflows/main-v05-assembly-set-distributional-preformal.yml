@@ -1,0 +1,51 @@
+name: R33 Assembly distributional PRE_FORMAL
+
+on:
+  push:
+    branches:
+      - research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921
+    paths:
+      - analysis/preformal/main-v05-assembly-set-causal-necessity-distributional-controls-20260921/EXECUTE.request
+
+permissions:
+  contents: read
+
+jobs:
+  preformal:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.13"
+          cache: pip
+
+      - name: Verify exact source and contract ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE_SHA=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d
+          CONTRACT_SHA=52e14294d8e413a95c1dad387104bdeaa4468d39
+          test "$(git merge-base "$SOURCE_SHA" "$CONTRACT_SHA")" = "$SOURCE_SHA"
+          git merge-base --is-ancestor "$CONTRACT_SHA" "$GITHUB_SHA"
+          git diff --exit-code "$SOURCE_SHA" "$GITHUB_SHA" -- src pyproject.toml
+
+      - name: Install exact local package
+        run: python -m pip install --no-deps -e .
+
+      - name: Execute fixed development-only PRE_FORMAL harness
+        run: |
+          python analysis/preformal/main-v05-assembly-set-causal-necessity-distributional-controls-20260921/run_preformal.py
+
+      - name: Upload development result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r33-assembly-distributional-preformal-${{ github.sha }}
+          path: preformal-result.json
+          if-no-files-found: ignore
+          retention-days: 30
