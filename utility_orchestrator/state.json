@@ -1,34 +1,42 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T072500+0900-AUTO-WORKFLOW-TRIGGER-ISOLATION-RUNNING-6C3A91D7",
-  "produced_at": "2026-09-22T07:25:00+09:00",
+  "generation_id": "UTILITY-20260922T073100+0900-AUTO-WORKFLOW-TRIGGER-ISOLATION-COMPLETED-6C3A91D7",
+  "produced_at": "2026-09-22T07:31:00+09:00",
   "producer_run_id": "utility-auto-20260922T0724+0900-workflow-trigger-isolation",
   "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_TOOLING_INVESTIGATION",
-  "supersedes_generation_id": "UTILITY-20260922T063700+0900-AUTO-EQUIV-SCHEMA-COMPLETED-91C4B6E2",
+  "supersedes_generation_id": "UTILITY-20260922T072500+0900-AUTO-WORKFLOW-TRIGGER-ISOLATION-RUNNING-6C3A91D7",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
   "autonomous_task_id": "AUTOUTIL-20260922T0724+0900-WORKFLOW-TRIGGER-ISOLATION-6C3A91D7",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
   "objective": "Read-only characterize generic GitHub Actions trigger/write isolation on stable main and identify candidate-agnostic static policy gaps that could permit accidental result-bearing retrigger or cross-purpose mutation.",
+  "classification": "LEGACY_PUSH_TRIGGERED_WRITE_CAPABLE_BRIDGES_SELF_DISARMED_BUT_TRIGGER_ISOLATION_GAP_CONFIRMED",
+  "finding_summary": [
+    "Stable main contains seven GitHub Actions workflows. Ordinary CI is broadly push/PR triggered but non-mutating; authoritative tag creation and the default-branch formal registration guard are manually dispatched and strongly fail-closed.",
+    "Three workflows combine main-push path triggers with elevated capability: a harmless dispatch-capability probe, the legacy CX01 one-way launch bridge with actions+contents write, and the legacy CX01 evidence-preservation bridge with contents write.",
+    "The launch and preservation bridges have strong exact-binding/no-clobber internal guards, but workflow-definition edits still automatically enter write-capable control paths; operation-level safety is stronger than trigger-level isolation.",
+    "Both historical scientific bridges are currently self-disarmed: the durable STARTED/control branch and durable preservation branch already exist, so their explicit branch-absence checks should fail before replay/recreation.",
+    "A reusable candidate-agnostic static policy/linter could prohibit automatic push/PR triggers from coexisting with elevated actions/contents write plus workflow-dispatch or control/preserve/formal/evidence ref-writing semantics, absent an explicit reviewed exception."
+  ],
   "trigger_source": {
     "control": "CTRL-20260922T065500+0900-R30-6F4C21A8 retains prospective integrity/tooling hardening under intentional scientific idle",
     "evidence_analyst": "EVA-20260922T065809+0900-R55-5A8C21F7 reports Architecture active/queued 0/0, PF eligible/READY 0/0, MAIN/SUB intentional idle, utility_request null",
     "open_utility_request_selected": null,
     "assignment_pointer": "clean schema-v2 IDLE"
   },
-  "ownership_generations": {
+  "freshness_check_before_terminal_persistence": {
     "assignment_pointer": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
     "evidence_analyst": "EVA-20260922T065809+0900-R55-5A8C21F7@11e84b37dd8739c38f538f1231aab7234356c5d0",
     "control": "CTRL-20260922T065500+0900-R30-6F4C21A8@fc5297050c93bb67a9b69aae24179ce7d8888c15",
-    "main": "MAIN-20260922T061624+0900-PRIMARY-FUNNEL21-IDLE-R54-4E7C21A9",
-    "sub": "SUB-20260922T063705+0900-NOOP-R54INTENTIONALIDLE-7D4A21E6",
+    "main_sub": "Analyst R55: MAIN R54 terminal intentional idle; SUB R54 no-target; Architecture active/queued 0/0; no Utility request",
     "relay": "NO_SEPARATE_DURABLE_ADVANCE_R54_NO_ACTIVE_MAIN_OBJECT",
-    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
+    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "material_supersession_detected": false
   },
   "ownership_checks": {
     "collision_found": false,
@@ -36,29 +44,29 @@
     "active_or_queued_research_object_touched": false,
     "candidate_typing_touched": false
   },
-  "allowed_actions": [
-    "read stable-main GitHub Actions workflow/config/source files",
-    "read authoritative branch/generation metadata",
-    "write Utility-owned state and append-only result only"
-  ],
-  "forbidden_actions": [
-    "workflow dispatch",
-    "scheduler mutation",
-    "research/scientific branch mutation",
-    "candidate typing/readiness mutation",
-    "evidence/control/preserve/formal mutation",
-    "research PR merge",
-    "consumed/protected identity target",
-    "result-bearing rerun"
-  ],
+  "integrity_checks": {
+    "workflow_dispatch": false,
+    "scheduler_mutation": false,
+    "scheduler_registry_mutation": false,
+    "scientific_workflow_or_experiment": false,
+    "research_main_evidence_control_preserve_mutation": false,
+    "consumed_or_protected_identity_used_as_autonomous_task_target": false,
+    "candidate_typing_or_readiness_mutation": false,
+    "research_pr_merge": false,
+    "development_tooling_branch_created": false,
+    "hidden_main_dependency_created": false
+  },
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
-    "preserved_fields": "NOT_APPLICABLE_NO_RESEARCH_CANDIDATE_TOUCHED",
+    "preserved_fields": "NOT_APPLICABLE_NO_CURRENT_RESEARCH_CANDIDATE_TOUCHED",
     "typing_or_readiness_changed": false
   },
   "outputs": {
     "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0724+0900-WORKFLOW-TRIGGER-ISOLATION-6C3A91D7-0724-start.md",
-    "start_result_commit": "8dcc05b41d95dd72a944ffbb4b1e666c0fa086ee"
+    "start_result_commit": "8dcc05b41d95dd72a944ffbb4b1e666c0fa086ee",
+    "final_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0724+0900-WORKFLOW-TRIGGER-ISOLATION-6C3A91D7-0730.md",
+    "final_result_commit": "57ae2a20ede7205bf32c8865fe130a6fc9c08ad4"
   },
-  "stop_condition": "One bounded static characterization complete, or authority/ownership supersession detected."
+  "follow_up_recommendation": "No follow-up request added because Control already carries generic integrity/tooling hardening. If implementation is later desired, issue fresh bounded authority for an isolated candidate-agnostic static workflow-policy checker; do not exercise historical result-bearing workflows to validate it.",
+  "stop_reason": "BOUNDED_STATIC_WORKFLOW_TRIGGER_ISOLATION_CHARACTERIZATION_COMPLETE_MAX_RUNS_1"
 }
