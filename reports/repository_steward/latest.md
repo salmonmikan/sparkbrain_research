@@ -1,22 +1,20 @@
 # SparkBrain Repository Steward — Latest
 
 - schema_version: `2`
-- generation_id: `STEWARD-20260921T075030+0900-G3-A6C4E291`
-- produced_at: `2026-09-21T07:50:30+09:00`
-- producer_run_id: `repository-steward-auto-20260921T075030+0900-G3-A6C4E291`
+- generation_id: `STEWARD-20260921T105047+0900-G4-B3E7C921`
+- produced_at: `2026-09-21T10:50:47+09:00`
+- producer_run_id: `repository-steward-auto-20260921T105047+0900-G4-B3E7C921`
 - authority_scope: `REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY`
-- supersedes_generation_id: `STEWARD-20260921T015217+0900-G2-7D3A91C4`
+- supersedes_generation_id: `STEWARD-20260921T075030+0900-G3-A6C4E291`
 
-Repository science/research/control-plane separation remains intact. Independent repository re-fetch confirms `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` unchanged and unprotected, repository rulesets `0`, exactly five authoritative `evidence/*` annotated tags, thirteen legacy `freeze/*` branches, and zero tag-based `freeze/*`, `formal/*`, or `sealed/*`. Previously indexed STARTED/raw-preserve anchors remain unchanged. No immutable-ref incident was observed.
+Repository science/research/control-plane separation remains intact. Independent re-fetch confirms `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` unchanged and unprotected, repository rulesets `0`, exactly five authoritative annotated `evidence/*` tags, thirteen legacy `freeze/*` branches, and zero tag-based `freeze/*`, `formal/*`, or `sealed/*`. Evidence-tag object SHAs match G3; current evidence-family raw preserve refs remain present. No immutable-ref incident is observed.
 
-Governance context has advanced materially since G2. Evidence Analyst `EVA-20260921T065846+0900-R29-7B2C91E4` opened fresh MECHANISM Architecture object `CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01`. MAIN `MAIN-20260921T071418+0900-PRIMARY-FUNNEL21-MECH-ASMMATCH-R29-8E4C21A7` then completed only the authorized comparator-feasibility cycle on isolated research branch `research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921@b2547429823be29a2547419c80c40fb2138dfdc9` and stopped for fresh Analyst canonicalization. Direct ref reconciliation confirms the branch still points to that exact head; workflow `35541396714` and exact-head CI `35541396705` are both completed/success on the same head. Steward makes no scientific reinterpretation of MAIN's reported terminal and does not authorize continuation.
+Fresh governance context is Analyst `EVA-20260921T095900+0900-R32-6D2A91C4@6bf35ff0f08a981feb09abced00e157526a47cb0`, which admits fresh MECHANISM Architecture object `CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01` without reopening its terminal predecessor. MAIN `MAIN-20260921T104704+0900-RELAY-FUNNEL21-MECH-ASMSET-R32-CICOMPLETE-8D3C71A2@488944918fc07ef16563491e0427c42499584e7a` persisted only the prospective contract-feasibility result on isolated research branch `research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921@52e14294d8e413a95c1dad387104bdeaa4468d39`; exact-head CI `35550692068` completed/success. No intervention outcome was opened. Steward makes no scientific reinterpretation or continuation decision.
 
-Latest SUB `SUB-20260921T073900+0900-NOOP-NOMECH-4C7A91E2` is a no-op independent supply check with no new research branch, workflow, intervention, or candidate. There is therefore no SUB artifact to promote or reconcile with MAIN.
+SUB `SUB-20260921T104150+0900-SYSTEM-OUTREPLAYINVALID-7C2A91E4` remains isolated on `research/exploratory-sub-v05-outcome-replay-credit-semantics-20260921@6fa2114ff5f68bb940abd21600a587b460293097`; CI `35551537415` completed/success. Its fixed comparator failed before replay outcome exposure and the producer stopped without rescue. This is a separate NON_EVIDENTIARY terminal research artifact, not a main/evidence promotion candidate.
 
-Utility lifecycle is now clean: Control has compare-and-swap acknowledged and archived the prior blocked assignment, and `utility_orchestrator/assignment/current.md` is schema-v2 `IDLE` with no active assignment. This closes the stale G2 Utility finding without Steward mutation.
+Utility remains schema-v2 `IDLE` with no active assignment after Control CAS acknowledgment. Issue #139 remains open and aligned with the zero-ruleset protection gap. PR #148/#149 remain open, unmerged and mergeable at unchanged heads `14ba187bb13705bc306baabe310d5364cf1b60fb` and `01ef8c3a54ff20403aba2fab9996dbda5552dd4d`; `DEFER_PENDING_REVIEW_FIX` is preserved.
 
-Issue #139 remains open and accurately tracks the zero-ruleset protection gap and legacy-freeze preservation requirement; it remains operational governance, not canonical science. PR #148 remains open/unmerged/mergeable at `14ba187bb13705bc306baabe310d5364cf1b60fb`; PR #149 remains open/unmerged/mergeable at `01ef8c3a54ff20403aba2fab9996dbda5552dd4d`. Heads are unchanged, so `DEFER_PENDING_REVIEW_FIX` is preserved.
-
-No new `main` promotion candidate qualifies. The current MAIN research branch is candidate-specific NON_EVIDENTIARY Architecture scaffolding bound to fixed DEV seeds and a one-cycle comparator-feasibility contract rather than a stable outcome-independent reusable component. `main_promotion_candidates=[]`.
+`main_promotion_candidates=[]`: MAIN's branch is candidate-specific prospective Architecture contract material, while SUB's branch is a terminal invalid-contract Discovery artifact. Neither is a reviewed stable outcome-independent reusable component.
 
 No experiment, research workflow dispatch, identity consumption, outcome reinterpretation, scientific freeze decision, research PR merge, scheduler mutation, ruleset/protection mutation, preserve/evidence mapping mutation, immutable-ref mutation, or main promotion was performed by Repository Steward.
