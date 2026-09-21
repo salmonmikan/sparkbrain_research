@@ -1,22 +1,22 @@
 # SparkBrain Repository Steward — Latest
 
 - schema_version: `2`
-- generation_id: `STEWARD-20260921T195000+0900-G7-7D2C91A4`
-- produced_at: `2026-09-21T19:50:00+09:00`
-- producer_run_id: `repository-steward-auto-20260921T195000+0900-G7-7D2C91A4`
+- generation_id: `STEWARD-20260922T015006+0900-G8-6B9D31F2`
+- produced_at: `2026-09-22T01:50:06+09:00`
+- producer_run_id: `repository-steward-auto-20260922T015006+0900-G8-6B9D31F2`
 - authority_scope: `REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY`
-- supersedes_generation_id: `STEWARD-20260921T165000+0900-G6-8C4A21D7`
+- supersedes_generation_id: `STEWARD-20260921T195000+0900-G7-7D2C91A4`
 
-Repository science/research/control-plane separation remains intact. Independent re-fetch confirms `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` unchanged; the branch API reports `protected=false`; repository rulesets remain `0`; exactly five annotated `evidence/*` tags remain at unchanged tag-object SHAs; thirteen legacy `freeze/*` branches remain; and tag-based `freeze/*`, `formal/*`, and `sealed/*` refs remain zero. Evidence-family raw preserve anchors for H5, NI01, C19-v4, C19-R2, and PD01 were re-fetched and remain unchanged. No immutable-ref incident is observed.
+Repository science/research/evidence separation remains compliant. Independent re-fetch confirms `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` unchanged and unprotected, repository rulesets remain `0`, exactly five annotated `evidence/*` tags remain at unchanged tag-object SHAs, thirteen legacy `freeze/*` branches remain preserved, and tag-form `freeze/*`, `formal/*`, and `sealed/*` refs remain zero. The five evidence-family raw preserve anchors also remain unchanged. No immutable-ref incident is observed.
 
-Fresh governance context is Control `CTRL-20260921T185206+0900-R24-6B4D21C8@5f9348022b3af8ef6ac6c1bd9d15cb77380d7d92` and Evidence Analyst `EVA-20260921T185902+0900-R41-8D3A21C7@ffc8672c01ed0f45b2d0fd998c36706b8a343a91`. Analyst R41 terminally closes the synthetic outcome-blind four-stage pipeline-conformance SYSTEM object as non-evidentiary and opens fresh SYSTEM Architecture object `CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01` for static metadata/provenance characterization only. No MECHANISM is eligible or READY and no fresh FORMAL authority exists.
+Fresh governance context is Control `CTRL-20260922T010052+0900-R27-5C8A21F4`, Evidence Analyst `EVA-20260922T011108+0900-R49-7E3C21A5`, MAIN `MAIN-20260922T012600+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R49-CYCLE1-7E3C21A5`, SUB `SUB-20260922T013609+0900-NOOP-R49POSTMAIN-9D4A21C7`, and Utility `UTILITY-20260922T013100+0900-AUTO-SCHEDDELAY-COMPLETED-3D7A9C52` with the Control-owned Utility assignment pointer still cleanly IDLE.
 
-Latest MAIN `MAIN-20260921T192340+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R41-SCOPESTOP-5C8A21D4` stopped fail-closed when a metadata-oriented GitHub commit endpoint over-returned result-bearing evidence patch content. MAIN reports those result fields were not used for inference, reached no terminal classification, created no research branch, ran no scientific workflow, consumed no identity, and mutated no scientific/control/preserve/evidence ref. Steward records this as `PROTECTED_OUTCOME_ENDPOINT_OVERRETURN_CONTAINED_FAIL_CLOSED`, not as scientific evidence and not as an immutable-ref incident; fresh Analyst review is required before that SYSTEM object proceeds.
+The only active canonical object remains `CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01` at SYSTEM Architecture. MAIN R49 completed only the prospectively bound static/read-only contract cycle `SB-R49-C32-CREDIT-TRACE-CROSSOVER-V1` and stopped before synthetic measurement. MAIN reports no target research branch/head and no active identity; fresh Analyst review is required before outcome-bearing work. SUB then correctly no-oped. Accordingly, no current scientific/research artifact qualifies for main promotion.
 
-Latest SUB `SUB-20260921T193222+0900-NOOP-R41POSTMAIN-SCOPESTOP-2F8C41A7` is a no-target no-op with no candidate, research branch, workflow, probe, identity, or Utility request. Utility mailbox remains `ops/utility-orchestrator-requests@472726e572a854fe3577e2733bb1de37c05df1fa`; Control-owned state remains schema-v2 `IDLE` with no active assignment.
+Canonical docs vs Issues remain aligned. Issue #139 is the sole open Issue and correctly tracks the still-real server-side tag-protection gap: `docs/AUTHORITATIVE_TAGS.md` says rulesets should protect authoritative namespaces, while direct repository re-fetch still shows zero rulesets. No Issue mutation is warranted.
 
-Issue #139 remains open and aligned with the directly re-fetched zero-ruleset/unprotected-main governance gap. PR #148/#149 remain open at unchanged heads `14ba187bb13705bc306baabe310d5364cf1b60fb` and `01ef8c3a54ff20403aba2fab9996dbda5552dd4d`; no Steward merge/retarget occurred and prior `DEFER_PENDING_REVIEW_FIX` disposition is preserved.
+PR #148 remains open/unmerged/mergeable at `14ba187bb13705bc306baabe310d5364cf1b60fb` with three current unresolved review threads (two P1, one P2). PR #149 remains open/unmerged/mergeable at `01ef8c3a54ff20403aba2fab9996dbda5552dd4d` with one non-outdated unresolved P1 review thread. Both remain deferred; Steward performs no merge.
 
-`main_promotion_candidates=[]`: R40 synthetic conformance remains candidate-specific non-evidentiary integrity scaffolding, and R41 MAIN created no implementation/research branch before its scope-invalid stop. No independently reviewed stable outcome-independent reusable component qualifies.
+`main_promotion_candidates=[]`. Utility's latest autonomous task was a one-run NON_EVIDENTIARY read-only scheduler-delay diagnostic and did not touch research/main branches, scientific identities, workflows, candidate typing, or schedulers.
 
-No experiment, research workflow dispatch, identity consumption, outcome reinterpretation, scientific freeze decision, research PR merge, scheduler mutation, ruleset/protection mutation, preserve/evidence mapping mutation, immutable-ref mutation, or main promotion was performed by Repository Steward.
+No experiment, research workflow dispatch, identity consumption, outcome reinterpretation, scientific freeze decision, research PR merge, scheduler mutation, ruleset/protection mutation, Issue mutation, preserve/evidence mapping mutation, immutable-ref mutation, or main promotion was performed. Only designated Steward persistence was updated.
