@@ -1,42 +1,34 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T073100+0900-AUTO-WORKFLOW-TRIGGER-ISOLATION-COMPLETED-6C3A91D7",
-  "produced_at": "2026-09-22T07:31:00+09:00",
-  "producer_run_id": "utility-auto-20260922T0724+0900-workflow-trigger-isolation",
-  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_TOOLING_INVESTIGATION",
-  "supersedes_generation_id": "UTILITY-20260922T072500+0900-AUTO-WORKFLOW-TRIGGER-ISOLATION-RUNNING-6C3A91D7",
+  "generation_id": "UTILITY-20260922T082500+0900-AUTO-EQUIV-CERT-PROTOTYPE-RUNNING-A42D7C19",
+  "produced_at": "2026-09-22T08:25:00+09:00",
+  "producer_run_id": "utility-auto-20260922T0824+0900-equiv-cert-prototype",
+  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_ISOLATED_NON_EVIDENTIARY_TOOLING_PROTOTYPE",
+  "supersedes_generation_id": "UTILITY-20260922T073100+0900-AUTO-WORKFLOW-TRIGGER-ISOLATION-COMPLETED-6C3A91D7",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
-  "autonomous_task_id": "AUTOUTIL-20260922T0724+0900-WORKFLOW-TRIGGER-ISOLATION-6C3A91D7",
-  "status": "COMPLETED",
+  "autonomous_task_id": "AUTOUTIL-20260922T0824+0900-EQUIV-CERT-PROTOTYPE-A42D7C19",
+  "status": "RUNNING",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "objective": "Read-only characterize generic GitHub Actions trigger/write isolation on stable main and identify candidate-agnostic static policy gaps that could permit accidental result-bearing retrigger or cross-purpose mutation.",
-  "classification": "LEGACY_PUSH_TRIGGERED_WRITE_CAPABLE_BRIDGES_SELF_DISARMED_BUT_TRIGGER_ISOLATION_GAP_CONFIRMED",
-  "finding_summary": [
-    "Stable main contains seven GitHub Actions workflows. Ordinary CI is broadly push/PR triggered but non-mutating; authoritative tag creation and the default-branch formal registration guard are manually dispatched and strongly fail-closed.",
-    "Three workflows combine main-push path triggers with elevated capability: a harmless dispatch-capability probe, the legacy CX01 one-way launch bridge with actions+contents write, and the legacy CX01 evidence-preservation bridge with contents write.",
-    "The launch and preservation bridges have strong exact-binding/no-clobber internal guards, but workflow-definition edits still automatically enter write-capable control paths; operation-level safety is stronger than trigger-level isolation.",
-    "Both historical scientific bridges are currently self-disarmed: the durable STARTED/control branch and durable preservation branch already exist, so their explicit branch-absence checks should fail before replay/recreation.",
-    "A reusable candidate-agnostic static policy/linter could prohibit automatic push/PR triggers from coexisting with elevated actions/contents write plus workflow-dispatch or control/preserve/formal/evidence ref-writing semantics, absent an explicit reviewed exception."
-  ],
+  "objective": "Build and locally validate one isolated candidate-agnostic fail-closed equivalence-certificate verifier prototype using only synthetic fixtures and reusable stable-main tooling concepts.",
   "trigger_source": {
-    "control": "CTRL-20260922T065500+0900-R30-6F4C21A8 retains prospective integrity/tooling hardening under intentional scientific idle",
-    "evidence_analyst": "EVA-20260922T065809+0900-R55-5A8C21F7 reports Architecture active/queued 0/0, PF eligible/READY 0/0, MAIN/SUB intentional idle, utility_request null",
+    "control": "CTRL-20260922T065500+0900-R30-6F4C21A8 explicitly permits a future isolated candidate-agnostic equivalence verifier prototype if bounded, independent, NON_EVIDENTIARY, and non-MAIN-critical",
+    "evidence_analyst": "EVA-20260922T075818+0900-R56-8B3D21F6: Architecture active/queued 0/0, PF eligible/READY 0/0, no active target, Utility request none",
     "open_utility_request_selected": null,
     "assignment_pointer": "clean schema-v2 IDLE"
   },
-  "freshness_check_before_terminal_persistence": {
+  "ownership_generations": {
     "assignment_pointer": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "evidence_analyst": "EVA-20260922T065809+0900-R55-5A8C21F7@11e84b37dd8739c38f538f1231aab7234356c5d0",
-    "control": "CTRL-20260922T065500+0900-R30-6F4C21A8@fc5297050c93bb67a9b69aae24179ce7d8888c15",
-    "main_sub": "Analyst R55: MAIN R54 terminal intentional idle; SUB R54 no-target; Architecture active/queued 0/0; no Utility request",
-    "relay": "NO_SEPARATE_DURABLE_ADVANCE_R54_NO_ACTIVE_MAIN_OBJECT",
-    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "material_supersession_detected": false
+    "evidence_analyst": "EVA-20260922T075818+0900-R56-8B3D21F6",
+    "main": "MAIN R55 intentional no-target idle per Analyst R56/SUB R55 reconciliation",
+    "sub": "SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7",
+    "relay": "NO_FRESH_SEPARATE_RELAY_OWNED_SCIENTIFIC_OBJECT_SURFACED",
+    "control": "CTRL-20260922T065500+0900-R30-6F4C21A8",
+    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
   },
   "ownership_checks": {
     "collision_found": false,
@@ -44,29 +36,31 @@
     "active_or_queued_research_object_touched": false,
     "candidate_typing_touched": false
   },
-  "integrity_checks": {
-    "workflow_dispatch": false,
-    "scheduler_mutation": false,
-    "scheduler_registry_mutation": false,
-    "scientific_workflow_or_experiment": false,
-    "research_main_evidence_control_preserve_mutation": false,
-    "consumed_or_protected_identity_used_as_autonomous_task_target": false,
-    "candidate_typing_or_readiness_mutation": false,
-    "research_pr_merge": false,
-    "development_tooling_branch_created": false,
-    "hidden_main_dependency_created": false
-  },
+  "allowed_actions": [
+    "read stable-main reusable implementation/test primitives",
+    "create one isolated Utility-owned development branch from exact stable-main SHA",
+    "add pure-data verifier prototype and synthetic tests",
+    "run local outcome-independent tooling tests",
+    "persist Utility-owned state/results"
+  ],
+  "forbidden_actions": [
+    "candidate or Funnel authority",
+    "PRE_FORMAL or FORMAL action",
+    "scientific workflow dispatch or identity creation",
+    "consumed/protected identity targeting",
+    "held-out/evaluator/target access",
+    "research/main/evidence/control/preserve/freeze/sealed/formal mutation",
+    "scheduler mutation",
+    "research PR merge"
+  ],
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
     "preserved_fields": "NOT_APPLICABLE_NO_CURRENT_RESEARCH_CANDIDATE_TOUCHED",
     "typing_or_readiness_changed": false
   },
   "outputs": {
-    "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0724+0900-WORKFLOW-TRIGGER-ISOLATION-6C3A91D7-0724-start.md",
-    "start_result_commit": "8dcc05b41d95dd72a944ffbb4b1e666c0fa086ee",
-    "final_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0724+0900-WORKFLOW-TRIGGER-ISOLATION-6C3A91D7-0730.md",
-    "final_result_commit": "57ae2a20ede7205bf32c8865fe130a6fc9c08ad4"
+    "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0824+0900-EQUIV-CERT-PROTOTYPE-A42D7C19-0824-start.md",
+    "start_result_commit": "8499848401f6c3190eaca94fb3ca6b5a94dbdb1a"
   },
-  "follow_up_recommendation": "No follow-up request added because Control already carries generic integrity/tooling hardening. If implementation is later desired, issue fresh bounded authority for an isolated candidate-agnostic static workflow-policy checker; do not exercise historical result-bearing workflows to validate it.",
-  "stop_reason": "BOUNDED_STATIC_WORKFLOW_TRIGGER_ISOLATION_CHARACTERIZATION_COMPLETE_MAX_RUNS_1"
+  "stop_condition": "ONE_BOUNDED_PROTOTYPE_TEST_PASS_OR_EARLIER_ON_SUPERSESSION_COLLISION_SCIENTIFIC_OUTCOME_DEPENDENCY_OR_PROTECTED_ARTIFACT_NEED"
 }
