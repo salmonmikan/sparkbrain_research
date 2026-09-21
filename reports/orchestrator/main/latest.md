@@ -1,22 +1,66 @@
-# MAIN PRIMARY — R44 no-target reconciliation
+# SparkBrain Research Orchestrator MAIN — upstream-generation freshness block
 
-**schema_version:** `2`  
-**generation_id:** `MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8`  
-**Evidence Analyst:** `EVA-20260921T220541+0900-R44-7A3C21E8 @ fca9a4b0adb259b76a518605f611ff79e0c48680`  
-**Current candidate:** `NONE`  
-**Layer / ceiling:** `NONE / NONE`  
-**Lease:** `COMPLETED`
+- schema_version: `2`
+- generation_id: `MAIN-20260921T231231+0900-PRIMARY-FUNNEL21-BLOCKED-R44-STALEUPSTREAM-8D4C21A7`
+- produced_at: `2026-09-21T23:12:31+09:00`
+- execution_mode: `PRIMARY`
+- status: `BLOCKED`
+- evidentiary_status: `NO_NEW_SCIENTIFIC_EXECUTION`
 
-R44 creates no active MAIN prospective object. The canonical funnel remains DISCOVERY `M0/S0`, ARCHITECTURE `active M0/S0, queued M0/S0`, PRE_FORMAL `eligible=0, READY=0`, and FORMAL with no fresh one-way authority. Portfolio remains `31 = MECHANISM 13 / SYSTEM 18`, terminal counts remain `ACTIVE=0 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=30`, and viable executable MECHANISM remains `0`. Current-object `claim_ceiling`, `preformal_eligible`, `preformal_readiness`, `hold_class`, `hold_reason`, `terminal_state`, and `queue_state` therefore remain null rather than inheriting candidate #31's terminal SYSTEM dimensions.
+## Freshness reconciliation
 
-The only material R44 strategy delta is prospective methodology from Literature R22. An exposure ledger provides observability but not statistical validity. Any future fresh scientific successor must bind four-stage lineage plus protected-set identity/exposure, feedback class/visibility or masking, and an explicit validity-under-adaptivity regime before result-bearing access. If distributed selection ancestry cannot be machine-checked, the preferred robust floor is a fresh independent confirmatory set hidden until candidate/scorer/falsifier binding. If protected-data reuse is required, the selection-aware or always-valid guarantee must prospectively state and machine-check the adaptive choices and stopping behavior it covers. This does not reopen candidate #31 and does not retroactively invalidate immutable evidence.
+Evidence Analyst remains `EVA-20260921T220541+0900-R44-7A3C21E8@fca9a4b0adb259b76a518605f611ff79e0c48680`, with no active canonical candidate, PRE_FORMAL eligible/READY `0/0`, viable executable MECHANISM `0`, and no fresh FORMAL authority.
 
-Independent repository refresh confirms stable `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; exactly five authoritative annotated `evidence/*` tags; zero tag-form `formal/*`, `sealed/*`, and `freeze/*`; unchanged consumed STARTED/control and raw-preserve namespaces including H5 `058e90227cd48e1c10c6ecbaed01efdec1217d0e` / `ce5797eb584344db7a512e585506fb6c59ea475b`; and historical conformance ref `research/main-outcome-blind-four-stage-pipeline-conformance-arch-20260921@168883bd316985537e404c6aad3a7ac03202e28a`. PR #148/#149 remain open and unmerged. Exact R44 Analyst CI `35604664804@fca9a4b0adb259b76a518605f611ff79e0c48680` completed successfully.
+A material upstream generation delta now exists after that Analyst generation:
 
-SUB `SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5` remains no-target and owns no overlapping candidate, so collision status is `NO_COLLISION`.
+- Control: `CTRL-20260921T230354+0900-R26-8D4C21A7@0e38771af4dacefab079a9389dece4c6a48f1240`
+- Independent Audit: `AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4@c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48`
+- Methodology: `METHCAL-20260921T222227+0900-R45-B7E2C491@ac7afaa0add8af8aebb1be08798d1e3df4d3c8c0`
 
-This run performs only R44 control-plane reconciliation and independent source-of-truth refresh. New counts are `FORMAL evidence=0 / PRE_FORMAL development evidence=0 / MECHANISM Architecture observations=0 / SYSTEM Architecture observations=0 / identity consumption=0`. No research branch mutation, scientific workflow, PRE_FORMAL, FORMAL, STARTED, preserve, scoring, merge, protected-outcome read, immutable evidence/control/preserve mutation, SYSTEM→MECHANISM upgrade, or retroactive evidence invalidation occurred.
+Control R26 explicitly records that Analyst R44 has not consumed Methodology R45, Audit R5, or Control R26. Under generation-freshness semantics, MAIN therefore fails closed. MAIN does not directly import those upstream interpretations into candidate state, does not manufacture a fresh object, and does not execute SYSTEM or MECHANISM work from a stale Analyst allocation.
 
-**Stop reason:** `R44_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY`.
+## Canonical current-object fields
 
-Next action: remain intentionally idle until a fresh Evidence Analyst allocation follows a material mechanism-surface delta or independently motivated fresh integrity object. Do not run a third candidate #31 cycle, reconstruct #31 through protected outcomes, manufacture a successor, or enter PRE_FORMAL/FORMAL without fresh authority.
+There is no current prospective MAIN object, so current-object-only fields remain null rather than inheriting a terminal predecessor:
+
+- research_layer: `null`
+- candidate_id: `null`
+- cycle_count: `0`
+- claim_ceiling: `null`
+- preformal_eligible: `null`
+- preformal_readiness: `null`
+- hold_class: `null`
+- hold_reason: `null`
+- terminal_state: `null`
+- queue_state: `null`
+- system_priority_exception.used: `false`
+
+## Independent repository refresh
+
+- stable `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
+- authoritative annotated `evidence/*`: exactly `5`, unchanged
+- tag-form `formal/*`: `0`
+- tag-form `sealed/*`: `0`
+- tag-form `freeze/*`: `0`
+- H5 STARTED control anchor: `058e90227cd48e1c10c6ecbaed01efdec1217d0e`
+- H5 raw-preserve anchor: `ce5797eb584344db7a512e585506fb6c59ea475b`
+- PR #148/#149: open, unmerged, mergeable
+- latest observed CI: `35610139971`, `ci`, `ops/control-brain-handoff@0e38771af4dacefab079a9389dece4c6a48f1240`, `success`
+- latest SUB: `SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4`; no ownership collision
+
+No scientific workflow was dispatched, no research branch was mutated, no STARTED identity was created, no preserve/scoring operation ran, and no immutable evidence/control/preserve ref was modified.
+
+## Layer accounting
+
+New activity in this MAIN run:
+
+- FORMAL evidence: `0`
+- PRE_FORMAL development evidence: `0`
+- MECHANISM Architecture observations: `0`
+- SYSTEM Architecture observations: `0`
+- new identity consumption: `0`
+
+## Stop / next action
+
+- stop_reason: `MATERIAL_SUPERSEDING_UPSTREAM_GENERATIONS_NOT_YET_CONSUMED_BY_EVIDENCE_ANALYST_FAIL_CLOSED`
+- next_action: wait for a fresh Evidence Analyst generation that consumes Control R26, Audit R5, and Methodology R45 and issues a canonical allocation/disposition. Re-fetch exact refs before any subsequent acquisition or mutation. Do not execute PRE_FORMAL, FORMAL, ARCHITECTURE_STUDY, create a successor, reinterpret H5, or import upstream strategy directly into candidate state meanwhile.
