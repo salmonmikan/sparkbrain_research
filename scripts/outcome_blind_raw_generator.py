@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 from typing import Any
 
@@ -39,8 +40,7 @@ def generate_raw(*, fixture_path: Path, output_path: Path, seed: int) -> dict[st
     with output_path.open("wb") as handle:
         handle.write(canonical_json_bytes(raw))
         handle.flush()
-        os_fsync = getattr(__import__("os"), "fsync")
-        os_fsync(handle.fileno())
+        os.fsync(handle.fileno())
     return raw
 
 
