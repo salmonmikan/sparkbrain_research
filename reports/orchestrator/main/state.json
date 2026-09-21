@@ -2,10 +2,10 @@
   "schema_version": 2,
   "generation_id": "MAIN-20260921T181649+0900-PRIMARY-FUNNEL21-SYSTEM-PIPECONF-R40-LINTFIX-6A3D21C8",
   "producer_run_id": "sparkbrain-main-primary-20260921T181649JST-R40-LINTFIX",
-  "produced_at": "2026-09-21T18:25:56+09:00",
+  "produced_at": "2026-09-21T18:27:30+09:00",
   "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
-  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_R40_PREFLIGHT_DIAGNOSIS_AND_ONE_BOUNDED_MECHANICAL_FIX",
+  "status": "COMPLETED",
+  "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_SYSTEM_ARCHITECTURE_R40_PREFLIGHT_DIAGNOSIS_ONE_BOUNDED_MECHANICAL_FIX_AND_EXACT_HEAD_CI_COLLECTION",
   "analyst_generation_id": "EVA-20260921T180006+0900-R40-7C4A21E9",
   "analyst_commit": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
   "supersedes_generation_id": "MAIN-20260921T174556+0900-RELAY-FUNNEL21-SYSTEM-PIPECONF-R39-CIFAIL-3A7D21E6",
@@ -119,19 +119,19 @@
       "run_id": 35583071628,
       "head_sha": "168883bd316985537e404c6aad3a7ac03202e28a",
       "kind": "CI_SYNTHETIC_ARCHITECTURE_CONFORMANCE_AFTER_R40_BOUNDED_PREFLIGHT_FIX",
-      "status": "in_progress",
-      "conclusion": null,
-      "observed_steps": "Python 3.11 and 3.13 both passed Install, Lint, and Local readiness; both are currently in Test; Validate bundle pending",
+      "status": "completed",
+      "conclusion": "success",
+      "observed_steps": "Python 3.11 and 3.13 both passed Install, Lint, Local readiness, Test, and Validate bundle",
       "scientific_dispatch": false,
-      "expected_next_action": "collect this exact run only; regardless of terminal result stop for fresh Analyst review"
+      "terminal_mapping": "SYNTHETIC_LIVE_CONFORMANCE_PASS"
     }
   ],
   "observations": {
     "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY",
-    "terminal_observation": null,
+    "terminal_observation": "SYNTHETIC_LIVE_CONFORMANCE_PASS",
     "exact_lint_diagnosis": "Confirmed from exact Python 3.11 job log: Ruff 0.16.8 I001 import block un-sorted or un-formatted in scripts/outcome_blind_raw_generator.py; Local readiness/Test/Validate had not run, so no result-bearing stage had been reached.",
     "mechanical_repair": "Applied exactly one outcome-independent formatting correction and refroze its SHA256; no fixture/raw schema/transform/features/comparator/baseline/scorer/threshold/exclusion/resource/runtime/input/terminal mapping changed.",
-    "post_repair_ci_progress": "Exact-head CI has already passed the previous Lint blocker and Local readiness on both runtime matrix jobs; Test is still running."
+    "post_repair_ci_result": "Exact-head workflow 35583071628 completed success; both Python matrix jobs passed Lint, Local readiness, Test, and Validate bundle. Under the R40 prospective tree this maps to SYNTHETIC_LIVE_CONFORMANCE_PASS and requires stop for fresh Analyst review."
   },
   "ordinary_reductions": "NOT_APPLICABLE_METHOD_INTEGRITY_SYSTEM_OBJECT",
   "support_breadth": "SYNTHETIC_NON_SCIENTIFIC_FIXTURE_ONLY_R39_PIPELINE_CONFORMANCE",
@@ -139,7 +139,7 @@
     "FORMAL_evidence": 0,
     "PRE_FORMAL_development_evidence": 0,
     "MECHANISM_Architecture_observations": 0,
-    "SYSTEM_Architecture_observations": 0,
+    "SYSTEM_Architecture_observations": 1,
     "new_identity_consumption": 0
   },
   "consumed_identities": [
@@ -155,8 +155,10 @@
   "integrity": {
     "analyst_tip_rechecked_before_acquisition": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
     "analyst_tip_rechecked_immediately_before_research_mutation": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
+    "analyst_tip_rechecked_before_terminal_persistence": "cc75b2a7f1c398a393180dfed59305fcc03e7aee",
     "research_branch_head_before_mutation": "5527ac14d4d19078a91aa40f8825d5a4f41f0a91",
     "research_branch_head_after_mutation": "168883bd316985537e404c6aad3a7ac03202e28a",
+    "exact_head_ci_collected": true,
     "stable_main_unchanged": true,
     "sub_collision_status": "NO_COLLISION",
     "scientific_data_used": false,
@@ -171,8 +173,8 @@
     "bounded_mechanical_fix_count": 1,
     "further_same_run_repair_authorized": false
   },
-  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_R40_AFTER_ONE_BOUNDED_PREFLIGHT_FIX",
-  "next_action": "Collect exact workflow 35583071628 at head 168883bd316985537e404c6aad3a7ac03202e28a only. Do not modify the branch again in this generation. After collection, stop for fresh Evidence Analyst review regardless of PASS/failure; no same-run PRE_FORMAL, FORMAL, scientific-data reuse, identity action, or second repair.",
+  "stop_reason": "R40_SYNTHETIC_LIVE_CONFORMANCE_PASS_STOP_FRESH_ANALYST_REVIEW",
+  "next_action": "Fresh Evidence Analyst must consume the R40 SYSTEM Architecture conformance observation and canonicalize disposition or allocate a fresh successor. Do not continue this object in the same run; no PRE_FORMAL, FORMAL, second repair, scientific-data reuse, identity action, or SYSTEM-to-MECHANISM upgrade.",
   "utility_request": null,
   "owner": "main"
 }
