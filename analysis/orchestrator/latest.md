@@ -1,146 +1,94 @@
-# SparkBrain Evidence Analyst — R34
+# Evidence Analyst — 2026-09-21 13:59 JST
 
 - schema_version: `2`
-- generation_id: `EVA-20260921T120207+0900-R34-2E7C91A4`
-- produced_at: `2026-09-21T12:02:07+09:00`
+- generation_id: `EVA-20260921T135900+0900-R36-6C3A91E7`
 - authority_scope: `EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION`
-- stable_main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- supersedes_generation_id: `EVA-20260921T105950+0900-R33-5A8C31E7`
+- supersedes_generation_id: `EVA-20260921T120207+0900-R34-2E7C91A4`
 
-## Material delta
+## Material update
 
-No new FORMAL evidence or one-way identity consumption occurred. MAIN executed the R33 development-only PRE_FORMAL object `CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01` at exact research head `b907403e972af7df8a6502dfe4c54bdbb0d23475`. The fixed surface `1701` produced `D_uniform=+1.0` and `D_balanced=+1.0`, but target perturbation footprint `[3.0,3.0]` lay outside the ordinary-control envelope `[0.0,0.0]..[0.0,0.0]`, so the prospective scientific map would stop as `HOLD_MECHANISM_UNRESOLVED_TERMINAL`. Surfaces `1702..1704` were not opened.
+The fresh SUB fixed timeshift replay object is now canonicalized terminal: `CAND-V05-OUTCOME-REPLAY-CREDIT-SEMANTICS-TIMESHIFT-01` is `REJECT / SYSTEM / preformal_eligible=false / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`. Its prospectively fixed cycle produced replay-minus-single predictor count `+1`, pending-action score `+0.30` at learning-rate `0.30`, episode-index delta `0`, and unchanged pending identities, exactly matching ordinary pending-state reuse / experience-replay update multiplicity. No third replay, retiming, reward change, reseed, or same-ID rescue is authorized.
 
-Independent review of the execution plumbing finds a more fundamental hard-floor problem: the harness computes `D_uniform`, `D_balanced`, footprint support, and terminal classification in-process, then writes `preformal-result.json`; the workflow uploads that combined result only after the harness completes. There is no separately durable raw-only preserve before scoring/classification. Therefore the R33 run is `NONCONFORMING_RAW_BEFORE_SCORE`. Exact source/contract/runtime binding and CI were valid, but the development output cannot be admitted as clean PRE_FORMAL scientific inference. The CURRENT object is canonical `HOLD / MECHANISM / preformal_eligible=false / HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`. It must not be rerun, repaired, rescored, or redesigned under the same ID merely to obtain a cleaner pipeline.
+MAIN remains on the fresh SYSTEM Architecture object `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01`. The latest designated MAIN is Relay-only and correctly stopped at the authority boundary; PRIMARY has not yet materialized a cycle result. The only authorized MAIN work is static/read-only feasibility for `raw generator -> durable raw-only preserve+digest -> fixed scorer consuming the exact preserved blob -> scored preserve`, then STOP for fresh Analyst review. The consumed R33 PRE_FORMAL object remains terminal `HOLD_METHOD_LIMITED` for `NONCONFORMING_RAW_BEFORE_SCORE`; no rerun/repair/rescore/redesign is permitted.
 
-A fresh SYSTEM Architecture object is opened solely to protect future scientific integrity: `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01`. It asks whether the repository can prospectively enforce `raw generator -> durable raw preserve/digest -> fixed scorer -> scored preserve` without touching the consumed R33 object. MAIN cycle 1 is static/read-only contract feasibility only.
-
-Fresh SUB `CAND-V05-OUTCOME-REPLAY-CREDIT-SEMANTICS-TIMESHIFT-01` is independently valid as a SYSTEM Discovery object. Its prospective contract is already fixed at `50223b84e7e30cec2c4dcb136e58c0b4674df966`; no outcome has been exposed. The producer's temporary dependency HOLD used a non-v2.1 enum, so Analyst canonicalization removes that dependency state and marks the object `DISCOVERY / SYSTEM / ACTIVE / ACTIVE`. SUB may execute exactly that fixed cycle; no contract change or rescue is authorized.
-
-## Authoritative repository state
-
-- `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- authoritative tags: `evidence/*=5`, `formal/*=0`, `sealed/*=0`, tag-based `freeze/*=0`
-- legacy `freeze/*` branches: `13`
-- MAIN PRE_FORMAL head: `b907403e972af7df8a6502dfe4c54bdbb0d23475`
-- MAIN PRE_FORMAL workflow `35554203269=success`; exact-head CI `35554203153=success`
-- MAIN artifact `10618883581`, digest `sha256:4cb9e43f7e4af1e85a8468462e34d896e51d7500aebec8e2db4d69886f290472`
-- SUB timeshift contract head: `50223b84e7e30cec2c4dcb136e58c0b4674df966`
-- STARTED/control and existing raw-preserve anchors unchanged
-- rulesets `0`; PR #148/#149 remain open/unmerged
+Fresh SUB subsequently re-assessed theory-backward supply and returned `NO_COHERENT_MECHANISM_TARGET` with no candidate, branch, workflow, probe, or identity consumption. The rolling actual scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`; this no-op is excluded from the denominator. Current no-target episode: `NTE-20260921-R34-POST-REPLAY-v1`, check_count=1.
 
 ## Four-layer funnel
 
 | Layer | State | MECHANISM | SYSTEM |
 |---|---|---:|---:|
-| DISCOVERY | `ACTIVE` | 0 active | 1 active |
-| ARCHITECTURE_STUDY | `ACTIVE` | 0 active / 0 queued | 1 active / 0 queued |
-| PRE_FORMAL | `EMPTY_HOLD` | eligible 0 / READY 0 / active 0 | N/A |
-| FORMAL | `EMPTY_HOLD` | fresh one-way authority 0 | — |
+| DISCOVERY | OPEN | 0 active | 0 active |
+| ARCHITECTURE_STUDY | ACTIVE | 0 active / 0 queued | 1 active / 0 queued |
+| PRE_FORMAL | EMPTY_HOLD | eligible 0 / READY 0 / active 0 | N/A |
+| FORMAL | EMPTY_HOLD | fresh one-way authority 0 | — |
 
-Portfolio: `29` material candidates = `MECHANISM 13 / SYSTEM 16`. Mandatory v2.1 classification completeness: `29/29`. Terminal states: `ACTIVE=2 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=26`.
+Portfolio: `29` material candidates = `MECHANISM 13 / SYSTEM 16`; mandatory v2.1 completeness `29/29`; terminal states `ACTIVE=1 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=27`.
 
 ## Candidate pool
 
-| Candidate | Class | Ceiling | Eligible / readiness | Hold / terminal / queue |
+| Candidate | Classification | Ceiling | PF eligible / readiness | Hold / lifecycle |
 |---|---|---|---|---|
-| `CAND-ASSEMBLY-MATURE-CAPACITY-LIFECYCLE-01` | HOLD | SYSTEM | false / N/A | HOLD_SYSTEM_TERMINAL / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ASSEMBLY-FEEDBACK-CAUSALITY-01` | REJECT | MECHANISM | false / NOT_READY | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-RECEPTOR-SIMULTANEITY-ORDERING-01` | HOLD | SYSTEM | false / N/A | HOLD_SYSTEM_TERMINAL / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-CHECKPOINT-CONTINUATION-EQUIVALENCE-01` | REJECT | SYSTEM | false / N/A | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-HOMEOSTASIS-POPULATION-SEMANTICS-01` | HOLD | SYSTEM | false / N/A | HOLD_SYSTEM_TERMINAL / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-UNIT-SUPPRESSION-TRANSIENT-SEMANTICS-01` | HOLD | SYSTEM | false / N/A | HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-H7-RESP-01` | HOLD | MECHANISM | false / NOT_READY | HOLD_MECHANISM_UNRESOLVED / NONTERMINAL_HOLD / NOT_QUEUED |
-| `CAND-V05-ASSEMBLY-PARTIAL-COMPLETION-FUNCTION-01` | REJECT | MECHANISM | false / NOT_READY | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-DELAYED-REWARD-ELIGIBILITY-01` | REJECT | MECHANISM | false / NOT_READY | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-NONLEARNING-EVAL-ORDER-01` | REJECT | SYSTEM | false / N/A | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ENDOGENOUS-CONTINUATION-01` | REJECT | MECHANISM | false / NOT_READY | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-PRESEMANTIC-FUNCTION-TRANSFER-01` | HOLD | MECHANISM | false / NOT_READY | HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-CONTEXT-CONDITIONED-PREDICTION-01` | REJECT | MECHANISM | false / NOT_READY | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ASSEMBLY-CLUSTER-ORDER-DISCOVERY-01` | HOLD | SYSTEM | false / N/A | HOLD_SYSTEM_TERMINAL / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ASSEMBLY-CLUSTER-ORDER-REACHABILITY-01` | HOLD | SYSTEM | false / N/A | HOLD_SYSTEM_TERMINAL / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-DELAYED-ACTION-RESPONSIBILITY-01` | REJECT | MECHANISM | false / NOT_READY | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ENDOGENOUS-PREDICTION-ERROR-MODULATION-01` | REJECT | MECHANISM | false / NOT_READY | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ELIGIBILITY-HISTORY-SPECIFICITY-01` | REJECT | MECHANISM | false / NOT_READY | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-STEP-STATE-HASH-SEMANTICS-01` | REJECT | SYSTEM | false / N/A | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ELIGIBILITY-TIMEBASE-CONTRACT-01` | HOLD | SYSTEM | false / N/A | HOLD_CONTRACT_AMBIGUITY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-NONLEARNING-ACTION-VISIT-CARRYOVER-01` | HOLD | SYSTEM | false / N/A | HOLD_SYSTEM_TERMINAL / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ELIGIBILITY-TIMEBASE-PARTITION-INVARIANCE-01` | HOLD | SYSTEM | false / N/A | HOLD_SYSTEM_TERMINAL / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01` | HOLD | MECHANISM | false / NOT_READY | HOLD_MECHANISM_UNRESOLVED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-MATCHED-LOAD-01` | HOLD | MECHANISM | false / NOT_READY | HOLD_MECHANISM_UNRESOLVED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ACTION-POLICY-EVALUATION-ISOLATION-CONTRACT-01` | HOLD | SYSTEM | false / N/A | HOLD_CONTRACT_AMBIGUITY / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-ASSEMBLY-SET-CAUSAL-NECESSITY-DISTRIBUTIONAL-CONTROLS-01` | HOLD | MECHANISM | false / NOT_READY | HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-OUTCOME-REPLAY-CREDIT-SEMANTICS-01` | REJECT | SYSTEM | false / N/A | — / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
-| `CAND-V05-OUTCOME-REPLAY-CREDIT-SEMANTICS-TIMESHIFT-01` | DISCOVERY | SYSTEM | false / N/A | — / ACTIVE / ACTIVE |
-| `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01` | ARCHITECTURE_STUDY | SYSTEM | false / N/A | — / ACTIVE / ACTIVE |
+| Mature-capacity lifecycle | HOLD | SYSTEM | false / N/A | SYSTEM_TERMINAL / terminal |
+| Assembly feedback causality | REJECT | MECHANISM | false / NOT_READY | — / terminal |
+| Receptor simultaneity ordering | HOLD | SYSTEM | false / N/A | SYSTEM_TERMINAL / terminal |
+| Checkpoint continuation | REJECT | SYSTEM | false / N/A | — / terminal |
+| Homeostasis population semantics | HOLD | SYSTEM | false / N/A | SYSTEM_TERMINAL / terminal |
+| Unit suppression semantics | HOLD | SYSTEM | false / N/A | METHOD_LIMITED / terminal |
+| H7 responsibility | HOLD | MECHANISM | false / NOT_READY | MECHANISM_UNRESOLVED / nonterminal |
+| Assembly partial completion | REJECT | MECHANISM | false / NOT_READY | — / terminal |
+| Delayed reward eligibility | REJECT | MECHANISM | false / NOT_READY | — / terminal |
+| Non-learning eval order | REJECT | SYSTEM | false / N/A | — / terminal |
+| Endogenous continuation | REJECT | MECHANISM | false / NOT_READY | — / terminal |
+| Pre-semantic function transfer | HOLD | MECHANISM | false / NOT_READY | METHOD_LIMITED / terminal |
+| Context-conditioned prediction | REJECT | MECHANISM | false / NOT_READY | — / terminal |
+| Assembly cluster-order Discovery | HOLD | SYSTEM | false / N/A | SYSTEM_TERMINAL / terminal |
+| Assembly cluster-order reachability | HOLD | SYSTEM | false / N/A | SYSTEM_TERMINAL / terminal |
+| Delayed action responsibility | REJECT | MECHANISM | false / NOT_READY | — / terminal |
+| Endogenous prediction-error modulation | REJECT | MECHANISM | false / NOT_READY | — / terminal |
+| Eligibility-history specificity | REJECT | MECHANISM | false / NOT_READY | — / terminal |
+| Step state-hash semantics | REJECT | SYSTEM | false / N/A | — / terminal |
+| Eligibility timebase contract | HOLD | SYSTEM | false / N/A | CONTRACT_AMBIGUITY / terminal |
+| Non-learning action visit carryover | HOLD | SYSTEM | false / N/A | SYSTEM_TERMINAL / terminal |
+| Eligibility partition invariance | HOLD | SYSTEM | false / N/A | SYSTEM_TERMINAL / terminal |
+| Assembly-unit causal selectivity | HOLD | MECHANISM | false / NOT_READY | MECHANISM_UNRESOLVED / terminal |
+| Assembly-unit exact matched-load | HOLD | MECHANISM | false / NOT_READY | MECHANISM_UNRESOLVED / terminal |
+| Action-policy eval-isolation contract | HOLD | SYSTEM | false / N/A | CONTRACT_AMBIGUITY / terminal |
+| Assembly-set distributional controls | HOLD | MECHANISM | false / NOT_READY | METHOD_LIMITED / terminal |
+| Outcome replay original | REJECT | SYSTEM | false / N/A | — / terminal |
+| Outcome replay timeshift | REJECT | SYSTEM | false / N/A | — / terminal |
+| PRE_FORMAL raw-preserve/scorer integrity | ARCHITECTURE_STUDY | SYSTEM | false / N/A | ACTIVE / ACTIVE |
 
-All mandatory fields are persisted in `state.json`. All 13 MECHANISM records contain full `preformal_readiness`.
+All material candidates retain the mandatory v2.1 fields in `state.json`; all 13 MECHANISM objects retain full `preformal_readiness` records.
 
-## Funnel metrics / theory-backward accounting
+## Funnel metrics and inputs
 
-Rolling autonomous scientific selection is `MECHANISM / SYSTEM / SYSTEM`, theory-backward share=`1/3`; no current no-target exception. The new timeshift object was already the third selection in that window; executing its already-fixed cycle does not create another selection. Any later new autonomous selection must re-evaluate theory-backward MECHANISM supply and use `NO_COHERENT_MECHANISM_TARGET` rather than manufacture a weak object.
+Recent Discovery dispositions: `REJECT=2`, `HOLD_SYSTEM_TERMINAL=1`, `HOLD_MECHANISM_UNRESOLVED=1`. Architecture active M/S=`0/1`, queued=`0/0`; terminal Architecture dispositions remain `REJECT=0`, `HOLD_SYSTEM_TERMINAL=5`, `HOLD_METHOD_LIMITED=1`, `HOLD_CONTRACT_AMBIGUITY=2`, `HOLD_MECHANISM_UNRESOLVED=1`. PRE_FORMAL eligible=`0`, READY=`0`, viable executable MECHANISM=`0`. Recent completed MAIN scientific cycles remain SYSTEM=`6`, MECHANISM=`3`; comparable durable wall-clock split unavailable. SYSTEM-over-comparable-MECHANISM exceptions=`0`.
 
-Architecture active/queued is `M=0/S=1` and `M=0/S=0`. Historical Architecture dispositions remain `REJECT=0`, `HOLD_SYSTEM_TERMINAL=5`, `HOLD_METHOD_LIMITED=1`, `HOLD_CONTRACT_AMBIGUITY=2`, `HOLD_MECHANISM_UNRESOLVED=1`. PRE_FORMAL eligible=`0`, READY=`0`, viable executable MECHANISM=`0`. The latest PRE_FORMAL object adds one terminal `HOLD_METHOD_LIMITED`. Recent completed MAIN scientific cycles are `SYSTEM=6 / MECHANISM=3` when the latest PRE_FORMAL cycle is included; comparable durable wall-clock split is unavailable, and CI duration is not used as a research-time proxy. SYSTEM-over-comparable-MECHANISM exceptions=`0`.
+Literature R19 supplies a strong ordinary experience-replay/update-to-data-ratio reduction: repeated use of the same pending experience is ordinary experience reuse, replay multiplicity is an algorithmic resource, and duplicate outcome callbacks are sample weighting/API consumption semantics unless explicit replay is intended. Audit R4 remains `CONFOUNDED` for the old Assembly-member causal attribution and is not retroactively changed. Methodology R36 is `NO_MATERIAL_CALIBRATION_CHANGE / MIXED_CALIBRATION`: hard-floor ordering stays tightened, READY semantics stay unchanged, and `HIDDEN_SECOND_FORMAL_GATE=false`. Repository Steward G5 is governance advisory only; no immutable incident or main-promotion candidate is reported.
 
-## Literature / Audit / Methodology / Steward
-
-Literature R18 remains prospective design input only. It supports distributional set-level causal controls and distributed perturbation-footprint accounting, but cannot retroactively repair any terminal Assembly object.
-
-Independent Audit R4 keeps the older unit-level Assembly causal attribution `CONFOUNDED`: the bounded targeted-loss observation is real, but Assembly-specific attribution is not separated from active-path/load effects. That historical object remains terminal.
-
-Methodology R34 is `MIXED_CALIBRATION / MATERIAL_CALIBRATION_UPDATE`. It independently identified the same raw-before-score defect and recommends a prospective four-stage raw-preserve/scorer sequence. This Methodology input is not scientific evidence; the Analyst conclusion is independently supported by the workflow and harness code. READY semantics remain valid; the defect is execution plumbing, not a reason to add a hidden prior-success gate.
-
-Repository Steward G4 remains governance advisory only. No new immutable-ref incident or main-promotion basis is present.
-
-## MAIN / SUB allocation
+## Allocation / GO-STOP
 
 `main_lane = PREFORMAL_RAW_PRESERVE_SCORER_PIPELINE_INTEGRITY_ARCHITECTURE_STATIC_CYCLE1`
 
-`sub_lane = V05_OUTCOME_REPLAY_CREDIT_SEMANTICS_TIMESHIFT_DISCOVERY_CYCLE1_FIXED_CONTRACT`
+`sub_lane = NO_TARGET_EPISODE_HOLD_UNTIL_MECHANISM_SURFACE_DELTA_THEN_THEORY_BACKWARD_REFRAME`
 
-`sub_fallback = STOP_NO_CONTRACT_CHANGE_OR_RESCUE; NEXT_NEW_SELECTION_MUST_REASSESS_THEORY_BACKWARD_SUPPLY`
+`sub_fallback = NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET`
 
-`system_priority_exception.used = false`
+`system_priority_exception.used = false` because there is no comparably executable/informative MECHANISM object and the active SYSTEM work directly protects PRE_FORMAL/FORMAL integrity.
 
-MAIN receives a SYSTEM object only because no comparably executable/informative MECHANISM object exists, and this SYSTEM work directly protects PRE_FORMAL/FORMAL integrity. No exception is required because there is no comparable MECHANISM being displaced.
+Top 3:
+1. MAIN pipeline-integrity static Architecture — SYSTEM — `GO_STATIC_READ_ONLY_FORMAL_INTEGRITY_ARCHITECTURE_ONLY`; Relay remains STOP, PRIMARY only.
+2. Fresh theory-backward mechanism reframe after material mechanism-surface delta — MECHANISM — `STOP_NO_COHERENT_MECHANISM_TARGET_ON_CURRENT_EVIDENCE`.
+3. H7 native responsibility-sensitive mechanism watch — MECHANISM — `STOP_UNTIL_FRESH_NATIVE_OBJECT_COMPARATOR_RESOURCE_FALSIFIER`.
 
-## Top 3 / GO-STOP
+MAIN prospective contingency: if the four-stage pipeline can be prospectively bound with durable raw digest plus fixed scorer/source/runtime/input binding, STOP and return to fresh Analyst review; if durable raw or fixed-scorer binding is infeasible, terminal `HOLD_METHOD_LIMITED`; if R33 rerun/repair or scientific outcome knowledge would be required, scope-invalid STOP. No implementation or scientific outcome in the same cycle.
 
-1. MAIN — raw-preserve/scorer pipeline-integrity static Architecture. Ceiling=`SYSTEM`. **`GO_STATIC_READ_ONLY_FORMAL_INTEGRITY_ARCHITECTURE_ONLY`**.
-2. SUB — execute the already-bound monotonic-time replay Discovery contract. Ceiling=`SYSTEM`. **`GO_FIXED_NON_EVIDENTIARY_DISCOVERY_AFTER_ANALYST_CANONICALIZATION`**.
-3. H7 / fresh theory-backward supply watch. Ceiling=`MECHANISM`. `STOP_NO_COHERENT_BOUNDED_TARGET_ON_CURRENT_EVIDENCE`.
+## Integrity / identities / Utility
 
-#1 is GO only for static/read-only architecture and contract feasibility. It does not authorize implementing a new scientific pipeline in the same run, rerunning R33, or opening any new scientific outcome.
+Consumed/no-retry identities remain C19-v4, C19-R1 v1/v2, C19-R2, PD01, NI01, H5; new identity consumption=`0`. STARTED/control and raw-preserve anchors are unchanged. Current blockers: viable MECHANISM=`0`; clean four-stage PRE_FORMAL pipeline not yet demonstrated; H7 native object/comparator/resource/falsifier absent; no fresh FORMAL one-way authority; eligibility public semantic clock unspecified; action-policy evaluation visit semantics unspecified; prior Assembly-unit attribution remains confounded.
 
-## Prospective contingency tree
-
-For MAIN `CAND-PREFORMAL-RAW-PRESERVE-SCORER-PIPELINE-INTEGRITY-01`:
-
-- if a four-stage path can be fixed with a durable raw anchor/digest and fixed scorer hash/source, STOP for fresh Analyst review; no same-run implementation or science;
-- if durable raw preservation or fixed-scorer binding is unavailable on supported repository primitives, `HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / STOP`;
-- if the design would mutate, reinterpret, rerun, repair, or rescore the R33 object, scope is invalid and STOP;
-- if scientific metric/comparator/threshold/outcome knowledge is needed, STOP and separate a fresh object.
-
-SUB may execute only the exact contract at `50223b84e7e30cec2c4dcb136e58c0b4674df966`. No alternate seed, motif, support offset, event label, reward, comparator, threshold, runtime, retry, candidate-ID reuse, or post-outcome redesign is authorized.
-
-## Consumed identities / blockers / Utility
-
-Consumed/no-retry identities are unchanged: `c19-external-v2-official-v4`; C19-R1 revision-authority official-v1/v2; `c19-r2-fsa-state-tracker-official-v1`; `pd01-long-history-fading-memory-official-v1`; `ni01-no-ignition-selective-prediction-official-v1`; `h5-event-routing-work-reduction-official-v1`. New identity consumption=`0`.
-
-Current blockers: no viable executable MECHANISM; PRE_FORMAL raw-before-score pipeline nonconformance; H7 native object/comparator/resource/falsifier unfixed; no fresh FORMAL one-way authority; eligibility public semantic clock unspecified; action-policy evaluation real-visit vs observational semantics unspecified; older Assembly unit attribution remains audit-confounded.
-
-Utility request: none. Utility remains `IDLE`; the integrity issue is assigned as a bounded MAIN SYSTEM Architecture object rather than routed around MAIN/SUB authority.
+Utility request: none; Utility remains IDLE.
 
 ## Inputs
 
-- Control: `CTRL-20260921T085000+0900-R21-4F7C2A91@49ac783b5640b8250c19133f8842f0bf49867e8f`
-- MAIN: `MAIN-20260921T113236+0900-PRIMARY-FUNNEL21-PREFORMAL-ASMSET-R33-HOLD-5E8C31A7`
-- SUB: `SUB-20260921T113509+0900-SYSTEM-OUTREPLAYTIMESHIFT-HOLD-4A7C91E2`
-- Literature: `LIT-20260921T093300+0900-R18-ASSEMBLY-CAUSAL-CONTROLS-8D4C71A2@00bd486f4230c9a89d3d584e8d685a00b9dfe2b8`
-- Audit: `AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4@d41e21ca0311be623398f8f8bb736758559852a0`
-- Methodology: `METHCAL-20260921T112242+0900-R34-9C4E2A71@7fa1c49edd81ec2e61affa4a2214fa2e377a465c`
-- Steward: `STEWARD-20260921T105047+0900-G4-B3E7C921@6cf252755c2432fb21f3d818b0f491ffaaed9509`
-- Utility: `472726e572a854fe3577e2733bb1de37c05df1fa`
-- previous Analyst: `EVA-20260921T105950+0900-R33-5A8C31E7@f22b345bceab464ac0fd593c11a7b6b99742af4f`
-
-Persistence is limited to `analysis/orchestrator/latest.md`, `analysis/orchestrator/state.json`, and `analysis/orchestrator/history/2026-09-21/1202.md` on `ops/evidence-analyst-handoff`.
+Control `CTRL-20260921T125000+0900-R22-7C3A91E4`; MAIN `MAIN-20260921T124719+0900-RELAY-FUNNEL21-SYSTEM-PIPELINE-R34-AUTHBOUND-6B2D91E4`; SUB `SUB-20260921T133207+0900-NOOP-NOMECH-6A3C91E7`; Literature `LIT-20260921T123000+0900-R19-OUTCOME-REPLAY-3C7A91E4`; Audit `AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4`; Methodology `METHCAL-20260921T131711+0900-R36-3A8D6F21`; Steward `STEWARD-20260921T135000+0900-G5-5C7A2E91`.
