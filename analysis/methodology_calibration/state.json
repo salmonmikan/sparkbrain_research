@@ -1,60 +1,58 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-22T00:17:04+09:00",
+  "timestamp": "2026-09-22T01:19:04+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260922T001704+0900-R47-6C3A91E8",
-    "sequence": 47,
+    "generation_id": "METHCAL-20260922T011904+0900-R48-2F7C91A4",
+    "sequence": 48,
     "material_change": true,
-    "material_change_reason": "LIVE_R46_SUPPLY_SEPARATION_POSITIVE_CASE_RETAINS_SYSTEM_SHADOW_WITHOUT_CANONICAL_ADMISSION_MECHANISM_QUOTA_CREDIT_OR_EXECUTION",
-    "supersedes_generation_id": "METHCAL-20260921T232139+0900-R46-A5D7C391",
+    "material_change_reason": "FIRST_LATER_GENERATION_PHENOMENON_SHADOW_CANONICAL_ADMISSION_OCCURS_AS_SYSTEM_ONLY_WITH_NO_MECHANISM_QUOTA_OR_PREFORMAL_UPLIFT_AND_COMPARATOR_FLOOR_SHARPENED_PREOUTCOME",
+    "supersedes_generation_id": "METHCAL-20260922T001704+0900-R47-6C3A91E8",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T232139+0900-R46-A5D7C391",
+      "generation_id": "METHCAL-20260922T001704+0900-R47-6C3A91E8",
       "branch": "ops/methodology-calibration-audit",
-      "prior_tip": "c080158e96aa2098b4ea4290130d640f8e556b1f"
+      "prior_tip": "40409c9376c8ca345c8b2e8cf817e969f532ee51"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T234005+0900-R46-6D2A91F4",
+      "generation_id": "EVA-20260922T011108+0900-R49-7E3C21A5",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "4d2eb7279acf5b60b184c7936a02166cef38fe3e",
+      "commit": "7c154b6203347a4f212746e2cfe4ee7f1be2e5a4",
       "role": "CURRENT_CANONICAL_FUNNEL_AUTHORITY"
     },
-    "evidence_analyst_shadow_origin": {
-      "generation_id": "EVA-20260921T232603+0900-R45-4F9C21A6",
-      "commit": "09205fd457835069611d7398efa539a220700879",
-      "role": "ORIGIN_OF_CURRENT_RETAINED_NONCANONICAL_SYSTEM_ORIENTED_SHADOW"
+    "evidence_analyst_admission_reconciliation": {
+      "generation_id": "EVA-20260922T002600+0900-R48-8C4A21F6",
+      "commit": "86290dcbd85a45e89acc56263685cd9338963726",
+      "role": "DOCUMENTS_FIRST_LATER_GENERATION_SYSTEM_ADMISSION_FROM_PHENOMENON_SHADOW"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
+      "generation_id": "CTRL-20260922T010052+0900-R27-5C8A21F4",
       "branch": "ops/control-brain-handoff",
-      "commit": "0e38771af4dacefab079a9389dece4c6a48f1240",
-      "role": "DESIGNATED_CONTROL_HISTORY_CONSUMED_BY_CURRENT_ANALYST"
+      "commit": "70161c64b6760dafa773051dabd9d839b9443cd8",
+      "role": "DESIGNATED_CONTROL_HISTORY"
+    },
+    "literature": {
+      "generation_id": "LIT-20260922T010311+0900-R24-CONTSTATE-EVENTDRIVEN-4A7C91E2",
+      "branch": "ops/external-research-audit-handoff",
+      "commit": "e9f3bd07d8aed08b81d8c307525e5c6c53a3eef4",
+      "role": "EXTERNAL_REDUCTION_CALIBRATION_INPUT"
     },
     "independent_audit": {
       "generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
-      "branch": "ops/external-research-audit-handoff",
       "commit": "c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48",
       "role": "UNCHANGED_RESOURCE_METRIC_CALIBRATION_INPUT"
     },
-    "literature": {
-      "generation_id": "LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9",
-      "branch": "ops/external-research-audit-handoff",
-      "commit": "1c8cb3f86d1ef63a12c2b1b9ff984f717723ec7c",
-      "role": "UNCHANGED_EXTERNAL_CALIBRATION_INPUT"
-    },
     "main_strategy_mailbox": {
-      "generation_id": "MAIN-20260921T234802+0900-RELAY-FUNNEL21-HOLD-R46-FRESHNESSRESOLVED-6D2A91F4",
+      "generation_id": "MAIN-20260922T011900+0900-PRIMARY-FUNNEL21-SYSTEM-LOCALIZE-R49-CYCLE1-7E3C21A5",
       "branch": "ops/orchestrator-run-report",
-      "commit": "a597a23cc0f13c04bee1710c31004756965e4a85",
+      "commit": "881fa426890ce8b23de26a630a6f20e324fef208",
       "authoritative": false,
-      "status": "COMPLETED_NO_NEW_SCIENTIFIC_EXECUTION_INTENTIONAL_IDLE"
+      "status": "RUNNING_NON_EVIDENTIARY_STATIC_READ_ONLY_CONTRACT"
     },
     "sub_strategy_mailbox": {
-      "generation_id": "SUB-20260921T234211+0900-NOOP-R46NOMECH-7C3A91E5",
-      "branch": "ops/orchestrator-run-report",
-      "commit": "d6506817c0ad0db0d5817cd26092f6c6f59b4e92",
+      "generation_id": "SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6",
+      "commit": "5fb202cd72a4130fabfafe6f0e712c0b62059348",
       "authoritative": false,
       "status": "NO_AUTONOMOUS_SCIENTIFIC_SELECTION_NO_TARGET"
     }
@@ -117,6 +115,8 @@
     "phenomenon_first_shadow_supply_separation": "KEEP",
     "shadow_retention_without_admission_or_execution": "KEEP",
     "system_shadow_not_theory_backward_quota_credit": "KEEP",
+    "shadow_to_system_canonical_admission_after_independent_review": "KEEP",
+    "shadow_admission_same_generation_execution_separation": "KEEP",
     "shadow_to_mechanism_rejection_guard": "KEEP",
     "first_positive_shadow_to_mechanism_admission": "INSUFFICIENT_EVIDENCE",
     "system_architecture_testbed_reproducibility_value": "KEEP",
@@ -125,6 +125,8 @@
     "equal_privilege_comparator": "KEEP",
     "ordinary_reduction_first": "KEEP",
     "signal_before_reduction": "TIGHTEN",
+    "resource_comparator_reduction_floor_preoutcome_sharpening": "KEEP",
+    "resource_multi_resource_crossover_scope": "KEEP",
     "implementation_faithful_aggregate_resource_metric": "KEEP",
     "resource_efficiency_metric_semantic_activity_decomposition": "TIGHTEN",
     "aggregate_work_to_mechanism_inference": "TIGHTEN",
@@ -135,63 +137,86 @@
     "legacy_topk_sparse_support": "TIGHTEN",
     "methodology_authoritative_reference_trace_accuracy": "KEEP"
   },
+  "general_calibration_dimensions": {
+    "gate_drift": "LOW",
+    "justification_trace": "STRONG_CURRENT_WITH_INDEPENDENT_MAIN_EVIDENCE_REF_REFRESH_AND_DESIGNATED_ANALYST_CONTROL_HISTORY",
+    "false_positive_control": "GOOD_CURRENT; LIVE_SYSTEM_SHADOW_ADMISSION_PRESERVES_CLAIM_CEILING_AND_QUOTA_SEPARATION",
+    "false_negative_risk": "MODERATE_WATCH",
+    "duplicate_guards": "LOW",
+    "moving_goalposts": "LOW",
+    "pass_reachability": "REALISTIC_CONDITIONAL",
+    "comparator_calibration": "IMPROVED_PROSPECTIVELY_FOR_CURRENT_RESOURCE_SYSTEM_OBJECT",
+    "signal_before_reduction": "IMPROVED_CURRENT_OBJECT_PREOUTCOME_BUT_PROGRAMME_RESOURCE_MECHANISM_INFERENCE_STILL_TIGHTEN",
+    "claim_type_separation": "STRONG_LIVE_POSITIVE_CASE_SYSTEM_SHADOW_ADMITTED_AS_SYSTEM_ONLY",
+    "research_worthiness_vs_novelty": "CALIBRATED",
+    "external_calibration": "STRONGER_WITH_R24_EVENT_DRIVEN_CONTINUOUS_STATE_AND_RESOURCE_CROSSOVER_COUNTEREXAMPLES",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH",
+    "mechanism_supply_health": "STALLED_WITH_QUALITY_FLOOR_INTACT",
+    "funnel_observability": "COMPLETE_CANONICAL_POPULATION_32_OF_32",
+    "preformal_gate_calibration": "SEMANTICALLY_CALIBRATED_EXECUTION_PLUMBING_STILL_TIGHTEN"
+  },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_CURRENT_CANONICAL_WITH_MODERATE_WATCH_ON_RESOURCE_MECHANISM_INTERPRETATION_AND_FUTURE_PROTECTED_REUSE. Live R46 supply handling lowers the risk of false-positive MECHANISM manufacture because a SYSTEM-oriented shadow was retained without admission or quota credit.",
-    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM remains zero. Retaining a noncanonical SYSTEM shadow preserves potentially useful research surface without weakening the MECHANISM quality floor, but no positive mechanism admission has yet demonstrated recovery from the supply stall.",
-    "duplicate_guards": "LOW. Shadow retention, canonical admission, theory-backward quota credit, READY, comparator equivalence, and protected-set validity answer distinct questions.",
-    "opportunity_cost": "CONTROLLED_BUT_WATCH. Intentional idle prevents busywork while a retained shadow preserves a bounded future question for independent review.",
-    "moving_goalpost_risk": "LOW. No consumed identity, historical terminal, claim ceiling, or canonical candidate is retroactively changed."
+    "false_positive": "LOW_CURRENT_CANONICAL_WITH_MODERATE_WATCH_ON_RESOURCE_MECHANISM_INTERPRETATION_AND_FUTURE_PROTECTED_REUSE. First later-generation shadow admission stayed SYSTEM, gained no theory-backward MECHANISM quota credit, no PRE_FORMAL uplift, and no same-generation outcome execution.",
+    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM remains zero. The SYSTEM admission preserves a useful bounded architecture question without weakening the MECHANISM floor, but it does not demonstrate recovery of mechanism supply.",
+    "duplicate_guards": "LOW. Shadow retention, later canonical admission, claim ceiling, theory-backward quota, PRE_FORMAL readiness, comparator equivalence, and resource-scope binding answer distinct questions.",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH. One bounded SYSTEM Architecture object is active while no comparably executable MECHANISM exists; SUB remains no-target rather than manufacturing mechanism progress.",
+    "moving_goalpost_risk": "LOW. Candidate #32 comparator/reduction/resource contract was sharpened before branch/workflow/identity/synthetic outcome creation; historical consumed identities and H5 terminal remain unchanged."
   },
   "moving_goalposts": "LOW",
   "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; CROSS_GENERATION_EXPOSURE_OBSERVABILITY_INSUFFICIENT; FUTURE_PROTECTED_REUSE_REQUIRES_SEPARATE_PROSPECTIVE_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY_CONTROL; CLEAN_SCIENTIFIC_PASS_REQUIRES_FRESH_PROSPECTIVE_IDENTITY_WITH_CONFORMING_PIPELINE_AND_VALIDITY_ASSUMPTIONS_MATCHED_TO_THE_ACTUAL_ADAPTIVE_PROCESS",
   "claim_type_findings": {
     "claim_ceiling_current_object_only": true,
     "same_object_system_to_mechanism_upgrade_observed": false,
-    "active_object": null,
-    "active_object_ceiling": null,
-    "retained_shadow_id": "SHADOW-PHENOM-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
-    "retained_shadow_orientation": "SYSTEM_ORIENTED_COMPONENT_ATTRIBUTION_PHENOMENON",
-    "retained_shadow_canonical": false,
-    "retained_shadow_authorizing": false,
-    "retained_shadow_counts_as_theory_backward_mechanism_supply": false,
-    "retained_shadow_execution_count": 0,
+    "active_object": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
+    "active_object_source": "PHENOMENON_FIRST_SHADOW",
+    "active_object_ceiling": "SYSTEM",
+    "active_object_preformal_eligible": false,
+    "active_object_preformal_readiness": "NOT_APPLICABLE",
+    "active_object_theory_backward_mechanism_quota_credit": false,
+    "active_object_same_generation_outcome_authority": false,
+    "shadow_generated_cumulative": 5,
+    "shadow_later_canonical_admissions": 1,
+    "shadow_current_retained": 0,
+    "shadow_executions": 0,
+    "first_positive_shadow_to_system_admission_observed": true,
+    "first_positive_shadow_to_mechanism_admission_observed": false,
     "h5_frozen_claim": "KEEP_EXACT_IMPLEMENTATION_AGGREGATE_WORK_FAIL",
     "h5_mechanism_interpretation": "DO_NOT_GENERALIZE_TO_EVENT_ROUTING_OR_LAZY_STATE_NO_GO_WITHOUT_FRESH_COMPONENT_ATTRIBUTION",
-    "research_worthiness_note": "A SYSTEM-level phenomenon may be worth retaining for later review without being promoted into MECHANISM or used to satisfy the one-in-three quota."
+    "research_worthiness_note": "SYSTEM-level architecture/resource work can be canonically admitted after independent review without conferring MECHANISM prestige, quota credit, or PRE_FORMAL path."
   },
-  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_SUPPLY_STALLED_M13_S18_NO_VIABLE_EXECUTABLE_MECHANISM_ONE_RETAINED_NONCANONICAL_SYSTEM_SHADOW_NO_TARGET_EPISODE_CHECK10_SMALL_N",
+  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED_M13_S19_NO_VIABLE_EXECUTABLE_MECHANISM_ONE_ACTIVE_SYSTEM_SHADOW_DERIVED_ARCHITECTURE_OBJECT_NO_TARGET_EPISODE_CHECK12_SMALL_N",
   "funnel_observability": {
-    "canonical_population": 31,
-    "classified_population": 31,
+    "canonical_population": 32,
+    "classified_population": 32,
     "classification_completeness": 1.0,
     "mechanism": 13,
-    "system": 18,
+    "system": 19,
     "terminal_states": {
-      "ACTIVE": 0,
+      "ACTIVE": 1,
       "NONTERMINAL_HOLD": 1,
       "TERMINAL_FOR_CURRENT_OBJECT": 30
     },
     "discovery_mechanism": 0,
     "discovery_system": 0,
     "architecture_mechanism_active": 0,
-    "architecture_system_active": 0,
+    "architecture_system_active": 1,
     "architecture_mechanism_queued": 0,
     "architecture_system_queued": 0,
     "preformal_eligible": 0,
     "preformal_ready": 0,
     "viable_executable_mechanism": 0,
     "policy_conclusions_gated_by_classification_completeness": true,
-    "active_object": null,
+    "active_object": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
     "shadow_generated_cumulative": 5,
-    "shadow_retained_current": 1,
-    "shadow_canonical_admissions": 0,
+    "shadow_retained_current": 0,
+    "shadow_canonical_admissions": 1,
     "shadow_executions": 0,
     "cross_generation_exposure_observability": "DIRECTLY_OBSERVED_INSUFFICIENT_ON_CURRENT_SAFE_METADATA",
     "methodology_ref_trace_status": "PASS_CURRENT_EXACT_REF_BINDING"
   },
   "classification_completeness": {
-    "classified": 31,
-    "canonical_population": 31,
+    "classified": 32,
+    "canonical_population": 32,
     "ratio": 1.0,
     "policy_interpretation_allowed": true
   },
@@ -202,6 +227,7 @@
     "hidden_second_formal_gate": false,
     "raw_before_score_live_scientific_conformance": "FAILED_ON_HISTORICAL_FIRST_PRE_FORMAL; DO_NOT_REPAIR_OR_RERUN_SAME_IDENTITY",
     "synthetic_four_stage_conformance": "PASSED_AND_CANONICALIZED_SYSTEM_TERMINAL",
+    "current_system_object_preformal_path": "NONE",
     "programme_status": "SEMANTICALLY_CALIBRATED_EXECUTION_PLUMBING_STILL_TIGHTEN"
   },
   "system_priority_exception_audit": {
@@ -209,47 +235,60 @@
     "current_used": false,
     "genuine_system_over_comparable_mechanism_cases_observed": 0,
     "classification": "INSUFFICIENT_EVIDENCE_FOR_FIRST_GENUINE_USE",
-    "current_reason": "No active allocation and viable executable MECHANISM=0; retained shadow is non-authorizing."
+    "current_reason": "Active SYSTEM Architecture object exists, but viable comparable executable MECHANISM remains zero; no exception is required."
   },
   "no_coherent_target_audit": {
     "classification": "KEEP",
     "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-    "canonical_check_count": 10,
-    "latest_sub_local_check_count": 11,
+    "canonical_check_count": 12,
     "scientific_failure_count_interpretation": 0,
     "counts_as_absence_evidence": false,
     "counts_as_candidate_or_selection_denominator": false,
     "escape_hatch_evidence": false,
-    "live_positive_control": "SUB_R46_REFUSED_SYSTEM_SELECTION_AND_MECHANISM_RELABELING_TO_PROTECT_ONE_IN_THREE_QUALITY_FLOOR"
+    "current_interpretation": "LIVENESS_ONLY_WHILE_MAIN_OWNS_SYSTEM_OBJECT_AND_SUB_HAS_NO_COHERENT_MECHANISM_TARGET"
   },
   "mandatory_v21_questions": {
-    "1_claim_ceiling_current_object_only": "PASS_KEEP",
+    "1_claim_ceiling_current_object_only": "PASS_KEEP_CURRENT_ACTIVE_OBJECT_SYSTEM_ONLY",
     "2_same_object_system_to_mechanism_upgrade": "PASS_KEEP_NONE_OBSERVED",
     "3_preformal_eligible_distinct_from_ready": "PASS_KEEP",
     "4_ready_is_development_readiness": "PASS_KEEP_HIDDEN_SECOND_FORMAL_GATE_FALSE",
     "5_hold_multidimensional_orthogonality": "PASS_KEEP",
     "6_system_priority_exception_prospective": "RULE_KEEP_FIRST_GENUINE_USE_INSUFFICIENT_EVIDENCE",
-    "7_no_coherent_target_sparing_credible": "PASS_KEEP_CANONICAL_CHECK10_LIVENESS_ONLY",
-    "8_theory_backward_mechanism_level": "PASS_KEEP_CURRENT_SYSTEM_SHADOW_EXPLICITLY_EXCLUDED_FROM_MECHANISM_QUOTA",
-    "9_system_retains_independent_value": "PASS_KEEP",
+    "7_no_coherent_target_sparing_credible": "PASS_KEEP_CANONICAL_CHECK12_LIVENESS_ONLY",
+    "8_theory_backward_mechanism_level": "PASS_KEEP_SYSTEM_SHADOW_DERIVED_ADMISSION_EXPLICITLY_EXCLUDED_FROM_MECHANISM_QUOTA",
+    "9_system_value_retained": "PASS_KEEP_ACTIVE_SYSTEM_ARCHITECTURE_OBJECT_HAS_BOUNDED_RESOURCE_TESTBED_VALUE",
     "10_preformal_pass_reachable": "PASS_REALISTIC_CONDITIONAL",
-    "11_completeness_gates_policy": "PASS_KEEP_31_OF_31",
+    "11_metrics_gated_by_classification_completeness": "PASS_KEEP_32_OF_32",
     "12_first_ready_to_preformal_development_readiness": "PASS_KEEP"
   },
   "prospective_recommendations": [
-    "Do not change global scientific admission, novelty, comparator, reduction, or READY thresholds.",
-    "Keep SHADOW-PHENOM-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01 noncanonical and non-executable until later independent admission review.",
-    "If the retained shadow remains SYSTEM, never count it toward theory-backward MECHANISM quota or close the no-target episode because of it.",
-    "If a later MECHANISM successor is defensible, require a fresh ID/object, prospective MECHANISM claim ceiling, explicit mechanism bridge, strong ordinary reductions, equal-semantics comparator/resource contract, bounded falsifier, and no H5 rescue or post-hoc subtraction.",
-    "Continue intentional idle when no coherent executable MECHANISM target exists.",
-    "Maintain all hard-floor and protected-set/live-PRE_FORMAL tightening from prior generations."
+    "Do not change global admission, novelty, comparator, reduction, or READY thresholds.",
+    "Keep candidate #32 claim_ceiling=SYSTEM for the current object; any mechanism successor requires a fresh object and independent prospective admission.",
+    "Before any synthetic outcome for candidate #32, freeze optimized equal-semantics event-driven/sparse/history-lazy comparators, exact trajectory-equivalence criteria, the multi-resource vector, crossover grid, and claim scope.",
+    "Stop after the static/read-only contract cycle and require fresh Analyst review before synthetic measurement; do not let contract work and outcome execution collapse into one generation.",
+    "If ordinary reductions exhaust the residual question, terminalize the SYSTEM object without MECHANISM uplift; if a residual SYSTEM question survives, preserve its architecture value without theory-backward quota credit.",
+    "Keep H5 consumed/no-retry and do not use candidate #32 as post-hoc H5 subtraction, rescue, rescore, or reinterpretation beyond the existing historical interpretation ceiling.",
+    "Continue treating NO_COHERENT_MECHANISM_TARGET counts as liveness only, not accumulating evidence of mechanism absence."
   ],
-  "utility_request": null,
-  "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
+  "utility_request": {
+    "created": false,
+    "reason": "Live MAIN prospective contract path is higher-information and already owns the bounded methodology-relevant work; parallel Utility work would duplicate authority and risk comparator contamination."
+  },
+  "hard_floor_confirmation": {
+    "status": "CONFIRMED_DO_NOT_RELAX",
+    "rerun_retune_consumed_identities": "PROHIBITED",
+    "prospective_frozen_protocols": "REQUIRED",
+    "raw_before_score": "REQUIRED",
+    "preserve_before_read": "REQUIRED",
+    "exact_identity_source_package_runtime_input_binding": "REQUIRED",
+    "immutable_evidence": "REQUIRED",
+    "evaluator_target_leakage": "PROHIBITED",
+    "silent_post_outcome_repair": "PROHIBITED"
+  },
   "confidence": "HIGH",
   "questions_for_control_analyst": [
-    "Before any retained shadow is admitted, record machine-readably whether its intended claim ceiling is SYSTEM or MECHANISM and whether it is eligible for theory-backward quota credit.",
-    "If SHADOW-PHENOM-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01 is reconsidered, can it state a genuinely mechanism-level falsifier and mechanism bridge without becoming post-hoc H5 subtraction or rescue? If not, keep it SYSTEM or reject it.",
-    "Continue treating no-target check_count as liveness only; do not convert repeated no-delta checks into evidence of mechanism absence."
+    "After static contract review, does any residual SYSTEM resource question survive optimized ordinary reductions strongly enough to justify synthetic measurement, or should candidate #32 terminalize at Architecture?",
+    "Before any synthetic outcome, is exact trajectory equivalence plus the full multi-resource/crossover contract machine-readable and frozen rather than described only in prose?",
+    "If candidate #32 later motivates a MECHANISM question, will it receive a fresh ID/object and independent admission with no quota credit inherited from the SYSTEM object?"
   ]
 }
