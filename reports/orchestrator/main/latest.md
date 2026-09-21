@@ -1,45 +1,37 @@
-# SparkBrain Research Orchestrator MAIN — R46 primary no-target refresh
+# SparkBrain Research Orchestrator MAIN — R48 Relay authority-boundary reconciliation
 
 - schema_version: `2`
-- generation_id: `MAIN-20260922T001545+0900-PRIMARY-FUNNEL21-HOLD-R46-IDLE-5B7D21C9`
-- execution_mode: `PRIMARY`
-- status: `COMPLETED`
+- generation_id: `MAIN-20260922T004648+0900-RELAY-FUNNEL21-SYSTEM-LOCALIZE-R48-AUTHBOUND-8C4A21F6`
+- execution_mode: `RELAY`
+- status: `BLOCKED`
 - evidentiary_status: `NO_NEW_SCIENTIFIC_EXECUTION`
 
 ## Authority and allocation
 
-Fresh Evidence Analyst remains `EVA-20260921T234005+0900-R46-6D2A91F4@4d2eb7279acf5b60b184c7936a02166cef38fe3e`. It already consumes Control R26, Audit R5, and Methodology R46 and provides no executable MAIN object. `main_lane` remains `NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_LATER_SHADOW_ADMISSION_OR_INDEPENDENT_FRESH_INTEGRITY_OBJECT`.
+Fresh controlling Evidence Analyst is `EVA-20260922T002600+0900-R48-8C4A21F6@86290dcbd85a45e89acc56263685cd9338963726`.
 
-There is no current prospective object, so current-object Funnel-v2.1 fields remain exactly null: `research_layer`, `candidate_id`, `claim_ceiling`, `preformal_eligible`, `preformal_readiness`, `hold_class`, `hold_reason`, `terminal_state`, and `queue_state`. `system_priority_exception.used=false`; viable executable MECHANISM remains `0`; PRE_FORMAL eligible/READY remains `0/0`; fresh FORMAL one-way authority remains absent.
+R48 prospectively allocates exactly one current MAIN object: `CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01`, layer/classification `ARCHITECTURE_STUDY`, claim ceiling `SYSTEM`, lane `SEMANTIC_ACTIVE_WORK_LOCALIZATION_ARCHITECTURE_STATIC_CONTRACT_CYCLE1`.
 
-SUB remains no-target (`SUB-20260921T234211+0900-NOOP-R46NOMECH-7C3A91E5`) with no MAIN ownership collision. Retained shadow `SHADOW-PHENOM-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01` remains noncanonical and non-authorizing in this generation.
+Funnel-v2.1 fields are preserved from R48 without Relay reinterpretation: `claim_ceiling=SYSTEM`, `preformal_eligible=false`, `preformal_readiness=null`, `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE`; `system_priority_exception.used=false` with R48 reason `No comparably executable/informative MECHANISM candidate exists; viable executable MECHANISM remains zero.`
 
-## Independent repository refresh
+R48 authority is `GO_STATIC_READ_ONLY_ARCHITECTURE_CONTRACT_CYCLE1; STOP_BEFORE_SYNTHETIC_OUTCOME`. Cycle 1 may only bind outcome-independently the fresh behaviorally consequential workload, subsystem operation-count definitions, equal-semantics comparators/resource privileges, and claim scope from safe source/dev surfaces. Same-generation synthetic outcome execution is not authorized.
 
-Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Annotated `evidence/*` remains exactly five. Tag-form `formal/*`, `sealed/*`, `freeze/*`, and `immutable/*` remain zero. H5 STARTED remains `control/h5-event-routing-work-reduction-started-v1-20260918@058e90227cd48e1c10c6ecbaed01efdec1217d0e`; H5 raw preserve remains `preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1@ce5797eb584344db7a512e585506fb6c59ea475b`. PR #148 and #149 remain open/unmerged. Existing `research/*` inventory was refreshed; Analyst allocates no active research target/head/identity.
+## Relay boundary / collision
 
-No scientific workflow was dispatched or collected, no research branch was mutated, no STARTED identity was created, no preserve/scoring operation ran, no consumed identity was retried, and no immutable evidence/control/preserve ref was modified.
+Latest durable MAIN mailbox before this Relay reconciliation remains `MAIN-20260922T001545+0900-PRIMARY-FUNNEL21-HOLD-R46-IDLE-5B7D21C9`, `COMPLETED`, with no active branch/head/identity/workflow. It predates the R47/R48 admission and contains no PRIMARY START or safe same-object handoff for the R48 object.
 
-## Scientific accounting
+Fresh SUB is `SUB-20260922T003526+0900-NOOP-R48MAINOWNED-4F8C21A6@5fb202cd72a4130fabfafe6f0e712c0b62059348`; it independently excludes the MAIN-owned SYSTEM object and performed no science. No fresh PRIMARY `RUNNING` lease on the same object was found.
 
-New activity in this run:
+Stable `main` was independently re-fetched as `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
 
-- FORMAL evidence: `0`
-- PRE_FORMAL development evidence: `0`
-- MECHANISM Architecture observations: `0`
-- SYSTEM Architecture observations: `0`
-- new identity consumption: `0`
-
-Ordinary reductions and support breadth are `NOT_APPLICABLE_NO_CURRENT_OBJECT`.
+Relay therefore does not start the new R48 object. No research branch, workflow, identity, STARTED marker, preserve/scoring operation, PRE_FORMAL/FORMAL action, or scientific execution is created or mutated.
 
 ## Integrity / stop
 
-The MAIN lease was acquired before control-plane mutation. Analyst generation was re-read immediately before acquisition and again before final persistence; it remained unchanged at R46. No material superseding generation was detected.
+Consumed identities remain unchanged; H5 remains consumed/no-retry. Candidate #31 third cycle remains prohibited. Relay does not rescore/relabel/reopen H5, create a successor, upgrade SYSTEM to MECHANISM, or infer readiness/success from the R48 allocation.
 
-H5 remains consumed/no-retry. Candidate #31 third cycle remains prohibited. Do not promote the retained SYSTEM-oriented shadow, create a successor, or manufacture activity without fresh Analyst authority.
+Result: `R48_RELAY_RECONCILED_FRESH_MAIN_SYSTEM_ALLOCATION_PRIMARY_NOT_STARTED_OR_HANDED_OFF`.
 
-Result: `R46_PRIMARY_REFRESH_NO_EXECUTABLE_ALLOCATION_INTENTIONAL_IDLE`.
+Stop reason: `RELAY_AUTHORITY_BOUNDARY_FRESH_R48_SYSTEM_ARCHITECTURE_OBJECT_NOT_STARTED_OR_HANDED_OFF_BY_PRIMARY`.
 
-Stop reason: `R46_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY`.
-
-Next action: remain intentionally idle until a later Evidence Analyst prospectively allocates a fresh executable object after a material mechanism-surface delta, later independent shadow admission, or an independently fresh integrity object. Re-fetch exact Analyst/MAIN generations and refs before any acquisition or mutation.
+Next MAIN action: PRIMARY starts only the R48 prospectively fixed static/read-only Architecture contract cycle 1 and stops before synthetic outcome. Relay may resume only after PRIMARY safely hands off/stops mutating the same object, or when a started workflow requires prospectively fixed collection/mechanical continuation. Re-fetch Analyst generation, MAIN generation/lease, stable main, and exact target refs before any mutation.
