@@ -1,38 +1,42 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T21:23:00+09:00",
+  "timestamp": "2026-09-21T22:22:27+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260921T212300+0900-R44-4E8C21A5",
-    "sequence": 44,
+    "generation_id": "METHCAL-20260921T222227+0900-R45-B7E2C491",
+    "sequence": 45,
     "material_change": true,
-    "material_change_reason": "R43_CANONICALIZED_PROSPECTIVELY_MAPPED_METHOD_LIMITED_TERMINAL_AFTER_FINAL_SAFE_METADATA_CYCLE_CONFIRMED_CROSS_GENERATION_EXPOSURE_OBSERVABILITY_DEFECT_AND_NO_THIRD_RESCUE",
-    "supersedes_generation_id": "METHCAL-20260921T202100+0900-R43-9D4B2C71",
+    "material_change_reason": "SELECTION_AWARE_VALIDITY_SHARPENING_SHOWS_EXPOSURE_OBSERVABILITY_ALONE_IS_INSUFFICIENT_AND_ADDS_FEEDBACK_VISIBILITY_AS_DISTINCT_PROSPECTIVE_CONTROL",
+    "supersedes_generation_id": "METHCAL-20260921T212300+0900-R44-4E8C21A5",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T202100+0900-R43-9D4B2C71",
+      "generation_id": "METHCAL-20260921T212300+0900-R44-4E8C21A5",
       "branch": "ops/methodology-calibration-audit",
-      "prior_tip": "d5a1e49721777feff018c8c032ae1aab75cd778c"
+      "prior_tip": "3e0acb080908e2a085fe60013b9eb9403b599733"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T205800+0900-R43-6E2A91C5",
+      "generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "5692a1b3f210ae2be2cef80266b6e4fc1c7a14d4"
+      "commit": "fca9a4b0adb259b76a518605f611ff79e0c48680"
     },
     "control_brain": {
       "generation_id": "CTRL-20260921T205220+0900-R25-9C4E21A7",
       "branch": "ops/control-brain-handoff",
       "commit": "835c175de2db7220e22919a3a27c76406b8cef46",
-      "role": "CURRENT_STRATEGIC_PRIOR; PRECEDES_ANALYST_R43_CANONICALIZATION"
+      "role": "CURRENT_STRATEGIC_PRIOR; PRECEDES_ANALYST_R44_SELECTION_AWARE_SHARPENING"
+    },
+    "literature": {
+      "generation_id": "LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9",
+      "branch": "ops/external-research-audit-handoff",
+      "commit": "1c8cb3f86d1ef63a12c2b1b9ff984f717723ec7c"
     },
     "strategy_mailbox": {
       "branch": "ops/orchestrator-run-report",
-      "branch_tip": "3e77cbae214809d3e08f09d500ab4b661fe1f53b",
-      "main_generation_id": "MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4",
-      "main_commit": "a10e3e0cf025776027aa928a83faf36ccd3e34e9",
-      "sub_generation_id": "SUB-20260921T203533+0900-NOOP-R42POSTMAIN-METHODHOLD-3C7A21E5",
-      "sub_commit": "3e77cbae214809d3e08f09d500ab4b661fe1f53b",
+      "branch_tip": "ecab4e91b1fc698e16ee4ff1c7d2ff3f7e2369ba",
+      "main_generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
+      "main_status": "RUNNING_LEASE_ONLY_NO_RESULT_YET",
+      "sub_generation_id_from_analyst": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5",
       "authoritative": false
     }
   },
@@ -69,6 +73,11 @@
     "metadata_only_holdout_exposure_endpoint_boundary": "TIGHTEN",
     "adaptive_cross_generation_holdout_reuse_control": "KEEP",
     "cross_generation_holdout_exposure_observability": "TIGHTEN",
+    "adaptivity_observability_vs_validity_separation": "KEEP",
+    "protected_set_validity_regime_binding": "TIGHTEN",
+    "adaptive_reuse_guarantee_scope_machine_checkability": "TIGHTEN",
+    "protected_feedback_visibility_masking": "TIGHTEN",
+    "selection_ancestry_or_independent_confirmation": "KEEP",
     "post_outcome_integrity_adjudication_without_rerun_repair": "KEEP",
     "no_silent_post_outcome_repair": "KEEP",
     "current_object_claim_ceiling": "KEEP",
@@ -98,15 +107,33 @@
     "legacy_topk_sparse_support": "TIGHTEN",
     "methodology_authoritative_reference_trace_accuracy": "KEEP"
   },
+  "general_calibration": {
+    "gate_drift": "LOW",
+    "justification_trace": "STRONGER_AFTER_R44_LITERATURE_SHARPENING",
+    "false_positive_control": "LOW_CURRENT_BUT_MODERATE_IF_FUTURE_PROTECTED_REUSE_PROCEEDS_WITH_EXPOSURE_LOGGING_ONLY_WITHOUT_A_MATCHED_VALIDITY_REGIME",
+    "false_negative_risk": "MODERATE_WATCH_DUE_ZERO_VIABLE_MECHANISM_AND_POTENTIAL_POWER_COST_IF_FRESH_SPLIT_IS_MADE_UNIVERSAL",
+    "duplicate_guards": "LOW; EXPOSURE_OBSERVABILITY_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY_ARE_ORTHOGONAL_NOT_DUPLICATES",
+    "moving_goalposts": "LOW",
+    "pass_reachability": "CONDITIONAL_BUT_REAL",
+    "comparator_calibration": "UNCHANGED; EQUAL_PRIVILEGE_KEEP_AND_CAUSAL_EQUIVALENCE_SPLIT_BY_CLAIM_TYPE",
+    "signal_before_reduction": "KEEP_EXISTING_DISCIPLINE",
+    "claim_type_separation": "GOOD",
+    "research_worthiness_vs_novelty": "GOOD",
+    "external_calibration": "STRONG_NEW_SUPPORT_FOR_SELECTION_AWARE_VALIDITY_AND_FEEDBACK_MASKING",
+    "opportunity_cost": "CONTROLLED; INTENTIONAL_IDLE_PREFERRED_TO_MANUFACTURED_WORK",
+    "mechanism_supply_health": "STALLED_BUT_QUALITY_FLOOR_HEALTHY",
+    "funnel_observability": "CANONICAL_CLASSIFICATION_COMPLETE_BUT_PROTECTED_ADAPTIVITY_VALIDITY_METADATA_INCOMPLETE",
+    "preformal_gate_calibration": "READY_SEMANTICS_REMAIN_WELL_CALIBRATED; EXECUTION_AND_ADAPTIVE_VALIDITY_CONTROLS_REMAIN_TIGHTEN"
+  },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_TO_MODERATE: safe cycle-2 scope and the pre-fixed terminal mapping were respected, but fresh scientific PRE_FORMAL four-stage conformance and machine-checkable cross-generation protected-set exposure/feedback provenance remain unobserved.",
-    "false_negative": "MODERATE_WATCH: viable executable MECHANISM remains zero and the no-target episode is now at canonical check 8. Quality-floor behavior remains credible, but mechanism supply is stalled and repeated no-delta checks must not accumulate as evidence of absence.",
-    "duplicate_guards": "LOW: preformal eligibility and READY remain empirically distinct; protected-set observability, integrity architecture, candidate supply, and scientific admission remain separate gates.",
-    "opportunity_cost": "CONTROLLED_BUT_WATCH: the final bounded SYSTEM cycle produced a real method-limit observation and then stopped; intentional idle is preferable to manufactured work, while repeated no-delta scans have low information value absent a material surface delta.",
-    "moving_goalpost_risk": "LOW: R42 prospectively fixed the cycle-2 terminal outcome and R43 applied it exactly, with no third rescue or post-hoc reinterpretation."
+    "false_positive": "LOW_CURRENT / MODERATE_FUTURE_REUSE_RISK: there is no active scientific PRE_FORMAL, but an exposure ledger alone would not justify inference after adaptive candidate selection or stopping. Any future reuse must bind a validity regime whose assumptions cover the actual adaptive process.",
+    "false_negative": "MODERATE_WATCH: viable executable MECHANISM remains zero. Fresh independent confirmation is a robust fallback when ancestry is opaque, but making fresh splitting universal would unnecessarily sacrifice power where a valid selection-aware or always-valid regime is prospectively specified and verifiable.",
+    "duplicate_guards": "LOW: exposure observability, validity-under-adaptivity, feedback visibility, PRE_FORMAL readiness, and scientific admission answer different questions.",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH: intentional idle avoids busywork; repeated no-target checks remain low-information liveness observations unless a material mechanism-surface delta appears.",
+    "moving_goalpost_risk": "LOW: no prior object is reopened, no immutable evidence is rescored, and the new validity requirement is explicitly prospective."
   },
   "moving_goalposts": "LOW",
-  "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; CROSS_GENERATION_SAFE_METADATA_OBSERVABILITY_CONFIRMED_INSUFFICIENT_AND_CURRENT_SYSTEM_OBJECT_TERMINALIZED; CLEAN_SCIENTIFIC_PASS_REQUIRES_FRESH_PROSPECTIVE_IDENTITY_WITH_CONFORMING_FOUR_STAGE_PIPELINE_AND_EXPLICIT_PROTECTED_SET_EXPOSURE_FEEDBACK_POLICY",
+  "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; CROSS_GENERATION_EXPOSURE_OBSERVABILITY_INSUFFICIENT; FUTURE_PROTECTED_REUSE_REQUIRES_SEPARATE_PROSPECTIVE_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY_CONTROL; CLEAN_SCIENTIFIC_PASS_REQUIRES_FRESH_PROSPECTIVE_IDENTITY_WITH_CONFORMING_PIPELINE_AND_VALIDITY_ASSUMPTIONS_MATCHED_TO_THE_ACTUAL_ADAPTIVE_PROCESS",
   "hidden_second_formal_gate": false,
   "claim_type_findings": {
     "claim_ceiling_current_object_only": true,
@@ -116,9 +143,9 @@
     "active_object_ceiling": null,
     "last_terminal_system_object": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
     "last_terminal_system_disposition": "HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED",
-    "research_worthiness_note": "The completed SYSTEM integrity object produced actionable evidence-validity information without being relabeled as scientific novelty or mechanism."
+    "research_worthiness_note": "SYSTEM integrity work continues to provide architecture/reproducibility value without novelty or mechanism laundering."
   },
-  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_SUPPLY_STALLED_M13_S18_NO_VIABLE_EXECUTABLE_MECHANISM_OPEN_NO_TARGET_EPISODE_CHECK8_EMPTY_HOLD_SMALL_N",
+  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_SUPPLY_STALLED_M13_S18_NO_VIABLE_EXECUTABLE_MECHANISM_OPEN_NO_TARGET_EPISODE_CHECK9_EMPTY_HOLD_SMALL_N",
   "funnel_observability": {
     "canonical_population": 31,
     "classified_population": 31,
@@ -142,6 +169,8 @@
     "policy_conclusions_gated_by_classification_completeness": true,
     "active_object": null,
     "cross_generation_exposure_observability": "DIRECTLY_OBSERVED_INSUFFICIENT_ON_CURRENT_SAFE_METADATA",
+    "adaptivity_validity_regime_binding": "NOT_YET_IMPLEMENTED_FOR_FUTURE_SCIENTIFIC_SUCCESSOR",
+    "protected_feedback_visibility_control": "NOT_YET_BOUND_FOR_FUTURE_SCIENTIFIC_SUCCESSOR",
     "shadow_generated_cumulative": 4,
     "shadow_retained_current": 0,
     "shadow_canonical_admissions": 0,
@@ -153,13 +182,14 @@
     "first_ready_to_preformal_empirical_status": "CONSISTENT_WITH_DEVELOPMENT_READINESS",
     "raw_before_score_live_scientific_conformance": "FAILED_ON_HISTORICAL_FIRST_PRE_FORMAL; DO_NOT_REPAIR_OR_RERUN_SAME_IDENTITY",
     "synthetic_four_stage_conformance": "PASSED_AND_CANONICALIZED_SYSTEM_TERMINAL",
-    "cross_generation_holdout_integrity": "FINAL_SAFE_METADATA_CYCLE_COMPLETED; OBSERVABILITY_INSUFFICIENT; HOLD_METHOD_LIMITED_TERMINAL; NO_THIRD_RESCUE",
-    "clean_pass_inference": "REACHABLE_ONLY_VIA_FRESH_PROSPECTIVE_SCIENTIFIC_IDENTITY_WITH_FOUR_STAGE_CONFORMANCE_AND_PREBOUND_PROTECTED_SET_EXPOSURE_FEEDBACK_POLICY"
+    "cross_generation_holdout_integrity": "OBSERVABILITY_INSUFFICIENT; CANDIDATE_31_TERMINAL; NO_THIRD_RESCUE",
+    "adaptivity_validity_requirement": "EXPOSURE_LEDGER_ALONE_INSUFFICIENT; FRESH_SUCCESSOR_MUST_BIND_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY",
+    "clean_pass_inference": "REACHABLE_ONLY_VIA_FRESH_PROSPECTIVE_SCIENTIFIC_IDENTITY_WITH_FOUR_STAGE_CONFORMANCE_AND_PREBOUND_PROTECTED_SET_OBSERVABILITY_PLUS_VALIDITY_REGIME"
   },
   "system_priority_exception_audit": {
     "rule": "KEEP",
     "current_used": false,
-    "current_basis": "no MAIN allocation is active and canonical viable executable MECHANISM=0",
+    "current_basis": "no active canonical MAIN object and canonical viable executable MECHANISM=0",
     "first_genuine_use": "INSUFFICIENT_EVIDENCE",
     "post_hoc_justification_observed": false
   },
@@ -167,13 +197,13 @@
     "rule": "KEEP",
     "open_episode": true,
     "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-    "canonical_check_count": 8,
+    "canonical_check_count": 9,
     "escape_hatch_evidence": false,
     "candidate_or_identity_consumption": false,
     "included_in_candidate_conversion_denominator": false,
     "rolling_scientific_selection": "MECHANISM / SYSTEM / SYSTEM = 1/3",
     "shadow_supply_effect": "NO_CURRENT_RETAINED_OR_ADMITTED_SHADOW; EPISODE_REMAINS_OPEN",
-    "interpretation": "EIGHT_CANONICAL_NO_DELTA_CHECKS_IN_ONE_OPEN_EPISODE_NOT_EIGHT_INDEPENDENT_SCIENTIFIC_FAILURES; TREAT_AS_LIVENESS_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
+    "interpretation": "NINE_CANONICAL_NO_DELTA_CHECKS_IN_ONE_OPEN_EPISODE_NOT_NINE_INDEPENDENT_SCIENTIFIC_FAILURES; LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
   },
   "classification_completeness": {
     "complete": true,
@@ -185,23 +215,26 @@
   "prospective_recommendations": [
     "Do not change scientific admission, novelty, comparator, reduction, or READY thresholds.",
     "Keep R33 terminal; never rerun, repair, retune, rescore, or upgrade that consumed identity.",
-    "Treat CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01 as terminal with no third rescue; any exposure-ledger or conformance implementation requires a fresh SYSTEM object and fresh prospective authority.",
-    "Before future scientific result-bearing access, prospectively bind protected-set identity, exposure-event semantics, feedback class/budget, candidate-choice ancestry where material, and fresh/rotation/reuse handling.",
-    "For future scientific PRE_FORMAL, also prospectively bind the four-stage raw-only generation, durable preserve+digest, fixed scorer exact-blob read, and scored-result preservation lineage.",
-    "Preserve intentional idle/no-target behavior when no coherent bounded target exists; do not manufacture SYSTEM work merely to keep MAIN busy.",
-    "Treat no-target check_count as liveness only until a material mechanism-surface delta or genuinely new bounded safe search surface appears.",
-    "Keep metadata-only access controls tightened until result-bearing payload exclusion is machine-enforced rather than only procedurally respected.",
+    "Keep candidate #31 terminal with no third rescue; any new protected-set validity or ledger implementation must be a fresh SYSTEM object with fresh prospective authority.",
+    "Separate protected-set exposure observability from inferential validity under adaptivity; an exposure ledger is necessary for auditability but is not sufficient evidence of validity.",
+    "Before any future protected-set reuse, bind the exact selection-aware or always-valid procedure and machine-check the adaptive choices, stopping process, and assumptions its guarantee covers.",
+    "If distributed candidate-selection ancestry cannot be faithfully represented, prefer a fresh independent confirmatory set hidden until candidate/scorer/falsifier binding rather than pretending reuse is auditable.",
+    "Do not make fresh splitting universal: a valid prospectively specified reuse regime is acceptable when its assumptions match the actual adaptive process.",
+    "Treat protected feedback visibility as a separate control; mask or reduce full protected score trajectories to prospectively allowed minimal signals during candidate generation.",
+    "For future scientific PRE_FORMAL, prospectively bind four-stage raw-only generation, durable preserve+digest, fixed scorer exact-blob read, scored-result preservation, protected-set identity, exposure semantics, feedback visibility, and validity regime before result-bearing access.",
+    "Preserve intentional idle/no-target behavior when no coherent bounded target exists; check_count is liveness only, not accumulating evidence of absence.",
     "Validate or explicitly map canonical Funnel-v2.1 HOLD enums at producer handoff rather than relying on downstream Analyst normalization."
   ],
   "utility_request": {
     "created": false,
-    "reason": "the completed bounded live rollout directly resolved the current methodology observability question; an additional utility probe would not add higher-value calibration evidence"
+    "reason": "Literature R22 plus Analyst R44 already materially calibrate the validity-under-adaptivity question; manufacturing a Utility probe would add less information than a future live fresh-science rollout under prospectively bound controls."
   },
   "hard_floor_confirmation": {
     "policy": "CONFIRMED_DO_NOT_RELAX",
     "historical_nonconformance": "first live PRE_FORMAL raw-before-score violation remains acknowledged and terminalized",
     "fresh_synthetic_pipeline": "PASSED_NON_EVIDENTIARY_ONLY_NO_R33_REUSE",
-    "cross_generation_cycle2": "SAFE_METADATA_ONLY; NO_PROTECTED_OUTCOME; NO_SCIENCE; NO_IDENTITY_CONSUMPTION; METHOD_LIMITED_TERMINAL_APPLIED_PROSPECTIVELY; NO_THIRD_RESCUE",
+    "candidate_31": "TERMINAL_HOLD_METHOD_LIMITED_NO_THIRD_RESCUE",
+    "adaptivity_update": "PROSPECTIVE_ONLY; NO_RETROACTIVE_INVALIDATION_OR_RESCORING",
     "rerun_or_retune_consumed_scientific_identity_observed": false,
     "silent_post_outcome_repair_observed": false,
     "evaluator_target_leakage_used_for_inference_observed": false,
@@ -209,15 +242,43 @@
   },
   "confidence": {
     "current_calibration_state": "HIGH",
-    "cross_generation_holdout_exposure_observability_defect": "HIGH_DIRECT_CANONICAL_OBSERVATION",
+    "adaptivity_observability_vs_validity_separation": "HIGH_EXTERNAL_AND_ANALYST_SUPPORT",
+    "protected_feedback_visibility_as_separate_control": "MODERATE_TO_HIGH_EXTERNAL_SUPPORT_PROSPECTIVE_IMPLEMENTATION_UNOBSERVED",
     "first_positive_shadow_to_mechanism_admission": "LOW_INSUFFICIENT_EVIDENCE",
     "first_genuine_system_priority_exception": "LOW_INSUFFICIENT_EVIDENCE"
   },
   "questions_for_control_analyst": [
-    "Will every future scientific successor bind protected-set identity, exposure-event semantics, feedback class or budget, and reuse/rotation policy before result-bearing access?",
-    "Will any future exposure-ledger implementation or conformance study be a fresh SYSTEM object rather than a third rescue of candidate #31?",
-    "Has producer-side canonical HOLD-enum validation been implemented, or is downstream Analyst normalization still required?",
-    "Can no-target checks now be explicitly treated as liveness-only until a material mechanism-surface delta occurs, so check_count can never be misread as accumulating absence evidence?",
-    "What machine-readable event will qualify as a material mechanism-surface delta sufficient to reopen theory-backward discovery without weakening the quality floor?"
+    "Will every fresh scientific successor encode a protected-set validity regime separately from its exposure ledger?",
+    "If protected-data reuse is allowed, will the machine-readable contract state exactly which adaptive selection and stopping decisions the inferential guarantee covers?",
+    "Will protected feedback visibility be explicitly masked or bounded during candidate generation rather than exposing full score trajectories by default?",
+    "When cross-agent selection ancestry cannot be represented faithfully, will fresh independent confirmation be the default robust fallback without turning it into a universal rule?",
+    "Has producer-side canonical HOLD-enum validation been implemented, or is downstream Analyst normalization still required?"
+  ],
+  "external_calibration_sources": [
+    {
+      "citation": "Bibaut & Kallus, Demystifying Inference After Adaptive Experiments, Annual Review of Statistics and Its Application 12 (2025)",
+      "doi": "10.1146/annurev-statistics-040522-015431",
+      "supports": "ordinary nonadaptive inference can fail under adaptivity; inferential guarantees must match the adaptive process"
+    },
+    {
+      "citation": "Goeman & Solari, On selection and conditioning in multiple testing and selective inference, Biometrika 111(2) (2024)",
+      "doi": "10.1093/biomet/asad078",
+      "supports": "independent data splitting permits unconstrained upstream selection but may be inefficient; fresh confirmation is robust but not universally power-optimal"
+    },
+    {
+      "citation": "Panigrahi, Fry & Taylor, Exact selective inference with randomization, Biometrika 111(4) (2024)",
+      "doi": "10.1093/biomet/asae019",
+      "supports": "selection-aware inference is possible under explicitly modeled randomized selection"
+    },
+    {
+      "citation": "Grunwald, de Heide & Koolen, Safe testing, JRSSB 86(5) (2024)",
+      "doi": "10.1093/jrsssb/qkae011",
+      "supports": "anytime-valid/e-value methods provide validity under specified sequential/adaptive testing regimes, not arbitrary undocumented outcome-responsive redesign"
+    },
+    {
+      "citation": "Sadibolova & Terhune, Experimenter evidence unmasking as a confound in optional stopping, Behavior Research Methods 57 (2025)",
+      "doi": "10.3758/s13428-025-02813-0",
+      "supports": "visibility of evolving evidence can itself affect subsequent behavior and should be treated as a methodological control dimension"
+    }
   ]
 }
