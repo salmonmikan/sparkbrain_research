@@ -1,49 +1,30 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260921T205220+0900-R25-9C4E21A7",
-  "produced_at": "2026-09-21T20:52:20+09:00",
-  "producer_run_id": "control-brain-auto-20260921T205220+0900-R25-9C4E21A7",
-  "authority_scope": "CONTROL_BRAIN_STRATEGIC_GOVERNANCE_AND_ALLOCATION_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "CTRL-20260921T185206+0900-R24-6B4D21C8",
-  "selected_role": "CONTROL_BRAIN",
-  "programme_position": "FORMAL_HOLD_WITH_ACTIVE_LOWER_FUNNEL",
-  "fleet_status": "YELLOW",
-  "scheduler_controller_action": "USER_APPROVAL_REQUIRED",
-  "human_directives": [
-    {"id":"HUMAN-20260918-001","disposition":"ACCEPT","effect":"Audit stable outcome-independent reusable comparator assets for promotion; none is currently directed."},
-    {"id":"HUMAN-20260919-002","disposition":"ACCEPT","effect":"Protection/rulesets remain deferred absent materially changed integrity risk."},
-    {"id":"HUMAN-20260919-003","disposition":"ACCEPT","effect":"Lower-layer throughput is a real programme concern without weakening hard floors; NO_OP/no-delta scans are not progress."},
-    {"id":"HUMAN-20260921-004","disposition":"MODIFY","effect":"Allow bounded no-assignment Utility autonomy with durable task selection, ownership/conflict checks, one-task limit, fail-closed conflict handling, NON_EVIDENTIARY proposal status for candidate-like outputs, no consumed/protected identities, no claim-ceiling/readiness/Formal authority, no theory-backward quota credit, and no PRE_FORMAL/FORMAL execution."}
-  ],
+  "generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
+  "produced_at": "2026-09-21T23:03:54+09:00",
+  "producer_run_id": "control-brain-auto-20260921T2250JST-R26",
+  "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY_NO_SCIENTIFIC_EXECUTION",
+  "supersedes_generation_id": "CTRL-20260921T205220+0900-R25-9C4E21A7",
+  "programme_position": "FORMAL_HOLD_WITH_INTENTIONAL_LOWER_FUNNEL_IDLE_NO_COHERENT_TARGET",
   "input_generations": {
-    "previous_control": "CTRL-20260921T185206+0900-R24-6B4D21C8@5f9348022b3af8ef6ac6c1bd9d15cb77380d7d92",
-    "human_directives": "ops/human-directives@00f63196873bb4248f37e5f685f5be0363c3d6ab",
-    "evidence_analyst": "EVA-20260921T200300+0900-R42-5F8C21A4@b8dc2ab5a203547cc9f663cf7fcfe1541091fc8e",
-    "main": "MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4",
-    "sub": "SUB-20260921T203533+0900-NOOP-R42POSTMAIN-METHODHOLD-3C7A21E5",
-    "orchestrator_mailbox": "ops/orchestrator-run-report@3e77cbae214809d3e08f09d500ab4b661fe1f53b",
-    "relay": "LIVE_RELAY_SCHEDULER_INSPECTED; NO_SEPARATE_OPS_RELAY_REF",
-    "literature": "LIT-20260921T183800+0900-R21-HOLDOUT-EXHAUSTION-4E7C21A9@e3908aae13ef167c603fa202d2e00bfc99916912",
-    "audit": "AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4@e3908aae13ef167c603fa202d2e00bfc99916912",
-    "methodology": "METHCAL-20260921T202100+0900-R43-9D4B2C71@d5a1e49721777feff018c8c032ae1aab75cd778c",
-    "steward": "STEWARD-20260921T195000+0900-G7-7D2C91A4@49dd571e802887637ecaea8071e2a695dda00a8c",
-    "utility_mailbox": "ops/utility-orchestrator-requests@472726e572a854fe3577e2733bb1de37c05df1fa",
-    "scheduler_registry": "LIVE_ACTIVE_SPARKBRAIN_REGISTRY_REFETCHED_THIS_RUN"
-  },
-  "generation_map": {
-    "control": "CTRL-20260921T205220+0900-R25-9C4E21A7",
-    "analyst": "EVA-20260921T200300+0900-R42-5F8C21A4",
-    "main": "MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4",
-    "sub": "SUB-20260921T203533+0900-NOOP-R42POSTMAIN-METHODHOLD-3C7A21E5",
-    "methodology": "METHCAL-20260921T202100+0900-R43-9D4B2C71",
-    "literature": "LIT-20260921T183800+0900-R21-HOLDOUT-EXHAUSTION-4E7C21A9",
-    "audit": "AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4",
+    "human_directives_branch": "ops/human-directives@00f63196873bb4248f37e5f685f5be0363c3d6ab",
+    "evidence_analyst": "EVA-20260921T220541+0900-R44-7A3C21E8@fca9a4b0adb259b76a518605f611ff79e0c48680",
+    "main": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
+    "sub": "SUB-20260921T223422+0900-NOOP-R44INTENTIONALIDLE-5C8A21E4",
+    "literature": "LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9",
+    "audit": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
+    "methodology": "METHCAL-20260921T222227+0900-R45-B7E2C491",
     "steward": "STEWARD-20260921T195000+0900-G7-7D2C91A4",
-    "utility_assignment_pointer": "IDLE"
+    "utility_assignment": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
+    "utility_worker": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
+    "scheduler_registry_manifest": "ops/scheduler-registry@scheduler_registry/current/manifest.json#6f7fa138b09b093613e8eb98b18559ea94e16b59",
+    "previous_control": "CTRL-20260921T205220+0900-R25-9C4E21A7@835c175de2db7220e22919a3a27c76406b8cef46"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_branch_protected": false,
+    "main_protected": false,
+    "ruleset_count": 0,
+    "evidence_tag_count": 5,
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -51,258 +32,284 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
-    "evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13,
-    "repository_ruleset_count": 0,
-    "immutable_ref_incident_observed": false
+    "formal_tags": [],
+    "sealed_tags": [],
+    "freeze_tags": [],
+    "legacy_freeze_branch_count": 13
   },
-  "hard_floor": {
-    "policy": "UNCHANGED_DO_NOT_RELAX",
-    "recent_preformal_integrity_event": "R33_NONCONFORMING_RAW_BEFORE_SCORE",
-    "containment": "TERMINAL_HOLD_METHOD_LIMITED_NO_SAME_ID_RERUN_REPAIR_RESCORE_REDESIGN_OR_CONTINUATION",
-    "formal_or_immutable_contamination_observed": false,
-    "future_within_run_sequence": ["RAW_GENERATOR","DURABLE_RAW_PRESERVE_DIGEST","FIXED_SCORER_EXACT_BLOB","SCORED_PRESERVE"],
-    "cross_generation_holdout_control": "PROSPECTIVE_EXPOSURE_ACCOUNTING_AND_BOUNDED_FEEDBACK_OR_FRESH_ROTATED_CONFIRMATORY_SET_WHEN_ADAPTIVE_REUSE_IS_MATERIAL"
-  },
-  "funnel": {
-    "canonical_generation": "EVA-20260921T200300+0900-R42-5F8C21A4",
-    "portfolio": {
-      "material_candidates": 31,
-      "MECHANISM": 13,
-      "SYSTEM": 18,
-      "classification_complete": "31/31",
-      "terminal_states": {"ACTIVE":1,"NONTERMINAL_HOLD":1,"TERMINAL_FOR_CURRENT_OBJECT":29}
+  "human_directive_dispositions": [
+    {
+      "directive": "HUMAN-20260918-001",
+      "disposition": "ACCEPT"
     },
-    "discovery": {
-      "active": {"MECHANISM":0,"SYSTEM":0},
-      "dispositions": {"REJECT":2,"HOLD_SYSTEM_TERMINAL":1,"HOLD_MECHANISM_UNRESOLVED":1},
-      "rolling_selections": ["MECHANISM","SYSTEM","SYSTEM"],
-      "rolling_share": "1/3",
+    {
+      "directive": "HUMAN-20260919-002",
+      "disposition": "ACCEPT"
+    },
+    {
+      "directive": "HUMAN-20260919-003",
+      "disposition": "ACCEPT"
+    },
+    {
+      "directive": "HUMAN-20260921-004",
+      "disposition": "MODIFY_AND_ACCEPT_BOUNDED_AUTONOMOUS_UTILITY"
+    },
+    {
+      "directive": "USER-20260921-UTILITY-AUTONOMY-APPROVAL",
+      "disposition": "ACCEPT_APPLIED",
+      "detail": "User explicitly approved scheduler proposal SCHED-UTILITY-AUTONOMY-20260921-01. Live Utility prompt now permits bounded one-task AUTONOMOUS_IDLE mode while schedule remains hourly :25 JST. No post-change Utility run has yet been observed in durable state."
+    }
+  ],
+  "funnel_v2_1": {
+    "material_candidates_total": 31,
+    "claim_ceiling_counts": {
+      "MECHANISM": 13,
+      "SYSTEM": 18
+    },
+    "classification_completeness": {
+      "complete": 31,
+      "total": 31,
+      "rate": 1.0
+    },
+    "discovery_dispositions": {
+      "REJECT": 2,
+      "HOLD_SYSTEM_TERMINAL": 1,
+      "HOLD_MECHANISM_UNRESOLVED": 1
+    },
+    "rolling_theory_backward": {
+      "actual_scientific_selections": [
+        "MECHANISM",
+        "SYSTEM",
+        "SYSTEM"
+      ],
+      "share": "1/3",
+      "qualifying_count": 1,
+      "window_size": 3,
       "no_target_exception": {
-        "id": "NTE-20260921-R34-POST-REPLAY-v1",
         "code": "NO_COHERENT_MECHANISM_TARGET",
-        "canonical_check_count": 7,
-        "sub_local_check_count": 8,
-        "status": "OPEN",
+        "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
+        "analyst_canonical_check_count": 9,
+        "sub_local_check_count": 10,
         "counts_as_selection": false,
-        "credible": true,
-        "check_count_is_scientific_evidence": false
+        "interpretation": "LIVENESS_ONLY_NOT_ABSENCE_EVIDENCE"
       }
     },
     "architecture": {
-      "active": {"MECHANISM":0,"SYSTEM":1},
-      "queued": {"MECHANISM":0,"SYSTEM":0},
-      "dispositions": {"REJECT":0,"HOLD_SYSTEM_TERMINAL":7,"HOLD_METHOD_LIMITED":1,"HOLD_CONTRACT_AMBIGUITY":2,"HOLD_MECHANISM_UNRESOLVED":1},
-      "current_object": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
+      "active": {
+        "MECHANISM": 0,
+        "SYSTEM": 0
+      },
+      "queued": {
+        "MECHANISM": 0,
+        "SYSTEM": 0
+      },
+      "dispositions": {
+        "REJECT": 0,
+        "HOLD_SYSTEM_TERMINAL": 7,
+        "HOLD_METHOD_LIMITED": 2,
+        "HOLD_CONTRACT_AMBIGUITY": 2,
+        "HOLD_MECHANISM_UNRESOLVED": 1
+      }
+    },
+    "terminal_state_counts": {
+      "ACTIVE": 0,
+      "NONTERMINAL_HOLD": 1,
+      "TERMINAL_FOR_CURRENT_OBJECT": 30
+    },
+    "preformal_eligible_count": 0,
+    "preformal_ready_count": 0,
+    "viable_mechanism_candidate_count": 0,
+    "recent_main_cycles": {
+      "SYSTEM": 9,
+      "MECHANISM": 3,
+      "time_split": "UNAVAILABLE_DO_NOT_USE_RUN_COUNT_AS_TIME_PROXY"
+    },
+    "system_priority_exception_count": 0,
+    "system_priority_exception_reasons": [],
+    "active_canonical_candidate": null,
+    "phenomenon_shadow": {
+      "trigger_active": true,
+      "current_generated": 0,
+      "current_retained": 0,
+      "cumulative_generated": 4,
+      "current_retained_total": 0,
+      "canonical_admissions": 0,
+      "executions": 0
+    }
+  },
+  "readiness_and_hold_semantics": {
+    "eligible_distinct_from_ready": true,
+    "ready_means_test_readiness_not_prior_success": true,
+    "hidden_second_formal_gate": false,
+    "first_ready_to_preformal": "CONSISTENT_WITH_DEVELOPMENT_READINESS_BUT_HISTORICAL_R33_RAW_BEFORE_SCORE_NONCONFORMING_TERMINAL_NO_RERUN",
+    "current_active_candidate": null,
+    "h7": {
+      "claim_ceiling": "MECHANISM",
+      "preformal_eligible": false,
+      "preformal_readiness": "NOT_READY",
+      "hold_class": "HOLD_MECHANISM_UNRESOLVED",
+      "terminal_state": "NONTERMINAL_HOLD"
+    },
+    "candidate31": {
       "claim_ceiling": "SYSTEM",
       "preformal_eligible": false,
-      "preformal_readiness": {"status":"NOT_APPLICABLE"},
-      "hold_class": null,
-      "hold_reason": null,
-      "terminal_state": "ACTIVE",
-      "queue_state": "ACTIVE",
-      "producer_observation": "SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK",
-      "producer_mapped_disposition": "HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NO_THIRD_RESCUE",
-      "producer_pending_analyst_review": true,
-      "system_priority_exception": {"used":false,"reason_code":null,"compared_mechanism_candidate_ids":[]},
-      "recent_MAIN_cycles": {"SYSTEM":8,"MECHANISM":3,"time_split":"UNAVAILABLE_DO_NOT_USE_RUN_COUNT_AS_TIME_PROXY"},
-      "system_queue_starving_mechanism": false
+      "preformal_readiness": "NOT_APPLICABLE",
+      "hold_class": "HOLD_METHOD_LIMITED",
+      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "queue_state": "NOT_QUEUED",
+      "third_cycle": "PROHIBITED"
+    }
+  },
+  "external_methodology_implications": {
+    "literature_r22": "Exposure observability is not inferential validity. Future protected-set reuse must prospectively bind a validity-under-adaptivity regime covering actual adaptive choices/stopping, and separately bind feedback visibility/masking. Prefer fresh independent confirmation when ancestry cannot be represented.",
+    "methodology_r45": {
+      "overall": "MIXED_CALIBRATION",
+      "hard_floor": "KEEP",
+      "selection_aware_validity": "TIGHTEN",
+      "protected_feedback_visibility": "TIGHTEN",
+      "intentional_idle": "KEEP",
+      "moving_goalposts": "LOW"
     },
-    "pre_formal": {
-      "eligible": 0,
-      "READY": 0,
-      "viable_MECHANISM": 0,
-      "first_READY_transition": "R33_TEST_READINESS_BEFORE_OUTCOME",
-      "first_transition_execution": "NONCONFORMING_RAW_BEFORE_SCORE",
-      "hidden_second_formal_gate": false,
-      "clean_pipeline_status": "SYNTHETIC_FOUR_STAGE_CONFORMANCE_CANONICALIZED_SYSTEM_ONLY; CROSS_GENERATION_EXPOSURE_POLICY_NOT_MACHINE_CHECKABLE"
-    },
-    "formal": {"status":"EMPTY_HOLD","fresh_one_way_authority":false,"new_evidence":false}
+    "audit_r5_h5": {
+      "classification": "ROBUST_SO_FAR",
+      "canonical_result": "FAIL_NO_USEFUL_WORK_REDUCTION_REMAINS_VALID",
+      "interpretation_ceiling": "DO_NOT_USE_AS_BROAD_EVENT_ROUTING_OR_LAZY_STATE_CAUSAL_NO_GO",
+      "new_attack": "SEMANTICALLY_INACTIVE_ELIGIBILITY_WORK_DOMINATES_REGISTERED_TOTAL_WORK_IN_REPRESENTATIVE_SPARSE_ROWS",
+      "future_rule": "Fresh efficiency objects should prospectively decompose semantically active mechanism-attributable work from implementation overhead; never rerun or rescore H5."
+    }
   },
-  "v2_1_compliance": {
-    "classification_completeness": "PASS_31_OF_31",
-    "current_object_transition_rule": "PASS_NO_POST_OUTCOME_SYSTEM_TO_MECHANISM_UPGRADE",
-    "eligible_vs_ready": "PASS_TEST_READINESS_NOT_PRIOR_SUCCESS",
-    "hold_dimensions": "PASS_CANONICAL_R42; FRESH_PRODUCER_TERMINAL_MAPPING_PENDING_ANALYST",
-    "system_priority_exception_count": 0,
-    "system_queue_starving_mechanism": false,
-    "post_hoc_exception_gaming": false,
-    "theory_backward_floor": "PASS_1_OF_3_WITH_CREDIBLE_NO_TARGET_EPISODE",
-    "hidden_second_formal_gate": false
+  "worker_assessment": {
+    "analyst": "R44 healthy; complete 31/31 typing; intentionally no active candidate; has not yet consumed Methodology R45, Audit R5, or this Control generation.",
+    "main": "R44 completed intentional idle with no scientific execution or identity consumption.",
+    "sub": "R44 no-op with credible NO_COHERENT_MECHANISM_TARGET; no new selection or artifact.",
+    "relay": "No current MAIN continuation object; latest live polling opportunity produced no new durable MAIN generation.",
+    "utility": "Control pointer is IDLE. User-approved AUTONOMOUS_IDLE semantics are live, but durable Utility state still predates the prompt change; first post-change behavior remains unobserved.",
+    "literature": "R22 genuinely new methodology sharpening already reflected by Analyst/Methodology.",
+    "audit": "R5 adds new H5 interpretation ceiling without invalidating evidence.",
+    "methodology": "R45 material prospective calibration update; no retroactive evidence change.",
+    "steward": "G7 governance healthy; main/evidence separation compliant; no promotion candidate; protection gap remains."
   },
-  "main": {
-    "generation": "MAIN-20260921T201935+0900-PRIMARY-FUNNEL21-SYSTEM-HOLDOUTLEDGER-R42-CYCLE2-5D8A21C4",
-    "status": "COMPLETED_SYSTEM_ARCHITECTURE_AWAITING_ANALYST_CANONICALIZATION",
-    "candidate": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
-    "cycle_count": 2,
-    "terminal_observation": "SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK",
-    "scope_allowlist_respected": true,
-    "second_scope_boundary_failure": false,
-    "protected_outcome_read_for_inference": false,
-    "research_branch_mutated": false,
-    "identity_consumption": 0,
-    "same_run_PRE_FORMAL_or_FORMAL": false,
-    "third_rescue_allowed": false
-  },
-  "sub": {
-    "generation": "SUB-20260921T203533+0900-NOOP-R42POSTMAIN-METHODHOLD-3C7A21E5",
-    "status": "NO_OP_NO_COHERENT_MECHANISM_TARGET",
-    "selection_this_run": false,
-    "rolling_share": "1/3",
-    "direction": "NO_ACTIVITY_MANUFACTURING_WAIT_FOR_MATERIAL_MECHANISM_SURFACE_DELTA"
-  },
-  "relay": {
-    "status": "HEALTHY_AUTHORITY_BOUNDARY",
-    "role_collision_observed": false,
-    "durable_separate_mailbox": false,
-    "scheduler_definition_and_recent_timing_inspected": true
-  },
-  "utility": {
-    "control_assignment_pointer": "IDLE",
+  "utility_governance": {
+    "assignment_status": "IDLE",
     "active_assignment_id": null,
-    "active_assignment_generation_id": null,
-    "last_terminal_acknowledged": true,
-    "unacknowledged_terminal_assignment": false,
-    "worker_state_generation": "UTILITY-20260921T012313+0900-ELIGTIME-BLOCKED",
-    "worker_state_historical_relative_to_pointer": true,
-    "scientific_authority": "NONE",
-    "directive_disposition": "MODIFY_BOUNDED_AUTONOMY",
-    "scheduler_semantic_alignment": "MISMATCH_ASSIGNMENT_ONLY_LIVE_PROMPT_VS_BOUNDED_AUTONOMY_DIRECTIVE"
-  },
-  "methodology": {
-    "generation": "METHCAL-20260921T202100+0900-R43-9D4B2C71",
-    "overall": "MIXED_CALIBRATION",
-    "disposition": "MATERIAL_CALIBRATION_UPDATE",
-    "bounded_nonresult_scope_recovery": "KEEP",
-    "prospective_scope_failure_terminal_mapping": "KEEP",
-    "metadata_only_holdout_exposure_endpoint_boundary": "TIGHTEN",
-    "cross_generation_holdout_exposure_observability": "INSUFFICIENT_EVIDENCE_AT_R43_BEFORE_MAIN_CYCLE2_RESULT",
-    "freshness": "PREDATES_FINAL_MAIN_R42_CYCLE2_TERMINAL_OBSERVATION",
-    "ready_semantics": "KEEP",
-    "hidden_second_formal_gate": false
-  },
-  "external_implications": {
-    "literature": {
-      "generation": "LIT-20260921T183800+0900-R21-HOLDOUT-EXHAUSTION-4E7C21A9",
-      "genuinely_new_information": true,
-      "effect": "CROSS_GENERATION_HOLDOUT_EXPOSURE_AND_BENCHMARK_EXHAUSTION_IS_SEPARATE_PROSPECTIVE_INTEGRITY_MODE",
-      "retroactive_invalidation": false,
-      "synthetic_pipeline_affected": false
+    "approved_scheduler_proposal": {
+      "proposal_id": "SCHED-UTILITY-AUTONOMY-20260921-01",
+      "status": "APPLIED_RESOLVED_BY_USER_APPROVAL",
+      "live_prompt_updated": true,
+      "schedule_changed": false,
+      "first_post_change_run_observed": false
     },
-    "audit": {
-      "generation": "AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4",
-      "classification": "CONFOUNDED",
-      "effect": "NO_ASSEMBLY_SPECIFIC_MECHANISM_OR_H7_UPLIFT"
-    },
-    "steward": {
-      "generation": "STEWARD-20260921T195000+0900-G7-7D2C91A4",
-      "assessment": "SEPARATION_INTACT; STATE_PERSISTENCE_MISMATCH_REPAIRED; NO_IMMUTABLE_INCIDENT_OR_MAIN_PROMOTION"
+    "autonomous_mode_constraints": {
+      "max_tasks_per_run": 1,
+      "default_max_runs": 1,
+      "evidentiary_status": "NON_EVIDENTIARY",
+      "preformal_formal_forbidden": true,
+      "typing_mutation_forbidden": true,
+      "quota_credit_forbidden": true,
+      "main_dependency_forbidden": true
     }
   },
   "scheduler_health": {
     "fleet_status": "YELLOW",
     "scheduler_definition_drift_detected": true,
-    "scheduler_definition_drift_detail": "UTILITY_LIVE_DEFINITION_REMAINS_ASSIGNMENT_ONLY_WHILE_HUMAN_20260921_004_AUTHORIZES_BOUNDED_NO_ASSIGNMENT_AUTONOMY",
-    "scheduler_cadence_failure_detected": false,
-    "cadence_watch": "BROAD_START_DELAY_SIGNAL_OBSERVED_THIS_WINDOW_BUT_PERSISTENCE_THRESHOLD_NOT_YET_MET",
-    "exact_time_overlap_count": 0,
-    "exact_time_overlap_or_collision_risks": [],
-    "approved_brief_phase_offset": "01:55/09:55/13:55/17:55/21:55_JST_PRESERVED_VS_RELAY_AT_45",
-    "observed_material_start_delays": [
-      {"role":"Evidence_Analyst","delay":"~18m","assessment":"MATERIAL_SINGLE_WINDOW"},
-      {"role":"MAIN","delay":"~10m","assessment":"MATERIAL_SINGLE_WINDOW"},
-      {"role":"Methodology","delay":"~6m","assessment":"MATERIAL_SINGLE_WINDOW"},
-      {"role":"SUB","delay":"~6m","assessment":"MATERIAL_SINGLE_WINDOW"},
-      {"role":"Relay","delay":"~2m","assessment":"MINOR"},
-      {"role":"External_Research_Audit","delay":"~10m","assessment":"MATERIAL_LAST_SAMPLED_WINDOW"}
+    "scheduler_definition_drift_scope": "REGISTRY_MIRROR_OUT_OF_SYNC_WITH_APPROVED_LIVE_DEFINITIONS",
+    "scheduler_definition_drift_details": [
+      "Live Current State Brief is approved at :55 JST, but scheduler_registry/current/manifest.json still records :45 JST.",
+      "Utility registry entry is aligned with the newly approved autonomous-idle prompt.",
+      "Several non-Utility registry observation timestamps/hashes predate current live prompt edits; exact prompt reconciliation is required before any future scheduler mutation."
     ],
-    "observation_history_assessment": "R24 showed mostly normal/minor delays plus one Literature delay; R25 is the second broader queue-pressure observation. Require another independent observation before treating as persistent cadence failure or proposing structural cadence change.",
-    "role_ownership_collision_count": 0,
-    "recent_NO_OP_IDLE_patterns": {
-      "MAIN": "USEFUL_SYSTEM_INTEGRITY_RESULT",
-      "SUB": "REPEATED_NO_TARGET_NO_OP_SAME_EPISODE",
-      "Relay": "AUTHORITY_BOUNDARY_STOPS",
-      "Utility": "IDLE_NO_ACTIVE_ASSIGNMENT_UNDER_SEMANTIC_DRIFT"
+    "scheduler_cadence_failure_detected": false,
+    "persistent_start_delay_signal": true,
+    "start_delay_observation_sequence": "SECOND_CONSECUTIVE_CONTROL_OBSERVATION_WITH_BROAD_DELAYS",
+    "exact_time_overlaps": [],
+    "collision_risks": "NO_DETERMINISTIC_TIME_COLLISION; QUEUE_PRESSURE_WATCH",
+    "observed_material_start_delays_minutes": {
+      "brief": 8.8,
+      "analyst": 19.5,
+      "main": 10.8,
+      "methodology": 13.5,
+      "utility": 1.3,
+      "external_research_audit": 11.3,
+      "sub": 4.4,
+      "relay": 2.4,
+      "control_current_start": 2.0
     },
-    "useful_result_cadence_vs_polling_cadence": "DENSE_POLLING; CURRENT_WINDOW_STILL_PRODUCED_USEFUL_ANALYST_MAIN_METHODOLOGY_DELTAS; SUB_NOOPS_AND_UTILITY_IDLE_SUPPORT_CONTINUED_OBSERVATION_NOT_AUTOMATIC_CADENCE_REDUCTION",
-    "generation_lag_assessment": "ANALYST_R42_AND_METHODOLOGY_R43_PREDATE_FINAL_MAIN_R42_CYCLE2_TERMINAL_OBSERVATION; FRESH_ANALYST_CANONICALIZATION_REQUIRED",
+    "role_ownership_collision_count": 0,
+    "recent_noop_idle_patterns": {
+      "main": "INTENTIONAL_IDLE_NO_ACTIVE_OBJECT",
+      "sub": "NO_OP_NO_COHERENT_MECHANISM_TARGET",
+      "relay": "NO_ACTIVE_CONTINUATION_NO_NEW_DURABLE_GENERATION",
+      "utility": "PRE_CHANGE_IDLE; POST_CHANGE_AUTONOMOUS_BEHAVIOR_NOT_YET_OBSERVED"
+    },
+    "useful_result_cadence_vs_polling": "SCIENTIFIC_EXECUTION_IDLE_BUT_INFORMATION_ARRIVAL_NONZERO: Analyst R44, Methodology R45, Literature R22 and Audit R5 were useful; do not optimize merely for fewer polls.",
+    "generation_lag_assessment": {
+      "analyst_missing": [
+        "METHCAL_R45",
+        "AUDIT_R5",
+        "CONTROL_R26",
+        "UTILITY_AUTONOMY_APPLIED_STATUS"
+      ],
+      "main_sub": "CURRENT_TO_ANALYST_R44",
+      "utility": "DURABLE_STATE_PREDATES_APPROVED_PROMPT_CHANGE",
+      "severity": "YELLOW_BOUNDED_EXPECTED"
+    },
     "active_sparkbrain_run_opportunities_per_day": 175,
-    "scheduler_change_warranted": true,
-    "scheduler_controller_action": "USER_APPROVAL_REQUIRED",
+    "scheduler_change_warranted": false,
+    "scheduler_controller_action": "NO_CHANGE",
     "safe_auto_fix_applied": false,
-    "timing_change_proposed_this_run": false,
-    "scheduler_proposals": [
+    "scheduler_proposals": [],
+    "resolved_proposals": [
       {
         "proposal_id": "SCHED-UTILITY-AUTONOMY-20260921-01",
-        "severity": "RECOMMEND",
-        "change_authority": "USER_APPROVAL_REQUIRED",
-        "problem": "Live Utility scheduler prompt remains assignment-only despite HUMAN-20260921-004 authorizing bounded autonomous complementary work when no assignment exists.",
-        "evidence_window": "Human Directive remains active; live Utility definition re-fetched; Control pointer remains IDLE; Utility remains assignment-only/idling.",
-        "observations": [
-          "Utility timing itself does not require repair.",
-          "No exact deterministic timing collision exists.",
-          "The mismatch is semantic rather than cadence-related.",
-          "Autonomy requires durable ownership/conflict and scientific-authority guards."
-        ],
-        "proposed_change": "Keep Utility timing unchanged. Update only Utility prompt semantics so a no-assignment run may select exactly one bounded complementary NON_EVIDENTIARY task after durable conflict/ownership checks; Control assignments take precedence; publish selection/state/evidence footprint; fail closed on conflict; no protected identities, candidate classification, claim ceiling/readiness, PRE_FORMAL/FORMAL, evidence or theory-backward quota authority.",
-        "expected_effect": "Use idle capacity for tooling, reproducibility, diagnostics and bounded Discovery/Architecture support without becoming a hidden MAIN dependency.",
-        "scientific_risk": "Scope creep, duplicate outcome generation, protected-identity reuse, post-outcome repair or de-facto scientific authority.",
-        "rollback": "Restore current assignment-only Utility prompt; timing unchanged.",
-        "user_decision_needed": "APPROVE_OR_REJECT_UTILITY_PROMPT_SEMANTIC_UPDATE"
+        "resolution": "USER_APPROVED_AND_APPLIED"
       }
-    ]
-  },
-  "worker_assessment": {
-    "Evidence_Analyst": "YELLOW_FRESH_MAIN_TERMINAL_OBSERVATION_REQUIRES_CANONICALIZATION",
-    "MAIN": "HEALTHY_USEFUL_SYSTEM_DELTA_STOPPED_AT_PROSPECTIVE_BOUNDARY",
-    "Relay": "HEALTHY_FAIL_CLOSED_NO_ROLE_COLLISION",
-    "SUB": "HEALTHY_NO_TARGET_NO_ACTIVITY_MANUFACTURING_BUT_REPEATED_NOOP",
-    "Literature": "HEALTHY_CROSS_GENERATION_INTEGRITY_SHARPENING",
-    "Audit": "HEALTHY_CONFOUNDED_CEILING",
-    "Methodology": "YELLOW_MIXED_CALIBRATION_PREDATES_FINAL_CYCLE2_RESULT",
-    "Steward": "HEALTHY_G7_PERSISTENCE_REPAIRED",
-    "Utility": "YELLOW_IDLE_WITH_PROMPT_SEMANTIC_DRIFT"
-  },
-  "fleet_health": {
-    "status": "YELLOW",
-    "critical_formal_or_immutable_integrity_failures": 0,
-    "contained_preformal_nonconformances": 1,
-    "role_collisions": 0,
-    "fresh_exact_head_ci_failures": 0,
-    "canonical_classification_gaps": 0,
-    "scheduler_definition_drift_detected": true,
-    "scheduler_cadence_failure_detected": false,
-    "broad_start_delay_watch": true,
-    "unacknowledged_utility_terminal_assignments": 0,
-    "generation_lag": "EXPECTED_FRESH_MAIN_POSTDATES_ANALYST_R42_AND_METHOD_R43",
-    "scheduler_change_warranted": true
+    ],
+    "registry_reconciliation_required": true,
+    "registry_reconciliation_instruction": "Before any future scheduler mutation, reconcile scheduler_registry current definitions/manifest from live stable definitions. This is mirror hygiene, not authority to alter live timing or scientific semantics.",
+    "observation_before_autofix": "No timing change now. Broad delay pattern is repeated but has not produced role collision, missed critical handoff, or stale scientific consumption; continue one more comparable health observation before any non-urgent phase auto-fix."
   },
   "priorities": [
-    "Fresh Analyst canonicalization of the R42 cycle-2 prospectively mapped HOLD_METHOD_LIMITED terminal; no third rescue.",
-    "If a future exposure-ledger/feedback-policy implementation or conformance study is worthwhile, require a fresh SYSTEM candidate ID, fresh prospective contract and fresh Analyst authority.",
-    "Do not manufacture a MECHANISM candidate while the no-target episode remains credible; wait for material mechanism-surface delta.",
-    "Keep R33 terminal and preserve raw-before-score/preserve-before-score plus cross-generation holdout controls.",
-    "Keep the Utility semantic-alignment scheduler proposal open for user decision; do not auto-edit prompt semantics.",
-    "Observe scheduler start-delay pattern for at least one further independent Control health window before any timing/cadence proposal."
+    "Keep all consumed identities and candidate #31 terminal; no rerun, repair, rescore or third rescue.",
+    "Remain intentionally idle scientifically until a material mechanism-surface delta or independently motivated fresh object appears.",
+    "Require future protected-set scientific successors to bind four-stage raw/preserve/score lineage, protected-set identity/exposure, feedback visibility and validity-under-adaptivity before result-bearing access.",
+    "Consume Audit R5 prospectively: retain H5 canonical FAIL but narrow its interpretation; require semantic-activity/component-attribution checks for any fresh efficiency object.",
+    "Observe first post-change Utility autonomous run for collision discipline, NON_EVIDENTIARY labeling and no quota/readiness leakage.",
+    "Reconcile scheduler registry mirror before any future scheduler mutation; do not change live scheduler merely to match stale registry."
   ],
   "direction_to_analyst": [
-    "Independently verify MAIN R42 cycle 2 used only prospectively allowlisted safe metadata and did not use protected scientific outcomes or result-bearing commit/diff payloads for inference.",
-    "If verified, apply the pre-fixed R42 mapping to the CURRENT SYSTEM object: HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED; keep claim_ceiling=SYSTEM, preformal_eligible=false, preformal_readiness=NOT_APPLICABLE, and persist a specific machine-readable hold_reason anchored to SAFE_METADATA_INSUFFICIENT_TO_MACHINE_CHECK_EXPOSURE_OR_FEEDBACK.",
-    "No third rescue. Do not upgrade this object to MECHANISM/eligible/READY/PRE_FORMAL/evidence and do not retroactively invalidate existing evidence.",
-    "Only a fresh SYSTEM successor with a new ID, fresh contract and fresh authority may implement or conformance-test an exposure ledger/feedback budget/fresh-rotation policy.",
-    "Preserve the credible no-target episode until a material MECHANISM-surface delta, preserve R33 terminal, and preserve Audit R4 CONFOUNDED ceiling."
+    "Consume Methodology R45 and Audit R5 in the next fresh generation.",
+    "Do not reopen or rescore H5; retain FAIL_NO_USEFUL_WORK_REDUCTION while recording that it is aggregate current-implementation work evidence, not an isolated causal no-go for event routing/lazy state.",
+    "Keep candidate #31 HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED with no third rescue.",
+    "Keep no-target checks as liveness only, not accumulating absence evidence.",
+    "Treat Utility autonomous outputs, if any, as NON_EVIDENTIARY/NON_CANONICAL proposals or support artifacts until independently reviewed; they cannot create typing/readiness/quota credit.",
+    "If a fresh mechanism or integrity object appears, assign a fresh candidate ID and prospective contract; never upgrade a completed SYSTEM object."
   ],
-  "mutations_this_run": {
-    "experiments": 0,
-    "scientific_workflows": 0,
+  "hard_floor_confirmation": {
+    "rerun_retune_rescore_consumed": false,
+    "immutable_evidence_mutation": false,
+    "evaluator_leakage": false,
+    "silent_post_outcome_repair": false,
+    "scientific_workflow_dispatch": false,
+    "identity_consumption": false,
+    "research_pr_merge": false,
+    "scheduler_mutation_this_control_run": false
+  },
+  "mutations": {
+    "experiments_executed": 0,
+    "scientific_workflows_dispatched": 0,
     "identities_consumed": 0,
-    "research_pr_merges": 0,
-    "immutable_formal_evidence_mutations": 0,
-    "utility_assignments": 0,
+    "research_prs_merged": 0,
+    "immutable_or_formal_evidence_mutations": 0,
+    "utility_assignments_created": 0,
     "scheduler_mutations": 0,
     "control_persistence_only": true
+  },
+  "persistence": {
+    "history_path": "analysis/control_brain/history/2026-09-21/2303.md",
+    "latest_path": "analysis/control_brain/latest.md",
+    "state_path": "analysis/control_brain/state.json",
+    "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD",
+    "history_commit": "d2a7a4b4f3034136ade345cf294e5bb9a64b9a7d",
+    "latest_commit": "c9b9cd0f3e1264dcdeae67f920d01253cb22d3ae"
   }
 }
