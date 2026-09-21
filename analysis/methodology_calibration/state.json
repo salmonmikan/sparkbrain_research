@@ -33,9 +33,11 @@
     },
     "strategy_mailbox": {
       "branch": "ops/orchestrator-run-report",
-      "branch_tip": "ecab4e91b1fc698e16ee4ff1c7d2ff3f7e2369ba",
+      "branch_tip": "4734a1d45b0ab888c07c10dfbb51710f4db41a16",
       "main_generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
-      "main_status": "RUNNING_LEASE_ONLY_NO_RESULT_YET",
+      "main_commit": "4734a1d45b0ab888c07c10dfbb51710f4db41a16",
+      "main_status": "COMPLETED_INTENTIONAL_IDLE_NO_SCIENTIFIC_EXECUTION",
+      "main_stop_reason": "R44_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
       "sub_generation_id_from_analyst": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5",
       "authoritative": false
     }
@@ -107,30 +109,12 @@
     "legacy_topk_sparse_support": "TIGHTEN",
     "methodology_authoritative_reference_trace_accuracy": "KEEP"
   },
-  "general_calibration": {
-    "gate_drift": "LOW",
-    "justification_trace": "STRONGER_AFTER_R44_LITERATURE_SHARPENING",
-    "false_positive_control": "LOW_CURRENT_BUT_MODERATE_IF_FUTURE_PROTECTED_REUSE_PROCEEDS_WITH_EXPOSURE_LOGGING_ONLY_WITHOUT_A_MATCHED_VALIDITY_REGIME",
-    "false_negative_risk": "MODERATE_WATCH_DUE_ZERO_VIABLE_MECHANISM_AND_POTENTIAL_POWER_COST_IF_FRESH_SPLIT_IS_MADE_UNIVERSAL",
-    "duplicate_guards": "LOW; EXPOSURE_OBSERVABILITY_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY_ARE_ORTHOGONAL_NOT_DUPLICATES",
-    "moving_goalposts": "LOW",
-    "pass_reachability": "CONDITIONAL_BUT_REAL",
-    "comparator_calibration": "UNCHANGED; EQUAL_PRIVILEGE_KEEP_AND_CAUSAL_EQUIVALENCE_SPLIT_BY_CLAIM_TYPE",
-    "signal_before_reduction": "KEEP_EXISTING_DISCIPLINE",
-    "claim_type_separation": "GOOD",
-    "research_worthiness_vs_novelty": "GOOD",
-    "external_calibration": "STRONG_NEW_SUPPORT_FOR_SELECTION_AWARE_VALIDITY_AND_FEEDBACK_MASKING",
-    "opportunity_cost": "CONTROLLED; INTENTIONAL_IDLE_PREFERRED_TO_MANUFACTURED_WORK",
-    "mechanism_supply_health": "STALLED_BUT_QUALITY_FLOOR_HEALTHY",
-    "funnel_observability": "CANONICAL_CLASSIFICATION_COMPLETE_BUT_PROTECTED_ADAPTIVITY_VALIDITY_METADATA_INCOMPLETE",
-    "preformal_gate_calibration": "READY_SEMANTICS_REMAIN_WELL_CALIBRATED; EXECUTION_AND_ADAPTIVE_VALIDITY_CONTROLS_REMAIN_TIGHTEN"
-  },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_CURRENT / MODERATE_FUTURE_REUSE_RISK: there is no active scientific PRE_FORMAL, but an exposure ledger alone would not justify inference after adaptive candidate selection or stopping. Any future reuse must bind a validity regime whose assumptions cover the actual adaptive process.",
-    "false_negative": "MODERATE_WATCH: viable executable MECHANISM remains zero. Fresh independent confirmation is a robust fallback when ancestry is opaque, but making fresh splitting universal would unnecessarily sacrifice power where a valid selection-aware or always-valid regime is prospectively specified and verifiable.",
+    "false_positive": "LOW_CURRENT / MODERATE_FUTURE_REUSE_RISK: an exposure ledger alone does not justify inference after adaptive candidate selection or stopping. Any future reuse must bind a validity regime whose assumptions cover the actual adaptive process.",
+    "false_negative": "MODERATE_WATCH: viable executable MECHANISM remains zero. Fresh independent confirmation is the robust fallback when ancestry is opaque, but making fresh splitting universal would sacrifice power where a valid selection-aware or always-valid regime is prospectively specified and verifiable.",
     "duplicate_guards": "LOW: exposure observability, validity-under-adaptivity, feedback visibility, PRE_FORMAL readiness, and scientific admission answer different questions.",
-    "opportunity_cost": "CONTROLLED_BUT_WATCH: intentional idle avoids busywork; repeated no-target checks remain low-information liveness observations unless a material mechanism-surface delta appears.",
-    "moving_goalpost_risk": "LOW: no prior object is reopened, no immutable evidence is rescored, and the new validity requirement is explicitly prospective."
+    "opportunity_cost": "CONTROLLED_BUT_WATCH: intentional idle avoids busywork; repeated no-target checks remain liveness observations unless a material mechanism-surface delta appears.",
+    "moving_goalpost_risk": "LOW: no prior object is reopened, no immutable evidence is rescored, and the new validity requirements are explicitly prospective."
   },
   "moving_goalposts": "LOW",
   "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; CROSS_GENERATION_EXPOSURE_OBSERVABILITY_INSUFFICIENT; FUTURE_PROTECTED_REUSE_REQUIRES_SEPARATE_PROSPECTIVE_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY_CONTROL; CLEAN_SCIENTIFIC_PASS_REQUIRES_FRESH_PROSPECTIVE_IDENTITY_WITH_CONFORMING_PIPELINE_AND_VALIDITY_ASSUMPTIONS_MATCHED_TO_THE_ACTUAL_ADAPTIVE_PROCESS",
@@ -217,9 +201,9 @@
     "Keep R33 terminal; never rerun, repair, retune, rescore, or upgrade that consumed identity.",
     "Keep candidate #31 terminal with no third rescue; any new protected-set validity or ledger implementation must be a fresh SYSTEM object with fresh prospective authority.",
     "Separate protected-set exposure observability from inferential validity under adaptivity; an exposure ledger is necessary for auditability but is not sufficient evidence of validity.",
-    "Before any future protected-set reuse, bind the exact selection-aware or always-valid procedure and machine-check the adaptive choices, stopping process, and assumptions its guarantee covers.",
-    "If distributed candidate-selection ancestry cannot be faithfully represented, prefer a fresh independent confirmatory set hidden until candidate/scorer/falsifier binding rather than pretending reuse is auditable.",
-    "Do not make fresh splitting universal: a valid prospectively specified reuse regime is acceptable when its assumptions match the actual adaptive process.",
+    "Before protected-set reuse, bind the exact selection-aware or always-valid procedure and machine-check the adaptive choices, stopping process, and assumptions its guarantee covers.",
+    "If distributed candidate-selection ancestry cannot be faithfully represented, prefer a fresh independent confirmatory set hidden until candidate/scorer/falsifier binding.",
+    "Do not make fresh splitting universal; a valid prospectively specified reuse regime is acceptable when its assumptions match the actual adaptive process.",
     "Treat protected feedback visibility as a separate control; mask or reduce full protected score trajectories to prospectively allowed minimal signals during candidate generation.",
     "For future scientific PRE_FORMAL, prospectively bind four-stage raw-only generation, durable preserve+digest, fixed scorer exact-blob read, scored-result preservation, protected-set identity, exposure semantics, feedback visibility, and validity regime before result-bearing access.",
     "Preserve intentional idle/no-target behavior when no coherent bounded target exists; check_count is liveness only, not accumulating evidence of absence.",
@@ -227,7 +211,7 @@
   ],
   "utility_request": {
     "created": false,
-    "reason": "Literature R22 plus Analyst R44 already materially calibrate the validity-under-adaptivity question; manufacturing a Utility probe would add less information than a future live fresh-science rollout under prospectively bound controls."
+    "reason": "Literature R22 plus Analyst R44 already materially calibrate the validity-under-adaptivity question; a manufactured Utility probe would add less information than a future live fresh-science rollout under prospectively bound controls."
   },
   "hard_floor_confirmation": {
     "policy": "CONFIRMED_DO_NOT_RELAX",
@@ -244,6 +228,7 @@
     "current_calibration_state": "HIGH",
     "adaptivity_observability_vs_validity_separation": "HIGH_EXTERNAL_AND_ANALYST_SUPPORT",
     "protected_feedback_visibility_as_separate_control": "MODERATE_TO_HIGH_EXTERNAL_SUPPORT_PROSPECTIVE_IMPLEMENTATION_UNOBSERVED",
+    "current_main_post_analyst_r44": "HIGH_NO_SCIENTIFIC_DELTA_INTENTIONAL_IDLE_CONFIRMED",
     "first_positive_shadow_to_mechanism_admission": "LOW_INSUFFICIENT_EVIDENCE",
     "first_genuine_system_priority_exception": "LOW_INSUFFICIENT_EVIDENCE"
   },
@@ -253,32 +238,5 @@
     "Will protected feedback visibility be explicitly masked or bounded during candidate generation rather than exposing full score trajectories by default?",
     "When cross-agent selection ancestry cannot be represented faithfully, will fresh independent confirmation be the default robust fallback without turning it into a universal rule?",
     "Has producer-side canonical HOLD-enum validation been implemented, or is downstream Analyst normalization still required?"
-  ],
-  "external_calibration_sources": [
-    {
-      "citation": "Bibaut & Kallus, Demystifying Inference After Adaptive Experiments, Annual Review of Statistics and Its Application 12 (2025)",
-      "doi": "10.1146/annurev-statistics-040522-015431",
-      "supports": "ordinary nonadaptive inference can fail under adaptivity; inferential guarantees must match the adaptive process"
-    },
-    {
-      "citation": "Goeman & Solari, On selection and conditioning in multiple testing and selective inference, Biometrika 111(2) (2024)",
-      "doi": "10.1093/biomet/asad078",
-      "supports": "independent data splitting permits unconstrained upstream selection but may be inefficient; fresh confirmation is robust but not universally power-optimal"
-    },
-    {
-      "citation": "Panigrahi, Fry & Taylor, Exact selective inference with randomization, Biometrika 111(4) (2024)",
-      "doi": "10.1093/biomet/asae019",
-      "supports": "selection-aware inference is possible under explicitly modeled randomized selection"
-    },
-    {
-      "citation": "Grunwald, de Heide & Koolen, Safe testing, JRSSB 86(5) (2024)",
-      "doi": "10.1093/jrsssb/qkae011",
-      "supports": "anytime-valid/e-value methods provide validity under specified sequential/adaptive testing regimes, not arbitrary undocumented outcome-responsive redesign"
-    },
-    {
-      "citation": "Sadibolova & Terhune, Experimenter evidence unmasking as a confound in optional stopping, Behavior Research Methods 57 (2025)",
-      "doi": "10.3758/s13428-025-02813-0",
-      "supports": "visibility of evolving evidence can itself affect subsequent behavior and should be treated as a methodological control dimension"
-    }
   ]
 }
