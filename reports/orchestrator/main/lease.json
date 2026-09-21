@@ -11,10 +11,10 @@
     "sub": "SUB-20260921T234211+0900-NOOP-R46NOMECH-7C3A91E5@a597a23cc0f13c04bee1710c31004756965e4a85"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-22T00:15:45+09:00",
-  "heartbeat_at": "2026-09-22T00:15:45+09:00",
-  "completed_at": null,
+  "heartbeat_at": "2026-09-22T00:19:45+09:00",
+  "completed_at": "2026-09-22T00:19:45+09:00",
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260921T234005+0900-R46-6D2A91F4",
   "analyst_commit": "4d2eb7279acf5b60b184c7936a02166cef38fe3e",
@@ -43,11 +43,11 @@
   "active_branch": null,
   "active_head": null,
   "active_identity": null,
-  "active_step": "R46_PRIMARY_REFRESH_NO_ACTIVE_OBJECT",
+  "active_step": "R46_PRIMARY_REFRESH_CONFIRMED_INTENTIONAL_IDLE_NO_ALLOCATION",
   "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION",
   "terminal_observation": null,
   "workflows": [],
-  "stop_reason": null,
-  "next_action": "Re-check Analyst generation and exact refs; if unchanged and no executable allocation exists, persist intentional idle and complete without scientific mutation.",
+  "stop_reason": "R46_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+  "next_action": "Remain intentionally idle until a later Evidence Analyst prospectively allocates a fresh executable object after a material mechanism-surface delta, later independent shadow admission, or an independently fresh integrity object. Re-fetch exact Analyst/MAIN generations and refs before any acquisition or mutation. H5 remains consumed/no-retry; candidate #31 third cycle remains prohibited.",
   "owner": "main"
 }
