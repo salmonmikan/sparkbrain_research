@@ -1,52 +1,46 @@
-# Independent Audit — Assembly-member causal-selectivity attribution
+# INDEPENDENT_AUDITOR — H5 semantic-dead-work attack
 
 - schema_version: `2`
-- generation_id: `AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4`
-- produced_at: `2026-09-21T10:30:00+09:00`
-- producer_run_id: `external-audit-auto-20260921T103000+0900-R4-7D3A91E4`
+- generation_id: `AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4`
+- produced_at: `2026-09-21T22:30:00+09:00`
+- producer_run_id: `external-audit-auto-20260921T223000+0900-R5-5E8C21A4`
 - authority_scope: `INDEPENDENT_AUDITOR_READ_ONLY_REPOSITORY_EVIDENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9`
+- supersedes_generation_id: `AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4`
 - role: `INDEPENDENT_AUDITOR`
-- audit_classification: `CONFOUNDED`
-- genuinely_new_information: `true`
+- schedule_slot: `22:30 JST`
+- schedule_inference: `false`
 
 ## Phase 1 — blind target selection
 
-Before reading the current Control Brain, Evidence Analyst, MAIN/SUB reports, or Literature conclusions, repository evidence alone fixed the target as:
+Before consuming Control Brain, Evidence Analyst, MAIN/SUB, or Literature summaries, the audit fixed the target as authoritative H5 `h5-event-routing-work-reduction-official-v1`, specifically whether the terminal `FAIL_NO_USEFUL_WORK_REDUCTION` can be interpreted as evidence that lazy node-state decay / event-routed active execution itself fails to deliver useful algorithmic-work reduction.
 
-`CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01` / the positive `SELECTIVE_TARGETED_FUNCTION_LOSS` interpretation as Assembly-member causal selectivity.
+Repository-only attack hypotheses were fixed as: authority/package/STARTED/raw/evidence drift; scorer or target leakage; comparator privilege mismatch; seed/bootstrap fragility; resource-accounting mismatch; semantically inactive subsystem work dominating the aggregate metric; sparse-workload mismatch; and overgeneralization from the exact current implementation/counter vocabulary to the event-routing/lazy-state principle.
 
-Authoritative repository surfaces inspected before strategy summaries included stable `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, current `research/*`, five authoritative `evidence/*` tags, empty tag-based `formal/*`, `sealed/*`, and `freeze/*`, legacy freeze branches, current `control/*` and `preserve/*` families, consumed identity anchors, current workflow state, and prior audit history only to avoid repeating the C19-v4 target.
+The prior audit stream was read for dedupe. An older H5 audit (`d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56`) had already established that all-edge eligibility maintenance numerically dominates H5 work. This run retained the target only because it tests a narrower attack surface not established there: whether that dominant eligibility work is *semantically inactive* under the registered H5 workload. The blind target itself was not changed.
 
-Blind attack hypotheses were: comparator activity/load mismatch; Assembly membership confounded with being on the active causal path; insufficient negative-control breadth; seed/single-probe dependence; topology/resource mismatch; coalition-level effect being overread as per-unit responsibility; simpler active-unit lesion explanation; and possible post-outcome comparator selection or protocol drift.
+## Repository evidence
 
-The target was consequential because the positive Discovery terminal could otherwise be read as direct Assembly-specific mechanism support and feed H7/programme-level causal-responsibility interpretation.
+The immutable H5 chain remains coherent. Exact package `2086a8f4ea080a7a8a0e3c79d77afe9b516db905` precedes STARTED `058e90227cd48e1c10c6ecbaed01efdec1217d0e`; workflow `35338995888` completed attempt 1 successfully; raw was preserved before scoring at `ce5797eb584344db7a512e585506fb6c59ea475b`; evidence commit `61aff6d74b82b68a326f3d90505d70bcd4071fd5` is bound by the annotated H5 evidence tag. No retry, post-START scientific drift, raw-before-score violation, or identity mismatch was found.
 
-## Repository audit result
+The registered result is unchanged: primary mean work reduction `0.023826074023772813`, 95% CI `[0.02379403660851484, 0.023859665012124307]`, with activity-level means `0.05927001218870528`, `0.009811966841371046`, and `0.0023962430412420807` for activity fractions `0.01`, `0.05`, and `0.15`. Under the frozen decision rule this validly maps to `FAIL_NO_USEFUL_WORK_REDUCTION`.
 
-The original contract was genuinely prospective. Target and comparator selection, the single DEV seed/probe, terminal mapping, and prohibition on alternate seeds/probes/cycle-2 rescue were fixed before intervention outcome. I found no evidence of post-outcome comparator replacement or protocol drift in this object.
+### New attack surface: semantic dead work
 
-The raw intervention result is also real within its narrow scope: the selected Assembly prototype was `[45, 56, 63]`; each target unit emitted one baseline-probe spike. Suppressing the target reduced the lower-field spike count from `9` to `6`, removed the strongest mature Assembly activation, and changed prediction from `outcome-0` to `null`. The prospectively selected same-cardinality nonmember comparator `[16, 17, 18]` left the nine-spike trajectory and `outcome-0` prediction unchanged.
+The prospective H5 contract fixes the graph as `plastic=false` and the workload generator schedules stimulus events, not reward events. Stable SparkBrain nevertheless increments eligibility on every outgoing edge when a unit fires and globally decays eligibility on every event. Reward-driven weight updates are the only downstream use of eligibility, and `_apply_reward` explicitly skips non-plastic edges.
 
-However, the comparator did **not** achieve the contract's intended activity-participation match: every target unit had one baseline spike while every comparator unit had zero. The repository result itself records that no exact one-spike nonmember match was available and calls comparator quality incomplete. This creates a direct active-path/activity-load confound. The observation distinguishes suppression of this active three-unit coalition from suppression of this inactive three-unit coalition; it does not isolate Assembly membership as the cause of the differential effect.
+Therefore, in this exact H5 workload, eligibility values cannot change any graph weight or behavioral output. Yet `eligibility_edge_touches` and `eligibility_multiplications` are counted in the primary total-work metric for both candidate and dense comparator. In a preserved 128-node, 1%-activity bursty cell, those two eligibility counters contribute `122880 / 124062 = 99.05%` of candidate work; the dense comparator pays the same `122880` eligibility operations. In the preserved 128-node, 5%-activity bursty cell they contribute `737280 / 744146 = 99.08%` of candidate work.
 
-The prospectively fixed matched-load successor does not resolve the confound. On fixed DEV seeds 501 and 502 it exhausted `14,190` eligible same-cardinality triples per seed without finding the required exact seven-component activity/topology match, executed zero intervention outcomes, and terminated `EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE`. That is a valid feasibility stop, not negative or positive causal evidence.
-
-The fresh repository branch `research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921@52e14294d8e413a95c1dad387104bdeaa4468d39` is only a prospective NON_EVIDENTIARY contract. It fixes four development surfaces, uniform and balance-aware same-cardinality lesion distributions, sham, equal privilege, prediction-impairment endpoints, whole-field perturbation-footprint support, and a conjunctive falsifier. No lesion outcome has been opened. Exact-head CI `35550692068` has now completed successfully, which validates contract-head integrity only; it does not retroactively resolve the audited predecessor.
-
-Therefore the audited **mechanistic attribution** is `CONFOUNDED`, not `INVALID_EVIDENCE`: the registered bounded outcome remains valid, but the Assembly-specific explanation is not isolated from ordinary active-unit/perturbation-load effects. The strongest defensible current statement is that this selected active coalition was necessary for the fixed probe under the tested suppression, relative to one prospectively chosen but baseline-inactive comparator.
+This does **not** invalidate the registered H5 total-work terminal: the contract prospectively defined an implementation-faithful aggregate counter and intentionally included common bookkeeping. It does, however, sharpen the interpretation ceiling. H5 is not an isolated test of whether lazy node-state decay or event-routed routing saves work; its aggregate is dominated by an output-neutral all-edge eligibility subsystem that masks those component savings. The result is therefore robust for the exact current-implementation total-work claim, but should not be promoted to a no-go claim about event routing or lazy state materialization as principles.
 
 ## Phase 2 — interpretation comparison
 
-Only after the blind target and attack surface were fixed, current control-plane summaries were read.
+After the target and attack hypotheses were fixed, current Control, Evidence Analyst, MAIN, SUB, and Literature streams were read. None currently uses H5 as an active novelty claim. Evidence Analyst R44 has no active scientific object and keeps H5 consumed/no-retry. MAIN R44 is intentionally idle, SUB remains no-target, and Literature R22 concerns selection-aware validity rather than H5. No strategy summary invalidated or replaced the blind target.
 
-Evidence Analyst `EVA-20260921T095900+0900-R32-6D2A91C4` independently converges on the same ceiling: it does not reopen the exact-match predecessor, limits the fresh object to set/coalition-level causal necessity/selectivity, and explicitly excludes individual-unit responsibility. It admits a fresh distributional-control Architecture object rather than rewriting the predecessor.
+## Audit conclusion
 
-MAIN `MAIN-20260921T101710+0900-PRIMARY-FUNNEL21-MECH-ASMSET-R32-2F6C91A4` fixed the new distributional contract without executing suppression or consuming an identity. Its mailbox still recorded exact-head CI as in progress; direct repository workflow re-fetch after that report shows `35550692068` completed successfully. This dependency movement changes only integrity status, not the audited interpretation.
+`audit_classification = ROBUST_SO_FAR` for the exact registered H5 aggregate-work terminal. The genuinely new audit issue is a stronger source-level explanation for why the terminal must remain narrow: the dominant eligibility work is semantically inactive under the fixed non-plastic/no-reward workload.
 
-SUB remains on its R31 no-op generation and supplies no competing scientific result. Literature R18 had independently raised the same control-design problem and motivated the fresh successor; that agreement did not alter the Phase-1 target. Control R21 already preserved the matched-load terminal stop and did not claim the original Discovery resolved the reduction.
-
-`blind_target_change_reason = null`.
+No Utility request was created. Any component-isolation test would have to be a genuinely fresh prospective object; using this result to rerun/rescore or repair consumed H5 would violate the one-way boundary.
 
 ## Knowledge-flow contract
 
@@ -54,53 +48,47 @@ SUB remains on its R31 no-op generation and supplies no competing scientific res
 role: INDEPENDENT_AUDITOR
 genuinely_new_information: true
 affected_lines:
-  - CAND_V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_01
-  - CAND_V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_MATCHED_LOAD_01
-  - CAND_V05_ASSEMBLY_SET_CAUSAL_NECESSITY_DISTRIBUTIONAL_CONTROLS_01
-  - V05_ASSEMBLY_CAUSAL_SELECTIVITY
-  - H7_CAUSAL_RESPONSIBILITY
+  - H5_EVENT_ROUTING_WORK_REDUCTION
+  - H5_WORK_METRIC_COMPONENT_ATTRIBUTION
+  - PROGRAMME_ARCHITECTURE_EFFICIENCY
+  - FUTURE_WORK_REDUCTION_CONTRACTS
   - PROGRAMME_NOVELTY
-novelty_or_reduction_impact: >
-  The original bounded intervention outcome is valid, but its Assembly-specific
-  mechanistic attribution is confounded by an active-versus-inactive comparator.
-  The exact-match feasibility successor produced no causal outcome. The new
-  distributional-control contract is the appropriate prospective route but is
-  not evidence yet and cannot retroactively upgrade the predecessor.
-audit_classification: CONFOUNDED
+novelty_or_reduction_impact: REGISTERED_H5_FAIL_REMAINS_ROBUST_BUT_INTERPRETATION_IS_FURTHER_NARROWED_BY_SEMANTICALLY_INACTIVE_ELIGIBILITY_WORK
+audit_classification: ROBUST_SO_FAR
 blind_target_selection:
-  target: CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01 / SELECTIVE_TARGETED_FUNCTION_LOSS as Assembly-member causal selectivity
-  selected_before_control_plane_summaries: true
+  target: H5 h5-event-routing-work-reduction-official-v1 terminal FAIL_NO_USEFUL_WORK_REDUCTION, audited for overinterpretation as an event-routing/lazy-state no-go
   attack_hypotheses:
-    - baseline activity/load mismatch between target and comparator
-    - Assembly membership confounded with active causal-path participation
-    - insufficient negative-control breadth / single comparator
-    - seed and single-probe dependence
-    - topology/resource mismatch
-    - coalition effect overread as individual responsibility
-    - simpler ordinary active-unit lesion explanation
-    - post-outcome comparator selection or protocol drift
-  why_consequential: positive causal Discovery could otherwise be overcounted as Assembly-specific mechanism or H7 responsibility support
+    - authority/package/STARTED/raw/evidence mismatch or protocol drift
+    - scorer/evaluator leakage
+    - comparator information/resource privilege mismatch
+    - seed or bootstrap fragility
+    - resource-accounting mismatch
+    - semantically inactive subsystem dominating the aggregate metric
+    - workload/comparator mismatch
+    - broader-than-registered mechanism interpretation
 blind_target_change_reason: null
 prospective_baselines_or_discriminators:
-  - preregistered same-cardinality uniform random/nonmember lesion distribution
-  - preregistered balance-aware activity/topology comparator distribution
-  - sham and equal information/compute privilege from independent checkpoint copies
-  - whole-field perturbation-footprint support check
-  - multiple fixed surfaces/seeds with conjunctive non-adaptive support
-  - single-unit/factorial/coalitional attribution only if individual responsibility is claimed
+  - keep canonical H5 immutable; do not rerun, retune, rescore, relabel, or reopen it
+  - in a genuinely fresh efficiency object, preregister subsystem-wise work decomposition alongside aggregate work
+  - distinguish implementation overhead from mechanism-attributable work before interpreting a total-work terminal mechanistically
+  - if eligibility is scientifically in scope, use a prospectively bound plastic/reward workload where eligibility has semantic consequences
+  - compare global all-edge eligibility maintenance against an equal-semantics localized/event-routed eligibility baseline only in a fresh object
+  - bind separate runtime/energy methodology for wall-clock, memory, cache, or energy claims
 questions_for_evidence_analyst:
-  - Preserve the historical SELECTIVE_TARGETED_FUNCTION_LOSS terminal while treating its Assembly-specific mechanism interpretation as confounded by comparator inactivity?
-  - Treat the R32 distributional contract and successful exact-head CI only as prospective Architecture readiness input until a separately authorized outcome-bearing run exists?
-  - Keep any current claim at coalition/set necessity and exclude per-unit responsibility unless separately identified?
+  - Preserve H5 official FAIL exactly while making explicit that it is a current-implementation aggregate-work result, not an isolated event-routing/lazy-state causal test?
+  - Keep H5 consumed/no-retry and require any component-isolation study to use a fresh identity/object?
+  - Require semantic-activity and component-attribution checks for future resource-efficiency evidence?
 questions_for_control_brain:
-  - Avoid counting the original positive Discovery as surviving Assembly-specific mechanism/novelty support before distributional controls are outcome-tested?
-  - Keep the fresh R32 object prospective and non-evidentiary despite successful contract CI?
-  - Keep H7 and PRE_FORMAL/FORMAL unchanged by this audit?
+  - Avoid using H5 as broad evidence that event routing or lazy state materialization cannot yield useful efficiency?
+  - Add semantically inactive subsystem domination to the future resource-metric audit checklist?
+  - Keep H5 closed and treat the new issue as interpretation sharpening, not rescue authority?
 must_not_change_frozen_or_consumed:
-  - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - original Assembly contract eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42, outcome 1a571db21ff82001407f01cb2c5449f253bfd4e5, result head 0c857a73cf34b58b737f686fd9af60769de3d306
-  - matched-load head b2547429823be29a2547419c80c40fb2138dfdc9 and canonical EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE terminal
-  - fresh distributional contract head 52e14294d8e413a95c1dad387104bdeaa4468d39 and its no-intervention boundary until fresh Analyst authority
-  - no same-object rescue, rescore, retune, comparator replacement, intervention dispatch, identity consumption, PRE_FORMAL/FORMAL promotion, merge, immutable-ref mutation, or scheduler change
+  - H5 exact package 2086a8f4ea080a7a8a0e3c79d77afe9b516db905
+  - H5 STARTED 058e90227cd48e1c10c6ecbaed01efdec1217d0e
+  - H5 raw preserve ce5797eb584344db7a512e585506fb6c59ea475b
+  - H5 evidence commit 61aff6d74b82b68a326f3d90505d70bcd4071fd5 and annotated evidence tag
+  - workflow 35338995888 and canonical H5 statistics / FAIL_NO_USEFUL_WORK_REDUCTION token
+  - all other consumed C19-v4/C19-R1/C19-R2/PD01/NI01 and immutable evidence
+  - no rerun, rescore, retune, relabel, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, or scheduler change
 utility_request_created: null
 ```

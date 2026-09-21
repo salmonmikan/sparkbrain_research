@@ -1,197 +1,179 @@
 {
-  "timestamp": "2026-09-21T10:30:00+09:00",
+  "timestamp": "2026-09-21T22:30:00+09:00",
   "schema_version": 2,
-  "generation_id": "AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4",
-  "produced_at": "2026-09-21T10:30:00+09:00",
-  "producer_run_id": "external-audit-auto-20260921T103000+0900-R4-7D3A91E4",
+  "generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
+  "produced_at": "2026-09-21T22:30:00+09:00",
+  "producer_run_id": "external-audit-auto-20260921T223000+0900-R5-5E8C21A4",
   "authority_scope": "INDEPENDENT_AUDITOR_READ_ONLY_REPOSITORY_EVIDENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9",
+  "supersedes_generation_id": "AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4",
+  "role": "INDEPENDENT_AUDITOR",
+  "schedule_slot": "22:30 JST",
+  "schedule_inference": false,
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260921T085000+0900-R21-4F7C2A91",
-      "handoff_commit": "49ac783b5640b8250c19133f8842f0bf49867e8f"
+      "generation_id": "CTRL-20260921T205220+0900-R25-9C4E21A7",
+      "handoff_commit": "835c175de2db7220e22919a3a27c76406b8cef46"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T095900+0900-R32-6D2A91C4",
-      "handoff_commit": "6bf35ff0f08a981feb09abced00e157526a47cb0"
+      "generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
+      "handoff_commit": "fca9a4b0adb259b76a518605f611ff79e0c48680"
     },
     "main_report": {
-      "generation_id": "MAIN-20260921T101710+0900-PRIMARY-FUNNEL21-MECH-ASMSET-R32-2F6C91A4",
-      "handoff_commit": "2886e482c6ebf46fd50f2ecf4b1e9e86f99c251f"
+      "generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
+      "handoff_commit": "4734a1d45b0ab888c07c10dfbb51710f4db41a16"
     },
     "sub_report": {
-      "generation_id": "SUB-20260921T093236+0900-NOOP-R31STOP-5E2C91A7",
-      "handoff_commit": "ef4a2f0cf65e6143d10c6186075bb470b494539f"
+      "generation_id": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5",
+      "handoff_commit": "93a9a83dee714060d5b4a2fc6c9689c2204f7aa3",
+      "orchestrator_branch_tip_consumed": "4734a1d45b0ab888c07c10dfbb51710f4db41a16"
     },
     "literature": {
-      "generation_id": "LIT-20260921T093300+0900-R18-ASSEMBLY-CAUSAL-CONTROLS-8D4C71A2",
-      "handoff_commit": "00bd486f4230c9a89d3d584e8d685a00b9dfe2b8"
+      "generation_id": "LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9",
+      "handoff_commit": "1c8cb3f86d1ef63a12c2b1b9ff984f717723ec7c"
     },
     "prior_audit": {
-      "generation_id": "AUD-20260920T223110+0900-R3-C19V4-REDUCTION-6B4E21D9",
-      "handoff_commit": "2edf544763d699ccfe81dd52044f776e5425a90d"
+      "generation_id": "AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4",
+      "handoff_commit": "d41e21ca0311be623398f8f8bb736758559852a0"
+    },
+    "historical_h5_audit": {
+      "generation_id": "LEGACY_GENERATION_UNKNOWN",
+      "handoff_commit": "d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56"
     }
   },
-  "role": "INDEPENDENT_AUDITOR",
   "phase_ordering_confirmation": {
-    "repository_evidence_and_prior_audit_dedupe_read_before_strategy_summaries": true,
+    "repository_evidence_read_before_strategy_summaries": true,
     "blind_target_fixed_before_control_brain": true,
     "blind_target_fixed_before_evidence_analyst": true,
     "blind_target_fixed_before_main_sub": true,
     "blind_target_fixed_before_literature": true,
-    "phase_2_started_only_after_target_and_attack_hypotheses_fixed": true
+    "phase_2_started_only_after_target_and_attack_hypotheses_fixed": true,
+    "older_h5_audit_dedupe_was_expanded_after_target_fix": true,
+    "target_retained_only_because_current_attack_surface_is_stricter_than_prior_h5_audit": true
   },
   "blind_target_selection": {
-    "target": "CAND-V05-ASSEMBLY-UNIT-CAUSAL-SELECTIVITY-01 / SELECTIVE_TARGETED_FUNCTION_LOSS interpreted as Assembly-member causal selectivity",
+    "target": "H5 h5-event-routing-work-reduction-official-v1 terminal FAIL_NO_USEFUL_WORK_REDUCTION, audited for overinterpretation as an event-routing/lazy-state no-go",
     "selected_before_control_plane_summaries": true,
     "authoritative_refs_inspected": [
       "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "research/exploratory-sub-assembly-unit-causal-selectivity-20260921@0c857a73cf34b58b737f686fd9af60769de3d306",
-      "research/main-v05-assembly-unit-causal-selectivity-matched-load-arch-20260921@b2547429823be29a2547419c80c40fb2138dfdc9",
-      "research/main-v05-assembly-set-causal-necessity-distributional-controls-arch-20260921@52e14294d8e413a95c1dad387104bdeaa4468d39",
+      "research/h5-event-routing-work-reduction-spec-20260918@2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+      "control/h5-event-routing-work-reduction-started-v1-20260918@058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+      "preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1@ce5797eb584344db7a512e585506fb6c59ea475b",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1 -> evidence commit 61aff6d74b82b68a326f3d90505d70bcd4071fd5",
       "authoritative evidence/* tags (5)",
       "formal/* tags (0)",
       "sealed/* tags (0)",
       "freeze/* tags (0)",
-      "legacy freeze/* branches",
-      "control/* refs",
-      "preserve/* refs",
-      "current relevant workflow state",
-      "prior audit history only for target dedupe"
+      "legacy freeze/* branches (13)",
+      "current research/* inventory and H5 workflow 35338995888",
+      "prior audit stream for dedupe"
     ],
     "attack_hypotheses": [
-      "baseline activity/load mismatch between target and comparator",
-      "Assembly membership confounded with active causal-path participation",
-      "insufficient negative-control breadth / single comparator",
-      "seed and single-probe dependence",
-      "topology/resource mismatch",
-      "coalition effect overread as individual responsibility",
-      "simpler ordinary active-unit lesion explanation",
-      "post-outcome comparator selection or protocol drift"
+      "authority/package/STARTED/raw/evidence mismatch or post-START drift",
+      "scorer/evaluator leakage",
+      "comparator information/resource privilege mismatch",
+      "seed dependence or bootstrap-unit fragility",
+      "resource/work-accounting mismatch",
+      "semantically inactive subsystem work dominating the aggregate metric",
+      "sparse-workload or dense-control mismatch",
+      "broader-than-registered mechanism interpretation"
     ],
-    "why_consequential": "A positive causal Discovery can influence Assembly-specific mechanism, H7 responsibility, and programme novelty interpretation if its comparator does not isolate membership from ordinary active-unit perturbation."
+    "why_consequential": "H5 is one of five authoritative immutable evidence tags. A negative aggregate efficiency result can be overread as evidence against the event-routing/lazy-state mechanism rather than against the exact current implementation and registered counter vocabulary."
   },
   "blind_target_change_reason": null,
+  "target_retention_reason_after_dedupe": "Historical H5 audit d3a9c8d4 identified numerical dominance of global eligibility maintenance but did not establish that eligibility was semantically inactive under the registered plastic=false/no-reward workload. The current source-level semantic-dead-work attack is therefore a new attack surface rather than a repeat classification attempt.",
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "original_target_head": "0c857a73cf34b58b737f686fd9af60769de3d306",
-    "matched_load_head": "b2547429823be29a2547419c80c40fb2138dfdc9",
-    "distributional_contract_head": "52e14294d8e413a95c1dad387104bdeaa4468d39",
+    "h5_exact_package": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "h5_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+    "h5_evidence_tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+    "h5_contract_blob": "1911d4560f4e2774fd725df26ba8cb25b03e2c5f",
+    "h5_module_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829",
+    "engine_blob": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
+    "workflow_run": 35338995888,
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
-    "legacy_freeze_branches_inspected": true,
-    "control_refs_inspected": true,
-    "preserve_refs_inspected": true,
-    "consumed_identity_families_inspected": [
-      "c19-v4",
-      "c19-r1-v1-v2",
-      "c19-r2",
-      "pd01",
-      "ni01",
-      "h5"
-    ]
+    "legacy_freeze_branch_count": 13
   },
   "control_plane_commits_consumed": {
-    "control_brain": "49ac783b5640b8250c19133f8842f0bf49867e8f",
-    "evidence_analyst": "6bf35ff0f08a981feb09abced00e157526a47cb0",
-    "main_report": "2886e482c6ebf46fd50f2ecf4b1e9e86f99c251f",
-    "sub_report": "ef4a2f0cf65e6143d10c6186075bb470b494539f",
-    "literature": "00bd486f4230c9a89d3d584e8d685a00b9dfe2b8"
-  },
-  "workflow_state": {
-    "original_diagnostic": {
-      "run_id": 35539567864,
-      "result_head": "0c857a73cf34b58b737f686fd9af60769de3d306",
-      "terminal": "SELECTIVE_TARGETED_FUNCTION_LOSS"
-    },
-    "matched_load_feasibility": {
-      "run_id": 35541396714,
-      "head": "b2547429823be29a2547419c80c40fb2138dfdc9",
-      "status": "completed",
-      "conclusion": "success",
-      "intervention_outcomes_executed": 0,
-      "terminal": "EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE"
-    },
-    "matched_load_exact_head_ci": {
-      "run_id": 35541396705,
-      "head": "b2547429823be29a2547419c80c40fb2138dfdc9",
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "distributional_contract_exact_head_ci": {
-      "run_id": 35550692068,
-      "head": "52e14294d8e413a95c1dad387104bdeaa4468d39",
-      "status": "completed",
-      "conclusion": "success",
-      "scientific_outcome": false
-    }
+    "control_brain": "835c175de2db7220e22919a3a27c76406b8cef46",
+    "evidence_analyst": "fca9a4b0adb259b76a518605f611ff79e0c48680",
+    "main_report": "4734a1d45b0ab888c07c10dfbb51710f4db41a16",
+    "sub_report": "93a9a83dee714060d5b4a2fc6c9689c2204f7aa3",
+    "literature": "1c8cb3f86d1ef63a12c2b1b9ff984f717723ec7c"
   },
   "genuinely_new_information": true,
-  "genuinely_new_information_scope": "NEW_INDEPENDENT_BLIND_AUDIT_CLASSIFICATION_AND_ATTACK_SURFACE_CONFIRMATION; NO_NEW_INTERVENTION_OUTCOME",
+  "genuinely_new_information_scope": "NEW_SOURCE_LEVEL_AUDIT_ATTACK_SURFACE_SEMANTICALLY_INACTIVE_ELIGIBILITY_WORK; NO_NEW_SCIENTIFIC_RESULT_OR_RESCORING",
   "findings": [
     {
       "type": "repository_evidence",
-      "finding": "The original target/comparator and terminal mapping were prospectively fixed; no post-outcome comparator replacement or same-object rescue was found.",
-      "impact": "The audit does not invalidate the registered bounded outcome."
+      "finding": "The exact H5 package, STARTED ref, one-shot workflow, raw-before-score preserve, scorer binding, evidence commit and annotated evidence tag remain coherent.",
+      "impact": "No integrity reason exists to invalidate the registered terminal."
     },
     {
       "type": "repository_evidence",
-      "finding": "All three target units had one baseline probe spike while all three prospectively selected comparator units had zero. Target suppression changed the prediction and reduced spikes; comparator suppression did not.",
-      "impact": "Assembly membership is confounded with baseline active-path/activity-load participation for the mechanistic attribution."
+      "finding": "The H5 contract fixes plastic=false and the workload schedules stimuli without reward. SparkBrain still increments and globally decays eligibility on every event, while reward-driven plastic updates skip non-plastic edges.",
+      "impact": "Eligibility bookkeeping is semantically inactive for H5 outputs under the registered workload."
     },
     {
       "type": "repository_evidence",
-      "finding": "The exact matched-load successor exhausted its fixed comparator search on seeds 501 and 502 without an exact match and opened zero intervention outcomes.",
-      "impact": "It closes that exact-match route but supplies no causal evidence that resolves the predecessor."
-    },
-    {
-      "type": "repository_evidence",
-      "finding": "The fresh R32 distributional-control branch is prospective NON_EVIDENTIARY contract work only. Exact-head CI later completed successfully; no lesion outcome has been executed.",
-      "impact": "It is an appropriate future discriminator but cannot retroactively upgrade the predecessor."
+      "finding": "Preserved sparse raw rows show eligibility touches plus multiplications are 122880 of 124062 candidate work (99.05%) in a 128-node/1%-bursty cell and 737280 of 744146 candidate work (99.08%) in a 128-node/5%-bursty cell.",
+      "impact": "The primary aggregate is numerically dominated by an output-neutral subsystem in these fixed representative cells."
     },
     {
       "type": "inference",
-      "finding": "The strongest defensible present interpretation is set/coalition necessity on one fixed probe relative to one baseline-inactive comparator, not isolated Assembly-specific selectivity or per-unit responsibility."
+      "finding": "The registered total-work FAIL remains valid, but it is not an isolated causal test of node-state laziness or event-routed fanout efficiency. The dead common eligibility burden masks component savings and imposes a stronger interpretation ceiling."
+    },
+    {
+      "type": "control_plane_comparison",
+      "finding": "Current R44 Control/Analyst/MAIN/SUB/Literature streams do not use H5 as an active broad novelty or mechanism claim; H5 remains consumed/no-retry.",
+      "impact": "No current strategy correction is urgently required beyond preserving the interpretation ceiling."
     }
   ],
   "affected_lines": [
-    "CAND_V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_01",
-    "CAND_V05_ASSEMBLY_UNIT_CAUSAL_SELECTIVITY_MATCHED_LOAD_01",
-    "CAND_V05_ASSEMBLY_SET_CAUSAL_NECESSITY_DISTRIBUTIONAL_CONTROLS_01",
-    "V05_ASSEMBLY_CAUSAL_SELECTIVITY",
-    "H7_CAUSAL_RESPONSIBILITY",
+    "H5_EVENT_ROUTING_WORK_REDUCTION",
+    "H5_WORK_METRIC_COMPONENT_ATTRIBUTION",
+    "PROGRAMME_ARCHITECTURE_EFFICIENCY",
+    "FUTURE_WORK_REDUCTION_CONTRACTS",
     "PROGRAMME_NOVELTY"
   ],
-  "novelty_or_reduction_impact": "ORIGINAL_POSITIVE_MECHANISTIC_ATTRIBUTION_CONFOUNDED_BUT_RAW_EFFECT_VALID. The original bounded intervention outcome remains valid under its fixed contract, but the Assembly-specific explanation is not isolated from ordinary active-unit/perturbation-load effects. The exact-match successor provides no causal outcome. The fresh distributional contract is prospective only and is the correct route to test the reduction without rewriting the predecessor.",
-  "audit_classification": "CONFOUNDED",
-  "confidence": "HIGH",
+  "novelty_or_reduction_impact": "REGISTERED_H5_FAIL_REMAINS_ROBUST_BUT_INTERPRETATION_IS_FURTHER_NARROWED_BY_SEMANTICALLY_INACTIVE_ELIGIBILITY_WORK",
+  "audit_classification": "ROBUST_SO_FAR",
+  "confidence": "HIGH_FOR_REGISTERED_TERMINAL_AND_SEMANTIC_DEADNESS; MEDIUM_FOR_HOW_FUTURE_COMPONENT_METRICS_SHOULD_BE_WEIGHTED",
   "prospective_baselines_or_discriminators": [
-    "preregistered same-cardinality uniform random/nonmember lesion distribution",
-    "preregistered balance-aware baseline activity/topology comparator distribution",
-    "sham and equal information/compute privilege from independent checkpoint copies",
-    "whole-field perturbation-footprint support check",
-    "multiple fixed surfaces/seeds with conjunctive non-adaptive support",
-    "single-unit/factorial/coalitional attribution only if individual responsibility is claimed"
+    "Do not rerun, retune, rescore, relabel or reopen canonical H5.",
+    "For a genuinely fresh efficiency object, prospectively decompose total work by node-state materialization, routing/scheduling, eligibility maintenance and other subsystems.",
+    "Distinguish implementation overhead from mechanism-attributable work before making causal efficiency interpretations.",
+    "If eligibility is in scope, use a prospectively fixed plastic/reward workload where eligibility has semantic consequences.",
+    "Only in a fresh object compare global all-edge eligibility maintenance with an equal-semantics localized/event-routed eligibility baseline.",
+    "Use a separate prospectively bound runtime/energy methodology for wall-clock, memory, cache or energy claims."
   ],
   "questions_for_evidence_analyst": [
-    "Preserve the historical SELECTIVE_TARGETED_FUNCTION_LOSS terminal while treating its Assembly-specific mechanism interpretation as confounded by comparator inactivity?",
-    "Treat the R32 distributional contract and successful exact-head CI only as prospective Architecture readiness input until a separately authorized outcome-bearing run exists?",
-    "Keep any current claim at coalition/set necessity and exclude per-unit responsibility unless separately identified?"
+    "Preserve H5 official FAIL exactly while making explicit that it is a current-implementation aggregate-work result, not an isolated event-routing/lazy-state causal test?",
+    "Keep H5 consumed/no-retry and require any component-isolation efficiency study to use a fresh identity/object?",
+    "Require semantic-activity and component-attribution checks for future resource-efficiency evidence?"
   ],
   "questions_for_control_brain": [
-    "Avoid counting the original positive Discovery as surviving Assembly-specific mechanism/novelty support before distributional controls are outcome-tested?",
-    "Keep the fresh R32 object prospective and non-evidentiary despite successful contract CI?",
-    "Keep H7 and PRE_FORMAL/FORMAL unchanged by this audit?"
+    "Avoid using H5 as broad evidence that event routing or lazy state materialization cannot yield useful efficiency?",
+    "Add semantically inactive subsystem domination to the future resource-metric audit checklist?",
+    "Keep H5 closed and treat this audit as interpretation sharpening rather than rescue authority?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "original Assembly contract eb5ae27f3ef7f8cca2bcc521e2c3f027a5ab6c42, outcome 1a571db21ff82001407f01cb2c5449f253bfd4e5, result head 0c857a73cf34b58b737f686fd9af60769de3d306",
-    "matched-load head b2547429823be29a2547419c80c40fb2138dfdc9 and canonical EXACT_MATCH_INFEASIBLE_ON_SUPPORTED_DEV_SURFACE terminal",
-    "fresh distributional contract head 52e14294d8e413a95c1dad387104bdeaa4468d39 and its no-intervention boundary until fresh Analyst authority",
-    "no same-object rescue, rescore, retune, comparator replacement, intervention dispatch, identity consumption, PRE_FORMAL/FORMAL promotion, merge, immutable-ref mutation, or scheduler change"
+    "H5 exact package 2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "H5 STARTED 058e90227cd48e1c10c6ecbaed01efdec1217d0e",
+    "H5 raw preserve ce5797eb584344db7a512e585506fb6c59ea475b",
+    "H5 evidence commit 61aff6d74b82b68a326f3d90505d70bcd4071fd5 and annotated evidence tag object e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+    "workflow 35338995888 and canonical H5 statistics / FAIL_NO_USEFUL_WORK_REDUCTION token",
+    "all other consumed C19-v4/C19-R1/C19-R2/PD01/NI01 identities and immutable evidence",
+    "no H5 rerun/rescore/retune/relabel, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, or scheduler change"
   ],
+  "read_only_recompute": {
+    "completed": "PARTIAL_COMPONENT_RECOMPUTE_FROM_EXISTING_RAW",
+    "detail": "Recomputed eligibility-work share for preserved representative sparse rows and traced semantic use of eligibility through the bound H5 module/engine. No canonical scoring, artifacts, or identities changed."
+  },
   "utility_request_created": null,
   "persistence_notes": "Role-separated audit stream only. Legacy shared latest/state not updated. No scientific workflow, research result mutation, Utility request, immutable-ref mutation, or scheduler change."
 }
