@@ -1,44 +1,51 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-21T22:22:27+09:00",
+  "timestamp": "2026-09-21T23:21:39+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260921T222227+0900-R45-B7E2C491",
-    "sequence": 45,
+    "generation_id": "METHCAL-20260921T232139+0900-R46-A5D7C391",
+    "sequence": 46,
     "material_change": true,
-    "material_change_reason": "SELECTION_AWARE_VALIDITY_SHARPENING_SHOWS_EXPOSURE_OBSERVABILITY_ALONE_IS_INSUFFICIENT_AND_ADDS_FEEDBACK_VISIBILITY_AS_DISTINCT_PROSPECTIVE_CONTROL",
-    "supersedes_generation_id": "METHCAL-20260921T212300+0900-R44-4E8C21A5",
+    "material_change_reason": "H5_RESOURCE_METRIC_AUDIT_CONFIRMS_FROZEN_AGGREGATE_TERMINAL_BUT_REQUIRES_PROSPECTIVE_SEMANTIC_ACTIVITY_COMPONENT_ATTRIBUTION_BEFORE_MECHANISM_LEVEL_EFFICIENCY_INFERENCE",
+    "supersedes_generation_id": "METHCAL-20260921T222227+0900-R45-B7E2C491",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260921T212300+0900-R44-4E8C21A5",
+      "generation_id": "METHCAL-20260921T222227+0900-R45-B7E2C491",
       "branch": "ops/methodology-calibration-audit",
-      "prior_tip": "3e0acb080908e2a085fe60013b9eb9403b599733"
+      "prior_tip": "ac7afaa0add8af8aebb1be08798d1e3df4d3c8c0"
     },
     "evidence_analyst": {
       "generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "fca9a4b0adb259b76a518605f611ff79e0c48680"
+      "commit": "fca9a4b0adb259b76a518605f611ff79e0c48680",
+      "role": "CURRENT_CANONICAL_FUNNEL_AUTHORITY"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260921T205220+0900-R25-9C4E21A7",
+      "generation_id": "CTRL-20260921T230354+0900-R26-8D4C21A7",
       "branch": "ops/control-brain-handoff",
-      "commit": "835c175de2db7220e22919a3a27c76406b8cef46",
-      "role": "CURRENT_STRATEGIC_PRIOR; PRECEDES_ANALYST_R44_SELECTION_AWARE_SHARPENING"
+      "commit": "0e38771af4dacefab079a9389dece4c6a48f1240",
+      "role": "NEWER_STRATEGIC_GOVERNANCE_INPUT_PENDING_ANALYST_CANONICALIZATION"
+    },
+    "independent_audit": {
+      "generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
+      "branch": "ops/external-research-audit-handoff",
+      "commit": "c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48",
+      "role": "NEW_METHODOLOGY_CALIBRATION_EVIDENCE_INDEPENDENTLY_RECONSTRUCTED_FROM_AUTHORITATIVE_H5_PACKAGE_AND_PRESERVED_RAW"
     },
     "literature": {
       "generation_id": "LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9",
       "branch": "ops/external-research-audit-handoff",
-      "commit": "1c8cb3f86d1ef63a12c2b1b9ff984f717723ec7c"
+      "commit": "1c8cb3f86d1ef63a12c2b1b9ff984f717723ec7c",
+      "role": "UNCHANGED_EXTERNAL_CALIBRATION_INPUT"
     },
     "strategy_mailbox": {
       "branch": "ops/orchestrator-run-report",
-      "branch_tip": "4734a1d45b0ab888c07c10dfbb51710f4db41a16",
-      "main_generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
-      "main_commit": "4734a1d45b0ab888c07c10dfbb51710f4db41a16",
-      "main_status": "COMPLETED_INTENTIONAL_IDLE_NO_SCIENTIFIC_EXECUTION",
-      "main_stop_reason": "R44_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
-      "sub_generation_id_from_analyst": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5",
+      "branch_tip": "be3e82e0a3d18338dc10567f07f878cac54edcde",
+      "main_generation_id": "MAIN-20260921T231231+0900-PRIMARY-FUNNEL21-BLOCKED-R44-STALEUPSTREAM-8D4C21A7",
+      "main_commit": "be3e82e0a3d18338dc10567f07f878cac54edcde",
+      "main_status": "BLOCKED_PENDING_FRESH_ANALYST_AFTER_UPSTREAM_SUPERSESSION",
+      "main_stop_reason": "MATERIAL_SUPERSEDING_UPSTREAM_GENERATIONS_NOT_YET_CONSUMED_BY_EVIDENCE_ANALYST_FAIL_CLOSED",
       "authoritative": false
     }
   },
@@ -54,7 +61,11 @@
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
-    "scientific_source_of_truth": "stable main plus independently fetched annotated evidence refs; ops branches are mailboxes only"
+    "h5_evidence_tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+    "h5_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+    "h5_exact_package_commit": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
+    "h5_raw_preservation_commit": "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "scientific_source_of_truth": "stable main plus independently fetched annotated evidence refs and bound evidence/package/preserve commits; ops branches are mailboxes only"
   },
   "audit_result": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
@@ -105,16 +116,41 @@
     "causal_comparator_equivalence": "SPLIT_BY_CLAIM_TYPE",
     "equal_privilege_comparator": "KEEP",
     "ordinary_reduction_first": "KEEP",
+    "signal_before_reduction": "TIGHTEN",
+    "implementation_faithful_aggregate_resource_metric": "KEEP",
+    "resource_efficiency_metric_semantic_activity_decomposition": "TIGHTEN",
+    "aggregate_work_to_mechanism_inference": "TIGHTEN",
+    "resource_efficiency_claim_type_separation": "SPLIT_BY_CLAIM_TYPE",
+    "historical_terminal_interpretation_ceiling_without_rescore": "KEEP",
+    "upstream_supersession_execution_block": "KEEP",
     "external_competent_reference_and_clustered_inference": "TIGHTEN",
     "legacy_topk_sparse_support": "TIGHTEN",
     "methodology_authoritative_reference_trace_accuracy": "KEEP"
   },
+  "general_calibration_dimensions": {
+    "gate_drift": "LOW",
+    "justification_trace": "STRONG_CURRENT_WITH_EXACT_H5_TAG_EVIDENCE_PACKAGE_PRESERVE_BINDING",
+    "false_positive_control": "GOOD_CURRENT_BUT_RESOURCE_MECHANISM_INTERPRETATION_REQUIRES_TIGHTENING",
+    "false_negative_risk": "MODERATE_WATCH",
+    "duplicate_guards": "LOW",
+    "moving_goalposts": "LOW",
+    "pass_reachability": "REALISTIC_CONDITIONAL",
+    "comparator_calibration": "CLAIM_TYPE_DEPENDENT_EQUAL_PRIVILEGE_REMAINS_REQUIRED",
+    "signal_before_reduction": "TIGHTEN_FOR_RESOURCE_MECHANISM_INTERPRETATION",
+    "claim_type_separation": "GOOD_BUT_RESOURCE_EFFICIENCY_AXIS_REQUIRES_EXPLICIT_SPLIT",
+    "research_worthiness_vs_novelty": "CALIBRATED",
+    "external_calibration": "R22_SELECTION_AWARE_CALIBRATION_REMAINS_CURRENT; R5_IS_REPOSITORY_INTERNAL_INDEPENDENT_AUDIT_NOT_EXTERNAL_LITERATURE",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH",
+    "mechanism_supply_health": "STALLED_WITH_QUALITY_FLOOR_INTACT",
+    "funnel_observability": "COMPLETE_CANONICAL_POPULATION_BUT_PROTECTED_REUSE_OBSERVABILITY_UNRESOLVED",
+    "preformal_gate_calibration": "SEMANTICALLY_CALIBRATED_EXECUTION_PLUMBING_STILL_TIGHTEN"
+  },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_CURRENT / MODERATE_FUTURE_REUSE_RISK: an exposure ledger alone does not justify inference after adaptive candidate selection or stopping. Any future reuse must bind a validity regime whose assumptions cover the actual adaptive process.",
-    "false_negative": "MODERATE_WATCH: viable executable MECHANISM remains zero. Fresh independent confirmation is the robust fallback when ancestry is opaque, but making fresh splitting universal would sacrifice power where a valid selection-aware or always-valid regime is prospectively specified and verifiable.",
-    "duplicate_guards": "LOW: exposure observability, validity-under-adaptivity, feedback visibility, PRE_FORMAL readiness, and scientific admission answer different questions.",
-    "opportunity_cost": "CONTROLLED_BUT_WATCH: intentional idle avoids busywork; repeated no-target checks remain liveness observations unless a material mechanism-surface delta appears.",
-    "moving_goalpost_risk": "LOW: no prior object is reopened, no immutable evidence is rescored, and the new validity requirements are explicitly prospective."
+    "false_positive": "LOW_CURRENT_CANONICAL / MODERATE_RESOURCE_INTERPRETATION_RISK / MODERATE_FUTURE_PROTECTED_REUSE_RISK: H5 is valid for its exact aggregate implementation claim, but treating its aggregate total-work FAIL as a causal no-go for event routing or lazy state would overclaim because semantically inactive eligibility bookkeeping dominates the measured work. Future protected reuse also requires a validity regime beyond exposure logging.",
+    "false_negative": "MODERATE_WATCH: viable executable MECHANISM remains zero. Do not require component decomposition for every bounded SYSTEM metric; require it when a resource result is intended to support mechanism or architectural-principle inference. Universal decomposition would be overconservative.",
+    "duplicate_guards": "LOW: implementation aggregate validity, semantic-activity/component attribution, comparator equivalence, READY, protected-set validity, and scientific admission answer different questions.",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH: intentional idle avoids busywork; canonical no-target count remains liveness only.",
+    "moving_goalpost_risk": "LOW: H5 statistics and FAIL token remain immutable; no consumed identity is reopened; only prospective interpretation requirements are sharpened."
   },
   "moving_goalposts": "LOW",
   "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; CROSS_GENERATION_EXPOSURE_OBSERVABILITY_INSUFFICIENT; FUTURE_PROTECTED_REUSE_REQUIRES_SEPARATE_PROSPECTIVE_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY_CONTROL; CLEAN_SCIENTIFIC_PASS_REQUIRES_FRESH_PROSPECTIVE_IDENTITY_WITH_CONFORMING_PIPELINE_AND_VALIDITY_ASSUMPTIONS_MATCHED_TO_THE_ACTUAL_ADAPTIVE_PROCESS",
@@ -127,7 +163,10 @@
     "active_object_ceiling": null,
     "last_terminal_system_object": "CAND-PREFORMAL-CROSS-GENERATION-HOLDOUT-EXPOSURE-INTEGRITY-01",
     "last_terminal_system_disposition": "HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED",
-    "research_worthiness_note": "SYSTEM integrity work continues to provide architecture/reproducibility value without novelty or mechanism laundering."
+    "h5_frozen_claim": "KEEP_EXACT_IMPLEMENTATION_AGGREGATE_WORK_FAIL",
+    "h5_mechanism_interpretation": "DO_NOT_GENERALIZE_TO_EVENT_ROUTING_OR_LAZY_STATE_NO_GO_WITHOUT_FRESH_COMPONENT_ATTRIBUTION",
+    "resource_efficiency_split": "SYSTEM_CURRENT_IMPLEMENTATION_AGGREGATE_ENDPOINT_ALLOWED; MECHANISM_OR_ARCHITECTURE_PRINCIPLE_CLAIM_REQUIRES_SEMANTICALLY_ACTIVE_COMPONENT_ATTRIBUTION",
+    "research_worthiness_note": "SYSTEM work retains architecture/reproducibility value; resource endpoint interpretation must not be promoted into a stronger mechanism claim without a fresh prospective object."
   },
   "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_SUPPLY_STALLED_M13_S18_NO_VIABLE_EXECUTABLE_MECHANISM_OPEN_NO_TARGET_EPISODE_CHECK9_EMPTY_HOLD_SMALL_N",
   "funnel_observability": {
@@ -155,6 +194,7 @@
     "cross_generation_exposure_observability": "DIRECTLY_OBSERVED_INSUFFICIENT_ON_CURRENT_SAFE_METADATA",
     "adaptivity_validity_regime_binding": "NOT_YET_IMPLEMENTED_FOR_FUTURE_SCIENTIFIC_SUCCESSOR",
     "protected_feedback_visibility_control": "NOT_YET_BOUND_FOR_FUTURE_SCIENTIFIC_SUCCESSOR",
+    "resource_metric_component_observability": "H5_RAW_EXPOSES_COMPONENT_COUNTERS_SUFFICIENT_TO_IDENTIFY_SEMANTICALLY_INACTIVE_DOMINANCE_HISTORICALLY; FUTURE_MECHANISM_LEVEL_RESOURCE_OBJECTS_SHOULD_BIND_COMPONENT_INTERPRETATION_PROSPECTIVELY",
     "shadow_generated_cumulative": 4,
     "shadow_retained_current": 0,
     "shadow_canonical_admissions": 0,
@@ -173,7 +213,7 @@
   "system_priority_exception_audit": {
     "rule": "KEEP",
     "current_used": false,
-    "current_basis": "no active canonical MAIN object and canonical viable executable MECHANISM=0",
+    "current_basis": "no active canonical MAIN object; viable executable MECHANISM=0; current MAIN is fail-closed pending fresh Analyst after upstream supersession",
     "first_genuine_use": "INSUFFICIENT_EVIDENCE",
     "post_hoc_justification_observed": false
   },
@@ -182,12 +222,13 @@
     "open_episode": true,
     "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
     "canonical_check_count": 9,
+    "noncanonical_local_refresh_count_observed": 10,
     "escape_hatch_evidence": false,
     "candidate_or_identity_consumption": false,
     "included_in_candidate_conversion_denominator": false,
     "rolling_scientific_selection": "MECHANISM / SYSTEM / SYSTEM = 1/3",
     "shadow_supply_effect": "NO_CURRENT_RETAINED_OR_ADMITTED_SHADOW; EPISODE_REMAINS_OPEN",
-    "interpretation": "NINE_CANONICAL_NO_DELTA_CHECKS_IN_ONE_OPEN_EPISODE_NOT_NINE_INDEPENDENT_SCIENTIFIC_FAILURES; LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
+    "interpretation": "CANONICAL_COUNT_REMAINS_NINE_UNTIL_FRESH_ANALYST; LOCAL_REFRESH_TEN_IS_LIVENESS_ONLY_AND_NOT_CANDIDATE_FAILURE_OR_ABSENCE_EVIDENCE"
   },
   "classification_completeness": {
     "complete": true,
@@ -197,46 +238,35 @@
     "policy_use_allowed": true
   },
   "prospective_recommendations": [
-    "Do not change scientific admission, novelty, comparator, reduction, or READY thresholds.",
+    "Do not change global scientific admission, novelty, comparator, reduction, or READY thresholds.",
     "Keep R33 terminal; never rerun, repair, retune, rescore, or upgrade that consumed identity.",
-    "Keep candidate #31 terminal with no third rescue; any new protected-set validity or ledger implementation must be a fresh SYSTEM object with fresh prospective authority.",
-    "Separate protected-set exposure observability from inferential validity under adaptivity; an exposure ledger is necessary for auditability but is not sufficient evidence of validity.",
-    "Before protected-set reuse, bind the exact selection-aware or always-valid procedure and machine-check the adaptive choices, stopping process, and assumptions its guarantee covers.",
-    "If distributed candidate-selection ancestry cannot be faithfully represented, prefer a fresh independent confirmatory set hidden until candidate/scorer/falsifier binding.",
-    "Do not make fresh splitting universal; a valid prospectively specified reuse regime is acceptable when its assumptions match the actual adaptive process.",
-    "Treat protected feedback visibility as a separate control; mask or reduce full protected score trajectories to prospectively allowed minimal signals during candidate generation.",
-    "For future scientific PRE_FORMAL, prospectively bind four-stage raw-only generation, durable preserve+digest, fixed scorer exact-blob read, scored-result preservation, protected-set identity, exposure semantics, feedback visibility, and validity regime before result-bearing access.",
-    "Preserve intentional idle/no-target behavior when no coherent bounded target exists; check_count is liveness only, not accumulating evidence of absence.",
+    "Keep H5 immutable with its exact FAIL_NO_USEFUL_WORK_REDUCTION terminal and frozen statistics; do not relabel or rescore it.",
+    "Explicitly limit H5 interpretation to the registered current-implementation aggregate-work question; do not treat it as broad causal evidence against event routing or lazy state materialization.",
+    "For a future resource-efficiency object whose claim ceiling may reach MECHANISM, prospectively bind subsystem/component work decomposition and a semantic-activity map for the registered workload before outcome access.",
+    "Separate mechanism-attributable work from common or output-neutral implementation overhead when a resource result is intended to support mechanism inference.",
+    "Do not impose subsystem decomposition universally on bounded SYSTEM implementation benchmarks; split the requirement by claim type to avoid overconservatism.",
+    "Keep equal semantic/resource privilege for resource comparators and bind the interpretation ceiling prospectively.",
+    "Keep candidate #31 terminal with no third rescue and preserve R45 protected-set validity/feedback controls prospectively.",
+    "Preserve intentional idle/no-target behavior; canonical check_count remains 9 until fresh Analyst reconciliation and is liveness only.",
+    "Retain the MAIN fail-closed rule when material Control/Audit/Methodology generations supersede the last Analyst generation; never import upstream strategy directly into canonical candidate state.",
     "Validate or explicitly map canonical Funnel-v2.1 HOLD enums at producer handoff rather than relying on downstream Analyst normalization."
   ],
   "utility_request": {
     "created": false,
-    "reason": "Literature R22 plus Analyst R44 already materially calibrate the validity-under-adaptivity question; a manufactured Utility probe would add less information than a future live fresh-science rollout under prospectively bound controls."
+    "reason": "Audit R5 plus direct authoritative H5 package/raw reconstruction already provide the high-information methodology calibration. The next higher-information step is fresh Analyst canonicalization and, only if scientifically motivated later, a genuinely fresh prospective resource-efficiency object."
   },
   "hard_floor_confirmation": {
     "policy": "CONFIRMED_DO_NOT_RELAX",
     "historical_nonconformance": "first live PRE_FORMAL raw-before-score violation remains acknowledged and terminalized",
     "fresh_synthetic_pipeline": "PASSED_NON_EVIDENTIARY_ONLY_NO_R33_REUSE",
-    "candidate_31": "TERMINAL_HOLD_METHOD_LIMITED_NO_THIRD_RESCUE",
-    "adaptivity_update": "PROSPECTIVE_ONLY; NO_RETROACTIVE_INVALIDATION_OR_RESCORING",
-    "rerun_or_retune_consumed_scientific_identity_observed": false,
-    "silent_post_outcome_repair_observed": false,
-    "evaluator_target_leakage_used_for_inference_observed": false,
-    "immutable_evidence_mutation_observed": false
+    "h5": "IMMUTABLE_TERMINAL_PRESERVED_NO_RERUN_RESCORE_RELABEL; INTERPRETATION_SHARPENED_ONLY",
+    "candidate_31": "TERMINAL_NO_THIRD_RESCUE",
+    "upstream_supersession": "MAIN_FAIL_CLOSED_NO_SCIENTIFIC_EXECUTION_UNTIL_FRESH_ANALYST"
   },
-  "confidence": {
-    "current_calibration_state": "HIGH",
-    "adaptivity_observability_vs_validity_separation": "HIGH_EXTERNAL_AND_ANALYST_SUPPORT",
-    "protected_feedback_visibility_as_separate_control": "MODERATE_TO_HIGH_EXTERNAL_SUPPORT_PROSPECTIVE_IMPLEMENTATION_UNOBSERVED",
-    "current_main_post_analyst_r44": "HIGH_NO_SCIENTIFIC_DELTA_INTENTIONAL_IDLE_CONFIRMED",
-    "first_positive_shadow_to_mechanism_admission": "LOW_INSUFFICIENT_EVIDENCE",
-    "first_genuine_system_priority_exception": "LOW_INSUFFICIENT_EVIDENCE"
-  },
+  "confidence": "HIGH",
   "questions_for_control_analyst": [
-    "Will every fresh scientific successor encode a protected-set validity regime separately from its exposure ledger?",
-    "If protected-data reuse is allowed, will the machine-readable contract state exactly which adaptive selection and stopping decisions the inferential guarantee covers?",
-    "Will protected feedback visibility be explicitly masked or bounded during candidate generation rather than exposing full score trajectories by default?",
-    "When cross-agent selection ancestry cannot be represented faithfully, will fresh independent confirmation be the default robust fallback without turning it into a universal rule?",
-    "Has producer-side canonical HOLD-enum validation been implemented, or is downstream Analyst normalization still required?"
+    "Should future resource-efficiency candidate admission require a prospectively bound subsystem/component decomposition and semantic-activity map whenever the intended claim ceiling may reach MECHANISM?",
+    "Should H5 be explicitly narrated as current-implementation aggregate-work evidence only, without changing its frozen terminal disposition or statistics?",
+    "Should the stale-Analyst upstream-supersession block remain a machine-readable execution precondition whenever newer material Control/Audit/Methodology inputs have not yet been canonicalized by Evidence Analyst?"
   ]
 }
