@@ -1,0 +1,155 @@
+{
+  "schema_version": 2,
+  "contract_id": "H7-DEV-R2-ARCH-CONTRACT-V1",
+  "status": "VERSIONED_IMPLEMENTATION_ONLY_NO_RESULT_BEARING_EXECUTION_AUTHORIZED",
+  "created_under": {
+    "evidence_analyst_generation": "EVA-20260922T140541+0900-R63-E8C421B7",
+    "evidence_analyst_commit": "9f90816657aa08754827e35976c9fa35b5d7c09a",
+    "prospective_revision_authority_generation": "EVA-20260922T130900+0900-R62-D4A7C21F",
+    "candidate_id": "CAND-H7-RESPONSIBILITY",
+    "candidate_ordinal": 7,
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE",
+    "previous_development_revision": "H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT",
+    "research_layer": "ARCHITECTURE_STUDY",
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "NOT_READY",
+    "hold_class": null,
+    "hold_reason": null,
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "system_priority_exception_used": false,
+    "cycle": 3,
+    "cycle3_reassessment": "REFRAME_VERSION_CONTINUE_DEV_R2"
+  },
+  "prior_result_preservation": {
+    "dev_r1_head": "c97af135742a7cd3af94c857f4d5b83d7707075d",
+    "dev_r1_contract": "artifacts/architecture_h7_dev_r1/contract.json",
+    "dev_r1_cycle2_preflight": "artifacts/architecture_h7_dev_r1/cycle2_preflight.json",
+    "historical_h7_ref": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
+    "preserve_unchanged": true,
+    "no_result_reinterpretation": true,
+    "no_training_or_threshold_input_from_prior_results": true
+  },
+  "evidentiary_boundary": {
+    "classification": "MECHANISM_ARCHITECTURE_NON_EVIDENTIARY_VERSIONED_IMPLEMENTATION_ONLY",
+    "scientific_results_generated_by_this_contract": false,
+    "training_authorized_this_cycle": false,
+    "calibration_authorized_this_cycle": false,
+    "discriminator_access_authorized_this_cycle": false,
+    "scientific_metric_authorized_this_cycle": false,
+    "preformal_execution_authorized": false,
+    "formal_execution_authorized": false,
+    "consumed_identity_use_authorized": false
+  },
+  "inherited_scientific_fields": {
+    "source_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "claim_scope": "Existential local route/state responsibility within the exact frozen four-world development protocol and TOP1_SELECTED_LOCAL_NODE_CUT_V1 intervention family; no uniqueness, specificity, completeness, sufficiency, general-superiority, formal-confirmatory, or external-generalization claim.",
+    "worlds": ["switchworld", "contradiction_world", "goal_conflict_world", "multi_object_world"],
+    "steps_per_episode": 24,
+    "fit_seed_range_inclusive": [7601000, 7601047],
+    "calibration_seed_range_inclusive": [7602000, 7602011],
+    "discriminator_seed_range_inclusive": [7603000, 7603023],
+    "native_training_seed": 7601,
+    "dense_training_seed": 7602,
+    "eligibility_head_seed": 7603,
+    "epochs": 4,
+    "learning_rate": 0.012,
+    "device": "cpu",
+    "positive_phenomenon_floor": "native baseline discriminator accuracy strictly greater than 1/3",
+    "primary_endpoint": "delta_accuracy = baseline_accuracy - cut_accuracy over the complete discriminator split",
+    "secondary_endpoint": "mean total-variation distance between paired baseline and cut 3-class probability vectors",
+    "numerical_no_change_tolerance": 1e-7,
+    "reduction_direction": "comparator baseline accuracy >= native baseline accuracy and comparator delta_accuracy >= native delta_accuracy",
+    "capacity_limit_rule": "capacity-limited comparator mismatch is INCONCLUSIVE, never native mechanism support",
+    "future_formal_surface_rule": "fresh frozen untouched identity/evaluation surface unless prospectively valid adaptivity regime covers development exposure"
+  },
+  "intervention": {
+    "id": "TOP1_SELECTED_LOCAL_NODE_CUT_V1",
+    "target": "selected[0] from deterministic unperturbed sorted top-k selection",
+    "one_step_discarded": true,
+    "selection_frozen_before_cut": true,
+    "cut_target_previous_state_zero": true,
+    "cut_target_local_edge_row_and_column_zero": true,
+    "cut_target_updated_state_zero_before_pooling": true,
+    "cut_state_must_never_carry_forward": true,
+    "validity_contract": {
+      "route_selection": "frozen and deterministic; baseline/cut selected IDs must match exactly",
+      "outputs": "finite and single-valued with baseline/cut shape and dtype preserved",
+      "non_target_input": "byte-equivalent digest across arms",
+      "parameters": "byte-equivalent digest across arms",
+      "rng": "byte-equivalent state digest across arms",
+      "cut_carryover": "forbidden",
+      "failure_disposition": "INVALID_INTERVENTION, not a negative mechanism result"
+    }
+  },
+  "ordinary_reduction_panel": {
+    "panel_membership_frozen": true,
+    "comparators": [
+      {
+        "id": "ORDINARY_DENSE_RECURRENT_V1",
+        "status": "INHERITED_UNCHANGED_FROM_DEV_R1",
+        "implementation": "Separately trained SparseRoutingModel condition=dense_recurrent, seed 7602, four epochs, lr 0.012, fit split only, calibration split only, CPU; its own rank-1 target receives TOP1_SELECTED_LOCAL_NODE_CUT_V1."
+      },
+      {
+        "id": "FINITE_STATE_ROUTE_HISTORY_V2",
+        "replaces": "FINITE_STATE_ROUTE_HISTORY_V1",
+        "state_key": "(previous_unperturbed_rank1_route_or_START, current_route_token)",
+        "current_route_tokens": "native unperturbed rank-1 route id for baseline; CUT for paired intervention",
+        "fit_rows": "each fit step contributes both baseline and paired-cut rows with the same target",
+        "state_advance": "only the unperturbed baseline rank-1 route advances previous-token state; one-step cut is discarded",
+        "prediction": "fit-count majority with lexical label tie-break",
+        "unseen_state": "global fit-split target majority with the same lexical tie-break",
+        "episode_reset": "previous token resets to START",
+        "calibration": "cannot mutate counts, tie-break, fallback, or table semantics"
+      },
+      {
+        "id": "ELIGIBILITY_ROUTE_LEDGER_V2",
+        "replaces": "ELIGIBILITY_ROUTE_LEDGER_V1",
+        "event_encoder": "detached frozen copy of the fitted native DEV-R2 event encoder; no comparator gradient may enter encoder parameters",
+        "trainable_component": "3-class linear head only",
+        "head_seed": 7603,
+        "optimizer": "torch.optim.Adam defaults betas/eps, lr=0.012, weight_decay=0",
+        "loss": "cross_entropy only",
+        "epochs": 4,
+        "episode_order": "deterministic permutation from seed 7603 + epoch",
+        "episode_training": "ledger reset each episode; zero_grad each episode; baseline fit trajectory only; mean episode loss; clip grad norm 2.0; one optimizer step per episode",
+        "ledger_update": "e = 0.90 * e + multi_hot(selected)",
+        "cut_arm": "exclude selected[0], force that ledger coordinate to zero for the current paired prediction, and discard cut ledger after measurement",
+        "calibration": "IDENTITY_NO_TUNABLE_CALIBRATION; fixed conformance/finite-output diagnostics only; no weight, temperature, threshold, exclusion, or hyperparameter tuning"
+      }
+    ]
+  },
+  "resource_privilege_contract": {
+    "data": "native and trainable comparators use identical fit/calibration episode identities; discriminator only after fresh authority and frozen implementation/analysis",
+    "labels": "training/calibration labels symmetric; no future-step labels or evaluator motif identity at prediction time",
+    "runtime": "CPU only; deterministic seeds and runtime settings recorded before any result-bearing dispatch",
+    "compute": "native and trainable comparators receive four epochs and equal fit/calibration episode counts; extra comparator inference compute is allowed",
+    "intervention_privilege": "all arms know baseline/cut; state-machine and eligibility comparators receive frozen native route IDs as specified",
+    "protected_data": "no evidence/formal/sealed/freeze target, consumed identity, C04 manifest, or historical H7 result as tuning surface"
+  },
+  "implementation_only_cycle3": {
+    "authorized": [
+      "materialize this DEV-R2 contract",
+      "implement FINITE_STATE_ROUTE_HISTORY_V2 exactly",
+      "implement ELIGIBILITY_ROUTE_LEDGER_V2 exactly",
+      "implement intervention validity/well-posedness checks exactly",
+      "run non-result-bearing synthetic/unit conformance",
+      "apply lint/import/build/path/serialization/logging/hash-only SCIENCE_INVARIANT_REPAIR"
+    ],
+    "forbidden": [
+      "native or comparator training execution",
+      "calibration execution beyond synthetic/unit conformance",
+      "discriminator materialization or access",
+      "result-bearing intervention execution",
+      "scientific endpoint computation",
+      "threshold/tolerance tuning",
+      "PRE_FORMAL or FORMAL execution",
+      "consumed identity reuse",
+      "new comparator, metric, intervention, seed, split, privilege, claim, or falsifier semantics"
+    ],
+    "success_stop": "STOP for fresh Evidence Analyst review even if implementation and ordinary CI are green",
+    "ambiguity_stop": "Any new science-affecting ambiguity requires another explicit versioned Analyst reassessment"
+  }
+}
