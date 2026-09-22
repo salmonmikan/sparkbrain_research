@@ -247,3 +247,45 @@ Control Brainは本Directiveを独立して `ACCEPT / MODIFY / DEFER / REJECT` �
 
 Control Brainが制限を追加する場合は、単なる従来運用との不一致ではなく、具体的なintegrity risk、競合risk、またはprogramme-level disadvantageを理由として示すこと。
 
+## HUMAN-20260922-005 — Development iteration calibration
+
+Human status: `OPEN`  
+Created: `2026-09-22 JST`
+
+### Intent
+
+Relax over-conservative development restrictions across SparkBrain while preserving strict one-way FORMAL integrity.
+
+Guiding rule:
+
+> **Development is flexible; evidence is rigid.**
+
+### Requested operating posture
+
+- Introduce `OPEN_DEVELOPMENT`, `RESULT_EXPOSED_DEVELOPMENT`, and `CONSUMED_ONE_WAY` as a development-phase axis orthogonal to Funnel/lifecycle state.
+- Treat cycle 3 as mandatory reassessment, not automatic terminalization.
+- Allow `SCIENCE_INVARIANT_REPAIR` on the same development object.
+- Allow iterative rerun/retune in Discovery, Architecture Study, and PRE_FORMAL with durable provenance; these observations do not become independent confirmatory evidence.
+- Permit tolerance/threshold/design changes during development when versioned and justified; never use post-FORMAL relaxation to rewrite a consumed result.
+- Preserve old results when a science-affecting development revision is made after meaningful result exposure.
+- Keep same-object SYSTEM→MECHANISM post-outcome upgrade prohibited, but actively permit fresh MECHANISM successors with new candidate IDs and fresh prospective contracts.
+- Interpret `TERMINAL_FOR_CURRENT_OBJECT` as closure of that object/contract, not permanent closure of the whole phenomenon family.
+- Distinguish legitimate successor research from same-object rescue laundering.
+- PRE_FORMAL should behave as a real development surface, not as a hidden second FORMAL gate.
+
+### Hard floor retained
+
+- no rerun/retune/rescore of consumed FORMAL identity;
+- no immutable/formal/sealed/evidence mutation or ref retargeting;
+- no evaluator/held-out leakage;
+- no post-FORMAL metric/comparator/threshold/tolerance mutation to rescue a result;
+- no historical PASS/FAIL rewriting under a new criterion;
+- preserve raw-before-score, preserve-before-read, exact binding, STARTED/no-clobber, and matched privilege/resource requirements where applicable.
+
+### Role implications
+
+Control, Evidence Analyst, MAIN, SUB, Relay, and Methodology should update their interpretation consistently. Control/Methodology may tighten only for a concrete integrity risk. The default question should be whether an action is outcome-responsive manipulation of consumed evidence, not whether iteration occurred at all.
+
+### Required independent review
+
+This is a human-originated research-process directive, not scientific evidence. Control Brain and Methodology should independently classify and operationalize it without weakening FORMAL evidence integrity.
