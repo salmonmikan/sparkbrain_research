@@ -1,21 +1,44 @@
 {
-  "timestamp": "2026-09-22T10:30:00+09:00",
+  "timestamp": "2026-09-22T22:30:20+09:00",
   "schema_version": 2,
-  "generation_id": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
-  "produced_at": "2026-09-22T10:30:00+09:00",
-  "producer_run_id": "external-audit-20260922T103000+0900-R6-PD01-9C4A21E7",
+  "generation_id": "AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4",
+  "produced_at": "2026-09-22T22:30:20+09:00",
+  "producer_run_id": "external-audit-20260922T223000+0900-R7-H7-6C8F21D4",
   "authority_scope": "INDEPENDENT_AUDITOR_READ_ONLY_REPOSITORY_EVIDENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
+  "supersedes_generation_id": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
   "role": "INDEPENDENT_AUDITOR",
-  "schedule_slot": "10:30 JST",
+  "schedule_slot": "22:30 JST",
   "schedule_inference": false,
   "input_generations": {
-    "control_brain": {"generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219", "handoff_commit": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5"},
-    "evidence_analyst": {"generation_id": "EVA-20260922T100852+0900-R58-7D4C21A9", "handoff_commit": "13c4374c889e4326d225c62de02ca4a51e351ca1"},
-    "main_report": {"generation_id": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9", "handoff_commit": "feee71a4b06027c8b03ec8e3f4511776289f16dd"},
-    "sub_report": {"generation_id": "SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9", "handoff_commit": "c7443d5dd4c118cea86ed62f1681ff4f7cb943ba", "orchestrator_branch_tip_consumed": "c7443d5dd4c118cea86ed62f1681ff4f7cb943ba"},
-    "literature": {"generation_id": "LIT-20260922T093207+0900-R27-SPECIFICITY-IDENTIFIABILITY-8C3A21F5", "handoff_commit": "237b3c1100e082624ce08d0ac2d7fcb9c7d3dd6d"},
-    "prior_audit": {"generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4", "handoff_commit": "c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48"}
+    "control_brain": {
+      "generation_id": "CTRL-20260922T214728+0900-R36-C8F31D72",
+      "handoff_commit": "ba1c10f3e45d15fa72ce15170ad213b48a980f8e"
+    },
+    "evidence_analyst": {
+      "generation_id": "EVA-20260922T223430+0900-R77-6C9F2A41",
+      "handoff_commit": "f2c9a0120e9a0d026c7512e06f1bf6ecdc85414a"
+    },
+    "main_report_designated": {
+      "generation_id": "MAIN-20260922T222214+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-REPAIR-R75-D7F2A9C1",
+      "latest_path_commit": "765743fe345eab6d773ef6cc5355592f72e123f0",
+      "state_path_commit": "68783ecb89cc1bf0450633d340c959ab0270b277"
+    },
+    "main_inflight_lease": {
+      "generation_id": "MAIN-20260922T222700+0900-PRIMARY-H7-FORMALR3-C9-RECONCILE-R76-C8F2A417",
+      "handoff_commit": "8cb03cc8ac7fce4a8042a305299e137db3bd6c5e"
+    },
+    "sub_report": {
+      "generation_id": "SUB-20260922T214353+0900-ARCH-C33-CONFORM-R75-D7F2A9C1",
+      "handoff_commit": "06f46ab5ffe2d268dd815e92b4edb2f94a08a586"
+    },
+    "literature": {
+      "generation_id": "LIT-20260922T213058+0900-R31-RECONSTRUCTIBLE-HOLDOUT-4D8C21F7",
+      "handoff_commit": "d50cefdd64af9ac179b36ec92a1b0c207858886b"
+    },
+    "prior_audit": {
+      "generation_id": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
+      "handoff_commit": "35cd3434306a413ec6e90d83a2618cd9101a0d88"
+    }
   },
   "phase_ordering_confirmation": {
     "repository_evidence_read_before_strategy_summaries": true,
@@ -27,98 +50,140 @@
     "phase_2_started_only_after_target_and_attack_hypotheses_fixed": true
   },
   "blind_target_selection": {
-    "target": "Authoritative PD01 pd01-long-history-fading-memory-official-v1 terminal FAIL_REDUCED_BY_FADING_MEMORY, audited for whether the reduction interpretation exceeds what a null-vs-null primary endpoint identifies",
+    "target": "H7 FORMAL-R2 H7-FORMAL-R2-INPUT-SPLIT-BINDING-V1 one-way confirmatory evidence surface, audited for whether its protected/untouched interpretation and raw-before-score path are independently valid",
     "selected_before_control_plane_summaries": true,
     "authoritative_refs_inspected": [
       "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "research/pd01-fading-memory-preformal-20260918@b9d38daa5faca348ad2db3898ba71e2abc99f631",
-      "control/pd01-long-history-fading-memory-started-v1-20260918@0569e348b9d93aeee53fc58daf4b71ee92303d6c",
-      "raw-preserve commit 65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1 -> evidence commit fc5c8cda283360addddb7da482b14e69beaba1f7",
-      "authoritative evidence/* tags (5)", "formal/* tags (0)", "sealed/* tags (0)", "freeze/* tags (0)",
-      "legacy freeze/* branches (13)", "preserve refs inventory (24)", "current research/* inventory",
-      "PD01 workflow 35301327618 attempt 1 success", "prior audit stream for dedupe"
+      "research/main-h7-formal-r2-input-split-r75-cycle8@a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
+      "artifacts/formal_h7_r2/contract.json",
+      "src/sparkbrain/tasks/worlds.py@main",
+      "src/sparkbrain/learned/h7_formal_r2_runner.py@a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
+      "src/sparkbrain/learned/h7_formal_r1.py@a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
+      "artifacts/formal_h7_r1/contract_design.json",
+      "authoritative evidence/* tags (5)",
+      "formal/* tags (0)",
+      "sealed/* tags (0)",
+      "freeze/* tags (0)",
+      "active research/* inventory",
+      "current H7 workflows and prior audit stream for dedupe"
     ],
     "attack_hypotheses": [
-      "authority/package/STARTED/raw/evidence mismatch or post-START protocol drift",
-      "scorer/evaluator/target leakage", "semantic/global-information privilege mismatch", "resource mismatch",
-      "seed dependence or bootstrap-unit fragility", "insufficient long-lag support",
-      "output-only match insufficient for mechanism reduction", "simpler state-machine/recurrent/fading-memory explanation",
-      "stale or duplicate evidence",
-      "null-vs-null endpoint may falsify superiority without positively identifying a fading-memory reduction mechanism"
+      "public deterministic evaluation rows/targets reconstructible before identity",
+      "split=test binds provenance without creating information-level secrecy",
+      "scorer/evaluator or target leakage",
+      "pre-preserve target-derived endpoint computation hidden inside the result runner",
+      "post-disclosure claim-capable implementation changes",
+      "hidden seed/task-label/global information privilege",
+      "runtime/package/identity/no-clobber/preserve-order drift",
+      "ordinary comparator or resource privilege mismatch"
     ],
-    "why_consequential": "PD01 is one of five authoritative immutable evidence tags and directly constrains claims about persistent/long-history dynamical cognition. The frozen endpoint label contains mechanistic-reduction wording that can be overread beyond the exact superiority test."
+    "why_consequential": "H7 is the active MECHANISM candidate approaching a one-way FORMAL path. A future PASS would be interpreted as confirmatory controlled-causal mechanism evidence, so evaluation independence and raw-before-score integrity are claim-critical."
   },
   "blind_target_change_reason": null,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "pd01_exact_package": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
-    "pd01_started": "0569e348b9d93aeee53fc58daf4b71ee92303d6c",
-    "pd01_raw_preserve": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
-    "pd01_evidence_commit": "fc5c8cda283360addddb7da482b14e69beaba1f7",
-    "pd01_evidence_tag_object": "e4c4e6428d8ef9e09e92cae231041de0788162e2",
-    "pd01_contract_blob": "0ce03b01baf41a0c77c513835b1c6063e47b2614",
-    "pd01_implementation_blob": "16bbfb6ed57d6c9701e8437360692b62e7c36915",
-    "pd01_raw_predictions_blob": "74815c4d3c4861df94fa0994dcb34fdb145bf238",
-    "pd01_raw_sha256": "5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638",
-    "workflow_run": 35301327618, "workflow_run_attempt": 1, "workflow_conclusion": "success",
-    "evidence_tag_count": 5, "formal_tag_count": 0, "sealed_tag_count": 0, "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13, "preserve_branch_count": 24
+    "h7_r2_branch": "research/main-h7-formal-r2-input-split-r75-cycle8",
+    "h7_r2_head": "a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
+    "h7_r2_contract_id": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-V1",
+    "h7_r2_formal_evaluation_seed_range_inclusive": [8846030, 8846285],
+    "h7_r2_formal_evaluation_split": "test",
+    "h7_r3_branch": "research/main-h7-formal-r3-unexposed-eval-runtime-r76-cycle9",
+    "h7_r3_head_at_final_refresh": "325e93c62c1f79baa107b677a3dc881dc6f47ace",
+    "h7_r3_contract_id": "H7-FORMAL-R3-UNEXPOSED-EVALUATION-COMMITMENT-V1",
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "h7_formal_identity_observed": false,
+    "h7_started_observed": false,
+    "h7_result_bearing_formal_result_observed": false
   },
   "control_plane_commits_consumed": {
-    "control_brain": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
-    "evidence_analyst": "13c4374c889e4326d225c62de02ca4a51e351ca1",
-    "main_report": "feee71a4b06027c8b03ec8e3f4511776289f16dd",
-    "sub_report": "c7443d5dd4c118cea86ed62f1681ff4f7cb943ba",
-    "literature": "237b3c1100e082624ce08d0ac2d7fcb9c7d3dd6d"
-  },
-  "post_persistence_freshness_recheck": {
-    "main": "unchanged@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "control": "unchanged@bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
-    "evidence_analyst": "unchanged@13c4374c889e4326d225c62de02ca4a51e351ca1",
-    "orchestrator_delta": "SUB advanced from R57 to SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9@c7443d5dd4c118cea86ed62f1681ff4f7cb943ba",
-    "interpretation_change": false,
-    "reason": "Fresh SUB R58 is a no-target/non-evidentiary intentional-idle generation under the same Analyst R58 authority; it reports no scientific or lifecycle delta and does not affect PD01 interpretation."
+    "control_brain": "ba1c10f3e45d15fa72ce15170ad213b48a980f8e",
+    "evidence_analyst": "f2c9a0120e9a0d026c7512e06f1bf6ecdc85414a",
+    "main_latest": "765743fe345eab6d773ef6cc5355592f72e123f0",
+    "main_state": "68783ecb89cc1bf0450633d340c959ab0270b277",
+    "main_inflight_lease": "8cb03cc8ac7fce4a8042a305299e137db3bd6c5e",
+    "sub_report": "06f46ab5ffe2d268dd815e92b4edb2f94a08a586",
+    "literature": "d50cefdd64af9ac179b36ec92a1b0c207858886b"
   },
   "genuinely_new_information": true,
-  "genuinely_new_information_scope": "NEW_AUDIT_INTERPRETATION_ATTACK_SURFACE_NULL_VS_NULL_REDUCTION_NONIDENTIFIABILITY; NO_NEW_EXPERIMENT_OR_RESCORING",
+  "genuinely_new_information_scope": "INDEPENDENT_CONFIRMATION_OF_R2_RECONSTRUCTIBLE_HOLDOUT_PLUS_NEW_SOURCE_LEVEL_RAW_GATE_FINDING_THAT_TARGET_BLIND_RAW_CONTAINS_TARGET_DERIVED_PRIMARY_ENDPOINT_SUFFICIENT_CORRECTNESS_BITS",
   "findings": [
-    {"type": "repository_evidence", "finding": "The PD01 exact package, STARTED ref, attempt-1 workflow, target-blind raw-before-score preserve, evidence binding, and annotated evidence tag form a coherent one-way chain.", "impact": "No integrity reason was found to invalidate the frozen endpoint or evidence object."},
-    {"type": "repository_evidence", "finding": "The frozen primary report gives candidate accuracy 0.47265625 with CI [0.431640625, 0.515625], comparator accuracy 0.5, and effect -0.02734375 with CI [-0.068359375, 0.015625].", "impact": "The predeclared FAIL rule is validly triggered because the effect CI upper bound is <= 0.05, while candidate long-lag recoverability itself is not demonstrated above chance."},
-    {"type": "inference", "finding": "Both candidate and fixed reservoir fail to demonstrate positive long-lag recovery on the primary endpoint. This null-vs-null outcome falsifies the registered superiority/recoverability claim but does not positively establish that fading-memory dynamics reproduce or mechanistically reduce an observed SparkBrain long-memory phenomenon.", "impact": "Canonical token remains immutable, but the narrative interpretation ceiling should be NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR."},
-    {"type": "control_plane_comparison", "finding": "Current Control R31, Evidence Analyst R58, MAIN R58, SUB R58 and Literature R27 do not use PD01 as an active positive mechanistic-reduction claim; the programme is intentionally idle with no active scientific object and PD01 remains consumed.", "impact": "No blind-target change or urgent current-strategy correction is needed; the issue is a future claim-scope constraint."}
+    {
+      "type": "repository_evidence",
+      "finding": "R2 fixes public FORMAL evaluation seeds, world assignment, split=test and step count while the public deterministic generator derives both observations and truth labels from the seed.",
+      "impact": "R2 exact evaluation rows/targets are reconstructible before identity; exact input binding and workflow non-access do not establish untouched holdout independence."
+    },
+    {
+      "type": "repository_evidence",
+      "finding": "TargetBlindRawCollector forbids decision/score-named fields but permits baseline_correct and cut_correct. The R2 runner computes those fields against example.belief_truth before raw close/preservation.",
+      "impact": "The preserved object is decision-blind but target-derived; primary endpoint evaluation has already occurred before the stated raw-before-score boundary."
+    },
+    {
+      "type": "read_only_recompute",
+      "finding": "The frozen scorer's episode metrics are direct means of baseline_correct and cut_correct, and its primary contrasts/bootstrap/decision are computed from those fields. Predictions and targets are not needed by the scorer to reconstruct the primary endpoint.",
+      "impact": "Correctness bits are score-sufficient statistics. A post-preserve scorer cannot independently verify whether the runner computed them correctly, so the current boundary is weaker than preserve-pre-score independent auditability."
+    },
+    {
+      "type": "control_plane_comparison",
+      "finding": "Literature R31, Control R36, and Evidence Analyst R76/R77 independently recognized the R2 holdout exposure and stopped/quarantined R2 as the FORMAL evidence surface. H7 has moved prospectively to R3 with concealed post-binding evaluation commitment and exact runtime binding; no FORMAL identity/result exists.",
+      "impact": "No existing evidence is invalidated. The remaining open integrity issue is to make R3 target-blind raw literal before one-way identity rather than inherit R2 correctness-bit semantics."
+    },
+    {
+      "type": "repository_freshness",
+      "finding": "At final refresh, R3 is materialized at 325e93c62c1f79baa107b677a3dc881dc6f47ace and its contract still requires target_blind_raw while forbidding identity, commitment creation, seed reveal, protected evaluation and result-bearing work in cycle 9.",
+      "impact": "The raw-gate issue can still be closed prospectively without touching any outcome or consumed identity."
+    }
   ],
-  "affected_lines": ["PD01_LONG_HISTORY_FADING_MEMORY", "PD01_TERMINAL_INTERPRETATION", "PERSISTENT_DYNAMICAL_COGNITION", "REDUCTION_EVIDENCE_SEMANTICS", "PROGRAMME_NOVELTY"],
-  "novelty_or_reduction_impact": "CANONICAL_PD01_FAIL_REMAINS_PROTOCOL_VALID_BUT_MECHANISTIC_REDUCTION_INTERPRETATION_IS_WEAKENED_BY_NULL_VS_NULL_NONIDENTIFIABILITY",
-  "audit_classification": "WEAKENED",
-  "confidence": "HIGH_FOR_EVIDENCE_CHAIN_AND_ENDPOINT_INTERPRETATION_BOUNDARY; MEDIUM_FOR_FUTURE_TAXONOMY_DESIGN",
+  "affected_lines": [
+    "H7_FORMAL_R2_CONFIRMATORY_INTEGRITY",
+    "H7_FORMAL_R3_ONE_WAY_RAW_GATE",
+    "H7_TARGET_BLIND_RAW_SEMANTICS",
+    "H7_PRESERVE_BEFORE_SCORE_AUDITABILITY",
+    "PROGRAMME_EVIDENCE_INTEGRITY"
+  ],
+  "novelty_or_reduction_impact": "H7_R2_CONFIRMATORY_SURFACE_CONFOUNDED_AND_R3_RAW_GATE_MUST_SEPARATE_PREDICTION_RAW_FROM_TARGET_DERIVED_SCORING_NO_MECHANISM_NOVELTY_UPLIFT",
+  "audit_classification": "CONFOUNDED",
+  "confidence": "HIGH_FOR_STATIC_CODE_FLOW_AND_R2_HOLDOUT_RECONSTRUCTION; HIGH_FOR_RAW_GATE_SEMANTIC_DISTINCTION; MEDIUM_FOR_EXACT_R3_IMPLEMENTATION_REMEDY_BECAUSE_RESULT_RUNNER_IS_NOT_YET_MATERIALIZED",
   "prospective_baselines_or_discriminators": [
-    "Do not rerun, rescore, retune, relabel or reopen canonical PD01.",
-    "For a genuinely fresh reduction object, prospectively require an absolute candidate recoverability floor above chance before using positive `reduced by baseline` language.",
-    "Prospectively distinguish candidate-capability-absent outcomes from positive candidate capability reproduced by an ordinary baseline.",
-    "If positive recoverability exists, compare against predeclared equal-privilege fading-memory baselines/seeds without comparator shopping.",
-    "For a mechanism-reduction claim, require the simpler model to reproduce a demonstrated positive phenomenon or matched response structure, not merely match failure."
+    "Preserve R2 unchanged as quarantined/non-evidentiary development history; do not repair it in place for FORMAL evidence.",
+    "In R3, protected result runner should emit prediction/output/intervention metadata plus opaque row IDs only; prohibit target, truth, baseline_correct, cut_correct, aggregate effect and decision fields before immutable raw preservation.",
+    "Immutably preserve prediction-raw bytes before a scoring process receives target material.",
+    "After preservation, the scorer should combine preserved predictions with the protected target mapping and independently recompute correctness, bootstrap intervals and final decision.",
+    "Use a positive raw-schema allowlist plus a data-flow check showing target-sidecar changes cannot alter prediction-raw bytes when observations are held fixed.",
+    "Retain R3 concealed post-final-binding evaluation commitment, collision audit and exact runtime binding."
   ],
   "questions_for_evidence_analyst": [
-    "Preserve the frozen PD01 token exactly while capping narrative interpretation at no demonstrated long-lag recovery/no advantage over the fixed reservoir?",
-    "In future reduction objects, require a positive absolute candidate-capability floor before interpreting comparator equivalence as mechanism reduction?",
-    "Prospectively distinguish failure-to-demonstrate the phenomenon from successful ordinary-mechanism reduction in terminal taxonomy/claim scope?"
+    "Should R3 define target-blind literally as no target-derived fields, rather than merely no final decision token?",
+    "Before FORMAL identity, require the scorer to recompute correctness from preserved predictions plus protected targets instead of trusting runner-produced correctness bits?",
+    "Treat this as preidentity integrity closure within the fresh R3 design surface, not a scientific rerun or H7 mechanism change?"
   ],
   "questions_for_control_brain": [
-    "Treat PD01 as strong negative evidence against the registered long-history superiority claim, but not positive evidence that fading-memory dynamics explain a demonstrated SparkBrain memory capability?",
-    "Add null-vs-null reduction-identifiability to the future reduction-claim checklist?",
-    "Keep PD01 consumed/closed with no rescue authority or retrospective relabeling?"
+    "Add a three-way control-plane distinction between prediction-raw/target-blind, target-derived-but-decision-blind, and scored/decision-bearing artifacts?",
+    "Block H7 one-way identity until preserve-before-score is verified at data-flow level, not only via forbidden field names?",
+    "Keep R2 quarantined and make any raw-gate change only prospectively in R3 or a fresh version if Analyst deems it science-affecting?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "PD01 exact package b9d38daa5faca348ad2db3898ba71e2abc99f631",
-    "PD01 STARTED 0569e348b9d93aeee53fc58daf4b71ee92303d6c",
-    "PD01 raw preserve 65ae7a50ee2279ab5edc3ca43ea3bf69daecb881 and raw SHA-256 5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638",
-    "PD01 evidence commit fc5c8cda283360addddb7da482b14e69beaba1f7 and annotated evidence tag object e4c4e6428d8ef9e09e92cae231041de0788162e2",
-    "workflow 35301327618, canonical statistics, scorer decision and FAIL_REDUCED_BY_FADING_MEMORY token",
-    "all other consumed C19-v4/C19-R1/C19-R2/H5/NI01 identities and immutable evidence",
-    "no rerun, rescore, retune, relabel, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, Utility execution, or scheduler change"
+    "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
+    "H7 PF-R1 development result/raw and no-rerun/no-rescore boundary",
+    "H7 R1/R2 historical contracts and development results",
+    "H7 R2 current branch/public evaluation surface must not be repaired in place for FORMAL evidence",
+    "no FORMAL identity/STARTED/protected evaluation/result-bearing workflow/scientific scoring or preserve/evidence ref by this role",
+    "no research merge, immutable-ref mutation, Utility execution, or scheduler change"
   ],
-  "read_only_recompute": {"completed": "ENDPOINT_DECISION_AND_INTERPRETATION_RECHECK_FROM_EXISTING_IMMUTABLE_EVIDENCE", "detail": "Rechecked the fixed primary statistics and decision-rule implication without generating data, rerunning a workflow, changing targets, or rescoring raw. The frozen FAIL token remains valid; the new finding concerns what that null-vs-null endpoint can identify mechanistically."},
+  "read_only_recompute": {
+    "completed": "STATIC_PRIMARY_ENDPOINT_DATAFLOW_RECONSTRUCTION_FROM_EXISTING_FROZEN_SOURCE",
+    "detail": "Without executing code or rescoring data, traced runner baseline_correct/cut_correct derivation from belief_truth and traced scorer dependence on those fields. This establishes that target-derived primary endpoint sufficient statistics are created before raw preservation in the R1/R2 implementation."
+  },
+  "phase_2_disposition": {
+    "blind_target_remained_valid": true,
+    "blind_target_change_reason": null,
+    "r2_current_status": "STOPPED_QUARANTINED_NON_EVIDENTIARY_FORMAL_SURFACE",
+    "r3_current_status": "PREIDENTITY_DESIGN_ONLY_NO_IDENTITY_NO_RESULT",
+    "existing_h7_formal_evidence_invalidated": false,
+    "reason": "No H7 FORMAL evidence exists; the audit identifies prospective integrity conditions before any one-way result."
+  },
   "utility_request_created": null,
-  "persistence_notes": "Role-separated audit stream only. Legacy shared latest/state not updated. No scientific workflow, research result mutation, Utility request, immutable-ref mutation, or scheduler change."
+  "persistence_notes": "Role-separated audit stream only. Legacy shared latest/state not updated. No experiment, workflow dispatch, identity consumption, research-result mutation, Utility request, immutable-ref mutation, or scheduler change."
 }
