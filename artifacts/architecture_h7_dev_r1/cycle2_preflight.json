@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "artifact_id": "H7-DEV-R1-CYCLE2-IMPLEMENTATION-PREFLIGHT-V1",
+  "candidate_id": "H7 responsibility",
+  "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+  "development_revision": "H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT",
+  "research_layer": "ARCHITECTURE_STUDY",
+  "contract_id": "H7-DEV-R1-ARCH-CONTRACT-V1",
+  "contract_path": "artifacts/architecture_h7_dev_r1/contract.json",
+  "implementation_parent_head": "6ef33c717b6d892b8ac24cb12d605e0cf1d0315f",
+  "evidentiary_status": "NON_EVIDENTIARY_IMPLEMENTATION_PREFLIGHT_NO_SCIENTIFIC_RESULT",
+  "claim_ceiling": "MECHANISM",
+  "preformal_eligible": true,
+  "preformal_readiness": {
+    "status": "NOT_READY"
+  },
+  "hold_class": null,
+  "hold_reason": null,
+  "terminal_state": "ACTIVE",
+  "queue_state": "ACTIVE",
+  "system_priority_exception": {
+    "used": false
+  },
+  "implemented_without_result_exposure": [
+    "frozen contract conformance assertions",
+    "deterministic fit/calibration/discriminator split and seed descriptors",
+    "hard discriminator-access guard for implementation-only cycle 2",
+    "native TOP1_SELECTED_LOCAL_NODE_CUT_V1 paired-step harness with baseline-only state commit",
+    "ORDINARY_DENSE_RECURRENT_V1 exact configuration factory",
+    "FINITE_STATE_ROUTE_HISTORY_V1 resolved-key table core with lexical majority tie-break",
+    "ELIGIBILITY_ROUTE_LEDGER_V1 ledger update and seeded linear-head structural core",
+    "non-result-bearing unit preflight coverage"
+  ],
+  "science_invariant_repairs": [
+    {
+      "classification": "LINT_ONLY",
+      "source_workflow": 35685077726,
+      "failure": "Ruff E402/I001 in optional-torch test import layout",
+      "repair": "file-level E402/I001 lint suppression matching optional dependency import pattern; no scientific field changed"
+    }
+  ],
+  "science_affecting_specification_gaps": [
+    {
+      "comparator_id": "FINITE_STATE_ROUTE_HISTORY_V1",
+      "field": "fit_state_closure_and_unseen_state_policy",
+      "reason": "The frozen key includes previous predicted label, but the contract does not fix how previous predictions are produced while fitting paired baseline/cut counts or how unseen state keys predict. Selecting a closure or fallback would change comparator semantics."
+    },
+    {
+      "comparator_id": "ELIGIBILITY_ROUTE_LEDGER_V1",
+      "field": "event_encoder_provenance_training_and_calibration_protocol",
+      "reason": "The frozen comparator fixes ledger decay, head shape, seed/epochs/lr and split use, but not which frozen event encoder supplies the 24-d event encoding, the optimizer/loss/update ordering for the head, or the exact calibration operation. Selecting these would change comparator semantics."
+    }
+  ],
+  "result_exposure": {
+    "historical_h7_read_for_tuning": false,
+    "fit_training_executed": false,
+    "calibration_executed": false,
+    "discriminator_materialized_or_read": false,
+    "result_bearing_intervention_executed": false,
+    "scientific_metric_computed": false,
+    "comparator_outcome_computed": false,
+    "synthetic_measurement_executed": false,
+    "preformal_test_executed": false,
+    "formal_action_executed": false,
+    "identity_consumed": false
+  },
+  "prior_result_preservation": {
+    "historical_h7_ref": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
+    "preserved_unchanged": true,
+    "reexecuted": false,
+    "retuned": false,
+    "rescored": false,
+    "promoted_to_evidence": false
+  },
+  "stop_classification": "SCIENCE_AFFECTING_COMPARATOR_PROTOCOL_UNDERSPECIFIED",
+  "required_next_action": "Fresh Evidence Analyst must prospectively fix or explicitly version the two comparator protocol gaps before MAIN completes all-comparator implementation or performs any result-bearing development measurement. No discriminator access is authorized by this artifact."
+}
