@@ -1,0 +1,150 @@
+name: h7-formal-r4-cycle11-realization
+
+on:
+  push:
+    branches:
+      - research/main-h7-formal-r4-source-executor-r85-cycle11
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: "0"
+  OMP_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+
+jobs:
+  locked-nonresult-realization:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11.16"
+          check-latest: false
+      - name: Assert R86 preidentity authority and exact committed lock bytes
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import platform
+          from pathlib import Path
+
+          root = Path("artifacts/formal_h7_r4")
+          contract = json.loads((root / "resource_contract.json").read_text())
+          lock_bytes = (root / "scientific-runtime.lock").read_bytes()
+          manifest_bytes = (root / "scientific-runtime-manifest.json").read_bytes()
+          versions_bytes = (root / "scientific-runtime.versions").read_bytes()
+          manifest = json.loads(manifest_bytes)
+
+          assert hashlib.sha256(lock_bytes).hexdigest() == (
+              "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583"
+          )
+          assert hashlib.sha256(manifest_bytes).hexdigest() == (
+              "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223"
+          )
+          assert hashlib.sha256(versions_bytes).hexdigest() == (
+              "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575"
+          )
+          assert contract["source_binding"]["final_r4_source_sha"] is None
+          assert all(value is False for value in contract["one_way_hard_stop"].values())
+          assert contract["scientific_runtime"]["python_version"] == platform.python_version()
+          print("R4_COMMITTED_LOCK_BYTES_AND_PREIDENTITY_GUARD_VALID")
+          PY
+      - name: Create clean scientific runtime from exact committed lock
+        run: |
+          python -m venv .h7-r4-scientific
+          .h7-r4-scientific/bin/python -m pip install \
+            --disable-pip-version-check \
+            --require-hashes \
+            --only-binary=:all: \
+            --no-deps \
+            -r artifacts/formal_h7_r4/scientific-runtime.lock
+      - name: Assert clean locked runtime and exact checkout source loading
+        env:
+          PYTHONPATH: ${{ github.workspace }}/src
+        run: |
+          .h7-r4-scientific/bin/python - <<'PY'
+          import hashlib
+          import importlib.metadata
+          import json
+          import os
+          import platform
+          import re
+          from pathlib import Path
+
+          import torch
+          import sparkbrain
+
+          root = Path("artifacts/formal_h7_r4")
+          contract = json.loads((root / "resource_contract.json").read_text())
+          manifest = json.loads((root / "scientific-runtime-manifest.json").read_text())
+          expected_host = contract["scientific_runtime"]
+          observed_host = {
+              "python_version": platform.python_version(),
+              "python_implementation": platform.python_implementation(),
+              "runner_image_os": os.environ.get("ImageOS", ""),
+              "runner_image_version": os.environ.get("ImageVersion", ""),
+              "platform_system": platform.system(),
+              "platform_release": platform.release(),
+              "platform_machine": platform.machine(),
+              "runner_arch": os.environ.get("RUNNER_ARCH", ""),
+          }
+          for key, value in observed_host.items():
+              assert value == expected_host[key], (key, value, expected_host[key])
+
+          def norm(name: str) -> str:
+              return re.sub(r"[-_.]+", "-", name).lower()
+
+          installed = {
+              norm(dist.metadata["Name"]): dist.version
+              for dist in importlib.metadata.distributions()
+              if dist.metadata.get("Name")
+          }
+          expected_packages = {
+              item["normalized_name"]: item["version"]
+              for item in manifest["packages"]
+          }
+          for name, version in expected_packages.items():
+              assert installed.get(name) == version, (name, installed.get(name), version)
+          forbidden = {
+              norm(name)
+              for name in contract["package_contract"][
+                  "protected_runtime_excludes_development_tooling"
+              ]
+          }
+          assert not (forbidden & set(installed))
+          assert importlib.metadata.version("torch") == expected_host["torch_distribution_version"]
+          assert str(torch.__version__) == expected_host["torch_module_version"]
+          assert str(torch.version.git_version) == expected_host["torch_git_version"]
+          assert str(torch.version.cuda) == expected_host["torch_cuda_build_version"]
+          record = importlib.metadata.distribution("torch").read_text("RECORD")
+          assert record is not None
+          assert hashlib.sha256(record.encode()).hexdigest() == expected_host[
+              "torch_distribution_record_sha256"
+          ]
+          torch.set_num_threads(1)
+          torch.use_deterministic_algorithms(True)
+          assert torch.get_num_threads() == 1
+          assert torch.are_deterministic_algorithms_enabled()
+          source = Path(sparkbrain.__file__).resolve()
+          checkout = Path(os.environ["GITHUB_WORKSPACE"]).resolve()
+          assert source.is_relative_to(checkout / "src")
+          assert "site-packages" not in str(source)
+          print("R4_CLEAN_LOCKED_RUNTIME_AND_EXACT_SOURCE_VALID")
+          PY
+      - name: Run synthetic non-protected protected-executor realization probe
+        env:
+          PYTHONPATH: ${{ github.workspace }}/src
+        run: .h7-r4-scientific/bin/python scripts/preflight_h7_formal_r4_cycle11.py
+      - name: Assert one-way material remains absent
+        run: |
+          test ! -e artifacts/formal_h7_r4/evaluation_payload.json
+          test ! -e artifacts/formal_h7_r4/evaluation_seeds.json
+          test ! -e artifacts/formal_h7_r4/FORMAL_IDENTITY.json
+          test ! -e artifacts/formal_h7_r4/STARTED.json
+          test ! -e artifacts/formal_h7_r4/official_prediction_raw.jsonl
+          test ! -e artifacts/formal_h7_r4/official_score.json
