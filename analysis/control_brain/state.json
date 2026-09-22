@@ -1,28 +1,29 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260922T105700+0900-R32-C5A721D4",
-  "produced_at": "2026-09-22T10:57:00+09:00",
-  "producer_run_id": "control-brain-auto-20260922T1050JST-R32",
+  "generation_id": "CTRL-20260922T124800+0900-R33-E7C421B6",
+  "produced_at": "2026-09-22T12:48:00+09:00",
+  "producer_run_id": "control-brain-auto-20260922T1250JST-R33",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219",
-  "programme_position": "FORMAL_HOLD_WITH_INTENTIONAL_LOWER_FUNNEL_IDLE_NO_COHERENT_TARGET",
+  "supersedes_generation_id": "CTRL-20260922T105700+0900-R32-C5A721D4",
+  "programme_position": "FORMAL_HOLD_WITH_ACTIVE_MECHANISM_ARCHITECTURE_DEVELOPMENT",
   "input_generations": {
-    "human_directives": "ops/human_directives/active.md@ee5dbf63a2b34117f42fdc4dd62e9813d06d7188",
-    "previous_control": "CTRL-20260922T085130+0900-R31-B7D4A219@bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
-    "evidence_analyst": "EVA-20260922T100852+0900-R58-7D4C21A9@13c4374c889e4326d225c62de02ca4a51e351ca1",
-    "main": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9",
-    "sub": "SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9@c7443d5dd4c118cea86ed62f1681ff4f7cb943ba",
-    "relay": "NO_SEPARATE_DURABLE_ADVANCE_AFTER_SUB_R58_NO_ACTIVE_MAIN_CONTINUATION_AUTHORITY",
-    "literature": "LIT-20260922T093207+0900-R27-SPECIFICITY-IDENTIFIABILITY-8C3A21F5",
+    "human_directives": "ops/human-directives@59103b381783cf6cb456e43f1d73e7a01c1d33dc",
+    "previous_control": "CTRL-20260922T105700+0900-R32-C5A721D4@544bede4c5131ea57e5b93903bab5279d066a0c0",
+    "evidence_analyst": "EVA-20260922T124300+0900-R61-C7F421A9@4f55a65744385431ec73d1dec4ed32b7b20a63d8",
+    "main": "MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0@9b946107aadac9430a449d32d5818b16631719c8",
+    "sub": "SUB-20260922T113500+0900-NOOP-R59INTENTIONALIDLE-A6D4C219@49572dfeb1aa7da7986ac545a10f1e4e89f5d15e",
+    "relay": "NO_FRESH_POST_R61_DURABLE_CONTINUATION",
+    "literature": "LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8@33a7d8fbf91175a78002f3c2a9a6109fbefb0ff6",
     "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
-    "methodology": "METHCAL-20260922T102142+0900-R56-A7C3D1E9",
+    "methodology": "METHCAL-20260922T122122+0900-R58-B84F2D17@623297013cad5a6c80037497d5236b581a87277d",
     "steward": "STEWARD-20260922T075212+0900-G9-8C4E21D3@a3ab4f4f70c4782e7ff916838c33a64eb0a9c2dd",
     "utility_assignment": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "utility_worker": "UTILITY-20260922T103500+0900-AUTO-EQUIV-LINT-DIAG-COMPLETED-4D8A21C6",
+    "utility_worker": "UTILITY-20260922T123800+0900-AUTO-EQUIV-CI-STATE-RECON-COMPLETED-6B4E21F9@02da65ee08790e0f4a3eb5b4c364cf954f80aa57",
     "scheduler_registry_manifest": "blob@6f7fa138b09b093613e8eb98b18559ea94e16b59"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main_protected": false,
     "ruleset_count": 0,
     "evidence_tag_count": 5,
     "evidence_tags": {
@@ -33,47 +34,62 @@
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
     "immutable_ref_incident": false,
-    "current_active_canonical_research_target": null,
-    "utility_equivalence_branch": {
-      "ref": "utility/equivalence-certificate-v0-1-A42D7C19",
-      "head": "710f397b1af36c73378f6029c27ccb44242f02b9",
-      "base": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "ahead_by": 2,
-      "behind_by": 0,
-      "files": [
-        "src/sparkbrain/equivalence_certificate.py",
-        "tests/test_equivalence_certificate.py"
-      ]
-    }
+    "active_research_ref": "research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1@b83cd8cc71557af3ecc79c8a305a22b58c1b483c",
+    "h7_contract_id": "H7-DEV-R1-ARCH-CONTRACT-V1",
+    "utility_equivalence_ref": "utility/equivalence-certificate-v0-1-A42D7C19@9f9d18065b481d8597236b0b682f0574c251b319"
   },
   "human_directive_dispositions": [
     {
       "directive": "HUMAN-20260918-001",
       "disposition": "ACCEPT",
-      "current_action": "UTILITY_EQUIVALENCE_TOOL_NOT_PROMOTION_READY_PENDING_EXACT_LINT_REPAIR_GREEN_CI_AND_FRESH_STEWARD_REVIEW",
-      "detail": "The isolated verifier remains candidate-independent and potentially main-eligible, but current CI is red and independent-provenance/raw-to-digest trust limits remain unresolved. No merge is authorized."
+      "current_action": "UTILITY_EQUIVALENCE_TOOL_CI_GREEN_PENDING_FRESH_STEWARD_REVIEW_AND_NORMAL_REVIEWED_INTEGRATION",
+      "merge_authorized": false
     },
     {
       "directive": "HUMAN-20260919-002",
       "disposition": "ACCEPT",
-      "current_action": "DEFER_PROTECTION_DEPLOYMENT",
-      "detail": "Repository ruleset count remains zero. Protection and legacy workflow trigger-isolation gaps remain reported but are not autonomously changed."
+      "current_action": "DEFER_PROTECTION_DEPLOYMENT"
     },
     {
       "directive": "HUMAN-20260919-003",
-      "disposition": "ACCEPT_ACTIVE_CONCERN",
-      "detail": "Viable executable MECHANISM remains zero. Intentional MAIN/SUB idle is currently scientifically preferable to manufactured or rescue science; Utility/Audit/Methodology progress does not substitute for scientific candidate throughput."
+      "disposition": "ACCEPT_ACTIVE_CONCERN_IMPROVING",
+      "detail": "H7 DEV-R1 now provides one active viable MECHANISM Architecture revision; no scientific result yet."
     },
     {
       "directive": "HUMAN-20260921-004",
-      "disposition": "MODIFY_AND_ACCEPT_BOUNDED_AUTONOMOUS_UTILITY",
-      "detail": "Latest Utility autonomous run remained one-run, NON_EVIDENTIARY, candidate-independent, read-only and non-colliding."
+      "disposition": "MODIFY_AND_ACCEPT_BOUNDED_AUTONOMOUS_UTILITY"
     },
     {
-      "directive": "USER-20260921-UTILITY-AUTONOMY-APPROVAL",
-      "disposition": "ACCEPT_APPLIED_AND_CONFORMANCE_REVALIDATED"
+      "directive": "HUMAN-20260922-005",
+      "disposition": "ACCEPT_APPLIED_PROSPECTIVELY",
+      "detail": "Development-phase semantics are live in Analyst/MAIN/Relay/Methodology; FORMAL one-way floor unchanged."
+    },
+    {
+      "directive": "HUMAN-20260922-006",
+      "disposition": "ACCEPT_READER_SURFACE_DRIFT_CONFIRMED_PENDING_STEWARD_AUDIT",
+      "detail": "main README and pyproject still advertise 0.3.2.dev0 while v0.5 theory spec exists with package target 0.5.0.dev0; audit stable version semantics before any small reviewed refresh."
+    },
+    {
+      "directive": "HUMAN-20260922-007",
+      "disposition": "ACCEPT_APPLIED_PENDING_FIRST_RUN_VALIDATION",
+      "detail": "Live SUB semantics now require pre-NO-OP scan and allow bounded noncanonical QUESTION_FORMATION_DISCOVERY; latest durable SUB result still predates rollout."
     }
   ],
+  "development_iteration_policy": {
+    "status": "APPLIED_PROSPECTIVELY",
+    "phases": [
+      "OPEN_DEVELOPMENT",
+      "RESULT_EXPOSED_DEVELOPMENT",
+      "CONSUMED_ONE_WAY"
+    ],
+    "cycle3_semantics": "MANDATORY_REASSESS_NOT_AUTOMATIC_TERMINATION",
+    "preformal_is_iterative_development": true,
+    "development_observations_are_independent_confirmation": false,
+    "science_invariant_same_object_repair_allowed_in_development": true,
+    "science_affecting_post_exposure_change_requires_versioned_revision_or_fresh_successor": true,
+    "prior_results_must_be_preserved": true,
+    "consumed_formal_floor_relaxed": false
+  },
   "funnel_v2_1": {
     "material_candidates_total": 32,
     "claim_ceiling_counts": {
@@ -85,248 +101,195 @@
       "total": 32,
       "rate": 1.0
     },
-    "discovery_dispositions": {
-      "REJECT": 2,
-      "HOLD_SYSTEM_TERMINAL": 1,
-      "HOLD_MECHANISM_UNRESOLVED": 1
-    },
-    "rolling_theory_backward": {
-      "actual_scientific_selections": [
-        "MECHANISM",
-        "SYSTEM",
-        "SYSTEM"
-      ],
-      "share": "1/3",
-      "qualifying_count": 1,
-      "window_size": 3,
-      "no_target_exception": {
-        "code": "NO_COHERENT_MECHANISM_TARGET",
-        "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-        "analyst_canonical_check_count": 21,
-        "latest_sub_local_check_count": 22,
-        "counts_as_selection": false,
-        "interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
-      }
+    "terminal_state_counts": {
+      "ACTIVE": 1,
+      "NONTERMINAL_HOLD": 0,
+      "TERMINAL_FOR_CURRENT_OBJECT": 31
     },
     "architecture": {
       "active": {
-        "MECHANISM": 0,
+        "MECHANISM": 1,
         "SYSTEM": 0
       },
       "queued": {
         "MECHANISM": 0,
         "SYSTEM": 0
-      },
-      "dispositions": {
-        "REJECT": 0,
-        "HOLD_SYSTEM_TERMINAL": 7,
-        "HOLD_METHOD_LIMITED": 3,
-        "HOLD_CONTRACT_AMBIGUITY": 2,
-        "HOLD_MECHANISM_UNRESOLVED": 1
       }
     },
-    "terminal_state_counts": {
-      "ACTIVE": 0,
-      "NONTERMINAL_HOLD": 1,
-      "TERMINAL_FOR_CURRENT_OBJECT": 31
-    },
-    "preformal_eligible_count": 0,
+    "preformal_eligible_count": 1,
     "preformal_ready_count": 0,
-    "viable_mechanism_candidate_count": 0,
+    "viable_mechanism_candidate_count": 1,
+    "fresh_formal_authority_count": 0,
+    "development_phase_counts": {
+      "OPEN_DEVELOPMENT": 2,
+      "RESULT_EXPOSED_DEVELOPMENT": 30,
+      "CONSUMED_ONE_WAY": 0
+    },
+    "official_consumed_one_way_identity_count": 7,
+    "active_development_revision_count": 1,
+    "cycle3_reassess_outcome_count": 0,
+    "fresh_successors_generated": 0,
+    "fresh_successors_admitted": 0,
+    "question_formation_discovery_authorized_noncanonical": 1,
+    "rolling_theory_backward": {
+      "canonical_actual_scientific_selections": [
+        "MECHANISM",
+        "SYSTEM",
+        "SYSTEM"
+      ],
+      "share": "1/3",
+      "question_formation_denominator_excluded": true
+    },
+    "no_target_episode": {
+      "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
+      "canonical_check_count": 23,
+      "status": "CLOSED_FOR_CURRENT_ACTIVE_H7_REVISION",
+      "interpretation": "LIVENESS_ONLY_NOT_ABSENCE_EVIDENCE"
+    },
     "recent_main_cycles": {
       "SYSTEM": 11,
-      "MECHANISM": 3,
+      "MECHANISM": 4,
       "time_split": "UNAVAILABLE_DO_NOT_USE_RUN_COUNT_AS_TIME_PROXY"
     },
     "system_priority_exception_count": 0,
-    "system_priority_exception_reasons": [],
-    "system_queue_starving_mechanism": false,
-    "active_canonical_candidate": null,
-    "phenomenon_shadow": {
-      "trigger_active": true,
-      "cumulative_generated": 5,
-      "currently_retained": 0,
-      "later_canonical_admissions": 1,
-      "later_executed_shadow_origin_candidates": 1,
-      "latest_execution_disposition": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT",
-      "same_generation_execution_allowed": false,
-      "quota_credit": false
-    }
+    "system_queue_starving_mechanism": false
   },
-  "readiness_and_hold_semantics": {
-    "eligible_distinct_from_ready": true,
-    "ready_means_test_readiness_not_prior_success": true,
-    "hidden_second_formal_gate": false,
-    "h7": {
-      "claim_ceiling": "MECHANISM",
-      "preformal_eligible": false,
-      "preformal_readiness": "NOT_READY",
-      "hold_class": "HOLD_MECHANISM_UNRESOLVED",
-      "hold_reason": "NO_FRESH_NATIVE_MECHANISM_OBJECT_WITH_PROSPECTIVE_CLAIM_SCOPED_CAUSAL_SPECIFICITY_IDENTIFIABILITY_COMPARATOR_RESOURCE_AND_FALSIFIER_CONTRACT",
-      "terminal_state": "NONTERMINAL_HOLD",
-      "queue_state": "NOT_QUEUED",
-      "same_object_rescue": "PROHIBITED"
-    },
-    "candidate32": {
-      "claim_ceiling": "SYSTEM",
-      "preformal_eligible": false,
-      "preformal_readiness": "NOT_APPLICABLE",
-      "hold_class": "HOLD_METHOD_LIMITED",
-      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-      "queue_state": "NOT_QUEUED",
-      "same_object_rerun_repair_retune_rescore_cycle3": "PROHIBITED",
-      "same_object_system_to_mechanism_upgrade": "PROHIBITED"
-    }
+  "active_h7": {
+    "candidate_id": "CAND-H7-RESPONSIBILITY",
+    "research_layer": "ARCHITECTURE_STUDY",
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "NOT_READY",
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT",
+    "cycle1_status": "STATIC_CONTRACT_FROZEN_CI_GREEN_NO_RESULT_BEARING_EXECUTION",
+    "cycle2_authority": "IMPLEMENTATION_ONLY_STOP_BEFORE_RESULT_BEARING_MEASUREMENT",
+    "cycle2_allowed": [
+      "native paired-intervention harness",
+      "all three frozen ordinary comparators",
+      "deterministic split/seed plumbing",
+      "conformance assertions",
+      "non-result-bearing preflight"
+    ],
+    "cycle2_forbidden": [
+      "result-bearing discriminator measurement",
+      "PRE_FORMAL or FORMAL execution",
+      "science-affecting change without fresh Analyst revision",
+      "consumed/protected identity use"
+    ],
+    "literature_r28_disposition": "SCIENCE_AFFECTING_PROSPECTIVE_INPUT_FOR_EXPLICIT_REASSESSMENT_NOT_SILENT_R1_PATCH",
+    "possible_next_revision": "H7-DEV-R2_IF_ANALYST_PROSPECTIVELY_JUSTIFIES_NEW_INFORMATION_GAIN"
   },
   "external_methodology_implications": {
-    "literature_r27": {
+    "literature_r28": {
       "genuinely_new_information": true,
-      "effect": "For future fresh H7 objects, separate causal importance from task/context specificity and route faithfulness from uniqueness. Task-specific claims require matched non-target contexts; uniqueness-bearing claims require prospective identifiability or equivalence-class fallback. No current H7 execution authority is created."
+      "prospective_topics": [
+        "intervention well-posedness/admissibility",
+        "abstraction-map complexity/privilege",
+        "regime coverage/faithfulness",
+        "intervention-aware recurrent/reservoir/state-space reductions"
+      ],
+      "same_revision_change_allowed": false,
+      "reason": "Would alter frozen intervention/comparator/claim-scope semantics; requires explicit versioned revision or successor."
+    },
+    "methodology_r58": {
+      "overall": "MIXED_CALIBRATION",
+      "hard_floor": "KEEP",
+      "development_iteration": "RELAX_WITH_PROVENANCE_AND_VERSIONING",
+      "cycle3_automatic_cap": "RELAX",
+      "preformal_real_development_surface": "RELAX",
+      "fresh_successor_suppression": "RELAX",
+      "hidden_second_formal_gate": false,
+      "pass_reachability": "REALISTIC_WITH_FRESH_ONE_WAY_FORMAL_IDENTITY_AFTER_DEVELOPMENT"
     },
     "audit_r6_pd01": {
-      "audit_classification": "WEAKENED",
-      "canonical_token_status": "FAIL_REDUCED_BY_FADING_MEMORY_REMAINS_PROTOCOL_VALID_AND_IMMUTABLE",
-      "evidence_chain_integrity": "ROBUST_SO_FAR",
-      "candidate_accuracy": 0.47265625,
-      "candidate_ci": [0.431640625, 0.515625],
-      "comparator_accuracy": 0.5,
-      "effect": -0.02734375,
-      "effect_ci": [-0.068359375, 0.015625],
-      "interpretation_ceiling": "NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR",
-      "control_policy": "Treat as strong negative evidence against registered superiority/recoverability, not positive evidence that fading-memory dynamics mechanistically explain a demonstrated SparkBrain long-memory capability. No rerun, rescore, relabel or reopen. Future fresh positive reduction claims must distinguish phenomenon absence from positive phenomenon reproduced by an ordinary equal-privilege baseline."
-    },
-    "methodology_r56": {
-      "overall": "MIXED_CALIBRATION",
-      "material_change": true,
-      "hard_floor": "KEEP",
-      "hidden_second_formal_gate": false,
-      "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED",
-      "scientific_threshold_change": false,
-      "future_h7_claim_scope": "SPECIFICITY_AND_UNIQUENESS_REQUIREMENTS_ARE_CLAIM_SCOPED_NOT_UNIVERSAL_READY_GATES",
-      "equivalence_trust_boundary": "SELF_ASSERTED_PRODUCER_DISTINCTNESS_AND_SUPPLIED_DIGESTS_ARE_NOT_INDEPENDENT_PROVENANCE_OR_RAW_TO_DIGEST_ASSURANCE"
-    },
-    "utility_equivalence_prototype": {
-      "evidentiary_status": "NON_EVIDENTIARY",
-      "candidate_touched": false,
-      "branch_ahead_by": 2,
-      "changed_files": 2,
-      "ci_run": 35668005338,
-      "ci_status": "FAILED_LINT_ON_PYTHON_3_11_AND_3_13",
-      "lint_rule": "UP035",
-      "lint_path": "src/sparkbrain/equivalence_certificate.py:14",
-      "minimal_repair": "MOVE_MAPPING_IMPORT_FROM_TYPING_TO_COLLECTIONS_ABC_KEEP_ANY_FROM_TYPING",
-      "main_promotion_status": "NOT_PROMOTION_READY"
+      "canonical_token_immutable": true,
+      "interpretation_ceiling": "NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR"
     }
-  },
-  "worker_assessment": {
-    "analyst": "R58 canonical authority; 32/32 typing complete; no candidate lifecycle delta; H7 claim-scope contract sharpened; Utility prototype remains non-scientific and not promotion-ready.",
-    "main": "R58 intentional no-target idle; no candidate, experiment, workflow, identity or research mutation.",
-    "relay": "Live poll observed after R58 but no separate durable continuation advance surfaced; no active MAIN object existed.",
-    "sub": "R58 credible no-op/no-target; local liveness check 22; theory-backward share remains 1/3; no scientific selection.",
-    "literature": "R27 genuinely new specificity/identifiability guidance for future H7 claims; non-authorizing.",
-    "audit": "R6 materially weakens only the positive mechanistic-reduction interpretation of PD01 while preserving its protocol-valid frozen FAIL decision and one-way evidence chain.",
-    "methodology": "R56 mixed calibration; hard floor and readiness semantics remain sound; future H7 specificity/uniqueness gates are claim-scoped.",
-    "steward": "G9 governance findings remain current: main/evidence separation sound; no immutable incident; zero rulesets; legacy CX01 write-capable trigger-isolation gap self-disarmed by existing refs.",
-    "utility": "Latest autonomous run was a one-run read-only lint diagnostic; exact single UP035 repair identified; no mutation or scientific authority."
   },
   "utility_governance": {
     "assignment_status": "IDLE",
     "active_assignment_id": null,
-    "autonomy_status": "APPLIED_AND_CONFORMANT",
-    "latest_autonomous_task": "AUTOUTIL-20260922T1030+0900-EQUIV-LINT-DIAG-4D8A21C6",
+    "latest_generation": "UTILITY-20260922T123800+0900-AUTO-EQUIV-CI-STATE-RECON-COMPLETED-6B4E21F9",
     "latest_task_status": "COMPLETED",
-    "latest_task_evidentiary_status": "NON_EVIDENTIARY",
-    "latest_task_max_runs": 1,
+    "evidentiary_status": "NON_EVIDENTIARY",
+    "prototype_head": "9f9d18065b481d8597236b0b682f0574c251b319",
+    "ci_run_id": 35680322003,
+    "ci_conclusion": "success",
+    "fresh_steward_review": false,
+    "merge_or_promotion_authorized": false,
+    "semantic_trust_limits_cured_by_ci": false,
     "hidden_main_dependency": false,
     "candidate_typing_changed": false,
-    "theory_backward_quota_credit": false,
-    "scheduler_mutation": false,
-    "open_request_dispositions": [
-      {
-        "request_id": "UTIL-20260922-0934-EQUIV-CERT-CI-STEWARD-REVIEW",
-        "disposition": "ACCEPT_BOUNDED_NON_SCIENTIFIC_REPAIR_AND_REVIEW_PATH",
-        "assignment_created": false,
-        "reason": "The exact CI blocker is a single ordinary Ruff UP035 import defect on an isolated candidate-agnostic Utility branch. Existing approved AUTONOMOUS_IDLE semantics already permit this bounded non-evidentiary isolated tooling repair without creating scientific authority or MAIN dependency.",
-        "allowed_next_action": "Apply only the exact Mapping import repair on the isolated Utility branch and run ordinary repository CI; then stop and report.",
-        "forbidden": [
-          "scientific workflow or experiment",
-          "candidate32 or H7 repair/reopen/rerun",
-          "Funnel typing/readiness change",
-          "merge or main-promotion approval",
-          "scheduler mutation",
-          "claiming lint/CI green as scientific equivalence validation"
-        ],
-        "post_ci_requirement": "Fresh Repository Steward structural review plus normal reviewed integration before any future main-promotion decision; independent-provenance/raw-stream trust limits remain separate."
-      }
-    ],
-    "next_control_posture": "LEAVE_ASSIGNMENT_POINTER_IDLE; ACCEPT_EXACT_LINT_REPAIR_UNDER_AUTONOMOUS_IDLE; DO_NOT_MERGE; REQUIRE_GREEN_CI_AND_FRESH_STEWARD_REVIEW_BEFORE_RECONSIDERING_PROMOTION"
+    "quota_credit": false
   },
-  "repository_governance": {
-    "ruleset_count": 0,
-    "protection_deployment": "DEFER_PER_HUMAN_DIRECTIVE",
-    "workflow_trigger_isolation": {
-      "classification": "LEGACY_CX01_WRITE_CAPABLE_PUSH_TRIGGER_ISOLATION_GAP_SELF_DISARMED_GOVERNANCE_ONLY",
-      "current_scientific_effect": "NONE",
-      "future_policy": "PREFER_EXPLICIT_PROSPECTIVE_TRIGGER_AUTHORITY_FOR_WRITE_CAPABLE_SCIENTIFIC_PATHS",
-      "historical_workflow_dispatch_for_validation": "PROHIBITED"
-    },
-    "utility_equivalence_main_promotion_candidate": {
-      "status": "NOT_PROMOTION_READY",
-      "blocking_items": [
-        "Ruff UP035 CI failure",
-        "fresh Repository Steward structural review after repair/green CI",
-        "normal reviewed integration path",
-        "scientific trust-boundary caveats must remain explicit and separate from generic tooling readiness"
-      ],
-      "merge_authorized": false
-    }
+  "main_stable_baseline_refresh": {
+    "status": "PENDING_STEWARD_AUDIT",
+    "reader_surface_drift_confirmed": true,
+    "pyproject_version": "0.3.2.dev0",
+    "readme_version": "0.3.2.dev0",
+    "v05_theory_spec_present": true,
+    "v05_package_target": "0.5.0.dev0",
+    "frontier_merge_authorized": false,
+    "preferred_change_shape": "SMALL_REVIEWED_OUTCOME_INDEPENDENT_INTEGRATION_BRANCH_OR_PR_AFTER_VERSION_SEMANTICS_AUDIT"
+  },
+  "worker_assessment": {
+    "analyst": "R61 canonical authority; HUMAN-005/007 operationalized conservatively; H7 R1 active MECHANISM Architecture and cycle2 implementation-only authority granted.",
+    "main": "R60 completed frozen static H7 contract cycle1 with green CI and no result-bearing science; waiting for R61 cycle2 implementation execution.",
+    "relay": "No fresh durable post-R61 continuation; no authority inferred from scheduler poll alone.",
+    "sub": "Latest durable state is pre-HUMAN-007 R59 no-op; live prompt now carries question-formation semantics; first-run validation pending.",
+    "literature": "R28 genuinely new H7 intervention/abstraction/regime/baseline guidance; held for explicit revision/reassessment rather than silent R1 mutation.",
+    "methodology": "R58 supports flexible/versioned development and strict consumed evidence; over-terminalization/candidate starvation is primary false-negative risk.",
+    "steward": "G9 is stale relative to HUMAN-005/006/007, H7 activation, and repaired green Utility tooling; fresh governance review needed.",
+    "utility": "Exact-head CI is green after bounded invariant lint repair; latest run only reconciled terminal CI/mailbox state; no merge/science authority."
   },
   "scheduler_health": {
     "fleet_status": "YELLOW",
-    "scheduler_definition_drift_detected": true,
-    "scheduler_definition_drift_detail": "Live Current State Brief remains approved at 01:55/09:55/13:55/17:55/21:55 JST while scheduler registry manifest still records :45; registry also contains older core prompt mirrors. This is mirror drift; live definitions remain authoritative.",
-    "scheduler_cadence_failure_detected": false,
+    "active_run_opportunities_per_day": 175,
     "exact_time_overlap_count": 0,
-    "exact_time_collision_risk": "NONE_DETERMINISTIC",
-    "observed_material_start_delays": "NO_RELIABLE_MATERIAL_START_DELAY_PROVEN. Durable produced/persistence offsets are not scheduler-start timestamps; recent offsets include Analyst +8m52, MAIN +6m19, Methodology +1m42 and SUB +0m53 without stale scientific action.",
     "role_ownership_collision_count": 0,
-    "recent_noop_idle_patterns": {
-      "main": "INTENTIONAL_NO_TARGET_IDLE",
-      "sub": "INTENTIONAL_NO_TARGET_IDLE_DENOMINATOR_EXCLUDED",
-      "relay": "NO_ACTIVE_CONTINUATION_AUTHORITY_NO_DURABLE_ADVANCE",
-      "utility": "USEFUL_BOUNDED_NON_EVIDENTIARY_DIAGNOSTIC"
+    "scheduler_cadence_failure_detected": false,
+    "observed_material_start_delay": "INSUFFICIENT_DIRECT_START_TELEMETRY",
+    "generation_lag_assessment": "NORMAL_DEPENDENCY_AWARE_FLOW_WITH_R61_AFTER_R60_MAIN_AND_R58_METHODOLOGY",
+    "scheduler_definition_drift_detected": true,
+    "definition_drift": {
+      "registry_manifest_blob": "6f7fa138b09b093613e8eb98b18559ea94e16b59",
+      "live_ahead_roles": [
+        "Control & Repository Steward",
+        "Evidence Analyst",
+        "Research Orchestrator",
+        "Research Orchestrator Relay",
+        "Research Orchestrator Sub",
+        "Methodology Calibration Auditor"
+      ],
+      "brief_live_schedule": "01:55/09:55/13:55/17:55/21:55 JST",
+      "brief_registry_schedule": "01:45/09:45/13:45/17:45/21:45 JST",
+      "direction": "LIVE_TO_REGISTRY_BEFORE_NEXT_SCHEDULER_MUTATION_DO_NOT_REVERT_LIVE"
     },
-    "useful_result_cadence_vs_polling": "SCIENTIFIC_RESULT_RATE_LOW_BECAUSE_VIABLE_MECHANISM_ZERO; NONSCIENTIFIC_INFORMATION_ARRIVAL_REMAINS_MATERIAL_FROM_LITERATURE_AUDIT_METHODOLOGY_UTILITY",
-    "generation_lag_assessment": "EXPECTED_ONE_CYCLE_LAG: Audit R6 and Methodology R56 arrived after Analyst R58 and should be consumed by next Analyst. No stale-generation scientific execution observed.",
-    "active_sparkbrain_run_opportunities_per_day": 175,
     "scheduler_change_warranted": false,
     "scheduler_controller_action": "NO_CHANGE",
-    "scheduler_action_class": "NO_CHANGE",
-    "scheduler_proposals": [],
-    "registry_reconciliation_requirement": "RECONCILE_REGISTRY_FROM_LIVE_STABLE_DEFINITIONS_BEFORE_ANY_FUTURE_SCHEDULER_MUTATION; NEVER_REVERT_LIVE_BRIEF_TO_STALE_45"
+    "scheduler_proposals": []
   },
-  "priorities": [
-    "Evidence Analyst next generation must incorporate Audit R6 and Methodology R56 prospectively without mutating frozen PD01/H7 history.",
-    "Maintain intentional scientific idle until a materially fresh native prospectively falsifiable MECHANISM object or mechanism-surface delta appears; no rescue laundering.",
-    "Allow only the exact Utility UP035 import repair under bounded AUTONOMOUS_IDLE, then require ordinary green CI and fresh Steward review; no merge or scientific authority.",
-    "Reconcile scheduler registry from live stable definitions before any future scheduler mutation transaction, without changing live scheduler semantics merely for mirror hygiene."
+  "direction_to_analyst": [
+    "Preserve H7-DEV-R1-ARCH-CONTRACT-V1 exactly; keep cycle2 implementation-only and stop before result-bearing measurement.",
+    "Treat Literature R28 as possible H7-DEV-R2/fresh-successor input at explicit reassessment, not as a silent R1 patch.",
+    "Maintain development_phase, development_revision, change_class, prior_result_refs and prospective information_gain end-to-end; cycle3 means REASSESS.",
+    "Validate first HUMAN-007 SUB QUESTION_FORMATION_DISCOVERY as NON_EVIDENTIARY, NONCANONICAL, MAIN-independent and denominator-excluded before any later admission.",
+    "Treat Utility equivalence tooling as reusable engineering only; green CI is not scientific equivalence evidence or merge authority.",
+    "Keep consumed FORMAL identities and immutable evidence untouched."
   ],
-  "direction_to_evidence_analyst": {
-    "pd01": "Preserve canonical FAIL token, statistics, identity and immutable evidence. Cap narrative interpretation at NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR. Future fresh positive reduction claims should distinguish phenomenon absence from positive phenomenon reproduced by an ordinary matched baseline.",
-    "h7": "Keep current H7 nonterminal HOLD and unqueued. For a future fresh object, apply task/context specificity and uniqueness/identifiability requirements only when those stronger claim scopes are actually asserted; existential faithful-route claims may use equivalence-class language when nonunique.",
-    "candidate32": "Remain terminal HOLD_METHOD_LIMITED; no same-object repair/rerun/cycle3/uplift.",
-    "utility": "Do not treat generic verifier tooling or a future green lint/CI result as mechanism supply, scientific equivalence evidence, PRE_FORMAL readiness or quota credit."
-  },
-  "mutations_this_run": {
-    "scientific_experiments_executed": 0,
-    "scientific_workflows_dispatched": 0,
-    "one_way_identities_consumed": 0,
-    "research_prs_merged": 0,
-    "scientific_candidate_mutations": 0,
-    "immutable_formal_evidence_mutations": 0,
-    "utility_assignments_created_or_modified": 0,
-    "scheduler_mutations": 0,
-    "ruleset_or_protection_mutations": 0,
-    "control_persistence_only": true
+  "actions_this_run": {
+    "experiment_executed": false,
+    "result_bearing_scientific_workflow_dispatched": false,
+    "formal_identity_consumed": false,
+    "research_pr_merged": false,
+    "immutable_or_formal_evidence_mutated": false,
+    "scientific_history_rewritten": false,
+    "utility_assignment_mutated": false,
+    "scheduler_mutated": false,
+    "ruleset_or_protection_mutated": false,
+    "control_state_persisted": true
   }
 }
