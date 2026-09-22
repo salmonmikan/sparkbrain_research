@@ -1,26 +1,26 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260922T224730+0900-NOOP-SCAN-R79-3F8A61C2",
-  "produced_at": "2026-09-22T22:47:30+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260922T224730+0900-NOOP-SCAN-R79-3F8A61C2",
+  "generation_id": "SUB-20260923T003400+0900-NOOP-SCAN-R81-4885D9DE",
+  "produced_at": "2026-09-23T00:34:00+09:00",
+  "producer_run_id": "SUB-RUN-SUB-20260923T003400+0900-NOOP-SCAN-R81-4885D9DE",
   "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_REQUIRED_SCAN_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260922T214353+0900-ARCH-C33-CONFORM-R75-D7F2A9C1",
+  "supersedes_generation_id": "SUB-20260922T224730+0900-NOOP-SCAN-R79-3F8A61C2",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T224430+0900-R79-3F8A61C2@0f2115303e02a4b2b96d97fb55c13c6582a16023",
-    "main_control_plane": "MAIN-20260922T224100+0900-PRIMARY-H7-FORMALR3-C9-RECONCILE-R77-6C9F2A41@5f840f01a95c89f0a8cd85e88f3ef80e01138fc8",
-    "previous_sub": "SUB-20260922T214353+0900-ARCH-C33-CONFORM-R75-D7F2A9C1@06f46ab5ffe2d268dd815e92b4edb2f94a08a586",
-    "control_brain": "CTRL-20260922T214728+0900-R36-C8F31D72@ba1c10f3e45d15fa72ce15170ad213b48a980f8e",
-    "literature": "LIT-20260922T213058+0900-R31-RECONSTRUCTIBLE-HOLDOUT-4D8C21F7@d50cefdd64af9ac179b36ec92a1b0c207858886b",
-    "independent_audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
-    "methodology": "METHCAL-20260922T223100+0900-R67-E5A19C42@3bad5b3113a7645b1d6c30cb2b105548ea691f14",
+    "evidence_analyst": "EVA-20260923T001221+0900-R81-4885D9DE@725aff8a8a5f4105d85cc1893036ef4c48f893c4",
+    "main_control_plane": "R81_H7_FORMAL_R4_LEASE@65444df7061a5b4ede2be03a432fd23292b71b34",
+    "previous_sub": "SUB-20260922T224730+0900-NOOP-SCAN-R79-3F8A61C2@62248b3345b7a8fc0074031f1a96ef7ccaf2fc7d",
+    "control_brain": "CTRL_R37@23676a55c9473d1cfd22d982ffffd5d2ba18b557",
+    "literature": "LIT_R31@ops/external-research-audit-handoff",
+    "independent_audit": "AUD_R7@ops/external-research-audit-handoff",
+    "methodology": "METHCAL-20260923T002000+0900-R69-7D2B4C91@4211f373d39fda357b5176ed2732c4923c0c876a",
     "utility_request": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE@46a2b6735c4df221b28ee02a252993ffb7cbaa06"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "0f2115303e02a4b2b96d97fb55c13c6582a16023",
-    "orchestrator_tip_before_write": "5f840f01a95c89f0a8cd85e88f3ef80e01138fc8",
-    "main_branch": "research/main-h7-formal-r3-unexposed-eval-runtime-r76-cycle9",
-    "main_head": "325e93c62c1f79baa107b677a3dc881dc6f47ace",
+    "analyst_handoff": "725aff8a8a5f4105d85cc1893036ef4c48f893c4",
+    "orchestrator_tip_before_write": "65444df7061a5b4ede2be03a432fd23292b71b34",
+    "main_branch": "research/main-h7-formal-r4-runtime-lock-r81-cycle10",
+    "main_head": "647253f4c0128ff09d47fdfce80dabf006863af1",
     "evidence_tag_objects": {
       "c19_v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "c19_r2": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -30,8 +30,8 @@
     }
   },
   "allocation": {
-    "main_lane": "H7_FORMAL_R3_EXACT_RUNTIME_BINDING_AND_ONEWAY_PREFLIGHT_CYCLE9_PREIDENTITY_ONLY",
-    "sub_lane": "INDEPENDENT_NON_EVIDENTIARY_QUESTION_FORMATION_THEORY_BACKWARD_SUPPLY_SCAN_ONLY_WHEN_FRESH_INFORMATION_GAIN_EXISTS",
+    "main_lane": "H7_FORMAL_R4_REPRODUCIBLE_RUNTIME_PACKAGE_LOCK_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY",
+    "sub_lane": "INDEPENDENT_SCAN_ONLY_QUESTION_FORMATION_SUPPLY_WHEN_FRESH_INFORMATION_GAIN_EXISTS",
     "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_AT_MOST_ONE_BOUNDED_AUTONOMOUS_RESEARCH_TASK",
     "system_priority_exception": {
       "used": false
@@ -52,10 +52,10 @@
     "id": "CAND-H7-RESPONSIBILITY",
     "claim_ceiling": "MECHANISM",
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "development_revision": "H7-FORMAL-R3-UNEXPOSED-EVALUATION-COMMITMENT-AND-RUNTIME-BINDING",
+    "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
     "status": "MAIN_OWNED_PREIDENTITY_ONLY",
     "main_owned": true,
-    "active_head": "325e93c62c1f79baa107b677a3dc881dc6f47ace"
+    "active_head": "647253f4c0128ff09d47fdfce80dabf006863af1"
   },
   "operating_mode": "NO_OP_AFTER_REQUIRED_PRE_NO_OP_RESEARCH_SCAN",
   "discovery_mode": null,
@@ -64,29 +64,33 @@
   "development_phase_at_entry": null,
   "development_revision": null,
   "cycle_count": null,
-  "reassessment_rationale": "No object entered; required scan found no safe useful nonduplicative bounded direction with fresh information gain.",
+  "reassessment_rationale": "No object entered; required scan found no safe useful nonduplicative bounded direction with fresh independent information gain.",
   "main_independence": {
     "status": "PASS_NO_COLLISION",
-    "reason": "All fresh H7 R3 integrity/runtime deltas are MAIN-owned; SUB did not work any H7 blocker, successor, preflight, identity, evaluation, or preservation surface."
+    "reason": "Fresh R69/R4 package-resource deltas are H7 MAIN-owned; SUB did not work any H7 blocker, successor, package lock, preflight, identity, evaluation, or preservation surface."
   },
   "pre_no_op_scan": {
     "performed": true,
     "no_op_gate_triggered": true,
     "result": "ZERO_RETAINED_DIRECTIONS_AFTER_REQUIRED_SCAN",
     "surfaces": {
-      "terminal_successors": "Candidate33 durable repository-integrated runner successor remains known conditional SYSTEM potential, but no new observable/tooling/failure mode exists; not selected.",
+      "terminal_successors": "Candidate33 durable repository-integrated runner successor remains a known conditional SYSTEM potential, but no new observable/tooling/failure mode/integration surface exists; not selected.",
       "theory_backward": "Assembly completion/regeneration, endogenous continuation and presemantic-to-functional families have no new discriminator; persistent-state responsibility/local credit is H7 MAIN-owned.",
-      "phenomenon_shadow": "R76 low-rate read-only scan retained zero; R79 throttle remains and standby queue is empty.",
-      "literature": "R31 is H7 information-level holdout integrity, MAIN-critical.",
-      "audit": "R6 PD01 null-vs-null interpretation already assimilated; no fresh independent object.",
-      "methodology": "R67 reinforces H7 integrity and C33 terminalization; no new independent mechanism surface.",
-      "utility": "PF-R1 exact-byte preservation request remains outstanding and H7/provenance-only.",
-      "repo_runtime": "Fresh R3 implementation and green preidentity workflows are MAIN-only; C33 compatible runner capability was already consumed in prior C33 cycle3."
+      "phenomenon_shadow": "R81 keeps PREFETCH_SHADOW throttled and shadow_standby_queue empty.",
+      "literature": "R31 remains H7 information-level holdout integrity, MAIN-critical.",
+      "audit": "R7 remains H7 raw-gate integrity; no fresh independent object.",
+      "methodology": "Fresh R69 calibrates H7 R4 package/resource identity and dev-tool split, directly MAIN-critical; no independent candidate.",
+      "utility": "PF-R1 exact-byte preservation request remains outstanding with no completion result; duplicate request rejected.",
+      "repo_runtime": "Fresh R4 branch/material parser repair is MAIN-only package-resource closure; no independent identifiability change."
     },
     "alternatives_considered": [
       {
         "surface": "CAND33_DURABLE_RUNNER_SUCCESSOR",
-        "result": "REJECTED_NO_NEW_INFORMATION_GAIN_DO_NOT_MANUFACTURE_ACTIVITY"
+        "result": "REJECTED_NO_NEW_INFORMATION_GAIN"
+      },
+      {
+        "surface": "GENERALIZED_RUNTIME_DEV_TOOLING_FACTORIZATION_QFD",
+        "result": "REJECTED_MAIN_CRITICAL_DERIVATIVE_OF_H7_R4"
       },
       {
         "surface": "H7_LIKE_THEORY_BACKWARD_RESPONSIBILITY",
@@ -117,7 +121,7 @@
     "qualifying_share": "1/3",
     "theory_backward_exception": {
       "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "After the mandatory scan, central-theory surfaces were either MAIN-owned H7 or previously terminal/duplicate families with no fresh observable, intervention, reduction, comparator, or falsifier; R31/R67/runtime deltas add only H7-critical-path integrity information."
+      "detail": "After the required scan, central-theory surfaces were either MAIN-owned H7 or previously terminal/duplicate families with no fresh observable, intervention, reduction, comparator, or falsifier. Fresh R69/R4 package-resource information is H7-critical-path integrity information only."
     }
   },
   "phenomenon_question_hypothesis": {
@@ -134,13 +138,13 @@
     "science_affecting_changes_made": []
   },
   "inputs": {
-    "latest_analyst_r79_read": true,
+    "latest_analyst_r81_read": true,
     "main_ownership_refetched": true,
     "previous_sub_read": true,
-    "control_r36_read": true,
+    "control_r37_read": true,
     "literature_r31_read": true,
-    "audit_r6_read": true,
-    "methodology_r67_read": true,
+    "audit_r7_read": true,
+    "methodology_r69_read": true,
     "utility_request_read": true,
     "stable_main_refetched": true,
     "evidence_tags_refetched": true,
@@ -158,7 +162,8 @@
     "question_formation_would_reduce_uncertainty": false,
     "fresh_independent_theory_backward_target_found": false,
     "fresh_independent_system_target_found": false,
-    "selected_task_count": 0
+    "selected_task_count": 0,
+    "fresh_methodology_r69_is_main_critical_only": true
   },
   "evidentiary_status": "NON_EVIDENTIARY_SCAN_ONLY",
   "proposed_claim_ceiling": null,
@@ -170,12 +175,12 @@
   "fresh_successor_potential": {
     "known_conditional_system_potential": "CAND33 durable repository-integrated compatible-runner placement/reproducibility",
     "proposed_this_run": false,
-    "reason_not_proposed": "No new independent information gain beyond prior C33 conformance; Control/Methodology warn against manufacturing a successor for activity."
+    "reason_not_proposed": "No new independent information gain beyond prior C33 conformance."
   },
   "next_layer": "WAIT_FOR_GENUINELY_NEW_INDEPENDENT_INFORMATION_OR_FRESH_ANALYST_ALLOCATION",
   "open_choices": [
     "A future bounded QFD/Discovery may start when a new observable/intervention/reduction/tooling delta creates a nonduplicative informative question.",
-    "Do not work H7 R3 exact-runtime/one-way blockers from SUB."
+    "Do not work H7 R4 package/resource/preidentity blockers from SUB."
   ],
   "recommendation": "NONE_NO_OP",
   "utility_request": null,
@@ -196,13 +201,13 @@
   },
   "generation_metadata": {
     "schema_version": 2,
-    "source_analyst_generation": "EVA-20260922T224430+0900-R79-3F8A61C2",
-    "source_analyst_commit": "0f2115303e02a4b2b96d97fb55c13c6582a16023",
-    "parent_orchestrator_tip": "5f840f01a95c89f0a8cd85e88f3ef80e01138fc8",
+    "source_analyst_generation": "EVA-20260923T001221+0900-R81-4885D9DE",
+    "source_analyst_commit": "725aff8a8a5f4105d85cc1893036ef4c48f893c4",
+    "parent_orchestrator_tip": "65444df7061a5b4ede2be03a432fd23292b71b34",
     "persistence_paths": [
       "reports/orchestrator/sub/latest.md",
       "reports/orchestrator/sub/state.json",
-      "reports/orchestrator/sub/history/2026-09-22/2247-r79-pre-no-op-zero-retained.md"
+      "reports/orchestrator/sub/history/2026-09-23/0034-r81-pre-no-op-zero-retained.md"
     ]
   }
 }
