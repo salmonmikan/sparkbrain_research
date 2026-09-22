@@ -11,10 +11,10 @@
     "sub": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6@303842334e4e91392b845cb1b6fd8333082ee4e0"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-22T09:13:42+09:00",
   "heartbeat_at": "2026-09-22T09:13:42+09:00",
-  "completed_at": null,
+  "completed_at": "2026-09-22T09:13:42+09:00",
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260922T085807+0900-R57-6C4A21E8",
   "analyst_commit": "7833c8147444ec94ea2b86661a1519c215de2d77",
@@ -43,11 +43,11 @@
   "active_branch": null,
   "active_head": null,
   "active_identity": null,
-  "active_step": "R57_RECONCILE_NO_TARGET",
+  "active_step": "R57_INTENTIONAL_NO_TARGET_COMPLETE",
   "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION_INTENTIONAL_IDLE",
   "terminal_observation": null,
   "workflows": [],
-  "stop_reason": null,
-  "next_action": "Re-fetch repository truth and Analyst generation, then persist intentional idle unless a material superseding generation allocates a fresh object.",
+  "stop_reason": "R57_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+  "next_action": "Remain intentionally idle until a fresh Evidence Analyst generation allocates a new prospective object after a material mechanism-surface delta or independent bounded non-rescue review. Utility equivalence-certificate tooling remains non-authoritative and does not reopen candidate #32.",
   "owner": "main"
 }
