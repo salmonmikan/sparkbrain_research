@@ -1,0 +1,76 @@
+name: h7-pf-r1-cycle4
+
+on:
+  push:
+    branches:
+      - research/main-h7-pf-r1-frozen-panel-r64-cycle4
+
+permissions:
+  contents: read
+
+concurrency:
+  group: h7-pf-r1-cycle4-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PYTHONHASHSEED: "0"
+  OMP_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+  H7_PF_R1_AUTHORITY: >-
+    EVA-20260922T145734+0900-R64-F1A8C29D@0b201ca23c1de6fb568d78f320dc5a55ab85b70c
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[dev,learned,spiking]"
+      - name: Lint
+        run: python -m ruff check .
+      - name: Local readiness
+        run: python scripts/local_readiness_check.py
+      - name: Tests
+        run: python -m pytest -q
+      - name: Validate bundle
+        run: python scripts/validate_bundle.py
+      - name: PF-R1 contract preflight without discriminator access
+        run: python scripts/run_h7_pf_r1.py --preflight
+
+  evaluate:
+    needs: preflight
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[dev,learned,spiking]"
+      - name: Execute fixed PRE_FORMAL development evaluation
+        run: >-
+          python scripts/run_h7_pf_r1.py
+          --output-dir artifacts/preformal_h7_pf_r1/result
+          --authority "$H7_PF_R1_AUTHORITY"
+      - name: Show fixed summary
+        if: always()
+        run: |
+          if [ -f artifacts/preformal_h7_pf_r1/result/summary.json ]; then
+            cat artifacts/preformal_h7_pf_r1/result/summary.json
+          fi
+      - name: Upload PRE_FORMAL development output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h7-pf-r1-cycle4-${{ github.sha }}
+          path: artifacts/preformal_h7_pf_r1/result
+          if-no-files-found: error

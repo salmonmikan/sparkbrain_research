@@ -1,0 +1,117 @@
+{
+  "schema_version": 2,
+  "contract_id": "H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION-V1",
+  "status": "RESULT_BEARING_PREFORMAL_NONCONFIRMATORY_FIXED_ENDPOINTS",
+  "created_under": {
+    "evidence_analyst_generation": "EVA-20260922T145734+0900-R64-F1A8C29D",
+    "evidence_analyst_commit": "0b201ca23c1de6fb568d78f320dc5a55ab85b70c",
+    "candidate_id": "CAND-H7-RESPONSIBILITY",
+    "candidate_ordinal": 7,
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION",
+    "previous_development_revision": "H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE",
+    "research_layer": "PRE_FORMAL",
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "READY",
+    "hold_class": null,
+    "hold_reason": null,
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "system_priority_exception_used": false,
+    "cycle": 4
+  },
+  "analyst_decision": "GO_H7_PF_R1_FROZEN_DEVELOPMENT_EVALUATION_CYCLE4_RESULT_BEARING_NONCONFIRMATORY_STOP_AFTER_FIXED_ENDPOINTS_NO_OUTCOME_RESPONSIVE_REDESIGN",
+  "source_binding": {
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "source_research_head": "d6655549c179caf391d4b43bd2ebea49f2bfc82b",
+    "source_contract_path": "artifacts/architecture_h7_dev_r2/contract.json",
+    "source_contract_id": "H7-DEV-R2-ARCH-CONTRACT-V1",
+    "source_contract_blob": "82cb0fe44a958cda6d44758b0f15302f6e540793",
+    "h7_dev_r1_blob": "75637eb953e1b6c1b5cbcd9f5cb4131cb063748e",
+    "h7_dev_r2_blob": "c03fa9cbfcf09a1a214652dd1896852a8eb69182",
+    "inherit_scientific_fields": "UNCHANGED_BY_REFERENCE",
+    "workflow_head_rule": "Execute the checked-out exact branch head and record GITHUB_SHA in raw output."
+  },
+  "scientific_fields": {
+    "claim_scope": "Existential local route/state responsibility within the exact frozen four-world development protocol and TOP1_SELECTED_LOCAL_NODE_CUT_V1 intervention family; no uniqueness, specificity, completeness, sufficiency, general-superiority, formal-confirmatory, or external-generalization claim.",
+    "worlds": [
+      "switchworld",
+      "contradiction_world",
+      "goal_conflict_world",
+      "multi_object_world"
+    ],
+    "steps_per_episode": 24,
+    "fit_seed_range_inclusive": [7601000, 7601047],
+    "calibration_seed_range_inclusive": [7602000, 7602011],
+    "discriminator_seed_range_inclusive": [7603000, 7603023],
+    "native_training_seed": 7601,
+    "dense_training_seed": 7602,
+    "eligibility_head_seed": 7603,
+    "epochs": 4,
+    "learning_rate": 0.012,
+    "device": "cpu",
+    "intervention": "TOP1_SELECTED_LOCAL_NODE_CUT_V1",
+    "ordinary_reduction_panel": [
+      "ORDINARY_DENSE_RECURRENT_V1",
+      "FINITE_STATE_ROUTE_HISTORY_V2",
+      "ELIGIBILITY_ROUTE_LEDGER_V2"
+    ],
+    "positive_phenomenon_floor": "native baseline discriminator accuracy strictly greater than 1/3",
+    "primary_endpoint": "delta_accuracy = baseline_accuracy - cut_accuracy over the complete discriminator split",
+    "secondary_endpoint": "mean total-variation distance between paired baseline and cut 3-class probability vectors",
+    "numerical_no_change_tolerance": 1e-7,
+    "reduction_direction": "comparator baseline accuracy >= native baseline accuracy and comparator delta_accuracy >= native delta_accuracy",
+    "capacity_limit_rule": "capacity-limited comparator mismatch is INCONCLUSIVE, never native mechanism support"
+  },
+  "execution_sequence": [
+    "Validate this PF-R1 contract against the frozen DEV-R2 contract before scientific execution.",
+    "Generate only the fixed development fit and calibration surfaces and train native plus dense recurrent models with the frozen seeds/budgets.",
+    "Execute native and dense calibration exactly as inherited; execute FSA immutable-table calibration diagnostics and eligibility identity/no-tunable calibration diagnostics only.",
+    "Freeze the implemented analysis path before generating or accessing the discriminator surface.",
+    "Generate the complete fixed discriminator surface exactly once for this development evaluation lineage.",
+    "Execute intervention well-posedness checks and the fixed native/dense/FSA/eligibility endpoints without post-hoc filtering.",
+    "Write target-blind raw observations before applying the fixed prospective disposition rules.",
+    "Apply the fixed disposition rules and STOP for fresh Evidence Analyst review."
+  ],
+  "runtime_recording": {
+    "interpreter": "python-3.11 repository-supported execution environment",
+    "cpu_threads": 1,
+    "python_hash_seed": 0,
+    "torch_deterministic_algorithms": true,
+    "note": "Interpreter/thread settings are deterministic execution plumbing and do not alter the frozen scientific protocol."
+  },
+  "evidentiary_boundary": {
+    "classification": "PRE_FORMAL_DEVELOPMENT_NONCONFIRMATORY",
+    "formal_execution_authorized": false,
+    "official_test_started_formal_evidence_tags_authorized": false,
+    "consumed_identity_use_authorized": false,
+    "development_results_are_independent_confirmatory_evidence": false,
+    "future_formal_surface_rule": "Any later FORMAL object requires a fresh frozen untouched identity/evaluation surface unless a prospectively valid adaptivity regime explicitly covers this development exposure."
+  },
+  "fixed_outcome_dispositions": {
+    "invalid_intervention": "STOP_INCONCLUSIVE_INVALID_INTERVENTION",
+    "positive_floor_fail": "STOP_RETURN_ANALYST_PHENOMENON_NOT_DEMONSTRATED_NO_RETUNE",
+    "no_local_effect": "STOP_RETURN_ANALYST_NO_LOCAL_EFFECT_NO_RETUNE",
+    "ordinary_reduction": "STOP_RETURN_ANALYST_REDUCED_BY_ORDINARY_COMPARATOR_NO_FORMAL_UPLIFT",
+    "residual_survives_panel": "STOP_RETURN_ANALYST_RESIDUAL_BEYOND_FROZEN_PANEL_STILL_PREFORMAL_NONCONFIRMATORY"
+  },
+  "same_revision_rules": {
+    "science_invariant_repair_allowed": [
+      "lint/import/build/workflow syntax/path/serialization/logging/hash plumbing",
+      "implementation fixes that make code conform exactly to this already-fixed protocol without changing scientific behavior"
+    ],
+    "science_affecting_change_forbidden_after_result_exposure_without_fresh_authority": [
+      "hypothesis or claim scope",
+      "metric or scorer meaning",
+      "threshold or tolerance",
+      "comparator definition or panel membership",
+      "seed/split/world assignment",
+      "intervention",
+      "resource or privilege contract",
+      "falsifier or success criterion"
+    ],
+    "rerun_policy": "Do not repeat this fixed endpoint evaluation solely to seek a preferred outcome."
+  },
+  "stop_rule": "STOP immediately after the fixed endpoints/disposition are persisted as PRE_FORMAL development output; fresh Evidence Analyst review is required before any science-affecting redesign or FORMAL uplift."
+}
