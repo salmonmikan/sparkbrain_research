@@ -1,61 +1,64 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T123800+0900-AUTO-EQUIV-CI-STATE-RECON-COMPLETED-6B4E21F9",
-  "produced_at": "2026-09-22T12:38:00+09:00",
-  "completed_at": "2026-09-22T12:38:00+09:00",
-  "producer_run_id": "utility-auto-20260922T1236+0900-equiv-ci-state-recon",
-  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_BOUNDED_NON_EVIDENTIARY_DIAGNOSTIC_RECONCILIATION",
-  "supersedes_generation_id": "UTILITY-20260922T123600+0900-AUTO-EQUIV-CI-STATE-RECON-RUNNING-6B4E21F9",
+  "generation_id": "UTILITY-20260922T132300+0900-AUTO-READER-VERSION-DRIFT-RUNNING-3F8A61C2",
+  "produced_at": "2026-09-22T13:23:00+09:00",
+  "producer_run_id": "utility-auto-20260922T1323+0900-reader-version-drift",
+  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_BOUNDED_NON_EVIDENTIARY_READ_ONLY_RECONCILIATION",
+  "supersedes_generation_id": "UTILITY-20260922T123800+0900-AUTO-EQUIV-CI-STATE-RECON-COMPLETED-6B4E21F9",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
-  "autonomous_task_id": "AUTOUTIL-20260922T1236+0900-EQUIV-CI-STATE-RECON-6B4E21F9",
-  "status": "COMPLETED",
+  "autonomous_task_id": "AUTOUTIL-20260922T1323+0900-READER-VERSION-DRIFT-3F8A61C2",
+  "status": "RUNNING",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "objective": "Reconcile the exact-head ordinary CI terminal outcome for the isolated equivalence-certificate prototype and the prior stale RUNNING Utility mailbox state without resuming or extending the prior repair task.",
-  "trigger_source": "Prior Utility state persistence gap plus terminal ordinary CI run 35680322003 on repaired head 9f9d18065b481d8597236b0b682f0574c251b319",
-  "outcome_classification": "EXACT_REPAIRED_HEAD_CI_GREEN_FRESH_STEWARD_REVIEW_STILL_OUTSTANDING_PRIOR_RUNNING_STATE_RECONCILED",
+  "objective": "Bound the exact stable-main reader-facing version/contract drift identified by Control R33 without changing documentation, package metadata, scientific artifacts, or the active H7 path.",
+  "trigger_source": "Control R33 HUMAN-20260922-006 disposition: README and pyproject appear to advertise 0.3.2.dev0 while a v0.5 theory specification targets 0.5.0.dev0; Steward audit remains pending.",
   "ownership_generations": {
-    "evidence_analyst": "EVA-20260922T120158+0900-R60-D5E721A4",
-    "main": "MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0",
-    "sub": "SUB-20260922T113500+0900-NOOP-R59INTENTIONALIDLE-A6D4C219",
-    "relay": "NO_FRESH_SEPARATE_CONTINUATION_AUTHORITY_SURFACED",
-    "control": "CTRL-20260922T105700+0900-R32-C5A721D4"
+    "evidence_analyst": "EVA-20260922T130900+0900-R62-D4A7C21F",
+    "main_relay": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9",
+    "sub": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9",
+    "relay": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9_BLOCKED_PENDING_R62_VERSIONED_R2",
+    "control": "CTRL-20260922T124800+0900-R33-E7C421B6"
   },
   "exact_refs": {
     "assignment_pointer_blob": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "evidence_analyst_commit": "8cfdb2abb72ff0cfcf616d3400d578db7c20a84d",
-    "orchestrator_commit": "f51130bdc45240c0f656c4633249928e5c962768",
-    "control_commit": "544bede4c5131ea57e5b93903bab5279d066a0c0",
+    "evidence_analyst_commit": "d93bfe4ac1d4ed752fa8ca1074b1794a69d08682",
+    "orchestrator_commit": "8d9479100cb0df994efd33ac2d53670b809bf40a",
+    "sub_commit": "e56c285996c30888ec7f914efc505974695a6ed0",
+    "control_commit": "c41db58a5cc87e5460f143ce07c4256d7238d577",
     "repository_steward_commit": "a3ab4f4f70c4782e7ff916838c33a64eb0a9c2dd",
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "prototype_branch": "utility/equivalence-certificate-v0-1-A42D7C19",
-    "prototype_head": "9f9d18065b481d8597236b0b682f0574c251b319",
-    "ci_run_id": 35680322003,
-    "ci_run_status": "completed",
-    "ci_run_conclusion": "success",
-    "ci_python_311_job_id": 106595700278,
-    "ci_python_313_job_id": 106595700385
-  },
-  "outputs_summary": {
-    "python_311": "SUCCESS_INSTALL_LINT_LOCAL_READINESS_TEST_VALIDATE_BUNDLE",
-    "python_313": "SUCCESS_INSTALL_LINT_LOCAL_READINESS_TEST_VALIDATE_BUNDLE",
-    "fresh_steward_review": false,
-    "merge_or_promotion_authorized": false,
-    "semantic_trust_limits_cured_by_ci": false
+    "active_h7_research_head": "c97af135742a7cd3af94c857f4d5b83d7707075d"
   },
   "ownership_checks": {
     "collision_found": false,
     "main_critical_dependency": false,
-    "main_active_object": "H7_DEV_R1_CLAIM_SCOPED_CAUSAL_CONTRACT_ARCHITECTURE",
+    "main_active_object": "H7_DEV_R2_VERSIONED_PROTOCOL_CLOSURE_CYCLE3_IMPLEMENTATION_ONLY",
     "sub_active_scientific_object": null,
     "relay_active_continuation_authority": false,
     "active_or_queued_research_object_touched": false,
-    "candidate_typing_touched": false
+    "candidate_typing_touched": false,
+    "steward_fresh_review_present": false
   },
+  "allowed_actions": [
+    "Read-only inspect stable-main README/package/release/theory-spec version surfaces and exact refs",
+    "Classify reader-facing version drift and distinguish stale documentation/metadata from scientific authority",
+    "Persist Utility-owned state/results only"
+  ],
+  "forbidden_actions": [
+    "Any README, pyproject, release metadata, source, test, research, or workflow mutation",
+    "Any Repository Steward impersonation or structural-review approval",
+    "Any H7 or other candidate action",
+    "Any scientific workflow dispatch or result-bearing measurement",
+    "Any candidate/Funnel/readiness mutation",
+    "Any PRE_FORMAL or FORMAL action",
+    "Any merge, promotion approval, scheduler mutation, or protected-ref mutation",
+    "Any self-extension beyond this one run"
+  ],
+  "stop_condition": "Stop after one read-only exact-ref reconciliation of version-bearing reader surfaces and record whether the drift is real, which files disagree, and the smallest safe follow-up boundary.",
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
     "preserved_fields": "NOT_APPLICABLE_NO_RESEARCH_CANDIDATE_TOUCHED",
@@ -74,21 +77,10 @@
     "preformal_or_formal_action": false,
     "research_pr_merge": false,
     "promotion_approval": false,
-    "prototype_code_mutation_this_task": false,
     "hidden_main_dependency_created": false
   },
-  "prior_state_reconciliation": {
-    "prior_task_id": "AUTOUTIL-20260922T1135+0900-EQUIV-LINT-REPAIR-8F2C41D7",
-    "prior_state_status_observed": "RUNNING",
-    "prior_run_count": 1,
-    "prior_max_runs": 1,
-    "prior_task_resumed": false,
-    "reconciliation": "STALE_RUNNING_STATE_SUPERSEDED_BY_FRESH_ONE_RUN_TERMINAL_CI_RECONCILIATION"
-  },
-  "stop_reason": "COMPLETED_TERMINAL_CI_OBSERVED_AND_MAILBOX_STATE_RECONCILED",
-  "follow_up_recommendation": "Use existing UTIL-20260922-0934-EQUIV-CERT-CI-STEWARD-REVIEW path for fresh Repository Steward structural review; do not duplicate the request and do not merge without separate reviewed approval.",
   "outputs": {
-    "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1236+0900-EQUIV-CI-STATE-RECON-6B4E21F9-start.md",
-    "terminal_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1236+0900-EQUIV-CI-STATE-RECON-6B4E21F9-completed.md"
+    "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1323+0900-READER-VERSION-DRIFT-3F8A61C2-start.md",
+    "terminal_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1323+0900-READER-VERSION-DRIFT-3F8A61C2-completed.md"
   }
 }
