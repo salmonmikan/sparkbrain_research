@@ -1,0 +1,317 @@
+{
+  "authority_generation": "EVA-20260923T001221+0900-R81-4885D9DE",
+  "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
+  "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_RESOURCE_LOCK_MATERIALIZATION",
+  "host_binding": {
+    "platform_machine": "x86_64",
+    "platform_release": "6.17.0-1022-azure",
+    "platform_system": "Linux",
+    "python_implementation": "CPython",
+    "python_version": "3.11.16",
+    "runner_arch": "X64",
+    "runner_image_os": "ubuntu24",
+    "runner_image_version": "20260907.300.1"
+  },
+  "kind": "H7_FORMAL_R4_SCIENTIFIC_RUNTIME_WHEEL_LOCK_MANIFEST_V1",
+  "lock_sha256": "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583",
+  "materialization_policy": {
+    "binary_wheels_only": true,
+    "dependency_resolution": false,
+    "development_tooling_excluded": [
+      "fastapi",
+      "httpx",
+      "jsonschema",
+      "pytest",
+      "ruff",
+      "uvicorn"
+    ],
+    "editable_project_install": false,
+    "exact_versions_selected_before_materialization": true,
+    "single_prospectively_fixed_package_set": true
+  },
+  "one_way_actions_performed": false,
+  "package_count": 31,
+  "packages": [
+    {
+      "declared_name": "cuda-bindings",
+      "metadata_name": "cuda-bindings",
+      "normalized_name": "cuda-bindings",
+      "version": "13.4.2",
+      "wheel_filename": "cuda_bindings-13.4.2-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_sha256": "3c0415cf8fb98fbae3eb65079f151e10b9764ac2d5970027a49dc5a627c2af9d",
+      "wheel_size_bytes": 7159298
+    },
+    {
+      "declared_name": "cuda-pathfinder",
+      "metadata_name": "cuda-pathfinder",
+      "normalized_name": "cuda-pathfinder",
+      "version": "1.8.2",
+      "wheel_filename": "cuda_pathfinder-1.8.2-py3-none-any.whl",
+      "wheel_sha256": "4e65059febdb4d19d5cbc4798677e19db2b582f2f702f457b609e571690d357e",
+      "wheel_size_bytes": 62551
+    },
+    {
+      "declared_name": "cuda-toolkit",
+      "metadata_name": "cuda-toolkit",
+      "normalized_name": "cuda-toolkit",
+      "version": "13.0.3.0",
+      "wheel_filename": "cuda_toolkit-13.0.3.0-py2.py3-none-any.whl",
+      "wheel_sha256": "d693caaa261214ddd7dbb60d68e71cbed884e68c2be7509778f3051da0b91c3f",
+      "wheel_size_bytes": 2512
+    },
+    {
+      "declared_name": "filelock",
+      "metadata_name": "filelock",
+      "normalized_name": "filelock",
+      "version": "4.0.1",
+      "wheel_filename": "filelock-4.0.1-py3-none-any.whl",
+      "wheel_sha256": "481a321a27bef441e23c53371c6abc8d7d16e26b97090074ba44f7538a3fd55a",
+      "wheel_size_bytes": 106219
+    },
+    {
+      "declared_name": "fsspec",
+      "metadata_name": "fsspec",
+      "normalized_name": "fsspec",
+      "version": "2026.9.0",
+      "wheel_filename": "fsspec-2026.9.0-py3-none-any.whl",
+      "wheel_sha256": "8dd6e646e99ea382bd85f97a45e6b526a442d79423a7dc673f1e2756d05fcb5f",
+      "wheel_size_bytes": 221738
+    },
+    {
+      "declared_name": "jinja2",
+      "metadata_name": "Jinja2",
+      "normalized_name": "jinja2",
+      "version": "3.1.6",
+      "wheel_filename": "jinja2-3.1.6-py3-none-any.whl",
+      "wheel_sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+      "wheel_size_bytes": 134899
+    },
+    {
+      "declared_name": "MarkupSafe",
+      "metadata_name": "MarkupSafe",
+      "normalized_name": "markupsafe",
+      "version": "3.0.3",
+      "wheel_filename": "markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_sha256": "0bf2a864d67e76e5c9a34dc26ec616a66b9888e25e7b9460e1c76d3293bd9dbf",
+      "wheel_size_bytes": 22940
+    },
+    {
+      "declared_name": "mpmath",
+      "metadata_name": "mpmath",
+      "normalized_name": "mpmath",
+      "version": "1.3.0",
+      "wheel_filename": "mpmath-1.3.0-py3-none-any.whl",
+      "wheel_sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+      "wheel_size_bytes": 536198
+    },
+    {
+      "declared_name": "networkx",
+      "metadata_name": "networkx",
+      "normalized_name": "networkx",
+      "version": "3.6.1",
+      "wheel_filename": "networkx-3.6.1-py3-none-any.whl",
+      "wheel_sha256": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762",
+      "wheel_size_bytes": 2068504
+    },
+    {
+      "declared_name": "numpy",
+      "metadata_name": "numpy",
+      "normalized_name": "numpy",
+      "version": "2.4.6",
+      "wheel_filename": "numpy-2.4.6-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_sha256": "89cd468399cfd2504718f0ba50e410dca55a170b61a02ad92bb18c8a65186e93",
+      "wheel_size_bytes": 16918164
+    },
+    {
+      "declared_name": "nvidia-cublas",
+      "metadata_name": "nvidia-cublas",
+      "normalized_name": "nvidia-cublas",
+      "version": "13.1.1.3",
+      "wheel_filename": "nvidia_cublas-13.1.1.3-py3-none-manylinux_2_27_x86_64.whl",
+      "wheel_sha256": "37936a16db8fe4ac1f065c2139360608a543a09275cb1a1af612e08cfa065436",
+      "wheel_size_bytes": 423138758
+    },
+    {
+      "declared_name": "nvidia-cuda-cupti",
+      "metadata_name": "nvidia-cuda-cupti",
+      "normalized_name": "nvidia-cuda-cupti",
+      "version": "13.0.85",
+      "wheel_filename": "nvidia_cuda_cupti-13.0.85-py3-none-manylinux_2_25_x86_64.whl",
+      "wheel_sha256": "4eb01c08e859bf924d222250d2e8f8b8ff6d3db4721288cf35d14252a4d933c8",
+      "wheel_size_bytes": 10715597
+    },
+    {
+      "declared_name": "nvidia-cuda-nvrtc",
+      "metadata_name": "nvidia-cuda-nvrtc",
+      "normalized_name": "nvidia-cuda-nvrtc",
+      "version": "13.0.88",
+      "wheel_filename": "nvidia_cuda_nvrtc-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl",
+      "wheel_sha256": "ad9b6d2ead2435f11cbb6868809d2adeeee302e9bb94bcf0539c7a40d80e8575",
+      "wheel_size_bytes": 90215200
+    },
+    {
+      "declared_name": "nvidia-cuda-runtime",
+      "metadata_name": "nvidia-cuda-runtime",
+      "normalized_name": "nvidia-cuda-runtime",
+      "version": "13.0.96",
+      "wheel_filename": "nvidia_cuda_runtime-13.0.96-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "wheel_sha256": "7f82250d7782aa23b6cfe765ecc7db554bd3c2870c43f3d1821f1d18aebf0548",
+      "wheel_size_bytes": 2243632
+    },
+    {
+      "declared_name": "nvidia-cudnn-cu13",
+      "metadata_name": "nvidia-cudnn-cu13",
+      "normalized_name": "nvidia-cudnn-cu13",
+      "version": "9.20.0.48",
+      "wheel_filename": "nvidia_cudnn_cu13-9.20.0.48-py3-none-manylinux_2_27_x86_64.whl",
+      "wheel_sha256": "0c45dd8eeb50b603f07995b1b300c62ffe6a1980482b82b3bcf94a4ca9d49304",
+      "wheel_size_bytes": 366173588
+    },
+    {
+      "declared_name": "nvidia-cufft",
+      "metadata_name": "nvidia-cufft",
+      "normalized_name": "nvidia-cufft",
+      "version": "12.0.0.61",
+      "wheel_filename": "nvidia_cufft-12.0.0.61-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "wheel_sha256": "6c44f692dce8fd5ffd3e3df134b6cdb9c2f72d99cf40b62c32dde45eea9ddad3",
+      "wheel_size_bytes": 214085489
+    },
+    {
+      "declared_name": "nvidia-cufile",
+      "metadata_name": "nvidia-cufile",
+      "normalized_name": "nvidia-cufile",
+      "version": "1.15.1.6",
+      "wheel_filename": "nvidia_cufile-1.15.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "wheel_sha256": "08a3ecefae5a01c7f5117351c64f17c7c62efa5fffdbe24fc7d298da19cd0b44",
+      "wheel_size_bytes": 1223672
+    },
+    {
+      "declared_name": "nvidia-curand",
+      "metadata_name": "nvidia-curand",
+      "normalized_name": "nvidia-curand",
+      "version": "10.4.0.35",
+      "wheel_filename": "nvidia_curand-10.4.0.35-py3-none-manylinux_2_27_x86_64.whl",
+      "wheel_sha256": "1aee33a5da6e1db083fe2b90082def8915f30f3248d5896bcec36a579d941bfc",
+      "wheel_size_bytes": 59544258
+    },
+    {
+      "declared_name": "nvidia-cusolver",
+      "metadata_name": "nvidia-cusolver",
+      "normalized_name": "nvidia-cusolver",
+      "version": "12.0.4.66",
+      "wheel_filename": "nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl",
+      "wheel_sha256": "0a759da5dea5c0ea10fd307de75cdeb59e7ea4fcb8add0924859b944babf1112",
+      "wheel_size_bytes": 200941980
+    },
+    {
+      "declared_name": "nvidia-cusparse",
+      "metadata_name": "nvidia-cusparse",
+      "normalized_name": "nvidia-cusparse",
+      "version": "12.6.3.3",
+      "wheel_filename": "nvidia_cusparse-12.6.3.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "wheel_sha256": "2b3c89c88d01ee0e477cb7f82ef60a11a4bcd57b6b87c33f789350b59759360b",
+      "wheel_size_bytes": 145942937
+    },
+    {
+      "declared_name": "nvidia-cusparselt-cu13",
+      "metadata_name": "nvidia-cusparselt-cu13",
+      "normalized_name": "nvidia-cusparselt-cu13",
+      "version": "0.8.1",
+      "wheel_filename": "nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl",
+      "wheel_sha256": "786ce87568c303fadb5afcc7102d454cd3040d75f6f8626f5db460d1871f4dd0",
+      "wheel_size_bytes": 170148586
+    },
+    {
+      "declared_name": "nvidia-nccl-cu13",
+      "metadata_name": "nvidia-nccl-cu13",
+      "normalized_name": "nvidia-nccl-cu13",
+      "version": "2.29.7",
+      "wheel_filename": "nvidia_nccl_cu13-2.29.7-py3-none-manylinux_2_18_x86_64.whl",
+      "wheel_sha256": "edd81538446786ec3b73972543e53bb43bcaf0bfc8ef76cb679fcc390ffe136d",
+      "wheel_size_bytes": 205976000
+    },
+    {
+      "declared_name": "nvidia-nvjitlink",
+      "metadata_name": "nvidia-nvjitlink",
+      "normalized_name": "nvidia-nvjitlink",
+      "version": "13.4.92",
+      "wheel_filename": "nvidia_nvjitlink-13.4.92-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl",
+      "wheel_sha256": "e0391f24ed94ec879b84e3da4d4ec320c879aff681f2c7a638462f7199284323",
+      "wheel_size_bytes": 42452378
+    },
+    {
+      "declared_name": "nvidia-nvshmem-cu13",
+      "metadata_name": "nvidia-nvshmem-cu13",
+      "normalized_name": "nvidia-nvshmem-cu13",
+      "version": "3.4.5",
+      "wheel_filename": "nvidia_nvshmem_cu13-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "wheel_sha256": "290f0a2ee94c9f3687a02502f3b9299a9f9fe826e6d0287ee18482e78d495b80",
+      "wheel_size_bytes": 60412546
+    },
+    {
+      "declared_name": "nvidia-nvtx",
+      "metadata_name": "nvidia-nvtx",
+      "normalized_name": "nvidia-nvtx",
+      "version": "13.0.85",
+      "wheel_filename": "nvidia_nvtx-13.0.85-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl",
+      "wheel_sha256": "4936d1d6780fbe68db454f5e72a42ff64d1fd6397df9f363ae786930fd5c1cd4",
+      "wheel_size_bytes": 148047
+    },
+    {
+      "declared_name": "setuptools",
+      "metadata_name": "setuptools",
+      "normalized_name": "setuptools",
+      "version": "79.0.1",
+      "wheel_filename": "setuptools-79.0.1-py3-none-any.whl",
+      "wheel_sha256": "e147c0549f27767ba362f9da434eab9c5dc0045d5304feb602a0af001089fc51",
+      "wheel_size_bytes": 1256281
+    },
+    {
+      "declared_name": "snntorch",
+      "metadata_name": "snntorch",
+      "normalized_name": "snntorch",
+      "version": "1.0.0",
+      "wheel_filename": "snntorch-1.0.0-py2.py3-none-any.whl",
+      "wheel_sha256": "b5a85f6f44c6d27c8a1dcea16cb18a630d00b8d2f3cfec85b7e580cb177e606b",
+      "wheel_size_bytes": 133558
+    },
+    {
+      "declared_name": "sympy",
+      "metadata_name": "sympy",
+      "normalized_name": "sympy",
+      "version": "1.14.0",
+      "wheel_filename": "sympy-1.14.0-py3-none-any.whl",
+      "wheel_sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5",
+      "wheel_size_bytes": 6299353
+    },
+    {
+      "declared_name": "torch",
+      "metadata_name": "torch",
+      "normalized_name": "torch",
+      "version": "2.13.0",
+      "wheel_filename": "torch-2.13.0-cp311-cp311-manylinux_2_28_x86_64.whl",
+      "wheel_sha256": "60fcdcb2f3876e21146cb4524ef06397d727ca9ad5f020818547e25075fe3cb7",
+      "wheel_size_bytes": 526574961
+    },
+    {
+      "declared_name": "triton",
+      "metadata_name": "triton",
+      "normalized_name": "triton",
+      "version": "3.7.1",
+      "wheel_filename": "triton-3.7.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "wheel_sha256": "6744957e9fd610a29680ec2346057d0c86948ed3812468670719f391e94b44a5",
+      "wheel_size_bytes": 197701306
+    },
+    {
+      "declared_name": "typing-extensions",
+      "metadata_name": "typing_extensions",
+      "normalized_name": "typing-extensions",
+      "version": "4.16.0",
+      "wheel_filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "wheel_sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "wheel_size_bytes": 45571
+    }
+  ],
+  "schema_version": 2,
+  "versions_file_sha256": "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575"
+}
