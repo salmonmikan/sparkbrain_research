@@ -1,21 +1,23 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T123600+0900-AUTO-EQUIV-CI-STATE-RECON-RUNNING-6B4E21F9",
-  "produced_at": "2026-09-22T12:36:00+09:00",
+  "generation_id": "UTILITY-20260922T123800+0900-AUTO-EQUIV-CI-STATE-RECON-COMPLETED-6B4E21F9",
+  "produced_at": "2026-09-22T12:38:00+09:00",
+  "completed_at": "2026-09-22T12:38:00+09:00",
   "producer_run_id": "utility-auto-20260922T1236+0900-equiv-ci-state-recon",
   "authority_scope": "UTILITY_AUTONOMOUS_IDLE_BOUNDED_NON_EVIDENTIARY_DIAGNOSTIC_RECONCILIATION",
-  "supersedes_generation_id": "UTILITY-20260922T113500+0900-AUTO-EQUIV-LINT-REPAIR-RUNNING-8F2C41D7",
+  "supersedes_generation_id": "UTILITY-20260922T123600+0900-AUTO-EQUIV-CI-STATE-RECON-RUNNING-6B4E21F9",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
   "autonomous_task_id": "AUTOUTIL-20260922T1236+0900-EQUIV-CI-STATE-RECON-6B4E21F9",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
   "objective": "Reconcile the exact-head ordinary CI terminal outcome for the isolated equivalence-certificate prototype and the prior stale RUNNING Utility mailbox state without resuming or extending the prior repair task.",
   "trigger_source": "Prior Utility state persistence gap plus terminal ordinary CI run 35680322003 on repaired head 9f9d18065b481d8597236b0b682f0574c251b319",
+  "outcome_classification": "EXACT_REPAIRED_HEAD_CI_GREEN_FRESH_STEWARD_REVIEW_STILL_OUTSTANDING_PRIOR_RUNNING_STATE_RECONCILED",
   "ownership_generations": {
     "evidence_analyst": "EVA-20260922T120158+0900-R60-D5E721A4",
     "main": "MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0",
@@ -32,7 +34,18 @@
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "prototype_branch": "utility/equivalence-certificate-v0-1-A42D7C19",
     "prototype_head": "9f9d18065b481d8597236b0b682f0574c251b319",
-    "ci_run_id": 35680322003
+    "ci_run_id": 35680322003,
+    "ci_run_status": "completed",
+    "ci_run_conclusion": "success",
+    "ci_python_311_job_id": 106595700278,
+    "ci_python_313_job_id": 106595700385
+  },
+  "outputs_summary": {
+    "python_311": "SUCCESS_INSTALL_LINT_LOCAL_READINESS_TEST_VALIDATE_BUNDLE",
+    "python_313": "SUCCESS_INSTALL_LINT_LOCAL_READINESS_TEST_VALIDATE_BUNDLE",
+    "fresh_steward_review": false,
+    "merge_or_promotion_authorized": false,
+    "semantic_trust_limits_cured_by_ci": false
   },
   "ownership_checks": {
     "collision_found": false,
@@ -43,35 +56,25 @@
     "active_or_queued_research_object_touched": false,
     "candidate_typing_touched": false
   },
-  "allowed_actions": [
-    "Read-only inspect exact-head ordinary CI, Repository Steward freshness, branch/main refs, and Utility mailbox consistency",
-    "Persist Utility-owned state/results"
-  ],
-  "forbidden_actions": [
-    "Any prototype code change or workflow dispatch/rerun",
-    "Any scientific workflow dispatch or experiment",
-    "Any candidate/Funnel/readiness mutation",
-    "Any H7 or candidate #32 action",
-    "Any merge or promotion approval",
-    "Any scheduler or protected ref mutation",
-    "Any self-extension or resumption of the prior one-run repair task"
-  ],
-  "stop_condition": "Stop after recording terminal CI outcome, Steward-review freshness, and mailbox-state reconciliation exactly once.",
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
     "preserved_fields": "NOT_APPLICABLE_NO_RESEARCH_CANDIDATE_TOUCHED",
     "typing_or_readiness_changed": false,
     "theory_backward_quota_credit": false,
-    "discovery_quota_credit": false
+    "discovery_quota_credit": false,
+    "preformal_credit": false,
+    "promotion_credit": false
   },
   "integrity_checks": {
-    "workflow_dispatch": false,
+    "workflow_dispatch_or_rerun": false,
     "scheduler_mutation": false,
     "scientific_workflow_or_experiment": false,
     "protected_ref_mutation": false,
     "candidate_typing_or_readiness_mutation": false,
+    "preformal_or_formal_action": false,
     "research_pr_merge": false,
     "promotion_approval": false,
+    "prototype_code_mutation_this_task": false,
     "hidden_main_dependency_created": false
   },
   "prior_state_reconciliation": {
@@ -80,8 +83,10 @@
     "prior_run_count": 1,
     "prior_max_runs": 1,
     "prior_task_resumed": false,
-    "reason": "Terminal-state persistence gap only; this fresh task does not extend the prior task."
+    "reconciliation": "STALE_RUNNING_STATE_SUPERSEDED_BY_FRESH_ONE_RUN_TERMINAL_CI_RECONCILIATION"
   },
+  "stop_reason": "COMPLETED_TERMINAL_CI_OBSERVED_AND_MAILBOX_STATE_RECONCILED",
+  "follow_up_recommendation": "Use existing UTIL-20260922-0934-EQUIV-CERT-CI-STEWARD-REVIEW path for fresh Repository Steward structural review; do not duplicate the request and do not merge without separate reviewed approval.",
   "outputs": {
     "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1236+0900-EQUIV-CI-STATE-RECON-6B4E21F9-start.md",
     "terminal_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1236+0900-EQUIV-CI-STATE-RECON-6B4E21F9-completed.md"
