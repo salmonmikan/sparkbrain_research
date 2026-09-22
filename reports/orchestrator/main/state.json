@@ -1,41 +1,43 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4",
-  "run_id": "sparkbrain-main-relay-20260923T061512JST-R87-h7-formalr4-cycle11-diagnostic",
-  "producer_run_id": "sparkbrain-main-relay-20260923T061512JST-R87-h7-formalr4-cycle11-diagnostic",
-  "produced_at": "2026-09-23T06:18:58+09:00",
-  "authority_scope": "MAIN_RELAY_H7_FORMAL_R4_CYCLE11_EXACT_TEST_AND_RUNTIME_MISMATCH_DIAGNOSTIC_PREIDENTITY_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T055206+0900-RELAY-H7-FORMALR4-C11-R86-LOCKED-REALIZATION-62D4A1B7",
+  "generation_id": "MAIN-20260923T071545+0900-PRIMARY-H7-FORMALR5-C12-R88-PREIDENTITY-3A7C5D21",
+  "run_id": "sparkbrain-main-primary-20260923T071545JST-R88-h7-formalr5-cycle12-preidentity",
+  "producer_run_id": "sparkbrain-main-primary-20260923T071545JST-R88-h7-formalr5-cycle12-preidentity",
+  "produced_at": "2026-09-23T07:35:30+09:00",
+  "authority_scope": "PRIMARY_MAIN_H7_FORMAL_R5_CYCLE12_CONTENT_ADDRESSED_RUNTIME_IDENTITY_AND_PROVISIONING_PROVENANCE_SPLIT_PREIDENTITY_ONLY",
+  "supersedes_generation_id": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T061000+0900-R87-7B3D91E4@f03769227e888a70ea674eb627d4d311a1229c95",
-    "main_previous": "MAIN-20260923T055206+0900-RELAY-H7-FORMALR4-C11-R86-LOCKED-REALIZATION-62D4A1B7",
-    "sub": "SUB-20260923T053741+0900-NOOP-SCAN-R86-62D4A1B7",
-    "methodology": "METHCAL-20260923T051912+0900-R73-6B1E94D"
+    "evidence_analyst": "EVA-20260923T065834+0900-R88-D5A7C219@3341ad00ade796d9a3b80dd61c7386fc8b3e07b7",
+    "main_previous": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4",
+    "sub": "SUB-20260923T064336+0900-QFD-ASSEMBLY-INTERVENTIONAL-EQUIV-R87-8F4C21A7"
   },
-  "execution_mode": "RELAY",
-  "status": "BLOCKED",
-  "started_at": "2026-09-23T06:15:12+09:00",
-  "heartbeat_at": "2026-09-23T06:18:58+09:00",
+  "execution_mode": "PRIMARY",
+  "status": "WAITING_EXTERNAL",
+  "started_at": "2026-09-23T07:15:45+09:00",
+  "heartbeat_at": "2026-09-23T07:35:30+09:00",
   "completed_at": null,
-  "blocked_at": "2026-09-23T06:18:58+09:00",
-  "analyst_generation_id": "EVA-20260923T061000+0900-R87-7B3D91E4",
-  "analyst_commit": "f03769227e888a70ea674eb627d4d311a1229c95",
-  "analyst_decision": "GO_H7_FORMAL_R4_CYCLE11_EXACT_TEST_AND_RUNTIME_MISMATCH_DIAGNOSTIC_ONLY_AND_SCIENCE_INVARIANT_REPAIR_IF_CONFIRMED_STOP_BEFORE_ANY_SCIENCE_AFFECTING_CHANGE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
+  "blocked_at": null,
+  "analyst_generation_id": "EVA-20260923T065834+0900-R88-D5A7C219",
+  "analyst_commit": "3341ad00ade796d9a3b80dd61c7386fc8b3e07b7",
+  "analyst_decision": "GO_H7_FORMAL_R5_CONTENT_ADDRESSED_RUNTIME_IDENTITY_AND_PROVISIONING_PROVENANCE_SPLIT_CYCLE12_PREIDENTITY_ONLY_STOP_BEFORE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
   "research_layer": "FORMAL",
-  "main_lane": "H7_FORMAL_R4_CYCLE11_EXACT_TEST_AND_RUNTIME_MISMATCH_DIAGNOSTIC_SCIENCE_INVARIANT_REPAIR_IF_CONFIRMED_PREIDENTITY_ONLY",
+  "main_lane": "H7_FORMAL_R5_CONTENT_ADDRESSED_RUNTIME_IDENTITY_AND_PROVISIONING_PROVENANCE_SPLIT_CYCLE12_PREIDENTITY_ONLY",
   "candidate_id": "H7 responsibility",
   "candidate_alias": "CAND-H7-RESPONSIBILITY",
   "candidate_ordinal": 7,
   "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-  "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
+  "development_revision": "H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-AND-PROVISIONING-PROVENANCE-SPLIT",
+  "previous_revision_preserved": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
   "repair_change_classification": {
-    "diagnostics": "NON_RESULT_ONLY",
-    "generic_test_failure": "SCIENCE_INVARIANT_ERROR_MESSAGE_PRECEDENCE_MISMATCH_DIAGNOSED_NOT_REPAIRED",
-    "runtime_record_hash_failure": "FROZEN_RUNTIME_BINDING_MISMATCH_STOP_PER_R87_CONTINGENCY_2",
-    "science_affecting_change_this_run": "NONE"
+    "runtime_resource_identity_split": "SCIENCE_AFFECTING_CHANGE_EXPLICITLY_AUTHORIZED_AS_VERSIONED_R5_REVISION",
+    "generic_test_error_precedence": "SCIENCE_INVARIANT_REPAIR_APPLIED_TEST_EXPECTATION_ONLY",
+    "preflight_formatting": "SCIENCE_INVARIANT_LINT_REPAIR_APPLIED",
+    "preflight_import_order": "SCIENCE_INVARIANT_IMPORT_REPAIR_APPLIED",
+    "non_resource_scientific_fields_changed": false,
+    "one_way_action_performed": false
   },
-  "cycle_count": 11,
-  "reassessment_context": "R87 is an equivalent same-object refresh that explicitly reconciles head 02382fbc7d3838159598015e488c6ce49ac34efc and authorizes exact generic-Test/runtime diagnostics only, plus same-R4 repair if and only if the defect is demonstrably science-invariant. Runtime diagnostics satisfy the frozen-binding STOP branch; no research mutation is authorized after that classification.",
+  "cycle_count": 12,
+  "reassessment_rationale": "R88 prospectively authorizes R5 because R4 exact-wheel installation reproduces package/module/git/CUDA semantics but installer-generated torch RECORD bytes differ from the R3-derived frozen value. R5 tests whether a single prospectively selected exact-lock substrate can satisfy a content-addressed scientific-runtime identity while treating installer/host metadata as provisioning provenance, with no package, resolver, or runner-image shopping.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {
@@ -47,78 +49,131 @@
   "terminal_state": "ACTIVE",
   "queue_state": "ACTIVE",
   "system_priority_exception": {"used": false},
+  "four_layer_funnel": {
+    "DISCOVERY": {"mechanism_active": 0, "mechanism_queued": 1, "system_active": 0, "system_queued": 0, "state": "CAND34_QUEUED_FOR_SUB_NON_EVIDENTIARY_DISCOVERY"},
+    "ARCHITECTURE_STUDY": {"mechanism_active": 0, "mechanism_queued": 0, "system_active": 0, "system_queued": 0, "state": "EMPTY_CANDIDATE33_CURRENT_OBJECT_TERMINAL"},
+    "PRE_FORMAL": {"eligible": 2, "ready": 1, "state": "H7_READY_CAND34_ELIGIBLE_NOT_READY"},
+    "FORMAL": {"fresh_one_way_authority": 0, "state": "H7_R5_VERSIONED_RESOURCE_BINDING_REVISION_PREIDENTITY_ONLY"}
+  },
+  "funnel_metrics": {
+    "canonical_candidates": 34,
+    "mechanism": 14,
+    "system": 20,
+    "active": 1,
+    "queued": 1,
+    "nonterminal_hold": 0,
+    "terminal_for_current_object": 32,
+    "preformal_eligible": 2,
+    "preformal_ready": 1,
+    "viable_mechanism": 2,
+    "fresh_formal_authority": 0,
+    "official_consumed_identities": 7,
+    "classification_complete": "34/34"
+  },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_research_branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
-    "active_research_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
-    "cycle10_base_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
-    "r4_resource_contract_path": "artifacts/formal_h7_r4/resource_contract.json",
-    "runtime_lock_path": "artifacts/formal_h7_r4/scientific-runtime.lock",
+    "r4_preserved_branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
+    "r4_preserved_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+    "active_research_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+    "active_research_head": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
+    "r5_resource_contract_path": "artifacts/formal_h7_r5/resource_contract.json",
+    "r4_runtime_lock_path": "artifacts/formal_h7_r4/scientific-runtime.lock",
+    "r4_runtime_lock_sha256": "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583",
+    "r4_runtime_manifest_sha256": "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",
+    "r4_runtime_versions_sha256": "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575",
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "h7_control_ref_count": 0,
-    "h7_preserve_ref_count": 0
+    "h7_preserve_ref_count": 0,
+    "evidence_ref_count": 5
+  },
+  "implementation": {
+    "r5_initial_commit": "a8f4b4aed20dfa11a31aa7a3cfdff6635cb37e3b",
+    "lint_repair_commit": "1a9f9cfccf131b545d4aa3ba281cadc82b30d349",
+    "import_order_repair_commit": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
+    "r5_scientific_executor_changed": false,
+    "r5_scientific_executor_blob": "f323df048f5479cc80ba4c129a40b0957503180b",
+    "runtime_identity_rule": "Content-addressed R4 package/wheel identity plus preserved Python/torch/CPU/thread/determinism semantic properties are scientific runtime identity; installer-generated RECORD and hosted-runner image/kernel are provisioning provenance only in explicit R5.",
+    "shopping_forbidden": ["resolver", "package", "runner_image"]
   },
   "workflows": [
     {
-      "run_id": 35784686838,
-      "name": "h7-formal-r4-cycle11-realization",
-      "head": "02382fbc7d3838159598015e488c6ce49ac34efc",
-      "status": "completed",
-      "conclusion": "failure",
-      "result_bearing": false,
-      "lock_assertion": "success",
-      "clean_exact_lock_install": "success",
-      "runtime_source_assertion": "failure",
-      "synthetic_executor_probe": "skipped",
-      "one_way_absence_assertion": "skipped_after_prior_failure"
+      "run_id": 35792249736,
+      "name": "h7-formal-r5-cycle12-preidentity",
+      "head": "a8f4b4aed20dfa11a31aa7a3cfdff6635cb37e3b",
+      "status": "superseded_by_repair_head",
+      "result_bearing": false
     },
     {
-      "run_id": 35784686727,
+      "run_id": 35792775922,
+      "name": "h7-formal-r5-cycle12-preidentity",
+      "head": "1a9f9cfccf131b545d4aa3ba281cadc82b30d349",
+      "status": "completed",
+      "conclusion": "success",
+      "result_bearing": false,
+      "authority_and_r4_byte_gate": "success",
+      "clean_exact_lock_install": "success",
+      "content_runtime_and_synthetic_nonresult_gate": "success",
+      "one_way_absence_gate": "success"
+    },
+    {
+      "run_id": 35792775915,
       "name": "ci",
-      "head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+      "head": "1a9f9cfccf131b545d4aa3ba281cadc82b30d349",
       "status": "completed",
       "conclusion": "failure",
       "result_bearing": false,
-      "python_3_11": "lint_pass_readiness_pass_test_fail",
-      "python_3_13": "lint_pass_readiness_pass_test_fail"
+      "failure_class": "SCIENCE_INVARIANT_LINT_IMPORT_ORDER_ONLY",
+      "repair_commit": "d07d8ca14bb7e66b93924b8e1b73704687ad1011"
+    },
+    {
+      "run_id": 35793145738,
+      "name": "h7-formal-r5-cycle12-preidentity",
+      "head": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
+      "status": "queued_or_running",
+      "conclusion": null,
+      "result_bearing": false
+    },
+    {
+      "run_id": 35793145794,
+      "name": "ci",
+      "head": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
+      "status": "queued_or_running",
+      "conclusion": null,
+      "result_bearing": false
     }
   ],
-  "exact_diagnostics": {
-    "runtime": {
-      "field": "scientific_runtime.torch_distribution_record_sha256",
-      "observed": "06706c58c94e177f36a7641b07c6949e349fde30bfde00cf491d992954634e8d",
-      "expected_frozen": "407832ba9a2275aa30a1263f65dc9cc05fc04d74e81895e1ec8f74518eb45cf0",
-      "exact_lock_install_succeeded": true,
-      "torch_distribution_version_check_preceded_failure": true,
-      "torch_module_version_check_preceded_failure": true,
-      "torch_git_version_check_preceded_failure": true,
-      "torch_cuda_build_version_check_preceded_failure": true,
-      "classification": "FROZEN_RUNTIME_BINDING_MISMATCH; NO_NORMALIZE_OR_REBIND_UNDER_R87"
-    },
-    "generic_test": {
-      "test": "tests/learned/test_h7_formal_r3_executor.py::test_protected_plan_rejects_world_assignment_drift",
-      "expected_error_match": "world-assignment drift",
-      "actual_error": "R3 protected evaluation per-world count drift",
-      "invalid_plan_still_rejected": true,
-      "cause": "per-world-count validation fires before world-assignment validation",
-      "repair_applied": false
-    }
+  "observations_evidentiary_status": {
+    "formal_evidence": 0,
+    "preformal_development_evidence": 0,
+    "mechanism_architecture_observations": 0,
+    "system_architecture_observations": 0,
+    "non_evidentiary_preidentity_observations": [
+      "R5 exact R4 lock clean installation succeeded on the prospectively selected substrate at superseded repair head 1a9f9cf...",
+      "R5 content-addressed runtime/non-result executor gate succeeded at 1a9f9cf...",
+      "No one-way material was present at 1a9f9cf...",
+      "Final-head d07d8ca... validation is still external-CI pending."
+    ],
+    "classification": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_DEVELOPMENT_ONLY"
+  },
+  "ordinary_reductions": {
+    "scientific_comparator_panel_changed": false,
+    "evaluated_this_run": false,
+    "status": "FROZEN_UNCHANGED_NO_RESULT_BEARING_EXECUTION"
+  },
+  "support_breadth": {
+    "new_independent_scientific_support": 0,
+    "new_confirmatory_evidence": 0,
+    "development_observations_do_not_count_as_independent_support": true
   },
   "prior_result_preservation": {
     "all_prior_results_unchanged": true,
+    "r4_preserved_unchanged": true,
     "consumed_formal_identities_reused": false,
     "consumed_formal_identity_rerun_retune_rescore": false,
     "immutable_formal_sealed_evidence_refs_mutated": false,
     "historical_pass_fail_rewritten": false
-  },
-  "observations_evidentiary_status": {
-    "formal_evidence": 0,
-    "new_preformal_development_results": 0,
-    "new_mechanism_architecture_observations": 0,
-    "new_system_architecture_observations": 0,
-    "classification": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_DIAGNOSTICS_ONLY"
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -130,16 +185,22 @@
     "pd01-long-history-fading-memory-official-v1"
   ],
   "integrity": {
-    "analyst_generation_rechecked_before_mutation": true,
-    "analyst_equivalent_same_object_refresh_recorded": true,
-    "main_generation_lease_rechecked_before_mutation": true,
+    "analyst_generation_rechecked_before_acquisition": true,
+    "analyst_generation_rechecked_before_each_research_mutation": true,
+    "analyst_generation_rechecked_before_wait_disposition": true,
+    "main_lease_rechecked_before_acquisition": true,
     "direct_research_ref_rechecked_before_mutation": true,
-    "stale_running_lease_not_treated_as_authority": true,
-    "fresh_primary_same_object_collision": false,
-    "research_branch_mutated_by_this_relay": false,
-    "resource_contract_mutated": false,
-    "expected_runtime_hash_mutated": false,
-    "normalization_or_rebind_attempted": false,
+    "sub_collision": false,
+    "stable_main_refetched": true,
+    "immutable_evidence_refs_refetched": true,
+    "formal_sealed_freeze_namespaces_empty": true,
+    "h7_control_ref_present": false,
+    "h7_preserve_ref_present": false,
+    "pr_148_open_unmerged": true,
+    "pr_149_open_unmerged": true,
+    "resource_lock_bytes_changed": false,
+    "non_resource_scientific_fields_changed": false,
+    "r4_expected_record_hash_rebound": false,
     "formal_identity_created_or_consumed": false,
     "started_created": false,
     "evaluation_commitment_created": false,
@@ -150,6 +211,6 @@
     "scientific_preserve_or_evidence_ref_created": false,
     "scheduler_mutated": false
   },
-  "stop_reason": "R87_H7_FORMAL_R4_CYCLE11_FROZEN_TORCH_RECORD_HASH_BINDING_MISMATCH_FAIL_CLOSED_VERSIONED_REASSESSMENT_REQUIRED_NO_SILENT_REBIND",
-  "next_action": "Fresh Evidence Analyst must explicitly reassess the frozen R4 runtime-binding mismatch. Current R87 does not permit changing, normalizing, or rebinding the expected torch distribution RECORD hash. An explicit prospectively authorized same-R4 invariant hash-plumbing correction would also be acceptable only if Analyst establishes that it preserves the exact expected runtime/package/artifact identity. The generic-Test error-message precedence mismatch remains diagnosed and unrepaired. All one-way FORMAL actions remain STOP."
+  "stop_reason": "WAITING_ONLY_FOR_FINAL_HEAD_NON_RESULT_CI_AFTER_AUTHORIZED_SCIENCE_INVARIANT_IMPORT_ORDER_REPAIR",
+  "next_action": "Relay/PRIMARY should re-read Analyst R88 and exact branch head d07d8ca14bb7e66b93924b8e1b73704687ad1011, then inspect workflow 35793145738 and CI 35793145794. If both are green, mark cycle12 preidentity COMPLETED and stop before every one-way FORMAL action for fresh Analyst review. If only science-invariant lint/import/build/path plumbing fails, repair same R5 object and rerun non-result gates. Any scientific runtime/content/resource-semantic mismatch requires fail-closed fresh Analyst reassessment; do not shop packages, resolver, or runner image."
 }

@@ -7,14 +7,13 @@
   "supersedes_generation_id": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T065834+0900-R88-D5A7C219@3341ad00ade796d9a3b80dd61c7386fc8b3e07b7",
-    "evidence_analyst_state_commit": "e43939f8ab6fb9aaf6106e7175d85699efecce3c",
     "main_previous": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4",
     "sub": "SUB-20260923T064336+0900-QFD-ASSEMBLY-INTERVENTIONAL-EQUIV-R87-8F4C21A7"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-23T07:15:45+09:00",
-  "heartbeat_at": "2026-09-23T07:15:45+09:00",
+  "heartbeat_at": "2026-09-23T07:35:30+09:00",
   "completed_at": null,
   "blocked_at": null,
   "blocked_until": null,
@@ -31,18 +30,16 @@
   "previous_revision_preserved": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
   "repair_change_classification": {
     "runtime_resource_identity_split": "SCIENCE_AFFECTING_CHANGE_EXPLICITLY_AUTHORIZED_AS_VERSIONED_R5_REVISION",
-    "generic_test_error_precedence": "SCIENCE_INVARIANT_REPAIR_AUTHORIZED",
-    "non_resource_scientific_fields_change_allowed": false,
-    "one_way_action_allowed": false
+    "generic_test_error_precedence": "SCIENCE_INVARIANT_REPAIR_APPLIED_TEST_EXPECTATION_ONLY",
+    "preflight_formatting": "SCIENCE_INVARIANT_LINT_REPAIR_APPLIED",
+    "preflight_import_order": "SCIENCE_INVARIANT_IMPORT_REPAIR_APPLIED",
+    "one_way_action_performed": false
   },
   "cycle_count": 12,
-  "reassessment_rationale": "R88 prospectively authorizes R5 because R4 exact-wheel installation reproduces package/module/git/CUDA semantics but installer-generated torch RECORD bytes differ from the R3-derived frozen value. R5 may split content-addressed scientific runtime identity from installation/host provisioning provenance while preserving exact R4 lock/package/wheel bytes and every non-resource scientific field. This cycle has concrete expected information gain: determine whether one prospectively selected exact-lock substrate reaches an all-green non-result preidentity gate without package, resolver, or runner-image shopping.",
+  "reassessment_rationale": "R88 supplies concrete expected information gain from a versioned content-addressed runtime/provisioning-provenance split after R4 exact-lock semantics passed but installer-generated torch RECORD identity did not reproduce. Final-head non-result CI now determines whether the prospectively selected substrate closes preidentity without shopping.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
-  "preformal_readiness": {
-    "status": "READY",
-    "semantics": "development readiness only; not one-way FORMAL authority or scientific success"
-  },
+  "preformal_readiness": {"status": "READY", "semantics": "development readiness only"},
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "ACTIVE",
@@ -51,19 +48,15 @@
   "base_branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
   "base_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
   "active_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-  "active_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+  "active_head": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
   "active_identity": null,
-  "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_VERSIONED_DEVELOPMENT_REVISION_RUNNING",
-  "r5_must_preserve": [
-    "R4 scientific-runtime.lock bytes/package versions/wheel hashes",
-    "Python and torch distribution/module/git/CUDA semantic versions",
-    "CPU/thread/determinism resource semantics",
-    "claim/estimand/worlds/sample/split roles",
-    "intervention/comparator panel/thresholds/bootstrap/decision/falsifier",
-    "concealed evaluation and target-blind preserve-before-score semantics"
-  ],
-  "r5_prospective_runtime_rule": "Installer-generated RECORD and outer hosted-runner image/kernel are provisioning provenance only in R5; scientific runtime identity is content-addressed package/wheel identity plus prospectively preserved semantic resource properties. No resolver/package/runner-image shopping.",
-  "sub_collision": false,
+  "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_VERSIONED_DEVELOPMENT_REVISION_WAITING_EXTERNAL",
+  "workflow_wait": {
+    "preidentity_run_id": 35793145738,
+    "generic_ci_run_id": 35793145794,
+    "head": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
+    "expected_next_action": "Re-read R88 and exact head, inspect both runs. Both green => COMPLETED preidentity and STOP before one-way FORMAL. Invariant CI/plumbing defect => repair same R5 object. Scientific runtime/resource-semantic mismatch => BLOCKED for fresh Analyst."
+  },
   "formal_identity_created_or_consumed": false,
   "started_created": false,
   "evaluation_commitment_created": false,
@@ -84,8 +77,9 @@
   ],
   "integrity": {
     "analyst_generation_rechecked_pre_acquisition": true,
-    "main_lease_rechecked_pre_acquisition": true,
-    "research_branch_rechecked_pre_acquisition": true,
+    "analyst_generation_rechecked_pre_mutation": true,
+    "analyst_generation_rechecked_pre_wait_disposition": true,
+    "research_branch_rechecked_pre_wait_disposition": true,
     "stable_main_refetched": true,
     "immutable_evidence_refs_refetched": true,
     "formal_sealed_freeze_namespaces_empty": true,
@@ -97,7 +91,7 @@
     "one_way_action_performed": false,
     "scheduler_mutated": false
   },
-  "stop_reason": null,
-  "next_action": "Re-read R88 and exact R4 head, create R5 cycle12 continuation branch, materialize only the authorized content-addressed-runtime/provisioning-provenance split plus the separately authorized invariant test-expectation repair, then run non-result preidentity validation. Stop before every one-way FORMAL action even if green.",
+  "stop_reason": "WAITING_ONLY_FOR_FINAL_HEAD_NON_RESULT_CI_AFTER_AUTHORIZED_SCIENCE_INVARIANT_IMPORT_ORDER_REPAIR",
+  "next_action": "Inspect exact-head runs 35793145738 and 35793145794 after fresh R88/head reconciliation; do not create evaluation commitment, FORMAL identity, STARTED, reveal evaluation seeds, access protected evaluation, score, or preserve scientific results under current authority.",
   "owner": "main"
 }
