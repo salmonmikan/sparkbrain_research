@@ -1,0 +1,83 @@
+{
+  "schema_version": 2,
+  "contract_id": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-V1",
+  "status": "FORMAL_PREIDENTITY_VERSIONED_BINDING_ONLY_NO_IDENTITY_NO_EXECUTION",
+  "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_BINDING",
+  "created_under": {
+    "evidence_analyst_generation": "EVA-20260922T210223+0900-R75-D7F2A9C1",
+    "evidence_analyst_commit": "c190afff7e33977c530c207904bd42ce7187a20d",
+    "analyst_decision": "GO_H7_FORMAL_R2_INPUT_SPLIT_BINDING_AND_PREIDENTITY_REVALIDATION_CYCLE8_ONLY_STOP_BEFORE_IDENTITY_START_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
+    "candidate_id": "CAND-H7-RESPONSIBILITY",
+    "candidate_ordinal": 7,
+    "research_layer": "FORMAL",
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "READY",
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-AND-PREIDENTITY-REVALIDATION",
+    "cycle": 8,
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "system_priority_exception_used": false
+  },
+  "base_contract": {
+    "path": "artifacts/formal_h7_r1/contract_design.json",
+    "contract_id": "H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1",
+    "blob": "af26de3067263afcff0e727321fa173ea14de659",
+    "preserved_unchanged": true
+  },
+  "science_affecting_delta": {
+    "classification": "SCIENCE_AFFECTING_CHANGE_VERSIONED_BEFORE_FORMAL_IDENTITY",
+    "field": "Episode.split",
+    "fit_split": "train",
+    "calibration_split": "dev",
+    "formal_evaluation_split": "test",
+    "smoke_result_bearing_forbidden": true,
+    "outcome_dependence": false,
+    "all_other_r1_scientific_fields_preserved": true
+  },
+  "r2_input_surface": {
+    "worlds": [
+      "switchworld",
+      "contradiction_world",
+      "goal_conflict_world",
+      "multi_object_world"
+    ],
+    "steps_per_episode": 24,
+    "fit_seed_range_inclusive": [8166520, 8166711],
+    "calibration_seed_range_inclusive": [8350164, 8350227],
+    "formal_evaluation_seed_range_inclusive": [8846030, 8846285],
+    "world_assignment": "seed-list index modulo 4 in listed world order",
+    "fit_split": "train",
+    "calibration_split": "dev",
+    "formal_evaluation_split": "test",
+    "smoke_result_bearing_forbidden": true,
+    "native_training_seed": 9339631,
+    "dense_training_seed": 9428927,
+    "eligibility_head_seed": 9107020
+  },
+  "r2_input_surface_sha256": "b1ec2861017642954fc7b510f0131d13500397aa5d991d4a3d30fe75fd3bafcc",
+  "inherited_r1_scientific_fields": {
+    "claim_and_estimand": "UNCHANGED_FROM_BASE_R1",
+    "ordinary_reduction_panel": "UNCHANGED_FROM_BASE_R1",
+    "intervention": "TOP1_SELECTED_LOCAL_NODE_CUT_V1_UNCHANGED",
+    "worlds_steps_seed_ranges_training_seeds": "UNCHANGED_VALUES_WITH_ONLY_EPISODE_SPLIT_NOW_BOUND",
+    "runtime_contract": "UNCHANGED_FROM_BASE_R1",
+    "resource_privilege_contract": "UNCHANGED_FROM_BASE_R1",
+    "evaluator": "UNCHANGED_FROM_BASE_R1",
+    "capacity_and_effect_criteria": "UNCHANGED_FROM_BASE_R1",
+    "formal_decision_table": "UNCHANGED_FROM_BASE_R1",
+    "intervention_validity": "UNCHANGED_FROM_BASE_R1",
+    "one_way_integrity_design": "UNCHANGED_FROM_BASE_R1"
+  },
+  "preidentity_only": {
+    "formal_identity_created": false,
+    "started_created": false,
+    "protected_evaluation_accessed": false,
+    "result_bearing_workflow_dispatched": false,
+    "official_scoring_performed": false,
+    "scientific_preserve_or_evidence_ref_created": false,
+    "result_bearing_smoke_forbidden": true
+  },
+  "stop_rule": "Cycle 8 may materialize and validate this versioned split binding plus science-invariant runner/runtime/package/hash/seed/no-clobber plumbing only. STOP before identity, STARTED, protected evaluation, result-bearing execution, scientific preserve/evidence creation or official scoring."
+}
