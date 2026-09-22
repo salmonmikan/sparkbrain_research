@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "kind": "H7_FORMAL_R3_PRIOR_SURFACE_COLLISION_INVENTORY_V1",
+  "h7_prior_episode_surfaces": [
+    {
+      "role": "fit",
+      "seed_range_inclusive": [8166520, 8166711],
+      "split": "train",
+      "status": "prior_development_or_r2_surface"
+    },
+    {
+      "role": "calibration",
+      "seed_range_inclusive": [8350164, 8350227],
+      "split": "dev",
+      "status": "prior_development_or_r2_surface"
+    },
+    {
+      "role": "evaluation",
+      "seed_range_inclusive": [8846030, 8846285],
+      "split": "test",
+      "status": "r1_r2_public_quarantined_evaluation_surface"
+    }
+  ],
+  "h7_training_seeds": {
+    "native": 9339631,
+    "dense": 9428927,
+    "eligibility_head": 9107020
+  },
+  "consumed_scientific_identities": [
+    "c19-external-v2-official-v4",
+    "c19-r1-revision-authority-official-v1",
+    "c19-r1-revision-authority-official-v2",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "h5-event-routing-work-reduction-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "pd01-long-history-fading-memory-official-v1"
+  ],
+  "future_r3_evaluation_seed_values_recorded": false,
+  "future_collision_check_contract": "controller must prove every concealed R3 evaluation seed is disjoint from all listed prior H7 episode and training seed values before commitment/identity/STARTED; no plaintext future seed may be persisted on this preidentity branch",
+  "evidentiary_status": "NON_EVIDENTIARY_PREIDENTITY_COLLISION_INVENTORY",
+  "inventory_sha256": "9bcac06be6750b01aa711c649a2557643e512355b93f3de02886ed8c8bb8c743"
+}
