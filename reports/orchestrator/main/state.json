@@ -1,181 +1,125 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260922T151800+0900-PRIMARY-H7-PFR1-C4-F1A8C29D",
-  "run_id": "sparkbrain-main-primary-20260922T151800JST-R64-h7-pfr1-cycle4",
-  "producer_run_id": "sparkbrain-main-primary-20260922T151800JST-R64-h7-pfr1-cycle4",
-  "authority_scope": "MAIN_PRIMARY_H7_PF_R1_FROZEN_PANEL_PREFORMAL_CYCLE4_RESULT_BEARING_NONCONFIRMATORY",
-  "supersedes_generation_id": "MAIN-20260922T141618+0900-PRIMARY-H7-DEVR2-ARCH-C3-E8C421B7",
+  "generation_id": "MAIN-20260922T162700+0900-PRIMARY-H7-FORMALR1-DESIGN-C5-C4F8A21D",
+  "run_id": "sparkbrain-main-primary-20260922T162700JST-R65-h7-formalr1-contract-design",
+  "producer_run_id": "sparkbrain-main-primary-20260922T162700JST-R65-h7-formalr1-contract-design",
+  "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R1_DYNAMIC_TOP1_CONTRACT_DESIGN_ONLY_NO_IDENTITY_NO_RESULT",
+  "supersedes_generation_id": "MAIN-20260922T151800+0900-PRIMARY-H7-PFR1-C4-F1A8C29D",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T145734+0900-R64-F1A8C29D@0b201ca23c1de6fb568d78f320dc5a55ab85b70c",
-    "main": "MAIN-20260922T141618+0900-PRIMARY-H7-DEVR2-ARCH-C3-E8C421B7@c3a5262bc92e7e7e1bcc6ff51179e8178416c3fe",
-    "sub": "SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7@3a6b397ea806935f300e662bb17931fd4ed9838b"
+    "evidence_analyst": "EVA-20260922T161640+0900-R65-C4F8A21D@1aa007bce54ea4ae9768fe4ca3961cd38b59c0df",
+    "main": "MAIN-20260922T151800+0900-PRIMARY-H7-PFR1-C4-F1A8C29D@e0848938870fde48f75038cb22a0e7af9520f504",
+    "sub": "SUB-20260922T154200+0900-QFD-EQUIVBOUNDARY-R64-C3F8A2D1@8f42de275816998cb631288757f415c3fd456e11"
   },
   "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-22T15:18:00+09:00",
-  "completed_at": "2026-09-22T15:37:00+09:00",
-  "analyst_generation_id": "EVA-20260922T145734+0900-R64-F1A8C29D",
-  "analyst_commit": "0b201ca23c1de6fb568d78f320dc5a55ab85b70c",
-  "analyst_decision": "GO_H7_PF_R1_FROZEN_DEVELOPMENT_EVALUATION_CYCLE4_RESULT_BEARING_NONCONFIRMATORY_STOP_AFTER_FIXED_ENDPOINTS_NO_OUTCOME_RESPONSIVE_REDESIGN",
-  "research_layer": "PRE_FORMAL",
-  "main_lane": "H7_PF_R1_FROZEN_PANEL_DEVELOPMENT_EVALUATION_CYCLE4_NONCONFIRMATORY",
+  "status": "WAITING_EXTERNAL",
+  "started_at": "2026-09-22T16:27:00+09:00",
+  "analyst_generation_id": "EVA-20260922T161640+0900-R65-C4F8A21D",
+  "analyst_commit": "1aa007bce54ea4ae9768fe4ca3961cd38b59c0df",
+  "analyst_decision": "GO_H7_FORMAL_R1_CONTRACT_DESIGN_ONLY_STOP_BEFORE_ONE_WAY_IDENTITY_CREATION_OR_RESULT_BEARING_EXECUTION",
+  "research_layer": "FORMAL",
+  "main_lane": "H7_FORMAL_R1_DYNAMIC_TOP1_CONTRACT_DESIGN_ONLY_NO_IDENTITY_NO_WORKFLOW_NO_RESULT",
   "candidate_id": "H7 responsibility",
   "candidate_alias": "CAND-H7-RESPONSIBILITY",
   "candidate_ordinal": 7,
   "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-  "development_revision": "H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION",
-  "previous_development_revision": "H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE",
+  "development_revision": "H7-FORMAL-R1-DYNAMIC-TOP1-CONTRACT-DESIGN",
+  "previous_development_revision": "H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION",
   "repair_change_classification": {
-    "initial_materialization": "SCIENCE_AFFECTING_REVISION_PROSPECTIVELY_AUTHORIZED_BY_ANALYST_R64_BEFORE_RESULT_EXPOSURE",
-    "pre_result_repair": "SCIENCE_INVARIANT_REPAIR_LINT_IMPORT_HASH_PLUMBING_SOURCE_BINDING_CONFORMANCE_ONLY",
-    "post_result_changes": "NONE"
+    "contract_design": "SCIENCE_AFFECTING_REVISION_PROSPECTIVELY_AUTHORIZED_BY_ANALYST_R65_AFTER_PF_R1_EXPOSURE",
+    "post_design_science_change": "NONE",
+    "science_invariant_repair": "NONE"
   },
-  "cycle_count": 4,
-  "reassessment_rationale": "Analyst R64 recorded concrete expected information gain beyond cycle 3: DEV-R2 closed result-independent comparator/intervention blockers, enabling one fixed PRE_FORMAL development evaluation to distinguish absent phenomenon, invalid intervention, ordinary reduction, or a residual without outcome-responsive redesign.",
+  "cycle_count": 5,
+  "reassessment_rationale": "R65 recorded concrete expected information gain beyond cycle 4: convert the single fixed PF-R1 development residual into a fresh untouched one-way confirmatory contract with a dynamic-policy estimand, episode-aware paired uncertainty, independently justified capacity/effect criteria, exact bindings and raw/preserve ordering, rather than accumulating more PRE_FORMAL runs.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {
     "status": "READY",
-    "semantics": "Prospective PF-R1 test was well-defined/informative at dispatch; READY is not scientific success and is not updated by MAIN post-outcome."
+    "semantics": "PF-R1 is complete development history; READY does not imply scientific success, reduction exhaustion, or FORMAL execution authority."
   },
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "ACTIVE",
   "queue_state": "ACTIVE",
-  "system_priority_exception": {
-    "used": false
-  },
+  "system_priority_exception": {"used": false},
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "source_research_branch": "research/main-h7-dev-r2-comparator-protocol-closure-r63-cycle3",
-    "source_research_head": "d6655549c179caf391d4b43bd2ebea49f2bfc82b",
-    "active_research_branch": "research/main-h7-pf-r1-frozen-panel-r64-cycle4",
-    "initial_materialization_head": "d3545c8c0f9731e903b73196aac6a7b314aefcf9",
-    "final_research_head": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
-    "source_contract": "artifacts/architecture_h7_dev_r2/contract.json",
-    "preformal_contract": "artifacts/preformal_h7_pf_r1/contract.json",
-    "preformal_contract_id": "H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION-V1"
+    "pf_r1_branch": "research/main-h7-pf-r1-frozen-panel-r64-cycle4",
+    "pf_r1_head": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
+    "active_research_branch": "research/main-h7-formal-r1-contract-design-r65-cycle5",
+    "final_research_head": "0bf690a0710112d21743d50f0974eadeb49dadad",
+    "contract_path": "artifacts/formal_h7_r1/contract_design.json",
+    "contract_blob": "af26de3067263afcff0e727321fa173ea14de659",
+    "contract_id": "H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1"
   },
-  "repository_truth": {
-    "annotated_evidence_tag_count": 5,
-    "tag_form_formal_count": 0,
-    "tag_form_sealed_count": 0,
-    "tag_form_freeze_count": 0,
-    "pr_148": {"state": "open", "merged": false, "mergeable": true},
-    "pr_149": {"state": "open", "merged": false, "mergeable": true}
+  "contract_design": {
+    "claim_scope": "local dynamic TOP1 policy causal responsibility/mechanistic distinctness only; no invariant route identity, uniqueness, task specificity, completeness, sufficiency, broad reduction exhaustion or external generalization",
+    "experimental_unit": "episode seed; recurrent step rows are not IID",
+    "formal_evaluation_episodes": 256,
+    "worlds": ["switchworld", "contradiction_world", "goal_conflict_world", "multi_object_world"],
+    "evaluation_episodes_per_world": 64,
+    "input_surface_sha256": "bbba6f0cf413e33b66b22c753916ab4db7d59e716bd0b840703a68b7ac3f0be6",
+    "evaluator_spec_sha256": "10cb6e725954636ca9d32f6395e549af50d79ab4dc0b7bb2f063b1ecc4b24430",
+    "uncertainty": "50,000-resample paired stratified episode bootstrap; equal world weighting; Bonferroni simultaneous 99.375% two-sided intervals over 8 preregistered contrasts",
+    "capacity_noninferiority_margin_accuracy": 0.0,
+    "effect_reproduction_margin_delta_accuracy": 0.0,
+    "margin_basis": "zero-deficit conservative criterion selected independently of PF-R1 outcomes",
+    "ordinary_reductions": ["ORDINARY_DENSE_RECURRENT_V1", "FINITE_STATE_ROUTE_HISTORY_V2", "ELIGIBILITY_ROUTE_LEDGER_V2"],
+    "pass_rule": "positive phenomenon + positive native local effect + every comparator capacity adequate + every comparator effect conclusively smaller",
+    "ordinary_reduction_fail_rule": "any capacity-adequate comparator conclusively reproduces native effect",
+    "inconclusive_rule": "any unresolved comparator capacity/effect contrast or integrity/resource mismatch",
+    "raw_before_score": true,
+    "preserve_before_read": true,
+    "create_only_no_clobber": true,
+    "formal_identity_created": false,
+    "started_created": false,
+    "result_bearing_workflow_created_or_dispatched": false,
+    "protected_evaluation_accessed": false
   },
-  "workflows": [
-    {
-      "run_id": 35694949565,
-      "head": "d3545c8c0f9731e903b73196aac6a7b314aefcf9",
-      "name": "h7-pf-r1-cycle4",
-      "status": "completed",
-      "conclusion": "failure",
-      "classification": "SCIENCE_INVARIANT_PREFLIGHT_FAILURE_BEFORE_RESULT_EXPOSURE",
-      "failure": "Ruff-only unused import/import-order failure; no result-bearing evaluation executed."
-    },
-    {
-      "run_id": 35695286240,
-      "head": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
-      "name": "h7-pf-r1-cycle4",
-      "status": "completed",
-      "conclusion": "success",
-      "preflight_job_id": 106640701721,
-      "evaluate_job_id": 106641243325,
-      "classification": "FIXED_PREFORMAL_RESULT_BEARING_DEVELOPMENT_EVALUATION"
-    },
-    {
-      "run_id": 35695286238,
-      "head": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
-      "name": "ci",
-      "status": "completed",
-      "conclusion": "success"
-    }
-  ],
-  "development_result": {
-    "classification": "PRE_FORMAL_DEVELOPMENT_NONCONFIRMATORY",
-    "fixed_disposition": "RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY",
-    "formal_uplift_authorized": false,
-    "positive_phenomenon_floor_passed": true,
-    "native_no_local_effect": false,
-    "examples_per_endpoint": 576,
-    "endpoints": {
-      "native": {
-        "baseline_accuracy": 0.8090277777777778,
-        "cut_accuracy": 0.8020833333333334,
-        "delta_accuracy": 0.00694444444444442,
-        "mean_total_variation": 0.055507719714821886
-      },
-      "dense_recurrent": {
-        "baseline_accuracy": 0.8090277777777778,
-        "cut_accuracy": 0.8090277777777778,
-        "delta_accuracy": 0.0,
-        "mean_total_variation": 0.014369028418109843
-      },
-      "finite_state_route_history": {
-        "baseline_accuracy": 0.4548611111111111,
-        "cut_accuracy": 0.375,
-        "delta_accuracy": 0.0798611111111111,
-        "mean_total_variation": null
-      },
-      "eligibility_route_ledger": {
-        "baseline_accuracy": 0.6996527777777778,
-        "cut_accuracy": 0.6770833333333334,
-        "delta_accuracy": 0.02256944444444442,
-        "mean_total_variation": 0.06696261247735594
-      }
-    },
-    "ordinary_reduction_direction_met": {
-      "dense_recurrent": false,
-      "finite_state_route_history": false,
-      "eligibility_route_ledger": false
-    },
-    "capacity_limit_status": {
-      "dense_recurrent": "NOT_ESTABLISHED_BY_FIXED_PROTOCOL",
-      "finite_state_route_history": "NOT_ESTABLISHED_BY_FIXED_PROTOCOL",
-      "eligibility_route_ledger": "NOT_ESTABLISHED_BY_FIXED_PROTOCOL"
-    },
-    "ordinary_reduction_interpretation": "No comparator met the exact frozen two-part reduction direction in this development evaluation. Dense matched native baseline accuracy but had smaller intervention delta; finite-state and eligibility comparators had larger deltas but lower baseline accuracy. This does not establish broad ordinary-reduction exhaustion.",
-    "support_breadth": "Fixed four-world dev protocol only: switchworld, contradiction_world, goal_conflict_world, multi_object_world; 24 discriminator episodes x 24 steps = 576 examples. At most a local existential route/state-responsibility development observation inside the frozen intervention family; no uniqueness, task specificity, completeness, sufficiency, external generalization, or formal-confirmatory claim.",
-    "raw_sha256": "695261aeadab1ab311b60787f1b6a9023c29e24009c6f173c1a660469a6906db",
-    "artifact": {
-      "id": 10680620448,
-      "name": "h7-pf-r1-cycle4-8681dcbbe2fff986c28a79057f557b35f3f0f752",
-      "zip_sha256": "db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d",
-      "size_bytes": 100325,
-      "files": 2
-    }
+  "prior_result_preservation": {
+    "pf_r1_unchanged": true,
+    "pf_r1_used_as_confirmatory_evidence": false,
+    "pf_r1_used_for_margin_selection": false,
+    "pf_r1_used_for_sample_size_selection": false,
+    "pf_r1_rerun_retune_rescore": false,
+    "consumed_formal_identities_reused": false,
+    "immutable_formal_sealed_evidence_refs_mutated": false
   },
-  "evidence_counts_this_run": {
+  "observations_evidentiary_status": {
     "formal_evidence": 0,
-    "preformal_development_results": 1,
+    "preformal_development_results": 0,
     "mechanism_architecture_observations": 0,
     "system_architecture_observations": 0,
-    "consumed_formal_identities": 0
+    "contract_design_only": 1,
+    "classification": "NON_EVIDENTIARY_FORMALIZATION_DESIGN"
+  },
+  "ordinary_reductions": {
+    "panel_frozen": true,
+    "support_breadth": "future claim is limited to the exact four-world dynamic-TOP1 regime and frozen panel",
+    "capacity_adequacy_required_for_pass": true,
+    "unresolved_capacity_is_inconclusive": true
   },
   "consumed_identities": [],
-  "prior_result_preservation": {
-    "dev_r1_unchanged": true,
-    "dev_r2_unchanged": true,
-    "failed_preflight_head_preserved_in_git_history": true,
-    "result_bearing_final_head_rerun_after_exposure": false,
-    "official_test_started_formal_evidence_tags_created": false
+  "workflow_wait": {
+    "run_id": 35700049493,
+    "name": "ci",
+    "branch": "research/main-h7-formal-r1-contract-design-r65-cycle5",
+    "head": "0bf690a0710112d21743d50f0974eadeb49dadad",
+    "status_at_persistence": "in_progress",
+    "result_bearing": false,
+    "expected_next_action": "Relay or next MAIN may verify CI. Regardless of green CI, STOP for fresh Evidence Analyst review; do not create FORMAL identity or result-bearing workflow under R65."
   },
   "integrity": {
-    "analyst_generation_rechecked_before_acquisition": true,
-    "analyst_generation_rechecked_before_repair": true,
-    "analyst_generation_rechecked_before_result_bearing_evaluation": true,
-    "analyst_generation_rechecked_before_final_persistence": true,
+    "analyst_generation_rechecked_before_lease_acquisition": true,
+    "analyst_generation_rechecked_before_research_mutation": true,
+    "analyst_generation_rechecked_before_control_persistence": true,
     "material_superseding_generation_detected": false,
-    "result_surface_accessed_before_final_fixed_head": false,
-    "preflight_completed_before_evaluation": true,
-    "raw_written_before_fixed_scoring": true,
-    "discriminator_used_for_training_or_calibration": false,
-    "post_outcome_retune_or_redesign": false,
-    "research_mutation_after_result_exposure": false,
-    "formal_identity_reuse": false,
-    "immutable_formal_sealed_evidence_ref_mutation": false
+    "sub_collision": false,
+    "science_result_exposed_this_run": false,
+    "formal_identity_consumed": false,
+    "started_or_preserve_or_score_performed": false,
+    "immutable_scientific_ref_mutation": false
   },
-  "stop_reason": "R64_H7_PF_R1_FIXED_ENDPOINTS_COMPLETE_RESIDUAL_PREFORMAL_NONCONFIRMATORY_STOP_FRESH_ANALYST_REVIEW",
-  "next_action": "Fresh Evidence Analyst review of the fixed PF-R1 development result. Do not rerun, retune, rescore, alter scientific fields, invent a successor, or uplift to FORMAL without fresh explicit Analyst authority."
+  "stop_reason": "R65_H7_FORMAL_R1_CONTRACT_DESIGN_MATERIALIZED_CI_PENDING_NO_IDENTITY_NO_RESULT_STOP_PER_AUTHORITY",
+  "next_action": "Verify non-result-bearing CI 35700049493. Then fresh Evidence Analyst review of exact contract blob/head only; no identity creation, STARTED, protected evaluation, FORMAL workflow dispatch, preserve or scoring without later explicit authority."
 }
