@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Final, Mapping
+from typing import Any, Final
 
 from .h7_formal_r1 import (
     COMPARATORS,
@@ -111,7 +112,9 @@ def assert_r2_contract(r2: Mapping[str, Any], r1: Mapping[str, Any]) -> None:
         raise FormalIntegrityError("H7 FORMAL-R2 smoke guard drift")
 
 
-def load_and_assert_r2_contract(r2_path: Path, r1_path: Path) -> tuple[dict[str, Any], dict[str, Any]]:
+def load_and_assert_r2_contract(
+    r2_path: Path, r1_path: Path
+) -> tuple[dict[str, Any], dict[str, Any]]:
     r2 = json.loads(r2_path.read_text(encoding="utf-8"))
     r1 = json.loads(r1_path.read_text(encoding="utf-8"))
     assert_r2_contract(r2, r1)

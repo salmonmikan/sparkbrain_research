@@ -4,12 +4,12 @@ import hashlib
 import json
 import os
 import platform
-import random
 import subprocess
 import sys
+from collections.abc import Mapping, Sequence
 from dataclasses import replace
 from pathlib import Path
-from typing import Any, Iterable, Mapping, Sequence
+from typing import Any
 
 import torch
 import torch.nn.functional as F
@@ -17,7 +17,6 @@ from torch import Tensor, nn
 
 from ..tasks import generate_episode
 from .h7_dev_r1 import (
-    ContractConformanceError,
     dense_recurrent_comparator_config,
     native_development_config,
     paired_top1_selected_local_node_cut,
@@ -33,7 +32,7 @@ from .h7_dev_r2 import (
     LedgerFitStep,
     assert_intervention_well_posed,
 )
-from .h7_formal_r1 import FormalIntegrityError, TargetBlindRawCollector, sha256_path
+from .h7_formal_r1 import FormalIntegrityError, TargetBlindRawCollector
 from .h7_formal_r1_preflight import RuntimeFreezeManifest, pip_freeze_digest
 from .h7_formal_r2 import (
     CALIBRATION_SEEDS,
@@ -49,7 +48,6 @@ from .h7_formal_r2 import (
     preidentity_sentinel,
 )
 from .training import calibrate_ignition, episode_examples, train_model
-
 
 PACKAGE_MANIFEST_SCHEMA = 2
 RUNTIME_MANIFEST_SCHEMA = 2
@@ -242,7 +240,9 @@ def _calibrate_fsa(comparator: Any, route_rows: Sequence[Sequence[Mapping[str, A
         {
             "counts": [
                 [repr(key), sorted(counts.items())]
-                for key, counts in sorted(comparator._counts.items(), key=lambda item: repr(item[0]))
+                for key, counts in sorted(
+                    comparator._counts.items(), key=lambda item: repr(item[0])
+                )
             ],
             "global": sorted(comparator._global_counts.items()),
         }
@@ -255,7 +255,9 @@ def _calibrate_fsa(comparator: Any, route_rows: Sequence[Sequence[Mapping[str, A
         {
             "counts": [
                 [repr(key), sorted(counts.items())]
-                for key, counts in sorted(comparator._counts.items(), key=lambda item: repr(item[0]))
+                for key, counts in sorted(
+                    comparator._counts.items(), key=lambda item: repr(item[0])
+                )
             ],
             "global": sorted(comparator._global_counts.items()),
         }
@@ -355,10 +357,13 @@ def _calibrate_ledger(
                     delay=float(row["delay"]),
                 )
                 pair = comparator.paired_logits(ledger, selected, encoded)
-                if not torch.isfinite(pair.baseline_logits).all() or not torch.isfinite(
-                    pair.cut_logits
-                ).all():
-                    raise FormalIntegrityError("formal ledger calibration emitted non-finite logits")
+                if (
+                    not torch.isfinite(pair.baseline_logits).all()
+                    or not torch.isfinite(pair.cut_logits).all()
+                ):
+                    raise FormalIntegrityError(
+                        "formal ledger calibration emitted non-finite logits"
+                    )
                 ledger = pair.baseline_ledger.detach()
     if before != _parameter_digest(comparator.head):
         raise FormalIntegrityError("formal ledger calibration mutated head weights")
@@ -543,15 +548,22 @@ def run_result_bearing(
     binding.assert_frozen_semantics()
     binding.assert_same_final_sha(actual_sha)
     assert_started_marker(started_marker, binding, actual_sha)
-    runtime_manifest = _assert_manifest_digest(runtime_manifest_path, binding.runtime_manifest_sha256)
-    package_manifest = _assert_manifest_digest(package_manifest_path, binding.package_manifest_sha256)
+    runtime_manifest = _assert_manifest_digest(
+        runtime_manifest_path, binding.runtime_manifest_sha256
+    )
+    package_manifest = _assert_manifest_digest(
+        package_manifest_path, binding.package_manifest_sha256
+    )
     if git_blob_sha(r2_path) != binding.contract_blob:
         raise FormalIntegrityError("H7 FORMAL-R2 contract Git-blob binding mismatch")
     runner_path = root / "scripts" / "run_h7_formal_r2.py"
     scorer_path = root / "src" / "sparkbrain" / "learned" / "h7_formal_r1.py"
     if git_blob_sha(runner_path) != binding.runner_blob:
         raise FormalIntegrityError("H7 FORMAL-R2 runner Git-blob binding mismatch")
-    if git_blob_sha(scorer_path) != binding.scorer_blob or git_blob_sha(scorer_path) != binding.preserver_blob:
+    if (
+        git_blob_sha(scorer_path) != binding.scorer_blob
+        or git_blob_sha(scorer_path) != binding.preserver_blob
+    ):
         raise FormalIntegrityError("H7 FORMAL-R2 scorer/preserver Git-blob binding mismatch")
 
     fit = materialize_episodes("fit")
