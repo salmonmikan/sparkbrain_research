@@ -1,84 +1,65 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T083500+0900-AUTO-EQUIV-CERT-PROTOTYPE-COMPLETED-A42D7C19",
-  "produced_at": "2026-09-22T08:35:00+09:00",
-  "producer_run_id": "utility-auto-20260922T0824+0900-equiv-cert-prototype",
-  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_ISOLATED_NON_EVIDENTIARY_TOOLING_PROTOTYPE",
-  "supersedes_generation_id": "UTILITY-20260922T082500+0900-AUTO-EQUIV-CERT-PROTOTYPE-RUNNING-A42D7C19",
+  "generation_id": "UTILITY-20260922T092800+0900-AUTO-EQUIV-PROMOTION-AUDIT-RUNNING-5C9E217A",
+  "produced_at": "2026-09-22T09:28:00+09:00",
+  "producer_run_id": "utility-auto-20260922T0927+0900-equiv-promotion-audit",
+  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_NON_EVIDENTIARY_INTEGRATION_AUDIT",
+  "supersedes_generation_id": "UTILITY-20260922T083500+0900-AUTO-EQUIV-CERT-PROTOTYPE-COMPLETED-A42D7C19",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
-  "autonomous_task_id": "AUTOUTIL-20260922T0824+0900-EQUIV-CERT-PROTOTYPE-A42D7C19",
-  "status": "COMPLETED",
+  "autonomous_task_id": "AUTOUTIL-20260922T0927+0900-EQUIV-PROMOTION-AUDIT-5C9E217A",
+  "status": "RUNNING",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "objective": "Build and locally validate one isolated candidate-agnostic fail-closed equivalence-certificate verifier prototype using only synthetic fixtures and reusable stable-main tooling concepts.",
-  "classification": "ISOLATED_GENERIC_EQUIVALENCE_CERTIFICATE_PROTOTYPE_VALIDATED_SYNTHETICALLY",
-  "finding_summary": [
-    "A small generic verifier can bind source/protocol/package/input/evaluator identities, canonical privilege/resource envelopes, independent producer attestations, and ordered trajectory/checkpoint digests without carrying any scientific authority.",
-    "The prototype emits only VALID_EQUIVALENT, VALID_NOT_EQUIVALENT, or INVALID_CONTRACT and fails closed on schema, binding, envelope, producer-independence, or canonicalization violations.",
-    "Seven synthetic local tests passed, covering exact match, semantic mismatch, binding mismatch, privilege drift, non-independent producers, unexpected scientific-claim field, and NaN/non-canonical resource data.",
-    "The isolated Utility branch is exactly two commits ahead of stable main and changes only the verifier module and synthetic test file; it is intentionally unmerged and non-authoritative."
-  ],
+  "objective": "Perform one bounded read-only promotion-readiness audit of the isolated generic equivalence-certificate prototype, focusing on repository integration risk and the exact limitations identified by Evidence Analyst R57, without modifying the prototype branch or any scientific artifact.",
   "trigger_source": {
-    "control": "CTRL-20260922T065500+0900-R30-6F4C21A8 explicitly permits a future isolated candidate-agnostic equivalence verifier prototype if bounded, independent, NON_EVIDENTIARY, and non-MAIN-critical",
-    "evidence_analyst": "EVA-20260922T075818+0900-R56-8B3D21F6: no scientific delta; MAIN/SUB R55 intentional idle; Architecture active/queued 0/0; no Utility request",
+    "control": "CTRL-20260922T085130+0900-R31-B7D4A219",
+    "evidence_analyst": "EVA-20260922T085807+0900-R57-6C4A21E8",
     "open_utility_request_selected": null,
     "assignment_pointer": "clean schema-v2 IDLE"
   },
-  "freshness_check_before_terminal_persistence": {
-    "assignment_pointer": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "evidence_analyst": "EVA-20260922T075818+0900-R56-8B3D21F6@380e31a510e00a7d593bcabf2e2da74e007e9c69",
-    "control": "CTRL-20260922T065500+0900-R30-6F4C21A8@0b05bb058d58ae50982603b8b1652ad5121c8718",
-    "main": "MAIN R55 intentional no-target idle per Analyst R56/SUB R55 reconciliation",
-    "sub": "SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7",
-    "relay": "NO_FRESH_SEPARATE_RELAY_OWNED_SCIENTIFIC_OBJECT_SURFACED",
-    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "utility_branch": "utility/equivalence-certificate-v0-1-A42D7C19@710f397b1af36c73378f6029c27ccb44242f02b9",
-    "material_supersession_detected": false
-  },
   "ownership_checks": {
-    "collision_found": false,
-    "main_critical_dependency": false,
+    "main": "MAIN-20260922T091342+0900-PRIMARY-FUNNEL21-IDLE-R57-6C4A21E8",
+    "sub": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6",
+    "relay": "NO_FRESH_CONTINUATION_AUTHORITY_SURFACED",
     "active_or_queued_research_object_touched": false,
-    "candidate_typing_touched": false
+    "collision_found": false,
+    "main_critical_dependency": false
   },
-  "integrity_checks": {
-    "workflow_dispatch": false,
-    "scheduler_mutation": false,
-    "scheduler_registry_mutation": false,
-    "scientific_workflow_or_experiment": false,
-    "research_main_evidence_control_preserve_freeze_sealed_formal_mutation": false,
-    "consumed_or_protected_identity_used_as_autonomous_task_target": false,
-    "held_out_evaluator_or_target_data_access": false,
-    "candidate_typing_or_readiness_mutation": false,
-    "preformal_or_formal_action": false,
-    "research_pr_merge": false,
-    "development_tooling_branch_created": true,
-    "hidden_main_dependency_created": false
+  "allowed_actions": [
+    "read-only inspection of stable main and utility/equivalence-certificate-v0-1-A42D7C19",
+    "static comparison against reusable stable-main verifier primitives",
+    "Utility-owned state/result persistence only",
+    "at most one bounded follow-up request if warranted"
+  ],
+  "forbidden_actions": [
+    "prototype branch mutation or merge",
+    "scientific workflow dispatch or identity consumption",
+    "research/evidence/control/preserve/formal mutation",
+    "candidate typing/readiness mutation",
+    "scheduler mutation",
+    "PRE_FORMAL or FORMAL action"
+  ],
+  "stop_condition": "Stop after one audit pass with a concrete promotion-readiness classification and minimal follow-up recommendation, or immediately on ownership/authority supersession.",
+  "generation_refs": {
+    "assignment_pointer_blob": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
+    "analyst_blob": "7833c8147444ec94ea2b86661a1519c215de2d77",
+    "main_latest_blob": "2226b687de294b608e034cae921dfb4d0e9ee47d",
+    "sub_latest_blob": "e73c70c558da81d9bc753693eb89d02f9e425d93",
+    "control_blob": "e984e5b60ebd958d182e1f831289e5c349fbee8f",
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "prototype_branch": "utility/equivalence-certificate-v0-1-A42D7C19@710f397b1af36c73378f6029c27ccb44242f02b9"
   },
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
     "preserved_fields": "NOT_APPLICABLE_NO_CURRENT_RESEARCH_CANDIDATE_TOUCHED",
     "typing_or_readiness_changed": false
   },
-  "validation": {
-    "local_pytest": "7 passed",
-    "repository_workflow_dispatched": false,
-    "ruff": "NOT_AVAILABLE_IN_LOCAL_EXECUTION_ENVIRONMENT"
-  },
   "outputs": {
-    "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0824+0900-EQUIV-CERT-PROTOTYPE-A42D7C19-0824-start.md",
-    "start_result_commit": "8499848401f6c3190eaca94fb3ca6b5a94dbdb1a",
-    "development_branch": "utility/equivalence-certificate-v0-1-A42D7C19",
-    "development_branch_head": "710f397b1af36c73378f6029c27ccb44242f02b9",
-    "prototype_module": "src/sparkbrain/equivalence_certificate.py",
-    "prototype_tests": "tests/test_equivalence_certificate.py",
-    "final_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0824+0900-EQUIV-CERT-PROTOTYPE-A42D7C19-0834.md",
-    "final_result_commit": "e486978e4050c08b0c5294d448ce916dec4cbe92"
-  },
-  "follow_up_recommendation": "No follow-up request appended. Leave the isolated branch unmerged; a later Control/Repository-Steward review may decide whether to harden/adopt the generic verifier under fresh authority. Real-object use must independently preserve prospective exact binding and matched privilege/resources.",
-  "stop_reason": "BOUNDED_ISOLATED_PROTOTYPE_AND_SYNTHETIC_TEST_PASS_COMPLETE_MAX_RUNS_1"
+    "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0927+0900-EQUIV-PROMOTION-AUDIT-5C9E217A-0927-start.md",
+    "start_result_commit": "ca842a09dbe0803cd88ddcfb33d0fb767dd18595"
+  }
 }
