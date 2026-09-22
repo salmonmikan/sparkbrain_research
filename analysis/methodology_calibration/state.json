@@ -1,42 +1,41 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-22T08:20:26+09:00",
+  "timestamp": "2026-09-22T09:22:25+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260922T082026+0900-R54-8D3F21C6",
-    "sequence": 54,
+    "generation_id": "METHCAL-20260922T092225+0900-R55-8BC6BA25",
+    "sequence": 55,
     "material_change": true,
-    "material_change_reason": "STABLE_MAIN_CONFIRMS_WRITE_CAPABLE_PUSH_TRIGGER_ISOLATION_GAP_WHILE_EXISTING_DURABLE_REFS_SELF_DISARM_HISTORICAL_REPLAY",
-    "supersedes_generation_id": "METHCAL-20260922T072156+0900-R53-7A4C21E9",
+    "material_change_reason": "UTILITY_EQUIVALENCE_CERTIFICATE_SOURCE_REVIEW_EXPOSES_SELF_ASSERTED_DISTINCTNESS_AS_INSUFFICIENT_INDEPENDENCE_PROOF_AND_REQUIRES_CALIBRATED_RAW_DERIVATION_TRUST_BOUNDARY",
+    "supersedes_generation_id": "METHCAL-20260922T082026+0900-R54-8D3F21C6",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260922T072156+0900-R53-7A4C21E9",
+      "generation_id": "METHCAL-20260922T082026+0900-R54-8D3F21C6",
       "branch": "ops/methodology-calibration-audit",
-      "commit": "6bb2229dd6700f6da7e73925a6ce915acb022fd6"
+      "commit": "c298f060393bc9c9063b97fe79f5c9364e19ac8c"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T075818+0900-R56-8B3D21F6",
+      "generation_id": "EVA-20260922T085807+0900-R57-6C4A21E8",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "9639f793a8c3d9733d46fa2d03e12ac889c5ac89",
+      "commit": "7833c8147444ec94ea2b86661a1519c215de2d77",
       "role": "CURRENT_CANONICAL_FUNNEL_AUTHORITY"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260922T065500+0900-R30-6F4C21A8",
+      "generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219",
       "branch": "ops/control-brain-handoff",
-      "commit": "fc5297050c93bb67a9b69aae24179ce7d8888c15",
+      "commit": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
       "role": "DESIGNATED_CONTROL_HISTORY_STRATEGIC_PRIOR"
     },
     "main_strategy": {
-      "generation_id": "MAIN-20260922T081455+0900-PRIMARY-FUNNEL21-IDLE-R56-8B3D21F6",
+      "generation_id": "MAIN-20260922T091342+0900-PRIMARY-FUNNEL21-IDLE-R57-6C4A21E8",
       "branch": "ops/orchestrator-run-report",
-      "commit": "27a3ffdc9103c263d3a7eb043f8a004689a17b21",
+      "commit": "5ba09156c8c065307164fe29ac46cfef859ce1de",
       "authoritative": false
     },
     "sub_strategy": {
-      "generation_id": "SUB-20260922T073500+0900-NOOP-R55INTENTIONALIDLE-5A8C21F7",
-      "branch": "ops/orchestrator-run-report",
-      "commit": "4faf5157e68ed8023cc11417f761621da4fcaeb1",
+      "generation_id": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6",
+      "commit": "303842334e4e91392b845cb1b6fd8333082ee4e0",
       "authoritative": false
     },
     "literature": {
@@ -52,9 +51,9 @@
       "role": "GOVERNANCE_CALIBRATION_INPUT_ONLY"
     },
     "utility": {
-      "generation_id": "UTILITY-20260922T073100+0900-AUTO-WORKFLOW-TRIGGER-ISOLATION-COMPLETED-6C3A91D7",
-      "branch": "ops/utility-orchestrator-requests",
-      "commit": "c6e26108edca80105afbfc6e0e906f56f85e4a33",
+      "generation_id": "UTILITY-20260922T083500+0900-AUTO-EQUIV-CERT-PROTOTYPE-COMPLETED-A42D7C19",
+      "branch": "utility/equivalence-certificate-v0-1-A42D7C19",
+      "commit": "710f397b1af36c73378f6029c27ccb44242f02b9",
       "role": "NON_EVIDENTIARY_TOOLING_CALIBRATION_INPUT_ONLY"
     },
     "independent_audit": {
@@ -75,12 +74,12 @@
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
-    "workflow_refs": {
-      "cx01_launch_bridge_blob": "6e52c908cb3ae8819c62980ae942a7404d9e602b",
-      "cx01_preserve_bridge_blob": "26b6ac9690e122987db1a148704a01d44efa18b9",
-      "cx01_dispatch_probe_blob": "8b4b7b06ece07950be21f06eb2b31cafb0e12216",
-      "consumed_control_ref": "8216d41a57e6933443d38dfc8d93f9188e423d0c",
-      "durable_preserve_ref": "6d45928827209cd763a2879494d85838df38b96f"
+    "utility_equivalence_certificate": {
+      "branch": "utility/equivalence-certificate-v0-1-A42D7C19",
+      "head": "710f397b1af36c73378f6029c27ccb44242f02b9",
+      "module_blob": "1b26481037d10f0388a8f28ffe86e004b308d6de",
+      "tests_blob": "85503de4d94c02924b08c8f0ef0e0aec7551abb8",
+      "evidentiary_status": "NON_EVIDENTIARY"
     },
     "scientific_source_of_truth": "stable main plus independently fetched annotated evidence refs; ops branches are mailboxes only"
   },
@@ -130,6 +129,9 @@
     "comparator_equivalence_verifier_independence": "TIGHTEN",
     "contract_required_equivalence_machine_verifiability": "TIGHTEN",
     "interpreter_signal_requires_verified_comparator_validity": "TIGHTEN",
+    "equivalence_certificate_self_asserted_producer_distinctness_as_independence": "TIGHTEN",
+    "raw_to_digest_derivation_assurance": "TIGHTEN",
+    "verifier_local_raw_recomputation_requirement": "CLARIFY",
     "predeclared_integrity_stop_after_contract_verification_gap": "KEEP",
     "post_outcome_integrity_adjudication_without_rerun_repair": "KEEP",
     "result_bearing_verification_failure_terminalization": "KEEP",
@@ -153,11 +155,11 @@
     "selection_ancestry_or_independent_confirmation": "KEEP"
   },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_TO_MODERATE_WATCH. Historical CX01 replay is currently self-disarmed by durable control/preserve refs, but stable main allows workflow-definition pushes to enter write-capable launch/preserve paths before those operation-level guards reject replay.",
-    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM remains zero. Workflow-trigger hardening is governance-specific and should not be converted into an additional scientific admission/readiness threshold.",
-    "duplicate_guards": "LOW. Trigger-level authority isolation and internal exact-binding/no-clobber checks are complementary defense-in-depth controls rather than duplicate scientific gates.",
-    "opportunity_cost": "CONTROLLED_BUT_WATCH. Intentional idle avoids manufactured activity; mechanism supply remains stalled, and governance hardening should stay separate from scientific candidate gates.",
-    "moving_goalpost_risk": "LOW. No historical workflow is dispatched, no consumed identity is repaired or rerun, and no scientific threshold or candidate lifecycle is changed."
+    "false_positive": "LOW_TO_MODERATE_WATCH. A certificate can currently emit VALID_EQUIVALENT when two members merely provide distinct self-asserted producer/process/nonces/PIDs plus matching supplied digests; this is useful contract-consistency tooling but insufficient proof of independent scientific production.",
+    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM remains zero. Requiring the verifier process itself to recompute every digest from raw in all architectures would be unnecessarily restrictive; equivalent assurance can come from independently trusted, immutable raw-to-digest provenance.",
+    "duplicate_guards": "LOW. Identity binding, producer provenance, raw-to-digest assurance, comparator equivalence, and scientific readiness are separate control surfaces when kept explicitly orthogonal.",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH. Intentional idle is calibrated; utility tooling progress must not be counted as candidate throughput or used to manufacture MECHANISM supply.",
+    "moving_goalpost_risk": "LOW. Candidate #32 remains terminal, no historical result is rescored/reopened, and the new finding governs only future equivalence-certificate authority."
   },
   "moving_goalposts": "LOW",
   "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; CROSS_GENERATION_EXPOSURE_OBSERVABILITY_INSUFFICIENT; FUTURE_PROTECTED_REUSE_REQUIRES_SEPARATE_PROSPECTIVE_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY_CONTROL; CLEAN_SCIENTIFIC_PASS_REQUIRES_FRESH_PROSPECTIVE_IDENTITY_WITH_CONFORMING_PIPELINE_AND_VALIDITY_ASSUMPTIONS_MATCHED_TO_THE_ACTUAL_ADAPTIVE_PROCESS",
@@ -166,13 +168,12 @@
     "same_object_system_to_mechanism_upgrade_observed": false,
     "h7_current_status": "HOLD_MECHANISM_UNRESOLVED_NONTERMINAL_NOT_QUEUED_NOT_ELIGIBLE_NOT_READY",
     "h7_current_record_changed": false,
-    "h7_historical_exploratory_artifact": "EXPLORATORY_NON_EVIDENTIARY_NO_RERUN_NO_PROMOTION",
-    "active_canonical_candidate": null,
     "candidate32_status": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED",
     "candidate32_signal_use_ceiling": "NON_EVIDENTIARY_FEASIBILITY_AND_METHOD_INFORMATION_ONLY",
-    "workflow_trigger_finding_scope": "GOVERNANCE_AND_INTEGRITY_TOOLING_ONLY_NOT_A_SCIENTIFIC_CLAIM_TYPE_OR_READINESS_GATE"
+    "equivalence_certificate_scope": "GENERIC_TOOLING_ONLY; VALID_EQUIVALENT_MEANS_MATCHING_ASSERTED_DIGESTS_UNDER_SCHEMA, NOT YET TRUSTED_INDEPENDENT_SCIENTIFIC_EQUIVALENCE",
+    "raw_derivation_calibration": "FUTURE_SCIENTIFIC_USE_REQUIRES_TRUSTED_RAW_TO_DIGEST_DERIVATION; DIRECT_RECOMPUTATION_BY_THE_FINAL_VERIFIER_IS_SUFFICIENT_BUT_NOT_UNIVERSALLY_NECESSARY_IF_AN_EQUIVALENT_IMMUTABLE_INDEPENDENT_ATTESTATION_CHAIN_EXISTS"
   },
-  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED_M13_S19_NO_VIABLE_EXECUTABLE_MECHANISM_NO_ACTIVE_ARCHITECTURE_NO_TARGET_EPISODE_CHECK19_SMALL_N",
+  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED_M13_S19_NO_VIABLE_EXECUTABLE_MECHANISM_NO_ACTIVE_ARCHITECTURE_NO_TARGET_EPISODE_CHECK20_SMALL_N",
   "funnel_observability": {
     "canonical_population": 32,
     "classified_population": 32,
@@ -204,7 +205,7 @@
     "ready_means_development_readiness_not_prior_success": true,
     "first_ready_to_preformal_empirical_status": "CONSISTENT_WITH_DEVELOPMENT_READINESS",
     "hidden_second_formal_gate": false,
-    "workflow_trigger_hardening_is_not_a_readiness_success_threshold": true,
+    "equivalence_certificate_provenance_is_not_a_ready_success_threshold": true,
     "live_scientific_four_stage_completion_observed": false,
     "programme_execution_plumbing": "TIGHTEN"
   },
@@ -217,75 +218,65 @@
   },
   "no_coherent_target_audit": {
     "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-    "canonical_check_count": 19,
+    "canonical_check_count": 20,
     "counts_as_candidate_failure": false,
     "counts_as_absence_evidence": false,
     "counts_in_scientific_selection_denominator": false,
     "escape_hatch_evidence": false,
     "classification": "KEEP"
   },
-  "workflow_trigger_isolation": {
-    "classification": "TIGHTEN",
-    "scientific_effect_observed": false,
-    "launch_bridge": {
-      "trigger": "PUSH_MAIN_ON_OWN_WORKFLOW_PATH",
-      "capabilities": ["actions:write", "contents:write"],
-      "result_if_guards_pass": "CREATE_CONSUMPTION_CONTROL_REF_AND_DISPATCH_FORMAL_WORKFLOW",
-      "current_replay_guard": "CONTROL_REF_ALREADY_EXISTS"
-    },
-    "preserve_bridge": {
-      "trigger": "PUSH_MAIN_ON_OWN_WORKFLOW_PATH",
-      "capabilities": ["contents:write"],
-      "result_if_guards_pass": "CREATE_DURABLE_PRESERVATION_REF",
-      "current_replay_guard": "PRESERVE_REF_ALREADY_EXISTS"
-    },
-    "dispatch_probe": {
-      "trigger": "PUSH_MAIN_ON_PROBE_WORKFLOW_PATHS",
-      "capabilities": ["actions:write"],
-      "scientific_effect": "NONE_HARMLESS_PROBE"
-    },
-    "calibration": "OPERATION_LEVEL_GUARDS_KEEP; TRIGGER_LEVEL_ENTRY_TIGHTEN; WORKFLOW_DEFINITION_EDIT_MUST_NOT_IMPLICITLY_CREATE_SCIENTIFIC_EXECUTION_AUTHORITY"
-  },
-  "general_calibration_dimensions": {
-    "gate_drift": "LOW; NEW_TRIGGER_ISOLATION_FINDING_IS_GOVERNANCE_SPECIFIC_AND_DOES_NOT_CHANGE_SCIENTIFIC_THRESHOLDS",
-    "justification_trace": "STRONG; STABLE_MAIN_WORKFLOW_FILES_AND_EXISTING_CONTROL_PRESERVE_REFS_WERE_INDEPENDENTLY_REFETCHED_BEFORE OPS_SUMMARIES_WERE_USED",
-    "false_positive_control": "IMPROVES_IF_TRIGGER_ENTRY_IS_SEPARATED_FROM_WRITE_CAPABILITY_WHILE_RETAINING_ONE_WAY_INTERNAL_GUARDS",
-    "false_negative_risk": "MODERATE_WATCH_FROM_MECHANISM_SUPPLY_STALL_NOT_FROM_READY_OVERCONSTRAINT",
-    "duplicate_guards": "LOW; TRIGGER_ISOLATION_AND_NO_CLOBBER_ARE_DEFENSE_IN_DEPTH",
-    "moving_goalposts": "LOW_PROSPECTIVE_GOVERNANCE_ONLY",
-    "pass_reachability": "REALISTIC_CONDITIONAL_BUT_NO_CURRENT_EXECUTABLE_CANDIDATE",
-    "comparator_calibration": "UNCHANGED; CLAIM_SPECIFIC_MATCHED_PRIVILEGE_DIRECTION_GOOD_GENERIC_VERIFIER_ENFORCEMENT_STILL_TIGHTEN",
-    "signal_before_reduction": "TIGHTEN_UNTIL_VERIFIER_CERTIFICATE_PRECEDES_INTERPRETATION",
-    "claim_type_separation": "UNCHANGED_AND_CALIBRATED; GOVERNANCE_TRIGGER_FINDING_NOT_PROMOTED_TO_SCIENTIFIC_GATE",
-    "research_worthiness_vs_novelty": "UNCHANGED",
-    "external_calibration": "NO_NEW_EXTERNAL_SCIENCE_REQUIRED_FOR_THIS_REPOSITORY_GOVERNANCE_FINDING",
-    "opportunity_cost": "CONTROLLED_BY_INTENTIONAL_IDLE; KEEP_TOOLING_HARDENING_OFF_SCIENTIFIC_CRITICAL_PATH_UNLESS_IT_PROTECTS_ONE_WAY_INTEGRITY",
-    "mechanism_supply_health": "STALLED_BUT_QUALITY_FLOOR_HEALTHY",
-    "funnel_observability": "COMPLETE_32_OF_32",
-    "preformal_gate_calibration": "CALIBRATED_READY_IS_DEVELOPMENT_READINESS_HIDDEN_SECOND_FORMAL_GATE_FALSE"
+  "equivalence_certificate_calibration": {
+    "prototype_head": "710f397b1af36c73378f6029c27ccb44242f02b9",
+    "current_status": "USEFUL_NON_EVIDENTIARY_CONTRACT_CONSISTENCY_PROTOTYPE_NOT_SCIENTIFIC_EQUIVALENCE_AUTHORITY",
+    "positive_properties": [
+      "fail_closed_top_level_schema",
+      "source_protocol_package_input_evaluator_binding_fields",
+      "privilege_and_resource_envelope_hash_binding",
+      "three_verdict_surface",
+      "ordered_trajectory_and_checkpoint_digest_comparison"
+    ],
+    "remaining_defects": [
+      "producer/process/nonce/PID distinctness is self-asserted and does not prove independently trusted producer provenance",
+      "challenge nonce is not bound to an external issuance authority",
+      "trajectory/checkpoint digests are accepted as supplied attestations rather than derived from independently preserved raw streams inside a trusted provenance chain"
+    ],
+    "calibration": "TIGHTEN_PROVENANCE_AND_DERIVATION_ASSURANCE_BUT_CLARIFY_THAT_FINAL_VERIFIER_LOCAL_RECOMPUTATION_IS_NOT_THE_ONLY_ACCEPTABLE_ARCHITECTURE"
   },
   "prospective_recommendations": [
-    "Do not alter global admission, novelty, comparator, reduction, HOLD, or READY thresholds.",
-    "Keep all historical CX01 consumed/control/preserve/evidence refs and workflows untouched; never validate hardening by dispatching a historical scientific workflow.",
-    "For future write-capable scientific launch/preserve/evidence paths, prefer explicit manual or one-shot prospective authority, or require a machine-readable reviewed exception before automatic triggers can coexist with actions/contents write or workflow-dispatch capability.",
-    "Retain exact identity binding, branch-absence/no-clobber checks, and immutable-ref checks as defense in depth even after trigger-level isolation improves.",
-    "If implemented, use a fresh non-scientific governance/tooling path for a candidate-agnostic static workflow-policy checker."
+    "Do not change global admission, novelty, reduction, comparator, HOLD, or READY thresholds.",
+    "Keep candidate #32 terminal and non-rescuable; do not use the Utility prototype to reopen, rescore, reinterpret, or rerun it.",
+    "If the certificate is promoted as generic tooling, describe current producer checks as asserted distinctness, not trusted independence, unless an external attestation/challenge authority is prospectively bound.",
+    "For future scientific comparator-equivalence use, require immutable raw-to-digest derivation assurance and trusted producer provenance before VALID_EQUIVALENT can authorize scientific interpretation.",
+    "Allow either direct verifier recomputation from immutable raw or an equivalently strong independently trusted attestation chain; do not make one implementation architecture a universal scientific gate.",
+    "Continue intentional idle while no coherent executable MECHANISM target exists; no-target check counts remain liveness-only."
   ],
-  "utility_request": null,
-  "hard_floor_confirmation": {
-    "status": "CONFIRMED_DO_NOT_RELAX",
-    "rerun_or_retune_consumed_identity": false,
-    "prospective_frozen_protocol_relaxed": false,
-    "raw_before_score_relaxed": false,
-    "preserve_before_read_relaxed": false,
-    "identity_source_package_runtime_input_binding_relaxed": false,
-    "immutable_evidence_relaxed": false,
-    "evaluator_target_leakage_allowed": false,
-    "silent_post_outcome_repair_allowed": false
+  "utility_request": {
+    "created": false,
+    "reason": "Existing isolated prototype plus fresh Analyst source review provide higher-information calibration than another bounded request; no live scientific rollout should be triggered."
   },
+  "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": "HIGH",
   "questions_for_control_analyst": [
-    "Should future write-capable scientific launch/preserve/dispatch workflows require explicit manual or one-shot authority by default, with automatic push/PR triggers permitted only through a prospective machine-readable exception?",
-    "Should workflow registration or preflight include a candidate-agnostic static check that rejects automatic triggers combined with elevated write/dispatch capability and scientific control/preserve/evidence mutation semantics?"
-  ]
+    "If the equivalence certificate is integrated into main, will its schema distinguish self-asserted producer distinctness from externally trusted independence?",
+    "What prospective provenance mechanism will bind ordered trajectory/checkpoint digests to immutable raw material before a certificate can become scientific authority?",
+    "Can the scientific contract accept an independently trusted raw-to-digest attestation chain as equivalent assurance to verifier-local recomputation without weakening fail-closed behavior?"
+  ],
+  "mandatory_v21_answers": {
+    "1_claim_ceiling_current_object_only": "YES_KEEP",
+    "2_same_object_system_to_mechanism_upgrade": "NO_OBSERVED_KEEP",
+    "3_preformal_eligible_distinct_from_ready": "YES_KEEP",
+    "4_ready_is_development_readiness": "YES_KEEP_HIDDEN_SECOND_FORMAL_GATE_FALSE",
+    "5_hold_multidimensional_orthogonality": "YES_KEEP",
+    "6_system_priority_exception_prospective": "NO_CURRENT_USE_KEEP_FIRST_GENUINE_CASE_INSUFFICIENT_EVIDENCE",
+    "7_no_coherent_target_escape_hatch": "NO_ESCAPE_HATCH_EVIDENCE_KEEP",
+    "8_theory_backward_mechanism_level": "NO_NEW_SELECTION_SYSTEM_LAUNDERING_NOT_OBSERVED_KEEP",
+    "9_system_retains_value": "YES_KEEP",
+    "10_preformal_pass_reachable": "YES_CONDITIONAL",
+    "11_metrics_gated_by_classification_completeness": "YES_32_OF_32_KEEP",
+    "12_first_ready_to_preformal_development_readiness": "YES_KEEP"
+  },
+  "external_calibration": {
+    "new_external_source_required": false,
+    "finding": "This generation calibrates an implementation/evidence-trust boundary from authoritative source inspection; prior external causal/adaptive calibration remains unchanged."
+  }
 }
