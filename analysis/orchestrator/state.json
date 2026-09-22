@@ -24,13 +24,7 @@
     "h7_cycle11_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
     "h7_cycle10_runtime_lock_branch": "research/main-h7-formal-r4-runtime-lock-r81-cycle10",
     "h7_cycle10_runtime_lock_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
-    "evidence_refs": [
-      "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-      "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-      "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "185b741e69ea8a0ce0d076153d36e9296a748765",
-      "e4c4e6428d8ef9e09e92cae231041de0788162e2"
-    ],
+    "evidence_refs": ["4d6c0bd9a6c06c17352941d3fa730502e72b8540","82b88f3e2ad524fed8b72300dcba46053c1f2c7e","e7d99cc806206ac27ced225d4779c9fc5bb67ff5","185b741e69ea8a0ce0d076153d36e9296a748765","e4c4e6428d8ef9e09e92cae231041de0788162e2"],
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
@@ -42,185 +36,100 @@
   },
   "material_changes": [
     "Control R38 activated H7 Cycle11 while preserving fresh FORMAL authority at zero.",
-    "Dedicated Cycle11 source-executor branch exists but remains exactly at the Cycle10 f84ba35e head; no source/executor implementation delta is observed.",
+    "The dedicated Cycle11 source-executor branch exists but remains exactly at the Cycle10 f84ba35e head; no protected-executor/source implementation delta is observed.",
     "Methodology R72 adds an explicit clean locked-runtime functional realization gate before one-way identity; static lock hashes plus editable-development CI are insufficient.",
     "SUB R86 completed mandatory pre-NO-OP scan and retained no autonomous candidate.",
-    "PF-R1 preservation remains blocked by Utility machine-authority divergence."
+    "PF-R1 preservation remains blocked by Utility request-level machine-authority divergence."
   ],
   "four_layer_funnel": {
-    "DISCOVERY": {"mechanism_active": 0, "mechanism_queued": 0, "system_active": 0, "system_queued": 0, "state": "OPEN_NO_COHERENT_BOUNDED_AUTONOMOUS_TARGET"},
-    "ARCHITECTURE_STUDY": {"mechanism_active": 0, "mechanism_queued": 0, "system_active": 0, "system_queued": 0, "state": "EMPTY_CANDIDATE33_CURRENT_OBJECT_TERMINAL"},
-    "PRE_FORMAL": {"eligible": 1, "ready": 1, "state": "H7_DEVELOPMENT_LINEAGE_ONLY_READY_IS_NOT_FORMAL_AUTHORITY"},
-    "FORMAL": {"fresh_one_way_authority": 0, "state": "H7_R4_CYCLE11_PREIDENTITY_IMPLEMENTATION_AND_LOCKED_RUNTIME_REALIZATION_ONLY"}
+    "DISCOVERY": {"mechanism_active":0,"mechanism_queued":0,"system_active":0,"system_queued":0,"state":"OPEN_NO_COHERENT_BOUNDED_AUTONOMOUS_TARGET"},
+    "ARCHITECTURE_STUDY": {"mechanism_active":0,"mechanism_queued":0,"system_active":0,"system_queued":0,"state":"EMPTY_CANDIDATE33_CURRENT_OBJECT_TERMINAL"},
+    "PRE_FORMAL": {"eligible":1,"ready":1,"state":"H7_DEVELOPMENT_LINEAGE_ONLY_READY_IS_NOT_FORMAL_AUTHORITY"},
+    "FORMAL": {"fresh_one_way_authority":0,"state":"H7_R4_CYCLE11_PREIDENTITY_IMPLEMENTATION_AND_LOCKED_RUNTIME_REALIZATION_ONLY"}
   },
   "funnel_metrics": {
-    "canonical_candidates": 33,
-    "mechanism": 13,
-    "system": 20,
-    "active": 1,
-    "nonterminal_hold": 0,
-    "terminal_for_current_object": 32,
-    "architecture_active_mechanism": 0,
-    "architecture_active_system": 0,
-    "architecture_queued_mechanism": 0,
-    "architecture_queued_system": 0,
-    "preformal_eligible": 1,
-    "preformal_ready": 1,
-    "viable_mechanism": 1,
-    "fresh_formal_authority": 0,
-    "recent_completed_main_endpoint_proxy_system": 11,
-    "recent_completed_main_endpoint_proxy_mechanism": 9,
-    "system_over_mechanism_exceptions": 0,
-    "classification_complete": "33/33",
-    "development_phase_counts": {"OPEN_DEVELOPMENT": 2, "RESULT_EXPOSED_DEVELOPMENT": 31, "CONSUMED_ONE_WAY_CANONICAL": 0},
-    "official_consumed_identities": 7,
-    "fresh_successor_generated_this_generation": 0,
-    "fresh_successor_admitted_this_generation": 0,
-    "rolling_theory_backward_actual_selections": "1/3",
-    "shadow_standby_queue_size": 0
+    "canonical_candidates":33,"mechanism":13,"system":20,"active":1,"nonterminal_hold":0,"terminal_for_current_object":32,
+    "architecture_active_mechanism":0,"architecture_active_system":0,"architecture_queued_mechanism":0,"architecture_queued_system":0,
+    "preformal_eligible":1,"preformal_ready":1,"viable_mechanism":1,"fresh_formal_authority":0,
+    "recent_completed_main_endpoint_proxy_system":11,"recent_completed_main_endpoint_proxy_mechanism":9,
+    "system_over_mechanism_exceptions":0,"classification_complete":"33/33",
+    "development_phase_counts":{"OPEN_DEVELOPMENT":2,"RESULT_EXPOSED_DEVELOPMENT":31,"CONSUMED_ONE_WAY_CANONICAL":0},
+    "official_consumed_identities":7,"fresh_successor_generated_this_generation":0,"fresh_successor_admitted_this_generation":0,
+    "rolling_theory_backward_actual_selections":"1/3","shadow_standby_queue_size":0
   },
-  "canonical_inheritance": "Candidates 1-6 and 8-33 inherit all mandatory Funnel v2.1 fields unchanged from R85 except explicit current-state statements below. Candidate 33 remains SYSTEM/RESULT_EXPOSED/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED. Candidate 7 is overridden below.",
+  "canonical_inheritance": "Candidates 1-6 and 8-33 inherit all mandatory Funnel v2.1 fields unchanged from R85 except explicit current-state statements. Candidate 33 remains SYSTEM/RESULT_EXPOSED_DEVELOPMENT/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED. Candidate 7 is overridden below.",
   "canonical_overrides": {
     "7": {
-      "id": "CAND-H7-RESPONSIBILITY",
-      "question": "Does the frozen H7 dynamic TOP1 intervention isolate a controlled mechanism-level responsibility effect distinct from the fixed ordinary comparator panel?",
-      "phenomenon": "H7 controlled intervention responsibility",
-      "target_layer": "FORMAL",
-      "claim_ceiling": "MECHANISM",
-      "preformal_eligible": true,
-      "preformal_readiness": "READY",
-      "hold_class": null,
-      "hold_reason": null,
-      "terminal_state": "ACTIVE",
-      "queue_state": "ACTIVE",
-      "system_priority_exception": {"used": false},
-      "candidate_source": "CONTROL_BRAIN_PRIORITY",
-      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
-      "cycle_count": 11,
-      "cycle_status": "AUTHORIZED_IN_PROGRESS_NOT_COMPLETED",
-      "information_gain_rationale": "Determine whether the already-frozen protected executor can be materialized, functionally realized in the exact committed locked scientific runtime, and externally bound to an exact post-implementation claim-capable source plus runner/scorer/preserver blobs without changing scientific semantics.",
-      "promotion_rejection_reassess_condition": "Continue only if frozen semantics and resource contract can be literally realized on synthetic/non-protected surfaces. Any science-affecting change requires versioned reassessment. Even complete preidentity closure must STOP for a fresh Analyst one-way decision before FORMAL identity."
+      "id":"CAND-H7-RESPONSIBILITY",
+      "question":"Does the frozen H7 dynamic TOP1 intervention isolate a controlled mechanism-level responsibility effect distinct from the fixed ordinary comparator panel?",
+      "phenomenon":"H7 controlled intervention responsibility",
+      "target_layer":"FORMAL","claim_ceiling":"MECHANISM","preformal_eligible":true,"preformal_readiness":"READY",
+      "hold_class":null,"hold_reason":null,"terminal_state":"ACTIVE","queue_state":"ACTIVE","system_priority_exception":{"used":false},
+      "candidate_source":"CONTROL_BRAIN_PRIORITY","development_phase":"RESULT_EXPOSED_DEVELOPMENT",
+      "development_revision":"H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
+      "cycle_count":11,"cycle_status":"AUTHORIZED_IN_PROGRESS_NOT_COMPLETED",
+      "information_gain_rationale":"Exact protected executor realization, exact final source/component binding, and clean functional realization under the already-committed scientific lock before any one-way identity.",
+      "promotion_rejection_reassess_condition":"Continue only if frozen semantics and resource contract can be literally realized on synthetic/non-protected surfaces; any science-affecting change requires versioned reassessment; complete preidentity closure still STOPs for fresh Analyst one-way review."
     }
   },
-  "system_terminal_successor_accounting": {
-    "assessed": 20,
-    "realized_fresh_system_successor": 1,
-    "realized_relation": "#32 -> #33",
-    "unrealized_fresh_system_potentials": 16,
-    "fresh_mechanism_successors": 0,
-    "none": 3,
-    "none_candidates": [14, 27, 28]
-  },
+  "system_terminal_successor_accounting": {"assessed":20,"realized_fresh_system_successor":1,"realized_relation":"#32 -> #33","unrealized_fresh_system_potentials":16,"fresh_mechanism_successors":0,"none":3,"none_candidates":[14,27,28]},
   "h7": {
-    "exact_decision": "GO_H7_FORMAL_R4_EXACT_CLAIM_CAPABLE_SOURCE_PROTECTED_EXECUTOR_COMPONENT_BINDING_AND_LOCKED_RUNTIME_FUNCTIONAL_REALIZATION_CYCLE11_PREIDENTITY_ONLY_STOP_BEFORE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
-    "fresh_formal_authority": 0,
-    "cycle11_branch_exists": true,
-    "cycle11_branch_has_source_delta_after_r85": false,
-    "cycle11_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
-    "protected_r3_r4_result_executor_materialized": false,
-    "final_claim_capable_source_bound": false,
-    "clean_locked_runtime_functional_realization_proven": false,
-    "scientific_runtime_lock_sha256": "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583",
-    "runtime_manifest_sha256": "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",
-    "versions_sha256": "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575",
-    "locked_package_count": 31,
-    "forbidden_before_fresh_analyst_authority": ["evaluation commitment", "FORMAL identity", "STARTED", "evaluation-seed reveal", "protected evaluation", "result-bearing workflow", "official scoring", "scientific preserve/evidence creation"]
+    "exact_decision":"GO_H7_FORMAL_R4_EXACT_CLAIM_CAPABLE_SOURCE_PROTECTED_EXECUTOR_COMPONENT_BINDING_AND_LOCKED_RUNTIME_FUNCTIONAL_REALIZATION_CYCLE11_PREIDENTITY_ONLY_STOP_BEFORE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
+    "fresh_formal_authority":0,"cycle11_branch_exists":true,"cycle11_branch_has_source_delta_after_r85":false,
+    "cycle11_head":"f84ba35e17c24fcdcfa6920ef23972d4a81567a5","protected_r3_r4_result_executor_materialized":false,
+    "final_claim_capable_source_bound":false,"clean_locked_runtime_functional_realization_proven":false,
+    "scientific_runtime_lock_sha256":"d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583",
+    "runtime_manifest_sha256":"cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",
+    "versions_sha256":"91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575","locked_package_count":31,
+    "forbidden_before_fresh_analyst_authority":["evaluation commitment","FORMAL identity","STARTED","evaluation-seed reveal","protected evaluation","result-bearing workflow","official scoring","scientific preserve/evidence creation"]
   },
-  "main": {
-    "latest_durable_completed_endpoint": "CYCLE10_R4_RUNTIME_PACKAGE_PREIDENTITY_CLOSURE",
-    "cycle11_lease_status": "RUNNING",
-    "cycle11_lease_id": "lease-main-e884beda",
-    "allocation": "H7_FORMAL_R4_EXACT_CLAIM_CAPABLE_SOURCE_PROTECTED_EXECUTOR_COMPONENT_BINDING_AND_LOCKED_RUNTIME_FUNCTIONAL_REALIZATION_CYCLE11_PREIDENTITY_ONLY",
-    "control_plane_metadata_note": "MAIN lease mailbox still carries the older runtime-lock branch name; independent branch truth shows a dedicated source-executor branch at the same exact f84ba35e head. Treat the mailbox field as stale metadata, not scientific source truth."
-  },
-  "sub": {
-    "generation": "SUB-20260923T044321+0900-NO_OP_R86",
-    "disposition": "NO_COHERENT_MECHANISM_TARGET",
-    "mandatory_pre_noop_scan_performed": true,
-    "retained_candidates": 0,
-    "new_candidate_created": false,
-    "rolling_theory_backward_actual_selections": "1/3",
-    "denominator_note": "scan-only/no-op work excluded"
+  "main_sub_allocation": {
+    "main_lane":"H7_FORMAL_R4_EXACT_CLAIM_CAPABLE_SOURCE_PROTECTED_EXECUTOR_COMPONENT_BINDING_AND_LOCKED_RUNTIME_FUNCTIONAL_REALIZATION_CYCLE11_PREIDENTITY_ONLY",
+    "main_cycle11_lease_status":"RUNNING","main_cycle11_lease_id":"lease-main-e884beda",
+    "main_latest_durable_completed_endpoint":"CYCLE10_R4_RUNTIME_PACKAGE_PREIDENTITY_CLOSURE",
+    "main_control_plane_metadata_note":"Lease mailbox still carries the older runtime-lock branch name; independent branch truth shows dedicated source-executor branch at the same exact f84ba35e head. Treat as stale mailbox metadata, not scientific truth.",
+    "sub_lane":"INDEPENDENT_NON_EVIDENTIARY_QUESTION_FORMATION_THEORY_BACKWARD_SUPPLY_SCAN_ONLY_WHEN_FRESH_INFORMATION_GAIN_EXISTS",
+    "sub_generation":"SUB-20260923T044321+0900-NO_OP_R86","sub_disposition":"NO_COHERENT_MECHANISM_TARGET","sub_retained_candidates":0
   },
   "methodology": {
-    "generation": "METHCAL-20260923T042037+0900-R72-21A0646D",
-    "material_change": true,
-    "classification": "MIXED_CALIBRATION",
-    "key_tightening": "Static durable lock/manifest binding plus editable-development CI do not prove exact scientific-runtime functional realization.",
-    "required_preidentity_gate": [
-      "materialize already-frozen protected executor semantics",
-      "realize committed scientific-runtime lock in a clean isolated non-result environment without resolver/materializer shopping",
-      "do not use editable scientific installation as proof of protected runtime equivalence",
-      "assert already-frozen runtime/resource conditions in that environment",
-      "run only synthetic/non-protected integrity checks",
-      "bind final exact claim-capable source and runner/scorer/preserver blobs externally",
-      "STOP for fresh Analyst review"
-    ]
+    "generation":"METHCAL-20260923T042037+0900-R72-21A0646D","material_change":true,"classification":"MIXED_CALIBRATION",
+    "key_tightening":"Static durable lock/manifest binding plus editable-development CI do not prove exact scientific-runtime functional realization.",
+    "required_preidentity_gate":["materialize already-frozen protected executor semantics","realize committed scientific-runtime lock in clean isolated non-result environment without resolver/materializer shopping","do not use editable scientific installation as proof of protected runtime equivalence","assert already-frozen runtime/resource conditions","run only synthetic/non-protected integrity checks","bind final exact claim-capable source and runner/scorer/preserver blobs externally","STOP for fresh Analyst review"]
   },
-  "literature": {
-    "generation": "LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91",
-    "role": "prospective claim/reduction discipline only",
-    "current_r4_scientific_contract_change_authorized": false
-  },
-  "independent_audit": {
-    "generation": "INDEPENDENT-AUDIT-20260922-R7",
-    "live_integrity_floor": "prediction-only raw -> immutable preserve -> target-side scorer",
-    "historical_h7_formal_evidence_exists": false
-  },
+  "literature": {"generation":"LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91","role":"PROSPECTIVE_CLAIM_AND_REDUCTION_DISCIPLINE_ONLY","current_r4_scientific_contract_change_authorized":false},
+  "independent_audit": {"generation":"INDEPENDENT-AUDIT-20260922-R7","live_integrity_floor":"PREDICTION_ONLY_RAW_THEN_IMMUTABLE_PRESERVE_THEN_TARGET_SIDE_SCORER","historical_h7_formal_evidence_exists":false},
   "utility": {
-    "pfr1_request_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
-    "status": "HOLD_PF_R1_PRESERVATION_EXECUTION_PENDING_CONTROL_SCHEMA_V2_UTILITY_ASSIGNMENT_AND_MATCHING_DECISION",
-    "assignment_pointer_clean_idle": true,
-    "matching_assignment_exists": false,
-    "matching_control_decision_exists": false,
-    "request_file_status": "PROPOSED_NOT_APPROVED",
-    "preservation_executed": false,
-    "duplicate_request_created": false,
-    "rerun_reconstruction_rescore_allowed": false,
-    "artifact_workflow_run_id": 35695286240,
-    "artifact_id": 10680620448,
-    "archive_sha256": "db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d"
+    "pfr1_request_id":"UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+    "status":"HOLD_PF_R1_PRESERVATION_EXECUTION_PENDING_CONTROL_SCHEMA_V2_UTILITY_ASSIGNMENT_AND_MATCHING_DECISION",
+    "assignment_pointer_clean_idle":true,"matching_assignment_exists":false,"matching_control_decision_exists":false,
+    "request_file_status":"PROPOSED_NOT_APPROVED","preservation_executed":false,"duplicate_request_created":false,
+    "rerun_reconstruction_rescore_allowed":false,"artifact_workflow_run_id":35695286240,"artifact_id":10680620448,
+    "archive_sha256":"db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d"
   },
-  "phenomenon_first": {
-    "mode": "PREFETCH_SHADOW",
-    "last_scan_generation": "EVA-20260923T035826+0900-R85-1C7E4A92",
-    "last_scan_reason": "material Literature R33 interpretation/reduction delta",
-    "scan_this_generation": false,
-    "scan_skip_reason": "LOW_RATE_THROTTLE_NO_NEW_INDEPENDENT_PHENOMENON_SURFACE",
-    "scans_skipped_due_to_low_rate_throttle_increment": 1,
-    "standby_queue_size": 0,
-    "proposals_generated_this_generation": 0,
-    "proposals_retained_this_generation": 0,
-    "proposals_retired_this_generation": 0,
-    "later_admissions_this_generation": 0,
-    "shadow_standby_queue": []
+  "phenomenon_shadow_metrics": {
+    "mode":"PREFETCH_SHADOW",
+    "last_full_scan_generation":"EVA-20260923T035826+0900-R85-1C7E4A92",
+    "last_scan_reason":"EARLY_MATERIAL_LITERATURE_R33_REALIZATION_RUNTIME_DELTA_ZERO_RETAINED",
+    "r86_scan":"SKIPPED_LOW_RATE_THROTTLE_NO_NEW_INDEPENDENT_PHENOMENON_SURFACE",
+    "scans_skipped_due_to_low_rate_throttle_this_generation":1,
+    "proposals_generated_cumulative":7,"current_retained":0,"retired_cumulative":1,
+    "rejected_duplicate_or_rescue":5,"rejected_abstract_or_unfalsifiable":0,"rejected_obvious_reduction_or_no_residual_value":3,
+    "rejected_unreachable":1,"rejected_active_candidate_dependent":1,"rejected_ownership_collision":1,
+    "later_admissions":1,"executed_shadow_origin_candidates":1,"standby_queue_size":0,
+    "executed_shadow_origin_information_gain_summary":"One shadow-origin candidate reached execution historically; no new shadow-origin execution or disposition change in R86."
   },
-  "consumed_identities": [
-    "c19-external-v2-official-v4",
-    "c19-r1-revision-authority-official-v1",
-    "c19-r1-revision-authority-official-v2",
-    "c19-r2-fsa-state-tracker-official-v1",
-    "h5-event-routing-work-reduction-official-v1",
-    "ni01-no-ignition-selective-prediction-official-v1",
-    "pd01-long-history-fading-memory-official-v1"
-  ],
+  "shadow_standby_queue": [],
+  "discovery_theory_backward": {"rolling_actual_selections":"1/3","latest_sub_state":"NO_COHERENT_MECHANISM_TARGET","new_canonical_autonomous_selection_this_generation":false,"scan_only_work_denominator_excluded":true},
+  "consumed_identities": ["c19-external-v2-official-v4","c19-r1-revision-authority-official-v1","c19-r1-revision-authority-official-v2","c19-r2-fsa-state-tracker-official-v1","h5-event-routing-work-reduction-official-v1","ni01-no-ignition-selective-prediction-official-v1","pd01-long-history-fading-memory-official-v1"],
   "new_identity_consumption": 0,
-  "blockers": [
-    "protected H7 R3/R4 result executor not yet materialized at the independently fetched Cycle11 head",
-    "exact final claim-capable source and final runner/scorer/preserver binding not yet closed",
-    "clean functional realization of the committed exact scientific runtime lock not yet demonstrated",
-    "PF-R1 schema-v2 Utility authority and exact-byte preservation unresolved",
-    "fresh FORMAL one-way Analyst authorization absent",
-    "repository rulesets absent"
-  ],
+  "blockers": ["protected H7 R3/R4 result executor not yet materialized at independently fetched Cycle11 head","exact final claim-capable source and final runner/scorer/preserver binding not yet closed","clean functional realization of committed exact scientific runtime lock not yet demonstrated","PF-R1 schema-v2 Utility authority and exact-byte preservation unresolved","fresh FORMAL one-way Analyst authorization absent","repository rulesets absent"],
   "top3": [
-    {"rank": 1, "action": "Materialize frozen protected executor; realize it in exact committed locked runtime; externally bind final source/runner/scorer/preserver", "claim_ceiling": "MECHANISM", "development_phase": "RESULT_EXPOSED_DEVELOPMENT", "action_type": "CYCLE11_IMPLEMENTATION_INTEGRITY_CLOSURE", "decision": "GO_PREIDENTITY_ONLY"},
-    {"rank": 2, "action": "Close PF-R1 existing-request machine authority for exact-byte NON_EVIDENTIARY preservation", "claim_ceiling": "PROVENANCE_ONLY", "development_phase": "RESULT_EXPOSED_PROVENANCE", "action_type": "AUTHORITY_CLOSURE", "decision": "HOLD_EXECUTION"},
-    {"rank": 3, "action": "Evaluation commitment / FORMAL identity / STARTED / seed reveal / protected evaluation / result-bearing execution", "claim_ceiling": "MECHANISM", "development_phase": "FUTURE_CONSUMED_ONE_WAY", "action_type": "ONE_WAY_FORMAL", "decision": "STOP"}
+    {"rank":1,"action":"Materialize frozen protected executor; realize it in exact committed locked runtime; externally bind final source/runner/scorer/preserver","claim_ceiling":"MECHANISM","development_phase":"RESULT_EXPOSED_DEVELOPMENT","action_type":"CYCLE11_IMPLEMENTATION_INTEGRITY_CLOSURE","decision":"GO_PREIDENTITY_ONLY"},
+    {"rank":2,"action":"Close PF-R1 existing-request machine authority for exact-byte NON_EVIDENTIARY preservation","claim_ceiling":"PROVENANCE_ONLY","development_phase":"RESULT_EXPOSED_PROVENANCE","action_type":"AUTHORITY_CLOSURE","decision":"HOLD_EXECUTION"},
+    {"rank":3,"action":"Evaluation commitment / FORMAL identity / STARTED / seed reveal / protected evaluation / result-bearing execution","claim_ceiling":"MECHANISM","development_phase":"FUTURE_CONSUMED_ONE_WAY","action_type":"ONE_WAY_FORMAL","decision":"STOP"}
   ],
   "prospective_contingency_tree": [
-    "If frozen protected executor can be implemented without scientific-semantic change, continue only on synthetic/non-protected surfaces.",
+    "Frozen protected executor implementable without scientific-semantic change -> continue synthetic/non-protected only.",
     "Realize committed lock in one clean isolated non-result environment without resolver/materializer shopping or editable scientific install; assert frozen runtime/resource conditions and synthetic integrity path.",
     "Import/path/serialization/logging/hash plumbing only with unchanged intended science/resource behavior -> SCIENCE_INVARIANT_REPAIR same R4.",
     "Any scientific package/resource meaning, metric/scorer meaning, threshold/tolerance, comparator, seed/exclusion, intervention, claim/estimand, world/sample, bootstrap/decision, hypothesis/falsifier/success-criteria change -> STOP and versioned SCIENCE_AFFECTING reassessment.",
@@ -228,15 +137,5 @@
     "PF-R1 unresolved -> STOP before identity.",
     "All preidentity green -> still STOP and require fresh Analyst one-way authorization."
   ],
-  "actions_this_generation": {
-    "scientific_experiment_execution": 0,
-    "result_bearing_workflow_dispatch": 0,
-    "formal_identity_consumption": 0,
-    "research_pr_merge": 0,
-    "immutable_evidence_control_preserve_mutation": 0,
-    "scheduler_mutation": 0,
-    "force_push": 0,
-    "historical_pass_fail_rewrite": 0,
-    "utility_dispatch": 0
-  }
+  "actions_this_generation": {"scientific_experiment_execution":0,"result_bearing_workflow_dispatch":0,"formal_identity_consumption":0,"research_pr_merge":0,"immutable_evidence_control_preserve_mutation":0,"scheduler_mutation":0,"force_push":0,"historical_pass_fail_rewrite":0,"utility_dispatch":0}
 }
