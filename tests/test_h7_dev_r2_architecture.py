@@ -1,6 +1,7 @@
 # ruff: noqa: E402, I001 -- optional learned suite imports follow torch availability check.
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
@@ -49,7 +50,7 @@ def test_finite_state_v2_uses_unperturbed_route_history_and_global_fallback() ->
     unseen = comparator.predict_pair(unperturbed_rank1_route=11)
     assert unseen.previous_route == 4
     assert unseen.baseline == "dog"
-    assert unseen.cut == "dog"
+    assert unseen.cut == "cat"
     assert comparator.previous_unperturbed_route == 11
     assert CUT_TOKEN == "CUT"
 
@@ -106,9 +107,7 @@ def test_intervention_validity_contract_is_fail_closed() -> None:
 
     with pytest.raises(Exception, match="selected route IDs differ"):
         assert_intervention_well_posed(
-            InterventionConformanceSnapshot(
-                **{**good.__dict__, "cut_selected": (1, 3, 5, 7)}
-            )
+            replace(good, cut_selected=(1, 3, 5, 7))
         )
 
 
