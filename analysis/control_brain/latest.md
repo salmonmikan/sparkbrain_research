@@ -1,139 +1,86 @@
-# SparkBrain Control Brain — R34
+# SparkBrain Control Brain — R35
 
 - schema_version: `2`
-- generation_id: `CTRL-20260922T155032+0900-R34-2F8C71A6`
-- produced_at: `2026-09-22T15:50:32+09:00`
-- producer_run_id: `control-brain-auto-20260922T1550JST-R34`
+- generation_id: `CTRL-20260922T175240+0900-R35-A6C4E219`
+- produced_at: `2026-09-22T17:52:40+09:00`
+- producer_run_id: `control-brain-auto-20260922T1752JST-R35`
 - authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY_NO_SCIENTIFIC_EXECUTION`
-- supersedes_generation_id: `CTRL-20260922T124800+0900-R33-E7C421B6`
-- programme_position: `FORMAL_HOLD_WITH_H7_PREFORMAL_RESULT_EXPOSED_PENDING_FRESH_ANALYST_REVIEW`
+- supersedes_generation_id: `CTRL-20260922T155032+0900-R34-2F8C71A6`
+- programme_position: `FORMAL_HOLD_WITH_H7_PREIDENTITY_IMPLEMENTATION_ONLY_AND_FRESH_SYSTEM_SUCCESSOR_DISCOVERY`
 - fleet_status: `YELLOW`
 - scheduler_controller_action: `NO_CHANGE`
 
-## Authoritative refresh and integrity floor
+## Authoritative refresh
 
-Stable `main` is independently re-fetched at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, still unprotected. The authoritative `evidence/*` namespace still contains exactly five annotated tag objects and all five tag-object SHAs are unchanged. H7 PRE_FORMAL development is isolated on `research/main-h7-pf-r1-frozen-panel-r64-cycle4@8681dcbbe2fff986c28a79057f557b35f3f0f752`; workflow `35695286240` completed successfully at that exact head and produced artifact `10680620448` with archive digest `sha256:db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d`. No immutable/evidence ref moved.
+Independent repository refresh keeps stable `main` at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The five authoritative `evidence/*` annotated tag objects remain unchanged; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. H7 FORMAL-R1 design remains bound to `research/main-h7-formal-r1-contract-design-r65-cycle5@0bf690a0710112d21743d50f0974eadeb49dadad`, contract blob `af26de3067263afcff0e727321fa173ea14de659`. No immutable-ref incident is observed.
 
-The FORMAL one-way floor remains unchanged: no rerun/retune/rescore of consumed FORMAL identities, no immutable/formal/sealed/evidence mutation, no held-out/evaluator leakage, no post-FORMAL rescue change, and no historical result rewrite.
+The hard one-way floor remains fully intact: no consumed FORMAL rerun/retune/rescore, no evaluator leakage, no post-FORMAL rescue changes, no protected/evidence ref retargeting, and no historical PASS/FAIL rewrite.
 
-## Canonical Funnel / development state
+## R68 canonical reconciliation
 
-Latest canonical authority remains Evidence Analyst `EVA-20260922T145734+0900-R64-F1A8C29D`. Until a fresh Analyst generation classifies the newly exposed PRE_FORMAL result, Control does not rewrite canonical candidate fields or denominators.
+Control adopts Evidence Analyst `EVA-20260922T165618+0900-R68-B7C391E4@bf02e073e4405bc51fa62a24876378dad4fbe2bb` as current scientific authority.
 
-- canonical candidates: `32`
-- claim ceilings: `MECHANISM=13 / SYSTEM=19`
-- classification completeness: `32/32`
-- terminal state: `ACTIVE=1 / NONTERMINAL_HOLD=0 / TERMINAL_FOR_CURRENT_OBJECT=31`
-- Architecture active/queued: `M0/S0` / `M0/S0`
-- PRE_FORMAL: `eligible=1 / READY=1 / active MECHANISM=1`
+H7 remains `MECHANISM / RESULT_EXPOSED_DEVELOPMENT / ACTIVE`, `preformal_eligible=true`, readiness `READY`, but fresh FORMAL authority is still **0**. The only active authority is `GO_H7_FORMAL_R1_IMPLEMENTATION_AND_ONEWAY_PREFLIGHT_ONLY_STOP_BEFORE_IDENTITY_START_OR_RESULT_BEARING_EXECUTION`. MAIN cycle 6 has a RUNNING preidentity lease (`MAIN-20260922T171550+0900-PRIMARY-H7-FORMALR1-IMPL-C6-B7C391E4`) for frozen runner/scorer/target-blind collector/preserver interfaces/binding and collision/no-clobber preflight. Active identity is null. Identity minting, `STARTED`, protected evaluation, official result-bearing workflow, official raw scoring/preservation, and scientific immutable-ref mutation remain forbidden.
+
+A new preservation gate is explicit: PF-R1 development `raw.json` and `summary.json` must not remain solely in an expiring Actions artifact when a fresh FORMAL identity is minted. The exact existing bytes must first be durably preserved as clearly NON_EVIDENTIARY development provenance; PF-R1 must never be rerun to reconstruct them.
+
+Analyst R68 also canonically admits candidate 33, `CAND-EQUIV-AUDITABLE-RAW-PROVENANCE-01`, as a fresh `DISCOVERY / SYSTEM / OPEN_DEVELOPMENT / ACTIVE / QUEUED` successor. Candidate 32 remains terminal; candidate 33 is not a rescue, repair, or in-place SYSTEM→MECHANISM uplift and inherits neither the old `1e-12` tolerance nor a semantic-equivalence claim. `preformal_eligible=false`, readiness `NOT_APPLICABLE`.
+
+SUB has completed one canonical Discovery contract-closure cycle for candidate 33 and recommends `PROMOTE_TO_ARCHITECTURE_STUDY`: controller-owned launch ledger, separate producer containers/raw mounts, third-process verifier, verifier-side raw hashing, frozen resource boundary, durable non-evidentiary retention, and fail-closed provenance controls. This recommendation is not self-authorizing; fresh Analyst review is required before Architecture admission or implementation/fixture execution.
+
+## Funnel and development state
+
+- canonical candidates: `33 = MECHANISM 13 / SYSTEM 20`
+- classification completeness: `33/33`
+- terminal states: `ACTIVE=2 / TERMINAL_FOR_CURRENT_OBJECT=31`
+- canonical Discovery queued: `SYSTEM=1`
+- Architecture active/queued: `M0/S0 / M0/S0`
+- PRE_FORMAL result-bearing active: `0`
+- PRE_FORMAL eligible: `1`; READY: `1`
 - fresh FORMAL authority: `0`
-- viable MECHANISM: `1`, but current execution is STOPPED pending fresh Analyst review
-- canonical development phases: `OPEN_DEVELOPMENT=2 / RESULT_EXPOSED_DEVELOPMENT=30 / CONSUMED_ONE_WAY=0`
-- official consumed one-way identities remain `7`
-- rolling autonomous scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`; QUESTION_FORMATION_DISCOVERY remains denominator-excluded.
+- development phases: `OPEN_DEVELOPMENT=3 / RESULT_EXPOSED_DEVELOPMENT=30 / canonical CONSUMED_ONE_WAY=0`
+- official consumed one-way identities: `7`
+- recent MAIN completed endpoints: `SYSTEM=11 / MECHANISM=7`
+- SYSTEM-over-MECHANISM exceptions: `0`
+- rolling autonomous scientific selections: `MECHANISM / SYSTEM / SYSTEM = 1/3`
 
-H7 remains a current-object `MECHANISM` and is now `RESULT_EXPOSED_DEVELOPMENT` in PRE_FORMAL revision `H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION`. R64 had prospectively authorized one fixed, nonconfirmatory cycle-4 endpoint and STOP. MAIN complied. A pre-result Ruff/import/source-binding correction was a `SCIENCE_INVARIANT_REPAIR`; the fixed scientific contract was not changed.
+Cycle 3 remains reassessment rather than an automatic terminal threshold. Candidate 33 is a valid topic-continuation pattern after current-object terminalization; H7 remains a valid result-exposed versioning pattern. Neither weakens FORMAL one-way integrity.
 
-## H7 PF-R1 cycle-4 result — interpretation ceiling
+## Utility disposition — APPROVED bounded PF-R1 byte preservation
 
-MAIN completed the fixed R64 PRE_FORMAL panel and stopped. Reported fixed-endpoint results are:
+Control approves `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` as `APPROVE_BOUNDED_NON_EVIDENTIARY_PROVENANCE_PRESERVATION`.
 
-- native baseline accuracy: `0.8090277778`
-- paired cut accuracy: `0.8020833333`
-- native-cut delta: `0.0069444444`
-- mean TV: `0.0555077197`
-- dense recurrent matched baseline accuracy: `0.8090277778`, delta `0`
-- finite-state route-history baseline accuracy: `0.4548611111`, delta `0.0798611111`
-- eligibility-route-ledger baseline accuracy: `0.6996527778`, delta `0.0225694444`
-- frozen ordinary-reduction direction: none of the three ordinary reductions met it
-- positive phenomenon floor: passed
-- native local effect: nonzero
-- disposition: `RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY`
+The schema-v2 Utility assignment pointer remains `IDLE` with no active assignment. The request may be picked up once under the existing bounded autonomous-IDLE Utility policy; this does not create a hidden MAIN dependency.
 
-This is useful PRE_FORMAL development information, not confirmatory evidence. It does **not** establish broad reduction exhaustion, mechanistic uniqueness, task specificity, completeness, sufficiency, external generalization, or FORMAL readiness. No FORMAL identity was consumed; no official TEST/STARTED/formal/evidence authority was created. Control accepts MAIN's STOP and forbids same-result rerun, comparator shopping, threshold/tolerance alteration, outcome-responsive redesign, or automatic FORMAL uplift.
+Allowed scope only: download existing artifact `10680620448` without rerun; verify archive SHA-256 `db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d` and `raw.json` SHA-256 `695261aeadab1ab311b60787f1b6a9023c29e24009c6f173c1a660469a6906db`; persist exact `raw.json`, `summary.json`, and provenance manifest under an explicitly NON_EVIDENTIARY development-provenance location; report paths/hashes. No rerun, rescore, reinterpretation, candidate change, FORMAL identity, protected evaluation, scientific preserve/evidence/formal/sealed/freeze mutation, merge, scheduler change, or science-contract change is authorized. Retrieval failure must fail closed rather than trigger reconstruction.
 
-The new Literature R29 result sharpens only **future prospective** inference: H7's TOP1 cut is a dynamic intervention policy over a frozen world/input distribution, and future confirmatory work should prospectively bind the policy estimand, hierarchical/episode-level uncertainty structure, and any equivalence/noninferiority margin. Those items may inform a future fresh FORMAL contract or a separately versioned development revision only; they do not rewrite PF-R1 and must not be selected post hoc to make the observed PF-R1 residual look stronger.
+This durable-byte preservation is required before FORMAL identity creation, but it does not block already-authorized non-result-bearing implementation/preflight.
 
-Direction to the next Analyst generation is therefore: independently inspect the exact PF-R1 head/workflow/artifact and preserve the nonconfirmatory status; decide whether H7-PF-R1 closes/holds, whether an independently justified versioned PF-R2 has concrete new information gain, or whether a later fresh FORMAL object is warranted. Any science-affecting change after this result requires explicit versioning/fresh-object discipline and preservation of PF-R1 unchanged. FORMAL, if ever authorized, must use a fresh untouched one-way identity/evaluation surface.
+## Phenomenon-first shadow
 
-## Development-iteration calibration
+Mode remains `PREFETCH_SHADOW`. R67 performed one compliant scan and retained exactly one standby, `PSHADOW-H3-CORRELATED-EVIDENCE-ROBUSTNESS-01`; queue=`1/3`. R68 correctly skipped another scan under the three-generation throttle because fresh deltas were provenance/tooling, not a new independent phenomenon surface. Normal next scan is R70 or later unless a genuinely independent material surface appears. Standby remains noncanonical/non-authorizing and excluded from all Funnel/quota/readiness metrics.
 
-`HUMAN-20260922-005` remains `ACCEPT_APPLIED_PROSPECTIVELY`. Methodology R60 independently validates the first READY→PRE_FORMAL transition as a true development-readiness transition rather than a hidden second FORMAL gate. Cycle 3 remains REASSESS, not an automatic terminal cap. H7 also demonstrates the intended repair split: science-invariant lint/import/binding repair before result exposure was allowed, while no science-affecting redesign occurred after the result.
+## Methodology / Literature / Audit
 
-Methodology remains `MIXED_CALIBRATION`: the development architecture is materially improved, but comparator-verifier independence, raw-before-score/preserve-before-read plumbing observability, and protected/adaptive evaluation validity still warrant tightening before future confirmatory use. The first completed PRE_FORMAL result now exists; the next methodology audit should explicitly test whether any subsequent revision preserves PF-R1 and avoids outcome-responsive rescue.
+Methodology R62 remains `MIXED_CALIBRATION`: candidate 33 is a strong positive distinct-successor example, while exact RESULT_EXPOSED development bytes must be durably preserved before any H7 FORMAL identity. Literature R29 remains future-prospective only: dynamic-policy estimand, episode/seed-aware uncertainty, and prospective equivalence/noninferiority margins may govern a fresh confirmatory contract but cannot rewrite PF-R1. Audit R6 keeps PD01's frozen token immutable while capping narrative interpretation at `NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR`.
 
-## HUMAN-20260922-008 — Fast Forge / Slow Science
+## Human directives / Fast Forge
 
-Control classification: **`MODIFY`**.
+HUMAN-005 remains applied prospectively. HUMAN-006 remains a documentation-review issue, not an isolated root version bump. HUMAN-007 is now validated by the candidate-33 supply path. HUMAN-008 remains `MODIFY`: Fast Forge is acceptable only as NON_EVIDENTIARY/NONCANONICAL work with fresh later canonical admission. Existing proposal `SB-SCHED-FORGE-001` remains `USER_APPROVAL_REQUIRED`, unchanged and not duplicated.
 
-The conceptual separation is accepted: rough exploratory implementation can safely precede canonical claim classification **only** when Forge remains explicitly NON_EVIDENTIARY, NONCANONICAL, isolated from held-out/formal evaluation, and cannot inherit scientific authority from exploratory success. The current canonical Funnel and FORMAL hard floor are not weakened.
+## Scheduler health
 
-Recommended operating architecture for a staged rollout:
+Live scheduler definitions remain authoritative: `fleet_status=YELLOW`, definition drift=true, cadence failure=false, exact deterministic overlap=0, ownership collision=0, active opportunities/day=`159`. Serial/queue start offsets are observable but no material scientific starvation or cadence failure is established. Relay remains disabled. Current State Brief retains approved `01:55/09:55/13:55/17:55/21:55 JST`; combined Control/Steward remains hourly `:50` with the explicit Steward-only hour mapping.
 
-1. **MAIN stays canonical.** MAIN continues admitted Discovery/Architecture/PRE_FORMAL/FORMAL work and does not become the speculative Forge worker.
-2. **SUB is the preferred Forge owner, but only as a fallback mode.** Reserved canonical SUB lanes and safe independent scientific work retain priority. When no such lane exists, a future user-approved `FAST_FORGE` mode may allow rapid bounded prototypes. This reconciles HUMAN-007 with HUMAN-008 instead of replacing question formation.
-3. **Utility remains auxiliary, not a second scientific Forge authority.** Utility may provide generic outcome-independent tooling/prototype support, but must not turn Forge observations into candidates, satisfy quotas, or become a hidden MAIN dependency.
-4. **Shadow and Forge stay distinct.** Analyst `shadow_standby_queue` remains read-only/non-authorizing. A shadow proposal cannot be materialized by Forge in the same generation merely to bypass the shadow boundary.
-5. **Promotion is one-way.** Interesting Forge material may propose promotion, but a later fresh Analyst generation must re-fetch evidence and create a fresh prospective canonical candidate/revision with normal Funnel v2.1 fields. Forge observations remain exploratory history forever and never become confirmatory evidence.
-6. **Initial rollout should be observational.** A bounded 1–2 day equivalent window should measure prototype/code throughput, collisions, promotion proposals, MAIN/SUB idle reduction, and central-theory relevance before cadence/audit thinning is considered.
-
-This is not direct execution authority. The required scheduler/prompt role change is `USER_APPROVAL_REQUIRED`; Control does not alter SUB/Utility/MAIN/Methodology scheduler semantics in this run. A concrete scheduler proposal is persisted below rather than auto-applied.
-
-## Phenomenon-first pipelined supply
-
-R64 established `PREFETCH_SHADOW` with `shadow_standby_queue=[]`. One H6/workspace idea was screened and rejected as historical/duplicate; no proposal was retained, admitted, materialized, or allocated. The H7 PF-R1 result and Literature R29 are H7-specific and do not, by themselves, open an independent new phenomenon surface. Therefore Control does **not** request an early shadow rescan merely because the PF result is interesting. Maintain low-rate throttle unless a genuinely independent repository/Literature/Audit/Methodology/Utility delta appears.
-
-SUB remains useful and independent. Its latest `QUESTION_FORMATION_DISCOVERY` seed `QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01` is explicitly NONCANONICAL/NON_EVIDENTIARY and refines a possible fresh SYSTEM successor around independent raw streams, producer provenance, and semantic comparison boundaries. It does not reopen terminal candidate #32, does not count toward shadow/candidate/theory-backward denominators, and does not create PRE_FORMAL authority.
-
-## Utility governance
-
-Utility assignment remains schema-v2 `IDLE` with `active_assignment_id=null`. Latest Utility work confirms the generic equivalence verifier is not ready for main promotion: it can prove internal declared-certificate/digest consistency but not authenticated producer provenance, raw→digest derivation, process isolation, or scientific semantic equivalence. Keep it isolated until trust-boundary naming/claims are narrowed and normal reviewed integration occurs. No Utility assignment is created in this run.
-
-## Independent Audit / historical interpretation
-
-Audit R6 remains binding as an interpretation ceiling for PD01: the frozen `FAIL_REDUCED_BY_FADING_MEMORY` token is protocol-valid and immutable, but the strongest supported narrative is `NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR`, not positive proof that fading-memory dynamics mechanistically explain a demonstrated SparkBrain long-memory capability. No retrospective relabeling or rerun is permitted.
-
-## Scheduler fleet health
-
-Live active SparkBrain definitions were independently inspected.
-
-- fleet_status: `YELLOW`
-- scheduler_definition_drift_detected: `true`
-- scheduler_cadence_failure_detected: `false`
-- exact-time overlaps: `0`
-- role/ownership collisions: `0`
-- active SparkBrain run opportunities/day: `159`
-- current useful-result cadence: healthy enough to retain responsiveness (H7 PF-R1 result, SUB seed refinement, Methodology calibration update, Literature R29)
-- generation lag: current Control had lagged behind R64/MAIN result; this generation reconciles it. Analyst→MAIN handoff itself was timely.
-- Relay: live disabled; no current waiting continuation requires it and MAIN completed the current PF cycle without a Relay dependency. Do not re-enable autonomously.
-- Current State Brief: live approved `:55` schedule remains unchanged.
-
-The repository scheduler registry is stale relative to live definitions: it still records the old non-hourly combined Control schedule, Relay enabled, Brief at `:45`, and older prompt fingerprints. The live combined Control/Steward hourly `:50` schedule and exact steward-hour mapping are explicit user-approved policy and must not be reverted to the registry mirror. Registry reconciliation is housekeeping before a future scheduler mutation, not a reason to mutate live timing now.
-
-There is no evidence for a live timing repair: no deterministic collision, no ownership collision, and no demonstrated cadence failure. `scheduler_change_warranted=false`; `scheduler_controller_action=NO_CHANGE`.
-
-### Scheduler proposal — HUMAN-008 staged Forge rollout
-
-- proposal_id: `SB-SCHED-FORGE-001`
-- severity: `RECOMMEND`
-- change_authority: `USER_APPROVAL_REQUIRED`
-- problem: exploratory implementation currently shares too much canonical-process burden, but directly rewriting role semantics could create hidden science authority/collisions
-- evidence_window: `HUMAN-008 + R64 Analyst + MAIN PF-R1 + current SUB/Utility/Methodology state`
-- observations: SUB now performs useful noncanonical question formation; Utility is safe when bounded but should not own candidate authority; MAIN is successfully handling canonical PRE_FORMAL; no current cadence failure requires timing changes
-- proposed_change: after explicit user approval, add a bounded `FAST_FORGE` fallback mode to SUB while keeping MAIN canonical and Utility helper-only; initially keep all current cadences unchanged; use an observational 1–2 day equivalent window; do not auto-promote Forge outputs
-- expected_effect: faster idea→code latency and fewer no-target stalls without weakening candidate admission or FORMAL evidence
-- scientific_risk: exploratory cherry-picking/contamination, hidden successor laundering, ownership collision, and semantic drift if Forge outputs are treated as evidence
-- rollback: remove the Forge fallback prompt semantics and return SUB to current HUMAN-007 question-formation/Discovery role; no scientific/evidence refs need change
-- user_decision_needed: explicit approval before any structural role/prompt semantic scheduler change
+Repository registry `ops/scheduler-registry@0b8efc7bf25540a1f0f8df0f4dda072e35d3e4d7` remains stale relative to live cadence/Relay/Brief/prompt definitions. Do not revert live definitions to the mirror. `scheduler_change_warranted=false`; action=`NO_CHANGE`.
 
 ## Direction to Evidence Analyst
 
-1. Fresh-review H7 PF-R1 exact branch/workflow/artifact. Preserve the fixed result and nonconfirmatory status; no rerun/rescore/retune.
-2. Reassess H7 after result exposure. Any science-affecting continuation must be a versioned PF revision or fresh object with concrete prospective information gain; preserve PF-R1 unchanged.
-3. Treat Literature R29 dynamic-policy estimand, hierarchical uncertainty, and prospective margin guidance as future prospective methodology, not a post-hoc PF-R1 patch.
-4. Keep shadow mode low-rate; do not rescan early unless an independent new phenomenon surface appears. Keep standby queue separate from canonical denominators.
-5. Keep SUB raw-digest provenance work noncanonical until a later fresh admission review establishes distinctness/reachability/reductions; do not reopen candidate #32.
-6. Consume HUMAN-008 as Control-modified process doctrine only. Draft promotion/contamination requirements for a possible future Forge lane, but create no Forge branch, worker allocation, candidate admission, or scheduler semantic change without the required user approval.
-7. Maintain all consumed FORMAL identities and immutable evidence untouched.
+1. Review candidate-33 Discovery contract in a fresh generation and decide SYSTEM Architecture admission; do not uplift claim ceiling or reopen candidate 32.
+2. Reconcile H7 cycle-6 implementation only after durable completion. FORMAL identity/STARTED/result-bearing execution remain STOP until implementation gates close, PF-R1 exact bytes are durably preserved, and fresh one-way Analyst authority is granted.
+3. After Utility preservation, independently verify exact bytes/hashes/manifest. Preservation itself is not scientific evidence.
+4. Preserve PF-R1 unchanged; science-affecting continuation requires explicit fresh versioning.
+5. Maintain shadow throttle/queue separation and normal R70 next-scan floor absent a genuinely independent new surface.
+6. Keep all consumed identities and immutable evidence untouched.
 
-R34 executed no experiment, no scientific workflow dispatch, no FORMAL identity consumption, no research PR merge, no immutable/formal/sealed/evidence mutation, no Utility assignment mutation, no scheduler mutation, no ruleset/protection mutation, and no historical scientific-result rewrite.
+R35 executes no experiment, no identity consumption, no scientific/result-bearing workflow dispatch, no research PR merge, no immutable/formal/sealed/evidence mutation, no scheduler mutation, no ruleset/protection mutation, and no historical scientific-result rewrite.
