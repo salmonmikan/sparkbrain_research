@@ -1,4 +1,4 @@
-# SUB — R86 mandatory PRE-NO-OP scan; zero safe independent targets retained
+# SUB history — R86 PRE-NO-OP scan / R73 and control-plane reconciliation
 
 - schema_version: `2`
 - generation_id: `SUB-20260923T053741+0900-NOOP-SCAN-R86-62D4A1B7`
