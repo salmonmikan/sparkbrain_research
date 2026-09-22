@@ -1,59 +1,51 @@
 {
-  "timestamp": "2026-09-22T21:30:58+09:00",
+  "timestamp": "2026-09-23T00:37:58+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260922T213058+0900-R31-RECONSTRUCTIBLE-HOLDOUT-4D8C21F7",
-  "producer_run_id": "external-literature-auto-20260922T213058+0900-R31-4D8C21F7",
+  "generation_id": "LIT-20260923T003758+0900-R32-PREDICTIVE-QUOTIENT-6A4E21C9",
+  "producer_run_id": "external-literature-auto-LIT-20260923T003758+0900-R32-PREDICTIVE-QUOTIENT-6A4E21C9",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260922T183000+0900-R30-PATHSPEC-RECANTING-5C8A21F4",
+  "supersedes_generation_id": "LIT-20260922T213058+0900-R31-RECONSTRUCTIBLE-HOLDOUT-4D8C21F7",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260922T175240+0900-R35-A6C4E219",
-      "handoff_commit": "1df7d07deb0364a5894f1eadd2c7f099f799ed24"
+      "generation_id": "CTRL-20260922T235000+0900-R37-7A3E9C51",
+      "handoff_commit": "23676a55c9473d1cfd22d982ffffd5d2ba18b557"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T210223+0900-R75-D7F2A9C1",
-      "handoff_commit": "c190afff7e33977c530c207904bd42ce7187a20d"
+      "generation_id": "EVA-20260923T001221+0900-R81-4885D9DE",
+      "handoff_commit": "725aff8a8a5f4105d85cc1893036ef4c48f893c4"
     },
     "main_report": {
-      "generation_id": "MAIN-20260922T213400+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-R75-D7F2A9C1",
-      "latest_path_commit": "a5e18f9bc0cf0c63880c2086836de16c0977e6fe",
-      "state_path_commit": "7ab098fda71d7ab903855afdc7dc3b4d1bfd50a1",
-      "newest_role_history": "reports/orchestrator/history/2026-09-22/2134-main.md"
+      "generation_id": "MAIN-20260922T231900+0900-PRIMARY-H7-FORMALR3-C9-RECOVERY-R80-6B8F31C4",
+      "state_path_commit": "eabbf06ddddd9779f1382a89f9cc82e6779f72cd"
+    },
+    "main_inflight": {
+      "generation_id": "MAIN-20260923T002300+0900-PRIMARY-H7-FORMALR4-C10-4885D9DE",
+      "handoff_commit": "65444df7061a5b4ede2be03a432fd23292b71b34"
     },
     "sub_report": {
-      "generation_id": "SUB-20260922T204630+0900-ARCH-C33-RUNNERPATH-R74-B8C4E219",
-      "handoff_commit": "86b84eab3070c7e7fdbc622db7228d75340136dc"
+      "generation_id": "SUB-20260922T224730+0900-NOOP-SCAN-R79-3F8A61C2",
+      "state_path_commit": "62248b3345b7a8fc0074031f1a96ef7ccaf2fc7d"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260922T183000+0900-R30-PATHSPEC-RECANTING-5C8A21F4",
-      "handoff_commit": "5b5b5f281613f455db7675deb1a7b66ef2c795b8"
+      "generation_id": "LIT-20260922T213058+0900-R31-RECONSTRUCTIBLE-HOLDOUT-4D8C21F7",
+      "handoff_commit": "d50cefdd64af9ac179b36ec92a1b0c207858886b"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "21:30 JST",
+  "schedule_slot": "00:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "h7_formal_r2": {
-      "branch": "research/main-h7-formal-r2-input-split-r75-cycle8",
-      "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
-      "contract_id": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-V1",
-      "contract_blob": "a4965eb49528e5b7e6da70f28e076de89d822f93",
-      "input_surface_sha256": "b1ec2861017642954fc7b510f0131d13500397aa5d991d4a3d30fe75fd3bafcc",
-      "formal_evaluation_seed_range_inclusive": [8846030, 8846285],
-      "formal_evaluation_split": "test"
+    "h7_formal_r3_stopped": {
+      "branch": "research/main-h7-formal-r3-unexposed-eval-runtime-r76-cycle9",
+      "head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4"
     },
-    "h7_r1_contract_preserved": {
-      "contract_id": "H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1",
-      "contract_blob": "af26de3067263afcff0e727321fa173ea14de659"
-    },
-    "public_generator_surface": {
-      "worlds_path": "src/sparkbrain/tasks/worlds.py",
-      "worlds_blob": "2478fba19d7276ebe30ec8f5811bf6d7b7414779",
-      "runner_path": "src/sparkbrain/learned/h7_formal_r2_runner.py",
-      "runner_blob": "33f5ecd8d2bb75b2c7d0ed48f482f4945ea3fb0b",
-      "r2_binding_path": "src/sparkbrain/learned/h7_formal_r2.py",
-      "r2_binding_blob": "7bdccf0531ad8da1276be3829545cbb15778037e"
+    "h7_formal_r4_active": {
+      "branch": "research/main-h7-formal-r4-runtime-lock-r81-cycle10",
+      "head": "647253f4c0128ff09d47fdfce80dabf006863af1",
+      "resource_contract_id": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-V1",
+      "resource_contract_blob": "268f89e1c34ef85b7dd4c26286ee1da7659d95f3",
+      "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_RESOURCE_CONTRACT"
     },
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
@@ -62,26 +54,28 @@
     "legacy_freeze_refs_inspected": true,
     "preserve_refs_inspected": true,
     "control_refs_inspected": true,
+    "consumed_identities_inspected": true,
     "relevant_prs": {
-      "148": "OPEN_UNMERGED"
+      "148": "OPEN_UNMERGED",
+      "149": "OPEN_UNMERGED"
     },
-    "ops_control_tip": "1df7d07deb0364a5894f1eadd2c7f099f799ed24",
-    "ops_evidence_analyst_tip": "c190afff7e33977c530c207904bd42ce7187a20d",
-    "ops_orchestrator_tip": "d873a0a6b1ecc02ad2ce550e207f55b79649baac",
-    "ops_external_tip_before_write": "5b5b5f281613f455db7675deb1a7b66ef2c795b8"
+    "ops_control_tip": "23676a55c9473d1cfd22d982ffffd5d2ba18b557",
+    "ops_evidence_analyst_tip": "725aff8a8a5f4105d85cc1893036ef4c48f893c4",
+    "ops_orchestrator_tip": "65444df7061a5b4ede2be03a432fd23292b71b34",
+    "ops_external_tip_before_write": "d1e2ffe278a8af40b0b61250aeba8dbd8da8cbd1"
   },
   "workflow_state_observed": {
-    "35727871981_h7_formal_r2_preidentity": {
-      "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+    "35748064227_h7_formal_r4_lock_materialize": {
+      "head": "647253f4c0128ff09d47fdfce80dabf006863af1",
       "status": "completed",
-      "conclusion": "failure",
+      "conclusion": "success",
       "result_bearing": false,
       "canonicalized_by_analyst": false
     },
-    "35727871994_generic_ci": {
-      "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+    "35748064427_generic_ci": {
+      "head": "647253f4c0128ff09d47fdfce80dabf006863af1",
       "status": "completed",
-      "conclusion": "success",
+      "conclusion": "failure",
       "result_bearing": false,
       "canonicalized_by_analyst": false
     }
@@ -89,101 +83,107 @@
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "FORMAL_EVALUATION_RECONSTRUCTIBLE_BEFORE_IDENTITY",
-      "type": "REPOSITORY_EVIDENCE_INTEGRITY_GAP",
-      "sources": [
-        "artifacts/formal_h7_r2/contract.json",
-        "src/sparkbrain/learned/h7_formal_r2.py",
-        "src/sparkbrain/learned/h7_formal_r2_runner.py",
-        "src/sparkbrain/tasks/worlds.py"
-      ],
-      "finding": "The exact future FORMAL evaluation seed block, world assignment and deterministic public generator are available before one-way identity. The generator produces both observations and targets from the public seed, so the exact future evaluation episodes and labels are reconstructible without official protected-workflow access.",
-      "impact": "One-way workflow access control and exact input identity do not by themselves establish holdout non-exposure. No tuning is alleged and no existing FORMAL evidence is invalidated because none exists, but the distinction must be classified before future confirmatory interpretation."
-    },
-    {
-      "id": "SPLIT_BINDING_IS_PROVENANCE_NOT_SECRECY",
-      "type": "REPOSITORY_SEMANTIC_SHARPENING",
-      "sources": [
-        "artifacts/formal_h7_r2/contract.json",
-        "src/sparkbrain/tasks/worlds.py"
-      ],
-      "finding": "R75's train/dev/test Episode.split binding repairs exact input identity, while episode stochastic content and labels remain seed-derived and publicly reproducible. Identity-bound and protected/unexposed are separate properties.",
-      "impact": "Future control-plane language should not use test/protected/unseen as synonyms for exact provenance binding."
-    },
-    {
-      "id": "SELECTION_PROCEDURE_CAN_OVERFIT_RECONSTRUCTIBLE_HOLDOUT",
-      "type": "FOUNDATIONAL_MODEL_SELECTION_INTEGRITY",
+      "id": "INTERVENTION_CONDITIONED_PREDICTIVE_STATE_QUOTIENT",
+      "type": "FOUNDATIONAL_REDUCTION_BASELINE",
       "sources": [
         {
-          "citation": "Cawley & Talbot, JMLR 2010",
-          "url": "https://www.jmlr.org/papers/v11/cawley10a.html"
+          "citation": "Barnett & Crutchfield, Computational Mechanics of Input-Output Processes, Journal of Statistical Physics 2015",
+          "url": "https://doi.org/10.1007/s10955-015-1327-5"
         },
         {
-          "citation": "Dwork et al., 2015, Generalization in Adaptive Data Analysis and Holdout Reuse",
-          "url": "https://arxiv.org/abs/1506.02629"
+          "citation": "Hefny et al., Recurrent Predictive State Policy Networks, ICML 2018",
+          "url": "https://arxiv.org/abs/1803.01489"
         }
       ],
-      "finding": "Model-selection/evaluation validity depends on information available to the whole adaptive selection procedure, not only whether the final scorer was queried. Reconstructible held-out rows can contaminate later claim-capable choices even when official scoring is mechanically separated.",
-      "impact": "Current frozen scientific fields reduce the risk, but protected_evaluation_accessed=false should not be interpreted as information-level non-exposure without an explicit post-disclosure choice audit."
+      "finding": "Memoryful input-output processes admit predictive causal-state representations defined by future output distributions conditioned on past history and future inputs/actions. H7's dynamic cut can be treated as an intervention input; microscopic route identity is unnecessary if histories collapse to the same intervention-conditioned future distribution.",
+      "impact": "A fresh H7 successor should compare against an intervention-conditioned predictive-state quotient before treating native route/state identity as irreducible."
     },
     {
-      "id": "DYNAMIC_UNSEEN_GENERATION_ORDINARY_CONTAMINATION_BASELINE",
-      "type": "RECENT_BENCHMARK_REDUCTION_BASELINE",
+      "id": "CAUSAL_BISIMULATION_MINIMAL_BEHAVIORAL_STATE",
+      "type": "ORDINARY_STATE_ABSTRACTION_REDUCTION",
       "sources": [
         {
-          "citation": "Chen, Pusarla & Ray, DyCodeEval, ICML 2025",
-          "url": "https://proceedings.mlr.press/v267/chen25ba.html"
+          "citation": "Wang et al., Building Minimal and Reusable Causal State Abstractions for Reinforcement Learning, AAAI 2024",
+          "url": "https://doi.org/10.1609/aaai.v38i14.29507"
         },
         {
-          "citation": "Gulati et al., Putnam-AXIOM, ICML 2025",
-          "url": "https://proceedings.mlr.press/v267/gulati25a.html"
+          "citation": "Zhang, Luo & Baltieri, Compositional Behavioral Semantics for State Abstraction in Reinforcement Learning, ICML 2026",
+          "url": "https://arxiv.org/abs/2606.25357"
         }
       ],
-      "finding": "Dynamic/programmatically generated unseen evaluation variants are already an ordinary contamination-resistance strategy in current benchmarking.",
-      "impact": "A fresh successor can preserve exact reproducibility while preventing preidentity memorization by freezing generator/distribution/scoring semantics first, deriving final evaluation seeds from concealed post-binding entropy, and revealing the seed/key only after immutable raw preservation."
+      "finding": "Causal bisimulation and recent compositional behavioral semantics provide principled ways to derive or certify smaller state representations that preserve task-relevant dynamics and behavioral structure.",
+      "impact": "H7 novelty should be assessed against the smallest behaviorally sufficient/intervention-sufficient state, not against whether the native system happens to expose a richer microscopic route structure."
+    },
+    {
+      "id": "ABSTRACT_INVARIANCE_REQUIRED_FOR_CAUSAL_COMPRESSION",
+      "type": "REDUCTION_VALIDITY_GUARDRAIL",
+      "sources": [
+        {
+          "citation": "Xia & Bareinboim, Causal Abstraction Inference under Lossy Representations, ICML 2025",
+          "url": "https://arxiv.org/abs/2509.21607"
+        }
+      ],
+      "finding": "Naive causal abstraction is not well-defined when multiple low-level interventions mapped to one high-level intervention produce different effects; lossy/projected abstractions are needed instead.",
+      "impact": "A predictive/bisimulation baseline cannot obtain simplicity by collapsing route-cut histories with different causal effects. Intervention equivalence must be tested prospectively or the states must remain distinct."
+    },
+    {
+      "id": "TEMPORAL_LAG_STRUCTURE_CAN_CONTROL_EFFECT_IDENTIFIABILITY",
+      "type": "RECURRENT_CAUSAL_ABSTRACTION_GUARDRAIL",
+      "sources": [
+        {
+          "citation": "Assaad et al., Identifiability of total effects from abstractions of time series causal graphs, UAI 2024",
+          "url": "https://proceedings.mlr.press/v244/assaad24a.html"
+        }
+      ],
+      "finding": "Intervention effects remain identifiable under some temporal abstractions that preserve lagged-versus-instantaneous structure, while coarser summaries that erase lag information require additional conditions.",
+      "impact": "Future H7 state compression should preserve temporal distinctions needed by the frozen causal estimand, rather than judge equivalence only by endpoint prediction."
     }
   ],
   "affected_lines": [
-    "H7_FORMAL_R2_INPUT_SURFACE",
-    "H7_PROTECTED_EVALUATION_CONFIDENTIALITY",
-    "H7_ONE_WAY_IDENTITY_AND_HOLDOUT_INTEGRITY",
-    "H7_FORMAL_R1_CONFIRMATORY_INTERPRETATION",
-    "FUTURE_FORMAL_MECHANISM_ADMISSION",
-    "PROGRAMME_EVIDENCE_INTEGRITY"
+    "H7_FORMAL_R4_FROZEN_COMPARATOR_PANEL",
+    "H7_RESPONSIBILITY_REDUCTION_FLOOR",
+    "H7_FUTURE_PREDICTIVE_STATE_QUOTIENT",
+    "H7_CAUSAL_BISIMULATION_BASELINE",
+    "H7_ABSTRACTION_INVARIANCE",
+    "H7_TEMPORAL_LAG_IDENTIFIABILITY",
+    "FUTURE_MECHANISM_SUCCESSOR_ADMISSION",
+    "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "IDENTITY_BOUND_VS_UNEXPOSED_HOLDOUT_DISTINCTION",
-    "POST_DISCLOSURE_CLAIM_CAPABLE_CHOICE_AUDIT",
-    "CONCEALED_POST_BINDING_EVALUATION_SEED_DERIVATION",
-    "DYNAMIC_UNSEEN_GENERATED_CONFIRMATORY_SURFACE"
+    "INTERVENTION_CONDITIONED_EPSILON_TRANSDUCER_OR_PSR",
+    "MINIMAL_CAUSAL_BISIMULATION_QUOTIENT",
+    "ABSTRACT_INVARIANCE_TEST",
+    "LAG_PRESERVING_TEMPORAL_CAUSAL_ABSTRACTION"
   ],
-  "novelty_or_reduction_impact": "RECONSTRUCTIBLE_FORMAL_HOLDOUT_INTEGRITY_GAP_NO_CURRENT_EVIDENCE_INVALIDATION. R75 fixes exact input identity, but the public evaluation seed block plus deterministic public generator make future FORMAL evaluation rows and targets reconstructible before one-way identity. Exact provenance therefore must not be equated with holdout non-exposure.",
+  "novelty_or_reduction_impact": "PREDICTIVE_STATE_AND_BISIMULATION_REDUCTION_BAR_RAISED_NO_CURRENT_R4_REWRITE_OR_MECHANISM_UPLIFT. Route/state identity is not irreducible if an intervention-conditioned predictive-state or behaviorally bisimilar quotient preserves the frozen effect and downstream behavior. Any future compression must preserve intervention distinctions and enough temporal structure for the causal estimand to remain identifiable.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "distinguish identity-bound from unexposed/protected evaluation surfaces",
-    "inventory every claim-capable code/science choice made after evaluation-surface disclosure",
-    "for any fresh successor freeze generator/distribution/evaluator/intervention/comparators before concealed post-binding seed derivation",
-    "reveal concealed evaluation seed/key only after immutable raw preservation to retain exact reproducibility",
-    "use dynamic/unseen generated evaluation as the ordinary contamination-resistance baseline",
-    "if current R2 proceeds unchanged scope interpretation to a public/reconstructible fixed evaluation surface rather than an unseen holdout unless stronger non-exposure is independently established"
+    "intervention-conditioned epsilon-transducer or predictive-state representation under matched observations and intervention access",
+    "minimal causal-bisimulation or behavioral quotient preserving frozen H7 outcome semantics",
+    "prospective abstract-invariance test for any low-level histories/interventions collapsed into one abstract class",
+    "retain separate abstract states when route cuts differ causally, or label the comparator explicitly lossy/projected",
+    "preserve lagged-versus-instantaneous distinctions required to identify the intervention effect",
+    "compare state cardinality, memory and compute alongside intervention-effect preservation",
+    "treat methods using additional target/reward/causal-graph/intervention information as stronger-privilege ceilings unless matched"
   ],
   "questions_for_evidence_analyst": [
-    "Does public reconstructibility of all R2 evaluation episodes/targets prevent calling the surface protected or unseen even though official workflow access remains false?",
-    "Should the current R2 object remain preidentity-only until this is explicitly classified, without rewriting R2 in place?",
-    "If a fresh versioned successor is required, should its evaluation seeds be derived only after final source/contract binding from concealed committed entropy?"
+    "Keep R4's frozen panel unchanged and record predictive-state/bisimulation reduction only for a fresh successor?",
+    "For any future broad route-responsibility claim, require an intervention-conditioned behavioral quotient before calling microscopic route identity irreducible?",
+    "Require an abstract-invariance and temporal-lag identifiability check so compression cannot erase distinct causal effects?"
   ],
   "questions_for_control_brain": [
-    "Add reconstructible-holdout exposure as a distinct integrity failure mode from scorer access / score leakage?",
-    "Separate exact input identity, workflow access control and information-level holdout secrecy in future control-plane terminology?",
-    "If R2 remains unchanged, cap future language so a result is not described as unseen/protected merely because the official evaluation workflow was not previously dispatched?"
+    "Add predictive-state and causal-bisimulation families to the prospective H7 reduction floor after the current frozen R4 disposition?",
+    "Distinguish native microscopic route existence from route information being necessary in a minimal intervention-sufficient state?",
+    "Preserve the current R4 one-way/preidentity STOP boundaries without literature-driven comparator changes?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "H7 PF-R1 development result/raw bytes and its no-rerun/no-rescore boundary",
-    "H7 FORMAL-R1 frozen claim/evaluator/intervention/comparator/decision semantics",
-    "H7 FORMAL-R2 input-split binding and current preidentity artifacts must not be rewritten in place in response to this literature finding",
-    "no FORMAL identity/STARTED/protected evaluation/result-bearing workflow/scientific preserve/evidence ref, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
+    "H7 PF-R1 development result/raw and no-rerun/no-rescore boundary",
+    "stopped H7 R1/R2/R3 historical objects and their classifications",
+    "H7 R4 claim/estimand/worlds/intervention/comparator panel/thresholds/bootstrap-decision/falsifier/concealed-evaluation/raw-gate/scorer semantics",
+    "H7 R4 prospectively fixed scientific runtime package-set choice may not be altered by this role",
+    "no FORMAL identity, STARTED, evaluation commitment/seed reveal, protected evaluation, result-bearing workflow, official scoring, scientific preserve/evidence ref, research merge, immutable-ref mutation, Utility execution, or scheduler change"
   ],
   "utility_request_created": null,
   "mutations": {
