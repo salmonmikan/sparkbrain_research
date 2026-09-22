@@ -11,11 +11,11 @@
     "sub": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9@e56c285996c30888ec7f914efc505974695a6ed0"
   },
   "execution_mode": "RELAY",
-  "status": "RUNNING",
+  "status": "BLOCKED",
   "started_at": "2026-09-22T12:54:00+09:00",
-  "heartbeat_at": "2026-09-22T12:54:00+09:00",
+  "heartbeat_at": "2026-09-22T13:06:29+09:00",
   "completed_at": null,
-  "blocked_at": null,
+  "blocked_at": "2026-09-22T13:06:29+09:00",
   "analyst_generation_id": "EVA-20260922T124300+0900-R61-C7F421A9",
   "analyst_commit": "4f55a65744385431ec73d1dec4ed32b7b20a63d8",
   "research_layer": "ARCHITECTURE_STUDY",
@@ -24,7 +24,7 @@
   "candidate_ordinal": 7,
   "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
   "development_revision": "H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT",
-  "repair_change_classification": "SCIENCE_INVARIANT_IMPLEMENTATION_ONLY_UNDER_FROZEN_R60_CONTRACT; STOP_ON_SCIENCE_AFFECTING_SPECIFICATION_GAP",
+  "repair_change_classification": "SCIENCE_INVARIANT_IMPLEMENTATION_ONLY_ADVANCED; LINT_ONLY_MECHANICAL_REPAIR_APPLIED; SCIENCE_AFFECTING_COMPARATOR_PROTOCOL_GAPS_DETECTED_AND_NOT_FILLED",
   "cycle_count": 2,
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
@@ -36,16 +36,17 @@
   "system_priority_exception": {"used": false},
   "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
   "active_branch": "research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1",
-  "active_head": "b83cd8cc71557af3ecc79c8a305a22b58c1b483c",
+  "active_head": "c97af135742a7cd3af94c857f4d5b83d7707075d",
   "active_identity": null,
-  "active_step": "R61_CYCLE2_IMPLEMENTATION_ONLY_PREFLIGHT_IN_PROGRESS",
+  "active_step": "R61_CYCLE2_BLOCKED_SCIENCE_AFFECTING_COMPARATOR_SPECIFICATION_GAPS",
   "contract_path": "artifacts/architecture_h7_dev_r1/contract.json",
   "contract_id": "H7-DEV-R1-ARCH-CONTRACT-V1",
-  "evidentiary_status": "MECHANISM_ARCHITECTURE_NON_EVIDENTIARY_IMPLEMENTATION_ONLY",
+  "preflight_path": "artifacts/architecture_h7_dev_r1/cycle2_preflight.json",
+  "evidentiary_status": "NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_IMPLEMENTATION_PREFLIGHT_BLOCKED_SPECIFICATION_GAP",
   "historical_h7_predecessor_ref": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
   "historical_h7_predecessor_status": "PRESERVED_NON_EVIDENTIARY_DEVELOPMENT_NO_REINTERPRETATION",
   "outcome_contingencies": {
-    "implementation_only": "GO",
+    "implementation_only": "GO_WHERE_EXACTLY_FIXED",
     "science_invariant_repair": "MAY_CONTINUE_WITH_DURABLE_PROVENANCE",
     "science_affecting_change": "STOP_FOR_EXPLICIT_VERSIONED_ANALYST_REVISION",
     "result_bearing_measurement": "STOP_FOR_FRESH_ANALYST_REVIEW_AFTER_IMPLEMENTATION_PREFLIGHT"
@@ -58,8 +59,30 @@
     "discriminator split for training/model selection/threshold tuning/comparator fitting/repair",
     "result-bearing H7 discriminator measurement"
   ],
-  "workflows": [],
-  "stop_reason": null,
-  "next_action": "Implement only exact frozen H7 DEV-R1 cycle2 harness/comparator/preflight surfaces. If any comparator or protocol requires an un-fixed scientific choice, preserve prior results, stop without result exposure, and return the exact specification gap to fresh Evidence Analyst review.",
+  "workflows": [
+    {
+      "run_id": 35685077726,
+      "head": "174c1e36c8a4ba53f60f622255c29148757b56f0",
+      "status": "completed",
+      "conclusion": "failure",
+      "purpose": "INITIAL_PREFLIGHT_CI_LINT_ONLY_FAILURE"
+    },
+    {
+      "run_id": 35685243444,
+      "head": "6ef33c717b6d892b8ac24cb12d605e0cf1d0315f",
+      "status": "completed",
+      "conclusion": "success",
+      "purpose": "POST_MECHANICAL_LINT_REPAIR_CI"
+    },
+    {
+      "run_id": 35685323080,
+      "head": "c97af135742a7cd3af94c857f4d5b83d7707075d",
+      "status": "completed",
+      "conclusion": "success",
+      "purpose": "FINAL_EXACT_HEAD_IMPLEMENTATION_PREFLIGHT_CI"
+    }
+  ],
+  "stop_reason": "R61_H7_DEV_R1_CYCLE2_IMPLEMENTATION_PREFLIGHT_BLOCKED_UNFIXED_COMPARATOR_PROTOCOL_FIELDS_NO_RESULT_EXPOSURE",
+  "next_action": "Fresh Evidence Analyst must prospectively fix or explicitly version FINITE_STATE_ROUTE_HISTORY_V1 fit-time previous-prediction closure/unseen-state policy and ELIGIBILITY_ROUTE_LEDGER_V1 event-encoder provenance/head training/calibration protocol before further all-comparator implementation. Result-bearing discriminator measurement remains STOP-gated.",
   "owner": "main"
 }
