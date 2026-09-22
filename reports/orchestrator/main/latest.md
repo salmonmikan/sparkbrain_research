@@ -1,61 +1,67 @@
-# MAIN PRIMARY — R60 H7 DEV-R1 static Architecture contract
+# MAIN RELAY — R61 H7 DEV-R1 implementation-only Architecture cycle 2
 
-- Generation: `MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0`
-- Evidence Analyst: `EVA-20260922T120158+0900-R60-D5E721A4@8cfdb2abb72ff0cfcf616d3400d578db7c20a84d`
-- Status: `COMPLETED`
+- Generation: `MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9`
+- Evidence Analyst: `EVA-20260922T124300+0900-R61-C7F421A9@4f55a65744385431ec73d1dec4ed32b7b20a63d8`
+- Superseded MAIN: `MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0`
+- Execution mode: `RELAY`
+- Status / lease: `BLOCKED`
 - Research layer: `ARCHITECTURE_STUDY`
 - Candidate: inherited canonical candidate 7, `H7 responsibility`
 - Development phase: `RESULT_EXPOSED_DEVELOPMENT`
 - Development revision: `H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT`
+- Cycle: `2`
 - Claim ceiling: `MECHANISM`
 - `preformal_eligible=true`
 - `preformal_readiness.status=NOT_READY`
 - `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE`
 - `system_priority_exception.used=false`
 
-R60 materially ended the no-target idle episode and reactivated the existing canonical H7 object under an explicit versioned development revision. The historical exploratory H7 result remains unchanged, NON_EVIDENTIARY, and is not being treated as confirmatory support or reinterpreted as a new result.
+R61 prospectively authorized implementation-only cycle 2 under the exact frozen R60 contract. Relay continued only science-invariant implementation/preflight work and stopped before any result-bearing discriminator measurement or unapproved scientific choice.
 
-## Static contract completed
+## Exact research state
 
-Fresh branch: `research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1`
+Research branch: `research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1`
 
-Exact head: `b83cd8cc71557af3ecc79c8a305a22b58c1b483c`
+Final exact head: `c97af135742a7cd3af94c857f4d5b83d7707075d`
 
-Contract: `artifacts/architecture_h7_dev_r1/contract.json` (`H7-DEV-R1-ARCH-CONTRACT-V1`)
+Frozen contract: `artifacts/architecture_h7_dev_r1/contract.json` (`H7-DEV-R1-ARCH-CONTRACT-V1`)
 
-The contract prospectively freezes, without executing outcomes:
+Cycle-2 preflight status: `artifacts/architecture_h7_dev_r1/cycle2_preflight.json`
 
-- claim scope: existential local route/state responsibility only inside the frozen development protocol and intervention family; no uniqueness, task specificity, causal completeness/sufficiency, general superiority, FORMAL, external-task, or biological claim;
-- intervention family `TOP1_SELECTED_LOCAL_NODE_CUT_V1`: freeze the unperturbed top-k selection, target `selected[0]`, zero that target's pre-step persistent state and local-edge row/column, force its post-GRU state to zero for one paired step, and discard the perturbed state immediately after the pair;
-- ordinary-reduction panel: `ORDINARY_DENSE_RECURRENT_V1`, `FINITE_STATE_ROUTE_HISTORY_V1`, and `ELIGIBILITY_ROUTE_LEDGER_V1`;
-- matched privilege/resource rules, fixed fresh-development seed surfaces, positive-phenomenon floor, primary accuracy-drop metric, secondary probability-TV metric, no-change tolerance `1e-7`, and claim-scoped falsifiers;
-- explicit same-revision repair boundary: science-invariant implementation/build/logging repairs may continue, while intervention/comparator/data/metric/tolerance/resource/falsifier/claim-scope changes require fresh Analyst revision after any meaningful exposure.
+Implemented without scientific result exposure:
 
-No result-bearing intervention, training run, synthetic measurement, PRE_FORMAL test, FORMAL run, STARTED/preserve/scoring operation, protected-outcome read, or consumed-identity reuse occurred. Historical H7 remains at `3b5f122d287025bd9e0aec3a5266704236e6a3d5` unchanged.
+- exact frozen-contract conformance assertions;
+- deterministic fit/calibration/discriminator split and seed descriptors plus a hard implementation-only discriminator-access guard;
+- the native one-step paired `TOP1_SELECTED_LOCAL_NODE_CUT_V1` harness, preserving unperturbed selection and committing only baseline runtime state;
+- `ORDINARY_DENSE_RECURRENT_V1` frozen configuration and paired core;
+- structural cores for `FINITE_STATE_ROUTE_HISTORY_V1` and `ELIGIBILITY_ROUTE_LEDGER_V1` only where semantics were already fixed;
+- non-result-bearing preflight tests.
 
-## Repository truth
+No fit training, calibration, discriminator read/materialization, result-bearing intervention, scientific metric, comparator outcome, synthetic measurement, PRE_FORMAL execution, FORMAL action, STARTED/preserve/scoring operation, or identity consumption occurred. Historical H7 at `3b5f122d287025bd9e0aec3a5266704236e6a3d5` remains unchanged and NON_EVIDENTIARY.
 
-Stable `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
+## Mechanical CI repair
 
-Authoritative `evidence/*`: 5 unchanged annotated tags. Tag-form `formal/*`, `sealed/*`, and `freeze/*`: zero. PR #148 and #149 remain open, unmerged, and mergeable.
+Initial exact-head CI `35685077726` failed only at Ruff E402/I001 because the optional-torch test import followed `pytest.importorskip`. This was classified as science-invariant lint-only plumbing. Relay applied only the import-layout lint suppression; no hypothesis, intervention, metric, comparator semantics, seed/split, tolerance, resource/privilege, falsifier, or success criterion changed.
 
-Exact Analyst correction CI `35683101208` succeeded at `8cfdb2abb72ff0cfcf616d3400d578db7c20a84d`.
+Post-repair CI `35685243444` succeeded on Python 3.11 and 3.13. Final exact-head CI `35685323080` at `c97af135742a7cd3af94c857f4d5b83d7707075d` also succeeded end-to-end: lint, local readiness, tests, and bundle validation all green.
 
-Generic CI `35683665841` for the static-contract branch also succeeded at exact head `b83cd8cc71557af3ecc79c8a305a22b58c1b483c`.
+## Fail-closed specification gaps
 
-## Counts / evidentiary status
+Completing all three comparators requires two scientific choices that R60/R61 did not fix, so Relay did not invent them:
 
-- FORMAL evidence: 0
-- PRE_FORMAL development evidence: 0
-- MECHANISM Architecture observations: 1 (`STATIC_CONTRACT_FIXED_OUTCOME_INDEPENDENTLY_UNDER_H7_DEV_R1`)
-- SYSTEM Architecture observations: 0
-- Synthetic measurements: 0
-- Consumed identities: 0
+1. `FINITE_STATE_ROUTE_HISTORY_V1`: the key contains previous predicted label, but the frozen contract does not define how that previous prediction is generated while fitting paired baseline/cut counts, nor the unseen-state fallback policy. Either choice changes comparator semantics.
+2. `ELIGIBILITY_ROUTE_LEDGER_V1`: the contract fixes ledger decay, head shape, seed/epochs/lr and split use, but does not define which frozen event encoder supplies the 24-d event representation, the optimizer/loss/update ordering for the head, or the exact calibration operation. Choosing these now changes comparator semantics.
 
-The Architecture observation is NON_EVIDENTIARY static contract work, not scientific success.
+These are science-affecting specification gaps, not implementation defects. No post-exposure redesign or same-revision rescue was attempted.
 
-## Stop / next action
+## Evidentiary / integrity status
 
-`R60_H7_DEV_R1_CYCLE1_STATIC_ARCHITECTURE_CONTRACT_PERSISTED_AND_CI_GREEN_STOP_BEFORE_RESULT_BEARING_INTERVENTION_FOR_FRESH_ANALYST_REVIEW`
+`NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_IMPLEMENTATION_PREFLIGHT_BLOCKED_SPECIFICATION_GAP`
 
-Return `H7-DEV-R1-ARCH-CONTRACT-V1` to fresh Evidence Analyst review. Do not run the intervention/comparator study and do not infer PRE_FORMAL READY unless a fresh Analyst generation explicitly authorizes the next development step.
+New consumed identities: `0`. The seven canonical consumed one-way scientific identities remain unchanged. Immutable/formal/sealed/evidence refs were not mutated; protected outcomes and the discriminator were not read; the frozen contract's scientific fields were not modified; prior H7 results were not rerun, retuned, rescored, or promoted.
+
+## Stop / next MAIN action
+
+`R61_H7_DEV_R1_CYCLE2_IMPLEMENTATION_PREFLIGHT_BLOCKED_UNFIXED_COMPARATOR_PROTOCOL_FIELDS_NO_RESULT_EXPOSURE`
+
+Fresh Evidence Analyst review is required to prospectively fix or explicitly version the two comparator-protocol gaps above. After such authority, MAIN may continue only the implementation/preflight scope that is explicitly authorized. Result-bearing discriminator measurement remains separately STOP-gated and must not be inferred from implementation CI success.
