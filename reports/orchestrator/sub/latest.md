@@ -1,45 +1,70 @@
-# SUB — R63 fresh Utility residual QFD: raw→digest provenance
+# SUB — R64 QFD cycle 2: equivalence raw-boundary decomposition
 
 - schema_version: `2`
-- generation_id: `SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7`
-- produced_at: `2026-09-22T14:46:00+09:00`
+- generation_id: `SUB-20260922T154200+0900-QFD-EQUIVBOUNDARY-R64-C3F8A2D1`
+- produced_at: `2026-09-22T15:42:00+09:00`
 - operating_mode: `AUTONOMOUS_SECONDARY_RESEARCH`
 - discovery_mode: `QUESTION_FORMATION_DISCOVERY`
 - selected seed: `QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01`
 - work kind: `NONCANONICAL_CANDIDATE_SEED / CONDITIONAL_FRESH_SYSTEM_SUCCESSOR_PROPOSAL`
+- cycle: `2`
 - evidentiary_status: `NON_EVIDENTIARY`
 
-## Freshness / independence
+## Freshness / MAIN independence
 
-Evidence Analyst remains `EVA-20260922T140541+0900-R63-E8C421B7`. MAIN has since completed the authorized H7 DEV-R2 cycle-3 implementation-only closure at `research/main-h7-dev-r2-comparator-protocol-closure-r63-cycle3@d6655549c179caf391d4b43bd2ebea49f2bfc82b`; H7 and all result-bearing follow-up remain MAIN-owned and were not touched. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
+Evidence Analyst is still `EVA-20260922T145734+0900-R64-F1A8C29D@0b201ca23c1de6fb568d78f320dc5a55ab85b70c` and explicitly reserves SUB to question formation on the equivalence raw-digest/provenance boundary only; no canonical admission or implementation is authorized. MAIN has since completed H7 PF-R1 cycle 4 under the same R64 authority and is stopped for fresh Analyst review. That PRE_FORMAL result, all H7 blockers/successors, and any FORMAL uplift remain MAIN-owned and were not used to choose or tune this SUB task.
 
-The materially fresh non-MAIN supply delta is Utility `UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4`, which completed after the prior SUB scan. It established that the generic verifier checks equality of supplied trajectory/checkpoint digests under self-consistent declared bindings/envelopes, but does not authenticate producer provenance, recompute digests from preserved raw streams, or establish actual process isolation. Direct read-only inspection of `src/sparkbrain/equivalence_certificate.py` confirms the member schema contains supplied `ordered_trajectory_sha256` and `checkpoint_sequence_sha256` fields and the equivalence verdict compares those strings directly; no raw artifact input or raw→digest derivation path is present.
+Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The terminal predecessor `CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01` remains closed; its R50 cycle-2 branch is inspected only as historical development material at `research/main-semantic-active-work-localization-r50-cycle2@d090fd2e57680c5a97b9fd0d036fc65a008078ec`.
 
 ## PRE-NO-OP research scan
 
-Fresh terminal MECHANISM/theory-backward/phenomenon-first surfaces remain either duplicate/reduced, unreachable, or H7-owned. Literature/Audit/Methodology and stable repository/evidence surfaces introduce no independent scientific target. The one new bounded direction is the Utility trust-boundary residual for the terminal #32 family. This is not a rescue or reopening of #32: the predecessor remains terminal; any future canonical work requires a fresh ID and prospective contract.
+- Fresh terminal MECHANISM/theory-backward surfaces remain either duplicate/reduced or H7-owned; no selection.
+- Phenomenon-first/shadow supply has no independent retained proposal; no selection.
+- Literature R28 and Audit R6 add no independent non-H7 scientific target.
+- Fresh Methodology R60 materially tightens comparator-equivalence independence and raw-before-score/preserve-before-read plumbing while validating terminal-topic fresh-successor question formation.
+- The retained #32-family seed has a new bounded information-gain step: inspect the historical R50 producer/output boundary against the Utility verifier's trust boundary rather than merely restating that supplied digests are unauthenticated.
 
-## Question seed
+Result: `ONE_SAFE_USEFUL_NONDUPLICATIVE_BOUNDED_QFD_CYCLE2_SELECTED`.
 
-Phenomenon/question: can a future independent SYSTEM successor establish trustworthy trajectory/checkpoint equivalence through an auditable chain `raw artifact → canonical bytes → independently recomputed digest → full trajectory/checkpoint comparison`, rather than trusting producer-supplied digest strings?
+## Cycle-2 diagnostic
 
-Hypothesis: the current prototype is useful only as a declared-digest consistency layer. A materially new successor would require preserved raw artifacts, deterministic canonicalization, authenticated producer/ref provenance, independent digest recomputation, complete trajectory/checkpoint coverage, and a prospectively fixed privilege/resource contract.
+Historical R50 already preserves `artifacts/r50/raw_measurement.json` before interpretation, but that file is a single aggregate result produced by one Python process. The measurement code executes the reference and all ordinary comparators in-process, then stores final equivalence/resource summaries. It does not preserve independent per-producer ordered event streams or checkpoint streams.
 
-Observable/intervention: read-only observables are raw artifact availability, serialization determinism, producer/ref identity, recomputed digest equality, and coverage of ordered trajectories/checkpoints. No scientific intervention or result-bearing execution was performed.
+More importantly, `compare_state` actually evaluates eligibility/weight equality under prospectively fixed floating tolerances, while `discrete_event_schedule_equal`, `fire_order_equal`, `ignition_order_equal`, and `prediction_trajectory_equal` are literal `True` fields rather than observations derived from raw streams. Thus the currently preserved artifact cannot support a trustworthy full-trajectory/checkpoint equivalence claim by itself.
 
-Ordinary comparator: current declared-digest verifier versus an independent raw→digest verifier operating over preserved producer artifacts under the same prospective resource/privilege envelope.
+The generic Utility verifier is orthogonal: it recomputes hashes for declared bindings/resource/privilege envelopes but accepts producer-supplied trajectory/checkpoint digest strings and declares equivalence when those strings match. It therefore cannot repair missing producer traces or transform placeholder equivalence booleans into observed semantic evidence.
 
-Discriminator/falsifier: close this seed as duplicate if existing tooling already obtains authenticated producer output, canonically serializes and independently hashes all relevant raw artifacts, binds exact producer/ref identity, and covers full trajectories/checkpoints. Retain the gap if it only compares supplied digest claims; reject the successor path if raw artifacts cannot be preserved/canonicalized or provenance cannot be authenticated without changing the scientific object.
+## Refined question / prospective boundary
+
+Phenomenon/question: can a fresh SYSTEM successor make semantic-equivalence verification auditable by separating **artifact integrity/provenance** from **semantic comparison**, with raw-before-verification preservation and independent producers?
+
+Hypothesis: a viable successor can exist only if each producer emits independently preserved claim-scoped raw streams and manifests; the verifier recomputes artifact hashes from preserved bytes, authenticates producer/ref provenance, and then applies a prospectively frozen semantic comparator. Digest equality is an integrity statement, not a substitute for tolerance-aware floating-state equivalence.
+
+Prospective raw inventory:
+1. per-producer manifest binding exact source/protocol/package/input/evaluator refs, producer/run identity, privilege/resource envelope, canonicalization schema/version, and provenance attestation;
+2. actual ordered event stream covering schedule/fire/ignition/prediction observables;
+3. fixed checkpoint stream covering claim-scoped state such as eligibility/weights at prospective boundaries;
+4. raw/deterministic resource-counter stream sufficient to reconstruct the resource comparison;
+5. verifier record containing independently recomputed artifact hashes, provenance verdicts, semantic-comparator results, resource-contract checks, and fail-closed reasons.
+
+Prospective comparison rule: exact comparison for canonical discrete streams; claim-scoped floating state must use a separately frozen semantic rule/tolerance. R50's `1e-12` abs/rel tolerance is historical context only and is **not** adopted here; choosing any scientific tolerance is science-affecting and requires future Analyst admission/versioning.
+
+Discriminator/falsifier: reject the successor path if claim-scoped trajectory/checkpoint fields cannot be emitted as actual producer observations without changing system/comparator semantics, if independent producer/ref provenance cannot be authenticated, or if resource accounting cannot be separated from verification overhead under one fixed privilege/resource envelope. Retain for fresh-successor review only if those boundaries can be fixed prospectively.
 
 ## Handoff
 
-- proposed current-object ceiling if later admitted: `SYSTEM`
+- canonical work: `false`
+- development_phase/revision: `N/A_NONCANONICAL_QFD`
+- MAIN independence: `PASS`
+- theory-backward accounting: no autonomous scientific selection; QFD is denominator-excluded; rolling actual scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`
+- repair/change classification: `READ_ONLY_QUESTION_FORMATION_DIAGNOSTIC`; no repository repair or science-affecting mutation
+- proposed claim ceiling if a future object is admitted: `SYSTEM`
 - proposed preformal_eligible: `false`
-- readiness: `NOT_READY / NONCANONICAL`
+- preliminary readiness: `NOT_READY_NONCANONICAL_SEED`
 - hold dimensions: `N/A_NONCANONICAL_SEED`
-- fresh_successor_potential: `CONDITIONAL_TRUE`
-- theory-backward accounting: rolling actual autonomous scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`; this QFD is denominator-excluded.
-- repair/change classification: `READ_ONLY_QUESTION_FORMATION`; no repair or science-affecting change.
+- fresh_successor_potential: `CONDITIONAL_TRUE_BOUNDARY_FEASIBLE`
+- next layer: `CONTINUE_QUESTION_FORMATION`
+- open choices: provenance trust root/authentication mechanism; exact checkpoint schedule and full-coverage boundary; fixed future resource/privilege envelope; verifier isolation; future semantic tolerance/representation
 - recommendation: `CONTINUE_QUESTION_FORMATION`
 
-Next uncertainty is engineering-scientific boundary definition, not outcome collection: exact raw artifact inventory, canonical serialization, producer authentication/isolation evidence, verifier isolation, trajectory/checkpoint completeness, and a fixed future resource contract must be specified before Evidence Analyst should consider a fresh #32-family SYSTEM candidate. No Utility request was appended and no research/source/evidence/formal ref was mutated.
+No scientific experiment/workflow, research branch, Utility request, PRE_FORMAL/FORMAL action, identity consumption, held-out read, canonical admission, research/source mutation, or immutable scientific-ref mutation occurred.

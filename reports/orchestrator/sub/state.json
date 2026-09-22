@@ -1,30 +1,35 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7",
-  "produced_at": "2026-09-22T14:46:00+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7",
+  "generation_id": "SUB-20260922T154200+0900-QFD-EQUIVBOUNDARY-R64-C3F8A2D1",
+  "produced_at": "2026-09-22T15:42:00+09:00",
+  "producer_run_id": "SUB-RUN-SUB-20260922T154200+0900-QFD-EQUIVBOUNDARY-R64-C3F8A2D1",
   "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_QUESTION_FORMATION_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4",
+  "supersedes_generation_id": "SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T140541+0900-R63-E8C421B7@9f90816657aa08754827e35976c9fa35b5d7c09a",
-    "main": "MAIN-20260922T141618+0900-PRIMARY-H7-DEVR2-ARCH-C3-E8C421B7@c3a5262bc92e7e7e1bcc6ff51179e8178416c3fe",
+    "evidence_analyst": "EVA-20260922T145734+0900-R64-F1A8C29D@0b201ca23c1de6fb568d78f320dc5a55ab85b70c",
+    "main": "MAIN-20260922T151800+0900-PRIMARY-H7-PFR1-C4-F1A8C29D@e0848938870fde48f75038cb22a0e7af9520f504",
     "control": "CTRL-20260922T124800+0900-R33-E7C421B6@c41db58a5cc87e5460f143ce07c4256d7238d577",
-    "previous_sub": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4@c3a5262bc92e7e7e1bcc6ff51179e8178416c3fe",
+    "previous_sub": "SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7@3a6b397ea806935f300e662bb17931fd4ed9838b",
+    "literature": "LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8@33a7d8fbf91175a78002f3c2a9a6109fbefb0ff6",
+    "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7@35cd3434306a413ec6e90d83a2618cd9101a0d88",
+    "methodology": "METHCAL-20260922T152143+0900-R60-B7E4C219@91482f931c0d90f5560e3995b073a01ae68b42ce",
     "utility": "UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4@71beb0d5ee00f112825fcc268ec514761d6ab418"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "9f90816657aa08754827e35976c9fa35b5d7c09a",
-    "orchestrator_tip_before_write": "c3a5262bc92e7e7e1bcc6ff51179e8178416c3fe",
+    "analyst_handoff": "0b201ca23c1de6fb568d78f320dc5a55ab85b70c",
+    "orchestrator_tip_before_write": "e0848938870fde48f75038cb22a0e7af9520f504",
     "control_tip": "c41db58a5cc87e5460f143ce07c4256d7238d577",
+    "methodology_tip": "91482f931c0d90f5560e3995b073a01ae68b42ce",
     "utility_tip": "71beb0d5ee00f112825fcc268ec514761d6ab418",
-    "utility_equivalence_module_blob": "753d9759c3bd9da0d8e6a27926c8e3c3f9539cb4",
-    "h7_dev_r2_head": "d6655549c179caf391d4b43bd2ebea49f2bfc82b"
+    "utility_equivalence_branch": "utility/equivalence-certificate-v0-1-A42D7C19@9f9d18065b481d8597236b0b682f0574c251b319",
+    "terminal_predecessor_branch": "research/main-semantic-active-work-localization-r50-cycle2@d090fd2e57680c5a97b9fd0d036fc65a008078ec",
+    "main_h7_pf_r1_head": "research/main-h7-pf-r1-frozen-panel-r64-cycle4@8681dcbbe2fff986c28a79057f557b35f3f0f752"
   },
   "allocation": {
-    "main_lane": "H7_DEV_R2_VERSIONED_COMPARATOR_PROTOCOL_CLOSURE_ARCHITECTURE_CYCLE3_IMPLEMENTATION_ONLY_COMPLETED_PENDING_FRESH_ANALYST_REVIEW",
-    "sub_lane": "NO_OP_UNTIL_MATERIALLY_FRESH_NON_MAIN_SUPPLY_DELTA_OR_EXPLICIT_INDEPENDENT_ALLOCATION",
-    "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_ONE_BOUNDED_AUTONOMOUS_RESEARCH_TASK_IF_FRESH_SUPPLY_EXISTS",
+    "main_lane": "H7_PF_R1_FROZEN_PANEL_DEVELOPMENT_EVALUATION_CYCLE4_NONCONFIRMATORY_COMPLETED_PENDING_FRESH_ANALYST_REVIEW",
+    "sub_lane": "QUESTION_FORMATION_DISCOVERY_EQUIV_RAW_DIGEST_PROVENANCE_BOUNDARY_ONLY_NO_CANONICAL_ADMISSION_OR_IMPLEMENTATION",
+    "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_AT_MOST_ONE_BOUNDED_AUTONOMOUS_RESEARCH_TASK",
     "system_priority_exception": {"used": false}
   },
   "candidate_pool": {
@@ -32,23 +37,24 @@
     "MECHANISM": 13,
     "SYSTEM": 19,
     "ACTIVE": 1,
-    "NONTERMINAL_HOLD": 0,
     "TERMINAL_FOR_CURRENT_OBJECT": 31,
     "preformal_eligible": 1,
-    "preformal_ready": 0,
-    "viable_mechanism_candidates": 1
+    "preformal_ready": 1,
+    "fresh_formal_authority": 0
   },
   "main_owned_object": {
     "id": "CAND-H7-RESPONSIBILITY",
-    "classification": "ARCHITECTURE_STUDY",
+    "classification": "PRE_FORMAL",
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
-    "preformal_readiness": "NOT_READY",
+    "preformal_readiness": "READY_AT_R64_ALLOCATION",
     "terminal_state": "ACTIVE",
     "queue_state": "ACTIVE",
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "development_revision": "H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE",
-    "cycle_count": 3,
+    "development_revision": "H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION",
+    "cycle_count": 4,
+    "latest_result": "RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY",
+    "status": "COMPLETED_STOPPED_FOR_FRESH_ANALYST_REVIEW",
     "main_owned": true
   },
   "operating_mode": "AUTONOMOUS_SECONDARY_RESEARCH",
@@ -57,22 +63,23 @@
   "work_kind": "NONCANONICAL_CANDIDATE_SEED_CONDITIONAL_FRESH_SYSTEM_SUCCESSOR_PROPOSAL",
   "development_phase": null,
   "development_revision": null,
-  "cycle_count": 1,
-  "cycle3_reassessment_rationale": "N/A_CYCLE1_QUESTION_FORMATION",
+  "cycle_count": 2,
+  "reassessment_rationale": "Cycle 2 is nonduplicative because it resolves a concrete uncertainty left by cycle 1: whether terminal #32 actually preserves the producer-level raw streams needed for an independent raw-to-digest verifier. Fresh Methodology R60 also tightened raw-before-score/preserve-before-read and verifier-independence requirements.",
   "main_independence": {
     "status": "PASS_NO_COLLISION",
-    "reason": "Question is generic equivalence/provenance tooling for a terminal SYSTEM family; H7 comparator protocol, result-bearing follow-up, blockers and successor path were excluded."
+    "reason": "Selected task only inspects the terminal #32 historical SYSTEM measurement boundary and generic Utility verifier. H7 PF-R1 results, blockers, redesign, successor and FORMAL path remain excluded."
   },
   "pre_no_op_scan": {
     "performed": true,
-    "result": "ONE_SAFE_USEFUL_NONDUPLICATIVE_BOUNDED_QUESTION_FORMATION_DIRECTION_SELECTED",
-    "fresh_delta": "Utility post-R62 exact trust-boundary/callsite reconciliation established declared-digest-only semantics and absence of raw-to-digest/provenance guarantees.",
+    "result": "ONE_SAFE_USEFUL_NONDUPLICATIVE_BOUNDED_QFD_CYCLE2_SELECTED",
+    "fresh_delta": "Fresh Methodology R60 plus direct inspection of terminal #32 measurement/workflow exposes a precise mismatch between preserved aggregate output and the producer-level raw trajectory/checkpoint streams required by the retained seed.",
     "alternatives_considered": [
-      {"surface": "TERMINAL_MECHANISM_AND_THEORY_BACKWARD", "result": "NO_SELECTION", "reason": "No fresh independent Assembly/regeneration/continuation/persistent-state/pre-semantic surface; live responsibility/credit remains H7-owned."},
-      {"surface": "PHENOMENON_FIRST_SHADOW", "result": "NO_SELECTION", "reason": "No new nonduplicative phenomenon surface; viable MAIN-owned H7 remains active."},
-      {"surface": "LITERATURE_AUDIT_METHODOLOGY", "result": "NO_SELECTION", "reason": "No newly independent scientific observable/intervention/comparator beyond prior scan; methodology updates are process-governance inputs."},
-      {"surface": "TERMINAL_SYSTEM_EQUIVALENCE_FAMILY", "result": "SELECT_QFD", "reason": "Fresh Utility reconciliation converts a generic trust blocker into a concrete raw-artifact/provenance measurement question without reopening terminal #32."},
-      {"surface": "STABLE_REPOSITORY_EVIDENCE", "result": "NO_SELECTION", "reason": "Stable main remains unchanged; no new scientific source/evidence surface."}
+      {"surface": "TERMINAL_MECHANISM_AND_THEORY_BACKWARD", "result": "NO_SELECTION", "reason": "Assembly/regeneration/continuation/pre-semantic surfaces have no new independent observable/reduction; responsibility/credit is H7-owned and now awaits fresh Analyst review after PF-R1."},
+      {"surface": "PHENOMENON_FIRST_SHADOW", "result": "NO_SELECTION", "reason": "R64 shadow queue is empty and no independent new phenomenon surface was found."},
+      {"surface": "LITERATURE_AUDIT", "result": "NO_SELECTION", "reason": "R28 pressure is H7-relevant; Audit R6 is unchanged/interpretive for consumed PD01."},
+      {"surface": "METHODOLOGY_R60", "result": "INPUT_TO_SELECTED_QFD", "reason": "Fresh advisory tightens equivalence independence and raw-before-score/preserve-before-read, directly refining the #32 seed boundary without creating evidence."},
+      {"surface": "TERMINAL_SYSTEM_EQUIVALENCE_FAMILY", "result": "SELECT_QFD_CYCLE2", "reason": "Historical R50 raw artifact is aggregate/in-process and full trajectory fields are not observed streams; this is a concrete new question-formation result."},
+      {"surface": "STABLE_REPOSITORY_EVIDENCE", "result": "NO_NEW_CANONICAL_SELECTION", "reason": "Stable main remains unchanged; no new authoritative evidence surface."}
     ]
   },
   "theory_backward_accounting": {
@@ -81,15 +88,15 @@
     "rolling_autonomous_canonical_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
     "qualifying_share": "1/3",
     "theory_backward_exception": null,
-    "note": "QUESTION_FORMATION_DISCOVERY is denominator-excluded; no mechanism was manufactured."
+    "note": "QUESTION_FORMATION_DISCOVERY is denominator-excluded; no mechanism object was manufactured."
   },
   "phenomenon_question_hypothesis": {
-    "phenomenon": "DECLARED_DIGEST_EQUALITY_IS_NOT_INDEPENDENT_RAW_ARTIFACT_EQUIVALENCE",
-    "question": "Can a future independent SYSTEM successor prospectively verify raw artifact -> canonical bytes -> independently recomputed digest -> full trajectory/checkpoint equality with authenticated producer/ref provenance?",
-    "hypothesis": "Current verifier is only a declared-digest consistency layer; a materially new successor requires raw preservation, deterministic canonicalization, authenticated provenance, independent digest recomputation, full coverage and a fixed resource/privilege contract.",
-    "observable_intervention": "Read-only observables: raw artifact availability, serialization determinism, producer/ref identity, recomputed digest equality, trajectory/checkpoint coverage. No scientific intervention.",
-    "ordinary_reductions_comparators": "Current declared-digest verifier versus an independent raw-to-digest verifier over preserved producer artifacts under the same prospective resource/privilege envelope.",
-    "falsifier_discriminator": "Close as duplicate if current tooling already independently obtains/authenticates producer output and recomputes all relevant digests with full coverage; retain the gap if it only compares supplied digest claims; reject the successor path if raw artifacts/provenance cannot be fixed without changing the scientific object."
+    "phenomenon": "PRESERVED_AGGREGATE_OUTPUT_AND_DECLARED_DIGEST_EQUALITY_DO_NOT_ESTABLISH_INDEPENDENT_RAW_SEMANTIC_EQUIVALENCE",
+    "question": "Can a fresh future SYSTEM successor separate raw artifact integrity/provenance from prospectively frozen semantic comparison using independently preserved producer streams?",
+    "hypothesis": "A viable successor requires per-producer manifests, actual ordered event/checkpoint/resource streams, preserve-before-verification, independent digest recomputation, authenticated producer/ref provenance, verifier isolation, and a separately frozen semantic comparator.",
+    "observable_intervention": "Read-only diagnostic only. Observables: producer count/process topology, preserved artifact granularity, actual-vs-placeholder semantic fields, raw stream availability, hash derivation path, provenance binding, comparator tolerance semantics.",
+    "ordinary_reductions_comparators": "Current R50 aggregate in-process measurement plus current declared-digest Utility verifier versus a prospective two-producer raw-preserve/recompute/semantic-compare pipeline under one fixed privilege/resource envelope.",
+    "falsifier_discriminator": "Reject the successor path if claim-scoped semantic fields cannot be emitted as actual producer observations without changing comparator/system semantics, if independent producer/ref provenance cannot be authenticated, or if resource accounting cannot be separated from verification overhead. Retain for fresh-successor review only when those boundaries are prospective and auditable."
   },
   "repair_change_classification": {
     "selected_work": "READ_ONLY_QUESTION_FORMATION_DIAGNOSTIC",
@@ -100,15 +107,16 @@
   "inputs": {
     "latest_analyst_allocation_read": true,
     "main_sub_control_reconciled": true,
-    "recent_literature_audit_methodology_prior_scan_reconciled": true,
-    "fresh_utility_reconciliation_read": true,
-    "utility_source_module_read_directly": true,
+    "recent_literature_audit_methodology_utility_reconciled": true,
+    "terminal_predecessor_measurement_source_read_directly": true,
+    "terminal_predecessor_workflow_read_directly": true,
+    "utility_source_and_tests_read_directly": true,
     "stable_main_independently_refetched": true,
     "protected_or_held_out_result_used": false,
     "consumed_identity_used": false
   },
   "implementation": {
-    "mode": "STATIC_READ_ONLY_CONTROL_PLANE_REPOSITORY_AND_UTILITY_SOURCE_DIAGNOSTIC",
+    "mode": "STATIC_READ_ONLY_CONTROL_PLANE_REPOSITORY_UTILITY_AND_TERMINAL_PREDECESSOR_DIAGNOSTIC",
     "research_branch": null,
     "workflow": null,
     "scientific_probe_executed": false,
@@ -117,14 +125,32 @@
   },
   "observations": {
     "fresh_non_main_supply_delta": true,
-    "utility_actual_claim": "INTERNAL_DECLARED_CERTIFICATE_DIGEST_EQUIVALENCE_UNDER_SELF_CONSISTENT_BINDINGS_AND_ENVELOPES",
-    "raw_to_digest_derivation_proven": false,
-    "authenticated_producer_provenance_proven": false,
-    "actual_process_isolation_proven": false,
-    "external_callsites_outside_synthetic_tests": false,
-    "source_verdict_compares_supplied_trajectory_and_checkpoint_digest_strings_directly": true,
-    "stable_main_unchanged": true,
+    "r50_producers_are_independent": false,
+    "r50_reference_and_comparators_run_in_one_python_process": true,
+    "r50_preserved_artifact_is_single_aggregate_measurement_json": true,
+    "r50_ordered_event_stream_preserved": false,
+    "r50_checkpoint_stream_preserved": false,
+    "r50_floating_state_semantic_comparison_uses_tolerance": true,
+    "r50_discrete_schedule_fire_ignition_prediction_fields_are_literal_true": true,
+    "utility_verifier_recomputes_contract_envelope_hashes": true,
+    "utility_verifier_recomputes_trajectory_checkpoint_hashes_from_raw": false,
+    "utility_verifier_authenticates_producer_provenance": false,
+    "raw_digest_integrity_and_semantic_equivalence_must_be_separate_layers": true,
+    "historical_r50_tolerance_adopted_for_successor": false,
     "selected_task_count": 1
+  },
+  "prospective_boundary": {
+    "raw_inventory": [
+      "per_producer_manifest_with_exact_ref_bindings_producer_run_identity_envelopes_canonicalization_and_provenance_attestation",
+      "actual_ordered_event_stream_covering_schedule_fire_ignition_prediction",
+      "fixed_checkpoint_stream_covering_claim_scoped_state",
+      "raw_or_deterministic_resource_counter_stream",
+      "verifier_record_with_recomputed_hashes_provenance_semantic_and_resource_verdicts"
+    ],
+    "preserve_order": "PER_PRODUCER_RAW_ARTIFACTS_MUST_BE_PRESERVED_BEFORE_VERIFICATION_OR_INTERPRETATION",
+    "integrity_rule": "Verifier recomputes artifact hashes from preserved bytes; producer-supplied digests are not trusted as the root of truth.",
+    "semantic_rule": "Canonical discrete streams may be exact-compared; floating state requires a separately prospectively frozen semantic representation/tolerance. Digest equality alone is not semantic equivalence.",
+    "open_trust_boundary": "Exact provenance trust root/authentication/isolation mechanism remains unresolved."
   },
   "evidentiary_status": "NON_EVIDENTIARY_QUESTION_FORMATION_ONLY",
   "proposed_claim_ceiling": "SYSTEM_IF_FUTURE_OBJECT_ADMITTED",
@@ -132,19 +158,20 @@
   "preliminary_readiness": {"status": "NOT_READY_NONCANONICAL_SEED"},
   "hold_dimensions": {"status": "NOT_APPLICABLE_NONCANONICAL_SEED"},
   "fresh_successor_potential": {
-    "new_proposal_this_run": true,
+    "new_proposal_this_run": false,
     "predecessor_family": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
     "predecessor_reopened": false,
-    "status": "CONDITIONAL_TRUE",
-    "material_newness": "Independent raw-to-digest provenance/coverage measurement surface, not post-outcome reinterpretation of terminal predecessor."
+    "status": "CONDITIONAL_TRUE_BOUNDARY_FEASIBLE",
+    "material_newness": "Cycle 2 identifies exact missing producer-level raw streams and separates integrity/provenance from tolerance-aware semantic comparison; it does not reinterpret the predecessor's outcome."
   },
   "next_layer": "CONTINUE_QUESTION_FORMATION_BEFORE_ANY_ANALYST_ADMISSION",
   "open_choices": [
-    "Exact raw artifact inventory and full-coverage boundary for ordered trajectory/checkpoints.",
-    "Deterministic canonical serialization and digest domain separation.",
-    "Authenticated producer/ref provenance and actual isolation evidence.",
-    "Independent verifier placement and trust root.",
-    "Prospectively fixed resource/privilege contract for any fresh successor."
+    "Authenticated producer/ref provenance trust root and isolation proof.",
+    "Exact claim-scoped ordered-event and checkpoint schema/coverage boundary.",
+    "Exact checkpoint schedule.",
+    "Prospectively fixed resource/privilege envelope and accounting boundary excluding verifier overhead.",
+    "Independent verifier placement/trust root.",
+    "Future semantic floating-state representation/tolerance; historical R50 1e-12 is not automatically inherited."
   ],
   "recommendation": "CONTINUE_QUESTION_FORMATION",
   "utility_request": null,
@@ -163,7 +190,7 @@
     "branch": "ops/orchestrator-run-report",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "history_path": "reports/orchestrator/sub/history/2026-09-22/1446-r63-qfd-equivalence-provenance.md",
+    "history_path": "reports/orchestrator/sub/history/2026-09-22/1542-r64-qfd-equivalence-boundary.md",
     "mode": "ATOMIC_TREE_NON_FORCE_FAST_FORWARD"
   }
 }
