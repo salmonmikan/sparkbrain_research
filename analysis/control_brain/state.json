@@ -1,30 +1,34 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260922T124800+0900-R33-E7C421B6",
-  "produced_at": "2026-09-22T12:48:00+09:00",
-  "producer_run_id": "control-brain-auto-20260922T1250JST-R33",
+  "generation_id": "CTRL-20260922T155032+0900-R34-2F8C71A6",
+  "produced_at": "2026-09-22T15:50:32+09:00",
+  "producer_run_id": "control-brain-auto-20260922T1550JST-R34",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "CTRL-20260922T105700+0900-R32-C5A721D4",
-  "programme_position": "FORMAL_HOLD_WITH_ACTIVE_MECHANISM_ARCHITECTURE_DEVELOPMENT",
+  "supersedes_generation_id": "CTRL-20260922T124800+0900-R33-E7C421B6",
+  "programme_position": "FORMAL_HOLD_WITH_H7_PREFORMAL_RESULT_EXPOSED_PENDING_FRESH_ANALYST_REVIEW",
   "input_generations": {
-    "human_directives": "ops/human-directives@59103b381783cf6cb456e43f1d73e7a01c1d33dc",
-    "previous_control": "CTRL-20260922T105700+0900-R32-C5A721D4@544bede4c5131ea57e5b93903bab5279d066a0c0",
-    "evidence_analyst": "EVA-20260922T124300+0900-R61-C7F421A9@4f55a65744385431ec73d1dec4ed32b7b20a63d8",
-    "main": "MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0@9b946107aadac9430a449d32d5818b16631719c8",
-    "sub": "SUB-20260922T113500+0900-NOOP-R59INTENTIONALIDLE-A6D4C219@49572dfeb1aa7da7986ac545a10f1e4e89f5d15e",
-    "relay": "NO_FRESH_POST_R61_DURABLE_CONTINUATION",
-    "literature": "LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8@33a7d8fbf91175a78002f3c2a9a6109fbefb0ff6",
+    "human_directives": "ops/human-directives@de60c8888d1b438d5b06fed2266a8efd5893e646",
+    "previous_control": "CTRL-20260922T124800+0900-R33-E7C421B6@c41db58a5cc87e5460f143ce07c4256d7238d577",
+    "evidence_analyst": "EVA-20260922T145734+0900-R64-F1A8C29D@0b201ca23c1de6fb568d78f320dc5a55ab85b70c",
+    "main": "MAIN-20260922T151800+0900-PRIMARY-H7-PFR1-C4-F1A8C29D@e0848938870fde48f75038cb22a0e7af9520f504",
+    "sub": "SUB-20260922T154200+0900-QFD-EQUIVBOUNDARY-R64-C3F8A2D1@8f42de275816998cb631288757f415c3fd456e11",
+    "relay": "LIVE_DISABLED_NO_CURRENT_CONTINUATION_DEPENDENCY",
+    "literature": "LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9@d09c7106e5f346d3a4bb67ac25e6c651d2c6787a",
     "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
-    "methodology": "METHCAL-20260922T122122+0900-R58-B84F2D17@623297013cad5a6c80037497d5236b581a87277d",
-    "steward": "STEWARD-20260922T075212+0900-G9-8C4E21D3@a3ab4f4f70c4782e7ff916838c33a64eb0a9c2dd",
+    "methodology": "METHCAL-20260922T152143+0900-R60-B7E4C219@91482f931c0d90f5560e3995b073a01ae68b42ce",
+    "steward": "STEWARD-20260922T135014+0900-G10-4D8C21A7@b3b69553df32f5eb998d1c29cbe29ee1c34a93aa",
+    "utility_state": "UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4@71beb0d5ee00f112825fcc268ec514761d6ab418",
     "utility_assignment": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "utility_worker": "UTILITY-20260922T123800+0900-AUTO-EQUIV-CI-STATE-RECON-COMPLETED-6B4E21F9@02da65ee08790e0f4a3eb5b4c364cf954f80aa57",
-    "scheduler_registry_manifest": "blob@6f7fa138b09b093613e8eb98b18559ea94e16b59"
+    "scheduler_registry": "ops/scheduler-registry@0b8efc7bf25540a1f0f8df0f4dda072e35d3e4d7",
+    "live_scheduler_snapshot": "2026-09-22T15:50JST"
   },
   "authoritative_refs": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "main_protected": false,
-    "ruleset_count": 0,
+    "research_h7_pf_r1_head": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
+    "research_h7_pf_r1_workflow_run": 35695286240,
+    "research_h7_pf_r1_artifact_id": 10680620448,
+    "research_h7_pf_r1_artifact_digest": "sha256:db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d",
     "evidence_tag_count": 5,
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
@@ -33,263 +37,218 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
-    "immutable_ref_incident": false,
-    "active_research_ref": "research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1@b83cd8cc71557af3ecc79c8a305a22b58c1b483c",
-    "h7_contract_id": "H7-DEV-R1-ARCH-CONTRACT-V1",
-    "utility_equivalence_ref": "utility/equivalence-certificate-v0-1-A42D7C19@9f9d18065b481d8597236b0b682f0574c251b319"
+    "immutable_ref_incident": false
   },
-  "human_directive_dispositions": [
-    {
-      "directive": "HUMAN-20260918-001",
-      "disposition": "ACCEPT",
-      "current_action": "UTILITY_EQUIVALENCE_TOOL_CI_GREEN_PENDING_FRESH_STEWARD_REVIEW_AND_NORMAL_REVIEWED_INTEGRATION",
-      "merge_authorized": false
-    },
-    {
-      "directive": "HUMAN-20260919-002",
-      "disposition": "ACCEPT",
-      "current_action": "DEFER_PROTECTION_DEPLOYMENT"
-    },
-    {
-      "directive": "HUMAN-20260919-003",
-      "disposition": "ACCEPT_ACTIVE_CONCERN_IMPROVING",
-      "detail": "H7 DEV-R1 now provides one active viable MECHANISM Architecture revision; no scientific result yet."
-    },
-    {
-      "directive": "HUMAN-20260921-004",
-      "disposition": "MODIFY_AND_ACCEPT_BOUNDED_AUTONOMOUS_UTILITY"
-    },
-    {
-      "directive": "HUMAN-20260922-005",
-      "disposition": "ACCEPT_APPLIED_PROSPECTIVELY",
-      "detail": "Development-phase semantics are live in Analyst/MAIN/Relay/Methodology; FORMAL one-way floor unchanged."
-    },
-    {
-      "directive": "HUMAN-20260922-006",
-      "disposition": "ACCEPT_READER_SURFACE_DRIFT_CONFIRMED_PENDING_STEWARD_AUDIT",
-      "detail": "main README and pyproject still advertise 0.3.2.dev0 while v0.5 theory spec exists with package target 0.5.0.dev0; audit stable version semantics before any small reviewed refresh."
-    },
-    {
-      "directive": "HUMAN-20260922-007",
-      "disposition": "ACCEPT_APPLIED_PENDING_FIRST_RUN_VALIDATION",
-      "detail": "Live SUB semantics now require pre-NO-OP scan and allow bounded noncanonical QUESTION_FORMATION_DISCOVERY; latest durable SUB result still predates rollout."
-    }
-  ],
+  "human_directive_dispositions": {
+    "HUMAN-20260922-005": "ACCEPT_APPLIED_PROSPECTIVELY",
+    "HUMAN-20260922-006": "ACCEPT_READER_SURFACE_DRIFT_CONFIRMED_DOCUMENTATION_REFRESH_REVIEW_ONLY",
+    "HUMAN-20260922-007": "ACCEPT_APPLIED_FIRST_RUN_VALIDATED_QFD_ACTIVE_NONCANONICAL",
+    "HUMAN-20260922-008": "MODIFY_ACCEPT_CONCEPT_STAGED_POLICY_ONLY_USER_APPROVAL_REQUIRED_FOR_ROLE_PROMPT_CHANGE"
+  },
   "development_iteration_policy": {
-    "status": "APPLIED_PROSPECTIVELY",
-    "phases": [
-      "OPEN_DEVELOPMENT",
-      "RESULT_EXPOSED_DEVELOPMENT",
-      "CONSUMED_ONE_WAY"
-    ],
-    "cycle3_semantics": "MANDATORY_REASSESS_NOT_AUTOMATIC_TERMINATION",
-    "preformal_is_iterative_development": true,
-    "development_observations_are_independent_confirmation": false,
-    "science_invariant_same_object_repair_allowed_in_development": true,
-    "science_affecting_post_exposure_change_requires_versioned_revision_or_fresh_successor": true,
-    "prior_results_must_be_preserved": true,
-    "consumed_formal_floor_relaxed": false
+    "status": "ACTIVE",
+    "cycle3_semantics": "MANDATORY_REASSESS_NOT_AUTOMATIC_TERMINAL",
+    "preformal_is_development": true,
+    "hidden_second_formal_gate_detected": false,
+    "current_h7_development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "latest_repair_classification": "SCIENCE_INVARIANT_REPAIR_PRE_RESULT_RUFF_IMPORT_SOURCE_BINDING_ONLY",
+    "post_result_science_affecting_change_observed": false,
+    "formal_one_way_integrity": "INTACT"
   },
-  "funnel_v2_1": {
-    "material_candidates_total": 32,
-    "claim_ceiling_counts": {
-      "MECHANISM": 13,
-      "SYSTEM": 19
-    },
-    "classification_completeness": {
-      "complete": 32,
-      "total": 32,
-      "rate": 1.0
-    },
-    "terminal_state_counts": {
-      "ACTIVE": 1,
-      "NONTERMINAL_HOLD": 0,
-      "TERMINAL_FOR_CURRENT_OBJECT": 31
-    },
-    "architecture": {
-      "active": {
-        "MECHANISM": 1,
-        "SYSTEM": 0
-      },
-      "queued": {
-        "MECHANISM": 0,
-        "SYSTEM": 0
-      }
-    },
+  "funnel_metrics": {
+    "canonical_candidate_count": 32,
+    "claim_ceiling_counts": {"MECHANISM": 13, "SYSTEM": 19},
+    "classification_complete": "32/32",
+    "terminal_state_counts": {"ACTIVE": 1, "NONTERMINAL_HOLD": 0, "TERMINAL_FOR_CURRENT_OBJECT": 31},
+    "architecture_active": {"MECHANISM": 0, "SYSTEM": 0},
+    "architecture_queued": {"MECHANISM": 0, "SYSTEM": 0},
     "preformal_eligible_count": 1,
-    "preformal_ready_count": 0,
+    "preformal_ready_count": 1,
+    "preformal_active_mechanism_count": 1,
     "viable_mechanism_candidate_count": 1,
     "fresh_formal_authority_count": 0,
-    "development_phase_counts": {
-      "OPEN_DEVELOPMENT": 2,
-      "RESULT_EXPOSED_DEVELOPMENT": 30,
-      "CONSUMED_ONE_WAY": 0
-    },
+    "development_phase_counts": {"OPEN_DEVELOPMENT": 2, "RESULT_EXPOSED_DEVELOPMENT": 30, "CONSUMED_ONE_WAY_CANONICAL": 0},
     "official_consumed_one_way_identity_count": 7,
-    "active_development_revision_count": 1,
-    "cycle3_reassess_outcome_count": 0,
-    "fresh_successors_generated": 0,
-    "fresh_successors_admitted": 0,
-    "question_formation_discovery_authorized_noncanonical": 1,
-    "rolling_theory_backward": {
-      "canonical_actual_scientific_selections": [
-        "MECHANISM",
-        "SYSTEM",
-        "SYSTEM"
-      ],
-      "share": "1/3",
-      "question_formation_denominator_excluded": true
-    },
-    "no_target_episode": {
-      "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-      "canonical_check_count": 23,
-      "status": "CLOSED_FOR_CURRENT_ACTIVE_H7_REVISION",
-      "interpretation": "LIVENESS_ONLY_NOT_ABSENCE_EVIDENCE"
-    },
-    "recent_main_cycles": {
-      "SYSTEM": 11,
-      "MECHANISM": 4,
-      "time_split": "UNAVAILABLE_DO_NOT_USE_RUN_COUNT_AS_TIME_PROXY"
-    },
+    "recent_main_endpoint_counts_from_latest_canonical_analyst": {"SYSTEM": 11, "MECHANISM": 6},
+    "main_new_uncanonicalized_prefomal_endpoint_since_r64": 1,
     "system_priority_exception_count": 0,
-    "system_queue_starving_mechanism": false
+    "rolling_theory_backward_actual_scientific_selections": "MECHANISM/SYSTEM/SYSTEM=1/3"
   },
-  "active_h7": {
-    "candidate_id": "CAND-H7-RESPONSIBILITY",
-    "research_layer": "ARCHITECTURE_STUDY",
+  "h7_current": {
+    "candidate": "H7",
     "claim_ceiling": "MECHANISM",
-    "preformal_eligible": true,
-    "preformal_readiness": "NOT_READY",
-    "terminal_state": "ACTIVE",
-    "queue_state": "ACTIVE",
+    "layer": "PRE_FORMAL",
+    "revision": "H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION",
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "development_revision": "H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT",
-    "cycle1_status": "STATIC_CONTRACT_FROZEN_CI_GREEN_NO_RESULT_BEARING_EXECUTION",
-    "cycle2_authority": "IMPLEMENTATION_ONLY_STOP_BEFORE_RESULT_BEARING_MEASUREMENT",
-    "cycle2_allowed": [
-      "native paired-intervention harness",
-      "all three frozen ordinary comparators",
-      "deterministic split/seed plumbing",
-      "conformance assertions",
-      "non-result-bearing preflight"
-    ],
-    "cycle2_forbidden": [
-      "result-bearing discriminator measurement",
-      "PRE_FORMAL or FORMAL execution",
-      "science-affecting change without fresh Analyst revision",
-      "consumed/protected identity use"
-    ],
-    "literature_r28_disposition": "SCIENCE_AFFECTING_PROSPECTIVE_INPUT_FOR_EXPLICIT_REASSESSMENT_NOT_SILENT_R1_PATCH",
-    "possible_next_revision": "H7-DEV-R2_IF_ANALYST_PROSPECTIVELY_JUSTIFIES_NEW_INFORMATION_GAIN"
-  },
-  "external_methodology_implications": {
-    "literature_r28": {
-      "genuinely_new_information": true,
-      "prospective_topics": [
-        "intervention well-posedness/admissibility",
-        "abstraction-map complexity/privilege",
-        "regime coverage/faithfulness",
-        "intervention-aware recurrent/reservoir/state-space reductions"
-      ],
-      "same_revision_change_allowed": false,
-      "reason": "Would alter frozen intervention/comparator/claim-scope semantics; requires explicit versioned revision or successor."
+    "canonical_terminal_state": "ACTIVE",
+    "canonical_queue_state": "ACTIVE",
+    "preformal_eligible": true,
+    "preformal_readiness": "READY",
+    "execution_authority_now": "STOP_PENDING_FRESH_ANALYST_REVIEW",
+    "result_disposition": "RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY",
+    "result_summary": {
+      "native_accuracy": 0.8090277778,
+      "cut_accuracy": 0.8020833333,
+      "native_cut_delta": 0.0069444444,
+      "mean_tv": 0.0555077197,
+      "dense_recurrent_accuracy": 0.8090277778,
+      "finite_state_route_history_accuracy": 0.4548611111,
+      "eligibility_route_ledger_accuracy": 0.6996527778,
+      "positive_phenomenon_floor_passed": true,
+      "ordinary_reduction_direction_met_by_any_fixed_panel_comparator": false
     },
-    "methodology_r58": {
-      "overall": "MIXED_CALIBRATION",
-      "hard_floor": "KEEP",
-      "development_iteration": "RELAX_WITH_PROVENANCE_AND_VERSIONING",
-      "cycle3_automatic_cap": "RELAX",
-      "preformal_real_development_surface": "RELAX",
-      "fresh_successor_suppression": "RELAX",
-      "hidden_second_formal_gate": false,
-      "pass_reachability": "REALISTIC_WITH_FRESH_ONE_WAY_FORMAL_IDENTITY_AFTER_DEVELOPMENT"
-    },
-    "audit_r6_pd01": {
-      "canonical_token_immutable": true,
-      "interpretation_ceiling": "NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR"
-    }
+    "interpretation_ceiling": "PREFORMAL_NONCONFIRMATORY_RESIDUAL_ONLY_NO_BROAD_REDUCTION_EXHAUSTION_NO_UNIQUENESS_NO_FORMAL_UPLIFT",
+    "must_not": [
+      "RERUN_SAME_RESULT_TO_SEEK_PREFERRED_OUTCOME",
+      "RETUNE_OR_RESCORE_PF_R1",
+      "COMPARATOR_SHOPPING",
+      "POST_OUTCOME_THRESHOLD_OR_TOLERANCE_CHANGE",
+      "AUTOMATIC_FORMAL_PROMOTION"
+    ],
+    "next_authority": "FRESH_EVIDENCE_ANALYST_REVIEW"
   },
-  "utility_governance": {
+  "successor_review": {
+    "automatic_successor": false,
+    "same_object_rescue_allowed": false,
+    "current_result_supports_mechanism_proof": false,
+    "future_versioned_development_allowed": "ONLY_WITH_CONCRETE_PROSPECTIVE_INFORMATION_GAIN_AND_PRESERVED_PF_R1",
+    "future_formal_if_any": "FRESH_UNTOUCHED_ONE_WAY_IDENTITY_AND_EVALUATION_SURFACE"
+  },
+  "phenomenon_first": {
+    "mode": "PREFETCH_SHADOW_PENDING_FRESH_H7_ANALYST_REVIEW",
+    "last_scan_generation": "EVA-20260922T145734+0900-R64-F1A8C29D",
+    "throttle_compliant": true,
+    "shadow_standby_queue_size": 0,
+    "shadow_standby_queue": [],
+    "generated_last_scan": 1,
+    "retained_last_scan": 0,
+    "retired_or_rejected_last_scan": 1,
+    "last_rejection_reason": "DUPLICATE_HISTORICAL_EXPLORATORY_SURFACE",
+    "early_rescan_warranted": false,
+    "rationale": "H7_PF_RESULT_AND_R29_ARE_H7_SPECIFIC_NOT_INDEPENDENT_NEW_PHENOMENON_SURFACE",
+    "later_admissions_from_shadow": 0,
+    "executed_shadow_origin_candidates": 0
+  },
+  "sub_supply": {
+    "latest_mode": "QUESTION_FORMATION_DISCOVERY",
+    "latest_seed": "QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01",
+    "evidentiary_status": "NON_EVIDENTIARY",
+    "canonical": false,
+    "proposed_future_claim_ceiling": "SYSTEM",
+    "fresh_successor_potential": "CONDITIONAL_TRUE_BOUNDARY_FEASIBLE",
+    "reopens_terminal_candidate_32": false,
+    "counts_toward_shadow_or_candidate_denominators": false
+  },
+  "fast_forge_slow_science": {
+    "control_classification": "MODIFY",
+    "conceptual_separation_accepted": true,
+    "forge_evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_ONLY",
+    "preferred_owner": "SUB_FALLBACK_MODE_AFTER_RESERVED_CANONICAL_OR_SAFE_INDEPENDENT_LANES",
+    "main_role": "CANONICAL_ONLY",
+    "utility_role": "AUXILIARY_OUTCOME_INDEPENDENT_TOOLING_ONLY",
+    "shadow_and_forge_separate": true,
+    "same_generation_shadow_materialization_forbidden": true,
+    "promotion_requires_fresh_later_analyst_generation": true,
+    "promotion_requires_fresh_prospective_canonical_object_or_revision": true,
+    "implementation_status": "NOT_AUTHORIZED",
+    "scheduler_semantic_change_authority": "USER_APPROVAL_REQUIRED",
+    "recommended_phase1": "1_TO_2_DAY_EQUIVALENT_OBSERVATIONAL_SUB_FAST_FORGE_FALLBACK_NO_CADENCE_CHANGE_NO_AUTO_PROMOTION"
+  },
+  "utility": {
     "assignment_status": "IDLE",
     "active_assignment_id": null,
-    "latest_generation": "UTILITY-20260922T123800+0900-AUTO-EQUIV-CI-STATE-RECON-COMPLETED-6B4E21F9",
-    "latest_task_status": "COMPLETED",
-    "evidentiary_status": "NON_EVIDENTIARY",
-    "prototype_head": "9f9d18065b481d8597236b0b682f0574c251b319",
-    "ci_run_id": 35680322003,
-    "ci_conclusion": "success",
-    "fresh_steward_review": false,
-    "merge_or_promotion_authorized": false,
-    "semantic_trust_limits_cured_by_ci": false,
-    "hidden_main_dependency": false,
-    "candidate_typing_changed": false,
-    "quota_credit": false
+    "main_critical_path_dependency": false,
+    "equivalence_verifier_promotion_ready": false,
+    "safe_claim": "INTERNAL_DECLARED_CERTIFICATE_DIGEST_EQUIVALENCE_UNDER_SELF_CONSISTENT_BINDINGS_AND_ENVELOPES",
+    "not_proven": ["AUTHENTICATED_PRODUCER_PROVENANCE", "RAW_TO_DIGEST_DERIVATION", "PROCESS_ISOLATION", "SCIENTIFIC_SEMANTIC_EQUIVALENCE"],
+    "control_action": "NO_NEW_ASSIGNMENT"
   },
-  "main_stable_baseline_refresh": {
-    "status": "PENDING_STEWARD_AUDIT",
-    "reader_surface_drift_confirmed": true,
-    "pyproject_version": "0.3.2.dev0",
-    "readme_version": "0.3.2.dev0",
-    "v05_theory_spec_present": true,
-    "v05_package_target": "0.5.0.dev0",
-    "frontier_merge_authorized": false,
-    "preferred_change_shape": "SMALL_REVIEWED_OUTCOME_INDEPENDENT_INTEGRATION_BRANCH_OR_PR_AFTER_VERSION_SEMANTICS_AUDIT"
+  "methodology_implications": {
+    "latest_overall": "MIXED_CALIBRATION",
+    "first_ready_to_preformal_transition": "VALID_DEVELOPMENT_READINESS_NOT_HIDDEN_FORMAL_GATE",
+    "next_audit_priority": "POST_PF_R1_REVISION_DISCIPLINE_AND_OUTCOME_RESPONSIVE_MANIPULATION_RISK",
+    "future_tightening": ["COMPARATOR_VERIFIER_INDEPENDENCE", "RAW_BEFORE_SCORE_PRESERVE_BEFORE_READ_OBSERVABILITY", "PROTECTED_ADAPTIVE_EVALUATION_VALIDITY"]
   },
-  "worker_assessment": {
-    "analyst": "R61 canonical authority; HUMAN-005/007 operationalized conservatively; H7 R1 active MECHANISM Architecture and cycle2 implementation-only authority granted.",
-    "main": "R60 completed frozen static H7 contract cycle1 with green CI and no result-bearing science; waiting for R61 cycle2 implementation execution.",
-    "relay": "No fresh durable post-R61 continuation; no authority inferred from scheduler poll alone.",
-    "sub": "Latest durable state is pre-HUMAN-007 R59 no-op; live prompt now carries question-formation semantics; first-run validation pending.",
-    "literature": "R28 genuinely new H7 intervention/abstraction/regime/baseline guidance; held for explicit revision/reassessment rather than silent R1 mutation.",
-    "methodology": "R58 supports flexible/versioned development and strict consumed evidence; over-terminalization/candidate starvation is primary false-negative risk.",
-    "steward": "G9 is stale relative to HUMAN-005/006/007, H7 activation, and repaired green Utility tooling; fresh governance review needed.",
-    "utility": "Exact-head CI is green after bounded invariant lint repair; latest run only reconciled terminal CI/mailbox state; no merge/science authority."
+  "literature_implications": {
+    "r29_scope": "FUTURE_PROSPECTIVE_ONLY",
+    "dynamic_policy_estimand_required_for_future_confirmatory_h7": true,
+    "hierarchical_uncertainty_required_for_future_confirmatory_h7": true,
+    "prospective_equivalence_or_noninferiority_margin_if_claimed": true,
+    "may_rewrite_pf_r1": false
+  },
+  "audit_implications": {
+    "pd01_frozen_token_unchanged": true,
+    "pd01_interpretation_ceiling": "NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR",
+    "positive_mechanistic_reduction_claim_supported": false,
+    "rerun_or_relabel_allowed": false
   },
   "scheduler_health": {
     "fleet_status": "YELLOW",
-    "active_run_opportunities_per_day": 175,
+    "scheduler_definition_drift_detected": true,
+    "scheduler_cadence_failure_detected": false,
     "exact_time_overlap_count": 0,
     "role_ownership_collision_count": 0,
-    "scheduler_cadence_failure_detected": false,
-    "observed_material_start_delay": "INSUFFICIENT_DIRECT_START_TELEMETRY",
-    "generation_lag_assessment": "NORMAL_DEPENDENCY_AWARE_FLOW_WITH_R61_AFTER_R60_MAIN_AND_R58_METHODOLOGY",
-    "scheduler_definition_drift_detected": true,
-    "definition_drift": {
-      "registry_manifest_blob": "6f7fa138b09b093613e8eb98b18559ea94e16b59",
-      "live_ahead_roles": [
-        "Control & Repository Steward",
-        "Evidence Analyst",
-        "Research Orchestrator",
-        "Research Orchestrator Relay",
-        "Research Orchestrator Sub",
-        "Methodology Calibration Auditor"
-      ],
-      "brief_live_schedule": "01:55/09:55/13:55/17:55/21:55 JST",
-      "brief_registry_schedule": "01:45/09:45/13:45/17:45/21:45 JST",
-      "direction": "LIVE_TO_REGISTRY_BEFORE_NEXT_SCHEDULER_MUTATION_DO_NOT_REVERT_LIVE"
+    "active_sparkbrain_run_opportunities_per_day": 159,
+    "observed_start_delay_assessment": "LIMITED_DIRECT_START_TELEMETRY_NO_MATERIAL_FAILURE_ESTABLISHED",
+    "recent_noop_idle_patterns": {
+      "MAIN": "USEFUL_PREFORMAL_RESULT",
+      "SUB": "USEFUL_NONCANONICAL_QFD",
+      "Relay": "LIVE_DISABLED",
+      "Utility": "IDLE_POINTER_WITH_RECENT_USEFUL_BOUNDED_RESULT"
     },
+    "useful_result_cadence": "ADEQUATE_FOR_CURRENT_RESPONSIVENESS",
+    "generation_lag_assessment": "PRIOR_CONTROL_LAG_RECONCILED_ANALYST_TO_MAIN_HANDOFF_HEALTHY",
+    "live_combined_control_steward_schedule": "HOURLY_AT_50_WITH_STEWARD_ONLY_AT_01_07_13_19_JST",
+    "live_relay_enabled": false,
+    "live_current_state_brief_schedule": "01:55/09:55/13:55/17:55/21:55_JST_APPROVED",
+    "registry_drift": [
+      "REGISTRY_HAS_OLD_NON_HOURLY_COMBINED_CONTROL_SCHEDULE",
+      "REGISTRY_HAS_RELAY_ENABLED_WHILE_LIVE_DISABLED",
+      "REGISTRY_HAS_BRIEF_AT_45_WHILE_LIVE_APPROVED_55",
+      "REGISTRY_PROMPT_FINGERPRINTS_STALE"
+    ],
     "scheduler_change_warranted": false,
     "scheduler_controller_action": "NO_CHANGE",
-    "scheduler_proposals": []
+    "scheduler_proposals": [
+      {
+        "proposal_id": "SB-SCHED-FORGE-001",
+        "severity": "RECOMMEND",
+        "change_authority": "USER_APPROVAL_REQUIRED",
+        "problem": "EXPLORATORY_IMPLEMENTATION_THROUGHPUT_IS_CONSTRAINED_BY_CANONICAL_PROCESS_BURDEN_BUT_ROLE_REWRITE_CAN_CREATE_HIDDEN_SCIENCE_AUTHORITY",
+        "evidence_window": "HUMAN_008_R64_MAIN_PF_R1_CURRENT_SUB_UTILITY_METHODOLOGY",
+        "observations": [
+          "SUB_QFD_IS_PRODUCING_USEFUL_NONCANONICAL_QUESTION_FORMATION",
+          "UTILITY_IS_SAFE_WHEN_BOUNDED_BUT_MUST_NOT_OWN_CANDIDATE_AUTHORITY",
+          "MAIN_IS_FUNCTIONING_AS_CANONICAL_PREFORMAL_WORKER",
+          "NO_CURRENT_CADENCE_FAILURE_REQUIRES_TIMING_CHANGE"
+        ],
+        "proposed_change": "AFTER_EXPLICIT_USER_APPROVAL_ADD_BOUNDED_FAST_FORGE_FALLBACK_MODE_TO_SUB_KEEP_MAIN_CANONICAL_KEEP_UTILITY_HELPER_ONLY_KEEP_CURRENT_CADENCES_INITIALLY_AND_RUN_1_TO_2_DAY_EQUIVALENT_OBSERVATIONAL_PHASE_WITH_NO_AUTO_PROMOTION",
+        "expected_effect": "LOWER_IDEA_TO_CODE_LATENCY_AND_FEWER_NO_TARGET_STALLS_WITHOUT_WEAKENING_CANONICAL_ADMISSION_OR_FORMAL_EVIDENCE",
+        "scientific_risk": "CHERRY_PICKING_CONTAMINATION_HIDDEN_SUCCESSOR_LAUNDERING_OWNERSHIP_COLLISION_IF_FORGE_OUTPUTS_GAIN_AUTHORITY",
+        "rollback": "REMOVE_FORGE_FALLBACK_PROMPT_SEMANTICS_AND_RETURN_SUB_TO_CURRENT_HUMAN_007_QFD_DISCOVERY_ROLE_WITH_NO_SCIENTIFIC_REF_CHANGE",
+        "user_decision_needed": "EXPLICIT_APPROVAL_BEFORE_STRUCTURAL_ROLE_OR_PROMPT_SEMANTIC_SCHEDULER_CHANGE"
+      }
+    ]
   },
   "direction_to_analyst": [
-    "Preserve H7-DEV-R1-ARCH-CONTRACT-V1 exactly; keep cycle2 implementation-only and stop before result-bearing measurement.",
-    "Treat Literature R28 as possible H7-DEV-R2/fresh-successor input at explicit reassessment, not as a silent R1 patch.",
-    "Maintain development_phase, development_revision, change_class, prior_result_refs and prospective information_gain end-to-end; cycle3 means REASSESS.",
-    "Validate first HUMAN-007 SUB QUESTION_FORMATION_DISCOVERY as NON_EVIDENTIARY, NONCANONICAL, MAIN-independent and denominator-excluded before any later admission.",
-    "Treat Utility equivalence tooling as reusable engineering only; green CI is not scientific equivalence evidence or merge authority.",
-    "Keep consumed FORMAL identities and immutable evidence untouched."
+    "FRESH_REVIEW_H7_PF_R1_EXACT_BRANCH_WORKFLOW_ARTIFACT_AND_PRESERVE_NONCONFIRMATORY_STATUS",
+    "NO_RERUN_RESCORE_RETUNE_OR_OUTCOME_RESPONSIVE_REDESIGN_OF_PF_R1",
+    "VERSION_OR_FRESH_OBJECT_REQUIRED_FOR_ANY_POST_RESULT_SCIENCE_AFFECTING_CONTINUATION_WITH_CONCRETE_INFORMATION_GAIN",
+    "R29_POLICY_ESTIMAND_UNCERTAINTY_AND_MARGIN_GUIDANCE_IS_FUTURE_PROSPECTIVE_NOT_RETROACTIVE",
+    "KEEP_SHADOW_LOW_RATE_AND_STANDBY_QUEUE_SEPARATE_NO_EARLY_RESCAN_WITHOUT_INDEPENDENT_SURFACE_DELTA",
+    "KEEP_SUB_RAW_DIGEST_PROVENANCE_SEED_NONCANONICAL_AND_DO_NOT_REOPEN_CANDIDATE_32",
+    "DRAFT_FORGE_PROMOTION_AND_CONTAMINATION_REQUIREMENTS_ONLY_NO_FORGE_EXECUTION_OR_SCHEDULER_CHANGE_BEFORE_USER_APPROVAL",
+    "KEEP_ALL_CONSUMED_FORMAL_IDENTITIES_AND_IMMUTABLE_EVIDENCE_UNTOUCHED"
   ],
-  "actions_this_run": {
+  "actions_this_generation": {
     "experiment_executed": false,
-    "result_bearing_scientific_workflow_dispatched": false,
+    "scientific_workflow_dispatched": false,
     "formal_identity_consumed": false,
     "research_pr_merged": false,
-    "immutable_or_formal_evidence_mutated": false,
-    "scientific_history_rewritten": false,
+    "immutable_or_evidence_ref_mutated": false,
     "utility_assignment_mutated": false,
     "scheduler_mutated": false,
     "ruleset_or_protection_mutated": false,
-    "control_state_persisted": true
+    "historical_result_rewritten": false
   }
 }
