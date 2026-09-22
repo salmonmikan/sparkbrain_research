@@ -1,77 +1,69 @@
-# External Literature Reduction Scout — causal faithfulness beyond route stability
+# External Literature Reduction Scout — route specificity and explanation non-identifiability
 
 - schema_version: `2`
-- generation_id: `LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8`
-- produced_at: `2026-09-22T06:31:57+09:00`
-- producer_run_id: `external-literature-auto-20260922T063157+0900-R26-6F4A21D8`
+- generation_id: `LIT-20260922T093207+0900-R27-SPECIFICITY-IDENTIFIABILITY-8C3A21F5`
+- produced_at: `2026-09-22T09:32:07+09:00`
+- producer_run_id: `external-literature-auto-20260922T093207+0900-R27-8C3A21F5`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5`
+- supersedes_generation_id: `LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8`
 - role: `LITERATURE_REDUCTION_SCOUT`
-- schedule_slot: `06:30 JST`
+- schedule_slot: `09:30 JST`
 - schedule_inference: `false`
 - genuinely_new_information: `true`
 
 ## Inputs / authoritative state
 
-Repository evidence was re-fetched independently from all `ops/*` control-plane mailboxes before interpretation and again before persistence. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative annotated `evidence/*` set remains exactly five; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty; 13 legacy `freeze/*` branches, 24 preserve refs and existing control/STARTED refs remain unchanged. PR #148 and #149 remain open, mergeable, unmerged governance work and do not alter repository science.
+Repository science was re-fetched independently from the `ops/*` control-plane mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; the authoritative annotated `evidence/*` set remains exactly five; tag-form `formal/*` remains empty; 13 legacy `freeze/*` branches and 24 `preserve/*` branches remain present. Existing `control/*` STARTED refs were inspected independently. PR #148 and #149 remain open and unmerged governance work. Recent Actions traffic is Utility/control-plane CI rather than a new scientific research run.
 
 Consumed control-plane generations and exact commits:
 
-- Control Brain: `CTRL-20260922T045653+0900-R29-7C4E91B2`; current state/branch handoff tip `04af2dd036efbce5aa133df01eda569585d73476`, latest-text commit `05f8c07149b0e2584e8341948b4b2eb983760ddd`.
-- Evidence Analyst: `EVA-20260922T060636+0900-R54-4E7C21A9` @ `473bb7713c04b50dd9567472084301f2d1d07c69`.
-- MAIN: `MAIN-20260922T061624+0900-PRIMARY-FUNNEL21-IDLE-R54-4E7C21A9`; latest report commit `3f6701296884a6d22f003cd29b0661bdcf3741fa`, state commit `822c50998a1ae0d8564a6a3bf0dd02e2390ba0b4`, orchestrator branch tip observed `796490f686a424151e23c59f253308e3abb150a6`.
-- SUB: `SUB-20260922T053500+0900-NOOP-R53INTENTIONALIDLE-3F8A21D6` @ `005b367ddf1b442e3a83b9e56e16e18e2ad2996d`.
-- prior Literature: `LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5` @ `752cd466294c1be037fa896101f23ae7e3ab995a`.
+- Control Brain: `CTRL-20260922T085130+0900-R31-B7D4A219` @ `bfd3e0007ce6ab9dbbed4f6da73265143a320ac5`.
+- Evidence Analyst: `EVA-20260922T085807+0900-R57-6C4A21E8` @ `7833c8147444ec94ea2b86661a1519c215de2d77`.
+- MAIN: `MAIN-20260922T091342+0900-PRIMARY-FUNNEL21-IDLE-R57-6C4A21E8`; state commit `01ae06ccfe60450bf94ba756912bdadcd69cd776`, final MAIN mailbox tip observed `5ba09156c8c065307164fe29ac46cfef859ce1de`.
+- SUB: `SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6` @ `303842334e4e91392b845cb1b6fd8333082ee4e0`.
+- prior Literature: `LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8` @ `4c43d793067adf2a4d5c4e370c1d7e7d2be6eae3`.
 
-There is no active scientific object. Evidence Analyst R54 keeps `ACTIVE=0`, `NONTERMINAL_HOLD=1`, `TERMINAL_FOR_CURRENT_OBJECT=31`, PRE_FORMAL eligible/READY `0/0`, and viable executable MECHANISM `0`. H7 remains the sole nonterminal MECHANISM hold and is not queued because there is still no prospectively fixed native object, matched comparator, resource contract, or falsifier. MAIN R54 and SUB R53 intentionally idle rather than manufacture activity.
+There is still no active scientific object. Analyst R57 reports `ACTIVE=0`, `NONTERMINAL_HOLD=1`, `TERMINAL_FOR_CURRENT_OBJECT=31`, PRE_FORMAL eligible/READY `0/0`, viable executable MECHANISM `0`, with H7 responsibility as the sole nonterminal hold. MAIN R57 intentionally idles rather than manufacture activity; SUB's newest durable report remains the R56 intentional no-target run. Candidate #32 remains terminal method-limited and cannot be repaired or continued.
 
-The relevant repository antecedent is the historical, explicitly NON_EVIDENTIARY H7 trace-causality probe at `research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5`. In its fixed toy, route-ID stability and baseline accuracy stay perfect while increasing hidden-bypass coverage makes deletion/replacement sensitivity fall from 1 to 0. The artifact itself correctly warns that stable traces are not causal necessity and that low deletion sensitivity can also reflect legitimate redundancy. This run does not reopen that branch or turn it into evidence.
+The relevant repository antecedent remains the explicitly NON_EVIDENTIARY H7 toy at `research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5`. It shows that route-ID stability and perfect baseline accuracy can coexist with vanishing deletion/replacement sensitivity as an unreported bypass becomes ubiquitous. This run does not reopen or promote that branch.
 
-Prior scouts already covered provenance versus actual causality, counterfactual responsibility, Petri/event structures, dynamic slicing, local/eligibility credit, cascading eligibility, RUDDER/TVT, COMA/C3 and stochastic responsibility. Those findings are not recycled here. The new search is narrower: what external work says about the *faithfulness of the intervention itself* and about complete route/path explanations when bypasses or redundancy exist.
+Prior Literature R26 already established intervention-induced dormant pathways, causal-abstraction faithfulness, necessity/sufficiency/completeness separation, and path-specific PNS as a stronger-privilege ceiling. Those results are not recycled here. The new search asks a different question: even if a route is causally important and an intervention is faithful, does the evidence identify a task-specific and uniquely meaningful route explanation?
 
 ## High-value new findings
 
-### 1. A positive intervention effect can itself be an illusion by activating a dormant parallel pathway
+### 1. Necessity and sufficiency can identify a generic shared bottleneck rather than a task-specific causal route
 
-Makelov, Lange, Geiger & Nanda, *Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching* (ICLR 2024), construct and empirically demonstrate a failure mode where a patch has the intended end-to-end causal effect even though the patched component is causally disconnected from normal output: the intervention activates a dormant parallel pathway.
+Li & Subramani, *How Much Do Circuits Tell Us? Measuring the Consistency and Specificity of Language Model Circuits* (2026), distinguish circuit consistency from circuit specificity. Across six tasks and five language models, component-level circuits were often causally important and consistent but not task-specific: ablating one task's circuit damaged other tasks about as much as the target task's own circuit, largely because component-level circuits overlapped heavily across tasks. Neuron-level circuits were more task-specific but less consistent.
 
-This is highly relevant to H7 because the repository toy currently emphasizes the opposite direction — an already-existing hidden bypass can make a neat reported route causally dispensable. Makelov et al. show that intervention success is not automatically safer: an artificial deletion/replacement/patch can move the system onto a route that is dormant or atypical under the unperturbed computation.
+**Reduction impact:** a future H7 route can be stable, necessary and sufficient yet still be a generic bottleneck shared by many behaviors. If H7 claims lineage-specific responsibility rather than merely generic computational importance, it should prospectively include matched non-target tasks/contexts and compare target-specific damage against generic damage. A route that disrupts everything equally is weaker evidence for a task-specific causal lineage than a route whose intervention effect is selectively enriched for the claimed behavior.
 
-**Reduction impact:** a future H7 object cannot establish trace faithfulness from one intervention family alone. It should prospectively bound intervention support/realism and cross-check the same route claim using multiple independently specified interventions or naturally occurring counterfactual cases. A route that looks causal only under an intervention-induced alternate pathway remains an interpretability artifact, not a lineage-specific mechanism.
+This literature is transformer-oriented and is not an equal-architecture SparkBrain comparator. It changes the methodology bar: causal importance and task specificity are separate properties.
 
-### 2. The right target is a causal abstraction that is faithful over an intervention family, not merely a stable route label
+### 2. Mechanistic explanations can be fundamentally non-identifiable even when they perfectly reproduce behavior or causal alignment
 
-Geiger et al., *Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability* (JMLR 2025), formalize mechanistic explanations as causal abstractions and explicitly include graded faithfulness. Their framework unifies activation/path patching, causal mediation, causal scrubbing/tracing, circuit analysis and related intervention methods.
+Méloux, Maniu, Portet & Peyrard, *Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?* (2025), exhaustively enumerate explanations in small neural networks and show systematic non-identifiability: multiple circuits can reproduce the same behavior, one circuit can admit multiple interpretations, multiple algorithms can causally align with the same network, and one algorithm can align with multiple neural subspaces.
 
-**Reduction impact:** H7 route identity should be treated as a proposed high-level causal model. The prospective question is whether low-level SparkBrain behavior approximately commutes with the high-level intervention semantics over a frozen family of interventions, not whether one route ID is stable or whether one deletion changes output. This supplies a stronger ordinary formal baseline for explanation faithfulness than ad-hoc route stability.
+**Reduction impact:** H7 should not silently move from “this is a faithful route” to “this is the route” or “this route uniquely identifies responsibility.” Stable route IDs can reflect one admissible localization convention among several equally valid explanations. A future contract should predeclare whether the claim is existential (`a faithful route under this intervention family`) or uniqueness-bearing (`the uniquely responsible route`). The latter needs an explicit identifiability test or an equivalence-class formulation over alternative routes/algorithms/localizations.
 
-A future contract should therefore declare high-level variables/routes, allowed bypass/residual channels, the intervention mapping, and a graded faithfulness metric before outcomes are seen. This is prospective admission guidance only; no current H7 object is created.
+This is not a reason to reject all route explanations. It narrows the claim ceiling: non-unique explanations can still be useful and manipulable, but uniqueness or privileged ontological status must be separately demonstrated.
 
-### 3. Circuit-localization benchmarks make precision/conciseness and causal-path recovery separate evaluation obligations
+### 3. Redundant, unique and synergistic causal contributions can be separated, and unaccounted causal influence can be quantified
 
-Mueller et al., *MIB: A Mechanistic Interpretability Benchmark* (ICML 2025), evaluate methods that recover the components and connections most important for a task and explicitly favor precise, concise recovery of relevant causal pathways or causal variables.
+Martínez-Sánchez, Arranz & Lozano-Durán, *Decomposing causality into its synergistic, unique, and redundant components* (Nature Communications, 2024), introduce SURD, an information-theoretic decomposition of causal influence into unique, redundant and synergistic components plus a `causality leak` for influence not explained by the observed variables. Their examples show that duplicated/redundant causes and synergy can make ordinary pairwise causal summaries misleading.
 
-**Reduction impact:** the repository toy correctly notes that deletion sensitivity alone cannot distinguish an incomplete explanation from a legitimately redundant mechanism. Future H7 evaluation should split at least three questions: whether the reported route is sufficient for the behavior under its declared context, whether removing/changing it has a causal effect, and whether important unreported alternative routes remain. A compact route that is sufficient but omits an equally active bypass is not a complete explanation; a broad trace containing many irrelevant routes is not concise.
+**Reduction impact:** the H7 bypass toy currently collapses “reported route effect” and “alternative-route support” into deletion/replacement accuracy. A stronger-privilege analysis ceiling can instead ask whether a route carries unique causal contribution, only redundant contribution shared with a bypass, or synergistic contribution available only jointly, while also quantifying how much causal influence remains outside the measured route set.
 
-MIB is LLM-oriented and is not an equal-architecture comparator for SparkBrain, but it raises the methodology floor: causal pathway *localization quality* must be assessed independently from prediction accuracy or route-ID stability.
-
-### 4. Path-specific probability of necessity and sufficiency supplies a stronger-privilege formal ceiling for route responsibility
-
-Kawakami & Tian, *Decomposition of Probabilities of Causation with Two Mediators* (UAI 2025), define path-specific probability of necessity and sufficiency (PNS) and decompose total PNS into causal-path components with two mediators.
-
-**Reduction impact:** raw deletion accuracy is a coarse route-responsibility statistic. For future H7 work with bypasses, redundancy or multiple mediating routes, path-specific necessity-and-sufficiency is an established formal way to separate whether a path is needed, enough, or one contributor among alternatives. It requires an explicit causal model and therefore belongs to the stronger-privilege analysis/ceiling tier rather than an equal-privilege local mechanism baseline.
-
-The useful discriminator is consequently not “can SparkBrain recover the same PNS formula locally?” It is whether a native local/anonymous mechanism, without world labels or a global causal solver, changes its credit/competition in the same direction across prospectively fixed cases whose path-specific responsibility differs while local observations, timing, eligibility and ordinary recurrent state are matched.
+SURD is based on transition-probability/information structure and should not be mistaken for an equal-privilege local mechanism baseline or a complete actual-causation solution. Its value here is as a decomposition ceiling and counterexample generator: an H7 novelty claim should survive ordinary redundancy/synergy explanations before invoking a new lineage-responsibility mechanism.
 
 ## Synthesis
 
-This search does not produce a new executable object and does not weaken the intentional-idle decision. It sharpens the admission bar for the sole nonterminal H7 line:
+The admission ladder for any future H7 object is sharpened from R26 as follows:
 
-`stable trace / route label -> intervention-support check -> causal-abstraction faithfulness across a frozen intervention family -> sufficiency + necessity + completeness/alternative-route accounting -> stronger-privilege path-specific responsibility ceiling -> only then a possible native local lineage-responsibility residual`.
+`faithful intervention -> causal importance -> task/context specificity -> explanation identifiability or explicit equivalence-class claim -> unique/redundant/synergistic decomposition ceiling -> only then a possible native local lineage-responsibility residual`.
 
-The genuinely new point relative to prior causal-credit scouts is that *the diagnostic intervention itself can be misleading*. Counterfactual responsibility theory is not enough if the intervention creates a dormant alternate computation. A future H7 object therefore needs both responsibility-sensitive cases and intervention-faithfulness controls.
+The genuinely new point is that even a causally faithful route need not be specific or unique. Therefore a future H7 claim should say exactly whether it identifies **a** useful causal route, a **task-specific** route, or the **uniquely responsible** route. Those are different scientific claims and require different discriminators.
 
-No Utility request is created. With no current H7 object and explicit Control/Analyst instructions not to manufacture activity, a prototype or diagnostic request now would be literature-driven object construction rather than support for an independently admitted target.
+No Utility request is created. There is still no admitted H7 object, so building a route-specificity or identifiability diagnostic now would be literature-driven object manufacture rather than support for an independently selected target.
 
 ## Knowledge-flow contract
 
@@ -80,37 +72,38 @@ role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
   - H7_RESPONSIBILITY_NONTERMINAL_HOLD
-  - H7_TRACE_CAUSAL_FAITHFULNESS
-  - H7_BYPASS_AND_REDUNDANCY_CONTROLS
+  - H7_ROUTE_TASK_SPECIFICITY
+  - H7_EXPLANATION_IDENTIFIABILITY
+  - H7_REDUNDANCY_SYNERGY_DECOMPOSITION
   - FUTURE_MECHANISM_OBJECT_ADMISSION
   - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
-  INTERVENTION_FAITHFULNESS_AND_PATH_COMPLETENESS_SHARPENING_NO_CURRENT_OBJECT_UPLIFT.
-  Stable routes and even successful causal interventions are insufficient: interventions can activate dormant
-  parallel pathways, and route explanations must be evaluated as faithful causal abstractions across an
-  intervention family with separate necessity, sufficiency, completeness and path-specific responsibility checks.
+  ROUTE_SPECIFICITY_AND_NONIDENTIFIABILITY_SHARPENING_NO_CURRENT_OBJECT_UPLIFT.
+  Causal importance is not task specificity, and faithful route explanations need not be unique.
+  Future H7 claims must explicitly scope whether they establish a route, a task-specific route,
+  or a uniquely responsible route, and ordinary redundancy/synergy explanations must be exhausted first.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - predeclare intervention support/realism and test whether interventions activate dormant or otherwise unused routes
-  - freeze a high-level causal abstraction and intervention mapping; score graded faithfulness across multiple intervention types
-  - separate route necessity, route sufficiency, explanation completeness/alternative-route coverage and conciseness
-  - include natural or minimally perturbed responsibility-changing pairs alongside synthetic deletion/replacement
-  - use path-specific probability of necessity-and-sufficiency only as a stronger-privilege formal ceiling unless information privilege is matched
-  - match timing, local observations, eligibility, recurrent state and resources while changing actual route responsibility through bypass, backup, preemption or overdetermination
+  - matched non-target task/context interventions to separate task-specific route damage from generic bottleneck damage
+  - prospective claim scope distinguishing existential route faithfulness from uniqueness-bearing responsibility
+  - search or enumerate alternative route sets/localizations under the same predictive and intervention criteria; report an equivalence class if non-unique
+  - preserve R26 intervention-support and dormant-path controls before any specificity or uniqueness interpretation
+  - use unique/redundant/synergistic causal decomposition plus causality-leak analysis only as a stronger-privilege ceiling unless privilege is matched
+  - match timing, local observations, recurrent state, eligibility, information privilege and resource privilege across responsibility-changing cases
 questions_for_evidence_analyst:
-  - Keep H7 as nonterminal HOLD and treat this literature only as future admission guidance, not as grounds to manufacture a successor?
-  - Require intervention-faithfulness/support controls in addition to counterfactual responsibility for any future H7 object?
-  - Require necessity, sufficiency and completeness/alternative-route metrics to be separately bound before interpreting route faithfulness?
+  - Keep H7 nonterminal HOLD and treat specificity/identifiability as prospective claim-scope guidance rather than grounds to create a successor?
+  - For a broad route-responsibility claim, require matched non-target contexts so generic shared bottlenecks cannot masquerade as task-specific lineage?
+  - If multiple routes satisfy the same frozen criteria, require an equivalence-class or explicitly existential claim rather than uniqueness language?
 questions_for_control_brain:
-  - Add dormant-path activation / intervention-induced bypass as an explicit failure mode in the H7 causal-credit reduction checklist?
-  - Treat causal-abstraction faithfulness across an intervention family as the explanation floor before route-level novelty claims?
-  - Preserve intentional idle until an independently arising native mechanism exposes this residual with a prospective comparator/resource/falsifier contract?
+  - Add generic-shared-circuit and explanation non-identifiability as explicit H7 reduction/failure modes?
+  - Distinguish “a faithful route”, “task-specific route” and “unique responsible route” in future claim ceilings?
+  - Preserve intentional idle until an independently arising native mechanism supplies a prospective comparator/resource/falsifier contract?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - canonical H5/PD01/NI01 terminal classifications and all consumed STARTED/control/preserve refs
-  - H7 remains NONTERMINAL_HOLD / NOT_QUEUED with no current native object, comparator, resource contract or falsifier
-  - exploratory H7 trace-causality branch remains NON_EVIDENTIARY and is not promoted or rerun
-  - R50 candidate #32 remains HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT with no same-object repair or continuation
+  - canonical H5/PD01/NI01 terminal classifications and consumed STARTED/control/preserve refs
+  - H7 remains NONTERMINAL_HOLD / NOT_QUEUED with no current native object or execution authority
+  - historical H7 trace-causality branch remains EXPLORATORY_NON_EVIDENTIARY and is not rerun or promoted
+  - candidate #32 remains HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT with no cycle 3, repair, rerun or reinterpretation
   - no STARTED/TEST/PRE_FORMAL/FORMAL promotion, scientific workflow dispatch, research merge, immutable-ref mutation or scheduler change by this role
 utility_request_created: null
 ```
