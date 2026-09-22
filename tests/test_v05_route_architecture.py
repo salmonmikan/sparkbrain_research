@@ -97,7 +97,9 @@ def test_time_unrolled_opportunity_arc_uses_exact_delay() -> None:
 def test_quiescent_anchor_uses_clone_and_fixed_boundary() -> None:
     brain = IntegratedV05Brain()
     target_id = next(
-        unit_id for unit_id in brain.base.field.units if unit_id not in brain.base.field.receptor_ids
+        unit_id
+        for unit_id in brain.base.field.units
+        if unit_id not in brain.base.field.receptor_ids
     )
     brain.base.field.schedule_arrival(
         SynapticArrival(

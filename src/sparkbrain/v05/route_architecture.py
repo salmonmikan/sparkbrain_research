@@ -11,7 +11,6 @@ from sparkbrain.v04.field import TemporalExcitableField
 
 from .brain import IntegratedV05Brain
 
-
 MAX_CANDIDATE_EDGES = 12
 QUIESCENCE_INCREMENT_MS = 32.0
 QUIESCENCE_MAX_STEPS = 8
