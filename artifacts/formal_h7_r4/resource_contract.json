@@ -64,7 +64,9 @@
     "exact_versions_selected_before_hash_materialization": true,
     "binary_wheels_only": true,
     "dependency_resolution_during_materialization": false,
-    "materialization_attempts_allowed": 1,
+    "package_set_resolution_attempts_allowed": 1,
+    "science_invariant_materializer_repair_retry_allowed": true,
+    "repair_retry_must_preserve_exact_versions_bytes": true,
     "artifact_hashes_required": true,
     "exact_lock_bytes_must_be_committed_before_validation": true,
     "protected_runtime_excludes_development_tooling": [

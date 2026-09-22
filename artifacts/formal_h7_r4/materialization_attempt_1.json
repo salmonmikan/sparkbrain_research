@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "kind": "H7_FORMAL_R4_LOCK_MATERIALIZATION_ATTEMPT_RECORD_V1",
+  "authority_generation": "EVA-20260923T001221+0900-R81-4885D9DE",
+  "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
+  "attempt": 1,
+  "workflow_run_id": 35747608094,
+  "head_sha": "f339270bf8a1ff0e9d41b884165476dae9c376d4",
+  "status": "COMPLETED_FAILURE_BEFORE_LOCK_EMISSION",
+  "host_gate_passed": true,
+  "exact_versions_file_preserved_unchanged": true,
+  "dependency_resolution_performed": false,
+  "wheel_download_for_fixed_versions_completed": true,
+  "lock_emitted": false,
+  "manifest_emitted": false,
+  "failure": {
+    "classification": "SCIENCE_INVARIANT_REPAIR",
+    "stage": "wheel_metadata_serialization",
+    "message": "setuptools wheel contains more than one vendored *.dist-info/METADATA entry; the materializer incorrectly required exactly one METADATA entry per wheel",
+    "scientific_package_selection_changed": false,
+    "runtime_host_binding_changed": false,
+    "scientific_result_exposed": false
+  },
+  "repair_constraint": "Retry is permitted only after parser repair and only with byte-identical scientific-runtime.versions; package/resource selection must not change.",
+  "one_way_actions_performed": false,
+  "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_TOOLING_FAILURE_PROVENANCE"
+}

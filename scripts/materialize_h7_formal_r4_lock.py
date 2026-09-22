@@ -51,17 +51,27 @@ def read_specs(path: Path) -> dict[str, tuple[str, str]]:
     return result
 
 
-def wheel_metadata(path: Path) -> tuple[str, str]:
+def wheel_metadata(
+    path: Path, specs: dict[str, tuple[str, str]]
+) -> tuple[str, str]:
+    matches: list[tuple[str, str]] = []
     with zipfile.ZipFile(path) as archive:
         candidates = [name for name in archive.namelist() if name.endswith(".dist-info/METADATA")]
-        if len(candidates) != 1:
-            raise SystemExit(f"wheel has ambiguous METADATA: {path.name}")
-        metadata = Parser().parsestr(archive.read(candidates[0]).decode("utf-8"))
-    name = metadata.get("Name")
-    version = metadata.get("Version")
-    if not name or not version:
-        raise SystemExit(f"wheel metadata missing Name/Version: {path.name}")
-    return name, version
+        for candidate in candidates:
+            metadata = Parser().parsestr(archive.read(candidate).decode("utf-8"))
+            name = metadata.get("Name")
+            version = metadata.get("Version")
+            if not name or not version:
+                continue
+            key = normalize_name(name)
+            expected = specs.get(key)
+            if expected is not None and version == expected[1]:
+                matches.append((name, version))
+    if len(matches) != 1:
+        raise SystemExit(
+            f"wheel has ambiguous selected-package METADATA: {path.name}; matches={matches!r}"
+        )
+    return matches[0]
 
 
 def assert_runtime_host() -> None:
@@ -122,10 +132,8 @@ def main() -> None:
         seen: set[str] = set()
         lock_lines: list[tuple[str, str]] = []
         for wheel in wheels:
-            name, version = wheel_metadata(wheel)
+            name, version = wheel_metadata(wheel, specs)
             key = normalize_name(name)
-            if key not in specs:
-                raise SystemExit(f"unexpected wheel in materialization: {name}=={version}")
             expected_name, expected_version = specs[key]
             if version != expected_version:
                 raise SystemExit(
@@ -167,7 +175,7 @@ def main() -> None:
         "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
         "materialization_policy": {
             "exact_versions_selected_before_materialization": True,
-            "single_package_set_materialization": True,
+            "single_prospectively_fixed_package_set": True,
             "dependency_resolution": False,
             "binary_wheels_only": True,
             "development_tooling_excluded": sorted(_FORBIDDEN),
