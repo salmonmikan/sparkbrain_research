@@ -1,22 +1,33 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260922T135014+0900-G10-4D8C21A7",
-  "produced_at": "2026-09-22T13:50:14+09:00",
-  "producer_run_id": "repository-steward-auto-20260922T135014+0900-G10-4D8C21A7",
+  "generation_id": "STEWARD-20260923T075000+0900-G11-6F3A9C21",
+  "produced_at": "2026-09-23T07:50:00+09:00",
+  "producer_run_id": "repository-steward-auto-20260923T075000+0900-G11-6F3A9C21",
   "authority_scope": "REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY",
-  "supersedes_generation_id": "STEWARD-20260922T075212+0900-G9-8C4E21D3",
+  "supersedes_generation_id": "STEWARD-20260922T135014+0900-G10-4D8C21A7",
   "repository": "salmonmikan/sparkbrain_research",
   "input_generations": {
-    "control": "CTRL-20260922T124800+0900-R33-E7C421B6",
-    "evidence_analyst": "EVA-20260922T130900+0900-R62-D4A7C21F",
-    "main": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9",
-    "sub": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4",
-    "utility": "UTILITY-20260922T133300+0900-AUTO-READER-VERSION-DRIFT-COMPLETED-3F8A61C2",
-    "previous_steward": "STEWARD-20260922T075212+0900-G9-8C4E21D3"
+    "control": "CTRL-20260923T055000+0900-R39-C31A7D52",
+    "control_ref": "c93f870e47bdb5b1613475e079c0a6dee2aa1753",
+    "evidence_analyst": "EVA-20260923T065834+0900-R88-D5A7C219",
+    "evidence_analyst_ref": "3341ad00ade796d9a3b80dd61c7386fc8b3e07b7",
+    "main": "MAIN-20260923T074800+0900-RELAY-H7-FORMALR5-C12-R88-WAITING-CI-D5A7C219",
+    "main_mailbox_ref": "9d449d451ca93bad30c74dde7d16e6fa71270d6d",
+    "sub": "SUB-20260923T074100+0900-DISC-C34-ROUTE-CONTRACT-R88-D5A7C219",
+    "sub_mailbox_ref": "2e3498a7aa19e0b9fbd761765116d91d5d2ec0a1",
+    "utility": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91",
+    "utility_ref": "b18a1d76c05efbbfacb9618ac1ca1e9941b17555",
+    "previous_steward": "STEWARD-20260922T135014+0900-G10-4D8C21A7"
+  },
+  "mailbox_semantics": {
+    "ops_branches_are_scientific_source_of_truth": false,
+    "ops_branches_used_as_governance_context_only": true,
+    "ops_merge_or_rebase_performed": false
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_protected": false,
+    "main_protected_branch_summary": false,
+    "branch_protection_detail_visibility": "UNAVAILABLE_TO_INSTALLED_INTEGRATION_403",
     "repository_ruleset_count": 0,
     "authoritative_evidence_tag_count": 5,
     "evidence_tags": {
@@ -27,6 +38,7 @@
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
     "legacy_freeze_branch_count": 13,
+    "legacy_freeze_map_status": "EXACT_SHA_INVENTORY_REVERIFIED_NO_CHANGE",
     "freeze_tag_count": 0,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
@@ -36,63 +48,60 @@
       "c19_v4": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
       "c19_r2": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
       "pd01": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881"
-    }
+    },
+    "immutable_ref_incident": false
   },
   "research_separation": {
-    "classification": "COMPLIANT_ACTIVE_H7_DEVELOPMENT_ISOLATED_FROM_MAIN",
-    "active_research_branch": "research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1",
-    "active_research_exact_commit": "c97af135742a7cd3af94c857f4d5b83d7707075d",
-    "compare_to_main": {"ahead_by": 5, "behind_by": 0},
-    "result_exposure_observed_in_cycle2_preflight": false,
-    "identity_consumption_observed_in_cycle2_preflight": false,
+    "classification": "COMPLIANT_ACTIVE_H7_R5_ISOLATED_FROM_MAIN",
+    "active_h7_research_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+    "active_h7_research_exact_commit": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+    "compare_to_main": {
+      "ahead_by": 57,
+      "behind_by": 0
+    },
+    "mailbox_execution_status": "WAITING_EXTERNAL_NON_RESULT_CI",
+    "formal_authority_granted_by_steward": false,
     "main_promotion_allowed": false,
-    "reason": "ACTIVE_SCIENTIFIC_DEVELOPMENT_WITH_SCIENCE_AFFECTING_COMPARATOR_PROTOCOL_GAPS"
+    "reason": "ACTIVE_SCIENTIFIC_DEVELOPMENT_PREIDENTITY_ONLY"
+  },
+  "candidate34_repository_visibility": {
+    "mailbox_candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
+    "mailbox_reported_layer": "DISCOVERY",
+    "mailbox_reported_evidentiary_status": "NON_EVIDENTIARY",
+    "dedicated_c34_branch_found": false,
+    "route_identifiability_branch_found": false,
+    "candidate_id_found_on_stable_main": false,
+    "classification": "REPOSITORY_MATERIALIZATION_VISIBILITY_GAP",
+    "interpretation_boundary": "DOES_NOT_REVERSE_OR_REINTERPRET_ANALYST_LIFECYCLE_DECISION",
+    "steward_main_promotion_candidate": false
+  },
+  "canonical_docs_and_issues": {
+    "authoritative_tags_doc": "docs/AUTHORITATIVE_TAGS.md",
+    "authoritative_tags_doc_alignment": "ALIGNED_WITH_LIVE_REF_AND_PROTECTION_STATE",
+    "issue_139": "OPEN_ALIGNED_WITH_ZERO_RULESET_PROTECTION_GAP",
+    "non_pr_open_issue_count": 1,
+    "issues_are_canonical_science": false,
+    "pr_148": "OPEN_UNMERGED",
+    "pr_149": "OPEN_UNMERGED"
   },
   "reader_version_audit": {
-    "directive": "HUMAN-20260922-006",
-    "classification": "READER_NAVIGATION_DRIFT_CONFIRMED_ROOT_DISTRIBUTION_MIGRATION_UNDERDETERMINED",
-    "root_distribution_version": "0.3.2.dev0",
-    "release_metadata_version": "0.3.2.dev0",
-    "v04_namespace_version": "0.4.0.dev0",
-    "v04_release_semantics": "DEVELOPMENT_ENGINEERING_LAYER_NOT_PUBLIC_RELEASE",
-    "v05_namespace_version": "0.5.0.dev0",
-    "v05_spec_package_target": "0.5.0.dev0",
-    "isolated_pyproject_bump_authorized": false,
+    "prior_directive": "HUMAN-20260922-006",
+    "stable_main_changed_since_g10": false,
+    "classification": "PRIOR_READER_NAVIGATION_DRIFT_DISPOSITION_UNCHANGED",
     "safe_main_promotion_candidate": "DOCUMENTATION_ONLY_READER_NAVIGATION_REFRESH_README_START_HERE",
-    "candidate_boundary": "ACKNOWLEDGE_V04_V05_DEVELOPMENT_SURFACES_WITHOUT_CHANGING_ROOT_PACKAGE_OR_RELEASE_VERSION"
+    "forbidden_as_isolated_fix": [
+      "pyproject.toml version bump",
+      "RELEASE_METADATA.json version bump",
+      "scientific claim change",
+      "scientific lifecycle change"
+    ]
   },
   "equivalence_verifier_review": {
     "branch": "utility/equivalence-certificate-v0-1-A42D7C19",
     "head": "9f9d18065b481d8597236b0b682f0574c251b319",
-    "ahead_by": 3,
-    "behind_by": 0,
-    "changed_files": ["src/sparkbrain/equivalence_certificate.py", "tests/test_equivalence_certificate.py"],
-    "ci_python_3_11": "SUCCESS",
-    "ci_python_3_13": "SUCCESS",
-    "candidate_independent": true,
-    "scientific_authority": "NONE",
+    "head_changed_since_g10": false,
     "classification": "DEFER_MAIN_PROMOTION_PENDING_TRUST_BOUNDARY_CLARIFICATION",
-    "governance_reason": "VERIFIES_DECLARED_DIGEST_AND_SELF_DECLARED_PRODUCER_DISTINCTNESS_BUT_NOT_TRUSTED_PRODUCER_PROVENANCE_RAW_TO_DIGEST_DERIVATION_OR_PROCESS_ISOLATION",
-    "naming_risk": "VALID_EQUIVALENT_AND_EXACT_SEMANTIC_DIGEST_MATCH_MAY_OVERSTATE_CERTIFICATE_INTERNAL_GUARANTEE",
-    "required_before_reviewed_integration": "MAKE_CERTIFICATE_INTERNAL_TRUST_BOUNDARY_EXPLICIT_AND_PREVENT_USE_AS_INDEPENDENT_SCIENTIFIC_EQUIVALENCE_EVIDENCE_WITHOUT_SEPARATE_AUTHENTICATED_PRODUCER_CHAIN"
-  },
-  "governance_tracking": {
-    "issue_139": "OPEN_ALIGNED_WITH_ZERO_RULESET_PROTECTION_GAP",
-    "non_pr_open_issue_count": 1,
-    "legacy_cx01_trigger_gap": "UNCHANGED_GOVERNANCE_ONLY_MAIN_UNCHANGED",
-    "pr_148": {
-      "state": "OPEN_UNMERGED",
-      "head": "14ba187bb13705bc306baabe310d5364cf1b60fb",
-      "current_unresolved_review_threads": 3,
-      "classification": "DEFER_PENDING_REVIEW_FIX"
-    },
-    "pr_149": {
-      "state": "OPEN_UNMERGED",
-      "head": "01ef8c3a54ff20403aba2fab9996dbda5552dd4d",
-      "current_unresolved_review_threads": 1,
-      "outdated_unresolved_review_threads": 1,
-      "classification": "DEFER_PENDING_CURRENT_REVIEW_FIX"
-    }
+    "governance_reason": "UNCHANGED_BRANCH_HAS_NOT_RESOLVED_DECLARED_DIGEST_VS_AUTHENTICATED_SCIENTIFIC_EQUIVALENCE_BOUNDARY"
   },
   "main_promotion_review": {
     "scientific_candidates": [],
@@ -100,8 +109,10 @@
       {
         "candidate": "READER_NAVIGATION_DOC_REFRESH",
         "status": "ELIGIBLE_FOR_NORMAL_REVIEWED_INTEGRATION",
-        "scope": ["README.md", "docs/START_HERE.md"],
-        "forbidden_scope": ["pyproject.toml", "RELEASE_METADATA.json", "scientific_lifecycle_or_claim_changes"]
+        "scope": [
+          "README.md",
+          "docs/START_HERE.md"
+        ]
       },
       {
         "candidate": "GENERIC_EQUIVALENCE_CERTIFICATE_VERIFIER",
@@ -113,33 +124,36 @@
   },
   "mutations": {
     "experiments_executed": 0,
-    "research_workflows_dispatched": 0,
+    "scientific_workflows_dispatched": 0,
     "identities_consumed": 0,
     "outcomes_reinterpreted": 0,
     "scientific_lifecycle_changes": 0,
+    "scientific_freeze_decisions": 0,
     "research_prs_merged": 0,
     "scheduler_definitions_modified": 0,
     "ruleset_or_protection_mutations": 0,
-    "issues_mutated": 0,
+    "issues_or_prs_mutated": 0,
     "workflows_or_main_mutated": 0,
+    "research_refs_modified": 0,
+    "evidence_or_preserve_refs_modified": 0,
     "immutable_refs_modified": 0,
-    "preserve_or_evidence_mappings_modified": 0,
     "main_promotions_performed": 0
   },
   "persistence": {
-    "history_path": "reports/repository_steward/history/2026-09-22/1350.md",
-    "history_commit": "6b333182c24adc0b4d1fd7b8b4baefdd06235a59",
+    "history_path": "reports/repository_steward/history/2026-09-23/0750.md",
+    "history_commit": "f2eef3cd0847621b550be4b779334afe46405845",
     "latest_path": "reports/repository_steward/latest.md",
-    "latest_commit": "ad61231915b11dad245dbed471c43145c601b05c",
+    "latest_commit": "49e6371376962a33e2321ef010d137cf69786d89",
     "state_path": "reports/repository_steward/state.json",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
   },
   "next_priorities": [
-    "Keep all authoritative evidence/freeze/preserve refs unchanged and re-fetch independently on each Steward run.",
-    "Keep Issue #139 open while repository rulesets remain absent; Steward remains read-only for protection administration.",
-    "Route a small reviewed README/START_HERE navigation refresh that documents v0.4/v0.5 development surfaces without changing the root package/release version unless a coordinated release migration is explicitly chosen.",
-    "Do not promote the generic equivalence verifier until its trust boundary is explicit; green CI is not independent semantic equivalence evidence.",
-    "Keep active H7 development research-only until ordinary governance promotion criteria are met after scientific work is no longer active/incomplete.",
-    "Keep PR #148/#149 deferred while current unresolved review threads remain."
+    "Keep authoritative main/evidence/freeze/preserve refs unchanged and re-fetch independently on each Steward generation.",
+    "Keep Issue #139 open while rulesets remain absent; Steward remains read-only for ruleset/protection administration.",
+    "Keep active H7 R5 research-only; do not infer FORMAL authority or promotion readiness from mailbox status or CI.",
+    "Treat candidate #34 mailbox admission as governance context until a non-ops scientific source ref is independently visible; do not create or promote one from Steward authority.",
+    "Retain the documentation-only README/START_HERE navigation refresh as a bounded reviewed candidate without isolated package/release version changes.",
+    "Do not promote the generic equivalence verifier until its trust boundary and naming are explicit.",
+    "Keep PR #148 and PR #149 unmerged unless ordinary review resolves their outstanding concerns."
   ]
 }
