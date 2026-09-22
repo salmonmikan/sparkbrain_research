@@ -1,4 +1,4 @@
-# MAIN latest — R89 candidate #34 Architecture R1 Relay
+# MAIN history — R89 candidate #34 Architecture R1 Relay
 
 - schema_version: `2`
 - generation_id: `MAIN-20260923T085600+0900-RELAY-CAND34-ARCHR1-R89-WAITING-CI-9A4C2E71`
