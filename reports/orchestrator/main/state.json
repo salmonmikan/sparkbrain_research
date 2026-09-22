@@ -1,36 +1,36 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0",
-  "run_id": "sparkbrain-main-primary-20260922T122749JST-R60-h7-devr1-static-contract",
-  "producer_run_id": "sparkbrain-main-primary-20260922T122749JST-R60-h7-devr1-static-contract",
-  "authority_scope": "MAIN_PRIMARY_H7_DEV_R1_STATIC_ARCHITECTURE_CONTRACT_ONLY",
-  "supersedes_generation_id": "MAIN-20260922T111654+0900-PRIMARY-FUNNEL21-IDLE-R59-A6D4C219",
+  "generation_id": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9",
+  "run_id": "sparkbrain-main-relay-20260922T125400JST-R61-h7-devr1-implementation",
+  "producer_run_id": "sparkbrain-main-relay-20260922T125400JST-R61-h7-devr1-implementation",
+  "authority_scope": "MAIN_RELAY_H7_DEV_R1_FROZEN_CONTRACT_IMPLEMENTATION_ARCHITECTURE_CYCLE2",
+  "supersedes_generation_id": "MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T120158+0900-R60-D5E721A4@8cfdb2abb72ff0cfcf616d3400d578db7c20a84d",
-    "main": "MAIN-20260922T111654+0900-PRIMARY-FUNNEL21-IDLE-R59-A6D4C219@9b3043ff674a0f9fb4891cb12d61a4f37ff2b08f",
-    "sub": "SUB-20260922T113500+0900-NOOP-R59INTENTIONALIDLE-A6D4C219@49572dfeb1aa7da7986ac545a10f1e4e89f5d15e"
+    "evidence_analyst": "EVA-20260922T124300+0900-R61-C7F421A9@4f55a65744385431ec73d1dec4ed32b7b20a63d8",
+    "main": "MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0@9b946107aadac9430a449d32d5818b16631719c8",
+    "sub": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9@e56c285996c30888ec7f914efc505974695a6ed0"
   },
-  "execution_mode": "PRIMARY",
-  "status": "COMPLETED",
-  "started_at": "2026-09-22T12:27:49+09:00",
-  "heartbeat_at": "2026-09-22T12:39:06+09:00",
-  "completed_at": "2026-09-22T12:39:06+09:00",
-  "blocked_at": null,
-  "blocked_until": null,
-  "analyst_generation_id": "EVA-20260922T120158+0900-R60-D5E721A4",
-  "analyst_commit": "8cfdb2abb72ff0cfcf616d3400d578db7c20a84d",
-  "consumed_analyst_generation_id": "EVA-20260922T120158+0900-R60-D5E721A4",
-  "consumed_analyst_commit": "8cfdb2abb72ff0cfcf616d3400d578db7c20a84d",
+  "execution_mode": "RELAY",
+  "status": "BLOCKED",
+  "started_at": "2026-09-22T12:54:00+09:00",
+  "heartbeat_at": "2026-09-22T13:06:29+09:00",
+  "completed_at": null,
+  "blocked_at": "2026-09-22T13:06:29+09:00",
+  "blocked_until": "FRESH_EVIDENCE_ANALYST_EXPLICIT_VERSIONED_COMPARATOR_PROTOCOL_AUTHORITY",
+  "analyst_generation_id": "EVA-20260922T124300+0900-R61-C7F421A9",
+  "analyst_commit": "4f55a65744385431ec73d1dec4ed32b7b20a63d8",
+  "consumed_analyst_generation_id": "EVA-20260922T124300+0900-R61-C7F421A9",
+  "consumed_analyst_commit": "4f55a65744385431ec73d1dec4ed32b7b20a63d8",
   "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
   "development_revision": "H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT",
-  "repair_change_classification": "SCIENCE_AFFECTING_CHOICES_PROSPECTIVELY_FIXED_INSIDE_EXPLICIT_ANALYST_AUTHORIZED_VERSIONED_DEVELOPMENT_REVISION; NO_RESULT_EXPOSURE_THIS_CYCLE",
+  "repair_change_classification": "SCIENCE_INVARIANT_IMPLEMENTATION_ONLY_ADVANCED; LINT_ONLY_MECHANICAL_REPAIR_APPLIED; SCIENCE_AFFECTING_COMPARATOR_PROTOCOL_GAPS_DETECTED_AND_NOT_FILLED",
   "research_layer": "ARCHITECTURE_STUDY",
-  "main_lane": "H7_DEV_R1_CLAIM_SCOPED_CAUSAL_CONTRACT_ARCHITECTURE",
+  "main_lane": "H7_DEV_R1_FROZEN_CONTRACT_IMPLEMENTATION_ARCHITECTURE_CYCLE2",
   "candidate_id": "H7 responsibility",
   "candidate_ordinal": 7,
-  "candidate_id_semantics": "Inherited exact canonical R59 candidate object; development revision does not mint a successor candidate ID.",
-  "cycle_count": 1,
-  "cycle_reassessment_rationale": null,
+  "candidate_id_semantics": "Inherited exact canonical H7 object under Analyst-authorized H7-DEV-R1 revision; Relay did not mint a successor or alter candidate typing.",
+  "cycle_count": 2,
+  "cycle_reassessment_context": "R61 prospectively authorized implementation-only cycle 2 for the frozen R60 contract and required STOP on any unapproved science-affecting change and before any result-bearing discriminator measurement.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {"status": "NOT_READY"},
@@ -38,98 +38,72 @@
   "hold_reason": null,
   "terminal_state": "ACTIVE",
   "queue_state": "ACTIVE",
-  "system_priority_exception": {
-    "used": false,
-    "reason_code": null,
-    "reason_detail": "Active target is MECHANISM; SYSTEM priority exception is not applicable.",
-    "compared_mechanism_candidate_ids": []
-  },
+  "system_priority_exception": {"used": false},
   "outcome_contingencies": {
-    "static_contract_complete": "STOP_FOR_FRESH_ANALYST_REVIEW_BEFORE_RESULT_BEARING_EXECUTION",
-    "science_invariant_repair": "MAY_CONTINUE_WITH_PROVENANCE_IF_NEEDED",
-    "science_affecting_change_after_future_result_exposure": "REQUIRES_EXPLICIT_VERSIONED_DEVELOPMENT_REVISION_OR_FRESH_SUCCESSOR"
+    "implementation_only": "GO",
+    "science_invariant_repair": "MAY_CONTINUE_WITH_DURABLE_PROVENANCE",
+    "science_affecting_change": "STOP_FOR_EXPLICIT_VERSIONED_ANALYST_REVISION",
+    "result_bearing_measurement": "STOP_FOR_FRESH_ANALYST_REVIEW_AFTER_IMPLEMENTATION_PREFLIGHT"
   },
   "do_not_touch": [
     "historical H7 exploratory outcome as threshold/tuning/confirmatory input",
     "consumed FORMAL identities",
     "evidence/formal/sealed/freeze immutable refs",
     "C04 historical test manifest as H7 development tuning surface",
-    "result-bearing H7 intervention until fresh Analyst authority"
+    "discriminator split for training/model selection/threshold tuning/comparator fitting/repair",
+    "result-bearing H7 discriminator measurement"
   ],
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "8cfdb2abb72ff0cfcf616d3400d578db7c20a84d",
+    "analyst_handoff": "4f55a65744385431ec73d1dec4ed32b7b20a63d8",
     "historical_h7_exploratory": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
+    "historical_r50_system": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
     "research_branch": "research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1",
-    "research_head": "b83cd8cc71557af3ecc79c8a305a22b58c1b483c",
+    "research_head": "c97af135742a7cd3af94c857f4d5b83d7707075d",
     "contract_path": "artifacts/architecture_h7_dev_r1/contract.json",
-    "contract_blob": "58ba6fc26c2917e06c930b37bb722265496dbd93"
-  },
-  "refs_snapshot": {
-    "evidence_tag_count": 5,
-    "evidence_tags_unchanged": true,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "preserve_refs_mutated": false,
-    "control_started_refs_mutated": false,
-    "pr_148": "OPEN_UNMERGED_MERGEABLE",
-    "pr_149": "OPEN_UNMERGED_MERGEABLE"
-  },
-  "static_contract": {
     "contract_id": "H7-DEV-R1-ARCH-CONTRACT-V1",
-    "status": "FROZEN_FOR_FRESH_ANALYST_REVIEW_NO_RESULT_BEARING_EXECUTION",
-    "claim_scope": "Existential local route/state responsibility within one frozen development protocol/intervention family; no uniqueness, task-specificity, sufficiency/completeness, general superiority, FORMAL, external-task, or biological claim.",
-    "intervention_family": "TOP1_SELECTED_LOCAL_NODE_CUT_V1",
-    "intervention_summary": "Freeze unperturbed top-k selection, target selected[0], zero target previous state plus target local-edge row/column, force target updated state to zero for one paired step, then discard perturbed runtime state.",
-    "ordinary_reductions": [
-      "ORDINARY_DENSE_RECURRENT_V1",
-      "FINITE_STATE_ROUTE_HISTORY_V1",
-      "ELIGIBILITY_ROUTE_LEDGER_V1"
-    ],
-    "resource_privilege": "Same fit/calibration identities and labels; no future-label/motif privilege; CPU/deterministic provenance; four training epochs for native/trainable comparators; stronger comparator information/compute is allowed and cannot count as native evidence; capacity-limited comparator outcomes are INCONCLUSIVE rather than native wins.",
-    "positive_phenomenon_floor": "native baseline discriminator accuracy strictly greater than 1/3 before reduced-by-baseline language",
-    "primary_future_metric": "delta_accuracy = native_baseline_accuracy - native_cut_accuracy on the complete discriminator split",
-    "secondary_future_metric": "mean paired probability total-variation distance",
-    "numerical_no_change_tolerance": 1e-7,
-    "falsifier_fixed": true,
-    "future_execution_authorized": false
+    "cycle2_preflight_path": "artifacts/architecture_h7_dev_r1/cycle2_preflight.json"
   },
-  "development_surface": {
-    "status": "DEFINED_NOT_EXECUTED",
-    "worlds": ["switchworld", "contradiction_world", "goal_conflict_world", "multi_object_world"],
-    "steps_per_episode": 24,
-    "fit_seed_range": [7601000, 7601047],
-    "calibration_seed_range": [7602000, 7602011],
-    "discriminator_seed_range": [7603000, 7603023],
-    "historical_c04_test_manifest_forbidden": true,
-    "formal_or_consumed_surfaces_forbidden": true
+  "implementation_progress": {
+    "frozen_contract_conformance_assertions": "IMPLEMENTED",
+    "deterministic_split_seed_plumbing": "IMPLEMENTED",
+    "discriminator_access_guard": "IMPLEMENTED",
+    "native_top1_selected_local_node_cut_pair": "IMPLEMENTED_NON_RESULT_BEARING_PREFLIGHT_ONLY",
+    "ordinary_dense_recurrent_v1": "IMPLEMENTED_CONFIG_AND_PAIRED_CORE",
+    "finite_state_route_history_v1": "PARTIAL_STRUCTURAL_CORE_ONLY_BLOCKED_SCIENCE_AFFECTING_SPECIFICATION_GAP",
+    "eligibility_route_ledger_v1": "PARTIAL_STRUCTURAL_CORE_ONLY_BLOCKED_SCIENCE_AFFECTING_SPECIFICATION_GAP",
+    "non_result_bearing_preflight_tests": "IMPLEMENTED_CI_GREEN"
   },
+  "science_affecting_specification_gaps": [
+    {
+      "comparator_id": "FINITE_STATE_ROUTE_HISTORY_V1",
+      "field": "fit_state_closure_and_unseen_state_policy",
+      "reason": "The frozen key includes previous predicted label, but the contract does not fix how previous predictions are produced while fitting paired baseline/cut counts or how unseen state keys predict. Selecting either would alter comparator semantics."
+    },
+    {
+      "comparator_id": "ELIGIBILITY_ROUTE_LEDGER_V1",
+      "field": "event_encoder_provenance_training_and_calibration_protocol",
+      "reason": "The frozen comparator fixes ledger decay, head shape, seed/epochs/lr and split use, but does not fix which event encoder supplies the 24-d event encoding, the optimizer/loss/update ordering for the head, or the exact calibration operation. Selecting these would alter comparator semantics."
+    }
+  ],
   "observations": {
     "MECHANISM_ARCHITECTURE": [
-      "STATIC_CONTRACT_FIXED_OUTCOME_INDEPENDENTLY_UNDER_H7_DEV_R1"
+      "FROZEN_CONTRACT_IMPLEMENTATION_PREFLIGHT_PARTIALLY_COMPLETED_WITH_EXPLICIT_SPECIFICATION_GAPS"
     ],
     "SYSTEM_ARCHITECTURE": [],
     "PRE_FORMAL_DEVELOPMENT": [],
     "FORMAL_EVIDENCE": [],
-    "scientific_result": "NONE_STATIC_ONLY",
+    "scientific_result": "NONE_IMPLEMENTATION_PREFLIGHT_ONLY",
     "historical_h7_reinterpreted": false,
     "result_bearing_intervention_executed": false,
+    "fit_training_executed": false,
+    "calibration_executed": false,
+    "discriminator_materialized_or_read": false,
+    "scientific_metric_computed": false,
+    "comparator_outcome_computed": false,
     "synthetic_measurement_executed": false
   },
-  "ordinary_reductions": {
-    "specified": [
-      "ordinary recurrent",
-      "ordinary finite state-machine",
-      "eligibility/local-credit"
-    ],
-    "implementation_contract_frozen": true,
-    "outcomes_seen": false
-  },
-  "support_breadth": {
-    "historical_h7": "Exploratory synthetic predecessor only; preserved NON_EVIDENTIARY and not counted as independent support.",
-    "new_support": "None; this cycle is static Architecture contract work only."
-  },
+  "evidentiary_status": "NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_IMPLEMENTATION_PREFLIGHT_BLOCKED_SPECIFICATION_GAP",
   "prior_result_preservation": {
     "historical_h7_ref": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
     "preserved_unchanged": true,
@@ -140,6 +114,15 @@
   },
   "consumed_identities_this_run": [],
   "identity_consumption": false,
+  "canonical_consumed_one_way_identities_unchanged": [
+    "C19-v4",
+    "C19-R1-v1",
+    "C19-R1-v2",
+    "C19-R2",
+    "H5",
+    "NI01",
+    "PD01"
+  ],
   "counts_this_run": {
     "FORMAL_evidence": 0,
     "PRE_FORMAL_development_evidence": 0,
@@ -148,6 +131,15 @@
     "synthetic_measurements": 0,
     "consumed_identities": 0
   },
+  "science_invariant_repairs": [
+    {
+      "classification": "LINT_ONLY",
+      "source_workflow": 35685077726,
+      "failure": "Ruff E402/I001 in optional-torch test import layout",
+      "repair_commit": "6ef33c717b6d892b8ac24cb12d605e0cf1d0315f",
+      "scientific_behavior_changed": false
+    }
+  ],
   "integrity": {
     "formal_identity_reused": false,
     "immutable_formal_sealed_evidence_ref_mutation": false,
@@ -155,34 +147,49 @@
     "historical_h7_outcome_used_for_threshold_or_tuning": false,
     "science_affecting_post_result_change": false,
     "same_revision_rescue_tuning": false,
-    "research_mutation": "ONE_STATIC_CONTRACT_FILE_ONLY",
-    "research_head_matches_recorded_contract": true,
+    "discriminator_read_or_materialized": false,
+    "result_bearing_execution": false,
+    "preformal_execution": false,
+    "formal_action": false,
+    "contract_scientific_fields_changed": false,
+    "research_head_matches_recorded_preflight": true,
     "analyst_generation_rechecked_before_research_mutation": true,
     "analyst_generation_rechecked_before_final_control_plane_persistence": true,
-    "branch_ci_success_exact_head": true
+    "branch_ci_success_exact_head": true,
+    "prior_results_preserved": true
   },
   "workflows": [
     {
-      "run_id": 35683101208,
-      "name": "ci",
-      "branch": "ops/evidence-analyst-handoff",
-      "head": "8cfdb2abb72ff0cfcf616d3400d578db7c20a84d",
-      "status": "completed",
-      "conclusion": "success",
-      "purpose": "EXACT_ANALYST_R60_CORRECTION_CONTROL_PLANE_CI"
-    },
-    {
-      "run_id": 35683665841,
+      "run_id": 35685077726,
       "name": "ci",
       "branch": "research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1",
-      "head": "b83cd8cc71557af3ecc79c8a305a22b58c1b483c",
+      "head": "174c1e36c8a4ba53f60f622255c29148757b56f0",
+      "status": "completed",
+      "conclusion": "failure",
+      "purpose": "INITIAL_NON_RESULT_BEARING_IMPLEMENTATION_PREFLIGHT_CI",
+      "failure_classification": "SCIENCE_INVARIANT_LINT_ONLY_E402_I001"
+    },
+    {
+      "run_id": 35685243444,
+      "name": "ci",
+      "branch": "research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1",
+      "head": "6ef33c717b6d892b8ac24cb12d605e0cf1d0315f",
       "status": "completed",
       "conclusion": "success",
-      "purpose": "STATIC_CONTRACT_BRANCH_GENERIC_CI"
+      "purpose": "POST_LINT_REPAIR_IMPLEMENTATION_PREFLIGHT_CI"
+    },
+    {
+      "run_id": 35685323080,
+      "name": "ci",
+      "branch": "research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1",
+      "head": "c97af135742a7cd3af94c857f4d5b83d7707075d",
+      "status": "completed",
+      "conclusion": "success",
+      "purpose": "FINAL_EXACT_HEAD_IMPLEMENTATION_PREFLIGHT_CI"
     }
   ],
   "wait_reason": null,
-  "stop_reason": "R60_H7_DEV_R1_CYCLE1_STATIC_ARCHITECTURE_CONTRACT_PERSISTED_AND_CI_GREEN_STOP_BEFORE_RESULT_BEARING_INTERVENTION_FOR_FRESH_ANALYST_REVIEW",
-  "next_action": "Fresh Evidence Analyst review of H7-DEV-R1-ARCH-CONTRACT-V1 at exact research head b83cd8cc71557af3ecc79c8a305a22b58c1b483c. Do not infer PRE_FORMAL READY. Do not implement or execute the result-bearing intervention/comparator study unless a fresh Analyst generation explicitly authorizes the next development step.",
+  "stop_reason": "R61_H7_DEV_R1_CYCLE2_IMPLEMENTATION_PREFLIGHT_BLOCKED_UNFIXED_COMPARATOR_PROTOCOL_FIELDS_NO_RESULT_EXPOSURE",
+  "next_action": "Fresh Evidence Analyst must prospectively fix or explicitly version (1) FINITE_STATE_ROUTE_HISTORY_V1 fit-time previous-prediction closure plus unseen-state policy and (2) ELIGIBILITY_ROUTE_LEDGER_V1 event-encoder provenance plus head optimizer/loss/update ordering and calibration operation. After fresh authority, MAIN may continue implementation/preflight only as authorized; result-bearing discriminator measurement remains separately STOP-gated.",
   "owner": "main"
 }
