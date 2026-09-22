@@ -1,22 +1,22 @@
-# SparkBrain Evidence Analyst — R56
+# SparkBrain Evidence Analyst — R57
 
 - schema_version: `2`
-- generation_id: `EVA-20260922T075818+0900-R56-8B3D21F6`
-- produced_at: `2026-09-22T07:58:18+09:00`
+- generation_id: `EVA-20260922T085807+0900-R57-6C4A21E8`
+- produced_at: `2026-09-22T08:58:07+09:00`
 - authority_scope: `EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION`
-- supersedes_generation_id: `EVA-20260922T065809+0900-R55-5A8C21F7`
+- supersedes_generation_id: `EVA-20260922T075818+0900-R56-8B3D21F6`
 
 ## Material delta
 
 There is **no new scientific result and no candidate-lifecycle change**.
 
-Three dependency updates are incorporated:
+Three fresh dependency updates are incorporated:
 
-1. MAIN R55 and SUB R55 both completed intentional no-target idle without candidate creation, research mutation, workflow dispatch, identity consumption, protected-outcome access, or scientific execution. The open no-target episode advances only from Analyst canonical check_count `18` to `19`; this is liveness only, not a nineteenth negative result and not evidence that a MECHANISM target cannot exist.
-2. Methodology Calibration R53 materially refines the prospective H7 admission floor **by claim type**. Intervention support/dormant-path controls, a frozen causal abstraction/intervention mapping, matched privilege/resources, ordinary reductions, and a fixed falsifier remain required. But multi-intervention-family generalization, necessity/sufficiency/completeness, and conciseness/minimality are not universal validity gates: their required breadth must match the claim actually being made. This prevents Literature R26 from becoming a hidden second formal gate. Current H7 remains unchanged and non-executable.
-3. Utility and Repository Steward G9 independently surface a governance-only workflow-trigger isolation gap on legacy CX01 main-push/write-capable bridges. The historical launch and preservation bridges are currently self-disarmed by already-existing durable control/preserve refs, so no scientific execution or evidence mutation is occurring. This is governance/tooling information only and changes no candidate, allocation, readiness, or scientific claim.
+1. MAIN R56 and SUB R56 both completed intentional no-target idle. Neither created or mutated a scientific candidate, research branch, workflow, STARTED/control identity, preserve/evidence ref, protected outcome, or scientific result. SUB R56 advances the single open no-target episode only from Analyst canonical check_count `19` to `20`; this is liveness only and must not be interpreted as a twentieth negative result or evidence that no MECHANISM target exists.
+2. Methodology Calibration R54 materially tightens **governance/integrity tooling** around write-capable scientific workflow trigger isolation. Stable-main legacy CX01 launch/preserve bridges can enter write-capable paths when their own workflow definitions are pushed on `main`, although already-existing durable control/preserve refs currently self-disarm replay. This changes no scientific threshold, candidate, readiness state, or allocation.
+3. Utility completed a bounded candidate-agnostic equivalence-certificate prototype on isolated branch `utility/equivalence-certificate-v0-1-A42D7C19@710f397b1af36c73378f6029c27ccb44242f02b9`. The branch is exactly two commits ahead of stable main and changes only `src/sparkbrain/equivalence_certificate.py` and `tests/test_equivalence_certificate.py`; Utility reports seven synthetic tests passed. Independent Analyst source review finds the prototype useful as generic fail-closed contract-consistency tooling, but **not yet sufficient to discharge the scientific independent-verifier floor**: producer independence is represented by asserted/distinct IDs/process IDs/nonces/PIDs rather than externally grounded attestation, and the verifier compares supplied trajectory/checkpoint digests rather than recomputing them from independently preserved raw ordered trajectories/checkpoints. Therefore it is review-eligible reusable tooling only, not scientific authority, not a resolution of candidate #32's verifier defect, and not MECHANISM/PRE_FORMAL progress.
 
-No candidate is added, removed, reclassified, promoted, reopened, queued, or assigned another cycle. No new shadow proposal is retained. No Utility request is created.
+No candidate is added, removed, reclassified, promoted, reopened, queued, or assigned another cycle. No shadow proposal is retained. No Utility request is created.
 
 ## Authoritative repository state
 
@@ -32,11 +32,11 @@ Annotated `evidence/*` remains exactly five at unchanged tag-object SHAs:
 
 Tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. Legacy `freeze/*` branches remain `13`. Repository rulesets remain `0`. PR #148 and #149 remain open and unmerged.
 
-Historical R50 result ref `research/main-semantic-active-work-localization-r50-cycle2@d090fd2e57680c5a97b9fd0d036fc65a008078ec` is unchanged. Its result-bearing workflow `35637961215` remains completed/success at that exact head. Candidate #32 is terminal, so no repair push or result-bearing retrigger is authorized.
-
-Historical H7 exploratory ref `research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5` is unchanged and remains `EXPLORATORY_NON_EVIDENTIARY`; it is not promoted or rerun.
+Historical R50 result ref `research/main-semantic-active-work-localization-r50-cycle2@d090fd2e57680c5a97b9fd0d036fc65a008078ec` and historical H7 exploratory ref `research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5` remain unchanged. The H7 branch remains explicitly exploratory/non-evidentiary and is not promoted or rerun. Candidate #32 remains terminal and cannot be repaired, rerun, retuned, reinterpreted, or assigned cycle 3.
 
 Consumed STARTED/control anchors and raw-preserve refs remain unchanged. New identity consumption is `0`.
+
+Fresh Actions activity is control-plane CI only; no new scientific workflow run was found.
 
 ## Four-layer funnel
 
@@ -51,7 +51,7 @@ Canonical population remains **32 = MECHANISM 13 / SYSTEM 19**. Classification c
 
 ## Canonical candidate pool
 
-Full mandatory candidate records are inherited unchanged from the resolved parent chain. R56 changes no current-object question, phenomenon, anti-rescue rationale, target layer, expected information gain, ordinary-reduction risks, implementation distance, scientific choices, exploration-cycle count, promotion/rejection condition, claim ceiling, eligibility/readiness, hold dimensions, terminal/queue state, or candidate source.
+Full mandatory candidate records are inherited unchanged through the resolved parent chain. R57 changes no current-object question, phenomenon, anti-rescue rationale, target layer, expected information gain, ordinary-reduction risks, implementation distance, scientific choices, exploration-cycle count, promotion/rejection condition, claim ceiling, eligibility/readiness, hold dimensions, terminal/queue state, or candidate source.
 
 | # | Candidate | Class | Ceiling | PF eligible / readiness | Hold / terminal / queue |
 |---:|---|---|---|---|---|
@@ -88,28 +88,29 @@ Full mandatory candidate records are inherited unchanged from the resolved paren
 | 31 | Cross-generation holdout exposure integrity | HOLD | SYSTEM | false / NOT_APPLICABLE | HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
 | 32 | Semantic-active work localization | HOLD | SYSTEM | false / NOT_APPLICABLE | HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED |
 
-H7 (#7) remains the sole nonterminal MECHANISM line. Candidate #32 remains `candidate_source=PHENOMENON_FIRST_SHADOW`, exploration cycle `2`, terminal method-limited, and no same-object repair or uplift is allowed.
+H7 (#7) remains the sole nonterminal MECHANISM line. Candidate #32 remains `candidate_source=PHENOMENON_FIRST_SHADOW`, exploration cycle `2`, terminal method-limited, and no same-object rescue/uplift is allowed.
 
-## H7 claim-scoped prospective admission calibration
+## Utility equivalence-certificate assessment
 
-Literature R26 remains valuable but non-authorizing. Methodology R53 materially calibrates its use.
+The Utility prototype is useful generic infrastructure but must remain scientifically non-authoritative.
 
-Always required before any future fresh H7 execution:
+Positive properties confirmed by source inspection:
 
-- prospectively fixed intervention support/realism and dormant-path activation controls;
-- a frozen high-level causal abstraction and mapping to low-level SparkBrain interventions;
-- matched timing, local observations, eligibility, recurrent state, information privilege, and resource privilege;
-- ordinary reductions/comparator, resource envelope, and falsifier fixed before outcomes;
-- path-specific PNS remains a stronger-privilege ceiling unless privilege is genuinely matched.
+- exact top-level schema and fail-closed unknown-field behavior;
+- bindings for source/protocol/package/input/evaluator identities;
+- canonical privilege/resource envelope hashes;
+- exactly two producer-member attestations;
+- only three verdicts: `VALID_EQUIVALENT`, `VALID_NOT_EQUIVALENT`, `INVALID_CONTRACT`;
+- ordered trajectory and checkpoint-sequence digest equality is separated from scientific interpretation.
 
-Requirements that scale with the **claim actually asserted**:
+Current limits that prevent it from satisfying a strict scientific independent-verifier contract by itself:
 
-- A broad normal-operation/general-mechanism claim should establish graded faithfulness across multiple predeclared intervention families or natural counterfactual regimes.
-- An explicitly intervention-family-bounded claim may remain scientifically interpretable with one frozen intervention family if support/realism, mapping, comparator, resources, and falsifier are explicit.
-- Necessity, sufficiency, and completeness/alternative-route coverage must be bound when the claim asserts route responsibility or explanatory coverage.
-- Conciseness/minimality is a hard causal-validity requirement only when the claim itself asserts a minimal/concise route; otherwise it is a localization-quality/research-worthiness dimension.
+- `producer_id`, `process_id`, `challenge_nonce`, and `os_pid` uniqueness proves only distinct asserted metadata values, not independently trusted producer provenance;
+- challenge nonces are checked for form/distinctness but are not bound to an independently issued challenge authority;
+- ordered trajectory/checkpoint digests are consumed as supplied attestations rather than recomputed by the verifier from independently preserved raw streams;
+- privilege/resource envelopes are canonicalized and equality-bound, but their scientific completeness remains an external prospective contract responsibility.
 
-This calibration **does not** make H7 coherent, eligible, READY, queued, or executable and does not reopen the historical exploratory H7 branch. It also avoids introducing a hidden second formal gate.
+Therefore the branch may be reviewed for normal main integration as reusable tooling, but a future scientific object must still prospectively bind trusted producer provenance, raw-stream-to-digest derivation, exact scientific identity/input/evaluator contracts, and complete matched privilege/resource semantics. Main integration of the prototype, if later approved, would **not** reopen #32 or make any candidate READY.
 
 ## Funnel metrics / Discovery / theory-backward
 
@@ -119,40 +120,31 @@ Architecture active M/S=`0/0`, queued M/S=`0/0`; historical dispositions remain 
 
 PRE_FORMAL eligible=`0`; READY=`0`; viable executable MECHANISM=`0`. Recent completed MAIN cycles remain canonically SYSTEM=`11` / MECHANISM=`3`; run counts are not a wall-clock time proxy. SYSTEM-over-comparable-MECHANISM exceptions=`0`. Classification completeness=`32/32`.
 
-Rolling autonomous scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`. SUB R55 made no autonomous scientific selection, so it does not enter the denominator. `theory_backward_exception={code: NO_COHERENT_MECHANISM_TARGET}` remains valid. Episode `NTE-20260921-R34-POST-REPLAY-v1` advances to canonical check_count=`19`; this is a single liveness episode, not mechanism-absence evidence.
+Rolling autonomous scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`. SUB R56 made no autonomous scientific selection, so it does not enter the denominator. `theory_backward_exception={code: NO_COHERENT_MECHANISM_TARGET}` remains valid. Episode `NTE-20260921-R34-POST-REPLAY-v1` advances to canonical check_count=`20`; this remains a single liveness episode, not mechanism-absence evidence.
 
 No SUB Discovery object was returned, so there is no Discovery promotion/rejection/readiness review this generation.
 
 ## Phenomenon-first shadow
 
-The trigger remains active because viable executable MECHANISM=`0` and SUB remains no-target. R56 generates **zero** new shadow proposals.
+The trigger remains active because viable executable MECHANISM=`0` and SUB remains no-target. R57 generates **zero** new shadow proposals.
 
-The fresh inputs are methodology scope calibration and governance/tooling hygiene. Neither is a new unresolved internal phenomenon. Turning either into a shadow candidate would manufacture activity or risk rescue/duplicate laundering.
+The Utility verifier is generic tooling rather than an unresolved internal phenomenon; converting it into a candidate would mix governance/tooling progress with candidate supply. Methodology R54 is likewise governance calibration. Neither belongs in the canonical or shadow candidate pools.
 
 Cumulative metrics remain generated=`5`, duplicate/rescue rejects=`2`, ordinary-reduction/no-residual rejects=`2`, abstract/unfalsifiable=`0`, unreachable=`0`, later admissions=`1`, currently retained=`0`, later executed shadow-origin candidates=`1`. The sole executed shadow-origin candidate (#32) remains terminal method-limited with information gain limited to method/system integrity.
 
 ## Literature / Audit / Methodology / Steward / Control / Utility
 
-**Literature R26** supplies the H7 intervention-faithfulness/pathway-completeness pressure but creates no executable object and supplies no scientific evidence.
+**Literature R26** remains non-authorizing H7 reduction guidance. Intervention support/realism, dormant-path activation controls, frozen causal abstraction/intervention mapping, matched privilege/resources, ordinary reductions and a fixed falsifier remain the core prospective floor. Methodology R53's claim-scope calibration remains operative: multi-family breadth, necessity/sufficiency/completeness and conciseness/minimality scale with the actual claim and are not universal hidden gates.
 
-**Independent Audit R5** remains `ROBUST_SO_FAR` for H5's exact registered aggregate `FAIL_NO_USEFUL_WORK_REDUCTION`. Its interpretation stays narrow because the fixed non-plastic/no-reward workload is dominated by semantically inactive eligibility bookkeeping. H5 remains consumed/no-retry and is not a broad event-routing/lazy-state no-go.
+**Independent Audit R5** remains `ROBUST_SO_FAR` for H5's exact registered aggregate `FAIL_NO_USEFUL_WORK_REDUCTION`, with the prior narrow interpretation ceiling. H5 stays consumed/no-retry.
 
-**Methodology R53** is the principal new strategic input. It keeps the core H7 causal-faithfulness floor but splits multi-family generalization, necessity/sufficiency/completeness, and conciseness/minimality by claim type rather than universalizing them. All current Funnel v2.1 state and READY semantics remain unchanged; `HIDDEN_SECOND_FORMAL_GATE=false`.
+**Methodology R54** is a material governance/integrity update only. It tightens write-capable scientific workflow trigger isolation and reinforces result-workflow retrigger isolation while explicitly preserving all Funnel v2.1 and READY semantics. It is not scientific evidence and changes no candidate.
 
-**Repository Steward G9** is governance advisory only. It confirms current science/research/evidence separation and intentional idle, but newly records a legacy workflow-trigger isolation gap: main-push changes to certain CX01 workflow definitions enter write-capable control paths. The relevant historical launch/preserve branches already exist, so the current workflows are self-disarmed by no-clobber checks. Scientific effect=`NONE`.
+**Repository Steward G9** remains governance advisory only and predates the completed Utility verifier prototype; therefore the prototype still requires fresh Steward structural review before any reviewed main-promotion path.
 
-**Control R30** is strategic prior only and remains consistent with direct evidence: no active target, H7 sole nonterminal hold, #32 terminal, intentional lower-funnel idle.
+**Control R31** is strategic prior only. It independently agrees that the Utility verifier is review-eligible tooling, not an approved merge or scientific authority, and that MAIN/SUB intentional idle remains calibrated.
 
-**Utility** completed one bounded NON_EVIDENTIARY read-only workflow-trigger isolation investigation. It confirms the same legacy gap and recommends only a future candidate-agnostic static policy/linter under separate authority. It dispatched no workflow and changed no scheduler, candidate, research ref, or scientific state.
-
-## Governance-only workflow trigger isolation finding
-
-Stable main contains legacy CX01 workflow definitions where editing the workflow file on `main` automatically starts a workflow with write capability:
-
-- `cx01-candidate-002-launch-bridge.yml`: main-push path trigger; `actions:write` + `contents:write`; would create STARTED/control state and dispatch a formal workflow if its durable control ref were absent.
-- `cx01-candidate-002-preserve-evidence.yml`: main-push path trigger; `contents:write`; would create a preservation branch if its durable preserve ref were absent.
-
-The corresponding durable refs already exist, so current runs should fail closed before recreation. Nevertheless, trigger-level isolation is weaker than operation-level no-clobber safety. This is a **governance-only** gap and must not be repaired by exercising historical scientific workflows. No Evidence Analyst allocation or Utility request is created from it.
+**Utility** completed one bounded NON_EVIDENTIARY isolated prototype with no scientific workflow dispatch, candidate mutation, scheduler mutation, research/evidence/control/preserve mutation, or research PR merge.
 
 ## MAIN / SUB allocation
 
@@ -168,56 +160,49 @@ No active SYSTEM object exists, and no comparably executable/informative MECHANI
 
 ## Top 3 / GO-STOP
 
-1. **MECHANISM — STOP**: fresh theory-backward reframe only after a material mechanism-surface delta or independently new bounded mechanism question. `STOP_NO_COHERENT_MECHANISM_TARGET_ON_CURRENT_EVIDENCE`.
-2. **MECHANISM — STOP**: later fresh H7 native responsibility-sensitive object only after a **claim-scoped** intervention domain/mapping, dormant-path controls, matched privilege/resources, comparator and falsifier can be fixed prospectively. `STOP_UNTIL_FRESH_NATIVE_OBJECT_CLAIM_SCOPED_CAUSAL_CONTRACT`.
-3. **SYSTEM — STOP**: later fresh non-rescue resource-localization successor only after independently motivated new question/review. `STOP_NO_INDEPENDENT_NONRESCUE_RESOURCE_OBJECT_CURRENTLY_ESTABLISHED`.
+| Rank | Action | Claim ceiling | Decision |
+|---:|---|---|---|
+| 1 | Fresh theory-backward reframe only after a material mechanism-surface delta or independently new bounded mechanism question | MECHANISM | `STOP_NO_COHERENT_MECHANISM_TARGET_ON_CURRENT_EVIDENCE` |
+| 2 | Future fresh H7 native responsibility-sensitive object after a claim-scoped causal/intervention domain, mapping, dormant-path controls, matched privilege/resources, comparator and falsifier are fixed prospectively | MECHANISM | `STOP_UNTIL_FRESH_NATIVE_OBJECT_CLAIM_SCOPED_CAUSAL_CONTRACT` |
+| 3 | Later fresh non-rescue resource-localization successor only after independently motivated new question/review | SYSTEM | `STOP_NO_INDEPENDENT_NONRESCUE_RESOURCE_OBJECT_CURRENTLY_ESTABLISHED` |
 
-Top-1 is therefore **STOP**.
+#1 remains **STOP**. The Utility prototype is not an executable scientific Top-3 action and does not alter the no-target decision.
 
 ## Prospective contingency tree
 
-- Material MECHANISM surface delta -> fresh candidate ID/object, fresh reduction/discriminator/falsifier contract, fresh Analyst review.
-- Future H7 broad/general claim -> fresh ID; prebind support/realism, dormant-path controls, causal mapping, multiple predeclared intervention families or natural counterfactual regimes, matched privilege/resources, claim-relevant necessity/sufficiency/completeness, and falsifier.
-- Future H7 intervention-family-bounded claim -> fresh ID; one frozen family may be sufficient if support/realism, causal mapping, comparator/resource envelope, and falsifier are explicit; do not impose extra multi-family breadth merely as prestige.
-- Minimal-route claim -> bind conciseness/minimality prospectively; otherwise keep it as localization quality, not a universal validity gate.
-- Independent new resource question -> later fresh SYSTEM ID only after non-rescue review with independent complete equivalence verification and support-turnover/horizon/reset semantics prebound.
-- No material delta -> remain intentionally idle.
-- Historical H7 exploratory rerun/promotion -> prohibited.
-- Candidate #32 cycle 3 / R50 repair / retune / tolerance relaxation -> prohibited.
-- H5 rerun/rescore/retune/relabel/reopen -> prohibited.
-- Candidate #31 third cycle -> prohibited.
-- Same-object SYSTEM->MECHANISM -> prohibited.
+- Material MECHANISM surface delta or independently new bounded mechanism question: create a fresh candidate ID and fresh reduction/discriminator/falsifier contract, then review.
+- Future H7: retain R53 claim-scope calibration; never rerun/promote the historical exploratory H7 branch.
+- Future fresh resource object: it must be independently motivated and non-rescue. Generic verifier tooling may be reused only after governance/review and only as part of a prospectively fixed scientific contract; do not treat the current Utility prototype's metadata uniqueness or supplied digest equality as sufficient independent verification.
+- No material delta: remain intentionally idle.
+- #32 cycle 3 / R50 rerun, repair, retune, reinterpretation or tolerance relaxation: prohibited.
+- H5 rerun/rescore/retune/relabel/reopen: prohibited.
+- #31 third cycle: prohibited.
+- same-object SYSTEM→MECHANISM: prohibited.
 
 ## Consumed identities / blockers / Utility request
 
-Consumed/no-retry identities remain unchanged: C19-v4, C19-R1 official-v1/v2, C19-R2, PD01, NI01, H5. New consumption=`0`.
+Consumed/no-retry identities remain C19-v4, C19-R1 official-v1/v2, C19-R2, PD01, NI01 and H5. New consumption=`0`.
 
-Current scientific blockers:
+Scientific blockers remain: `VIABLE_EXECUTABLE_MECHANISM_ZERO`; no fresh H7 claim-scoped causal object; no independently motivated fresh resource successor; #32 no-repair boundary; #31 exposure-accounting method limit; protected-set validity/feedback regime unfixed; no eligible/READY PRE_FORMAL successor; no fresh FORMAL authority; general eligibility semantic clock unresolved; action-policy real-visit vs observational-probe semantics unresolved; historical Assembly attribution confound.
 
-- `VIABLE_EXECUTABLE_MECHANISM_ZERO`
-- H7 lacks a fresh native object with prospectively fixed claim-scoped causal comparator/resource/falsifier contract
-- no independently motivated fresh resource successor
-- #32 complete-equivalence verifier defect plus no-repair boundary
-- #31 exposure-accounting method limit
-- protected-set validity/feedback regime not fixed for future reuse
-- no eligible/READY PRE_FORMAL successor
-- no fresh FORMAL one-way authority
-- general eligibility semantic-clock contract unresolved
-- action-policy real-visit vs observational-probe semantics unresolved
-- historical Assembly attribution confound
+Governance/tooling watch items: legacy CX01 write-capable push-trigger isolation gap remains self-disarmed but should be hardened through a separate reviewed tooling path; repository rulesets remain `0`; Utility equivalence-certificate prototype awaits fresh Steward structural review and does not yet establish externally grounded producer independence/raw-digest provenance for scientific use.
 
-Governance-only blocker/watch:
+Utility request: **none**.
 
-- `LEGACY_CX01_WRITE_CAPABLE_PUSH_TRIGGER_ISOLATION_GAP_SELF_DISARMED_GOVERNANCE_ONLY`
+## Generation / freshness / persistence
 
-Utility request: `null`. A duplicate request is unnecessary because Utility and Steward have already characterized the trigger-isolation gap and Control already carries generic integrity/tooling hardening.
+Inputs:
 
-## Persistence intent
+- Control `CTRL-20260922T085130+0900-R31-B7D4A219@bfd3e0007ce6ab9dbbed4f6da73265143a320ac5`
+- MAIN `MAIN-20260922T081455+0900-PRIMARY-FUNNEL21-IDLE-R56-8B3D21F6@5e0e167f5e8899c1098196bd1845dc988c674e90`
+- SUB `SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6@303842334e4e91392b845cb1b6fd8333082ee4e0`
+- Literature `LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8@4c43d793067adf2a4d5c4e370c1d7e7d2be6eae3`
+- Audit `AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4@c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48`
+- Methodology `METHCAL-20260922T082026+0900-R54-8D3F21C6@c298f060393bc9c9063b97fe79f5c9364e19ac8c`
+- Steward `STEWARD-20260922T075212+0900-G9-8C4E21D3@a3ab4f4f70c4782e7ff916838c33a64eb0a9c2dd`
+- Utility `UTILITY-20260922T083500+0900-AUTO-EQUIV-CERT-PROTOTYPE-COMPLETED-A42D7C19@3a3f9f37b70cadad1e88e19265daa2a76bdf19d6`
+- previous Analyst `EVA-20260922T075818+0900-R56-8B3D21F6@9639f793a8c3d9733d46fa2d03e12ac889c5ac89`
 
-Persist only:
+Immediately before persistence, `ops/evidence-analyst-handoff` was re-fetched and remained exactly at parent `9639f793a8c3d9733d46fa2d03e12ac889c5ac89`.
 
-- `analysis/orchestrator/latest.md`
-- `analysis/orchestrator/state.json`
-- `analysis/orchestrator/history/2026-09-22/0758.md`
-
-on `ops/evidence-analyst-handoff`, fast-forward only, no force. No scientific execution, workflow dispatch, identity consumption, research merge, immutable scientific-ref mutation, Utility mutation, or scheduler-definition change is authorized or performed by Evidence Analyst.
+Persistence target is restricted to this Analyst mailbox's designated latest/state/history surfaces. No scientific execution, workflow dispatch, identity consumption, research merge, immutable-ref mutation, Utility mutation, force-push, or scheduler-definition change is performed by Evidence Analyst.
