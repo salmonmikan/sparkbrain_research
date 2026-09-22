@@ -1,20 +1,20 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-23T01:20:00+09:00",
+  "timestamp": "2026-09-23T03:17:49+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260923T012000+0900-R70-4C8A1E73",
-    "sequence": 70,
+    "generation_id": "METHCAL-20260923T031749+0900-R71-B73D5A2C",
+    "sequence": 71,
     "material_change": true,
-    "material_change_reason": "R4_ONE_SHOT_LOCK_ARTIFACT_EXISTS_BUT_R82_MAILBOX_ARTIFACT_POINTER_AND_PACKAGE_SET_SUMMARY_CONFLICT_WITH_AUTHORITATIVE_RUN_AND_BRANCH",
-    "supersedes_generation_id": "METHCAL-20260923T002000+0900-R69-7D2B4C91",
+    "material_change_reason": "PF_R1_PRESERVATION_INTENT_EXISTS_IN_CONTROL_ANALYST_PROSE_BUT_REQUEST_LEVEL_UTILITY_DECISION_ASSIGNMENT_AUTHORITY_IS_MISSING",
+    "supersedes_generation_id": "METHCAL-20260923T012000+0900-R70-4C8A1E73",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
-    "previous_methodology": {"generation_id":"METHCAL-20260923T002000+0900-R69-7D2B4C91","branch":"ops/methodology-calibration-audit","commit":"4211f373d39fda357b5176ed2732c4923c0c876a"},
+    "previous_methodology": {"generation_id":"METHCAL-20260923T012000+0900-R70-4C8A1E73","branch":"ops/methodology-calibration-audit","commit":"2663fca3580ae2f4524ebddc6cb7a9dd5ec3a75d"},
     "human_directive": {"id":"HUMAN-20260922-005","role":"HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"},
     "control_brain": {"generation_id":"CTRL-20260922T235000+0900-R37-7A3E9C51","branch":"ops/control-brain-handoff","commit":"23676a55c9473d1cfd22d982ffffd5d2ba18b557"},
-    "evidence_analyst": {"generation_id":"EVA-20260923T011030+0900-R82-7C4E19B2","branch":"ops/evidence-analyst-handoff","commit":"000895a72f6cf54eeb3489a42f63f42b70281223"},
-    "utility_request": {"id":"UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE","branch":"ops/utility-orchestrator-requests","commit":"46a2b6735c4df221b28ee02a252993ffb7cbaa06","status":"OUTSTANDING_NO_COMPLETION_OBSERVED"}
+    "evidence_analyst": {"generation_id":"EVA-20260923T020919+0900-R83-A6D4E219","branch":"ops/evidence-analyst-handoff","commit":"ba109150205db0a30ce1c294ab8133fa6caa51b4"},
+    "utility_orchestrator": {"generation_id":"UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91","branch":"ops/utility-orchestrator-requests","commit":"b18a1d76c05efbbfacb9618ac1ca1e9941b17555"}
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -26,34 +26,42 @@
       "branch": "research/main-h7-formal-r4-runtime-lock-r81-cycle10",
       "head": "647253f4c0128ff09d47fdfce80dabf006863af1",
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "authorized_scope": "SCIENTIFIC_RUNTIME_PACKAGE_RESOURCE_BINDING_ONLY_PREIDENTITY",
-      "resource_contract_path": "artifacts/formal_h7_r4/resource_contract.json",
-      "versions_path": "artifacts/formal_h7_r4/scientific-runtime.versions",
-      "lock_path_present_on_branch": false,
-      "manifest_path_present_on_branch": false,
-      "one_way_hard_stop_all_false": true,
-      "fresh_formal_authority": 0
+      "fresh_formal_authority": 0,
+      "one_way_consumed": false
     },
     "r4_lock_materialization": {
       "workflow_run_id": 35748064227,
       "head_sha": "647253f4c0128ff09d47fdfce80dabf006863af1",
-      "conclusion": "SUCCESS",
-      "artifact_count": 1,
       "artifact_id": 10703822275,
       "artifact_name": "h7-formal-r4-lock-647253f4c0128ff09d47fdfce80dabf006863af1",
       "artifact_size_bytes": 5231,
       "artifact_archive_digest": "sha256:54334fcb7ceb962e46f82712a36722a4a687d87e7d83dc32d86c61564e58e9d1",
-      "artifact_expiry": "2026-12-21T15:32:23Z",
-      "exact_bytes_retrievable": true
+      "artifact_expired": false,
+      "lock_manifest_durable_capture_complete": false
     },
-    "r82_mailbox_conflict": {
-      "mailbox_artifact_id": 10697560883,
-      "mailbox_artifact_size_bytes": 4763,
-      "authoritative_run_artifact_id": 10703822275,
-      "authoritative_run_artifact_size_bytes": 5231,
-      "mailbox_package_summary_conflicts_with_authoritative_versions_file": true,
-      "example_conflict": "R82 says numpy==2.2.6 and jsonschema in scientific set; authoritative versions has numpy==2.4.6 and resource contract excludes jsonschema",
-      "classification": "CONTROL_PLANE_OBSERVABILITY_PROVENANCE_DEFECT_NOT_SCIENTIFIC_CONTAMINATION"
+    "pf_r1_development_artifact": {
+      "workflow_run_id": 35695286240,
+      "head_sha": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
+      "artifact_id": 10680620448,
+      "artifact_name": "h7-pf-r1-cycle4-8681dcbbe2fff986c28a79057f557b35f3f0f752",
+      "artifact_size_bytes": 100325,
+      "artifact_archive_digest": "sha256:db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d",
+      "artifact_expired": false,
+      "durable_non_evidentiary_preservation_complete": false
+    },
+    "utility_authorization_divergence": {
+      "request_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+      "utility_request_blob": "d0bcee3fe422925cfc999cf63cc5ba34375eb8b0",
+      "assignment_pointer_blob": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
+      "request_file_status": "PROPOSED_NOT_APPROVED",
+      "matching_request_level_control_decision_exists": false,
+      "matching_assignment_exists": false,
+      "assignment_id": null,
+      "assignment_generation_id": null,
+      "control_r37_prose_status": "APPROVED_OPEN",
+      "analyst_r83_prose_status": "OUTSTANDING_GO_EXISTING_REQUEST",
+      "utility_execution_performed": false,
+      "classification": "CONTROL_PLANE_REQUEST_AUTHORITY_OBSERVABILITY_DEFECT_FAIL_CLOSED_NOT_SCIENTIFIC_BREACH"
     },
     "scientific_source_of_truth": "stable main plus independently fetched evidence refs, exact research source/workflow/artifacts; ops branches are mailbox/history/authority records only"
   },
@@ -65,14 +73,18 @@
     "development_phase_full_end_to_end_through_fresh_consumed_formal": "INSUFFICIENT_EVIDENCE",
     "result_exposed_same_object_science_invariant_repair": "KEEP",
     "post_result_science_affecting_change_requires_explicit_version_or_fresh_successor": "KEEP",
-    "r4_one_shot_prospectively_fixed_package_set_materialization": "KEEP",
-    "exact_lock_manifest_bytes_durable_capture_before_identity": "TIGHTEN",
+    "utility_request_scoped_execution_authority_machine_resolvable": "TIGHTEN",
+    "control_analyst_prose_as_sufficient_utility_execution_authority": "CLARIFY",
+    "utility_default_deny_without_matching_decision_assignment": "KEEP",
+    "utility_self_approval_prohibition": "KEEP",
+    "duplicate_utility_request_to_bypass_blocked_authority": "KEEP",
+    "durable_result_exposed_development_raw_result_preservation": "TIGHTEN",
+    "nonrerun_recovery_of_existing_pfr1_bytes": "KEEP",
+    "r4_authoritative_run_scoped_artifact_discovery_binding": "KEEP",
+    "copied_ops_mailbox_artifact_pointer_as_provenance_authority": "CLARIFY",
+    "exact_r4_lock_manifest_bytes_durable_capture_before_identity": "TIGHTEN",
     "resolver_materializer_shopping_for_preferred_bytes": "TIGHTEN",
     "protected_scientific_runtime_vs_dev_tooling_separation": "KEEP",
-    "authoritative_run_scoped_artifact_discovery_binding": "TIGHTEN",
-    "copied_ops_mailbox_artifact_pointer_as_provenance_authority": "CLARIFY",
-    "analyst_package_contract_echo_vs_authoritative_branch": "TIGHTEN",
-    "package_resource_equivalence_inferred_from_mailbox_prose": "TIGHTEN",
     "cycle3_as_automatic_terminal_cap": "RELAX",
     "cycle3_mandatory_reassessment_with_prospective_information_gain": "KEEP",
     "raw_before_score_as_file_order_only": "CLARIFY",
@@ -83,7 +95,6 @@
     "fresh_concealed_postbinding_evaluation_surface": "TIGHTEN",
     "development_rerun_retune_nonindependent_evidence_accounting": "KEEP",
     "development_rerun_retune_live_repeated_result_case": "INSUFFICIENT_EVIDENCE",
-    "durable_result_exposed_development_raw_result_preservation": "TIGHTEN",
     "preformal_as_real_development_surface": "KEEP",
     "preformal_eligible_vs_ready": "KEEP",
     "ready_development_readiness_semantics": "KEEP",
@@ -102,24 +113,23 @@
     "protected_adaptive_evaluation_validity_and_exposure_observability": "TIGHTEN"
   },
   "false_positive_negative_risks": {
-    "false_positive": "MODERATE_WATCH: concealed-evaluation and semantic raw/preserve gates remain unresolved; conflicting ops package/artifact summaries must not become resource evidence.",
-    "false_negative": "MODERATE_WATCH: mechanism supply remains one H7 lineage; stale artifact pointers/package summaries can create unnecessary fail-closed churn.",
-    "opportunity_cost": "MODERATE_WATCH: exact authoritative R4 bytes are retrievable but not durably committed, and mailbox inconsistency can delay legitimate closure.",
-    "moving_goalpost_rescue_risk": "LOW_TO_MODERATE_WATCH_IMPROVING: R3 is preserved, R4 is explicit/prospective, package set is fixed and materializer shopping is forbidden.",
+    "false_positive": "MODERATE_WATCH: concealed-evaluation and semantic raw/preserve gates remain unresolved; Utility default-deny reduces contamination risk.",
+    "false_negative": "MODERATE_WATCH: one MECHANISM lineage remains active and request-authority divergence blocks preservation needed before legitimate one-way progression.",
+    "opportunity_cost": "MODERATE_WATCH: PF-R1 and R4 bytes are recoverable but durable capture remains blocked/incomplete for different control-plane reasons.",
+    "moving_goalpost_rescue_risk": "LOW_TO_MODERATE_WATCH_IMPROVING",
     "over_terminalization": "LOW_TO_MODERATE_WATCH_IMPROVING"
   },
   "development_iteration_calibration": {
     "directive_disposition": "ACCEPTED_AND_LIVE",
     "axis": ["OPEN_DEVELOPMENT","RESULT_EXPOSED_DEVELOPMENT","CONSUMED_ONE_WAY"],
     "h7_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "r4_materialization_is_scientific_result": false,
-    "r4_materialization_confirmatory_credit": 0,
-    "ops_mailbox_mismatch_response": "AUTHORITATIVE_RECONCILIATION_NOT_CONTRACT_MUTATION_OR_REMATERIALIZATION",
-    "repeated_result_bearing_development_case": "INSUFFICIENT_EVIDENCE",
+    "utility_reconciliation_is_scientific_result": false,
+    "utility_reconciliation_confirmatory_credit": 0,
     "pf_r1_evidence_accounting": "ONE_COMPLETED_PREFORMAL_DEVELOPMENT_OBSERVATION_CONFIRMATORY_COUNT_ZERO",
-    "pf_r1_byte_durability": "TIGHTEN_PENDING_EXISTING_UTILITY_OR_EQUIVALENT_RESOLUTION"
+    "pf_r1_byte_durability": "TIGHTEN_BLOCKED_BY_REQUEST_LEVEL_AUTHORITY_DIVERGENCE",
+    "repeated_result_bearing_development_case": "INSUFFICIENT_EVIDENCE"
   },
-  "pass_reachability": "REALISTIC_CONDITIONAL: reconcile authoritative R4 run/artifact/package bindings, durably capture exact one-shot bytes, close final source/runtime/raw/holdout/preserve gates and PF-R1 provenance, then require fresh one-way authorization; no evidence standard need be weakened",
+  "pass_reachability": "REALISTIC_CONDITIONAL: materialize request-scoped Utility authority for the existing PF-R1 preservation intent, preserve existing PF-R1 bytes without rerun, durably capture authoritative R4 lock/manifest, close source/runtime/raw/holdout/preserve gates, then require fresh one-way authorization; no evidence standard need be weakened",
   "claim_type_findings": {
     "same_object_system_to_mechanism_upgrade_observed": false,
     "fresh_system_successor_observed": true,
@@ -130,7 +140,7 @@
   },
   "mechanism_supply_health": "ONE_ACTIVE_MECHANISM_FORMALIZATION_LINEAGE_QUALITY_FLOOR_INTACT_BUT_MECHANISM_SUPPLY_THIN",
   "funnel_observability": {
-    "authority_generation": "EVA-20260923T011030+0900-R82-7C4E19B2",
+    "authority_generation": "EVA-20260923T020919+0900-R83-A6D4E219",
     "canonical_population": 33,
     "classified_population": 33,
     "classification_completeness": 1.0,
@@ -153,14 +163,15 @@
   "utility_request": {
     "created_by_methodology_auditor": null,
     "existing": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
-    "status": "OUTSTANDING_NO_DUPLICATE_CREATED"
+    "status": "EXISTS_BUT_REQUEST_LEVEL_EXECUTION_AUTHORITY_UNRESOLVED",
+    "duplicate_created": false
   },
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": {
-    "authoritative_r4_branch_run_artifact_reconciliation": "HIGH",
+    "utility_authorization_divergence": "HIGH",
     "formal_one_way_integrity_unchanged": "HIGH",
-    "r4_package_runtime_separation": "HIGH",
-    "final_preidentity_closure": "MEDIUM_HIGH_LOCK_MANIFEST_NOT_YET_COMMITTED",
+    "r83_authoritative_r4_artifact_reconciliation": "HIGH",
+    "final_preidentity_closure": "MEDIUM_HIGH_R4_AND_PFR1_DURABLE_CAPTURE_OPEN",
     "fresh_consumed_formal_end_to_end": "UNOBSERVED",
     "fresh_system_to_mechanism_successor": "UNOBSERVED"
   }
