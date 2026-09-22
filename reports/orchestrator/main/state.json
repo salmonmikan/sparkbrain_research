@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260922T213400+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-R75-D7F2A9C1",
-  "run_id": "sparkbrain-main-primary-20260922T211559JST-R75-h7-formalr2-cycle8-preidentity",
-  "producer_run_id": "sparkbrain-main-primary-20260922T211559JST-R75-h7-formalr2-cycle8-preidentity",
-  "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R2_INPUT_SPLIT_BINDING_AND_PREIDENTITY_REVALIDATION_CYCLE8_ONLY_NO_IDENTITY_NO_RESULT",
-  "supersedes_generation_id": "MAIN-20260922T203216+0900-PRIMARY-H7-FORMALR1-C7-INPUT-ID-BLOCK-R73",
+  "generation_id": "MAIN-20260922T222214+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-REPAIR-R75-D7F2A9C1",
+  "run_id": "sparkbrain-main-primary-20260922T221939JST-R75-h7-formalr2-cycle8-ci-recovery",
+  "producer_run_id": "sparkbrain-main-primary-20260922T221939JST-R75-h7-formalr2-cycle8-ci-recovery",
+  "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R2_PREIDENTITY_SCIENCE_INVARIANT_CI_RECOVERY_ONLY_NO_IDENTITY_NO_RESULT",
+  "supersedes_generation_id": "MAIN-20260922T213400+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-R75-D7F2A9C1",
   "input_generations": {
     "evidence_analyst": "EVA-20260922T210223+0900-R75-D7F2A9C1@c190afff7e33977c530c207904bd42ce7187a20d",
-    "main_previous": "MAIN-20260922T203216+0900-PRIMARY-H7-FORMALR1-C7-INPUT-ID-BLOCK-R73",
-    "sub": "SUB-20260922T204630+0900-ARCH-C33-RUNNERPATH-R74-B8C4E219"
+    "main_previous": "MAIN-20260922T213400+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-R75-D7F2A9C1",
+    "sub": "SUB-20260922T214353+0900-ARCH-C33-CONFORM-R75-D7F2A9C1"
   },
   "execution_mode": "PRIMARY",
   "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-22T21:15:59+09:00",
-  "heartbeat_at": "2026-09-22T21:34:00+09:00",
+  "started_at": "2026-09-22T22:19:39+09:00",
+  "heartbeat_at": "2026-09-22T22:22:14+09:00",
   "completed_at": null,
   "blocked_at": null,
   "blocked_until": null,
@@ -29,13 +29,12 @@
   "development_revision": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-AND-PREIDENTITY-REVALIDATION",
   "repair_change_classification": {
     "episode_split_binding": "SCIENCE_AFFECTING_CHANGE_VERSIONED_PROSPECTIVELY_BY_ANALYST_R75_BEFORE_FORMAL_IDENTITY",
-    "runner_runtime_package_hash_plumbing": "SCIENCE_INVARIANT_PREIDENTITY_IMPLEMENTATION",
-    "lint_import_format_repairs": "SCIENCE_INVARIANT_REPAIR",
-    "temporary_repair_workflow": "SCIENCE_INVARIANT_OPERATIONAL_HELPER_CREATED_USED_AND_REMOVED",
+    "prior_lint_import_format_repairs": "SCIENCE_INVARIANT_REPAIR",
+    "torch_local_build_metadata_validation": "SCIENCE_INVARIANT_REPAIR_RUNTIME_VERSION_METADATA_NORMALIZATION_ONLY",
     "post_result_science_affecting_change_beyond_r75": "NONE"
   },
   "cycle_count": 8,
-  "reassessment_rationale": "R75 recorded concrete information gain beyond cycle 7: prospectively bind Episode.split as fit=train, calibration=dev, evaluation=test with result-bearing smoke forbidden, preserve every other R1 scientific field, and revalidate exact preidentity runner/runtime/package/hash/no-clobber plumbing before any one-way identity.",
+  "reassessment_rationale": "R75 recorded concrete information gain beyond cycle 7: prospectively bind Episode.split as fit=train, calibration=dev, evaluation=test with result-bearing smoke forbidden, preserve every other R1 scientific field, and revalidate exact preidentity runner/runtime/package/hash/no-clobber plumbing before any one-way identity. This continuation fixes only a pre-result runtime-version metadata comparison defect exposed by non-result-bearing CI.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {
@@ -52,7 +51,8 @@
     "base_research_branch": "research/main-h7-formal-r1-preidentity-closure-r70-cycle7",
     "base_head": "baaec4a7f1a1b6820d78ff9b33566bb809f74f42",
     "active_research_branch": "research/main-h7-formal-r2-input-split-r75-cycle8",
-    "current_head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+    "previous_head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+    "current_head": "a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
     "r2_contract_path": "artifacts/formal_h7_r2/contract.json",
     "r2_contract_id": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-V1",
     "r2_contract_blob": "a4965eb49528e5b7e6da70f28e076de89d822f93",
@@ -86,30 +86,46 @@
     "started_marker_validation_implemented": true,
     "contract_runner_scorer_preserver_blob_checks_implemented": true,
     "runtime_package_manifest_checks_implemented": true,
-    "temporary_lint_workflow_removed": true
+    "runtime_version_metadata_repair": {
+      "failure_run": 35727871981,
+      "failure_stage": "NON_RESULT_PREIDENTITY_MANIFEST_BUILD",
+      "failure_reason": "raw torch.__version__ local build suffix rejected by exact bare-version equality",
+      "package_requirement_unchanged": "torch==2.13.0",
+      "validation_after_repair": "torch_version.split('+', 1)[0] == '2.13.0'",
+      "full_raw_torch_version_still_recorded": true,
+      "scientific_runtime_or_resource_change": false
+    }
   },
   "workflows": [
-    {
-      "run_id": 35727704525,
-      "name": "h7-r2-science-invariant-lint-fix",
-      "head": "c13bdb387d1cc1541bd67cd8a86c298ccb2d3173",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false,
-      "effect": "created formatter-only commit dac096a84bd553f972483b417b5fcd907d46fee5"
-    },
     {
       "run_id": 35727871981,
       "name": "h7-formal-r2-preidentity",
       "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
-      "status": "in_progress",
-      "conclusion": null,
-      "result_bearing": false
+      "status": "completed",
+      "conclusion": "failure",
+      "result_bearing": false,
+      "failure_class": "SCIENCE_INVARIANT_RUNTIME_VERSION_METADATA_VALIDATION_DEFECT"
     },
     {
       "run_id": 35727871994,
       "name": "ci",
       "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+      "status": "completed",
+      "conclusion": "success",
+      "result_bearing": false
+    },
+    {
+      "run_id": 35732856997,
+      "name": "h7-formal-r2-preidentity",
+      "head": "a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
+      "status": "queued",
+      "conclusion": null,
+      "result_bearing": false
+    },
+    {
+      "run_id": 35732857066,
+      "name": "ci",
+      "head": "a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
       "status": "queued",
       "conclusion": null,
       "result_bearing": false
@@ -133,6 +149,7 @@
     "mechanism_architecture_observations": 0,
     "system_architecture_observations": 0,
     "non_evidentiary_formal_preidentity_implementation": 1,
+    "non_result_ci_failure_diagnosed": 1,
     "scientific_result": null
   },
   "consumed_identities": [
@@ -145,17 +162,17 @@
     "pd01-long-history-fading-memory-official-v1"
   ],
   "remaining_preidentity_gates": {
-    "exact_head_generic_ci": "WAITING_EXTERNAL_RUN_35727871994",
-    "preidentity_runtime_package_manifest_workflow": "WAITING_EXTERNAL_RUN_35727871981",
+    "exact_head_generic_ci": "WAITING_EXTERNAL_RUN_35732857066",
+    "preidentity_runtime_package_manifest_workflow": "WAITING_EXTERNAL_RUN_35732856997",
     "complete_prior_surface_seed_inventory_and_collision_audit": "NOT_CLOSED_THIS_RUN",
     "remote_create_only_no_clobber": "RECHECK_REQUIRED_AT_FUTURE_CREATION_BOUNDARY",
     "synthetic_one_way_scorer_preserve_totality": "NOT_CLOSED_THIS_RUN",
-    "durable_pf_r1_raw_summary_exact_bytes": "PENDING_SEPARATE_NON_EVIDENTIARY_PROVENANCE_CLOSURE"
+    "durable_pf_r1_raw_summary_exact_bytes": "PENDING_SEPARATE_NON_EVIDENTIARY_PROVENANCE_CLOSURE",
+    "fresh_one_way_formal_authority": "NOT_GRANTED"
   },
   "integrity": {
     "analyst_generation_rechecked_before_lease_acquisition": true,
     "analyst_generation_rechecked_before_research_mutation": true,
-    "analyst_generation_rechecked_after_science_invariant_repair_before_cleanup": true,
     "analyst_generation_rechecked_before_final_control_persistence": true,
     "analyst_generation_stable": true,
     "sub_collision": false,
@@ -166,8 +183,9 @@
     "result_bearing_workflow_dispatched": false,
     "official_scoring_performed": false,
     "scientific_preserve_or_evidence_ref_created": false,
-    "immutable_scientific_ref_mutation": false
+    "immutable_scientific_ref_mutation": false,
+    "science_affecting_change_beyond_r75": false
   },
-  "stop_reason": "WAITING_ONLY_FOR_NON_RESULT_BEARING_EXACT_HEAD_CI_AND_PREIDENTITY_MANIFEST_WORKFLOW_ON_80B88CD49FA5B9F5535FEBA27A75EBD3D4912406",
-  "next_action": "After runs 35727871981 and 35727871994 complete, re-read R75-or-later Analyst generation and exact branch head. If both are green, inspect non-result manifest outputs and continue only remaining R75-authorized preidentity closure. Do not create FORMAL identity, STARTED, access protected evaluation, dispatch result-bearing execution, preserve scientific evidence, or score official raw."
+  "stop_reason": "WAITING_ONLY_FOR_NON_RESULT_BEARING_EXACT_HEAD_CI_AND_PREIDENTITY_MANIFEST_WORKFLOW_AFTER_SCIENCE_INVARIANT_TORCH_METADATA_REPAIR",
+  "next_action": "After runs 35732856997 and 35732857066 complete, re-read R75-or-later Analyst generation and exact branch head. If validation is green, inspect non-result manifest outputs and continue only remaining R75-authorized preidentity closure. Do not create FORMAL identity, STARTED, access protected evaluation, dispatch result-bearing execution, preserve scientific evidence, or score official raw."
 }
