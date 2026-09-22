@@ -148,8 +148,8 @@
       "run_id": 35721879348,
       "name": "ci",
       "head": "baaec4a7f1a1b6820d78ff9b33566bb809f74f42",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "result_bearing": false
     }
   ],
