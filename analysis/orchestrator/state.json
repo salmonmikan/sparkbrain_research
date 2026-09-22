@@ -1,1 +1,149 @@
-{"schema_version":2,"generation_id":"EVA-20260922T161640+0900-R65-C4F8A21D","produced_at":"2026-09-22T16:16:40+09:00","producer_run_id":"evidence-analyst-auto-EVA-20260922T161640+0900-R65-C4F8A21D","authority_scope":"EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION","supersedes_generation_id":"EVA-20260922T145734+0900-R64-F1A8C29D","input_generations":{"human_005":"HUMAN-20260922-005@2f655f3c32a19263260a5154138a95b35612d7b9","human_006":"HUMAN-20260922-006@602ec48c9bd834baab3984c46d239a309b004937","human_007":"HUMAN-20260922-007@59103b381783cf6cb456e43f1d73e7a01c1d33dc","human_008":"HUMAN-20260922-008@de60c8888d1b438d5b06fed2266a8efd5893e646","control":"CTRL-20260922T155032+0900-R34-2F8C71A6@d67364316be94f7b48b79b3fdc3df79522fd1beb","main":"MAIN-20260922T151800+0900-PRIMARY-H7-PFR1-C4-F1A8C29D@e0848938870fde48f75038cb22a0e7af9520f504","sub":"SUB-20260922T154200+0900-QFD-EQUIVBOUNDARY-R64-C3F8A2D1@8f42de275816998cb631288757f415c3fd456e11","literature":"LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9@d09c7106e5f346d3a4bb67ac25e6c651d2c6787a","audit":"INDEPENDENT-AUDIT-PD01-20260922T110000+0900-R6-A7D4C219@d09c7106e5f346d3a4bb67ac25e6c651d2c6787a","methodology":"METHCAL-20260922T152143+0900-R60-B7E4C219@91482f931c0d90f5560e3995b073a01ae68b42ce","steward":"STEWARD-20260922T135014+0900-G10-4D8C21A7@b3b69553df32f5eb998d1c29cbe29ee1c34a93aa","utility":"UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4@71beb0d5ee00f112825fcc268ec514761d6ab418","previous_evidence_analyst":"EVA-20260922T145734+0900-R64-F1A8C29D@0b201ca23c1de6fb568d78f320dc5a55ab85b70c"},"authoritative_refs":{"main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d","analyst_parent":"0b201ca23c1de6fb568d78f320dc5a55ab85b70c","control_tip":"d67364316be94f7b48b79b3fdc3df79522fd1beb","orchestrator_tip":"8f42de275816998cb631288757f415c3fd456e11","external_tip":"d09c7106e5f346d3a4bb67ac25e6c651d2c6787a","methodology_tip":"91482f931c0d90f5560e3995b073a01ae68b42ce","steward_tip":"b3b69553df32f5eb998d1c29cbe29ee1c34a93aa","utility_tip":"71beb0d5ee00f112825fcc268ec514761d6ab418","human_directives_tip":"de60c8888d1b438d5b06fed2266a8efd5893e646","active_research_refs":{"H7_PF_R1":"8681dcbbe2fff986c28a79057f557b35f3f0f752","H7_DEV_R2":"d6655549c179caf391d4b43bd2ebea49f2bfc82b","H7_DEV_R1":"c97af135742a7cd3af94c857f4d5b83d7707075d","H7_HISTORICAL":"3b5f122d287025bd9e0aec3a5266704236e6a3d5","C32_HISTORICAL":"d090fd2e57680c5a97b9fd0d036fc65a008078ec","H6_HISTORICAL_EXPLORATORY":"3904596cdb6377fc460435bf1b8a6dcdadff4fab","UTILITY_EQUIVALENCE":"9f9d18065b481d8597236b0b682f0574c251b319"},"evidence_tags":{"c19-v4":"4d6c0bd9a6c06c17352941d3fa730502e72b8540","c19-r2":"82b88f3e2ad524fed8b72300dcba46053c1f2c7e","H5":"e7d99cc806206ac27ced225d4779c9fc5bb67ff5","NI01":"185b741e69ea8a0ce0d076153d36e9296a748765","PD01":"e4c4e6428d8ef9e09e92cae231041de0788162e2"},"formal_tags":[],"sealed_tags":[],"freeze_tags":[],"ruleset_count":0,"prs":{"148":"OPEN_UNMERGED","149":"OPEN_UNMERGED"},"workflows":{"H7_PF_R1":"35695286240_COMPLETED_SUCCESS@8681dcbbe2fff986c28a79057f557b35f3f0f752","H7_PF_R1_GENERIC_CI":"35695286238_COMPLETED_SUCCESS@8681dcbbe2fff986c28a79057f557b35f3f0f752"},"h7_pf_r1_artifact":{"artifact_id":10680620448,"artifact_zip_sha256":"db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d","raw_sha256":"695261aeadab1ab311b60787f1b6a9023c29e24009c6f173c1a660469a6906db"}},"canonical_inheritance":{"base_generation_id":"EVA-20260922T120158+0900-R60-D5E721A4","base_commit":"8cfdb2abb72ff0cfcf616d3400d578db7c20a84d","override_chain":["EVA-20260922T124300+0900-R61-C7F421A9","EVA-20260922T130900+0900-R62-D4A7C21F","EVA-20260922T140541+0900-R63-E8C421B7","EVA-20260922T145734+0900-R64-F1A8C29D","EVA-20260922T161640+0900-R65-C4F8A21D"],"resolution_rule":"All 32 complete material candidate records and mandatory Funnel-v2.1/development fields persist from the exact base plus explicit later overrides. R65 changes only candidate 7 and noncanonical supply/shadow/allocation metrics; candidates 1-6 and 8-32 inherit unchanged.","classification_completeness":"32/32"},"four_layer_funnel":{"DISCOVERY":{"canonical_active":0,"state":"OPEN"},"ARCHITECTURE_STUDY":{"MECHANISM_active":0,"SYSTEM_active":0,"state":"EMPTY"},"PRE_FORMAL":{"MECHANISM_active_result_bearing":0,"eligible":1,"ready":1,"state":"PF_R1_COMPLETE_FORMALIZATION_DESIGN_PENDING"},"FORMAL":{"fresh_one_way_authority":0,"formalization_design_active":1,"state":"CONTRACT_DESIGN_ONLY_NO_EXECUTION"}},"candidate_population":{"total":32,"MECHANISM":13,"SYSTEM":19,"ACTIVE":1,"NONTERMINAL_HOLD":0,"TERMINAL_FOR_CURRENT_OBJECT":31,"classification_complete":32},"development_phase_distribution":{"canonical_candidates":{"OPEN_DEVELOPMENT":2,"RESULT_EXPOSED_DEVELOPMENT":30,"CONSUMED_ONE_WAY":0},"consumed_scientific_identities":{"CONSUMED_ONE_WAY":7}},"candidate_overrides":{"7":{"id":"CAND-H7-RESPONSIBILITY","question":"Under one prospectively frozen dynamic TOP1 intervention policy, does native local route/state activity carry task-relevant causal responsibility that is not reproduced by prospectively adequate ordinary reductions, without claiming uniqueness?","phenomenon":"native local route/state causal responsibility under a dynamic TOP1 selection-and-cut policy","target_layer":"FORMAL","classification":"FORMALIZE","claim_ceiling":"MECHANISM","preformal_eligible":true,"preformal_readiness":{"status":"READY","claim_type":"mechanism","supported_reachability":"ESTABLISHED","functional_consequence":"PARTIAL","matched_comparator_status":"PARTIAL","support_breadth":"PF-R1 fixed four-world dynamic-TOP1 development surface passed the positive-phenomenon floor and observed a nonzero native local effect; none of the three frozen ordinary reductions met the registered reduction direction. This is one nonconfirmatory development observation only.","ordinary_reductions_specified_or_controlled":["ORDINARY_DENSE_RECURRENT_V1","FINITE_STATE_ROUTE_HISTORY_V2","ELIGIBILITY_ROUTE_LEDGER_V2","generic shared bottleneck","dormant/bypass artifact"],"ordinary_reductions_unresolved":["capacity matching was not established by the fixed PF-R1 protocol for any comparator","intervention-aware reservoir/iSSM if a broader reduction claim is sought","confirmatory paired uncertainty and dependence-aware inference","prospectively justified equivalence/noninferiority or capacity-matching margins"],"falsifier_fixed":{"value":true,"definition":"PF-R1 fixed development falsifier executed exactly; future FORMAL falsifier is not yet frozen and must be defined on a fresh untouched one-way surface."},"open_scientific_choices":["future FORMAL estimand and uncertainty procedure","capacity-matching/noninferiority margins that are independently justified rather than selected to fit PF-R1","fresh FORMAL sample size and untouched seed/evaluation surface","whether claim remains dense-recurrent-specific or broadens to stronger dynamical reductions"],"formal_claim_ceiling":"At most a prospectively confirmed local dynamic-policy causal-responsibility/mechanistic-distinctness claim within the frozen regime; no uniqueness, task specificity, completeness, sufficiency, broad ordinary-reduction exhaustion or external generalization without additional prospective controls."},"hold_class":null,"hold_reason":null,"terminal_state":"ACTIVE","queue_state":"ACTIVE","system_priority_exception":{"used":false},"candidate_source":"THEORY_BACKWARD","development_phase":"RESULT_EXPOSED_DEVELOPMENT","development_revision":"H7-FORMAL-R1-DYNAMIC-TOP1-CONTRACT-DESIGN","previous_development_revision":"H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION","cycle_count":{"completed_revision_cycles":4,"current_cycle":5,"cycle3_reassess":"REFRAME_VERSION_CONTINUE_DEV_R2_THEN_PROMOTE_PREFORMAL_READY_R64","cycle4_result":"RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY"},"information_gain_rationale":"PF-R1 established feasibility plus a registered nonconfirmatory residual. The highest-value next step is to determine whether that result can be translated into a fresh untouched one-way confirmatory contract with a dynamic-policy estimand, episode-aware uncertainty, independently justified capacity/equivalence criteria and no comparator shopping, rather than accumulating more same-lineage PRE_FORMAL runs.","promotion_rejection_reassess_condition":"Materialize a FORMAL contract design only. STOP before FORMAL identity creation, held-out evaluation, workflow dispatch or result access. If exact estimand, dependence-aware uncertainty, independently motivated margins/capacity criteria, fresh identity/input/runtime bindings and raw/preserve plumbing cannot be prospectively closed without tuning to PF-R1, HOLD current formalization and do not rerun PF-R1."}},"h7_pf_r1_result":{"branch":"research/main-h7-pf-r1-frozen-panel-r64-cycle4","head":"8681dcbbe2fff986c28a79057f557b35f3f0f752","workflow_run_id":35695286240,"classification":"PRE_FORMAL_DEVELOPMENT_NONCONFIRMATORY","contract_id":"H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION-V1","native":{"baseline_accuracy":0.8090277777777778,"cut_accuracy":0.8020833333333334,"delta_accuracy":0.00694444444444442,"mean_total_variation":0.055507719714821886,"examples":576},"dense_recurrent":{"baseline_accuracy":0.8090277777777778,"delta_accuracy":0.0},"finite_state_route_history":{"baseline_accuracy":0.4548611111111111,"delta_accuracy":0.0798611111111111},"eligibility_route_ledger":{"baseline_accuracy":0.6996527777777778,"delta_accuracy":0.02256944444444442},"positive_phenomenon_floor_passed":true,"ordinary_reduction_direction_met":{"dense_recurrent":false,"finite_state_route_history":false,"eligibility_route_ledger":false},"capacity_limit_status":"NOT_ESTABLISHED_BY_FIXED_PROTOCOL_FOR_ALL_THREE","disposition":"RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY","interpretation_ceiling":"PRE_FORMAL development observation only; local existential responsibility within frozen four-world/dynamic intervention-family regime at most.","raw_before_score_verified_from_runner":true,"raw_sha256_verified_against_downloaded_artifact":true,"post_outcome_research_mutation":false,"formal_uplift_authorized":false},"h7_formalization_authority":{"authorization":"GO_CONTRACT_DESIGN_ONLY_NO_FORMAL_EXECUTION","development_revision":"H7-FORMAL-R1-DYNAMIC-TOP1-CONTRACT-DESIGN","decision":"GO_H7_FORMAL_R1_CONTRACT_DESIGN_ONLY_STOP_BEFORE_ONE_WAY_IDENTITY_CREATION_OR_RESULT_BEARING_EXECUTION","required_contract_elements":["scope estimand to frozen dynamic TOP1 selection-and-cut policy unless invariant route identity is independently demonstrated","fresh untouched one-way FORMAL identity/evaluation surface with exact source/protocol/package/runtime/input/evaluator binding","episode/seed-aware paired uncertainty preserving four-world strata; do not treat 576 recurrent step rows as IID","prospectively justified effect/capacity/equivalence or noninferiority criteria that are not selected to make PF-R1 pass","explicit ordinary comparator capacity-matching semantics and reduction decision rule","raw-before-score and preserve-before-read machinery plus immutable evidence path","no reuse of PF-R1 observations as confirmatory evidence"],"forbidden_this_cycle":["FORMAL identity consumption","held-out or protected evaluation access","FORMAL workflow dispatch","PF-R1 rerun/retune/rescore","comparator shopping based on PF-R1 result","historical PASS/FAIL rewrite"]},"system_terminal_fresh_successor_potential":{"assessed":19,"fresh_SYSTEM_successor":[1,3,4,5,6,10,15,19,20,21,22,25,29,30,31,32],"fresh_MECHANISM_successor":[],"none":[14,27,28]},"noncanonical_supply":{"sub_question_seed":{"proposal_id":"QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01","status":"QUESTION_FORMATION_DISCOVERY_RETAINED_NONCANONICAL_CYCLE2_COMPLETE","cycle":2,"proposed_claim_ceiling_if_later_admitted":"SYSTEM","question":"Can a fresh SYSTEM successor make semantic-equivalence verification auditable by separating artifact integrity/provenance from semantic comparison, using independently preserved producer streams/checkpoints and an independently recomputing verifier?","fresh_information_gain":"Historical R50 preserved only one aggregate in-process raw JSON and literal schedule/fire/ignition/prediction equality booleans; Utility verifier compares supplied trajectory/checkpoint digests rather than recomputing them from producer raw streams.","next_authorized_step":"ONE_BOUNDED_QFD_CYCLE3_REASSESS_ONLY_TO_DECIDE_ADMISSION_READINESS_OR_HOLD; NO IMPLEMENTATION OR CANONICAL ADMISSION","canonical_admission":false,"theory_backward_denominator_credit":false}},"shadow_standby_queue":[],"phenomenon_shadow_metrics":{"current_mode":"PREFETCH_SHADOW","last_scan_generation":"EVA-20260922T145734+0900-R64-F1A8C29D","last_scan_reason":"MATERIAL_PIPELINED_SHADOW_POLICY_DELTA_PLUS_H7_DEV_R2_COMPLETION_PLUS_FRESH_UTILITY_AND_SUB_DELTA","scans_skipped_due_to_low_rate_throttle":1,"current_generation_scan":"SKIPPED_LOW_RATE_THROTTLE_NO_INDEPENDENT_NEW_PHENOMENON_SURFACE","proposals_generated_cumulative":6,"proposals_retained_current_queue":0,"proposals_retired_cumulative":0,"standby_queue_size":0,"rejected_duplicate_or_rescue_cumulative":3,"rejected_abstract_or_unfalsifiable_cumulative":0,"rejected_obvious_reduction_no_residual_cumulative":2,"rejected_unreachable_cumulative":0,"rejected_active_candidate_dependent_cumulative":0,"rejected_ownership_collision_cumulative":0,"later_admissions_cumulative":1,"executed_shadow_origin_candidates_cumulative":1},"funnel_metrics":{"discovery_dispositions":{"REJECT":2,"HOLD_SYSTEM_TERMINAL":1,"HOLD_MECHANISM_UNRESOLVED":1},"rolling_theory_backward":{"canonical_actual_scientific_selections":["MECHANISM","SYSTEM","SYSTEM"],"share":"1/3","question_formation_denominator_excluded":true},"architecture_active":{"MECHANISM":0,"SYSTEM":0},"architecture_queued":{"MECHANISM":0,"SYSTEM":0},"preformal":{"eligible":1,"ready":1,"active_result_bearing":0,"latest_result":"RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY"},"viable_mechanism_candidates":1,"recent_main_endpoints":{"SYSTEM":11,"MECHANISM":7,"time_split":"UNAVAILABLE_DO_NOT_USE_RUN_COUNT_AS_TIME_PROXY"},"system_priority_exceptions":{"count":0,"used":false},"classification_completeness":{"complete":32,"total":32},"development_phase_counts":{"OPEN_DEVELOPMENT":2,"RESULT_EXPOSED_DEVELOPMENT":30,"CONSUMED_ONE_WAY_CANONICAL":0,"CONSUMED_ONE_WAY_OFFICIAL_IDENTITIES":7},"cycle3_reassess_outcomes":{"most_recent":"H7_REFRAME_VERSION_CONTINUE_DEV_R2","count":1},"fresh_successors":{"generated":0,"admitted":0},"shadow_standby_queue_size":0},"human_008_analyst_review":{"disposition":"CONTROL_R34_MODIFY_ACCEPT_CONCEPT_USER_APPROVAL_REQUIRED_FOR_SCHEDULER_OR_ROLE_CHANGE","forge_outside_canonical_denominators":true,"promotion_requires_fresh_prospective_canonical_object":true,"scheduler_or_role_changes_this_generation":false},"consumed_identity_registry":{"count":7,"phase":"CONSUMED_ONE_WAY","identities":["c19-external-v2-official-v4","c19-r1-revision-authority-official-v1","c19-r1-revision-authority-official-v2","c19-r2-fsa-state-tracker-official-v1","h5-event-routing-work-reduction-official-v1","ni01-no-ignition-selective-prediction-official-v1","pd01-long-history-fading-memory-official-v1"],"new_consumption_this_generation":0},"external_inputs":{"literature_r29":"Future confirmatory H7 should treat TOP1 cut as a dynamic intervention-policy estimand, bind episode/seed-aware hierarchical uncertainty and four-world strata, and use prospectively meaningful equivalence/noninferiority margins for reduction/no-effect language. No PF-R1 rewrite.","audit_r6_pd01":"Frozen PD01 token remains protocol-valid but interpretation ceiling is NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR; consumed identity untouched.","methodology_r60":"Pre-result audit validated READY->PRE_FORMAL semantics, cycle-3 reassessment and exposure-phase persistence; post-result iterative PRE_FORMAL behavior had not yet been observed at its cutoff.","steward_g10":"Governance advisory remains older than PF-R1 result; research/main isolation and Utility trust-boundary deferral stand.","utility":"Generic equivalence verifier remains NON_EVIDENTIARY and not promotion-ready because authenticated producer provenance/raw-to-digest/process isolation/semantic equivalence are unproven."},"allocation":{"main_lane":"H7_FORMAL_R1_DYNAMIC_TOP1_CONTRACT_DESIGN_ONLY_NO_IDENTITY_NO_WORKFLOW_NO_RESULT","sub_lane":"QUESTION_FORMATION_DISCOVERY_EQUIV_RAW_DIGEST_PROVENANCE_CYCLE3_REASSESS_ONLY_NO_IMPLEMENTATION_OR_ADMISSION","system_priority_exception":{"used":false}},"top3":[{"rank":1,"action":"H7 fresh FORMAL-R1 confirmatory contract design only","claim_ceiling":"MECHANISM","development_phase":"RESULT_EXPOSED_DEVELOPMENT","type":"versioned formalization design","decision":"GO_CONTRACT_DESIGN_ONLY_STOP_BEFORE_IDENTITY_OR_EXECUTION"},{"rank":2,"action":"H7 FORMAL result-bearing execution","claim_ceiling":"MECHANISM","development_phase":"future CONSUMED_ONE_WAY only after approval","type":"fresh one-way FORMAL object","decision":"STOP_UNTIL_EXACT_CONTRACT_AND_FRESH_ANALYST_APPROVAL"},{"rank":3,"action":"#32-family raw-stream/provenance successor question formation","claim_ceiling":"SYSTEM_IF_LATER_ADMITTED","development_phase":"NONCANONICAL","type":"QFD cycle3 reassess","decision":"GO_QUESTION_FORMATION_ONLY_STOP_IMPLEMENTATION_AND_ADMISSION"}],"blockers":["H7 fresh FORMAL estimand/uncertainty/capacity criteria not yet prospectively closed","no fresh one-way FORMAL identity or untouched evaluation surface authorized","PF-R1 capacity matching not established by the fixed protocol for the three comparator classes","intervention-aware reservoir/iSSM remains unresolved if claim broadens","Utility equivalence verifier lacks authenticated producer/raw-to-digest/process-isolation guarantees","#31 exposure-accounting method limit and protected/adaptive evaluation validity remain unresolved","eligibility semantic-clock ambiguity, action-policy real-visit vs observational-probe ambiguity, historical Assembly attribution confound","repository rulesets remain 0"],"utility_request":"none","last_consumed_generations":{"control":"CTRL-20260922T155032+0900-R34-2F8C71A6","main":"MAIN-20260922T151800+0900-PRIMARY-H7-PFR1-C4-F1A8C29D","sub":"SUB-20260922T154200+0900-QFD-EQUIVBOUNDARY-R64-C3F8A2D1","literature":"LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9","audit":"INDEPENDENT-AUDIT-PD01-20260922T110000+0900-R6-A7D4C219","methodology":"METHCAL-20260922T152143+0900-R60-B7E4C219","steward":"STEWARD-20260922T135014+0900-G10-4D8C21A7","utility":"UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4"},"integrity":{"scientific_experiment_executed_by_analyst":false,"scientific_workflow_dispatched_by_analyst":false,"one_way_identity_consumed_by_analyst":false,"research_pr_merged_by_analyst":false,"immutable_evidence_mutated_by_analyst":false,"scheduler_definition_changed_by_analyst":false,"historical_result_rewritten":false}}
+{
+  "schema_version": 2,
+  "generation_id": "EVA-20260922T162702+0900-R66-9C2F71A4",
+  "produced_at": "2026-09-22T16:27:02+09:00",
+  "producer_run_id": "evidence-analyst-auto-EVA-20260922T162702+0900-R66-9C2F71A4",
+  "authority_scope": "EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION",
+  "supersedes_generation_id": "EVA-20260922T161640+0900-R65-C4F8A21D",
+  "input_generations": {
+    "previous_evidence_analyst": "EVA-20260922T161640+0900-R65-C4F8A21D@1aa007bce54ea4ae9768fe4ca3961cd38b59c0df",
+    "control": "CTRL-20260922T155032+0900-R34-2F8C71A6@d67364316be94f7b48b79b3fdc3df79522fd1beb",
+    "main_running": "MAIN-20260922T162700+0900-PRIMARY-H7-FORMALR1-DESIGN-C5-C4F8A21D@81711d38e1e0bb9f81d404d3556895353588cfd0",
+    "main_last_completed": "MAIN-20260922T151800+0900-PRIMARY-H7-PFR1-C4-F1A8C29D@e0848938870fde48f75038cb22a0e7af9520f504",
+    "sub": "SUB-20260922T154200+0900-QFD-EQUIVBOUNDARY-R64-C3F8A2D1@8f42de275816998cb631288757f415c3fd456e11",
+    "literature": "LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9@d09c7106e5f346d3a4bb67ac25e6c651d2c6787a",
+    "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7@d09c7106e5f346d3a4bb67ac25e6c651d2c6787a",
+    "methodology": "METHCAL-20260922T152143+0900-R60-B7E4C219@91482f931c0d90f5560e3995b073a01ae68b42ce",
+    "steward": "STEWARD-20260922T135014+0900-G10-4D8C21A7@b3b69553df32f5eb998d1c29cbe29ee1c34a93aa",
+    "utility": "UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4@71beb0d5ee00f112825fcc268ec514761d6ab418"
+  },
+  "authoritative_refs": {
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "analyst_parent": "1aa007bce54ea4ae9768fe4ca3961cd38b59c0df",
+    "control_tip": "d67364316be94f7b48b79b3fdc3df79522fd1beb",
+    "orchestrator_tip": "81711d38e1e0bb9f81d404d3556895353588cfd0",
+    "external_tip": "d09c7106e5f346d3a4bb67ac25e6c651d2c6787a",
+    "methodology_tip": "91482f931c0d90f5560e3995b073a01ae68b42ce",
+    "steward_tip": "b3b69553df32f5eb998d1c29cbe29ee1c34a93aa",
+    "utility_tip": "71beb0d5ee00f112825fcc268ec514761d6ab418",
+    "active_research_refs": {
+      "H7_FORMAL_R1_DESIGN": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
+      "H7_PF_R1": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
+      "H7_DEV_R2": "d6655549c179caf391d4b43bd2ebea49f2bfc82b",
+      "H7_DEV_R1": "c97af135742a7cd3af94c857f4d5b83d7707075d",
+      "H7_HISTORICAL": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
+      "C32_HISTORICAL": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
+      "UTILITY_EQUIVALENCE": "9f9d18065b481d8597236b0b682f0574c251b319"
+    },
+    "evidence_tag_count": 5,
+    "formal_tags": [],
+    "sealed_tags": [],
+    "freeze_tags": [],
+    "ruleset_count": 0,
+    "prs": {"148": "OPEN_UNMERGED", "149": "OPEN_UNMERGED"}
+  },
+  "canonical_inheritance": {
+    "base_generation_id": "EVA-20260922T161640+0900-R65-C4F8A21D",
+    "base_commit": "1aa007bce54ea4ae9768fe4ca3961cd38b59c0df",
+    "resolution_rule": "All 32 complete candidate records, Funnel-v2.1/development fields, candidate 7 FORMALIZE override, SYSTEM-terminal successor accounting, PF-R1 result record, SUB QFD seed, and consumed-identity registry inherit unchanged from R65 unless explicitly overridden here.",
+    "classification_completeness": "32/32",
+    "candidate_overrides_this_generation": []
+  },
+  "four_layer_funnel": {
+    "DISCOVERY": {"canonical_active": 0, "state": "OPEN"},
+    "ARCHITECTURE_STUDY": {"MECHANISM_active": 0, "SYSTEM_active": 0, "state": "EMPTY"},
+    "PRE_FORMAL": {"MECHANISM_active_result_bearing": 0, "eligible": 1, "ready": 1, "state": "PF_R1_COMPLETE_FORMALIZATION_DESIGN_ACTIVE"},
+    "FORMAL": {"fresh_one_way_authority": 0, "formalization_design_active": 1, "state": "CONTRACT_DESIGN_ONLY_RUNNING_NO_IDENTITY_NO_RESULT"}
+  },
+  "candidate_population": {"total": 32, "MECHANISM": 13, "SYSTEM": 19, "ACTIVE": 1, "NONTERMINAL_HOLD": 0, "TERMINAL_FOR_CURRENT_OBJECT": 31, "classification_complete": 32},
+  "development_phase_distribution": {
+    "canonical_candidates": {"OPEN_DEVELOPMENT": 2, "RESULT_EXPOSED_DEVELOPMENT": 30, "CONSUMED_ONE_WAY": 0},
+    "consumed_scientific_identities": {"CONSUMED_ONE_WAY": 7}
+  },
+  "main_status": {
+    "generation_id": "MAIN-20260922T162700+0900-PRIMARY-H7-FORMALR1-DESIGN-C5-C4F8A21D",
+    "status": "RUNNING",
+    "lane": "H7_FORMAL_R1_DYNAMIC_TOP1_CONTRACT_DESIGN_ONLY_NO_IDENTITY_NO_WORKFLOW_NO_RESULT",
+    "development_revision": "H7-FORMAL-R1-DYNAMIC-TOP1-CONTRACT-DESIGN",
+    "research_branch": "research/main-h7-formal-r1-contract-design-r65-cycle5",
+    "branch_head_at_cutoff": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
+    "new_contract_commit_observed": false,
+    "formal_identity_created": false,
+    "result_bearing_workflow_dispatched": false,
+    "protected_evaluation_accessed": false
+  },
+  "noncanonical_supply": {
+    "sub_question_seed": "QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01",
+    "sub_status": "QUESTION_FORMATION_DISCOVERY_RETAINED_NONCANONICAL_CYCLE2_COMPLETE",
+    "canonical_admission": false,
+    "theory_backward_denominator_credit": false
+  },
+  "phenomenon_shadow_metrics": {
+    "current_mode": "PREFETCH_SHADOW",
+    "last_scan_generation": "EVA-20260922T145734+0900-R64-F1A8C29D",
+    "last_scan_reason": "MATERIAL_PIPELINED_SHADOW_POLICY_DELTA_PLUS_H7_DEV_R2_COMPLETION_PLUS_FRESH_UTILITY_AND_SUB_DELTA",
+    "scans_skipped_due_to_low_rate_throttle": 2,
+    "current_generation_scan": "SKIPPED_LOW_RATE_THROTTLE_NO_INDEPENDENT_NEW_PHENOMENON_SURFACE",
+    "standby_queue_size": 0,
+    "shadow_standby_queue": [],
+    "proposals_generated_cumulative": 6,
+    "rejected_duplicate_or_rescue_cumulative": 3,
+    "rejected_obvious_reduction_no_residual_cumulative": 2,
+    "later_admissions": 1,
+    "executed_shadow_origin_candidates": 1
+  },
+  "funnel_metrics": {
+    "architecture_active": {"MECHANISM": 0, "SYSTEM": 0},
+    "architecture_queued": {"MECHANISM": 0, "SYSTEM": 0},
+    "preformal_eligible": 1,
+    "preformal_ready": 1,
+    "viable_mechanism_candidates": 1,
+    "recent_completed_main_endpoints": {"SYSTEM": 11, "MECHANISM": 7},
+    "system_over_mechanism_exceptions": 0,
+    "classification_completeness": "32/32",
+    "development_phase_counts": {"OPEN_DEVELOPMENT": 2, "RESULT_EXPOSED_DEVELOPMENT": 30, "canonical_CONSUMED_ONE_WAY": 0},
+    "official_consumed_one_way_identities": 7,
+    "fresh_successors_generated": 0,
+    "fresh_successors_admitted": 0,
+    "rolling_canonical_autonomous_selections": ["MECHANISM", "SYSTEM", "SYSTEM"]
+  },
+  "allocation": {
+    "main_lane": "H7_FORMAL_R1_DYNAMIC_TOP1_CONTRACT_DESIGN_ONLY_NO_IDENTITY_NO_WORKFLOW_NO_RESULT",
+    "main_decision": "GO_H7_FORMAL_R1_CONTRACT_DESIGN_ONLY_STOP_BEFORE_ONE_WAY_IDENTITY_CREATION_OR_RESULT_BEARING_EXECUTION",
+    "sub_lane": "QUESTION_FORMATION_DISCOVERY_EQUIV_RAW_DIGEST_PROVENANCE_CYCLE3_REASSESS_ONLY_NO_IMPLEMENTATION_OR_ADMISSION",
+    "system_priority_exception": {"used": false},
+    "utility_request": null
+  },
+  "top3": [
+    {"rank": 1, "action": "H7 FORMAL-R1 contract design", "claim_ceiling": "MECHANISM", "development_phase": "RESULT_EXPOSED_DEVELOPMENT", "type": "versioned formalization design", "decision": "GO_DESIGN_ONLY_RUNNING"},
+    {"rank": 2, "action": "H7 FORMAL identity creation/result-bearing execution", "claim_ceiling": "MECHANISM", "development_phase": "future_CONSUMED_ONE_WAY", "type": "FORMAL execution", "decision": "STOP_PENDING_COMPLETED_CONTRACT_AND_FRESH_ANALYST_AUTHORITY"},
+    {"rank": 3, "action": "#32-family provenance/raw-stream question formation", "claim_ceiling": "SYSTEM_IF_LATER_ADMITTED", "development_phase": "NONCANONICAL_QFD", "type": "question formation", "decision": "GO_QFD_REASSESS_ONLY_STOP_IMPLEMENTATION_ADMISSION"}
+  ],
+  "consumed_scientific_identities": [
+    "c19-external-v2-official-v4",
+    "c19-r1-revision-authority-official-v1",
+    "c19-r1-revision-authority-official-v2",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "h5-event-routing-work-reduction-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "pd01-long-history-fading-memory-official-v1"
+  ],
+  "blockers": [
+    "H7 FORMAL-R1 contract design has started but no new contract commit is yet observed",
+    "no fresh one-way FORMAL identity or evaluation authority exists",
+    "dynamic-policy estimand and episode/seed-aware paired uncertainty must be frozen prospectively",
+    "capacity/equivalence/noninferiority criteria must be independently justified rather than selected to fit PF-R1",
+    "fresh exact source/protocol/package/runtime/input/evaluator bindings and raw-before-score/preserve-before-read path must close before FORMAL execution",
+    "#32-family authenticated producer/raw-to-digest/process-isolation boundary remains unresolved",
+    "repository rulesets remain absent"
+  ],
+  "integrity": {
+    "experiments_executed_by_analyst": 0,
+    "scientific_workflows_dispatched_by_analyst": 0,
+    "identities_consumed_by_analyst": 0,
+    "research_prs_merged_by_analyst": 0,
+    "immutable_refs_mutated_by_analyst": 0,
+    "scheduler_definitions_modified_by_analyst": 0,
+    "historical_results_rewritten_by_analyst": 0
+  }
+}

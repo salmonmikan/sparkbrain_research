@@ -1,77 +1,67 @@
-# Evidence Analyst — R65
+# Evidence Analyst — R66
 
 - schema_version: `2`
-- generation_id: `EVA-20260922T161640+0900-R65-C4F8A21D`
-- produced_at: `2026-09-22T16:16:40+09:00`
+- generation_id: `EVA-20260922T162702+0900-R66-9C2F71A4`
+- produced_at: `2026-09-22T16:27:02+09:00`
 - authority_scope: `EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION`
-- supersedes: `EVA-20260922T145734+0900-R64-F1A8C29D`
+- supersedes: `EVA-20260922T161640+0900-R65-C4F8A21D`
 
 ## Decision summary
 
-H7 PF-R1 completed exactly once on `research/main-h7-pf-r1-frozen-panel-r64-cycle4@8681dcbbe2fff986c28a79057f557b35f3f0f752`; fixed workflow `35695286240` and generic CI `35695286238` succeeded at that exact head. Downloaded artifact `10680620448` contains `raw.json` and `summary.json`; the independently recomputed raw SHA-256 matches the report: `695261aeadab1ab311b60787f1b6a9023c29e24009c6f173c1a660469a6906db`. Runner source writes `raw.json` before invoking the frozen scorer. No FORMAL identity or immutable evidence ref was created.
+No new scientific result has appeared since R65. The material freshness delta is that MAIN has acquired the R65 H7 FORMAL-R1 **contract-design-only** lease and created `research/main-h7-formal-r1-contract-design-r65-cycle5`, currently still pointing at the untouched PF-R1 head `8681dcbbe2fff986c28a79057f557b35f3f0f752`. The current MAIN lease is `RUNNING`; no contract-design commit, FORMAL identity, protected evaluation, result-bearing workflow, or immutable evidence mutation exists yet.
 
-PF-R1 is a real PRE_FORMAL development result, not FORMAL evidence. Native baseline accuracy was `0.8090277778`, cut accuracy `0.8020833333`, delta `0.0069444444`, mean TV `0.0555077197`; dense recurrent matched native baseline accuracy with delta `0`; finite-state route history had baseline `0.4548611111`, delta `0.0798611111`; eligibility ledger had baseline `0.6996527778`, delta `0.0225694444`. Positive phenomenon floor passed and none of the three frozen ordinary comparators met the exact registered reduction direction. Fixed disposition: `RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY`. Comparator capacity limitation remains `NOT_ESTABLISHED_BY_FIXED_PROTOCOL`.
-
-R65 therefore does **not** authorize another PF-R1 rerun and does **not** uplift the observed point estimate directly to FORMAL. Candidate 7 advances to `FORMALIZE` only: build a fresh confirmatory contract on an untouched one-way surface, then STOP for another Analyst review before identity creation or result-bearing execution.
-
-Exact #1 decision:
+R65 allocation therefore remains authoritative without change:
 
 `GO_H7_FORMAL_R1_CONTRACT_DESIGN_ONLY_STOP_BEFORE_ONE_WAY_IDENTITY_CREATION_OR_RESULT_BEARING_EXECUTION`
 
-The contract design must scope H7 to the frozen dynamic TOP1 selection-and-cut policy unless invariant route identity is separately shown; use episode/seed-aware paired uncertainty with four-world structure; pre-bind independently justified capacity/equivalence or noninferiority criteria rather than selecting margins to make PF-R1 pass; bind exact source/protocol/package/runtime/input/evaluator identity; and implement raw-before-score, preserve-before-read and immutable evidence paths. PF-R1 remains development history only.
+Candidate 7 remains `FORMALIZE / MECHANISM / RESULT_EXPOSED_DEVELOPMENT / ACTIVE`, with PF-R1 preserved as nonconfirmatory development history. FORMAL fresh one-way authority remains `0`; the current work is contract design only.
+
+## Repository / evidence state
+
+Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Authoritative annotated `evidence/*` remains exactly five and unchanged. Tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. STARTED/control and preserve refs for the seven consumed scientific identities remain unchanged. PR #148 and #149 remain open/unmerged; repository rulesets remain `0`.
+
+H7 PF-R1 remains exactly `research/main-h7-pf-r1-frozen-panel-r64-cycle4@8681dcbbe2fff986c28a79057f557b35f3f0f752`; its fixed workflow and generic CI were successful. The current FORMAL-R1 design branch was created from that exact head and has not advanced beyond it at this cutoff.
 
 ## Four-layer / development state
 
 - DISCOVERY canonical active `0`.
 - ARCHITECTURE_STUDY active/queued `M0/S0`.
-- PRE_FORMAL result-bearing active `0`; eligible `1`, readiness `READY=1`; PF-R1 is complete and result-exposed.
-- FORMAL fresh one-way authority `0`; one H7 formalization-contract design is active but cannot consume identity or evaluate results.
+- PRE_FORMAL result-bearing active `0`; eligible `1`, READY `1`; PF-R1 is complete and result-exposed.
+- FORMAL fresh one-way authority `0`; H7 FORMAL-R1 contract design is active, non-evidentiary, and cannot consume identity or access protected outcomes.
 - canonical population `32 = MECHANISM 13 / SYSTEM 19`; `ACTIVE=1 / TERMINAL_FOR_CURRENT_OBJECT=31`; completeness `32/32`.
-- development phases remain `OPEN_DEVELOPMENT=2 / RESULT_EXPOSED_DEVELOPMENT=30 / canonical CONSUMED_ONE_WAY=0`; seven official identities remain separately `CONSUMED_ONE_WAY`.
+- development phases remain `OPEN_DEVELOPMENT=2 / RESULT_EXPOSED_DEVELOPMENT=30 / canonical CONSUMED_ONE_WAY=0`; seven official scientific identities remain separately `CONSUMED_ONE_WAY`.
 
-Candidate 7 remains the only active MECHANISM object. `development_phase=RESULT_EXPOSED_DEVELOPMENT`; new revision is `H7-FORMAL-R1-DYNAMIC-TOP1-CONTRACT-DESIGN`, previous revision PF-R1 remains immutable development history. No uniqueness, task-specificity, completeness, sufficiency, broad reduction exhaustion or external-generalization claim is supported by PF-R1.
+All canonical candidate records inherit unchanged from R65. SYSTEM-terminal successor accounting remains `19 assessed / 16 fresh SYSTEM / 0 fresh MECHANISM / 3 none (#14/#27/#28)`.
 
-All other candidates inherit unchanged from the complete R60 base plus R61-R64 overrides. SYSTEM-terminal successor accounting remains `19 assessed / 16 fresh SYSTEM / 0 fresh MECHANISM / 3 none (#14/#27/#28)`.
+## Upstream inputs
 
-## Literature / Audit / Methodology / governance
+Control R34 remains strategic prior and supports no automatic FORMAL uplift after PF-R1. Literature R29 remains prospective-only: dynamic-policy estimand, episode/seed-aware uncertainty, four-world structure, and prospectively justified equivalence/noninferiority criteria must be bound before confirmatory use. Independent Audit R6 continues to cap PD01 interpretation at `NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR` while preserving the frozen token unchanged. Methodology R60 remains advisory and supports READY semantics, cycle-3 reassessment, and exposure-state persistence. Steward G10 remains governance-only; Utility remains non-evidentiary and does not establish authenticated producer/raw-to-digest/process-isolation equivalence.
 
-Literature R29 is prospective-only guidance. It treats the TOP1 cut as a deterministic dynamic intervention policy and requires future confirmatory inference to bind the input/intervention-policy estimand, episode/seed dependence and four-world strata, plus meaningful prospective equivalence/noninferiority margins for reduction/no-effect language. These requirements do not rewrite PF-R1.
+SUB R64 remains separately noncanonical on `QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01`, cycle 2, with no implementation or candidate admission. Rolling canonical autonomous scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`; QFD remains denominator-excluded.
 
-Independent Audit R6 remains unchanged: PD01's frozen token is protocol-valid but its interpretation ceiling is `NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR`; PD01 remains consumed and immutable.
+## Phenomenon-first / supply
 
-Methodology R60 predates PF-R1 completion but validates the READY→PRE_FORMAL semantics, cycle-3 reassessment and exposure-phase persistence. Its stated post-result iterative-PF evidence gap is now partially filled by the completed fixed PF-R1 STOP, but no same-lineage post-result retune has occurred. R65 avoids creating such a retune simply to reproduce the preferred residual.
-
-Steward G10 remains governance advisory and predates PF-R1. Utility remains NON_EVIDENTIARY and not main-promotion-ready for scientific equivalence: authenticated producer provenance, raw→digest derivation, process isolation and semantic equivalence are still outside what the current generic verifier proves.
-
-Control R34 is strategic prior only and agrees with the core boundary: PF-R1 is nonconfirmatory residual information, no automatic FORMAL uplift, no rerun/comparator shopping/threshold alteration, and any next science-affecting step must be prospectively versioned. Control's HUMAN-008 review is `MODIFY`: Fast Forge may remain noncanonical/non-evidentiary, but scheduler/prompt-role changes require user approval; this generation performs none.
-
-## SUB / theory-backward / shadow
-
-SUB R64 QFD cycle 2 independently refined `QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01`. Historical #32 R50 preserved one aggregate in-process JSON and literal equality flags rather than independent producer event/checkpoint streams; Utility compares supplied trajectory/checkpoint digest strings rather than recomputing them from preserved producer raw artifacts. The seed remains NONCANONICAL/SYSTEM-ceiling and candidate 32 remains terminal. R65 permits one bounded cycle-3 question-formation reassessment only, with no implementation or admission; the goal is to decide admission-readiness versus HOLD.
-
-Rolling canonical autonomous selection remains `MECHANISM / SYSTEM / SYSTEM = 1/3`; QFD is denominator-excluded.
-
-Phenomenon-first remains `PREFETCH_SHADOW`. R64 already performed a material scan and retained no standby proposal. R65 skips a new scan under the one-in-three throttle: PF-R1/Literature R29 are H7-specific and do not expose an independent phenomenon surface. `shadow_standby_queue=[]`, size `0`; skip count is now `1`.
+Mode remains `PREFETCH_SHADOW`. R64 performed the last material scan and retained no standby proposal. R65 skipped under the one-in-three throttle; R66 also skips because no independent new phenomenon surface has appeared. `shadow_standby_queue=[]`; throttle skip count since the R64 scan is now `2`.
 
 ## Metrics / allocation
 
-- recent MAIN endpoints: SYSTEM `11`, MECHANISM `7`; run count is not a time proxy.
-- SYSTEM-over-MECHANISM exceptions: `0`; `system_priority_exception.used=false`.
+- recent completed MAIN endpoints: SYSTEM `11`, MECHANISM `7`; the current RUNNING contract-design lease is not counted as a completed endpoint.
 - PRE_FORMAL eligible/READY: `1/1`; result-bearing active `0`.
 - viable MECHANISM candidates: `1`.
+- SYSTEM-over-MECHANISM exceptions: `0`.
 - fresh canonical successors generated/admitted: `0/0`.
 - shadow standby queue: `0`.
 
-MAIN lane: `H7_FORMAL_R1_DYNAMIC_TOP1_CONTRACT_DESIGN_ONLY_NO_IDENTITY_NO_WORKFLOW_NO_RESULT`.
+MAIN lane: `H7_FORMAL_R1_DYNAMIC_TOP1_CONTRACT_DESIGN_ONLY_NO_IDENTITY_NO_WORKFLOW_NO_RESULT` (currently RUNNING).
 SUB lane: `QUESTION_FORMATION_DISCOVERY_EQUIV_RAW_DIGEST_PROVENANCE_CYCLE3_REASSESS_ONLY_NO_IMPLEMENTATION_OR_ADMISSION`.
 Utility request: `none`.
 
 ## Top 3 / contingency
 
-1. H7 fresh FORMAL-R1 contract design — MECHANISM / RESULT_EXPOSED / versioned formalization — **GO DESIGN ONLY**.
-2. H7 FORMAL result-bearing execution — MECHANISM / future CONSUMED_ONE_WAY — **STOP** until the exact contract is frozen and a later fresh Analyst explicitly authorizes a fresh identity/evaluation.
-3. #32-family provenance/raw-stream question formation — SYSTEM if later admitted / NONCANONICAL now — **GO QFD CYCLE3 ONLY**, STOP implementation/admission.
+1. H7 FORMAL-R1 contract design — MECHANISM / RESULT_EXPOSED / versioned formalization — **GO DESIGN ONLY, currently in progress**.
+2. H7 FORMAL identity creation or result-bearing execution — MECHANISM / future CONSUMED_ONE_WAY — **STOP** until contract design is complete and a later fresh Analyst generation explicitly authorizes it.
+3. #32-family provenance/raw-stream question formation — SYSTEM if later admitted / NONCANONICAL now — **GO QFD reassessment only**, STOP implementation/admission.
 
-If contract design cannot fix the estimand, episode-aware uncertainty, independently motivated capacity/equivalence criteria, fresh one-way identity/input/runtime/evaluator bindings and raw/preserve path without tuning them to PF-R1, H7 formalization must HOLD. Mechanical lint/path/serialization/hash repairs are allowed only within already-fixed intent. No FORMAL execution is authorized in R65.
+If contract design cannot close the dynamic-policy estimand, dependence-aware uncertainty, independently motivated margins/capacity criteria, fresh exact identity/source/package/runtime/input/evaluator bindings, and raw-before-score/preserve-before-read machinery without tuning them to PF-R1, formalization must HOLD. No same-run identity creation, protected evaluation, workflow dispatch, or FORMAL result access is authorized.
 
-Consumed identities remain the same seven; new consumption `0`. No experiment, result-bearing workflow dispatch, identity consumption, research PR merge, immutable scientific-ref mutation, scheduler mutation or historical result rewrite was performed by Evidence Analyst R65.
+No scientific experiment, result-bearing workflow dispatch, one-way identity consumption, research PR merge, immutable scientific-ref mutation, scheduler mutation, or historical result rewrite was performed by Evidence Analyst R66.
