@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-23T07:30:00+09:00",
+  "timestamp": "2026-09-23T08:18:04+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260923T073000+0900-R75-C8D41B6E",
-    "sequence": 75,
+    "generation_id": "METHCAL-20260923T081804+0900-R76-6F2A91D4",
+    "sequence": 76,
     "material_change": true,
-    "material_change_reason": "H7_R4_RUNTIME_MISMATCH_EXPLICITLY_VERSIONED_TO_R5_R5_CONTENT_ADDRESSED_PREIDENTITY_SUCCESS_AND_FRESH_MECHANISM_CANDIDATE_34_ADMITTED",
-    "supersedes_generation_id": "METHCAL-20260923T062034+0900-R74-A3F7C912",
+    "material_change_reason": "R5_EXACT_POST_REPAIR_PREIDENTITY_COMPLETE_H7_MOVED_TO_PROVENANCE_HOLD_AND_CAND34_ADVANCED_TO_BOUNDED_ARCHITECTURE_R1",
+    "supersedes_generation_id": "METHCAL-20260923T073000+0900-R75-C8D41B6E",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260923T062034+0900-R74-A3F7C912",
+      "generation_id": "METHCAL-20260923T073000+0900-R75-C8D41B6E",
       "branch": "ops/methodology-calibration-audit",
-      "commit": "077d282bf9a3d3f730550ad23edda4835f73c2d8"
+      "commit": "4e608a2dd73059d8302dcfa353e47cabe08797e4"
     },
     "human_directive": {
       "id": "HUMAN-20260922-005",
@@ -23,27 +23,22 @@
       "generation_id": "CTRL-20260923T055000+0900-R39-C31A7D52",
       "branch": "ops/control-brain-handoff",
       "commit": "c93f870e47bdb5b1613475e079c0a6dee2aa1753",
-      "note": "mailbox predates R88 and R5; authoritative repository and R88 govern current reconstruction"
+      "note": "mailbox predates R89; used as designated Control history, not scientific source of truth"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260923T065834+0900-R88-D5A7C219",
+      "generation_id": "EVA-20260923T080115+0900-R89-9A4C2E71",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "3341ad00ade796d9a3b80dd61c7386fc8b3e07b7"
+      "commit": "4ce972b38cf925ec5d447546339ead57830ada7c"
     },
-    "sub": {
-      "generation_id": "SUB-20260923T064336+0900-QFD-ASSEMBLY-INTERVENTIONAL-EQUIV-R87-8F4C21A7",
+    "main_live": {
+      "generation_id": "MAIN-20260923T081600+0900-PRIMARY-CAND34-ARCHR1-R89-9A4C2E71",
       "branch": "ops/orchestrator-run-report",
-      "latest_blob": "b42d848fee9533468817019b75318a5edc710e2b"
+      "commit": "682ad984a1d9d3f820ee137e01fd0229724c771d",
+      "role": "OPERATIONAL_MAILBOX_ONLY"
     },
-    "external_literature": {
-      "generation_id": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
-      "branch": "ops/external-research-audit-handoff",
-      "commit": "027fa9fc45648269c2ebe0ae6408162d155fe840"
-    },
-    "main": {
-      "generation_id": "MAIN-20260923T071545+0900-PRIMARY-H7-FORMALR5-C12-R88-PREIDENTITY-3A7C5D21",
-      "branch": "ops/orchestrator-run-report",
-      "commit": "74c5500f49f2d867115496f7997fe2d4e4d447b1"
+    "utility": {
+      "branch": "ops/utility-orchestrator-requests",
+      "commit": "b18a1d76c05efbbfacb9618ac1ca1e9941b17555"
     }
   },
   "authoritative_refs": {
@@ -52,66 +47,39 @@
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
-    "h7_r4_history": {
-      "branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
-      "head": "02382fbc7d3838159598015e488c6ce49ac34efc",
-      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "preserved_unchanged": true
-    },
     "h7_r5_cycle12": {
       "branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-      "head": "a8f4b4aed20dfa11a31aa7a3cfdff6635cb37e3b",
+      "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "lifecycle": "FORMAL_HOLD_PROVENANCE_GATE",
+      "preformal_ready": true,
       "fresh_formal_authority": 0,
       "one_way_consumed": false,
-      "revision_type": "SCIENCE_AFFECTING_CHANGE_EXPLICITLY_VERSIONED",
-      "r4_package_lock_bytes_preserved": true,
-      "r4_non_resource_scientific_fields_preserved": true
+      "preidentity_complete": true,
+      "exact_head_independently_reviewed": true
     },
     "r5_preidentity": {
-      "dedicated_workflow_run_id": 35792249736,
-      "head": "a8f4b4aed20dfa11a31aa7a3cfdff6635cb37e3b",
-      "conclusion": "SUCCESS",
-      "authority_and_inherited_r4_bytes": "SUCCESS",
-      "clean_locked_runtime_creation": "SUCCESS",
-      "content_addressed_runtime_and_nonresult_executor_validation": "SUCCESS",
-      "one_way_material_absence_assertion": "SUCCESS",
-      "generic_ci_run_id": 35792249682,
-      "generic_ci_conclusion": "FAILURE",
-      "generic_ci_failure": "RUFF_I001_IMPORT_ORDER_ONLY",
-      "generic_ci_failure_classification": "SCIENCE_INVARIANT_REPAIR"
-    },
-    "r5_runtime_identity": {
-      "scientific_identity": [
-        "byte_identical_R4_lock_manifest_versions_and_wheel_hashes",
-        "Python_version_and_implementation",
-        "torch_distribution_module_git_CUDA_semantic_versions",
-        "CPU_device_contract",
-        "thread_and_determinism_contract",
-        "exact_bound_scientific_component_blobs"
-      ],
-      "provisioning_provenance": [
-        "runner_label",
-        "runner_image_os",
-        "runner_image_version",
-        "platform_system",
-        "platform_release",
-        "torch_distribution_RECORD_sha256"
-      ],
-      "claim_capable_native_runtime_sufficiency": "TIGHTEN_VERIFY_BEFORE_IDENTITY",
-      "shopping_forbidden": true
+      "dedicated_workflow_run_id": 35794233687,
+      "generic_ci_run_id": 35794233612,
+      "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+      "dedicated_conclusion": "SUCCESS",
+      "generic_ci_conclusion": "SUCCESS",
+      "evidentiary_status": "NON_EVIDENTIARY"
     },
     "candidate_34": {
       "id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
       "claim_ceiling": "MECHANISM",
       "development_phase": "OPEN_DEVELOPMENT",
-      "lifecycle": "DISCOVERY-R1",
+      "canonical_layer": "ARCHITECTURE_STUDY",
+      "canonical_queue": "QUEUED",
       "preformal_eligible": true,
       "ready": false,
-      "queue": "QUEUED_FOR_SUB_DISCOVERY",
-      "fresh_successor_nonrescue": true,
-      "prior_objects_reopened": false,
-      "scientific_execution_dispatched": false
+      "branch": "research/main-cand34-assembly-route-architecture-r89-cycle1",
+      "branch_head": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+      "live_main_lease": "ACTIVE_NON_EVIDENTIARY",
+      "scientific_result_exposed": false,
+      "quiescence_cap_ms": 256,
+      "failure_policy": "REASSESS_NO_CAP_EXTENSION"
     },
     "pf_r1_development_artifact": {
       "workflow_run_id": 35695286240,
@@ -119,9 +87,10 @@
       "artifact_id": 10680620448,
       "artifact_archive_digest": "sha256:db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d",
       "durable_non_evidentiary_preservation_complete": false,
-      "utility_execution_authority": "UNRESOLVED"
+      "utility_execution_authority": "MISSING_MATCHING_SCHEMA_V2_ASSIGNMENT_OR_DECISION",
+      "rerun_reconstruct_rescore_forbidden": true
     },
-    "scientific_source_of_truth": "stable main plus independently fetched evidence refs, exact research refs/workflows/artifacts; ops branches are mailbox/history/authority records only"
+    "scientific_source_of_truth": "stable main plus independently fetched evidence refs and exact research refs/workflows; ops branches are mailbox/history/authority records only"
   },
   "audit_result": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
@@ -131,40 +100,41 @@
     "development_phase_full_end_to_end_through_fresh_consumed_formal": "INSUFFICIENT_EVIDENCE",
     "result_exposed_same_object_science_invariant_repair": "KEEP",
     "post_result_science_affecting_change_requires_explicit_version_or_fresh_successor": "KEEP",
-    "r4_preserved_unchanged_after_runtime_binding_diagnosis": "KEEP",
     "r4_to_r5_explicit_science_affecting_version": "KEEP",
-    "r5_byte_identical_r4_runtime_package_inheritance": "KEEP",
-    "r5_record_hash_as_provisioning_provenance": "KEEP",
-    "hosted_runner_image_kernel_scientific_vs_provisioning": "SPLIT_BY_CLAIM_TYPE",
+    "r5_exact_postrepair_head_review_and_nonresult_green": "KEEP",
+    "preidentity_complete_distinct_from_formal_authority": "KEEP",
+    "no_extra_h7_iteration_for_activity_only": "KEEP",
+    "pf_r1_exact_byte_preservation_requirement": "KEEP",
+    "pf_r1_preservation_execution_state": "TIGHTEN",
+    "utility_default_deny_without_machine_authority": "KEEP",
+    "duplicate_request_or_rerun_to_bypass_authority_gap": "TIGHTEN",
+    "r5_content_addressed_runtime_identity": "KEEP",
+    "hosted_runner_kernel_provisioning_dimensions": "SPLIT_BY_CLAIM_TYPE",
     "claim_capable_native_runtime_dimensions": "TIGHTEN",
-    "r5_dedicated_content_addressed_nonresult_realization": "KEEP",
-    "r5_generic_import_order_repair": "KEEP",
-    "silent_runtime_hash_normalization_or_inplace_r4_rebind": "TIGHTEN",
     "resolver_package_runner_image_shopping": "TIGHTEN",
     "final_claim_capable_source_runner_scorer_preserver_runtime_input_binding": "TIGHTEN",
     "cycle3_as_automatic_terminal_cap": "RELAX",
     "cycle3_mandatory_reassessment_with_prospective_information_gain": "KEEP",
-    "cycle12_continuation": "KEEP",
+    "additional_development_cycles_with_distinct_information_gain": "KEEP",
     "development_rerun_retune_nonindependent_evidence_accounting": "KEEP",
     "development_rerun_retune_live_repeated_result_case": "INSUFFICIENT_EVIDENCE",
-    "durable_result_exposed_pf_r1_bytes": "TIGHTEN",
-    "utility_default_deny_without_machine_authority": "KEEP",
     "raw_before_score_as_file_order_only": "CLARIFY",
     "literal_target_blind_prediction_raw": "TIGHTEN",
+    "immutable_preserve_before_target_side_scoring": "TIGHTEN",
     "post_preserve_scorer_side_recomputation": "TIGHTEN",
     "target_sidecar_independence_dataflow_test": "TIGHTEN",
-    "preserve_before_read_and_immutable_formal_evidence": "TIGHTEN",
     "fresh_concealed_postbinding_evaluation_surface": "TIGHTEN",
     "preformal_as_real_development_surface": "KEEP",
     "preformal_eligible_vs_ready": "KEEP",
     "ready_development_readiness_semantics": "KEEP",
     "hidden_second_formal_gate": "KEEP",
+    "candidate34_bounded_architecture_before_readiness": "KEEP",
+    "candidate34_quiescence_failure_reassess_not_extend": "KEEP",
     "current_object_claim_ceiling": "KEEP",
     "same_object_system_to_mechanism_upgrade_ban": "KEEP",
     "fresh_mechanism_successor_distinctness_nonrescue": "KEEP",
     "fresh_system_to_mechanism_successor_specifically": "INSUFFICIENT_EVIDENCE",
     "terminal_for_current_object_topic_scope": "KEEP",
-    "candidate34_admission_without_prior_object_reopen": "KEEP",
     "classification_completeness_gating": "KEEP",
     "main_mechanism_priority": "KEEP",
     "prospective_system_priority_exception_rule": "KEEP",
@@ -174,47 +144,49 @@
     "protected_adaptive_evaluation_validity_and_exposure_observability": "TIGHTEN"
   },
   "false_positive_negative_risks": {
-    "false_positive": "MODERATE_WATCH: claim-capable host/native runtime properties must not be silently dropped under the R5 provisioning split; raw/held-out/preserve/final-binding gates remain open.",
-    "false_negative": "LOW_TO_MODERATE_WATCH_IMPROVING: R5 removes artificial installer/transport equality failures and candidate #34 improves supply, while PF-R1 authority friction remains.",
-    "opportunity_cost": "LOW_TO_MODERATE_WATCH_IMPROVING: two viable MECHANISM lines now exist, but H7 one-way closure and PF-R1 preservation are unfinished.",
-    "moving_goalpost_rescue_risk": "LOW_TO_MODERATE_WATCH_IMPROVING",
+    "false_positive": "MODERATE_WATCH: do not treat PREIDENTITY COMPLETE or green synthetic workflows as scientific evidence/identity authority; omitted host/native properties must not be silently claim-capable.",
+    "false_negative": "LOW_TO_MODERATE_WATCH_IMPROVING: H7 can hold while #34 advances; main avoidable friction is PF-R1 machine-authority wiring.",
+    "opportunity_cost": "LOW_TO_MODERATE_WATCH_IMPROVING",
+    "moving_goalpost_rescue_risk": "LOW_WATCH_IMPROVING",
     "over_terminalization": "LOW_WATCH_IMPROVING"
   },
   "development_iteration_calibration": {
     "directive_disposition": "ACCEPTED_AND_LIVE",
-    "axis": ["OPEN_DEVELOPMENT", "RESULT_EXPOSED_DEVELOPMENT", "CONSUMED_ONE_WAY"],
-    "h7_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "r4_runtime_mismatch": "PRESERVED_AS_RESULT_EXPOSED_HISTORY",
-    "r5_resource_identity_revision": "EXPLICIT_VERSIONED_SCIENCE_AFFECTING_CHANGE",
-    "r5_dedicated_preidentity_realization": "SUCCESS_NON_EVIDENTIARY",
-    "r5_generic_ci": "LINT_ONLY_FAILURE_SCIENCE_INVARIANT_REPAIR_ALLOWED",
-    "candidate34_phase": "OPEN_DEVELOPMENT_DISCOVERY_R1",
-    "pf_r1_evidence_accounting": "ONE_COMPLETED_PREFORMAL_DEVELOPMENT_OBSERVATION_CONFIRMATORY_COUNT_ZERO",
-    "pf_r1_byte_durability": "TIGHTEN_BLOCKED_BY_REQUEST_LEVEL_AUTHORITY_DIVERGENCE",
+    "axis": [
+      "OPEN_DEVELOPMENT",
+      "RESULT_EXPOSED_DEVELOPMENT",
+      "CONSUMED_ONE_WAY"
+    ],
+    "h7_phase": "RESULT_EXPOSED_DEVELOPMENT_FORMAL_PROVENANCE_HOLD",
+    "r5_preidentity": "COMPLETE_EXACT_POSTREPAIR_HEAD_NON_EVIDENTIARY",
+    "further_h7_development_for_activity_only": "NOT_CALIBRATED",
+    "candidate34_phase": "OPEN_DEVELOPMENT_ARCHITECTURE_R1_NOT_READY",
+    "pf_r1_evidence_accounting": "ONE_NONCONFIRMATORY_DEVELOPMENT_OBSERVATION_CONFIRMATORY_COUNT_ZERO",
+    "pf_r1_byte_durability": "TIGHTEN_BLOCKED_BY_MACHINE_AUTHORITY_GAP",
     "repeated_result_bearing_development_case": "INSUFFICIENT_EVIDENCE"
   },
-  "pass_reachability": "REALISTIC_CONDITIONAL: apply only invariant lint repair; review and bind exact final R5 head; verify all claim-capable native/runtime dimensions are frozen or prospectively equivalent; resolve PF-R1 preservation; close prediction-only raw, immutable preserve, post-preserve scoring, concealed evaluation, collision/no-clobber and exact component/input binding; then require fresh one-way Analyst authorization",
+  "pass_reachability": "REALISTIC_NEAR_TERM_CONDITIONAL: preserve existing PF-R1 bytes under valid machine authority without rerun; fresh Analyst re-fetch exact unchanged R5 head; close/confirm prediction-only raw, immutable preserve, target-side scoring, concealed evaluation, collision/no-clobber and exact bindings; only then one-way authority",
   "claim_type_findings": {
     "same_object_system_to_mechanism_upgrade_observed": false,
     "fresh_mechanism_successor_observed": true,
     "fresh_system_to_mechanism_successor_observed": false,
     "candidate33_status": "SYSTEM_RESULT_EXPOSED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED",
-    "candidate34_status": "MECHANISM_OPEN_DEVELOPMENT_DISCOVERY_R1_PREFORMAL_ELIGIBLE_NOT_READY_QUEUED",
-    "h7_status": "MECHANISM_RESULT_EXPOSED_ACTIVE_FORMAL_R5_CYCLE12_PREIDENTITY",
+    "candidate34_status": "MECHANISM_OPEN_DEVELOPMENT_ARCHITECTURE_STUDY_PREFORMAL_ELIGIBLE_NOT_READY_QUEUED_CANONICAL_LIVE_MAIN_LEASE",
+    "h7_status": "MECHANISM_RESULT_EXPOSED_FORMAL_HOLD_PROVENANCE_GATE_R5_PREIDENTITY_COMPLETE",
     "formal_identity_consumed": false
   },
-  "mechanism_supply_health": "TWO_VIABLE_MECHANISM_LINEAGES_ONE_ACTIVE_FORMALIZATION_ONE_QUEUED_DISCOVERY_QUALITY_FLOOR_INTACT",
+  "mechanism_supply_health": "TWO_VIABLE_MECHANISM_LINEAGES_H7_FORMAL_HOLD_PLUS_CAND34_ARCHITECTURE_QUEUE_QUALITY_FLOOR_INTACT",
   "funnel_observability": {
-    "authority_generation": "EVA-20260923T065834+0900-R88-D5A7C219",
+    "authority_generation": "EVA-20260923T080115+0900-R89-9A4C2E71",
     "canonical_population": 34,
     "classified_population": 34,
     "classification_completeness": 1.0,
     "mechanism": 14,
     "system": 20,
     "terminal_states": {
-      "ACTIVE": 1,
+      "ACTIVE": 0,
       "QUEUED": 1,
-      "NONTERMINAL_HOLD": 0,
+      "NONTERMINAL_HOLD": 1,
       "TERMINAL_FOR_CURRENT_OBJECT": 32
     },
     "viable_mechanism": 2,
@@ -232,7 +204,8 @@
       "RESULT_EXPOSED_DEVELOPMENT": 31,
       "CONSUMED_ONE_WAY_CANONICAL": 0
     },
-    "separate_consumed_scientific_identities": 7
+    "separate_consumed_scientific_identities": 7,
+    "live_operational_note": "MAIN acquired a NON_EVIDENTIARY candidate34 Architecture lease after R89; canonical Analyst counts remain R89 until refreshed"
   },
   "preformal_calibration": {
     "preformal_is_development_only": true,
@@ -246,26 +219,25 @@
   "utility_request": {
     "created_by_methodology_auditor": null,
     "existing": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
-    "status": "EXISTS_BUT_REQUEST_LEVEL_EXECUTION_AUTHORITY_UNRESOLVED",
+    "status": "EXISTS_BUT_NO_MATCHING_SCHEMA_V2_EXECUTION_AUTHORITY",
     "duplicate_created": false
   },
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": {
     "formal_one_way_integrity_unchanged": "HIGH",
-    "r4_exact_mismatch_diagnosis": "HIGH",
+    "r5_exact_postrepair_preidentity_complete": "HIGH",
     "r4_to_r5_explicit_versioning": "HIGH",
-    "r5_dedicated_preidentity_success": "HIGH",
-    "r5_generic_ci_lint_only_defect": "HIGH",
-    "candidate34_independent_successor_motivation": "HIGH",
+    "pf_r1_authority_preservation_blocker": "HIGH",
+    "candidate34_architecture_notready_semantics": "HIGH",
     "r5_claim_capable_native_runtime_sufficiency": "MEDIUM_HIGH",
     "fresh_consumed_formal_end_to_end": "UNOBSERVED",
     "fresh_system_to_mechanism_successor": "UNOBSERVED"
   },
   "questions_for_control_analyst": [
-    "After invariant import-order repair, will the exact post-repair R5 head be independently reviewed and rebound before any identity authorization?",
-    "Which native host/ABI/CPU properties can alter claim-bearing output despite the R5 content-addressed runtime, and how are they prospectively covered?",
-    "Will R5 dedicated preidentity success remain development-only and STOP for fresh Analyst one-way authorization?",
-    "Can PF-R1 exact-byte preservation receive matching schema-v2 machine authority without rerun or reconstruction?",
-    "Can candidate #34 Discovery R1 define its bounded separating intervention family and temporal causal object without requiring prior route-identification success as a READY prerequisite?"
+    "Can the existing PF-R1 request receive matching schema-v2 machine authority without a duplicate request or artifact rerun/reconstruction?",
+    "After PF-R1 preservation, will a fresh Analyst generation re-fetch exact R5 head 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80 and keep PREIDENTITY COMPLETE distinct from one-way authority?",
+    "Are any host/ABI/CPU properties claim-capable but absent from R5 scientific identity/equivalence coverage?",
+    "Will candidate #34 Architecture R1 stay non-evidentiary and NOT_READY until reachability/instrumentation closure without requiring prior scientific victory?",
+    "If #34 fails the fixed 256ms quiescence boundary or bounded family cannot separate alternatives, will the object be reassessed/collapsed to an equivalence class rather than retuned post-outcome?"
   ]
 }
