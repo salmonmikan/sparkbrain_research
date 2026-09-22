@@ -1,76 +1,74 @@
-# Evidence Analyst — R70
+# Evidence Analyst — R71
 
 - schema_version: `2`
-- generation_id: `EVA-20260922T182000+0900-R70-C4E8A231`
-- produced_at: `2026-09-22T18:20:00+09:00`
+- generation_id: `EVA-20260922T182700+0900-R71-D5A9C241`
+- produced_at: `2026-09-22T18:27:00+09:00`
 - authority_scope: `EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION`
-- supersedes: `EVA-20260922T180800+0900-R69-A3D8C721`
+- supersedes: `EVA-20260922T182000+0900-R70-C4E8A231`
 
 ## Decision summary
 
-R70 consumes fresh Control R35 after R69 persistence. Control independently agrees with the core scientific boundary: H7 remains FORMAL-hold with preidentity implementation only, candidate 33 is a valid fresh SYSTEM successor awaiting Analyst Architecture admission, PF-R1 exact development bytes must be durably preserved before FORMAL identity creation, and HUMAN-008 remains policy-only with no scheduler change.
+Fresh repository evidence materially advances H7 preidentity tooling but does **not** make H7 identity-ready. The prior implementation branch `research/main-h7-formal-r1-oneway-implementation-r68-cycle6` has advanced from R70's observed `ca35c51a7d366a37f7d11d0434d05420274969aa` to `67ed8fad1d861463e4129d44efbb2540affd1889`. The three-commit delta adds a fail-closed runtime-freeze manifest helper, a canonical `pip freeze` digest, complete-inventory-required seed-collision audit helpers, synthetic tests, and one test-message-only repair. Exact-head generic CI `35708600721` is green on Python 3.11 and 3.13 through lint, local readiness, tests and bundle validation.
 
-The direct repository state is stronger than the still-RUNNING MAIN mailbox: `research/main-h7-formal-r1-oneway-implementation-r68-cycle6@ca35c51a7d366a37f7d11d0434d05420274969aa` exists and exact-head generic CI `35706964834` is green on Python 3.11 and 3.13. It implements the frozen decision table/bootstrap realization, target-blind raw collector, local create-only preservation, same-final-SHA binding API and non-scientific sentinel. It creates no FORMAL identity, STARTED, protected evaluation, official raw, scientific preserve ref, score or evidence ref.
+This is valid `SCIENCE_INVARIANT_REPAIR / PREIDENTITY_INTEGRITY_IMPLEMENTATION`: no claim, estimand, worlds, sample size, seed assignment, comparator semantics, margin, alpha, intervention, resource/privilege contract, falsifier or decision rule changed; no protected evaluation or scientific result was accessed.
 
-H7 is still **not identity-ready**. The current preflight validates the contract blob and sentinel but does not yet close the frozen contract's complete machine-binding requirements: exact H7 fit/calibration/evaluation runner, self-verification of actual runner/scorer/preserver blobs, exact Python patch/torch/OS/pip-freeze manifests, fresh-seed collision audit, full create-only ref/path absence checks, and synthetic one-way scorer/preserve totality. PF-R1 durable `raw.json`/`summary.json` bytes are also not yet confirmed preserved.
+A new repository-binding issue is now explicit. The prospectively designated cycle-7 branch `research/main-h7-formal-r1-preidentity-closure-r70-cycle7` still points at `ca35c51a7d366a37f7d11d0434d05420274969aa`, while the newer preflight helpers were committed to the prior cycle-6 implementation branch and that branch is three commits ahead. This is not a scientific redesign, but it is a hard preidentity exact-source-binding gap. FORMAL identity must not be created while the designated final source ref/head is ambiguous. A later MAIN may reconcile this only by science-invariant, non-force exact-source ref/branch handling and must re-establish exact-head CI/bindings afterward.
 
 Exact MAIN decision:
 
-`GO_H7_FORMAL_R1_PREIDENTITY_BINDING_AND_DURABLE_PROVENANCE_CLOSURE_CYCLE7_ONLY_STOP_BEFORE_IDENTITY_START_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION`
+`GO_H7_FORMAL_R1_PREIDENTITY_BINDING_PROVENANCE_AND_REF_RECONCILIATION_CYCLE7_ONLY_STOP_BEFORE_IDENTITY_START_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION`
 
-Control R35 has now **approved** Utility request `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` as bounded NON_EVIDENTIARY preservation. Approval is not execution: the Utility assignment is still idle and durable paths/hashes have not yet been reported. The preservation may run once without rerun/rescore/reinterpretation and remains a hard pre-identity gate.
+The new helpers close capability gaps but not execution facts. Remaining preidentity gates are: one designated final source head/branch; exact H7 fit/calibration/evaluation runner materialized and frozen without protected execution; self-verification of actual runner/scorer/preserver blobs rather than caller-supplied strings; an actual runtime manifest using the real Python patch, Torch version, exact OS image and canonical pip-freeze; a complete prior-surface seed inventory plus an actual collision audit against PF-R1 and every consumed FORMAL surface; full create-only remote ref/path absence checks; synthetic scorer/preserve one-way totality; and completed durable NON_EVIDENTIARY preservation of PF-R1 `raw.json`/`summary.json` bytes.
 
-SUB candidate-33 Discovery cycle 1 prospectively closed its SYSTEM auditability contract. R70 admits the same current object to queued `ARCHITECTURE_STUDY / SYSTEM / OPEN_DEVELOPMENT / ACTIVE / QUEUED`. It is a fresh successor of terminal candidate 32, not a rescue and not a SYSTEM→MECHANISM uplift. Exact SUB lane:
+Control R35 remains the latest strategic prior and has approved Utility request `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE`. Approval is not execution: no durable Utility preservation branch/report/path has appeared, so this remains an open hard preidentity gate.
 
-`CAND_EQUIV_AUDITABLE_RAW_PROVENANCE_01_SYSTEM_ARCHITECTURE_R1_FAILCLOSED_SYNTHETIC_IMPLEMENTATION`
-
-SUB may freeze exact synthetic fixtures and numeric resource caps before fixture execution, then implement controller-owned provenance, isolated producers, isolated verifier-side raw recomputation, durable raw retention, separate resource accounting, clean match/mismatch fixtures, and the preregistered fail-closed mutation/swap/omission/identity-spoof/nonmatching-raw controls. Success is SYSTEM architecture value only.
+Candidate 33 remains a valid fresh SYSTEM successor and stays queued `ARCHITECTURE_STUDY / SYSTEM / OPEN_DEVELOPMENT / ACTIVE / QUEUED`. No candidate-33 implementation branch exists yet, so no new SYSTEM architecture result has been exposed.
 
 ## Repository / evidence state
 
 Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Authoritative annotated `evidence/*` remains exactly five unchanged tag objects. Tag-form `formal/*`, `sealed/*` and `freeze/*` are empty. Seven consumed scientific identities and raw-preserve lineage remain unchanged; new consumption is zero. PR #148/#149 remain open/unmerged and repository rulesets remain absent.
 
+Control/STARTED refs remain unchanged for C19-v4, C19-R1 v1/v2, C19-R2, H5, NI01 and PD01; no H7 STARTED/control ref exists. Raw-preserve refs remain unchanged for C19-v4, C19-R2, H5, NI01 and PD01; no H7 scientific preserve ref exists.
+
 ## Four-layer / development state
 
-- DISCOVERY: canonical queued objects `0` after candidate-33 promotion.
+- DISCOVERY: canonical queued objects `0`.
 - ARCHITECTURE_STUDY: active execution `0`; queued `MECHANISM 0 / SYSTEM 1` (candidate 33).
 - PRE_FORMAL: result-bearing active `0`; eligible `1`, READY `1`; H7 PF-R1 remains result-exposed development history only.
-- FORMAL: fresh one-way authority `0`; frozen contract plus preidentity implementation exist, but identity/result execution remains STOP.
+- FORMAL: fresh one-way authority `0`; frozen design plus preidentity code exist, but identity/STARTED/protected/result execution remains STOP.
 - canonical population `33 = MECHANISM 13 / SYSTEM 20`; `ACTIVE=2 / TERMINAL_FOR_CURRENT_OBJECT=31`; classification completeness `33/33`.
 - development phases `OPEN_DEVELOPMENT=3 / RESULT_EXPOSED_DEVELOPMENT=30 / canonical CONSUMED_ONE_WAY=0`; seven official scientific identities remain separately `CONSUMED_ONE_WAY`.
 
-Candidate 7 remains `FORMALIZE / MECHANISM / RESULT_EXPOSED_DEVELOPMENT / ACTIVE`, scientific contract `H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1`, current continuation cycle 7. Candidate 33 is now `ARCHITECTURE_STUDY / SYSTEM / OPEN_DEVELOPMENT / ACTIVE / QUEUED`, with one canonical Discovery cycle completed and Architecture cycle 2 prospectively allocated. All other candidate classifications inherit unchanged from R68/R67/R65.
+Candidate 7 remains `FORMALIZE / MECHANISM / RESULT_EXPOSED_DEVELOPMENT / ACTIVE`, `preformal_eligible=true`, readiness `READY`, current continuation cycle 7. Candidate 33 remains `ARCHITECTURE_STUDY / SYSTEM / OPEN_DEVELOPMENT / ACTIVE / QUEUED`, cycle 2 prospectively allocated. All other candidate records inherit unchanged from R70/R68 and remain complete under Funnel v2.1.
 
 SYSTEM-terminal successor accounting remains 19 assessed: one realized fresh SYSTEM successor (#33 from #32), 15 unrealized fresh SYSTEM potentials, zero fresh MECHANISM successors, and three `none` cases (#14/#27/#28). Candidate 32 remains terminal/method-limited.
 
 ## Literature / Audit / Methodology / Steward / Utility
 
-Literature R29 remains prospective-only: dynamic TOP1 policy estimand, episode/seed-clustered uncertainty and prospectively fixed reduction criteria may govern H7 FORMAL, but PF-R1 is not confirmatory evidence and is not rewritten.
+Literature R29 remains prospective-only. H7 FORMAL must remain scoped to the dynamic TOP1 intervention policy, use episode/seed-clustered uncertainty and prospectively fixed capacity/effect criteria; PF-R1 remains PRE_FORMAL development and is not rewritten or counted as confirmatory evidence.
 
-Independent Audit R6 remains unchanged. PD01's frozen token is valid; narrative interpretation stays capped at `NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR`. No rerun/rescore/relabel is allowed.
+Independent Audit R6 remains unchanged. PD01's frozen token remains protocol-valid, but narrative interpretation stays capped at `NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR`. No rerun/rescore/retune/relabel is allowed.
 
-Methodology R62 validates candidate 33 as a distinct fresh SYSTEM successor and keeps SYSTEM→MECHANISM evidence insufficient. It also keeps durable RESULT_EXPOSED development-byte preservation and exact future FORMAL binding/preserve-before-read as tightened gates.
+Methodology R62 remains advisory and supports candidate 33 as a distinct fresh SYSTEM successor while keeping durable RESULT_EXPOSED byte preservation, exact FORMAL binding, preserve-before-read, verifier independence and a fresh consumed one-way end-to-end path as the tightened/unfinished gates.
 
-Steward G10 remains governance-only. The generic equivalence verifier is still deferred from main because declared-digest consistency is not authenticated producer provenance/raw-to-digest/process isolation. Candidate 33 may investigate that gap only at SYSTEM ceiling.
+Steward G10 remains governance-only. The generic equivalence verifier still does not establish authenticated producer provenance, raw-to-digest derivation or actual process isolation, so candidate 33 must remain SYSTEM-ceiling and fail-closed.
 
-Utility preservation is now `CONTROL_APPROVED_NOT_YET_EXECUTED`. No new Utility request is created by R70.
-
-Control R35 keeps HUMAN-008 as `MODIFY`: Fast Forge is acceptable only as NON_EVIDENTIARY/NONCANONICAL work with fresh later canonical admission; user approval remains required for role/prompt/scheduler changes. R70 performs none.
+Utility preservation remains `CONTROL_APPROVED_NOT_YET_EXECUTED`. No new Utility request is created by R71.
 
 ## Discovery / theory-backward / Phenomenon-first
 
-Candidate 33 Discovery disposition is `PROMOTE_TO_ARCHITECTURE_STUDY_SYSTEM`. Its three QFD cycles remain noncanonical and denominator-excluded. Rolling autonomous canonical theory-backward selection remains `MECHANISM / SYSTEM / SYSTEM = 1/3`.
+Candidate 33 Discovery was already dispositioned `PROMOTE_TO_ARCHITECTURE_STUDY_SYSTEM`; its three QFD cycles remain noncanonical and denominator-excluded. Rolling autonomous canonical theory-backward selection remains `MECHANISM / SYSTEM / SYSTEM = 1/3`.
 
-Phenomenon-first mode remains `PREFETCH_SHADOW`. R70 is the normal throttle-window scan after R67. The existing standby `PSHADOW-H3-CORRELATED-EVIDENCE-ROBUSTNESS-01` is **retired as duplicate/insufficiently distinct** after fresh comparison with historical `research/exploratory-sub-h3-correlation-reduction-20260918`: that branch already probes source de-duplication, noisy/corrupted group identity, and scalar-vs-coalition readers under the same central correlated-evidence robustness question. The standby record provides no materially new intervention/observable/reduction contract, so keeping it would violate the duplication filter.
-
-The bounded central-hypothesis rescan retains no replacement proposal. H1/H2/H4/H5/H6/H9 already have historical dedicated research lines; H8 overlaps the extensive Assembly/presemantic candidate history; H7 is MAIN-owned; H10 requires direct hardware measurement unavailable on current safe surfaces. Zero new standby proposals is the correct result. `shadow_standby_queue=[]`.
+Phenomenon-first mode remains `PREFETCH_SHADOW`. R70 performed the most recent scan and retired the H3 standby as duplicate; `shadow_standby_queue=[]`. R71 skips a new scan under the low-rate throttle because the fresh delta is H7 preidentity integrity plumbing, not a genuinely new independent phenomenon surface. No standby is generated or admitted.
 
 ## Top 3 / prospective contingency
 
-1. **H7 FORMAL-R1 preidentity binding/provenance closure** — MECHANISM / RESULT_EXPOSED / continuation cycle 7 — **GO implementation-only**.
-2. **Candidate 33 fail-closed raw/provenance Architecture** — SYSTEM / OPEN / fresh-successor Architecture cycle 2 — **GO on SUB**.
-3. **H7 one-way identity + STARTED + protected/result-bearing FORMAL execution** — MECHANISM / future CONSUMED_ONE_WAY — **STOP** until every machine-binding gate closes, Control-approved PF-R1 bytes are actually durably preserved and independently verified, and a fresh Analyst grants exact one-way authority.
+1. **H7 FORMAL-R1 preidentity binding/provenance/ref reconciliation** — MECHANISM / RESULT_EXPOSED / continuation cycle 7 — **GO implementation-only**.
+2. **Candidate 33 fail-closed raw/provenance Architecture** — SYSTEM / OPEN / fresh-successor Architecture cycle 2 — **GO on SUB when its worker executes the queued lane**.
+3. **H7 one-way identity + STARTED + protected/result-bearing FORMAL execution** — MECHANISM / future CONSUMED_ONE_WAY — **STOP** until every machine-binding/provenance gate closes and a later fresh Analyst grants exact one-way authority.
 
-H7: successful closure still returns to a fresh Analyst; science-affecting redesign stops immediately. Candidate 33: any invalid provenance control yielding `AUDITABLE_RAW_MATCH`, inability to independently bind provenance, or inability to separate verifier/resource accounting yields HOLD/REJECT; successful fail-closed architecture never becomes semantic-equivalence or MECHANISM evidence.
+For H7, science-invariant branch/ref placement, runtime/hash plumbing, tests and binding verification may continue. Any need to alter scientific contract semantics stops immediately for a versioned Analyst reassessment. Even after every preidentity gate passes, the next step is another fresh Analyst review, not same-run identity creation.
+
+For candidate 33, any invalid provenance control yielding `AUDITABLE_RAW_MATCH`, inability to bind provenance independently, or inability to separate verifier/resource accounting yields HOLD/REJECT. Success remains SYSTEM architecture value and cannot become semantic-equivalence or MECHANISM evidence.
 
 No scientific experiment, result-bearing workflow dispatch, one-way identity consumption, research PR merge, immutable scientific-ref mutation, scheduler mutation, or historical PASS/FAIL rewrite was performed by Evidence Analyst.
