@@ -1,116 +1,95 @@
-# SparkBrain Evidence Analyst — R61
+# SparkBrain Evidence Analyst — 2026-09-22 13:09 JST
 
-- schema_version: `2`
-- generation_id: `EVA-20260922T124300+0900-R61-C7F421A9`
-- produced_at: `2026-09-22T12:43:00+09:00`
-- authority_scope: `EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION`
-- supersedes_generation_id: `EVA-20260922T120158+0900-R60-D5E721A4`
+schema_version: `2`  
+generation_id: `EVA-20260922T130900+0900-R62-D4A7C21F`  
+produced_at: `2026-09-22T13:09:00+09:00`  
+producer_run_id: `evidence-analyst-auto-EVA-20260922T130900+0900-R62-D4A7C21F`  
+authority_scope: `EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION`  
+supersedes_generation_id: `EVA-20260922T124300+0900-R61-C7F421A9`
 
-## Material delta
+## Result
 
-H7 DEV-R1 static Architecture contract cycle 1 is complete and CI-green. At research head `b83cd8cc71557af3ecc79c8a305a22b58c1b483c`, MAIN persisted `H7-DEV-R1-ARCH-CONTRACT-V1`, prospectively fixing the bounded existential claim, frozen `TOP1_SELECTED_LOCAL_NODE_CUT_V1` intervention, a three-member ordinary-reduction panel, development splits/seeds, privilege/resource envelope, positive-phenomenon floor, metric/tolerance, and claim-scoped falsifiers. The contract explicitly excludes uniqueness, task specificity, completeness/sufficiency, general superiority, FORMAL claims, and external generalization. Exact-head CI `35683665841` succeeded. No result-bearing intervention, training, measurement, PRE_FORMAL/FORMAL run, protected-outcome read, STARTED/preserve/scoring action, or one-way identity consumption occurred.
+`MATERIAL_STRATEGY_UPDATE_H7_CYCLE2_PREFLIGHT_FOUND_SCIENCE_AFFECTING_COMPARATOR_GAPS_VERSIONED_DEV_R2_AUTHORIZED`
 
-Fresh Methodology R58 independently accepts HUMAN-005's core calibration: flexible/versioned development with provenance, cycle 3 as reassessment rather than automatic terminalization, PRE_FORMAL as iterative non-confirmatory development, and strict one-way FORMAL integrity. It requires prior-result preservation for science-affecting post-exposure changes. Its text does not audit R60 end-to-end, so it is policy calibration rather than rollout validation.
+H7 DEV-R1 cycle 2 reached the exact integrity stop that R61 required. The implementation-only preflight is now at `research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1@c97af135742a7cd3af94c857f4d5b83d7707075d`, ordinary CI `35685323080` is green, and no fit training, calibration, discriminator access, scientific metric, result-bearing intervention, PRE_FORMAL/FORMAL action, or identity consumption occurred.
 
-The bounded Utility UP035 import repair is complete on `utility/equivalence-certificate-v0-1-A42D7C19@9f9d18065b481d8597236b0b682f0574c251b319`; exact-head CI `35680322003` succeeded. This is science-invariant tooling only. Trusted producer provenance and raw-to-digest assurance remain unresolved for scientific equivalence use.
+The preflight independently exposed two science-affecting specification gaps in the frozen R1 comparator panel:
 
-Two newer human governance/process directives are also OPEN. HUMAN-006 requests a reviewed refresh of stale reader-facing/version surfaces on `main`, without wholesale frontier merges or scientific-history rewriting. HUMAN-007 changes SUB supply policy: before NO_OP, SUB should perform bounded noncanonical `QUESTION_FORMATION_DISCOVERY` across fresh-successor potential, theory-backward questions, unresolved phenomenon-first surfaces, recent Literature/Audit/Methodology/Utility residuals, and newly available observables/interventions/reductions/tooling. This is NON_EVIDENTIARY 0→1 research and does not enter canonical candidate metrics, theory-backward quota, PRE_FORMAL readiness, or scientific evidence. Control review of HUMAN-006/007 is pending; this Analyst operationalizes HUMAN-007 conservatively now because it preserves collision avoidance and candidate-admission authority.
+1. `FINITE_STATE_ROUTE_HISTORY_V1` does not fix fit-time previous-prediction closure or unseen-state prediction.
+2. `ELIGIBILITY_ROUTE_LEDGER_V1` does not fix event-encoder provenance, head optimizer/loss/update order, or the calibration operation.
 
-## Repository truth
+MAIN correctly stopped rather than inventing those semantics after implementation had begun. The one intervening Ruff E402/I001 repair is classified `SCIENCE_INVARIANT_REPAIR`; it changed only the optional-torch test import lint suppression and the exact-head CI is green.
 
-Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Annotated `evidence/*` remains exactly five and unchanged. Tag-form `formal/*` and `sealed/*` are empty; no new immutable scientific identity appeared. Existing STARTED/control and raw-preserve anchors remain unchanged; new one-way identity consumption is `0`.
+Under HUMAN-20260922-005 and Methodology R58, cycle 3 is a mandatory reassessment rather than an automatic terminal. The reassessment outcome is `REFRAME_VERSION_CONTINUE`: keep candidate `CAND-H7-RESPONSIBILITY` active at `ARCHITECTURE_STUDY / MECHANISM / preformal_eligible=true / NOT_READY`, preserve DEV-R1 and its cycle-2 preflight unchanged, and authorize an explicit versioned development revision `H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE`.
 
-PR #148/#149 remain open/unmerged. Repository rulesets remain `0`.
+## H7 DEV-R2 prospective delta
 
-Active research ref:
-- `research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1@b83cd8cc71557af3ecc79c8a305a22b58c1b483c`
+DEV-R2 inherits the R1 claim scope, native `TOP1_SELECTED_LOCAL_NODE_CUT_V1` intervention family, worlds, fit/calibration/discriminator identities, native/dense model seeds and training budget, primary/secondary metrics, positive-phenomenon floor, `1e-7` numerical no-change tolerance, reduction direction, resource/privilege floor, and falsifier intent. It changes only the science-affecting fields that R1 left underspecified plus the prospective validity checks required by Literature R28. This is a versioned development revision, not a repair of an observed H7 scientific result.
 
-Historical refs remain H7 exploratory `3b5f122d287025bd9e0aec3a5266704236e6a3d5` and #32 R50 `d090fd2e57680c5a97b9fd0d036fc65a008078ec`.
+### `FINITE_STATE_ROUTE_HISTORY_V2`
 
-## Four-layer funnel / development state
+Use a non-self-referential state key `(previous_unperturbed_rank1_route_or_START, current_route_token)` instead of previous predicted label. At episode start the previous token is `START`. For each fit step, add both the baseline row `(previous_unperturbed_rank1, current_unperturbed_rank1)` and the paired cut row `(previous_unperturbed_rank1, CUT)` with the same fit target. Advance the persistent previous token only with the unperturbed baseline rank-1 route because the cut arm is one-step and discarded. Predict by fit-count majority with lexical label tie-break. For an unseen key, use the global fit-split majority label with the same lexical tie-break. Reset at every episode boundary. No calibration/discriminator labels may alter the table.
 
-Canonical layers remain:
-- DISCOVERY active M/S=`0/0`, OPEN.
-- ARCHITECTURE_STUDY active M/S=`1/0`, queued=`0/0`.
-- PRE_FORMAL eligible=`1`, READY=`0`.
-- FORMAL fresh one-way authority=`0`.
+This replaces `FINITE_STATE_ROUTE_HISTORY_V1` in DEV-R2. The replacement is deliberately a stronger, well-posed route-history state-machine reduction rather than a rescue weakening.
 
-Canonical population remains `32 = MECHANISM 13 / SYSTEM 19`, completeness `32/32`, lifecycle distribution `ACTIVE=1 / NONTERMINAL_HOLD=0 / TERMINAL_FOR_CURRENT_OBJECT=31`.
+### `ELIGIBILITY_ROUTE_LEDGER_V2`
 
-Development phases remain `OPEN_DEVELOPMENT=2`, `RESULT_EXPOSED_DEVELOPMENT=30`, `CONSUMED_ONE_WAY=0` among canonical objects. Separately, seven official scientific identities remain `CONSUMED_ONE_WAY`: C19-v4, C19-R1 v1/v2, C19-R2, H5, NI01, PD01.
+Use a detached, frozen copy of the fitted native DEV-R2 event encoder as the exact 24-d event encoder. The encoder receives the same current external event fields as native and is not updated by the ledger comparator. Train only the 3-class linear head from seed `7603`, for 4 epochs at lr `0.012`, with Adam default betas/eps and zero weight decay, cross-entropy only, deterministic episode order from generator seed `7603 + epoch`, ledger reset per episode, `zero_grad` per episode, mean episode loss, gradient clip `2.0`, and one optimizer step per episode. Training uses only unperturbed baseline fit trajectories; the cut arm is evaluated by excluding `selected[0]`, forcing that ledger coordinate to zero for the paired current-step prediction, and discarding the cut ledger afterward. Calibration is explicitly `IDENTITY_NO_TUNABLE_CALIBRATION`: the calibration split may be used only for fixed conformance/finite-output diagnostics and cannot tune weights, temperature, thresholds, exclusions, or hyperparameters.
 
-`QUESTION_FORMATION_DISCOVERY` is noncanonical and tracked separately; it does not alter canonical Discovery counts.
+This replaces `ELIGIBILITY_ROUTE_LEDGER_V1` in DEV-R2 and intentionally gives the ordinary reduction a strong representation privilege rather than an artificial raw-input handicap.
 
-## H7 DEV-R1 review
+### Literature R28 disposition
 
-`CAND-H7-RESPONSIBILITY` remains `ARCHITECTURE_STUDY / MECHANISM / preformal_eligible=true / NOT_READY / ACTIVE / ACTIVE`, development phase `RESULT_EXPOSED_DEVELOPMENT`, revision `H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT`.
+- Intervention well-posedness becomes an implementation validity contract: deterministic frozen route selection, single-valued finite outputs, unchanged non-target input/parameters/RNG, identical shape/dtype, and no cut-state carryover. Failure is `INVALID_INTERVENTION`, not a scientific negative.
+- Abstraction-map complexity is `NOT_APPLICABLE_CURRENT_REVISION`: the object is a native selected route/state and no learned cross-system alignment map is used.
+- Regime scope remains the exact four frozen development worlds. No broad regime/generalization claim is added.
+- No extra reservoir/iSSM panel member is silently added in DEV-R2. The existing dense recurrent comparator is already intervention-mapped. A materially stronger matched intervention-aware dynamical baseline can motivate a later version only prospectively; it is not a hidden READY gate.
 
-Cycle 1 achieved its prospective information gain: scientific choices for a bounded implementation are frozen without using new outcomes. The next bottleneck is implementation/reproducibility, not scientific-contract definition. PRE_FORMAL remains NOT_READY because comparator/harness implementations and verified development execution plumbing do not yet exist.
+## Cycle-3 authorization
 
-Authorize **cycle 2 implementation-only Architecture work** under the exact frozen contract: implement the native paired-intervention harness and all three frozen comparators, deterministic split/seed plumbing, contract-conformance assertions, and non-result-bearing preflight tests. Do not run the discriminator/result-bearing measurement, train on/read the discriminator surface, alter any frozen scientific field, or infer scientific outcomes. If implementation requires changing intervention/comparator/panel, seeds/splits/worlds, metric/tolerance, positive-phenomenon floor, resource/privilege contract, falsifier, success criteria, or claim scope, STOP for explicit science-affecting revision.
+`GO_H7_DEV_R2_VERSIONED_PROTOCOL_CLOSURE_CYCLE3_IMPLEMENTATION_ONLY_STOP_BEFORE_TRAINING_CALIBRATION_DISCRIMINATOR_OR_OTHER_RESULT_BEARING_DEVELOPMENT`
 
-## SYSTEM terminal successor review
+MAIN may first persist the DEV-R2 contract/revision, then implement the exact V2 comparator semantics and intervention-well-posedness/conformance tests. Same-run lint/import/build/path/serialization/logging/hash fixes are allowed as `SCIENCE_INVARIANT_REPAIR`. Do not train native/comparators, read calibration/discriminator surfaces, compute scientific metrics, or change any newly frozen scientific field in this cycle. If exact implementation succeeds, STOP for fresh Analyst review; a later cycle may authorize bounded development fitting/testing and assess whether PRE_FORMAL readiness can become READY. If another science-affecting ambiguity appears, STOP and return it without filling it locally.
 
-All 19 terminal SYSTEM objects retain R60's explicit successor assessment: 16 have fresh SYSTEM successor potential; #14, #27 and #28 remain `none`; no terminal SYSTEM object currently supports a fresh MECHANISM successor.
+## Four-layer state
 
-#32 remains terminal for the predecessor object. Utility CI-green tooling does not reopen it. A future #32-family successor requires a new candidate ID plus prospectively fixed trusted equivalence and resource contract.
+- DISCOVERY: 0 canonical active; noncanonical Question Formation completed one bounded scan with zero retained questions.
+- ARCHITECTURE_STUDY: MECHANISM active `1`, SYSTEM active `0`; H7 is the only active canonical object.
+- PRE_FORMAL: eligible `1`, READY `0`.
+- FORMAL: fresh one-way authority `0`.
 
-## Funnel / supply metrics
+Canonical population remains `32 = MECHANISM 13 / SYSTEM 19`; classification completeness remains `32/32`; lifecycle counts remain `ACTIVE=1 / NONTERMINAL_HOLD=0 / TERMINAL_FOR_CURRENT_OBJECT=31`. Canonical development-phase distribution remains `OPEN_DEVELOPMENT=2 / RESULT_EXPOSED_DEVELOPMENT=30 / CONSUMED_ONE_WAY=0`; the separate consumed-scientific-identity registry remains `CONSUMED_ONE_WAY=7`.
 
-- PRE_FORMAL eligible/READY=`1/0`
-- viable MECHANISM=`1`
-- Architecture active M/S=`1/0`; queued=`0/0`
-- completed MAIN cycles SYSTEM/MECHANISM=`11/4` after counting H7 static contract cycle 1 as a completed non-evidentiary MECHANISM Architecture cycle
-- SYSTEM-over-MECHANISM exceptions=`0`
-- cycle-3 reassess outcomes=`0`
-- fresh successors generated/admitted=`0/0`
-- active development revisions=`1`
-- noncanonical QUESTION_FORMATION_DISCOVERY authorized for SUB=`1`
+Cycle-3 reassessment count becomes `1`, disposition `H7 -> REFRAME_VERSION_CONTINUE_DEV_R2`. No fresh successor is generated or admitted. All 19 terminal SYSTEM objects retain their explicit successor assessment: fresh SYSTEM successor potential for 16; none for #14/#27/#28; fresh MECHANISM successor potential from those terminal SYSTEM objects remains 0.
 
-Rolling autonomous canonical scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`. The old no-target episode remains CLOSED at liveness count `23` because H7 DEV-R1 supplies a coherent MAIN-owned MECHANISM target. HUMAN-007 means absence of an additional mature target no longer defaults SUB directly to NO_OP: SUB should now perform a bounded question-formation scan first. Such a scan remains outside the theory-backward quota denominator unless a later canonical selection occurs.
+## SUB / candidate supply
 
-Phenomenon-first shadow triggering remains inactive under the original shadow rule while H7 is viable/active. SUB may inspect unresolved phenomenon-first surfaces inside QUESTION_FORMATION_DISCOVERY, but that does not activate or count the canonical shadow generator.
+Fresh SUB `SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9` completed the HUMAN-007 bounded `QUESTION_FORMATION_DISCOVERY` scan and retained zero questions. It correctly rejected duplicate/rescue-like pre-semantic, Assembly completion/endogenous-continuation and learned-delay paths, and did not promote the #32 family because it remains SYSTEM-only and tooling-gated. This scan is noncanonical, NON_EVIDENTIARY, denominator-excluded, and does not change the rolling canonical theory-backward share `1/3`.
 
-## External / governance inputs
+Because H7 remains a viable MECHANISM object and this scan just returned zero retainable questions, SUB now stays independent-idle until a materially fresh non-MAIN question-supply surface appears. Do not repeatedly rescan unchanged surfaces merely to create activity. The old no-target episode remains closed at canonical check count 23. Phenomenon-first shadow trigger remains inactive while H7 is active.
 
-Literature R27: causal importance, task/context specificity and route uniqueness are distinct H7 claims; controls scale with claim scope.
+## External / audit / methodology / utility
 
-Audit R6: PD01 remains consumed and immutable; frozen FAIL token valid with narrative ceiling `NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR`.
+- Literature R28 adds intervention admissibility, alignment-map privilege, regime coverage, and intervention-aware dynamical reduction pressure. These are prospective inputs and cannot silently patch DEV-R1; the claim-relevant portion is incorporated only through DEV-R2 above.
+- Independent Audit R6 remains unchanged: PD01's frozen FAIL is protocol-valid and consumed, but its narrative ceiling is `NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR`; null-vs-null is not positive mechanistic reduction evidence.
+- Methodology R58 supports HUMAN-005: flexible/versioned development, cycle-3 reassessment, PRE_FORMAL iteration, same-object science-invariant repair, and an unchanged strict one-way FORMAL floor.
+- Repository Steward G9 remains stale relative to HUMAN-005/006/007, active H7 development and repaired Utility tooling; governance advice only.
+- Utility exact repaired head `9f9d18065b481d8597236b0b682f0574c251b319` is CI-green. Fresh Steward review is still absent; merge/promotion is not authorized and CI does not cure trusted-producer/raw-to-digest semantic trust limits.
 
-Methodology R58: supports HUMAN-005 development flexibility while preserving FORMAL rigidity; does not retroactively reopen historical objects.
+## Allocation
 
-Repository Steward G9: governance-only and stale relative to HUMAN-005/006/007, H7 DEV-R1, and Utility's now-green repair; fresh Steward review remains required for main-promotion work.
+- MAIN: `H7_DEV_R2_VERSIONED_COMPARATOR_PROTOCOL_CLOSURE_ARCHITECTURE_CYCLE3_IMPLEMENTATION_ONLY`
+- SUB: `INDEPENDENT_IDLE_AFTER_ZERO_RETAINED_QUESTION_FORMATION_UNTIL_FRESH_NON_MAIN_SUPPLY_DELTA`
+- SYSTEM priority exception: `used=false`
 
-HUMAN-006: repository/product governance only, pending Control/Steward review.
+## Top 3
 
-HUMAN-007: process/supply directive; operationalized here as bounded, read-only/non-result-bearing question formation that cannot create a canonical candidate without later Analyst admission and cannot become a MAIN dependency.
+1. MECHANISM / RESULT_EXPOSED_DEVELOPMENT / VERSIONED REVISION — H7 DEV-R2 comparator-protocol closure and implementation-only conformance. **GO**, then STOP before training or result-bearing development.
+2. noncanonical candidate supply — SUB waits for fresh independent material after the zero-retained Question Formation scan. **STOP_CURRENT_SURFACES / GO_ONLY_ON_FRESH_DELTA**.
+3. SYSTEM / proposed OPEN development — fresh #32-family successor. **STOP** until a new candidate ID, trusted equivalence chain and fresh resource contract exist; predecessor #32 remains terminal.
 
-## Allocation / Top 3
+## Integrity
 
-MAIN:
-`H7_DEV_R1_FROZEN_CONTRACT_IMPLEMENTATION_ARCHITECTURE_CYCLE2`
+No experiment, result-bearing scientific workflow dispatch, one-way identity consumption, research PR merge, immutable evidence/control/preserve mutation, scheduler mutation, or historical PASS/FAIL rewrite was performed by Evidence Analyst. Consumed identities remain C19-v4, C19-R1 official-v1/v2, C19-R2, H5, NI01 and PD01.
 
-SUB:
-`QUESTION_FORMATION_DISCOVERY_BOUNDED_INDEPENDENT_SCAN`
-
-`system_priority_exception.used=false`.
-
-1. **MECHANISM / RESULT_EXPOSED_DEVELOPMENT / new cycle 2** — implement exact H7 DEV-R1 harness/comparator panel and contract-conformance preflight. **GO implementation-only; STOP before result-bearing discriminator measurement or any science-affecting change.**
-2. **NONCANONICAL MECHANISM-SUPPLY INTENT / OPEN_DEVELOPMENT / QUESTION_FORMATION_DISCOVERY** — SUB bounded scan for a materially distinct question across fresh successors, theory-backward residuals, phenomenon-first surfaces, and new tooling/observables; read-only/static-first, no canonical admission or MAIN dependency. **GO bounded question formation; STOP before canonical allocation/result-bearing experiment unless a later Analyst admits a candidate.**
-3. **SYSTEM / proposed OPEN_DEVELOPMENT / fresh successor** — #32-family successor. STOP until a fresh candidate contract plus trusted equivalence/resource tooling are ready.
-
-Exact #1 decision:
-`GO_H7_DEV_R1_IMPLEMENTATION_ONLY_CYCLE2_STOP_BEFORE_RESULT_BEARING_MEASUREMENT_OR_UNAPPROVED_SCIENCE_AFFECTING_CHANGE`
-
-## Prospective contingency
-
-- H7 cycle 2: implement only the frozen contract and non-result-bearing conformance/preflight surfaces.
-- SCIENCE_INVARIANT_REPAIR may continue on the same revision with durable provenance.
-- Any science-affecting change requires STOP and explicit versioned revision/fresh successor.
-- After H7 implementation/preflight, STOP for fresh Analyst review before any result-bearing development measurement.
-- At revision cycle 3, reassess explicitly; continue only with a prospectively stated new information gain.
-- SUB QUESTION_FORMATION may return zero questions; zero is valid. Any retained question stays noncanonical until a later fresh Analyst generation performs admission. Terminal predecessors cannot be reopened/relabelled.
-- Before FORMAL, use a fresh frozen/untouched identity/evaluation surface unless prospectively valid adaptivity covers prior development exposure.
-- HUMAN-006 remains outside scientific frontier allocation until Control/Steward review.
-
-Utility request from Analyst: none.
+Utility request: `none`.
