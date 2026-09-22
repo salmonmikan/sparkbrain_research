@@ -33,7 +33,7 @@ def test_runtime_manifest_requires_exact_freeze_material() -> None:
     manifest = _runtime()
     manifest.assert_formal_r1_contract()
     assert len(manifest.digest()) == 64
-    with pytest.raises(FormalIntegrityError, match="exact OS image identifier"):
+    with pytest.raises(FormalIntegrityError, match="exact image identifier"):
         _runtime(os_image_identifier="ubuntu-24.04").assert_formal_r1_contract()
     with pytest.raises(FormalIntegrityError, match="Python 3.11 patch"):
         _runtime(python_patch="3.11").assert_formal_r1_contract()
