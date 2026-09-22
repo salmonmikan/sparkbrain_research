@@ -43,7 +43,7 @@ class RuntimeFreezeManifest:
     def assert_formal_r1_contract(self) -> None:
         if not _PYTHON_311_RE.match(self.python_patch):
             raise FormalIntegrityError("runtime requires an exact Python 3.11 patch version")
-        if self.torch_version != "2.13.0":
+        if self.torch_version.split("+", 1)[0] != "2.13.0":
             raise FormalIntegrityError("runtime torch version drift")
         if self.os_runner_family != "ubuntu-24.04":
             raise FormalIntegrityError("runtime OS family drift")
