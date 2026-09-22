@@ -91,7 +91,9 @@ class OpaqueEvaluationCommitment:
         if not _SHA256_RE.fullmatch(self.ciphertext_sha256):
             raise FormalIntegrityError("invalid encrypted evaluation payload digest")
         if self.commitment_sha256 == self.ciphertext_sha256:
-            raise FormalIntegrityError("commitment and ciphertext digests must bind distinct objects")
+            raise FormalIntegrityError(
+                "commitment and ciphertext digests must bind distinct objects"
+            )
         if self.payload_size_bytes <= 0:
             raise FormalIntegrityError("opaque evaluation payload must be non-empty")
         if self.seed_count != EVALUATION_EPISODES:
@@ -105,9 +107,13 @@ class OpaqueEvaluationCommitment:
         if self.steps_per_episode != STEPS_PER_EPISODE:
             raise FormalIntegrityError("R3 recurrent-step count drift")
         if not self.created_after_final_binding:
-            raise FormalIntegrityError("evaluation commitment must follow final source/contract/runtime binding")
+            raise FormalIntegrityError(
+                "evaluation commitment must follow final source/contract/runtime binding"
+            )
         if self.plaintext_accessible_to_claim_capable:
-            raise FormalIntegrityError("claim-capable code may not access plaintext evaluation seeds")
+            raise FormalIntegrityError(
+                "claim-capable code may not access plaintext evaluation seeds"
+            )
         if not self.collision_audit_passed:
             raise FormalIntegrityError("fresh evaluation seed collision audit is mandatory")
         if self.commitment_scheme != COMMITMENT_SCHEME:
