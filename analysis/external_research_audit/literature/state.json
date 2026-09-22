@@ -1,55 +1,59 @@
 {
-  "timestamp": "2026-09-22T18:43:15+09:00",
+  "timestamp": "2026-09-22T21:30:58+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260922T183000+0900-R30-PATHSPEC-RECANTING-5C8A21F4",
-  "producer_run_id": "external-literature-auto-20260922T183000+0900-R30-5C8A21F4",
+  "generation_id": "LIT-20260922T213058+0900-R31-RECONSTRUCTIBLE-HOLDOUT-4D8C21F7",
+  "producer_run_id": "external-literature-auto-20260922T213058+0900-R31-4D8C21F7",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9",
+  "supersedes_generation_id": "LIT-20260922T183000+0900-R30-PATHSPEC-RECANTING-5C8A21F4",
   "input_generations": {
     "control_brain": {
       "generation_id": "CTRL-20260922T175240+0900-R35-A6C4E219",
       "handoff_commit": "1df7d07deb0364a5894f1eadd2c7f099f799ed24"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T182000+0900-R70-C4E8A231",
-      "handoff_commit": "bbf7defd28334b5ef484223dec7fa639fc072a08"
+      "generation_id": "EVA-20260922T210223+0900-R75-D7F2A9C1",
+      "handoff_commit": "c190afff7e33977c530c207904bd42ce7187a20d"
     },
     "main_report": {
-      "generation_id": "MAIN-20260922T162700+0900-PRIMARY-H7-FORMALR1-DESIGN-C5-C4F8A21D",
-      "handoff_commit": "37de1279ad9e27fdb8229ed0aeb811e4ae968f74",
-      "note": "designated durable reports/orchestrator/main/latest.md + state.json stream; newer R68 lease has not replaced designated durable report"
-    },
-    "main_inflight_lease_observed": {
-      "generation_id": "MAIN-20260922T171550+0900-PRIMARY-H7-FORMALR1-IMPL-C6-B7C391E4",
-      "handoff_commit": "f69da6b7cc8885a40c2b5d44a46fe173a2014619",
-      "source": "Evidence Analyst R70 / Control R35"
+      "generation_id": "MAIN-20260922T213400+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-R75-D7F2A9C1",
+      "latest_path_commit": "a5e18f9bc0cf0c63880c2086836de16c0977e6fe",
+      "state_path_commit": "7ab098fda71d7ab903855afdc7dc3b4d1bfd50a1",
+      "newest_role_history": "reports/orchestrator/history/2026-09-22/2134-main.md"
     },
     "sub_report": {
-      "generation_id": "SUB-20260922T173208+0900-SYSDISC-EQUIVCONTRACT-R68-B7C391E4",
-      "handoff_commit": "a33384df56918faa7c0bbe5cc92681b7d90333d1"
+      "generation_id": "SUB-20260922T204630+0900-ARCH-C33-RUNNERPATH-R74-B8C4E219",
+      "handoff_commit": "86b84eab3070c7e7fdbc622db7228d75340136dc"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9",
-      "handoff_commit": "d09c7106e5f346d3a4bb67ac25e6c651d2c6787a"
+      "generation_id": "LIT-20260922T183000+0900-R30-PATHSPEC-RECANTING-5C8A21F4",
+      "handoff_commit": "5b5b5f281613f455db7675deb1a7b66ef2c795b8"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "18:30 JST",
+  "schedule_slot": "21:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "h7_formal_contract_design": {
-      "branch": "research/main-h7-formal-r1-contract-design-r65-cycle5",
-      "head": "0bf690a0710112d21743d50f0974eadeb49dadad",
-      "contract_blob_sha": "af26de3067263afcff0e727321fa173ea14de659"
+    "h7_formal_r2": {
+      "branch": "research/main-h7-formal-r2-input-split-r75-cycle8",
+      "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+      "contract_id": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-V1",
+      "contract_blob": "a4965eb49528e5b7e6da70f28e076de89d822f93",
+      "input_surface_sha256": "b1ec2861017642954fc7b510f0131d13500397aa5d991d4a3d30fe75fd3bafcc",
+      "formal_evaluation_seed_range_inclusive": [8846030, 8846285],
+      "formal_evaluation_split": "test"
     },
-    "h7_formal_preidentity_implementation": {
-      "branch": "research/main-h7-formal-r1-oneway-implementation-r68-cycle6",
-      "head": "67ed8fad1d861463e4129d44efbb2540affd1889",
-      "ci_run_id": 35708600721,
-      "ci_status": "completed",
-      "ci_conclusion": "success",
-      "note": "direct repository head is three commits beyond ca35c51a... last canonicalized by Analyst R70; movement is preidentity implementation/preflight only"
+    "h7_r1_contract_preserved": {
+      "contract_id": "H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1",
+      "contract_blob": "af26de3067263afcff0e727321fa173ea14de659"
+    },
+    "public_generator_surface": {
+      "worlds_path": "src/sparkbrain/tasks/worlds.py",
+      "worlds_blob": "2478fba19d7276ebe30ec8f5811bf6d7b7414779",
+      "runner_path": "src/sparkbrain/learned/h7_formal_r2_runner.py",
+      "runner_blob": "33f5ecd8d2bb75b2c7d0ed48f482f4945ea3fb0b",
+      "r2_binding_path": "src/sparkbrain/learned/h7_formal_r2.py",
+      "r2_binding_blob": "7bdccf0531ad8da1276be3829545cbb15778037e"
     },
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
@@ -59,115 +63,127 @@
     "preserve_refs_inspected": true,
     "control_refs_inspected": true,
     "relevant_prs": {
-      "148": "OPEN_UNMERGED",
-      "149": "OPEN_UNMERGED"
+      "148": "OPEN_UNMERGED"
     },
     "ops_control_tip": "1df7d07deb0364a5894f1eadd2c7f099f799ed24",
-    "ops_evidence_analyst_tip": "bbf7defd28334b5ef484223dec7fa639fc072a08",
-    "ops_orchestrator_tip": "d1d4a78b4015146fe6f52dc7ae4461e2e9ae6bde",
-    "ops_external_tip_before_write": "d09c7106e5f346d3a4bb67ac25e6c651d2c6787a"
+    "ops_evidence_analyst_tip": "c190afff7e33977c530c207904bd42ce7187a20d",
+    "ops_orchestrator_tip": "d873a0a6b1ecc02ad2ce550e207f55b79649baac",
+    "ops_external_tip_before_write": "5b5b5f281613f455db7675deb1a7b66ef2c795b8"
+  },
+  "workflow_state_observed": {
+    "35727871981_h7_formal_r2_preidentity": {
+      "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+      "status": "completed",
+      "conclusion": "failure",
+      "result_bearing": false,
+      "canonicalized_by_analyst": false
+    },
+    "35727871994_generic_ci": {
+      "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+      "status": "completed",
+      "conclusion": "success",
+      "result_bearing": false,
+      "canonicalized_by_analyst": false
+    }
   },
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "CONTROLLED_POLICY_EFFECT_NOT_PATH_SPECIFIC_MEDIATION",
-      "type": "FOUNDATIONAL_CAUSAL_INFERENCE_REDUCTION_CEILING",
+      "id": "FORMAL_EVALUATION_RECONSTRUCTIBLE_BEFORE_IDENTITY",
+      "type": "REPOSITORY_EVIDENCE_INTEGRITY_GAP",
+      "sources": [
+        "artifacts/formal_h7_r2/contract.json",
+        "src/sparkbrain/learned/h7_formal_r2.py",
+        "src/sparkbrain/learned/h7_formal_r2_runner.py",
+        "src/sparkbrain/tasks/worlds.py"
+      ],
+      "finding": "The exact future FORMAL evaluation seed block, world assignment and deterministic public generator are available before one-way identity. The generator produces both observations and targets from the public seed, so the exact future evaluation episodes and labels are reconstructible without official protected-workflow access.",
+      "impact": "One-way workflow access control and exact input identity do not by themselves establish holdout non-exposure. No tuning is alleged and no existing FORMAL evidence is invalidated because none exists, but the distinction must be classified before future confirmatory interpretation."
+    },
+    {
+      "id": "SPLIT_BINDING_IS_PROVENANCE_NOT_SECRECY",
+      "type": "REPOSITORY_SEMANTIC_SHARPENING",
+      "sources": [
+        "artifacts/formal_h7_r2/contract.json",
+        "src/sparkbrain/tasks/worlds.py"
+      ],
+      "finding": "R75's train/dev/test Episode.split binding repairs exact input identity, while episode stochastic content and labels remain seed-derived and publicly reproducible. Identity-bound and protected/unexposed are separate properties.",
+      "impact": "Future control-plane language should not use test/protected/unseen as synonyms for exact provenance binding."
+    },
+    {
+      "id": "SELECTION_PROCEDURE_CAN_OVERFIT_RECONSTRUCTIBLE_HOLDOUT",
+      "type": "FOUNDATIONAL_MODEL_SELECTION_INTEGRITY",
       "sources": [
         {
-          "citation": "Avin, Shpitser & Pearl, IJCAI 2005",
-          "url": "https://escholarship.org/uc/item/45x689gq"
+          "citation": "Cawley & Talbot, JMLR 2010",
+          "url": "https://www.jmlr.org/papers/v11/cawley10a.html"
         },
         {
-          "citation": "Shpitser & Tchetgen Tchetgen, Annals of Statistics 2016",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5597261/"
+          "citation": "Dwork et al., 2015, Generalization in Adaptive Data Analysis and Holdout Reuse",
+          "url": "https://arxiv.org/abs/1506.02629"
         }
       ],
-      "finding": "Path-specific effects are responses to edge/path intervention semantics and have stronger identification requirements than ordinary node interventions. A controlled dynamic node/state-cut effect does not by itself identify mediation through a causal path.",
-      "impact": "Keep H7 FORMAL-R1 PASS language, if any, at the frozen controlled dynamic TOP1 policy effect / panel distinctness claim. Do not paraphrase it as a route/path-mediated effect without a fresh separately identified path/edge intervention object."
+      "finding": "Model-selection/evaluation validity depends on information available to the whole adaptive selection procedure, not only whether the final scorer was queried. Reconstructible held-out rows can contaminate later claim-capable choices even when official scoring is mechanically separated.",
+      "impact": "Current frozen scientific fields reduce the risk, but protected_evaluation_accessed=false should not be interpreted as information-level non-exposure without an explicit post-disclosure choice audit."
     },
     {
-      "id": "RECANTING_WITNESS_DISTRICT_NO_GO",
-      "type": "FOUNDATIONAL_IDENTIFIABILITY_NO_GO",
+      "id": "DYNAMIC_UNSEEN_GENERATION_ORDINARY_CONTAMINATION_BASELINE",
+      "type": "RECENT_BENCHMARK_REDUCTION_BASELINE",
       "sources": [
         {
-          "citation": "Shpitser, identification review; Avin et al. / recanting criterion",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7685307/"
-        }
-      ],
-      "finding": "When an intermediate variable or hidden district is required to carry conflicting treatment assignments along included and excluded paths, the path-specific counterfactual is not identified; this is the recanting-witness/district obstruction.",
-      "impact": "Recurrent/bypass/feedback H7 successors that claim effect transmission through a particular route should prospectively bind an edge/path graph and no-recanting/edge-consistency criterion or a physically separable intervention construction. The current total controlled cut effect remains well-defined."
-    },
-    {
-      "id": "RANDOMIZED_INTERVENTIONAL_INDIRECT_EFFECT_SHARP_NULL_LIMIT",
-      "type": "RECENT_METHOD_CAUTION",
-      "sources": [
-        {
-          "citation": "Miles, JRSS B 2023",
-          "url": "https://academic.oup.com/jrsssb/article/85/4/1154/7209706"
+          "citation": "Chen, Pusarla & Ray, DyCodeEval, ICML 2025",
+          "url": "https://proceedings.mlr.press/v267/chen25ba.html"
         },
         {
-          "citation": "Non-agency interventions for causal mediation, JRSS B 2024",
-          "url": "https://academic.oup.com/jrsssb/article/86/2/435/7445021"
+          "citation": "Gulati et al., Putnam-AXIOM, ICML 2025",
+          "url": "https://proceedings.mlr.press/v267/gulati25a.html"
         }
       ],
-      "finding": "Randomized interventional indirect effects can avoid some cross-world assumptions but need not satisfy a sharp mediational-null criterion; they may be nonzero even when no individual has an indirect mediated effect.",
-      "impact": "A future stochastic route intervention should remain an intervention-policy estimand unless sharper mechanistic mediation conditions are separately justified."
-    },
-    {
-      "id": "RECANTING_TWINS_2026_STRONGER_PRIVILEGE_CEILING",
-      "type": "CURRENT_LITERATURE_PROSPECTIVE_DIAGNOSTIC",
-      "sources": [
-        {
-          "citation": "Vo et al., Statistics in Medicine 2026",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/41640020/"
-        }
-      ],
-      "finding": "Recanting-twin methods address intermediate confounding and include a falsification procedure for compatibility with intermediate confounding, providing a contemporary route to sharper path-specific analysis under stronger causal-model access.",
-      "impact": "Useful only as a future fresh stronger-privilege diagnostic ceiling where simulator/SCM variables are available; it must not be retrofitted into current FORMAL-R1 or used to choose its margins/interventions."
+      "finding": "Dynamic/programmatically generated unseen evaluation variants are already an ordinary contamination-resistance strategy in current benchmarking.",
+      "impact": "A fresh successor can preserve exact reproducibility while preventing preidentity memorization by freezing generator/distribution/scoring semantics first, deriving final evaluation seeds from concealed post-binding entropy, and revealing the seed/key only after immutable raw preservation."
     }
   ],
   "affected_lines": [
-    "H7_FORMAL_R1_DYNAMIC_TOP1_CONFIRMATORY_CONTRACT",
-    "H7_CONTROLLED_POLICY_EFFECT_VS_PATH_SPECIFIC_MEDIATION",
-    "H7_RECANTING_WITNESS_EDGE_CONSISTENCY",
-    "H7_FUTURE_ROUTE_MEDIATION_CLAIM_SCOPE",
-    "FUTURE_MECHANISM_OBJECT_ADMISSION",
-    "PROGRAMME_NOVELTY"
+    "H7_FORMAL_R2_INPUT_SURFACE",
+    "H7_PROTECTED_EVALUATION_CONFIDENTIALITY",
+    "H7_ONE_WAY_IDENTITY_AND_HOLDOUT_INTEGRITY",
+    "H7_FORMAL_R1_CONFIRMATORY_INTERPRETATION",
+    "FUTURE_FORMAL_MECHANISM_ADMISSION",
+    "PROGRAMME_EVIDENCE_INTEGRITY"
   ],
   "reduction_candidates": [
-    "EDGE_PATH_INTERVENTION_SEMANTICS",
-    "RECANTING_WITNESS_DISTRICT_CHECK",
-    "SEPARABLE_COMPONENT_CAUSAL_DESIGN",
-    "RANDOMIZED_INTERVENTIONAL_INDIRECT_EFFECT_INTERPRETATION_LIMIT",
-    "RECANTING_TWIN_STRONGER_PRIVILEGE_CEILING"
+    "IDENTITY_BOUND_VS_UNEXPOSED_HOLDOUT_DISTINCTION",
+    "POST_DISCLOSURE_CLAIM_CAPABLE_CHOICE_AUDIT",
+    "CONCEALED_POST_BINDING_EVALUATION_SEED_DERIVATION",
+    "DYNAMIC_UNSEEN_GENERATED_CONFIRMATORY_SURFACE"
   ],
-  "novelty_or_reduction_impact": "PATH_SPECIFIC_MEDIATION_CLAIM_CEILING_SHARPENED_NO_CURRENT_FORMAL_CONTRACT_REWRITE. A controlled dynamic node/state-cut effect is not equivalent to a path-specific mediated effect. Stronger route-transmission claims require separately identified edge/path intervention semantics and no-recanting/separability conditions.",
+  "novelty_or_reduction_impact": "RECONSTRUCTIBLE_FORMAL_HOLDOUT_INTEGRITY_GAP_NO_CURRENT_EVIDENCE_INVALIDATION. R75 fixes exact input identity, but the public evaluation seed block plus deterministic public generator make future FORMAL evaluation rows and targets reconstructible before one-way identity. Exact provenance therefore must not be equated with holdout non-exposure.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "preserve current FORMAL-R1 estimand as a controlled dynamic-policy effect, not path mediation",
-    "for any fresh route-mediated claim, preregister causal graph/path or edge set and recanting-witness/district criterion",
-    "use separable-component or edge-intervention experiments when the mechanism admits physically meaningful decomposition",
-    "treat stochastic/randomized interventional indirect effects as policy/intervention evidence unless sharp-null mechanistic interpretation is separately supported",
-    "use recanting-twin or equivalent SCM-rich diagnostics only as stronger-privilege ceilings unless information privilege is matched",
-    "test bypass/feedback alternatives under matched intervention/resource privilege only in a fresh successor object"
+    "distinguish identity-bound from unexposed/protected evaluation surfaces",
+    "inventory every claim-capable code/science choice made after evaluation-surface disclosure",
+    "for any fresh successor freeze generator/distribution/evaluator/intervention/comparators before concealed post-binding seed derivation",
+    "reveal concealed evaluation seed/key only after immutable raw preservation to retain exact reproducibility",
+    "use dynamic/unseen generated evaluation as the ordinary contamination-resistance baseline",
+    "if current R2 proceeds unchanged scope interpretation to a public/reconstructible fixed evaluation surface rather than an unseen holdout unless stronger non-exposure is independently established"
   ],
   "questions_for_evidence_analyst": [
-    "Keep FORMAL-R1's claim at controlled dynamic-policy local effect/mechanistic distinctness and prohibit interpreting a future PASS as path-specific mediation?",
-    "Require prospective edge-consistency/no-recanting or separable-component semantics before admitting any future route-mediated successor claim?",
-    "Treat randomized/interventional indirect effects as intervention-policy evidence unless a sharper mediational-null criterion is separately justified?"
+    "Does public reconstructibility of all R2 evaluation episodes/targets prevent calling the surface protected or unseen even though official workflow access remains false?",
+    "Should the current R2 object remain preidentity-only until this is explicitly classified, without rewriting R2 in place?",
+    "If a fresh versioned successor is required, should its evaluation seeds be derived only after final source/contract binding from concealed committed entropy?"
   ],
   "questions_for_control_brain": [
-    "Add controlled-causal-effect != path-specific-mediation as a claim-ceiling guardrail?",
-    "Treat recanting witness/district as a future H7 route-responsibility failure mode, not a reason to modify frozen FORMAL-R1?",
-    "Preserve current STOP before identity/protected FORMAL execution until existing machine-binding/provenance gates close, without adding literature-driven gates to the frozen object?"
+    "Add reconstructible-holdout exposure as a distinct integrity failure mode from scorer access / score leakage?",
+    "Separate exact input identity, workflow access control and information-level holdout secrecy in future control-plane terminology?",
+    "If R2 remains unchanged, cap future language so a result is not described as unseen/protected merely because the official evaluation workflow was not previously dispatched?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "H7 PF-R1 development result/raw bytes and its no-rerun/no-rescore boundary",
-    "H7 FORMAL-R1 contract design at 0bf690a0710112d21743d50f0974eadeb49dadad including dynamic TOP1 policy, frozen panel, estimands, evaluator and decision table",
-    "no new path/edge/mediation semantics may be retrofitted into current FORMAL-R1 after PF-R1 exposure",
-    "no FORMAL identity/STARTED/protected evaluation/result workflow, scientific preserve/evidence ref, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
+    "H7 FORMAL-R1 frozen claim/evaluator/intervention/comparator/decision semantics",
+    "H7 FORMAL-R2 input-split binding and current preidentity artifacts must not be rewritten in place in response to this literature finding",
+    "no FORMAL identity/STARTED/protected evaluation/result-bearing workflow/scientific preserve/evidence ref, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
   ],
   "utility_request_created": null,
   "mutations": {
