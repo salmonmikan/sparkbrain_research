@@ -1,10 +1,10 @@
-# SparkBrain Methodology Calibration Audit — 2026-09-22 13:21 JST
+# SparkBrain Methodology Calibration Audit — 2026-09-22 15:21 JST
 
 schema_version: `2`  
-generation_id: `METHCAL-20260922T132125+0900-R59-F4C7A21D`  
-produced_at: `2026-09-22T13:21:25+09:00`  
+generation_id: `METHCAL-20260922T152143+0900-R60-B7E4C219`  
+produced_at: `2026-09-22T15:21:43+09:00`  
 authority_scope: `METHODOLOGY_ADVISORY_ONLY`  
-supersedes_generation_id: `METHCAL-20260922T122122+0900-R58-B84F2D17`
+supersedes_generation_id: `METHCAL-20260922T132125+0900-R59-F4C7A21D`
 
 ## Result
 
@@ -12,40 +12,78 @@ supersedes_generation_id: `METHCAL-20260922T122122+0900-R58-B84F2D17`
 
 Overall classification remains **`MIXED_CALIBRATION`**.
 
-Prior Methodology R58 was read first. Stable repository/evidence were then independently refreshed before designated Control/Analyst history and only afterward current MAIN/SUB strategy summaries were used. Stable `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; annotated `evidence/*` remains exactly five unchanged tag objects; tag-form `formal/*=0`, `sealed/*=0`, `freeze/*=0`.
+Prior Methodology R59 was read first. Stable repository/evidence were then independently refreshed before current designated Control/Analyst history; only afterward was the current MAIN mailbox consulted. Stable `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; annotated `evidence/*` is still exactly five tag objects; tag-form `formal/*=0`, `sealed/*=0`, `freeze/*=0`. `ops/*` was treated only as control/history/mailbox material, not scientific source of truth.
 
-The material update is that HUMAN-20260922-005 now has a real post-directive rollout rather than only a proposed calibration. Control R33, Analyst R62 and MAIN/Relay R61 consistently separate development iteration from one-way evidence. The live path now records `development_phase`, a versioned development revision, cycle count/reassessment rationale, nonconfirmatory status, and explicit stop conditions while keeping FORMAL authority at zero.
+The material update is the **first canonical READY -> PRE_FORMAL transition under HUMAN-20260922-005**. Evidence Analyst R64 completed H7 DEV-R2 implementation/conformance without scientific outcome exposure in that cycle and prospectively promoted candidate 7 to `PRE_FORMAL`, `preformal_eligible=true`, `preformal_readiness.status=READY` under versioned revision `H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION`. R64 explicitly states that READY is justified because the next test is well-defined and informative **without requiring H7 already to defeat its reductions or survive its falsifier**. This is the strongest live evidence so far that READY is development readiness rather than a hidden second FORMAL gate.
 
-The strongest positive case is H7. In DEV-R1 cycle 2, MAIN performed implementation-only work and encountered one mechanical Ruff E402/I001 failure plus two comparator-semantic specification gaps. The lint/import-layout fix was classified `SCIENCE_INVARIANT_REPAIR` and applied without changing scientific fields. The comparator gaps were classified science-affecting and were **not** filled locally. MAIN stopped before training, calibration, discriminator access, scientific metrics, PRE_FORMAL/FORMAL work or identity consumption.
+The transition also validates the cycle policy. H7 was not terminalized at cycle 3: the cycle-3 reassessment versioned the underspecified comparator protocol into DEV-R2, DEV-R2 then completed implementation/conformance, and R64 advanced the same MECHANISM object to a fixed cycle-4 PRE_FORMAL development evaluation. `cycle3_as_automatic_terminal_cap` therefore remains `RELAX`; `cycle3_mandatory_reassessment_with_prospective_information_gain=KEEP`.
 
-Analyst R62 then used the mandatory cycle-3 reassessment exactly as intended: it did not terminalize H7 merely because cycle 3 was reached. It preserved DEV-R1 and the cycle-2 preflight, recorded prospectively distinct information gain, and authorized explicit versioned revision `H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE`. DEV-R2 strengthens and closes underspecified comparator semantics rather than weakening an observed outcome. This is the first strong live evidence that the programme can distinguish development iteration from rescue tuning.
+A second important positive signal is that versioning does **not** erase exposure state. H7 remains `RESULT_EXPOSED_DEVELOPMENT` while moving from DEV-R2 to PF-R1. This is calibrated: same-object versioning does not reset the lineage to `OPEN_DEVELOPMENT` and thereby launder prior exposure. R64 requires any science-affecting redesign after meaningful result exposure to use explicit versioning or a fresh successor while preserving the prior result unchanged.
 
-The rollout is not yet fully end-to-end proven. H7 has not entered iterative PRE_FORMAL, and there is still no live case of a science-affecting change made **after a meaningful result-bearing development observation** and then preserved/versioned without laundering repeated observations into independent evidence. Accordingly, development rerun/retune/tolerance-revision accounting and result-exposed revision handling after actual scientific-result exposure remain `INSUFFICIENT_EVIDENCE`.
+The first PRE_FORMAL run is not yet an observed result. At audit cutoff the MAIN mailbox had only acquired the R64 H7 PF-R1 cycle-4 lease; no completed result report was available. Accordingly, actual iterative PRE_FORMAL rerun/retune behavior, non-independent evidence accounting across repeated result-bearing PRE_FORMAL observations, and the first science-affecting revision **after** a meaningful PF result all remain `INSUFFICIENT_EVIDENCE`. Lease acquisition must not be treated as result exposure.
 
-Gate updates:
-- `development_phase_axis_observed_active_path=KEEP`;
-- `result_exposed_same_object_science_invariant_repair=KEEP`;
-- `science_affecting_change_requires_explicit_versioned_revision=KEEP`;
-- `cycle3_mandatory_reassessment=KEEP`;
-- `cycle3_as_automatic_terminal_cap=RELAX`;
-- `development_revision_prior_artifact_preservation=KEEP`;
-- `development_rerun_retune_nonindependent_accounting=INSUFFICIENT_EVIDENCE`;
-- `preformal_as_real_iterative_development_semantics=KEEP`;
-- `live_iterative_preformal_execution=INSUFFICIENT_EVIDENCE`;
-- `consumed_one_way_formal_integrity=KEEP`;
-- `terminal_for_current_object_topic_scope=KEEP`;
-- `fresh_system_to_mechanism_successor_live_case=INSUFFICIENT_EVIDENCE`.
+## Gate classifications
 
-Funnel observability improved materially. Canonical population remains `32 = MECHANISM 13 / SYSTEM 19`, classification completeness `32/32`, but lifecycle is now `ACTIVE=1 / NONTERMINAL_HOLD=0 / TERMINAL_FOR_CURRENT_OBJECT=31`; Architecture active is MECHANISM `1`, PRE_FORMAL eligible=`1`, READY=`0`, viable executable MECHANISM=`1`. Canonical development phases are `OPEN_DEVELOPMENT=2 / RESULT_EXPOSED_DEVELOPMENT=30 / CONSUMED_ONE_WAY=0`, with seven official consumed scientific identities tracked separately as one-way. The prior no-target episode is closed at canonical liveness count 23 rather than normalized into topic death.
+- hard FORMAL integrity floor: `KEEP`
+- development-phase axis on active path: `KEEP`
+- full end-to-end development rollout: `INSUFFICIENT_EVIDENCE`
+- result-exposure phase persistence across same-object versioning: **`KEEP`**
+- same-object `SCIENCE_INVARIANT_REPAIR`: `KEEP`
+- science-affecting change -> versioned revision/fresh successor preserving prior results: `KEEP`
+- post-meaningful-result science-affecting revision live case: `INSUFFICIENT_EVIDENCE`
+- cycle 3 as automatic terminal cap: **`RELAX`**
+- cycle 3 mandatory reassessment: `KEEP`
+- first READY -> PRE_FORMAL development semantics: **`KEEP`**
+- READY = well-defined/informative next test, not prior success: **`KEEP`**
+- `preformal_eligible` distinct from READY: `KEEP`
+- PRE_FORMAL as real development surface: `KEEP`
+- PRE_FORMAL allocation without prior comparator/reduction/falsifier victory: **`KEEP`**
+- live iterative PRE_FORMAL execution: `INSUFFICIENT_EVIDENCE`
+- repeated PRE_FORMAL observations not independent confirmatory evidence: `KEEP`
+- current-object `claim_ceiling`: `KEEP`
+- same-object SYSTEM -> MECHANISM uplift ban: `KEEP`
+- fresh SYSTEM -> MECHANISM successor admission: `INSUFFICIENT_EVIDENCE`
+- `TERMINAL_FOR_CURRENT_OBJECT` closes current object, not topic: `KEEP`
+- terminal-topic fresh-successor question formation: **`KEEP`**
+- classification-completeness gating: `KEEP`
+- MAIN MECHANISM priority / prospective SYSTEM exception: `KEEP`
+- theory-backward quality floor / `NO_COHERENT_MECHANISM_TARGET`: `KEEP`
+- comparator-equivalence verifier independence: `TIGHTEN`
+- raw-before-score / preserve-before-read execution plumbing: `TIGHTEN`
+- protected/adaptive-evaluation validity and exposure observability: `TIGHTEN`
 
-`HIDDEN_SECOND_FORMAL_GATE=false` remains correct. H7 is `preformal_eligible=true` while still `NOT_READY`, and its current work is explicitly Architecture development. READY is not conditioned on already beating the comparator/reduction/falsifier. PRE_FORMAL is declared iterative/nonconfirmatory, but live repeated PRE_FORMAL behavior has not yet been observed.
+`HIDDEN_SECOND_FORMAL_GATE=false`.
 
-Terminal/successor calibration also improved. H7 demonstrates that a prior unresolved MECHANISM topic can continue through a versioned development revision without minting a rescue successor, while terminal candidate #32 remains closed and requires a fresh SYSTEM ID/contract for any future successor. No same-object SYSTEM→MECHANISM uplift occurred. Fresh SYSTEM→MECHANISM successor admission remains untested, so neither suppression nor manufacture is established.
+## Development-iteration calibration
 
-False-positive risk is now **`LOW_TO_MODERATE_WATCH`** rather than transition-level moderate: the observed rollout stopped on science-affecting ambiguity and preserved prior artifacts. The main remaining rescue risk is future result-exposed retuning/tolerance changes after an actual scientific observation. False-negative/opportunity-cost risk improves to **`MODERATE_WATCH`** because viable MECHANISM supply is no longer zero, though 31/32 objects remain terminal and READY remains empty. Over-terminalization risk falls from high to **`MODERATE_WATCH`**.
+HUMAN-20260922-005 is being implemented consistently through the READY allocation path. Control R33 had already made the development phase orthogonal to Funnel/lifecycle; R64 preserves that separation at PRE_FORMAL. H7 is simultaneously `MECHANISM / PRE_FORMAL / ACTIVE / eligible / READY` and `RESULT_EXPOSED_DEVELOPMENT`.
 
-PASS remains realistically reachable without weakening evidence standards. Development can iterate nonconfirmatorily; clean confirmation still requires a fresh `CONSUMED_ONE_WAY` FORMAL identity with frozen prospective protocol, raw-before-score, preserve-before-read, exact source/protocol/package/runtime/input binding, immutable evidence and valid protected/adaptive-evaluation controls.
+R64's PF-R1 authority is explicitly fixed-endpoint and nonconfirmatory. It permits only the already-fixed fit/calibration/discriminator sequence and endpoints, then requires STOP for fresh Analyst review. New comparator, intervention, metric, seed/split, threshold/tolerance, resource/privilege, claim, falsifier or success-rule choices require explicit versioned reassessment; mechanical lint/import/build/path/serialization/logging/hash fixes remain science-invariant. This is calibrated against rescue tuning while still allowing real development.
 
-Prospectively, keep the current development policy. Standardize the machine-readable lineage fields across Control/Analyst/MAIN (`development_revision`, previous revision, change classification, prior artifact/result refs, information-gain rationale) rather than relying partly on prose. At the first result-bearing PRE_FORMAL iteration, verify that reruns/retunes remain one development lineage and do not increment confirmatory evidence. At the first genuinely result-exposed science-affecting revision, verify explicit old-result preservation and versioning before any new execution. Do not reopen historical consumed or terminal objects merely because HUMAN-005 changed methodology.
+The strongest remaining test is the first completed PF-R1 result. If a meaningful result is exposed and a science-affecting change follows, the programme must preserve the exact prior raw/result/contract, keep the lineage `RESULT_EXPOSED_DEVELOPMENT`, version before any new execution, and keep all repeated PRE_FORMAL observations nonconfirmatory.
 
-No Utility request was created; the live H7 rollout is the higher-information calibration path. Hard floor remains **`CONFIRMED / DO NOT RELAX`**. Confidence is **`HIGH`** on the observed Control/Analyst/MAIN calibration and **`MEDIUM_HIGH`** on full end-to-end rollout because PRE_FORMAL/result-bearing revision cases remain unobserved.
+## Terminal / successor calibration
+
+Canonical candidate 32 remains terminal and is not reopened. R64 nevertheless retains a noncanonical question-formation seed asking whether a **fresh future SYSTEM successor** could close the raw->digest/provenance boundary. It explicitly gives the proposed successor a SYSTEM ceiling, keeps PRE_FORMAL eligibility false, and requires later fresh Analyst admission. This is useful evidence that `TERMINAL_FOR_CURRENT_OBJECT` is not being treated as automatic topic death while same-object rescue laundering remains blocked. A genuine fresh SYSTEM -> MECHANISM successor admission is still unobserved.
+
+The previous `NO_COHERENT_MECHANISM_TARGET` episode remains closed at canonical liveness count 23 for the active H7 revision and is not evidence that mechanisms do not exist.
+
+## Funnel / risks
+
+Canonical population remains **32 = MECHANISM 13 / SYSTEM 19**, classification completeness **32/32**. Lifecycle is `ACTIVE=1 / TERMINAL_FOR_CURRENT_OBJECT=31`. Architecture active/queued is now `0/0`; PRE_FORMAL has `eligible=1`, `READY=1`, and one prospectively allocated active MECHANISM. Fresh FORMAL authority remains `0`. Development phases remain `OPEN_DEVELOPMENT=2 / RESULT_EXPOSED_DEVELOPMENT=30 / canonical CONSUMED_ONE_WAY=0`, with seven official consumed scientific identities tracked separately and immutable.
+
+Mechanism supply health improves to **`RECOVERING_BUT_THIN_SINGLE_READY_MECHANISM_WITH_QUALITY_FLOOR_INTACT`**. False-positive risk remains **`LOW_TO_MODERATE_WATCH`**. False-negative/opportunity-cost risk is **`MODERATE_WATCH_IMPROVING`**. Moving-goalpost/rescue risk is **`LOW_TO_MODERATE_WATCH`**. Over-terminalization risk is **`MODERATE_WATCH_IMPROVING`**.
+
+## PASS reachability
+
+PASS is realistically reachable without weakening evidence standards. This run gives the first live evidence that an object can move through versioned development into READY/PRE_FORMAL without already having won its scientific test. PF-R1 remains nonconfirmatory development. Clean confirmation still requires a fresh `CONSUMED_ONE_WAY` FORMAL identity with a prospective frozen protocol, raw-before-score, preserve-before-read, exact source/protocol/package/runtime/input binding, immutable evidence, and a valid protected/adaptive-evaluation regime.
+
+## Prospective recommendations
+
+At the first completed PF-R1 result, persist exact development-result refs, revision/contract/runtime/input binding, exposure state and `NONCONFIRMATORY` status before any redesign. If a science-affecting change is then proposed, preserve the prior raw/result/contract and version or create a fresh successor **before** any new run; do not reset the same lineage from `RESULT_EXPOSED_DEVELOPMENT` to `OPEN_DEVELOPMENT`. Keep PRE_FORMAL run count separate from confirmatory-evidence count, which remains zero until a fresh one-way FORMAL identity. Continue allowing terminal SYSTEM topics to generate fresh successor questions, but require a new candidate ID and fresh reduction/comparator/falsifier contract.
+
+No Utility request was created; the live H7 PF-R1 rollout is the higher-information calibration path. Hard floor remains **`CONFIRMED / DO NOT RELAX`**.
+
+Questions for Control/Analyst to resolve through future observable state: whether the first completed PF-R1 result is durably linked before any redesign; whether repeated PRE_FORMAL attempts remain one nonconfirmatory lineage; and whether any future successor from a terminal SYSTEM family receives a new candidate ID and fresh scientific contract.
+
+Confidence is **`HIGH`** for development calibration through READY/PRE_FORMAL allocation and **`MEDIUM_LOW`** for completed iterative PRE_FORMAL/post-result revision behavior because those cases have not yet occurred.
