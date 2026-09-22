@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-22T19:23:20+09:00",
+  "timestamp": "2026-09-22T20:18:43+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260922T192320+0900-R64-5E7A2C91",
-    "sequence": 64,
+    "generation_id": "METHCAL-20260922T201843+0900-R65-4B9E71C2",
+    "sequence": 65,
     "material_change": true,
-    "material_change_reason": "H7_DESIGNATED_CYCLE7_REF_RECONCILED_TO_ALREADY_REVIEWED_GREEN_67ED8FAD_WITHOUT_FORMAL_CONSUMPTION_WHILE_CANONICAL_IDENTITY_CANDIDATE_REMAINS_NULL_AND_CAND33_ACTIVE_OPEN_DEVELOPMENT_FAILS_LINT_BEFORE_RESULT",
-    "supersedes_generation_id": "METHCAL-20260922T182145+0900-R63-7C31F2A8",
+    "material_change_reason": "CAND33_LINT_ONLY_REPAIR_SUCCEEDED_AND_FIXED_SYSTEM_ARCHITECTURE_TESTS_NOW_EXECUTE_AND_FAIL_ON_BOTH_PYTHON_VERSIONS_CREATING_A_MEANINGFUL_DEVELOPMENT_CONFORMANCE_RESULT_NEWER_THAN_CANONICAL_OPEN_DEVELOPMENT_STATE",
+    "supersedes_generation_id": "METHCAL-20260922T192320+0900-R64-5E7A2C91",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260922T182145+0900-R63-7C31F2A8",
+      "generation_id": "METHCAL-20260922T192320+0900-R64-5E7A2C91",
       "branch": "ops/methodology-calibration-audit",
-      "commit": "865a88f29f53682a4463e111203ba1c54315677a"
+      "commit": "db412bfe2e58ad44b8ea4d40c90701be6f556e64"
     },
     "human_directive": {
       "id": "HUMAN-20260922-005",
@@ -31,9 +31,9 @@
       "role": "CURRENT_CANONICAL_FUNNEL_AND_ALLOCATION_AUTHORITY"
     },
     "main_after_analyst": {
-      "generation_id": "MAIN-20260922T191700+0900-PRIMARY-H7-FORMALR1-C7-RECOVERY-8F3C21A6",
+      "generation_id": "MAIN-20260922T201714+0900-PRIMARY-H7-FORMALR1-C7-RECOVERY-8F3C21A6",
       "branch": "ops/orchestrator-run-report",
-      "commit": "ce47519f7aef24f0483c3c6fc65ea0d8c00b78df",
+      "commit": "2faa441f27bb1eff60b9a7adcb81bf9c995499e1",
       "role": "NONSCIENTIFIC_EXECUTION_REPORT_NOT_SCIENTIFIC_SOURCE_OF_TRUTH"
     },
     "utility_request": {
@@ -45,42 +45,39 @@
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_tags": {
-      "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
-    },
+    "evidence_tag_count": 5,
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
     "h7_cycle7": {
       "branch": "research/main-h7-formal-r1-preidentity-closure-r70-cycle7",
-      "analyst_r72_recorded_head": "ca35c51a7d366a37f7d11d0434d05420274969aa",
       "branch_tip_observed_independently": "67ed8fad1d861463e4129d44efbb2540affd1889",
       "reviewed_exact_head": "67ed8fad1d861463e4129d44efbb2540affd1889",
-      "green_ci_run": 35708600721,
-      "green_ci_conclusion": "success",
-      "repository_ref_reconciliation_observed": true,
       "identity_candidate_sha": null,
       "fresh_formal_authority": 0
     },
     "candidate33": {
       "branch": "research/exploratory-sub-cand33-auditable-raw-r71-cycle2",
-      "head": "a0681c71187bab2f0928c402bbdf62d47ac21d67",
+      "head": "71af7a36862eeb2b5d08c2a8f37462ed21acc972",
       "claim_ceiling": "SYSTEM",
-      "development_phase": "OPEN_DEVELOPMENT",
+      "canonical_development_phase_from_r72": "OPEN_DEVELOPMENT",
       "layer": "ARCHITECTURE_STUDY",
-      "ci_run": 35713248880,
+      "repair_commit_classification": "SCIENCE_INVARIANT_LINT_FORMAT_ONLY",
+      "ci_run": 35715729340,
       "ci_conclusion": "failure",
-      "result_exposed": false
+      "lint": "PASS_BOTH_PYTHON_3_11_AND_3_13",
+      "local_readiness": "PASS_BOTH_PYTHON_3_11_AND_3_13",
+      "tests": "FAIL_BOTH_PYTHON_3_11_AND_3_13",
+      "validate_bundle": "SKIPPED",
+      "meaningful_synthetic_conformance_result_exposed": true,
+      "exact_failure_semantics": "UNKNOWN_FROM_STRUCTURED_JOB_METADATA",
+      "post_failure_commit_observed": false
     },
     "h7_pf_r1": {
       "artifact_id": 10680620448,
       "durable_bytes_confirmed": false
     },
-    "scientific_source_of_truth": "stable main plus independently fetched annotated evidence refs and exact research/workflow artifacts; ops branches are mailboxes/history/authority records, not scientific repository snapshots"
+    "scientific_source_of_truth": "stable main plus independently fetched annotated evidence refs and exact research/workflow artifacts; ops branches are mailbox/history/authority records, not scientific repository snapshots"
   },
   "audit_result": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
@@ -89,14 +86,15 @@
     "development_phase_axis_observed_active_paths": "KEEP",
     "development_phase_axis_full_end_to_end_through_fresh_consumed_formal": "INSUFFICIENT_EVIDENCE",
     "result_exposed_same_object_science_invariant_repair": "KEEP",
-    "exact_source_ref_reconciliation_without_scientific_change": "KEEP",
-    "preidentity_lint_import_path_hash_plumbing_repair": "KEEP",
+    "candidate33_lint_only_repair_before_tests": "KEEP",
+    "development_phase_transition_after_science_facing_synthetic_conformance_result": "TIGHTEN",
+    "candidate33_next_repair_classification_after_test_failure": "CLARIFY",
     "post_result_science_affecting_change_requires_explicit_version_or_fresh_successor": "KEEP",
     "development_rerun_retune_nonindependent_evidence_accounting_live_repeated_case": "INSUFFICIENT_EVIDENCE",
     "result_exposed_prior_result_semantic_lineage_preservation": "KEEP",
     "durable_result_exposed_development_raw_result_preservation": "TIGHTEN",
     "preidentity_mutable_branch_tip_vs_reviewed_exact_head_observability": "TIGHTEN",
-    "formal_identity_creation_requires_one_freshly_reconciled_reviewed_exact_sha": "TIGHTEN",
+    "formal_identity_creation_requires_one_freshly_reviewed_exact_sha": "TIGHTEN",
     "authoritative_repository_ref_refresh_over_stale_ops_mailbox_snapshot": "KEEP",
     "cycle3_as_automatic_terminal_cap": "RELAX",
     "cycle3_mandatory_reassessment_with_prospective_information_gain": "KEEP",
@@ -118,7 +116,6 @@
     "theory_backward_quality_floor": "KEEP",
     "no_coherent_mechanism_target_liveness_semantics": "KEEP",
     "system_work_architecture_testbed_reproducibility_value_under_mechanism_priority": "KEEP",
-    "candidate33_open_development_lint_failure_before_result_exposure": "KEEP",
     "preformal_raw_before_score_execution_order": "KEEP",
     "future_formal_exact_source_protocol_package_runtime_input_evaluator_binding": "TIGHTEN",
     "preserve_before_read_and_durable_immutable_formal_evidence_path": "TIGHTEN",
@@ -126,37 +123,37 @@
     "protected_adaptive_evaluation_validity_and_exposure_observability": "TIGHTEN"
   },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_TO_MODERATE_WATCH_IMPROVING: the live H7 ref mismatch is closed at repository level, but identity_candidate_sha is still null and PF-R1 byte durability remains open.",
-    "false_negative": "MODERATE_WATCH_IMPROVING: candidate 33 is active SYSTEM Architecture, but viable MECHANISM supply remains essentially one H7 lineage.",
-    "opportunity_cost": "MODERATE: terminal-topic suppression is reduced, but there is no standby MECHANISM lineage.",
-    "moving_goalpost_rescue_risk": "LOW_TO_MODERATE_WATCH: observed changes are pre-result/preidentity science-invariant work; future result-responsive science-affecting revision remains the main stress point."
+    "false_positive": "LOW_TO_MODERATE_WATCH: candidate33 now has a science-facing synthetic conformance failure; silently keeping it OPEN while changing contract semantics would create result-responsive rescue risk.",
+    "false_negative": "MODERATE_WATCH_IMPROVING: candidate33 is active SYSTEM Architecture but viable MECHANISM supply remains essentially one H7 lineage.",
+    "opportunity_cost": "MODERATE: terminal-topic suppression is reduced but there is no standby MECHANISM lineage.",
+    "moving_goalpost_rescue_risk": "LOW_TO_MODERATE_WATCH_LOCALIZED_CAND33: no post-failure repair exists yet; the next change must be classified from the exact failure before modification."
   },
   "development_iteration_calibration": {
-    "directive_disposition": "ACCEPTED_AND_LIVE_WITH_SCIENCE_INVARIANT_REF_RECONCILIATION_AND_ACTIVE_OPEN_SYSTEM_ARCHITECTURE",
+    "directive_disposition": "ACCEPTED_AND_LIVE",
     "axis": ["OPEN_DEVELOPMENT", "RESULT_EXPOSED_DEVELOPMENT", "CONSUMED_ONE_WAY"],
     "h7_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "h7_ref_reconciliation": "SCIENCE_INVARIANT_REPAIR_CONFIRMED_AT_REPOSITORY_REF_LEVEL",
     "h7_identity_or_result_execution_authorized": false,
-    "candidate33_phase": "OPEN_DEVELOPMENT",
-    "candidate33_lint_failure_result_exposure": false,
+    "candidate33_canonical_phase": "OPEN_DEVELOPMENT_R72_STALE_RELATIVE_TO_NEW_CI",
+    "candidate33_repository_level_result_exposure": "MEANINGFUL_SYNTHETIC_SYSTEM_ARCHITECTURE_CONFORMANCE_FAILURE",
+    "candidate33_recommended_phase_on_fresh_authority": "RESULT_EXPOSED_DEVELOPMENT_UNLESS_EXACT_FAILURE_PROVEN_PURE_NONSEMANTIC_HARNESS_PLUMBING",
+    "candidate33_next_repair": "UNCLASSIFIED_PENDING_EXACT_FAILURE; SAME_OBJECT_ONLY_IF_ALREADY_FIXED_SEMANTICS_IMPLEMENTATION_CORRECTION; VERSION_OR_FRESH_SUCCESSOR_IF_CONTRACT_SEMANTICS_CHANGE",
     "repeated_result_bearing_development_case": "INSUFFICIENT_EVIDENCE",
     "pf_r1_evidence_accounting": "one completed PRE_FORMAL development observation; confirmatory evidence count remains zero",
     "pf_r1_byte_durability": "TIGHTEN_PENDING_EXISTING_UTILITY_OR_EQUIVALENT_RESOLUTION"
   },
-  "moving_goalposts": "LOW_TO_MODERATE_WATCH",
+  "moving_goalposts": "LOW_TO_MODERATE_WATCH_LOCALIZED_CAND33",
   "over_terminalization_risk": "LOW_TO_MODERATE_WATCH_IMPROVING",
-  "pass_reachability": "REALISTIC_CONDITIONAL: source-ref placement is reconciled to reviewed green SHA, but clean PASS still requires durable PF-R1 provenance, canonical identity-candidate fixation, fresh CONSUMED_ONE_WAY authority, untouched surface, exact bindings, raw-before-score, preserve-before-read, immutable evidence, dependence-aware inference and protected/adaptive validity",
+  "pass_reachability": "REALISTIC_CONDITIONAL: development iteration remains permitted without lowering confirmatory standards; clean PASS still requires durable PF-R1 provenance, canonical H7 identity-candidate fixation, fresh CONSUMED_ONE_WAY authority, untouched surface, exact bindings, raw-before-score, preserve-before-read, immutable evidence, dependence-aware inference and protected/adaptive validity",
   "claim_type_findings": {
     "claim_ceiling_current_object_only": true,
     "same_object_system_to_mechanism_upgrade_observed": false,
     "fresh_system_successor_observed": true,
     "fresh_system_to_mechanism_successor_observed": false,
     "candidate32_status": "SYSTEM_TERMINAL_FOR_CURRENT_OBJECT_NOT_REOPENED",
-    "candidate33_status": "ARCHITECTURE_STUDY_SYSTEM_OPEN_DEVELOPMENT_ACTIVE",
+    "candidate33_status": "SYSTEM_ARCHITECTURE_ACTIVE_WITH_SYNTHETIC_CONFORMANCE_TEST_FAILURE_AFTER_LINT_REPAIR",
     "candidate33_claim_scope": "AUDITABILITY_AND_PROVENANCE_ONLY_NO_MECHANISM_OR_SEMANTIC_EQUIVALENCE_CLAIM",
     "candidate33_rescue_laundering_detected": false,
     "h7_status": "MECHANISM_RESULT_EXPOSED_ACTIVE_FORMAL_PREIDENTITY",
-    "h7_current_object_supports_path_specific_mediation_or_unique_route_claim": false,
     "formal_identity_consumed": false
   },
   "mechanism_supply_health": "ONE_ACTIVE_MECHANISM_FORMALIZATION_LINEAGE_PLUS_ONE_ACTIVE_SYSTEM_ARCHITECTURE_SUCCESSOR_QUALITY_FLOOR_INTACT_BUT_MECHANISM_SUPPLY_REMAINS_THIN",
@@ -168,14 +165,13 @@
     "system": 20,
     "terminal_states": {"ACTIVE": 2, "NONTERMINAL_HOLD": 0, "TERMINAL_FOR_CURRENT_OBJECT": 31},
     "architecture_active": {"MECHANISM": 0, "SYSTEM": 1},
-    "architecture_queued": {"MECHANISM": 0, "SYSTEM": 0},
     "preformal": {"eligible": 1, "ready": 1, "active_result_bearing": 0, "completed_result_bearing_observations": 1},
     "formal": {"fresh_one_way_authority": 0, "identity_or_result_execution_authorized": 0},
-    "development_phase_counts": {"OPEN_DEVELOPMENT": 3, "RESULT_EXPOSED_DEVELOPMENT": 30, "CONSUMED_ONE_WAY_CANONICAL": 0},
+    "development_phase_counts_canonical_r72": {"OPEN_DEVELOPMENT": 3, "RESULT_EXPOSED_DEVELOPMENT": 30, "CONSUMED_ONE_WAY_CANONICAL": 0},
+    "candidate33_phase_state_lag_detected": true,
     "separate_consumed_scientific_identities": 7,
     "system_priority_exceptions": 0,
-    "policy_conclusions_require_complete_classification": true,
-    "exact_head_observability_status": "LIVE_CYCLE7_REF_RECONCILED_TO_REVIEWED_67ED8FAD_AFTER_R72_MAILBOX; CANONICAL_IDENTITY_CANDIDATE_STILL_NULL"
+    "policy_conclusions_require_complete_classification": true
   },
   "preformal_calibration": {
     "preformal_is_development_only": true,
@@ -200,11 +196,11 @@
     "evidentiary": false
   },
   "prospective_recommendations": [
-    "Fresh Control/Analyst should acknowledge that the designated H7 cycle-7 ref now equals reviewed/green 67ed8fad, then separately record branch_tip_observed_sha, reviewed_exact_head_sha, review/CI status and identity_candidate_sha before one-way consumption.",
-    "Do not infer FORMAL identity readiness merely from ref equality; close PF-R1 byte durability and the remaining runner/scorer/preserver/runtime/package/input/seed/no-clobber/protected-evaluation gates first.",
-    "Execute the already-approved bounded PF-R1 raw/summary byte-preservation request; do not rerun PF-R1 to reconstruct bytes.",
-    "Keep candidate 33 SYSTEM-ceiling through Architecture and allow only science-invariant lint/build repair on the current revision; preserve the first future synthetic result before science-affecting redesign.",
-    "Do not count QFD cycles, PRE_FORMAL repetitions, preflight plumbing or provenance-tooling success as independent confirmatory evidence, and do not auto-admit remaining successor potentials."
+    "Fresh Control/Analyst should durably acknowledge candidate33 CI run 35715729340 and decide the development-phase transition before any further science-facing repair; default to RESULT_EXPOSED_DEVELOPMENT unless exact failure is proven pure non-semantic harness plumbing.",
+    "Preserve the candidate33 failed run/provenance before science-affecting redesign. Classify the exact failure first: implementation correction to already-fixed semantics may remain same-object SCIENCE_INVARIANT_REPAIR; contract-semantic change must version or create a fresh successor.",
+    "Keep candidate33 at SYSTEM ceiling and do not count its synthetic test failure or later development reruns as independent confirmatory evidence.",
+    "Keep H7 identity_candidate_sha null until fresh authority fixes one reviewed exact SHA and PF-R1 byte durability plus all binding/preserve/protected-evaluation gates close.",
+    "Execute the existing bounded PF-R1 preservation request rather than rerunning PF-R1."
   ],
   "utility_request": {
     "created_by_methodology_auditor": false,
@@ -215,16 +211,15 @@
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": {
     "overall": "HIGH",
-    "h7_repository_ref_reconciliation": "HIGH",
-    "h7_green_exact_head_ci": "HIGH",
-    "candidate33_no_result_exposure": "HIGH",
-    "fresh_system_to_mechanism_successor": "LOW_UNOBSERVED",
-    "fresh_consumed_formal_end_to_end": "LOW_UNOBSERVED"
+    "candidate33_has_meaningful_synthetic_conformance_failure": "HIGH",
+    "candidate33_exact_failure_is_science_invariant_vs_science_affecting": "MEDIUM_UNRESOLVED",
+    "fresh_system_to_mechanism_successor": "UNOBSERVED",
+    "fresh_consumed_formal_end_to_end": "UNOBSERVED"
   },
   "questions_for_control_analyst": [
-    "Will the next canonical generation acknowledge that the designated H7 cycle-7 branch now points to reviewed/green 67ed8fad and record observed, reviewed and identity-candidate SHAs separately before identity?",
-    "Will PF-R1 raw/summary bytes be durably preserved before any one-way consumption rather than relying on an expiring Actions artifact?",
-    "Will candidate 33 lint repair remain science-invariant and preserve SYSTEM-only auditability/provenance semantics?",
-    "Will the first future SYSTEM-to-MECHANISM successor use a fresh ID, independently stated mechanistic residual and fresh comparator/reduction/falsifier contract before result exposure?"
+    "Will candidate33 transition from OPEN_DEVELOPMENT once CI 35715729340 is canonically acknowledged?",
+    "Will the exact candidate33 test failure be durably preserved and classified before repair?",
+    "Will any candidate33 contract-semantic repair be versioned rather than silently patched on the exposed revision?",
+    "Will H7 remain identity-blocked until PF-R1 durable bytes and exact identity-candidate binding are closed?"
   ]
 }
