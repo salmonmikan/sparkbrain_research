@@ -11,12 +11,12 @@
     "sub": "SUB-20260923T003400+0900-NOOP-SCAN-R81-4885D9DE@5d72f40c1f24c996f2f878cab71956f1d0a17d84"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "BLOCKED",
   "started_at": "2026-09-23T01:21:21+09:00",
-  "heartbeat_at": "2026-09-23T01:21:21+09:00",
+  "heartbeat_at": "2026-09-23T01:22:31+09:00",
   "completed_at": null,
-  "blocked_at": null,
-  "blocked_until": null,
+  "blocked_at": "2026-09-23T01:22:31+09:00",
+  "blocked_until": "FRESH_EVIDENCE_ANALYST_DECISION_AFTER_R4_ONE_SHOT_LOCK_ARTIFACT_UNAVAILABLE",
   "analyst_generation_id": "EVA-20260923T011030+0900-R82-7C4E19B2",
   "analyst_commit": "000895a72f6cf54eeb3489a42f63f42b70281223",
   "analyst_decision": "GO_H7_FORMAL_R4_EXACT_LOCK_ARTIFACT_DURABLE_CAPTURE_LINT_INVARIANT_CLOSURE_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY_STOP_BEFORE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
@@ -27,9 +27,9 @@
   "candidate_ordinal": 7,
   "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
   "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
-  "repair_change_classification": "EXACT_LOCK_ARTIFACT_DURABLE_CAPTURE=SCIENCE_INVARIANT_BINDING_CLOSURE; VERIFIED_LINT_ONLY_REPAIR=SCIENCE_INVARIANT_REPAIR; SCIENCE_AFFECTING_CHANGE_FORBIDDEN",
+  "repair_change_classification": "ARTIFACT_RECOVERY=SCIENCE_INVARIANT_BINDING_CLOSURE_ATTEMPT; NO_REPAIR_APPLIED; NO_SCIENCE_AFFECTING_CHANGE",
   "cycle_count": 10,
-  "reassessment_rationale": "R82 records concrete information gain: recover and durably bind the already-created one-shot exact lock bytes without rematerialization, diagnose the exact generic-CI lint failure, permit only invariant repair, and close non-result-bearing preidentity validation.",
+  "reassessment_rationale": "R82 authorized recovery/durable binding of the already-created one-shot lock artifact without rematerialization. Artifact download returned 404 and run artifact listing is empty, triggering the prospectively specified STOP condition.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {"status": "READY", "semantics": "development readiness only; not FORMAL one-way authority or scientific success"},
@@ -51,6 +51,6 @@
   "result_bearing_workflow_dispatched": false,
   "official_scoring_performed": false,
   "scientific_preserve_or_evidence_ref_created": false,
-  "stop_reason": null,
-  "next_action": "Recover artifact 10697560883 from successful one-shot run 35748064227, verify exact bytes against R4 contract, commit those bytes unchanged without rematerialization; inspect exact lint diagnostics; apply only science-invariant lint repair if required; rerun non-result-bearing preidentity validation only; STOP before all one-way/result-bearing actions."
+  "stop_reason": "R82_EXISTING_ONE_SHOT_R4_LOCK_ARTIFACT_UNAVAILABLE_DOWNLOAD_404_AND_RUN_ARTIFACT_LIST_EMPTY; NO_REMATERIALIZATION_OR_RESOLVER_RETRY_ALLOWED",
+  "next_action": "Fresh Evidence Analyst review. Do not rematerialize/retry or reconstruct exact lock bytes under R82. All one-way/result-bearing actions remain STOP."
 }
