@@ -1,92 +1,86 @@
-# External Literature Reduction Scout — realization invariance / runtime reproducibility bar
+# External Literature Reduction Scout — interventional equivalence / route-graph identifiability
 
 - schema_version: `2`
-- generation_id: `LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91`
-- produced_at: `2026-09-23T03:31:00+09:00`
-- producer_run_id: `external-literature-auto-LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91`
+- generation_id: `LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7`
+- produced_at: `2026-09-23T06:34:34+09:00`
+- producer_run_id: `external-literature-auto-LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LIT-20260923T003758+0900-R32-PREDICTIVE-QUOTIENT-6A4E21C9`
+- supersedes_generation_id: `LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91`
 - role: `LITERATURE_REDUCTION_SCOUT`
-- schedule_slot: `03:30 JST`
+- schedule_slot: `06:30 JST`
 - schedule_inference: `false`
 - genuinely_new_information: `true`
 
 ## Inputs / authoritative state
 
-Repository science and control-plane mailboxes were re-fetched independently. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Authoritative annotated `evidence/*` remains exactly five tags; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. Control R37 remains the designated Control generation. Evidence Analyst R84 remains the newest designated Analyst generation and authorizes H7 R4 preidentity recovery/validation only, with no FORMAL identity, STARTED, evaluation commitment, evaluation-seed reveal, protected evaluation, result-bearing execution, official score, or scientific evidence.
+Repository science and control-plane mailboxes were re-fetched independently. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative annotated `evidence/*` set remains five tags; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. The active H7 Cycle-11 source/executor branch is `research/main-h7-formal-r4-source-executor-r85-cycle11@02382fbc7d3838159598015e488c6ce49ac34efc`.
 
-Fresh control-plane generations consumed:
+Fresh inputs consumed:
+- Control Brain: `CTRL-20260923T055000+0900-R39-C31A7D52` @ `c93f870e47bdb5b1613475e079c0a6dee2aa1753`.
+- Evidence Analyst: `EVA-20260923T061000+0900-R87-7B3D91E4` @ `f03769227e888a70ea674eb627d4d311a1229c95`.
+- MAIN: `MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4` @ `79d5109389f89d781d47e6e541cd87228859c872` (state-path commit; mailbox tip observed `5b116229ae1f91c4d69f2866825797c0a2e59b77`).
+- SUB: `SUB-20260923T053741+0900-NOOP-SCAN-R86-62D4A1B7` @ `f71ad78d3bc486816741d345976506db74d50223`.
+- Prior Literature: `LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91` @ `c25dce890612dcc9b5614f987f4cdeb85e1f5652`.
 
-- Control Brain: `CTRL-20260922T235000+0900-R37-7A3E9C51` @ `23676a55c9473d1cfd22d982ffffd5d2ba18b557`.
-- Evidence Analyst: `EVA-20260923T025733+0900-R84-5E7A2C91` @ `81f46202b5337e8011d891dc197a1ec83fe1f259`.
-- MAIN designated report: `MAIN-20260923T012121+0900-PRIMARY-H7-FORMALR4-C10-R82-RECOVERY-7C4E19B2` @ `5272b1c7c8a257b086caaaea38f068ce759c1a62`.
-- MAIN in-flight lease/history: `MAIN-20260923T032019+0900-PRIMARY-H7-FORMALR4-C10-R84-RECONCILED-5E7A2C91` @ mailbox commit `8d9685d8b7bb9133e0bb7329d5e1b88451301716`.
-- SUB designated report: `SUB-20260923T023426+0900-NOOP-SCAN-R83-A6D4E219` @ `fec20ea9484600053e8558732379519f514c14a7`.
-- Prior Literature: `LIT-20260923T003758+0900-R32-PREDICTIVE-QUOTIENT-6A4E21C9` @ `e6ad3e6b7e02bf5667b18daa123799bb643754e8`.
+H7 remains NON_EVIDENTIARY and preidentity. MAIN is currently BLOCKED on a frozen runtime-binding mismatch: the committed torch distribution RECORD hash observed in the clean exact-lock runtime does not match the frozen expected hash, so R87 requires fresh versioned reassessment and forbids silent normalization/rebinding. No evaluation commitment, FORMAL identity, STARTED ref, seed reveal, protected evaluation, result-bearing workflow, official score, scientific preserve, or evidence object exists.
 
-The direct H7 R4 branch moved after R84's snapshot. MAIN durably captured the already-created authoritative runtime lock/manifest bytes, applied formatting-only lint repair, and added a non-result-bearing preidentity workflow. Current exact head is `research/main-h7-formal-r4-runtime-lock-r81-cycle10@f84ba35e17c24fcdcfa6920ef23972d4a81567a5`. At that head, non-result preidentity workflow `35768073646` completed successfully and generic CI `35768073346` completed successfully; the old one-shot materializer workflow fails at its exact-authority assertion on the later head, so it does not rematerialize a second lock. These are repository/control-plane facts only. They have not yet been canonically dispositioned by a fresh Evidence Analyst generation, and they do not constitute H7 scientific evidence.
-
-R32 already covered predictive-state/bisimulation reduction, abstraction invariance, and lag preservation. This run does not recycle those findings. It asks two narrower questions: whether native internal route/state identity is itself an invariant scientific object, and what a package/runtime lock does and does not establish for a future one-way causal result.
+R33 already covered state-coordinate realization equivalence and runtime reproducibility. This run asks a different question: **even if an intervention has a genuine causal effect, does the finite intervention family identify a unique causal route graph/topology?**
 
 ## High-value new findings
 
-### 1. Minimal dynamical realizations have coordinate freedom; internal state identity is not generally an observable invariant
+### 1. Interventional data generally identifies an interventional equivalence class, not automatically a unique causal graph
 
-**External literature fact.** Classical realization theory shows that minimal linear state-space realizations of the same input-output system are unique only up to similarity transformation. Nonlinear realization results generalize this: under standard analytic/smooth conditions, minimal realizations can be equivalent up to diffeomorphism. RNN-specific identifiability work likewise finds classes of observationally equivalent minimal recurrent networks with the same input-output behavior.
-
-Sources:
-- De Schutter, *Minimal state-space realization in linear system theory: an overview*, Journal of Computational and Applied Mathematics (2000), https://doi.org/10.1016/S0377-0427(00)00341-1
-- Jakubczyk, *Existence and Uniqueness of Realizations of Nonlinear Systems*, SIAM Journal on Control and Optimization, https://doi.org/10.1137/0318034
-- Al-Falou & Trummer, *Identifiability of Recurrent Neural Networks*, Econometric Theory (2003), https://doi.org/10.1017/S0266466603193058
-
-**Repository relevance.** H7's current claim is stronger than passive input-output observation because it intervenes on native internal variables using a frozen dynamic TOP1 cut policy. That can break some observational equivalences, but only relative to the chosen intervention map.
-
-**Inference.** Future claims should distinguish `a causally effective native intervention coordinate` from `a uniquely identified internal route/state`. A broad route-identity claim should be invariant to admissible reparameterizations or explicitly scoped to an equivalence class of realizations. This is a fresh reduction/identifiability bar beyond R32's state compression question.
-
-### 2. Exact dependency/package binding does not by itself imply numerically deterministic execution
-
-**External literature fact.** Parallel floating-point reductions can be nondeterministic because floating-point addition is non-associative and execution order can vary. Recent work shows this matters in modern HPC/deep-learning workflows even when nominal inputs and software are fixed. Work on time-evolving/recurrent neural surrogates shows small nondeterministic numerical differences can be amplified by recurrent rollout.
+**External literature fact.** Hauser & Bühlmann formalized interventional Markov equivalence: a fixed family of intervention experiments refines observational Markov equivalence, but in general the result is still an equivalence class represented by an interventional essential graph rather than a unique DAG.
 
 Sources:
-- Iakymchuk et al., *Numerical reproducibility for the parallel reduction on multi- and many-core architectures*, Parallel Computing (2015), https://doi.org/10.1016/j.parco.2015.09.001
-- *Impacts of floating-point non-associativity on reproducibility for HPC and deep learning applications*, SC24-W / IEEE (2024), https://doi.org/10.1109/SCW63240.2024.00028
-- Pinto, Alguacil & Bauerheim, *On the reproducibility of fully convolutional neural networks for modeling time–space-evolving physical systems*, Data-Centric Engineering (2022), https://doi.org/10.1017/dce.2022.13
+- Hauser & Bühlmann, *Characterization and Greedy Learning of Interventional Markov Equivalence Classes of Directed Acyclic Graphs*, JMLR 13 (2012): https://www.jmlr.org/papers/v13/hauser12a.html
+- Hauser & Bühlmann, *Jointly interventional and observational data: estimation of interventional Markov equivalence classes of directed acyclic graphs*, JRSS-B (2015): https://arxiv.org/abs/1303.3216
 
-**Repository relevance.** R4 now binds exact package versions/wheel hashes and host metadata, and its preidentity workflow sets `PYTHONHASHSEED=0`, `OMP_NUM_THREADS=1`, and `MKL_NUM_THREADS=1`. Those are sensible deterministic mitigations. No current repository evidence demonstrates that H7's protected path actually uses a nondeterministic parallel kernel, so this is not a finding of present contamination.
+**Repository relevance / inference.** A future H7 result showing a nonzero effect of the frozen dynamic TOP1 cut policy can establish that the policy matters under the tested distribution. It does **not** by itself identify a unique internal causal graph, route topology, or edge orientation. A broad route-structure claim should therefore be scoped to the interventional equivalence class induced by the actually frozen intervention family unless additional interventions separate the remaining alternatives.
 
-**Inference.** `software-environment reproducibility` and `numerical execution determinism` should remain separate properties. A future FORMAL interpretation should not infer the latter solely from an exact package lock. If the existing R4 execution path is already deterministic by construction, that can be documented as an invariant; if changing scientific numerical semantics would be required, it must be prospectively versioned rather than silently retrofitted.
+### 2. Full structural identification is an intervention-design problem; sample size cannot compensate for an intervention family that fails to separate alternatives
 
-### 3. Reproducibility and independent artifact verifiability are distinct
-
-**External literature fact.** ReproZip's provenance model captures dependencies and experiment context because reproducing an experiment requires more than a package-name list. Work on complete HPC provenance explicitly combines container/software capture with hardware-interface metadata. A 2026 study of package ecosystems sharpens the distinction further: deterministic/reproducible builds alone do not make an artifact independently verifiable unless a verifier can recover the source state, build environment, dependencies, and build instructions that produced it.
+**External literature fact.** Active causal-discovery work treats intervention selection as a structural-identifiability problem. Graph separating systems are sufficient in the idealized setting because interventions must cut/separate the relevant edges; lower bounds and optimal-design results show that the *choice* of intervention targets determines which directions can be identified.
 
 Sources:
-- Rampin et al., *ReproZip: The Reproducibility Packer*, JOSS (2016), https://doi.org/10.21105/joss.00107
-- *Complete Provenance for Application Experiments with Containers and Hardware Interface Metadata*, CANOPIE-HPC 2022, https://doi.org/10.1109/CANOPIE-HPC56864.2022.00007
-- Solarin et al., *Reproducibility is Not Enough: Artifact Verifiability in Decentralized-Build Package Ecosystems* (2026), https://arxiv.org/abs/2608.18180
+- He & Geng, *Active Learning of Causal Networks with Intervention Experiments and Optimal Designs*, JMLR 9 (2008): https://jmlr.org/papers/v9/he08a.html
+- Hauser & Bühlmann, *Two Optimal Strategies for Active Learning of Causal Models from Interventional Data* (2012/2014): https://arxiv.org/abs/1205.4174
+- Elahi et al., *Adaptive Online Experimental Design for Causal Discovery*, ICML 2024: https://arxiv.org/abs/2405.11548
 
-**Repository relevance.** R4 is already moving toward the stronger notion: the committed manifest binds exact wheel hashes, host fields, source-component blobs, and one-way absence checks, rather than merely recording `pip freeze`. That is positive alignment with the literature.
+**Repository relevance / inference.** The current R4 intervention family was frozen to test a narrow causal-policy effect, not to orient every possible native route edge. That is scientifically coherent. But any future successor claiming a uniquely identified responsible topology should prospectively specify the graph features it seeks to identify and demonstrate that its intervention family forms an adequate separating/identifying design for those features. Repeating the same cut policy at more seeds cannot resolve structural ambiguity that the intervention design itself never separates.
 
-**Inference.** The role of R4 should be described as provenance/resource reproducibility closure, not mechanism evidence. For any future independently auditable FORMAL result, the verifier should be able to reconstruct the exact source/environment/execution binding from preserved metadata without trusting producer-declared summaries alone. This reinforces, rather than replaces, Independent Audit R7's raw-before-score requirement.
+### 3. General/soft/unknown-target interventions preserve additional equivalence; target semantics are part of the identifiability contract
 
-### 4. Content-addressed functional environments are a stronger reproducibility ceiling than an ad hoc lockfile
-
-**External literature fact.** Functional package-management systems such as Guix/Nix derive environments from content-addressed dependency graphs and are used specifically to make scientific software stacks reproducible across time and machines. Recent HPC case studies combine such environments with workflow provenance for end-to-end reproducibility.
+**External literature fact.** Yang, Katcoff & Uhler extend interventional equivalence to general interventions that alter mechanisms without necessarily deleting all parent dependencies. Jaber et al. show that with soft interventions and unknown targets, even observational+interventional data can identify only a `Ψ`-Markov equivalence class. A 2026 scalable contrastive method likewise targets the identifiable PDAG/equivalence class available under unknown soft interventions rather than assuming unique recovery.
 
 Sources:
-- Courtès & Wurmus, *Reproducible and User-Controlled Software Environments in HPC with Guix* (2015), https://doi.org/10.1007/978-3-319-27308-2_47
-- Kowalewski, *Sustainable packaging of quantum chemistry software with the Nix package manager* (2022), https://doi.org/10.1002/qua.26872
-- Bilke et al., *Reproducible HPC software deployments, simulations, and workflows* (2025), https://doi.org/10.1007/s12665-025-12501-z
+- Yang, Katcoff & Uhler, *Characterizing and Learning Equivalence Classes of Causal DAGs under Interventions*, ICML 2018: https://proceedings.mlr.press/v80/yang18a.html
+- Jaber et al., *Causal Discovery from Soft Interventions with Unknown Targets: Characterization and Learning*, NeurIPS 2020: https://proceedings.neurips.cc/paper/2020/hash/6cd9313ed34ef58bad3fdd504355e72c-Abstract.html
+- Zhang et al., *Scalable Contrastive Causal Discovery under Unknown Soft Interventions* (2026): https://arxiv.org/abs/2603.03411
 
-**Repository relevance / inference.** This is a stronger-privilege reproducibility ceiling for a future SYSTEM/provenance successor, not a request to rewrite H7 R4. Current R4 has already frozen its package/resource choice and is in preidentity closure. A content-addressed full-environment derivation is useful only prospectively if future evidence shows that the current lock/host binding is insufficient.
+**Repository relevance / inference.** H7's dynamic TOP1 intervention target is selected from current native state by a deterministic policy rather than being one fixed physical node across all rows. The target is not “unknown” in the current implementation, so unknown-target theory is not directly applicable; however, fixed-target perfect-intervention identifiability guarantees also cannot simply be imported. The selector, target mapping, and intervention semantics are part of the causal object. Future topology claims should freeze and expose that mapping explicitly and assess equivalence under the actual dynamic policy.
+
+### 4. Because SparkBrain is recurrent, static-DAG interventional equivalence is only a template; topology claims need a temporal/unrolled causal object
+
+**External literature fact.** Interventional causal discovery for time-series/dynamical systems is treated separately from static DAG discovery. IDYNO explicitly models time-delayed and instantaneous relations under observational/interventional time-series data, while CAnDOIT outputs a time-series PAG and notes the need to represent temporal structure and latent confounding. These methods illustrate that causal structure in a dynamic system is tied to lagged/time-indexed variables rather than a single static feedback graph.
+
+Sources:
+- Gao et al., *IDYNO: Learning Nonparametric DAGs from Interventional Dynamic Data*, ICML 2022: https://proceedings.mlr.press/v162/gao22a.html
+- Castri et al., *CAnDOIT: Causal Discovery with Observational and Interventional Data from Time Series*, Advanced Intelligent Systems (2024): https://doi.org/10.1002/aisy.202400181
+
+**Repository relevance / inference.** Any future H7 graph-identification claim should define whether the graph is a time-unrolled/lagged causal graph, a summary graph, or another explicit dynamic causal object. Applying static-DAG I-MEC language directly to recurrent feedback without this temporal semantics would overstate identifiability. For the present R4 narrow dynamic-policy effect, no graph-structure claim is required.
 
 ## Synthesis
 
-The new mechanism reduction point is that **native internal route/state labels are not automatically scientific invariants even for minimal recurrent systems**; the invariant object is an equivalence class unless intervention semantics uniquely anchor the state coordinates. The new evidence-integrity point is that **exact package provenance, numerical determinism, and independent artifact verifiability are three different properties**.
+The new reduction/identifiability bar is:
 
-None of this justifies changing the frozen H7 R4 scientific comparator panel, claim, estimand, intervention, thresholds, bootstrap/decision rule, hidden evaluation, target-blind raw gate, or scorer. R4's direct preidentity progress should be dispositioned by Evidence Analyst under existing authority before any one-way action. Literature does not authorize a new gate or a scientific redesign.
+`causal effect of a frozen intervention policy` → `features identifiable under that intervention family` → `interventional equivalence class` → `unique topology only if a prospective separating/identifying intervention design collapses the class`.
 
-No Utility request is created because MAIN currently owns R4 preidentity closure and there is no independent out-of-band diagnostic that should be injected into the frozen object.
+This is distinct from R33. R33 showed that internal coordinates can be non-unique even for the same realization; R34 shows that **even after choosing causal variables, a finite intervention family can leave multiple causal structures interventionally indistinguishable**.
+
+No current R4 rewrite follows. R4 is already scoped to a narrow dynamic-policy causal effect and its frozen scientific fields must remain untouched. The present runtime-binding block is a separate preidentity provenance/runtime matter for fresh Analyst disposition.
+
+No Utility request is created. A graph-separation prototype would be a new science choice and would contaminate the current frozen R4 object; it belongs, if ever needed, in a fresh successor after R4 disposition.
 
 ## Knowledge-flow contract
 
@@ -94,38 +88,39 @@ No Utility request is created because MAIN currently owns R4 preidentity closure
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - H7_RESPONSIBILITY_STATE_COORDINATE_IDENTIFIABILITY
-  - H7_FUTURE_REALIZATION_EQUIVALENCE_REDUCTION
-  - H7_FORMAL_R4_RUNTIME_RESOURCE_BINDING
-  - H7_FORMAL_R4_NUMERICAL_DETERMINISM
-  - H7_INDEPENDENT_ARTIFACT_VERIFIABILITY
+  - H7_FORMAL_R4_CLAIM_SCOPE
+  - H7_FUTURE_INTERVENTIONAL_EQUIVALENCE
+  - H7_CAUSAL_STRUCTURE_IDENTIFIABILITY
+  - H7_DYNAMIC_INTERVENTION_TARGET_SEMANTICS
+  - H7_TEMPORAL_CAUSAL_GRAPH_SCOPE
   - FUTURE_MECHANISM_SUCCESSOR_ADMISSION
-  - PROGRAMME_EVIDENCE_INTEGRITY
+  - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
-  REALIZATION_EQUIVALENCE_AND_RUNTIME_REPRODUCIBILITY_BAR_SHARPENED_NO_CURRENT_R4_REWRITE_OR_MECHANISM_UPLIFT.
-  Minimal recurrent/dynamical realizations can be internally non-unique even when behavior is fixed; broad route-state identity therefore needs intervention-anchored invariance or equivalence-class scope. Separately, package/resource reproducibility does not by itself prove numerical determinism or independent artifact verifiability.
+  INTERVENTIONAL_EQUIVALENCE_SHARPENS_UNIQUE_ROUTE_GRAPH_CLAIM_NO_CURRENT_R4_REWRITE_OR_MECHANISM_UPLIFT.
+  A causal effect under the frozen intervention policy does not by itself identify a unique route graph.
+  Structural claims are limited to the equivalence class induced by the actual intervention family unless a prospectively sufficient separating design resolves the remaining alternatives.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - realization-equivalence / state-reparameterization challenge before any broad unique-route claim
-  - minimal input-output realization or observationally equivalent recurrent realization as a future reduction baseline
-  - explicit separation of environment reproducibility from numerical determinism
-  - deterministic-kernel or predeclared numerical-equivalence policy only prospectively where the actual execution path requires it
-  - independent source/build/environment/hardware-interface provenance verification
-  - content-addressed functional environment derivation as a stronger-privilege SYSTEM reproducibility ceiling
+  - compute/report the interventional equivalence class induced by the frozen intervention family for any future graph-structure claim
+  - predeclare exactly which route/edge features are claimed identifiable
+  - use a fresh-successor-only separating/covering intervention design if unique topology is claimed
+  - freeze dynamic target-selector/target-map semantics as part of the intervention definition
+  - formulate recurrent claims on an explicit time-unrolled/lagged dynamic causal object
+  - if the intervention family does not identify a unique graph, report equivalence-class scope rather than unique topology
 questions_for_evidence_analyst:
-  - Keep current R4 scientific fields unchanged and treat the new f84ba35 preidentity success as repository input requiring fresh canonical disposition, not literature-based promotion?
-  - Does existing R4 resource binding already establish the intended numerical-determinism property for its actual execution path; if not, should any science-affecting change require explicit versioning rather than silent inference?
-  - For future broad H7 route claims, require intervention-anchored invariance/equivalence-class scope rather than treating native coordinate identity as uniquely identified?
+  - Keep current R4 scoped to the frozen dynamic-policy effect and do not infer unique route topology from any future PASS?
+  - For a future topology successor, require an explicit identifiability target and an intervention family shown to separate the claimed alternatives?
+  - Treat dynamic target selection and temporal graph semantics as part of the prospective causal-identification contract?
 questions_for_control_brain:
-  - Distinguish software-environment reproducibility, numerical execution determinism, and independent artifact verifiability in future FORMAL terminology?
-  - Keep realization-equivalence as a prospective future H7 reduction/falsifier rather than adding it to the frozen R4 panel?
-  - Preserve STOP before any one-way FORMAL action until fresh Analyst disposition of the current preidentity head?
+  - Add "intervention effect != unique causal graph" as a future H7 claim-ceiling guardrail?
+  - Keep interventional-equivalence/separating-design work prospective and outside the frozen R4 comparator/intervention panel?
+  - Preserve all current R4 preidentity STOP boundaries while the runtime-binding mismatch is reassessed?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence
   - H7 PF-R1 development result/raw and no-rerun/no-rescore boundary
   - stopped H7 R1/R2/R3 historical objects and classifications
   - H7 R4 claim/estimand/worlds/intervention/comparator panel/thresholds/bootstrap-decision/falsifier/concealed-evaluation/raw-gate/scorer semantics
-  - H7 R4 exact recovered runtime lock/manifest bytes and prospectively fixed package/resource choice
+  - H7 R4 exact recovered runtime lock/manifest and frozen package/resource choice
   - no FORMAL identity, STARTED, evaluation commitment/seed reveal, protected evaluation, result-bearing workflow, official scoring, scientific preserve/evidence ref, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role
 utility_request_created: null
 ```
