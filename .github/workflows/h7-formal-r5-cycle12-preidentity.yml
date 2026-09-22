@@ -1,0 +1,80 @@
+name: h7-formal-r5-cycle12-preidentity
+
+on:
+  push:
+    branches:
+      - research/main-h7-formal-r5-runtime-identity-r88-cycle12
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: "0"
+  OMP_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+
+jobs:
+  locked-nonresult-preidentity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11.16"
+          check-latest: false
+      - name: Assert R88 R5 authority and inherited R4 bytes
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          r5 = Path("artifacts/formal_h7_r5")
+          r4 = Path("artifacts/formal_h7_r4")
+          contract = json.loads((r5 / "resource_contract.json").read_text())
+          assert contract["authority_generation"] == "EVA-20260923T065834+0900-R88-D5A7C219"
+          assert contract["authorized_cycle"] == 12
+          assert contract["base_r4"]["exact_head"] == "02382fbc7d3838159598015e488c6ce49ac34efc"
+          assert contract["base_r4"]["preserve_unchanged"] is True
+          assert all(value is False for value in contract["one_way_hard_stop"].values())
+          scientific = contract["scientific_runtime_identity"]
+          expected = {
+              r4 / "scientific-runtime.lock": scientific["package_lock"]["sha256"],
+              r4 / "scientific-runtime-manifest.json": scientific["package_manifest"]["sha256"],
+              r4 / "scientific-runtime.versions": scientific["package_versions"]["sha256"],
+          }
+          for path, digest in expected.items():
+              assert hashlib.sha256(path.read_bytes()).hexdigest() == digest, path
+          print("R5_R88_AUTHORITY_AND_R4_CONTENT_IDENTITY_VALID")
+          PY
+      - name: Create clean scientific runtime from byte-identical R4 lock
+        run: |
+          python -m venv .h7-r5-scientific
+          .h7-r5-scientific/bin/python -m pip install \
+            --disable-pip-version-check \
+            --require-hashes \
+            --only-binary=:all: \
+            --no-deps \
+            -r artifacts/formal_h7_r4/scientific-runtime.lock
+      - name: Validate R5 content-addressed runtime and non-result executor
+        env:
+          PYTHONPATH: ${{ github.workspace }}/src
+        run: .h7-r5-scientific/bin/python scripts/preflight_h7_formal_r5_cycle12.py
+      - name: Assert one-way material remains absent
+        run: |
+          test ! -e artifacts/formal_h7_r4/evaluation_payload.json
+          test ! -e artifacts/formal_h7_r4/evaluation_seeds.json
+          test ! -e artifacts/formal_h7_r4/FORMAL_IDENTITY.json
+          test ! -e artifacts/formal_h7_r4/STARTED.json
+          test ! -e artifacts/formal_h7_r4/official_prediction_raw.jsonl
+          test ! -e artifacts/formal_h7_r4/official_score.json
+          test ! -e artifacts/formal_h7_r5/evaluation_payload.json
+          test ! -e artifacts/formal_h7_r5/evaluation_seeds.json
+          test ! -e artifacts/formal_h7_r5/FORMAL_IDENTITY.json
+          test ! -e artifacts/formal_h7_r5/STARTED.json
+          test ! -e artifacts/formal_h7_r5/official_prediction_raw.jsonl
+          test ! -e artifacts/formal_h7_r5/official_score.json

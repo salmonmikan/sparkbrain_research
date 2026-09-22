@@ -46,7 +46,7 @@ def test_protected_plan_rejects_world_assignment_drift() -> None:
         seed=plan[1].seed,
         opaque_target_ids=plan[1].opaque_target_ids,
     )
-    with pytest.raises(FormalIntegrityError, match="world-assignment drift"):
+    with pytest.raises(FormalIntegrityError, match="per-world count drift"):
         validate_protected_evaluation_plan(plan)
 
 

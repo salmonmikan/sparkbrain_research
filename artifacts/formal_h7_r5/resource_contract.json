@@ -1,0 +1,142 @@
+{
+  "schema_version": 2,
+  "contract_id": "H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-V1",
+  "authority_generation": "EVA-20260923T065834+0900-R88-D5A7C219",
+  "authority_commit": "3341ad00ade796d9a3b80dd61c7386fc8b3e07b7",
+  "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+  "development_revision": "H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-AND-PROVISIONING-PROVENANCE-SPLIT",
+  "authorized_cycle": 12,
+  "claim_ceiling": "MECHANISM",
+  "base_r4": {
+    "branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
+    "exact_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+    "resource_contract_path": "artifacts/formal_h7_r4/resource_contract.json",
+    "resource_contract_blob": "268f89e1c34ef85b7dd4c26286ee1da7659d95f3",
+    "executor_path": "src/sparkbrain/learned/h7_formal_r3_executor.py",
+    "executor_blob": "f323df048f5479cc80ba4c129a40b0957503180b",
+    "preserve_unchanged": true,
+    "status": "RESULT_EXPOSED_DEVELOPMENT_HISTORY_NO_REBIND"
+  },
+  "science_affecting_delta": {
+    "field": "scientific_runtime_resource_identity_and_provisioning_provenance_classification",
+    "versioned_change_authorized": true,
+    "outcome_dependence": false,
+    "installer_generated_record_is_scientific_identity": false,
+    "outer_host_image_kernel_is_scientific_identity": false,
+    "all_non_resource_scientific_fields_preserved": true
+  },
+  "preserved_unchanged": [
+    "R4 scientific-runtime.lock bytes/package versions/wheel hashes",
+    "Python version and implementation",
+    "torch distribution/module/git/CUDA semantic versions",
+    "CPU device contract",
+    "PYTHONHASHSEED/OMP_NUM_THREADS/MKL_NUM_THREADS",
+    "deterministic-algorithm requirement",
+    "claim",
+    "estimand",
+    "worlds",
+    "sample_size",
+    "steps_per_episode",
+    "split_roles",
+    "intervention",
+    "ordinary_comparator_panel",
+    "thresholds_and_margins",
+    "bootstrap_and_decision_rule",
+    "falsifier",
+    "concealed_post_binding_evaluation_identity",
+    "target_blind_prediction_raw_gate",
+    "preserve_before_target_access",
+    "post_preserve_scorer_semantics"
+  ],
+  "scientific_runtime_identity": {
+    "python_version": "3.11.16",
+    "python_implementation": "CPython",
+    "platform_machine": "x86_64",
+    "runner_arch": "X64",
+    "device_contract": "cpu",
+    "python_hash_seed": "0",
+    "omp_num_threads": "1",
+    "mkl_num_threads": "1",
+    "torch_distribution_version": "2.13.0",
+    "torch_module_version": "2.13.0+cu130",
+    "torch_git_version": "cf30153c4c131c8164ee7798e5022d810682e2cb",
+    "torch_cuda_build_version": "13.0",
+    "torch_num_threads": 1,
+    "torch_deterministic_algorithms": true,
+    "package_lock": {
+      "path": "artifacts/formal_h7_r4/scientific-runtime.lock",
+      "sha256": "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583"
+    },
+    "package_manifest": {
+      "path": "artifacts/formal_h7_r4/scientific-runtime-manifest.json",
+      "sha256": "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",
+      "package_count": 31,
+      "wheel_hashes_are_scientific_identity": true
+    },
+    "package_versions": {
+      "path": "artifacts/formal_h7_r4/scientific-runtime.versions",
+      "sha256": "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575"
+    }
+  },
+  "provisioning_provenance": {
+    "classification": "OBSERVED_TRANSPORT_AND_INSTALLATION_PROVENANCE_NOT_SCIENTIFIC_IDENTITY",
+    "fields": [
+      "runner_label",
+      "runner_image_os",
+      "runner_image_version",
+      "platform_system",
+      "platform_release",
+      "torch_distribution_record_sha256"
+    ],
+    "historical_r4_observations": {
+      "runner_label": "ubuntu-24.04",
+      "runner_image_os": "ubuntu24",
+      "runner_image_version": "20260907.300.1",
+      "platform_system": "Linux",
+      "platform_release": "6.17.0-1022-azure",
+      "torch_distribution_record_sha256": "407832ba9a2275aa30a1263f65dc9cc05fc04d74e81895e1ec8f74518eb45cf0"
+    },
+    "r4_exact_lock_observed_torch_record_sha256": "06706c58c94e177f36a7641b07c6949e349fde30bfde00cf491d992954634e8d",
+    "rule": "Observed values are recorded for provenance but are not equality gates in R5. They may not be used to shop across runners or package resolutions."
+  },
+  "reproducible_provisioning": {
+    "selected_substrate": "github-actions ubuntu-24.04 provisioning class",
+    "single_prospectively_selected_substrate": true,
+    "checkout_action_commit": "11d5960a326750d5838078e36cf38b85af677262",
+    "setup_python_action_commit": "a26af69be951a213d495a4c3e4e4022e16d87065",
+    "python_version": "3.11.16",
+    "install_policy": [
+      "pip --require-hashes",
+      "pip --only-binary=:all:",
+      "pip --no-deps",
+      "use byte-identical R4 scientific-runtime.lock"
+    ],
+    "resolver_shopping_forbidden": true,
+    "package_shopping_forbidden": true,
+    "runner_image_shopping_forbidden": true
+  },
+  "source_and_component_binding": {
+    "scientific_executor_blob": "f323df048f5479cc80ba4c129a40b0957503180b",
+    "r3_contract_runtime_module_blob": "9bde5379542ecca84157e82868abe679e0099e31",
+    "r3_raw_preserve_post_preserve_adapter_blob": "37c9c46febba1baba5580ed1aa803dcc483bef66",
+    "frozen_scientific_scorer_blob": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
+    "repository_source_must_load_from_exact_workflow_checkout": true,
+    "editable_project_install_forbidden": true,
+    "scientific_executor_change_in_r5": false
+  },
+  "authorized_science_invariant_repair": {
+    "generic_test": "tests/learned/test_h7_formal_r3_executor.py::test_protected_plan_rejects_world_assignment_drift",
+    "repair": "Align expected exception text with existing validation precedence; do not change validator or scientific validity semantics."
+  },
+  "one_way_hard_stop": {
+    "evaluation_commitment_created": false,
+    "formal_identity_created": false,
+    "started_created": false,
+    "evaluation_seed_revealed": false,
+    "protected_evaluation_accessed": false,
+    "result_bearing_workflow_dispatched": false,
+    "official_scoring_performed": false,
+    "scientific_preserve_or_evidence_ref_created": false
+  },
+  "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_VERSIONED_RUNTIME_RESOURCE_CONTRACT"
+}
