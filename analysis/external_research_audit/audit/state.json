@@ -10,32 +10,12 @@
   "schedule_slot": "10:30 JST",
   "schedule_inference": false,
   "input_generations": {
-    "control_brain": {
-      "generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219",
-      "handoff_commit": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5"
-    },
-    "evidence_analyst": {
-      "generation_id": "EVA-20260922T100852+0900-R58-7D4C21A9",
-      "handoff_commit": "13c4374c889e4326d225c62de02ca4a51e351ca1"
-    },
-    "main_report": {
-      "generation_id": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9",
-      "handoff_commit": "feee71a4b06027c8b03ec8e3f4511776289f16dd",
-      "orchestrator_branch_tip_consumed": "5debade38822a8b33748d7df009e6568be7bc784"
-    },
-    "sub_report": {
-      "generation_id": "SUB-20260922T093331+0900-NOOP-R57INTENTIONALIDLE-6C4A21E8",
-      "handoff_commit": "d111ddff66c2055e083e7b2dfd8482db90e9c6a2",
-      "orchestrator_branch_tip_consumed": "5debade38822a8b33748d7df009e6568be7bc784"
-    },
-    "literature": {
-      "generation_id": "LIT-20260922T093207+0900-R27-SPECIFICITY-IDENTIFIABILITY-8C3A21F5",
-      "handoff_commit": "237b3c1100e082624ce08d0ac2d7fcb9c7d3dd6d"
-    },
-    "prior_audit": {
-      "generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
-      "handoff_commit": "c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48"
-    }
+    "control_brain": {"generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219", "handoff_commit": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5"},
+    "evidence_analyst": {"generation_id": "EVA-20260922T100852+0900-R58-7D4C21A9", "handoff_commit": "13c4374c889e4326d225c62de02ca4a51e351ca1"},
+    "main_report": {"generation_id": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9", "handoff_commit": "feee71a4b06027c8b03ec8e3f4511776289f16dd"},
+    "sub_report": {"generation_id": "SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9", "handoff_commit": "c7443d5dd4c118cea86ed62f1681ff4f7cb943ba", "orchestrator_branch_tip_consumed": "c7443d5dd4c118cea86ed62f1681ff4f7cb943ba"},
+    "literature": {"generation_id": "LIT-20260922T093207+0900-R27-SPECIFICITY-IDENTIFIABILITY-8C3A21F5", "handoff_commit": "237b3c1100e082624ce08d0ac2d7fcb9c7d3dd6d"},
+    "prior_audit": {"generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4", "handoff_commit": "c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48"}
   },
   "phase_ordering_confirmation": {
     "repository_evidence_read_before_strategy_summaries": true,
@@ -55,25 +35,15 @@
       "control/pd01-long-history-fading-memory-started-v1-20260918@0569e348b9d93aeee53fc58daf4b71ee92303d6c",
       "raw-preserve commit 65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1 -> evidence commit fc5c8cda283360addddb7da482b14e69beaba1f7",
-      "authoritative evidence/* tags (5)",
-      "formal/* tags (0)",
-      "sealed/* tags (0)",
-      "freeze/* tags (0)",
-      "legacy freeze/* branches (13)",
-      "preserve refs inventory (24)",
-      "current research/* inventory",
-      "PD01 workflow 35301327618 attempt 1 success",
-      "prior audit stream for dedupe"
+      "authoritative evidence/* tags (5)", "formal/* tags (0)", "sealed/* tags (0)", "freeze/* tags (0)",
+      "legacy freeze/* branches (13)", "preserve refs inventory (24)", "current research/* inventory",
+      "PD01 workflow 35301327618 attempt 1 success", "prior audit stream for dedupe"
     ],
     "attack_hypotheses": [
       "authority/package/STARTED/raw/evidence mismatch or post-START protocol drift",
-      "scorer/evaluator/target leakage",
-      "semantic/global-information privilege mismatch",
-      "resource mismatch",
-      "seed dependence or bootstrap-unit fragility",
-      "insufficient long-lag support",
-      "output-only match insufficient for mechanism reduction",
-      "simpler state-machine/recurrent/fading-memory explanation",
+      "scorer/evaluator/target leakage", "semantic/global-information privilege mismatch", "resource mismatch",
+      "seed dependence or bootstrap-unit fragility", "insufficient long-lag support",
+      "output-only match insufficient for mechanism reduction", "simpler state-machine/recurrent/fading-memory explanation",
       "stale or duplicate evidence",
       "null-vs-null endpoint may falsify superiority without positively identifying a fading-memory reduction mechanism"
     ],
@@ -91,54 +61,34 @@
     "pd01_implementation_blob": "16bbfb6ed57d6c9701e8437360692b62e7c36915",
     "pd01_raw_predictions_blob": "74815c4d3c4861df94fa0994dcb34fdb145bf238",
     "pd01_raw_sha256": "5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638",
-    "workflow_run": 35301327618,
-    "workflow_run_attempt": 1,
-    "workflow_conclusion": "success",
-    "evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13,
-    "preserve_branch_count": 24
+    "workflow_run": 35301327618, "workflow_run_attempt": 1, "workflow_conclusion": "success",
+    "evidence_tag_count": 5, "formal_tag_count": 0, "sealed_tag_count": 0, "freeze_tag_count": 0,
+    "legacy_freeze_branch_count": 13, "preserve_branch_count": 24
   },
   "control_plane_commits_consumed": {
     "control_brain": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
     "evidence_analyst": "13c4374c889e4326d225c62de02ca4a51e351ca1",
     "main_report": "feee71a4b06027c8b03ec8e3f4511776289f16dd",
-    "sub_report": "d111ddff66c2055e083e7b2dfd8482db90e9c6a2",
+    "sub_report": "c7443d5dd4c118cea86ed62f1681ff4f7cb943ba",
     "literature": "237b3c1100e082624ce08d0ac2d7fcb9c7d3dd6d"
+  },
+  "post_persistence_freshness_recheck": {
+    "main": "unchanged@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "control": "unchanged@bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
+    "evidence_analyst": "unchanged@13c4374c889e4326d225c62de02ca4a51e351ca1",
+    "orchestrator_delta": "SUB advanced from R57 to SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9@c7443d5dd4c118cea86ed62f1681ff4f7cb943ba",
+    "interpretation_change": false,
+    "reason": "Fresh SUB R58 is a no-target/non-evidentiary intentional-idle generation under the same Analyst R58 authority; it reports no scientific or lifecycle delta and does not affect PD01 interpretation."
   },
   "genuinely_new_information": true,
   "genuinely_new_information_scope": "NEW_AUDIT_INTERPRETATION_ATTACK_SURFACE_NULL_VS_NULL_REDUCTION_NONIDENTIFIABILITY; NO_NEW_EXPERIMENT_OR_RESCORING",
   "findings": [
-    {
-      "type": "repository_evidence",
-      "finding": "The PD01 exact package, STARTED ref, attempt-1 workflow, target-blind raw-before-score preserve, evidence binding, and annotated evidence tag form a coherent one-way chain.",
-      "impact": "No integrity reason was found to invalidate the frozen endpoint or evidence object."
-    },
-    {
-      "type": "repository_evidence",
-      "finding": "The frozen primary report gives candidate accuracy 0.47265625 with CI [0.431640625, 0.515625], comparator accuracy 0.5, and effect -0.02734375 with CI [-0.068359375, 0.015625].",
-      "impact": "The predeclared FAIL rule is validly triggered because the effect CI upper bound is <= 0.05, while candidate long-lag recoverability itself is not demonstrated above chance."
-    },
-    {
-      "type": "inference",
-      "finding": "Both candidate and fixed reservoir fail to demonstrate positive long-lag recovery on the primary endpoint. This null-vs-null outcome falsifies the registered superiority/recoverability claim but does not positively establish that fading-memory dynamics reproduce or mechanistically reduce an observed SparkBrain long-memory phenomenon.",
-      "impact": "Canonical token remains immutable, but the narrative interpretation ceiling should be NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR."
-    },
-    {
-      "type": "control_plane_comparison",
-      "finding": "Current Control R31, Evidence Analyst R58, MAIN R58, SUB R57 and Literature R27 do not use PD01 as an active positive mechanistic-reduction claim; the programme is intentionally idle with no active scientific object and PD01 remains consumed.",
-      "impact": "No blind-target change or urgent current-strategy correction is needed; the issue is a future claim-scope constraint."
-    }
+    {"type": "repository_evidence", "finding": "The PD01 exact package, STARTED ref, attempt-1 workflow, target-blind raw-before-score preserve, evidence binding, and annotated evidence tag form a coherent one-way chain.", "impact": "No integrity reason was found to invalidate the frozen endpoint or evidence object."},
+    {"type": "repository_evidence", "finding": "The frozen primary report gives candidate accuracy 0.47265625 with CI [0.431640625, 0.515625], comparator accuracy 0.5, and effect -0.02734375 with CI [-0.068359375, 0.015625].", "impact": "The predeclared FAIL rule is validly triggered because the effect CI upper bound is <= 0.05, while candidate long-lag recoverability itself is not demonstrated above chance."},
+    {"type": "inference", "finding": "Both candidate and fixed reservoir fail to demonstrate positive long-lag recovery on the primary endpoint. This null-vs-null outcome falsifies the registered superiority/recoverability claim but does not positively establish that fading-memory dynamics reproduce or mechanistically reduce an observed SparkBrain long-memory phenomenon.", "impact": "Canonical token remains immutable, but the narrative interpretation ceiling should be NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR."},
+    {"type": "control_plane_comparison", "finding": "Current Control R31, Evidence Analyst R58, MAIN R58, SUB R58 and Literature R27 do not use PD01 as an active positive mechanistic-reduction claim; the programme is intentionally idle with no active scientific object and PD01 remains consumed.", "impact": "No blind-target change or urgent current-strategy correction is needed; the issue is a future claim-scope constraint."}
   ],
-  "affected_lines": [
-    "PD01_LONG_HISTORY_FADING_MEMORY",
-    "PD01_TERMINAL_INTERPRETATION",
-    "PERSISTENT_DYNAMICAL_COGNITION",
-    "REDUCTION_EVIDENCE_SEMANTICS",
-    "PROGRAMME_NOVELTY"
-  ],
+  "affected_lines": ["PD01_LONG_HISTORY_FADING_MEMORY", "PD01_TERMINAL_INTERPRETATION", "PERSISTENT_DYNAMICAL_COGNITION", "REDUCTION_EVIDENCE_SEMANTICS", "PROGRAMME_NOVELTY"],
   "novelty_or_reduction_impact": "CANONICAL_PD01_FAIL_REMAINS_PROTOCOL_VALID_BUT_MECHANISTIC_REDUCTION_INTERPRETATION_IS_WEAKENED_BY_NULL_VS_NULL_NONIDENTIFIABILITY",
   "audit_classification": "WEAKENED",
   "confidence": "HIGH_FOR_EVIDENCE_CHAIN_AND_ENDPOINT_INTERPRETATION_BOUNDARY; MEDIUM_FOR_FUTURE_TAXONOMY_DESIGN",
@@ -168,10 +118,7 @@
     "all other consumed C19-v4/C19-R1/C19-R2/H5/NI01 identities and immutable evidence",
     "no rerun, rescore, retune, relabel, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, Utility execution, or scheduler change"
   ],
-  "read_only_recompute": {
-    "completed": "ENDPOINT_DECISION_AND_INTERPRETATION_RECHECK_FROM_EXISTING_IMMUTABLE_EVIDENCE",
-    "detail": "Rechecked the fixed primary statistics and decision-rule implication without generating data, rerunning a workflow, changing targets, or rescoring raw. The frozen FAIL token remains valid; the new finding concerns what that null-vs-null endpoint can identify mechanistically."
-  },
+  "read_only_recompute": {"completed": "ENDPOINT_DECISION_AND_INTERPRETATION_RECHECK_FROM_EXISTING_IMMUTABLE_EVIDENCE", "detail": "Rechecked the fixed primary statistics and decision-rule implication without generating data, rerunning a workflow, changing targets, or rescoring raw. The frozen FAIL token remains valid; the new finding concerns what that null-vs-null endpoint can identify mechanistically."},
   "utility_request_created": null,
   "persistence_notes": "Role-separated audit stream only. Legacy shared latest/state not updated. No scientific workflow, research result mutation, Utility request, immutable-ref mutation, or scheduler change."
 }
