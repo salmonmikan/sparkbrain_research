@@ -16,10 +16,10 @@
     "utility": "UTILITY-20260922T103500+0900-AUTO-EQUIV-LINT-DIAG-COMPLETED-4D8A21C6@dccdfdf4f558f233c8dabef74d2aa3513a8e5157"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-22T11:16:54+09:00",
-  "heartbeat_at": "2026-09-22T11:16:54+09:00",
-  "completed_at": null,
+  "heartbeat_at": "2026-09-22T11:31:05+09:00",
+  "completed_at": "2026-09-22T11:31:05+09:00",
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260922T110607+0900-R59-A6D4C219",
   "analyst_commit": "35630cc8e5d989a77801658f877c97aae9323f7c",
@@ -28,7 +28,7 @@
   "consumed_analyst_commit": "35630cc8e5d989a77801658f877c97aae9323f7c",
   "consumed_main_generation_id": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9",
   "mailbox_tip_before_acquisition": "c7443d5dd4c118cea86ed62f1681ff4f7cb943ba",
-  "lease_acquisition_commit": null,
+  "lease_acquisition_commit": "7301738f08a298a201bf36e5c4f832dd23ab6a2b",
   "research_layer": null,
   "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_LATER_FRESH_NONRESCUE_OBJECT",
   "candidate_id": null,
@@ -50,7 +50,7 @@
   "active_branch": null,
   "active_head": null,
   "active_identity": null,
-  "active_step": "R59_RECONCILIATION_ACQUIRED",
+  "active_step": "R59_INTENTIONAL_NO_TARGET_COMPLETE",
   "evidentiary_status": "NO_NEW_SCIENTIFIC_EXECUTION_INTENTIONAL_IDLE",
   "terminal_observation": null,
   "workflows": [
@@ -64,7 +64,7 @@
       "purpose": "EXACT_ANALYST_R59_CONTROL_PLANE_CI"
     }
   ],
-  "stop_reason": null,
-  "next_action": "Reconcile R59 no-target authority against repository truth; perform no scientific mutation unless a fresh prospectively authorized object appears.",
+  "stop_reason": "R59_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+  "next_action": "Remain intentionally idle until a fresh Evidence Analyst generation allocates a new prospective object after a material mechanism-surface delta or independently motivated bounded non-rescue question/review. Preserve the R59 PD01 interpretation ceiling prospectively without reopening the consumed PD01 identity.",
   "owner": "main"
 }
