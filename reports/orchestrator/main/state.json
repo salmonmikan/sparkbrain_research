@@ -11,12 +11,12 @@
     "sub": "SUB-20260922T224730+0900-NOOP-SCAN-R79-3F8A61C2"
   },
   "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
+  "status": "BLOCKED",
   "started_at": "2026-09-22T23:19:00+09:00",
-  "heartbeat_at": "2026-09-22T23:36:00+09:00",
+  "heartbeat_at": "2026-09-22T23:39:00+09:00",
   "completed_at": null,
-  "blocked_at": null,
-  "blocked_until": null,
+  "blocked_at": "2026-09-22T23:39:00+09:00",
+  "blocked_until": "FRESH_EVIDENCE_ANALYST_RUNTIME_PACKAGE_BINDING_DECISION",
   "analyst_generation_id": "EVA-20260922T230224+0900-R80-6B8F31C4",
   "analyst_commit": "88f72d4e55d30e561143df94e06ce10c91972104",
   "analyst_decision": "GO_H7_FORMAL_R3_EXACT_RUNTIME_BINDING_TARGET_BLIND_PREDICTION_RAW_GATE_AND_ONEWAY_PREFLIGHT_CYCLE9_PREIDENTITY_ONLY_STOP_BEFORE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
@@ -33,7 +33,7 @@
     "science_affecting_change": "NONE"
   },
   "cycle_count": 9,
-  "reassessment_rationale": "R80 recorded concrete information gain from Independent Audit R7: R1/R2 raw exposed target-derived correctness before preserve. Cycle 9 closes a prediction-only raw allowlist, separated protected target sidecar, preserve-before-target-access proof, post-preserve correctness recomputation, exact runtime/build binding, component binding, collision inventory and no-clobber preflight without changing scientific meaning.",
+  "reassessment_rationale": "R80 recorded concrete information gain from Independent Audit R7: R1/R2 raw exposed target-derived correctness before preserve. Cycle 9 closed a prediction-only raw allowlist, separated protected target sidecar, preserve-before-target-access proof, post-preserve correctness recomputation, exact component binding, prior-surface collision inventory and no-clobber preflight. The literal runtime/package environment did not reproduce exactly, so execution stops before any one-way action.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {
@@ -49,8 +49,7 @@
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_research_branch": "research/main-h7-formal-r3-unexposed-eval-runtime-r76-cycle9",
     "starting_head": "325e93c62c1f79baa107b677a3dc881dc6f47ace",
-    "current_head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
-    "contract_path": "artifacts/formal_h7_r3/contract_design.json",
+    "final_research_head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
     "runtime_binding_path": "artifacts/formal_h7_r3/runtime_binding.json",
     "runtime_binding_blob": "ab8531479d03a15c2e36f0cfe45cfe4fa605d312",
     "prior_surface_inventory_path": "artifacts/formal_h7_r3/prior_surface_inventory.json",
@@ -81,14 +80,14 @@
     "source_observation_head": "325e93c62c1f79baa107b677a3dc881dc6f47ace",
     "source_observation_run": 35734936639,
     "source_runtime_observation_sha256": "73cbefbbab375c7f935a42ad51944568ae75123943a219fd49500f9593c06462",
-    "python_version": "3.11.16",
-    "runner_image_version": "20260907.300.1",
-    "pip_freeze_sha256": "25b4a1c5d60d30e5e354856469420d04a1fdc3db003745d0c47c92b5fa61230f",
-    "exact_reproduction_status": "NOT_YET_REPRODUCED_ON_CURRENT_IMPLEMENTATION_HEAD",
-    "observed_failure_run": 35740728203,
-    "observed_failure": "literal exact runtime binding mismatch before any protected/result-bearing action",
-    "mismatch_field": "PENDING_DIAGNOSTIC_FROM_CURRENT_NON_RESULT_WORKFLOW",
-    "policy": "fail closed; do not normalize, broaden, or silently rebind after mismatch"
+    "source_pip_freeze_sha256": "25b4a1c5d60d30e5e354856469420d04a1fdc3db003745d0c47c92b5fa61230f",
+    "final_validation_run": 35741369078,
+    "final_observed_runtime_sha256": "802181010a5655f008e9c5cbcfbdad358b48968d63a812e55b68187df9390545",
+    "final_observed_pip_freeze_sha256": "b4c2c84a1688ab15ab3b7ff20ca4bdeb49da8bfdcf5cba772d848e430b6ea45c",
+    "matching_fields": "Python 3.11.16, ubuntu24 image 20260907.300.1, Linux 6.17.0-1022-azure, torch 2.13.0 / 2.13.0+cu130 / git cf30153c4c131c8164ee7798e5022d810682e2cb, torch distribution RECORD digest, CPU/thread/hash contracts",
+    "mismatch_field": "pip_freeze_sha256",
+    "exact_reproduction_status": "FAILED_CLOSED",
+    "policy": "No normalization, broadening, silent rebind, or package/resource contract change without fresh Analyst authority."
   },
   "component_blobs": {
     "r3_contract_runtime_module": "9bde5379542ecca84157e82868abe679e0099e31",
@@ -100,30 +99,26 @@
   },
   "workflows": [
     {
-      "run_id": 35740728203,
-      "name": "h7-formal-r3-preidentity",
-      "head": "f0500c455f80666f0213567f231365ca87c97341",
-      "status": "completed",
-      "conclusion": "failure",
-      "result_bearing": false,
-      "failure_class": "FAIL_CLOSED_LITERAL_EXACT_RUNTIME_BINDING_MISMATCH"
-    },
-    {
       "run_id": 35741369078,
       "name": "h7-formal-r3-preidentity",
       "head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "failure",
       "result_bearing": false,
-      "expected_next": "run raw-gate tests/lint first, persist runtime observation, then fail-closed exact runtime comparison"
+      "tests": "13 passed",
+      "lint": "passed",
+      "failure_class": "FAIL_CLOSED_LITERAL_EXACT_RUNTIME_BINDING_MISMATCH",
+      "diagnostic_artifact_id": 10699064392,
+      "diagnostic_artifact_zip_sha256": "75af2957eb37227d6f4bcd9c4014c865b560e20b592daa52ade1543c77bae85d"
     },
     {
       "run_id": 35741369076,
       "name": "ci",
       "head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
-      "status": "queued_or_in_progress",
-      "conclusion": null,
-      "result_bearing": false
+      "status": "completed",
+      "conclusion": "success",
+      "result_bearing": false,
+      "matrix": "Python 3.11 and 3.13 both passed lint/local-readiness/tests/bundle validation"
     }
   ],
   "prior_result_preservation": {
@@ -158,10 +153,11 @@
   ],
   "integrity": {
     "analyst_generation_rechecked_before_lease_acquisition": true,
-    "analyst_generation_rechecked_before_each_material_research_mutation": true,
-    "analyst_generation_rechecked_before_final_control_persistence": true,
+    "analyst_generation_rechecked_before_material_research_mutation": true,
+    "analyst_generation_rechecked_immediately_before_final_persistence": true,
     "analyst_generation_stable": true,
-    "exact_branch_head_rechecked_before_final_control_persistence": true,
+    "exact_branch_head_rechecked_immediately_before_final_persistence": true,
+    "final_branch_head_identical": true,
     "sub_collision": false,
     "science_result_exposed_this_run": false,
     "formal_identity_created_or_consumed": false,
@@ -176,14 +172,14 @@
     "science_affecting_change": false
   },
   "remaining_preidentity_gates": {
-    "exact_head_generic_ci": "WAITING_EXTERNAL_RUN_35741369076",
-    "raw_gate_and_runtime_diagnostic": "WAITING_EXTERNAL_RUN_35741369078",
-    "literal_exact_runtime_reproduction": "UNRESOLVED_AFTER_RUN_35740728203_MISMATCH",
+    "raw_gate_tests_and_lint": "PASS_ON_EXACT_HEAD",
+    "generic_ci": "PASS_ON_EXACT_HEAD",
+    "literal_exact_runtime_package_reproduction": "BLOCKED_PIP_FREEZE_DIGEST_MISMATCH",
     "future_concealed_seed_collision_audit": "DEFERRED_UNTIL_FUTURE_SEEDS_EXIST_UNDER_AUTHORITY",
     "remote_create_only_no_clobber": "RECHECK_REQUIRED_AT_FUTURE_CREATION_BOUNDARY",
     "protected_result_executor_binding": "NOT_MATERIALIZED_NOT_AUTHORIZED",
     "fresh_one_way_formal_authority": "NOT_GRANTED"
   },
-  "stop_reason": "WAITING_ONLY_FOR_NON_RESULT_BEARING_EXACT_HEAD_CI_AND_R3_PREIDENTITY_DIAGNOSTIC_AFTER_AUTHORIZED_SCIENCE_INVARIANT_INTEGRITY_CLOSURE; PRIOR_RUN_EXPOSED_LITERAL_RUNTIME_MISMATCH_REQUIRING_FAIL_CLOSED_REVIEW_IF_REPRODUCED",
-  "next_action": "After runs 35741369078 and 35741369076 complete, re-read R80-or-later Analyst generation and exact head. Inspect only non-result raw-gate/runtime diagnostic outputs. If exact runtime still mismatches, stop BLOCKED for Analyst rather than normalize/rebind. If exact validation succeeds, continue only still-authorized preidentity closure. Never create evaluation commitment, FORMAL identity, STARTED, reveal evaluation seeds, access protected evaluation, dispatch result-bearing execution, create scientific preserve/evidence refs, or score official raw without fresh explicit authority."
+  "stop_reason": "LITERAL_EXACT_RUNTIME_BINDING_REPRODUCTION_FAILED_ON_FINAL_EXACT_HEAD; ONLY_PIP_FREEZE_SHA256_DIFFERS; RAW_GATE_TESTS_LINT_AND_GENERIC_CI_PASS; PACKAGE_RUNTIME_BINDING_CHANGE_REQUIRES_FRESH_ANALYST_AUTHORITY; NO_ONEWAY_ACTIONS_PERFORMED",
+  "next_action": "Fresh Evidence Analyst review of exact head f0780f2f91779a8bd1a1d09eb535921d0d48f7d4 and the exact package-runtime mismatch. Analyst must prospectively decide whether a versioned package/runtime binding is scientifically acceptable and how it is to be fixed. MAIN must not silently rebind or normalize. Evaluation commitment, FORMAL identity, STARTED, evaluation seed reveal, protected evaluation, result-bearing execution, scientific preserve/evidence refs and official scoring remain STOP."
 }
