@@ -1,45 +1,46 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260922T203216+0900-PRIMARY-H7-FORMALR1-C7-INPUT-ID-BLOCK-R73",
-  "run_id": "sparkbrain-main-primary-20260922T201714JST-R72-h7-formalr1-cycle7-stale-lease-recovery",
-  "producer_run_id": "sparkbrain-main-primary-20260922T201714JST-R72-h7-formalr1-cycle7-stale-lease-recovery",
-  "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R1_PREIDENTITY_FINAL_BINDING_PROVENANCE_VALIDATION_CYCLE7_ONLY_NO_IDENTITY_NO_RESULT",
-  "supersedes_generation_id": "MAIN-20260922T202722+0900-PRIMARY-H7-FORMALR1-C7-R73-RECONCILED",
+  "generation_id": "MAIN-20260922T213400+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-R75-D7F2A9C1",
+  "run_id": "sparkbrain-main-primary-20260922T211559JST-R75-h7-formalr2-cycle8-preidentity",
+  "producer_run_id": "sparkbrain-main-primary-20260922T211559JST-R75-h7-formalr2-cycle8-preidentity",
+  "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R2_INPUT_SPLIT_BINDING_AND_PREIDENTITY_REVALIDATION_CYCLE8_ONLY_NO_IDENTITY_NO_RESULT",
+  "supersedes_generation_id": "MAIN-20260922T203216+0900-PRIMARY-H7-FORMALR1-C7-INPUT-ID-BLOCK-R73",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T202146+0900-R73-9A4C21E7@443c87fb44ae93845ff6b4d389196716a4efbc92",
-    "main_previous_lease": "MAIN-20260922T202722+0900-PRIMARY-H7-FORMALR1-C7-R73-RECONCILED",
-    "sub": "SUB-20260922T194207+0900-ARCH-C33-TESTBLOCK-R72-8F3C21A6"
+    "evidence_analyst": "EVA-20260922T210223+0900-R75-D7F2A9C1@c190afff7e33977c530c207904bd42ce7187a20d",
+    "main_previous": "MAIN-20260922T203216+0900-PRIMARY-H7-FORMALR1-C7-INPUT-ID-BLOCK-R73",
+    "sub": "SUB-20260922T204630+0900-ARCH-C33-RUNNERPATH-R74-B8C4E219"
   },
-  "execution_mode": "PRIMARY_STALE_LEASE_RECOVERY_R73_RECONCILED",
-  "status": "BLOCKED",
-  "started_at": "2026-09-22T20:17:14+09:00",
-  "blocked_at": "2026-09-22T20:32:16+09:00",
+  "execution_mode": "PRIMARY",
+  "status": "WAITING_EXTERNAL",
+  "started_at": "2026-09-22T21:15:59+09:00",
+  "heartbeat_at": "2026-09-22T21:34:00+09:00",
   "completed_at": null,
-  "analyst_generation_id": "EVA-20260922T202146+0900-R73-9A4C21E7",
-  "analyst_commit": "443c87fb44ae93845ff6b4d389196716a4efbc92",
-  "analyst_decision": "GO_H7_FORMAL_R1_PREIDENTITY_FINAL_BINDING_PROVENANCE_VALIDATION_ONLY_STOP_BEFORE_IDENTITY_START_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
+  "blocked_at": null,
+  "blocked_until": null,
+  "analyst_generation_id": "EVA-20260922T210223+0900-R75-D7F2A9C1",
+  "analyst_commit": "c190afff7e33977c530c207904bd42ce7187a20d",
+  "analyst_decision": "GO_H7_FORMAL_R2_INPUT_SPLIT_BINDING_AND_PREIDENTITY_REVALIDATION_CYCLE8_ONLY_STOP_BEFORE_IDENTITY_START_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
   "research_layer": "FORMAL",
-  "main_lane": "H7_FORMAL_R1_PREIDENTITY_FINAL_BINDING_PROVENANCE_VALIDATION_ONLY",
+  "main_lane": "H7_FORMAL_R2_INPUT_SPLIT_BINDING_AND_PREIDENTITY_REVALIDATION_CYCLE8_ONLY",
   "candidate_id": "H7 responsibility",
   "candidate_alias": "CAND-H7-RESPONSIBILITY",
   "candidate_ordinal": 7,
   "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-  "development_revision": "H7-FORMAL-R1-PREIDENTITY-BINDING-AND-PROVENANCE-CLOSURE",
+  "development_revision": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-AND-PREIDENTITY-REVALIDATION",
   "repair_change_classification": {
-    "stale_lease_recovery": "SCIENCE_INVARIANT_CONTROL_PLANE_REPAIR",
-    "r73_generation_reconciliation": "SCIENCE_INVARIANT_AUTHORITY_REFRESH_ALLOCATION_UNCHANGED_FOR_H7",
-    "exact_source_ref_reconciliation_observed": "SCIENCE_INVARIANT_REPAIR_ALREADY_CLOSED_AT_67ED8FAD1D861463E4129D44EFBB2540AFFD1889",
-    "preidentity_validation_artifact": "SCIENCE_INVARIANT_BINDING_PROVENANCE_DIAGNOSTIC",
-    "science_affecting_change_applied": "NONE",
-    "unresolved_change": "FORMAL_INPUT_IDENTITY_EPISODE_SPLIT_BINDING_REQUIRES_PROSPECTIVE_ANALYST_CLARIFICATION_BEFORE_EXACT_RUNNER_MATERIALIZATION"
+    "episode_split_binding": "SCIENCE_AFFECTING_CHANGE_VERSIONED_PROSPECTIVELY_BY_ANALYST_R75_BEFORE_FORMAL_IDENTITY",
+    "runner_runtime_package_hash_plumbing": "SCIENCE_INVARIANT_PREIDENTITY_IMPLEMENTATION",
+    "lint_import_format_repairs": "SCIENCE_INVARIANT_REPAIR",
+    "temporary_repair_workflow": "SCIENCE_INVARIANT_OPERATIONAL_HELPER_CREATED_USED_AND_REMOVED",
+    "post_result_science_affecting_change_beyond_r75": "NONE"
   },
-  "cycle_count": 7,
-  "reassessment_rationale": "R73 authorizes cycle-7 outcome-blind final binding/provenance validation. Validation established that the reviewed implementation has scorer/preserver/preflight/runtime-seed helper blobs and no H7 control/preserve/evidence namespace collision, but the exact formal runner is absent and the frozen contract does not specify Episode.split for fit/calibration/evaluation. Because split is part of Episode identity and propagated into LearnedExample, MAIN did not choose this previously unfixed input-identity field after result exposure.",
+  "cycle_count": 8,
+  "reassessment_rationale": "R75 recorded concrete information gain beyond cycle 7: prospectively bind Episode.split as fit=train, calibration=dev, evaluation=test with result-bearing smoke forbidden, preserve every other R1 scientific field, and revalidate exact preidentity runner/runtime/package/hash/no-clobber plumbing before any one-way identity.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {
     "status": "READY",
-    "semantics": "development readiness only; not scientific success, reduction exhaustion, identity readiness or FORMAL execution authority"
+    "semantics": "development readiness only; not identity readiness, scientific success, reduction exhaustion, or FORMAL execution authority"
   },
   "hold_class": null,
   "hold_reason": null,
@@ -48,83 +49,91 @@
   "system_priority_exception": {"used": false},
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_research_branch": "research/main-h7-formal-r1-preidentity-closure-r70-cycle7",
-    "r73_reviewed_exact_head": "67ed8fad1d861463e4129d44efbb2540affd1889",
-    "current_diagnostic_head": "baaec4a7f1a1b6820d78ff9b33566bb809f74f42",
-    "current_diagnostic_parent": "67ed8fad1d861463e4129d44efbb2540affd1889",
-    "preidentity_validation_path": "artifacts/formal_h7_r1/preidentity_validation_r73.json",
-    "contract_path": "artifacts/formal_h7_r1/contract_design.json",
-    "contract_blob": "af26de3067263afcff0e727321fa173ea14de659",
-    "scorer_preserver_path": "src/sparkbrain/learned/h7_formal_r1.py",
-    "scorer_preserver_blob_at_reviewed_head": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
-    "preflight_script_blob_at_reviewed_head": "bc9eac991df4d545bddfaa3fd2809b10215cee27",
-    "runtime_seed_preflight_blob_at_reviewed_head": "ee336cef36cfad69e5a9b4d34052c0a671c5ad0a",
-    "formal_runner_path": "scripts/run_h7_formal_r1.py",
-    "formal_runner_blob": null,
-    "pf_r1_head": "8681dcbbe2fff986c28a79057f557b35f3f0f752"
+    "base_research_branch": "research/main-h7-formal-r1-preidentity-closure-r70-cycle7",
+    "base_head": "baaec4a7f1a1b6820d78ff9b33566bb809f74f42",
+    "active_research_branch": "research/main-h7-formal-r2-input-split-r75-cycle8",
+    "current_head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+    "r2_contract_path": "artifacts/formal_h7_r2/contract.json",
+    "r2_contract_id": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-V1",
+    "r2_contract_blob": "a4965eb49528e5b7e6da70f28e076de89d822f93",
+    "r2_input_surface_sha256": "b1ec2861017642954fc7b510f0131d13500397aa5d991d4a3d30fe75fd3bafcc",
+    "runner_entrypoint": "scripts/run_h7_formal_r2.py",
+    "runner_core": "src/sparkbrain/learned/h7_formal_r2_runner.py",
+    "r2_binding_module": "src/sparkbrain/learned/h7_formal_r2.py"
   },
-  "repository_truth": {
-    "annotated_evidence_tag_count": 5,
-    "tag_form_formal_count": 0,
-    "tag_form_sealed_count": 0,
-    "tag_form_freeze_count": 0,
-    "h7_control_or_started_refs_present": false,
-    "h7_preserve_refs_present": false,
-    "h7_evidence_tags_present": false,
-    "new_consumption": 0
+  "r2_binding": {
+    "fit_split": "train",
+    "calibration_split": "dev",
+    "formal_evaluation_split": "test",
+    "result_bearing_smoke_forbidden": true,
+    "worlds": ["switchworld", "contradiction_world", "goal_conflict_world", "multi_object_world"],
+    "steps_per_episode": 24,
+    "fit_seed_range_inclusive": [8166520, 8166711],
+    "calibration_seed_range_inclusive": [8350164, 8350227],
+    "formal_evaluation_seed_range_inclusive": [8846030, 8846285],
+    "world_assignment": "seed-list index modulo 4 in listed world order",
+    "native_training_seed": 9339631,
+    "dense_training_seed": 9428927,
+    "eligibility_head_seed": 9107020,
+    "all_other_r1_scientific_fields_preserved": true
   },
-  "input_identity_blocker": {
-    "classification": "FORMAL_INTEGRITY_INPUT_IDENTITY_BINDING_GAP",
-    "field": "Episode.split",
-    "allowed_schema_values": ["train", "dev", "test", "smoke"],
-    "frozen_contract_specifies_fit_split": false,
-    "frozen_contract_specifies_calibration_split": false,
-    "frozen_contract_specifies_evaluation_split": false,
-    "episode_id_depends_on_split": true,
-    "learned_example_carries_split": true,
-    "numeric_world_generation_observed_to_use_seed_and_world_independently_of_split": true,
-    "why_fail_closed": "FORMAL requires exact input identity binding. Selecting train/dev/test/smoke roles now would introduce an input-identity field not prospectively fixed in the frozen contract. MAIN has no authority to silently choose or rewrite this field after result exposure.",
-    "scientific_result": null,
-    "required_resolution": "Fresh Evidence Analyst prospectively clarifies the split binding or authorizes a versioned FORMAL preidentity revision before exact runner materialization."
+  "implementation": {
+    "exact_future_runner_materialized": true,
+    "runner_is_result_bearing_guarded": true,
+    "preidentity_only_entrypoint_available": true,
+    "target_blind_raw_collector_path_bound": true,
+    "same_final_sha_gate_implemented": true,
+    "started_marker_validation_implemented": true,
+    "contract_runner_scorer_preserver_blob_checks_implemented": true,
+    "runtime_package_manifest_checks_implemented": true,
+    "temporary_lint_workflow_removed": true
   },
-  "eligibility_comparator_binding": {
-    "formal_contract_head_seed": 9107020,
-    "dev_r2_default_head_seed": 7603,
-    "status": "IMPLEMENTATION_PENDING_ALREADY_FIXED_FORMAL_SEED",
-    "note": "The seed value itself is already prospectively fixed; a future exact formal runner must implement 9107020 without mutating historical DEV-R2 semantics."
-  },
-  "remaining_preidentity_gates": {
-    "exact_formal_runner": "BLOCKED_ON_EPISODE_SPLIT_INPUT_IDENTITY",
-    "runner_scorer_preserver_blob_self_binding": "PARTIAL_SCORER_PRESERVER_KNOWN_RUNNER_ABSENT",
-    "actual_runtime_manifest": "NOT_MATERIALIZED",
-    "actual_package_manifest": "NOT_MATERIALIZED",
-    "complete_prior_surface_seed_inventory": "NOT_MATERIALIZED",
-    "actual_seed_collision_audit": "NOT_RUN",
-    "remote_create_only_no_clobber": "PARTIAL_CURRENT_H7_NAMESPACE_ABSENCE_VERIFIED_RECHECK_REQUIRED_AT_FUTURE_CREATION_BOUNDARY",
-    "synthetic_one_way_scorer_preserve_totality": "NOT_DECLARED_CLOSED",
-    "durable_pf_r1_raw_summary_exact_bytes": "PENDING_CONTROL_APPROVED_NON_EVIDENTIARY_PRESERVATION"
-  },
+  "workflows": [
+    {
+      "run_id": 35727704525,
+      "name": "h7-r2-science-invariant-lint-fix",
+      "head": "c13bdb387d1cc1541bd67cd8a86c298ccb2d3173",
+      "status": "completed",
+      "conclusion": "success",
+      "result_bearing": false,
+      "effect": "created formatter-only commit dac096a84bd553f972483b417b5fcd907d46fee5"
+    },
+    {
+      "run_id": 35727871981,
+      "name": "h7-formal-r2-preidentity",
+      "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+      "status": "in_progress",
+      "conclusion": null,
+      "result_bearing": false
+    },
+    {
+      "run_id": 35727871994,
+      "name": "ci",
+      "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+      "status": "queued",
+      "conclusion": null,
+      "result_bearing": false
+    }
+  ],
   "prior_result_preservation": {
     "pf_r1_unchanged": true,
     "pf_r1_used_as_confirmatory_evidence": false,
     "pf_r1_rerun_retune_rescore": false,
-    "pf_r1_raw_sha256": "695261aeadab1ab311b60787f1b6a9023c29e24009c6f173c1a660469a6906db",
-    "durable_pf_r1_exact_byte_archive_complete": false,
     "consumed_formal_identities_reused": false,
     "immutable_formal_sealed_evidence_refs_mutated": false
+  },
+  "ordinary_reductions": {
+    "panel_frozen": true,
+    "panel": ["ORDINARY_DENSE_RECURRENT_V1", "FINITE_STATE_ROUTE_HISTORY_V2", "ELIGIBILITY_ROUTE_LEDGER_V2"],
+    "support_breadth": "Future claim remains limited to the exact frozen four-world dynamic-TOP1 regime and frozen ordinary-reduction panel; no uniqueness, task-specificity, completeness, sufficiency, broad reduction-exhaustion, or external-generalization claim is authorized."
   },
   "observations_evidentiary_status": {
     "formal_evidence": 0,
     "preformal_development_results": 0,
     "mechanism_architecture_observations": 0,
     "system_architecture_observations": 0,
-    "non_evidentiary_preidentity_binding_observations": 1,
-    "classification": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_VALIDATION"
-  },
-  "ordinary_reductions": {
-    "panel_frozen": true,
-    "panel": ["ORDINARY_DENSE_RECURRENT_V1", "FINITE_STATE_ROUTE_HISTORY_V2", "ELIGIBILITY_ROUTE_LEDGER_V2"],
-    "support_breadth": "Future claim remains limited to the exact frozen four-world dynamic-TOP1 regime and frozen ordinary-reduction panel. No path-specific mediation, unique-route, task-specificity, completeness or broad reduction-exhaustion claim is authorized."
+    "non_evidentiary_formal_preidentity_implementation": 1,
+    "scientific_result": null
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -135,30 +144,20 @@
     "ni01-no-ignition-selective-prediction-official-v1",
     "pd01-long-history-fading-memory-official-v1"
   ],
-  "workflows": [
-    {
-      "run_id": 35715449587,
-      "name": "ci",
-      "head": "67ed8fad1d861463e4129d44efbb2540affd1889",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false
-    },
-    {
-      "run_id": 35721879348,
-      "name": "ci",
-      "head": "baaec4a7f1a1b6820d78ff9b33566bb809f74f42",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false
-    }
-  ],
+  "remaining_preidentity_gates": {
+    "exact_head_generic_ci": "WAITING_EXTERNAL_RUN_35727871994",
+    "preidentity_runtime_package_manifest_workflow": "WAITING_EXTERNAL_RUN_35727871981",
+    "complete_prior_surface_seed_inventory_and_collision_audit": "NOT_CLOSED_THIS_RUN",
+    "remote_create_only_no_clobber": "RECHECK_REQUIRED_AT_FUTURE_CREATION_BOUNDARY",
+    "synthetic_one_way_scorer_preserve_totality": "NOT_CLOSED_THIS_RUN",
+    "durable_pf_r1_raw_summary_exact_bytes": "PENDING_SEPARATE_NON_EVIDENTIARY_PROVENANCE_CLOSURE"
+  },
   "integrity": {
-    "analyst_generation_rechecked_before_stale_lease_acquisition": true,
-    "analyst_r73_supersession_detected_and_reconciled_before_research_mutation": true,
-    "r73_changed_h7_allocation": false,
+    "analyst_generation_rechecked_before_lease_acquisition": true,
     "analyst_generation_rechecked_before_research_mutation": true,
+    "analyst_generation_rechecked_after_science_invariant_repair_before_cleanup": true,
     "analyst_generation_rechecked_before_final_control_persistence": true,
+    "analyst_generation_stable": true,
     "sub_collision": false,
     "science_result_exposed_this_run": false,
     "formal_identity_created_or_consumed": false,
@@ -167,9 +166,8 @@
     "result_bearing_workflow_dispatched": false,
     "official_scoring_performed": false,
     "scientific_preserve_or_evidence_ref_created": false,
-    "immutable_scientific_ref_mutation": false,
-    "input_identity_gap_not_silently_filled": true
+    "immutable_scientific_ref_mutation": false
   },
-  "stop_reason": "R73_H7_FORMAL_R1_CYCLE7_BLOCKED_FORMAL_INPUT_IDENTITY_EPISODE_SPLIT_NOT_PROSPECTIVELY_BOUND_STOP_BEFORE_EXACT_RUNNER_IDENTITY_START_OR_RESULT",
-  "next_action": "Fresh Evidence Analyst must prospectively clarify or version the exact Episode.split binding for fit/calibration/evaluation and review current diagnostic head baaec4a7f1a1b6820d78ff9b33566bb809f74f42. After that, MAIN may resume exact runner/runtime/package/seed/no-clobber/synthetic-totality/PF-R1 provenance closure. FORMAL identity, STARTED, protected evaluation and result-bearing execution remain STOP."
+  "stop_reason": "WAITING_ONLY_FOR_NON_RESULT_BEARING_EXACT_HEAD_CI_AND_PREIDENTITY_MANIFEST_WORKFLOW_ON_80B88CD49FA5B9F5535FEBA27A75EBD3D4912406",
+  "next_action": "After runs 35727871981 and 35727871994 complete, re-read R75-or-later Analyst generation and exact branch head. If both are green, inspect non-result manifest outputs and continue only remaining R75-authorized preidentity closure. Do not create FORMAL identity, STARTED, access protected evaluation, dispatch result-bearing execution, preserve scientific evidence, or score official raw."
 }
