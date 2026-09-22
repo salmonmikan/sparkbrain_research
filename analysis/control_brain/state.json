@@ -1,29 +1,28 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219",
-  "produced_at": "2026-09-22T08:51:30+09:00",
-  "producer_run_id": "control-brain-auto-20260922T0850JST-R31",
+  "generation_id": "CTRL-20260922T105700+0900-R32-C5A721D4",
+  "produced_at": "2026-09-22T10:57:00+09:00",
+  "producer_run_id": "control-brain-auto-20260922T1050JST-R32",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "CTRL-20260922T065500+0900-R30-6F4C21A8",
+  "supersedes_generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219",
   "programme_position": "FORMAL_HOLD_WITH_INTENTIONAL_LOWER_FUNNEL_IDLE_NO_COHERENT_TARGET",
   "input_generations": {
     "human_directives": "ops/human_directives/active.md@ee5dbf63a2b34117f42fdc4dd62e9813d06d7188",
-    "previous_control": "CTRL-20260922T065500+0900-R30-6F4C21A8",
-    "evidence_analyst": "EVA-20260922T075818+0900-R56-8B3D21F6",
-    "main": "MAIN-20260922T081455+0900-PRIMARY-FUNNEL21-IDLE-R56-8B3D21F6",
-    "sub": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6",
-    "relay": "NO_SEPARATE_DURABLE_ADVANCE_R56_NO_ACTIVE_MAIN_OBJECT",
-    "literature": "LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8",
-    "audit": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
-    "methodology": "METHCAL-20260922T082026+0900-R54-8D3F21C6",
-    "steward": "STEWARD-20260922T075212+0900-G9-8C4E21D3",
+    "previous_control": "CTRL-20260922T085130+0900-R31-B7D4A219@bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
+    "evidence_analyst": "EVA-20260922T100852+0900-R58-7D4C21A9@13c4374c889e4326d225c62de02ca4a51e351ca1",
+    "main": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9",
+    "sub": "SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9@c7443d5dd4c118cea86ed62f1681ff4f7cb943ba",
+    "relay": "NO_SEPARATE_DURABLE_ADVANCE_AFTER_SUB_R58_NO_ACTIVE_MAIN_CONTINUATION_AUTHORITY",
+    "literature": "LIT-20260922T093207+0900-R27-SPECIFICITY-IDENTIFIABILITY-8C3A21F5",
+    "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
+    "methodology": "METHCAL-20260922T102142+0900-R56-A7C3D1E9",
+    "steward": "STEWARD-20260922T075212+0900-G9-8C4E21D3@a3ab4f4f70c4782e7ff916838c33a64eb0a9c2dd",
     "utility_assignment": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "utility_worker": "UTILITY-20260922T083500+0900-AUTO-EQUIV-CERT-PROTOTYPE-COMPLETED-A42D7C19",
+    "utility_worker": "UTILITY-20260922T103500+0900-AUTO-EQUIV-LINT-DIAG-COMPLETED-4D8A21C6",
     "scheduler_registry_manifest": "blob@6f7fa138b09b093613e8eb98b18559ea94e16b59"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_protected": false,
     "ruleset_count": 0,
     "evidence_tag_count": 5,
     "evidence_tags": {
@@ -51,24 +50,24 @@
     {
       "directive": "HUMAN-20260918-001",
       "disposition": "ACCEPT",
-      "current_action": "PROMOTION_CANDIDATE_IDENTIFIED_PENDING_STEWARD_REVIEW_AND_REVIEWED_INTEGRATION",
-      "detail": "The Utility equivalence-certificate prototype is candidate-agnostic, outcome-independent comparison/integrity infrastructure and potentially main-eligible. It is not approved for merge; require Steward/review/CI-quality assessment and keep the isolated branch unmerged meanwhile."
+      "current_action": "UTILITY_EQUIVALENCE_TOOL_NOT_PROMOTION_READY_PENDING_EXACT_LINT_REPAIR_GREEN_CI_AND_FRESH_STEWARD_REVIEW",
+      "detail": "The isolated verifier remains candidate-independent and potentially main-eligible, but current CI is red and independent-provenance/raw-to-digest trust limits remain unresolved. No merge is authorized."
     },
     {
       "directive": "HUMAN-20260919-002",
       "disposition": "ACCEPT",
       "current_action": "DEFER_PROTECTION_DEPLOYMENT",
-      "detail": "Ruleset count remains zero. The workflow-trigger-isolation finding is reported separately and does not by itself override the explicit human deferral."
+      "detail": "Repository ruleset count remains zero. Protection and legacy workflow trigger-isolation gaps remain reported but are not autonomously changed."
     },
     {
       "directive": "HUMAN-20260919-003",
       "disposition": "ACCEPT_ACTIVE_CONCERN",
-      "detail": "Executable MECHANISM supply remains stalled. MAIN/SUB intentional idle is scientifically calibrated on current evidence; Utility tooling progress is useful but does not count as scientific candidate throughput."
+      "detail": "Viable executable MECHANISM remains zero. Intentional MAIN/SUB idle is currently scientifically preferable to manufactured or rescue science; Utility/Audit/Methodology progress does not substitute for scientific candidate throughput."
     },
     {
       "directive": "HUMAN-20260921-004",
       "disposition": "MODIFY_AND_ACCEPT_BOUNDED_AUTONOMOUS_UTILITY",
-      "detail": "Latest autonomous run remained max_runs=1, NON_EVIDENTIARY, candidate-independent and non-colliding, and advanced from diagnosis to an isolated development prototype as permitted."
+      "detail": "Latest Utility autonomous run remained one-run, NON_EVIDENTIARY, candidate-independent, read-only and non-colliding."
     },
     {
       "directive": "USER-20260921-UTILITY-AUTONOMY-APPROVAL",
@@ -103,8 +102,8 @@
       "no_target_exception": {
         "code": "NO_COHERENT_MECHANISM_TARGET",
         "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-        "analyst_canonical_check_count": 19,
-        "latest_sub_local_check_count": 20,
+        "analyst_canonical_check_count": 21,
+        "latest_sub_local_check_count": 22,
         "counts_as_selection": false,
         "interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
       }
@@ -158,16 +157,15 @@
     "eligible_distinct_from_ready": true,
     "ready_means_test_readiness_not_prior_success": true,
     "hidden_second_formal_gate": false,
-    "first_ready_to_preformal": "CONSISTENT_WITH_DEVELOPMENT_READINESS; HISTORICAL_R33_NONCONFORMING_RAW_BEFORE_SCORE_REMAINS_TERMINAL_NO_RERUN",
     "h7": {
       "claim_ceiling": "MECHANISM",
       "preformal_eligible": false,
       "preformal_readiness": "NOT_READY",
       "hold_class": "HOLD_MECHANISM_UNRESOLVED",
-      "hold_reason": "NO_FRESH_NATIVE_MECHANISM_OBJECT_WITH_PROSPECTIVE_CAUSAL_COMPARATOR_RESOURCE_AND_FALSIFIER_CONTRACT",
+      "hold_reason": "NO_FRESH_NATIVE_MECHANISM_OBJECT_WITH_PROSPECTIVE_CLAIM_SCOPED_CAUSAL_SPECIFICITY_IDENTIFIABILITY_COMPARATOR_RESOURCE_AND_FALSIFIER_CONTRACT",
       "terminal_state": "NONTERMINAL_HOLD",
       "queue_state": "NOT_QUEUED",
-      "claim_scoped_methodology_calibration_is_authorizing": false
+      "same_object_rescue": "PROHIBITED"
     },
     "candidate32": {
       "claim_ceiling": "SYSTEM",
@@ -181,57 +179,61 @@
     }
   },
   "external_methodology_implications": {
-    "literature_r26": {
+    "literature_r27": {
       "genuinely_new_information": true,
-      "effect": "Future fresh H7 objects require intervention-support/dormant-path controls and claim-scoped causal-faithfulness discipline; no current execution authority."
+      "effect": "For future fresh H7 objects, separate causal importance from task/context specificity and route faithfulness from uniqueness. Task-specific claims require matched non-target contexts; uniqueness-bearing claims require prospective identifiability or equivalence-class fallback. No current H7 execution authority is created."
     },
-    "audit_r5_h5": {
-      "canonical_result": "FAIL_NO_USEFUL_WORK_REDUCTION_REMAINS_VALID_FOR_REGISTERED_AGGREGATE_ENDPOINT",
-      "audit_classification": "ROBUST_SO_FAR",
-      "interpretation_ceiling": "DO_NOT_USE_AS_BROAD_EVENT_ROUTING_OR_LAZY_STATE_CAUSAL_NO_GO"
+    "audit_r6_pd01": {
+      "audit_classification": "WEAKENED",
+      "canonical_token_status": "FAIL_REDUCED_BY_FADING_MEMORY_REMAINS_PROTOCOL_VALID_AND_IMMUTABLE",
+      "evidence_chain_integrity": "ROBUST_SO_FAR",
+      "candidate_accuracy": 0.47265625,
+      "candidate_ci": [0.431640625, 0.515625],
+      "comparator_accuracy": 0.5,
+      "effect": -0.02734375,
+      "effect_ci": [-0.068359375, 0.015625],
+      "interpretation_ceiling": "NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR",
+      "control_policy": "Treat as strong negative evidence against registered superiority/recoverability, not positive evidence that fading-memory dynamics mechanistically explain a demonstrated SparkBrain long-memory capability. No rerun, rescore, relabel or reopen. Future fresh positive reduction claims must distinguish phenomenon absence from positive phenomenon reproduced by an ordinary equal-privilege baseline."
     },
-    "methodology_r54": {
+    "methodology_r56": {
       "overall": "MIXED_CALIBRATION",
       "material_change": true,
-      "material_change_reason": "WRITE_CAPABLE_PUSH_TRIGGER_ISOLATION_GAP_CONFIRMED_WHILE_DURABLE_REFS_SELF_DISARM_HISTORICAL_REPLAY",
       "hard_floor": "KEEP",
       "hidden_second_formal_gate": false,
       "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED",
       "scientific_threshold_change": false,
-      "governance_action": "TIGHTEN_FUTURE_WRITE_CAPABLE_SCIENTIFIC_WORKFLOW_TRIGGER_ISOLATION_WITHOUT_EXERCISING_HISTORICAL_WORKFLOWS_OR_ADDING_A_SCIENTIFIC_GATE"
+      "future_h7_claim_scope": "SPECIFICITY_AND_UNIQUENESS_REQUIREMENTS_ARE_CLAIM_SCOPED_NOT_UNIVERSAL_READY_GATES",
+      "equivalence_trust_boundary": "SELF_ASSERTED_PRODUCER_DISTINCTNESS_AND_SUPPLIED_DIGESTS_ARE_NOT_INDEPENDENT_PROVENANCE_OR_RAW_TO_DIGEST_ASSURANCE"
     },
     "utility_equivalence_prototype": {
-      "classification": "ISOLATED_GENERIC_EQUIVALENCE_CERTIFICATE_PROTOTYPE_VALIDATED_SYNTHETICALLY",
       "evidentiary_status": "NON_EVIDENTIARY",
       "candidate_touched": false,
       "branch_ahead_by": 2,
       "changed_files": 2,
-      "synthetic_tests": "7 passed",
-      "verdict_surface": [
-        "VALID_EQUIVALENT",
-        "VALID_NOT_EQUIVALENT",
-        "INVALID_CONTRACT"
-      ],
-      "independent_control_review": "READ_ONLY_CODE_AND_DIFF_INSPECTION_CONFIRMS_CANDIDATE_AGNOSTIC_OUTCOME_INDEPENDENT_SCOPE",
-      "main_promotion_status": "REVIEW_ELIGIBLE_NOT_APPROVED"
+      "ci_run": 35668005338,
+      "ci_status": "FAILED_LINT_ON_PYTHON_3_11_AND_3_13",
+      "lint_rule": "UP035",
+      "lint_path": "src/sparkbrain/equivalence_certificate.py:14",
+      "minimal_repair": "MOVE_MAPPING_IMPORT_FROM_TYPING_TO_COLLECTIONS_ABC_KEEP_ANY_FROM_TYPING",
+      "main_promotion_status": "NOT_PROMOTION_READY"
     }
   },
   "worker_assessment": {
-    "analyst": "R56 canonical authority; 32/32 typing complete; no candidate lifecycle delta; no active candidate and no allocation.",
-    "main": "R56 intentional no-target idle; no experiment/workflow/identity/research mutation.",
-    "relay": "No active MAIN continuation authority and no separate durable scientific advance after the R56 idle state.",
-    "sub": "R56 credible no-op/no-target; local check_count 20 remains liveness-only; theory-backward share remains 1/3.",
-    "literature": "R26 genuinely new H7 causal-faithfulness reduction guidance; non-authorizing.",
-    "audit": "R5 H5 endpoint robust with narrow interpretation ceiling.",
-    "methodology": "R54 material governance/integrity calibration update on write-capable push-trigger isolation; scientific gates unchanged.",
-    "steward": "G9 independently confirmed the legacy CX01 trigger-isolation gap, current self-disarm, zero immutable incident, and no then-current promotion candidate.",
-    "utility": "Latest AUTONOMOUS_IDLE run completed one isolated generic equivalence-certificate prototype; two commits/two files, synthetic 7/7 tests, no scientific authority or collision."
+    "analyst": "R58 canonical authority; 32/32 typing complete; no candidate lifecycle delta; H7 claim-scope contract sharpened; Utility prototype remains non-scientific and not promotion-ready.",
+    "main": "R58 intentional no-target idle; no candidate, experiment, workflow, identity or research mutation.",
+    "relay": "Live poll observed after R58 but no separate durable continuation advance surfaced; no active MAIN object existed.",
+    "sub": "R58 credible no-op/no-target; local liveness check 22; theory-backward share remains 1/3; no scientific selection.",
+    "literature": "R27 genuinely new specificity/identifiability guidance for future H7 claims; non-authorizing.",
+    "audit": "R6 materially weakens only the positive mechanistic-reduction interpretation of PD01 while preserving its protocol-valid frozen FAIL decision and one-way evidence chain.",
+    "methodology": "R56 mixed calibration; hard floor and readiness semantics remain sound; future H7 specificity/uniqueness gates are claim-scoped.",
+    "steward": "G9 governance findings remain current: main/evidence separation sound; no immutable incident; zero rulesets; legacy CX01 write-capable trigger-isolation gap self-disarmed by existing refs.",
+    "utility": "Latest autonomous run was a one-run read-only lint diagnostic; exact single UP035 repair identified; no mutation or scientific authority."
   },
   "utility_governance": {
     "assignment_status": "IDLE",
     "active_assignment_id": null,
     "autonomy_status": "APPLIED_AND_CONFORMANT",
-    "latest_autonomous_task": "AUTOUTIL-20260922T0824+0900-EQUIV-CERT-PROTOTYPE-A42D7C19",
+    "latest_autonomous_task": "AUTOUTIL-20260922T1030+0900-EQUIV-LINT-DIAG-4D8A21C6",
     "latest_task_status": "COMPLETED",
     "latest_task_evidentiary_status": "NON_EVIDENTIARY",
     "latest_task_max_runs": 1,
@@ -239,102 +241,92 @@
     "candidate_typing_changed": false,
     "theory_backward_quota_credit": false,
     "scheduler_mutation": false,
-    "development_branch": "utility/equivalence-certificate-v0-1-A42D7C19",
-    "development_branch_head": "710f397b1af36c73378f6029c27ccb44242f02b9",
-    "next_control_posture": "LEAVE_ASSIGNMENT_POINTER_IDLE; DO_NOT_MERGE; ROUTE PROTOTYPE TO STEWARD/REVIEW AS A POSSIBLE MAIN-PROMOTION CANDIDATE; REAL SCIENTIFIC USE REQUIRES FRESH PROSPECTIVE BINDING"
+    "open_request_dispositions": [
+      {
+        "request_id": "UTIL-20260922-0934-EQUIV-CERT-CI-STEWARD-REVIEW",
+        "disposition": "ACCEPT_BOUNDED_NON_SCIENTIFIC_REPAIR_AND_REVIEW_PATH",
+        "assignment_created": false,
+        "reason": "The exact CI blocker is a single ordinary Ruff UP035 import defect on an isolated candidate-agnostic Utility branch. Existing approved AUTONOMOUS_IDLE semantics already permit this bounded non-evidentiary isolated tooling repair without creating scientific authority or MAIN dependency.",
+        "allowed_next_action": "Apply only the exact Mapping import repair on the isolated Utility branch and run ordinary repository CI; then stop and report.",
+        "forbidden": [
+          "scientific workflow or experiment",
+          "candidate32 or H7 repair/reopen/rerun",
+          "Funnel typing/readiness change",
+          "merge or main-promotion approval",
+          "scheduler mutation",
+          "claiming lint/CI green as scientific equivalence validation"
+        ],
+        "post_ci_requirement": "Fresh Repository Steward structural review plus normal reviewed integration before any future main-promotion decision; independent-provenance/raw-stream trust limits remain separate."
+      }
+    ],
+    "next_control_posture": "LEAVE_ASSIGNMENT_POINTER_IDLE; ACCEPT_EXACT_LINT_REPAIR_UNDER_AUTONOMOUS_IDLE; DO_NOT_MERGE; REQUIRE_GREEN_CI_AND_FRESH_STEWARD_REVIEW_BEFORE_RECONSIDERING_PROMOTION"
   },
   "repository_governance": {
+    "ruleset_count": 0,
+    "protection_deployment": "DEFER_PER_HUMAN_DIRECTIVE",
     "workflow_trigger_isolation": {
       "classification": "LEGACY_CX01_WRITE_CAPABLE_PUSH_TRIGGER_ISOLATION_GAP_SELF_DISARMED_GOVERNANCE_ONLY",
       "current_scientific_effect": "NONE",
-      "current_replay_risk": "SELF_DISARMED_BY_EXISTING_CONTROL_AND_PRESERVE_REFS",
-      "future_policy": "PREFER_MANUAL_OR_ONE_SHOT_PROSPECTIVE_AUTHORITY_OR_MACHINE_READABLE_REVIEWED_EXCEPTION_FOR_WRITE_CAPABLE_SCIENTIFIC_TRIGGER_PATHS",
+      "future_policy": "PREFER_EXPLICIT_PROSPECTIVE_TRIGGER_AUTHORITY_FOR_WRITE_CAPABLE_SCIENTIFIC_PATHS",
       "historical_workflow_dispatch_for_validation": "PROHIBITED"
     },
-    "ruleset_count": 0,
-    "protection_deployment": "DEFER_PER_HUMAN_DIRECTIVE",
     "utility_equivalence_main_promotion_candidate": {
-      "status": "REVIEW_ELIGIBLE_NOT_APPROVED",
-      "rationale": "Candidate-independent exact binding/privilege/resource/equivalence infrastructure is outcome-independent and reusable; independent Control code/diff inspection found only a generic module and synthetic tests, but no reviewed integration/PR/CI approval exists.",
-      "required_before_merge": [
-        "Repository Steward structural promotion review",
-        "reviewed integration branch or PR",
-        "normal repository CI/static-quality checks",
-        "confirm no hidden scientific or candidate authority enters the stable API"
-      ]
+      "status": "NOT_PROMOTION_READY",
+      "blocking_items": [
+        "Ruff UP035 CI failure",
+        "fresh Repository Steward structural review after repair/green CI",
+        "normal reviewed integration path",
+        "scientific trust-boundary caveats must remain explicit and separate from generic tooling readiness"
+      ],
+      "merge_authorized": false
     }
   },
   "scheduler_health": {
     "fleet_status": "YELLOW",
     "scheduler_definition_drift_detected": true,
+    "scheduler_definition_drift_detail": "Live Current State Brief remains approved at 01:55/09:55/13:55/17:55/21:55 JST while scheduler registry manifest still records :45; registry also contains older core prompt mirrors. This is mirror drift; live definitions remain authoritative.",
     "scheduler_cadence_failure_detected": false,
     "exact_time_overlap_count": 0,
-    "exact_time_overlap_risks": [],
+    "exact_time_collision_risk": "NONE_DETERMINISTIC",
+    "observed_material_start_delays": "NO_RELIABLE_MATERIAL_START_DELAY_PROVEN. Durable produced/persistence offsets are not scheduler-start timestamps; recent offsets include Analyst +8m52, MAIN +6m19, Methodology +1m42 and SUB +0m53 without stale scientific action.",
     "role_ownership_collision_count": 0,
-    "observed_material_start_delays": [],
-    "start_delay_assessment": "NO_RELIABLE_MATERIAL_START_DELAY_ESTABLISHED; R56 MAIN PRODUCED_AT IS APPROXIMATELY ON ITS :15 PHASE, SUB EXACTLY :35, METHODOLOGY ABOUT 26S AFTER :20; SCHEDULER LAST_RUN_TIME REMAINS UNSUITABLE AS START TELEMETRY",
     "recent_noop_idle_patterns": {
-      "MAIN": "REPEATED_INTENTIONAL_IDLE_NO_EXECUTABLE_TARGET",
-      "SUB": "REPEATED_CREDIBLE_NO_TARGET_NO_OP",
-      "Relay": "NO_ACTIVE_CONTINUATION_AUTHORITY_NO_DURABLE_ADVANCE",
-      "Utility": "USEFUL_AUTONOMOUS_NON_EVIDENTIARY_TOOLING_PROTOTYPE_COMPLETED"
+      "main": "INTENTIONAL_NO_TARGET_IDLE",
+      "sub": "INTENTIONAL_NO_TARGET_IDLE_DENOMINATOR_EXCLUDED",
+      "relay": "NO_ACTIVE_CONTINUATION_AUTHORITY_NO_DURABLE_ADVANCE",
+      "utility": "USEFUL_BOUNDED_NON_EVIDENTIARY_DIAGNOSTIC"
     },
-    "useful_result_cadence_vs_polling_cadence": "CORE_SCIENTIFIC_USEFUL_RESULT_RATE_LOW_RELATIVE_TO_POLLING_DUE_NO_EXECUTABLE_MECHANISM; METHODOLOGY_LITERATURE_AND_UTILITY_INFORMATION_ARRIVAL_REMAINS_NONZERO_AND_USEFUL",
-    "generation_lag_assessment": "NO_STALE_GENERATION_SCIENTIFIC_ACTION_OBSERVED; R56 WAS CONSUMED BY MAIN_SUB_AND_METHODOLOGY; RELAY HAD NO CONTINUATION AUTHORITY",
+    "useful_result_cadence_vs_polling": "SCIENTIFIC_RESULT_RATE_LOW_BECAUSE_VIABLE_MECHANISM_ZERO; NONSCIENTIFIC_INFORMATION_ARRIVAL_REMAINS_MATERIAL_FROM_LITERATURE_AUDIT_METHODOLOGY_UTILITY",
+    "generation_lag_assessment": "EXPECTED_ONE_CYCLE_LAG: Audit R6 and Methodology R56 arrived after Analyst R58 and should be consumed by next Analyst. No stale-generation scientific execution observed.",
     "active_sparkbrain_run_opportunities_per_day": 175,
-    "registry_drift": {
-      "confirmed": true,
-      "items": [
-        {
-          "task": "SparkBrain 現在状態ブリーフ",
-          "live_schedule": "01:55/09:55/13:55/17:55/21:55 JST",
-          "registry_manifest_schedule": "01:45/09:45/13:45/17:45/21:45 JST",
-          "classification": "REGISTRY_MIRROR_STALE_LIVE_APPROVED_POLICY_WINS"
-        }
-      ],
-      "required_hygiene": "RECONCILE_REGISTRY_FROM_LIVE_STABLE_DEFINITIONS_BEFORE_FUTURE_SCHEDULER_MUTATION; DO_NOT_REVERT_LIVE_TO_STALE_REGISTRY"
-    },
     "scheduler_change_warranted": false,
     "scheduler_controller_action": "NO_CHANGE",
     "scheduler_action_class": "NO_CHANGE",
-    "scheduler_proposals": []
-  },
-  "generation_map": {
-    "control": "CTRL-20260922T085130+0900-R31-B7D4A219",
-    "analyst": "EVA-20260922T075818+0900-R56-8B3D21F6",
-    "main": "MAIN-20260922T081455+0900-PRIMARY-FUNNEL21-IDLE-R56-8B3D21F6",
-    "sub": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6",
-    "relay": "NO_SEPARATE_DURABLE_ADVANCE_R56_NO_ACTIVE_MAIN_OBJECT",
-    "literature": "LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8",
-    "audit": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
-    "methodology": "METHCAL-20260922T082026+0900-R54-8D3F21C6",
-    "steward": "STEWARD-20260922T075212+0900-G9-8C4E21D3",
-    "utility": "UTILITY-20260922T083500+0900-AUTO-EQUIV-CERT-PROTOTYPE-COMPLETED-A42D7C19"
+    "scheduler_proposals": [],
+    "registry_reconciliation_requirement": "RECONCILE_REGISTRY_FROM_LIVE_STABLE_DEFINITIONS_BEFORE_ANY_FUTURE_SCHEDULER_MUTATION; NEVER_REVERT_LIVE_BRIEF_TO_STALE_45"
   },
   "priorities": [
-    "Keep scientific MAIN/SUB intentionally idle until a genuinely fresh, prospectively falsifiable MECHANISM object or material mechanism-surface delta appears; do not manufacture activity.",
-    "Keep H7 nonterminal/unqueued and apply claim-scoped causal-faithfulness controls only to a fresh future object.",
-    "Keep candidate #32 terminal/no-rescue and H5 consumed/no-retry with narrow interpretation ceilings.",
-    "Treat Methodology R54 trigger-isolation as governance/integrity tooling, not a scientific admission/readiness gate; never exercise historical scientific workflows to validate a repair.",
-    "Route the isolated Utility equivalence-certificate prototype to Repository Steward/review as a possible main-promotion candidate without merging it or making MAIN depend on it.",
-    "Preserve bounded Utility autonomy while requiring one-run scope, collision checks, NON_EVIDENTIARY labeling for autonomous tooling, and no candidate/readiness/quota authority.",
-    "Keep scheduler live definitions unchanged; reconcile the stale registry mirror before any future scheduler mutation transaction."
+    "Evidence Analyst next generation must incorporate Audit R6 and Methodology R56 prospectively without mutating frozen PD01/H7 history.",
+    "Maintain intentional scientific idle until a materially fresh native prospectively falsifiable MECHANISM object or mechanism-surface delta appears; no rescue laundering.",
+    "Allow only the exact Utility UP035 import repair under bounded AUTONOMOUS_IDLE, then require ordinary green CI and fresh Steward review; no merge or scientific authority.",
+    "Reconcile scheduler registry from live stable definitions before any future scheduler mutation transaction, without changing live scheduler semantics merely for mirror hygiene."
   ],
-  "direction_to_analyst": [
-    "Preserve R56 32/32 Funnel typing, H7 nonterminal hold, candidate #32 terminal/no-rescue and no-target liveness semantics.",
-    "Do not infer mechanism progress, PRE_FORMAL readiness, or candidate authority from the Utility equivalence-certificate prototype.",
-    "If a future comparator/resource question is independently admitted, generic verifier tooling may be considered only after governance/review; scientific contracts and matched privilege/resources must still be bound prospectively.",
-    "Keep Methodology R54 workflow-trigger isolation as governance/integrity calibration, separate from scientific readiness thresholds."
-  ],
+  "direction_to_evidence_analyst": {
+    "pd01": "Preserve canonical FAIL token, statistics, identity and immutable evidence. Cap narrative interpretation at NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR. Future fresh positive reduction claims should distinguish phenomenon absence from positive phenomenon reproduced by an ordinary matched baseline.",
+    "h7": "Keep current H7 nonterminal HOLD and unqueued. For a future fresh object, apply task/context specificity and uniqueness/identifiability requirements only when those stronger claim scopes are actually asserted; existential faithful-route claims may use equivalence-class language when nonunique.",
+    "candidate32": "Remain terminal HOLD_METHOD_LIMITED; no same-object repair/rerun/cycle3/uplift.",
+    "utility": "Do not treat generic verifier tooling or a future green lint/CI result as mechanism supply, scientific equivalence evidence, PRE_FORMAL readiness or quota credit."
+  },
   "mutations_this_run": {
-    "experiments_executed": 0,
+    "scientific_experiments_executed": 0,
     "scientific_workflows_dispatched": 0,
-    "identities_consumed": 0,
+    "one_way_identities_consumed": 0,
     "research_prs_merged": 0,
+    "scientific_candidate_mutations": 0,
     "immutable_formal_evidence_mutations": 0,
-    "utility_assignment_mutations": 0,
+    "utility_assignments_created_or_modified": 0,
     "scheduler_mutations": 0,
     "ruleset_or_protection_mutations": 0,
-    "scientific_candidate_mutations": 0
+    "control_persistence_only": true
   }
 }
