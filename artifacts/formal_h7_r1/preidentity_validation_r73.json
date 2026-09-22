@@ -1,0 +1,99 @@
+{
+  "schema_version": 2,
+  "artifact_id": "H7-FORMAL-R1-PREIDENTITY-VALIDATION-R73-V1",
+  "status": "BLOCKED_PREIDENTITY_BINDING_INCOMPLETE_NO_IDENTITY_NO_RESULT",
+  "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_VALIDATION",
+  "analyst_authority": {
+    "generation_id": "EVA-20260922T202146+0900-R73-9A4C21E7",
+    "commit": "443c87fb44ae93845ff6b4d389196716a4efbc92",
+    "decision": "GO_H7_FORMAL_R1_PREIDENTITY_FINAL_BINDING_PROVENANCE_VALIDATION_ONLY_STOP_BEFORE_IDENTITY_START_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION"
+  },
+  "candidate": {
+    "id": "CAND-H7-RESPONSIBILITY",
+    "claim_ceiling": "MECHANISM",
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-FORMAL-R1-PREIDENTITY-BINDING-AND-PROVENANCE-CLOSURE",
+    "cycle": 7,
+    "preformal_eligible": true,
+    "preformal_readiness": "READY",
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "system_priority_exception_used": false
+  },
+  "exact_source": {
+    "branch": "research/main-h7-formal-r1-preidentity-closure-r70-cycle7",
+    "reviewed_head": "67ed8fad1d861463e4129d44efbb2540affd1889",
+    "exact_head_ci_run": 35715449587,
+    "exact_head_ci_conclusion": "success",
+    "ref_reconciliation": "CLOSED_SCIENCE_INVARIANT"
+  },
+  "known_blob_bindings_at_reviewed_head": {
+    "contract_path": "artifacts/formal_h7_r1/contract_design.json",
+    "contract_blob": "af26de3067263afcff0e727321fa173ea14de659",
+    "scorer_and_preserver_path": "src/sparkbrain/learned/h7_formal_r1.py",
+    "scorer_and_preserver_blob": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
+    "preflight_script_path": "scripts/preflight_h7_formal_r1.py",
+    "preflight_script_blob": "bc9eac991df4d545bddfaa3fd2809b10215cee27",
+    "runtime_seed_preflight_path": "src/sparkbrain/learned/h7_formal_r1_preflight.py",
+    "runtime_seed_preflight_blob": "ee336cef36cfad69e5a9b4d34052c0a671c5ad0a",
+    "formal_runner_path": "scripts/run_h7_formal_r1.py",
+    "formal_runner_blob": null,
+    "formal_runner_status": "ABSENT_AT_REVIEWED_HEAD"
+  },
+  "no_clobber_remote_observation": {
+    "h7_control_or_started_refs_present": false,
+    "h7_preserve_refs_present": false,
+    "h7_evidence_tags_present": false,
+    "observation_scope": [
+      "refs/heads/control/h7*",
+      "refs/heads/preserve/h7*",
+      "refs/tags/evidence/h7*"
+    ],
+    "note": "This is a preidentity absence observation only. Future identity/STARTED/preserve/evidence names remain create-only and must be rechecked immediately before any later authorized creation."
+  },
+  "input_binding_identifiability": {
+    "status": "BLOCKED_PROSPECTIVE_CLARIFICATION_REQUIRED",
+    "fixed_by_contract": [
+      "four worlds",
+      "24 steps per episode",
+      "fit seed range 8166520-8166711",
+      "calibration seed range 8350164-8350227",
+      "formal evaluation seed range 8846030-8846285",
+      "world assignment by seed-list index modulo four",
+      "native training seed 9339631",
+      "dense training seed 9428927",
+      "eligibility head seed 9107020"
+    ],
+    "unfixed_identity_field": "Episode.split for fit/calibration/evaluation roles",
+    "why_material": "Episode.split is validated as one of train/dev/test/smoke, is embedded in episode_id, and is propagated into LearnedExample. The frozen FORMAL contract does not specify the split value for any of the three prospective surfaces. Exact input identity therefore cannot be fully bound without choosing a previously unfixed input-identity field.",
+    "outcome_dependence": false,
+    "main_action": "STOP_BEFORE_CHOOSING_SPLIT_OR_MATERIALIZING_AN_EXACT_FORMAL_RUNNER; RETURN_TO_EVIDENCE_ANALYST_FOR_PROSPECTIVE_CLARIFICATION_OR_VERSIONED_BINDING",
+    "scientific_result": null
+  },
+  "eligibility_comparator_implementation": {
+    "contract_fixed_head_seed": 9107020,
+    "dev_r2_module_default_head_seed": 7603,
+    "status": "FORMAL_RUNNER_MUST_IMPLEMENT_ALREADY_FIXED_FORMAL_SEED_WITHOUT_MUTATING_DEV_R2_HISTORY",
+    "analyst_choice_required_for_seed_value": false
+  },
+  "remaining_gates": {
+    "exact_formal_runner": "BLOCKED_ON_INPUT_SPLIT_BINDING",
+    "runner_scorer_preserver_self_binding": "PARTIAL_SCORER_PRESERVER_ONLY",
+    "actual_runtime_manifest": "NOT_MATERIALIZED",
+    "actual_package_manifest": "NOT_MATERIALIZED",
+    "complete_prior_surface_seed_inventory": "NOT_MATERIALIZED",
+    "actual_seed_collision_audit": "NOT_RUN",
+    "remote_no_clobber": "PARTIAL_CURRENT_H7_NAMESPACE_ABSENCE_VERIFIED_RECHECK_REQUIRED_LATER",
+    "synthetic_one_way_scorer_preserve_totality": "NOT_DECLARED_CLOSED_BY_R73",
+    "durable_pf_r1_raw_summary_exact_bytes": "PENDING_CONTROL_APPROVED_UTILITY_RESULT"
+  },
+  "hard_stop_confirmation": {
+    "formal_identity_created": false,
+    "started_created": false,
+    "protected_evaluation_accessed": false,
+    "result_bearing_workflow_dispatched": false,
+    "official_scoring_performed": false,
+    "scientific_preserve_or_evidence_ref_created": false,
+    "consumed_identity_reused": false
+  }
+}
