@@ -1,45 +1,44 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260922T222214+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-REPAIR-R75-D7F2A9C1",
-  "run_id": "sparkbrain-main-primary-20260922T221939JST-R75-h7-formalr2-cycle8-ci-recovery",
-  "producer_run_id": "sparkbrain-main-primary-20260922T221939JST-R75-h7-formalr2-cycle8-ci-recovery",
-  "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R2_PREIDENTITY_SCIENCE_INVARIANT_CI_RECOVERY_ONLY_NO_IDENTITY_NO_RESULT",
-  "supersedes_generation_id": "MAIN-20260922T213400+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-R75-D7F2A9C1",
+  "generation_id": "MAIN-20260922T231900+0900-PRIMARY-H7-FORMALR3-C9-RECOVERY-R80-6B8F31C4",
+  "run_id": "sparkbrain-main-primary-20260922T231900JST-R80-h7-formalr3-preidentity-recovery",
+  "producer_run_id": "sparkbrain-main-primary-20260922T231900JST-R80-h7-formalr3-preidentity-recovery",
+  "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R3_EXACT_RUNTIME_BINDING_TARGET_BLIND_PREDICTION_RAW_GATE_AND_ONEWAY_PREFLIGHT_CYCLE9_PREIDENTITY_ONLY",
+  "supersedes_generation_id": "MAIN-20260922T224100+0900-PRIMARY-H7-FORMALR3-C9-RECONCILE-R77-6C9F2A41",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T210223+0900-R75-D7F2A9C1@c190afff7e33977c530c207904bd42ce7187a20d",
-    "main_previous": "MAIN-20260922T213400+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-R75-D7F2A9C1",
-    "sub": "SUB-20260922T214353+0900-ARCH-C33-CONFORM-R75-D7F2A9C1"
+    "evidence_analyst": "EVA-20260922T230224+0900-R80-6B8F31C4@88f72d4e55d30e561143df94e06ce10c91972104",
+    "main_previous": "MAIN-20260922T224100+0900-PRIMARY-H7-FORMALR3-C9-RECONCILE-R77-6C9F2A41",
+    "sub": "SUB-20260922T224730+0900-NOOP-SCAN-R79-3F8A61C2"
   },
   "execution_mode": "PRIMARY",
   "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-22T22:19:39+09:00",
-  "heartbeat_at": "2026-09-22T22:22:14+09:00",
+  "started_at": "2026-09-22T23:19:00+09:00",
+  "heartbeat_at": "2026-09-22T23:36:00+09:00",
   "completed_at": null,
   "blocked_at": null,
   "blocked_until": null,
-  "analyst_generation_id": "EVA-20260922T210223+0900-R75-D7F2A9C1",
-  "analyst_commit": "c190afff7e33977c530c207904bd42ce7187a20d",
-  "analyst_decision": "GO_H7_FORMAL_R2_INPUT_SPLIT_BINDING_AND_PREIDENTITY_REVALIDATION_CYCLE8_ONLY_STOP_BEFORE_IDENTITY_START_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
+  "analyst_generation_id": "EVA-20260922T230224+0900-R80-6B8F31C4",
+  "analyst_commit": "88f72d4e55d30e561143df94e06ce10c91972104",
+  "analyst_decision": "GO_H7_FORMAL_R3_EXACT_RUNTIME_BINDING_TARGET_BLIND_PREDICTION_RAW_GATE_AND_ONEWAY_PREFLIGHT_CYCLE9_PREIDENTITY_ONLY_STOP_BEFORE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
   "research_layer": "FORMAL",
-  "main_lane": "H7_FORMAL_R2_INPUT_SPLIT_BINDING_AND_PREIDENTITY_REVALIDATION_CYCLE8_ONLY",
+  "main_lane": "H7_FORMAL_R3_EXACT_RUNTIME_BINDING_TARGET_BLIND_PREDICTION_RAW_GATE_AND_ONEWAY_PREFLIGHT_CYCLE9_PREIDENTITY_ONLY",
   "candidate_id": "H7 responsibility",
   "candidate_alias": "CAND-H7-RESPONSIBILITY",
   "candidate_ordinal": 7,
   "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-  "development_revision": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-AND-PREIDENTITY-REVALIDATION",
+  "development_revision": "H7-FORMAL-R3-UNEXPOSED-EVALUATION-COMMITMENT-AND-RUNTIME-BINDING",
   "repair_change_classification": {
-    "episode_split_binding": "SCIENCE_AFFECTING_CHANGE_VERSIONED_PROSPECTIVELY_BY_ANALYST_R75_BEFORE_FORMAL_IDENTITY",
-    "prior_lint_import_format_repairs": "SCIENCE_INVARIANT_REPAIR",
-    "torch_local_build_metadata_validation": "SCIENCE_INVARIANT_REPAIR_RUNTIME_VERSION_METADATA_NORMALIZATION_ONLY",
-    "post_result_science_affecting_change_beyond_r75": "NONE"
+    "raw_gate_preserve_sidecar_runtime_and_component_binding": "SCIENCE_INVARIANT_PREIDENTITY_INTEGRITY_CLOSURE_IMPLEMENTING_ALREADY_FIXED_R80_REQUIREMENTS",
+    "diagnostic_logging_and_workflow_order": "SCIENCE_INVARIANT_REPAIR",
+    "science_affecting_change": "NONE"
   },
-  "cycle_count": 8,
-  "reassessment_rationale": "R75 recorded concrete information gain beyond cycle 7: prospectively bind Episode.split as fit=train, calibration=dev, evaluation=test with result-bearing smoke forbidden, preserve every other R1 scientific field, and revalidate exact preidentity runner/runtime/package/hash/no-clobber plumbing before any one-way identity. This continuation fixes only a pre-result runtime-version metadata comparison defect exposed by non-result-bearing CI.",
+  "cycle_count": 9,
+  "reassessment_rationale": "R80 recorded concrete information gain from Independent Audit R7: R1/R2 raw exposed target-derived correctness before preserve. Cycle 9 closes a prediction-only raw allowlist, separated protected target sidecar, preserve-before-target-access proof, post-preserve correctness recomputation, exact runtime/build binding, component binding, collision inventory and no-clobber preflight without changing scientific meaning.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {
     "status": "READY",
-    "semantics": "development readiness only; not identity readiness, scientific success, reduction exhaustion, or FORMAL execution authority"
+    "semantics": "development readiness only; not FORMAL execution authority, scientific success, or reduction exhaustion"
   },
   "hold_class": null,
   "hold_reason": null,
@@ -48,85 +47,81 @@
   "system_priority_exception": {"used": false},
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "base_research_branch": "research/main-h7-formal-r1-preidentity-closure-r70-cycle7",
-    "base_head": "baaec4a7f1a1b6820d78ff9b33566bb809f74f42",
-    "active_research_branch": "research/main-h7-formal-r2-input-split-r75-cycle8",
-    "previous_head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
-    "current_head": "a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
-    "r2_contract_path": "artifacts/formal_h7_r2/contract.json",
-    "r2_contract_id": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-V1",
-    "r2_contract_blob": "a4965eb49528e5b7e6da70f28e076de89d822f93",
-    "r2_input_surface_sha256": "b1ec2861017642954fc7b510f0131d13500397aa5d991d4a3d30fe75fd3bafcc",
-    "runner_entrypoint": "scripts/run_h7_formal_r2.py",
-    "runner_core": "src/sparkbrain/learned/h7_formal_r2_runner.py",
-    "r2_binding_module": "src/sparkbrain/learned/h7_formal_r2.py"
-  },
-  "r2_binding": {
-    "fit_split": "train",
-    "calibration_split": "dev",
-    "formal_evaluation_split": "test",
-    "result_bearing_smoke_forbidden": true,
-    "worlds": ["switchworld", "contradiction_world", "goal_conflict_world", "multi_object_world"],
-    "steps_per_episode": 24,
-    "fit_seed_range_inclusive": [8166520, 8166711],
-    "calibration_seed_range_inclusive": [8350164, 8350227],
-    "formal_evaluation_seed_range_inclusive": [8846030, 8846285],
-    "world_assignment": "seed-list index modulo 4 in listed world order",
-    "native_training_seed": 9339631,
-    "dense_training_seed": 9428927,
-    "eligibility_head_seed": 9107020,
-    "all_other_r1_scientific_fields_preserved": true
+    "active_research_branch": "research/main-h7-formal-r3-unexposed-eval-runtime-r76-cycle9",
+    "starting_head": "325e93c62c1f79baa107b677a3dc881dc6f47ace",
+    "current_head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
+    "contract_path": "artifacts/formal_h7_r3/contract_design.json",
+    "runtime_binding_path": "artifacts/formal_h7_r3/runtime_binding.json",
+    "runtime_binding_blob": "ab8531479d03a15c2e36f0cfe45cfe4fa605d312",
+    "prior_surface_inventory_path": "artifacts/formal_h7_r3/prior_surface_inventory.json",
+    "prior_surface_inventory_blob": "e9d43053ab4e3405f7886b289f1c3ea5b09286a0",
+    "implementation_binding_path": "artifacts/formal_h7_r3/implementation_binding.json",
+    "implementation_binding_blob": "e50e1f7fda6775c94ebaef7a11cf2d1cb8cd87f9"
   },
   "implementation": {
-    "exact_future_runner_materialized": true,
-    "runner_is_result_bearing_guarded": true,
-    "preidentity_only_entrypoint_available": true,
-    "target_blind_raw_collector_path_bound": true,
-    "same_final_sha_gate_implemented": true,
-    "started_marker_validation_implemented": true,
-    "contract_runner_scorer_preserver_blob_checks_implemented": true,
-    "runtime_package_manifest_checks_implemented": true,
-    "runtime_version_metadata_repair": {
-      "failure_run": 35727871981,
-      "failure_stage": "NON_RESULT_PREIDENTITY_MANIFEST_BUILD",
-      "failure_reason": "raw torch.__version__ local build suffix rejected by exact bare-version equality",
-      "package_requirement_unchanged": "torch==2.13.0",
-      "validation_after_repair": "torch_version.split('+', 1)[0] == '2.13.0'",
-      "full_raw_torch_version_still_recorded": true,
-      "scientific_runtime_or_resource_change": false
-    }
+    "prediction_only_raw_allowlist": true,
+    "raw_forbids_target_derived_correctness": true,
+    "protected_target_sidecar_separated": true,
+    "target_sidecar_coverage_validation": true,
+    "preserve_before_target_access_proof_required": true,
+    "post_preserve_correctness_recomputation": true,
+    "frozen_scientific_scorer_reused_without_semantic_change": true,
+    "fresh_episode_id_adapter_is_world_stratified_identifier_relabel_only": true,
+    "create_only_prediction_raw_preserver": true,
+    "no_clobber_preflight": true,
+    "prior_h7_episode_and_training_surface_inventory": true,
+    "future_r3_evaluation_seed_values_persisted": false,
+    "future_collision_audit_complete": false,
+    "preidentity_component_binding_materialized": true,
+    "protected_result_executor_materialized": false,
+    "binding_complete": false
+  },
+  "runtime_binding": {
+    "mode": "LITERAL_EXACT_NO_NORMALIZATION",
+    "source_observation_head": "325e93c62c1f79baa107b677a3dc881dc6f47ace",
+    "source_observation_run": 35734936639,
+    "source_runtime_observation_sha256": "73cbefbbab375c7f935a42ad51944568ae75123943a219fd49500f9593c06462",
+    "python_version": "3.11.16",
+    "runner_image_version": "20260907.300.1",
+    "pip_freeze_sha256": "25b4a1c5d60d30e5e354856469420d04a1fdc3db003745d0c47c92b5fa61230f",
+    "exact_reproduction_status": "NOT_YET_REPRODUCED_ON_CURRENT_IMPLEMENTATION_HEAD",
+    "observed_failure_run": 35740728203,
+    "observed_failure": "literal exact runtime binding mismatch before any protected/result-bearing action",
+    "mismatch_field": "PENDING_DIAGNOSTIC_FROM_CURRENT_NON_RESULT_WORKFLOW",
+    "policy": "fail closed; do not normalize, broaden, or silently rebind after mismatch"
+  },
+  "component_blobs": {
+    "r3_contract_runtime_module": "9bde5379542ecca84157e82868abe679e0099e31",
+    "r3_raw_preserve_post_preserve_adapter": "37c9c46febba1baba5580ed1aa803dcc483bef66",
+    "r3_preidentity_runner": "29b3e2ad0db1d0880ded58e3a1f6c85e698b2abc",
+    "r3_preidentity_workflow": "912309598567f7997c8271c23056579b0c041bc7",
+    "frozen_scientific_scorer": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
+    "legacy_r2_runner_reference_only": "33f5ecd8d2bb75b2c7d0ed48f482f4945ea3fb0b"
   },
   "workflows": [
     {
-      "run_id": 35727871981,
-      "name": "h7-formal-r2-preidentity",
-      "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+      "run_id": 35740728203,
+      "name": "h7-formal-r3-preidentity",
+      "head": "f0500c455f80666f0213567f231365ca87c97341",
       "status": "completed",
       "conclusion": "failure",
       "result_bearing": false,
-      "failure_class": "SCIENCE_INVARIANT_RUNTIME_VERSION_METADATA_VALIDATION_DEFECT"
+      "failure_class": "FAIL_CLOSED_LITERAL_EXACT_RUNTIME_BINDING_MISMATCH"
     },
     {
-      "run_id": 35727871994,
-      "name": "ci",
-      "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false
-    },
-    {
-      "run_id": 35732856997,
-      "name": "h7-formal-r2-preidentity",
-      "head": "a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
-      "status": "queued",
+      "run_id": 35741369078,
+      "name": "h7-formal-r3-preidentity",
+      "head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
+      "status": "in_progress",
       "conclusion": null,
-      "result_bearing": false
+      "result_bearing": false,
+      "expected_next": "run raw-gate tests/lint first, persist runtime observation, then fail-closed exact runtime comparison"
     },
     {
-      "run_id": 35732857066,
+      "run_id": 35741369076,
       "name": "ci",
-      "head": "a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
-      "status": "queued",
+      "head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
+      "status": "queued_or_in_progress",
       "conclusion": null,
       "result_bearing": false
     }
@@ -135,21 +130,21 @@
     "pf_r1_unchanged": true,
     "pf_r1_used_as_confirmatory_evidence": false,
     "pf_r1_rerun_retune_rescore": false,
+    "r1_r2_public_evaluation_surface_quarantined_for_future_formal": true,
     "consumed_formal_identities_reused": false,
     "immutable_formal_sealed_evidence_refs_mutated": false
   },
   "ordinary_reductions": {
     "panel_frozen": true,
     "panel": ["ORDINARY_DENSE_RECURRENT_V1", "FINITE_STATE_ROUTE_HISTORY_V2", "ELIGIBILITY_ROUTE_LEDGER_V2"],
-    "support_breadth": "Future claim remains limited to the exact frozen four-world dynamic-TOP1 regime and frozen ordinary-reduction panel; no uniqueness, task-specificity, completeness, sufficiency, broad reduction-exhaustion, or external-generalization claim is authorized."
+    "support_breadth": "Future H7 claim remains limited to the exact four-world dynamic-TOP1 regime and frozen ordinary-reduction panel; no uniqueness, task-specificity, completeness, sufficiency, broad reduction-exhaustion, or external-generalization claim is authorized."
   },
   "observations_evidentiary_status": {
     "formal_evidence": 0,
     "preformal_development_results": 0,
     "mechanism_architecture_observations": 0,
     "system_architecture_observations": 0,
-    "non_evidentiary_formal_preidentity_implementation": 1,
-    "non_result_ci_failure_diagnosed": 1,
+    "non_evidentiary_formal_preidentity_integrity_observations": 1,
     "scientific_result": null
   },
   "consumed_identities": [
@@ -161,31 +156,34 @@
     "ni01-no-ignition-selective-prediction-official-v1",
     "pd01-long-history-fading-memory-official-v1"
   ],
-  "remaining_preidentity_gates": {
-    "exact_head_generic_ci": "WAITING_EXTERNAL_RUN_35732857066",
-    "preidentity_runtime_package_manifest_workflow": "WAITING_EXTERNAL_RUN_35732856997",
-    "complete_prior_surface_seed_inventory_and_collision_audit": "NOT_CLOSED_THIS_RUN",
-    "remote_create_only_no_clobber": "RECHECK_REQUIRED_AT_FUTURE_CREATION_BOUNDARY",
-    "synthetic_one_way_scorer_preserve_totality": "NOT_CLOSED_THIS_RUN",
-    "durable_pf_r1_raw_summary_exact_bytes": "PENDING_SEPARATE_NON_EVIDENTIARY_PROVENANCE_CLOSURE",
-    "fresh_one_way_formal_authority": "NOT_GRANTED"
-  },
   "integrity": {
     "analyst_generation_rechecked_before_lease_acquisition": true,
-    "analyst_generation_rechecked_before_research_mutation": true,
+    "analyst_generation_rechecked_before_each_material_research_mutation": true,
     "analyst_generation_rechecked_before_final_control_persistence": true,
     "analyst_generation_stable": true,
+    "exact_branch_head_rechecked_before_final_control_persistence": true,
     "sub_collision": false,
     "science_result_exposed_this_run": false,
     "formal_identity_created_or_consumed": false,
     "started_created": false,
+    "evaluation_commitment_created": false,
+    "evaluation_seed_revealed": false,
     "protected_evaluation_accessed": false,
     "result_bearing_workflow_dispatched": false,
     "official_scoring_performed": false,
     "scientific_preserve_or_evidence_ref_created": false,
     "immutable_scientific_ref_mutation": false,
-    "science_affecting_change_beyond_r75": false
+    "science_affecting_change": false
   },
-  "stop_reason": "WAITING_ONLY_FOR_NON_RESULT_BEARING_EXACT_HEAD_CI_AND_PREIDENTITY_MANIFEST_WORKFLOW_AFTER_SCIENCE_INVARIANT_TORCH_METADATA_REPAIR",
-  "next_action": "After runs 35732856997 and 35732857066 complete, re-read R75-or-later Analyst generation and exact branch head. If validation is green, inspect non-result manifest outputs and continue only remaining R75-authorized preidentity closure. Do not create FORMAL identity, STARTED, access protected evaluation, dispatch result-bearing execution, preserve scientific evidence, or score official raw."
+  "remaining_preidentity_gates": {
+    "exact_head_generic_ci": "WAITING_EXTERNAL_RUN_35741369076",
+    "raw_gate_and_runtime_diagnostic": "WAITING_EXTERNAL_RUN_35741369078",
+    "literal_exact_runtime_reproduction": "UNRESOLVED_AFTER_RUN_35740728203_MISMATCH",
+    "future_concealed_seed_collision_audit": "DEFERRED_UNTIL_FUTURE_SEEDS_EXIST_UNDER_AUTHORITY",
+    "remote_create_only_no_clobber": "RECHECK_REQUIRED_AT_FUTURE_CREATION_BOUNDARY",
+    "protected_result_executor_binding": "NOT_MATERIALIZED_NOT_AUTHORIZED",
+    "fresh_one_way_formal_authority": "NOT_GRANTED"
+  },
+  "stop_reason": "WAITING_ONLY_FOR_NON_RESULT_BEARING_EXACT_HEAD_CI_AND_R3_PREIDENTITY_DIAGNOSTIC_AFTER_AUTHORIZED_SCIENCE_INVARIANT_INTEGRITY_CLOSURE; PRIOR_RUN_EXPOSED_LITERAL_RUNTIME_MISMATCH_REQUIRING_FAIL_CLOSED_REVIEW_IF_REPRODUCED",
+  "next_action": "After runs 35741369078 and 35741369076 complete, re-read R80-or-later Analyst generation and exact head. Inspect only non-result raw-gate/runtime diagnostic outputs. If exact runtime still mismatches, stop BLOCKED for Analyst rather than normalize/rebind. If exact validation succeeds, continue only still-authorized preidentity closure. Never create evaluation commitment, FORMAL identity, STARTED, reveal evaluation seeds, access protected evaluation, dispatch result-bearing execution, create scientific preserve/evidence refs, or score official raw without fresh explicit authority."
 }
