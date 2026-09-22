@@ -1,34 +1,36 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260922T165618+0900-R68-B7C391E4",
-  "produced_at": "2026-09-22T16:56:18+09:00",
-  "producer_run_id": "evidence-analyst-auto-EVA-20260922T165618+0900-R68-B7C391E4",
+  "generation_id": "EVA-20260922T180800+0900-R69-A3D8C721",
+  "produced_at": "2026-09-22T18:08:00+09:00",
+  "producer_run_id": "evidence-analyst-auto-EVA-20260922T180800+0900-R69-A3D8C721",
   "authority_scope": "EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION",
-  "supersedes_generation_id": "EVA-20260922T164300+0900-R67-6D3A91F2",
+  "supersedes_generation_id": "EVA-20260922T165618+0900-R68-B7C391E4",
   "input_generations": {
-    "previous_evidence_analyst": "EVA-20260922T164300+0900-R67-6D3A91F2@5eabe60bcb410cd69fb49b1b3d19df62b56c5b19",
-    "canonical_candidate_base": "EVA-20260922T164300+0900-R67-6D3A91F2@5eabe60bcb410cd69fb49b1b3d19df62b56c5b19",
+    "previous_evidence_analyst": "EVA-20260922T165618+0900-R68-B7C391E4@bf02e073e4405bc51fa62a24876378dad4fbe2bb",
     "control": "CTRL-20260922T155032+0900-R34-2F8C71A6@d67364316be94f7b48b79b3fdc3df79522fd1beb",
-    "main": "MAIN-20260922T162700+0900-PRIMARY-H7-FORMALR1-DESIGN-C5-C4F8A21D@f5292c94516be70989060396c2e97d73b1c57aa4",
-    "sub": "SUB-20260922T164000+0900-QFD-EQUIV-REASSESS-R66-6C3A91F2@18bf342a900e1c671b55333ac95c5b582fef8f7f",
+    "main_mailbox": "MAIN-20260922T171550+0900-PRIMARY-H7-FORMALR1-IMPL-C6-B7C391E4@f69da6b7cc8885a40c2b5d44a46fe173a2014619",
+    "main_research_exact_head": "research/main-h7-formal-r1-oneway-implementation-r68-cycle6@ca35c51a7d366a37f7d11d0434d05420274969aa",
+    "sub": "SUB-20260922T173208+0900-SYSDISC-EQUIVCONTRACT-R68-B7C391E4@a33384df56918faa7c0bbe5cc92681b7d90333d1",
     "literature": "LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9@d09c7106e5f346d3a4bb67ac25e6c651d2c6787a",
     "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7@d09c7106e5f346d3a4bb67ac25e6c651d2c6787a",
-    "methodology": "METHCAL-20260922T162148+0900-R61-D3A7F19C@26a0df21987f994a636380f43c7d335be4b1589c",
+    "methodology": "METHCAL-20260922T172329+0900-R62-A6D4C219@badb8e4cc5023bd57b7823c07fd9eb99ef90ce84",
     "steward": "STEWARD-20260922T135014+0900-G10-4D8C21A7@b3b69553df32f5eb998d1c29cbe29ee1c34a93aa",
+    "utility_state": "UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4",
     "utility_request": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE@46a2b6735c4df221b28ee02a252993ffb7cbaa06",
     "human_directives": "ops/human-directives@de60c8888d1b438d5b06fed2266a8efd5893e646"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_parent": "5eabe60bcb410cd69fb49b1b3d19df62b56c5b19",
+    "analyst_parent": "bf02e073e4405bc51fa62a24876378dad4fbe2bb",
     "control_tip": "d67364316be94f7b48b79b3fdc3df79522fd1beb",
-    "orchestrator_tip": "18bf342a900e1c671b55333ac95c5b582fef8f7f",
+    "orchestrator_tip": "a33384df56918faa7c0bbe5cc92681b7d90333d1",
     "external_tip": "d09c7106e5f346d3a4bb67ac25e6c651d2c6787a",
-    "methodology_tip": "26a0df21987f994a636380f43c7d335be4b1589c",
+    "methodology_tip": "badb8e4cc5023bd57b7823c07fd9eb99ef90ce84",
     "steward_tip": "b3b69553df32f5eb998d1c29cbe29ee1c34a93aa",
     "utility_tip": "46a2b6735c4df221b28ee02a252993ffb7cbaa06",
     "human_directives_tip": "de60c8888d1b438d5b06fed2266a8efd5893e646",
     "active_research_refs": {
+      "H7_FORMAL_R1_IMPLEMENTATION": "ca35c51a7d366a37f7d11d0434d05420274969aa",
       "H7_FORMAL_R1_DESIGN": "0bf690a0710112d21743d50f0974eadeb49dadad",
       "H7_PF_R1": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
       "H7_DEV_R2": "d6655549c179caf391d4b43bd2ebea49f2bfc82b",
@@ -37,12 +39,13 @@
       "C32_HISTORICAL": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
       "UTILITY_EQUIVALENCE": "9f9d18065b481d8597236b0b682f0574c251b319"
     },
-    "h7_formal_r1_contract": {
-      "branch": "research/main-h7-formal-r1-contract-design-r65-cycle5",
-      "head": "0bf690a0710112d21743d50f0974eadeb49dadad",
-      "path": "artifacts/formal_h7_r1/contract_design.json",
-      "blob": "af26de3067263afcff0e727321fa173ea14de659",
-      "generic_ci": "35700049493_COMPLETED_SUCCESS"
+    "h7_formal_r1": {
+      "contract_blob": "af26de3067263afcff0e727321fa173ea14de659",
+      "implementation_head": "ca35c51a7d366a37f7d11d0434d05420274969aa",
+      "implementation_ci": "35706964834_COMPLETED_SUCCESS",
+      "active_identity": null,
+      "started_ref": null,
+      "result_bearing_workflow": null
     },
     "evidence_tag_count": 5,
     "formal_tags": [],
@@ -53,69 +56,104 @@
   },
   "last_consumed_generations": {
     "control": "CTRL-20260922T155032+0900-R34-2F8C71A6",
-    "main": "MAIN-20260922T162700+0900-PRIMARY-H7-FORMALR1-DESIGN-C5-C4F8A21D",
-    "sub": "SUB-20260922T164000+0900-QFD-EQUIV-REASSESS-R66-6C3A91F2",
+    "main": "MAIN-20260922T171550+0900-PRIMARY-H7-FORMALR1-IMPL-C6-B7C391E4",
+    "sub": "SUB-20260922T173208+0900-SYSDISC-EQUIVCONTRACT-R68-B7C391E4",
     "literature": "LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9",
     "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
-    "methodology": "METHCAL-20260922T162148+0900-R61-D3A7F19C",
+    "methodology": "METHCAL-20260922T172329+0900-R62-A6D4C219",
     "steward": "STEWARD-20260922T135014+0900-G10-4D8C21A7",
     "utility_request": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE"
   },
   "canonical_inheritance": {
-    "base_generation_id": "EVA-20260922T164300+0900-R67-6D3A91F2",
-    "base_commit": "5eabe60bcb410cd69fb49b1b3d19df62b56c5b19",
-    "resolution_rule": "Candidates 1-32 inherit all complete Funnel-v2.1/development fields from R67/R65. R68 adds candidate 33 as a fully specified fresh SYSTEM Discovery successor and changes no prior object except successor-accounting realization for candidate 32.",
+    "base_generation_id": "EVA-20260922T165618+0900-R68-B7C391E4",
+    "base_commit": "bf02e073e4405bc51fa62a24876378dad4fbe2bb",
+    "resolution_rule": "Candidates 1-32 inherit complete Funnel-v2.1/development fields from the R68/R67/R65 chain except the candidate-7 current-cycle override. Candidate 33 inherits its complete R68 fresh-successor record and is promoted by R69 from SYSTEM Discovery to queued SYSTEM Architecture after SUB cycle-1 contract closure.",
     "classification_completeness": "33/33"
   },
   "four_layer_funnel": {
-    "DISCOVERY": {"canonical_active_execution": 0, "SYSTEM_queued": 1, "state": "FRESH_SYSTEM_SUCCESSOR_QUEUED"},
-    "ARCHITECTURE_STUDY": {"MECHANISM_active": 0, "SYSTEM_active": 0, "MECHANISM_queued": 0, "SYSTEM_queued": 0, "state": "EMPTY"},
+    "DISCOVERY": {"canonical_active_execution": 0, "queued": 0, "state": "OPEN"},
+    "ARCHITECTURE_STUDY": {"MECHANISM_active": 0, "SYSTEM_active": 0, "MECHANISM_queued": 0, "SYSTEM_queued": 1, "state": "CANDIDATE_33_SYSTEM_ARCHITECTURE_QUEUED"},
     "PRE_FORMAL": {"MECHANISM_active_result_bearing": 0, "eligible": 1, "ready": 1, "state": "PF_R1_COMPLETE_RESULT_EXPOSED"},
-    "FORMAL": {"fresh_one_way_authority": 0, "contract_design_complete": 1, "preidentity_implementation_preflight_authorized": 1, "identity_or_result_execution_authorized": 0, "state": "NO_IDENTITY_NO_RESULT_EXECUTION_AUTHORITY"}
+    "FORMAL": {"fresh_one_way_authority": 0, "contract_design_complete": 1, "preidentity_implementation_present": 1, "identity_or_result_execution_authorized": 0, "state": "PREIDENTITY_MACHINE_CLOSURE_PENDING"}
   },
-  "candidate_population": {"total": 33, "MECHANISM": 13, "SYSTEM": 20, "ACTIVE": 2, "NONTERMINAL_HOLD": 0, "TERMINAL_FOR_CURRENT_OBJECT": 31, "classification_complete": 33},
+  "candidate_population": {
+    "total": 33,
+    "MECHANISM": 13,
+    "SYSTEM": 20,
+    "ACTIVE": 2,
+    "NONTERMINAL_HOLD": 0,
+    "TERMINAL_FOR_CURRENT_OBJECT": 31,
+    "classification_complete": 33
+  },
   "development_phase_distribution": {
     "canonical_candidates": {"OPEN_DEVELOPMENT": 3, "RESULT_EXPOSED_DEVELOPMENT": 30, "CONSUMED_ONE_WAY": 0},
     "consumed_scientific_identities": {"CONSUMED_ONE_WAY": 7}
   },
   "candidate_7_override": {
     "id": "CAND-H7-RESPONSIBILITY",
+    "question": "Within the frozen four-world dynamic TOP1 selection-and-cut policy, does native local route/state activity have a positive task-relevant causal effect not reproduced by each prospectively capacity-adequate ordinary reduction in the frozen panel?",
+    "phenomenon": "NATIVE_LOCAL_DYNAMIC_POLICY_CAUSAL_RESPONSIBILITY",
     "target_layer": "FORMAL",
     "classification": "FORMALIZE",
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
-    "preformal_readiness": "READY",
+    "preformal_readiness": {"status": "READY"},
     "hold_class": null,
     "hold_reason": null,
     "terminal_state": "ACTIVE",
     "queue_state": "ACTIVE",
+    "system_priority_exception": {"used": false},
     "candidate_source": "THEORY_BACKWARD",
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
     "scientific_contract_revision": "H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1",
-    "development_revision": "H7-FORMAL-R1-IMPLEMENTATION-AND-ONEWAY-PREFLIGHT",
-    "cycle_count": {"completed_revision_cycles": 5, "current_cycle": 6},
-    "information_gain_rationale": "Determine whether runner/scorer/preserver and one-way integrity plumbing can be implemented exactly and reproducibly without changing frozen scientific semantics or touching protected evaluation.",
-    "promotion_rejection_reassess_condition": "Implement/freeze non-result-bearing runner/scorer/preserver/binding/preflight only. STOP before identity/STARTED/result-bearing execution. Any scientific semantic change returns to Analyst as a versioned revision."
+    "development_revision": "H7-FORMAL-R1-ONEWAY-IMPLEMENTATION",
+    "cycle_count": {"completed_or_materialized_through": 6, "current_authorized_cycle": 7},
+    "information_gain_rationale": "Close exact machine binding/runtime/package/collision/no-clobber and durable-development-provenance gates without changing frozen science or touching protected evaluation.",
+    "promotion_rejection_reassess_condition": "Identity remains STOP. Complete exact runner and self-verifying runner/scorer/preserver/package/runtime bindings, seed collision audit, synthetic totality/conformance and no-clobber preflight; preserve PF-R1 result bytes durably or obtain a fresh explicit governance resolution. Return to a fresh Analyst even after successful closure."
   },
-  "candidate_33": {
+  "h7_preidentity_review": {
+    "classification": "CONTINUE_PREIDENTITY_IMPLEMENTATION_NOT_IDENTITY_READY",
+    "satisfied": [
+      "frozen contract blob exact",
+      "target-blind collector rejects decision fields",
+      "local raw/preserve paths are create-only",
+      "same-final-SHA binding API exists",
+      "scorer decision mapping is total for positive/native/comparator intervals",
+      "bootstrap resamples/seed/MT19937/linear percentile realization are explicit",
+      "non-scientific sentinel preflight exists",
+      "exact implementation-head generic CI is green on Python 3.11 and 3.13"
+    ],
+    "remaining_before_identity": [
+      "exact H7 fit/calibration/evaluation runner materialized and frozen without protected execution",
+      "self-verification of actual runner/scorer/preserver Git blobs rather than caller-supplied digest strings",
+      "exact Python patch/torch/OS image/canonical pip-freeze/runtime manifest materialized and verified",
+      "fresh-seed collision audit against PF-R1 and all consumed FORMAL surfaces",
+      "preflight covers full binding and create-only ref/path absence rather than contract blob/sentinel only",
+      "synthetic scorer/preserve one-way totality tests without protected evaluation",
+      "PF-R1 raw.json/summary.json durably preserved as NON_EVIDENTIARY development provenance or explicitly resolved by fresh governance review"
+    ],
+    "forbidden_without_fresh_versioned_analyst_review": ["claim", "estimand", "worlds", "sample size", "seeds", "comparator panel or semantics", "margins or thresholds", "alpha or contrasts", "intervention", "resource or privilege contract", "falsifier or decision criteria"]
+  },
+  "candidate_33_override": {
     "ordinal": 33,
     "id": "CAND-EQUIV-AUDITABLE-RAW-PROVENANCE-01",
     "question": "Can a fresh SYSTEM object make claim-scoped equivalence auditability fail-closed by preserving independent per-producer raw streams and deriving verifier decisions from preserved bytes under authenticated run/ref provenance and one frozen resource/privilege envelope?",
     "phenomenon": "AUDITABILITY_AND_INTEGRITY_REACHABILITY_OF_SYSTEM_COMPARATOR_EQUIVALENCE_CLAIMS",
-    "why_not_consumed_line_rescue": "Candidate 32 remains terminal/method-limited. This object does not rerun, reinterpret, rescore or inherit its outcome/tolerance; it asks a fresh SYSTEM auditability question on new raw/provenance surfaces.",
-    "target_layer": "DISCOVERY",
-    "classification": "DISCOVERY",
+    "why_not_consumed_line_rescue": "Candidate 32 remains terminal/method-limited. Candidate 33 has a new ID and raw/provenance/auditability question, inherits no candidate-32 result or tolerance, and makes no MECHANISM or semantic-equivalence claim.",
+    "target_layer": "ARCHITECTURE_STUDY",
+    "classification": "ARCHITECTURE_STUDY",
     "claim_ceiling": "SYSTEM",
     "preformal_eligible": false,
     "preformal_readiness": {"status": "NOT_APPLICABLE"},
-    "expected_information_gain": "HIGH_FOR_EVIDENCE_INTERPRETATION_REPRODUCIBILITY_AND_FUTURE_FORMAL_INTEGRITY; NEGATIVE_RESULT_CAN_CLOSE_CURRENT_AUDITABILITY_REACHABILITY_WITHOUT_RESCUING_C32",
-    "ordinary_reduction_risks": ["existing Utility declared-digest self-consistency verifier", "simple manifest/hash verification", "same-process raw emitter", "ordinary process-isolated comparison tooling"],
+    "expected_information_gain": "HIGH_FOR_EVIDENCE_INTERPRETATION_REPRODUCIBILITY_AND_FUTURE_FORMAL_INTEGRITY; architecture failure can close this auditability path without rescuing candidate 32.",
+    "ordinary_reduction_risks": ["existing Utility declared-digest self-consistency verifier", "simple manifest/hash verification", "same-process raw emitter", "ordinary process-isolated comparison without durable raw-chain verification"],
     "implementation_distance": "MEDIUM",
-    "scientific_choices_still_open": ["provenance trust root", "exact event/checkpoint schema", "resource-accounting boundary", "verifier placement/isolation", "durable raw retention", "any future floating semantic representation/tolerance"],
-    "exploration_cycle_count": 0,
+    "scientific_choices_still_open": ["exact synthetic fixture payloads", "exact numeric container resource caps", "implementation branch/ref"],
+    "exploration_cycle_count": 1,
+    "next_cycle": 2,
     "noncanonical_qfd_history_cycles": 3,
-    "information_gain_rationale": "Test whether equivalence assertions can be made auditable from durable raw bytes and independently bound provenance before any semantic-equivalence scientific claim is attempted.",
-    "promotion_rejection_reassess_condition": "Promote to SYSTEM Architecture only if trust root/schema/resource boundary/verifier isolation/raw retention can be fixed prospectively and tamper/swap/omit/same-process negative controls are reachable without changing system/comparator semantics. HOLD/REJECT if claim-relevant equality cannot derive from preserved bytes, provenance cannot be independently bound, tampered/incomplete raw can pass, or verifier overhead cannot be separated under one frozen resource envelope.",
+    "information_gain_rationale": "Test whether the prospectively closed controller/raw/verifier provenance contract can be implemented and made fail-closed on synthetic mutation/swap/omission/identity-spoof/nonmatching-raw controls.",
+    "promotion_rejection_reassess_condition": "Continue SYSTEM Architecture only while controller-owned provenance, verifier-side recomputation, process isolation, durable raw retention and separate resource accounting remain fixed before fixture outcomes. HOLD/REJECT if any invalid provenance control can yield AUDITABLE_RAW_MATCH or the resource/privilege boundary cannot be frozen. No semantic-equivalence or MECHANISM uplift from success.",
     "hold_class": null,
     "hold_reason": null,
     "terminal_state": "ACTIVE",
@@ -123,22 +161,19 @@
     "system_priority_exception": {"used": false},
     "candidate_source": "QUESTION_FORMATION_DISCOVERY",
     "development_phase": "OPEN_DEVELOPMENT",
-    "development_revision": "EQUIV-AUDIT-DISC-R1-RAW-PROVENANCE-CONTRACT-FORMATION",
+    "development_revision": "EQUIV-AUDIT-ARCH-R1-FAILCLOSED-SYNTHETIC-IMPLEMENTATION",
     "fresh_successor_of": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
-    "reachability": "PARTIAL"
+    "reachability": "ESTABLISHED_FOR_BOUNDED_SYNTHETIC_ARCHITECTURE",
+    "discovery_disposition": "PROMOTE_TO_ARCHITECTURE_STUDY_SYSTEM"
   },
-  "formal_contract_review": {
-    "classification": "ACCEPT_FOR_PREIDENTITY_IMPLEMENTATION_WITH_MACHINE_CLOSURE_AND_DURABLE_DEVELOPMENT_PROVENANCE_GATES_NO_FORMAL_EXECUTION",
-    "required_machine_closure_before_identity": [
-      "native positive-phenomenon/local-effect interval mapping: lower>0 support, upper<=0 conclusive FAIL, otherwise INCONCLUSIVE",
-      "exact bootstrap RNG/index generation and percentile quantile realization frozen in scorer spec/blob",
-      "exact Python patch, torch version, OS image and canonical pip-freeze/runtime manifest binding",
-      "mandatory collision audit across fresh fit/calibration/evaluation seeds and all prior development/consumed FORMAL surfaces",
-      "exact final source, contract, runner, scorer, preserver, package, runtime, input and evaluator hashes",
-      "create-only no-clobber STARTED/preserve/evidence path conformance",
-      "PF-R1 raw.json and summary.json durably preserved as NON_EVIDENTIARY development provenance, or an explicit fresh Control/Analyst resolution of the Methodology R61 gap"
-    ],
-    "forbidden_changes_without_fresh_analyst_revision": ["claim or estimand", "worlds/sample size/seeds", "comparator semantics or panel", "margins/thresholds/contrasts/alpha", "intervention semantics", "resource/privilege contract", "falsifier/decision criteria"]
+  "system_terminal_fresh_successor_potential": {
+    "assessed_terminal_system_objects": 19,
+    "fresh_system_potential_at_assessment": 16,
+    "realized_fresh_system_successors": 1,
+    "realized_mapping": {"CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01": "CAND-EQUIV-AUDITABLE-RAW-PROVENANCE-01"},
+    "unrealized_fresh_system_potentials": 15,
+    "fresh_mechanism_successors": 0,
+    "none": [14, 27, 28]
   },
   "pf_r1_development_provenance": {
     "status": "DURABLE_BYTES_NOT_YET_CONFIRMED",
@@ -151,23 +186,29 @@
     "raw_sha256": "695261aeadab1ab311b60787f1b6a9023c29e24009c6f173c1a660469a6906db",
     "utility_request": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
     "utility_request_status": "PROPOSED_NOT_APPROVED",
-    "utility_request_ci": "35701498146_COMPLETED_FAILURE_AT_LINT",
     "scientific_authority": "NONE"
   },
-  "system_terminal_fresh_successor_potential": {
-    "assessed_prior_system_terminal_objects": 19,
-    "fresh_SYSTEM_successor_potential_original": 16,
-    "fresh_SYSTEM_successor_realized_admissions": [{"predecessor_ordinal": 32, "successor_ordinal": 33, "successor_id": "CAND-EQUIV-AUDITABLE-RAW-PROVENANCE-01"}],
-    "fresh_SYSTEM_successor_potential_unrealized": 15,
-    "fresh_MECHANISM_successor_count": 0,
-    "none": [14, 27, 28]
+  "main_allocation": {
+    "lane": "H7_FORMAL_R1_PREIDENTITY_BINDING_AND_DURABLE_PROVENANCE_CLOSURE_CYCLE7_ONLY",
+    "decision": "GO_H7_FORMAL_R1_PREIDENTITY_BINDING_AND_DURABLE_PROVENANCE_CLOSURE_CYCLE7_ONLY_STOP_BEFORE_IDENTITY_START_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
+    "claim_ceiling": "MECHANISM",
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "system_priority_exception": {"used": false}
   },
-  "noncanonical_supply": {
-    "sub_question_seed": "QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01",
-    "sub_status": "QFD_CYCLE3_COMPLETE_ADMITTED_AS_FRESH_SYSTEM_DISCOVERY_R68",
-    "canonical_admission": true,
-    "canonical_successor_id": "CAND-EQUIV-AUDITABLE-RAW-PROVENANCE-01",
+  "sub_allocation": {
+    "lane": "CAND_EQUIV_AUDITABLE_RAW_PROVENANCE_01_SYSTEM_ARCHITECTURE_R1_FAILCLOSED_SYNTHETIC_IMPLEMENTATION",
+    "candidate": "CAND-EQUIV-AUDITABLE-RAW-PROVENANCE-01",
+    "layer": "ARCHITECTURE_STUDY",
+    "claim_ceiling": "SYSTEM",
+    "development_phase": "OPEN_DEVELOPMENT",
+    "independent_of_main": true,
     "theory_backward_denominator_credit": false
+  },
+  "theory_backward_accounting": {
+    "rolling_autonomous_canonical_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
+    "share": "1/3",
+    "candidate_33_analyst_allocated_denominator_excluded": true,
+    "exception": null
   },
   "shadow_standby_queue": [
     {
@@ -186,62 +227,59 @@
     "current_mode": "PREFETCH_SHADOW",
     "last_scan_generation": "EVA-20260922T164300+0900-R67-6D3A91F2",
     "last_scan_reason": "LOW_RATE_PREFETCH_WINDOW_REOPENED_AND_RETAINED_H3_STANDBY",
-    "scans_skipped_due_to_low_rate_throttle_cumulative": 3,
-    "current_generation_scan": "SKIPPED_THROTTLE_NO_GENUINELY_NEW_PHENOMENON_SURFACE",
+    "scans_skipped_due_to_low_rate_throttle_cumulative": 4,
+    "current_generation_scan": "SKIPPED_THROTTLE_NO_GENUINELY_NEW_INDEPENDENT_PHENOMENON_SURFACE",
     "standby_queue_size": 1,
     "proposals_generated_cumulative": 7,
     "proposals_retained_current_queue": 1,
     "proposals_retired_cumulative": 0,
     "rejected_duplicate_or_rescue_cumulative": 3,
-    "rejected_abstract_unfalsifiable_cumulative": 0,
     "rejected_obvious_reduction_no_residual_cumulative": 2,
+    "rejected_abstract_unfalsifiable_cumulative": 0,
     "rejected_unreachable_cumulative": 0,
     "rejected_active_candidate_dependent_cumulative": 0,
     "rejected_ownership_collision_cumulative": 0,
-    "later_shadow_admissions": 1,
-    "executed_shadow_origin_candidates": 1
+    "later_admissions": 1,
+    "executed_shadow_origin_candidates": 1,
+    "executed_shadow_origin_summary": "Candidate 32 admitted historically, executed two non-evidentiary cycles, terminal HOLD_METHOD_LIMITED; information gain was system/method integrity only."
   },
   "funnel_metrics": {
-    "discovery_dispositions_historical": {"REJECT": 2, "HOLD_SYSTEM_TERMINAL": 1, "HOLD_MECHANISM_UNRESOLVED": 1},
-    "discovery_current_queued_SYSTEM": 1,
-    "rolling_canonical_autonomous_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
-    "rolling_theory_backward_share": "1/3",
+    "discovery_dispositions": {"REJECT": 2, "HOLD_SYSTEM_TERMINAL": 1, "HOLD_MECHANISM_UNRESOLVED": 1, "PROMOTE_TO_ARCHITECTURE_SYSTEM": 1},
     "architecture_active": {"MECHANISM": 0, "SYSTEM": 0},
-    "architecture_queued": {"MECHANISM": 0, "SYSTEM": 0},
-    "preformal_eligible": 1,
-    "preformal_ready": 1,
-    "viable_mechanism_candidates": 1,
-    "recent_completed_main_endpoints": {"SYSTEM": 11, "MECHANISM": 7},
-    "system_over_mechanism_exceptions": 0,
+    "architecture_queued": {"MECHANISM": 0, "SYSTEM": 1},
+    "architecture_dispositions": {"HOLD_SYSTEM_TERMINAL": 7, "HOLD_METHOD_LIMITED": 3, "HOLD_CONTRACT_AMBIGUITY": 2, "HOLD_MECHANISM_UNRESOLVED": 1},
     "terminal_state_counts": {"ACTIVE": 2, "NONTERMINAL_HOLD": 0, "TERMINAL_FOR_CURRENT_OBJECT": 31},
-    "classification_completeness": "33/33",
-    "development_phase_counts": {"OPEN_DEVELOPMENT": 3, "RESULT_EXPOSED_DEVELOPMENT": 30, "canonical_CONSUMED_ONE_WAY": 0},
-    "official_consumed_one_way_identities": 7,
-    "cycle3_reassess_outcomes": ["H7_REFRAME_VERSION_CONTINUE_DEV_R2", "QFD_EQUIV_PROVENANCE_FRESH_SUCCESSOR_REVIEW_ADMITTED_R68"],
-    "fresh_successors_generated": 1,
-    "fresh_successors_admitted": 1,
+    "preformal_eligible_count": 1,
+    "preformal_ready_count": 1,
+    "viable_mechanism_candidate_count": 1,
+    "recent_completed_main_endpoints": {"SYSTEM": 11, "MECHANISM": 7, "MECHANISM_PREIDENTITY_IMPLEMENTATION_INFLIGHT_GREEN": 1},
+    "system_over_mechanism_exception_count": 0,
+    "classification_completeness": {"complete": 33, "total": 33},
+    "development_phase_counts": {"OPEN_DEVELOPMENT": 3, "RESULT_EXPOSED_DEVELOPMENT": 30, "CONSUMED_ONE_WAY_CANONICAL": 0},
+    "official_consumed_one_way_identity_count": 7,
+    "cycle3_reassess_outcomes_current_generation": 0,
+    "fresh_successors_generated_current_generation": 0,
+    "fresh_successors_admitted_current_generation": 0,
+    "realized_fresh_system_successor_count": 1,
     "shadow_standby_queue_size": 1
   },
-  "allocation": {
-    "main_lane": "H7_FORMAL_R1_IMPLEMENTATION_AND_ONEWAY_PREFLIGHT_ONLY_NO_IDENTITY_NO_RESULT",
-    "main_decision": "GO_H7_FORMAL_R1_IMPLEMENTATION_AND_ONEWAY_PREFLIGHT_ONLY_STOP_BEFORE_IDENTITY_START_OR_RESULT_BEARING_EXECUTION",
-    "sub_lane": "CAND_EQUIV_AUDITABLE_RAW_PROVENANCE_01_DISCOVERY_CONTRACT_CLOSURE_QUEUED_NO_IMPLEMENTATION_UNTIL_NEXT_SUB",
-    "system_priority_exception": {"used": false},
-    "utility_request": "EXISTING_PENDING_UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE_NO_NEW_R68_REQUEST"
-  },
   "top3": [
-    {"rank": 1, "action": "H7 FORMAL-R1 runner/scorer/preserver implementation and one-way preflight", "claim_ceiling": "MECHANISM", "development_phase": "RESULT_EXPOSED_DEVELOPMENT", "type": "fixed-contract implementation", "decision": "GO_IMPLEMENTATION_PREFLIGHT_ONLY"},
-    {"rank": 2, "action": "Candidate 33 auditable raw/provenance SYSTEM Discovery contract closure", "claim_ceiling": "SYSTEM", "development_phase": "OPEN_DEVELOPMENT", "type": "fresh successor queued Discovery", "decision": "GO_ADMISSION_AND_QUEUE_NO_ANALYST_EXECUTION"},
-    {"rank": 3, "action": "H7 one-way identity/STARTED/result-bearing FORMAL execution", "claim_ceiling": "MECHANISM", "development_phase": "FUTURE_CONSUMED_ONE_WAY", "type": "one-way scientific execution", "decision": "STOP_PENDING_MACHINE_CLOSURE_DURABLE_PF_PROVENANCE_AND_FRESH_ANALYST_AUTHORITY"}
+    {"rank": 1, "action": "H7 FORMAL-R1 preidentity binding/runtime/package/collision/no-clobber and PF-development-provenance closure", "claim_ceiling": "MECHANISM", "development_phase": "RESULT_EXPOSED_DEVELOPMENT", "type": "CONTINUATION_CYCLE7", "decision": "GO_IMPLEMENTATION_ONLY"},
+    {"rank": 2, "action": "Candidate 33 fail-closed raw/provenance SYSTEM Architecture implementation and synthetic controls", "claim_ceiling": "SYSTEM", "development_phase": "OPEN_DEVELOPMENT", "type": "FRESH_SUCCESSOR_ARCHITECTURE_CYCLE2", "decision": "GO_SUB"},
+    {"rank": 3, "action": "H7 one-way identity/STARTED/protected evaluation/result-bearing FORMAL execution", "claim_ceiling": "MECHANISM", "development_phase": "FUTURE_CONSUMED_ONE_WAY", "type": "FORMAL_EXECUTION", "decision": "STOP_UNTIL_FRESH_ANALYST_AFTER_ALL_GATES"}
   ],
-  "mutations_by_evidence_analyst": {
-    "scientific_experiments_executed": 0,
-    "result_bearing_workflows_dispatched": 0,
-    "one_way_identities_consumed": 0,
-    "research_prs_merged": 0,
-    "immutable_scientific_refs_mutated": 0,
-    "scheduler_definitions_modified": 0,
-    "historical_pass_fail_rewritten": 0,
-    "utility_requests_created_this_generation": 0
+  "utility_request": {
+    "created_this_generation": false,
+    "existing_request": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+    "status": "PROPOSED_NOT_APPROVED"
+  },
+  "integrity": {
+    "scientific_experiment_executed_by_analyst": false,
+    "result_bearing_workflow_dispatched_by_analyst": false,
+    "identity_consumed_by_analyst": false,
+    "research_pr_merged_by_analyst": false,
+    "immutable_scientific_ref_mutated_by_analyst": false,
+    "scheduler_definition_changed_by_analyst": false,
+    "historical_pass_fail_rewritten": false
   }
 }
