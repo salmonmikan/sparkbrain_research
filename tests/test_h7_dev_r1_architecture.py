@@ -1,3 +1,4 @@
+# ruff: noqa: E402, I001 -- optional learned suite imports follow torch availability check.
 from __future__ import annotations
 
 import copy
