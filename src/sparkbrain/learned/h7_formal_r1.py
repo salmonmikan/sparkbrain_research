@@ -6,9 +6,10 @@ import math
 import os
 import random
 import shutil
+from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Iterable, Mapping
+from typing import Any
 
 CONTRACT_ID = "H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1"
 EVALUATOR_ID = "H7-FORMAL-R1-EVALUATOR-SPEC-V1"
@@ -340,7 +341,9 @@ def _mean(values: Iterable[float]) -> float:
     return sum(materialized) / len(materialized)
 
 
-def _validate_and_index_rows(rows: list[dict[str, Any]]) -> dict[str, dict[str, dict[int, list[dict[str, Any]]]]]:
+def _validate_and_index_rows(
+    rows: list[dict[str, Any]],
+) -> dict[str, dict[str, dict[int, list[dict[str, Any]]]]]:
     indexed: dict[str, dict[str, dict[int, list[dict[str, Any]]]]] = {
         endpoint: {world: {} for world in WORLDS} for endpoint in ENDPOINTS
     }
@@ -379,7 +382,11 @@ def _validate_and_index_rows(rows: list[dict[str, Any]]) -> dict[str, dict[str, 
 def _episode_metrics(rows: list[dict[str, Any]]) -> tuple[float, float, float]:
     baseline = _mean(float(bool(row["baseline_correct"])) for row in rows)
     cut = _mean(float(bool(row["cut_correct"])) for row in rows)
-    tv_values = [float(row["total_variation"]) for row in rows if row.get("total_variation") is not None]
+    tv_values = [
+        float(row["total_variation"])
+        for row in rows
+        if row.get("total_variation") is not None
+    ]
     tv = _mean(tv_values) if tv_values else math.nan
     return baseline, baseline - cut, tv
 
@@ -392,10 +399,14 @@ def _contrast_vector(
     for endpoint in ENDPOINTS:
         endpoint_metrics[endpoint] = {}
         for world in WORLDS:
-            episode_values = [_episode_metrics(indexed[endpoint][world][seed]) for seed in sampled_seeds[world]]
+            episode_values = [
+                _episode_metrics(indexed[endpoint][world][seed])
+                for seed in sampled_seeds[world]
+            ]
             endpoint_metrics[endpoint][world] = tuple(
                 _mean(value[index] for value in episode_values) for index in range(3)
             )
+
     def equal_world(endpoint: str, index: int) -> float:
         return _mean(endpoint_metrics[endpoint][world][index] for world in WORLDS)
 
