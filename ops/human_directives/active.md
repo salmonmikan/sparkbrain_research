@@ -387,3 +387,28 @@ Control Brain should classify it as `ACCEPT / MODIFY / DEFER / REJECT` and coord
 If Control modifies or defers the request, it should identify the concrete compatibility, scientific-integrity, release-semantics, or repository-risk reason.
 
 The directive should not be interpreted as authority for a wholesale research merge or automatic package-version bump without the version-semantics audit described above.
+
+## HUMAN-20260922-007 — SUB autonomous research expansion
+
+Human status: `OPEN`  
+Created: `2026-09-22 JST`
+
+### Intent
+
+SUB should become a genuine second research worker rather than defaulting from “no mature mechanism target” directly to NO_OP.
+
+Before NO_OP, SUB must perform a bounded research scan across fresh-successor potential, theory-backward questions, unresolved phenomenon-first surfaces, recent Literature/Audit/Methodology/Utility residuals, and newly available observables/interventions/reductions/tooling.
+
+Introduce `QUESTION_FORMATION_DISCOVERY` as NON_EVIDENTIARY/noncanonical 0->1 research. It may form a bounded question, observable, provisional reduction/falsifier and small safe diagnostic before a fully coherent MECHANISM candidate exists. It does not count toward canonical candidate metrics, theory-backward quota, PRE_FORMAL readiness or scientific evidence.
+
+SUB may explore fresh successors from terminal topic families when the new question is materially distinct, but may not reopen/rewrite the terminal object itself. Any canonical successor still requires a new candidate ID and Evidence Analyst admission.
+
+SUB remains independent of MAIN critical path and retains the FORMAL hard floor. Apply HUMAN-20260922-005 development-iteration semantics.
+
+Default principle:
+
+> **No target yet is a reason to search for a target, not automatically a reason to idle.**
+
+### Required independent review
+
+Control Brain and Evidence Analyst should independently operationalize this directive while preserving collision avoidance, candidate-admission authority, and one-way FORMAL integrity.
