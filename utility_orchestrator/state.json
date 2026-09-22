@@ -1,21 +1,23 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T142200+0900-AUTO-EQUIV-TRUST-BOUNDARY-RUNNING-7B3D91E4",
-  "produced_at": "2026-09-22T14:22:00+09:00",
+  "generation_id": "UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4",
+  "produced_at": "2026-09-22T14:24:00+09:00",
+  "completed_at": "2026-09-22T14:24:00+09:00",
   "producer_run_id": "utility-auto-20260922T1422+0900-equiv-trust-boundary",
   "authority_scope": "UTILITY_AUTONOMOUS_IDLE_BOUNDED_NON_EVIDENTIARY_READ_ONLY_RECONCILIATION",
-  "supersedes_generation_id": "UTILITY-20260922T133300+0900-AUTO-READER-VERSION-DRIFT-COMPLETED-3F8A61C2",
+  "supersedes_generation_id": "UTILITY-20260922T142200+0900-AUTO-EQUIV-TRUST-BOUNDARY-RUNNING-7B3D91E4",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
   "autonomous_task_id": "AUTOUTIL-20260922T1422+0900-EQUIV-TRUST-BOUNDARY-7B3D91E4",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
   "objective": "Reconcile fresh Steward G10 and green CI for the generic equivalence-certificate prototype; bound the remaining trust-boundary ambiguity and smallest safe non-scientific follow-up without source/tool/research mutation.",
   "trigger_source": "Existing Utility request UTIL-20260922-0934-EQUIV-CERT-CI-STEWARD-REVIEW plus fresh Steward G10 deferral.",
+  "outcome_classification": "G10_CLOSED_CI_AND_FRESH_REVIEW_GATES_BUT_DECLARED_DIGEST_TRUST_BOUNDARY_REMAINS",
   "ownership_generations": {
     "evidence_analyst": "EVA-20260922T140541+0900-R63-E8C421B7",
     "main_latest_durable": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9",
@@ -30,7 +32,42 @@
     "control_commit": "c41db58a5cc87e5460f143ce07c4256d7238d577",
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "live_h7_dev_r2_head": "d6655549c179caf391d4b43bd2ebea49f2bfc82b",
-    "equivalence_branch_head": "9f9d18065b481d8597236b0b682f0574c251b319"
+    "equivalence_branch_head": "9f9d18065b481d8597236b0b682f0574c251b319",
+    "equivalence_module_blob": "753d9759c3bd9da0d8e6a27926c8e3c3f9539cb4",
+    "equivalence_tests_blob": "85503de4d94c02924b08c8f0ef0e0aec7551abb8"
+  },
+  "outputs_summary": {
+    "ci_gate_satisfied": true,
+    "fresh_steward_review_satisfied": true,
+    "promotion_ready": false,
+    "branch_changed_files": 2,
+    "external_callsites_outside_branch_tests": false,
+    "actual_proven_claim": "INTERNAL_DECLARED_CERTIFICATE_DIGEST_EQUIVALENCE_UNDER_SELF_CONSISTENT_BINDINGS_AND_ENVELOPES",
+    "not_proven": [
+      "authenticated producer provenance",
+      "raw-to-digest derivation",
+      "actual process isolation",
+      "scientific or semantic equivalence"
+    ],
+    "overbroad_tokens": [
+      "VALID_EQUIVALENT",
+      "EXACT_SEMANTIC_DIGEST_MATCH",
+      "equivalence-certificate-v0.1",
+      "PRODUCERS_NOT_INDEPENDENT:*"
+    ],
+    "smallest_safe_follow_up": "REVIEWED_TWO_FILE_TRUST_BOUNDARY_NAMING_CLARIFICATION_BEFORE_ANY_MAIN_INTEGRATION",
+    "duplicate_follow_up_request_appended": false
+  },
+  "ownership_checks": {
+    "collision_found": false,
+    "main_critical_dependency": false,
+    "main_active_object": "H7_DEV_R2_VERSIONED_PROTOCOL_CLOSURE_CYCLE3_IMPLEMENTATION_ONLY",
+    "main_live_progress_observed": true,
+    "sub_active_scientific_object": null,
+    "relay_active_continuation_authority": false,
+    "active_or_queued_research_object_touched": false,
+    "candidate_typing_touched": false,
+    "material_authority_supersession_before_terminal_write": false
   },
   "allowed_actions": [
     "Read-only inspect Utility verifier module/tests and callsites/usages",
@@ -53,5 +90,23 @@
     "discovery_quota_credit": false,
     "preformal_credit": false,
     "promotion_credit": false
+  },
+  "integrity_checks": {
+    "workflow_dispatch_or_rerun": false,
+    "scheduler_mutation": false,
+    "scientific_workflow_or_experiment": false,
+    "protected_ref_mutation": false,
+    "candidate_typing_or_readiness_mutation": false,
+    "preformal_or_formal_action": false,
+    "research_pr_merge": false,
+    "promotion_approval": false,
+    "source_test_tool_docs_mutation": false,
+    "hidden_main_dependency_created": false
+  },
+  "stop_reason": "COMPLETED_BOUNDED_TRUST_BOUNDARY_AND_CALLSITE_RECONCILIATION",
+  "follow_up_recommendation": "Keep the existing Utility request pending Control disposition. If integration proceeds, clarify public verdict/reason/trust-boundary naming so the tool explicitly means declared-digest equivalence; authenticated producer/raw-chain evidence remains a separate prerequisite for any scientific use.",
+  "outputs": {
+    "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1422+0900-EQUIV-TRUST-BOUNDARY-7B3D91E4-start.md",
+    "terminal_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1422+0900-EQUIV-TRUST-BOUNDARY-7B3D91E4-completed.md"
   }
 }
