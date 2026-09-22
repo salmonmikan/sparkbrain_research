@@ -1,44 +1,46 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260922T164000+0900-QFD-EQUIV-REASSESS-R66-6C3A91F2",
-  "produced_at": "2026-09-22T16:40:00+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260922T164000+0900-QFD-EQUIV-REASSESS-R66-6C3A91F2",
-  "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_QUESTION_FORMATION_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260922T154200+0900-QFD-EQUIVBOUNDARY-R64-C3F8A2D1",
+  "generation_id": "SUB-20260922T173208+0900-SYSDISC-EQUIVCONTRACT-R68-B7C391E4",
+  "produced_at": "2026-09-22T17:32:08+09:00",
+  "producer_run_id": "SUB-RUN-SUB-20260922T173208+0900-SYSDISC-EQUIVCONTRACT-R68-B7C391E4",
+  "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_CANONICAL_SYSTEM_DISCOVERY_CONTRACT_CLOSURE_AND_CONTROL_PLANE_PERSISTENCE",
+  "supersedes_generation_id": "SUB-20260922T164000+0900-QFD-EQUIV-REASSESS-R66-6C3A91F2",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T162702+0900-R66-9C2F71A4@fcc848dc5287880f888f159b4643a11b72b82414",
-    "main": "MAIN-20260922T162700+0900-PRIMARY-H7-FORMALR1-DESIGN-C5-C4F8A21D@f5292c94516be70989060396c2e97d73b1c57aa4",
+    "evidence_analyst": "EVA-20260922T165618+0900-R68-B7C391E4@bf02e073e4405bc51fa62a24876378dad4fbe2bb",
+    "main": "MAIN-20260922T171550+0900-PRIMARY-H7-FORMALR1-IMPL-C6-B7C391E4@f69da6b7cc8885a40c2b5d44a46fe173a2014619",
     "control": "CTRL-20260922T155032+0900-R34-2F8C71A6@d67364316be94f7b48b79b3fdc3df79522fd1beb",
-    "previous_sub": "SUB-20260922T154200+0900-QFD-EQUIVBOUNDARY-R64-C3F8A2D1@8f42de275816998cb631288757f415c3fd456e11",
+    "previous_sub": "SUB-20260922T164000+0900-QFD-EQUIV-REASSESS-R66-6C3A91F2@18bf342a900e1c671b55333ac95c5b582fef8f7f",
     "literature": "LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9@d09c7106e5f346d3a4bb67ac25e6c651d2c6787a",
     "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
-    "methodology": "METHCAL-20260922T162148+0900-R61-D3A7F19C@26a0df21987f994a636380f43c7d335be4b1589c",
+    "methodology": "METHCAL-20260922T172329+0900-R62-A6D4C219@badb8e4cc5023bd57b7823c07fd9eb99ef90ce84",
     "utility": "UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4@71beb0d5ee00f112825fcc268ec514761d6ab418"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "fcc848dc5287880f888f159b4643a11b72b82414",
-    "orchestrator_tip_before_write": "f5292c94516be70989060396c2e97d73b1c57aa4",
+    "analyst_handoff": "bf02e073e4405bc51fa62a24876378dad4fbe2bb",
+    "orchestrator_tip_before_first_write": "f69da6b7cc8885a40c2b5d44a46fe173a2014619",
+    "history_commit": "f542cc30e5c42941fbb1201102eb8a67e2f6e65c",
+    "latest_commit": "bdb8bb66cae3186c3660b6fe3e5b789e41e505ec",
     "control_tip": "d67364316be94f7b48b79b3fdc3df79522fd1beb",
-    "methodology_tip": "26a0df21987f994a636380f43c7d335be4b1589c",
+    "methodology_tip": "badb8e4cc5023bd57b7823c07fd9eb99ef90ce84",
     "utility_tip": "71beb0d5ee00f112825fcc268ec514761d6ab418",
     "utility_equivalence_branch": "utility/equivalence-certificate-v0-1-A42D7C19@9f9d18065b481d8597236b0b682f0574c251b319",
     "terminal_predecessor_branch": "research/main-semantic-active-work-localization-r50-cycle2@d090fd2e57680c5a97b9fd0d036fc65a008078ec",
     "main_h7_formal_design_head": "research/main-h7-formal-r1-contract-design-r65-cycle5@0bf690a0710112d21743d50f0974eadeb49dadad"
   },
   "allocation": {
-    "main_lane": "H7_FORMAL_R1_DYNAMIC_TOP1_CONTRACT_DESIGN_ONLY_NO_IDENTITY_NO_WORKFLOW_NO_RESULT_COMPLETED_STOP_FRESH_ANALYST_REVIEW",
-    "sub_lane": "QUESTION_FORMATION_DISCOVERY_EQUIV_RAW_DIGEST_PROVENANCE_CYCLE3_REASSESS_ONLY_NO_IMPLEMENTATION_OR_ADMISSION",
+    "main_lane": "H7_FORMAL_R1_IMPLEMENTATION_AND_ONEWAY_PREFLIGHT_ONLY_NO_IDENTITY_NO_RESULT",
+    "sub_lane": "CAND_EQUIV_AUDITABLE_RAW_PROVENANCE_01_DISCOVERY_CONTRACT_CLOSURE_QUEUED_NO_IMPLEMENTATION_UNTIL_NEXT_SUB",
     "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_AT_MOST_ONE_BOUNDED_AUTONOMOUS_RESEARCH_TASK",
     "system_priority_exception": {
       "used": false
     }
   },
   "candidate_pool": {
-    "total": 32,
+    "total": 33,
     "MECHANISM": 13,
-    "SYSTEM": 19,
-    "ACTIVE": 1,
+    "SYSTEM": 20,
+    "ACTIVE": 2,
     "TERMINAL_FOR_CURRENT_OBJECT": 31,
     "preformal_eligible": 1,
     "preformal_ready": 1,
@@ -46,60 +48,65 @@
   },
   "main_owned_object": {
     "id": "CAND-H7-RESPONSIBILITY",
-    "classification": "FORMALIZE",
     "claim_ceiling": "MECHANISM",
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "development_revision": "H7-FORMAL-R1-DYNAMIC-TOP1-CONTRACT-DESIGN",
-    "cycle_count": 5,
-    "status": "CONTRACT_DESIGN_COMPLETED_STOPPED_FOR_FRESH_ANALYST_REVIEW",
+    "development_revision": "H7-FORMAL-R1-ONEWAY-IMPLEMENTATION",
+    "cycle_count": 6,
+    "status": "RUNNING_PREIDENTITY_IMPLEMENTATION_PREFLIGHT_ONLY",
+    "active_identity": null,
     "main_owned": true
   },
-  "operating_mode": "AUTONOMOUS_SECONDARY_RESEARCH",
-  "discovery_mode": "QUESTION_FORMATION_DISCOVERY",
-  "selected_target": "QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01",
-  "work_kind": "NONCANONICAL_CANDIDATE_SEED_FRESH_SYSTEM_SUCCESSOR_PROPOSAL",
-  "development_phase": null,
-  "development_revision": null,
-  "cycle_count": 3,
-  "reassessment_rationale": "Cycle 3 is the mandatory reassessment requested by Analyst R66/R65: decide whether the retained seed is sufficiently bounded and discriminating for fresh SYSTEM Discovery admission review, or should HOLD. No implementation or admission is performed.",
+  "operating_mode": "ALLOCATED_INDEPENDENT_SECONDARY_RESEARCH",
+  "discovery_mode": "SYSTEM_DISCOVERY",
+  "selected_target": "CAND-EQUIV-AUDITABLE-RAW-PROVENANCE-01",
+  "work_kind": "CANONICAL_DISCOVERY_CONTRACT_CLOSURE",
+  "development_phase": "OPEN_DEVELOPMENT",
+  "development_revision": "EQUIV-AUDIT-DISC-R1-RAW-PROVENANCE-CONTRACT-FORMATION",
+  "cycle_count": 1,
+  "reassessment_rationale": "First canonical Discovery cycle after three noncanonical QFD cycles. R68 admits the fresh SYSTEM successor and explicitly queues contract closure. The bounded information gain is to prospectively fix the trust root, raw schema, verifier isolation, resource boundary, retention and fail-closed controls before any implementation or fixture execution.",
   "main_independence": {
     "status": "PASS_NO_COLLISION",
-    "reason": "The task is limited to terminal candidate-32 historical measurement boundaries and generic equivalence-verifier trust boundaries. H7 contract design/results/identity/evaluation remain MAIN-owned and untouched."
+    "reason": "Candidate 33 is an independent SYSTEM auditability/provenance object. MAIN exclusively owns H7 FORMAL-R1 preidentity implementation and all H7 blockers, successors, identity and result-bearing surfaces. SUB performed no H7 mutation or execution."
   },
   "pre_no_op_scan": {
     "performed": true,
-    "result": "ONE_ANALYST_AUTHORIZED_QFD_CYCLE3_REASSESSMENT_SELECTED",
-    "fresh_delta": "Methodology R61 independently tightens durable RESULT_EXPOSED raw/result preservation and verifier independence; direct predecessor/verifier inspection already fixed the raw-stream/provenance gap. These deltas permit a decision on seed maturity without implementation.",
+    "no_op_gate_triggered": false,
+    "result": "VALID_ANALYST_ALLOCATED_CANDIDATE33_SYSTEM_DISCOVERY_SELECTED",
     "alternatives_considered": [
       {
-        "surface": "TERMINAL_MECHANISM_AND_THEORY_BACKWARD",
+        "surface": "RECENT_TERMINAL_SYSTEM_SUCCESSORS",
+        "result": "SELECT_ALLOCATED_CANDIDATE33",
+        "reason": "Candidate 33 is already the R68-admitted fresh successor from terminal candidate 32 and has the highest independent information gain. Candidate 32 remains closed."
+      },
+      {
+        "surface": "THEORY_BACKWARD_MECHANISM",
         "result": "NO_SELECTION",
-        "reason": "No new independent mechanism observable/reduction surface; H7 responsibility remains MAIN-owned."
+        "reason": "No independent mechanism surface supersedes the valid allocated lane; H7 responsibility remains MAIN-owned."
       },
       {
         "surface": "PHENOMENON_FIRST_SHADOW",
         "result": "NO_SELECTION",
-        "reason": "Analyst R66 reports empty standby queue and no independent new phenomenon surface."
+        "reason": "H3 standby is non-executable and not allocated to SUB."
       },
       {
         "surface": "LITERATURE_R29",
         "result": "NO_SELECTION",
-        "reason": "Prospective guidance is H7-specific and does not create an independent #32 mechanism target."
+        "reason": "Prospective estimand/inference guidance is H7-specific and does not replace candidate 33."
       },
       {
         "surface": "AUDIT_R6",
         "result": "NO_SELECTION",
-        "reason": "PD01 interpretation-only delta remains consumed/immutable and is unrelated to this seed."
+        "reason": "PD01 interpretation constraint is consumed-history only and unrelated to candidate 33."
       },
       {
-        "surface": "METHODOLOGY_R61",
-        "result": "INPUT_TO_SELECTED_QFD",
-        "reason": "Fresh advisory establishes that hashes without durable bytes are insufficient for later re-audit and reinforces raw/preserve/verifier-independence requirements."
+        "surface": "METHODOLOGY_R62",
+        "result": "INPUT_TO_SELECTED_DISCOVERY",
+        "reason": "Supports distinct fresh-successor semantics while warning that tooling success must not become semantic/scientific equivalence."
       },
       {
-        "surface": "TERMINAL_SYSTEM_EQUIVALENCE_FAMILY",
-        "result": "SELECT_QFD_CYCLE3",
-        "reason": "The question now has a distinct successor object, concrete observables, negative controls and a fail-closed discriminator, allowing admission-readiness reassessment."
+        "surface": "UTILITY_EQUIVALENCE_TRUST_BOUNDARY",
+        "result": "INPUT_TO_SELECTED_DISCOVERY",
+        "reason": "Directly identifies producer-declared digest/provenance limitations that the candidate-33 contract must close."
       }
     ]
   },
@@ -113,18 +120,18 @@
     ],
     "qualifying_share": "1/3",
     "theory_backward_exception": null,
-    "note": "QUESTION_FORMATION_DISCOVERY remains denominator-excluded and no mechanism object is manufactured."
+    "note": "This run executes an Analyst-allocated canonical SYSTEM lane, not an autonomous selection; the rolling autonomous supply denominator is unchanged."
   },
   "phenomenon_question_hypothesis": {
-    "phenomenon": "DECLARED_DIGEST_MATCH_CAN_BE_SELF_CONSISTENT_WHILE_RAW_TO_DIGEST_PROVENANCE_AND_SEMANTIC_FIELDS_ARE_UNVERIFIED",
-    "question": "Can a fresh SYSTEM successor make an equivalence claim auditable by requiring independently preserved per-producer raw streams, exact provenance bindings, verifier-side digest recomputation, and explicit separation of artifact integrity from semantic comparison?",
-    "hypothesis": "A bounded successor is viable if every claim-relevant equality field can be derived from preserved producer bytes and exact run/ref bindings, while tampering, spoofed provenance, missing traces, and raw/digest mismatch fail closed. Floating semantic equivalence remains a separately frozen science-affecting rule rather than being inferred from digest identity.",
-    "observable_intervention": "Future Discovery observables: per-producer manifest, raw ordered event stream, checkpoint stream, resource-counter stream, exact run/ref/provenance binding, verifier recomputed hashes and fail-closed verdict. Negative-control interventions: mutate preserved bytes after declared digest, swap producer/ref binding, omit a claim-relevant trace field, reuse same-process identity, and provide matching declared digests over nonmatching raw bytes.",
-    "ordinary_reductions_comparators": "Current declared-digest Utility verifier and historical in-process R50 aggregate measurement are the ordinary/system baselines. The proposed successor is discriminated by verifier-side raw recomputation and provenance/trace completeness, not by post hoc scientific outcome.",
-    "falsifier_discriminator": "HOLD/REJECT if any claim-relevant equality cannot be derived from preserved bytes without changing system/comparator semantics; if exact producer/ref provenance cannot be bound independently of producer claims; if tampered/missing raw can still yield an equivalent verdict; or if resource accounting cannot be separated from verification overhead under a fixed envelope."
+    "phenomenon": "AN_EQUIVALENCE_PIPELINE_CAN_APPEAR_SELF_CONSISTENT_WHILE_RAW_TO_DIGEST_AND_PRODUCER_PROVENANCE_REMAIN_UNVERIFIED",
+    "question": "Can the fresh SYSTEM object make claim-scoped equivalence auditability fail-closed by preserving independent per-producer raw streams and deriving verifier decisions from preserved bytes under controller-authenticated run/ref provenance and one frozen resource/privilege envelope?",
+    "hypothesis": "A bounded auditability pipeline is reachable if producer identity and run/ref bindings come from a controller-owned launch ledger, each producer writes isolated raw streams, the verifier independently recomputes hashes from preserved bytes after producer exit, and tampering, binding swaps, missing traces, identity reuse and declared-digest/raw mismatches fail closed without changing producer/comparator semantics.",
+    "observable_intervention": "Observables are controller launch ledger, producer_manifest.json, trajectory.ndjson, checkpoints.ndjson, resources.json, sealed byte hashes and verifier record. Prospective negative controls mutate raw bytes while retaining old digest, swap producer/ref/run binding, omit a required trace field, reuse/spoof one producer/process identity, or submit matching declared digests over nonmatching preserved bytes.",
+    "ordinary_reductions_comparators": "Current Utility declared-digest self-consistency verifier; simple manifest/hash verification; same-process raw emitter; ordinary process-isolated comparison tooling without durable raw-chain verification.",
+    "falsifier_discriminator": "HOLD/REJECT if any required negative control can still yield a valid audit-match verdict; if verifier decisions depend on producer-supplied identity/digests rather than preserved bytes/controller observations; if required raw coverage cannot be fixed without changing producer/comparator semantics; if verifier overhead cannot be separated from producer accounting under one frozen envelope; or if durable exact-byte retention cannot be established on the safe architecture surface."
   },
   "repair_change_classification": {
-    "selected_work": "READ_ONLY_CYCLE3_QUESTION_FORMATION_REASSESSMENT",
+    "selected_work": "READ_ONLY_CANONICAL_SYSTEM_DISCOVERY_CONTRACT_FORMATION_NO_IMPLEMENTATION",
     "science_invariant_repair": false,
     "science_affecting_change": false,
     "repository_science_mutation": false
@@ -133,14 +140,13 @@
     "latest_analyst_allocation_read": true,
     "main_sub_control_reconciled": true,
     "recent_literature_audit_methodology_utility_reconciled": true,
-    "terminal_predecessor_measurement_source_read_directly": true,
-    "utility_verifier_source_read_directly": true,
     "stable_main_and_evidence_independently_refetched": true,
+    "utility_verifier_source_read_directly": true,
     "protected_or_held_out_result_used": false,
     "consumed_identity_used": false
   },
   "implementation": {
-    "mode": "STATIC_READ_ONLY_REASSESSMENT_NO_IMPLEMENTATION",
+    "mode": "STATIC_READ_ONLY_DISCOVERY_CONTRACT_CLOSURE_NO_IMPLEMENTATION",
     "research_branch": null,
     "workflow": null,
     "scientific_probe_executed": false,
@@ -148,54 +154,78 @@
     "repair_or_retune": false
   },
   "observations": {
-    "fresh_non_main_supply_delta": true,
-    "r50_reference_and_comparators_share_one_python_process": true,
-    "r50_preserved_output_is_single_aggregate_json": true,
-    "r50_schedule_fire_ignition_prediction_equalities_are_literal_true": true,
-    "r50_eligibility_weights_are_tolerance_compared": true,
-    "utility_verifier_recomputes_bindings_privilege_resource_hashes": true,
+    "candidate33_is_fresh_canonical_system_successor": true,
+    "candidate32_remains_terminal": true,
+    "utility_verifier_recomputes_binding_privilege_resource_hashes": true,
     "utility_verifier_recomputes_trajectory_checkpoint_digests_from_preserved_raw": false,
-    "utility_verifier_authenticates_producer_provenance": false,
-    "methodology_r61_requires_durable_result_bytes_not_hashes_only": true,
-    "seed_now_has_bounded_system_question": true,
-    "seed_now_has_concrete_observables_and_negative_controls": true,
-    "seed_now_has_fail_closed_discriminator": true,
+    "utility_verifier_authenticates_actual_producer_process_provenance": false,
+    "utility_verifier_compares_producer_supplied_trajectory_checkpoint_digest_strings": true,
+    "utility_reason_token_exact_semantic_digest_match_overstates_trust_boundary": true,
+    "controller_owned_provenance_trust_root_specified": true,
+    "isolated_two_producer_plus_post_exit_verifier_layout_specified": true,
+    "raw_schema_equiv_audit_raw_v1_specified": true,
+    "resource_privilege_accounting_boundary_specified_structurally": true,
+    "durable_exact_byte_retention_rule_specified": true,
+    "five_fail_closed_negative_controls_specified": true,
+    "scientific_semantic_equivalence_explicitly_out_of_scope": true,
     "selected_task_count": 1
   },
-  "admission_reassessment": {
-    "status": "ADMISSION_READY_FOR_ANALYST_FRESH_SYSTEM_DISCOVERY_REVIEW",
-    "reason": "Question formation has reduced the ambiguity to implementation/discovery choices rather than a missing scientific question. A fresh object can prospectively test raw-chain auditability and verifier fail-closed behavior without reopening predecessor #32 or selecting a scientific floating tolerance from outcomes.",
-    "scope_guard": "Initial admitted object, if any, should claim only SYSTEM-level auditability/integrity reachability. It must not claim scientific semantic equivalence or mechanism, and any tolerance-bearing floating semantic comparator requires a separately prospective Analyst-authorized contract.",
-    "implementation_authorized_now": false,
-    "canonical_admission_performed": false
+  "contract_closure": {
+    "contract_id": "EQUIV-AUDIT-DISC-R1-CONTRACT-V1",
+    "status": "PROSPECTIVELY_BOUNDED_FOR_SYSTEM_ARCHITECTURE_REVIEW",
+    "trust_root": "CONTROLLER_OWNED_LAUNCH_LEDGER",
+    "producer_isolation": "SEPARATE_LINUX_CONTAINERS_SEPARATE_RAW_MOUNTS_NETWORK_NONE",
+    "verifier_isolation": "POST_EXIT_READ_ONLY_VERIFIER_NO_PRODUCER_MODULE_IMPORT",
+    "raw_schema": "EQUIV_AUDIT_RAW_V1",
+    "raw_files": [
+      "producer_manifest.json",
+      "trajectory.ndjson",
+      "checkpoints.ndjson",
+      "resources.json"
+    ],
+    "digest_authority": "VERIFIER_RECOMPUTED_FROM_PRESERVED_CONTROLLER_SEALED_BYTES",
+    "retention": "DURABLE_NON_EVIDENTIARY_GIT_BLOBS_PLUS_SHA256_BEFORE_SUMMARY",
+    "semantic_tolerance": "OUT_OF_SCOPE_REQUIRES_SEPARATE_PROSPECTIVE_SCIENCE_AFFECTING_CONTRACT",
+    "negative_controls": [
+      "RAW_MUTATION_WITH_OLD_DECLARED_DIGEST",
+      "PRODUCER_REF_RUN_BINDING_SWAP",
+      "REQUIRED_TRACE_FIELD_OMISSION",
+      "SAME_PROCESS_OR_IDENTITY_REUSE_OR_SPOOF",
+      "IDENTICAL_DECLARED_DIGESTS_OVER_NONMATCHING_PRESERVED_BYTES"
+    ],
+    "public_verdict_vocabulary": [
+      "AUDITABLE_RAW_MATCH",
+      "AUDITABLE_RAW_MISMATCH",
+      "INVALID_PROVENANCE_CHAIN"
+    ]
   },
-  "evidentiary_status": "NON_EVIDENTIARY_QUESTION_FORMATION_ONLY",
-  "proposed_claim_ceiling": "SYSTEM_IF_FUTURE_OBJECT_ADMITTED",
+  "evidentiary_status": "NON_EVIDENTIARY_DISCOVERY",
+  "proposed_claim_ceiling": "SYSTEM",
   "proposed_preformal_eligible": false,
   "preliminary_readiness": {
-    "status": "NOT_APPLICABLE_TO_PREFORMAL_SYSTEM_SEED",
-    "discovery_admission_readiness": "READY_FOR_ANALYST_REVIEW"
+    "status": "NOT_APPLICABLE",
+    "architecture_admission_readiness": "READY_FOR_ANALYST_REVIEW"
   },
   "hold_dimensions": {
-    "status": "NOT_APPLICABLE_NONCANONICAL_SEED"
+    "hold_class": null,
+    "hold_reason": null,
+    "terminal_state": "ACTIVE",
+    "queue_state": "QUEUED"
   },
   "fresh_successor_potential": {
-    "new_proposal_this_run": false,
+    "current_object_is_already_fresh_successor": true,
     "predecessor_family": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
     "predecessor_reopened": false,
-    "status": "MATERIAL_TRUE_FOR_FRESH_SUCCESSOR_REVIEW",
-    "material_newness": "The successor question is not whether predecessor #32 was semantically equivalent; it asks whether a future equivalence pipeline can make every claim-relevant field independently auditable from durable producer raw bytes and authenticated bindings, with verifier-side recomputation and tamper/missing-trace negative controls."
+    "additional_successor_proposed": false,
+    "mechanism_uplift_proposed": false
   },
-  "next_layer": "EVIDENCE_ANALYST_FRESH_SUCCESSOR_REVIEW",
+  "next_layer": "EVIDENCE_ANALYST_REVIEW_FOR_SYSTEM_ARCHITECTURE_ADMISSION",
   "open_choices": [
-    "Choose a provenance trust root and binding mechanism for producer/run/ref identity.",
-    "Freeze exact ordered-event and checkpoint schemas plus coverage boundaries.",
-    "Freeze a resource/privilege envelope and accounting boundary that excludes verifier overhead.",
-    "Choose verifier isolation/placement.",
-    "If later semantic floating-state equivalence is claimed, prospectively freeze representation/tolerance in a separate science-affecting contract; do not inherit R50 1e-12 automatically.",
-    "Choose durable non-evidentiary raw-byte retention sufficient for later re-audit."
+    "Freeze exact synthetic Architecture fixture payloads before any fixture execution.",
+    "Freeze exact numeric resource limits for Architecture fixtures before execution; do not tune them to outcomes.",
+    "Choose a clearly marked exploratory implementation branch/ref only after fresh Analyst authorization."
   ],
-  "recommendation": "FRESH_SUCCESSOR_REVIEW",
+  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
@@ -203,18 +233,20 @@
     "scientific_experiments_executed": 0,
     "scientific_workflows_dispatched": 0,
     "one_way_identities_consumed": 0,
+    "research_branches_created": 0,
     "research_prs_merged": 0,
     "immutable_scientific_refs_mutated": 0,
     "utility_mutations": 0,
     "force_pushes": 0,
-    "analyst_generation_rechecked_before_mutation": "EVA-20260922T162702+0900-R66-9C2F71A4@fcc848dc5287880f888f159b4643a11b72b82414",
-    "main_ownership_rechecked_before_mutation": "MAIN-20260922T162700+0900-PRIMARY-H7-FORMALR1-DESIGN-C5-C4F8A21D@f5292c94516be70989060396c2e97d73b1c57aa4"
+    "analyst_generation_rechecked_before_mutation": "EVA-20260922T165618+0900-R68-B7C391E4@bf02e073e4405bc51fa62a24876378dad4fbe2bb",
+    "main_ownership_rechecked_before_mutation": "MAIN-20260922T171550+0900-PRIMARY-H7-FORMALR1-IMPL-C6-B7C391E4@f69da6b7cc8885a40c2b5d44a46fe173a2014619",
+    "superseding_authority_detected": false
   },
   "persistence": {
     "branch": "ops/orchestrator-run-report",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "history_path": "reports/orchestrator/sub/history/2026-09-22/1640-r66-qfd-equivalence-cycle3-reassess.md",
-    "mode": "ATOMIC_TREE_NON_FORCE_FAST_FORWARD"
+    "history_path": "reports/orchestrator/sub/history/2026-09-22/1732-r68-candidate33-system-discovery-contract-closure.md",
+    "mode": "SERIAL_NON_FORCE_FAST_FORWARD_CONTENTS_API"
   }
 }
