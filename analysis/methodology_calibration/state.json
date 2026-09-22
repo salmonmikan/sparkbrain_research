@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-22T12:21:22+09:00",
+  "timestamp": "2026-09-22T13:21:25+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260922T122122+0900-R58-B84F2D17",
-    "sequence": 58,
+    "generation_id": "METHCAL-20260922T132125+0900-R59-F4C7A21D",
+    "sequence": 59,
     "material_change": true,
-    "material_change_reason": "HUMAN_005_EXPOSES_DEVELOPMENT_VS_CONSUMED_EVIDENCE_AXIS_AND_CURRENT_PRE_DIRECTIVE_POLICY_IS_PROSPECTIVELY_OVERCONSERVATIVE_ON_CYCLE3_SAME_OBJECT_INVARIANT_REPAIR_PREFORMAL_ITERATION_AND_TERMINAL_SUCCESSOR_SCOPE",
-    "supersedes_generation_id": "METHCAL-20260922T111918+0900-R57-CE3EB4CC",
+    "material_change_reason": "FIRST_POST_HUMAN_005_LIVE_ROLLOUT_SHOWS_CORRECT_CYCLE3_REASSESSMENT_INVARIANT_REPAIR_STOP_ON_SCIENCE_AFFECTING_AMBIGUITY_AND_VERSIONED_DEV_R2_WITH_FORMAL_FLOOR_UNCHANGED",
+    "supersedes_generation_id": "METHCAL-20260922T122122+0900-R58-B84F2D17",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260922T111918+0900-R57-CE3EB4CC",
+      "generation_id": "METHCAL-20260922T122122+0900-R58-B84F2D17",
       "branch": "ops/methodology-calibration-audit",
-      "commit": "c503cdb4042fda6f395b8833103f681ae4f81e20"
+      "commit": "623297013cad5a6c80037497d5236b581a87277d"
     },
     "human_directive": {
       "id": "HUMAN-20260922-005",
@@ -22,40 +22,27 @@
       "role": "HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260922T105700+0900-R32-C5A721D4",
+      "generation_id": "CTRL-20260922T124800+0900-R33-E7C421B6",
       "branch": "ops/control-brain-handoff",
-      "commit": "544bede4c5131ea57e5b93903bab5279d066a0c0",
-      "freshness_vs_human_005": "PREDATES_DIRECTIVE"
+      "commit": "c41db58a5cc87e5460f143ce07c4256d7238d577"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T110607+0900-R59-A6D4C219",
+      "generation_id": "EVA-20260922T130900+0900-R62-D4A7C21F",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "35630cc8e5d989a77801658f877c97aae9323f7c",
-      "role": "CURRENT_CANONICAL_FUNNEL_AUTHORITY",
-      "freshness_vs_human_005": "PREDATES_DIRECTIVE"
+      "commit": "d93bfe4ac1d4ed752fa8ca1074b1794a69d08682",
+      "role": "CURRENT_CANONICAL_FUNNEL_AND_DEVELOPMENT_AUTHORITY"
     },
     "main_strategy": {
-      "generation_id": "MAIN-20260922T111654+0900-PRIMARY-FUNNEL21-IDLE-R59-A6D4C219",
-      "commit": "9b3043ff674a0f9fb4891cb12d61a4f37ff2b08f",
-      "authoritative": false,
-      "freshness_vs_human_005": "PREDATES_DIRECTIVE"
+      "generation_id": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9",
+      "branch": "ops/orchestrator-run-report",
+      "commit": "8d9479100cb0df994efd33ac2d53670b809bf40a",
+      "implementation_state_commit": "c1443125105dd0c3dce18aa64066a465d9db3fae",
+      "authoritative": false
     },
     "sub_strategy": {
-      "generation_id": "SUB-20260922T113500+0900-NOOP-R59INTENTIONALIDLE-A6D4C219",
-      "commit": "49572dfeb1aa7da7986ac545a10f1e4e89f5d15e",
-      "authoritative": false,
-      "freshness_vs_human_005": "PREDATES_DIRECTIVE"
-    },
-    "historical_calibration_case": {
-      "candidate": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
-      "research_ref": "research/main-semantic-active-work-localization-r50-cycle2",
-      "commit": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
-      "role": "HISTORICAL_CALIBRATION_EXAMPLE_ONLY_NO_REOPEN"
-    },
-    "external_calibration": {
-      "source": "Nosek_et_al_2018_PNAS_preregistration_revolution",
-      "role": "METHODOLOGY_CALIBRATION_ONLY",
-      "finding": "ITERATIVE_EXPLORATION_IS_LEGITIMATE_WHEN_DISTINGUISHED_FROM_CONFIRMATORY_PREDICTION"
+      "generation_id": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9",
+      "commit": "e56c285996c30888ec7f914efc505974695a6ed0",
+      "authoritative": false
     }
   },
   "authoritative_refs": {
@@ -70,30 +57,35 @@
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
+    "active_h7_dev_r1_head": "c97af135742a7cd3af94c857f4d5b83d7707075d",
+    "h7_dev_r2": "ANALYST_AUTHORIZED_NOT_YET_MATERIALIZED",
     "scientific_source_of_truth": "stable main plus independently fetched annotated evidence refs; ops branches are mailboxes only"
   },
   "audit_result": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
   "gate_classifications": {
     "hard_integrity_policy": "KEEP",
-    "development_phase_axis_end_to_end": "CLARIFY",
-    "open_development_bounded_iteration": "RELAX",
-    "result_exposed_same_object_science_invariant_repair": "RELAX",
+    "development_phase_axis_observed_active_path": "KEEP",
+    "development_phase_axis_full_end_to_end_rollout": "INSUFFICIENT_EVIDENCE",
+    "open_development_bounded_iteration_live_case": "INSUFFICIENT_EVIDENCE",
+    "result_exposed_same_object_science_invariant_repair": "KEEP",
     "result_exposed_science_affecting_change_requires_versioned_revision_or_fresh_successor_preserving_prior_results": "KEEP",
+    "post_meaningful_result_exposure_science_affecting_revision_live_case": "INSUFFICIENT_EVIDENCE",
     "consumed_one_way_formal_integrity": "KEEP",
     "cycle3_as_automatic_terminal_cap": "RELAX",
     "cycle3_mandatory_reassessment_with_prospective_information_gain": "KEEP",
-    "development_rerun_retune_provenance_and_nonindependent_evidence_label": "KEEP",
-    "repair_classification_science_invariant_vs_science_affecting": "CLARIFY",
-    "preformal_as_real_development_surface": "RELAX",
+    "development_rerun_retune_provenance_and_nonindependent_evidence_label": "INSUFFICIENT_EVIDENCE",
+    "repair_classification_science_invariant_vs_science_affecting": "KEEP",
+    "development_revision_prior_artifact_preservation": "KEEP",
+    "preformal_as_real_development_surface": "KEEP",
+    "live_iterative_preformal_execution": "INSUFFICIENT_EVIDENCE",
     "repeated_preformal_observations_not_independent_confirmatory_evidence": "KEEP",
     "ready_development_readiness_semantics": "KEEP",
     "preformal_eligible_vs_ready": "KEEP",
     "current_object_claim_ceiling": "KEEP",
     "same_object_system_to_mechanism_upgrade_ban": "KEEP",
-    "fresh_system_to_mechanism_successor_admission": "CLARIFY",
-    "terminal_for_current_object_topic_scope": "CLARIFY",
-    "fresh_successor_suppression_after_terminal_current_object": "RELAX",
+    "fresh_system_to_mechanism_successor_admission": "INSUFFICIENT_EVIDENCE",
+    "terminal_for_current_object_topic_scope": "KEEP",
     "multidimensional_hold_model": "KEEP",
     "classification_completeness_gating": "KEEP",
     "main_mechanism_priority": "KEEP",
@@ -102,7 +94,7 @@
     "rolling_one_in_three_theory_backward_supply": "KEEP",
     "theory_backward_quality_floor": "KEEP",
     "no_coherent_mechanism_target_liveness_semantics": "KEEP",
-    "no_target_normalization_as_topic_death": "RELAX",
+    "question_formation_zero_retain_noncanonical_supply": "KEEP",
     "system_architecture_testbed_reproducibility_value": "KEEP",
     "comparator_equivalence_verifier_independence": "TIGHTEN",
     "contract_required_equivalence_machine_verifiability": "TIGHTEN",
@@ -113,66 +105,69 @@
     "durable_preformal_development_provenance": "TIGHTEN",
     "cross_generation_holdout_exposure_observability": "TIGHTEN",
     "protected_set_validity_regime_binding": "TIGHTEN",
-    "protected_feedback_visibility_masking": "TIGHTEN",
-    "signal_before_reduction": "TIGHTEN",
-    "positive_phenomenon_before_positive_reduction_claim": "SPLIT_BY_CLAIM_TYPE"
+    "protected_feedback_visibility_masking": "TIGHTEN"
   },
   "mandatory_questions": {
-    "1_development_phase_semantics_end_to_end": "NOT_YET_IMPLEMENTED_OR_OBSERVABLE_END_TO_END. HUMAN_005_POSTDATES_CURRENT_CONTROL_ANALYST_MAIN_SUB; current canonical records contain Funnel/lifecycle state but no orthogonal development_phase field.",
-    "2_cycle3_hard_terminal_cap": "YES_IN_PRE_DIRECTIVE_POLICY_AS_A_CALIBRATION_DEFECT. R59 explicitly prohibits candidate32 cycle3 and candidate31 third cycle. Prospectively cycle3 should be reassessment, not automatic closure. Historical objects remain closed.",
-    "3_repair_classification": "CURRENT_POLICY_TOO_COARSE. Candidate32 verifier defect is a calibration example of implementation behavior already scientifically fixed and would prospectively be SCIENCE_INVARIANT_REPAIR under HUMAN_005; do not reopen candidate32.",
-    "4_development_rerun_retune_logging": "INSUFFICIENT_EVIDENCE_OF_NEW_POLICY_ROLLOUT. Require durable revision lineage and explicit NONCONFIRMATORY development status; repeated observations must not count as independent evidence.",
-    "5_result_exposed_preserves_prior_results": "INSUFFICIENT_EVIDENCE_OF_LIVE_POSITIVE_CASE. Must be mandatory for science-affecting revisions after exposure.",
-    "6_formal_one_way_integrity": "UNCHANGED_AND_CONFIRMED. Stable main and five annotated evidence tag objects are unchanged; formal/sealed/freeze tag surfaces remain empty and consumed evidence is not reopened.",
-    "7_legitimate_fresh_system_to_mechanism_successors": "NO_MANUFACTURED_UPLIFT_OBSERVED; ACTUAL_SUPPRESSED_LEGITIMATE_CASE_NOT_PROVEN. Admission semantics need clarification so terminal current-object status does not imply topic death and independently motivated fresh residuals can receive new IDs/contracts.",
-    "8_preformal_development_not_hidden_formal": "PROSPECTIVE_RELAXATION_REQUIRED. READY definition remains calibrated and HIDDEN_SECOND_FORMAL_GATE=false, but prior no-rerun/terminal treatment of development failures is too FORMAL-like for future PRE_FORMAL.",
-    "9_terminal_semantics_candidate_supply": "SLIGHTLY_OVERCONSERVATIVE_ON_THROUGHPUT. Canonical funnel is 31/32 terminal with zero active/queued/READY and no-target check_count 22; no-target remains valid liveness accounting but successor/revision policy should not normalize topic death.",
-    "10_pass_reachability": "REALISTIC_AND_IMPROVED_BY_SEPARATING_DEVELOPMENT_FROM_CONFIRMATION_WITHOUT_WEAKENING_FORMAL."
+    "1_development_phase_semantics_end_to_end": "PARTIALLY_YES. Control R33, Analyst R62 and MAIN/Relay R61 use the axis consistently on the active H7 path; full PRE_FORMAL/result-bearing revision behavior remains unobserved.",
+    "2_cycle3_hard_terminal_cap": "NO. R62 records cycle-3 reassessment count 1 and disposition REFRAME_VERSION_CONTINUE_DEV_R2 with prospective information gain rather than terminalization.",
+    "3_repair_classification": "YES_ON_OBSERVED_CASE. Ruff E402/I001 import-layout suppression was SCIENCE_INVARIANT_REPAIR; comparator semantic gaps were science-affecting and were not filled locally.",
+    "4_development_rerun_retune_logging": "INSUFFICIENT_EVIDENCE_FOR_ACTUAL_REPEATED_RESULT_BEARING_RUNS. Current lineage/nonconfirmatory fields are promising but no live rerun/retune/tolerance-revision sequence has yet exercised them.",
+    "5_result_exposed_preserves_prior_results": "YES_FOR_CURRENT_VERSIONED_ARTIFACT_LINEAGE, BUT_STRONGER_CASE_UNOBSERVED. DEV-R1 and its cycle-2 preflight are preserved before DEV-R2; cycle 2 itself exposed no scientific result.",
+    "6_formal_one_way_integrity": "UNCHANGED_AND_CONFIRMED. Stable main and five annotated evidence tags are unchanged; no formal/sealed/freeze tags or new one-way authority were created.",
+    "7_legitimate_fresh_system_to_mechanism_successors": "NO_MANUFACTURED_UPLIFT_OBSERVED; NO_LIVE_FRESH_SYSTEM_TO_MECHANISM_SUCCESSOR_CASE. H7 is a continuing MECHANISM object/revision, not SYSTEM uplift. Terminal SYSTEM objects have successor assessments but mechanism-successor admission remains untested.",
+    "8_preformal_development_not_hidden_formal": "SEMANTICS_YES; LIVE_ITERATIVE_EXECUTION_UNOBSERVED. H7 is eligible but NOT_READY and remains Architecture development; HIDDEN_SECOND_FORMAL_GATE=false.",
+    "9_terminal_semantics_candidate_supply": "IMPROVED_BUT_WATCH. H7 is active, viable MECHANISM=1, old no-target episode closed at 23, and terminal objects have successor notes; 31/32 remain terminal and READY remains zero.",
+    "10_pass_reachability": "REALISTIC_AND_IMPROVED_WITHOUT_WEAKENING_FORMAL. Development may iterate nonconfirmatorily; confirmatory PASS still requires fresh one-way FORMAL evidence."
   },
   "false_positive_negative_risks": {
-    "false_positive": "MODERATE_WATCH_DURING_ROLLOUT. Development flexibility becomes unsafe if result-exposed science-affecting changes are silently overwritten, prior results are not preserved, or repeated PRE_FORMAL observations are counted as independent confirmatory evidence.",
-    "false_negative": "MODERATE_TO_HIGH_WATCH_UNDER_PRE_DIRECTIVE_POLICY. Blanket no-repair/no-cycle3 and terminal-current-object successor suppression can discard informative development questions and contribute to candidate starvation.",
-    "duplicate_guards": "LOW_TO_MODERATE. Development phase, lifecycle state, eligibility and READY are orthogonal only if implemented as separate fields; collapsing them would recreate duplicate/hidden gates.",
-    "opportunity_cost": "ELEVATED. Viable executable MECHANISM remains zero while 31/32 candidates are terminal and the no-target episode has 22 canonical liveness checks.",
-    "moving_goalpost_rescue_risk": "MODERATE_WATCH_DURING_TRANSITION. Relaxation is scientifically sound only with immutable prior-result provenance plus explicit change_class and dev_revision lineage."
+    "false_positive": "LOW_TO_MODERATE_WATCH. Observed rollout stopped on science-affecting ambiguity and preserved prior artifacts; remaining risk is future post-result science-affecting retune/versioning being silently treated as independent evidence.",
+    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM is now one and cycle3 no longer auto-closes, but 31/32 objects remain terminal and no READY object exists.",
+    "opportunity_cost": "MODERATE_AND_IMPROVING. Active H7 ends pure idle, while zero-retained Question Formation avoided manufactured candidates.",
+    "moving_goalpost_rescue_risk": "LOW_TO_MODERATE_WATCH. DEV-R2 was created before any result-bearing H7 cycle2 outcome and strengthens comparator closure; future result-exposed revisions remain the critical test."
   },
   "development_iteration_calibration": {
-    "directive_disposition": "METHODOLOGY_ACCEPT_WITH_OPERATIONAL_CLARIFICATIONS_NO_SCIENTIFIC_THRESHOLD_WEAKENING",
+    "directive_disposition": "ACCEPTED_AND_LIVE_ROLLOUT_OBSERVED_WITH_REMAINING_END_TO_END_GAPS",
     "axis": ["OPEN_DEVELOPMENT", "RESULT_EXPOSED_DEVELOPMENT", "CONSUMED_ONE_WAY"],
-    "current_rollout_status": "PENDING_FIRST_POST_DIRECTIVE_CONTROL_ANALYST_MAIN_SUB_GENERATIONS",
-    "open_development": "ALLOW_BOUNDED_RERUN_REPAIR_RETUNE_COMPARATOR_IMPLEMENTATION_REFINEMENT_INSTRUMENTATION_TOLERANCE_DESIGN_RESOURCE_ALIGNMENT_AND_ADDITIONAL_CYCLES_WITH_DURABLE_PROVENANCE",
-    "result_exposed_development": "ALLOW_SCIENCE_INVARIANT_REPAIR_SAME_OBJECT; SCIENCE_AFFECTING_CHANGE_ONLY_AS_VERSIONED_DEVELOPMENT_REVISION_OR_FRESH_SUCCESSOR_PRESERVING_PRIOR_RESULTS",
-    "consumed_one_way": "STRICT_NO_RERUN_RETUNE_RESCORE_REPAIR_OR_HISTORICAL_REWRITE",
-    "cycle3": "MANDATORY_REASSESSMENT_NOT_AUTOMATIC_TERMINAL; CONTINUE_ONLY_WITH_PROSPECTIVELY_STATED_DISTINCT_INFORMATION_GAIN",
-    "historical_example_candidate32": "DO_NOT_REOPEN. Hard-coded equivalence predicates in the development verifier illustrate a science-invariant implementation defect under the new taxonomy, but methodology change alone cannot alter its consumed/terminal historical disposition.",
-    "evidence_accounting": "ALL_ITERATIVE_DEVELOPMENT_OBSERVATIONS_REMAIN_NONINDEPENDENT_NONCONFIRMATORY_UNLESS_A_FRESH_ONE_WAY_FORMAL_IDENTITY_IS_PROSPECTIVELY_CONSUMED"
+    "current_rollout_status": "CONTROL_ANALYST_MAIN_ACTIVE_PATH_CONFORMANT; PRE_FORMAL_AND_POST_MEANINGFUL_RESULT_REVISION_NOT_YET_OBSERVED",
+    "observed_invariant_repair": "Ruff E402/I001 optional-torch test import-layout suppression only; no scientific fields changed",
+    "observed_science_affecting_gaps": [
+      "FINITE_STATE_ROUTE_HISTORY_V1 fit-state closure/unseen-state semantics",
+      "ELIGIBILITY_ROUTE_LEDGER_V1 event-encoder provenance/training/calibration semantics"
+    ],
+    "observed_response": "STOP_LOCAL_FILL; PRESERVE_DEV_R1; VERSION_TO_H7_DEV_R2_AT_CYCLE3_REASSESSMENT",
+    "cycle3": "MANDATORY_REASSESSMENT_NOT_AUTOMATIC_TERMINAL; first live reassessment continued DEV-R2 with recorded prospective information gain",
+    "evidence_accounting": "All H7 R1/R2 work remains NON_EVIDENTIARY development; no PRE_FORMAL/FORMAL result or identity consumption occurred",
+    "schema_observability_note": "Core semantics are machine-readable, but field names differ across roles and prior artifact/result lineage is partly represented through role-specific fields rather than one common schema."
   },
-  "moving_goalposts": "MODERATE_WATCH_DURING_ROLLOUT_BUT_HARD_FORMAL_FLOOR_UNCHANGED",
-  "over_terminalization_risk": "HIGH_CURRENT_POLICY_SIGNAL_PROSPECTIVELY; DO_NOT_RETROACTIVELY_REOPEN_HISTORICAL_OBJECTS",
-  "pass_reachability": "REALISTIC_CONDITIONAL; PRE_FORMAL_MAY_ITERATE_AS_NONCONFIRMATORY_DEVELOPMENT; CLEAN_CONFIRMATORY_PASS_REQUIRES_A_FRESH_CONSUMED_ONE_WAY_FORMAL_IDENTITY_WITH_PROSPECTIVE_FROZEN_PROTOCOL_RAW_BEFORE_SCORE_PRESERVE_BEFORE_READ_EXACT_BINDING_AND_VALID_PROTECTED_ADAPTIVE_EVALUATION_REGIME",
+  "moving_goalposts": "LOW_TO_MODERATE_WATCH; CURRENT_DEV_R2_VERSIONING_OCCURS_PRE_RESULT_AND_STRENGTHENS_COMPARATOR_CLOSURE",
+  "over_terminalization_risk": "MODERATE_WATCH_IMPROVED_FROM_HIGH; ACTIVE_H7_AND_CLOSED_NO_TARGET_EPISODE_SHOW_POLICY_RELAXATION_WORKING_WHILE_31_OF_32_REMAIN_TERMINAL",
+  "pass_reachability": "REALISTIC_CONDITIONAL_AND_IMPROVED; PRE_FORMAL_MAY_ITERATE_AS_NONCONFIRMATORY_DEVELOPMENT; CLEAN_CONFIRMATORY_PASS_REQUIRES_FRESH_CONSUMED_ONE_WAY_FORMAL_IDENTITY_WITH_PROSPECTIVE_FROZEN_PROTOCOL_RAW_BEFORE_SCORE_PRESERVE_BEFORE_READ_EXACT_BINDING_AND_VALID_PROTECTED_ADAPTIVE_EVALUATION_REGIME",
   "claim_type_findings": {
     "claim_ceiling_current_object_only": true,
     "same_object_system_to_mechanism_upgrade_observed": false,
-    "fresh_successor_is_not_same_object_upgrade": true,
-    "fresh_successor_requirements": ["new_candidate_id", "independently_motivated_mechanistic_residual_or_question", "fresh_reduction_comparator_falsifier_contract", "fresh_development_phase_state"],
-    "successor_rescue_laundering_boundary": "A successor may be motivated by prior development results, but may not reuse the same object/identity or silently revise the exposed contract to make the prior result succeed.",
-    "candidate32_current_status": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED_CYCLE2_HISTORICAL_NO_REOPEN",
-    "h7_current_status": "HOLD_MECHANISM_UNRESOLVED_NONTERMINAL_NOT_QUEUED_NOT_ELIGIBLE_NOT_READY"
+    "h7_current_status": "ARCHITECTURE_STUDY_MECHANISM_ACTIVE_PREFORMAL_ELIGIBLE_NOT_READY_RESULT_EXPOSED_DEV_R2_AUTHORIZED",
+    "h7_revision_semantics": "Same canonical MECHANISM candidate; explicit development revision because comparator protocol changes while mechanistic question/intervention/metrics/claim scope remain fixed.",
+    "fresh_system_to_mechanism_successor_live_case": "NONE",
+    "candidate32_status": "SYSTEM_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED; future work requires fresh SYSTEM successor with new ID/contract"
   },
-  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED_AND_PRE_DIRECTIVE_TERMINAL_SUCCESSOR_POLICY_IS_NOW_A_FALSE_NEGATIVE_THROUGHPUT_WATCH",
+  "mechanism_supply_health": "IMPROVED_FROM_STALLED_TO_ONE_ACTIVE_VIABLE_MECHANISM_WITH_QUALITY_FLOOR_INTACT; READY_SET_STILL_EMPTY_AND_BROAD_TERMINAL_DENSITY_REMAINS_WATCH",
   "funnel_observability": {
     "canonical_population": 32,
     "classified_population": 32,
     "classification_completeness": 1.0,
     "mechanism": 13,
     "system": 19,
-    "terminal_states": {"ACTIVE": 0, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 31},
-    "architecture_active": {"MECHANISM": 0, "SYSTEM": 0},
+    "terminal_states": {"ACTIVE": 1, "NONTERMINAL_HOLD": 0, "TERMINAL_FOR_CURRENT_OBJECT": 31},
+    "architecture_active": {"MECHANISM": 1, "SYSTEM": 0},
     "architecture_queued": {"MECHANISM": 0, "SYSTEM": 0},
-    "preformal_eligible": 0,
+    "preformal_eligible": 1,
     "preformal_ready": 0,
-    "viable_executable_mechanism": 0,
-    "development_phase_counts": "UNAVAILABLE_NOT_YET_CANONICALLY_REPRESENTED",
+    "viable_executable_mechanism": 1,
+    "development_phase_counts": {"OPEN_DEVELOPMENT": 2, "RESULT_EXPOSED_DEVELOPMENT": 30, "CONSUMED_ONE_WAY": 0},
+    "separate_consumed_scientific_identities": 7,
+    "cycle3_reassessment_count": 1,
+    "cycle3_latest_disposition": "H7_REFRAME_VERSION_CONTINUE_DEV_R2",
+    "no_target_episode": {"status": "CLOSED_FOR_CURRENT_ACTIVE_H7_REVISION", "canonical_liveness_count": 23, "evidentiary": false},
     "policy_conclusions_require_complete_classification": true
   },
   "preformal_calibration": {
@@ -181,45 +176,37 @@
     "ready_means_next_test_well_defined_and_informative_not_prior_success": true,
     "hidden_second_formal_gate": false,
     "repeated_observations_independent_confirmatory_evidence": false,
-    "current_live_rollout_evidence": "INSUFFICIENT_EVIDENCE_POST_HUMAN_005"
+    "current_live_rollout_evidence": "H7_ELIGIBLE_NOT_READY_AT_ARCHITECTURE; NO_ITERATIVE_PREFORMAL_RUN_YET"
   },
   "system_priority_exception_audit": {
     "rule": "KEEP",
-    "observed_exception_count": 0,
-    "post_hoc_exception_observed": false,
-    "first_genuine_case": "INSUFFICIENT_EVIDENCE"
+    "used_currently": false,
+    "genuine_system_over_comparable_mechanism_case_observed": false
   },
   "no_coherent_target_audit": {
-    "rule": "KEEP_AS_LIVENESS_EXCEPTION",
-    "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-    "canonical_check_count": 22,
-    "latest_sub_local_check_count": 23,
-    "counts_as_selection": false,
-    "counts_as_mechanism_absence_evidence": false,
-    "escape_hatch_evidence_observed": false,
-    "throughput_watch": "DO_NOT_USE_REPEATED_NO_TARGET_AS_REASON_TO_SUPPRESS_FRESH_VERSIONED_SUCCESSORS_OR_INFORMATIVE_DEVELOPMENT_REVISIONS"
+    "classification": "KEEP",
+    "episode": "NTE-20260921-R34-POST-REPLAY-v1",
+    "status": "CLOSED_FOR_CURRENT_ACTIVE_H7_REVISION",
+    "canonical_check_count": 23,
+    "scientific_negative_evidence": false,
+    "selection_denominator_credit": false,
+    "finding": "No-target normalization has receded because active H7 now exists; historical count remains liveness-only."
   },
-  "classification_completeness": {"complete": 32, "total": 32, "rate": 1.0, "policy_gating": "KEEP"},
+  "classification_completeness": "32/32",
   "prospective_recommendations": [
-    "Add development_phase as an orthogonal canonical field for every active/development object: OPEN_DEVELOPMENT, RESULT_EXPOSED_DEVELOPMENT, or CONSUMED_ONE_WAY; do not encode it inside hold_class, terminal_state, queue_state, eligibility or READY.",
-    "At cycle 3, require a recorded reassessment with next-cycle information_gain, change_class and stop/continue rationale; do not auto-terminalize solely because cycle_count reached three.",
-    "Allow same-object SCIENCE_INVARIANT_REPAIR in OPEN_DEVELOPMENT and RESULT_EXPOSED_DEVELOPMENT with durable before/after code and result provenance; never count repaired/repeated development runs as independent confirmation.",
-    "After meaningful result exposure, require SCIENCE_AFFECTING_CHANGE to create a versioned development revision or fresh successor preserving all prior results and the exact old contract; never silently overwrite metric, threshold, comparator, seed, intervention, privilege/resource, hypothesis, falsifier or success criteria.",
-    "Treat PRE_FORMAL as iterative development. READY should require only that the next PRE_FORMAL test is well-defined and informative; comparator/reduction/falsifier success is not a prerequisite.",
-    "Keep same-object SYSTEM to MECHANISM uplift prohibited, while allowing fresh MECHANISM successors with a new candidate ID, independently motivated residual/question, fresh prospective contracts and fresh development state.",
-    "Interpret TERMINAL_FOR_CURRENT_OBJECT literally as closure of that object/contract, not the phenomenon family. Fresh successor admission should distinguish new question/versioned development from rescue laundering rather than require topic amnesia.",
-    "Keep NO_COHERENT_MECHANISM_TARGET denominator-excluded and non-evidentiary, but do not let repeated liveness checks become an implicit barrier to fresh successor/reframe proposals.",
-    "Do not reopen or rerun historical candidate32, candidate31, R33, PD01 or any consumed/terminal identity solely because HUMAN_005 changes prospective methodology.",
-    "Retain all existing strict FORMAL integrity and outstanding verifier/raw-preservation/protected-evaluation tightening."
+    "Keep HUMAN-005 rollout semantics and do not re-tighten cycle3 into an automatic stop.",
+    "Standardize shared machine-readable lineage keys across roles: development_revision/current+previous, change_classification, prior_artifact_or_result_refs, and prospective_information_gain.",
+    "At the first repeated PRE_FORMAL rerun/retune, verify all observations remain one nonconfirmatory development lineage and do not increment confirmatory evidence.",
+    "At the first science-affecting revision after a meaningful development result, require explicit old-result preservation and versioning before new execution.",
+    "Do not reopen historical consumed or terminal objects solely because methodology changed.",
+    "Keep comparator-verifier, raw/preserve ordering, workflow-trigger isolation, and protected/adaptive-evaluation hardening as separate tooling/evidence controls rather than READY success prerequisites."
   ],
-  "utility_request": null,
+  "utility_request": {"created": false, "reason": "Live H7 rollout is the higher-information calibration path; no bounded synthetic proposal is needed."},
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
-  "confidence": "HIGH_ON_CALIBRATION_MISMATCH_MEDIUM_ON_ROLLOUT_BECAUSE_NO_POST_DIRECTIVE_CONTROL_ANALYST_GENERATION_YET",
+  "confidence": {"calibration": "HIGH", "full_end_to_end_rollout": "MEDIUM_HIGH"},
   "questions_for_control_analyst": [
-    "Which canonical schema field and transition rules will carry development_phase, dev_revision_id, change_class and prior_result_refs without overloading Funnel/HOLD/READY?",
-    "Will future cycle-3 records replace hard prohibition with a mandatory reassessment that records prospective information gain before any additional development cycle?",
-    "How will RESULT_EXPOSED same-object SCIENCE_INVARIANT_REPAIR preserve the exposed result and exact prior implementation while preventing repaired runs from being counted as independent evidence?",
-    "How will fresh successor admission distinguish a legitimate mechanistic residual from rescue laundering without treating TERMINAL_FOR_CURRENT_OBJECT as topic death?",
-    "How will Funnel metrics expose repeated PRE_FORMAL development observations so they cannot be mistaken for independent confirmatory samples?"
+    "Should shared schema v2 require the same canonical keys for development revision lineage across Control/Analyst/MAIN instead of role-specific names?",
+    "When the first result-bearing PRE_FORMAL iteration occurs, will rerun/retune history be explicitly grouped as one nonconfirmatory development lineage rather than counted as multiple evidence observations?",
+    "When the first post-meaningful-result SCIENCE_AFFECTING_CHANGE occurs, will prior raw/results and the superseded development contract receive explicit machine-readable refs before the new revision can run?"
   ]
 }
