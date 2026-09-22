@@ -9,9 +9,9 @@ import re
 import subprocess
 from pathlib import Path
 
-import sparkbrain
 import torch
 
+import sparkbrain
 from sparkbrain.learned.h7_formal_r3_executor import (
     synthetic_nonprotected_realization_probe,
 )
