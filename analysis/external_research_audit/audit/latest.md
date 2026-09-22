@@ -1,59 +1,53 @@
-# INDEPENDENT_AUDITOR — PD01 null-vs-null reduction-identifiability audit
+# INDEPENDENT_AUDITOR — H7 FORMAL confirmatory-integrity and raw-gate audit
 
 - schema_version: `2`
-- generation_id: `AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7`
-- produced_at: `2026-09-22T10:30:00+09:00`
-- producer_run_id: `external-audit-20260922T103000+0900-R6-PD01-9C4A21E7`
+- generation_id: `AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4`
+- produced_at: `2026-09-22T22:30:20+09:00`
+- producer_run_id: `external-audit-20260922T223000+0900-R7-H7-6C8F21D4`
 - authority_scope: `INDEPENDENT_AUDITOR_READ_ONLY_REPOSITORY_EVIDENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4`
+- supersedes_generation_id: `AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7`
 - role: `INDEPENDENT_AUDITOR`
-- schedule_slot: `10:30 JST`
+- schedule_slot: `22:30 JST`
 - schedule_inference: `false`
-- audit_classification: `WEAKENED`
+- audit_classification: `CONFOUNDED`
 
 ## Phase 1 — blind target selection
 
-Before reading current Control Brain, Evidence Analyst, MAIN/SUB, or Literature summaries, the audit fixed authoritative PD01 `pd01-long-history-fading-memory-official-v1`, specifically the terminal `FAIL_REDUCED_BY_FADING_MEMORY`, as the target.
+Before reading current Control Brain, Evidence Analyst, MAIN/SUB, or Literature summaries, the audit fixed H7 FORMAL-R2 `H7-FORMAL-R2-INPUT-SPLIT-BINDING-V1` as the target, specifically whether the proposed one-way FORMAL path could support an untouched/protected confirmatory interpretation.
 
-The repository-only attack hypotheses were: authority/package/STARTED/raw/evidence drift; scorer/evaluator or target leakage; semantic/global lookup privilege mismatch; resource mismatch; seed/bootstrap fragility; insufficient long-lag support; output-only reduction mismatch; simpler finite/fading-memory explanations; protocol drift/stale evidence; and a distinct reduction-identifiability question: whether `REDUCED_BY_FADING_MEMORY` is stronger language than the data justify when both SparkBrain and the fixed reservoir fail to demonstrate long-lag recoverability.
+Repository-only attack hypotheses were: public reconstruction of evaluation rows/targets; `split=test` providing provenance but not secrecy; scorer/evaluator leakage; pre-preserve target-derived scoring hidden inside the result runner; post-disclosure claim-capable implementation changes; hidden seed/task-label privilege; package/runtime/identity drift; no-clobber/preserve-order failure; and ordinary-reduction/resource mismatch. The target was consequential because H7 is the active MECHANISM candidate and a future PASS would become one-way confirmatory mechanism evidence.
 
-Prior audit history was read only for dedupe. PD01 had not previously received a dedicated independent audit. The blind target was not changed.
+Prior audit history was read only for dedupe. H7 had not previously received a dedicated independent audit. The blind target was not changed.
 
-## Repository evidence
+## Repository evidence — R2 holdout is reconstructible
 
-The one-way chain is coherent. Exact package `b9d38daa5faca348ad2db3898ba71e2abc99f631` precedes STARTED `0569e348b9d93aeee53fc58daf4b71ee92303d6c`; workflow `35301327618` ran attempt 1 at the exact STARTED head and completed successfully; target-blind raw was preserved before scoring at `65ae7a50ee2279ab5edc3ca43ea3bf69daecb881`; evidence commit `fc5c8cda283360addddb7da482b14e69beaba1f7` is bound by the annotated PD01 evidence tag object `e4c4e6428d8ef9e09e92cae231041de0788162e2`. The preserved manifest binds raw SHA-256 `5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638`, 1024 histories / 2048 prediction rows, fixed candidate/comparator readouts, and `targets_materialized=false` at raw preservation. No retry, post-START retuning, raw-before-score violation, identity mismatch, or obvious comparator privilege violation was found.
+Stable `main` remained `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative `evidence/*` remained five objects and tag-form `formal/*`, `sealed/*`, and `freeze/*` remained empty. H7 R2 was preidentity only: no FORMAL identity, STARTED marker, result-bearing workflow, official score, or scientific evidence object existed.
 
-The exact scored primary endpoint is also internally coherent: SparkBrain accuracy `0.47265625` with 95% CI `[0.431640625, 0.515625]`; fixed contractive reservoir accuracy `0.5`; effect `-0.02734375` with 95% CI `[-0.068359375, 0.015625]`. Under the frozen decision rule, the effect upper bound is below `0.05`, so the canonical token `FAIL_REDUCED_BY_FADING_MEMORY` is a valid execution of the predeclared scorer and must remain immutable.
+R2 publicly fixes FORMAL evaluation seeds `8846030..8846285`, world assignment, `split=test`, and 24 steps. The repository generator deterministically derives the episode observations and truth labels from the public seed. Therefore exact future evaluation rows and targets can be reconstructed without touching the official protected evaluation workflow. This independently confirms that exact input identity/workflow access control is not the same property as information-level holdout non-exposure.
 
-## New attack surface — null-vs-null does not identify a positive reduction
+## New audit issue — the claimed `target-blind raw` is already target-derived score material
 
-The claim under test was not merely that SparkBrain is statistically indistinguishable from a reservoir. It claimed that an older anonymous-lineage event remains *recoverable* from SparkBrain at long lag beyond a conventional contractive fading-memory reservoir under matched observable input and linear-readout privilege.
+A separate source-level integrity problem was found in the R1/R2 one-way path. The `TargetBlindRawCollector` only rejects keys such as `score`, `decision`, `pass`, and `fail`; it permits `baseline_correct` and `cut_correct`. The R2 result runner computes those fields by comparing predicted labels against `example.belief_truth` before the raw file is closed and immutably preserved.
 
-On the primary endpoint, however, SparkBrain itself does not demonstrate positive long-lag recoverability: its point accuracy is below chance and its CI includes chance. The comparator is exactly at chance. Therefore the observed outcome is a `null-vs-null` comparison: SparkBrain shows no demonstrated long-lag capability, and the reservoir shows no demonstrated capability either.
+The frozen scorer then consumes `baseline_correct` and `cut_correct` directly: episode baseline accuracy and cut effect are means of those fields, and the bootstrap/decision path is computed from them. Thus the primary target comparison has already happened runner-side before preserve. The persisted object is **decision-blind**, but it is not literally target-blind or score-free: it contains target-derived, primary-endpoint-sufficient statistics.
 
-That is enough to falsify the registered superiority/recoverability claim and enough to trigger the frozen FAIL token. It is **not** enough to establish that a fading-memory reservoir positively explains or mechanistically reduces an observed SparkBrain long-history capability, because there is no positive long-history capability on this endpoint to reproduce. Matching a failure is not the same evidentiary object as reproducing a demonstrated phenomenon with a simpler mechanism.
+This matters for independent auditability. If raw contains only correctness bits rather than pre-score predictions plus a separately protected target mapping, the post-preserve scorer cannot independently recompute whether each correctness bit was derived correctly. A frozen buggy runner could alter the primary endpoint before the supposedly raw preservation boundary while the later scorer would faithfully aggregate the altered bits.
 
-Accordingly, the strongest interpretation supported by PD01 is:
-
-`NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR`
-
-This is an interpretation ceiling only. The canonical frozen token, evidence files, statistics, scorer, and immutable refs must not be renamed or rewritten retrospectively.
+No existing FORMAL evidence is invalidated because no H7 FORMAL result exists. The finding is prospective and should be resolved before any future one-way identity/result-bearing execution.
 
 ## Phase 2 — interpretation comparison
 
-Only after the target and attack hypotheses were fixed, current Control R31, Evidence Analyst R58, MAIN R58, SUB R58, and Literature R27 were consumed. Current control-plane state is intentionally idle with no active scientific object, no PRE_FORMAL/FORMAL authority, and PD01 remains a consumed immutable identity. No current stream relies on PD01 as positive evidence that an ordinary fading-memory mechanism explains a demonstrated SparkBrain memory capability. The blind target therefore remains valid and `blind_target_change_reason=null`.
+Only after the target and attack hypotheses were fixed, current control-plane summaries were read. Literature R31 independently identified the reconstructible R2 holdout. Control R36 separated exact identity, workflow access control, and information-level exposure and stopped before FORMAL identity. Evidence Analyst R76/R77 went further: R2 is stopped as the FORMAL evidence surface, preserved as development history, and H7 moved prospectively to R3 with concealed post-binding evaluation commitment and exact runtime binding. MAIN reconciled to that R3 authority; no result-bearing work or identity was authorized.
 
-A freshness re-fetch after the initial persistence observed SUB advance from R57 to `SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9@c7443d5dd4c118cea86ed62f1681ff4f7cb943ba`. That generation is explicitly no-target / non-evidentiary under the same Analyst R58 authority, contains no scientific or candidate-lifecycle delta, and therefore does not change the target or interpretation. Stable `main`, Control R31, and Evidence Analyst R58 remained unchanged on the same re-fetch.
-
-The control-plane posture is already conservative enough that no emergency strategy correction is required. The useful handoff is a terminology/claim-scope constraint for future Evidence Analyst and Control use: retain PD01 as a valid negative result against the registered long-history superiority claim, but do not cite it as positive mechanistic reduction evidence unless a future, independent prospective object first demonstrates a recoverable candidate phenomenon and then shows that an ordinary fading-memory model reproduces it under matched privilege/resources.
+The blind target therefore remains unchanged (`blind_target_change_reason=null`). The control-plane response is directionally correct. The remaining issue is that the new R3 design still states `target_blind_raw_required` while preserving R1/R2 scientific semantics; because no R3 result runner exists yet, this is the right moment to make the raw boundary literal rather than inherit R2's correctness-bit behavior.
 
 ## Audit conclusion
 
-`audit_classification = WEAKENED`.
+`audit_classification = CONFOUNDED` for H7 FORMAL-R2 as an untouched confirmatory evidence surface.
 
-The evidence integrity and frozen endpoint decision remain strong. What is weakened is the mechanistic/reduction reading suggested by the terminal label: the data establish failure to demonstrate long-lag recoverability and failure to beat the fixed reservoir, not positive reduction of an observed long-memory phenomenon by fading-memory dynamics.
+Two independent confounds are present: the R2 evaluation target is publicly reconstructible before identity, and the current R1/R2 "target-blind raw" path performs target-derived correctness evaluation before immutable raw preservation. Neither creates a negative H7 scientific result, and neither invalidates consumed evidence because no H7 FORMAL evidence exists. R2 should remain quarantined/non-evidentiary, and R3 should close both integrity surfaces prospectively before identity.
 
-No Utility request was created. Any taxonomy change or positive-capability-vs-reduction discriminator belongs only in a fresh prospective object; consumed PD01 must not be rerun, rescored, relabeled, or repaired.
+No Utility request was created because the active R3 lane already owns this preidentity integrity surface.
 
 ## Knowledge-flow contract
 
@@ -61,47 +55,46 @@ No Utility request was created. Any taxonomy change or positive-capability-vs-re
 role: INDEPENDENT_AUDITOR
 genuinely_new_information: true
 affected_lines:
-  - PD01_LONG_HISTORY_FADING_MEMORY
-  - PD01_TERMINAL_INTERPRETATION
-  - PERSISTENT_DYNAMICAL_COGNITION
-  - REDUCTION_EVIDENCE_SEMANTICS
-  - PROGRAMME_NOVELTY
-novelty_or_reduction_impact: CANONICAL_PD01_FAIL_REMAINS_PROTOCOL_VALID_BUT_MECHANISTIC_REDUCTION_INTERPRETATION_IS_WEAKENED_BY_NULL_VS_NULL_NONIDENTIFIABILITY
-audit_classification: WEAKENED
+  - H7_FORMAL_R2_CONFIRMATORY_INTEGRITY
+  - H7_FORMAL_R3_ONE_WAY_RAW_GATE
+  - H7_TARGET_BLIND_RAW_SEMANTICS
+  - H7_PRESERVE_BEFORE_SCORE_AUDITABILITY
+  - PROGRAMME_EVIDENCE_INTEGRITY
+novelty_or_reduction_impact: H7_R2_CONFIRMATORY_SURFACE_CONFOUNDED_AND_R3_RAW_GATE_MUST_SEPARATE_PREDICTION_RAW_FROM_TARGET_DERIVED_SCORING_NO_MECHANISM_NOVELTY_UPLIFT
+audit_classification: CONFOUNDED
 blind_target_selection:
-  target: authoritative PD01 FAIL_REDUCED_BY_FADING_MEMORY, audited for whether the reduction interpretation exceeds what a null-vs-null endpoint identifies
+  target: H7 FORMAL-R2 one-way confirmatory evidence surface and its untouched/protected interpretation
   attack_hypotheses:
-    - authority/package/STARTED/raw/evidence mismatch or protocol drift
-    - scorer/evaluator/target leakage
-    - comparator semantic/global-information privilege mismatch
-    - resource mismatch
-    - seed/bootstrap fragility
-    - insufficient long-lag support
-    - output-only matching insufficient for mechanism reduction
-    - simpler finite/fading-memory explanation
-    - null-vs-null endpoint may falsify superiority without positively identifying a reduction mechanism
+    - public deterministic evaluation-target reconstruction
+    - split binding without information-level secrecy
+    - scorer/evaluator or target leakage
+    - pre-preserve target-derived endpoint computation inside the runner
+    - post-disclosure claim-capable implementation changes
+    - hidden seed/task-label privilege
+    - runtime/package/identity/no-clobber drift
+    - baseline/resource mismatch
 blind_target_change_reason: null
 prospective_baselines_or_discriminators:
-  - keep canonical PD01 immutable; no rerun, rescore, retune, relabel, or reinterpretive rewrite
-  - in a fresh object, require an absolute candidate recoverability floor above chance before using positive `reduced by baseline` language
-  - prospectively distinguish `candidate capability absent` from `positive candidate capability reproduced by ordinary baseline`
-  - if positive recoverability exists, use predeclared equal-privilege fading-memory baselines/seeds without comparator shopping
-  - for a mechanism-reduction claim, require the simpler baseline to reproduce a demonstrated positive phenomenon or matched response structure, not merely equal failure
+  - preserve R2 unchanged as non-evidentiary/quarantined history; do not rescue it
+  - in R3, make protected runner raw contain model outputs/intervention metadata plus opaque row IDs only, not *_correct, target, truth, aggregate effect, or decision fields
+  - immutably preserve those pre-score bytes before target material is available to any scoring process
+  - only after preservation, let the scorer combine preserved predictions with the protected target mapping and recompute correctness, bootstrap intervals, and decision
+  - use a positive raw-schema allowlist plus a data-flow test showing target-sidecar changes cannot alter prediction-raw bytes for fixed observations
+  - keep concealed post-final-binding evaluation commitment and exact runtime binding already introduced by R3
 questions_for_evidence_analyst:
-  - Preserve the frozen PD01 token exactly while capping narrative interpretation at no demonstrated long-lag recovery/no advantage over the fixed reservoir?
-  - In future reduction objects, require a positive absolute candidate-capability floor before interpreting comparator equivalence as mechanism reduction?
-  - Distinguish failure-to-demonstrate the phenomenon from successful ordinary-mechanism reduction in terminal taxonomy/claim scope prospectively?
+  - Should R3 define target-blind literally as no target-derived fields, rather than merely no final decision token?
+  - Before FORMAL identity, require the scorer to recompute correctness from preserved predictions plus protected targets instead of trusting runner-produced correctness bits?
+  - Treat this as a preidentity integrity closure, not a scientific rerun or H7 mechanism change?
 questions_for_control_brain:
-  - Treat PD01 as strong negative evidence against the registered long-history superiority claim, but not positive evidence that fading-memory dynamics explain a demonstrated SparkBrain memory capability?
-  - Add null-vs-null reduction-identifiability to the future reduction-claim checklist?
-  - Keep PD01 consumed/closed with no rescue authority or retrospective relabeling?
+  - Add a three-way distinction: prediction-raw/target-blind, target-derived-but-decision-blind, and scored/decision-bearing?
+  - Block H7 one-way identity until the preserve-before-score boundary is verified at data-flow level, not only by forbidden field names?
+  - Keep R2 quarantined and R3 prospective with no retrofit to consumed/frozen evidence?
 must_not_change_frozen_or_consumed:
-  - PD01 exact package b9d38daa5faca348ad2db3898ba71e2abc99f631
-  - PD01 STARTED 0569e348b9d93aeee53fc58daf4b71ee92303d6c
-  - PD01 raw preserve 65ae7a50ee2279ab5edc3ca43ea3bf69daecb881 and raw SHA-256 5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638
-  - PD01 evidence commit fc5c8cda283360addddb7da482b14e69beaba1f7 and annotated evidence tag object e4c4e6428d8ef9e09e92cae231041de0788162e2
-  - workflow 35301327618, canonical statistics, scorer decision, and FAIL_REDUCED_BY_FADING_MEMORY token
-  - all other consumed C19-v4/C19-R1/C19-R2/H5/NI01 identities and immutable evidence
-  - no rerun, rescore, retune, relabel, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, Utility execution, or scheduler change
+  - all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence
+  - H7 PF-R1 development result/raw and no-rerun/no-rescore boundary
+  - H7 R1/R2 historical contracts/results as immutable development history
+  - H7 R2 current branch and public evaluation surface must not be repaired in place for evidence
+  - no FORMAL identity/STARTED/protected evaluation/result-bearing workflow/scientific scoring or preserve/evidence ref by this role
+  - no research merge, immutable-ref mutation, Utility execution, or scheduler change
 utility_request_created: null
 ```
