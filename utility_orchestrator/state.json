@@ -1,87 +1,58 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4",
-  "produced_at": "2026-09-22T14:24:00+09:00",
-  "completed_at": "2026-09-22T14:24:00+09:00",
-  "producer_run_id": "utility-auto-20260922T1422+0900-equiv-trust-boundary",
-  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_BOUNDED_NON_EVIDENTIARY_READ_ONLY_RECONCILIATION",
-  "supersedes_generation_id": "UTILITY-20260922T142200+0900-AUTO-EQUIV-TRUST-BOUNDARY-RUNNING-7B3D91E4",
+  "generation_id": "UTILITY-20260923T022700+0900-AUTO-PFR1-AUTH-CONSISTENCY-RUNNING-4E7A2C91",
+  "produced_at": "2026-09-23T02:27:00+09:00",
+  "producer_run_id": "utility-auto-20260923T0227+0900-pfr1-auth-consistency",
+  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_BOUNDED_NON_EVIDENTIARY_READ_ONLY_CONTROL_PLANE_RECONCILIATION",
+  "supersedes_generation_id": "UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
-  "autonomous_task_id": "AUTOUTIL-20260922T1422+0900-EQUIV-TRUST-BOUNDARY-7B3D91E4",
-  "status": "COMPLETED",
+  "autonomous_task_id": "AUTOUTIL-20260923T0227+0900-PFR1-AUTH-CONSISTENCY-4E7A2C91",
+  "status": "RUNNING",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "objective": "Reconcile fresh Steward G10 and green CI for the generic equivalence-certificate prototype; bound the remaining trust-boundary ambiguity and smallest safe non-scientific follow-up without source/tool/research mutation.",
-  "trigger_source": "Existing Utility request UTIL-20260922-0934-EQUIV-CERT-CI-STEWARD-REVIEW plus fresh Steward G10 deferral.",
-  "outcome_classification": "G10_CLOSED_CI_AND_FRESH_REVIEW_GATES_BUT_DECLARED_DIGEST_TRUST_BOUNDARY_REMAINS",
+  "objective": "Reconcile the Utility mailbox authorization record for the existing PF-R1 durable-provenance request against fresh Control/Analyst statements without retrieving artifacts or touching research state.",
+  "trigger_source": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE plus Control R37 / Evidence Analyst R83 status mismatch.",
   "ownership_generations": {
-    "evidence_analyst": "EVA-20260922T140541+0900-R63-E8C421B7",
-    "main_latest_durable": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9",
-    "sub": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4",
-    "relay_latest_durable": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9_BLOCKED_PENDING_R62_VERSIONED_R2",
-    "control": "CTRL-20260922T124800+0900-R33-E7C421B6",
-    "repository_steward": "STEWARD-20260922T135014+0900-G10-4D8C21A7"
+    "evidence_analyst": "EVA-20260923T020919+0900-R83-A6D4E219",
+    "main_latest_durable": "MAIN-20260923T012121+0900-PRIMARY-H7-FORMALR4-C10-R82-RECOVERY-7C4E19B2",
+    "sub": "SUB-20260923T013444+0900-NOOP-SCAN-R82-7C4E19B2",
+    "relay_latest_durable": null,
+    "control": "CTRL-20260922T235000+0900-R37-7A3E9C51"
   },
   "exact_refs": {
     "assignment_pointer_blob": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "evidence_analyst_commit": "9f90816657aa08754827e35976c9fa35b5d7c09a",
-    "control_commit": "c41db58a5cc87e5460f143ce07c4256d7238d577",
+    "utility_request_blob": "d0bcee3fe422925cfc999cf63cc5ba34375eb8b0",
+    "evidence_analyst_commit": "ba109150205db0a30ce1c294ab8133fa6caa51b4",
+    "control_commit": "23676a55c9473d1cfd22d982ffffd5d2ba18b557",
+    "orchestrator_commit": "722c64371fe4783dde36ab34a7339e9baa3d38b7",
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "live_h7_dev_r2_head": "d6655549c179caf391d4b43bd2ebea49f2bfc82b",
-    "equivalence_branch_head": "9f9d18065b481d8597236b0b682f0574c251b319",
-    "equivalence_module_blob": "753d9759c3bd9da0d8e6a27926c8e3c3f9539cb4",
-    "equivalence_tests_blob": "85503de4d94c02924b08c8f0ef0e0aec7551abb8"
-  },
-  "outputs_summary": {
-    "ci_gate_satisfied": true,
-    "fresh_steward_review_satisfied": true,
-    "promotion_ready": false,
-    "branch_changed_files": 2,
-    "external_callsites_outside_branch_tests": false,
-    "actual_proven_claim": "INTERNAL_DECLARED_CERTIFICATE_DIGEST_EQUIVALENCE_UNDER_SELF_CONSISTENT_BINDINGS_AND_ENVELOPES",
-    "not_proven": [
-      "authenticated producer provenance",
-      "raw-to-digest derivation",
-      "actual process isolation",
-      "scientific or semantic equivalence"
-    ],
-    "overbroad_tokens": [
-      "VALID_EQUIVALENT",
-      "EXACT_SEMANTIC_DIGEST_MATCH",
-      "equivalence-certificate-v0.1",
-      "PRODUCERS_NOT_INDEPENDENT:*"
-    ],
-    "smallest_safe_follow_up": "REVIEWED_TWO_FILE_TRUST_BOUNDARY_NAMING_CLARIFICATION_BEFORE_ANY_MAIN_INTEGRATION",
-    "duplicate_follow_up_request_appended": false
+    "h7_r4_head": "647253f4c0128ff09d47fdfce80dabf006863af1"
   },
   "ownership_checks": {
     "collision_found": false,
     "main_critical_dependency": false,
-    "main_active_object": "H7_DEV_R2_VERSIONED_PROTOCOL_CLOSURE_CYCLE3_IMPLEMENTATION_ONLY",
-    "main_live_progress_observed": true,
+    "main_active_object": "H7_FORMAL_R4_ARTIFACT_RECOVERY_PREIDENTITY_CYCLE10",
+    "main_status": "BLOCKED",
     "sub_active_scientific_object": null,
     "relay_active_continuation_authority": false,
     "active_or_queued_research_object_touched": false,
-    "candidate_typing_touched": false,
-    "material_authority_supersession_before_terminal_write": false
+    "candidate_typing_touched": false
   },
   "allowed_actions": [
-    "Read-only inspect Utility verifier module/tests and callsites/usages",
-    "Read Control/Analyst/Steward/mailbox records and exact refs",
+    "Read-only inspect Utility assignment/request/decision/state records",
+    "Read fresh Control/Analyst/MAIN/SUB generations and authoritative refs",
     "Persist Utility-owned state/results only"
   ],
   "forbidden_actions": [
-    "Any equivalence branch/source/test/docs mutation",
-    "Any H7 or candidate action",
-    "Any scientific workflow, candidate/Funnel/PRE_FORMAL/FORMAL action",
-    "Any merge, scheduler mutation, or protected-ref mutation",
-    "Any self-extension beyond this run"
+    "Any PF-R1 artifact retrieval, archival, hashing, rerun, reconstruction, scoring, or reinterpretation",
+    "Any H7/PRE_FORMAL/FORMAL action or protected-ref mutation",
+    "Any candidate/Funnel mutation, research branch mutation, workflow action, merge, or scheduler mutation"
   ],
-  "stop_condition": "Stop after one exact read-only trust-boundary/callsite reconciliation and record the smallest safe reviewed follow-up.",
+  "stop_condition": "Stop after one bounded determination of whether the Utility mailbox contains a Control-owned approval/decision object matching the PF-R1 request.",
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
     "preserved_fields": "NOT_APPLICABLE_NO_RESEARCH_CANDIDATE_TOUCHED",
@@ -91,22 +62,7 @@
     "preformal_credit": false,
     "promotion_credit": false
   },
-  "integrity_checks": {
-    "workflow_dispatch_or_rerun": false,
-    "scheduler_mutation": false,
-    "scientific_workflow_or_experiment": false,
-    "protected_ref_mutation": false,
-    "candidate_typing_or_readiness_mutation": false,
-    "preformal_or_formal_action": false,
-    "research_pr_merge": false,
-    "promotion_approval": false,
-    "source_test_tool_docs_mutation": false,
-    "hidden_main_dependency_created": false
-  },
-  "stop_reason": "COMPLETED_BOUNDED_TRUST_BOUNDARY_AND_CALLSITE_RECONCILIATION",
-  "follow_up_recommendation": "Keep the existing Utility request pending Control disposition. If integration proceeds, clarify public verdict/reason/trust-boundary naming so the tool explicitly means declared-digest equivalence; authenticated producer/raw-chain evidence remains a separate prerequisite for any scientific use.",
   "outputs": {
-    "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1422+0900-EQUIV-TRUST-BOUNDARY-7B3D91E4-start.md",
-    "terminal_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1422+0900-EQUIV-TRUST-BOUNDARY-7B3D91E4-completed.md"
+    "start_result_path": "utility_orchestrator/results/2026-09-23/AUTOUTIL-20260923T0227+0900-PFR1-AUTH-CONSISTENCY-4E7A2C91-start.md"
   }
 }
