@@ -1,21 +1,20 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-23T00:20:00+09:00",
+  "timestamp": "2026-09-23T01:20:00+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260923T002000+0900-R69-7D2B4C91",
-    "sequence": 69,
+    "generation_id": "METHCAL-20260923T012000+0900-R70-4C8A1E73",
+    "sequence": 70,
     "material_change": true,
-    "material_change_reason": "H7_R3_FAILS_CLOSED_ON_LITERAL_PACKAGE_BINDING_AND_R81_VERSIONS_R4_WHILE_SPLITTING_CLAIM_CAPABLE_SCIENTIFIC_RUNTIME_FROM_BROAD_DEV_TOOLING",
-    "supersedes_generation_id": "METHCAL-20260922T232000+0900-R68-9C4E7A31",
+    "material_change_reason": "R4_ONE_SHOT_LOCK_ARTIFACT_EXISTS_BUT_R82_MAILBOX_ARTIFACT_POINTER_AND_PACKAGE_SET_SUMMARY_CONFLICT_WITH_AUTHORITATIVE_RUN_AND_BRANCH",
+    "supersedes_generation_id": "METHCAL-20260923T002000+0900-R69-7D2B4C91",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
-    "previous_methodology": {"generation_id":"METHCAL-20260922T232000+0900-R68-9C4E7A31","branch":"ops/methodology-calibration-audit","commit":"0ffa61f19ce874bfb55dc25c9918ae293528e6dd"},
+    "previous_methodology": {"generation_id":"METHCAL-20260923T002000+0900-R69-7D2B4C91","branch":"ops/methodology-calibration-audit","commit":"4211f373d39fda357b5176ed2732c4923c0c876a"},
     "human_directive": {"id":"HUMAN-20260922-005","role":"HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"},
     "control_brain": {"generation_id":"CTRL-20260922T235000+0900-R37-7A3E9C51","branch":"ops/control-brain-handoff","commit":"23676a55c9473d1cfd22d982ffffd5d2ba18b557"},
-    "evidence_analyst": {"generation_id":"EVA-20260923T001221+0900-R81-4885D9DE","branch":"ops/evidence-analyst-handoff","commit":"725aff8a8a5f4105d85cc1893036ef4c48f893c4"},
-    "independent_audit": {"generation_id":"AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4","branch":"ops/external-research-audit-handoff","commit":"d1e2ffe278a8af40b0b61250aeba8dbd8da8cbd1"},
-    "utility_request": {"id":"UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE","branch":"ops/utility-orchestrator-requests","commit":"46a2b6735c4df221b28ee02a252993ffb7cbaa06","status":"EXISTING_REQUEST_NOT_OBSERVED_COMPLETED"}
+    "evidence_analyst": {"generation_id":"EVA-20260923T011030+0900-R82-7C4E19B2","branch":"ops/evidence-analyst-handoff","commit":"000895a72f6cf54eeb3489a42f63f42b70281223"},
+    "utility_request": {"id":"UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE","branch":"ops/utility-orchestrator-requests","commit":"46a2b6735c4df221b28ee02a252993ffb7cbaa06","status":"OUTSTANDING_NO_COMPLETION_OBSERVED"}
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -23,48 +22,38 @@
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
-    "h7_r3": {
-      "branch": "research/main-h7-formal-r3-unexposed-eval-runtime-r76-cycle9",
-      "head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
-      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "identity_candidate_sha": null,
-      "fresh_formal_authority": 0,
-      "formal_identity_created": false,
-      "started_created": false,
-      "evaluation_commitment_created": false,
-      "protected_evaluation_accessed": false,
-      "result_bearing_workflow_dispatched": false,
-      "official_scoring_performed": false,
-      "scientific_preserve_or_evidence_ref_created": false,
-      "preidentity_workflow_run": 35741369078,
-      "preidentity_workflow_conclusion": "FAILURE",
-      "failure_stage": "BUILD_NON_RESULT_R3_INTEGRITY_CLOSURE",
-      "frozen_pip_freeze_sha256": "25b4a1c5d60d30e5e354856469420d04a1fdc3db003745d0c47c92b5fa61230f",
-      "observed_pip_freeze_sha256": "b4c2c84a1688ab15ab3b7ff20ca4bdeb49da8bfdcf5cba772d848e430b6ea45c",
-      "other_recorded_runtime_fields_match": true
-    },
     "h7_r4": {
-      "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
-      "authorized_by": "EVA-20260923T001221+0900-R81-4885D9DE",
-      "research_branch_materialized": false,
+      "branch": "research/main-h7-formal-r4-runtime-lock-r81-cycle10",
+      "head": "647253f4c0128ff09d47fdfce80dabf006863af1",
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
       "authorized_scope": "SCIENTIFIC_RUNTIME_PACKAGE_RESOURCE_BINDING_ONLY_PREIDENTITY",
+      "resource_contract_path": "artifacts/formal_h7_r4/resource_contract.json",
+      "versions_path": "artifacts/formal_h7_r4/scientific-runtime.versions",
+      "lock_path_present_on_branch": false,
+      "manifest_path_present_on_branch": false,
+      "one_way_hard_stop_all_false": true,
       "fresh_formal_authority": 0
     },
-    "h7_r2_history": {
-      "branch": "research/main-h7-formal-r2-input-split-r75-cycle8",
-      "head": "a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0",
-      "formal_evidence_surface_allowed": false,
-      "raw_gate_finding": "TARGET_DERIVED_CORRECTNESS_BITS_PRE_PRESERVE"
+    "r4_lock_materialization": {
+      "workflow_run_id": 35748064227,
+      "head_sha": "647253f4c0128ff09d47fdfce80dabf006863af1",
+      "conclusion": "SUCCESS",
+      "artifact_count": 1,
+      "artifact_id": 10703822275,
+      "artifact_name": "h7-formal-r4-lock-647253f4c0128ff09d47fdfce80dabf006863af1",
+      "artifact_size_bytes": 5231,
+      "artifact_archive_digest": "sha256:54334fcb7ceb962e46f82712a36722a4a687d87e7d83dc32d86c61564e58e9d1",
+      "artifact_expiry": "2026-12-21T15:32:23Z",
+      "exact_bytes_retrievable": true
     },
-    "candidate33": {
-      "branch": "research/exploratory-sub-cand33-auditable-raw-r71-cycle2",
-      "head": "71af7a36862eeb2b5d08c2a8f37462ed21acc972",
-      "claim_ceiling": "SYSTEM",
-      "canonical_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "canonical_terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-      "queue_state": "NOT_QUEUED",
-      "mechanism_uplift": false
+    "r82_mailbox_conflict": {
+      "mailbox_artifact_id": 10697560883,
+      "mailbox_artifact_size_bytes": 4763,
+      "authoritative_run_artifact_id": 10703822275,
+      "authoritative_run_artifact_size_bytes": 5231,
+      "mailbox_package_summary_conflicts_with_authoritative_versions_file": true,
+      "example_conflict": "R82 says numpy==2.2.6 and jsonschema in scientific set; authoritative versions has numpy==2.4.6 and resource contract excludes jsonschema",
+      "classification": "CONTROL_PLANE_OBSERVABILITY_PROVENANCE_DEFECT_NOT_SCIENTIFIC_CONTAMINATION"
     },
     "scientific_source_of_truth": "stable main plus independently fetched evidence refs, exact research source/workflow/artifacts; ops branches are mailbox/history/authority records only"
   },
@@ -74,16 +63,16 @@
     "hard_integrity_policy": "KEEP",
     "development_phase_axis": "KEEP",
     "development_phase_full_end_to_end_through_fresh_consumed_formal": "INSUFFICIENT_EVIDENCE",
-    "open_development_bounded_iteration": "KEEP",
     "result_exposed_same_object_science_invariant_repair": "KEEP",
     "post_result_science_affecting_change_requires_explicit_version_or_fresh_successor": "KEEP",
-    "h7_r3_silent_package_hash_rebind_or_normalization": "KEEP",
-    "h7_r4_versioned_scientific_runtime_resource_closure": "KEEP",
-    "digest_only_package_binding_without_exact_manifest_bytes": "TIGHTEN",
-    "repeated_mutable_resolver_attempts_until_matching_hash": "TIGHTEN",
-    "claim_capable_scientific_runtime_package_exact_binding": "KEEP",
-    "whole_dev_lint_environment_as_scientific_identity": "SPLIT_BY_CLAIM_TYPE",
-    "repository_source_identity_via_editable_project_freeze_entry": "CLARIFY",
+    "r4_one_shot_prospectively_fixed_package_set_materialization": "KEEP",
+    "exact_lock_manifest_bytes_durable_capture_before_identity": "TIGHTEN",
+    "resolver_materializer_shopping_for_preferred_bytes": "TIGHTEN",
+    "protected_scientific_runtime_vs_dev_tooling_separation": "KEEP",
+    "authoritative_run_scoped_artifact_discovery_binding": "TIGHTEN",
+    "copied_ops_mailbox_artifact_pointer_as_provenance_authority": "CLARIFY",
+    "analyst_package_contract_echo_vs_authoritative_branch": "TIGHTEN",
+    "package_resource_equivalence_inferred_from_mailbox_prose": "TIGHTEN",
     "cycle3_as_automatic_terminal_cap": "RELAX",
     "cycle3_mandatory_reassessment_with_prospective_information_gain": "KEEP",
     "raw_before_score_as_file_order_only": "CLARIFY",
@@ -92,7 +81,6 @@
     "target_sidecar_independence_dataflow_test": "TIGHTEN",
     "preserve_before_read_and_durable_immutable_formal_evidence_path": "TIGHTEN",
     "fresh_concealed_postbinding_evaluation_surface": "TIGHTEN",
-    "future_formal_exact_source_protocol_package_runtime_input_evaluator_binding": "TIGHTEN",
     "development_rerun_retune_nonindependent_evidence_accounting": "KEEP",
     "development_rerun_retune_live_repeated_result_case": "INSUFFICIENT_EVIDENCE",
     "durable_result_exposed_development_raw_result_preservation": "TIGHTEN",
@@ -105,49 +93,44 @@
     "fresh_terminal_system_successor_distinctness_and_nonrescue": "KEEP",
     "fresh_system_to_mechanism_successor_admission": "INSUFFICIENT_EVIDENCE",
     "terminal_for_current_object_topic_scope": "KEEP",
-    "successor_potential_is_not_automatic_admission": "KEEP",
     "classification_completeness_gating": "KEEP",
     "main_mechanism_priority": "KEEP",
     "prospective_system_priority_exception_rule": "KEEP",
     "first_genuine_system_over_comparable_mechanism_main_execution_exception": "INSUFFICIENT_EVIDENCE",
-    "rolling_one_in_three_theory_backward_supply": "KEEP",
     "theory_backward_quality_floor": "KEEP",
     "no_coherent_mechanism_target_liveness_semantics": "KEEP",
     "protected_adaptive_evaluation_validity_and_exposure_observability": "TIGHTEN"
   },
   "false_positive_negative_risks": {
-    "false_positive": "MODERATE_WATCH: concealed-evaluation and semantic raw-preservation gates remain unresolved; package mismatch itself failed closed before evidence.",
-    "false_negative": "MODERATE_WATCH: mechanism supply remains one H7 lineage and overbinding unrelated dev/lint packages into scientific identity can cause spurious version churn.",
-    "opportunity_cost": "MODERATE_WATCH: R4 should reduce avoidable runtime-binding churn by locking only claim-capable scientific packages/resources while retaining exact engineering provenance separately.",
-    "moving_goalpost_rescue_risk": "LOW_TO_MODERATE_WATCH_IMPROVING: R3 is preserved, R4 is explicit/prospective, and resolver/hash shopping is forbidden."
+    "false_positive": "MODERATE_WATCH: concealed-evaluation and semantic raw/preserve gates remain unresolved; conflicting ops package/artifact summaries must not become resource evidence.",
+    "false_negative": "MODERATE_WATCH: mechanism supply remains one H7 lineage; stale artifact pointers/package summaries can create unnecessary fail-closed churn.",
+    "opportunity_cost": "MODERATE_WATCH: exact authoritative R4 bytes are retrievable but not durably committed, and mailbox inconsistency can delay legitimate closure.",
+    "moving_goalpost_rescue_risk": "LOW_TO_MODERATE_WATCH_IMPROVING: R3 is preserved, R4 is explicit/prospective, package set is fixed and materializer shopping is forbidden.",
+    "over_terminalization": "LOW_TO_MODERATE_WATCH_IMPROVING"
   },
   "development_iteration_calibration": {
     "directive_disposition": "ACCEPTED_AND_LIVE",
     "axis": ["OPEN_DEVELOPMENT","RESULT_EXPOSED_DEVELOPMENT","CONSUMED_ONE_WAY"],
     "h7_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "r3_runtime_package_mismatch_is_scientific_result": false,
-    "r3_runtime_package_binding_equivalence_provable": false,
-    "r4_resource_change_classification": "SCIENCE_AFFECTING_CHANGE_VERSIONED_PROSPECTIVELY",
-    "r4_scientific_runtime_scope_principle": "CLAIM_CAPABLE_RUNTIME_PACKAGES_AND_RESOURCE_SEMANTICS_HARD_BOUND; DEVELOPMENT_TOOLING_SEPARATE_UNLESS_CLAIM_CAPABLE",
+    "r4_materialization_is_scientific_result": false,
+    "r4_materialization_confirmatory_credit": 0,
+    "ops_mailbox_mismatch_response": "AUTHORITATIVE_RECONCILIATION_NOT_CONTRACT_MUTATION_OR_REMATERIALIZATION",
     "repeated_result_bearing_development_case": "INSUFFICIENT_EVIDENCE",
     "pf_r1_evidence_accounting": "ONE_COMPLETED_PREFORMAL_DEVELOPMENT_OBSERVATION_CONFIRMATORY_COUNT_ZERO",
     "pf_r1_byte_durability": "TIGHTEN_PENDING_EXISTING_UTILITY_OR_EQUIVALENT_RESOLUTION"
   },
-  "moving_goalposts": "LOW_TO_MODERATE_WATCH_IMPROVING",
-  "over_terminalization_risk": "LOW_TO_MODERATE_WATCH_IMPROVING",
-  "pass_reachability": "REALISTIC_CONDITIONAL: R4 must prospectively persist exact claim-capable scientific runtime lock/manifest bytes and artifact hashes, independently bind source commit/blobs, reproduce without resolver shopping, preserve R68 target-blind/preserve gates, keep concealed evaluation, and close PF-R1 durable provenance; no evidence standard need be weakened",
+  "pass_reachability": "REALISTIC_CONDITIONAL: reconcile authoritative R4 run/artifact/package bindings, durably capture exact one-shot bytes, close final source/runtime/raw/holdout/preserve gates and PF-R1 provenance, then require fresh one-way authorization; no evidence standard need be weakened",
   "claim_type_findings": {
     "same_object_system_to_mechanism_upgrade_observed": false,
     "fresh_system_successor_observed": true,
     "fresh_system_to_mechanism_successor_observed": false,
     "candidate33_status": "SYSTEM_RESULT_EXPOSED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED",
-    "candidate33_mechanism_or_semantic_equivalence_claim": false,
-    "h7_status": "MECHANISM_RESULT_EXPOSED_ACTIVE_FORMAL_R4_VERSIONED_RUNTIME_PACKAGE_RESOURCE_CLOSURE_AUTHORIZED_PREIDENTITY_ONLY",
+    "h7_status": "MECHANISM_RESULT_EXPOSED_ACTIVE_FORMAL_R4_PREIDENTITY_RESOURCE_CLOSURE",
     "formal_identity_consumed": false
   },
   "mechanism_supply_health": "ONE_ACTIVE_MECHANISM_FORMALIZATION_LINEAGE_QUALITY_FLOOR_INTACT_BUT_MECHANISM_SUPPLY_THIN",
   "funnel_observability": {
-    "authority_generation": "EVA-20260923T001221+0900-R81-4885D9DE",
+    "authority_generation": "EVA-20260923T011030+0900-R82-7C4E19B2",
     "canonical_population": 33,
     "classified_population": 33,
     "classification_completeness": 1.0,
@@ -157,8 +140,7 @@
     "preformal": {"eligible":1,"ready":1,"active_result_bearing":0},
     "formal": {"fresh_one_way_authority":0,"identity_or_result_execution_authorized":0},
     "development_phase_counts": {"OPEN_DEVELOPMENT":2,"RESULT_EXPOSED_DEVELOPMENT":31,"CONSUMED_ONE_WAY_CANONICAL":0},
-    "separate_consumed_scientific_identities": 7,
-    "policy_conclusions_require_complete_classification": true
+    "separate_consumed_scientific_identities": 7
   },
   "preformal_calibration": {
     "preformal_is_development_only": true,
@@ -166,12 +148,7 @@
     "ready_means_next_test_well_defined_and_informative_not_prior_success": true,
     "hidden_second_formal_gate": false,
     "pf_r1_nonconfirmatory": true,
-    "confirmatory_evidence_count_from_pf_r1": 0,
-    "same_result_rerun_or_retune_observed": false
-  },
-  "no_coherent_target_audit": {
-    "classification": "KEEP",
-    "evidentiary": false
+    "confirmatory_evidence_count_from_pf_r1": 0
   },
   "utility_request": {
     "created_by_methodology_auditor": null,
@@ -180,10 +157,10 @@
   },
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": {
-    "r3_package_freeze_mismatch": "HIGH",
+    "authoritative_r4_branch_run_artifact_reconciliation": "HIGH",
     "formal_one_way_integrity_unchanged": "HIGH",
-    "r4_versioning_calibration": "HIGH",
-    "future_r4_scientific_runtime_allowlist": "MEDIUM_HIGH_NOT_YET_MATERIALIZED",
+    "r4_package_runtime_separation": "HIGH",
+    "final_preidentity_closure": "MEDIUM_HIGH_LOCK_MANIFEST_NOT_YET_COMMITTED",
     "fresh_consumed_formal_end_to_end": "UNOBSERVED",
     "fresh_system_to_mechanism_successor": "UNOBSERVED"
   }
