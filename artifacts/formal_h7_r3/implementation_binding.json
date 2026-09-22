@@ -1,0 +1,69 @@
+{
+  "schema_version": 2,
+  "kind": "H7_FORMAL_R3_PREIDENTITY_IMPLEMENTATION_BINDING_V1",
+  "authority_generation": "EVA-20260922T230224+0900-R80-6B8F31C4",
+  "authority_commit": "88f72d4e55d30e561143df94e06ce10c91972104",
+  "development_revision": "H7-FORMAL-R3-UNEXPOSED-EVALUATION-COMMITMENT-AND-RUNTIME-BINDING",
+  "binding_scope": "claim-capable preidentity integrity boundary components only; no FORMAL identity, STARTED, protected evaluation, result-bearing executor, scientific preserve/evidence ref, or official scoring",
+  "component_blobs": {
+    "r3_commitment_and_runtime_contract_module": {
+      "path": "src/sparkbrain/learned/h7_formal_r3.py",
+      "blob_sha": "9bde5379542ecca84157e82868abe679e0099e31"
+    },
+    "r3_target_blind_raw_preserve_and_post_preserve_adapter": {
+      "path": "src/sparkbrain/learned/h7_formal_r3_integrity.py",
+      "blob_sha": "37c9c46febba1baba5580ed1aa803dcc483bef66"
+    },
+    "r3_preidentity_runner": {
+      "path": "scripts/build_h7_formal_r3_preidentity.py",
+      "blob_sha": "29b3e2ad0db1d0880ded58e3a1f6c85e698b2abc"
+    },
+    "r3_preidentity_workflow": {
+      "path": ".github/workflows/h7-formal-r3-preidentity.yml",
+      "blob_sha": "912309598567f7997c8271c23056579b0c041bc7"
+    },
+    "frozen_scientific_scorer_module": {
+      "path": "src/sparkbrain/learned/h7_formal_r1.py",
+      "blob_sha": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
+      "scientific_semantics_changed_by_r3": false
+    },
+    "legacy_r2_oneway_runner_reference_only": {
+      "path": "src/sparkbrain/learned/h7_formal_r2_runner.py",
+      "blob_sha": "33f5ecd8d2bb75b2c7d0ed48f482f4945ea3fb0b",
+      "admissible_as_r3_result_executor": false,
+      "reason": "R1/R2 public evaluation identity and pre-preserve correctness surface are quarantined by R3"
+    }
+  },
+  "preserver_binding": {
+    "implementation": "preserve_prediction_raw_create_only",
+    "module_blob_sha": "37c9c46febba1baba5580ed1aa803dcc483bef66",
+    "create_only": true,
+    "raw_hash_verified_after_copy": true,
+    "target_access_before_preserve_forbidden": true
+  },
+  "post_preserve_scorer_binding": {
+    "adapter": "score_post_preserve_rows",
+    "adapter_module_blob_sha": "37c9c46febba1baba5580ed1aa803dcc483bef66",
+    "frozen_science_scorer": "score_rows",
+    "frozen_scorer_module_blob_sha": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
+    "fresh_episode_id_handling": "world-stratified bijective identifier relabeling only; metric/bootstrap/decision semantics unchanged"
+  },
+  "protected_result_executor": {
+    "materialized": false,
+    "bound": false,
+    "reason": "R80 authorizes preidentity closure only and explicitly stops before evaluation commitment, identity, STARTED, seed reveal, protected evaluation, or result-bearing execution"
+  },
+  "runtime_binding": {
+    "path": "artifacts/formal_h7_r3/runtime_binding.json",
+    "status": "FAIL_CLOSED_PENDING_LITERAL_EXACT_REPRODUCTION"
+  },
+  "prior_surface_collision_inventory": {
+    "path": "artifacts/formal_h7_r3/prior_surface_inventory.json",
+    "future_plaintext_evaluation_seeds_persisted": false,
+    "future_collision_audit_complete": false,
+    "reason": "future concealed R3 evaluation seed values do not yet exist on the claim-capable surface"
+  },
+  "binding_complete": false,
+  "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_BINDING",
+  "one_way_actions_performed": false
+}
