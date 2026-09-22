@@ -1,83 +1,258 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260922T204630+0900-ARCH-C33-RUNNERPATH-R74-B8C4E219",
-  "produced_at": "2026-09-22T20:46:30+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260922T204630+0900-ARCH-C33-RUNNERPATH-R74-B8C4E219",
-  "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_CANDIDATE33_COMPATIBLE_RUNNER_BOUNDARY_DIAGNOSTIC_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260922T194207+0900-ARCH-C33-TESTBLOCK-R72-8F3C21A6",
+  "generation_id": "SUB-20260922T214353+0900-ARCH-C33-CONFORM-R75-D7F2A9C1",
+  "produced_at": "2026-09-22T21:43:53+09:00",
+  "producer_run_id": "SUB-RUN-SUB-20260922T214353+0900-ARCH-C33-CONFORM-R75-D7F2A9C1",
+  "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_CANDIDATE33_COMPATIBLE_RUNNER_CONFORMANCE_AND_CONTROL_PLANE_PERSISTENCE",
+  "supersedes_generation_id": "SUB-20260922T204630+0900-ARCH-C33-RUNNERPATH-R74-B8C4E219",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T204000+0900-R74-B8C4E219@5a6e0e4a2a3f716a6564cd03e7027d6251546a0f",
-    "main_control_plane": "MAIN-20260922T203216+0900-PRIMARY-H7-FORMALR1-C7-INPUT-ID-BLOCK-R73@0f993632b4eb2828d5c5aa834f065b7b8a88a0f0",
-    "previous_sub": "SUB-20260922T194207+0900-ARCH-C33-TESTBLOCK-R72-8F3C21A6@0c9dcdf795d956288a1f2ff0d0dee7d1f4e5303d"
+    "evidence_analyst": "EVA-20260922T210223+0900-R75-D7F2A9C1@c190afff7e33977c530c207904bd42ce7187a20d",
+    "main_control_plane": "MAIN-20260922T213400+0900-PRIMARY-H7-FORMALR2-C8-WAIT-CI-R75-D7F2A9C1@d873a0a6b1ecc02ad2ce550e207f55b79649baac",
+    "previous_sub": "SUB-20260922T204630+0900-ARCH-C33-RUNNERPATH-R74-B8C4E219@86b84eab3070c7e7fdbc622db7228d75340136dc",
+    "control_brain": "CTRL-20260922T175240+0900-R35-A6C4E219@1df7d07deb0364a5894f1eadd2c7f099f799ed24",
+    "literature": "LIT-20260922T213058+0900-R31-RECONSTRUCTIBLE-HOLDOUT-4D8C21F7@d50cefdd64af9ac179b36ec92a1b0c207858886b",
+    "independent_audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
+    "methodology": "METHCAL-20260922T213200+0900-R66-2C8F7A41@2aad24673206ee3c6fd977e4973b933c5f72355f",
+    "utility_request": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE@46a2b6735c4df221b28ee02a252993ffb7cbaa06"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "5a6e0e4a2a3f716a6564cd03e7027d6251546a0f",
-    "orchestrator_tip_before_write": "0f993632b4eb2828d5c5aa834f065b7b8a88a0f0",
+    "analyst_handoff": "c190afff7e33977c530c207904bd42ce7187a20d",
+    "orchestrator_tip_before_write": "d873a0a6b1ecc02ad2ce550e207f55b79649baac",
     "candidate33_branch": "research/exploratory-sub-cand33-auditable-raw-r71-cycle2",
     "candidate33_head": "71af7a36862eeb2b5d08c2a8f37462ed21acc972",
-    "candidate33_ci_run": 35715729340,
-    "main_mailbox_head": "baaec4a7f1a1b6820d78ff9b33566bb809f74f42"
+    "candidate33_source_blob": "a502370b89d2e87010293d8708a571755cf9c930",
+    "main_branch": "research/main-h7-formal-r2-input-split-r75-cycle8",
+    "main_head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406"
   },
   "allocation": {
     "main_lane": "H7_FORMAL_R2_INPUT_SPLIT_BINDING_AND_PREIDENTITY_REVALIDATION_CYCLE8_ONLY",
-    "sub_lane": "CAND33_ARCH_R1_NONTERMINAL_METHOD_HOLD_PENDING_COMPATIBLE_RUNNER_CAPABILITY_PATH_WITH_FROZEN_ISOLATION",
-    "sub_decision": "CONDITIONAL_GO_SAME_REVISION_ENVIRONMENT_CAPABILITY_PLACEMENT_ONLY_OTHERWISE_HOLD",
+    "sub_lane": "CAND33_ARCH_R1_EXACT_FROZEN_ISOLATION_COMPATIBLE_RUNNER_VERIFICATION_IF_AVAILABLE",
+    "sub_decision": "GO_ONLY_IF_COMPATIBLE_BOUNDED_RUNNER_IS_INDEPENDENTLY_VERIFIED",
     "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_AT_MOST_ONE_BOUNDED_AUTONOMOUS_RESEARCH_TASK",
-    "system_priority_exception": {"used": false}
+    "system_priority_exception": {
+      "used": false
+    }
   },
-  "candidate_pool": {"total": 33, "MECHANISM": 13, "SYSTEM": 20, "ACTIVE": 1, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 31, "preformal_eligible": 1, "preformal_ready": 1, "fresh_formal_authority": 0},
-  "main_owned_object": {"id": "CAND-H7-RESPONSIBILITY", "claim_ceiling": "MECHANISM", "development_phase": "RESULT_EXPOSED_DEVELOPMENT", "development_revision": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-AND-PREIDENTITY-REVALIDATION", "status": "MAIN_OWNED_PREIDENTITY_ONLY", "main_owned": true},
+  "candidate_pool": {
+    "total": 33,
+    "MECHANISM": 13,
+    "SYSTEM": 20,
+    "ACTIVE": 1,
+    "NONTERMINAL_HOLD": 1,
+    "TERMINAL_FOR_CURRENT_OBJECT": 31,
+    "preformal_eligible": 1,
+    "preformal_ready": 1,
+    "fresh_formal_authority": 0
+  },
+  "main_owned_object": {
+    "id": "CAND-H7-RESPONSIBILITY",
+    "claim_ceiling": "MECHANISM",
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-AND-PREIDENTITY-REVALIDATION",
+    "status": "MAIN_OWNED_PREIDENTITY_ONLY_WAITING_EXTERNAL",
+    "main_owned": true
+  },
   "operating_mode": "ALLOCATED_INDEPENDENT_SECONDARY_DEVELOPMENT",
   "discovery_mode": "SYSTEM_DISCOVERY",
   "selected_target": "CAND-EQUIV-AUDITABLE-RAW-PROVENANCE-01",
-  "work_kind": "CANONICAL_ARCHITECTURE_METHOD_HOLD_DIAGNOSTIC",
-  "development_phase": "OPEN_DEVELOPMENT",
+  "work_kind": "CANONICAL_ARCHITECTURE_COMPATIBLE_RUNNER_CONFORMANCE_REASSESS",
+  "development_phase_at_entry": "OPEN_DEVELOPMENT",
+  "proposed_development_phase_after_observable": "RESULT_EXPOSED_DEVELOPMENT",
   "development_revision": "EQUIV-AUDIT-ARCH-R1-V1",
-  "cycle_count": 2,
-  "reassessment_rationale": "R74 preserves candidate33 method hold and explicitly allows only a same-revision compatible-runner capability/placement path. Exact CI logs now establish the previously uncertain failure and permit a bounded no-mutation placement-boundary diagnosis without redesign.",
-  "main_independence": {"status": "PASS_NO_COLLISION", "reason": "R74 changes H7 to FORMAL-R2 split-binding preidentity work; candidate33 remains independent and SUB made no H7 mutation or blocker repair."},
+  "cycle_count": 3,
+  "reassessment_rationale": "Cycle 3 had concrete new information gain because the only hold was an environment-capability boundary. A newly available bounded Linux runtime independently satisfied the exact frozen namespace/read-only-remount requirements, enabling the previously unreachable fixed synthetic Architecture observable without contract redesign.",
+  "main_independence": {
+    "status": "PASS_NO_COLLISION",
+    "reason": "MAIN is H7 FORMAL-R2 preidentity-only. Candidate33 is independent; SUB made no H7 mutation, blocker repair, identity, protected-evaluation, preservation, or successor action."
+  },
   "pre_no_op_scan": {
     "performed": true,
     "no_op_gate_triggered": false,
-    "result": "VALID_ANALYST_ALLOCATED_CANDIDATE33_METHOD_HOLD_LANE_SELECTED",
+    "result": "VALID_ANALYST_ALLOCATED_CANDIDATE33_LANE_AND_NEW_COMPATIBLE_RUNTIME_SELECTED",
+    "recent_surfaces_read": {
+      "literature_r31": "H7 reconstructible holdout integrity issue; MAIN-owned and not used to alter candidate33",
+      "audit_r6": "PD01 null-vs-null interpretation ceiling unchanged",
+      "methodology_r66": "functional capability probe required; pre-observable environment failure may remain OPEN",
+      "utility": "PF-R1 byte-preservation request remains outside candidate33",
+      "terminal_successor_pool": "no higher-priority independent successor overrides allocated lane",
+      "theory_backward_surfaces": "not selected because allocated SYSTEM lane has priority"
+    },
     "alternatives_considered": [
-      {"surface": "RERUN_SAME_HOSTED_CI", "result": "REJECTED_NO_NEW_INFORMATION"},
-      {"surface": "WEAKEN_NAMESPACE_FLAGS", "result": "REJECTED_SCIENCE_AFFECTING"},
-      {"surface": "ALTERNATE_ISOLATION_BACKEND", "result": "REQUIRES_ANALYST_VERSIONED_REVISION"},
-      {"surface": "SKIP_INTEGRATION_ON_HOSTED", "result": "REJECTED_COSMETIC_NO_CONFORMANCE"},
-      {"surface": "COMPATIBLE_RUNNER_PLACEMENT", "result": "SELECTED_READ_ONLY_SEARCH"}
+      {
+        "surface": "RERUN_GITHUB_HOSTED",
+        "result": "REJECTED_NO_NEW_INFORMATION"
+      },
+      {
+        "surface": "WEAKEN_NAMESPACE_OR_READONLY_REMOUNT",
+        "result": "REJECTED_SCIENCE_AFFECTING"
+      },
+      {
+        "surface": "ALTERNATE_BACKEND",
+        "result": "REQUIRES_ANALYST_VERSIONED_REVISION"
+      },
+      {
+        "surface": "SKIP_INTEGRATION",
+        "result": "REJECTED_COSMETIC"
+      },
+      {
+        "surface": "EXACT_CONTRACT_ON_COMPATIBLE_BOUNDED_RUNNER",
+        "result": "SELECTED"
+      }
     ]
   },
-  "theory_backward_accounting": {"autonomous_scientific_selection_made": false, "denominator_excluded": true, "rolling_autonomous_canonical_selections": ["MECHANISM", "SYSTEM", "SYSTEM"], "qualifying_share": "1/3", "theory_backward_exception": null},
+  "theory_backward_accounting": {
+    "autonomous_scientific_selection_made": false,
+    "denominator_excluded": true,
+    "rolling_autonomous_canonical_selections": [
+      "MECHANISM",
+      "SYSTEM",
+      "SYSTEM"
+    ],
+    "qualifying_share": "1/3",
+    "theory_backward_exception": null
+  },
   "phenomenon_question_hypothesis": {
-    "phenomenon": "FROZEN_CAND33_ARCHITECTURE_INTEGRATION_TESTS_FAIL_AT_UID_MAP_CREATION_ON_CURRENT_GITHUB_HOSTED_RUNNER_BEFORE_SYNTHETIC_CONFORMANCE",
-    "question": "Does a same-revision compatible runner/placement exist that can execute the exact frozen isolation/provenance contract?",
-    "hypothesis": "A compatible placement could lift the method hold without science change; the current hosted runner cannot.",
-    "observable_intervention": "Read-only inspection of exact workflow logs, repository workflow placement, and runner capability surfaces; no execution or contract change.",
-    "ordinary_reductions_comparators": "Current GitHub-hosted placement versus any compatible placement under the identical frozen contract.",
-    "falsifier_discriminator": "Hold remains until unchanged exact isolation and negative controls execute successfully on an available bounded runner; altered isolation semantics require versioning."
+    "phenomenon": "FROZEN_CAND33_SYSTEM_ARCHITECTURE_WAS_BLOCKED_ONLY_BY_GITHUB_HOSTED_UID_MAP_CAPABILITY",
+    "question": "Can the exact fixed candidate33 architecture reach its clean/mismatch and fail-closed provenance observables on a compatible bounded runner without any contract change?",
+    "hypothesis": "Yes; the prior failure is placement-specific rather than an architecture impossibility.",
+    "observable_intervention": "Environment placement only. Execute exact source and frozen unshare/read-only-remount contract on a capability-verified bounded Linux runtime.",
+    "ordinary_reductions_comparators": "Known incompatible GitHub-hosted runner versus compatible bounded runner under identical candidate bytes and fixed contract.",
+    "falsifier_discriminator": "If exact clean/mismatch verdicts or fixed fail-closed controls fail on the compatible runner, retain the method hold; no rescue redesign is permitted."
   },
   "repair_change_classification": {
-    "selected_work": "READ_ONLY_DIAGNOSTIC_NO_MUTATION",
-    "science_invariant_path": "RUNNER_PLACEMENT_OR_CAPABILITY_PREFLIGHT_PRESERVING_EXACT_FROZEN_CONTRACT",
-    "science_affecting_if_changed": ["USER_PID_MOUNT_NET_NAMESPACE_SEMANTICS", "ISOLATION_BACKEND_SEMANTICS", "RAW_SCHEMA", "TRUST_ROOT", "RESOURCE_CAPS", "VERDICT_VOCABULARY", "CLAIM_MEANING", "METRIC_OR_TOLERANCE", "SUCCESS_RULE"]
+    "selected_work": "NO_REPAIR_SAME_REVISION_ENVIRONMENT_CAPABILITY_EXECUTION",
+    "science_invariant": true,
+    "science_affecting_changes_made": [],
+    "science_affecting_if_changed": [
+      "USER_PID_MOUNT_NET_NAMESPACE_SEMANTICS",
+      "ISOLATION_BACKEND_SEMANTICS",
+      "RAW_SCHEMA",
+      "TRUST_ROOT",
+      "RESOURCE_CAPS",
+      "VERDICT_VOCABULARY",
+      "CLAIM_MEANING",
+      "METRIC_OR_TOLERANCE",
+      "SUCCESS_RULE"
+    ]
   },
-  "inputs": {"latest_analyst_r74_read": true, "main_sub_state_reconciled": true, "stable_main_refetched": true, "candidate33_branch_refetched": true, "exact_ci_failure_log_read": true, "repository_runner_placement_searched": true, "external_runner_inventory_authoritatively_verified": false, "protected_or_held_out_result_used": false, "consumed_identity_used": false},
-  "implementation": {"mode": "READ_ONLY_COMPATIBLE_RUNNER_BOUNDARY_DIAGNOSTIC", "candidate33_ref": "71af7a36862eeb2b5d08c2a8f37462ed21acc972", "workflow_run": 35715729340, "exact_failure": "unshare: write failed /proc/self/uid_map: Operation not permitted", "repository_declared_compatible_self_hosted_path_found": false, "external_self_hosted_inventory_status": "UNVERIFIED_WITH_AVAILABLE_ACCESS", "code_mutation_this_run": false, "workflow_dispatch_this_run": false, "scientific_probe_executed": false},
-  "observations": {"hosted_runner_uid_map_capability_failure_confirmed": true, "previous_runner_capability_hypothesis_resolved": true, "frozen_unshare_flags": ["--user", "--map-root-user", "--pid", "--mount", "--net", "--fork"], "verifier_read_only_remount_required": true, "same_revision_hold_lift_requires_exact_contract_compatible_runner": true, "alternate_backend_would_require_versioned_reassessment": true, "skip_based_green_ci_would_not_demonstrate_conformance": true, "selected_task_count": 1},
+  "inputs": {
+    "latest_analyst_r75_read": true,
+    "main_sub_state_reconciled": true,
+    "control_strategy_read": true,
+    "literature_r31_read": true,
+    "audit_r6_read": true,
+    "methodology_r66_read": true,
+    "utility_request_read": true,
+    "stable_main_refetched": true,
+    "candidate33_branch_refetched_before_execution": true,
+    "analyst_generation_refetched_before_persistence": true,
+    "protected_or_held_out_result_used": false,
+    "consumed_identity_used": false
+  },
+  "implementation": {
+    "mode": "EXACT_FROZEN_CONTRACT_SYNTHETIC_ARCHITECTURE_CONFORMANCE",
+    "candidate33_ref": "71af7a36862eeb2b5d08c2a8f37462ed21acc972",
+    "source_git_blob_verified": "a502370b89d2e87010293d8708a571755cf9c930",
+    "local_source_sha256": "f118af0f401068fdb9fdf5e3fb6c50c57b125ca4e034a24d1dce9587ca075d19",
+    "capability_probe": {
+      "unshare_exact_flags": true,
+      "uid_map_creation": true,
+      "pid_mount_net_user_namespaces": true,
+      "verifier_bind_readonly_remount": true,
+      "write_denied_after_readonly_remount": true
+    },
+    "clean_pair": {
+      "verdict": "AUDITABLE_RAW_MATCH",
+      "reason": "VERIFIER_RECOMPUTED_RAW_BYTES",
+      "runtime_dependency_lock_status": "PASS",
+      "ambient_thread_equivalence_bypass_absent": true,
+      "trajectory_sha256": "c6caf22bd364c3c37cb1c627c872306b727403875095b3564c096b06690a095e",
+      "checkpoints_sha256": "801575c4155f0700a504fe964c1569c71d4b451b38e6da445af8b3ec931cfd0b"
+    },
+    "mismatch_pair": {
+      "verdict": "AUDITABLE_RAW_MISMATCH",
+      "reason": "VERIFIER_RECOMPUTED_RAW_BYTES",
+      "left_trajectory_sha256": "c6caf22bd364c3c37cb1c627c872306b727403875095b3564c096b06690a095e",
+      "right_trajectory_sha256": "bca7fbf7421ee40fbbd34c24bc87d6e82f451d22e1034741c6f55baf577a6a8f",
+      "checkpoints_equal": true
+    },
+    "negative_controls": {
+      "stale_declared_digest_after_raw_mutation": "AUDITABLE_RAW_MISMATCH:VERIFIER_RECOMPUTED_RAW_BYTES",
+      "ledger_ref_binding_swap": "INVALID_PROVENANCE_CHAIN:LEDGER_BINDING_MISMATCH:producer-B:ref_id",
+      "missing_checkpoints": "INVALID_PROVENANCE_CHAIN:REQUIRED_RAW_MISSING:checkpoints.ndjson",
+      "reused_host_pid": "INVALID_PROVENANCE_CHAIN:IDENTITY_REUSE:host_pid"
+    },
+    "code_mutation_this_run": false,
+    "workflow_dispatch_this_run": false,
+    "scientific_probe_executed": false
+  },
+  "observations": {
+    "compatible_bounded_runner_verified": true,
+    "intended_system_architecture_observable_reached": true,
+    "clean_match_passed": true,
+    "one_field_mismatch_passed": true,
+    "stale_digest_control_passed": true,
+    "binding_swap_control_passed": true,
+    "missing_raw_control_passed": true,
+    "identity_reuse_control_passed": true,
+    "scientific_semantic_equivalence_established": false,
+    "method_hold_reachability_blocker_resolved_for_current_architecture_question": true,
+    "selected_task_count": 1
+  },
   "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE",
   "proposed_claim_ceiling": "SYSTEM",
   "proposed_preformal_eligible": false,
-  "preliminary_readiness": {"status": "NOT_APPLICABLE", "architecture_status": "HOLD_METHOD_LIMITED_PENDING_COMPATIBLE_RUNNER"},
-  "hold_dimensions": {"proposed": true, "hold_class": "HOLD_METHOD_LIMITED", "hold_reason": ["EXACT_GITHUB_HOSTED_UID_MAP_CAPABILITY_FAILURE", "NO_REPOSITORY_DECLARED_COMPATIBLE_RUNNER_PLACEMENT", "EXTERNAL_SELF_HOSTED_RUNNER_INVENTORY_UNVERIFIED_WITH_CURRENT_ACCESS", "FROZEN_ISOLATION_MUST_NOT_BE_WEAKENED"], "terminal_state": "NONTERMINAL_HOLD", "queue_state": "QUEUED"},
-  "fresh_successor_potential": {"current_object_is_already_fresh_successor": true, "predecessor_ordinal": 32, "additional_successor_proposed": false, "mechanism_uplift_proposed": false},
-  "next_layer": "COMPATIBLE_RUNNER_PLACEMENT_OR_CAPABILITY_PREFLIGHT_IF_AVAILABLE_OTHERWISE_HOLD",
-  "open_choices": ["Locate or authorize a runner satisfying the exact frozen contract.", "If alternate isolation/backend semantics are desired, obtain Analyst-authorized versioned development revision."],
-  "recommendation": "HOLD",
+  "preliminary_readiness": {
+    "status": "NOT_APPLICABLE",
+    "architecture_status": "FIXED_SYNTHETIC_CONFORMANCE_REACHED_ON_COMPATIBLE_BOUNDED_RUNNER"
+  },
+  "hold_dimensions": {
+    "proposed": true,
+    "hold_class": null,
+    "hold_reason": [],
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "queue_state": "NOT_QUEUED",
+    "rationale": "The current object's SYSTEM Architecture reachability question is answered under the exact frozen contract. Durable repository-integrated placement, if desired, is a materially distinct SYSTEM integration question."
+  },
+  "fresh_successor_potential": {
+    "current_object_is_already_fresh_successor": true,
+    "predecessor_ordinal": 32,
+    "mechanism_uplift_proposed": false,
+    "same_object_ceiling_upgrade_proposed": false,
+    "additional_successor_proposed": false,
+    "conditional_new_system_question": "DURABLE_REPOSITORY_INTEGRATED_COMPATIBLE_RUNNER_PLACEMENT_AND_REPRODUCIBILITY_ONLY_IF_STRATEGICALLY_USEFUL"
+  },
+  "next_layer": "EVIDENCE_ANALYST_LIFECYCLE_REVIEW_CURRENT_OBJECT_TERMINALIZATION",
+  "open_choices": [
+    "Decide whether candidate33 current SYSTEM Architecture object should terminalize after successful exact-contract conformance.",
+    "If durable repository-integrated placement is scientifically useful, consider a fresh SYSTEM-only successor rather than extending this object.",
+    "Do not infer semantic equivalence or MECHANISM from the synthetic raw-audit result."
+  ],
+  "recommendation": "NONE",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
-  "integrity": {"scientific_experiments_executed": 0, "scientific_workflows_dispatched": 0, "one_way_identities_consumed": 0, "research_branches_created": 0, "research_code_commits_created_by_this_run": 0, "research_prs_merged": 0, "immutable_scientific_refs_mutated": 0, "historical_pass_fail_rewritten": 0, "held_out_reads": 0},
-  "generation_metadata": {"schema_version": 2, "source_analyst_generation": "EVA-20260922T204000+0900-R74-B8C4E219", "source_analyst_commit": "5a6e0e4a2a3f716a6564cd03e7027d6251546a0f", "parent_orchestrator_tip": "0f993632b4eb2828d5c5aa834f065b7b8a88a0f0", "parent_sub_generation": "SUB-20260922T194207+0900-ARCH-C33-TESTBLOCK-R72-8F3C21A6", "superseding_authority_reconciled": true, "superseding_authority_material_to_main_not_sub": true}
+  "integrity": {
+    "scientific_experiments_executed": 0,
+    "scientific_workflows_dispatched": 0,
+    "one_way_identities_consumed": 0,
+    "research_branches_created": 0,
+    "research_code_commits_created_by_this_run": 0,
+    "research_prs_merged": 0,
+    "immutable_scientific_refs_mutated": 0,
+    "historical_pass_fail_rewritten": 0,
+    "held_out_reads": 0,
+    "synthetic_architecture_runs": 6
+  },
+  "generation_metadata": {
+    "schema_version": 2,
+    "source_analyst_generation": "EVA-20260922T210223+0900-R75-D7F2A9C1",
+    "source_analyst_commit": "c190afff7e33977c530c207904bd42ce7187a20d",
+    "parent_orchestrator_tip": "d873a0a6b1ecc02ad2ce550e207f55b79649baac",
+    "parent_sub_generation": "SUB-20260922T204630+0900-ARCH-C33-RUNNERPATH-R74-B8C4E219",
+    "post_analyst_advisory_literature_generation": "LIT-20260922T213058+0900-R31-RECONSTRUCTIBLE-HOLDOUT-4D8C21F7",
+    "superseding_authority_reconciled": true,
+    "material_new_advisory_is_main_owned_not_sub_collision": true
+  }
 }
