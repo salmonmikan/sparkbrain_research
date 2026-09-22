@@ -1,22 +1,23 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9",
-  "producer_run_id": "sparkbrain-main-primary-20260922T102119JST-R58-idle",
-  "produced_at": "2026-09-22T10:21:19+09:00",
+  "generation_id": "MAIN-20260922T111654+0900-PRIMARY-FUNNEL21-IDLE-R59-A6D4C219",
+  "producer_run_id": "sparkbrain-main-primary-20260922T111654JST-R59-idle",
+  "produced_at": "2026-09-22T11:16:54+09:00",
   "execution_mode": "PRIMARY",
   "status": "COMPLETED",
   "authority_scope": "MAIN_PRIMARY_FUNNEL_V2_1_INTENTIONAL_NO_TARGET_IDLE",
-  "analyst_generation_id": "EVA-20260922T100852+0900-R58-7D4C21A9",
-  "analyst_commit": "13c4374c889e4326d225c62de02ca4a51e351ca1",
-  "supersedes_generation_id": "MAIN-20260922T091342+0900-PRIMARY-FUNNEL21-IDLE-R57-6C4A21E8",
+  "analyst_generation_id": "EVA-20260922T110607+0900-R59-A6D4C219",
+  "analyst_commit": "35630cc8e5d989a77801658f877c97aae9323f7c",
+  "supersedes_generation_id": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T100852+0900-R58-7D4C21A9@13c4374c889e4326d225c62de02ca4a51e351ca1",
-    "main": "MAIN-20260922T091342+0900-PRIMARY-FUNNEL21-IDLE-R57-6C4A21E8@01ae06ccfe60450bf94ba756912bdadcd69cd776",
-    "sub": "SUB-20260922T093331+0900-NOOP-R57INTENTIONALIDLE-6C4A21E8@d111ddff66c2055e083e7b2dfd8482db90e9c6a2",
-    "control": "CTRL-20260922T085130+0900-R31-B7D4A219@bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
-    "methodology": "METHCAL-20260922T092225+0900-R55-8BC6BA25@9f92fdc646df6dd1d249c84499076f6a7b4527aa",
+    "evidence_analyst": "EVA-20260922T110607+0900-R59-A6D4C219@35630cc8e5d989a77801658f877c97aae9323f7c",
+    "main": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9@5debade38822a8b33748d7df009e6568be7bc784",
+    "sub": "SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9@c7443d5dd4c118cea86ed62f1681ff4f7cb943ba",
+    "control": "CTRL-20260922T105700+0900-R32-C5A721D4@544bede4c5131ea57e5b93903bab5279d066a0c0",
+    "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7@35cd3434306a413ec6e90d83a2618cd9101a0d88",
+    "methodology": "METHCAL-20260922T102142+0900-R56-A7C3D1E9@33aae5ec465bf71be1f5aaf5b2feebc891937b6a",
     "literature": "LIT-20260922T093207+0900-R27-SPECIFICITY-IDENTIFIABILITY-8C3A21F5@237b3c1100e082624ce08d0ac2d7fcb9c7d3dd6d",
-    "utility_equivalence_prototype": "utility/equivalence-certificate-v0-1-A42D7C19@710f397b1af36c73378f6029c27ccb44242f02b9"
+    "utility": "UTILITY-20260922T103500+0900-AUTO-EQUIV-LINT-DIAG-COMPLETED-4D8A21C6@dccdfdf4f558f233c8dabef74d2aa3513a8e5157"
   },
   "main_lane": "NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_LATER_FRESH_NONRESCUE_OBJECT",
   "research_layer": null,
@@ -55,7 +56,6 @@
       "preformal_eligible": false,
       "preformal_readiness": "NOT_READY",
       "hold_class": "HOLD_MECHANISM_UNRESOLVED",
-      "hold_reason": "No fresh native H7 object with a prospectively fixed claim-scoped causal/intervention mapping, matched privilege/resources, ordinary reductions, and falsifier; R58 specificity/identifiability guidance is prospective and non-authorizing.",
       "terminal_state": "NONTERMINAL_HOLD",
       "queue_state": "NOT_QUEUED"
     },
@@ -70,7 +70,7 @@
       "queue_state": "NOT_QUEUED",
       "exploration_cycle_count": 2
     },
-    "source": "Evidence Analyst R58; no scientific/candidate-lifecycle delta; Literature R27 and Methodology R55 only sharpen prospective H7 claim scope and verifier trust boundaries"
+    "source": "Evidence Analyst R59; no scientific or candidate-lifecycle delta"
   },
   "funnel_metrics": {
     "formal_evidence_this_run": 0,
@@ -79,52 +79,41 @@
     "system_architecture_observations_this_run": 0,
     "identity_consumption_this_run": 0,
     "synthetic_measurements_this_run": 0,
-    "no_target_episode_canonical_check_count": 21,
-    "no_target_episode_interpretation": "LIVENESS_ONLY_NOT_ACCUMULATING_ABSENCE_EVIDENCE"
+    "no_target_episode_canonical_check_count": 22,
+    "no_target_episode_interpretation": "LIVENESS_ONLY_NOT_MECHANISM_ABSENCE_EVIDENCE"
   },
-  "blocked_until": "A fresh Evidence Analyst generation allocates a genuinely new prospective object after a material mechanism-surface delta or independently new bounded non-rescue question/review.",
+  "blocked_until": "A fresh Evidence Analyst generation allocates a genuinely new prospective object after a material mechanism-surface delta or independently motivated bounded non-rescue question/review.",
   "do_not_touch": [
     "Do not rerun, repair, retune, reinterpret, or continue candidate #32 into cycle 3.",
     "Do not upgrade candidate #32 from SYSTEM to MECHANISM or infer PRE_FORMAL readiness from the R50 result.",
     "Do not reopen or rerun the historical H7 exploratory trace branch.",
-    "Do not convert Literature R27 specificity/identifiability guidance into a fresh H7 object, READY state, PRE_FORMAL run, or uniqueness claim without fresh Analyst authority.",
-    "Do not treat a causally important route as task/context-specific without prospectively matched non-target contexts.",
-    "Do not treat route faithfulness as uniqueness; if alternatives satisfy frozen criteria, use existential/equivalence-class scope unless a prospective identifiability test supports more.",
-    "Do not turn the Utility equivalence-certificate prototype into scientific authority, candidate supply, PRE_FORMAL progress, or a repair of candidate #32.",
-    "Do not treat asserted producer/process/nonce/PID distinctness as trusted independent producer provenance.",
-    "Do not treat supplied trajectory/checkpoint digest equality as raw-stream-derived independent verification.",
-    "Do not repair legacy CX01 trigger isolation by exercising historical write-capable scientific workflows.",
+    "Do not convert H7 claim-scope calibration into a fresh H7 object, READY state, PRE_FORMAL run, or uniqueness claim without fresh Analyst authority.",
+    "Do not reopen, rerun, rescore, or reinterpret consumed PD01. Its canonical FAIL_REDUCED_BY_FADING_MEMORY token and frozen artifacts remain immutable; only the prospective narrative ceiling is weakened.",
+    "Do not use positive reduced-by-baseline language for a future fresh object unless a positive candidate phenomenon/capability or response structure is prospectively demonstrated before equal-privilege baseline reproduction is interpreted as reduction.",
+    "Do not turn the Utility equivalence-certificate prototype or its UP035 diagnosis into scientific authority, candidate supply, PRE_FORMAL progress, or a repair of candidate #32.",
     "Do not rerun, rescore, retune, relabel, reopen, or rescue consumed H5 or any consumed one-way identity.",
     "Do not treat repeated no-target liveness checks as accumulating evidence that no MECHANISM target exists."
   ],
   "outcome_contingencies": {
     "material_mechanism_surface_delta": "CREATE_FRESH_CANDIDATE_ID_AND_FRESH_REDUCTION_DISCRIMINATOR_FALSIFIER_CONTRACT_THEN_REVIEW",
-    "future_h7_faithful_route_claim": "FRESH_ID_ONLY; PREBIND_CORE_CAUSAL_CONTROLS_SUPPORT_REALISM_MAPPING_MATCHED_PRIVILEGE_RESOURCES_ORDINARY_REDUCTIONS_AND_FIXED_FALSIFIER",
-    "future_h7_task_context_specific_claim": "FRESH_ID_ONLY; ADD_MATCHED_NON_TARGET_TASK_OR_CONTEXT_INTERVENTIONS_AND_REQUIRE_SELECTIVE_ENRICHMENT_BEYOND_GENERIC_SHARED_BOTTLENECK_DAMAGE",
-    "future_h7_unique_responsible_route_claim": "FRESH_ID_ONLY; ADD_PROSPECTIVE_IDENTIFIABILITY_SEARCH_OVER_ALTERNATIVE_ROUTES_LOCALIZATIONS_OR_ALGORITHMS; FALL_BACK_TO_EXISTENTIAL_OR_EQUIVALENCE_CLASS_SCOPE_IF_NON_UNIQUE",
-    "future_h7_redundancy_synergy": "TREAT_UNIQUE_REDUNDANT_SYNERGISTIC_DECOMPOSITION_AS_STRONGER_PRIVILEGE_CEILING_UNLESS_PRIVILEGE_IS_MATCHED",
-    "equivalence_certificate_future_scientific_use": "REQUIRE_TRUSTED_PRODUCER_PROVENANCE_AND_MACHINE_BOUND_RAW_IDENTITY_DERIVATION_IMMUTABILITY_PACKAGE_RUNTIME_INPUT_EVALUATOR_PRIVILEGE_RESOURCE_CONTRACT; DIRECT_RECOMPUTATION_OR_EQUIVALENTLY_STRONG_TRUSTED_ATTESTATION_CHAIN",
-    "utility_prototype_promotion": "NO_SCIENTIFIC_EFFECT; CURRENT_PROTOTYPE_NOT_PROMOTION_READY_UNTIL_ORDINARY_CI_STATIC_QUALITY_IS_GREEN_AND_SEPARATE_STEWARD_REVIEW_OCCURS",
+    "future_h7_object": "FRESH_ID_ONLY_WITH_CLAIM_SCOPED_CAUSAL_SPECIFICITY_IDENTIFIABILITY_COMPARATOR_RESOURCE_FALSIFIER_CONTRACT",
+    "future_positive_reduction_claim": "FIRST_DEMONSTRATE_POSITIVE_CANDIDATE_PHENOMENON_OR_RESPONSE_STRUCTURE_THEN_REQUIRE_EQUAL_PRIVILEGE_ORDINARY_BASELINE_REPRODUCTION",
+    "pd01_current_identity": "CONSUMED_IMMUTABLE_NO_REOPEN; STRONGEST_SUPPORTED_NARRATIVE_NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR",
     "no_material_delta": "REMAIN_INTENTIONALLY_IDLE",
     "candidate_32_cycle3": "PROHIBITED",
-    "r50_rerun_repair_retune_tolerance_relaxation": "PROHIBITED",
-    "h5_rerun_rescore_retune_relabel_reopen": "PROHIBITED",
-    "historical_h7_exploratory_rerun_or_promotion": "PROHIBITED",
     "same_object_system_to_mechanism": "PROHIBITED",
     "material_superseding_generation": "FAIL_CLOSED_RECONCILE_BEFORE_ANY_MUTATION_OR_DISPATCH"
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_tip": "13c4374c889e4326d225c62de02ca4a51e351ca1",
-    "orchestrator_tip_before_acquisition": "d111ddff66c2055e083e7b2dfd8482db90e9c6a2",
-    "lease_acquisition_commit": "4a4c66cc4cdf3b44407344fdc219e0285d4e1624",
-    "latest_sub_generation": "SUB-20260922T093331+0900-NOOP-R57INTENTIONALIDLE-6C4A21E8",
+    "analyst_tip": "35630cc8e5d989a77801658f877c97aae9323f7c",
+    "orchestrator_tip_before_acquisition": "c7443d5dd4c118cea86ed62f1681ff4f7cb943ba",
+    "lease_acquisition_commit": "7301738f08a298a201bf36e5c4f832dd23ab6a2b",
+    "latest_sub_generation": "SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9",
     "historical_r50_research_branch": "research/main-semantic-active-work-localization-r50-cycle2",
     "historical_r50_research_head": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
     "historical_h7_exploratory_branch": "research/exploratory-sub-h7-trace-causality-20260917",
     "historical_h7_exploratory_head": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
-    "utility_equivalence_prototype_branch": "utility/equivalence-certificate-v0-1-A42D7C19",
-    "utility_equivalence_prototype_head": "710f397b1af36c73378f6029c27ccb44242f02b9",
     "active_identity": null,
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
@@ -138,26 +127,19 @@
     "freeze_tags": [],
     "consumed_h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
     "consumed_h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
+    "consumed_pd01_started": "0569e348b9d93aeee53fc58daf4b71ee92303d6c",
+    "consumed_pd01_raw_preserve": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
     "prs": {"148": "OPEN_UNMERGED_MERGEABLE", "149": "OPEN_UNMERGED_MERGEABLE"}
   },
   "workflows": [
     {
-      "run_id": 35675280464,
+      "run_id": 35678479675,
       "name": "ci",
       "branch": "ops/evidence-analyst-handoff",
-      "head": "13c4374c889e4326d225c62de02ca4a51e351ca1",
+      "head": "35630cc8e5d989a77801658f877c97aae9323f7c",
       "status": "completed",
       "conclusion": "success",
       "evidentiary_status": "CONTROL_PLANE_CI_ONLY"
-    },
-    {
-      "run_id": 35668005338,
-      "name": "utility prototype promotion-readiness audit",
-      "branch": "utility/equivalence-certificate-v0-1-A42D7C19",
-      "head": "710f397b1af36c73378f6029c27ccb44242f02b9",
-      "status": "completed",
-      "conclusion": "failure_at_lint_python_3_11_and_3_13",
-      "evidentiary_status": "GOVERNANCE_TOOLING_ONLY_NON_SCIENTIFIC"
     }
   ],
   "observations": {
@@ -167,7 +149,18 @@
     "protected_outcome_read": false,
     "research_branch_mutation": false,
     "immutable_scientific_ref_mutation": false,
-    "r58_reconciliation": "R58 consumes Literature R27, Methodology R55 and Utility promotion-readiness audit without scientific or candidate-lifecycle change. H7 remains nonterminal/non-executable; specificity and identifiability are prospective claim-scope constraints only. Utility prototype remains non-authoritative and not promotion-ready."
+    "pd01_interpretation_calibration": {
+      "evidentiary_change": false,
+      "canonical_token": "FAIL_REDUCED_BY_FADING_MEMORY",
+      "strongest_supported_narrative": "NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR",
+      "candidate_accuracy": 0.47265625,
+      "candidate_ci95": [0.431640625, 0.515625],
+      "reservoir_accuracy": 0.5,
+      "effect": -0.02734375,
+      "effect_ci95": [-0.068359375, 0.015625],
+      "status": "INTERPRETATION_WEAKENED_ONLY_CONSUMED_IDENTITY_UNCHANGED"
+    },
+    "utility_diagnostic": "NON_EVIDENTIARY_TOOLING_ONLY; Ruff UP035 at src/sparkbrain/equivalence_certificate.py:14 remains unrepaired by MAIN."
   },
   "evidentiary_status": {
     "formal": "NONE_NEW",
@@ -178,38 +171,32 @@
   },
   "ordinary_reductions": {
     "current_object": null,
-    "future_h7_reduction_floor": "intervention-support/dormant-path control -> frozen causal abstraction/intervention mapping -> matched-privilege ordinary reductions -> claim-relevant specificity -> claim-relevant identifiability/equivalence-class scope -> stronger-privilege redundancy/synergy ceiling -> fixed falsifier",
+    "future_rule": "Distinguish PHENOMENON_NOT_DEMONSTRATED from POSITIVE_PHENOMENON_REPRODUCED_BY_ORDINARY_BASELINE. Positive reduced-by-baseline language requires a prospectively demonstrated positive candidate phenomenon/capability or response structure before matched ordinary-baseline reproduction is interpreted as reduction.",
     "historical_r50_status": "NON_EVIDENTIARY_FEASIBILITY_METHOD_INFORMATION_ONLY_CONTRACT_INVALID_FOR_REDUCTION_EXHAUSTION"
   },
   "support_breadth": {
     "current_object": null,
-    "future_h7_requirement": "Breadth follows claim scope: task/context-specific claims require matched non-target contexts; uniqueness-bearing claims require prospective alternative-route identifiability testing; existential route claims must not imply uniqueness.",
+    "future_h7_requirement": "Breadth follows claim scope: specificity-bearing claims require matched non-target contexts; uniqueness-bearing claims require prospective alternative-route identifiability testing; existential/equivalence-class scope is required when frozen criteria admit multiple alternatives.",
     "historical_r50_claim_validity": "LIMITED_BY_EQUIVALENCE_VERIFICATION_GAP"
   },
   "consumed_identities": [],
   "integrity": {
     "status": "CLEAN_INTENTIONAL_IDLE",
+    "analyst_generation_rechecked_before_acquisition": true,
+    "analyst_generation_rechecked_before_final_state_mutation": true,
     "candidate_32_terminal_dimensions_preserved_as_predecessor_not_current_object": true,
     "h7_nonterminal_dimensions_preserved_without_promotion": true,
-    "current_object_fields_cleared": true,
-    "system_to_mechanism_upgrade": false,
+    "pd01_consumed_identity_not_reopened": true,
     "sub_collision": false,
-    "repository_truth_refetched": true,
-    "analyst_generation_reread_before_acquisition_and_persistence": true,
-    "analyst_exact_ci_success": true,
-    "scientific_workflow_dispatched": false,
-    "started_created": false,
-    "preserve_created": false,
-    "scoring_performed": false,
-    "immutable_mutation": false
+    "scientific_workflow_dispatches": 0,
+    "research_mutations": 0,
+    "started_creations": 0,
+    "preserve_creations": 0,
+    "scoring_actions": 0,
+    "protected_outcome_reads": 0,
+    "immutable_scientific_ref_mutations": 0
   },
-  "stop_reason": "R58_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
-  "next_action": "Remain intentionally idle until a fresh Evidence Analyst generation allocates a new prospective object after a material mechanism-surface delta or independent bounded non-rescue review. Future H7 work must respect R58 claim-scope specificity/identifiability rules; Utility verifier work remains separate non-scientific governance/tooling.",
-  "persistence": {
-    "branch": "ops/orchestrator-run-report",
-    "latest_path": "reports/orchestrator/main/latest.md",
-    "state_path": "reports/orchestrator/main/state.json",
-    "lease_path": "reports/orchestrator/main/lease.json",
-    "history_path": "reports/orchestrator/main/history/2026-09-22/1021-main.md"
-  }
+  "stop_reason": "R59_NO_ACTIVE_MAIN_OBJECT_INTENTIONAL_IDLE_NO_TARGET_DO_NOT_MANUFACTURE_ACTIVITY",
+  "next_action": "Remain intentionally idle until a fresh Evidence Analyst generation allocates a new prospective object after a material mechanism-surface delta or independently motivated bounded non-rescue question/review. Preserve the R59 PD01 interpretation ceiling prospectively without reopening the consumed PD01 identity.",
+  "owner": "main"
 }
