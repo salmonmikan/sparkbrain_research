@@ -1,0 +1,54 @@
+name: h7-formal-r3-preidentity
+
+on:
+  push:
+    branches:
+      - research/main-h7-formal-r3-unexposed-eval-runtime-r76-cycle9
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: "0"
+  OMP_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+
+jobs:
+  preidentity:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install package surface
+        run: python -m pip install -e ".[dev,learned,spiking]"
+      - name: Build non-result R3 runtime observation
+        run: |
+          python scripts/build_h7_formal_r3_preidentity.py \
+            --output-dir artifacts/formal_h7_r3/preidentity_ci
+      - name: Assert no protected evaluation material exists
+        run: |
+          test ! -e artifacts/formal_h7_r3/preidentity_ci/evaluation_payload.json
+          test ! -e artifacts/formal_h7_r3/preidentity_ci/evaluation_seeds.json
+          ! grep -R -E '8846030|8846285' \
+            artifacts/formal_h7_r3/contract_design.json \
+            src/sparkbrain/learned/h7_formal_r3.py \
+            scripts/build_h7_formal_r3_preidentity.py
+      - name: R3 preidentity tests
+        run: python -m pytest -q tests/learned/test_h7_formal_r3.py
+      - name: R3 lint
+        run: |
+          python -m ruff check \
+            src/sparkbrain/learned/h7_formal_r3.py \
+            scripts/build_h7_formal_r3_preidentity.py \
+            tests/learned/test_h7_formal_r3.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: h7-formal-r3-preidentity-${{ github.sha }}
+          path: artifacts/formal_h7_r3/preidentity_ci
+          if-no-files-found: error

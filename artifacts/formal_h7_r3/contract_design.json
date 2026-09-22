@@ -1,0 +1,172 @@
+{
+  "schema_version": 2,
+  "contract_id": "H7-FORMAL-R3-UNEXPOSED-EVALUATION-COMMITMENT-V1",
+  "status": "FORMAL_PREIDENTITY_VERSIONED_DESIGN_ONLY_NO_IDENTITY_NO_EVALUATION_COMMITMENT_NO_EXECUTION",
+  "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_DESIGN",
+  "created_under": {
+    "evidence_analyst_generation": "EVA-20260922T220036+0900-R76-C8F2A417",
+    "evidence_analyst_commit": "c80703e3e52fdb7f165054baea18b70892b1bd1e",
+    "analyst_decision": "GO_H7_FORMAL_R3_UNEXPOSED_EVALUATION_COMMITMENT_AND_RUNTIME_BINDING_CYCLE9_DESIGN_AND_PREIDENTITY_ONLY_STOP_BEFORE_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
+    "candidate_id": "CAND-H7-RESPONSIBILITY",
+    "candidate_ordinal": 7,
+    "research_layer": "FORMAL",
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "READY",
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-FORMAL-R3-UNEXPOSED-EVALUATION-COMMITMENT-AND-RUNTIME-BINDING",
+    "cycle": 9,
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "system_priority_exception_used": false
+  },
+  "base_r2": {
+    "contract_id": "H7-FORMAL-R2-INPUT-SPLIT-BINDING-V1",
+    "contract_blob": "a4965eb49528e5b7e6da70f28e076de89d822f93",
+    "head": "80b88cd49fa5b9f5535feba27a75ebd3d4912406",
+    "preserved_unchanged": true,
+    "formal_evidence_surface_allowed": false,
+    "disposition": "STOP_R2_AS_FORMAL_EVIDENCE_SURFACE_RECONSTRUCTIBLE_TARGETS_AND_RUNTIME_PREFLIGHT_FAILURE"
+  },
+  "prior_result_preservation": {
+    "r2_preserved_as_preidentity_development_history": true,
+    "post_r76_r2_runtime_normalization_commit_is_r3_base": false,
+    "pf_r1_preserved_unchanged": true,
+    "pf_r1_used_as_confirmatory_evidence": false,
+    "pf_r1_rerun_retune_rescore": false,
+    "consumed_formal_identity_reuse": false
+  },
+  "science_affecting_delta": {
+    "classification": "SCIENCE_AFFECTING_CHANGE_VERSIONED_PROSPECTIVELY_BEFORE_FORMAL_IDENTITY",
+    "field": "formal_evaluation_identity_exposure",
+    "reason": "The R2 deterministic formal target was publicly reconstructible before identity and is therefore disallowed as untouched FORMAL evaluation under the no-leakage hard floor.",
+    "evaluation_episode_count": 256,
+    "evaluation_episodes_per_world": 64,
+    "formal_evaluation_split": "test",
+    "steps_per_episode": 24,
+    "exact_seed_values_public_before_raw_preserve": false,
+    "fresh_unexposed_seed_values_required": true,
+    "all_other_r1_r2_scientific_fields_preserved": true
+  },
+  "preserved_scientific_semantics": {
+    "claim_and_estimand": "UNCHANGED_FROM_R1_R2",
+    "worlds": [
+      "switchworld",
+      "contradiction_world",
+      "goal_conflict_world",
+      "multi_object_world"
+    ],
+    "fit_and_calibration_surfaces": "UNCHANGED_FROM_R2",
+    "fit_split": "train",
+    "calibration_split": "dev",
+    "formal_evaluation_split": "test",
+    "formal_evaluation_episode_count": 256,
+    "formal_evaluation_episodes_per_world": 64,
+    "steps_per_episode": 24,
+    "world_assignment": "concealed list index modulo 4 in the unchanged listed world order",
+    "intervention": "TOP1_SELECTED_LOCAL_NODE_CUT_V1",
+    "ordinary_reduction_panel": [
+      "ORDINARY_DENSE_RECURRENT_V1",
+      "FINITE_STATE_ROUTE_HISTORY_V2",
+      "ELIGIBILITY_ROUTE_LEDGER_V2"
+    ],
+    "sample_size": "UNCHANGED",
+    "margins_alpha_and_decision_rules": "UNCHANGED",
+    "resource_privilege_intent": "UNCHANGED",
+    "falsifiers_and_success_criteria": "UNCHANGED"
+  },
+  "evaluation_commitment_interface": {
+    "scheme": "SHA256-CANONICAL-OPAQUE-SEED-PAYLOAD-V1",
+    "commitment_created_preidentity": false,
+    "creation_boundary": "Only after exact final claim-capable source, R3 contract, runner, scorer, preserver, package and runtime bindings are fixed and a fresh Analyst grants one-way FORMAL authority.",
+    "controller_owned_protected_payload": true,
+    "public_before_raw_preserve": [
+      "commitment_sha256",
+      "ciphertext_sha256",
+      "payload_size_bytes",
+      "episode_count",
+      "world_count",
+      "episodes_per_world",
+      "split",
+      "steps_per_episode",
+      "collision_audit_passed"
+    ],
+    "plaintext_seed_access_before_raw_immutable_preserve": false,
+    "claim_capable_source_may_materialize_plaintext": false,
+    "freshness_and_collision_rule": "Controller-side commitment creation must fail closed unless the concealed episode identities are fresh, unique and disjoint from all complete prior development and consumed FORMAL inventories.",
+    "raw_execution_rule": "A protected result-bearing runner may receive the controller-owned concealed payload only after STARTED and may emit target-blind raw only; it may not expose plaintext episode identities to claim-capable redesign.",
+    "preserve_before_read_rule": "Exact raw bytes and binding manifests must be immutably preserved before any scorer or claim-capable process may receive protected evaluation identity material.",
+    "no_commitment_or_payload_is_created_in_cycle9": true
+  },
+  "runtime_binding": {
+    "status": "DIAGNOSE_EXACT_VALUES_THEN_FREEZE_PROSPECTIVELY_BEFORE_IDENTITY",
+    "raw_exact_values_required": true,
+    "normalization_or_prefix_acceptance_forbidden": true,
+    "binding_created_preidentity": false,
+    "required_exact_fields": [
+      "python_version",
+      "python_implementation",
+      "platform_system",
+      "platform_release",
+      "platform_machine",
+      "runner_image_os",
+      "runner_image_version",
+      "runner_arch",
+      "torch_distribution_version",
+      "torch_module_version",
+      "torch_git_version",
+      "torch_cuda_build_version",
+      "torch_distribution_record_sha256",
+      "pip_freeze_sha256",
+      "device_contract",
+      "python_hash_seed",
+      "omp_num_threads",
+      "mkl_num_threads",
+      "torch_deterministic_algorithms_enabled"
+    ],
+    "diagnostic_is_non_result_bearing": true,
+    "future_mismatch_disposition": "BLOCK_BEFORE_IDENTITY_OR_EXECUTION_AND_RETURN_TO_ANALYST",
+    "runtime_version_or_build_change_requires_fresh_explicit_record": true
+  },
+  "one_way_integrity_design": {
+    "identity_state": "NOT_CREATED",
+    "started_marker_state": "NOT_CREATED",
+    "evaluation_commitment_state": "NOT_CREATED",
+    "result_bearing_workflow_state": "NOT_CREATED_AND_NOT_AUTHORIZED",
+    "raw_before_score": true,
+    "preserve_before_read": true,
+    "same_final_sha_required": true,
+    "create_only_no_clobber_required": true,
+    "target_blind_raw_required": true
+  },
+  "preidentity_only": {
+    "formal_identity_created": false,
+    "started_created": false,
+    "evaluation_seed_revealed": false,
+    "protected_evaluation_accessed": false,
+    "result_bearing_workflow_dispatched": false,
+    "official_scoring_performed": false,
+    "scientific_preserve_or_evidence_ref_created": false
+  },
+  "cycle9_authorized": [
+    "materialize this R3 concealed-evaluation commitment interface",
+    "diagnose exact runtime/build/package identity on non-result-bearing surfaces",
+    "materialize exact-runtime preflight after observed exact values are known",
+    "ordinary JSON/schema/lint/build/unit conformance that cannot access protected evaluation"
+  ],
+  "cycle9_forbidden": [
+    "FORMAL identity creation or consumption",
+    "STARTED creation",
+    "evaluation commitment creation",
+    "future evaluation seed generation or reveal",
+    "protected evaluation materialization or access",
+    "result-bearing workflow dispatch",
+    "official scoring",
+    "scientific preserve/evidence ref creation",
+    "runtime version normalization or prefix acceptance",
+    "claim/estimand/world/sample-size/comparator/margin-alpha/intervention/resource-privilege/decision-rule/falsifier changes",
+    "PF-R1 rerun/retune/rescore",
+    "consumed FORMAL identity reuse"
+  ],
+  "stop_rule": "STOP after R3 commitment-interface design and exact runtime diagnostic/preflight are materially closed. Fresh Evidence Analyst one-way authority is required before any identity, STARTED, evaluation commitment, protected evaluation, result-bearing execution, preserve or scoring."
+}
