@@ -1,64 +1,61 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-22T10:21:42+09:00",
+  "timestamp": "2026-09-22T11:19:18+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260922T102142+0900-R56-A7C3D1E9",
-    "sequence": 56,
+    "generation_id": "METHCAL-20260922T111918+0900-R57-CE3EB4CC",
+    "sequence": 57,
     "material_change": true,
-    "material_change_reason": "LITERATURE_R27_AND_CANONICAL_ANALYST_R58_ADD_CLAIM_SCOPED_TASK_SPECIFICITY_AND_ROUTE_IDENTIFIABILITY_CALIBRATION_WITH_EXISTENTIAL_EQUIVALENCE_CLASS_FALLBACK",
-    "supersedes_generation_id": "METHCAL-20260922T092225+0900-R55-8BC6BA25",
+    "material_change_reason": "PD01_NULL_VS_NULL_SHOWS_VALID_SUPERIORITY_FALSIFICATION_DOES_NOT_BY_ITSELF_IDENTIFY_POSITIVE_MECHANISTIC_REDUCTION",
+    "supersedes_generation_id": "METHCAL-20260922T102142+0900-R56-A7C3D1E9",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260922T092225+0900-R55-8BC6BA25",
+      "generation_id": "METHCAL-20260922T102142+0900-R56-A7C3D1E9",
       "branch": "ops/methodology-calibration-audit",
-      "commit": "9f92fdc646df6dd1d249c84499076f6a7b4527aa"
+      "commit": "33aae5ec465bf71be1f5aaf5b2feebc891937b6a"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T100852+0900-R58-7D4C21A9",
+      "generation_id": "EVA-20260922T110607+0900-R59-A6D4C219",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "13c4374c889e4326d225c62de02ca4a51e351ca1",
+      "commit": "35630cc8e5d989a77801658f877c97aae9323f7c",
       "role": "CURRENT_CANONICAL_FUNNEL_AUTHORITY"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219",
+      "generation_id": "CTRL-20260922T105700+0900-R32-C5A721D4",
       "branch": "ops/control-brain-handoff",
-      "commit": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
+      "commit": "544bede4c5131ea57e5b93903bab5279d066a0c0",
       "role": "DESIGNATED_CONTROL_HISTORY_STRATEGIC_PRIOR"
     },
     "main_strategy": {
       "generation_id": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9",
-      "branch": "ops/orchestrator-run-report",
-      "commit": "feee71a4b06027c8b03ec8e3f4511776289f16dd",
+      "commit": "5debade38822a8b33748d7df009e6568be7bc784",
       "authoritative": false
     },
     "sub_strategy": {
-      "generation_id": "SUB-20260922T093331+0900-NOOP-R57INTENTIONALIDLE-6C4A21E8",
-      "commit": "d111ddff66c2055e083e7b2dfd8482db90e9c6a2",
+      "generation_id": "SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9",
+      "commit": "c7443d5dd4c118cea86ed62f1681ff4f7cb943ba",
       "authoritative": false
     },
     "literature": {
       "generation_id": "LIT-20260922T093207+0900-R27-SPECIFICITY-IDENTIFIABILITY-8C3A21F5",
-      "branch": "ops/external-research-audit-handoff",
-      "commit": "237b3c1100e082624ce08d0ac2d7fcb9c7d3dd6d",
+      "commit": "237b3c1100e082624ce08d0ac2d7fcb9c7d3dd6",
       "role": "EXTERNAL_CALIBRATION_INPUT_ONLY"
+    },
+    "independent_audit": {
+      "generation_id": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
+      "branch": "ops/external-research-audit-handoff",
+      "commit": "35cd3434306a413ec6e90d83a2618cd9101a0d88",
+      "role": "CALIBRATION_INPUT_ONLY"
     },
     "repository_steward": {
       "generation_id": "STEWARD-20260922T075212+0900-G9-8C4E21D3",
-      "branch": "ops/repository-steward",
       "commit": "a3ab4f4f70c4782e7ff916838c33a64eb0a9c2dd",
       "role": "GOVERNANCE_CALIBRATION_INPUT_ONLY"
     },
     "utility": {
-      "generation_id": "UTILITY-20260922T093600+0900-AUTO-EQUIV-PROMOTION-AUDIT-COMPLETED-5C9E217A",
-      "commit": "019e2af0e2452924d77dadacc2bba5998f2b7967",
+      "generation_id": "UTILITY-20260922T103500+0900-AUTO-EQUIV-LINT-DIAG-COMPLETED-4D8A21C6",
       "role": "NON_EVIDENTIARY_TOOLING_CALIBRATION_INPUT_ONLY"
-    },
-    "independent_audit": {
-      "generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
-      "commit": "c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48",
-      "role": "HISTORICAL_CALIBRATION_INPUT_ONLY"
     }
   },
   "authoritative_refs": {
@@ -73,31 +70,16 @@
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
+    "pd01": {
+      "evidence_tag_object": "e4c4e6428d8ef9e09e92cae231041de0788162e2",
+      "evidence_commit": "fc5c8cda283360addddb7da482b14e69beaba1f7",
+      "exact_package_commit": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
+      "raw_preservation_commit": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
+      "run_identity": "pd01-long-history-fading-memory-official-v1",
+      "frozen_result_class": "FAIL_REDUCED_BY_FADING_MEMORY"
+    },
     "scientific_source_of_truth": "stable main plus independently fetched annotated evidence refs; ops branches are mailboxes only"
   },
-  "external_calibration_refs": [
-    {
-      "title": "How Much Do Circuits Tell Us? Measuring the Consistency and Specificity of Language Model Circuits",
-      "authors": "Michael Li; Nishant Subramani",
-      "year": 2026,
-      "identifier": "arXiv:2605.08348",
-      "calibration_use": "CAUSAL_IMPORTANCE_DOES_NOT_BY_ITSELF_ESTABLISH_TASK_SPECIFICITY"
-    },
-    {
-      "title": "Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?",
-      "authors": "Maxime Meloux; Silviu Maniu; Francois Portet; Maxime Peyrard",
-      "year": 2025,
-      "identifier": "ICLR_2025; arXiv:2502.20914",
-      "calibration_use": "VALID_FAITHFUL_EXPLANATIONS_CAN_BE_NONUNIQUE"
-    },
-    {
-      "title": "Decomposing causality into its synergistic, unique, and redundant components",
-      "authors": "Alvaro Martinez-Sanchez; Gonzalo Arranz; Adrian Lozano-Duran",
-      "year": 2024,
-      "identifier": "Nature Communications 15:9296; DOI 10.1038/s41467-024-53373-4",
-      "calibration_use": "STRONGER_PRIVILEGE_REDUNDANCY_SYNERGY_DECOMPOSITION_CEILING_NOT_UNIVERSAL_EQUAL_PRIVILEGE_BASELINE"
-    }
-  ],
   "audit_result": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
   "gate_classifications": {
@@ -117,16 +99,17 @@
     "rolling_one_in_three_theory_backward_supply": "KEEP",
     "theory_backward_quality_floor": "KEEP",
     "no_coherent_mechanism_target": "KEEP",
-    "phenomenon_first_shadow_supply_separation": "KEEP",
-    "shadow_to_system_canonical_admission_after_independent_review": "KEEP",
-    "system_shadow_not_theory_backward_quota_credit": "KEEP",
-    "first_positive_shadow_to_mechanism_admission": "INSUFFICIENT_EVIDENCE",
+    "theory_backward_mechanism_level_falsifiability": "KEEP",
     "system_architecture_testbed_reproducibility_value": "KEEP",
     "research_worthiness_vs_novelty": "KEEP",
     "causal_comparator_equivalence": "SPLIT_BY_CLAIM_TYPE",
     "equal_privilege_comparator": "KEEP",
     "ordinary_reduction_first": "KEEP",
     "signal_before_reduction": "TIGHTEN",
+    "positive_phenomenon_before_positive_reduction_claim": "SPLIT_BY_CLAIM_TYPE",
+    "superiority_falsification_vs_positive_mechanistic_reduction": "SPLIT_BY_CLAIM_TYPE",
+    "reduction_terminal_taxonomy_null_vs_positive_reproduction": "CLARIFY",
+    "frozen_terminal_token_vs_narrative_interpretation": "KEEP",
     "h7_intervention_support_and_dormant_path_control": "KEEP",
     "h7_frozen_causal_abstraction_and_intervention_mapping": "KEEP",
     "h7_multi_intervention_family_generalization": "SPLIT_BY_CLAIM_TYPE",
@@ -135,13 +118,6 @@
     "h7_task_context_specificity_claim_scope": "SPLIT_BY_CLAIM_TYPE",
     "h7_route_uniqueness_identifiability": "SPLIT_BY_CLAIM_TYPE",
     "h7_equivalence_class_fallback_when_nonidentifiable": "KEEP",
-    "h7_generic_shared_bottleneck_reduction": "KEEP",
-    "h7_redundancy_synergy_privilege_ceiling": "KEEP",
-    "h7_path_specific_pns_stronger_privilege_ceiling": "KEEP",
-    "h7_matched_privilege_local_residual": "KEEP",
-    "historical_h7_exploratory_non_evidentiary_no_rerun": "KEEP",
-    "resource_comparator_reduction_floor_preoutcome_sharpening": "KEEP",
-    "resource_multi_resource_crossover_scope": "KEEP",
     "resource_efficiency_metric_semantic_activity_decomposition": "TIGHTEN",
     "aggregate_work_to_mechanism_inference": "TIGHTEN",
     "resource_efficiency_claim_type_separation": "SPLIT_BY_CLAIM_TYPE",
@@ -152,23 +128,16 @@
     "equivalence_certificate_self_asserted_producer_distinctness_as_independence": "TIGHTEN",
     "raw_to_digest_derivation_assurance": "TIGHTEN",
     "verifier_local_raw_recomputation_requirement": "CLARIFY",
-    "predeclared_integrity_stop_after_contract_verification_gap": "KEEP",
-    "post_outcome_integrity_adjudication_without_rerun_repair": "KEEP",
-    "result_bearing_verification_failure_terminalization": "KEEP",
     "post_outcome_same_object_repair_ban": "KEEP",
     "same_generation_successor_rescue_prohibition": "KEEP",
     "non_evidentiary_signal_use_ceiling": "KEEP",
-    "result_branch_workflow_retrigger_isolation": "TIGHTEN",
     "write_capable_scientific_workflow_trigger_isolation": "TIGHTEN",
     "workflow_definition_edit_not_execution_authority": "TIGHTEN",
-    "candidate_agnostic_trigger_capability_policy": "TIGHTEN",
     "consumed_identity_operation_level_replay_guards": "KEEP",
     "tooling_ci_promotion_status_not_scientific_readiness": "KEEP",
-    "raw_before_interpretation_synthetic_architecture": "KEEP",
     "raw_before_score_execution_order": "TIGHTEN",
     "preserve_before_score_pipeline": "TIGHTEN",
     "durable_immutable_preformal_raw_preservation": "TIGHTEN",
-    "metadata_only_holdout_exposure_endpoint_boundary": "TIGHTEN",
     "cross_generation_holdout_exposure_observability": "TIGHTEN",
     "protected_set_validity_regime_binding": "TIGHTEN",
     "adaptive_reuse_guarantee_scope_machine_checkability": "TIGHTEN",
@@ -176,126 +145,81 @@
     "selection_ancestry_or_independent_confirmation": "KEEP"
   },
   "false_positive_negative_risks": {
-    "false_positive": "LOW_TO_MODERATE_WATCH. A causally important or intervention-faithful route can be overclaimed as task/context-specific without matched non-target contexts, and one valid route can be overclaimed as uniquely responsible without prospective identifiability testing. Existing verifier/protected-set trust-boundary defects also remain open.",
-    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM remains zero. Requiring matched non-target contexts or exhaustive uniqueness searches for every existential or intervention-family-bounded mechanism claim would be unnecessarily restrictive, so specificity and uniqueness requirements are claim-scoped rather than universal readiness gates.",
-    "duplicate_guards": "LOW. Causal faithfulness, task/context specificity, identifiability/uniqueness, matched privilege, ordinary reductions and READY are distinct control surfaces when the claim scope is explicit.",
-    "opportunity_cost": "CONTROLLED_BUT_WATCH. Intentional idle remains calibrated, but executable MECHANISM supply is stalled. Repeated no-target checks must remain one liveness episode rather than accumulating absence evidence.",
-    "moving_goalpost_risk": "LOW. Current H7 and every consumed/frozen identity remain unchanged; specificity/identifiability guidance applies only to future fresh objects and future claim wording."
+    "false_positive": "LOW_TO_MODERATE_WATCH. Null-vs-null comparator equivalence can falsify a superiority claim but can be overclaimed as positive mechanistic reduction when no positive candidate phenomenon is demonstrated. Existing verifier/protected-set trust-boundary defects remain open.",
+    "false_negative": "MODERATE_WATCH. Viable executable MECHANISM remains zero. Requiring a positive phenomenon floor for every negative comparator or superiority-falsification claim would be overconservative, so the requirement is scoped only to positive reduction claims.",
+    "duplicate_guards": "LOW. Positive phenomenon establishment, comparator equivalence, ordinary reduction and READY address distinct questions when claim scope is explicit.",
+    "opportunity_cost": "CONTROLLED_BUT_WATCH. Intentional idle remains calibrated while executable MECHANISM supply is stalled; no-target check count is not absence evidence.",
+    "moving_goalpost_risk": "LOW. PD01 frozen scorer, token, statistics and identity remain unchanged; only future claim semantics and narrative ceiling are calibrated."
   },
   "moving_goalposts": "LOW",
   "pass_reachability": "PRE_FORMAL_REACHED; FOUR_STAGE_SYNTHETIC_CONFORMANCE_PASSED_AND_CANONICALIZED; CROSS_GENERATION_EXPOSURE_OBSERVABILITY_INSUFFICIENT; FUTURE_PROTECTED_REUSE_REQUIRES_SEPARATE_PROSPECTIVE_VALIDITY_REGIME_AND_FEEDBACK_VISIBILITY_CONTROL; CLEAN_SCIENTIFIC_PASS_REQUIRES_FRESH_PROSPECTIVE_IDENTITY_WITH_CONFORMING_PIPELINE_AND_VALIDITY_ASSUMPTIONS_MATCHED_TO_THE_ACTUAL_ADAPTIVE_PROCESS",
   "claim_type_findings": {
     "claim_ceiling_current_object_only": true,
     "same_object_system_to_mechanism_upgrade_observed": false,
+    "pd01_frozen_token_changed": false,
+    "pd01_frozen_result_class": "FAIL_REDUCED_BY_FADING_MEMORY",
+    "pd01_candidate_accuracy": 0.47265625,
+    "pd01_candidate_ci95": [0.431640625, 0.515625],
+    "pd01_comparator_accuracy": 0.5,
+    "pd01_effect": -0.02734375,
+    "pd01_effect_ci95": [-0.068359375, 0.015625],
+    "pd01_interpretation_ceiling": "NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR",
+    "positive_reduction_scope": "REQUIRES_PROSPECTIVELY_DEFINED_POSITIVE_CANDIDATE_PHENOMENON_OR_RESPONSE_STRUCTURE_THEN_EQUAL_PRIVILEGE_ORDINARY_BASELINE_REPRODUCTION",
+    "negative_superiority_scope": "MAY_VALIDLY_FAIL_WITHOUT_POSITIVE_CANDIDATE_PHENOMENON_IF_THE_PROSPECTIVE_RELATIVE_DECISION_RULE_IS_MET",
+    "universal_numeric_positive_floor": false,
     "h7_current_status": "HOLD_MECHANISM_UNRESOLVED_NONTERMINAL_NOT_QUEUED_NOT_ELIGIBLE_NOT_READY",
-    "h7_current_record_changed": false,
-    "h7_causal_importance_not_task_specificity": true,
-    "h7_faithfulness_not_uniqueness": true,
-    "h7_existential_faithful_route_scope": "UNIQUENESS_NOT_REQUIRED_IF_CLAIM_IS_EXPLICITLY_EXISTENTIAL_AND_CORE_CAUSAL_CONTROLS_ARE_FIXED",
-    "h7_task_context_specific_scope": "REQUIRE_MATCHED_NON_TARGET_TASKS_OR_CONTEXTS_OR_EQUIVALENT_SELECTIVITY_DISCRIMINATOR_AGAINST_GENERIC_SHARED_BOTTLENECK_DAMAGE",
-    "h7_unique_responsible_route_scope": "REQUIRE_PROSPECTIVE_IDENTIFIABILITY_SEARCH_OR_TEST_OVER_ALTERNATIVE_ROUTES_LOCALIZATIONS_OR_ALGORITHMS; IF_NONUNIQUE_USE_EQUIVALENCE_CLASS_OR_NARROW_TO_EXISTENTIAL",
-    "h7_redundancy_synergy_scope": "STRONGER_PRIVILEGE_CEILING_UNLESS_INFORMATION_AND_RESOURCE_PRIVILEGE_IS_MATCHED",
-    "candidate32_status": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED",
-    "candidate32_signal_use_ceiling": "NON_EVIDENTIARY_FEASIBILITY_AND_METHOD_INFORMATION_ONLY",
-    "equivalence_certificate_scope": "GENERIC_TOOLING_ONLY_NOT_TRUSTED_INDEPENDENT_SCIENTIFIC_EQUIVALENCE",
-    "utility_promotion_status": "NOT_PROMOTION_READY_CI_LINT_RED_NO_SCIENTIFIC_READINESS_EFFECT"
+    "candidate32_status": "HOLD_METHOD_LIMITED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED"
   },
-  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED_M13_S19_NO_VIABLE_EXECUTABLE_MECHANISM_NO_ACTIVE_ARCHITECTURE_NO_TARGET_EPISODE_CHECK21_SMALL_N",
+  "mechanism_supply_health": "QUALITY_FLOOR_HEALTHY_BUT_EXECUTABLE_MECHANISM_SUPPLY_STALLED_M13_S19_NO_VIABLE_EXECUTABLE_MECHANISM_NO_ACTIVE_ARCHITECTURE_NO_TARGET_EPISODE_CHECK22_SMALL_N",
   "funnel_observability": {
     "canonical_population": 32,
     "classified_population": 32,
     "classification_completeness": 1.0,
     "mechanism": 13,
     "system": 19,
-    "terminal_states": {
-      "ACTIVE": 0,
-      "NONTERMINAL_HOLD": 1,
-      "TERMINAL_FOR_CURRENT_OBJECT": 31
-    },
-    "architecture_mechanism_active": 0,
-    "architecture_system_active": 0,
-    "architecture_mechanism_queued": 0,
-    "architecture_system_queued": 0,
+    "terminal_states": {"ACTIVE": 0, "NONTERMINAL_HOLD": 1, "TERMINAL_FOR_CURRENT_OBJECT": 31},
+    "architecture_active": {"MECHANISM": 0, "SYSTEM": 0},
+    "architecture_queued": {"MECHANISM": 0, "SYSTEM": 0},
     "preformal_eligible": 0,
     "preformal_ready": 0,
     "viable_executable_mechanism": 0,
-    "policy_conclusions_gated_by_classification_completeness": true
-  },
-  "classification_completeness": {
-    "classified": 32,
-    "canonical_population": 32,
-    "ratio": 1.0,
-    "policy_interpretation_allowed": true
+    "policy_conclusions_require_complete_classification": true
   },
   "preformal_gate_calibration": {
-    "eligible_distinct_from_ready": true,
-    "ready_means_development_readiness_not_prior_success": true,
-    "first_ready_to_preformal_empirical_status": "CONSISTENT_WITH_DEVELOPMENT_READINESS",
+    "preformal_eligible_distinct_from_ready": true,
+    "ready_means_development_test_readiness_not_prior_success": true,
     "hidden_second_formal_gate": false,
-    "task_specificity_and_identifiability_are_claim_scoped_not_universal_ready_success_thresholds": true,
-    "tooling_ci_promotion_is_not_a_scientific_ready_threshold": true,
-    "live_scientific_four_stage_completion_observed": false,
-    "programme_execution_plumbing": "TIGHTEN"
+    "first_ready_to_preformal_consistent_with_development_readiness": true,
+    "new_reduction_semantics_is_not_ready_gate": true
   },
   "system_priority_exception_audit": {
-    "used": false,
-    "comparable_executable_mechanism_present": false,
-    "active_main_object_now": false,
-    "post_hoc_justification_observed": false,
-    "classification": "KEEP"
+    "rule": "KEEP",
+    "observed_exception_count": 0,
+    "post_hoc_exception_observed": false,
+    "first_genuine_case": "INSUFFICIENT_EVIDENCE"
   },
   "no_coherent_target_audit": {
+    "rule": "KEEP",
     "episode_id": "NTE-20260921-R34-POST-REPLAY-v1",
-    "canonical_check_count": 21,
-    "counts_as_candidate_failure": false,
-    "counts_as_absence_evidence": false,
-    "counts_in_scientific_selection_denominator": false,
-    "escape_hatch_evidence": false,
-    "repetition_risk": "WATCH_OPERATIONAL_REPETITION_BUT_DO_NOT_ACCUMULATE_SCIENTIFIC_WEIGHT",
-    "classification": "KEEP"
+    "canonical_check_count": 22,
+    "counts_as_selection": false,
+    "counts_as_mechanism_absence_evidence": false,
+    "escape_hatch_evidence_observed": false
   },
-  "mandatory_v2_1_questions": {
-    "q1_claim_ceiling_current_object_only": "YES_KEEP",
-    "q2_completed_system_same_object_mechanism_upgrade": "NO_KEEP",
-    "q3_preformal_eligible_distinct_from_ready": "YES_KEEP",
-    "q4_ready_is_development_readiness": "YES_KEEP_HIDDEN_SECOND_FORMAL_GATE_FALSE",
-    "q5_hold_preserves_orthogonal_information": "YES_KEEP",
-    "q6_system_priority_exception_preexecution": "NO_GENUINE_CASE_YET_RULE_KEEP_FIRST_CASE_INSUFFICIENT_EVIDENCE",
-    "q7_no_coherent_target_escape_hatch": "NO_CURRENT_ESCAPE_HATCH_EVIDENCE_KEEP_CHECK21_LIVENESS_ONLY",
-    "q8_theory_backward_genuinely_mechanism_level": "YES_ON_OBSERVED_SELECTIONS_KEEP_NO_SYSTEM_LAUNDERING",
-    "q9_system_retains_independent_value": "YES_KEEP",
-    "q10_preformal_pass_reachable": "YES_CONDITIONAL",
-    "q11_policy_conclusions_gated_by_completeness": "YES_KEEP_32_OF_32",
-    "q12_first_ready_to_preformal_development_readiness": "YES_KEEP"
-  },
+  "classification_completeness": {"complete": 32, "total": 32, "rate": 1.0, "policy_gating": "KEEP"},
   "prospective_recommendations": [
     "Do not change global admission, novelty, comparator, reduction, HOLD or READY thresholds.",
-    "Any fresh H7-like object must prospectively declare claim scope as existential faithful route, task/context-specific route, or unique responsible route before result-bearing execution.",
-    "For task/context-specific claims, prebind matched non-target tasks/contexts or an equivalent selectivity discriminator so generic shared-bottleneck damage cannot masquerade as specificity.",
-    "For uniqueness-bearing claims, prebind an identifiability search/test over plausible alternative routes/localizations/algorithms and predeclare equivalence-class or existential fallback if multiple alternatives satisfy the frozen criteria.",
-    "Do not require specificity or uniqueness testing for explicitly existential family-bounded route claims unless those properties are asserted.",
-    "Keep redundancy/synergy decomposition as a stronger-privilege ceiling unless privilege is matched; do not silently use it as an equal-privilege local baseline.",
-    "Keep current H7 unchanged and non-executable; do not rerun or promote the historical exploratory H7 branch.",
-    "Keep NO_COHERENT_MECHANISM_TARGET as one denominator-excluded liveness episode; do not interpret check_count 21 as twenty-one negative scientific results.",
-    "Keep Utility prototype CI/promotion status separate from scientific readiness and candidate supply."
+    "For each fresh reduction object, predeclare whether the claim is superiority falsification, equivalence/non-superiority, or positive mechanistic reduction.",
+    "For positive mechanistic reduction only, prospectively define a positive candidate phenomenon/response criterion and require an equal-privilege ordinary baseline to reproduce that demonstrated phenomenon; do not use a universal numeric threshold.",
+    "Keep PD01 frozen exactly as consumed; do not rerun, rescore, retune, relabel or create a rescue successor from this calibration.",
+    "Keep null-vs-null terminal taxonomy semantically distinct from positive ordinary-mechanism reproduction in future fresh contracts."
   ],
   "utility_request": null,
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": "HIGH",
   "questions_for_control_analyst": [
-    "Should future MECHANISM candidate schema add a prospective mechanism_claim_scope enum distinguishing EXISTENTIAL_FAITHFUL_ROUTE, TASK_CONTEXT_SPECIFIC_ROUTE and UNIQUE_RESPONSIBLE_ROUTE?",
-    "For uniqueness-bearing claims, should the machine-readable protocol require an identifiability-plan field plus a predeclared equivalence-class/existential fallback when non-unique?",
-    "Should matched non-target-context specificity controls be mandatory only when task/lineage specificity is actually asserted, rather than as a universal H7 readiness condition?"
-  ],
-  "persistence": {
-    "target_branch": "ops/methodology-calibration-audit",
-    "paths": [
-      "analysis/methodology_calibration/latest.md",
-      "analysis/methodology_calibration/state.json",
-      "analysis/methodology_calibration/history/2026-09-22/1021.md"
-    ],
-    "parent_commit": "9f92fdc646df6dd1d249c84499076f6a7b4527aa",
-    "mode": "ATOMIC_GIT_TREE_COMMIT_FAST_FORWARD_NO_FORCE"
-  },
-  "finding": "This generation materially calibrates future mechanism-route claim scope: causal importance does not establish task/context specificity, and a faithful route does not establish unique responsibility. Specificity and identifiability controls are claim-scoped to prevent both overclaiming and hidden overconservative gates."
+    "For future fresh reduction objects, will terminal taxonomy explicitly separate PHENOMENON_NOT_DEMONSTRATED from POSITIVE_PHENOMENON_REPRODUCED_BY_ORDINARY_BASELINE while preserving valid negative superiority outcomes?",
+    "Will any positive-phenomenon criterion be claim-specific and prospectively frozen rather than converted into a universal readiness threshold?",
+    "Will PD01 remain a frozen valid negative result with narrative capped at no demonstrated long-lag recovery/no advantage, without retrospective relabeling?"
+  ]
 }
