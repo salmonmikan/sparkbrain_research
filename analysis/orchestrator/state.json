@@ -1,33 +1,33 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260922T130900+0900-R62-D4A7C21F",
-  "produced_at": "2026-09-22T13:09:00+09:00",
-  "producer_run_id": "evidence-analyst-auto-EVA-20260922T130900+0900-R62-D4A7C21F",
+  "generation_id": "EVA-20260922T140541+0900-R63-E8C421B7",
+  "produced_at": "2026-09-22T14:05:41+09:00",
+  "producer_run_id": "evidence-analyst-auto-EVA-20260922T140541+0900-R63-E8C421B7",
   "authority_scope": "EVIDENCE_ANALYST_ALLOCATION_AND_SCIENTIFIC_STRATEGY_READ_ONLY_EXECUTION",
-  "supersedes_generation_id": "EVA-20260922T124300+0900-R61-C7F421A9",
+  "supersedes_generation_id": "EVA-20260922T130900+0900-R62-D4A7C21F",
   "input_generations": {
     "human_005": "HUMAN-20260922-005@2f655f3c32a19263260a5154138a95b35612d7b9",
     "human_006": "HUMAN-20260922-006@602ec48c9bd834baab3984c46d239a309b004937",
     "human_007": "HUMAN-20260922-007@59103b381783cf6cb456e43f1d73e7a01c1d33dc",
     "control": "CTRL-20260922T124800+0900-R33-E7C421B6@c41db58a5cc87e5460f143ce07c4256d7238d577",
     "main": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9@8d9479100cb0df994efd33ac2d53670b809bf40a",
-    "sub": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9@e56c285996c30888ec7f914efc505974695a6ed0",
+    "sub": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4@ba01a740dcd58da9a5ed11dc6e06027b93cdbe6a",
     "literature": "LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8@33a7d8fbf91175a78002f3c2a9a6109fbefb0ff6",
-    "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7@35cd3434306a413ec6e90d83a2618cd9101a0d88",
-    "methodology": "METHCAL-20260922T122122+0900-R58-B84F2D17@623297013cad5a6c80037497d5236b581a87277d",
-    "steward": "STEWARD-20260922T075212+0900-G9-8C4E21D3@a3ab4f4f70c4782e7ff916838c33a64eb0a9c2dd",
-    "utility": "UTILITY-20260922T123800+0900-AUTO-EQUIV-CI-STATE-RECON-COMPLETED-6B4E21F9@02da65ee08790e0f4a3eb5b4c364cf954f80aa57",
-    "previous_evidence_analyst": "EVA-20260922T124300+0900-R61-C7F421A9@4f55a65744385431ec73d1dec4ed32b7b20a63d8"
+    "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
+    "methodology": "METHCAL-20260922T132125+0900-R59-F4C7A21D@31a0e2df7cc0560912fddd3159d925c531028027",
+    "steward": "STEWARD-20260922T135014+0900-G10-4D8C21A7@b3b69553df32f5eb998d1c29cbe29ee1c34a93aa",
+    "utility": "UTILITY-20260922T133300+0900-AUTO-READER-VERSION-DRIFT-COMPLETED-3F8A61C2@c22ed038e80292808b11e503ba423975a76a9929",
+    "previous_evidence_analyst": "EVA-20260922T130900+0900-R62-D4A7C21F@d93bfe4ac1d4ed752fa8ca1074b1794a69d08682"
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_parent": "4f55a65744385431ec73d1dec4ed32b7b20a63d8",
+    "analyst_parent": "d93bfe4ac1d4ed752fa8ca1074b1794a69d08682",
     "control_tip": "c41db58a5cc87e5460f143ce07c4256d7238d577",
-    "orchestrator_tip": "8d9479100cb0df994efd33ac2d53670b809bf40a",
+    "orchestrator_tip": "ba01a740dcd58da9a5ed11dc6e06027b93cdbe6a",
     "external_tip": "33a7d8fbf91175a78002f3c2a9a6109fbefb0ff6",
-    "methodology_tip": "623297013cad5a6c80037497d5236b581a87277d",
-    "steward_tip": "a3ab4f4f70c4782e7ff916838c33a64eb0a9c2dd",
-    "utility_tip": "02da65ee08790e0f4a3eb5b4c364cf954f80aa57",
+    "methodology_tip": "31a0e2df7cc0560912fddd3159d925c531028027",
+    "steward_tip": "b3b69553df32f5eb998d1c29cbe29ee1c34a93aa",
+    "utility_tip": "c22ed038e80292808b11e503ba423975a76a9929",
     "active_research_refs": {
       "H7_DEV_R1": "c97af135742a7cd3af94c857f4d5b83d7707075d",
       "H7_DEV_R2": "ANALYST_AUTHORIZED_NOT_YET_MATERIALIZED",
@@ -46,42 +46,35 @@
     "sealed_tags": [],
     "freeze_tags": [],
     "ruleset_count": 0,
-    "prs": {
-      "148": "OPEN_UNMERGED",
-      "149": "OPEN_UNMERGED"
-    },
+    "prs": {"148": "OPEN_UNMERGED", "149": "OPEN_UNMERGED"},
     "workflows": {
-      "H7_CYCLE2_INITIAL_PREFLIGHT": "35685077726_COMPLETED_FAILURE_LINT_ONLY",
-      "H7_CYCLE2_POST_LINT_REPAIR": "35685243444_COMPLETED_SUCCESS@6ef33c717b6d892b8ac24cb12d605e0cf1d0315f",
       "H7_CYCLE2_EXACT_HEAD": "35685323080_COMPLETED_SUCCESS@c97af135742a7cd3af94c857f4d5b83d7707075d",
+      "H7_DEV_R2": "NO_BRANCH_NO_RUN",
       "UTILITY_EQUIV_REPAIR": "35680322003_COMPLETED_SUCCESS@9f9d18065b481d8597236b0b682f0574c251b319"
     }
   },
   "last_consumed_generations": {
     "control": "CTRL-20260922T124800+0900-R33-E7C421B6",
     "main": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9",
-    "sub": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9",
+    "sub": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4",
     "literature": "LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8",
     "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
-    "methodology": "METHCAL-20260922T122122+0900-R58-B84F2D17",
-    "steward": "STEWARD-20260922T075212+0900-G9-8C4E21D3",
-    "utility": "UTILITY-20260922T123800+0900-AUTO-EQUIV-CI-STATE-RECON-COMPLETED-6B4E21F9"
+    "methodology": "METHCAL-20260922T132125+0900-R59-F4C7A21D",
+    "steward": "STEWARD-20260922T135014+0900-G10-4D8C21A7",
+    "utility": "UTILITY-20260922T133300+0900-AUTO-READER-VERSION-DRIFT-COMPLETED-3F8A61C2"
   },
   "canonical_inheritance": {
     "base_generation_id": "EVA-20260922T120158+0900-R60-D5E721A4",
     "base_commit": "8cfdb2abb72ff0cfcf616d3400d578db7c20a84d",
-    "rule": "All 32 canonical candidate records and mandatory v2.1/development fields persist from R60/R61 except explicit H7 revision/allocation updates below; candidate 32 remains exactly terminal as inherited from R61.",
+    "override_chain": ["EVA-20260922T124300+0900-R61-C7F421A9", "EVA-20260922T130900+0900-R62-D4A7C21F", "EVA-20260922T140541+0900-R63-E8C421B7"],
+    "resolution_rule": "All 32 complete candidate records and mandatory v2.1/development fields persist from the exact base plus explicit later overrides. R63 changes no candidate field; it only refreshes upstream generations, SUB supply state, Methodology/Steward/Utility governance inputs, and blockers.",
     "classification_completeness": "32/32"
   },
   "development_policy": {
     "directive": "HUMAN-20260922-005",
     "control_R33": "ACCEPT_APPLIED_PROSPECTIVELY",
-    "methodology_R58": "ACCEPT_CORE_CALIBRATION_WITH_INTEGRITY_GUARDS",
-    "phases": [
-      "OPEN_DEVELOPMENT",
-      "RESULT_EXPOSED_DEVELOPMENT",
-      "CONSUMED_ONE_WAY"
-    ],
+    "methodology_R59": "KEEP_LIVE_ROLLOUT_POSITIVE_CALIBRATION_WITH_FORMAL_HARD_FLOOR",
+    "phases": ["OPEN_DEVELOPMENT", "RESULT_EXPOSED_DEVELOPMENT", "CONSUMED_ONE_WAY"],
     "cycle3": "MANDATORY_REASSESS_NOT_AUTOMATIC_TERMINAL",
     "science_invariant_repair_same_object": true,
     "science_affecting_change_after_result_exposure": "VERSIONED_DEVELOPMENT_REVISION_OR_FRESH_SUCCESSOR_PRESERVE_PRIOR_RESULT",
@@ -89,47 +82,15 @@
     "formal_hard_floor": "UNCHANGED"
   },
   "four_layer_funnel": {
-    "DISCOVERY": {
-      "canonical_MECHANISM_active": 0,
-      "canonical_SYSTEM_active": 0,
-      "state": "OPEN",
-      "question_formation_last_scan": "COMPLETED_ZERO_RETAINED"
-    },
-    "ARCHITECTURE_STUDY": {
-      "MECHANISM_active": 1,
-      "MECHANISM_queued": 0,
-      "SYSTEM_active": 0,
-      "SYSTEM_queued": 0,
-      "state": "ACTIVE"
-    },
-    "PRE_FORMAL": {
-      "eligible": 1,
-      "ready": 0,
-      "state": "EMPTY_READY_SET"
-    },
-    "FORMAL": {
-      "fresh_one_way_authority": 0,
-      "state": "EMPTY_HOLD"
-    }
+    "DISCOVERY": {"canonical_MECHANISM_active": 0, "canonical_SYSTEM_active": 0, "state": "OPEN", "question_formation_retained": 0},
+    "ARCHITECTURE_STUDY": {"MECHANISM_active": 1, "MECHANISM_queued": 0, "SYSTEM_active": 0, "SYSTEM_queued": 0, "state": "ACTIVE"},
+    "PRE_FORMAL": {"eligible": 1, "ready": 0, "state": "EMPTY_READY_SET"},
+    "FORMAL": {"fresh_one_way_authority": 0, "state": "EMPTY_HOLD"}
   },
-  "candidate_population": {
-    "total": 32,
-    "MECHANISM": 13,
-    "SYSTEM": 19,
-    "ACTIVE": 1,
-    "NONTERMINAL_HOLD": 0,
-    "TERMINAL_FOR_CURRENT_OBJECT": 31,
-    "classification_complete": 32
-  },
+  "candidate_population": {"total": 32, "MECHANISM": 13, "SYSTEM": 19, "ACTIVE": 1, "NONTERMINAL_HOLD": 0, "TERMINAL_FOR_CURRENT_OBJECT": 31, "classification_complete": 32},
   "development_phase_distribution": {
-    "canonical_candidates": {
-      "OPEN_DEVELOPMENT": 2,
-      "RESULT_EXPOSED_DEVELOPMENT": 30,
-      "CONSUMED_ONE_WAY": 0
-    },
-    "consumed_scientific_identities": {
-      "CONSUMED_ONE_WAY": 7
-    }
+    "canonical_candidates": {"OPEN_DEVELOPMENT": 2, "RESULT_EXPOSED_DEVELOPMENT": 30, "CONSUMED_ONE_WAY": 0},
+    "consumed_scientific_identities": {"CONSUMED_ONE_WAY": 7}
   },
   "candidate_overrides": {
     "7": {
@@ -146,53 +107,32 @@
         "supported_reachability": "PARTIAL",
         "functional_consequence": "PARTIAL",
         "matched_comparator_status": "PARTIAL",
-        "support_breadth": "Historical exploratory H7 plus DEV-R1 static contract and cycle-2 implementation preflight; all NON_EVIDENTIARY development inputs.",
-        "falsifier_fixed": {
-          "value": true,
-          "definition": "DEV-R2 inherits R1 phenomenon floor/effect/tolerance/reduction-direction/falsifier intent, substitutes the prospectively fixed V2 comparator semantics below, and adds intervention well-posedness as an INVALID_INTERVENTION condition."
-        },
-        "ordinary_reductions_specified_or_controlled": [
-          "ORDINARY_DENSE_RECURRENT_V1",
-          "FINITE_STATE_ROUTE_HISTORY_V2",
-          "ELIGIBILITY_ROUTE_LEDGER_V2",
-          "generic shared bottleneck",
-          "dormant/bypass artifact"
-        ],
-        "ordinary_reductions_unresolved": [
-          "implementation and conformance verification of DEV-R2 finite-state and ledger protocols",
-          "prospective intervention well-posedness conformance preflight"
-        ],
+        "support_breadth": "Historical exploratory H7 plus DEV-R1 static contract/cycle-2 implementation preflight; all NON_EVIDENTIARY development inputs.",
+        "falsifier_fixed": {"value": true, "definition": "DEV-R2 inherits R1 phenomenon floor/effect/tolerance/reduction direction and adds prospectively fixed V2 comparator semantics plus INVALID_INTERVENTION well-posedness handling."},
+        "ordinary_reductions_specified_or_controlled": ["ORDINARY_DENSE_RECURRENT_V1", "FINITE_STATE_ROUTE_HISTORY_V2", "ELIGIBILITY_ROUTE_LEDGER_V2", "generic shared bottleneck", "dormant/bypass artifact"],
+        "ordinary_reductions_unresolved": ["DEV-R2 comparator implementation/conformance", "prospective intervention-well-posedness conformance"],
         "open_scientific_choices": [],
-        "formal_claim_ceiling": "Mechanistic-distinctness/local-responsibility limited to the frozen intervention family and frozen four-world regime; no specificity/uniqueness/general superiority claim."
+        "formal_claim_ceiling": "Mechanistic-distinctness/local-responsibility limited to frozen intervention family and four-world regime; no specificity/uniqueness/general-superiority claim."
       },
       "hold_class": null,
       "hold_reason": null,
       "terminal_state": "ACTIVE",
       "queue_state": "ACTIVE",
-      "system_priority_exception": {
-        "used": false
-      },
+      "system_priority_exception": {"used": false},
       "candidate_source": "THEORY_BACKWARD",
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
       "development_revision": "H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE",
       "previous_development_revision": "H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT",
-      "cycle_count": {
-        "predecessor": "INHERITED_HISTORICAL_EXPLORATORY",
-        "completed_revision_cycles": 2,
-        "current_cycle": 3,
-        "cycle3_reassess": "REFRAME_VERSION_CONTINUE_DEV_R2"
-      },
-      "information_gain_rationale": "Cycle 2 proved implementation reachability for the native/dense harness while exposing two independent comparator-semantic gaps before any result surface was opened. Cycle 3 has prospectively new information gain by closing those gaps in a stronger well-posed comparator panel and applying R28 intervention-validity guidance without outcome-driven redesign.",
-      "promotion_rejection_reassess_condition": "Remain Architecture/NOT_READY through DEV-R2 contract materialization and exact non-result-bearing implementation conformance. If all semantics/conformance are complete, STOP for fresh Analyst review before development training/calibration/discriminator access. If another science-affecting ambiguity appears, STOP for a later versioned reassessment rather than local invention."
+      "cycle_count": {"completed_revision_cycles": 2, "current_cycle": 3, "cycle3_reassess": "REFRAME_VERSION_CONTINUE_DEV_R2"},
+      "information_gain_rationale": "Cycle 2 exposed comparator-semantic gaps before any result surface; cycle 3 can prospectively close them and implement intervention validity without outcome-driven redesign.",
+      "promotion_rejection_reassess_condition": "Remain Architecture/NOT_READY until DEV-R2 contract and non-result-bearing conformance are complete; STOP for fresh Analyst before training/calibration/discriminator or on any new science-affecting ambiguity."
     },
     "32": {
       "id": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
       "classification": "HOLD",
       "claim_ceiling": "SYSTEM",
       "preformal_eligible": false,
-      "preformal_readiness": {
-        "status": "NOT_APPLICABLE"
-      },
+      "preformal_readiness": {"status": "NOT_APPLICABLE"},
       "hold_class": "HOLD_METHOD_LIMITED",
       "hold_reason": "R50 predecessor exposed incomplete equivalence verification; predecessor result unchanged.",
       "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
@@ -202,250 +142,68 @@
       "development_revision": null,
       "cycle_count": 2,
       "fresh_successor_potential": "FRESH_SYSTEM_SUCCESSOR",
-      "information_gain_rationale": "Utility exact-head CI is green, but predecessor remains terminal and trusted producer/raw-to-digest assurance is still required for a fresh successor.",
+      "information_gain_rationale": "Verifier CI is green and now has fresh Steward review, but trusted producer/raw-to-digest/process-isolation assurance remains unresolved; predecessor stays terminal.",
       "promotion_rejection_reassess_condition": "Fresh SYSTEM successor only with new candidate ID and prospectively fixed trusted equivalence/resource contract."
     }
   },
-  "h7_dev_r1_cycle2_disposition": {
-    "research_head": "c97af135742a7cd3af94c857f4d5b83d7707075d",
-    "preflight_artifact": "artifacts/architecture_h7_dev_r1/cycle2_preflight.json",
-    "ci": "35685323080_COMPLETED_SUCCESS",
-    "evidentiary_status": "NON_EVIDENTIARY_IMPLEMENTATION_PREFLIGHT_NO_SCIENTIFIC_RESULT",
-    "science_invariant_repairs": [
-      "Ruff E402/I001 optional-torch test import-layout suppression only"
-    ],
-    "science_affecting_gaps": [
-      "FINITE_STATE_ROUTE_HISTORY_V1.fit_state_closure_and_unseen_state_policy",
-      "ELIGIBILITY_ROUTE_LEDGER_V1.event_encoder_provenance_training_and_calibration_protocol"
-    ],
+  "h7_dev_r2_status": {
+    "authorization": "GO_IMPLEMENTATION_ONLY",
+    "research_branch_materialized": false,
+    "current_research_head": "c97af135742a7cd3af94c857f4d5b83d7707075d",
+    "current_head_is": "DEV_R1_CYCLE2_PREFLIGHT_PRESERVED",
     "result_exposure": false,
-    "disposition": "PRESERVE_R1_UNCHANGED_AND_VERSION_TO_DEV_R2"
+    "new_scientific_workflow": false,
+    "new_identity_consumption": false,
+    "decision": "GO_H7_DEV_R2_VERSIONED_PROTOCOL_CLOSURE_CYCLE3_IMPLEMENTATION_ONLY_STOP_BEFORE_TRAINING_CALIBRATION_DISCRIMINATOR_OR_OTHER_RESULT_BEARING_DEVELOPMENT"
   },
-  "h7_dev_r2_prospective_contract_delta": {
-    "change_classification": "SCIENCE_AFFECTING_CHANGE_EXPLICIT_VERSIONED_DEVELOPMENT_REVISION",
-    "new_information_gain_sources": [
-      "R1 cycle-2 independently identified comparator specification defects before result exposure",
-      "Literature R28 intervention-admissibility/abstraction/regime guidance"
-    ],
-    "preserve_unchanged": [
-      "DEV-R1 contract and cycle-2 preflight artifacts",
-      "historical H7 exploratory result",
-      "claim scope and MECHANISM ceiling",
-      "TOP1_SELECTED_LOCAL_NODE_CUT_V1 intervention target/application point",
-      "four worlds and all fit/calibration/discriminator seed identities",
-      "native and dense model seeds/training budget",
-      "positive phenomenon floor",
-      "primary delta_accuracy and secondary probability-TV metrics",
-      "1e-7 numerical no-change tolerance",
-      "reduction direction and capacity-limit inconclusive rule",
-      "FORMAL untouched-surface requirement"
-    ],
-    "finite_state_route_history_v2": {
-      "id": "FINITE_STATE_ROUTE_HISTORY_V2",
-      "state_key": "(previous_unperturbed_rank1_route_or_START,current_route_token)",
-      "baseline_current_token": "current unperturbed rank-1 route",
-      "cut_current_token": "CUT",
-      "previous_token_update": "advance only with unperturbed baseline rank-1 route; cut state is never carried",
-      "fit_rows": "for every fit step add baseline and paired cut row with the same fit target",
-      "prediction": "fit-count majority with lexical label tie-break",
-      "unseen_state_policy": "global fit-split majority label with lexical label tie-break",
-      "episode_reset": "previous token START",
-      "calibration_or_discriminator_tuning": "FORBIDDEN"
-    },
-    "eligibility_route_ledger_v2": {
-      "id": "ELIGIBILITY_ROUTE_LEDGER_V2",
-      "event_encoder": "detached frozen copy of the fitted native DEV-R2 event encoder; identical current external event fields; encoder receives no comparator gradient/update",
-      "ledger_rule": "inherit R1 e=0.90*e+multi_hot(selected); cut excludes selected[0], forces that coordinate to zero for current paired prediction, then discards cut ledger",
-      "head": "3-class linear head on concat(12-d ledger,24-d frozen native event encoding)",
-      "head_seed": 7603,
-      "optimizer": "torch.optim.Adam default betas/eps, lr=0.012, weight_decay=0",
-      "loss": "cross_entropy only",
-      "epochs": 4,
-      "episode_order": "torch.randperm over fit episodes using generator seed 7603+epoch",
-      "training_schedule": "ledger reset per episode; zero_grad per episode; baseline fit trajectory only; mean episode CE; clip_grad_norm=2.0; one optimizer step per episode",
-      "calibration_operation": "IDENTITY_NO_TUNABLE_CALIBRATION; calibration may only support fixed conformance/finite-output diagnostics and may not change weights/temperature/threshold/exclusions/hyperparameters",
-      "discriminator_tuning": "FORBIDDEN"
-    },
-    "literature_r28_disposition": {
-      "intervention_well_posedness": "REQUIRED_IMPLEMENTATION_VALIDITY_CONTRACT: frozen deterministic selection, single-valued finite outputs, unchanged non-target input/parameters/RNG, shape/dtype preservation, no cut-state carryover; failure => INVALID_INTERVENTION",
-      "abstraction_map": "NOT_APPLICABLE_CURRENT_REVISION_NATIVE_ROUTE_STATE_NO_LEARNED_ALIGNMENT",
-      "regime_scope": "EXACT_FOUR_FROZEN_WORLDS_ONLY_NO_GENERALIZATION_CLAIM",
-      "intervention_aware_dynamics": "existing dense recurrent comparator remains intervention-mapped; do not silently add a new reservoir/iSSM member or make it a hidden READY gate"
-    },
-    "cycle3_authorization": {
-      "decision": "GO_H7_DEV_R2_VERSIONED_PROTOCOL_CLOSURE_CYCLE3_IMPLEMENTATION_ONLY_STOP_BEFORE_TRAINING_CALIBRATION_DISCRIMINATOR_OR_OTHER_RESULT_BEARING_DEVELOPMENT",
-      "allowed": [
-        "persist DEV-R2 prospective contract before scientific execution",
-        "implement exact finite-state V2 and ledger V2 semantics",
-        "implement intervention-well-posedness and contract-conformance tests",
-        "apply science-invariant lint/import/build/path/serialization/logging/hash repairs with durable provenance"
-      ],
-      "forbidden": [
-        "native or comparator fit training",
-        "calibration surface reading beyond non-result-bearing synthetic/unit conformance",
-        "discriminator materialization or reading",
-        "scientific metric/outcome computation",
-        "unapproved change to intervention/metric/tolerance/seeds/splits/comparator/resource/privilege/falsifier/claim scope",
-        "PRE_FORMAL or FORMAL execution",
-        "consumed identity use"
-      ],
-      "stop": "After exact implementation/conformance or immediately upon any new science-affecting ambiguity; return to fresh Analyst review."
-    }
-  },
-  "system_terminal_fresh_successor_potential": {
-    "assessed": 19,
-    "fresh_SYSTEM_successor": [1,3,4,5,6,10,15,19,20,21,22,25,29,30,31,32],
-    "fresh_MECHANISM_successor": [],
-    "none": [14,27,28]
-  },
+  "system_terminal_fresh_successor_potential": {"assessed": 19, "fresh_SYSTEM_successor": [1,3,4,5,6,10,15,19,20,21,22,25,29,30,31,32], "fresh_MECHANISM_successor": [], "none": [14,27,28]},
   "consumed_identity_registry": {
     "count": 7,
     "phase": "CONSUMED_ONE_WAY",
-    "identities": [
-      "c19-external-v2-official-v4",
-      "c19-r1-revision-authority-official-v1",
-      "c19-r1-revision-authority-official-v2",
-      "c19-r2-fsa-state-tracker-official-v1",
-      "h5-event-routing-work-reduction-official-v1",
-      "ni01-no-ignition-selective-prediction-official-v1",
-      "pd01-long-history-fading-memory-official-v1"
-    ]
+    "identities": ["c19-external-v2-official-v4", "c19-r1-revision-authority-official-v1", "c19-r1-revision-authority-official-v2", "c19-r2-fsa-state-tracker-official-v1", "h5-event-routing-work-reduction-official-v1", "ni01-no-ignition-selective-prediction-official-v1", "pd01-long-history-fading-memory-official-v1"]
   },
   "funnel_metrics": {
-    "discovery_dispositions": {
-      "REJECT": 2,
-      "HOLD_SYSTEM_TERMINAL": 1,
-      "HOLD_MECHANISM_UNRESOLVED": 1
-    },
-    "theory_backward": {
-      "rolling_autonomous_selections": ["MECHANISM","SYSTEM","SYSTEM"],
-      "qualifying_share": "1/3",
-      "question_formation_denominator_excluded": true,
-      "no_target_episode": {
-        "id": "NTE-20260921-R34-POST-REPLAY-v1",
-        "state": "CLOSED",
-        "canonical_check_count": 23,
-        "interpretation": "LIVENESS_ONLY_NOT_MECHANISM_ABSENCE_EVIDENCE"
-      }
-    },
-    "architecture": {
-      "active": {"MECHANISM": 1, "SYSTEM": 0},
-      "queued": {"MECHANISM": 0, "SYSTEM": 0},
-      "historical_dispositions": {
-        "REJECT": 0,
-        "HOLD_SYSTEM_TERMINAL": 7,
-        "HOLD_METHOD_LIMITED": 3,
-        "HOLD_CONTRACT_AMBIGUITY": 2,
-        "HOLD_MECHANISM_UNRESOLVED": 1
-      }
-    },
-    "terminal_state_counts": {
-      "ACTIVE": 1,
-      "NONTERMINAL_HOLD": 0,
-      "TERMINAL_FOR_CURRENT_OBJECT": 31
-    },
+    "discovery_dispositions": {"REJECT": 2, "HOLD_SYSTEM_TERMINAL": 1, "HOLD_MECHANISM_UNRESOLVED": 1},
+    "theory_backward": {"rolling_autonomous_selections": ["MECHANISM", "SYSTEM", "SYSTEM"], "qualifying_share": "1/3", "question_formation_and_pre_no_op_scan_denominator_excluded": true, "no_target_episode": {"id": "NTE-20260921-R34-POST-REPLAY-v1", "state": "CLOSED", "canonical_check_count": 23, "interpretation": "LIVENESS_ONLY_NOT_MECHANISM_ABSENCE_EVIDENCE"}},
+    "architecture": {"active": {"MECHANISM": 1, "SYSTEM": 0}, "queued": {"MECHANISM": 0, "SYSTEM": 0}, "historical_dispositions": {"REJECT": 0, "HOLD_SYSTEM_TERMINAL": 7, "HOLD_METHOD_LIMITED": 3, "HOLD_CONTRACT_AMBIGUITY": 2, "HOLD_MECHANISM_UNRESOLVED": 1}},
+    "terminal_state_counts": {"ACTIVE": 1, "NONTERMINAL_HOLD": 0, "TERMINAL_FOR_CURRENT_OBJECT": 31},
     "preformal_eligible": 1,
     "preformal_ready": 0,
     "viable_mechanism_candidates": 1,
-    "recent_main_cycles": {
-      "SYSTEM": 11,
-      "MECHANISM": 5,
-      "latest": "H7_DEV_R1_CYCLE2_IMPLEMENTATION_PREFLIGHT_BLOCKED_AT_PROSPECTIVE_SPEC_GAP",
-      "wall_clock_time_split": "NOT_COMPARABLE_FROM_RUN_COUNTS"
-    },
+    "recent_main_cycles": {"SYSTEM": 11, "MECHANISM": 5, "latest": "H7_DEV_R1_CYCLE2_IMPLEMENTATION_PREFLIGHT_BLOCKED_AT_PROSPECTIVE_SPEC_GAP", "wall_clock_time_split": "NOT_COMPARABLE_FROM_RUN_COUNTS"},
     "system_over_mechanism_exceptions": {"count": 0, "reasons": []},
     "classification_completeness": {"total_material_canonical_candidates": 32, "complete": 32},
-    "development_phase_counts": {
-      "OPEN_DEVELOPMENT": 2,
-      "RESULT_EXPOSED_DEVELOPMENT": 30,
-      "CONSUMED_ONE_WAY": 0
-    },
-    "cycle3_reassess": {
-      "outcomes_this_run": 1,
-      "current_objects_at_cycle3": 1,
-      "outcomes": ["CAND-H7-RESPONSIBILITY:REFRAME_VERSION_CONTINUE_DEV_R2"]
-    },
-    "fresh_successors": {
-      "system_terminal_objects_assessed": 19,
-      "fresh_system_potential": 16,
-      "fresh_mechanism_potential": 0,
-      "none": 3,
-      "generated_this_run": 0,
-      "admitted_this_run": 0
-    },
-    "development_revisions": {
-      "active": 1,
-      "ids": ["H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE"],
-      "prior_preserved": ["H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT"]
-    },
-    "question_formation_discovery": {
-      "authorized": true,
-      "canonical": false,
-      "evidentiary": false,
-      "completed_scans": 1,
-      "retained_questions": 0,
-      "latest_generation": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9",
-      "next_state": "IDLE_UNTIL_FRESH_NON_MAIN_SUPPLY_DELTA"
-    },
-    "phenomenon_shadow_metrics": {
-      "trigger_active": false,
-      "trigger_reason": "H7_VERSIONED_MECHANISM_ARCHITECTURE_TARGET_EXISTS",
-      "proposals_generated_total": 5,
-      "retained": 0,
-      "rejected_duplicate_or_rescue": 2,
-      "rejected_ordinary_reduction_no_residual": 2,
-      "later_admissions": 1,
-      "executed_shadow_origin": 1,
-      "new_proposals_this_run": 0
-    }
+    "development_phase_counts": {"OPEN_DEVELOPMENT": 2, "RESULT_EXPOSED_DEVELOPMENT": 30, "CONSUMED_ONE_WAY": 0},
+    "cycle3_reassess": {"outcomes_this_generation": 0, "most_recent": "CAND-H7-RESPONSIBILITY:REFRAME_VERSION_CONTINUE_DEV_R2"},
+    "fresh_successors": {"system_terminal_objects_assessed": 19, "fresh_system_potential": 16, "fresh_mechanism_potential": 0, "none": 3, "generated_this_generation": 0, "admitted_this_generation": 0},
+    "question_formation_discovery": {"canonical": false, "evidentiary": false, "completed_qfd_scans": 1, "completed_required_pre_no_op_scans": 1, "retained_questions": 0, "latest_generation": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4", "next_state": "NO_OP_UNTIL_FRESH_NON_MAIN_SUPPLY_DELTA_OR_EXPLICIT_ALLOCATION"},
+    "phenomenon_shadow_metrics": {"trigger_active": false, "trigger_reason": "H7_VERSIONED_MECHANISM_ARCHITECTURE_TARGET_EXISTS", "proposals_generated_total": 5, "retained": 0, "rejected_duplicate_or_rescue": 2, "rejected_ordinary_reduction_no_residual": 2, "later_admissions": 1, "executed_shadow_origin": 1, "new_proposals_this_generation": 0}
   },
   "external_inputs": {
-    "control_R33": "Formal hold with active H7 mechanism Architecture; supports HUMAN-005/007 and requires R28 to enter only via explicit reassessment/versioning.",
-    "literature_R28": "New intervention admissibility, abstraction-map privilege, regime coverage and intervention-aware dynamical reduction guidance; prospective only.",
-    "audit_R6": "PD01 consumed/immutable; frozen FAIL valid; narrative ceiling limited to no demonstrated long-lag recovery/no advantage over fixed reservoir.",
-    "methodology_R58": "Flexible/versioned development and strict consumed evidence; cycle3 reassess and PRE_FORMAL iteration are valid; no hidden second Formal gate.",
-    "steward_G9": "Governance-only and stale relative to current directives/H7/Utility; fresh review pending.",
-    "utility": "Exact repaired head CI-green; fresh Steward review false; merge/promotion unauthorized; semantic trust limits remain."
+    "control_R33": "Strategic prior: Formal hold with active H7 MECHANISM Architecture; HUMAN-005/006/007 accepted prospectively.",
+    "literature_R28": "Intervention admissibility, abstraction-map privilege, regime coverage and intervention-aware dynamical reduction guidance; prospective only.",
+    "audit_R6": "PD01 consumed/immutable; frozen FAIL valid; narrative ceiling is no demonstrated long-lag recovery/no advantage over fixed reservoir, not positive mechanistic reduction.",
+    "methodology_R59": "Material positive calibration of live development rollout; versioned DEV-R2 handling is appropriate; result-bearing retune accounting and live iterative PRE_FORMAL remain untested; FORMAL floor unchanged.",
+    "steward_G10": "Fresh governance review: active H7 isolated from main with no result exposure/identity consumption; equivalence verifier defer pending trust-boundary clarification; reader docs-only navigation refresh potentially reviewable without root version bump.",
+    "utility": "Reader navigation drift confirmed; root distribution migration semantics underdetermined and unsafe to autofix; no scientific authority."
   },
   "allocation": {
     "main_lane": "H7_DEV_R2_VERSIONED_COMPARATOR_PROTOCOL_CLOSURE_ARCHITECTURE_CYCLE3_IMPLEMENTATION_ONLY",
-    "sub_lane": "INDEPENDENT_IDLE_AFTER_ZERO_RETAINED_QUESTION_FORMATION_UNTIL_FRESH_NON_MAIN_SUPPLY_DELTA",
+    "sub_lane": "NO_OP_AFTER_REQUIRED_SCAN_UNTIL_MATERIALLY_FRESH_NON_MAIN_SUPPLY_DELTA_OR_EXPLICIT_INDEPENDENT_ALLOCATION",
     "sub_fallback": "NO_OP_WITHOUT_RESCANNING_UNCHANGED_SURFACES",
     "system_priority_exception": {"used": false}
   },
   "top3": [
-    {
-      "rank": 1,
-      "claim_ceiling": "MECHANISM",
-      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "action_type": "VERSIONED_REVISION_CYCLE3_REASSESS",
-      "action": "Materialize and implement H7 DEV-R2 comparator-protocol closure and intervention-validity conformance without training or result surfaces.",
-      "decision": "GO_H7_DEV_R2_VERSIONED_PROTOCOL_CLOSURE_CYCLE3_IMPLEMENTATION_ONLY_STOP_BEFORE_TRAINING_CALIBRATION_DISCRIMINATOR_OR_OTHER_RESULT_BEARING_DEVELOPMENT"
-    },
-    {
-      "rank": 2,
-      "claim_ceiling": "NOT_ASSIGNED_NONCANONICAL",
-      "development_phase": "OPEN_DEVELOPMENT",
-      "action_type": "QUESTION_FORMATION_SUPPLY",
-      "action": "SUB remains independent-idle after zero-retained scan and may rescan only on materially fresh non-MAIN supply input.",
-      "decision": "STOP_CURRENT_UNCHANGED_SURFACES_GO_ONLY_ON_FRESH_SUPPLY_DELTA"
-    },
-    {
-      "rank": 3,
-      "claim_ceiling": "SYSTEM",
-      "development_phase": "OPEN_DEVELOPMENT_PROPOSED_SUCCESSOR",
-      "action_type": "FRESH_SUCCESSOR",
-      "action": "Fresh #32-family SYSTEM successor after trusted equivalence and fresh resource contract; predecessor remains terminal.",
-      "decision": "STOP_UNTIL_FRESH_SYSTEM_SUCCESSOR_CONTRACT_AND_TOOLING_TRUST_READY"
-    }
+    {"rank": 1, "claim_ceiling": "MECHANISM", "development_phase": "RESULT_EXPOSED_DEVELOPMENT", "action_type": "VERSIONED_REVISION_CYCLE3_IMPLEMENTATION", "action": "Materialize and implement H7 DEV-R2 comparator-protocol closure and intervention-validity conformance without training or result surfaces.", "decision": "GO_H7_DEV_R2_VERSIONED_PROTOCOL_CLOSURE_CYCLE3_IMPLEMENTATION_ONLY_STOP_BEFORE_TRAINING_CALIBRATION_DISCRIMINATOR_OR_OTHER_RESULT_BEARING_DEVELOPMENT"},
+    {"rank": 2, "claim_ceiling": "NOT_ASSIGNED_NONCANONICAL", "development_phase": "OPEN_DEVELOPMENT", "action_type": "INDEPENDENT_SUPPLY", "action": "SUB no-ops after completed required scan; resume only on materially fresh non-MAIN supply delta or explicit independent allocation.", "decision": "STOP_CURRENT_UNCHANGED_SURFACES_GO_ONLY_ON_FRESH_SUPPLY_DELTA"},
+    {"rank": 3, "claim_ceiling": "SYSTEM", "development_phase": "OPEN_DEVELOPMENT_PROPOSED_SUCCESSOR", "action_type": "FRESH_SUCCESSOR", "action": "Fresh #32-family SYSTEM successor after trusted equivalence and fresh resource contract; predecessor remains terminal.", "decision": "STOP_UNTIL_FRESH_SYSTEM_SUCCESSOR_CONTRACT_AND_TOOLING_TRUST_READY"}
   ],
   "number1_go_stop": "GO_H7_DEV_R2_VERSIONED_PROTOCOL_CLOSURE_CYCLE3_IMPLEMENTATION_ONLY_STOP_BEFORE_TRAINING_CALIBRATION_DISCRIMINATOR_OR_OTHER_RESULT_BEARING_DEVELOPMENT",
   "blockers": [
     "H7 DEV-R2 contract not yet materialized/implemented",
     "H7 PRE_FORMAL readiness remains NOT_READY",
     "result-bearing Architecture/PRE_FORMAL development not authorized in cycle3",
-    "Utility semantic trust boundary remains unresolved despite green CI",
-    "fresh Steward review remains pending",
+    "Utility equivalence certificate trust boundary remains unresolved despite green CI and fresh Steward G10 review",
     "#31 exposure-accounting method limit",
     "protected-set validity/feedback regime unresolved",
     "fresh FORMAL authority absent",
@@ -453,14 +211,13 @@
     "action-policy real-visit versus observational-probe ambiguity",
     "historical Assembly attribution confound"
   ],
+  "governance_watch": {
+    "rulesets": 0,
+    "pr148": "OPEN_UNMERGED_REVIEW_FIX_PENDING",
+    "pr149": "OPEN_UNMERGED_REVIEW_FIX_PENDING",
+    "reader_version_drift": "CONFIRMED_ROOT_VERSION_MIGRATION_UNDERDETERMINED_DOC_ONLY_NAVIGATION_REFRESH_POTENTIALLY_SAFE",
+    "equivalence_verifier": "DEFER_MAIN_PROMOTION_PENDING_EXPLICIT_TRUST_BOUNDARY"
+  },
   "utility_request": null,
-  "integrity": {
-    "scientific_experiment_execution": false,
-    "scientific_workflow_dispatch": false,
-    "one_way_identity_consumption": false,
-    "research_pr_merge": false,
-    "immutable_evidence_control_preserve_mutation": false,
-    "scheduler_mutation": false,
-    "historical_pass_fail_rewrite": false
-  }
+  "integrity": {"scientific_experiment_execution": false, "scientific_workflow_dispatch": false, "one_way_identity_consumption": false, "research_pr_merge": false, "immutable_evidence_control_preserve_mutation": false, "scheduler_mutation": false, "historical_pass_fail_rewrite": false}
 }
