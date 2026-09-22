@@ -1,124 +1,264 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260923T064336+0900-QFD-ASSEMBLY-INTERVENTIONAL-EQUIV-R87-8F4C21A7",
-  "produced_at": "2026-09-23T06:43:36+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260923T064336+0900-QFD-ASSEMBLY-INTERVENTIONAL-EQUIV-R87-8F4C21A7",
-  "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_QUESTION_FORMATION_DISCOVERY_CONTROL_PLANE_PERSISTENCE_ONLY",
-  "supersedes_generation_id": "SUB-20260923T053741+0900-NOOP-SCAN-R86-62D4A1B7",
+  "generation_id": "SUB-20260923T074100+0900-DISC-C34-ROUTE-CONTRACT-R88-D5A7C219",
+  "produced_at": "2026-09-23T07:41:00+09:00",
+  "producer_run_id": "SUB-RUN-SUB-20260923T074100+0900-DISC-C34-ROUTE-CONTRACT-R88-D5A7C219",
+  "authority_scope": "SUB_ANALYST_AUTHORIZED_CANONICAL_DISCOVERY_R1_CONTROL_PLANE_PERSISTENCE_ONLY_NON_EVIDENTIARY",
+  "supersedes_generation_id": "SUB-20260923T064336+0900-QFD-ASSEMBLY-INTERVENTIONAL-EQUIV-R87-8F4C21A7",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T061000+0900-R87-7B3D91E4@f03769227e888a70ea674eb627d4d311a1229c95",
-    "main": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4@ops/orchestrator-run-report",
-    "previous_sub": "SUB-20260923T053741+0900-NOOP-SCAN-R86-62D4A1B7@ops/orchestrator-run-report",
+    "evidence_analyst": "EVA-20260923T065834+0900-R88-D5A7C219@3341ad00ade796d9a3b80dd61c7386fc8b3e07b7",
+    "main": "MAIN-20260923T071545+0900-PRIMARY-H7-FORMALR5-C12-R88-PREIDENTITY-3A7C5D21@ops/orchestrator-run-report",
+    "previous_sub": "SUB-20260923T064336+0900-QFD-ASSEMBLY-INTERVENTIONAL-EQUIV-R87-8F4C21A7@ops/orchestrator-run-report",
     "control_brain": "CTRL-20260923T055000+0900-R39-C31A7D52@ops/control-brain-handoff",
     "literature": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7@ops/external-research-audit-handoff",
     "independent_audit": "AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4@ops/external-research-audit-handoff",
-    "methodology": "METHCAL-20260923T062034+0900-R74-A3F7C912@ops/methodology-calibration-audit",
+    "methodology": "METHCAL-20260923T073000+0900-R75-C8D41B6E@ops/methodology-calibration-audit",
     "utility": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91@ops/utility-orchestrator-requests"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "f03769227e888a70ea674eb627d4d311a1229c95",
-    "orchestrator_tip_before_write": "5b116229ae1f91c4d69f2866825797c0a2e59b77",
-    "main_active_branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
-    "main_active_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
-    "evidence_tag_objects": ["4d6c0bd9a6c06c17352941d3fa730502e72b8540","82b88f3e2ad524fed8b72300dcba46053c1f2c7e","e7d99cc806206ac27ced225d4779c9fc5bb67ff5","185b741e69ea8a0ce0d076153d36e9296a748765","e4c4e6428d8ef9e09e92cae231041de0788162e2"]
+    "analyst_handoff": "3341ad00ade796d9a3b80dd61c7386fc8b3e07b7",
+    "orchestrator_tip_before_history_write": "9c80901fc650ead5687bf676b39402b0ba736ea7",
+    "history_commit": "9fba0d7cc96f2f655e05ddb96318695fd9ec11eb",
+    "main_active_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+    "main_active_head": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
+    "evidence_tag_objects": [
+      "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+      "185b741e69ea8a0ce0d076153d36e9296a748765",
+      "e4c4e6428d8ef9e09e92cae231041de0788162e2"
+    ]
   },
   "allocation": {
-    "main_lane": "H7_FORMAL_R4_CYCLE11_EXACT_TEST_AND_RUNTIME_MISMATCH_DIAGNOSTIC_SCIENCE_INVARIANT_REPAIR_IF_CONFIRMED_PREIDENTITY_ONLY",
-    "sub_lane": "INDEPENDENT_NON_EVIDENTIARY_QUESTION_FORMATION_THEORY_BACKWARD_SUPPLY_SCAN_ONLY_WHEN_FRESH_INFORMATION_GAIN_EXISTS",
-    "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_AT_MOST_ONE_BOUNDED_AUTONOMOUS_RESEARCH_TASK",
+    "main_lane": "H7_FORMAL_R5_CONTENT_ADDRESSED_RUNTIME_IDENTITY_AND_PROVISIONING_PROVENANCE_SPLIT_CYCLE12_PREIDENTITY_ONLY",
+    "sub_lane": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY_DISCOVERY_R1_NON_EVIDENTIARY",
+    "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_AT_MOST_ONE_BOUNDED_AUTONOMOUS_RESEARCH_TASK_IF_ALLOCATED_DISCOVERY_BECOMES_UNUSABLE",
     "system_priority_exception": {"used": false}
   },
-  "candidate_pool": {"total":33,"MECHANISM":13,"SYSTEM":20,"ACTIVE":1,"NONTERMINAL_HOLD":0,"TERMINAL_FOR_CURRENT_OBJECT":32,"preformal_eligible":1,"preformal_ready":1,"fresh_formal_authority":0},
+  "candidate_pool": {
+    "total": 34,
+    "MECHANISM": 14,
+    "SYSTEM": 20,
+    "ACTIVE": 1,
+    "QUEUED": 1,
+    "NONTERMINAL_HOLD": 0,
+    "TERMINAL_FOR_CURRENT_OBJECT": 32,
+    "preformal_eligible": 2,
+    "preformal_ready": 1,
+    "fresh_formal_authority": 0
+  },
   "main_owned_object": {
     "id": "CAND-H7-RESPONSIBILITY",
     "claim_ceiling": "MECHANISM",
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
+    "development_revision": "H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-AND-PROVISIONING-PROVENANCE-SPLIT",
     "terminal_state": "ACTIVE",
     "queue_state": "ACTIVE",
-    "status": "BLOCKED_ON_FROZEN_TORCH_RECORD_HASH_BINDING_PENDING_FRESH_ANALYST_REASSESSMENT",
+    "status": "WAITING_EXTERNAL_PREIDENTITY_EXACT_HEAD_CHECKS",
     "main_owned": true,
-    "active_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+    "active_head": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
     "result_authority": false
   },
-  "operating_mode": "AUTONOMOUS_SECONDARY_RESEARCH",
-  "discovery_mode": "QUESTION_FORMATION_DISCOVERY",
-  "selected_target": "QSEED-V05-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY-01",
-  "work_kind": "CANDIDATE_SEED_AND_FRESH_SUCCESSOR_PROPOSAL_NONCANONICAL",
-  "canonical_status": "NONCANONICAL_QUESTION_SEED",
-  "development_phase_at_entry": null,
-  "development_revision": null,
-  "cycle_count": {"question_formation_cycle":1,"status":"CLOSED_WITH_FRESH_SUCCESSOR_SEED"},
-  "reassessment_rationale": "Fresh Literature R34 post-dates R87 and adds a new identifiability reduction: causal effect under a finite intervention family need not identify a unique causal route graph. Stable v0.5 exposes a route-bearing recurrent topology and theory-level edge/timing intervention vocabulary, while its retained causal evaluator and prior Assembly-set necessity line use assembly/unit lesions. This creates a materially new question about intervention-family separating power rather than repeating necessity/selectivity.",
-  "main_independence": {"status":"PASS_NO_COLLISION","reason":"Selected seed is scoped to historical stable-v0.5 Assembly and does not touch active MAIN-owned H7 R4 blockers, source, runtime, identity, evaluation, scorer, preserve, or successor."},
+  "operating_mode": "ANALYST_AUTHORIZED_CANONICAL_DISCOVERY",
+  "discovery_mode": "THEORY_BACKWARD_MECHANISM_DISCOVERY",
+  "selection_authority": "EVIDENCE_ANALYST_R88_CANONICAL_ALLOCATION",
+  "selected_target": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
+  "candidate_ordinal": 34,
+  "work_kind": "CANONICAL_DISCOVERY_R1_CONTRACT_AND_ARCHITECTURE_REACHABILITY",
+  "canonical_status": "CANONICAL_DISCOVERY",
+  "development_phase_at_entry": "OPEN_DEVELOPMENT",
+  "development_revision": "DISCOVERY-R1",
+  "cycle_count": {
+    "discovery_cycle": 1,
+    "status": "CLOSED_WITH_COHERENT_CONTRACT_AND_ARCHITECTURE_REACHABILITY"
+  },
+  "reassessment_rationale": "R88 admitted the prior R34-derived question seed as canonical candidate #34 and explicitly allocated Discovery R1 to define the temporal route object, bounded edge/timing separating family, reductions, reachability, and falsifier without experiment dispatch. Stable source inspection adds concrete reachability information and one material implementation caveat: connection edits affect future propagation, but already queued SynapticArrival objects retain fixed current/time and therefore require a quiescent intervention anchor.",
+  "main_independence": {
+    "status": "PASS_NO_COLLISION",
+    "reason": "Candidate #34 is the Analyst-allocated independent SUB lane. MAIN exclusively owns H7 R5; SUB touched no H7 source, runtime, blocker, successor, identity, preserve, scorer, protected evaluation, or result-bearing surface."
+  },
   "pre_no_op_scan": {
-    "performed": true,
+    "performed": false,
     "no_op_gate_triggered": false,
-    "result": "ONE_SAFE_BOUNDED_NONCANONICAL_QFD_SELECTED_FROM_FRESH_R34_DELTA",
-    "surfaces": {
-      "terminal_successors": "Candidate 33 has no new auditability-specific residual. Historical Assembly causal-necessity/selectivity objects remain terminal, but R34 supplies a materially distinct route-identifiability residual based on intervention-family equivalence.",
-      "theory_backward": "Selected bounded theory-backward question seed on whether explicit temporal route features can be identified beyond an interventional equivalence class by a prospective separating edge/timing intervention family.",
-      "phenomenon_shadow": "No separate phenomenon-first shadow retained; R34 identifiability residual is the single task.",
-      "literature": "R34 is genuinely new and adds equivalence-class/separating-design/temporal-causal-object reduction requirements.",
-      "audit": "R7 remains H7-specific preserve-before-score integrity and collides with MAIN.",
-      "methodology": "R74 is material but concerns H7 runtime versus installation/host provenance and is MAIN-critical.",
-      "utility": "PF-R1 machine-authority divergence remains provenance-only, not a new scientific target.",
-      "repo_runtime": "Stable main/evidence unchanged. v0.5 theory permits unit/edge/timing intervention; retained causal_ablation implements assembly/unit suppression. FieldTopology exposes directed Connection(source,target,weight,delay), giving a concrete future route-separation surface."
-    },
+    "reason": "A valid Analyst-authorized Discovery target occupied role priority 3, so PRE-NO-OP autonomous target search was not entered.",
     "alternatives_considered": [
-      {"surface":"CAND33_FRESH_SYSTEM_SUCCESSOR","result":"REJECTED_NO_NEW_CAND33_SPECIFIC_OBSERVABLE_OR_TOOLING_DELTA"},
-      {"surface":"H7_R34_ROUTE_GRAPH_SUCCESSOR","result":"REJECTED_MAIN_COLLISION_RETURN_H7_APPLICATION_TO_ANALYST"},
-      {"surface":"V05_ASSEMBLY_SET_CAUSAL_NECESSITY_REOPEN","result":"REJECTED_NO_REOPEN; USED_ONLY_AS_ORDINARY_REDUCTION"},
-      {"surface":"V05_ASSEMBLY_TEMPORAL_ROUTE_IDENTIFIABILITY_QFD","result":"SELECTED_MATERIALLY_NEW_IDENTIFIABILITY_QUESTION"},
-      {"surface":"ASSEMBLY_COMPLETION_REGENERATION","result":"REJECTED_NO_NEW_ENDOGENOUS_REGENERATION_OBSERVABLE"},
-      {"surface":"ENDOGENOUS_CONTINUATION_PERSISTENT_STATE","result":"REJECTED_NO_NEW_INDEPENDENT_INTERVENTION_BEYOND_SELECTED_ROUTE_SURFACE"},
-      {"surface":"PRESEMANTIC_TO_FUNCTIONAL_FORMATION","result":"REJECTED_NO_NEW_RESIDUAL_BEYOND_EXISTING_ASSOCIATION_AND_LESION_LINES"},
-      {"surface":"R74_RUNTIME_IDENTITY_SYSTEM_DISCOVERY","result":"REJECTED_DIRECT_MAIN_COLLISION"},
-      {"surface":"PF_R1_UTILITY_AUTHORITY","result":"REJECTED_CONTROL_PROVENANCE_ONLY"}
+      {"surface": "H7_ROUTE_OR_RUNTIME_WORK", "result": "REJECTED_MAIN_COLLISION"},
+      {"surface": "CAND33_FRESH_SYSTEM_SUCCESSOR", "result": "NOT_SELECTED_NO_NEW_CAND33_SPECIFIC_DELTA"},
+      {"surface": "PRIOR_ASSEMBLY_NECESSITY_SELECTIVITY_OBJECTS", "result": "NOT_REOPENED_USED_ONLY_AS_ORDINARY_REDUCTIONS"},
+      {"surface": "PF_R1_UTILITY_AUTHORITY", "result": "NOT_SCIENTIFIC_SUB_TARGET_CONTROL_PROVENANCE_ONLY"}
     ]
   },
   "theory_backward_accounting": {
+    "actual_scientific_work_performed": true,
+    "analyst_allocated_canonical_lane": true,
     "autonomous_scientific_selection_made": false,
-    "question_formation_selected": true,
     "theory_backward_origin": true,
     "denominator_excluded": true,
-    "rolling_autonomous_canonical_selections": ["MECHANISM","SYSTEM","SYSTEM"],
-    "qualifying_share": "1/3",
-    "note": "QFD remains denominator-excluded until Analyst admission/maturation into a real scientific selection."
+    "denominator_exclusion_reason": "This run executes an Analyst-allocated canonical lane rather than making a new autonomous scientific selection; the QFD/admission transition itself was denominator-excluded under R88.",
+    "rolling_autonomous_canonical_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
+    "qualifying_share": "1/3"
   },
   "phenomenon_question_hypothesis": {
-    "phenomenon": "Assembly-level causal impairment may be compatible with multiple distinct recurrent temporal route structures because retained lesions are coarse at assembly/unit level.",
-    "question": "Can a fresh successor define an explicit time-unrolled local route object and a bounded separating family of edge/timing interventions that identifies specified Assembly route features beyond the equivalence class left by assembly/unit lesions?",
-    "hypothesis": "Current retained assembly/unit lesions are insufficient for unique route-topology claims; prospectively fixed edge/timing interventions may identify selected lagged route features, while unresolved alternatives remain equivalence-class scoped.",
-    "observable_intervention": {
-      "observables": ["per-intervention downstream spike/cascade response by lag","Assembly activation/similarity and fixed non-learning prediction response","explicit target map over directed Connection(source_id,target_id,weight,delay_ms)","response-signature equivalence classes"],
-      "interventions": ["prospective edge-weight cut","prospective edge-delay perturbation","matched random edge and sham controls","no execution before fresh Analyst admission"]
+    "phenomenon": "Set-level Assembly or unit impairment can be compatible with multiple distinct delayed recurrent transmission structures, so coarse lesion effects do not uniquely identify temporal routes.",
+    "question": "On a fixed trained v0.5 checkpoint, can a bounded prospectively frozen family of physical edge transmission and delay interventions identify specified lagged route features supporting a target Assembly beyond the interventional equivalence class left by Assembly/unit lesions?",
+    "hypothesis": "Some target-Assembly edge/lag features are separable from matched random/sham and prior lesion reductions, but unique whole-network topology should not be claimed unless the complete frozen intervention family separates all predeclared alternatives relevant to that claim."
+  },
+  "temporal_route_object": {
+    "physical_vertex": "non-receptor reservoir unit ID",
+    "physical_edge": "directed checkpoint Connection(source_id,target_id,weight,delay_ms)",
+    "time_unrolled_arc": "(source_id,t)->(target_id,t+delay_ms) when source spikes at t",
+    "reporting_time_bin_ms": 0.25,
+    "execution_lag_semantics": "exact positive Connection.delay_ms",
+    "target_assembly_anchor": "learned anonymous Assembly prototype ordered_units/relative_bins/unit_ids",
+    "primary_scope_excludes_receptors": true,
+    "whole_graph_unique_DAG_claimed": false
+  },
+  "candidate_edge_family": {
+    "pool": [
+      "reservoir edges with target in target Assembly prototype and source in prototype",
+      "one-hop non-receptor reservoir ingress edges with target in target Assembly prototype"
+    ],
+    "max_edges": 12,
+    "prospective_ranking": [
+      "both endpoints in prototype before ingress-only",
+      "descending abs(weight)",
+      "ascending delay_ms",
+      "source_id,target_id stable tie-break"
+    ],
+    "held_out_outcome_used_for_selection": false,
+    "change_classification_if_modified_after_result_exposure": "SCIENCE_AFFECTING_CHANGE"
+  },
+  "observable_intervention": {
+    "observables": [
+      "target Assembly activation/maturity rate and similarity",
+      "target-prototype non-receptor spike response by relative-time bin",
+      "fixed no-learning prediction coverage/accuracy",
+      "collateral motif/Assembly response",
+      "runaway/dead stability indicators",
+      "exact intervention target mapping and edge metadata",
+      "response-signature equivalence classes"
+    ],
+    "interventions": {
+      "target_transmission_null": "set selected edge weight to 0.0 on a deep-copied quiescent anchor before evaluation episode",
+      "target_delay_perturbation": "add 4*pattern_temporal_bin_ms = 1.0 ms to selected edge delay on a separate clone",
+      "sham": "same clone/evaluation path with original edge values reassigned unchanged",
+      "matched_random_edge_controls": "prospectively match non-target reservoir edge by sign and coarse weight/delay strata; fail closed if no valid match rather than relax post-outcome"
     },
-    "ordinary_reductions_comparators": ["existing assembly suppression","existing unit suppression","matched random k-subset lesions","prior Assembly-set causal-necessity distributional-control contract","matched random/sham edge interventions","equivalence-class reporting if alternatives remain indistinguishable"],
-    "falsifier_discriminator": "If two structurally distinct temporal-route alternatives produce the same complete response signature under the full prospectively frozen intervention family, unique-route identification is falsified. Admission is worthwhile only if a bounded design can separate at least one meaningful route feature beyond existing set-level necessity."
+    "source_pulse_ids_primary_route_observable": false,
+    "source_pulse_ids_exclusion_reason": "Transmission-null can still materialize zero-current arrivals that affect provenance bookkeeping without carrying dynamical current."
   },
-  "inputs": {"latest_analyst_r87_read":true,"main_r87_read":true,"previous_sub_r86_read":true,"control_r39_read":true,"literature_r34_read":true,"audit_r7_read":true,"methodology_r74_read":true,"utility_state_read":true,"stable_main_refetched":true,"main_active_ref_refetched":true,"evidence_tags_refetched":true,"stable_v05_theory_read":true,"stable_v05_evaluation_source_read":true,"prior_assembly_set_binding_read":true,"v04_topology_source_read":true,"protected_or_held_out_result_used":false,"consumed_identity_used":false},
-  "implementation": {"mode":"READ_ONLY_QUESTION_FORMATION_SOURCE_AND_CONTRACT_DIAGNOSTIC","diagnostics_executed":1,"diagnostic_description":"Compared stable v0.5 intervention specification, retained causal_ablation implementation, directed topology representation, and prior Assembly-set necessity binding against Literature R34 identifiability reduction.","code_mutation":false,"workflow_dispatch":false,"research_branch_created":false},
+  "ordinary_reductions_comparators": [
+    "existing target Assembly suppression",
+    "existing target unit suppression",
+    "matched random Assembly lesions",
+    "matched random unit lesions",
+    "matched random edge transmission-null",
+    "matched random edge delay perturbation",
+    "sham",
+    "collateral-response checks",
+    "interventional-equivalence-class reporting when alternatives remain unresolved"
+  ],
+  "falsifier_discriminator": {
+    "unique_feature_falsifier": "For every route feature claimed, predeclare at least one structurally distinct alternative compatible with coarse Assembly/unit lesions. If two alternatives have the same complete response signature under the entire frozen candidate #34 intervention family, unique identification of their distinguishing feature is falsified and the claim collapses to the corresponding interventional equivalence class.",
+    "target_specificity_falsifier": "If target edge/timing effects are not more selective or informative than matched random/sham and prior lesion reductions, reject that edge/lag feature as identified.",
+    "reachability_falsifier": "If quiescent anchoring or deterministic matched-control construction is unreachable without changing stable dynamics, HOLD/revise prospectively rather than weaken the contract after results."
+  },
+  "inputs": {
+    "latest_analyst_r88_read": true,
+    "main_r88_read": true,
+    "previous_sub_r87_read": true,
+    "control_r39_read": true,
+    "literature_r34_read": true,
+    "audit_r7_read": true,
+    "methodology_r75_read": true,
+    "utility_state_read": true,
+    "stable_main_refetched": true,
+    "main_active_ref_refetched_pre_write": true,
+    "evidence_tags_refetched": true,
+    "stable_v05_evaluation_source_read": true,
+    "stable_v05_assemblies_source_read": true,
+    "stable_v05_brain_source_read": true,
+    "stable_v05_topology_source_read": true,
+    "stable_v04_field_source_read": true,
+    "stable_v04_topology_source_read": true,
+    "protected_or_held_out_result_used": false,
+    "consumed_identity_used": false
+  },
+  "implementation": {
+    "mode": "READ_ONLY_CANONICAL_DISCOVERY_CONTRACT_AND_SOURCE_REACHABILITY_DIAGNOSTIC",
+    "diagnostics_executed": 1,
+    "diagnostic_description": "Inspected stable delayed-edge representation, event scheduling, deep-copy evaluation path, Assembly temporal representation, and retained lesion evaluator to determine whether target edge-weight and edge-delay interventions are reachable without changing stable scientific dynamics.",
+    "code_mutation": false,
+    "workflow_dispatch": false,
+    "research_branch_created": false,
+    "scientific_experiment_executed": false
+  },
   "observations": {
-    "stable_theory_intervention_vocabulary": "targeted unit, edge, or timing intervention with matched random and sham controls",
-    "retained_v05_causal_ablation_surface": "assembly suppression plus unit suppression; no edge/timing intervention path is exercised by retained causal_ablation",
-    "stable_topology_route_surface": "directed Connection with weight and delay_ms over explicit source/target IDs",
-    "prior_assembly_set_line_scope": "set-level causal necessity against complete/matched k-subset controls; not individual responsibility or unique route topology",
-    "new_information_gain": "R34 turns the gap into a precise identifiability question with an equivalence-class falsifier and separating-intervention requirement."
+    "connection_mutability": "Connection contains mutable weight and delay_ms fields.",
+    "future_propagation_reachability": "TemporalExcitableField outgoing lists reference the stored Connection objects and read edge.weight/edge.delay_ms when a source spike schedules a future SynapticArrival.",
+    "deepcopy_reachability": "Retained causal evaluator already evaluates independent deep-copied trained brains, so branch-isolated target/sham/random edge edits are architecturally reachable.",
+    "material_queue_caveat": "Already queued SynapticArrival objects contain fixed time_ms/current. Connection edits do not retroactively change them, so interventions require a quiescent post-training anchor.",
+    "proposed_quiescent_anchor": "Advance without new input in existing 32 ms settle increments for at most 8 increments/256 ms and require pending event queue empty before intervention; if not empty, fail closed for reassessment.",
+    "zero_weight_semantics": "Weight=0 is transmission-null rather than literal edge deletion because a zero-current arrival may still be scheduled and affect provenance bookkeeping.",
+    "assembly_temporal_surface": "Assembly patterns already expose ordered_units and relative_bins over non-receptor internal spikes at 0.25 ms temporal bins.",
+    "new_information_gain": "Discovery R1 now has a concrete temporal object, bounded intervention/control family, implementation reachability boundary, and explicit queue/provenance caveat that was not specified at QFD stage."
   },
-  "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_QUESTION_FORMATION",
-  "proposed_claim_ceiling": "MECHANISM",
-  "proposed_preformal_eligible": null,
-  "preliminary_readiness": null,
-  "hold_dimensions": {"applicable":false,"reason":"Noncanonical QFD seed; no lifecycle typing asserted."},
-  "fresh_successor_potential": {"current_run":"YES_CONDITIONAL_V05_ASSEMBLY_FRESH_MECHANISM_SUCCESSOR_SEED","reopen_terminal_object":false,"material_newness":["interventional-equivalence reduction","response-signature equivalence observable","separating edge/timing intervention family","indistinguishable-route falsifier"]},
-  "next_layer": "EVIDENCE_ANALYST_FRESH_SUCCESSOR_REVIEW",
-  "open_choices": ["Define the smallest explicit lagged route object with scientifically meaningful features.","Check architecture reachability of prospective edge-weight/delay interventions on deep-copied checkpoints.","Construct a bounded separating family for only those route features; report equivalence classes when unresolved.","If this seed becomes central to H7, stop and allocate it to MAIN."],
-  "recommendation": "FRESH_SUCCESSOR_REVIEW",
+  "evidentiary_status": "NON_EVIDENTIARY_CANONICAL_DISCOVERY",
+  "claim_ceiling": "MECHANISM",
+  "preformal_eligible": true,
+  "preformal_readiness": "NOT_READY",
+  "readiness_rationale": "Question/falsifier are coherent and edge/timing manipulation is source-reachable, but the quiescent anchor inspector, deterministic matched-edge constructor, response-signature serialization, and prospective parameter freeze have not yet been implemented or checked. No experiment was authorized or executed.",
+  "hold_dimensions": {
+    "hold_class": null,
+    "hold_reason": null,
+    "terminal_state": "ACTIVE",
+    "queue_state": "QUEUED_FOR_SUB_DISCOVERY",
+    "source": "R88_CANONICAL_TYPING_UNCHANGED_BY_SUB"
+  },
+  "fresh_successor_potential": {
+    "current_object_is_fresh_successor": true,
+    "relation": "Assembly causal-selectivity family without reopening #23/#24/#26",
+    "further_successor_proposed_this_run": false,
+    "same_object_claim_uplift": false
+  },
+  "next_layer": "EVIDENCE_ANALYST_REVIEW_FOR_ARCHITECTURE_STUDY",
+  "open_choices": [
+    "Implement a read-only quiescent/pending-event inspector without changing dynamics.",
+    "Implement deterministic K<=12 edge-pool/ranking and matched random/sham construction exactly as prospectively reviewed.",
+    "Freeze response-signature serialization and the 1.0 ms timing perturbation or an explicitly versioned alternative before any result-bearing development.",
+    "Keep full-network unique topology out of scope unless the eventual intervention family actually separates all alternatives relevant to that claim."
+  ],
+  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
-  "integrity": {"scientific_experiments_executed":0,"non_evidentiary_synthetic_diagnostics":0,"read_only_source_contract_diagnostics":1,"scientific_workflows_dispatched":0,"one_way_identities_consumed":0,"research_branches_created":0,"research_code_commits_created_by_this_run":0,"research_prs_merged":0,"immutable_scientific_refs_mutated":0,"historical_pass_fail_rewritten":0,"held_out_reads":0,"utility_requests_created":0},
-  "generation_metadata": {"schema_version":2,"source_analyst_generation":"EVA-20260923T061000+0900-R87-7B3D91E4","source_analyst_commit":"f03769227e888a70ea674eb627d4d311a1229c95","fresh_literature_generation":"LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7","parent_orchestrator_tip":"5b116229ae1f91c4d69f2866825797c0a2e59b77","persistence_paths":["reports/orchestrator/sub/latest.md","reports/orchestrator/sub/state.json","reports/orchestrator/sub/history/2026-09-23/0643-r87-qfd-assembly-interventional-equivalence-r34.md"]}
+  "integrity": {
+    "scientific_experiments_executed": 0,
+    "non_evidentiary_synthetic_diagnostics": 0,
+    "read_only_source_contract_diagnostics": 1,
+    "scientific_workflows_dispatched": 0,
+    "one_way_identities_consumed": 0,
+    "research_branches_created": 0,
+    "research_code_commits_created_by_this_run": 0,
+    "research_prs_merged": 0,
+    "immutable_scientific_refs_mutated": 0,
+    "historical_pass_fail_rewritten": 0,
+    "held_out_reads": 0,
+    "utility_requests_created": 0
+  },
+  "generation_metadata": {
+    "schema_version": 2,
+    "source_analyst_generation": "EVA-20260923T065834+0900-R88-D5A7C219",
+    "source_analyst_commit": "3341ad00ade796d9a3b80dd61c7386fc8b3e07b7",
+    "fresh_methodology_generation": "METHCAL-20260923T073000+0900-R75-C8D41B6E",
+    "literature_generation": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
+    "parent_orchestrator_tip": "9c80901fc650ead5687bf676b39402b0ba736ea7",
+    "history_commit": "9fba0d7cc96f2f655e05ddb96318695fd9ec11eb",
+    "persistence_paths": [
+      "reports/orchestrator/sub/latest.md",
+      "reports/orchestrator/sub/state.json",
+      "reports/orchestrator/sub/history/2026-09-23/0741-r88-c34-discovery-r1-route-contract.md"
+    ]
+  }
 }
