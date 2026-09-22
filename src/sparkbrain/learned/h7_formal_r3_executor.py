@@ -608,7 +608,9 @@ def synthetic_nonprotected_realization_probe() -> dict[str, Any]:
         raise FormalIntegrityError("R4 synthetic executor row-count drift")
     forbidden = {"world", "episode_seed", "step_index", "truth", "baseline_correct", "cut_correct"}
     if any(set(row) & forbidden for row in rows):
-        raise FormalIntegrityError("R4 synthetic executor leaked target-derived identity or correctness")
+        raise FormalIntegrityError(
+            "R4 synthetic executor leaked target-derived identity or correctness"
+        )
     endpoints = Counter(str(row["endpoint"]) for row in rows)
     if set(endpoints.values()) != {STEPS_PER_EPISODE}:
         raise FormalIntegrityError("R4 synthetic executor endpoint coverage drift")
