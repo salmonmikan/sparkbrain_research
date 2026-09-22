@@ -1,0 +1,104 @@
+{
+  "schema_version": 2,
+  "contract_id": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-V1",
+  "authority_generation": "EVA-20260923T001221+0900-R81-4885D9DE",
+  "authority_commit": "725aff8a8a5f4105d85cc1893036ef4c48f893c4",
+  "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
+  "authorized_cycle": 10,
+  "base_r3": {
+    "branch": "research/main-h7-formal-r3-unexposed-eval-runtime-r76-cycle9",
+    "exact_head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
+    "contract_path": "artifacts/formal_h7_r3/contract_design.json",
+    "contract_blob": "56874e248e8e26762b21ad782343892d71c6b7d1",
+    "stopped_preidentity": true,
+    "scientific_result_exposed": false
+  },
+  "science_affecting_delta": {
+    "field": "scientific_runtime_package_resource_binding",
+    "versioned_change_authorized": true,
+    "reason": "R3 exact package-runtime reproduction failed closed on pip_freeze_sha256 and prior successful exact freeze bytes were not durably preserved",
+    "outcome_dependence": false,
+    "all_non_resource_r3_scientific_fields_preserved": true
+  },
+  "preserved_unchanged": [
+    "claim",
+    "estimand",
+    "worlds",
+    "sample_size",
+    "steps_per_episode",
+    "split_roles",
+    "intervention",
+    "ordinary_comparator_panel",
+    "thresholds_and_margins",
+    "bootstrap_and_decision_rule",
+    "falsifier",
+    "concealed_post_binding_evaluation_identity",
+    "target_blind_prediction_raw_gate",
+    "preserve_before_target_access",
+    "post_preserve_scorer_semantics"
+  ],
+  "scientific_runtime": {
+    "python_version": "3.11.16",
+    "python_implementation": "CPython",
+    "runner_label": "ubuntu-24.04",
+    "runner_image_os": "ubuntu24",
+    "runner_image_version": "20260907.300.1",
+    "platform_system": "Linux",
+    "platform_release": "6.17.0-1022-azure",
+    "platform_machine": "x86_64",
+    "runner_arch": "X64",
+    "device_contract": "cpu",
+    "python_hash_seed": "0",
+    "omp_num_threads": "1",
+    "mkl_num_threads": "1",
+    "torch_distribution_version": "2.13.0",
+    "torch_module_version": "2.13.0+cu130",
+    "torch_git_version": "cf30153c4c131c8164ee7798e5022d810682e2cb",
+    "torch_cuda_build_version": "13.0",
+    "torch_distribution_record_sha256": "407832ba9a2275aa30a1263f65dc9cc05fc04d74e81895e1ec8f74518eb45cf0"
+  },
+  "package_contract": {
+    "versions_path": "artifacts/formal_h7_r4/scientific-runtime.versions",
+    "final_lock_path": "artifacts/formal_h7_r4/scientific-runtime.lock",
+    "final_manifest_path": "artifacts/formal_h7_r4/scientific-runtime-manifest.json",
+    "exact_versions_selected_before_hash_materialization": true,
+    "binary_wheels_only": true,
+    "dependency_resolution_during_materialization": false,
+    "materialization_attempts_allowed": 1,
+    "artifact_hashes_required": true,
+    "exact_lock_bytes_must_be_committed_before_validation": true,
+    "protected_runtime_excludes_development_tooling": [
+      "pytest",
+      "ruff",
+      "jsonschema",
+      "fastapi",
+      "uvicorn",
+      "httpx"
+    ],
+    "editable_project_install_forbidden": true,
+    "repository_source_loaded_via_exact_bound_checkout": true
+  },
+  "source_binding": {
+    "mode": "SEPARATE_EXACT_FINAL_GIT_SHA_AND_COMPONENT_BLOBS",
+    "editable_project_freeze_entry_is_source_identity": false,
+    "base_scientific_component_blobs": {
+      "r3_contract_runtime_module": "9bde5379542ecca84157e82868abe679e0099e31",
+      "r3_raw_preserve_post_preserve_adapter": "37c9c46febba1baba5580ed1aa803dcc483bef66",
+      "frozen_scientific_scorer": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
+      "legacy_r2_runner_reference_only": "33f5ecd8d2bb75b2c7d0ed48f482f4945ea3fb0b"
+    },
+    "final_r4_source_sha": null,
+    "binding_status": "PENDING_EXACT_LOCK_COMMIT_AND_FINAL_NON_RESULT_VALIDATION"
+  },
+  "one_way_hard_stop": {
+    "evaluation_commitment_created": false,
+    "formal_identity_created": false,
+    "started_created": false,
+    "evaluation_seed_revealed": false,
+    "protected_evaluation_accessed": false,
+    "result_bearing_workflow_dispatched": false,
+    "official_scoring_performed": false,
+    "scientific_preserve_or_evidence_ref_created": false
+  },
+  "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_RESOURCE_CONTRACT"
+}

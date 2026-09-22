@@ -1,0 +1,63 @@
+name: h7-formal-r4-lock-materialize
+
+on:
+  push:
+    branches:
+      - research/main-h7-formal-r4-runtime-lock-r81-cycle10
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: "0"
+  OMP_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+
+jobs:
+  materialize-lock:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11.16"
+          check-latest: false
+      - name: Assert exact R4 authority surface
+        run: |
+          test "${ImageOS}" = "ubuntu24"
+          test "${ImageVersion}" = "20260907.300.1"
+          test "$(uname -r)" = "6.17.0-1022-azure"
+          test "${RUNNER_ARCH}" = "X64"
+          test "$(python -c 'import platform; print(platform.python_version())')" = "3.11.16"
+          test ! -e artifacts/formal_h7_r4/scientific-runtime.lock
+          test ! -e artifacts/formal_h7_r4/scientific-runtime-manifest.json
+          test ! -e artifacts/formal_h7_r4/FORMAL_IDENTITY.json
+          test ! -e artifacts/formal_h7_r4/STARTED.json
+          test ! -e artifacts/formal_h7_r4/evaluation_payload.json
+          test ! -e artifacts/formal_h7_r4/evaluation_seeds.json
+          test ! -e artifacts/formal_h7_r4/official_prediction_raw.jsonl
+          test ! -e artifacts/formal_h7_r4/official_score.json
+      - name: Materialize one prospective exact wheel lock
+        run: |
+          python scripts/materialize_h7_formal_r4_lock.py \
+            --versions artifacts/formal_h7_r4/scientific-runtime.versions \
+            --output-dir artifacts/formal_h7_r4/materialized_lock
+      - name: Assert lock is non-result-bearing
+        run: |
+          test -s artifacts/formal_h7_r4/materialized_lock/scientific-runtime.lock
+          test -s artifacts/formal_h7_r4/materialized_lock/scientific-runtime-manifest.json
+          ! grep -R -E '8846030|8846285' artifacts/formal_h7_r4/materialized_lock
+          test ! -e artifacts/formal_h7_r4/materialized_lock/FORMAL_IDENTITY.json
+          test ! -e artifacts/formal_h7_r4/materialized_lock/STARTED.json
+          test ! -e artifacts/formal_h7_r4/materialized_lock/evaluation_payload.json
+          test ! -e artifacts/formal_h7_r4/materialized_lock/evaluation_seeds.json
+          test ! -e artifacts/formal_h7_r4/materialized_lock/official_prediction_raw.jsonl
+          test ! -e artifacts/formal_h7_r4/materialized_lock/official_score.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: h7-formal-r4-lock-${{ github.sha }}
+          path: artifacts/formal_h7_r4/materialized_lock
+          if-no-files-found: error
