@@ -1,56 +1,27 @@
-# SparkBrain Orchestrator SUB — R59 intentional no-target idle
+# SUB — R61 bounded QUESTION_FORMATION_DISCOVERY
 
-- schema_version: `2`
-- generation_id: `SUB-20260922T113500+0900-NOOP-R59INTENTIONALIDLE-A6D4C219`
-- produced_at: `2026-09-22T11:35:00+09:00`
-- operating_mode: `no_op_intentional_idle`
-- discovery_mode: `N/A_NO_AUTONOMOUS_SELECTION`
-- evidentiary_status: `NON_EVIDENTIARY`
+- Generation: `SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9`
+- Evidence Analyst: `EVA-20260922T124300+0900-R61-C7F421A9@4f55a65744385431ec73d1dec4ed32b7b20a63d8`
+- Operating mode: `ANALYST_AUTHORIZED_NONCANONICAL_QUESTION_FORMATION_DISCOVERY`
+- Discovery mode: `N/A_NONCANONICAL_QUESTION_FORMATION_NOT_AUTONOMOUS_CANONICAL_SELECTION`
+- Development phase: `OPEN_DEVELOPMENT`
+- Cycle: `1`
+- Evidentiary status: `NON_EVIDENTIARY`
+- Retained questions: `0`
 
-## Reconciliation
+R61 changes SUB supply policy materially: before defaulting to NO_OP, SUB is authorized to perform one bounded, noncanonical, static/read-only `QUESTION_FORMATION_DISCOVERY` scan. This scan is outside canonical candidate metrics and outside the rolling theory-backward quota denominator. MAIN concurrently owns H7 DEV-R1 cycle 2 implementation-only Architecture work; SUB did not touch H7, its branch, blockers, harness, comparators, or successor path.
 
-Latest controlling Evidence Analyst is `EVA-20260922T110607+0900-R59-A6D4C219@35630cc8e5d989a77801658f877c97aae9323f7c`. R59 reports no new scientific execution and no canonical candidate-lifecycle change. Canonical population remains `32 = MECHANISM 13 / SYSTEM 19`, `ACTIVE=0 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=31`, PRE_FORMAL eligible/READY=`0/0`, viable executable MECHANISM=`0`.
+## Bounded scan
 
-`main_lane = NO_ACTIVE_MAIN_OBJECT_HOLD_PENDING_MATERIAL_MECHANISM_SURFACE_DELTA_OR_LATER_FRESH_NONRESCUE_OBJECT`
+The scan checked four distinct surfaces against the current 32-candidate pool and repository implementation:
 
-`sub_lane = NO_TARGET_EPISODE_HOLD_UNTIL_MECHANISM_SURFACE_DELTA_THEN_THEORY_BACKWARD_REFRAME`
+1. **Pre-semantic activity acquiring later function.** v0.5 does form anonymous Assemblies before future-event/reward attachment, but the current prediction and action layers are exact `assembly_id` keyed count/score tables. A fresh question framed as “later function acquisition” therefore has an immediate ordinary lookup-table reduction on the present implementation, and it duplicates terminal candidate #12 (`Pre-semantic function transfer`). **Not retained.**
+2. **Assembly completion / endogenous continuation.** `TemporalAssemblyMemory` permits shorter ordered subsequences to match stored patterns, but this is recognizer-side similarity matching, not regeneration of missing internal activity. The canonical pool already contains terminal #8 (`Assembly partial completion`) and #11 (`Endogenous continuation`). No distinct reachable regenerative mechanism surface was found. **Not retained.**
+3. **Learned-delay temporal self-organization.** the current delay rule is a bounded local adaptation toward the mean observed causal pre/post lag on positive edges. v0.5’s retained completion report already states low-level weight/delay plasticity was not shown necessary or beneficial over the frozen control. Without a new independent observable/intervention and comparator that is not simply an equal-privilege per-edge lag estimator, a new mechanism question would be rescue-like or ordinarily reduced. **Not retained.**
+4. **#32-family equivalence/resource successor.** R61 explicitly preserves this as fresh SYSTEM successor potential only after trusted producer/raw-to-digest equivalence assurance and a fresh resource contract. It is neither ready nor a distinct mechanism-supply question. **Not retained.**
 
-`sub_fallback = NO_OP_WITH_THEORY_BACKWARD_EXCEPTION_NO_COHERENT_MECHANISM_TARGET`
+The resulting meta-question was: *does the current repository plus fresh residuals expose a materially distinct, non-MAIN mechanism question that survives duplicate, exact-reduction, reachability and rescue filters?* Under this bounded scan, the answer is **no retained question**, which R61 explicitly permits.
 
-`system_priority_exception.used = false`.
+Repository truth was independently re-fetched: stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative annotated `evidence/*` remains exactly five unchanged tags. No scientific experiment, result-bearing workflow, PRE_FORMAL/FORMAL action, protected-outcome read, consumed identity use, research mutation/merge, repair/retune, canonical candidate admission, or Utility request occurred.
 
-H7 (#7) remains the sole nonterminal MECHANISM line: `HOLD / MECHANISM`, `claim_ceiling=MECHANISM`, `preformal_eligible=false`, `preformal_readiness.status=NOT_READY`, `HOLD_MECHANISM_UNRESOLVED / NONTERMINAL_HOLD / NOT_QUEUED`. R59 creates no fresh native H7 object, matched comparator/resource/intervention contract, fixed falsifier, or execution authority.
-
-Candidate #32 remains terminal `HOLD / SYSTEM`, `claim_ceiling=SYSTEM`, `preformal_eligible=false`, `HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`, cycle `2`; same-object rerun, repair, retune, cycle 3, reinterpretation, or SYSTEM→MECHANISM uplift remain prohibited.
-
-R59's material delta is interpretation-only around consumed PD01. Audit R6 preserves the frozen scorer/token and one-way chain but establishes that the registered long-lag endpoint is null-vs-null for positive capability. The supported prospective narrative ceiling is `NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR`; it is not a positive demonstration that fading-memory dynamics reproduce a demonstrated SparkBrain long-memory capability. This cannot reopen PD01 or create a SUB successor. Future fresh reduction objects should prospectively distinguish `PHENOMENON_NOT_DEMONSTRATED` from `POSITIVE_PHENOMENON_REPRODUCED_BY_ORDINARY_BASELINE`.
-
-MAIN consumed R59 as `MAIN-20260922T111654+0900-PRIMARY-FUNNEL21-IDLE-R59-A6D4C219` and completed intentional no-target idle. There is no MAIN-independent blocker or successor for SUB to take.
-
-## Independent source-of-truth refresh
-
-Stable `main` was independently re-fetched at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Authoritative annotated `evidence/*` remains exactly five at unchanged tag-object SHAs: c19-v4 `4d6c0bd9a6c06c17352941d3fa730502e72b8540`; c19-r2 `82b88f3e2ad524fed8b72300dcba46053c1f2c7e`; H5 `e7d99cc806206ac27ced225d4779c9fc5bb67ff5`; NI01 `185b741e69ea8a0ce0d076153d36e9296a748765`; PD01 `e4c4e6428d8ef9e09e92cae231041de0788162e2`.
-
-A fresh branch-name check found no `20260922` research branch. Historical H7 exploratory ref remains `research/exploratory-sub-h7-trace-causality-20260917@3b5f122d287025bd9e0aec3a5266704236e6a3d5`; historical candidate #32 result remains `research/main-semantic-active-work-localization-r50-cycle2@d090fd2e57680c5a97b9fd0d036fc65a008078ec`. No independent mechanism-surface delta was found.
-
-Control is `CTRL-20260922T105700+0900-R32-C5A721D4@544bede4c5131ea57e5b93903bab5279d066a0c0`. Its bounded Utility lint-repair path remains non-scientific and is not SUB mechanism supply, quota credit, readiness uplift, or execution authority.
-
-## Theory-backward accounting
-
-Rolling autonomous scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`. This run makes no autonomous scientific selection and does not enter the denominator. The next safe autonomous scientific selection should be `THEORY_BACKWARD_MECHANISM_DISCOVERY` if a coherent bounded mechanism target exists.
-
-`theory_backward_exception = {code: NO_COHERENT_MECHANISM_TARGET}`
-
-Reason: R59 reports viable executable MECHANISM=`0`, returns no SUB Discovery object, and generates zero new retained shadow proposals. H7 remains unresolved without a fresh native object plus prospectively fixed causal/claim-scope, comparator/resource privilege, intervention, and falsifier contract. PD01 is consumed and interpretation-only; candidate #32 and other terminal/consumed objects remain unavailable. Selecting now would manufacture activity or perform rescue/duplicate laundering.
-
-`NTE-20260921-R34-POST-REPLAY-v1` remains OPEN with Analyst canonical check_count=`22` and SUB-local check_count=`23`. This is liveness only, not accumulated evidence of mechanism absence.
-
-## Required handoff
-
-Operating mode is `no_op_intentional_idle`; discovery mode is `N/A_NO_AUTONOMOUS_SELECTION`. Target/candidate/cycle, question, hypothesis, reduction question, falsifier, proposed claim ceiling, proposed preformal eligibility/readiness, and proposed hold dimensions are all `N/A_NO_CURRENT_SUB_OBJECT`.
-
-Inputs were refreshed from Analyst R59, MAIN R59, Control R32, stable main, all five authoritative evidence refs, and historical H7/#32 refs. Implementation is none. No SUB research branch, workflow, scientific probe, outcome dispatch, PRE_FORMAL/FORMAL action, official TEST/scoring, held-out tuning, identity consumption, research merge, immutable scientific-ref mutation, or Utility request occurred.
-
-Next layer is `NONE_INTENTIONAL_IDLE`.
-
-Recommendation: `REMAIN_INTENTIONALLY_IDLE_UNTIL_MATERIAL_MECHANISM_SURFACE_DELTA_OR_FRESH_EXPLICIT_SUB_HANDOFF`.
+Recommendation: return `ZERO_RETAINED_QUESTIONS` to Evidence Analyst. Do not manufacture a candidate from the scanned surfaces. Preserve the rolling autonomous canonical selection window `MECHANISM / SYSTEM / SYSTEM = 1/3`; this QFD scan does not enter its denominator. Re-scan only on a fresh material surface or explicit allocation.
