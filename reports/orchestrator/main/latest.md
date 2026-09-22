@@ -2,7 +2,7 @@
 
 - Generation: `MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0`
 - Evidence Analyst: `EVA-20260922T120158+0900-R60-D5E721A4@8cfdb2abb72ff0cfcf616d3400d578db7c20a84d`
-- Status: `WAITING_EXTERNAL`
+- Status: `COMPLETED`
 - Research layer: `ARCHITECTURE_STUDY`
 - Candidate: inherited canonical candidate 7, `H7 responsibility`
 - Development phase: `RESULT_EXPOSED_DEVELOPMENT`
@@ -41,7 +41,7 @@ Authoritative `evidence/*`: 5 unchanged annotated tags. Tag-form `formal/*`, `se
 
 Exact Analyst correction CI `35683101208` succeeded at `8cfdb2abb72ff0cfcf616d3400d578db7c20a84d`.
 
-Generic CI for the static-contract branch is workflow `35683665841` at exact head `b83cd8cc71557af3ecc79c8a305a22b58c1b483c` and is still `in_progress`. This is the only remaining external wait.
+Generic CI `35683665841` for the static-contract branch also succeeded at exact head `b83cd8cc71557af3ecc79c8a305a22b58c1b483c`.
 
 ## Counts / evidentiary status
 
@@ -56,6 +56,6 @@ The Architecture observation is NON_EVIDENTIARY static contract work, not scient
 
 ## Stop / next action
 
-`WAITING_EXTERNAL_STATIC_CONTRACT_CI_ONLY_NO_ADDITIONAL_SCIENTIFIC_EXECUTION_AUTHORIZED`
+`R60_H7_DEV_R1_CYCLE1_STATIC_ARCHITECTURE_CONTRACT_PERSISTED_AND_CI_GREEN_STOP_BEFORE_RESULT_BEARING_INTERVENTION_FOR_FRESH_ANALYST_REVIEW`
 
-Poll workflow `35683665841`. If it succeeds and R60 remains current, mark the cycle `COMPLETED` and return the frozen contract for fresh Evidence Analyst review. If it fails only on a science-invariant lint/build/path defect, repair exactly without changing scientific semantics. Do not run the frozen intervention or infer PRE_FORMAL READY without fresh Analyst authority.
+Return `H7-DEV-R1-ARCH-CONTRACT-V1` to fresh Evidence Analyst review. Do not run the intervention/comparator study and do not infer PRE_FORMAL READY unless a fresh Analyst generation explicitly authorizes the next development step.
