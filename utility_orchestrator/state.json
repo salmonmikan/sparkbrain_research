@@ -1,21 +1,23 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T132300+0900-AUTO-READER-VERSION-DRIFT-RUNNING-3F8A61C2",
-  "produced_at": "2026-09-22T13:23:00+09:00",
+  "generation_id": "UTILITY-20260922T133300+0900-AUTO-READER-VERSION-DRIFT-COMPLETED-3F8A61C2",
+  "produced_at": "2026-09-22T13:33:00+09:00",
+  "completed_at": "2026-09-22T13:33:00+09:00",
   "producer_run_id": "utility-auto-20260922T1323+0900-reader-version-drift",
   "authority_scope": "UTILITY_AUTONOMOUS_IDLE_BOUNDED_NON_EVIDENTIARY_READ_ONLY_RECONCILIATION",
-  "supersedes_generation_id": "UTILITY-20260922T123800+0900-AUTO-EQUIV-CI-STATE-RECON-COMPLETED-6B4E21F9",
+  "supersedes_generation_id": "UTILITY-20260922T132300+0900-AUTO-READER-VERSION-DRIFT-RUNNING-3F8A61C2",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
   "autonomous_task_id": "AUTOUTIL-20260922T1323+0900-READER-VERSION-DRIFT-3F8A61C2",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
   "objective": "Bound the exact stable-main reader-facing version/contract drift identified by Control R33 without changing documentation, package metadata, scientific artifacts, or the active H7 path.",
   "trigger_source": "Control R33 HUMAN-20260922-006 disposition: README and pyproject appear to advertise 0.3.2.dev0 while a v0.5 theory specification targets 0.5.0.dev0; Steward audit remains pending.",
+  "outcome_classification": "READER_NAVIGATION_DRIFT_CONFIRMED_ROOT_DISTRIBUTION_VERSION_MIGRATION_UNDERDETERMINED",
   "ownership_generations": {
     "evidence_analyst": "EVA-20260922T130900+0900-R62-D4A7C21F",
     "main_relay": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9",
@@ -31,7 +33,29 @@
     "control_commit": "c41db58a5cc87e5460f143ce07c4256d7238d577",
     "repository_steward_commit": "a3ab4f4f70c4782e7ff916838c33a64eb0a9c2dd",
     "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_h7_research_head": "c97af135742a7cd3af94c857f4d5b83d7707075d"
+    "active_h7_research_head": "c97af135742a7cd3af94c857f4d5b83d7707075d",
+    "reader_surfaces": {
+      "README.md": "de76e99c1d9eefae3dc66ae77f46dbea0a11b4f8",
+      "docs/START_HERE.md": "706e827b68a4f593024c513349c6809997b98177",
+      "pyproject.toml": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
+      "RELEASE_METADATA.json": "ad67d280478a57250d26418bd2c24ab7fe85fd21",
+      "scripts/local_readiness_check.py": "7907c6c8f992d11d40363462dabc919bbc33044c",
+      "docs/THEORY_SPEC_v0.5.md": "c1d3dbd041476428a103324b58616d3cc6534885",
+      "src/sparkbrain/v05/__init__.py": "bb45b132bbd4d8ad203911ad46eafffdf63820c4",
+      "docs/V05_MASTER_PLAN.md": "0812069c4e19d8a25364ff8476870b770cee15c9"
+    }
+  },
+  "outputs_summary": {
+    "reader_navigation_drift": true,
+    "root_distribution_version": "0.3.2.dev0",
+    "v04_namespace_version": "0.4.0.dev0",
+    "v05_namespace_version": "0.5.0.dev0",
+    "pyproject_stale_classification": "UNDERDETERMINED_VERSION_SEMANTICS_NOT_SAFE_TO_AUTOFIX",
+    "reader_docs_refresh_safely_separable_if_root_version_intentional": true,
+    "root_version_bump_safe_as_single_edit": false,
+    "fresh_steward_review_present": false,
+    "smallest_safe_follow_up": "FRESH_STEWARD_VERSION_SEMANTICS_REVIEW_THEN_EITHER_READER_DOCS_REFRESH_OR_COORDINATED_PACKAGE_RELEASE_CONTRACT_MIGRATION",
+    "duplicate_follow_up_request_appended": false
   },
   "ownership_checks": {
     "collision_found": false,
@@ -41,7 +65,8 @@
     "relay_active_continuation_authority": false,
     "active_or_queued_research_object_touched": false,
     "candidate_typing_touched": false,
-    "steward_fresh_review_present": false
+    "steward_fresh_review_present": false,
+    "material_authority_supersession_before_terminal_write": false
   },
   "allowed_actions": [
     "Read-only inspect stable-main README/package/release/theory-spec version surfaces and exact refs",
@@ -77,8 +102,11 @@
     "preformal_or_formal_action": false,
     "research_pr_merge": false,
     "promotion_approval": false,
+    "source_docs_package_release_mutation": false,
     "hidden_main_dependency_created": false
   },
+  "stop_reason": "COMPLETED_BOUNDED_READER_VERSION_SEMANTICS_RECONCILIATION",
+  "follow_up_recommendation": "Do not duplicate the existing Control route. Fresh Repository Steward should decide whether 0.3.2.dev0 is intentionally the root distribution version distinct from v04/v05 research namespace versions. If yes, refresh reader navigation only; if no, use a reviewed coordinated package/release contract migration rather than a one-line pyproject bump.",
   "outputs": {
     "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1323+0900-READER-VERSION-DRIFT-3F8A61C2-start.md",
     "terminal_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T1323+0900-READER-VERSION-DRIFT-3F8A61C2-completed.md"
