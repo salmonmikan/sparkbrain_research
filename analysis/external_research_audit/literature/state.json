@@ -1,45 +1,42 @@
 {
-  "timestamp": "2026-09-23T03:31:00+09:00",
+  "timestamp": "2026-09-23T06:34:34+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91",
-  "producer_run_id": "external-literature-auto-LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91",
+  "generation_id": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
+  "producer_run_id": "external-literature-auto-LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260923T003758+0900-R32-PREDICTIVE-QUOTIENT-6A4E21C9",
+  "supersedes_generation_id": "LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260922T235000+0900-R37-7A3E9C51",
-      "handoff_commit": "23676a55c9473d1cfd22d982ffffd5d2ba18b557"
+      "generation_id": "CTRL-20260923T055000+0900-R39-C31A7D52",
+      "handoff_commit": "c93f870e47bdb5b1613475e079c0a6dee2aa1753"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260923T025733+0900-R84-5E7A2C91",
-      "handoff_commit": "81f46202b5337e8011d891dc197a1ec83fe1f259"
+      "generation_id": "EVA-20260923T061000+0900-R87-7B3D91E4",
+      "handoff_commit": "f03769227e888a70ea674eb627d4d311a1229c95"
     },
-    "main_designated_report": {
-      "generation_id": "MAIN-20260923T012121+0900-PRIMARY-H7-FORMALR4-C10-R82-RECOVERY-7C4E19B2",
-      "handoff_commit": "5272b1c7c8a257b086caaaea38f068ce759c1a62"
-    },
-    "main_inflight": {
-      "generation_id": "MAIN-20260923T032019+0900-PRIMARY-H7-FORMALR4-C10-R84-RECONCILED-5E7A2C91",
-      "handoff_commit": "8d9685d8b7bb9133e0bb7329d5e1b88451301716"
+    "main_report": {
+      "generation_id": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4",
+      "handoff_commit": "79d5109389f89d781d47e6e541cd87228859c872",
+      "mailbox_tip_observed": "5b116229ae1f91c4d69f2866825797c0a2e59b77"
     },
     "sub_report": {
-      "generation_id": "SUB-20260923T023426+0900-NOOP-SCAN-R83-A6D4E219",
-      "handoff_commit": "fec20ea9484600053e8558732379519f514c14a7"
+      "generation_id": "SUB-20260923T053741+0900-NOOP-SCAN-R86-62D4A1B7",
+      "handoff_commit": "f71ad78d3bc486816741d345976506db74d50223"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260923T003758+0900-R32-PREDICTIVE-QUOTIENT-6A4E21C9",
-      "handoff_commit": "e6ad3e6b7e02bf5667b18daa123799bb643754e8"
+      "generation_id": "LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91",
+      "handoff_commit": "c25dce890612dcc9b5614f987f4cdeb85e1f5652"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "03:30 JST",
+  "schedule_slot": "06:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "h7_formal_r4_active": {
-      "branch": "research/main-h7-formal-r4-runtime-lock-r81-cycle10",
-      "head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
-      "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_RESOURCE_CLOSURE"
+      "branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
+      "head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+      "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_DIAGNOSTIC_BLOCKED"
     },
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
@@ -53,166 +50,144 @@
       "148": "OPEN_UNMERGED",
       "149": "OPEN_UNMERGED"
     },
-    "ops_control_tip": "23676a55c9473d1cfd22d982ffffd5d2ba18b557",
-    "ops_evidence_analyst_tip": "81f46202b5337e8011d891dc197a1ec83fe1f259",
-    "ops_orchestrator_tip_observed": "8d9685d8b7bb9133e0bb7329d5e1b88451301716",
-    "ops_external_tip_before_write": "e6ad3e6b7e02bf5667b18daa123799bb643754e8"
+    "ops_control_tip": "c93f870e47bdb5b1613475e079c0a6dee2aa1753",
+    "ops_evidence_analyst_tip": "f03769227e888a70ea674eb627d4d311a1229c95",
+    "ops_orchestrator_tip_observed": "5b116229ae1f91c4d69f2866825797c0a2e59b77",
+    "ops_external_tip_before_write": "c25dce890612dcc9b5614f987f4cdeb85e1f5652"
   },
   "workflow_state_observed": {
-    "35748064227_authoritative_r4_lock": {
-      "head": "647253f4c0128ff09d47fdfce80dabf006863af1",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false
-    },
-    "35768073646_r4_preidentity": {
-      "head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false,
-      "canonicalized_by_analyst": false
-    },
-    "35768073346_generic_ci": {
-      "head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false
-    },
-    "35768073672_later_head_one_shot_materializer": {
-      "head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
+    "35784686838": {
+      "head": "02382fbc7d3838159598015e488c6ce49ac34efc",
       "status": "completed",
       "conclusion": "failure",
-      "failure_stage": "ASSERT_EXACT_R4_AUTHORITY_SURFACE",
-      "materialization_skipped": true,
-      "result_bearing": false
+      "result_bearing": false,
+      "classification": "FROZEN_RUNTIME_BINDING_MISMATCH_FAIL_CLOSED"
+    },
+    "35784686727": {
+      "head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+      "status": "completed",
+      "conclusion": "failure",
+      "result_bearing": false,
+      "classification": "GENERIC_TEST_FAILURE_AFTER_LINT_AND_READINESS_PASS"
     }
   },
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "REALIZATION_COORDINATE_NONIDENTIFIABILITY",
-      "type": "MECHANISM_IDENTIFIABILITY_REDUCTION",
+      "id": "INTERVENTIONAL_EQUIVALENCE_NOT_UNIQUE_GRAPH",
+      "type": "MECHANISM_STRUCTURE_IDENTIFIABILITY_REDUCTION",
       "sources": [
         {
-          "citation": "De Schutter, Minimal state-space realization in linear system theory: an overview, Journal of Computational and Applied Mathematics (2000)",
-          "url": "https://doi.org/10.1016/S0377-0427(00)00341-1"
+          "citation": "Hauser & Bühlmann, Characterization and Greedy Learning of Interventional Markov Equivalence Classes of Directed Acyclic Graphs, JMLR 13 (2012)",
+          "url": "https://www.jmlr.org/papers/v13/hauser12a.html"
         },
         {
-          "citation": "Jakubczyk, Existence and Uniqueness of Realizations of Nonlinear Systems, SIAM Journal on Control and Optimization",
-          "url": "https://doi.org/10.1137/0318034"
-        },
-        {
-          "citation": "Al-Falou and Trummer, Identifiability of Recurrent Neural Networks, Econometric Theory (2003)",
-          "url": "https://doi.org/10.1017/S0266466603193058"
+          "citation": "Hauser & Bühlmann, Jointly interventional and observational data: estimation of interventional Markov equivalence classes of directed acyclic graphs",
+          "url": "https://arxiv.org/abs/1303.3216"
         }
       ],
-      "finding": "Minimal dynamical and recurrent realizations can have non-unique internal coordinates while preserving the same input-output behavior: LTI minimal realizations are unique only up to similarity transformation, nonlinear minimal realizations can be diffeomorphic under standard conditions, and recurrent networks can be observationally equivalent. Native route/state coordinate identity is therefore not generally an input-output invariant.",
-      "impact": "Future broad H7 route/state claims should either demonstrate invariance under admissible reparameterizations using intervention-anchored semantics or explicitly scope the claim to an equivalence class of realizations."
+      "finding": "A fixed family of interventions generally refines observational Markov equivalence to an interventional equivalence class; it does not automatically identify a unique DAG.",
+      "impact": "A future H7 causal effect under frozen TOP1 cut supports the tested policy effect, not unique route topology. Broad topology claims require equivalence-class scope or additional identifying interventions."
     },
     {
-      "id": "RUNTIME_LOCK_NOT_NUMERICAL_DETERMINISM",
-      "type": "EVIDENCE_REPRODUCIBILITY_GUARDRAIL",
+      "id": "INTERVENTION_DESIGN_SEPARATING_REQUIREMENT",
+      "type": "PROSPECTIVE_IDENTIFIABILITY_DESIGN",
       "sources": [
         {
-          "citation": "Iakymchuk et al., Numerical reproducibility for the parallel reduction on multi- and many-core architectures, Parallel Computing (2015)",
-          "url": "https://doi.org/10.1016/j.parco.2015.09.001"
+          "citation": "He & Geng, Active Learning of Causal Networks with Intervention Experiments and Optimal Designs, JMLR 9 (2008)",
+          "url": "https://jmlr.org/papers/v9/he08a.html"
         },
         {
-          "citation": "Impacts of floating-point non-associativity on reproducibility for HPC and deep learning applications, SC24-W / IEEE (2024)",
-          "url": "https://doi.org/10.1109/SCW63240.2024.00028"
+          "citation": "Hauser & Bühlmann, Two Optimal Strategies for Active Learning of Causal Models from Interventional Data",
+          "url": "https://arxiv.org/abs/1205.4174"
         },
         {
-          "citation": "Pinto, Alguacil and Bauerheim, On the reproducibility of fully convolutional neural networks for modeling time-space-evolving physical systems, Data-Centric Engineering (2022)",
-          "url": "https://doi.org/10.1017/dce.2022.13"
+          "citation": "Elahi et al., Adaptive Online Experimental Design for Causal Discovery, ICML 2024",
+          "url": "https://arxiv.org/abs/2405.11548"
         }
       ],
-      "finding": "Exact dependency and package provenance does not alone guarantee bitwise or numerically deterministic execution because floating-point reduction order and parallel execution can vary, and recurrent/time-evolving rollouts can amplify small numerical differences.",
-      "impact": "H7 should keep software-environment reproducibility and numerical execution determinism as separate properties. The current R4 single-thread/hash-seed mitigations are positive but do not by themselves prove that every protected execution path is numerically deterministic."
+      "finding": "Full structural recovery depends on intervention design. Separating systems and optimal intervention targets are used to orient ambiguities; more samples under a non-separating intervention family do not create structural information that the interventions never expose.",
+      "impact": "Any fresh H7 successor claiming unique route/edge structure should predeclare the graph features and demonstrate an adequate separating/identifying intervention design."
     },
     {
-      "id": "REPRODUCIBILITY_NOT_ARTIFACT_VERIFIABILITY",
-      "type": "PROVENANCE_VERIFIABILITY_GUARDRAIL",
+      "id": "GENERAL_SOFT_DYNAMIC_TARGET_EQUIVALENCE",
+      "type": "INTERVENTION_SEMANTICS_IDENTIFIABILITY",
       "sources": [
         {
-          "citation": "Rampin et al., ReproZip: The Reproducibility Packer, JOSS (2016)",
-          "url": "https://doi.org/10.21105/joss.00107"
+          "citation": "Yang, Katcoff & Uhler, Characterizing and Learning Equivalence Classes of Causal DAGs under Interventions, ICML 2018",
+          "url": "https://proceedings.mlr.press/v80/yang18a.html"
         },
         {
-          "citation": "Complete Provenance for Application Experiments with Containers and Hardware Interface Metadata, CANOPIE-HPC (2022)",
-          "url": "https://doi.org/10.1109/CANOPIE-HPC56864.2022.00007"
+          "citation": "Jaber et al., Causal Discovery from Soft Interventions with Unknown Targets, NeurIPS 2020",
+          "url": "https://proceedings.neurips.cc/paper/2020/hash/6cd9313ed34ef58bad3fdd504355e72c-Abstract.html"
         },
         {
-          "citation": "Solarin et al., Reproducibility is Not Enough: Artifact Verifiability in Decentralized-Build Package Ecosystems (2026)",
-          "url": "https://arxiv.org/abs/2608.18180"
+          "citation": "Zhang et al., Scalable Contrastive Causal Discovery under Unknown Soft Interventions (2026)",
+          "url": "https://arxiv.org/abs/2603.03411"
         }
       ],
-      "finding": "Reproducing an environment and independently verifying how an artifact was produced are distinct requirements. Independent verification benefits from source-state, build-environment, dependency, build-instruction and hardware-interface provenance rather than trusting a producer summary alone.",
-      "impact": "R4's exact wheel hashes, source-component blobs and host binding are aligned with this stronger provenance model, but this remains evidence-integrity closure rather than mechanism evidence."
+      "finding": "General/soft interventions and uncertain target semantics can preserve substantial structural equivalence even with interventional data.",
+      "impact": "H7 target selection is known but state-dependent. Fixed-target perfect-intervention identifiability results cannot be imported without treating the TOP1 selector, target map and actual intervention semantics as part of the causal object."
     },
     {
-      "id": "CONTENT_ADDRESSED_FUNCTIONAL_ENVIRONMENT_CEILING",
-      "type": "STRONGER_PRIVILEGE_REPRODUCIBILITY_CEILING",
+      "id": "RECURRENT_TEMPORAL_CAUSAL_OBJECT",
+      "type": "DYNAMIC_GRAPH_SCOPE",
       "sources": [
         {
-          "citation": "Courtes and Wurmus, Reproducible and User-Controlled Software Environments in HPC with Guix (2015)",
-          "url": "https://doi.org/10.1007/978-3-319-27308-2_47"
+          "citation": "Gao et al., IDYNO: Learning Nonparametric DAGs from Interventional Dynamic Data, ICML 2022",
+          "url": "https://proceedings.mlr.press/v162/gao22a.html"
         },
         {
-          "citation": "Kowalewski, Sustainable packaging of quantum chemistry software with the Nix package manager (2022)",
-          "url": "https://doi.org/10.1002/qua.26872"
-        },
-        {
-          "citation": "Bilke et al., Reproducible HPC software deployments, simulations, and workflows (2025)",
-          "url": "https://doi.org/10.1007/s12665-025-12501-z"
+          "citation": "Castri et al., CAnDOIT: Causal Discovery with Observational and Interventional Data from Time Series, Advanced Intelligent Systems (2024)",
+          "url": "https://doi.org/10.1002/aisy.202400181"
         }
       ],
-      "finding": "Content-addressed functional package environments such as Guix/Nix provide a stronger reproducibility model by deriving environments from explicit dependency graphs and immutable inputs.",
-      "impact": "This is a prospective SYSTEM/provenance ceiling only. It does not justify changing the frozen H7 R4 package/resource choice after the current object has been prospectively fixed."
+      "finding": "Interventional causal discovery in dynamical systems uses explicit temporal/lagged causal representations; a static DAG abstraction does not automatically capture recurrent feedback semantics.",
+      "impact": "Future H7 graph-identification claims should define an explicit time-unrolled/lagged causal object before invoking interventional-equivalence or topology-identification language."
     }
   ],
   "affected_lines": [
-    "H7_RESPONSIBILITY_STATE_COORDINATE_IDENTIFIABILITY",
-    "H7_FUTURE_REALIZATION_EQUIVALENCE_REDUCTION",
-    "H7_FORMAL_R4_RUNTIME_RESOURCE_BINDING",
-    "H7_FORMAL_R4_NUMERICAL_DETERMINISM",
-    "H7_INDEPENDENT_ARTIFACT_VERIFIABILITY",
+    "H7_FORMAL_R4_CLAIM_SCOPE",
+    "H7_FUTURE_INTERVENTIONAL_EQUIVALENCE",
+    "H7_CAUSAL_STRUCTURE_IDENTIFIABILITY",
+    "H7_DYNAMIC_INTERVENTION_TARGET_SEMANTICS",
+    "H7_TEMPORAL_CAUSAL_GRAPH_SCOPE",
     "FUTURE_MECHANISM_SUCCESSOR_ADMISSION",
-    "PROGRAMME_EVIDENCE_INTEGRITY"
+    "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "REALIZATION_EQUIVALENCE_OR_STATE_REPARAMETERIZATION_CHALLENGE",
-    "OBSERVATIONALLY_EQUIVALENT_RECURRENT_REALIZATION",
-    "NUMERICAL_DETERMINISM_SEPARATE_FROM_ENVIRONMENT_PROVENANCE",
-    "INDEPENDENT_SOURCE_BUILD_HARDWARE_PROVENANCE",
-    "CONTENT_ADDRESSED_FUNCTIONAL_ENVIRONMENT_CEILING"
+    "INTERVENTIONAL_EQUIVALENCE_CLASS_REPORTING",
+    "SEPARATING_INTERVENTION_DESIGN",
+    "DYNAMIC_TARGET_SELECTOR_SEMANTICS",
+    "TIME_UNROLLED_LAGGED_CAUSAL_GRAPH"
   ],
-  "novelty_or_reduction_impact": "REALIZATION_EQUIVALENCE_AND_RUNTIME_REPRODUCIBILITY_BAR_SHARPENED_NO_CURRENT_R4_REWRITE_OR_MECHANISM_UPLIFT. Minimal recurrent/dynamical realizations can be internally non-unique even when behavior is fixed; broad route-state identity therefore needs intervention-anchored invariance or equivalence-class scope. Separately, package/resource reproducibility does not by itself prove numerical determinism or independent artifact verifiability.",
+  "novelty_or_reduction_impact": "INTERVENTIONAL_EQUIVALENCE_SHARPENS_UNIQUE_ROUTE_GRAPH_CLAIM_NO_CURRENT_R4_REWRITE_OR_MECHANISM_UPLIFT. A causal effect under the frozen intervention policy does not by itself identify a unique route graph. Structural claims are limited to the equivalence class induced by the actual intervention family unless a prospectively sufficient separating design resolves the remaining alternatives.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "realization-equivalence / state-reparameterization challenge before any broad unique-route claim",
-    "minimal input-output realization or observationally equivalent recurrent realization as a future reduction baseline",
-    "explicit separation of environment reproducibility from numerical determinism",
-    "deterministic-kernel or prospectively fixed numerical-equivalence policy only where the actual execution path requires it",
-    "independent source/build/environment/hardware-interface provenance verification",
-    "content-addressed functional environment derivation as a stronger-privilege SYSTEM reproducibility ceiling"
+    "compute/report the interventional equivalence class induced by the frozen intervention family for any future graph-structure claim",
+    "predeclare exactly which route/edge features are claimed identifiable",
+    "use a fresh-successor-only separating/covering intervention design if unique topology is claimed",
+    "freeze dynamic target-selector/target-map semantics as part of the intervention definition",
+    "formulate recurrent claims on an explicit time-unrolled/lagged dynamic causal object",
+    "if the intervention family does not identify a unique graph, report equivalence-class scope rather than unique topology"
   ],
   "questions_for_evidence_analyst": [
-    "Keep current R4 scientific fields unchanged and treat the new f84ba35 preidentity success as repository input requiring fresh canonical disposition, not literature-based promotion?",
-    "Does existing R4 resource binding already establish the intended numerical-determinism property for its actual execution path; if not, should any science-affecting change require explicit versioning rather than silent inference?",
-    "For future broad H7 route claims, require intervention-anchored invariance/equivalence-class scope rather than treating native coordinate identity as uniquely identified?"
+    "Keep current R4 scoped to the frozen dynamic-policy effect and do not infer unique route topology from any future PASS?",
+    "For a future topology successor, require an explicit identifiability target and an intervention family shown to separate the claimed alternatives?",
+    "Treat dynamic target selection and temporal graph semantics as part of the prospective causal-identification contract?"
   ],
   "questions_for_control_brain": [
-    "Distinguish software-environment reproducibility, numerical execution determinism, and independent artifact verifiability in future FORMAL terminology?",
-    "Keep realization-equivalence as a prospective future H7 reduction/falsifier rather than adding it to the frozen R4 panel?",
-    "Preserve STOP before any one-way FORMAL action until fresh Analyst disposition of the current preidentity head?"
+    "Add 'intervention effect != unique causal graph' as a future H7 claim-ceiling guardrail?",
+    "Keep interventional-equivalence/separating-design work prospective and outside the frozen R4 comparator/intervention panel?",
+    "Preserve all current R4 preidentity STOP boundaries while the runtime-binding mismatch is reassessed?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "H7 PF-R1 development result/raw and no-rerun/no-rescore boundary",
     "stopped H7 R1/R2/R3 historical objects and classifications",
     "H7 R4 claim/estimand/worlds/intervention/comparator panel/thresholds/bootstrap-decision/falsifier/concealed-evaluation/raw-gate/scorer semantics",
-    "H7 R4 exact recovered runtime lock/manifest bytes and prospectively fixed package/resource choice",
+    "H7 R4 exact recovered runtime lock/manifest and frozen package/resource choice",
     "no FORMAL identity, STARTED, evaluation commitment/seed reveal, protected evaluation, result-bearing workflow, official scoring, scientific preserve/evidence ref, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
   ],
   "utility_request_created": null,
