@@ -1,46 +1,46 @@
 {
-  "timestamp": "2026-09-22T06:31:57+09:00",
+  "timestamp": "2026-09-22T09:32:07+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8",
-  "producer_run_id": "external-literature-auto-20260922T063157+0900-R26-6F4A21D8",
+  "generation_id": "LIT-20260922T093207+0900-R27-SPECIFICITY-IDENTIFIABILITY-8C3A21F5",
+  "producer_run_id": "external-literature-auto-20260922T093207+0900-R27-8C3A21F5",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5",
+  "supersedes_generation_id": "LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260922T045653+0900-R29-7C4E91B2",
-      "handoff_commit": "04af2dd036efbce5aa133df01eda569585d73476",
-      "latest_text_commit": "05f8c07149b0e2584e8341948b4b2eb983760ddd"
+      "generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219",
+      "handoff_commit": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T060636+0900-R54-4E7C21A9",
-      "handoff_commit": "473bb7713c04b50dd9567472084301f2d1d07c69"
+      "generation_id": "EVA-20260922T085807+0900-R57-6C4A21E8",
+      "handoff_commit": "7833c8147444ec94ea2b86661a1519c215de2d77"
     },
     "main_report": {
-      "generation_id": "MAIN-20260922T061624+0900-PRIMARY-FUNNEL21-IDLE-R54-4E7C21A9",
-      "latest_commit": "3f6701296884a6d22f003cd29b0661bdcf3741fa",
-      "state_commit": "822c50998a1ae0d8564a6a3bf0dd02e2390ba0b4",
-      "branch_tip_observed": "796490f686a424151e23c59f253308e3abb150a6"
+      "generation_id": "MAIN-20260922T091342+0900-PRIMARY-FUNNEL21-IDLE-R57-6C4A21E8",
+      "state_commit": "01ae06ccfe60450bf94ba756912bdadcd69cd776",
+      "mailbox_tip_observed": "5ba09156c8c065307164fe29ac46cfef859ce1de"
     },
     "sub_report": {
-      "generation_id": "SUB-20260922T053500+0900-NOOP-R53INTENTIONALIDLE-3F8A21D6",
-      "handoff_commit": "005b367ddf1b442e3a83b9e56e16e18e2ad2996d"
+      "generation_id": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6",
+      "handoff_commit": "303842334e4e91392b845cb1b6fd8333082ee4e0"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260922T033126+0900-R25-EXACT-SUPPORT-TURNOVER-7D3A91C5",
-      "handoff_commit": "752cd466294c1be037fa896101f23ae7e3ab995a"
+      "generation_id": "LIT-20260922T063157+0900-R26-CAUSAL-FAITHFULNESS-6F4A21D8",
+      "handoff_commit": "4c43d793067adf2a4d5c4e370c1d7e7d2be6eae3"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "06:30 JST",
+  "schedule_slot": "09:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "h7_exploratory_trace_branch": "research/exploratory-sub-h7-trace-causality-20260917",
     "h7_exploratory_trace_head": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
-    "ops_control_tip": "04af2dd036efbce5aa133df01eda569585d73476",
-    "ops_evidence_analyst_tip": "473bb7713c04b50dd9567472084301f2d1d07c69",
-    "ops_orchestrator_tip": "796490f686a424151e23c59f253308e3abb150a6",
-    "ops_external_tip_before_write": "752cd466294c1be037fa896101f23ae7e3ab995a",
+    "r50_result_branch": "research/main-semantic-active-work-localization-r50-cycle2",
+    "r50_result_head": "d090fd2e57680c5a97b9fd0d036fc65a008078ec",
+    "ops_control_tip": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
+    "ops_evidence_analyst_tip": "7833c8147444ec94ea2b86661a1519c215de2d77",
+    "ops_orchestrator_tip": "5ba09156c8c065307164fe29ac46cfef859ce1de",
+    "ops_external_tip_before_write": "4c43d793067adf2a4d5c4e370c1d7e7d2be6eae3",
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -54,7 +54,7 @@
     "freeze_tag_count": 0,
     "legacy_freeze_branch_count": 13,
     "preserve_branch_count": 24,
-    "control_refs_refreshed": true,
+    "control_refs_inspected": true,
     "current_candidate_population": {
       "total": 32,
       "mechanism": 13,
@@ -68,86 +68,80 @@
       "sole_nonterminal_hold": "H7_RESPONSIBILITY"
     },
     "relevant_prs": {
-      "148": "OPEN_MERGEABLE_UNMERGED_GOVERNANCE",
-      "149": "OPEN_MERGEABLE_UNMERGED_GOVERNANCE"
+      "148": "OPEN_UNMERGED_GOVERNANCE",
+      "149": "OPEN_UNMERGED_GOVERNANCE"
     },
     "workflow_state": {
       "no_current_scientific_research_execution": true,
-      "historical_r50_scientific_workflow": 35637961215,
-      "latest_repository_workflow_traffic_is_ops_utility_ci_not_scientific_evidence": true
+      "latest_observed_actions_activity": "UTILITY_CONTROL_PLANE_CI",
+      "historical_r50_scientific_workflow": 35637961215
     }
   },
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "INTERVENTION_CAN_ACTIVATE_DORMANT_PARALLEL_PATH",
+      "id": "CAUSAL_IMPORTANCE_IS_NOT_TASK_SPECIFICITY",
       "type": "EXTERNAL_LITERATURE_FACT_PLUS_REPOSITORY_REDUCTION",
-      "source": "Makelov, Lange, Geiger & Nanda, ICLR 2024, Is This the Subspace You Are Looking for? An Interpretability Illusion for Subspace Activation Patching",
-      "finding": "A patch can have the intended end-to-end causal effect while acting through a dormant parallel pathway, including cases where the patched component is causally disconnected from normal output.",
-      "impact": "The H7 trace-causality toy already shows that an existing bypass can make a stable route non-necessary. This literature adds the converse diagnostic hazard: the intervention itself can manufacture an alternate path. Future route-faithfulness claims require intervention-support/realism controls and cross-intervention consistency."
+      "source": "Li & Subramani, 2026, How Much Do Circuits Tell Us? Measuring the Consistency and Specificity of Language Model Circuits",
+      "finding": "Component-level circuits can be highly consistent and causally important while being weakly task-specific because the same components are shared across unrelated task circuits.",
+      "impact": "A future H7 route may be necessary/sufficient yet still be a generic bottleneck. Matched non-target task/context intervention controls are needed before interpreting route effects as lineage-specific responsibility."
     },
     {
-      "id": "CAUSAL_ABSTRACTION_GRADED_FAITHFULNESS_FLOOR",
-      "type": "EXTERNAL_LITERATURE_FACT",
-      "source": "Geiger et al., JMLR 2025, Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability",
-      "finding": "Mechanistic explanations can be formalized as causal abstractions with graded faithfulness across intervention mappings, unifying path/activation patching and other causal interpretability methods.",
-      "impact": "Stable route identifiers or one deletion effect are weaker than a frozen high-level causal model whose intervention semantics faithfully match low-level behavior across a predeclared intervention family."
+      "id": "MECHANISTIC_ROUTE_EXPLANATIONS_CAN_BE_NONIDENTIFIABLE",
+      "type": "EXTERNAL_LITERATURE_FACT_PLUS_CLAIM_SCOPE_SHARPENING",
+      "source": "Meloux, Maniu, Portet & Peyrard, 2025, Everything, Everywhere, All at Once: Is Mechanistic Interpretability Identifiable?",
+      "finding": "Multiple circuits, interpretations, algorithms and neural localizations can satisfy the same behavioral or causal-alignment criteria even in small networks.",
+      "impact": "Stable route IDs do not by themselves establish a unique responsible route. Future H7 contracts should distinguish existential route faithfulness from uniqueness-bearing responsibility and use an equivalence-class formulation when alternatives are equally valid."
     },
     {
-      "id": "PATH_LOCALIZATION_NEEDS_PRECISION_COMPLETENESS_AND_CAUSAL_RECOVERY",
-      "type": "EXTERNAL_LITERATURE_FACT_PLUS_INFERENCE",
-      "source": "Mueller et al., ICML 2025, MIB: A Mechanistic Interpretability Benchmark",
-      "finding": "MIB separately evaluates recovery of relevant causal pathways/variables and favors precise, concise localization rather than prediction performance alone.",
-      "impact": "Future H7 tests should separately bind necessity, sufficiency, completeness/alternative-route coverage and conciseness. Deletion sensitivity alone cannot distinguish an incomplete explanation from legitimate redundancy."
-    },
-    {
-      "id": "PATH_SPECIFIC_PNS_STRONGER_PRIVILEGE_CEILING",
-      "type": "EXTERNAL_LITERATURE_FACT",
-      "source": "Kawakami & Tian, UAI 2025, Decomposition of Probabilities of Causation with Two Mediators",
-      "finding": "Path-specific probability of necessity and sufficiency decomposes total probability of causation into contributions along distinct causal paths.",
-      "impact": "Raw route deletion is a coarse responsibility statistic. Path-specific PNS provides an established formal ceiling for multiple mediators/bypasses, but requires an explicit causal model and should remain a stronger-privilege analysis baseline unless information privilege is matched."
+      "id": "REDUNDANT_UNIQUE_SYNERGISTIC_CAUSALITY_AND_LEAK",
+      "type": "EXTERNAL_LITERATURE_FACT_PLUS_STRONGER_PRIVILEGE_CEILING",
+      "source": "Martinez-Sanchez, Arranz & Lozano-Duran, Nature Communications 2024, Decomposing causality into its synergistic, unique, and redundant components",
+      "finding": "SURD decomposes causal influence into unique, redundant and synergistic components and quantifies unaccounted influence as a causality leak.",
+      "impact": "H7 bypass/overdetermination cases can be reduced more finely than deletion accuracy alone. The decomposition is a stronger-privilege ceiling, not an equal-privilege local mechanism baseline or complete actual-causation solution."
     }
   ],
   "affected_lines": [
     "H7_RESPONSIBILITY_NONTERMINAL_HOLD",
-    "H7_TRACE_CAUSAL_FAITHFULNESS",
-    "H7_BYPASS_AND_REDUNDANCY_CONTROLS",
+    "H7_ROUTE_TASK_SPECIFICITY",
+    "H7_EXPLANATION_IDENTIFIABILITY",
+    "H7_REDUNDANCY_SYNERGY_DECOMPOSITION",
     "FUTURE_MECHANISM_OBJECT_ADMISSION",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "INTERVENTION_SUPPORT_AND_DORMANT_PATH_CHECK",
-    "GRADED_CAUSAL_ABSTRACTION_FAITHFULNESS",
-    "NECESSITY_SUFFICIENCY_COMPLETENESS_CONCISENESS_DECOMPOSITION",
-    "PATH_SPECIFIC_PNS_STRONGER_PRIVILEGE_CEILING"
+    "MATCHED_NON_TARGET_SPECIFICITY_CONTROL",
+    "ALTERNATIVE_ROUTE_EXPLANATION_EQUIVALENCE_CLASS",
+    "UNIQUE_REDUNDANT_SYNERGISTIC_CAUSALITY_CEILING",
+    "CAUSALITY_LEAK_UNOBSERVED_PATH_WARNING"
   ],
-  "novelty_or_reduction_impact": "INTERVENTION_FAITHFULNESS_AND_PATH_COMPLETENESS_SHARPENING_NO_CURRENT_OBJECT_UPLIFT. Stable routes and even successful causal interventions are insufficient: interventions can activate dormant parallel pathways, and route explanations must be evaluated as faithful causal abstractions across an intervention family with separate necessity, sufficiency, completeness and path-specific responsibility checks.",
+  "novelty_or_reduction_impact": "ROUTE_SPECIFICITY_AND_NONIDENTIFIABILITY_SHARPENING_NO_CURRENT_OBJECT_UPLIFT. Causal importance is not task specificity, and faithful route explanations need not be unique. Future H7 claims must explicitly scope whether they establish a route, a task-specific route, or a uniquely responsible route, and ordinary redundancy/synergy explanations must be exhausted first.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "predeclare intervention support/realism and test whether interventions activate dormant or otherwise unused routes",
-    "freeze a high-level causal abstraction and intervention mapping; score graded faithfulness across multiple intervention types",
-    "separate route necessity, route sufficiency, explanation completeness/alternative-route coverage and conciseness",
-    "include natural or minimally perturbed responsibility-changing pairs alongside synthetic deletion/replacement",
-    "use path-specific probability of necessity-and-sufficiency only as a stronger-privilege formal ceiling unless information privilege is matched",
-    "match timing, local observations, eligibility, recurrent state and resources while changing actual route responsibility through bypass, backup, preemption or overdetermination"
+    "matched non-target task/context interventions to separate task-specific route damage from generic bottleneck damage",
+    "prospective claim scope distinguishing existential route faithfulness from uniqueness-bearing responsibility",
+    "search or enumerate alternative route sets/localizations under the same predictive and intervention criteria and report an equivalence class when non-unique",
+    "preserve R26 intervention-support and dormant-path controls before specificity or uniqueness interpretation",
+    "use unique/redundant/synergistic causal decomposition and causality-leak analysis only as a stronger-privilege ceiling unless privilege is matched",
+    "match timing, local observations, recurrent state, eligibility, information privilege and resource privilege across responsibility-changing cases"
   ],
   "questions_for_evidence_analyst": [
-    "Keep H7 as nonterminal HOLD and treat this literature only as future admission guidance, not as grounds to manufacture a successor?",
-    "Require intervention-faithfulness/support controls in addition to counterfactual responsibility for any future H7 object?",
-    "Require necessity, sufficiency and completeness/alternative-route metrics to be separately bound before interpreting route faithfulness?"
+    "Keep H7 nonterminal HOLD and use specificity/identifiability only as prospective claim-scope guidance rather than grounds to manufacture a successor?",
+    "For a broad route-responsibility claim, require matched non-target contexts so a generic shared bottleneck cannot masquerade as task-specific lineage?",
+    "If multiple routes satisfy the same frozen criteria, require an equivalence-class or explicitly existential claim rather than uniqueness language?"
   ],
   "questions_for_control_brain": [
-    "Add dormant-path activation / intervention-induced bypass as an explicit failure mode in the H7 causal-credit reduction checklist?",
-    "Treat causal-abstraction faithfulness across an intervention family as the explanation floor before route-level novelty claims?",
-    "Preserve intentional idle until an independently arising native mechanism exposes this residual with a prospective comparator/resource/falsifier contract?"
+    "Add generic-shared-circuit and explanation non-identifiability as explicit H7 reduction/failure modes?",
+    "Distinguish a faithful route, a task-specific route and a unique responsible route in future claim ceilings?",
+    "Preserve intentional idle until an independently arising native mechanism supplies a prospective comparator/resource/falsifier contract?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "canonical H5/PD01/NI01 terminal classifications and all consumed STARTED/control/preserve refs",
-    "H7 remains NONTERMINAL_HOLD / NOT_QUEUED with no current native object, comparator, resource contract or falsifier",
-    "exploratory H7 trace-causality branch remains NON_EVIDENTIARY and is not promoted or rerun",
-    "R50 candidate #32 remains HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT with no same-object repair or continuation",
+    "canonical H5/PD01/NI01 terminal classifications and consumed STARTED/control/preserve refs",
+    "H7 remains NONTERMINAL_HOLD / NOT_QUEUED with no current native object or execution authority",
+    "historical H7 trace-causality branch remains EXPLORATORY_NON_EVIDENTIARY and is not rerun or promoted",
+    "candidate #32 remains HOLD_METHOD_LIMITED / TERMINAL_FOR_CURRENT_OBJECT with no cycle 3, repair, rerun or reinterpretation",
     "no STARTED/TEST/PRE_FORMAL/FORMAL promotion, scientific workflow dispatch, research merge, immutable-ref mutation or scheduler change by this role"
   ],
   "utility_request_created": null,
