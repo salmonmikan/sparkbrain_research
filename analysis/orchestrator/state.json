@@ -1,105 +1,340 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260923T061000+0900-R87-7B3D91E4",
-  "produced_at": "2026-09-23T06:10:00+09:00",
-  "producer_run_id": "evidence-analyst-auto-20260923T061000+0900-R87",
+  "generation_id": "EVA-20260923T065834+0900-R88-D5A7C219",
+  "produced_at": "2026-09-23T06:58:34+09:00",
+  "producer_run_id": "evidence-analyst-auto-20260923T065834+0900-R88",
   "authority_scope": "EVIDENCE_DRIVEN_RESEARCH_STRATEGY_CONTROL_PLANE_PERSISTENCE_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "EVA-20260923T050030+0900-R86-62D4A1B7",
+  "supersedes_generation_id": "EVA-20260923T061000+0900-R87-7B3D91E4",
   "input_generations": {
-    "human_directive":"HUMAN-20260922-005",
-    "control":"CTRL-20260923T055000+0900-R39-C31A7D52@ops/control-brain-handoff",
-    "main_cycle11_mailbox":"MAIN-20260923T055206+0900-RELAY-H7-FORMALR4-C11-R86-LOCKED-REALIZATION-62D4A1B7@ops/orchestrator-run-report",
-    "sub":"SUB-20260923T053741+0900-NOOP-SCAN-R86-62D4A1B7@ops/orchestrator-run-report",
-    "methodology":"METHCAL-20260923T051912+0900-R73-6B1E94D3@ops/methodology-calibration-audit",
-    "literature":"LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91@ops/external-research-audit-handoff",
-    "independent_audit":"AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4@ops/external-research-audit-handoff",
-    "repository_steward":"STEWARD-20260922T135014+0900-G10-4D8C21A7@ops/repository-steward",
-    "utility":"UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91@b18a1d76c05efbbfacb9618ac1ca1e9941b17555",
-    "analyst_previous":"EVA-20260923T050030+0900-R86-62D4A1B7@5c79b2f87281f08d0646d5be3180cc106d2de228"
+    "human_directive": "HUMAN-20260922-005",
+    "control": "CTRL-20260923T055000+0900-R39-C31A7D52@c93f870e47bdb5b1613475e079c0a6dee2aa1753",
+    "main": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4@79d5109389f89d781d47e6e541cd87228859c872",
+    "sub": "SUB-20260923T064336+0900-QFD-ASSEMBLY-INTERVENTIONAL-EQUIV-R87-8F4C21A7@b0dcaf9f414d169183bd07924a383b93e5c17340",
+    "methodology": "METHCAL-20260923T062034+0900-R74-A3F7C912@077d282bf9a3d3f730550ad23edda4835f73c2d8",
+    "literature": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7@027fa9fc45648269c2ebe0ae6408162d155fe840",
+    "independent_audit": "AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4@ops/external-research-audit-handoff",
+    "repository_steward": "STEWARD-20260922T135014+0900-G10-4D8C21A7@b3b69553df32f5eb998d1c29cbe29ee1c34a93aa",
+    "utility": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91@b18a1d76c05efbbfacb9618ac1ca1e9941b17555",
+    "analyst_previous": "EVA-20260923T061000+0900-R87-7B3D91E4@f03769227e888a70ea674eb627d4d311a1229c95"
   },
   "authoritative_refs": {
-    "stable_main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "h7_cycle11_branch":"research/main-h7-formal-r4-source-executor-r85-cycle11",
-    "h7_cycle11_head":"02382fbc7d3838159598015e488c6ce49ac34efc",
-    "h7_cycle10_runtime_lock_branch":"research/main-h7-formal-r4-runtime-lock-r81-cycle10",
-    "h7_cycle10_runtime_lock_head":"f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
-    "evidence_refs":["4d6c0bd9a6c06c17352941d3fa730502e72b8540","82b88f3e2ad524fed8b72300dcba46053c1f2c7e","e7d99cc806206ac27ced225d4779c9fc5bb67ff5","185b741e69ea8a0ce0d076153d36e9296a748765","e4c4e6428d8ef9e09e92cae231041de0788162e2"],
-    "formal_tag_count":0,"sealed_tag_count":0,"freeze_tag_count":0,
-    "h7_started_control_ref_present":false,"h7_scientific_preserve_ref_present":false,
-    "pr_148_open_unmerged":true,"pr_149_open_unmerged":true,"repository_ruleset_count":0
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "h7_cycle11_branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
+    "h7_cycle11_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+    "h7_cycle10_base": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
+    "evidence_refs": [
+      "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+      "185b741e69ea8a0ce0d076153d36e9296a748765",
+      "e4c4e6428d8ef9e09e92cae231041de0788162e2"
+    ],
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "h7_started_control_ref_present": false,
+    "h7_scientific_preserve_ref_present": false,
+    "pr_148_open_unmerged": true,
+    "pr_149_open_unmerged": true,
+    "repository_ruleset_count": 0
   },
   "material_changes": [
-    "H7 Cycle11 advanced six commits beyond Cycle10 to 02382fbc, including protected executor core/tests/preflight/clean-runtime gate, an invariant lint repair, and invariant runtime mismatch diagnostics.",
-    "The committed exact lock installs successfully in a clean runtime, but the frozen runtime/source assertion still fails before the synthetic executor probe.",
-    "Lint and Local readiness now pass on Python 3.11/3.13; generic Test fails on both, with exact diagnostic not available in structured metadata.",
-    "No FORMAL one-way identity or result-bearing scientific material was created.",
-    "PF-R1 preservation remains machine-authority blocked; SUB retains zero independent targets."
+    "Exact MAIN diagnostic resolves the R87 runtime ambiguity: clean R4 exact-wheel installation succeeds and torch distribution/module/git/CUDA checks pass, but installed torch RECORD sha256 06706c58... differs from frozen R4 expected 407832ba....",
+    "The frozen expected RECORD hash was inherited from R3 runtime observation produced after editable resolver-based install, while R4 uses an exact content-addressed wheel lock; R4 nevertheless classified RECORD and hosted-runner metadata inside scientific_runtime.",
+    "R4 is preserved unchanged; H7 advances only via explicit versioned R5 resource-binding revision that splits content-addressed scientific runtime identity from provisioning provenance without changing any non-resource scientific field.",
+    "Generic CI failure is now exactly diagnosed as validation-error precedence only: invalid plan is still rejected; this is SCIENCE_INVARIANT_REPAIR.",
+    "Fresh Literature R34 and independent SUB R87 QFD create a distinct Assembly edge/timing route-identifiability mechanism question; admitted as canonical candidate #34 at Discovery/OPEN_DEVELOPMENT/NOT_READY.",
+    "No H7 one-way identity/result material was created; PF-R1 preservation remains machine-authority blocked."
   ],
   "four_layer_funnel": {
-    "DISCOVERY":{"mechanism_active":0,"mechanism_queued":0,"system_active":0,"system_queued":0,"state":"OPEN_NO_COHERENT_BOUNDED_AUTONOMOUS_TARGET"},
-    "ARCHITECTURE_STUDY":{"mechanism_active":0,"mechanism_queued":0,"system_active":0,"system_queued":0,"state":"EMPTY_CANDIDATE33_CURRENT_OBJECT_TERMINAL"},
-    "PRE_FORMAL":{"eligible":1,"ready":1,"state":"H7_DEVELOPMENT_LINEAGE_ONLY_READY_IS_NOT_FORMAL_AUTHORITY"},
-    "FORMAL":{"fresh_one_way_authority":0,"state":"H7_R4_CYCLE11_PREIDENTITY_DIAGNOSTIC_AND_INVARIANT_REPAIR_ONLY"}
-  },
-  "funnel_metrics": {
-    "canonical_candidates":33,"mechanism":13,"system":20,"active":1,"nonterminal_hold":0,"terminal_for_current_object":32,
-    "architecture_active_mechanism":0,"architecture_active_system":0,"architecture_queued_mechanism":0,"architecture_queued_system":0,
-    "preformal_eligible":1,"preformal_ready":1,"viable_mechanism":1,"fresh_formal_authority":0,
-    "recent_completed_main_endpoint_proxy_system":11,"recent_completed_main_endpoint_proxy_mechanism":9,
-    "system_over_mechanism_exceptions":0,"classification_complete":"33/33",
-    "development_phase_counts":{"OPEN_DEVELOPMENT":2,"RESULT_EXPOSED_DEVELOPMENT":31,"CONSUMED_ONE_WAY_CANONICAL":0},
-    "official_consumed_identities":7,"fresh_successor_generated_this_generation":0,"fresh_successor_admitted_this_generation":0,
-    "rolling_theory_backward_actual_selections":"1/3","shadow_standby_queue_size":0
-  },
-  "canonical_inheritance":"Candidates 1-6 and 8-33 inherit all mandatory Funnel v2.1 fields unchanged from R86 except explicit current-state statements. Candidate 33 remains SYSTEM/RESULT_EXPOSED_DEVELOPMENT/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED. Candidate 7 is overridden below.",
-  "canonical_overrides": {
-    "7": {
-      "id":"CAND-H7-RESPONSIBILITY","question":"Does the frozen H7 dynamic TOP1 intervention isolate a controlled mechanism-level responsibility effect distinct from the fixed ordinary comparator panel?","phenomenon":"H7 controlled intervention responsibility",
-      "target_layer":"FORMAL","claim_ceiling":"MECHANISM","preformal_eligible":true,"preformal_readiness":"READY","hold_class":null,"hold_reason":null,"terminal_state":"ACTIVE","queue_state":"ACTIVE","system_priority_exception":{"used":false},
-      "candidate_source":"CONTROL_BRAIN_PRIORITY","development_phase":"RESULT_EXPOSED_DEVELOPMENT","development_revision":"H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION","cycle_count":11,
-      "cycle_status":"REASSESS_CONTINUE_ONLY_EXACT_DIAGNOSTIC_AND_SCIENCE_INVARIANT_REPAIR_IF_CONFIRMED",
-      "information_gain_rationale":"Exact lock installation and lint/readiness now succeed; frozen locked-runtime assertion and generic tests fail before successful protected synthetic realization, providing bounded non-result defects to diagnose.",
-      "promotion_rejection_reassess_condition":"Continue same R4 only for diagnostically confirmed science-invariant implementation/plumbing repair and NON_RESULT revalidation; scientific resource/contract changes require explicit versioning; all-green preidentity still STOPs for fresh one-way Analyst review."
+    "DISCOVERY": {
+      "mechanism_active": 0,
+      "mechanism_queued": 1,
+      "system_active": 0,
+      "system_queued": 0,
+      "state": "CAND34_QUEUED_FOR_SUB_NON_EVIDENTIARY_DISCOVERY"
+    },
+    "ARCHITECTURE_STUDY": {
+      "mechanism_active": 0,
+      "mechanism_queued": 0,
+      "system_active": 0,
+      "system_queued": 0,
+      "state": "EMPTY_CANDIDATE33_CURRENT_OBJECT_TERMINAL"
+    },
+    "PRE_FORMAL": {
+      "eligible": 2,
+      "ready": 1,
+      "state": "H7_READY_CAND34_ELIGIBLE_NOT_READY"
+    },
+    "FORMAL": {
+      "fresh_one_way_authority": 0,
+      "state": "H7_R5_VERSIONED_RESOURCE_BINDING_REVISION_PREIDENTITY_ONLY"
     }
   },
-  "system_terminal_successor_accounting":{"assessed":20,"realized_fresh_system_successor":1,"realized_relation":"#32 -> #33","unrealized_fresh_system_potentials":16,"fresh_mechanism_successors":0,"none":3,"none_candidates":[14,27,28]},
+  "funnel_metrics": {
+    "canonical_candidates": 34,
+    "mechanism": 14,
+    "system": 20,
+    "active": 1,
+    "queued": 1,
+    "nonterminal_hold": 0,
+    "terminal_for_current_object": 32,
+    "architecture_active_mechanism": 0,
+    "architecture_active_system": 0,
+    "architecture_queued_mechanism": 0,
+    "architecture_queued_system": 0,
+    "preformal_eligible": 2,
+    "preformal_ready": 1,
+    "viable_mechanism": 2,
+    "fresh_formal_authority": 0,
+    "recent_completed_main_endpoint_proxy_system": 11,
+    "recent_completed_main_endpoint_proxy_mechanism": 9,
+    "system_over_mechanism_exceptions": 0,
+    "classification_complete": "34/34",
+    "development_phase_counts": {
+      "OPEN_DEVELOPMENT": 3,
+      "RESULT_EXPOSED_DEVELOPMENT": 31,
+      "CONSUMED_ONE_WAY_CANONICAL": 0
+    },
+    "official_consumed_identities": 7,
+    "fresh_successor_generated_since_prior_analyst": 1,
+    "fresh_successor_generated_this_generation": 0,
+    "fresh_successor_admitted_this_generation": 1,
+    "rolling_theory_backward_actual_selections": "1/3",
+    "shadow_standby_queue_size": 0
+  },
+  "canonical_inheritance": "Candidates 1-6 and 8-33 inherit all mandatory Funnel v2.1 fields unchanged from R87. Candidate 33 remains SYSTEM/RESULT_EXPOSED_DEVELOPMENT/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED. Candidate 7 is revision-updated below; candidate 34 is newly admitted below.",
+  "canonical_overrides": {
+    "7": {
+      "id": "CAND-H7-RESPONSIBILITY",
+      "question": "Does the frozen H7 dynamic TOP1 intervention isolate a controlled mechanism-level responsibility effect distinct from the fixed ordinary comparator panel?",
+      "phenomenon": "H7 controlled intervention responsibility",
+      "target_layer": "FORMAL",
+      "claim_ceiling": "MECHANISM",
+      "preformal_eligible": true,
+      "preformal_readiness": "READY",
+      "hold_class": null,
+      "hold_reason": null,
+      "terminal_state": "ACTIVE",
+      "queue_state": "ACTIVE",
+      "system_priority_exception": {"used": false},
+      "candidate_source": "CONTROL_BRAIN_PRIORITY",
+      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "development_revision": "H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-AND-PROVISIONING-PROVENANCE-SPLIT",
+      "previous_revision_preserved": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
+      "cycle_count": 12,
+      "cycle_status": "REASSESS_VERSIONED_SCIENCE_AFFECTING_RESOURCE_BINDING_REVISION_PREIDENTITY_ONLY",
+      "information_gain_rationale": "R4 exact diagnostics reveal a concrete mismatch between content-addressed wheel identity and inherited installer-generated RECORD identity; a prospective versioned split can determine whether a reproducibly provisioned exact scientific runtime is reachable without changing scientific outcomes or result criteria.",
+      "promotion_rejection_reassess_condition": "Preserve R4 unchanged. R5 may alter only runtime/resource identity classification and reproducible provisioning substrate while preserving byte-identical package/version/wheel-lock and all non-resource scientific fields. Any further package/resource scientific change or runner/substrate shopping requires another versioned reassessment. All-green preidentity still stops for fresh one-way Analyst review."
+    },
+    "34": {
+      "id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
+      "question": "Can a bounded prospectively frozen edge-weight/delay intervention family identify specified lagged Assembly route features beyond the equivalence class left by assembly/unit lesions?",
+      "phenomenon": "Assembly temporal-route identifiability under edge/timing intervention",
+      "target_layer": "DISCOVERY",
+      "claim_ceiling": "MECHANISM",
+      "preformal_eligible": true,
+      "preformal_readiness": "NOT_READY",
+      "hold_class": null,
+      "hold_reason": null,
+      "terminal_state": "NONTERMINAL",
+      "queue_state": "QUEUED_FOR_SUB_DISCOVERY",
+      "system_priority_exception": {"used": false},
+      "candidate_source": "SUB_THEORY_BACKWARD_QUESTION_FORMATION",
+      "development_phase": "OPEN_DEVELOPMENT",
+      "development_revision": "DISCOVERY-R1",
+      "cycle_count": 0,
+      "information_gain_rationale": "Literature R34 adds interventional-equivalence/separating-design reduction, while stable v0.5 exposes directed Connection source/target/weight/delay surfaces absent from prior Assembly set/unit lesion objects; a negative result still shrinks the identifiable route-feature class.",
+      "promotion_rejection_reassess_condition": "Promote toward Architecture only after a bounded time-unrolled/lagged route object, separating edge/timing intervention family, matched random/sham reductions, reachability and explicit equivalence-class falsifier are prospectively defined. Reassess/terminate if alternatives remain inseparable, ordinary reductions exhaust the residual, or the surface collapses to implementation edge cases.",
+      "fresh_successor_relation": "FRESH_MECHANISM_SUCCESSOR_ASSEMBLY_CAUSAL_SELECTIVITY_FAMILY_NOT_REOPENING_CAND23_CAND24_CAND26"
+    }
+  },
+  "system_terminal_successor_accounting": {
+    "assessed": 20,
+    "realized_fresh_system_successor": 1,
+    "realized_relation": "#32 -> #33",
+    "unrealized_fresh_system_potentials": 16,
+    "fresh_mechanism_successors_from_system_terminalizations": 0,
+    "none": 3,
+    "none_candidates": [14, 27, 28]
+  },
   "h7": {
-    "exact_decision":"GO_H7_FORMAL_R4_CYCLE11_EXACT_TEST_AND_RUNTIME_MISMATCH_DIAGNOSTIC_ONLY_AND_SCIENCE_INVARIANT_REPAIR_IF_CONFIRMED_STOP_BEFORE_ANY_SCIENCE_AFFECTING_CHANGE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
-    "fresh_formal_authority":0,"cycle11_head":"02382fbc7d3838159598015e488c6ce49ac34efc","cycle11_commits_ahead_of_cycle10":6,
-    "protected_executor_core_materialized":true,"final_claim_capable_source_bound":false,
-    "clean_locked_runtime_environment_created":true,"clean_locked_runtime_source_assertion_passed":false,"synthetic_protected_executor_probe_executed":false,
-    "locked_realization_workflow_id":35784686838,"locked_realization_workflow_conclusion":"failure_at_runtime_source_assertion_after_lock_install_success",
-    "generic_ci_workflow_id":35784686727,"generic_ci_lint_passed":true,"generic_ci_local_readiness_passed":true,"generic_ci_tests_passed":false,
-    "confirmed_invariant_repairs":["5749e100610022d7a3b58f43525ff03738f21180 lint line-wrap only","02382fbc7d3838159598015e488c6ce49ac34efc runtime mismatch diagnostic reporting only"],
-    "remaining_failure_repair_classification":"UNCLASSIFIED_PENDING_EXACT_DIAGNOSTIC",
-    "runtime_diagnostic_focus":"torch_distribution_record_sha256 assertion instrumented; observed/expected values not available in structured metadata",
-    "scientific_runtime_lock_sha256":"d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583",
-    "runtime_manifest_sha256":"cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",
-    "versions_sha256":"91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575","locked_package_count":31,
-    "forbidden_before_fresh_analyst_authority":["evaluation commitment","FORMAL identity","STARTED","evaluation-seed reveal","protected evaluation","result-bearing workflow","official scoring","scientific preserve/evidence creation"]
+    "exact_decision": "GO_H7_FORMAL_R5_CONTENT_ADDRESSED_RUNTIME_IDENTITY_AND_PROVISIONING_PROVENANCE_SPLIT_CYCLE12_PREIDENTITY_ONLY_STOP_BEFORE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
+    "fresh_formal_authority": 0,
+    "r4_cycle11_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+    "r4_status": "PRESERVE_UNCHANGED_RESULT_EXPOSED_DEVELOPMENT_BLOCKED_FROZEN_RUNTIME_BINDING_MISMATCH",
+    "r5_status": "AUTHORIZED_VERSIONED_DEVELOPMENT_REVISION_NOT_YET_MATERIALIZED",
+    "r5_authorized_science_affecting_delta": "SCIENTIFIC_RUNTIME_RESOURCE_IDENTITY_AND_PROVISIONING_PROVENANCE_CLASSIFICATION_ONLY",
+    "r5_must_preserve": [
+      "R4 exact scientific-runtime.lock bytes/package versions/wheel hashes",
+      "Python and torch distribution/module/git/CUDA semantic versions",
+      "CPU/thread/determinism resource semantics",
+      "claim/estimand/worlds/sample/split roles",
+      "intervention/comparator panel/thresholds/bootstrap/decision/falsifier",
+      "concealed evaluation and target-blind preserve-before-score semantics"
+    ],
+    "r5_runtime_rule": "Use one prospectively selected reproducibly provisioned/content-addressed execution substrate. Installer-generated RECORD and outer hosted-runner image/kernel may become provisioning provenance only in explicit R5; if retained as scientific identity they must be reproducibly provisionable. No resolver/package/runner-image shopping.",
+    "r4_exact_runtime_diagnostic": {
+      "field": "scientific_runtime.torch_distribution_record_sha256",
+      "observed": "06706c58c94e177f36a7641b07c6949e349fde30bfde00cf491d992954634e8d",
+      "expected_frozen": "407832ba9a2275aa30a1263f65dc9cc05fc04d74e81895e1ec8f74518eb45cf0",
+      "exact_lock_install_succeeded": true,
+      "torch_distribution_module_git_cuda_checks_passed_before_failure": true,
+      "classification": "SCIENCE_AFFECTING_RESOURCE_BINDING_MISMATCH_REQUIRES_VERSIONED_REVISION_NO_R4_REBIND"
+    },
+    "generic_test_diagnostic": {
+      "test": "tests/learned/test_h7_formal_r3_executor.py::test_protected_plan_rejects_world_assignment_drift",
+      "expected_error_match": "world-assignment drift",
+      "actual_error": "R3 protected evaluation per-world count drift",
+      "invalid_plan_still_rejected": true,
+      "cause": "per-world-count validation fires before world-assignment validation",
+      "classification": "SCIENCE_INVARIANT_REPAIR_ERROR_PRECEDENCE_ONLY"
+    },
+    "forbidden_before_fresh_analyst_one_way_authority": [
+      "evaluation commitment",
+      "FORMAL identity",
+      "STARTED",
+      "evaluation-seed reveal",
+      "protected evaluation",
+      "result-bearing workflow",
+      "official scoring",
+      "scientific preserve/evidence creation"
+    ]
   },
   "main_sub_allocation": {
-    "main_lane":"H7_FORMAL_R4_CYCLE11_EXACT_TEST_AND_RUNTIME_MISMATCH_DIAGNOSTIC_SCIENCE_INVARIANT_REPAIR_IF_CONFIRMED_PREIDENTITY_ONLY",
-    "main_mailbox_note":"control-plane relay predates direct research-head advances; direct ref/workflows used for current facts",
-    "sub_lane":"INDEPENDENT_NON_EVIDENTIARY_QUESTION_FORMATION_THEORY_BACKWARD_SUPPLY_SCAN_ONLY_WHEN_FRESH_INFORMATION_GAIN_EXISTS",
-    "sub_generation":"SUB-20260923T053741+0900-NOOP-SCAN-R86-62D4A1B7","sub_disposition":"NO_COHERENT_MECHANISM_TARGET","sub_retained_candidates":0,"system_priority_exception_used":false
+    "main_lane": "H7_FORMAL_R5_CONTENT_ADDRESSED_RUNTIME_IDENTITY_AND_PROVISIONING_PROVENANCE_SPLIT_CYCLE12_PREIDENTITY_ONLY",
+    "sub_lane": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY_DISCOVERY_R1",
+    "sub_independence": "PASS_NO_MAIN_DEPENDENCY",
+    "system_priority_exception_used": false
   },
-  "methodology":{"generation":"METHCAL-20260923T051912+0900-R73-6B1E94D3","material_change":false,"live_gate":"Exact clean locked-runtime functional realization and final source/component binding remain required; resolver/resource shopping prohibited."},
-  "literature":{"generation":"LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91","role":"PROSPECTIVE_CLAIM_AND_REDUCTION_DISCIPLINE_ONLY","current_r4_scientific_contract_change_authorized":false},
-  "independent_audit":{"generation":"AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4","live_integrity_floor":"PREDICTION_ONLY_RAW_THEN_IMMUTABLE_PRESERVE_THEN_TARGET_SIDE_SCORER","historical_h7_formal_evidence_exists":false},
-  "repository_steward":{"generation":"STEWARD-20260922T135014+0900-G10-4D8C21A7","scientific_authority":"NONE","ruleset_gap":true,"generic_equivalence_verifier_scientific_authority":false},
-  "utility":{"pfr1_request_id":"UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE","status":"HOLD_PF_R1_PRESERVATION_EXECUTION_PENDING_CONTROL_SCHEMA_V2_UTILITY_ASSIGNMENT_AND_MATCHING_DECISION","assignment_pointer_clean_idle":true,"matching_assignment_exists":false,"matching_control_decision_exists":false,"request_file_status":"PROPOSED_NOT_APPROVED","preservation_executed":false,"duplicate_request_created":false,"rerun_reconstruction_rescore_allowed":false,"artifact_workflow_run_id":35695286240,"artifact_id":10680620448,"archive_sha256":"db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d"},
-  "phenomenon_shadow_metrics":{"mode":"PREFETCH_SHADOW","last_full_scan_generation":"EVA-20260923T035826+0900-R85-1C7E4A92","last_scan_reason":"EARLY_MATERIAL_LITERATURE_R33_REALIZATION_RUNTIME_DELTA_ZERO_RETAINED","r87_scan":"SKIPPED_LOW_RATE_THROTTLE_ACTIVE_MAIN_INTEGRITY_DELTA_NOT_INDEPENDENT_PHENOMENON","scans_skipped_due_to_low_rate_throttle_this_generation":1,"proposals_generated_cumulative":7,"current_retained":0,"retired_cumulative":1,"rejected_duplicate_or_rescue":5,"rejected_abstract_or_unfalsifiable":0,"rejected_obvious_reduction_or_no_residual_value":3,"rejected_unreachable":1,"rejected_active_candidate_dependent":1,"rejected_ownership_collision":1,"later_admissions":1,"executed_shadow_origin_candidates":1,"standby_queue_size":0,"executed_shadow_origin_information_gain_summary":"One shadow-origin candidate reached execution historically; no new shadow-origin execution or disposition change in R87."},
-  "shadow_standby_queue":[],
-  "discovery_theory_backward":{"rolling_actual_selections":"1/3","latest_sub_state":"NO_COHERENT_MECHANISM_TARGET","new_canonical_autonomous_selection_this_generation":false,"scan_only_work_denominator_excluded":true},
-  "consumed_identities":["c19-external-v2-official-v4","c19-r1-revision-authority-official-v1","c19-r1-revision-authority-official-v2","c19-r2-fsa-state-tracker-official-v1","h5-event-routing-work-reduction-official-v1","ni01-no-ignition-selective-prediction-official-v1","pd01-long-history-fading-memory-official-v1"],
-  "new_identity_consumption":0,
-  "blockers":["exact locked-runtime assertion still fails after committed-lock environment creation; exact observed mismatch not available in structured metadata","generic tests fail on Python 3.11 and 3.13 after lint/readiness pass; exact diagnostic unresolved","synthetic protected-executor realization probe has not completed successfully","final claim-capable source plus runner/scorer/preserver external binding not closed","PF-R1 schema-v2 Utility authority and exact-byte preservation unresolved","fresh FORMAL one-way Analyst authorization absent","repository rulesets absent"],
-  "top3":[
-    {"rank":1,"action":"Obtain exact generic-Test and locked-runtime mismatch diagnostics; classify; if and only if invariant, repair same R4 and rerun NON_RESULT Cycle11 validation","claim_ceiling":"MECHANISM","development_phase":"RESULT_EXPOSED_DEVELOPMENT","action_type":"CYCLE11_REASSESS_AND_INVARIANT_REPAIR","decision":"GO_CONDITIONAL_PREIDENTITY_ONLY"},
-    {"rank":2,"action":"Close PF-R1 existing-request machine authority for exact-byte NON_EVIDENTIARY preservation","claim_ceiling":"PROVENANCE_ONLY","development_phase":"RESULT_EXPOSED_PROVENANCE","action_type":"AUTHORITY_CLOSURE","decision":"HOLD_EXECUTION"},
-    {"rank":3,"action":"Evaluation commitment / FORMAL identity / STARTED / seed reveal / protected evaluation / result-bearing execution","claim_ceiling":"MECHANISM","development_phase":"FUTURE_CONSUMED_ONE_WAY","action_type":"ONE_WAY_FORMAL","decision":"STOP"}
+  "methodology": {
+    "generation": "METHCAL-20260923T062034+0900-R74-A3F7C912",
+    "material_change": true,
+    "live_gate": "Do not silently rebind R4. Distinguish content-addressed scientific artifact/runtime identity from installer/transport metadata prospectively; avoid runner-image shopping; use reproducibly provisioned substrate if host identity is scientifically material."
+  },
+  "literature": {
+    "generation": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
+    "genuinely_new_information": true,
+    "current_h7_contract_change_authorized": false,
+    "claim_guardrail": "INTERVENTION_EFFECT_DOES_NOT_IMPLY_UNIQUE_ROUTE_GRAPH; UNIQUE_TOPOLOGY_REQUIRES_FRESH_PROSPECTIVE_SEPARATING_DESIGN_AND_EXPLICIT_TEMPORAL_CAUSAL_OBJECT"
+  },
+  "independent_audit": {
+    "generation": "AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4",
+    "live_integrity_floor": "PREDICTION_ONLY_RAW_THEN_IMMUTABLE_PRESERVE_THEN_TARGET_SIDE_SCORER",
+    "historical_h7_formal_evidence_exists": false
+  },
+  "repository_steward": {
+    "generation": "STEWARD-20260922T135014+0900-G10-4D8C21A7",
+    "scientific_authority": "NONE",
+    "ruleset_gap": true,
+    "generic_equivalence_verifier_scientific_authority": false
+  },
+  "utility": {
+    "pfr1_request_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+    "status": "HOLD_PF_R1_PRESERVATION_EXECUTION_PENDING_CONTROL_SCHEMA_V2_UTILITY_ASSIGNMENT_AND_MATCHING_DECISION",
+    "assignment_pointer_clean_idle": true,
+    "matching_assignment_exists": false,
+    "matching_control_decision_exists": false,
+    "request_file_status": "PROPOSED_NOT_APPROVED",
+    "preservation_executed": false,
+    "duplicate_request_created": false,
+    "rerun_reconstruction_rescore_allowed": false,
+    "artifact_workflow_run_id": 35695286240,
+    "artifact_id": 10680620448,
+    "archive_sha256": "db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d"
+  },
+  "phenomenon_shadow_metrics": {
+    "mode": "PREFETCH_SHADOW",
+    "last_full_scan_generation": "EVA-20260923T065834+0900-R88-D5A7C219",
+    "last_scan_reason": "LOW_RATE_WINDOW_OPEN_PLUS_MATERIAL_LITERATURE_R34_AND_SUB_R87_QFD_REVALIDATION_ZERO_NEW_SHADOW_RETAINED",
+    "scans_skipped_due_to_low_rate_throttle_this_generation": 0,
+    "proposals_generated_this_scan": 0,
+    "proposals_generated_cumulative": 7,
+    "current_retained": 0,
+    "retired_cumulative": 1,
+    "rejected_duplicate_or_rescue": 5,
+    "rejected_abstract_or_unfalsifiable": 0,
+    "rejected_obvious_reduction_or_no_residual_value": 3,
+    "rejected_unreachable": 1,
+    "rejected_active_candidate_dependent": 1,
+    "rejected_ownership_collision": 1,
+    "later_admissions": 1,
+    "executed_shadow_origin_candidates": 1,
+    "standby_queue_size": 0,
+    "executed_shadow_origin_information_gain_summary": "One shadow-origin candidate reached execution historically; no new shadow-origin execution or disposition change in R88. SUB R87 QFD is not shadow-origin and is admitted separately as canonical #34."
+  },
+  "shadow_standby_queue": [],
+  "discovery_theory_backward": {
+    "rolling_actual_selections": "1/3",
+    "latest_sub_state": "QSEED_V05_ASSEMBLY_TEMPORAL_ROUTE_IDENTIFIABILITY_FRESH_SUCCESSOR_REVIEW",
+    "new_canonical_autonomous_selection_this_generation": false,
+    "qfd_and_admission_denominator_excluded_until_actual_selection": true,
+    "candidate34_theory_backward_origin": true
+  },
+  "consumed_identities": [
+    "c19-external-v2-official-v4",
+    "c19-r1-revision-authority-official-v1",
+    "c19-r1-revision-authority-official-v2",
+    "c19-r2-fsa-state-tracker-official-v1",
+    "h5-event-routing-work-reduction-official-v1",
+    "ni01-no-ignition-selective-prediction-official-v1",
+    "pd01-long-history-fading-memory-official-v1"
   ],
-  "prospective_contingency_tree":["Exact diagnostics prove formatting/import/path/serialization/logging/hash/workflow plumbing only with unchanged intended science/resource behavior -> SCIENCE_INVARIANT_REPAIR same R4 and NON_RESULT revalidation may continue.","Frozen runtime-binding mismatch requires changing expected package/artifact/hash identity, scientific package/resource/privilege contract, or runtime scientific semantics -> STOP and explicit versioned SCIENCE_AFFECTING reassessment; no silent normalization/rebind.","Any metric/scorer/threshold/tolerance/comparator/seed/exclusion/intervention/claim/estimand/world/sample/bootstrap/decision/hypothesis/falsifier/success-criteria change -> STOP and versioned reassessment.","Invariant repair makes generic tests and locked-runtime synthetic realization green -> close exact external final source/runner/scorer/preserver binding; remain preidentity.","PF-R1 authority/preservation unresolved -> STOP before identity.","All preidentity gates green -> STOP and fresh Analyst one-way authorization."],
-  "integrity_statement":{"scientific_experiment":false,"result_bearing_workflow_dispatch_by_analyst":false,"formal_identity_consumption":false,"research_pr_merge":false,"immutable_evidence_control_preserve_mutation":false,"scheduler_mutation":false,"force_push":false,"utility_dispatch":false,"historical_result_rewrite":false}
+  "new_identity_consumption": 0,
+  "blockers": [
+    "H7 R5 reproducible scientific-runtime identity/provisioning-provenance contract not yet materialized",
+    "final H7 claim-capable source plus runner/scorer/preserver external binding not closed",
+    "successful clean synthetic protected-executor realization not yet demonstrated under the versioned R5 contract",
+    "PF-R1 schema-v2 Utility authority and exact-byte preservation unresolved",
+    "fresh FORMAL one-way Analyst authorization absent",
+    "repository rulesets absent"
+  ],
+  "top3": [
+    {
+      "rank": 1,
+      "action": "Materialize H7 R5 prospectively versioned content-addressed scientific-runtime identity/provisioning-provenance split while preserving byte-identical R4 wheel lock and all non-resource scientific fields; carry generic Test precedence fix only as invariant repair; validate NON_RESULT only",
+      "claim_ceiling": "MECHANISM",
+      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "action_type": "VERSIONED_SCIENCE_AFFECTING_RESOURCE_BINDING_REVISION",
+      "decision": "GO_PREIDENTITY_ONLY"
+    },
+    {
+      "rank": 2,
+      "action": "Candidate #34 Discovery R1: define explicit lagged route object, strongest ordinary reductions, bounded separating edge/timing intervention family, matched controls, reachability and equivalence-class falsifier",
+      "claim_ceiling": "MECHANISM",
+      "development_phase": "OPEN_DEVELOPMENT",
+      "action_type": "FRESH_MECHANISM_SUCCESSOR_DISCOVERY",
+      "decision": "GO_NON_EVIDENTIARY_DISCOVERY"
+    },
+    {
+      "rank": 3,
+      "action": "Close PF-R1 existing-request machine authority for exact-byte NON_EVIDENTIARY preservation",
+      "claim_ceiling": "PROVENANCE_ONLY",
+      "development_phase": "RESULT_EXPOSED_PROVENANCE",
+      "action_type": "AUTHORITY_CLOSURE",
+      "decision": "HOLD_EXECUTION"
+    }
+  ],
+  "one_way_formal_status": "STOP",
+  "prospective_contingency_tree": [
+    "R5 preserves exact R4 package versions/wheel hashes and establishes one prospectively selected reproducible execution substrate while changing only runtime/provisioning identity classification -> continue NON_RESULT preidentity validation.",
+    "R5 requires package-version/wheel change, resource privilege change beyond authorized provenance split, or repeated substrate/runner shopping -> STOP for another explicit versioned reassessment.",
+    "Generic Test repair changes only already-invalid-plan error precedence and not scientific validity -> SCIENCE_INVARIANT_REPAIR.",
+    "Any claim/estimand/world/sample/seed-exclusion/comparator/intervention/threshold-tolerance/bootstrap/decision/hypothesis/falsifier/success-criterion change -> STOP.",
+    "Candidate #34 can specify a bounded separating design independent of H7 -> SUB may proceed at Discovery; if no meaningful alternatives are separable, close or reframe rather than manufacture topology.",
+    "PF-R1 machine authority absent -> Utility no-op; duplicate request forbidden.",
+    "All H7 preidentity gates green -> still STOP and return to a fresh Evidence Analyst generation for explicit one-way authorization."
+  ],
+  "mutations_this_generation": {
+    "scientific_experiments_executed": 0,
+    "research_workflows_dispatched": 0,
+    "one_way_identities_consumed": 0,
+    "research_prs_merged": 0,
+    "immutable_evidence_or_control_or_preserve_refs_mutated": 0,
+    "scheduler_definitions_modified": 0,
+    "utility_requests_created": 0,
+    "historical_pass_fail_rewritten": 0,
+    "scientific_research_branches_mutated": 0,
+    "canonical_candidate_metadata_admissions": 1
+  }
 }
