@@ -169,7 +169,9 @@ def _validate_runtime_lock(lock: dict[str, Any], role: str) -> tuple[bool, list[
     return not errors, errors
 
 
-def _producer_payload(variant: str) -> tuple[tuple[dict[str, Any], ...], tuple[dict[str, Any], ...]]:
+def _producer_payload(
+    variant: str,
+) -> tuple[tuple[dict[str, Any], ...], tuple[dict[str, Any], ...]]:
     if variant == "match":
         return _TRAJECTORY, _CHECKPOINTS
     if variant == "mismatch":
@@ -293,7 +295,11 @@ def verify_raw_pair(run_root: Path, ledger: dict[str, Any], lock: dict[str, Any]
     checkpoints_equal = (
         left["raw_hashes"]["checkpoints.ndjson"] == right["raw_hashes"]["checkpoints.ndjson"]
     )
-    verdict = "AUDITABLE_RAW_MATCH" if trajectory_equal and checkpoints_equal else "AUDITABLE_RAW_MISMATCH"
+    verdict = (
+        "AUDITABLE_RAW_MATCH"
+        if trajectory_equal and checkpoints_equal
+        else "AUDITABLE_RAW_MISMATCH"
+    )
     reason = "VERIFIER_RECOMPUTED_RAW_BYTES"
     audit_tuple = {
         "producer_ids": [member["entry"]["producer_id"] for member in members],
@@ -303,7 +309,9 @@ def verify_raw_pair(run_root: Path, ledger: dict[str, Any], lock: dict[str, Any]
         "counter_capture_agreement": {
             member["entry"]["producer_id"]: {
                 "producer_rss_kib": member["resources"]["ru_maxrss_kib"],
-                "controller_wrapper_max_rss_kib": member["entry"].get("controller_wrapper_max_rss_kib"),
+                "controller_wrapper_max_rss_kib": member["entry"].get(
+                    "controller_wrapper_max_rss_kib"
+                ),
                 "rss_source": member["resources"]["rss_source"],
                 "within_caps": member["resources"]["within_caps"],
             }

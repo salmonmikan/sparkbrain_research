@@ -19,7 +19,9 @@ def _available() -> bool:
     )
 
 
-@pytest.mark.skipif(not _available(), reason="Linux unshare/GNU time architecture probe unavailable")
+@pytest.mark.skipif(
+    not _available(), reason="Linux unshare/GNU time architecture probe unavailable"
+)
 def test_clean_pair_recomputes_raw_match(tmp_path: Path) -> None:
     root = tmp_path / "clean"
     args = argparse.Namespace(
@@ -34,7 +36,9 @@ def test_clean_pair_recomputes_raw_match(tmp_path: Path) -> None:
     assert all(item["counter_capture_agreement"] for item in ledger["producers"])
 
 
-@pytest.mark.skipif(not _available(), reason="Linux unshare/GNU time architecture probe unavailable")
+@pytest.mark.skipif(
+    not _available(), reason="Linux unshare/GNU time architecture probe unavailable"
+)
 def test_mismatch_pair_is_system_mismatch_not_semantic_claim(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
