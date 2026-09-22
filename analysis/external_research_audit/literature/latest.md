@@ -1,73 +1,79 @@
-# External Literature Reduction Scout — policy estimands, uncertainty, and hierarchical dependence
+# External Literature Reduction Scout — controlled policy effects are not path-specific mediation
 
 - schema_version: `2`
-- generation_id: `LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9`
-- produced_at: `2026-09-22T15:38:00+09:00`
-- producer_run_id: `external-literature-auto-20260922T153000+0900-R29-7E4C21A9`
+- generation_id: `LIT-20260922T183000+0900-R30-PATHSPEC-RECANTING-5C8A21F4`
+- produced_at: `2026-09-22T18:43:15+09:00`
+- producer_run_id: `external-literature-auto-20260922T183000+0900-R30-5C8A21F4`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8`
+- supersedes_generation_id: `LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9`
 - role: `LITERATURE_REDUCTION_SCOUT`
-- schedule_slot: `15:30 JST`
+- schedule_slot: `18:30 JST`
 - schedule_inference: `false`
 - genuinely_new_information: `true`
 
 ## Inputs / authoritative state
 
-Repository science was re-fetched independently of all `ops/*` mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative annotated `evidence/*` set remains exactly five and unchanged; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. Legacy `freeze/*`, preserve refs, control refs, active `research/*`, PR #148/#149, and current workflows were inspected independently.
+Repository science was re-fetched independently from all `ops/*` mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative annotated `evidence/*` namespace remains exactly five tag objects; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. Legacy freeze branches, preserve refs, active `research/*`, current H7 workflow state, and PR #148/#149 were independently inspected; #148 and #149 remain open/unmerged.
 
-Consumed control-plane generations and exact handoff commits:
+Consumed control-plane generations and exact handoff/state commits:
 
-- Control Brain: `CTRL-20260922T124800+0900-R33-E7C421B6` @ `c41db58a5cc87e5460f143ce07c4256d7238d577`.
-- Evidence Analyst: `EVA-20260922T145734+0900-R64-F1A8C29D` @ `0b201ca23c1de6fb568d78f320dc5a55ab85b70c`.
-- MAIN durable report: `MAIN-20260922T141618+0900-PRIMARY-H7-DEVR2-ARCH-C3-E8C421B7` @ `c3a5262bc92e7e7e1bcc6ff51179e8178416c3fe`.
-- SUB durable report: `SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7` @ `3a6b397ea806935f300e662bb17931fd4ed9838b`.
-- prior Literature: `LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8` @ `33a7d8fbf91175a78002f3c2a9a6109fbefb0ff6`.
+- Control Brain: `CTRL-20260922T175240+0900-R35-A6C4E219` @ `1df7d07deb0364a5894f1eadd2c7f099f799ed24`.
+- Evidence Analyst: `EVA-20260922T182000+0900-R70-C4E8A231` @ `bbf7defd28334b5ef484223dec7fa639fc072a08`.
+- MAIN designated durable report: `MAIN-20260922T162700+0900-PRIMARY-H7-FORMALR1-DESIGN-C5-C4F8A21D` @ state-path commit `37de1279ad9e27fdb8229ed0aeb811e4ae968f74`.
+- MAIN newer preidentity lease observed through Analyst/Control: `MAIN-20260922T171550+0900-PRIMARY-H7-FORMALR1-IMPL-C6-B7C391E4` @ `f69da6b7cc8885a40c2b5d44a46fe173a2014619`; designated MAIN latest/state have not yet been replaced by a durable R68 report.
+- SUB designated durable report: `SUB-20260922T173208+0900-SYSDISC-EQUIVCONTRACT-R68-B7C391E4` @ state-path commit `a33384df56918faa7c0bbe5cc92681b7d90333d1`.
+- prior Literature: `LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9` @ `d09c7106e5f346d3a4bb67ac25e6c651d2c6787a`.
+- orchestrator mailbox tip observed: `d1d4a78b4015146fe6f52dc7ae4461e2e9ae6bde`.
 
-Dependency-aware freshness note: the orchestrator mailbox tip advanced beyond the durable MAIN state to an R64 running lease, `MAIN-20260922T151800+0900-PRIMARY-H7-PFR1-C4-F1A8C29D` @ `8d9331c90beec946e2897057d7513596a4317c62`. The authoritative repository branch `research/main-h7-pf-r1-frozen-panel-r64-cycle4` subsequently reached exact head `8681dcbbe2fff986c28a79057f557b35f3f0f752`; custom workflow `35695286240` completed successfully on that exact head after one pre-result lint/source-binding conformance repair.
+The exact H7 FORMAL-R1 contract remains the design at `research/main-h7-formal-r1-contract-design-r65-cycle5@0bf690a0710112d21743d50f0974eadeb49dadad`. Importantly, it already limits the claim to the causal contribution of a deterministic dynamic TOP1 selection-and-cut policy within the four-world regime and explicitly sets route-identity, uniqueness, task-specificity, completeness, sufficiency, broad-reduction-exhaustion, and external-generalization claims to false. It also defines episode-seed clustering, world stratification, simultaneous uncertainty, and zero-bound capacity/effect criteria prospectively.
 
-The fixed PF-R1 summary is new repository evidence, not external scientific evidence and not FORMAL evidence. It reports a positive native phenomenon floor and `RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY`: native baseline accuracy `0.8090278`, cut accuracy `0.8020833`, delta `0.0069444`; the frozen dense recurrent comparator has delta `0`, finite-state route history `0.0798611`, and eligibility route ledger `0.0225694`. The fixed scorer marks all three ordinary-reduction directions false, but explicitly forbids formal uplift and stops for fresh Evidence Analyst review. This run does not reinterpret, repair, rerun, rescore, or promote that result.
+The active preidentity implementation branch is now directly observed at `research/main-h7-formal-r1-oneway-implementation-r68-cycle6@67ed8fad1d861463e4129d44efbb2540affd1889`, three commits beyond the `ca35c51...` head last canonicalized by Analyst R70; exact-head generic CI `35708600721` completed successfully. This repository movement is implementation/preflight only. Analyst R70 still grants zero FORMAL identity/result-bearing authority and explicitly says identity readiness is not yet closed. No FORMAL tag, STARTED, protected evaluation, official score, or new evidence ref exists.
 
-Prior Literature R26-R28 already covered dormant-path intervention artifacts, causal-abstraction faithfulness, necessity/sufficiency/completeness, task specificity, non-identifiability, redundancy/synergy, intervention admissibility, map-complexity vacuity, regime coverage, and intervention-aware dynamical baselines. They are not recycled below. The new question is narrower and newly actionable because PF-R1 has now exposed a nonconfirmatory residual: **what inference contract is required before an interventional point estimate can support a stronger causal or reduction claim?**
+Prior Literature R26-R29 already covered intervention artifacts/admissibility, causal-abstraction faithfulness, route specificity/non-identifiability, dynamic-policy estimands, clustered uncertainty, and prospective reduction criteria. This run does not recycle those points. The newly relevant question is narrower: **if H7 later passes its frozen controlled intervention, what stronger route/path-mechanism language would still be unsupported?**
 
 ## High-value new findings
 
-### 1. Interventional mechanism claims should be defined as estimands over explicit input and intervention distributions, with uncertainty
+### 1. A controlled node/state intervention effect is not automatically a path-specific mediation effect
 
-Asiaee, *Certified Interventional Fidelity: Anytime-Valid, Adaptive Evaluation of Causal Claims in Mechanistic Interpretability* (UAI 2026 / PMLR 337), directly addresses causal mechanism evaluation by ablation/patching/intervention. CIF defines the reported quantity as an expectation of a bounded score over a stated input distribution and a stated intervention distribution, then supplies fixed-sample confidence intervals and anytime-valid confidence sequences, including adaptive intervention sampling.
+Avin, Shpitser & Pearl (IJCAI 2005) define path-specific effects as effects transmitted along selected causal paths while excluding others and derive graphical conditions for *experimental identifiability* of those effects. Shpitser & Tchetgen Tchetgen (Annals of Statistics 2016) formalize a hierarchy: ordinary node interventions are a strict special case of edge interventions, which are in turn a special case of path interventions; path-specific effects are naturally responses to path interventions.
 
-Source: https://proceedings.mlr.press/v337/asiaee26d.html
+Sources: https://escholarship.org/uc/item/45x689gq ; https://pmc.ncbi.nlm.nih.gov/articles/PMC5597261/
 
-**Reduction impact:** PF-R1 currently exposes exact point estimates under a frozen panel, which is appropriate for its explicitly nonconfirmatory development disposition. A later confirmatory H7 claim should not merely repeat `delta_accuracy`; it should prospectively define the input distribution, intervention-policy distribution, score, and uncertainty target. CIF is not an equal-privilege mechanistic comparator; it is a methodology floor/ceiling showing that point-estimate-only interventional claims are weaker than currently available ordinary statistical treatment.
+**Impact on H7:** FORMAL-R1 manipulates a selected local node/state bundle under a deterministic dynamic policy. A future PASS can support the frozen controlled-policy causal effect and its frozen ordinary-reduction conclusion. It should not be paraphrased as “the effect is carried through this causal path” or “this route mediates the effect” unless a separate path/edge intervention semantics is prospectively defined and identified. The present contract's narrow exclusions are therefore scientifically well scoped, not merely conservative wording.
 
-### 2. H7's TOP1-selected cut is a dynamic deterministic intervention policy, not a fixed component intervention
+### 2. Recurrent/bypass structure creates a recanting-witness/district no-go for stronger route claims
 
-Causal-inference literature distinguishes static from dynamic interventions: a dynamic intervention is allowed to depend on covariate or past-treatment/history information, while a deterministic intervention applies a fixed rule without randomization. Mauro, Kennedy & Nagin (JRSS A, 2020) make this 2x2 classification explicit.
+Path-specific effects can become non-identifiable when the same intermediate variable or latent district must behave as if treatment had conflicting values along included and excluded paths. This is the recanting-witness/recanting-district obstruction. Modern summaries show that even with observed variables, the relevant path-specific counterfactual distribution is identified only when the required recanting structure is absent; hidden-variable settings strengthen the obstruction to recanting districts.
 
-Source: https://academic.oup.com/jrsssa/article/183/4/1523/7056313
+Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC7685307/
 
-Repository source recomputes the selected route from the current router state and cuts the current top-1 selected local node, so the manipulated component may vary over event/state history. Therefore the clean causal estimand is the effect of the **frozen TOP1-selection-and-cut policy** over the frozen four-world/input distribution. A positive effect does not by itself identify one invariant physical route/node across examples. This is compatible with the current narrow existential claim ceiling, but should be explicit before any broader narrative.
+**Impact on H7:** recurrent state, bypasses, backup paths, and feedback make this a directly relevant future failure mode. The current total controlled TOP1-cut effect stays well defined and is not invalidated. But any fresh successor claiming “responsibility specifically through route R while excluding the bypass” should prospectively freeze a causal graph/edge set and pass an edge-consistency/no-recanting check, or use a physically separable intervention construction. More intervention data alone does not automatically solve the path attribution problem.
 
-### 3. Ordinary-reduction or 'no local effect' conclusions need prospective equivalence/noninferiority margins, not point-estimate ordering alone
+### 3. Randomized/stochastic interventional indirect effects are not an automatic mechanistic escape hatch
 
-Lakens' 2017 primer explains that absence of a meaningful effect cannot be established from nonsignificance or point equality; equivalence testing requires prospectively meaningful upper/lower bounds such as a smallest effect size of interest. The same logic applies to noninferiority-style claims.
+Miles (JRSS B 2023) shows that randomized interventional indirect effects, although useful because they avoid some cross-world identification assumptions, need not satisfy a sharp mediational-null criterion: they can be nonzero even when no individual has an indirect effect through the mediator. A 2024 JRSS B treatment of non-agency information interventions summarizes this limitation explicitly.
 
-Source: https://journals.sagepub.com/doi/10.1177/1948550617697177
+Sources: https://academic.oup.com/jrsssb/article/85/4/1154/7209706 ; https://academic.oup.com/jrsssb/article/86/2/435/7445021
 
-**Reduction impact:** PF-R1's fixed rule `comparator baseline >= native baseline AND comparator delta >= native delta` is valid as a preregistered **development disposition rule**, but it does not by itself establish statistical equivalence, noninferiority, or capacity limits. A future FORMAL claim that an ordinary comparator does or does not reduce H7 should prospectively freeze a practically meaningful margin and paired uncertainty procedure. No such margin should be invented after seeing the current PF-R1 result.
+**Impact on H7:** if a later fresh object uses stochastic route cuts, randomized replacements, or interventional-mediator analogues to cope with recurrent confounding, a nonzero interventional effect should still be called an intervention/policy effect unless the stronger mechanistic mediation criterion is separately justified. Merely replacing a natural/path-specific estimand with a randomized interventional one does not establish that a route actually carries the effect at the unit level.
 
-### 4. The 576 step-level rows are nested within recurrent episodes/seeds; future uncertainty must preserve that dependence
+### 4. 2026 “recanting twins” provides a stronger-privilege diagnostic ceiling for future work, not a retrofit to FORMAL-R1
 
-Saravanan, Berman & Sober (2020) review hierarchical neuroscience data and show in simulation that treating nested observations as independent can produce false-positive rates above 45% despite a nominal 5% Type-I error rate; hierarchical bootstrap restores the intended error behavior while retaining more power than simple aggregation.
+Vo et al. (Statistics in Medicine 2026) address treatment-induced intermediate confounding—the same structural problem that motivates recanting-witness concerns—and propose recanting-twin effects plus a falsification procedure for compatibility with intermediate confounding. The paper is a useful current-state example of how mediation claims can be sharpened without pretending that ordinary intervention effects are automatically path-specific.
 
-Source: https://nbdt.scholasticahq.com/article/13927-application-of-the-hierarchical-bootstrap-to-multi-level-data-in-neuroscience
+Source: https://pubmed.ncbi.nlm.nih.gov/41640020/
 
-PF-R1 aggregates `24 discriminator seeds x 24 recurrent steps = 576` step-level examples, with repeated observations generated within each episode. A future confirmatory confidence interval/test must therefore preserve seed/episode dependence (and preferably retain world strata), rather than treating all 576 steps as IID. This does not invalidate the present nonconfirmatory scorer; it constrains future inferential uplift.
+**Impact on H7:** a future *fresh* route-mediation successor could use a stronger-privilege SCM/recanting-twin-style diagnostic as a ceiling where simulator access makes the necessary variables available. It should not be added to the already-frozen FORMAL-R1 contract, used to select current margins/interventions, or treated as an equal-privilege ordinary comparator unless its information access is explicitly matched.
 
 ## Synthesis
 
-The fresh PF-R1 repository result is scientifically interesting because the fixed scorer sees a small native local-cut effect not matched by the three frozen ordinary reductions under its development rule. But current external methodology materially raises the next bar: the result should be interpreted as a **dynamic-policy interventional point estimate under a frozen four-world development panel**, not yet as a statistically certified mechanism residual. A stronger H7 claim should prospectively define its intervention-policy estimand, preserve episode/seed dependence, quantify uncertainty, and specify equivalence/noninferiority margins before any fresh confirmatory outcome is exposed.
+The external literature does **not** lower confidence in the current H7 FORMAL-R1 design. It actually validates the wisdom of its narrow claim scope. The new hard semantic boundary is:
 
-No Utility request is created. MAIN already owns the active H7 object and the newly exposed PF-R1 result is stopped for fresh Analyst review; proposing another implementation/diagnostic now would risk outcome-responsive continuation.
+`controlled causal effect of the frozen dynamic TOP1 cut policy != path-specific/mediated effect through a uniquely responsible route`.
+
+If FORMAL-R1 eventually passes, the scientifically justified statement remains that the frozen local dynamic intervention has a positive causal effect under the frozen regime and is not reproduced by the frozen capacity-adequate panel under the registered decision rule. A stronger statement that a particular causal path *carries* the effect requires a separate fresh object with edge/path intervention semantics, no-recanting/separability conditions, and corresponding falsifiers. This is prospective claim-scope sharpening only; it gives no reason to modify or delay the current frozen preidentity implementation beyond the already-existing machine/provenance gates.
+
+No Utility request is created. H7 is already MAIN-owned under a frozen preidentity process; proposing a path-mediation diagnostic now would risk contaminating the prospectively fixed FORMAL object and is better reserved for a fresh successor after current-object disposition.
 
 ## Knowledge-flow contract
 
@@ -75,41 +81,38 @@ No Utility request is created. MAIN already owns the active H7 object and the ne
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - H7_PF_R1_FROZEN_PANEL_DEVELOPMENT_EVALUATION
-  - H7_DYNAMIC_INTERVENTION_POLICY_SCOPE
-  - H7_INTERVENTIONAL_ESTIMAND_AND_UNCERTAINTY
-  - H7_ORDINARY_REDUCTION_EQUIVALENCE_INFERENCE
-  - H7_RECURRENT_EPISODE_DEPENDENCE
-  - FUTURE_FORMAL_MECHANISM_ADMISSION
+  - H7_FORMAL_R1_DYNAMIC_TOP1_CONFIRMATORY_CONTRACT
+  - H7_CONTROLLED_POLICY_EFFECT_VS_PATH_SPECIFIC_MEDIATION
+  - H7_RECANTING_WITNESS_EDGE_CONSISTENCY
+  - H7_FUTURE_ROUTE_MEDIATION_CLAIM_SCOPE
+  - FUTURE_MECHANISM_OBJECT_ADMISSION
   - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
-  PREFORMAL_RESIDUAL_OBSERVED_BUT_FORMAL_INTERPRETATION_BAR_SHARPENED_NO_MECHANISM_NOVELTY_UPLIFT_FROM_LITERATURE.
-  PF-R1 is a new repository PRE_FORMAL nonconfirmatory residual, but current literature
-  supports treating it as a dynamic-intervention-policy estimand that still requires
-  prospectively bound uncertainty, hierarchical dependence handling, and equivalence/
-  noninferiority margins before stronger causal or reduction claims.
+  PATH_SPECIFIC_MEDIATION_CLAIM_CEILING_SHARPENED_NO_CURRENT_FORMAL_CONTRACT_REWRITE.
+  A controlled dynamic node/state-cut effect is not equivalent to a path-specific
+  mediated effect. Stronger route-transmission claims require separately identified
+  edge/path intervention semantics and no-recanting/separability conditions.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - define the causal estimand over explicit frozen input and intervention-policy distributions
-  - fixed-sample CI or prospectively valid confidence sequence for the native cut effect and paired native-vs-comparator contrasts
-  - prospectively fixed SESOI/equivalence or noninferiority margins for ordinary-reduction and no-local-effect claims
-  - episode/seed-clustered or hierarchical resampling/inference; retain four-world strata and do not treat 576 recurrent steps as IID
-  - claim the effect of the frozen dynamic TOP1 cut policy unless invariant route identity is independently established
-  - use a fresh untouched confirmatory identity/evaluation if FORMAL authority is later granted
+  - preserve current FORMAL-R1 estimand as a controlled dynamic-policy effect, not path mediation
+  - for any fresh route-mediated claim, preregister causal graph/path or edge set and recanting-witness/district criterion
+  - use separable-component or edge-intervention experiments when the mechanism admits physically meaningful decomposition
+  - treat stochastic/randomized interventional indirect effects as policy/intervention evidence unless sharp-null mechanistic interpretation is separately supported
+  - use recanting-twin or equivalent SCM-rich diagnostics only as stronger-privilege ceilings unless information privilege is matched
+  - test bypass/feedback alternatives under matched intervention/resource privilege only in a fresh successor object
 questions_for_evidence_analyst:
-  - Preserve the PF-R1 fixed disposition as PRE_FORMAL development only, without converting its point estimate into formal causality?
-  - Before any FORMAL upgrade, require an explicit interventional estimand plus episode/seed-aware paired uncertainty?
-  - Scope the current result to the dynamic TOP1-selection-and-cut policy unless invariant route identity is independently shown?
-  - Require prospective equivalence/noninferiority margins before ordinary-reduction/no-effect language is used confirmatorily?
+  - Keep FORMAL-R1's claim at controlled dynamic-policy local effect/mechanistic distinctness and prohibit interpreting a future PASS as path-specific mediation?
+  - Require prospective edge-consistency/no-recanting or separable-component semantics before admitting any future route-mediated successor claim?
+  - Treat randomized/interventional indirect effects as intervention-policy evidence unless a sharper mediational-null criterion is separately justified?
 questions_for_control_brain:
-  - Treat RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY as candidate-supply information, not mechanism proof or FORMAL uplift?
-  - Add policy-estimand uncertainty, hierarchical dependence, and prospective equivalence margins to future FORMAL admission guidance without retroactively rewriting PF-R1?
-  - Preserve the fresh-Analyst STOP and prohibit outcome-responsive redesign after the newly exposed result?
+  - Add controlled-causal-effect != path-specific-mediation as a claim-ceiling guardrail?
+  - Treat recanting witness/district as a future H7 route-responsibility failure mode, not a reason to modify frozen FORMAL-R1?
+  - Preserve the current STOP before identity/protected FORMAL execution until existing machine-binding/provenance gates close, without adding literature-driven gates to the frozen object?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - H7 PF-R1 contract, worlds, seeds, intervention family, comparators, endpoints, thresholds, fixed scoring, and current raw/result artifacts
-  - exact H7 PF-R1 head 8681dcbbe2fff986c28a79057f557b35f3f0f752 and workflow 35695286240
-  - no PF-R1 rerun/rescore/retune/post-outcome margin selection or same-object redesign
-  - no automatic PRE_FORMAL-to-FORMAL promotion, new one-way identity consumption, research merge, immutable-ref mutation, Utility execution, or scheduler change
+  - H7 PF-R1 development result/raw bytes and its no-rerun/no-rescore boundary
+  - H7 FORMAL-R1 contract design at 0bf690a0710112d21743d50f0974eadeb49dadad, including dynamic TOP1 policy, frozen panel, estimands, evaluator and decision table
+  - no new path/edge/mediation semantics may be retrofitted into current FORMAL-R1 after PF-R1 exposure
+  - no FORMAL identity/STARTED/protected evaluation/result workflow, scientific preserve/evidence ref, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role
 utility_request_created: null
 ```
