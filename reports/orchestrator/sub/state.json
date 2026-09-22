@@ -1,26 +1,26 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260923T034423+0900-QFD-ASSEMBLY-REALIZATION-R84-5E7A2C91",
-  "produced_at": "2026-09-23T03:44:23+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260923T034423+0900-QFD-ASSEMBLY-REALIZATION-R84-5E7A2C91",
-  "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_QUESTION_FORMATION_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260923T023426+0900-NOOP-SCAN-R83-A6D4E219",
+  "generation_id": "SUB-20260923T043718+0900-NOOP-SCAN-R85-1C7E4A92",
+  "produced_at": "2026-09-23T04:37:18+09:00",
+  "producer_run_id": "SUB-RUN-SUB-20260923T043718+0900-NOOP-SCAN-R85-1C7E4A92",
+  "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_PRE_NO_OP_SCAN_AND_CONTROL_PLANE_PERSISTENCE",
+  "supersedes_generation_id": "SUB-20260923T034423+0900-QFD-ASSEMBLY-REALIZATION-R84-5E7A2C91",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T025733+0900-R84-5E7A2C91@81f46202b5337e8011d891dc197a1ec83fe1f259",
-    "main_latest_durable": "MAIN-20260923T033900+0900-PRIMARY-H7-FORMALR4-C10-R84-PREIDENTITY-CLOSED-5E7A2C91@8b58602f9ffd7c2d4e73dda06f1764aa375968fd",
-    "previous_sub": "SUB-20260923T023426+0900-NOOP-SCAN-R83-A6D4E219@fec20ea9484600053e8558732379519f514c14a7",
+    "evidence_analyst": "EVA-20260923T035826+0900-R85-1C7E4A92@d2b2216b7f583a1c04144bafd7f23cf0282a53f4",
+    "main_active_lease": "MAIN-20260923T041600+0900-PRIMARY-H7-FORMALR4-C11-R85-SOURCE-EXEC-4D8A71C2",
+    "previous_sub": "SUB-20260923T034423+0900-QFD-ASSEMBLY-REALIZATION-R84-5E7A2C91@589bf9e4839ce3e38ae38be82f5e41c7875eeb19",
     "control_brain": "CTRL-20260922T235000+0900-R37-7A3E9C51@23676a55c9473d1cfd22d982ffffd5d2ba18b557",
     "literature": "LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91@c25dce890612dcc9b5614f987f4cdeb85e1f5652",
     "independent_audit": "AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4",
-    "methodology": "METHCAL-20260923T031749+0900-R71-B73D5A2C@c49c2077c034e077a214e224eea928daf89edeb4",
+    "methodology": "METHCAL-20260923T042037+0900-R72-21A0646D@898fc092abd5c68919966a8219687b22fd6116c7",
     "utility": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "81f46202b5337e8011d891dc197a1ec83fe1f259",
-    "orchestrator_tip_before_write": "8b58602f9ffd7c2d4e73dda06f1764aa375968fd",
-    "main_branch": "research/main-h7-formal-r4-runtime-lock-r81-cycle10",
-    "main_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
+    "analyst_handoff": "d2b2216b7f583a1c04144bafd7f23cf0282a53f4",
+    "orchestrator_tip_before_write": "4d65b5cb687c0d9af21aec81c4c89de649ba385e",
+    "main_active_branch": "research/main-h7-formal-r4-runtime-lock-r81-cycle10",
+    "main_active_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
     "evidence_tag_objects": {
       "c19_v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "c19_r2": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -30,12 +30,10 @@
     }
   },
   "allocation": {
-    "main_lane": "H7_FORMAL_R4_AUTHORITATIVE_RUN_SCOPED_LOCK_ARTIFACT_RECOVERY_DURABLE_CAPTURE_LINT_INVARIANT_CLOSURE_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY",
+    "main_lane": "H7_FORMAL_R4_EXACT_CLAIM_CAPABLE_SOURCE_PROTECTED_EXECUTOR_AND_COMPONENT_BINDING_CYCLE11_PREIDENTITY_ONLY",
     "sub_lane": "INDEPENDENT_NON_EVIDENTIARY_QUESTION_FORMATION_THEORY_BACKWARD_SUPPLY_SCAN_ONLY_WHEN_FRESH_INFORMATION_GAIN_EXISTS",
     "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_AT_MOST_ONE_BOUNDED_AUTONOMOUS_RESEARCH_TASK",
-    "system_priority_exception": {
-      "used": false
-    }
+    "system_priority_exception": {"used": false}
   },
   "candidate_pool": {
     "total": 33,
@@ -53,154 +51,123 @@
     "claim_ceiling": "MECHANISM",
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
     "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
-    "status": "MAIN_COMPLETED_R84_CYCLE10_PREIDENTITY_AND_STOPPED_FOR_FRESH_ANALYST",
+    "status": "MAIN_RUNNING_R85_CYCLE11_SOURCE_EXECUTOR_COMPONENT_BINDING",
     "main_owned": true,
     "active_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
     "result_authority": false
   },
-  "operating_mode": "AUTONOMOUS_RESEARCH",
-  "discovery_mode": "QUESTION_FORMATION_DISCOVERY",
-  "selected_target": "QSEED-ASSEMBLY-REALIZATION-INVARIANCE-01",
-  "work_kind": "NONCANONICAL_CANDIDATE_SEED_ASSESSMENT",
-  "canonical_status": "NONCANONICAL_CANDIDATE_SEED_ONLY",
+  "operating_mode": "PRE_NO_OP_RESEARCH_SCAN",
+  "discovery_mode": null,
+  "selected_target": null,
+  "work_kind": "NO_OP_AFTER_REQUIRED_SCAN",
+  "canonical_status": null,
   "development_phase_at_entry": null,
   "development_revision": null,
-  "cycle_count": {
-    "question_formation_cycle": 1,
-    "status": "CLOSED_REJECTED"
-  },
-  "reassessment_rationale": "Fresh Literature R33 introduced realization-equivalence as a genuinely new reduction. A bounded Assembly-label invariance diagnostic could reduce uncertainty without entering H7 or reopening a terminal object.",
+  "cycle_count": {"scan_cycle": 1, "status": "CLOSED_ZERO_RETAINED"},
+  "reassessment_rationale": "Fresh Methodology R72 added a material distinction between static lock-byte binding and clean exact-runtime functional realization, but that prospective question is already explicitly inside MAIN's active H7 cycle-11 source/executor/runtime closure. No other independent fresh discriminator appeared.",
   "main_independence": {
     "status": "PASS_NO_COLLISION",
-    "reason": "Selected question tests v0.5 Assembly label-coordinate symmetry only. No H7 artifact/runtime/scorer/PF-R1/identity/evaluation/successor implementation was touched."
+    "reason": "No H7 source, executor, runtime, scorer, preserver, PF-R1, identity, evaluation, blocker or successor work was performed."
   },
   "pre_no_op_scan": {
     "performed": true,
-    "no_op_gate_triggered": false,
-    "result": "ONE_BOUNDED_QFD_SELECTED_FROM_FRESH_R33_REALIZATION_EQUIVALENCE_DELTA",
+    "no_op_gate_triggered": true,
+    "result": "ZERO_SAFE_USEFUL_NONDUPLICATIVE_BOUNDED_TARGETS_RETAINED",
     "surfaces": {
-      "terminal_successors": "C33 unchanged; R33 gives a new reduction to inspect against Assembly/partial-completion lineage without reopening it.",
-      "theory_backward": "Selected Assembly realization-invariance question seed because R33 supplies a new comparator/reduction. H7 realization question excluded as MAIN-owned.",
-      "phenomenon_shadow": "No additional independent phenomenon; shadow standby remains empty.",
-      "literature": "R33 newly separates internal-coordinate identity from invariant mechanism claims and runtime reproducibility from determinism/verifiability.",
-      "audit": "R7 remains H7 raw-gate integrity and was not acted on.",
-      "methodology": "R71 remains Utility authority/provenance calibration, not a scientific target.",
-      "utility": "PF-R1 authority gap unchanged and control-plane only.",
-      "repo_runtime": "MAIN completed R84 non-result preidentity cycle10; stable main/evidence unchanged."
+      "terminal_successors": "Candidate #33 and other terminal SYSTEM successor potentials gained no independent new observable/intervention/tooling delta; R72 exact-runtime realization is H7-specific and MAIN-owned.",
+      "theory_backward": "Prior Assembly realization QFD already closed the reachable global-label symmetry; completion/regeneration, endogenous continuation, persistent-state causality, native local credit and pre-semantic formation gained no new discriminator.",
+      "phenomenon_shadow": "R85 shadow_standby_queue remains empty; no new independently reachable phenomenon.",
+      "literature": "R33 already consumed by prior SUB QFD; no second independent target.",
+      "audit": "R7 remains H7 raw-gate integrity and collides with MAIN ownership.",
+      "methodology": "R72 is materially new but its exact-runtime functional-realization question is the active MAIN cycle-11 critical path.",
+      "utility": "PF-R1 schema-v2 authorization divergence remains control-plane/provenance only; no new scientific target.",
+      "repo_runtime": "MAIN acquired active R85 cycle-11 lease; stable main and five authoritative evidence tags remain unchanged."
     },
     "alternatives_considered": [
-      {
-        "surface": "H7_ROUTE_REALIZATION_EQUIVALENCE_SUCCESSOR",
-        "result": "REJECTED_MAIN_LINEAGE_COLLISION"
-      },
-      {
-        "surface": "CAND33_DURABLE_RUNNER_SUCCESSOR",
-        "result": "REJECTED_NO_NEW_INFORMATION_GAIN"
-      },
-      {
-        "surface": "R33_NUMERICAL_DETERMINISM_SYSTEM_QFD",
-        "result": "REJECTED_H7_R4_RUNTIME_COLLISION"
-      },
-      {
-        "surface": "COMPLETION_REGENERATION_CONTINUATION_PRESEMANTIC_WITHOUT_NEW_COMPARATOR",
-        "result": "REJECTED_NO_NEW_REACHABLE_DISCRIMINATOR"
-      },
-      {
-        "surface": "QSEED-ASSEMBLY-REALIZATION-INVARIANCE-01",
-        "result": "SELECTED_BOUNDED_QFD"
-      }
+      {"surface": "R72_LOCKED_RUNTIME_REALIZATION_SYSTEM_DISCOVERY", "result": "REJECTED_MAIN_COLLISION"},
+      {"surface": "CAND33_EXACT_RUNTIME_REALIZATION_FRESH_SYSTEM_SUCCESSOR", "result": "REJECTED_NO_CAND33_SPECIFIC_NEW_INFORMATION_AND_H7_DUPLICATION"},
+      {"surface": "ASSEMBLY_REALIZATION_INVARIANCE_QFD_CYCLE2", "result": "REJECTED_NO_NEW_ADMISSIBLE_TRANSFORM"},
+      {"surface": "ENDOGENOUS_CONTINUATION_OR_PERSISTENT_STATE_MECHANISM_DISCOVERY", "result": "REJECTED_NO_NEW_DISCRIMINATOR"},
+      {"surface": "PRESEMANTIC_TO_FUNCTIONAL_FORMATION_QFD", "result": "REJECTED_NO_NEW_REACHABLE_OBSERVABLE"},
+      {"surface": "PF_R1_PRESERVATION_SYSTEM_QFD", "result": "REJECTED_CONTROL_PLANE_ONLY_AND_DUPLICATE_OWNERSHIP_RISK"},
+      {"surface": "NO_OP", "result": "SELECTED_AFTER_COMPLETE_SCAN_ZERO_RETAINED"}
     ]
   },
   "theory_backward_accounting": {
     "autonomous_scientific_selection_made": false,
-    "question_formation_selected": true,
+    "question_formation_selected": false,
     "denominator_excluded": true,
-    "rolling_autonomous_canonical_selections": [
-      "MECHANISM",
-      "SYSTEM",
-      "SYSTEM"
-    ],
+    "rolling_autonomous_canonical_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
     "qualifying_share": "1/3",
     "theory_backward_exception": {
-      "code": "NO_COHERENT_MECHANISM_TARGET_AFTER_QFD",
-      "detail": "Global unit relabeling is already an exact ordinary symmetry of Assembly similarity; no admissible nontrivial realization transform is currently defined outside MAIN-owned H7."
+      "code": "NO_COHERENT_MECHANISM_TARGET",
+      "detail": "No fresh independent mechanism-level observable/intervention/falsifier exists outside MAIN-owned H7; manufacturing a target would violate the quality floor."
     }
   },
   "phenomenon_question_hypothesis": {
-    "phenomenon": "ASSEMBLY_LABEL_COORDINATE_INVARIANCE",
-    "question": "Does v0.5 Assembly recognition/partial-completion matching depend on arbitrary numerical unit labels under a whole-system bijective relabeling?",
-    "hypothesis": "A consistent global bijection preserves pattern_similarity exactly; simple label-coordinate change has no mechanism residual.",
-    "observable_intervention": "Apply the same bijection to ordered_units and unit_ids of both prototype and observed ActivityPattern; compare pattern_similarity and mapping-aware best-match correspondence.",
-    "ordinary_reductions_comparators": [
-      "ORIGINAL_PATTERN_PAIR_VS_GLOBAL_BIJECTIVE_RELABELING",
-      "MAPPING_AWARE_ASSEMBLY_CORRESPONDENCE",
-      "ONE_SIDED_RELABELING_NEGATIVE_CONTROL"
-    ],
-    "falsifier_discriminator": "Any consistent-bijection pair with a changed similarity score falsifies label-invariance. A future mechanism successor also requires a reachable nontrivial realization transform preserving external dynamics/intervention semantics."
+    "phenomenon": null,
+    "question": null,
+    "hypothesis": null,
+    "observable_intervention": null,
+    "ordinary_reductions_comparators": [],
+    "falsifier_discriminator": null
   },
   "inputs": {
-    "latest_analyst_r84_read": true,
-    "main_ownership_refetched_after_r84_cycle10": true,
+    "latest_analyst_r85_read": true,
+    "main_active_lease_refetched_before_mutation": true,
     "previous_sub_read": true,
     "control_r37_read": true,
     "literature_r33_read": true,
     "audit_r7_read": true,
-    "methodology_r71_read": true,
-    "utility_r84_reconciliation_read": true,
+    "methodology_r72_read": true,
+    "utility_reconciliation_read": true,
     "stable_main_refetched": true,
     "evidence_tags_refetched": true,
-    "v05_assemblies_source_refetched": true,
-    "v05_contracts_source_refetched": true,
     "protected_or_held_out_result_used": false,
     "consumed_identity_used": false
   },
   "implementation": {
-    "mode": "READ_ONLY_SYNTHETIC_QUESTION_FORMATION_DIAGNOSTIC",
-    "diagnostics_executed": 1,
-    "diagnostic_description": "Reimplemented exact stable-v0.5 pattern_similarity equations and tested 1,000 randomized pattern pairs under consistent random global unit-ID bijections, plus one-sided negative controls.",
+    "mode": "READ_ONLY_PRE_NO_OP_RESEARCH_SCAN",
+    "diagnostics_executed": 0,
     "code_mutation": false,
     "workflow_dispatch": false,
     "research_branch_created": false
   },
   "observations": {
-    "consistent_bijection_trials": 1000,
-    "consistent_bijection_changed_scores": 0,
-    "consistent_bijection_max_abs_difference": 0.0,
-    "one_sided_trials": 1000,
-    "one_sided_changed_scores": 816,
-    "one_sided_mean_abs_difference": 0.10418362442980447,
-    "one_sided_max_abs_difference": 0.7333333333333334,
-    "interpretation": "The current Assembly similarity surface is exactly equivariant/invariant to a whole-system label permutation. The only immediately reachable realization transform is therefore an ordinary symmetry; stronger coordinate mixing is not yet a defined admissible model operation."
+    "analyst_generation_stable": true,
+    "main_cycle11_active": true,
+    "methodology_r72_material_delta": "STATIC_LOCK_BINDING_DOES_NOT_ESTABLISH_CLEAN_EXACT_RUNTIME_FUNCTIONAL_REALIZATION",
+    "r72_delta_selectable_by_sub": false,
+    "reason_not_selectable": "DIRECT_MAIN_ACTIVE_LANE_COLLISION",
+    "independent_scientific_target_count": 0
   },
   "repair_change_classification": {
-    "selected_work": "NO_REPOSITORY_MUTATION_QFD_DIAGNOSTIC_ONLY",
+    "selected_work": "NO_REPOSITORY_SCIENCE_MUTATION_SCAN_ONLY",
     "science_invariant": true,
     "science_affecting_changes_made": []
   },
-  "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_QUESTION_FORMATION",
+  "evidentiary_status": "NO_SCIENTIFIC_OBSERVATION_CONTROL_COORDINATION_ONLY",
   "proposed_claim_ceiling": null,
   "proposed_preformal_eligible": null,
   "preliminary_readiness": null,
-  "hold_dimensions": {
-    "applicable": false
-  },
+  "hold_dimensions": {"applicable": false},
   "fresh_successor_potential": {
-    "current_seed": "REJECTED_NO_RESIDUAL_AFTER_ORDINARY_LABEL_SYMMETRY",
-    "conditional_future": "A fresh MECHANISM successor could be reconsidered only if a new admissible nontrivial realization transform preserves external dynamics but changes internal Assembly realization and supports a fixed intervention mapping.",
+    "current_run": "NONE_MATURED",
+    "terminal_system_potentials_remain_conditional": true,
     "reopen_terminal_object": false
   },
-  "next_layer": "RETURN_R33_REALIZATION_EQUIVALENCE_AS_PROSPECTIVE_REDUCTION_FLOOR_ONLY",
+  "next_layer": "WAIT_FOR_NEW_INDEPENDENT_INFORMATION_OR_FRESH_ANALYST_ALLOCATION",
   "open_choices": [
-    "Evidence Analyst may revisit only if future model/tooling defines a nontrivial intervention-preserving internal realization transform beyond unit relabeling.",
-    "H7 route/state realization-equivalence remains MAIN/future-Analyst territory; SUB must not create a hidden dependency."
+    "Re-scan if a new non-MAIN observable/intervention/tooling delta appears.",
+    "Do not duplicate H7 cycle-11 exact-runtime/source-executor work or manufacture a candidate-33 successor from it."
   ],
-  "recommendation": "REJECT",
+  "recommendation": "NONE",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
   "integrity": {
     "scientific_experiments_executed": 0,
-    "non_evidentiary_synthetic_diagnostics": 1,
+    "non_evidentiary_synthetic_diagnostics": 0,
     "scientific_workflows_dispatched": 0,
     "one_way_identities_consumed": 0,
     "research_branches_created": 0,
@@ -213,13 +180,13 @@
   },
   "generation_metadata": {
     "schema_version": 2,
-    "source_analyst_generation": "EVA-20260923T025733+0900-R84-5E7A2C91",
-    "source_analyst_commit": "81f46202b5337e8011d891dc197a1ec83fe1f259",
-    "parent_orchestrator_tip": "8b58602f9ffd7c2d4e73dda06f1764aa375968fd",
+    "source_analyst_generation": "EVA-20260923T035826+0900-R85-1C7E4A92",
+    "source_analyst_commit": "d2b2216b7f583a1c04144bafd7f23cf0282a53f4",
+    "parent_orchestrator_tip": "4d65b5cb687c0d9af21aec81c4c89de649ba385e",
     "persistence_paths": [
       "reports/orchestrator/sub/latest.md",
       "reports/orchestrator/sub/state.json",
-      "reports/orchestrator/sub/history/2026-09-23/0344-r84-qfd-assembly-realization-invariance.md"
+      "reports/orchestrator/sub/history/2026-09-23/0437-r85-noop-r72-main-collision-scan.md"
     ]
   }
 }
