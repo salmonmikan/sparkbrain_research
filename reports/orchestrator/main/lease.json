@@ -1,24 +1,26 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T031823+0900-PRIMARY-H7-FORMALR4-C10-R83-RECOVERY-A6D4E219",
+  "generation_id": "MAIN-20260923T032019+0900-PRIMARY-H7-FORMALR4-C10-R84-RECONCILED-5E7A2C91",
   "run_id": "sparkbrain-main-primary-20260923T031823JST-R83-h7-formalr4-authoritative-artifact-recovery",
   "producer_run_id": "sparkbrain-main-primary-20260923T031823JST-R83-h7-formalr4-authoritative-artifact-recovery",
   "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R4_AUTHORITATIVE_RUN_SCOPED_LOCK_ARTIFACT_RECOVERY_DURABLE_CAPTURE_LINT_INVARIANT_CLOSURE_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T012121+0900-PRIMARY-H7-FORMALR4-C10-R82-RECOVERY-7C4E19B2",
+  "supersedes_generation_id": "MAIN-20260923T031823+0900-PRIMARY-H7-FORMALR4-C10-R83-RECOVERY-A6D4E219",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T020919+0900-R83-A6D4E219@ba109150205db0a30ce1c294ab8133fa6caa51b4",
+    "evidence_analyst_origin": "EVA-20260923T020919+0900-R83-A6D4E219@ba109150205db0a30ce1c294ab8133fa6caa51b4",
+    "evidence_analyst_final_reconciliation": "EVA-20260923T025733+0900-R84-5E7A2C91@81f46202b5337e8011d891dc197a1ec83fe1f259",
     "main_previous": "MAIN-20260923T012121+0900-PRIMARY-H7-FORMALR4-C10-R82-RECOVERY-7C4E19B2",
     "sub": "SUB-20260923T023426+0900-NOOP-SCAN-R83-A6D4E219"
   },
   "execution_mode": "PRIMARY",
   "status": "RUNNING",
   "started_at": "2026-09-23T03:18:23+09:00",
-  "heartbeat_at": "2026-09-23T03:18:23+09:00",
+  "heartbeat_at": "2026-09-23T03:20:19+09:00",
   "completed_at": null,
   "blocked_at": null,
   "blocked_until": null,
-  "analyst_generation_id": "EVA-20260923T020919+0900-R83-A6D4E219",
-  "analyst_commit": "ba109150205db0a30ce1c294ab8133fa6caa51b4",
+  "analyst_generation_id": "EVA-20260923T025733+0900-R84-5E7A2C91",
+  "analyst_commit": "81f46202b5337e8011d891dc197a1ec83fe1f259",
+  "analyst_authority_origin": "EVA-20260923T020919+0900-R83-A6D4E219@ba109150205db0a30ce1c294ab8133fa6caa51b4",
   "analyst_decision": "GO_H7_FORMAL_R4_AUTHORITATIVE_RUN_SCOPED_LOCK_ARTIFACT_RECOVERY_DURABLE_CAPTURE_LINT_INVARIANT_CLOSURE_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY_STOP_BEFORE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
   "research_layer": "FORMAL",
   "main_lane": "H7_FORMAL_R4_AUTHORITATIVE_RUN_SCOPED_LOCK_ARTIFACT_RECOVERY_DURABLE_CAPTURE_LINT_INVARIANT_CLOSURE_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY",
@@ -29,7 +31,7 @@
   "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
   "repair_change_classification": "SCIENCE_INVARIANT_PROVENANCE_OBSERVABILITY_RECONCILIATION_AND_PREIDENTITY_BINDING_CLOSURE_ONLY; SCIENCE_AFFECTING_CHANGE_FORBIDDEN",
   "cycle_count": 10,
-  "reassessment_rationale": "R83 authoritatively reconciled the live existing R4 lock artifact and exact package contract, converting the R82 stale-pointer block into a bounded recovery path with concrete information gain. Recover existing bytes only; no resolver/materializer rerun and no one-way action.",
+  "reassessment_rationale": "R84 supersedes R83 only for PF-R1 Utility governance and explicitly preserves the H7 R4 MAIN allocation. Existing artifact 10703822275 is authoritatively live and bounded recovery has concrete information gain. Recover existing bytes only; no resolver/materializer rerun and no one-way action.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {"status": "READY", "semantics": "development readiness only; not FORMAL one-way authority or scientific success"},
@@ -52,5 +54,5 @@
   "official_scoring_performed": false,
   "scientific_preserve_or_evidence_ref_created": false,
   "stop_reason": null,
-  "next_action": "Recover only artifact 10703822275 from workflow 35748064227 at exact head 647253f4c0128ff09d47fdfce80dabf006863af1, verify run/head/name/archive digest and authoritative R4 resource-contract/versions blobs, commit exact lock/manifest bytes unchanged, diagnose exact generic-CI lint, apply only science-invariant repair if needed, then run non-result preidentity validation. STOP before any one-way FORMAL action."
+  "next_action": "Recover only artifact 10703822275 from workflow 35748064227 at exact head 647253f4c0128ff09d47fdfce80dabf006863af1, verify run/head/name/archive digest and authoritative R4 resource-contract/versions blobs, commit exact lock/manifest bytes unchanged, diagnose exact generic-CI lint, apply only science-invariant repair if needed, then run non-result preidentity validation. STOP before any one-way FORMAL action. PF-R1 Utility preservation remains HOLD under R84 and is not MAIN work."
 }
