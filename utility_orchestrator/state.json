@@ -1,65 +1,86 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260922T092800+0900-AUTO-EQUIV-PROMOTION-AUDIT-RUNNING-5C9E217A",
-  "produced_at": "2026-09-22T09:28:00+09:00",
+  "generation_id": "UTILITY-20260922T093600+0900-AUTO-EQUIV-PROMOTION-AUDIT-COMPLETED-5C9E217A",
+  "produced_at": "2026-09-22T09:36:00+09:00",
   "producer_run_id": "utility-auto-20260922T0927+0900-equiv-promotion-audit",
   "authority_scope": "UTILITY_AUTONOMOUS_IDLE_READ_ONLY_NON_EVIDENTIARY_INTEGRATION_AUDIT",
-  "supersedes_generation_id": "UTILITY-20260922T083500+0900-AUTO-EQUIV-CERT-PROTOTYPE-COMPLETED-A42D7C19",
+  "supersedes_generation_id": "UTILITY-20260922T092800+0900-AUTO-EQUIV-PROMOTION-AUDIT-RUNNING-5C9E217A",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
   "autonomous_task_id": "AUTOUTIL-20260922T0927+0900-EQUIV-PROMOTION-AUDIT-5C9E217A",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
   "objective": "Perform one bounded read-only promotion-readiness audit of the isolated generic equivalence-certificate prototype, focusing on repository integration risk and the exact limitations identified by Evidence Analyst R57, without modifying the prototype branch or any scientific artifact.",
+  "classification": "NOT_PROMOTION_READY_CI_LINT_GATE_RED_AND_INDEPENDENT_VERIFIER_LIMITS_PERSIST",
+  "finding_summary": [
+    "The isolated equivalence-certificate branch remains bounded at exactly two commits ahead of stable main and changes only the generic verifier module plus synthetic tests.",
+    "GitHub Actions CI run 35668005338 for exact head 710f397b1af36c73378f6029c27ccb44242f02b9 failed at the Lint step on both Python 3.11 and 3.13; Local readiness, Test, and Validate bundle were skipped, so the prior local 7/7 synthetic pass is insufficient for promotion readiness.",
+    "The exact lint diagnostic is not exposed by the current read-only run/job metadata and was not guessed or repaired in this bounded audit.",
+    "Evidence Analyst R57's scientific-use limitations remain: producer independence is asserted metadata rather than externally trusted provenance/challenge issuance, and ordered trajectory/checkpoint digests are compared as supplied rather than independently recomputed from preserved raw streams.",
+    "Repository Steward G9 predates the completed prototype, so fresh structural review plus ordinary green CI/static-quality checks are required before any main-promotion consideration; these governance steps must not be interpreted as scientific verifier completion or candidate progress."
+  ],
   "trigger_source": {
     "control": "CTRL-20260922T085130+0900-R31-B7D4A219",
     "evidence_analyst": "EVA-20260922T085807+0900-R57-6C4A21E8",
     "open_utility_request_selected": null,
     "assignment_pointer": "clean schema-v2 IDLE"
   },
-  "ownership_checks": {
-    "main": "MAIN-20260922T091342+0900-PRIMARY-FUNNEL21-IDLE-R57-6C4A21E8",
-    "sub": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6",
+  "freshness_check_before_terminal_persistence": {
+    "assignment_pointer": "IDLE@6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
+    "evidence_analyst": "EVA-20260922T085807+0900-R57-6C4A21E8@7833c8147444ec94ea2b86661a1519c215de2d77",
+    "control": "CTRL-20260922T085130+0900-R31-B7D4A219@e984e5b60ebd958d182e1f831289e5c349fbee8f",
+    "main": "MAIN-20260922T091342+0900-PRIMARY-FUNNEL21-IDLE-R57-6C4A21E8@2226b687de294b608e034cae921dfb4d0e9ee47d",
+    "sub": "SUB-20260922T083500+0900-NOOP-R56INTENTIONALIDLE-8B3D21F6@e73c70c558da81d9bc753693eb89d02f9e425d93",
     "relay": "NO_FRESH_CONTINUATION_AUTHORITY_SURFACED",
-    "active_or_queued_research_object_touched": false,
-    "collision_found": false,
-    "main_critical_dependency": false
+    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "prototype_branch": "utility/equivalence-certificate-v0-1-A42D7C19@710f397b1af36c73378f6029c27ccb44242f02b9",
+    "material_supersession_detected": false
   },
-  "allowed_actions": [
-    "read-only inspection of stable main and utility/equivalence-certificate-v0-1-A42D7C19",
-    "static comparison against reusable stable-main verifier primitives",
-    "Utility-owned state/result persistence only",
-    "at most one bounded follow-up request if warranted"
-  ],
-  "forbidden_actions": [
-    "prototype branch mutation or merge",
-    "scientific workflow dispatch or identity consumption",
-    "research/evidence/control/preserve/formal mutation",
-    "candidate typing/readiness mutation",
-    "scheduler mutation",
-    "PRE_FORMAL or FORMAL action"
-  ],
-  "stop_condition": "Stop after one audit pass with a concrete promotion-readiness classification and minimal follow-up recommendation, or immediately on ownership/authority supersession.",
-  "generation_refs": {
-    "assignment_pointer_blob": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "analyst_blob": "7833c8147444ec94ea2b86661a1519c215de2d77",
-    "main_latest_blob": "2226b687de294b608e034cae921dfb4d0e9ee47d",
-    "sub_latest_blob": "e73c70c558da81d9bc753693eb89d02f9e425d93",
-    "control_blob": "e984e5b60ebd958d182e1f831289e5c349fbee8f",
-    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "prototype_branch": "utility/equivalence-certificate-v0-1-A42D7C19@710f397b1af36c73378f6029c27ccb44242f02b9"
+  "ownership_checks": {
+    "collision_found": false,
+    "main_critical_dependency": false,
+    "active_or_queued_research_object_touched": false,
+    "candidate_typing_touched": false
+  },
+  "integrity_checks": {
+    "workflow_dispatch": false,
+    "scheduler_mutation": false,
+    "scheduler_registry_mutation": false,
+    "scientific_workflow_or_experiment": false,
+    "research_main_evidence_control_preserve_freeze_sealed_formal_mutation": false,
+    "consumed_or_protected_identity_used_as_autonomous_task_target": false,
+    "held_out_evaluator_or_target_data_access": false,
+    "candidate_typing_or_readiness_mutation": false,
+    "preformal_or_formal_action": false,
+    "research_pr_merge": false,
+    "prototype_branch_mutation": false,
+    "hidden_main_dependency_created": false
   },
   "funnel_v2_1_preservation": {
     "candidate_touched": false,
     "preserved_fields": "NOT_APPLICABLE_NO_CURRENT_RESEARCH_CANDIDATE_TOUCHED",
     "typing_or_readiness_changed": false
   },
+  "validation": {
+    "prototype_head": "710f397b1af36c73378f6029c27ccb44242f02b9",
+    "github_actions_run_id": 35668005338,
+    "github_actions_conclusion": "failure",
+    "python_3_11": "LINT_FAILURE_DOWNSTREAM_LOCAL_READINESS_TEST_VALIDATE_BUNDLE_SKIPPED",
+    "python_3_13": "LINT_FAILURE_DOWNSTREAM_LOCAL_READINESS_TEST_VALIDATE_BUNDLE_SKIPPED",
+    "exact_lint_diagnostic": "NOT_AVAILABLE_IN_CURRENT_READ_ONLY_RUN_JOB_METADATA"
+  },
   "outputs": {
     "start_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0927+0900-EQUIV-PROMOTION-AUDIT-5C9E217A-0927-start.md",
-    "start_result_commit": "ca842a09dbe0803cd88ddcfb33d0fb767dd18595"
-  }
+    "start_result_commit": "ca842a09dbe0803cd88ddcfb33d0fb767dd18595",
+    "follow_up_request_path": "utility_orchestrator/requests/2026-09-22/UTIL-20260922-0934-EQUIV-CERT-CI-STEWARD-REVIEW.md",
+    "follow_up_request_commit": "a39b4b7b042d9f81b310418d0011fbe2349baa09",
+    "final_result_path": "utility_orchestrator/results/2026-09-22/AUTOUTIL-20260922T0927+0900-EQUIV-PROMOTION-AUDIT-5C9E217A-0935.md",
+    "final_result_commit": "32e0962e4b85fbc3fc5b5bea4dae1fa947b0d728"
+  },
+  "follow_up_recommendation": "Control review of the appended proposal; obtain fresh Repository Steward structural review and repair the ordinary lint/static-quality failure under a reviewed non-scientific integration path before any promotion consideration. Leave the isolated branch unmerged and scientifically non-authoritative.",
+  "stop_reason": "ONE_READ_ONLY_PROMOTION_READINESS_AUDIT_COMPLETE_CI_LINT_BLOCKER_IDENTIFIED_MAX_RUNS_1"
 }
