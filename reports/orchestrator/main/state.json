@@ -1,44 +1,46 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260922T231900+0900-PRIMARY-H7-FORMALR3-C9-RECOVERY-R80-6B8F31C4",
-  "run_id": "sparkbrain-main-primary-20260922T231900JST-R80-h7-formalr3-preidentity-recovery",
-  "producer_run_id": "sparkbrain-main-primary-20260922T231900JST-R80-h7-formalr3-preidentity-recovery",
-  "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R3_EXACT_RUNTIME_BINDING_TARGET_BLIND_PREDICTION_RAW_GATE_AND_ONEWAY_PREFLIGHT_CYCLE9_PREIDENTITY_ONLY",
-  "supersedes_generation_id": "MAIN-20260922T224100+0900-PRIMARY-H7-FORMALR3-C9-RECONCILE-R77-6C9F2A41",
+  "generation_id": "MAIN-20260923T012121+0900-PRIMARY-H7-FORMALR4-C10-R82-RECOVERY-7C4E19B2",
+  "run_id": "sparkbrain-main-primary-20260923T012121JST-R82-h7-formalr4-artifact-recovery",
+  "producer_run_id": "sparkbrain-main-primary-20260923T012121JST-R82-h7-formalr4-artifact-recovery",
+  "produced_at": "2026-09-23T01:22:31+09:00",
+  "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R4_EXACT_LOCK_ARTIFACT_DURABLE_CAPTURE_LINT_INVARIANT_CLOSURE_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY",
+  "supersedes_generation_id": "MAIN-20260922T231900+0900-PRIMARY-H7-FORMALR3-C9-RECOVERY-R80-6B8F31C4",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T230224+0900-R80-6B8F31C4@88f72d4e55d30e561143df94e06ce10c91972104",
-    "main_previous": "MAIN-20260922T224100+0900-PRIMARY-H7-FORMALR3-C9-RECONCILE-R77-6C9F2A41",
-    "sub": "SUB-20260922T224730+0900-NOOP-SCAN-R79-3F8A61C2"
+    "evidence_analyst": "EVA-20260923T011030+0900-R82-7C4E19B2@000895a72f6cf54eeb3489a42f63f42b70281223",
+    "main_lease_recovered": "MAIN-20260923T002300+0900-PRIMARY-H7-FORMALR4-C10-4885D9DE",
+    "sub": "SUB-20260923T003400+0900-NOOP-SCAN-R81-4885D9DE@5d72f40c1f24c996f2f878cab71956f1d0a17d84"
   },
   "execution_mode": "PRIMARY",
   "status": "BLOCKED",
-  "started_at": "2026-09-22T23:19:00+09:00",
-  "heartbeat_at": "2026-09-22T23:39:00+09:00",
+  "started_at": "2026-09-23T01:21:21+09:00",
+  "heartbeat_at": "2026-09-23T01:22:31+09:00",
   "completed_at": null,
-  "blocked_at": "2026-09-22T23:39:00+09:00",
-  "blocked_until": "FRESH_EVIDENCE_ANALYST_RUNTIME_PACKAGE_BINDING_DECISION",
-  "analyst_generation_id": "EVA-20260922T230224+0900-R80-6B8F31C4",
-  "analyst_commit": "88f72d4e55d30e561143df94e06ce10c91972104",
-  "analyst_decision": "GO_H7_FORMAL_R3_EXACT_RUNTIME_BINDING_TARGET_BLIND_PREDICTION_RAW_GATE_AND_ONEWAY_PREFLIGHT_CYCLE9_PREIDENTITY_ONLY_STOP_BEFORE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
+  "blocked_at": "2026-09-23T01:22:31+09:00",
+  "blocked_until": "FRESH_EVIDENCE_ANALYST_DECISION_AFTER_R4_ONE_SHOT_LOCK_ARTIFACT_UNAVAILABLE",
+  "analyst_generation_id": "EVA-20260923T011030+0900-R82-7C4E19B2",
+  "analyst_commit": "000895a72f6cf54eeb3489a42f63f42b70281223",
+  "analyst_decision": "GO_H7_FORMAL_R4_EXACT_LOCK_ARTIFACT_DURABLE_CAPTURE_LINT_INVARIANT_CLOSURE_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY_STOP_BEFORE_EVALUATION_COMMITMENT_IDENTITY_START_EVALUATION_SEED_REVEAL_PROTECTED_EVALUATION_OR_RESULT_BEARING_EXECUTION",
   "research_layer": "FORMAL",
-  "main_lane": "H7_FORMAL_R3_EXACT_RUNTIME_BINDING_TARGET_BLIND_PREDICTION_RAW_GATE_AND_ONEWAY_PREFLIGHT_CYCLE9_PREIDENTITY_ONLY",
+  "main_lane": "H7_FORMAL_R4_EXACT_LOCK_ARTIFACT_DURABLE_CAPTURE_LINT_INVARIANT_CLOSURE_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY",
   "candidate_id": "H7 responsibility",
   "candidate_alias": "CAND-H7-RESPONSIBILITY",
   "candidate_ordinal": 7,
   "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-  "development_revision": "H7-FORMAL-R3-UNEXPOSED-EVALUATION-COMMITMENT-AND-RUNTIME-BINDING",
+  "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
   "repair_change_classification": {
-    "raw_gate_preserve_sidecar_runtime_and_component_binding": "SCIENCE_INVARIANT_PREIDENTITY_INTEGRITY_CLOSURE_IMPLEMENTING_ALREADY_FIXED_R80_REQUIREMENTS",
-    "diagnostic_logging_and_workflow_order": "SCIENCE_INVARIANT_REPAIR",
-    "science_affecting_change": "NONE"
+    "authorized_r4_delta": "SCIENCE_AFFECTING_CHANGE_VERSIONED_R4_FOR_RUNTIME_PACKAGE_RESOURCE_BINDING_ONLY",
+    "artifact_capture_attempt": "SCIENCE_INVARIANT_BINDING_CLOSURE_ATTEMPT_NO_RESEARCH_MUTATION",
+    "lint_repair_this_run": "NOT_ATTEMPTED_BECAUSE_R82_CONTINGENCY_REQUIRES_STOP_ON_ARTIFACT_UNAVAILABLE",
+    "science_affecting_change_this_run": "NONE"
   },
-  "cycle_count": 9,
-  "reassessment_rationale": "R80 recorded concrete information gain from Independent Audit R7: R1/R2 raw exposed target-derived correctness before preserve. Cycle 9 closed a prediction-only raw allowlist, separated protected target sidecar, preserve-before-target-access proof, post-preserve correctness recomputation, exact component binding, prior-surface collision inventory and no-clobber preflight. The literal runtime/package environment did not reproduce exactly, so execution stops before any one-way action.",
+  "cycle_count": 10,
+  "reassessment_rationale": "R82 prospectively authorized recovery and durable capture of the already-created one-shot exact lock artifact, followed only by verified invariant lint closure and non-result-bearing preidentity revalidation. The artifact is no longer retrievable/listed, so R82's explicit contingency requires STOP without rematerialization or resolver retry.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {
     "status": "READY",
-    "semantics": "development readiness only; not FORMAL execution authority, scientific success, or reduction exhaustion"
+    "semantics": "development readiness only; not FORMAL one-way authority, scientific success, or reduction exhaustion"
   },
   "hold_class": null,
   "hold_reason": null,
@@ -47,78 +49,68 @@
   "system_priority_exception": {"used": false},
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_research_branch": "research/main-h7-formal-r3-unexposed-eval-runtime-r76-cycle9",
-    "starting_head": "325e93c62c1f79baa107b677a3dc881dc6f47ace",
-    "final_research_head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
-    "runtime_binding_path": "artifacts/formal_h7_r3/runtime_binding.json",
-    "runtime_binding_blob": "ab8531479d03a15c2e36f0cfe45cfe4fa605d312",
-    "prior_surface_inventory_path": "artifacts/formal_h7_r3/prior_surface_inventory.json",
-    "prior_surface_inventory_blob": "e9d43053ab4e3405f7886b289f1c3ea5b09286a0",
-    "implementation_binding_path": "artifacts/formal_h7_r3/implementation_binding.json",
-    "implementation_binding_blob": "e50e1f7fda6775c94ebaef7a11cf2d1cb8cd87f9"
+    "active_research_branch": "research/main-h7-formal-r4-runtime-lock-r81-cycle10",
+    "active_research_head": "647253f4c0128ff09d47fdfce80dabf006863af1",
+    "evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "h7_control_ref_count": 0,
+    "h7_preserve_ref_count": 0,
+    "pr_148": "OPEN_UNMERGED_MERGEABLE",
+    "pr_149": "OPEN_UNMERGED_MERGEABLE"
   },
-  "implementation": {
-    "prediction_only_raw_allowlist": true,
-    "raw_forbids_target_derived_correctness": true,
-    "protected_target_sidecar_separated": true,
-    "target_sidecar_coverage_validation": true,
-    "preserve_before_target_access_proof_required": true,
-    "post_preserve_correctness_recomputation": true,
-    "frozen_scientific_scorer_reused_without_semantic_change": true,
-    "fresh_episode_id_adapter_is_world_stratified_identifier_relabel_only": true,
-    "create_only_prediction_raw_preserver": true,
-    "no_clobber_preflight": true,
-    "prior_h7_episode_and_training_surface_inventory": true,
-    "future_r3_evaluation_seed_values_persisted": false,
-    "future_collision_audit_complete": false,
-    "preidentity_component_binding_materialized": true,
-    "protected_result_executor_materialized": false,
-    "binding_complete": false
+  "r4_resource_contract": {
+    "exact_versions": [
+      "numpy==2.2.6",
+      "scipy==1.16.2",
+      "scikit-learn==1.7.2",
+      "torch==2.13.0",
+      "matplotlib==3.10.8",
+      "snntorch==1.0.0",
+      "safetensors==0.6.2",
+      "platformdirs==4.4.0",
+      "jsonschema==4.25.1",
+      "cloudpickle==3.1.1"
+    ],
+    "science_affecting_delta": "SCIENTIFIC_RUNTIME_PACKAGE_RESOURCE_BINDING_ONLY",
+    "r3_scientific_fields_preserved": true,
+    "one_shot_materialization_run": 35748064227,
+    "one_shot_materialization_status": "COMPLETED_SUCCESS",
+    "expected_artifact_id": 10697560883,
+    "expected_artifact_name": "h7-formal-r4-runtime-lock-647253f4c0128ff09d47fdfce80dabf006863af1",
+    "expected_artifact_size_bytes": 4763,
+    "artifact_durably_committed": false
   },
-  "runtime_binding": {
-    "mode": "LITERAL_EXACT_NO_NORMALIZATION",
-    "source_observation_head": "325e93c62c1f79baa107b677a3dc881dc6f47ace",
-    "source_observation_run": 35734936639,
-    "source_runtime_observation_sha256": "73cbefbbab375c7f935a42ad51944568ae75123943a219fd49500f9593c06462",
-    "source_pip_freeze_sha256": "25b4a1c5d60d30e5e354856469420d04a1fdc3db003745d0c47c92b5fa61230f",
-    "final_validation_run": 35741369078,
-    "final_observed_runtime_sha256": "802181010a5655f008e9c5cbcfbdad358b48968d63a812e55b68187df9390545",
-    "final_observed_pip_freeze_sha256": "b4c2c84a1688ab15ab3b7ff20ca4bdeb49da8bfdcf5cba772d848e430b6ea45c",
-    "matching_fields": "Python 3.11.16, ubuntu24 image 20260907.300.1, Linux 6.17.0-1022-azure, torch 2.13.0 / 2.13.0+cu130 / git cf30153c4c131c8164ee7798e5022d810682e2cb, torch distribution RECORD digest, CPU/thread/hash contracts",
-    "mismatch_field": "pip_freeze_sha256",
-    "exact_reproduction_status": "FAILED_CLOSED",
-    "policy": "No normalization, broadening, silent rebind, or package/resource contract change without fresh Analyst authority."
-  },
-  "component_blobs": {
-    "r3_contract_runtime_module": "9bde5379542ecca84157e82868abe679e0099e31",
-    "r3_raw_preserve_post_preserve_adapter": "37c9c46febba1baba5580ed1aa803dcc483bef66",
-    "r3_preidentity_runner": "29b3e2ad0db1d0880ded58e3a1f6c85e698b2abc",
-    "r3_preidentity_workflow": "912309598567f7997c8271c23056579b0c041bc7",
-    "frozen_scientific_scorer": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
-    "legacy_r2_runner_reference_only": "33f5ecd8d2bb75b2c7d0ed48f482f4945ea3fb0b"
+  "artifact_recovery": {
+    "attempted": true,
+    "download_by_artifact_id": "HTTP_404_NOT_FOUND",
+    "run_artifact_listing": "EMPTY",
+    "artifact_retrievable": false,
+    "artifact_verified": false,
+    "rematerialization_attempted": false,
+    "resolver_retry_attempted": false,
+    "r82_contingency_applied": "ARTIFACT_UNAVAILABLE_STOP_NO_REMATERIALIZATION_RETRY"
   },
   "workflows": [
     {
-      "run_id": 35741369078,
-      "name": "h7-formal-r3-preidentity",
-      "head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
-      "status": "completed",
-      "conclusion": "failure",
-      "result_bearing": false,
-      "tests": "13 passed",
-      "lint": "passed",
-      "failure_class": "FAIL_CLOSED_LITERAL_EXACT_RUNTIME_BINDING_MISMATCH",
-      "diagnostic_artifact_id": 10699064392,
-      "diagnostic_artifact_zip_sha256": "75af2957eb37227d6f4bcd9c4014c865b560e20b592daa52ade1543c77bae85d"
-    },
-    {
-      "run_id": 35741369076,
-      "name": "ci",
-      "head": "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4",
+      "run_id": 35748064227,
+      "name": "h7-formal-r4-runtime-lock-materialization",
+      "head": "647253f4c0128ff09d47fdfce80dabf006863af1",
       "status": "completed",
       "conclusion": "success",
       "result_bearing": false,
-      "matrix": "Python 3.11 and 3.13 both passed lint/local-readiness/tests/bundle validation"
+      "artifact_currently_retrievable": false
+    },
+    {
+      "run_id": 35748064427,
+      "name": "ci",
+      "head": "647253f4c0128ff09d47fdfce80dabf006863af1",
+      "status": "completed",
+      "conclusion": "failure",
+      "result_bearing": false,
+      "failure_step": "LINT_PYTHON_3_11_AND_3_13",
+      "lint_repair_continued_this_run": false
     }
   ],
   "prior_result_preservation": {
@@ -140,7 +132,7 @@
     "mechanism_architecture_observations": 0,
     "system_architecture_observations": 0,
     "non_evidentiary_formal_preidentity_integrity_observations": 1,
-    "scientific_result": null
+    "observation": "Previously successful one-shot R4 lock artifact is unavailable through artifact-id download and absent from the run artifact listing; this is an integrity/provenance blocker, not a scientific result."
   },
   "consumed_identities": [
     "c19-external-v2-official-v4",
@@ -152,13 +144,16 @@
     "pd01-long-history-fading-memory-official-v1"
   ],
   "integrity": {
+    "stale_r81_running_lease_recovered": true,
     "analyst_generation_rechecked_before_lease_acquisition": true,
-    "analyst_generation_rechecked_before_material_research_mutation": true,
-    "analyst_generation_rechecked_immediately_before_final_persistence": true,
+    "analyst_generation_rechecked_before_artifact_recovery": true,
+    "analyst_generation_rechecked_before_final_persistence": true,
     "analyst_generation_stable": true,
-    "exact_branch_head_rechecked_immediately_before_final_persistence": true,
-    "final_branch_head_identical": true,
+    "exact_research_head_rechecked_before_artifact_recovery": true,
+    "exact_research_head_rechecked_before_final_persistence": true,
+    "research_head_unchanged": true,
     "sub_collision": false,
+    "research_mutation_this_run": false,
     "science_result_exposed_this_run": false,
     "formal_identity_created_or_consumed": false,
     "started_created": false,
@@ -169,17 +164,9 @@
     "official_scoring_performed": false,
     "scientific_preserve_or_evidence_ref_created": false,
     "immutable_scientific_ref_mutation": false,
+    "one_shot_materializer_rerun": false,
     "science_affecting_change": false
   },
-  "remaining_preidentity_gates": {
-    "raw_gate_tests_and_lint": "PASS_ON_EXACT_HEAD",
-    "generic_ci": "PASS_ON_EXACT_HEAD",
-    "literal_exact_runtime_package_reproduction": "BLOCKED_PIP_FREEZE_DIGEST_MISMATCH",
-    "future_concealed_seed_collision_audit": "DEFERRED_UNTIL_FUTURE_SEEDS_EXIST_UNDER_AUTHORITY",
-    "remote_create_only_no_clobber": "RECHECK_REQUIRED_AT_FUTURE_CREATION_BOUNDARY",
-    "protected_result_executor_binding": "NOT_MATERIALIZED_NOT_AUTHORIZED",
-    "fresh_one_way_formal_authority": "NOT_GRANTED"
-  },
-  "stop_reason": "LITERAL_EXACT_RUNTIME_BINDING_REPRODUCTION_FAILED_ON_FINAL_EXACT_HEAD; ONLY_PIP_FREEZE_SHA256_DIFFERS; RAW_GATE_TESTS_LINT_AND_GENERIC_CI_PASS; PACKAGE_RUNTIME_BINDING_CHANGE_REQUIRES_FRESH_ANALYST_AUTHORITY; NO_ONEWAY_ACTIONS_PERFORMED",
-  "next_action": "Fresh Evidence Analyst review of exact head f0780f2f91779a8bd1a1d09eb535921d0d48f7d4 and the exact package-runtime mismatch. Analyst must prospectively decide whether a versioned package/runtime binding is scientifically acceptable and how it is to be fixed. MAIN must not silently rebind or normalize. Evaluation commitment, FORMAL identity, STARTED, evaluation seed reveal, protected evaluation, result-bearing execution, scientific preserve/evidence refs and official scoring remain STOP."
+  "stop_reason": "R82_EXISTING_ONE_SHOT_R4_LOCK_ARTIFACT_UNAVAILABLE_DOWNLOAD_404_AND_RUN_ARTIFACT_LIST_EMPTY; EXPLICIT_CONTINGENCY_REQUIRES_STOP_NO_REMATERIALIZATION_OR_RESOLVER_RETRY",
+  "next_action": "Fresh Evidence Analyst review. MAIN must not rematerialize/retry the resolver or silently reconstruct the exact lock bytes. Analyst must decide whether a fresh versioned resource-binding action can be prospectively authorized. Evaluation commitment, FORMAL identity, STARTED, evaluation-seed reveal, protected evaluation, result-bearing execution, scientific preserve/evidence refs and official scoring remain STOP."
 }
