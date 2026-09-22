@@ -16,7 +16,6 @@ from sparkbrain.learned.h7_formal_r3_executor import (
     synthetic_nonprotected_realization_probe,
 )
 
-
 ROOT = Path("artifacts/formal_h7_r5")
 R4_ROOT = Path("artifacts/formal_h7_r4")
 AUTHORITY = "EVA-20260923T065834+0900-R88-D5A7C219"
