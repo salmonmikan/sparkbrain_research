@@ -1,20 +1,20 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T071545+0900-PRIMARY-H7-FORMALR5-C12-R88-PREIDENTITY-3A7C5D21",
-  "run_id": "sparkbrain-main-primary-20260923T071545JST-R88-h7-formalr5-cycle12-preidentity",
-  "producer_run_id": "sparkbrain-main-primary-20260923T071545JST-R88-h7-formalr5-cycle12-preidentity",
-  "produced_at": "2026-09-23T07:35:30+09:00",
-  "authority_scope": "PRIMARY_MAIN_H7_FORMAL_R5_CYCLE12_CONTENT_ADDRESSED_RUNTIME_IDENTITY_AND_PROVISIONING_PROVENANCE_SPLIT_PREIDENTITY_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4",
+  "generation_id": "MAIN-20260923T074800+0900-RELAY-H7-FORMALR5-C12-R88-WAITING-CI-D5A7C219",
+  "run_id": "sparkbrain-main-relay-20260923T074800JST-R88-h7-formalr5-cycle12-waiting-ci",
+  "producer_run_id": "sparkbrain-main-relay-20260923T074800JST-R88-h7-formalr5-cycle12-waiting-ci",
+  "produced_at": "2026-09-23T07:48:00+09:00",
+  "authority_scope": "RELAY_MAIN_H7_FORMAL_R5_CYCLE12_CONTENT_ADDRESSED_RUNTIME_IDENTITY_AND_PROVISIONING_PROVENANCE_SPLIT_PREIDENTITY_ONLY",
+  "supersedes_generation_id": "MAIN-20260923T071545+0900-PRIMARY-H7-FORMALR5-C12-R88-PREIDENTITY-3A7C5D21",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T065834+0900-R88-D5A7C219@3341ad00ade796d9a3b80dd61c7386fc8b3e07b7",
-    "main_previous": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4",
+    "main_previous": "MAIN-20260923T071545+0900-PRIMARY-H7-FORMALR5-C12-R88-PREIDENTITY-3A7C5D21",
     "sub": "SUB-20260923T064336+0900-QFD-ASSEMBLY-INTERVENTIONAL-EQUIV-R87-8F4C21A7"
   },
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-23T07:15:45+09:00",
-  "heartbeat_at": "2026-09-23T07:35:30+09:00",
+  "started_at": "2026-09-23T07:47:36+09:00",
+  "heartbeat_at": "2026-09-23T07:48:00+09:00",
   "completed_at": null,
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260923T065834+0900-R88-D5A7C219",
@@ -33,6 +33,7 @@
     "generic_test_error_precedence": "SCIENCE_INVARIANT_REPAIR_APPLIED_TEST_EXPECTATION_ONLY",
     "preflight_formatting": "SCIENCE_INVARIANT_LINT_REPAIR_APPLIED",
     "preflight_import_order": "SCIENCE_INVARIANT_IMPORT_REPAIR_APPLIED",
+    "preflight_import_whitespace": "SCIENCE_INVARIANT_LINT_REPAIR_APPLIED",
     "non_resource_scientific_fields_changed": false,
     "one_way_action_performed": false
   },
@@ -75,7 +76,7 @@
     "r4_preserved_branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
     "r4_preserved_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
     "active_research_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-    "active_research_head": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
+    "active_research_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "r5_resource_contract_path": "artifacts/formal_h7_r5/resource_contract.json",
     "r4_runtime_lock_path": "artifacts/formal_h7_r4/scientific-runtime.lock",
     "r4_runtime_lock_sha256": "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583",
@@ -92,6 +93,7 @@
     "r5_initial_commit": "a8f4b4aed20dfa11a31aa7a3cfdff6635cb37e3b",
     "lint_repair_commit": "1a9f9cfccf131b545d4aa3ba281cadc82b30d349",
     "import_order_repair_commit": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
+    "import_whitespace_repair_commit": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "r5_scientific_executor_changed": false,
     "r5_scientific_executor_blob": "f323df048f5479cc80ba4c129a40b0957503180b",
     "runtime_identity_rule": "Content-addressed R4 package/wheel identity plus preserved Python/torch/CPU/thread/determinism semantic properties are scientific runtime identity; installer-generated RECORD and hosted-runner image/kernel are provisioning provenance only in explicit R5.",
@@ -131,14 +133,33 @@
       "run_id": 35793145738,
       "name": "h7-formal-r5-cycle12-preidentity",
       "head": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
-      "status": "queued_or_running",
-      "conclusion": null,
-      "result_bearing": false
+      "status": "completed",
+      "conclusion": "success",
+      "result_bearing": false,
+      "superseded_by_repair_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80"
     },
     {
       "run_id": 35793145794,
       "name": "ci",
       "head": "d07d8ca14bb7e66b93924b8e1b73704687ad1011",
+      "status": "completed",
+      "conclusion": "failure",
+      "result_bearing": false,
+      "failure_class": "SCIENCE_INVARIANT_LINT_IMPORT_WHITESPACE_ONLY",
+      "repair_commit": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80"
+    },
+    {
+      "run_id": 35794233687,
+      "name": "h7-formal-r5-cycle12-preidentity",
+      "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+      "status": "queued_or_running",
+      "conclusion": null,
+      "result_bearing": false
+    },
+    {
+      "run_id": 35794233612,
+      "name": "ci",
+      "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
       "status": "queued_or_running",
       "conclusion": null,
       "result_bearing": false
@@ -150,10 +171,10 @@
     "mechanism_architecture_observations": 0,
     "system_architecture_observations": 0,
     "non_evidentiary_preidentity_observations": [
-      "R5 exact R4 lock clean installation succeeded on the prospectively selected substrate at superseded repair head 1a9f9cf...",
-      "R5 content-addressed runtime/non-result executor gate succeeded at 1a9f9cf...",
-      "No one-way material was present at 1a9f9cf...",
-      "Final-head d07d8ca... validation is still external-CI pending."
+      "R5 exact R4 lock clean installation succeeded on the prospectively selected substrate at repair head 1a9f9cf...",
+      "R5 preidentity run 35793145738 succeeded at d07d8ca..., but that head was superseded only by an authorized lint-whitespace repair.",
+      "Generic CI 35793145794 failed only on Ruff I001 requiring removal of one extra blank line after imports.",
+      "Exact-head 2f30b93... validation remains external-CI pending."
     ],
     "classification": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_DEVELOPMENT_ONLY"
   },
@@ -190,6 +211,7 @@
     "analyst_generation_rechecked_before_wait_disposition": true,
     "main_lease_rechecked_before_acquisition": true,
     "direct_research_ref_rechecked_before_mutation": true,
+    "research_branch_rechecked_after_mutation": true,
     "sub_collision": false,
     "stable_main_refetched": true,
     "immutable_evidence_refs_refetched": true,
@@ -211,6 +233,6 @@
     "scientific_preserve_or_evidence_ref_created": false,
     "scheduler_mutated": false
   },
-  "stop_reason": "WAITING_ONLY_FOR_FINAL_HEAD_NON_RESULT_CI_AFTER_AUTHORIZED_SCIENCE_INVARIANT_IMPORT_ORDER_REPAIR",
-  "next_action": "Relay/PRIMARY should re-read Analyst R88 and exact branch head d07d8ca14bb7e66b93924b8e1b73704687ad1011, then inspect workflow 35793145738 and CI 35793145794. If both are green, mark cycle12 preidentity COMPLETED and stop before every one-way FORMAL action for fresh Analyst review. If only science-invariant lint/import/build/path plumbing fails, repair same R5 object and rerun non-result gates. Any scientific runtime/content/resource-semantic mismatch requires fail-closed fresh Analyst reassessment; do not shop packages, resolver, or runner image."
+  "stop_reason": "WAITING_ONLY_FOR_EXACT_HEAD_NON_RESULT_CI_AFTER_AUTHORIZED_SCIENCE_INVARIANT_IMPORT_WHITESPACE_REPAIR",
+  "next_action": "After fresh R88/MAIN/head reconciliation, inspect exact-head runs 35794233687 and 35794233612. If both are green, mark cycle12 preidentity COMPLETED and stop before every one-way FORMAL action for fresh Analyst review. If only science-invariant lint/import/build/path plumbing fails, repair same R5 object. Any scientific runtime/content/resource-semantic mismatch requires fail-closed fresh Analyst reassessment; do not shop packages, resolver, or runner image."
 }
