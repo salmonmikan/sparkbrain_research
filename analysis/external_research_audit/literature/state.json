@@ -1,91 +1,55 @@
 {
-  "timestamp": "2026-09-22T15:38:00+09:00",
+  "timestamp": "2026-09-22T18:43:15+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9",
-  "producer_run_id": "external-literature-auto-20260922T153000+0900-R29-7E4C21A9",
+  "generation_id": "LIT-20260922T183000+0900-R30-PATHSPEC-RECANTING-5C8A21F4",
+  "producer_run_id": "external-literature-auto-20260922T183000+0900-R30-5C8A21F4",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8",
+  "supersedes_generation_id": "LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260922T124800+0900-R33-E7C421B6",
-      "handoff_commit": "c41db58a5cc87e5460f143ce07c4256d7238d577"
+      "generation_id": "CTRL-20260922T175240+0900-R35-A6C4E219",
+      "handoff_commit": "1df7d07deb0364a5894f1eadd2c7f099f799ed24"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260922T145734+0900-R64-F1A8C29D",
-      "handoff_commit": "0b201ca23c1de6fb568d78f320dc5a55ab85b70c"
+      "generation_id": "EVA-20260922T182000+0900-R70-C4E8A231",
+      "handoff_commit": "bbf7defd28334b5ef484223dec7fa639fc072a08"
     },
     "main_report": {
-      "generation_id": "MAIN-20260922T141618+0900-PRIMARY-H7-DEVR2-ARCH-C3-E8C421B7",
-      "handoff_commit": "c3a5262bc92e7e7e1bcc6ff51179e8178416c3fe",
-      "note": "designated durable main/latest+state generation at consumption time"
+      "generation_id": "MAIN-20260922T162700+0900-PRIMARY-H7-FORMALR1-DESIGN-C5-C4F8A21D",
+      "handoff_commit": "37de1279ad9e27fdb8229ed0aeb811e4ae968f74",
+      "note": "designated durable reports/orchestrator/main/latest.md + state.json stream; newer R68 lease has not replaced designated durable report"
+    },
+    "main_inflight_lease_observed": {
+      "generation_id": "MAIN-20260922T171550+0900-PRIMARY-H7-FORMALR1-IMPL-C6-B7C391E4",
+      "handoff_commit": "f69da6b7cc8885a40c2b5d44a46fe173a2014619",
+      "source": "Evidence Analyst R70 / Control R35"
     },
     "sub_report": {
-      "generation_id": "SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7",
-      "handoff_commit": "3a6b397ea806935f300e662bb17931fd4ed9838b"
+      "generation_id": "SUB-20260922T173208+0900-SYSDISC-EQUIVCONTRACT-R68-B7C391E4",
+      "handoff_commit": "a33384df56918faa7c0bbe5cc92681b7d90333d1"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8",
-      "handoff_commit": "33a7d8fbf91175a78002f3c2a9a6109fbefb0ff6"
+      "generation_id": "LIT-20260922T153000+0900-R29-POLICY-ESTIMAND-UNCERTAINTY-7E4C21A9",
+      "handoff_commit": "d09c7106e5f346d3a4bb67ac25e6c651d2c6787a"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "15:30 JST",
+  "schedule_slot": "18:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_h7_pf_branch": "research/main-h7-pf-r1-frozen-panel-r64-cycle4",
-    "active_h7_pf_head": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
-    "h7_pf_workflow": {
-      "run_id": 35695286240,
-      "head_sha": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
-      "status": "completed",
-      "conclusion": "success",
-      "artifact_id": 10680620448,
-      "artifact_zip_sha256": "db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d",
-      "raw_sha256": "695261aeadab1ab311b60787f1b6a9023c29e24009c6f173c1a660469a6906db"
+    "h7_formal_contract_design": {
+      "branch": "research/main-h7-formal-r1-contract-design-r65-cycle5",
+      "head": "0bf690a0710112d21743d50f0974eadeb49dadad",
+      "contract_blob_sha": "af26de3067263afcff0e727321fa173ea14de659"
     },
-    "h7_pf_result": {
-      "classification": "PRE_FORMAL_DEVELOPMENT_NONCONFIRMATORY_SUMMARY",
-      "contract_id": "H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION-V1",
-      "native_baseline_accuracy": 0.8090277777777778,
-      "native_cut_accuracy": 0.8020833333333334,
-      "native_delta_accuracy": 0.00694444444444442,
-      "native_mean_total_variation": 0.055507719714821886,
-      "examples": 576,
-      "dense_recurrent_delta_accuracy": 0.0,
-      "finite_state_route_history_delta_accuracy": 0.0798611111111111,
-      "eligibility_route_ledger_delta_accuracy": 0.02256944444444442,
-      "positive_phenomenon_floor_passed": true,
-      "ordinary_reduction_direction_met": {
-        "dense_recurrent": false,
-        "finite_state_route_history": false,
-        "eligibility_route_ledger": false
-      },
-      "disposition": "RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY",
-      "formal_uplift_authorized": false,
-      "stop": "STOP_FRESH_EVIDENCE_ANALYST_REVIEW_NO_OUTCOME_RESPONSIVE_REDESIGN"
-    },
-    "h7_pf_repair_commit": {
-      "sha": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
-      "message": "prefomal: repair PF-R1 runner lint and source binding check",
-      "classification_for_this_scout": "OBSERVED_PRE_RESULT_CONFORMANCE_REPAIR_NOT_AUDITED_BY_LITERATURE_ROLE"
-    },
-    "ops_control_tip": "c41db58a5cc87e5460f143ce07c4256d7238d577",
-    "ops_evidence_analyst_tip": "0b201ca23c1de6fb568d78f320dc5a55ab85b70c",
-    "ops_orchestrator_tip_observed": "8d9331c90beec946e2897057d7513596a4317c62",
-    "main_inflight_generation_observed": {
-      "generation_id": "MAIN-20260922T151800+0900-PRIMARY-H7-PFR1-C4-F1A8C29D",
-      "lease_commit": "8d9331c90beec946e2897057d7513596a4317c62",
-      "durable_report_not_yet_replaced_at_last_refresh": true
-    },
-    "ops_external_tip_before_write": "33a7d8fbf91175a78002f3c2a9a6109fbefb0ff6",
-    "literature_latest_write_commit": "c1bb5c9a773705d05599e45cf3f2bbf38fb5cfe4",
-    "evidence_tags": {
-      "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
+    "h7_formal_preidentity_implementation": {
+      "branch": "research/main-h7-formal-r1-oneway-implementation-r68-cycle6",
+      "head": "67ed8fad1d861463e4129d44efbb2540affd1889",
+      "ci_run_id": 35708600721,
+      "ci_status": "completed",
+      "ci_conclusion": "success",
+      "note": "direct repository head is three commits beyond ca35c51a... last canonicalized by Analyst R70; movement is preidentity implementation/preflight only"
     },
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
@@ -95,89 +59,115 @@
     "preserve_refs_inspected": true,
     "control_refs_inspected": true,
     "relevant_prs": {
-      "148": "OPEN_UNMERGED_GOVERNANCE",
-      "149": "OPEN_UNMERGED_GOVERNANCE"
-    }
+      "148": "OPEN_UNMERGED",
+      "149": "OPEN_UNMERGED"
+    },
+    "ops_control_tip": "1df7d07deb0364a5894f1eadd2c7f099f799ed24",
+    "ops_evidence_analyst_tip": "bbf7defd28334b5ef484223dec7fa639fc072a08",
+    "ops_orchestrator_tip": "d1d4a78b4015146fe6f52dc7ae4461e2e9ae6bde",
+    "ops_external_tip_before_write": "d09c7106e5f346d3a4bb67ac25e6c651d2c6787a"
   },
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "INTERVENTIONAL_ESTIMAND_AND_CERTIFIED_UNCERTAINTY",
-      "type": "EXTERNAL_LITERATURE_FACT_PLUS_CONFIRMATORY_METHOD_FLOOR",
-      "source": "Asiaee, UAI 2026 / PMLR 337, Certified Interventional Fidelity",
-      "url": "https://proceedings.mlr.press/v337/asiaee26d.html",
-      "finding": "Interventional mechanistic-fidelity claims can be defined as expectations over explicit input and intervention distributions and equipped with fixed-sample confidence intervals or anytime-valid confidence sequences, including adaptive intervention sampling.",
-      "impact": "PF-R1 point estimates are appropriate to their fixed PRE_FORMAL nonconfirmatory disposition, but stronger H7 causal claims should prospectively bind an interventional estimand and uncertainty target."
+      "id": "CONTROLLED_POLICY_EFFECT_NOT_PATH_SPECIFIC_MEDIATION",
+      "type": "FOUNDATIONAL_CAUSAL_INFERENCE_REDUCTION_CEILING",
+      "sources": [
+        {
+          "citation": "Avin, Shpitser & Pearl, IJCAI 2005",
+          "url": "https://escholarship.org/uc/item/45x689gq"
+        },
+        {
+          "citation": "Shpitser & Tchetgen Tchetgen, Annals of Statistics 2016",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5597261/"
+        }
+      ],
+      "finding": "Path-specific effects are responses to edge/path intervention semantics and have stronger identification requirements than ordinary node interventions. A controlled dynamic node/state-cut effect does not by itself identify mediation through a causal path.",
+      "impact": "Keep H7 FORMAL-R1 PASS language, if any, at the frozen controlled dynamic TOP1 policy effect / panel distinctness claim. Do not paraphrase it as a route/path-mediated effect without a fresh separately identified path/edge intervention object."
     },
     {
-      "id": "DYNAMIC_TOP1_INTERVENTION_POLICY_SCOPE",
-      "type": "EXTERNAL_CAUSAL_INFERENCE_FACT_PLUS_REPOSITORY_INFERENCE",
-      "source": "Mauro, Kennedy & Nagin, JRSS A 2020, Instrumental Variable Methods using Dynamic Interventions",
-      "url": "https://academic.oup.com/jrsssa/article/183/4/1523/7056313",
-      "finding": "Dynamic interventions depend on covariate/history information, while deterministic interventions apply a nonrandom rule. H7's current top-1 selected-node cut is recomputed from current route state and is therefore best interpreted as a deterministic dynamic intervention policy.",
-      "impact": "The current effect is the effect of the frozen TOP1-selection-and-cut policy over the frozen regime; it does not alone identify one invariant physical route/node across examples."
+      "id": "RECANTING_WITNESS_DISTRICT_NO_GO",
+      "type": "FOUNDATIONAL_IDENTIFIABILITY_NO_GO",
+      "sources": [
+        {
+          "citation": "Shpitser, identification review; Avin et al. / recanting criterion",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7685307/"
+        }
+      ],
+      "finding": "When an intermediate variable or hidden district is required to carry conflicting treatment assignments along included and excluded paths, the path-specific counterfactual is not identified; this is the recanting-witness/district obstruction.",
+      "impact": "Recurrent/bypass/feedback H7 successors that claim effect transmission through a particular route should prospectively bind an edge/path graph and no-recanting/edge-consistency criterion or a physically separable intervention construction. The current total controlled cut effect remains well-defined."
     },
     {
-      "id": "EQUIVALENCE_NONINFERIORITY_MARGIN_REQUIRED",
-      "type": "EXTERNAL_METHOD_FACT_PLUS_REDUCTION_INFERENCE_SHARPENING",
-      "source": "Lakens 2017, Equivalence Tests: A Practical Primer",
-      "url": "https://journals.sagepub.com/doi/10.1177/1948550617697177",
-      "finding": "Evidence for absence or practical equivalence requires prospectively meaningful equivalence bounds/SESOI and an equivalence or noninferiority procedure; point equality or nonsignificance is insufficient.",
-      "impact": "PF-R1's fixed comparator direction rule remains a valid development disposition, but future FORMAL reduction/no-effect language should use prospectively fixed margins and paired uncertainty rather than point ordering alone."
+      "id": "RANDOMIZED_INTERVENTIONAL_INDIRECT_EFFECT_SHARP_NULL_LIMIT",
+      "type": "RECENT_METHOD_CAUTION",
+      "sources": [
+        {
+          "citation": "Miles, JRSS B 2023",
+          "url": "https://academic.oup.com/jrsssb/article/85/4/1154/7209706"
+        },
+        {
+          "citation": "Non-agency interventions for causal mediation, JRSS B 2024",
+          "url": "https://academic.oup.com/jrsssb/article/86/2/435/7445021"
+        }
+      ],
+      "finding": "Randomized interventional indirect effects can avoid some cross-world assumptions but need not satisfy a sharp mediational-null criterion; they may be nonzero even when no individual has an indirect mediated effect.",
+      "impact": "A future stochastic route intervention should remain an intervention-policy estimand unless sharper mechanistic mediation conditions are separately justified."
     },
     {
-      "id": "RECURRENT_EPISODE_HIERARCHICAL_DEPENDENCE",
-      "type": "EXTERNAL_METHOD_FACT_PLUS_REPOSITORY_INFERENCE",
-      "source": "Saravanan, Berman & Sober 2020, Application of the hierarchical bootstrap to multi-level data in neuroscience",
-      "url": "https://nbdt.scholasticahq.com/article/13927-application-of-the-hierarchical-bootstrap-to-multi-level-data-in-neuroscience",
-      "finding": "Nested repeated observations are not IID; naive independent-observation analyses can greatly inflate false-positive rates, while hierarchical bootstrap preserves intended error behavior in the studied settings.",
-      "impact": "PF-R1's 576 step rows are nested within 24 recurrent episodes/seeds. Any future confirmatory uncertainty should preserve seed/episode dependence and world strata rather than treating all steps as IID."
+      "id": "RECANTING_TWINS_2026_STRONGER_PRIVILEGE_CEILING",
+      "type": "CURRENT_LITERATURE_PROSPECTIVE_DIAGNOSTIC",
+      "sources": [
+        {
+          "citation": "Vo et al., Statistics in Medicine 2026",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41640020/"
+        }
+      ],
+      "finding": "Recanting-twin methods address intermediate confounding and include a falsification procedure for compatibility with intermediate confounding, providing a contemporary route to sharper path-specific analysis under stronger causal-model access.",
+      "impact": "Useful only as a future fresh stronger-privilege diagnostic ceiling where simulator/SCM variables are available; it must not be retrofitted into current FORMAL-R1 or used to choose its margins/interventions."
     }
   ],
   "affected_lines": [
-    "H7_PF_R1_FROZEN_PANEL_DEVELOPMENT_EVALUATION",
-    "H7_DYNAMIC_INTERVENTION_POLICY_SCOPE",
-    "H7_INTERVENTIONAL_ESTIMAND_AND_UNCERTAINTY",
-    "H7_ORDINARY_REDUCTION_EQUIVALENCE_INFERENCE",
-    "H7_RECURRENT_EPISODE_DEPENDENCE",
-    "FUTURE_FORMAL_MECHANISM_ADMISSION",
+    "H7_FORMAL_R1_DYNAMIC_TOP1_CONFIRMATORY_CONTRACT",
+    "H7_CONTROLLED_POLICY_EFFECT_VS_PATH_SPECIFIC_MEDIATION",
+    "H7_RECANTING_WITNESS_EDGE_CONSISTENCY",
+    "H7_FUTURE_ROUTE_MEDIATION_CLAIM_SCOPE",
+    "FUTURE_MECHANISM_OBJECT_ADMISSION",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "INTERVENTIONAL_POLICY_ESTIMAND",
-    "UNCERTAINTY_CERTIFIED_CAUSAL_EFFECT",
-    "PAIRED_EQUIVALENCE_OR_NONINFERIORITY_REDUCTION_TEST",
-    "EPISODE_SEED_CLUSTERED_INFERENCE",
-    "DYNAMIC_POLICY_VERSUS_INVARIANT_ROUTE_IDENTITY"
+    "EDGE_PATH_INTERVENTION_SEMANTICS",
+    "RECANTING_WITNESS_DISTRICT_CHECK",
+    "SEPARABLE_COMPONENT_CAUSAL_DESIGN",
+    "RANDOMIZED_INTERVENTIONAL_INDIRECT_EFFECT_INTERPRETATION_LIMIT",
+    "RECANTING_TWIN_STRONGER_PRIVILEGE_CEILING"
   ],
-  "novelty_or_reduction_impact": "PREFORMAL_RESIDUAL_OBSERVED_BUT_FORMAL_INTERPRETATION_BAR_SHARPENED_NO_MECHANISM_NOVELTY_UPLIFT_FROM_LITERATURE. PF-R1 is a fresh repository PRE_FORMAL nonconfirmatory residual under the fixed scorer, but current literature supports treating it as a dynamic-intervention-policy point estimate that still requires prospectively bound uncertainty, hierarchical dependence handling, and equivalence/noninferiority margins before stronger causal or reduction claims.",
+  "novelty_or_reduction_impact": "PATH_SPECIFIC_MEDIATION_CLAIM_CEILING_SHARPENED_NO_CURRENT_FORMAL_CONTRACT_REWRITE. A controlled dynamic node/state-cut effect is not equivalent to a path-specific mediated effect. Stronger route-transmission claims require separately identified edge/path intervention semantics and no-recanting/separability conditions.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "define the causal estimand over explicit frozen input and intervention-policy distributions",
-    "use a fixed-sample confidence interval or prospectively valid confidence sequence for the native cut effect and paired native-vs-comparator contrasts",
-    "freeze SESOI/equivalence or noninferiority margins prospectively for ordinary-reduction and no-local-effect claims",
-    "use episode/seed-clustered or hierarchical inference/resampling and retain four-world strata; do not treat 576 recurrent steps as IID",
-    "scope the result to the frozen dynamic TOP1 cut policy unless invariant route identity is independently established",
-    "use a fresh untouched confirmatory identity/evaluation if FORMAL authority is later granted"
+    "preserve current FORMAL-R1 estimand as a controlled dynamic-policy effect, not path mediation",
+    "for any fresh route-mediated claim, preregister causal graph/path or edge set and recanting-witness/district criterion",
+    "use separable-component or edge-intervention experiments when the mechanism admits physically meaningful decomposition",
+    "treat stochastic/randomized interventional indirect effects as policy/intervention evidence unless sharp-null mechanistic interpretation is separately supported",
+    "use recanting-twin or equivalent SCM-rich diagnostics only as stronger-privilege ceilings unless information privilege is matched",
+    "test bypass/feedback alternatives under matched intervention/resource privilege only in a fresh successor object"
   ],
   "questions_for_evidence_analyst": [
-    "Preserve PF-R1's fixed disposition as PRE_FORMAL development only, without converting its point estimate into formal causality?",
-    "Before any FORMAL upgrade, require an explicit interventional estimand plus episode/seed-aware paired uncertainty?",
-    "Scope the current result to the dynamic TOP1-selection-and-cut policy unless invariant route identity is independently shown?",
-    "Require prospective equivalence/noninferiority margins before ordinary-reduction/no-effect language is used confirmatorily?"
+    "Keep FORMAL-R1's claim at controlled dynamic-policy local effect/mechanistic distinctness and prohibit interpreting a future PASS as path-specific mediation?",
+    "Require prospective edge-consistency/no-recanting or separable-component semantics before admitting any future route-mediated successor claim?",
+    "Treat randomized/interventional indirect effects as intervention-policy evidence unless a sharper mediational-null criterion is separately justified?"
   ],
   "questions_for_control_brain": [
-    "Treat RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY as candidate-supply information, not mechanism proof or FORMAL uplift?",
-    "Add policy-estimand uncertainty, hierarchical dependence, and prospective equivalence margins to future FORMAL admission guidance without retroactively rewriting PF-R1?",
-    "Preserve the fresh-Analyst STOP and prohibit outcome-responsive redesign after the newly exposed result?"
+    "Add controlled-causal-effect != path-specific-mediation as a claim-ceiling guardrail?",
+    "Treat recanting witness/district as a future H7 route-responsibility failure mode, not a reason to modify frozen FORMAL-R1?",
+    "Preserve current STOP before identity/protected FORMAL execution until existing machine-binding/provenance gates close, without adding literature-driven gates to the frozen object?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "H7 PF-R1 contract, worlds, seeds, intervention family, comparators, endpoints, thresholds, fixed scoring, and current raw/result artifacts",
-    "exact H7 PF-R1 head 8681dcbbe2fff986c28a79057f557b35f3f0f752 and workflow 35695286240",
-    "no PF-R1 rerun, rescore, retune, post-outcome margin selection, or same-object redesign",
-    "no automatic PRE_FORMAL-to-FORMAL promotion, new one-way identity consumption, research merge, immutable-ref mutation, Utility execution, or scheduler change"
+    "H7 PF-R1 development result/raw bytes and its no-rerun/no-rescore boundary",
+    "H7 FORMAL-R1 contract design at 0bf690a0710112d21743d50f0974eadeb49dadad including dynamic TOP1 policy, frozen panel, estimands, evaluator and decision table",
+    "no new path/edge/mediation semantics may be retrofitted into current FORMAL-R1 after PF-R1 exposure",
+    "no FORMAL identity/STARTED/protected evaluation/result workflow, scientific preserve/evidence ref, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
   ],
   "utility_request_created": null,
   "mutations": {
