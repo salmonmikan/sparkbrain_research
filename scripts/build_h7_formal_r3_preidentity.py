@@ -129,6 +129,14 @@ def main() -> None:
     runtime = exact_runtime_observation(_pip_freeze())
     runtime_binding = _load_json(args.runtime_binding)
     inventory = _load_json(args.prior_surface_inventory)
+
+    # Persist/print the outcome-independent runtime observation before the exact-binding
+    # check. If the literal binding fails, the mismatch remains diagnosable without
+    # exposing any protected evaluation material or scientific result.
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    _write_json(args.output_dir / "runtime_observation.json", runtime)
+    print("H7_R3_RUNTIME_OBSERVATION_JSON=" + json.dumps(runtime, sort_keys=True))
+
     validate_runtime_binding(runtime_binding, runtime)
     validate_prior_surface_inventory(inventory)
     sentinel = preidentity_sentinel(contract)
@@ -144,8 +152,6 @@ def main() -> None:
         ]
     )
 
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    _write_json(args.output_dir / "runtime_observation.json", runtime)
     _write_json(args.output_dir / "runtime_binding_verification.json", {"status": "PASS"})
     _write_json(args.output_dir / "preidentity_sentinel.json", sentinel)
     _write_json(args.output_dir / "raw_gate_sentinel.json", raw_gate)
@@ -158,7 +164,6 @@ def main() -> None:
         },
     )
 
-    print("H7_R3_RUNTIME_OBSERVATION_JSON=" + json.dumps(runtime, sort_keys=True))
     print("H7_R3_PREIDENTITY_SENTINEL_JSON=" + json.dumps(sentinel, sort_keys=True))
     print("H7_R3_RAW_GATE_SENTINEL_JSON=" + json.dumps(raw_gate, sort_keys=True))
 
