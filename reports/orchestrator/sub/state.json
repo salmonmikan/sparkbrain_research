@@ -1,39 +1,30 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4",
-  "produced_at": "2026-09-22T13:37:38+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4",
-  "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_PRE_NO_OP_SCAN_AND_CONTROL_PLANE_PERSISTENCE",
-  "supersedes_generation_id": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9",
+  "generation_id": "SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7",
+  "produced_at": "2026-09-22T14:46:00+09:00",
+  "producer_run_id": "SUB-RUN-SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7",
+  "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_QUESTION_FORMATION_AND_CONTROL_PLANE_PERSISTENCE",
+  "supersedes_generation_id": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4",
   "input_generations": {
-    "evidence_analyst": "EVA-20260922T130900+0900-R62-D4A7C21F@d93bfe4ac1d4ed752fa8ca1074b1794a69d08682",
-    "main": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9@8d9479100cb0df994efd33ac2d53670b809bf40a",
+    "evidence_analyst": "EVA-20260922T140541+0900-R63-E8C421B7@9f90816657aa08754827e35976c9fa35b5d7c09a",
+    "main": "MAIN-20260922T141618+0900-PRIMARY-H7-DEVR2-ARCH-C3-E8C421B7@c3a5262bc92e7e7e1bcc6ff51179e8178416c3fe",
     "control": "CTRL-20260922T124800+0900-R33-E7C421B6@c41db58a5cc87e5460f143ce07c4256d7238d577",
-    "previous_sub": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9@e56c285996c30888ec7f914efc505974695a6ed0",
-    "literature": "LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8@33a7d8fbf91175a78002f3c2a9a6109fbefb0ff6",
-    "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7@35cd3434306a413ec6e90d83a2618cd9101a0d88",
-    "methodology": "METHCAL-20260922T132125+0900-R59-F4C7A21D@31a0e2df7cc0560912fddd3159d925c531028027",
-    "utility_exact_head": "utility/equivalence-certificate-v0-1-A42D7C19@9f9d18065b481d8597236b0b682f0574c251b319"
+    "previous_sub": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4@c3a5262bc92e7e7e1bcc6ff51179e8178416c3fe",
+    "utility": "UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4@71beb0d5ee00f112825fcc268ec514761d6ab418"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "d93bfe4ac1d4ed752fa8ca1074b1794a69d08682",
-    "orchestrator_tip_before_write": "8d9479100cb0df994efd33ac2d53670b809bf40a",
+    "analyst_handoff": "9f90816657aa08754827e35976c9fa35b5d7c09a",
+    "orchestrator_tip_before_write": "c3a5262bc92e7e7e1bcc6ff51179e8178416c3fe",
     "control_tip": "c41db58a5cc87e5460f143ce07c4256d7238d577",
-    "methodology_tip": "31a0e2df7cc0560912fddd3159d925c531028027",
-    "evidence_tags": {
-      "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
-    },
-    "evidence_tag_count": 5
+    "utility_tip": "71beb0d5ee00f112825fcc268ec514761d6ab418",
+    "utility_equivalence_module_blob": "753d9759c3bd9da0d8e6a27926c8e3c3f9539cb4",
+    "h7_dev_r2_head": "d6655549c179caf391d4b43bd2ebea49f2bfc82b"
   },
   "allocation": {
-    "main_lane": "H7_DEV_R2_VERSIONED_COMPARATOR_PROTOCOL_CLOSURE_ARCHITECTURE_CYCLE3_IMPLEMENTATION_ONLY",
-    "sub_lane": "INDEPENDENT_IDLE_AFTER_ZERO_RETAINED_QUESTION_FORMATION_UNTIL_FRESH_NON_MAIN_SUPPLY_DELTA",
-    "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_NO_OP_IF_NO_SAFE_USEFUL_NONDUPLICATIVE_DIRECTION",
+    "main_lane": "H7_DEV_R2_VERSIONED_COMPARATOR_PROTOCOL_CLOSURE_ARCHITECTURE_CYCLE3_IMPLEMENTATION_ONLY_COMPLETED_PENDING_FRESH_ANALYST_REVIEW",
+    "sub_lane": "NO_OP_UNTIL_MATERIALLY_FRESH_NON_MAIN_SUPPLY_DELTA_OR_EXPLICIT_INDEPENDENT_ALLOCATION",
+    "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_ONE_BOUNDED_AUTONOMOUS_RESEARCH_TASK_IF_FRESH_SUPPLY_EXISTS",
     "system_priority_exception": {"used": false}
   },
   "candidate_pool": {
@@ -53,7 +44,6 @@
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
     "preformal_readiness": "NOT_READY",
-    "hold_class": null,
     "terminal_state": "ACTIVE",
     "queue_state": "ACTIVE",
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
@@ -61,67 +51,28 @@
     "cycle_count": 3,
     "main_owned": true
   },
-  "operating_mode": "PRE_NO_OP_RESEARCH_SCAN_NO_SELECTION",
-  "discovery_mode": "N/A_NO_AUTONOMOUS_RESEARCH_SELECTION_AFTER_REQUIRED_SCAN",
-  "selected_target": null,
-  "work_kind": "NO_CANONICAL_WORK_NO_CANDIDATE_SEED_NO_DEVELOPMENT_REVISION_NO_FRESH_SUCCESSOR_PROPOSAL",
+  "operating_mode": "AUTONOMOUS_SECONDARY_RESEARCH",
+  "discovery_mode": "QUESTION_FORMATION_DISCOVERY",
+  "selected_target": "QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01",
+  "work_kind": "NONCANONICAL_CANDIDATE_SEED_CONDITIONAL_FRESH_SYSTEM_SUCCESSOR_PROPOSAL",
   "development_phase": null,
   "development_revision": null,
-  "cycle_count": 0,
-  "cycle3_reassessment_rationale": "N/A_NO_SELECTED_SUB_OBJECT",
+  "cycle_count": 1,
+  "cycle3_reassessment_rationale": "N/A_CYCLE1_QUESTION_FORMATION",
   "main_independence": {
     "status": "PASS_NO_COLLISION",
-    "reason": "Excluded H7 DEV-R2 comparator closure, intervention conformance, branch materialization, blockers, successor path and all result-bearing surfaces."
+    "reason": "Question is generic equivalence/provenance tooling for a terminal SYSTEM family; H7 comparator protocol, result-bearing follow-up, blockers and successor path were excluded."
   },
   "pre_no_op_scan": {
     "performed": true,
-    "result": "NO_SAFE_USEFUL_NONDUPLICATIVE_BOUNDED_RESEARCH_DIRECTION",
+    "result": "ONE_SAFE_USEFUL_NONDUPLICATIVE_BOUNDED_QUESTION_FORMATION_DIRECTION_SELECTED",
+    "fresh_delta": "Utility post-R62 exact trust-boundary/callsite reconciliation established declared-digest-only semantics and absence of raw-to-digest/provenance guarantees.",
     "alternatives_considered": [
-      {
-        "surface": "TERMINAL_SYSTEM_FRESH_SUCCESSORS",
-        "result": "NO_SELECTION",
-        "reason": "16 remain SYSTEM-only possibilities; no new trusted equivalence/resource contract. Candidate #32 remains tooling/trust gated."
-      },
-      {
-        "surface": "TERMINAL_MECHANISM_FRESH_SUCCESSORS",
-        "result": "NO_SELECTION",
-        "reason": "Assembly completion/endogenous continuation/pre-semantic lines remain duplicate, reduced or unreachable from R61; causal responsibility overlaps MAIN H7."
-      },
-      {
-        "surface": "THEORY_BACKWARD_CENTRAL_SURFACES",
-        "result": "NO_SELECTION",
-        "reason": "No new independent Assembly regeneration, continuation, persistent-state, local-credit or pre-semantic functionalization surface; H7 owns live causal-responsibility surface."
-      },
-      {
-        "surface": "PHENOMENON_FIRST_AND_SHADOW",
-        "result": "NO_SELECTION",
-        "reason": "Analyst R62 generated/admitted no fresh successor and shadow trigger is inactive while H7 is active."
-      },
-      {
-        "surface": "LITERATURE_R28",
-        "result": "NO_SELECTION",
-        "reason": "Claim-relevant intervention validity/abstraction/regime/baseline pressure is prospectively assigned to H7 DEV-R2; independent reuse would duplicate MAIN."
-      },
-      {
-        "surface": "AUDIT_R6",
-        "result": "NO_SELECTION",
-        "reason": "Consumed PD01 interpretation ceiling only; no permission to reopen or generate a rescue successor."
-      },
-      {
-        "surface": "METHODOLOGY_R59",
-        "result": "NO_SELECTION",
-        "reason": "Fresh process-calibration update validates development lineage semantics but introduces no scientific phenomenon, observable, intervention or comparator."
-      },
-      {
-        "surface": "UTILITY_EQUIVALENCE",
-        "result": "NO_SELECTION",
-        "reason": "Exact head unchanged and CI-green, but trusted producer/raw-to-digest semantic independence remains unresolved; no fresh tooling delta since R61 scan."
-      },
-      {
-        "surface": "REPOSITORY_RUNTIME_OR_MEASUREMENT_DELTA",
-        "result": "NO_SELECTION",
-        "reason": "Stable main/evidence unchanged and no H7 DEV-R2 branch exists; no new independent observable, intervention, scaling regime or measurement surface."
-      }
+      {"surface": "TERMINAL_MECHANISM_AND_THEORY_BACKWARD", "result": "NO_SELECTION", "reason": "No fresh independent Assembly/regeneration/continuation/persistent-state/pre-semantic surface; live responsibility/credit remains H7-owned."},
+      {"surface": "PHENOMENON_FIRST_SHADOW", "result": "NO_SELECTION", "reason": "No new nonduplicative phenomenon surface; viable MAIN-owned H7 remains active."},
+      {"surface": "LITERATURE_AUDIT_METHODOLOGY", "result": "NO_SELECTION", "reason": "No newly independent scientific observable/intervention/comparator beyond prior scan; methodology updates are process-governance inputs."},
+      {"surface": "TERMINAL_SYSTEM_EQUIVALENCE_FAMILY", "result": "SELECT_QFD", "reason": "Fresh Utility reconciliation converts a generic trust blocker into a concrete raw-artifact/provenance measurement question without reopening terminal #32."},
+      {"surface": "STABLE_REPOSITORY_EVIDENCE", "result": "NO_SELECTION", "reason": "Stable main remains unchanged; no new scientific source/evidence surface."}
     ]
   },
   "theory_backward_accounting": {
@@ -130,18 +81,18 @@
     "rolling_autonomous_canonical_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
     "qualifying_share": "1/3",
     "theory_backward_exception": null,
-    "note": "No exception is used to manufacture quota compliance; current idle decision follows required scan with active coherent MAIN-owned H7 and no fresh independent supply."
+    "note": "QUESTION_FORMATION_DISCOVERY is denominator-excluded; no mechanism was manufactured."
   },
   "phenomenon_question_hypothesis": {
-    "phenomenon": null,
-    "question": "Does any materially fresh non-MAIN supply delta since R61 justify one safe bounded autonomous SUB research task?",
-    "hypothesis": "If Literature/Methodology/Utility/repository changes expose a new independent observable, intervention, reduction, comparator, scaling or trusted measurement surface, one bounded task may be selected; otherwise idling is scientifically preferable to duplicate/rescue activity.",
-    "observable_intervention": null,
-    "ordinary_reductions_comparators": null,
-    "falsifier_discriminator": "NO_OP if every required scan surface is unchanged, MAIN-owned, duplicate/reduced, tooling-gated, governance-only or otherwise non-informative."
+    "phenomenon": "DECLARED_DIGEST_EQUALITY_IS_NOT_INDEPENDENT_RAW_ARTIFACT_EQUIVALENCE",
+    "question": "Can a future independent SYSTEM successor prospectively verify raw artifact -> canonical bytes -> independently recomputed digest -> full trajectory/checkpoint equality with authenticated producer/ref provenance?",
+    "hypothesis": "Current verifier is only a declared-digest consistency layer; a materially new successor requires raw preservation, deterministic canonicalization, authenticated provenance, independent digest recomputation, full coverage and a fixed resource/privilege contract.",
+    "observable_intervention": "Read-only observables: raw artifact availability, serialization determinism, producer/ref identity, recomputed digest equality, trajectory/checkpoint coverage. No scientific intervention.",
+    "ordinary_reductions_comparators": "Current declared-digest verifier versus an independent raw-to-digest verifier over preserved producer artifacts under the same prospective resource/privilege envelope.",
+    "falsifier_discriminator": "Close as duplicate if current tooling already independently obtains/authenticates producer output and recomputes all relevant digests with full coverage; retain the gap if it only compares supplied digest claims; reject the successor path if raw artifacts/provenance cannot be fixed without changing the scientific object."
   },
   "repair_change_classification": {
-    "selected_work": "READ_ONLY_PRE_NO_OP_SCAN",
+    "selected_work": "READ_ONLY_QUESTION_FORMATION_DIAGNOSTIC",
     "science_invariant_repair": false,
     "science_affecting_change": false,
     "repository_science_mutation": false
@@ -149,14 +100,15 @@
   "inputs": {
     "latest_analyst_allocation_read": true,
     "main_sub_control_reconciled": true,
-    "recent_literature_audit_methodology_utility_checked": true,
-    "terminal_families_checked": true,
-    "stable_main_and_evidence_independently_refetched": true,
+    "recent_literature_audit_methodology_prior_scan_reconciled": true,
+    "fresh_utility_reconciliation_read": true,
+    "utility_source_module_read_directly": true,
+    "stable_main_independently_refetched": true,
     "protected_or_held_out_result_used": false,
     "consumed_identity_used": false
   },
   "implementation": {
-    "mode": "STATIC_READ_ONLY_CONTROL_PLANE_AND_REPOSITORY_SCAN",
+    "mode": "STATIC_READ_ONLY_CONTROL_PLANE_REPOSITORY_AND_UTILITY_SOURCE_DIAGNOSTIC",
     "research_branch": null,
     "workflow": null,
     "scientific_probe_executed": false,
@@ -164,33 +116,37 @@
     "repair_or_retune": false
   },
   "observations": {
-    "fresh_non_main_scientific_supply_delta": false,
-    "fresh_methodology_update_seen": true,
-    "fresh_methodology_update_scientific_target_effect": "NONE",
+    "fresh_non_main_supply_delta": true,
+    "utility_actual_claim": "INTERNAL_DECLARED_CERTIFICATE_DIGEST_EQUIVALENCE_UNDER_SELF_CONSISTENT_BINDINGS_AND_ENVELOPES",
+    "raw_to_digest_derivation_proven": false,
+    "authenticated_producer_provenance_proven": false,
+    "actual_process_isolation_proven": false,
+    "external_callsites_outside_synthetic_tests": false,
+    "source_verdict_compares_supplied_trajectory_and_checkpoint_digest_strings_directly": true,
     "stable_main_unchanged": true,
-    "evidence_refs_unchanged": true,
-    "h7_dev_r2_branch_present": false,
-    "selected_task_count": 0
+    "selected_task_count": 1
   },
-  "evidentiary_status": "NON_EVIDENTIARY_PRE_NO_OP_SCAN_ONLY",
-  "proposed_claim_ceiling": "NOT_APPLICABLE_NO_SELECTED_OBJECT",
-  "proposed_preformal_eligible": null,
-  "preliminary_readiness": {"status": "NOT_APPLICABLE_NO_SELECTED_OBJECT"},
-  "hold_dimensions": {"status": "NOT_APPLICABLE_NO_SELECTED_CANONICAL_OBJECT"},
+  "evidentiary_status": "NON_EVIDENTIARY_QUESTION_FORMATION_ONLY",
+  "proposed_claim_ceiling": "SYSTEM_IF_FUTURE_OBJECT_ADMITTED",
+  "proposed_preformal_eligible": false,
+  "preliminary_readiness": {"status": "NOT_READY_NONCANONICAL_SEED"},
+  "hold_dimensions": {"status": "NOT_APPLICABLE_NONCANONICAL_SEED"},
   "fresh_successor_potential": {
-    "new_proposal_this_run": false,
-    "system_terminal_existing_potential": 16,
-    "mechanism_terminal_new_potential": 0,
-    "terminal_predecessors_reopened": 0
+    "new_proposal_this_run": true,
+    "predecessor_family": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
+    "predecessor_reopened": false,
+    "status": "CONDITIONAL_TRUE",
+    "material_newness": "Independent raw-to-digest provenance/coverage measurement surface, not post-outcome reinterpretation of terminal predecessor."
   },
-  "next_layer": "NONE_IDLE_PENDING_FRESH_NON_MAIN_SUPPLY_DELTA",
+  "next_layer": "CONTINUE_QUESTION_FORMATION_BEFORE_ANY_ANALYST_ADMISSION",
   "open_choices": [
-    "Re-scan only after a materially fresh non-MAIN observable/intervention/reduction/comparator/scaling/tooling surface or explicit allocation.",
-    "Do not duplicate H7 DEV-R2 or convert Literature R28 into a parallel H7-like SUB task.",
-    "Do not reopen terminal predecessors or treat Methodology R59 as scientific supply.",
-    "Do not promote #32 family until a fresh SYSTEM ID plus trusted equivalence/resource contract exists."
+    "Exact raw artifact inventory and full-coverage boundary for ordered trajectory/checkpoints.",
+    "Deterministic canonical serialization and digest domain separation.",
+    "Authenticated producer/ref provenance and actual isolation evidence.",
+    "Independent verifier placement and trust root.",
+    "Prospectively fixed resource/privilege contract for any fresh successor."
   ],
-  "recommendation": "NO_OP_AFTER_REQUIRED_SCAN_UNTIL_MATERIALLY_FRESH_NON_MAIN_SUPPLY_DELTA_OR_EXPLICIT_INDEPENDENT_ALLOCATION",
+  "recommendation": "CONTINUE_QUESTION_FORMATION",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
@@ -207,7 +163,7 @@
     "branch": "ops/orchestrator-run-report",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "history_path": "reports/orchestrator/sub/history/2026-09-22/1337-r62-pre-no-op-no-fresh-delta.md",
+    "history_path": "reports/orchestrator/sub/history/2026-09-22/1446-r63-qfd-equivalence-provenance.md",
     "mode": "ATOMIC_TREE_NON_FORCE_FAST_FORWARD"
   }
 }

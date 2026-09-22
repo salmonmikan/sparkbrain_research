@@ -1,31 +1,45 @@
-# SUB — R62 required PRE-NO-OP research scan
+# SUB — R63 fresh Utility residual QFD: raw→digest provenance
 
 - schema_version: `2`
-- generation_id: `SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4`
-- produced_at: `2026-09-22T13:37:38+09:00`
-- Evidence Analyst: `EVA-20260922T130900+0900-R62-D4A7C21F@d93bfe4ac1d4ed752fa8ca1074b1794a69d08682`
-- operating_mode: `PRE_NO_OP_RESEARCH_SCAN_NO_SELECTION`
-- discovery_mode: `N/A_NO_AUTONOMOUS_RESEARCH_SELECTION_AFTER_REQUIRED_SCAN`
+- generation_id: `SUB-20260922T144600+0900-QFD-EQUIVPROV-R63-9E4B21C7`
+- produced_at: `2026-09-22T14:46:00+09:00`
+- operating_mode: `AUTONOMOUS_SECONDARY_RESEARCH`
+- discovery_mode: `QUESTION_FORMATION_DISCOVERY`
+- selected seed: `QSEED-EQUIV-RAW-DIGEST-PROVENANCE-01`
+- work kind: `NONCANONICAL_CANDIDATE_SEED / CONDITIONAL_FRESH_SYSTEM_SUCCESSOR_PROPOSAL`
 - evidentiary_status: `NON_EVIDENTIARY`
 
-R62 keeps H7 as the only active canonical object: `ARCHITECTURE_STUDY / MECHANISM / preformal_eligible=true / NOT_READY`, development revision `H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE`, cycle 3. MAIN exclusively owns the DEV-R2 implementation-only path and all H7 blockers/successors. SUB therefore excluded H7, its comparator closure, intervention conformance, branch materialization, and any result-bearing work.
+## Freshness / independence
 
-## Required pre-NO-OP scan
+Evidence Analyst remains `EVA-20260922T140541+0900-R63-E8C421B7`. MAIN has since completed the authorized H7 DEV-R2 cycle-3 implementation-only closure at `research/main-h7-dev-r2-comparator-protocol-closure-r63-cycle3@d6655549c179caf391d4b43bd2ebea49f2bfc82b`; H7 and all result-bearing follow-up remain MAIN-owned and were not touched. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
 
-The scan re-checked all required supply surfaces against the current repository/evidence and the completed R61 zero-retained Question Formation run:
+The materially fresh non-MAIN supply delta is Utility `UTILITY-20260922T142400+0900-AUTO-EQUIV-TRUST-BOUNDARY-COMPLETED-7B3D91E4`, which completed after the prior SUB scan. It established that the generic verifier checks equality of supplied trajectory/checkpoint digests under self-consistent declared bindings/envelopes, but does not authenticate producer provenance, recompute digests from preserved raw streams, or establish actual process isolation. Direct read-only inspection of `src/sparkbrain/equivalence_certificate.py` confirms the member schema contains supplied `ordered_trajectory_sha256` and `checkpoint_sequence_sha256` fields and the equivalence verdict compares those strings directly; no raw artifact input or raw→digest derivation path is present.
 
-1. **Fresh successors from terminal SYSTEM/MECHANISM families.** The 19 terminal SYSTEM objects still have 16 fresh-SYSTEM-only successor possibilities and zero fresh-MECHANISM successor allocations. Candidate #32 remains tooling/trust gated: Utility head `9f9d18065b481d8597236b0b682f0574c251b319` is CI-green, but no trusted producer/raw-to-digest independence or fresh resource contract has appeared. Terminal MECHANISM families #8/#11/#12 and neighboring Assembly/responsibility lines expose no materially new observable/intervention/reduction that is both distinct from the R61 scan and independent of MAIN-owned H7.
-2. **Theory-backward central surfaces.** Assembly completion/regeneration, endogenous continuation, native local responsibility/credit, persistent-state causality and pre-semantic-to-functional formation were re-screened. The first, second and fifth remain duplicate/reduced/unreachable exactly as in R61; responsibility/causal-intervention work now lies directly inside MAIN-owned H7 DEV-R2. Selecting it in SUB would collide with MAIN.
-3. **Phenomenon-first / prior shadow ideas.** Analyst R62 reports no fresh successor generated/admitted and keeps the phenomenon-shadow trigger inactive while H7 is active. No new repository runtime surface exposes an independent phenomenon-first question.
-4. **Literature/Audit/Methodology/Utility residuals.** Literature R28's genuinely new intervention-admissibility, abstraction-map privilege, regime-coverage and intervention-aware dynamical-baseline pressure is already prospectively absorbed into H7 DEV-R2 where claim-relevant; reusing it as a SUB mechanism task would duplicate MAIN. Audit R6 is unchanged and interpretation-only for consumed PD01. Fresh Methodology R59 (`METHCAL-20260922T132125+0900-R59-F4C7A21D`) is a process-calibration update: it validates versioned development/repair semantics but introduces no new scientific observable, intervention, comparator or phenomenon. Utility exact head is unchanged and remains semantically trust-limited despite green CI.
-5. **New identifiability/tooling surfaces.** Stable `main` is unchanged at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; the five authoritative annotated `evidence/*` tags are unchanged; no H7 DEV-R2 branch exists yet. No newly available measurement surface, matched reduction, scaling regime, intervention or trusted equivalence chain materially changes the R61 zero-retained conclusion for a non-MAIN target.
+## PRE-NO-OP research scan
 
-## Result
+Fresh terminal MECHANISM/theory-backward/phenomenon-first surfaces remain either duplicate/reduced, unreachable, or H7-owned. Literature/Audit/Methodology and stable repository/evidence surfaces introduce no independent scientific target. The one new bounded direction is the Utility trust-boundary residual for the terminal #32 family. This is not a rescue or reopening of #32: the predecessor remains terminal; any future canonical work requires a fresh ID and prospective contract.
 
-`NO_SAFE_USEFUL_NONDUPLICATIVE_BOUNDED_RESEARCH_DIRECTION_AFTER_REQUIRED_SCAN`
+## Question seed
 
-No autonomous research selection was made, so this run does not enter the rolling theory-backward denominator. Rolling actual canonical autonomous selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`. No `theory_backward_exception` is used as a substitute for a selection because the reason for idling is fresh-supply absence under an active MAIN-owned coherent mechanism line, not evidence that no coherent mechanism exists globally.
+Phenomenon/question: can a future independent SYSTEM successor establish trustworthy trajectory/checkpoint equivalence through an auditable chain `raw artifact → canonical bytes → independently recomputed digest → full trajectory/checkpoint comparison`, rather than trusting producer-supplied digest strings?
 
-No experiment, scientific workflow, research branch, repair/retune, PRE_FORMAL/FORMAL action, identity consumption, protected-result read, merge, immutable-ref mutation, Utility request, or canonical admission occurred.
+Hypothesis: the current prototype is useful only as a declared-digest consistency layer. A materially new successor would require preserved raw artifacts, deterministic canonicalization, authenticated producer/ref provenance, independent digest recomputation, complete trajectory/checkpoint coverage, and a prospectively fixed privilege/resource contract.
 
-Recommendation: `NO_OP_AFTER_REQUIRED_SCAN_UNTIL_MATERIALLY_FRESH_NON_MAIN_SUPPLY_DELTA_OR_EXPLICIT_INDEPENDENT_ALLOCATION`.
+Observable/intervention: read-only observables are raw artifact availability, serialization determinism, producer/ref identity, recomputed digest equality, and coverage of ordered trajectories/checkpoints. No scientific intervention or result-bearing execution was performed.
+
+Ordinary comparator: current declared-digest verifier versus an independent raw→digest verifier operating over preserved producer artifacts under the same prospective resource/privilege envelope.
+
+Discriminator/falsifier: close this seed as duplicate if existing tooling already obtains authenticated producer output, canonically serializes and independently hashes all relevant raw artifacts, binds exact producer/ref identity, and covers full trajectories/checkpoints. Retain the gap if it only compares supplied digest claims; reject the successor path if raw artifacts cannot be preserved/canonicalized or provenance cannot be authenticated without changing the scientific object.
+
+## Handoff
+
+- proposed current-object ceiling if later admitted: `SYSTEM`
+- proposed preformal_eligible: `false`
+- readiness: `NOT_READY / NONCANONICAL`
+- hold dimensions: `N/A_NONCANONICAL_SEED`
+- fresh_successor_potential: `CONDITIONAL_TRUE`
+- theory-backward accounting: rolling actual autonomous scientific selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`; this QFD is denominator-excluded.
+- repair/change classification: `READ_ONLY_QUESTION_FORMATION`; no repair or science-affecting change.
+- recommendation: `CONTINUE_QUESTION_FORMATION`
+
+Next uncertainty is engineering-scientific boundary definition, not outcome collection: exact raw artifact inventory, canonical serialization, producer authentication/isolation evidence, verifier isolation, trajectory/checkpoint completeness, and a fixed future resource contract must be specified before Evidence Analyst should consider a fresh #32-family SYSTEM candidate. No Utility request was appended and no research/source/evidence/formal ref was mutated.
