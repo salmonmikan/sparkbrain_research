@@ -1,21 +1,21 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T032019+0900-PRIMARY-H7-FORMALR4-C10-R84-RECONCILED-5E7A2C91",
+  "generation_id": "MAIN-20260923T033900+0900-PRIMARY-H7-FORMALR4-C10-R84-PREIDENTITY-CLOSED-5E7A2C91",
   "run_id": "sparkbrain-main-primary-20260923T031823JST-R83-h7-formalr4-authoritative-artifact-recovery",
   "producer_run_id": "sparkbrain-main-primary-20260923T031823JST-R83-h7-formalr4-authoritative-artifact-recovery",
   "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R4_AUTHORITATIVE_RUN_SCOPED_LOCK_ARTIFACT_RECOVERY_DURABLE_CAPTURE_LINT_INVARIANT_CLOSURE_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T031823+0900-PRIMARY-H7-FORMALR4-C10-R83-RECOVERY-A6D4E219",
+  "supersedes_generation_id": "MAIN-20260923T032019+0900-PRIMARY-H7-FORMALR4-C10-R84-RECONCILED-5E7A2C91",
   "input_generations": {
     "evidence_analyst_origin": "EVA-20260923T020919+0900-R83-A6D4E219@ba109150205db0a30ce1c294ab8133fa6caa51b4",
     "evidence_analyst_final_reconciliation": "EVA-20260923T025733+0900-R84-5E7A2C91@81f46202b5337e8011d891dc197a1ec83fe1f259",
-    "main_previous": "MAIN-20260923T012121+0900-PRIMARY-H7-FORMALR4-C10-R82-RECOVERY-7C4E19B2",
+    "main_previous": "MAIN-20260923T033600+0900-PRIMARY-H7-FORMALR4-C10-R84-PREIDENTITY-WAIT-5E7A2C91",
     "sub": "SUB-20260923T023426+0900-NOOP-SCAN-R83-A6D4E219"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-23T03:18:23+09:00",
-  "heartbeat_at": "2026-09-23T03:20:19+09:00",
-  "completed_at": null,
+  "heartbeat_at": "2026-09-23T03:39:00+09:00",
+  "completed_at": "2026-09-23T03:39:00+09:00",
   "blocked_at": null,
   "blocked_until": null,
   "analyst_generation_id": "EVA-20260923T025733+0900-R84-5E7A2C91",
@@ -31,7 +31,7 @@
   "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
   "repair_change_classification": "SCIENCE_INVARIANT_PROVENANCE_OBSERVABILITY_RECONCILIATION_AND_PREIDENTITY_BINDING_CLOSURE_ONLY; SCIENCE_AFFECTING_CHANGE_FORBIDDEN",
   "cycle_count": 10,
-  "reassessment_rationale": "R84 supersedes R83 only for PF-R1 Utility governance and explicitly preserves the H7 R4 MAIN allocation. Existing artifact 10703822275 is authoritatively live and bounded recovery has concrete information gain. Recover existing bytes only; no resolver/materializer rerun and no one-way action.",
+  "reassessment_rationale": "R84 preserved the R83 H7 R4 allocation. Existing authoritative lock bytes were recovered and durably bound, formatting-only lint was repaired, and all non-result preidentity validation closed green with concrete information gain and no one-way action.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {"status": "READY", "semantics": "development readiness only; not FORMAL one-way authority or scientific success"},
@@ -41,9 +41,14 @@
   "queue_state": "ACTIVE",
   "system_priority_exception": {"used": false},
   "active_branch": "research/main-h7-formal-r4-runtime-lock-r81-cycle10",
-  "active_head": "647253f4c0128ff09d47fdfce80dabf006863af1",
+  "active_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
   "active_identity": null,
   "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_RESOURCE_CONTRACT_CLOSURE",
+  "workflows": [
+    {"run_id":35768073646,"name":"h7-formal-r4-preidentity","head":"f84ba35e17c24fcdcfa6920ef23972d4a81567a5","status":"completed","conclusion":"success","result_bearing":false},
+    {"run_id":35768073346,"name":"ci","head":"f84ba35e17c24fcdcfa6920ef23972d4a81567a5","status":"completed","conclusion":"success","result_bearing":false},
+    {"run_id":35768073672,"name":"h7-formal-r4-lock-materialize","head":"f84ba35e17c24fcdcfa6920ef23972d4a81567a5","status":"completed","conclusion":"failure","result_bearing":false,"failure_classification":"EXPECTED_FAIL_CLOSED_CREATE_ONLY_AUTHORITY_SURFACE_AFTER_DURABLE_LOCK_EXISTS","materialization_step":"SKIPPED"}
+  ],
   "sub_collision": false,
   "formal_identity_created_or_consumed": false,
   "started_created": false,
@@ -53,6 +58,6 @@
   "result_bearing_workflow_dispatched": false,
   "official_scoring_performed": false,
   "scientific_preserve_or_evidence_ref_created": false,
-  "stop_reason": null,
-  "next_action": "Recover only artifact 10703822275 from workflow 35748064227 at exact head 647253f4c0128ff09d47fdfce80dabf006863af1, verify run/head/name/archive digest and authoritative R4 resource-contract/versions blobs, commit exact lock/manifest bytes unchanged, diagnose exact generic-CI lint, apply only science-invariant repair if needed, then run non-result preidentity validation. STOP before any one-way FORMAL action. PF-R1 Utility preservation remains HOLD under R84 and is not MAIN work."
+  "stop_reason": "R84_H7_FORMAL_R4_CYCLE10_PREIDENTITY_RESOURCE_BINDING_CLOSED_ALL_NON_RESULT_VALIDATION_GREEN_STOP_FRESH_ANALYST_REVIEW",
+  "next_action": "Fresh Evidence Analyst review of exact final R4 head f84ba35e17c24fcdcfa6920ef23972d4a81567a5. No evaluation commitment, FORMAL identity, STARTED, evaluation-seed reveal, protected evaluation, result-bearing execution, scientific preserve/evidence ref or official scoring is authorized by this generation."
 }
