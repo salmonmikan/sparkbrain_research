@@ -1,48 +1,46 @@
-# SUB latest — R88 candidate #34 Discovery R1 route-identifiability contract
+# SUB latest — R89 QFD: queue-free subthreshold state causal priming
 
 - schema_version: `2`
-- generation_id: `SUB-20260923T074100+0900-DISC-C34-ROUTE-CONTRACT-R88-D5A7C219`
-- produced_at: `2026-09-23T07:41:00+09:00`
-- operating_mode: `ANALYST_AUTHORIZED_CANONICAL_DISCOVERY`
-- discovery_mode: `THEORY_BACKWARD_MECHANISM_DISCOVERY`
-- selected_target: `CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY`
-- development_phase: `OPEN_DEVELOPMENT`
-- development_revision: `DISCOVERY-R1`
-- evidentiary_status: `NON_EVIDENTIARY_CANONICAL_DISCOVERY`
-- recommendation: `PROMOTE_TO_ARCHITECTURE_STUDY`
+- generation_id: `SUB-20260923T083602+0900-QFD-QUEUEFREE-STATE-R89-6B2E4C91`
+- produced_at: `2026-09-23T08:36:02+09:00`
+- operating_mode: `AUTONOMOUS_SECONDARY_RESEARCH`
+- discovery_mode: `QUESTION_FORMATION_DISCOVERY`
+- selected_target: `QSEED-V05-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING-01`
+- evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_QUESTION_FORMATION`
+- recommendation: `CONTINUE_QUESTION_FORMATION`
 
 ## Freshness / ownership
 
-Evidence Analyst R88 (`EVA-20260923T065834+0900-R88-D5A7C219@3341ad00ade796d9a3b80dd61c7386fc8b3e07b7`) canonically admitted #34 as `MECHANISM / OPEN_DEVELOPMENT / DISCOVERY-R1 / preformal_eligible=true / NOT_READY / QUEUED_FOR_SUB_DISCOVERY` and explicitly assigned this Discovery contract. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; the five authoritative `evidence/*` tag objects were independently re-fetched unchanged.
+Evidence Analyst remains R89 (`EVA-20260923T080115+0900-R89-9A4C2E71@4ce972b38cf925ec5d447546339ead57830ada7c`). Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, and the five authoritative `evidence/*` tag objects were independently re-fetched unchanged.
 
-MAIN independently owns H7 R5 and is `WAITING_EXTERNAL` at research head `d07d8ca14bb7e66b93924b8e1b73704687ad1011`. SUB touched no H7 blocker, source, runtime, successor, identity, scorer, preserve, protected evaluation, or result-bearing surface. Fresh Methodology R75 independently confirms #34 is a legitimate fresh MECHANISM successor and should remain genuinely developmental before PRE_FORMAL.
+R89 moved candidate #34 to MAIN-owned NON_EVIDENTIARY Architecture R1 and left H7 R5 on the provenance-gated FORMAL hold. MAIN has acquired #34 and its branch has advanced to synthetic reachability work. SUB touched neither candidate #34 nor H7/PF-R1. Fresh Methodology R76 confirms #34 must stay bounded/non-evidentiary and H7 needs no additional activity-driven development; it supplies no separate canonical SUB target.
 
-The PRE-NO-OP gate was not entered because a valid Analyst-authorized target occupied role priority 3. Prior Assembly necessity/selectivity objects are reductions only and were not reopened; candidate #33 has no new auditability residual; PF-R1 remains a Utility/control-plane issue.
+## PRE-NO-OP scan
 
-## Discovery R1 result
+No formal SUB lane, fallback, or Analyst-authorized SUB Discovery target was usable, so the mandatory scan was executed. Candidate #33 gained no new auditability residual. Prior Assembly partial completion remains reduced to fixed-prototype similarity plus identical lookup. Literature R34 is already consumed by MAIN-owned #34; Utility PF-R1 is control/provenance-only; stable `main` has not changed.
 
-**Phenomenon / question.** Coarse Assembly or unit impairment can be compatible with multiple delayed recurrent transmission structures. Candidate #34 asks whether a bounded prospectively fixed edge/timing intervention family can identify specified lagged route features on a fixed trained v0.5 checkpoint beyond the equivalence class left by those coarse lesions.
+The retained residual comes from the **terminal v0.5 endogenous-continuation family**. That object found no autonomous empty-input continuation and an already-empty recurrent event queue. It did not ask whether silent queue-free membrane/adaptation state can alter a later cue. Stable source exposes exactly that state: each field unit stores mutable `potential` and `adaptation`, with explicit decay semantics, and `TemporalExcitableField.state_dict()` serializes the event queue and unit state. v0.5 checkpoint restoration preserves the nested field while learned Assembly/predictor/action state can be kept identical across arms.
 
-**Temporal object.** Use the explicit non-receptor reservoir graph already present in stable v0.5. A physical edge is `Connection(source_id,target_id,weight,delay_ms)`; its time-unrolled opportunity arc is `(source_id,t) -> (target_id,t+delay_ms)` when the source spikes. The learned anonymous Assembly prototype supplies `ordered_units`, `relative_bins`, and `unit_ids`; the existing `0.25 ms` Assembly bin may be used for reporting while exact `delay_ms` remains execution semantics. This does not assert a unique whole-network causal graph.
+Adjacent learned-model top-k persistent-amplification work is not a duplicate: it perturbs a separate learned module state, not stable v0.5 physical `UnitState`. MAIN's new #34 reachability tooling is excluded and is not a dependency of this seed.
 
-**Bounded intervention family.** For each target Assembly, take reservoir edges whose target is in the prototype and whose source is either also in the prototype or a one-hop reservoir predecessor. Cap at `K<=12` using checkpoint-only deterministic ranking: internal edge before ingress-only, then descending `abs(weight)`, ascending `delay_ms`, and `(source_id,target_id)` tie-break. Proposed Architecture interventions are: target transmission-null (`weight=0.0`), target delay perturbation (`+4*0.25 ms = +1.0 ms`), sham, and prospectively matched non-target reservoir edge controls. Existing Assembly/unit suppression, their matched random controls, and collateral checks remain ordinary reductions. No intervention was executed in this run.
+## Question seed
 
-**Reachability.** Source inspection establishes that future edge-weight/delay interventions are reachable without changing stable dynamics: the field stores mutable `Connection` objects and future propagation reads `edge.weight` and `edge.delay_ms` when spikes schedule arrivals. The retained evaluator already uses independent deep copies of trained brains.
+**Phenomenon / question.** A driven v0.5 state may leave decaying membrane potential and adaptation after the recurrent queue is empty even though it cannot self-continue. At a queue-empty post-episode anchor, does that silent subthreshold state causally change the response to a prospectively fixed weak/ambiguous cue while learned topology, weights, Assembly memory, predictor/action parameters and cue bytes remain identical?
 
-A material caveat closes an ambiguity from the QFD stage: already queued `SynapticArrival` rows carry fixed `time_ms` and `current`, so changing a Connection does not alter prior queued transmission. Candidate #34 therefore requires a **quiescent post-training anchor** before edge edits. Proposed fail-closed Architecture rule: advance without new input in the existing `32 ms` settle increments for at most eight increments / `256 ms`, require the pending event queue to be empty, then clone and intervene. Failure to reach quiescence within that prospectively fixed cap triggers reassessment rather than post-result cap extension. A read-only pending-event/quiescence inspector is the only implementation helper needed for this boundary.
+**Provisional hypothesis.** Residual `potential` and/or `adaptation` can alter later cue-evoked spike/cascade/pattern/Assembly response despite absent spontaneous continuation, with potential-mediated priming and adaptation-mediated suppression separable under direct state interventions. No positive mechanism is asserted.
 
-Call `weight=0.0` **transmission-null**, not deletion: the current engine may still schedule a zero-current arrival and update provenance bookkeeping. For the same reason, `source_pulse_ids` should not be the primary route-identification observable.
+**Candidate observables / interventions.** Read queue cardinality/current time and non-receptor `potential`, `adaptation`, threshold/refractory/timing state, then compare later fixed-cue response on deep copies under: exact sham, `POTENTIAL_NULL` (potential→configured reset only), `ADAPTATION_NULL` (adaptation→0 only), and only if prospectively justified later, a joint subthreshold-state null. No intervention or experiment was executed in this run.
 
-**Observables.** Use target Assembly activation/maturity and similarity, target-prototype non-receptor spike response by relative-time bin, fixed no-learning prediction coverage/accuracy, collateral motif/Assembly response, stability indicators, exact intervention target metadata, and the resulting response-signature equivalence classes.
+**Ordinary reductions.** Require the queue to be empty; keep learned connections/Assembly/predictor/action state identical; include cue-only/state-null baseline; if admitted, use a prospectively timed natural-decay arm; and treat local effective-threshold margin plus the existing membrane/adaptation exponential decay as the ordinary explanation. If those ordinary quantities fully explain any divergence, do not promote a stronger distributed/Assembly mechanism claim.
 
-**Falsifier.** For every route feature eventually claimed, predeclare at least one structurally distinct alternative compatible with the coarse lesion result. If two alternatives yield the same complete response signature under the entire frozen candidate #34 intervention family, unique identification of their distinguishing route feature is falsified and the claim must collapse to the corresponding interventional equivalence class. If target edge/timing effects are not more selective/informative than matched random/sham and prior lesions, reject that edge/lag feature as identified.
+**Falsifier / discriminator.** The seed does not mature if a fixed queue-empty anchor has no measurable residual potential/adaptation. A future frozen object would reject a queue-free persistent-state causal effect if sham, potential-null and adaptation-null yield the same complete fixed-cue response signature. Any stronger mechanism must also collapse if all observed divergence is reducible to ordinary local threshold margins and expected decay.
 
-## Handoff
+## Classification / next layer
 
-This is canonical candidate #34 Discovery R1, cycle 1, not a candidate seed, PRE_FORMAL result, or evidence. Analyst-established `claim_ceiling=MECHANISM` and `preformal_eligible=true` remain unchanged; readiness remains `NOT_READY`. Canonical hold dimensions remain unchanged: no hold, `terminal_state=ACTIVE`, `queue_state=QUEUED_FOR_SUB_DISCOVERY` pending Analyst action.
+This is a **candidate seed / fresh-successor proposal**, not canonical work and not a reopening of the terminal endogenous-continuation object. The prospective question is materially new because its observable is later-cue sensitivity and its intervention is direct queue-free state nulling rather than another empty-input continuation probe.
 
-Theory-backward origin is true, but this run executes an Analyst-allocated canonical lane rather than making a new autonomous scientific selection, so the rolling autonomous-selection account remains `MECHANISM / SYSTEM / SYSTEM = 1/3` and this run is denominator-excluded.
+The seed is not mature enough for a claim ceiling, PRE_FORMAL eligibility/readiness, or canonical hold/lifecycle fields. Remaining scientific choices are the exact prime trajectory/queue-empty anchor, outcome-blind cue bytes and timing, reset scope, response signature, and final reduction panel. Recommendation is `CONTINUE_QUESTION_FORMATION`; if those can be frozen prospectively without MAIN collision, return it to Evidence Analyst for `FRESH_SUCCESSOR_REVIEW`.
 
-Recommendation is **`PROMOTE_TO_ARCHITECTURE_STUDY`**: the question, temporal object, reductions, reachability boundary, and equivalence-class falsifier are coherent, but a non-evidentiary Architecture implementation should first demonstrate the quiescent-anchor inspector, deterministic edge/matched-control construction, response-signature serialization, and prospective parameter freeze before PRE_FORMAL readiness is reconsidered. Evidence Analyst alone decides promotion/readiness/lifecycle changes.
+Because this is `QUESTION_FORMATION_DISCOVERY`, it is denominator-excluded. The rolling actual autonomous-selection account remains `MECHANISM / SYSTEM / SYSTEM = 1/3`.
 
-No scientific experiment, workflow dispatch, research branch/code mutation, Utility request, FORMAL/PRE_FORMAL action, identity consumption, held-out read, immutable-ref mutation, or historical PASS/FAIL rewrite occurred.
+Implementation was read-only source/history reachability analysis only. No workflow dispatch, code/research-branch mutation, Utility request, PRE_FORMAL/FORMAL action, identity consumption, held-out/protected read, score, evidence creation, immutable-ref mutation, or historical PASS/FAIL rewrite occurred.
