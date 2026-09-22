@@ -1,67 +1,43 @@
-# MAIN RELAY — R61 H7 DEV-R1 implementation-only Architecture cycle 2
+# MAIN PRIMARY — R63 H7 DEV-R2 Architecture cycle 3 implementation closure
 
-- Generation: `MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9`
-- Evidence Analyst: `EVA-20260922T124300+0900-R61-C7F421A9@4f55a65744385431ec73d1dec4ed32b7b20a63d8`
-- Superseded MAIN: `MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0`
-- Execution mode: `RELAY`
-- Status / lease: `BLOCKED`
-- Research layer: `ARCHITECTURE_STUDY`
-- Candidate: inherited canonical candidate 7, `H7 responsibility`
-- Development phase: `RESULT_EXPOSED_DEVELOPMENT`
-- Development revision: `H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT`
-- Cycle: `2`
-- Claim ceiling: `MECHANISM`
-- `preformal_eligible=true`
-- `preformal_readiness.status=NOT_READY`
+- Generation: `MAIN-20260922T141618+0900-PRIMARY-H7-DEVR2-ARCH-C3-E8C421B7`
+- Evidence Analyst: `EVA-20260922T140541+0900-R63-E8C421B7@9f90816657aa08754827e35976c9fa35b5d7c09a`
+- Status / lease: `COMPLETED`
+- Candidate: canonical H7 responsibility (candidate 7)
+- Layer / ceiling: `ARCHITECTURE_STUDY / MECHANISM`
+- Development: `RESULT_EXPOSED_DEVELOPMENT / H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE`
+- Cycle: `3` (`REASSESS`, prospectively authorized)
+- `preformal_eligible=true`, `preformal_readiness.status=NOT_READY`
 - `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=ACTIVE`
 - `system_priority_exception.used=false`
 
-R61 prospectively authorized implementation-only cycle 2 under the exact frozen R60 contract. Relay continued only science-invariant implementation/preflight work and stopped before any result-bearing discriminator measurement or unapproved scientific choice.
+R62/R63 prospectively versioned DEV-R2 after R61 exposed two comparator-specification gaps before any result-bearing execution. Cycle 3 therefore had concrete information gain: close only those comparator semantics plus intervention validity, without training, calibration, discriminator access, or scientific endpoints.
 
 ## Exact research state
 
-Research branch: `research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1`
+- Stable `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
+- Branch: `research/main-h7-dev-r2-comparator-protocol-closure-r63-cycle3`
+- Exact final head: `d6655549c179caf391d4b43bd2ebea49f2bfc82b`
+- Contract: `artifacts/architecture_h7_dev_r2/contract.json` (`H7-DEV-R2-ARCH-CONTRACT-V1`)
+- Parent DEV-R1: `c97af135742a7cd3af94c857f4d5b83d7707075d`
+- Historical H7 exploratory: `3b5f122d287025bd9e0aec3a5266704236e6a3d5` preserved unchanged.
 
-Final exact head: `c97af135742a7cd3af94c857f4d5b83d7707075d`
+Implemented exactly under versioned authority: `FINITE_STATE_ROUTE_HISTORY_V2`; `ELIGIBILITY_ROUTE_LEDGER_V2` with frozen detached native DEV-R2 event encoder provenance, fixed linear-head training protocol and identity calibration semantics; fail-closed intervention-conformance checks; and a hard cycle-3 guard against result-bearing surfaces. No comparator fit/training was executed.
 
-Frozen contract: `artifacts/architecture_h7_dev_r1/contract.json` (`H7-DEV-R1-ARCH-CONTRACT-V1`)
+## CI and repair classification
 
-Cycle-2 preflight status: `artifacts/architecture_h7_dev_r1/cycle2_preflight.json`
+Initial non-result-bearing CI `35690336510` failed only in two conformance-test assertions: one test incorrectly treated an observed `(previous_route, CUT)` key as unseen, and another used `__dict__` on a frozen slots dataclass. The implementation had followed the prospectively fixed DEV-R2 semantics. This was a `SCIENCE_INVARIANT / TEST_CONFORMANCE_ONLY` repair; commit `d6655549c179caf391d4b43bd2ebea49f2bfc82b` changed only the tests.
 
-Implemented without scientific result exposure:
+Final exact-head CI `35690468588` completed `success` on Python 3.11 and 3.13; lint, local readiness, full tests, and bundle validation are green.
 
-- exact frozen-contract conformance assertions;
-- deterministic fit/calibration/discriminator split and seed descriptors plus a hard implementation-only discriminator-access guard;
-- the native one-step paired `TOP1_SELECTED_LOCAL_NODE_CUT_V1` harness, preserving unperturbed selection and committing only baseline runtime state;
-- `ORDINARY_DENSE_RECURRENT_V1` frozen configuration and paired core;
-- structural cores for `FINITE_STATE_ROUTE_HISTORY_V1` and `ELIGIBILITY_ROUTE_LEDGER_V1` only where semantics were already fixed;
-- non-result-bearing preflight tests.
+## Scientific / evidentiary boundary
 
-No fit training, calibration, discriminator read/materialization, result-bearing intervention, scientific metric, comparator outcome, synthetic measurement, PRE_FORMAL execution, FORMAL action, STARTED/preserve/scoring operation, or identity consumption occurred. Historical H7 at `3b5f122d287025bd9e0aec3a5266704236e6a3d5` remains unchanged and NON_EVIDENTIARY.
+`NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_DEV_R2_IMPLEMENTATION_CONFORMANCE_COMPLETE`
 
-## Mechanical CI repair
+This run produced no scientific result: FORMAL=0, PRE_FORMAL=0, MECHANISM Architecture=1 implementation/conformance observation, SYSTEM Architecture=0, synthetic scientific measurement=0, consumed identities=0. No training, calibration, discriminator materialization/read, result-bearing intervention, scientific metric, STARTED/preserve/scoring, protected-outcome read, or immutable evidence/formal/sealed/freeze mutation occurred. Five authoritative `evidence/*` annotated tags remain unchanged; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty.
 
-Initial exact-head CI `35685077726` failed only at Ruff E402/I001 because the optional-torch test import followed `pytest.importorskip`. This was classified as science-invariant lint-only plumbing. Relay applied only the import-layout lint suppression; no hypothesis, intervention, metric, comparator semantics, seed/split, tolerance, resource/privilege, falsifier, or success criterion changed.
+## Stop / next action
 
-Post-repair CI `35685243444` succeeded on Python 3.11 and 3.13. Final exact-head CI `35685323080` at `c97af135742a7cd3af94c857f4d5b83d7707075d` also succeeded end-to-end: lint, local readiness, tests, and bundle validation all green.
+`R63_H7_DEV_R2_CYCLE3_IMPLEMENTATION_ONLY_COMPLETE_CI_GREEN_STOP_FRESH_ANALYST_REVIEW_BEFORE_RESULT_BEARING_DEVELOPMENT`
 
-## Fail-closed specification gaps
-
-Completing all three comparators requires two scientific choices that R60/R61 did not fix, so Relay did not invent them:
-
-1. `FINITE_STATE_ROUTE_HISTORY_V1`: the key contains previous predicted label, but the frozen contract does not define how that previous prediction is generated while fitting paired baseline/cut counts, nor the unseen-state fallback policy. Either choice changes comparator semantics.
-2. `ELIGIBILITY_ROUTE_LEDGER_V1`: the contract fixes ledger decay, head shape, seed/epochs/lr and split use, but does not define which frozen event encoder supplies the 24-d event representation, the optimizer/loss/update ordering for the head, or the exact calibration operation. Choosing these now changes comparator semantics.
-
-These are science-affecting specification gaps, not implementation defects. No post-exposure redesign or same-revision rescue was attempted.
-
-## Evidentiary / integrity status
-
-`NON_EVIDENTIARY_MECHANISM_ARCHITECTURE_IMPLEMENTATION_PREFLIGHT_BLOCKED_SPECIFICATION_GAP`
-
-New consumed identities: `0`. The seven canonical consumed one-way scientific identities remain unchanged. Immutable/formal/sealed/evidence refs were not mutated; protected outcomes and the discriminator were not read; the frozen contract's scientific fields were not modified; prior H7 results were not rerun, retuned, rescored, or promoted.
-
-## Stop / next MAIN action
-
-`R61_H7_DEV_R1_CYCLE2_IMPLEMENTATION_PREFLIGHT_BLOCKED_UNFIXED_COMPARATOR_PROTOCOL_FIELDS_NO_RESULT_EXPOSURE`
-
-Fresh Evidence Analyst review is required to prospectively fix or explicitly version the two comparator-protocol gaps above. After such authority, MAIN may continue only the implementation/preflight scope that is explicitly authorized. Result-bearing discriminator measurement remains separately STOP-gated and must not be inferred from implementation CI success.
+The prospectively authorized implementation-only scope is complete. Fresh Evidence Analyst review is required before any result-bearing training/calibration/discriminator development. CI green does **not** imply `READY`, mechanism success, ordinary-reduction defeat, or eligibility for FORMAL execution.
