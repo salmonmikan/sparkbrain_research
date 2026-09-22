@@ -1,0 +1,199 @@
+{
+  "schema_version": 2,
+  "contract_id": "H7-DEV-R1-ARCH-CONTRACT-V1",
+  "status": "STATIC_FROZEN_FOR_FRESH_ANALYST_REVIEW_NO_RESULT_BEARING_EXECUTION_AUTHORIZED",
+  "created_under": {
+    "evidence_analyst_generation": "EVA-20260922T120158+0900-R60-D5E721A4",
+    "evidence_analyst_commit": "8cfdb2abb72ff0cfcf616d3400d578db7c20a84d",
+    "main_generation": "MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0",
+    "candidate_ordinal": 7,
+    "candidate_canonical_label": "H7 responsibility",
+    "candidate_id_rule": "INHERIT_EXACT_CANONICAL_ID_FROM_R59_NO_NEW_CANDIDATE_ID_MINTED",
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT",
+    "research_layer": "ARCHITECTURE_STUDY",
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "NOT_READY",
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "system_priority_exception_used": false
+  },
+  "evidentiary_boundary": {
+    "classification": "MECHANISM_ARCHITECTURE_NON_EVIDENTIARY_STATIC_CONTRACT",
+    "scientific_results_generated": false,
+    "result_bearing_intervention_authorized": false,
+    "preformal_execution_authorized": false,
+    "formal_execution_authorized": false,
+    "historical_h7_result_reused_as_confirmation": false,
+    "historical_h7_predecessor_ref": "3b5f122d287025bd9e0aec3a5266704236e6a3d5",
+    "historical_h7_predecessor_status": "PRESERVE_UNCHANGED_EXPLORATORY_NON_EVIDENTIARY"
+  },
+  "source_binding": {
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "native_model_path": "src/sparkbrain/learned/model.py",
+    "native_model_blob": "5221984460c8d767202c5e9ebe1df5237d65915a",
+    "native_config_path": "src/sparkbrain/learned/config.py",
+    "native_config_blob": "6ea9b3ce66e882a890994130f00ab3f4a424ab85",
+    "reference_phase2_config_path": "configs/experiments/phase2/main.json",
+    "reference_phase2_config_blob": "f355b0817e0fb3ef63190884d4185226d5aff73a",
+    "native_class": "sparkbrain.learned.model.SparseRoutingModel"
+  },
+  "claim_scope": {
+    "question": "Under one prospectively frozen intervention family, does a native local route/state carry task-relevant causal responsibility beyond matched ordinary recurrent/state-machine/eligibility reductions, without requiring uniqueness?",
+    "positive_claim_if_later_supported": "Existential local route/state responsibility within this exact frozen development protocol and intervention family only.",
+    "excluded_claims": [
+      "unique responsible route",
+      "task or context specificity",
+      "general mechanism superiority",
+      "causal sufficiency or completeness of the trace",
+      "formal confirmatory evidence",
+      "external-task or biological generalization"
+    ],
+    "non_uniqueness_rule": "Multiple routes satisfying the same frozen criterion narrow interpretation to an existential or equivalence-class claim and do not by themselves falsify the object."
+  },
+  "native_route_state_object": {
+    "route_selection": "torch.topk(router_logits, k=active_k, sorted=True).indices under condition=full",
+    "module_count": 12,
+    "active_k": 4,
+    "hidden_dim": 24,
+    "target_route": "selected[0], the rank-1 router-logit module after deterministic sorted top-k selection",
+    "target_state": "the target module pre-step persistent module_state vector plus its row/column participation in the selected local recurrent edge matrix",
+    "selection_freeze_rule": "Compute encoded event, router_logits, router_probabilities and selected indices once from the unperturbed pre-step snapshot. The intervention MUST NOT recompute or alter current-step selection.",
+    "snapshot_rule": "Every baseline/intervention pair starts from byte-equivalent model parameters and an identical cloned pre-step runtime state. Altered intervention state is never carried into the next evaluated step."
+  },
+  "frozen_intervention_family": {
+    "id": "TOP1_SELECTED_LOCAL_NODE_CUT_V1",
+    "type": "ONE_STEP_LOCAL_ROUTE_STATE_NODE_CUT",
+    "application_point": "after unperturbed route selection and before local recurrent message computation / GRU update",
+    "procedure": [
+      "Clone the exact pre-step runtime state for baseline and intervention arms.",
+      "Compute the unperturbed event encoding and sorted selected set once and hold that selected set fixed for both arms.",
+      "Let j be selected[0]. In the intervention arm only, set previous[j] to the all-zero hidden vector.",
+      "Set row j and column j of the selected local edge matrix to zero before message computation.",
+      "Run the shared GRU update for the selected set, then force updated[j] to the all-zero hidden vector before pooling and index_copy.",
+      "Leave event encoding, router logits, all other selected module states, all parameters, residual head, belief/action heads, coalition calculation, RNG state and current external input unchanged.",
+      "Compute the intervention output for this one step and discard the perturbed runtime state immediately after measurement."
+    ],
+    "current_step_dormant_path_control": "Because selected indices are frozen before the cut and the perturbed state is discarded after one step, the intervention cannot recruit a new current-step route. Any implementation that changes selected indices is invalid rather than a scientific result.",
+    "bypass_interpretation": "Unchanged or weak output effect in the presence of residual or alternative selected paths is treated as redundancy/bypass ambiguity, not proof that the trace is complete or unfaithful."
+  },
+  "development_surface_frozen_for_future_authorized_execution": {
+    "surface_status": "DEFINED_NOT_EXECUTED",
+    "worlds": [
+      "switchworld",
+      "contradiction_world",
+      "goal_conflict_world",
+      "multi_object_world"
+    ],
+    "steps_per_episode": 24,
+    "fit_episodes": 48,
+    "fit_seed_range_inclusive": [7601000, 7601047],
+    "calibration_episodes": 12,
+    "calibration_seed_range_inclusive": [7602000, 7602011],
+    "discriminator_episodes": 24,
+    "discriminator_seed_range_inclusive": [7603000, 7603023],
+    "world_assignment": "round-robin in the listed world order within each split",
+    "heldout_or_formal_surfaces_forbidden": true,
+    "historical_c04_test_manifest_forbidden": true,
+    "historical_h7_toy_outcomes_forbidden_as_training_or_threshold_input": true,
+    "future_formal_rule": "Any later FORMAL attempt must use a fresh frozen untouched identity/evaluation surface unless a prospectively valid adaptivity regime explicitly covers development exposure."
+  },
+  "native_development_model": {
+    "architecture": "SparseRoutingModel condition=full",
+    "fresh_training_seed": 7601,
+    "epochs": 4,
+    "learning_rate": 0.012,
+    "device": "cpu",
+    "event_dim": 24,
+    "hidden_dim": 24,
+    "module_count": 12,
+    "active_k": 4,
+    "training_data": "fit split only",
+    "calibration_data": "calibration split only",
+    "discriminator_data": "never used for fitting, model selection, threshold tuning, comparator fitting or repair decisions"
+  },
+  "ordinary_reduction_panel": {
+    "panel_rule": "A MECHANISM interpretation cannot claim beyond ordinary reductions unless all frozen panel members are implemented and evaluated under the same future authorized development surface. No member may be dropped after seeing outcomes.",
+    "comparators": [
+      {
+        "id": "ORDINARY_DENSE_RECURRENT_V1",
+        "reduction_class": "ordinary recurrent",
+        "implementation": "A separately trained SparseRoutingModel from the same stable-main source with condition=dense_recurrent so k=module_count. Train from seed 7602 for four epochs on the exact fit split with learning_rate=0.012 and CPU. Calibrate only on the calibration split.",
+        "intervention_mapping": "Use its own unperturbed router_logits to define rank-1 target j, then apply TOP1_SELECTED_LOCAL_NODE_CUT_V1 while all modules are in the dense selected set.",
+        "privilege": "Same external event history and target labels for fit/calibration as native; same architecture parameterization; greater recurrent compute is allowed and recorded, never counted against the comparator."
+      },
+      {
+        "id": "FINITE_STATE_ROUTE_HISTORY_V1",
+        "reduction_class": "ordinary state-machine",
+        "implementation": "Deterministic tabular predictor whose state key is (previous predicted label or START, current rank-1 route id or CUT). Fit label counts only on paired baseline/cut observations from the fit split and emit the deterministic majority label with lexical label tie-break. State is reset at each episode boundary.",
+        "intervention_mapping": "For the intervention arm replace the current rank-1 route token by CUT; all other observable history is unchanged.",
+        "privilege": "Receives the same current external event timing plus the native unperturbed rank-1 route id, baseline/cut arm identity and task label during fit. It receives no native hidden vector. Maximum 52 state keys (4 previous-label values including START times 13 route values including CUT), so its tabular memory remains below the native 12x24 recurrent-state scalar count before native edge parameters are counted."
+      },
+      {
+        "id": "ELIGIBILITY_ROUTE_LEDGER_V1",
+        "reduction_class": "eligibility/local-credit",
+        "implementation": "Maintain a 12-vector e initialized to zero at episode start. Before prediction at each step set e = 0.90 * e + multi_hot(selected). A linear 3-class softmax head consumes concat(e, current 24-d event encoding), is trained from seed 7603 for four epochs with learning_rate=0.012 on the fit split, and is calibrated only on the calibration split.",
+        "intervention_mapping": "For the intervention arm, update eligibility with the frozen selected set excluding selected[0] and force e[selected[0]]=0 for that one-step paired prediction; discard the perturbed ledger after measurement.",
+        "privilege": "Receives the same external event encoding and the full unperturbed selected route IDs. It receives more explicit route-history access than a raw-input-only baseline; this is intentional to make the reduction strong rather than underprivileged."
+      }
+    ]
+  },
+  "resource_privilege_contract": {
+    "data": "Native and all trainable comparators receive exactly the same fit/calibration episode identities; the discriminator split is read only after all implementations and analysis code are frozen under fresh Analyst authority.",
+    "labels": "Training/calibration labels are available symmetrically. No comparator or native runtime may access future-step labels or evaluator motif identity at prediction time.",
+    "runtime": "CPU only. Deterministic seeds and thread/runtime settings must be recorded before any result-bearing dispatch.",
+    "compute": "Native and trainable comparators receive four training epochs and the same fit/calibration episode counts. A comparator may use more inference compute (notably dense recurrence); extra comparator compute is not evidence for the native mechanism.",
+    "parameter_privilege": "Dense recurrence uses the same model parameterization. The finite-state comparator is explicitly smaller. The eligibility comparator is explicitly smaller. No native advantage may be attributed merely to comparator capacity restriction; if a comparator appears capacity-limited, the result is INCONCLUSIVE for reduction rather than a native win.",
+    "intervention_privilege": "All arms may know the baseline/cut condition. State-machine and eligibility reductions additionally receive frozen native route IDs as specified, preventing a raw-input information disadvantage.",
+    "protected_data": "No evidence/formal/sealed/freeze target, consumed identity, C04 test manifest, or historical H7 result may be opened as a development tuning surface."
+  },
+  "measurement_contract_for_future_authorized_run": {
+    "status": "FROZEN_DEFINITION_ONLY_NOT_EXECUTED",
+    "positive_phenomenon_floor": "Before any reduced-by-baseline language, native baseline discriminator accuracy must be strictly greater than 1/3. Failure of this floor is PHENOMENON_NOT_DEMONSTRATED, not evidence of reduction.",
+    "primary_task_relevant_effect": "delta_accuracy = native_baseline_accuracy - native_cut_accuracy over the complete discriminator split, with no post-hoc case filtering.",
+    "secondary_output_effect": "mean total-variation distance between paired baseline and cut 3-class probability vectors over the complete discriminator split.",
+    "numerical_no_change_tolerance": 1e-7,
+    "reduction_reproduction_rule": "An ordinary comparator reproduces the task-relevant effect if its baseline discriminator accuracy is greater than or equal to native baseline discriminator accuracy and its paired cut delta_accuracy is greater than or equal to native delta_accuracy. This directional rule is fixed before outcomes and does not require a tuned equivalence margin.",
+    "capacity_limit_rule": "If a comparator fails baseline matching and diagnostics show the frozen comparator is capacity-limited, mark reduction comparison INCONCLUSIVE; do not count it as mechanism support and do not retune within the exposed revision without fresh Analyst authority."
+  },
+  "claim_scoped_falsifier": {
+    "fixed": true,
+    "conditions": [
+      "PHENOMENON_NOT_DEMONSTRATED if native baseline discriminator accuracy is not strictly greater than 1/3.",
+      "NO_LOCAL_EFFECT if native delta_accuracy <= 0 and native mean probability total-variation distance <= 1e-7.",
+      "REDUCED_BY_ORDINARY_COMPARATOR if any non-capacity-limited frozen ordinary comparator satisfies the fixed reduction_reproduction_rule.",
+      "INVALID_INTERVENTION if current-step selected route IDs differ between baseline and cut arms, any non-target parameter/input/RNG field differs, or perturbed state leaks into a later evaluated step.",
+      "NARROW_OR_CLOSE if the effect is attributable to a generic shared bottleneck or an implementation-verified dormant/bypass artifact rather than the frozen route/state object."
+    ],
+    "non_uniqueness": "Does not falsify this revision; it narrows interpretation to existential/equivalence-class responsibility.",
+    "specificity": "Not claimed in this revision, so matched non-target context discrimination is not a success gate."
+  },
+  "same_revision_rules": {
+    "science_invariant_repairs_allowed": [
+      "lint/import/build fixes",
+      "workflow syntax/path fixes",
+      "serialization/logging/hash plumbing",
+      "implementation corrections that make code conform exactly to this already-frozen contract without changing scientific semantics"
+    ],
+    "science_affecting_changes_requiring_fresh_analyst_revision": [
+      "intervention target or application point",
+      "ordinary comparator definition or panel membership",
+      "development seeds/splits/worlds",
+      "metric/scorer meaning",
+      "1e-7 numerical tolerance",
+      "positive phenomenon floor",
+      "reduction reproduction rule",
+      "resource/privilege contract",
+      "falsifier or success criteria",
+      "claim scope or claim ceiling"
+    ],
+    "result_exposure_rule": "No result-bearing execution is authorized by R60. After any future meaningful result exposure, preserve that result unchanged; science-affecting redesign requires another explicit versioned development revision or fresh successor."
+  },
+  "readiness_after_this_static_contract": {
+    "preformal_eligible": true,
+    "preformal_readiness": "NOT_READY",
+    "reason": "The static contract fixes the scientific choices requested by R60, but comparator/harness implementations and fresh Analyst authority for any result-bearing Architecture/PRE_FORMAL execution do not yet exist.",
+    "next_required_action": "Fresh Evidence Analyst review of this static contract. If accepted, authorize implementation-only work or a result-bearing development cycle explicitly; do not infer READY from contract completion."
+  }
+}
