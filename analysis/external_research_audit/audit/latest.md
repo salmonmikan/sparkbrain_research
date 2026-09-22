@@ -1,46 +1,57 @@
-# INDEPENDENT_AUDITOR — H5 semantic-dead-work attack
+# INDEPENDENT_AUDITOR — PD01 null-vs-null reduction-identifiability audit
 
 - schema_version: `2`
-- generation_id: `AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4`
-- produced_at: `2026-09-21T22:30:00+09:00`
-- producer_run_id: `external-audit-auto-20260921T223000+0900-R5-5E8C21A4`
+- generation_id: `AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7`
+- produced_at: `2026-09-22T10:30:00+09:00`
+- producer_run_id: `external-audit-20260922T103000+0900-R6-PD01-9C4A21E7`
 - authority_scope: `INDEPENDENT_AUDITOR_READ_ONLY_REPOSITORY_EVIDENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4`
+- supersedes_generation_id: `AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4`
 - role: `INDEPENDENT_AUDITOR`
-- schedule_slot: `22:30 JST`
+- schedule_slot: `10:30 JST`
 - schedule_inference: `false`
+- audit_classification: `WEAKENED`
 
 ## Phase 1 — blind target selection
 
-Before consuming Control Brain, Evidence Analyst, MAIN/SUB, or Literature summaries, the audit fixed the target as authoritative H5 `h5-event-routing-work-reduction-official-v1`, specifically whether the terminal `FAIL_NO_USEFUL_WORK_REDUCTION` can be interpreted as evidence that lazy node-state decay / event-routed active execution itself fails to deliver useful algorithmic-work reduction.
+Before reading current Control Brain, Evidence Analyst, MAIN/SUB, or Literature summaries, the audit fixed authoritative PD01 `pd01-long-history-fading-memory-official-v1`, specifically the terminal `FAIL_REDUCED_BY_FADING_MEMORY`, as the target.
 
-Repository-only attack hypotheses were fixed as: authority/package/STARTED/raw/evidence drift; scorer or target leakage; comparator privilege mismatch; seed/bootstrap fragility; resource-accounting mismatch; semantically inactive subsystem work dominating the aggregate metric; sparse-workload mismatch; and overgeneralization from the exact current implementation/counter vocabulary to the event-routing/lazy-state principle.
+The repository-only attack hypotheses were: authority/package/STARTED/raw/evidence drift; scorer/evaluator or target leakage; semantic/global lookup privilege mismatch; resource mismatch; seed/bootstrap fragility; insufficient long-lag support; output-only reduction mismatch; simpler finite/fading-memory explanations; protocol drift/stale evidence; and a distinct reduction-identifiability question: whether `REDUCED_BY_FADING_MEMORY` is stronger language than the data justify when both SparkBrain and the fixed reservoir fail to demonstrate long-lag recoverability.
 
-The prior audit stream was read for dedupe. An older H5 audit (`d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56`) had already established that all-edge eligibility maintenance numerically dominates H5 work. This run retained the target only because it tests a narrower attack surface not established there: whether that dominant eligibility work is *semantically inactive* under the registered H5 workload. The blind target itself was not changed.
+Prior audit history was read only for dedupe. PD01 had not previously received a dedicated independent audit. The blind target was not changed.
 
 ## Repository evidence
 
-The immutable H5 chain remains coherent. Exact package `2086a8f4ea080a7a8a0e3c79d77afe9b516db905` precedes STARTED `058e90227cd48e1c10c6ecbaed01efdec1217d0e`; workflow `35338995888` completed attempt 1 successfully; raw was preserved before scoring at `ce5797eb584344db7a512e585506fb6c59ea475b`; evidence commit `61aff6d74b82b68a326f3d90505d70bcd4071fd5` is bound by the annotated H5 evidence tag. No retry, post-START scientific drift, raw-before-score violation, or identity mismatch was found.
+The one-way chain is coherent. Exact package `b9d38daa5faca348ad2db3898ba71e2abc99f631` precedes STARTED `0569e348b9d93aeee53fc58daf4b71ee92303d6c`; workflow `35301327618` ran attempt 1 at the exact STARTED head and completed successfully; target-blind raw was preserved before scoring at `65ae7a50ee2279ab5edc3ca43ea3bf69daecb881`; evidence commit `fc5c8cda283360addddb7da482b14e69beaba1f7` is bound by the annotated PD01 evidence tag object `e4c4e6428d8ef9e09e92cae231041de0788162e2`. The preserved manifest binds raw SHA-256 `5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638`, 1024 histories / 2048 prediction rows, fixed candidate/comparator readouts, and `targets_materialized=false` at raw preservation. No retry, post-START retuning, raw-before-score violation, identity mismatch, or obvious comparator privilege violation was found.
 
-The registered result is unchanged: primary mean work reduction `0.023826074023772813`, 95% CI `[0.02379403660851484, 0.023859665012124307]`, with activity-level means `0.05927001218870528`, `0.009811966841371046`, and `0.0023962430412420807` for activity fractions `0.01`, `0.05`, and `0.15`. Under the frozen decision rule this validly maps to `FAIL_NO_USEFUL_WORK_REDUCTION`.
+The exact scored primary endpoint is also internally coherent: SparkBrain accuracy `0.47265625` with 95% CI `[0.431640625, 0.515625]`; fixed contractive reservoir accuracy `0.5`; effect `-0.02734375` with 95% CI `[-0.068359375, 0.015625]`. Under the frozen decision rule, the effect upper bound is below `0.05`, so the canonical token `FAIL_REDUCED_BY_FADING_MEMORY` is a valid execution of the predeclared scorer and must remain immutable.
 
-### New attack surface: semantic dead work
+## New attack surface — null-vs-null does not identify a positive reduction
 
-The prospective H5 contract fixes the graph as `plastic=false` and the workload generator schedules stimulus events, not reward events. Stable SparkBrain nevertheless increments eligibility on every outgoing edge when a unit fires and globally decays eligibility on every event. Reward-driven weight updates are the only downstream use of eligibility, and `_apply_reward` explicitly skips non-plastic edges.
+The claim under test was not merely that SparkBrain is statistically indistinguishable from a reservoir. It claimed that an older anonymous-lineage event remains *recoverable* from SparkBrain at long lag beyond a conventional contractive fading-memory reservoir under matched observable input and linear-readout privilege.
 
-Therefore, in this exact H5 workload, eligibility values cannot change any graph weight or behavioral output. Yet `eligibility_edge_touches` and `eligibility_multiplications` are counted in the primary total-work metric for both candidate and dense comparator. In a preserved 128-node, 1%-activity bursty cell, those two eligibility counters contribute `122880 / 124062 = 99.05%` of candidate work; the dense comparator pays the same `122880` eligibility operations. In the preserved 128-node, 5%-activity bursty cell they contribute `737280 / 744146 = 99.08%` of candidate work.
+On the primary endpoint, however, SparkBrain itself does not demonstrate positive long-lag recoverability: its point accuracy is below chance and its CI includes chance. The comparator is exactly at chance. Therefore the observed outcome is a `null-vs-null` comparison: SparkBrain shows no demonstrated long-lag capability, and the reservoir shows no demonstrated capability either.
 
-This does **not** invalidate the registered H5 total-work terminal: the contract prospectively defined an implementation-faithful aggregate counter and intentionally included common bookkeeping. It does, however, sharpen the interpretation ceiling. H5 is not an isolated test of whether lazy node-state decay or event-routed routing saves work; its aggregate is dominated by an output-neutral all-edge eligibility subsystem that masks those component savings. The result is therefore robust for the exact current-implementation total-work claim, but should not be promoted to a no-go claim about event routing or lazy state materialization as principles.
+That is enough to falsify the registered superiority/recoverability claim and enough to trigger the frozen FAIL token. It is **not** enough to establish that a fading-memory reservoir positively explains or mechanistically reduces an observed SparkBrain long-history capability, because there is no positive long-history capability on this endpoint to reproduce. Matching a failure is not the same evidentiary object as reproducing a demonstrated phenomenon with a simpler mechanism.
+
+Accordingly, the strongest interpretation supported by PD01 is:
+
+`NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR`
+
+This is an interpretation ceiling only. The canonical frozen token, evidence files, statistics, scorer, and immutable refs must not be renamed or rewritten retrospectively.
 
 ## Phase 2 — interpretation comparison
 
-After the target and attack hypotheses were fixed, current Control, Evidence Analyst, MAIN, SUB, and Literature streams were read. None currently uses H5 as an active novelty claim. Evidence Analyst R44 has no active scientific object and keeps H5 consumed/no-retry. MAIN R44 is intentionally idle, SUB remains no-target, and Literature R22 concerns selection-aware validity rather than H5. No strategy summary invalidated or replaced the blind target.
+Only after the target and attack hypotheses were fixed, current Control R31, Evidence Analyst R58, MAIN R58, SUB R57, and Literature R27 were consumed. Current control-plane state is intentionally idle with no active scientific object, no PRE_FORMAL/FORMAL authority, and PD01 remains a consumed immutable identity. No current stream relies on PD01 as positive evidence that an ordinary fading-memory mechanism explains a demonstrated SparkBrain memory capability. The blind target therefore remains valid and `blind_target_change_reason=null`.
+
+The control-plane posture is already conservative enough that no emergency strategy correction is required. The useful handoff is a terminology/claim-scope constraint for future Evidence Analyst and Control use: retain PD01 as a valid negative result against the registered long-history superiority claim, but do not cite it as positive mechanistic reduction evidence unless a future, independent prospective object first demonstrates a recoverable candidate phenomenon and then shows that an ordinary fading-memory model reproduces it under matched privilege/resources.
 
 ## Audit conclusion
 
-`audit_classification = ROBUST_SO_FAR` for the exact registered H5 aggregate-work terminal. The genuinely new audit issue is a stronger source-level explanation for why the terminal must remain narrow: the dominant eligibility work is semantically inactive under the fixed non-plastic/no-reward workload.
+`audit_classification = WEAKENED`.
 
-No Utility request was created. Any component-isolation test would have to be a genuinely fresh prospective object; using this result to rerun/rescore or repair consumed H5 would violate the one-way boundary.
+The evidence integrity and frozen endpoint decision remain strong. What is weakened is the mechanistic/reduction reading suggested by the terminal label: the data establish failure to demonstrate long-lag recoverability and failure to beat the fixed reservoir, not positive reduction of an observed long-memory phenomenon by fading-memory dynamics.
+
+No Utility request was created. Any taxonomy change or positive-capability-vs-reduction discriminator belongs only in a fresh prospective object; consumed PD01 must not be rerun, rescored, relabeled, or repaired.
 
 ## Knowledge-flow contract
 
@@ -48,47 +59,47 @@ No Utility request was created. Any component-isolation test would have to be a 
 role: INDEPENDENT_AUDITOR
 genuinely_new_information: true
 affected_lines:
-  - H5_EVENT_ROUTING_WORK_REDUCTION
-  - H5_WORK_METRIC_COMPONENT_ATTRIBUTION
-  - PROGRAMME_ARCHITECTURE_EFFICIENCY
-  - FUTURE_WORK_REDUCTION_CONTRACTS
+  - PD01_LONG_HISTORY_FADING_MEMORY
+  - PD01_TERMINAL_INTERPRETATION
+  - PERSISTENT_DYNAMICAL_COGNITION
+  - REDUCTION_EVIDENCE_SEMANTICS
   - PROGRAMME_NOVELTY
-novelty_or_reduction_impact: REGISTERED_H5_FAIL_REMAINS_ROBUST_BUT_INTERPRETATION_IS_FURTHER_NARROWED_BY_SEMANTICALLY_INACTIVE_ELIGIBILITY_WORK
-audit_classification: ROBUST_SO_FAR
+novelty_or_reduction_impact: CANONICAL_PD01_FAIL_REMAINS_PROTOCOL_VALID_BUT_MECHANISTIC_REDUCTION_INTERPRETATION_IS_WEAKENED_BY_NULL_VS_NULL_NONIDENTIFIABILITY
+audit_classification: WEAKENED
 blind_target_selection:
-  target: H5 h5-event-routing-work-reduction-official-v1 terminal FAIL_NO_USEFUL_WORK_REDUCTION, audited for overinterpretation as an event-routing/lazy-state no-go
+  target: authoritative PD01 FAIL_REDUCED_BY_FADING_MEMORY, audited for whether the reduction interpretation exceeds what a null-vs-null endpoint identifies
   attack_hypotheses:
     - authority/package/STARTED/raw/evidence mismatch or protocol drift
-    - scorer/evaluator leakage
-    - comparator information/resource privilege mismatch
-    - seed or bootstrap fragility
-    - resource-accounting mismatch
-    - semantically inactive subsystem dominating the aggregate metric
-    - workload/comparator mismatch
-    - broader-than-registered mechanism interpretation
+    - scorer/evaluator/target leakage
+    - comparator semantic/global-information privilege mismatch
+    - resource mismatch
+    - seed/bootstrap fragility
+    - insufficient long-lag support
+    - output-only matching insufficient for mechanism reduction
+    - simpler finite/fading-memory explanation
+    - null-vs-null endpoint may falsify superiority without positively identifying a reduction mechanism
 blind_target_change_reason: null
 prospective_baselines_or_discriminators:
-  - keep canonical H5 immutable; do not rerun, retune, rescore, relabel, or reopen it
-  - in a genuinely fresh efficiency object, preregister subsystem-wise work decomposition alongside aggregate work
-  - distinguish implementation overhead from mechanism-attributable work before interpreting a total-work terminal mechanistically
-  - if eligibility is scientifically in scope, use a prospectively bound plastic/reward workload where eligibility has semantic consequences
-  - compare global all-edge eligibility maintenance against an equal-semantics localized/event-routed eligibility baseline only in a fresh object
-  - bind separate runtime/energy methodology for wall-clock, memory, cache, or energy claims
+  - keep canonical PD01 immutable; no rerun, rescore, retune, relabel, or reinterpretive rewrite
+  - in a fresh object, require an absolute candidate recoverability floor above chance before using positive `reduced by baseline` language
+  - prospectively distinguish `candidate capability absent` from `positive candidate capability reproduced by ordinary baseline`
+  - if positive recoverability exists, use predeclared equal-privilege fading-memory baselines/seeds without comparator shopping
+  - for a mechanism-reduction claim, require the simpler baseline to reproduce a demonstrated positive phenomenon or matched response structure, not merely equal failure
 questions_for_evidence_analyst:
-  - Preserve H5 official FAIL exactly while making explicit that it is a current-implementation aggregate-work result, not an isolated event-routing/lazy-state causal test?
-  - Keep H5 consumed/no-retry and require any component-isolation study to use a fresh identity/object?
-  - Require semantic-activity and component-attribution checks for future resource-efficiency evidence?
+  - Preserve the frozen PD01 token exactly while capping narrative interpretation at no demonstrated long-lag recovery/no advantage over the fixed reservoir?
+  - In future reduction objects, require a positive absolute candidate-capability floor before interpreting comparator equivalence as mechanism reduction?
+  - Distinguish failure-to-demonstrate the phenomenon from successful ordinary-mechanism reduction in terminal taxonomy/claim scope prospectively?
 questions_for_control_brain:
-  - Avoid using H5 as broad evidence that event routing or lazy state materialization cannot yield useful efficiency?
-  - Add semantically inactive subsystem domination to the future resource-metric audit checklist?
-  - Keep H5 closed and treat the new issue as interpretation sharpening, not rescue authority?
+  - Treat PD01 as strong negative evidence against the registered long-history superiority claim, but not positive evidence that fading-memory dynamics explain a demonstrated SparkBrain memory capability?
+  - Add null-vs-null reduction-identifiability to the future reduction-claim checklist?
+  - Keep PD01 consumed/closed with no rescue authority or retrospective relabeling?
 must_not_change_frozen_or_consumed:
-  - H5 exact package 2086a8f4ea080a7a8a0e3c79d77afe9b516db905
-  - H5 STARTED 058e90227cd48e1c10c6ecbaed01efdec1217d0e
-  - H5 raw preserve ce5797eb584344db7a512e585506fb6c59ea475b
-  - H5 evidence commit 61aff6d74b82b68a326f3d90505d70bcd4071fd5 and annotated evidence tag
-  - workflow 35338995888 and canonical H5 statistics / FAIL_NO_USEFUL_WORK_REDUCTION token
-  - all other consumed C19-v4/C19-R1/C19-R2/PD01/NI01 and immutable evidence
-  - no rerun, rescore, retune, relabel, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, or scheduler change
+  - PD01 exact package b9d38daa5faca348ad2db3898ba71e2abc99f631
+  - PD01 STARTED 0569e348b9d93aeee53fc58daf4b71ee92303d6c
+  - PD01 raw preserve 65ae7a50ee2279ab5edc3ca43ea3bf69daecb881 and raw SHA-256 5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638
+  - PD01 evidence commit fc5c8cda283360addddb7da482b14e69beaba1f7 and annotated evidence tag object e4c4e6428d8ef9e09e92cae231041de0788162e2
+  - workflow 35301327618, canonical statistics, scorer decision, and FAIL_REDUCED_BY_FADING_MEMORY token
+  - all other consumed C19-v4/C19-R1/C19-R2/H5/NI01 identities and immutable evidence
+  - no rerun, rescore, retune, relabel, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, Utility execution, or scheduler change
 utility_request_created: null
 ```
