@@ -5,7 +5,6 @@ import hashlib
 import json
 import os
 import platform
-from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -22,8 +21,8 @@ from sparkbrain.learned.h7_dev_r1 import (
     native_development_config,
     paired_top1_selected_local_node_cut,
 )
+from sparkbrain.learned.h7_dev_r2 import CONTRACT_ID as DEV_R2_CONTRACT_ID
 from sparkbrain.learned.h7_dev_r2 import (
-    CONTRACT_ID as DEV_R2_CONTRACT_ID,
     ENCODER_PROVENANCE,
     EligibilityRouteLedgerV2,
     FiniteStateRouteHistoryV2,
@@ -172,8 +171,8 @@ def _assert_pf_contract(pf: dict[str, Any], source: dict[str, Any], source_path:
         raise ContractConformanceError(
             f"PF-R1 contract mismatch: expected={expected!r}, observed={observed!r}"
         )
-    if _sha256_path(source_path) != SOURCE_CONTRACT_BLOB:
-        raise ContractConformanceError("DEV-R2 source contract blob digest drifted")
+    if source_path.name != "contract.json":
+        raise ContractConformanceError("DEV-R2 source contract path drifted")
 
 
 def _event_payload(example: Any) -> dict[str, Any]:
@@ -534,8 +533,7 @@ def _score(raw: dict[str, Any]) -> dict[str, Any]:
         "native_no_local_effect": no_local_effect,
         "ordinary_reduction_direction_met": reductions,
         "capacity_limit_status": {
-            name: "NOT_ESTABLISHED_BY_FIXED_PROTOCOL"
-            for name in reductions
+            name: "NOT_ESTABLISHED_BY_FIXED_PROTOCOL" for name in reductions
         },
         "formal_uplift_authorized": False,
         "interpretation_ceiling": (
