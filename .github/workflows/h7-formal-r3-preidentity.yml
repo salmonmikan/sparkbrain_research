@@ -28,6 +28,15 @@ jobs:
           check-latest: false
       - name: Install package surface
         run: python -m pip install -e ".[dev,learned,spiking]"
+      - name: R3 preidentity tests
+        run: python -m pytest -q tests/learned/test_h7_formal_r3.py
+      - name: R3 lint
+        run: |
+          python -m ruff check \
+            src/sparkbrain/learned/h7_formal_r3.py \
+            src/sparkbrain/learned/h7_formal_r3_integrity.py \
+            scripts/build_h7_formal_r3_preidentity.py \
+            tests/learned/test_h7_formal_r3.py
       - name: Build non-result R3 integrity closure
         run: |
           python scripts/build_h7_formal_r3_preidentity.py \
@@ -48,17 +57,9 @@ jobs:
             src/sparkbrain/learned/h7_formal_r3.py \
             src/sparkbrain/learned/h7_formal_r3_integrity.py \
             scripts/build_h7_formal_r3_preidentity.py
-      - name: R3 preidentity tests
-        run: python -m pytest -q tests/learned/test_h7_formal_r3.py
-      - name: R3 lint
-        run: |
-          python -m ruff check \
-            src/sparkbrain/learned/h7_formal_r3.py \
-            src/sparkbrain/learned/h7_formal_r3_integrity.py \
-            scripts/build_h7_formal_r3_preidentity.py \
-            tests/learned/test_h7_formal_r3.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
         with:
           name: h7-formal-r3-preidentity-${{ github.sha }}
           path: artifacts/formal_h7_r3/preidentity_ci
-          if-no-files-found: error
+          if-no-files-found: warn
