@@ -1,33 +1,33 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-23T04:20:37+09:00",
+  "timestamp": "2026-09-23T05:19:12+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260923T042037+0900-R72-21A0646D",
-    "sequence": 72,
-    "material_change": true,
-    "material_change_reason": "R4_LOCK_MANIFEST_DURABILITY_CLOSED_BUT_EXACT_SCIENTIFIC_RUNTIME_FUNCTIONAL_REALIZATION_AND_PROTECTED_EXECUTOR_BINDING_REMAIN_PREIDENTITY_GAPS",
-    "supersedes_generation_id": "METHCAL-20260923T031749+0900-R71-B73D5A2C",
+    "generation_id": "METHCAL-20260923T051912+0900-R73-6B1E94D3",
+    "sequence": 73,
+    "material_change": false,
+    "material_change_reason": "NO_NEW_REPOSITORY_OR_EVIDENCE_DELTA_CONTROL_R38_AND_ANALYST_R86_ADOPT_R72_BOUNDARY_WITH_CYCLE11_REF_UNCHANGED",
+    "supersedes_generation_id": "METHCAL-20260923T042037+0900-R72-21A0646D",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260923T031749+0900-R71-B73D5A2C",
+      "generation_id": "METHCAL-20260923T042037+0900-R72-21A0646D",
       "branch": "ops/methodology-calibration-audit",
-      "commit": "c49c2077c034e077a214e224eea928daf89edeb4"
+      "commit": "898fc092abd5c68919966a8219687b22fd6116c7"
     },
     "human_directive": {
       "id": "HUMAN-20260922-005",
       "role": "HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260922T235000+0900-R37-7A3E9C51",
+      "generation_id": "CTRL-20260923T045000+0900-R38-6985844C",
       "branch": "ops/control-brain-handoff",
-      "commit": "23676a55c9473d1cfd22d982ffffd5d2ba18b557"
+      "commit": "e998d47164b5677072157db55d21cd4c34684aed"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260923T035826+0900-R85-1C7E4A92",
+      "generation_id": "EVA-20260923T050030+0900-R86-62D4A1B7",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "8c0564d9acad7b074de66c4f902134a58d31e3f6"
+      "commit": "5c79b2f87281f08d0646d5be3180cc106d2de228"
     },
     "utility_orchestrator": {
       "generation_id": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91",
@@ -48,7 +48,8 @@
       "fresh_formal_authority": 0,
       "one_way_consumed": false,
       "protected_result_runner_present": false,
-      "cycle11_scope": "NON_RESULT_PROTECTED_SOURCE_EXECUTOR_MATERIALIZATION_AND_BINDING_ONLY"
+      "cycle11_scope": "NON_RESULT_PROTECTED_SOURCE_EXECUTOR_MATERIALIZATION_RUNTIME_REALIZATION_AND_BINDING_ONLY",
+      "research_ref_changed_since_r72": false
     },
     "r4_runtime_lock": {
       "lock_path": "artifacts/formal_h7_r4/scientific-runtime.lock",
@@ -57,10 +58,7 @@
       "manifest_sha256": "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",
       "versions_sha256": "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575",
       "durably_committed": true,
-      "preidentity_workflow_run_id": 35768073646,
-      "preidentity_workflow_success": true,
-      "functional_realization_under_exact_lock_proven": false,
-      "current_preidentity_install_surface": "EDITABLE_DEV_LEARNED_SPIKING_NOT_COMMITTED_SCIENTIFIC_LOCK"
+      "functional_realization_under_exact_lock_proven": false
     },
     "pf_r1_development_artifact": {
       "workflow_run_id": 35695286240,
@@ -77,9 +75,9 @@
       "utility_execution_performed": false,
       "classification": "CONTROL_PLANE_REQUEST_AUTHORITY_OBSERVABILITY_DEFECT_FAIL_CLOSED_NOT_SCIENTIFIC_BREACH"
     },
-    "scientific_source_of_truth": "stable main plus independently fetched evidence refs, exact research source/workflow/artifacts; ops branches are mailbox/history/authority records only"
+    "scientific_source_of_truth": "stable main plus independently fetched evidence refs, exact research refs/workflows/artifacts; ops branches are mailbox/history/authority records only"
   },
-  "audit_result": "MATERIAL_CALIBRATION_UPDATE",
+  "audit_result": "NO_MATERIAL_CALIBRATION_CHANGE",
   "overall_classification": "MIXED_CALIBRATION",
   "gate_classifications": {
     "hard_integrity_policy": "KEEP",
@@ -125,8 +123,8 @@
     "protected_adaptive_evaluation_validity_and_exposure_observability": "TIGHTEN"
   },
   "false_positive_negative_risks": {
-    "false_positive": "MODERATE_WATCH: static lock/manifest validation in an editable dev environment must not be mistaken for functional proof of the exact protected scientific runtime; concealed-evaluation and semantic raw/preserve gates also remain.",
-    "false_negative": "MODERATE_WATCH: mechanism supply remains one lineage; one clean exact-lock realization is relevant, while demanding reproducibility of irrelevant dev tooling would be overconservative.",
+    "false_positive": "MODERATE_WATCH: static lock/manifest validation or editable-development CI must not be mistaken for functional proof of the protected scientific runtime; concealed-evaluation and semantic raw/preserve gates remain.",
+    "false_negative": "MODERATE_WATCH: mechanism supply remains one lineage; exact scientific-runtime realization is relevant while reproducibility of irrelevant dev-only tooling would be overconservative.",
     "opportunity_cost": "MODERATE_WATCH: PF-R1 preservation remains blocked by authority wiring and source/executor/runtime closure still precedes legitimate one-way entry.",
     "moving_goalpost_rescue_risk": "LOW_TO_MODERATE_WATCH_IMPROVING",
     "over_terminalization": "LOW_TO_MODERATE_WATCH_IMPROVING"
@@ -141,23 +139,23 @@
     "h7_phase": "RESULT_EXPOSED_DEVELOPMENT",
     "r4_lock_manifest_durable_capture": "CLOSED",
     "r4_exact_runtime_functional_realization": "OPEN_TIGHTEN",
-    "cycle11_nonresult_executor_materialization": "CALIBRATED_IF_SCIENTIFIC_SEMANTICS_UNCHANGED",
+    "cycle11_nonresult_executor_materialization": "AUTHORIZED_PREIDENTITY_ONLY_NOT_YET_MATERIALIZED",
     "pf_r1_evidence_accounting": "ONE_COMPLETED_PREFORMAL_DEVELOPMENT_OBSERVATION_CONFIRMATORY_COUNT_ZERO",
     "pf_r1_byte_durability": "TIGHTEN_BLOCKED_BY_REQUEST_LEVEL_AUTHORITY_DIVERGENCE",
     "repeated_result_bearing_development_case": "INSUFFICIENT_EVIDENCE"
   },
-  "pass_reachability": "REALISTIC_CONDITIONAL: preserve the committed R4 lock/manifest, materialize and synthetically validate the frozen protected executor in one clean exact-lock environment, bind final source/runner/scorer/preserver/runtime inputs, resolve PF-R1 exact-byte preservation authority, close raw/holdout/preserve gates, then require fresh one-way authorization; no evidence standard need be weakened",
+  "pass_reachability": "REALISTIC_CONDITIONAL: preserve committed R4 lock/manifest, materialize and synthetically validate the frozen protected executor in one clean exact-lock environment, bind final source/runner/scorer/preserver/runtime inputs, resolve PF-R1 exact-byte preservation authority, close raw/holdout/preserve gates, then require fresh one-way authorization; no evidence standard need be weakened",
   "claim_type_findings": {
     "same_object_system_to_mechanism_upgrade_observed": false,
     "fresh_system_successor_observed": true,
     "fresh_system_to_mechanism_successor_observed": false,
     "candidate33_status": "SYSTEM_RESULT_EXPOSED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED",
-    "h7_status": "MECHANISM_RESULT_EXPOSED_ACTIVE_FORMAL_R4_PREIDENTITY_SOURCE_EXECUTOR_RUNTIME_CLOSURE",
+    "h7_status": "MECHANISM_RESULT_EXPOSED_ACTIVE_FORMAL_R4_CYCLE11_PREIDENTITY_SOURCE_EXECUTOR_RUNTIME_CLOSURE",
     "formal_identity_consumed": false
   },
   "mechanism_supply_health": "ONE_ACTIVE_MECHANISM_FORMALIZATION_LINEAGE_QUALITY_FLOOR_INTACT_BUT_MECHANISM_SUPPLY_THIN",
   "funnel_observability": {
-    "authority_generation": "EVA-20260923T035826+0900-R85-1C7E4A92",
+    "authority_generation": "EVA-20260923T050030+0900-R86-62D4A1B7",
     "canonical_population": 33,
     "classified_population": 33,
     "classification_completeness": 1.0,
@@ -202,6 +200,7 @@
   "confidence": {
     "r4_lock_manifest_durable_capture": "HIGH",
     "formal_one_way_integrity_unchanged": "HIGH",
+    "cycle11_research_ref_unchanged_since_r72": "HIGH",
     "protected_r3_r4_result_runner_absent_at_current_head": "HIGH",
     "exact_runtime_functional_realization_gap": "MEDIUM_HIGH",
     "pf_r1_authorization_divergence": "HIGH",
