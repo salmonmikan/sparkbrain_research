@@ -103,3 +103,7 @@ must_not_change_frozen_or_consumed:
   - no rerun, rescore, retune, relabel, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, Utility execution, or scheduler change
 utility_request_created: null
 ```
+
+## Freshness addendum
+
+After the initial persistence, the allowed orchestrator mailbox was re-fetched and SUB had advanced from R57 to `SUB-20260922T103553+0900-NOOP-R58INTENTIONALIDLE-7D4C21A9@c7443d5dd4c118cea86ed62f1681ff4f7cb943ba`. This is a no-target, NON_EVIDENTIARY intentional-idle generation under the same `EVA-20260922T100852+0900-R58-7D4C21A9` authority, with no scientific result or candidate-lifecycle delta. It does not change the blind target, attack hypotheses, audit classification, affected lines, or PD01 interpretation. Stable `main`, Control R31, and Evidence Analyst R58 were unchanged on the same freshness pass.
