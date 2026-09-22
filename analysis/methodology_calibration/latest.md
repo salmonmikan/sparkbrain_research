@@ -1,31 +1,23 @@
-# SparkBrain Methodology Calibration Audit — R66
+# SparkBrain Methodology Calibration Audit — R67
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260922T213200+0900-R66-2C8F7A41`
-- produced_at: `2026-09-22T21:32:00+09:00`
-- supersedes: `METHCAL-20260922T201843+0900-R65-4B9E71C2`
+- generation_id: `METHCAL-20260922T223100+0900-R67-E5A19C42`
+- produced_at: `2026-09-22T22:31:00+09:00`
+- supersedes: `METHCAL-20260922T213200+0900-R66-2C8F7A41`
 - authority_scope: `METHODOLOGY_ADVISORY_ONLY`
 - overall_classification: `MIXED_CALIBRATION`
 
 ## Material update
 
-Two live rollout cases materially sharpen HUMAN-20260922-005.
+The strongest new calibration evidence is an information-level evaluation-surface defect in H7 FORMAL-R2 that is distinct from exact input identity and official workflow access. Literature R31 independently reconstructed the exact future R2 evaluation episodes and target labels from the public preidentity branch: the evaluation seed block, world assignment, step count, `split=test`, deterministic generator, and target-generating world factories are all public. R75's R2 split binding therefore fixes provenance/identity ambiguity but does not create an unexposed holdout.
 
-First, candidate 33's previously ambiguous CI failure is now exactly diagnosed. The frozen SYSTEM Architecture tests did not reach the intended auditability/provenance observable: both Python 3.11 and 3.13 fail while creating the required user namespace with `unshare: write failed /proc/self/uid_map: Operation not permitted`. The branch remains `71af7a36862eeb2b5d08c2a8f37462ed21acc972`; no post-failure research commit is observed. Evidence Analyst R75 therefore correctly keeps candidate 33 `OPEN_DEVELOPMENT`, moves it to `HOLD_METHOD_LIMITED / NONTERMINAL_HOLD / QUEUED`, and permits same-revision continuation only on a bounded runner that can execute the already-fixed isolation contract unchanged.
+This is not evidence of tuning or misconduct, and it invalidates no historical PASS/FAIL because H7 has no consumed FORMAL identity. It is nevertheless a material preidentity calibration blocker under the hard no-held-out-leakage floor. `protected_evaluation_accessed=false` is not sufficient when the evaluation rows and targets are reconstructible while claim-capable development choices remain possible. Control R36 correctly separates exact-input binding, workflow access control, and information-level exposure and keeps H7 STOP before identity, STARTED, protected evaluation, or result-bearing execution.
 
-This refines R65's provisional exposure interpretation. A failed CI/test step is not automatically a `RESULT_EXPOSED_DEVELOPMENT` event. The calibrated boundary is whether the run reaches an intended claim-bearing or science-facing development observable that can rationally inform scientific choices. A pre-observable environment-capability failure may remain OPEN, provided the failure/provenance is retained and the scientific contract is not weakened in response. Changing the isolation backend, trust root, resource caps, raw schema, verdict semantics, comparator/provenance contract or claim meaning to escape the runner limitation is still `SCIENCE_AFFECTING_CHANGE` and must be explicitly versioned before execution.
+The calibrated prospective response is not to rewrite R2 in place. If a clean unseen/protected confirmatory PASS is required, use a fresh versioned successor/evaluation surface whose generator/distribution/evaluator/intervention/comparator/sample-size/decision rule are fixed first and whose final evaluation entropy is concealed until after source/contract binding, with the seed/key revealed only after immutable raw preservation. If R2 is ever used unchanged, it must be described as a fixed public/reconstructible evaluation surface and must not inherit unseen/protected-holdout language without stronger independent evidence.
 
-Second, H7 provides the first live compliant post-result `SCIENCE_AFFECTING_CHANGE` case under HUMAN-005. Cycle-7 preidentity validation found that `Episode.split` was an unfixed exact-input-identity field even though it is embedded in `episode_id` and propagated into learned examples. MAIN stopped before choosing it or creating a FORMAL identity. Evidence Analyst R75 prospectively versioned the change as `H7-FORMAL-R2-INPUT-SPLIT-BINDING-AND-PREIDENTITY-REVALIDATION`: fit=`train`, calibration=`dev`, FORMAL evaluation=`test`, and result-bearing `smoke` forbidden. The new research branch `research/main-h7-formal-r2-input-split-r75-cycle8` now exists at `4d898b150caede1cbe0e57a8d12a37b9e71d18a0`; it adds a new R2 contract/runner implementation while leaving R1 artifacts unchanged. The R2 contract explicitly records `SCIENCE_AFFECTING_CHANGE_VERSIONED_BEFORE_FORMAL_IDENTITY`, preserves every other R1 scientific field, and keeps identity/STARTED/protected evaluation/result-bearing execution/scoring/scientific preserve all false.
+A second live rollout case remains positive. Candidate 33's cycle-3 reassessment found a compatible bounded Linux runtime that satisfied the already-frozen namespace/read-only-remount contract without code or scientific-contract mutation. The intended SYSTEM Architecture observable was reached, clean/mismatch and fail-closed controls passed, semantic equivalence was explicitly not claimed, and SUB proposed `RESULT_EXPOSED_DEVELOPMENT` plus `TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`. Control correctly waits for fresh Analyst lifecycle review rather than silently terminalizing or manufacturing a successor. This is evidence that cycle 3 is a reassessment point, not a hard cap, and that environment placement can be iterated without rescue tuning when the scientific contract is unchanged.
 
-This is positive evidence that result-exposed development can change a science-affecting prospective contract without laundering the old result or weakening FORMAL one-way integrity. It is not yet end-to-end evidence for `CONSUMED_ONE_WAY`: `identity_candidate_sha` remains null and no new H7 control/preserve/evidence identity exists.
-
-A remaining implementation-calibration defect is runner-capability observability. Candidate 33's readiness path checked that `unshare` and GNU `time` existed, but not that the hosted runner could actually create the required user namespace. The programme should distinguish tool-presence readiness from functional environment-capability readiness. This is a development observability/preflight issue, not a reason to weaken the frozen isolation contract.
-
-## Authoritative refresh / hard floor
-
-Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Annotated `evidence/*` remains exactly five unchanged tag objects. Tag-form `formal/*`, `sealed/*` and `freeze/*` remain empty. Branch search shows H7 research branches only; no fresh H7 control/preserve identity is observed. No consumed FORMAL identity has been rerun, retuned, rescored or historically rewritten.
-
-PF-R1 durable raw/summary byte preservation remains unresolved. Existing request `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` is still the latest request ref and no completed preservation result is observed. It remains a preidentity gate; rerunning PF-R1 is not an acceptable substitute.
+Finally, H7 R2 advanced one preidentity commit after Control R36: a two-line runtime-validation repair normalizes Torch local-build metadata while retaining the base `torch==2.13.0` requirement. The exact head `a7a3c824...` now has successful generic CI and successful non-result-bearing preidentity validation. This remains development evidence only. Because exact package/runtime binding is a hard-floor dimension and R31 is newer than Analyst R75, the exact repaired head still requires fresh Analyst review before any `identity_candidate_sha` can be fixed.
 
 ## Gate-by-gate calibration
 
@@ -37,16 +29,14 @@ PF-R1 durable raw/summary byte preservation remains unresolved. Existing request
 | OPEN development bounded iteration | `KEEP` |
 | RESULT_EXPOSED same-object SCIENCE_INVARIANT_REPAIR | `KEEP` |
 | post-result SCIENCE_AFFECTING change → explicit version/fresh successor | `KEEP` |
-| **live post-result science-affecting versioning (H7 R2)** | **`KEEP`** |
-| **preserve prior revision while versioning science-affecting change** | **`KEEP`** |
-| **development exposure boundary: pre-observable environment failure** | **`CLARIFY`** |
-| **candidate-33 OPEN after hosted-runner capability failure** | **`KEEP`** |
-| **functional runner capability preflight vs binary-presence readiness** | **`TIGHTEN`** |
-| changing isolation/backend semantics to escape environment failure | `SPLIT_BY_CLAIM_TYPE` |
-| repeated development rerun/retune non-independent accounting | `INSUFFICIENT_EVIDENCE` |
-| durable RESULT_EXPOSED raw/result bytes | `TIGHTEN` |
+| H7 R2 post-result science-affecting versioning | `KEEP` |
 | cycle 3 as automatic terminal cap | `RELAX` |
 | cycle 3 mandatory reassessment with prospective information gain | `KEEP` |
+| candidate-33 exact-contract environment-placement iteration | `KEEP` |
+| candidate-33 lifecycle after SYSTEM Architecture conformance | `CLARIFY` |
+| repeated development observations as independent evidence | `KEEP` |
+| repeated result-bearing rerun/retune live case | `INSUFFICIENT_EVIDENCE` |
+| durable RESULT_EXPOSED raw/result bytes | `TIGHTEN` |
 | PRE_FORMAL as development surface | `KEEP` |
 | `preformal_eligible` distinct from READY | `KEEP` |
 | READY = informative next test, not prior success | `KEEP` |
@@ -63,60 +53,71 @@ PF-R1 durable raw/summary byte preservation remains unresolved. Existing request
 | first genuine SYSTEM-over-comparable-MECHANISM exception | `INSUFFICIENT_EVIDENCE` |
 | theory-backward quality floor / one-in-three supply | `KEEP` |
 | `NO_COHERENT_MECHANISM_TARGET` liveness semantics | `KEEP` |
-| SYSTEM architecture/testbed/reproducibility value | `KEEP` |
-| PRE_FORMAL raw-before-score | `KEEP` |
-| future FORMAL exact source/protocol/package/runtime/input/evaluator binding | `TIGHTEN` |
-| FORMAL preserve-before-read / immutable evidence | `TIGHTEN` |
-| comparator-equivalence verifier independence | `TIGHTEN` |
+| exact-input identity vs information-level holdout secrecy | `CLARIFY` |
+| public reconstructibility of future FORMAL targets | `TIGHTEN` |
+| official protected-workflow nonaccess as sufficient holdout protection | `TIGHTEN` |
+| claim-capable mutation after evaluation-surface disclosure | `TIGHTEN` |
+| fresh concealed post-binding evaluation surface for clean unseen-holdout PASS | `TIGHTEN` |
+| runtime local-build metadata normalization | `CLARIFY` |
+| exact source/protocol/package/runtime/input/evaluator binding | `TIGHTEN` |
+| raw-before-score | `KEEP` |
+| preserve-before-read / immutable FORMAL evidence | `TIGHTEN` |
+| comparator verifier independence | `TIGHTEN` |
 | protected/adaptive-evaluation validity | `TIGHTEN` |
 
 ## Mandatory questions
 
-1. **Development phase end-to-end?** Consistent through OPEN, RESULT_EXPOSED and preidentity versioning; fresh `CONSUMED_ONE_WAY` end-to-end remains unobserved.
-2. **Cycle 3 a hard cap?** No. H7 is now cycle 8 because each continuation has a prospective information-gain rationale.
-3. **Repair split correct?** Yes in the two live stress cases: candidate 33's environment limitation does not authorize semantic repair; H7's missing `Episode.split` is correctly classified science-affecting and explicitly versioned.
-4. **Rerun/retune laundering?** None observed. Candidate 33 has no post-failure commit; PF-R1 remains one nonconfirmatory development observation.
-5. **RESULT_EXPOSED prior results preserved?** H7 R1/PF-R1 lineage is preserved and R2 is additive/versioned. Exact PF-R1 result-byte durability remains unresolved, so preservation is semantically strong but not yet operationally complete.
-6. **FORMAL one-way integrity?** Unchanged; no H7 identity/STARTED/result/evidence consumption exists.
-7. **Fresh SYSTEM→MECHANISM successor?** Still unobserved. Candidate 33 remains a legitimate SYSTEM→SYSTEM successor and candidate 32 stays terminal.
+1. **Development phase end-to-end?** Consistent through OPEN, RESULT_EXPOSED, versioned post-result change, and preidentity repair; fresh `CONSUMED_ONE_WAY` end-to-end remains unobserved.
+2. **Cycle 3 a hard cap?** No. Candidate 33 gained distinct information at cycle 3 under an unchanged contract, and H7 continues only with explicit information-gain rationales.
+3. **Repair split correct?** Mostly yes. H7 `Episode.split` was correctly versioned as science-affecting; candidate-33 runner placement used the frozen contract unchanged. The new Torch local-build normalization is acceptable as science-invariant only if the exact realized package/runtime manifest is frozen and reviewed before identity.
+4. **Rerun/retune laundering?** None observed. Candidate 33 synthetic Architecture runs are non-evidentiary; PF-R1 remains one nonconfirmatory development observation.
+5. **RESULT_EXPOSED prior results preserved?** Semantically yes for H7 R1/PF-R1 and additive R2; operational exact-byte durability for PF-R1 remains unresolved.
+6. **FORMAL one-way integrity?** Unchanged. No H7 identity, STARTED, result-bearing FORMAL execution, official scoring, or scientific evidence ref exists.
+7. **Fresh SYSTEM→MECHANISM successor?** Still unobserved. Candidate 33 is a legitimate SYSTEM→SYSTEM successor and remains SYSTEM-ceiling after conformance.
 8. **PRE_FORMAL hidden FORMAL?** No. READY remains development readiness and PF-R1 remains nonconfirmatory.
-9. **Terminal/supply calibrated?** Improving but thin. Candidate 33 is a nonterminal method-limited HOLD rather than being terminalized for runner scarcity; MECHANISM supply remains essentially H7 alone.
-10. **PASS reachable without weakening standards?** Yes conditionally. Development can version real prospective defects while FORMAL remains blocked until exact identity/binding/preservation/protected-evaluation gates close.
+9. **Terminal/supply calibrated?** Improving but thin. Candidate 33 was not killed for infrastructure scarcity; after conformance, current-object terminalization is plausible but must be canonicalized by fresh Analyst authority. MECHANISM supply remains essentially H7 alone.
+10. **PASS reachable without weakening standards?** Yes, but a clean protected/unseen-holdout PASS should not rely on the reconstructible R2 evaluation surface. A fresh prospectively versioned concealed evaluation surface can preserve the hard floor without reducing evidence standards.
 
 ## Funnel / supply / observability
 
-Fresh canonical Analyst R75 reports `33 = MECHANISM 13 / SYSTEM 20`, classification completeness `33/33`, `ACTIVE=1 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=31`, PRE_FORMAL eligible/READY `1/1`, fresh FORMAL authority `0`, and development phases `OPEN=3 / RESULT_EXPOSED=30 / canonical CONSUMED_ONE_WAY=0`; seven historical official identities remain one-way.
+The latest canonical Analyst remains R75: `33 = MECHANISM 13 / SYSTEM 20`, classification completeness `33/33`, `ACTIVE=1 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=31`, PRE_FORMAL eligible/READY `1/1`, fresh FORMAL authority `0`, and development phases `OPEN=3 / RESULT_EXPOSED=30 / canonical CONSUMED_ONE_WAY=0`; seven historical official identities remain one-way.
 
-Candidate 7/H7 is `MECHANISM / RESULT_EXPOSED_DEVELOPMENT / ACTIVE / READY`, now revision `H7-FORMAL-R2-INPUT-SPLIT-BINDING-AND-PREIDENTITY-REVALIDATION`, with `identity_candidate_sha=null`. Candidate 33 is `SYSTEM / OPEN_DEVELOPMENT / HOLD_METHOD_LIMITED / NONTERMINAL_HOLD / QUEUED` because the frozen namespace-isolation contract cannot run on the observed GitHub-hosted runner. Its failure receives no theory-backward quota credit.
+Do not overwrite those canonical counts from post-R75 execution reports. SUB has new non-evidentiary candidate-33 Architecture conformance and proposes moving that object to `RESULT_EXPOSED_DEVELOPMENT` and `TERMINAL_FOR_CURRENT_OBJECT`, but Control R36 correctly leaves this pending fresh Analyst lifecycle review.
 
-Mechanism supply health: `ONE_ACTIVE_MECHANISM_FORMALIZATION_LINEAGE_PLUS_ONE_SYSTEM_METHOD_LIMITED_HOLD; QUALITY_FLOOR_INTACT_BUT_MECHANISM_SUPPLY_REMAINS_THIN`.
+Mechanism supply health: `ONE_ACTIVE_MECHANISM_FORMALIZATION_LINEAGE_PLUS_ONE_SYSTEM_ARCHITECTURE_OBJECT_PENDING_POST_CONFORMANCE_CANONICAL_REVIEW; QUALITY_FLOOR_INTACT_BUT_MECHANISM_SUPPLY_REMAINS_THIN`.
 
 ## Risks
 
-False-positive risk: `LOW_TO_MODERATE_WATCH_IMPROVING`. The first observed post-result science-affecting H7 change was versioned prospectively and did not create a FORMAL identity. Remaining risks are semantic weakening to make candidate 33 runnable and later R2 identity binding drift.
+False-positive risk: `MODERATE_WATCH`. It rises from R66 because exact H7 R2 evaluation targets are publicly reconstructible before identity; a future positive result must not be represented as protected/unseen holdout evidence absent a fresh non-exposed surface or stronger independent non-exposure justification.
 
-False-negative/opportunity-cost risk: `MODERATE_WATCH`. Candidate 33 is correctly not terminalized for an infrastructure limitation, but viable MECHANISM supply is still a single effective lineage.
+False-negative/opportunity-cost risk: `MODERATE_WATCH`. Candidate 33 demonstrates that a method-limited object can recover through environment placement without contract weakening, but viable MECHANISM supply remains one effective lineage.
 
-Moving-goalpost/rescue risk: `LOW_TO_MODERATE_WATCH_IMPROVING`. H7 R2 demonstrates correct versioning of an outcome-independent exact-input defect. Candidate 33 has no post-failure mutation; any backend/isolation change remains the next stress point.
+Moving-goalpost/rescue risk: `LOW_TO_MODERATE_WATCH`. H7 R2 science-affecting split binding was versioned correctly and candidate 33 did not alter its contract. The next stress point is whether R31 causes in-place seed/evaluation repair; that must not happen.
 
-Over-terminalization risk: `LOW_TO_MODERATE_WATCH_IMPROVING`. Candidate 32 remains terminal while distinct candidate 33 remains a nonterminal method-limited HOLD.
+Over-terminalization risk: `LOW_TO_MODERATE_WATCH_IMPROVING`. Candidate 33 survived an infrastructure hold, reached its SYSTEM observable, and is now appropriately awaiting current-object lifecycle review rather than topic-level suppression.
 
 ## PASS reachability
 
-PASS remains realistically reachable without lowering evidence standards. The development process now has a live example of a science-affecting post-result defect being versioned before one-way consumption. H7 still requires a freshly reviewed exact R2 SHA, complete runner/scorer/preserver/runtime/package/input/evaluator binding, seed/collision and no-clobber checks, durable PF-R1 provenance, raw-before-score, preserve-before-read, immutable evidence, and protected/adaptive-evaluation validity before any clean scientific PASS can exist.
+PASS remains realistic without lowering evidence standards. Current R2 has improved exact identity and now-green preidentity plumbing, but exact identity is not equivalent to holdout secrecy. Under the hard integrity floor, clean confirmatory PASS should require a fresh evaluation surface whose contents/targets were not reconstructible during claim-capable development, plus exact source/protocol/package/runtime/input/evaluator binding, raw-before-score, preserve-before-read, immutable evidence, and valid protected/adaptive-evaluation assumptions.
+
+A narrow result on R2's fixed public/reconstructible surface may still be scientifically describable if a fresh authority explicitly scopes it that way, but it should not be treated as equivalent to an unseen/protected FORMAL PASS.
 
 ## Prospective recommendations
 
-For candidate 33, keep the object OPEN and method-limited unless/until a bounded runner is independently verified to satisfy the frozen namespace/read-only-remount contract. Add a functional capability preflight that actually exercises the required namespace operation before labeling the environment runnable. Do not substitute a weaker backend or trust model inside the same revision; such a change must be versioned first.
+For H7, keep R2 and all earlier development artifacts unchanged. Do not repair seeds/evaluation semantics in place after R31. Before any identity, require fresh Analyst review that consumes R31, Control R36, and the exact current head `a7a3c824...`. If clean protected-holdout inference is required, create a fresh versioned successor/evaluation surface with concealed post-binding entropy and reveal the evaluation key only after immutable raw preservation.
 
-For H7, preserve R1 and PF-R1 unchanged, keep R2 limited to the prospectively authorized split binding plus science-invariant preidentity plumbing, and require fresh review of the exact final R2 head before `identity_candidate_sha` is fixed. Do not infer identity readiness from branch materialization alone. Complete the existing PF-R1 byte-preservation request rather than rerunning development.
+For the runtime metadata repair, bind the full realized package/runtime manifest—not merely the normalized base version—before identity and verify that local-build metadata acceptance does not broaden the scientific resource/privilege contract.
+
+For candidate 33, preserve the exact non-evidentiary conformance provenance, keep the SYSTEM ceiling, and let fresh Analyst authority decide current-object terminalization. Do not manufacture a new integration successor unless it has distinct prospective information gain.
+
+Complete the existing PF-R1 exact-byte preservation request rather than rerunning PF-R1.
 
 ## Utility / integrity / confidence
 
-No new Utility request is created. Existing `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` remains the only relevant bounded request and is not observed completed.
+No new Utility request is created. Existing `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` remains pending and is not duplicated.
 
-Hard floor: `CONFIRMED / DO NOT RELAX`.
+Hard floor: `CONFIRMED / DO NOT RELAX`. No current breach is declared because H7 has not crossed the one-way FORMAL boundary; instead, R31 is a preidentity blocker that must prevent a reconstructible surface from being misclassified as unexposed held-out evidence.
 
-Confidence: `HIGH` on candidate 33's environment-capability diagnosis, its correct OPEN/HOLD disposition, H7 R2's explicit versioning/preservation structure, and unchanged FORMAL floor; `MEDIUM_HIGH` on full development-axis rollout because fresh consumed-FORMAL remains unobserved; `UNOBSERVED` for a genuine fresh SYSTEM→MECHANISM successor.
+Confidence: `HIGH` on the reconstructible-surface finding, unchanged FORMAL one-way state, candidate-33 same-contract conformance, and H7 preidentity repair status; `MEDIUM_HIGH` on runtime-build normalization being science-invariant pending exact-manifest review; `UNOBSERVED` for fresh consumed-FORMAL end-to-end and a genuine fresh SYSTEM→MECHANISM successor.
 
-Questions for Control/Analyst: will candidate 33 environment readiness use a functional namespace-capability probe rather than tool presence? Will any isolation/backend change be versioned before execution? Will H7 R2 receive fresh exact-head review before an identity candidate is fixed? Will PF-R1 exact bytes be durably preserved before one-way identity creation?
+Questions for Control/Analyst: Will R2 be explicitly classified as a public/reconstructible evaluation surface rather than protected/unseen? If clean held-out inference is required, will a fresh versioned concealed surface be created rather than editing R2 in place? Will the exact `a7a3c824...` runtime/package manifest be reviewed and bound before identity? Will candidate 33's post-conformance lifecycle be canonicalized without automatic successor manufacture?
