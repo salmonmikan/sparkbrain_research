@@ -1,0 +1,208 @@
+{
+  "schema_version": 2,
+  "contract_id": "H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1",
+  "status": "FORMAL_CONTRACT_DESIGN_ONLY_NO_IDENTITY_NO_EXECUTION",
+  "created_under": {
+    "evidence_analyst_generation": "EVA-20260922T161640+0900-R65-C4F8A21D",
+    "evidence_analyst_commit": "1aa007bce54ea4ae9768fe4ca3961cd38b59c0df",
+    "candidate_id": "CAND-H7-RESPONSIBILITY",
+    "candidate_ordinal": 7,
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-FORMAL-R1-DYNAMIC-TOP1-CONTRACT-DESIGN",
+    "previous_development_revision": "H7-PF-R1-FROZEN-PANEL-DEVELOPMENT-EVALUATION",
+    "research_layer": "FORMAL",
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "READY",
+    "hold_class": null,
+    "hold_reason": null,
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "system_priority_exception_used": false,
+    "cycle": 5
+  },
+  "analyst_decision": "GO_H7_FORMAL_R1_CONTRACT_DESIGN_ONLY_STOP_BEFORE_ONE_WAY_IDENTITY_CREATION_OR_RESULT_BEARING_EXECUTION",
+  "prior_result_preservation": {
+    "pf_r1_branch": "research/main-h7-pf-r1-frozen-panel-r64-cycle4",
+    "pf_r1_head": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
+    "pf_r1_contract": "artifacts/preformal_h7_pf_r1/contract.json",
+    "pf_r1_result_class": "PRE_FORMAL_DEVELOPMENT_NONCONFIRMATORY",
+    "pf_r1_disposition": "RESIDUAL_BEYOND_FROZEN_PANEL_PREFORMAL_NONCONFIRMATORY",
+    "pf_r1_raw_sha256": "695261aeadab1ab311b60787f1b6a9023c29e24009c6f173c1a660469a6906db",
+    "use_as_confirmatory_evidence": false,
+    "use_for_margin_selection": false,
+    "use_for_sample_size_selection": false,
+    "use_for_seed_selection": false,
+    "rerun_retune_rescore_authorized": false
+  },
+  "claim_and_estimand": {
+    "claim": "Within the exact four-world regime and deterministic dynamic TOP1 selection-and-cut policy, native local route/state activity has a positive causal contribution to task accuracy and that contribution is not reproduced by each prospectively capacity-adequate ordinary reduction in the frozen panel.",
+    "policy_scope": "TOP1_SELECTED_LOCAL_NODE_CUT_V1 dynamic policy; selected node identity may vary by episode and step.",
+    "route_identity_claim": false,
+    "uniqueness_claim": false,
+    "task_specificity_claim": false,
+    "completeness_claim": false,
+    "sufficiency_claim": false,
+    "broad_reduction_exhaustion_claim": false,
+    "external_generalization_claim": false,
+    "primary_estimand": "Equal-weight mean across four worlds of episode-level paired accuracy loss baseline_minus_cut under the dynamic TOP1 policy.",
+    "capacity_estimand": "For each comparator, equal-weight mean across four worlds of episode-level baseline accuracy difference comparator_minus_native on the same formal evaluation episodes.",
+    "reduction_estimand": "For each comparator, equal-weight mean across four worlds of episode-level paired causal-effect difference comparator_delta_minus_native_delta.",
+    "experimental_unit": "episode seed; 24 recurrent step rows are within-episode observations and are never treated IID"
+  },
+  "source_protocol_package_binding": {
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "source_parent_research_head": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
+    "dev_r2_contract_blob": "82cb0fe44a958cda6d44758b0f15302f6e540793",
+    "h7_dev_r1_blob": "75637eb953e1b6c1b5cbcd9f5cb4131cb063748e",
+    "h7_dev_r2_blob": "c03fa9cbfcf09a1a214652dd1896852a8eb69182",
+    "pyproject_blob": "49d47f3d65f67f1c0a6b82a3f7fc2d0364e2a88c",
+    "intervention": "TOP1_SELECTED_LOCAL_NODE_CUT_V1",
+    "ordinary_reduction_panel": [
+      "ORDINARY_DENSE_RECURRENT_V1",
+      "FINITE_STATE_ROUTE_HISTORY_V2",
+      "ELIGIBILITY_ROUTE_LEDGER_V2"
+    ],
+    "formal_identity_creation": "FORBIDDEN_IN_THIS_REVISION",
+    "future_identity_binding_rule": "A later Analyst-authorized one-way identity must bind the exact final source SHA, this contract blob SHA, exact runner/scorer/preserver blobs, package-manifest digest, runtime-manifest digest, input_surface_sha256, evaluator_spec_sha256, candidate/intervention/comparator IDs and decision rules before STARTED."
+  },
+  "runtime_contract": {
+    "os_runner_family": "ubuntu-24.04",
+    "python_major_minor": "3.11",
+    "torch_version": "2.13.0",
+    "device": "cpu",
+    "cpu_threads": 1,
+    "python_hash_seed": 0,
+    "torch_deterministic_algorithms": true,
+    "runtime_freeze_gate": "Future identity creation must record exact Python patch version, torch version, OS image identifier, canonical pip-freeze digest and relevant environment/thread settings before STARTED; mismatch is pre-execution BLOCKED, not a repair after result exposure."
+  },
+  "input_surface": {
+    "worlds": ["switchworld", "contradiction_world", "goal_conflict_world", "multi_object_world"],
+    "steps_per_episode": 24,
+    "fit_seed_range_inclusive": [8166520, 8166711],
+    "calibration_seed_range_inclusive": [8350164, 8350227],
+    "formal_evaluation_seed_range_inclusive": [8846030, 8846285],
+    "world_assignment": "seed-list index modulo 4 in listed world order",
+    "fit_episodes_per_world": 48,
+    "calibration_episodes_per_world": 16,
+    "evaluation_episodes_per_world": 64,
+    "native_training_seed": 9339631,
+    "dense_training_seed": 9428927,
+    "eligibility_head_seed": 9107020,
+    "selection_derivation": "Seed blocks and training seeds were deterministically derived from the R65 authority text plus role labels before contract materialization; they were not selected from PF-R1 outcomes.",
+    "input_surface_sha256": "bbba6f0cf413e33b66b22c753916ab4db7d59e716bd0b840703a68b7ac3f0be6",
+    "freshness_rule": "No fit/calibration/evaluation seed may overlap PF-R1 ranges 7601000-7601047, 7602000-7602011, 7603000-7603023 or any consumed FORMAL identity. A later pre-START collision audit is mandatory."
+  },
+  "resource_privilege_contract": {
+    "data": "Native and all ordinary comparators receive identical fresh fit/calibration/evaluation episode identities appropriate to their frozen algorithms; evaluation labels are unavailable to training/calibration.",
+    "labels": "Symmetric training/calibration labels only; no future-step labels, protected evaluation labels, outcome-dependent exclusions or evaluator motif identity at prediction time.",
+    "compute": "Native and trainable comparators receive four epochs, learning rate 0.012 and equal fit/calibration episode counts; FSA receives the same fit episodes; extra deterministic inference bookkeeping is allowed but may not expose extra labels/data.",
+    "intervention_privilege": "All arms know baseline/cut status and use the same dynamic TOP1 policy semantics; FSA/eligibility receive only route/state information already frozen by DEV-R2.",
+    "evaluation": "All endpoints use the same 256 formal episode seeds and four-world assignment with no post-hoc filtering.",
+    "mismatch_disposition": "INCONCLUSIVE_RESOURCE_OR_PRIVILEGE_MISMATCH"
+  },
+  "evaluator": {
+    "id": "H7-FORMAL-R1-EVALUATOR-SPEC-V1",
+    "evaluator_spec_sha256": "10cb6e725954636ca9d32f6395e549af50d79ab4dc0b7bb2f063b1ecc4b24430",
+    "unit": "episode_seed_cluster",
+    "world_strata": ["switchworld", "contradiction_world", "goal_conflict_world", "multi_object_world"],
+    "step_rows_per_episode": 24,
+    "aggregation": "Compute each arm metric within episode first; form paired episode contrasts; overall estimand is the equal-weight mean of four world-specific episode means.",
+    "uncertainty": {
+      "method": "paired_stratified_cluster_bootstrap_percentile",
+      "resamples": 50000,
+      "bootstrap_seed": 8885678,
+      "resample_unit": "episode seed within world, with replacement",
+      "pairing": "same resampled episode indices reused for native baseline/cut and all comparator baseline/cut arms",
+      "familywise_alpha": 0.05,
+      "registered_contrasts": 8,
+      "per_contrast_two_sided_confidence": 0.99375,
+      "note": "Bonferroni simultaneous coverage over 8 preregistered contrasts; recurrent step rows are never treated IID."
+    },
+    "contrasts": [
+      "native_baseline_accuracy_minus_one_third",
+      "native_delta_accuracy",
+      "dense_baseline_accuracy_minus_native_baseline_accuracy",
+      "fsa_baseline_accuracy_minus_native_baseline_accuracy",
+      "eligibility_baseline_accuracy_minus_native_baseline_accuracy",
+      "dense_delta_accuracy_minus_native_delta_accuracy",
+      "fsa_delta_accuracy_minus_native_delta_accuracy",
+      "eligibility_delta_accuracy_minus_native_delta_accuracy"
+    ],
+    "secondary_descriptive": "Episode-aggregated mean total-variation distance is reported with the same stratified bootstrap but never changes the primary decision."
+  },
+  "independent_capacity_and_effect_criteria": {
+    "margin_selection_basis": "Margins are zero by design, fixed independently of PF-R1. Allowing baseline under-capacity or a smaller intervention effect to count as ordinary reduction would confound under-capacity with mechanistic reproduction.",
+    "capacity_noninferiority_margin_accuracy": 0.0,
+    "effect_reproduction_margin_delta_accuracy": 0.0,
+    "capacity_adequate": "Simultaneous CI for comparator_baseline_minus_native_baseline has lower bound >= 0.",
+    "effect_reproduced": "For a capacity-adequate comparator, simultaneous CI for comparator_delta_minus_native_delta has lower bound >= 0.",
+    "effect_conclusively_smaller": "For a capacity-adequate comparator, simultaneous CI for comparator_delta_minus_native_delta has upper bound < 0.",
+    "ambiguous": "Any required interval crossing its zero boundary is INCONCLUSIVE, never support for native mechanistic distinctness.",
+    "positive_phenomenon": "Simultaneous CI for native_baseline_accuracy_minus_one_third has lower bound > 0.",
+    "native_local_effect": "Simultaneous CI for native_delta_accuracy has lower bound > 0.",
+    "secondary_tv": "Episode-aggregated mean total-variation is descriptive only and cannot rescue or overturn the primary accuracy decision."
+  },
+  "formal_decision_table": {
+    "INVALID": [
+      "intervention conformance failure",
+      "source/protocol/package/runtime/input/evaluator binding mismatch",
+      "raw-before-score violation",
+      "preserve-before-read violation",
+      "immutable evidence path violation",
+      "resource/privilege mismatch"
+    ],
+    "FAIL_NO_POSITIVE_PHENOMENON": "positive_phenomenon criterion fails conclusively",
+    "FAIL_NO_NATIVE_LOCAL_EFFECT": "native_local_effect criterion fails conclusively",
+    "FAIL_REDUCED_BY_ORDINARY_COMPARATOR": "at least one comparator is capacity_adequate and effect_reproduced",
+    "PASS_LOCAL_DYNAMIC_POLICY_MECHANISTIC_DISTINCTNESS": "positive_phenomenon and native_local_effect pass, and for every frozen comparator capacity_adequate is established and effect_conclusively_smaller is established",
+    "INCONCLUSIVE": "otherwise, including any comparator whose capacity adequacy is not established or whose effect contrast is ambiguous"
+  },
+  "intervention_validity": {
+    "selection": "Freeze unperturbed deterministic TOP1 selected[0] before cut; baseline/cut selected IDs must match exactly.",
+    "input": "Non-target input digest identical across paired arms.",
+    "parameters": "Model/comparator parameter digests identical across paired arms.",
+    "rng": "RNG state digest identical across paired arms.",
+    "cut": "Target previous state, local edge row/column and updated state are zeroed exactly as DEV-R2; cut state never carries forward.",
+    "outputs": "Finite, single-valued, shape/dtype preserved.",
+    "failure": "INVALID_INTERVENTION"
+  },
+  "one_way_integrity_design": {
+    "identity_state": "NOT_CREATED",
+    "started_marker_state": "NOT_CREATED",
+    "result_bearing_workflow_state": "NOT_CREATED_AND_NOT_AUTHORIZED",
+    "raw_before_score": "Future runner emits target-blind episode-level paired observations plus binding/runtime manifests, closes and hashes raw bytes, and terminates without computing PASS/FAIL/INCONCLUSIVE labels.",
+    "preserve_before_read": "A separate preserver creates an immutable preserve ref/object containing exact raw bytes and hashes before any scorer is granted access; scorer input is preserved raw only, never the live runner workspace.",
+    "immutable_evidence_path": "Only after preserve succeeds may the frozen scorer read raw and write a score artifact; evidence/formal/sealed refs require later Analyst authority and a no-clobber same-final-SHA path.",
+    "target_blind_raw": "Raw artifact contains observations and metadata only, never a decision token.",
+    "no_clobber": "Future identity, STARTED, preserve and evidence refs are create-only; any pre-existing exact identity/ref is a hard stop.",
+    "same_final_sha_gate": "Future STARTED, runner, preserver and scorer verify exact source SHA and contract/scorer/preserver blob bindings before capability."
+  },
+  "future_execution_sequence": [
+    "Fresh Analyst reviews and explicitly authorizes this exact contract or a versioned replacement.",
+    "Implement and freeze exact runner, scorer and preserver without changing scientific semantics; bind blob hashes and exact runtime/package/input/evaluator identities.",
+    "Create a fresh one-way identity and preregister decision/falsifier rules; create STARTED with no-clobber at the same final SHA.",
+    "Fit/calibrate only on fresh fit/calibration surfaces under matched privilege/resources.",
+    "Generate formal evaluation episodes exactly once; execute paired baseline/cut observations and write target-blind raw before scoring.",
+    "Immutably preserve raw and binding/runtime manifests before scorer access.",
+    "Score only preserved raw with the frozen evaluator/decision table.",
+    "Persist score/evidence through create-only immutable refs and STOP."
+  ],
+  "this_cycle_authorized": [
+    "materialize this contract design",
+    "ordinary non-result-bearing JSON/schema/lint/build/unit conformance if needed",
+    "science-invariant path/serialization/hash repairs preserving this already-fixed design intent"
+  ],
+  "this_cycle_forbidden": [
+    "FORMAL identity creation or consumption",
+    "STARTED marker creation",
+    "result-bearing or FORMAL workflow dispatch",
+    "protected/held-out evaluation materialization or access",
+    "PF-R1 rerun/retune/rescore",
+    "comparator shopping",
+    "margin/threshold/sample-size changes selected from PF-R1 outcomes",
+    "formal/sealed/freeze/evidence/preserve scientific-ref creation",
+    "historical result rewrite"
+  ],
+  "stop_rule": "STOP after contract-design persistence and non-result-bearing conformance. Fresh Evidence Analyst review is required before identity creation, result-bearing workflow construction/dispatch, protected evaluation access, STARTED, preserve or scoring."
+}
