@@ -1,33 +1,34 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-23T05:19:12+09:00",
+  "timestamp": "2026-09-23T06:20:34+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260923T051912+0900-R73-6B1E94D3",
-    "sequence": 73,
-    "material_change": false,
-    "material_change_reason": "NO_NEW_REPOSITORY_OR_EVIDENCE_DELTA_CONTROL_R38_AND_ANALYST_R86_ADOPT_R72_BOUNDARY_WITH_CYCLE11_REF_UNCHANGED",
-    "supersedes_generation_id": "METHCAL-20260923T042037+0900-R72-21A0646D",
+    "generation_id": "METHCAL-20260923T062034+0900-R74-A3F7C912",
+    "sequence": 74,
+    "material_change": true,
+    "material_change_reason": "H7_CYCLE11_SOURCE_EXECUTOR_MATERIALIZED_EXACT_LOCK_INSTALL_SUCCEEDS_RUNTIME_ASSERT_AND_GENERIC_TEST_FAIL_NEW_RUNNER_INSTALLATION_PROVENANCE_CALIBRATION",
+    "supersedes_generation_id": "METHCAL-20260923T051912+0900-R73-6B1E94D3",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260923T042037+0900-R72-21A0646D",
+      "generation_id": "METHCAL-20260923T051912+0900-R73-6B1E94D3",
       "branch": "ops/methodology-calibration-audit",
-      "commit": "898fc092abd5c68919966a8219687b22fd6116c7"
+      "commit": "ba241a77bc897d6facfc77cf2c26a898501e24f9"
     },
     "human_directive": {
       "id": "HUMAN-20260922-005",
       "role": "HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260923T045000+0900-R38-6985844C",
+      "generation_id": "CTRL-20260923T055000+0900-R39-C31A7D52",
       "branch": "ops/control-brain-handoff",
-      "commit": "e998d47164b5677072157db55d21cd4c34684aed"
+      "commit": "c93f870e47bdb5b1613475e079c0a6dee2aa1753",
+      "note": "mailbox predates final direct research-ref advance; restrictions remain prior governance"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260923T050030+0900-R86-62D4A1B7",
+      "generation_id": "EVA-20260923T061000+0900-R87-7B3D91E4",
       "branch": "ops/evidence-analyst-handoff",
-      "commit": "5c79b2f87281f08d0646d5be3180cc106d2de228"
+      "commit": "f03769227e888a70ea674eb627d4d311a1229c95"
     },
     "utility_orchestrator": {
       "generation_id": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91",
@@ -41,15 +42,17 @@
     "formal_tags": [],
     "sealed_tags": [],
     "freeze_tags": [],
-    "h7_r4": {
+    "h7_r4_cycle11": {
       "branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
-      "head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
+      "head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+      "prior_r73_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
+      "commits_ahead_since_r73": 6,
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
       "fresh_formal_authority": 0,
       "one_way_consumed": false,
-      "protected_result_runner_present": false,
-      "cycle11_scope": "NON_RESULT_PROTECTED_SOURCE_EXECUTOR_MATERIALIZATION_RUNTIME_REALIZATION_AND_BINDING_ONLY",
-      "research_ref_changed_since_r72": false
+      "protected_executor_source_present": true,
+      "synthetic_protected_executor_realization_completed": false,
+      "cycle11_scope": "NON_RESULT_EXACT_DIAGNOSTIC_AND_SCIENCE_INVARIANT_REPAIR_IF_CONFIRMED_ONLY"
     },
     "r4_runtime_lock": {
       "lock_path": "artifacts/formal_h7_r4/scientific-runtime.lock",
@@ -58,7 +61,31 @@
       "manifest_sha256": "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",
       "versions_sha256": "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575",
       "durably_committed": true,
-      "functional_realization_under_exact_lock_proven": false
+      "exact_wheel_installation_succeeded": true,
+      "functional_realization_under_exact_lock_proven": false,
+      "torch_wheel_sha256": "60fcdcb2f3876e21146cb4524ef06397d727ca9ad5f020818547e25075fe3cb7",
+      "torch_distribution_record_sha256_expected": "407832ba9a2275aa30a1263f65dc9cc05fc04d74e81895e1ec8f74518eb45cf0",
+      "runner_label": "ubuntu-24.04",
+      "runner_image_version_expected": "20260907.300.1"
+    },
+    "cycle11_validation": {
+      "exact_lock_realization_workflow_run_id": 35784686838,
+      "exact_lock_realization_head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+      "exact_lock_install_step": "SUCCESS",
+      "runtime_source_assert_step": "FAILURE",
+      "synthetic_executor_probe_step": "SKIPPED",
+      "generic_ci_run_id": 35784686727,
+      "generic_ci_python_311_lint": "SUCCESS",
+      "generic_ci_python_311_readiness": "SUCCESS",
+      "generic_ci_python_311_test": "FAILURE",
+      "generic_ci_python_313_lint": "SUCCESS",
+      "generic_ci_python_313_readiness": "SUCCESS",
+      "generic_ci_python_313_test": "FAILURE",
+      "remaining_failure_classification": "UNCLASSIFIED_PENDING_EXACT_DIAGNOSTIC",
+      "confirmed_invariant_changes": [
+        "lint_format_repair",
+        "runtime_mismatch_diagnostic_reporting"
+      ]
     },
     "pf_r1_development_artifact": {
       "workflow_run_id": 35695286240,
@@ -77,7 +104,7 @@
     },
     "scientific_source_of_truth": "stable main plus independently fetched evidence refs, exact research refs/workflows/artifacts; ops branches are mailbox/history/authority records only"
   },
-  "audit_result": "NO_MATERIAL_CALIBRATION_CHANGE",
+  "audit_result": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
   "gate_classifications": {
     "hard_integrity_policy": "KEEP",
@@ -85,18 +112,24 @@
     "development_phase_full_end_to_end_through_fresh_consumed_formal": "INSUFFICIENT_EVIDENCE",
     "result_exposed_same_object_science_invariant_repair": "KEEP",
     "post_result_science_affecting_change_requires_explicit_version_or_fresh_successor": "KEEP",
-    "exact_r4_lock_manifest_bytes_durable_capture_before_identity": "KEEP",
+    "cycle3_as_automatic_terminal_cap": "RELAX",
+    "cycle3_mandatory_reassessment_with_prospective_information_gain": "KEEP",
+    "frozen_protected_executor_source_materialization_under_fixed_semantics": "KEEP",
+    "clean_exact_lock_package_installation": "KEEP",
     "exact_scientific_runtime_functional_realization_from_committed_lock": "TIGHTEN",
-    "dev_editable_validation_as_sufficient_proof_of_protected_runtime_equivalence": "CLARIFY",
-    "protected_result_executor_materialization_under_frozen_semantics": "KEEP",
+    "generic_test_failure_classification_before_repair": "INSUFFICIENT_EVIDENCE",
+    "diagnostic_only_instrumentation_after_failed_preidentity_validation": "KEEP",
+    "silent_expected_hash_or_runtime_rebind": "TIGHTEN",
+    "exact_wheel_artifact_hashes_as_package_identity": "KEEP",
+    "installed_distribution_record_hash_scientific_vs_installation_provenance": "CLARIFY",
+    "hosted_runner_image_metadata_scientific_vs_transport_provenance": "SPLIT_BY_CLAIM_TYPE",
+    "runner_image_retry_shopping": "TIGHTEN",
+    "reproducibly_provisioned_substrate_when_host_image_scientifically_material": "TIGHTEN",
     "final_claim_capable_source_runner_scorer_preserver_binding": "TIGHTEN",
     "frozen_deterministic_resource_runtime_assertions_in_executor": "TIGHTEN",
-    "resolver_materializer_shopping_for_preferred_bytes": "TIGHTEN",
     "utility_request_scoped_execution_authority_machine_resolvable": "TIGHTEN",
     "utility_default_deny_without_matching_decision_assignment": "KEEP",
     "durable_result_exposed_development_raw_result_preservation": "TIGHTEN",
-    "cycle3_as_automatic_terminal_cap": "RELAX",
-    "cycle3_mandatory_reassessment_with_prospective_information_gain": "KEEP",
     "raw_before_score_as_file_order_only": "CLARIFY",
     "literal_target_blind_prediction_raw": "TIGHTEN",
     "post_preserve_scorer_side_recomputation": "TIGHTEN",
@@ -123,9 +156,9 @@
     "protected_adaptive_evaluation_validity_and_exposure_observability": "TIGHTEN"
   },
   "false_positive_negative_risks": {
-    "false_positive": "MODERATE_WATCH: static lock/manifest validation or editable-development CI must not be mistaken for functional proof of the protected scientific runtime; concealed-evaluation and semantic raw/preserve gates remain.",
-    "false_negative": "MODERATE_WATCH: mechanism supply remains one lineage; exact scientific-runtime realization is relevant while reproducibility of irrelevant dev-only tooling would be overconservative.",
-    "opportunity_cost": "MODERATE_WATCH: PF-R1 preservation remains blocked by authority wiring and source/executor/runtime closure still precedes legitimate one-way entry.",
+    "false_positive": "MODERATE_WATCH: a green retry on a transient hosted runner must not be mistaken for a reproducibly bound scientific runtime; concealed-evaluation and semantic raw/preserve gates remain open.",
+    "false_negative": "MODERATE_WATCH: scientifically irrelevant installer or transport metadata can create artificial version churn or practical unreachability if treated as claim-bearing runtime identity.",
+    "opportunity_cost": "MODERATE_WATCH: H7 remains the sole active MECHANISM lineage; PF-R1 preservation authority remains unresolved and exact runtime diagnostics still block legitimate one-way entry.",
     "moving_goalpost_rescue_risk": "LOW_TO_MODERATE_WATCH_IMPROVING",
     "over_terminalization": "LOW_TO_MODERATE_WATCH_IMPROVING"
   },
@@ -137,25 +170,31 @@
       "CONSUMED_ONE_WAY"
     ],
     "h7_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "r4_lock_manifest_durable_capture": "CLOSED",
-    "r4_exact_runtime_functional_realization": "OPEN_TIGHTEN",
-    "cycle11_nonresult_executor_materialization": "AUTHORIZED_PREIDENTITY_ONLY_NOT_YET_MATERIALIZED",
+    "cycle11_source_executor_materialization": "MATERIALIZED",
+    "cycle11_exact_lock_installation": "SUCCEEDED",
+    "cycle11_functional_realization": "OPEN_TIGHTEN_RUNTIME_ASSERTION_FAILED_PRE_PROBE",
+    "cycle11_generic_tests": "FAILED_AFTER_LINT_AND_READINESS_UNCLASSIFIED_PENDING_DIAGNOSTIC",
+    "same_r4_invariant_repairs_observed": [
+      "LINT_FORMAT_REPAIR",
+      "RUNTIME_MISMATCH_DIAGNOSTIC_REPORTING"
+    ],
+    "runner_retry_shopping": "PROHIBIT_PROSPECTIVELY",
     "pf_r1_evidence_accounting": "ONE_COMPLETED_PREFORMAL_DEVELOPMENT_OBSERVATION_CONFIRMATORY_COUNT_ZERO",
     "pf_r1_byte_durability": "TIGHTEN_BLOCKED_BY_REQUEST_LEVEL_AUTHORITY_DIVERGENCE",
     "repeated_result_bearing_development_case": "INSUFFICIENT_EVIDENCE"
   },
-  "pass_reachability": "REALISTIC_CONDITIONAL: preserve committed R4 lock/manifest, materialize and synthetically validate the frozen protected executor in one clean exact-lock environment, bind final source/runner/scorer/preserver/runtime inputs, resolve PF-R1 exact-byte preservation authority, close raw/holdout/preserve gates, then require fresh one-way authorization; no evidence standard need be weakened",
+  "pass_reachability": "REALISTIC_CONDITIONAL: obtain exact diagnostics; permit only confirmed science-invariant same-R4 repair; avoid resolver/materializer/runner-image shopping; complete one reproducible exact scientific-runtime synthetic realization; bind final claim-capable source/runner/scorer/preserver/runtime inputs; resolve PF-R1 preservation authority; close raw/holdout/preserve gates; then require fresh one-way authorization",
   "claim_type_findings": {
     "same_object_system_to_mechanism_upgrade_observed": false,
     "fresh_system_successor_observed": true,
     "fresh_system_to_mechanism_successor_observed": false,
     "candidate33_status": "SYSTEM_RESULT_EXPOSED_TERMINAL_FOR_CURRENT_OBJECT_NOT_QUEUED",
-    "h7_status": "MECHANISM_RESULT_EXPOSED_ACTIVE_FORMAL_R4_CYCLE11_PREIDENTITY_SOURCE_EXECUTOR_RUNTIME_CLOSURE",
+    "h7_status": "MECHANISM_RESULT_EXPOSED_ACTIVE_FORMAL_R4_CYCLE11_PREIDENTITY_DIAGNOSTIC_AND_INVARIANT_REPAIR_IF_CONFIRMED",
     "formal_identity_consumed": false
   },
   "mechanism_supply_health": "ONE_ACTIVE_MECHANISM_FORMALIZATION_LINEAGE_QUALITY_FLOOR_INTACT_BUT_MECHANISM_SUPPLY_THIN",
   "funnel_observability": {
-    "authority_generation": "EVA-20260923T050030+0900-R86-62D4A1B7",
+    "authority_generation": "EVA-20260923T061000+0900-R87-7B3D91E4",
     "canonical_population": 33,
     "classified_population": 33,
     "classification_completeness": 1.0,
@@ -198,11 +237,15 @@
   },
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": {
-    "r4_lock_manifest_durable_capture": "HIGH",
     "formal_one_way_integrity_unchanged": "HIGH",
-    "cycle11_research_ref_unchanged_since_r72": "HIGH",
-    "protected_r3_r4_result_runner_absent_at_current_head": "HIGH",
-    "exact_runtime_functional_realization_gap": "MEDIUM_HIGH",
+    "cycle11_research_ref_advance_and_source_materialization": "HIGH",
+    "clean_exact_lock_install_success": "HIGH",
+    "runtime_assertion_failure_before_synthetic_probe": "HIGH",
+    "generic_ci_failure_after_lint_readiness": "HIGH",
+    "confirmed_same_r4_invariant_repairs": "HIGH",
+    "exact_runtime_and_test_failure_cause": "UNRESOLVED",
+    "installed_record_scientific_relevance": "MEDIUM_HIGH",
+    "hosted_runner_reproducibility_risk": "HIGH",
     "pf_r1_authorization_divergence": "HIGH",
     "fresh_consumed_formal_end_to_end": "UNOBSERVED",
     "fresh_system_to_mechanism_successor": "UNOBSERVED"
