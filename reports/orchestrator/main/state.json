@@ -11,11 +11,12 @@
     "sub": "SUB-20260922T113500+0900-NOOP-R59INTENTIONALIDLE-A6D4C219@49572dfeb1aa7da7986ac545a10f1e4e89f5d15e"
   },
   "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
+  "status": "COMPLETED",
   "started_at": "2026-09-22T12:27:49+09:00",
-  "heartbeat_at": "2026-09-22T12:37:03+09:00",
-  "completed_at": null,
+  "heartbeat_at": "2026-09-22T12:39:06+09:00",
+  "completed_at": "2026-09-22T12:39:06+09:00",
   "blocked_at": null,
+  "blocked_until": null,
   "analyst_generation_id": "EVA-20260922T120158+0900-R60-D5E721A4",
   "analyst_commit": "8cfdb2abb72ff0cfcf616d3400d578db7c20a84d",
   "consumed_analyst_generation_id": "EVA-20260922T120158+0900-R60-D5E721A4",
@@ -43,6 +44,18 @@
     "reason_detail": "Active target is MECHANISM; SYSTEM priority exception is not applicable.",
     "compared_mechanism_candidate_ids": []
   },
+  "outcome_contingencies": {
+    "static_contract_complete": "STOP_FOR_FRESH_ANALYST_REVIEW_BEFORE_RESULT_BEARING_EXECUTION",
+    "science_invariant_repair": "MAY_CONTINUE_WITH_PROVENANCE_IF_NEEDED",
+    "science_affecting_change_after_future_result_exposure": "REQUIRES_EXPLICIT_VERSIONED_DEVELOPMENT_REVISION_OR_FRESH_SUCCESSOR"
+  },
+  "do_not_touch": [
+    "historical H7 exploratory outcome as threshold/tuning/confirmatory input",
+    "consumed FORMAL identities",
+    "evidence/formal/sealed/freeze immutable refs",
+    "C04 historical test manifest as H7 development tuning surface",
+    "result-bearing H7 intervention until fresh Analyst authority"
+  ],
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_handoff": "8cfdb2abb72ff0cfcf616d3400d578db7c20a84d",
@@ -145,7 +158,8 @@
     "research_mutation": "ONE_STATIC_CONTRACT_FILE_ONLY",
     "research_head_matches_recorded_contract": true,
     "analyst_generation_rechecked_before_research_mutation": true,
-    "analyst_generation_rechecked_before_control_plane_persistence": true
+    "analyst_generation_rechecked_before_final_control_plane_persistence": true,
+    "branch_ci_success_exact_head": true
   },
   "workflows": [
     {
@@ -162,13 +176,13 @@
       "name": "ci",
       "branch": "research/main-h7-dev-r1-claim-scoped-causal-contract-r60-cycle1",
       "head": "b83cd8cc71557af3ecc79c8a305a22b58c1b483c",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "purpose": "STATIC_CONTRACT_BRANCH_GENERIC_CI"
     }
   ],
-  "wait_reason": "STATIC_CONTRACT_PERSISTED_EXACT_HEAD; WAITING_ONLY_FOR_GENERIC_CI_RUN_35683665841",
-  "stop_reason": "WAITING_EXTERNAL_STATIC_CONTRACT_CI_ONLY_NO_ADDITIONAL_SCIENTIFIC_EXECUTION_AUTHORIZED",
-  "next_action": "Poll workflow 35683665841 for exact head b83cd8cc71557af3ecc79c8a305a22b58c1b483c. If CI succeeds and Analyst R60 is still current, mark this static Architecture cycle COMPLETED and return the frozen contract to fresh Evidence Analyst review. If CI fails only for science-invariant lint/build/path reasons, repair exactly without changing the contract's scientific semantics. Do not execute any result-bearing intervention without fresh Analyst authority.",
+  "wait_reason": null,
+  "stop_reason": "R60_H7_DEV_R1_CYCLE1_STATIC_ARCHITECTURE_CONTRACT_PERSISTED_AND_CI_GREEN_STOP_BEFORE_RESULT_BEARING_INTERVENTION_FOR_FRESH_ANALYST_REVIEW",
+  "next_action": "Fresh Evidence Analyst review of H7-DEV-R1-ARCH-CONTRACT-V1 at exact research head b83cd8cc71557af3ecc79c8a305a22b58c1b483c. Do not infer PRE_FORMAL READY. Do not implement or execute the result-bearing intervention/comparator study unless a fresh Analyst generation explicitly authorizes the next development step.",
   "owner": "main"
 }
