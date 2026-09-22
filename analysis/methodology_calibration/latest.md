@@ -1,123 +1,112 @@
-# SparkBrain Methodology Calibration Audit — R67
+# SparkBrain Methodology Calibration Audit — R68
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260922T223100+0900-R67-E5A19C42`
-- produced_at: `2026-09-22T22:31:00+09:00`
-- supersedes: `METHCAL-20260922T213200+0900-R66-2C8F7A41`
+- generation_id: `METHCAL-20260922T232000+0900-R68-9C4E7A31`
+- produced_at: `2026-09-22T23:20:00+09:00`
 - authority_scope: `METHODOLOGY_ADVISORY_ONLY`
 - overall_classification: `MIXED_CALIBRATION`
+- material_change: `true`
+- material_change_reason: `INDEPENDENT_AUDIT_R7_EXPOSES_TARGET_DERIVED_CORRECTNESS_BEFORE_IMMUTABLE_RAW_PRESERVATION;_R80_FAILS_CLOSED_PREIDENTITY_AND_REQUIRES_LITERAL_PREDICTION_RAW_GATE`
 
-## Material update
+## Input generations and authoritative refs
 
-The strongest new calibration evidence is an information-level evaluation-surface defect in H7 FORMAL-R2 that is distinct from exact input identity and official workflow access. Literature R31 independently reconstructed the exact future R2 evaluation episodes and target labels from the public preidentity branch: the evaluation seed block, world assignment, step count, `split=test`, deterministic generator, and target-generating world factories are all public. R75's R2 split binding therefore fixes provenance/identity ambiguity but does not create an unexposed holdout.
+- Prior methodology: `METHCAL-20260922T223100+0900-R67-E5A19C42`, branch `ops/methodology-calibration-audit@3bad5b3113a7645b1d6c30cb2b105548ea691f14`.
+- Human process directive: `HUMAN-20260922-005` (process directive, not scientific evidence).
+- Control: `CTRL-20260922T214728+0900-R36-C8F31D72`, `ops/control-brain-handoff@ba1c10f3e45d15fa72ce15170ad213b48a980f8e`.
+- Evidence Analyst: `EVA-20260922T230224+0900-R80-6B8F31C4`, `ops/evidence-analyst-handoff@88f72d4e55d30e561143df94e06ce10c91972104`.
+- Independent Audit: `AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4`, `ops/external-research-audit-handoff@d1e2ffe278a8af40b0b61250aeba8dbd8da8cbd1`.
+- Stable scientific source: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; annotated `evidence/*` remains exactly five refs; tag-form `formal/*`, `sealed/*`, `freeze/*` remain empty.
+- Active H7 R3 preidentity development ref: `research/main-h7-formal-r3-unexposed-eval-runtime-r76-cycle9@325e93c62c1f79baa107b677a3dc881dc6f47ace`.
+- R2 quarantined development history: `research/main-h7-formal-r2-input-split-r75-cycle8@a7a3c82416af5bd3c8bf3340cc9276f161ddb0d0`.
 
-This is not evidence of tuning or misconduct, and it invalidates no historical PASS/FAIL because H7 has no consumed FORMAL identity. It is nevertheless a material preidentity calibration blocker under the hard no-held-out-leakage floor. `protected_evaluation_accessed=false` is not sufficient when the evaluation rows and targets are reconstructible while claim-capable development choices remain possible. Control R36 correctly separates exact-input binding, workflow access control, and information-level exposure and keeps H7 STOP before identity, STARTED, protected evaluation, or result-bearing execution.
+`ops/*` is treated only as mailbox/history/authority context. Scientific facts below were independently reconstructed from stable `main`, exact research refs, exact source files, and current evidence namespaces.
 
-The calibrated prospective response is not to rewrite R2 in place. If a clean unseen/protected confirmatory PASS is required, use a fresh versioned successor/evaluation surface whose generator/distribution/evaluator/intervention/comparator/sample-size/decision rule are fixed first and whose final evaluation entropy is concealed until after source/contract binding, with the seed/key revealed only after immutable raw preservation. If R2 is ever used unchanged, it must be described as a fixed public/reconstructible evaluation surface and must not inherit unseen/protected-holdout language without stronger independent evidence.
+## Material finding
 
-A second live rollout case remains positive. Candidate 33's cycle-3 reassessment found a compatible bounded Linux runtime that satisfied the already-frozen namespace/read-only-remount contract without code or scientific-contract mutation. The intended SYSTEM Architecture observable was reached, clean/mismatch and fail-closed controls passed, semantic equivalence was explicitly not claimed, and SUB proposed `RESULT_EXPOSED_DEVELOPMENT` plus `TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`. Control correctly waits for fresh Analyst lifecycle review rather than silently terminalizing or manufacturing a successor. This is evidence that cycle 3 is a reassessment point, not a hard cap, and that environment placement can be iterated without rescue tuning when the scientific contract is unchanged.
+The new material calibration finding is stricter than the prior R67 holdout-secrecy finding. H7 R1/R2 achieved byte-ordering in which a `raw` artifact is closed before the later scorer runs, but the object called `TargetBlindRawCollector` is not semantically target-blind. The R2 result runner derives `baseline_correct` and `cut_correct` by comparing model/comparator outputs with `belief_truth` before the raw collector is closed. The later scorer then consumes those target-relative correctness bits. Therefore the preserved object is decision-blind, but it is already target-derived and score-sufficient.
 
-Finally, H7 R2 advanced one preidentity commit after Control R36: a two-line runtime-validation repair normalizes Torch local-build metadata while retaining the base `torch==2.13.0` requirement. The exact head `a7a3c824...` now has successful generic CI and successful non-result-bearing preidentity validation. This remains development evidence only. Because exact package/runtime binding is a hard-floor dimension and R31 is newer than Analyst R75, the exact repaired head still requires fresh Analyst review before any `identity_candidate_sha` can be fixed.
+This matters because a post-preserve scorer cannot independently recompute or audit whether correctness was derived faithfully from the underlying predictions and protected targets. `raw-before-score` must therefore mean both: (1) immutable preservation occurs before the scorer reads the raw artifact, and (2) the preserved raw is prediction/output/intervention data plus opaque identity metadata, not correctness/effect/decision fields already derived using protected target material.
 
-## Gate-by-gate calibration
+Independent Audit R7 discovered this before any H7 FORMAL identity, STARTED marker, protected evaluation, official scoring, scientific preserve, or evidence ref existed. Evidence Analyst R80 then failed closed: fresh FORMAL authority remains zero; R3 may only implement the already-fixed `target_blind_raw=true`, `raw_before_score=true`, and `preserve_before_read=true` intent using a literal prediction-raw allowlist, target-sidecar independence tests, and scorer-side recomputation after immutable preservation. No R2 in-place repair is authorized.
 
-| Gate | Classification |
-|---|---|
-| hard FORMAL integrity floor | `KEEP` |
-| development-phase axis | `KEEP` |
-| end-to-end through fresh consumed FORMAL | `INSUFFICIENT_EVIDENCE` |
-| OPEN development bounded iteration | `KEEP` |
-| RESULT_EXPOSED same-object SCIENCE_INVARIANT_REPAIR | `KEEP` |
-| post-result SCIENCE_AFFECTING change → explicit version/fresh successor | `KEEP` |
-| H7 R2 post-result science-affecting versioning | `KEEP` |
-| cycle 3 as automatic terminal cap | `RELAX` |
-| cycle 3 mandatory reassessment with prospective information gain | `KEEP` |
-| candidate-33 exact-contract environment-placement iteration | `KEEP` |
-| candidate-33 lifecycle after SYSTEM Architecture conformance | `CLARIFY` |
-| repeated development observations as independent evidence | `KEEP` |
-| repeated result-bearing rerun/retune live case | `INSUFFICIENT_EVIDENCE` |
-| durable RESULT_EXPOSED raw/result bytes | `TIGHTEN` |
-| PRE_FORMAL as development surface | `KEEP` |
-| `preformal_eligible` distinct from READY | `KEEP` |
-| READY = informative next test, not prior success | `KEEP` |
-| `HIDDEN_SECOND_FORMAL_GATE` | `false` / `KEEP` |
-| current-object `claim_ceiling` | `KEEP` |
-| same-object SYSTEM→MECHANISM uplift ban | `KEEP` |
-| fresh terminal SYSTEM successor distinctness/non-rescue | `KEEP` |
-| fresh SYSTEM→MECHANISM successor admission | `INSUFFICIENT_EVIDENCE` |
-| `TERMINAL_FOR_CURRENT_OBJECT` scope | `KEEP` |
-| successor potential ≠ automatic admission | `KEEP` |
-| classification-completeness gating | `KEEP` |
-| MAIN MECHANISM priority | `KEEP` |
-| prospective SYSTEM-priority exception | `KEEP` |
-| first genuine SYSTEM-over-comparable-MECHANISM exception | `INSUFFICIENT_EVIDENCE` |
-| theory-backward quality floor / one-in-three supply | `KEEP` |
-| `NO_COHERENT_MECHANISM_TARGET` liveness semantics | `KEEP` |
-| exact-input identity vs information-level holdout secrecy | `CLARIFY` |
-| public reconstructibility of future FORMAL targets | `TIGHTEN` |
-| official protected-workflow nonaccess as sufficient holdout protection | `TIGHTEN` |
-| claim-capable mutation after evaluation-surface disclosure | `TIGHTEN` |
-| fresh concealed post-binding evaluation surface for clean unseen-holdout PASS | `TIGHTEN` |
-| runtime local-build metadata normalization | `CLARIFY` |
-| exact source/protocol/package/runtime/input/evaluator binding | `TIGHTEN` |
-| raw-before-score | `KEEP` |
-| preserve-before-read / immutable FORMAL evidence | `TIGHTEN` |
-| comparator verifier independence | `TIGHTEN` |
-| protected/adaptive-evaluation validity | `TIGHTEN` |
+This is not a reason to relax development. The R3 contract already fixed literal target-blind raw as part of the intended one-way integrity design. Implementing prediction-only raw faithfully is therefore `SCIENCE_INVARIANT_REPAIR` so long as metric/scorer mathematics, bootstrap/decision semantics, target definition, seed/exclusion policy, comparator, intervention, thresholds/tolerances, resource contract, claim, falsifier, sample size, or world distribution do not change. If any such field must change, STOP and version a science-affecting revision prospectively.
+
+## Gate-by-gate classification
+
+| Material gate | Classification | Finding |
+|---|---|---|
+| hard FORMAL integrity floor | `KEEP` | No fresh identity consumed; historical evidence untouched. |
+| orthogonal development-phase axis | `KEEP` | R3 remains `RESULT_EXPOSED_DEVELOPMENT`, fresh FORMAL remains unconsumed. |
+| full OPEN→RESULT_EXPOSED→CONSUMED_ONE_WAY live path | `INSUFFICIENT_EVIDENCE` | No fresh post-directive H7 FORMAL identity/result exists yet. |
+| OPEN bounded development iteration | `KEEP` | Development remains allowed with provenance. |
+| RESULT_EXPOSED same-object invariant repair | `KEEP` | Faithful implementation of already-fixed R3 raw intent may be repaired same-object. |
+| post-result science-affecting change | `KEEP` | Must remain explicit version/fresh successor; no in-place R2 rewrite. |
+| cycle 3 as automatic terminal cap | `RELAX` | H7 has progressed beyond cycle 3 on prospectively stated information gain. |
+| cycle 3 as mandatory reassessment | `KEEP` | Current behavior remains calibrated. |
+| raw-before-score as file/write ordering only | `CLARIFY` | Byte ordering alone is insufficient. |
+| literal target-blind prediction raw | `TIGHTEN` | No target/truth/correctness/effect/decision fields before immutable preserve. |
+| scorer-side recomputation from preserved raw + protected target sidecar | `TIGHTEN` | Required for independent auditability. |
+| target-sidecar independence/data-flow test | `TIGHTEN` | Changing target sidecar must not alter prediction-raw bytes for fixed observations. |
+| preserve-before-read / immutable evidence path | `TIGHTEN` | Must apply to prediction raw before scorer or claim-capable process gets protected target material. |
+| concealed/unexposed evaluation surface | `TIGHTEN` | R2 stays quarantined; R3 concealed post-binding surface remains required. |
+| exact source/protocol/package/runtime/input/evaluator binding | `TIGHTEN` | Must be complete before one-way authority. |
+| repeated development observations ≠ independent evidence | `KEEP` | PF-R1 remains one nonconfirmatory observation; confirmatory count stays zero. |
+| repeated result-bearing PRE_FORMAL rerun/retune live case | `INSUFFICIENT_EVIDENCE` | Still not sufficiently stress-tested. |
+| durable RESULT_EXPOSED development bytes | `TIGHTEN` | PF-R1 exact-byte preservation remains outstanding; no rerun/rescore substitute. |
+| PRE_FORMAL as real development surface | `KEEP` | Iteration is permitted without confirmatory credit. |
+| preformal_eligible distinct from READY | `KEEP` | Distinction remains live. |
+| READY = informative next test, not prior victory | `KEEP` | `HIDDEN_SECOND_FORMAL_GATE=false`. |
+| current-object claim ceiling | `KEEP` | Claim ceilings remain object-specific. |
+| same-object SYSTEM→MECHANISM uplift ban | `KEEP` | No laundering observed. |
+| fresh terminal SYSTEM successor discipline | `KEEP` | Candidate 33 remains SYSTEM-only. |
+| fresh SYSTEM→MECHANISM successor admission | `INSUFFICIENT_EVIDENCE` | No genuine live case yet. |
+| TERMINAL_FOR_CURRENT_OBJECT scope | `KEEP` | Candidate 33 may close its bounded SYSTEM object without topic death. |
+| classification-completeness gating | `KEEP` | R80 reports 33/33 classified. |
+| MAIN MECHANISM priority | `KEEP` | H7 remains MAIN scientific priority. |
+| prospective SYSTEM priority exception | `KEEP` | No comparable-MECHANISM override observed. |
+| genuine SYSTEM-over-MECHANISM exception | `INSUFFICIENT_EVIDENCE` | Still unobserved. |
+| theory-backward quality floor / no-target liveness | `KEEP` | No-target remains non-evidentiary and no candidate is manufactured to fill activity. |
+| protected/adaptive-evaluation validity | `TIGHTEN` | Protection requires both information-level non-exposure and semantically raw pre-score preservation. |
 
 ## Mandatory questions
 
-1. **Development phase end-to-end?** Consistent through OPEN, RESULT_EXPOSED, versioned post-result change, and preidentity repair; fresh `CONSUMED_ONE_WAY` end-to-end remains unobserved.
-2. **Cycle 3 a hard cap?** No. Candidate 33 gained distinct information at cycle 3 under an unchanged contract, and H7 continues only with explicit information-gain rationales.
-3. **Repair split correct?** Mostly yes. H7 `Episode.split` was correctly versioned as science-affecting; candidate-33 runner placement used the frozen contract unchanged. The new Torch local-build normalization is acceptable as science-invariant only if the exact realized package/runtime manifest is frozen and reviewed before identity.
-4. **Rerun/retune laundering?** None observed. Candidate 33 synthetic Architecture runs are non-evidentiary; PF-R1 remains one nonconfirmatory development observation.
-5. **RESULT_EXPOSED prior results preserved?** Semantically yes for H7 R1/PF-R1 and additive R2; operational exact-byte durability for PF-R1 remains unresolved.
-6. **FORMAL one-way integrity?** Unchanged. No H7 identity, STARTED, result-bearing FORMAL execution, official scoring, or scientific evidence ref exists.
-7. **Fresh SYSTEM→MECHANISM successor?** Still unobserved. Candidate 33 is a legitimate SYSTEM→SYSTEM successor and remains SYSTEM-ceiling after conformance.
-8. **PRE_FORMAL hidden FORMAL?** No. READY remains development readiness and PF-R1 remains nonconfirmatory.
-9. **Terminal/supply calibrated?** Improving but thin. Candidate 33 was not killed for infrastructure scarcity; after conformance, current-object terminalization is plausible but must be canonicalized by fresh Analyst authority. MECHANISM supply remains essentially H7 alone.
-10. **PASS reachable without weakening standards?** Yes, but a clean protected/unseen-holdout PASS should not rely on the reconstructible R2 evaluation surface. A fresh prospectively versioned concealed evaluation surface can preserve the hard floor without reducing evidence standards.
+1. Development-phase semantics are consistent through R3 preidentity closure, but not yet proven end-to-end through a fresh `CONSUMED_ONE_WAY` result.
+2. Cycle 3 is not being treated as a hard terminal cap. H7 continues only where an explicit information-gain question remains.
+3. Repair classification is currently calibrated: literal prediction-raw implementation is invariant only because R3 already fixes target-blind raw as scientific intent; any metric/target/comparator/threshold/resource/claim change remains science-affecting and must version.
+4. No development rerun/retune/tolerance laundering into independent evidence is observed. The repeated result-bearing PRE_FORMAL stress case remains insufficiently observed.
+5. RESULT_EXPOSED lineage is preserved semantically across R1/R2/R3. PF-R1 exact raw/summary byte durability remains an open provenance gap, so preservation is not yet fully satisfactory.
+6. FORMAL one-way integrity is unchanged: stable main/evidence refs are unchanged, fresh authority is zero, and no H7 identity/STARTED/result has been consumed.
+7. No fresh SYSTEM→MECHANISM successor has yet been demonstrated. Candidate 33 is a legitimate fresh SYSTEM successor and remains SYSTEM; no rescue uplift is observed.
+8. PRE_FORMAL behaves as development, not hidden FORMAL. READY does not require prior comparator/reduction/falsifier victory.
+9. Terminal/supply controls are mostly calibrated. R80 canonicalizes candidate 33 current object terminal without MECHANISM uplift or automatic successor manufacture. Mechanism supply remains thin.
+10. PASS remains realistically reachable without weakening standards, but only after R3 closes literal prediction-raw preservation, post-preserve scorer recomputation, concealed fresh evaluation identity, exact bindings, no-clobber/collision gates, and PF-R1 durable development provenance.
 
-## Funnel / supply / observability
+## Risks and calibration
 
-The latest canonical Analyst remains R75: `33 = MECHANISM 13 / SYSTEM 20`, classification completeness `33/33`, `ACTIVE=1 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=31`, PRE_FORMAL eligible/READY `1/1`, fresh FORMAL authority `0`, and development phases `OPEN=3 / RESULT_EXPOSED=30 / canonical CONSUMED_ONE_WAY=0`; seven historical official identities remain one-way.
+False-positive risk is `MODERATE_WATCH`. The main risk is not merely public/reconstructible R2 targets; it is that target-derived correctness bits could be mistaken for target-blind raw and thereby hide evaluator/scorer coupling before immutable preservation. If consumed, that would make a positive result less independently auditable.
 
-Do not overwrite those canonical counts from post-R75 execution reports. SUB has new non-evidentiary candidate-33 Architecture conformance and proposes moving that object to `RESULT_EXPOSED_DEVELOPMENT` and `TERMINAL_FOR_CURRENT_OBJECT`, but Control R36 correctly leaves this pending fresh Analyst lifecycle review.
+False-negative/opportunity-cost risk remains `MODERATE_WATCH`: the quality floor is intact, but viable MECHANISM supply is effectively one H7 lineage. Over-terminalization is `LOW_TO_MODERATE_WATCH_IMPROVING`; candidate 33 closes only its bounded SYSTEM architecture question and does not kill the topic family. Moving-goalpost/rescue risk is `LOW_TO_MODERATE_WATCH`: R2 is quarantined, R3 is explicit and prospective, and no in-place post-result scientific rewrite is authorized.
 
-Mechanism supply health: `ONE_ACTIVE_MECHANISM_FORMALIZATION_LINEAGE_PLUS_ONE_SYSTEM_ARCHITECTURE_OBJECT_PENDING_POST_CONFORMANCE_CANONICAL_REVIEW; QUALITY_FLOOR_INTACT_BUT_MECHANISM_SUPPLY_REMAINS_THIN`.
+## Funnel / mechanism supply / claim-type findings
 
-## Risks
+R80 canonical state is `33 = MECHANISM 13 / SYSTEM 20`, classification completeness `33/33`, lifecycle `ACTIVE=1 / NONTERMINAL_HOLD=0 / TERMINAL_FOR_CURRENT_OBJECT=32`, development phases `OPEN_DEVELOPMENT=2 / RESULT_EXPOSED_DEVELOPMENT=31 / canonical CONSUMED_ONE_WAY=0`, with `7` historical official consumed scientific identities in a separate one-way lineage. PRE_FORMAL is eligible/READY `1/1`; fresh FORMAL authority is `0`.
 
-False-positive risk: `MODERATE_WATCH`. It rises from R66 because exact H7 R2 evaluation targets are publicly reconstructible before identity; a future positive result must not be represented as protected/unseen holdout evidence absent a fresh non-exposed surface or stronger independent non-exposure justification.
-
-False-negative/opportunity-cost risk: `MODERATE_WATCH`. Candidate 33 demonstrates that a method-limited object can recover through environment placement without contract weakening, but viable MECHANISM supply remains one effective lineage.
-
-Moving-goalpost/rescue risk: `LOW_TO_MODERATE_WATCH`. H7 R2 science-affecting split binding was versioned correctly and candidate 33 did not alter its contract. The next stress point is whether R31 causes in-place seed/evaluation repair; that must not happen.
-
-Over-terminalization risk: `LOW_TO_MODERATE_WATCH_IMPROVING`. Candidate 33 survived an infrastructure hold, reached its SYSTEM observable, and is now appropriately awaiting current-object lifecycle review rather than topic-level suppression.
-
-## PASS reachability
-
-PASS remains realistic without lowering evidence standards. Current R2 has improved exact identity and now-green preidentity plumbing, but exact identity is not equivalent to holdout secrecy. Under the hard integrity floor, clean confirmatory PASS should require a fresh evaluation surface whose contents/targets were not reconstructible during claim-capable development, plus exact source/protocol/package/runtime/input/evaluator binding, raw-before-score, preserve-before-read, immutable evidence, and valid protected/adaptive-evaluation assumptions.
-
-A narrow result on R2's fixed public/reconstructible surface may still be scientifically describable if a fresh authority explicitly scopes it that way, but it should not be treated as equivalent to an unseen/protected FORMAL PASS.
+Candidate 7/H7 remains `MECHANISM / FORMALIZE / READY / RESULT_EXPOSED_DEVELOPMENT / ACTIVE`. Candidate 33 is `SYSTEM / RESULT_EXPOSED_DEVELOPMENT / TERMINAL_FOR_CURRENT_OBJECT / NOT_QUEUED`; its completed bounded auditability/reachability question does not support semantic equivalence or MECHANISM uplift. SYSTEM-terminal successor accounting remains one realized fresh SYSTEM successor, zero fresh MECHANISM successors. Mechanism supply is therefore `ONE_ACTIVE_MECHANISM_FORMALIZATION_LINEAGE; QUALITY_FLOOR_INTACT_BUT_MECHANISM_SUPPLY_THIN`.
 
 ## Prospective recommendations
 
-For H7, keep R2 and all earlier development artifacts unchanged. Do not repair seeds/evaluation semantics in place after R31. Before any identity, require fresh Analyst review that consumes R31, Control R36, and the exact current head `a7a3c824...`. If clean protected-holdout inference is required, create a fresh versioned successor/evaluation surface with concealed post-binding entropy and reveal the evaluation key only after immutable raw preservation.
+Keep R1/R2/PF-R1 historical development artifacts unchanged. Keep R2 quarantined. On R3, implement a positive allowlist whose pre-preserve artifact contains only model/comparator predictions or output distributions, intervention metadata, and opaque row identifiers needed for deterministic joins; exclude target/truth/correctness/effect/decision fields. Immutable-preserve those exact bytes first. Only a separate fixed scorer may then receive the protected target mapping and recompute correctness/effect/decision from preserved raw. Add a target-sidecar independence test and fail closed if scorer semantics or any scientific field would need to change.
 
-For the runtime metadata repair, bind the full realized package/runtime manifest—not merely the normalized base version—before identity and verify that local-build metadata acceptance does not broaden the scientific resource/privilege contract.
+Do not create evaluation commitment, FORMAL identity, STARTED marker, protected evaluation, official scoring, or scientific evidence until a fresh Analyst reviews green preidentity closure and separately authorizes one-way consumption. Complete the existing PF-R1 exact-byte preservation request without rerunning PF-R1. Candidate 33 should remain closed only for its current SYSTEM object, with no automatic successor creation.
 
-For candidate 33, preserve the exact non-evidentiary conformance provenance, keep the SYSTEM ceiling, and let fresh Analyst authority decide current-object terminalization. Do not manufacture a new integration successor unless it has distinct prospective information gain.
+## Utility request
 
-Complete the existing PF-R1 exact-byte preservation request rather than rerunning PF-R1.
+No new Utility request. The existing `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` remains the relevant bounded request and is not observed completed.
 
-## Utility / integrity / confidence
+## Hard-floor confirmation, confidence, and questions for Control/Analyst
 
-No new Utility request is created. Existing `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` remains pending and is not duplicated.
+Hard floor: `CONFIRMED / DO NOT RELAX`.
 
-Hard floor: `CONFIRMED / DO NOT RELAX`. No current breach is declared because H7 has not crossed the one-way FORMAL boundary; instead, R31 is a preidentity blocker that must prevent a reconstructible surface from being misclassified as unexposed held-out evidence.
+Confidence is `HIGH` for the R1/R2 target-derived-raw finding, current fail-closed preidentity state, and unchanged one-way evidence refs; `MEDIUM_HIGH` for R3 closure classification because implementation is not yet complete; `UNOBSERVED` for a fresh post-directive consumed-FORMAL end-to-end case and a genuine fresh SYSTEM→MECHANISM successor.
 
-Confidence: `HIGH` on the reconstructible-surface finding, unchanged FORMAL one-way state, candidate-33 same-contract conformance, and H7 preidentity repair status; `MEDIUM_HIGH` on runtime-build normalization being science-invariant pending exact-manifest review; `UNOBSERVED` for fresh consumed-FORMAL end-to-end and a genuine fresh SYSTEM→MECHANISM successor.
-
-Questions for Control/Analyst: Will R2 be explicitly classified as a public/reconstructible evaluation surface rather than protected/unseen? If clean held-out inference is required, will a fresh versioned concealed surface be created rather than editing R2 in place? Will the exact `a7a3c824...` runtime/package manifest be reviewed and bound before identity? Will candidate 33's post-conformance lifecycle be canonicalized without automatic successor manufacture?
+Questions to be resolved by future Control/Analyst state, without changing criteria here: whether R3's final raw allowlist excludes all target-derived fields; whether immutable preserve is provably upstream of any target access/scorer process; whether target-sidecar independence is tested; whether exact runner/scorer/preserver/runtime/package/input/evaluator bindings are frozen before commitment/identity; whether PF-R1 exact bytes are durably preserved; and whether any future SYSTEM→MECHANISM successor fixes an independently motivated residual plus fresh reduction/comparator/falsifier contract before admission.
