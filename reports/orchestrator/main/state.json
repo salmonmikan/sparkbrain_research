@@ -1,22 +1,22 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T033600+0900-PRIMARY-H7-FORMALR4-C10-R84-PREIDENTITY-WAIT-5E7A2C91",
+  "generation_id": "MAIN-20260923T033900+0900-PRIMARY-H7-FORMALR4-C10-R84-PREIDENTITY-CLOSED-5E7A2C91",
   "run_id": "sparkbrain-main-primary-20260923T031823JST-R83-h7-formalr4-authoritative-artifact-recovery",
   "producer_run_id": "sparkbrain-main-primary-20260923T031823JST-R83-h7-formalr4-authoritative-artifact-recovery",
-  "produced_at": "2026-09-23T03:36:00+09:00",
+  "produced_at": "2026-09-23T03:39:00+09:00",
   "authority_scope": "MAIN_PRIMARY_H7_FORMAL_R4_AUTHORITATIVE_RUN_SCOPED_LOCK_ARTIFACT_RECOVERY_DURABLE_CAPTURE_LINT_INVARIANT_CLOSURE_AND_PREIDENTITY_REVALIDATION_CYCLE10_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T012121+0900-PRIMARY-H7-FORMALR4-C10-R82-RECOVERY-7C4E19B2",
+  "supersedes_generation_id": "MAIN-20260923T033600+0900-PRIMARY-H7-FORMALR4-C10-R84-PREIDENTITY-WAIT-5E7A2C91",
   "input_generations": {
     "evidence_analyst_origin": "EVA-20260923T020919+0900-R83-A6D4E219@ba109150205db0a30ce1c294ab8133fa6caa51b4",
     "evidence_analyst_final_reconciliation": "EVA-20260923T025733+0900-R84-5E7A2C91@81f46202b5337e8011d891dc197a1ec83fe1f259",
-    "main_previous": "MAIN-20260923T012121+0900-PRIMARY-H7-FORMALR4-C10-R82-RECOVERY-7C4E19B2",
+    "main_previous": "MAIN-20260923T033600+0900-PRIMARY-H7-FORMALR4-C10-R84-PREIDENTITY-WAIT-5E7A2C91",
     "sub": "SUB-20260923T023426+0900-NOOP-SCAN-R83-A6D4E219"
   },
   "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
+  "status": "COMPLETED",
   "started_at": "2026-09-23T03:18:23+09:00",
-  "heartbeat_at": "2026-09-23T03:36:00+09:00",
-  "completed_at": null,
+  "heartbeat_at": "2026-09-23T03:39:00+09:00",
+  "completed_at": "2026-09-23T03:39:00+09:00",
   "blocked_at": null,
   "blocked_until": null,
   "analyst_generation_id": "EVA-20260923T025733+0900-R84-5E7A2C91",
@@ -38,7 +38,7 @@
     "science_affecting_change_this_run": "NONE"
   },
   "cycle_count": 10,
-  "reassessment_rationale": "R84 preserves the R83 H7 R4 allocation. The previously stale R82 artifact pointer was reconciled to an authoritative live run-scoped artifact, enabling exact-byte durable capture, invariant lint closure, and non-result preidentity revalidation without resolver/materializer retry or any one-way action.",
+  "reassessment_rationale": "R84 preserved the R83 H7 R4 allocation. The stale R82 artifact pointer was reconciled to the authoritative live run-scoped artifact, enabling exact-byte durable capture, invariant lint closure, and non-result preidentity revalidation with concrete information gain and without resolver/materializer retry or any one-way action.",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": {
@@ -56,7 +56,7 @@
     "original_r4_head": "647253f4c0128ff09d47fdfce80dabf006863af1",
     "artifact_capture_head": "a7ed00ae80d7873561961da333d15e3796ac768b",
     "lint_repair_head": "a751044ad438f6351faf527fd62b989fc073476b",
-    "active_research_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
+    "final_research_head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
@@ -90,25 +90,6 @@
     "resolver_retry_attempted": false,
     "materializer_rerun_attempted_by_main": false
   },
-  "preidentity_validation": {
-    "workflow_path": ".github/workflows/h7-formal-r4-preidentity.yml",
-    "workflow_run_id": 35768073646,
-    "head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
-    "status": "completed",
-    "conclusion": "success",
-    "validated": [
-      "exact lock and manifest digests",
-      "versions-to-manifest package equality",
-      "31-package protected runtime surface",
-      "development tooling exclusion",
-      "R4 host-binding equality",
-      "inherited R3 scientific component blob identity",
-      "inherited non-result R3 integrity tests",
-      "R4 relevant lint",
-      "absence of one-way and protected-evaluation material"
-    ],
-    "result_bearing": false
-  },
   "workflows": [
     {
       "run_id": 35768073646,
@@ -119,6 +100,16 @@
       "result_bearing": false
     },
     {
+      "run_id": 35768073346,
+      "name": "ci",
+      "head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
+      "status": "completed",
+      "conclusion": "success",
+      "result_bearing": false,
+      "python_3_11": "success",
+      "python_3_13": "success"
+    },
+    {
       "run_id": 35768073672,
       "name": "h7-formal-r4-lock-materialize",
       "head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
@@ -127,18 +118,21 @@
       "result_bearing": false,
       "failure_classification": "EXPECTED_FAIL_CLOSED_CREATE_ONLY_AUTHORITY_SURFACE_AFTER_DURABLE_LOCK_EXISTS",
       "materialization_step": "SKIPPED"
-    },
-    {
-      "run_id": 35768073346,
-      "name": "ci",
-      "head": "f84ba35e17c24fcdcfa6920ef23972d4a81567a5",
-      "status": "in_progress",
-      "conclusion": null,
-      "result_bearing": false,
-      "completed_steps": ["install", "lint", "local readiness"],
-      "current_step": "test"
     }
   ],
+  "preidentity_validation": {
+    "status": "CLOSED_GREEN",
+    "exact_lock_manifest_versions_binding": true,
+    "package_surface_equality": true,
+    "development_tooling_excluded": true,
+    "host_binding_equal": true,
+    "inherited_r3_component_blobs_equal": true,
+    "inherited_r3_integrity_tests_green": true,
+    "relevant_lint_green": true,
+    "generic_ci_green": true,
+    "one_way_material_absent": true,
+    "result_bearing": false
+  },
   "prior_result_preservation": {
     "pf_r1_unchanged": true,
     "pf_r1_used_as_confirmatory_evidence": false,
@@ -157,7 +151,7 @@
     "preformal_development_results": 0,
     "mechanism_architecture_observations": 0,
     "system_architecture_observations": 0,
-    "non_evidentiary_formal_preidentity_integrity_observations": 3,
+    "non_evidentiary_formal_preidentity_integrity_observations": 4,
     "classification": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_RESOURCE_CONTRACT_CLOSURE"
   },
   "consumed_identities": [
@@ -171,10 +165,10 @@
   ],
   "integrity": {
     "analyst_generation_rechecked_before_research_mutations": true,
-    "analyst_generation_rechecked_before_final_persistence": true,
+    "analyst_generation_rechecked_before_final_close": true,
     "analyst_generation_stable_at_r84": true,
     "r84_preserved_h7_allocation": true,
-    "exact_research_head_rechecked_before_each_mutation": true,
+    "exact_research_head_rechecked_before_mutations_and_close": true,
     "sub_collision": false,
     "science_result_exposed_this_run": false,
     "formal_identity_created_or_consumed": false,
@@ -189,6 +183,6 @@
     "resolver_retry": false,
     "science_affecting_change_after_r4_authority": false
   },
-  "stop_reason": "WAITING_ONLY_FOR_GENERIC_CI_35768073346_AT_EXACT_HEAD_F84BA35E17C24FCDCFA6920EF23972D4A81567A5_AFTER_R4_PREIDENTITY_SUCCESS",
-  "next_action": "When generic CI 35768073346 completes, re-read fresh Evidence Analyst authority and exact R4 head. If CI is green and authority/ownership are unchanged, mark cycle-10 R4 preidentity closure complete and return exact final head for fresh Analyst review. Do not create evaluation commitment, FORMAL identity, STARTED, reveal evaluation seeds, access protected evaluation, dispatch result-bearing execution, preserve scientific evidence, or score official raw."
+  "stop_reason": "R84_H7_FORMAL_R4_CYCLE10_PREIDENTITY_RESOURCE_BINDING_CLOSED_ALL_NON_RESULT_VALIDATION_GREEN_STOP_FRESH_ANALYST_REVIEW",
+  "next_action": "Fresh Evidence Analyst review of exact final R4 head f84ba35e17c24fcdcfa6920ef23972d4a81567a5. No evaluation commitment, FORMAL identity, STARTED, evaluation-seed reveal, protected evaluation, result-bearing execution, scientific preserve/evidence ref or official scoring is authorized by this generation."
 }
