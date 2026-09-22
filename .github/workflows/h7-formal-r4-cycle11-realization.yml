@@ -123,9 +123,13 @@ jobs:
           assert str(torch.version.cuda) == expected_host["torch_cuda_build_version"]
           record = importlib.metadata.distribution("torch").read_text("RECORD")
           assert record is not None
-          assert hashlib.sha256(record.encode()).hexdigest() == expected_host[
-              "torch_distribution_record_sha256"
-          ]
+          observed_record_sha = hashlib.sha256(record.encode()).hexdigest()
+          expected_record_sha = expected_host["torch_distribution_record_sha256"]
+          assert observed_record_sha == expected_record_sha, (
+              "torch_distribution_record_sha256",
+              observed_record_sha,
+              expected_record_sha,
+          )
           torch.set_num_threads(1)
           torch.use_deterministic_algorithms(True)
           assert torch.get_num_threads() == 1
