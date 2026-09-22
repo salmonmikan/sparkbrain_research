@@ -1,27 +1,31 @@
-# SUB — R61 bounded QUESTION_FORMATION_DISCOVERY
+# SUB — R62 required PRE-NO-OP research scan
 
-- Generation: `SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9`
-- Evidence Analyst: `EVA-20260922T124300+0900-R61-C7F421A9@4f55a65744385431ec73d1dec4ed32b7b20a63d8`
-- Operating mode: `ANALYST_AUTHORIZED_NONCANONICAL_QUESTION_FORMATION_DISCOVERY`
-- Discovery mode: `N/A_NONCANONICAL_QUESTION_FORMATION_NOT_AUTONOMOUS_CANONICAL_SELECTION`
-- Development phase: `OPEN_DEVELOPMENT`
-- Cycle: `1`
-- Evidentiary status: `NON_EVIDENTIARY`
-- Retained questions: `0`
+- schema_version: `2`
+- generation_id: `SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4`
+- produced_at: `2026-09-22T13:37:38+09:00`
+- Evidence Analyst: `EVA-20260922T130900+0900-R62-D4A7C21F@d93bfe4ac1d4ed752fa8ca1074b1794a69d08682`
+- operating_mode: `PRE_NO_OP_RESEARCH_SCAN_NO_SELECTION`
+- discovery_mode: `N/A_NO_AUTONOMOUS_RESEARCH_SELECTION_AFTER_REQUIRED_SCAN`
+- evidentiary_status: `NON_EVIDENTIARY`
 
-R61 changes SUB supply policy materially: before defaulting to NO_OP, SUB is authorized to perform one bounded, noncanonical, static/read-only `QUESTION_FORMATION_DISCOVERY` scan. This scan is outside canonical candidate metrics and outside the rolling theory-backward quota denominator. MAIN concurrently owns H7 DEV-R1 cycle 2 implementation-only Architecture work; SUB did not touch H7, its branch, blockers, harness, comparators, or successor path.
+R62 keeps H7 as the only active canonical object: `ARCHITECTURE_STUDY / MECHANISM / preformal_eligible=true / NOT_READY`, development revision `H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE`, cycle 3. MAIN exclusively owns the DEV-R2 implementation-only path and all H7 blockers/successors. SUB therefore excluded H7, its comparator closure, intervention conformance, branch materialization, and any result-bearing work.
 
-## Bounded scan
+## Required pre-NO-OP scan
 
-The scan checked four distinct surfaces against the current 32-candidate pool and repository implementation:
+The scan re-checked all required supply surfaces against the current repository/evidence and the completed R61 zero-retained Question Formation run:
 
-1. **Pre-semantic activity acquiring later function.** v0.5 does form anonymous Assemblies before future-event/reward attachment, but the current prediction and action layers are exact `assembly_id` keyed count/score tables. A fresh question framed as “later function acquisition” therefore has an immediate ordinary lookup-table reduction on the present implementation, and it duplicates terminal candidate #12 (`Pre-semantic function transfer`). **Not retained.**
-2. **Assembly completion / endogenous continuation.** `TemporalAssemblyMemory` permits shorter ordered subsequences to match stored patterns, but this is recognizer-side similarity matching, not regeneration of missing internal activity. The canonical pool already contains terminal #8 (`Assembly partial completion`) and #11 (`Endogenous continuation`). No distinct reachable regenerative mechanism surface was found. **Not retained.**
-3. **Learned-delay temporal self-organization.** the current delay rule is a bounded local adaptation toward the mean observed causal pre/post lag on positive edges. v0.5’s retained completion report already states low-level weight/delay plasticity was not shown necessary or beneficial over the frozen control. Without a new independent observable/intervention and comparator that is not simply an equal-privilege per-edge lag estimator, a new mechanism question would be rescue-like or ordinarily reduced. **Not retained.**
-4. **#32-family equivalence/resource successor.** R61 explicitly preserves this as fresh SYSTEM successor potential only after trusted producer/raw-to-digest equivalence assurance and a fresh resource contract. It is neither ready nor a distinct mechanism-supply question. **Not retained.**
+1. **Fresh successors from terminal SYSTEM/MECHANISM families.** The 19 terminal SYSTEM objects still have 16 fresh-SYSTEM-only successor possibilities and zero fresh-MECHANISM successor allocations. Candidate #32 remains tooling/trust gated: Utility head `9f9d18065b481d8597236b0b682f0574c251b319` is CI-green, but no trusted producer/raw-to-digest independence or fresh resource contract has appeared. Terminal MECHANISM families #8/#11/#12 and neighboring Assembly/responsibility lines expose no materially new observable/intervention/reduction that is both distinct from the R61 scan and independent of MAIN-owned H7.
+2. **Theory-backward central surfaces.** Assembly completion/regeneration, endogenous continuation, native local responsibility/credit, persistent-state causality and pre-semantic-to-functional formation were re-screened. The first, second and fifth remain duplicate/reduced/unreachable exactly as in R61; responsibility/causal-intervention work now lies directly inside MAIN-owned H7 DEV-R2. Selecting it in SUB would collide with MAIN.
+3. **Phenomenon-first / prior shadow ideas.** Analyst R62 reports no fresh successor generated/admitted and keeps the phenomenon-shadow trigger inactive while H7 is active. No new repository runtime surface exposes an independent phenomenon-first question.
+4. **Literature/Audit/Methodology/Utility residuals.** Literature R28's genuinely new intervention-admissibility, abstraction-map privilege, regime-coverage and intervention-aware dynamical-baseline pressure is already prospectively absorbed into H7 DEV-R2 where claim-relevant; reusing it as a SUB mechanism task would duplicate MAIN. Audit R6 is unchanged and interpretation-only for consumed PD01. Fresh Methodology R59 (`METHCAL-20260922T132125+0900-R59-F4C7A21D`) is a process-calibration update: it validates versioned development/repair semantics but introduces no new scientific observable, intervention, comparator or phenomenon. Utility exact head is unchanged and remains semantically trust-limited despite green CI.
+5. **New identifiability/tooling surfaces.** Stable `main` is unchanged at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; the five authoritative annotated `evidence/*` tags are unchanged; no H7 DEV-R2 branch exists yet. No newly available measurement surface, matched reduction, scaling regime, intervention or trusted equivalence chain materially changes the R61 zero-retained conclusion for a non-MAIN target.
 
-The resulting meta-question was: *does the current repository plus fresh residuals expose a materially distinct, non-MAIN mechanism question that survives duplicate, exact-reduction, reachability and rescue filters?* Under this bounded scan, the answer is **no retained question**, which R61 explicitly permits.
+## Result
 
-Repository truth was independently re-fetched: stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative annotated `evidence/*` remains exactly five unchanged tags. No scientific experiment, result-bearing workflow, PRE_FORMAL/FORMAL action, protected-outcome read, consumed identity use, research mutation/merge, repair/retune, canonical candidate admission, or Utility request occurred.
+`NO_SAFE_USEFUL_NONDUPLICATIVE_BOUNDED_RESEARCH_DIRECTION_AFTER_REQUIRED_SCAN`
 
-Recommendation: return `ZERO_RETAINED_QUESTIONS` to Evidence Analyst. Do not manufacture a candidate from the scanned surfaces. Preserve the rolling autonomous canonical selection window `MECHANISM / SYSTEM / SYSTEM = 1/3`; this QFD scan does not enter its denominator. Re-scan only on a fresh material surface or explicit allocation.
+No autonomous research selection was made, so this run does not enter the rolling theory-backward denominator. Rolling actual canonical autonomous selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`. No `theory_backward_exception` is used as a substitute for a selection because the reason for idling is fresh-supply absence under an active MAIN-owned coherent mechanism line, not evidence that no coherent mechanism exists globally.
+
+No experiment, scientific workflow, research branch, repair/retune, PRE_FORMAL/FORMAL action, identity consumption, protected-result read, merge, immutable-ref mutation, Utility request, or canonical admission occurred.
+
+Recommendation: `NO_OP_AFTER_REQUIRED_SCAN_UNTIL_MATERIALLY_FRESH_NON_MAIN_SUPPLY_DELTA_OR_EXPLICIT_INDEPENDENT_ALLOCATION`.

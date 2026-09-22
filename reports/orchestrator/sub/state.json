@@ -1,97 +1,26 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9",
-  "produced_at": "2026-09-22T12:51:00+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9",
-  "authority_scope": "SUB_NONCANONICAL_QUESTION_FORMATION_NON_EVIDENTIARY_READ_ONLY_SCAN",
-  "supersedes_generation_id": "SUB-20260922T113500+0900-NOOP-R59INTENTIONALIDLE-A6D4C219",
+  "generation_id": "SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4",
+  "produced_at": "2026-09-22T13:37:38+09:00",
+  "producer_run_id": "SUB-RUN-SUB-20260922T133738+0900-PRENOOP-R62-NOFRESHDELTA-6C8A21F4",
+  "authority_scope": "SUB_INDEPENDENT_SECONDARY_RESEARCH_PRE_NO_OP_SCAN_AND_CONTROL_PLANE_PERSISTENCE",
+  "supersedes_generation_id": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9",
   "input_generations": {
-    "evidence_analyst": {
-      "generation_id": "EVA-20260922T124300+0900-R61-C7F421A9",
-      "handoff_commit": "4f55a65744385431ec73d1dec4ed32b7b20a63d8",
-      "main_lane": "H7_DEV_R1_FROZEN_CONTRACT_IMPLEMENTATION_ARCHITECTURE_CYCLE2",
-      "sub_lane": "QUESTION_FORMATION_DISCOVERY_BOUNDED_INDEPENDENT_SCAN",
-      "sub_fallback": "NO_OP_ONLY_AFTER_BOUNDED_QUESTION_FORMATION_SCAN_RETURNS_ZERO_RETAINABLE_QUESTIONS",
-      "candidate_pool": {
-        "total": 32,
-        "MECHANISM": 13,
-        "SYSTEM": 19,
-        "ACTIVE": 1,
-        "NONTERMINAL_HOLD": 0,
-        "TERMINAL_FOR_CURRENT_OBJECT": 31,
-        "preformal_eligible": 1,
-        "preformal_ready": 0,
-        "viable_mechanism_candidates": 1
-      },
-      "development_phase_distribution": {
-        "OPEN_DEVELOPMENT": 2,
-        "RESULT_EXPOSED_DEVELOPMENT": 30,
-        "CONSUMED_ONE_WAY_CANONICAL_OBJECTS": 0,
-        "CONSUMED_ONE_WAY_SEPARATE_SCIENTIFIC_IDENTITIES": 7
-      },
-      "active_h7": {
-        "id": "CAND-H7-RESPONSIBILITY",
-        "classification": "ARCHITECTURE_STUDY",
-        "claim_ceiling": "MECHANISM",
-        "preformal_eligible": true,
-        "preformal_readiness": {"status": "NOT_READY"},
-        "hold_class": null,
-        "hold_reason": null,
-        "terminal_state": "ACTIVE",
-        "queue_state": "ACTIVE",
-        "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-        "development_revision": "H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT",
-        "system_priority_exception": {"used": false},
-        "main_owned": true
-      },
-      "candidate32": {
-        "id": "CAND-RESOURCE-SEMANTIC-ACTIVE-WORK-LOCALIZATION-01",
-        "claim_ceiling": "SYSTEM",
-        "preformal_eligible": false,
-        "preformal_readiness": {"status": "NOT_APPLICABLE"},
-        "hold_class": "HOLD_METHOD_LIMITED",
-        "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-        "queue_state": "NOT_QUEUED",
-        "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-        "fresh_successor_potential": "FRESH_SYSTEM_SUCCESSOR"
-      },
-      "system_priority_exception": {"used": false},
-      "question_formation": {
-        "authorized": true,
-        "canonical": false,
-        "evidentiary": false,
-        "counts_in_theory_backward_quota": false,
-        "counts_in_candidate_metrics": false,
-        "execution_guard": "STATIC_READ_ONLY_FIRST_STOP_BEFORE_CANONICAL_ALLOCATION_OR_RESULT_BEARING_EXPERIMENT"
-      }
-    },
-    "main": {
-      "generation_id": "MAIN-20260922T122749+0900-PRIMARY-H7-DEVR1-ARCH-C1-7DE840B0",
-      "orchestrator_tip_observed": "9b946107aadac9430a449d32d5818b16631719c8",
-      "status": "COMPLETED",
-      "lease_status": "CLOSED",
-      "candidate_id": "H7 responsibility",
-      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "development_revision": "H7-DEV-R1-CLAIM-SCOPED-CAUSAL-CONTRACT",
-      "cycle_count": 1,
-      "static_contract": "H7-DEV-R1-ARCH-CONTRACT-V1",
-      "research_head": "b83cd8cc71557af3ecc79c8a305a22b58c1b483c",
-      "ci_status": "SUCCESS",
-      "result_bearing_execution": false
-    },
-    "control": {
-      "generation_id": "CTRL-20260922T105700+0900-R32-C5A721D4",
-      "tip": "544bede4c5131ea57e5b93903bab5279d066a0c0",
-      "freshness": "STALE_RELATIVE_TO_HUMAN_005_006_007_AND_R61_CONTROL_REVIEW_PENDING"
-    },
-    "previous_sub": "SUB-20260922T113500+0900-NOOP-R59INTENTIONALIDLE-A6D4C219"
+    "evidence_analyst": "EVA-20260922T130900+0900-R62-D4A7C21F@d93bfe4ac1d4ed752fa8ca1074b1794a69d08682",
+    "main": "MAIN-20260922T125400+0900-RELAY-H7-DEVR1-ARCH-C2-C7F421A9@8d9479100cb0df994efd33ac2d53670b809bf40a",
+    "control": "CTRL-20260922T124800+0900-R33-E7C421B6@c41db58a5cc87e5460f143ce07c4256d7238d577",
+    "previous_sub": "SUB-20260922T125100+0900-QFD-R61-ZERORETAIN-C7F421A9@e56c285996c30888ec7f914efc505974695a6ed0",
+    "literature": "LIT-20260922T123000+0900-R28-INTERVENTION-ADMISSIBILITY-6B4D21F8@33a7d8fbf91175a78002f3c2a9a6109fbefb0ff6",
+    "audit": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7@35cd3434306a413ec6e90d83a2618cd9101a0d88",
+    "methodology": "METHCAL-20260922T132125+0900-R59-F4C7A21D@31a0e2df7cc0560912fddd3159d925c531028027",
+    "utility_exact_head": "utility/equivalence-certificate-v0-1-A42D7C19@9f9d18065b481d8597236b0b682f0574c251b319"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "4f55a65744385431ec73d1dec4ed32b7b20a63d8",
-    "orchestrator_tip_before_write": "9b946107aadac9430a449d32d5818b16631719c8",
-    "control_tip": "544bede4c5131ea57e5b93903bab5279d066a0c0",
-    "main_h7_static_contract_head": "b83cd8cc71557af3ecc79c8a305a22b58c1b483c",
+    "analyst_handoff": "d93bfe4ac1d4ed752fa8ca1074b1794a69d08682",
+    "orchestrator_tip_before_write": "8d9479100cb0df994efd33ac2d53670b809bf40a",
+    "control_tip": "c41db58a5cc87e5460f143ce07c4256d7238d577",
+    "methodology_tip": "31a0e2df7cc0560912fddd3159d925c531028027",
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -101,123 +30,167 @@
     },
     "evidence_tag_count": 5
   },
-  "operating_mode": "ANALYST_AUTHORIZED_NONCANONICAL_QUESTION_FORMATION_DISCOVERY",
-  "discovery_mode": "N/A_NONCANONICAL_QUESTION_FORMATION_NOT_AUTONOMOUS_CANONICAL_SELECTION",
-  "target": "BOUNDED_MECHANISM_SUPPLY_QUESTION_SCAN",
-  "candidate_id": null,
-  "question_id": "QFD-R61-BOUND-SCAN-01",
-  "development_phase": "OPEN_DEVELOPMENT",
+  "allocation": {
+    "main_lane": "H7_DEV_R2_VERSIONED_COMPARATOR_PROTOCOL_CLOSURE_ARCHITECTURE_CYCLE3_IMPLEMENTATION_ONLY",
+    "sub_lane": "INDEPENDENT_IDLE_AFTER_ZERO_RETAINED_QUESTION_FORMATION_UNTIL_FRESH_NON_MAIN_SUPPLY_DELTA",
+    "sub_fallback": "REQUIRED_PRE_NO_OP_SCAN_THEN_NO_OP_IF_NO_SAFE_USEFUL_NONDUPLICATIVE_DIRECTION",
+    "system_priority_exception": {"used": false}
+  },
+  "candidate_pool": {
+    "total": 32,
+    "MECHANISM": 13,
+    "SYSTEM": 19,
+    "ACTIVE": 1,
+    "NONTERMINAL_HOLD": 0,
+    "TERMINAL_FOR_CURRENT_OBJECT": 31,
+    "preformal_eligible": 1,
+    "preformal_ready": 0,
+    "viable_mechanism_candidates": 1
+  },
+  "main_owned_object": {
+    "id": "CAND-H7-RESPONSIBILITY",
+    "classification": "ARCHITECTURE_STUDY",
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "NOT_READY",
+    "hold_class": null,
+    "terminal_state": "ACTIVE",
+    "queue_state": "ACTIVE",
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-DEV-R2-COMPARATOR-PROTOCOL-CLOSURE",
+    "cycle_count": 3,
+    "main_owned": true
+  },
+  "operating_mode": "PRE_NO_OP_RESEARCH_SCAN_NO_SELECTION",
+  "discovery_mode": "N/A_NO_AUTONOMOUS_RESEARCH_SELECTION_AFTER_REQUIRED_SCAN",
+  "selected_target": null,
+  "work_kind": "NO_CANONICAL_WORK_NO_CANDIDATE_SEED_NO_DEVELOPMENT_REVISION_NO_FRESH_SUCCESSOR_PROPOSAL",
+  "development_phase": null,
   "development_revision": null,
-  "cycle_count": 1,
-  "cycle3_reassessment_rationale": "N/A_CYCLE_1_NONCANONICAL_SCAN",
+  "cycle_count": 0,
+  "cycle3_reassessment_rationale": "N/A_NO_SELECTED_SUB_OBJECT",
   "main_independence": {
     "status": "PASS_NO_COLLISION",
-    "reason": "Scan excluded H7 implementation, blockers, research branch, frozen contract, result-bearing surfaces and successor path."
+    "reason": "Excluded H7 DEV-R2 comparator closure, intervention conformance, branch materialization, blockers, successor path and all result-bearing surfaces."
+  },
+  "pre_no_op_scan": {
+    "performed": true,
+    "result": "NO_SAFE_USEFUL_NONDUPLICATIVE_BOUNDED_RESEARCH_DIRECTION",
+    "alternatives_considered": [
+      {
+        "surface": "TERMINAL_SYSTEM_FRESH_SUCCESSORS",
+        "result": "NO_SELECTION",
+        "reason": "16 remain SYSTEM-only possibilities; no new trusted equivalence/resource contract. Candidate #32 remains tooling/trust gated."
+      },
+      {
+        "surface": "TERMINAL_MECHANISM_FRESH_SUCCESSORS",
+        "result": "NO_SELECTION",
+        "reason": "Assembly completion/endogenous continuation/pre-semantic lines remain duplicate, reduced or unreachable from R61; causal responsibility overlaps MAIN H7."
+      },
+      {
+        "surface": "THEORY_BACKWARD_CENTRAL_SURFACES",
+        "result": "NO_SELECTION",
+        "reason": "No new independent Assembly regeneration, continuation, persistent-state, local-credit or pre-semantic functionalization surface; H7 owns live causal-responsibility surface."
+      },
+      {
+        "surface": "PHENOMENON_FIRST_AND_SHADOW",
+        "result": "NO_SELECTION",
+        "reason": "Analyst R62 generated/admitted no fresh successor and shadow trigger is inactive while H7 is active."
+      },
+      {
+        "surface": "LITERATURE_R28",
+        "result": "NO_SELECTION",
+        "reason": "Claim-relevant intervention validity/abstraction/regime/baseline pressure is prospectively assigned to H7 DEV-R2; independent reuse would duplicate MAIN."
+      },
+      {
+        "surface": "AUDIT_R6",
+        "result": "NO_SELECTION",
+        "reason": "Consumed PD01 interpretation ceiling only; no permission to reopen or generate a rescue successor."
+      },
+      {
+        "surface": "METHODOLOGY_R59",
+        "result": "NO_SELECTION",
+        "reason": "Fresh process-calibration update validates development lineage semantics but introduces no scientific phenomenon, observable, intervention or comparator."
+      },
+      {
+        "surface": "UTILITY_EQUIVALENCE",
+        "result": "NO_SELECTION",
+        "reason": "Exact head unchanged and CI-green, but trusted producer/raw-to-digest semantic independence remains unresolved; no fresh tooling delta since R61 scan."
+      },
+      {
+        "surface": "REPOSITORY_RUNTIME_OR_MEASUREMENT_DELTA",
+        "result": "NO_SELECTION",
+        "reason": "Stable main/evidence unchanged and no H7 DEV-R2 branch exists; no new independent observable, intervention, scaling regime or measurement surface."
+      }
+    ]
   },
   "theory_backward_accounting": {
-    "canonical_autonomous_selection_made": false,
-    "question_formation_counts_in_quota": false,
+    "autonomous_scientific_selection_made": false,
+    "denominator_excluded": true,
     "rolling_autonomous_canonical_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
     "qualifying_share": "1/3",
-    "theory_backward_exception": {
-      "code": "NO_COHERENT_MECHANISM_TARGET",
-      "detail": "After the R61-authorized noncanonical question-formation scan, no additional independent question survived duplicate, ordinary-reduction, reachability and rescue filters strongly enough to justify a canonical autonomous mechanism selection. This exception is denominator-excluded and does not negate the coherent MAIN-owned H7 target."
-    },
-    "exception_counts_as_selection": false,
-    "no_target_episode": {
-      "id": "NTE-20260921-R34-POST-REPLAY-v1",
-      "status": "CLOSED",
-      "analyst_canonical_check_count": 23,
-      "closure_reason": "H7_VERSIONED_MECHANISM_ARCHITECTURE_TARGET_EXISTS"
-    }
+    "theory_backward_exception": null,
+    "note": "No exception is used to manufacture quota compliance; current idle decision follows required scan with active coherent MAIN-owned H7 and no fresh independent supply."
   },
-  "question": "Does the current repository plus fresh R61 residuals expose a materially distinct non-MAIN mechanism question that survives duplicate, exact-reduction, reachability and rescue filters?",
-  "hypothesis": "A new mechanism-supply question might exist around pre-semantic functionalization, endogenous completion, or learned temporal delays, but it should be retained only if static inspection shows a distinct reachable mechanism surface beyond existing terminal candidates and ordinary reductions.",
-  "reduction_question": "Can each putative question be reduced to an existing terminal candidate, an exact assembly-ID lookup/count table, an equal-privilege per-edge lag estimator, recognizer-only similarity matching, or an unready SYSTEM/tooling successor?",
-  "falsifier": "Return ZERO_RETAINED_QUESTIONS if every bounded surface is duplicate, exactly/ordinarily reduced, unreachable as a mechanism in current code, rescue-like, or reserved as unready SYSTEM successor work.",
+  "phenomenon_question_hypothesis": {
+    "phenomenon": null,
+    "question": "Does any materially fresh non-MAIN supply delta since R61 justify one safe bounded autonomous SUB research task?",
+    "hypothesis": "If Literature/Methodology/Utility/repository changes expose a new independent observable, intervention, reduction, comparator, scaling or trusted measurement surface, one bounded task may be selected; otherwise idling is scientifically preferable to duplicate/rescue activity.",
+    "observable_intervention": null,
+    "ordinary_reductions_comparators": null,
+    "falsifier_discriminator": "NO_OP if every required scan surface is unchanged, MAIN-owned, duplicate/reduced, tooling-gated, governance-only or otherwise non-informative."
+  },
   "repair_change_classification": {
-    "selected_work": "READ_ONLY_STATIC_QUESTION_FORMATION",
+    "selected_work": "READ_ONLY_PRE_NO_OP_SCAN",
     "science_invariant_repair": false,
     "science_affecting_change": false,
-    "repository_mutation": false
+    "repository_science_mutation": false
   },
   "inputs": {
-    "canonical_candidate_pool_checked": true,
-    "stable_main_code_checked": true,
-    "recent_methodology_literature_audit_utility_residuals_considered": true,
-    "fresh_successor_potential_considered": true,
-    "phenomenon_first_surfaces_considered": true,
-    "formal_or_sealed_test_used": false,
-    "held_out_or_confirmatory_seed_used": false,
-    "official_scorer_used": false,
+    "latest_analyst_allocation_read": true,
+    "main_sub_control_reconciled": true,
+    "recent_literature_audit_methodology_utility_checked": true,
+    "terminal_families_checked": true,
+    "stable_main_and_evidence_independently_refetched": true,
+    "protected_or_held_out_result_used": false,
     "consumed_identity_used": false
   },
   "implementation": {
-    "mode": "STATIC_READ_ONLY_SCAN",
+    "mode": "STATIC_READ_ONLY_CONTROL_PLANE_AND_REPOSITORY_SCAN",
     "research_branch": null,
     "workflow": null,
     "scientific_probe_executed": false,
-    "outcome_dispatch": false,
-    "research_merge": false,
-    "repair_executed": false,
-    "retune_executed": false
+    "result_bearing_execution": false,
+    "repair_or_retune": false
   },
   "observations": {
-    "retained_question_count": 0,
-    "surfaces": [
-      {
-        "name": "PRE_SEMANTIC_FUNCTION_ACQUISITION",
-        "disposition": "NOT_RETAINED_DUPLICATE_AND_ORDINARY_LOOKUP_REDUCTION",
-        "detail": "Current predictor is assembly_id keyed event counts and action policy is assembly_id keyed action scores; existing candidate #12 is Pre-semantic function transfer."
-      },
-      {
-        "name": "ASSEMBLY_COMPLETION_OR_ENDOGENOUS_CONTINUATION",
-        "disposition": "NOT_RETAINED_DUPLICATE_AND_NO_GENERATIVE_SURFACE",
-        "detail": "Current bounded completion is shorter ordered-subsequence recognition via similarity; existing candidates #8 and #11 already cover partial completion/endogenous continuation."
-      },
-      {
-        "name": "LEARNED_DELAY_TEMPORAL_SELF_ORGANIZATION",
-        "disposition": "NOT_RETAINED_ORDINARY_REDUCTION_OR_RESCUE_RISK",
-        "detail": "Current delay rule adapts toward mean observed causal lag; retained v0.5 report says weight/delay plasticity was not shown necessary/beneficial over frozen control. No distinct new intervention/observable/comparator surface was found."
-      },
-      {
-        "name": "CANDIDATE32_FAMILY_SUCCESSOR",
-        "disposition": "NOT_RETAINED_SYSTEM_SUCCESSOR_NOT_READY",
-        "detail": "R61 requires trusted producer/raw-to-digest equivalence assurance plus fresh resource contract before a fresh SYSTEM successor; predecessor remains terminal."
-      }
-    ],
-    "scientific_result": "ZERO_RETAINED_QUESTIONS",
-    "canonical_candidate_generated": false,
-    "canonical_candidate_admitted": false,
-    "main_dependency_created": false,
-    "evidence_refs_unchanged": true
+    "fresh_non_main_scientific_supply_delta": false,
+    "fresh_methodology_update_seen": true,
+    "fresh_methodology_update_scientific_target_effect": "NONE",
+    "stable_main_unchanged": true,
+    "evidence_refs_unchanged": true,
+    "h7_dev_r2_branch_present": false,
+    "selected_task_count": 0
   },
-  "evidentiary_status": "NON_EVIDENTIARY_QUESTION_FORMATION_ONLY",
-  "proposed_claim_ceiling": "NOT_ASSIGNED_NONCANONICAL_ZERO_RETAINED",
-  "proposed_preformal_eligible": false,
-  "preliminary_readiness": {"status": "NOT_APPLICABLE_NO_RETAINED_OBJECT"},
-  "proposed_hold_dimensions": {
-    "hold_class": null,
-    "hold_reason": null,
-    "terminal_state": null,
-    "queue_state": null,
-    "status": "NOT_APPLICABLE_NO_RETAINED_OBJECT"
-  },
+  "evidentiary_status": "NON_EVIDENTIARY_PRE_NO_OP_SCAN_ONLY",
+  "proposed_claim_ceiling": "NOT_APPLICABLE_NO_SELECTED_OBJECT",
+  "proposed_preformal_eligible": null,
+  "preliminary_readiness": {"status": "NOT_APPLICABLE_NO_SELECTED_OBJECT"},
+  "hold_dimensions": {"status": "NOT_APPLICABLE_NO_SELECTED_CANONICAL_OBJECT"},
   "fresh_successor_potential": {
-    "retained_mechanism_question": false,
-    "candidate32_family": "FRESH_SYSTEM_SUCCESSOR_POTENTIAL_BUT_NOT_READY_OR_SELECTED",
+    "new_proposal_this_run": false,
+    "system_terminal_existing_potential": 16,
+    "mechanism_terminal_new_potential": 0,
     "terminal_predecessors_reopened": 0
   },
-  "system_priority_exception": {"used": false, "reason": "No canonical SYSTEM selection occurred."},
-  "next_layer": "RETURN_ZERO_RETAINED_QUESTIONS_TO_EVIDENCE_ANALYST",
+  "next_layer": "NONE_IDLE_PENDING_FRESH_NON_MAIN_SUPPLY_DELTA",
   "open_choices": [
-    "Re-scan only after a fresh material observable/intervention/reduction/tooling surface or explicit Analyst allocation.",
-    "Do not promote recognizer-side partial matching into an endogenous-regeneration claim.",
-    "Do not repackage assembly-ID lookup/count tables as a novel pre-semantic function-acquisition mechanism.",
-    "Do not reopen #32 predecessor; any continuation requires a fresh SYSTEM candidate ID and trusted equivalence/resource contract.",
-    "Do not touch MAIN-owned H7 cycle2 implementation or blockers."
+    "Re-scan only after a materially fresh non-MAIN observable/intervention/reduction/comparator/scaling/tooling surface or explicit allocation.",
+    "Do not duplicate H7 DEV-R2 or convert Literature R28 into a parallel H7-like SUB task.",
+    "Do not reopen terminal predecessors or treat Methodology R59 as scientific supply.",
+    "Do not promote #32 family until a fresh SYSTEM ID plus trusted equivalence/resource contract exists."
   ],
-  "recommendation": "ZERO_RETAINED_QUESTIONS_NO_CANONICAL_ADMISSION_REMAIN_AVAILABLE_FOR_FRESH_SUPPLY",
+  "recommendation": "NO_OP_AFTER_REQUIRED_SCAN_UNTIL_MATERIALLY_FRESH_NON_MAIN_SUPPLY_DELTA_OR_EXPLICIT_INDEPENDENT_ALLOCATION",
   "utility_request": null,
   "consumed_identities_this_run": [],
   "new_formal_results": 0,
@@ -234,7 +207,7 @@
     "branch": "ops/orchestrator-run-report",
     "latest_path": "reports/orchestrator/sub/latest.md",
     "state_path": "reports/orchestrator/sub/state.json",
-    "history_path": "reports/orchestrator/sub/history/2026-09-22/1251-r61-qfd-zero-retained.md",
+    "history_path": "reports/orchestrator/sub/history/2026-09-22/1337-r62-pre-no-op-no-fresh-delta.md",
     "mode": "ATOMIC_TREE_NON_FORCE_FAST_FORWARD"
   }
 }
