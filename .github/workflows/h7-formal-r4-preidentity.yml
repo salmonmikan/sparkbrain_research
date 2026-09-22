@@ -1,0 +1,178 @@
+name: h7-formal-r4-preidentity
+
+on:
+  push:
+    branches:
+      - research/main-h7-formal-r4-runtime-lock-r81-cycle10
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: "0"
+  OMP_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+
+jobs:
+  preidentity:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.11.16"
+          cache: pip
+          check-latest: false
+      - name: Install non-protected validation surface
+        run: python -m pip install -e ".[dev,learned,spiking]"
+      - name: Verify exact R4 resource binding and inherited component blobs
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import re
+          import subprocess
+          from pathlib import Path
+
+          root = Path("artifacts/formal_h7_r4")
+          contract = json.loads((root / "resource_contract.json").read_text())
+          manifest_bytes = (root / "scientific-runtime-manifest.json").read_bytes()
+          manifest = json.loads(manifest_bytes)
+          versions_bytes = (root / "scientific-runtime.versions").read_bytes()
+          lock_bytes = (root / "scientific-runtime.lock").read_bytes()
+
+          assert contract["development_revision"] == (
+              "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-"
+              "AND-PREIDENTITY-REVALIDATION"
+          )
+          assert contract["base_r3"]["exact_head"] == (
+              "f0780f2f91779a8bd1a1d09eb535921d0d48f7d4"
+          )
+          assert contract["science_affecting_delta"]["field"] == (
+              "scientific_runtime_package_resource_binding"
+          )
+          assert contract["science_affecting_delta"]["outcome_dependence"] is False
+          assert contract["science_affecting_delta"][
+              "all_non_resource_r3_scientific_fields_preserved"
+          ] is True
+          assert all(value is False for value in contract["one_way_hard_stop"].values())
+
+          lock_sha = hashlib.sha256(lock_bytes).hexdigest()
+          versions_sha = hashlib.sha256(versions_bytes).hexdigest()
+          manifest_sha = hashlib.sha256(manifest_bytes).hexdigest()
+          assert lock_sha == "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583"
+          assert manifest_sha == (
+              "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223"
+          )
+          assert manifest["lock_sha256"] == lock_sha
+          assert manifest["versions_file_sha256"] == versions_sha
+          assert versions_sha == (
+              "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575"
+          )
+
+          def norm(name: str) -> str:
+              return re.sub(r"[-_.]+", "-", name).lower()
+
+          selected = {}
+          for raw in versions_bytes.decode().splitlines():
+              line = raw.strip()
+              if not line or line.startswith("#"):
+                  continue
+              name, version = line.split("==", 1)
+              selected[norm(name)] = version
+          observed = {
+              item["normalized_name"]: item["version"]
+              for item in manifest["packages"]
+          }
+          assert observed == selected
+          assert manifest["package_count"] == len(selected) == 31
+          for item in manifest["packages"]:
+              assert re.fullmatch(r"[0-9a-f]{64}", item["wheel_sha256"])
+              assert item["wheel_size_bytes"] > 0
+
+          forbidden = {
+              norm(name)
+              for name in contract["package_contract"][
+                  "protected_runtime_excludes_development_tooling"
+              ]
+          }
+          assert not (set(observed) & forbidden)
+          assert contract["package_contract"]["binary_wheels_only"] is True
+          assert contract["package_contract"][
+              "dependency_resolution_during_materialization"
+          ] is False
+          assert contract["package_contract"]["editable_project_install_forbidden"] is True
+
+          expected_host = contract["scientific_runtime"]
+          host = manifest["host_binding"]
+          assert host["python_version"] == expected_host["python_version"]
+          assert host["python_implementation"] == expected_host["python_implementation"]
+          assert host["runner_image_os"] == expected_host["runner_image_os"]
+          assert host["runner_image_version"] == expected_host["runner_image_version"]
+          assert host["platform_system"] == expected_host["platform_system"]
+          assert host["platform_release"] == expected_host["platform_release"]
+          assert host["platform_machine"] == expected_host["platform_machine"]
+          assert host["runner_arch"] == expected_host["runner_arch"]
+
+          component_paths = {
+              "r3_contract_runtime_module": "src/sparkbrain/learned/h7_formal_r3.py",
+              "r3_raw_preserve_post_preserve_adapter": (
+                  "src/sparkbrain/learned/h7_formal_r3_integrity.py"
+              ),
+              "frozen_scientific_scorer": "src/sparkbrain/learned/h7_formal_r1.py",
+              "legacy_r2_runner_reference_only": (
+                  "src/sparkbrain/learned/h7_formal_r2_runner.py"
+              ),
+          }
+          for key, path in component_paths.items():
+              observed_blob = subprocess.check_output(
+                  ["git", "hash-object", path], text=True
+              ).strip()
+              assert observed_blob == contract["source_binding"][
+                  "base_scientific_component_blobs"
+              ][key]
+
+          forbidden_paths = [
+              root / "evaluation_payload.json",
+              root / "evaluation_seeds.json",
+              root / "FORMAL_IDENTITY.json",
+              root / "STARTED.json",
+              root / "official_prediction_raw.jsonl",
+              root / "official_score.json",
+          ]
+          assert not any(path.exists() for path in forbidden_paths)
+          print(
+              json.dumps(
+                  {
+                      "status": "R4_PREIDENTITY_STATIC_BINDING_VALID",
+                      "lock_sha256": lock_sha,
+                      "manifest_sha256": manifest_sha,
+                      "package_count": len(selected),
+                      "one_way_actions": False,
+                  },
+                  sort_keys=True,
+              )
+          )
+          PY
+      - name: Revalidate inherited non-result R3 integrity tests
+        run: python -m pytest -q tests/learned/test_h7_formal_r3.py
+      - name: R4 preidentity lint
+        run: |
+          python -m ruff check \
+            src/sparkbrain/learned/h7_formal_r3.py \
+            src/sparkbrain/learned/h7_formal_r3_integrity.py \
+            src/sparkbrain/learned/h7_formal_r1.py \
+            scripts/build_h7_formal_r3_preidentity.py \
+            scripts/materialize_h7_formal_r4_lock.py \
+            tests/learned/test_h7_formal_r3.py
+      - name: Assert one-way material remains absent
+        run: |
+          test ! -e artifacts/formal_h7_r4/evaluation_payload.json
+          test ! -e artifacts/formal_h7_r4/evaluation_seeds.json
+          test ! -e artifacts/formal_h7_r4/FORMAL_IDENTITY.json
+          test ! -e artifacts/formal_h7_r4/STARTED.json
+          test ! -e artifacts/formal_h7_r4/official_prediction_raw.jsonl
+          test ! -e artifacts/formal_h7_r4/official_score.json
