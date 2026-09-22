@@ -1,178 +1,176 @@
 {
-  "timestamp": "2026-09-21T22:30:00+09:00",
+  "timestamp": "2026-09-22T10:30:00+09:00",
   "schema_version": 2,
-  "generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
-  "produced_at": "2026-09-21T22:30:00+09:00",
-  "producer_run_id": "external-audit-auto-20260921T223000+0900-R5-5E8C21A4",
+  "generation_id": "AUD-20260922T103000+0900-R6-PD01-NULLREDUCTION-9C4A21E7",
+  "produced_at": "2026-09-22T10:30:00+09:00",
+  "producer_run_id": "external-audit-20260922T103000+0900-R6-PD01-9C4A21E7",
   "authority_scope": "INDEPENDENT_AUDITOR_READ_ONLY_REPOSITORY_EVIDENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4",
+  "supersedes_generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
   "role": "INDEPENDENT_AUDITOR",
-  "schedule_slot": "22:30 JST",
+  "schedule_slot": "10:30 JST",
   "schedule_inference": false,
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260921T205220+0900-R25-9C4E21A7",
-      "handoff_commit": "835c175de2db7220e22919a3a27c76406b8cef46"
+      "generation_id": "CTRL-20260922T085130+0900-R31-B7D4A219",
+      "handoff_commit": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260921T220541+0900-R44-7A3C21E8",
-      "handoff_commit": "fca9a4b0adb259b76a518605f611ff79e0c48680"
+      "generation_id": "EVA-20260922T100852+0900-R58-7D4C21A9",
+      "handoff_commit": "13c4374c889e4326d225c62de02ca4a51e351ca1"
     },
     "main_report": {
-      "generation_id": "MAIN-20260921T221651+0900-PRIMARY-FUNNEL21-HOLD-R44-7A3C21E8",
-      "handoff_commit": "4734a1d45b0ab888c07c10dfbb51710f4db41a16"
+      "generation_id": "MAIN-20260922T102119+0900-PRIMARY-FUNNEL21-IDLE-R58-7D4C21A9",
+      "handoff_commit": "feee71a4b06027c8b03ec8e3f4511776289f16dd",
+      "orchestrator_branch_tip_consumed": "5debade38822a8b33748d7df009e6568be7bc784"
     },
     "sub_report": {
-      "generation_id": "SUB-20260921T213619+0900-NOOP-R43INTENTIONALIDLE-6A8D21C5",
-      "handoff_commit": "93a9a83dee714060d5b4a2fc6c9689c2204f7aa3",
-      "orchestrator_branch_tip_consumed": "4734a1d45b0ab888c07c10dfbb51710f4db41a16"
+      "generation_id": "SUB-20260922T093331+0900-NOOP-R57INTENTIONALIDLE-6C4A21E8",
+      "handoff_commit": "d111ddff66c2055e083e7b2dfd8482db90e9c6a2",
+      "orchestrator_branch_tip_consumed": "5debade38822a8b33748d7df009e6568be7bc784"
     },
     "literature": {
-      "generation_id": "LIT-20260921T213000+0900-R22-SELECTION-AWARE-INFERENCE-7C4A21E9",
-      "handoff_commit": "1c8cb3f86d1ef63a12c2b1b9ff984f717723ec7c"
+      "generation_id": "LIT-20260922T093207+0900-R27-SPECIFICITY-IDENTIFIABILITY-8C3A21F5",
+      "handoff_commit": "237b3c1100e082624ce08d0ac2d7fcb9c7d3dd6d"
     },
     "prior_audit": {
-      "generation_id": "AUD-20260921T103000+0900-R4-ASSEMBLY-CONFOUND-7D3A91E4",
-      "handoff_commit": "d41e21ca0311be623398f8f8bb736758559852a0"
-    },
-    "historical_h5_audit": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "handoff_commit": "d3a9c8d4c4cf8a3e5a0152d7b0749633776ecb56"
+      "generation_id": "AUD-20260921T223000+0900-R5-H5-DEADWORK-5E8C21A4",
+      "handoff_commit": "c65c53c5c6491754248c7f8a7d35fbb4ad5bfb48"
     }
   },
   "phase_ordering_confirmation": {
     "repository_evidence_read_before_strategy_summaries": true,
+    "prior_audit_history_used_only_for_dedupe_before_phase_2": true,
     "blind_target_fixed_before_control_brain": true,
     "blind_target_fixed_before_evidence_analyst": true,
     "blind_target_fixed_before_main_sub": true,
     "blind_target_fixed_before_literature": true,
-    "phase_2_started_only_after_target_and_attack_hypotheses_fixed": true,
-    "older_h5_audit_dedupe_was_expanded_after_target_fix": true,
-    "target_retained_only_because_current_attack_surface_is_stricter_than_prior_h5_audit": true
+    "phase_2_started_only_after_target_and_attack_hypotheses_fixed": true
   },
   "blind_target_selection": {
-    "target": "H5 h5-event-routing-work-reduction-official-v1 terminal FAIL_NO_USEFUL_WORK_REDUCTION, audited for overinterpretation as an event-routing/lazy-state no-go",
+    "target": "Authoritative PD01 pd01-long-history-fading-memory-official-v1 terminal FAIL_REDUCED_BY_FADING_MEMORY, audited for whether the reduction interpretation exceeds what a null-vs-null primary endpoint identifies",
     "selected_before_control_plane_summaries": true,
     "authoritative_refs_inspected": [
       "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "research/h5-event-routing-work-reduction-spec-20260918@2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-      "control/h5-event-routing-work-reduction-started-v1-20260918@058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-      "preserve/h5-event-routing-work-reduction-raw-h5-event-routing-work-reduction-official-v1@ce5797eb584344db7a512e585506fb6c59ea475b",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1 -> evidence commit 61aff6d74b82b68a326f3d90505d70bcd4071fd5",
+      "research/pd01-fading-memory-preformal-20260918@b9d38daa5faca348ad2db3898ba71e2abc99f631",
+      "control/pd01-long-history-fading-memory-started-v1-20260918@0569e348b9d93aeee53fc58daf4b71ee92303d6c",
+      "raw-preserve commit 65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1 -> evidence commit fc5c8cda283360addddb7da482b14e69beaba1f7",
       "authoritative evidence/* tags (5)",
       "formal/* tags (0)",
       "sealed/* tags (0)",
       "freeze/* tags (0)",
       "legacy freeze/* branches (13)",
-      "current research/* inventory and H5 workflow 35338995888",
+      "preserve refs inventory (24)",
+      "current research/* inventory",
+      "PD01 workflow 35301327618 attempt 1 success",
       "prior audit stream for dedupe"
     ],
     "attack_hypotheses": [
-      "authority/package/STARTED/raw/evidence mismatch or post-START drift",
-      "scorer/evaluator leakage",
-      "comparator information/resource privilege mismatch",
+      "authority/package/STARTED/raw/evidence mismatch or post-START protocol drift",
+      "scorer/evaluator/target leakage",
+      "semantic/global-information privilege mismatch",
+      "resource mismatch",
       "seed dependence or bootstrap-unit fragility",
-      "resource/work-accounting mismatch",
-      "semantically inactive subsystem work dominating the aggregate metric",
-      "sparse-workload or dense-control mismatch",
-      "broader-than-registered mechanism interpretation"
+      "insufficient long-lag support",
+      "output-only match insufficient for mechanism reduction",
+      "simpler state-machine/recurrent/fading-memory explanation",
+      "stale or duplicate evidence",
+      "null-vs-null endpoint may falsify superiority without positively identifying a fading-memory reduction mechanism"
     ],
-    "why_consequential": "H5 is one of five authoritative immutable evidence tags. A negative aggregate efficiency result can be overread as evidence against the event-routing/lazy-state mechanism rather than against the exact current implementation and registered counter vocabulary."
+    "why_consequential": "PD01 is one of five authoritative immutable evidence tags and directly constrains claims about persistent/long-history dynamical cognition. The frozen endpoint label contains mechanistic-reduction wording that can be overread beyond the exact superiority test."
   },
   "blind_target_change_reason": null,
-  "target_retention_reason_after_dedupe": "Historical H5 audit d3a9c8d4 identified numerical dominance of global eligibility maintenance but did not establish that eligibility was semantically inactive under the registered plastic=false/no-reward workload. The current source-level semantic-dead-work attack is therefore a new attack surface rather than a repeat classification attempt.",
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "h5_exact_package": "2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-    "h5_started": "058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "h5_raw_preserve": "ce5797eb584344db7a512e585506fb6c59ea475b",
-    "h5_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
-    "h5_evidence_tag_object": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-    "h5_contract_blob": "1911d4560f4e2774fd725df26ba8cb25b03e2c5f",
-    "h5_module_blob": "572f00f7a7361a89a54b647a2e2dca875c9b4829",
-    "engine_blob": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
-    "workflow_run": 35338995888,
+    "pd01_exact_package": "b9d38daa5faca348ad2db3898ba71e2abc99f631",
+    "pd01_started": "0569e348b9d93aeee53fc58daf4b71ee92303d6c",
+    "pd01_raw_preserve": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881",
+    "pd01_evidence_commit": "fc5c8cda283360addddb7da482b14e69beaba1f7",
+    "pd01_evidence_tag_object": "e4c4e6428d8ef9e09e92cae231041de0788162e2",
+    "pd01_contract_blob": "0ce03b01baf41a0c77c513835b1c6063e47b2614",
+    "pd01_implementation_blob": "16bbfb6ed57d6c9701e8437360692b62e7c36915",
+    "pd01_raw_predictions_blob": "74815c4d3c4861df94fa0994dcb34fdb145bf238",
+    "pd01_raw_sha256": "5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638",
+    "workflow_run": 35301327618,
+    "workflow_run_attempt": 1,
+    "workflow_conclusion": "success",
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
-    "legacy_freeze_branch_count": 13
+    "legacy_freeze_branch_count": 13,
+    "preserve_branch_count": 24
   },
   "control_plane_commits_consumed": {
-    "control_brain": "835c175de2db7220e22919a3a27c76406b8cef46",
-    "evidence_analyst": "fca9a4b0adb259b76a518605f611ff79e0c48680",
-    "main_report": "4734a1d45b0ab888c07c10dfbb51710f4db41a16",
-    "sub_report": "93a9a83dee714060d5b4a2fc6c9689c2204f7aa3",
-    "literature": "1c8cb3f86d1ef63a12c2b1b9ff984f717723ec7c"
+    "control_brain": "bfd3e0007ce6ab9dbbed4f6da73265143a320ac5",
+    "evidence_analyst": "13c4374c889e4326d225c62de02ca4a51e351ca1",
+    "main_report": "feee71a4b06027c8b03ec8e3f4511776289f16dd",
+    "sub_report": "d111ddff66c2055e083e7b2dfd8482db90e9c6a2",
+    "literature": "237b3c1100e082624ce08d0ac2d7fcb9c7d3dd6d"
   },
   "genuinely_new_information": true,
-  "genuinely_new_information_scope": "NEW_SOURCE_LEVEL_AUDIT_ATTACK_SURFACE_SEMANTICALLY_INACTIVE_ELIGIBILITY_WORK; NO_NEW_SCIENTIFIC_RESULT_OR_RESCORING",
+  "genuinely_new_information_scope": "NEW_AUDIT_INTERPRETATION_ATTACK_SURFACE_NULL_VS_NULL_REDUCTION_NONIDENTIFIABILITY; NO_NEW_EXPERIMENT_OR_RESCORING",
   "findings": [
     {
       "type": "repository_evidence",
-      "finding": "The exact H5 package, STARTED ref, one-shot workflow, raw-before-score preserve, scorer binding, evidence commit and annotated evidence tag remain coherent.",
-      "impact": "No integrity reason exists to invalidate the registered terminal."
+      "finding": "The PD01 exact package, STARTED ref, attempt-1 workflow, target-blind raw-before-score preserve, evidence binding, and annotated evidence tag form a coherent one-way chain.",
+      "impact": "No integrity reason was found to invalidate the frozen endpoint or evidence object."
     },
     {
       "type": "repository_evidence",
-      "finding": "The H5 contract fixes plastic=false and the workload schedules stimuli without reward. SparkBrain still increments and globally decays eligibility on every event, while reward-driven plastic updates skip non-plastic edges.",
-      "impact": "Eligibility bookkeeping is semantically inactive for H5 outputs under the registered workload."
-    },
-    {
-      "type": "repository_evidence",
-      "finding": "Preserved sparse raw rows show eligibility touches plus multiplications are 122880 of 124062 candidate work (99.05%) in a 128-node/1%-bursty cell and 737280 of 744146 candidate work (99.08%) in a 128-node/5%-bursty cell.",
-      "impact": "The primary aggregate is numerically dominated by an output-neutral subsystem in these fixed representative cells."
+      "finding": "The frozen primary report gives candidate accuracy 0.47265625 with CI [0.431640625, 0.515625], comparator accuracy 0.5, and effect -0.02734375 with CI [-0.068359375, 0.015625].",
+      "impact": "The predeclared FAIL rule is validly triggered because the effect CI upper bound is <= 0.05, while candidate long-lag recoverability itself is not demonstrated above chance."
     },
     {
       "type": "inference",
-      "finding": "The registered total-work FAIL remains valid, but it is not an isolated causal test of node-state laziness or event-routed fanout efficiency. The dead common eligibility burden masks component savings and imposes a stronger interpretation ceiling."
+      "finding": "Both candidate and fixed reservoir fail to demonstrate positive long-lag recovery on the primary endpoint. This null-vs-null outcome falsifies the registered superiority/recoverability claim but does not positively establish that fading-memory dynamics reproduce or mechanistically reduce an observed SparkBrain long-memory phenomenon.",
+      "impact": "Canonical token remains immutable, but the narrative interpretation ceiling should be NO_DEMONSTRATED_LONG_LAG_RECOVERY_AND_NO_ADVANTAGE_OVER_THE_FIXED_FADING_MEMORY_RESERVOIR."
     },
     {
       "type": "control_plane_comparison",
-      "finding": "Current R44 Control/Analyst/MAIN/SUB/Literature streams do not use H5 as an active broad novelty or mechanism claim; H5 remains consumed/no-retry.",
-      "impact": "No current strategy correction is urgently required beyond preserving the interpretation ceiling."
+      "finding": "Current Control R31, Evidence Analyst R58, MAIN R58, SUB R57 and Literature R27 do not use PD01 as an active positive mechanistic-reduction claim; the programme is intentionally idle with no active scientific object and PD01 remains consumed.",
+      "impact": "No blind-target change or urgent current-strategy correction is needed; the issue is a future claim-scope constraint."
     }
   ],
   "affected_lines": [
-    "H5_EVENT_ROUTING_WORK_REDUCTION",
-    "H5_WORK_METRIC_COMPONENT_ATTRIBUTION",
-    "PROGRAMME_ARCHITECTURE_EFFICIENCY",
-    "FUTURE_WORK_REDUCTION_CONTRACTS",
+    "PD01_LONG_HISTORY_FADING_MEMORY",
+    "PD01_TERMINAL_INTERPRETATION",
+    "PERSISTENT_DYNAMICAL_COGNITION",
+    "REDUCTION_EVIDENCE_SEMANTICS",
     "PROGRAMME_NOVELTY"
   ],
-  "novelty_or_reduction_impact": "REGISTERED_H5_FAIL_REMAINS_ROBUST_BUT_INTERPRETATION_IS_FURTHER_NARROWED_BY_SEMANTICALLY_INACTIVE_ELIGIBILITY_WORK",
-  "audit_classification": "ROBUST_SO_FAR",
-  "confidence": "HIGH_FOR_REGISTERED_TERMINAL_AND_SEMANTIC_DEADNESS; MEDIUM_FOR_HOW_FUTURE_COMPONENT_METRICS_SHOULD_BE_WEIGHTED",
+  "novelty_or_reduction_impact": "CANONICAL_PD01_FAIL_REMAINS_PROTOCOL_VALID_BUT_MECHANISTIC_REDUCTION_INTERPRETATION_IS_WEAKENED_BY_NULL_VS_NULL_NONIDENTIFIABILITY",
+  "audit_classification": "WEAKENED",
+  "confidence": "HIGH_FOR_EVIDENCE_CHAIN_AND_ENDPOINT_INTERPRETATION_BOUNDARY; MEDIUM_FOR_FUTURE_TAXONOMY_DESIGN",
   "prospective_baselines_or_discriminators": [
-    "Do not rerun, retune, rescore, relabel or reopen canonical H5.",
-    "For a genuinely fresh efficiency object, prospectively decompose total work by node-state materialization, routing/scheduling, eligibility maintenance and other subsystems.",
-    "Distinguish implementation overhead from mechanism-attributable work before making causal efficiency interpretations.",
-    "If eligibility is in scope, use a prospectively fixed plastic/reward workload where eligibility has semantic consequences.",
-    "Only in a fresh object compare global all-edge eligibility maintenance with an equal-semantics localized/event-routed eligibility baseline.",
-    "Use a separate prospectively bound runtime/energy methodology for wall-clock, memory, cache or energy claims."
+    "Do not rerun, rescore, retune, relabel or reopen canonical PD01.",
+    "For a genuinely fresh reduction object, prospectively require an absolute candidate recoverability floor above chance before using positive `reduced by baseline` language.",
+    "Prospectively distinguish candidate-capability-absent outcomes from positive candidate capability reproduced by an ordinary baseline.",
+    "If positive recoverability exists, compare against predeclared equal-privilege fading-memory baselines/seeds without comparator shopping.",
+    "For a mechanism-reduction claim, require the simpler model to reproduce a demonstrated positive phenomenon or matched response structure, not merely match failure."
   ],
   "questions_for_evidence_analyst": [
-    "Preserve H5 official FAIL exactly while making explicit that it is a current-implementation aggregate-work result, not an isolated event-routing/lazy-state causal test?",
-    "Keep H5 consumed/no-retry and require any component-isolation efficiency study to use a fresh identity/object?",
-    "Require semantic-activity and component-attribution checks for future resource-efficiency evidence?"
+    "Preserve the frozen PD01 token exactly while capping narrative interpretation at no demonstrated long-lag recovery/no advantage over the fixed reservoir?",
+    "In future reduction objects, require a positive absolute candidate-capability floor before interpreting comparator equivalence as mechanism reduction?",
+    "Prospectively distinguish failure-to-demonstrate the phenomenon from successful ordinary-mechanism reduction in terminal taxonomy/claim scope?"
   ],
   "questions_for_control_brain": [
-    "Avoid using H5 as broad evidence that event routing or lazy state materialization cannot yield useful efficiency?",
-    "Add semantically inactive subsystem domination to the future resource-metric audit checklist?",
-    "Keep H5 closed and treat this audit as interpretation sharpening rather than rescue authority?"
+    "Treat PD01 as strong negative evidence against the registered long-history superiority claim, but not positive evidence that fading-memory dynamics explain a demonstrated SparkBrain memory capability?",
+    "Add null-vs-null reduction-identifiability to the future reduction-claim checklist?",
+    "Keep PD01 consumed/closed with no rescue authority or retrospective relabeling?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "H5 exact package 2086a8f4ea080a7a8a0e3c79d77afe9b516db905",
-    "H5 STARTED 058e90227cd48e1c10c6ecbaed01efdec1217d0e",
-    "H5 raw preserve ce5797eb584344db7a512e585506fb6c59ea475b",
-    "H5 evidence commit 61aff6d74b82b68a326f3d90505d70bcd4071fd5 and annotated evidence tag object e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-    "workflow 35338995888 and canonical H5 statistics / FAIL_NO_USEFUL_WORK_REDUCTION token",
-    "all other consumed C19-v4/C19-R1/C19-R2/PD01/NI01 identities and immutable evidence",
-    "no H5 rerun/rescore/retune/relabel, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, or scheduler change"
+    "PD01 exact package b9d38daa5faca348ad2db3898ba71e2abc99f631",
+    "PD01 STARTED 0569e348b9d93aeee53fc58daf4b71ee92303d6c",
+    "PD01 raw preserve 65ae7a50ee2279ab5edc3ca43ea3bf69daecb881 and raw SHA-256 5ad0c545c5aa4548ca7a852e9c46a908af41c9a44047667c9ed09c1fd5041638",
+    "PD01 evidence commit fc5c8cda283360addddb7da482b14e69beaba1f7 and annotated evidence tag object e4c4e6428d8ef9e09e92cae231041de0788162e2",
+    "workflow 35301327618, canonical statistics, scorer decision and FAIL_REDUCED_BY_FADING_MEMORY token",
+    "all other consumed C19-v4/C19-R1/C19-R2/H5/NI01 identities and immutable evidence",
+    "no rerun, rescore, retune, relabel, STARTED/TEST, PRE_FORMAL/FORMAL promotion, research merge, immutable-ref mutation, Utility execution, or scheduler change"
   ],
   "read_only_recompute": {
-    "completed": "PARTIAL_COMPONENT_RECOMPUTE_FROM_EXISTING_RAW",
-    "detail": "Recomputed eligibility-work share for preserved representative sparse rows and traced semantic use of eligibility through the bound H5 module/engine. No canonical scoring, artifacts, or identities changed."
+    "completed": "ENDPOINT_DECISION_AND_INTERPRETATION_RECHECK_FROM_EXISTING_IMMUTABLE_EVIDENCE",
+    "detail": "Rechecked the fixed primary statistics and decision-rule implication without generating data, rerunning a workflow, changing targets, or rescoring raw. The frozen FAIL token remains valid; the new finding concerns what that null-vs-null endpoint can identify mechanistically."
   },
   "utility_request_created": null,
   "persistence_notes": "Role-separated audit stream only. Legacy shared latest/state not updated. No scientific workflow, research result mutation, Utility request, immutable-ref mutation, or scheduler change."
