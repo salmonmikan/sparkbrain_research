@@ -92,7 +92,9 @@ def assert_runtime_host() -> None:
         "runner_arch": EXPECTED_RUNNER_ARCH,
     }
     if observed != expected:
-        raise SystemExit(f"R4 lock materialization host drift: observed={observed!r} expected={expected!r}")
+        raise SystemExit(
+            f"R4 lock materialization host drift: observed={observed!r} expected={expected!r}"
+        )
 
 
 def main() -> None:
@@ -172,7 +174,10 @@ def main() -> None:
         "schema_version": 2,
         "kind": "H7_FORMAL_R4_SCIENTIFIC_RUNTIME_WHEEL_LOCK_MANIFEST_V1",
         "authority_generation": "EVA-20260923T001221+0900-R81-4885D9DE",
-        "development_revision": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
+        "development_revision": (
+            "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-"
+            "AND-PREIDENTITY-REVALIDATION"
+        ),
         "materialization_policy": {
             "exact_versions_selected_before_materialization": True,
             "single_prospectively_fixed_package_set": True,
@@ -198,7 +203,10 @@ def main() -> None:
         "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_RESOURCE_LOCK_MATERIALIZATION",
         "one_way_actions_performed": False,
     }
-    manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    manifest_path.write_text(
+        json.dumps(manifest, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
+    )
     shutil.rmtree(args.output_dir / "wheelhouse", ignore_errors=True)
     print(json.dumps({"lock_sha256": manifest["lock_sha256"], "package_count": len(records)}))
 
