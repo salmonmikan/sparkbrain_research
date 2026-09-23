@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T184514+0900-PRIMARY-CAND35-ARCHR2-R96-CLOSEOUT",
+  "generation_id": "MAIN-20260923T184514+0900-PRIMARY-CAND35-ARCHR2-R96-COMPLETED",
   "run_id": "sparkbrain-main-primary-20260923T184514JST-R96-cand35-archr2-closeout",
   "producer_run_id": "sparkbrain-main-primary-20260923T184514JST-R96-cand35-archr2-closeout",
   "authority_scope": "PRIMARY_R96_CAND35_ARCHITECTURE_R2_EXACT_CANDIDATE_SURFACE_AND_EXECUTOR_BINDING_NONRESULT_ONLY",
@@ -11,11 +11,11 @@
     "utility_collision_ref": "ops/utility-orchestrator-requests@829e860d191d78970c978d194816d54fa574d7af"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "COMPLETED",
   "started_at": "2026-09-23T18:45:14+09:00",
-  "heartbeat_at": "2026-09-23T18:45:14+09:00",
+  "heartbeat_at": "2026-09-23T18:49:54+09:00",
   "waiting_since": null,
-  "completed_at": null,
+  "completed_at": "2026-09-23T18:49:54+09:00",
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260923T180248+0900-R96-3F7C92A1",
   "analyst_commit": "df97c2c8830c7d50d23d13c43091866ad5d23c77",
@@ -62,7 +62,7 @@
     "system_to_mechanism_uplift_not_performed": true,
     "formal_floor_respected": true
   },
-  "stop_reason": null,
-  "next_action": "Confirm exact-head CI success, persist Architecture R2 NON_RESULT readiness completion, and return candidate #35 to Evidence Analyst without executing any candidate response.",
+  "stop_reason": "ARCHITECTURE_R2_NONRESULT_IMPLEMENTATION_AND_EXACT_HEAD_CI_COMPLETE_RETURN_TO_EVIDENCE_ANALYST",
+  "next_action": "Return candidate #35 Architecture R2 NON_RESULT readiness to Evidence Analyst. Do not execute a candidate response, PRE_FORMAL action, FORMAL action, or same-object SYSTEM-to-MECHANISM uplift unless a later fresh Analyst generation explicitly authorizes it.",
   "owner": "main"
 }
