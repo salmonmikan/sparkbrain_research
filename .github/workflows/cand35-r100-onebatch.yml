@@ -1,0 +1,174 @@
+name: cand35-r100-one-bounded-response
+
+on:
+  push:
+    branches:
+      - research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3
+
+permissions:
+  contents: write
+
+jobs:
+  one-bounded-response:
+    if: github.event.head_commit.message == 'cand35: launch exactly-once R100 bounded response'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout launch commit
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Reconcile authority, ownership, and one-way raw target
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECTED_IMPL="b5f312683d50ed3a086348b62770fc8923c78046"
+          EXPECTED_ANALYST="a32494246245a559ad4e1f8543a1f252b03ef2e7"
+          RAW_REF="refs/heads/raw/cand35-r100-onebatch-20260923"
+
+          test "$(git rev-parse HEAD^)" = "$EXPECTED_IMPL"
+          test "$(git diff --name-only "$EXPECTED_IMPL"..HEAD)" = ".github/workflows/cand35-r100-onebatch.yml"
+
+          git fetch origin \
+            refs/heads/ops/evidence-analyst-handoff:refs/remotes/origin/ops/evidence-analyst-handoff \
+            refs/heads/ops/orchestrator-run-report:refs/remotes/origin/ops/orchestrator-run-report
+          test "$(git rev-parse origin/ops/evidence-analyst-handoff)" = "$EXPECTED_ANALYST"
+
+          git show origin/ops/evidence-analyst-handoff:analysis/orchestrator/state.json > "$RUNNER_TEMP/analyst.json"
+          git show origin/ops/orchestrator-run-report:reports/orchestrator/main/lease.json > "$RUNNER_TEMP/main-lease.json"
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          analyst = json.loads((Path.home().parent / "runner" / "_temp" / "analyst.json").read_text())
+          lease = json.loads((Path.home().parent / "runner" / "_temp" / "main-lease.json").read_text())
+
+          expected_generation = "EVA-20260923T225720+0900-R100-C6A2F18D"
+          expected_decision = (
+              "GO_CAND35_ONE_BOUNDED_ARCHITECTURE_RESPONSE_AFTER_R100_EXACT_AUTHORITY_REPIN_"
+              "FIXED_ORDER_BATCH_PRESERVE_BEFORE_READ_PREFLIGHT; STOP_AFTER_FIRST_COMPLETE_RESULT_EXPOSURE"
+          )
+          expected_arms = [
+              "SHAM_STATE",
+              "POTENTIAL_NULL",
+              "ADAPTATION_NULL",
+              "JOINT_SUBTHRESHOLD_NULL",
+              "DELAYED_SHAM_32MS",
+          ]
+          expected_funnel = {
+              "claim_ceiling": "SYSTEM",
+              "preformal_eligible": False,
+              "preformal_readiness": "NOT_APPLICABLE",
+              "hold_class": None,
+              "hold_reason": None,
+              "terminal_state": "NONTERMINAL",
+              "queue_state": "QUEUED_FOR_MAIN_ARCHITECTURE_ONE_BOUNDED_RESPONSE",
+              "development_phase": "OPEN_DEVELOPMENT",
+              "development_revision": "ARCHITECTURE-R2-EXACT-CANDIDATE-SURFACE-AND-EXECUTOR-BINDING-NONRESULT",
+          }
+
+          if analyst["generation_id"] != expected_generation:
+              raise SystemExit("superseding Analyst generation detected")
+          authority = analyst["candidate35_response_authority"]
+          if authority["decision"] != expected_decision:
+              raise SystemExit("Candidate #35 response authority drifted")
+          obj = analyst["material_objects"]["CAND35"]
+          for key, expected in expected_funnel.items():
+              if obj.get(key) != expected:
+                  raise SystemExit(f"Candidate #35 Funnel drift: {key}")
+          if obj["response_batch_arms_fixed_order"] != expected_arms:
+              raise SystemExit("Candidate #35 fixed arm order drifted")
+          if obj["response_authority_exhaustion"] != "FIRST_COMPLETE_BATCH_RESULT_EXPOSURE":
+              raise SystemExit("Candidate #35 response exhaustion drifted")
+          if (
+              lease.get("status") == "RUNNING"
+              and lease.get("execution_mode") == "PRIMARY"
+              and lease.get("candidate_id") == obj["id"]
+          ):
+              raise SystemExit("fresh PRIMARY RUNNING lease owns Candidate #35")
+          PY
+
+          if git ls-remote --exit-code --heads origin "$RAW_REF" >/dev/null 2>&1; then
+            echo "raw preservation ref already exists; refusing any response rerun" >&2
+            exit 42
+          fi
+
+      - name: Checkout exact green implementation head
+        shell: bash
+        run: |
+          set -euo pipefail
+          git checkout --detach b5f312683d50ed3a086348b62770fc8923c78046
+          test "$(git rev-parse HEAD)" = "b5f312683d50ed3a086348b62770fc8923c78046"
+          test "$(git hash-object src/sparkbrain/v05/candidate35_architecture.py)" = "4055f42483d5bba73eef51b1753a2c19f18d5ab5"
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Final freshness reconciliation before response
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin \
+            refs/heads/ops/evidence-analyst-handoff:refs/remotes/origin/ops/evidence-analyst-handoff \
+            refs/heads/ops/orchestrator-run-report:refs/remotes/origin/ops/orchestrator-run-report
+          test "$(git rev-parse origin/ops/evidence-analyst-handoff)" = "a32494246245a559ad4e1f8543a1f252b03ef2e7"
+          git show origin/ops/orchestrator-run-report:reports/orchestrator/main/lease.json > "$RUNNER_TEMP/main-lease-final.json"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          lease = json.loads((Path(os.environ["RUNNER_TEMP"]) / "main-lease-final.json").read_text())
+          if (
+              lease.get("status") == "RUNNING"
+              and lease.get("execution_mode") == "PRIMARY"
+              and lease.get("candidate_id") == "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING"
+          ):
+              raise SystemExit("fresh PRIMARY RUNNING lease appeared before response")
+          PY
+          if git ls-remote --exit-code --heads origin refs/heads/raw/cand35-r100-onebatch-20260923 >/dev/null 2>&1; then
+            echo "raw preservation ref appeared before response; refusing rerun" >&2
+            exit 42
+          fi
+
+      - name: Execute exactly one frozen five-arm Architecture batch
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/cand35-r100-onebatch"
+          test ! -e "$OUT"
+          PYTHONPATH=src python scripts/run_candidate35_r100_response.py \
+            --output-dir "$OUT" \
+            --expected-implementation-head b5f312683d50ed3a086348b62770fc8923c78046
+          test -f "$OUT/00-preflight.json"
+          test -f "$OUT/01-SHAM_STATE.json"
+          test -f "$OUT/02-POTENTIAL_NULL.json"
+          test -f "$OUT/03-ADAPTATION_NULL.json"
+          test -f "$OUT/04-JOINT_SUBTHRESHOLD_NULL.json"
+          test -f "$OUT/05-DELAYED_SHAM_32MS.json"
+          test -f "$OUT/99-batch-complete.json"
+
+      - name: Preserve raw batch to exclusive Git ref before interpretation
+        shell: bash
+        run: |
+          set -euo pipefail
+          RAW_BRANCH="raw/cand35-r100-onebatch-20260923"
+          OUT="$RUNNER_TEMP/cand35-r100-onebatch"
+          git switch -c "$RAW_BRANCH" b5f312683d50ed3a086348b62770fc8923c78046
+          mkdir -p artifacts/candidate35/r100-onebatch
+          cp -a "$OUT"/. artifacts/candidate35/r100-onebatch/
+          git config user.name "sparkbrain-main-relay"
+          git config user.email "94634410+salmonmikan@users.noreply.github.com"
+          git add artifacts/candidate35/r100-onebatch
+          git commit -m "cand35 R100: preserve first bounded raw batch"
+          git push origin "HEAD:refs/heads/$RAW_BRANCH"
+
+      - name: Upload immutable run artifact copy
+        uses: actions/upload-artifact@v4
+        with:
+          name: cand35-r100-onebatch-raw
+          path: ${{ runner.temp }}/cand35-r100-onebatch
+          if-no-files-found: error
+          retention-days: 90
