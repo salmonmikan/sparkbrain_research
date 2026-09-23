@@ -1,46 +1,45 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260924T023750+0900-NOOP-R103-R95-NO-GATED-PROBE",
-  "produced_at": "2026-09-24T02:37:50+09:00",
+  "generation_id": "FORGE-20260924T033243+0900-NOOP-R104-R96-REVISIT-BOOTSTRAP",
+  "produced_at": "2026-09-24T03:32:43+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260924T013401+0900-NOOP-R103-R94",
+  "supersedes_generation_id": "FORGE-20260924T023750+0900-NOOP-R103-R95-NO-GATED-PROBE",
   "input_generations": {
-    "evidence_analyst": "EVA-20260924T010800+0900-R103-FORGE-DEFER-SCHEDULER-RED@82251ddfa025929ad79b41bea015eb84bd4f0813",
-    "main_relay": "MAIN-20260924T022000+0900-PRIMARY-H7-R103-EXTERNAL-CAPABILITY-BLOCKED@2f831eaa3095e51f333622641d5723f5c754e490",
+    "evidence_analyst": "EVA-20260924T031000+0900-R104-H7-GREEN-REVISIT-BOOTSTRAP@0dfa28e2a8d0ddd6731ccbe9eccc7882e7f3be6f",
+    "main_relay": "MAIN-20260924T033000+0900-PRIMARY-H7-R104-AUTHORITY-REPIN-WAITING@f2ef4b34424adf6fc1362be7032b5a85363625f7",
     "literature": "LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71@d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c",
     "independent_audit": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8@d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c",
-    "methodology": "METHCAL-20260924T021800+0900-R95-8D3A71C4@8f1658f563ea88556d1f2b61f30ac7bd5bc5494c",
-    "utility": "UTILITY-20260924T022747+0900-R103-H7-CAPABILITY-AUTHORITY-RECONCILE-B91F4C27@5da3b2c4d166f8e42cb3c38207958bd2186db3b3",
-    "previous_forge": "FORGE-20260924T013401+0900-NOOP-R103-R94@ops/orchestrator-run-report"
+    "methodology": "METHCAL-20260924T032000+0900-R96-A61E94F2@1a0afddcaa2ac8fbbfbd0c0a6f92bb3ed9995f2d",
+    "utility": "UTILITY-20260924T033500+0900-R104-MAIN-OWNERSHIP-RECONCILE-4A2E8C71@1fabedcdd27457edb0cf1a086d5b04f116b65fd3",
+    "previous_forge": "FORGE-20260924T023750+0900-NOOP-R103-R95-NO-GATED-PROBE@ops/orchestrator-run-report"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_r103_tip": "82251ddfa025929ad79b41bea015eb84bd4f0813",
-    "main_relay_mailbox_pre_run_tip": "2f831eaa3095e51f333622641d5723f5c754e490",
+    "evidence_analyst_r104_tip": "0dfa28e2a8d0ddd6731ccbe9eccc7882e7f3be6f",
+    "evidence_analyst_state_blob": "5c39fec66d15f70dfe1ec8c7512a25b02024e689",
+    "main_relay_mailbox_pre_run_tip": "f2ef4b34424adf6fc1362be7032b5a85363625f7",
     "main_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "main_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "main_controller_branch": "research/main-h7-r5-oneway-controller-r98",
-    "main_controller_head": "d610b18283953f21dfb27859f0d0b190d5f56a24",
     "literature_r40_tip": "d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c",
     "literature_r40_blob": "01c4ae8a41c047e1925a4b410827c6bdad7f9457",
     "audit_r9_blob": "e0c838636dfb36708df8d86dd9165a2a0acedada",
-    "methodology_r95_tip": "8f1658f563ea88556d1f2b61f30ac7bd5bc5494c",
-    "utility_tip": "5da3b2c4d166f8e42cb3c38207958bd2186db3b3",
+    "methodology_r96_tip": "1a0afddcaa2ac8fbbfbd0c0a6f92bb3ed9995f2d",
+    "utility_r104_tip": "1fabedcdd27457edb0cf1a086d5b04f116b65fd3",
     "previous_forge_branch": "forge/20260924-coordinate-null-local-witness",
     "previous_forge_branch_head": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
-    "history_path": "reports/orchestrator/sub/history/2026-09-24/0237-r103-r95-fast-forge-no-gated-probe.md",
-    "history_create_commit": "dc4e111e1e0c297f22b109bf696fad4d400e13d1",
-    "latest_update_commit": "4dbf250d60e681caef32910c3c53ecf9737935a8"
+    "history_path": "reports/orchestrator/sub/history/2026-09-24/0332-r104-r96-fast-forge-noop-revisit-bootstrap.md",
+    "history_create_commit": "3895a02897bb56115fbeceb00d223cc10e763320",
+    "latest_update_commit": "89a935c6c311b19679912799d8a1fb1fe10116f0"
   },
-  "freshness_note": "Evidence Analyst R103 remains current and contains no THEORY_FORGE_TEST or REVISIT_FORGE_TEST. Methodology R95 is materially newer than the prior Forge run and identifies a missing Revisit metadata/ledger/routing layer plus false-negative/over-terminalization risk, while explicitly observing no dedicated current Theory/Revisit handoff and no live REVISIT_FORGE_TEST. MAIN is now durably blocked on missing external H7 protected-sidecar capability and PRIMARY is paused. Literature R40, Audit R9 and Utility do not expose a new independent Forge phenomenon.",
+  "freshness_note": "Evidence Analyst R104 is materially newer than the prior Forge run: the Revisit ledger is now bootstrapped for 34/34 terminal candidates with zero terminal reopenings, zero REVISIT_TRIGGERED entries and zero Forge referrals; Theory remains uninitialized/not persisted; no THEORY_FORGE_TEST or REVISIT_FORGE_TEST bounded probe exists. Methodology R96 confirms bootstrap completion but no live Revisit trigger path. H7 prior capability block is resolved and H7 is ACTIVE/QUEUED under conditional one-shot authority, remaining MAIN-owned. Literature R40/Audit R9 are unchanged and Utility R104 is IDLE with no Forge support request.",
   "theory_revisit_gate": {
     "latest_evidence_analyst_checked": true,
     "theory_forge_test_present": false,
     "revisit_forge_test_present": false,
-    "theory_stream_status": "NO_DEDICATED_CURRENT_THEORY_HANDOFF_OBSERVED_BY_METHODOLOGY_R95",
-    "revisit_stream_status": "NO_DEDICATED_CURRENT_REVISIT_HANDOFF_OR_LIVE_REVISIT_FORGE_TEST_OBSERVED_BY_METHODOLOGY_R95",
+    "theory_stream_status": "NOT_INITIALIZED_OR_NOT_YET_PERSISTED",
+    "revisit_stream_status": "LEDGER_BOOTSTRAP_COMPLETE_34_OF_34_NO_TRIGGERED_NO_FORGE_REFERRALS",
     "raw_theory_dispatch_authority": false,
     "raw_revisit_dispatch_authority": false,
     "action": "NO_PROBE_EXECUTED"
@@ -48,10 +47,9 @@
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "main_owner": "H7_ONLY",
-    "main_current_status": "BLOCKED_EXTERNAL_CAPABILITY_PRIMARY_PAUSED",
-    "main_external_blocker": "H7_R5_SIDECAR_PASSPHRASE",
+    "main_current_status": "ACTIVE_QUEUED_R104_CONDITIONAL_AUTHORITY_REPIN_WAITING",
     "avoided": [
-      "H7 science/controller/readiness/protected-sidecar/scorer/preserver/runtime/workflow/scheduler surfaces",
+      "H7 science/controller/readiness/identity/protected-sidecar/scorer/preserver/runtime/workflow/scheduler/authority-repin surfaces",
       "Candidate #35 same-object and immediate-successor matched-natural-history/intervention-realism/activity-silent-STP family",
       "Candidate #34 temporal-route rescue family",
       "all consumed/frozen/immutable/evidence/formal/sealed/freeze/preserve identities and protected targets"
@@ -63,31 +61,31 @@
     "rejected_before_execution": [
       {
         "surface": "Theory-derived or Revisit-derived probe",
-        "reason": "Latest Evidence Analyst R103 supplies no THEORY_FORGE_TEST or REVISIT_FORGE_TEST bounded probe spec"
+        "reason": "Latest Evidence Analyst R104 supplies no THEORY_FORGE_TEST or REVISIT_FORGE_TEST bounded probe specification"
       },
       {
-        "surface": "Revisit ledger/bootstrap/routing implementation",
-        "reason": "Methodology R95 governance/observability gap only; pure control-plane/state plumbing does not directly enable a bounded Forge scientific experiment and carries no dispatch authority"
-      },
-      {
-        "surface": "Candidate #35 matched-natural-history / intervention-realism / activity-silent-STP",
-        "reason": "R103 immediate-successor rescue-adjacency defer; prior Forge proposal not admitted"
+        "surface": "Revisit ledger/bootstrap",
+        "reason": "Bootstrap is complete process/selection infrastructure with zero triggered candidates and zero Forge referrals; not a scientific experiment or dispatch authority"
       },
       {
         "surface": "Candidate #34 temporal-route residual",
-        "reason": "terminal/reducible same-family rescue after Audit R9 local-impulse reduction"
+        "reason": "CLOSED_STRONG under ordinary local transmission/timing reduction with no independent residual trigger"
       },
       {
-        "surface": "H7 responsibility/readiness/capability/runtime",
-        "reason": "MAIN sole nonterminal canonical ownership plus current external capability blocker"
+        "surface": "Candidate #35 matched-natural-history / intervention-realism / activity-silent-STP",
+        "reason": "DEFERRED_INDEPENDENT_REIDENTIFICATION; immediate-successor rescue-adjacent and no independent trigger"
       },
       {
-        "surface": "delayed reward / three-factor eligibility / spatial responsibility",
-        "reason": "Literature R40 ordinary baseline overlaps prior Forge credit-locality work; implementing comparator now would be duplicate reduction work rather than a fresh independent phenomenon"
+        "surface": "H7 responsibility/readiness/authority/runtime",
+        "reason": "sole active MAIN-owned canonical object; Forge collision exclusion"
       },
       {
         "surface": "previous Assembly/context/concept/homeostasis/action/credit Forge families",
         "reason": "no materially new independent observable, intervention, or instrumentation capability in fresh inputs"
+      },
+      {
+        "surface": "R40 STP / delayed-credit comparators",
+        "reason": "ordinary baselines on excluded or duplicate surfaces rather than a fresh independent SparkBrain phenomenon"
       }
     ]
   },
@@ -95,7 +93,7 @@
   "forge_objects": [],
   "ordinary_reduction_assessment": {
     "new_phenomenon_observed": false,
-    "assessment": "No fresh reduction residual. Methodology R95 adds governance calibration rather than a scientific phenomenon. Literature R40's STP and three-factor/e-prop findings remain ordinary baselines on currently excluded or duplicate surfaces."
+    "assessment": "No fresh scientific reduction residual. The material change is Revisit selection infrastructure plus H7 control/readiness state, not a new Forge phenomenon. Literature R40 ordinary STP and delayed-three-factor/e-prop reductions remain unchanged."
   },
   "utility_request": null,
   "hard_floor": {
@@ -109,11 +107,13 @@
     "result_bearing_canonical_workflow_dispatched": false,
     "scientific_research_branch_mutated": false,
     "forge_branch_created": false,
-    "forge_branch_merged_to_main_or_research": false
+    "forge_branch_merged_to_main_or_research": false,
+    "terminal_reopened": false,
+    "historical_outcome_rewritten": false
   },
   "metrics": {
     "scope": "FROM_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 15,
+    "runs": 16,
     "prototypes_attempted": 17,
     "theory_probes": 0,
     "theory_kills": 0,
@@ -131,5 +131,5 @@
     "analyst_promotion_deferrals": 1,
     "idea_to_observation_latency": "NO_OP"
   },
-  "recommendation": "NO_NEW_FORGE_TARGET; DO_NOT_ACT_ON_UNGATED_THEORY_OR_REVISIT; LEAVE_CAND35_ADJACENT_FAMILY; WAIT_FOR_ANALYST_GATED_PROBE_OR_NEW_INDEPENDENT_OBSERVABLE"
+  "recommendation": "NO_NEW_FORGE_TARGET; DO_NOT_ACT_ON_UNGATED_THEORY_OR_REVISIT; LEAVE_CAND34_CAND35_TERMINAL_BOUNDARIES; WAIT_FOR_ANALYST_GATED_PROBE_OR_NEW_INDEPENDENT_OBSERVABLE"
 }
