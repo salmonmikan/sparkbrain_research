@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from sparkbrain.v04.contracts import SignalPulse
 from sparkbrain.v04.field import ExcitableFieldConfig, TemporalExcitableField
-from sparkbrain.v04.topology import Connection, UnitState, explicit_topology
+from sparkbrain.v04.topology import Connection, explicit_topology, UnitState
 
 
 WEIGHT = 1.20
