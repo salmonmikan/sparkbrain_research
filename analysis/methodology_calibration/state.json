@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-24T03:20:00+09:00",
+  "timestamp": "2026-09-24T04:21:20+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260924T032000+0900-R96-A61E94F2",
-    "sequence": 96,
+    "generation_id": "METHCAL-20260924T042120+0900-R97-C9CE09C7",
+    "sequence": 97,
     "material_change": true,
-    "material_change_reason": "REVISIT_LEDGER_BOOTSTRAP_NOW_COMPLETE_34_OF_34; H7_NON_RESULT_READINESS_GREEN_AND_ONE_CONDITIONAL_FORMAL_AUTHORITY; LIVE_REVISIT_TRIGGER_PATHS_STILL_UNOBSERVED",
-    "supersedes_generation_id": "METHCAL-20260924T021800+0900-R95-8D3A71C4",
+    "material_change_reason": "H7_R104_FORMAL_AUTHORITY_WITHDRAWN_BEFORE_CONSUMPTION_DUE_MISSING_PROSPECTIVE_RESULT_BEARING_LAUNCH_PATH; THEORY_R1_INITIALIZED_AND_ANALYST_GATED_FOR_ZERO_CREDIT_FORGE_TEST; REVISIT_LEDGER_UNCHANGED_NO_LIVE_TRIGGER",
+    "supersedes_generation_id": "METHCAL-20260924T032000+0900-R96-A61E94F2",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260924T021800+0900-R95-8D3A71C4",
-      "branch_head_before_run": "8f1658f563ea88556d1f2b61f30ac7bd5bc5494c",
+      "generation_id": "METHCAL-20260924T032000+0900-R96-A61E94F2",
+      "branch_head_before_run": "1a0afddcaa2ac8fbbfbd0c0a6f92bb3ed9995f2d",
       "overall_classification": "MIXED_CALIBRATION",
       "role": "DESIGNATED_PRIOR_METHODOLOGY_HISTORY_READ_FIRST"
     },
@@ -21,29 +21,30 @@
       "role": "HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260924T025134+0900-R46-7C3A9E12",
-      "branch_head": "3e3439ea305d41a511e9a321ac10ef6331d37e78",
+      "generation_id": "CTRL-20260924T035154+0900-R47-9D2B6F41",
+      "branch_head": "5c36888a494100de8dff4175d97e984d994818cc",
       "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH",
-      "freshness_note": "PREDATES_ANALYST_R104"
+      "freshness_note": "PREDATES_ANALYST_R105"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260924T031000+0900-R104-H7-GREEN-REVISIT-BOOTSTRAP",
-      "branch_head": "0dfa28e2a8d0ddd6731ccbe9eccc7882e7f3be6f",
-      "state_blob": "5c39fec66d15f70dfe1ec8c7512a25b02024e689",
-      "latest_blob": "dba5134122dd52356c5335d20d1a192d21a54cc0",
+      "generation_id": "EVA-20260924T040500+0900-R105-H7-LAUNCHPATH-HOLD-THEORY-FORGE-TEST",
+      "branch_head": "c6c4c0347880c55be75d72bc1417a007b7f87cec",
       "role": "DESIGNATED_CANONICAL_GATE_HISTORY"
     },
-    "external_research_audit": {
-      "branch_head": "d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c",
-      "dedicated_theory_revisit_path_present": false,
-      "role": "POTENTIAL_INDEPENDENT_TRIGGER_SOURCE_ZERO_AUTOMATIC_EVIDENCE_CREDIT"
+    "main_relay": {
+      "generation_id": "MAIN-20260924T035756+0900-RELAY-H7-R104-PRESTART-CONTROLLER-BLOCKED",
+      "branch_head": "dfb4406f83eecee8893d53a5eff5322dd9d6017a",
+      "role": "FRESH_NONRESULT_PRESTART_INTEGRITY_OBSERVATION"
     },
-    "h7_non_result_readiness": {
-      "run_id": 35891173382,
-      "attempt": 2,
-      "conclusion": "SUCCESS",
-      "controller_head": "d610b18283953f21dfb27859f0d0b190d5f56a24",
-      "role": "NON_RESULT_CAPABILITY_AND_BINDING_READINESS_ONLY"
+    "external_theory": {
+      "generation_id": "THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91",
+      "branch_head": "226d812c96df3d71186ba5a4fb2ac1b27c0d6e25",
+      "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
+      "role": "NON_EVIDENTIARY_NONCANONICAL_THEORY_INPUT_ZERO_AUTOMATIC_EVIDENCE_CREDIT"
+    },
+    "fast_forge": {
+      "latest_update": "4dbf250d60e681caef32910c3c53ecf9737935a8",
+      "role": "NONCANONICAL_ZERO_CREDIT_FORGE_HISTORY_NO_THEORY_OR_REVISIT_PROBE_EXECUTED"
     }
   },
   "authoritative_refs": {
@@ -57,10 +58,10 @@
     "h7_preserve_refs": 0,
     "canonical_candidate_total": 35,
     "terminal_for_current_object": 34,
-    "active": 1,
-    "queued": 1,
-    "effectively_executable_mechanism": 1,
-    "fresh_formal_authority": 1,
+    "nonterminal_hold": 1,
+    "queued": 0,
+    "effectively_executable_mechanism": 0,
+    "fresh_formal_authority": 0,
     "h7": {
       "claim_ceiling": "MECHANISM",
       "preformal_eligible": true,
@@ -68,8 +69,9 @@
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
       "development_revision": "R5_UNCHANGED",
       "terminal_state": "ACTIVE",
-      "queue_state": "QUEUED",
-      "formal_authority": "GO_ONCE_CONDITIONAL_EXACT_BINDING",
+      "queue_state": "HOLD",
+      "hold_reason": "MISSING_PROSPECTIVELY_FIXED_RESULT_BEARING_H7_ONE_WAY_FORMAL_CONTROLLER_PATH",
+      "formal_authority": "STOP_PENDING_PROSPECTIVE_LAUNCH_PATH_AND_FRESH_ANALYST",
       "identity_status": "NOT_CREATED_NOT_CONSUMED"
     },
     "candidate34": {
@@ -77,7 +79,8 @@
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
       "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
       "disposition": "REDUCIBLE",
-      "same_object_rescue": "STOP"
+      "same_object_rescue": "STOP",
+      "revisit_status": "CLOSED_STRONG"
     },
     "candidate35": {
       "claim_ceiling": "SYSTEM",
@@ -85,7 +88,8 @@
       "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
       "confirmatory_credit": 0,
       "same_object_rerun_retune_rescore": "STOP",
-      "same_object_system_to_mechanism": "STOP"
+      "same_object_system_to_mechanism": "STOP",
+      "revisit_status": "DEFERRED_INDEPENDENT_REIDENTIFICATION"
     },
     "scientific_source_of_truth": "STABLE_MAIN_PLUS_INDEPENDENTLY_FETCHED_EVIDENCE_AND_EXACT_RESEARCH_REFS; OPS_MAILBOXES_ARE_CONTROL_HISTORY_ONLY"
   },
@@ -100,6 +104,8 @@
     "development_observations_as_independent_evidence": "KEEP",
     "preformal_as_genuine_development": "KEEP",
     "hidden_second_formal_gate": "KEEP",
+    "result_bearing_launch_path_before_formal_authority": "TIGHTEN",
+    "current_h7_fail_closed_launch_path_hold": "KEEP",
     "fresh_formal_one_way_transition": "INSUFFICIENT_EVIDENCE",
     "terminal_current_object_never_reactivated": "KEEP",
     "revisit_axis_orthogonal_to_terminal_state": "KEEP",
@@ -109,23 +115,31 @@
     "revisit_independent_trigger_detection_end_to_end": "INSUFFICIENT_EVIDENCE",
     "revisit_rescue_laundering_prevention": "KEEP",
     "revisit_fresh_candidate_and_zero_inherited_credit": "KEEP",
+    "theory_genuinely_new_information_as_automatic_revisit_trigger": "CLARIFY",
     "revisit_forge_test_new_trigger_only": "INSUFFICIENT_EVIDENCE",
     "revisit_canonicalize_full_gate": "INSUFFICIENT_EVIDENCE",
+    "theory_canonical_separation": "KEEP",
+    "theory_to_forge_bounded_falsification_gate": "KEEP",
     "fast_forge_canonical_separation": "KEEP",
-    "theory_revisit_canonical_separation": "CLARIFY",
     "claim_ceiling_enforcement": "KEEP",
     "mechanism_supply_health": "CLARIFY",
     "ready_vs_executable_formal_distinction": "KEEP",
     "pass_reachability_without_standard_relaxation": "KEEP"
   },
   "development_iteration_calibration": {
-    "status": "CURRENT_LIVE_OBJECTS_CONSISTENT_FORMAL_TRANSITION_NOT_YET_OBSERVED",
-    "h7": "RESULT_EXPOSED_R5_UNCHANGED_NON_RESULT_READINESS_GREEN_ONE_CONDITIONAL_FORMAL_AUTHORITY",
+    "status": "CONSISTENT_CURRENT_OBJECTS_FORMAL_AUTHORITY_ISSUANCE_ORDER_NEEDS_TIGHTENING",
+    "h7": "RESULT_EXPOSED_R5_UNCHANGED_READY_BUT_NONTERMINAL_HOLD_LAUNCH_PATH_MISSING",
     "candidate35": "RESULT_EXPOSED_TERMINAL_ZERO_CREDIT_NO_SAME_OBJECT_RESCUE",
     "cycle3": "MANDATORY_REASSESSMENT_NOT_HARD_CAP"
   },
+  "formal_calibration": {
+    "current_integrity": "UNCHANGED_NO_IDENTITY_START_PRESERVE_RESULT",
+    "r104_authority_sequence": "PREMATURE_BEFORE_MATERIALIZED_RESULT_BEARING_LAUNCH_PATH",
+    "r105_correction": "FAIL_CLOSED_BEFORE_CONSUMPTION",
+    "prospective": "TIGHTEN_AUTHORITY_ISSUANCE_REQUIRE_PROSPECTIVE_LAUNCH_PATH_PREEXISTENCE"
+  },
   "revisit_calibration": {
-    "implementation_status": "BOOTSTRAP_COMPLETE_TRIGGER_PATHS_NOT_YET_LIVE_TESTED",
+    "implementation_status": "BOOTSTRAP_COMPLETE_DIFFERENTIAL_SCAN_ACTIVE_LIVE_TRIGGER_PATH_UNOBSERVED",
     "terminal_state_mutation_allowed": false,
     "old_candidate_reactivation_observed": false,
     "historical_outcomes_rewritten": false,
@@ -137,9 +151,19 @@
     "revisit_triggered": 0,
     "revisit_forge_tests": 0,
     "revisit_canonicalizations": 0,
-    "false_negative_risk": "MODERATE_WATCH_IMPROVED_FROM_R95",
-    "zombie_inflation_risk": "LOW_CURRENT_MODERATE_TRIGGER_PROVENANCE_WATCH",
-    "candidate35_rescue_adjacent_surface": "DEFER_NOT_ADMITTED_ZERO_CREDIT"
+    "false_negative_risk": "MODERATE_WATCH",
+    "zombie_inflation_risk": "LOW_CURRENT_MODERATE_FUTURE_TRIGGER_WATCH",
+    "candidate35_rescue_adjacent_surface": "DEFER_NOT_ADMITTED_ZERO_CREDIT",
+    "theory_r1_revisit_proposal": false
+  },
+  "theory_forge_calibration": {
+    "theory_stream": "INITIALIZED",
+    "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
+    "analyst_decision": "THEORY_FORGE_TEST",
+    "canonical_credit": 0,
+    "forge_probe_executed": false,
+    "revisit_triggered": false,
+    "assessment": "WELL_BOUNDED_NONCANONICAL_ADVERSARIAL_GATE_EXECUTION_UNOBSERVED"
   },
   "revisit_ledger_bootstrap": {
     "coverage": "COMPLETE_34_OF_34",
@@ -152,41 +176,43 @@
     "candidate35": "DEFERRED_REQUIRES_INDEPENDENT_REIDENTIFICATION"
   },
   "preformal_calibration": {
-    "status": "CALIBRATED",
+    "status": "CALIBRATED_READY_DISTINCT_FROM_EXECUTABILITY",
     "ready_means_success": false,
     "repeated_development_observations_independent_confirmation": false,
     "hidden_second_formal_gate_observed": false
   },
   "risks": {
     "false_positive_zombie_inflation": "LOW_CURRENT_MODERATE_FUTURE_TRIGGER_WATCH",
-    "false_negative_forgotten_valuable_lines": "MODERATE_WATCH_MATERIALLY_IMPROVED",
+    "false_negative_forgotten_valuable_lines": "MODERATE_WATCH_NO_CURRENT_MATERIAL_TRIGGER_MISSED",
     "moving_goalpost_rescue": "LOW_CURRENT",
-    "over_terminalization": "MODERATE_WATCH_TRIGGER_SENSITIVITY_UNTESTED",
-    "bootstrap_historical_specificity": "CLARIFY_BEFORE_TRIGGER"
+    "over_terminalization": "MODERATE_WATCH_LIVE_TRIGGER_SENSITIVITY_UNTESTED",
+    "formal_authority_infrastructure_sequencing": "MODERATE_PROCESS_RISK_CORRECTED_BEFORE_CONSUMPTION",
+    "mechanism_supply": "FRAGILE_ZERO_EXECUTABLE_CURRENTLY"
   },
   "mandatory_questions": {
-    "1_development_phase_end_to_end": "YES_CURRENT_LIVE_OBJECTS_FRESH_FORMAL_TRANSITION_UNOBSERVED",
+    "1_development_phase_end_to_end": "YES_CURRENT_LIVE_AND_TERMINAL_OBJECTS_FORMAL_CONSUMPTION_UNOBSERVED",
     "2_cycle3_hard_cap": "NO",
-    "3_repair_classification": "YES_CURRENT_PATHS",
+    "3_repair_classification": "YES_CURRENT_H7_AND_TERMINAL_PATHS",
     "4_development_observations_independent_credit": "KEPT_ZERO_CREDIT",
-    "5_formal_one_way_integrity": "UNCHANGED_NO_H7_IDENTITY_OR_START_YET",
-    "6_system_to_mechanism_successors": "NO_MANUFACTURE_OBSERVED_NO_INDEPENDENT_TRIGGER_CURRENTLY",
-    "7_preformal_genuine_development": "YES",
+    "5_formal_one_way_integrity": "UNCHANGED_NO_H7_IDENTITY_START_PRESERVE_RESULT; TIGHTEN_AUTHORITY_ISSUANCE_SEQUENCE",
+    "6_system_to_mechanism_successors": "NO_MANUFACTURE_OBSERVED_NO_CURRENT_INDEPENDENT_TRIGGER_SUPPRESSED",
+    "7_preformal_genuine_development": "YES_READY_TRUE_WHILE_EXECUTION_HELD",
     "8_terminal_semantics": "CALIBRATED_34_TERMINAL_OBJECTS_REMAIN_TERMINAL",
-    "9_revisit_catches_changed_conditions": "LEDGER_EXISTS_BUT_NO_GENUINE_TRIGGER_HAS_TRAVERSED_END_TO_END",
-    "10_revisit_avoids_rescue_zombies": "YES_CURRENT_OBSERVATIONS_CAND35_POSITIVE_ANTI_RESCUE_CONTROL",
+    "9_revisit_catches_changed_conditions": "NOT_DEMONSTRATED_LIVE_LEDGER_AND_DIFFERENTIAL_SCAN_EXIST",
+    "10_revisit_avoids_rescue_zombies": "YES_CURRENT_OBSERVATIONS",
     "11_revisit_forge_test": "INSUFFICIENT_EVIDENCE_NO_LIVE_CASE",
-    "12_bootstrap_complete_conservative": "YES_COVERAGE_AND_STATUS_ADMISSION_CONSERVATISM; CLARIFY_CANDIDATE_SPECIFIC_PROVENANCE_BEFORE_TRIGGER",
-    "13_pass_reachability": "YES_H7_HAS_ONE_CONDITIONAL_EXACT_BINDING_FORMAL_PATH_WITHOUT_WEAKER_STANDARDS"
+    "12_bootstrap_complete_conservative": "YES_WITH_CANDIDATE_SPECIFIC_PROVENANCE_REQUIRED_BEFORE_LIVE_TRIGGER",
+    "13_pass_reachability": "YES_AFTER_SCIENCE_INVARIANT_LAUNCH_PATH_AND_FRESH_ANALYST_WITHOUT_WEAKER_STANDARDS"
   },
   "prospective_recommendations": [
-    "KEEP_ALL_OLD_TERMINAL_IDS_TERMINAL_FOREVER",
+    "REQUIRE_RESULT_BEARING_ONE_WAY_LAUNCH_MECHANICS_TO_EXIST_AND_BE_PROSPECTIVELY_BINDABLE_BEFORE_FRESH_FORMAL_AUTHORITY",
+    "KEEP_H7_LAUNCH_PATH_IMPLEMENTATION_STRICTLY_NONRESULT_SCIENCE_INVARIANT_THEN_REQUIRE_FRESH_ANALYST_BEFORE_IDENTITY_START",
+    "KEEP_ALL_OLD_TERMINAL_IDS_TERMINAL_FOREVER_AND_ZERO_INHERITED_CONFIRMATORY_CREDIT",
     "REQUIRE_CANDIDATE_SPECIFIC_HISTORICAL_CLOSURE_PROVENANCE_BEFORE_ANY_REVISIT_TRIGGERED_TRANSITION",
-    "TREAT_BOOTSTRAP_WHAT_WOULD_CHANGE_TEMPLATES_AS_ADMISSION_SCAFFOLDING_NOT_TRIGGER_PROOF",
-    "PERSIST_FIRST_GENUINE_TRIGGER_SOURCE_INDEPENDENCE_AND_DISTINCT_NEW_QUESTION_BEFORE_FORGE_OR_CANONICAL_ACTION",
-    "REVISIT_FORGE_TEST_NEW_TRIGGER_ONLY_NO_OLD_OBJECT_RERUN_RETUNE",
-    "REVISIT_CANONICALIZE_FRESH_ID_FRESH_CONTRACT_ZERO_INHERITED_CREDIT_ONLY",
-    "KEEP_H7_FORMAL_EXACT_BINDING_ONE_WAY_RULES_UNCHANGED"
+    "DO_NOT_TREAT_THEORY_GENUINELY_NEW_INFORMATION_LABEL_AS_AUTOMATIC_REVISIT_TRIGGER_PROOF",
+    "THEORY_FORGE_TEST_EXPOSED_SYNTHETIC_NONRESCUE_SURFACE_ONLY_ZERO_CREDIT_ORDINARY_REDUCTIONS_FIRST",
+    "KEEP_CAND35_IMMEDIATE_POST_OUTCOME_SUCCESSOR_FAMILY_DEFERRED_UNLESS_INDEPENDENTLY_REIDENTIFIED",
+    "KEEP_FORMAL_RAW_BEFORE_SCORE_PRESERVE_BEFORE_READ_ONE_IDENTITY_EXACT_FROZEN_BINDING_RULES_UNCHANGED"
   ],
   "utility_request": "NONE",
   "hard_floor_confirmation": {
@@ -202,19 +228,19 @@
   },
   "confidence": {
     "level": "HIGH",
-    "value": 0.97
+    "value": 0.98
   },
   "questions_for_control_analyst": [
-    "REQUIRE_CANDIDATE_SPECIFIC_CLOSURE_PROVENANCE_BEFORE_FIRST_LIVE_REVISIT_TRIGGER",
-    "KEEP_CAND35_POST_OUTCOME_FORGE_SURFACE_RESCUE_ADJACENT_ZERO_CREDIT",
-    "EXPOSE_FIRST_GENUINE_REVISIT_TRIGGER_DECISION_FORGE_OR_CANONICALIZATION_CHAIN_END_TO_END",
-    "KEEP_H7_GREEN_READINESS_DISTINCT_FROM_IDENTITY_CONSUMPTION_AND_SCIENTIFIC_EVIDENCE"
+    "MAKE_PROSPECTIVELY_MATERIALIZED_RESULT_BEARING_LAUNCH_MECHANICS_A_PREREQUISITE_FOR_FUTURE_FORMAL_AUTHORITY_WHILE_KEEPING_READY_SEPARATE_FROM_EXECUTABILITY",
+    "AFTER_H7_LAUNCH_PLUMBING_EXISTS_REQUIRE_ONE_FRESH_ANALYST_GENERATION_BEFORE_IDENTITY_START_AND_PRESERVE_UNCHANGED_R5_SCIENCE",
+    "KEEP_THEORY_GENUINELY_NEW_INFORMATION_DISTINCT_FROM_CANDIDATE_SPECIFIC_REVISIT_TRIGGER_NO_AUTOMATIC_LEDGER_ACTIVATION",
+    "EXPOSE_FIRST_GENUINE_REVISIT_TRIGGER_DECISION_OPTIONAL_FORGE_TEST_OR_CANONICALIZATION_CHAIN_END_TO_END"
   ],
   "persistence": {
-    "history": "analysis/methodology_calibration/history/2026-09-24/0320.md",
-    "history_commit": "e2444e38bae0bcbd7817b8d16d8aff4ca7190ed2",
+    "history": "analysis/methodology_calibration/history/2026-09-24/0421.md",
+    "history_commit": "dbacfcb6e0bdd9c82a79aa821c9cfa2bde28228d",
     "latest": "analysis/methodology_calibration/latest.md",
-    "latest_commit": "84b90758175808be39e1d4f928545be11b751bae",
+    "latest_commit": "eab3d2e2b39410fc7c1faa8f9766947ddaa8c9d8",
     "state": "analysis/methodology_calibration/state.json"
   }
 }
