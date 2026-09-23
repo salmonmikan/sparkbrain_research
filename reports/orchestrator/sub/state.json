@@ -1,93 +1,93 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260923T213223+0900-V03-CONCEPT-CLOSURE-R99",
-  "produced_at": "2026-09-23T21:32:23+09:00",
+  "generation_id": "FORGE-20260923T223403+0900-V05-HOMEOSTASIS-WINDOWING-R99",
+  "produced_at": "2026-09-23T22:34:03+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260923T193417+0900-NOOP-H7-PREFETCH-R97",
+  "supersedes_generation_id": "FORGE-20260923T213223+0900-V03-CONCEPT-CLOSURE-R99",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T210010+0900-R99-6F2B8C14@59dbcdc2e3541e78a64f64e16fa0be5ef38efc26",
-    "main_relay": "MAIN-20260923T205800+0900-PRIMARY-H7-FORMAL-R5-R98-BLOCKED-SIDECAR@ops/orchestrator-run-report",
+    "main_relay": "MAIN-20260923T215545+0900-RELAY-CAND35-PRESERVATION-R99-COMPLETED@ops/orchestrator-run-report",
     "literature": "LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41@741becd60d3e7dc8f97cedf1347c42c769092011",
     "independent_audit": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8@ops/external-research-audit-handoff",
-    "methodology": "METHCAL-20260923T212015+0900-R90-C2A74E19@ac7214f842c04f97d666ed4a1056ac3904427e61",
-    "control": "CTRL-20260923T155900+0900-R43-A91C4E6B@1592c3b52a8a545aa2503fd4618c0a761921ef1e",
-    "utility": "UTILITY-20260923T212621+0900-PFR1-TERMINAL-POINTER-BLOCKED-R99-8D31C5A7@30b5cf5ed45cd4aa4919720897949f6ee1434bdc",
-    "previous_forge": "FORGE-20260923T193417+0900-NOOP-H7-PREFETCH-R97@ops/orchestrator-run-report"
+    "methodology": "METHCAL-20260923T221827+0900-R91-7E31B4A2@ea2ab83a78b10dbefb2fe7cc390ced097e18b243",
+    "utility": "UTILITY-20260923T222232+0900-PFR1-TERMINAL-POINTER-BLOCKED-R99-4B6E2D91@6198854592a63156f202f3d5b5f4bedbd180a87e",
+    "previous_forge": "FORGE-20260923T213223+0900-V03-CONCEPT-CLOSURE-R99@ops/orchestrator-run-report"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_commit": "59dbcdc2e3541e78a64f64e16fa0be5ef38efc26",
-    "main_latest_blob": "e4bd27d3188e66563084e449a608aa8c179c52fd",
-    "h7_main_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-    "h7_main_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "candidate35_branch": "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3",
-    "candidate35_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
-    "inspected_source": "src/sparkbrain/v03_seed/concepts.py",
-    "inspected_source_blob": "4567f97914438eb559d8b9c0619a8759a666d097",
+    "main_lease_blob": "4760c79cd5085758d433ce3af379c7fec40228a8",
+    "candidate35_scientific_source_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
+    "candidate35_nonresult_implementation_head": "5bc64fbd8fd2f3e8d804d18e0a0ad0d58b5a3e4c",
     "literature_r39_commit": "741becd60d3e7dc8f97cedf1347c42c769092011",
     "audit_r8_latest_blob": "0afe416906713bc4b04eec34cd8a0035ecacbc1f",
-    "methodology_r90_commit": "ac7214f842c04f97d666ed4a1056ac3904427e61",
-    "utility_r99_commit": "30b5cf5ed45cd4aa4919720897949f6ee1434bdc",
-    "control_r43_commit": "1592c3b52a8a545aa2503fd4618c0a761921ef1e",
-    "previous_forge_latest_blob": "df31050739f8cd8b3ba956bd5214140560e41e2a",
-    "previous_forge_state_blob": "1ac1997bdac3263b44aa467eb397707a46bc76f8",
-    "forge_history_path": "reports/orchestrator/sub/history/2026-09-23/2132-r99-fast-forge-v03-concept-closure.md",
-    "forge_history_create_commit": "669e30f36f7acde2b9a5b2a3566f9f996e9c4b85",
-    "forge_latest_update_commit": "9cad3279ff94b84b60a21ab2b10076b543d64ebb",
+    "methodology_r91_commit": "ea2ab83a78b10dbefb2fe7cc390ced097e18b243",
+    "utility_r99_commit": "6198854592a63156f202f3d5b5f4bedbd180a87e",
+    "homeostasis_source": "src/sparkbrain/v05/homeostasis.py",
+    "homeostasis_blob": "67b87a4b4c91a7dba41670087a2d1803bb6e3e6c",
+    "v05_brain_source": "src/sparkbrain/v05/brain.py",
+    "v05_brain_blob": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "v04_brain_source": "src/sparkbrain/v04/brain.py",
+    "v04_brain_blob": "25fd56b082168a9ea71f313023451858d00b6184",
+    "v05_topology_blob": "d9d292bdedc1288a929d1e53f03b9fc182b45a36",
+    "forge_history_path": "reports/orchestrator/sub/history/2026-09-23/2234-r99-fast-forge-homeostasis-windowing-deadend.md",
+    "forge_history_create_commit": "6cccd9cfcbcd2e438f972d0b432a2d8f0970d696",
+    "forge_latest_update_commit": "36b76adfd7b3020fc5b53ab2cbddf1ef99bcfc57",
     "forge_branch": null
   },
-  "freshness_note": "R99 holds H7 on an integrity capability blocker and gives MAIN only non-result candidate #35 provenance work. Fresh Literature R39 is genuinely new but belongs to the candidate #35 intervention-realism/immediate-successor surface and was excluded. Forge instead selected a separate stable-source pre-semantic formation question with no dependence on MAIN unknown outcomes.",
+  "freshness_note": "R99 remains the current Analyst authority. MAIN completed Candidate #35's bounded non-result preservation/provenance wrapper without response exposure and now awaits fresh Analyst review. Literature R39's reachable-state/off-manifold successor surface remains MAIN/immediate-successor territory. Methodology R91 confirms Candidate #35 preservation closure and response STOP. Utility R99 remains fail-closed on its terminal pointer. Forge therefore selected an independent stable-main v0.5 homeostasis timing surface.",
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "avoided": [
-      "H7 sidecar remediation, one-way FORMAL identity/start, exact R5 runtime/input/component/scorer/preserver bindings and blocker",
-      "candidate #35 queue-free persistent-state response, preserve-before-read/provenance, intervention-realism and reachable-state successor surfaces",
-      "candidate #34 terminal result-exposed object, rerun/retune/rescore and same-family rescue",
-      "PF-R1 preservation and Utility terminal-pointer cleanup",
-      "all consumed/frozen/evidence/formal/sealed/freeze/preserve identities"
+      "Candidate #35 scientific source, preservation wrapper, response helper/execution, reachable-state/off-manifold successor and fresh Analyst review",
+      "H7 sidecar remediation, runtime/input/component/scorer/preserver, one-way FORMAL identity/start and protected evaluation",
+      "Candidate #34 terminal temporal-route object and same-family rescue",
+      "PF-R1 Utility terminal-pointer reconciliation",
+      "all consumed/frozen/evidence/formal/sealed/freeze/preserve identities",
+      "prior Forge receptor, Assembly, action/prediction, concept-closure and duplicate variants"
     ],
-    "recheck": "Evidence Analyst R99 and current MAIN blocked-sidecar report were re-read after prototype execution and before Forge persistence; ownership remained unchanged."
+    "recheck": "Evidence Analyst R99 and current MAIN lease were re-read after target inspection and before Forge persistence; ownership remained unchanged."
   },
   "selection_scan": {
     "selection_outcome": "BOUNDED_PROTOTYPE_COMPLETED",
     "selected": [
-      "pre-semantic proto-concept graph closure / overlap-coefficient behavior in stable v03_seed OnlineConceptFormer"
+      "v0.5 HomeostaticController elapsed-time versus observation-window segmentation semantics on stable main"
     ],
     "rejected_before_execution": [
-      "Literature R39 candidate #35 reachable-state/intervention-realism ladder — MAIN/immediate-successor collision",
-      "H7 integrity and future state-conditional abstraction — MAIN critical-path/formal-family collision",
-      "candidate #34 route opportunity successor — terminal same-family rescue risk",
-      "receptor/topology, Assembly completion/regeneration/prototype/order/capacity/context/coactivation and action/prediction table variants — prior Forge coverage without a new independent discriminator"
+      "Literature R39 Candidate #35 reachable-state/intervention-realism ladder — MAIN/immediate-successor collision",
+      "H7 responsibility/formal-integrity family — MAIN critical-path collision",
+      "Candidate #34 temporal-route successors — terminal same-family rescue risk",
+      "Assembly completion/regeneration/prototype/order/capacity/context/coactivation, action/prediction tables, receptor traces and v03 concept closure — prior Forge coverage without a new independent discriminator"
     ]
   },
   "overall_status": "FORGE_DEAD_END",
   "forge_objects": [
     {
-      "forge_id": "FORGE-V03-CONCEPT-GRAPH-CLOSURE-01",
-      "question": "Can OnlineConceptFormer create apparently compositional multi-member proto-concepts from pairwise closure without all-pair co-occurrence, and is there any residual beyond ordinary graph bookkeeping?",
-      "why_now": "Independent central-theory pre-semantic formation surface available on stable main while MAIN owns H7/#35; bounded and falsifiable without protected evaluation or canonical mutation.",
+      "forge_id": "FORGE-V05-HOMEOSTASIS-WINDOWING-01",
+      "question": "Does v0.5 homeostatic threshold state represent elapsed physical recovery time, or does it depend on how the same elapsed duration is segmented into process_episode observation windows?",
+      "why_now": "Independent stable-main persistent-state/endogenous-recovery surface available while MAIN owns Candidate #35/H7; prior Forge history does not cover v0.5 homeostasis time semantics.",
       "branch": null,
       "prototypes": [
         {
-          "name": "bridge_closure",
-          "diagnostic": "AB x3 then BC x3 under default association threshold/minimum occurrences",
-          "observation": "AB=1.0, BC=1.0, AC=0.0 yet connected-component closure creates one ABC candidate with mean pair strength 0.6666666666666666"
+          "name": "equal_elapsed_different_segmentation",
+          "diagnostic": "exact-source arithmetic for a fresh never-spiking reservoir unit at base_threshold 0.76: one 9376 ms empty episode versus 293 x 32 ms empty episodes",
+          "observation": "one controller update gives 0.7586; 293 updates across the same physical elapsed 9376 ms reach the 0.35 floor"
         },
         {
-          "name": "rare_subset_association",
-          "diagnostic": "A alone x97 then AB x3",
-          "observation": "feature counts A=100/B=3 and pair count AB=3 produce association 1.0 because denominator is min marginal, despite B occurring in only 3% of A observations"
+          "name": "timestamp_noncausality",
+          "diagnostic": "inspect whether HomeostaticController.observe uses supplied time_ms in EMA or threshold update",
+          "observation": "time_ms is copied to the returned snapshot only; controller state evolves once per observe call regardless of timestamp delta"
         }
       ],
-      "commands_diagnostics": "read-only exact-source inspection plus same-run synthetic reproduction of the source association/connected-component equations; no repository executable or result-bearing workflow dispatched",
+      "commands_diagnostics": "read-only stable-source inspection plus exact recurrence arithmetic; no repository executable, candidate response, protected target, or result-bearing workflow dispatched",
       "ordinary_reductions": [
-        "overlap coefficient pair association: intersection/min(marginals)",
-        "thresholded undirected graph connected-component transitive closure"
+        "ordinary discrete-time per-window exponential moving average",
+        "bounded threshold integrator keyed to API observation count / episode segmentation"
       ],
       "status": "FORGE_DEAD_END",
-      "dead_end_reason": "ORDINARY_OVERLAP_COEFFICIENT_PLUS_CONNECTED_COMPONENT_CLOSURE_FULLY_EXPLAINS_OBSERVATIONS",
+      "dead_end_reason": "PER_WINDOW_HOMEOSTATIC_CONTROL_AND_API_SEGMENTATION_FULLY_EXPLAIN_THE_OBSERVATION; CONFIGURATION_EXPLICITLY_TARGETS_SPIKES_PER_WINDOW",
       "promotion_reason": null
     }
   ],
@@ -107,15 +107,15 @@
   },
   "metrics": {
     "scope": "FROM_R92_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 10,
-    "prototypes_attempted": 12,
-    "dead_ends": 10,
+    "runs": 11,
+    "prototypes_attempted": 14,
+    "dead_ends": 11,
     "interesting_observations_retained": 0,
     "promotion_proposals": 0,
     "later_admissions": 0,
     "duplicate_or_rescue_rejects": 9,
     "ownership_collisions": 0,
-    "ordinary_reduction_rejects": 10,
+    "ordinary_reduction_rejects": 11,
     "idea_to_observation_latency": "SAME_RUN"
   },
   "recommendation": "NONE_DEAD_END"
