@@ -1,60 +1,61 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260923T173525+0900-NOOP-NO-TARGET-SHADOW-R95",
-  "produced_at": "2026-09-23T17:35:25+09:00",
+  "generation_id": "FORGE-20260923T183716+0900-NOOP-CAND35-R2-SHADOW-R96",
+  "produced_at": "2026-09-23T18:37:16+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260923T163218+0900-NOOP-POSTEXPOSURE-R94",
+  "supersedes_generation_id": "FORGE-20260923T173525+0900-NOOP-NO-TARGET-SHADOW-R95",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T165919+0900-R95-71C4A8E2@9b9ceffc5c5f4fc8cf68b2d7e28259d8d6d2ea1a",
-    "main_relay": "MAIN-CAND35-ARCHITECTURE-R95@research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1@c640cb3a42faf1f49bee568c1cc167c03fb63646",
+    "evidence_analyst": "EVA-20260923T180248+0900-R96-3F7C92A1@df97c2c8830c7d50d23d13c43091866ad5d23c77",
+    "main_relay": "MAIN-CAND35-ARCHITECTURE-R2-R96@research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3@8ea6581544c642ad74f1a95955ab2c5f795afccc",
     "literature": "LIT-R37-SPIKE-RESPONSE-KERNEL@1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e",
     "independent_audit": "AUDIT@1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e",
-    "methodology": "METHCAL@17bee7e4973c38b5cedcdac67fbeb964ab423398",
-    "control": "CONTROL@1592c3b52a8a545aa2503fd4618c0a761921ef1e",
+    "methodology": "METHCAL-20260923T182205+0900-R87-5C8E1A73@5307616ae4e8195a829618699b9ce505732efb99",
+    "control": "CONTROL-R43@1592c3b52a8a545aa2503fd4618c0a761921ef1e",
     "utility": "ops/utility-orchestrator-requests@b2f1462aeb95707747f8b273c1b9a6ec678996bd",
-    "previous_forge": "FORGE-20260923T163218+0900-NOOP-POSTEXPOSURE-R94@ops/orchestrator-run-report"
+    "previous_forge": "FORGE-20260923T173525+0900-NOOP-NO-TARGET-SHADOW-R95@ops/orchestrator-run-report"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_commit": "9b9ceffc5c5f4fc8cf68b2d7e28259d8d6d2ea1a",
-    "main_active_branch": "research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1",
-    "main_active_head_before_forge_persistence": "c640cb3a42faf1f49bee568c1cc167c03fb63646",
+    "analyst_commit": "df97c2c8830c7d50d23d13c43091866ad5d23c77",
+    "main_lease_commit_before_forge_persistence": "b6845500212737ef89bbd97443040271240d4c80",
+    "main_active_branch": "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3",
+    "main_exact_binding_guard_head_observed": "df1fb989d79d80cee8be87b051d5e42e33f1c871",
+    "main_active_head_before_final_forge_persistence": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
     "external_research_audit_commit": "1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e",
-    "methodology_handoff_commit": "17bee7e4973c38b5cedcdac67fbeb964ab423398",
+    "methodology_handoff_commit": "5307616ae4e8195a829618699b9ce505732efb99",
     "control_handoff_commit": "1592c3b52a8a545aa2503fd4618c0a761921ef1e",
     "utility_request_commit": "b2f1462aeb95707747f8b273c1b9a6ec678996bd",
-    "previous_orchestrator_tip_before_persistence": "cacb0607e2d9a130efc5f88672a60a9e59866587",
-    "previous_forge_latest_blob": "701ec120c00596fe8d55b6cc925e756445dc9ad5",
-    "previous_forge_state_blob": "d0bb196dc8e213398e4df96c612a8edd9e98cdd2",
-    "source_assemblies_blob": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+    "previous_forge_latest_blob": "a98cb730da034d739f8db915ad56e25266d18699",
+    "previous_forge_state_blob": "67619df6dd0aabdc4bc5d14e2b4fe741ba8b24f7",
+    "forge_history_path": "reports/orchestrator/sub/history/2026-09-23/1837-r96-fast-forge-noop-cand35-r2-shadow.md",
     "forge_branch": null
   },
-  "freshness_note": "R95 is the material authority delta: candidate #34 is now terminal-for-current-object and R95 intentionally retains no immediate same-family successor because post-result successor construction would create rescue/laundering risk. Candidate #35 moved to MAIN Architecture and its newest branch delta is lint-only. Stable main and the independent reduction surfaces available to Forge are otherwise unchanged.",
+  "freshness_note": "R96 moves candidate #35 into MAIN-owned Architecture R2 exact non-result binding and R87 confirms the same constraint. The only newly exposed implementation surface is candidate-specific MAIN code; the latest additional change is import-order-only. Stable main exposes no independent new scientific surface for Forge.",
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "avoided": [
-      "candidate #35 active queue-free subthreshold Architecture object, branch, runtime helpers, response question, scorer and immediate successor surface",
-      "candidate #34 consumed/result-exposed current object, D34-Q002 rerun/retune/rescore and post-result same-family rescue",
+      "candidate #35 active queue-free subthreshold Architecture R2 object, branch, exact executor/guard surface, response question, scorer and immediate successor surface",
+      "candidate #34 result-exposed terminal current object, D34-Q002 rerun/retune/rescore and post-result same-family rescue",
       "H7 FORMAL and PF-R1 preservation/provenance path",
       "all consumed/frozen/evidence/formal/sealed/freeze/preserve identities"
     ],
-    "relay": "Evidence Analyst R95 and the exact MAIN candidate #35 branch were re-read immediately before persistence. MAIN head c640cb3 is a science-invariant lint-only repair; no superseding Analyst generation appeared."
+    "relay": "Evidence Analyst R96 and the exact MAIN candidate #35 branch were re-read before persistence mutations. Latest MAIN research head 8ea6581544c642ad74f1a95955ab2c5f795afccc is an import-order-only science-invariant repair on top of the exact binding guard implementation; no superseding Analyst generation appeared."
   },
   "selection_scan": {
     "selection_outcome": "NO_OP",
     "selected": [],
     "rejected_before_execution": [
-      "immediate #34 route-family successor/comparator — R95 explicitly leaves no same-family successor this generation because post-result construction is rescue/laundering-prone",
-      "R37 spike-response/history-filter reduction ladder — tied to the terminal #34 route measurement family; retain only as a future prospective reduction bar",
-      "queue-free/persistent physical state and new clone/reset/serializer tooling — candidate #35 is MAIN-owned active object/runtime and immediate successor surface",
+      "candidate #35 queue-free/persistent-state tooling and exact response executor/guard surface — MAIN active object/runtime/immediate successor surface",
+      "candidate #34 route-family successor/comparator and R37 spike-response/history-filter reduction ladder — post-result same-family rescue risk under R96",
       "H7/PF-R1 preservation/provenance — protected critical path",
       "native responsibility/credit and delayed reward/replay/eligibility — historically dense family on unchanged stable main with no new discriminator",
-      "receptor/topology aliasing, Assembly completion/regeneration/prototype/order/capacity/context/coactivation, and pre-semantic functional-table variants — duplicate or near-duplicate prior Forge/exploratory surfaces without a new observable/intervention/comparator/tooling delta",
-      "MAIN c640cb3 branch delta — lint-only line wrapping, no scientific behavior or independent Forge opportunity"
+      "receptor/topology aliasing, Assembly completion/regeneration/prototype/order/capacity/context/coactivation and pre-semantic functional-table variants — duplicate or near-duplicate prior Forge/exploratory surfaces without a new independent observable/intervention/comparator/tooling delta",
+      "Methodology R87 — control-plane confirmation of #35 NON_RESULT R2 and response STOP, not a new scientific residual",
+      "MAIN 8ea6581544c642ad74f1a95955ab2c5f795afccc delta — import ordering only, no scientific behavior change or independent Forge opportunity"
     ],
-    "no_op_reason": "After the fresh R95 no-target-shadow and ownership scan, no safe, useful, nonduplicative bounded research direction has a materially new observable, intervention, comparator, reduction, scaling regime, measurement surface or enabling tool independent of MAIN. A new probe would manufacture activity rather than information gain."
+    "no_op_reason": "After fresh R96/R87 ownership and scientific-surface reconciliation, no safe, useful, nonduplicative bounded research direction has a materially new observable, intervention, comparator, reduction, scaling regime, measurement surface or enabling tool independent of MAIN. A new probe would manufacture activity rather than information gain."
   },
   "overall_status": "FORGE_OBSERVATION",
   "forge_objects": [],
@@ -73,13 +74,13 @@
   },
   "metrics": {
     "scope": "FROM_R92_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 7,
+    "runs": 8,
     "prototypes_attempted": 10,
     "dead_ends": 9,
     "interesting_observations_retained": 0,
     "promotion_proposals": 0,
     "later_admissions": 0,
-    "duplicate_or_rescue_rejects": 7,
+    "duplicate_or_rescue_rejects": 9,
     "ownership_collisions": 0,
     "ordinary_reduction_rejects": 9,
     "idea_to_observation_latency": "N/A_NO_PROTOTYPE"
