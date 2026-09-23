@@ -1,20 +1,20 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T005300+0900-RELAY-H7-R102-READINESS-WAITING-CI",
+  "generation_id": "MAIN-20260924T005600+0900-RELAY-H7-R102-CAPABILITY-HOLD",
   "run_id": "sparkbrain-main-relay-20260924T004541JST-r102-h7-readiness",
   "producer_run_id": "sparkbrain-main-relay-20260924T004541JST-r102-h7-readiness",
   "authority_scope": "RELAY_R102_H7_SCIENCE_INVARIANT_AUTHORITY_PLUMBING_AND_NON_RESULT_READINESS_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T235628+0900-RELAY-CAND35-R100-ONEBATCH-EXPOSED-WAITING-ANALYST",
+  "supersedes_generation_id": "MAIN-20260924T005300+0900-RELAY-H7-R102-READINESS-WAITING-CI",
   "input_generations": {
     "evidence_analyst": "EVA-20260924T003800+0900-R102-CAND35-CALIBRATED@3d6abd17bbf8804d1656aca90b8ab17d67ab2472",
-    "main_previous": "MAIN-20260923T235628+0900-RELAY-CAND35-R100-ONEBATCH-EXPOSED-WAITING-ANALYST",
+    "main_previous": "MAIN-20260924T005300+0900-RELAY-H7-R102-READINESS-WAITING-CI",
     "control": "CTRL-20260923T225500+0900-R44-C8F41D72@3c46617fba123704297d880a748c305c16a7dd01"
   },
   "execution_mode": "RELAY",
   "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-24T00:52:25+09:00",
-  "heartbeat_at": "2026-09-24T00:53:00+09:00",
-  "waiting_since": "2026-09-24T00:53:00+09:00",
+  "heartbeat_at": "2026-09-24T00:56:05+09:00",
+  "waiting_since": "2026-09-24T00:56:05+09:00",
   "completed_at": null,
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260924T003800+0900-R102-CAND35-CALIBRATED",
@@ -39,16 +39,17 @@
   "active_identity": null,
   "workflow_wait": {
     "readiness_run_id": 35884741590,
-    "readiness_status": "in_progress",
-    "readiness_conclusion": null,
+    "readiness_status": "completed",
+    "readiness_conclusion": "failure",
+    "readiness_failed_at": "Assert protected sidecar handoff capability exists without exposing it",
     "generic_ci_run_id": 35884741827,
-    "generic_ci_status": "in_progress",
-    "generic_ci_conclusion": null,
+    "generic_ci_status": "completed",
+    "generic_ci_conclusion": "success",
     "result_bearing": false,
-    "expected_next_action": "Wait for completion. Green NON_RESULT readiness still requires a fresh Evidence Analyst before FORMAL; any exact binding or protected-sidecar capability failure remains fail-closed."
+    "expected_next_action": "Wait for external provisioning of the already-required protected sidecar handoff capability. Then re-fetch fresh/current Analyst/Main/H7 refs and rerun NON_RESULT readiness only if still authorized; H7 FORMAL remains STOP."
   },
   "repair_change_classification": "SCIENCE_INVARIANT_AUTHORITY_PLUMBING_ONLY",
-  "evidentiary_status": "NON_RESULT_READINESS_PLUMBING_ONLY",
+  "evidentiary_status": "NON_RESULT_READINESS_CAPABILITY_FAILURE_PRE_IDENTITY",
   "new_scientific_result_this_run": false,
   "science_affecting_change_performed": false,
   "formal_identity_created_or_consumed": false,
@@ -69,7 +70,7 @@
     "development_phase_changed_by_relay": false,
     "formal_floor_respected": true
   },
-  "stop_reason": "H7_R102_NONRESULT_READINESS_WORKFLOW_IN_PROGRESS",
-  "next_action": "Wait for H7 NON_RESULT readiness workflow completion; no FORMAL action under R102.",
+  "stop_reason": "H7_R102_PROTECTED_SIDECAR_CAPABILITY_GATE_FAILED_PRE_IDENTITY",
+  "next_action": "External protected-sidecar capability provisioning only. No FORMAL action under R102.",
   "owner": "main"
 }
