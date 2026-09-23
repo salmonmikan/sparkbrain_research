@@ -18,9 +18,11 @@ from sparkbrain.v05.subthreshold_architecture import (
 
 def _internal_unit_ids(brain: IntegratedV05Brain, count: int = 2) -> tuple[int, ...]:
     receptor_ids = set(brain.base.field.receptor_ids)
-    return tuple(unit_id for unit_id in sorted(brain.base.field.units) if unit_id not in receptor_ids)[
-        :count
-    ]
+    return tuple(
+        unit_id
+        for unit_id in sorted(brain.base.field.units)
+        if unit_id not in receptor_ids
+    )[:count]
 
 
 def test_queue_free_anchor_is_exact_clone_without_source_mutation() -> None:
