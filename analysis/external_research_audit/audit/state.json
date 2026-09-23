@@ -64,16 +64,8 @@
       "target_cue": "unit2@0ms current1.0; unit3@1ms current1.0",
       "collateral_cue": "unit5@0ms current1.0; unit6@1ms current1.0"
     },
-    "generic_ci": {
-      "workflow": 35806212293,
-      "conclusion": "success"
-    },
-    "immutable_counts": {
-      "evidence": 5,
-      "formal": 0,
-      "sealed": 0,
-      "freeze": 0
-    },
+    "generic_ci": {"workflow": 35806212293, "conclusion": "success"},
+    "immutable_counts": {"evidence": 5, "formal": 0, "sealed": 0, "freeze": 0},
     "legacy_freeze_preserve_control_inventory_refreshed": true,
     "cand34_control_or_preserve_ref": false,
     "open_prs": [148, 149],
@@ -81,39 +73,14 @@
   },
   "genuinely_new_information": true,
   "findings": [
-    {
-      "finding": "Exact cue threshold-drives target units 2@0ms and 3@1ms.",
-      "impact": "Prototype spikes do not require route transmission."
-    },
-    {
-      "finding": "Static event reconstruction: 2->3 arrives at 2ms (or 3ms with +1ms) while unit3 is refractory until 4ms; 1->2 and 4->2 sources do not fire; 3->2 only changes later subthreshold potential with no later excitation.",
-      "impact": "Frozen spike/Assembly observables give tested target edges little or no causal opportunity; a null edge result cannot strongly falsify route causality."
-    },
-    {
-      "finding": "Static control matching pairs 3->2↔5->6, 2->3↔5->1, 1->2↔1->4, 4->2↔6->5 but matches sign/plasticity/weight/delay, not source activation/refractory/downstream opportunity.",
-      "impact": "Matched-control specificity is opportunity-mismatched."
-    },
-    {
-      "finding": "Frozen response schema omits subthreshold membrane potential.",
-      "impact": "Interventional equivalence means equivalence of the frozen downstream response quotient, not physical-state equivalence."
-    },
-    {
-      "finding": "R91/MAIN correctly keep the run nonconfirmatory, but describe it as informative even if negative.",
-      "impact": "A negative result needs a narrower interpretation because the surface bypasses or blocks the route."
-    },
-    {
-      "finding": "Literature R35's repository-specific 2ms-bin statement is stale for current v0.5; current V05BrainConfig passes 0.25ms, and prebind bins (0,4) give 0ms/1ms.",
-      "impact": "This audit does not rely on the 2ms-specific warning; only general timing-resolution caution survives."
-    }
+    {"finding": "Exact cue threshold-drives target units 2@0ms and 3@1ms.", "impact": "Prototype spikes do not require route transmission."},
+    {"finding": "Static event reconstruction: 2->3 arrives at 2ms (or 3ms with +1ms) while unit3 is refractory until 4ms; 1->2 and 4->2 sources do not fire; 3->2 only changes later subthreshold potential with no later excitation.", "impact": "Frozen spike/Assembly observables give tested target edges little or no causal opportunity; a null edge result cannot strongly falsify route causality."},
+    {"finding": "Static control matching pairs 3->2↔5->6, 2->3↔5->1, 1->2↔1->4, 4->2↔6->5 but matches sign/plasticity/weight/delay, not source activation/refractory/downstream opportunity.", "impact": "Matched-control specificity is opportunity-mismatched."},
+    {"finding": "Frozen response schema omits subthreshold membrane potential.", "impact": "Interventional equivalence means equivalence of the frozen downstream response quotient, not physical-state equivalence."},
+    {"finding": "R91/MAIN correctly keep the run nonconfirmatory, but describe it as informative even if negative.", "impact": "A negative result needs a narrower interpretation because the surface bypasses or blocks the route."},
+    {"finding": "Literature R35's repository-specific 2ms-bin statement is stale for current v0.5; current V05BrainConfig passes 0.25ms, and prebind bins (0,4) give 0ms/1ms.", "impact": "This audit does not rely on the 2ms-specific warning; only general timing-resolution caution survives."}
   ],
-  "affected_lines": [
-    "CAND34_PREFORMAL_R1_CAUSAL_OPPORTUNITY",
-    "CAND34_DIRECT_THRESHOLD_REPLAY",
-    "CAND34_EDGE_INTERVENTION_IDENTIFIABILITY",
-    "CAND34_MATCHED_CONTROL_OPPORTUNITY",
-    "CAND34_RESPONSE_SIGNATURE_EQUIVALENCE",
-    "CAND34_R35_TIMING_BIN_CORRECTION"
-  ],
+  "affected_lines": ["CAND34_PREFORMAL_R1_CAUSAL_OPPORTUNITY", "CAND34_DIRECT_THRESHOLD_REPLAY", "CAND34_EDGE_INTERVENTION_IDENTIFIABILITY", "CAND34_MATCHED_CONTROL_OPPORTUNITY", "CAND34_RESPONSE_SIGNATURE_EQUIVALENCE", "CAND34_R35_TIMING_BIN_CORRECTION"],
   "novelty_or_reduction_impact": "CAND34_PREFORMAL_R1_HAS_WEAK_EDGE_CAUSAL_OPPORTUNITY_SO_A_NULL_EDGE_EQUIVALENCE_RESULT_CANNOT_SUPPORT_A_BROAD_NO_ROUTE_CONCLUSION; NO_MECHANISM_NOVELTY_UPLIFT.",
   "audit_classification": "INCONCLUSIVE",
   "confidence": "HIGH static timing/schema; MEDIUM final executed response because response executor is not yet materialized",
@@ -125,18 +92,10 @@
     "If claiming physical route influence, prospectively observe subthreshold state; otherwise scope equivalence to spike/Assembly readout.",
     "Use current 0.25ms timing binding; multi-resolution robustness only in a fresh successor."
   ],
-  "questions_for_evidence_analyst": [
-    "Cap any R91 null to 'no observable edge-route effect under direct-threshold replay'?",
-    "Does static opportunity failure justify STOP/REASSESS before response execution, or execution only as an implementation/development check?",
-    "For a fresh successor, require upstream cue plus per-edge opportunity ledger?"
-  ],
-  "questions_for_control_brain": [
-    "Add 'intervention assigned != intervention had causal opportunity' as a guardrail?",
-    "Do not count a negative edge-equivalence result from this direct-replay surface as strong evidence against route causality.",
-    "Keep any redesign prospective; do not retrofit R91/R2."
-  ],
+  "questions_for_evidence_analyst": ["Cap any R91 null to 'no observable edge-route effect under direct-threshold replay'?", "Does static opportunity failure justify STOP/REASSESS before response execution, or execution only as an implementation/development check?", "For a fresh successor, require upstream cue plus per-edge opportunity ledger?"],
+  "questions_for_control_brain": ["Add 'intervention assigned != intervention had causal opportunity' as a guardrail?", "Do not count a negative edge-equivalence result from this direct-replay surface as strong evidence against route causality.", "Keep any redesign prospective; do not retrofit R91/R2."],
   "must_not_change_frozen_or_consumed": [
-    "all consumed C19-v4/C19-R1-v1/C19-R2/PD01/NI01/H5 identities and immutable evidence",
+    "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "H7 PF-R1 no-rerun/no-rescore boundary and H7 R5 FORMAL hold",
     "candidate #34 R2 head a6455a3929b86ad25fd106ea93a03604192fc3be",
     "candidate #34 R91 prebind head 2f6e8dbaf88215cc18dd98782bec166fe3b7e7b5 and artifact bytes",
@@ -144,12 +103,7 @@
     "no response workflow dispatch, identity consumption, merge, immutable-ref, Utility, or scheduler mutation by this role"
   ],
   "read_only_recompute": "Static event-opportunity reconstruction only; no candidate response execution or experiment.",
-  "phase_2_disposition": {
-    "blind_target_remained_valid": true,
-    "blind_target_change_reason": null,
-    "status": "PREFORMAL_R1_PREBIND_GREEN_NO_RESPONSE_RESULT",
-    "existing_result_invalidated": false
-  },
+  "phase_2_disposition": {"blind_target_remained_valid": true, "blind_target_change_reason": null, "status": "PREFORMAL_R1_PREBIND_GREEN_NO_RESPONSE_RESULT", "existing_result_invalidated": false},
   "utility_request_created": null,
   "persistence_notes": "Role-separated audit stream only; legacy shared latest/state untouched."
 }
