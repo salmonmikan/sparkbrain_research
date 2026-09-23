@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import copy
 import hashlib
 from dataclasses import asdict, dataclass
 from typing import Any, Literal
@@ -24,7 +23,9 @@ Candidate35Arm = Literal[
 ]
 
 CANDIDATE_ID = "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING"
-DEVELOPMENT_REVISION = "ARCHITECTURE-R2-EXACT-CANDIDATE-SURFACE-AND-EXECUTOR-BINDING-NONRESULT"
+DEVELOPMENT_REVISION = (
+    "ARCHITECTURE-R2-EXACT-CANDIDATE-SURFACE-AND-EXECUTOR-BINDING-NONRESULT"
+)
 PRIME_SOURCE_ID = "cand35-prime"
 PRIME_EPISODE_ID = "cand35-prime-episode"
 CUE_SOURCE_ID = "cand35-cue"
@@ -84,7 +85,7 @@ def _sha256_text(value: str) -> str:
 
 
 def candidate35_prime_pulses() -> tuple[SignalPulse, ...]:
-    """Return the prospectively frozen no-learning v0.5 prime trajectory inputs."""
+    """Return the prospectively frozen no-learning v0.5 prime inputs."""
     return (
         SignalPulse(
             time_ms=0.0,
@@ -130,7 +131,7 @@ def candidate35_cue(*, anchor_time_ms: float, delayed_sham: bool = False) -> Sig
 
 
 def candidate35_frozen_contract() -> dict[str, Any]:
-    """Machine-readable R2 binding of the unchanged Discovery R1 scientific contract."""
+    """Machine-readable R2 binding of the unchanged Discovery R1 contract."""
     return {
         "candidate_id": CANDIDATE_ID,
         "claim_ceiling": "SYSTEM",
@@ -173,7 +174,10 @@ def candidate35_frozen_contract() -> dict[str, Any]:
             "exact_sham_clone",
             "factorial_potential_adaptation_joint_null",
             "delayed_sham_natural_decay",
-            "local_dynamic_threshold_margin_ledger_with_18ms_potential_and_90ms_adaptation_decay",
+            (
+                "local_dynamic_threshold_margin_ledger_with_18ms_potential_"
+                "and_90ms_adaptation_decay"
+            ),
             "hard_queue_empty_requirement",
             "identical_topology_weights_higher_state_and_no_learning",
         ],
@@ -186,6 +190,9 @@ def candidate35_frozen_contract() -> dict[str, Any]:
             "ADAPTATION_NULL/JOINT_SUBTHRESHOLD_NULL"
         ),
         "same_object_system_to_mechanism_uplift_allowed": False,
+        "candidate_response_execution_allowed": False,
+        "preformal_execution_allowed": False,
+        "formal_action_allowed": False,
     }
 
 
@@ -198,7 +205,9 @@ def _component_binding() -> dict[str, str]:
         "anchor_clone": "sparkbrain.v05.subthreshold_architecture.clone_at_queue_free_anchor",
         "cue_executor": "IntegratedV04Brain.ingest_pulses",
         "cue_router": "TemporalExcitableField.route_pulse",
-        "response_source": "sparkbrain.v05.candidate35_architecture.execute_candidate35_response",
+        "response_source": (
+            "sparkbrain.v05.candidate35_architecture.execute_candidate35_response"
+        ),
         "serializer": "sparkbrain.v04.contracts.canonical_json",
     }
 
@@ -219,15 +228,16 @@ def build_candidate35_brain() -> IntegratedV05Brain:
 def all_non_receptor_unit_ids(brain: IntegratedV05Brain) -> tuple[int, ...]:
     receptor_ids = set(brain.base.field.receptor_ids)
     return tuple(
-        unit_id for unit_id in sorted(brain.base.field.units) if unit_id not in receptor_ids
+        unit_id
+        for unit_id in sorted(brain.base.field.units)
+        if unit_id not in receptor_ids
     )
 
 
 def build_candidate35_anchor() -> tuple[IntegratedV05Brain, float]:
-    """Execute only the frozen prime/settle path and return the first bounded queue-empty anchor.
+    """Bind the frozen prime/settle path and bounded queue-empty anchor.
 
-    This function is part of the exact response surface but is not called by the R2 NON_RESULT
-    preflight. It must not be invoked until a later Analyst explicitly permits candidate execution.
+    R2 never calls this function. A later fresh Analyst must authorize candidate execution first.
     """
     brain = build_candidate35_brain()
     brain.process_episode(
@@ -277,9 +287,12 @@ def _reduction_ledger(
 ) -> str:
     unit_ids = all_non_receptor_unit_ids(anchor_brain)
     payload = {
-        "anchor": [row.as_dict() for row in snapshot_subthreshold_units(anchor_brain, unit_ids)],
+        "anchor": [
+            row.as_dict() for row in snapshot_subthreshold_units(anchor_brain, unit_ids)
+        ],
         "treatment": [
-            row.as_dict() for row in snapshot_subthreshold_units(treatment_brain, unit_ids)
+            row.as_dict()
+            for row in snapshot_subthreshold_units(treatment_brain, unit_ids)
         ],
         "membrane_tau_ms": MEMBRANE_TAU_MS,
         "adaptation_tau_ms": ADAPTATION_TAU_MS,
@@ -295,10 +308,7 @@ def execute_candidate35_response(
     arm: Candidate35Arm,
     response_execution_allowed: bool = False,
 ) -> Candidate35ResponseRecord:
-    """Exact candidate response executor, hard-gated off during Architecture R2.
-
-    R2 binds this surface but does not call it with response execution enabled.
-    """
+    """Exact candidate response executor, hard-gated off during Architecture R2."""
     if response_execution_allowed is not True:
         raise Candidate35ResponseNotAuthorized(
             "candidate #35 response remains STOP under Architecture R2 authority"
@@ -306,9 +316,13 @@ def execute_candidate35_response(
     if arm not in ARMS:
         raise ValueError(f"unknown candidate #35 arm: {arm}")
     if pending_arrival_count(anchor_brain) != 0:
-        raise SubthresholdArchitectureUnreachable("candidate #35 response requires queue-empty anchor")
+        raise SubthresholdArchitectureUnreachable(
+            "candidate #35 response requires queue-empty anchor"
+        )
     if abs(float(anchor_brain.current_time_ms) - float(anchor_time_ms)) > 1e-12:
-        raise SubthresholdArchitectureUnreachable("candidate #35 anchor time does not match brain time")
+        raise SubthresholdArchitectureUnreachable(
+            "candidate #35 anchor time does not match brain time"
+        )
 
     treatment = _clone_with_arm_treatment(anchor_brain, arm)
     ledger_json = _reduction_ledger(anchor_brain, treatment)
@@ -348,9 +362,8 @@ def execute_candidate35_response(
 
 
 def candidate35_nonresult_preflight() -> Candidate35Preflight:
-    """Validate exact R2 bindings without executing prime, anchor, treatment, cue, or response."""
-    contract = candidate35_frozen_contract()
-    contract_json = canonical_json(contract)
+    """Validate exact R2 bindings without prime, treatment, cue, or response execution."""
+    contract_json = canonical_json(candidate35_frozen_contract())
     binding_json = canonical_json(_component_binding())
     brain = build_candidate35_brain()
 
