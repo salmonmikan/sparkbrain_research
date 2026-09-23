@@ -1,31 +1,29 @@
-# SparkBrain Methodology Calibration Audit — R87
+# SparkBrain Methodology Calibration Audit — R88
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260923T182205+0900-R87-5C8E1A73`
-- produced_at: `2026-09-23T18:22:05+09:00`
+- generation_id: `METHCAL-20260923T192251+0900-R88-9F4C2D61`
+- produced_at: `2026-09-23T19:22:51+09:00`
 - authority_scope: `METHODOLOGY_ADVISORY_ONLY`
-- supersedes_generation_id: `METHCAL-20260923T171810+0900-R86-B7A2E4C1`
+- supersedes_generation_id: `METHCAL-20260923T182205+0900-R87-5C8E1A73`
 - material_change: `true`
 - audit_result: `MATERIAL_CALIBRATION_UPDATE`
 - overall_classification: `MIXED_CALIBRATION`
 
 ## Executive decision
 
-The hard scientific integrity floor remains unchanged. The material delta is Evidence Analyst R96 plus independent repository verification of candidate #35 Architecture R1. Candidate #35 remains `SYSTEM / OPEN_DEVELOPMENT / ARCHITECTURE_STUDY / preformal_eligible=false`. Architecture R1 completed as a strictly NON_EVIDENTIARY, non-result implementation cycle at exact research head `c640cb3a42faf1f49bee568c1cc167c03fb63646`; independent inspection confirms the tooling only constructs/checks queue-free clones, local potential/adaptation reset, deterministic local-state snapshots/signatures and explicit prohibitions on candidate-response, PRE_FORMAL and FORMAL execution. Exact-head CI run `35839346480` completed successfully on that SHA.
+The hard integrity floor remains unchanged. Two material developments occurred since R87.
 
-The final two R1 repairs are clean `SCIENCE_INVARIANT_REPAIR`: line wrapping only. No metric/scorer meaning, threshold/tolerance, comparator, seed/exclusion policy, intervention, resource/privilege contract, hypothesis, falsifier or success criterion changed. No candidate #35 response was generated or inspected.
+First, candidate #35 completed the prospectively authorized cycle-3 Architecture R2 exact candidate-surface/executor binding without generating a scientific response. Independent research-ref inspection finds `research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3@8ea6581544c642ad74f1a95955ab2c5f795afccc`. The implementation binds the already-frozen SYSTEM contract to exact prime, first queue-empty anchor with hard 256 ms cap/no extension, five fixed arms, fixed cue, fixed 32 ms window, reduction ledger and exact response serializer. The response executor is hard-gated and R2 explicitly records `candidate_response_execution_allowed=false`, `preformal_execution_allowed=false`, and `formal_action_allowed=false`. The later repairs close explicit non-result guards and import ordering only. Exact-head generic CI run `35844155004` completed successfully. No candidate response is authorized or observed.
 
-R96 supplies a particularly useful live calibration of the cycle-3 rule. At the mandatory reassessment point it does not terminalize merely because cycle 3 was reached. It authorizes one additional Architecture R2 cycle only because a distinct prospective information-gain question remains: bind the already-frozen Discovery contract to an exact candidate-specific execution surface and NON_RESULT preflight so that a later worker cannot make scientific choices. Response-bearing execution remains STOP pending a later fresh Analyst generation. This is calibrated continuation, not rescue tuning.
+This is a strong positive calibration of the cycle-3 policy: the extra cycle delivered exactly the prospectively stated information gain—removing worker-side scientific choice by exact executor binding—without using outcome-responsive tuning. It must not auto-promote #35 to PRE_FORMAL or READY. Canonical R96 still has #35 as `SYSTEM / ARCHITECTURE_STUDY / OPEN_DEVELOPMENT / preformal_eligible=false`; a fresh Analyst must re-fetch R2 and decide the next gate before any response-bearing execution.
 
-R2 is tightly bounded. It may not alter prime trajectory, first queue-empty anchor/hard 256 ms no-extension cap, reset scope, five fixed arms, weak field cue, 32 ms response window, response meaning, local threshold/decay reduction panel, resources/privileges, falsifier or success criteria. The currently named R96 cycle-3 research branch still points to the completed R1 exact head at audit time; no R2 implementation delta and no result are yet present.
+Second, H7 PF-R1 exact-byte development provenance preservation is now materially complete. Utility reports completion, but this audit did not rely on that mailbox alone: the original GitHub Actions artifact `10680620448` is still available on the unchanged PF-R1 research head `8681dcbbe2fff986c28a79057f557b35f3f0f752` and carries archive digest `db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d`. The designated Library preservation folder independently contains `source-artifact.zip`, `raw.json`, `summary.json`, and `provenance-manifest.json`. Independent byte re-hashing matches the manifest and original artifact: source ZIP `db43c755...`, raw `695261ae...`, summary `6202ee32...`; raw and summary bytes are exactly equal to the corresponding files inside the preserved source ZIP. No rerun, reconstruction, regeneration, retune, rescore, or scientific reinterpretation is needed or permitted.
 
-This strengthens the conclusion that development iteration is being distinguished from consumed evidence manipulation. OPEN development is permitted real implementation work and science-invariant repair; the cycle-3 review asks whether a new prospective question exists rather than acting as a hard cap. At the same time, #35 remains SYSTEM and non-result despite zero executable MECHANISM supply. No same-object SYSTEM→MECHANISM uplift is being manufactured to solve throughput pressure.
+PF-R1 preservation completion does **not** itself grant H7 FORMAL authority. Current Control R43 and Analyst R96 both predate the completed preservation. H7 remains `MECHANISM / RESULT_EXPOSED_DEVELOPMENT / FORMAL_HOLD_PROVENANCE_GATE`, R5 PREIDENTITY COMPLETE, fresh FORMAL authority zero, pending a fresh unchanged-R5 Analyst re-fetch/review and all ordinary one-way FORMAL prerequisites. PASS reachability improves because the preservation blocker is now closed without weakening the standard.
 
-The principal unresolved calibration risks from R86 remain. Viable executable MECHANISM supply is still zero: H7 is MECHANISM but FORMAL-held, #34 is terminal for its current object, and #35 is SYSTEM. The `NO_COHERENT_MECHANISM_TARGET` exception is justified temporarily for non-result #35 Architecture work, but prolonged normalization would become a false-negative/throughput risk. #34's preserved raw provenance-schema ambiguity also remains and must be corrected only by append-only clarification, never by raw rewrite or rerun.
+Independent repository/evidence re-fetch confirms stable `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative annotated `evidence/*` remains exactly five objects; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. No fresh FORMAL identity/result consumption or historical PASS/FAIL rewrite is observed.
 
-H7 remains FORMAL-held. Control R43 and Utility still expose the one-attempt exact-original-byte PF-R1 preservation assignment as active, but no completion/preserve ref is observed. Do not reconstruct, regenerate, rerun, retune or rescore PF-R1. After preservation, fresh unchanged-R5 Analyst review remains mandatory before any one-way FORMAL authority.
-
-Independent repository/evidence re-fetch confirms stable `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative annotated `evidence/*` remains exactly five tag objects; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. No fresh FORMAL identity/result consumption or historical PASS/FAIL rewrite is observed.
+Candidate #34 remains terminal for its current object after one preserved PRE_FORMAL development result with zero confirmatory credit. Its raw provenance source/authority ambiguity remains a record-quality issue only; remedy remains append-only clarification, never rerun or raw rewrite.
 
 ## Gate-by-gate calibration
 
@@ -34,20 +32,27 @@ Independent repository/evidence re-fetch confirms stable `main=ebed6abfa941c83b3
 | hard FORMAL integrity floor | `KEEP` |
 | development-phase orthogonal axis | `KEEP` |
 | fresh OPEN→RESULT_EXPOSED→CONSUMED_ONE_WAY end-to-end | `INSUFFICIENT_EVIDENCE` |
-| #35 Architecture R1 non-result boundary | `KEEP` |
-| #35 R1 science-invariant lint repairs | `KEEP` |
-| #35 candidate-response prohibition during Architecture | `KEEP` |
+| #35 Architecture R2 exact frozen-contract binding | `KEEP` |
+| #35 R2 explicit non-result execution guards | `KEEP` |
+| #35 R2 science-invariant post-implementation repairs | `KEEP` |
+| #35 exact-head CI as integrity prerequisite, not science support | `KEEP` |
+| #35 automatic PRE_FORMAL/READY promotion from green R2 | `TIGHTEN` |
+| #35 response-bearing execution before fresh Analyst review | `TIGHTEN` |
+| #35 frozen scientific fields during R2 | `KEEP` |
 | cycle 3 as automatic terminal cap | `RELAX` |
 | cycle 3 as mandatory reassessment | `KEEP` |
-| #35 cycle-3 continuation for distinct prospective information gain | `KEEP` |
-| #35 R2 exact candidate-surface/executor binding, non-result only | `KEEP` |
-| #35 response-bearing execution before later fresh Analyst gate | `TIGHTEN` |
-| #35 frozen Discovery-contract fields during R2 | `KEEP` |
+| additional cycle for prospectively stated information gain | `KEEP` |
 | #35 SYSTEM claim ceiling / same-object SYSTEM→MECHANISM uplift ban | `KEEP` |
 | NO_COHERENT_MECHANISM_TARGET temporary SYSTEM-priority exception | `KEEP` |
 | sustained zero-executable-MECHANISM normalization | `TIGHTEN` |
+| PF-R1 exact-original-byte preservation requirement | `KEEP` |
+| PF-R1 durable preservation completion | `KEEP` |
+| PF-R1 preserved-byte identity against original artifact | `KEEP` |
+| PF-R1 completion treated as automatic FORMAL authority | `TIGHTEN` |
+| H7 PREIDENTITY COMPLETE distinct from FORMAL authority | `KEEP` |
+| duplicate PF-R1 request/rerun/reconstruction after completed preservation | `TIGHTEN` |
 | terminal current object != topic death | `KEEP` |
-| immediate same-family post-result successor manufacture | `TIGHTEN` |
+| immediate same-family post-result rescue successor | `TIGHTEN` |
 | fresh independently motivated MECHANISM successor | `KEEP` |
 | specifically terminal SYSTEM→fresh MECHANISM successor behavior | `INSUFFICIENT_EVIDENCE` |
 | result-exposed same-object SCIENCE_INVARIANT_REPAIR | `KEEP` |
@@ -58,14 +63,9 @@ Independent repository/evidence re-fetch confirms stable `main=ebed6abfa941c83b3
 | preformal_eligible distinct from READY | `KEEP` |
 | READY = informative next test, not prior success | `KEEP` |
 | HIDDEN_SECOND_FORMAL_GATE | `KEEP` |
-| #34 raw provenance source binding | `TIGHTEN` |
-| #34 scientific-contract vs execution-authority provenance fields | `CLARIFY` |
-| #34 append-only provenance clarification without raw rewrite | `KEEP` |
-| H7 PREIDENTITY COMPLETE distinct from FORMAL authority | `KEEP` |
-| PF-R1 exact-byte preservation requirement | `KEEP` |
-| PF-R1 active Utility assignment exact-original-bytes-only | `KEEP` |
-| PF-R1 preservation completion | `TIGHTEN` |
-| duplicate request or rerun to bypass preservation flow | `TIGHTEN` |
+| #34 raw execution-source provenance | `TIGHTEN` |
+| #34 contract-authority vs run-authority provenance | `CLARIFY` |
+| #34 append-only clarification without raw rewrite | `KEEP` |
 | raw-before-score as mere file ordering | `CLARIFY` |
 | literal target-blind prediction raw | `TIGHTEN` |
 | immutable preserve before target-side scoring | `TIGHTEN` |
@@ -82,30 +82,30 @@ Independent repository/evidence re-fetch confirms stable `main=ebed6abfa941c83b3
 
 ## Mandatory questions
 
-1. **Are development-phase semantics implemented consistently end-to-end?** Through OPEN and RESULT_EXPOSED, yes. #35 adds a clean OPEN non-result Architecture example; #34 remains the positive OPEN→RESULT_EXPOSED example. Fresh post-HUMAN-005 `CONSUMED_ONE_WAY` completion remains unobserved.
-2. **Is cycle 3 being mistaken for a hard terminal cap?** No. R96 explicitly performs mandatory reassessment and continues only because exact candidate-surface/executor binding is a distinct prospective information gain. This is the strongest direct positive example so far.
-3. **Are SCIENCE_INVARIANT_REPAIR and SCIENCE_AFFECTING_CHANGE distinguished correctly?** Yes in the new #35 sequence. The two observed post-implementation repairs are formatting-only line wrapping. The frozen scientific contract remains unchanged and R2 is forbidden from altering it.
-4. **Are development rerun/retune/tolerance revisions logged without laundering into independent evidence?** No laundering is observed. #35 generated no candidate response; #34 remains one result with zero confirmatory credit. Repeated result-bearing PRE_FORMAL remains insufficiently tested.
-5. **Does RESULT_EXPOSED development preserve prior results when revised?** Yes for #34 and historical H7 R4→R5. PF-R1 durability remains pending operational completion.
-6. **Is FORMAL one-way integrity unchanged?** Yes. Stable main, five evidence tags and empty formal/sealed/freeze tag namespaces are independently unchanged.
-7. **Are legitimate fresh SYSTEM→MECHANISM successors being suppressed or manufactured?** No manufacture is observed. #35 remains SYSTEM despite mechanism-supply pressure. The specifically requested terminal-SYSTEM→fresh-MECHANISM case remains unobserved.
-8. **Is PRE_FORMAL behaving as development rather than hidden FORMAL?** Yes. #35 is not even preformal-eligible yet and is allowed non-result Architecture work; #34 previously reached READY on informativeness rather than prior success.
-9. **Are terminal semantics and candidate-supply controls calibrated?** Current-object terminal semantics remain calibrated, but executable MECHANISM supply remains zero. Temporary #35 SYSTEM Architecture under `NO_COHERENT_MECHANISM_TARGET` is acceptable; prolonged no-target normalization remains a watch item.
-10. **Is PASS realistically reachable without weakening evidence standards?** Yes. H7 remains `REALISTIC_NEAR_TERM_CONDITIONAL`: exact-original-byte PF-R1 preservation, then fresh unchanged-R5 Analyst review. No scientific standard needs relaxation.
+1. **Are development-phase semantics implemented consistently end-to-end?** OPEN and RESULT_EXPOSED are positively observed. #35 R2 is a clean OPEN non-result implementation example and #34 is the live OPEN→RESULT_EXPOSED example. Fresh post-HUMAN-005 CONSUMED_ONE_WAY remains unobserved.
+2. **Is cycle-3 review being mistaken for a hard terminal cap?** No. #35 R2 completed because R96 identified a distinct prospective exact-binding information gain. No response was used to justify continuation.
+3. **Are SCIENCE_INVARIANT_REPAIR and SCIENCE_AFFECTING_CHANGE distinguished correctly?** Yes in the new #35 sequence. The final repair is import ordering only; explicit non-result guards strengthen authority boundaries without changing the frozen scientific question. No frozen metric, comparator, timing, intervention, resource contract, falsifier or success criterion changed.
+4. **Are development rerun/retune/tolerance revisions logged without laundering into independent evidence?** No laundering observed. #35 has no response; #34 remains one PRE_FORMAL result with zero confirmatory credit. Repeated result-bearing PRE_FORMAL remains insufficiently tested.
+5. **Does RESULT_EXPOSED development preserve prior results when revised?** Yes for #34 and historical H7. PF-R1 now has exact original bytes durably preserved and independently rehashed; no revision of those bytes occurred.
+6. **Is FORMAL one-way integrity unchanged?** Yes. Stable main, five evidence tags and empty formal/sealed/freeze namespaces are unchanged; no new one-way identity is consumed.
+7. **Are legitimate fresh SYSTEM→MECHANISM successors being suppressed or manufactured?** No manufacture observed. #35 remains SYSTEM despite zero executable MECHANISM supply. The specific terminal-SYSTEM→fresh-MECHANISM case remains unobserved.
+8. **Is PRE_FORMAL behaving as development rather than hidden FORMAL?** Yes. #35 is not preformal-eligible despite completed executable binding; green implementation is not prior scientific success and does not confer READY automatically.
+9. **Are terminal semantics and candidate-supply controls calibrated?** Current-object terminal semantics remain calibrated. Viable executable MECHANISM supply remains zero at canonical R96, so independent mechanism discovery and successor liveness remain important.
+10. **Is PASS realistically reachable without weakening evidence standards?** Yes, more clearly than R87. PF-R1 preservation is complete; H7 now requires fresh unchanged-R5 Analyst review and the still-strict prospective one-way FORMAL chain. No evidence standard needs relaxation.
 
 ## Development-iteration calibration
 
-#35 now provides a complementary positive case to #34. #34 demonstrated bounded result-bearing PRE_FORMAL followed by preservation and RESULT_EXPOSED terminalization. #35 demonstrates that OPEN development can use real architecture implementation, synthetic non-result tests and science-invariant lint repair without generating or consuming scientific observations.
+#35 now closes the prospectively defined cycle-3 Architecture R2 question cleanly. The code contains a complete candidate-specific response surface but keeps execution authority hard-off; this is appropriate OPEN development because it binds implementation while withholding scientific observation. Green CI and deterministic preflight prove implementation integrity only.
 
-R96's cycle-3 decision is calibrated because the continuation question was stated before any #35 response: exact runner/component/source binding and non-result preflight. That work can prevent later hidden worker-side scientific choice. The correct stopping rule is therefore information gain, not cycle count.
+The next boundary is important: a fresh Analyst must inspect exact R2 before any PRE_FORMAL response authority. Treating R2 completion as automatic READY would collapse implementation completion into scientific readiness and become too permissive.
 
-The R2 boundary must stay sharp. If R2 changes prime, timing cap, reset scope, arms, cue, measurement window, response meaning, reduction panel, resources/privileges, falsifier or success criteria, it ceases to be the authorized non-result binding cycle and requires explicit prospective redevelopment. If a candidate response is produced before a later fresh Analyst gate, that would be over-permissive.
+PF-R1 provides a complementary preservation case. The exact original development bytes were preserved after the fact without rerunning or reconstructing the development observation. That is calibrated provenance repair; the preserved observation remains development-only and does not become independent confirmation or FORMAL evidence by being preserved.
 
 ## Risk calibration
 
-False-positive risk: `MODERATE_WATCH`. The immediate #35 risk is accidental scientific-choice leakage while building the exact executor, or a candidate response escaping during a supposedly non-result preflight. Existing explicit prohibition fields and R96 gate reduce this risk. #34 provenance ambiguity remains a separate concrete risk.
+False-positive risk: `MODERATE_WATCH`. Main risks are (a) auto-promoting #35 because R2/CI is green, (b) allowing a response before fresh Analyst review, or (c) treating PF-R1 preservation as scientific validation or FORMAL authority.
 
-False-negative/opportunity-cost risk: `MODERATE_WATCH`. R96 correctly allows additional non-result work at cycle 3 rather than terminating mechanically. However, viable executable MECHANISM supply remains zero; prolonged no-target normalization or suppression of independently motivated successors would be over-conservative.
+False-negative/opportunity-cost risk: `LOW_TO_MODERATE_WATCH_IMPROVING`. The PF-R1 blocker is now closed, so H7 is closer to a legitimate one-way decision. However viable executable MECHANISM supply remains zero at canonical R96; prolonged no-target normalization or suppression of independent successors would still be over-conservative.
 
 Moving-goalpost/rescue risk: `LOW_WATCH_IMPROVING`.
 
@@ -113,59 +113,59 @@ Over-terminalization risk: `LOW_TO_MODERATE_WATCH`.
 
 ## Funnel observability / mechanism supply
 
-Fresh canonical R96 remains: population `35 = 14 MECHANISM / 21 SYSTEM`; lifecycle `ACTIVE=0 / QUEUED=1 / HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=33`; development `OPEN=3 / RESULT_EXPOSED=32 / canonical CONSUMED_ONE_WAY=0`; fresh FORMAL authority `0`; official consumed scientific identities `7`; classification completeness `35/35`.
+Canonical authority remains R96 because no later Analyst generation was observed in this audit. Therefore the funnel remains `35 = 14 MECHANISM / 21 SYSTEM`; lifecycle `ACTIVE=0 / QUEUED=1 / HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=33`; development `OPEN=3 / RESULT_EXPOSED=32 / canonical CONSUMED_ONE_WAY=0`; official consumed scientific identities `7`; fresh FORMAL authority `0`; classification completeness `35/35`.
 
-#35 remains SYSTEM / OPEN / Architecture / preformal-eligible false, with response-bearing execution stopped. H7 remains MECHANISM / RESULT_EXPOSED / FORMAL-held. #34 remains MECHANISM-ceiling historically but terminal for the current object.
+Operational facts newer than canonical R96 are recorded without silently recanonicalizing the funnel: #35 R2 implementation and CI are complete but response authority remains STOP; PF-R1 preservation is complete but H7 remains FORMAL-held until fresh Analyst review.
 
-Viable executable MECHANISM count remains `0`. Mechanism-supply health remains `ZERO_EXECUTABLE_MECHANISM_TEMPORARY_NO_TARGET_SHADOW_WITH_H7_HELD_AND_FRESH_INDEPENDENT_SUCCESSOR_LIVENESS_REQUIRED`.
+Viable executable MECHANISM count remains `0` under the current canonical gate. Mechanism-supply health: `ZERO_EXECUTABLE_MECHANISM_BUT_PFR1_PROVENANCE_BLOCKER_CLOSED_FRESH_ANALYST_REVIEW_CAN_REASSESS_H7_WHILE_INDEPENDENT_SUCCESSOR_LIVENESS_REMAINS_REQUIRED`.
 
 ## Preformal calibration / pass reachability
 
-`HIDDEN_SECOND_FORMAL_GATE=false`. R96 does not require #35 to demonstrate response success before allowing the next architecture step; instead it requires exact non-result binding before any later response authority. This is a readiness/informativeness control, not a hidden confirmatory gate.
+`HIDDEN_SECOND_FORMAL_GATE=false`. #35 is allowed meaningful implementation development without having to win a comparator or falsifier first; it still cannot produce a response until a new readiness review.
 
-H7 pass reachability remains `REALISTIC_NEAR_TERM_CONDITIONAL`. PF-R1 preservation completion is still not observed. If original bytes are unavailable or mismatch, stop safely rather than reconstruct or rerun.
+H7 pass reachability improves to `REALISTIC_NEAR_TERM_CONDITIONAL_IMPROVED`. Exact PF-R1 preservation is independently verified complete. Remaining requirements include fresh unchanged-R5 Analyst review and the ordinary exact source/protocol/package/runtime/input, raw-before-score, preserve-before-read and protected-evaluation constraints for any eventual FORMAL action.
 
 ## Utility request
 
-No new methodology Utility request. Existing `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` remains the only relevant bounded Utility action. Do not duplicate it.
+No new methodology Utility request. Existing `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` has completed its bounded preservation scope. Do not duplicate or rerun it. Utility grants no scientific authority.
 
 ## Prospective recommendations
 
-- Keep #35 R2 strictly non-result. Bind only the already-frozen Discovery contract to exact candidate-specific source/component/executor and NON_RESULT preflight.
-- Do not alter #35 prime, 256 ms no-extension anchor cap, reset scope, arms, cue, response window/meaning, reduction panel, resources/privileges, falsifier or success criteria inside R2.
-- Do not generate a #35 candidate response until a later fresh Analyst generation explicitly authorizes it.
-- Continue independent MECHANISM discovery; do not use zero supply to inflate #35 from SYSTEM to MECHANISM.
-- Keep #34 raw immutable; provenance repair remains append-only clarification only.
-- Utility should perform only the already-assigned exact-original-byte PF-R1 preservation attempt; no rerun/reconstruction/regeneration/rescore/retune.
-- After PF-R1 preservation, require fresh unchanged-R5 Analyst review before FORMAL one-way action.
-- Keep all raw-before-score, preserve-before-read, immutable-evidence, held-out isolation and exact binding requirements unchanged.
+- Fresh Analyst should re-fetch candidate #35 R2 exact head and green CI, confirm frozen scientific fields are unchanged, and decide preformal eligibility/readiness without using implementation success as scientific success.
+- Until that fresh decision, keep all #35 response-bearing execution stopped and preserve SYSTEM ceiling.
+- Fresh Analyst should separately re-fetch unchanged H7 R5 and independently verified PF-R1 preservation. Preservation completion must not itself auto-start FORMAL.
+- If H7 is later authorized, keep the full one-way integrity chain unchanged: exact binding, target-blind raw before score, preserve before read/scoring, held-out isolation, immutable evidence, no post-FORMAL repair.
+- Continue independent MECHANISM discovery; do not inflate #35 merely because executable MECHANISM supply is currently zero.
+- Keep #34 raw immutable; provenance correction is append-only clarification only.
+- Create no duplicate PF-R1 Utility request and perform no rerun/reconstruction/regeneration/rescore/retune.
 
 ## Hard-floor confirmation / confidence
 
 `CONFIRMED_DO_NOT_RELAX`.
 
-Confidence: FORMAL non-consumption `HIGH`; #35 Architecture R1 non-result boundary `HIGH`; #35 lint repairs science-invariant `HIGH`; exact-head CI success `HIGH`; cycle-3 reassessment/non-result R2 rationale `HIGH`; #35 R2 actual implementation `NOT_YET_OBSERVED`; PF-R1 completion `NOT_OBSERVED`; fresh consumed-FORMAL end-to-end `UNOBSERVED`; repeated result-bearing PRE_FORMAL `UNOBSERVED`; specifically terminal SYSTEM→fresh MECHANISM successor `UNOBSERVED`.
+Confidence: FORMAL non-consumption `HIGH`; #35 R2 exact non-result binding `HIGH`; #35 final repair science-invariant `HIGH`; #35 exact-head CI success `HIGH`; PF-R1 original artifact identity `HIGH`; PF-R1 Library preservation existence `HIGH`; PF-R1 preserved byte hashes/exact equality to source ZIP `HIGH`; PF-R1 scientific interpretation/FORMAL authority `NONE`; fresh post-preservation Analyst review `NOT_YET_OBSERVED`; fresh consumed-FORMAL end-to-end `UNOBSERVED`; repeated result-bearing PRE_FORMAL `UNOBSERVED`; specifically terminal SYSTEM→fresh MECHANISM successor `UNOBSERVED`.
 
 ## Questions for Control / Analyst
 
-- Will #35 R2 remain exact-binding/non-result only, with no candidate response before a later fresh Analyst generation?
-- Will any R2 need to alter a frozen scientific field be treated as prospective redevelopment rather than hidden implementation repair?
+- Will #35 R2 be freshly re-fetched before any response authority, with no automatic READY promotion from green CI?
+- Will any need to change a frozen #35 scientific field be treated as prospective redevelopment rather than implementation repair?
+- Will PF-R1 preservation completion be acknowledged as provenance closure only, followed by a fresh unchanged-R5 H7 review rather than automatic FORMAL start?
 - Will zero executable MECHANISM supply remain a temporary liveness condition rather than a reason to inflate #35's claim ceiling?
-- Will independent mechanism discovery continue while #35 proceeds under the temporary no-target exception?
-- Will #34 provenance be clarified append-only while preserving raw bytes unchanged?
-- Will Utility complete the existing PF-R1 preservation assignment exactly once on original bytes only, then stop for fresh Analyst review?
+- Will independent mechanism discovery continue while H7 and #35 await their separate fresh gates?
+- Will #34 provenance remain append-only clarification with no raw mutation or rerun?
 
 ## Input generations / authoritative refs used
 
-- previous Methodology: `METHCAL-20260923T171810+0900-R86-B7A2E4C1@17bee7e4973c38b5cedcdac67fbeb964ab423398`
+- previous Methodology: `METHCAL-20260923T182205+0900-R87-5C8E1A73@5307616ae4e8195a829618699b9ce505732efb99`
 - Human directive: `HUMAN-20260922-005` (process directive, not scientific evidence)
 - Control: `CTRL-20260923T155900+0900-R43-A91C4E6B@1592c3b52a8a545aa2503fd4618c0a761921ef1e`
 - Evidence Analyst: `EVA-20260923T180248+0900-R96-3F7C92A1@df97c2c8830c7d50d23d13c43091866ad5d23c77`
-- Utility mailbox: `ops/utility-orchestrator-requests@b2f1462aeb95707747f8b273c1b9a6ec678996bd`
+- Utility mailbox: `ops/utility-orchestrator-requests@829e860d191d78970c978d194816d54fa574d7af`
 - stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- #35 Architecture R1 exact head: `research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1@c640cb3a42faf1f49bee568c1cc167c03fb63646`
-- #35 independent CI: `35839346480` success at exact head `c640cb3a42faf1f49bee568c1cc167c03fb63646`
-- #35 R1 implementation commit chain independently inspected: `6b94214726c9e1d4042e57f4541addde4e0b72a9 -> 302c35ced46583e71c72a70d9d1345fece489c89 -> 58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751 -> c640cb3a42faf1f49bee568c1cc167c03fb63646`
-- #35 R96 cycle-3 branch at audit time: `research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3@c640cb3a42faf1f49bee568c1cc167c03fb63646` (no R2 delta yet)
-- H7 R5: `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`
-- evidence tag objects: exactly five; `formal/*=[]`, `sealed/*=[]`, `freeze/*=[]`.
+- evidence tags: exactly five annotated `evidence/*`; tag-form `formal/*`, `sealed/*`, `freeze/*` empty
+- #35 Architecture R2 exact head: `research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3@8ea6581544c642ad74f1a95955ab2c5f795afccc`
+- #35 R2 exact-head CI: `35844155004` success
+- PF-R1 research head: `research/main-h7-pf-r1-frozen-panel-r64-cycle4@8681dcbbe2fff986c28a79057f557b35f3f0f752`
+- PF-R1 source artifact: run `35695286240`, artifact `10680620448`, archive digest `db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d`
+- independently verified preserved raw SHA-256: `695261aeadab1ab311b60787f1b6a9023c29e24009c6f173c1a660469a6906db`
+- independently verified preserved summary SHA-256: `6202ee328f20b637ec32258b9764b6c521900d87ad84bd5b77f7074cad05e237`
