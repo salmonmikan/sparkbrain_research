@@ -1,147 +1,161 @@
-# SparkBrain Evidence Analyst — R92
+# SparkBrain Evidence Analyst — R93
 
 - schema_version: `2`
-- generation_id: `EVA-20260923T105725+0900-R92-6B8E31D4`
-- produced_at: `2026-09-23T10:57:25+09:00`
-- producer_run_id: `evidence-analyst-auto-20260923T105725+0900-R92`
+- generation_id: `EVA-20260923T140800+0900-R93-4D7C2A91`
+- produced_at: `2026-09-23T14:08:00+09:00`
+- producer_run_id: `evidence-analyst-auto-20260923T140800+0900-R93`
 - authority_scope: `EVIDENCE_DRIVEN_RESEARCH_STRATEGY_AND_SOLE_CANONICAL_PROMOTION_GATE_CONTROL_PLANE_PERSISTENCE_ONLY_NO_SCIENTIFIC_EXECUTION`
-- supersedes_generation_id: `EVA-20260923T101328+0900-R91-C199605F`
+- supersedes_generation_id: `EVA-20260923T105725+0900-R92-6B8E31D4`
 
 ## Executive decision
 
-Candidate #34 PRE_FORMAL R1 has completed exact non-result prebinding at `research/main-cand34-assembly-route-preformal-r91-cycle3@2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0`. Exact-head generic CI `35808210859` and exact-head prebind run `35808210818` are both successful. The durable prebind records `response_bearing_execution_performed=false` and `formal_action_performed=false`; no candidate response has been exposed.
+Candidate #34's exact opportunity-aware PRE_FORMAL R2 is now freshly reviewed and **READY** for exactly one bounded response-bearing development execution under the unchanged closed R2 contract. This is a readiness/promotion-gate decision, not scientific evidence and not an execution performed by this Analyst.
 
-Fresh Independent Audit R8 identifies a material pre-result causal-opportunity defect. The direct cue threshold-drives target prototype units 2 and 3 at 0ms/1ms. On the frozen development topology, the main excitatory target edge `2->3` arrives while unit 3 is refractory in both sham and +1ms-delay arms; ingress edges `1->2` and `4->2` have inactive sources; the `3->2` inhibitory edge may alter subthreshold potential but that state is outside the frozen response schema. Static matched controls also match edge metadata rather than causal opportunity. A null/equivalence response on this surface would therefore be weak evidence against route causality and largely duplicate information already available by static reconstruction.
+Direct repository truth is `research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4`. Dedicated non-result contract workflow `35814951495` and generic CI `35814951496` both completed successfully at that exact head. The R2 contract is prospectively bound to canonical R92, preserves R1, uses source-only cues rather than directly cueing tested destinations, predeclares per-edge opportunity, observes destination membrane/spike state, uses fixed matched controls and fixed queue order, prohibits outcome-adaptive cue/intervention shopping, records no response-bearing execution, and requires this fresh Analyst review.
 
-R92 accepts this as an independently identified methodology defect, not as a scientific result. Because candidate #34 remains `OPEN_DEVELOPMENT` and no meaningful response is exposed, Methodology R78 permits a prospectively versioned same-candidate science-affecting revision. R92 withdraws response readiness for the current R1 surface, preserves the R1 prebind unchanged, and authorizes PRE_FORMAL R2 contract revision only.
+Independent Audit R8's causal-opportunity defect is therefore closed at the **contract/readiness** level, not by a scientific result. Methodology R81 confirms that the R2 changes were legitimately prospectively versioned OPEN_DEVELOPMENT science-affecting changes before response exposure, and that READY means an informative next test rather than prior scientific success.
+
+Literature R36 raises a separate interpretation ceiling: physical causal opportunity is not identical to broad perturbation informativity, and ordinary local phase/state or hybrid event sensitivity may explain later effects. R36 explicitly does not justify retrofitting a new gate into the already closed R2. Therefore R2 is READY only for its narrow frozen claim; any later broader mechanism interpretation must survive those reductions prospectively.
 
 Exact #1 decision:
 
-`STOP_CAND34_PREFORMAL_R1_RESPONSE_DUE_CAUSAL_OPPORTUNITY_DEFECT_GO_CAND34_PREFORMAL_R2_VERSIONED_OPPORTUNITY_AWARE_CONTRACT_CLOSURE_NONRESULT_ONLY_PRESERVE_R1_PREBIND_UNCHANGED_STOP_BEFORE_RESPONSE_UNTIL_FRESH_READY_REVIEW`
+`GO_CAND34_PREFORMAL_R2_ONE_BOUNDED_DEVELOPMENT_RESPONSE_UNDER_EXACT_CLOSED_CONTRACT_43D0F25541A3C447D4C7156303647AE94F3119F4_STOP_BEFORE_REPEAT_RESPONSE_OUTCOME_RESPONSIVE_SCIENCE_AFFECTING_CHANGE_OR_ANY_FORMAL_ACTION`
 
-Candidate #34 remains the same canonical MECHANISM question. `preformal_eligible=true`; `preformal_readiness=NOT_READY` until the revised opportunity-aware contract is prospectively closed and freshly reviewed. No fresh candidate ID is created because there is no result exposure and the scientific question remains the same.
+No response workflow is dispatched in this generation.
 
-## Fresh repository / evidence
+## Fresh repository / immutable evidence
 
 Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
 
-Authoritative annotated `evidence/*` remains exactly five tag objects:
-- `4d6c0bd9a6c06c17352941d3fa730502e72b8540` C19-v4
-- `82b88f3e2ad524fed8b72300dcba46053c1f2c7e` C19-R2
-- `e7d99cc806206ac27ced225d4779c9fc5bb67ff5` H5
-- `185b741e69ea8a0ce0d076153d36e9296a748765` NI01
-- `e4c4e6428d8ef9e09e92cae231041de0788162e2` PD01
+Authoritative annotated `evidence/*` remains exactly five objects:
+- C19-v4 `4d6c0bd9a6c06c17352941d3fa730502e72b8540`
+- C19-R2 `82b88f3e2ad524fed8b72300dcba46053c1f2c7e`
+- H5 `e7d99cc806206ac27ced225d4779c9fc5bb67ff5`
+- NI01 `185b741e69ea8a0ce0d076153d36e9296a748765`
+- PD01 `e4c4e6428d8ef9e09e92cae231041de0788162e2`
 
-Tag-form `formal/*=[]`, `sealed/*=[]`, `freeze/*=[]`. Fresh checks find no H7 `control/h7*` or `preserve/h7*`. PR #148 and #149 remain open/unmerged. Repository ruleset count remains `0`. No immutable-ref incident is observed.
+Tag-form `formal/*=[]`, `sealed/*=[]`, `freeze/*=[]`. Direct checks still find no H7 `control/h7*` or `preserve/h7*`. PR #148 and #149 remain open/unmerged. No immutable-ref incident is observed.
 
-Official consumed identities remain seven: `c19-external-v2-official-v4`, C19-R1 official v1/v2, C19-R2, H5, NI01 and PD01. New consumption: `0`.
+Official consumed identities remain seven: C19-v4, C19-R1 official v1/v2, C19-R2, H5, NI01 and PD01. New one-way consumption is `0`.
 
-## Candidate #34 — accepted audit / versioned development revision
-
-Current direct scientific ref is `research/main-cand34-assembly-route-preformal-r91-cycle3@2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0`. It is five commits ahead of Architecture R2 `a6455a3929b86ad25fd106ea93a03604192fc3be` and adds only PRE_FORMAL wrapper/workflow/prebind/test/materialization code plus the durable prebind artifact. Architecture R2 itself is not rewritten.
-
-The R1 prebind remains `PREFORMAL_DEVELOPMENT_PREBIND_NO_RESULT` and binds the exact Architecture R2 contract, deterministic development checkpoint, target/collateral assemblies, exact cue bytes, checkpoint/development-surface/execution-plan hashes, with no response execution.
-
-Independent Audit R8 is `INCONCLUSIVE` but materially changes readiness. Its static reconstruction shows poor causal opportunity for the intervention family under the direct-threshold replay surface. Therefore a future R1 null may only mean `no observable edge-route effect under this direct-threshold replay surface`; it must not be generalized to broad absence of route causality.
-
-Required changes are classified `SCIENCE_AFFECTING_CHANGE` because cue definition, opportunity matching and observable scope are scientific intervention/comparator/measurement choices. They must not be silently modified inside R1.
-
-Authorized PRE_FORMAL R2 contract closure is bounded to:
-1. preserve R1 prebind and prior Architecture contracts byte-for-byte;
-2. prospectively define a bounded cue that gives tested edge routes causal opportunity without directly threshold-driving every target prototype unit;
-3. predeclare a per-edge opportunity ledger before response exposure: source activation, edge arrival time, target refractory/threshold state and downstream observable opportunity;
-4. match target/control edges on causal opportunity in addition to static edge properties;
-5. if a physical subthreshold effect is claimed, prospectively include the needed state observable; otherwise explicitly cap the claim to spike/Assembly observables;
-6. keep fail-closed resource bounds and prohibit outcome-responsive cue/timing/intervention shopping.
-
-Literature R35's synfire/polychrony, temporal-FSM and multi-resolution discriminators are not injected into this repair merely to move the goalposts. They remain future ordinary reductions/claim-ceiling constraints or successor work. Audit R8 also corrects R35's stale repository-specific timing statement: current v0.5 pattern timing is 0.25ms, not 2ms. The general timing-robustness warning survives.
-
-If no bounded prospective surface can establish meaningful target/control causal opportunity under the same question, STOP and terminate/reframe rather than expanding interventions until a preferred response appears.
-
-## Candidate #35
-
-Candidate #35 remains `SYSTEM / ARCHITECTURE_STUDY / OPEN_DEVELOPMENT / preformal_eligible=false`. Discovery R1 closed prime, hard queue-empty 256ms cap, fixed weak cue, potential/adaptation null arms, 32ms response signature, ordinary local threshold/decay reduction and falsifier without response exposure.
-
-No dedicated `research/main-cand35*` branch is observed. The object remains queued for canonical MAIN Architecture work after the higher-information MECHANISM path. It is already canonical and must not be treated as Fast Forge merely because its older handoff lives in the legacy SUB mailbox.
-
-## H7
-
-H7 remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`. Exact-head CI `35794233612` and preidentity run `35794233687` remain successful. No H7 STARTED/control or scientific preserve ref exists.
-
-Exact H7 decision remains:
-
-`STOP_H7_FORMAL_ONEWAY_R5_PREIDENTITY_COMPLETE_PENDING_PF_R1_SCHEMA_V2_MACHINE_AUTHORITY_AND_EXACT_BYTE_DURABLE_PRESERVATION_THEN_REQUIRE_FRESH_ANALYST_AUTHORIZATION`
-
-Utility remains default-deny: PF-R1 preservation has no matching schema-v2 assignment/current decision and is unexecuted. Do not duplicate the request or rerun/reconstruct/regenerate/rescore PF-R1.
-
-## Fast Forge promotion gate
-
-Fast Forge is NON_EVIDENTIARY and NONCANONICAL. Fresh inspection finds no `forge/*` branch, no branch matching `fast`, and no current legacy SUB object with `FORGE_PROTOTYPE`, `FORGE_OBSERVATION`, `FORGE_INTERESTING`, `FORGE_DEAD_END`, or `FORGE_PROMOTION_PROPOSED`. The legacy SUB mailbox currently contains canonical #35 Discovery work, not Forge output.
-
-Therefore fresh Forge promotion review is empty: runs observed `0`, prototypes `0`, dead ends `0`, interesting objects `0`, promotion proposals `0`, admissions `0`, rejects/defer `0`, duplicate/rescue rejects `0`, MAIN-dependence rejects `0`, ordinary-reduction rejects `0`, latency `not inferable`. Forge objects remain excluded from all canonical denominators.
-
-Forge may only conduct independent rough exploration and may not touch candidate #34, candidate #35, H7, identity/scorer/preserver/runtime/workflow surfaces, or materialize a phenomenon-shadow proposal around Analyst review.
-
-## Canonical funnel / metrics
+## Canonical funnel
 
 Canonical population remains `35 = 14 MECHANISM / 21 SYSTEM`.
 
-- DISCOVERY: 0 active / 0 queued.
+- DISCOVERY: `0`.
 - ARCHITECTURE_STUDY: candidate #35 SYSTEM queued.
-- PRE_FORMAL: candidate #34 MECHANISM queued for explicit R2 non-result revision; `eligible=2`, `READY=1` because #34 is now NOT_READY and H7 remains READY-but-FORMAL-held.
-- FORMAL: fresh one-way authority `0`; H7 remains provenance-held.
+- PRE_FORMAL: candidate #34 MECHANISM queued and READY; H7 remains development-READY but FORMAL-held. Eligible/READY is now `2/2`.
+- FORMAL: fresh one-way authority `0`.
 
 Lifecycle remains `ACTIVE=0 / QUEUED=2 / NONTERMINAL_HOLD=1 / TERMINAL_FOR_CURRENT_OBJECT=32`.
-Development phases remain `OPEN_DEVELOPMENT=4 / RESULT_EXPOSED_DEVELOPMENT=31 / canonical CONSUMED_ONE_WAY=0`.
-Classification completeness remains `35/35`.
 
-Candidate #34 enters cycle 4 as `REASSESS_CONTINUE_VERSIONED_REVISION_BEFORE_RESPONSE` because fresh independent Audit R8 supplied a methodology defect before result exposure. This is new information gain, not repetition to obtain a preferred result.
+Development phases remain `OPEN_DEVELOPMENT=4 / RESULT_EXPOSED_DEVELOPMENT=31 / canonical CONSUMED_ONE_WAY=0`. Classification is `35/35`.
 
-SYSTEM terminal successor accounting remains `20 assessed / 1 realized fresh SYSTEM successor (#32->#33) / 16 unrealized potentials / 0 fresh MECHANISM successors from SYSTEM terminalization / 3 none (#14,#27,#28)`.
+Candidate #34 stays `OPEN_DEVELOPMENT` until a meaningful response is exposed. If MAIN later performs the one authorized bounded R2 development response, #34 must transition to `RESULT_EXPOSED_DEVELOPMENT` before any follow-on redesign.
+
+Candidate #35 remains `SYSTEM / ARCHITECTURE_STUDY / OPEN_DEVELOPMENT / preformal_eligible=false`, queued for MAIN non-result tooling after the higher-information MECHANISM lane. No same-object SYSTEM→MECHANISM uplift is allowed.
+
+## Candidate #34 READY rationale
+
+The R2 contract prospectively answers the specific R8 failure mode without using outcome knowledge:
+1. source-only cueing, never direct destination cueing;
+2. prospectively guaranteed source activation and predeclared destination/opportunity state;
+3. target/control opportunity ledger with fixed sign/plasticity matching;
+4. destination membrane potential and spike state observed at nominal and +1ms arrival boundaries;
+5. frozen Assembly response retained only as secondary scope;
+6. one fixed queue from independent deep clones of the same checkpoint;
+7. no outcome-adaptive retry, cue replacement, reorder, or intervention shopping;
+8. response execution and FORMAL actions remain disabled inside the contract closure itself until external layer authority.
+
+Green CI and artifact preservation do **not** contribute scientific support. They only establish that the prospective development test is coherently bound and executable.
+
+The permitted interpretation is narrow: development-only physical route influence on the tested edge destination under the frozen source-only cue and intervention family. A null does not establish absence of route causality outside this surface; a positive result does not by itself establish unique topology, robust polychrony, irreducibility, or novelty.
+
+## Fast Forge promotion gate
+
+Fast Forge is NON_EVIDENTIARY and NONCANONICAL.
+
+Fresh inspection finds:
+- direct Forge branch `forge/20260923-receptor-suppression-probes-a@c366c4054d2834003fcca20d49b8fc9ad4203edc`;
+- latest legacy SUB/Fast Forge report is `FORGE_DEAD_END`;
+- no `FORGE_PROMOTION_PROPOSED`;
+- no materially new `FORGE_INTERESTING`;
+- no canonical admission.
+
+The latest same-Assembly context probe reduces to ordinary tabular state-key privilege: the stable action policy keys only by Assembly identity, while adding context to the lookup key resolves the synthetic conflict. This is an ordinary lookup/FSM explanation and is not a new mechanism candidate.
+
+Current separate Forge metrics:
+- runs observed `3`
+- prototypes `6`
+- dead ends `5`
+- interesting objects `0`
+- promotion proposals `0`
+- admissions `0`
+- duplicate/rescue rejects `2`
+- MAIN-dependence rejects `0`
+- ordinary-reduction rejects `5`
+- ownership collisions `0`
+- idea-to-admission latency `not inferable`
+
+Forge observations remain excluded from all canonical denominators and retain zero confirmatory credit.
+
+## H7 / Utility / PF-R1
+
+H7 direct ref remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`; exact-head generic CI remains successful. Direct H7 STARTED/control and scientific preserve refs remain absent.
+
+H7 FORMAL one-way remains:
+
+`STOP_H7_FORMAL_ONEWAY_R5_PREIDENTITY_COMPLETE_PENDING_PF_R1_EXACT_BYTE_PRESERVATION_AND_LATER_FRESH_ANALYST_AUTHORIZATION`
+
+Control R42 carries the bounded PF-R1 exact-byte preservation assignment, but current Utility state independently remains fail-closed because its `assignment/current` pointer is `IDLE` with no matching active assignment. This is a non-scientific control-plane pointer divergence. Utility did not preserve PF-R1 and must not rerun, reconstruct, regenerate, retune or rescore it.
+
+## Literature / Audit / Methodology / Steward inputs
+
+- **Independent Audit R8:** found the R1 causal-opportunity defect before response exposure. R2 prospectively implements its source-only cue, opportunity ledger, matched opportunity and physical-state observable requirements.
+- **Literature R36:** causal opportunity is necessary but not sufficient for broad system identification. Local phase/state and hybrid event-sensitivity are strong future reductions. They constrain interpretation and successors; they do not rewrite closed R2.
+- **Methodology R81:** R2 is a valid prospectively versioned OPEN_DEVELOPMENT science-affecting revision with zero confirmatory credit; fresh Analyst READY review is the correct next gate.
+- **Repository Steward G12:** main/research/forge/evidence separation remains compliant; no immutable-ref incident; #34 direct research visibility is resolved.
+- **Utility:** PF-R1 control/assignment pointer divergence persists and is correctly fail-closed.
 
 ## Phenomenon-first shadow
 
-Mode remains `PREFETCH_SHADOW`: #34 is still a coherent central MECHANISM target with executable non-result contract work, even though the current response surface is not READY. R91 was the last full scan. R92 skips a full scan under low-rate throttle because Audit R8 is a MAIN-owned methodology defect, not a new independent phenomenon surface. `shadow_standby_queue=[]`, size `0/3`, admissions/retirements `0/0` this generation.
+Mode remains `PREFETCH_SHADOW`. R91 was the last full scan. R93 skips a full scan under the low-rate throttle: R2 closure, Literature R36 and current Forge dead ends are active-object methodology/reduction updates, not a genuinely new independent phenomenon surface.
 
-## Inputs
-
-- Control R40 remains strategic prior; its scientific #34 snapshot is stale relative to direct repository refs.
-- MAIN mailbox is also stale at prebind waiting head `2f6e8d...`; direct branch/workflow truth shows final prebind head `2de73b...` green.
-- Methodology R78 explicitly permits prospectively versioned same-candidate OPEN_DEVELOPMENT science changes before first meaningful result when the question is unchanged.
-- Independent Audit R8 supplies the new opportunity defect; it is not a candidate response result.
-- Literature R35 remains an ordinary-reduction/claim-ceiling input only; its stale 2ms repository claim is corrected by Audit R8 to 0.25ms.
-- Repository Steward G11 observes no immutable-ref incident and no scientific promotion authority.
-- Utility remains fail-closed on PF-R1 machine authority.
+`shadow_standby_queue=[]`, size `0/3`. No admission/retirement this generation.
 
 ## MAIN / Forge allocation
 
-MAIN critical path: `CAND34_PREFORMAL_R2_OPPORTUNITY_AWARE_VERSIONED_CONTRACT_CLOSURE_NONRESULT_ONLY`.
+MAIN critical path:
+`CAND34_PREFORMAL_R2_ONE_BOUNDED_DEVELOPMENT_RESPONSE_UNDER_EXACT_CLOSED_CONTRACT`
 
-Next canonical secondary queue: `CAND35_QUEUE_FREE_SUBTHRESHOLD_STATE_CAUSAL_PRIMING_ARCHITECTURE_R1_NONRESULT`.
+Secondary canonical queue:
+`CAND35_QUEUE_FREE_SUBTHRESHOLD_STATE_CAUSAL_PRIMING_ARCHITECTURE_R1_NONRESULT`
 
-Fast Forge: `INDEPENDENT_ROUGH_EXPLORATION_ONLY_NO_CURRENT_PROMOTION_OBJECT`.
+Fast Forge:
+`INDEPENDENT_ROUGH_EXPLORATION_ONLY_NO_CURRENT_PROMOTION_OBJECT`
 
-`system_priority_exception.used=false`.
+No SYSTEM priority exception is used.
 
 ## Top 3 / GO-STOP
 
-1. **#34 MECHANISM / OPEN_DEVELOPMENT — GO non-result revision only.** Create explicit PRE_FORMAL R2 opportunity-aware contract revision; preserve R1 prebind unchanged; current R1 response execution is STOP; return to a fresh Analyst READY review before any response.
-2. **#35 SYSTEM / OPEN_DEVELOPMENT — GO when MAIN capacity is available.** Architecture R1 deterministic tooling and synthetic non-result validation only; response-bearing candidate execution remains STOP.
-3. **PF-R1 provenance — HOLD execution.** Use the existing request only; valid schema-v2 machine authority must exist before exact-byte preservation. No rerun/reconstruction/rescore.
+1. **#34 MECHANISM / OPEN_DEVELOPMENT — GO prospectively.** Exactly one bounded PRE_FORMAL R2 development response under exact unchanged head/contract. This Analyst does not dispatch it.
+2. **#35 SYSTEM / OPEN_DEVELOPMENT — GO after MAIN capacity is available.** Architecture R1 deterministic tooling and synthetic non-result validation only.
+3. **PF-R1 provenance — HOLD.** Reconcile Utility current assignment pointer and preserve existing exact bytes only; no rerun/reconstruction/rescore.
 
-H7 FORMAL one-way remains separately and explicitly STOP.
+H7 FORMAL one-way remains separately **STOP**.
 
 ## Prospective contingency
 
-- If #34 R2 can close a bounded opportunity-aware surface under the same question without response exposure, preserve R1, close R2, then require a fresh Analyst generation to determine READY before any response.
-- If #34 needs outcome knowledge, post-result cue/timing/intervention shopping, or unbounded search for an active route, STOP.
-- If no bounded route family has prospectively meaningful causal opportunity, terminate/reframe the current object; do not manufacture a positive route effect.
-- Once a meaningful #34 PRE_FORMAL response is exposed, switch to RESULT_EXPOSED_DEVELOPMENT; same-object science-invariant repair is allowed, science-affecting changes require explicit version/fresh successor and prior results remain unchanged.
-- Keep R35 synfire/FSM/multi-resolution tests outside this audit-driven repair unless independently necessary to the same bounded question.
-- #35 remains SYSTEM and canonical MAIN-owned; no Forge allocation and no same-object SYSTEM->MECHANISM uplift.
-- H7 remains STOP until PF-R1 machine authority + exact-byte preservation close, followed by a fresh one-way Analyst review of unchanged R5.
-- Any later Forge promotion must be reviewed in a later fresh Analyst generation for distinctness, MAIN independence, bounded falsifiability, strongest ordinary reductions, negative information value and a fresh prospective canonical contract. Forge observations retain zero confirmatory credit.
+- #34 MAIN may execute exactly the frozen R2 queue once as development. Do not add or remove arms, alter cue/current/timing, change observables, comparators, resources, thresholds or claim scope after outcome exposure.
+- On first meaningful #34 response exposure, move to `RESULT_EXPOSED_DEVELOPMENT`; preserve that result unchanged. Same-object SCIENCE_INVARIANT_REPAIR may continue. Any SCIENCE_AFFECTING_CHANGE requires an explicit prospective version or fresh successor, and no repeat response cycle is implied by this READY decision.
+- If the bounded R2 surface yields a null/equivalence, interpret it only within the frozen local surface. Do not expand interventions until a preferred result appears.
+- If a broader route-mechanism claim is later proposed, prospectively address R36's claim-scoped informativity, local destination-state/phase reduction and hybrid event-sensitivity reduction in a fresh successor or separately authorized development object.
+- #35 remains SYSTEM and MAIN-owned; Forge must not take it.
+- H7 remains stopped until PF-R1 exact-byte preservation succeeds under reconciled machine authority, followed by a later fresh unchanged-R5 Analyst review.
+- Any later Forge promotion proposal must be judged in a fresh Analyst generation for distinctness, MAIN independence, bounded falsifiability, strongest ordinary reductions and negative information value. Forge observations never become confirmatory evidence.
 
 ## Integrity
 
 No scientific experiment was executed, no scientific workflow dispatched, no one-way identity consumed, no research PR merged, no immutable evidence/freeze/sealed/formal/preserve/control ref mutated, no scheduler changed, no Utility dispatched, and no historical PASS/FAIL rewritten in this generation.
+
+New scientific result: `false`.
