@@ -5,7 +5,6 @@ import hashlib
 import json
 import os
 import secrets
-import shutil
 import subprocess
 import tempfile
 from pathlib import Path
@@ -35,12 +34,20 @@ FROZEN_BLOBS = {
     "src/sparkbrain/learned/h7_formal_r3_integrity.py": "37c9c46febba1baba5580ed1aa803dcc483bef66",
     "src/sparkbrain/learned/h7_formal_r1.py": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
     "artifacts/formal_h7_r3/contract_design.json": "56874e248e8e26762b21ad782343892d71c6b7d1",
-    "artifacts/formal_h7_r3/prior_surface_inventory.json": "e9d43053ab4e3405f7886b289f1c3ea5b09286a0",
+    "artifacts/formal_h7_r3/prior_surface_inventory.json": (
+        "e9d43053ab4e3405f7886b289f1c3ea5b09286a0"
+    ),
 }
 FROZEN_SHA256 = {
-    "artifacts/formal_h7_r4/scientific-runtime.lock": "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583",
-    "artifacts/formal_h7_r4/scientific-runtime-manifest.json": "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",
-    "artifacts/formal_h7_r4/scientific-runtime.versions": "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575",
+    "artifacts/formal_h7_r4/scientific-runtime.lock": (
+        "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583"
+    ),
+    "artifacts/formal_h7_r4/scientific-runtime-manifest.json": (
+        "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223"
+    ),
+    "artifacts/formal_h7_r4/scientific-runtime.versions": (
+        "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575"
+    ),
 }
 
 
@@ -556,6 +563,7 @@ def score_after_preserve(args: argparse.Namespace) -> None:
         PreserveProof,
         score_post_preserve_rows,
     )
+
     from sparkbrain.learned.training import episode_examples
     from sparkbrain.tasks import generate_episode
 
