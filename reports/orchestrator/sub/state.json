@@ -1,121 +1,166 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260923T233625+0900-V05-CREDIT-LOCALITY-R100",
-  "produced_at": "2026-09-23T23:36:25+09:00",
+  "generation_id": "FORGE-20260924T004908+0900-LOCAL-REACHABILITY-R101",
+  "produced_at": "2026-09-24T00:49:08+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260923T223403+0900-V05-HOMEOSTASIS-WINDOWING-R99",
+  "supersedes_generation_id": "FORGE-20260923T233625+0900-V05-CREDIT-LOCALITY-R100",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T225720+0900-R100-C6A2F18D@a32494246245a559ad4e1f8543a1f252b03ef2e7",
-    "main_relay": "MAIN-20260923T215545+0900-RELAY-CAND35-PRESERVATION-R99-COMPLETED@ops/orchestrator-run-report",
-    "literature": "LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41@e8e527e1ed399bb26f926237931618d9b93056e0",
+    "evidence_analyst": "EVA-20260924T000324+0900-R101@e50e0a91e25f2457d0b7152900a48cbdc5006485",
+    "main_relay": "MAIN-20260923T235628+0900-RELAY-CAND35-R100-ONEBATCH-EXPOSED-WAITING-ANALYST@21a8ee7b0ae85df57a0a35b70ad726e45252e259",
+    "literature": "LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41@741becd60d3e7dc8f97cedf1347c42c769092011",
     "independent_audit": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8@e8e527e1ed399bb26f926237931618d9b93056e0",
     "methodology": "METHCAL-20260923T232021+0900-R92-5C91E7A4@8b92f841227988c1ac7c4faea7d8d95d2517ad55",
     "utility": "UTILITY-20260923T232600+0900-IDLE-ACK-RECONCILE-R100-6C2A91F4@c231c2652f1c824a276649a7b9b6d752c2b729ae",
-    "previous_forge": "FORGE-20260923T223403+0900-V05-HOMEOSTASIS-WINDOWING-R99@ops/orchestrator-run-report"
+    "previous_forge": "FORGE-20260923T233625+0900-V05-CREDIT-LOCALITY-R100@ops/orchestrator-run-report"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_commit": "a32494246245a559ad4e1f8543a1f252b03ef2e7",
-    "candidate35_scientific_source_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
-    "candidate35_nonresult_implementation_head": "5bc64fbd8fd2f3e8d804d18e0a0ad0d58b5a3e4c",
-    "literature_audit_branch_head": "e8e527e1ed399bb26f926237931618d9b93056e0",
-    "literature_r39_blob": "9a1e0138ed31f9626c1c269bf2e4a42dba65c56a",
-    "audit_r9_blob": "e0c838636dfb36708df8d86dd9165a2a0acedada",
+    "evidence_analyst_r101_tip": "e50e0a91e25f2457d0b7152900a48cbdc5006485",
+    "main_relay_mailbox_pre_run_tip": "21a8ee7b0ae85df57a0a35b70ad726e45252e259",
+    "literature_r39_commit": "741becd60d3e7dc8f97cedf1347c42c769092011",
+    "audit_r9_commit": "e8e527e1ed399bb26f926237931618d9b93056e0",
     "methodology_r92_commit": "8b92f841227988c1ac7c4faea7d8d95d2517ad55",
     "utility_r100_commit": "c231c2652f1c824a276649a7b9b6d752c2b729ae",
-    "v05_plasticity_source": "src/sparkbrain/v05/plasticity.py",
-    "v05_plasticity_blob": "bb04eaac527aaa6343018ffb49347d087c6a29e5",
-    "v05_brain_source": "src/sparkbrain/v05/brain.py",
-    "v05_brain_blob": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-    "v04_plasticity_source": "src/sparkbrain/v04/plasticity.py",
-    "v04_plasticity_blob": "25b965107b903d7634674e24a44afe561aeee518",
-    "forge_history_path": "reports/orchestrator/sub/history/2026-09-23/2336-r100-fast-forge-credit-locality-deadend.md",
-    "forge_history_create_commit": "e6ad748114f196d80bf5647e68914b87e4009b91",
-    "forge_latest_update_commit": "b6ab831e12b16e8a087f9b49e0447de7062afad0",
-    "forge_branch": null
+    "candidate35_frozen_scientific_source": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
+    "candidate35_source_blob_read_only": "4055f42483d5bba73eef51b1753a2c19f18d5ab5",
+    "stable_field_source": "src/sparkbrain/v04/field.py",
+    "stable_field_blob": "e2279d69cd04030238317361d5ee3abdc1009c32",
+    "forge_branch": "forge/20260924-coordinate-null-local-witness",
+    "forge_branch_base": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "forge_prototype_commit": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
+    "forge_prototype_path": "tests/forge/test_coordinate_null_local_reachability.py",
+    "forge_prototype_blob": "bfe457591ea792734f148c68c16761a0400d2f4c",
+    "forge_ci_run": 35883792445,
+    "forge_ci_conclusion": "success",
+    "forge_history_path": "reports/orchestrator/sub/history/2026-09-24/0049-r101-fast-forge-local-reachability-promotion.md",
+    "forge_history_create_commit": "6f1d1ad019c4416167a91944089e7037e9a65d70",
+    "forge_latest_update_commit": "88f0eb45191df572fbac662a9459dfec396299e6"
   },
-  "freshness_note": "Evidence Analyst R100 supersedes R99 and conditionally assigns Candidate #35's first complete five-arm Architecture result batch to MAIN after exact repin/preflight/preserve-before-read. Candidate #35 direct branch remains at the non-result implementation head at Forge inspection. H7 remains blocked by protected-sidecar capability. Literature R39 remains Candidate #35 intervention-realism/immediate-successor territory; Audit R9 closes Candidate #34 against ordinary local impulse reduction; Methodology R92 preserves those boundaries while leaving independent mechanism discovery open; Utility R100 is clean IDLE. Forge selected an independent stable-main field-plasticity credit-locality surface.",
+  "freshness_note": "Evidence Analyst R101 postdates the prior Forge run, terminalizes Candidate #35's current object after the single preserved five-arm development batch, stops same-object rerun/retune/rescore/uplift, and explicitly leaves a fresh independently motivated reachable-state or matched-natural-history question as the only coherent successor form. MAIN is allocated to H7 integrity/readiness preparation only and H7 FORMAL remains STOP. Literature R39 supplies the off-manifold/reachable-state concern, Audit R9 keeps Candidate #34 reducible/terminal, Methodology R92 requires fresh prospective treatment, and Utility is IDLE.",
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "avoided": [
-      "Candidate #35 scientific source, fixed five-arm response, response producer, preserve-before-read runtime/preserver, reachable-state/off-manifold/on-manifold successor surfaces",
-      "H7 sidecar remediation, controller/runtime/input/component/scorer/preserver, one-way FORMAL identity/STARTED and protected evaluation",
-      "Candidate #34 terminal temporal-route object and same-family rescue",
-      "all consumed/frozen/evidence/formal/sealed/freeze/preserve identities",
-      "prior Forge receptor, Assembly, action/prediction, concept-closure and homeostasis variants"
+      "H7 protected-sidecar remediation, controller/runtime/input/scorer/preserver, FORMAL identity/STARTED and protected evaluation",
+      "Candidate #35 same-object rerun/retune/rescore, response executor/workflow/raw preserved response and scientific branch mutation",
+      "Candidate #34 temporal-route same-family rescue",
+      "all consumed/frozen/immutable/evidence/formal/sealed/freeze/preserve identities"
     ],
-    "recheck": "Evidence Analyst R100, current Candidate #35 direct head, current Methodology R92, Literature R39, Audit R9, Utility R100 and prior Forge state/history were re-read before persistence; no ownership collision emerged."
+    "recheck": "R101 allocation was re-read before work. The Forge prototype used stable-main v0.4 field primitives only. Candidate #35 frozen source was inspected read-only solely to establish coordinate-write semantics; no result artifact or executor was consumed."
   },
   "selection_scan": {
-    "selection_outcome": "BOUNDED_PROTOTYPES_COMPLETED",
+    "selection_outcome": "BOUNDED_PROTOTYPE_PLUS_SUCCESSOR_PROPOSAL",
     "selected": [
-      "v0.5 optional reward-modulated field plasticity: delayed outcome ordering and local responsibility semantics on stable main"
+      "cheap ordinary-reduction probe: whether zero potential/adaptation coordinate pairs are themselves naturally unreachable",
+      "conditional successor assessment: whether full all-unit surgically treated state has matched naturally reachable queue-free histories"
     ],
     "rejected_before_execution": [
-      "Candidate #35 response and intervention-realism/reachable-state successors — MAIN active/immediate-successor collision",
-      "H7 responsibility/formal-integrity family — MAIN critical-path collision",
-      "Candidate #34 temporal-route successors — terminal same-family rescue risk",
-      "Assembly completion/regeneration/prototype/order/capacity/context/coactivation, action/prediction tables, receptor traces, v03 concept closure, homeostasis windowing — prior Forge coverage without a new independent discriminator"
+      "H7 family and protected-sidecar work — MAIN critical-path collision",
+      "Candidate #35 same-object response/rerun — terminal and explicitly STOP",
+      "Candidate #34 temporal-route rescue — terminal/reducible same-family rescue",
+      "previous Forge receptor/Assembly/action/prediction/concept/homeostasis/reward-credit surfaces without a new independent discriminator"
     ]
   },
-  "overall_status": "FORGE_DEAD_END",
+  "overall_status": "FORGE_PROMOTION_PROPOSED",
   "forge_objects": [
     {
-      "forge_id": "FORGE-V05-CREDIT-LOCALITY-01",
-      "question": "Does optional v0.5 reward-modulated field plasticity provide native local responsibility or retrospective delayed credit to the synapses active in the episode whose outcome arrives later?",
-      "why_now": "Native local responsibility/credit is theory-central, independently reachable on stable main, absent from prior Forge history, and independent of Candidate #35/H7 unknown outcomes.",
-      "branch": null,
+      "forge_id": "FORGE-LOCAL-NULL-REACHABILITY-01",
+      "question": "Are the potential/adaptation zero-coordinate values used by the closed surgical-null design themselves naturally unreachable in ordinary stable-main field dynamics?",
+      "why_now": "R101 newly exposes intervention realism as a fresh-successor residual while closing Candidate #35 same-object work; ordinary reduction can be tested independently on stable-main primitives.",
+      "branch": "forge/20260924-coordinate-null-local-witness",
       "prototypes": [
         {
-          "name": "outcome_after_episode_reward_only_probe",
-          "diagnostic": "exact stable-main call-order inspection plus formula-equivalent one-edge causal pair at 5 ms, followed by reward(-1) and empty-spike apply",
-          "observation": "first apply stores eligibility 0.7574651283969664 and sets weight 0.5007574651283969; reward-only empty apply decays eligibility to 0.6817186155572699 and reward trace to -0.7 while weight remains exactly 0.5007574651283969"
-        },
-        {
-          "name": "global_reward_two_edge_locality_probe",
-          "diagnostic": "formula-equivalent two independent plastic edges with identical 5 ms causal timing and global reward(+2)",
-          "observation": "both edges receive identical eligibility 0.7574651283969664, weight 0.501514930256794 and delay 2.012; apply receives no action, Assembly, responsibility id, target synapse or local reward vector"
+          "name": "two_unit_natural_coordinate_witnesses",
+          "diagnostic": "synthetic two-unit ordinary field, no direct state surgery, three natural histories for post-spike, subthreshold, and quiescent states",
+          "observations": [
+            "strong natural arrival: target spike gives potential=0.0, adaptation=0.16 with spike/refractory/drive history",
+            "subthreshold natural arrival: target gives potential=0.40, adaptation=0.0 with no target spike and retained source/drive history",
+            "quiescence: potential=0.0, adaptation=0.0",
+            "ordinary Forge branch CI run 35883792445 succeeded on Python 3.11 and 3.13"
+          ]
         }
       ],
-      "commands_diagnostics": "GitHub exact-source/control-plane inspection plus local formula-equivalent synthetic arithmetic; no repository executable, candidate response, protected target or result-bearing workflow dispatched",
+      "commands_diagnostics": "Forge branch creation plus one synthetic test file; ordinary CI only. No official candidate workflow, response, score, protected target, evidence or preserve action.",
       "ordinary_reductions": [
-        "ordinary globally neuromodulated STDP",
-        "per-edge eligibility trace decayed and reused only on a later qualifying coactivation",
-        "default-disabled optional reward modulation rather than native field credit assignment"
+        "ordinary integrate-and-fire spike reset to zero potential",
+        "ordinary adaptation increment on spike",
+        "ordinary subthreshold potential accumulation with zero adaptation",
+        "ordinary quiescent zero/zero initial state"
       ],
       "status": "FORGE_DEAD_END",
-      "dead_end_reason": "GLOBAL_REWARD_MODULATED_STDP_PLUS_ELIGIBILITY_TRACE_FULLY_EXPLAINS_THE_REACHABLE_BEHAVIOR; NO_NATIVE_LOCAL_RESPONSIBILITY_OR_REWARD_ONLY_RETROSPECTIVE_UPDATE_PATH_EXISTS",
+      "dead_end_reason": "LOCAL_COORDINATE_NULL_VALUES_HAVE_ORDINARY_NATURAL_WITNESSES; ZERO_COORDINATE_VALUES_ALONE_DO_NOT_ESTABLISH_OFF_MANIFOLD_STATE",
       "promotion_reason": null
+    },
+    {
+      "forge_id": "FORGE-FULL-STATE-MATCHED-HISTORY-01",
+      "question": "Does the whole all-unit state produced by coordinate surgery have prospectively matched naturally reached queue-free histories once refractory state, spike/source history, drives, traces, time and cross-unit correlations are controlled?",
+      "why_now": "Coordinate-level natural witnesses do not settle full-state joint reachability, and R101 plus Literature R39 explicitly leave this as a fresh successor form after Candidate #35 current-object terminalization.",
+      "branch": null,
+      "prototypes": [],
+      "commands_diagnostics": "proposal only after ordinary-reduction probe and exact read-only source inspection; no successor experiment executed",
+      "observations": [
+        "closed surgical source writes only potential and/or adaptation while preserving all remaining anchor state",
+        "ordinary natural witnesses for the same coordinate pairs carry different ancillary history variables, so local coordinate support does not imply full-state support"
+      ],
+      "ordinary_reductions": [
+        "privilege-matched ordinary leaky/adaptive field with potential, adaptation, dynamic threshold, refractory/time and frozen decay laws",
+        "matched natural-history / nearest-supported-state explanation",
+        "state-region heterogeneity rather than a single global intervention score"
+      ],
+      "status": "FORGE_PROMOTION_PROPOSED",
+      "dead_end_reason": null,
+      "promotion_reason": "DISTINCT_BOUNDED_REACHABLE_FALSIFIABLE_REDUCTION_AWARE_SUCCESSOR_CAN_BE_RESPECIFIED_PROSPECTIVELY_WITHOUT_FORGE_EVIDENCE_OR_CAND35_CONFIRMATORY_CREDIT_AND_IS_INDEPENDENT_OF_MAIN_H7_UNKNOWN_OUTCOME",
+      "prospective_contract": {
+        "fresh_object_only": true,
+        "candidate35_same_object_rescue": false,
+        "candidate35_preserved_result_confirmatory_credit": 0,
+        "compare": "direct coordinate surgery versus prospectively matched naturally reached queue-free full states or nearest-supported natural histories",
+        "match_privileges": [
+          "queue emptiness",
+          "elapsed time",
+          "cue routing",
+          "topology and weights",
+          "learning privileges",
+          "refractory state",
+          "spike/source history",
+          "excitatory/inhibitory drives",
+          "novelty/prediction-error traces",
+          "other non-target coordinates and cross-unit correlations"
+        ],
+        "primary_reduction": "ordinary privilege-matched leaky/adaptive causal abstraction",
+        "informative_negative": "matched natural histories reproducing response under the ordinary reduction reduces broader persistent-state attribution; absence of natural support limits natural-mechanism attribution from coordinate surgery"
+      }
     }
   ],
   "utility_request": null,
   "hard_floor": {
+    "prohibited_action_occurred": false,
     "preformal_or_formal_identity_created_or_consumed": false,
     "started_created": false,
     "official_test_or_scoring_performed": false,
     "protected_heldout_accessed": false,
-    "main_candidate_response_artifact_accessed": false,
+    "candidate35_response_artifact_accessed": false,
+    "candidate35_response_executor_invoked": false,
     "evidence_formal_sealed_freeze_preserve_ref_mutated": false,
     "consumed_or_immutable_evidence_mutated": false,
-    "result_bearing_workflow_dispatched": false,
-    "scientific_branch_mutated": false,
-    "forge_branch_created": false,
+    "result_bearing_canonical_workflow_dispatched": false,
+    "scientific_research_branch_mutated": false,
+    "forge_branch_created": true,
     "forge_branch_merged_to_main_or_research": false
   },
   "metrics": {
-    "scope": "FROM_R92_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 12,
-    "prototypes_attempted": 16,
-    "dead_ends": 12,
-    "interesting_observations_retained": 0,
-    "promotion_proposals": 0,
+    "scope": "FROM_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
+    "runs": 13,
+    "prototypes_attempted": 17,
+    "dead_ends": 13,
+    "interesting_observations_retained": 1,
+    "promotion_proposals": 1,
     "later_admissions": 0,
     "duplicate_or_rescue_rejects": 9,
     "ownership_collisions": 0,
-    "ordinary_reduction_rejects": 12,
+    "ordinary_reduction_rejects": 13,
     "idea_to_observation_latency": "SAME_RUN"
   },
-  "recommendation": "NONE_DEAD_END"
+  "recommendation": "EVIDENCE_ANALYST_REVIEW_FULL_STATE_MATCHED_NATURAL_HISTORY_SUCCESSOR"
 }
