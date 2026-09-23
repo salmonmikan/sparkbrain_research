@@ -16,7 +16,7 @@ env:
   H7_SOURCE_BRANCH: research/main-h7-formal-r5-runtime-identity-r88-cycle12
   H7_SOURCE_SHA: 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80
   ANALYST_BRANCH: ops/evidence-analyst-handoff
-  ANALYST_SHA: 3d6abd17bbf8804d1656aca90b8ab17d67ab2472
+  ANALYST_SHA: 82251ddfa025929ad79b41bea015eb84bd4f0813
   PYTHONHASHSEED: "0"
   OMP_NUM_THREADS: "1"
   MKL_NUM_THREADS: "1"
