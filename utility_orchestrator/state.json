@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260923T192250+0900-PFR1-TERMINAL-POINTER-BLOCKED-R96-1C4E8A72",
-  "produced_at": "2026-09-23T19:22:50+09:00",
-  "producer_run_id": "utility-auto-20260923T1922+0900-pfr1-terminal-pointer-reconcile",
+  "generation_id": "UTILITY-20260923T202636+0900-PFR1-TERMINAL-POINTER-BLOCKED-R98-5A8C31F2",
+  "produced_at": "2026-09-23T20:26:36+09:00",
+  "producer_run_id": "utility-auto-20260923T202636+0900-pfr1-terminal-pointer-reconcile",
   "authority_scope": "UTILITY_CONTROL_PLANE_TERMINAL_ASSIGNMENT_RECONCILIATION_ONLY",
-  "supersedes_generation_id": "UTILITY-20260923T184052+0900-PFR1-PRESERVE-COMPLETED-R96-D7A19C4E",
+  "supersedes_generation_id": "UTILITY-20260923T192250+0900-PFR1-TERMINAL-POINTER-BLOCKED-R96-1C4E8A72",
   "assignment_mode": "FAIL_CLOSED",
   "status": "BLOCKED",
   "selected_task": "PFR1_TERMINAL_ASSIGNMENT_POINTER_RECONCILIATION",
@@ -19,39 +19,47 @@
   "scientific_authority": "NONE",
   "control_acknowledged": false,
   "ownership_generations": {
-    "evidence_analyst": "EVA-20260923T180248+0900-R96-3F7C92A1",
+    "evidence_analyst": "EVA-20260923T200231+0900-R98-2B6F91C4",
     "main_latest_durable": "MAIN-20260923T184514+0900-PRIMARY-CAND35-ARCHR2-R96-COMPLETED",
     "relay_latest": null,
-    "fast_forge": "FORGE-20260923T183716+0900-NOOP-CAND35-R2-SHADOW-R96",
+    "fast_forge": "FORGE-20260923T193417+0900-NOOP-H7-PREFETCH-R97",
     "control": "CTRL-20260923T155900+0900-R43-A91C4E6B"
   },
   "exact_refs": {
     "utility_assignment_pointer_blob": "56309a85df157ac2f3f1b2682ef9fff509d5a679",
-    "utility_pre_run_mailbox_commit": "829e860d191d78970c978d194816d54fa574d7af",
-    "evidence_analyst_commit": "df97c2c8830c7d50d23d13c43091866ad5d23c77",
-    "orchestrator_commit": "6ec8e726e08e56fbbe75c29b56f7869e6ccc3712",
+    "utility_pre_run_mailbox_commit": "dc8babb5deb4b44f707b7994b02f04e75d84a4ec",
+    "evidence_analyst_commit": "df2e59996409211a2b104918e01a7f61d0eb3c80",
+    "orchestrator_commit": "6e8b54937971207bd0d42d2600ff53c0d95bd7c0",
     "control_commit": "1592c3b52a8a545aa2503fd4618c0a761921ef1e",
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "h7_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+    "h7_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "candidate35_branch": "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3",
     "candidate35_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
     "prior_terminal_result_commit": "5e64b57537d440e09429f6ff745b902ae7c59a5d",
-    "this_result_create_commit": "631af473f2dd0b18f0487f1492d4964d855c780c",
-    "followup_request_create_commit": "395e265b241bae8b5c5853d0110b12b2b87e7444"
+    "prior_blocked_generation_mailbox_head": "dc8babb5deb4b44f707b7994b02f04e75d84a4ec",
+    "this_result_create_commit": "4002b434e2f0c38890546432689aae206c6bc7f0"
   },
   "observations": {
     "current_pointer_status": "ACTIVE",
     "current_pointer_references_terminal_assignment": true,
     "assignment_max_runs_consumed": true,
     "control_ack_observed": false,
-    "main_candidate35_architecture_r2_completed_since_prior_utility_run": true,
+    "evidence_analyst_advanced_since_prior_utility_run": true,
+    "analyst_r98_confirms_pfr1_preservation_satisfied": true,
+    "analyst_r98_confirms_utility_pointer_stale_fail_closed": true,
+    "h7_prospective_oneway_authority_observed": true,
+    "h7_started_or_consumed_observed": false,
     "new_scientific_result_this_run": false,
     "fast_forge_attempted": false,
-    "autonomous_fallback_attempted": false
+    "autonomous_fallback_attempted": false,
+    "duplicate_followup_request_created": false
   },
   "integrity_checks": {
     "terminal_assignment_not_reexecuted": true,
     "autonomous_fallback_blocked": true,
     "main_collision_created": false,
+    "relay_collision_created": false,
     "forge_collision_created": false,
     "candidate_or_funnel_mutation": false,
     "preformal_or_formal_action": false,
@@ -67,8 +75,9 @@
   },
   "stop_reason": "TERMINAL_ASSIGNMENT_STILL_ACTIVE_PENDING_CONTROL_ACK_FAIL_CLOSED",
   "follow_up_recommendation": "Control should acknowledge the existing completed Utility result and CAS-close/archive the exact matching assignment generation; return current pointer to clean schema-v2 IDLE if no new assignment is intended.",
-  "request_created": "utility_orchestrator/requests/UTILREQ-20260923T192250+0900-PFR1-COMPLETION-ACK-POINTER-CLOSE.md",
+  "request_created": null,
+  "request_still_open": "utility_orchestrator/requests/UTILREQ-20260923T192250+0900-PFR1-COMPLETION-ACK-POINTER-CLOSE.md",
   "outputs": {
-    "terminal_result_path": "utility_orchestrator/results/2026-09-23/UTILITY-20260923T192250+0900-PFR1-TERMINAL-POINTER-BLOCKED-R96-1C4E8A72.md"
+    "terminal_result_path": "utility_orchestrator/results/2026-09-23/UTILITY-20260923T202636+0900-PFR1-TERMINAL-POINTER-BLOCKED-R98-5A8C31F2.md"
   }
 }
