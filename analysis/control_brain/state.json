@@ -1,1 +1,287 @@
-{"schema_version":2,"generation_id":"CTRL-20260923T115056+0900-R41-4C156929","produced_at":"2026-09-23T11:50:56+09:00","producer_run_id":"control-brain-auto-20260923T1150JST-R41","authority_scope":"CONTROL_BRAIN_STRATEGY_GOVERNANCE_NO_SCIENTIFIC_EXECUTION","supersedes_generation_id":"CTRL-20260923T085000+0900-R40-5E1C7A94","programme_position":"FORMAL_HOLD_H7_PF_R1_PROVENANCE_WITH_CAND34_R2_AUTHORITY_BINDING_FAIL_CLOSED_FAST_FORGE_ROLLOUT_OBSERVATION","input_generations":{"human_directives":"ops/human-directives@de60c8888d1b438d5b06fed2266a8efd5893e646","control_previous":"CTRL-20260923T085000+0900-R40-5E1C7A94@f25d48598584bffc5ca736c6ac52c50a94688d89","evidence_analyst":"EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a","main":"reports/orchestrator/main/latest.md@ops/orchestrator-run-report@58c5728e13f0fdabc89a6ed772d656dab4c4c69e","fast_forge":"FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS@ops/orchestrator-run-report@58c5728e13f0fdabc89a6ed772d656dab4c4c69e","methodology":"METHCAL-20260923T111832+0900-R79-5B7C21D4@ba219b4c4c9c06913f151e61b2d70ef7cd9a60ab","utility_prior":"UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91@b18a1d76c05efbbfacb9618ac1ca1e9941b17555","independent_audit":"R8@6755579f5f21b19ca90788c948d8126529b648c6"},"authoritative_refs":{"stable_main":"ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d","h7_branch":"research/main-h7-formal-r5-runtime-identity-r88-cycle12","h7_head":"2f30b93f8f3cf226ef55ed5af7e341089d2c3c80","candidate34_r1_branch":"research/main-cand34-assembly-route-preformal-r91-cycle3","candidate34_r1_head":"2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0","candidate34_r2_branch":"research/main-cand34-assembly-route-preformal-r92-cycle4","candidate34_r2_head":"1f9c6cec8be0af900a801de17dcc91e57dd71d7a","fast_forge_branches":[{"branch":"forge/20260923-receptor-suppression-probes-a","head":"c366c4054d2834003fcca20d49b8fc9ad4203edc"}],"evidence_tag_count":5,"official_consumed_identities":7,"immutable_ref_incident":false},"human_directives":{"newer_than_008_observed":false,"human_005_status":"ACTIVE_APPLIED_PROSPECTIVELY","human_008_fast_forge_status":"ACTIVE_IMPLEMENTED_USER_APPROVED","fast_forge_scheduler_role_change_pending_approval":false},"development_iteration_policy":{"status":"ACTIVE_AND_CALIBRATED","cycle_3_policy":"REASSESS_NOT_TERMINAL_CAP","candidate34":{"development_phase":"OPEN_DEVELOPMENT","layer":"PRE_FORMAL","development_revision":"PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED","cycle":4,"r1_response_exposed":false,"r1_preserved_nonresult":true,"r2_change_class":"SCIENCE_AFFECTING_CHANGE_PRE_RESULT_EXPLICIT_VERSIONED_REVISION","causal_opportunity_defect":"ACCEPTED_METHOD_DEFECT_NOT_SCIENTIFIC_RESULT","ready_status":"NOT_READY","response_execution_allowed":false},"h7":{"development_phase":"RESULT_EXPOSED_DEVELOPMENT","development_revision":"H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-AND-PROVISIONING-PROVENANCE-SPLIT","preidentity_status":"COMPLETE","fresh_formal_authority":0,"prior_results_preserved":true}},"funnel":{"canonical_candidates":35,"mechanism":14,"system":21,"active":0,"queued":2,"nonterminal_hold":1,"terminal_for_current_object":32,"preformal_eligible":2,"preformal_ready":1,"fresh_formal_authority":0,"canonical_consumed_one_way":0,"official_consumed_identities":7,"development_phase_counts":{"OPEN_DEVELOPMENT":4,"RESULT_EXPOSED_DEVELOPMENT":31,"CONSUMED_ONE_WAY_CANONICAL":0},"classification_complete":"35/35","hidden_second_formal_gate":false},"h7":{"candidate_id":"CAND-H7-RESPONSIBILITY","claim_ceiling":"MECHANISM","development_phase":"RESULT_EXPOSED_DEVELOPMENT","preformal_eligible":true,"preformal_readiness":"READY","terminal_state":"NONTERMINAL_HOLD","queue_state":"NOT_QUEUED","hold_class":"FORMAL_HOLD_PROVENANCE_GATE","hold_reason":"PF_R1_EXACT_BYTE_DEVELOPMENT_PROVENANCE_NOT_DURABLY_PRESERVED_UNDER_MACHINE_AUTHORITY","preidentity_complete":true,"fresh_formal_authority":0,"forbidden":["FORMAL identity creation","STARTED","evaluation payload or seed reveal","protected evaluation","result-bearing execution","official prediction raw","official scoring","scientific evidence creation"]},"candidate34":{"candidate_id":"CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY","claim_ceiling":"MECHANISM","layer":"PRE_FORMAL","development_phase":"OPEN_DEVELOPMENT","development_revision":"PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED","cycle":4,"preformal_eligible":true,"preformal_readiness":"NOT_READY","terminal_state":"NONTERMINAL","queue_state":"QUEUED","evidentiary_status":"NON_EVIDENTIARY_DEVELOPMENT","r1_causal_opportunity_defect":true,"r1_response_bearing_execution_performed":false,"r2_nonresult_ci_and_contract_checks":"SUCCESS","control_execution_hold":"AUTHORITY_BINDING_MISMATCH_FAIL_CLOSED","authority_mismatch":{"canonical_analyst_generation":"EVA-20260923T105725+0900-R92-6B8E31D4","generated_contract_bound_generation":"EVA-20260923T110053+0900-R92-A7B61F3C","silent_rewrite_allowed":false,"required_next_step":"FRESH_ANALYST_OR_PRIMARY_RECONCILIATION_EXACT_BINDING_BEFORE_DURABLE_CAPTURE_OR_RESPONSE"},"scientific_interpretation":"NO_NEW_RESPONSE_RESULT; BLOCKER_IS_CONTROL_PLANE_AUTHORITY_PROVENANCE"},"candidate35":{"candidate_id":"CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING","claim_ceiling":"SYSTEM","layer":"ARCHITECTURE_STUDY","development_phase":"OPEN_DEVELOPMENT","preformal_eligible":false,"preformal_readiness":"NOT_APPLICABLE","queue_state":"QUEUED","dedicated_research_branch_observed":false,"forge_allocation_allowed":false,"next_owner":"MAIN_WHEN_CAPACITY_AVAILABLE"},"phenomenon_first":{"mode":"PREFETCH_SHADOW","last_full_scan_generation":"EVA-R91","r92_scan":"SKIPPED_LOW_RATE_THROTTLE","standby_queue_size":0,"standby_limit":3,"relation_to_forge":"SEPARATE_NONAUTHORIZING_PIPELINE","quality":"ZERO_QUEUE_ACCEPTABLE_NO_MANUFACTURED_ACTIVITY"},"fast_forge":{"policy_status":"IMPLEMENTED_OBSERVATION","scheduler_title":"SparkBrain Fast Forge","cadence":"HOURLY_AT_35_JST","role_boundary":"NON_EVIDENTIARY_NONCANONICAL","rollout_window":"FIRST_24_TO_48H_CALIBRATION","runs_observed":1,"prototypes":2,"dead_ends":2,"interesting":0,"promotion_proposals":0,"analyst_admissions":0,"duplicate_rescue_rejects":0,"main_dependence_collisions":0,"ordinary_reduction_kills":2,"ownership_collisions":0,"current_branch_count":1,"latest_dispositions":[{"topic":"receptor-bank persistent cue priming","disposition":"DEAD_END","ordinary_reduction":"DECLARED_DETERMINISTIC_RECEPTOR_FILTER_REGISTER_STATE"},{"topic":"Assembly suppression permits silent maturation","disposition":"DEAD_END","ordinary_reduction":"SUPPRESSION_IS_READOUT_MASK; CURRENT_CANONICAL_ABLATION_LEARN_FALSE_AVOIDS_DEFECT"}],"scientific_evidence_credit":0,"cadence_change_warranted":false},"utility":{"pfr1_request_id":"UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE","policy_intent":"BOUNDED_NON_EVIDENTIARY_EXACT_BYTE_PRESERVATION","prior_pointer_status":"IDLE","pfr1_preservation_executed":false,"assignment_authority":{"schema_version":2,"assignment_id":"UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE","control_generation_id":"CTRL-20260923T115056+0900-R41-4C156929","decision":"APPROVED_ASSIGNED","status":"ACTIVE","requested_worker":"UTILITY","scope":["retrieve existing PF-R1 raw.json exact bytes from the existing artifact only","retrieve existing PF-R1 summary.json exact bytes from the existing artifact only","compute and verify exact hashes and persist NON_EVIDENTIARY provenance"],"must_not":["rerun PF-R1","reconstruct PF-R1","regenerate PF-R1","rescore PF-R1","retune PF-R1","create scientific authority","touch consumed/formal evidence"],"fail_closed_if_original_bytes_unavailable":true,"scientific_authority_created":false},"assignment_current":{"schema_version":2,"status":"ASSIGNED","assignment_id":"UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE","control_generation_id":"CTRL-20260923T115056+0900-R41-4C156929"},"control_decision":{"schema_version":2,"decision_id":"CD-R41-PFR1-PRESERVE","assignment_id":"UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE","decision":"APPROVE_BOUNDED_EXACT_BYTE_PRESERVATION","generation_id":"CTRL-20260923T115056+0900-R41-4C156929"},"formal_gate":"OPEN_PENDING_UTILITY_COMPLETION_AND_FRESH_ANALYST_REVIEW","rerun_reconstruction_regeneration_rescore_allowed":false,"control_action_this_run":"MACHINE_RESOLVABLE_ASSIGNMENT_AUTHORITY_ISSUED_IN_CONTROL_STATE"},"methodology":{"generation":"METHCAL-20260923T111832+0900-R79-5B7C21D4","classification":"MIXED_CALIBRATION","material_update":true,"candidate34_guard":"PROVE_CAUSAL_OPPORTUNITY_BEFORE_RESPONSE_BEARING_PREFORMAL","structural_hash_distinctness_is_sufficient_informativeness":false,"h7_formal_integrity_floor":"UNCHANGED"},"scheduler_health":{"fleet_status":"YELLOW","scheduler_controller_action":"NO_CHANGE","cadence_failure_detected":true,"active_run_opportunities_per_day":183,"exact_deterministic_collisions":0,"ownership_collisions":0,"useful_generation_flow":true,"fresh_delay_examples_minutes":{"analyst":11,"main":16,"methodology":10,"utility":7,"fast_forge":10,"relay":10,"external_audit":19},"structural_interpretation":"BROAD_QUEUE_LOAD_PRESSURE_NOT_SINGLE_PHASE_COLLISION","proposals":[{"proposal_id":"SB-SCHED-FORGE-001","status":"IMPLEMENTED_OBSERVATION","action":"OBSERVE_FIRST_24_TO_48H_NO_CADENCE_CHANGE"},{"proposal_id":"SB-SCHED-LATENCY-001","status":"USER_APPROVAL_REQUIRED_IF_STRUCTURAL_OR_CADENCE_CHANGE_PROPOSED","action":"NO_NEW_ACTION_REQUESTED_THIS_RUN"}],"safe_auto_fix_applied":false,"scheduler_mutation_this_run":false},"direction":{"evidence_analyst":["Reconcile candidate34 R2 exact contract authority binding; do not silently rewrite the bound generation/revision.","Keep candidate34 response execution stopped until the exact R2 authority binding and causal-opportunity contract are prospectively closed and freshly reviewed.","Keep H7 fresh FORMAL authority at zero until Utility completes PF-R1 existing-byte preservation under this Control assignment and a later fresh Analyst re-fetch authorizes any one-way step.","Treat Fast Forge dead ends as zero-evidence exploratory history; no promotion is pending."],"main":["Do not durably capture or execute candidate34 R2 response while the Analyst generation/revision binding mismatch persists.","After fresh Analyst reconciliation, continue only the exact prospectively authorized R2 non-result closure; stop for fresh READY review before any response."],"fast_forge":["Continue only independent bounded rough exploration outside candidate34, candidate35, H7/PF-R1 and their blockers/immediate successors.","Do not optimize promotion rate; two ordinary-reduction dead ends are valid rollout output."],"utility":["Consume this Control generation as the machine-resolvable assignment authority for the existing PF-R1 exact-byte preservation request.","Use only existing PF-R1 bytes; verify hashes; fail closed if original bytes are unavailable; do not rerun/reconstruct/regenerate/rescore.","Persist only NON_EVIDENTIARY provenance and report completion for later Analyst re-fetch."]},"actions_this_run":{"experiment_execution":0,"formal_identity_consumption":0,"result_bearing_scientific_workflow_dispatch":0,"research_pr_merge":0,"immutable_formal_sealed_evidence_mutation":0,"scheduler_mutation":0,"utility_branch_mutation":0,"utility_assignment_authority_issued_in_control_state":1,"historical_result_rewrite":0}}
+{
+  "schema_version": 2,
+  "generation_id": "CTRL-20260923T125800+0900-R42-7C9E41B2",
+  "produced_at": "2026-09-23T12:58:00+09:00",
+  "producer_run_id": "control-brain-auto-20260923T1250JST-R42",
+  "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_NO_SCIENTIFIC_EXECUTION",
+  "supersedes_generation_id": "CTRL-20260923T115056+0900-R41-4C156929",
+  "programme_position": "FORMAL_HOLD_H7_PF_R1_UTILITY_ASSIGNMENT_POINTER_DIVERGENCE_WITH_CAND34_R2_NONRESULT_CLOSURE_GREEN_PENDING_FRESH_ANALYST_READY_REVIEW_FAST_FORGE_ROLLOUT_OBSERVATION",
+  "input_generations": {
+    "human_directives": "ops/human-directives@de60c8888d1b438d5b06fed2266a8efd5893e646",
+    "control_previous": "CTRL-20260923T115056+0900-R41-4C156929@27b6531b6b3a1d941a484aeee012d5c59fe63d79",
+    "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a",
+    "main_relay": "MAIN-20260923T124328+0900-RELAY-CAND34-PREFORMALR2-R92-WAITING-ANALYST-REVIEW@b06a449377d70809d521b492a77e999c4b4b5212",
+    "fast_forge": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS@ops/orchestrator-run-report",
+    "utility": "ops/utility-orchestrator-requests@15c5b130c868f7a37ab03582ca0225f001c651f7",
+    "methodology": "ops/methodology-calibrator-handoff@269fdfc699053318f8babbea09c007cbe9932cae",
+    "literature": "ops/external-research-audit-handoff@5228e5271f9a87c47d6ed1c68b10a24c92d0c996"
+  },
+  "authoritative_refs": {
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "evidence_tag_count": 5,
+    "official_consumed_identities": 7,
+    "immutable_ref_incident": false,
+    "h7_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+    "h7_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+    "candidate34_r2_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+    "candidate34_r2_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "candidate34_r2_contract_workflow": 35814951495,
+    "candidate34_r2_generic_ci": 35814951496,
+    "candidate34_r2_nonresult_contract_preserved": true,
+    "fast_forge_branches": [
+      {
+        "branch": "forge/20260923-receptor-suppression-probes-a",
+        "head": "c366c4054d2834003fcca20d49b8fc9ad4203edc"
+      }
+    ]
+  },
+  "human_directives": {
+    "newer_than_008_observed": false,
+    "human_005_status": "ACTIVE_APPLIED_PROSPECTIVELY",
+    "human_008_fast_forge_status": "ACTIVE_IMPLEMENTED_USER_APPROVED",
+    "fast_forge_scheduler_role_change_pending_approval": false
+  },
+  "development_iteration_policy": {
+    "status": "ACTIVE_AND_CALIBRATED",
+    "cycle_3_policy": "REASSESS_NOT_TERMINAL_CAP",
+    "candidate34": {
+      "development_phase": "OPEN_DEVELOPMENT",
+      "layer": "PRE_FORMAL",
+      "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
+      "cycle": 4,
+      "r1_response_exposed": false,
+      "r1_preserved_nonresult": true,
+      "r2_change_class": "SCIENCE_AFFECTING_CHANGE_PRE_RESULT_EXPLICIT_VERSIONED_REVISION",
+      "authority_binding_status": "CORRECTLY_REBOUND_TO_CANONICAL_R92",
+      "r2_nonresult_closure_status": "GREEN_AND_DURABLY_PRESERVED",
+      "ready_status": "NOT_READY_PENDING_FRESH_ANALYST_REVIEW",
+      "response_execution_allowed": false
+    },
+    "h7": {
+      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "development_revision": "H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-AND-PROVISIONING-PROVENANCE-SPLIT",
+      "preidentity_status": "COMPLETE",
+      "fresh_formal_authority": 0,
+      "prior_results_preserved": true
+    }
+  },
+  "funnel": {
+    "canonical_candidates": 35,
+    "mechanism": 14,
+    "system": 21,
+    "active": 0,
+    "queued": 2,
+    "nonterminal_hold": 1,
+    "terminal_for_current_object": 32,
+    "preformal_eligible": 2,
+    "preformal_ready": 1,
+    "fresh_formal_authority": 0,
+    "canonical_consumed_one_way": 0,
+    "official_consumed_identities": 7,
+    "development_phase_counts": {
+      "OPEN_DEVELOPMENT": 4,
+      "RESULT_EXPOSED_DEVELOPMENT": 31,
+      "CONSUMED_ONE_WAY_CANONICAL": 0
+    },
+    "classification_complete": "35/35",
+    "hidden_second_formal_gate": false
+  },
+  "h7": {
+    "candidate_id": "CAND-H7-RESPONSIBILITY",
+    "claim_ceiling": "MECHANISM",
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "preformal_eligible": true,
+    "preformal_readiness": "READY",
+    "terminal_state": "NONTERMINAL_HOLD",
+    "queue_state": "NOT_QUEUED",
+    "hold_class": "FORMAL_HOLD_PROVENANCE_GATE",
+    "hold_reason": "PF_R1_EXACT_BYTE_DEVELOPMENT_PROVENANCE_NOT_DURABLY_PRESERVED_BECAUSE_UTILITY_ASSIGNMENT_POINTER_DIVERGES_FROM_CONTROL_AUTHORITY",
+    "preidentity_complete": true,
+    "fresh_formal_authority": 0,
+    "forbidden": [
+      "FORMAL identity creation",
+      "STARTED",
+      "evaluation payload or seed reveal",
+      "protected evaluation",
+      "result-bearing execution",
+      "official prediction raw",
+      "official scoring",
+      "scientific evidence creation"
+    ]
+  },
+  "candidate34": {
+    "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
+    "claim_ceiling": "MECHANISM",
+    "layer": "PRE_FORMAL",
+    "development_phase": "OPEN_DEVELOPMENT",
+    "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
+    "cycle": 4,
+    "preformal_eligible": true,
+    "preformal_readiness": "NOT_READY",
+    "terminal_state": "NONTERMINAL",
+    "queue_state": "QUEUED",
+    "evidentiary_status": "NON_EVIDENTIARY_DEVELOPMENT",
+    "r1_response_bearing_execution_performed": false,
+    "r2_authority_binding": {
+      "status": "RESOLVED",
+      "bound_analyst_generation": "EVA-20260923T105725+0900-R92-6B8E31D4",
+      "silent_rewrite_used": false
+    },
+    "r2_nonresult_closure": {
+      "exact_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+      "dedicated_contract_workflow": "SUCCESS",
+      "generic_ci": "SUCCESS",
+      "response_exposed": false,
+      "contract_artifact_preserved": true,
+      "preservation_class": "SCIENCE_INVARIANT_NON_RESULT_CONTRACT_CAPTURE"
+    },
+    "control_execution_hold": "WAIT_FRESH_ANALYST_READY_REVIEW_BEFORE_RESPONSE_BEARING_PREFORMAL",
+    "scientific_interpretation": "NO_NEW_RESPONSE_RESULT; IMPLEMENTATION_AND_NONRESULT_CONTRACT_CLOSURE_ONLY"
+  },
+  "candidate35": {
+    "candidate_id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
+    "claim_ceiling": "SYSTEM",
+    "layer": "ARCHITECTURE_STUDY",
+    "development_phase": "OPEN_DEVELOPMENT",
+    "preformal_eligible": false,
+    "preformal_readiness": "NOT_APPLICABLE",
+    "queue_state": "QUEUED",
+    "forge_allocation_allowed": false,
+    "next_owner": "MAIN_WHEN_CAPACITY_AVAILABLE"
+  },
+  "phenomenon_first": {
+    "mode": "PREFETCH_SHADOW",
+    "last_full_scan_generation": "EVA-R91",
+    "r92_scan": "SKIPPED_LOW_RATE_THROTTLE",
+    "standby_queue_size": 0,
+    "standby_limit": 3,
+    "relation_to_forge": "SEPARATE_NONAUTHORIZING_PIPELINE",
+    "quality": "ZERO_QUEUE_ACCEPTABLE_NO_MANUFACTURED_ACTIVITY"
+  },
+  "fast_forge": {
+    "policy_status": "IMPLEMENTED_OBSERVATION",
+    "scheduler_title": "SparkBrain Fast Forge",
+    "cadence": "HOURLY_AT_35_JST",
+    "role_boundary": "NON_EVIDENTIARY_NONCANONICAL",
+    "rollout_window": "FIRST_24_TO_48H_CALIBRATION",
+    "direct_runs_observed": 1,
+    "direct_prototypes": 2,
+    "direct_dead_ends": 2,
+    "direct_interesting": 0,
+    "direct_promotion_proposals": 0,
+    "utility_helper_runs": 1,
+    "utility_helper_dead_ends": 1,
+    "analyst_admissions": 0,
+    "main_dependence_collisions": 0,
+    "ownership_collisions": 0,
+    "ordinary_reduction_kills_total_observed": 3,
+    "utility_helper_note": "Pulse-order diagnostic reduced to stable same-time ordering plus sequential pulse-state update/intermediate emission; NONCANONICAL, zero evidence credit.",
+    "scientific_evidence_credit": 0,
+    "cadence_change_warranted": false
+  },
+  "utility": {
+    "pfr1_request_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+    "policy_intent": "BOUNDED_NON_EVIDENTIARY_EXACT_BYTE_PRESERVATION",
+    "control_assignment_authority": {
+      "schema_version": 2,
+      "assignment_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+      "decision": "APPROVED_ASSIGNED",
+      "status": "ACTIVE_REAFFIRMED",
+      "requested_worker": "UTILITY",
+      "scope": [
+        "retrieve existing PF-R1 raw.json exact bytes from the existing artifact only",
+        "retrieve existing PF-R1 summary.json exact bytes from the existing artifact only",
+        "compute and verify exact hashes and persist NON_EVIDENTIARY provenance"
+      ],
+      "must_not": [
+        "rerun PF-R1",
+        "reconstruct PF-R1",
+        "regenerate PF-R1",
+        "rescore PF-R1",
+        "retune PF-R1",
+        "create scientific authority",
+        "touch consumed/formal evidence"
+      ],
+      "fail_closed_if_original_bytes_unavailable": true
+    },
+    "actual_utility_assignment_pointer_observed": {
+      "status": "IDLE",
+      "active_assignment_id": null,
+      "observed_ref": "ops/utility-orchestrator-requests@15c5b130c868f7a37ab03582ca0225f001c651f7"
+    },
+    "assignment_pointer_divergence": {
+      "status": "CONTROL_PLANE_ASSIGNMENT_POINTER_DIVERGENCE_NONSCIENTIFIC",
+      "scientific_effect": "NONE_DIRECT; H7_FORMAL_REMAINS_FAIL_CLOSED",
+      "next_required_utility_action": "RECONCILE_CONTROL_ASSIGNMENT_BEFORE_MORE_AUTONOMOUS_FORGE_WORK"
+    },
+    "pfr1_preservation_complete": false,
+    "formal_gate": "STOP_PENDING_EXACT_BYTE_PRESERVATION_AND_LATER_FRESH_ANALYST_REVIEW",
+    "rerun_reconstruction_regeneration_rescore_allowed": false,
+    "control_action_this_run": "REAFFIRM_MACHINE_RESOLVABLE_CONTROL_ASSIGNMENT_AND_RECORD_POINTER_DIVERGENCE; NO_UTILITY_BRANCH_MUTATION"
+  },
+  "methodology_external_implications": {
+    "formal_integrity_floor": "UNCHANGED",
+    "candidate34": [
+      "Physical causal opportunity is necessary but not sufficient for perturbation informativity.",
+      "Interpret future response against ordinary destination phase/state timing reductions before proposing richer mechanism successors.",
+      "Do not add new comparator, metric, tolerance, threshold, or success criterion to the already-authorized R2 contract after closure."
+    ],
+    "utility": "Audit Control-vs-Utility assignment pointer reconciliation without weakening PF-R1 exact-byte provenance.",
+    "forge": "Keep rough Forge objects outside canonical review until promotion boundary; zero-evidence credit remains mandatory."
+  },
+  "scheduler_health": {
+    "fleet_status": "YELLOW",
+    "scheduler_controller_action": "NO_CHANGE",
+    "cadence_failure_detected": true,
+    "active_run_opportunities_per_day": 183,
+    "exact_deterministic_collisions": 0,
+    "ownership_collisions": 0,
+    "useful_generation_flow": true,
+    "observed_start_delay_range_minutes": "approximately 9-26 across multiple roles",
+    "structural_interpretation": "BROAD_QUEUE_LOAD_PRESSURE_NOT_SINGLE_PHASE_COLLISION",
+    "proposals": [
+      {
+        "proposal_id": "SB-SCHED-FORGE-001",
+        "status": "IMPLEMENTED_OBSERVATION",
+        "action": "OBSERVE_FIRST_24_TO_48H_NO_CADENCE_CHANGE"
+      },
+      {
+        "proposal_id": "SB-SCHED-LATENCY-001",
+        "status": "USER_APPROVAL_REQUIRED_IF_A_NEW_STRUCTURAL_OR_CADENCE_CHANGE_IS_PROPOSED",
+        "action": "NO_NEW_ACTION_REQUESTED_THIS_RUN"
+      }
+    ],
+    "safe_auto_fix_applied": false,
+    "scheduler_mutation_this_run": false
+  },
+  "direction": {
+    "evidence_analyst": [
+      "Re-fetch candidate34 exact R2 head 43d0f25541a3c447d4c7156303647ae94f3119f4 and its preserved non-result contract; independently decide READY prospectively before any response-bearing PRE_FORMAL execution.",
+      "Do not treat green CI, contract preservation, or Forge observations as scientific support.",
+      "After PF-R1 exact-byte preservation completes, re-fetch unchanged H7 R5 and decide any one-way FORMAL authority afresh."
+    ],
+    "main": [
+      "Candidate34 R2 non-result closure is complete. Stop before D34-Q002 response-bearing execution until a fresh Analyst READY decision.",
+      "Do not rewrite the closed R2 comparator/metric/threshold/tolerance or exploit Literature R36 prospectively to rescue this object."
+    ],
+    "fast_forge": [
+      "Continue only independent bounded rough exploration outside candidate34, candidate35, H7/PF-R1 and their blockers or immediate successors.",
+      "Do not optimize promotion rate; ordinary-reduction dead ends are valid output."
+    ],
+    "utility": [
+      "Before further autonomous Forge support, reconcile assignment/current against this Control generation's active PF-R1 exact-byte preservation authority.",
+      "Use only existing PF-R1 bytes; verify hashes and persist NON_EVIDENTIARY provenance; fail closed if original bytes are unavailable.",
+      "Do not rerun, reconstruct, regenerate, rescore, retune, or create scientific evidence."
+    ]
+  },
+  "actions_this_run": {
+    "experiment_execution": 0,
+    "formal_identity_consumption": 0,
+    "result_bearing_scientific_workflow_dispatch": 0,
+    "research_pr_merge": 0,
+    "immutable_formal_sealed_evidence_mutation": 0,
+    "scheduler_mutation": 0,
+    "utility_branch_mutation": 0,
+    "historical_result_rewrite": 0
+  }
+}
