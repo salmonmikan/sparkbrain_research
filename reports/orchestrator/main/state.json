@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T035756+0900-RELAY-H7-R104-PRESTART-CONTROLLER-BLOCKED",
-  "producer_run_id": "sparkbrain-main-relay-20260924T035756JST-r104-h7-prestart-controller-blocked",
-  "generated_at": "2026-09-24T03:57:56+09:00",
-  "status": "BLOCKED",
-  "execution_mode": "RELAY",
+  "generation_id": "MAIN-20260924T045200+0900-PRIMARY-H7-R105-LAUNCH-PLUMBING-READY-FOR-ANALYST",
+  "producer_run_id": "sparkbrain-main-primary-20260924T0442JST-r105-h7-launch-plumbing-reconcile",
+  "generated_at": "2026-09-24T04:52:00+09:00",
+  "status": "READY_FOR_RELAY",
+  "execution_mode": "PRIMARY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "research_layer": "PRE_FORMAL",
   "claim_ceiling": "MECHANISM",
@@ -14,101 +14,114 @@
   "cycle_count": 12,
   "cycle_reassessment": {
     "authorized_scientific_cycle": 12,
-    "relay_extended_scientific_cycle": false,
-    "expected_information_gain_context": "R104_CONDITIONAL_ONE_WAY_FORMAL_PRESTART_ONLY",
-    "scientific_iteration_performed": false
+    "primary_extended_scientific_cycle": false,
+    "scientific_iteration_performed": false,
+    "information_gain": "FORMAL_CONTROL_PATH_CLOSED_PROSPECTIVELY_NO_NEW_SCIENCE"
   },
   "analyst_authority": {
-    "generation_id": "EVA-20260924T031000+0900-R104-H7-GREEN-REVISIT-BOOTSTRAP",
-    "commit": "0dfa28e2a8d0ddd6731ccbe9eccc7882e7f3be6f",
-    "decision": "GO_ONCE_CONDITIONAL_EXACT_BINDING",
-    "fresh_formal_authority": true,
-    "freshness_rechecked_immediately_before_formal_decision": true,
+    "generation_id": "EVA-20260924T040500+0900-R105-H7-LAUNCHPATH-HOLD-THEORY-FORGE-TEST",
+    "commit": "c6c4c0347880c55be75d72bc1417a007b7f87cec",
+    "decision": "GO_SCIENCE_INVARIANT_NONRESULT_LAUNCH_PLUMBING_ONLY; FORMAL_STOP_PENDING_FRESH_ANALYST",
+    "fresh_formal_authority": false,
+    "freshness_rechecked_after_validation": true,
     "formal_authority_exercised_this_generation": false
   },
-  "prior_main_generation": "MAIN-20260924T033000+0900-PRIMARY-H7-R104-AUTHORITY-REPIN-WAITING",
+  "prior_main_generation": "MAIN-20260924T035756+0900-RELAY-H7-R104-PRESTART-CONTROLLER-BLOCKED",
   "funnel": {
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
     "preformal_readiness": "READY",
-    "hold_class": null,
-    "hold_reason": null,
+    "hold_class": "NONTERMINAL_HOLD",
+    "hold_reason": "R105 non-result launch plumbing is materialized and green; fresh Analyst binding/authority is required before any FORMAL identity or START.",
     "terminal_state": "ACTIVE",
-    "queue_state": "QUEUED",
+    "queue_state": "HOLD",
     "system_priority_exception": false,
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
     "development_revision": "R5_UNCHANGED"
   },
   "refs": {
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "0dfa28e2a8d0ddd6731ccbe9eccc7882e7f3be6f",
+    "analyst_head": "c6c4c0347880c55be75d72bc1417a007b7f87cec",
     "scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "controller_branch": "research/main-h7-r5-oneway-controller-r98",
-    "controller_head": "9c9f7e312aaf919418806d55dad0f1fcaafa5ee1",
+    "prior_controller_branch": "research/main-h7-r5-oneway-controller-r98",
+    "prior_controller_head": "9c9f7e312aaf919418806d55dad0f1fcaafa5ee1",
+    "launch_controller_branch": "research/main-h7-r5-launch-plumbing-r105",
+    "launch_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
     "resource_contract_path": "artifacts/formal_h7_r5/resource_contract.json",
-    "readiness_workflow_path": ".github/workflows/h7-formal-r5-one-way-readiness.yml",
-    "result_bearing_formal_launch_workflow_path": null,
-    "history_path": "reports/orchestrator/main/history/2026-09-24/0357-r104-relay-h7-prestart-controller-path-blocked.md"
+    "launch_contract_path": "artifacts/formal_h7_r5/launch_path_contract.json",
+    "launch_controller_path": "scripts/h7_formal_r5_one_way_controller.py",
+    "formal_launch_workflow_path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
+    "launch_readiness_workflow_path": ".github/workflows/h7-formal-r5-launch-plumbing-readiness.yml",
+    "history_path": "reports/orchestrator/main/history/2026-09-24/0452-r105-primary-h7-launch-plumbing-ready-for-analyst.md"
   },
   "repair_change_classification": {
-    "repair": "NO_REPAIR_PERFORMED_FAIL_CLOSED_FORMAL_CONTROLLER_PATH_UNMATERIALIZED",
-    "change": "FORMAL_INTEGRITY_BLOCKER_NOT_SAFE_FOR_RELAY_TO_INVENT"
+    "repair": "LINT_ONLY_NO_SCIENCE_CHANGE",
+    "change": "SCIENCE_INVARIANT_PROSPECTIVE_FORMAL_LAUNCH_PLUMBING_ONLY"
   },
   "work_performed": [
     {
-      "classification": "WORKFLOW_RECONCILIATION",
-      "change": "Observed exact R104-bound NON_RESULT readiness and generic CI complete successfully on controller head 9c9f7e312aaf919418806d55dad0f1fcaafa5ee1."
-    },
-    {
       "classification": "FRESHNESS_AND_OWNERSHIP_RECONCILIATION",
-      "change": "Re-fetched current Analyst R104, prior MAIN lease, exact H7 scientific/controller refs, frozen FORMAL bindings, and one-way namespaces immediately before any possible FORMAL mutation. No fresh PRIMARY RUNNING same-object collision exists."
+      "change": "Re-fetched current Analyst R105, stable main, MAIN state/lease, exact H7 science/controller refs, H7 one-way namespaces, Utility and Forge collision state. Prior MAIN was BLOCKED, Utility had no authority, and Forge work did not overlap H7."
     },
     {
-      "classification": "FORMAL_PRESTART_INTEGRITY_AUDIT",
-      "change": "Verified the current exact controller tree has NON_RESULT readiness but no prospectively materialized result-bearing H7 one-way FORMAL launch controller/workflow fixing identity, STARTED, protected payload, raw-preserve-before-read, and post-preservation scoring mechanics."
+      "classification": "R105_PROSPECTIVE_NONRESULT_LAUNCH_PLUMBING_RECONCILIATION",
+      "change": "Validated the MAIN-owned launch-plumbing branch that prospectively fixes exact controller entry, protected encrypted payload handoff, fresh identity mechanics, START/no-clobber, target-blind raw, preserve-before-read, frozen scorer/preserver binding, and final create-only refs without creating an identity or accessing protected evaluation."
     },
     {
-      "classification": "FAIL_CLOSED",
-      "change": "Stopped before FORMAL identity creation or START rather than inventing the missing result-bearing controller path."
+      "classification": "SCIENCE_INVARIANT_REPAIR_REVIEW",
+      "change": "Observed only lint/import formatting and exact controller-blob rebinding after implementation; no scientific source, metric, comparator, threshold, intervention, input policy, scorer or preserver semantics changed."
+    },
+    {
+      "classification": "NONRESULT_VALIDATION_RECONCILIATION",
+      "change": "Observed exact launch-controller-head plumbing readiness and generic CI both complete successfully. The readiness gate remained strictly non-result-bearing."
+    },
+    {
+      "classification": "FORMAL_HARD_STOP",
+      "change": "Stopped before FORMAL identity, START, protected evaluation, result-bearing dispatch, raw production, scoring or evidence mutation because R105 requires a later fresh Analyst after plumbing closure."
     }
   ],
   "workflows": {
-    "h7_nonresult_readiness": {
-      "run_id": 35902642575,
-      "head": "9c9f7e312aaf919418806d55dad0f1fcaafa5ee1",
+    "h7_launch_plumbing_readiness": {
+      "run_id": 35910758065,
+      "head": "042d00375278d551dbf643ad866a4c883852804d",
       "status": "completed",
       "conclusion": "success",
       "result_bearing": false
     },
     "generic_ci": {
-      "run_id": 35902642400,
-      "head": "9c9f7e312aaf919418806d55dad0f1fcaafa5ee1",
+      "run_id": 35910758122,
+      "head": "042d00375278d551dbf643ad866a4c883852804d",
       "status": "completed",
       "conclusion": "success",
       "result_bearing": false
     },
     "h7_result_bearing_formal_launch": {
-      "workflow_path": null,
-      "status": "NOT_PROSPECTIVELY_MATERIALIZED",
-      "dispatched": false
+      "workflow_path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
+      "prospectively_materialized": true,
+      "dispatched": false,
+      "r105_can_start": false,
+      "fresh_analyst_required": true
     }
   },
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NON_RESULT_FORMAL_PRESTART_FAIL_CLOSED_NO_IDENTITY_CREATED",
-    "information_gain": "CONTROL_INTEGRITY_ONLY_NO_NEW_SCIENCE",
+    "evidentiary_status": "NON_RESULT_SCIENCE_INVARIANT_FORMAL_LAUNCH_PLUMBING_VALIDATED",
+    "information_gain": "FORMAL_CONTROL_PATH_CLOSED_PROSPECTIVELY_NO_NEW_SCIENCE",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
     "formal_identity_created_or_consumed": false,
     "started_marker_created": false,
     "protected_or_heldout_evaluation_accessed": false,
+    "result_bearing_workflow_dispatched": false,
     "raw_evaluation_produced": false,
     "raw_evaluation_preserved": false,
     "official_scoring_performed": false,
     "pass_fail_assigned": false,
     "evidence_ref_created_or_mutated": false,
-    "prior_results_preserved_unchanged": true
+    "prior_results_preserved_unchanged": true,
+    "forge_derived_code_reused": false
   },
   "consumed_identities": {
     "new_identity_consumed_this_run": false,
@@ -117,38 +130,44 @@
   },
   "ownership_and_collision": {
     "fresh_primary_running_same_h7_object_before_action": false,
-    "relay_same_object_mutation_collision_observed": false,
-    "h7_formal_authorized_conditionally": true,
-    "h7_formal_authority_exercised": false
+    "fast_forge_same_h7_object_collision": false,
+    "fast_forge_new_theory_probe_is_noncanonical_and_non_h7": true,
+    "utility_status": "IDLE_NO_SCIENTIFIC_AUTHORITY",
+    "h7_formal_authorized_now": false
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
     "main_generation_and_lease_rechecked": true,
     "direct_h7_scientific_ref_rechecked": true,
-    "direct_h7_controller_ref_rechecked": true,
-    "readiness_and_ci_green": true,
-    "h7_control_namespace_absent_before_decision": true,
-    "h7_preserve_namespace_absent_before_decision": true,
-    "h7_formal_tag_namespace_absent_before_decision": true,
-    "h7_sealed_freeze_immutable_namespaces_absent_in_same_run": true,
+    "launch_controller_ref_rechecked": true,
+    "launch_plumbing_readiness_green": true,
+    "generic_ci_green": true,
+    "h7_control_namespace_absent": true,
+    "h7_preserve_namespace_absent": true,
+    "h7_formal_tag_namespace_absent": true,
+    "h7_sealed_tag_namespace_absent": true,
+    "h7_freeze_tag_namespace_absent": true,
+    "h7_immutable_tag_namespace_absent": true,
+    "h7_evidence_tag_namespace_absent": true,
     "authorized_scientific_source_unchanged": true,
-    "result_bearing_launch_controller_prospectively_fixed": false,
+    "result_bearing_launch_controller_prospectively_fixed": true,
     "formal_identity_created": false,
     "started_created": false,
     "protected_evaluation_accessed": false,
     "official_scoring_performed": false,
     "historical_pass_fail_rewritten": false,
     "immutable_formal_sealed_evidence_refs_mutated": false,
-    "development_phase_changed_by_relay": false,
+    "development_phase_changed_by_primary": false,
     "formal_floor_respected": true
   },
   "do_not_touch": [
     "Consumed FORMAL identities",
     "immutable/formal/sealed/evidence/freeze/preserve refs",
-    "H7 scientific binding or scorer/comparator/threshold/tolerance/protocol after exposure",
-    "H7 FORMAL identity/STARTED/evaluation/scoring until an exact prospectively authorized result-bearing one-way launch controller is materialized and rebound",
-    "Candidate #35 current object or rescue-adjacent successor"
+    "H7 scientific binding, metric, comparator, threshold, tolerance, protocol, input policy, scorer or preserver semantics",
+    "H7 FORMAL identity/STARTED/protected evaluation/result-bearing workflow under R105",
+    "Candidate #35 current object or rescue-adjacent successor",
+    "noncanonical Forge theory probes as scientific authority"
   ],
-  "stop_reason": "MISSING_PROSPECTIVELY_FIXED_RESULT_BEARING_H7_ONE_WAY_FORMAL_CONTROLLER_PATH",
-  "next_action": "Evidence Analyst or an explicitly authorized prospective implementation generation must materialize and bind the exact H7 FORMAL launch controller/protected-payload/identity mechanics under the frozen contract. If any science-affecting change is required, authorize a fresh development_revision or successor. MAIN must then re-fetch Analyst/Main generations, exact science/controller refs, frozen bindings, and one-way namespaces before considering exactly one fresh FORMAL identity and one-way START."
+  "stop_reason": "R105_NONRESULT_LAUNCH_PLUMBING_COMPLETE_FRESH_ANALYST_REQUIRED_BEFORE_FORMAL_START",
+  "next_action": "Return exact launch controller head 042d00375278d551dbf643ad866a4c883852804d and green NON_RESULT validation to Evidence Analyst. Only a later fresh Analyst generation that explicitly binds this controller head and frozen science head and grants one-shot FORMAL authority may permit exactly one fresh identity and one-way START. Re-fetch all authority/bindings/namespaces immediately before any such action."
 }
