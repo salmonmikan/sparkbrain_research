@@ -1,21 +1,20 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T145200+0900-RELAY-CAND34-PREFORMALR2-R93-WAITING-CI-REPAIR",
-  "run_id": "sparkbrain-main-relay-20260923T145200JST-R93-cand34-d34q002",
-  "producer_run_id": "sparkbrain-main-relay-20260923T145200JST-R93-cand34-d34q002",
-  "produced_at": "2026-09-23T14:52:00+09:00",
-  "authority_scope": "RELAY_CANONICAL_R93_CAND34_ONE_BOUNDED_PREFORMAL_R2_RESPONSE_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T143200+0900-PRIMARY-CAND34-PREFORMALR2-R93-WAITING-CI-EXECUTOR",
+  "generation_id": "MAIN-20260923T152800+0900-PRIMARY-CAND34-PREFORMALR2-R94-WAITING-RESPONSE",
+  "run_id": "sparkbrain-main-primary-20260923T151500JST-R94-cand34-d34q002",
+  "producer_run_id": "sparkbrain-main-primary-20260923T151500JST-R94-cand34-d34q002",
+  "produced_at": "2026-09-23T15:28:00+09:00",
+  "authority_scope": "PRIMARY_CANONICAL_R94_CAND34_ONE_BOUNDED_PREFORMAL_R2_RESPONSE_ONLY",
+  "supersedes_generation_id": "MAIN-20260923T145200+0900-RELAY-CAND34-PREFORMALR2-R93-WAITING-CI-REPAIR",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T140800+0900-R93-4D7C2A91@92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
-    "main_previous": "MAIN-20260923T143200+0900-PRIMARY-CAND34-PREFORMALR2-R93-WAITING-CI-EXECUTOR",
-    "closed_r2_contract": "research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4",
-    "fast_forge_latest_observed": "forge/20260923-receptor-suppression-probes-a@c366c4054d2834003fcca20d49b8fc9ad4203edc"
+    "evidence_analyst": "EVA-20260923T150251+0900-R94-8E6A31C4@c273eb5c6d1390d4b0d8c683c373fbf5336db8a8",
+    "main_previous": "MAIN-20260923T145200+0900-RELAY-CAND34-PREFORMALR2-R93-WAITING-CI-REPAIR",
+    "closed_r2_contract": "research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4"
   },
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "status": "WAITING_EXTERNAL",
-  "analyst_generation_id": "EVA-20260923T140800+0900-R93-4D7C2A91",
-  "analyst_commit": "92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
+  "analyst_generation_id": "EVA-20260923T150251+0900-R94-8E6A31C4",
+  "analyst_commit": "c273eb5c6d1390d4b0d8c683c373fbf5336db8a8",
   "research_layer": "PRE_FORMAL",
   "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
   "claim_ceiling": "MECHANISM",
@@ -24,12 +23,10 @@
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "NONTERMINAL",
-  "queue_state": "D34-Q002_AUTHORIZED_ONCE_NOT_YET_EXECUTED",
-  "system_priority_exception": {"used": false},
   "development_phase": "OPEN_DEVELOPMENT",
   "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
   "cycle_count": 4,
-  "cycle_reassessment_context": "R93 already authorized exactly one bounded D34-Q002 development response under the unchanged closed R2 contract. Relay reconciled the PRIMARY WAITING_EXTERNAL handoff, observed generic CI fail only at lint before tests, and applied a single science-invariant unused-import repair. No response-bearing execution occurred.",
+  "cycle_reassessment_context": "R94 freshly bound the repaired green executor head and authorized exactly one D34-Q002 response under the unchanged closed R2 contract. MAIN independently confirmed no cand34 preserve/control ref and no existing D34-Q002 raw result before dispatch.",
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "closed_r2_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
@@ -37,37 +34,27 @@
     "active_research_branch": "research/main-cand34-assembly-route-preformal-r93-response",
     "active_research_head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
     "executor_path": "scripts/cand34_preformal_r2_execute.py",
-    "analyst_handoff_commit": "92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
-    "preserved_r2_contract_artifact": "reports/orchestrator/main/artifacts/cand34/preformal-r2/43d0f25541a3c447d4c7156303647ae94f3119f4/cand34-preformal-r2-contract.zip"
+    "execution_bridge_commit": "5e0cb8882a6f7afc684b11b97dddf30b573e7a43"
   },
   "workflow_observation": {
-    "failed_executor_head_generic_ci_run_id": 35822584950,
-    "failed_executor_head_generic_ci_conclusion": "failure",
-    "failure_stage": "Lint",
-    "repaired_executor_head_generic_ci_run_id": 35824098828,
-    "repaired_executor_head_generic_ci_status": "in_progress",
-    "repaired_executor_head_generic_ci_conclusion": null,
-    "result_bearing_workflow_created": false,
-    "result_bearing_workflow_dispatched": false,
-    "result_bearing_execution_performed": false
+    "executor_green_ci_run_id": 35824098828,
+    "executor_green_ci_conclusion": "success",
+    "result_bearing_workflow_run_id": 35826846989,
+    "result_bearing_workflow_name": "cand34-preformal-r2-response-r94",
+    "result_bearing_workflow_status_at_persist": "queued",
+    "result_bearing_workflow_conclusion_at_persist": null,
+    "result_bearing_workflow_dispatched": true,
+    "result_bearing_execution_performed_known": false
   },
   "work_performed": {
-    "classification": "SCIENCE_INVARIANT_REPAIR",
-    "change_classification": "UNUSED_IMPORT_REMOVAL_ONLY",
-    "research_branch_created": false,
-    "research_branch_mutated": true,
-    "repaired_path": "scripts/cand34_preformal_r2_execute.py",
-    "repair_detail": "Removed unused typing.Any import after generic CI failed at lint before Local readiness/Test/Validate bundle.",
-    "contract_semantics_changed": false,
-    "queue_science_changed": false,
-    "metric_or_reduction_changed": false,
-    "threshold_or_tolerance_changed": false,
-    "comparator_changed": false,
-    "intervention_family_changed": false,
-    "resource_or_privilege_contract_changed": false,
-    "input_or_seed_policy_changed": false,
-    "falsifier_or_success_criteria_changed": false,
-    "response_bearing_execution_performed": false
+    "classification": "AUTHORIZED_PREFORMAL_ONE_SHOT_DISPATCH",
+    "scientific_contract_changed": false,
+    "research_branch_mutated": false,
+    "forge_code_reused": false,
+    "forge_observation_confirmatory_credit": false,
+    "no_clobber_checked_before_dispatch": true,
+    "raw_before_interpretation_required": true,
+    "response_bearing_execution_dispatched_once": true
   },
   "observations_evidentiary_status": {
     "new_scientific_result": false,
@@ -75,8 +62,8 @@
     "preformal_development_result_new_this_run": 0,
     "mechanism_architecture_observation_new_this_run": 0,
     "system_architecture_observation_new_this_run": 0,
-    "scientific_result_exposed": false,
-    "implementation_or_readiness_only": true
+    "scientific_result_exposed_to_main": false,
+    "implementation_or_dispatch_only": true
   },
   "prior_result_preservation": {
     "D34_Q001_preserved_unchanged": true,
@@ -87,35 +74,32 @@
     "immutable_formal_sealed_evidence_refs_mutated": false
   },
   "collision_awareness": {
-    "primary_running_collision": false,
-    "primary_state_reconciled_as_waiting_external": true,
+    "main_running_collision": false,
+    "relay_collision": false,
     "forge_same_object_collision": false,
     "forge_code_reused": false,
-    "forge_observation_confirmatory_credit": false,
-    "relay_collision": false
+    "utility_dependency": false
   },
   "hard_floor": {
     "formal_identity_created_or_consumed": false,
-    "started_created": false,
+    "formal_started_created": false,
     "formal_evaluation_seed_revealed": false,
     "formal_protected_evaluation_accessed": false,
-    "result_bearing_workflow_dispatched": false,
     "official_scoring_performed": false,
-    "scientific_preserve_or_evidence_ref_created": false
+    "evidence_ref_mutated": false
   },
   "integrity": {
-    "analyst_generation_rechecked_immediately_before_research_mutation": true,
-    "main_generation_and_lease_rechecked_immediately_before_research_mutation": true,
-    "active_research_head_rechecked_immediately_before_research_mutation": true,
+    "analyst_generation_rechecked_before_dispatch": true,
+    "main_lease_acquired_before_dispatch": true,
+    "active_research_head_rechecked_before_dispatch": true,
     "closed_r2_contract_head_unchanged": true,
     "prior_result_preservation_respected": true,
-    "response_stop_respected": true,
     "formal_stop_respected": true
   },
   "remaining_blockers": [
-    "Generic CI for repaired executor head 8ce961dc88fb52afa6399093fce1e3de7e982f2b must complete successfully before MAIN may arm or execute the single R93-authorized D34-Q002 response."
+    "External one-shot response workflow 35826846989 has not yet completed. Raw output must be preserved unchanged before MAIN reads or interprets it."
   ],
-  "stop_reason": "WAITING_REPAIRED_EXECUTOR_CI_BEFORE_ONE_SHOT_RESPONSE_ARMING",
-  "next_action": "Re-fetch R93, MAIN generation/lease, exact active head and CI 35824098828. If CI is green and authority is unchanged, continue only the prospectively authorized one-shot response path with no-clobber/raw-before-interpretation guarantees, then stop at first meaningful response exposure for fresh Analyst review. If CI fails again, diagnose and apply only clearly science-invariant repair; do not execute any response until green.",
+  "stop_reason": "WAITING_EXTERNAL_ONE_SHOT_RESPONSE_WORKFLOW",
+  "next_action": "Re-fetch R94, exact executor head and workflow 35826846989. If the workflow succeeds, retrieve the raw artifact without scientific interpretation, preserve exact raw bytes on a fresh no-clobber preserve ref before reading/scoring, then transition candidate #34 to RESULT_EXPOSED_DEVELOPMENT and return to Evidence Analyst. If the workflow fails before meaningful response exposure, diagnose only science-invariant execution/preservation plumbing; never rerun after meaningful response exposure.",
   "owner": "main"
 }
