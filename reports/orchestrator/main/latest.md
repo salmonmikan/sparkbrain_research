@@ -1,33 +1,33 @@
-# MAIN Relay — Candidate #35 preservation boundary completed without result exposure
+# MAIN Relay — Candidate #35 R100 response preflight advanced; waiting on CI
 
 - schema_version: `2`
-- generation: `MAIN-20260923T215545+0900-RELAY-CAND35-PRESERVATION-R99-COMPLETED`
+- generation: `MAIN-20260923T235027+0900-RELAY-CAND35-R100-RESPONSE-PREFLIGHT-WAITING-CI`
 - execution_mode: `RELAY`
-- status: `COMPLETED`
+- status: `WAITING_EXTERNAL`
 - candidate: `CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING`
 - research_layer: `ARCHITECTURE_STUDY`
-- Analyst authority: `EVA-20260923T210010+0900-R99-6F2B8C14`
-- prior MAIN: `MAIN-20260923T205800+0900-PRIMARY-H7-FORMAL-R5-R98-BLOCKED-SIDECAR`
-- development phase: `OPEN_DEVELOPMENT`
-- development revision: `ARCHITECTURE-R2-EXACT-CANDIDATE-SURFACE-AND-EXECUTOR-BINDING-NONRESULT-COMPLETE`
+- Analyst authority: `EVA-20260923T225720+0900-R100-C6A2F18D`
+- development_phase: `OPEN_DEVELOPMENT`
+- development_revision: `ARCHITECTURE-R2-EXACT-CANDIDATE-SURFACE-AND-EXECUTOR-BINDING-NONRESULT`
+- implementation_revision: `PRESERVATION-R1-RAW-BEFORE-READ-EXCLUSIVE-CREATE-COMPLETE`
 - cycle: `3`
 - claim ceiling: `SYSTEM`
 
 ## Authority / Funnel
 
-R99 remains current. H7 is still held by the missing protected-sidecar capability and cannot be advanced by this GitHub connection without violating the fixed one-way gate. R99 therefore prospectively authorizes only Candidate #35 science-invariant preserve-before-read/provenance plumbing as the bounded SYSTEM priority exception. Candidate response execution remains STOP.
+R100 is current and prospectively authorizes exactly one bounded five-arm Candidate #35 Architecture development response only after exact R100 authority repin and a green NON_RESULT preflight. The fixed arm order is `SHAM_STATE`, `POTENTIAL_NULL`, `ADAPTATION_NULL`, `JOINT_SUBTHRESHOLD_NULL`, `DELAYED_SHAM_32MS`. Raw artifacts must be exclusive-created before any return/read/interpretation, and authority is exhausted at the first complete batch result exposure. Automatic rerun, retune, or rescore is not authorized.
 
-The Candidate #35 Funnel fields are preserved exactly: `preformal_eligible=false`, `preformal_readiness=NOT_APPLICABLE`, `hold_class=null`, `hold_reason=null`, `terminal_state=NONTERMINAL`, `queue_state=QUEUED_FOR_MAIN_ARCHITECTURE_R3_OR_R4_NONRESULT_PRESERVATION_BOUNDARY`, `system_priority_exception.used=true` with reason `NO_EXECUTABLE_MECHANISM_WHILE_H7_FORMAL_INTEGRITY_CAPABILITY_BLOCKED`, `development_phase=OPEN_DEVELOPMENT`, and the R99 development revision above. No in-place SYSTEM→MECHANISM uplift occurred.
+The R100 Funnel fields remain exact: `claim_ceiling=SYSTEM`, `preformal_eligible=false`, `preformal_readiness=NOT_APPLICABLE`, `hold_class=null`, `hold_reason=null`, `terminal_state=NONTERMINAL`, `queue_state=QUEUED_FOR_MAIN_ARCHITECTURE_ONE_BOUNDED_RESPONSE`, `system_priority_exception.used=true` with reason `NO_EXECUTABLE_MECHANISM_WHILE_H7_FORMAL_INTEGRITY_CAPABILITY_BLOCKED`, `development_phase=OPEN_DEVELOPMENT`, and the R100 development revision above. Relay did not create or change the development phase and did not upgrade the SYSTEM object to MECHANISM.
+
+H7 remains blocked on the protected-sidecar capability. No H7 FORMAL identity, STARTED marker, protected evaluation, or result was touched.
 
 ## Work performed
 
-Relay re-fetched the latest Analyst authority, MAIN lease, direct Candidate #35 branch and Fast Forge collision state. There was no fresh PRIMARY RUNNING lease on Candidate #35, and Fast Forge explicitly stayed off this same-object preservation/response surface.
+Relay re-fetched R100, the MAIN lease, direct Candidate #35 ref and collision context. The prior MAIN lease was completed, not a fresh PRIMARY RUNNING lease on Candidate #35, and there was no Fast Forge same-object collision.
 
-The authorized scientific source remained exactly the pre-existing Candidate #35 R2 source at `8ea6581544c642ad74f1a95955ab2c5f795afccc`; `src/sparkbrain/v05/candidate35_architecture.py` remained byte-identical with blob SHA-1 `4055f42483d5bba73eef51b1753a2c19f18d5ab5`.
+Relay then performed only science-invariant response plumbing: the existing preservation wrapper was repinned from R99 to exact R100 authority/queue-state provenance, and a fail-closed response runner was added. The runner binds exact R100 generation/commit, exact unchanged scientific source head/blob, the fixed five-arm order, package/runtime/component/serializer/preservation target, and exclusive raw-before-read semantics. The scientific source itself remains unchanged at source head `8ea6581544c642ad74f1a95955ab2c5f795afccc`, blob SHA-1 `4055f42483d5bba73eef51b1753a2c19f18d5ab5`.
 
-Relay added a separate non-result preservation wrapper and tests. The wrapper binds the current Analyst generation, exact source head/blob, unchanged response producer, serializer, Funnel fields, exclusive no-clobber output semantics and raw-before-return ordering. Its current/default execution path fails closed before response generation or file creation. The NON_RESULT preflight verifies the source bytes and producer binding without running the candidate response.
-
-The first CI failed only on import ordering. After a fresh authority/lease/ref re-read, Relay applied an import-order-only `SCIENCE_INVARIANT_REPAIR`. Final branch head `5bc64fbd8fd2f3e8d804d18e0a0ad0d58b5a3e4c` passed generic CI `35863266802` across both configured Python versions, including lint, local readiness, tests and bundle validation.
+Current implementation head is `b5f312683d50ed3a086348b62770fc8923c78046`. Generic CI run `35876830334` for that exact head is currently in progress. It is NON_RESULT. No candidate response or result-bearing workflow has been executed or dispatched.
 
 ## Scientific / evidentiary status
 
@@ -40,17 +40,15 @@ New scientific result: `false`.
 - STARTED created: `false`
 - protected/held-out evaluation accessed: `false`
 - official scoring: `false`
-- scientific evidence/preserve/formal/sealed/freeze/immutable ref mutation: `false`
+- evidence/formal/sealed/freeze/immutable scientific refs mutated: `false`
 - historical official consumed identities: `7`, unchanged
 - prior scientific results preserved unchanged: `true`
-- evidentiary status: `NON_EVIDENTIARY_ARCHITECTURE_NONRESULT_PRESERVATION_PREFLIGHT`
+- evidentiary status: `NON_EVIDENTIARY_ARCHITECTURE_RESPONSE_PREFLIGHT_IMPLEMENTATION`
 
-No hypothesis, metric/scorer meaning, comparator, threshold/tolerance, seed/exclusion policy, intervention, cue, anchor, reset, measurement window, resource contract, falsifier or success criterion changed.
+No hypothesis, metric/scorer meaning, comparator, scientific threshold/tolerance, seed/exclusion policy, intervention, resource contract, falsifier, or success criterion changed.
 
-## Cycle / stop / next action
+## Wait / next action
 
-Cycle 3 was continued only because R99 explicitly authorized the expected-information-gain step of proving that the unchanged response producer can be provenance-bound and raw-preserved before read without exposing a response. That bounded objective is now complete and CI-green.
+Wait reason: `R100_CAND35_RESPONSE_PREFLIGHT_IMPLEMENTATION_WAITING_FOR_EXACT_HEAD_GENERIC_CI`.
 
-Stop reason: `AUTHORIZED_CAND35_NONRESULT_PRESERVATION_BOUNDARY_CLOSED_WITHOUT_RESPONSE_EXPOSURE`.
-
-Next MAIN action: fresh Evidence Analyst review of the exact implementation head and preservation boundary. Candidate response execution, PRE_FORMAL promotion, scientific-field changes and any successor mechanism question remain unauthorized until fresh Analyst authority says otherwise.
+Next MAIN action: after CI run `35876830334` completes successfully, re-read the exact Analyst generation, MAIN generation/lease, Candidate #35 direct refs and collision state. Only if R100 still governs the same object and no fresh PRIMARY collision exists, execute the single frozen five-arm Architecture batch with exclusive raw-before-read preservation and stop at first complete result exposure for fresh Evidence Analyst review. If CI fails, only a clearly science-invariant repair already permitted by R100 may be applied; otherwise stop safely.
