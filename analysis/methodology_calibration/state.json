@@ -1,18 +1,19 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-24T00:20:00+09:00",
+  "timestamp": "2026-09-24T01:22:23+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260924T002000+0900-R93-B71C4A9E",
-    "sequence": 93,
+    "generation_id": "METHCAL-20260924T012223+0900-R94-2FBB75BB",
+    "sequence": 94,
     "material_change": true,
-    "material_change_reason": "CAND35_COMPLETED_THE_SINGLE_PROSPECTIVELY_BOUNDED_SYSTEM_DEVELOPMENT_BATCH_WITH_RAW_BEFORE_RETURN_AND_CLEAN_OPEN_TO_RESULT_EXPOSED_TRANSITION; R101_REGRESSED_SAME_OBJECT_H7_FROM_RESULT_EXPOSED_TO_OPEN_WITHOUT_FRESH_VERSIONED_OBJECT_SEMANTICS",
-    "supersedes_generation_id": "METHCAL-20260923T232021+0900-R92-5C91E7A4",
+    "material_change_reason": "H7_PHASE_MONOTONICITY_REPAIRED_PROSPECTIVELY; POST_OUTCOME_CAND35_IMMEDIATE_SUCCESSOR_FORGE_PROBE_DEFERRED_FROM_CANONICAL_ADMISSION; FORMAL_FLOOR_UNCHANGED",
+    "supersedes_generation_id": "METHCAL-20260924T002000+0900-R93-B71C4A9E",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260923T232021+0900-R92-5C91E7A4",
-      "commit": "8b92f841227988c1ac7c4faea7d8d95d2517ad55",
+      "generation_id": "METHCAL-20260924T002000+0900-R93-B71C4A9E",
+      "commit": "d5c277b11a8a8b89271ca0572b8c51960fa7b9ad",
+      "overall_classification": "MIXED_CALIBRATION",
       "role": "DESIGNATED_PRIOR_METHODOLOGY_HISTORY_READ_FIRST"
     },
     "human_directive": {
@@ -20,36 +21,32 @@
       "role": "HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260923T225500+0900-R44-C8F41D72",
-      "commit": "3c46617fba123704297d880a748c305c16a7dd01",
+      "generation_id": "CTRL-20260924T005132+0900-R45-6A51C7D2",
+      "commit": "b2c1f828da31af9fb8cc979a7d4bdb41893a6fc1",
       "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260924T000324+0900-R101-CAND35-POSTEXPOSURE",
-      "branch_head": "e50e0a91e25f2457d0b7152900a48cbdc5006485",
-      "state_blob": "5a609f807921846e0110f6e7865d04fc511ecff1",
-      "latest_blob": "707d2e9b4372436a27b5e940bc149a15d5e0aba7",
+      "generation_id": "EVA-20260924T010800+0900-R103-FORGE-DEFER-SCHEDULER-RED",
+      "branch_head": "82251ddfa025929ad79b41bea015eb84bd4f0813",
+      "state_blob": "e6b8cb4262ec9144b8cafef3c3634a93f063949b",
+      "latest_blob": "106b98289264892e01f00a40f03732a506121b8e",
       "role": "DESIGNATED_CANONICAL_GATE_HISTORY"
     },
-    "main_relay": {
-      "commit": "21a8ee7b0ae85df57a0a35b70ad726e45252e259",
-      "generation_id": "MAIN-20260923T235628+0900-RELAY-CAND35-R100-ONEBATCH-EXPOSED-WAITING-ANALYST",
-      "role": "CONTROL_PLANE_EXECUTION_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH"
+    "candidate35_raw": {
+      "ref": "raw/cand35-r100-onebatch-20260923",
+      "head": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
+      "role": "DIRECT_AUTHORITATIVE_DEVELOPMENT_RAW_PRESERVATION"
     },
-    "candidate35_live_execution": {
-      "workflow_run_id": 35877765051,
-      "workflow_conclusion": "success",
-      "launch_head": "62db3b437ffc26b931bbe5b9e78ca814bddbeb81",
-      "implementation_head": "b5f312683d50ed3a086348b62770fc8923c78046",
-      "scientific_source_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
-      "raw_ref_head": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
-      "role": "DIRECT_AUTHORITATIVE_DEVELOPMENT_EXECUTION_AND_RAW_PRESERVATION_EVIDENCE"
+    "h7_current_controller": {
+      "branch": "research/main-h7-r5-oneway-controller-r98",
+      "head": "ccffe9af2c6d3e04c9d1c7e6a53045d4a569756e",
+      "latest_readiness_run": 35884741590,
+      "role": "DIRECT_NON_RESULT_READINESS_AND_EXACT_AUTHORITY_BINDING"
     },
-    "h7_prior_canonical_phase": {
-      "source": "EVA_R100_STATE",
-      "analyst_commit": "a32494246245a559ad4e1f8543a1f252b03ef2e7",
-      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "role": "DIRECT_PRIOR_CANONICAL_STATE_FOR_PHASE_MONOTONICITY_COMPARISON"
+    "forge_successor_adjacent_probe": {
+      "branch": "forge/20260924-coordinate-null-local-witness",
+      "head": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
+      "role": "NONCANONICAL_ZERO_CREDIT_POST_OUTCOME_EXPLORATION"
     }
   },
   "authoritative_refs": {
@@ -66,50 +63,11 @@
     "sealed_tags": [],
     "freeze_tags": [],
     "immutable_tags": [],
-    "candidate_35": {
-      "id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
-      "branch": "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3",
-      "live_branch_head": "62db3b437ffc26b931bbe5b9e78ca814bddbeb81",
-      "scientific_source_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
-      "scientific_source_blob_sha1": "4055f42483d5bba73eef51b1753a2c19f18d5ab5",
-      "implementation_head": "b5f312683d50ed3a086348b62770fc8923c78046",
-      "raw_ref": "raw/cand35-r100-onebatch-20260923",
-      "raw_ref_head": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
-      "workflow_run_id": 35877765051,
-      "workflow_conclusion": "success",
-      "claim_ceiling": "SYSTEM",
-      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "lifecycle": "TERMINAL_FOR_CURRENT_OBJECT",
-      "study_type": "ARCHITECTURE_STUDY",
-      "preformal_eligible": false,
-      "ready": false,
-      "cycle_count": 3,
-      "complete_batch": true,
-      "fixed_arm_order": [
-        "SHAM_STATE",
-        "POTENTIAL_NULL",
-        "ADAPTATION_NULL",
-        "JOINT_SUBTHRESHOLD_NULL",
-        "DELAYED_SHAM_32MS"
-      ],
-      "raw_preserved_before_response_return_interpretation": true,
-      "exclusive_create_raw_ref": true,
-      "authority_exhausted": true,
-      "same_object_rerun_retune_rescore": false,
-      "same_object_system_to_mechanism_uplift": false,
-      "confirmatory_credit": 0,
-      "preformal_action": false,
-      "formal_action": false,
-      "official_scoring": false,
-      "disposition": "NO_MEASURED_PRIMING_EFFECT_ON_FROZEN_OUTPUT_SURFACE",
-      "interpretation_limit": "COORDINATE_NULLING_MAY_BE_OFF_MANIFOLD; FRESH_REACHABLE_STATE_OR_MATCHED_NATURAL_HISTORY_SUCCESSOR_REQUIRES_NEW_ID_AND_FRESH_PROSPECTIVE_CONTRACT_WITH_ZERO_INHERITED_CONFIRMATORY_CREDIT",
-      "revision_observability_issue": "RESULT_BEARING_RECORDS_STILL_USE_A_DEVELOPMENT_REVISION_LABEL_ENDING_NONRESULT; PROSPECTIVELY_SEPARATE_SCIENTIFIC_IMPLEMENTATION_AND_OBSERVATION_BATCH_AXES"
-    },
     "h7": {
       "id": "CAND-H7-RESPONSIBILITY",
       "science_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
       "controller_branch": "research/main-h7-r5-oneway-controller-r98",
-      "controller_head": "f21dc7521af7413adcc46a2561271e0b8852f371",
+      "controller_head": "ccffe9af2c6d3e04c9d1c7e6a53045d4a569756e",
       "claim_ceiling": "MECHANISM",
       "funnel_stage": "PRE_FORMAL",
       "preformal_eligible": true,
@@ -117,11 +75,12 @@
       "effective_executable": false,
       "hold_class": "FORMAL_INTEGRITY_CAPABILITY",
       "lifecycle": "NONTERMINAL_HOLD",
-      "r100_development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "r101_development_phase": "OPEN_DEVELOPMENT",
-      "phase_regression": true,
-      "fresh_candidate_id_or_versioned_science_revision_observed": false,
-      "allowed_next_change": "SCIENCE_INVARIANT_CAPABILITY_AND_AUTHORITY_PLUMBING_THEN_NON_RESULT_READINESS_ONLY",
+      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "development_revision": "R5_UNCHANGED",
+      "r93_phase_defect_repaired": true,
+      "repair_mode": "SCIENCE_INVARIANT_CAPABILITY_AND_EXACT_AUTHORITY_PLUMBING_ONLY",
+      "latest_readiness_run": 35884741590,
+      "latest_readiness_conclusion": "FAILURE_PRE_IDENTITY_ON_PROTECTED_SIDECAR_CAPABILITY",
       "formal_authority": "STOP",
       "green_readiness_automatically_authorizes_formal": false,
       "fresh_analyst_required_after_green_readiness": true,
@@ -130,165 +89,214 @@
       "protected_evaluation_accessed": false,
       "official_scoring_performed": false
     },
+    "candidate_35": {
+      "id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
+      "claim_ceiling": "SYSTEM",
+      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "lifecycle": "TERMINAL_FOR_CURRENT_OBJECT",
+      "study_type": "ARCHITECTURE_STUDY",
+      "preformal_eligible": false,
+      "ready": false,
+      "cycle_count": 3,
+      "raw_ref": "raw/cand35-r100-onebatch-20260923",
+      "raw_ref_head": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
+      "authority_exhausted": true,
+      "same_object_rerun_retune_rescore": false,
+      "same_object_system_to_mechanism_uplift": false,
+      "confirmatory_credit": 0,
+      "disposition": "NO_MEASURED_PRIMING_EFFECT_ON_FROZEN_OUTPUT_SURFACE",
+      "revision_observability_issue": "RESULT_BEARING_RECORDS_STILL_USE_A_DEVELOPMENT_REVISION_LABEL_ENDING_NONRESULT",
+      "fresh_successor_policy": "NEW_ID_INDEPENDENT_REIDENTIFICATION_FRESH_PROSPECTIVE_CONTRACT_FRESH_DEVELOPMENT_STATE_ZERO_INHERITED_CREDIT"
+    },
     "candidate_34": {
       "id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
       "claim_ceiling": "MECHANISM",
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
       "lifecycle": "TERMINAL_FOR_CURRENT_OBJECT",
       "confirmatory_credit": 0,
-      "same_object_rescue": false,
-      "fresh_successor_permitted_if_independently_motivated": true
+      "same_object_rescue": false
     },
-    "scientific_source_of_truth": "STABLE_MAIN_PLUS_INDEPENDENTLY_FETCHED_EVIDENCE_REFS_EXACT_RESEARCH_WORKFLOW_AND_RAW_REFS; OPS_MAILBOXES_ARE_HISTORY_AUTHORITY_PROVENANCE_OVERLAYS_ONLY"
+    "forge_probe": {
+      "branch": "forge/20260924-coordinate-null-local-witness",
+      "head": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
+      "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL",
+      "confirmatory_credit": 0,
+      "timing_relative_to_candidate35": "POST_OUTCOME_IMMEDIATE_SUCCESSOR_SURFACE",
+      "local_coordinate_finding": "ORDINARY_FIELD_DYNAMICS_PRODUCE_NATURAL_ZERO_NONZERO_COORDINATE_WITNESSES",
+      "proposed_residual": "FULL_STATE_MATCHED_NATURAL_HISTORY_VS_COORDINATE_SURGERY",
+      "canonical_admission": "DEFER_NOT_ADMITTED",
+      "defer_reason": "POST_OUTCOME_IMMEDIATE_SUCCESSOR_RESCUE_ADJACENT_INDEPENDENT_REIDENTIFICATION_REQUIRED",
+      "history_preserved_unchanged": true
+    },
+    "scientific_source_of_truth": "STABLE_MAIN_PLUS_INDEPENDENTLY_FETCHED_EVIDENCE_REFS_EXACT_RESEARCH_WORKFLOW_RAW_AND_RESEARCH_BRANCH_REFS; OPS_MAILBOXES_ARE_HISTORY_AUTHORITY_PROVENANCE_OVERLAYS_ONLY"
+  },
+  "canonical_funnel_snapshot": {
+    "candidate_total": 35,
+    "claim_ceiling_counts": {
+      "MECHANISM": 14,
+      "SYSTEM": 21
+    },
+    "terminal_for_current_object": 34,
+    "nonterminal_hold": 1,
+    "queued": 0,
+    "development_phase_counts": {
+      "OPEN_DEVELOPMENT": 1,
+      "RESULT_EXPOSED_DEVELOPMENT": 34,
+      "CONSUMED_ONE_WAY": 0
+    },
+    "preformal_eligible_nonterminal": 1,
+    "preformal_ready_persisted": 1,
+    "preformal_effectively_executable": 0,
+    "viable_executable_mechanism": 0,
+    "system_priority_exception_active": 0,
+    "official_consumed_formal_identities": 7,
+    "new_formal_identity_consumed_this_generation": 0,
+    "canonical_main_execution_capacity": 0,
+    "canonical_main_schedulers_enabled": 0
   },
   "audit_result": "MATERIAL_CALIBRATION_UPDATE",
   "overall_classification": "MIXED_CALIBRATION",
   "gate_classifications": {
     "hard_integrity_policy": "KEEP",
-    "development_phase_axis": "TIGHTEN",
-    "candidate35_live_open_to_result_exposed_transition": "KEEP",
+    "development_phase_axis_current_state": "KEEP",
+    "same_object_post_exposure_reversion_to_open": "TIGHTEN",
+    "h7_phase_monotonicity_current_state": "KEEP",
+    "h7_science_invariant_remediation_only": "KEEP",
+    "h7_green_readiness_as_automatic_formal_go": "TIGHTEN",
     "fresh_result_exposed_to_consumed_one_way": "INSUFFICIENT_EVIDENCE",
     "cycle3_mandatory_reassessment": "KEEP",
     "cycle3_automatic_terminal_cap": "RELAX",
     "candidate35_one_bounded_system_development_batch": "KEEP",
-    "candidate35_raw_before_return_read_preservation": "KEEP",
-    "candidate35_one_shot_authority_exhaustion": "KEEP",
     "candidate35_same_object_rerun_retune_rescore": "TIGHTEN",
     "candidate35_system_claim_ceiling": "KEEP",
     "candidate35_current_object_terminalization": "KEEP",
     "candidate35_scientific_implementation_observation_revision_observability": "CLARIFY",
-    "h7_phase_monotonicity_after_prior_result_exposure": "TIGHTEN",
-    "h7_science_invariant_remediation_only": "KEEP",
-    "h7_green_readiness_as_automatic_formal_go": "TIGHTEN",
     "development_observations_as_independent_confirmation": "TIGHTEN",
     "preformal_as_real_development": "KEEP",
     "hidden_second_formal_gate": "KEEP",
-    "persisted_ready_vs_effective_executable_readiness": "CLARIFY",
-    "terminal_current_object_not_topic_death": "KEEP",
-    "same_object_post_outcome_system_to_mechanism_uplift": "TIGHTEN",
+    "forge_immediate_post_outcome_terminal_family_target_selection": "TIGHTEN",
+    "forge_observation_as_independent_successor_support": "TIGHTEN",
+    "canonical_fresh_successor_admission_gate": "KEEP",
     "fresh_independently_motivated_system_to_mechanism_successor": "KEEP",
-    "no_target_shadow_vs_preoutcome_residual_disposition": "CLARIFY",
+    "terminal_current_object_not_topic_death": "KEEP",
+    "no_target_shadow_vs_topic_death": "CLARIFY",
     "mechanism_supply_health": "CLARIFY",
+    "persisted_ready_vs_effective_executable_readiness": "CLARIFY",
+    "protected_preidentity_validity": "KEEP",
+    "fresh_protected_formal_transition": "INSUFFICIENT_EVIDENCE",
+    "claim_ceiling_enforcement": "KEEP",
     "theory_backward_quality_floor": "KEEP",
-    "protected_adaptive_evaluation_validity": "TIGHTEN",
     "classification_completeness": "KEEP",
-    "pass_reachability_without_standard_relaxation": "KEEP"
+    "funnel_observability": "CLARIFY",
+    "pass_reachability_without_standard_relaxation": "KEEP",
+    "canonical_execution_capacity_as_scientific_gate": "CLARIFY"
   },
   "mandatory_questions": {
-    "1_development_phase_end_to_end": "NO_NOT_FULLY; CAND35_CLEANLY_DEMONSTRATES_OPEN_TO_RESULT_EXPOSED_BUT_R101_REGRESSES_SAME_OBJECT_H7_FROM_RESULT_EXPOSED_TO_OPEN_WITHOUT_FRESH_VERSIONED_OBJECT_SEMANTICS",
-    "2_cycle3_hard_cap": "NO; CAND35_RECEIVED_ONE_PROSPECTIVELY_INFORMATIVE_BOUNDED_BATCH_AND_TERMINALIZED_ONLY_AFTER_THE_CURRENT_QUESTION_WAS_ANSWERED",
-    "3_repair_classification": "MOSTLY_CORRECT; CAND35_WORKFLOW_AUTHORITY_PLUMBING_AND_H7_SIDECAR_PLUMBING_ARE_INVARIANT_WHILE_H7_PHASE_AND_NONRESULT_REVISION_NAMING_REQUIRE_SEMANTIC_CLARIFICATION",
-    "4_development_laundering": "CAND35_NO; EXACTLY_ONE_BATCH_ZERO_CONFIRMATORY_CREDIT_UNIQUE_RAW_REF_AUTHORITY_EXHAUSTED_NO_AUTOMATIC_RERUN; H7_PHASE_REGRESSION_CREATES_FUTURE_PERMISSION_AMBIGUITY_BUT_NO_RERUN_IS_CURRENTLY_AUTHORIZED",
-    "5_result_exposed_preservation": "YES_FOR_CAND35_AND_PRIOR_H7_RESULT_BYTES_REMAIN_PRESERVED; H7_PHASE_MUST_NOT_REVERT_TO_OPEN_ON_THE_SAME_OBJECT_AND_ANY_FUTURE_SCIENCE_AFFECTING_REVISION_REQUIRES_EXPLICIT_VERSIONING_OR_FRESH_OBJECT",
-    "6_formal_one_way_integrity": "UNCHANGED; MAIN_AND_EVIDENCE_REFS_STABLE_AND_NO_NEW_H7_IDENTITY_START_PROTECTED_EVALUATION_SCORE_OR_EVIDENCE_REF_OBSERVED",
-    "7_system_to_mechanism_successors": "NO_MANUFACTURE_OBSERVED_AND_SUPPRESSION_NOT_PROVEN; PREOUTCOME_CAND35_REACHABLE_STATE_RESIDUAL_REQUIRES_EXPLICIT_THEORY_BACKWARD_DISPOSITION_TO_AVOID_SILENT_TOPIC_DEATH",
-    "8_preformal_hidden_formal": "NO; CAND35_REMAINED_BELOW_PREFORMAL_AND_ZERO_CONFIRMATORY_CREDIT_DESPITE_REAL_DEVELOPMENT_RESULT; H7_PERSISTED_READY_REMAINS_DISTINCT_FROM_EXECUTABILITY",
-    "9_terminal_and_supply": "CURRENT_OBJECT_TERMINALIZATION_IS_CALIBRATED_BUT_SUPPLY_IS_NOT_HEALTHY; ZERO_EXECUTABLE_MECHANISM_AND_EMPTY_QUEUE_SHADOW_REQUIRE_EXPLICIT_RESIDUAL_ADJUDICATION_NOT_AUTOMATIC_RESCUE_OR_INDEFINITE_NO_TARGET_NORMALIZATION",
-    "10_pass_reachability": "YES_WITHOUT_WEAKENING_STANDARDS; H7_HAS_A_CONCRETE_PROTECTED_SIDECAR_CAPABILITY_AND_FRESH_AUTHORIZATION_SEQUENCE_BLOCKER; CORRECT_PHASE_LABELING_SHOULD_PRECEDE_AUTOMATED_PERMISSION_USE"
+    "1_development_phase_end_to_end": "CURRENT_CANONICAL_DEVELOPMENT_PHASES_ARE_CONSISTENT_FOR_H7_AND_CAND35_AFTER_PROSPECTIVE_REPAIR; FRESH_RESULT_EXPOSED_TO_CONSUMED_ONE_WAY_TRANSITION_REMAINS_UNOBSERVED",
+    "2_cycle3_hard_cap": "NO; CAND35_CONTINUED_FOR_A_PROSPECTIVELY_INFORMATIVE_BOUNDED_BATCH_AND_TERMINALIZED_AFTER_THE_CURRENT_QUESTION_WAS_ANSWERED",
+    "3_repair_classification": "YES_IN_LIVE_H7_PATH; ANALYST_SHA_REPIN_CAPABILITY_RUNTIME_PATH_AND_AUTHORITY_PLUMBING_ARE_SCIENCE_INVARIANT; FUTURE_SUCCESSOR_CONTRACT_IS_SCIENCE_AFFECTING_AND_REQUIRES_FRESH_VERSION_OBJECT",
+    "4_development_laundering": "NO_CANONICAL_LAUNDERING_OBSERVED; CAND35_IS_ONE_BATCH_ZERO_CREDIT_AUTHORITY_EXHAUSTED; FORGE_IS_ZERO_CREDIT_NONCANONICAL_AND_BARRED_FROM_BOOTSTRAPPING_IMMEDIATE_SUCCESSOR_ADMISSION",
+    "5_result_exposed_preservation": "YES; H7_AND_CAND35_PRIOR_RESULTS_REMAIN_PRESERVED_AND_H7_CURRENT_PHASE_IS_RESTORED_PROSPECTIVELY_WITHOUT_HISTORY_REWRITE",
+    "6_formal_one_way_integrity": "UNCHANGED; MAIN_AND_EVIDENCE_REFS_STABLE_NO_NEW_H7_IDENTITY_START_PROTECTED_EVALUATION_SCORE_OR_SCIENTIFIC_PRESERVE_REF",
+    "7_system_to_mechanism_successors": "NO_CANONICAL_MANUFACTURE; POST_OUTCOME_FORGE_PROPOSAL_DEFERRED; INDEPENDENT_LATER_REIDENTIFICATION_REMAINS_ALLOWED_AND_MUST_USE_NEW_ID_CONTRACT_STATE_ZERO_INHERITED_CREDIT",
+    "8_preformal_hidden_formal": "NO; CAND35_OBTAINED_REAL_DEVELOPMENT_INFORMATION_WITH_ZERO_CONFIRMATORY_CREDIT_AND_H7_READY_REMAINS_DISTINCT_FROM_EXECUTABLE_FORMAL_AUTHORITY",
+    "9_terminal_and_supply": "TERMINAL_CURRENT_OBJECT_SEMANTICS_ARE_CALIBRATED; SUPPLY_IS_WEAK_WITH_ZERO_EXECUTABLE_MECHANISM_EMPTY_QUEUE_AND_ZERO_CANONICAL_MAIN_CAPACITY; DO_NOT_MANUFACTURE_RESCUE",
+    "10_pass_reachability": "SCIENTIFICALLY_YES_WITHOUT_WEAKENING_STANDARDS; H7_REQUIRES_INVARIANT_SIDECAR_CAPABILITY_GREEN_NON_RESULT_READINESS_AND_FRESH_ANALYST; OPERATIONALLY_PAUSED_WHILE_MAIN_SCHEDULERS_ARE_DISABLED"
   },
   "risks": {
-    "false_positive": "MODERATE_WATCH; H7_OPEN_PHASE_REGRESSION_COULD_LEAD_DOWNSTREAM_CONSUMERS_TO_INFER_INVALID_RERUN_RETUNE_PERMISSIONS_FOR_A_RESULT_EXPOSED_SAME_OBJECT_THOUGH_CURRENT_HOLD_STOP_MITIGATES_IMMEDIATE_RISK",
-    "false_negative": "MODERATE_WATCH; ZERO_EXECUTABLE_MECHANISM_EMPTY_QUEUE_AND_34_OF_35_CURRENT_OBJECTS_TERMINAL_REQUIRE_EXPLICIT_DISPOSITION_OF_THE_PREOUTCOME_REACHABLE_STATE_RESIDUAL_WITHOUT_FORCING_A_SUCCESSOR",
-    "moving_goalpost_rescue": "LOW_WATCH_FOR_CAND35_DUE_TO_FROZEN_FIELDS_ONE_SHOT_RAW_BEFORE_RETURN_AND_AUTHORITY_EXHAUSTION; MODERATE_SEMANTIC_WATCH_FOR_H7_UNTIL_PHASE_MONOTONICITY_IS_RESTORED",
-    "over_terminalization": "MODERATE_WATCH; CURRENT_OBJECT_CLOSURES_ARE_JUSTIFIED_BUT_EMPTY_QUEUE_SHADOW_MUST_NOT_TURN_TOPIC_LEVEL_EXPLORATION_OFF_WITHOUT_EXPLICIT_THEORY_BACKWARD_DISPOSITION"
+    "false_positive": "LOW_TO_MODERATE_WATCH; POST_OUTCOME_EXPLORATORY_RESIDUALS_MUST_NOT_BOOTSTRAP_IMMEDIATE_CANONICAL_ADMISSION; CURRENT_ANALYST_GATE_CAUGHT_THIS",
+    "false_negative": "MODERATE_WATCH; ZERO_EXECUTABLE_MECHANISM_EMPTY_QUEUE_SHADOW_AND_ZERO_CANONICAL_MAIN_CAPACITY_CAN_SUPPRESS_THROUGHPUT_IF_PROLONGED",
+    "moving_goalpost_rescue": "LOW_CANONICAL_MODERATE_EXPLORATION_WATCH; CAND35_SAME_OBJECT_IS_FROZEN_TERMINAL_BUT_FORGE_ENTERED_IMMEDIATE_SUCCESSOR_SURFACE_AND_WAS_DEFERRED",
+    "over_terminalization": "MODERATE_WATCH; CURRENT_OBJECT_CLOSURES_ARE_JUSTIFIED_BUT_INDEPENDENT_FUTURE_TOPIC_REIDENTIFICATION_MUST_REMAIN_A_REAL_PATHWAY"
   },
   "development_iteration_calibration": {
-    "candidate35": "LIVE_CLEAN_OPEN_DEVELOPMENT_TO_RESULT_EXPOSED_DEVELOPMENT_TRANSITION; ONE_FIXED_FIVE_ARM_SYSTEM_ARCHITECTURE_BATCH; RAW_EXCLUSIVE_CREATE_BEFORE_RESPONSE_RETURN; ZERO_CONFIRMATORY_CREDIT; AUTHORITY_EXHAUSTED; CURRENT_OBJECT_TERMINAL; NO_SAME_OBJECT_RESCUE",
-    "h7": "SAME_OBJECT_PRIOR_RESULT_EXPOSURE_EXISTS_AND_R100_RECORDED_RESULT_EXPOSED; R101_OPEN_LABEL_IS_A_PHASE_MONOTONICITY_REGRESSION_DESPITE_CURRENT_SCIENCE_INVARIANT_ONLY_HOLD",
-    "candidate34": "RESULT_EXPOSED_DEVELOPMENT_CURRENT_OBJECT_TERMINAL_ZERO_CONFIRMATORY_CREDIT_NO_SAME_OBJECT_RESCUE",
-    "cycle3": "MANDATORY_REASSESSMENT_NOT_HARD_CAP_DEMONSTRATED_BY_CAND35",
-    "science_invariant_repair": "WORKFLOW_SYNTAX_AUTHORITY_RUNTIME_PATH_SERIALIZATION_PRESERVATION_AND_ALREADY_FIXED_BEHAVIOR_PLUMBING_ONLY",
-    "science_affecting_change": "METRIC_SCORER_MEANING_THRESHOLD_TOLERANCE_COMPARATOR_SEED_EXCLUSION_INTERVENTION_RESOURCE_PRIVILEGE_HYPOTHESIS_FALSIFIER_OR_SUCCESS_CRITERIA_CHANGE_REQUIRES_EXPLICIT_VERSIONED_REVISION_OR_FRESH_SUCCESSOR_AFTER_EXPOSURE"
-  },
-  "moving_goalpost_rescue_assessment": {
-    "candidate35": "LOW_RISK_AND_WELL_BOUNDED",
-    "h7": "SEMANTIC_RISK_FROM_PHASE_REGRESSION_REQUIRES_PROSPECTIVE_CORRECTION_BEFORE_ANY_BROADER_DEVELOPMENT_PERMISSION",
-    "historical_results_rewritten": false
-  },
-  "over_terminalization_assessment": {
-    "current_object_semantics": "CALIBRATED_FOR_CAND34_AND_CAND35",
-    "candidate_supply": "MODERATE_WATCH",
-    "preoutcome_residual": "REACHABLE_STATE_OR_MATCHED_NATURAL_HISTORY_QUESTION_REQUIRES_EXPLICIT_THEORY_BACKWARD_DISPOSITION",
-    "automatic_successor_required": false,
-    "topic_death_justified": false
-  },
-  "pass_reachability": {
-    "reachable_without_weaker_standards": true,
-    "current_path": "H7_SCIENCE_INVARIANT_PROTECTED_SIDECAR_CAPABILITY_REPAIR_THEN_NON_RESULT_READINESS_THEN_STOP_THEN_FRESH_ANALYST_EXACT_REAUTHORIZATION_THEN_FRESH_ONE_WAY_FORMAL_IF_STILL_VALID",
-    "fresh_live_consumed_one_way_trace_observed": false,
-    "criterion_relaxation_required": false
-  },
-  "claim_type_findings": {
-    "candidate35": "SYSTEM_ONLY; NO_SAME_OBJECT_MECHANISM_OR_PREFORMAL_UPLIFT; ZERO_CONFIRMATORY_CREDIT",
-    "h7": "MECHANISM_PREFORMAL_PERSISTED_READY_BUT_EFFECTIVE_FORMAL_STOP; SAME_OBJECT_PHASE_SHOULD_REMAIN_RESULT_EXPOSED",
-    "candidate34": "MECHANISM_CURRENT_OBJECT_TERMINAL_ONLY",
-    "fresh_successor": "LEGITIMATE_ONLY_WITH_NEW_ID_INDEPENDENT_MOTIVATION_FRESH_DEVELOPMENT_STATE_AND_FRESH_REDUCTION_COMPARATOR_FALSIFIER_CONTRACT"
-  },
-  "mechanism_supply_health": {
-    "status": "ZERO_EXECUTABLE_MECHANISM_EMPTY_CANONICAL_QUEUE_WITH_ONE_EXPLICIT_PREOUTCOME_RESIDUAL_REQUIRING_DISPOSITION",
-    "viable_executable_mechanism": 0,
-    "queued": 0,
-    "terminal_for_current_object": 34,
-    "nonterminal_hold": 1,
-    "recommendation": "DO_NOT_MANUFACTURE_RESCUE_SUCCESSOR; EXPLICITLY_ADJUDICATE_PREOUTCOME_RESIDUAL_VIA_THEORY_BACKWARD_QUALITY_FLOOR_OR_NO_COHERENT_MECHANISM_TARGET"
-  },
-  "funnel_observability": {
-    "canonical_candidates": 35,
-    "mechanism": 14,
-    "system": 21,
-    "terminal_for_current_object": 34,
-    "nonterminal_hold": 1,
-    "queued": 0,
-    "open_development_r101": 2,
-    "result_exposed_development_r101": 33,
-    "preformal_eligible_nonterminal": 1,
-    "persisted_ready": 1,
-    "effective_executable_ready": 0,
-    "viable_executable_mechanism": 0,
-    "system_priority_exception_active": 0,
-    "phase_monotonicity_invariant_needed": "OPEN_TO_RESULT_EXPOSED_TO_CONSUMED_ONE_WAY_ONLY_FOR_SAME_OBJECT; RESULT_EXPOSED_TO_OPEN_REQUIRES_EXPLICIT_FRESH_VERSIONED_OBJECT_SEMANTICS",
-    "revision_axes_recommendation": "SEPARATE_SCIENTIFIC_REVISION_IMPLEMENTATION_REVISION_AND_OBSERVATION_BATCH_ID"
+    "h7": "RESULT_EXPOSED_PHASE_MONOTONICITY_RESTORED_PROSPECTIVELY; SAME_R5_OBJECT; ONLY_SCIENCE_INVARIANT_CAPABILITY_AND_EXACT_AUTHORITY_PLUMBING_ALLOWED",
+    "candidate35": "ONE_FIXED_SYSTEM_ARCHITECTURE_BATCH_PRESERVED_ZERO_CREDIT_AUTHORITY_EXHAUSTED_CURRENT_OBJECT_TERMINAL_NO_SAME_OBJECT_RESCUE",
+    "candidate34": "RESULT_EXPOSED_CURRENT_OBJECT_TERMINAL_ZERO_CREDIT_NO_SAME_OBJECT_RESCUE",
+    "cycle3": "MANDATORY_REASSESSMENT_NOT_HARD_CAP",
+    "forge": "POST_OUTCOME_IMMEDIATE_SUCCESSOR_EXPLORATION_ZERO_CREDIT_NONCANONICAL; CANONICAL_PROMOTION_DEFERRED; TARGET_SELECTION_BOUNDARY_SHOULD_TIGHTEN"
   },
   "preformal_calibration": {
-    "status": "MOSTLY_WELL_CALIBRATED",
-    "candidate35": "REAL_DEVELOPMENT_RESULT_BELOW_PREFORMAL_ZERO_CONFIRMATORY_CREDIT_AND_NO_HIDDEN_SECOND_FORMAL_GATE",
-    "h7": "PERSISTED_READY_IS_NOT_EFFECTIVE_EXECUTABILITY_AND_HOLD_MUST_DOMINATE_EXECUTION_PERMISSION",
-    "repeated_development_observations_independent_confirmation": false
+    "status": "CALIBRATED_WITH_OBSERVABILITY_WATCH",
+    "h7_ready_persisted_not_equal_executable": true,
+    "h7_ready_not_equal_success": true,
+    "candidate35_real_development_result_below_preformal": true,
+    "repeated_development_observations_independent_confirmation": false,
+    "hidden_second_formal_gate_observed": false
+  },
+  "claim_type_findings": {
+    "MECHANISM": "H7_IS_SOLE_NONTERMINAL_MECHANISM_RESULT_EXPOSED_ON_INTEGRITY_CAPABILITY_HOLD; NO_THRESHOLD_RELAXATION_NEEDED",
+    "SYSTEM": "CAND35_CURRENT_OBJECT_TERMINAL_RESULT_EXPOSED_ZERO_CREDIT; NO_SAME_OBJECT_UPLIFT",
+    "fresh_successor": "LATER_NATURAL_HISTORY_FULL_STATE_SUCCESSOR_REQUIRES_INDEPENDENT_REIDENTIFICATION_NEW_ID_FRESH_CONTRACT_AND_ZERO_INHERITED_CREDIT; START_AT_SYSTEM_UNLESS_PRE_RESULT_CONTRACT_JUSTIFIES_HIGHER_CEILING"
+  },
+  "mechanism_supply_health": {
+    "classification": "WEAK_WATCH",
+    "executable_mechanism": 0,
+    "queued": 0,
+    "shadow": 0,
+    "interpretation": "NOT_ITSELF_EVIDENCE_OF_OVERCONSERVATISM_BECAUSE_CURRENT_IMMEDIATE_SUCCESSOR_PROPOSAL_IS_POST_OUTCOME_RESCUE_ADJACENT; CONTINUE_INDEPENDENT_SEARCH"
+  },
+  "funnel_observability": {
+    "classification": "CLARIFY",
+    "issues": [
+      "CAND35_RESULT_BEARING_RECORDS_RETAIN_DEVELOPMENT_REVISION_LABEL_ENDING_NONRESULT",
+      "ANALYST_R103_INPUT_SUMMARY_CALLS_R93_WELL_CALIBRATED_WHILE_AUTHORITATIVE_R93_IS_MIXED_CALIBRATION"
+    ],
+    "scientific_effect": "NONE_OBSERVED",
+    "historical_rewrite_required": false
+  },
+  "pass_reachability": {
+    "scientific": "REACHABLE_WITHOUT_STANDARD_RELAXATION",
+    "h7_required_sequence": [
+      "SCIENCE_INVARIANT_PROTECTED_SIDECAR_CAPABILITY_AND_EXACT_AUTHORITY_PLUMBING",
+      "GREEN_NON_RESULT_READINESS",
+      "STOP",
+      "FRESH_ANALYST_GATE",
+      "ONLY_THEN_FRESH_ONE_WAY_FORMAL_IF_AUTHORIZED"
+    ],
+    "operational_current_state": "PAUSED_ZERO_CANONICAL_MAIN_CAPACITY",
+    "evidence_standard_change_needed": false
   },
   "prospective_recommendations": [
-    "NEXT_ANALYST_GENERATION_SHOULD_RESTORE_H7_PHASE_MONOTONICITY: SAME_OBJECT_RESULT_EXPOSED_OR_EXPLICIT_FRESH_VERSIONED_OBJECT_REVISION_PRESERVING_PRIOR_RESULT; DO_NOT_REWRITE_HISTORY",
-    "KEEP_CAND35_CURRENT_OBJECT_TERMINAL_AND_NO_SAME_OBJECT_RESCUE; EXPLICITLY_ADJUDICATE_PREOUTCOME_REACHABLE_STATE_RESIDUAL_THROUGH_THEORY_BACKWARD_QUALITY_FLOOR_OR_NO_COHERENT_MECHANISM_TARGET",
-    "PROSPECTIVELY_SEPARATE_SCIENTIFIC_REVISION_IMPLEMENTATION_REVISION_AND_OBSERVATION_BATCH_ID; DO_NOT_MUTATE_EXISTING_RAW",
-    "KEEP_PERSISTED_READY_AND_EFFECTIVE_EXECUTABLE_AS_DISTINCT_MACHINE_READABLE_FIELDS_WITH_HOLD_DOMINATING_EXECUTION",
-    "KEEP_H7_FORMAL_STOP_AFTER_GREEN_NON_RESULT_READINESS_UNTIL_A_LATER_FRESH_ANALYST_REFETCHES_EXACT_BINDINGS_AND_EXPLICITLY_AUTHORIZES_ONE_WAY_START"
+    "KEEP_H7_RESULT_EXPOSED_FOR_SAME_OBJECT_AND_ALLOW_ONLY_SCIENCE_INVARIANT_REPAIR_UNLESS_FRESH_VERSION_OBJECT_IS_EXPLICITLY_CREATED",
+    "STOP_AFTER_GREEN_H7_NON_RESULT_READINESS_FOR_FRESH_ANALYST_BEFORE_FORMAL",
+    "KEEP_CAND35_CURRENT_OBJECT_TERMINAL_ZERO_CREDIT_NO_RERUN_RETUNE_RESCORE_OR_UPLIFT",
+    "PRESERVE_FORGE_BRANCH_AS_ZERO_CREDIT_HISTORY_BUT_EXCLUDE_TERMINAL_FAMILY_IMMEDIATE_POST_OUTCOME_SUCCESSOR_SURFACES_FROM_FAST_FORGE_SELECTION",
+    "ALLOW_FUTURE_NATURAL_HISTORY_SUCCESSOR_ONLY_AFTER_INDEPENDENT_REIDENTIFICATION_NEW_ID_FRESH_PROSPECTIVE_CONTRACT_STATE_AND_ZERO_INHERITED_CREDIT",
+    "SEPARATE_SCIENTIFIC_REVISION_IMPLEMENTATION_INSTRUMENTATION_REVISION_AND_OBSERVATION_BATCH_IDENTITY_PROSPECTIVELY",
+    "CORRECT_FUTURE_R93_SUMMARY_LABEL_TO_MIXED_CALIBRATION_WITHOUT_REWRITING_R103",
+    "TREAT_DISABLED_MAIN_CAPACITY_AS_OPERATIONAL_THROUGHPUT_NOT_AS_SCIENTIFIC_FAILURE_OR_REASON_FOR_GATE_RELAXATION"
   ],
   "utility_request": {
-    "created": false,
-    "value": "NONE",
-    "reason": "NO_BOUNDED_UTILITY_MEASUREMENT_IS_NEEDED; MATERIAL_FINDINGS_ARE_CANONICAL_STATE_SEMANTICS_AND_CANDIDATE_SUPPLY_ADJUDICATION"
+    "requested": false,
+    "reason": "NO_BOUNDED_UTILITY_TASK_WOULD_MATERIALLY_IMPROVE_CURRENT_CALIBRATION_WITHOUT_COLLIDING_WITH_LIVE_H7_OR_FORGE_BOUNDARIES"
   },
   "hard_floor_confirmation": {
+    "experiment_dispatched": false,
+    "identity_consumed": false,
+    "research_or_evidence_ref_mutated": false,
+    "research_pr_merged": false,
+    "scheduler_changed": false,
+    "scientific_criteria_changed": false,
     "consumed_formal_rerun_retune_rescore": false,
-    "historical_pass_fail_rewrite": false,
-    "evidence_mutation": false,
-    "silent_post_formal_repair": false,
-    "evaluator_or_heldout_leakage_observed": false,
-    "candidate35_development_raw_preserved_before_return_interpretation": true,
-    "candidate35_confirmatory_credit": 0,
-    "h7_fresh_identity_or_start": false,
-    "status": "INTACT"
+    "historical_pass_fail_rewritten": false,
+    "persistence_scope": "ANALYSIS_METHODOLOGY_CALIBRATION_LATEST_STATE_HISTORY_ONLY"
   },
   "confidence": {
-    "overall": "HIGH",
-    "candidate35_execution_and_preservation": "HIGH",
-    "formal_nonconsumption": "HIGH",
-    "h7_phase_regression": "HIGH",
-    "candidate_supply_diagnosis": "MODERATE",
-    "basis": "DIRECT_LIVE_RESEARCH_WORKFLOW_RUNNER_PRESERVATION_RAW_REF_BATCH_MARKER_MAIN_TAG_REFS_AND_R100_R101_CANONICAL_STATE_COMPARISON"
+    "level": "HIGH",
+    "value": 0.95,
+    "basis": "CURRENT_MAIN_AND_TAGS_H7_CONTROLLER_AND_READINESS_CAND35_RAW_FORGE_BRANCH_CONTROL_AND_ANALYST_INDEPENDENTLY_REFETCHED; FRESH_FORMAL_TRANSITION_AND_LATER_INDEPENDENT_SUCCESSOR_REIDENTIFICATION_REMAIN_UNOBSERVED"
   },
   "questions_for_control_analyst": [
-    "WAS_R101_H7_OPEN_DEVELOPMENT_INTENTIONAL; IF_SAME_OBJECT_RESTORE_RESULT_EXPOSED_NEXT_GENERATION_OR_IF_FRESH_OBJECT_IDENTIFY_THE_EXPLICIT_VERSIONED_REVISION_SUCCESSOR_CONTRACT_PRESERVING_PF_R1",
-    "WILL_THE_CAND35_PREOUTCOME_REACHABLE_STATE_ON_MANIFOLD_RESIDUAL_RECEIVE_AN_EXPLICIT_THEORY_BACKWARD_DISPOSITION_RATHER_THAN_REMAINING_IMPLICIT_UNDER_NO_TARGET_SHADOW",
-    "CAN_DURABLE_STATE_ENFORCE_MONOTONIC_DEVELOPMENT_PHASE_TRANSITIONS_AND_SEPARATE_SCIENTIFIC_IMPLEMENTATION_AND_OBSERVATION_BATCH_REVISION_AXES"
-  ]
+    "PRESERVE_CORRECTED_H7_RESULT_EXPOSED_PHASE_MONOTONICALLY_AND_PREVENT_DOWNSTREAM_OPEN_PERMISSION_INFERENCE",
+    "CORRECT_R93_METHODOLOGY_SUMMARY_LABEL_PROSPECTIVELY_TO_MIXED_CALIBRATION_WITHOUT_HISTORY_REWRITE",
+    "MAKE_EXPLICIT_THE_BOUNDARY_BETWEEN_ZERO_CREDIT_POST_OUTCOME_HYPOTHESIS_GENERATION_AND_INDEPENDENT_SUCCESSOR_MOTIVATION",
+    "PRESERVE_A_REAL_INDEPENDENT_REIDENTIFICATION_PATHWAY_SO_CURRENT_OBJECT_TERMINALIZATION_DOES_NOT_BECOME_TOPIC_DEATH",
+    "CONTINUE_EXPOSING_PERSISTED_READY_SEPARATELY_FROM_EFFECTIVE_EXECUTABILITY_AND_FORMAL_AUTHORITY"
+  ],
+  "persistence": {
+    "history_path": "analysis/methodology_calibration/history/2026-09-24/0122.md",
+    "latest_path": "analysis/methodology_calibration/latest.md",
+    "state_path": "analysis/methodology_calibration/state.json"
+  }
 }
