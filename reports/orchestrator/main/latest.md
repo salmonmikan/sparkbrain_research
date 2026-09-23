@@ -1,50 +1,68 @@
-# MAIN canonical science report — candidate #34 PRE_FORMAL R2
+# MAIN canonical science report — candidate #35 Architecture R1
 
 - schema_version: `2`
-- generation: `MAIN-20260923T164400+0900-RELAY-CAND34-PREFORMALR2-R94-WAITING-ANALYST`
-- execution_mode: `RELAY`
+- generation: `MAIN-20260923T172900+0900-PRIMARY-CAND35-ARCHR1-R95-WAITING-CI`
+- execution_mode: `PRIMARY`
 - status: `WAITING_EXTERNAL`
-- candidate: `CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY`
-- layer: `PRE_FORMAL`
+- candidate: `CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING`
+- layer: `ARCHITECTURE_STUDY`
 - development phase: `OPEN_DEVELOPMENT`
-- development revision: `PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED`
-- cycle: `4`
-- claim ceiling: `MECHANISM`
-- preformal eligible/readiness: `true / READY`
-- hold class/reason: `null / null`
+- development revision: `ARCHITECTURE-R1-NONRESULT`
+- cycle: `1`
+- claim ceiling: `SYSTEM`
+- preformal eligible/readiness: `false / NOT_READY`
 - terminal state: `NONTERMINAL`
-- queue state: `QUEUED_FOR_MAIN_PREFORMAL_R2_ONE_BOUNDED_RESPONSE_EXACT_EXECUTOR_BOUND`
-- system priority exception: `used=false`
-- Analyst authority: `R94`, one bounded `D34-Q002` development response only; stop after first meaningful exposure
-- canonical execution branch/head: `research/main-cand34-assembly-route-preformal-r93-response@8ce961dc88fb52afa6399093fce1e3de7e982f2b`
-- closed scientific contract: `research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4`
-- raw preserve ref: `preserve/cand34-d34-q002-r94-raw-20260923@4d45f1135bcb607f1e663648cd8335333eb98de4`
+- system priority exception: `NO_COHERENT_MECHANISM_TARGET`, prospectively authorized by Evidence Analyst R95
+- canonical branch/head: `research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1@58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751`
+- stable base: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
+- CI: `35837060130`, in progress on the exact final head at disposition
 
-## Relay reconciliation
+## Analyst authority and scope
 
-No fresh Evidence Analyst generation has superseded R94. The exact active executor/source head, closed R2 contract, and preserved raw ref are unchanged. Result-bearing workflow `35826846989` and preservation workflow `35828594071` remain completed successfully. No fresh PRIMARY `RUNNING` lease exists on candidate #34, and current Fast Forge work explicitly avoids the candidate #34 result/interpretation/successor surface.
+R95 explicitly allocates candidate #35 to MAIN as SYSTEM / Architecture Study / OPEN_DEVELOPMENT under the pre-recorded `NO_COHERENT_MECHANISM_TARGET` exception. The allowed work is non-result Architecture only: deterministic clone/reset, queue-cap enforcement, serializer, and synthetic validation. Candidate response-bearing execution remains STOP. Same-object SYSTEM-to-MECHANISM uplift is forbidden.
 
-R94 required MAIN to stop after the first meaningful PRE_FORMAL development-result exposure and return to Evidence Analyst. That exposure and durable raw preservation already occurred in the preceding MAIN generation. This Relay therefore performs no scientific execution, no rerun, no retune/rescore, no successor construction, and no FORMAL action.
+Candidate #34 is terminal-for-current-object after its preserved one-shot PRE_FORMAL development result and was not touched. H7 remains independently FORMAL-held. Fast Forge has no admitted or promoted object and explicitly excludes #35 canonical work. Utility remains PF-R1-specific and is not a dependency.
 
-## Development/Funnel authority preservation
+## Work performed
 
-All Analyst-owned fields remain exactly R94's values: `OPEN_DEVELOPMENT`, revision `PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED`, `MECHANISM`, eligible `true`, readiness `READY`, null hold, `NONTERMINAL`, queue state `QUEUED_FOR_MAIN_PREFORMAL_R2_ONE_BOUNDED_RESPONSE_EXACT_EXECUTOR_BOUND`, and no system-priority exception. Relay does not canonicalize the post-exposure phase transition; only a fresh Evidence Analyst may do so.
+A fresh canonical research branch was created from the exact stable `main` head. No Forge branch or Forge observation was reused.
 
-## Evidentiary status
+Added `src/sparkbrain/v05/subthreshold_architecture.py` with non-result Architecture helpers that:
 
-No new scientific result was produced in this run. The already-preserved `D34-Q002` record remains a PRE_FORMAL development result with zero confirmatory credit and no official scoring. `D34-Q002` has been consumed once as a development execution and repeat execution is forbidden. Prior `D34-Q001`, R1 prebind, the closed R2 contract, the executor head, and all consumed identities remain unchanged.
+- inspect serialized pending-arrival queue length without executing it;
+- enforce a caller-supplied queue cap and fail closed when exceeded, with the candidate #35 queue-free anchor represented by cap zero;
+- deep-clone an already queue-free brain without advancing source time or executing a cue, and verify source/clone state-hash identity;
+- create a reset clone that changes only `potential` and `adaptation` for caller-supplied unit IDs while leaving candidate-unit choice, cue bytes, timing and response criteria undefined;
+- serialize deterministic local physical state (`potential`, `adaptation`, threshold, refractory and update-time fields) for the ordinary local threshold/decay reduction panel;
+- produce a canonical SHA-256 signature that explicitly marks candidate-response, PRE_FORMAL and FORMAL execution as disallowed.
 
-## Hard-floor status
+Added `tests/test_v05_subthreshold_architecture.py` using synthetic fixtures only. The tests exercise exact queue-free cloning, queue-cap fail-closed behavior without advancing queued work, reset-diff scope, deterministic/order-independent serialization and explicit result-bearing-layer prohibitions. They do not execute the candidate #35 weak-cue response.
 
-- FORMAL identity created/consumed this run: `false`
+The first implementation-only CI exposed one line-length lint error. This was classified as `SCIENCE_INVARIANT_REPAIR` and repaired solely by wrapping the function signature; no hypothesis, cue, observable, reset meaning, queue semantics, comparator, threshold, falsifier, resource contract or success criterion changed.
+
+## Observations / evidentiary status
+
+No candidate response was generated or inspected. No scientific observation about whether queue-free subthreshold state changes a later weak-cue response was produced. All work in this run is `SYSTEM Architecture / NON_EVIDENTIARY` implementation and synthetic validation only. Confirmatory credit remains zero.
+
+Architecture feasibility information obtained before external CI completion is limited to implementation construction: the main runtime exposes the required state/queue/checkpoint structures without requiring a result-bearing execution. Final implementation readiness remains contingent on exact-head CI success.
+
+## Prior-result and hard-floor preservation
+
+- candidate #34 D34-Q002 rerun/retune/rescore: `false`
+- FORMAL identity created/consumed: `false`
 - FORMAL STARTED: `false`
 - protected/concealed FORMAL evaluation accessed: `false`
-- official FORMAL scoring: `false`
-- immutable/formal/sealed/evidence/preserve scientific refs mutated: `false`
+- official scoring: `false`
+- result-bearing workflow dispatched: `false`
+- scientific preserve/evidence/formal/sealed/freeze ref mutation: `false`
 - consumed FORMAL identity rerun/retune/rescore: `false`
-- D34-Q002 rerun: `false`
-- science-affecting change: `false`
+- prior scientific results rewritten: `false`
+- Forge-derived code or observations reused: `false`
+
+Stable `main` was independently re-fetched before mutation. Authoritative `evidence/*` remained the same five annotated tag objects; tag-form `formal/*`, `sealed/*`, and `freeze/*` remained empty. PR #148 and #149 remained open. Fast Forge and Utility were re-fetched for collision awareness and do not own #35.
 
 ## Stop reason / next canonical action
 
-`WAITING_EXTERNAL` for a fresh Evidence Analyst review of the exact preserved D34-Q002 raw result and provenance. Until a superseding Analyst generation appears, MAIN must not rerun `D34-Q002`, retune/rescore it, reinterpret Funnel fields, change `development_phase`, perform an outcome-responsive science-affecting redesign, or take FORMAL action.
+`WAITING_EXTERNAL` because generic CI `35837060130` is still running on exact head `58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751`.
+
+On the next MAIN/Relay continuation, re-fetch the Evidence Analyst generation, exact research head and this CI run. If CI is green and R95 remains materially unchanged, close Architecture R1 implementation readiness and return the non-result construction to Evidence Analyst; do not execute a candidate response. If CI fails, repair only clearly science-invariant implementation defects on this object. Any change to scientific cue/reset/cap/observable meaning requires fresh Analyst authority before result-bearing work.
