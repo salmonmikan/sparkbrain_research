@@ -6,59 +6,21 @@
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
   "supersedes_generation_id": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9",
   "input_generations": {
-    "control_brain": {
-      "generation_id": "CTRL-20260923T115056+0900-R41-4C156929",
-      "handoff_commit": "27b6531b6b3a1d941a484aeee012d5c59fe63d79"
-    },
-    "evidence_analyst": {
-      "generation_id": "EVA-20260923T105725+0900-R92-6B8E31D4",
-      "handoff_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a"
-    },
-    "main_report": {
-      "generation_id": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
-      "handoff_commit": "0167aa75e768f51bbc37528868af569a1d054786"
-    },
-    "fast_forge_report": {
-      "generation_id": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS",
-      "handoff_commit": "b2fe7ad25a356d170de1291ab0de0b7e4eec3dfe"
-    },
-    "prior_literature": {
-      "generation_id": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9",
-      "handoff_commit": "cd5069201723110acc9e15d60216c9d1f2e63ce7"
-    }
+    "control_brain": {"generation_id": "CTRL-20260923T115056+0900-R41-4C156929", "handoff_commit": "27b6531b6b3a1d941a484aeee012d5c59fe63d79"},
+    "evidence_analyst": {"generation_id": "EVA-20260923T105725+0900-R92-6B8E31D4", "handoff_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a"},
+    "main_report": {"generation_id": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY", "handoff_commit": "0167aa75e768f51bbc37528868af569a1d054786"},
+    "fast_forge_report": {"generation_id": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS", "handoff_commit": "b2fe7ad25a356d170de1291ab0de0b7e4eec3dfe"},
+    "prior_literature": {"generation_id": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9", "handoff_commit": "cd5069201723110acc9e15d60216c9d1f2e63ce7"}
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
   "schedule_slot": "12:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "h7_formal_r5": {
-      "branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-      "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-      "status": "NON_EVIDENTIARY_PREIDENTITY_PROVENANCE_HOLD"
-    },
-    "candidate34_preformal_r1": {
-      "branch": "research/main-cand34-assembly-route-preformal-r91-cycle3",
-      "head": "2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0",
-      "status": "PREFORMAL_DEVELOPMENT_PREBIND_NO_RESULT_PRESERVED"
-    },
-    "candidate34_preformal_r2_initial_observed": {
-      "branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-      "head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a",
-      "status": "NON_RESULT_AUTHORITY_MISMATCH_BLOCKED_BY_MAIN"
-    },
-    "candidate34_preformal_r2_latest_repository_movement": {
-      "branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-      "head": "a134513838d8f30013d904a95a61cfbcf9454eaa",
-      "status": "OPPORTUNITY_AWARE_R92_ALIGNMENT_REPOSITORY_MOVEMENT_NOT_YET_FRESH_ANALYST_DISPOSITIONED"
-    },
-    "evidence_tags": [
-      "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-      "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-      "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "185b741e69ea8a0ce0d076153d36e9296a748765",
-      "e4c4e6428d8ef9e09e92cae231041de0788162e2"
-    ],
+    "h7_formal_r5": {"branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12", "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80", "status": "NON_EVIDENTIARY_PREIDENTITY_PROVENANCE_HOLD"},
+    "candidate34_preformal_r1": {"branch": "research/main-cand34-assembly-route-preformal-r91-cycle3", "head": "2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0", "status": "PREFORMAL_DEVELOPMENT_PREBIND_NO_RESULT_PRESERVED"},
+    "candidate34_preformal_r2_final_observed": {"branch": "research/main-cand34-assembly-route-preformal-r92-cycle4", "head": "43d0f25541a3c447d4c7156303647ae94f3119f4", "science_affecting_parent": "a134513838d8f30013d904a95a61cfbcf9454eaa", "status": "OPPORTUNITY_AWARE_R92_CONTRACT_PLUS_TESTS_NON_RESULT_AWAITING_FRESH_ANALYST_DISPOSITION"},
+    "evidence_tags": ["4d6c0bd9a6c06c17352941d3fa730502e72b8540", "82b88f3e2ad524fed8b72300dcba46053c1f2c7e", "e7d99cc806206ac27ced225d4779c9fc5bb67ff5", "185b741e69ea8a0ce0d076153d36e9296a748765", "e4c4e6428d8ef9e09e92cae231041de0788162e2"],
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
@@ -67,122 +29,33 @@
     "preserve_refs_inspected": true,
     "control_refs_inspected": true,
     "consumed_identities_inspected": true,
-    "relevant_prs": {
-      "148": "OPEN_UNMERGED",
-      "149": "OPEN_UNMERGED"
-    },
+    "relevant_prs": {"148": "OPEN_UNMERGED", "149": "OPEN_UNMERGED"},
     "orchestrator_role_history_inspected": true,
-    "orchestrator_role_history_note": "2026-09-23 role-suffixed history directory contains older main history only; designated main/sub latest+state are fresher and were consumed",
-    "ops_control_tip_before_persistence": "27b6531b6b3a1d941a484aeee012d5c59fe63d79",
-    "ops_evidence_analyst_tip_before_persistence": "a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "ops_external_tip_before_write": "6755579f5f21b19ca90788c948d8126529b648c6"
+    "orchestrator_role_history_note": "2026-09-23 role-suffixed history was older than the designated main/sub latest+state streams; designated streams were consumed",
+    "ops_control_tip_consumed": "27b6531b6b3a1d941a484aeee012d5c59fe63d79",
+    "ops_evidence_analyst_tip_consumed": "a05ab3f655a23eabd84c910ba337d64a948c168a",
+    "ops_external_tip_before_first_write": "6755579f5f21b19ca90788c948d8126529b648c6"
   },
   "workflow_state_observed": {
-    "35814833603": {
-      "head": "a134513838d8f30013d904a95a61cfbcf9454eaa",
-      "workflow": "cand34-preformal-r2-contract",
-      "status": "completed",
-      "conclusion": "failure",
-      "result_bearing": false
-    },
-    "35814833574": {
-      "head": "a134513838d8f30013d904a95a61cfbcf9454eaa",
-      "workflow": "ci",
-      "status": "in_progress",
-      "conclusion": null,
-      "result_bearing": false
-    }
+    "35814951495": {"head": "43d0f25541a3c447d4c7156303647ae94f3119f4", "workflow": "cand34-preformal-r2-contract", "status": "completed", "conclusion": "success", "result_bearing": false},
+    "35814951496": {"head": "43d0f25541a3c447d4c7156303647ae94f3119f4", "workflow": "ci", "status": "completed", "conclusion": "success", "result_bearing": false}
   },
   "genuinely_new_information": true,
   "findings": [
-    {
-      "id": "CAUSAL_OPPORTUNITY_VS_PERTURBATION_INFORMATIVITY",
-      "type": "RECENT_PERTURBATION_DESIGN_BAR",
-      "sources": [
-        "Ogino et al. 2026, Designing optimal perturbation inputs for system identification in neuroscience, eLife Reviewed Preprint v2"
-      ],
-      "finding": "Modern neural system-identification work shows that perturbations improve identification when their spatial/frequency structure excites otherwise weak or latent modes; intensity or mere physical intervention opportunity is not sufficient.",
-      "impact": "R92's opportunity-aware source-only intervention is directionally supported, but future broad interpretation should require that the frozen perturbation is informative for the exact alternatives named in the claim. This is prospective and must not rewrite current R2."
-    },
-    {
-      "id": "CLAIM_SCOPED_DATA_INFORMATIVITY",
-      "type": "METHOD_SCOPE_SHARPENING",
-      "sources": [
-        "van Waarde et al. 2020, Data informativity: a new perspective on data-driven analysis and control"
-      ],
-      "finding": "Persistent excitation sufficient for unique whole-system identification is stronger than necessary for many narrower analysis questions; data can be informative for a specific property without identifying the entire system.",
-      "impact": "Candidate #34 should use a claim-scoped informativity criterion rather than adding a global excitation/identification gate to a bounded local edge-effect question."
-    },
-    {
-      "id": "LOCAL_PHASE_STATE_RESPONSE_REDUCTION",
-      "type": "ORDINARY_LOCAL_DYNAMICS_REDUCTION",
-      "sources": [
-        "Gutkin, Ermentrout & Reyes 2005, Phase-response curves give the responses of neurons to transient inputs"
-      ],
-      "finding": "The effect of a transient synaptic input on spike timing depends on local phase, firing rate, afterhyperpolarization and adaptation; the same input can have near-zero, positive or negative influence depending on arrival state.",
-      "impact": "A future +1ms candidate-34 effect may be explained by an ordinary low-dimensional destination-state timing response rather than an irreducible Assembly route mechanism."
-    },
-    {
-      "id": "HYBRID_EVENT_SENSITIVITY_REDUCTION",
-      "type": "ORDINARY_HYBRID_DYNAMICS_REDUCTION",
-      "sources": [
-        "Wunderlich & Pehle 2021, Event-based backpropagation can compute exact gradients for spiking neural networks",
-        "Kong et al. 2024, Saltation Matrices: The Essential Tool for Linearizing Hybrid Dynamical Systems"
-      ],
-      "finding": "Discontinuous event-driven/spiking systems have established exact or first-order sensitivity machinery that accounts for derivative jumps at events; EventProp gradients match finite differences to very high precision in recurrent LIF networks, and saltation matrices provide the general hybrid jump sensitivity update.",
-      "impact": "A fresh successor should test whether ordinary matched local/event sensitivity predicts the delay/weight intervention effect before attributing a residual to a broader Assembly-level mechanism."
-    }
+    {"id": "CAUSAL_OPPORTUNITY_VS_PERTURBATION_INFORMATIVITY", "type": "RECENT_PERTURBATION_DESIGN_BAR", "sources": ["Ogino et al. 2026, eLife Reviewed Preprint v2"], "finding": "Perturbations reveal weak/latent dynamics when their spatial/frequency structure excites the relevant modes; intensity or physical opportunity alone does not guarantee informative identification.", "impact": "R92's opportunity-aware repair is directionally supported, but future broad interpretation needs claim-scoped perturbation informativity. No current R2 rewrite follows."},
+    {"id": "CLAIM_SCOPED_DATA_INFORMATIVITY", "type": "METHOD_SCOPE_SHARPENING", "sources": ["van Waarde et al. 2020, Data informativity"], "finding": "Persistent excitation sufficient for unique whole-system identification is stronger than necessary for many narrower questions.", "impact": "Use the minimum information needed for the exact candidate-34 claim rather than imposing global system-identification requirements."},
+    {"id": "LOCAL_PHASE_STATE_RESPONSE_REDUCTION", "type": "ORDINARY_LOCAL_DYNAMICS_REDUCTION", "sources": ["Gutkin, Ermentrout & Reyes 2005, Phase-response curves"], "finding": "Transient input influence can change with local phase, firing rate, afterhyperpolarization and adaptation.", "impact": "A future +1ms route effect may reduce to a matched low-dimensional destination-state timing response."},
+    {"id": "HYBRID_EVENT_SENSITIVITY_REDUCTION", "type": "ORDINARY_HYBRID_DYNAMICS_REDUCTION", "sources": ["Wunderlich & Pehle 2021, EventProp", "Kong et al. 2024, Saltation Matrices"], "finding": "Event-driven discontinuous systems have established exact/first-order sensitivity machinery across spike or hybrid jumps.", "impact": "A fresh successor should test a matched local event-sensitivity predictor before broad Assembly-route mechanism claims."}
   ],
-  "affected_lines": [
-    "CAND34_CAUSAL_OPPORTUNITY_VS_INFORMATIVITY",
-    "CAND34_CLAIM_SCOPED_PERTURBATION_DESIGN",
-    "CAND34_LOCAL_PHASE_STATE_REDUCTION",
-    "CAND34_HYBRID_EVENT_SENSITIVITY_REDUCTION",
-    "CAND34_PREFORMAL_R2_INTERPRETATION_CEILING",
-    "FUTURE_MECHANISM_SUCCESSOR_ADMISSION",
-    "PROGRAMME_NOVELTY"
-  ],
-  "reduction_candidates": [
-    "CLAIM_SCOPED_PERTURBATION_INFORMATIVITY",
-    "LOCAL_DESTINATION_STATE_RESPONSE_MAP",
-    "HYBRID_EVENT_SENSITIVITY_OR_SALTATION_PREDICTOR"
-  ],
-  "novelty_or_reduction_impact": "CAUSAL_OPPORTUNITY_IS_NECESSARY_BUT_NOT_SUFFICIENT_FOR_BROAD_MECHANISM_IDENTIFICATION. Modern perturbation-design work supports opportunity-aware intervention but adds claim-scoped informativity; ordinary local phase/refractory dynamics and hybrid event sensitivity are stronger prospective reductions for small delay effects. No current R2 rewrite or mechanism uplift follows.",
+  "affected_lines": ["CAND34_CAUSAL_OPPORTUNITY_VS_INFORMATIVITY", "CAND34_CLAIM_SCOPED_PERTURBATION_DESIGN", "CAND34_LOCAL_PHASE_STATE_REDUCTION", "CAND34_HYBRID_EVENT_SENSITIVITY_REDUCTION", "CAND34_PREFORMAL_R2_INTERPRETATION_CEILING", "FUTURE_MECHANISM_SUCCESSOR_ADMISSION", "PROGRAMME_NOVELTY"],
+  "reduction_candidates": ["CLAIM_SCOPED_PERTURBATION_INFORMATIVITY", "LOCAL_DESTINATION_STATE_RESPONSE_MAP", "HYBRID_EVENT_SENSITIVITY_OR_SALTATION_PREDICTOR"],
+  "novelty_or_reduction_impact": "CAUSAL_OPPORTUNITY_IS_NECESSARY_BUT_NOT_SUFFICIENT_FOR_BROAD_MECHANISM_IDENTIFICATION. Opportunity-aware intervention is supported, but broad interpretation requires claim-scoped informativity and should first survive ordinary local/hybrid sensitivity reductions. No current R2 rewrite or mechanism uplift follows.",
   "audit_classification": null,
   "confidence": "HIGH",
-  "prospective_baselines_or_discriminators": [
-    "fresh-successor-only claim-scoped perturbation-informativity criterion tied to the exact estimand and alternative set",
-    "local destination-state response map using matched potential/threshold/adaptation/refractory/arrival-time privilege",
-    "hybrid event-sensitivity / saltation / event-Jacobian predictor for delay/weight perturbations",
-    "scale excitation requirements with claim scope rather than requiring global persistent excitation for a local edge-effect claim"
-  ],
-  "questions_for_evidence_analyst": [
-    "Keep current R2 unchanged by this literature and treat informativity as a future claim-scoped interpretation/successor guardrail?",
-    "If a future R2-like null is interpreted mechanistically, require evidence that the frozen perturbation was informative for the exact alternatives being rejected rather than merely physically executable?",
-    "Before any broad Assembly-route claim, require reduction against a local destination-state timing model or hybrid event-sensitivity predictor with matched information privilege?"
-  ],
-  "questions_for_control_brain": [
-    "Add 'causal opportunity != perturbation informativity' as a prospective claim-ceiling guardrail without creating a new gate inside active R2?",
-    "Keep persistent-excitation requirements proportional to claim scope rather than converting a local edge-effect question into whole-system identification?",
-    "Preserve all existing response/FORMAL/provenance STOP boundaries while MAIN/Analyst reconcile the new R2 repository head/workflow state?"
-  ],
-  "must_not_change_frozen_or_consumed": [
-    "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "H7 PF-R1 result/raw and no-rerun/no-rescore boundary",
-    "H7 R5 preidentity object and FORMAL provenance hold",
-    "candidate #34 PRE_FORMAL R1 prebind and its no-response provenance",
-    "candidate #34 current R2 opportunity-aware contract/repository work must not be rewritten because of this external literature; fresh Analyst/MAIN owns its reconciliation",
-    "candidate #35 remains SYSTEM-scoped; no mechanism uplift from this literature",
-    "no candidate response-bearing execution, PRE_FORMAL/FORMAL one-way action, identity consumption, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
-  ],
+  "prospective_baselines_or_discriminators": ["fresh-successor-only claim-scoped perturbation-informativity criterion tied to the exact estimand/alternative set", "local destination-state response map with matched potential/threshold/adaptation/refractory/arrival-time privilege", "hybrid event-sensitivity / saltation / event-Jacobian predictor", "excitation requirements proportional to claim scope rather than global persistent excitation by default"],
+  "questions_for_evidence_analyst": ["Keep current R2 unchanged by this literature and treat informativity as a future claim-scoped interpretation/successor guardrail?", "If a future R2-like null is interpreted mechanistically, require evidence that the frozen perturbation was informative for the exact rejected alternatives rather than merely physically executable?", "Before broad Assembly-route claims, require reduction against a matched local destination-state timing model or hybrid event-sensitivity predictor?"],
+  "questions_for_control_brain": ["Add causal-opportunity-versus-informativity as a prospective claim ceiling without changing active R2?", "Keep excitation requirements proportional to claim scope?", "Preserve existing response/FORMAL/provenance STOP boundaries while fresh Analyst disposition catches up to the R2 head?"],
+  "must_not_change_frozen_or_consumed": ["all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence", "H7 PF-R1 no-rerun/no-rescore boundary and H7 R5 provenance hold", "candidate #34 PRE_FORMAL R1 prebind/no-response provenance", "candidate #34 current R2 opportunity-aware repository work must not be rewritten because of this literature", "candidate #35 remains SYSTEM-scoped", "no response-bearing execution, one-way identity, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"],
   "utility_request_created": null,
-  "mutations": {
-    "scientific_experiments_executed_by_this_role": 0,
-    "scientific_workflows_dispatched_by_this_role": 0,
-    "one_way_identities_consumed_by_this_role": 0,
-    "research_prs_merged_by_this_role": 0,
-    "immutable_evidence_mutations": 0,
-    "scheduler_definition_changes": 0,
-    "utility_requests_created": 0
-  }
+  "mutations": {"scientific_experiments_executed_by_this_role": 0, "scientific_workflows_dispatched_by_this_role": 0, "one_way_identities_consumed_by_this_role": 0, "research_prs_merged_by_this_role": 0, "immutable_evidence_mutations": 0, "scheduler_definition_changes": 0, "utility_requests_created": 0}
 }
