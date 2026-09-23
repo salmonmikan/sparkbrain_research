@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "generation_id": "MAIN-20260923T123630+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING-CANONICAL-OPPORTUNITY-CLOSURE",
+  "produced_at": "2026-09-23T12:36:30+09:00",
+  "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
+  "layer": "PRE_FORMAL",
+  "development_phase": "OPEN_DEVELOPMENT",
+  "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
+  "cycle_count": 4,
+  "analyst_authority": "EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a",
+  "branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+  "head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+  "change_classification": "SCIENCE_AFFECTING_CHANGE_PROSPECTIVELY_AUTHORIZED_BEFORE_R2_RESPONSE_EXPOSURE",
+  "summary": "Replaced the noncanonical R2 metadata wrapper with the R92-authorized opportunity-aware non-result contract: source-only edge cues, no direct destination cue, per-edge opportunity ledger, opportunity-matched controls, destination membrane/spike primary observable, Assembly response secondary, and a mandatory fresh Analyst READY review before response execution.",
+  "forge_reuse": false,
+  "prior_results_preserved": ["D34-Q001", "R1 prebind"],
+  "new_scientific_result": false,
+  "formal_evidence": 0,
+  "preformal_development_result": 0,
+  "consumed_identities_added": [],
+  "workflows": {
+    "generic_ci": {"id": 35814951496, "status": "in_progress", "head": "43d0f25541a3c447d4c7156303647ae94f3119f4"},
+    "r2_nonresult_contract": {"id": 35814951495, "status": "in_progress", "head": "43d0f25541a3c447d4c7156303647ae94f3119f4"}
+  },
+  "hard_floor": {
+    "formal_identity": false,
+    "started": false,
+    "protected_evaluation": false,
+    "result_bearing_execution": false,
+    "official_scoring": false,
+    "scientific_preserve_or_evidence_mutation": false
+  },
+  "status": "WAITING_EXTERNAL",
+  "stop_reason": "WAITING_ONLY_FOR_EXACT_HEAD_NONRESULT_CI_AND_CONTRACT_WORKFLOW",
+  "next_action": "If exact-head non-result checks are green, durably capture the canonical R2 contract and stop for fresh Evidence Analyst READY review."
+}
