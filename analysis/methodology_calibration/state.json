@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-24T02:18:00+09:00",
+  "timestamp": "2026-09-24T03:20:00+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260924T021800+0900-R95-8D3A71C4",
-    "sequence": 95,
+    "generation_id": "METHCAL-20260924T032000+0900-R96-A61E94F2",
+    "sequence": 96,
     "material_change": true,
-    "material_change_reason": "REVISIT_RESURRECTION_AXIS_REQUIRED_BUT_NOT_YET_DURABLY_IMPLEMENTED; LEGACY_REVISIT_LEDGER_BOOTSTRAP_ABSENT; EXISTING_ANTI_RESCUE_AND_FORMAL_FLOORS_REMAIN_INTACT",
-    "supersedes_generation_id": "METHCAL-20260924T012223+0900-R94-2FBB75BB",
+    "material_change_reason": "REVISIT_LEDGER_BOOTSTRAP_NOW_COMPLETE_34_OF_34; H7_NON_RESULT_READINESS_GREEN_AND_ONE_CONDITIONAL_FORMAL_AUTHORITY; LIVE_REVISIT_TRIGGER_PATHS_STILL_UNOBSERVED",
+    "supersedes_generation_id": "METHCAL-20260924T021800+0900-R95-8D3A71C4",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260924T012223+0900-R94-2FBB75BB",
-      "commit": "bb3f743d100205ebde5e418909dc7aa5a704d3bc",
+      "generation_id": "METHCAL-20260924T021800+0900-R95-8D3A71C4",
+      "branch_head_before_run": "8f1658f563ea88556d1f2b61f30ac7bd5bc5494c",
       "overall_classification": "MIXED_CALIBRATION",
       "role": "DESIGNATED_PRIOR_METHODOLOGY_HISTORY_READ_FIRST"
     },
@@ -20,77 +20,72 @@
       "id": "HUMAN-20260922-005",
       "role": "HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"
     },
-    "audit_scope_revision": {
-      "id": "REVISIT_RESURRECTION_CALIBRATION_REQUIRED_20260924",
-      "role": "PROCESS_GOVERNANCE_REQUIREMENT_NOT_SCIENTIFIC_EVIDENCE"
-    },
     "control_brain": {
-      "generation_id": "CTRL-20260924T005132+0900-R45-6A51C7D2",
-      "commit": "b2c1f828da31af9fb8cc979a7d4bdb41893a6fc1",
-      "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH"
+      "generation_id": "CTRL-20260924T025134+0900-R46-7C3A9E12",
+      "branch_head": "3e3439ea305d41a511e9a321ac10ef6331d37e78",
+      "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH",
+      "freshness_note": "PREDATES_ANALYST_R104"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260924T010800+0900-R103-FORGE-DEFER-SCHEDULER-RED",
-      "branch_head": "82251ddfa025929ad79b41bea015eb84bd4f0813",
-      "state_blob": "e6b8cb4262ec9144b8cafef3c3634a93f063949b",
-      "latest_blob": "106b98289264892e01f00a40f03732a506121b8e",
+      "generation_id": "EVA-20260924T031000+0900-R104-H7-GREEN-REVISIT-BOOTSTRAP",
+      "branch_head": "0dfa28e2a8d0ddd6731ccbe9eccc7882e7f3be6f",
+      "state_blob": "5c39fec66d15f70dfe1ec8c7512a25b02024e689",
+      "latest_blob": "dba5134122dd52356c5335d20d1a192d21a54cc0",
       "role": "DESIGNATED_CANONICAL_GATE_HISTORY"
     },
     "external_research_audit": {
       "branch_head": "d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c",
+      "dedicated_theory_revisit_path_present": false,
       "role": "POTENTIAL_INDEPENDENT_TRIGGER_SOURCE_ZERO_AUTOMATIC_EVIDENCE_CREDIT"
     },
-    "forge_successor_adjacent_probe": {
-      "branch": "forge/20260924-coordinate-null-local-witness",
-      "head": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
-      "role": "NONCANONICAL_ZERO_CREDIT_POST_OUTCOME_EXPLORATION_NEGATIVE_REVISIT_CALIBRATION_EXAMPLE"
+    "h7_non_result_readiness": {
+      "run_id": 35891173382,
+      "attempt": 2,
+      "conclusion": "SUCCESS",
+      "controller_head": "d610b18283953f21dfb27859f0d0b190d5f56a24",
+      "role": "NON_RESULT_CAPABILITY_AND_BINDING_READINESS_ONLY"
     }
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_tag_count": 5,
-    "evidence_refs": [
-      "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-      "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-      "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "185b741e69ea8a0ce0d076153d36e9296a748765",
-      "e4c4e6428d8ef9e09e92cae231041de0788162e2"
-    ],
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "immutable_tag_count": 0,
+    "h7_control_refs": 0,
+    "h7_preserve_refs": 0,
     "canonical_candidate_total": 35,
     "terminal_for_current_object": 34,
-    "nonterminal_hold": 1,
-    "viable_executable_mechanism": 0,
-    "queued": 0,
+    "active": 1,
+    "queued": 1,
+    "effectively_executable_mechanism": 1,
+    "fresh_formal_authority": 1,
     "h7": {
-      "id": "CAND-H7-RESPONSIBILITY",
       "claim_ceiling": "MECHANISM",
-      "funnel_stage": "PRE_FORMAL",
+      "preformal_eligible": true,
+      "preformal_readiness": "READY",
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "terminal_state": "NONTERMINAL_HOLD",
-      "formal_authority": "STOP",
-      "effective_executable": false,
-      "fresh_formal_identity_consumed": false
+      "development_revision": "R5_UNCHANGED",
+      "terminal_state": "ACTIVE",
+      "queue_state": "QUEUED",
+      "formal_authority": "GO_ONCE_CONDITIONAL_EXACT_BINDING",
+      "identity_status": "NOT_CREATED_NOT_CONSUMED"
+    },
+    "candidate34": {
+      "claim_ceiling": "MECHANISM",
+      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "disposition": "REDUCIBLE",
+      "same_object_rescue": "STOP"
     },
     "candidate35": {
-      "id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
       "claim_ceiling": "SYSTEM",
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
       "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
       "confirmatory_credit": 0,
-      "same_object_rescue": false,
-      "immediate_post_outcome_forge_successor_admission": "DEFER_NOT_ADMITTED"
-    },
-    "candidate34": {
-      "id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
-      "claim_ceiling": "MECHANISM",
-      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-      "confirmatory_credit": 0,
-      "same_object_rescue": false
+      "same_object_rerun_retune_rescore": "STOP",
+      "same_object_system_to_mechanism": "STOP"
     },
     "scientific_source_of_truth": "STABLE_MAIN_PLUS_INDEPENDENTLY_FETCHED_EVIDENCE_AND_EXACT_RESEARCH_REFS; OPS_MAILBOXES_ARE_CONTROL_HISTORY_ONLY"
   },
@@ -98,110 +93,100 @@
   "overall_classification": "MIXED_CALIBRATION",
   "gate_classifications": {
     "hard_integrity_policy": "KEEP",
-    "development_phase_current_handling": "KEEP",
-    "same_object_post_exposure_reversion_to_open": "TIGHTEN",
+    "development_phase_monotonicity": "KEEP",
     "cycle3_mandatory_reassessment": "KEEP",
     "cycle3_automatic_terminal_cap": "RELAX",
-    "science_invariant_vs_science_affecting_current_h7": "KEEP",
-    "development_observations_as_independent_evidence": "TIGHTEN",
+    "science_invariant_vs_science_affecting": "KEEP",
+    "development_observations_as_independent_evidence": "KEEP",
     "preformal_as_genuine_development": "KEEP",
     "hidden_second_formal_gate": "KEEP",
     "fresh_formal_one_way_transition": "INSUFFICIENT_EVIDENCE",
     "terminal_current_object_never_reactivated": "KEEP",
-    "revisit_axis_orthogonal_to_terminal_state": "TIGHTEN",
-    "revisit_trigger_detection": "TIGHTEN",
+    "revisit_axis_orthogonal_to_terminal_state": "KEEP",
+    "revisit_ledger_bootstrap_coverage": "KEEP",
+    "revisit_bootstrap_conservatism": "KEEP",
+    "revisit_bootstrap_historical_specificity": "CLARIFY",
+    "revisit_independent_trigger_detection_end_to_end": "INSUFFICIENT_EVIDENCE",
     "revisit_rescue_laundering_prevention": "KEEP",
-    "revisit_fresh_candidate_requirement": "KEEP",
-    "revisit_old_or_forge_inherited_confirmatory_credit": "TIGHTEN",
+    "revisit_fresh_candidate_and_zero_inherited_credit": "KEEP",
     "revisit_forge_test_new_trigger_only": "INSUFFICIENT_EVIDENCE",
     "revisit_canonicalize_full_gate": "INSUFFICIENT_EVIDENCE",
-    "revisit_ledger_bootstrap_coverage": "TIGHTEN",
-    "revisit_bootstrap_conservatism": "INSUFFICIENT_EVIDENCE",
     "fast_forge_canonical_separation": "KEEP",
-    "forge_immediate_post_outcome_terminal_family_targeting": "TIGHTEN",
     "theory_revisit_canonical_separation": "CLARIFY",
-    "terminal_current_object_semantics": "KEEP",
-    "mechanism_supply_health": "CLARIFY",
     "claim_ceiling_enforcement": "KEEP",
-    "persisted_ready_vs_effective_executable": "CLARIFY",
+    "mechanism_supply_health": "CLARIFY",
+    "ready_vs_executable_formal_distinction": "KEEP",
     "pass_reachability_without_standard_relaxation": "KEEP"
   },
   "development_iteration_calibration": {
-    "status": "CALIBRATED_ON_CURRENT_LIVE_OBJECTS_WITH_FRESH_FORMAL_TRANSITION_UNOBSERVED",
-    "h7": "RESULT_EXPOSED_SAME_R5_OBJECT_SCIENCE_INVARIANT_REMEDIATION_ONLY_FORMAL_STOP",
-    "candidate35": "RESULT_EXPOSED_CURRENT_OBJECT_TERMINAL_ONE_BOUNDED_BATCH_ZERO_CREDIT_NO_SAME_OBJECT_RESCUE",
-    "cycle3": "MANDATORY_REASSESSMENT_NOT_HARD_CAP",
-    "formal_transition": "INSUFFICIENT_EVIDENCE_FOR_FRESH_RESULT_EXPOSED_TO_CONSUMED_ONE_WAY_TRACE"
+    "status": "CURRENT_LIVE_OBJECTS_CONSISTENT_FORMAL_TRANSITION_NOT_YET_OBSERVED",
+    "h7": "RESULT_EXPOSED_R5_UNCHANGED_NON_RESULT_READINESS_GREEN_ONE_CONDITIONAL_FORMAL_AUTHORITY",
+    "candidate35": "RESULT_EXPOSED_TERMINAL_ZERO_CREDIT_NO_SAME_OBJECT_RESCUE",
+    "cycle3": "MANDATORY_REASSESSMENT_NOT_HARD_CAP"
   },
   "revisit_calibration": {
-    "implementation_status": "REQUIRED_BUT_NOT_DURABLY_IMPLEMENTED_IN_CURRENT_CANONICAL_ANALYST_STATE",
+    "implementation_status": "BOOTSTRAP_COMPLETE_TRIGGER_PATHS_NOT_YET_LIVE_TESTED",
     "terminal_state_mutation_allowed": false,
     "old_candidate_reactivation_observed": false,
-    "current_status_metadata_present": false,
-    "current_decision_metadata_present": false,
-    "trigger_provenance_routing_present": false,
-    "false_negative_risk": "MODERATE_TO_HIGH",
-    "zombie_inflation_risk_current": "LOW",
-    "rescue_laundering_control": "STRONG_CURRENT_PRECEDENT_CAND35_POST_OUTCOME_FORGE_DEFERRED",
-    "forge_test_live_example": false,
-    "canonicalize_live_example": false,
-    "candidate35_post_outcome_forge_must_not_be_reclassified_as_independent_trigger": true
+    "historical_outcomes_rewritten": false,
+    "ledger_expected": 34,
+    "ledger_classified": 34,
+    "closed_strong": 1,
+    "dormant_revisitable": 19,
+    "deferred_independent_reidentification": 14,
+    "revisit_triggered": 0,
+    "revisit_forge_tests": 0,
+    "revisit_canonicalizations": 0,
+    "false_negative_risk": "MODERATE_WATCH_IMPROVED_FROM_R95",
+    "zombie_inflation_risk": "LOW_CURRENT_MODERATE_TRIGGER_PROVENANCE_WATCH",
+    "candidate35_rescue_adjacent_surface": "DEFER_NOT_ADMITTED_ZERO_CREDIT"
   },
   "revisit_ledger_bootstrap": {
-    "status": "NOT_IMPLEMENTED_OR_NOT_EXPOSED_IN_DESIGNATED_CANONICAL_STATE",
-    "terminal_objects_reported": 34,
-    "complete_legacy_coverage_observed": false,
-    "closure_reason_field_observed": false,
-    "what_would_change_our_mind_field_observed": false,
-    "revisit_status_field_observed": false,
+    "coverage": "COMPLETE_34_OF_34",
     "aggressive_resurrection_observed": false,
     "systematic_closed_strong_default_observed": false,
-    "conservatism_assessment": "INSUFFICIENT_EVIDENCE_UNTIL_BOOTSTRAP_EXISTS",
-    "required_constraint": "DESCRIPTIVE_ONLY_NO_HISTORICAL_REINTERPRETATION_NO_OUTCOME_REWRITE_NO_OLD_ID_REOPENING"
-  },
-  "successor_and_forge_calibration": {
-    "same_object_system_to_mechanism": "STOP",
-    "fresh_successor_allowed": "NEW_ID_INDEPENDENT_TRIGGER_DISTINCT_QUESTION_FRESH_REDUCTION_COMPARATOR_FALSIFIER_FRESH_DEVELOPMENT_ZERO_INHERITED_CREDIT",
-    "candidate35_immediate_successor": "DEFERRED_AS_RESCUE_ADJACENT",
-    "forge_credit": 0,
-    "current_failure_direction": "FORGETTING_RISK_GREATER_THAN_ZOMBIE_INFLATION"
+    "historical_reinterpretation_observed": false,
+    "strength": "CONSERVATIVE_STATUS_ADMISSION_CLASSIFICATION",
+    "residual_issue": "LEGACY_ROWS_MOSTLY_USE_R49_FUNNEL_CLASS_AND_BROAD_TEMPLATE_WHAT_WOULD_CHANGE; REQUIRE_CANDIDATE_SPECIFIC_CLOSURE_PROVENANCE_BEFORE_LIVE_TRIGGER",
+    "candidate34": "CLOSED_STRONG_WITH_PRESERVED_RAW_PLUS_INDEPENDENT_REDUCTION_AUDIT",
+    "candidate35": "DEFERRED_REQUIRES_INDEPENDENT_REIDENTIFICATION"
   },
   "preformal_calibration": {
-    "status": "CALIBRATED_WITH_OBSERVABILITY_WATCH",
+    "status": "CALIBRATED",
     "ready_means_success": false,
     "repeated_development_observations_independent_confirmation": false,
     "hidden_second_formal_gate_observed": false
   },
   "risks": {
-    "false_positive_zombie_inflation": "LOW_CURRENT_MODERATE_FUTURE_WATCH",
-    "false_negative_forgotten_valuable_lines": "MODERATE_TO_HIGH",
-    "moving_goalpost_rescue": "LOW_CANONICAL_MODERATE_EXPLORATION_WATCH",
-    "over_terminalization": "MODERATE_TO_HIGH_UNTIL_REVISIT_LEDGER_AND_TRIGGER_ROUTING_EXIST",
-    "bootstrap_historical_reinterpretation": "WATCH"
+    "false_positive_zombie_inflation": "LOW_CURRENT_MODERATE_FUTURE_TRIGGER_WATCH",
+    "false_negative_forgotten_valuable_lines": "MODERATE_WATCH_MATERIALLY_IMPROVED",
+    "moving_goalpost_rescue": "LOW_CURRENT",
+    "over_terminalization": "MODERATE_WATCH_TRIGGER_SENSITIVITY_UNTESTED",
+    "bootstrap_historical_specificity": "CLARIFY_BEFORE_TRIGGER"
   },
   "mandatory_questions": {
-    "1_development_phase_end_to_end": "CURRENT_CANONICAL_DEVELOPMENT_PHASES_CONSISTENT; FRESH_ONE_WAY_FORMAL_TRANSITION_UNOBSERVED",
+    "1_development_phase_end_to_end": "YES_CURRENT_LIVE_OBJECTS_FRESH_FORMAL_TRANSITION_UNOBSERVED",
     "2_cycle3_hard_cap": "NO",
-    "3_repair_classification": "YES_ON_CURRENT_H7_PATH",
-    "4_development_observations_independent_credit": "NO_LAUNDERING_OBSERVED_KEEP_ZERO_CREDIT",
-    "5_formal_one_way_integrity": "UNCHANGED",
-    "6_system_to_mechanism_successors": "NO_MANUFACTURE_OBSERVED_CAND35_IMMEDIATE_SUCCESSOR_DEFERRED",
+    "3_repair_classification": "YES_CURRENT_PATHS",
+    "4_development_observations_independent_credit": "KEPT_ZERO_CREDIT",
+    "5_formal_one_way_integrity": "UNCHANGED_NO_H7_IDENTITY_OR_START_YET",
+    "6_system_to_mechanism_successors": "NO_MANUFACTURE_OBSERVED_NO_INDEPENDENT_TRIGGER_CURRENTLY",
     "7_preformal_genuine_development": "YES",
-    "8_terminal_semantics": "CALIBRATED_CURRENT_OBJECT_CLOSURE_NO_TERMINAL_REACTIVATION",
-    "9_revisit_catches_changed_conditions": "NOT_RELIABLY_REVISIT_AXIS_AND_LEDGER_ABSENT",
-    "10_revisit_avoids_rescue_zombies": "CURRENT_ADMISSION_BEHAVIOR_YES_BUT_FORMAL_REVISIT_IMPLEMENTATION_NOT_LIVE",
-    "11_revisit_forge_test": "INSUFFICIENT_EVIDENCE_NO_LIVE_CASE_FUTURE_PROBE_MUST_TEST_NEW_TRIGGER",
-    "12_bootstrap_complete_conservative": "NO_COMPLETE_BOOTSTRAP_OBSERVED_CONSERVATISM_UNASSESSABLE",
-    "13_pass_reachability": "YES_SCIENTIFICALLY_WITHOUT_WEAKER_EVIDENCE_STANDARDS"
+    "8_terminal_semantics": "CALIBRATED_34_TERMINAL_OBJECTS_REMAIN_TERMINAL",
+    "9_revisit_catches_changed_conditions": "LEDGER_EXISTS_BUT_NO_GENUINE_TRIGGER_HAS_TRAVERSED_END_TO_END",
+    "10_revisit_avoids_rescue_zombies": "YES_CURRENT_OBSERVATIONS_CAND35_POSITIVE_ANTI_RESCUE_CONTROL",
+    "11_revisit_forge_test": "INSUFFICIENT_EVIDENCE_NO_LIVE_CASE",
+    "12_bootstrap_complete_conservative": "YES_COVERAGE_AND_STATUS_ADMISSION_CONSERVATISM; CLARIFY_CANDIDATE_SPECIFIC_PROVENANCE_BEFORE_TRIGGER",
+    "13_pass_reachability": "YES_H7_HAS_ONE_CONDITIONAL_EXACT_BINDING_FORMAL_PATH_WITHOUT_WEAKER_STANDARDS"
   },
   "prospective_recommendations": [
-    "ADD_ORTHOGONAL_REVISIT_METADATA_WITHOUT_MUTATING_TERMINAL_STATE",
-    "BOOTSTRAP_ALL_LEGACY_TERMINAL_REJECTED_OBJECTS_DESCRIPTIVELY_WITH_CLOSURE_REASON_WHAT_WOULD_CHANGE_OUR_MIND_AND_REVISIT_STATUS",
-    "ROUTE_INDEPENDENT_LITERATURE_THEORY_FORGE_INSTRUMENTATION_BASELINE_AND_CANONICAL_RESULT_TRIGGERS_WITH_ZERO_EVIDENCE_CREDIT",
-    "REVISIT_FORGE_TEST_MUST_CHEAPLY_TEST_NEW_TRIGGER_NOT_RERUN_OLD_FAILURE",
-    "REVISIT_CANONICALIZE_MUST_CREATE_FRESH_ID_AND_FRESH_PROSPECTIVE_CONTRACT_OLD_OBJECT_STAYS_TERMINAL_ZERO_INHERITED_CREDIT",
-    "DO_NOT_TREAT_CAND35_POST_OUTCOME_FORGE_BRANCH_AS_INDEPENDENT_REVISIT_TRIGGER",
-    "KEEP_H7_AND_FORMAL_INTEGRITY_RULES_UNCHANGED"
+    "KEEP_ALL_OLD_TERMINAL_IDS_TERMINAL_FOREVER",
+    "REQUIRE_CANDIDATE_SPECIFIC_HISTORICAL_CLOSURE_PROVENANCE_BEFORE_ANY_REVISIT_TRIGGERED_TRANSITION",
+    "TREAT_BOOTSTRAP_WHAT_WOULD_CHANGE_TEMPLATES_AS_ADMISSION_SCAFFOLDING_NOT_TRIGGER_PROOF",
+    "PERSIST_FIRST_GENUINE_TRIGGER_SOURCE_INDEPENDENCE_AND_DISTINCT_NEW_QUESTION_BEFORE_FORGE_OR_CANONICAL_ACTION",
+    "REVISIT_FORGE_TEST_NEW_TRIGGER_ONLY_NO_OLD_OBJECT_RERUN_RETUNE",
+    "REVISIT_CANONICALIZE_FRESH_ID_FRESH_CONTRACT_ZERO_INHERITED_CREDIT_ONLY",
+    "KEEP_H7_FORMAL_EXACT_BINDING_ONE_WAY_RULES_UNCHANGED"
   ],
   "utility_request": "NONE",
   "hard_floor_confirmation": {
@@ -217,20 +202,19 @@
   },
   "confidence": {
     "level": "HIGH",
-    "value": 0.96
+    "value": 0.97
   },
   "questions_for_control_analyst": [
-    "INTRODUCE_REVISIT_LEDGER_WITHOUT_TOUCHING_CANONICAL_TERMINAL_STATE_OR_HISTORICAL_OUTCOMES",
-    "DEFINE_DURABLE_TRIGGER_PROVENANCE_FOR_INDEPENDENCE_VS_RESCUE_ADJACENCY",
-    "BOOTSTRAP_ALL_LEGACY_TERMINAL_REJECTED_CANDIDATES_NOT_ONLY_RECENT_34_35",
-    "KEEP_CAND35_POST_OUTCOME_FORGE_BRANCH_OUTSIDE_REVISIT_TRIGGER_CREDIT",
-    "EXPOSE_FIRST_REVISIT_FORGE_TEST_OR_CANONICALIZE_PROVENANCE_END_TO_END"
+    "REQUIRE_CANDIDATE_SPECIFIC_CLOSURE_PROVENANCE_BEFORE_FIRST_LIVE_REVISIT_TRIGGER",
+    "KEEP_CAND35_POST_OUTCOME_FORGE_SURFACE_RESCUE_ADJACENT_ZERO_CREDIT",
+    "EXPOSE_FIRST_GENUINE_REVISIT_TRIGGER_DECISION_FORGE_OR_CANONICALIZATION_CHAIN_END_TO_END",
+    "KEEP_H7_GREEN_READINESS_DISTINCT_FROM_IDENTITY_CONSUMPTION_AND_SCIENTIFIC_EVIDENCE"
   ],
   "persistence": {
-    "history": "analysis/methodology_calibration/history/2026-09-24/0218.md",
-    "history_commit": "39b3f34517b415d61e191550491bc616067be819",
+    "history": "analysis/methodology_calibration/history/2026-09-24/0320.md",
+    "history_commit": "e2444e38bae0bcbd7817b8d16d8aff4ca7190ed2",
     "latest": "analysis/methodology_calibration/latest.md",
-    "latest_commit": "c9dbaad031ad073ae810c37eb326ed4814b769e5",
+    "latest_commit": "84b90758175808be39e1d4f928545be11b751bae",
     "state": "analysis/methodology_calibration/state.json"
   }
 }
