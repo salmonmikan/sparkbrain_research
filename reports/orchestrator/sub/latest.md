@@ -1,32 +1,38 @@
-# FAST FORGE latest — two bounded dead ends
+# FAST FORGE latest — two bounded Assembly dead ends
 
 - schema_version: `2`
-- generation_id: `FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS`
-- produced_at: `2026-09-23T11:43:44+09:00`
+- generation_id: `FORGE-20260923T123420+0900-ASSEMBLY-COMPLETION-ORDER`
+- produced_at: `2026-09-23T12:34:20+09:00`
 - worker_role: `FAST_FORGE`
 - evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
 - overall_status: `FORGE_DEAD_END`
 
 ## Freshness / independence
 
-Evidence Analyst R92 remains current at `a05ab3f655a23eabd84c910ba337d64a948c168a`. Stable main remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. MAIN currently owns candidate #34 PRE_FORMAL R2 on `research/main-cand34-assembly-route-preformal-r92-cycle4@1f9c6cec8be0af900a801de17dcc91e57dd71d7a`; candidate #35 is queued for MAIN Architecture R1; H7/PF-R1 remains critical-path/formal-provenance work. Forge touched none of them.
+Evidence Analyst R92 remains current at `a05ab3f655a23eabd84c910ba337d64a948c168a`. Stable main used for source inspection is `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Forge explicitly avoided canonical candidate #34 temporal-route work, candidate #35 queue-free physical-state work, H7 FORMAL/provenance/preserve work, and all protected/frozen/evidence identities.
 
-Forge used only `forge/20260923-receptor-suppression-probes-a@c366c4054d2834003fcca20d49b8fc9ad4203edc`, branched from stable main. Development CI `35811319345` completed success on Python 3.11 and 3.13 through lint, readiness, full tests and bundle validation.
+Recent context checked: Literature `d5a2fe3fd085017a1f4e4352c3d019c57ff02647`, Methodology `269fdfc699053318f8babbea09c007cbe9932cae`, Independent Audit `6755579f5f21b19ca90788c948d8126529b648c6`, Utility `15c5b130c868f7a37ab03582ca0225f001c651f7`.
 
-## Probe 1 — receptor-bank persistent cue priming
+No Forge branch was required; both probes were read-only source inspection plus synthetic reproduction of the stable matching rule.
 
-A `1.0` prime followed by an identical `0.10` cue produced emitted magnitudes `0.5562423166417022` at 10 ms and `0.49106890868271347` at 120 ms, versus `0.228` in a fresh bank; by 1000 ms it returned to `0.2285379965673357`. The entire effect matched a separately coded closed-form application of the declared 5/22/120 ms receptor traces, 180 ms gain state, derivative/novelty terms and gain clamp to `1e-12` absolute tolerance.
+## Probe 1 — partial completion is recognition, not physical regeneration
 
-Disposition: `FORGE_DEAD_END`. The persistent response is fully explained by the explicit deterministic receptor filter/register state. No promotion proposed.
+Using the stable `pattern_similarity` rule, a full prototype `(1,2,3,4)` versus an ordered 3/4 partial `(1,3,4)` scores `0.8000`, above the `0.66` match threshold. An unordered same-set variant scores about `0.6103`, a wrong-unit partial about `0.5208`, a 2/4 partial `0.50`, and a 1/4 partial `0.325`.
 
-## Probe 2 — Assembly suppression permits silent maturation
+Source inspection shows Assembly activation is computed downstream of the physical Field/spike dynamics. There is no feedback path from an Assembly match that generates the missing physical spikes/units.
 
-An immature Assembly was suppressed after its first episode. Two further distinct episodes with `learn=true` still accumulated into the same candidate; it reached the three-episode maturity threshold while suppressed. After unsuppression, a `learn=false` query returned it immediately as mature with `episode_count=3`.
+Disposition: `FORGE_DEAD_END`. The current behavior is similarity-based recognition/classification, not recurrent physical completion or regeneration. No promotion proposed.
 
-Disposition: `FORGE_DEAD_END`. Stable `TemporalAssemblyMemory.suppress()` is a readout mask, not a learning freeze; `observe(..., learn=true)` continues updating the candidate. The retained canonical `causal_ablation` path uses `learn=false` while suppression is active, so this does not expose a hidden defect in that current ablation. No promotion proposed.
+## Probe 2 — frozen first exemplar makes maturation order-sensitive
+
+Stable Assembly candidates retain the first observed activation as their prototype; later observations increment the candidate but do not replace the prototype with a centroid.
+
+For exact-timing patterns `A=(1,2,3)`, `B=(1,2,4)`, `C=(1,3,4)`, the reproduced stable scores are `A-B=0.6916666666666667`, `B-C=0.6916666666666667`, and `A-C=0.5083333333333333`. Thus `A,B,C` yields two candidates and no three-observation mature Assembly, while `B,A,C` yields one candidate that reaches three observations and matures; `C,B,A` again yields two candidates.
+
+Disposition: `FORGE_DEAD_END`. The order effect follows directly from ordinary online threshold clustering with an immutable first exemplar. It is an implementation property, not a distinct mechanism. No promotion proposed.
 
 ## Boundaries / metrics
 
-No Utility request. No merge to main/research. No PRE_FORMAL/FORMAL identity, STARTED, official scoring, protected held-out access, preserve/evidence mutation, or immutable-ref mutation occurred.
+No Utility request. No branch mutation or merge. No PRE_FORMAL/FORMAL identity, STARTED, official scoring, protected held-out access, preserve/evidence mutation, or immutable-ref mutation occurred.
 
-R92 FAST_FORGE metrics now: runs `1`, prototypes `2`, dead ends `2`, retained interesting objects `0`, promotion proposals `0`, later admissions `0`, duplicate/rescue rejects `0`, ownership collisions `0`, ordinary-reduction rejects `2`.
+R92 FAST_FORGE cumulative metrics: runs `2`, prototypes `4`, dead ends `4`, retained interesting objects `0`, promotion proposals `0`, later admissions `0`, duplicate/rescue rejects `0`, ownership collisions `0`, ordinary-reduction rejects `4`.
