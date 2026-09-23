@@ -1,85 +1,82 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T113000+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING",
-  "run_id": "sparkbrain-main-primary-20260923T111600JST-R92-cand34-preformal-r2",
-  "producer_run_id": "sparkbrain-main-primary-20260923T111600JST-R92-cand34-preformal-r2",
-  "produced_at": "2026-09-23T11:30:00+09:00",
-  "authority_scope": "PRIMARY_CANONICAL_CAND34_PREFORMAL_R2_CONTRACT_CLOSURE_AND_QUEUE_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T105500+0900-RELAY-CAND34-PREFORMALR1-R91-READY-C199605F",
+  "generation_id": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
+  "run_id": "sparkbrain-main-relay-20260923T115328JST-R92-cand34-preformal-r2",
+  "producer_run_id": "sparkbrain-main-relay-20260923T115328JST-R92-cand34-preformal-r2",
+  "produced_at": "2026-09-23T11:53:28+09:00",
+  "authority_scope": "RELAY_RECONCILIATION_ONLY_FAIL_CLOSED_ON_CANONICAL_ANALYST_BINDING_MISMATCH",
+  "supersedes_generation_id": "MAIN-20260923T113000+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T110053+0900-R92-A7B61F3C@a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "main_previous": "MAIN-20260923T105500+0900-RELAY-CAND34-PREFORMALR1-R91-READY-C199605F"
+    "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a",
+    "main_previous": "MAIN-20260923T113000+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING",
+    "fast_forge_collision_awareness": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS@37112b03e84c7c22b9a26547b86e48fd1f756f1f"
   },
-  "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
-  "analyst_generation_id": "EVA-20260923T110053+0900-R92-A7B61F3C",
+  "execution_mode": "RELAY",
+  "status": "BLOCKED",
+  "analyst_generation_id": "EVA-20260923T105725+0900-R92-6B8E31D4",
   "analyst_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
   "research_layer": "PRE_FORMAL",
   "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
-  "candidate_alias": "candidate #34",
-  "question": "Can the frozen route-intervention family be interpreted at assembly level under one prospectively fixed untouched-anchor queue and a fixed secondary unit-export map?",
   "claim_ceiling": "MECHANISM",
-  "development_phase": "OPEN_DEVELOPMENT",
-  "development_revision": "PRE_FORMAL-R2_CONTRACT_CLOSURE_AND_QUEUE_ONLY",
-  "previous_revision_preserved": "PRE_FORMAL-R1 / D34-Q001 NEGATIVE development-only result",
   "preformal_eligible": true,
-  "preformal_readiness": {"status": "NOT_READY", "semantics": "R2 closure validation and at-most-one fresh queue materialization pending; R2 response execution forbidden"},
-  "holds": ["PROSPECTIVE_QUEUE_SEMANTICS_LOCK", "ASSEMBLY_LEVEL_PRIMARY_REDUCTION_ONLY", "UNIT_EXPORT_OBSERVABILITY_MAP_LOCK"],
+  "preformal_readiness": "NOT_READY",
+  "hold_class": null,
+  "hold_reason": null,
+  "terminal_state": "NONTERMINAL",
+  "queue_state": "QUEUED_FOR_MAIN_PREFORMAL_R2_OPPORTUNITY_AWARE_CONTRACT_REVISION_NONRESULT",
   "system_priority_exception": {"used": false},
+  "development_phase": "OPEN_DEVELOPMENT",
+  "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
   "cycle_count": 4,
-  "information_gain_rationale": "R92 prospectively permits only the versioned interpretability repair exposed by D34-Q001: common untouched-anchor queue semantics, assembly-level primary reduction, and a fixed secondary unit-export map.",
-  "repair_change_classification": {
-    "authorized_revision": "SCIENCE_AFFECTING_VERSIONED_R2_CONTRACT_CLOSURE",
-    "allowed_changes_only": ["anchor_queue_semantics", "assembly_level_primary_reduction", "unit_export_observability_map"],
-    "metric_changed": false,
-    "threshold_changed": false,
-    "comparator_meaning_changed": false,
-    "K_or_H_changed": false,
-    "seed_or_quota_changed": false,
-    "intervention_magnitude_changed": false,
-    "matched_control_family_changed": false,
-    "quiescence_or_window_changed": false,
-    "prototype_policy_changed": false,
-    "response_bearing_execution_performed": false
-  },
+  "cycle_reassessment_context": "R92 authorizes a bounded opportunity-aware R2 revision before any response-bearing execution; return to fresh Analyst READY review after non-result closure.",
   "refs": {
-    "prior_r1_branch": "research/main-cand34-assembly-route-preformal-r91-cycle3",
-    "prior_r1_head": "2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0",
     "active_research_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-    "active_research_head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a"
+    "active_research_head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a",
+    "analyst_handoff_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a"
   },
-  "work_performed": {
-    "fresh_canonical_branch_created_from_exact_r1_head": true,
-    "r2_queue_semantics_implemented": true,
-    "all_plan_steps_bound_to_same_untouched_checkpoint_anchor": true,
-    "assembly_level_primary_reduction_fixed": true,
-    "unit_export_map_fixed_for_all_referenced_assemblies": true,
-    "missing_ambiguous_or_degenerate_unit_map_fail_closed": true,
-    "one_fresh_queue_entry_definition": "D34-Q002 / QUEUED_NOT_EXECUTED",
-    "queue_entry_durable_materialization_complete": false,
-    "forge_code_reused": false,
-    "candidate_response_execution_performed": false
+  "workflow_observation": {
+    "generic_ci_run_id": 35810510054,
+    "generic_ci_conclusion": "success",
+    "r2_contract_run_id": 35810510172,
+    "r2_contract_conclusion": "success",
+    "exact_head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a",
+    "result_bearing": false
   },
-  "workflows": [
-    {"run_id": 35810510054, "name": "ci", "head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a", "status": "in_progress", "conclusion": null, "result_bearing": false},
-    {"run_id": 35810510172, "name": "cand34-preformal-r2-contract", "head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a", "status": "in_progress", "conclusion": null, "result_bearing": false}
-  ],
+  "authority_integrity": {
+    "canonical_analyst_generation_at_recheck": "EVA-20260923T105725+0900-R92-6B8E31D4",
+    "primary_recorded_analyst_generation": "EVA-20260923T110053+0900-R92-A7B61F3C",
+    "primary_recorded_analyst_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
+    "materialized_contract_embedded_analyst_authority": "EVA-20260923T110053+0900-R92-A7B61F3C",
+    "canonical_commit_content_matches_primary_recorded_generation": false,
+    "canonical_development_revision_matches_primary_recorded_revision": false,
+    "durable_capture_performed": false,
+    "research_branch_mutated_by_relay": false,
+    "reason": "The canonical Analyst commit currently resolves to a different generation and a different R2 revision than the generation/revision embedded by PRIMARY and the generated R2 contract. Relay cannot silently rebind or reinterpret this identity."
+  },
+  "artifact_integrity": {
+    "contract_sha256": "993d8fb53d9288f665b3fdc873ea410f986e5499e40ed19448eecbed8bbbc5c9",
+    "queue_sha256": "d16249d27448205e048c54ec85c48395109c80b7080335ffceb06443414ea72d",
+    "captured_to_research_branch": false
+  },
+  "repair_change_classification": {
+    "classification": "AUTHORITY_BINDING_MISMATCH_REQUIRES_RECONCILIATION",
+    "science_invariant_repair_applied": false,
+    "science_affecting_change_applied": false,
+    "reason": "Changing the embedded Analyst authority or substituting the canonical opportunity-aware revision would change the bound contract identity and is outside Relay authority without a reconciled fresh handoff."
+  },
   "observations_evidentiary_status": {
+    "new_scientific_result": false,
     "formal_evidence": 0,
-    "preformal_development_result_new_this_run": 0,
-    "architecture_result_new_this_run": 0,
-    "scientific_result_exposed": false,
-    "classification": "PREFORMAL_R2_IMPLEMENTATION_AND_NON_RESULT_VALIDATION_PENDING"
+    "preformal_development_result_new_this_relay": 0,
+    "scientific_result_exposed_by_relay": false
   },
   "prior_result_preservation": {
     "D34_Q001_preserved_unchanged": true,
-    "D34_Q001_confirmatory_credit": 0,
     "all_prior_results_unchanged": true,
     "consumed_formal_identity_rerun_retune_rescore": false,
     "immutable_formal_sealed_evidence_refs_mutated": false
   },
   "hard_floor": {
-    "fresh_formal_authority": false,
     "formal_identity_created_or_consumed": false,
     "started_created": false,
     "formal_evaluation_seed_revealed": false,
@@ -89,16 +86,14 @@
     "scientific_preserve_or_evidence_ref_created": false
   },
   "integrity": {
-    "analyst_generation_rechecked_before_acquisition": true,
-    "analyst_generation_rechecked_before_scientific_mutation": true,
-    "analyst_generation_rechecked_before_workflow_dispatch": true,
-    "analyst_generation_rechecked_before_disposition": true,
-    "R92_authority_still_current": true,
-    "primary_collision": false,
-    "forge_dependency": false,
-    "scheduler_mutated": false
+    "analyst_generation_rechecked_before_mutation": true,
+    "main_generation_and_lease_rechecked": true,
+    "exact_research_head_rechecked": true,
+    "fast_forge_same_object_collision": false,
+    "scheduler_mutated": false,
+    "fail_closed": true
   },
-  "stop_reason": "WAITING_ONLY_FOR_EXACT_HEAD_NON_RESULT_CI_AND_R2_CONTRACT_MATERIALIZATION",
-  "next_action": "Re-fetch R92 and exact head, then inspect only the two recorded non-result workflow runs. If green, durably capture exact R2 contract and the single D34-Q002 queue entry, mark closure complete, and STOP for fresh Analyst authority before any response-bearing R2 execution.",
+  "stop_reason": "CANONICAL_ANALYST_GENERATION_AND_REVISION_DO_NOT_MATCH_PRIMARY_OR_GENERATED_R2_CONTRACT_BINDING",
+  "next_action": "Fresh Evidence Analyst or PRIMARY must reconcile the exact canonical R92 generation/revision against the R2 branch and contract identity. Do not durably capture, rewrite, execute, score, or promote D34-Q002 until that binding is explicit and current.",
   "owner": "main"
 }
