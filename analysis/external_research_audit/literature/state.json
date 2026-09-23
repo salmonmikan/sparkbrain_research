@@ -1,61 +1,196 @@
 {
-  "timestamp": "2026-09-23T12:30:24+09:00",
+  "timestamp": "2026-09-23T15:30:00+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260923T123024+0900-R36-INFORMATIVITY-HYBRID-SENSITIVITY-6D4A21C8",
-  "producer_run_id": "external-literature-auto-LIT-20260923T123024+0900-R36-INFORMATIVITY-HYBRID-SENSITIVITY-6D4A21C8",
+  "generation_id": "LIT-20260923T153000+0900-R37-SPIKE-RESPONSE-KERNEL-5A8C21E7",
+  "producer_run_id": "external-literature-auto-LIT-20260923T153000+0900-R37-SPIKE-RESPONSE-KERNEL-5A8C21E7",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9",
+  "supersedes_generation_id": "LIT-20260923T123024+0900-R36-INFORMATIVITY-HYBRID-SENSITIVITY-6D4A21C8",
   "input_generations": {
-    "control_brain": {"generation_id": "CTRL-20260923T115056+0900-R41-4C156929", "handoff_commit": "27b6531b6b3a1d941a484aeee012d5c59fe63d79"},
-    "evidence_analyst": {"generation_id": "EVA-20260923T105725+0900-R92-6B8E31D4", "handoff_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a"},
-    "main_report": {"generation_id": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY", "handoff_commit": "0167aa75e768f51bbc37528868af569a1d054786"},
-    "fast_forge_report": {"generation_id": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS", "handoff_commit": "b2fe7ad25a356d170de1291ab0de0b7e4eec3dfe"},
-    "prior_literature": {"generation_id": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9", "handoff_commit": "cd5069201723110acc9e15d60216c9d1f2e63ce7"}
+    "control_brain": {
+      "generation_id": "CTRL-20260923T125800+0900-R42-7C9E41B2",
+      "handoff_commit": "7035ace9b0ef980602dcb124e8974be5640d7377"
+    },
+    "evidence_analyst": {
+      "generation_id": "EVA-20260923T150251+0900-R94-8E6A31C4",
+      "handoff_commit": "5cee6ef496eb9465550fb9c0be5295e587027dfb"
+    },
+    "main_report": {
+      "generation_id": "MAIN-20260923T152800+0900-PRIMARY-CAND34-PREFORMALR2-R94-WAITING-RESPONSE",
+      "handoff_commit": "93a433aa78c7e63a1c654d01a1c8c1f7f287c5e8"
+    },
+    "fast_forge_report": {
+      "generation_id": "FORGE-20260923T143553+0900-ASSEMBLY-RETENTION-CAPACITY-R93",
+      "handoff_commit": "93a433aa78c7e63a1c654d01a1c8c1f7f287c5e8"
+    },
+    "prior_literature": {
+      "generation_id": "LIT-20260923T123024+0900-R36-INFORMATIVITY-HYBRID-SENSITIVITY-6D4A21C8",
+      "handoff_commit": "5228e5271f9a87c47d6ed1c68b10a24c92d0c996"
+    }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "12:30 JST",
+  "schedule_slot": "15:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "h7_formal_r5": {"branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12", "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80", "status": "NON_EVIDENTIARY_PREIDENTITY_PROVENANCE_HOLD"},
-    "candidate34_preformal_r1": {"branch": "research/main-cand34-assembly-route-preformal-r91-cycle3", "head": "2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0", "status": "PREFORMAL_DEVELOPMENT_PREBIND_NO_RESULT_PRESERVED"},
-    "candidate34_preformal_r2_final_observed": {"branch": "research/main-cand34-assembly-route-preformal-r92-cycle4", "head": "43d0f25541a3c447d4c7156303647ae94f3119f4", "science_affecting_parent": "a134513838d8f30013d904a95a61cfbcf9454eaa", "status": "OPPORTUNITY_AWARE_R92_CONTRACT_PLUS_TESTS_NON_RESULT_AWAITING_FRESH_ANALYST_DISPOSITION"},
-    "evidence_tags": ["4d6c0bd9a6c06c17352941d3fa730502e72b8540", "82b88f3e2ad524fed8b72300dcba46053c1f2c7e", "e7d99cc806206ac27ced225d4779c9fc5bb67ff5", "185b741e69ea8a0ce0d076153d36e9296a748765", "e4c4e6428d8ef9e09e92cae231041de0788162e2"],
+    "candidate34_closed_r2": {
+      "branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+      "head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+      "status": "CLOSED_SCIENTIFIC_CONTRACT"
+    },
+    "candidate34_execution": {
+      "branch": "research/main-cand34-assembly-route-preformal-r93-response",
+      "head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
+      "status": "R94_BOUND_ONE_SHOT_EXECUTOR"
+    },
+    "h7_formal_r5": {
+      "branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+      "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+      "status": "NON_EVIDENTIARY_PREIDENTITY_PROVENANCE_HOLD"
+    },
+    "evidence_tags": [
+      "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+      "185b741e69ea8a0ce0d076153d36e9296a748765",
+      "e4c4e6428d8ef9e09e92cae231041de0788162e2"
+    ],
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "legacy_freeze_refs_inspected": true,
     "preserve_refs_inspected": true,
+    "candidate34_preserve_ref_present_at_final_prefetch": false,
     "control_refs_inspected": true,
     "consumed_identities_inspected": true,
-    "relevant_prs": {"148": "OPEN_UNMERGED", "149": "OPEN_UNMERGED"},
-    "orchestrator_role_history_inspected": true,
-    "orchestrator_role_history_note": "2026-09-23 role-suffixed history was older than the designated main/sub latest+state streams; designated streams were consumed",
-    "ops_control_tip_consumed": "27b6531b6b3a1d941a484aeee012d5c59fe63d79",
-    "ops_evidence_analyst_tip_consumed": "a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "ops_external_tip_before_first_write": "6755579f5f21b19ca90788c948d8126529b648c6"
+    "consumed_identity_count": 7,
+    "relevant_prs": {
+      "148": "OPEN_UNMERGED_MERGEABLE",
+      "149": "OPEN_UNMERGED_MERGEABLE"
+    },
+    "orchestrator_main_latest_state_and_history_inspected": true,
+    "orchestrator_fast_forge_latest_state_inspected": true,
+    "ops_control_tip_consumed": "7035ace9b0ef980602dcb124e8974be5640d7377",
+    "ops_evidence_analyst_tip_consumed": "5cee6ef496eb9465550fb9c0be5295e587027dfb",
+    "ops_orchestrator_tip_consumed": "93a433aa78c7e63a1c654d01a1c8c1f7f287c5e8",
+    "ops_external_tip_before_first_write": "5228e5271f9a87c47d6ed1c68b10a24c92d0c996"
   },
   "workflow_state_observed": {
-    "35814951495": {"head": "43d0f25541a3c447d4c7156303647ae94f3119f4", "workflow": "cand34-preformal-r2-contract", "status": "completed", "conclusion": "success", "result_bearing": false},
-    "35814951496": {"head": "43d0f25541a3c447d4c7156303647ae94f3119f4", "workflow": "ci", "status": "completed", "conclusion": "success", "result_bearing": false}
+    "35824098828": {
+      "head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
+      "workflow": "ci",
+      "status": "completed",
+      "conclusion": "success",
+      "result_bearing": false
+    },
+    "35826846989": {
+      "workflow": "cand34-preformal-r2-response-r94",
+      "status": "completed",
+      "conclusion": "success",
+      "result_bearing": true,
+      "raw_artifact_present": true,
+      "raw_artifact_name": "cand34-d34-q002-r94-raw",
+      "raw_artifact_size_bytes": 3612,
+      "raw_artifact_archive_digest": "sha256:38a50cf3d63be3355d3d95387d155a6f0e550d998026ccdd38743a07520171f4",
+      "raw_artifact_read_or_interpreted_by_this_role": false,
+      "reason_not_read": "R94/MAIN require durable exact-byte preservation before interpretation; no preserve/cand34 ref existed at final pre-write check"
+    }
   },
   "genuinely_new_information": true,
   "findings": [
-    {"id": "CAUSAL_OPPORTUNITY_VS_PERTURBATION_INFORMATIVITY", "type": "RECENT_PERTURBATION_DESIGN_BAR", "sources": ["Ogino et al. 2026, eLife Reviewed Preprint v2"], "finding": "Perturbations reveal weak/latent dynamics when their spatial/frequency structure excites the relevant modes; intensity or physical opportunity alone does not guarantee informative identification.", "impact": "R92's opportunity-aware repair is directionally supported, but future broad interpretation needs claim-scoped perturbation informativity. No current R2 rewrite follows."},
-    {"id": "CLAIM_SCOPED_DATA_INFORMATIVITY", "type": "METHOD_SCOPE_SHARPENING", "sources": ["van Waarde et al. 2020, Data informativity"], "finding": "Persistent excitation sufficient for unique whole-system identification is stronger than necessary for many narrower questions.", "impact": "Use the minimum information needed for the exact candidate-34 claim rather than imposing global system-identification requirements."},
-    {"id": "LOCAL_PHASE_STATE_RESPONSE_REDUCTION", "type": "ORDINARY_LOCAL_DYNAMICS_REDUCTION", "sources": ["Gutkin, Ermentrout & Reyes 2005, Phase-response curves"], "finding": "Transient input influence can change with local phase, firing rate, afterhyperpolarization and adaptation.", "impact": "A future +1ms route effect may reduce to a matched low-dimensional destination-state timing response."},
-    {"id": "HYBRID_EVENT_SENSITIVITY_REDUCTION", "type": "ORDINARY_HYBRID_DYNAMICS_REDUCTION", "sources": ["Wunderlich & Pehle 2021, EventProp", "Kong et al. 2024, Saltation Matrices"], "finding": "Event-driven discontinuous systems have established exact/first-order sensitivity machinery across spike or hybrid jumps.", "impact": "A fresh successor should test a matched local event-sensitivity predictor before broad Assembly-route mechanism claims."}
+    {
+      "id": "SPIKE_RESPONSE_KERNEL_REDUCTION",
+      "type": "FOUNDATIONAL_ORDINARY_LOCAL_DYNAMICS_REDUCTION",
+      "sources": [
+        "Gerstner 1995, Time structure of the activity in neural network models",
+        "Jolivet et al., Generalized Integrate-and-Fire Models of Neuronal Activity Approximate Spike Trains of a Detailed Model to a High Degree of Accuracy"
+      ],
+      "finding": "Classical spike-response models express membrane potential through incoming-spike/input kernels plus post-spike/refractory kernels; these variables closely match the frozen D34-Q002 source-spike, edge-delay, destination-potential and spike-history observables.",
+      "impact": "A +1ms effect predictable by a translated PSP kernel plus refractory/post-spike state is ordinary single-edge dynamics, not Assembly-specific route novelty."
+    },
+    {
+      "id": "POINT_PROCESS_HISTORY_COUPLING_REDUCTION",
+      "type": "ORDINARY_HISTORY_DEPENDENT_SPIKE_MODEL_REDUCTION",
+      "sources": [
+        "Truccolo et al. 2005, Point Process Framework",
+        "Pillow et al. 2008, Spatio-temporal correlations and visual signalling"
+      ],
+      "finding": "Conditional-intensity models combine a neuron's spike history, other-neuron activity/coupling and extrinsic covariates and can capture detailed spatiotemporal spike structure.",
+      "impact": "A privilege-matched history/coupling filter is a prospective ordinary baseline for destination spikes and the secondary Assembly spike export."
+    },
+    {
+      "id": "SPIKING_LINEAR_RESPONSE_REDUCTION",
+      "type": "ORDINARY_WEAK_PERTURBATION_REDUCTION",
+      "sources": [
+        "Cessac, Ampuero & Cofre 2021, Linear Response of General Observables in Spiking Neuronal Network Models"
+      ],
+      "finding": "Weak stimuli can have spatiotemporal spike-correlation effects predicted from spontaneous statistics, intrinsic dynamics and network connectivity even with long spike-history memory.",
+      "impact": "Where perturbation magnitude supports the approximation, a frozen susceptibility/response-function predictor is a lower-cost reduction before special mechanism interpretation."
+    },
+    {
+      "id": "FINITE_WEIGHT_NONLINEAR_THRESHOLD_REDUCTION",
+      "type": "NONLINEAR_ORDINARY_MECHANISM_CEILING",
+      "sources": [
+        "Helias et al. 2010, Instantaneous Non-Linear Processing by Pulse-Coupled Threshold Units"
+      ],
+      "finding": "Finite synaptic weights in generic pulse-coupled threshold units can produce fast nonlinear, amplitude-dependent and excitation/inhibition-asymmetric responses outside linear-response predictions.",
+      "impact": "Failure of a linear response baseline is not itself an Assembly-specific residual; a finite-weight nonlinear threshold/SRM/history model should be tested prospectively first."
+    }
   ],
-  "affected_lines": ["CAND34_CAUSAL_OPPORTUNITY_VS_INFORMATIVITY", "CAND34_CLAIM_SCOPED_PERTURBATION_DESIGN", "CAND34_LOCAL_PHASE_STATE_REDUCTION", "CAND34_HYBRID_EVENT_SENSITIVITY_REDUCTION", "CAND34_PREFORMAL_R2_INTERPRETATION_CEILING", "FUTURE_MECHANISM_SUCCESSOR_ADMISSION", "PROGRAMME_NOVELTY"],
-  "reduction_candidates": ["CLAIM_SCOPED_PERTURBATION_INFORMATIVITY", "LOCAL_DESTINATION_STATE_RESPONSE_MAP", "HYBRID_EVENT_SENSITIVITY_OR_SALTATION_PREDICTOR"],
-  "novelty_or_reduction_impact": "CAUSAL_OPPORTUNITY_IS_NECESSARY_BUT_NOT_SUFFICIENT_FOR_BROAD_MECHANISM_IDENTIFICATION. Opportunity-aware intervention is supported, but broad interpretation requires claim-scoped informativity and should first survive ordinary local/hybrid sensitivity reductions. No current R2 rewrite or mechanism uplift follows.",
+  "affected_lines": [
+    "CAND34_PREFORMAL_R2_INTERPRETATION_CEILING",
+    "CAND34_LOCAL_SPIKE_RESPONSE_KERNEL_REDUCTION",
+    "CAND34_HISTORY_COUPLING_FILTER_REDUCTION",
+    "CAND34_LINEAR_AND_NONLINEAR_RESPONSE_REDUCTION",
+    "CAND34_FUTURE_ASSEMBLY_ROUTE_IRREDUCIBILITY",
+    "FUTURE_MECHANISM_SUCCESSOR_ADMISSION",
+    "PROGRAMME_NOVELTY"
+  ],
+  "reduction_candidates": [
+    "LOCAL_SPIKE_RESPONSE_KERNEL_PLUS_REFRACTORY_HISTORY",
+    "POINT_PROCESS_HISTORY_COUPLING_FILTER",
+    "WEAK_PERTURBATION_SUSCEPTIBILITY_MODEL",
+    "FINITE_WEIGHT_NONLINEAR_THRESHOLD_RESPONSE_MODEL"
+  ],
+  "novelty_or_reduction_impact": "D34_Q002_OBSERVABLES_ADMIT_A_CLOSE_ORDINARY_SPIKE_RESPONSE_KERNEL_AND_HISTORY_FILTER_REDUCTION. The frozen source-spike / edge-delay / destination-potential-and-spike fields align directly with established SRM and point-process history/coupling models. A delay-sensitive positive response therefore does not by itself establish an Assembly-specific route mechanism. No current R2 rewrite, raw-result interpretation, or mechanism uplift follows.",
   "audit_classification": null,
   "confidence": "HIGH",
-  "prospective_baselines_or_discriminators": ["fresh-successor-only claim-scoped perturbation-informativity criterion tied to the exact estimand/alternative set", "local destination-state response map with matched potential/threshold/adaptation/refractory/arrival-time privilege", "hybrid event-sensitivity / saltation / event-Jacobian predictor", "excitation requirements proportional to claim scope rather than global persistent excitation by default"],
-  "questions_for_evidence_analyst": ["Keep current R2 unchanged by this literature and treat informativity as a future claim-scoped interpretation/successor guardrail?", "If a future R2-like null is interpreted mechanistically, require evidence that the frozen perturbation was informative for the exact rejected alternatives rather than merely physically executable?", "Before broad Assembly-route claims, require reduction against a matched local destination-state timing model or hybrid event-sensitivity predictor?"],
-  "questions_for_control_brain": ["Add causal-opportunity-versus-informativity as a prospective claim ceiling without changing active R2?", "Keep excitation requirements proportional to claim scope?", "Preserve existing response/FORMAL/provenance STOP boundaries while fresh Analyst disposition catches up to the R2 head?"],
-  "must_not_change_frozen_or_consumed": ["all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence", "H7 PF-R1 no-rerun/no-rescore boundary and H7 R5 provenance hold", "candidate #34 PRE_FORMAL R1 prebind/no-response provenance", "candidate #34 current R2 opportunity-aware repository work must not be rewritten because of this literature", "candidate #35 remains SYSTEM-scoped", "no response-bearing execution, one-way identity, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"],
+  "prospective_baselines_or_discriminators": [
+    "fresh-successor-only SRM-style local kernel using source spike, edge weight/delay and destination post-spike/refractory state to predict the exact nominal/+1ms fields",
+    "privilege-matched point-process GLM/history-coupling filter for destination spikes and secondary Assembly spike export",
+    "weak-response susceptibility predictor where perturbation magnitude justifies it",
+    "finite-weight nonlinear threshold/SRM extension before treating linear-model failure as a mechanism residual",
+    "frozen out-of-fit validation and complexity/resource accounting for any future reduction comparison"
+  ],
+  "questions_for_evidence_analyst": [
+    "After exact D34-Q002 raw preservation and disposition, keep any positive R2 interpretation below Assembly-specific mechanism unless a fresh successor prospectively survives the local SRM/history-filter reduction?",
+    "Treat a +1ms effect predicted by a translated PSP/refractory kernel as ordinary single-edge dynamics rather than native route irreducibility?",
+    "Keep all newly identified comparators outside the already-exposed/closed R2 object and require a fresh prospective contract if pursued?"
+  ],
+  "questions_for_control_brain": [
+    "Add delay-sensitive-local-response-versus-Assembly-specific-mechanism with SRM/history-filter reduction as a prospective claim ceiling?",
+    "Preserve raw-before-interpretation as the immediate hard floor now that the one-shot workflow produced an artifact?",
+    "Prevent outcome-responsive comparator additions to R2 and reserve these reductions for a fresh successor after Analyst disposition?"
+  ],
+  "must_not_change_frozen_or_consumed": [
+    "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
+    "H7 PF-R1 no-rerun/no-rescore boundary and H7 R5 provenance hold",
+    "candidate #34 closed R2 scientific contract at 43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "candidate #34 exact executor at 8ce961dc88fb52afa6399093fce1e3de7e982f2b",
+    "D34-Q002 must not be repeated and its raw artifact must not be interpreted before durable exact-byte preservation",
+    "no post-exposure comparator/metric/threshold/cue/intervention rewrite inside R2",
+    "candidate #35 remains SYSTEM-scoped",
+    "no one-way identity consumption, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
+  ],
   "utility_request_created": null,
-  "mutations": {"scientific_experiments_executed_by_this_role": 0, "scientific_workflows_dispatched_by_this_role": 0, "one_way_identities_consumed_by_this_role": 0, "research_prs_merged_by_this_role": 0, "immutable_evidence_mutations": 0, "scheduler_definition_changes": 0, "utility_requests_created": 0}
+  "mutations": {
+    "scientific_experiments_executed_by_this_role": 0,
+    "scientific_workflows_dispatched_by_this_role": 0,
+    "one_way_identities_consumed_by_this_role": 0,
+    "research_prs_merged_by_this_role": 0,
+    "immutable_evidence_mutations": 0,
+    "scheduler_definition_changes": 0,
+    "utility_requests_created": 0,
+    "raw_result_artifacts_read_or_interpreted": 0
+  }
 }
