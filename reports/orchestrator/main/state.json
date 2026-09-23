@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T155100+0900-RELAY-CAND34-PREFORMALR2-R94-D34Q002-PRESERVED-EXPOSED",
-  "run_id": "sparkbrain-main-relay-20260923T154600JST-R94-cand34-preserve-d34q002",
-  "producer_run_id": "sparkbrain-main-relay-20260923T154600JST-R94-cand34-preserve-d34q002",
-  "produced_at": "2026-09-23T15:51:00+09:00",
-  "authority_scope": "RELAY_CANONICAL_R94_CAND34_RAW_PRESERVE_THEN_FIRST_EXPOSURE_STOP",
-  "supersedes_generation_id": "MAIN-20260923T152800+0900-PRIMARY-CAND34-PREFORMALR2-R94-WAITING-RESPONSE",
+  "generation_id": "MAIN-20260923T164400+0900-RELAY-CAND34-PREFORMALR2-R94-WAITING-ANALYST",
+  "run_id": "sparkbrain-main-relay-20260923T164400JST-R94-cand34-waiting-analyst",
+  "producer_run_id": "sparkbrain-main-relay-20260923T164400JST-R94-cand34-waiting-analyst",
+  "produced_at": "2026-09-23T16:44:00+09:00",
+  "authority_scope": "RELAY_R94_POSTEXPOSURE_WAIT_FOR_FRESH_ANALYST_ONLY",
+  "supersedes_generation_id": "MAIN-20260923T155100+0900-RELAY-CAND34-PREFORMALR2-R94-D34Q002-PRESERVED-EXPOSED",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T150251+0900-R94-8E6A31C4@5cee6ef496eb9465550fb9c0be5295e587027dfb",
-    "main_previous": "MAIN-20260923T152800+0900-PRIMARY-CAND34-PREFORMALR2-R94-WAITING-RESPONSE",
+    "main_previous": "MAIN-20260923T155100+0900-RELAY-CAND34-PREFORMALR2-R94-D34Q002-PRESERVED-EXPOSED",
     "closed_r2_contract": "research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4"
   },
   "execution_mode": "RELAY",
-  "status": "COMPLETED",
+  "status": "WAITING_EXTERNAL",
   "analyst_generation_id": "EVA-20260923T150251+0900-R94-8E6A31C4",
   "analyst_commit": "5cee6ef496eb9465550fb9c0be5295e587027dfb",
   "research_layer": "PRE_FORMAL",
@@ -28,7 +28,7 @@
   "development_phase": "OPEN_DEVELOPMENT",
   "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
   "cycle_count": 4,
-  "cycle_reassessment_context": "R94 prospectively authorized exactly one bounded D34-Q002 PRE_FORMAL development response under the unchanged closed R2 contract and exact repaired executor, with raw preservation before interpretation and mandatory stop after first meaningful exposure. Relay preserved the completed raw result before reading it and then stopped after first exposure. Relay has no authority to change the Analyst-owned development phase.",
+  "cycle_reassessment_context": "R94 prospectively authorized exactly one bounded D34-Q002 PRE_FORMAL development response under the unchanged closed R2 contract and exact repaired executor, required raw preservation before interpretation, and required STOP after first meaningful exposure. The prior MAIN generation completed that authorized exposure/preservation. This Relay only reconciles freshness and waits for a fresh Analyst generation; it does not alter the Analyst-owned development phase or Funnel fields.",
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "closed_r2_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
@@ -54,31 +54,30 @@
     "raw_artifact_archive_digest": "sha256:38a50cf3d63be3355d3d95387d155a6f0e550d998026ccdd38743a07520171f4",
     "raw_file_sha256": "f34e0e4a40228b5eb299b0c24cec0a6bc97bb37dd1fa5d0f63cf933027843846",
     "preservation_workflow_run_id": 35828594071,
-    "preservation_workflow_conclusion": "success"
+    "preservation_workflow_conclusion": "success",
+    "expected_next_external_action": "Fresh Evidence Analyst review of the exact preserved D34-Q002 raw result and provenance before any successor or phase/Funnel disposition."
   },
   "work_performed": {
-    "classification": "SCIENCE_INVARIANT_REPAIR_NO_CLOBBER_PRESERVATION_PLUMBING_THEN_AUTHORIZED_FIRST_RESULT_EXPOSURE",
+    "classification": "NO_SCIENCE_CHANGE_POSTEXPOSURE_WAIT_RECONCILIATION_ONLY",
     "scientific_contract_changed": false,
     "research_branch_mutated": false,
-    "preservation_control_plane_added": true,
-    "preserve_ref_created": true,
-    "raw_preserved_before_interpretation": true,
-    "raw_hash_verified_before_interpretation": true,
-    "preserved_hash_verified_after_commit": true,
-    "forge_code_reused": false,
-    "forge_observation_confirmatory_credit": false,
+    "preserve_ref_mutated": false,
+    "evidence_ref_mutated": false,
+    "formal_or_sealed_ref_mutated": false,
     "same_identity_rerun": false,
-    "science_affecting_redesign": false
+    "science_affecting_redesign": false,
+    "new_scientific_execution_this_run": false,
+    "new_scientific_result_this_run": false
   },
   "observations_evidentiary_status": {
-    "new_scientific_result": true,
+    "existing_scientific_result": true,
+    "new_scientific_result_this_run": false,
     "result_class": "PREFORMAL_DEVELOPMENT_RESULT_ONLY",
     "raw_result_status": "PREFORMAL_DEVELOPMENT_RESULT_EXPOSED",
     "raw_evidentiary_status": "PREFORMAL_DEVELOPMENT_ONLY_ZERO_CONFIRMATORY_CREDIT",
     "formal_evidence": 0,
     "independent_confirmatory_credit": 0,
     "official_scoring_performed": false,
-    "preformal_development_result_new_this_run": 1,
     "scientific_result_exposed_to_main": true,
     "first_meaningful_exposure_reached": true,
     "repeat_response_execution_permitted": false
@@ -94,9 +93,9 @@
   },
   "collision_awareness": {
     "fresh_primary_running_same_object_collision": false,
-    "primary_handoff_status_reconciled": "WAITING_EXTERNAL",
+    "primary_previous_status_reconciled": "COMPLETED",
     "forge_same_object_collision": false,
-    "forge_code_reused": false,
+    "forge_current_disposition": "NO_OP_POSTEXPOSURE_R94_AVOID_CAND34",
     "utility_dependency": false
   },
   "hard_floor": {
@@ -108,15 +107,16 @@
     "evidence_ref_mutated": false,
     "formal_or_sealed_ref_mutated": false,
     "consumed_identity_rerun_retune_rescore": false,
-    "scientific_preserve_ref_created": true
+    "scientific_preserve_ref_created_this_run": false
   },
   "integrity": {
     "analyst_generation_rechecked_before_mutation": true,
     "main_generation_and_lease_rechecked_before_mutation": true,
     "active_research_head_rechecked_before_mutation": true,
+    "raw_preserve_ref_rechecked_before_mutation": true,
     "closed_r2_contract_head_unchanged": true,
-    "raw_before_interpretation_respected": true,
-    "preserve_no_clobber_respected": true,
+    "active_research_head_unchanged": true,
+    "raw_preserve_head_unchanged": true,
     "prior_result_preservation_respected": true,
     "formal_stop_respected": true,
     "analyst_owned_development_phase_preserved_exactly": true,
@@ -128,9 +128,9 @@
     "D34_Q002_repeat_forbidden": true
   },
   "remaining_blockers": [
-    "Fresh Evidence Analyst review is required after first meaningful D34-Q002 PRE_FORMAL result exposure before any repeat response, science-affecting redesign, Funnel reinterpretation, development-phase transition, or FORMAL action."
+    "Fresh Evidence Analyst review is required after first meaningful D34-Q002 PRE_FORMAL result exposure before any repeat response, science-affecting redesign, Funnel reinterpretation, development-phase transition, successor execution, or FORMAL action."
   ],
-  "stop_reason": "FIRST_MEANINGFUL_PREFORMAL_RESULT_EXPOSURE_FRESH_ANALYST_REVIEW_REQUIRED",
-  "next_action": "Wait for a fresh Evidence Analyst generation to review the exact preserved D34-Q002 raw result and provenance. Do not rerun D34-Q002. Do not retune, rescore, reinterpret Funnel fields, change development_phase, or take FORMAL action without fresh authority.",
+  "stop_reason": "WAITING_FOR_FRESH_ANALYST_POSTEXPOSURE_REVIEW",
+  "next_action": "Wait for a fresh Evidence Analyst generation to review the exact preserved D34-Q002 raw result and provenance. Do not rerun D34-Q002. Do not retune, rescore, reinterpret Funnel fields, change development_phase, construct an outcome-responsive successor, or take FORMAL action without fresh authority.",
   "owner": "main"
 }
