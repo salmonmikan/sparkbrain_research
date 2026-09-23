@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260923T195000+0900-G13-B7D42E19",
-  "produced_at": "2026-09-23T19:50:00+09:00",
-  "producer_run_id": "repository-steward-auto-20260923T195000+0900-G13-B7D42E19",
+  "generation_id": "STEWARD-20260924T075000+0900-G14-5C61A2F8",
+  "produced_at": "2026-09-24T07:50:00+09:00",
+  "producer_run_id": "repository-steward-auto-20260924T075000+0900-G14-5C61A2F8",
   "authority_scope": "REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY",
-  "supersedes_generation_id": "STEWARD-20260923T135000+0900-G12-3A7C91E5",
+  "supersedes_generation_id": "STEWARD-20260923T195000+0900-G13-B7D42E19",
   "repository": "salmonmikan/sparkbrain_research",
   "mailbox_semantics": {
     "ops_branches_are_scientific_source_of_truth": false,
@@ -13,19 +13,13 @@
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_changed_since_g12": false,
+    "main_changed_since_g13": false,
     "main_protected_branch_summary": true,
     "repository_ruleset_count": 1,
     "active_main_ruleset": {
       "name": "protection_main",
       "target": "branch",
-      "enforcement": "active",
-      "scope": "~DEFAULT_BRANCH",
-      "rules": ["deletion", "non_fast_forward", "pull_request", "required_linear_history"],
-      "allowed_merge_methods": ["squash"],
-      "bypass_actors": [],
-      "current_user_can_bypass": "never",
-      "created_at": "2026-09-23T14:34:28.710+09:00"
+      "enforcement": "active"
     },
     "authoritative_tag_namespace_protection": "NOT_OBSERVED_CURRENT_RULESET_TARGETS_BRANCH_ONLY",
     "authoritative_evidence_tag_count": 5,
@@ -36,11 +30,14 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
-    "evidence_tag_objects_changed_since_g12": false,
+    "evidence_tag_objects_changed_since_g13": false,
+    "legacy_freeze_branch_count": 13,
+    "legacy_freeze_exact_sha_map_reverified": true,
+    "legacy_preserve_pointers_present": true,
     "immutable_ref_incident": false
   },
   "protection_audit": {
-    "main_branch_gap_from_g12": "RESOLVED_BY_ACTIVE_RULESET",
+    "main_branch_protection": "ACTIVE_RULESET_PRESENT",
     "issue_139_state": "OPEN",
     "issue_139_scope": "AUTHORITATIVE_TAG_NAMESPACES",
     "issue_139_substantive_status": "STILL_VALID_TAG_RULESET_NOT_OBSERVED",
@@ -49,13 +46,35 @@
   },
   "separation_audit": {
     "classification": "COMPLIANT_MAIN_RESEARCH_FORGE_EVIDENCE_SEPARATION_NO_NEW_STABLE_SUBSTRATE",
+    "current_forge_branches": [
+      "forge/20260923-receptor-suppression-probes-a",
+      "forge/20260924-coordinate-null-local-witness",
+      "forge/20260924-recurrent-continuation-a",
+      "forge/20260924-th001-q0-qi-adaptation-a"
+    ],
     "forge_policy": "MUTABLE_NONCANONICAL_EXPLORATORY_HISTORY_ONLY",
+    "forge_on_main_observed": false,
     "scientific_authority_granted_by_steward": false
+  },
+  "documentation_audit": {
+    "legacy_freeze_map_exact_mapping_status": "REVERIFIED_CORRECT",
+    "legacy_freeze_map_summary_freshness": "STALE",
+    "legacy_freeze_map_stale_claims": [
+      "Git tags = 0",
+      "repository rulesets = 0"
+    ],
+    "current_observed_counts": {
+      "authoritative_evidence_tags": 5,
+      "repository_rulesets": 1
+    },
+    "steward_scope_prevented_direct_legacy_map_edit": true
   },
   "main_promotion_review": {
     "scientific_candidates": [],
+    "open_governance_tooling_prs": [148, 149],
     "governance_or_tooling_candidates": [
-      {"candidate": "READER_NAVIGATION_DOC_REFRESH", "status": "ELIGIBLE_FOR_NORMAL_REVIEWED_INTEGRATION"},
+      {"candidate": "PR_148_HUMAN_DIRECTIVES_REPOSITORY_SKILL", "status": "OPEN_UNMERGED_NORMAL_REVIEW_REQUIRED"},
+      {"candidate": "PR_149_SCHEDULER_REGISTRY_SKILL", "status": "OPEN_UNMERGED_NORMAL_REVIEW_REQUIRED"},
       {"candidate": "GENERIC_EQUIVALENCE_CERTIFICATE_VERIFIER", "status": "DEFER_PENDING_TRUST_BOUNDARY_CLARIFICATION"}
     ],
     "promotions_performed": 0
@@ -74,19 +93,22 @@
     "forge_refs_modified": 0,
     "evidence_or_preserve_refs_modified": 0,
     "immutable_refs_modified": 0,
-    "main_promotions_performed": 0
+    "main_promotions_performed": 0,
+    "steward_persistence_only": true
   },
   "persistence": {
-    "history_path": "reports/repository_steward/history/2026-09-23/1950.md",
+    "history_path": "reports/repository_steward/history/2026-09-24/0750.md",
     "latest_path": "reports/repository_steward/latest.md",
     "state_path": "reports/repository_steward/state.json",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
   },
   "next_priorities": [
-    "Re-fetch main protection and authoritative tag refs independently each Steward generation.",
-    "Keep Issue #139 open until tag-target protection for freeze/sealed/formal/evidence namespaces is installed and verified; note its zero-ruleset prose is stale.",
-    "Treat forge/* only as mutable noncanonical exploratory history.",
+    "Re-fetch main protection and authoritative evidence/freeze refs independently each Steward generation.",
+    "Keep Issue #139 open until tag-target protection for freeze/sealed/formal/evidence namespaces is installed and verified.",
+    "Track the stale zero-tags/zero-rulesets summary in legacy_freeze_map.md without editing outside designated Steward latest/state/history scope.",
+    "Treat forge/* and Theory/Revisit control-plane material only as mutable noncanonical history, never evidence.",
     "Do not promote scientific research surfaces to main from Steward authority.",
+    "Keep PR #148 and #149 under normal reviewed integration only; do not merge from Steward authority.",
     "Do not promote the generic equivalence verifier until its trust boundary is explicit."
   ]
 }
