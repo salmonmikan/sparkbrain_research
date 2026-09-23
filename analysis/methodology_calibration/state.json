@@ -1,40 +1,44 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-23T22:18:27+09:00",
+  "timestamp": "2026-09-23T23:20:21+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260923T221827+0900-R91-7E31B4A2",
-    "sequence": 91,
+    "generation_id": "METHCAL-20260923T232021+0900-R92-5C91E7A4",
+    "sequence": 92,
     "material_change": true,
-    "material_change_reason": "CAND35_COMPLETED_PROSPECTIVELY_BOUNDED_CYCLE3_NONRESULT_PRESERVE_BEFORE_READ_PROVENANCE_WRAPPER_WITH_UNCHANGED_SCIENTIFIC_SOURCE_AND_SUCCESSFUL_CI; IMPLEMENTATION_REVISION_OBSERVABILITY_NEEDS_SEPARATION_FROM_SCIENTIFIC_DEVELOPMENT_REVISION",
-    "supersedes_generation_id": "METHCAL-20260923T212015+0900-R90-C2A74E19",
+    "material_change_reason": "ANALYST_R100_PROSPECTIVELY_AUTHORIZED_ONE_BOUNDED_RESULT_BEARING_CAND35_SYSTEM_ARCHITECTURE_DEVELOPMENT_BATCH_AFTER_EXACT_REPIN_FIXED_ORDER_PRESERVE_BEFORE_READ_PREFLIGHT; CLAIM_TYPE_SCOPE_AND_READY_VS_EFFECTIVE_EXECUTABILITY_REQUIRE_EXPLICIT_CALIBRATION",
+    "supersedes_generation_id": "METHCAL-20260923T221827+0900-R91-7E31B4A2",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260923T212015+0900-R90-C2A74E19",
-      "commit": "ac7214f842c04f97d666ed4a1056ac3904427e61"
+      "generation_id": "METHCAL-20260923T221827+0900-R91-7E31B4A2",
+      "commit": "ea2ab83a78b10dbefb2fe7cc390ced097e18b243"
     },
     "human_directive": {
       "id": "HUMAN-20260922-005",
       "role": "HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260923T155900+0900-R43-A91C4E6B",
-      "commit": "1592c3b52a8a545aa2503fd4618c0a761921ef1e",
+      "generation_id": "CTRL-20260923T225500+0900-R44-C8F41D72",
+      "commit": "3c46617fba123704297d880a748c305c16a7dd01",
       "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260923T210010+0900-R99-6F2B8C14",
-      "commit": "59dbcdc2e3541e78a64f64e16fa0be5ef38efc26",
+      "generation_id": "EVA-20260923T225720+0900-R100-C6A2F18D",
+      "history_commit": "2c939418abbdcfe3faba30bd2d95a2be9766909b",
+      "state_commit": "a32494246245a559ad4e1f8543a1f252b03ef2e7",
       "role": "DESIGNATED_CANONICAL_GATE_HISTORY"
     },
-    "candidate35_nonresult_preservation": {
+    "candidate35_prior_preservation": {
       "scientific_source_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
       "implementation_head": "5bc64fbd8fd2f3e8d804d18e0a0ad0d58b5a3e4c",
       "ci_run_id": 35863266802,
       "ci_conclusion": "success",
-      "workflow_artifact_count": 0,
-      "role": "DIRECT_NON_RESULT_IMPLEMENTATION_AND_PROVENANCE_EVIDENCE"
+      "role": "DIRECT_PRIOR_NON_RESULT_IMPLEMENTATION_AND_PROVENANCE_EVIDENCE"
+    },
+    "candidate35_post_r100_branch_check": {
+      "commits_since_r100_decision": 0,
+      "role": "DIRECT_BRANCH_STATE_CHECK_NO_POST_R100_RESULT_IMPLEMENTATION_OBSERVED"
     },
     "h7_nonresult_readiness": {
       "run_id": 35857110884,
@@ -65,8 +69,9 @@
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
       "lifecycle": "NONTERMINAL_HOLD",
       "hold_class": "FORMAL_INTEGRITY_CAPABILITY",
-      "preformal_eligible": true,
-      "ready": true,
+      "preformal_eligible_persisted": true,
+      "ready_persisted": true,
+      "effective_executable_ready": false,
       "fresh_executable_formal_authority": 0,
       "formal_start_allowed_now": false,
       "identity_consumed": false,
@@ -78,7 +83,6 @@
       "controller_head": "f21dc7521af7413adcc46a2561271e0b8852f371",
       "readiness_run": 35857110884,
       "readiness_conclusion": "failure",
-      "readiness_evidentiary_status": "NON_RESULT_PREIDENTITY_DIAGNOSTIC",
       "readiness_blocker": "PROTECTED_SIDECAR_CAPABILITY_MISSING",
       "science_invariant_remediation_only": true,
       "green_readiness_automatically_authorizes_formal": false,
@@ -91,25 +95,38 @@
       "implementation_head": "5bc64fbd8fd2f3e8d804d18e0a0ad0d58b5a3e4c",
       "claim_ceiling": "SYSTEM",
       "development_phase": "OPEN_DEVELOPMENT",
+      "study_type": "ARCHITECTURE_STUDY",
       "preformal_eligible": false,
       "ready": false,
       "cycle_count": 3,
       "system_priority_exception_active": true,
       "system_priority_exception_reason": "NO_EXECUTABLE_MECHANISM_WHILE_H7_FORMAL_INTEGRITY_CAPABILITY_BLOCKED",
       "bounded_nonresult_preservation_work_completed": true,
-      "candidate_response_allowed": false,
-      "candidate_response_executed": false,
+      "r100_result_authority": "CONDITIONAL_ONE_BOUNDED_FIXED_ORDER_FIVE_ARM_DEVELOPMENT_BATCH",
+      "r100_exact_authority_repin_required": true,
+      "nonresult_preflight_required": true,
+      "candidate_response_executable_now": false,
+      "candidate_response_executed_after_r100": false,
+      "authority_exhausted_after_first_complete_result_exposure": true,
+      "post_exposure_phase_required": "RESULT_EXPOSED_DEVELOPMENT",
+      "automatic_rerun_retune_after_exposure_allowed": false,
+      "confirmatory_credit": 0,
       "preformal_execution_allowed": false,
       "formal_action_allowed": false,
-      "preserve_mode": "EXCLUSIVE_CREATE_BEFORE_RETURN",
-      "raw_before_read": true,
-      "no_clobber": true,
-      "ci_run": 35863266802,
-      "ci_conclusion": "success",
-      "ci_artifact_count": 0,
-      "scientific_source_modified_by_preservation_work": false,
-      "development_revision_axis": "SCIENTIFIC_REVISION_REUSED_BY_IMPLEMENTATION_WRAPPER_NEEDS_OBSERVABILITY_CLARIFICATION",
-      "same_object_system_to_mechanism_uplift_allowed": false
+      "preserve_mode": "EXCLUSIVE_CREATE_NO_CLOBBER_BEFORE_RETURN_READ_INTERPRETATION",
+      "fixed_arm_order": [
+        "SHAM_STATE",
+        "POTENTIAL_NULL",
+        "ADAPTATION_NULL",
+        "JOINT_SUBTHRESHOLD_NULL",
+        "DELAYED_SHAM_32MS"
+      ],
+      "partial_outcome_redesign_allowed": false,
+      "scientific_fields_frozen": true,
+      "same_object_system_to_mechanism_uplift_allowed": false,
+      "positive_result_interpretation_ceiling": "SYSTEM_SURGICAL_SENSITIVITY_NOT_AUTOMATIC_NATURALLY_REACHABLE_MEMORY_CARRIER",
+      "future_on_manifold_mechanism_question_requires_fresh_prospective_revision_or_successor": true,
+      "scientific_vs_implementation_revision_observability": "IMPROVED_BY_SEPARATE_SOURCE_AND_IMPLEMENTATION_HEADS_BUT_DURABLE_ORTHOGONAL_AXIS_STILL_RECOMMENDED"
     },
     "candidate_34": {
       "id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
@@ -118,6 +135,7 @@
       "lifecycle": "TERMINAL_FOR_CURRENT_OBJECT",
       "confirmatory_credit": 0,
       "repeat_retune_rescore_current_object_permitted": false,
+      "fresh_successor_permitted_if_independently_motivated": true,
       "raw_provenance_repair_policy": "APPEND_ONLY_CLARIFICATION_ONLY_NO_RERUN_NO_RAW_MUTATION"
     },
     "scientific_source_of_truth": "stable main plus independently fetched evidence refs and exact research/workflow refs; ops are mailbox/history/authority/provenance overlays only"
@@ -130,14 +148,20 @@
     "fresh_open_result_exposed_consumed_end_to_end": "INSUFFICIENT_EVIDENCE",
     "candidate35_cycle3_mandatory_reassessment": "KEEP",
     "cycle3_automatic_terminal_cap": "RELAX",
-    "candidate35_additional_bounded_development_work": "KEEP",
-    "candidate35_preservation_wrapper_science_classification": "KEEP",
-    "candidate35_scientific_vs_implementation_revision_observability": "CLARIFY",
-    "candidate35_response_while_exception_active": "TIGHTEN",
+    "candidate35_one_bounded_result_bearing_system_development_batch": "SPLIT_BY_CLAIM_TYPE",
+    "candidate35_exact_fresh_analyst_authority_before_result": "KEEP",
     "caller_supplied_result_enable_flag_as_authority": "TIGHTEN",
+    "candidate35_fixed_order_one_shot_batch": "KEEP",
+    "candidate35_preserve_before_return_read": "KEEP",
+    "candidate35_partial_batch_outcome_responsive_redesign": "TIGHTEN",
+    "candidate35_post_exposure_result_exposed_transition": "KEEP",
+    "candidate35_post_exposure_automatic_rerun_retune": "TIGHTEN",
+    "candidate35_scientific_vs_implementation_revision_observability": "CLARIFY",
     "candidate35_system_claim_ceiling": "KEEP",
     "candidate35_preformal_eligible_vs_ready": "KEEP",
     "temporary_system_priority_exception_when_no_executable_mechanism": "KEEP",
+    "system_priority_exception_result_scope": "SPLIT_BY_CLAIM_TYPE",
+    "persisted_ready_vs_effective_executable_readiness": "CLARIFY",
     "h7_nonresult_readiness_fail_closed": "KEEP",
     "h7_identity_creation_during_remediation": "TIGHTEN",
     "h7_green_readiness_as_automatic_formal_go": "TIGHTEN",
@@ -166,40 +190,40 @@
     "protected_adaptive_evaluation_validity": "TIGHTEN"
   },
   "mandatory_questions": {
-    "1_development_phase_end_to_end": "MOSTLY_POSITIVE_FOR_OPEN_AND_RESULT_EXPOSED; CAND35_ADDS_A_CLEAN_OPEN_NONRESULT_ITERATION_CASE; FRESH_CONSUMED_ONE_WAY_TRANSITION_REMAINS_UNOBSERVED",
-    "2_cycle3_hard_cap": "NO; CAND35_COMPLETED_BOUNDED_NONRESULT_PRESERVATION_PROVENANCE_WORK_AFTER_CYCLE3_REASSESSMENT_WITHOUT_RESPONSE_GENERATION",
-    "3_repair_classification": "CORRECT_IN_OBSERVED_CAND35_UPDATE; PRESERVATION_INSTRUMENTATION_TESTS_AND_IMPORT_ORDER_CHANGED_NO_SCIENTIFIC_SOURCE; H7_ALLOWED_REMEDIATION_REMAINS_INVARIANT_ONLY",
-    "4_laundering": "NOT_OBSERVED; NO_DEVELOPMENT_OR_CI_OBSERVATION_GETS_CONFIRMATORY_CREDIT; IMPLEMENTATION_REVISION_SHOULD_BE_REPRESENTED_SEPARATELY_FROM_SCIENTIFIC_DEVELOPMENT_REVISION_FOR_CLEARER_PROVENANCE",
-    "5_result_exposed_preservation": "YES_IN_OBSERVED_CASES; NO_PRIOR_H7_CAND34_OR_PFR1_RESULT_MUTATION_THIS_GENERATION",
-    "6_formal_one_way_integrity": "UNCHANGED; NO_NEW_IDENTITY_START_H7_CONTROL_OR_PRESERVE_REF_PROTECTED_EVAL_SCORE_OR_EVIDENCE_REF",
-    "7_system_to_mechanism_successors": "NO_MANUFACTURE_OBSERVED; CAND35_REMAINS_SYSTEM; CLEAN_FRESH_SUCCESSOR_CASE_STILL_UNOBSERVED",
-    "8_preformal_hidden_formal": "NO; CAND35_CI_AND_PRESERVATION_SUCCESS_DO_NOT_CREATE_PREFORMAL_ELIGIBILITY_READY_OR_SCIENTIFIC_CREDIT",
-    "9_terminal_and_supply": "MOSTLY_CALIBRATED; BOUNDED_SYSTEM_NONRESULT_WORK_MAINTAINS_THROUGHPUT_WITHOUT_CLAIM_INFLATION_BUT_EXECUTABLE_MECHANISM_SUPPLY_REMAINS_ZERO",
-    "10_pass_reachability": "REALISTIC_BUT_CAPABILITY_CONDITIONED_WITHOUT_WEAKENING_STANDARDS; H7_BLOCKER_REMAINS_INTEGRITY_CAPABILITY_NOT_EVIDENCE_CRITERION"
+    "1_development_phase_end_to_end": "MOSTLY_POSITIVE_FOR_OPEN_AND_RESULT_EXPOSED; R100_PROSPECTIVELY_SPECIFIES_CAND35_TRANSITION_AFTER_FIRST_COMPLETE_RESULT; FRESH_CONSUMED_ONE_WAY_TRANSITION_REMAINS_UNOBSERVED",
+    "2_cycle3_hard_cap": "NO; CAND35_RECEIVES_ONE_BOUNDED_ADDITIONAL_BATCH_WITH_PROSPECTIVELY_STATED_INFORMATION_GAIN_AND_STOP_RULES",
+    "3_repair_classification": "CORRECT_IN_R100; AUTHORITY_RUNTIME_PACKAGE_PRESERVATION_CLOSURE_IS_INVARIANT_ONLY_AND_ANY_FROZEN_SCIENTIFIC_FIELD_CHANGE_MUST_STOP_FOR_VERSION_OR_SUCCESSOR",
+    "4_laundering": "NOT_OBSERVED; CAND35_AUTHORITY_IS_ONE_BATCH_ZERO_CONFIRMATORY_CREDIT_NO_AUTOMATIC_RERUN_RETUNE_AND_NO_RESULT_HAS_YET_BEEN_OBSERVED_AFTER_R100",
+    "5_result_exposed_preservation": "YES_IN_OBSERVED_HISTORY_AND_STRONG_PROSPECTIVE_RULE_FOR_CAND35; LIVE_CAND35_POST_EXPOSURE_TRANSITION_REMAINS_UNOBSERVED",
+    "6_formal_one_way_integrity": "UNCHANGED; MAIN_AND_EVIDENCE_REFS_STABLE_NO_H7_IDENTITY_START_CONTROL_PRESERVE_PROTECTED_EVAL_SCORE_OR_NEW_EVIDENCE",
+    "7_system_to_mechanism_successors": "NO_MANUFACTURE_OR_SUPPRESSION_DEMONSTRATED; CAND35_REMAINS_SYSTEM_AND_PREOUTCOME_LITERATURE_MOTIVATION_FOR_ANY_FUTURE_ON_MANIFOLD_SUCCESSOR_IS_RECORDED_BUT_FRESH_ID_CONTRACT_STILL_REQUIRED",
+    "8_preformal_hidden_formal": "NO; CAND35_REMAINS_BELOW_PREFORMAL_DESPITE_BOUNDED_ARCHITECTURE_RESPONSE_AUTHORITY_AND_DEVELOPMENT_OUTCOME_HAS_ZERO_CONFIRMATORY_CREDIT",
+    "9_terminal_and_supply": "MOSTLY_CALIBRATED; CAND34_IS_CURRENT_OBJECT_TERMINAL_ONLY_AND_ZERO_EXECUTABLE_MECHANISM_PERSISTS; ONE_BOUNDED_SYSTEM_RESULT_BATCH_IS_DEFENSIBLE_BUT_REPEATED_SYSTEM_RESULT_WORK_TO_FILL_SUPPLY_WOULD_BE_OVERPERMISSIVE",
+    "10_pass_reachability": "REALISTIC_BUT_CAPABILITY_CONDITIONED_WITHOUT_WEAKENING_STANDARDS; H7_BLOCKER_IS_CONCRETE_PROTECTED_SIDECAR_AND_FRESH_AUTHORIZATION_SEQUENCE_NOT_IMPOSSIBLE_EVIDENCE_CRITERION"
   },
   "risks": {
-    "false_positive": "LOW_TO_MODERATE_WATCH: CAND35_FUTURE_RESULT_HELPER_HAS_A_CALLER_ENABLE_FLAG_BUT_CURRENT_AUTHORITY_IS_STOP; FUTURE_RESULT_BEARING_USE_MUST_BIND_FRESH_EXACT_ANALYST_AUTHORITY_INDEPENDENTLY; H7_MUST_NOT_COUPLE_SIDECAR_REPAIR_OR_GREEN_READINESS_TO_START",
-    "false_negative": "LOW_TO_MODERATE_WATCH: CAND35_NONRESULT_WORK_SHOWS_SAFE_FORWARD_MOTION_BUT_PROLONGED_ZERO_EXECUTABLE_MECHANISM_SUPPLY_MUST_NOT_NORMALIZE_SYSTEM_ONLY_ACTIVITY_OR_SUPPRESS_DISCOVERY",
-    "moving_goalpost_rescue": "LOW_WATCH: CAND35_SCIENTIFIC_SOURCE_AND_H7_R5_REMAIN_UNCHANGED",
-    "over_terminalization": "LOW_TO_MODERATE_WATCH: CYCLE3_NOT_HARD_CAPPED_AND_CAND34_CURRENT_OBJECT_TERMINAL_SEMANTICS_REMAIN_CALIBRATED; MAIN_RESIDUAL_RISK_IS_MECHANISM_SUPPLY_SCARCITY"
+    "false_positive": "LOW_TO_MODERATE_WATCH: CAND35_POSITIVE_OFF_MANIFOLD_NULL_EFFECT_MUST_NOT_BE_OVERREAD_AS_NATURALLY_REACHABLE_MECHANISM; EXACT_R100_REPIN_AND_FIXED_SYSTEM_INTERPRETATION_CEILING_REQUIRED",
+    "false_negative": "LOW_TO_MODERATE_WATCH: EXECUTABLE_MECHANISM_SUPPLY_REMAINS_ZERO; CONTINUE_INDEPENDENT_MECHANISM_DISCOVERY_AND_DO_NOT_NORMALIZE_SYSTEM_RESULT_BEARING_WORK_AS_SUBSTITUTE",
+    "moving_goalpost_rescue": "LOW_WATCH: CAND35_FIELDS_ARE_FROZEN_BEFORE_BATCH_PARTIAL_OUTCOME_REDESIGN_IS_FORBIDDEN_AND_AUTHORITY_EXPIRES_AFTER_FIRST_COMPLETE_EXPOSURE",
+    "over_terminalization": "LOW_TO_MODERATE_WATCH: CYCLE3_IS_NOT_HARD_CAPPED_AND_CAND34_IS_CURRENT_OBJECT_TERMINAL_ONLY; MAIN_RESIDUAL_RISK_IS_MECHANISM_SUPPLY_SCARCITY"
   },
   "development_iteration_calibration": {
-    "candidate35": "OPEN_DEVELOPMENT_SYSTEM_CEILING_CYCLE3_REASSESSMENT_NONRESULT_PRESERVATION_PROVENANCE_WORK_COMPLETED_WITH_UNCHANGED_SCIENTIFIC_SOURCE_SUCCESSFUL_CI_RESPONSE_STOP_AND_NEED_FOR_SEPARATE_IMPLEMENTATION_REVISION_OBSERVABILITY",
-    "h7": "RESULT_EXPOSED_DEVELOPMENT_NONTERMINAL_FORMAL_INTEGRITY_CAPABILITY_HOLD_UNCHANGED_SCIENCE_INVARIANT_REMEDIATION_ONLY_FRESH_CONSUMED_ONE_WAY_NOT_REACHED",
+    "candidate35": "OPEN_DEVELOPMENT_SYSTEM_CEILING_ONE_BOUNDED_FIXED_ORDER_RESULT_BEARING_ARCHITECTURE_BATCH_PROSPECTIVELY_AUTHORIZED_AFTER_EXACT_R100_REPIN_NONRESULT_PREFLIGHT_AND_PRESERVE_BEFORE_READ; ZERO_CONFIRMATORY_CREDIT; STOP_AND_TRANSITION_RESULT_EXPOSED_AFTER_FIRST_COMPLETE_BATCH",
+    "h7": "RESULT_EXPOSED_DEVELOPMENT_NONTERMINAL_FORMAL_INTEGRITY_CAPABILITY_HOLD_SCIENCE_INVARIANT_REMEDIATION_ONLY_FRESH_CONSUMED_ONE_WAY_NOT_REACHED",
     "candidate34": "RESULT_EXPOSED_DEVELOPMENT_CURRENT_OBJECT_TERMINAL_ZERO_CONFIRMATORY_CREDIT_APPEND_ONLY_PROVENANCE_CLARIFICATION_ONLY",
-    "repeated_result_bearing_case": "NO_NEW_LIVE_RESULT_BEARING_DEVELOPMENT_CASE_THIS_GENERATION"
+    "repeated_result_bearing_case": "CAND35_IS_PROSPECTIVELY_AUTHORIZED_BUT_NO_POST_R100_RESULT_EXPOSURE_OBSERVED_AT_AUDIT_TIME"
   },
   "claim_type_findings": {
-    "candidate35": "SYSTEM_CEILING_MAINTAINED_OPEN_DEVELOPMENT_NONTERMINAL_PRESERVATION_COMPLETION_DOES_NOT_UPLIFT_CLAIM_TYPE",
+    "candidate35": "SYSTEM_CEILING_MAINTAINED; AUTHORIZED_BATCH_CAN_ANSWER_SYSTEM_ARCHITECTURE_SENSITIVITY_ONLY_AND_MUST_NOT_AUTO_UPLIFT_TO_MECHANISM_PREFORMAL_OR_CONFIRMATION",
     "h7": "MECHANISM_CEILING_MAINTAINED_NONTERMINAL_INTEGRITY_HOLD_NOT_SCIENTIFIC_FAIL",
     "candidate34": "MECHANISM_CURRENT_OBJECT_TERMINAL_DEVELOPMENT_ONLY_NOT_RETROACTIVELY_RESCORED",
-    "same_object_system_to_mechanism_uplift": "NOT_OBSERVED",
-    "fresh_system_to_mechanism_successor": "INSUFFICIENT_EVIDENCE"
+    "same_object_system_to_mechanism_uplift": "NOT_OBSERVED_AND_NOT_AUTHORIZED",
+    "fresh_system_to_mechanism_successor": "INSUFFICIENT_LIVE_EVIDENCE; PREOUTCOME_INDEPENDENT_MOTIVATION_MAY_EXIST_BUT_FRESH_ID_AND_CONTRACT_REQUIRED"
   },
-  "pass_reachability": "REALISTIC_BUT_CAPABILITY_CONDITIONED_WITHOUT_STANDARD_RELAXATION: H7_REQUIRES_ALREADY_REQUIRED_PROTECTED_SIDECAR_CAPABILITY_CURRENT_ANALYST_REPIN_NONRESULT_READINESS_STOP_LATER_FRESH_ANALYST_AND_AT_MOST_ONE_FRESH_UNTOUCHED_IDENTITY",
-  "mechanism_supply_health": "TRANSIENT_ZERO_EXECUTABLE_MECHANISM_ON_INTEGRITY_CAPABILITY_HOLD_WITH_COMPLETED_BOUNDED_SYSTEM_NONRESULT_PRESERVATION_WORK",
+  "pass_reachability": "REALISTIC_WITHOUT_STANDARD_RELAXATION_BUT_CAPABILITY_CONDITIONED: H7_REQUIRES_ALREADY_REQUIRED_PROTECTED_SIDECAR_CAPABILITY_CURRENT_ANALYST_REPIN_NONRESULT_READINESS_STOP_LATER_FRESH_ANALYST_AND_AT_MOST_ONE_FRESH_UNTOUCHED_IDENTITY",
+  "mechanism_supply_health": "ZERO_EXECUTABLE_MECHANISM_WITH_ONE_BOUNDED_SYSTEM_DEVELOPMENT_RESPONSE_PROSPECTIVELY_AUTHORIZED",
   "funnel_observability": {
-    "latest_canonical_authority_generation": "EVA-20260923T210010+0900-R99-6F2B8C14",
+    "latest_canonical_authority_generation": "EVA-20260923T225720+0900-R100-C6A2F18D",
     "population": 35,
     "classified": 35,
     "mechanism": 14,
@@ -211,15 +235,16 @@
     "open_development": 3,
     "result_exposed_development": 32,
     "canonical_consumed_one_way": 0,
-    "preformal_eligible_current_nonterminal": 1,
-    "ready_current_nonterminal": 1,
+    "preformal_eligible_current_nonterminal_persisted": 1,
+    "ready_current_nonterminal_persisted": 1,
     "viable_executable_mechanism": 0,
     "fresh_executable_formal_authority": 0,
     "fresh_formal_identity_consumed": 0,
     "official_consumed_scientific_identities": 7,
     "system_over_mechanism_priority_exceptions": 1,
-    "candidate35_nonresult_preservation_implementation_completed": true,
-    "candidate35_canonical_funnel_transition_from_completion": false,
+    "candidate35_conditional_one_batch_architecture_authority": true,
+    "candidate35_response_executed_after_r100": false,
+    "ready_hold_observability_issue": "PERSISTED_READY_1_COEXISTS_WITH_H7_NONEXECUTABLE_HOLD_AND_ZERO_EXECUTABLE_FORMAL_AUTHORITY; EXPOSE_EFFECTIVE_EXECUTABILITY_SEPARATELY",
     "new_scientific_result_this_generation": false,
     "silent_recanonicalization_performed": false
   },
@@ -230,42 +255,47 @@
     "h7_formal_identity_consumed": false,
     "candidate35_preformal_eligible": false,
     "candidate35_ready": false,
-    "candidate35_response_allowed": false,
-    "candidate35_response_executed": false,
-    "candidate35_ci_or_preservation_success_is_scientific_support": false,
-    "repeated_observations_independent_confirmation": false
+    "candidate35_system_architecture_response_may_precede_preformal": true,
+    "candidate35_architecture_response_confirmatory_credit": 0,
+    "candidate35_positive_result_auto_promotes_ready_or_mechanism": false,
+    "repeated_observations_independent_confirmation": false,
+    "calibration": "CALIBRATED_WITH_OBSERVABILITY_WATCH"
   },
   "prospective_recommendations": [
-    "Keep Candidate 35 response STOP until a fresh Analyst generation explicitly authorizes a result-bearing development action; CI or preservation completion must not auto-advance it.",
-    "Separate scientific development_revision from implementation/instrumentation revision or use an append-only implementation-cycle event so non-scientific iteration is visible without implying scientific retuning.",
-    "If Candidate 35 later becomes result-bearing, bind authorization to exact fresh Analyst/source/protocol/runtime state; response_execution_allowed=true is not sufficient authority by itself.",
-    "Preserve Candidate 35 exclusive-create/no-clobber behavior and development-only zero-confirmatory-credit labeling for any future development response.",
+    "Do not execute Candidate 35 response until exact R100 authority repin and the fixed five-arm NON_RESULT preflight close without any scientific-field change.",
+    "If Candidate 35 executes, preserve every raw artifact before return/read/comparison, stop after the first complete batch, transition immediately to RESULT_EXPOSED_DEVELOPMENT, and prohibit automatic rerun/retune.",
+    "Interpret any Candidate 35 positive effect at SYSTEM surgical-sensitivity ceiling only; do not infer MECHANISM, PRE_FORMAL readiness, or confirmatory support.",
+    "If a later on-manifold mechanistic question is pursued, retain the pre-outcome R39 motivation and require a fresh candidate ID plus fresh prospective reduction/comparator/falsifier contract; do not rescue the current object.",
+    "Continue separating scientific development revision from implementation/instrumentation revision in durable state.",
+    "Expose persisted readiness separately from effective executable readiness/HOLD in funnel state and dashboards.",
     "For H7 provision only the already-required protected-sidecar capability, repin the then-current exact Analyst commit, rerun NON_RESULT readiness only, then stop for a later fresh Analyst decision.",
     "Keep FORMAL START irreversible: after START no same-identity rerun/retune/rescore or science-affecting repair.",
-    "Continue independent MECHANISM discovery so the H7 integrity hold does not normalize zero executable mechanism supply.",
-    "Keep Candidate 34 provenance correction append-only with no rerun raw mutation or retroactive reinterpretation."
+    "Continue independent MECHANISM discovery while H7 is blocked so repeated SYSTEM result work does not normalize zero mechanism supply.",
+    "Keep Candidate 34 provenance correction append-only with no rerun, raw mutation, or retroactive reinterpretation."
   ],
   "utility_request": {
     "created": false,
-    "reason": "CAND35_BOUNDED_PRESERVATION_WORK_IS_COMPLETE_AND_H7_BLOCKER_IS_ALREADY_SPECIFICALLY_IDENTIFIED; NEW_METHODOLOGY_UTILITY_PROPOSAL_WOULD_NOT_MATERIALLY_TEST_CALIBRATION_AND_COULD_COLLIDE_WITH_LIVE_REMEDIATION"
+    "reason": "R100_ALREADY_SUPPLIES_A_BOUNDED_LIVE_CALIBRATION_CASE_AND_H7_HAS_A_SPECIFIC_ACTIVE_INTEGRITY_BOUNDARY; AN_ADDITIONAL_REQUEST_WOULD_NOT_MATERIALLY_IMPROVE_CALIBRATION_AND_COULD_COLLIDE_WITH_LIVE_WORK"
   },
-  "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX: NO_CONSUMED_FORMAL_RERUN_RETUNE_RESCORE_NO_NEW_IDENTITY_CONSUMPTION_NO_PROTECTED_EVAL_OR_TARGET_SIDE_RESULT_READ_NO_EVIDENCE_REF_MUTATION_NO_SCIENTIFIC_MERGE_NO_SCHEDULER_CHANGE_NO_HISTORICAL_PASS_FAIL_REWRITE",
+  "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX: NO_CONSUMED_FORMAL_RERUN_RETUNE_RESCORE_NO_NEW_FORMAL_IDENTITY_OR_START_NO_PROTECTED_EVAL_OR_SCORING_NO_EVIDENCE_REF_MUTATION_NO_SCIENTIFIC_MERGE_NO_SCHEDULER_CHANGE_NO_HISTORICAL_PASS_FAIL_REWRITE",
   "confidence": {
+    "prior_methodology_reconstruction": "HIGH",
+    "r100_authority_reconstruction": "HIGH",
     "stable_main_and_evidence_ref_nonmutation": "HIGH",
-    "candidate35_scientific_source_nonmutation_across_preservation_implementation": "HIGH",
-    "candidate35_no_response_preformal_or_formal_action_in_observed_ci_path": "HIGH",
-    "candidate35_preservation_wrapper_science_invariant_classification": "HIGH",
-    "candidate35_implementation_revision_observability_concern": "MODERATE_TO_HIGH",
+    "candidate35_no_post_r100_branch_commit_or_result_at_audit_point": "HIGH_FOR_BRANCH_STATE_MODERATE_FOR_ALL_EXTERNAL_RUNTIME_SURFACES",
+    "candidate35_one_shot_system_development_calibration": "MODERATE_TO_HIGH",
+    "candidate35_claim_type_split": "HIGH",
+    "ready_vs_effective_executability_observability_concern": "HIGH",
     "h7_unchanged_integrity_hold_status": "HIGH",
     "full_open_result_exposed_consumed_one_way_live_semantics": "MODERATE",
     "global_protected_adaptive_evaluation_validity": "MODERATE",
     "fresh_system_to_mechanism_successor_calibration": "LOW_TO_MODERATE"
   },
   "questions_for_control_analyst": [
-    "Will Candidate 35 scientific development revision remain distinct from future implementation/instrumentation revision so additional non-scientific cycles are visible without implying retuning?",
-    "Before any Candidate 35 result-bearing action, will exact fresh Analyst authority be bound independently of the caller-supplied execution flag?",
-    "Will successful Candidate 35 preservation/CI remain nonconfirmatory and not auto-promote PRE_FORMAL eligibility or READY?",
-    "Will H7 protected-sidecar remediation remain operationally separate from FORMAL identity creation/START and require a later fresh Analyst after green readiness?",
-    "If executable MECHANISM supply stays at zero, will independent discovery continue without inflating SYSTEM claims or manufacturing rescue successors?"
+    "After the Candidate 35 batch will development_phase change to RESULT_EXPOSED before any further scientific decision and will the one-shot authority be explicitly exhausted?",
+    "Will Candidate 35's SYSTEM interpretation ceiling survive a positive intervention result without opportunistic MECHANISM uplift?",
+    "If an on-manifold successor is later proposed will the already-recorded pre-outcome R39 motivation be paired with a genuinely fresh candidate ID and prospective contract rather than outcome-contingent rescue?",
+    "Can funnel state expose persisted READY separately from effective executable readiness while H7 is on integrity HOLD?",
+    "Will H7 capability repair remain operationally separate from identity creation/START and require a later fresh Analyst after green NON_RESULT readiness?"
   ]
 }
