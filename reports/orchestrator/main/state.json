@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T015100+0900-RELAY-H7-R103-CAPABILITY-BLOCKED",
-  "producer_run_id": "sparkbrain-main-relay-20260924T0142JST-r103-h7-readiness",
-  "generated_at": "2026-09-24T01:51:00+09:00",
+  "generation_id": "MAIN-20260924T022000+0900-PRIMARY-H7-R103-EXTERNAL-CAPABILITY-BLOCKED",
+  "producer_run_id": "sparkbrain-main-primary-20260924T0212JST-r103-h7-capability-reconcile",
+  "generated_at": "2026-09-24T02:20:00+09:00",
   "status": "BLOCKED",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "research_layer": "PRE_FORMAL",
   "claim_ceiling": "MECHANISM",
@@ -14,24 +14,23 @@
   "cycle_count": 12,
   "cycle_reassessment": {
     "authorized_scientific_cycle": 12,
-    "relay_extended_scientific_cycle": false,
-    "current_action_was_science_invariant_exact_authority_plumbing_only": true
+    "primary_extended_scientific_cycle": false,
+    "current_action_was_read_only_freshness_and_capability_reconciliation": true
   },
   "analyst_authority": {
     "generation_id": "EVA-20260924T010800+0900-R103-FORGE-DEFER-SCHEDULER-RED",
     "commit": "82251ddfa025929ad79b41bea015eb84bd4f0813",
     "decision": "GO_H7_SCIENCE_INVARIANT_CAPABILITY_AND_EXACT_AUTHORITY_PLUMBING_THEN_NON_RESULT_READINESS_ONLY; H7_FORMAL_STOP",
     "fresh_analyst_required_after_green_readiness": true,
-    "freshness_rechecked_before_mutation": true,
-    "freshness_rechecked_before_final_persistence": true
+    "freshness_rechecked_this_run": true
   },
-  "prior_main_generation": "MAIN-20260924T014800+0900-RELAY-H7-R103-READINESS-WAITING",
+  "prior_main_generation": "MAIN-20260924T015100+0900-RELAY-H7-R103-CAPABILITY-BLOCKED",
   "funnel": {
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
     "preformal_readiness": "READY",
     "hold_class": "FORMAL_INTEGRITY_CAPABILITY",
-    "hold_reason": "Protected-sidecar handoff capability unavailable; latest NON_RESULT readiness failed before identity materialization.",
+    "hold_reason": "Protected-sidecar handoff capability unavailable; latest exact R103 NON_RESULT readiness failed before identity materialization.",
     "terminal_state": "NONTERMINAL_HOLD",
     "queue_state": "HOLD",
     "system_priority_exception": false,
@@ -48,17 +47,21 @@
     "controller_head": "d610b18283953f21dfb27859f0d0b190d5f56a24",
     "resource_contract_path": "artifacts/formal_h7_r5/resource_contract.json",
     "readiness_workflow_path": ".github/workflows/h7-formal-r5-one-way-readiness.yml",
-    "history_path": "reports/orchestrator/main/history/2026-09-24/0151-r103-relay-h7-capability-blocked.md"
+    "history_path": "reports/orchestrator/main/history/2026-09-24/0220-r103-primary-h7-external-capability-blocked.md"
   },
-  "repair_change_classification": "SCIENCE_INVARIANT_EXACT_AUTHORITY_PLUMBING_ONLY",
+  "repair_change_classification": "NO_SCIENCE_CHANGE_READ_ONLY_RECONCILIATION",
   "work_performed": [
     {
-      "classification": "SCIENCE_INVARIANT_REPAIR",
-      "change": "Repinned only the H7 strictly NON_RESULT readiness workflow's exact Evidence Analyst SHA from superseded R102 to current R103; scientific source and all fixed science fields remained unchanged."
+      "classification": "FRESHNESS_AND_OWNERSHIP_RECONCILIATION",
+      "change": "Re-fetched current Analyst authority, stable main, exact H7 scientific/controller refs, MAIN state/lease, Fast Forge and Utility collision state. No canonical scientific mutation was required or authorized."
     },
     {
-      "classification": "NON_RESULT_READINESS_EXECUTION",
-      "change": "Executed the exact R103-bound NON_RESULT readiness workflow. Preidentity integrity/runtime checks passed; the workflow then failed closed at the protected-sidecar capability gate because H7_R5_SIDECAR_PASSPHRASE is absent."
+      "classification": "FAIL_CLOSED_EXTERNAL_CAPABILITY_BLOCK",
+      "change": "Did not rerun the exact readiness workflow because the latest exact R103-bound readiness already failed pre-identity at the missing protected-sidecar capability gate and no independent capability-change signal is available to MAIN."
+    },
+    {
+      "classification": "OPERATIONAL_SCHEDULER_PAUSE",
+      "change": "Paused the recurring PRIMARY lane while fully blocked on the external protected-sidecar capability, preventing repeated non-informative readiness attempts. Scientific state and authority were unchanged."
     }
   ],
   "workflows": {
@@ -70,19 +73,22 @@
       "failed_step": "Assert protected sidecar handoff capability exists without exposing it",
       "missing_capability": "H7_R5_SIDECAR_PASSPHRASE",
       "result_bearing": false,
-      "expected_next_action": "Provision the protected-sidecar capability outside Relay, then re-fetch current authority before any new NON_RESULT readiness. No FORMAL action under R103."
+      "rerun_this_generation": false,
+      "expected_next_action": "Provision the protected-sidecar capability externally, restore PRIMARY, then re-fetch current authority before any new strictly NON_RESULT readiness. No FORMAL action under R103."
     },
     "generic_ci": {
       "run_id": 35891173451,
       "head": "d610b18283953f21dfb27859f0d0b190d5f56a24",
       "status": "completed",
       "conclusion": "success",
-      "result_bearing": false
+      "result_bearing": false,
+      "rerun_this_generation": false
     }
   },
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NON_RESULT_READINESS_CAPABILITY_GATE_FAILED_PRE_IDENTITY",
+    "evidentiary_status": "NON_RESULT_EXTERNAL_CAPABILITY_BLOCK_RECONFIRMED",
+    "information_gain": "OPERATIONAL_ONLY_NO_NEW_SCIENCE",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
     "formal_identity_created_or_consumed": false,
@@ -92,6 +98,7 @@
     "pass_fail_assigned": false,
     "evidence_ref_created_or_mutated": false,
     "prior_results_preserved_unchanged": true,
+    "forge_derived_code_reused": false,
     "candidate35_same_object_continuation": false
   },
   "consumed_identities": {
@@ -100,19 +107,18 @@
     "active_h7_identity": null
   },
   "ownership_and_collision": {
-    "fresh_primary_running_same_h7_object_before_mutation": false,
+    "fresh_primary_running_same_h7_object_before_action": false,
     "fast_forge_same_h7_object_collision": false,
     "fast_forge_latest_generation": "FORGE-20260924T013401+0900-NOOP-R103-R94",
+    "fast_forge_latest_disposition": "NO_OP_NON_EVIDENTIARY",
+    "utility_status": "IDLE_READ_ONLY_RECONCILIATION",
     "h7_formal_authorized_now": false
   },
   "integrity": {
-    "analyst_generation_rechecked_before_mutation": true,
-    "analyst_generation_rechecked_before_final_persistence": true,
-    "main_generation_and_lease_rechecked_before_mutation": true,
-    "main_generation_and_lease_rechecked_before_final_persistence": true,
-    "direct_h7_scientific_ref_rechecked_before_mutation": true,
-    "direct_h7_controller_ref_rechecked_before_mutation": true,
-    "controller_ref_rechecked_after_mutation": true,
+    "analyst_generation_freshness_rechecked": true,
+    "main_generation_and_lease_rechecked": true,
+    "direct_h7_scientific_ref_rechecked": true,
+    "direct_h7_controller_ref_rechecked": true,
     "authorized_scientific_source_unchanged": true,
     "formal_identity_created": false,
     "started_created": false,
@@ -120,7 +126,7 @@
     "official_scoring_performed": false,
     "historical_pass_fail_rewritten": false,
     "immutable_formal_sealed_evidence_refs_mutated": false,
-    "development_phase_changed_by_relay": false,
+    "development_phase_changed_by_primary": false,
     "formal_floor_respected": true
   },
   "do_not_touch": [
@@ -129,6 +135,6 @@
     "immutable/formal/sealed/evidence/freeze/preserve refs",
     "Candidate #35 current object or immediate-successor rescue science, rerun, retune, rescore, or SYSTEM-to-MECHANISM uplift"
   ],
-  "stop_reason": "H7_R103_PROTECTED_SIDECAR_CAPABILITY_MISSING",
-  "next_action": "Provision repository Actions secret H7_R5_SIDECAR_PASSPHRASE under the intended security boundary. After capability exists, re-fetch current Analyst/Main authority and run only prospectively authorized NON_RESULT readiness; no FORMAL action under R103."
+  "stop_reason": "H7_R103_EXTERNAL_PROTECTED_SIDECAR_CAPABILITY_MISSING",
+  "next_action": "Provision repository Actions secret H7_R5_SIDECAR_PASSPHRASE under the intended security boundary. After capability exists and PRIMARY is restored, re-fetch current Analyst/Main authority and run only prospectively authorized strictly NON_RESULT readiness; no FORMAL action under R103."
 }
