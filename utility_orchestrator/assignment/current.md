@@ -1,44 +1,30 @@
 # Current Utility Assignment
 
 schema_version: 2
-status: ACTIVE
-active_assignment_id: UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE
-active_assignment_generation_id: UASSIGN-20260923T155800+0900-PFR1-7B1D4E92
-updated_at: 2026-09-23T15:58:00+09:00
+status: IDLE
+active_assignment_id: null
+active_assignment_generation_id: null
+updated_at: 2026-09-23T22:50:00+09:00
 updated_by: CONTROL_BRAIN
 
-decision_id: CTRL-DEC-20260923-1558-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE
-decision_path: utility_orchestrator/decisions/2026-09-23/PFR1-DEVELOPMENT-PROVENANCE-PRESERVE.md
-requested_worker: UTILITY
-max_runs: 1
-evidentiary_status: NON_EVIDENTIARY_PROVENANCE_ONLY
+last_terminal_ack:
+  assignment_id: UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE
+  assignment_generation_id: UASSIGN-20260923T155800+0900-PFR1-7B1D4E92
+  utility_generation_id: UTILITY-20260923T184052+0900-PFR1-PRESERVE-COMPLETED-R96-D7A19C4E
+  utility_status: COMPLETED
+  terminal_reason: COMPLETED_EXACT_BYTES_PRESERVED_AND_REVERIFIED
+  terminal_result_commit: 5e64b57537d440e09429f6ff745b902ae7c59a5d
+  expected_assignment_blob_sha: 56309a85df157ac2f3f1b2682ef9fff509d5a679
+  acknowledged_via_compare_and_swap: true
+  replacement_assignment_created: false
+  rationale: >-
+    Utility completed the single authorized PF-R1 exact-byte provenance preservation run,
+    independently re-verified the persisted bytes, and consumed max_runs=1. Evidence
+    Analyst R99 confirms the PF-R1 preservation gate is satisfied. Control therefore
+    acknowledges the terminal non-evidentiary result and returns Utility to clean IDLE.
+    This grants no scientific, PRE_FORMAL, FORMAL, identity, STARTED, scoring, or
+    scheduler authority.
+
 scientific_authority: NONE
 main_critical_path_dependency: false
-
-objective: >-
-  Preserve the exact original PF-R1 development raw.json and summary.json bytes with
-  verified hashes and durable non-evidentiary provenance, without rerun or scientific
-  reinterpretation.
-
-authorized_scope:
-  - retrieve existing original PF-R1 raw.json exact bytes only
-  - retrieve existing original PF-R1 summary.json exact bytes only
-  - compute and verify exact hashes before interpretation
-  - persist exact bytes/provenance with create-only or otherwise non-destructive semantics already specified by the request
-  - report exact source, hashes, destination and availability status
-
-must_not:
-  - rerun PF-R1
-  - reconstruct PF-R1
-  - regenerate PF-R1
-  - retune PF-R1
-  - rescore PF-R1
-  - change scientific metric/comparator/threshold/tolerance/protocol/seed/intervention/resource contract/hypothesis/falsifier/success criteria
-  - create FORMAL authority, identity or STARTED
-  - inspect or modify candidate #34 D34-Q002 raw/result surfaces
-  - mutate consumed/formal/sealed/evidence refs
-  - perform Fast Forge work under this assignment
-
-fail_closed_if_original_bytes_unavailable: true
-fail_closed_on_assignment_or_decision_mismatch: true
-completion_requires_control_ack: true
+scheduler_reconfiguration: NONE
