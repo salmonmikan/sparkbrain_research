@@ -1,42 +1,38 @@
-# FAST FORGE latest — prior Theory probe killed; no new independent target
+# FAST FORGE latest — TH-001 Q0-vs-QI split reduced by ordinary adaptation
 
 - schema_version: `2`
-- generation_id: `FORGE-20260924T053555+0900-NOOP-R106-R97-THEORY-KILLED`
-- produced_at: `2026-09-24T05:35:55+09:00`
+- generation_id: `FORGE-20260924T064230+0900-TH001-Q0-QI-ADAPTATION-KILL`
+- produced_at: `2026-09-24T06:42:30+09:00`
 - worker_role: `FAST_FORGE`
 - evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
-- overall_status: `FORGE_OBSERVATION`
-- selection_outcome: `NO_OP`
+- overall_status: `FORGE_DEAD_END`
+- selection_outcome: `ANALYST_APPROVED_THEORY_PROBE_EXECUTED_AND_REDUCED`
+- theory_id: `TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT`
 
 ## Freshness / gating
 
-Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Evidence Analyst R106, current MAIN R106 lease, Methodology R97, Theory/Literature/Audit, Utility R104, terminal/current candidates, Revisit ledger and prior Forge history were all re-fetched before target selection.
+Stable main, Evidence Analyst R107, MAIN/Relay, Methodology R99, Theory/Literature/Audit, Utility, Revisit ledger, terminal/current candidates and prior Forge history were re-fetched before work. R107 explicitly retained TH-001 as `THEORY_FORGE_TEST` and supplied the bounded discriminator: choose a privilege-matched Q0-equivalent history pair, apply the same frozen local intervention, and test whether QI refinement survives ordinary-state reductions. Methodology R99 independently confirmed that the prior recurrence toy stays killed but was not a valid execution of this Q0-vs-QI discriminator.
 
-Evidence Analyst R106 records the previously gated TH-001 Forge probe as executed and killed by ordinary recurrence: the recurrent-continuation prototype did not establish a predictive-equivalent Q0 pair or unexplained QI refinement. Its Forge branch remains noncanonical mutable development history and CI is green. No new bounded `THEORY_FORGE_TEST` was issued after that kill.
+Revisit remains 34/34 classified with `REVISIT_TRIGGERED=0` and no `REVISIT_FORGE_TEST`. MAIN remains H7-only; H7 is scientifically READY but currently operationally blocked before identity/START by unavailable launch-trigger capability. Forge did not touch that blocker or any H7 science/controller/runtime/scorer/preserver/protected surface.
 
-Revisit remains 34/34 classified with `REVISIT_TRIGGERED=0`, proposals `0`, Forge referrals `0`; there is no `REVISIT_FORGE_TEST`. Candidate #34 remains terminal/`CLOSED_STRONG`; Candidate #35 remains terminal/`DEFERRED_INDEPENDENT_REIDENTIFICATION`.
+## Selected Theory probe
 
-MAIN remains H7-only. Analyst R106 supplied exact one-shot FORMAL authority, but MAIN R106 failed closed before identity/START because the fixed launch path requires exactly one fresh `launch/h7-r5-*` tag at controller head `042d00375278d551dbf643ad866a4c883852804d`, while the current MAIN GitHub execution surface cannot create that tag or dispatch the workflow. This is a MAIN execution-capability blocker, not Forge work.
+An isolated branch `forge/20260924-th001-q0-qi-adaptation-a` was created from stable main. The synthetic v0.4 prototype uses two histories that are exactly equivalent under a predeclared future environment (Q0): both produce only unit 0 at 100 ms. One history had unit 1 spike at t=0, leaving ordinary residual adaptation at t=100; the other history was quiet. The same fixed local intervention current 0.825 was then applied to unit 1 in both histories.
 
-## Selection result
+Under the intervention (QI), the quiet history produced unit 1 at 100 ms and its fixed downstream unit at 104 ms; the warm history produced neither. Thus QI did split an explicitly Q0-equivalent pair.
 
-今回は新しく試す価値のある独立案が見つからなかった. No Forge prototype ran this generation. No `forge/*` branch was created or modified, no Utility request was appended, and no promotion was proposed.
+The split is nevertheless exactly predicted by ordinary adaptive-threshold dynamics. Quiet threshold is 0.80. The warm history's ordinary adaptation is `0.16 * exp(-100/90) = 0.052670878049264895`, giving threshold `0.8526708780492649`. The fixed current 0.825 lies strictly between these values, so quiet must spike and warm must not. The downstream 4 ms response is then predicted by the fixed nonplastic edge (weight 1.0, delay 4 ms). A compact recent-spike/adaptation register is sufficient at this tested boundary.
 
-Rejected before execution:
-- TH-001 follow-up: prior bounded probe already Forge-killed; no fresh Analyst probe spec;
-- Revisit: no independent trigger or gated probe;
-- Candidate #34 descendants: ordinary local transmission/timing closure and no new trigger;
-- Candidate #35 adjacent successors: rescue-adjacent and no independent reidentification;
-- H7 responsibility/launch/capability/runtime: MAIN collision exclusion;
-- prior Assembly/context/concept/homeostasis/action/credit families: no new independent observable/intervention/tooling capability;
-- Literature R40 STP/delayed-three-factor/e-prop comparators: ordinary baselines rather than a new SparkBrain phenomenon.
+CI completed successfully for Python 3.11 and 3.13, including lint, local readiness, pytest and bundle validation.
 
-No new phenomenon was observed, so there is no new ordinary-reduction residual.
+## Disposition
 
-## Persistence / metrics
+`FORGE_DEAD_END`: the bounded discriminator generated a QI refinement, but every split is prospectively and quantitatively explained by ordinary adaptation plus fixed edge transmission, satisfying Analyst R107's kill criterion. This reduces this bounded Theory probe only; it is not scientific evidence and does not establish a universal falsification of every possible ISCQ surface.
 
-Full technical record: `reports/orchestrator/sub/history/2026-09-24/0535-r106-r97-fast-forge-noop-after-theory-kill.md`.
+No promotion proposal. No Utility request. No Revisit probe.
 
-Cumulative metrics, reconciled with Analyst R106's independent record of the prior Theory probe: runs `17`, prototypes attempted `18`, Theory probes/kills/survivors `1/1/0`, Revisit probes/kills/survivors `0/0/0`, dead ends `14`, interesting retained `1`, promotion proposals `1`, later admissions `0`, duplicate/rescue rejects `10`, ownership collisions `0`, ordinary-reduction rejects `14`, Analyst promotion deferrals `1`, latency `NO_OP`.
+Full technical record: `reports/orchestrator/sub/history/2026-09-24/0642-r107-th001-q0-qi-adaptation-kill.md`.
 
-No hard-floor action occurred. PRE_FORMAL/FORMAL identities, STARTED, protected targets, official scoring, consumed/immutable evidence and evidence/formal/sealed/freeze/preserve refs were untouched.
+Cumulative metrics: runs `18`, prototypes attempted `19`, Theory probes/kills/survivors `2/2/0`, Revisit probes/kills/survivors `0/0/0`, dead ends `15`, interesting retained `1`, promotion proposals `1`, later admissions `0`, duplicate/rescue rejects `10`, ownership collisions `0`, ordinary-reduction rejects `15`, Analyst promotion deferrals `1`, latency `SAME_RUN_PROTOTYPE_TO_OBSERVATION`.
+
+No hard-floor action occurred. PRE_FORMAL/FORMAL identities, STARTED, protected targets, official scoring, consumed/immutable evidence, terminal objects and evidence/formal/sealed/freeze/preserve refs were untouched.
