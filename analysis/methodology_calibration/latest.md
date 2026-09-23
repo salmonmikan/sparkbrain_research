@@ -1,217 +1,159 @@
-# SparkBrain Methodology Calibration Audit — R95
+# SparkBrain Methodology Calibration Audit — R96
 
 - schema_version: 2
-- generation_id: `METHCAL-20260924T021800+0900-R95-8D3A71C4`
-- produced_at: `2026-09-24T02:18:00+09:00`
+- generation_id: `METHCAL-20260924T032000+0900-R96-A61E94F2`
+- produced_at: `2026-09-24T03:20:00+09:00`
 - authority_scope: `METHODOLOGY_ADVISORY_ONLY`
-- supersedes_generation_id: `METHCAL-20260924T012223+0900-R94-2FBB75BB`
+- supersedes_generation_id: `METHCAL-20260924T021800+0900-R95-8D3A71C4`
 - material_change: true
 - audit_result: `MATERIAL_CALIBRATION_UPDATE`
 - overall_classification: `MIXED_CALIBRATION`
 
 ## Executive decision
 
-The canonical development and FORMAL integrity machinery remains materially sound, but the newly required Revisit/resurrection axis is not yet implemented end-to-end in the designated canonical state. This creates a real false-negative / over-terminalization risk without currently creating zombie inflation.
+R95 was read first. The material improvement is that Evidence Analyst R104 has now implemented the one-time Revisit ledger bootstrap across all 34 terminal current objects while keeping every old candidate terminal and rewriting no historical outcome. The bootstrap distribution is deliberately non-uniform: 1 strong closure, 19 dormant/revisitable, 14 deferred pending independent re-identification, and 0 currently triggered. This materially reduces the prior structural false-negative risk without producing zombie inflation.
 
-R94 was read first. Current Control R45 and Analyst R103 are unchanged from R94. Stable `main` and authoritative evidence refs are also unchanged. Analyst R103 still reports 35 canonical candidates, 34 `TERMINAL_FOR_CURRENT_OBJECT`, H7 as the sole nonterminal HOLD, zero viable executable MECHANISM, and no fresh FORMAL consumption. Candidate 35 remains terminal for its current SYSTEM object; its immediate post-outcome Forge successor proposal remains deferred and zero-credit. H7 remains `RESULT_EXPOSED_DEVELOPMENT`, science unchanged, FORMAL STOP.
+The implementation is not yet fully calibrated end-to-end. Most legacy rows derive `closure_reason` and `what_would_change_our_mind` from coarse historical Funnel classes in R49 rather than candidate-specific primary closure records. Those entries are conservative admission constraints rather than claimed scientific triggers, so this is not historical evidence reinterpretation; however, trigger provenance needs stronger per-candidate traceability before the first live Revisit activation. There is also no live REVISIT_FORGE_TEST or REVISIT_CANONICALIZE case yet, and the dedicated Theory/Revisit path is not initialized/persisted. Therefore actual independent-trigger routing remains insufficiently observed.
 
-The new audit target requires Revisit metadata orthogonal to `terminal_state`, a conservative retrospective ledger bootstrap, explicit trigger evaluation, and separate Revisit decisions. Current designated Analyst state and latest report contain no `revisit_status`, no `closure_reason`/`what_would_change_our_mind` ledger, no `REVISIT_*` decision state, and no durable mapping from independent literature/theory/Forge/canonical changes to legacy terminal objects. No dedicated Revisit branch/handoff was observed. Therefore the current programme is safe against resurrection but under-instrumented against forgetting.
+H7 also moved materially: the unchanged R5 science passed a fresh NON_RESULT protected-sidecar readiness attempt, and R104 grants one conditional FORMAL authority subject to exact revalidation and untouched H7 STARTED/preserve namespaces. No H7 identity or START exists yet. This makes PASS concretely reachable without lowering evidence standards while leaving the actual RESULT_EXPOSED -> CONSUMED_ONE_WAY transition unobserved.
 
-This is not permission to reopen any old candidate. Every existing terminal current object remains terminal. The required correction is prospective metadata and trigger routing only. A future `REVISIT_CANONICALIZE` must create a fresh candidate ID and fresh prospective contract with zero inherited confirmatory credit.
+Independent repository checks confirm stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, authoritative evidence tags remain exactly five, and H7 `control/h7*` and `preserve/h7*` namespaces are empty. No terminal current object has been returned to ACTIVE. Candidate #35's immediate post-outcome natural-history Forge surface remains deferred and zero-credit.
 
-The strongest current positive control is Candidate 35: a post-outcome Forge probe entered the immediate successor surface, but Analyst refused admission because the trigger was not independent. That is exactly the anti-rescue behavior the Revisit layer must preserve. The missing half is systematic detection of genuinely independent changed conditions across the other terminal/rejected lines.
+## Authority reconstruction
 
-The FORMAL floor remains unchanged: stable main is `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; five `evidence/*` annotated tags are unchanged; `formal/*`, `sealed/*`, `freeze/*`, and `immutable/*` remain empty; no fresh H7 identity/START/protected evaluation/score/scientific preserve transition is observed.
+Prior methodology history: R95, read before current reconstruction, classified the programme `MIXED_CALIBRATION` because Revisit/resurrection policy existed but no durable ledger/trigger routing did.
 
-## Inputs and authority reconstruction
+Designated Control history: R46 predates Analyst R104 and is used as governance history only. It had already required conservative bootstrap and prohibited old-ID reopening.
 
-### Prior methodology history
+Designated canonical gate: Analyst R104 (`EVA-20260924T031000+0900-R104-H7-GREEN-REVISIT-BOOTSTRAP`) is the newest canonical scientific classification. It reports 35 candidates, 34 terminal current objects, H7 active/queued under one conditional FORMAL authority, development phases OPEN=1 / RESULT_EXPOSED=34 / CONSUMED_ONE_WAY=0, and Revisit bootstrap coverage 34/34.
 
-R94 was read first from the designated methodology history. R94 was `MIXED_CALIBRATION`: H7 phase monotonicity had been prospectively repaired; Candidate 35's post-outcome Forge proposal was correctly deferred; FORMAL one-way integrity remained intact; mechanism supply was weak.
-
-R95 does not rewrite R94 or any historical scientific result. The material change in this audit is the expanded Revisit/resurrection calibration scope and the finding that current canonical state has no durable Revisit layer or bootstrap ledger.
-
-### Process directives
-
-`HUMAN-20260922-005` remains a process directive with zero scientific evidentiary weight. The current audit additionally consumes the explicit Revisit/resurrection calibration requirements supplied to Methodology as process-governance requirements only, not scientific evidence.
-
-### Current designated histories
-
-- Control R45: `CTRL-20260924T005132+0900-R45-6A51C7D2` at `b2c1f828da31af9fb8cc979a7d4bdb41893a6fc1`.
-- Analyst R103: `EVA-20260924T010800+0900-R103-FORGE-DEFER-SCHEDULER-RED` at `82251ddfa025929ad79b41bea015eb84bd4f0813`; state blob `e6b8cb4262ec9144b8cafef3c3634a93f063949b`.
-- Fast Forge immediate-successor branch remains `forge/20260924-coordinate-null-local-witness@c5bd7af762e2ddcbc5662859bfee86d841a6ca47`.
-- External Research/Audit remains `d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c`.
-
-No dedicated Revisit branch/handoff and no current Theory branch were observed. Their absence is treated as an observability/implementation gap, not proof that no independent trigger can ever exist.
-
-### Independently re-fetched authoritative repository/evidence
-
-- stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- authoritative `evidence/*` annotated tags: 5 unchanged
-- `formal/*`: 0
-- `sealed/*`: 0
-- `freeze/*`: 0
-- `immutable/*`: 0
-- Candidate 35 current-object terminal state and zero-credit successor policy: unchanged in Analyst R103
-- H7 current phase: `RESULT_EXPOSED_DEVELOPMENT`; FORMAL authority STOP
+Theory/Revisit/Forge: no dedicated Theory/Revisit durable proposal stream is currently present. Fast Forge has no newly admitted object; Candidate #35's rescue-adjacent proposal remains deferred, zero-credit, and cannot count as an independent Revisit trigger.
 
 ## Development iteration calibration
 
-Development semantics remain calibrated at the currently observed objects. H7 stays result-exposed on the unchanged R5 science object; only science-invariant capability/exact-authority plumbing plus NON_RESULT readiness is permitted. Candidate 35 remains result-exposed and terminal for its current object after one bounded development batch, with exhausted same-object authority and zero confirmatory credit. Cycle 3 remains reassessment, not an automatic terminal cap.
+Development-phase semantics are currently consistent. H7 remains `RESULT_EXPOSED_DEVELOPMENT` on unchanged R5 science despite green readiness and FORMAL authorization; readiness is non-result plumbing, not a reset to OPEN. Candidate #35 remains result-exposed and terminal. No same-object science-affecting repair is authorized after exposure.
 
-No development observation is currently being counted as independent confirmatory evidence. The Candidate 35 Forge observation also remains noncanonical and zero-credit.
+Cycle 3 remains a reassessment point rather than a hard terminal cap. No current decision relies on numeric cycle count alone. Science-invariant vs science-affecting separation is respected on the H7 path: only authority/control metadata repin and exact readiness plumbing are permitted before the frozen FORMAL contract.
 
-Gate findings: current development-axis handling `KEEP`; same-object post-exposure regression to OPEN `TIGHTEN`; cycle-3 reassessment `KEEP`; automatic numeric cap `RELAX`; development observations as independent evidence `TIGHTEN`.
+Development observations retain zero independent confirmatory credit. Candidate #35 development/Forge observations remain noncanonical and zero-credit.
 
-## PRE_FORMAL / FORMAL
+## PRE_FORMAL / FORMAL calibration
 
-PRE_FORMAL remains genuine development rather than a hidden second FORMAL gate. H7 persisted READY is explicitly distinct from effective executability and from FORMAL GO. A fresh live result-exposed-to-consumed transition remains unobserved, so the complete fresh one-way transition remains `INSUFFICIENT_EVIDENCE` while preidentity fail-closed checks remain `KEEP`.
+PRE_FORMAL remains development rather than a hidden second FORMAL gate. H7 READY now means the next one-way test is well-defined and conditionally executable; it does not mean H7 has already passed comparator/falsifier requirements by development observation.
 
-FORMAL one-way integrity is unchanged. No consumed identity rerun/retune/rescore, held-out/evaluator tuning, historical PASS/FAIL rewrite, or post-FORMAL repair is observed.
+FORMAL integrity is unchanged. R104 requires exact source/protocol/package/runtime/input/component/scorer/preserver/workflow binding, untouched STARTED/preserve namespaces, one fresh identity, raw-before-target-read/score, and no same-identity retry. Independent checks show no H7 STARTED/control or preserve refs yet. The live transition into `CONSUMED_ONE_WAY` is still unobserved and remains an evidence gap for methodology auditing, not a reason to weaken or delay the gate.
 
 ## Revisit / resurrection calibration
 
 ### Orthogonality and terminal immutability
 
-Current terminal semantics themselves are sound: Candidate 34 and Candidate 35 remain terminal for their current objects, and Candidate 35 was not changed back to ACTIVE. Analyst already expresses the correct idea that topic-level future work may exist without reopening the old object.
+Implemented correctly in current state. The ledger is metadata alongside terminal_state; all 34 legacy objects remain terminal. No old candidate ID is reactivated and no historical PASS/FAIL is rewritten.
 
-However, the required orthogonal Revisit metadata is absent from the current canonical Analyst state. `terminal_state` therefore has no structured companion describing whether a terminal line is `CLOSED_STRONG`, `DORMANT_REVISITABLE`, `DEFERRED_INDEPENDENT_REIDENTIFICATION`, or `REVISIT_TRIGGERED`.
+### Bootstrap coverage and conservatism
 
-Classification: terminal immutability `KEEP`; orthogonal Revisit axis `TIGHTEN`.
+Coverage is complete: 34/34 terminal current objects are classified. The distribution avoids the two obvious bootstrap pathologies: it does not default everything to CLOSED_STRONG and it does not trigger any resurrection. Candidate #34 alone is strongly closed using preserved raw evidence plus independent reduction audit; Candidate #35 is deferred pending independent re-identification and explicitly blocks its immediate post-outcome Forge idea.
 
-### False-negative / over-terminalization direction
+The main residual weakness is historical specificity. For legacy rows 1-31, many closure entries cite the R49 Funnel snapshot and use closure-class templates such as SYSTEM-current-contract-closed, prior prospective REJECT, method-limited, contract-ambiguous, or mechanism-unresolved. Their `what_would_change_our_mind` values are likewise broad class-level conditions. This is conservative enough for bootstrap because no row is triggered and each condition still requires independent new information plus a fresh question, but it is not yet strong provenance for deciding that a future concrete event is genuinely independent and material for that particular candidate. Before any row changes to triggered, the trigger decision should cite candidate-specific historical closure evidence or explicitly state that the old history is too coarse and require independent re-identification.
 
-The programme currently has 34/35 canonical candidates terminal for the current object, zero executable MECHANISM, and an empty canonical queue/shadow. Without a Revisit ledger, there is no systematic durable mechanism to notice that a terminal line's ordinary baseline, instrumentation, observable, intervention, simulator/API capability, external literature, programme-level theory, independent Forge phenomenon, or distinct canonical result has materially changed.
+### False-negative direction
 
-Candidate 35 has a manually expressed independent-reidentification pathway, but this is not equivalent to complete ledger coverage across legacy terminal/rejected lines.
+Prior forgotten-line risk is reduced from structural/high to moderate/watch. Nineteen terminal lines are explicitly dormant/revisitable and fourteen are visible for independent re-identification instead of disappearing. However, trigger ingestion has not been tested on a genuine new independent event and the dedicated Theory/Revisit stream is absent, so the programme cannot yet demonstrate end-to-end rediscovery sensitivity.
 
-Classification: Revisit trigger detection `TIGHTEN`; over-terminalization watch `MODERATE_TO_HIGH`.
+### False-positive / rescue direction
 
-### Rescue laundering / zombie inflation direction
+Current behavior is strong. There are zero triggered rows, zero Revisit successors, zero Revisit Forge probes, and zero old-ID reopenings. Candidate #35 remains the key anti-rescue control: its immediate successor idea was generated after exposed outcome on the same family and is explicitly not an independent trigger.
 
-Current behavior is strong. Candidate 35's immediate post-outcome Forge branch was explicitly refused as canonical successor support because the specific residual was generated after the outcome on the same terminal-family surface. No fresh canonical candidate was created and Forge retained zero confirmatory credit. Same-object SYSTEM->MECHANISM uplift remains forbidden.
+### REVISIT_FORGE_TEST and REVISIT_CANONICALIZE
 
-Therefore the programme is not currently reviving too many weak lines. The current failure direction is the opposite: insufficient structured re-identification of genuinely changed conditions.
+No live case exists for either path, so both remain `INSUFFICIENT_EVIDENCE`. Prospectively, a Forge test must attack the NEW trigger cheaply rather than rerun/retune the old object. Canonicalization must leave the old object terminal, create a fresh ID and fresh prospective reduction/comparator/falsifier contract, preserve informative negative outcomes, and grant zero inherited confirmatory credit to old/Forge/Theory/Revisit observations.
 
-Classification: anti-rescue admission gate `KEEP`; fresh-ID requirement `KEEP`; old/Forge observations inheriting confirmatory credit `TIGHTEN` prospectively.
+## Funnel / Theory / Forge / mechanism supply
 
-### REVISIT_FORGE_TEST
+Claim ceilings remain enforced. Candidate #35 is still SYSTEM and cannot be uplifted on the same object. Fast Forge remains noncanonical/zero-credit and has no admission. Theory/Revisit stream absence is an observability limitation, not evidence that no future trigger exists.
 
-No live `REVISIT_FORGE_TEST` decision is observed, so calibration of this path is `INSUFFICIENT_EVIDENCE`. Prospectively, such a probe must test the independent NEW trigger cheaply and must not rerun, retune, or reconstruct the old failed experiment. The Candidate 35 post-outcome Forge incident is a negative calibration example: that immediate-successor probe must not be relabeled as a Revisit trigger or used to resurrect Candidate 35.
+Mechanism supply is improved but fragile: H7 is now one effectively executable MECHANISM under conditional one-way authority; there is still no independent backup executable MECHANISM. This is a throughput risk, not justification for manufacturing a successor or weakening standards.
 
-### REVISIT_CANONICALIZE
-
-No live canonicalization is observed; therefore end-to-end canonicalization is `INSUFFICIENT_EVIDENCE`. Required invariant remains: old candidate stays terminal; fresh ID; independent trigger; meaningfully distinct question; fresh reduction/comparator/falsifier; negative outcome informative; zero inherited confirmatory credit.
-
-## Revisit ledger bootstrap
-
-The required one-time retrospective bootstrap is not yet present in the designated canonical Analyst state/history. Current state reports 34 terminal current objects but exposes no complete legacy ledger carrying `closure_reason`, `what_would_change_our_mind`, and `revisit_status` for those objects.
-
-Accordingly:
-- bootstrap coverage: `TIGHTEN` / currently incomplete;
-- bootstrap conservatism: `INSUFFICIENT_EVIDENCE` because there is no completed bootstrap to sample;
-- aggressive resurrection: not observed;
-- systematic `CLOSED_STRONG` defaulting: not observed, but cannot be ruled on until the ledger exists.
-
-The bootstrap must be descriptive only. It must not reinterpret old evidence, change old PASS/FAIL, reopen IDs, or invent trigger conditions unsupported by repository history. When historical support is ambiguous, prefer `DORMANT_REVISITABLE` or `DEFERRED_INDEPENDENT_REIDENTIFICATION` with explicit uncertainty rather than fabricating strong closure or a trigger.
-
-## SYSTEM / MECHANISM successors, Theory and Forge
-
-Same-object post-outcome SYSTEM->MECHANISM upgrade remains forbidden. Fresh successors remain legitimate only with new IDs and independent prospective motivation. Current Fast Forge/canonical separation is functioning: Forge has zero evidentiary credit and the current rescue-adjacent proposal was deferred.
-
-Theory/Revisit separation cannot yet be fully evaluated because no dedicated current Theory/Revisit canonical handoff is observed. External Research/Audit can supply candidate trigger information, but no durable Revisit routing is visible. This is a `CLARIFY/TIGHTEN` observability gap rather than authority to turn external material into evidence.
-
-## Terminal semantics and mechanism supply
-
-`TERMINAL_FOR_CURRENT_OBJECT` remains calibrated as current-contract closure, not topic death. The missing Revisit layer makes that semantic promise only partially operational: current records can say independent re-identification is allowed, but there is no complete structured mechanism ensuring terminal lines are reconsidered when conditions genuinely change.
-
-Mechanism supply remains weak. This raises false-negative/throughput risk but does not justify rescue manufacture or weaker evidence thresholds.
-
-## PASS reachability
-
-PASS remains scientifically reachable without relaxing evidence standards. H7 has concrete capability/authorization blockers rather than an impossible scientific threshold. The Revisit layer should improve candidate rediscovery and throughput, not modify PASS criteria or consumed evidence.
+PASS is realistically reachable without evidence relaxation because H7 now has a concrete exact-binding path to one fresh FORMAL identity. No PASS is inferred from readiness itself.
 
 ## Gate classifications
 
 - Hard integrity floor: `KEEP`
-- Development phase current handling: `KEEP`
-- Same-object result-exposed -> OPEN regression: `TIGHTEN`
-- Cycle-3 reassessment: `KEEP`
-- Cycle-3 hard cap: `RELAX`
-- Science-invariant vs science-affecting separation: `KEEP` on current H7 path
-- Development observations as independent evidence: `TIGHTEN`
+- Development-phase monotonicity and current handling: `KEEP`
+- Cycle-3 mandatory reassessment: `KEEP`
+- Cycle-3 automatic hard cap: `RELAX`
+- Science-invariant vs science-affecting separation: `KEEP`
+- Development observations as independent evidence: `KEEP`
 - PRE_FORMAL as genuine development: `KEEP`
 - Hidden second FORMAL gate: `KEEP`
 - Fresh FORMAL one-way transition: `INSUFFICIENT_EVIDENCE`
 - Terminal current object never reactivated: `KEEP`
-- Revisit axis orthogonal to terminal state: `TIGHTEN`
-- Revisit trigger detection: `TIGHTEN`
+- Revisit axis orthogonal to terminal state: `KEEP`
+- Revisit bootstrap coverage: `KEEP`
+- Revisit bootstrap conservatism: `KEEP`
+- Revisit bootstrap historical specificity / trigger provenance: `CLARIFY`
+- Revisit independent-trigger detection end-to-end: `INSUFFICIENT_EVIDENCE`
 - Revisit rescue-laundering prevention: `KEEP`
-- Revisit fresh-candidate requirement: `KEEP`
-- `REVISIT_FORGE_TEST` new-trigger-only semantics: `INSUFFICIENT_EVIDENCE`
-- `REVISIT_CANONICALIZE` full gate: `INSUFFICIENT_EVIDENCE`
-- Revisit ledger bootstrap coverage: `TIGHTEN`
-- Revisit bootstrap conservatism: `INSUFFICIENT_EVIDENCE`
+- Revisit fresh-candidate requirement / zero inherited credit: `KEEP`
+- REVISIT_FORGE_TEST new-trigger-only behavior: `INSUFFICIENT_EVIDENCE`
+- REVISIT_CANONICALIZE full gate: `INSUFFICIENT_EVIDENCE`
 - Fast Forge/canonical separation: `KEEP`
-- Immediate post-outcome terminal-family Forge targeting: `TIGHTEN`
 - Theory/Revisit/canonical separation: `CLARIFY`
-- Current-object terminal semantics: `KEEP`
+- Claim ceiling enforcement: `KEEP`
 - Mechanism-supply health: `CLARIFY`
-- Claim ceilings: `KEEP`
-- READY vs effective executability: `CLARIFY`
+- READY vs executable/FORMAL distinction: `KEEP`
 - PASS reachability without weaker standards: `KEEP`
 
 ## Mandatory questions
 
-1. Development-phase semantics: current canonical objects are consistent; fresh one-way FORMAL transition remains unobserved.
-2. Cycle 3 hard cap: no.
-3. Science-invariant vs science-affecting: correctly distinguished on live H7 path.
-4. Development observations as independent evidence: no laundering observed; keep zero credit.
-5. FORMAL one-way integrity: unchanged.
-6. Fresh SYSTEM->MECHANISM successors: no manufacture observed; Candidate 35 immediate successor was correctly deferred.
-7. PRE_FORMAL genuine development: yes.
-8. Terminal semantics: current-object closure is calibrated and no terminal object was reactivated.
-9. Revisit catches genuinely changed conditions: not yet reliably; the durable axis/ledger is absent.
-10. Revisit avoids rescue/zombie inflation: current admission behavior does; a formal Revisit implementation is not yet live.
-11. `REVISIT_FORGE_TEST`: no live case; insufficient evidence. The future test must target the new independent trigger, not the old failed experiment.
-12. Bootstrap coverage/conservatism: coverage is incomplete/not implemented; conservatism cannot yet be validated.
-13. PASS reachable: yes scientifically, without lowering evidence standards.
+1. Development phases consistent end-to-end? Current live objects: yes. Fresh one-way transition itself is not yet observed.
+2. Cycle 3 mistaken for hard cap? No.
+3. Science-invariant vs science-affecting distinguished? Yes on current H7 and terminal paths.
+4. Development observations kept out of independent evidence credit? Yes.
+5. FORMAL one-way integrity unchanged? Yes; no new H7 identity/START exists yet.
+6. Legitimate fresh SYSTEM->MECHANISM successors suppressed/manufactured? No manufacture observed; no independent trigger currently supports one.
+7. PRE_FORMAL genuine development? Yes.
+8. Terminal semantics calibrated? Yes; 34 terminal objects remain terminal.
+9. Revisit catches genuinely changed conditions? Ledger coverage now exists, but no genuine trigger has traversed the path; end-to-end evidence insufficient.
+10. Revisit avoids rescue laundering/zombie inflation? Yes in current observations, especially Candidate #35.
+11. REVISIT_FORGE_TEST tests new trigger rather than old failure? No live case; insufficient evidence.
+12. Bootstrap coverage complete and conservative? Coverage yes 34/34; conservatism yes at status/admission level, with historical-specificity clarification required before live triggering.
+13. PASS realistically reachable without weakening standards? Yes; H7 has one conditional exact-binding FORMAL path.
 
 ## Risks
 
-- false positive / zombie inflation: `LOW_CURRENT_MODERATE_FUTURE_WATCH`; no current resurrection, strong Candidate 35 anti-rescue precedent.
-- false negative / forgotten valuable lines: `MODERATE_TO_HIGH`; 34 terminal objects and no durable trigger ledger.
-- moving-goalpost / rescue: `LOW_CANONICAL_MODERATE_EXPLORATION_WATCH`.
-- over-terminalization: `MODERATE_TO_HIGH` until Revisit bootstrap and trigger routing exist.
-- bootstrap historical reinterpretation: `WATCH`; must be descriptive and zero-credit only.
+False-positive/zombie inflation: low current, moderate watch once triggers begin flowing because broad bootstrap trigger templates require candidate-specific provenance at activation.
+
+False-negative/forgotten valuable lines: moderate/watch, materially improved from R95 because all terminal lines are now visible in the ledger; end-to-end trigger sensitivity remains untested.
+
+Moving-goalpost/rescue: low current. Candidate #35 immediate-successor deferral remains a strong negative control.
+
+Over-terminalization: moderate/watch rather than structural/high. The ledger removes silent forgetting but cannot yet prove it will recognize a genuine independent trigger.
 
 ## Prospective recommendations
 
-1. Add the Revisit axis as metadata orthogonal to canonical `terminal_state`; never change an old terminal object back to ACTIVE.
-2. Bootstrap all legacy terminal/rejected canonical candidates conservatively with `closure_reason`, `what_would_change_our_mind`, and one Revisit status, preserving original outcomes verbatim.
-3. Route genuinely independent new literature/theory/Forge/instrumentation/baseline/canonical-result triggers into explicit Revisit evaluation without granting evidentiary credit.
-4. Use `REVISIT_FORGE_TEST` only for cheap falsification of the NEW trigger; prohibit rerun/retune of the old failed object.
-5. Permit `REVISIT_CANONICALIZE` only by creating a fresh candidate ID and fresh prospective contract with zero inherited credit while old object remains terminal.
-6. Do not reinterpret the existing Candidate 35 post-outcome Forge branch as an independent Revisit trigger.
-7. Preserve H7 and current FORMAL integrity rules unchanged.
-8. Keep scientific revision, implementation/instrumentation revision, observation batch, and Revisit metadata as distinct durable axes.
+1. Keep all old terminal IDs terminal forever and preserve current zero-credit rules.
+2. Before any ledger row becomes `REVISIT_TRIGGERED`, bind the new information to candidate-specific historical closure evidence, not only a generic R49 closure class.
+3. Treat broad `what_would_change_our_mind` bootstrap text as admission scaffolding, not proof that a concrete trigger is independent or material.
+4. When the first genuine trigger appears, persist its independent source, why it changes the old closure boundary, and why the new question is distinct before any Forge or canonical action.
+5. Use REVISIT_FORGE_TEST only to falsify that new trigger cheaply; do not rerun/retune the old experiment.
+6. Keep REVISIT_CANONICALIZE fresh-ID/fresh-contract/zero-inherited-credit only.
+7. Keep H7 FORMAL exact-binding one-way rules unchanged; green readiness is not scientific evidence.
 
 ## Utility request
 
-`NONE`. No Utility proposal is needed to establish the calibration finding; implementation can be evaluated from canonical state/history without dispatching work.
+`NONE`. No bounded Utility proposal is needed for this calibration finding.
 
 ## Hard-floor confirmation
 
-Confirmed. This audit dispatched no experiment, consumed no identity, mutated no research/evidence/formal/sealed/freeze/immutable/scientific-preserve ref, merged no PR, changed no scheduler or scientific criterion, reran/rescored no consumed FORMAL identity, reopened no terminal object, and rewrote no historical PASS/FAIL. Persistence is limited to designated methodology latest/state/history files.
+Confirmed. This audit dispatched no experiment, consumed no identity, mutated no research/evidence/formal/sealed/freeze/immutable/scientific-preserve ref, merged no PR, changed no scheduler or scientific criterion, reran/retuned/rescored no consumed FORMAL identity, reopened no terminal object, and rewrote no historical PASS/FAIL. Persistence is limited to the designated methodology-calibration audit latest/state/history files.
 
 ## Confidence
 
-`HIGH` (`0.96`).
+`HIGH` (`0.97`).
 
 ## Questions for Control / Analyst
 
-- Introduce the Revisit ledger without touching canonical terminal_state or historical outcomes.
-- Define the durable trigger provenance needed to distinguish independent changed conditions from rescue-adjacent reformulation.
-- Ensure bootstrap covers all legacy terminal/rejected candidates rather than only recent Candidates 34/35.
-- Keep Candidate 35's post-outcome Forge branch outside Revisit trigger credit.
-- When the first `REVISIT_FORGE_TEST` or `REVISIT_CANONICALIZE` occurs, expose enough provenance to audit the new-trigger chain end-to-end.
+- Before the first live Revisit trigger, require candidate-specific closure provenance in addition to the coarse R49 Funnel class.
+- Preserve Candidate #35's post-outcome Forge proposal as rescue-adjacent, not as independent trigger support.
+- Expose the first genuine Revisit trigger -> decision -> optional Forge test/canonicalization chain end-to-end so Methodology can audit it.
+- Keep H7 green-readiness authority distinct from actual one-way identity consumption and evidence.
