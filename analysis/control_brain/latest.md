@@ -1,116 +1,93 @@
-# SparkBrain Control Brain — R42
+# SparkBrain Control Brain — R43
 
 - schema_version: `2`
-- generation_id: `CTRL-20260923T125800+0900-R42-7C9E41B2`
-- produced_at: `2026-09-23T12:58:00+09:00`
+- generation_id: `CTRL-20260923T155900+0900-R43-A91C4E6B`
+- produced_at: `2026-09-23T15:59:00+09:00`
 - authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_NO_SCIENTIFIC_EXECUTION`
-- supersedes: `CTRL-20260923T115056+0900-R41-4C156929`
-- programme_position: `FORMAL_HOLD_H7_PF_R1_UTILITY_ASSIGNMENT_POINTER_DIVERGENCE_WITH_CAND34_R2_NONRESULT_CLOSURE_GREEN_PENDING_FRESH_ANALYST_READY_REVIEW_FAST_FORGE_ROLLOUT_OBSERVATION`
+- supersedes: `CTRL-20260923T125800+0900-R42-7C9E41B2`
+- programme_position: `CAND34_PREFORMAL_R2_RESULT_EXPOSED_DURABLY_PRESERVED_PENDING_FRESH_ANALYST_INTERPRETATION_H7_FORMAL_HOLD_WITH_PFR1_UTILITY_POINTER_NOW_MACHINE_RESOLVED_FAST_FORGE_ROLLOUT_OBSERVATION`
 - fleet_status: `YELLOW`
 - scheduler_controller_action: `NO_CHANGE`
 
 ## Executive decision
 
-Candidate #34 materially improves at the non-result development boundary. The exact canonical R2 branch is now `research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4`, correctly bound to the canonical R92 Evidence Analyst generation. Both the dedicated R2 contract workflow and generic CI completed successfully at that exact head. MAIN Relay then durably preserved the exact non-result contract artifact without mutating the research branch or exposing a response. This closes the prior R41 authority-binding mismatch and the R2 implementation/contract closure blocker.
+Candidate #34 has crossed the first meaningful PRE_FORMAL development-result boundary. Evidence Analyst R94 prospectively authorized exactly one bounded D34-Q002 response on the closed R2 contract and exact repaired executor. MAIN/Relay executed exactly one response-bearing workflow, preserved the raw bytes create-only before interpretation, re-verified the preserved bytes, and only then read the preserved record. The raw record self-identifies as PRE_FORMAL development-only with zero confirmatory credit, no official scoring, and no authority for repeat execution.
 
-This is not a scientific result and does not make candidate #34 READY automatically. R92 remains the newest durable Analyst generation and classifies #34 as MECHANISM / PRE_FORMAL / OPEN_DEVELOPMENT / eligible / NOT_READY. Therefore all response-bearing D34-Q002 execution remains stopped until a later fresh Analyst generation independently re-fetches the exact R2 head and preserved contract and makes a prospective READY decision. Green CI and artifact preservation are implementation/provenance facts only.
+This is a new development result, but it is not FORMAL evidence and Control does not interpret its scientific sign or strength before a fresh Evidence Analyst generation. The latest canonical Analyst state still says OPEN_DEVELOPMENT because R94 predates the response. Operationally the object has now experienced meaningful result exposure, so all same-D34-Q002 repeat execution, retuning, rescoring, and science-affecting redesign are stopped. Fresh Analyst must re-fetch the exact preserved raw/provenance and own the canonical transition to RESULT_EXPOSED_DEVELOPMENT plus any next disposition.
 
-H7 remains R5 PREIDENTITY COMPLETE with fresh FORMAL authority zero. The PF-R1 exact-byte preservation gate is still incomplete. R41 persisted a schema-v2 Control assignment/decision, but the independently re-read Utility `assignment/current.md` still reports `IDLE` with no active assignment. This is a non-scientific control-plane pointer divergence, not a scientific failure. Control reaffirms the exact-byte-only assignment in state and directs Utility to reconcile the Control authority before further autonomous Forge support. Control does not write outside designated Control latest/state/history. No rerun, reconstruction, regeneration or rescore may substitute for the missing original bytes.
+The preservation boundary was satisfied in the correct order: raw download/hash -> durable create-only preserve -> byte re-verification -> read. No FORMAL identity, STARTED, protected/concealed FORMAL evaluation, official scoring, historical evidence rewrite, consumed-identity rerun, or immutable/formal/sealed/evidence ref mutation occurred.
 
-Fast Forge / Slow Science remains ACTIVE IMPLEMENTED operating policy under HUMAN-20260922-008. The direct Forge lane still has one observed generation with two prototypes, both ordinary-reduction dead ends, zero interesting objects, zero promotion proposals, zero Analyst admissions and zero MAIN collisions. Separately, Utility used its locally observed IDLE state for one bounded independent Forge helper diagnostic; that diagnostic also reduced to ordinary implementation semantics and is a dead end. It is not treated as a boundary violation because the Utility pointer it read was IDLE, but the pointer divergence must now be reconciled before additional Utility Forge work.
+H7 remains MECHANISM / RESULT_EXPOSED_DEVELOPMENT with R5 PREIDENTITY COMPLETE and fresh FORMAL authority zero. Its remaining gate is PF-R1 exact-byte development provenance plus a later fresh Analyst one-way review. The prior non-scientific Control↔Utility assignment-pointer divergence was resolved in this Control run by publishing a matching schema-v2 Control decision and active Utility assignment pointer. Utility is authorized for one bounded exact-byte preservation attempt only. If the original PF-R1 raw.json or summary.json bytes are unavailable, it must fail closed; rerun/reconstruction/regeneration/retune/rescore remain forbidden.
 
-## Human directives / development policy
+HUMAN-20260922-005 remains ACTIVE and correctly applied: candidate #34's pre-result unused-import fix was science-invariant, exact implementation was freshly rebound before result exposure, and the first meaningful development result now terminates same-authority repeated response execution. HUMAN-20260922-008 remains ACTIVE IMPLEMENTED user-approved operating policy; Fast Forge is not pending approval.
 
-`ops/human-directives` remains at `de60c8888d1b438d5b06fed2266a8efd5893e646`; no newer directive than HUMAN-20260922-008 is observed. HUMAN-20260922-005 remains active prospectively. HUMAN-20260922-008 is `ACTIVE_IMPLEMENTED_USER_APPROVED`; Fast Forge is not pending user approval and `SB-SCHED-FORGE-001` remains `IMPLEMENTED_OBSERVATION`.
+## Canonical funnel / development state
 
-Candidate #34 remains a valid HUMAN-005 development case. The R1 causal-opportunity defect was discovered before any meaningful candidate response, so the science-affecting R2 revision is allowed as an explicit same-candidate OPEN_DEVELOPMENT version while R1 remains preserved as NON_RESULT provenance. Cycle 4 is justified by prospectively identified information gain. The R2 contract is now closed at the non-result boundary; future science-affecting edits cannot be smuggled in merely because the response has not yet run without a fresh prospective Analyst decision.
+Newest canonical authority is Evidence Analyst R94: 35 candidates = 14 MECHANISM / 21 SYSTEM; queued 2 (#34, #35); hold 1 (H7); terminal-for-current-object 32; PRE_FORMAL eligible/READY 2/2; official consumed identities 7; fresh FORMAL authority 0; mandatory classification complete 35/35. No same-object SYSTEM->MECHANISM uplift is authorized.
 
-## Canonical Funnel v2.1
+Candidate #34 remains MECHANISM ceiling and PRE_FORMAL. R94's canonical phase is OPEN_DEVELOPMENT because it predates the response; a meaningful result is now durably exposed and therefore a fresh Analyst phase/disposition update is mandatory before any further result-bearing or science-affecting work. No hidden second FORMAL gate is introduced: the development result itself has zero confirmatory credit.
 
-R92 remains the newest canonical Analyst authority: **35 = MECHANISM 14 / SYSTEM 21**. Lifecycle is **ACTIVE 0 / QUEUED 2 / NONTERMINAL_HOLD 1 / TERMINAL_FOR_CURRENT_OBJECT 32**. PRE_FORMAL eligible/READY are **2 / 1**. Fresh FORMAL authority is **0**, canonical CONSUMED_ONE_WAY is **0**, official consumed identities remain **7**, and classification is **35/35** complete.
+Candidate #35 remains SYSTEM / ARCHITECTURE_STUDY / OPEN_DEVELOPMENT, queued for MAIN when capacity allows. It is not allocated to Forge and receives no mechanism claim inflation.
 
-- H7: MECHANISM, RESULT_EXPOSED_DEVELOPMENT, development READY, FORMAL-held on PF-R1 exact-byte provenance. PREIDENTITY success is not evidence authority.
-- Candidate #34: MECHANISM, PRE_FORMAL, OPEN_DEVELOPMENT, cycle 4 R2, eligible but NOT_READY. Exact R2 authority binding is now correct and both non-result checks are green; response execution remains prohibited pending fresh Analyst READY review.
-- Candidate #35: SYSTEM, ARCHITECTURE_STUDY, OPEN_DEVELOPMENT, queued for canonical MAIN work. It must not be diverted to Forge.
+H7 remains FORMAL-held rather than terminalized. Formal authority remains zero until exact PF-R1 provenance completes and a later fresh Analyst reviews unchanged H7 R5 prospectively.
 
-No same-object SYSTEM→MECHANISM uplift, rescue laundering, consumed-identity mutation or fresh FORMAL consumption is observed.
+## Phenomenon-first and Fast Forge
 
-## Candidate #34 R2 closure
+Phenomenon-first remains PREFETCH_SHADOW, separate from Forge, with standby queue 0/3. R94's fresh revalidation retained zero proposals; no activity is manufactured.
 
-The exact R2 head is `43d0f25541a3c447d4c7156303647ae94f3119f4`, bound to canonical Analyst generation `EVA-20260923T105725+0900-R92-6B8E31D4`.
+Fast Forge remains NON_EVIDENTIARY/NONCANONICAL and within rollout calibration. Latest Forge R94 read-only run tested two independent Assembly questions. Assembly-ID reuse reduced to monotonic identifier allocation plus inert stale rows; multi-Assembly functional binding reduced to deterministic winner-take-all plus single-key lookup/update. Both are dead ends with no promotion proposal and no candidate authority. Cumulative observed Forge metrics: 5 runs, 10 prototypes, 9 dead ends, 0 retained interesting objects, 0 promotion proposals, 0 admissions, 4 duplicate/rescue rejects, 0 ownership collisions, 9 ordinary-reduction rejects. Zero useful promotion output is acceptable.
 
-- dedicated non-result R2 contract workflow `35814951495`: `completed/success`
-- generic CI `35814951496`: `completed/success`
-- response-bearing execution: `false`
-- FORMAL identity / STARTED / protected evaluation / official scoring: `false`
-- MAIN Relay preservation: exact non-result contract ZIP preserved as operations provenance only
-- research branch mutation by Relay: `false`
+Forge did not inspect candidate #34's response artifact and did not collide with MAIN/H7/#35 ownership. No cadence change is warranted from the first rollout window.
 
-The prior R41 control-plane authority mismatch is therefore resolved. The correct next boundary is fresh Analyst READY review, not response execution by MAIN and not another implementation cycle for its own sake.
+## Methodology / integrity implications
 
-Literature R36 adds prospective interpretation discipline but does not amend this closed R2 contract. In particular, causal opportunity is necessary but not sufficient for perturbation informativity; a future response may still reduce to low-dimensional destination phase/state timing or hybrid event-sensitivity effects. Those are future interpretation/reduction guards, not permission to add a comparator, metric, threshold, tolerance or success criterion after closure.
+Methodology R84 classified the programme MIXED_CALIBRATION before result exposure, with the critical prospective rule that first meaningful #34 response must be preserved unchanged before interpretation and must end repeat authority under the same READY decision. The observed MAIN/Relay execution satisfied that preservation ordering. The live OPEN->RESULT_EXPOSED transition now requires fresh Analyst ownership; Control will not pre-interpret or recanonicalize the result.
 
-## H7 / Utility / PF-R1
+Green CI and exact provenance remain integrity prerequisites, not scientific support. Any science-affecting change after this exposure must be an explicit versioned development revision or fresh successor preserving the prior result. Science-invariant repair remains permissible only if actually needed and prospectively compatible; it does not restore repeat-response authority.
 
-The intended request remains `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE`. Methodology independently identifies the original PF-R1 workflow/artifact as still available but not yet durably preserved. The allowed operation remains only retrieval of the existing `raw.json` and `summary.json` exact bytes, exact hash verification, and NON_EVIDENTIARY provenance persistence.
+## Utility / PF-R1
 
-Control state has machine-resolvable assignment authority, but the actual Utility `assignment/current.md` independently re-read at `ops/utility-orchestrator-requests@15c5b130c868f7a37ab03582ca0225f001c651f7` still reports `IDLE` and null active assignment. Classification: `CONTROL_PLANE_ASSIGNMENT_POINTER_DIVERGENCE_NONSCIENTIFIC`.
+Previous state: Utility assignment/current was IDLE and Utility correctly failed closed despite Control prose/state intent.
 
-Disposition:
-- H7 FORMAL remains fail-closed.
-- Utility must reconcile its pointer against current Control assignment before more autonomous Forge work.
-- If original PF-R1 bytes are unavailable, expired, mismatched or cannot be exactly bound, fail closed and report the fact.
-- Never rerun, reconstruct, regenerate, rescore or retune PF-R1 to fill the gap.
-- Even successful preservation does not itself grant FORMAL authority; a later fresh Analyst re-fetch of unchanged H7 R5 is still required.
+Control action this run: published decision `CTRL-DEC-20260923-1558-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` and active assignment generation `UASSIGN-20260923T155800+0900-PFR1-7B1D4E92` on the Utility mailbox. Scope is only retrieval of existing original PF-R1 raw.json and summary.json exact bytes, hash verification, and non-destructive/create-only provenance preservation as already requested. Original-byte unavailability is terminal BLOCKED for the attempt. No scientific authority is delegated and no candidate #34 result access is permitted.
 
-Control does not mutate the Utility branch because this run is restricted to designated Control latest/state/history.
-
-## Fast Forge rollout
-
-Fast Forge remains NON_EVIDENTIARY and NONCANONICAL. Direct rollout metrics remain:
-- direct Forge generations observed: `1`
-- direct prototypes: `2`
-- direct dead ends: `2`
-- interesting objects: `0`
-- promotion proposals: `0`
-- Analyst admissions: `0`
-- MAIN/ownership collisions: `0`
-- ordinary-reduction kills: `2`
-
-A separate Utility helper diagnostic ran while Utility's local assignment pointer was IDLE. It tested same-time pulse ordering and reduced fully to stable Python tie ordering plus sequential pulse-state update/intermediate emission. It is `FORGE_DEAD_END`, zero-evidence, noncanonical, with no promotion proposal or canonical mutation.
-
-The first 24–48h rollout observation continues. Dead ends are acceptable and do not justify cadence changes or pressure to manufacture promotion candidates.
-
-## Phenomenon-first supply
-
-Phenomenon-first remains separate from Forge in `PREFETCH_SHADOW`. The standby queue remains **0/3**. No standby proposal is materialized through Forge or Utility and zero queue remains preferable to manufactured activity.
+Next Utility action: consume that exact matching assignment once; preserve original bytes only; report hashes/source/destination; fail closed on mismatch or unavailable bytes. Control must later acknowledge terminal completion before Utility returns to autonomous Forge support.
 
 ## Scheduler health
 
-Fleet remains **YELLOW / NO_CHANGE**. Live definitions still total **183 active SparkBrain run opportunities/day**. Exact deterministic schedule collisions are **0** and ownership collisions are **0**. Broad start delays of roughly 9–26 minutes remain distributed across roles while useful generation flow continues, indicating queue/load pressure rather than a single deterministic phase collision.
+Fleet remains YELLOW / NO_CHANGE. Live enabled SparkBrain definitions remain aligned with policy: Analyst :00, MAIN :15, Methodology :20, Utility :25, Fast Forge :35, Relay :45, combined Control/Steward :50, Brief five times/day at :55, External Research/Audit ten times/day. Active opportunities remain 183/day. Exact deterministic collision count is 0 and observed ownership collisions remain 0.
 
-No narrow SAFE_AUTO_FIX is warranted. `SB-SCHED-FORGE-001` is `IMPLEMENTED_OBSERVATION`. `SB-SCHED-LATENCY-001` remains approval-gated only if a new structural/cadence change is proposed; none is proposed in this generation. No scheduler mutation is made.
+Recent starts remain broadly delayed across several hourly workers (roughly 9–25 minutes in the observed window), consistent with queue/load pressure rather than one exact phase collision. Useful generation flow remains strong: Analyst R94 authorized a single response, MAIN/Relay produced and preserved it, Forge continued independent reduction kills, and Utility continued fail-closed reconciliation. Fleet is therefore not RED and no safe timing mutation is justified here.
+
+`SB-SCHED-FORGE-001` is IMPLEMENTED/OBSERVATION, not approval-pending. `SB-SCHED-LATENCY-001` remains observation-only unless a new structural/cadence proposal is developed; no such proposal is requested this run. Scheduler mutation: none.
+
+## Governance implication
+
+Analyst R94 reports a new active default-branch ruleset protecting main from deletion/non-fast-forward and requiring PR/linear-history/squash constraints. This closes the prior rulesets=0 main-protection gap, but scientific evidence/preserve namespaces are still not equivalently protected. Control records this as governance context only; no ruleset mutation is performed.
 
 ## Direction
 
-Evidence Analyst:
-- Freshly re-fetch candidate #34 exact R2 head and preserved non-result contract and make the next READY decision prospectively. Green CI/preservation is not scientific support.
-- Do not alter the closed R2 scientific contract merely in response to Literature R36.
-- After PF-R1 exact-byte preservation completes, re-fetch unchanged H7 R5 and decide any one-way FORMAL authority afresh.
+### Evidence Analyst
+- Re-fetch candidate #34 exact executor/closed R2 contract and the newly created D34-Q002 preserve ref.
+- Review only the preserved raw/provenance; do not authorize a second D34-Q002 response.
+- Own the canonical post-exposure development-phase/Funnel disposition. Preserve zero confirmatory credit for this PRE_FORMAL result.
+- If a science-affecting next question is warranted, require an explicit versioned revision or fresh successor without rewriting the preserved result.
+- After PF-R1 exact-byte preservation terminally completes, separately re-fetch unchanged H7 R5 and decide any FORMAL authority afresh.
 
-MAIN:
-- Candidate #34 R2 non-result closure is complete. Stop before D34-Q002 response-bearing execution until fresh Analyst READY authority exists.
-- Do not run extra development cycles merely to keep the object moving.
+### MAIN / Relay
+- Candidate #34 one-shot response scope is complete. STOP before any repeat, retune, rescore, comparator/threshold/tolerance change or second response.
+- Preserve the D34-Q002 raw ref unchanged. Wait for fresh Analyst.
+- Do not turn the preserved development result into official FORMAL evidence.
 
-Fast Forge:
-- Continue only independent bounded rough exploration outside candidate #34, candidate #35, H7/PF-R1 and their blockers/immediate successors.
-- Do not optimize promotion rate; ordinary-reduction dead ends are useful output.
+### Fast Forge
+- Continue only independent bounded rough exploration outside #34, #35, H7/PF-R1 and their blockers/immediate successors.
+- Keep ordinary-reduction dead ends as valid output; do not optimize promotion rate.
 
-Utility:
-- Before further autonomous Forge support, reconcile `assignment/current` against this Control generation's active PF-R1 exact-byte preservation authority.
-- Use existing PF-R1 bytes only; verify hashes; fail closed if exact original bytes cannot be bound.
-- No rerun, reconstruction, regeneration, rescore, retune or scientific evidence creation.
+### Utility
+- Execute only the newly machine-resolved PF-R1 exact-byte assignment once.
+- Use original bytes only and fail closed if unavailable or if decision/current mismatch appears.
+- Do not perform autonomous Forge support until this active assignment reaches a terminal result and Control acknowledges it.
 
-## Actions / one-way floor
+## Hard-floor actions this run
 
-Control performed **0** experiments, **0** FORMAL identity consumption, **0** result-bearing scientific workflow dispatches, **0** research PR merges, **0** immutable/formal/sealed/evidence mutations, **0** scheduler mutations, **0** Utility-branch mutations and **0** historical result rewrites.
+Control executed no experiment, consumed no identity, dispatched no scientific result-bearing workflow, merged no research PR, changed no scientific metric/comparator/threshold/tolerance/protocol, mutated no immutable/formal/sealed/evidence ref, rewrote no historical PASS/FAIL, and changed no scheduler. Control did publish the explicitly authorized Utility assignment/decision needed to resolve PF-R1 machine authority. Candidate #34 scientific raw was preserved by MAIN/Relay before this Control decision and is not reinterpreted here.
