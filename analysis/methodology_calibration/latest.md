@@ -1,85 +1,99 @@
-# SparkBrain Methodology Calibration Audit — R98
+# SparkBrain Methodology Calibration Audit — R99
 
 - schema_version: 2
-- generation_id: `METHCAL-20260924T051916+0900-R98-7D3B4C91`
-- produced_at: `2026-09-24T05:19:16+09:00`
+- generation_id: `METHCAL-20260924T062241+0900-R99-6E3A91B4`
+- produced_at: `2026-09-24T06:22:41+09:00`
 - authority_scope: `METHODOLOGY_ADVISORY_ONLY`
-- supersedes_generation_id: `METHCAL-20260924T042120+0900-R97-C9CE09C7`
+- supersedes_generation_id: `METHCAL-20260924T051916+0900-R98-7D3B4C91`
 - material_change: true
 - audit_result: `MATERIAL_CALIBRATION_UPDATE`
 - overall_classification: `MIXED_CALIBRATION`
 
 ## Executive decision
 
-R97 was read first. Two material calibration observations occurred after it.
+R98 was read first. The programme remains `MIXED_CALIBRATION` with the hard scientific-integrity floor intact.
 
-First, R97's prospective H7 recommendation was partly implemented correctly. Under R105, the exact result-bearing one-way controller, protected-payload handoff, fresh-identity mechanics, create-only START, raw-before-score, preserve-before-read, frozen scorer/runtime/preserver bindings, and create-only formal/sealed/evidence path were materialized without creating an identity or scientific result. The exact controller head `042d00375278d551dbf643ad866a4c883852804d` and frozen science head `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80` remain unchanged; the launch-plumbing readiness run is green. Fresh Analyst R106 then restored exactly one conditional FORMAL authority.
+Two material post-R98 observations matter.
 
-However, the first post-R106 PRIMARY attempt exposed a second execution-readiness gap before identity/START: the frozen workflow can only be triggered by a fresh `launch/h7-r5-*` tag, while the authorized automation execution surface exposes neither tag creation nor workflow dispatch. MAIN correctly failed closed rather than alter the frozen trigger. No identity, START, protected evaluation read, raw result, score, preserve ref, or evidence mutation occurred. This is not a scientific-integrity incident, but R106's `QUEUED` / `effectively executable` classification was operationally too strong. Prospectively, scientific FORMAL authority and executor capability should be represented separately: exact scientific/integrity authority may remain valid, but `effectively_executable` should require a verified trigger capability available to the authorized executor. PASS is scientifically reachable without weaker standards, but is not currently autonomously executable by the observed lane.
+First, MAIN Relay has now implemented the most important semantic separation requested by R98 without touching science. H7 remains scientifically `READY`, `ACTIVE`, `QUEUED`, `RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED`, and retains R106's exact one-shot FORMAL authority. The Relay no longer rewrites the scientific Funnel to `HOLD` merely because its own execution surface cannot create the frozen `launch/h7-r5-*` tag. Instead it records an orthogonal `operational_blocker.class=EXECUTION_CAPABILITY`, with `scientific_funnel_changed=false`. It again failed closed before identity/START, protected evaluation, raw output, scoring, or evidence mutation. This is a calibrated improvement: scientific readiness/authority and executor capability are now represented separately in the current MAIN mailbox.
 
-Second, the first Analyst-gated TH-001 Forge probe executed on an exposed synthetic nonrescue surface and remained noncanonical/zero-credit. The probe itself is bounded and safe. But the original TH-001 proposal predeclared a minimal discriminator that constructs an ordinary predictive partition `Q0`, applies a frozen intervention family, and asks whether the intervention-stable quotient `QI` must split predictive-equivalent histories. The executed recurrent-continuation probe instead compares an explicit recurrent loop against a cut and does not construct predictive-equivalent `Q0` pairs or an actual `Q0`-vs-`QI` refinement test. It validly shows that this toy continuation is explained by ordinary recurrence, but it does not by itself falsify the predeclared TH-001 discriminator. R106's use of this probe as a Theory kill with no further burden absent new information is therefore slightly over-conservative. Completing the already-predeclared Q0-vs-QI discriminator would not be outcome-responsive rescue tuning; it would be contract-faithful testing of the original theory question. No canonical candidate or evidence was created, so this is a throughput/false-negative calibration issue, not an integrity breach.
+A residual observability inconsistency remains. The designated Analyst R106 still reports `effectively_executable_mechanism=1`, while the independently observed PRIMARY and RELAY execution surfaces cannot invoke the prospectively frozen trigger. `queue_state=QUEUED` can remain valid if it means scientifically authorized queue membership, but `effectively_executable` must not mean operationally runnable until a permitted trigger actor is verified. The next fresh Analyst generation should reconcile this aggregate rather than forcing MAIN to alter the scientific Funnel.
 
-Revisit remains conservative and unchanged: all 34 terminal current objects remain terminal, the ledger remains 1 `CLOSED_STRONG` / 19 `DORMANT_REVISITABLE` / 14 `DEFERRED_INDEPENDENT_REIDENTIFICATION` / 0 `REVISIT_TRIGGERED`, no old ID is reopened, and no historical outcome is rewritten. No live `REVISIT_FORGE_TEST` or `REVISIT_CANONICALIZE` exists, so end-to-end changed-condition sensitivity remains unobserved.
+Second, Fast Forge at 05:35:55 JST performed a no-op and rejected a TH-001 follow-up because the prior probe was treated as Theory-killed and no fresh bounded Theory probe had been supplied. That no-op is safe, noncanonical and zero-credit; it touched no H7, terminal candidate, held-out, or evidence surface. However, it consumed methodology R97 even though R98 had already been durably persisted before the Forge run. R98 had specifically found that the recurrent-loop probe did not instantiate TH-001's predeclared Q0-vs-QI discriminator and that completing that already-frozen discriminator should not require genuinely new information. The stale methodology input therefore had a real throughput consequence: the known over-conservative kill remained effective and the contract-faithful discriminator was not considered. This is not rescue laundering or an evidence-integrity incident; it is a control-plane freshness / false-negative problem.
 
-Independent repository checks confirm stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; H7 frozen science and launch-controller refs are exact; authoritative `evidence/*` remains exactly five tags; tag-form `formal/*` and `sealed/*` are empty in the checked namespaces; H7 `control/h7*` and `preserve/h7*` heads are absent. The fixed H7 workflow is tag-triggered and explicitly re-fetches fresh Analyst authority before identity/START.
+Revisit remains unchanged and conservative. All 34 terminal current objects remain terminal. The ledger remains 1 `CLOSED_STRONG`, 19 `DORMANT_REVISITABLE`, 14 `DEFERRED_INDEPENDENT_REIDENTIFICATION`, 0 `REVISIT_TRIGGERED`; no live `REVISIT_FORGE_TEST` or `REVISIT_CANONICALIZE` exists, no old ID has been reopened, and no historical outcome has been rewritten.
 
-## Authority reconstruction
+Independent repository checks at this cutoff confirm stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; authoritative `evidence/*` remains exactly five tags; tag-form `formal/*`, `sealed/*`, `freeze/*`, and `immutable/*` are empty; H7 `control/h7*` and `preserve/h7*` heads are absent; and no `launch/h7-r5-*` tag exists. Therefore no H7 FORMAL one-way transition has begun.
 
-Prior methodology history: R97 classified the programme `MIXED_CALIBRATION`, tightened FORMAL authority sequencing so the materialized result-bearing launch path must pre-exist authority, kept Revisit bootstrap conservative, and left live Theory/Forge and Revisit execution as evidence gaps.
+## Input generations and authority reconstruction
 
-Designated Control history: Control R48 (`CTRL-20260924T045900+0900-R48-6F2C1A84`) records that the R105-authorized H7 launch plumbing is materialized and green, while R105 still required a fresh Analyst. It also observes Theory R1 awaiting/entering its bounded Forge stage. Control predates R106 and the later PRIMARY trigger-capability block.
+Prior methodology: R98 (`METHCAL-20260924T051916+0900-R98-7D3B4C91`) at branch head `967cf3d244e19804c93368526cab4d9ef4b59e9c`, classified `MIXED_CALIBRATION`. R98 separated scientific authority from executor trigger capability and found the TH-001 whole-theory kill slightly over-conservative because the executed toy did not instantiate the frozen Q0-vs-QI discriminator.
 
-Designated canonical gate: Analyst R106 (`EVA-20260924T050035+0900-R106-H7-LAUNCH-READY-THEORY-PROBE-KILLED`) independently re-fetched the exact H7 science/controller bindings and green non-result validation, restored one conditional one-way FORMAL authority, and kept identity uncreated/unconsumed. It also evaluated the first TH-001 Forge probe as an ordinary-recurrence reduction and a Theory kill.
+Human process directive: `HUMAN-20260922-005` is consumed only as a process directive, never as scientific evidence.
 
-Fresh MAIN: `MAIN-20260924T051305+0900-PRIMARY-H7-R106-FORMAL-LAUNCH-TRIGGER-BLOCKED` re-fetched R106, the exact source/controller/component bindings, and all H7 one-way namespaces. It stopped before identity because the runtime cannot create the prospectively required launch tag or dispatch the workflow, and changing the trigger would violate exact binding.
+Control: R48 (`CTRL-20260924T045900+0900-R48-6F2C1A84`) at `8b8cea6136d1b0e2d821fce1d4f75f8709a4fed0`, a designated control-history mailbox that predates R106 and the later capability observations.
 
-Theory/Forge: TH-001 remains noncanonical and zero-credit. The Forge branch `forge/20260924-recurrent-continuation-a@17b2673cd0417fdf931264a71d8df1f9c1c21f23` contains only an exposed synthetic recurrent-loop/cut probe. Its final lint repair is science-invariant. It does not touch H7 or Candidate #34/#35 rescue surfaces.
+Canonical gate: Analyst R106 (`EVA-20260924T050035+0900-R106-H7-LAUNCH-READY-THEORY-PROBE-KILLED`) at `770edcb0cf050ed7cdf41d4716ed645952e69475`. It keeps H7 `RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED`, `READY`, `ACTIVE`, `QUEUED`, grants one exact-binding FORMAL authority, and leaves identity uncreated/unconsumed. Its aggregate still says `effectively_executable_mechanism=1`.
+
+Fresh MAIN Relay: `MAIN-20260924T054727+0900-RELAY-H7-R106-FORMAL-LAUNCH-CAPABILITY-BLOCKED` at mailbox branch head `e5a1927352b0671456dd8c1166cccea72a510817`. It preserves the Analyst Funnel exactly while recording the unavailable launch primitive as a separate operational blocker and fails closed before identity/START.
+
+External Theory: TH-001 (`TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT`) remains noncanonical and zero-credit at external research handoff `226d812c96df3d71186ba5a4fb2ac1b27c0d6e25`.
+
+Theory Forge prototype: `forge/20260924-recurrent-continuation-a@17b2673cd0417fdf931264a71d8df1f9c1c21f23` remains unchanged and zero-credit.
+
+Fresh Fast Forge mailbox: `FORGE-20260924T053555+0900-NOOP-R106-R97-THEORY-KILLED`. It executed no probe and rejected a TH-001 follow-up because no fresh post-kill probe spec existed. Its methodology input was R97, not already-durable R98.
 
 ## Development iteration calibration
 
-Development-phase semantics remain consistent. H7 remains `RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED`; materializing and validating the launch path did not reset it to OPEN. Candidate #35 remains result-exposed and terminal. No same-object science-affecting change is authorized after exposure.
+Development semantics remain consistent on canonical objects. H7 stays `RESULT_EXPOSED_DEVELOPMENT` with R5 unchanged; the launch-path work and Relay bookkeeping are science-invariant plumbing/control-plane reconciliation only. Candidate #35 remains `RESULT_EXPOSED_DEVELOPMENT`, `TERMINAL_FOR_CURRENT_OBJECT`, zero confirmatory credit, with no same-object rerun/retune/rescore and no same-object SYSTEM-to-MECHANISM upgrade.
 
-Cycle 3 remains a mandatory reassessment point, not an automatic terminal cap. No current transition is driven solely by cycle count.
+Cycle 3 remains a mandatory reassessment point, not an automatic terminal cap. No current termination is driven solely by cycle count.
 
-Science-invariant versus science-affecting repair remains correctly distinguished on H7. The new controller/workflow work binds execution, preservation, serialization, identity/no-clobber, runtime and hash plumbing without changing the frozen scientific source/protocol/scorer semantics. Any change to metric, threshold, comparator, intervention, seed/exclusion policy, resource/privilege contract, hypothesis, falsifier, or success criteria still requires a versioned revision or fresh successor.
+Science-invariant and science-affecting changes remain correctly separated. No metric/scorer meaning, threshold/tolerance, comparator, intervention, seed/exclusion policy, resource/privilege contract, hypothesis, falsifier or success criterion was changed in the fresh MAIN Relay or Fast Forge no-op.
 
-Development observations remain outside independent confirmatory credit. TH-001 and its Forge probe are explicitly non-evidentiary; Candidate #34/#35 development observations remain zero/nonconfirmatory credit.
+Development/Theory/Forge observations remain outside independent confirmatory credit. No laundering into evidence is observed.
 
 ## PRE_FORMAL / FORMAL calibration
 
-PRE_FORMAL remains genuine development. H7 can remain scientifically READY even when operationally not startable. The new trigger-capability block demonstrates that scientific readiness, integrity authorization, and executor capability are three separable axes and should not be collapsed into a single `effectively_executable` flag.
+PRE_FORMAL remains genuine development. H7 being scientifically `READY` while the current executor is unable to invoke the frozen launch trigger is methodologically coherent so long as readiness, FORMAL authority, queue membership and operational executability are not conflated.
 
-FORMAL one-way integrity is unchanged. The exact workflow is prospectively tag-triggered, re-fetches fresh Analyst state, checks unused one-way namespaces, reconstructs the locked runtime, creates a fresh identity/START once, produces target-blind raw, remotely preserves/freezes raw before target materialization, then scores and creates evidence refs without clobber. No H7 one-way transition has actually begun.
+The Relay's new `operational_blocker` is a good correction. It should be retained as an axis orthogonal to the Analyst Funnel. The prior attempt to convert the scientific queue to HOLD because of local runtime capability was over-coupled; the current reconciliation correctly avoids that.
 
-R97's `result-bearing launch path before FORMAL authority` tightening is now satisfied at the repository level. The remaining calibration issue is execution capability: a fresh authority should not imply `QUEUED/effectively executable` unless the authorized actor can invoke the frozen trigger without modifying it. Gate classification: `KEEP` for scientific/integrity authority binding; `TIGHTEN` for effective-executability labeling and prestart trigger-capability validation.
+The residual problem is naming and aggregation. Analyst R106's `effectively_executable_mechanism=1` is false if `effective` means actually startable by the currently authorized/observed execution lane. Prospectively either (a) define `QUEUED` strictly as scientific queue membership and add a distinct `operationally_triggerable` / `executor_trigger_capable` field, or (b) keep an `effective_executable` aggregate but require both scientific authority and verified trigger capability. Do not solve this by mutating the frozen workflow trigger.
+
+FORMAL one-way integrity remains unchanged. No H7 identity, START, protected evaluation read, raw production/preservation, official score, preserve ref, formal/sealed/freeze/immutable tag or evidence ref has appeared. Scientific PASS remains reachable without weaker standards once a permitted exact trigger actor exists.
 
 ## Theory / Forge calibration
 
-Theory/canonical separation remains `KEEP`. TH-001 created no candidate, evidence, or execution authority. The first Forge probe ran on an exposed synthetic surface and is zero-credit, with no H7 or terminal-rescue overlap.
+Theory/canonical separation remains strong. TH-001 and its Forge outputs remain noncanonical and zero-credit.
 
-Probe discipline is mixed. The actual toy correctly demonstrates that an explicit recurrent edge can explain continuation, so that prototype should be reduced/killed. But the predeclared TH-001 minimal discriminator was Q0 predictive-equivalence versus QI intervention-conditioned refinement. The executed test never instantiates that discriminator. Therefore `FORGE_KILL_ORDINARY_RECURRENCE` is justified for the prototype but not as a full Theory falsification. Prospectively, a Theory-level kill should require either the predeclared discriminator itself to fail or an ordinary reduction that logically subsumes it. Otherwise record a prototype reduction and leave the original bounded discriminator eligible without demanding genuinely new information.
+The first recurrent-continuation prototype remains validly reducible by ordinary recurrence; that prototype should stay killed. But that result does not instantiate the predeclared TH-001 discriminator: predictive-equivalent Q0 histories followed by the same frozen intervention family and a test for QI refinement. Therefore the whole-theory kill remains too broad.
 
-This is an over-conservative false-negative risk, not rescue laundering. Running the already-specified Q0-vs-QI probe would not be a post-outcome change to the theory's metric/falsifier; it was frozen before the recurrent toy outcome.
+The fresh 05:35 Fast Forge no-op turns this from a merely theoretical calibration issue into an observed throughput issue. Forge rejected `TH-001 follow-up` because the prior Analyst-gated probe was already killed and no fresh post-kill bounded Theory spec existed. Yet R98, already durable before that run, had concluded that one bounded execution of the original Q0-vs-QI discriminator remains contract-faithful and does not require new information. The no-op itself is safe, but the selection path is stale and over-conservative.
+
+There is a second control-plane issue: Fast Forge consumed methodology R97 even though R98 was already the designated latest history. Because methodology is advisory rather than scientific authority, this did not authorize an unsafe action. But stale methodology can suppress legitimate zero-credit exploration. Prospectively, Forge selection should read the latest completed methodology generation before deciding that an Analyst Theory kill leaves no eligible bounded test; if Analyst authority conflicts, Forge must still obey Analyst and remain no-op, while surfacing the discrepancy for a fresh Analyst rather than self-dispatching.
+
+No Utility request is needed to test this. The discrepancy is already demonstrated by durable histories.
 
 ## Revisit / resurrection calibration
 
-The revisit axis remains orthogonal to terminal state. All 34 terminal objects remain terminal and no historical PASS/FAIL is rewritten.
+The Revisit axis remains orthogonal to terminal state. All 34 terminal current objects remain terminal, with no historical PASS/FAIL rewrite and no old candidate ID returned to ACTIVE.
 
-Bootstrap coverage remains complete and conservative. The residual need is unchanged: broad class-level `what_would_change_our_mind` templates are discovery scaffolding, not sufficient trigger proof; a first live trigger must recover candidate-specific closure provenance or require independent re-identification.
+Bootstrap remains complete and conservative: 34/34 classified, with no aggressive resurrection and no systematic `CLOSED_STRONG` default. Broad class-level `what_would_change_our_mind` templates remain only discovery scaffolding; candidate-specific closure provenance is still required before any live trigger.
 
-No genuine independent Revisit trigger has traversed the system. The TH-001 Forge result is an ordinary recurrence reduction, not a candidate-specific material trigger that changes an old closure. Therefore leaving all ledger rows unchanged is calibrated.
+No genuine material independent trigger is currently being missed in the inspected Revisit ledger. TH-001's recurrence reduction is not a candidate-specific trigger for any old terminal object. Candidate #35's rescue-adjacent family remains deferred correctly.
 
-Current rescue/zombie control remains strong. Candidate #35's immediate post-outcome successor family remains deferred and zero-credit. There is no fresh-ID laundering.
+There is still no live `REVISIT_FORGE_TEST` or `REVISIT_CANONICALIZE`. Thus end-to-end changed-condition sensitivity and the requirement that Revisit Forge kill the NEW trigger rather than rerun an old failure remain `INSUFFICIENT_EVIDENCE`.
 
-There is still no live `REVISIT_FORGE_TEST` or `REVISIT_CANONICALIZE`, so whether Revisit Forge tests the new trigger rather than rerunning an old failure remains `INSUFFICIENT_EVIDENCE`.
+## Funnel / candidate supply / pass reachability
 
-## Funnel / mechanism supply / pass reachability
+Claim ceilings remain enforced. No same-object SYSTEM-to-MECHANISM uplift is observed.
 
-Claim ceilings remain enforced; no same-object SYSTEM->MECHANISM uplift is observed. Mechanism supply remains fragile: H7 is the only nonterminal MECHANISM object, and although Analyst R106 labels it queued/executable, the observed autonomous lane cannot invoke the frozen launch trigger. Effective autonomous MECHANISM execution count is therefore zero at this audit cutoff.
+Mechanism supply remains fragile. H7 is the only nonterminal canonical MECHANISM object. It is scientifically READY and FORMAL-authorized, but no observed autonomous lane can create the frozen launch tag. Thus scientifically queued count can be 1 while operationally triggerable count remains 0; these must be separately observable.
 
-PASS remains scientifically reachable without weakening evidence standards, because no scientific criterion needs to change. Operationally it is not currently reachable by the observed executor until a permitted tag-creation/workflow-dispatch capability exists. The correct response is capability alignment or a correctly authorized trigger actor, not scientific relaxation or workflow-trigger mutation after R106 binding.
+Theory supply is also unnecessarily constrained by the still-effective whole-theory kill. The 05:35 no-op demonstrates that the original bounded discriminator is currently suppressed pending a fresh Analyst correction. This is a moderate false-negative / throughput risk, not a reason to weaken canonical evidence standards.
 
-Theory supply is also slightly over-conservatively constrained by treating an off-discriminator prototype reduction as a whole-theory kill. This should be corrected prospectively without granting the theory evidence credit or canonical status.
+PASS remains realistically reachable without weakening evidence standards. The blocker is operational trigger capability, not scientific criteria. The correct response is a permitted exact trigger actor and fresh pre-START checks, never trigger mutation, protocol relaxation, identity reuse, or post-outcome repair.
 
 ## Gate classifications
 
@@ -93,8 +107,9 @@ Theory supply is also slightly over-conservatively constrained by treating an of
 - Hidden second FORMAL gate: `KEEP`
 - Materialized result-bearing launch path before fresh FORMAL authority: `KEEP`
 - Scientific FORMAL authority exact binding: `KEEP`
-- Effective-executability labeling requires trigger capability: `TIGHTEN`
-- Executor trigger-capability check before queueing: `TIGHTEN`
+- Executor-capability axis orthogonal to scientific Funnel: `KEEP`
+- Scientific queue membership may coexist with operational blocker: `CLARIFY`
+- Effective-executability aggregate requires verified trigger capability: `TIGHTEN`
 - Fresh FORMAL one-way transition: `INSUFFICIENT_EVIDENCE`
 - Terminal current object never reactivated: `KEEP`
 - Revisit axis orthogonal to terminal state: `KEEP`
@@ -110,66 +125,70 @@ Theory supply is also slightly over-conservatively constrained by treating an of
 - Theory Forge zero-credit bounded surface: `KEEP`
 - Theory Forge probe fidelity to predeclared discriminator: `TIGHTEN`
 - Whole-Theory kill from non-diagnostic prototype reduction: `RELAX`
+- Forge methodology-freshness before selection: `TIGHTEN`
 - Fast Forge/canonical separation: `KEEP`
 - Claim ceiling enforcement: `KEEP`
 - Mechanism-supply health: `CLARIFY`
-- READY vs authority vs executable distinction: `CLARIFY`
-- PASS reachability without weaker standards: `KEEP` scientifically / operationally blocked
+- PASS reachability without weaker standards: `KEEP`
 
 ## Mandatory questions
 
-1. Development phases consistent end-to-end? **Yes** on current objects; FORMAL consumption remains unobserved.
+1. Development phases consistent end-to-end? **Yes** on current canonical objects; H7 remains result-exposed R5 unchanged.
 2. Cycle 3 mistaken for a hard cap? **No**.
-3. Science-invariant vs science-affecting changes distinguished? **Yes** on H7 and terminal paths.
+3. Science-invariant vs science-affecting changes distinguished? **Yes** in the fresh MAIN/Forge observations.
 4. Development observations kept out of independent evidence credit? **Yes**.
-5. FORMAL one-way integrity unchanged? **Yes**. No H7 identity/START/preserve/result exists; the fixed workflow preserves one-way ordering.
-6. Legitimate fresh SYSTEM->MECHANISM successors suppressed or manufactured? **No same-object manufacture observed.** However, noncanonical Theory supply is slightly over-suppressed by an off-discriminator kill.
+5. FORMAL one-way integrity unchanged? **Yes**. No H7 identity/START/result/evidence exists.
+6. Legitimate fresh SYSTEM-to-MECHANISM successors suppressed or manufactured? **No same-object manufacture observed.** Theory supply is slightly over-suppressed by the overbroad TH-001 kill.
 7. PRE_FORMAL genuine development? **Yes**.
-8. Terminal semantics calibrated? **Yes**; all 34 terminal current objects remain terminal.
-9. Revisit catches genuinely changed conditions? **Not yet demonstrated live**; no current material trigger is being missed.
-10. Revisit avoids rescue laundering/zombie inflation? **Yes in current observations**.
-11. REVISIT_FORGE_TEST tests the new trigger rather than old failure? **Insufficient evidence**; no live Revisit Forge case exists.
+8. Terminal semantics calibrated? **Yes**; all 34 terminal objects remain terminal.
+9. Revisit catches genuinely changed conditions? **Not demonstrated live; no concrete current independent trigger is observed as missed.**
+10. Revisit avoids rescue laundering and zombie inflation? **Yes in current observations.**
+11. REVISIT_FORGE_TEST probes test new triggers rather than old failures? **Insufficient evidence; no live Revisit Forge test exists.**
 12. Bootstrap complete and conservative? **Yes**, with candidate-specific provenance still required before live triggering.
-13. PASS realistically reachable without weaker standards? **Scientifically yes; operationally not by the currently observed executor because the frozen trigger cannot be invoked.** No standard relaxation is needed.
+13. PASS realistically reachable without weaker standards? **Scientifically yes. Operationally not yet from the observed lanes because the exact frozen trigger primitive is unavailable.**
 
 ## Risks
 
-False-positive / zombie inflation: `LOW_CURRENT_MODERATE_FUTURE_TRIGGER_WATCH`.
+False-positive / rescue-laundering / zombie inflation: `LOW_CURRENT_MODERATE_FUTURE_TRIGGER_WATCH`.
 
-False-negative / forgotten valuable lines: `MODERATE`, driven now both by untested live Revisit sensitivity and the overly broad TH-001 kill inference.
+False-negative / forgotten valuable lines: `MODERATE`, due untested live Revisit sensitivity plus observed Theory suppression from an off-discriminator kill and stale-methodology Forge selection.
 
-Moving-goalpost / rescue: `LOW_CURRENT`. H7 R5 remains unchanged; no terminal same-object rescue is admitted.
+Moving-goalpost / rescue: `LOW_CURRENT`. H7 R5 and all terminal objects remain unchanged.
 
-Over-terminalization / candidate starvation: `MODERATE`. Revisit has not missed a concrete trigger, but Theory supply should not be terminated by a probe that did not instantiate its frozen discriminator.
+Over-terminalization / candidate starvation: `MODERATE`. No concrete Revisit trigger is currently missed, but the predeclared TH-001 discriminator remains untested while downstream Forge now treats the theory as killed.
 
-FORMAL integrity risk: `LOW_CURRENT`. The runtime failed closed before identity/START. Execution-readiness observability risk is `MODERATE` because queue/executable status did not include actual trigger capability.
+FORMAL integrity risk: `LOW_CURRENT`. MAIN repeatedly fails closed before identity/START.
 
-Mechanism supply: `FRAGILE_ZERO_AUTONOMOUS_EXECUTABLE_CURRENTLY`.
+Execution-readiness observability: `MODERATE_BUT_IMPROVING`. MAIN now has an orthogonal operational blocker, but Analyst's aggregate still reports one effectively executable mechanism.
+
+Mechanism supply: `FRAGILE_ONE_SCIENTIFICALLY_QUEUED_ZERO_OBSERVED_TRIGGERABLE`.
 
 ## Prospective recommendations
 
-1. Keep R106's exact H7 scientific/integrity bindings unchanged, but separate `FORMAL_AUTHORIZED` from `EXECUTOR_TRIGGER_CAPABLE`; only call H7 effectively executable when the authorized lane can invoke the frozen trigger without changing it.
-2. Add a result-free capability check before queueing/marking effective execution: verify that the designated executor exposes the exact required tag-creation or workflow-dispatch primitive and permissions. If absent, HOLD rather than changing the frozen workflow.
-3. Preserve all one-way H7 rules: fresh identity, no rerun/retune/rescore, raw-before-score, remote preserve-before-target-read, exact source/controller/runtime/input/scorer/preserver binding, create-only evidence refs.
-4. Treat the recurrent-continuation Forge result as a reduction of that prototype, not sufficient falsification of TH-001's predeclared Q0-vs-QI discriminator. A single bounded probe implementing the already-frozen Q0/QI partition-and-intervention test remains methodologically legitimate and is not rescue tuning.
-5. Keep TH-001 and all Forge/Theory outputs noncanonical and zero-credit unless a fresh Analyst prospectively creates a canonical object under independent criteria.
-6. Keep all old terminal candidate IDs terminal forever. Require candidate-specific independent trigger provenance before any Revisit activation; do not auto-trigger from Theory freshness labels.
-7. Do not weaken evidence standards to solve mechanism-supply or executor-capability shortages.
+1. Keep H7 R106 scientific authority, science/controller/runtime/input/scorer/preserver bindings and one-way rules unchanged.
+2. Keep MAIN's new operational blocker orthogonal to the scientific Funnel. Define `QUEUED` as scientific queue membership if desired, but add/maintain an explicit `executor_trigger_capable=false` / `operationally_triggerable=false` field until a permitted actor can create the exact frozen tag.
+3. On the next fresh Analyst pass, reconcile `effectively_executable_mechanism` with the executor-capability observation; do not alter the frozen workflow to make the metric true.
+4. Require Forge selection to read the latest completed methodology generation. Methodology remains advisory only; if it conflicts with current Analyst authority, Forge must stop and surface the discrepancy rather than self-authorize.
+5. For TH-001, keep the recurrent-loop prototype killed, but do not require genuinely new information merely to perform one bounded, zero-credit implementation of the already-predeclared Q0-vs-QI discriminator. A fresh Analyst should decide whether to restore that specific test as eligible.
+6. Keep Theory/Forge outputs noncanonical and zero-credit; no promotion or evidence credit may inherit from the old toy, Theory proposal, or methodology finding.
+7. Keep all old terminal candidate IDs terminal forever. Continue candidate-specific independent-trigger scans and require a fresh ID/falsifier/reduction ladder for any valid Revisit canonicalization.
+8. Do not weaken evidence standards to solve trigger-capability, mechanism-supply or Theory-throughput problems.
 
 ## Utility request
 
-`NONE`. No Utility proposal is needed for this calibration finding; the missing launch primitive is an operational capability issue and the auditor does not dispatch or mutate operations.
+`NONE`. The relevant calibration failures are already demonstrated by durable current-state observations; no new Utility experiment or operation is justified.
 
 ## Hard-floor confirmation
 
-This audit dispatched no experiment, created/consumed no identity, mutated no research/evidence/scientific refs, merged no PR, changed no scheduler, changed no scientific criterion, reran/retuned/rescored no consumed FORMAL identity, reactivated no terminal object, and rewrote no historical PASS/FAIL.
+This audit dispatched no experiment, consumed no identity, mutated no research/evidence/scientific ref, merged no PR, changed no scheduler, changed no scientific criterion, reran/retuned/rescored no consumed FORMAL identity, reactivated no terminal object, and rewrote no historical PASS/FAIL. Persistence is limited to the designated append-only methodology-audit history plus its designated latest/state pointers.
 
 ## Confidence
 
-`HIGH` — 0.99. The H7 trigger-capability block and the TH-001 discriminator/probe mismatch are directly observable in current repository/history artifacts. Revisit live-trigger behavior remains an evidence gap rather than a demonstrated defect.
+`HIGH` — 0.99. The post-R98 MAIN and Fast Forge states are durable and directly inspectable; stable main and protected evidence namespaces were independently re-fetched. Uncertainty remains only for behaviors not yet exercised: actual H7 FORMAL consumption and live Revisit trigger/Forge/canonicalization.
 
 ## Questions for Control / Analyst
 
-- Distinguish scientific one-shot authority from actual executor capability: if the authorized lane cannot create the frozen launch tag, classify H7 as operationally HOLD/non-executable without changing R5 or the bound workflow.
-- For TH-001, do not require genuinely new information merely to run the already-predeclared Q0-vs-QI discriminator that the recurrent toy did not instantiate; keep any such probe bounded, noncanonical and zero-credit.
-- Continue candidate-specific Revisit trigger scans and expose the first genuine trigger -> decision -> optional Forge -> fresh successor chain for calibration.
+- Should `queue_state=QUEUED` be formally defined as scientific queue membership independent of operational triggerability, with a separate executor-capability axis?
+- Will the next Analyst generation reconcile `effectively_executable_mechanism` to the observed trigger blocker rather than modifying the scientific Funnel?
+- Will TH-001's already-predeclared Q0-vs-QI discriminator be restored as an eligible bounded zero-credit test without demanding new information, while keeping the recurrent-loop prototype killed?
+- Will Fast Forge be required to consume the latest completed methodology generation before its selection scan, while preserving Analyst as the only canonical scientific gate?
