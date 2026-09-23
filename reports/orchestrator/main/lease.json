@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T171800+0900-PRIMARY-CAND35-ARCHR1-R95-71C4A8E2",
+  "generation_id": "MAIN-20260923T172900+0900-PRIMARY-CAND35-ARCHR1-R95-WAITING-CI",
   "run_id": "sparkbrain-main-primary-20260923T171800JST-R95-cand35-archr1",
   "producer_run_id": "sparkbrain-main-primary-20260923T171800JST-R95-cand35-archr1",
   "authority_scope": "PRIMARY_CANONICAL_R95_CAND35_ARCHITECTURE_R1_NONRESULT_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T164400+0900-RELAY-CAND34-PREFORMALR2-R94-WAITING-ANALYST",
+  "supersedes_generation_id": "MAIN-20260923T171800+0900-PRIMARY-CAND35-ARCHR1-R95-71C4A8E2",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T165919+0900-R95-71C4A8E2@9b9ceffc5c5f4fc8cf68b2d7e28259d8d6d2ea1a",
-    "main_previous_lease": "MAIN-20260923T164400+0900-RELAY-CAND34-PREFORMALR2-R94-WAITING-ANALYST"
+    "main_previous_lease": "MAIN-20260923T171800+0900-PRIMARY-CAND35-ARCHR1-R95-71C4A8E2"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-23T17:18:00+09:00",
-  "heartbeat_at": "2026-09-23T17:18:00+09:00",
-  "waiting_since": null,
+  "heartbeat_at": "2026-09-23T17:29:00+09:00",
+  "waiting_since": "2026-09-23T17:29:00+09:00",
   "completed_at": null,
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260923T165919+0900-R95-71C4A8E2",
@@ -30,18 +30,26 @@
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "NONTERMINAL",
-  "queue_state": "ACTIVE_MAIN_ARCHITECTURE_R1_NONRESULT",
+  "queue_state": "MAIN_ARCHITECTURE_R1_IMPLEMENTED_WAITING_EXACT_HEAD_CI",
   "system_priority_exception": {
     "used": true,
     "kind": "NO_COHERENT_MECHANISM_TARGET",
     "prospective_authority": "EVA-20260923T165919+0900-R95-71C4A8E2"
   },
   "active_branch": "research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1",
-  "active_head": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+  "active_head": "58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751",
   "active_identity": null,
-  "workflow_wait": null,
-  "repair_change_classification": "ARCHITECTURE_NONRESULT_IMPLEMENTATION_PENDING",
-  "evidentiary_status": "NON_EVIDENTIARY_ARCHITECTURE_ONLY",
+  "workflow_wait": {
+    "run_id": 35837060130,
+    "workflow": "ci",
+    "head": "58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751",
+    "status_at_persist": "in_progress",
+    "conclusion_at_persist": null,
+    "result_bearing": false,
+    "expected_next_external_action": "Re-fetch exact-head CI. If green and R95 remains materially unchanged, close Architecture R1 implementation readiness and return to Evidence Analyst without candidate-response execution."
+  },
+  "repair_change_classification": "ARCHITECTURE_NONRESULT_IMPLEMENTATION_WITH_SCIENCE_INVARIANT_LINT_REPAIR",
+  "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_IMPLEMENTATION_ONLY_NO_CANDIDATE_RESPONSE",
   "new_scientific_result_this_run": false,
   "formal_identity_created_or_consumed": false,
   "started_created": false,
@@ -54,18 +62,24 @@
   "consumed_identities": {
     "formal_consumed_identity_count_changed": false,
     "D34_Q002_development_execution_consumed_once": true,
-    "D34_Q002_repeat_forbidden": true
+    "D34_Q002_repeat_forbidden": true,
+    "candidate_35_identity_created_or_consumed": false
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
     "main_ref_rechecked": true,
     "main_lease_freshness_rechecked": true,
     "candidate_branch_collision_checked": true,
+    "active_research_head_rechecked": true,
+    "active_research_head_matches_ci_head": true,
     "forge_same_object_collision": false,
+    "forge_code_or_observation_reused": false,
     "utility_same_object_collision": false,
+    "candidate_response_stop_respected": true,
+    "system_to_mechanism_uplift_not_performed": true,
     "formal_floor_respected": true
   },
-  "stop_reason": null,
-  "next_action": "Create the fresh canonical candidate #35 Architecture R1 branch from exact stable main and implement deterministic clone/reset, queue-free/cap enforcement, canonical serialization, and synthetic non-result validation only. Stop before any candidate response-bearing execution or SYSTEM-to-MECHANISM uplift.",
+  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI",
+  "next_action": "Re-fetch the latest Evidence Analyst generation, exact candidate #35 research head, and CI run 35837060130. If CI is green and authority is materially unchanged, close Architecture R1 implementation readiness and return to Analyst without candidate-response execution. If CI fails, repair only clearly science-invariant implementation defects; any scientific cue/reset/cap/observable meaning change requires fresh Analyst authority.",
   "owner": "main"
 }
