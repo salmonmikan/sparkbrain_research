@@ -1,102 +1,116 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260923T143553+0900-ASSEMBLY-RETENTION-CAPACITY-R93",
-  "produced_at": "2026-09-23T14:35:53+09:00",
+  "generation_id": "FORGE-20260923T153500+0900-ASSEMBLY-IDENTITY-COACTIVATION-R94",
+  "produced_at": "2026-09-23T15:35:00+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260923T133600+0900-ACTION-CONTEXT-DEADEND-R92",
+  "supersedes_generation_id": "FORGE-20260923T143553+0900-ASSEMBLY-RETENTION-CAPACITY-R93",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T140800+0900-R93-4D7C2A91@92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
-    "main_relay": "MAIN-20260923T145200+0900-RELAY-CAND34-PREFORMALR2-R93-WAITING-CI-REPAIR@ops/orchestrator-run-report",
-    "literature": "LIT-R36@5228e5271f9a87c47d6ed1c68b10a24c92d0c996",
-    "independent_audit": "AUD-R8@ops/external-research-audit-handoff",
-    "methodology": "METHCAL-R81@2b1ea6e106ea6c5fb93d1616a02cdf8be7f36a90",
-    "utility": "UTILITY-PFR1-POINTER-DIVERGENCE@5d928c9e4b838a4a4560ae27a5d3097bbeff23bd",
-    "previous_forge": "FORGE-20260923T133600+0900-ACTION-CONTEXT-DEADEND-R92@ops/orchestrator-run-report"
+    "evidence_analyst": "EVA-20260923T150251+0900-R94-8E6A31C4@5cee6ef496eb9465550fb9c0be5295e587027dfb",
+    "main_relay": "MAIN-20260923T152800+0900-PRIMARY-CAND34-PREFORMALR2-R94-WAITING-RESPONSE@93a433aa78c7e63a1c654d01a1c8c1f7f287c5e8",
+    "literature": "LIT-20260923T153000+0900-R37-SPIKE-RESPONSE-KERNEL-5A8C21E7@1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e",
+    "independent_audit": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8@ops/external-research-audit-handoff",
+    "methodology": "METHCAL-20260923T152244+0900-R84-5D4A8C21@f0d6b97c76878aada97794745c4b51f46bea18b0",
+    "utility": "ops/utility-orchestrator-requests@6829ac17ed38cf01a5600dfa83baa45998dc5dc0",
+    "previous_forge": "FORGE-20260923T143553+0900-ASSEMBLY-RETENTION-CAPACITY-R93@ops/orchestrator-run-report"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_commit": "92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
+    "analyst_commit": "5cee6ef496eb9465550fb9c0be5295e587027dfb",
+    "main_report_commit_before_forge_persistence": "93a433aa78c7e63a1c654d01a1c8c1f7f287c5e8",
     "main_active_branch": "research/main-cand34-assembly-route-preformal-r93-response",
     "main_active_head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
+    "literature_handoff_commit": "1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e",
+    "literature_latest_blob": "db41fad080791176f66b3d773f5f747964e507ae",
+    "audit_latest_blob": "0afe416906713bc4b04eec34cd8a0035ecacbc1f",
+    "methodology_handoff_commit": "f0d6b97c76878aada97794745c4b51f46bea18b0",
+    "methodology_latest_blob": "50e35d2539e4db5b8db22a6af5b81f0cad051bbd",
+    "previous_forge_latest_blob": "0d04e6f9e82915b02d60081890596fa50586ef8a",
     "source_assemblies_blob": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
-    "previous_forge_latest_blob": "38a64986ed42bf496d66caac64f700967b029247",
+    "source_brain_blob": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+    "source_prediction_blob": "9805031fb8db235d2f3cf4c81421b896d2597af4",
+    "source_action_blob": "792cba20ec5411633f12478d641adf35dba505e3",
     "forge_branch": null
   },
+  "freshness_note": "Literature R37 post-dates R94 and reports only an execution/provenance fact: the MAIN-owned #34 one-shot workflow completed and a raw artifact exists. Forge did not download, read, decode, score, summarize or inspect that artifact. No candidate #34 result content entered this run.",
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "avoided": [
-      "candidate #34 temporal-route PRE_FORMAL R2 active branch, scorer, executor, runtime and workflow",
-      "candidate #35 queue-free subthreshold physical-state architecture surface",
+      "candidate #34 PRE_FORMAL R2 active branch, exact executor, queue D34-Q002, workflow artifact, scorer, preserver and response interpretation boundary",
+      "candidate #35 queue-free subthreshold physical-state Architecture surface",
       "H7 FORMAL/provenance/preservation path",
       "all consumed/frozen/evidence/formal/sealed/preserve identities",
       "native responsibility/credit dense historical family",
-      "prior Forge predictor/action context, partial-completion, maturation-order, receptor-state and suppression-learning dead ends"
+      "prior Forge predictor/action context, partial-completion, maturation-order, receptor-state, suppression-learning and mature-retention/capacity dead ends"
     ],
-    "relay": "MAIN/Relay ownership re-read immediately before persistence"
+    "relay": "R94 Analyst and current MAIN report were re-read before persistence; newer Literature R37 operational completion was also reconciled without accessing the raw response."
   },
   "selection_scan": {
-    "selected": "mature Assembly stale-retention and capacity closure",
+    "selected": [
+      "Assembly identity recycling / stale downstream meaning inheritance",
+      "multi-Assembly coactivation / functional binding bottleneck"
+    ],
     "duplicate_or_rescue_rejects": [
-      "native local responsibility/credit — prior Forge history explicitly marks the dense responsibility/credit/replay/topology/eligibility family as already covered"
+      "native local responsibility/credit — prior Forge history explicitly marks the responsibility/credit/replay/eligibility family as dense and already covered; rejected before execution",
+      "R37 local spike-response/history-filter comparator — tightly tied to MAIN-owned candidate #34 and its now-produced unread response, therefore excluded from Forge"
     ]
   },
   "overall_status": "FORGE_DEAD_END",
   "forge_objects": [
     {
-      "forge_id": "FORGE-ASSEMBLY-MATURE-RETENTION-A",
-      "question": "Can apparent long-delay Assembly persistence/regeneration survive the ordinary reduction that mature prototypes are exempt from stale pruning?",
-      "why_now": "Independent Assembly/internal-state completion-regeneration surface not dependent on MAIN #34/#35 outcomes; prior partial-completion Forge work did not test mature stale retention.",
+      "forge_id": "FORGE-ASSEMBLY-ID-REUSE-A",
+      "question": "Can pruning recycle an Assembly identity so an unrelated later Assembly inherits stale predictor/action mappings attached to the old ID?",
+      "why_now": "The prior mature-capacity probe exposed pruning and persistent downstream tables but did not test identity continuity across deletion/reallocation; the question is independent of MAIN #34/#35 outcomes.",
       "branch": null,
       "prototypes": [
-        "read-only source-path audit of TemporalAssemblyMemory maturity/prune boundary",
-        "small equivalent synthetic stale-prune diagnostic contrasting mature versus immature candidates"
+        "read-only identity-lifecycle inspection across TemporalAssemblyMemory prune/new-candidate/checkpoint restore and downstream ID-keyed tables"
       ],
       "commands_diagnostics": [
-        "inspected src/sparkbrain/v05/assemblies.py at stable main",
-        "synthetic prune at t=1,000,000 ms with 3-episode mature entries and stale 1/2-episode controls"
+        "inspected src/sparkbrain/v05/assemblies.py, prediction.py and action.py at stable main"
       ],
       "observations": {
-        "mature_threshold_episode_count": 3,
-        "immature_stale_episode_ceiling": 2,
-        "default_stale_after_ms": 50000.0,
-        "three_mature_entries_removed_after_long_stale_interval": 0,
-        "stale_immature_entries_removed": true
+        "candidate_ids_use_monotonic_next_id": true,
+        "prune_decrements_or_recycles_next_id": false,
+        "checkpoint_persists_next_id": true,
+        "downstream_tables_have_explicit_prune_cleanup": false,
+        "normal_future_candidate_can_reuse_pruned_id": false
       },
       "ordinary_reductions": [
-        "persistent prototype lookup",
-        "mature-entry exemption from stale eviction",
-        "no requirement for recurrent regeneration or self-maintaining activity"
+        "monotonic identifier allocation",
+        "inert stale dictionary entries",
+        "manual malformed checkpoint/API corruption required for actual stale-key inheritance"
       ],
       "status": "FORGE_DEAD_END",
-      "dead_end_reason": "Long-delay mature Assembly recognition is already explained by an immortal prototype entry under the current eviction rule.",
+      "dead_end_reason": "Normal runtime evolution never reuses a pruned Assembly ID, so stale predictor/action rows cannot bind to a later candidate without externally corrupting state.",
       "promotion_reason": null
     },
     {
-      "forge_id": "FORGE-ASSEMBLY-CAPACITY-CLOSURE-B",
-      "question": "Can a store filled with mature Assemblies permanently reject novel unmatched patterns because only immature stale candidates are evictable?",
-      "why_now": "Same source surface provides a bounded falsifiable capacity consequence that can distinguish memory dynamics from ordinary fixed-capacity storage without touching MAIN.",
+      "forge_id": "FORGE-MULTI-ASSEMBLY-WTA-B",
+      "question": "When multiple mature Assemblies co-activate in one episode, can the v0.5 outcome layer bind prediction/action function to their conjunction rather than a single winner?",
+      "why_now": "This tests a distinct pre-semantic-to-functional formation bottleneck not covered by the prior same-Assembly context probe and does not depend on candidate #34/#35 results.",
       "branch": null,
       "prototypes": [
-        "equivalent synthetic max_candidates=3 full-store diagnostic",
-        "control replacing two mature entries with stale 1/2-episode entries"
+        "read-only data-flow inspection from multiple Assembly activations through strongest selection, predictor/action choice and learn_outcome"
       ],
       "commands_diagnostics": [
-        "applied the exact observe/prune capacity logic from stable source to the bounded synthetic store"
+        "inspected src/sparkbrain/v05/brain.py plus prediction.py and action.py at stable main"
       ],
       "observations": {
-        "max_candidates_synthetic": 3,
-        "full_mature_store_reopened_capacity_after_long_stale_interval": false,
-        "store_with_stale_immature_entries_reopened_capacity": true
+        "multiple_activations_can_be_collected": true,
+        "usable_activations_reduced_to_single_strongest": true,
+        "prediction_receives_only_strongest": true,
+        "action_policy_receives_only_strongest": true,
+        "pending_activation_is_single": true,
+        "native_joint_assembly_key_on_this_path": false
       },
       "ordinary_reductions": [
-        "finite-capacity prototype table",
-        "immature-only eviction policy",
-        "capacity exhaustion rather than a new memory mechanism"
+        "deterministic winner-take-all selector",
+        "single Assembly-ID lookup/update",
+        "joint/context key would be an ordinary representation extension rather than evidence of emergent functional binding"
       ],
       "status": "FORGE_DEAD_END",
-      "dead_end_reason": "Permanent closure after all slots mature follows directly from the fixed-capacity/eviction policy and carries no independent mechanism residual.",
+      "dead_end_reason": "The v0.5 outcome path explicitly collapses coactivity to one strongest Assembly before prediction/action credit, leaving no native conjunction-binding residual on this path.",
       "promotion_reason": null
     }
   ],
@@ -106,6 +120,7 @@
     "started_created": false,
     "official_test_or_scoring_performed": false,
     "protected_heldout_accessed": false,
+    "main_candidate_response_artifact_accessed": false,
     "evidence_formal_sealed_freeze_preserve_ref_mutated": false,
     "consumed_or_immutable_evidence_mutated": false,
     "response_workflow_dispatched": false,
@@ -113,15 +128,15 @@
   },
   "metrics": {
     "scope": "FROM_R92_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 4,
-    "prototypes_attempted": 8,
-    "dead_ends": 7,
+    "runs": 5,
+    "prototypes_attempted": 10,
+    "dead_ends": 9,
     "interesting_observations_retained": 0,
     "promotion_proposals": 0,
     "later_admissions": 0,
-    "duplicate_or_rescue_rejects": 3,
+    "duplicate_or_rescue_rejects": 4,
     "ownership_collisions": 0,
-    "ordinary_reduction_rejects": 7,
+    "ordinary_reduction_rejects": 9,
     "idea_to_observation_latency": "within_run"
   },
   "recommendation": "NONE_NO_PROMOTION"
