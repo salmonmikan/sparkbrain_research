@@ -1,36 +1,36 @@
-# FAST FORGE latest — Assembly identity continuity and multi-Assembly functional binding reduce to ordinary implementation semantics
+# FAST FORGE latest — no independent high-information target after #34 exposure
 
 - schema_version: `2`
-- generation_id: `FORGE-20260923T153500+0900-ASSEMBLY-IDENTITY-COACTIVATION-R94`
-- produced_at: `2026-09-23T15:35:00+09:00`
+- generation_id: `FORGE-20260923T163218+0900-NOOP-POSTEXPOSURE-R94`
+- produced_at: `2026-09-23T16:32:18+09:00`
 - worker_role: `FAST_FORGE`
 - evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
-- overall_status: `FORGE_DEAD_END`
+- overall_status: `FORGE_OBSERVATION`
+- selection_outcome: `NO_OP`
 
 ## Freshness / independence
 
-Evidence Analyst R94 is current at `5cee6ef496eb9465550fb9c0be5295e587027dfb`; stable main remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. MAIN owns candidate #34 and its one-shot PRE_FORMAL R2 result/preservation boundary; candidate #35 remains the secondary canonical queue and H7 FORMAL/provenance remains excluded. Literature R37 is newer than the Analyst report and was re-read before persistence; it reports that the #34 one-shot workflow has completed and that its raw artifact must remain unread until durable preservation. Forge did not access that workflow artifact or any #34 response surface.
+Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; Evidence Analyst R94 remains current at `5cee6ef496eb9465550fb9c0be5295e587027dfb`. MAIN/Relay now records candidate #34's single authorized PRE_FORMAL development response as durably preserved and result-exposed at `ops/orchestrator-run-report@692557e1e5d5deeb7d156db274ea2e71d323b1db`; repeat execution is forbidden pending fresh Analyst review. Candidate #35 remains the queued canonical SYSTEM architecture surface. H7/PF-R1 remains a protected FORMAL/provenance/Utility path.
 
-Prior Forge state/history was re-read. Native responsibility/credit was explicitly rejected before execution because the responsibility/credit/replay/eligibility family is already dense. Receptor/topology aliasing, same-Assembly contextual action, partial-completion, maturation-order, receptor-state, suppression-learning, predictor-count-table, and mature-retention/capacity probes were excluded as duplicate/rescue surfaces.
+Literature R37 (`1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e`) supplies a new spike-response/history-filter reduction ladder, but it is explicitly tied to #34's measurement surface and is now outcome-sensitive MAIN work. Methodology R85 (`d8dd9cfa00a3602fafa0df539ea5fd3df050f2cf`) confirms #34 crossed the first result-exposure boundary and otherwise adds provenance/governance recommendations, not an independent Forge science surface. Control R43 and the Utility assignment remain PF-R1-specific.
 
-No Forge branch was required. This run used read-only stable-source inspection only.
+## Target scan
 
-## Probe A — can pruning recycle an Assembly identity and inherit stale downstream meaning?
+No bounded independent prototype passed the Forge filters this run.
 
-`TemporalAssemblyMemory._new_candidate()` allocates `assembly-{next_id}` and increments `next_id`. `prune()` can delete stale immature candidates, but it does not decrement or recycle `next_id`; checkpoint serialization persists and restores that monotonic counter. Predictor counts and action scores are keyed by Assembly ID and do not have explicit prune cleanup, but a later normally created Assembly cannot receive a deleted ID.
+- The new R37 comparator family was excluded because it is #34-result-dependent and MAIN-owned.
+- Queue-free/persistent physical state was excluded because #35 is already canonical and queued.
+- H7/PF-R1 preservation/provenance was excluded as protected critical-path work.
+- Global unit-relabel / Assembly realization invariance was rechecked and rejected as an exact duplicate of the earlier R84 QFD, which already closed the simple bijective-coordinate case.
+- Native responsibility/credit, delayed reward/replay/eligibility, receptor/topology aliasing, Assembly completion/prototype/order/capacity/context/coactivation and related surfaces are already dense in prior exploratory/Forge history; stable main exposes no new independent observable, intervention, comparator or tooling delta.
+- R85's execution-source metadata defect is methodology/governance only and does not directly enable an independent scientific prototype.
 
-Disposition: `FORGE_DEAD_END`. Stale downstream table rows can remain inert, but ordinary runtime evolution does not rebind them to a new Assembly. Producing inheritance would require malformed/manual state that violates the normal monotonic identifier lifecycle, reducing the idea to checkpoint/API corruption rather than a scientific phenomenon.
+Manufacturing a new probe from those already-covered surfaces would add activity without information gain.
 
-## Probe B — can simultaneous Assemblies jointly acquire functional meaning at the v0.5 outcome layer?
+## Disposition
 
-`process_episode()` may collect multiple Assembly activations, but it constructs `usable` and then chooses exactly one `strongest` activation by similarity, episode count and Assembly ID. Only that single activation is passed to the predictor and action policy and stored as `pending_activation`; `learn_outcome()` subsequently updates prediction/action state only through that pending single Assembly/action path.
+Zero prototypes, zero Forge branches, zero Utility requests and zero promotion proposals this run. MAIN collision check passed: no #34 raw-result access or interpretation, no #34 executor/scorer/preserver work, no #35 work, and no H7/PF-R1 bytes or identities touched.
 
-Disposition: `FORGE_DEAD_END`. At this layer, simultaneous Assembly coactivity is reduced to a deterministic winner-take-all selector followed by a single Assembly-ID lookup/update. A conjunction or distributed functional binding cannot be inferred from this path itself; adding joint-state/context keys would be an ordinary representation change, not evidence of a new mechanism.
+No hard-floor action occurred: no PRE_FORMAL/FORMAL identity, STARTED, official TEST/scoring, held-out access, response workflow, evidence/formal/sealed/freeze/preserve mutation, consumed-evidence mutation or research/main merge.
 
-## Ordinary reductions / boundaries
-
-Probe A reduces to monotonic identifier allocation plus inert stale dictionary rows. Probe B reduces to winner-take-all selection plus single-key lookup/credit. Neither leaves a distinct bounded mechanism residual suitable for promotion.
-
-No Utility request. No code or branch mutation, merge, candidate-response execution, PRE_FORMAL/FORMAL identity, STARTED, official TEST/scoring, protected held-out access, preserve/evidence mutation, immutable-ref mutation, or response workflow dispatch occurred.
-
-R94 FAST_FORGE cumulative metrics: runs `5`, prototypes `10`, dead ends `9`, retained interesting objects `0`, promotion proposals `0`, later admissions `0`, duplicate/rescue rejects `4`, ownership collisions `0`, ordinary-reduction rejects `9`, idea-to-observation latency `within_run`.
+Cumulative metrics: runs `6`, prototypes attempted `10`, dead ends `9`, interesting retained `0`, promotion proposals `0`, later admissions `0`, duplicate/rescue rejects `6`, ownership collisions `0`, ordinary-reduction rejects `9`.
