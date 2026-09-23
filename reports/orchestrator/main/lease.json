@@ -1,20 +1,20 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T175200+0900-RELAY-CAND35-ARCHR1-R95-WAITING-CI",
+  "generation_id": "MAIN-20260923T175300+0900-RELAY-CAND35-ARCHR1-R95-COMPLETED",
   "run_id": "sparkbrain-main-relay-20260923T175200JST-R95-cand35-archr1",
   "producer_run_id": "sparkbrain-main-relay-20260923T175200JST-R95-cand35-archr1",
   "authority_scope": "RELAY_CONTINUATION_R95_CAND35_ARCHITECTURE_R1_NONRESULT_SCIENCE_INVARIANT_REPAIR_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T172900+0900-PRIMARY-CAND35-ARCHR1-R95-WAITING-CI",
+  "supersedes_generation_id": "MAIN-20260923T175200+0900-RELAY-CAND35-ARCHR1-R95-WAITING-CI",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T165919+0900-R95-71C4A8E2@9b9ceffc5c5f4fc8cf68b2d7e28259d8d6d2ea1a",
-    "main_previous_lease": "MAIN-20260923T172900+0900-PRIMARY-CAND35-ARCHR1-R95-WAITING-CI"
+    "main_previous_lease": "MAIN-20260923T175200+0900-RELAY-CAND35-ARCHR1-R95-WAITING-CI"
   },
   "execution_mode": "RELAY",
-  "status": "WAITING_EXTERNAL",
+  "status": "COMPLETED",
   "started_at": "2026-09-23T17:46:59+09:00",
-  "heartbeat_at": "2026-09-23T17:52:00+09:00",
-  "waiting_since": "2026-09-23T17:52:00+09:00",
-  "completed_at": null,
+  "heartbeat_at": "2026-09-23T17:53:00+09:00",
+  "waiting_since": null,
+  "completed_at": "2026-09-23T17:53:00+09:00",
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260923T165919+0900-R95-71C4A8E2",
   "analyst_commit": "9b9ceffc5c5f4fc8cf68b2d7e28259d8d6d2ea1a",
@@ -30,7 +30,7 @@
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "NONTERMINAL",
-  "queue_state": "MAIN_ARCHITECTURE_R1_LINT_REPAIRED_WAITING_EXACT_HEAD_CI",
+  "queue_state": "MAIN_ARCHITECTURE_R1_NONRESULT_IMPLEMENTATION_COMPLETE_AWAITING_ANALYST_REVIEW",
   "system_priority_exception": {
     "used": true,
     "kind": "NO_COHERENT_MECHANISM_TARGET",
@@ -43,13 +43,13 @@
     "run_id": 35839346480,
     "workflow": "ci",
     "head": "c640cb3a42faf1f49bee568c1cc167c03fb63646",
-    "status_at_persist": "in_progress",
-    "conclusion_at_persist": null,
+    "status_at_persist": "completed",
+    "conclusion_at_persist": "success",
     "result_bearing": false,
-    "expected_next_external_action": "Re-fetch exact-head CI. If green and R95 remains materially unchanged, close Architecture R1 implementation readiness and return to Evidence Analyst without candidate-response execution."
+    "expected_next_external_action": "Fresh Evidence Analyst review of completed Architecture R1 non-result implementation."
   },
-  "repair_change_classification": "SCIENCE_INVARIANT_REPAIR_LINT_ONLY_LINE_WRAPPING",
-  "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_IMPLEMENTATION_REPAIR_ONLY_NO_CANDIDATE_RESPONSE",
+  "repair_change_classification": "SCIENCE_INVARIANT_REPAIR_LINT_ONLY_LINE_WRAPPING_AND_NONRESULT_READINESS_CLOSEOUT",
+  "evidentiary_status": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_IMPLEMENTATION_READY_NO_CANDIDATE_RESPONSE",
   "new_scientific_result_this_run": false,
   "formal_identity_created_or_consumed": false,
   "started_created": false,
@@ -72,14 +72,13 @@
     "candidate_branch_collision_checked": true,
     "active_research_head_rechecked": true,
     "active_research_head_matches_ci_head": true,
-    "repair_is_child_of_previous_waiting_head": true,
     "forge_same_object_collision": false,
     "forge_code_or_observation_reused": false,
     "candidate_response_stop_respected": true,
     "system_to_mechanism_uplift_not_performed": true,
     "formal_floor_respected": true
   },
-  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_AFTER_SCIENCE_INVARIANT_LINT_REPAIR",
-  "next_action": "Re-fetch the latest Evidence Analyst generation, MAIN lease, exact candidate #35 research head, and CI run 35839346480. If CI is green and authority is materially unchanged, close Architecture R1 implementation readiness and return to Analyst without candidate-response execution. If CI fails, diagnose and repair only clearly science-invariant defects; otherwise fail closed for fresh Analyst authority.",
+  "stop_reason": "ARCHITECTURE_R1_NONRESULT_IMPLEMENTATION_READINESS_COMPLETE_RETURN_TO_EVIDENCE_ANALYST",
+  "next_action": "Wait for a fresh Evidence Analyst generation to review candidate #35 Architecture R1. Under current R95 authority, do not execute a candidate response and do not perform same-object SYSTEM-to-MECHANISM uplift.",
   "owner": "main"
 }
