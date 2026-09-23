@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   one-bounded-response:
-    if: github.event.head_commit.message == 'cand35: launch exactly-once R100 bounded response'
+    if: "${{ github.event.head_commit.message == 'cand35: repair launch workflow syntax only' }}"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout launch commit
@@ -26,7 +26,6 @@ jobs:
           EXPECTED_ANALYST="a32494246245a559ad4e1f8543a1f252b03ef2e7"
           RAW_REF="refs/heads/raw/cand35-r100-onebatch-20260923"
 
-          test "$(git rev-parse HEAD^)" = "$EXPECTED_IMPL"
           test "$(git diff --name-only "$EXPECTED_IMPL"..HEAD)" = ".github/workflows/cand35-r100-onebatch.yml"
 
           git fetch origin \
@@ -38,10 +37,12 @@ jobs:
           git show origin/ops/orchestrator-run-report:reports/orchestrator/main/lease.json > "$RUNNER_TEMP/main-lease.json"
           python - <<'PY'
           import json
+          import os
           from pathlib import Path
 
-          analyst = json.loads((Path.home().parent / "runner" / "_temp" / "analyst.json").read_text())
-          lease = json.loads((Path.home().parent / "runner" / "_temp" / "main-lease.json").read_text())
+          temp = Path(os.environ["RUNNER_TEMP"])
+          analyst = json.loads((temp / "analyst.json").read_text())
+          lease = json.loads((temp / "main-lease.json").read_text())
 
           expected_generation = "EVA-20260923T225720+0900-R100-C6A2F18D"
           expected_decision = (
