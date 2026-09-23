@@ -1,25 +1,27 @@
-# SparkBrain Methodology Calibration Audit — R80
+# SparkBrain Methodology Calibration Audit — R81
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260923T121735+0900-R80-9C4F7A12`
-- produced_at: `2026-09-23T12:17:35+09:00`
+- generation_id: `METHCAL-20260923T132108+0900-R81-7D3A6C91`
+- produced_at: `2026-09-23T13:21:08+09:00`
 - authority_scope: `METHODOLOGY_ADVISORY_ONLY`
-- supersedes_generation_id: `METHCAL-20260923T111832+0900-R79-5B7C21D4`
+- supersedes_generation_id: `METHCAL-20260923T121735+0900-R80-9C4F7A12`
 - material_change: `true`
 - audit_result: `MATERIAL_CALIBRATION_UPDATE`
 - overall_classification: `MIXED_CALIBRATION`
 
 ## Executive decision
 
-Two material control/methodology changes are present while the hard scientific integrity floor remains unchanged.
+The hard scientific integrity floor remains unchanged, while candidate #34 now provides a strong positive example of correctly calibrated OPEN_DEVELOPMENT iteration.
 
-First, Control R41 now supplies machine-resolvable schema-v2 authority for the already-existing PF-R1 preservation request. The authority is narrowly bounded to retrieving the existing `raw.json` / `summary.json` bytes, verifying hashes, and persisting NON_EVIDENTIARY provenance. It explicitly forbids rerun, reconstruction, regeneration, rescore, retune, scientific-authority creation, or mutation of consumed/formal evidence. This resolves the prior *missing-authority* calibration defect, but preservation is not yet complete: the Utility branch remains unchanged at `b18a1d76...`. H7 therefore remains held. Preservation completion must still be followed by a later fresh Analyst exact-head review; preservation itself is not FORMAL authority.
+The prior R80 audit correctly required exact Analyst authority reconciliation before candidate #34 could proceed, but its practical description of the admissible next change as only an authority-pointer/hash-plumbing repair was too narrow as a description of the already-authorized R2 development transition. The newest canonical Evidence Analyst remains R92, and R92 had already prospectively authorized an explicit same-candidate `PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION` before any response-bearing candidate result was exposed. That authorization explicitly permitted a science-affecting OPEN_DEVELOPMENT revision to repair causal opportunity and claim/observable alignment while preserving R1 non-result provenance and requiring a fresh Analyst READY review before any response.
 
-Second, candidate #34 R2 is correctly stopped before response-bearing execution because its generated prospective closure is bound to a different Analyst authority string than the canonical Evidence Analyst R92. The authoritative research implementation contains `ANALYST_AUTHORITY = EVA-20260923T110053+0900-R92-A7B61F3C`, while the designated Evidence Analyst R92 is `EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f...`. No normalization or inferred equivalence is methodologically acceptable. Because no candidate response has been executed or exposed, this is a provenance/control-plane binding defect, not scientific-result contamination.
+The authoritative R2 research branch is now `research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4`. It is bound to canonical R92, contains the explicitly versioned opportunity-aware contract, and prospectively changes cue policy, opportunity policy, observation fields, claim scope and primary reduction in the direction R92 had already authorized. Those are SCIENCE_AFFECTING changes by category, but they are calibrated because they occurred in OPEN_DEVELOPMENT before response exposure, under explicit prospective version authority. They must not be mislabeled as a mere science-invariant pointer repair.
 
-A repair that changes only the Analyst authority pointer/binding and consequent hashes, while proving every scientific field and meaning is unchanged, is calibrated as `SCIENCE_INVARIANT_REPAIR` / hash-plumbing-provenance repair. If metric/scorer meaning, thresholds/tolerances, comparator/reduction meaning, seed/exclusion policy, intervention, resource/privilege contract, hypothesis, falsifier, success criterion, or other scientific semantics change, the repair is science-affecting and must follow the appropriate prospective revision rule. Candidate #34 must remain stopped for response execution until exact authority reconciliation, NON_RESULT validation, and fresh review.
+The exact R2 head passed both the dedicated non-result contract workflow `35814951495` and generic CI `35814951496`. The dedicated run produced exactly one non-expired contract artifact (`10730964708`, archive digest `sha256:4df7bac547df7db49c0c68108d8a0d2e40e129f4b0f7ce46ea45cf51c3a08c94`). The implementation explicitly sets response-bearing execution and FORMAL action to false and requires a fresh Analyst READY review. MAIN has subsequently preserved/revalidated the exact non-result contract provenance and remains stopped. This is implementation/provenance closure only, not scientific evidence and not READY.
 
-Independent repository/evidence re-fetch confirms stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, authoritative `evidence/*` remains exactly five tag objects, and tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. H7 R5 remains at `2f30b93f...`. No fresh FORMAL identity consumption or historical evidence rewrite is observed.
+H7 remains FORMAL-held. The original PF-R1 artifact remains independently available and unexpired (`10680620448`, digest `sha256:db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d`), so there is still no justification for rerun, reconstruction, regeneration or rescore. Control R42 carries a bounded machine assignment for exact-byte preservation, but the independently re-read Utility `assignment/current.md` remains `IDLE` with no active assignment. The resulting Control↔Utility assignment-pointer divergence is a non-scientific control-plane defect that continues to block preservation and H7 one-way progression.
+
+Independent repository/evidence re-fetch confirms stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, authoritative `evidence/*` remains exactly five annotated tag objects, and tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. No fresh FORMAL identity/result consumption or historical evidence rewrite is observed.
 
 ## Gate-by-gate calibration
 
@@ -29,16 +31,18 @@ Independent repository/evidence re-fetch confirms stable `main` remains `ebed6ab
 | development-phase orthogonal axis | `KEEP` |
 | fresh OPEN→RESULT_EXPOSED→CONSUMED_ONE_WAY end-to-end | `INSUFFICIENT_EVIDENCE` |
 | OPEN science-affecting prospective pre-result revision | `KEEP` |
+| candidate #34 R92-authorized opportunity-aware R2 version | `KEEP` |
+| candidate #34 exact canonical Analyst authority binding | `KEEP` |
+| treating the entire R2 transition as pointer/hash-only repair | `RELAX` |
+| R2 non-result contract closure distinct from scientific evidence | `KEEP` |
+| R2 green CI/artifact preservation distinct from READY | `KEEP` |
+| response-bearing execution before fresh Analyst READY review | `TIGHTEN` |
+| new science-affecting edits after closed R2 without fresh prospective review | `TIGHTEN` |
 | RESULT_EXPOSED same-object SCIENCE_INVARIANT_REPAIR | `KEEP` |
 | post-result SCIENCE_AFFECTING change → explicit version/fresh successor | `KEEP` |
-| candidate #34 exact canonical Analyst authority binding | `TIGHTEN` |
-| candidate #34 fail-closed stop on authority mismatch | `KEEP` |
-| authority-pointer/hash-only repair with identical scientific semantics | `KEEP` |
-| silent authority normalization/equivalence inference | `TIGHTEN` |
-| candidate #34 response execution before authority reconciliation | `TIGHTEN` |
 | cycle 3 as automatic terminal cap | `RELAX` |
 | cycle 3 as mandatory reassessment | `KEEP` |
-| additional cycle with distinct prospective information gain | `KEEP` |
+| cycle 4 with distinct pre-result information gain | `KEEP` |
 | development results counted as independent confirmation | `TIGHTEN` |
 | repeated result-bearing PRE_FORMAL live stress case | `INSUFFICIENT_EVIDENCE` |
 | PRE_FORMAL as genuine development | `KEEP` |
@@ -47,9 +51,10 @@ Independent repository/evidence re-fetch confirms stable `main` remains `ebed6ab
 | HIDDEN_SECOND_FORMAL_GATE | `KEEP` — false |
 | H7 PREIDENTITY COMPLETE distinct from FORMAL authority | `KEEP` |
 | PF-R1 exact-byte preservation requirement | `KEEP` |
-| PF-R1 machine-resolvable Control assignment | `KEEP` |
+| PF-R1 original artifact availability | `KEEP` |
+| Control↔Utility assignment pointer consistency | `TIGHTEN` |
 | PF-R1 preservation execution state | `TIGHTEN` |
-| Utility default-deny before machine authority | `KEEP` |
+| Utility default-deny for PF-R1 until exact assignment reconciliation | `KEEP` |
 | duplicate request/rerun to bypass preservation flow | `TIGHTEN` |
 | raw-before-score as file ordering only | `CLARIFY` |
 | literal target-blind prediction raw | `TIGHTEN` |
@@ -71,61 +76,63 @@ Independent repository/evidence re-fetch confirms stable `main` remains `ebed6ab
 
 ## Mandatory questions
 
-1. **Are development-phase semantics implemented consistently end-to-end?** Consistent through the currently observed pre-result repair boundary. #34 remains OPEN_DEVELOPMENT and no response was exposed; the authority mismatch is safely stopped. A fresh post-HUMAN-005 CONSUMED_ONE_WAY completion remains unobserved.
-2. **Is cycle 3 a hard terminal cap?** No. #34 reached cycle 4 for a prospectively identified information/provenance closure, while H7 stopped after its useful preidentity work closed.
-3. **Are repair classes distinguished correctly?** Yes if the #34 repair is strictly authority-pointer/hash-plumbing with unchanged scientific semantics. Any scientific-field change must not be smuggled into that repair.
-4. **Are development reruns/retunes laundered as independent evidence?** No laundering is observed. #34 R2 has no candidate response, and H7 tooling/preidentity work has confirmatory credit zero. A repeated result-bearing PRE_FORMAL live series remains unobserved.
-5. **Does RESULT_EXPOSED development preserve prior results when revised?** H7 R4→R5 remains a positive case. PF-R1 durability is still pending, although machine authority now exists.
+1. **Are development-phase semantics implemented consistently end-to-end?** Consistent through the observed OPEN development boundary. Candidate #34 demonstrates that meaningful science-affecting iteration before response exposure can proceed under an explicit versioned prospective contract while retaining zero confirmatory credit. Fresh post-HUMAN-005 CONSUMED_ONE_WAY completion remains unobserved.
+2. **Is cycle 3 a hard terminal cap?** No. Candidate #34 reached cycle 4 because a distinct pre-result causal-opportunity defect created prospectively stated information gain. H7 stopped once its useful preidentity work closed.
+3. **Are repair classes distinguished correctly?** The current R2 transition must be classified more carefully than R80: authority reconciliation alone is science-invariant plumbing, but the opportunity-aware cue/observable/reduction changes are science-affecting. They are nevertheless valid because canonical R92 prospectively authorized the explicit R2 OPEN_DEVELOPMENT revision before result exposure.
+4. **Are development reruns/retunes laundered as independent evidence?** No laundering is observed. Candidate #34 has no response-bearing R2 result and the non-result workflow/artifact has confirmatory credit zero. A repeated result-bearing PRE_FORMAL live series remains unobserved.
+5. **Does RESULT_EXPOSED development preserve prior results when revised?** H7 R4→R5 remains a positive case. PF-R1 exact-byte durability remains pending despite the original artifact still being available.
 6. **Is FORMAL one-way integrity unchanged?** Yes. Stable main/evidence tags are unchanged; formal/sealed/freeze tags remain empty; no fresh identity/result consumption is observed.
 7. **Are legitimate fresh SYSTEM→MECHANISM successors suppressed or manufactured?** No manufacture is observed. A specifically fresh MECHANISM successor from a terminal SYSTEM object remains unobserved.
-8. **Is PRE_FORMAL development rather than hidden FORMAL?** Yes. #34 is eligible but NOT_READY and can undergo bounded non-result provenance repair without needing prior comparator/falsifier victory.
-9. **Are terminal semantics and candidate supply calibrated?** Yes/improving. Two MECHANISM lineages remain available (H7 held; #34 open) without claim inflation.
-10. **Is PASS reachable without weakening standards?** Yes. H7 is `REALISTIC_NEAR_TERM_CONDITIONAL`; the former missing-authority blocker is now narrowed to Utility preservation completion plus later fresh Analyst one-way review.
+8. **Is PRE_FORMAL development rather than hidden FORMAL?** Yes. Candidate #34 can undergo a genuine versioned science-affecting development revision before result exposure, yet remains NOT_READY until a fresh Analyst judges the next response-bearing test informative. Prior comparator/falsifier victory is not required.
+9. **Are terminal semantics and candidate supply calibrated?** Yes/improving. Two MECHANISM lineages remain available (H7 held; #34 open/closed-nonresult awaiting review) and candidate #35 remains SYSTEM without claim inflation.
+10. **Is PASS reachable without weakening standards?** Yes. H7 remains `REALISTIC_NEAR_TERM_CONDITIONAL`: the original PF-R1 bytes are available, but Utility assignment-pointer reconciliation, exact-byte preservation, and a later fresh Analyst exact-head one-way review are still required.
 
 ## Risk calibration
 
-False-positive risk remains `MODERATE_WATCH`. If #34 were allowed to run under an authority string that does not match the canonical Analyst generation, the scientific response might be technically generated but its prospective authorization provenance would be ambiguous. Existing raw/holdout/evaluator gates also remain open for H7.
+False-positive risk remains `MODERATE_WATCH`. The main current risk is treating candidate #34's green non-result contract closure as either READY or scientific support. Existing H7 prediction-only raw, preserve-before-target-side scoring, concealed-evaluation and exact-binding gates also remain open.
 
-False-negative/opportunity-cost risk is `LOW_TO_MODERATE_WATCH_IMPROVING`. Control R41 removes the previous PF-R1 missing-authority deadlock. #34 is paused on a narrow provenance repair rather than terminalized or forced into a new scientific object.
+False-negative/opportunity-cost risk remains `LOW_TO_MODERATE_WATCH_IMPROVING`. Candidate #34 is no longer blocked by the stale Analyst-authority string, and its genuine development revision was not over-conservatively prohibited. H7 still suffers avoidable throughput friction because Control assignment state and Utility's active-assignment pointer disagree even though the original PF-R1 artifact remains available.
 
-Moving-goalpost/rescue risk is `LOW_WATCH_IMPROVING`: the #34 mismatch was found before response exposure; the permitted repair need not alter scientific meaning.
+Moving-goalpost/rescue risk is `LOW_WATCH_IMPROVING`: candidate #34's science-affecting R2 changes were authorized and versioned before any response exposure, and R1 non-result provenance remains preserved. The now-closed R2 must not be further changed in response to future results without the appropriate prospective revision boundary.
 
-Over-terminalization risk is `LOW_WATCH_IMPROVING`: neither H7 nor #34 is killed merely because a control/provenance gate remains open.
+Over-terminalization risk is `LOW_WATCH_IMPROVING`: neither #34 nor H7 is killed merely because a provenance/control gate is open, and candidate #35 remains a separate SYSTEM successor rather than claim-inflated supply.
 
 ## Development-iteration calibration
 
-Candidate #34 is an important distinction case. Its R2 non-result closure code is explicitly bound to an Analyst authority identifier. That identifier does not equal the canonical designated R92 authority. The programme correctly refuses to treat similar labels or matching R92 sequence numbers as equivalence.
+Candidate #34 is now the strongest live positive example for HUMAN-20260922-005. The correct distinction is not “science-affecting changes are forbidden in PRE_FORMAL”; it is “outcome-responsive scientific changes after meaningful exposure require explicit versioning/fresh succession, while OPEN_DEVELOPMENT may make bounded prospective science-affecting revisions with durable provenance.”
 
-Repair may remain same-object and same-R2 only if it is strictly provenance/hash plumbing: replace/reconcile the authority binding to the canonical R92 record, preserve the scientific contract fields and their meaning, regenerate dependent non-result closure hashes as necessary, validate without response-bearing execution, and STOP for fresh review. This is not a reason to create a new candidate, and it is not evidence.
+R92 authorized the opportunity-aware R2 revision prospectively after an independent static audit found the R1 causal-opportunity defect and before any candidate response was exposed. The implemented R2 version changes cue strategy, causal-opportunity ledger, response observables, claim scope and primary reduction. Those are correctly classified as SCIENCE_AFFECTING, and their legitimacy comes from the pre-result explicit versioned authority—not from pretending they are science-invariant plumbing.
 
-PF-R1 supplies the complementary positive case. The earlier default-deny was correct while no machine authority existed. R41 now creates exact bounded authority, so continued permanent refusal would become over-conservative once Utility consumes that assignment. The calibrated next step is existing-byte preservation only, not rerun or reconstruction.
+The exact R2 closure now forbids response-bearing execution and FORMAL action and requires a fresh Analyst READY review. That is calibrated: non-result closure establishes that the proposed next test is executable and prospectively bound, but does not establish that it succeeds scientifically.
+
+PF-R1 remains the complementary RESULT_EXPOSED durability case. Its original workflow artifact is still live and exactly bound, so the only calibrated operation is existing-byte preservation. Re-execution would weaken, not strengthen, methodology integrity.
 
 ## Funnel observability / mechanism supply
 
-Canonical funnel remains inherited from Evidence Analyst R92 because no newer Analyst generation exists: `35 = 14 MECHANISM / 21 SYSTEM`, `TERMINAL_FOR_CURRENT_OBJECT 32`, `OPEN_DEVELOPMENT 4 / RESULT_EXPOSED_DEVELOPMENT 31 / canonical CONSUMED_ONE_WAY 0`, PRE_FORMAL eligible/READY `2/1`, fresh FORMAL authority `0`, historical official consumed identities `7`, classification `35/35`.
+Canonical funnel remains inherited from Evidence Analyst R92 because no newer Analyst generation exists: `35 = 14 MECHANISM / 21 SYSTEM`, `ACTIVE 0 / QUEUED 2 / NONTERMINAL_HOLD 1 / TERMINAL_FOR_CURRENT_OBJECT 32`, `OPEN_DEVELOPMENT 4 / RESULT_EXPOSED_DEVELOPMENT 31 / canonical CONSUMED_ONE_WAY 0`, PRE_FORMAL eligible/READY `2/1`, fresh FORMAL authority `0`, historical official consumed identities `7`, classification `35/35`.
 
-Control R41 and the live #34 branch are treated as operational/provenance overlays only; they do not recanonicalize the population.
+Control R42 and the live #34 branch are treated as operational/provenance overlays only; they do not recanonicalize the population. Candidate #34 remains MECHANISM / OPEN_DEVELOPMENT / PRE_FORMAL / eligible / NOT_READY. H7 remains MECHANISM / RESULT_EXPOSED_DEVELOPMENT / development READY / FORMAL-held. Candidate #35 remains SYSTEM / OPEN_DEVELOPMENT.
 
-Mechanism-supply health is `TWO_MECHANISM_LINEAGES_H7_FORMAL_HOLD_CAND34_OPEN_R2_PROVENANCE_HOLD_WITH_SYSTEM_DISCOVERY_BACKUP_QUALITY_FLOOR_INTACT`.
+Mechanism-supply health is `TWO_MECHANISM_LINEAGES_H7_FORMAL_HOLD_CAND34_R2_NONRESULT_CLOSED_AWAITING_FRESH_READY_REVIEW_WITH_SYSTEM_DISCOVERY_BACKUP_QUALITY_FLOOR_INTACT`.
 
 ## Preformal calibration / pass reachability
 
-`HIDDEN_SECOND_FORMAL_GATE=false`. #34 does not need prior scientific victory to regain READY; it needs exact prospective authority/contract closure and an informative next test. Non-result validation is not evidence.
+`HIDDEN_SECOND_FORMAL_GATE=false`. Candidate #34 does not need to have already won its comparator/reduction/falsifier to become READY. It needs a well-defined, informative, prospectively bound next response-bearing test and a fresh Analyst decision.
 
-Repeated PRE_FORMAL observations, when eventually used, must remain one correlated development sequence rather than independent confirmation.
+Repeated PRE_FORMAL observations, when eventually observed, must remain one correlated development sequence rather than independent confirmation.
 
-H7 pass reachability improves from the prior generation because machine authority for PF-R1 exact-byte preservation now exists. It is still conditional: Utility must preserve existing bytes only; then a later fresh Analyst must re-fetch the unchanged H7 R5 head and explicitly decide one-way authority. Prediction-only raw, immutable preserve before target-side scoring, concealed evaluation, no-clobber/collision, and exact binding remain mandatory.
+H7 pass reachability is `REALISTIC_NEAR_TERM_CONDITIONAL`. The original PF-R1 artifact remains unexpired and exactly identified, so the present obstacle is control-plane assignment-pointer reconciliation and preservation—not scientific rerun. Successful preservation still does not itself grant FORMAL authority. A later fresh Analyst must re-fetch unchanged H7 R5 and explicitly decide any one-way step. Prediction-only raw, immutable preserve before target-side scoring, concealed evaluation, no-clobber/collision, and exact binding remain mandatory.
 
 ## Utility request
 
-No new Utility request is created. Existing `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` now has bounded Control R41 machine authority, but Utility execution is not yet observed. No duplicate request, rerun, reconstruction, regeneration, retune, or rescore is justified.
+No new Utility request is created. Existing `UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE` remains the only relevant request. Control R42 has bounded assignment authority, while Utility `assignment/current.md` remains `IDLE`; this pointer divergence must be reconciled. Preserve existing bytes only. No duplicate request, rerun, reconstruction, regeneration, retune or rescore is justified.
 
 ## Prospective recommendations
 
-- Keep candidate #34 response-bearing execution stopped while its bound Analyst authority differs from canonical R92.
-- Reconcile only the exact authority/provenance binding and dependent hashes if all scientific fields and meanings remain unchanged. Treat any scientific-semantic delta as science-affecting, not plumbing.
-- After repair, run NON_RESULT validation only and STOP for fresh Analyst/Control review before any candidate response.
-- Let Utility consume the existing PF-R1 Control assignment and preserve existing bytes only; fail closed if the originals are unavailable.
+- Keep candidate #34 response-bearing execution stopped until a fresh Evidence Analyst re-fetches exact R2 head `43d0f255...` and the preserved non-result contract and makes a prospective READY decision.
+- Treat the current opportunity-aware R2 as a legitimate explicit OPEN_DEVELOPMENT science-affecting version, not as a science-invariant pointer repair and not as evidence.
+- Do not change the now-closed R2 comparator/metric/threshold/tolerance/intervention/claim/falsifier merely because future interpretation or literature suggests an improvement. If another pre-response defect is found, record a new explicit prospective development revision; after meaningful result exposure, follow the stricter version/fresh-successor rule.
+- Reconcile Control's PF-R1 assignment authority with Utility's current pointer, then preserve only the still-available original bytes. Fail closed if exact originals cannot be retrieved or matched.
 - Even after PF-R1 preservation, keep H7 stopped until a later fresh Analyst exact-head review explicitly authorizes any one-way step.
 - Preserve all existing raw-before-score, preserve-before-read, concealed-evaluation, exact-binding and no-historical-rewrite guards.
 
@@ -133,26 +140,28 @@ No new Utility request is created. Existing `UTIL-20260922-1648-PFR1-DEVELOPMENT
 
 `CONFIRMED_DO_NOT_RELAX`.
 
-Confidence: FORMAL non-consumption `HIGH`; candidate #34 exact authority-binding mismatch `HIGH`; pre-response fail-closed calibration `HIGH`; PF-R1 Control machine authority issuance `HIGH`; PF-R1 preservation completion `NOT_OBSERVED`; fresh consumed-FORMAL end-to-end `UNOBSERVED`; fresh specifically SYSTEM→MECHANISM successor `UNOBSERVED`.
+Confidence: FORMAL non-consumption `HIGH`; candidate #34 canonical R92 binding and exact-head non-result closure `HIGH`; classification of the R2 opportunity-aware changes as science-affecting but prospectively authorized OPEN development `HIGH`; candidate #34 response non-exposure `HIGH`; PF-R1 original artifact availability `HIGH`; Control↔Utility pointer divergence `HIGH`; PF-R1 preservation completion `NOT_OBSERVED`; fresh consumed-FORMAL end-to-end `UNOBSERVED`; fresh specifically SYSTEM→MECHANISM successor `UNOBSERVED`.
 
 ## Questions for Control / Analyst
 
-- Will #34 R2 authority binding be reconciled exactly to canonical R92 without changing scientific fields or meaning?
-- Will the repaired R2 remain NON_RESULT-only and stop for fresh review before any response-bearing execution?
-- Will Utility use the new PF-R1 assignment to preserve only existing bytes without rerun/reconstruction/rescore?
+- Will the fresh Analyst review treat the exact closed R2 as a candidate for READY based on informativeness, without requiring prior scientific success and without treating green non-result checks as evidence?
+- Will any further science-affecting change to candidate #34 be recorded as a new explicit prospective development revision rather than silently rewriting the closed R2 contract?
+- Will Utility reconcile its `assignment/current` pointer to the existing PF-R1 Control authority and preserve only the original bytes without rerun/reconstruction/rescore?
 - After PF-R1 preservation, will H7 remain stopped until a later fresh Analyst exact-head review?
 - When repeated result-bearing PRE_FORMAL observations eventually occur, will they remain one correlated development sequence rather than independent confirmation?
 
 ## Authoritative refs used
 
-- prior Methodology: `METHCAL-20260923T111832+0900-R79-5B7C21D4@ba219b4c4c9c06913f151e61b2d70ef7cd9a60ab`
+- prior Methodology: `METHCAL-20260923T121735+0900-R80-9C4F7A12@269fdfc699053318f8babbea09c007cbe9932cae`
 - Human directive: `HUMAN-20260922-005` (process directive, not scientific evidence)
-- Control: `CTRL-20260923T115056+0900-R41-4C156929@27b6531b6b3a1d941a484aeee012d5c59fe63d79`
+- Control: `CTRL-20260923T125800+0900-R42-7C9E41B2@7035ace9b0ef980602dcb124e8974be5640d7377`
 - Evidence Analyst: `EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a`
-- Independent Audit: `R8@6755579f5f21b19ca90788c948d8126529b648c6`
-- Utility: `ops/utility-orchestrator-requests@b18a1d76c05efbbfacb9618ac1ca1e9941b17555`
+- Independent Audit used by R92: `R8@6755579f5f21b19ca90788c948d8126529b648c6`
+- Utility: `ops/utility-orchestrator-requests@15c5b130c868f7a37ab03582ca0225f001c651f7`
+- MAIN operational overlay: `ops/orchestrator-run-report@8f446170ba98142c13025067192fe0ebd4bc7172`
 - stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
 - H7 R5: `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`
-- candidate #34 R2: `research/main-cand34-assembly-route-preformal-r92-cycle4@1f9c6cec8be0af900a801de17dcc91e57dd71d7a`
-- #34 R2 bound authority: `EVA-20260923T110053+0900-R92-A7B61F3C` (noncanonical mismatch)
+- candidate #34 R2: `research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4`
+- candidate #34 R2 contract run/artifact: `35814951495 / 10730964708 / sha256:4df7bac547df7db49c0c68108d8a0d2e40e129f4b0f7ce46ea45cf51c3a08c94`
+- PF-R1 original run/artifact: `35695286240 / 10680620448 / sha256:db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d`
 - evidence tags: 5; formal/sealed/freeze tags: none
