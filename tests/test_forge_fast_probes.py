@@ -70,23 +70,22 @@ def _pattern() -> ActivityPattern:
     )
 
 
-def test_suppressed_assembly_still_accumulates_learning_history() -> None:
-    memory = TemporalAssemblyMemory(AssemblyConfig(mature_episodes=2))
+def test_suppressed_immature_assembly_can_mature_while_muted() -> None:
+    memory = TemporalAssemblyMemory(AssemblyConfig(mature_episodes=3))
     pattern = _pattern()
 
-    memory.observe(pattern, time_ms=1.0, episode_id="ep-1", learn=True)
-    mature = memory.observe(pattern, time_ms=2.0, episode_id="ep-2", learn=True)
-    assert mature is not None and mature.mature
-    assembly_id = mature.assembly_id
+    first = memory.observe(pattern, time_ms=1.0, episode_id="ep-1", learn=True)
+    assert first is not None and not first.mature
+    assembly_id = first.assembly_id
 
     memory.suppress(assembly_id)
+    muted_2 = memory.observe(pattern, time_ms=2.0, episode_id="ep-2", learn=True)
     muted_3 = memory.observe(pattern, time_ms=3.0, episode_id="ep-3", learn=True)
-    muted_4 = memory.observe(pattern, time_ms=4.0, episode_id="ep-4", learn=True)
-    assert muted_3 is not None and muted_3.suppressed
-    assert muted_4 is not None and muted_4.suppressed
-    assert memory.candidates[assembly_id].episode_count == 4
+    assert muted_2 is not None and muted_2.suppressed and not muted_2.mature
+    assert muted_3 is not None and muted_3.suppressed and muted_3.mature
+    assert memory.candidates[assembly_id].episode_count == 3
 
     memory.unsuppress(assembly_id)
-    restored = memory.observe(pattern, time_ms=5.0, episode_id="probe", learn=False)
-    assert restored is not None and not restored.suppressed
-    assert restored.episode_count == 4
+    restored = memory.observe(pattern, time_ms=4.0, episode_id="probe", learn=False)
+    assert restored is not None and restored.mature and not restored.suppressed
+    assert restored.episode_count == 3
