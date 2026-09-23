@@ -1,43 +1,61 @@
 {
-  "timestamp": "2026-09-23T06:34:34+09:00",
+  "timestamp": "2026-09-23T09:30:10+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
-  "producer_run_id": "external-literature-auto-LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
+  "generation_id": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9",
+  "producer_run_id": "external-literature-auto-LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91",
+  "supersedes_generation_id": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260923T055000+0900-R39-C31A7D52",
-      "handoff_commit": "c93f870e47bdb5b1613475e079c0a6dee2aa1753"
+      "generation_id": "CTRL-20260923T085000+0900-R40-5E1C7A94",
+      "handoff_commit": "f25d48598584bffc5ca736c6ac52c50a94688d89"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260923T061000+0900-R87-7B3D91E4",
-      "handoff_commit": "f03769227e888a70ea674eb627d4d311a1229c95"
+      "generation_id": "EVA-20260923T090047+0900-R90-B84D2C71",
+      "handoff_commit": "91684ca2539d89c6866feecbf1a9e28f26aef2fa"
     },
     "main_report": {
-      "generation_id": "MAIN-20260923T061858+0900-RELAY-H7-FORMALR4-C11-R87-BLOCKED-RUNTIME-BINDING-7B3D91E4",
-      "handoff_commit": "79d5109389f89d781d47e6e541cd87228859c872",
-      "mailbox_tip_observed": "5b116229ae1f91c4d69f2866825797c0a2e59b77"
+      "generation_id": "MAIN-20260923T085900+0900-RELAY-CAND34-ARCHR1-R89-COMPLETED-9A4C2E71",
+      "handoff_commit": "18c9d30aed961b719a4c12db329e9adeb40f2db7",
+      "mailbox_tip_observed": "706a3ba3c25f6c69a791504c93c5ddf540abf96a"
     },
     "sub_report": {
-      "generation_id": "SUB-20260923T053741+0900-NOOP-SCAN-R86-62D4A1B7",
-      "handoff_commit": "f71ad78d3bc486816741d345976506db74d50223"
+      "generation_id": "SUB-20260923T083602+0900-QFD-QUEUEFREE-STATE-R89-6B2E4C91",
+      "handoff_commit": "18c9d30aed961b719a4c12db329e9adeb40f2db7",
+      "mailbox_tip_observed": "706a3ba3c25f6c69a791504c93c5ddf540abf96a"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91",
-      "handoff_commit": "c25dce890612dcc9b5614f987f4cdeb85e1f5652"
+      "generation_id": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
+      "handoff_commit": "027fa9fc45648269c2ebe0ae6408162d155fe840"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "06:30 JST",
+  "schedule_slot": "09:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "h7_formal_r4_active": {
-      "branch": "research/main-h7-formal-r4-source-executor-r85-cycle11",
-      "head": "02382fbc7d3838159598015e488c6ce49ac34efc",
-      "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_DIAGNOSTIC_BLOCKED"
+    "h7_formal_r5": {
+      "branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+      "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+      "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_COMPLETE_PROVENANCE_HOLD"
     },
+    "candidate34_architecture_r1": {
+      "branch": "research/main-cand34-assembly-route-architecture-r89-cycle1",
+      "head": "de712b2c3bdbb29c719773c609e884ed9b10e40b",
+      "status": "R1_COMPLETED_NON_EVIDENTIARY"
+    },
+    "candidate34_architecture_r2_repository_movement": {
+      "branch": "research/main-cand34-assembly-route-architecture-r90-cycle2",
+      "head": "a6455a3929b86ad25fd106ea93a03604192fc3be",
+      "status": "R2_PROSPECTIVE_MEASUREMENT_CONTRACT_FROZEN_NON_EVIDENTIARY_PENDING_FRESH_ANALYST_DISPOSITION"
+    },
+    "evidence_tags": [
+      "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+      "185b741e69ea8a0ce0d076153d36e9296a748765",
+      "e4c4e6428d8ef9e09e92cae231041de0788162e2"
+    ],
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
@@ -50,145 +68,128 @@
       "148": "OPEN_UNMERGED",
       "149": "OPEN_UNMERGED"
     },
-    "ops_control_tip": "c93f870e47bdb5b1613475e079c0a6dee2aa1753",
-    "ops_evidence_analyst_tip": "f03769227e888a70ea674eb627d4d311a1229c95",
-    "ops_orchestrator_tip_observed": "5b116229ae1f91c4d69f2866825797c0a2e59b77",
-    "ops_external_tip_before_write": "c25dce890612dcc9b5614f987f4cdeb85e1f5652"
+    "ops_control_tip": "f25d48598584bffc5ca736c6ac52c50a94688d89",
+    "ops_evidence_analyst_tip": "91684ca2539d89c6866feecbf1a9e28f26aef2fa",
+    "ops_orchestrator_tip_observed": "706a3ba3c25f6c69a791504c93c5ddf540abf96a",
+    "ops_external_tip_before_write": "027fa9fc45648269c2ebe0ae6408162d155fe840"
   },
   "workflow_state_observed": {
-    "35784686838": {
-      "head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+    "35799700625": {
+      "head": "de712b2c3bdbb29c719773c609e884ed9b10e40b",
       "status": "completed",
-      "conclusion": "failure",
+      "conclusion": "success",
       "result_bearing": false,
-      "classification": "FROZEN_RUNTIME_BINDING_MISMATCH_FAIL_CLOSED"
+      "classification": "CAND34_ARCHITECTURE_R1_IMPLEMENTATION_SYNTHETIC_REACHABILITY_CI"
     },
-    "35784686727": {
-      "head": "02382fbc7d3838159598015e488c6ce49ac34efc",
+    "35802555790": {
+      "head": "a6455a3929b86ad25fd106ea93a03604192fc3be",
       "status": "completed",
-      "conclusion": "failure",
+      "conclusion": "success",
       "result_bearing": false,
-      "classification": "GENERIC_TEST_FAILURE_AFTER_LINT_AND_READINESS_PASS"
+      "classification": "CAND34_ARCHITECTURE_R2_PROSPECTIVE_CONTRACT_GENERIC_CI"
     }
   },
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "INTERVENTIONAL_EQUIVALENCE_NOT_UNIQUE_GRAPH",
-      "type": "MECHANISM_STRUCTURE_IDENTIFIABILITY_REDUCTION",
+      "id": "POLYCHRONOUS_SYNFIRE_CLOSEST_PRIOR_ART",
+      "type": "MECHANISM_REDUCTION_PRIOR_ART",
       "sources": [
-        {
-          "citation": "Hauser & Bühlmann, Characterization and Greedy Learning of Interventional Markov Equivalence Classes of Directed Acyclic Graphs, JMLR 13 (2012)",
-          "url": "https://www.jmlr.org/papers/v13/hauser12a.html"
-        },
-        {
-          "citation": "Hauser & Bühlmann, Jointly interventional and observational data: estimation of interventional Markov equivalence classes of directed acyclic graphs",
-          "url": "https://arxiv.org/abs/1303.3216"
-        }
+        "Izhikevich 2006, Polychronization: Computation with Spikes",
+        "Jin 2004, Spiking neural network for recognizing spatiotemporal sequences of spikes"
       ],
-      "finding": "A fixed family of interventions generally refines observational Markov equivalence to an interventional equivalence class; it does not automatically identify a unique DAG.",
-      "impact": "A future H7 causal effect under frozen TOP1 cut supports the tested policy effect, not unique route topology. Broad topology claims require equivalence-class scope or additional identifying interventions."
+      "finding": "Classical recurrent spiking networks with conduction delays and STDP already produce reproducible millisecond-precision polychronous groups and synfire-chain sequence propagation.",
+      "impact": "Candidate #34 cannot treat edge-weight or +1ms delay sensitivity alone as a novel temporal-route primitive; matched synfire/polychronous coincidence propagation is an ordinary future reduction baseline."
     },
     {
-      "id": "INTERVENTION_DESIGN_SEPARATING_REQUIREMENT",
-      "type": "PROSPECTIVE_IDENTIFIABILITY_DESIGN",
+      "id": "TIMING_RESOLUTION_AND_BIN_PHASE_ROBUSTNESS",
+      "type": "MEASUREMENT_NUMERICAL_ROBUSTNESS",
       "sources": [
-        {
-          "citation": "He & Geng, Active Learning of Causal Networks with Intervention Experiments and Optimal Designs, JMLR 9 (2008)",
-          "url": "https://jmlr.org/papers/v9/he08a.html"
-        },
-        {
-          "citation": "Hauser & Bühlmann, Two Optimal Strategies for Active Learning of Causal Models from Interventional Data",
-          "url": "https://arxiv.org/abs/1205.4174"
-        },
-        {
-          "citation": "Elahi et al., Adaptive Online Experimental Design for Causal Discovery, ICML 2024",
-          "url": "https://arxiv.org/abs/2405.11548"
-        }
+        "Pauli et al. 2018, Reproducing Polychronization",
+        "Victor & Purpura spike-train metrics",
+        "van Rossum 2001 spike-train distance"
       ],
-      "finding": "Full structural recovery depends on intervention design. Separating systems and optimal intervention targets are used to orient ambiguities; more samples under a non-separating intervention family do not create structural information that the interventions never expose.",
-      "impact": "Any fresh H7 successor claiming unique route/edge structure should predeclare the graph features and demonstrate an adequate separating/identifying intervention design."
+      "finding": "Polychronous-group conclusions can change dramatically with timing resolution; Pauli et al. observed about 13,000 groups in a 1ms-locked configuration versus 151 at 0.1ms resolution despite similar coarse network activity.",
+      "repository_specific_observation": "Candidate #34 R2 freezes a +1ms edge-delay perturbation and an integer relative-spike-bin response field, while stable Assembly extraction rounds relative spike timing into 2ms bins. The underlying field is event-driven, so the fixed-step solver failure mode does not directly apply; the relevant risk is representation/bin-boundary sensitivity.",
+      "impact": "A future robust route claim should be visible in continuous-time timing observables or remain qualitatively stable across prospectively fixed resolutions/bin phases. No such discriminator may be retrofitted into frozen R2."
     },
     {
-      "id": "GENERAL_SOFT_DYNAMIC_TARGET_EQUIVALENCE",
-      "type": "INTERVENTION_SEMANTICS_IDENTIFIABILITY",
+      "id": "TEMPORAL_ROUTE_FSM_REDUCTION",
+      "type": "COMPUTATIONAL_REDUCTION",
       "sources": [
-        {
-          "citation": "Yang, Katcoff & Uhler, Characterizing and Learning Equivalence Classes of Causal DAGs under Interventions, ICML 2018",
-          "url": "https://proceedings.mlr.press/v80/yang18a.html"
-        },
-        {
-          "citation": "Jaber et al., Causal Discovery from Soft Interventions with Unknown Targets, NeurIPS 2020",
-          "url": "https://proceedings.neurips.cc/paper/2020/hash/6cd9313ed34ef58bad3fdd504355e72c-Abstract.html"
-        },
-        {
-          "citation": "Zhang et al., Scalable Contrastive Causal Discovery under Unknown Soft Interventions (2026)",
-          "url": "https://arxiv.org/abs/2603.03411"
-        }
+        "Jin 2004, Spiking neural network for recognizing spatiotemporal sequences of spikes"
       ],
-      "finding": "General/soft interventions and uncertain target semantics can preserve substantial structural equivalence even with interventional data.",
-      "impact": "H7 target selection is known but state-dependent. Fixed-target perfect-intervention identifiability results cannot be imported without treating the TOP1 selector, target map and actual intervention semantics as part of the causal object."
+      "finding": "A recurrent synfire-chain recognizer with precise spike timing can be mapped to a finite-state machine.",
+      "impact": "Physical route causality and computational irreducibility are distinct. Broader candidate-#34 mechanism claims should compare against a compact temporal-progress FSM/synfire recognizer with matched information privilege."
     },
     {
-      "id": "RECURRENT_TEMPORAL_CAUSAL_OBJECT",
-      "type": "DYNAMIC_GRAPH_SCOPE",
+      "id": "MODERN_HETEROGENEOUS_DELAY_SNN_BASELINE",
+      "type": "RECENT_NOVELTY_BAR",
       "sources": [
-        {
-          "citation": "Gao et al., IDYNO: Learning Nonparametric DAGs from Interventional Dynamic Data, ICML 2022",
-          "url": "https://proceedings.mlr.press/v162/gao22a.html"
-        },
-        {
-          "citation": "Castri et al., CAnDOIT: Causal Discovery with Observational and Interventional Data from Time Series, Advanced Intelligent Systems (2024)",
-          "url": "https://doi.org/10.1002/aisy.202400181"
-        }
+        "Sun et al. 2023, Learnable axonal delay in spiking neural networks improves spoken word recognition",
+        "Three factor delay learning rules for spiking neural networks, Frontiers in Neuroscience 2026",
+        "Perrinet 2026, Working Memory in a Recurrent Spiking Neural Networks With Heterogeneous Synaptic Delays"
       ],
-      "finding": "Interventional causal discovery in dynamical systems uses explicit temporal/lagged causal representations; a static DAG abstraction does not automatically capture recurrent feedback semantics.",
-      "impact": "Future H7 graph-identification claims should define an explicit time-unrolled/lagged causal object before invoking interventional-equivalence or topology-identification language."
+      "finding": "Learnable and heterogeneous synaptic/axonal delays are established modern SNN machinery for temporal recognition and working-memory motifs, including online three-factor delay learning in recurrent LIF networks.",
+      "impact": "The novelty bar is not that exact delays matter; any stronger SparkBrain claim must leave a residual beyond ordinary heterogeneous-delay sequence mechanisms under matched resource and information privilege."
+    },
+    {
+      "id": "CAND35_LOCAL_ADAPTATION_REDUCTION",
+      "type": "SYSTEM_REDUCTION_SHARPENING",
+      "sources": [
+        "Brette & Gerstner 2005, Adaptive Exponential Integrate-and-Fire Model",
+        "Benda, Maler & Longtin 2010, Linear Versus Nonlinear Signal Transmission in Neuron Models With Adaptation Currents or Dynamic Thresholds"
+      ],
+      "finding": "Membrane potential and adaptation are sufficient local dynamical state in standard adaptive integrate-and-fire models, and adaptation shapes stimulus response over roughly 10ms to beyond 1s.",
+      "impact": "Candidate #35 should remain SYSTEM-scoped and close under ordinary reduction if frozen local potential/adaptation/threshold-margin dynamics predict the later weak-cue divergence."
     }
   ],
   "affected_lines": [
-    "H7_FORMAL_R4_CLAIM_SCOPE",
-    "H7_FUTURE_INTERVENTIONAL_EQUIVALENCE",
-    "H7_CAUSAL_STRUCTURE_IDENTIFIABILITY",
-    "H7_DYNAMIC_INTERVENTION_TARGET_SEMANTICS",
-    "H7_TEMPORAL_CAUSAL_GRAPH_SCOPE",
+    "CAND34_ASSEMBLY_TEMPORAL_ROUTE_IDENTIFIABILITY",
+    "CAND34_TEMPORAL_RESOLUTION_ROBUSTNESS",
+    "CAND34_POLYCHRONOUS_SYNFIRE_REDUCTION",
+    "CAND34_TIMING_BIN_PHASE_SENSITIVITY",
+    "CAND34_COMPUTATIONAL_FSM_REDUCTION",
+    "CAND35_LOCAL_ADAPTATION_REDUCTION",
     "FUTURE_MECHANISM_SUCCESSOR_ADMISSION",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "INTERVENTIONAL_EQUIVALENCE_CLASS_REPORTING",
-    "SEPARATING_INTERVENTION_DESIGN",
-    "DYNAMIC_TARGET_SELECTOR_SEMANTICS",
-    "TIME_UNROLLED_LAGGED_CAUSAL_GRAPH"
+    "MATCHED_POLYCHRONOUS_SYNFIRE_COINCIDENCE_PROPAGATION",
+    "CONTINUOUS_TIME_OR_MULTI_RESOLUTION_SPIKE_RESPONSE",
+    "TEMPORAL_PROGRESS_FSM",
+    "MATCHED_HETEROGENEOUS_DELAY_RECURRENT_SNN",
+    "LOCAL_MEMBRANE_ADAPTATION_STATE_TRANSITION"
   ],
-  "novelty_or_reduction_impact": "INTERVENTIONAL_EQUIVALENCE_SHARPENS_UNIQUE_ROUTE_GRAPH_CLAIM_NO_CURRENT_R4_REWRITE_OR_MECHANISM_UPLIFT. A causal effect under the frozen intervention policy does not by itself identify a unique route graph. Structural claims are limited to the equivalence class induced by the actual intervention family unless a prospectively sufficient separating design resolves the remaining alternatives.",
+  "novelty_or_reduction_impact": "PRECISE_DELAY_ROUTE_EFFECTS_HAVE_CLOSE_POLYCHRONOUS_SYNFIRE_PRIOR_ART_AND_A_KNOWN_TEMPORAL_DISCRETIZATION_FAILURE_MODE. Candidate #34 must not treat +1ms delay sensitivity or integer spike-bin changes alone as a novel or robust mechanism. Future successors should test ordinary delay-line/synfire explanations, continuous-time or multi-resolution timing robustness, and compact temporal-state reduction. Candidate #35 remains reducible to ordinary local adaptation unless a residual survives that model.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "compute/report the interventional equivalence class induced by the frozen intervention family for any future graph-structure claim",
-    "predeclare exactly which route/edge features are claimed identifiable",
-    "use a fresh-successor-only separating/covering intervention design if unique topology is claimed",
-    "freeze dynamic target-selector/target-map semantics as part of the intervention definition",
-    "formulate recurrent claims on an explicit time-unrolled/lagged dynamic causal object",
-    "if the intervention family does not identify a unique graph, report equivalence-class scope rather than unique topology"
+    "matched synfire/polychronous coincidence-propagation comparator with equal timing and local-state privilege",
+    "fresh-successor-only continuous-time spike metric or prospectively frozen multi-resolution/bin-phase robustness",
+    "compact temporal-progress finite-state recognizer with matched information privilege",
+    "matched heterogeneous-delay recurrent SNN ceiling when resource and learning privilege can be aligned",
+    "candidate #35 local membrane/adaptation/threshold-margin state-transition prediction before any Assembly-level interpretation"
   ],
   "questions_for_evidence_analyst": [
-    "Keep current R4 scoped to the frozen dynamic-policy effect and do not infer unique route topology from any future PASS?",
-    "For a future topology successor, require an explicit identifiability target and an intervention family shown to separate the claimed alternatives?",
-    "Treat dynamic target selection and temporal graph semantics as part of the prospective causal-identification contract?"
+    "Preserve candidate #34 R2 exactly as frozen and reserve timing-resolution robustness for a fresh successor rather than retrofitting R2?",
+    "If a later #34 response depends on +1ms delay, cap the claim unless the effect is robust to representation/binning or independently visible in continuous-time response observables?",
+    "Treat synfire/polychronous and compact temporal-FSM explanations as ordinary future reduction baselines for broader candidate-#34 mechanism claims?",
+    "Keep candidate #35 at SYSTEM scope whenever frozen local potential/adaptation dynamics predict the weak-cue effect?"
   ],
   "questions_for_control_brain": [
-    "Add 'intervention effect != unique causal graph' as a future H7 claim-ceiling guardrail?",
-    "Keep interventional-equivalence/separating-design work prospective and outside the frozen R4 comparator/intervention panel?",
-    "Preserve all current R4 preidentity STOP boundaries while the runtime-binding mismatch is reassessed?"
+    "Add 'delay sensitivity != novel temporal mechanism' and 'bin-boundary sensitivity != robust route evidence' as prospective claim-ceiling guardrails?",
+    "Keep all new precision/synfire/FSM discriminators outside the already-frozen candidate #34 R2 object?",
+    "Preserve H7 provenance hold and all existing one-way boundaries unchanged?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "H7 PF-R1 development result/raw and no-rerun/no-rescore boundary",
-    "stopped H7 R1/R2/R3 historical objects and classifications",
-    "H7 R4 claim/estimand/worlds/intervention/comparator panel/thresholds/bootstrap-decision/falsifier/concealed-evaluation/raw-gate/scorer semantics",
-    "H7 R4 exact recovered runtime lock/manifest and frozen package/resource choice",
-    "no FORMAL identity, STARTED, evaluation commitment/seed reveal, protected evaluation, result-bearing workflow, official scoring, scientific preserve/evidence ref, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
+    "H7 R5 preidentity object and FORMAL provenance hold",
+    "candidate #34 Architecture R1 exact completed head and results",
+    "candidate #34 R2 contract at a6455a3929b86ad25fd106ea93a03604192fc3be must not be rewritten in place because of this literature",
+    "candidate #35 remains prospective SYSTEM Discovery; no mechanism uplift from literature",
+    "no candidate response-bearing execution, PRE_FORMAL/FORMAL action, one-way identity, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
   ],
   "utility_request_created": null,
   "mutations": {
