@@ -1,40 +1,41 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260924T073626+0900-NOOP-R108-R100-NO-GATED-PROBE",
-  "produced_at": "2026-09-24T07:36:26+09:00",
+  "generation_id": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED",
+  "produced_at": "2026-09-24T08:37:26+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260924T064230+0900-TH001-Q0-QI-ADAPTATION-KILL",
+  "supersedes_generation_id": "FORGE-20260924T073626+0900-NOOP-R108-R100-NO-GATED-PROBE",
   "input_generations": {
-    "evidence_analyst": "EVA-20260924T070844+0900-R108-H7-OPBLOCK-TH001-ORDINARY-REDUCTION@f709230ec122a96b9acb27ab39d070825a8217be",
+    "evidence_analyst": "EVA-20260924T075935+0900-R109-H7-OPBLOCK-CONVERGED-NOOP@b36c7caeb345f4692d901d05562b57b625711d4b",
     "main": "MAIN-20260924T071400+0900-PRIMARY-H7-R108-LAUNCH-CAPABILITY-WAITING-EXTERNAL@09a5ca04a7d9262015b826bec680e33e7454eadf",
-    "methodology": "METHCAL-20260924T072143+0900-R100-2F6C9D71@8b82ae3c2a9f37cf45e463675dc458edf2426fb2",
+    "methodology": "METHCAL-20260924T081857+0900-R101-4C7A2D91@cbba92a23462ff20fde24db60205ebfdb2bac250",
     "control": "CTRL-R49@8045fd598d24f832ca4b94a526c2efe6bb59f924",
     "external_literature_theory_revisit": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71@1b91b18460e552df36cbdc3ef050e38ffd72342a",
     "independent_audit": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8@716f8839f05610fbbfbc83d3ff6b3939dcfd6834",
-    "utility": "UTILITY-20260924T062208+0900-NOOP-R106-RELAY-FORGE-UNCHANGED-2F4C7A91@d4b9804aeb6d2f88534bff6326f7fb2b2798dff3",
-    "previous_forge_persisted": "FORGE-20260924T064230+0900-TH001-Q0-QI-ADAPTATION-KILL@ops/orchestrator-run-report"
+    "utility": "UTILITY@263c221b7f2243c19d002ff5cc8af2fd10acf79a",
+    "previous_forge_persisted": "FORGE-20260924T073626+0900-NOOP-R108-R100-NO-GATED-PROBE@e163d1a2825ff4df23ed68863b36f4d93f201956"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_r108_tip": "f709230ec122a96b9acb27ab39d070825a8217be",
-    "main_ops_tip_observed_pre_run": "09a5ca04a7d9262015b826bec680e33e7454eadf",
+    "evidence_analyst_r109_tip": "b36c7caeb345f4692d901d05562b57b625711d4b",
+    "main_primary_tip_observed": "09a5ca04a7d9262015b826bec680e33e7454eadf",
     "main_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "main_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
-    "methodology_r100_tip": "8b82ae3c2a9f37cf45e463675dc458edf2426fb2",
+    "methodology_r101_tip": "cbba92a23462ff20fde24db60205ebfdb2bac250",
     "control_r49_tip": "8045fd598d24f832ca4b94a526c2efe6bb59f924",
     "external_literature_r41_tip": "1b91b18460e552df36cbdc3ef050e38ffd72342a",
-    "theory_r1_source_commit": "226d812c96df3d71186ba5a4fb2ac1b27c0d6e25",
+    "theory_latest_blob": "23b663e0e848e921b6d4efc3b6519f62597da50d",
+    "theory_state_blob": "71ee3d7c7338be5a5ed96e4459e1beeb32ac851b",
     "audit_r9_content_commit": "716f8839f05610fbbfbc83d3ff6b3939dcfd6834",
-    "utility_tip_observed": "d4b9804aeb6d2f88534bff6326f7fb2b2798dff3",
+    "utility_tip_observed": "263c221b7f2243c19d002ff5cc8af2fd10acf79a",
     "prior_theory_probe_branch": "forge/20260924-th001-q0-qi-adaptation-a",
     "prior_theory_probe_head": "e2dbe3a5a0db812f777b789a6878af8a0d3eee0f",
-    "history_path": "reports/orchestrator/sub/history/2026-09-24/0736-r108-r100-fast-forge-no-gated-probe.md",
-    "history_create_commit": "dba88312ab25db413137f2871fc3a04572d733e6",
-    "latest_update_commit": "515641950ebfd752f886f7ebf6212c87d09c7b32"
+    "history_path": "reports/orchestrator/sub/history/2026-09-24/0837-r109-r101-fast-forge-no-gated-probe.md",
+    "history_create_commit": "82de0382bca934b7074a8c91217b3678352fc492",
+    "latest_update_commit": "a992f7dcbc426896d0754296b5d2512649df0f95"
   },
-  "freshness_note": "Evidence Analyst R108 is current and rejects the present TH-001 proposal after ordinary reduction, explicitly authorizing no further positive-search Forge probe. Methodology R100 confirms that disposition and no Revisit trigger. MAIN remains H7-only and operationally blocked before identity/START by its fixed launch-trigger capability; Forge did not touch H7 or the blocker.",
+  "freshness_note": "Evidence Analyst R109 is current and converges on R108 with no new science, Theory decision, Revisit trigger, or canonical admission. Methodology R101 independently reports no material calibration change. MAIN remains H7-only and operationally blocked before identity/START by its fixed one-shot launch-trigger capability; Forge did not touch H7 or the blocker.",
   "theory_revisit_gate": {
     "latest_evidence_analyst_checked_before_selection": true,
     "latest_evidence_analyst_rechecked_before_persistence": true,
@@ -65,19 +66,19 @@
     "excluded": [
       {
         "surface": "TH-001 follow-up",
-        "reason": "Evidence Analyst R108 rejects the current proposal and explicitly authorizes no further positive-search Forge probe"
+        "reason": "Evidence Analyst R109 retains R108 theory rejection; no new bounded THEORY_FORGE_TEST"
       },
       {
         "surface": "Revisit-derived probe",
-        "reason": "Revisit bootstrap is 34/34 with zero triggered entries and no Analyst-gated REVISIT_FORGE_TEST"
+        "reason": "Revisit bootstrap remains 34/34 with zero triggered entries and no Analyst-gated REVISIT_FORGE_TEST"
       },
       {
         "surface": "Candidate #34 temporal-route descendants",
-        "reason": "CLOSED_STRONG; preserved response reducible to local edge weight/delay/membrane decay; no independent trigger"
+        "reason": "CLOSED_STRONG; no independent closure-invalidating trigger"
       },
       {
         "surface": "Candidate #35 descendants",
-        "reason": "DEFERRED_INDEPENDENT_REIDENTIFICATION; Literature R41 sharpens trigger requirements but supplies no candidate-specific trigger"
+        "reason": "DEFERRED_INDEPENDENT_REIDENTIFICATION; no new independent natural-state/counterfactual/instrumentation trigger"
       },
       {
         "surface": "H7 responsibility/launch/capability/runtime",
@@ -89,7 +90,7 @@
   "forge_objects": [],
   "ordinary_reduction_assessment": {
     "new_phenomenon_observed": false,
-    "assessment": "No new Forge observation exists to reduce. The nearest Theory surface is already quantitatively reduced by ordinary adaptation plus fixed-edge transmission; Candidate #34 by local edge physics; Candidate #35 has no independent trigger."
+    "assessment": "No new Forge observation exists to reduce. TH-001 remains reduced by ordinary adaptation plus fixed-edge transmission; Candidate #34 by local edge physics; Candidate #35 has no independent trigger."
   },
   "promotion_proposal": null,
   "utility_request": null,
@@ -110,7 +111,7 @@
   },
   "metrics": {
     "scope": "FROM_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 19,
+    "runs": 20,
     "prototypes_attempted": 19,
     "theory_probes": 2,
     "theory_kills": 2,
