@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T143200+0900-PRIMARY-CAND34-PREFORMALR2-R93-WAITING-CI-EXECUTOR",
-  "run_id": "sparkbrain-main-primary-20260923T141500JST-R93-cand34-d34q002",
-  "producer_run_id": "sparkbrain-main-primary-20260923T141500JST-R93-cand34-d34q002",
-  "produced_at": "2026-09-23T14:32:00+09:00",
-  "authority_scope": "PRIMARY_CANONICAL_R93_CAND34_ONE_BOUNDED_PREFORMAL_R2_RESPONSE_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T131224+0900-PRIMARY-CAND34-PREFORMALR2-R92-REVALIDATED-WAITING-ANALYST",
+  "generation_id": "MAIN-20260923T145200+0900-RELAY-CAND34-PREFORMALR2-R93-WAITING-CI-REPAIR",
+  "run_id": "sparkbrain-main-relay-20260923T145200JST-R93-cand34-d34q002",
+  "producer_run_id": "sparkbrain-main-relay-20260923T145200JST-R93-cand34-d34q002",
+  "produced_at": "2026-09-23T14:52:00+09:00",
+  "authority_scope": "RELAY_CANONICAL_R93_CAND34_ONE_BOUNDED_PREFORMAL_R2_RESPONSE_ONLY",
+  "supersedes_generation_id": "MAIN-20260923T143200+0900-PRIMARY-CAND34-PREFORMALR2-R93-WAITING-CI-EXECUTOR",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T140800+0900-R93-4D7C2A91@92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
+    "main_previous": "MAIN-20260923T143200+0900-PRIMARY-CAND34-PREFORMALR2-R93-WAITING-CI-EXECUTOR",
     "closed_r2_contract": "research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4",
-    "fast_forge_latest_observed": "forge/20260923-receptor-suppression-probes-a@c366c4054d2834003fcca20d49b8fc9ad4203edc",
-    "utility_latest_observed": "ops/utility-orchestrator-requests@5d928c"
+    "fast_forge_latest_observed": "forge/20260923-receptor-suppression-probes-a@c366c4054d2834003fcca20d49b8fc9ad4203edc"
   },
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "status": "WAITING_EXTERNAL",
   "analyst_generation_id": "EVA-20260923T140800+0900-R93-4D7C2A91",
   "analyst_commit": "92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
@@ -29,30 +29,35 @@
   "development_phase": "OPEN_DEVELOPMENT",
   "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
   "cycle_count": 4,
-  "cycle_reassessment_context": "R93 records concrete information gain for one bounded D34-Q002 development response under the unchanged closed R2 contract. MAIN implemented only the execution/preservation plumbing needed to realize that prospectively fixed queue and stopped before result exposure until the new executor passes generic CI.",
+  "cycle_reassessment_context": "R93 already authorized exactly one bounded D34-Q002 development response under the unchanged closed R2 contract. Relay reconciled the PRIMARY WAITING_EXTERNAL handoff, observed generic CI fail only at lint before tests, and applied a single science-invariant unused-import repair. No response-bearing execution occurred.",
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "closed_r2_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
     "closed_r2_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
     "active_research_branch": "research/main-cand34-assembly-route-preformal-r93-response",
-    "active_research_head": "bbbb422da119c864a41f0cdee97bb759aa090139",
+    "active_research_head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
     "executor_path": "scripts/cand34_preformal_r2_execute.py",
     "analyst_handoff_commit": "92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
     "preserved_r2_contract_artifact": "reports/orchestrator/main/artifacts/cand34/preformal-r2/43d0f25541a3c447d4c7156303647ae94f3119f4/cand34-preformal-r2-contract.zip"
   },
   "workflow_observation": {
-    "executor_head_generic_ci_run_id": 35822584950,
-    "executor_head_generic_ci_status": "queued",
-    "executor_head_generic_ci_conclusion": null,
+    "failed_executor_head_generic_ci_run_id": 35822584950,
+    "failed_executor_head_generic_ci_conclusion": "failure",
+    "failure_stage": "Lint",
+    "repaired_executor_head_generic_ci_run_id": 35824098828,
+    "repaired_executor_head_generic_ci_status": "in_progress",
+    "repaired_executor_head_generic_ci_conclusion": null,
     "result_bearing_workflow_created": false,
     "result_bearing_workflow_dispatched": false,
     "result_bearing_execution_performed": false
   },
   "work_performed": {
-    "classification": "SCIENCE_INVARIANT_EXECUTION_PLUMBING",
-    "change_classification": "SCIENCE_INVARIANT_REPAIR_OR_PLUMBING_ONLY",
-    "research_branch_created": true,
+    "classification": "SCIENCE_INVARIANT_REPAIR",
+    "change_classification": "UNUSED_IMPORT_REMOVAL_ONLY",
+    "research_branch_created": false,
     "research_branch_mutated": true,
+    "repaired_path": "scripts/cand34_preformal_r2_execute.py",
+    "repair_detail": "Removed unused typing.Any import after generic CI failed at lint before Local readiness/Test/Validate bundle.",
     "contract_semantics_changed": false,
     "queue_science_changed": false,
     "metric_or_reduction_changed": false,
@@ -62,10 +67,7 @@
     "resource_or_privilege_contract_changed": false,
     "input_or_seed_policy_changed": false,
     "falsifier_or_success_criteria_changed": false,
-    "response_bearing_execution_performed": false,
-    "new_executor_executes_each_frozen_condition_from_independent_checkpoint_clone": true,
-    "new_executor_uses_source_only_cue": true,
-    "new_executor_preserves_raw_uns cored_response": true
+    "response_bearing_execution_performed": false
   },
   "observations_evidentiary_status": {
     "new_scientific_result": false,
@@ -86,27 +88,11 @@
   },
   "collision_awareness": {
     "primary_running_collision": false,
+    "primary_state_reconciled_as_waiting_external": true,
     "forge_same_object_collision": false,
     "forge_code_reused": false,
     "forge_observation_confirmatory_credit": false,
-    "utility_dependency": false,
-    "relay_collision": false,
-    "pr_148_open": true,
-    "pr_149_open": true
-  },
-  "immutable_ref_revalidation": {
-    "authoritative_evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "new_candidate34_formal_identity_observed": false,
-    "new_candidate34_started_observed": false
-  },
-  "forge_boundary": {
-    "forge_code_reused": false,
-    "forge_observations_used": false,
-    "forge_confirmatory_credit": 0,
-    "canonical_contract_reestablished_independently": true
+    "relay_collision": false
   },
   "hard_floor": {
     "formal_identity_created_or_consumed": false,
@@ -119,17 +105,17 @@
   },
   "integrity": {
     "analyst_generation_rechecked_immediately_before_research_mutation": true,
-    "analyst_generation_rechecked_immediately_before_control_plane_mutation": true,
+    "main_generation_and_lease_rechecked_immediately_before_research_mutation": true,
+    "active_research_head_rechecked_immediately_before_research_mutation": true,
     "closed_r2_contract_head_unchanged": true,
-    "executor_branch_is_direct_child_of_closed_r2_head": true,
     "prior_result_preservation_respected": true,
     "response_stop_respected": true,
     "formal_stop_respected": true
   },
   "remaining_blockers": [
-    "Generic CI for the additive one-shot executor head must complete successfully before MAIN may arm or execute the single R93-authorized D34-Q002 response."
+    "Generic CI for repaired executor head 8ce961dc88fb52afa6399093fce1e3de7e982f2b must complete successfully before MAIN may arm or execute the single R93-authorized D34-Q002 response."
   ],
-  "stop_reason": "WAITING_ONLY_FOR_EXECUTOR_HEAD_GENERIC_CI_BEFORE_ONE_SHOT_RESPONSE_ARMING",
-  "next_action": "Re-fetch R93 and the exact executor branch head. If CI 35822584950 is green and authority is unchanged, create/arm a no-clobber one-shot workflow that rechecks R93 immediately before execution, preserves raw D34-Q002 bytes before interpretation, executes exactly once, and then stops at first meaningful result exposure for fresh Analyst review. If CI fails, apply only science-invariant lint/import/build/plumbing repair and do not execute a response until green.",
+  "stop_reason": "WAITING_REPAIRED_EXECUTOR_CI_BEFORE_ONE_SHOT_RESPONSE_ARMING",
+  "next_action": "Re-fetch R93, MAIN generation/lease, exact active head and CI 35824098828. If CI is green and authority is unchanged, continue only the prospectively authorized one-shot response path with no-clobber/raw-before-interpretation guarantees, then stop at first meaningful response exposure for fresh Analyst review. If CI fails again, diagnose and apply only clearly science-invariant repair; do not execute any response until green.",
   "owner": "main"
 }
