@@ -1,34 +1,34 @@
-# MAIN PRIMARY — H7 R105 launch plumbing validated; fresh Analyst required
+# MAIN PRIMARY — H7 R106 exact FORMAL gates green; launch trigger blocked
 
 - schema_version: `2`
-- generation: `MAIN-20260924T045200+0900-PRIMARY-H7-R105-LAUNCH-PLUMBING-READY-FOR-ANALYST`
+- generation: `MAIN-20260924T051305+0900-PRIMARY-H7-R106-FORMAL-LAUNCH-TRIGGER-BLOCKED`
 - execution_mode: `PRIMARY`
-- status: `READY_FOR_RELAY`
+- status: `BLOCKED`
 - canonical object: `CAND-H7-RESPONSIBILITY`
-- research layer: `PRE_FORMAL`
+- research layer: `PRE_FORMAL` with fresh conditional one-shot FORMAL authority
 - development phase/revision: `RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED`
 - authorized scientific cycle: `12`
 - claim ceiling: `MECHANISM`
 
 ## Authority / collision
 
-Evidence Analyst R105 is current and authorizes only science-invariant, strictly NON_RESULT H7 FORMAL launch plumbing. R105 explicitly stops FORMAL identity, START, protected evaluation, scoring and result-bearing workflow dispatch until a later fresh Analyst binds the exact launch controller and grants one-shot authority.
+Evidence Analyst R106 is current and grants exactly one fresh H7 R5 FORMAL identity/START under exact binding. Stable main, frozen science, and the exact bound launch controller all remain at the R106-pinned commits. Prior MAIN is not RUNNING; Utility has no scientific authority; Forge work is noncanonical/non-H7; open PRs #148/#149 do not collide with H7.
 
-Frozen science remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`. The prospectively fixed launch controller is `research/main-h7-r5-launch-plumbing-r105@042d00375278d551dbf643ad866a4c883852804d`.
+## Exact prestart gates
 
-The prior MAIN lease was BLOCKED, Utility is IDLE with no scientific authority, and current Forge work is a separate noncanonical theory probe. No H7 ownership collision exists and no Forge-derived code or observation was reused.
+The R106-bound launch contract, controller, launch workflow, resource contract, executor, runtime module, preserver and scorer all match their prospectively fixed blobs. Final launch-plumbing readiness and generic CI remain green on the exact controller head. H7 `control`, `preserve`, `formal`, `sealed`, `freeze`, `immutable`, `evidence`, and `launch` namespaces are all still unused.
 
-## Work / validation
+No scientific or controller bytes were changed. No Forge-derived code or observation was reused.
 
-The R105 launch path now prospectively fixes the dormant FORMAL entry workflow, exact science/controller/runtime/scorer/preserver bindings, fresh concealed 256-episode test-plan mechanics with prior-surface collision audit, encrypted protected-payload handoff, create-only identity/START mechanics, target-blind raw generation, remote raw preservation/freeze before target materialization, frozen post-preserve scoring, and create-only formal/sealed/evidence refs.
+## Result / blocker
 
-The controller itself rejects R105 as sufficient authority to START and requires a later fresh Analyst bound to the exact controller and science heads. The only implementation repair after initial materialization was lint/import formatting and corresponding exact controller-blob rebinding; it changed no science.
+The fixed FORMAL workflow is intentionally triggered only by a fresh `launch/h7-r5-*` tag targeting the exact controller commit. The current GitHub execution surface does not expose tag creation or workflow dispatch. No prior result-bearing run exists to rerun, and changing the exact workflow/controller to add another trigger would violate the R106 exact-controller binding.
 
-On the exact final launch-controller head, NON_RESULT launch-plumbing readiness and generic CI both completed successfully. H7 control/preserve/formal/sealed/freeze/immutable/evidence namespaces remain unused.
+MAIN therefore failed closed before FORMAL identity creation or START.
 
 ## Evidentiary / integrity status
 
-- result classification: `NON_RESULT_SCIENCE_INVARIANT_FORMAL_LAUNCH_PLUMBING_VALIDATED`
+- result classification: `NON_RESULT_FORMAL_PRESTART_EXECUTION_CAPABILITY_BLOCK`
 - new scientific result: `false`
 - science-affecting change: `false`
 - prior results preserved unchanged: `true`
@@ -45,6 +45,6 @@ On the exact final launch-controller head, NON_RESULT launch-plumbing readiness 
 
 ## Stop / next action
 
-Stop reason: `R105_NONRESULT_LAUNCH_PLUMBING_COMPLETE_FRESH_ANALYST_REQUIRED_BEFORE_FORMAL_START`.
+Stop reason: `R106_FORMAL_AUTHORIZED_EXACT_GATES_GREEN_BUT_LAUNCH_TAG_CREATION_CAPABILITY_UNAVAILABLE`.
 
-Return the exact launch controller and green non-result validation to Evidence Analyst. Only a later fresh Analyst generation that explicitly binds this controller head and the frozen H7 science head and grants one-shot FORMAL authority may permit exactly one fresh identity and one-way START. Any authority supersession, binding mismatch or one-way namespace collision must fail closed.
+Create exactly one fresh `launch/h7-r5-*` tag pointing to the exact R106-bound launch-controller commit. The workflow itself re-fetches current Analyst authority and one-way namespaces before START and will fail closed on supersession or collision. After a workflow run exists, MAIN may resume by recording its exact run and waiting; never rerun, retune or rescore an identity after START.
