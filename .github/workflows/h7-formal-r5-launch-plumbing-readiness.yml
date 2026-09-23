@@ -1,0 +1,84 @@
+name: h7-formal-r5-launch-plumbing-readiness
+
+on:
+  push:
+    branches:
+      - research/main-h7-r5-launch-plumbing-r105
+    paths:
+      - scripts/h7_formal_r5_one_way_controller.py
+      - artifacts/formal_h7_r5/launch_path_contract.json
+      - .github/workflows/h7-formal-r5-one-way-launch.yml
+      - .github/workflows/h7-formal-r5-launch-plumbing-readiness.yml
+
+permissions:
+  contents: read
+
+env:
+  R105_ANALYST_SHA: c6c4c0347880c55be75d72bc1417a007b7f87cec
+  H7_SOURCE_SHA: 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80
+
+jobs:
+  nonresult-plumbing-readiness:
+    name: NON_RESULT H7 R5 launch plumbing readiness
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout prospective controller
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          path: controller
+
+      - name: Fail closed on Analyst supersession
+        working-directory: controller
+        shell: bash
+        run: |
+          set -euo pipefail
+          analyst_line="$(git ls-remote origin refs/heads/ops/evidence-analyst-handoff)"
+          test "${analyst_line%%$'\t'*}" = "${R105_ANALYST_SHA}"
+
+      - name: Assert H7 one-way namespaces remain unused
+        working-directory: controller
+        shell: bash
+        run: |
+          set -euo pipefail
+          for pattern in \
+            'refs/heads/control/h7*' \
+            'refs/heads/preserve/h7*' \
+            'refs/tags/formal/h7*' \
+            'refs/tags/sealed/h7*' \
+            'refs/tags/freeze/h7*'
+          do
+            if git ls-remote --exit-code origin "${pattern}" >/tmp/h7-ref-match 2>/dev/null; then
+              echo "H7 one-way namespace collision: ${pattern}" >&2
+              cat /tmp/h7-ref-match >&2
+              exit 1
+            fi
+          done
+
+      - name: Checkout exact frozen H7 science
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80
+          fetch-depth: 0
+          path: science
+
+      - name: Validate prospective launch plumbing without identity or result
+        shell: bash
+        run: |
+          set -euo pipefail
+          python controller/scripts/h7_formal_r5_one_way_controller.py validate-plumbing \
+            --controller-root controller \
+            --science-root science
+
+      - name: Assert readiness remained strictly non-result-bearing
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e controller/artifacts/formal_h7_r5/FORMAL_IDENTITY.json
+          test ! -e controller/artifacts/formal_h7_r5/STARTED.json
+          test ! -e controller/artifacts/formal_h7_r5/official_prediction_raw.jsonl
+          test ! -e controller/artifacts/formal_h7_r5/official_score.json
+          test ! -e science/artifacts/formal_h7_r5/FORMAL_IDENTITY.json
+          test ! -e science/artifacts/formal_h7_r5/STARTED.json
+          echo H7_R5_LAUNCH_PLUMBING_NON_RESULT_OK
