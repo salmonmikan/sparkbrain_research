@@ -5,16 +5,16 @@ import json
 import pytest
 
 from sparkbrain.v05.candidate35_architecture import (
-    ARMS,
     ADAPTATION_TAU_MS,
     ANCHOR_MAX_ADDITIONAL_BOUNDARIES,
     ANCHOR_MAX_ADDITIONAL_MS,
-    Candidate35ResponseNotAuthorized,
+    ARMS,
     CUE_SOURCE_ID,
     MEASUREMENT_WINDOW_MS,
     MEMBRANE_TAU_MS,
     PRIME_EPISODE_ID,
     PRIME_SOURCE_ID,
+    Candidate35ResponseNotAuthorized,
     build_candidate35_brain,
     candidate35_frozen_contract,
     candidate35_nonresult_preflight,
