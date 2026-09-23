@@ -1,75 +1,56 @@
-# MAIN canonical science report — H7 FORMAL R5 pre-start blocked safely
+# MAIN Relay — Candidate #35 preservation boundary completed without result exposure
 
 - schema_version: `2`
-- generation: `MAIN-20260923T205800+0900-PRIMARY-H7-FORMAL-R5-R98-BLOCKED-SIDECAR`
-- execution_mode: `PRIMARY`
-- status: `BLOCKED`
-- candidate: `CAND-H7-RESPONSIBILITY`
-- layer: `FORMAL`
-- development phase: `RESULT_EXPOSED_DEVELOPMENT`
-- development revision: `H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-AND-PROVISIONING-PROVENANCE-SPLIT`
-- cycle: `12`
-- claim ceiling: `MECHANISM`
-- Analyst authority: `EVA-20260923T200231+0900-R98-2B6F91C4`
-- exact scientific source: `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`
-- controller: `research/main-h7-r5-oneway-controller-r98@f21dc7521af7413adcc46a2561271e0b8852f371`
+- generation: `MAIN-20260923T215545+0900-RELAY-CAND35-PRESERVATION-R99-COMPLETED`
+- execution_mode: `RELAY`
+- status: `COMPLETED`
+- candidate: `CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING`
+- research_layer: `ARCHITECTURE_STUDY`
+- Analyst authority: `EVA-20260923T210010+0900-R99-6F2B8C14`
+- prior MAIN: `MAIN-20260923T205800+0900-PRIMARY-H7-FORMAL-R5-R98-BLOCKED-SIDECAR`
+- development phase: `OPEN_DEVELOPMENT`
+- development revision: `ARCHITECTURE-R2-EXACT-CANDIDATE-SURFACE-AND-EXECUTOR-BINDING-NONRESULT-COMPLETE`
+- cycle: `3`
+- claim ceiling: `SYSTEM`
 
-## Analyst authority and canonical object
+## Authority / Funnel
 
-Evidence Analyst R98 is still current and prospectively authorizes exactly one fresh untouched H7 R5 FORMAL identity under the unchanged R5 contract. The authority requires exact source/protocol/runtime/component binding, fresh one-way namespaces, no-clobber identity/STARTED semantics, concealed protected evaluation, target-blind raw output, immutable raw preservation before any target-side read or official scoring, and immediate fail-closed stop on any pre-start mismatch.
+R99 remains current. H7 is still held by the missing protected-sidecar capability and cannot be advanced by this GitHub connection without violating the fixed one-way gate. R99 therefore prospectively authorizes only Candidate #35 science-invariant preserve-before-read/provenance plumbing as the bounded SYSTEM priority exception. Candidate response execution remains STOP.
 
-The H7 object remains canonical FORMAL / MECHANISM with `RESULT_EXPOSED_DEVELOPMENT`, revision R5, cycle 12. The cycle-12 continuation remains prospectively justified by the information gain of one untouched confirmatory identity; this run did not consume that identity.
+The Candidate #35 Funnel fields are preserved exactly: `preformal_eligible=false`, `preformal_readiness=NOT_APPLICABLE`, `hold_class=null`, `hold_reason=null`, `terminal_state=NONTERMINAL`, `queue_state=QUEUED_FOR_MAIN_ARCHITECTURE_R3_OR_R4_NONRESULT_PRESERVATION_BOUNDARY`, `system_priority_exception.used=true` with reason `NO_EXECUTABLE_MECHANISM_WHILE_H7_FORMAL_INTEGRITY_CAPABILITY_BLOCKED`, `development_phase=OPEN_DEVELOPMENT`, and the R99 development revision above. No in-place SYSTEM→MECHANISM uplift occurred.
 
 ## Work performed
 
-MAIN first re-fetched stable main, the exact H7 scientific source, Analyst authority, active research/Forge state, protected namespaces, evidence/formal/sealed/freeze refs, MAIN lease/state, Utility and open work for collision. H7 had no control/preserve/formal/sealed/freeze collision, and Fast Forge had explicitly stayed off the H7 critical path.
+Relay re-fetched the latest Analyst authority, MAIN lease, direct Candidate #35 branch and Fast Forge collision state. There was no fresh PRIMARY RUNNING lease on Candidate #35, and Fast Forge explicitly stayed off this same-object preservation/response surface.
 
-The existing canonical R98 controller contained a strict NON_RESULT readiness workflow but it was not configured to run on its own controller branch. MAIN applied a `SCIENCE_INVARIANT_REPAIR` to enable the readiness workflow on `research/main-h7-r5-oneway-controller-r98`. No scientific source, hypothesis, metric, scorer, comparator, threshold, tolerance, seed/input policy, intervention, resource contract, falsifier or decision rule changed.
+The authorized scientific source remained exactly the pre-existing Candidate #35 R2 source at `8ea6581544c642ad74f1a95955ab2c5f795afccc`; `src/sparkbrain/v05/candidate35_architecture.py` remained byte-identical with blob SHA-1 `4055f42483d5bba73eef51b1753a2c19f18d5ab5`.
 
-The first readiness run (`35856825277`) failed at the exact R5 preidentity-validation step after the exact authority, empty one-way namespaces, exact R5 contract/component blobs and locked scientific runtime had all passed. Inspection of the prospectively frozen preflight showed a workspace-root assertion incompatible with the controller's nested exact-source checkout. MAIN therefore applied a second `SCIENCE_INVARIANT_REPAIR` limited to controller workflow path plumbing: the preflight now receives the nested scientific checkout as its workspace root. The scientific source head and all bound component blobs remain unchanged.
+Relay added a separate non-result preservation wrapper and tests. The wrapper binds the current Analyst generation, exact source head/blob, unchanged response producer, serializer, Funnel fields, exclusive no-clobber output semantics and raw-before-return ordering. Its current/default execution path fails closed before response generation or file creation. The NON_RESULT preflight verifies the source bytes and producer binding without running the candidate response.
 
-On repaired controller head `f21dc7521af7413adcc46a2561271e0b8852f371`, generic CI (`35857110749`) completed `success`. The repaired NON_RESULT readiness run (`35857110884`) also passed: fresh Analyst/source re-fetch, untouched H7 namespaces, exact R5 contract and scientific blobs, recreation of the locked runtime, and the exact R5 non-result preidentity validation.
+The first CI failed only on import ordering. After a fresh authority/lease/ref re-read, Relay applied an import-order-only `SCIENCE_INVARIANT_REPAIR`. Final branch head `5bc64fbd8fd2f3e8d804d18e0a0ad0d58b5a3e4c` passed generic CI `35863266802` across both configured Python versions, including lint, local readiness, tests and bundle validation.
 
-The readiness run then failed at the next prospective gate, `Assert protected sidecar handoff capability exists without exposing it`. The existing controller contract requires concealed repository Actions secret `H7_R5_SIDECAR_PASSPHRASE` to be present and at least 32 characters. The current GitHub connection exposes no repository Actions secret read/write operation, so MAIN cannot provision, inspect, replace, or bypass that capability. Bypassing it would violate the R5 one-way contract.
-
-No Fast Forge code, prototype, tuning history or observation was reused.
-
-## Result classification
+## Scientific / evidentiary status
 
 New scientific result: `false`.
 
-This run performed only canonical pre-start readiness and science-invariant controller repair. It did not materialize a FORMAL identity, create STARTED, access the concealed evaluation, generate official raw predictions, preserve scientific raw output, read target-side truth, perform official scoring, or add/mutate evidence.
-
+- candidate response executed: `false`
+- scientific raw response created: `false`
+- PRE_FORMAL execution: `false`
 - FORMAL identity created/consumed: `false`
 - STARTED created: `false`
-- protected evaluation accessed: `false`
-- target-blind official raw generated: `false`
-- scientific preserve ref created: `false`
+- protected/held-out evaluation accessed: `false`
 - official scoring: `false`
-- evidence mutation: `false`
-- new FORMAL evidence: `0`
-- new PRE_FORMAL evidence: `0`
-- new Architecture observation: `0`
-- Forge confirmatory credit: `0`
+- scientific evidence/preserve/formal/sealed/freeze/immutable ref mutation: `false`
+- historical official consumed identities: `7`, unchanged
+- prior scientific results preserved unchanged: `true`
+- evidentiary status: `NON_EVIDENTIARY_ARCHITECTURE_NONRESULT_PRESERVATION_PREFLIGHT`
 
-The H7 FORMAL identity remains unconsumed. The repository's previously consumed official identity count remains 7.
+No hypothesis, metric/scorer meaning, comparator, threshold/tolerance, seed/exclusion policy, intervention, cue, anchor, reset, measurement window, resource contract, falsifier or success criterion changed.
 
-## Prior-result preservation and hard-floor integrity
+## Cycle / stop / next action
 
-All prior results remain unchanged. No consumed FORMAL identity was rerun, retuned or rescored. No immutable/formal/sealed/evidence scientific ref was mutated. No post-result scientific criterion was changed. No target-side material was read before preservation. The R5 scientific source remains the exact authorized source, and H7 one-way namespaces remained fresh at the final pre-start checks.
+Cycle 3 was continued only because R99 explicitly authorized the expected-information-gain step of proving that the unchanged response producer can be provenance-bound and raw-preserved before read without exposing a response. That bounded objective is now complete and CI-green.
 
-The repaired readiness run demonstrates that source/runtime/preidentity binding is green on the repaired controller head; only the concealed protected-sidecar capability gate is unsatisfied. Because that gate is prospective and pre-start, MAIN stopped before identity creation. The hard FORMAL floor is intact.
+Stop reason: `AUTHORIZED_CAND35_NONRESULT_PRESERVATION_BOUNDARY_CLOSED_WITHOUT_RESPONSE_EXPOSURE`.
 
-## Blocker / stop reason
-
-`FAIL_CLOSED_PRESTART_PROTECTED_SIDECAR_CAPABILITY`.
-
-Required capability: the repository Actions secret `H7_R5_SIDECAR_PASSPHRASE` must satisfy the already-fixed concealed handoff gate (`present` and `>=32` characters). The workflow result proves that the capability gate did not pass, but MAIN does not read or expose the secret value and cannot distinguish or repair the secret through the connected GitHub API.
-
-This is a pre-start infrastructure/capability blocker, not a scientific negative result.
-
-## Next canonical action
-
-Provision or correct `H7_R5_SIDECAR_PASSPHRASE` as a concealed repository Actions secret without changing the scientific R5 contract. After that capability exists, MAIN must re-fetch the latest Evidence Analyst generation, exact H7 source/controller heads, evidence/immutable/control/preserve/formal/sealed/freeze refs and collision state, then rerun only the NON_RESULT readiness gate.
-
-Only if every prospective gate is green and unchanged may MAIN materialize and START exactly one fresh H7 R5 FORMAL identity. Raw output must still be preserved immutably before any target-side read or official scoring. Any mismatch remains fail-closed.
+Next MAIN action: fresh Evidence Analyst review of the exact implementation head and preservation boundary. Candidate response execution, PRE_FORMAL promotion, scientific-field changes and any successor mechanism question remain unauthorized until fresh Analyst authority says otherwise.
