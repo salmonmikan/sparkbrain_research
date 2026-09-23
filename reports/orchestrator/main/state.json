@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T051305+0900-PRIMARY-H7-R106-FORMAL-LAUNCH-TRIGGER-BLOCKED",
-  "producer_run_id": "sparkbrain-main-primary-20260924T051305JST-r106-h7-formal-launch-trigger-blocked",
-  "generated_at": "2026-09-24T05:13:05+09:00",
+  "generation_id": "MAIN-20260924T054727+0900-RELAY-H7-R106-FORMAL-LAUNCH-CAPABILITY-BLOCKED",
+  "producer_run_id": "sparkbrain-main-relay-20260924T054727JST-r106-h7-formal-launch-capability-blocked",
+  "generated_at": "2026-09-24T05:47:27+09:00",
   "status": "BLOCKED",
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "research_layer": "PRE_FORMAL",
   "claim_ceiling": "MECHANISM",
@@ -14,9 +14,9 @@
   "cycle_count": 12,
   "cycle_reassessment": {
     "authorized_scientific_cycle": 12,
-    "primary_extended_scientific_cycle": false,
+    "relay_extended_scientific_cycle": false,
     "scientific_iteration_performed": false,
-    "information_gain": "FORMAL_PRESTART_EXACT_BINDING_RECONFIRMED_EXECUTION_CAPABILITY_BLOCK_ONLY"
+    "information_gain": "OPERATIONAL_ONLY_EXECUTION_SURFACE_RECONFIRMED_AND_FUNNEL_MAILBOX_RECONCILED"
   },
   "analyst_authority": {
     "generation_id": "EVA-20260924T050035+0900-R106-H7-LAUNCH-READY-THEORY-PROBE-KILLED",
@@ -26,18 +26,23 @@
     "freshness_rechecked_this_run": true,
     "formal_authority_exercised_this_generation": false
   },
-  "prior_main_generation": "MAIN-20260924T045200+0900-PRIMARY-H7-R105-LAUNCH-PLUMBING-READY-FOR-ANALYST",
+  "prior_main_generation": "MAIN-20260924T051305+0900-PRIMARY-H7-R106-FORMAL-LAUNCH-TRIGGER-BLOCKED",
   "funnel": {
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
     "preformal_readiness": "READY",
-    "hold_class": "EXECUTION_CAPABILITY",
-    "hold_reason": "R106 exact one-shot FORMAL gates are green, but the current GitHub execution surface exposes neither tag creation nor workflow dispatch for the prospectively fixed tag-triggered launch workflow.",
+    "hold_class": null,
+    "hold_reason": null,
     "terminal_state": "ACTIVE",
-    "queue_state": "HOLD",
+    "queue_state": "QUEUED",
     "system_priority_exception": false,
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
     "development_revision": "R5_UNCHANGED"
+  },
+  "operational_blocker": {
+    "class": "EXECUTION_CAPABILITY",
+    "reason": "The exact R106-bound result-bearing workflow is tag-triggered, while the current Relay GitHub execution surface exposes neither tag creation nor workflow dispatch. No existing result-bearing H7 workflow run exists to resume.",
+    "scientific_funnel_changed": false
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -59,24 +64,20 @@
     "launch_contract_path": "artifacts/formal_h7_r5/launch_path_contract.json",
     "launch_controller_path": "scripts/h7_formal_r5_one_way_controller.py",
     "formal_launch_workflow_path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
-    "history_path": "reports/orchestrator/main/history/2026-09-24/051305-r106-primary-h7-formal-launch-trigger-blocked.md"
+    "history_path": "reports/orchestrator/main/history/2026-09-24/054727-r106-relay-h7-formal-launch-capability-blocked.md"
   },
   "work_performed": [
     {
       "classification": "FRESHNESS_AND_OWNERSHIP_RECONCILIATION",
-      "change": "Re-fetched stable main, current Evidence Analyst R106, MAIN state/lease, Relay, exact H7 science/controller refs, Forge refs/latest state, Utility ownership state, open PRs and relevant workflow runs. No H7 ownership collision exists."
+      "change": "Re-fetched current Evidence Analyst R106, MAIN lease, exact H7 science/controller refs, Fast Forge collision state, exact launch workflow/contract and H7 one-way namespaces. PRIMARY is BLOCKED rather than RUNNING and no same-object ownership collision exists."
     },
     {
-      "classification": "R106_EXACT_FORMAL_PRESTART_RECHECK",
-      "change": "Re-fetched exact launch contract/controller/workflow, resource contract and frozen executor/runtime/preserver/scorer components. All exact blobs and pinned source heads remain matched; prior launch-plumbing readiness and generic CI remain green."
-    },
-    {
-      "classification": "ONE_WAY_NAMESPACE_RECHECK",
-      "change": "Verified control/h7*, preserve/h7*, formal/h7*, sealed/h7*, freeze/h7*, immutable/h7*, evidence/h7* and launch/h7-r5* namespaces are all unused immediately before the attempted start."
+      "classification": "FUNNEL_FIELD_RECONCILIATION",
+      "change": "Restored MAIN mailbox Funnel fields to the exact current Analyst values. The execution-capability problem is recorded separately as an operational blocker and is not reinterpreted as Analyst hold_class/hold_reason or queue_state."
     },
     {
       "classification": "FAIL_CLOSED_EXECUTION_CAPABILITY_BLOCK",
-      "change": "Did not create a FORMAL identity or START because the exact result-bearing workflow is tag-triggered and the available GitHub execution surface provides neither tag creation nor workflow dispatch. Did not alter the exact R106-bound controller to work around the missing capability."
+      "change": "Did not create a FORMAL identity or START because the prospectively fixed launch requires a launch/h7-r5-* tag and the available Relay execution surface cannot create tags or dispatch the workflow. Did not alter the exact R106-bound controller/workflow and did not misuse branch creation as a tag substitute."
     }
   ],
   "workflows": {
@@ -105,7 +106,7 @@
   "observations": {
     "new_scientific_result_this_run": false,
     "evidentiary_status": "NON_RESULT_FORMAL_PRESTART_EXECUTION_CAPABILITY_BLOCK",
-    "information_gain": "OPERATIONAL_ONLY_EXACT_FORMAL_GATES_GREEN_TRIGGER_CAPABILITY_MISSING",
+    "information_gain": "OPERATIONAL_ONLY_EXECUTION_SURFACE_RECONFIRMED",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
     "formal_identity_created_or_consumed": false,
@@ -127,10 +128,9 @@
   },
   "ownership_and_collision": {
     "fresh_primary_running_same_h7_object_before_action": false,
+    "prior_primary_status": "BLOCKED",
     "fast_forge_same_h7_object_collision": false,
-    "fast_forge_latest_r106_theory_probe_noncanonical_and_killed": true,
-    "utility_status": "IDLE_NO_SCIENTIFIC_AUTHORITY",
-    "open_pr_h7_collision": false,
+    "utility_scientific_authority": false,
     "h7_formal_authorized_now": true
   },
   "integrity": {
@@ -157,15 +157,17 @@
     "h7_evidence_tag_namespace_absent": true,
     "h7_launch_tag_namespace_absent": true,
     "authorized_scientific_source_unchanged": true,
+    "analyst_funnel_fields_preserved_exactly": true,
     "formal_identity_created": false,
     "started_created": false,
     "protected_evaluation_accessed": false,
     "official_scoring_performed": false,
     "historical_pass_fail_rewritten": false,
     "immutable_formal_sealed_evidence_refs_mutated": false,
-    "development_phase_changed_by_primary": false,
+    "development_phase_changed_by_relay": false,
     "formal_floor_respected": true
   },
+  "repair_change_classification": "CONTROL_PLANE_RECONCILIATION_ONLY_NO_SCIENCE_CHANGE; NO_FORMAL_REPAIR_PERFORMED",
   "do_not_touch": [
     "Consumed FORMAL identities",
     "immutable/formal/sealed/evidence/freeze/preserve refs",
@@ -174,6 +176,6 @@
     "Candidate #35 current object or rescue-adjacent successor",
     "noncanonical Forge observations as scientific authority"
   ],
-  "stop_reason": "R106_FORMAL_AUTHORIZED_EXACT_GATES_GREEN_BUT_LAUNCH_TAG_CREATION_CAPABILITY_UNAVAILABLE",
-  "next_action": "Create exactly one fresh launch/h7-r5-* tag pointing to 042d00375278d551dbf643ad866a4c883852804d using an external GitHub capability. The fixed workflow must then re-fetch current Analyst authority and namespaces before START. Once a workflow run exists, MAIN should be restored to record the exact run ID and wait; never rerun/retune/rescore an identity after START."
+  "stop_reason": "R106_EXACT_FORMAL_AUTHORIZED_BUT_CURRENT_RELAY_HAS_NO_TAG_CREATION_OR_WORKFLOW_DISPATCH_CAPABILITY",
+  "next_action": "Create exactly one fresh launch/h7-r5-* tag pointing to 042d00375278d551dbf643ad866a4c883852804d using an external GitHub capability. The fixed workflow must then re-fetch current Analyst authority and namespaces before START. Once a workflow run exists, MAIN should record the exact run ID and wait/continue one-way; never rerun/retune/rescore an identity after START."
 }
