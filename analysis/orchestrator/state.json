@@ -1,28 +1,29 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260923T080115+0900-R89-9A4C2E71",
-  "produced_at": "2026-09-23T08:01:15+09:00",
-  "producer_run_id": "evidence-analyst-auto-20260923T080115+0900-R89",
+  "generation_id": "EVA-20260923T090047+0900-R90-B84D2C71",
+  "produced_at": "2026-09-23T09:00:47+09:00",
+  "producer_run_id": "evidence-analyst-auto-20260923T090047+0900-R90",
   "authority_scope": "EVIDENCE_DRIVEN_RESEARCH_STRATEGY_CONTROL_PLANE_PERSISTENCE_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "EVA-20260923T065834+0900-R88-D5A7C219",
+  "supersedes_generation_id": "EVA-20260923T080115+0900-R89-9A4C2E71",
   "input_generations": {
     "human_directive": "HUMAN-20260922-005",
     "human_directives_mailbox": "ops/human-directives@de60c8888d1b438d5b06fed2266a8efd5893e646",
-    "control": "CTRL-20260923T055000+0900-R39-C31A7D52@c93f870e47bdb5b1613475e079c0a6dee2aa1753",
-    "main_mailbox": "MAIN-20260923T074800+0900-RELAY-H7-FORMALR5-C12-R88-WAITING-CI-D5A7C219@9d449d451ca93bad30c74dde7d16e6fa71270d6d",
-    "sub": "SUB-20260923T074100+0900-DISC-C34-ROUTE-CONTRACT-R88-D5A7C219@2e3498a7aa19e0b9fbd761765116d91d5d2ec0a1",
-    "methodology": "METHCAL-20260923T073000+0900-R75-C8D41B6E@4e608a2dd73059d8302dcfa353e47cabe08797e4",
+    "control": "CTRL-20260923T085000+0900-R40-5E1C7A94@f25d48598584bffc5ca736c6ac52c50a94688d89",
+    "main_mailbox": "main-arch-c34-r1-20260923T0840+0900@ops/orchestrator-run-report@8d748c93b39cdae1f226a9217f95ec3a1e37601e",
+    "sub": "SUB-20260923T083602+0900-QFD-QUEUEFREE-STATE-R89-6B2E4C91@ops/orchestrator-run-report@8d748c93b39cdae1f226a9217f95ec3a1e37601e",
+    "methodology": "METHCAL-20260923T081804+0900-R76-6F2A91D4@4e96acad1b4b59d29fc279c99d3cdecdf984dd98",
     "literature": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7@027fa9fc45648269c2ebe0ae6408162d155fe840",
     "independent_audit": "AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4@ops/external-research-audit-handoff",
     "repository_steward": "STEWARD-20260923T075000+0900-G11-6F3A9C21@ba83f292b759ca7ed034c938752d3cec51e405cd",
     "utility": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91@b18a1d76c05efbbfacb9618ac1ca1e9941b17555",
-    "analyst_previous": "EVA-20260923T065834+0900-R88-D5A7C219@3341ad00ade796d9a3b80dd61c7386fc8b3e07b7"
+    "analyst_previous": "EVA-20260923T080115+0900-R89-9A4C2E71@4ce972b38cf925ec5d447546339ead57830ada7c"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "h7_r5_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "h7_r5_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "h7_r4_base": "02382fbc7d3838159598015e488c6ce49ac34efc",
+    "candidate34_branch": "research/main-cand34-assembly-route-architecture-r89-cycle1",
+    "candidate34_head": "de712b2c3bdbb29c719773c609e884ed9b10e40b",
     "evidence_refs": [
       "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -38,6 +39,7 @@
     "pr_148_open_unmerged": true,
     "pr_149_open_unmerged": true,
     "repository_ruleset_count": 0,
+    "repository_rulesets_are_scientific_prerequisite": false,
     "h7_r5_preidentity_run": {
       "id": 35794233687,
       "conclusion": "success",
@@ -47,78 +49,86 @@
       "id": 35794233612,
       "conclusion": "success",
       "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80"
+    },
+    "candidate34_generic_ci_run": {
+      "id": 35799700625,
+      "conclusion": "success",
+      "head": "de712b2c3bdbb29c719773c609e884ed9b10e40b",
+      "python_3_11": "success",
+      "python_3_13": "success",
+      "steps": "Install/Lint/Local readiness/Test/Validate bundle all success"
     }
   },
   "material_changes": [
-    "H7 R5 Cycle12 exact-head dedicated preidentity workflow and generic CI are both green at 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80.",
-    "The byte-identical R4 content-addressed lock installs cleanly; R5 validates the frozen scientific runtime/component identity and a NON_RESULT synthetic executor path while treating moving hosted-runner and installer RECORD observations as provisioning provenance.",
-    "The dedicated R5 run confirms protected evaluation access=false, scientific_result=null, scoring_performed=false, and absence of FORMAL_IDENTITY/STARTED/evaluation payload/seeds/official prediction raw/official score.",
-    "The MAIN ops mailbox remains WAITING_EXTERNAL from before the final workflow completions; direct workflow/ref truth supersedes that stale mailbox status.",
-    "H7 R5 preidentity is therefore complete and independently reviewed at the exact post-repair head, but FORMAL one-way entry remains STOP because PF-R1 exact-byte preservation still lacks matching schema-v2 Utility authority and is unexecuted.",
-    "Candidate #34 Discovery R1 prospectively closes the lagged route object, bounded edge/timing intervention family, reachability/quiescence boundary, ordinary reductions and equivalence-class falsifier; it is promoted to queued NON_EVIDENTIARY Architecture Study while remaining NOT_READY.",
-    "Repository Steward G11 confirms no immutable-ref incident, rulesets remain absent, and candidate #34 has not yet been materialized on a dedicated research branch."
+    "Candidate34 direct research head advanced to de712b2c3bdbb29c719773c609e884ed9b10e40b with a formatting-only SCIENCE_INVARIANT_REPAIR after the stale MAIN lint-blocked snapshot.",
+    "Candidate34 exact-head generic CI run 35799700625 is green on Python 3.11 and 3.13 through all validation steps, closing the Architecture R1 technical reachability/instrumentation blocker.",
+    "Candidate34 remains NOT_READY because its scientific checkpoint/prototype-selection rule, complete response-observable set/window, execution schedule and full PRE_FORMAL reduction/equivalence decision contract are not yet prospectively frozen; Architecture R2 contract closure is authorized without response-bearing execution.",
+    "SUB R89 queue-free subthreshold-state causal-priming seed is distinct, bounded, falsifiable, reduction-aware and reachable; it is admitted as canonical candidate35 with SYSTEM claim ceiling and Discovery target layer.",
+    "Candidate35 is deliberately SYSTEM-scoped because the immediate object is known v0.5 potential/adaptation carryover under ordinary local threshold/decay semantics; any later MECHANISM residual must be a fresh successor ID, never same-object uplift.",
+    "H7 R5 exact head and green preidentity workflows are unchanged; FORMAL one-way remains stopped by PF-R1 machine-authority/exact-byte preservation gate plus required later fresh Analyst authorization.",
+    "Repository rulesets remain absent but are not a scientific/Funnel blocker under HUMAN-20260919-002."
   ],
   "four_layer_funnel": {
     "DISCOVERY": {
       "mechanism_active": 0,
       "mechanism_queued": 0,
       "system_active": 0,
-      "system_queued": 0,
-      "state": "OPEN_NO_CANONICAL_DISCOVERY_QUEUE_AFTER_C34_PROMOTION"
+      "system_queued": 1,
+      "state": "CAND35_QUEUED_FOR_SUB_DISCOVERY_R1"
     },
     "ARCHITECTURE_STUDY": {
-      "mechanism_active": 0,
-      "mechanism_queued": 1,
+      "mechanism_active": 1,
+      "mechanism_queued": 0,
       "system_active": 0,
       "system_queued": 0,
-      "state": "CAND34_QUEUED_NON_EVIDENTIARY_ARCHITECTURE_R1"
+      "state": "CAND34_R1_TECHNICAL_CLOSURE_GREEN_R2_CONTRACT_CLOSURE_AUTHORIZED"
     },
     "PRE_FORMAL": {
       "eligible": 2,
       "ready": 1,
-      "state": "H7_READY_BUT_FORMAL_HOLD_CAND34_ELIGIBLE_NOT_READY"
+      "state": "H7_READY_BUT_FORMAL_HOLD_CAND34_ELIGIBLE_NOT_READY_CAND35_INELIGIBLE_SYSTEM"
     },
     "FORMAL": {
       "fresh_one_way_authority": 0,
-      "state": "H7_R5_EXACT_HEAD_PREIDENTITY_COMPLETE_FORMAL_HOLD_PENDING_PFR1_PROVENANCE_GATE"
+      "state": "H7_R5_PREIDENTITY_COMPLETE_FORMAL_HOLD_PENDING_PFR1_MACHINE_AUTHORITY_AND_EXACT_BYTE_PRESERVATION"
     }
   },
   "funnel_metrics": {
-    "canonical_candidates": 34,
+    "canonical_candidates": 35,
     "mechanism": 14,
-    "system": 20,
-    "active": 0,
+    "system": 21,
+    "active": 1,
     "queued": 1,
     "nonterminal_hold": 1,
     "terminal_for_current_object": 32,
     "discovery_queued_mechanism": 0,
-    "discovery_queued_system": 0,
-    "architecture_active_mechanism": 0,
+    "discovery_queued_system": 1,
+    "architecture_active_mechanism": 1,
     "architecture_active_system": 0,
-    "architecture_queued_mechanism": 1,
+    "architecture_queued_mechanism": 0,
     "architecture_queued_system": 0,
     "preformal_eligible": 2,
     "preformal_ready": 1,
-    "viable_mechanism": 1,
+    "viable_executable_mechanism": 1,
     "fresh_formal_authority": 0,
     "recent_completed_main_endpoint_proxy_system": 11,
     "recent_completed_main_endpoint_proxy_mechanism": 10,
     "system_over_mechanism_exceptions": 0,
-    "classification_complete": "34/34",
+    "classification_complete": "35/35",
     "development_phase_counts": {
-      "OPEN_DEVELOPMENT": 3,
+      "OPEN_DEVELOPMENT": 4,
       "RESULT_EXPOSED_DEVELOPMENT": 31,
       "CONSUMED_ONE_WAY_CANONICAL": 0
     },
     "official_consumed_identities": 7,
-    "fresh_successor_generated_since_prior_analyst": 0,
-    "fresh_successor_generated_this_generation": 0,
-    "fresh_successor_admitted_this_generation": 0,
-    "cycle3_reassess_outcomes": "UNCHANGED_EXISTING_POST_CYCLE3_CONTINUATIONS_HAVE_EXPLICIT_INFORMATION_GAIN",
+    "fresh_successor_generated_since_prior_analyst": 1,
+    "fresh_successor_generated_this_generation": 1,
+    "fresh_successor_admitted_this_generation": 1,
+    "cycle3_reassess_outcomes": "UNCHANGED_EXISTING_POST_CYCLE3_CONTINUATIONS_REQUIRE_EXPLICIT_INFORMATION_GAIN_CAND34_CURRENT_CYCLE_BELOW_3",
     "rolling_theory_backward_actual_selections": "1/3",
     "shadow_standby_queue_size": 0
   },
-  "canonical_inheritance": "Candidates 1-6 and 8-33 inherit all mandatory Funnel v2.1 fields unchanged from R88. Candidate 33 remains SYSTEM/RESULT_EXPOSED_DEVELOPMENT/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED. Candidate 7 and candidate 34 are updated below.",
+  "canonical_inheritance": "Candidates 1-6 and 8-33 inherit all mandatory Funnel v2.1 fields unchanged from R89. Candidate 33 remains SYSTEM/RESULT_EXPOSED_DEVELOPMENT/TERMINAL_FOR_CURRENT_OBJECT/NOT_QUEUED. Candidate 7 is unchanged on H7 R5 FORMAL hold. Candidate 34 is updated for exact-head Architecture R1 technical closure and R2 authorization. Candidate 35 is new.",
   "canonical_overrides": {
     "7": {
       "id": "CAND-H7-RESPONSIBILITY",
@@ -141,8 +151,8 @@
       "previous_revision_preserved": "H7-FORMAL-R4-REPRODUCIBLE-RUNTIME-PACKAGE-LOCK-AND-PREIDENTITY-REVALIDATION",
       "cycle_count": 12,
       "cycle_status": "PREIDENTITY_COMPLETE_FORMAL_HOLD_PENDING_PFR1_PROVENANCE",
-      "information_gain_rationale": "Cycle12 established that the byte-identical content-addressed runtime and frozen executor/components are functionally realizable under the prospectively versioned R5 identity/provisioning split without producing a scientific result.",
-      "promotion_rejection_reassess_condition": "Do not perform more H7 scientific development merely to stay active. Resolve PF-R1 machine authority and preserve the existing PF-R1 bytes without rerun/reconstruction/rescore, then require a fresh Analyst generation to re-fetch this exact R5 source/workflow state before any one-way authorization. Any scientific-field or claim-capable runtime change requires explicit versioned reassessment."
+      "information_gain_rationale": "Cycle12 established exact content-addressed runtime and frozen executor/component functional realization under the prospectively versioned R5 identity/provisioning split without scientific result production.",
+      "promotion_rejection_reassess_condition": "Do not perform more H7 scientific development merely to stay active. Resolve PF-R1 machine authority and preserve existing PF-R1 bytes without rerun/reconstruction/rescore, then require a fresh Analyst generation to re-fetch unchanged exact R5 source/workflows and one-way gates before any FORMAL authorization. Any scientific-field or claim-capable runtime change requires explicit versioned reassessment."
     },
     "34": {
       "id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
@@ -155,18 +165,44 @@
       "hold_class": null,
       "hold_reason": null,
       "terminal_state": "NONTERMINAL",
-      "queue_state": "QUEUED_FOR_MAIN_ARCHITECTURE_STUDY",
+      "queue_state": "MAIN_ACTIVE_ARCHITECTURE_R2_AUTHORIZED_PENDING_MAILBOX_LEASE_RECONCILIATION",
       "system_priority_exception": {
         "used": false
       },
       "candidate_source": "SUB_THEORY_BACKWARD_QUESTION_FORMATION",
       "development_phase": "OPEN_DEVELOPMENT",
-      "development_revision": "ARCHITECTURE-R1_AUTHORIZED",
-      "cycle_count": 1,
-      "information_gain_rationale": "Discovery R1 now defines an explicit lagged route object, a bounded K<=12 deterministic edge set, transmission-null and +1.0ms delay interventions, matched/sham and prior-lesion reductions, a quiescent pre-intervention boundary and an equivalence-class falsifier. Architecture can now test reachability/instrumentation without assuming the route claim is true.",
-      "promotion_rejection_reassess_condition": "Remain NOT_READY until NON_EVIDENTIARY Architecture demonstrates a fail-closed quiescent-anchor inspector, deterministic target/control construction, exact response-signature serialization and prospective parameter freeze. Do not require beating reductions to become READY. If quiescence is unreachable within the fixed 256ms cap, controls cannot be matched, or alternatives remain observationally identical under the bounded family, reassess/close rather than extend post-result or manufacture unique topology.",
+      "development_revision": "ARCHITECTURE-R2_MEASUREMENT_CONTRACT_CLOSURE_AUTHORIZED",
+      "cycle_count": 2,
+      "cycle_status": "ARCH_R1_TECHNICAL_REACHABILITY_CLOSED_EXACT_HEAD_GREEN_ARCH_R2_AUTHORIZED",
+      "information_gain_rationale": "Architecture R1 durably demonstrated fail-closed quiescent-anchor, bounded target-edge/control construction, intervention primitives, lagged opportunity arcs and deterministic signature serialization with exact-head green CI. R2 has prospective information gain because the scientific checkpoint/prototype selection, response observables/window, execution schedule and reduction/equivalence decision contract remain unresolved but can be frozen without outcomes.",
+      "promotion_rejection_reassess_condition": "Remain NOT_READY until Architecture R2 prospectively freezes exact checkpoint/prototype selection, response observables/window, execution schedule, reduction panel, resource bounds and equivalence-class falsifier and validates only non-result contract/instrumentation. If outcome knowledge is needed, the fixed 256ms anchor must be extended after observation, matched controls are unreachable, or alternatives require stronger post-outcome interventions, STOP and reassess. READY must not require prior scientific victory.",
       "fresh_successor_relation": "FRESH_MECHANISM_SUCCESSOR_ASSEMBLY_CAUSAL_SELECTIVITY_FAMILY_NOT_REOPENING_CAND23_CAND24_CAND26",
-      "next_cycle": 2
+      "architecture_r1_head": "de712b2c3bdbb29c719773c609e884ed9b10e40b",
+      "architecture_r1_ci": 35799700625
+    },
+    "35": {
+      "id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
+      "question": "At a prospectively fixed queue-empty post-drive anchor, does silent v0.5 unit potential and/or adaptation causally alter the response to a fixed weak or ambiguous cue when learned state, topology, weights and cue bytes are otherwise identical?",
+      "phenomenon": "Queue-free silent physical state changes later cue sensitivity",
+      "target_layer": "DISCOVERY",
+      "claim_ceiling": "SYSTEM",
+      "preformal_eligible": false,
+      "preformal_readiness": "NOT_APPLICABLE",
+      "hold_class": null,
+      "hold_reason": null,
+      "terminal_state": "NONTERMINAL",
+      "queue_state": "QUEUED_FOR_SUB_DISCOVERY_R1",
+      "system_priority_exception": {
+        "used": false
+      },
+      "candidate_source": "SUB_QUESTION_FORMATION_DISCOVERY",
+      "development_phase": "OPEN_DEVELOPMENT",
+      "development_revision": "DISCOVERY-R1_AUTHORIZED",
+      "cycle_count": 0,
+      "information_gain_rationale": "The seed asks a new later-cue sensitivity question rather than empty-input autonomous continuation and provides direct potential/adaptation null interventions plus ordinary local threshold/decay reductions. Negative results close queue-free priming; ordinary-reduction results prevent hidden-mechanism overclaiming.",
+      "promotion_rejection_reassess_condition": "Discovery R1 must prospectively freeze prime trajectory and queue-empty anchor, cue bytes/timing, potential/adaptation reset scope, complete response signature and reduction panel before candidate execution. If no residual state exists at the fixed anchor or ordinary local threshold/decay semantics fully explain the phenomenon, close at SYSTEM scope. Any later MECHANISM question requires a fresh candidate ID, independently motivated residual and prospective contract; never same-object uplift.",
+      "fresh_successor_relation": "FRESH_SYSTEM_SUCCESSOR_ENDOGENOUS_CONTINUATION_FAMILY_NOT_REOPENING_CAND11",
+      "next_cycle": 1
     }
   },
   "system_terminal_successor_accounting": {
@@ -176,11 +212,8 @@
     "unrealized_fresh_system_potentials": 16,
     "fresh_mechanism_successors_from_system_terminalizations": 0,
     "none": 3,
-    "none_candidates": [
-      14,
-      27,
-      28
-    ]
+    "none_candidates": [14, 27, 28],
+    "note": "Candidate35 is a new nonterminal SYSTEM successor from the MECHANISM-terminal endogenous-continuation family and does not alter SYSTEM-terminal accounting."
   },
   "h7": {
     "exact_decision": "STOP_H7_FORMAL_ONEWAY_R5_PREIDENTITY_COMPLETE_PENDING_PF_R1_SCHEMA_V2_MACHINE_AUTHORITY_AND_EXACT_BYTE_DURABLE_PRESERVATION_THEN_REQUIRE_FRESH_ANALYST_AUTHORIZATION",
@@ -189,100 +222,80 @@
     "r5_status": "PREIDENTITY_COMPLETE_EXACT_HEAD_GREEN_NON_EVIDENTIARY_FORMAL_HOLD",
     "dedicated_preidentity_run": 35794233687,
     "generic_ci_run": 35794233612,
-    "dedicated_preidentity_conclusion": "success",
-    "generic_ci_conclusion": "success",
-    "analyst_reviewed_final_claim_capable_source_sha": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "component_bindings": {
-      "scientific_executor_blob": "f323df048f5479cc80ba4c129a40b0957503180b",
-      "r3_contract_runtime_module_blob": "9bde5379542ecca84157e82868abe679e0099e31",
-      "r3_raw_preserve_post_preserve_adapter_blob": "37c9c46febba1baba5580ed1aa803dcc483bef66",
-      "frozen_scientific_scorer_blob": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9"
-    },
-    "scientific_runtime_identity": {
-      "lock_sha256": "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583",
-      "manifest_sha256": "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",
-      "versions_sha256": "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575",
-      "python_version": "3.11.16",
-      "torch_distribution_version": "2.13.0",
-      "torch_module_version": "2.13.0+cu130",
-      "torch_git_version": "cf30153c4c131c8164ee7798e5022d810682e2cb",
-      "torch_cuda_build_version": "13.0"
-    },
-    "latest_provisioning_observation": {
-      "runner_image_version": "20260920.314.1",
-      "platform_release": "6.17.0-1022-azure",
-      "torch_distribution_record_sha256": "b9a17b95c705f9fc71a16773e139f80cfd2e7b0f00f541f298a69abfde8d76af",
-      "classification": "PROVISIONING_PROVENANCE_NOT_SCIENTIFIC_IDENTITY"
-    },
-    "synthetic_probe": {
-      "protected_evaluation_accessed": false,
-      "scientific_result": null,
-      "scoring_performed": false
-    },
-    "one_way_material_absent": true,
-    "r4_status": "PRESERVED_UNCHANGED_RESULT_EXPOSED_DEVELOPMENT_HISTORY_NO_REBIND",
-    "forbidden_before_future_fresh_analyst_one_way_authority": [
-      "evaluation commitment",
-      "FORMAL identity",
-      "STARTED",
-      "evaluation-seed reveal",
-      "protected evaluation",
-      "result-bearing workflow",
-      "official scoring",
-      "scientific preserve/evidence creation"
+    "one_way_material_present": false,
+    "blockers": [
+      "PF-R1 matching schema-v2 Utility machine authority absent",
+      "PF-R1 exact existing bytes not durably preserved",
+      "fresh later Analyst one-way authorization absent"
+    ],
+    "nonblocking_governance_fact": "repository ruleset count remains zero but is not a scientific prerequisite under HUMAN-20260919-002"
+  },
+  "candidate34": {
+    "exact_decision": "GO_CAND34_ARCHITECTURE_R2_PROSPECTIVE_MEASUREMENT_EXECUTION_AND_REDUCTION_CONTRACT_CLOSURE_NON_EVIDENTIARY_STOP_BEFORE_RESPONSE_BEARING_SCIENTIFIC_TEST_PREFORMAL_OR_FORMAL",
+    "r1_head": "de712b2c3bdbb29c719773c609e884ed9b10e40b",
+    "r1_ci": 35799700625,
+    "r1_technical_reachability_closed": true,
+    "r1_scientific_result_produced": false,
+    "r2_authorized": true,
+    "r2_allowed_scope": [
+      "freeze exact checkpoint/prototype selection",
+      "freeze pre-intervention anchor and execution schedule",
+      "freeze complete response observables and measurement window",
+      "freeze reduction/equivalence decision contract",
+      "freeze resource and fail-closed reachability bounds",
+      "contract/schema/instrumentation and synthetic non-result validation"
+    ],
+    "r2_forbidden_scope": [
+      "response-bearing candidate experiment",
+      "PRE_FORMAL execution",
+      "outcome-dependent control/intervention/observable redesign",
+      "post-observation extension of 256ms quiescence cap",
+      "FORMAL action"
     ]
   },
+  "candidate35": {
+    "exact_decision": "GO_CAND35_SYSTEM_DISCOVERY_R1_QUESTION_CONTRACT_ONLY_NON_EVIDENTIARY",
+    "source_seed": "QSEED-V05-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING-01",
+    "admitted": true,
+    "claim_ceiling": "SYSTEM",
+    "reason_not_mechanism": "Current bounded object is known v0.5 physical potential/adaptation carryover and has an obvious local threshold/decay explanation; no independently motivated computational-principle residual is yet established.",
+    "discovery_execution_authorized": false,
+    "contract_closure_authorized": true
+  },
+  "discovery_dispositions": {
+    "sub_r89_queue_free_subthreshold_seed": "ADMITTED_AS_CAND35_SYSTEM_DISCOVERY",
+    "admission_reason": "distinct from endogenous empty-input continuation; bounded direct state interventions; explicit ordinary reductions and falsifier; reachable; independent of H7 and candidate34; informative if negative",
+    "theory_backward_denominator_effect": "NONE_QFD_AND_ANALYST_ADMISSION_ARE_NOT_AUTONOMOUS_SELECTION_EXECUTION"
+  },
+  "input_reviews": {
+    "control": "R40 strategic prior consumed; stale lint-failing candidate34 head superseded by direct ref/workflow truth; H7 one-way STOP retained.",
+    "literature": "R34 interventional-equivalence reduction retained; no current H7 rewrite; candidate34 must not overclaim unique topology.",
+    "independent_audit": "R7 retained; prediction-only raw then immutable preserve then protected target-side scoring remains hard floor.",
+    "methodology": "R76 consumed; H7 R5 preidentity completion is development closure not evidence; PF-R1 and final one-way gates remain hard; candidate34 remains non-evidentiary until contract closure.",
+    "repository_steward": "G11 consumed; no immutable incident; rulesets zero; earlier candidate34 materialization visibility gap now superseded by direct branch ref.",
+    "utility": "Fail-closed state consumed; no assignment/current decision; request proposal-only; PF-R1 preservation unexecuted; no duplicate request."
+  },
   "main_sub_allocation": {
-    "h7_lane": "FORMAL_HOLD_R5_PREIDENTITY_COMPLETE_PENDING_PFR1_PROVENANCE_GATE",
-    "main_lane": "CAND34_ASSEMBLY_TEMPORAL_ROUTE_IDENTIFIABILITY_ARCHITECTURE_R1_NON_EVIDENTIARY",
-    "sub_lane": "INDEPENDENT_THEORY_BACKWARD_MECHANISM_DISCOVERY_SCAN_ONLY_WHEN_FRESH_INFORMATION_GAIN_EXISTS",
-    "sub_independence": "PASS_NO_MAIN_DEPENDENCY",
-    "system_priority_exception_used": false
+    "MAIN": "CAND34_ASSEMBLY_TEMPORAL_ROUTE_IDENTIFIABILITY_ARCHITECTURE_R2_MEASUREMENT_CONTRACT_NON_EVIDENTIARY_AFTER_LEASE_NO_CLOBBER_RECONCILIATION",
+    "SUB": "CAND35_QUEUE_FREE_SUBTHRESHOLD_STATE_CAUSAL_PRIMING_DISCOVERY_R1_NON_EVIDENTIARY",
+    "sub_is_main_dependency": false,
+    "system_priority_exception": {
+      "used": false
+    }
   },
-  "methodology": {
-    "generation": "METHCAL-20260923T073000+0900-R75-C8D41B6E",
-    "material_change": true,
-    "live_gate": "R5 preidentity realization is valid development closure only; exact post-repair head must be independently reviewed/bound before one-way. Claim-capable native/runtime dimensions omitted from scientific identity remain a watch item. PF-R1 durable bytes and fresh one-way authority remain mandatory."
-  },
-  "literature": {
-    "generation": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
-    "genuinely_new_information": true,
-    "current_h7_contract_change_authorized": false,
-    "claim_guardrail": "INTERVENTION_EFFECT_DOES_NOT_IMPLY_UNIQUE_ROUTE_GRAPH; UNIQUE_TOPOLOGY_REQUIRES_FRESH_PROSPECTIVE_SEPARATING_DESIGN_AND_EXPLICIT_TEMPORAL_CAUSAL_OBJECT"
-  },
-  "independent_audit": {
-    "generation": "AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4",
-    "live_integrity_floor": "PREDICTION_ONLY_RAW_THEN_IMMUTABLE_PRESERVE_THEN_TARGET_SIDE_SCORER",
-    "historical_h7_formal_evidence_exists": false
-  },
-  "repository_steward": {
-    "generation": "STEWARD-20260923T075000+0900-G11-6F3A9C21",
-    "scientific_authority": "NONE",
-    "ruleset_gap": true,
-    "immutable_ref_incident": false,
-    "candidate34_repository_materialization_visibility_gap": true,
-    "generic_equivalence_verifier_scientific_authority": false
-  },
-  "utility": {
-    "pfr1_request_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
-    "status": "HOLD_PF_R1_PRESERVATION_EXECUTION_PENDING_CONTROL_SCHEMA_V2_UTILITY_ASSIGNMENT_AND_MATCHING_DECISION",
-    "assignment_pointer_clean_idle": true,
-    "matching_assignment_exists": false,
-    "matching_control_decision_exists": false,
-    "request_file_status": "PROPOSED_NOT_APPROVED",
-    "preservation_executed": false,
-    "duplicate_request_created": false,
-    "rerun_reconstruction_rescore_allowed": false,
-    "artifact_workflow_run_id": 35695286240,
-    "artifact_id": 10680620448,
-    "archive_sha256": "db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d"
+  "theory_backward": {
+    "rolling_actual_autonomous_selections": ["MECHANISM", "SYSTEM", "SYSTEM"],
+    "share": "1/3",
+    "sub_r89_qfd_denominator_excluded": true,
+    "analyst_candidate35_admission_denominator_excluded": true,
+    "next_unassigned_autonomous_target": "THEORY_BACKWARD_MECHANISM_DISCOVERY_UNLESS_NO_COHERENT_MECHANISM_TARGET"
   },
   "phenomenon_shadow_metrics": {
     "mode": "PREFETCH_SHADOW",
     "last_full_scan_generation": "EVA-20260923T065834+0900-R88-D5A7C219",
     "last_scan_reason": "LOW_RATE_WINDOW_OPEN_PLUS_MATERIAL_LITERATURE_R34_AND_SUB_R87_QFD_REVALIDATION_ZERO_NEW_SHADOW_RETAINED",
     "scans_skipped_due_to_low_rate_throttle_this_generation": 1,
-    "skip_reason": "R5 closure/Methodology R75 are active-H7 integrity/calibration deltas, and candidate34 Discovery is already canonical; no genuinely new independent phenomenon surface warrants an early shadow scan.",
+    "skip_reason": "R90 is still inside the low-rate interval after R88. Candidate34 exact-head technical closure is MAIN-owned and candidate35 came through SUB canonical question formation; no genuinely new independent phenomenon surface warrants an early shadow scan.",
     "proposals_generated_this_scan": 0,
     "proposals_generated_cumulative": 7,
     "current_retained": 0,
@@ -296,17 +309,9 @@
     "later_admissions": 1,
     "executed_shadow_origin_candidates": 1,
     "standby_queue_size": 0,
-    "executed_shadow_origin_information_gain_summary": "No new shadow-origin execution or disposition change in R89. Candidate34 is theory-backward SUB-origin, not shadow-origin."
+    "executed_shadow_origin_information_gain_summary": "No new shadow-origin execution or disposition change in R90. Candidate34 and candidate35 are SUB-origin/canonical-supply objects, not shadow-origin."
   },
   "shadow_standby_queue": [],
-  "discovery_theory_backward": {
-    "rolling_actual_selections": "1/3",
-    "latest_sub_state": "CAND34_DISCOVERY_R1_CONTRACT_COMPLETE_RECOMMEND_PROMOTE_ARCHITECTURE",
-    "new_canonical_autonomous_selection_this_generation": false,
-    "candidate34_allocated_run_denominator_excluded": true,
-    "candidate34_theory_backward_origin": true,
-    "next_sub_policy": "Search independently only when fresh information gain exists; do not duplicate candidate34 Architecture or H7 blockers."
-  },
   "consumed_identities": [
     "c19-external-v2-official-v4",
     "c19-r1-revision-authority-official-v1",
@@ -316,62 +321,82 @@
     "ni01-no-ignition-selective-prediction-official-v1",
     "pd01-long-history-fading-memory-official-v1"
   ],
-  "new_identity_consumption": 0,
-  "blockers": [
-    "PF-R1 schema-v2 Utility assignment/current decision is absent and exact-byte NON_EVIDENTIARY preservation remains unexecuted.",
-    "Fresh H7 FORMAL one-way authority remains zero; current R89 explicitly does not authorize identity/evaluation entry.",
-    "Repository rulesets remain absent.",
-    "Candidate34 has no dedicated research branch yet; Architecture implementation/reachability is not materialized.",
-    "For any future H7 one-way review, any change after exact R5 head 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80 requires re-fetch/rebinding and repair classification."
-  ],
   "top3": [
     {
       "rank": 1,
-      "action": "Promote candidate #34 to NON_EVIDENTIARY Architecture Study and prospectively close the quiescent-anchor inspector, deterministic K<=12 edge/control construction, transmission-null/+1.0ms timing intervention plumbing, response-signature serialization and parameter freeze without testing the scientific success claim.",
+      "action": "Candidate34 prospective checkpoint/prototype, response-observable/window, execution schedule and reduction/equivalence contract closure",
       "claim_ceiling": "MECHANISM",
       "development_phase": "OPEN_DEVELOPMENT",
-      "action_type": "NEW_ARCHITECTURE_CYCLE_AFTER_DISCOVERY_REASSESS",
-      "decision": "GO_NON_EVIDENTIARY_ARCHITECTURE"
+      "type": "NEW_ARCHITECTURE_CYCLE",
+      "decision": "GO_NON_EVIDENTIARY"
     },
     {
       "rank": 2,
-      "action": "Resolve the existing PF-R1 preservation request through matching schema-v2 Control/Utility machine authority and preserve only the already-existing exact bytes/hashes; no rerun, reconstruction, regeneration or rescore.",
-      "claim_ceiling": "PROVENANCE_ONLY",
-      "development_phase": "RESULT_EXPOSED_PROVENANCE",
-      "action_type": "FORMAL_GATE_AUTHORITY_CLOSURE",
-      "decision": "HOLD_EXECUTION_PENDING_MACHINE_AUTHORITY"
+      "action": "Candidate35 queue-free subthreshold-state question-contract closure",
+      "claim_ceiling": "SYSTEM",
+      "development_phase": "OPEN_DEVELOPMENT",
+      "type": "FRESH_SUCCESSOR_DISCOVERY",
+      "decision": "GO_NON_EVIDENTIARY"
     },
     {
       "rank": 3,
-      "action": "H7 R5 FORMAL one-way entry: create evaluation commitment/identity/STARTED and protected result path only in a later fresh Analyst generation after PF-R1 preservation and exact R5 state re-fetch.",
-      "claim_ceiling": "MECHANISM",
-      "development_phase": "FUTURE_CONSUMED_ONE_WAY",
-      "action_type": "FORMAL_ONE_WAY",
-      "decision": "STOP"
+      "action": "PF-R1 existing-request schema-v2 machine-authority closure and exact existing-byte preservation",
+      "claim_ceiling": null,
+      "development_phase": "RESULT_EXPOSED_PROVENANCE",
+      "type": "FORMAL_PROVENANCE_GATE",
+      "decision": "HOLD_EXECUTION_PENDING_MACHINE_AUTHORITY"
     }
   ],
-  "number_one_go_stop": "GO_CAND34_NON_EVIDENTIARY_ARCHITECTURE_R1; H7_FORMAL_ONEWAY_STOP",
-  "one_way_formal_status": "STOP",
-  "prospective_contingency_tree": [
-    "Candidate34 quiescent inspector reaches an empty pending-event queue within the prospectively fixed <=256ms cap and deterministic target/control construction is reachable -> continue NON_EVIDENTIARY Architecture serialization/freeze closure.",
-    "Candidate34 quiescence is not reachable within the fixed cap, intervention plumbing requires changing stable scientific dynamics, or matched controls cannot be defined without outcome knowledge -> STOP/reassess; do not extend the cap or redesign after observing preferred results.",
-    "Candidate34 structurally distinct alternatives remain identical under the entire bounded family -> unique-route identification is falsified; collapse to the interventional equivalence class or close the feature rather than rescue it.",
-    "PF-R1 matching machine authority absent -> Utility remains no-op and duplicate request is forbidden.",
-    "PF-R1 matching machine authority later appears -> preserve only existing workflow 35695286240 / artifact 10680620448 exact bytes after hash verification; retrieval failure means STOP, not rerun/reconstruction/rescore.",
-    "PF-R1 preservation completes -> a later fresh Analyst generation must re-fetch exact R5 source/workflows/refs; if unchanged and all integrity gates remain closed, it may consider prospective one-way authorization.",
-    "Any post-R89 H7 code/source/runtime/scorer/preserver/input change, even if labeled invariant, changes the exact head and requires fresh exact-head review/binding before one-way.",
-    "Any claim/estimand/world/sample/seed-exclusion/comparator/intervention/threshold-tolerance/bootstrap/decision/hypothesis/falsifier/success-criterion change -> explicit versioned SCIENCE_AFFECTING reassessment; no same-identity rescue."
-  ],
-  "mutations_this_generation": {
+  "prospective_contingency_tree": {
+    "cand34": [
+      "If no-clobber/lease reconciliation confirms de712 as uncontested head, Architecture R2 may proceed on contract/schema/instrumentation and synthetic non-result validation only.",
+      "If exact checkpoint/prototype selection, response observables/window, execution schedule, reductions, resource bounds and equivalence-class falsifier can be frozen without outcomes, continue and consider READY only when the next PRE_FORMAL test is well-defined and informative.",
+      "If outcome knowledge is needed to choose fields, fixed 256ms quiescence cap must be extended after observation, matched controls are unreachable, or stronger interventions are needed post-outcome, STOP and return to Analyst.",
+      "If later bounded signatures cannot distinguish route alternatives, close/reframe at interventional-equivalence-class scope rather than manufacture unique topology."
+    ],
+    "cand35": [
+      "Discovery may freeze prime trajectory/queue-empty anchor, cue bytes/timing, state reset scope, response signature and ordinary reductions only.",
+      "If no measurable residual state exists at the prospectively fixed anchor or ordinary local threshold/decay semantics fully explain the phenomenon, close the SYSTEM object.",
+      "Any later MECHANISM question requires a fresh successor candidate ID and prospective contract."
+    ],
+    "h7": [
+      "Utility remains no-op while matching schema-v2 assignment/current decision is absent.",
+      "If valid authority later appears, preserve only existing PF-R1 exact bytes/hashes; retrieval failure is STOP and never rerun/reconstruction/rescore.",
+      "After PF-R1 preservation, still STOP in that run; a later fresh Analyst generation must re-fetch unchanged R5 exact source/workflows and all one-way gates before prospective FORMAL authority."
+    ]
+  },
+  "current_blockers": {
+    "H7": [
+      "PF-R1 schema-v2 machine authority absent",
+      "PF-R1 exact-byte durable preservation unexecuted",
+      "fresh later FORMAL one-way Analyst authorization absent"
+    ],
+    "candidate34": [
+      "scientific checkpoint/prototype selection not frozen",
+      "complete response-observable set and measurement window not frozen",
+      "exact execution/reduction/equivalence contract not frozen"
+    ],
+    "candidate35": [
+      "prime trajectory and queue-empty anchor not frozen",
+      "cue bytes/timing not frozen",
+      "state-reset scope, response signature and reduction panel not frozen"
+    ]
+  },
+  "utility_request_created": null,
+  "mutations": {
     "scientific_experiments_executed": 0,
     "research_workflows_dispatched": 0,
     "one_way_identities_consumed": 0,
     "research_prs_merged": 0,
-    "immutable_evidence_or_control_or_preserve_refs_mutated": 0,
+    "immutable_refs_modified": 0,
+    "evidence_preserve_control_refs_modified": 0,
     "scheduler_definitions_modified": 0,
-    "utility_requests_created": 0,
-    "historical_pass_fail_rewritten": 0,
-    "scientific_research_branches_mutated": 0,
-    "canonical_candidate_metadata_promotions": 1
+    "utility_authority_created": 0,
+    "historical_pass_fail_rewritten": 0
+  },
+  "persistence": {
+    "latest_path": "analysis/orchestrator/latest.md",
+    "state_path": "analysis/orchestrator/state.json",
+    "history_path": "analysis/orchestrator/history/2026-09-23/0900.md"
   }
 }
