@@ -1,54 +1,58 @@
-# MAIN Relay — Candidate #35 R100 response preflight advanced; waiting on CI
+# MAIN Relay — Candidate #35 first bounded Architecture batch exposed and preserved
 
 - schema_version: `2`
-- generation: `MAIN-20260923T235027+0900-RELAY-CAND35-R100-RESPONSE-PREFLIGHT-WAITING-CI`
+- generation: `MAIN-20260923T235628+0900-RELAY-CAND35-R100-ONEBATCH-EXPOSED-WAITING-ANALYST`
 - execution_mode: `RELAY`
 - status: `WAITING_EXTERNAL`
 - candidate: `CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING`
 - research_layer: `ARCHITECTURE_STUDY`
 - Analyst authority: `EVA-20260923T225720+0900-R100-C6A2F18D`
-- development_phase: `OPEN_DEVELOPMENT`
+- development_phase preserved from Analyst: `OPEN_DEVELOPMENT`
 - development_revision: `ARCHITECTURE-R2-EXACT-CANDIDATE-SURFACE-AND-EXECUTOR-BINDING-NONRESULT`
-- implementation_revision: `PRESERVATION-R1-RAW-BEFORE-READ-EXCLUSIVE-CREATE-COMPLETE`
 - cycle: `3`
 - claim ceiling: `SYSTEM`
 
 ## Authority / Funnel
 
-R100 is current and prospectively authorizes exactly one bounded five-arm Candidate #35 Architecture development response only after exact R100 authority repin and a green NON_RESULT preflight. The fixed arm order is `SHAM_STATE`, `POTENTIAL_NULL`, `ADAPTATION_NULL`, `JOINT_SUBTHRESHOLD_NULL`, `DELAYED_SHAM_32MS`. Raw artifacts must be exclusive-created before any return/read/interpretation, and authority is exhausted at the first complete batch result exposure. Automatic rerun, retune, or rescore is not authorized.
+R100 remained current through the result-bearing action. It authorized exactly one bounded five-arm Architecture development response after exact R100 binding, green NON_RESULT preflight and exclusive raw-before-read preservation. Generic CI passed on the exact bound implementation head before execution. The one-batch authority is now exhausted at the first complete batch result exposure.
 
-The R100 Funnel fields remain exact: `claim_ceiling=SYSTEM`, `preformal_eligible=false`, `preformal_readiness=NOT_APPLICABLE`, `hold_class=null`, `hold_reason=null`, `terminal_state=NONTERMINAL`, `queue_state=QUEUED_FOR_MAIN_ARCHITECTURE_ONE_BOUNDED_RESPONSE`, `system_priority_exception.used=true` with reason `NO_EXECUTABLE_MECHANISM_WHILE_H7_FORMAL_INTEGRITY_CAPABILITY_BLOCKED`, `development_phase=OPEN_DEVELOPMENT`, and the R100 development revision above. Relay did not create or change the development phase and did not upgrade the SYSTEM object to MECHANISM.
+The R100 Funnel fields remain exact and are not reinterpreted by Relay: `claim_ceiling=SYSTEM`, `preformal_eligible=false`, `preformal_readiness=NOT_APPLICABLE`, `hold_class=null`, `hold_reason=null`, `terminal_state=NONTERMINAL`, `queue_state=QUEUED_FOR_MAIN_ARCHITECTURE_ONE_BOUNDED_RESPONSE`, `system_priority_exception.used=true` with reason `NO_EXECUTABLE_MECHANISM_WHILE_H7_FORMAL_INTEGRITY_CAPABILITY_BLOCKED`, `development_phase=OPEN_DEVELOPMENT`, and the R100 development revision above.
 
-H7 remains blocked on the protected-sidecar capability. No H7 FORMAL identity, STARTED marker, protected evaluation, or result was touched.
+A complete development result is now exposed. R100 requires post-result `RESULT_EXPOSED_DEVELOPMENT` semantics, but Relay may not create or change `development_phase`; therefore the canonical field remains the exact Analyst-owned `OPEN_DEVELOPMENT` value here and the phase transition is deferred to a fresh Evidence Analyst generation. No SYSTEM→MECHANISM uplift occurred.
 
-## Work performed
+## Execution / preservation
 
-Relay re-fetched R100, the MAIN lease, direct Candidate #35 ref and collision context. The prior MAIN lease was completed, not a fresh PRIMARY RUNNING lease on Candidate #35, and there was no Fast Forge same-object collision.
+Before execution, Relay re-read the exact Analyst generation, MAIN lease, direct Candidate #35 ref and collision state. There was no fresh PRIMARY RUNNING same-object lease and no Fast Forge same-object collision. Scientific source bytes were unchanged.
 
-Relay then performed only science-invariant response plumbing: the existing preservation wrapper was repinned from R99 to exact R100 authority/queue-state provenance, and a fail-closed response runner was added. The runner binds exact R100 generation/commit, exact unchanged scientific source head/blob, the fixed five-arm order, package/runtime/component/serializer/preservation target, and exclusive raw-before-read semantics. The scientific source itself remains unchanged at source head `8ea6581544c642ad74f1a95955ab2c5f795afccc`, blob SHA-1 `4055f42483d5bba73eef51b1753a2c19f18d5ab5`.
+The response implementation was bound to exact green head `b5f312683d50ed3a086348b62770fc8923c78046`; the scientific source remained `8ea6581544c642ad74f1a95955ab2c5f795afccc` with blob SHA-1 `4055f42483d5bba73eef51b1753a2c19f18d5ab5`.
 
-Current implementation head is `b5f312683d50ed3a086348b62770fc8923c78046`. Generic CI run `35876830334` for that exact head is currently in progress. It is NON_RESULT. No candidate response or result-bearing workflow has been executed or dispatched.
+The first launch workflow failed at parse time before any job or candidate response. Relay repaired workflow syntax only, with no science change. The repaired one-batch workflow `35877765051` succeeded and executed the frozen arm order exactly once: `SHAM_STATE`, `POTENTIAL_NULL`, `ADAPTATION_NULL`, `JOINT_SUBTHRESHOLD_NULL`, `DELAYED_SHAM_32MS`.
+
+Every raw arm artifact was preserved before interpretation to exclusive Git ref `raw/cand35-r100-onebatch-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a`. The preserved completion manifest records `complete_batch=true`, `response_authority_exhausted=true`, `official_scoring_performed=false`, `preformal_execution_performed=false`, `formal_action_performed=false`, `confirmatory_credit=0`, and evidentiary status `DEVELOPMENT_ONLY_UNSCORED_ARCHITECTURE_RESPONSE`. A second Actions artifact copy exists as artifact `10759196572`.
 
 ## Scientific / evidentiary status
 
-New scientific result: `false`.
+New scientific result: `true`, strictly as an unscored development Architecture response.
 
-- candidate response executed: `false`
-- scientific raw response created: `false`
+- complete frozen five-arm batch: `true`
+- raw preserved before interpretation: `true`
+- response authority exhausted: `true`
+- official scoring: `false`
+- PASS/FAIL assigned by Relay: `false`
+- mechanism credit assigned by Relay: `false`
 - PRE_FORMAL execution: `false`
 - FORMAL identity created/consumed: `false`
 - STARTED created: `false`
 - protected/held-out evaluation accessed: `false`
-- official scoring: `false`
-- evidence/formal/sealed/freeze/immutable scientific refs mutated: `false`
+- confirmatory credit: `0`
 - historical official consumed identities: `7`, unchanged
 - prior scientific results preserved unchanged: `true`
-- evidentiary status: `NON_EVIDENTIARY_ARCHITECTURE_RESPONSE_PREFLIGHT_IMPLEMENTATION`
+- immutable/formal/sealed/evidence refs mutated: `false`
 
-No hypothesis, metric/scorer meaning, comparator, scientific threshold/tolerance, seed/exclusion policy, intervention, resource contract, falsifier, or success criterion changed.
+Relay does not interpret the preserved response, assign ordinary-reduction/mechanism status, rerun, retune, rescore, or alter any frozen scientific field after exposure.
 
-## Wait / next action
+## Stop / next action
 
-Wait reason: `R100_CAND35_RESPONSE_PREFLIGHT_IMPLEMENTATION_WAITING_FOR_EXACT_HEAD_GENERIC_CI`.
+Stop reason: `R100_FIRST_COMPLETE_CAND35_ARCHITECTURE_BATCH_RESULT_EXPOSED_AUTHORITY_EXHAUSTED`.
 
-Next MAIN action: after CI run `35876830334` completes successfully, re-read the exact Analyst generation, MAIN generation/lease, Candidate #35 direct refs and collision state. Only if R100 still governs the same object and no fresh PRIMARY collision exists, execute the single frozen five-arm Architecture batch with exclusive raw-before-read preservation and stop at first complete result exposure for fresh Evidence Analyst review. If CI fails, only a clearly science-invariant repair already permitted by R100 may be applied; otherwise stop safely.
+Next MAIN action: none until a fresh Evidence Analyst generation reviews the preserved raw batch, owns any required canonical `development_phase` transition, and explicitly authorizes a versioned successor or other continuation. Same-object Candidate #35 rerun/retune/rescore is STOP.
