@@ -1,7 +1,7 @@
-# MAIN Relay — H7 R102 NON_RESULT readiness waiting
+# MAIN Relay — H7 R102 protected-sidecar capability hold
 
 - schema_version: `2`
-- generation: `MAIN-20260924T005300+0900-RELAY-H7-R102-READINESS-WAITING-CI`
+- generation: `MAIN-20260924T005600+0900-RELAY-H7-R102-CAPABILITY-HOLD`
 - execution_mode: `RELAY`
 - status: `WAITING_EXTERNAL`
 - candidate: `CAND-H7-RESPONSIBILITY`
@@ -14,30 +14,26 @@
 
 ## Authority / Funnel
 
-R102 makes H7 the sole nonterminal canonical object and authorizes only science-invariant protected-sidecar / exact-authority plumbing followed by NON_RESULT readiness. H7 FORMAL remains STOP; even green readiness requires a later fresh Evidence Analyst before any one-way FORMAL action.
+R102 keeps H7 as the sole nonterminal canonical object and authorizes only science-invariant protected-sidecar / exact-authority plumbing followed by NON_RESULT readiness. H7 FORMAL remains STOP. Funnel fields remain unchanged: `preformal_eligible=true`, `preformal_readiness=READY`, `hold_class=FORMAL_INTEGRITY_CAPABILITY`, `terminal_state=NONTERMINAL_HOLD`, `queue_state=HOLD`, `system_priority_exception=false`, and `development_phase=RESULT_EXPOSED_DEVELOPMENT`.
 
-Funnel fields are preserved exactly for the current H7 object: `claim_ceiling=MECHANISM`, `preformal_eligible=true`, `preformal_readiness=READY`, `hold_class=FORMAL_INTEGRITY_CAPABILITY`, `hold_reason=protected sidecar handoff capability is missing; latest readiness failed before identity materialization`, `terminal_state=NONTERMINAL_HOLD`, `queue_state=HOLD`, `system_priority_exception=false`, and `development_phase=RESULT_EXPOSED_DEVELOPMENT`.
-
-Candidate #35 is terminal for its current object under R102. Relay performed no same-object Candidate #35 rerun, retune, rescore, or SYSTEM→MECHANISM uplift.
+Candidate #35 remains terminal for its current object. Relay performed no same-object Candidate #35 rerun, retune, rescore, or SYSTEM→MECHANISM uplift.
 
 ## Collision / freshness
 
-Before mutation, Relay re-fetched current R102, the MAIN lease, exact H7 scientific/controller refs, and Fast Forge for collision awareness. No fresh PRIMARY RUNNING lease was mutating H7 and no Fast Forge same-H7 collision was present. The exact H7 scientific source remains unchanged at `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`.
+Before the controller mutation and again before final persistence, Relay re-fetched current R102, the MAIN lease, exact H7 scientific/controller refs, and collision state. No fresh PRIMARY RUNNING lease was mutating H7. The H7 scientific source remains unchanged.
 
-After mutation, R102 was re-fetched and remained current.
-
-## Action
+## Action / result
 
 Repair/change classification: `SCIENCE_INVARIANT_AUTHORITY_PLUMBING_ONLY`.
 
-Relay changed only the H7 NON_RESULT readiness controller's exact Analyst pin to current R102. The scientific source and all frozen scientific semantics remained unchanged. The new controller head is `research/main-h7-r5-oneway-controller-r98@ccffe9af2c6d3e04c9d1c7e6a53045d4a569756e`.
+Relay changed only the NON_RESULT readiness controller's exact Analyst authority pin to current R102. Generic CI completed successfully. The readiness run then passed exact authority freshness, one-way namespace collision checks, exact scientific checkout, fixed R5 contract/blob validation, locked runtime recreation, and exact NON_RESULT preidentity validation.
 
-The push dispatched readiness workflow `35884741590` and generic CI `35884741827`. At this persistence point both are in progress. Readiness has already passed exact R102 freshness, H7 one-way namespace collision checks, exact scientific checkout, and fixed-component contract validation, and is recreating the locked runtime. It remains strictly non-result-bearing.
+It failed closed at the protected-sidecar handoff capability gate before identity materialization. No scientific contract or result was changed in response to that failure.
 
 ## Evidentiary / integrity status
 
 - new scientific result this run: `false`
-- evidentiary status: `NON_RESULT_READINESS_PLUMBING_ONLY`
+- evidentiary status: `NON_RESULT_READINESS_CAPABILITY_FAILURE_PRE_IDENTITY`
 - science-affecting change: `false`
 - prior scientific results preserved unchanged: `true`
 - new FORMAL identity created/consumed: `false`
@@ -49,6 +45,6 @@ The push dispatched readiness workflow `35884741590` and generic CI `35884741827
 
 ## Stop / next action
 
-Stop reason: `H7_R102_NONRESULT_READINESS_WORKFLOW_IN_PROGRESS`.
+Stop reason: `H7_R102_PROTECTED_SIDECAR_CAPABILITY_GATE_FAILED_PRE_IDENTITY`.
 
-Next MAIN action: wait for readiness completion. If green, stop for a fresh Evidence Analyst before FORMAL. If exact binding or protected-sidecar capability fails, remain fail-closed on the current capability HOLD; only science-invariant plumbing explicitly allowed by a current Analyst contingency may continue.
+Next MAIN action is external provisioning of the already-required protected sidecar handoff capability only. After that condition changes, a future MAIN/Relay run must re-fetch a fresh/current Evidence Analyst generation, MAIN lease, exact H7 refs and collision state before rerunning NON_RESULT readiness. H7 FORMAL remains STOP and no one-way identity may be created under R102 merely because the capability becomes available.
