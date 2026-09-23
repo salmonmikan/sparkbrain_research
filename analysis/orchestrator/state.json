@@ -1,31 +1,33 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260924T003800+0900-R102-CAND35-CALIBRATED",
-  "generated_at": "2026-09-24T00:38:00+09:00",
+  "generation_id": "EVA-20260924T010800+0900-R103-FORGE-DEFER-SCHEDULER-RED",
+  "generated_at": "2026-09-24T01:08:00+09:00",
   "role": "EVIDENCE_ANALYST_CANONICAL_PROMOTION_GATE",
   "scientific_execution_mode": "READ_ONLY",
+  "supersedes_generation_id": "EVA-20260924T003800+0900-R102-CAND35-CALIBRATED",
   "snapshot": {
     "repository": "salmonmikan/sparkbrain_research",
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_parent": "e50e0a91e25f2457d0b7152900a48cbdc5006485",
-    "control": "3c46617fba123704297d880a748c305c16a7dd01",
-    "main_relay": "21a8ee7b0ae85df57a0a35b70ad726e45252e259",
-    "methodology": "18a575e8c44a19e2c171d3b2f412a5a06bf8f328",
-    "independent_audit": "e8e527e1ed399bb26f926237931618d9b93056e0",
-    "literature": "0f0172635ecb99014f51232a88a32a4fc6b61c48",
+    "analyst_pre_generation_ref": "3d6abd17bbf8804d1656aca90b8ab17d67ab2472",
+    "control": "b5d799cff8baf61442b334971f7eb777cbd49a73",
+    "main_relay_mailbox": "fb5f1a0c65989698f89a4516538f7638103006f8",
+    "methodology": "d5c277b11a8a8b89271ca0572b8c51960fa7b9ad",
+    "external_research_audit": "d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c",
     "repository_steward": "1688778e30007f21162c6fd7c21a34b9a3071998",
     "utility": "c231c2652f1c824a276649a7b9b6d752c2b729ae",
     "research": {
       "h7_science": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-      "h7_controller": "f21dc7521af7413adcc46a2561271e0b8852f371",
+      "h7_controller": "ccffe9af2c6d3e04c9d1c7e6a53045d4a569756e",
       "cand34_response": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
       "cand35_live_branch": "62db3b437ffc26b931bbe5b9e78ca814bddbeb81",
       "cand35_frozen_scientific_source": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
       "cand35_bound_implementation": "b5f312683d50ed3a086348b62770fc8923c78046"
     },
     "forge": {
-      "branch": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
-      "latest_mailbox_generation": "FORGE-20260923T233625+0900-V05-CREDIT-LOCALITY-R100"
+      "branch_name": "forge/20260924-coordinate-null-local-witness",
+      "branch_head": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
+      "latest_mailbox_generation": "FORGE-20260924T003641+0900-COORDNULL-WITNESS-R101",
+      "mailbox_branch_head": "fb5f1a0c65989698f89a4516538f7638103006f8"
     },
     "raw_refs": {
       "cand35_r100_onebatch": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a"
@@ -56,20 +58,24 @@
         "role": "DEVELOPMENT_ARCHITECTURE_RESPONSE_ONLY"
       },
       "h7_latest_readiness": {
-        "run_id": 35857110884,
+        "run_id": 35884741590,
         "conclusion": "failure_pre_identity",
         "reason": "protected sidecar capability unavailable",
         "identity_created": false,
-        "identity_consumed": false
-      },
-      "methodology_r93_ci_at_snapshot": {
-        "run_id": 35882742435,
-        "status": "in_progress"
-      },
-      "literature_r40_ci_at_snapshot": {
-        "run_id": 35882836038,
-        "status": "in_progress"
+        "identity_consumed": false,
+        "started_created": false
       }
+    },
+    "live_scheduler_state": {
+      "primary_main_enabled": false,
+      "relay_enabled": false,
+      "evidence_analyst_enabled": true,
+      "fast_forge_enabled": true,
+      "utility_enabled": true,
+      "methodology_enabled": true,
+      "control_steward_enabled": true,
+      "external_research_audit_enabled": true,
+      "canonical_execution_capacity": 0
     }
   },
   "canonical_funnel": {
@@ -95,15 +101,15 @@
       "preformal_readiness": "READY",
       "effective_executable": false,
       "hold_class": "FORMAL_INTEGRITY_CAPABILITY",
-      "hold_reason": "protected sidecar handoff capability is missing; latest readiness failed before identity materialization",
+      "hold_reason": "protected sidecar handoff capability remains unavailable; latest readiness failed before identity materialization",
       "terminal_state": "NONTERMINAL_HOLD",
       "queue_state": "HOLD",
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "development_phase_correction": "PROSPECTIVE_CURRENT_STATE_CORRECTION_FROM_R101_OPEN_LABEL_NO_HISTORY_REWRITE",
       "formal_authority": "STOP",
       "formal_one_way_identity_status": "NOT_CREATED_NOT_CONSUMED",
       "allowed_next_change": "SCIENCE_INVARIANT_CAPABILITY_AND_AUTHORITY_PLUMBING_THEN_NON_RESULT_READINESS_ONLY",
-      "fresh_analyst_required_after_green_readiness": true
+      "fresh_analyst_required_after_green_readiness": true,
+      "scheduler_blocker": "NO_ENABLED_CANONICAL_MAIN_WORKER"
     },
     "CAND-34-ROUTE": {
       "claim_ceiling": "MECHANISM",
@@ -114,7 +120,7 @@
       "queue_state": "TERMINAL",
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
       "disposition": "REDUCIBLE",
-      "reason": "matched non-target and ordinary local transmission/timing dynamics explain the observed development response; no same-object rescue"
+      "same_object_rescue": "STOP"
     },
     "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING": {
       "candidate_source": "CANONICAL_PRIOR",
@@ -133,8 +139,7 @@
       "same_object_rerun_retune_rescore": "STOP",
       "same_object_system_to_mechanism": "STOP",
       "disposition": "NO_MEASURED_PRIMING_EFFECT_ON_FROZEN_OUTPUT_SURFACE",
-      "information_gain_rationale": "The prospective five-arm one-batch Architecture response tested whether queue-free residual potential/adaptation changed the fixed later-cue response. POTENTIAL_NULL, ADAPTATION_NULL and JOINT_SUBTHRESHOLD_NULL yielded the same measured two-spike cascade structure as SHAM_STATE; DELAYED_SHAM_32MS shifted the same structure in time. The bounded SYSTEM question is answered without post-outcome rescue.",
-      "interpretation_limit": "Coordinate-wise nulling may be off-manifold and the frozen source did not test transient synaptic-plasticity memory. Any natural-history/reachable-state successor requires a fresh independently motivated candidate and zero inherited confirmatory credit."
+      "interpretation_limit": "Coordinate-wise nulling may be off-manifold and the frozen source did not test transient synaptic-plasticity memory. Topic-family successors require independent fresh re-identification and zero inherited confirmatory credit."
     }
   },
   "cand35_development_observation": {
@@ -149,117 +154,144 @@
     "raw_ref": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
     "fixed_arm_order": ["SHAM_STATE", "POTENTIAL_NULL", "ADAPTATION_NULL", "JOINT_SUBTHRESHOLD_NULL", "DELAYED_SHAM_32MS"],
     "observations": {
-      "SHAM_STATE": {"anchor_time_ms": 39.0, "cue_time_ms": 43.0, "spike_units": [6,7], "spike_count": 2, "cascade_units": [6,7], "ignitions": 0},
+      "SHAM_STATE": {"cue_time_ms": 43.0, "spike_units": [6,7], "spike_count": 2, "cascade_units": [6,7], "ignitions": 0},
       "POTENTIAL_NULL": {"cue_time_ms": 43.0, "spike_units": [6,7], "spike_count": 2, "cascade_units": [6,7], "ignitions": 0, "measured_output_vs_sham": "NO_DIFFERENCE_ON_FROZEN_RESPONSE_SURFACE"},
       "ADAPTATION_NULL": {"cue_time_ms": 43.0, "spike_units": [6,7], "spike_count": 2, "cascade_units": [6,7], "ignitions": 0, "measured_output_vs_sham": "NO_DIFFERENCE_ON_FROZEN_RESPONSE_SURFACE"},
       "JOINT_SUBTHRESHOLD_NULL": {"cue_time_ms": 43.0, "spike_units": [6,7], "spike_count": 2, "cascade_units": [6,7], "ignitions": 0, "measured_output_vs_sham": "NO_DIFFERENCE_ON_FROZEN_RESPONSE_SURFACE"},
       "DELAYED_SHAM_32MS": {"cue_time_ms": 75.0, "spike_units": [6,7], "spike_count": 2, "cascade_units": [6,7], "ignitions": 0, "measured_output_vs_sham": "SAME_STRUCTURE_TIME_SHIFTED"}
-    },
-    "preflight_sha256": "2823f3596621ad866b9237e9440f09c05aff2c9e6564e866b3a8e0da3cc3d33f",
-    "provenance_sha256": "0f51ee34c5fc8748d7892146aafab3996f5f1303747fc47b635be6f35153aa5b",
-    "component_binding_sha256": "7da2e928b349e4bfe1d4a1c6ad8df7896e75948c484613158fcb821a953d19db",
-    "contract_sha256": "a0bb019d1a08e0472d33dc64ab5684e38b5fffbd25654e86c1b1a3a1653e1064",
-    "runtime": {
-      "python": "CPython 3.11.16",
-      "requirements_release_sha256": "6d0cd9f8170773f7d5eabc36274bca58bdd364f69b27b4bd86baf683fd8dc52b",
-      "pyproject_sha256": "2fa8db9d3b54860181b5d71182f3ca8519fea15746cfb3c46c388726475bbeb1",
-      "response_runner_sha256": "f4d6a54a1bf319a7f559f1618e48db219b3401ec526cc1758d6e7733173c665f",
-      "preservation_wrapper_sha256": "babb8eb35c5aa8f69c7a20dd7c4559c69e752d1ff063c4d899b397a1d456fe74"
     }
   },
   "fast_forge": {
     "status": "NON_EVIDENTIARY_NONCANONICAL",
+    "latest_object": {
+      "branch": "forge/20260924-coordinate-null-local-witness",
+      "head": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
+      "forge_state": "FORGE_PROMOTION_PROPOSED",
+      "question": "Whether a local coordinate-null state has a matched natural-history/full-state witness rather than being a coordinate-local artifact",
+      "observation_credit": 0
+    },
     "promotion_review": {
-      "new_FORGE_PROMOTION_PROPOSED": 0,
-      "materially_new_FORGE_INTERESTING": 0,
+      "new_FORGE_PROMOTION_PROPOSED": 1,
+      "materially_new_FORGE_INTERESTING": 1,
       "admissions": 0,
-      "rejects_or_defers_this_generation": 0,
-      "decision": "NO_OBJECT_TO_REVIEW"
+      "rejects_or_defers_this_generation": 1,
+      "decision": "DEFER_NOT_ADMITTED",
+      "primary_reason": "POST_OUTCOME_IMMEDIATE_SUCCESSOR_RESCUE_ADJACENT_INDEPENDENT_REIDENTIFICATION_REQUIRED",
+      "review": {
+        "materially_distinct_not_rescue": "FAIL_FOR_CURRENT_ADMISSION",
+        "independent_of_unknown_current_main_outcome": "PASS_VS_H7_BUT_NOT_SUFFICIENT",
+        "bounded_phenomenon_reachable_surface": "PARTIAL_POST_OUTCOME_FORGE_BOUNDING_ONLY",
+        "prospective_falsifier": "POSSIBLE",
+        "ordinary_reductions": [
+          "FULL_STATE_MISMATCH_DESPITE_LOCAL_COORDINATE_EQUALITY",
+          "LEAKY_ADAPTIVE_REFRACTORY_DYNAMICS",
+          "SPIKE_HISTORY_TIMING_SOURCE_INPUT_DIFFERENCES",
+          "ORDINARY_STATE_SPACE_REACHABILITY"
+        ],
+        "negative_information_value": true,
+        "fresh_contract_without_forge_confirmation": "NOT_YET_INDEPENDENTLY_REESTABLISHED",
+        "prospective_claim_ceiling_if_later_admitted": "SYSTEM"
+      },
+      "fresh_canonical_candidate_created": false,
+      "forge_history_mutated": false
     },
     "metrics": {
-      "runs_observed": 12,
-      "prototypes": 16,
-      "dead_ends": 12,
-      "interesting_objects": 0,
-      "promotion_proposals": 0,
+      "runs_observed": 13,
+      "prototypes": 17,
+      "dead_ends": 13,
+      "interesting_objects": 1,
+      "promotion_proposals": 1,
       "admissions": 0,
-      "duplicate_or_rescue_rejects": 9,
-      "main_dependence_rejects": 0,
-      "ownership_collisions": 0,
-      "ordinary_reduction_rejects": 12,
+      "forge_reported_duplicate_or_rescue_rejects": 9,
+      "forge_reported_ordinary_reduction_rejects": 13,
+      "analyst_promotion_defers_this_generation": 1,
+      "analyst_defer_reasons": {"POST_OUTCOME_IMMEDIATE_SUCCESSOR_RESCUE_ADJACENT": 1},
       "idea_to_admission_latency": null
-    },
-    "latest_known_disposition": "FORGE_DEAD_END",
-    "latest_known_ordinary_reduction": "GLOBAL_REWARD_MODULATED_STDP_WITH_PER_EDGE_ELIGIBILITY_NO_RETROSPECTIVE_REWARD_ONLY_UPDATE"
+    }
   },
   "phenomenon_first_shadow": {
     "mode": "NO_TARGET_SHADOW",
     "authorizing": false,
     "standby_proposals": 0,
-    "reason": "No viable executable MECHANISM: H7 is on FORMAL integrity hold and #34/#35 current objects are terminal.",
-    "preoutcome_reachable_state_residual_disposition": "DEFER_NOT_ADMITTED_NO_COHERENT_MECHANISM_TARGET_YET",
-    "residual_reason": "Intervention realism and natural-history comparators are scientifically motivated, but no bounded independent SparkBrain phenomenon under naturally reachable/matched-natural-history states is currently established prospectively without relying on #35 post-outcome observations."
-  },
-  "allocation": {
-    "MAIN": "Own H7 integrity/readiness preparation only. No H7 FORMAL. Candidate #35 current object is closed; no same-object science.",
-    "FAST_FORGE": "Independent rough exploration only; no H7/#35 critical-path assets or authority.",
-    "UTILITY": "IDLE; no canonical typing/readiness/admission authority and no current scientific blocker."
+    "reason": "No viable executable MECHANISM: H7 remains on FORMAL integrity hold and #34/#35 current objects are terminal.",
+    "forge_coordinate_null_materialization": "FORBIDDEN_NOT_ADMITTED",
+    "natural_history_residual_disposition": "DEFER_NOT_ADMITTED_PENDING_INDEPENDENT_REIDENTIFICATION"
   },
   "inputs": {
-    "control": "R44 keeps H7 at RESULT_EXPOSED_DEVELOPMENT on protected-sidecar capability HOLD and permits only science-invariant repair/readiness; it predates #35 result exposure.",
-    "main_relay": "Candidate #35 completed one bounded batch with raw-before-interpretation preservation, exhausted authority, then stopped for Analyst.",
-    "methodology": "R93 validates #35 OPEN->RESULT_EXPOSED iteration semantics and requires H7 phase monotonicity correction from R101 OPEN back to RESULT_EXPOSED on the unchanged object.",
-    "literature": "R40 keeps #35 conclusion narrow and adds transient synaptic/STP and ordinary delayed three-factor eligibility baselines for any future broader persistent-memory/delayed-credit claims.",
-    "independent_audit": "Latest independent audit still closes #34 as REDUCIBLE with no Assembly-specific mechanism residual.",
-    "repository_steward": "main has active protection; evidence/formal/sealed/freeze tag namespaces remain without observed tag-target protection.",
-    "utility": "Clean IDLE after Control acknowledgement; prior PF-R1 pointer hygiene is resolved.",
-    "fast_forge": "Latest credit-locality probe is a noncanonical dead end; no promotion proposal or interesting object."
+    "control": "R45 confirms #35 terminal state, H7 integrity hold, and independently flags the new coordinate-null Forge branch as immediate-successor/post-outcome rescue-adjacent with zero scientific credit.",
+    "main_relay": "H7 controller was repinned to current Analyst authority and NON_RESULT readiness again failed pre-identity on protected-sidecar capability; Relay published final capability hold without scientific execution.",
+    "methodology": "R93 remains WELL_CALIBRATED; H7 phase monotonicity is RESULT_EXPOSED, #35 one-batch result exposure is handled correctly, and one-way FORMAL integrity remains strict.",
+    "literature": "R40 keeps #35 conclusion narrow and requires transient synaptic/STP plus ordinary three-factor eligibility baselines for future broader claims; no current candidate is created.",
+    "independent_audit": "Latest independent audit keeps #34 REDUCIBLE to ordinary local transmission/timing dynamics.",
+    "repository_steward": "main protection active; evidence/formal/sealed/freeze authoritative tag-target protection not observed; evidence tag objects unchanged.",
+    "utility": "Clean IDLE after PF-R1 control acknowledgement; no scientific authority and no current blocker."
   },
-  "top3": [
+  "allocation": {
+    "MAIN": "When an authorized canonical MAIN scheduler is enabled: H7 science-invariant protected-sidecar capability/authority plumbing and NON_RESULT readiness only; no H7 FORMAL; no Candidate #35 same-object science.",
+    "FAST_FORGE": "Stop Candidate #35 coordinate-null/natural-history immediate-successor family; independent rough exploration only outside H7/#35/#34 rescue and immediate blockers/successors.",
+    "UTILITY": "IDLE; bounded independent noncanonical support only, no canonical authority."
+  },
+  "scheduler_health": {
+    "classification": "RED_CANONICAL_EXECUTION_DISABLED_USER_DECISION_REQUIRED",
+    "primary_main_enabled": false,
+    "relay_enabled": false,
+    "canonical_execution_throughput": 0,
+    "scientific_interpretation_changed": false,
+    "user_decision_required": true,
+    "recommended_minimum_restoration": "REENABLE_EXISTING_PRIMARY_MAIN_UNCHANGED",
+    "relay_recommendation": "KEEP_DISABLED_UNLESS_SEPARATE_FAILOVER_ARCHITECTURE_IS_EXPLICITLY_APPROVED",
+    "scheduler_mutation_performed": false
+  },
+  "top_actions": [
     {
       "rank": 1,
-      "action": "H7 protected-sidecar capability and exact authority plumbing, followed only by NON_RESULT readiness",
-      "information_value": "highest",
-      "go_stop": "GO_PREPARATION_ONLY",
-      "contingency": "If readiness is green, STOP and require a later fresh Analyst before FORMAL. If any exact binding/capability is wrong, remain fail-closed."
+      "kind": "OPERATIONAL_PREREQUISITE",
+      "action": "USER_DECIDE_RESTORE_PRIMARY_MAIN_UNCHANGED_OR_KEEP_CANONICAL_SCIENCE_PAUSED",
+      "go_stop": "USER_DECISION_REQUIRED"
     },
     {
       "rank": 2,
-      "action": null,
-      "go_stop": "NO_EXECUTABLE_CANONICAL_ACTION",
-      "reason": "Candidate #35 current object is terminal; reachable-state/on-manifold successor is deferred and not admitted."
+      "kind": "CANONICAL_SUPPORT_CONDITIONAL",
+      "action": "H7_SCIENCE_INVARIANT_PROTECTED_SIDECAR_CAPABILITY_AND_AUTHORITY_PLUMBING_THEN_NON_RESULT_READINESS_ONLY",
+      "go_stop": "GO_AFTER_PRIMARY_RESTORATION_THEN_STOP_FOR_FRESH_ANALYST"
     },
     {
       "rank": 3,
-      "action": null,
-      "go_stop": "NO_EXECUTABLE_CANONICAL_ACTION",
-      "reason": "Phenomenon-first standby is empty and Fast Forge has no admitted promotion proposal."
+      "kind": "NO_EXECUTABLE_CANONICAL_ACTION",
+      "action": "DO_NOT_MANUFACTURE_CANDIDATE_FROM_FORGE_OR_SHADOW",
+      "go_stop": "STOP"
     }
   ],
-  "go_stop": {
-    "H7_FORMAL": "STOP",
-    "H7_NON_RESULT_READINESS_AFTER_SCIENCE_INVARIANT_REPAIR": "GO",
-    "CAND35_CURRENT_OBJECT": "STOP_TERMINAL_FOR_CURRENT_OBJECT",
-    "CAND35_SAME_OBJECT_RERUN_RETUNE_RESCORE": "STOP",
-    "CAND35_PRE_FORMAL": "STOP",
-    "FRESH_CAND35_TOPIC_SUCCESSOR": "DEFER_NOT_ADMITTED_NO_COHERENT_MECHANISM_TARGET_YET",
-    "FAST_FORGE_PROMOTION": "NONE"
+  "formal_one_way_authority": {
+    "H7": "STOP",
+    "fresh_identity_authorized": false,
+    "new_identity_created": false,
+    "new_identity_consumed": false,
+    "official_consumed_identity_count": 7,
+    "rerun_retune_rescore_consumed": "FORBIDDEN"
   },
   "governance": {
-    "main_ruleset_active": true,
+    "main_protected": true,
     "authoritative_tag_namespace_protection_observed": false,
     "open_prs": [149],
-    "scientific_blocker": false
+    "immutable_ref_incident": false
   },
-  "integrity": {
-    "scientific_workflow_dispatched_by_analyst": false,
-    "one_way_identity_consumed_by_analyst": false,
-    "research_pr_merged_by_analyst": false,
-    "immutable_evidence_mutated_by_analyst": false,
-    "scheduler_definition_mutated_by_analyst": false,
-    "utility_task_dispatched_by_analyst": false,
-    "forge_output_rewritten_as_evidence": false,
-    "historical_pass_fail_rewritten": false,
-    "historical_analyst_records_rewritten": false
+  "hard_floor_actions": {
+    "experiment_executed": false,
+    "scientific_workflow_dispatched": false,
+    "one_way_identity_consumed": false,
+    "research_pr_merged": false,
+    "scheduler_definition_changed": false,
+    "utility_dispatched": false,
+    "immutable_or_evidence_ref_mutated": false,
+    "consumed_formal_rerun_retune_rescore": false,
+    "historical_result_rewritten": false
+  },
+  "persistence": {
+    "history_path": "analysis/orchestrator/history/2026-09-24/010800-R103.md",
+    "history_commit": "824815c7a8aefdcf77b12cdf8077f2cc1446b5ae",
+    "latest_path": "analysis/orchestrator/latest.md",
+    "latest_commit": "1a20d9028d5829750c8b89c76b495c39842e6a0b",
+    "state_path": "analysis/orchestrator/state.json"
   }
 }
