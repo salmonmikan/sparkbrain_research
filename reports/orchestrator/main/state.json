@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
-  "run_id": "sparkbrain-main-relay-20260923T115328JST-R92-cand34-preformal-r2",
-  "producer_run_id": "sparkbrain-main-relay-20260923T115328JST-R92-cand34-preformal-r2",
-  "produced_at": "2026-09-23T11:53:28+09:00",
-  "authority_scope": "RELAY_RECONCILIATION_ONLY_FAIL_CLOSED_ON_CANONICAL_ANALYST_BINDING_MISMATCH",
-  "supersedes_generation_id": "MAIN-20260923T113000+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING",
+  "generation_id": "MAIN-20260923T123630+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING-CANONICAL-OPPORTUNITY-CLOSURE",
+  "run_id": "sparkbrain-main-primary-20260923T121719JST-R92-cand34-preformal-r2-reconcile",
+  "producer_run_id": "sparkbrain-main-primary-20260923T121719JST-R92-cand34-preformal-r2-reconcile",
+  "produced_at": "2026-09-23T12:36:30+09:00",
+  "authority_scope": "PRIMARY_CANONICAL_R92_PREFORMAL_R2_OPPORTUNITY_AWARE_NONRESULT_CONTRACT_CLOSURE_ONLY",
+  "supersedes_generation_id": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "main_previous": "MAIN-20260923T113000+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING",
-    "fast_forge_collision_awareness": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS@37112b03e84c7c22b9a26547b86e48fd1f756f1f"
+    "main_previous": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
+    "independent_audit": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8@6755579f5f21b19ca90788c948d8126529b648c6"
   },
-  "execution_mode": "RELAY",
-  "status": "BLOCKED",
+  "execution_mode": "PRIMARY",
+  "status": "WAITING_EXTERNAL",
   "analyst_generation_id": "EVA-20260923T105725+0900-R92-6B8E31D4",
   "analyst_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
   "research_layer": "PRE_FORMAL",
@@ -28,50 +28,49 @@
   "development_phase": "OPEN_DEVELOPMENT",
   "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
   "cycle_count": 4,
-  "cycle_reassessment_context": "R92 authorizes a bounded opportunity-aware R2 revision before any response-bearing execution; return to fresh Analyst READY review after non-result closure.",
+  "cycle_information_gain": "R92 prospectively authorizes repairing the pre-response causal-opportunity defect identified in R1 rather than repeating the direct-threshold surface. The revision makes each tested edge source fire without directly cueing its destination, predeclares opportunity state, aligns controls to the same source-only opportunity construction, and makes destination membrane/spike state the primary observable.",
   "refs": {
     "active_research_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-    "active_research_head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a",
-    "analyst_handoff_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a"
+    "active_research_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "analyst_handoff_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
+    "stable_main_observed": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d"
+  },
+  "work_performed": {
+    "classification": "SCIENCE_AFFECTING_CHANGE_PROSPECTIVELY_AUTHORIZED_BEFORE_R2_RESPONSE_EXPOSURE",
+    "prior_noncanonical_contract_diagnosis": "The prior R92 branch contract merely wrapped the R1 direct-threshold cue/plan and hard-coded a noncanonical Analyst generation. Rebinding only the generation string would not have satisfied R92's opportunity-aware scientific revision.",
+    "canonical_authority_rebound": true,
+    "source_only_edge_cue_contract_added": true,
+    "tested_destination_direct_cue_forbidden": true,
+    "per_edge_causal_opportunity_ledger_added": true,
+    "opportunity_matched_control_construction_added": true,
+    "destination_membrane_and_spike_primary_observable_added": true,
+    "assembly_response_demoted_to_secondary_scope": true,
+    "fresh_analyst_ready_review_required_before_response": true,
+    "D34_Q002_response_execution_enabled": false,
+    "forge_derived_code_reused": false,
+    "forge_observations_given_confirmatory_credit": false
   },
   "workflow_observation": {
-    "generic_ci_run_id": 35810510054,
-    "generic_ci_conclusion": "success",
-    "r2_contract_run_id": 35810510172,
-    "r2_contract_conclusion": "success",
-    "exact_head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a",
+    "exact_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "generic_ci_run_id": 35814951496,
+    "generic_ci_status": "in_progress",
+    "r2_contract_run_id": 35814951495,
+    "r2_contract_status": "in_progress",
     "result_bearing": false
-  },
-  "authority_integrity": {
-    "canonical_analyst_generation_at_recheck": "EVA-20260923T105725+0900-R92-6B8E31D4",
-    "primary_recorded_analyst_generation": "EVA-20260923T110053+0900-R92-A7B61F3C",
-    "primary_recorded_analyst_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "materialized_contract_embedded_analyst_authority": "EVA-20260923T110053+0900-R92-A7B61F3C",
-    "canonical_commit_content_matches_primary_recorded_generation": false,
-    "canonical_development_revision_matches_primary_recorded_revision": false,
-    "durable_capture_performed": false,
-    "research_branch_mutated_by_relay": false,
-    "reason": "The canonical Analyst commit currently resolves to a different generation and a different R2 revision than the generation/revision embedded by PRIMARY and the generated R2 contract. Relay cannot silently rebind or reinterpret this identity."
-  },
-  "artifact_integrity": {
-    "contract_sha256": "993d8fb53d9288f665b3fdc873ea410f986e5499e40ed19448eecbed8bbbc5c9",
-    "queue_sha256": "d16249d27448205e048c54ec85c48395109c80b7080335ffceb06443414ea72d",
-    "captured_to_research_branch": false
-  },
-  "repair_change_classification": {
-    "classification": "AUTHORITY_BINDING_MISMATCH_REQUIRES_RECONCILIATION",
-    "science_invariant_repair_applied": false,
-    "science_affecting_change_applied": false,
-    "reason": "Changing the embedded Analyst authority or substituting the canonical opportunity-aware revision would change the bound contract identity and is outside Relay authority without a reconciled fresh handoff."
   },
   "observations_evidentiary_status": {
     "new_scientific_result": false,
     "formal_evidence": 0,
-    "preformal_development_result_new_this_relay": 0,
-    "scientific_result_exposed_by_relay": false
+    "preformal_development_result_new_this_run": 0,
+    "mechanism_architecture_observation_new_this_run": 0,
+    "system_architecture_observation_new_this_run": 0,
+    "scientific_result_exposed": false,
+    "implementation_or_readiness_only": true
   },
   "prior_result_preservation": {
     "D34_Q001_preserved_unchanged": true,
+    "R1_prebind_preserved_unchanged": true,
+    "old_noncanonical_R2_artifact_not_promoted_or_preserved": true,
     "all_prior_results_unchanged": true,
     "consumed_formal_identity_rerun_retune_rescore": false,
     "immutable_formal_sealed_evidence_refs_mutated": false
@@ -86,14 +85,23 @@
     "scientific_preserve_or_evidence_ref_created": false
   },
   "integrity": {
-    "analyst_generation_rechecked_before_mutation": true,
-    "main_generation_and_lease_rechecked": true,
-    "exact_research_head_rechecked": true,
+    "analyst_generation_rechecked_before_research_mutation": true,
+    "main_lease_acquired_before_research_mutation": true,
+    "exact_research_head_rechecked_before_mutation": true,
+    "analyst_generation_rechecked_after_final_mutation": true,
     "fast_forge_same_object_collision": false,
+    "forge_branch_taken_over": false,
     "scheduler_mutated": false,
-    "fail_closed": true
+    "response_stop_respected": true,
+    "formal_stop_respected": true
   },
-  "stop_reason": "CANONICAL_ANALYST_GENERATION_AND_REVISION_DO_NOT_MATCH_PRIMARY_OR_GENERATED_R2_CONTRACT_BINDING",
-  "next_action": "Fresh Evidence Analyst or PRIMARY must reconcile the exact canonical R92 generation/revision against the R2 branch and contract identity. Do not durably capture, rewrite, execute, score, or promote D34-Q002 until that binding is explicit and current.",
+  "remaining_blockers": [
+    "Exact-head generic CI must complete successfully.",
+    "Exact-head dedicated non-result R2 contract workflow must complete successfully.",
+    "After green closure, exact contract material must be durably captured without response execution.",
+    "A fresh Evidence Analyst READY review is required before any D34-Q002 response-bearing execution."
+  ],
+  "stop_reason": "WAITING_ONLY_FOR_EXACT_HEAD_NONRESULT_CI_AND_CONTRACT_WORKFLOW",
+  "next_action": "Re-fetch the canonical Analyst generation and exact branch head, inspect the two exact-head non-result workflows, apply only authorized repair if needed, durably capture the canonical R2 contract if green, then stop for a fresh Analyst READY review. Do not execute D34-Q002 or any FORMAL action under R92.",
   "owner": "main"
 }
