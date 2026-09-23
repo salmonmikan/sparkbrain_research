@@ -1,0 +1,32 @@
+name: cand34-preformal-r1-prebind
+
+on:
+  push:
+    branches:
+      - research/main-cand34-assembly-route-preformal-r91-cycle3
+
+jobs:
+  prebind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[dev]"
+      - name: Verify exact source head ancestry
+        run: git merge-base --is-ancestor a6455a3929b86ad25fd106ea93a03604192fc3be HEAD
+      - name: Run non-result prebinding tests
+        run: python -m pytest -q tests/test_v05_route_architecture.py tests/test_v05_route_architecture_contract.py tests/test_v05_route_preformal.py
+      - name: Materialize non-result prebinding metadata
+        run: python scripts/cand34_preformal_r1_prebind.py --output cand34-preformal-r1-prebind.json
+      - name: Upload prebinding metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: cand34-preformal-r1-prebind-${{ github.sha }}
+          path: cand34-preformal-r1-prebind.json
+          if-no-files-found: error
