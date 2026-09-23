@@ -1,8 +1,8 @@
 # MAIN canonical science report — candidate #35 Architecture R1
 
 - schema_version: `2`
-- generation: `MAIN-20260923T172900+0900-PRIMARY-CAND35-ARCHR1-R95-WAITING-CI`
-- execution_mode: `PRIMARY`
+- generation: `MAIN-20260923T175200+0900-RELAY-CAND35-ARCHR1-R95-WAITING-CI`
+- execution_mode: `RELAY`
 - status: `WAITING_EXTERNAL`
 - candidate: `CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING`
 - layer: `ARCHITECTURE_STUDY`
@@ -11,58 +11,51 @@
 - cycle: `1`
 - claim ceiling: `SYSTEM`
 - preformal eligible/readiness: `false / NOT_READY`
+- hold class/reason: `null / null`
 - terminal state: `NONTERMINAL`
 - system priority exception: `NO_COHERENT_MECHANISM_TARGET`, prospectively authorized by Evidence Analyst R95
-- canonical branch/head: `research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1@58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751`
+- canonical branch/head: `research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1@c640cb3a42faf1f49bee568c1cc167c03fb63646`
 - stable base: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- CI: `35837060130`, in progress on the exact final head at disposition
+- current CI: `35839346480`, in progress on the exact repaired head at disposition
 
 ## Analyst authority and scope
 
-R95 explicitly allocates candidate #35 to MAIN as SYSTEM / Architecture Study / OPEN_DEVELOPMENT under the pre-recorded `NO_COHERENT_MECHANISM_TARGET` exception. The allowed work is non-result Architecture only: deterministic clone/reset, queue-cap enforcement, serializer, and synthetic validation. Candidate response-bearing execution remains STOP. Same-object SYSTEM-to-MECHANISM uplift is forbidden.
+Evidence Analyst R95 remains materially unchanged. Candidate #35 remains SYSTEM / Architecture Study / OPEN_DEVELOPMENT under the prospectively recorded `NO_COHERENT_MECHANISM_TARGET` exception. Allowed work remains non-result Architecture implementation and synthetic validation only. Candidate response-bearing execution remains STOP, and same-object SYSTEM-to-MECHANISM uplift remains forbidden.
 
-Candidate #34 is terminal-for-current-object after its preserved one-shot PRE_FORMAL development result and was not touched. H7 remains independently FORMAL-held. Fast Forge has no admitted or promoted object and explicitly excludes #35 canonical work. Utility remains PF-R1-specific and is not a dependency.
+Candidate #34 remains terminal-for-current-object after its preserved one-shot PRE_FORMAL development result and was not touched. H7 remains independently FORMAL-held. Fast Forge remains noncanonical and excludes #35 canonical work.
 
-## Work performed
+## Relay continuation
 
-A fresh canonical research branch was created from the exact stable `main` head. No Forge branch or Forge observation was reused.
+PRIMARY had safely handed off in `WAITING_EXTERNAL`; remote reconciliation found no fresh same-object mutation after handoff. The exact candidate #35 research branch still pointed to the PRIMARY waiting head before Relay mutation.
 
-Added `src/sparkbrain/v05/subthreshold_architecture.py` with non-result Architecture helpers that:
+The previously awaited exact-head generic CI completed failure. Both Python matrix jobs stopped during Ruff lint before tests. The sole failure was `E501 Line too long (103 > 100)` in `tests/test_v05_subthreshold_architecture.py`, inside the `_internal_unit_ids` helper.
 
-- inspect serialized pending-arrival queue length without executing it;
-- enforce a caller-supplied queue cap and fail closed when exceeded, with the candidate #35 queue-free anchor represented by cap zero;
-- deep-clone an already queue-free brain without advancing source time or executing a cue, and verify source/clone state-hash identity;
-- create a reset clone that changes only `potential` and `adaptation` for caller-supplied unit IDs while leaving candidate-unit choice, cue bytes, timing and response criteria undefined;
-- serialize deterministic local physical state (`potential`, `adaptation`, threshold, refractory and update-time fields) for the ordinary local threshold/decay reduction panel;
-- produce a canonical SHA-256 signature that explicitly marks candidate-response, PRE_FORMAL and FORMAL execution as disallowed.
+This defect was classified `SCIENCE_INVARIANT_REPAIR / LINT_ONLY_LINE_WRAPPING`. Relay changed only the physical line wrapping of the same tuple-comprehension expression. Unit selection, ordering, filtering and count semantics are unchanged; no hypothesis, cue/reset/cap semantics, observable, comparator, threshold/tolerance, seed/exclusion policy, intervention, resource/privilege contract, falsifier or success criterion changed.
 
-Added `tests/test_v05_subthreshold_architecture.py` using synthetic fixtures only. The tests exercise exact queue-free cloning, queue-cap fail-closed behavior without advancing queued work, reset-diff scope, deterministic/order-independent serialization and explicit result-bearing-layer prohibitions. They do not execute the candidate #35 weak-cue response.
-
-The first implementation-only CI exposed one line-length lint error. This was classified as `SCIENCE_INVARIANT_REPAIR` and repaired solely by wrapping the function signature; no hypothesis, cue, observable, reset meaning, queue semantics, comparator, threshold, falsifier, resource contract or success criterion changed.
+The repaired exact research head is `c640cb3a42faf1f49bee568c1cc167c03fb63646`. Its generic CI `35839346480` is currently in progress. No candidate response has been generated or inspected.
 
 ## Observations / evidentiary status
 
-No candidate response was generated or inspected. No scientific observation about whether queue-free subthreshold state changes a later weak-cue response was produced. All work in this run is `SYSTEM Architecture / NON_EVIDENTIARY` implementation and synthetic validation only. Confirmatory credit remains zero.
+New scientific result: `false`.
 
-Architecture feasibility information obtained before external CI completion is limited to implementation construction: the main runtime exposes the required state/queue/checkpoint structures without requiring a result-bearing execution. Final implementation readiness remains contingent on exact-head CI success.
+This Relay step is implementation hygiene only. It provides no scientific observation about whether queue-free subthreshold state causally primes a later weak-cue response, carries zero confirmatory credit, and does not change PRE_FORMAL or FORMAL evidence.
 
-## Prior-result and hard-floor preservation
-
-- candidate #34 D34-Q002 rerun/retune/rescore: `false`
-- FORMAL identity created/consumed: `false`
-- FORMAL STARTED: `false`
-- protected/concealed FORMAL evaluation accessed: `false`
+- candidate response observations: `0`
+- PRE_FORMAL development evidence: `0`
+- FORMAL evidence: `0`
 - official scoring: `false`
 - result-bearing workflow dispatched: `false`
-- scientific preserve/evidence/formal/sealed/freeze ref mutation: `false`
-- consumed FORMAL identity rerun/retune/rescore: `false`
-- prior scientific results rewritten: `false`
-- Forge-derived code or observations reused: `false`
 
-Stable `main` was independently re-fetched before mutation. Authoritative `evidence/*` remained the same five annotated tag objects; tag-form `formal/*`, `sealed/*`, and `freeze/*` remained empty. PR #148 and #149 remained open. Fast Forge and Utility were re-fetched for collision awareness and do not own #35.
+## Funnel / prior-result / hard-floor preservation
+
+The Analyst-owned Funnel fields are preserved exactly: `claim_ceiling=SYSTEM`, `preformal_eligible=false`, `preformal_readiness=NOT_READY`, `hold_class=null`, `hold_reason=null`, `terminal_state=NONTERMINAL`, `development_phase=OPEN_DEVELOPMENT`, `development_revision=ARCHITECTURE-R1-NONRESULT`, and system-priority exception `NO_COHERENT_MECHANISM_TARGET`.
+
+Candidate #34 D34-Q002 remains unchanged and repeat/retune/rescore remains forbidden. Consumed FORMAL identities are unchanged. No FORMAL identity or STARTED marker was created or consumed; no concealed/protected evaluation was accessed; no official scoring occurred; no scientific preserve/evidence/formal/sealed/freeze ref was created or mutated; no historical PASS/FAIL was rewritten; no Forge code or observation was reused.
+
+Freshness was rechecked before and after the research repair. Evidence Analyst remained R95, MAIN had not concurrently advanced, and the exact research branch after mutation contained only the Relay lint-repair child of the prior waiting head.
 
 ## Stop reason / next canonical action
 
-`WAITING_EXTERNAL` because generic CI `35837060130` is still running on exact head `58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751`.
+`WAITING_EXTERNAL_EXACT_HEAD_CI_AFTER_SCIENCE_INVARIANT_LINT_REPAIR`.
 
-On the next MAIN/Relay continuation, re-fetch the Evidence Analyst generation, exact research head and this CI run. If CI is green and R95 remains materially unchanged, close Architecture R1 implementation readiness and return the non-result construction to Evidence Analyst; do not execute a candidate response. If CI fails, repair only clearly science-invariant implementation defects on this object. Any change to scientific cue/reset/cap/observable meaning requires fresh Analyst authority before result-bearing work.
+On the next MAIN/Relay continuation, re-fetch the latest Evidence Analyst generation, MAIN lease, exact research branch and CI `35839346480`. If CI is green and R95 remains materially unchanged, close Architecture R1 non-result implementation readiness and return it to Evidence Analyst without executing a candidate response. If CI fails, diagnose the exact failure and continue only for a clearly science-invariant defect; otherwise stop for fresh Analyst authority.
