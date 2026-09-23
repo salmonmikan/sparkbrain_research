@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-23T18:22:05+09:00",
+  "timestamp": "2026-09-23T19:22:51+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260923T182205+0900-R87-5C8E1A73",
-    "sequence": 87,
+    "generation_id": "METHCAL-20260923T192251+0900-R88-9F4C2D61",
+    "sequence": 88,
     "material_change": true,
-    "material_change_reason": "CAND35_ARCHITECTURE_R1_COMPLETED_NONRESULT_WITH_INVARIANT_REPAIRS_AND_EXACT_HEAD_CI; R96_CYCLE3_REASSESSMENT_CONTINUES_ONLY_FOR_DISTINCT_PROSPECTIVE_NONRESULT_EXACT_BINDING_INFORMATION_GAIN; RESPONSE_REMAINS_STOP",
-    "supersedes_generation_id": "METHCAL-20260923T171810+0900-R86-B7A2E4C1",
+    "material_change_reason": "CAND35_CYCLE3_ARCHITECTURE_R2_EXACT_NONRESULT_BINDING_COMPLETED_WITH_GREEN_EXACT_HEAD_CI_AND_RESPONSE_HARD_STOP; PFR1_EXACT_ORIGINAL_BYTES_DURABLY_PRESERVED_AND_INDEPENDENTLY_REHASH_VERIFIED; NO_FORMAL_AUTHORITY_CREATED",
+    "supersedes_generation_id": "METHCAL-20260923T182205+0900-R87-5C8E1A73",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260923T171810+0900-R86-B7A2E4C1",
-      "commit": "17bee7e4973c38b5cedcdac67fbeb964ab423398"
+      "generation_id": "METHCAL-20260923T182205+0900-R87-5C8E1A73",
+      "commit": "5307616ae4e8195a829618699b9ce505732efb99"
     },
     "human_directive": {
       "id": "HUMAN-20260922-005",
@@ -30,7 +30,7 @@
     },
     "utility": {
       "branch": "ops/utility-orchestrator-requests",
-      "commit": "b2f1462aeb95707747f8b273c1b9a6ec678996bd",
+      "commit": "829e860d191d78970c978d194816d54fa574d7af",
       "role": "MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH"
     }
   },
@@ -62,32 +62,19 @@
       "development_phase": "OPEN_DEVELOPMENT",
       "canonical_layer": "ARCHITECTURE_STUDY",
       "preformal_eligible": false,
-      "architecture_r1_head": "c640cb3a42faf1f49bee568c1cc167c03fb63646",
-      "architecture_r1_ci_run": 35839346480,
-      "architecture_r1_ci_success": true,
-      "architecture_r1_response_generated_or_inspected": false,
-      "architecture_r1_repairs": "SCIENCE_INVARIANT_LINE_WRAPPING_ONLY",
-      "cycle3_reassessment": "REASSESS_CONTINUE_NONRESULT_ONLY",
-      "r2_authorized_scope": "EXACT_CANDIDATE_SURFACE_EXECUTOR_BINDING_AND_NONRESULT_PREFLIGHT_ONLY",
-      "r2_branch": "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3",
-      "r2_branch_head_at_audit": "c640cb3a42faf1f49bee568c1cc167c03fb63646",
-      "r2_delta_observed": false,
+      "canonical_authority_generation": "EVA-20260923T180248+0900-R96-3F7C92A1",
+      "architecture_r2_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
+      "architecture_r2_ci_run": 35844155004,
+      "architecture_r2_ci_success": true,
+      "architecture_r2_response_generated_or_inspected": false,
+      "architecture_r2_scope": "EXACT_FROZEN_CANDIDATE_SURFACE_EXECUTOR_BINDING_AND_NONRESULT_PREFLIGHT_ONLY",
+      "architecture_r2_final_repair": "SCIENCE_INVARIANT_IMPORT_ORDERING_ONLY",
+      "cycle3_reassessment": "REASSESS_CONTINUE_NONRESULT_ONLY_COMPLETED_STATED_INFORMATION_GAIN",
       "response_bearing_execution_allowed": false,
+      "automatic_preformal_or_ready_promotion_allowed": false,
       "same_object_system_to_mechanism_uplift_allowed": false,
       "priority_exception": "NO_COHERENT_MECHANISM_TARGET_NONRESULT_ARCHITECTURE_ONLY",
-      "frozen_fields_must_not_change_in_r2": [
-        "prime_trajectory",
-        "first_queue_empty_anchor_hard_256ms_no_extension_cap",
-        "reset_scope",
-        "five_fixed_arms",
-        "weak_field_cue",
-        "32ms_response_window",
-        "response_meaning",
-        "local_threshold_decay_reduction_panel",
-        "resources_privileges",
-        "falsifier",
-        "success_criteria"
-      ]
+      "fresh_analyst_review_required_before_response": true
     },
     "h7_r5": {
       "branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
@@ -96,16 +83,23 @@
       "lifecycle": "FORMAL_HOLD_PROVENANCE_GATE",
       "preidentity_complete": true,
       "fresh_formal_authority": 0,
-      "one_way_consumed": false
+      "one_way_consumed": false,
+      "post_preservation_fresh_analyst_review_required": true
     },
     "pf_r1": {
-      "durable_preservation_complete": false,
-      "utility_assignment_status": "ACTIVE",
-      "control_assignment_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
-      "utility_mailbox_head": "b2f1462aeb95707747f8b273c1b9a6ec678996bd",
-      "utility_completion_observed": false,
-      "authorized_scope": "EXISTING_ORIGINAL_RAW_AND_SUMMARY_BYTES_ONLY_HASH_VERIFY_CREATE_ONLY_PRESERVE",
-      "rerun_reconstruct_regenerate_rescore_retune_forbidden": true
+      "branch": "research/main-h7-pf-r1-frozen-panel-r64-cycle4",
+      "head": "8681dcbbe2fff986c28a79057f557b35f3f0f752",
+      "workflow_run_id": 35695286240,
+      "artifact_id": 10680620448,
+      "artifact_archive_sha256": "db43c7557b55760ddd182afe836405c2e2f261c60261504723182ef9240e908d",
+      "durable_preservation_complete": true,
+      "library_folder": "/SparkBrain/Non-Evidentiary Development Provenance/PF-R1/artifact-10680620448/",
+      "raw_sha256": "695261aeadab1ab311b60787f1b6a9023c29e24009c6f173c1a660469a6906db",
+      "summary_sha256": "6202ee328f20b637ec32258b9764b6c521900d87ad84bd5b77f7074cad05e237",
+      "preserved_raw_and_summary_exactly_equal_source_zip_members": true,
+      "independent_rehash_verified": true,
+      "rerun_reconstruct_regenerate_rescore_retune_forbidden": true,
+      "scientific_authority_created_by_preservation": false
     },
     "scientific_source_of_truth": "stable main plus independently fetched evidence refs and exact research refs; ops are mailbox/history/authority/provenance overlays only"
   },
@@ -115,19 +109,26 @@
     "hard_integrity_policy": "KEEP",
     "development_phase_axis": "KEEP",
     "fresh_open_result_exposed_consumed_end_to_end": "INSUFFICIENT_EVIDENCE",
-    "candidate35_architecture_r1_nonresult_boundary": "KEEP",
-    "candidate35_r1_science_invariant_repairs": "KEEP",
-    "candidate35_response_prohibition_during_architecture": "KEEP",
-    "cycle3_automatic_terminal_cap": "RELAX",
-    "cycle3_mandatory_reassessment": "KEEP",
-    "candidate35_cycle3_continue_for_distinct_prospective_information_gain": "KEEP",
-    "candidate35_r2_exact_binding_nonresult_only": "KEEP",
+    "candidate35_architecture_r2_exact_binding": "KEEP",
+    "candidate35_r2_nonresult_execution_guards": "KEEP",
+    "candidate35_r2_science_invariant_repairs": "KEEP",
+    "candidate35_exact_head_ci_integrity_not_science": "KEEP",
+    "candidate35_auto_preformal_ready_from_green_r2": "TIGHTEN",
     "candidate35_response_before_fresh_analyst_gate": "TIGHTEN",
     "candidate35_r2_frozen_scientific_fields": "KEEP",
+    "cycle3_automatic_terminal_cap": "RELAX",
+    "cycle3_mandatory_reassessment": "KEEP",
+    "cycle3_continue_for_distinct_prospective_information_gain": "KEEP",
     "candidate35_system_claim_ceiling": "KEEP",
     "same_object_system_to_mechanism_uplift_ban": "KEEP",
     "no_coherent_mechanism_target_temporary_system_exception": "KEEP",
     "sustained_zero_executable_mechanism_normalization": "TIGHTEN",
+    "pf_r1_preservation_requirement": "KEEP",
+    "pf_r1_durable_preservation_completion": "KEEP",
+    "pf_r1_preserved_byte_identity": "KEEP",
+    "pf_r1_completion_as_automatic_formal_authority": "TIGHTEN",
+    "h7_preidentity_distinct_from_formal_authority": "KEEP",
+    "duplicate_pf_r1_request_or_rerun_after_completion": "TIGHTEN",
     "terminal_current_object_not_topic_death": "KEEP",
     "immediate_same_family_post_result_successor_manufacture": "TIGHTEN",
     "future_fresh_independently_motivated_mechanism_successor": "KEEP",
@@ -143,11 +144,6 @@
     "candidate34_raw_execution_source_provenance": "TIGHTEN",
     "candidate34_contract_vs_execution_authority_fields": "CLARIFY",
     "candidate34_append_only_provenance_clarification": "KEEP",
-    "h7_preidentity_distinct_from_formal_authority": "KEEP",
-    "pf_r1_preservation_requirement": "KEEP",
-    "pf_r1_active_utility_assignment": "KEEP",
-    "pf_r1_utility_execution_completion": "TIGHTEN",
-    "duplicate_request_or_rerun_to_bypass_preservation_flow": "TIGHTEN",
     "raw_before_score_file_order_only": "CLARIFY",
     "literal_target_blind_prediction_raw": "TIGHTEN",
     "preserve_before_target_side_scoring": "TIGHTEN",
@@ -163,40 +159,39 @@
     "protected_adaptive_evaluation_validity": "TIGHTEN"
   },
   "mandatory_questions": {
-    "1_development_phase_end_to_end": "OPEN_AND_RESULT_EXPOSED_POSITIVELY_OBSERVED; CAND35_ADDS_CLEAN_OPEN_NONRESULT_CASE; FRESH_CONSUMED_ONE_WAY_UNOBSERVED",
-    "2_cycle3_hard_cap": "NO; R96_REASSESSED_AND_CONTINUED_NONRESULT_ONLY_FOR_DISTINCT_PROSPECTIVE_EXACT_BINDING_INFORMATION_GAIN",
-    "3_repair_classification": "CORRECT_IN_CAND35_R1; OBSERVED_REPAIRS_ARE_LINE_WRAPPING_ONLY_AND_SCIENCE_INVARIANT",
-    "4_laundering": "NOT_OBSERVED; CAND35_NO_RESPONSE; CAND34_ONE_RESULT_ZERO_CONFIRMATORY_CREDIT",
-    "5_result_exposed_preservation": "CAND34_RAW_PRESERVED_UNCHANGED; H7_R4_TO_R5_POSITIVE; PF_R1_DURABILITY_PENDING",
+    "1_development_phase_end_to_end": "OPEN_AND_RESULT_EXPOSED_POSITIVELY_OBSERVED; CAND35_R2_ADDS_CLEAN_OPEN_NONRESULT_EXACT_BINDING_CASE; FRESH_CONSUMED_ONE_WAY_UNOBSERVED",
+    "2_cycle3_hard_cap": "NO; R96_CYCLE3_CONTINUATION_DELIVERED_THE_PROSPECTIVELY_STATED_NONRESULT_EXACT_BINDING_INFORMATION_GAIN",
+    "3_repair_classification": "CORRECT_IN_CAND35_R2; FINAL_REPAIR_IMPORT_ORDERING_ONLY_AND_SCIENCE_INVARIANT",
+    "4_laundering": "NOT_OBSERVED; CAND35_NO_RESPONSE; CAND34_ONE_RESULT_ZERO_CONFIRMATORY_CREDIT; PFR1_PRESERVATION_ADDS_NO_CONFIRMATORY_CREDIT",
+    "5_result_exposed_preservation": "YES; CAND34_PRESERVED; HISTORICAL_H7_PRESERVED; PFR1_EXACT_ORIGINAL_BYTES_NOW_DURABLY_PRESERVED_AND_INDEPENDENTLY_REHASH_VERIFIED",
     "6_formal_one_way_integrity": "UNCHANGED",
-    "7_system_to_mechanism_successors": "NO_MANUFACTURE_OBSERVED; CAND35_REMAINS_SYSTEM_DESPITE_ZERO_MECHANISM_SUPPLY; SPECIFIC_TERMINAL_SYSTEM_TO_FRESH_MECHANISM_CASE_UNOBSERVED",
-    "8_preformal_hidden_formal": "NO; CAND35_NONRESULT_ARCHITECTURE_ALLOWED_WHILE_NOT_PREFORMAL_ELIGIBLE; CAND34_READY_PREVIOUSLY_BASED_ON_INFORMATIVENESS_NOT_PRIOR_SUCCESS",
-    "9_terminal_and_supply": "CURRENT_OBJECT_TERMINALIZATION_CALIBRATED; ZERO_EXECUTABLE_MECHANISM_SUPPLY_REQUIRES_LIVENESS_WATCH",
-    "10_pass_reachability": "REALISTIC_NEAR_TERM_CONDITIONAL_WITHOUT_WEAKENING_STANDARDS"
+    "7_system_to_mechanism_successors": "NO_MANUFACTURE_OBSERVED; CAND35_REMAINS_SYSTEM; SPECIFIC_TERMINAL_SYSTEM_TO_FRESH_MECHANISM_CASE_UNOBSERVED",
+    "8_preformal_hidden_formal": "NO; CAND35_GREEN_R2_DOES_NOT_AUTO_CONFER_PREFORMAL_ELIGIBILITY_OR_READY",
+    "9_terminal_and_supply": "CURRENT_OBJECT_TERMINALIZATION_CALIBRATED; ZERO_EXECUTABLE_MECHANISM_SUPPLY_REMAINS_LIVENESS_WATCH_WHILE_H7_POST_PRESERVATION_REVIEW_IS_PENDING",
+    "10_pass_reachability": "REALISTIC_NEAR_TERM_CONDITIONAL_IMPROVED_WITHOUT_WEAKENING_STANDARDS"
   },
   "risks": {
-    "false_positive": "MODERATE_WATCH: candidate35 R2 must not leak scientific choice or candidate response during non-result binding; candidate34 provenance ambiguity remains.",
-    "false_negative": "MODERATE_WATCH: cycle3 continuation is now calibrated, but viable executable MECHANISM supply remains zero; prolonged no-target normalization or successor suppression would be over-conservative.",
+    "false_positive": "MODERATE_WATCH: do not auto-promote candidate35 from green R2, allow response before fresh Analyst, or treat PF-R1 preservation as scientific validation/FORMAL authority.",
+    "false_negative": "LOW_TO_MODERATE_WATCH_IMPROVING: PF-R1 blocker is closed, but viable executable MECHANISM supply is still zero at canonical R96; prolonged no-target normalization or successor suppression remains a risk.",
     "moving_goalpost_rescue": "LOW_WATCH_IMPROVING",
     "over_terminalization": "LOW_TO_MODERATE_WATCH"
   },
   "development_iteration_calibration": {
     "candidate34": "RESULT_EXPOSED_AFTER_EXACTLY_ONE_BOUNDED_PREFORMAL_RESULT_RAW_PRESERVED_ZERO_CONFIRMATORY_CREDIT_CURRENT_OBJECT_TERMINAL",
-    "candidate35": "OPEN_DEVELOPMENT_NONRESULT_ARCHITECTURE_R1_COMPLETE; CYCLE3_REASSESS_CONTINUE_NONRESULT_ONLY_FOR_EXACT_BINDING_INFORMATION_GAIN; RESPONSE_STOP",
-    "candidate35_repair_policy_observed": "SCIENCE_INVARIANT_LINE_WRAPPING_ONLY",
-    "candidate35_r2_policy": "EXACT_BINDING_AND_NONRESULT_PREFLIGHT_ONLY_NO_FROZEN_SCIENTIFIC_FIELD_CHANGE_NO_RESPONSE",
-    "h7": "RESULT_EXPOSED_FORMAL_PROVENANCE_HOLD_R5_PREIDENTITY_COMPLETE",
-    "pf_r1": "UTILITY_ASSIGNMENT_ACTIVE_COMPLETION_PENDING_ORIGINAL_BYTES_ONLY_NO_RERUN",
+    "candidate35": "OPEN_DEVELOPMENT_CYCLE3_ARCHITECTURE_R2_EXACT_NONRESULT_BINDING_COMPLETE_WITH_GREEN_CI; RESPONSE_STOP_PENDING_FRESH_ANALYST",
+    "candidate35_repair_policy_observed": "SCIENCE_INVARIANT_IMPORT_ORDERING_ONLY_AFTER_NONRESULT_GUARD_CLOSURE",
+    "h7": "RESULT_EXPOSED_FORMAL_HOLD_R5_PREIDENTITY_COMPLETE_PFR1_PRESERVATION_NOW_COMPLETE_FRESH_ANALYST_REVIEW_PENDING",
+    "pf_r1": "EXACT_ORIGINAL_BYTES_DURABLY_PRESERVED_NO_RERUN_RECONSTRUCTION_REGENERATION_RESCORE_RETUNE",
     "repeated_result_bearing_case": "INSUFFICIENT_EVIDENCE"
   },
   "claim_type_findings": {
     "candidate34": "MECHANISM_CEILING_CURRENT_OBJECT_TERMINAL_DEVELOPMENT_ONLY_NOT_FORMAL_FAIL",
-    "candidate35": "SYSTEM_CEILING_MAINTAINED_NONRESULT_ARCHITECTURE_ONLY_NO_SAME_OBJECT_UPLIFT",
-    "h7": "MECHANISM_CEILING_MAINTAINED_FORMAL_HELD_NO_NEW_EVIDENCE",
+    "candidate35": "SYSTEM_CEILING_MAINTAINED_AFTER_EXACT_NONRESULT_EXECUTOR_BINDING_NO_SAME_OBJECT_UPLIFT",
+    "h7": "MECHANISM_CEILING_MAINTAINED_FORMAL_HELD_NO_NEW_EVIDENCE_PRESERVATION_ONLY",
     "fresh_system_to_mechanism_successor": "UNOBSERVED"
   },
-  "pass_reachability": "H7_REALISTIC_NEAR_TERM_CONDITIONAL; PF_R1_EXACT_ORIGINAL_BYTE_PRESERVATION_COMPLETION_AND_LATER_FRESH_UNCHANGED_R5_ANALYST_REVIEW_REQUIRED",
-  "mechanism_supply_health": "ZERO_EXECUTABLE_MECHANISM_TEMPORARY_NO_TARGET_SHADOW_WITH_H7_HELD_AND_FRESH_INDEPENDENT_SUCCESSOR_LIVENESS_REQUIRED",
+  "pass_reachability": "H7_REALISTIC_NEAR_TERM_CONDITIONAL_IMPROVED; PFR1_EXACT_BYTE_PRESERVATION_COMPLETE; FRESH_UNCHANGED_R5_ANALYST_REVIEW_AND_FULL_ONEWAY_FORMAL_BINDING_CHAIN_STILL_REQUIRED",
+  "mechanism_supply_health": "ZERO_EXECUTABLE_MECHANISM_BUT_PFR1_PROVENANCE_BLOCKER_CLOSED_FRESH_ANALYST_REVIEW_CAN_REASSESS_H7_WHILE_INDEPENDENT_SUCCESSOR_LIVENESS_REMAINS_REQUIRED",
   "funnel_observability": {
     "latest_canonical_authority_generation": "EVA-20260923T180248+0900-R96-3F7C92A1",
     "population": 35,
@@ -212,41 +207,45 @@
     "canonical_consumed_one_way": 0,
     "viable_executable_mechanism": 0,
     "fresh_formal_authority": 0,
-    "official_consumed_scientific_identities": 7
+    "official_consumed_scientific_identities": 7,
+    "newer_operational_fact_candidate35_r2_complete": true,
+    "newer_operational_fact_pf_r1_preservation_complete": true,
+    "silent_recanonicalization_performed": false
   },
   "preformal_calibration": {
     "hidden_second_formal_gate": false,
-    "candidate35_preformal_eligible": false,
-    "candidate35_current_work": "NONRESULT_ARCHITECTURE",
+    "candidate35_preformal_eligible_canonical": false,
+    "candidate35_r2_complete": true,
     "candidate35_response_allowed": false,
+    "candidate35_fresh_analyst_review_required": true,
     "candidate34_result_confirmatory_credit": 0,
     "repeated_observations_independent_confirmation": false
   },
   "utility_request": {
     "new_request_created": false,
     "existing_request": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
-    "status": "ACTIVE_COMPLETION_NOT_OBSERVED",
+    "status": "COMPLETED_BOUNDED_SCOPE_NO_DUPLICATE_OR_RERUN",
     "scope": "EXACT_ORIGINAL_BYTES_ONLY_NO_RERUN_RECONSTRUCTION_REGENERATION_RESCORE_RETUNE"
   },
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": {
     "formal_nonconsumption": "HIGH",
-    "candidate35_architecture_r1_nonresult_boundary": "HIGH",
-    "candidate35_invariant_repairs": "HIGH",
+    "candidate35_r2_nonresult_exact_binding": "HIGH",
+    "candidate35_r2_invariant_repair": "HIGH",
     "candidate35_exact_head_ci": "HIGH",
-    "candidate35_cycle3_reassessment_rationale": "HIGH",
-    "candidate35_r2_actual_implementation": "NOT_YET_OBSERVED",
-    "pf_r1_completion": "NOT_OBSERVED",
+    "pf_r1_source_artifact_identity": "HIGH",
+    "pf_r1_library_preservation_existence": "HIGH",
+    "pf_r1_preserved_byte_hashes_and_source_zip_equality": "HIGH",
+    "post_preservation_fresh_analyst_review": "NOT_YET_OBSERVED",
     "fresh_consumed_formal_end_to_end": "UNOBSERVED",
     "repeated_result_bearing_preformal": "UNOBSERVED",
-    "terminal_system_to_fresh_mechanism_successor": "UNOBSERVED"
+    "fresh_terminal_system_to_mechanism_successor": "UNOBSERVED"
   },
   "questions_for_control_analyst": [
-    "Will candidate35 R2 remain exact-binding/non-result only with no candidate response before a later fresh Analyst generation?",
-    "Will any R2 need to alter a frozen scientific field be treated as prospective redevelopment rather than hidden implementation repair?",
-    "Will zero executable MECHANISM supply remain temporary rather than a reason to inflate candidate35's SYSTEM claim ceiling?",
-    "Will independent mechanism discovery continue during the temporary no-target exception?",
-    "Will candidate34 provenance be clarified append-only without changing raw bytes?",
-    "Will Utility complete the existing PF-R1 preservation assignment exactly once on original bytes only, then stop for fresh Analyst review?"
+    "Re-fetch candidate #35 R2 exact head before any response authority and avoid automatic READY promotion from green CI.",
+    "Treat any need to alter a frozen #35 scientific field as prospective redevelopment rather than implementation repair.",
+    "Acknowledge PF-R1 preservation as provenance closure only and perform fresh unchanged-R5 H7 review before any FORMAL start.",
+    "Keep zero executable MECHANISM supply temporary and continue independent mechanism discovery without inflating #35.",
+    "Keep #34 provenance repair append-only with no raw mutation or rerun."
   ]
 }
