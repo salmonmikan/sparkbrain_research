@@ -1,8 +1,8 @@
-# FAST FORGE latest — no independent high-information target after #34 exposure
+# FAST FORGE latest — no independent target under R95 no-target shadow
 
 - schema_version: `2`
-- generation_id: `FORGE-20260923T163218+0900-NOOP-POSTEXPOSURE-R94`
-- produced_at: `2026-09-23T16:32:18+09:00`
+- generation_id: `FORGE-20260923T173525+0900-NOOP-NO-TARGET-SHADOW-R95`
+- produced_at: `2026-09-23T17:35:25+09:00`
 - worker_role: `FAST_FORGE`
 - evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
 - overall_status: `FORGE_OBSERVATION`
@@ -10,27 +10,28 @@
 
 ## Freshness / independence
 
-Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; Evidence Analyst R94 remains current at `5cee6ef496eb9465550fb9c0be5295e587027dfb`. MAIN/Relay now records candidate #34's single authorized PRE_FORMAL development response as durably preserved and result-exposed at `ops/orchestrator-run-report@692557e1e5d5deeb7d156db274ea2e71d323b1db`; repeat execution is forbidden pending fresh Analyst review. Candidate #35 remains the queued canonical SYSTEM architecture surface. H7/PF-R1 remains a protected FORMAL/provenance/Utility path.
+Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Evidence Analyst R95 is current at `9b9ceffc5c5f4fc8cf68b2d7e28259d8d6d2ea1a` and terminalizes candidate #34 for the current object after its one-shot result-exposed development response. R95 explicitly retains no immediate #34 successor this generation because post-result same-family successor construction would create rescue/laundering risk.
 
-Literature R37 (`1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e`) supplies a new spike-response/history-filter reduction ladder, but it is explicitly tied to #34's measurement surface and is now outcome-sensitive MAIN work. Methodology R85 (`d8dd9cfa00a3602fafa0df539ea5fd3df050f2cf`) confirms #34 crossed the first result-exposure boundary and otherwise adds provenance/governance recommendations, not an independent Forge science surface. Control R43 and the Utility assignment remain PF-R1-specific.
+Candidate #35 is now the sole queued canonical lane and is MAIN-owned. Fresh ownership refetch found `research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1@c640cb3a42faf1f49bee568c1cc167c03fb63646`; the newest delta is lint-only test wrapping, not a new scientific surface. H7/PF-R1 remains protected FORMAL/provenance work.
+
+External research/audit remains `1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e`; Methodology is `17bee7e4973c38b5cedcdac67fbeb964ab423398`; Control is `1592c3b52a8a545aa2503fd4618c0a761921ef1e`; Utility is `b2f1462aeb95707747f8b273c1b9a6ec678996bd`. No separate literature branch is present; the current literature reduction content is carried in the external-research/audit handoff.
 
 ## Target scan
 
 No bounded independent prototype passed the Forge filters this run.
 
-- The new R37 comparator family was excluded because it is #34-result-dependent and MAIN-owned.
-- Queue-free/persistent physical state was excluded because #35 is already canonical and queued.
+- Immediate #34 route-family successor/comparator work was rejected because R95 intentionally leaves no same-family successor this generation; R37 is a future prospective reduction bar, not a post-result rescue license.
+- Queue-free/persistent physical state and the newly added clone/reset/serializer helpers were rejected because #35 is the active MAIN object/runtime and immediate successor surface.
 - H7/PF-R1 preservation/provenance was excluded as protected critical-path work.
-- Global unit-relabel / Assembly realization invariance was rechecked and rejected as an exact duplicate of the earlier R84 QFD, which already closed the simple bijective-coordinate case.
-- Native responsibility/credit, delayed reward/replay/eligibility, receptor/topology aliasing, Assembly completion/prototype/order/capacity/context/coactivation and related surfaces are already dense in prior exploratory/Forge history; stable main exposes no new independent observable, intervention, comparator or tooling delta.
-- R85's execution-source metadata defect is methodology/governance only and does not directly enable an independent scientific prototype.
+- Native responsibility/credit, delayed reward/replay/eligibility, receptor/topology aliasing, Assembly completion/regeneration/prototype/order/capacity/context/coactivation and pre-semantic functional-table variants remain historically dense; stable main exposes no new independent observable, intervention, comparator, reduction or enabling tool.
+- The only fresh MAIN branch delta is science-invariant line wrapping, so it creates no Forge opportunity.
 
-Manufacturing a new probe from those already-covered surfaces would add activity without information gain.
+Manufacturing another synthetic probe from already-covered surfaces would add activity without information gain. Zero prototypes, zero Forge branches, zero Utility requests and zero promotion proposals were produced.
 
 ## Disposition
 
-Zero prototypes, zero Forge branches, zero Utility requests and zero promotion proposals this run. MAIN collision check passed: no #34 raw-result access or interpretation, no #34 executor/scorer/preserver work, no #35 work, and no H7/PF-R1 bytes or identities touched.
+MAIN collision check passed: no #35 response/scorer/runtime work, no #34 rerun/rescue, no H7/PF-R1 identity or preservation work, and no consumed/frozen/evidence/formal/sealed/freeze/preserve surfaces were touched.
 
 No hard-floor action occurred: no PRE_FORMAL/FORMAL identity, STARTED, official TEST/scoring, held-out access, response workflow, evidence/formal/sealed/freeze/preserve mutation, consumed-evidence mutation or research/main merge.
 
-Cumulative metrics: runs `6`, prototypes attempted `10`, dead ends `9`, interesting retained `0`, promotion proposals `0`, later admissions `0`, duplicate/rescue rejects `6`, ownership collisions `0`, ordinary-reduction rejects `9`.
+Cumulative metrics: runs `7`, prototypes attempted `10`, dead ends `9`, interesting retained `0`, promotion proposals `0`, later admissions `0`, duplicate/rescue rejects `7`, ownership collisions `0`, ordinary-reduction rejects `9`.
