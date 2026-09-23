@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T172900+0900-PRIMARY-CAND35-ARCHR1-R95-WAITING-CI",
-  "run_id": "sparkbrain-main-primary-20260923T171800JST-R95-cand35-archr1",
-  "producer_run_id": "sparkbrain-main-primary-20260923T171800JST-R95-cand35-archr1",
-  "produced_at": "2026-09-23T17:29:00+09:00",
-  "authority_scope": "PRIMARY_CANONICAL_R95_CAND35_ARCHITECTURE_R1_NONRESULT_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T164400+0900-RELAY-CAND34-PREFORMALR2-R94-WAITING-ANALYST",
+  "generation_id": "MAIN-20260923T175200+0900-RELAY-CAND35-ARCHR1-R95-WAITING-CI",
+  "run_id": "sparkbrain-main-relay-20260923T175200JST-R95-cand35-archr1",
+  "producer_run_id": "sparkbrain-main-relay-20260923T175200JST-R95-cand35-archr1",
+  "produced_at": "2026-09-23T17:52:00+09:00",
+  "authority_scope": "RELAY_CONTINUATION_R95_CAND35_ARCHITECTURE_R1_NONRESULT_SCIENCE_INVARIANT_REPAIR_ONLY",
+  "supersedes_generation_id": "MAIN-20260923T172900+0900-PRIMARY-CAND35-ARCHR1-R95-WAITING-CI",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T165919+0900-R95-71C4A8E2@9b9ceffc5c5f4fc8cf68b2d7e28259d8d6d2ea1a",
-    "main_previous": "MAIN-20260923T164400+0900-RELAY-CAND34-PREFORMALR2-R94-WAITING-ANALYST"
+    "main_previous": "MAIN-20260923T172900+0900-PRIMARY-CAND35-ARCHR1-R95-WAITING-CI"
   },
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "status": "WAITING_EXTERNAL",
   "analyst_generation_id": "EVA-20260923T165919+0900-R95-71C4A8E2",
   "analyst_commit": "9b9ceffc5c5f4fc8cf68b2d7e28259d8d6d2ea1a",
@@ -22,7 +22,7 @@
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "NONTERMINAL",
-  "queue_state": "MAIN_ARCHITECTURE_R1_IMPLEMENTED_WAITING_EXACT_HEAD_CI",
+  "queue_state": "MAIN_ARCHITECTURE_R1_LINT_REPAIRED_WAITING_EXACT_HEAD_CI",
   "system_priority_exception": {
     "used": true,
     "kind": "NO_COHERENT_MECHANISM_TARGET",
@@ -31,36 +31,37 @@
   "development_phase": "OPEN_DEVELOPMENT",
   "development_revision": "ARCHITECTURE-R1-NONRESULT",
   "cycle_count": 1,
-  "cycle_information_gain": "Implemented the prospectively authorized non-result Architecture surface needed to determine whether queue-free cloning/reset, queue-cap fail-closed enforcement, deterministic local-state serialization, and synthetic validation are mechanically executable without producing a candidate response. No candidate-response information was obtained.",
+  "cycle_information_gain": "Diagnosed the awaited generic CI failure as a lint-only E501 formatting defect and applied only an outcome-independent line-wrapping repair. No candidate-response information or scientific result was obtained.",
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "active_research_branch": "research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1",
-    "active_research_head": "58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751",
+    "active_research_head": "c640cb3a42faf1f49bee568c1cc167c03fb63646",
+    "previous_waiting_head": "58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751",
     "architecture_module": "src/sparkbrain/v05/subthreshold_architecture.py",
     "synthetic_test_path": "tests/test_v05_subthreshold_architecture.py"
   },
   "workflow_observation": {
-    "initial_implementation_ci_run_id": 35836764981,
-    "initial_implementation_ci_conclusion": "failure",
-    "initial_failure_classification": "SCIENCE_INVARIANT_LINT_ONLY_E501_LINE_LENGTH",
-    "initial_failure_result_bearing": false,
-    "final_exact_head_ci_run_id": 35837060130,
-    "final_exact_head_ci_workflow": "ci",
-    "final_exact_head_ci_head": "58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751",
-    "final_exact_head_ci_status": "in_progress",
-    "final_exact_head_ci_conclusion": null,
+    "previous_exact_head_ci_run_id": 35837060130,
+    "previous_exact_head_ci_head": "58d73aa7c0ad19d0a4e4f84bdbcaaf385e58f751",
+    "previous_exact_head_ci_status": "completed",
+    "previous_exact_head_ci_conclusion": "failure",
+    "previous_failure_step": "Lint",
+    "previous_failure_classification": "SCIENCE_INVARIANT_LINT_ONLY_E501_LINE_LENGTH",
+    "previous_failure_result_bearing": false,
+    "current_exact_head_ci_run_id": 35839346480,
+    "current_exact_head_ci_workflow": "ci",
+    "current_exact_head_ci_head": "c640cb3a42faf1f49bee568c1cc167c03fb63646",
+    "current_exact_head_ci_status": "in_progress",
+    "current_exact_head_ci_conclusion": null,
     "result_bearing": false,
-    "expected_next_external_action": "Re-fetch the exact-head generic CI result. If green and Evidence Analyst R95 remains materially unchanged, close Architecture R1 implementation readiness and return to Analyst without candidate-response execution."
+    "expected_next_external_action": "Re-fetch the exact-head generic CI. If green and Evidence Analyst R95 remains materially unchanged, close Architecture R1 implementation readiness and return to Analyst without candidate-response execution."
   },
   "work_performed": {
-    "classification": "ARCHITECTURE_NONRESULT_IMPLEMENTATION_WITH_SCIENCE_INVARIANT_LINT_REPAIR",
-    "research_branch_created": true,
-    "deterministic_queue_free_clone_implemented": true,
-    "subthreshold_reset_clone_implemented": true,
-    "queue_cap_fail_closed_enforcement_implemented": true,
-    "deterministic_local_state_serializer_implemented": true,
-    "synthetic_nonresult_validation_added": true,
+    "classification": "SCIENCE_INVARIANT_REPAIR_LINT_ONLY_LINE_WRAPPING",
+    "research_branch_created": false,
     "science_invariant_lint_repair_applied": true,
+    "repair_file": "tests/test_v05_subthreshold_architecture.py",
+    "repair_detail": "Wrapped the existing _internal_unit_ids tuple comprehension to satisfy Ruff E501 without changing expression semantics.",
     "scientific_contract_changed": false,
     "candidate_response_executed": false,
     "result_bearing_workflow_dispatched": false,
@@ -70,13 +71,12 @@
   },
   "observations_evidentiary_status": {
     "new_scientific_result_this_run": false,
-    "result_class": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_IMPLEMENTATION_ONLY",
+    "result_class": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_IMPLEMENTATION_REPAIR_ONLY",
     "candidate_response_observation_count": 0,
     "formal_evidence": 0,
     "preformal_development_evidence": 0,
     "mechanism_architecture_observations": 0,
     "system_architecture_response_observations": 0,
-    "implementation_feasibility_observation": "The current runtime exposes queue/state/checkpoint structures sufficient to construct the authorized non-result tooling without executing the candidate response; final implementation readiness remains contingent on exact-head CI.",
     "independent_confirmatory_credit": 0,
     "official_scoring_performed": false
   },
@@ -89,14 +89,13 @@
     "immutable_formal_sealed_evidence_refs_mutated": false
   },
   "collision_awareness": {
-    "preexisting_cand35_branch_collision": false,
+    "primary_same_object_running_collision": false,
+    "primary_previous_state": "WAITING_EXTERNAL",
+    "remote_same_object_mutation_after_handoff_before_repair": false,
     "forge_same_object_collision": false,
     "forge_current_disposition": "NO_OP_NONCANONICAL_EXCLUDES_CAND35_CANONICAL_WORK",
     "forge_code_or_observation_reused": false,
-    "utility_same_object_collision": false,
-    "utility_dependency": false,
-    "open_pr_148_state": "open",
-    "open_pr_149_state": "open"
+    "utility_dependency": false
   },
   "hard_floor": {
     "formal_identity_created_or_consumed": false,
@@ -112,18 +111,14 @@
     "consumed_identity_rerun_retune_rescore": false
   },
   "integrity": {
-    "analyst_generation_rechecked_before_acquisition": true,
     "analyst_generation_rechecked_before_research_mutation": true,
-    "analyst_generation_rechecked_before_science_invariant_repair": true,
-    "analyst_generation_rechecked_before_final_persistence": true,
-    "stable_main_rechecked_before_research_mutation": true,
-    "active_research_head_rechecked_before_final_persistence": true,
-    "final_research_head_matches_waiting_ci_head": true,
-    "evidence_tags_rechecked": true,
-    "formal_tag_namespace_empty_at_check": true,
-    "sealed_tag_namespace_empty_at_check": true,
-    "freeze_tag_namespace_empty_at_check": true,
-    "preserve_namespace_collision_checked": true,
+    "main_generation_and_lease_rechecked_before_research_mutation": true,
+    "active_research_head_rechecked_before_research_mutation": true,
+    "analyst_generation_rechecked_after_research_mutation": true,
+    "main_generation_and_lease_rechecked_after_research_mutation": true,
+    "active_research_head_rechecked_after_research_mutation": true,
+    "active_research_head_matches_current_ci_head": true,
+    "repair_is_child_of_previous_waiting_head": true,
     "forge_boundary_respected": true,
     "system_to_mechanism_uplift_not_performed": true,
     "candidate_response_stop_respected": true,
@@ -136,10 +131,10 @@
     "candidate_35_identity_created_or_consumed": false
   },
   "remaining_blockers": [
-    "Exact final-head generic CI run 35837060130 is still in progress.",
-    "Current R95 authority stops before any candidate #35 response-bearing execution; even after green CI, MAIN must return Architecture readiness to Evidence Analyst rather than auto-run the candidate response."
+    "Exact repaired-head generic CI run 35839346480 remains in progress.",
+    "R95 authority stops before any candidate #35 response-bearing execution; after green CI, MAIN must return Architecture readiness to Evidence Analyst rather than auto-run the candidate response."
   ],
-  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI",
-  "next_action": "Re-fetch the latest Evidence Analyst generation, exact candidate #35 research head, and CI run 35837060130. If CI is green and authority is materially unchanged, close Architecture R1 implementation readiness and return to Analyst without candidate-response execution. If CI fails, repair only clearly science-invariant implementation defects; any scientific cue/reset/cap/observable meaning change requires fresh Analyst authority.",
+  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_AFTER_SCIENCE_INVARIANT_LINT_REPAIR",
+  "next_action": "Re-fetch the latest Evidence Analyst generation, MAIN lease, exact candidate #35 research head, and CI run 35839346480. If CI is green and R95 is materially unchanged, close Architecture R1 implementation readiness and return to Analyst without candidate-response execution. If CI fails, diagnose the exact failure and repair only clearly science-invariant defects; otherwise fail closed for fresh Analyst authority.",
   "owner": "main"
 }
