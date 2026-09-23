@@ -1,135 +1,100 @@
-# SparkBrain Evidence Analyst — R102 latest
+# SparkBrain Evidence Analyst — R103 latest
 
 - schema_version: `2`
-- generated_at: `2026-09-24T00:38:00+09:00`
-- scientific execution mode: `READ_ONLY`
-- canonical promotion authority: Evidence Analyst only
+- generation_id: `EVA-20260924T010800+0900-R103-FORGE-DEFER-SCHEDULER-RED`
+- generated_at: `2026-09-24T01:08:00+09:00`
+- role: `EVIDENCE_ANALYST_CANONICAL_PROMOTION_GATE`
+- scientific_execution_mode: `READ_ONLY`
 
-## Fresh repository/control snapshot
+## Fresh authoritative snapshot
 
-- `main`: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- Control mailbox: `3c46617fba123704297d880a748c305c16a7dd01`
-- MAIN/Relay mailbox: `21a8ee7b0ae85df57a0a35b70ad726e45252e259`
-- Methodology: `18a575e8c44a19e2c171d3b2f412a5a06bf8f328`
-- Independent Audit: `e8e527e1ed399bb26f926237931618d9b93056e0`
-- Literature: `0f0172635ecb99014f51232a88a32a4fc6b61c48`
-- Repository Steward: `1688778e30007f21162c6fd7c21a34b9a3071998`
-- Utility: `c231c2652f1c824a276649a7b9b6d752c2b729ae`
+- stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
+- current Control: `b5d799cff8baf61442b334971f7eb777cbd49a73`
+- current MAIN/Relay mailbox: `fb5f1a0c65989698f89a4516538f7638103006f8`
+- current Methodology: `d5c277b11a8a8b89271ca0572b8c51960fa7b9ad`
+- current External Research/Audit branch: `d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c`
+- current Repository Steward: `1688778e30007f21162c6fd7c21a34b9a3071998`
+- current Utility: `c231c2652f1c824a276649a7b9b6d752c2b729ae`
 - H7 science: `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`
-- H7 controller: `f21dc7521af7413adcc46a2561271e0b8852f371`
-- Candidate #35 live branch: `62db3b437ffc26b931bbe5b9e78ca814bddbeb81`
-- Candidate #35 frozen scientific source: `8ea6581544c642ad74f1a95955ab2c5f795afccc`
-- Candidate #35 bound implementation: `b5f312683d50ed3a086348b62770fc8923c78046`
-- Candidate #35 raw preservation ref: `raw/cand35-r100-onebatch-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a`
-- Candidate #35 response workflow: run `35877765051`, `success`
-- H7 latest readiness: run `35857110884`, failed before identity materialization because protected-sidecar capability was unavailable.
-- Evidence tags: 5. `formal/*`, `sealed/*`, `freeze/*`, `immutable/*`: 0.
-- H7 `control/*` STARTED refs: 0; H7 `preserve/*` scientific refs: 0.
-- Open PRs: `#149`.
-- Official consumed FORMAL identities: 7; new consumption this generation: 0.
+- H7 controller: `ccffe9af2c6d3e04c9d1c7e6a53045d4a569756e`
+- Candidate #35 live research head: `62db3b437ffc26b931bbe5b9e78ca814bddbeb81`
+- Candidate #35 preserved one-batch raw ref: `afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a`
+- current Forge branch: `forge/20260924-coordinate-null-local-witness@c5bd7af762e2ddcbc5662859bfee86d841a6ca47`
+- authoritative evidence tags: 5 unchanged
+- `formal/*`, `sealed/*`, `freeze/*`, `immutable/*` tags: none
+- H7 scientific `control/*` STARTED refs: none observed
+- H7 scientific `preserve/*` refs: none observed
+- open PRs: `#149` only
+- official consumed FORMAL identities: 7; new consumed this generation: 0
 
-`ops/*` above is mailbox/control-plane context only, never scientific source of truth.
-
-## Candidate #35 — current object closed
-
-The single prospective fixed-order SYSTEM/ARCHITECTURE development batch remains the authoritative current development observation. Raw was preserved before interpretation. It is unscored, non-PRE_FORMAL, non-FORMAL, and carries zero confirmatory credit.
-
-Fixed arms and frozen surface:
-1. `SHAM_STATE`: cue 43 ms; units 6/7 spike; one `[6,7]` cascade; no ignition.
-2. `POTENTIAL_NULL`: same measured output as SHAM.
-3. `ADAPTATION_NULL`: same measured output as SHAM.
-4. `JOINT_SUBTHRESHOLD_NULL`: same measured output as SHAM.
-5. `DELAYED_SHAM_32MS`: same output structure shifted to cue/spikes at 75 ms; no ignition.
-
-Treatment/raw hashes differ where expected, so the null interventions were materially represented. The bounded interpretation is therefore `NO_MEASURED_PRIMING_EFFECT_ON_FROZEN_OUTPUT_SURFACE`.
-
-Canonical state remains:
-- claim ceiling: `SYSTEM`
-- funnel stage: `ARCHITECTURE_STUDY`
-- development phase: `RESULT_EXPOSED_DEVELOPMENT`
-- current object: `TERMINAL_FOR_CURRENT_OBJECT`
-- one-shot development authority: exhausted
-- same-object rerun/retune/rescore: `STOP`
-- same-object SYSTEM→MECHANISM upgrade: prohibited
-
-The current result does not establish that all naturally reachable subthreshold or activity-silent state is irrelevant. Coordinate-wise nulling may be off-manifold, and the frozen #35 source did not test transient synaptic-plasticity memory. Any broader successor requires a fresh independently motivated ID and prospective contract with zero inherited confirmatory credit.
-
-## Methodology correction: H7 phase monotonicity
-
-Methodology R93 identified a semantic regression in R101: the unchanged H7 object was labeled `OPEN_DEVELOPMENT` after prior meaningful development-result exposure. The same object must not regain OPEN permissions without fresh versioned object/revision semantics.
-
-This generation prospectively corrects H7 to `RESULT_EXPOSED_DEVELOPMENT`. Historical R100/R101 records and all prior results remain untouched. The correction grants no new scientific authority.
-
-H7 remains:
-- claim ceiling `MECHANISM`
-- stage `PRE_FORMAL`
-- persisted readiness `READY`, effective executable `false`
-- hold `FORMAL_INTEGRITY_CAPABILITY`
-- `FORMAL`: `STOP`
-- one-way identity: not created/not consumed
-
-Only science-invariant protected-sidecar capability / exact authority plumbing and then NON_RESULT readiness are GO. A green readiness must stop for a later fresh Analyst before FORMAL.
-
-## Literature / reduction update
-
-Literature R40 narrows future interpretation without retrofitting #35. The #35 frozen source disabled field weight learning, delay learning and reward modulation, so its null result did not test transient synaptic-plasticity/activity-silent memory. Future broader persistent-memory claims should include transient-synaptic/STP comparators and ordinary leaky/adaptive reductions.
-
-For delayed credit, the latest literature also strengthens the ordinary three-factor eligibility baseline: a delayed third factor should be able to act on a previously established eligibility trace without requiring a new qualifying spike pair. This is a prospective comparator obligation, not evidence for any current candidate.
-
-## Fast Forge promotion gate
-
-Latest Forge is `FORGE_DEAD_END`: the v0.5 reward/credit-locality probe is reducible to ordinary globally neuromodulated STDP with per-edge eligibility accumulation and no native retrospective reward-only update/local responsibility signal.
-
-No new `FORGE_PROMOTION_PROPOSED` and no materially new `FORGE_INTERESTING` object exist. No promotion review object is admitted/deferred/rejected this generation.
-
-Separate Forge metrics:
-- runs observed: 12
-- prototypes: 16
-- dead ends: 12
-- interesting: 0
-- promotion proposals: 0
-- admissions: 0
-- duplicate/rescue rejects: 9
-- ordinary-reduction rejects: 12
-
-## Phenomenon-first shadow
-
-Mode: `NO_TARGET_SHADOW`; standby proposals: 0; non-authorizing.
-
-The previously recorded reachable-state/on-manifold residual around the #35 topic is explicitly `DEFER_NOT_ADMITTED_NO_COHERENT_MECHANISM_TARGET_YET`. It remains scientifically plausible, but current repository evidence does not provide a bounded independent SparkBrain phenomenon under naturally reachable/matched-natural-history states that can be prospectively contracted without leaning on #35's observed outcome. This is not topic death. A later independently established residual may be reviewed under a fresh candidate ID.
+`ops/*` is control-plane context only and is not used as repository scientific source of truth.
 
 ## Canonical funnel
 
-- total candidates: 35
-- MECHANISM: 14
-- SYSTEM: 21
-- `TERMINAL_FOR_CURRENT_OBJECT`: 34
-- `NONTERMINAL_HOLD`: 1 (H7)
-- queued: 0
-- `OPEN_DEVELOPMENT`: 1
-- `RESULT_EXPOSED_DEVELOPMENT`: 34
-- current nonterminal preformal-eligible: 1
-- persisted READY: 1 (H7), effective executable: 0
-- viable executable MECHANISM: 0
-- active SYSTEM priority exception: 0
-- official consumed FORMAL identities: 7
+Canonical denominator remains unchanged: 35 candidates = 14 MECHANISM / 21 SYSTEM; 34 terminal for the current object, H7 is the sole nonterminal hold, queue 0. Development phases remain OPEN 1 / RESULT_EXPOSED 34. H7 is the only nonterminal PRE_FORMAL-eligible/READY object, but effective execution remains false. Viable executable MECHANISM remains 0. Official consumed FORMAL identities remain 7, with no new consumption this generation.
 
-## MAIN / Forge / Utility allocation
+### H7
 
-- MAIN: H7 integrity/readiness preparation only; no H7 FORMAL. #35 same-object science is closed.
-- Fast Forge: independent rough exploration only; no MAIN critical-path identity/scorer/preserver/runtime/workflow assets.
-- Utility: clean `IDLE`; no canonical typing/readiness/admission authority and no current scientific blocker.
+H7 remains `MECHANISM / PRE_FORMAL / RESULT_EXPOSED_DEVELOPMENT / NONTERMINAL_HOLD`. The latest non-result readiness workflow on the current controller failed before identity materialization because the protected-sidecar capability remains unavailable. The H7 science head is unchanged. No FORMAL identity, STARTED ref, protected evaluation, scorer action, or scientific preserve ref was created.
 
-## Top canonical next actions by information value
+Allowed next work is limited to science-invariant protected-sidecar capability / exact authority plumbing, followed by NON_RESULT readiness only. Even a green readiness must stop for a later fresh Analyst generation before FORMAL.
 
-1. **GO preparation only:** close H7 protected-sidecar capability and exact authority plumbing, then run NON_RESULT readiness only. If green, stop and return to a fresh Analyst; if any exact binding differs, fail closed.
-2. **No executable #35 action:** current object is terminal; reachable-state/on-manifold successor is not admitted.
-3. **No executable canonical third action:** phenomenon-first standby is empty and Forge has no admitted promotion proposal. Independent rough exploration may continue without touching MAIN critical-path assets.
+### Candidate #34
 
-## Governance
+Remains terminal for the current MECHANISM object and reducible; no same-object rescue.
 
-Stable main remains protected by an active branch ruleset. Authoritative tag-namespace protection for evidence/formal/sealed/freeze remains unobserved; this is a governance gap, not a current scientific blocker. Open PR set is #149 only.
+### Candidate #35
 
-## Integrity check
+Remains `SYSTEM / ARCHITECTURE_STUDY / RESULT_EXPOSED_DEVELOPMENT / TERMINAL_FOR_CURRENT_OBJECT`. The prospectively fixed five-arm one-batch development observation remains null on the frozen measured output surface. One-shot development authority is exhausted. Same-object rerun/retune/rescore and same-object SYSTEM→MECHANISM uplift remain STOP.
 
-This generation did not execute or dispatch scientific experiments, consume a one-way identity, merge a research PR, mutate immutable evidence, change a scheduler definition, dispatch Utility work, rescore a consumed FORMAL identity, or rewrite historical PASS/FAIL.
+The result does not close the topic family: coordinate-wise nulling may be off-manifold and the frozen source did not test transient synaptic-plasticity memory. Any successor must nevertheless be independently identified and prospectively contracted under a fresh candidate ID, with no inherited confirmatory credit.
+
+## Fast Forge promotion review
+
+A new Forge object appeared after R102 on `forge/20260924-coordinate-null-local-witness`. Forge reports it as `FORGE_PROMOTION_PROPOSED`: a synthetic probe shows that equality of the local `(potential, adaptation)` pair does not determine equality of full network state/history, motivating a possible matched-natural-history/full-state question. Forge remains non-evidentiary and noncanonical; the observation has zero confirmatory credit.
+
+**Promotion decision: DEFER / NOT ADMITTED.**
+
+The key reason is temporal and conceptual independence. The proposal was generated after Candidate #35 result exposure and directly occupies #35's immediate off-manifold/natural-history successor surface. R102 already recorded that surface as scientifically plausible but explicitly not yet a bounded independently established canonical phenomenon. The new bounded witness comes from post-outcome Forge work itself. Admitting it now would therefore use rescue-adjacent exploratory output to manufacture an immediate successor.
+
+Eight-point review:
+1. Distinctness/no same-object rescue: **fail for current admission** — immediate post-outcome #35 successor surface.
+2. Independent of the unknown H7 outcome: **pass**, but this does not cure item 1.
+3. Bounded phenomenon/reachable surface: **partial** — bounded synthetically by Forge, not independently canonically re-established.
+4. Prospective falsifier/discriminator: **possible** — matched natural histories/full-state controls could in principle test residual causal sensitivity.
+5. Strong ordinary reductions: full-state mismatch despite local-coordinate equality; ordinary leaky/adaptive/refractory dynamics; spike-history/timing/source-input differences; ordinary state-space reachability.
+6. Negative-result information value: **yes in principle**.
+7. Fresh contract without using Forge observation as confirmation: **not yet established**.
+8. Prospective typing if independently re-identified later: **SYSTEM first**, not an automatic MECHANISM claim.
+
+No fresh canonical candidate is created. Forge history remains unchanged. The topic is not scientifically rejected; it may be reconsidered only after independent re-identification outside the post-outcome rescue path, followed by a fresh prospective contract.
+
+Separate Forge metrics now observed: 13 runs, 17 prototypes, 13 dead ends, 1 interesting object, 1 promotion proposal, 0 admissions. This generation records one promotion-gate defer reason: `POST_OUTCOME_IMMEDIATE_SUCCESSOR_RESCUE_ADJACENT / INDEPENDENT_REIDENTIFICATION_REQUIRED`.
+
+## Phenomenon-first shadow
+
+Mode remains `NO_TARGET_SHADOW`, read-only/non-authorizing, standby 0. The new Forge proposal is not materialized as a shadow or canonical candidate. Zero queue remains acceptable; do not manufacture activity.
+
+## Literature / Audit / Methodology / Utility / Steward
+
+- Methodology R93 remains well calibrated: H7 stays result-exposed, #35 one-shot development handling is valid, and FORMAL one-way integrity remains strict.
+- Literature R40 keeps #35 interpretation narrow and adds transient synaptic/STP and ordinary three-factor eligibility baselines for future broader claims. It does not create a new canonical candidate.
+- Independent Audit continues to classify #34 as reducible to ordinary local transmission/timing dynamics.
+- Utility is clean IDLE and is not a scientific blocker.
+- Repository Steward confirms protected main and unchanged evidence-tag objects; authoritative tag-namespace protection for evidence/formal/sealed/freeze remains unobserved.
+
+## Scheduler / execution capacity
+
+Live scheduler state is now a material operational blocker: both PRIMARY canonical MAIN and Relay are disabled, while Analyst/Forge/Utility/Methodology/Control/External Research remain enabled. Canonical implementation/execution throughput is therefore zero.
+
+This Analyst run does not change scheduler definitions. The minimum restoration consistent with current ownership is to re-enable the existing PRIMARY MAIN unchanged. Relay should remain disabled unless a separate failover/continuation architecture is explicitly approved.
+
+## Allocation and top actions
+
+1. **Operational prerequisite — user decision required:** restore canonical MAIN capacity by re-enabling the existing PRIMARY worker unchanged, or explicitly keep canonical science paused.
+2. **Conditional GO after PRIMARY restoration:** H7 science-invariant protected-sidecar capability + exact authority plumbing, then NON_RESULT readiness only. STOP after readiness for a fresh Analyst. H7 FORMAL remains STOP.
+3. **No third executable canonical action:** #35 is terminal for the current object, the Forge successor proposal is deferred, and phenomenon-first standby is empty. Continue independent Forge exploration without touching H7/#35/#34 rescue or their immediate blockers/successors.
+
+## Integrity confirmation
+
+This generation executed no experiment, dispatched no result-bearing scientific workflow, consumed no one-way identity, merged no research PR, changed no scheduler definition, dispatched no Utility work, altered no scientific metric/comparator/threshold/protocol, mutated no immutable/formal/sealed/evidence/scientific-preserve ref, and rewrote no historical PASS/FAIL result.
