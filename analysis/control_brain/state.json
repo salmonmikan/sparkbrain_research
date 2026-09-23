@@ -1,35 +1,37 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260923T155900+0900-R43-A91C4E6B",
-  "produced_at": "2026-09-23T15:59:00+09:00",
-  "producer_run_id": "control-brain-auto-20260923T1550JST-R43",
+  "generation_id": "CTRL-20260923T225500+0900-R44-C8F41D72",
+  "produced_at": "2026-09-23T22:55:00+09:00",
+  "producer_run_id": "control-brain-auto-20260923T2250JST-R44",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "CTRL-20260923T125800+0900-R42-7C9E41B2",
-  "programme_position": "CAND34_PREFORMAL_R2_RESULT_EXPOSED_DURABLY_PRESERVED_PENDING_FRESH_ANALYST_INTERPRETATION_H7_FORMAL_HOLD_WITH_PFR1_UTILITY_POINTER_NOW_MACHINE_RESOLVED_FAST_FORGE_ROLLOUT_OBSERVATION",
+  "supersedes_generation_id": "CTRL-20260923T155900+0900-R43-A91C4E6B",
+  "programme_position": "H7_FORMAL_INTEGRITY_CAPABILITY_HOLD_CAND35_NONRESULT_CYCLE3_PRESERVATION_COMPLETE_PENDING_FRESH_ANALYST_CAND34_TERMINAL_LOCAL_IMPULSE_REDUCIBLE_UTILITY_IDLE_FAST_FORGE_SELECTION_TIGHTENED_PRIMARY_MAIN_SCHEDULER_DRIFT_USER_DECISION_REQUIRED",
   "input_generations": {
     "human_directives": "ops/human-directives@de60c8888d1b438d5b06fed2266a8efd5893e646",
-    "control_previous": "CTRL-20260923T125800+0900-R42-7C9E41B2@7035ace9b0ef980602dcb124e8974be5640d7377",
-    "evidence_analyst": "EVA-20260923T150251+0900-R94-8E6A31C4@5cee6ef496eb9465550fb9c0be5295e587027dfb",
-    "main_relay": "MAIN-20260923T155100+0900-RELAY-CAND34-PREFORMALR2-R94-D34Q002-PRESERVED-EXPOSED@692557e1e5d5deeb7d156db274ea2e71d323b1db",
-    "fast_forge": "FORGE-20260923T153500+0900-ASSEMBLY-IDENTITY-COACTIVATION-R94@ops/orchestrator-run-report",
-    "utility_before_control_action": "UTILITY-20260923T152750+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-R94-6A4E91C2@04d0a45a2d9dea0fe67c0a95870e0196b5a9f4a3",
-    "utility_assignment_after_control_action": "UASSIGN-20260923T155800+0900-PFR1-7B1D4E92@b2f1462aeb95707747f8b273c1b9a6ec678996bd",
-    "methodology": "METHCAL-20260923T152244+0900-R84-5D4A8C21@f0d6b97c76878aada97794745c4b51f46bea18b0"
+    "control_previous": "CTRL-20260923T155900+0900-R43-A91C4E6B@1592c3b52a8a545aa2503fd4618c0a761921ef1e",
+    "evidence_analyst": "EVA-20260923T210010+0900-R99-6F2B8C14@59dbcdc2e3541e78a64f64e16fa0be5ef38efc26",
+    "methodology": "METHCAL-20260923T221827+0900-R91-7E31B4A2@ea2ab83a78b10dbefb2fe7cc390ced097e18b243",
+    "independent_audit": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8@e8e527e1ed399bb26f926237931618d9b93056e0",
+    "fast_forge": "FORGE-20260923T223403+0900-V05-HOMEOSTASIS-WINDOWING-R99@ops/orchestrator-run-report",
+    "utility_before_control_action": "UTILITY-20260923T222232+0900-PFR1-TERMINAL-POINTER-BLOCKED-R99-4B6E2D91@6198854592a63156f202f3d5b5f4bedbd180a87e",
+    "utility_terminal_result": "UTILITY-20260923T184052+0900-PFR1-PRESERVE-COMPLETED-R96-D7A19C4E@5e64b57537d440e09429f6ff745b902ae7c59a5d",
+    "utility_pointer_after_control_action": "IDLE@1b0f1cd4aabf57fe5bba2acac2db727d6088171b"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_tag_count": 5,
     "official_consumed_identities": 7,
     "immutable_ref_incident": false,
-    "h7_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-    "h7_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "candidate34_r2_contract_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-    "candidate34_r2_contract_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
-    "candidate34_executor_branch": "research/main-cand34-assembly-route-preformal-r93-response",
-    "candidate34_executor_head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
-    "candidate34_raw_preserve_ref": "preserve/cand34-d34-q002-r94-raw-20260923",
-    "candidate34_raw_preserve_head": "4d45f1135bcb607f1e663648cd8335333eb98de4",
-    "candidate34_raw_sha256": "f34e0e4a40228b5eb299b0c24cec0a6bc97bb37dd1fa5d0f63cf933027843846"
+    "h7_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+    "h7_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+    "h7_controller_branch": "research/main-h7-r5-oneway-controller-r98",
+    "h7_controller_head": "f21dc7521af7413adcc46a2561271e0b8852f371",
+    "h7_failed_readiness_run": 35857110884,
+    "candidate35_branch": "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3",
+    "candidate35_scientific_source_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
+    "candidate35_nonresult_implementation_head": "5bc64fbd8fd2f3e8d804d18e0a0ad0d58b5a3e4c",
+    "candidate35_nonresult_ci_run": 35863266802,
+    "candidate34_raw_preserve_ref": "preserve/cand34-d34-q002-r94-raw-20260923@4d45f1135bcb607f1e663648cd8335333eb98de4"
   },
   "human_directives": {
     "newer_than_008_observed": false,
@@ -40,95 +42,83 @@
   "development_iteration_policy": {
     "status": "ACTIVE_AND_CALIBRATED",
     "cycle_3_policy": "REASSESS_NOT_TERMINAL_CAP",
-    "candidate34": {
-      "analyst_canonical_development_phase_at_r94": "OPEN_DEVELOPMENT",
-      "layer": "PRE_FORMAL",
-      "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
-      "meaningful_result_exposure_observed_after_r94": true,
-      "raw_preserved_before_interpretation": true,
-      "independent_confirmatory_credit": 0,
-      "canonical_phase_update_owner": "EVIDENCE_ANALYST_FRESH_GENERATION_REQUIRED",
-      "required_post_exposure_semantics": "RESULT_EXPOSED_DEVELOPMENT_BEFORE_ANY_FURTHER_SCIENCE_AFFECTING_WORK",
-      "repeat_same_response_allowed": false,
-      "control_scientific_interpretation": "DEFER_TO_FRESH_ANALYST"
-    },
     "h7": {
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "development_revision": "H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-AND-PROVISIONING-PROVENANCE-SPLIT",
-      "preidentity_status": "COMPLETE",
-      "fresh_formal_authority": 0,
-      "prior_results_preserved": true
+      "terminal_state": "NONTERMINAL_HOLD",
+      "hold_class": "FORMAL_INTEGRITY_CAPABILITY",
+      "blocker": "PROTECTED_SIDECAR_CAPABILITY_MISSING_H7_R5_SIDECAR_PASSPHRASE",
+      "readiness_failed_before_identity_materialization": true,
+      "identity_created_or_consumed": false,
+      "started_created": false,
+      "protected_evaluation_accessed": false,
+      "scoring_performed": false,
+      "allowed_repair": "SCIENCE_INVARIANT_CAPABILITY_AND_AUTHORITY_PLUMBING_PLUS_NONRESULT_READINESS_ONLY",
+      "green_readiness_auto_formal_go": false,
+      "fresh_formal_authority": 0
+    },
+    "candidate35": {
+      "development_phase": "OPEN_DEVELOPMENT",
+      "layer": "ARCHITECTURE_STUDY",
+      "claim_ceiling": "SYSTEM",
+      "cycle_3_reassessment_completed": true,
+      "bounded_additional_information_gain": "NONRESULT_PRESERVE_BEFORE_READ_PROVENANCE_BINDING",
+      "scientific_source_changed": false,
+      "implementation_instrumentation_changed": true,
+      "nonresult_ci_green": true,
+      "candidate_response_created": false,
+      "result_bearing_action_allowed": false,
+      "fresh_analyst_required_before_response": true
+    },
+    "candidate34": {
+      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "confirmatory_credit": 0,
+      "same_object_rescue_allowed": false,
+      "audit_r9_reduction": "D34_Q002_PRIMARY_RESPONSE_EXACTLY_REDUCIBLE_TO_LOCAL_EDGE_WEIGHT_DELAY_AND_18MS_MEMBRANE_DECAY_NO_ASSEMBLY_SPECIFIC_RESIDUAL_DEMONSTRATED",
+      "narrow_supported_effect": "LOCAL_PHYSICAL_EDGE_INFLUENCE",
+      "fresh_successor_requirements": [
+        "prospectively_frozen_local_impulse_residual_baseline",
+        "assembly_internal_vs_matched_nontarget_normalization",
+        "downstream_spike_or_state_transition_observable",
+        "fresh_candidate_identity_and_contract"
+      ]
     }
   },
   "funnel": {
-    "source_generation": "EVA-R94_PRE_CAND34_RESPONSE",
+    "source_generation": "EVA-R99",
     "canonical_candidates": 35,
     "mechanism": 14,
     "system": 21,
     "active": 0,
-    "queued": 2,
+    "queued": 1,
     "nonterminal_hold": 1,
-    "terminal_for_current_object": 32,
-    "preformal_eligible": 2,
-    "preformal_ready": 2,
-    "fresh_formal_authority": 0,
+    "terminal_for_current_object": 33,
+    "open_development": 3,
+    "result_exposed_development": 32,
     "canonical_consumed_one_way": 0,
+    "preformal_eligible_current_nonterminal": 1,
+    "preformal_ready_current_nonterminal": 1,
+    "viable_executable_mechanism": 0,
+    "fresh_executable_formal_authority": 0,
     "official_consumed_identities": 7,
+    "system_priority_exceptions": 1,
     "classification_complete": "35/35",
-    "hidden_second_formal_gate": false,
-    "post_r94_note": "candidate34 result exposure is newer than canonical funnel snapshot; fresh Analyst must recanonicalize development phase/disposition"
+    "hidden_second_formal_gate": false
   },
-  "candidate34": {
-    "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
-    "claim_ceiling": "MECHANISM",
-    "layer": "PRE_FORMAL",
-    "analyst_phase_pre_result": "OPEN_DEVELOPMENT",
-    "preformal_eligible": true,
-    "preformal_readiness_at_authorization": "READY",
-    "evidentiary_status": "PREFORMAL_DEVELOPMENT_ONLY_ZERO_CONFIRMATORY_CREDIT",
-    "bounded_response_authorized_count": 1,
-    "bounded_response_executed_count": 1,
-    "response_exposed": true,
-    "raw_preserved_before_interpretation": true,
-    "raw_preserve_ref": "preserve/cand34-d34-q002-r94-raw-20260923@4d45f1135bcb607f1e663648cd8335333eb98de4",
-    "raw_sha256": "f34e0e4a40228b5eb299b0c24cec0a6bc97bb37dd1fa5d0f63cf933027843846",
-    "official_scoring_performed": false,
-    "repeat_response_allowed": false,
-    "control_execution_hold": "STOP_PENDING_FRESH_ANALYST_POST_EXPOSURE_REVIEW",
-    "scientific_interpretation": "NEW_DEVELOPMENT_RESULT_EXISTS_BUT_SIGN_STRENGTH_AND_DISPOSITION_NOT_INTERPRETED_BY_CONTROL"
-  },
-  "candidate35": {
-    "candidate_id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
-    "claim_ceiling": "SYSTEM",
-    "layer": "ARCHITECTURE_STUDY",
-    "development_phase": "OPEN_DEVELOPMENT",
-    "preformal_eligible": false,
-    "queue_state": "QUEUED",
-    "forge_allocation_allowed": false,
-    "next_owner": "MAIN_WHEN_CAPACITY_AVAILABLE"
-  },
-  "h7": {
-    "candidate_id": "CAND-H7-RESPONSIBILITY",
-    "claim_ceiling": "MECHANISM",
-    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "preformal_eligible": true,
-    "preformal_readiness": "READY",
-    "terminal_state": "NONTERMINAL_HOLD",
-    "hold_class": "FORMAL_HOLD_PROVENANCE_GATE",
-    "hold_reason": "PF_R1_EXACT_BYTE_DEVELOPMENT_PROVENANCE_ASSIGNMENT_NOW_PUBLISHED_BUT_EXECUTION_NOT_YET_TERMINALLY_COMPLETED",
-    "preidentity_complete": true,
-    "fresh_formal_authority": 0
+  "mechanism_supply": {
+    "status": "TRANSIENT_ZERO_EXECUTABLE_MECHANISM_ON_H7_INTEGRITY_CAPABILITY_HOLD",
+    "system_exception": "CAND35_NONRESULT_ONLY_WHILE_H7_BLOCKED",
+    "candidate_starvation_declared": false
   },
   "phenomenon_first": {
-    "mode": "PREFETCH_SHADOW",
-    "last_full_scan_generation": "EVA-R94",
+    "mode": "NO_TARGET_SHADOW",
+    "last_full_scan_generation": "EVA-R99",
     "standby_queue_size": 0,
     "standby_limit": 3,
-    "generated_latest_scan": 0,
-    "retained_latest_scan": 0,
-    "later_admissions": 0,
-    "relation_to_forge": "SEPARATE_NONAUTHORIZING_PIPELINE",
-    "quality": "ZERO_QUEUE_ACCEPTABLE_NO_MANUFACTURED_ACTIVITY"
+    "latest_retained": 0,
+    "quality": "ZERO_QUEUE_ACCEPTABLE_NO_MANUFACTURED_ACTIVITY",
+    "fresh_generation_stronger_search_allowed": true,
+    "h7_or_cand34_rescue_manufacture_forbidden": true
   },
   "fast_forge": {
     "policy_status": "IMPLEMENTED_OBSERVATION",
@@ -136,97 +126,103 @@
     "cadence": "HOURLY_AT_35_JST",
     "role_boundary": "NON_EVIDENTIARY_NONCANONICAL",
     "rollout_window": "FIRST_24_TO_48H_CALIBRATION",
-    "runs_observed": 5,
-    "prototypes": 10,
-    "dead_ends": 9,
+    "runs_observed": 11,
+    "prototypes": 14,
+    "dead_ends": 11,
     "interesting": 0,
     "promotion_proposals": 0,
     "analyst_admissions": 0,
-    "duplicate_rescue_rejects": 4,
+    "duplicate_rescue_rejects": 9,
     "ownership_collisions": 0,
-    "ordinary_reduction_rejects": 9,
-    "latest_outcome": "FORGE_DEAD_END_TWO_READ_ONLY_ASSEMBLY_PROBES",
+    "ordinary_reduction_rejects": 11,
+    "latest_outcome": "HOMEOSTATIC_CONTROLLER_ELAPSED_TIME_VS_WINDOW_SEGMENTATION_REDUCED_TO_DISCRETE_PER_OBSERVE_EMA_SEMANTICS",
     "scientific_evidence_credit": 0,
+    "selection_tightening": "PRESCREEN_MORE_AGGRESSIVELY_AND_DEFAULT_TO_ONE_PROTOTYPE_PER_RUN_UNLESS_MATERIALLY_INDEPENDENT_DISCRIMINATOR_EXISTS",
     "cadence_change_warranted": false
   },
   "utility": {
-    "pfr1_request_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
-    "pointer_divergence_before_run": true,
-    "control_action": "PUBLISHED_MATCHING_SCHEMA_V2_DECISION_AND_ACTIVE_ASSIGNMENT_POINTER",
-    "decision_id": "CTRL-DEC-20260923-1558-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
-    "active_assignment_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
-    "active_assignment_generation_id": "UASSIGN-20260923T155800+0900-PFR1-7B1D4E92",
-    "assignment_pointer_observed_after_write": "ACTIVE_MATCHING",
-    "utility_mailbox_head_after_write": "b2f1462aeb95707747f8b273c1b9a6ec678996bd",
-    "max_runs": 1,
-    "policy_intent": "BOUNDED_NON_EVIDENTIARY_EXACT_BYTE_PRESERVATION",
-    "fail_closed_if_original_bytes_unavailable": true,
-    "pfr1_preservation_complete": false,
-    "formal_gate": "STOP_PENDING_UTILITY_TERMINAL_EXACT_BYTE_PRESERVATION_AND_LATER_FRESH_ANALYST_REVIEW",
-    "rerun_reconstruction_regeneration_retune_rescore_allowed": false,
-    "autonomous_forge_allowed_while_assignment_active": false
+    "pfr1_assignment_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+    "pfr1_assignment_generation_id": "UASSIGN-20260923T155800+0900-PFR1-7B1D4E92",
+    "pfr1_terminal_result": "UTILITY-20260923T184052+0900-PFR1-PRESERVE-COMPLETED-R96-D7A19C4E",
+    "pfr1_preservation_complete": true,
+    "exact_bytes_reverified_after_persistence": true,
+    "rerun_reconstruction_regeneration_retune_rescore_performed": false,
+    "pointer_before_control_action": "ACTIVE_TERMINAL_MAX_RUNS_CONSUMED",
+    "control_acknowledged": true,
+    "cas_expected_blob_sha": "56309a85df157ac2f3f1b2682ef9fff509d5a679",
+    "pointer_after_control_action": "IDLE",
+    "pointer_after_blob_sha": "5b3385e2e763239555c03e2d2ccc0b0613424c30",
+    "replacement_assignment_created": false,
+    "scientific_authority": "NONE",
+    "autonomous_forge_allowed_when_independent": true
   },
   "methodology_external_implications": {
     "methodology_overall": "MIXED_CALIBRATION",
     "formal_integrity_floor": "UNCHANGED",
-    "candidate34": [
-      "First meaningful PRE_FORMAL response has now occurred and raw was durably preserved before interpretation.",
-      "No repeated D34-Q002 response under the same R94 READY authority.",
-      "Fresh Analyst owns the RESULT_EXPOSED transition and scientific interpretation.",
-      "Any science-affecting post-exposure change requires explicit versioned revision or fresh successor preserving this result."
-    ],
-    "h7": "PF-R1 assignment authority is now machine-resolved; execution and exact-byte durability remain pending before later fresh H7 FORMAL review.",
-    "forge": "Keep rough objects outside canonical review until promotion boundary; zero evidence credit remains mandatory."
+    "candidate35": "CYCLE3_BOUNDED_NONRESULT_PRESERVATION_WELL_CALIBRATED; SCIENTIFIC_SOURCE_UNCHANGED; SEPARATE_SCIENTIFIC_REVISION_FROM_IMPLEMENTATION_REVISION_PROSPECTIVELY; FRESH_EXACT_ANALYST_AUTHORITY_REQUIRED_BEFORE_RESULT",
+    "h7": "FAIL_CLOSED_PROTECTED_SIDECAR_READINESS_IS_INTEGRITY_POSITIVE; IDENTITY_CREATION_DURING_REMEDIATION_FORBIDDEN; GREEN_READINESS_NOT_AUTOMATIC_FORMAL_GO",
+    "candidate34_audit": "NEW_READONLY_REDUCTION_FINDING; PRIMARY_RESPONSE_REDUCIBLE_TO_LOCAL_IMPULSE_PHYSICS; NO_CONFIRMATORY_CREDIT; NO_HISTORICAL_REWRITE"
   },
   "scheduler_health": {
-    "fleet_status": "YELLOW",
-    "scheduler_controller_action": "NO_CHANGE",
-    "cadence_failure_detected": true,
-    "active_run_opportunities_per_day": 183,
+    "fleet_status": "YELLOW_USER_DECISION_REQUIRED",
+    "scheduler_controller_action": "NO_MUTATION_USER_DECISION_REQUIRED_FOR_PRIMARY_MAIN",
+    "active_run_opportunities_per_day": 159,
+    "prior_expected_opportunities_per_day": 183,
     "exact_deterministic_collisions": 0,
     "ownership_collisions": 0,
     "useful_generation_flow": true,
-    "observed_start_delay_range_minutes": "approximately 9-25 across multiple hourly roles",
-    "structural_interpretation": "BROAD_QUEUE_LOAD_PRESSURE_NOT_SINGLE_PHASE_COLLISION",
+    "observed_start_delay_range_minutes": "approximately 2-19 across current active roles",
+    "structural_interpretation": "PRIMARY_MAIN_DISABLED_PLUS_DISTRIBUTED_QUEUE_LOAD_PRESSURE",
+    "primary_main": {
+      "title": "SparkBrain Research Orchestrator PRIMARY",
+      "expected_cadence": "HOURLY_AT_15_JST",
+      "live_enabled": false,
+      "policy_role": "CANONICAL_SCIENCE_PRIMARY",
+      "explicit_disable_approval_recovered": false,
+      "scheduler_registry_current_disable_record_observed": false,
+      "relay_full_replacement_authorized": false
+    },
     "proposals": [
+      {
+        "proposal_id": "SB-SCHED-MAIN-PRIMARY-001",
+        "status": "USER_APPROVAL_REQUIRED",
+        "preferred_action": "REENABLE_EXISTING_PRIMARY_MAIN_SAME_15_CADENCE_UNCHANGED_ROLE_PROMPT",
+        "alternative": "EXPLICITLY_APPROVE_RELAY_ONLY_CANONICAL_ARCHITECTURE_AND_UPDATE_ROLE_PROMPT_REGISTRY",
+        "auto_fix_applied": false
+      },
       {
         "proposal_id": "SB-SCHED-FORGE-001",
         "status": "IMPLEMENTED_OBSERVATION",
-        "action": "OBSERVE_FIRST_24_TO_48H_NO_CADENCE_CHANGE"
+        "action": "SELECTION_TIGHTENING_ONLY_NO_CADENCE_CHANGE"
       },
       {
         "proposal_id": "SB-SCHED-LATENCY-001",
-        "status": "OBSERVATION_ONLY_NO_NEW_STRUCTURAL_PROPOSAL",
-        "action": "NO_CHANGE_THIS_RUN"
+        "status": "OBSERVATION_ONLY",
+        "action": "NO_UNRELATED_TIMING_CHANGE_WHILE_PRIMARY_ROLE_DECISION_UNRESOLVED"
       }
     ],
     "safe_auto_fix_applied": false,
     "scheduler_mutation_this_run": false
   },
-  "governance_context": {
-    "main_default_branch_ruleset": "protection_main_ACTIVE_OBSERVED_BY_ANALYST_R94",
-    "main_protection_gap_prior_state": "IMPROVED",
-    "scientific_namespace_protection_gap": "REMAINS_FOR_EVIDENCE_PRESERVE_NAMESPACES",
-    "ruleset_mutation_by_control": false
-  },
   "direction": {
     "evidence_analyst": [
-      "Re-fetch the exact candidate34 D34-Q002 preserved raw/provenance and own post-exposure interpretation and canonical phase/disposition update.",
-      "Do not authorize a second D34-Q002 response under R94 and keep PRE_FORMAL confirmatory credit at zero.",
-      "After PF-R1 exact-byte preservation completes, separately re-fetch unchanged H7 R5 and decide any FORMAL authority afresh."
+      "Consume Auditor R9 prospectively while keeping Candidate34 terminal/current-object and zero-credit; require a fresh local-impulse residual discriminator for any independently motivated successor.",
+      "Re-fetch Candidate35 scientific source versus implementation head; do not infer readiness from green CI; bind any response to a fresh exact Analyst decision.",
+      "Keep H7 FORMAL STOP until protected-sidecar capability repair produces green NON_RESULT readiness and a later fresh generation reauthorizes one-way FORMAL action.",
+      "Use NO_TARGET_SHADOW to search independent executable MECHANISM supply without rescue manufacture."
     ],
-    "main": [
-      "STOP candidate34 before repeat response, retune, rescore, comparator/threshold/tolerance change or science-affecting redesign until fresh Analyst review.",
-      "Preserve D34-Q002 raw ref unchanged and do not promote it to official FORMAL evidence."
+    "main_relay": [
+      "H7 remediation is science-invariant and NON_RESULT only; no identity/STARTED/protected evaluation/scoring and STOP after readiness.",
+      "Candidate35 preservation task is complete; no response until fresh exact Analyst authority.",
+      "Candidate34 no repeat or rescue."
     ],
     "fast_forge": [
-      "Continue only independent bounded rough exploration outside candidate34, candidate35, H7/PF-R1 and their blockers/immediate successors.",
-      "Do not optimize promotion rate; ordinary-reduction dead ends are valid output."
+      "Tighten pre-screening and default to one prototype per run unless a materially independent discriminator justifies another.",
+      "Remain independent of H7, Candidate35, Candidate34 rescue and immediate blockers/successors."
     ],
     "utility": [
-      "Execute only UASSIGN-20260923T155800+0900-PFR1-7B1D4E92 once.",
-      "Use existing original PF-R1 bytes only, verify hashes, preserve non-destructively/create-only, and fail closed if unavailable or mismatched.",
-      "Do not perform autonomous Forge support until terminal result and Control acknowledgement."
+      "Assignment pointer is clean IDLE after terminal acknowledgement.",
+      "Autonomous Forge/tooling may resume only on independent NON_EVIDENTIARY/NONCANONICAL work."
     ]
   },
   "hard_floor_actions": {
@@ -234,10 +230,10 @@
     "control_identity_consumption": false,
     "control_scientific_workflow_dispatch": false,
     "research_pr_merge": false,
-    "immutable_formal_sealed_evidence_mutation": false,
+    "immutable_formal_sealed_evidence_or_scientific_preserve_mutation": false,
     "scientific_metric_protocol_rescue_change": false,
     "historical_result_rewrite": false,
     "scheduler_mutation": false,
-    "utility_assignment_decision_published": true
+    "utility_terminal_assignment_pointer_acknowledged_by_cas": true
   }
 }
