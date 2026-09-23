@@ -1,52 +1,44 @@
-# MAIN canonical science report — candidate #35 Architecture R2
+# MAIN canonical science report — candidate #35 Architecture R2 complete
 
 - schema_version: `2`
-- generation: `MAIN-20260923T184000+0900-PRIMARY-CAND35-ARCHR2-R96-WAITING-CI`
+- generation: `MAIN-20260923T184514+0900-PRIMARY-CAND35-ARCHR2-R96-COMPLETED`
 - execution_mode: `PRIMARY`
-- status: `WAITING_EXTERNAL`
+- status: `COMPLETED`
 - candidate: `CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING`
 - layer: `ARCHITECTURE_STUDY`
 - development phase: `OPEN_DEVELOPMENT`
 - development revision: `ARCHITECTURE-R2-EXACT-CANDIDATE-SURFACE-AND-EXECUTOR-BINDING-NONRESULT`
-- cycle: `3` (mandatory reassessment: `REASSESS_CONTINUE_NONRESULT_ONLY`)
+- cycle: `3` (`REASSESS_CONTINUE_NONRESULT_ONLY`)
 - claim ceiling: `SYSTEM`
 - preformal eligible/readiness: `false / NOT_APPLICABLE`
-- hold class/reason: `null / null`
-- terminal state: `NONTERMINAL`
-- system priority exception: `NO_COHERENT_MECHANISM_TARGET`, prospectively authorized by Evidence Analyst R96
+- system priority exception: `NO_COHERENT_MECHANISM_TARGET`
 - canonical branch/head: `research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3@8ea6581544c642ad74f1a95955ab2c5f795afccc`
 - stable base: `main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- exact-head CI: `35844155004`, currently `in_progress`
+- exact-head CI: `35844155004`, `success`
 
-## Analyst authority and cycle-3 reassessment
+## Analyst authority
 
-Evidence Analyst R96 explicitly admitted candidate #35 for a fresh Architecture R2 NON_RESULT exact-binding cycle. The candidate remains SYSTEM / Architecture Study / OPEN_DEVELOPMENT and is not PRE_FORMAL eligible. The prospectively recorded `NO_COHERENT_MECHANISM_TARGET` exception remains the only reason this SYSTEM object is prioritized.
+Evidence Analyst R96 remains current and explicitly authorizes only candidate #35 Architecture R2 NON_RESULT exact candidate-surface/executor binding. The object remains SYSTEM / ARCHITECTURE_STUDY / OPEN_DEVELOPMENT, is not PRE_FORMAL eligible, and candidate-response execution remains STOP. The cycle-3 continuation is justified by the prospectively recorded information gain of removing later worker-side scientific choice by binding the frozen Discovery R1 contract to exact runner/component/source/serialization surfaces before any response.
 
-Cycle 3 is a reassessment, not a terminal cap. R96 recorded concrete expected information gain: prospectively binding the already-frozen Discovery R1 question and scientific contract to exact candidate-specific runner, component, source and serialization surfaces removes later worker-side scientific choice before any candidate response. R96 forbids alteration of the prime, queue-empty anchor/cap, reset scope, five arms, cue, measurement window, response meaning, reductions, resources/privileges, falsifier or success criterion. Candidate response-bearing execution remains STOP.
+R96 forbids changing the prime, queue-empty anchor/cap, reset scope, five arms, cue, measurement window, response meaning, ordinary reductions, resources/privileges, falsifier or success criterion. Same-object SYSTEM-to-MECHANISM uplift remains forbidden.
 
-## Work performed
+## Work performed and closeout
 
-MAIN created a fresh canonical R2 branch from the completed R1 exact head. No Fast Forge code, observations or tuning history were reused.
+The canonical R2 branch binds the frozen Discovery R1 scientific contract to the exact candidate-specific execution surface in `src/sparkbrain/v05/candidate35_architecture.py`, with fixed prime/source identifiers, no-learning construction, bounded queue-empty anchor path, all-non-receptor treatment scope, exact five-arm intervention surface, fixed weak cue and delayed-sham timing, fixed 32 ms response window, fixed ordinary-reduction constants, exact response serialization, and exact runner/component names.
 
-The new `src/sparkbrain/v05/candidate35_architecture.py` binds the frozen Discovery R1 contract to a single explicit candidate surface: fixed prime bytes and provenance IDs; fixed no-learning v0.5 construction; bounded queue-empty anchor path; all-non-receptor treatment scope; the exact five arms; fixed weak cue and delayed-sham timing; fixed 32 ms measurement window; 18 ms membrane and 90 ms adaptation ordinary-reduction constants; exact response serializer; and exact component/runner names.
+The future response executor is prospectively bound but hard-gated before mutation unless a later caller supplies explicit candidate-response authority. R96 supplies no such authority. A NON_RESULT preflight and synthetic tests validate contract binding without executing the prime trajectory, treatment arms, or candidate response.
 
-The future candidate-response executor is implemented only as a prospectively bound surface and is hard-gated to fail before mutation unless a future caller supplies explicit response authority. R96 does not supply that authority. The R2 contract itself machine-records `candidate_response_execution_allowed=false`, `preformal_execution_allowed=false`, and `formal_action_allowed=false`.
+The first CI on the implementation head failed only at Ruff import ordering in the new test module. MAIN classified and applied an `SCIENCE_INVARIANT_REPAIR / IMPORT_ORDER_ONLY`; no scientific field or behavior changed. The repaired exact head is `8ea6581544c642ad74f1a95955ab2c5f795afccc`.
 
-A NON_RESULT preflight and tests were added. The preflight constructs only a fresh source surface, validates fixed constants/no-learning/queue-empty start, checks pure cue routing without scheduling or ingesting the cue, and hashes the exact contract/component binding. It does not execute the prime trajectory, anchor search, treatment arms or candidate response.
+On closeout, MAIN independently re-fetched the latest Evidence Analyst generation, stable main, active research/Forge refs, evidence/formal/sealed/freeze refs, preserve refs, open PRs, exact research head and workflow. R96 remained current, the research head was unchanged, and exact-head generic CI `35844155004` had completed successfully on that exact SHA. Architecture R2 NON_RESULT implementation/readiness is therefore complete under R96.
 
-## CI / repair classification
+No Fast Forge code, observations, prototypes or tuning history were reused. Utility had a fresh unrelated PF-R1 preservation-state update after R96; it was collision-only context and not authority for candidate #35.
 
-The first exact-head CI `35843712294` failed in both Python jobs only at Ruff import ordering (`I001`) in the new test module. Install completed; downstream readiness/tests were skipped. The failure therefore exposed no candidate response and no scientific result.
-
-MAIN classified the repair as `SCIENCE_INVARIANT_REPAIR / IMPORT_ORDER_ONLY` and changed only import ordering in the test file. No hypothesis, observable, comparator, intervention, prime/cue bytes, timing, threshold/tolerance, reset policy, resource/privilege contract, falsifier or success criterion changed.
-
-The repaired exact head is `8ea6581544c642ad74f1a95955ab2c5f795afccc`. Generic CI `35844155004` is currently running on that exact head. Per WAIT/RELAY policy, MAIN stops here rather than executing any candidate response.
-
-## Observations / evidentiary status
+## Scientific classification
 
 New scientific result: `false`.
 
-This run contains implementation, exact prospective binding, non-result validation code and one science-invariant lint repair only. It does not establish that queue-free subthreshold potential/adaptation causally changes the later weak-cue response.
+This cycle is implementation, exact prospective binding, non-result validation and CI readiness only. It generated no candidate #35 response and provides no scientific evidence that queue-free subthreshold potential/adaptation changes a later weak-cue response.
 
 - candidate response observations: `0`
 - SYSTEM Architecture response observations: `0`
@@ -57,14 +49,14 @@ This run contains implementation, exact prospective binding, non-result validati
 - official scoring: `false`
 - result-bearing workflow dispatched: `false`
 
-## Collision / prior-result / hard-floor integrity
+## Prior-result and hard-floor preservation
 
-MAIN independently re-fetched stable main, active research and Forge refs, freeze/preserve/control refs, authoritative evidence tags, open PRs, workflows and Utility collision state. No same-object MAIN/Relay/Forge/Utility or open-PR collision was found. The Forge receptor-suppression branch remains noncanonical and unused.
+Candidate #34 `D34-Q002` remains preserved unchanged and consumed once; repeat/retune/rescore remains forbidden. Existing consumed FORMAL identities are unchanged. No FORMAL identity or STARTED marker was created or consumed; no concealed/protected evaluation was accessed; no formal seed was revealed; no official scoring occurred; and no evidence/formal/sealed/freeze/preserve scientific ref was created or mutated by this closeout. Same-object SYSTEM-to-MECHANISM uplift was not performed.
 
-Candidate #34 D34-Q002 remains preserved unchanged and repeat/retune/rescore remains forbidden. Existing consumed FORMAL identities are unchanged. No FORMAL identity or STARTED marker was created or consumed; no concealed/protected evaluation was accessed; no candidate #35 result-bearing execution occurred; no official scoring occurred; and no preserve/evidence/formal/sealed/freeze ref was created or mutated by this run. Same-object SYSTEM-to-MECHANISM uplift was not performed.
+Authoritative `evidence/*` remains the same five annotated tags. Tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. No same-object MAIN/Relay/Fast Forge/Utility/open-PR collision was found for candidate #35.
 
 ## Stop reason / next canonical action
 
-`WAITING_EXTERNAL_EXACT_HEAD_CI_AFTER_SCIENCE_INVARIANT_IMPORT_ORDER_REPAIR`.
+`ARCHITECTURE_R2_NONRESULT_IMPLEMENTATION_AND_EXACT_HEAD_CI_COMPLETE_RETURN_TO_EVIDENCE_ANALYST`.
 
-Re-fetch the latest Evidence Analyst generation, exact R2 branch and CI `35844155004`. If that exact-head CI is green and authority remains materially unchanged, close Architecture R2 NON_RESULT readiness and return the object to Evidence Analyst. If CI fails, MAIN may repair only a clearly science-invariant implementation defect. Any repair requiring a scientific-contract change must fail closed for Analyst reassessment. Candidate #35 response execution remains forbidden under R96 even after a green CI.
+Return candidate #35 to Evidence Analyst for a fresh gate decision. Under R96, do not execute a candidate response, PRE_FORMAL action, FORMAL action, or same-object SYSTEM-to-MECHANISM uplift. Any next canonical science action requires a later fresh Analyst generation.
