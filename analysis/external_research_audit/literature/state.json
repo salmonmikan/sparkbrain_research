@@ -1,125 +1,153 @@
 {
-  "timestamp": "2026-09-23T21:28:17+09:00",
+  "timestamp": "2026-09-24T00:27:55+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41",
-  "producer_run_id": "external-literature-auto-LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41",
+  "generation_id": "LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71",
+  "producer_run_id": "external-literature-auto-LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260923T183000+0900-R38-SUBTHRESHOLD-STATE-SUFFICIENCY-3B7E21C6",
+  "supersedes_generation_id": "LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41",
   "input_generations": {
-    "control_brain": {"generation_id": "CTRL-20260923T155900+0900-R43-A91C4E6B", "handoff_commit": "1592c3b52a8a545aa2503fd4618c0a761921ef1e"},
-    "evidence_analyst": {"generation_id": "EVA-20260923T210010+0900-R99-6F2B8C14", "handoff_commit": "59dbcdc2e3541e78a64f64e16fa0be5ef38efc26"},
-    "main_report": {"generation_id": "MAIN-20260923T205800+0900-PRIMARY-H7-FORMAL-R5-R98-BLOCKED-SIDECAR", "handoff_commit": "ae3d90f4f423e1bd75e4b4393bc6974eaacbbafd"},
-    "fast_forge_report": {"generation_id": "FORGE-20260923T193417+0900-NOOP-H7-PREFETCH-R97", "handoff_commit": "b721f54ecb2293bbaaae9a26d475bb75fc290c02"},
-    "prior_literature": {"generation_id": "LIT-20260923T183000+0900-R38-SUBTHRESHOLD-STATE-SUFFICIENCY-3B7E21C6", "handoff_commit": "5046658b3994ccce1cdd9a88fe912fc97c8f8b0b"}
+    "control_brain": {"generation_id": "CTRL-20260923T225500+0900-R44-C8F41D72", "handoff_commit": "3c46617fba123704297d880a748c305c16a7dd01"},
+    "evidence_analyst": {"generation_id": "EVA-20260924T000324+0900-R101-CAND35-POSTEXPOSURE", "handoff_commit": "e50e0a91e25f2457d0b7152900a48cbdc5006485"},
+    "main_report": {"generation_id": "MAIN-20260923T235628+0900-RELAY-CAND35-R100-ONEBATCH-EXPOSED-WAITING-ANALYST", "handoff_commit": "21a8ee7b0ae85df57a0a35b70ad726e45252e259"},
+    "fast_forge_report": {"generation_id": "FORGE-20260923T233625+0900-V05-CREDIT-LOCALITY-R100", "handoff_commit": "21a8ee7b0ae85df57a0a35b70ad726e45252e259"},
+    "prior_literature": {"generation_id": "LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41", "handoff_commit": "741becd60d3e7dc8f97cedf1347c42c769092011"}
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "21:30 JST",
+  "schedule_slot": "00:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "candidate35_branch": "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3",
-    "candidate35_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
-    "candidate35_response_generated": false,
-    "h7_science_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-    "h7_science_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "h7_controller_branch": "research/main-h7-r5-oneway-controller-r98",
-    "h7_controller_head": "f21dc7521af7413adcc46a2561271e0b8852f371",
-    "h7_identity_consumed": false,
+    "candidate35_live_branch": "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3",
+    "candidate35_live_head": "62db3b437ffc26b931bbe5b9e78ca814bddbeb81",
+    "candidate35_frozen_scientific_source": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
+    "candidate35_scientific_source_blob": "4055f42483d5bba73eef51b1753a2c19f18d5ab5",
+    "candidate35_bound_implementation": "b5f312683d50ed3a086348b62770fc8923c78046",
+    "candidate35_raw_ref": "raw/cand35-r100-onebatch-20260923",
+    "candidate35_raw_head": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
+    "candidate35_response_workflow": {"run_id": 35877765051, "conclusion": "success"},
+    "candidate35_current_disposition": "TERMINAL_FOR_CURRENT_OBJECT_NO_MEASURED_PRIMING_EFFECT_ON_FROZEN_OUTPUT_SURFACE",
     "candidate34_preserve_ref": "preserve/cand34-d34-q002-r94-raw-20260923",
     "candidate34_preserve_head": "4d45f1135bcb607f1e663648cd8335333eb98de4",
-    "evidence_tag_count": 5,
+    "h7_science_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+    "h7_controller_head": "f21dc7521af7413adcc46a2561271e0b8852f371",
+    "h7_identity_consumed": false,
+    "evidence_tags": [
+      "evidence/c19-official-v4-c19-external-v2-official-v4",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
+    ],
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
+    "immutable_tag_count": 0,
     "legacy_freeze_refs_inspected": true,
     "preserve_refs_inspected": true,
     "consumed_identities_inspected": true,
     "official_consumed_identity_count": 7,
-    "relevant_open_prs_inspected": [148,149],
+    "relevant_open_prs_inspected": [149],
     "control_latest_state_recent_history_inspected": true,
     "evidence_analyst_latest_state_recent_history_inspected": true,
     "orchestrator_main_latest_state_recent_history_inspected": true,
     "orchestrator_fast_forge_latest_state_recent_history_inspected": true,
-    "ops_control_tip_consumed": "1592c3b52a8a545aa2503fd4618c0a761921ef1e",
-    "ops_evidence_analyst_tip_consumed": "59dbcdc2e3541e78a64f64e16fa0be5ef38efc26",
-    "ops_orchestrator_tip_consumed": "fa292cf3a2484c513d3f90372ca9f014948f5c1d",
-    "ops_external_tip_before_first_write": "dfa0ac7bbeed7ef6488ad63ba26eeb07314cc17b"
+    "prior_literature_latest_state_history_inspected": true,
+    "ops_control_tip_consumed": "3c46617fba123704297d880a748c305c16a7dd01",
+    "ops_evidence_analyst_tip_consumed": "e50e0a91e25f2457d0b7152900a48cbdc5006485",
+    "ops_orchestrator_tip_consumed": "21a8ee7b0ae85df57a0a35b70ad726e45252e259",
+    "ops_external_tip_before_first_write": "e8e527e1ed399bb26f926237931618d9b93056e0"
   },
   "genuinely_new_information": true,
+  "new_sparkbrain_scientific_result_observed": {
+    "present": true,
+    "class": "DEVELOPMENT_ONLY_UNSCORED_ARCHITECTURE_RESPONSE",
+    "confirmatory_credit": 0,
+    "candidate": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
+    "bounded_interpretation": "NO_MEASURED_PRIMING_EFFECT_ON_FROZEN_OUTPUT_SURFACE",
+    "same_object_terminal": true
+  },
   "findings": [
     {
-      "id": "CAND35_COORDINATE_NULL_OFFMANIFOLD_RISK",
-      "type": "RECENT_METHODS_PLUS_REPOSITORY_INTERVENTION_INTEGRITY",
-      "sources": ["Grant et al. 2025/2026, Addressing divergent representations from causal interventions on neural networks, arXiv:2511.04638"],
-      "finding": "Coordinate-wise internal interventions can move a system away from its natural state distribution and can activate dormant pathways. Candidate #35 directly zeros potential and/or adaptation while preserving other anchor state, so its nulls may be valid surgical interventions without necessarily being naturally reachable states.",
-      "impact": "Any future R2 effect supports synthetic-null component sensitivity; natural-state carrier attribution requires an additional reachable-state/on-manifold check or explicitly narrower wording."
+      "id": "CAND35_SILENT_MEMORY_SCOPE_AFTER_NEGATIVE",
+      "type": "RECENT_PRIOR_ART_PLUS_REPOSITORY_SCOPE_GUARDRAIL",
+      "sources": [
+        "Tiddia et al. 2026, Phys Rev E 114 014409, DOI 10.1103/zcmm-3cgh",
+        "Khanjanianpak & Valiadeh 2026, arXiv:2607.14000"
+      ],
+      "finding": "Candidate #35 nulls showed no measured effect on the frozen potential/adaptation response surface, but recent activity-silent-memory work shows transient synaptic facilitation/state can preserve predictive information through periods of neural silence.",
+      "impact": "Keep #35 terminal and narrow. Do not generalize its negative result to all queue-free/activity-silent memory; any fresh broader successor should include a transient synaptic/STP carrier baseline."
     },
     {
-      "id": "CAND35_WITHIN_MANIFOLD_CAUSALITY_BAR",
-      "type": "FOUNDATIONAL_NEURAL_DYNAMICS_METHODS",
-      "sources": ["Measurement, manipulation and modeling of brain-wide neural population dynamics, 2021"],
-      "finding": "Neural-dynamics methodology distinguishes within-manifold perturbations consistent with natural activity from outside-manifold perturbations that create states not naturally expressed; outside-manifold perturbations remain informative but answer a different causal question.",
-      "impact": "Current R2 remains legitimate, but a broader natural-memory claim should survive a reachable-state or matched-natural-history counterfactual in a fresh successor."
+      "id": "V05_DELAYED_REWARD_BASELINE_GAP",
+      "type": "FOUNDATIONAL_THREE_FACTOR_REDUCTION",
+      "sources": [
+        "Izhikevich 2007, Cerebral Cortex 17(10), DOI 10.1093/cercor/bhl152",
+        "Gerstner et al. 2018, Front Neural Circuits 12:53, DOI 10.3389/fncir.2018.00053"
+      ],
+      "finding": "Ordinary three-factor rules allow a delayed reward/third factor to act on a previously established eligibility trace. The current v0.5 path instead updates only when a new current pre/post pair enters apply(), so reward-only arrival does not consume the old trace.",
+      "impact": "Current v0.5 credit behavior is weaker than the standard delayed-credit baseline. Any future delayed-credit novelty claim must first implement or compare against reward/error acting on stored eligibility without a new qualifying spike pair."
     },
     {
-      "id": "CAND35_CAUSAL_ABSTRACTION_REDUCTION",
-      "type": "CAUSAL_REDUCTION_BAR",
-      "sources": ["Geiger et al. 2025 JMLR causal abstraction", "Geiger et al. 2022 ICML interchange intervention training"],
-      "finding": "A simpler high-level causal model can be judged by whether it reproduces counterfactual behavior under aligned interventions rather than by coordinate necessity alone.",
-      "impact": "A privilege-matched ordinary leaky/adaptive model that predicts the same intervention-conditioned responses would causally reduce the tested candidate #35 phenomenon even if native potential/adaptation coordinates are individually necessary."
+      "id": "TEMPORAL_ELIGIBILITY_VS_SPATIAL_RESPONSIBILITY",
+      "type": "CAUSAL_CREDIT_REDUCTION_BAR",
+      "sources": ["Bellec et al. 2020, Nature Communications 11:3625, DOI 10.1038/s41467-020-17236-y"],
+      "finding": "e-prop separates synapse-local temporal eligibility from neuron/population-specific learning signals. Eligibility persistence and spatial responsibility assignment are distinct components of credit assignment.",
+      "impact": "Global scalar reward plus eligibility is an ordinary baseline and can solve limited distal reward through synaptic tags, but does not establish richer native causal-lineage responsibility. Future responsibility claims should compare against neuron/population-specific learning-signal baselines."
     },
     {
-      "id": "STATE_CONDITIONAL_CAUSAL_FAITHFULNESS",
-      "type": "RECENT_NOVELTY_AND_REDUCTION_BAR",
-      "sources": ["Li et al. 2026, Bucketing the Good Apples", "Pislar et al. 2025, Combining Causal Models for More Accurate Abstractions of Neural Networks"],
-      "finding": "Global intervention-faithfulness scores can hide state regions where an interpretation fails, and small combinations of simple causal models can fit systems better than one monolithic explanation.",
-      "impact": "Future #35/H7 uplift should use prospectively stratified counterfactual tests across state regions and should rule out a small composition of ordinary reductions, not only one baseline at a time."
+      "id": "MODERN_LOCAL_AND_DELAY_LEARNING_NOVELTY_BAR",
+      "type": "RECENT_NOVELTY_BAR",
+      "sources": [
+        "Pes et al. 2026, Neuromorphic Computing and Engineering 6(1) 014002, DOI 10.1088/2634-4386/ae2ef9",
+        "Vassallo & Taherinejad 2026, Frontiers in Neuroscience, DOI 10.3389/fnins.2026.1814505"
+      ],
+      "finding": "Modern local learning rules combine eligibility with explicit spatial credit signals, and 2026 three-factor rules jointly learn synaptic weights and transmission delays online.",
+      "impact": "Future SparkBrain locality/delayed-credit/learned-delay claims should use modern local forward and joint weight-delay three-factor baselines, not plain STDP as the strongest comparator."
     }
   ],
   "affected_lines": [
-    "CAND35_STATE_NULL_INTERVENTION_REALISM",
-    "CAND35_REACHABLE_STATE_MANIFOLD",
-    "CAND35_LOCAL_CAUSAL_ABSTRACTION_REDUCTION",
-    "CAND35_SYSTEM_CLAIM_CEILING",
-    "H7_FUTURE_STATE_CONDITIONAL_CAUSAL_ABSTRACTION",
-    "FUTURE_SYSTEM_TO_MECHANISM_ADMISSION",
+    "CAND35_ACTIVITY_SILENT_MEMORY_SCOPE",
+    "CAND35_TRANSIENT_SYNAPTIC_STATE_BASELINE",
+    "V05_DELAYED_CREDIT_THREE_FACTOR_REDUCTION",
+    "V05_LOCAL_RESPONSIBILITY_SPATIAL_CREDIT",
+    "FUTURE_CREDIT_ASSIGNMENT_MECHANISM_ADMISSION",
+    "FUTURE_DELAY_LEARNING_MECHANISM_ADMISSION",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "REACHABLE_STATE_OR_NEAREST_NATURAL_STATE_SUPPORT_CHECK",
-    "MATCHED_NATURAL_HISTORY_COUNTERFACTUAL",
-    "PRIVILEGE_MATCHED_LEAKY_ADAPTIVE_CAUSAL_ABSTRACTION",
-    "STATE_REGION_STRATIFIED_INTERVENTION_FAITHFULNESS",
-    "SMALL_COMPOSITION_OF_ORDINARY_REDUCTIONS"
+    "TRANSIENT_SYNAPTIC_FACILITATION_OR_SHORT_TERM_SYNAPTIC_STATE",
+    "DELAYED_THIRD_FACTOR_ACTING_ON_EXISTING_ELIGIBILITY",
+    "NEURON_OR_POPULATION_SPECIFIC_EPROP_LEARNING_SIGNAL",
+    "TRACES_PROPAGATION_LOCAL_TEMPORAL_AND_SPATIAL_CREDIT",
+    "ONLINE_JOINT_WEIGHT_AND_DELAY_THREE_FACTOR_LEARNING"
   ],
-  "novelty_or_reduction_impact": "COORDINATE_NULL_EFFECTS_DO_NOT_BY_THEMSELVES_ESTABLISH_A_NATURAL_MECHANISM. Candidate #35's explicit potential/adaptation nulls are valid surgical interventions, but recent intervention-faithfulness work raises a distinct off-manifold/reachability failure mode. A broader natural-state claim should survive a reachable-state check and a privilege-matched causal abstraction by ordinary leaky/adaptive dynamics.",
+  "novelty_or_reduction_impact": "CAND35_NEGATIVE_CLOSES_ONLY_ITS_FROZEN_NEURONAL_SUBTHRESHOLD_SURFACE; BROADER_ACTIVITY_SILENT_MEMORY_HAS_STRONG_TRANSIENT_SYNAPTIC_PRIOR_ART. THE_CURRENT_V05_ELIGIBILITY_REWARD_PATH_IS_WEAKER_THAN_STANDARD_DELAYED_THREE_FACTOR_CREDIT, AND TEMPORAL_ELIGIBILITY_MUST_BE_DISTINGUISHED_FROM_SPATIAL_RESPONSIBILITY.",
   "audit_classification": null,
-  "confidence": "MEDIUM_HIGH",
+  "confidence": "HIGH_FOR_ESTABLISHED_THREE_FACTOR_AND_EPROP_BASELINES_MEDIUM_HIGH_FOR_RECENT_ACTIVITY_SILENT_GENERALIZATION_BAR",
   "prospective_baselines_or_discriminators": [
-    "fresh-successor-only reachable-state / nearest-natural-state support check for each null arm",
-    "matched natural-history counterfactual that changes potential/adaptation without direct coordinate surgery where prospectively feasible",
-    "privilege-matched causal abstraction containing only potential, adaptation, dynamic threshold, refractory/time and frozen decay laws",
-    "prospectively fixed intervention-faithfulness evaluation across multiple anchor/cue/state regions rather than one global score",
-    "small composition/mixture of ordinary reductions before any irreducibility claim"
+    "transient synaptic facilitation / short-term synaptic-state comparator for any broad queue-free or activity-silent-memory successor",
+    "delayed third-factor baseline where reward/error acts on already-established eligibility without requiring a new spike pair",
+    "neuron/population-specific learning-signal comparator such as e-prop against global scalar reward",
+    "modern fully local temporal-plus-spatial credit baseline such as Traces Propagation",
+    "online joint weight-and-delay three-factor baseline for any learned-delay responsibility claim"
   ],
   "questions_for_evidence_analyst": [
-    "Keep current R96/R99 candidate #35 work unchanged and treat any later R2 effect as synthetic-null component sensitivity unless intervention realism is separately established?",
-    "If a fresh successor is warranted, require a reachable-state or matched-natural-history counterfactual before broader natural-memory attribution?",
-    "Require causal-abstraction faithfulness to an ordinary leaky/adaptive model before any SYSTEM-to-MECHANISM uplift?"
+    "Keep candidate #35 terminal for the current object while explicitly preventing its negative result from being generalized to all activity-silent memory carriers?",
+    "For any independently motivated fresh silent-memory successor, require a carrier inventory that includes transient synaptic/STP state before mechanism uplift?",
+    "For any future delayed-credit/responsibility candidate, require reward/error arrival to act on prior eligibility and separately test temporal eligibility versus spatial responsibility assignment?"
   ],
   "questions_for_control_brain": [
-    "Add surgical-coordinate-effect-does-not-equal-natural-state-mechanism-attribution as a prospective claim-ceiling guardrail?",
-    "Keep intervention-realism checks prospective and outside the frozen current candidate #35 object?",
-    "For future mechanism claims, prefer state-region-stratified counterfactual faithfulness over a single aggregate intervention score?"
+    "Add negative-neuronal-state-null-does-not-equal-absence-of-activity-silent-memory as a prospective claim-ceiling guardrail?",
+    "Add eligibility-persistence-does-not-equal-local-responsibility-assignment and require a three-factor/e-prop-class ordinary reduction before richer credit-line claims?",
+    "Keep all of these baselines prospective and outside terminal #34/#35 and held H7 objects?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "H7 PF-R1 no-rerun/no-rescore boundary and unchanged H7 R5 science under the current sidecar capability HOLD",
+    "all seven officially consumed FORMAL identities and all authoritative evidence tags",
+    "H7 PF-R1 no-rerun/no-rescore boundary and unchanged H7 R5 science under the current pre-identity integrity-capability hold",
     "candidate #34 preserved D34-Q002 result and terminal/no-rescue boundary",
-    "candidate #35 Discovery/R1 contract and R96 R2 exact non-result binding surface",
-    "no candidate #35 response/PRE_FORMAL/FORMAL action under current authority",
-    "no outcome-responsive null-arm/cue/anchor/metric/falsifier rewrite",
-    "no one-way identity consumption, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
+    "candidate #35 raw R100 five-arm batch at raw/cand35-r100-onebatch-20260923 and its terminal/current-object no-rerun/no-retune/no-rescore decision",
+    "no post-outcome modification of candidate #35 arms, cue, anchor, metric, falsifier, or scientific source",
+    "no one-way identity consumption, research merge, immutable/evidence ref mutation, Utility execution, or scheduler change by this role"
   ],
   "utility_request_created": null,
   "mutations": {
@@ -132,8 +160,8 @@
     "utility_requests_created": 0
   },
   "persistence": {
-    "latest_update_commit": "dc1c9e0ef41a0135a35b631392448c71cc771b4f",
-    "history_path": "analysis/external_research_audit/history/2026-09-23/2130-LITERATURE_REDUCTION_SCOUT.md",
-    "final_handoff_commit_embedding_limitation": "Final append-only history commit is generated by the write itself and cannot be embedded self-referentially; re-fetch branch tip after history persistence."
+    "latest_update_commit": "0f0172635ecb99014f51232a88a32a4fc6b61c48",
+    "history_path": "analysis/external_research_audit/history/2026-09-24/0030-LITERATURE_REDUCTION_SCOUT.md",
+    "final_handoff_commit_embedding_limitation": "The append-only history commit is generated by the final write and cannot be embedded self-referentially; re-fetch the branch tip after history persistence."
   }
 }
