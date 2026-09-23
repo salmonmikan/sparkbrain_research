@@ -1,0 +1,83 @@
+name: cand34-preserve-r94-raw
+
+on:
+  push:
+    branches:
+      - ops/orchestrator-run-report
+    paths:
+      - .github/workflows/cand34-preserve-r94-raw.yml
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: cand34-d34-q002-r94-preserve-once
+  cancel-in-progress: false
+
+jobs:
+  preserve-raw-no-clobber:
+    runs-on: ubuntu-latest
+    env:
+      EXECUTOR_SHA: 8ce961dc88fb52afa6399093fce1e3de7e982f2b
+      SOURCE_RUN_ID: "35826846989"
+      SOURCE_ARTIFACT_NAME: cand34-d34-q002-r94-raw
+      RAW_FILENAME: D34-Q002.raw.json
+      RAW_SHA256: f34e0e4a40228b5eb299b0c24cec0a6bc97bb37dd1fa5d0f63cf933027843846
+      PRESERVE_BRANCH: preserve/cand34-d34-q002-r94-raw-20260923
+      PRESERVE_PATH: artifacts/cand34/d34-q002/development/raw/D34-Q002.raw.json
+    steps:
+      - name: Checkout exact R94-bound executor head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.EXECUTOR_SHA }}
+          fetch-depth: 0
+
+      - name: Fail closed if preserve ref already exists
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-remote --exit-code --heads origin "refs/heads/${PRESERVE_BRANCH}" >/dev/null 2>&1; then
+            echo "Preserve ref already exists; refusing to clobber."
+            exit 1
+          fi
+
+      - name: Download exact raw artifact without interpretation
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/cand34-raw"
+          gh run download "$SOURCE_RUN_ID" \
+            --repo "$GITHUB_REPOSITORY" \
+            --name "$SOURCE_ARTIFACT_NAME" \
+            --dir "$RUNNER_TEMP/cand34-raw"
+          test -f "$RUNNER_TEMP/cand34-raw/$RAW_FILENAME"
+          observed="$(sha256sum "$RUNNER_TEMP/cand34-raw/$RAW_FILENAME" | awk '{print $1}')"
+          test "$observed" = "$RAW_SHA256"
+
+      - name: Commit exact raw bytes on fresh preserve ref
+        shell: bash
+        run: |
+          set -euo pipefail
+          git switch -c "$PRESERVE_BRANCH" "$EXECUTOR_SHA"
+          mkdir -p "$(dirname "$PRESERVE_PATH")"
+          cp "$RUNNER_TEMP/cand34-raw/$RAW_FILENAME" "$PRESERVE_PATH"
+          observed="$(sha256sum "$PRESERVE_PATH" | awk '{print $1}')"
+          test "$observed" = "$RAW_SHA256"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$PRESERVE_PATH"
+          git diff --cached --quiet && { echo "No raw bytes staged; refusing ambiguous preserve."; exit 1; }
+          git commit -m "Preserve candidate 34 D34-Q002 raw development response"
+          git push \
+            --force-with-lease="refs/heads/${PRESERVE_BRANCH}:" \
+            origin "HEAD:refs/heads/${PRESERVE_BRANCH}"
+
+      - name: Verify preserved bytes from committed tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          observed="$(git show "HEAD:${PRESERVE_PATH}" | sha256sum | awk '{print $1}')"
+          test "$observed" = "$RAW_SHA256"
