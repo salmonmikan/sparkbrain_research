@@ -1,0 +1,43 @@
+name: cand34-preformal-r2-response-r94
+
+on:
+  push:
+    branches:
+      - ops/orchestrator-run-report
+    paths:
+      - .github/workflows/cand34-preformal-r2-response-r94.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cand34-d34-q002-r94-one-shot
+  cancel-in-progress: false
+
+jobs:
+  execute-once:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact R94-bound executor head
+        uses: actions/checkout@v4
+        with:
+          ref: 8ce961dc88fb52afa6399093fce1e3de7e982f2b
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install exact source dependencies
+        run: python -m pip install -e ".[dev,learned,spiking]"
+      - name: Execute D34-Q002 exactly once and write raw only
+        env:
+          GITHUB_SHA: 8ce961dc88fb52afa6399093fce1e3de7e982f2b
+        run: python scripts/cand34_preformal_r2_execute.py --output "$RUNNER_TEMP/D34-Q002.raw.json"
+      - name: Upload raw result without interpretation
+        uses: actions/upload-artifact@v4
+        with:
+          name: cand34-d34-q002-r94-raw
+          path: ${{ runner.temp }}/D34-Q002.raw.json
+          if-no-files-found: error
+          retention-days: 90
