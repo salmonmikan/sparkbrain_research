@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T054727+0900-RELAY-H7-R106-FORMAL-LAUNCH-CAPABILITY-BLOCKED",
-  "producer_run_id": "sparkbrain-main-relay-20260924T054727JST-r106-h7-formal-launch-capability-blocked",
-  "generated_at": "2026-09-24T05:47:27+09:00",
-  "status": "BLOCKED",
-  "execution_mode": "RELAY",
+  "generation_id": "MAIN-20260924T071400+0900-PRIMARY-H7-R108-LAUNCH-CAPABILITY-WAITING-EXTERNAL",
+  "producer_run_id": "sparkbrain-main-primary-20260924T0714JST-r108-h7-launch-capability-wait",
+  "generated_at": "2026-09-24T07:14:00+09:00",
+  "status": "WAITING_EXTERNAL",
+  "execution_mode": "PRIMARY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "research_layer": "PRE_FORMAL",
   "claim_ceiling": "MECHANISM",
@@ -14,70 +14,58 @@
   "cycle_count": 12,
   "cycle_reassessment": {
     "authorized_scientific_cycle": 12,
-    "relay_extended_scientific_cycle": false,
+    "primary_extended_scientific_cycle": false,
     "scientific_iteration_performed": false,
-    "information_gain": "OPERATIONAL_ONLY_EXECUTION_SURFACE_RECONFIRMED_AND_FUNNEL_MAILBOX_RECONCILED"
+    "information_gain": "OPERATIONAL_ONLY_FRESHNESS_AND_TRIGGER_CAPABILITY_RECONCILIATION"
   },
   "analyst_authority": {
-    "generation_id": "EVA-20260924T050035+0900-R106-H7-LAUNCH-READY-THEORY-PROBE-KILLED",
-    "commit": "770edcb0cf050ed7cdf41d4716ed645952e69475",
-    "decision": "GO_ONCE_CONDITIONAL_EXACT_BINDING",
-    "fresh_formal_authority": true,
-    "freshness_rechecked_this_run": true,
-    "formal_authority_exercised_this_generation": false
+    "generation_id": "EVA-20260924T070844+0900-R108-H7-OPBLOCK-TH001-ORDINARY-REDUCTION",
+    "commit": "f709230ec122a96b9acb27ab39d070825a8217be",
+    "decision": "GO_ONCE_CONDITIONAL_EXACT_BINDING_RETAINED_AS_SCIENTIFIC_AUTHORITY; FORMAL_START_STOP_UNTIL_TRIGGER_CAPABILITY_EXISTS_AND_FRESH_ANALYST_REVALIDATES",
+    "fresh_formal_authority_scientific": true,
+    "formal_authority_exercised_this_generation": false,
+    "freshness_rechecked_this_run": true
   },
-  "prior_main_generation": "MAIN-20260924T051305+0900-PRIMARY-H7-R106-FORMAL-LAUNCH-TRIGGER-BLOCKED",
+  "prior_main_generation": "MAIN-20260924T054727+0900-RELAY-H7-R106-FORMAL-LAUNCH-CAPABILITY-BLOCKED",
   "funnel": {
-    "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
     "preformal_readiness": "READY",
     "hold_class": null,
     "hold_reason": null,
     "terminal_state": "ACTIVE",
     "queue_state": "QUEUED",
-    "system_priority_exception": false,
     "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "development_revision": "R5_UNCHANGED"
+    "development_revision": "R5_UNCHANGED",
+    "effectively_executable": false
   },
   "operational_blocker": {
     "class": "EXECUTION_CAPABILITY",
-    "reason": "The exact R106-bound result-bearing workflow is tag-triggered, while the current Relay GitHub execution surface exposes neither tag creation nor workflow dispatch. No existing result-bearing H7 workflow run exists to resume.",
+    "reason": "The frozen result-bearing path requires an authorized one-shot launch trigger capability; the current MAIN GitHub surface exposes neither tag creation nor workflow dispatch.",
     "scientific_funnel_changed": false
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "770edcb0cf050ed7cdf41d4716ed645952e69475",
+    "analyst_head": "f709230ec122a96b9acb27ab39d070825a8217be",
     "scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "launch_controller_branch": "research/main-h7-r5-launch-plumbing-r105",
     "launch_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
-    "launch_contract_blob": "42b4bad5d1ecfbeeaf64c5d893cb02bff92f7ff9",
-    "launch_controller_blob": "7a092741cad6371fbe69adafef6e37845349b6de",
-    "launch_workflow_blob": "a6fb8fec46ad8b6f6b055e701d5c8cf829d4007c",
-    "resource_contract_blob": "267ea4076f01cf480aba3554712870b237dd9cfa",
-    "executor_blob": "f323df048f5479cc80ba4c129a40b0957503180b",
-    "runtime_module_blob": "9bde5379542ecca84157e82868abe679e0099e31",
-    "preserver_blob": "37c9c46febba1baba5580ed1aa803dcc483bef66",
-    "scorer_blob": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
-    "resource_contract_path": "artifacts/formal_h7_r5/resource_contract.json",
-    "launch_contract_path": "artifacts/formal_h7_r5/launch_path_contract.json",
-    "launch_controller_path": "scripts/h7_formal_r5_one_way_controller.py",
+    "fast_forge_branch": "forge/20260924-th001-q0-qi-adaptation-a",
+    "fast_forge_head": "e2dbe3a5a0db812f777b789a6878af8a0d3eee0f",
+    "utility_branch": "ops/utility-orchestrator-requests",
+    "utility_head": "d4b9804aeb6d2f88534bff6326f7fb2b2798dff3",
     "formal_launch_workflow_path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
-    "history_path": "reports/orchestrator/main/history/2026-09-24/054727-r106-relay-h7-formal-launch-capability-blocked.md"
+    "history_path": "reports/orchestrator/main/history/2026-09-24/071400-r108-primary-h7-launch-capability-waiting-external.md"
   },
   "work_performed": [
     {
       "classification": "FRESHNESS_AND_OWNERSHIP_RECONCILIATION",
-      "change": "Re-fetched current Evidence Analyst R106, MAIN lease, exact H7 science/controller refs, Fast Forge collision state, exact launch workflow/contract and H7 one-way namespaces. PRIMARY is BLOCKED rather than RUNNING and no same-object ownership collision exists."
-    },
-    {
-      "classification": "FUNNEL_FIELD_RECONCILIATION",
-      "change": "Restored MAIN mailbox Funnel fields to the exact current Analyst values. The execution-capability problem is recorded separately as an operational blocker and is not reinterpreted as Analyst hold_class/hold_reason or queue_state."
+      "change": "Re-fetched stable main, current Analyst R108, exact H7 science/controller heads, MAIN state/lease, Fast Forge probe head, Utility head, current launch/formal/sealed/freeze/evidence/control/preserve namespaces and launch-plumbing workflow status."
     },
     {
       "classification": "FAIL_CLOSED_EXECUTION_CAPABILITY_BLOCK",
-      "change": "Did not create a FORMAL identity or START because the prospectively fixed launch requires a launch/h7-r5-* tag and the available Relay execution surface cannot create tags or dispatch the workflow. Did not alter the exact R106-bound controller/workflow and did not misuse branch creation as a tag substitute."
+      "change": "Confirmed no launch/h7-r5-* tag and no H7 one-way namespace occupancy. Did not create a FORMAL identity or START, did not mutate the frozen workflow/controller, and did not substitute a branch for a tag because no authorized tag-creation or workflow-dispatch surface exists."
     }
   ],
   "workflows": {
@@ -96,17 +84,15 @@
       "result_bearing": false
     },
     "h7_result_bearing_formal_launch": {
-      "workflow_path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
-      "trigger": "push tag launch/h7-r5-*",
       "dispatched": false,
       "run_id": null,
-      "blocking_capability": "CREATE_TAG_OR_DISPATCH_WORKFLOW_UNAVAILABLE"
+      "required_trigger": "launch/h7-r5-* on exact bound controller",
+      "blocking_capability": "AUTHORIZED_TAG_CREATION_OR_WORKFLOW_DISPATCH_UNAVAILABLE"
     }
   },
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NON_RESULT_FORMAL_PRESTART_EXECUTION_CAPABILITY_BLOCK",
-    "information_gain": "OPERATIONAL_ONLY_EXECUTION_SURFACE_RECONFIRMED",
+    "evidentiary_status": "NON_RESULT_PRESTART_OPERATIONAL_TRIGGER_CAPABILITY_BLOCK",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
     "formal_identity_created_or_consumed": false,
@@ -127,55 +113,36 @@
     "active_h7_identity": null
   },
   "ownership_and_collision": {
-    "fresh_primary_running_same_h7_object_before_action": false,
-    "prior_primary_status": "BLOCKED",
     "fast_forge_same_h7_object_collision": false,
+    "fast_forge_status": "NONCANONICAL_ZERO_CREDIT_DEAD_END",
+    "utility_status": "IDLE_NON_AUTHORIZING_NO_OP",
     "utility_scientific_authority": false,
-    "h7_formal_authorized_now": true
+    "same_object_primary_collision": false
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
     "main_generation_and_lease_rechecked": true,
+    "stable_main_rechecked": true,
     "direct_h7_scientific_ref_rechecked": true,
     "launch_controller_ref_rechecked": true,
-    "launch_contract_blob_exact": true,
-    "controller_blob_exact": true,
-    "launch_workflow_blob_exact": true,
-    "resource_contract_blob_exact": true,
-    "executor_blob_exact": true,
-    "runtime_module_blob_exact": true,
-    "preserver_blob_exact": true,
-    "scorer_blob_exact": true,
     "launch_plumbing_readiness_green": true,
     "generic_ci_green": true,
+    "h7_launch_namespace_absent": true,
     "h7_control_namespace_absent": true,
     "h7_preserve_namespace_absent": true,
     "h7_formal_tag_namespace_absent": true,
     "h7_sealed_tag_namespace_absent": true,
     "h7_freeze_tag_namespace_absent": true,
-    "h7_immutable_tag_namespace_absent": true,
     "h7_evidence_tag_namespace_absent": true,
-    "h7_launch_tag_namespace_absent": true,
-    "authorized_scientific_source_unchanged": true,
-    "analyst_funnel_fields_preserved_exactly": true,
     "formal_identity_created": false,
     "started_created": false,
     "protected_evaluation_accessed": false,
     "official_scoring_performed": false,
-    "historical_pass_fail_rewritten": false,
     "immutable_formal_sealed_evidence_refs_mutated": false,
-    "development_phase_changed_by_relay": false,
+    "development_phase_changed_by_primary": false,
     "formal_floor_respected": true
   },
-  "repair_change_classification": "CONTROL_PLANE_RECONCILIATION_ONLY_NO_SCIENCE_CHANGE; NO_FORMAL_REPAIR_PERFORMED",
-  "do_not_touch": [
-    "Consumed FORMAL identities",
-    "immutable/formal/sealed/evidence/freeze/preserve refs",
-    "H7 scientific binding, metric, comparator, threshold, tolerance, protocol, input policy, runtime, scorer or preserver semantics",
-    "the exact R106-bound launch controller/workflow merely to obtain a different trigger",
-    "Candidate #35 current object or rescue-adjacent successor",
-    "noncanonical Forge observations as scientific authority"
-  ],
-  "stop_reason": "R106_EXACT_FORMAL_AUTHORIZED_BUT_CURRENT_RELAY_HAS_NO_TAG_CREATION_OR_WORKFLOW_DISPATCH_CAPABILITY",
-  "next_action": "Create exactly one fresh launch/h7-r5-* tag pointing to 042d00375278d551dbf643ad866a4c883852804d using an external GitHub capability. The fixed workflow must then re-fetch current Analyst authority and namespaces before START. Once a workflow run exists, MAIN should record the exact run ID and wait/continue one-way; never rerun/retune/rescore an identity after START."
+  "repair_change_classification": "CONTROL_PLANE_RECONCILIATION_ONLY_NO_SCIENCE_CHANGE",
+  "stop_reason": "R108_H7_SCIENTIFICALLY_READY_BUT_AUTHORIZED_ONE_SHOT_TRIGGER_CAPABILITY_UNAVAILABLE",
+  "next_action": "Provision the missing authorized one-shot launch-trigger capability through an external or maintainer execution surface without changing H7 science/controller/workflow semantics. After capability exists, obtain fresh Evidence Analyst exact-binding revalidation before any FORMAL START."
 }
