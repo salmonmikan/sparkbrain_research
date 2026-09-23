@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T014800+0900-RELAY-H7-R103-READINESS-WAITING",
+  "generation_id": "MAIN-20260924T015100+0900-RELAY-H7-R103-CAPABILITY-BLOCKED",
   "producer_run_id": "sparkbrain-main-relay-20260924T0142JST-r103-h7-readiness",
-  "generated_at": "2026-09-24T01:48:00+09:00",
-  "status": "WAITING_EXTERNAL",
+  "generated_at": "2026-09-24T01:51:00+09:00",
+  "status": "BLOCKED",
   "execution_mode": "RELAY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "research_layer": "PRE_FORMAL",
@@ -23,9 +23,9 @@
     "decision": "GO_H7_SCIENCE_INVARIANT_CAPABILITY_AND_EXACT_AUTHORITY_PLUMBING_THEN_NON_RESULT_READINESS_ONLY; H7_FORMAL_STOP",
     "fresh_analyst_required_after_green_readiness": true,
     "freshness_rechecked_before_mutation": true,
-    "freshness_rechecked_before_persistence": true
+    "freshness_rechecked_before_final_persistence": true
   },
-  "prior_main_generation": "MAIN-20260924T005600+0900-RELAY-H7-R102-CAPABILITY-HOLD",
+  "prior_main_generation": "MAIN-20260924T014800+0900-RELAY-H7-R103-READINESS-WAITING",
   "funnel": {
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
@@ -48,7 +48,7 @@
     "controller_head": "d610b18283953f21dfb27859f0d0b190d5f56a24",
     "resource_contract_path": "artifacts/formal_h7_r5/resource_contract.json",
     "readiness_workflow_path": ".github/workflows/h7-formal-r5-one-way-readiness.yml",
-    "history_path": "reports/orchestrator/main/history/2026-09-24/0148-r103-relay-h7-readiness-waiting.md"
+    "history_path": "reports/orchestrator/main/history/2026-09-24/0151-r103-relay-h7-capability-blocked.md"
   },
   "repair_change_classification": "SCIENCE_INVARIANT_EXACT_AUTHORITY_PLUMBING_ONLY",
   "work_performed": [
@@ -57,30 +57,32 @@
       "change": "Repinned only the H7 strictly NON_RESULT readiness workflow's exact Evidence Analyst SHA from superseded R102 to current R103; scientific source and all fixed science fields remained unchanged."
     },
     {
-      "classification": "NON_RESULT_READINESS_DISPATCH",
-      "change": "The controller push dispatched exact R103-bound NON_RESULT readiness and generic CI; both remained in progress at persistence time."
+      "classification": "NON_RESULT_READINESS_EXECUTION",
+      "change": "Executed the exact R103-bound NON_RESULT readiness workflow. Preidentity integrity/runtime checks passed; the workflow then failed closed at the protected-sidecar capability gate because H7_R5_SIDECAR_PASSPHRASE is absent."
     }
   ],
   "workflows": {
     "h7_nonresult_readiness": {
       "run_id": 35891173382,
       "head": "d610b18283953f21dfb27859f0d0b190d5f56a24",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "failure",
+      "failed_step": "Assert protected sidecar handoff capability exists without exposing it",
+      "missing_capability": "H7_R5_SIDECAR_PASSPHRASE",
       "result_bearing": false,
-      "expected_next_action": "Wait for completion. If green, stop for fresh Evidence Analyst before FORMAL. If protected-sidecar capability fails, remain on FORMAL_INTEGRITY_CAPABILITY hold."
+      "expected_next_action": "Provision the protected-sidecar capability outside Relay, then re-fetch current authority before any new NON_RESULT readiness. No FORMAL action under R103."
     },
     "generic_ci": {
       "run_id": 35891173451,
       "head": "d610b18283953f21dfb27859f0d0b190d5f56a24",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "result_bearing": false
     }
   },
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NON_RESULT_READINESS_AUTHORITY_PLUMBING_AND_EXTERNAL_WORKFLOW_WAIT",
+    "evidentiary_status": "NON_RESULT_READINESS_CAPABILITY_GATE_FAILED_PRE_IDENTITY",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
     "formal_identity_created_or_consumed": false,
@@ -105,8 +107,9 @@
   },
   "integrity": {
     "analyst_generation_rechecked_before_mutation": true,
-    "analyst_generation_rechecked_before_persistence": true,
+    "analyst_generation_rechecked_before_final_persistence": true,
     "main_generation_and_lease_rechecked_before_mutation": true,
+    "main_generation_and_lease_rechecked_before_final_persistence": true,
     "direct_h7_scientific_ref_rechecked_before_mutation": true,
     "direct_h7_controller_ref_rechecked_before_mutation": true,
     "controller_ref_rechecked_after_mutation": true,
@@ -126,6 +129,6 @@
     "immutable/formal/sealed/evidence/freeze/preserve refs",
     "Candidate #35 current object or immediate-successor rescue science, rerun, retune, rescore, or SYSTEM-to-MECHANISM uplift"
   ],
-  "stop_reason": "H7_R103_NONRESULT_READINESS_AND_CI_IN_PROGRESS",
-  "next_action": "Wait for exact workflow completion. If readiness is green, stop for fresh Evidence Analyst before FORMAL. If protected-sidecar capability still fails, remain fail-closed on the capability hold."
+  "stop_reason": "H7_R103_PROTECTED_SIDECAR_CAPABILITY_MISSING",
+  "next_action": "Provision repository Actions secret H7_R5_SIDECAR_PASSPHRASE under the intended security boundary. After capability exists, re-fetch current Analyst/Main authority and run only prospectively authorized NON_RESULT readiness; no FORMAL action under R103."
 }
