@@ -6,7 +6,7 @@
   "scientific_execution_mode": "READ_ONLY",
   "snapshot": {
     "repository": "salmonmikan/sparkbrain_research",
-    "main": "ebed6ea1e522656055029153ebab52d9be827cb9",
+    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_parent": "a32494246245a559ad4e1f8543a1f252b03ef2e7",
     "control": "3c46617fba123704297d880a748c305c16a7dd01",
     "main_relay": "21a8ee7b0ae85df57a0a35b70ad726e45252e259",
@@ -48,9 +48,7 @@
     "sealed_tags": [],
     "freeze_tags": [],
     "immutable_tags": [],
-    "open_prs": [
-      149
-    ],
+    "open_prs": [149],
     "workflows": {
       "cand35_one_bounded_response": {
         "run_id": 35877765051,
@@ -68,17 +66,11 @@
   },
   "canonical_funnel": {
     "candidate_total": 35,
-    "claim_ceiling_counts": {
-      "MECHANISM": 14,
-      "SYSTEM": 21
-    },
+    "claim_ceiling_counts": {"MECHANISM": 14, "SYSTEM": 21},
     "terminal_for_current_object": 34,
     "nonterminal_hold": 1,
     "queued": 0,
-    "development_phase_counts": {
-      "OPEN_DEVELOPMENT": 2,
-      "RESULT_EXPOSED_DEVELOPMENT": 33
-    },
+    "development_phase_counts": {"OPEN_DEVELOPMENT": 2, "RESULT_EXPOSED_DEVELOPMENT": 33},
     "preformal_eligible_nonterminal": 1,
     "preformal_readiness_persisted_ready": 1,
     "preformal_effective_executable": 0,
@@ -145,84 +137,13 @@
     "complete_batch": true,
     "raw_preserved_before_interpretation": true,
     "authority_exhausted": true,
-    "fixed_arm_order": [
-      "SHAM_STATE",
-      "POTENTIAL_NULL",
-      "ADAPTATION_NULL",
-      "JOINT_SUBTHRESHOLD_NULL",
-      "DELAYED_SHAM_32MS"
-    ],
+    "fixed_arm_order": ["SHAM_STATE", "POTENTIAL_NULL", "ADAPTATION_NULL", "JOINT_SUBTHRESHOLD_NULL", "DELAYED_SHAM_32MS"],
     "observations": {
-      "SHAM_STATE": {
-        "anchor_time_ms": 39.0,
-        "cue_time_ms": 43.0,
-        "spike_units": [
-          6,
-          7
-        ],
-        "spike_count": 2,
-        "cascade_units": [
-          6,
-          7
-        ],
-        "ignitions": 0
-      },
-      "POTENTIAL_NULL": {
-        "cue_time_ms": 43.0,
-        "spike_units": [
-          6,
-          7
-        ],
-        "spike_count": 2,
-        "cascade_units": [
-          6,
-          7
-        ],
-        "ignitions": 0,
-        "measured_output_vs_sham": "NO_DIFFERENCE_ON_FROZEN_RESPONSE_SURFACE"
-      },
-      "ADAPTATION_NULL": {
-        "cue_time_ms": 43.0,
-        "spike_units": [
-          6,
-          7
-        ],
-        "spike_count": 2,
-        "cascade_units": [
-          6,
-          7
-        ],
-        "ignitions": 0,
-        "measured_output_vs_sham": "NO_DIFFERENCE_ON_FROZEN_RESPONSE_SURFACE"
-      },
-      "JOINT_SUBTHRESHOLD_NULL": {
-        "cue_time_ms": 43.0,
-        "spike_units": [
-          6,
-          7
-        ],
-        "spike_count": 2,
-        "cascade_units": [
-          6,
-          7
-        ],
-        "ignitions": 0,
-        "measured_output_vs_sham": "NO_DIFFERENCE_ON_FROZEN_RESPONSE_SURFACE"
-      },
-      "DELAYED_SHAM_32MS": {
-        "cue_time_ms": 75.0,
-        "spike_units": [
-          6,
-          7
-        ],
-        "spike_count": 2,
-        "cascade_units": [
-          6,
-          7
-        ],
-        "ignitions": 0,
-        "measured_output_vs_sham": "SAME_STRUCTURE_TIME_SHIFTED"
-      }
+      "SHAM_STATE": {"anchor_time_ms": 39.0, "cue_time_ms": 43.0, "spike_units": [6, 7], "spike_count": 2, "cascade_units": [6, 7], "ignitions": 0},
+      "POTENTIAL_NULL": {"cue_time_ms": 43.0, "spike_units": [6, 7], "spike_count": 2, "cascade_units": [6, 7], "ignitions": 0, "measured_output_vs_sham": "NO_DIFFERENCE_ON_FROZEN_RESPONSE_SURFACE"},
+      "ADAPTATION_NULL": {"cue_time_ms": 43.0, "spike_units": [6, 7], "spike_count": 2, "cascade_units": [6, 7], "ignitions": 0, "measured_output_vs_sham": "NO_DIFFERENCE_ON_FROZEN_RESPONSE_SURFACE"},
+      "JOINT_SUBTHRESHOLD_NULL": {"cue_time_ms": 43.0, "spike_units": [6, 7], "spike_count": 2, "cascade_units": [6, 7], "ignitions": 0, "measured_output_vs_sham": "NO_DIFFERENCE_ON_FROZEN_RESPONSE_SURFACE"},
+      "DELAYED_SHAM_32MS": {"cue_time_ms": 75.0, "spike_units": [6, 7], "spike_count": 2, "cascade_units": [6, 7], "ignitions": 0, "measured_output_vs_sham": "SAME_STRUCTURE_TIME_SHIFTED"}
     },
     "raw_sha256": {
       "SHAM_STATE": "f04d6661700e1c745490a5e95d017de01dc5f52a5d1e47cb6336e4d568e851b3",
@@ -245,35 +166,12 @@
   },
   "fast_forge": {
     "status": "NON_EVIDENTIARY_NONCANONICAL",
-    "promotion_review": {
-      "new_FORGE_PROMOTION_PROPOSED": 0,
-      "materially_new_FORGE_INTERESTING": 0,
-      "admissions": 0,
-      "rejects_or_defers_this_generation": 0,
-      "decision": "NO_OBJECT_TO_REVIEW"
-    },
-    "metrics": {
-      "runs_observed": 11,
-      "prototypes": 14,
-      "dead_ends": 11,
-      "interesting_objects": 0,
-      "promotion_proposals": 0,
-      "admissions": 0,
-      "rejects_or_defers": 0,
-      "duplicate_or_rescue_rejects": 0,
-      "main_dependence_rejects": 0,
-      "ordinary_reduction_rejects": 0,
-      "idea_to_admission_latency": null
-    },
+    "promotion_review": {"new_FORGE_PROMOTION_PROPOSED": 0, "materially_new_FORGE_INTERESTING": 0, "admissions": 0, "rejects_or_defers_this_generation": 0, "decision": "NO_OBJECT_TO_REVIEW"},
+    "metrics": {"runs_observed": 11, "prototypes": 14, "dead_ends": 11, "interesting_objects": 0, "promotion_proposals": 0, "admissions": 0, "rejects_or_defers": 0, "duplicate_or_rescue_rejects": 0, "main_dependence_rejects": 0, "ordinary_reduction_rejects": 0, "idea_to_admission_latency": null},
     "latest_known_disposition": "FORGE_DEAD_END",
     "latest_known_ordinary_reduction": "DISCRETE_PER_OBSERVE_EMA_AND_EPISODE_SEGMENTATION"
   },
-  "phenomenon_first_shadow": {
-    "mode": "NO_TARGET_SHADOW",
-    "authorizing": false,
-    "standby_proposals": 0,
-    "reason": "No viable executable MECHANISM: H7 is on FORMAL integrity hold and #34/#35 current objects are terminal."
-  },
+  "phenomenon_first_shadow": {"mode": "NO_TARGET_SHADOW", "authorizing": false, "standby_proposals": 0, "reason": "No viable executable MECHANISM: H7 is on FORMAL integrity hold and #34/#35 current objects are terminal."},
   "allocation": {
     "MAIN": "Own H7 integrity/readiness preparation only. No H7 FORMAL. Candidate #35 current object is closed; no same-object response work.",
     "FAST_FORGE": "Independent rough exploration only; no H7/#35 critical-path assets or authority.",
@@ -287,25 +185,9 @@
     "utility": "IDLE; PF-R1 stale-pointer handling is resolved/acknowledged and no Forge promotion proposal is pending."
   },
   "top3": [
-    {
-      "rank": 1,
-      "action": "H7 protected-sidecar capability and exact authority plumbing, followed only by NON_RESULT readiness",
-      "information_value": "highest",
-      "go_stop": "GO_PREPARATION_ONLY",
-      "contingency": "If readiness is green, STOP and require a fresh Analyst generation before FORMAL. If any exact binding/capability is wrong, remain fail-closed."
-    },
-    {
-      "rank": 2,
-      "action": null,
-      "go_stop": "NO_EXECUTABLE_CANONICAL_ACTION",
-      "reason": "Candidate #35 current object is terminal after informative result exposure; no admitted successor exists."
-    },
-    {
-      "rank": 3,
-      "action": null,
-      "go_stop": "NO_EXECUTABLE_CANONICAL_ACTION",
-      "reason": "Phenomenon-first standby is empty and Fast Forge has no admitted promotion proposal."
-    }
+    {"rank": 1, "action": "H7 protected-sidecar capability and exact authority plumbing, followed only by NON_RESULT readiness", "information_value": "highest", "go_stop": "GO_PREPARATION_ONLY", "contingency": "If readiness is green, STOP and require a fresh Analyst generation before FORMAL. If any exact binding/capability is wrong, remain fail-closed."},
+    {"rank": 2, "action": null, "go_stop": "NO_EXECUTABLE_CANONICAL_ACTION", "reason": "Candidate #35 current object is terminal after informative result exposure; no admitted successor exists."},
+    {"rank": 3, "action": null, "go_stop": "NO_EXECUTABLE_CANONICAL_ACTION", "reason": "Phenomenon-first standby is empty and Fast Forge has no admitted promotion proposal."}
   ],
   "go_stop": {
     "H7_FORMAL": "STOP",
