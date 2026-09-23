@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "generation_id": "MAIN-20260923T113000+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING",
+  "execution_mode": "PRIMARY",
+  "status": "WAITING_EXTERNAL",
+  "analyst_generation": "EVA-20260923T110053+0900-R92-A7B61F3C@a05ab3f655a23eabd84c910ba337d64a948c168a",
+  "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
+  "layer": "PRE_FORMAL",
+  "development_phase": "OPEN_DEVELOPMENT",
+  "development_revision": "PRE_FORMAL-R2_CONTRACT_CLOSURE_AND_QUEUE_ONLY",
+  "cycle_count": 4,
+  "information_gain": "Close only the interpretability seam exposed by D34-Q001 without retuning frozen Architecture-R2 science.",
+  "active_ref": "research/main-cand34-assembly-route-preformal-r92-cycle4@1f9c6cec8be0af900a801de17dcc91e57dd71d7a",
+  "work_performed": [
+    "prospective untouched-anchor queue semantics",
+    "assembly-level primary reduction binding",
+    "secondary unit-export observability map with fail-closed validation",
+    "single fresh D34-Q002 queue-entry definition",
+    "non-result exact-head CI/workflow dispatch"
+  ],
+  "forge_code_reused": false,
+  "prior_result_preservation": "D34-Q001 NEGATIVE development result preserved unchanged with zero confirmatory credit",
+  "scientific_result_new_this_run": false,
+  "formal_action_performed": false,
+  "result_bearing_execution_performed": false,
+  "workflows": [
+    {"run_id": 35810510054, "name": "ci", "status": "in_progress", "result_bearing": false},
+    {"run_id": 35810510172, "name": "cand34-preformal-r2-contract", "status": "in_progress", "result_bearing": false}
+  ],
+  "stop_reason": "WAITING_ONLY_FOR_EXACT_HEAD_NON_RESULT_CI_AND_R2_CONTRACT_MATERIALIZATION",
+  "next_action": "If both exact-head runs are green under unchanged R92, durably capture the generated R2 contract and only D34-Q002 queue entry, then stop for fresh Analyst authority before any response-bearing R2 execution."
+}
