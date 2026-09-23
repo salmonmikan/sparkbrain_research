@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-23T14:21:44+09:00",
+  "timestamp": "2026-09-23T14:33:15+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260923T142144+0900-R82-5E91C4A7",
-    "sequence": 82,
+    "generation_id": "METHCAL-20260923T143315+0900-R83-8B72F1C6",
+    "sequence": 83,
     "material_change": true,
-    "material_change_reason": "CAND34_R93_READY_FOR_EXACTLY_ONE_BOUNDED_PREFORMAL_DEVELOPMENT_RESPONSE_WITH_ZERO_PRIOR_SCIENTIFIC_SUPPORT_MAIN_LEASE_ACQUIRED_NO_RESPONSE_YET_AND_EXECUTOR_PROVENANCE_BOUNDARY_BECOMES_CURRENT_CALIBRATION_TARGET",
-    "supersedes_generation_id": "METHCAL-20260923T132108+0900-R81-7D3A6C91",
+    "material_change_reason": "CAND34_R93_READY_EXECUTOR_PLUMBING_MATERIALIZED_AS_ONE_ADDITIVE_COMMIT_CI_BLOCKED_AT_LINT_BEFORE_ANY_RESPONSE_EXPOSURE",
+    "supersedes_generation_id": "METHCAL-20260923T142144+0900-R82-5E91C4A7",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260923T132108+0900-R81-7D3A6C91",
-      "commit": "2b1ea6e106ea6c5fb93d1616a02cdf8be7f36a90"
+      "generation_id": "METHCAL-20260923T142144+0900-R82-5E91C4A7",
+      "commit": "b68f44e01679fce6cd9ff6cd6f14cfc135e4e6b3"
     },
     "human_directive": {
       "id": "HUMAN-20260922-005",
@@ -33,7 +33,7 @@
     },
     "main_operational_overlay": {
       "branch": "ops/orchestrator-run-report",
-      "commit": "f8b7153f2193ec98046ae98e690fd508cc353a66"
+      "commit": "cb07de0d1ec7547d45af6b6fe5e6814f12639428"
     }
   },
   "authoritative_refs": {
@@ -66,19 +66,24 @@
       "ready": true,
       "ready_authority": "EVA-20260923T140800+0900-R93-4D7C2A91",
       "ready_scope": "EXACTLY_ONE_BOUNDED_RESPONSE_BEARING_DEVELOPMENT_EXECUTION_UNDER_UNCHANGED_CLOSED_R2_CONTRACT",
-      "branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-      "head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+      "closed_r2_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+      "closed_r2_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+      "executor_branch": "research/main-cand34-assembly-route-preformal-r93-response",
+      "executor_head": "bbbb422da119c864a41f0cdee97bb759aa090139",
+      "executor_delta": "ONE_ADDITIVE_FILE_scripts/cand34_preformal_r2_execute.py",
+      "executor_classification": "SCIENCE_INVARIANT_EXECUTION_PLUMBING_CONSISTENT_WITH_FROZEN_R2_SEMANTICS_PENDING_CI",
+      "executor_ci": {
+        "run_id": 35822584950,
+        "conclusion": "failure",
+        "python_3_11_failure_step": "Lint",
+        "python_3_13_failure_step": "Lint",
+        "install_success": true,
+        "tests_executed": false
+      },
       "response_bearing_execution_performed": false,
       "meaningful_response_exposed": false,
       "confirmatory_credit": 0,
-      "formal_action_performed": false,
-      "main_live_lease": {
-        "generation_id": "MAIN-20260923T141500+0900-PRIMARY-CAND34-PREFORMALR2-R93-ACQUIRED",
-        "status": "RUNNING",
-        "active_identity": "D34-Q002",
-        "result_bearing_workflow_dispatched": false,
-        "evidentiary_status": "NO_NEW_RESULT_YET_R93_ONE_BOUNDED_PREFORMAL_RESPONSE_AUTHORIZED"
-      }
+      "formal_action_performed": false
     },
     "candidate_35": {
       "id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
@@ -111,14 +116,17 @@
     "fresh_consumed_formal_end_to_end": "INSUFFICIENT_EVIDENCE",
     "candidate34_ready_based_on_informative_next_test_not_prior_success": "KEEP",
     "candidate34_exactly_one_bounded_preformal_response_authority": "KEEP",
-    "candidate34_green_nonresult_checks_as_scientific_support": "TIGHTEN",
+    "candidate34_additive_executor_implements_frozen_r2": "KEEP",
+    "candidate34_exact_executor_source_input_provenance_before_response": "TIGHTEN",
+    "candidate34_executor_ci_lint_failure_blocks_response": "KEEP",
+    "candidate34_exact_lint_defect_classification": "CLARIFY",
+    "candidate34_lint_import_build_hash_repair_unchanged_semantics": "KEEP",
+    "candidate34_science_affecting_delta_disguised_as_plumbing": "TIGHTEN",
+    "candidate34_green_ci_as_scientific_support": "TIGHTEN",
     "candidate34_first_meaningful_response_transition_policy": "KEEP",
     "candidate34_first_meaningful_response_transition_live_implementation": "INSUFFICIENT_EVIDENCE",
     "candidate34_repeat_response_without_fresh_post_exposure_review": "TIGHTEN",
     "candidate34_outcome_adaptive_science_affecting_change": "TIGHTEN",
-    "candidate34_science_invariant_execution_plumbing_before_first_response": "KEEP",
-    "candidate34_exact_executor_source_and_input_provenance_before_response": "TIGHTEN",
-    "candidate34_science_affecting_change_smuggled_as_execution_plumbing": "TIGHTEN",
     "result_exposed_same_object_invariant_repair": "KEEP",
     "post_result_science_affecting_change_version_or_successor": "KEEP",
     "cycle3_automatic_terminal_cap": "RELAX",
@@ -128,6 +136,7 @@
     "repeated_result_bearing_preformal_live_case": "INSUFFICIENT_EVIDENCE",
     "preformal_as_real_development": "KEEP",
     "preformal_eligible_vs_ready": "KEEP",
+    "ready_means_informative_next_test": "KEEP",
     "hidden_second_formal_gate": "KEEP",
     "h7_preidentity_distinct_from_formal_authority": "KEEP",
     "pf_r1_preservation_requirement": "KEEP",
@@ -155,30 +164,31 @@
     "protected_adaptive_evaluation_validity": "TIGHTEN"
   },
   "risks": {
-    "false_positive": "MODERATE_WATCH: candidate34 is legitimately READY, but its forthcoming first development response must not be promoted to confirmatory evidence or used to justify repeat/adaptive science changes under the same authority; execution plumbing must remain science-invariant and exactly attributable.",
-    "false_negative": "LOW_TO_MODERATE_WATCH_IMPROVING: R93 removes the prior over-conservative NOT_READY hold once informativeness was established; H7 still suffers avoidable throughput friction from Control-vs-Utility assignment-pointer divergence.",
+    "false_positive": "MODERATE_WATCH: candidate34 is legitimately READY, but the first development response must not become confirmatory evidence or justify repeated/adaptive science; executor repair must not change scientific semantics under a plumbing label.",
+    "false_negative": "LOW_TO_MODERATE_WATCH_IMPROVING: a lint failure should not terminalize or demote the scientific question; R93 permits progression once implementation integrity is green. H7 remains delayed by non-scientific pointer divergence.",
     "moving_goalpost_rescue": "LOW_WATCH_IMPROVING",
     "over_terminalization": "LOW_WATCH_IMPROVING"
   },
   "development_iteration_calibration": {
-    "candidate34": "OPEN_DEVELOPMENT_PREFORMAL_READY_FOR_EXACTLY_ONE_BOUNDED_RESPONSE_NO_SCIENTIFIC_RESULT_YET",
+    "candidate34": "OPEN_DEVELOPMENT_PREFORMAL_READY_EXECUTOR_ADDED_CI_LINT_BLOCKED_NO_RESPONSE_YET",
     "candidate34_ready_basis": "INFORMATIVE_WELL_DEFINED_PROSPECTIVELY_BOUND_NEXT_TEST_NOT_PRIOR_SUCCESS",
+    "candidate34_executor_delta": "SCIENCE_INVARIANT_EXECUTION_PLUMBING_IF_AND_ONLY_IF_FROZEN_R2_SEMANTICS_UNCHANGED",
     "candidate34_confirmatory_credit": 0,
     "candidate34_response_exposed": false,
-    "candidate34_after_first_meaningful_response": "MUST_TRANSITION_TO_RESULT_EXPOSED_DEVELOPMENT_AND_PRESERVE_RESULT_BEFORE_ANY_REDESIGN",
+    "candidate34_after_first_meaningful_response": "MUST_TRANSITION_TO_RESULT_EXPOSED_DEVELOPMENT_AND_PRESERVE_RESULT_BEFORE_ANY_SECOND_RESPONSE_OR_REDESIGN",
     "h7": "RESULT_EXPOSED_FORMAL_PROVENANCE_HOLD_R5_PREIDENTITY_COMPLETE",
     "pf_r1": "ONE_NONCONFIRMATORY_DEVELOPMENT_OBSERVATION_CONFIRMATORY_COUNT_ZERO_ORIGINAL_ARTIFACT_AVAILABLE_CONTROL_AUTHORITY_PRESENT_UTILITY_POINTER_IDLE_PRESERVATION_PENDING",
     "repeated_result_bearing_case": "INSUFFICIENT_EVIDENCE"
   },
   "claim_type_findings": {
     "h7": "MECHANISM_CEILING_MAINTAINED_FORMAL_HELD_NO_NEW_EVIDENCE",
-    "candidate34": "MECHANISM_CEILING_MAINTAINED_READY_ONLY_FOR_NARROW_FROZEN_LOCAL_ROUTE_INFLUENCE_DEVELOPMENT_CLAIM",
+    "candidate34": "MECHANISM_CEILING_MAINTAINED_READY_ONLY_FOR_NARROW_FROZEN_LOCAL_ROUTE_INFLUENCE_DEVELOPMENT_CLAIM_NO_RESPONSE_YET",
     "candidate35": "SYSTEM_CEILING_MAINTAINED_NO_CLAIM_INFLATION",
     "same_object_system_to_mechanism_uplift": "NOT_OBSERVED",
     "fresh_system_to_mechanism_successor": "UNOBSERVED"
   },
-  "pass_reachability": "H7_REALISTIC_NEAR_TERM_CONDITIONAL; PF_R1_ORIGINAL_BYTES_AVAILABLE_BUT_CONTROL_UTILITY_ASSIGNMENT_POINTER_RECONCILIATION_AND_EXACT_BYTE_PRESERVATION_PLUS_LATER_FRESH_ANALYST_ONE_WAY_REVIEW_REMAIN_REQUIRED; CAND34_DEVELOPMENT_RESPONSE_IS_NOW_READY_BUT_NOT_CONFIRMATORY_OR_FORMAL",
-  "mechanism_supply_health": "TWO_MECHANISM_LINEAGES_CAND34_PREFORMAL_READY_FOR_ONE_BOUNDED_DEVELOPMENT_RESPONSE_PLUS_H7_FORMAL_HOLD_WITH_SYSTEM_DISCOVERY_BACKUP_QUALITY_FLOOR_INTACT",
+  "pass_reachability": "H7_REALISTIC_NEAR_TERM_CONDITIONAL; PF_R1_ORIGINAL_BYTES_AVAILABLE_BUT_POINTER_RECONCILIATION_AND_PRESERVATION_PLUS_LATER_FRESH_ANALYST_ONE_WAY_REVIEW_REMAIN_REQUIRED; CAND34_SCIENTIFIC_QUESTION_READY_BUT_RESPONSE_BLOCKED_ON_EXECUTOR_IMPLEMENTATION_VALIDATION",
+  "mechanism_supply_health": "TWO_MECHANISM_LINEAGES_CAND34_PREFORMAL_READY_EXECUTOR_LINT_BLOCKED_PRE_RESPONSE_PLUS_H7_FORMAL_HOLD_WITH_SYSTEM_DISCOVERY_BACKUP_QUALITY_FLOOR_INTACT",
   "funnel_observability": {
     "authority_generation": "EVA-20260923T140800+0900-R93-4D7C2A91",
     "population": 35,
@@ -196,13 +206,14 @@
     "preformal_ready": 2,
     "fresh_formal_authority": 0,
     "historical_consumed_identities": 7,
-    "operational_overlay_note": "MAIN has acquired the one-response candidate34 lease, but ops state does not recanonicalize the Analyst funnel before the next Analyst generation."
+    "operational_overlay_note": "MAIN added one additive executor commit and is WAITING_EXTERNAL after CI failed at Lint; no response workflow dispatched."
   },
   "preformal_calibration": {
     "development_only": true,
     "eligible_distinct_from_ready": true,
     "ready_is_informative_next_test_not_prior_success": true,
     "candidate34_ready_with_zero_scientific_support": true,
+    "implementation_lint_failure_does_not_revoke_scientific_readiness": true,
     "one_bounded_response_then_stop_for_review": true,
     "science_affecting_revision_allowed_before_response_with_prospective_version_authority": true,
     "hidden_second_formal_gate": false,
@@ -219,21 +230,24 @@
     "new_request_created": false
   },
   "prospective_recommendations": [
-    "Permit candidate34 exactly one bounded development response under the unchanged closed R2 scientific contract; green non-result checks and READY authority remain zero-evidence.",
-    "Before the first response, bind the exact response executor/plumbing source, fixed queue/input identity and resulting development provenance. Pure execution plumbing may be science-invariant; any change to cue, timing, intervention, observables, comparator, resources, threshold, claim or falsifier must stop and use explicit prospective revision authority.",
-    "On the first meaningful candidate34 response, preserve it unchanged and transition the candidate to RESULT_EXPOSED_DEVELOPMENT before any redesign or second response. Do not count repeated PRE_FORMAL observations as independent confirmation.",
-    "Do not infer broader route topology, polychrony, irreducibility or novelty from the narrow R2 response regardless of sign; keep claim scope bounded.",
-    "Reconcile PF-R1 Control authority with Utility assignment/current, then preserve only the still-available exact original bytes; never rerun or reconstruct.",
-    "After PF-R1 preservation, keep H7 stopped until a later fresh Analyst exact-head one-way review.",
-    "Preserve prediction-only raw, immutable preserve-before-score, concealed evaluation, exact binding, collision/no-clobber and no-historical-rewrite guards."
+    "Keep candidate34 scientifically READY but block response until the additive executor passes implementation validation at an exact source head.",
+    "Repair the current lint defect only as science-invariant plumbing; any change to scientific semantics requires explicit prospective revision authority.",
+    "Bind exact executor head, closed R2 source head, fixed D34-Q002 queue/input identity and raw-output provenance before first response.",
+    "Execute at most one bounded response under R93; preserve raw result before interpretation; transition to RESULT_EXPOSED and return to Analyst before any second response or redesign.",
+    "Keep confirmatory credit zero for the development observation and later correlated PRE_FORMAL sequence.",
+    "Reconcile PF-R1 Control authority with Utility assignment/current, preserve only existing original bytes, and never rerun/reconstruct/rescore.",
+    "After PF-R1 preservation, keep H7 stopped until later fresh Analyst exact-head one-way review.",
+    "Preserve raw-before-score, preserve-before-read, concealed evaluation, exact binding, collision/no-clobber and no-historical-rewrite guards."
   ],
   "hard_floor_confirmation": "CONFIRMED_DO_NOT_RELAX",
   "confidence": {
     "formal_non_consumption": "HIGH",
     "candidate34_r93_ready_basis": "HIGH",
-    "candidate34_exact_closed_r2_head_unchanged": "HIGH",
-    "candidate34_response_nonexposure_at_audit_time": "HIGH",
-    "candidate34_live_main_lease_no_dispatch_at_audit_time": "HIGH",
+    "candidate34_closed_r2_head_unchanged": "HIGH",
+    "candidate34_additive_executor_only_delta": "HIGH",
+    "candidate34_response_nonexposure": "HIGH",
+    "candidate34_executor_ci_lint_failure": "HIGH",
+    "candidate34_exact_lint_message": "UNRESOLVED",
     "candidate34_future_open_to_result_exposed_transition": "UNOBSERVED",
     "pf_r1_original_artifact_available": "HIGH",
     "control_utility_assignment_pointer_divergence": "HIGH",
@@ -242,10 +256,10 @@
     "fresh_system_to_mechanism_successor": "UNOBSERVED"
   },
   "questions_for_control_analyst": [
-    "Will MAIN bind the exact execution plumbing/source and fixed D34-Q002 input provenance before the first candidate34 response without reopening the closed R2 science?",
-    "On the first meaningful response, will candidate34 be durably moved to RESULT_EXPOSED_DEVELOPMENT before any second response or science-affecting redesign?",
-    "Will the first PRE_FORMAL response retain confirmatory credit zero and remain a single correlated development observation even if later development revisions are run?",
-    "Will any broader route-mechanism claim be split into a prospectively reviewed successor/revision rather than inferred from the narrow R2 response?",
-    "Will Utility reconcile its assignment/current pointer to existing PF-R1 Control authority and preserve only the original bytes without rerun/reconstruction/rescore?"
+    "Will MAIN keep the current executor CI repair strictly science-invariant and bind the final exact executor head before response?",
+    "On first meaningful candidate34 response, will the object be durably moved to RESULT_EXPOSED_DEVELOPMENT before any second response or science-affecting redesign?",
+    "Will the first PRE_FORMAL response retain confirmatory credit zero and remain one correlated development observation?",
+    "Will broader route-mechanism claims be split into prospectively reviewed revisions/successors rather than inferred from the narrow R2 response?",
+    "Will Utility reconcile assignment/current to existing PF-R1 Control authority and preserve only the original bytes without rerun/reconstruction/rescore?"
   ]
 }
