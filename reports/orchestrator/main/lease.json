@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T123630+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING-CANONICAL-OPPORTUNITY-CLOSURE",
-  "run_id": "sparkbrain-main-primary-20260923T121719JST-R92-cand34-preformal-r2-reconcile",
-  "producer_run_id": "sparkbrain-main-primary-20260923T121719JST-R92-cand34-preformal-r2-reconcile",
-  "authority_scope": "PRIMARY_CANONICAL_R92_PREFORMAL_R2_OPPORTUNITY_AWARE_NONRESULT_CONTRACT_CLOSURE_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
+  "generation_id": "MAIN-20260923T124328+0900-RELAY-CAND34-PREFORMALR2-R92-WAITING-ANALYST-REVIEW",
+  "run_id": "sparkbrain-main-relay-20260923T124328JST-R92-cand34-preformal-r2-preserve",
+  "producer_run_id": "sparkbrain-main-relay-20260923T124328JST-R92-cand34-preformal-r2-preserve",
+  "authority_scope": "RELAY_R92_PREFORMAL_R2_NONRESULT_EXACT_ARTIFACT_PRESERVATION_ONLY",
+  "supersedes_generation_id": "MAIN-20260923T123630+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING-CANONICAL-OPPORTUNITY-CLOSURE",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "main_previous_lease": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY"
+    "main_previous_lease": "MAIN-20260923T123630+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING-CANONICAL-OPPORTUNITY-CLOSURE"
   },
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-23T12:17:19+09:00",
-  "heartbeat_at": "2026-09-23T12:36:30+09:00",
+  "started_at": "2026-09-23T12:43:28+09:00",
+  "heartbeat_at": "2026-09-23T12:43:28+09:00",
   "completed_at": null,
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260923T105725+0900-R92-6B8E31D4",
@@ -36,10 +36,20 @@
   "active_identity": null,
   "workflow_wait": {
     "generic_ci_run_id": 35814951496,
+    "generic_ci_status": "completed",
+    "generic_ci_conclusion": "success",
     "r2_contract_run_id": 35814951495,
+    "r2_contract_status": "completed",
+    "r2_contract_conclusion": "success",
     "both_result_bearing": false
   },
-  "evidentiary_status": "NO_NEW_SCIENTIFIC_RESULT_WAITING_ON_NONRESULT_EXACT_HEAD_CHECKS",
+  "artifact_preservation": {
+    "durable_path": "reports/orchestrator/main/artifacts/cand34/preformal-r2/43d0f25541a3c447d4c7156303647ae94f3119f4/cand34-preformal-r2-contract.zip",
+    "ops_commit": "878c6df3135546554f6c3dc3c908ebcaa5da7639",
+    "zip_sha256": "4df7bac547df7db49c0c68108d8a0d2e40e129f4b0f7ce46ea45cf51c3a08c94",
+    "exact_bytes_preserved": true
+  },
+  "evidentiary_status": "NO_NEW_SCIENTIFIC_RESULT_R92_NONRESULT_CONTRACT_CLOSURE_COMPLETE_WAITING_FRESH_ANALYST_READY_REVIEW",
   "formal_identity_created_or_consumed": false,
   "started_created": false,
   "formal_protected_evaluation_accessed": false,
@@ -47,7 +57,7 @@
   "official_scoring_performed": false,
   "scientific_preserve_or_evidence_ref_created": false,
   "prior_results_preserved_unchanged": true,
-  "stop_reason": "WAITING_ONLY_FOR_EXACT_HEAD_NONRESULT_CI_AND_CONTRACT_WORKFLOW",
-  "next_action": "Inspect only the exact-head generic CI and non-result R2 contract workflow. If green, durably capture the exact canonical R2 contract and stop for fresh Evidence Analyst READY review; do not execute D34-Q002 or FORMAL work under R92.",
+  "stop_reason": "R92_SINGLE_NONRESULT_R2_CONTRACT_CLOSURE_COMPLETE_EXACT_ARTIFACT_DURABLY_PRESERVED_WAITING_FRESH_ANALYST_READY_REVIEW",
+  "next_action": "Fresh Evidence Analyst review of the exact R92 head and preserved canonical R2 contract. Do not execute D34-Q002, rerun/tune/rescore R2, change R2 semantics, or perform FORMAL work under R92.",
   "owner": "main"
 }
