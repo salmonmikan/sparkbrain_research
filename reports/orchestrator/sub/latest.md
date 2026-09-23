@@ -1,32 +1,38 @@
-# FAST FORGE latest — same-Assembly action context is an ordinary table-key limitation
+# FAST FORGE latest — mature Assembly retention and capacity reduce to an immortal fixed-capacity prototype store
 
 - schema_version: `2`
-- generation_id: `FORGE-20260923T133600+0900-ACTION-CONTEXT-DEADEND-R92`
-- produced_at: `2026-09-23T13:36:00+09:00`
+- generation_id: `FORGE-20260923T143553+0900-ASSEMBLY-RETENTION-CAPACITY-R93`
+- produced_at: `2026-09-23T14:35:53+09:00`
 - worker_role: `FAST_FORGE`
 - evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
 - overall_status: `FORGE_DEAD_END`
 
 ## Freshness / independence
 
-Evidence Analyst remains R92 at `a05ab3f655a23eabd84c910ba337d64a948c168a`; stable main remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. MAIN candidate #34 is independently owned on `research/main-cand34-assembly-route-preformal-r92-cycle4`, observed at `43d0f25541a3c447d4c7156303647ae94f3119f4`. Recent Literature R36, Independent Audit R8, Methodology R81, Utility PF-R1 pointer-divergence state, and prior Forge history were re-read. No Relay branch was observed.
+Evidence Analyst R93 remains current at `92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd`; stable main remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. MAIN owns candidate #34 on `research/main-cand34-assembly-route-preformal-r93-response@8ce961dc88fb52afa6399093fce1e3de7e982f2b` and candidate #35 remains its secondary canonical queue. H7 FORMAL/provenance remains excluded.
 
-Forge avoided candidate #34, candidate #35, H7 FORMAL/provenance/preserve work, protected/consumed identities, and historical delayed-action/nonlearning-visit objects. Receptor-route aliasing and native responsibility/credit were rejected before execution as already-covered families.
+Prior Forge history was re-read before selection. Native responsibility/credit was rejected before execution because the responsibility/credit/replay/eligibility family is already dense. Receptor/topology aliasing and prior same-Assembly context, partial-completion, maturation-order, receptor-state, suppression-learning, and predictor-count-table probes were also excluded as duplicate/rescue surfaces.
 
-No Forge branch was required; this run used read-only stable-source inspection and synthetic development probes only.
+No Forge branch was required. This run used read-only stable-source inspection plus bounded synthetic development diagnostics only.
 
-## Probe — can one Assembly learn context-dependent action meaning?
+## Probe A — does a long-delay mature Assembly indicate regeneration?
 
-Stable `AssemblyActionPolicy` stores `scores[assembly_id][action]` and `visits[assembly_id]`; `choose()` receives an Assembly activation and keys the table only by `assembly_id`. It has deterministic six-visit round-robin exploration followed by greedy exploitation, and scalar reward updates only the pending Assembly/action cell.
+Stable `TemporalAssemblyMemory.prune()` removes only candidates with `episode_count <= immature_stale_episodes` (default 2) whose `last_seen_ms` is older than `stale_after_ms` (default 50,000 ms). Maturity begins at 3 episodes. Therefore a mature candidate is structurally exempt from stale pruning, regardless of elapsed time.
 
-Synthetic task: one fixed Assembly alternates contexts A/B for 60 episodes. A requires `action-0`; B requires `action-1`. With the stable context-blind key, total reward is `29/60 = 0.4833`, and after exploration the policy locks onto `action-0`, succeeding on A and failing on B.
+Synthetic reduction with a small equivalent configuration confirmed that three 3-episode mature candidates all remained after a prune at 1,000,000 ms, while 1- and 2-episode candidates were removed under the same stale condition.
 
-Ordinary comparator: add context explicitly to the lookup key (`assembly-X|ctx=A/B`) while leaving the same table learner unchanged. That yields `52/60 = 0.8667`; after each context finishes its own exploration schedule, both contexts select their correct action. A consistent action-label rename also gives an identical reward sequence and isomorphic score table.
+Disposition: `FORGE_DEAD_END`. Long-delay re-recognition of a mature Assembly can be explained by persistent prototype lookup alone. It does not require regeneration, recurrent completion, or self-maintaining internal activity.
 
-Disposition: `FORGE_DEAD_END`. This is fully reduced to ordinary tabular state-key privilege. The current action layer can attach reward value to Assembly/action cells, but the same Assembly cannot express incompatible context-conditioned action meanings unless context is represented upstream or explicitly added to the policy key. Adding the key is an ordinary lookup/FSM change, not evidence of a new mechanism. No promotion proposed.
+## Probe B — can mature retention permanently close Assembly learning capacity?
+
+On an unmatched observation, `observe()` calls `prune()` only after `len(candidates) >= max_candidates`; if the store remains full after pruning it returns `None`. Because mature candidates are not stale-prunable, a store filled entirely with mature candidates cannot admit a novel unmatched candidate through this path.
+
+A bounded synthetic comparator with `max_candidates=3` showed: three mature 3-episode candidates remained full after a long stale interval and blocked a new candidate; replacing two of them with stale 1- and 2-episode candidates allowed pruning and reopened capacity.
+
+Disposition: `FORGE_DEAD_END`. The behavior is fully reduced to a finite-capacity append/lookup store with immortal mature entries and an immature-only eviction policy. This is an architectural capacity policy, not a distinct memory-regeneration mechanism.
 
 ## Boundaries / metrics
 
-No Utility request. No branch mutation or merge. No PRE_FORMAL/FORMAL identity, STARTED, official scoring, protected held-out access, preserve/evidence mutation, or immutable-ref mutation occurred.
+No Utility request. No branch mutation or merge. No PRE_FORMAL/FORMAL identity, STARTED, official TEST/scoring, protected held-out access, preserve/evidence mutation, immutable-ref mutation, or response workflow dispatch occurred.
 
-R92 FAST_FORGE cumulative metrics: runs `3`, prototypes `6`, dead ends `5`, retained interesting objects `0`, promotion proposals `0`, later admissions `0`, duplicate/rescue rejects `2`, ownership collisions `0`, ordinary-reduction rejects `5`.
+R93 FAST_FORGE cumulative metrics: runs `4`, prototypes `8`, dead ends `7`, retained interesting objects `0`, promotion proposals `0`, later admissions `0`, duplicate/rescue rejects `3`, ownership collisions `0`, ordinary-reduction rejects `7`.
