@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T033000+0900-PRIMARY-H7-R104-AUTHORITY-REPIN-WAITING",
-  "producer_run_id": "sparkbrain-main-primary-20260924T0315JST-r104-h7-authority-repin-readiness",
-  "generated_at": "2026-09-24T03:30:00+09:00",
-  "status": "WAITING_EXTERNAL",
-  "execution_mode": "PRIMARY",
+  "generation_id": "MAIN-20260924T035756+0900-RELAY-H7-R104-PRESTART-CONTROLLER-BLOCKED",
+  "producer_run_id": "sparkbrain-main-relay-20260924T035756JST-r104-h7-prestart-controller-blocked",
+  "generated_at": "2026-09-24T03:57:56+09:00",
+  "status": "BLOCKED",
+  "execution_mode": "RELAY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "research_layer": "PRE_FORMAL",
   "claim_ceiling": "MECHANISM",
@@ -14,18 +14,19 @@
   "cycle_count": 12,
   "cycle_reassessment": {
     "authorized_scientific_cycle": 12,
-    "primary_extended_scientific_cycle": false,
-    "current_action_was_science_invariant_authority_repin_and_nonresult_readiness": true
+    "relay_extended_scientific_cycle": false,
+    "expected_information_gain_context": "R104_CONDITIONAL_ONE_WAY_FORMAL_PRESTART_ONLY",
+    "scientific_iteration_performed": false
   },
   "analyst_authority": {
     "generation_id": "EVA-20260924T031000+0900-R104-H7-GREEN-REVISIT-BOOTSTRAP",
     "commit": "0dfa28e2a8d0ddd6731ccbe9eccc7882e7f3be6f",
     "decision": "GO_ONCE_CONDITIONAL_EXACT_BINDING",
     "fresh_formal_authority": true,
-    "freshness_rechecked_immediately_before_controller_mutation": true,
+    "freshness_rechecked_immediately_before_formal_decision": true,
     "formal_authority_exercised_this_generation": false
   },
-  "prior_main_generation": "MAIN-20260924T022000+0900-PRIMARY-H7-R103-EXTERNAL-CAPABILITY-BLOCKED",
+  "prior_main_generation": "MAIN-20260924T033000+0900-PRIMARY-H7-R104-AUTHORITY-REPIN-WAITING",
   "funnel": {
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
@@ -39,7 +40,6 @@
     "development_revision": "R5_UNCHANGED"
   },
   "refs": {
-    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_branch": "ops/evidence-analyst-handoff",
     "analyst_head": "0dfa28e2a8d0ddd6731ccbe9eccc7882e7f3be6f",
     "scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
@@ -48,56 +48,67 @@
     "controller_head": "9c9f7e312aaf919418806d55dad0f1fcaafa5ee1",
     "resource_contract_path": "artifacts/formal_h7_r5/resource_contract.json",
     "readiness_workflow_path": ".github/workflows/h7-formal-r5-one-way-readiness.yml",
-    "history_path": "reports/orchestrator/main/history/2026-09-24/0330-r104-primary-h7-authority-repin-waiting-external.md"
+    "result_bearing_formal_launch_workflow_path": null,
+    "history_path": "reports/orchestrator/main/history/2026-09-24/0357-r104-relay-h7-prestart-controller-path-blocked.md"
   },
-  "repair_change_classification": "SCIENCE_INVARIANT_REPAIR_CONTROL_METADATA_ONLY",
+  "repair_change_classification": {
+    "repair": "NO_REPAIR_PERFORMED_FAIL_CLOSED_FORMAL_CONTROLLER_PATH_UNMATERIALIZED",
+    "change": "FORMAL_INTEGRITY_BLOCKER_NOT_SAFE_FOR_RELAY_TO_INVENT"
+  },
   "work_performed": [
     {
+      "classification": "WORKFLOW_RECONCILIATION",
+      "change": "Observed exact R104-bound NON_RESULT readiness and generic CI complete successfully on controller head 9c9f7e312aaf919418806d55dad0f1fcaafa5ee1."
+    },
+    {
       "classification": "FRESHNESS_AND_OWNERSHIP_RECONCILIATION",
-      "change": "Re-fetched current Analyst R104, stable main, exact H7 scientific/controller refs, H7 control/preserve/formal/sealed/freeze namespaces, prior MAIN state/lease, Relay scheduler state, Fast Forge collision state, and Utility collision state before mutation."
+      "change": "Re-fetched current Analyst R104, prior MAIN lease, exact H7 scientific/controller refs, frozen FORMAL bindings, and one-way namespaces immediately before any possible FORMAL mutation. No fresh PRIMARY RUNNING same-object collision exists."
     },
     {
-      "classification": "SCIENCE_INVARIANT_AUTHORITY_REPIN",
-      "change": "Updated only the readiness controller's pinned ANALYST_SHA from superseded R103 to current R104. H7 scientific source, contract, runtime, inputs, component hashes, scorer/preserver semantics, namespace guards, and non-result gate were unchanged."
+      "classification": "FORMAL_PRESTART_INTEGRITY_AUDIT",
+      "change": "Verified the current exact controller tree has NON_RESULT readiness but no prospectively materialized result-bearing H7 one-way FORMAL launch controller/workflow fixing identity, STARTED, protected payload, raw-preserve-before-read, and post-preservation scoring mechanics."
     },
     {
-      "classification": "NON_RESULT_READINESS_TRIGGERED",
-      "change": "The controller push triggered a fresh R104-bound NON_RESULT readiness workflow and generic CI on the exact same controller head. No FORMAL identity or result-bearing action was started."
+      "classification": "FAIL_CLOSED",
+      "change": "Stopped before FORMAL identity creation or START rather than inventing the missing result-bearing controller path."
     }
   ],
   "workflows": {
     "h7_nonresult_readiness": {
       "run_id": 35902642575,
       "head": "9c9f7e312aaf919418806d55dad0f1fcaafa5ee1",
-      "status": "in_progress",
-      "conclusion": null,
-      "result_bearing": false,
-      "analyst_bound_to": "EVA-20260924T031000+0900-R104-H7-GREEN-REVISIT-BOOTSTRAP",
-      "expected_next_action": "After readiness and CI complete, re-fetch current Analyst authority and all exact scientific/control bindings plus H7 STARTED/preserve namespaces before any FORMAL mutation."
+      "status": "completed",
+      "conclusion": "success",
+      "result_bearing": false
     },
     "generic_ci": {
       "run_id": 35902642400,
       "head": "9c9f7e312aaf919418806d55dad0f1fcaafa5ee1",
-      "status": "queued",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "result_bearing": false
+    },
+    "h7_result_bearing_formal_launch": {
+      "workflow_path": null,
+      "status": "NOT_PROSPECTIVELY_MATERIALIZED",
+      "dispatched": false
     }
   },
   "observations": {
-    "protected_sidecar_capability_blocker_resolved_before_this_generation": true,
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NON_RESULT_SCIENCE_INVARIANT_AUTHORITY_REPIN_WAITING_EXTERNAL",
-    "information_gain": "CONTROL_AND_READINESS_ONLY_NO_NEW_SCIENCE",
+    "evidentiary_status": "NON_RESULT_FORMAL_PRESTART_FAIL_CLOSED_NO_IDENTITY_CREATED",
+    "information_gain": "CONTROL_INTEGRITY_ONLY_NO_NEW_SCIENCE",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
     "formal_identity_created_or_consumed": false,
     "started_marker_created": false,
     "protected_or_heldout_evaluation_accessed": false,
+    "raw_evaluation_produced": false,
+    "raw_evaluation_preserved": false,
     "official_scoring_performed": false,
     "pass_fail_assigned": false,
     "evidence_ref_created_or_mutated": false,
-    "prior_results_preserved_unchanged": true,
-    "forge_derived_code_reused": false
+    "prior_results_preserved_unchanged": true
   },
   "consumed_identities": {
     "new_identity_consumed_this_run": false,
@@ -106,13 +117,7 @@
   },
   "ownership_and_collision": {
     "fresh_primary_running_same_h7_object_before_action": false,
-    "relay_enabled": true,
     "relay_same_object_mutation_collision_observed": false,
-    "fast_forge_same_h7_object_collision": false,
-    "fast_forge_latest_observed_branch": "forge/20260924-coordinate-null-local-witness",
-    "fast_forge_latest_observed_head": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
-    "utility_head": "5da3b2c4d166f8e42cb3c38207958bd2186db3b3",
-    "utility_status_per_current_analyst": "IDLE_NO_CANONICAL_BLOCKER",
     "h7_formal_authorized_conditionally": true,
     "h7_formal_authority_exercised": false
   },
@@ -120,30 +125,30 @@
     "analyst_generation_freshness_rechecked": true,
     "main_generation_and_lease_rechecked": true,
     "direct_h7_scientific_ref_rechecked": true,
-    "direct_h7_controller_ref_rechecked_before_mutation": true,
-    "h7_control_namespace_absent_before_action": true,
-    "h7_preserve_namespace_absent_before_action": true,
-    "h7_formal_tag_namespace_absent_before_action": true,
-    "h7_sealed_tag_namespace_absent_before_action": true,
-    "h7_freeze_tag_namespace_absent_before_action": true,
+    "direct_h7_controller_ref_rechecked": true,
+    "readiness_and_ci_green": true,
+    "h7_control_namespace_absent_before_decision": true,
+    "h7_preserve_namespace_absent_before_decision": true,
+    "h7_formal_tag_namespace_absent_before_decision": true,
+    "h7_sealed_freeze_immutable_namespaces_absent_in_same_run": true,
     "authorized_scientific_source_unchanged": true,
-    "controller_change_science_invariant_only": true,
+    "result_bearing_launch_controller_prospectively_fixed": false,
     "formal_identity_created": false,
     "started_created": false,
     "protected_evaluation_accessed": false,
     "official_scoring_performed": false,
     "historical_pass_fail_rewritten": false,
     "immutable_formal_sealed_evidence_refs_mutated": false,
-    "development_phase_changed_by_primary": false,
+    "development_phase_changed_by_relay": false,
     "formal_floor_respected": true
   },
   "do_not_touch": [
     "Consumed FORMAL identities",
     "immutable/formal/sealed/evidence/freeze/preserve refs",
     "H7 scientific binding or scorer/comparator/threshold/tolerance/protocol after exposure",
-    "H7 FORMAL identity/STARTED/evaluation/scoring while R104-bound readiness or CI is pending",
+    "H7 FORMAL identity/STARTED/evaluation/scoring until an exact prospectively authorized result-bearing one-way launch controller is materialized and rebound",
     "Candidate #35 current object or rescue-adjacent successor"
   ],
-  "stop_reason": "WAITING_R104_BOUND_NON_RESULT_READINESS_AND_CI",
-  "next_action": "On continuation, first inspect the exact R104-bound readiness and CI results. If both are green, re-fetch current Analyst authority, exact H7 science/controller refs, protected contract/package/runtime/input/components/scorer/preserver/workflow, and unused STARTED/preserve namespaces. Only if R104 remains current and every binding is exact may MAIN create one fresh FORMAL identity and enter the one-way START path once. Any mismatch or Analyst supersession fails closed."
+  "stop_reason": "MISSING_PROSPECTIVELY_FIXED_RESULT_BEARING_H7_ONE_WAY_FORMAL_CONTROLLER_PATH",
+  "next_action": "Evidence Analyst or an explicitly authorized prospective implementation generation must materialize and bind the exact H7 FORMAL launch controller/protected-payload/identity mechanics under the frozen contract. If any science-affecting change is required, authorize a fresh development_revision or successor. MAIN must then re-fetch Analyst/Main generations, exact science/controller refs, frozen bindings, and one-way namespaces before considering exactly one fresh FORMAL identity and one-way START."
 }
