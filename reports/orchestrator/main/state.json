@@ -1,20 +1,20 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T152800+0900-PRIMARY-CAND34-PREFORMALR2-R94-WAITING-RESPONSE",
-  "run_id": "sparkbrain-main-primary-20260923T151500JST-R94-cand34-d34q002",
-  "producer_run_id": "sparkbrain-main-primary-20260923T151500JST-R94-cand34-d34q002",
-  "produced_at": "2026-09-23T15:28:00+09:00",
-  "authority_scope": "PRIMARY_CANONICAL_R94_CAND34_ONE_BOUNDED_PREFORMAL_R2_RESPONSE_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T145200+0900-RELAY-CAND34-PREFORMALR2-R93-WAITING-CI-REPAIR",
+  "generation_id": "MAIN-20260923T155100+0900-RELAY-CAND34-PREFORMALR2-R94-D34Q002-PRESERVED-EXPOSED",
+  "run_id": "sparkbrain-main-relay-20260923T154600JST-R94-cand34-preserve-d34q002",
+  "producer_run_id": "sparkbrain-main-relay-20260923T154600JST-R94-cand34-preserve-d34q002",
+  "produced_at": "2026-09-23T15:51:00+09:00",
+  "authority_scope": "RELAY_CANONICAL_R94_CAND34_RAW_PRESERVE_THEN_FIRST_EXPOSURE_STOP",
+  "supersedes_generation_id": "MAIN-20260923T152800+0900-PRIMARY-CAND34-PREFORMALR2-R94-WAITING-RESPONSE",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T150251+0900-R94-8E6A31C4@c273eb5c6d1390d4b0d8c683c373fbf5336db8a8",
-    "main_previous": "MAIN-20260923T145200+0900-RELAY-CAND34-PREFORMALR2-R93-WAITING-CI-REPAIR",
+    "evidence_analyst": "EVA-20260923T150251+0900-R94-8E6A31C4@5cee6ef496eb9465550fb9c0be5295e587027dfb",
+    "main_previous": "MAIN-20260923T152800+0900-PRIMARY-CAND34-PREFORMALR2-R94-WAITING-RESPONSE",
     "closed_r2_contract": "research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4"
   },
-  "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
+  "execution_mode": "RELAY",
+  "status": "COMPLETED",
   "analyst_generation_id": "EVA-20260923T150251+0900-R94-8E6A31C4",
-  "analyst_commit": "c273eb5c6d1390d4b0d8c683c373fbf5336db8a8",
+  "analyst_commit": "5cee6ef496eb9465550fb9c0be5295e587027dfb",
   "research_layer": "PRE_FORMAL",
   "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
   "claim_ceiling": "MECHANISM",
@@ -23,10 +23,12 @@
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "NONTERMINAL",
+  "queue_state": "QUEUED_FOR_MAIN_PREFORMAL_R2_ONE_BOUNDED_RESPONSE_EXACT_EXECUTOR_BOUND",
+  "system_priority_exception": {"used": false},
   "development_phase": "OPEN_DEVELOPMENT",
   "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
   "cycle_count": 4,
-  "cycle_reassessment_context": "R94 freshly bound the repaired green executor head and authorized exactly one D34-Q002 response under the unchanged closed R2 contract. MAIN independently confirmed no cand34 preserve/control ref and no existing D34-Q002 raw result before dispatch.",
+  "cycle_reassessment_context": "R94 prospectively authorized exactly one bounded D34-Q002 PRE_FORMAL development response under the unchanged closed R2 contract and exact repaired executor, with raw preservation before interpretation and mandatory stop after first meaningful exposure. Relay preserved the completed raw result before reading it and then stopped after first exposure. Relay has no authority to change the Analyst-owned development phase.",
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "closed_r2_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
@@ -34,48 +36,65 @@
     "active_research_branch": "research/main-cand34-assembly-route-preformal-r93-response",
     "active_research_head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
     "executor_path": "scripts/cand34_preformal_r2_execute.py",
-    "execution_bridge_commit": "5e0cb8882a6f7afc684b11b97dddf30b573e7a43"
+    "raw_preserve_ref": "preserve/cand34-d34-q002-r94-raw-20260923",
+    "raw_preserve_head": "4d45f1135bcb607f1e663648cd8335333eb98de4",
+    "raw_preserve_path": "artifacts/cand34/d34-q002/development/raw/D34-Q002.raw.json"
   },
   "workflow_observation": {
     "executor_green_ci_run_id": 35824098828,
     "executor_green_ci_conclusion": "success",
     "result_bearing_workflow_run_id": 35826846989,
     "result_bearing_workflow_name": "cand34-preformal-r2-response-r94",
-    "result_bearing_workflow_status_at_persist": "queued",
-    "result_bearing_workflow_conclusion_at_persist": null,
+    "result_bearing_workflow_status": "completed",
+    "result_bearing_workflow_conclusion": "success",
     "result_bearing_workflow_dispatched": true,
-    "result_bearing_execution_performed_known": false
+    "result_bearing_execution_performed_known": true,
+    "raw_artifact_id": 10734684669,
+    "raw_artifact_name": "cand34-d34-q002-r94-raw",
+    "raw_artifact_archive_digest": "sha256:38a50cf3d63be3355d3d95387d155a6f0e550d998026ccdd38743a07520171f4",
+    "raw_file_sha256": "f34e0e4a40228b5eb299b0c24cec0a6bc97bb37dd1fa5d0f63cf933027843846",
+    "preservation_workflow_run_id": 35828594071,
+    "preservation_workflow_conclusion": "success"
   },
   "work_performed": {
-    "classification": "AUTHORIZED_PREFORMAL_ONE_SHOT_DISPATCH",
+    "classification": "SCIENCE_INVARIANT_REPAIR_NO_CLOBBER_PRESERVATION_PLUMBING_THEN_AUTHORIZED_FIRST_RESULT_EXPOSURE",
     "scientific_contract_changed": false,
     "research_branch_mutated": false,
+    "preservation_control_plane_added": true,
+    "preserve_ref_created": true,
+    "raw_preserved_before_interpretation": true,
+    "raw_hash_verified_before_interpretation": true,
+    "preserved_hash_verified_after_commit": true,
     "forge_code_reused": false,
     "forge_observation_confirmatory_credit": false,
-    "no_clobber_checked_before_dispatch": true,
-    "raw_before_interpretation_required": true,
-    "response_bearing_execution_dispatched_once": true
+    "same_identity_rerun": false,
+    "science_affecting_redesign": false
   },
   "observations_evidentiary_status": {
-    "new_scientific_result": false,
+    "new_scientific_result": true,
+    "result_class": "PREFORMAL_DEVELOPMENT_RESULT_ONLY",
+    "raw_result_status": "PREFORMAL_DEVELOPMENT_RESULT_EXPOSED",
+    "raw_evidentiary_status": "PREFORMAL_DEVELOPMENT_ONLY_ZERO_CONFIRMATORY_CREDIT",
     "formal_evidence": 0,
-    "preformal_development_result_new_this_run": 0,
-    "mechanism_architecture_observation_new_this_run": 0,
-    "system_architecture_observation_new_this_run": 0,
-    "scientific_result_exposed_to_main": false,
-    "implementation_or_dispatch_only": true
+    "independent_confirmatory_credit": 0,
+    "official_scoring_performed": false,
+    "preformal_development_result_new_this_run": 1,
+    "scientific_result_exposed_to_main": true,
+    "first_meaningful_exposure_reached": true,
+    "repeat_response_execution_permitted": false
   },
   "prior_result_preservation": {
     "D34_Q001_preserved_unchanged": true,
     "R1_prebind_preserved_unchanged": true,
     "R2_closed_contract_preserved_unchanged": true,
+    "D34_Q002_raw_preserved_unchanged": true,
     "all_prior_results_unchanged": true,
     "consumed_formal_identity_rerun_retune_rescore": false,
     "immutable_formal_sealed_evidence_refs_mutated": false
   },
   "collision_awareness": {
-    "main_running_collision": false,
-    "relay_collision": false,
+    "fresh_primary_running_same_object_collision": false,
+    "primary_handoff_status_reconciled": "WAITING_EXTERNAL",
     "forge_same_object_collision": false,
     "forge_code_reused": false,
     "utility_dependency": false
@@ -86,20 +105,32 @@
     "formal_evaluation_seed_revealed": false,
     "formal_protected_evaluation_accessed": false,
     "official_scoring_performed": false,
-    "evidence_ref_mutated": false
+    "evidence_ref_mutated": false,
+    "formal_or_sealed_ref_mutated": false,
+    "consumed_identity_rerun_retune_rescore": false,
+    "scientific_preserve_ref_created": true
   },
   "integrity": {
-    "analyst_generation_rechecked_before_dispatch": true,
-    "main_lease_acquired_before_dispatch": true,
-    "active_research_head_rechecked_before_dispatch": true,
+    "analyst_generation_rechecked_before_mutation": true,
+    "main_generation_and_lease_rechecked_before_mutation": true,
+    "active_research_head_rechecked_before_mutation": true,
     "closed_r2_contract_head_unchanged": true,
+    "raw_before_interpretation_respected": true,
+    "preserve_no_clobber_respected": true,
     "prior_result_preservation_respected": true,
-    "formal_stop_respected": true
+    "formal_stop_respected": true,
+    "analyst_owned_development_phase_preserved_exactly": true,
+    "analyst_owned_funnel_fields_preserved_exactly": true
+  },
+  "consumed_identities": {
+    "formal_consumed_identity_count_changed": false,
+    "D34_Q002_development_execution_consumed_once": true,
+    "D34_Q002_repeat_forbidden": true
   },
   "remaining_blockers": [
-    "External one-shot response workflow 35826846989 has not yet completed. Raw output must be preserved unchanged before MAIN reads or interprets it."
+    "Fresh Evidence Analyst review is required after first meaningful D34-Q002 PRE_FORMAL result exposure before any repeat response, science-affecting redesign, Funnel reinterpretation, development-phase transition, or FORMAL action."
   ],
-  "stop_reason": "WAITING_EXTERNAL_ONE_SHOT_RESPONSE_WORKFLOW",
-  "next_action": "Re-fetch R94, exact executor head and workflow 35826846989. If the workflow succeeds, retrieve the raw artifact without scientific interpretation, preserve exact raw bytes on a fresh no-clobber preserve ref before reading/scoring, then transition candidate #34 to RESULT_EXPOSED_DEVELOPMENT and return to Evidence Analyst. If the workflow fails before meaningful response exposure, diagnose only science-invariant execution/preservation plumbing; never rerun after meaningful response exposure.",
+  "stop_reason": "FIRST_MEANINGFUL_PREFORMAL_RESULT_EXPOSURE_FRESH_ANALYST_REVIEW_REQUIRED",
+  "next_action": "Wait for a fresh Evidence Analyst generation to review the exact preserved D34-Q002 raw result and provenance. Do not rerun D34-Q002. Do not retune, rescore, reinterpret Funnel fields, change development_phase, or take FORMAL action without fresh authority.",
   "owner": "main"
 }
