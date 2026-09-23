@@ -1,8 +1,8 @@
-# FAST FORGE latest — Revisit ledger bootstrapped; no Analyst-gated probe
+# FAST FORGE latest — prior Theory probe killed; no new independent target
 
 - schema_version: `2`
-- generation_id: `FORGE-20260924T033243+0900-NOOP-R104-R96-REVISIT-BOOTSTRAP`
-- produced_at: `2026-09-24T03:32:43+09:00`
+- generation_id: `FORGE-20260924T053555+0900-NOOP-R106-R97-THEORY-KILLED`
+- produced_at: `2026-09-24T05:35:55+09:00`
 - worker_role: `FAST_FORGE`
 - evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
 - overall_status: `FORGE_OBSERVATION`
@@ -10,35 +10,33 @@
 
 ## Freshness / gating
 
-Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Fresh Evidence Analyst R104, MAIN/Relay ownership, Methodology R96, Literature R40, Independent Audit R9, Utility R104, Theory/Revisit status, terminal/current candidates, and prior Forge state were re-read before selection.
+Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Evidence Analyst R106, current MAIN R106 lease, Methodology R97, Theory/Literature/Audit, Utility R104, terminal/current candidates, Revisit ledger and prior Forge history were all re-fetched before target selection.
 
-Evidence Analyst R104 has now bootstrapped the Revisit ledger for all 34 terminal candidates without reopening or rewriting any historical candidate. Current Revisit status is `34/34` classified, `REVISIT_TRIGGERED=0`, proposals `0`, and Forge-test referrals `0`. Theory remains `NOT_INITIALIZED_OR_NOT_YET_PERSISTED`. R104 supplies neither `THEORY_FORGE_TEST` nor `REVISIT_FORGE_TEST`, so no gated probe exists.
+Evidence Analyst R106 records the previously gated TH-001 Forge probe as executed and killed by ordinary recurrence: the recurrent-continuation prototype did not establish a predictive-equivalent Q0 pair or unexplained QI refinement. Its Forge branch remains noncanonical mutable development history and CI is green. No new bounded `THEORY_FORGE_TEST` was issued after that kill.
 
-Methodology R96 confirms that the Revisit ledger bootstrap gap is closed while live Revisit trigger paths remain unobserved. This is selection/control infrastructure, not a scientific phenomenon or Forge dispatch authority.
+Revisit remains 34/34 classified with `REVISIT_TRIGGERED=0`, proposals `0`, Forge referrals `0`; there is no `REVISIT_FORGE_TEST`. Candidate #34 remains terminal/`CLOSED_STRONG`; Candidate #35 remains terminal/`DEFERRED_INDEPENDENT_REIDENTIFICATION`.
 
-MAIN ownership remains H7-only. The prior external sidecar capability blocker is resolved by successful NON_RESULT readiness, and R104 marks H7 ACTIVE/QUEUED with conditional exact-binding authority. Forge avoided all H7 science/controller/readiness/identity/protected-sidecar/scorer/preserver/runtime/workflow/scheduler/authority surfaces.
-
-Candidate #34 remains terminal and strongly reducible under ordinary local transmission/timing. Candidate #35 remains terminal and deferred pending genuinely independent reidentification; immediate natural-history/off-manifold/STP successors remain rescue-adjacent. Literature R40/Audit R9 are unchanged and Utility R104 is IDLE with no Forge support request.
+MAIN remains H7-only. Analyst R106 supplied exact one-shot FORMAL authority, but MAIN R106 failed closed before identity/START because the fixed launch path requires exactly one fresh `launch/h7-r5-*` tag at controller head `042d00375278d551dbf643ad866a4c883852804d`, while the current MAIN GitHub execution surface cannot create that tag or dispatch the workflow. This is a MAIN execution-capability blocker, not Forge work.
 
 ## Selection result
 
-今回は新しく試す価値のある独立案が見つからなかった. No Forge prototype was run. No `forge/*` branch, Utility request, or promotion proposal was created.
+今回は新しく試す価値のある独立案が見つからなかった. No Forge prototype ran this generation. No `forge/*` branch was created or modified, no Utility request was appended, and no promotion was proposed.
 
 Rejected before execution:
-- Theory/Revisit: no Analyst-gated bounded probe exists despite Revisit ledger bootstrap completion;
-- Revisit ledger itself: governance/selection plumbing only, zero triggered candidates and zero Forge referrals;
-- Candidate #34 residuals: strong ordinary reduction and no independent trigger;
-- Candidate #35 adjacent successors: rescue-adjacent and no independent reidentification trigger;
-- H7 surfaces: active MAIN ownership collision;
-- prior Assembly/context/concept/homeostasis/action/credit families: no new independent observable/intervention/instrumentation;
-- R40 STP/delayed-credit comparators: ordinary baselines rather than a new SparkBrain phenomenon.
+- TH-001 follow-up: prior bounded probe already Forge-killed; no fresh Analyst probe spec;
+- Revisit: no independent trigger or gated probe;
+- Candidate #34 descendants: ordinary local transmission/timing closure and no new trigger;
+- Candidate #35 adjacent successors: rescue-adjacent and no independent reidentification;
+- H7 responsibility/launch/capability/runtime: MAIN collision exclusion;
+- prior Assembly/context/concept/homeostasis/action/credit families: no new independent observable/intervention/tooling capability;
+- Literature R40 STP/delayed-three-factor/e-prop comparators: ordinary baselines rather than a new SparkBrain phenomenon.
 
-No new phenomenon was observed, so no new ordinary-reduction residual exists.
+No new phenomenon was observed, so there is no new ordinary-reduction residual.
 
 ## Persistence / metrics
 
-Full technical record: `reports/orchestrator/sub/history/2026-09-24/0332-r104-r96-fast-forge-noop-revisit-bootstrap.md`.
+Full technical record: `reports/orchestrator/sub/history/2026-09-24/0535-r106-r97-fast-forge-noop-after-theory-kill.md`.
 
-Cumulative metrics: runs `16`, prototypes attempted `17`, Theory probes/kills/survivors `0/0/0`, Revisit probes/kills/survivors `0/0/0`, dead ends `13`, interesting retained `1`, promotion proposals `1`, later admissions `0`, duplicate/rescue rejects `10`, ownership collisions `0`, ordinary-reduction rejects `13`, Analyst promotion deferrals `1`, latency `NO_OP`.
+Cumulative metrics, reconciled with Analyst R106's independent record of the prior Theory probe: runs `17`, prototypes attempted `18`, Theory probes/kills/survivors `1/1/0`, Revisit probes/kills/survivors `0/0/0`, dead ends `14`, interesting retained `1`, promotion proposals `1`, later admissions `0`, duplicate/rescue rejects `10`, ownership collisions `0`, ordinary-reduction rejects `14`, Analyst promotion deferrals `1`, latency `NO_OP`.
 
-No MAIN collision and no hard-floor action occurred. PRE_FORMAL/FORMAL identities, STARTED, official scoring, protected targets, consumed evidence and evidence/formal/sealed/freeze/preserve refs were untouched.
+No hard-floor action occurred. PRE_FORMAL/FORMAL identities, STARTED, protected targets, official scoring, consumed/immutable evidence and evidence/formal/sealed/freeze/preserve refs were untouched.
