@@ -1,7 +1,7 @@
 # MAIN latest — candidate #34 PRE_FORMAL R2
 
-- execution_mode: `RELAY`
-- status: `BLOCKED`
+- execution_mode: `PRIMARY`
+- status: `WAITING_EXTERNAL`
 - layer: `PRE_FORMAL`
 - cycle: 4
 - development_phase: `OPEN_DEVELOPMENT`
@@ -10,13 +10,12 @@
 - preformal_eligible: `true`
 - preformal_readiness: `NOT_READY`
 - terminal_state: `NONTERMINAL`
-- queue_state: `QUEUED_FOR_MAIN_PREFORMAL_R2_OPPORTUNITY_AWARE_CONTRACT_REVISION_NONRESULT`
 - system_priority_exception.used: `false`
 
-The exact-head generic CI and dedicated R2 non-result contract workflow both completed successfully. No response-bearing execution occurred.
+PRIMARY reconciled the canonical R92 Evidence Analyst authority against the active candidate #34 branch and found that the prior R2 implementation did not actually implement the authorized opportunity-aware revision: it retained the R1 direct-threshold cue/plan and only wrapped it in new metadata while also embedding a noncanonical Analyst generation.
 
-Relay then re-fetched the canonical Evidence Analyst branch before durable capture. The commit referenced by PRIMARY currently resolves to Analyst generation `EVA-20260923T105725+0900-R92-6B8E31D4` with the opportunity-aware R2 revision above, while PRIMARY and the generated R2 contract are bound to `EVA-20260923T110053+0900-R92-A7B61F3C` and a different revision description. The generated contract hard-codes that mismatching authority identity.
+Because no R2 response had been exposed and R92 explicitly authorizes this versioned science-affecting revision under OPEN_DEVELOPMENT, PRIMARY prospectively replaced only the R2 non-result contract layer. The revised contract uses source-only per-edge cues, never directly cues the tested destination, predeclares per-edge causal-opportunity state, constructs matched-control opportunities using their own source cues, and makes destination membrane/spike response primary while keeping the frozen Assembly response secondary. D34-Q001 and the R1 prebind remain unchanged.
 
-Because durable capture would preserve a contract bound to a generation/revision that does not match the canonical Analyst content, Relay failed closed. It did not rewrite the authority, did not reinterpret the R2 revision, did not modify the research branch, and did not dispatch any response-bearing or FORMAL work.
+The exact canonical branch head is `43d0f25541a3c447d4c7156303647ae94f3119f4`. The exact-head generic CI and dedicated non-result R2 contract workflow are currently in progress. No response-bearing execution, PRE_FORMAL result, FORMAL identity, STARTED marker, protected evaluation, scoring, or scientific preserve/evidence mutation occurred. No Forge code was reused and Forge observations received no confirmatory credit.
 
-D34-Q001 and all prior results remain unchanged. Next action is a fresh Evidence Analyst or PRIMARY reconciliation that explicitly binds the exact R2 branch/contract to current authority before durable capture or execution.
+Next action is to inspect only those exact-head non-result workflows. If green, durably capture the canonical contract and return to a fresh Evidence Analyst READY review. D34-Q002 remains non-executable under R92.
