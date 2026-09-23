@@ -1,97 +1,75 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91",
-  "produced_at": "2026-09-23T02:31:00+09:00",
-  "completed_at": "2026-09-23T02:31:00+09:00",
-  "producer_run_id": "utility-auto-20260923T0227+0900-pfr1-auth-consistency",
-  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_BOUNDED_NON_EVIDENTIARY_READ_ONLY_CONTROL_PLANE_RECONCILIATION",
-  "supersedes_generation_id": "UTILITY-20260923T022700+0900-AUTO-PFR1-AUTH-CONSISTENCY-RUNNING-4E7A2C91",
+  "generation_id": "UTILITY-20260923T123200+0900-AUTO-FORGE-PULSE-ORDER-RUNNING-6D2A91C4",
+  "produced_at": "2026-09-23T12:32:00+09:00",
+  "completed_at": null,
+  "producer_run_id": "utility-auto-20260923T1227+0900-forge-pulse-order",
+  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_FAST_FORGE_BOUNDED_NON_EVIDENTIARY_SYNTHETIC_DIAGNOSTIC",
+  "supersedes_generation_id": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "assignment_id": null,
   "assignment_generation_id": null,
-  "autonomous_task_id": "AUTOUTIL-20260923T0227+0900-PFR1-AUTH-CONSISTENCY-4E7A2C91",
-  "status": "COMPLETED",
+  "autonomous_task_id": "AUTOUTIL-20260923T1232+0900-FORGE-RECEPTOR-SAME-TIME-ORDER-6D2A91C4",
+  "status": "RUNNING",
   "run_count": 1,
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "objective": "Reconcile the Utility mailbox authorization record for the existing PF-R1 durable-provenance request against fresh Control/Analyst statements without retrieving artifacts or touching research state.",
-  "trigger_source": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE plus Control R37 / Evidence Analyst R83 status mismatch.",
-  "outcome_classification": "CONTROL_PROSE_APPROVAL_EXISTS_BUT_UTILITY_MAILBOX_HAS_NO_MATCHING_DECISION_OR_ASSIGNMENT_AUTHORITY",
+  "fast_forge_support": true,
+  "objective": "Independently test, on source-level synthetic/dev semantics only, whether same-time same-channel receptor pulses are permutation-invariant or whether stable tie ordering creates a transient output-order artifact; reduce any observation to ordinary implementation semantics before considering any follow-up.",
+  "trigger_source": "Fresh Fast Forge run FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS exposed receptor-local state as an independent noncanonical Forge surface; Utility selects a distinct same-timestamp batching diagnostic rather than duplicating the priming or suppression probes.",
   "ownership_generations": {
-    "evidence_analyst": "EVA-20260923T020919+0900-R83-A6D4E219",
-    "main_latest_durable": "MAIN-20260923T012121+0900-PRIMARY-H7-FORMALR4-C10-R82-RECOVERY-7C4E19B2",
-    "sub": "SUB-20260923T013444+0900-NOOP-SCAN-R82-7C4E19B2",
-    "relay_latest_durable": null,
-    "control": "CTRL-20260922T235000+0900-R37-7A3E9C51"
+    "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4",
+    "main_latest_durable": "MAIN-20260923T121719+0900-PRIMARY-CAND34-PREFORMALR2-R92-RECONCILE-AUTHORITY-CONTRACT",
+    "relay_latest_durable": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
+    "fast_forge": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS",
+    "control": "CTRL-20260923T115056+0900-R41-4C156929"
   },
   "exact_refs": {
+    "assignment_pointer_status": "IDLE",
     "assignment_pointer_blob": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "utility_request_blob": "d0bcee3fe422925cfc999cf63cc5ba34375eb8b0",
-    "evidence_analyst_commit": "ba109150205db0a30ce1c294ab8133fa6caa51b4",
-    "control_commit": "23676a55c9473d1cfd22d982ffffd5d2ba18b557",
-    "orchestrator_commit": "722c64371fe4783dde36ab34a7339e9baa3d38b7",
-    "authoritative_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "h7_r4_head": "647253f4c0128ff09d47fdfce80dabf006863af1"
-  },
-  "outputs_summary": {
-    "assignment_pointer_clean_idle": true,
-    "matching_assignment_exists": false,
-    "matching_control_decision_in_utility_mailbox_exists": false,
-    "request_file_status": "PROPOSED_NOT_APPROVED",
-    "control_r37_prose_status": "APPROVED_OPEN",
-    "analyst_r83_prose_status": "OUTSTANDING_GO_EXISTING_REQUEST",
-    "authorization_record_divergence": true,
-    "pfr1_preservation_executed": false,
-    "duplicate_follow_up_request_appended": false
-  },
-  "ownership_checks": {
-    "collision_found": false,
-    "main_critical_dependency": false,
-    "main_active_object": "H7_FORMAL_R4_ARTIFACT_RECOVERY_PREIDENTITY_CYCLE10",
-    "main_status": "BLOCKED",
-    "sub_active_scientific_object": null,
-    "relay_active_continuation_authority": false,
-    "active_or_queued_research_object_touched": false,
-    "candidate_typing_touched": false,
-    "material_authority_supersession_before_terminal_write": false
+    "evidence_analyst_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
+    "orchestrator_commit": "92806ba4042af799d26cae17cd14f55faf84bdaf",
+    "control_commit": "27b6531b6b3a1d941a484aeee012d5c59fe63d79",
+    "fast_forge_branch": "forge/20260923-receptor-suppression-probes-a",
+    "fast_forge_head": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
+    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "receptor_source_blob": "86c1cfea1ea70cada5c277d8f5047c32ea611a5c"
   },
   "allowed_actions": [
-    "Read-only inspect Utility assignment/request/decision/state records",
-    "Read fresh Control/Analyst/MAIN/SUB generations and authoritative refs",
-    "Persist Utility-owned state/results only"
+    "Read receptor implementation and public/dev contracts",
+    "Perform one bounded synthetic/source-level same-timestamp permutation diagnostic",
+    "Persist Utility-owned state and append-only result"
   ],
   "forbidden_actions": [
-    "Any PF-R1 artifact retrieval, archival, hashing, rerun, reconstruction, scoring, or reinterpretation",
-    "Any H7/PRE_FORMAL/FORMAL action or protected-ref mutation",
-    "Any candidate/Funnel mutation, research branch mutation, workflow action, merge, or scheduler mutation"
+    "Touch candidate34 PRE_FORMAL, candidate35 Architecture, H7, PF-R1 or any canonical research branch",
+    "Create or consume scientific identity, STARTED, evidence, formal, sealed, freeze or preserve refs",
+    "Dispatch result-bearing scientific workflow or score protected outcomes",
+    "Merge a research PR or mutate scheduler"
   ],
-  "stop_condition": "Stop after one bounded determination of whether the Utility mailbox contains a Control-owned approval/decision object matching the PF-R1 request.",
-  "funnel_v2_1_preservation": {
-    "candidate_touched": false,
-    "preserved_fields": "NOT_APPLICABLE_NO_RESEARCH_CANDIDATE_TOUCHED",
-    "typing_or_readiness_changed": false,
-    "theory_backward_quota_credit": false,
-    "discovery_quota_credit": false,
-    "preformal_credit": false,
-    "promotion_credit": false
+  "stop_condition": "Stop after determining whether same-time same-channel input permutation changes transient receptor outputs and whether any difference is fully reducible to sequential tie-order implementation semantics.",
+  "metrics": {
+    "prototype_type": "SOURCE_LEVEL_SYNTHETIC_METAMORPHIC_DIAGNOSTIC",
+    "independent_from_forge_primary": true,
+    "outcome": "PENDING",
+    "ordinary_reduction_tested": "PENDING_SEQUENTIAL_TIE_ORDER_REDUCTION",
+    "branch": null,
+    "latency_seconds": null,
+    "promotion_support_signal_returned": false
   },
   "integrity_checks": {
-    "workflow_dispatch_or_rerun": false,
-    "artifact_retrieval_or_archival": false,
-    "scheduler_mutation": false,
-    "scientific_workflow_or_experiment": false,
-    "protected_ref_mutation": false,
-    "candidate_typing_or_readiness_mutation": false,
+    "main_collision_found": false,
+    "forge_primary_collision_found": false,
+    "hidden_main_dependency_created": false,
     "preformal_or_formal_action": false,
-    "research_pr_merge": false,
-    "source_test_tool_docs_mutation": false,
-    "hidden_main_dependency_created": false
+    "protected_or_evidence_ref_mutation": false,
+    "scheduler_mutation": false,
+    "research_pr_merge": false
   },
-  "stop_reason": "COMPLETED_BOUNDED_AUTHORIZATION_RECORD_RECONCILIATION",
-  "follow_up_recommendation": "If Control still intends Utility execution of PF-R1 exact-byte preservation, materialize a schema-v2 assignment/current entry with matching assignment_id and assignment_generation_id. Utility must not infer execution authority from prose or edit Control-owned authority records.",
+  "stop_reason": null,
+  "follow_up_recommendation": null,
   "outputs": {
-    "start_result_path": "utility_orchestrator/results/2026-09-23/AUTOUTIL-20260923T0227+0900-PFR1-AUTH-CONSISTENCY-4E7A2C91-start.md",
-    "terminal_result_path": "utility_orchestrator/results/2026-09-23/AUTOUTIL-20260923T0227+0900-PFR1-AUTH-CONSISTENCY-4E7A2C91-completed.md"
+    "start_result_path": "utility_orchestrator/results/2026-09-23/AUTOUTIL-20260923T1232+0900-FORGE-RECEPTOR-SAME-TIME-ORDER-6D2A91C4-start.md",
+    "terminal_result_path": "utility_orchestrator/results/2026-09-23/AUTOUTIL-20260923T1232+0900-FORGE-RECEPTOR-SAME-TIME-ORDER-6D2A91C4-completed.md"
   }
 }
