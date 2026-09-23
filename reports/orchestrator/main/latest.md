@@ -8,17 +8,15 @@
 - development_revision: `PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED`
 - claim_ceiling: `MECHANISM`
 - preformal_eligible: `true`
-- preformal_readiness: `NOT_READY`
-- hold_class: `null`
+- preformal_readiness: `READY`
 - terminal_state: `NONTERMINAL`
-- system_priority_exception.used: `false`
 
-The canonical candidate #34 R92 opportunity-aware non-result contract closure remains complete on the same exact research head. The dedicated R2 contract workflow and generic CI are both successful on that head, and the exact workflow artifact has already been durably preserved with hashes recorded.
+Evidence Analyst R93 prospectively authorizes exactly one bounded response-bearing PRE_FORMAL execution of the already-closed D34-Q002 contract. The closed R2 scientific contract remains unchanged on its prior exact head.
 
-This PRIMARY invocation re-fetched the Evidence Analyst authority, stable main, exact candidate branch/head, workflows, evidence/formal/sealed/freeze namespaces, preserve/control refs, open PRs, Fast Forge branch awareness, Utility latest activity, and the previous MAIN Relay state. No superseding Analyst generation or PRIMARY RUNNING collision was present.
+MAIN created a fresh canonical child branch and added only science-invariant one-shot execution plumbing. The executor reconstructs the frozen development checkpoint, checks the untouched D34-Q002 queue and exact contract hashes, deep-clones the same checkpoint independently for every frozen condition, applies only the predeclared sham/transmission-null/+1ms interventions, uses the predeclared source-only threshold cue, records the frozen destination membrane/spike fields plus the 64ms Assembly-level raw secondary export, and emits an unscored PRE_FORMAL development record with zero confirmatory credit. No Forge code or observations were reused.
 
-A Fast Forge branch exists, but it is noncanonical and unrelated to the candidate #34 canonical lane. No Forge code or observation was reused or credited. Utility was not used as a dependency.
+No candidate response has been executed yet. The additive executor head is waiting on generic CI before any one-shot response workflow is armed. No result-bearing workflow has been created or dispatched in this generation.
 
-No research branch mutation, response-bearing PRE_FORMAL execution, new scientific observation, FORMAL identity, STARTED marker, protected evaluation, scoring, or scientific preserve/evidence mutation occurred. Prior results and consumed identities remain unchanged.
+FORMAL remains stopped. No FORMAL identity, STARTED marker, protected evaluation access, official scoring, preserve/evidence ref, or consumed-identity action occurred. Prior D34-Q001 and all closed R1/R2 material remain unchanged.
 
-R92 still leaves candidate #34 NOT_READY after the one allowed non-result R2 contract-closure cycle. MAIN therefore remains fail-closed at `WAITING_EXTERNAL` until a fresh Evidence Analyst READY review. Do not execute D34-Q002, rerun/tune/rescore R2, alter its semantics, or perform FORMAL work under R92.
+Next: if and only if the executor-head CI is green and R93 remains current, arm a no-clobber one-shot workflow, recheck Analyst authority immediately before execution, execute D34-Q002 once, preserve the raw result before interpretation, then stop at first meaningful response exposure and return to Evidence Analyst. If CI fails, repair only lint/import/build/hash/plumbing behavior and do not execute the response until green.
