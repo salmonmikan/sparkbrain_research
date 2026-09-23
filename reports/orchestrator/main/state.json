@@ -1,14 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T123630+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING-CANONICAL-OPPORTUNITY-CLOSURE",
+  "generation_id": "MAIN-20260923T123900+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING-GENERIC-CI",
   "run_id": "sparkbrain-main-primary-20260923T121719JST-R92-cand34-preformal-r2-reconcile",
   "producer_run_id": "sparkbrain-main-primary-20260923T121719JST-R92-cand34-preformal-r2-reconcile",
-  "produced_at": "2026-09-23T12:36:30+09:00",
+  "produced_at": "2026-09-23T12:39:00+09:00",
   "authority_scope": "PRIMARY_CANONICAL_R92_PREFORMAL_R2_OPPORTUNITY_AWARE_NONRESULT_CONTRACT_CLOSURE_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
+  "supersedes_generation_id": "MAIN-20260923T123630+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING-CANONICAL-OPPORTUNITY-CLOSURE",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "main_previous": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
     "independent_audit": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8@6755579f5f21b19ca90788c948d8126529b648c6"
   },
   "execution_mode": "PRIMARY",
@@ -28,7 +27,7 @@
   "development_phase": "OPEN_DEVELOPMENT",
   "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
   "cycle_count": 4,
-  "cycle_information_gain": "R92 prospectively authorizes repairing the pre-response causal-opportunity defect identified in R1 rather than repeating the direct-threshold surface. The revision makes each tested edge source fire without directly cueing its destination, predeclares opportunity state, aligns controls to the same source-only opportunity construction, and makes destination membrane/spike state the primary observable.",
+  "cycle_information_gain": "R92 prospectively repairs the pre-response causal-opportunity defect instead of repeating R1: each tested source is independently activated without directly cueing its destination, opportunity state is predeclared, controls use the same source-only construction, and destination membrane/spike state is the primary observable.",
   "refs": {
     "active_research_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
     "active_research_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
@@ -37,16 +36,15 @@
   },
   "work_performed": {
     "classification": "SCIENCE_AFFECTING_CHANGE_PROSPECTIVELY_AUTHORIZED_BEFORE_R2_RESPONSE_EXPOSURE",
-    "prior_noncanonical_contract_diagnosis": "The prior R92 branch contract merely wrapped the R1 direct-threshold cue/plan and hard-coded a noncanonical Analyst generation. Rebinding only the generation string would not have satisfied R92's opportunity-aware scientific revision.",
+    "prior_noncanonical_contract_diagnosis": "The prior branch retained R1 direct-threshold cue semantics and therefore did not satisfy canonical R92 even aside from its wrong embedded authority identity.",
     "canonical_authority_rebound": true,
     "source_only_edge_cue_contract_added": true,
     "tested_destination_direct_cue_forbidden": true,
     "per_edge_causal_opportunity_ledger_added": true,
     "opportunity_matched_control_construction_added": true,
     "destination_membrane_and_spike_primary_observable_added": true,
-    "assembly_response_demoted_to_secondary_scope": true,
+    "assembly_response_secondary_only": true,
     "fresh_analyst_ready_review_required_before_response": true,
-    "D34_Q002_response_execution_enabled": false,
     "forge_derived_code_reused": false,
     "forge_observations_given_confirmatory_credit": false
   },
@@ -55,7 +53,8 @@
     "generic_ci_run_id": 35814951496,
     "generic_ci_status": "in_progress",
     "r2_contract_run_id": 35814951495,
-    "r2_contract_status": "in_progress",
+    "r2_contract_status": "completed",
+    "r2_contract_conclusion": "success",
     "result_bearing": false
   },
   "observations_evidentiary_status": {
@@ -97,11 +96,10 @@
   },
   "remaining_blockers": [
     "Exact-head generic CI must complete successfully.",
-    "Exact-head dedicated non-result R2 contract workflow must complete successfully.",
-    "After green closure, exact contract material must be durably captured without response execution.",
+    "After generic CI is green, exact successful non-result contract artifact must be durably captured without response execution.",
     "A fresh Evidence Analyst READY review is required before any D34-Q002 response-bearing execution."
   ],
-  "stop_reason": "WAITING_ONLY_FOR_EXACT_HEAD_NONRESULT_CI_AND_CONTRACT_WORKFLOW",
-  "next_action": "Re-fetch the canonical Analyst generation and exact branch head, inspect the two exact-head non-result workflows, apply only authorized repair if needed, durably capture the canonical R2 contract if green, then stop for a fresh Analyst READY review. Do not execute D34-Q002 or any FORMAL action under R92.",
+  "stop_reason": "WAITING_ONLY_FOR_EXACT_HEAD_GENERIC_CI",
+  "next_action": "Re-fetch the canonical Analyst generation and exact branch head, inspect generic CI. If green, durably capture the already-successful canonical R2 non-result contract artifact and stop for fresh Evidence Analyst READY review. Do not execute D34-Q002 or any FORMAL action under R92.",
   "owner": "main"
 }
