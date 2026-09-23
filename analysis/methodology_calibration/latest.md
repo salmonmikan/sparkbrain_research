@@ -1,170 +1,239 @@
-# SparkBrain Methodology Calibration Audit — R89
+# SparkBrain Methodology Calibration Audit — R90
 
-- schema_version: `2`
-- generation_id: `METHCAL-20260923T202015+0900-R89-4A7D91C2`
-- produced_at: `2026-09-23T20:20:15+09:00`
+- schema_version: 2
+- generation_id: `METHCAL-20260923T212015+0900-R90-C2A74E19`
+- produced_at: `2026-09-23T21:20:15+09:00`
 - authority_scope: `METHODOLOGY_ADVISORY_ONLY`
-- supersedes_generation_id: `METHCAL-20260923T192251+0900-R88-9F4C2D61`
-- material_change: `true`
+- supersedes_generation_id: `METHCAL-20260923T202015+0900-R89-4A7D91C2`
+- material_change: true
 - audit_result: `MATERIAL_CALIBRATION_UPDATE`
 - overall_classification: `MIXED_CALIBRATION`
 
 ## Executive decision
 
-The hard integrity floor remains unchanged. The material change since R88 is that the previously required post-preservation fresh H7 review has now actually occurred: Evidence Analyst R97 prospectively authorized exactly one future FORMAL one-way action on unchanged H7 R5, and R98 freshly re-confirmed that authority without broadening it. This is a methodology-positive transition, not a scientific result.
+The material change since R89 is not a scientific result. H7's prospective one-way FORMAL path was exercised only through a NON_RESULT preidentity/readiness workflow. The readiness workflow independently reached the final protected-sidecar capability gate after exact authority, untouched namespace, exact H7 source, locked runtime, fixed-blob, and R5 preidentity checks, then failed closed because the required protected-sidecar handoff capability was absent. The diagnostic explicitly reported no protected evaluation access, no scientific result, and no scoring. No H7 control/preserve ref was created and no FORMAL identity was consumed.
 
-Independent repository re-fetch supports the gate facts rather than relying on the Analyst mailbox alone. H7 remains at exact research head `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`; exact-head generic CI run `35794233612` is successful and dedicated NON_RESULT preidentity run `35794233687` is successful. The R5 preidentity workflow checks exact inherited runtime bytes and explicitly asserts that evaluation payload, seeds, FORMAL identity, STARTED marker, official prediction raw and official score are absent. Direct ref inspection finds no `control/h7*` or `preserve/h7*` ref. Therefore no H7 FORMAL identity is yet consumed.
+This is a methodology-positive failure mode: it demonstrates that the programme can revoke an operational GO before identity consumption when an integrity capability is missing. Analyst R99 correctly superseded the R97/R98 prospective FORMAL GO, put H7 on a nonterminal `FORMAL_INTEGRITY_CAPABILITY` hold, and classified remediation as science-invariant. The scientific H7 R5 contract remains unchanged.
 
-The R97/R98 authority is narrowly prospective: before START/identity consumption, MAIN must independently re-match exact source/package/runtime/input/component/scorer/preserver bindings, fresh untouched evaluation identity/surface, absence of collision, literal target-blind raw-before-score, and preserve-before-read. Any pre-start mismatch is STOP before consumption. After START, the identity becomes CONSUMED_ONE_WAY and same-identity rerun/retune/rescore or outcome-responsive science-affecting repair remains forbidden. This is calibrated and does not relax the hard floor.
+The permitted H7 remediation is narrowly calibrated: provision the already-required protected sidecar capability, repin controller authority to the then-current Analyst exact commit, and rerun NON_RESULT readiness only. Identity creation/START in the same remediation run remains prohibited. A green readiness run must stop and be followed by a later fresh Analyst generation before any fresh FORMAL identity may be created or consumed.
 
-Crucially, PF-R1 preservation is not being laundered into confirmation. The preserved PF-R1 observation remains development-only. Its role was to close a provenance blocker so that a fresh Analyst could decide whether an unchanged prospective FORMAL test was ready. The current FORMAL authority requires a fresh untouched identity; no development observation is counted as independent confirmatory evidence.
+Candidate 35 remains SYSTEM / OPEN_DEVELOPMENT. With H7 temporarily non-executable, R99 activates a bounded SYSTEM-priority exception only for NON_RESULT preserve-before-read/provenance-wrapper work around the unchanged contract. Candidate response remains STOP. This is a calibrated throughput valve, not a mechanism uplift and not evidence generation.
 
-Mechanism-supply calibration materially improves. Canonical R98 now has one viable executable/informative MECHANISM path, H7, with fresh prospective FORMAL authority `1` and consumed identity `0`. Candidate #35 remains SYSTEM / OPEN_DEVELOPMENT / preformal_eligible=false and is deferred behind H7; its prior temporary no-coherent-MECHANISM priority exception expires rather than being used to inflate #35 into a MECHANISM claim. This is a strong positive sign against both candidate starvation and rescue/manufacture pressure.
+The global hard integrity floor remains unchanged. Stable main is still `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; exactly five `evidence/*` annotated tags remain; `formal/*`, `sealed/*`, and `freeze/*` are absent; no current `control/h7*` or `preserve/h7*` refs exist.
 
-Independent stable-repository checks remain unchanged: `main=ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`; annotated `evidence/*` remains exactly five objects; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. No historical PASS/FAIL rewrite or fresh evidence-tag mutation is observed.
+## Inputs and authority reconstruction
 
-Overall remains `MIXED_CALIBRATION`, not because the new H7 decision is too permissive, but because the most consequential new boundary—the actual fresh FORMAL START through preserve-before-read and post-START one-way behavior—has not yet been observed end-to-end. Candidate #34 provenance ambiguity also remains an append-only record-quality issue, and global protected/adaptive-evaluation validity still requires continued tightening/verification. The active H7 gate itself is well calibrated.
+### Prior methodology history
 
-## Gate-by-gate calibration
+R89 was read first. It had correctly classified H7 as prospectively eligible for exactly one fresh untouched one-way FORMAL identity, but explicitly noted that actual fresh consumption had not yet been observed. R90 does not rewrite R89; it records the newer readiness evidence prospectively.
 
-| Gate | Classification |
-|---|---|
-| hard FORMAL integrity floor | `KEEP` |
-| development-phase orthogonal axis | `KEEP` |
-| fresh OPEN→RESULT_EXPOSED→CONSUMED_ONE_WAY end-to-end | `INSUFFICIENT_EVIDENCE` |
-| PF-R1 preserved development result remains nonconfirmatory | `KEEP` |
-| H7 post-preservation fresh unchanged-R5 Analyst review | `KEEP` |
-| H7 exactly-one prospective FORMAL authority | `KEEP` |
-| H7 fresh untouched FORMAL identity requirement | `KEEP` |
-| H7 pre-start exact source/package/runtime/input/component/scorer/preserver match | `KEEP` |
-| H7 STOP-before-consumption on pre-start mismatch | `KEEP` |
-| H7 literal target-blind raw-before-score requirement | `KEEP` |
-| H7 preserve-before-read/target-side scoring requirement | `KEEP` |
-| H7 same-identity rerun/retune/rescore after START | `TIGHTEN` |
-| H7 outcome-responsive science-affecting repair after START | `TIGHTEN` |
-| PF-R1 preservation treated as FORMAL evidence | `TIGHTEN` |
-| development observations treated as independent confirmation | `TIGHTEN` |
-| exact-head CI/preidentity treated as scientific support | `TIGHTEN` |
-| candidate #35 SYSTEM ceiling after H7 becomes viable | `KEEP` |
-| candidate #35 former NO_COHERENT_MECHANISM_TARGET exception expiration | `KEEP` |
-| candidate #35 automatic PRE_FORMAL/READY promotion from green implementation | `TIGHTEN` |
-| candidate #35 response before fresh Analyst gate | `TIGHTEN` |
-| cycle 3 as automatic terminal cap | `RELAX` |
-| cycle 3 as mandatory reassessment | `KEEP` |
-| additional cycle for prospectively stated information gain | `KEEP` |
-| terminal current object != topic death | `KEEP` |
-| immediate same-family post-result rescue successor | `TIGHTEN` |
-| fresh independently motivated MECHANISM successor | `KEEP` |
-| specifically terminal SYSTEM→fresh MECHANISM successor behavior | `INSUFFICIENT_EVIDENCE` |
-| RESULT_EXPOSED same-object SCIENCE_INVARIANT_REPAIR | `KEEP` |
-| RESULT_EXPOSED SCIENCE_AFFECTING_CHANGE requires explicit version/fresh successor | `KEEP` |
-| PRE_FORMAL as genuine development | `KEEP` |
-| preformal_eligible distinct from READY | `KEEP` |
-| READY = informative next test, not prior success | `KEEP` |
-| HIDDEN_SECOND_FORMAL_GATE | `KEEP` |
-| candidate #34 raw execution-source provenance | `TIGHTEN` |
-| candidate #34 contract-authority vs run-authority provenance | `CLARIFY` |
-| candidate #34 append-only clarification without raw rewrite/rerun | `KEEP` |
-| raw-before-score as mere file ordering | `CLARIFY` |
-| global literal target-blind prediction raw enforcement | `TIGHTEN` |
-| global immutable preserve before target-side scoring/read | `TIGHTEN` |
-| post-preserve scorer recomputation | `TIGHTEN` |
-| target-sidecar independence | `TIGHTEN` |
-| fresh concealed evaluation surface | `TIGHTEN` |
-| global exact source/runner/scorer/preserver/runtime/input binding | `TIGHTEN` |
-| current-object claim ceiling | `KEEP` |
-| classification completeness | `KEEP` |
-| MAIN MECHANISM priority when viable comparable MECHANISM exists | `KEEP` |
-| genuine SYSTEM-over-comparable-MECHANISM exception | `INSUFFICIENT_EVIDENCE` |
-| theory-backward quality floor | `KEEP` |
-| protected/adaptive-evaluation validity | `TIGHTEN` |
+### Human directive
+
+`HUMAN-20260922-005` is consumed as a human process directive only, with zero scientific evidentiary weight. Its development-axis and iteration semantics remain the calibration target.
+
+### Designated Control history
+
+Latest designated Control remains `CTRL-20260923T155900+0900-R43-A91C4E6B`. It is historical/control-plane context, not scientific source of truth, and predates the new H7 readiness failure.
+
+### Designated Analyst history
+
+Latest canonical gate is `EVA-20260923T210010+0900-R99-6F2B8C14`, branch commit `59dbcdc2e3541e78a64f64e16fa0be5ef38efc26`. R99 directly incorporates readiness run `35857110884` and supersedes the prior executable H7 FORMAL GO.
+
+### Independently re-fetched authoritative repository/evidence
+
+- stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
+- H7 scientific source: `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`
+- H7 controller: `research/main-h7-r5-oneway-controller-r98@f21dc7521af7413adcc46a2561271e0b8852f371`
+- controller diff is path plumbing only: it supplies the checked-out scientific workspace path to the existing preflight script
+- readiness run: `35857110884`, conclusion `failure`
+- exact preidentity diagnostic completed before failure and reported `protected_evaluation_accessed=false`, `scientific_result=null`, `scoring_performed=false`
+- failure boundary: missing required `H7_R5_SIDECAR_PASSPHRASE`; FORMAL was refused to arm
+- `control/h7*`: none
+- `preserve/h7*`: none
+- evidence tags: 5 unchanged
+- formal tags: 0
+- sealed tags: 0
+- freeze tags: 0
+
+## Development iteration calibration
+
+### H7
+
+Phase remains `RESULT_EXPOSED_DEVELOPMENT`; it has not crossed into `CONSUMED_ONE_WAY`. The new controller/readiness work is correctly treated as integrity plumbing, not a new scientific revision. The missing protected sidecar capability and Analyst-SHA repin are `SCIENCE_INVARIANT_REPAIR` so long as they do not alter source, protocol, metric/scorer meaning, comparator, threshold/tolerance, seed/exclusion policy, intervention, input, resource/privilege scientific contract, hypothesis, falsifier, success criteria, or preserver semantics.
+
+The important calibration improvement is that prior prospective authority did not survive a failed integrity check. R99 revoked executable authority before identity creation. That is the correct direction: authority is conditional on current exact binding and capability, not a license to push through a failed prestart gate.
+
+A remaining false-positive risk is coupling remediation and START. The sidecar secret/capability may be provisioned, but the remediation run must remain NON_RESULT and must not create/consume an identity. A later fresh Analyst review is necessary after green readiness.
+
+### Candidate 35
+
+Phase remains `OPEN_DEVELOPMENT`, claim ceiling remains `SYSTEM`, and it is not PRE_FORMAL eligible. Cycle 3 continues to behave as mandatory reassessment rather than an automatic terminal cap. The next bounded cycle has prospective information gain: demonstrate preserve-before-read/provenance-wrapper closure without exposing the candidate response. This is a legitimate additional development cycle.
+
+The temporary SYSTEM priority exception is acceptable only because executable MECHANISM supply is currently zero for an integrity-capability reason, and because the permitted work is NON_RESULT. It must not become an excuse to generate a response, infer support, or uplift the claim ceiling.
+
+### Candidate 34 / historical development cases
+
+No historical rewrite is performed. Candidate 34 remains `RESULT_EXPOSED_DEVELOPMENT`, `TERMINAL_FOR_CURRENT_OBJECT`, zero confirmatory credit. Its earlier execution-source metadata ambiguity still requires append-only clarification only; no raw mutation or rerun. It remains an example of correct preservation of development results, not independent confirmation.
+
+## Gate-by-gate classifications
+
+| Material gate | Classification | Calibration finding |
+|---|---|---|
+| Hard integrity floor | KEEP | No identity consumption, protected-eval access, scoring, evidence mutation, or historical rewrite occurred. |
+| Orthogonal development-phase axis | KEEP | OPEN and RESULT_EXPOSED remain distinct from consumed one-way evidence. |
+| Fresh OPEN→RESULT_EXPOSED→CONSUMED_ONE_WAY end-to-end live case | INSUFFICIENT_EVIDENCE | Fresh H7 FORMAL consumption is still unobserved. |
+| H7 NON_RESULT readiness gate | KEEP | It failed before identity creation on a required protected-sidecar capability. |
+| H7 exact source/runtime/preidentity binding | KEEP | Exact scientific source, fixed blobs, locked runtime, and preidentity checks all passed before the sidecar gate. |
+| H7 protected evaluation isolation during readiness | KEEP | Diagnostic reports no protected evaluation access, result, or scoring. |
+| H7 missing-sidecar remediation classification | KEEP | Provisioning an already-required sidecar capability is science-invariant if science remains unchanged. |
+| H7 fresh Analyst SHA repin | KEEP | Authority must bind to the then-current Analyst exact commit before readiness rerun. |
+| H7 identity creation in remediation run | TIGHTEN | Explicitly prohibit creation/consumption during capability repair/readiness. |
+| Green readiness as automatic FORMAL authorization | TIGHTEN | Green readiness must STOP; later fresh Analyst authorization is required. |
+| Same-identity rerun/retune/rescore after START | TIGHTEN | Remains forbidden. |
+| Science-affecting repair after START | TIGHTEN | Remains forbidden absent prospectively frozen adaptivity. |
+| RESULT_EXPOSED same-object invariant repair | KEEP | H7 controller/capability plumbing fits this class. |
+| RESULT_EXPOSED science-affecting change | KEEP | Must be explicit versioned development revision or fresh successor preserving prior result. |
+| Development observations as independent confirmation | TIGHTEN | PF-R1 and other development observations retain zero confirmatory credit. |
+| PRE_FORMAL as real development | KEEP | Iteration is allowed before FORMAL; outcome-responsive laundering is not. |
+| PRE_FORMAL eligible vs READY | KEEP | Distinction remains intact. |
+| READY means informative next test | KEEP | H7 readiness is not scientific success; CAND35 green implementation is not READY. |
+| Hidden second FORMAL gate | KEEP | No requirement that development must already win comparator/reduction/falsifier before READY was introduced. |
+| Cycle 3 automatic terminal cap | RELAX | Explicitly not a hard cap. |
+| Cycle 3 mandatory reassessment | KEEP | CAND35 provides a live compliant case. |
+| Additional cycle with prospectively stated information gain | KEEP | CAND35 NON_RESULT preservation wrapper is bounded and distinct. |
+| Current-object terminal semantics | KEEP | CAND34 closure does not imply topic death. |
+| Immediate rescue successor manufacture | TIGHTEN | No same-family outcome-driven rescue should be generated. |
+| Fresh independently motivated MECHANISM successor | KEEP | Legitimate in principle with new ID/question/reduction/comparator/falsifier/state. |
+| Live SYSTEM→fresh MECHANISM successor calibration | INSUFFICIENT_EVIDENCE | No clean new live case yet. |
+| CAND35 SYSTEM claim ceiling | KEEP | No mechanism inflation observed. |
+| Temporary SYSTEM priority exception with zero executable MECHANISM | KEEP | Calibrated only for bounded NON_RESULT work. |
+| CAND35 response while exception is active | TIGHTEN | Response remains STOP pending fresh Analyst. |
+| Candidate 34 execution-source provenance | TIGHTEN | Append-only clarification still needed; no rerun/raw rewrite. |
+| Raw-before-score as mere file order | CLARIFY | Must mean target-blind prediction/raw generation, not just filenames or serialization sequence. |
+| Global literal target-blind prediction raw | TIGHTEN | Still must be demonstrated in each protected path. |
+| Preserve-before-target-side read/scoring | TIGHTEN | H7 sidecar path has not yet been exercised end-to-end. |
+| Target-sidecar independence | TIGHTEN | Missing capability shows the boundary is active, but successful protected handoff remains unobserved. |
+| Exact source/protocol/package/runtime/input/scorer/preserver binding | TIGHTEN | H7 prospective path is strong, but actual one-way consumption remains to be observed. |
+| Classification completeness | KEEP | Analyst R99 reports 35/35 classified. |
+| Mechanism-first priority | KEEP | H7 remains first when executable; CAND35 exception is temporary and non-result. |
+| Theory-backward quality floor | KEEP | No weakening observed. |
+| Protected/adaptive-evaluation validity | TIGHTEN | No leakage observed, but the protected sidecar handoff is not yet operationally demonstrated. |
 
 ## Mandatory questions
 
-1. **Are development-phase semantics implemented consistently end-to-end?** OPEN and RESULT_EXPOSED remain positively observed. H7 now has a clean prospective RESULT_EXPOSED→CONSUMED_ONE_WAY gate, but actual fresh post-HUMAN-005 consumption has not yet occurred, so complete end-to-end evidence remains insufficient.
-2. **Is cycle-3 review being mistaken for a hard terminal cap?** No. #35's cycle-3 R2 completed a distinct prospectively stated NON_RESULT exact-binding question; it was neither auto-terminalized nor allowed to produce a response.
-3. **Are SCIENCE_INVARIANT_REPAIR and SCIENCE_AFFECTING_CHANGE distinguished correctly?** Yes in the live recent cases. #35's repair remained import/order/non-result guard work; H7 R5 exact head records an import-whitespace repair while scientific/runtime identity stays content-addressed. Any science-affecting post-START change remains prohibited for the consumed identity.
-4. **Are development rerun/retune/tolerance revisions logged without laundering into independent evidence?** No laundering observed. PF-R1 remains development-only despite preservation; #34 remains one development result with zero confirmatory credit; #35 has no response. H7 FORMAL authority requires a fresh untouched identity rather than reusing a development identity.
-5. **Does RESULT_EXPOSED development preserve prior results when revised?** Yes for #34 and H7/PF-R1. No prior result is rewritten or rescored. The H7 formal gate is prospective and unchanged-R5.
-6. **Is FORMAL one-way integrity unchanged?** Yes. No H7 STARTED/control/preserve ref exists, stable main and five evidence tags are unchanged, and formal/sealed/freeze tag namespaces remain empty. The new authority is prospective only and explicitly one-way after START.
-7. **Are legitimate fresh SYSTEM→MECHANISM successors being suppressed or manufactured?** No manufacture observed. When H7 becomes viable, #35 remains SYSTEM and its temporary SYSTEM-priority exception expires. The specific terminal-SYSTEM→fresh-MECHANISM successor case remains unobserved.
-8. **Is PRE_FORMAL behaving as development rather than hidden FORMAL?** Yes. PF-R1 is not counted as confirmatory evidence; #35 remains outside PRE_FORMAL despite green implementation; H7 readiness is based on a well-defined fresh one-way test, not a requirement that the development observation already prove the claim.
-9. **Are terminal semantics and candidate-supply controls calibrated?** Improved. H7 restores one viable MECHANISM path without reopening #34 or inflating #35. Current-object terminal semantics remain intact.
-10. **Is PASS realistically reachable without weakening evidence standards?** Yes. H7 now has a prospectively authorized exact-once path, but PASS can arise only through the still-strict fresh identity, exact binding, target-blind raw, preserve-before-read and one-way consumption chain.
+1. **Are development-phase semantics implemented consistently end-to-end?** Partly. OPEN and RESULT_EXPOSED semantics are functioning well; fresh `CONSUMED_ONE_WAY` transition remains unobserved. H7 readiness stopping before identity creation is a positive boundary test.
+2. **Is cycle-3 review being mistaken for a hard terminal cap?** No. CAND35 is allowed a bounded extra NON_RESULT cycle for a stated preservation/provenance information gain.
+3. **Are SCIENCE_INVARIANT_REPAIR and SCIENCE_AFFECTING_CHANGE distinguished correctly?** Yes in the current H7 case. Path plumbing, protected-sidecar capability provisioning, and authority-SHA repin are invariant; scientific fields remain prohibited.
+4. **Are development rerun/retune/tolerance revisions logged without being laundered into independent evidence?** No laundering observed. Development evidence remains zero-confirmatory-credit; no new tolerance/scientific retune is being smuggled through H7 remediation.
+5. **Does RESULT_EXPOSED development preserve prior results when revised?** Yes in observed cases. H7 remediation does not replace prior development results; CAND34/PF-R1 remain preserved.
+6. **Is FORMAL one-way integrity unchanged?** Yes. No new identity is consumed, no H7 START/control/preserve ref exists, no protected evaluation is accessed, and evidence refs remain unchanged.
+7. **Are legitimate fresh SYSTEM→MECHANISM successors being suppressed or manufactured?** No manufacturing is observed; CAND35 remains SYSTEM. A clean fresh-successor live case is still unobserved, so suppression risk remains a watch item.
+8. **Is PRE_FORMAL behaving as development rather than hidden FORMAL?** Yes. Development/architecture checks and PF-R1 are not counted as confirmation; H7 readiness is an integrity gate, not a positive scientific result.
+9. **Are terminal semantics and candidate-supply controls calibrated?** Mostly. Current executable MECHANISM supply is temporarily zero, but a bounded SYSTEM NON_RESULT exception provides forward motion without claim inflation. Prolonged zero-supply normalization would be a false-negative/throughput risk.
+10. **Is PASS realistically reachable without weakening evidence standards?** Yes, conditionally. The current blocker is an integrity capability (protected sidecar), not an evidentiary criterion. PASS remains reachable if the capability is provisioned and the later one-way path satisfies all exact bindings without relaxing standards.
 
-## Development-iteration calibration
+## Risk assessment
 
-H7 is the key new calibration case. A meaningful development observation existed and its exact original bytes were durably preserved. Instead of treating that observation as confirmation or rerunning it, the programme closed the provenance blocker and then performed a fresh unchanged-R5 readiness review. The result is a new prospective FORMAL authorization for a fresh identity, not an upgrade of PF-R1 itself. This cleanly separates RESULT_EXPOSED development from consumed evidence.
+### False-positive risk
 
-The transition remains incomplete until a fresh FORMAL identity actually crosses START. At that moment the development-phase axis must change to CONSUMED_ONE_WAY for that FORMAL object, and no same-identity scientific repair, rerun or rescore may occur. Any failure before START is allowed to fail closed without consuming the identity only if no START/identity boundary has actually been crossed and no target-bearing information has leaked.
+`LOW_TO_MODERATE_WATCH`. The most important near-term hazard is accidentally treating sidecar provisioning or a green readiness check as authorization to create/start a FORMAL identity. The current R99 requirement for a later fresh Analyst is the correct guard. A second hazard is allowing the controller's Analyst authority pin to go stale; it must be re-pinned to the current exact Analyst commit before the next readiness attempt.
 
-#35 remains a complementary OPEN_DEVELOPMENT case. Its green exact implementation is not READY by itself and does not compete with H7 by being inflated to MECHANISM. The former temporary SYSTEM-priority exception appropriately disappears once H7 supplies a viable MECHANISM path.
+### False-negative / throughput risk
 
-## Risk calibration
+`LOW_TO_MODERATE_WATCH`. Viable executable MECHANISM supply has fallen from 1 to 0 due to an integrity-capability hold, not scientific exhaustion. The bounded CAND35 SYSTEM exception is a reasonable throughput response. The programme should continue independent MECHANISM discovery rather than normalize zero supply or inflate SYSTEM objects.
 
-False-positive risk: `LOW_TO_MODERATE_WATCH`. The main live risk is no longer provenance closure; it is accidentally treating prospective H7 authority as permission to relax an exact pre-start binding, reuse an exposed/development identity, score before immutable preserve, or repair a consumed identity.
+### Moving-goalpost / rescue risk
 
-False-negative/opportunity-cost risk: `LOW_WATCH_IMPROVING`. H7 now restores a viable MECHANISM path and removes the previous zero-supply pressure. No criterion relaxation is needed.
+`LOW_WATCH`. H7 scientific R5 remains unchanged; remediation is plumbing/capability only. Risk would rise immediately if metric/scorer meaning, comparator, threshold/tolerance, intervention, input, hypothesis, falsifier, success criterion, or resource/privilege scientific contract changed in response to the failed readiness run.
 
-Moving-goalpost/rescue risk: `LOW_WATCH`. H7 uses unchanged R5 and a fresh identity; #34 remains terminal for its current object; #35 remains SYSTEM.
+### Over-terminalization risk
 
-Over-terminalization risk: `LOW_WATCH`. Candidate-supply pressure is materially reduced by H7 becoming viable, while legitimate fresh successors remain allowed prospectively.
+`LOW_TO_MODERATE_WATCH`. CAND34 is correctly terminal only for its current object. The main current risk is indirect: zero executable MECHANISM supply could become normalized and suppress fresh successor/discovery work. No such suppression is yet proven.
 
-## Funnel observability / mechanism supply
+## Claim-type findings
 
-Canonical authority is now Evidence Analyst R98. Funnel: `35 = 14 MECHANISM / 21 SYSTEM`; lifecycle `ACTIVE=0 / QUEUED=2 / HOLD=0 / TERMINAL_FOR_CURRENT_OBJECT=33`; development `OPEN_DEVELOPMENT=3 / RESULT_EXPOSED_DEVELOPMENT=32 / canonical CONSUMED_ONE_WAY=0`; current nonterminal PRE_FORMAL eligible / READY `1 / 1`; viable executable/informative MECHANISM `1` (H7); fresh prospective FORMAL authority `1`; consumed fresh FORMAL identity `0`; official historical consumed scientific identities `7`; classification completeness `35/35`; SYSTEM-over-MECHANISM priority exceptions `0`.
+- H7 remains MECHANISM ceiling, RESULT_EXPOSED development, nonterminal integrity hold; it is not a scientific FAIL.
+- CAND35 remains SYSTEM ceiling; temporary priority does not change its claim type.
+- CAND34 remains terminal for current object only and development-only; it is not retroactively rescored.
+- No same-object SYSTEM→MECHANISM post-outcome uplift is observed.
+- A legitimate fresh SYSTEM→MECHANISM successor live case remains insufficiently observed.
 
-Mechanism-supply health: `ONE_VIABLE_MECHANISM_H7_WITH_EXACTLY_ONE_PROSPECTIVE_FORMAL_PATH_NO_SYSTEM_INFLATION`.
+## Mechanism-supply health
 
-## Preformal calibration / pass reachability
+`TRANSIENT_ZERO_EXECUTABLE_MECHANISM_ON_INTEGRITY_CAPABILITY_HOLD_WITH_BOUNDED_SYSTEM_NONRESULT_EXCEPTION`.
 
-`HIDDEN_SECOND_FORMAL_GATE=false`. H7's PF-R1 observation remains development-only and is not required to count as a comparator/reduction/falsifier win before READY. The new formal authority asks a fresh prospective question on a fresh untouched identity. #35 likewise remains allowed real development without needing prior scientific success.
+This is not yet candidate starvation, because H7 remains nonterminal and its blocker is specific and non-scientific. It becomes a calibration problem if the sidecar capability remains unresolved while no fresh MECHANISM discovery is supplied, or if CAND35 begins to receive response-bearing work solely to create activity.
 
-H7 pass reachability is now `REALISTIC_NEAR_TERM_PROSPECTIVE_WITHOUT_STANDARD_RELAXATION`. The preservation blocker and fresh-review blocker are closed. Remaining requirements are execution-time exact binding, fresh untouched identity/surface, literal target-blind raw-before-score, immutable preserve-before-read/target-side scoring, evaluator/held-out isolation and strict post-START one-way behavior.
+## Funnel observability
 
-## Utility request
+Latest canonical Analyst R99 reports:
 
-No new methodology Utility request. The PF-R1 preservation task is complete and must not be duplicated, rerun, reconstructed, regenerated, retuned or rescored. Utility grants no scientific authority.
+- canonical candidates: 35
+- MECHANISM: 14
+- SYSTEM: 21
+- active: 0
+- queued: 1
+- nonterminal hold: 1
+- terminal for current object: 33
+- OPEN_DEVELOPMENT: 3
+- RESULT_EXPOSED_DEVELOPMENT: 32
+- CONSUMED_ONE_WAY canonical current objects: 0
+- preformal eligible current nonterminal: 1
+- preformal ready current nonterminal: 1
+- viable executable MECHANISM: 0
+- fresh executable FORMAL authority: 0
+- official consumed identities: 7
+- new identity consumed this generation: 0
+- SYSTEM-over-MECHANISM exception: 1, bounded to CAND35 NON_RESULT work
+- classification completeness: 35/35
+
+## PRE_FORMAL calibration
+
+No hidden second FORMAL gate is observed. H7's earlier development results remain nonconfirmatory. CAND35 architecture/CI success does not make it PRE_FORMAL eligible or READY. Repeated PRE_FORMAL observations remain development observations, not independent confirmation. READY remains an informativeness/well-definition gate rather than an already-successful gate.
+
+## Pass reachability
+
+`REALISTIC_BUT_CAPABILITY_CONDITIONED_WITHOUT_STANDARD_RELAXATION`.
+
+The H7 path is currently not executable because the required protected-sidecar handoff capability is absent. This is a real operational/integrity prerequisite and should not be bypassed. If provisioned, the programme must rerun NON_RESULT readiness, stop, obtain a later fresh Analyst generation, then use exactly one fresh untouched identity under the unchanged R5 contract. No criterion relaxation is needed.
 
 ## Prospective recommendations
 
-- Keep H7's R97/R98 authority narrow: exactly one fresh untouched FORMAL identity on unchanged R5 and no silent binding substitution.
-- Immediately before any H7 START, independently verify exact source/package/runtime/input/component/scorer/preserver and absence of existing STARTED/control/preserve collision. Any mismatch is STOP before consumption.
-- Preserve literal target-blind prediction raw immutably before any target-side score/read. Do not treat file naming/order alone as proof of this boundary.
-- Once H7 START is crossed, mark that FORMAL identity CONSUMED_ONE_WAY and prohibit same-identity rerun, retune, rescore, threshold/tolerance/comparator/metric mutation or outcome-responsive repair.
-- Do not count PF-R1, #34 PRE_FORMAL, green CI or preidentity success as independent confirmatory evidence.
-- Keep #35 SYSTEM and response-stopped until its own fresh gate; its prior no-target priority exception has ended now that H7 is viable.
-- Continue independent mechanism discovery and allow legitimate fresh successors, but do not manufacture a successor from a disappointing outcome.
-- Keep #34 raw immutable; any provenance correction remains append-only clarification only.
+1. Provision only the already-required protected-sidecar capability through the authorized control plane; do not expose its value and do not modify H7 scientific fields.
+2. Repin the H7 controller to the then-current exact Analyst commit before rerunning readiness.
+3. Rerun NON_RESULT readiness only. Even if green, do not create or consume a FORMAL identity in that run.
+4. Require a later fresh Analyst generation after green readiness to re-fetch exact source/protocol/package/runtime/input/scorer/preserver/namespace state and explicitly authorize at most one untouched identity.
+5. Preserve the START boundary as irreversible: once crossed, move to `CONSUMED_ONE_WAY`; no same-identity rerun/retune/rescore or science-affecting repair.
+6. Keep CAND35's temporary SYSTEM exception strictly NON_RESULT and preserve-before-read/provenance-only. Candidate response stays STOP pending fresh Analyst.
+7. Continue independent MECHANISM supply/discovery so H7's temporary integrity hold does not normalize zero executable mechanism supply.
+8. Keep CAND34 provenance correction append-only; no rerun, raw mutation, or retroactive scientific reinterpretation under changed criteria.
 
-## Hard-floor confirmation / confidence
+## Utility request
+
+No new Utility request. The current H7 blocker is already specifically identified as protected-sidecar/control-plane capability plus fresh authority repin. A methodology-generated Utility proposal would add no calibration information and could collide with live remediation.
+
+## Hard-floor confirmation
 
 `CONFIRMED_DO_NOT_RELAX`.
 
-Confidence: stable main/evidence-tag nonmutation `HIGH`; H7 exact branch head `HIGH`; H7 generic CI and dedicated NON_RESULT preidentity success `HIGH`; absence of H7 control/preserve refs `HIGH`; H7 current identity nonconsumption `HIGH`; prospective exactly-one authority existence `HIGH`; actual execution-time exact binding `NOT_YET_OBSERVED`; fresh post-HUMAN-005 CONSUMED_ONE_WAY transition `UNOBSERVED`; protected target-blind preserve-before-read behavior in the coming H7 FORMAL run `UNOBSERVED`; repeated result-bearing PRE_FORMAL `UNOBSERVED`; terminal SYSTEM→fresh MECHANISM successor `UNOBSERVED`.
+No consumed FORMAL identity was rerun/retuned/rescored; no scientific identity was consumed; no protected evaluation or target-side result was read; no evidence ref was mutated; no scientific PR was merged by this auditor; no scheduler was changed; no historical PASS/FAIL was rewritten.
+
+## Confidence
+
+- stable main / evidence-ref nonmutation: `HIGH`
+- H7 exact source/controller/readiness status: `HIGH`
+- H7 no result / no score / no protected-eval access / no identity consumption: `HIGH`
+- H7 repair classification: `HIGH`
+- CAND35 temporary SYSTEM exception calibration: `MODERATE_TO_HIGH`
+- full OPEN→RESULT_EXPOSED→CONSUMED_ONE_WAY live semantics: `MODERATE`, because final fresh FORMAL transition remains unobserved
+- global protected/adaptive-evaluation validity: `MODERATE`
+- fresh SYSTEM→MECHANISM successor calibration: `LOW_TO_MODERATE`, insufficient live evidence
 
 ## Questions for Control / Analyst
 
-- Will H7 execution materialize exactly one fresh untouched identity and fail closed before START on any exact-binding mismatch?
-- Will the first START boundary atomically end any same-identity rerun/repair authority even if execution later fails?
-- Will prediction-only raw be durably preserved before any target-side scoring/read, with target-bearing data kept out of the prediction producer?
-- Will PF-R1 remain development-only with zero independent confirmatory credit after H7 FORMAL begins?
-- Will #35 remain SYSTEM/deferred rather than being promoted merely because its Architecture implementation is green?
-- Will any future post-result science-affecting change remain explicit versioned development or a genuinely fresh successor preserving prior results?
-
-## Input generations / authoritative refs used
-
-- previous Methodology: `METHCAL-20260923T192251+0900-R88-9F4C2D61@55655e6e39432e09aa3389122acaa9ec57ab8af7`
-- Human directive: `HUMAN-20260922-005` (process directive, not scientific evidence)
-- Control: `CTRL-20260923T155900+0900-R43-A91C4E6B@1592c3b52a8a545aa2503fd4618c0a761921ef1e`
-- Evidence Analyst: `EVA-20260923T200231+0900-R98-2B6F91C4@df2e59996409211a2b104918e01a7f61d0eb3c80`
-- Evidence Analyst decision history: `EVA-20260923T192140+0900-R97-6D82A4F1`
-- stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- evidence tags: exactly five annotated `evidence/*`; tag-form `formal/*`, `sealed/*`, `freeze/*` empty
-- H7 R5 exact head: `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`
-- H7 exact-head CI: `35794233612` success
-- H7 dedicated NON_RESULT preidentity: `35794233687` success
-- H7 `control/h7*`: absent
-- H7 `preserve/h7*`: absent
-- #35 exact head remains `research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3@8ea6581544c642ad74f1a95955ab2c5f795afccc`
-- PF-R1 preservation completion remains the prerequisite closure from R88; no scientific authority was created by preservation
+1. Will protected-sidecar capability provisioning be kept operationally separate from FORMAL identity creation/START?
+2. Will the controller be pinned to the then-current Analyst exact SHA before the next readiness run?
+3. Will a green readiness run stop and require a later fresh Analyst decision rather than auto-start FORMAL?
+4. Will CAND35's temporary SYSTEM exception remain strictly NON_RESULT with candidate response STOP?
+5. If executable MECHANISM supply stays at zero, will independent discovery continue without inflating SYSTEM claims or manufacturing rescue successors?
+6. At the eventual H7 START boundary, will identity consumption, exact binding, target-blind raw generation, preservation-before-read, and irreversible `CONSUMED_ONE_WAY` semantics be enforced atomically/prospectively?
