@@ -1,101 +1,144 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260924T053555+0900-NOOP-R106-R97-THEORY-KILLED",
-  "produced_at": "2026-09-24T05:35:55+09:00",
+  "generation_id": "FORGE-20260924T064230+0900-TH001-Q0-QI-ADAPTATION-KILL",
+  "produced_at": "2026-09-24T06:42:30+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260924T033243+0900-NOOP-R104-R96-REVISIT-BOOTSTRAP",
+  "supersedes_generation_id": "FORGE-20260924T053555+0900-NOOP-R106-R97-THEORY-KILLED",
   "input_generations": {
-    "evidence_analyst": "EVA-20260924T050035+0900-R106-H7-LAUNCH-READY-THEORY-PROBE-KILLED@770edcb0cf050ed7cdf41d4716ed645952e69475",
-    "main": "MAIN-20260924T051305+0900-PRIMARY-H7-R106-FORMAL-LAUNCH-TRIGGER-BLOCKED@a8762d6a72a7722397d38a40942db639f99f0d5b",
-    "methodology": "METHCAL-20260924T042120+0900-R97-C9CE09C7@0b21a6670059060ca3dad054891b8fa89c9bcbd1",
+    "evidence_analyst": "EVA-20260924T061119+0900-R107-H7-TRIGGER-CAPABILITY-HOLD-THEORY-DISCRIMINATOR-PENDING@247a2e6349ada02a6fdb4a362318570b6dd74e90",
+    "main": "MAIN-20260924T054727+0900-RELAY-H7-R106-FORMAL-LAUNCH-CAPABILITY-BLOCKED@e5a1927352b0671456dd8c1166cccea72a510817",
+    "methodology": "METHCAL-20260924T062241+0900-R99-6E3A91B4@26d2b175154e156bf989d0c61045e8eb288fea1b",
     "theory_literature_audit": "226d812c96df3d71186ba5a4fb2ac1b27c0d6e25",
-    "utility": "UTILITY-20260924T033500+0900-R104-MAIN-OWNERSHIP-RECONCILE-4A2E8C71@1fabedcdd27457edb0cf1a086d5b04f116b65fd3",
-    "previous_forge_persisted": "FORGE-20260924T033243+0900-NOOP-R104-R96-REVISIT-BOOTSTRAP@ops/orchestrator-run-report",
-    "previous_theory_probe_observed_by_analyst": "forge/20260924-recurrent-continuation-a@17b2673cd0417fdf931264a71d8df1f9c1c21f23"
+    "utility": "UTILITY-20260924T062208+0900-NOOP-R106-RELAY-FORGE-UNCHANGED-2F4C7A91@d4b9804aeb6d2f88534bff6326f7fb2b2798dff3",
+    "previous_forge_persisted": "FORGE-20260924T053555+0900-NOOP-R106-R97-THEORY-KILLED@ops/orchestrator-run-report"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_r106_tip": "770edcb0cf050ed7cdf41d4716ed645952e69475",
-    "main_ops_tip_pre_forge_write": "a8762d6a72a7722397d38a40942db639f99f0d5b",
+    "evidence_analyst_r107_tip": "247a2e6349ada02a6fdb4a362318570b6dd74e90",
+    "main_ops_tip_observed": "e5a1927352b0671456dd8c1166cccea72a510817",
     "main_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "main_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
-    "methodology_r97_tip": "0b21a6670059060ca3dad054891b8fa89c9bcbd1",
+    "methodology_r99_tip": "26d2b175154e156bf989d0c61045e8eb288fea1b",
     "external_theory_literature_audit_tip": "226d812c96df3d71186ba5a4fb2ac1b27c0d6e25",
+    "theory_latest_blob": "23b663e0e848e921b6d4efc3b6519f62597da50d",
     "literature_r40_blob": "01c4ae8a41c047e1925a4b410827c6bdad7f9457",
     "audit_r9_blob": "e0c838636dfb36708df8d86dd9165a2a0acedada",
-    "utility_r104_tip": "1fabedcdd27457edb0cf1a086d5b04f116b65fd3",
-    "theory_probe_branch": "forge/20260924-recurrent-continuation-a",
-    "theory_probe_head": "17b2673cd0417fdf931264a71d8df1f9c1c21f23",
-    "theory_probe_ci_run": 35912157057,
-    "history_path": "reports/orchestrator/sub/history/2026-09-24/0535-r106-r97-fast-forge-noop-after-theory-kill.md",
-    "history_create_commit": "1c74d146bae8b775eaec58332a002457eb1051b2",
-    "latest_update_commit": "ef8ce6a95da3c7ea0899dd1f9c478551548da109"
+    "utility_tip_observed": "d4b9804aeb6d2f88534bff6326f7fb2b2798dff3",
+    "theory_probe_branch": "forge/20260924-th001-q0-qi-adaptation-a",
+    "theory_probe_head": "e2dbe3a5a0db812f777b789a6878af8a0d3eee0f",
+    "theory_probe_path": "tests/forge/test_th001_q0_qi_adaptation_probe.py",
+    "theory_probe_ci_run": 35923832947,
+    "history_path": "reports/orchestrator/sub/history/2026-09-24/0642-r107-th001-q0-qi-adaptation-kill.md",
+    "history_create_commit": "dd91f3d64e0b2808b3423f0c7aa5bbcb17ec3091",
+    "latest_update_commit": "a2fa5fba674d7e78084a4416b2e9c850c65b4b21"
   },
-  "freshness_note": "Evidence Analyst R106 is materially newer than the persisted Forge mailbox: it records the previously gated TH-001 Forge probe as executed and killed by ordinary recurrence with zero scientific credit, and it supplies no new bounded Theory probe. Revisit remains 34/34 classified with zero triggered candidates and zero Forge referrals. MAIN R106 is H7-only and is now blocked before FORMAL identity/START on unavailable external launch-tag creation/dispatch capability. Literature R40, Audit R9 and Utility R104 add no fresh independent Forge target.",
+  "freshness_note": "Evidence Analyst R107 materially supersedes R106 for Forge Theory gating. It explicitly retains TH-001 as THEORY_FORGE_TEST and supplies the bounded Q0-vs-QI discriminator. Methodology R99 agrees that the earlier recurrent-loop toy remains killed but did not instantiate that discriminator. Revisit remains 34/34 classified with zero triggers. MAIN remains H7-only; H7 is scientifically READY but operationally non-triggerable, and Forge did not touch H7 or its blocker.",
   "theory_revisit_gate": {
-    "latest_evidence_analyst_checked": true,
-    "theory_stream_status": "TH001_PRIOR_ANALYST_GATED_PROBE_EXECUTED_AND_KILLED",
+    "latest_evidence_analyst_checked_before_execution": true,
+    "latest_evidence_analyst_rechecked_before_persistence": true,
+    "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
+    "theory_stream_status": "ANALYST_APPROVED_THEORY_FORGE_TEST_EXECUTED",
+    "theory_probe_spec_source": "Evidence Analyst R107",
+    "theory_probe_outcome": "FORGE_DEAD_END_QI_SPLIT_FULLY_REDUCED_BY_ORDINARY_ADAPTATION_AND_FIXED_EDGE",
     "theory_forge_test_pending": false,
-    "prior_theory_probe_outcome": "FORGE_KILL_ORDINARY_RECURRENCE_NONDIAGNOSTIC_FOR_Q0_VS_QI",
     "revisit_stream_status": "LEDGER_34_OF_34_NO_TRIGGERED_NO_FORGE_REFERRALS",
     "revisit_forge_test_present": false,
     "raw_theory_dispatch_authority": false,
-    "raw_revisit_dispatch_authority": false,
-    "action": "NO_PROBE_EXECUTED_THIS_RUN"
+    "raw_revisit_dispatch_authority": false
   },
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "main_owner": "H7_ONLY",
-    "main_current_status": "BLOCKED_FORMAL_PRESTART_EXTERNAL_LAUNCH_TAG_CAPABILITY",
+    "main_current_status": "SCIENTIFICALLY_READY_OPERATIONALLY_TRIGGER_BLOCKED_PRESTART",
+    "probe_independent_of_unknown_main_outcome": true,
     "avoided": [
       "H7 science/controller/component/runtime/scorer/preserver/launch/identity/START/protected-evaluator/workflow/authority surfaces",
-      "Candidate #35 same-object and immediate rescue/off-manifold/natural-history family",
+      "Candidate #35 same-object and immediate rescue/off-manifold/natural-history/STP family",
       "Candidate #34 same-object temporal-route rescue family",
       "consumed/frozen/FORMAL identities and official evidence/sealed/freeze/preserve refs",
       "protected held-out/evaluator targets"
     ]
   },
   "selection_scan": {
-    "selection_outcome": "NO_OP",
-    "selected": [],
-    "rejected_before_execution": [
+    "selection_outcome": "ANALYST_APPROVED_THEORY_PROBE",
+    "selected": [
       {
-        "surface": "TH-001 follow-up",
-        "reason": "Prior bounded Analyst-gated probe already Forge-killed; no fresh bounded Theory probe specification after kill"
-      },
+        "surface": "TH-001 Q0-vs-QI intervention-stable quotient discriminator",
+        "why_now": "Evidence Analyst R107 explicitly supplied the bounded discriminator after correcting the prior whole-theory kill"
+      }
+    ],
+    "excluded": [
       {
         "surface": "Revisit-derived probe",
         "reason": "No independent trigger and no Analyst-gated REVISIT_FORGE_TEST"
       },
       {
         "surface": "Candidate #34 temporal-route descendants",
-        "reason": "CLOSED_STRONG ordinary local transmission/timing reduction with no new independent trigger"
+        "reason": "Terminal CLOSED_STRONG ordinary local transmission/timing reduction; no new independent trigger"
       },
       {
-        "surface": "Candidate #35 null/reachability/STP descendants",
-        "reason": "Immediate post-outcome rescue adjacency remains excluded"
+        "surface": "Candidate #35 descendants",
+        "reason": "Terminal/rescue-adjacent; no independent reidentification"
       },
       {
         "surface": "H7 responsibility/launch/capability/runtime",
-        "reason": "Sole active MAIN-owned canonical object; Forge collision exclusion"
-      },
-      {
-        "surface": "prior Assembly/context/concept/homeostasis/action/credit families",
-        "reason": "No materially new independent observable, intervention, or instrumentation capability"
-      },
-      {
-        "surface": "Literature R40 STP/delayed-three-factor/e-prop comparators",
-        "reason": "Established ordinary baselines, not a fresh independent SparkBrain phenomenon"
+        "reason": "Sole active MAIN-owned canonical object and blocker; explicit Forge exclusion"
       }
     ]
   },
-  "overall_status": "FORGE_OBSERVATION",
-  "forge_objects": [],
+  "overall_status": "FORGE_DEAD_END",
+  "forge_objects": [
+    {
+      "forge_id": "FORGE-TH001-Q0QI-20260924-A",
+      "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
+      "question": "Can an explicitly Q0-equivalent history pair split under the same fixed local intervention, and does that QI split survive ordinary state reductions?",
+      "why_now": "Analyst R107 explicitly gated this bounded Theory probe and Methodology R99 confirmed the earlier recurrence toy was non-diagnostic for Q0-vs-QI.",
+      "branch": "forge/20260924-th001-q0-qi-adaptation-a@e2dbe3a5a0db812f777b789a6878af8a0d3eee0f",
+      "prototypes": [
+        "tests/forge/test_th001_q0_qi_adaptation_probe.py"
+      ],
+      "diagnostics": {
+        "ci_run": 35923832947,
+        "ci_conclusion": "success",
+        "python_3_11": "success",
+        "python_3_13": "success",
+        "lint": "success",
+        "local_readiness": "success",
+        "pytest": "success",
+        "bundle_validation": "success"
+      },
+      "observations": {
+        "q0_warm": [[100.0, 0]],
+        "q0_quiet": [[100.0, 0]],
+        "q0_equivalent": true,
+        "qi_warm": [[100.0, 0]],
+        "qi_quiet": [[100.0, 0], [100.0, 1], [104.0, 2]],
+        "qi_split": true,
+        "quiet_threshold": 0.8,
+        "warm_residual_adaptation": 0.052670878049264895,
+        "warm_threshold": 0.8526708780492649,
+        "fixed_local_intervention_current": 0.825,
+        "fixed_downstream_weight": 1.0,
+        "fixed_downstream_delay_ms": 4.0
+      },
+      "ordinary_reductions": [
+        "standard adaptation decay and dynamic threshold",
+        "fixed local edge transmission with configured weight and delay",
+        "compact recent-spike/adaptation register or FSA at the tested boundary"
+      ],
+      "strongest_ordinary_reduction": "The warm/quiet intervention split is quantitatively fixed by ordinary adaptation: 0.80 < 0.825 < 0.852670878..., and the downstream difference then follows the fixed weight-1.0 delay-4ms edge.",
+      "status": "FORGE_DEAD_END",
+      "dead_end_reason": "QI refines Q0 in the toy, but every split is predicted by an ordinary comparator, satisfying Analyst R107's kill criterion; no unexplained intervention-stable residual remains.",
+      "promotion_reason": null,
+      "scientific_credit": 0
+    }
+  ],
   "ordinary_reduction_assessment": {
-    "new_phenomenon_observed": false,
-    "assessment": "No new reduction target this run. The prior TH-001 recurrent-continuation probe is already reduced by explicit ordinary recurrence plus adaptive/refractory dynamics and did not establish the required predictive-equivalent intervention split."
+    "new_phenomenon_observed": true,
+    "phenomenon": "An explicitly Q0-equivalent pair splits under the same local intervention on the synthetic surface.",
+    "assessment": "The split is not mechanistically novel: ordinary adaptation plus fixed edge transmission predicts it exactly."
   },
   "promotion_proposal": null,
   "utility_request": null,
@@ -109,30 +152,30 @@
     "consumed_or_immutable_evidence_mutated": false,
     "result_bearing_canonical_workflow_dispatched": false,
     "scientific_research_branch_mutated": false,
-    "forge_branch_created_or_modified_this_run": false,
+    "forge_branch_created_or_modified_this_run": true,
     "forge_branch_merged_to_main_or_research": false,
     "terminal_reopened": false,
     "historical_outcome_rewritten": false
   },
   "metrics": {
     "scope": "FROM_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 17,
-    "prototypes_attempted": 18,
-    "theory_probes": 1,
-    "theory_kills": 1,
+    "runs": 18,
+    "prototypes_attempted": 19,
+    "theory_probes": 2,
+    "theory_kills": 2,
     "theory_survivors": 0,
     "revisit_probes": 0,
     "revisit_kills": 0,
     "revisit_survivors": 0,
-    "dead_ends": 14,
+    "dead_ends": 15,
     "interesting_observations_retained": 1,
     "promotion_proposals": 1,
     "later_admissions": 0,
     "duplicate_or_rescue_rejects": 10,
     "ownership_collisions": 0,
-    "ordinary_reduction_rejects": 14,
+    "ordinary_reduction_rejects": 15,
     "analyst_promotion_deferrals": 1,
-    "idea_to_observation_latency": "NO_OP"
+    "idea_to_observation_latency": "SAME_RUN_PROTOTYPE_TO_OBSERVATION"
   },
-  "recommendation": "NO_NEW_FORGE_TARGET; DO_NOT_ACT_ON_KILLED_OR_UNGATED_THEORY_OR REVISIT; LEAVE_CAND34_CAND35_TERMINAL_BOUNDARIES; DO_NOT_TOUCH_MAIN_H7_LAUNCH_BLOCKER"
+  "recommendation": "BOUNDED_TH001_Q0_QI_PROBE_REDUCED; NO_PROMOTION; DO_NOT_GENERALIZE_TO_UNIVERSAL_THEORY_FALSIFICATION; NO_REVISIT; DO_NOT_TOUCH_MAIN_H7_OR_TERMINAL_CAND34_CAND35"
 }
