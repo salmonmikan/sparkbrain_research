@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - research/main-h7-r5-oneway-controller-r98
     paths:
       - .github/workflows/h7-formal-r5-one-way-readiness.yml
 
