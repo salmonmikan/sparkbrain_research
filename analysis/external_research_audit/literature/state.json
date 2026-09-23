@@ -1,46 +1,59 @@
 {
-  "timestamp": "2026-09-23T15:30:00+09:00",
+  "timestamp": "2026-09-23T18:30:00+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260923T153000+0900-R37-SPIKE-RESPONSE-KERNEL-5A8C21E7",
-  "producer_run_id": "external-literature-auto-LIT-20260923T153000+0900-R37-SPIKE-RESPONSE-KERNEL-5A8C21E7",
+  "generation_id": "LIT-20260923T183000+0900-R38-SUBTHRESHOLD-STATE-SUFFICIENCY-3B7E21C6",
+  "producer_run_id": "external-literature-auto-LIT-20260923T183000+0900-R38-SUBTHRESHOLD-STATE-SUFFICIENCY-3B7E21C6",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260923T123024+0900-R36-INFORMATIVITY-HYBRID-SENSITIVITY-6D4A21C8",
+  "supersedes_generation_id": "LIT-20260923T153000+0900-R37-SPIKE-RESPONSE-KERNEL-5A8C21E7",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260923T125800+0900-R42-7C9E41B2",
-      "handoff_commit": "7035ace9b0ef980602dcb124e8974be5640d7377"
+      "generation_id": "CTRL-20260923T155900+0900-R43-A91C4E6B",
+      "handoff_commit": "1592c3b52a8a545aa2503fd4618c0a761921ef1e"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260923T150251+0900-R94-8E6A31C4",
-      "handoff_commit": "5cee6ef496eb9465550fb9c0be5295e587027dfb"
+      "generation_id": "EVA-20260923T180248+0900-R96-3F7C92A1",
+      "handoff_commit": "df97c2c8830c7d50d23d13c43091866ad5d23c77"
     },
     "main_report": {
-      "generation_id": "MAIN-20260923T152800+0900-PRIMARY-CAND34-PREFORMALR2-R94-WAITING-RESPONSE",
-      "handoff_commit": "93a433aa78c7e63a1c654d01a1c8c1f7f287c5e8"
+      "generation_id": "MAIN-20260923T175300+0900-RELAY-CAND35-ARCHR1-R95-COMPLETED",
+      "handoff_commit": "47bb32c2584652e63d802f83fd0d4cd046492606"
+    },
+    "main_inflight_lease": {
+      "generation_id": "MAIN-20260923T181700+0900-PRIMARY-CAND35-ARCHR2-R96-RUNNING",
+      "handoff_commit": "b6845500212737ef89bbd97443040271240d4c80"
     },
     "fast_forge_report": {
-      "generation_id": "FORGE-20260923T143553+0900-ASSEMBLY-RETENTION-CAPACITY-R93",
-      "handoff_commit": "93a433aa78c7e63a1c654d01a1c8c1f7f287c5e8"
+      "generation_id": "FORGE-20260923T173525+0900-NOOP-NO-TARGET-SHADOW-R95",
+      "handoff_commit": "1faf9d89a95d6a3f9294db8901e3c01b3e2e65df"
+    },
+    "fast_forge_recent_history": {
+      "generation_id": "FORGE-20260923T183716+0900-NOOP-CAND35-R2-SHADOW-R96",
+      "handoff_commit": "ebde477bd697f4f99565062fb8ada9c40dbc331a"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260923T123024+0900-R36-INFORMATIVITY-HYBRID-SENSITIVITY-6D4A21C8",
-      "handoff_commit": "5228e5271f9a87c47d6ed1c68b10a24c92d0c996"
+      "generation_id": "LIT-20260923T153000+0900-R37-SPIKE-RESPONSE-KERNEL-5A8C21E7",
+      "handoff_commit": "1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "15:30 JST",
+  "schedule_slot": "18:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "candidate34_closed_r2": {
-      "branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-      "head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
-      "status": "CLOSED_SCIENTIFIC_CONTRACT"
+    "candidate34_preserved_result": {
+      "preserve_ref": "preserve/cand34-d34-q002-r94-raw-20260923",
+      "head": "4d45f1135bcb607f1e663648cd8335333eb98de4",
+      "status": "PRESERVED_RESULT_EXPOSED_CURRENT_OBJECT_TERMINAL_NO_REPEAT_NO_RESCUE"
     },
-    "candidate34_execution": {
-      "branch": "research/main-cand34-assembly-route-preformal-r93-response",
-      "head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
-      "status": "R94_BOUND_ONE_SHOT_EXECUTOR"
+    "candidate35_architecture_r1": {
+      "branch": "research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1",
+      "head": "c640cb3a42faf1f49bee568c1cc167c03fb63646",
+      "status": "NON_EVIDENTIARY_NONRESULT_COMPLETE"
+    },
+    "candidate35_architecture_r2": {
+      "branch": "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3",
+      "head": "df1fb989d79d80cee8be87b051d5e42e33f1c871",
+      "status": "NON_EVIDENTIARY_EXACT_BINDING_RESPONSE_STOP"
     },
     "h7_formal_r5": {
       "branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
@@ -60,126 +73,107 @@
     "freeze_tag_count": 0,
     "legacy_freeze_refs_inspected": true,
     "preserve_refs_inspected": true,
-    "candidate34_preserve_ref_present_at_final_prefetch": false,
     "control_refs_inspected": true,
     "consumed_identities_inspected": true,
     "consumed_identity_count": 7,
-    "relevant_prs": {
-      "148": "OPEN_UNMERGED_MERGEABLE",
-      "149": "OPEN_UNMERGED_MERGEABLE"
-    },
-    "orchestrator_main_latest_state_and_history_inspected": true,
-    "orchestrator_fast_forge_latest_state_inspected": true,
-    "ops_control_tip_consumed": "7035ace9b0ef980602dcb124e8974be5640d7377",
-    "ops_evidence_analyst_tip_consumed": "5cee6ef496eb9465550fb9c0be5295e587027dfb",
-    "ops_orchestrator_tip_consumed": "93a433aa78c7e63a1c654d01a1c8c1f7f287c5e8",
-    "ops_external_tip_before_first_write": "5228e5271f9a87c47d6ed1c68b10a24c92d0c996"
+    "relevant_open_prs_inspected": [149],
+    "orchestrator_main_latest_state_and_recent_history_inspected": true,
+    "orchestrator_fast_forge_latest_state_and_recent_history_inspected": true,
+    "ops_control_tip_consumed": "1592c3b52a8a545aa2503fd4618c0a761921ef1e",
+    "ops_evidence_analyst_tip_consumed": "df97c2c8830c7d50d23d13c43091866ad5d23c77",
+    "ops_orchestrator_tip_at_final_prefetch": "ebde477bd697f4f99565062fb8ada9c40dbc331a",
+    "ops_external_tip_before_first_write": "1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e"
   },
-  "workflow_state_observed": {
-    "35824098828": {
-      "head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
-      "workflow": "ci",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false
+  "candidate35_exact_local_dynamics": {
+    "source": "main/src/sparkbrain/v04/field.py plus R96 candidate35 frozen contract",
+    "membrane_tau_ms": 18.0,
+    "adaptation_tau_ms": 90.0,
+    "dynamic_threshold": "base_threshold + max(0, adaptation)",
+    "refractory_ms": 3.0,
+    "retained_fraction_after_32ms": {
+      "potential": 0.1690133154,
+      "adaptation": 0.7007840106
     },
-    "35826846989": {
-      "workflow": "cand34-preformal-r2-response-r94",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": true,
-      "raw_artifact_present": true,
-      "raw_artifact_name": "cand34-d34-q002-r94-raw",
-      "raw_artifact_size_bytes": 3612,
-      "raw_artifact_archive_digest": "sha256:38a50cf3d63be3355d3d95387d155a6f0e550d998026ccdd38743a07520171f4",
-      "raw_artifact_read_or_interpreted_by_this_role": false,
-      "reason_not_read": "R94/MAIN require durable exact-byte preservation before interpretation; no preserve/cand34 ref existed at final pre-write check"
-    }
+    "retained_fraction_after_256ms": {
+      "potential": 0.0000006658,
+      "adaptation": 0.0581665725
+    },
+    "interpretation": "These fractions are pre-outcome consequences of the frozen exponential state equations, not fitted result statistics."
   },
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "SPIKE_RESPONSE_KERNEL_REDUCTION",
-      "type": "FOUNDATIONAL_ORDINARY_LOCAL_DYNAMICS_REDUCTION",
+      "id": "CAND35_ANALYTIC_LOCAL_STATE_REDUCTION",
+      "type": "REPOSITORY_PLUS_FOUNDATIONAL_REDUCTION",
       "sources": [
-        "Gerstner 1995, Time structure of the activity in neural network models",
-        "Jolivet et al., Generalized Integrate-and-Fire Models of Neuronal Activity Approximate Spike Trains of a Detailed Model to a High Degree of Accuracy"
+        "Brette & Gerstner 2005, Adaptive Exponential Integrate-and-Fire Model as an Effective Description of Neuronal Activity",
+        "Benda & Herz 2003, A Universal Model for Spike-Frequency Adaptation"
       ],
-      "finding": "Classical spike-response models express membrane potential through incoming-spike/input kernels plus post-spike/refractory kernels; these variables closely match the frozen D34-Q002 source-spike, edge-delay, destination-potential and spike-history observables.",
-      "impact": "A +1ms effect predictable by a translated PSP kernel plus refractory/post-spike state is ordinary single-edge dynamics, not Assembly-specific route novelty."
+      "finding": "The active simulator is already an explicit low-dimensional leaky adaptive-state system: membrane potential and adaptation decay exponentially and adaptation raises dynamic threshold. At 32 ms the frozen equations retain about 16.9% of potential and 70.1% of adaptation.",
+      "impact": "A positive queue-free weak-cue effect is naturally predicted by ordinary local state memory; it supports component causality at SYSTEM scope rather than a novel memory mechanism."
     },
     {
-      "id": "POINT_PROCESS_HISTORY_COUPLING_REDUCTION",
-      "type": "ORDINARY_HISTORY_DEPENDENT_SPIKE_MODEL_REDUCTION",
+      "id": "CAND35_ADAPTATION_THRESHOLD_GAIN_PRIOR_ART",
+      "type": "FOUNDATIONAL_ORDINARY_MECHANISM_REDUCTION",
       "sources": [
-        "Truccolo et al. 2005, Point Process Framework",
-        "Pillow et al. 2008, Spatio-temporal correlations and visual signalling"
+        "Ladenbauer, Augustin & Obermayer 2014, How adaptation currents change threshold, gain, and variability of neuronal spiking",
+        "Mensi et al. 2012, Parameter extraction and classification of three cortical neuron types reveals two distinct adaptation mechanisms",
+        "Pozzorini et al. 2013, Temporal whitening by power-law adaptation in neocortical neurons"
       ],
-      "finding": "Conditional-intensity models combine a neuron's spike history, other-neuron activity/coupling and extrinsic covariates and can capture detailed spatiotemporal spike structure.",
-      "impact": "A privilege-matched history/coupling filter is a prospective ordinary baseline for destination spikes and the secondary Assembly spike export."
+      "finding": "Subthreshold adaptation is established to alter effective threshold/gain, compact passive/adaptation/moving-threshold models predict spikes and subthreshold voltage, and measured adaptation can persist for >20 s over multiple timescales.",
+      "impact": "Queue-empty persistence over tens of milliseconds is not a novelty discriminator. SparkBrain's single 90 ms trace is simpler than established multi-timescale adaptive-neuron models."
     },
     {
-      "id": "SPIKING_LINEAR_RESPONSE_REDUCTION",
-      "type": "ORDINARY_WEAK_PERTURBATION_REDUCTION",
+      "id": "CAND35_SUBTHRESHOLD_RESERVOIR_RECENT_BAR",
+      "type": "RECENT_NOVELTY_BAR",
       "sources": [
-        "Cessac, Ampuero & Cofre 2021, Linear Response of General Observables in Spiking Neuronal Network Models"
+        "Moriya et al. 2025, Analog VLSI Implementation of Subthreshold Spiking Neural Networks and Its Application to Reservoir Computing"
       ],
-      "finding": "Weak stimuli can have spatiotemporal spike-correlation effects predicted from spontaneous statistics, intrinsic dynamics and network connectivity even with long spike-history memory.",
-      "impact": "Where perturbation magnitude supports the approximation, a frozen susceptibility/response-function predictor is a lower-cost reduction before special mechanism interpretation."
-    },
-    {
-      "id": "FINITE_WEIGHT_NONLINEAR_THRESHOLD_REDUCTION",
-      "type": "NONLINEAR_ORDINARY_MECHANISM_CEILING",
-      "sources": [
-        "Helias et al. 2010, Instantaneous Non-Linear Processing by Pulse-Coupled Threshold Units"
-      ],
-      "finding": "Finite synaptic weights in generic pulse-coupled threshold units can produce fast nonlinear, amplitude-dependent and excitation/inhibition-asymmetric responses outside linear-response predictions.",
-      "impact": "Failure of a linear response baseline is not itself an Assembly-specific residual; a finite-weight nonlinear threshold/SRM/history model should be tested prospectively first."
+      "finding": "Recent peer-reviewed hardware implements two-variable subthreshold spiking dynamics and uses the resulting activity for reservoir-computing speech recognition.",
+      "impact": "Computational use of persistent subthreshold physical state is already an ordinary reservoir motif; future uplift would need a residual beyond a privilege-matched leaky/adaptive/reservoir explanation."
     }
   ],
   "affected_lines": [
-    "CAND34_PREFORMAL_R2_INTERPRETATION_CEILING",
-    "CAND34_LOCAL_SPIKE_RESPONSE_KERNEL_REDUCTION",
-    "CAND34_HISTORY_COUPLING_FILTER_REDUCTION",
-    "CAND34_LINEAR_AND_NONLINEAR_RESPONSE_REDUCTION",
-    "CAND34_FUTURE_ASSEMBLY_ROUTE_IRREDUCIBILITY",
-    "FUTURE_MECHANISM_SUCCESSOR_ADMISSION",
+    "CAND35_QUEUE_FREE_SUBTHRESHOLD_STATE_CAUSAL_PRIMING",
+    "CAND35_LOCAL_STATE_SUFFICIENCY_REDUCTION",
+    "CAND35_DYNAMIC_THRESHOLD_AND_ADAPTATION_REDUCTION",
+    "CAND35_RESERVOIR_FADING_STATE_NOVELTY_CEILING",
+    "FUTURE_SYSTEM_TO_MECHANISM_ADMISSION",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "LOCAL_SPIKE_RESPONSE_KERNEL_PLUS_REFRACTORY_HISTORY",
-    "POINT_PROCESS_HISTORY_COUPLING_FILTER",
-    "WEAK_PERTURBATION_SUSCEPTIBILITY_MODEL",
-    "FINITE_WEIGHT_NONLINEAR_THRESHOLD_RESPONSE_MODEL"
+    "ANALYTIC_FROZEN_LOCAL_STATE_PREDICTOR",
+    "TWO_VARIABLE_ADAPTIVE_INTEGRATE_AND_FIRE_OR_GENERALIZED_IF",
+    "LOCAL_STATE_SUFFICIENCY_TEST",
+    "MATCHED_LEAKY_OR_RESERVOIR_STATE_MODEL"
   ],
-  "novelty_or_reduction_impact": "D34_Q002_OBSERVABLES_ADMIT_A_CLOSE_ORDINARY_SPIKE_RESPONSE_KERNEL_AND_HISTORY_FILTER_REDUCTION. The frozen source-spike / edge-delay / destination-potential-and-spike fields align directly with established SRM and point-process history/coupling models. A delay-sensitive positive response therefore does not by itself establish an Assembly-specific route mechanism. No current R2 rewrite, raw-result interpretation, or mechanism uplift follows.",
+  "novelty_or_reduction_impact": "CAND35_QUEUE_FREE_PRIMING_IS_STRONGLY_SUBSUMED_BY_ORDINARY_LEAKY_ADAPTIVE_STATE_DYNAMICS. The active simulator already exposes deterministic 18 ms membrane and 90 ms adaptation traces, while established adaptive-neuron models and recent subthreshold reservoir hardware show the same general computational motif is ordinary. A positive response supports SYSTEM-level component causality, not novel persistent cognition by itself.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "fresh-successor-only SRM-style local kernel using source spike, edge weight/delay and destination post-spike/refractory state to predict the exact nominal/+1ms fields",
-    "privilege-matched point-process GLM/history-coupling filter for destination spikes and secondary Assembly spike export",
-    "weak-response susceptibility predictor where perturbation magnitude justifies it",
-    "finite-weight nonlinear threshold/SRM extension before treating linear-model failure as a mechanism residual",
-    "frozen out-of-fit validation and complexity/resource accounting for any future reduction comparison"
+    "analytic frozen-state predictor using potential, adaptation, base/dynamic threshold, refractory/time and exact 18/90 ms decay",
+    "privilege-matched two-variable adaptive integrate-and-fire/generalized-IF surrogate",
+    "state-sufficiency test in a fresh successor: after conditioning on frozen local state at the anchor, prime-history identity should add no predictive value under the ordinary reduction",
+    "matched leaky/reservoir state baseline for any future broader computational-memory claim",
+    "prospectively fixed out-of-fit validation across anchors/cues if a fresh successor is authorized"
   ],
   "questions_for_evidence_analyst": [
-    "After exact D34-Q002 raw preservation and disposition, keep any positive R2 interpretation below Assembly-specific mechanism unless a fresh successor prospectively survives the local SRM/history-filter reduction?",
-    "Treat a +1ms effect predicted by a translated PSP/refractory kernel as ordinary single-edge dynamics rather than native route irreducibility?",
-    "Keep all newly identified comparators outside the already-exposed/closed R2 object and require a fresh prospective contract if pursued?"
+    "Keep candidate #35 at SYSTEM ceiling if any response is quantitatively predicted by the frozen local-state/decay ledger?",
+    "Treat queue-empty persistence itself as ordinary fading/adaptive state rather than evidence for a broader recurrent or cognitive memory mechanism?",
+    "If a future successor is considered, require a prospectively frozen local-state sufficiency test before any mechanism-level uplift?"
   ],
   "questions_for_control_brain": [
-    "Add delay-sensitive-local-response-versus-Assembly-specific-mechanism with SRM/history-filter reduction as a prospective claim ceiling?",
-    "Preserve raw-before-interpretation as the immediate hard floor now that the one-shot workflow produced an artifact?",
-    "Prevent outcome-responsive comparator additions to R2 and reserve these reductions for a fresh successor after Analyst disposition?"
+    "Preserve current R2 non-result boundary and existing SYSTEM ceiling with no literature-driven retrofit?",
+    "Add queue-empty-does-not-mean-memory-state-absent and subthreshold-persistence-does-not-imply-novel-mechanism as claim-ceiling guardrails?",
+    "Require any future uplift to survive a privilege-matched local leaky/adaptive/reservoir reduction first?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
     "H7 PF-R1 no-rerun/no-rescore boundary and H7 R5 provenance hold",
-    "candidate #34 closed R2 scientific contract at 43d0f25541a3c447d4c7156303647ae94f3119f4",
-    "candidate #34 exact executor at 8ce961dc88fb52afa6399093fce1e3de7e982f2b",
-    "D34-Q002 must not be repeated and its raw artifact must not be interpreted before durable exact-byte preservation",
-    "no post-exposure comparator/metric/threshold/cue/intervention rewrite inside R2",
-    "candidate #35 remains SYSTEM-scoped",
+    "candidate #34 preserved one-shot D34-Q002 result and current-object terminal/no-rescue boundary",
+    "candidate #35 Discovery/R1 scientific contract and R96 R2 non-result binding surface",
+    "no candidate #35 response/PRE_FORMAL/FORMAL action under current authority",
+    "no outcome-responsive comparator/metric/cue/reset/threshold/success-criterion rewrite",
     "no one-way identity consumption, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
   ],
   "utility_request_created": null,
@@ -191,6 +185,6 @@
     "immutable_evidence_mutations": 0,
     "scheduler_definition_changes": 0,
     "utility_requests_created": 0,
-    "raw_result_artifacts_read_or_interpreted": 0
+    "scientific_result_artifacts_read_or_interpreted": 0
   }
 }
