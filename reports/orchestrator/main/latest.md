@@ -1,38 +1,48 @@
-# MAIN latest — R89 candidate #34 Architecture R1 completed
+# SparkBrain MAIN — Candidate #34 PRE_FORMAL R1
 
 - schema_version: `2`
-- generation_id: `MAIN-20260923T085900+0900-RELAY-CAND34-ARCHR1-R89-COMPLETED-9A4C2E71`
-- produced_at: `2026-09-23T08:59:00+09:00`
-- execution_mode: `RELAY`
-- status: `COMPLETED`
-- analyst: `EVA-20260923T080115+0900-R89-9A4C2E71@4ce972b38cf925ec5d447546339ead57830ada7c`
-- candidate: `CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY`
-- lane: `ARCHITECTURE_STUDY`
-- development_phase: `OPEN_DEVELOPMENT`
-- development_revision: `ARCHITECTURE-R1`
-- cycle: `1`
+- status: `WAITING_EXTERNAL`
+- canonical object: `CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY`
+- layer: `PRE_FORMAL`
+- claim ceiling: `MECHANISM`
+- development phase: `OPEN_DEVELOPMENT`
+- development revision: `PRE_FORMAL-R1_AUTHORIZED_BIND_UNCHANGED_ARCHITECTURE_R2`
+- cycle: `3` (R91 reassessment explicitly records concrete expected information gain)
+- Analyst authority: R91 `CONTINUE_TO_PREFORMAL`, development execution only; FORMAL STOP
 
-## Funnel preserved exactly
+## Exact canonical binding
 
-- claim_ceiling: `MECHANISM`
-- preformal_eligible: `true`
-- preformal_readiness: `NOT_READY`
-- hold_class: `null`
-- hold_reason: `null`
-- terminal_state: `ACTIVE`
-- queue_state: `ACTIVE`
-- system_priority_exception.used: `false`
+Architecture R2 remains unchanged at `research/main-cand34-assembly-route-architecture-r90-cycle2@a6455a3929b86ad25fd106ea93a03604192fc3be` with its previously green exact-head CI. MAIN created the fresh canonical PRE_FORMAL branch `research/main-cand34-assembly-route-preformal-r91-cycle3`, currently at `2f6e8dbaf88215cc18dd98782bec166fe3b7e7b5`.
 
-## Completion
+The fresh layer wrapper pins the R2 source head and R91 authority without enabling PRE_FORMAL inside the R2 contract itself. The R2 metric/response schema, +1ms intervention, edge/control family, assembly/unit and matched reductions, 64ms window, 256ms quiescence cap, execution ordering, resource bounds and interventional-equivalence rule are unchanged.
 
-R89 PRIMARY materialized the bounded candidate #34 route-architecture instrumentation and synthetic reachability tests. After the PRIMARY stopped mutating the same object, Relay reconciled the stale PRIMARY lease against the exact branch and workflows, then repaired only the two generic-CI lint findings at `4efa9a35057207b3785e460fef4d497f3ff334f9`: Ruff `I001` post-import spacing and `E501` line wrapping.
+## Work performed
 
-The formatting-only `SCIENCE_INVARIANT_REPAIR` produced exact head `research/main-cand34-assembly-route-architecture-r89-cycle1@de712b2c3bdbb29c719773c609e884ed9b10e40b`. Generic CI run `35799700625` completed `success` on that exact head.
+A single deterministic development evaluation checkpoint was selected prospectively before candidate response exposure. It is a controlled v0.5 checkpoint with two mature Assemblies and the same canonical small topology already used for R2 construction reachability. Exact target/collateral cue construction is now defined checkpoint-only: replay the bound prototype ordered units at their frozen relative-bin times, using each unit's checkpoint base threshold as arrival current. The surface/checkpoint/cue bytes feed the unchanged R2 target-blind execution-plan builder.
 
-No hypothesis, candidate-edge ranking, intervention, quiescence cap, response-signature semantics, threshold/tolerance, comparator, seed/exclusion policy, resource contract, falsifier, or success criterion changed. No FORMAL identity/STARTED/evaluation commitment/seed reveal/protected evaluation/result-bearing execution/official scoring/preserve/evidence action occurred. Consumed identities and all prior results remain unchanged. Scheduler state was not mutated.
+Added:
+- `src/sparkbrain/v05/route_preformal.py` — fresh PRE_FORMAL authority/input wrapper and exact non-result binding.
+- `tests/test_v05_route_preformal.py` — deterministic binding/no-response tests.
+- `scripts/cand34_preformal_r1_prebind.py` — materializes exact prebinding hashes/metadata without executing a candidate response.
+- `.github/workflows/cand34-preformal-r1-prebind.yml` — exact-head, non-result prebinding validation/artifact workflow.
 
-This closes the **MAIN Architecture R1 implementation/synthetic-reachability cycle only**. It does not promote PRE_FORMAL readiness and does not count as scientific evidence.
+No Forge branch/code was reused. The controlled topology is canonical R2 code provenance; prior Architecture observations receive no confirmatory credit.
 
-## Next MAIN action
+## External validation pending
 
-STOP for fresh Evidence Analyst review of exact head `de712b2c3bdbb29c719773c609e884ed9b10e40b`. Preserve `preformal_readiness=NOT_READY` and all Funnel fields unless a fresh Analyst generation explicitly changes them.
+At disposition, exact-head generic CI `35806212293` and dedicated non-result prebind `35806212439` are queued on the same head. No candidate response has been executed. No PRE_FORMAL development observation has therefore been produced yet.
+
+## Evidentiary status / hard floor
+
+- FORMAL evidence: `0`
+- PRE_FORMAL development evidence: `0`
+- MECHANISM Architecture observation this run: `0`
+- SYSTEM Architecture observation this run: `0`
+- meaningful candidate result exposed: `false`
+- new consumed FORMAL identity: `0`
+- FORMAL identity / STARTED / protected evaluation / official scoring / preserve-evidence mutation: none
+- prior results and immutable refs: unchanged
+
+## Stop / next action
+
+Stop reason: waiting only for exact-final-head generic CI and the non-result prebinding workflow. On continuation, re-fetch the current Analyst generation and exact branch head first. If both workflows are green, recover and durably bind the exact prebinding artifact/hashes without scientific redesign. Only after that prebinding is closed may MAIN consider the already-authorized bounded PRE_FORMAL development response execution. Any authority/head mismatch fails closed. FORMAL remains STOP.
