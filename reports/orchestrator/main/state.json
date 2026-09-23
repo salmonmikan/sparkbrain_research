@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T205600+0900-PRIMARY-H7-FORMAL-R5-R98-WAITING-READINESS",
+  "generation_id": "MAIN-20260923T205800+0900-PRIMARY-H7-FORMAL-R5-R98-BLOCKED-SIDECAR",
   "producer_run_id": "sparkbrain-main-primary-20260923T204430JST-R98-h7-formal-r5-oneway",
-  "generated_at": "2026-09-23T20:56:00+09:00",
-  "status": "WAITING_EXTERNAL",
+  "generated_at": "2026-09-23T20:58:00+09:00",
+  "status": "BLOCKED",
   "execution_mode": "PRIMARY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "research_layer": "FORMAL",
@@ -13,14 +13,14 @@
   "cycle_count": 12,
   "cycle_reassessment": {
     "required": true,
-    "expected_information_gain": "A single fresh untouched R5 FORMAL identity remains prospectively informative because the locked one-way evaluation can discriminate the admitted H7 mechanism claim without reusing any prior formal identity. This run performs only non-result readiness validation before any identity materialization."
+    "expected_information_gain": "A single fresh untouched R5 FORMAL identity remains prospectively informative because the locked one-way evaluation can discriminate the admitted H7 mechanism claim without reusing any prior formal identity. No identity was consumed because a required pre-start protected-sidecar capability gate failed."
   },
   "analyst_authority": {
     "generation_id": "EVA-20260923T200231+0900-R98-2B6F91C4",
     "commit": "df2e59996409211a2b104918e01a7f61d0eb3c80",
     "decision": "GO_PROSPECTIVELY_EXACTLY_ONCE_UNDER_UNCHANGED_R5",
     "formal_authority": "GO_H7_FORMAL_ONEWAY_EXACTLY_ONE_FRESH_UNTOUCHED_IDENTITY_UNCHANGED_R5_PRESERVE_RAW_BEFORE_SCORE_AND_READ_STOP_ON_ANY_PRESTART_IDENTITY_BINDING_MISMATCH",
-    "freshness_rechecked_immediately_before_persistence": true
+    "freshness_rechecked_immediately_before_block": true
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -38,11 +38,11 @@
   "work_performed": [
     {
       "classification": "SCIENCE_INVARIANT_REPAIR",
-      "change": "Enabled the H7 R5 NON_RESULT readiness workflow to execute on its canonical controller branch; no scientific source, hypothesis, metric, comparator, threshold, tolerance, intervention, resource contract, or decision rule changed."
+      "change": "Enabled the H7 R5 NON_RESULT readiness workflow to execute on its canonical controller branch; no scientific source or scientific contract field changed."
     },
     {
       "classification": "SCIENCE_INVARIANT_REPAIR",
-      "change": "After the first NON_RESULT readiness attempt failed at the exact R5 preidentity-validation step, repaired controller-only workspace-path plumbing for the nested exact-source checkout. The scientific source head and bound component blobs remain unchanged."
+      "change": "Repaired controller-only nested-checkout workspace-path plumbing after the first NON_RESULT readiness attempt failed at preidentity validation; the exact scientific source and bound component blobs stayed unchanged."
     }
   ],
   "workflows": {
@@ -54,21 +54,35 @@
       "failure_step": "Re-run exact NON_RESULT R5 preidentity validation",
       "result_bearing": false
     },
-    "current_readiness": {
+    "repaired_readiness": {
       "run_id": 35857110884,
       "head": "f21dc7521af7413adcc46a2561271e0b8852f371",
-      "status": "in_progress",
-      "conclusion": null,
-      "last_observed_step": "Re-run exact NON_RESULT R5 preidentity validation",
+      "status": "completed",
+      "conclusion": "failure",
+      "passed_steps": [
+        "Re-fetch exact authority and fail closed on supersession",
+        "Assert fresh H7 one-way namespaces remain untouched",
+        "Validate exact R5 contract and fixed scientific blobs",
+        "Recreate locked scientific runtime",
+        "Re-run exact NON_RESULT R5 preidentity validation"
+      ],
+      "failure_step": "Assert protected sidecar handoff capability exists without exposing it",
       "result_bearing": false
     },
-    "current_generic_ci": {
+    "generic_ci": {
       "run_id": 35857110749,
       "head": "f21dc7521af7413adcc46a2561271e0b8852f371",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "result_bearing": false
     }
+  },
+  "blocker": {
+    "class": "PRESTART_PROTECTED_SIDECAR_CAPABILITY_UNAVAILABLE_OR_INVALID",
+    "required_capability": "Repository Actions secret H7_R5_SIDECAR_PASSPHRASE must be present and at least 32 characters, while remaining concealed from MAIN/scientific code.",
+    "worker_can_repair": false,
+    "reason_worker_cannot_repair": "The connected GitHub capability does not expose repository Actions secret read/write APIs, and synthesizing or bypassing the protected handoff would violate the prospective R5 one-way contract.",
+    "identity_consumed": false
   },
   "observations": {
     "scientific_result": null,
@@ -105,20 +119,22 @@
     "relay_latest": null,
     "fast_forge_latest_generation": "FORGE-20260923T193417+0900-NOOP-H7-PREFETCH-R97",
     "fast_forge_h7_collision": false,
+    "forge_code_or_observation_reused": false,
     "utility_scientific_authority": "NONE",
     "utility_dependency": false,
     "main_lease_owned": true
   },
   "integrity": {
-    "analyst_generation_rechecked": true,
-    "stable_main_rechecked": true,
+    "analyst_generation_rechecked_after_workflow_failure": true,
     "scientific_source_head_rechecked": true,
-    "controller_head_rechecked": true,
     "one_way_namespace_collision_rechecked": true,
-    "exact_r5_contract_and_scientific_blob_checks_passed_in_readiness_workflow_before_preflight": true,
+    "exact_r5_contract_and_scientific_blob_checks_passed": true,
+    "exact_nonresult_preidentity_validation_passed_on_repaired_head": true,
+    "generic_ci_passed": true,
+    "protected_sidecar_capability_gate_passed": false,
     "forge_boundary_respected": true,
     "formal_floor_respected": true
   },
-  "stop_reason": "WAITING_ONLY_FOR_NON_RESULT_READINESS_AND_GENERIC_CI_ON_THE_REPAIRED_EXACT_CONTROLLER_HEAD; NO_IDENTITY_OR_RESULT_BEARING_ACTION_MAY_START_UNTIL_BOTH_ARE_GREEN_AND_AUTHORITY_REFS_ARE_RECHECKED",
-  "next_action": "Re-fetch Evidence Analyst generation, exact H7 source/controller heads, immutable/evidence/control/preserve/formal/sealed/freeze refs, and workflow conclusions. If and only if the repaired NON_RESULT readiness gate is green on the exact head and authority remains unchanged, proceed to the prospectively authorized exactly-once fresh H7 R5 FORMAL identity materialization/start path with no-clobber and preserve-raw-before-read/score. Otherwise fail closed and reconcile without consuming an identity."
+  "stop_reason": "FAIL_CLOSED_PRESTART: REPAIRED NON_RESULT READINESS AND GENERIC CI PASSED THROUGH EXACT R5 PREIDENTITY VALIDATION, BUT THE REQUIRED CONCEALED H7_R5_SIDECAR_PASSPHRASE CAPABILITY GATE FAILED. NO FORMAL IDENTITY OR STARTED MARKER WAS CREATED.",
+  "next_action": "Provision or correct the concealed repository Actions secret H7_R5_SIDECAR_PASSPHRASE to satisfy the existing >=32-character capability gate without exposing its value. Then re-enable MAIN orchestration, re-fetch fresh Analyst authority and all H7 protected namespaces, and rerun only the NON_RESULT readiness gate. Proceed to exactly one fresh R5 FORMAL identity only if every pre-start gate is green and unchanged."
 }
