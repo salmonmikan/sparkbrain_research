@@ -1,25 +1,11 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260923T135000+0900-G12-3A7C91E5",
-  "produced_at": "2026-09-23T13:50:00+09:00",
-  "producer_run_id": "repository-steward-auto-20260923T135000+0900-G12-3A7C91E5",
+  "generation_id": "STEWARD-20260923T195000+0900-G13-B7D42E19",
+  "produced_at": "2026-09-23T19:50:00+09:00",
+  "producer_run_id": "repository-steward-auto-20260923T195000+0900-G13-B7D42E19",
   "authority_scope": "REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY",
-  "supersedes_generation_id": "STEWARD-20260923T075000+0900-G11-6F3A9C21",
+  "supersedes_generation_id": "STEWARD-20260923T135000+0900-G12-3A7C91E5",
   "repository": "salmonmikan/sparkbrain_research",
-  "input_generations": {
-    "control": "CTRL-20260923T125800+0900-R42-7C9E41B2",
-    "control_ref": "7035ace9b0ef980602dcb124e8974be5640d7377",
-    "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4",
-    "evidence_analyst_ref": "a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "main": "MAIN-20260923T131224+0900-PRIMARY-CAND34-PREFORMALR2-R92-REVALIDATED-WAITING-ANALYST",
-    "main_mailbox_ref": "8f446170ba98142c13025067192fe0ebd4bc7172",
-    "fast_forge": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS",
-    "fast_forge_branch": "forge/20260923-receptor-suppression-probes-a",
-    "fast_forge_head": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
-    "utility": "UTILITY-20260923T132300+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-5C91A2E7",
-    "utility_ref": "5d928c9e4b838a4a4560ae27a5d3097bbeff23bd",
-    "previous_steward": "STEWARD-20260923T075000+0900-G11-6F3A9C21"
-  },
   "mailbox_semantics": {
     "ops_branches_are_scientific_source_of_truth": false,
     "ops_branches_used_as_governance_context_only": true,
@@ -27,9 +13,21 @@
   },
   "authoritative_refs": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_protected_branch_summary": false,
-    "branch_protection_detail_visibility": "UNAVAILABLE_TO_INSTALLED_INTEGRATION_403",
-    "repository_ruleset_count": 0,
+    "main_changed_since_g12": false,
+    "main_protected_branch_summary": true,
+    "repository_ruleset_count": 1,
+    "active_main_ruleset": {
+      "name": "protection_main",
+      "target": "branch",
+      "enforcement": "active",
+      "scope": "~DEFAULT_BRANCH",
+      "rules": ["deletion", "non_fast_forward", "pull_request", "required_linear_history"],
+      "allowed_merge_methods": ["squash"],
+      "bypass_actors": [],
+      "current_user_can_bypass": "never",
+      "created_at": "2026-09-23T14:34:28.710+09:00"
+    },
+    "authoritative_tag_namespace_protection": "NOT_OBSERVED_CURRENT_RULESET_TARGETS_BRANCH_ONLY",
     "authoritative_evidence_tag_count": 5,
     "evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
@@ -38,126 +36,40 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
-    "legacy_freeze_branch_count": 13,
-    "legacy_freeze_map_status": "EXACT_SHA_INVENTORY_REVERIFIED_NO_CHANGE",
-    "freeze_tag_count": 0,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "preserve_branch_count": 24,
-    "verified_raw_preserve_refs": {
-      "h5": "ce5797eb584344db7a512e585506fb6c59ea475b",
-      "ni01": "8a39cf70e397bb7588f948910f01ec58672ac814",
-      "c19_v4": "d8fcc5216ff24940836972816cb0ec8f11e4ba06",
-      "c19_r2": "3628694294a6eb33b18a0b42a56bb5ad77fe7b94",
-      "pd01": "65ae7a50ee2279ab5edc3ca43ea3bf69daecb881"
-    },
-    "immutable_ref_incident": false,
-    "preserve_index_incident": false
+    "evidence_tag_objects_changed_since_g12": false,
+    "immutable_ref_incident": false
+  },
+  "protection_audit": {
+    "main_branch_gap_from_g12": "RESOLVED_BY_ACTIVE_RULESET",
+    "issue_139_state": "OPEN",
+    "issue_139_scope": "AUTHORITATIVE_TAG_NAMESPACES",
+    "issue_139_substantive_status": "STILL_VALID_TAG_RULESET_NOT_OBSERVED",
+    "issue_139_body_freshness": "PARTIALLY_STALE_ZERO_RULESETS_STATEMENT",
+    "steward_mutated_protection": false
   },
   "separation_audit": {
-    "classification": "COMPLIANT_MAIN_RESEARCH_FORGE_EVIDENCE_SEPARATION",
-    "h7": {
-      "branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-      "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-      "compare_to_main": {
-        "ahead_by": 57,
-        "behind_by": 0
-      },
-      "classification": "ACTIVE_INCOMPLETE_RESEARCH_ISOLATED_FROM_MAIN",
-      "formal_authority_granted_by_steward": false,
-      "main_promotion_candidate": false
-    },
-    "candidate34": {
-      "branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-      "head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
-      "compare_to_main": {
-        "ahead_by": 15,
-        "behind_by": 0
-      },
-      "g11_visibility_gap": "RESOLVED",
-      "classification": "DIRECT_NON_OPS_RESEARCH_REF_VISIBLE_ACTIVE_DEVELOPMENT_NOT_STABLE_SUBSTRATE",
-      "interpretation_boundary": "DOES_NOT_ALTER_ANALYST_LIFECYCLE_OR_READINESS_AUTHORITY",
-      "main_promotion_candidate": false
-    },
-    "fast_forge": {
-      "branch": "forge/20260923-receptor-suppression-probes-a",
-      "head": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
-      "compare_to_main": {
-        "ahead_by": 2,
-        "behind_by": 0
-      },
-      "changed_files_vs_main": [
-        "tests/test_forge_fast_probes.py"
-      ],
-      "classification": "COMPLIANT_MUTABLE_NONCANONICAL_FORGE_ISOLATION",
-      "scientific_authority": "NONE",
-      "evidence_or_stable_substrate": false,
-      "main_promotion_candidate": false
-    },
-    "candidate35": {
-      "dedicated_non_ops_research_branch_found": false,
-      "classification": "MAILBOX_CONTEXT_WITHOUT_DIRECT_RESEARCH_REF_YET",
-      "interpretation_boundary": "DOES_NOT_REVERSE_OR_REINTERPRET_ANALYST_LIFECYCLE_DECISION",
-      "main_promotion_candidate": false
-    }
-  },
-  "canonical_docs_and_issues": {
-    "authoritative_tags_doc": "docs/AUTHORITATIVE_TAGS.md",
-    "authoritative_tags_doc_alignment": "ALIGNED_WITH_LIVE_REF_AND_PROTECTION_STATE",
-    "issue_139": "OPEN_ALIGNED_WITH_ZERO_RULESET_PROTECTION_GAP",
-    "issues_are_canonical_science": false,
-    "pr_148": "OPEN_UNMERGED",
-    "pr_149": "OPEN_UNMERGED"
-  },
-  "reader_version_audit": {
-    "stable_main_changed_since_g11": false,
-    "classification": "PRIOR_READER_NAVIGATION_DRIFT_DISPOSITION_UNCHANGED",
-    "safe_main_promotion_candidate": "DOCUMENTATION_ONLY_READER_NAVIGATION_REFRESH_README_START_HERE",
-    "forbidden_as_isolated_fix": [
-      "pyproject.toml version bump",
-      "RELEASE_METADATA.json version bump",
-      "scientific claim change",
-      "scientific lifecycle change"
-    ]
-  },
-  "equivalence_verifier_review": {
-    "branch": "utility/equivalence-certificate-v0-1-A42D7C19",
-    "head": "9f9d18065b481d8597236b0b682f0574c251b319",
-    "head_changed_since_g11": false,
-    "classification": "DEFER_MAIN_PROMOTION_PENDING_TRUST_BOUNDARY_CLARIFICATION",
-    "governance_reason": "UNCHANGED_BRANCH_HAS_NOT_RESOLVED_DECLARED_DIGEST_VS_AUTHENTICATED_SCIENTIFIC_EQUIVALENCE_BOUNDARY"
+    "classification": "COMPLIANT_MAIN_RESEARCH_FORGE_EVIDENCE_SEPARATION_NO_NEW_STABLE_SUBSTRATE",
+    "forge_policy": "MUTABLE_NONCANONICAL_EXPLORATORY_HISTORY_ONLY",
+    "scientific_authority_granted_by_steward": false
   },
   "main_promotion_review": {
     "scientific_candidates": [],
     "governance_or_tooling_candidates": [
-      {
-        "candidate": "READER_NAVIGATION_DOC_REFRESH",
-        "status": "ELIGIBLE_FOR_NORMAL_REVIEWED_INTEGRATION",
-        "scope": [
-          "README.md",
-          "docs/START_HERE.md"
-        ]
-      },
-      {
-        "candidate": "GENERIC_EQUIVALENCE_CERTIFICATE_VERIFIER",
-        "status": "DEFER_PENDING_TRUST_BOUNDARY_CLARIFICATION",
-        "branch": "utility/equivalence-certificate-v0-1-A42D7C19"
-      }
+      {"candidate": "READER_NAVIGATION_DOC_REFRESH", "status": "ELIGIBLE_FOR_NORMAL_REVIEWED_INTEGRATION"},
+      {"candidate": "GENERIC_EQUIVALENCE_CERTIFICATE_VERIFIER", "status": "DEFER_PENDING_TRUST_BOUNDARY_CLARIFICATION"}
     ],
     "promotions_performed": 0
   },
   "mutations": {
     "experiments_executed": 0,
-    "scientific_workflows_dispatched": 0,
     "identities_consumed": 0,
     "outcomes_reinterpreted": 0,
     "scientific_lifecycle_changes": 0,
-    "scientific_freeze_decisions": 0,
     "research_prs_merged": 0,
     "scheduler_definitions_modified": 0,
     "ruleset_or_protection_mutations": 0,
     "issues_or_prs_mutated": 0,
-    "workflows_or_main_mutated": 0,
+    "main_or_workflows_mutated": 0,
     "research_refs_modified": 0,
     "forge_refs_modified": 0,
     "evidence_or_preserve_refs_modified": 0,
@@ -165,21 +77,16 @@
     "main_promotions_performed": 0
   },
   "persistence": {
-    "history_path": "reports/repository_steward/history/2026-09-23/1350.md",
-    "history_commit": "c3a825cf5fa760a388ec6d7cee8462ad933a1f19",
+    "history_path": "reports/repository_steward/history/2026-09-23/1950.md",
     "latest_path": "reports/repository_steward/latest.md",
-    "latest_commit": "2c983ed27f5bcd8b3bc19bf98bbe4d86705dd406",
     "state_path": "reports/repository_steward/state.json",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
   },
   "next_priorities": [
-    "Keep authoritative main/evidence/freeze/preserve refs unchanged and re-fetch independently on each Steward generation.",
-    "Keep Issue #139 open while repository rulesets remain absent; Steward remains read-only for ruleset/protection administration.",
-    "Treat candidate #34 as a visible but active research surface only; do not promote it to main while scientific development is active/incomplete.",
-    "Treat forge/* as mutable noncanonical exploratory history and monitor that no Forge ref becomes evidence/stable substrate or is merged as scientific authority.",
-    "Observe candidate #35 for future non-ops research materialization without creating or promoting such a ref from Steward authority.",
-    "Retain the documentation-only README/START_HERE navigation refresh as a bounded reviewed candidate without isolated package/release version changes.",
-    "Do not promote the generic equivalence verifier until its trust boundary and naming are explicit.",
-    "Keep PR #148 and PR #149 unmerged unless ordinary review resolves their outstanding concerns."
+    "Re-fetch main protection and authoritative tag refs independently each Steward generation.",
+    "Keep Issue #139 open until tag-target protection for freeze/sealed/formal/evidence namespaces is installed and verified; note its zero-ruleset prose is stale.",
+    "Treat forge/* only as mutable noncanonical exploratory history.",
+    "Do not promote scientific research surfaces to main from Steward authority.",
+    "Do not promote the generic equivalence verifier until its trust boundary is explicit."
   ]
 }
