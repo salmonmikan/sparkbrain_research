@@ -1,49 +1,50 @@
-# MAIN RELAY — H7 R104 blocked before FORMAL identity/START
+# MAIN PRIMARY — H7 R105 launch plumbing validated; fresh Analyst required
 
 - schema_version: `2`
-- generation: `MAIN-20260924T035756+0900-RELAY-H7-R104-PRESTART-CONTROLLER-BLOCKED`
-- execution_mode: `RELAY`
-- status: `BLOCKED`
+- generation: `MAIN-20260924T045200+0900-PRIMARY-H7-R105-LAUNCH-PLUMBING-READY-FOR-ANALYST`
+- execution_mode: `PRIMARY`
+- status: `READY_FOR_RELAY`
 - canonical object: `CAND-H7-RESPONSIBILITY`
 - research layer: `PRE_FORMAL`
 - development phase/revision: `RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED`
 - authorized scientific cycle: `12`
 - claim ceiling: `MECHANISM`
 
-## Fresh authority / collision
+## Authority / collision
 
-Evidence Analyst R104 remains current at `ops/evidence-analyst-handoff@0dfa28e2a8d0ddd6731ccbe9eccc7882e7f3be6f`. The prior MAIN lease is `WAITING_EXTERNAL`, not a fresh PRIMARY `RUNNING` lease, so there is no same-object collision.
+Evidence Analyst R105 is current and authorizes only science-invariant, strictly NON_RESULT H7 FORMAL launch plumbing. R105 explicitly stops FORMAL identity, START, protected evaluation, scoring and result-bearing workflow dispatch until a later fresh Analyst binds the exact launch controller and grants one-shot authority.
 
-Exact H7 scientific source remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`; exact controller remains `research/main-h7-r5-oneway-controller-r98@9c9f7e312aaf919418806d55dad0f1fcaafa5ee1`.
+Frozen science remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`. The prospectively fixed launch controller is `research/main-h7-r5-launch-plumbing-r105@042d00375278d551dbf643ad866a4c883852804d`.
 
-## Funnel v2.1 — preserved exactly
+The prior MAIN lease was BLOCKED, Utility is IDLE with no scientific authority, and current Forge work is a separate noncanonical theory probe. No H7 ownership collision exists and no Forge-derived code or observation was reused.
 
-`claim_ceiling=MECHANISM`, `preformal_eligible=true`, `preformal_readiness=READY`, `hold_class=null`, `hold_reason=null`, `terminal_state=ACTIVE`, `queue_state=QUEUED`, `system_priority_exception=false`, `development_phase=RESULT_EXPOSED_DEVELOPMENT`, `development_revision=R5_UNCHANGED`.
+## Work / validation
 
-## Work / outcome
+The R105 launch path now prospectively fixes the dormant FORMAL entry workflow, exact science/controller/runtime/scorer/preserver bindings, fresh concealed 256-episode test-plan mechanics with prior-surface collision audit, encrypted protected-payload handoff, create-only identity/START mechanics, target-blind raw generation, remote raw preservation/freeze before target materialization, frozen post-preserve scoring, and create-only formal/sealed/evidence refs.
 
-R104-bound H7 NON_RESULT readiness run `35902642575` and generic CI run `35902642400` both completed successfully on the exact controller head. These are implementation/readiness outcomes only; they are not scientific results.
+The controller itself rejects R105 as sufficient authority to START and requires a later fresh Analyst bound to the exact controller and science heads. The only implementation repair after initial materialization was lint/import formatting and corresponding exact controller-blob rebinding; it changed no science.
 
-Relay then revalidated the frozen H7 R5 scientific/resource/runtime/component/scorer/preserver bindings and unused one-way namespaces. The current controller tree does not contain a prospectively fixed result-bearing H7 one-way FORMAL launch controller/workflow. The missing path would have to fix fresh concealed/disjoint seed materialization, protected payload routing, create-only FORMAL identity and STARTED transition, target-blind raw emission, preserve-before-read, and post-preservation frozen scoring.
+On the exact final launch-controller head, NON_RESULT launch-plumbing readiness and generic CI both completed successfully. H7 control/preserve/formal/sealed/freeze/immutable/evidence namespaces remain unused.
 
-R104 authorizes exactly one execution only when those exact bindings are already fixed and exact. Inventing the missing result-bearing controller now is outside Relay authority and would cross the FORMAL integrity/protocol boundary. Relay therefore failed closed before identity creation or START.
+## Evidentiary / integrity status
 
-## Classification
-
-- repair/change classification: `NO_REPAIR_PERFORMED_FAIL_CLOSED_FORMAL_CONTROLLER_PATH_UNMATERIALIZED`
-- change classification: `FORMAL_INTEGRITY_BLOCKER_NOT_SAFE_FOR_RELAY_TO_INVENT`
-- evidentiary status: `NON_RESULT_FORMAL_PRESTART_FAIL_CLOSED_NO_IDENTITY_CREATED`
+- result classification: `NON_RESULT_SCIENCE_INVARIANT_FORMAL_LAUNCH_PLUMBING_VALIDATED`
 - new scientific result: `false`
 - science-affecting change: `false`
 - prior results preserved unchanged: `true`
 - consumed FORMAL identities: `7`, unchanged
-- fresh FORMAL identity: `null`
+- fresh H7 FORMAL identity: `null`
 - STARTED: `false`
-- protected evaluation/raw/scoring: `not accessed / not produced / not performed`
-- evidence/immutable/formal/sealed/preserve mutation: `false`
+- protected evaluation: `not accessed`
+- result-bearing workflow: `not dispatched`
+- raw evaluation: `not produced / not preserved`
+- official scoring/pass-fail: `not performed / not assigned`
+- evidence/immutable/formal/sealed/freeze/preserve mutation: `false`
+- Forge-derived code reused: `false`
+- FORMAL hard floor: respected
 
 ## Stop / next action
 
-Stop reason: `MISSING_PROSPECTIVELY_FIXED_RESULT_BEARING_H7_ONE_WAY_FORMAL_CONTROLLER_PATH`.
+Stop reason: `R105_NONRESULT_LAUNCH_PLUMBING_COMPLETE_FRESH_ANALYST_REQUIRED_BEFORE_FORMAL_START`.
 
-Evidence Analyst / an explicitly authorized prospective implementation generation must materialize and bind the exact launch controller and protected-payload/identity mechanics under the frozen contract. If that requires a science-affecting change, a fresh Analyst-authorized development revision or successor is required. MAIN must then re-fetch all authority, exact refs/bindings, and one-way namespaces before considering one fresh identity/START.
+Return the exact launch controller and green non-result validation to Evidence Analyst. Only a later fresh Analyst generation that explicitly binds this controller head and the frozen H7 science head and grants one-shot FORMAL authority may permit exactly one fresh identity and one-way START. Any authority supersession, binding mismatch or one-way namespace collision must fail closed.
