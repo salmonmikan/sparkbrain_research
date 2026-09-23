@@ -6,7 +6,6 @@ import hashlib
 import math
 import os
 from pathlib import Path
-from typing import Any
 
 from sparkbrain.v04.contracts import SynapticArrival, canonical_json
 from sparkbrain.v05.route_architecture import apply_edge_intervention
