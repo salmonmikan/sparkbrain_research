@@ -1,17 +1,19 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T184000+0900-PRIMARY-CAND35-ARCHR2-R96-WAITING-CI",
-  "run_id": "sparkbrain-main-primary-20260923T181700JST-R96-cand35-archr2",
-  "producer_run_id": "sparkbrain-main-primary-20260923T181700JST-R96-cand35-archr2",
-  "produced_at": "2026-09-23T18:40:00+09:00",
+  "generation_id": "MAIN-20260923T184514+0900-PRIMARY-CAND35-ARCHR2-R96-COMPLETED",
+  "run_id": "sparkbrain-main-primary-20260923T184514JST-R96-cand35-archr2-closeout",
+  "producer_run_id": "sparkbrain-main-primary-20260923T184514JST-R96-cand35-archr2-closeout",
+  "produced_at": "2026-09-23T18:45:14+09:00",
   "authority_scope": "PRIMARY_R96_CAND35_ARCHITECTURE_R2_EXACT_CANDIDATE_SURFACE_AND_EXECUTOR_BINDING_NONRESULT_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T175300+0900-RELAY-CAND35-ARCHR1-R95-COMPLETED",
+  "supersedes_generation_id": "MAIN-20260923T184000+0900-PRIMARY-CAND35-ARCHR2-R96-WAITING-CI",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T180248+0900-R96-3F7C92A1@df97c2c8830c7d50d23d13c43091866ad5d23c77",
-    "main_previous": "MAIN-20260923T175300+0900-RELAY-CAND35-ARCHR1-R95-COMPLETED"
+    "main_previous": "MAIN-20260923T184000+0900-PRIMARY-CAND35-ARCHR2-R96-WAITING-CI",
+    "fast_forge_latest": "FORGE-20260923T183716+0900-NOOP-CAND35-R2-SHADOW-R96",
+    "utility_collision_ref": "ops/utility-orchestrator-requests@829e860d191d78970c978d194816d54fa574d7af"
   },
   "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
+  "status": "COMPLETED",
   "analyst_generation_id": "EVA-20260923T180248+0900-R96-3F7C92A1",
   "analyst_commit": "df97c2c8830c7d50d23d13c43091866ad5d23c77",
   "research_layer": "ARCHITECTURE_STUDY",
@@ -22,7 +24,7 @@
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "NONTERMINAL",
-  "queue_state": "MAIN_ARCHITECTURE_R2_NONRESULT_EXACT_BINDING_WAITING_EXACT_HEAD_CI",
+  "queue_state": "RETURN_TO_EVIDENCE_ANALYST_AFTER_ARCHITECTURE_R2_NONRESULT_READINESS_COMPLETE",
   "system_priority_exception": {
     "used": true,
     "kind": "NO_COHERENT_MECHANISM_TARGET",
@@ -34,7 +36,8 @@
   "cycle_reassessment": {
     "required": true,
     "decision": "REASSESS_CONTINUE_NONRESULT_ONLY",
-    "expected_information_gain": "Prospectively binding the frozen Discovery R1 contract to exact candidate-specific runner, component, source and serialization surfaces removes later worker-side scientific choice before any candidate response."
+    "expected_information_gain": "Prospectively binding the frozen Discovery R1 contract to exact candidate-specific runner, component, source and serialization surfaces removes later worker-side scientific choice before any candidate response.",
+    "information_gain_realized": "The exact candidate-specific surface and NON_RESULT preflight are now bound on a green exact-head CI; no candidate response was executed."
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -45,7 +48,7 @@
     "candidate_surface": "src/sparkbrain/v05/candidate35_architecture.py",
     "nonresult_test_path": "tests/test_v05_candidate35_architecture_r2.py",
     "forge_collision_ref": "forge/20260923-receptor-suppression-probes-a@c366c4054d2834003fcca20d49b8fc9ad4203edc",
-    "utility_collision_ref": "ops/utility-orchestrator-requests@b2f1462aeb95707747f8b273c1b9a6ec678996bd"
+    "utility_collision_ref": "ops/utility-orchestrator-requests@829e860d191d78970c978d194816d54fa574d7af"
   },
   "workflow_observation": {
     "failed_pre_repair_ci_run_id": 35843712294,
@@ -53,14 +56,14 @@
     "failed_pre_repair_ci_conclusion": "failure",
     "failed_pre_repair_classification": "SCIENCE_INVARIANT_REPAIR_IMPORT_ORDER_ONLY_RUFF_I001",
     "failed_pre_repair_result_bearing": false,
-    "active_exact_head_ci_run_id": 35844155004,
-    "active_exact_head_ci_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
-    "active_exact_head_ci_status": "in_progress",
-    "active_exact_head_ci_conclusion": null,
-    "active_exact_head_ci_result_bearing": false
+    "exact_head_ci_run_id": 35844155004,
+    "exact_head_ci_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
+    "exact_head_ci_status": "completed",
+    "exact_head_ci_conclusion": "success",
+    "exact_head_ci_result_bearing": false
   },
   "work_performed": {
-    "classification": "ARCHITECTURE_R2_PROSPECTIVE_NONRESULT_EXACT_BINDING_PLUS_SCIENCE_INVARIANT_IMPORT_ORDER_REPAIR",
+    "classification": "ARCHITECTURE_R2_PROSPECTIVE_NONRESULT_EXACT_BINDING_PLUS_SCIENCE_INVARIANT_IMPORT_ORDER_REPAIR_AND_GREEN_CI_CLOSEOUT",
     "scientific_contract_changed": false,
     "science_affecting_change": false,
     "candidate_specific_contract_bound": true,
@@ -83,7 +86,7 @@
   },
   "observations_evidentiary_status": {
     "new_scientific_result_this_run": false,
-    "result_class": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_IMPLEMENTATION_AND_BINDING_ONLY",
+    "result_class": "SYSTEM_ARCHITECTURE_NON_EVIDENTIARY_IMPLEMENTATION_BINDING_AND_READINESS_ONLY",
     "candidate_response_observation_count": 0,
     "formal_evidence": 0,
     "preformal_development_evidence": 0,
@@ -107,7 +110,8 @@
     "forge_same_object_collision": false,
     "forge_code_or_observation_reused": false,
     "utility_dependency": false,
-    "open_pr_same_object_collision": false
+    "open_pr_same_object_collision": false,
+    "utility_material_delta_seen": "PF-R1 preservation assignment state closed after R96; unrelated to candidate #35 R2 and not used as authority."
   },
   "hard_floor": {
     "formal_identity_created_or_consumed": false,
@@ -124,11 +128,12 @@
   },
   "integrity": {
     "analyst_generation_rechecked_before_acquisition": true,
-    "analyst_generation_rechecked_before_research_mutations": true,
-    "analyst_generation_rechecked_before_persistence": true,
+    "analyst_generation_rechecked_before_completion_persistence": true,
     "main_ref_rechecked": true,
-    "active_research_head_rechecked_before_persistence": true,
-    "freeze_preserve_control_refs_independently_refetched": true,
+    "active_research_head_rechecked_before_completion_persistence": true,
+    "freeze_sealed_formal_evidence_refs_independently_refetched": true,
+    "preserve_refs_independently_refetched": true,
+    "research_and_forge_refs_refetched": true,
     "open_prs_refetched": true,
     "workflow_exact_head_bound": true,
     "forge_boundary_respected": true,
@@ -143,10 +148,10 @@
     "candidate_35_identity_created_or_consumed": false
   },
   "remaining_blockers": [
-    "Exact-head generic CI 35844155004 is still in progress on 8ea6581544c642ad74f1a95955ab2c5f795afccc.",
-    "Candidate #35 response-bearing execution remains STOP under R96 even if CI becomes green; fresh Analyst authority is required before any candidate response."
+    "Candidate #35 response-bearing execution remains STOP under R96. A fresh Evidence Analyst generation is required before any candidate response or next canonical layer/action.",
+    "Same-object SYSTEM-to-MECHANISM uplift remains forbidden."
   ],
-  "stop_reason": "WAITING_EXTERNAL_EXACT_HEAD_CI_AFTER_SCIENCE_INVARIANT_IMPORT_ORDER_REPAIR",
-  "next_action": "Re-fetch Evidence Analyst R96-or-successor, exact branch head and CI 35844155004. If CI is green and authority is materially unchanged, close Architecture R2 NON_RESULT readiness and return to Evidence Analyst. If CI fails, apply only a clearly SCIENCE_INVARIANT repair; if scientific meaning would need to change, fail closed for Analyst reassessment. Never execute candidate #35 response under R96.",
+  "stop_reason": "ARCHITECTURE_R2_NONRESULT_IMPLEMENTATION_AND_EXACT_HEAD_CI_COMPLETE_RETURN_TO_EVIDENCE_ANALYST",
+  "next_action": "Return candidate #35 Architecture R2 NON_RESULT readiness to Evidence Analyst. Do not execute a candidate response, PRE_FORMAL action, FORMAL action, or SYSTEM-to-MECHANISM uplift unless a later fresh Analyst generation explicitly authorizes it.",
   "owner": "main"
 }
