@@ -1,33 +1,30 @@
 from __future__ import annotations
 
-from sparkbrain.v04.contracts import SignalPulse
-from sparkbrain.v04.field import ExcitableFieldConfig, TemporalExcitableField
-from sparkbrain.v04.topology import Connection, explicit_topology, UnitState
-
+from sparkbrain.v04 import contracts, field, topology
 
 WEIGHT = 1.20
 DELAY_MS = 4.0
 END_MS = 80.0
 
 
-def _field(*, close_recurrent_loop: bool) -> TemporalExcitableField:
+def _field(*, close_recurrent_loop: bool) -> field.TemporalExcitableField:
     units = (
-        UnitState(0, 0.0, 0.0, base_threshold=0.52),
-        UnitState(1, 1.0, 0.0, base_threshold=0.80),
-        UnitState(2, 2.0, 0.0, base_threshold=0.80),
-        UnitState(3, 3.0, 0.0, base_threshold=0.80),
+        topology.UnitState(0, 0.0, 0.0, base_threshold=0.52),
+        topology.UnitState(1, 1.0, 0.0, base_threshold=0.80),
+        topology.UnitState(2, 2.0, 0.0, base_threshold=0.80),
+        topology.UnitState(3, 3.0, 0.0, base_threshold=0.80),
     )
     connections = [
-        Connection(0, 1, WEIGHT, DELAY_MS, plastic=False),
-        Connection(1, 2, WEIGHT, DELAY_MS, plastic=False),
-        Connection(2, 3, WEIGHT, DELAY_MS, plastic=False),
+        topology.Connection(0, 1, WEIGHT, DELAY_MS, plastic=False),
+        topology.Connection(1, 2, WEIGHT, DELAY_MS, plastic=False),
+        topology.Connection(2, 3, WEIGHT, DELAY_MS, plastic=False),
     ]
     if close_recurrent_loop:
-        connections.append(Connection(3, 1, WEIGHT, DELAY_MS, plastic=False))
-    topology = explicit_topology(units, connections, receptor_ids=(0,))
-    return TemporalExcitableField(
-        topology,
-        ExcitableFieldConfig(
+        connections.append(topology.Connection(3, 1, WEIGHT, DELAY_MS, plastic=False))
+    graph = topology.explicit_topology(units, connections, receptor_ids=(0,))
+    return field.TemporalExcitableField(
+        graph,
+        field.ExcitableFieldConfig(
             receptor_fanout=1,
             max_events_per_run=1_000,
             max_spikes_per_run=1_000,
@@ -36,15 +33,17 @@ def _field(*, close_recurrent_loop: bool) -> TemporalExcitableField:
 
 
 def _run(*, close_recurrent_loop: bool) -> tuple[tuple[float, int], ...]:
-    field = _field(close_recurrent_loop=close_recurrent_loop)
-    field.schedule_pulse(
-        SignalPulse(
+    excitable_field = _field(close_recurrent_loop=close_recurrent_loop)
+    excitable_field.schedule_pulse(
+        contracts.SignalPulse(
             time_ms=0.0,
             channel="forge-recurrent-continuation-cue",
             magnitude=1.0,
         )
     )
-    return tuple((spike.time_ms, spike.unit_id) for spike in field.run_until(END_MS))
+    return tuple(
+        (spike.time_ms, spike.unit_id) for spike in excitable_field.run_until(END_MS)
+    )
 
 
 def test_recurrent_closure_adds_post_drive_continuation_over_matched_cut() -> None:
