@@ -1,298 +1,119 @@
 {
   "schema_version": 2,
-  "generation_id": "SUB-20260923T093316+0900-DISC-C35-CONTRACT-R90-4A7E2C91",
-  "produced_at": "2026-09-23T09:33:16+09:00",
-  "producer_run_id": "SUB-RUN-SUB-20260923T093316+0900-DISC-C35-CONTRACT-R90-4A7E2C91",
-  "authority_scope": "SUB_ANALYST_ALLOCATED_CAND35_DISCOVERY_R1_CONTRACT_CLOSURE_NON_EVIDENTIARY_CONTROL_PLANE_PERSISTENCE_ONLY",
-  "supersedes_generation_id": "SUB-20260923T083602+0900-QFD-QUEUEFREE-STATE-R89-6B2E4C91",
+  "generation_id": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS",
+  "produced_at": "2026-09-23T11:43:44+09:00",
+  "worker_role": "FAST_FORGE",
+  "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
+  "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
+  "supersedes_generation_id": "SUB-20260923T093316+0900-DISC-C35-CONTRACT-R90-4A7E2C91",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T090047+0900-R90-B84D2C71@91684ca2539d89c6866feecbf1a9e28f26aef2fa",
-    "main_lease": "MAIN-20260923T091600+0900-PRIMARY-CAND34-ARCHR2-R90-B84D2C71@ops/orchestrator-run-report",
-    "previous_sub": "SUB-20260923T083602+0900-QFD-QUEUEFREE-STATE-R89-6B2E4C91@ops/orchestrator-run-report",
-    "control_brain": "CTRL-20260923T085000+0900-R40-5E1C7A94@f25d48598584bffc5ca736c6ac52c50a94688d89",
-    "literature": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7@027fa9fc45648269c2ebe0ae6408162d155fe840",
-    "independent_audit": "AUD-20260922T223000+0900-R7-H7-RAWGATE-6C8F21D4@027fa9fc45648269c2ebe0ae6408162d155fe840",
-    "methodology": "METHCAL-20260923T092236+0900-R77-A7C43E19@bfcdff499b9dd9f28113a674b899a6bf7838db3e",
+    "evidence_analyst": "EVA-R92@a05ab3f655a23eabd84c910ba337d64a948c168a",
+    "main_lease": "MAIN-20260923T113000+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING@ops/orchestrator-run-report",
+    "previous_sub": "SUB-20260923T093316+0900-DISC-C35-CONTRACT-R90-4A7E2C91@ops/orchestrator-run-report",
+    "literature": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9@cd5069201723110acc9e15d60216c9d1f2e63ce7",
+    "independent_audit": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8@6755579f5f21b19ca90788c948d8126529b648c6",
+    "methodology": "METHCAL-R79@ba219b4c4c9c06913f151e61b2d70ef7cd9a60ab",
     "utility": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91@b18a1d76c05efbbfacb9618ac1ca1e9941b17555"
   },
-  "authoritative_refs": {
+  "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_handoff": "91684ca2539d89c6866feecbf1a9e28f26aef2fa",
-    "orchestrator_tip_before_sub_write": "706a3ba3c25f6c69a791504c93c5ddf540abf96a",
-    "history_commit": "3ae9ceed0c2ea121f671e4a5c5dd115f5582cb2b",
-    "main_active_branch": "research/main-cand34-assembly-route-architecture-r90-cycle2",
-    "main_active_head_observed": "a6455a3929b86ad25fd106ea93a03604192fc3be",
-    "candidate34_r1_head": "de712b2c3bdbb29c719773c609e884ed9b10e40b",
-    "h7_r5_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "evidence_tag_objects": [
-      "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
-      "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
-      "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
-      "185b741e69ea8a0ce0d076153d36e9296a748765",
-      "e4c4e6428d8ef9e09e92cae231041de0788162e2"
-    ]
+    "analyst_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
+    "main_active_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+    "main_active_head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a",
+    "forge_branch": "forge/20260923-receptor-suppression-probes-a",
+    "forge_head": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
+    "forge_ci_run": 35811319345,
+    "forge_ci_conclusion": "success",
+    "source_receptors_blob": "86c1cfea1ea70cada5c277d8f5047c32ea611a5c",
+    "source_assemblies_blob": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+    "source_evaluation_blob": "efd52d236708aea3bf23b6139d8717b1ac1d0559"
   },
-  "allocation": {
-    "main_lane": "CAND34_ASSEMBLY_TEMPORAL_ROUTE_IDENTIFIABILITY_ARCHITECTURE_R2_MEASUREMENT_CONTRACT_NON_EVIDENTIARY",
-    "sub_lane": "CAND35_QUEUE_FREE_SUBTHRESHOLD_STATE_CAUSAL_PRIMING_DISCOVERY_R1_NON_EVIDENTIARY",
-    "sub_fallback": "MANDATORY_PRE_NO_OP_SCAN_THEN_AT_MOST_ONE_BOUNDED_AUTONOMOUS_RESEARCH_TASK",
-    "system_priority_exception": {
-      "used": false
-    },
-    "blockers_exclusions": [
-      "DO_NOT_WORK_CAND34_ARCHITECTURE_R2_OR_MAIN_BRANCH",
-      "DO_NOT_WORK_H7_R5_FORMAL_OR_PF_R1_PROVENANCE_GATE",
-      "NO_RESPONSE_BEARING_CAND35_EXECUTION_UNDER_R90",
-      "NO_PRE_FORMAL_OR_FORMAL_ACTION",
-      "NO_SAME_OBJECT_SYSTEM_TO_MECHANISM_UPLIFT"
-    ]
-  },
-  "candidate_pool": {
-    "total": 35,
-    "MECHANISM": 14,
-    "SYSTEM": 21,
-    "ACTIVE": 1,
-    "QUEUED": 1,
-    "NONTERMINAL_HOLD": 1,
-    "TERMINAL_FOR_CURRENT_OBJECT": 32,
-    "preformal_eligible": 2,
-    "preformal_ready": 1,
-    "fresh_formal_authority": 0,
-    "source": "EVIDENCE_ANALYST_R90"
-  },
-  "canonical_object": {
-    "id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
-    "claim_ceiling": "SYSTEM",
-    "development_phase": "OPEN_DEVELOPMENT",
-    "development_revision": "DISCOVERY-R1_AUTHORIZED",
-    "preformal_eligible": false,
-    "preformal_readiness": "NOT_APPLICABLE",
-    "hold_class": null,
-    "hold_reason": null,
-    "terminal_state": "NONTERMINAL",
-    "queue_state_at_allocation": "QUEUED_FOR_SUB_DISCOVERY_R1",
-    "system_priority_exception": {
-      "used": false
-    },
-    "candidate_source": "SUB_QUESTION_FORMATION_DISCOVERY",
-    "fresh_successor_relation": "FRESH_SYSTEM_SUCCESSOR_ENDOGENOUS_CONTINUATION_FAMILY_NOT_REOPENING_CAND11"
-  },
-  "operating_mode": "ANALYST_ALLOCATED_SECONDARY_RESEARCH",
-  "discovery_mode": "SYSTEM_DISCOVERY",
-  "selected_target": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
-  "work_kind": "CANONICAL_DISCOVERY_R1_QUESTION_CONTRACT_CLOSURE",
-  "canonical_status": "CANONICAL_ANALYST_ADMITTED",
-  "development_phase": "OPEN_DEVELOPMENT",
-  "development_revision": "DISCOVERY-R1_AUTHORIZED",
-  "cycle_count": {
-    "discovery_cycle": 1,
-    "status": "DISCOVERY_R1_PROSPECTIVE_QUESTION_CONTRACT_CLOSED_NO_RESPONSE_EXPOSURE"
-  },
-  "reassessment_rationale": "R90 admitted the prior queue-free subthreshold-state seed as a bounded SYSTEM object and authorized question-contract closure only. Fresh source inspection is sufficient to freeze prime, anchor, cue, intervention scope, response signature and ordinary reductions without executing candidate arms or colliding with MAIN candidate34.",
-  "main_independence": {
+  "main_collision_check": {
     "status": "PASS_NO_COLLISION",
-    "reason": "MAIN owns candidate #34 Architecture R2 on research/main-cand34-assembly-route-architecture-r90-cycle2 and H7/PF-R1 remain critical-path provenance/formal surfaces. Candidate #35 uses only stable-main v0.5/v0.4 state and input semantics and writes no MAIN research branch, H7 source/runtime, Utility mailbox, scorer, preserve or protected-evaluation surface."
-  },
-  "pre_no_op_scan": {
-    "performed": false,
-    "gate_not_reached": true,
-    "reason": "A valid Analyst-allocated independent SUB Discovery lane existed and takes priority over autonomous scan/no-op selection.",
-    "alternatives_considered": [
-      {
-        "surface": "CAND34_ARCHITECTURE_R2",
-        "result": "EXCLUDED_MAIN_OWNED"
-      },
-      {
-        "surface": "H7_R5_AND_PF_R1",
-        "result": "EXCLUDED_MAIN_CRITICAL_PATH_AND_PROVENANCE_ONLY"
-      },
-      {
-        "surface": "AUTONOMOUS_TERMINAL_SUCCESSOR_SCAN",
-        "result": "NOT_TRIGGERED_VALID_SUB_LANE_ALREADY_AVAILABLE"
-      },
-      {
-        "surface": "PRIOR_C35_QFD_SEED",
-        "result": "SELECTED_AS_NOW_CANONICAL_CAND35_DISCOVERY_R1_NOT_A_NEW_SEED"
-      }
-    ]
-  },
-  "theory_backward_accounting": {
-    "autonomous_scientific_selection_made": false,
-    "mode": "ANALYST_ALLOCATED_SYSTEM_DISCOVERY",
-    "theory_backward_origin": true,
-    "denominator_excluded": true,
-    "denominator_exclusion_reason": "Candidate35 was admitted by Evidence Analyst from a prior denominator-excluded QFD; this run executes the explicit canonical SUB allocation rather than making a new autonomous selection.",
-    "rolling_autonomous_canonical_selections": [
-      "MECHANISM",
-      "SYSTEM",
-      "SYSTEM"
+    "avoided": [
+      "candidate34 PRE_FORMAL R2 branch, queue, scorer, runtime and workflow",
+      "candidate35 MAIN Architecture R1 physical UnitState/queue-free response surface",
+      "H7 R5 and PF-R1 provenance/formal path",
+      "all consumed/frozen/evidence/formal/sealed/preserve identities"
     ],
-    "qualifying_share": "1/3",
-    "theory_backward_exception": null
+    "relay": "no separate relay branch observed; current MAIN lease is PRIMARY"
   },
-  "phenomenon_question_hypothesis": {
-    "phenomenon": "A v0.5 drive can leave decaying queue-free physical field state after recurrent arrivals stop even when the terminal endogenous-continuation object showed no spontaneous empty-input continuation.",
-    "question": "At a prospectively fixed queue-empty post-drive anchor, does non-receptor residual potential and/or adaptation causally change the response to one fixed weak field-level cue when topology, weights, higher learned state, cue bytes and all non-intervened state are identical?",
-    "hypothesis": "Residual potential may prime and residual adaptation may suppress later cue sensitivity through the already-defined local field dynamics. Any effect fully explained by ordinary threshold margin plus frozen potential/adaptation decay remains a SYSTEM result; no MECHANISM residual is asserted."
-  },
-  "frozen_discovery_contract": {
-    "prime_trajectory": {
-      "brain": "pristine default IntegratedV05Brain at stable main",
-      "episode_id": "cand35-prime-0001",
-      "pulses": [
-        {"time_ms": 0.0, "channel": "A", "magnitude": 1.18, "polarity": 1, "novelty": 0.25, "prediction_error": 0.0, "location": null, "source_id": "cand35-prime", "metadata": {}},
-        {"time_ms": 5.0, "channel": "F", "magnitude": 1.18, "polarity": 1, "novelty": 0.25, "prediction_error": 0.0, "location": null, "source_id": "cand35-prime", "metadata": {}},
-        {"time_ms": 7.0, "channel": "C", "magnitude": 1.18, "polarity": 1, "novelty": 0.25, "prediction_error": 0.0, "location": null, "source_id": "cand35-prime", "metadata": {}}
+  "overall_status": "FORGE_DEAD_END",
+  "forge_objects": [
+    {
+      "forge_id": "FORGE-RECEPTOR-MEMORY-PRIMING-A",
+      "question": "Can persistent state in the v0.5 receptor bank amplify a later identical weak cue, and is any residual richer than the declared multi-timescale filter?",
+      "why_now": "Candidate35 explicitly excludes receptor-bank memory and targets physical field UnitState, leaving receptor memory as an independent local-state surface.",
+      "branch": "forge/20260923-receptor-suppression-probes-a",
+      "prototype": "prime magnitude 1.0 on one receptor channel; cue magnitude 0.10 after 10/120/1000 ms; compare actual receptor output to separately coded closed-form recurrence",
+      "commands_diagnostics": [
+        "pytest probe included in full push CI on Python 3.11 and 3.13",
+        "closed-form comparator for declared fast/medium/slow/gain trace equations"
       ],
-      "v05_execution_flags": {"learn_assembly": false, "learn_field": false, "explore_action": false},
-      "purpose": "native v0.5 receptor transduction creates physical field state without learning"
-    },
-    "queue_empty_anchor": {
-      "start": "prime normal 32ms settle boundary",
-      "rule": "first fixed +32.0ms no-input boundary with serialized field queue empty",
-      "max_additional_steps": 8,
-      "cap_ms": 256.0,
-      "cap_extension_allowed": false,
-      "cue_guard_ms": 4.0,
-      "rationale": "fixed guard exceeds stable 3ms absolute refractory duration without outcome-dependent timing search"
-    },
-    "intervention_scope": {
-      "units": "all non-receptor units only",
-      "SHAM_STATE": "exact clone no edit",
-      "POTENTIAL_NULL": "set only potential to field.config.reset_potential",
-      "ADAPTATION_NULL": "set only adaptation to 0.0",
-      "JOINT_SUBTHRESHOLD_NULL": "apply POTENTIAL_NULL plus ADAPTATION_NULL only",
-      "DELAYED_SHAM_32MS": "no state edit and identical cue 32ms later",
-      "preserved_fields": ["receptor units", "connections", "weights", "delays", "traces", "counters", "higher v0.5 state", "all cue bytes"],
-      "last_update_ms_changed": false
-    },
-    "fixed_cue": {
-      "surface": "embedded v0.4 field/base SignalPulse interface to isolate physical UnitState from v0.5 receptor-bank memory",
-      "channel": "A",
-      "primary_time": "anchor+4.0ms",
-      "delayed_time": "anchor+36.0ms",
-      "magnitude": 0.85,
-      "polarity": 1,
-      "novelty": 0.0,
-      "prediction_error": 0.0,
-      "location": null,
-      "source_id": "cand35-cue",
-      "metadata": {},
-      "static_source_derived_route_targets": [6, 7],
-      "static_direct_receptor_current": 0.8114050314115632,
-      "default_receptor_threshold": 0.46,
-      "default_receptor_to_reservoir_weight": 0.47,
-      "default_reservoir_threshold": 0.76,
-      "one_edge_reservoir_deficit_before_residual_state": 0.29
-    },
-    "measurement": {
-      "window_ms": 32.0,
-      "window_extension_allowed": false,
-      "learning_allowed": false,
-      "causal_response_signature": [
-        "ordered spike rows: relative time, unit_id, potential_before_reset, dynamic_threshold, source_pulse_ids",
-        "ordered cascade rows: relative start/end, spike_count, unit_ids, ordered_units, recurrence, signature",
-        "ordered ignition rows: relative time, score, threshold, reason, unit_ids, signature",
-        "cue routing target ids and processed event counts as integrity metadata"
+      "observations": {
+        "fresh_cue_emitted_magnitude": 0.228,
+        "gap_10ms_emitted_magnitude": 0.5562423166417022,
+        "gap_120ms_emitted_magnitude": 0.49106890868271347,
+        "gap_1000ms_emitted_magnitude": 0.2285379965673357,
+        "closed_form_match_abs_tolerance": 1e-12
+      },
+      "ordinary_reductions": [
+        "explicit 5/22/120 ms receptor traces",
+        "180 ms mean-absolute-input gain state",
+        "declared derivative and novelty terms",
+        "declared gain clamp"
       ],
-      "serialization": "canonical JSON plus sha256",
-      "field_state_hash_role": "integrity trace only; excluded from causal falsifier because treatment directly changes state bytes",
-      "higher_v05_readouts_required": false
+      "status": "FORGE_DEAD_END",
+      "dead_end_reason": "The entire persistent cue-priming effect is reproduced by the declared deterministic filter/register recurrence; no residual remains for a distinct research object.",
+      "promotion_reason": null
+    },
+    {
+      "forge_id": "FORGE-ASSEMBLY-SUPPRESSION-SILENT-MATURATION-A",
+      "question": "Does Assembly suppression freeze learning, or only mute readout so an immature Assembly can mature while suppressed?",
+      "why_now": "This is a bounded intervention-semantics check independent of MAIN candidate34's edge/timing route work and distinct from prior unit-suppression latent-state work.",
+      "branch": "forge/20260923-receptor-suppression-probes-a",
+      "prototype": "create one immature Assembly; suppress after episode 1; observe same pattern with learn=true in episodes 2 and 3; unsuppress; query with learn=false",
+      "commands_diagnostics": [
+        "pytest probe included in full push CI on Python 3.11 and 3.13"
+      ],
+      "observations": {
+        "episode_count_while_suppressed": 3,
+        "mature_while_suppressed": true,
+        "mature_after_unsuppress_without_additional_learning": true
+      },
+      "ordinary_reductions": [
+        "suppression set is a readout mask only",
+        "TemporalAssemblyMemory.observe updates occurrence and episode history independent of suppression when learn=true",
+        "retained causal_ablation uses learn=false during suppression, eliminating contamination in that current ablation"
+      ],
+      "status": "FORGE_DEAD_END",
+      "dead_end_reason": "The behavior is fully explained by API/intervention semantics rather than a distinct scientific mechanism.",
+      "promotion_reason": null
     }
-  },
-  "ordinary_reductions_comparators": [
-    "exact SHAM_STATE clone",
-    "POTENTIAL_NULL / ADAPTATION_NULL / JOINT_SUBTHRESHOLD_NULL factorial decomposition",
-    "DELAYED_SHAM_32MS natural-decay comparator",
-    "exact local threshold-margin ledger at first cue-driven arrivals using 18ms membrane decay, 90ms adaptation decay and dynamic_threshold=base_threshold+max(0,adaptation)",
-    "hard queue-empty requirement eliminating pending-arrival carryover",
-    "identical topology/weights/higher state and no learning across arms"
   ],
-  "falsifier_discriminator": {
-    "reachability_fail_closed": "Queue-empty anchor not reached inside 256ms cap, source contract drift, non-finite state, or event/spike resource cap hit => STOP/REASSESS with no retune or cap extension.",
-    "causal_falsifier": "If the complete causal-response signature is exactly identical across SHAM_STATE, POTENTIAL_NULL, ADAPTATION_NULL and JOINT_SUBTHRESHOLD_NULL, reject a queue-free subthreshold-state causal effect for this frozen SYSTEM object.",
-    "component_discriminator": "Credit potential or adaptation only when nulling that component changes the frozen downstream response signature; joint-null is fixed prospectively for interaction/cue-only comparison.",
-    "ordinary_reduction": "If divergence begins at local threshold crossings predicted by the frozen potential/adaptation decay and threshold ledger and all later divergence is deterministic downstream recurrence, classify as ordinary decaying physical excitability at SYSTEM scope and do not uplift the same object.",
-    "natural_decay": "Interpret delayed-sham only against the predeclared exponential-decay direction; never use it to tune cue or window."
-  },
-  "inputs": {
-    "latest_analyst_r90_read": true,
-    "current_main_ownership_refetched": true,
-    "previous_sub_state_read": true,
-    "control_r40_read": true,
-    "literature_r34_read": true,
-    "independent_audit_r7_read": true,
-    "methodology_r77_read": true,
-    "utility_state_read": true,
-    "stable_main_refetched": true,
-    "stable_v04_unit_topology_source_read": true,
-    "stable_v04_field_source_read": true,
-    "stable_v04_brain_source_read": true,
-    "stable_v05_brain_source_read": true,
-    "stable_v05_topology_source_read": true,
-    "stable_v05_world_source_read": true,
-    "stable_v05_receptor_source_read": true,
-    "protected_or_held_out_result_used": false,
-    "consumed_identity_used": false
-  },
-  "implementation": {
-    "mode": "READ_ONLY_SOURCE_HISTORY_AND_STATIC_CONTRACT_DERIVATION",
-    "diagnostics_executed": 0,
-    "static_derivations_performed": true,
-    "candidate_response_arms_executed": 0,
-    "code_mutation": false,
-    "workflow_dispatch": false,
-    "research_branch_created": false,
-    "scientific_experiment_executed": false
-  },
-  "observations": {
-    "state_surface": "UnitState exposes potential, adaptation, base threshold, refractory/timing and traces; field state_dict serializes queue and units exactly.",
-    "decay_semantics": "Stable field applies lazy exponential decay with membrane_tau_ms=18.0 and adaptation_tau_ms=90.0; dynamic threshold is base_threshold plus nonnegative adaptation.",
-    "checkpoint_surface": "IntegratedV05Brain preserves the nested v0.4 field state while higher v0.5 state can be cloned identically.",
-    "input_surface": "A fixed field-level SignalPulse gives a source-defined cue surface independent of v0.5 receptor-bank memory; default channel A deterministically routes to receptors 6 and 7.",
-    "contract_information_gain": "All previously open QFD choices are now prospectively bounded without outcome exposure: prime, anchor/cap, cue bytes/timing, reset scope, response signature, ordinary reductions and falsifier."
-  },
-  "evidentiary_status": "NON_EVIDENTIARY_CANONICAL_DISCOVERY_CONTRACT_ONLY",
-  "claim_ceiling": "SYSTEM",
-  "preformal_eligible": false,
-  "preformal_readiness": "NOT_APPLICABLE",
-  "hold_dimensions": {
-    "hold_class": null,
-    "hold_reason": null,
-    "terminal_state": "NONTERMINAL",
-    "queue_state_at_allocation": "QUEUED_FOR_SUB_DISCOVERY_R1"
-  },
-  "fresh_successor_potential": {
-    "current_object_status": "CURRENT_OBJECT_IS_ALREADY_A_FRESH_SYSTEM_SUCCESSOR_FROM_TERMINAL_ENDOGENOUS_CONTINUATION_FAMILY",
-    "terminal_object_reopened": false,
-    "same_object_mechanism_uplift_allowed": false,
-    "further_mechanism_successor_now_justified": false,
-    "future_condition": "Only a distinct residual computational-principle question surviving ordinary local threshold/decay reductions could justify a fresh MECHANISM successor ID."
-  },
-  "open_choices": [],
-  "next_layer": "ARCHITECTURE_STUDY_NON_EVIDENTIARY_IF_EVIDENCE_ANALYST_APPROVES",
-  "next_layer_scope": [
-    "implement deterministic checkpoint clone and non-receptor state-null helpers",
-    "implement queue-empty cap/fail-closed inspector",
-    "implement fixed cue builder and source-contract assertions",
-    "implement causal-response serializer excluding direct treatment-state bytes",
-    "implement synthetic non-result tests only",
-    "stop before response-bearing candidate execution"
-  ],
-  "recommendation": "PROMOTE_TO_ARCHITECTURE_STUDY",
   "utility_request": null,
-  "formal_actions": {
-    "preformal_action": false,
-    "formal_action": false,
-    "identity_consumed": false,
+  "hard_floor": {
+    "preformal_or_formal_identity_created_or_consumed": false,
     "started_created": false,
-    "protected_evaluation_accessed": false,
-    "official_scoring_performed": false,
-    "scientific_preserve_or_evidence_ref_created": false
+    "official_test_or_scoring_performed": false,
+    "protected_heldout_accessed": false,
+    "evidence_formal_sealed_freeze_preserve_ref_mutated": false,
+    "consumed_or_immutable_evidence_mutated": false,
+    "forge_branch_merged_to_main_or_research": false
   },
-  "persistence": {
-    "latest_path": "reports/orchestrator/sub/latest.md",
-    "state_path": "reports/orchestrator/sub/state.json",
-    "history_path": "reports/orchestrator/sub/history/2026-09-23/0933.md"
-  }
+  "metrics": {
+    "scope": "FROM_R92_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
+    "runs": 1,
+    "prototypes_attempted": 2,
+    "dead_ends": 2,
+    "interesting_observations_retained": 0,
+    "promotion_proposals": 0,
+    "later_admissions": 0,
+    "duplicate_or_rescue_rejects": 0,
+    "ownership_collisions": 0,
+    "ordinary_reduction_rejects": 2,
+    "idea_to_first_executable_probe_latency_seconds_approx": 433,
+    "run_start_to_both_probe_ci_confirmation_seconds_approx": 614
+  },
+  "recommendation": "NONE_NO_PROMOTION"
 }
