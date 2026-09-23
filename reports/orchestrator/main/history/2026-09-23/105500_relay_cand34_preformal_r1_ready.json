@@ -1,0 +1,45 @@
+{
+  "generation_id": "MAIN-20260923T105500+0900-RELAY-CAND34-PREFORMALR1-R91-READY-C199605F",
+  "execution_mode": "RELAY",
+  "status": "READY_FOR_RELAY",
+  "analyst_generation": "EVA-20260923T101328+0900-R91-C199605F@2840c4171fec8d09ad13e182c5221c2c35647328",
+  "main_superseded_generation": "MAIN-20260923T102600+0900-PRIMARY-CAND34-PREFORMALR1-R91-WAITING-PREBIND-C199605F",
+  "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
+  "cycle_count": 3,
+  "development_phase": "OPEN_DEVELOPMENT",
+  "development_revision": "PRE_FORMAL-R1_AUTHORIZED_BIND_UNCHANGED_ARCHITECTURE_R2",
+  "funnel": {
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "READY",
+    "hold_class": null,
+    "hold_reason": null,
+    "terminal_state": "ACTIVE",
+    "queue_state": "MAIN_WAITING_EXTERNAL_NON_RESULT_PREBIND_VALIDATION",
+    "system_priority_exception_used": false
+  },
+  "refs": {
+    "base_r2": "research/main-cand34-assembly-route-architecture-r90-cycle2@a6455a3929b86ad25fd106ea93a03604192fc3be",
+    "active": "research/main-cand34-assembly-route-preformal-r91-cycle3@2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0",
+    "durable_prebind": "artifacts/preformal/candidate34/r1/cand34-preformal-r1-prebind.json"
+  },
+  "action": "Recovered and durably committed the exact already-produced R91 non-result prebind JSON bytes, then verified exact-head generic CI and dedicated prebind validation are green.",
+  "repair_change_classification": "SCIENCE_INVARIANT_PROVENANCE_AND_INTEGRITY_PLUMBING",
+  "result": "PREBIND_PREREQUISITE_CLOSED",
+  "evidentiary_status": "PREFORMAL_DEVELOPMENT_PREBIND_DURABLY_BOUND_NO_RESULT",
+  "prior_results_preserved": true,
+  "consumed_identity_reused": false,
+  "formal_action_performed": false,
+  "response_bearing_execution_performed": false,
+  "integrity": {
+    "analyst_freshness_checked": true,
+    "main_collision_checked": true,
+    "research_ref_checked": true,
+    "source_artifact_json_sha256": "d0a9cef495a7e4166466ade35e25a683c56a86d80749a563330e74f30c7b50fa",
+    "source_artifact_zip_sha256": "de538428a77f3b2e3085a64d8751067cf14d3b8bd2b496088462ed764b43e860",
+    "exact_head_ci_green": true,
+    "scheduler_mutated": false
+  },
+  "stop_reason": "No existing prospectively fixed response-bearing PRE_FORMAL runner/workflow was found; Relay did not invent execution behavior.",
+  "next_main_action": "Proceed only with an already prospectively fixed response executor/invocation or fresh Analyst/PRIMARY handoff; FORMAL remains STOP."
+}
