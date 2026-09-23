@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T124328+0900-RELAY-CAND34-PREFORMALR2-R92-WAITING-ANALYST-REVIEW",
-  "run_id": "sparkbrain-main-relay-20260923T124328JST-R92-cand34-preformal-r2-preserve",
-  "producer_run_id": "sparkbrain-main-relay-20260923T124328JST-R92-cand34-preformal-r2-preserve",
-  "authority_scope": "RELAY_R92_PREFORMAL_R2_NONRESULT_EXACT_ARTIFACT_PRESERVATION_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T123630+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING-CANONICAL-OPPORTUNITY-CLOSURE",
+  "generation_id": "MAIN-20260923T131224+0900-PRIMARY-CAND34-PREFORMALR2-R92-REVALIDATED-WAITING-ANALYST",
+  "run_id": "sparkbrain-main-primary-20260923T131224JST-R92-cand34-revalidate-waiting",
+  "producer_run_id": "sparkbrain-main-primary-20260923T131224JST-R92-cand34-revalidate-waiting",
+  "authority_scope": "PRIMARY_CANONICAL_R92_FRESHNESS_COLLISION_AND_HARD_FLOOR_REVALIDATION_ONLY_NO_SCIENTIFIC_EXECUTION",
+  "supersedes_generation_id": "MAIN-20260923T124328+0900-RELAY-CAND34-PREFORMALR2-R92-WAITING-ANALYST-REVIEW",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "main_previous_lease": "MAIN-20260923T123630+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING-CANONICAL-OPPORTUNITY-CLOSURE"
+    "main_previous_lease": "MAIN-20260923T124328+0900-RELAY-CAND34-PREFORMALR2-R92-WAITING-ANALYST-REVIEW"
   },
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-23T12:43:28+09:00",
-  "heartbeat_at": "2026-09-23T12:43:28+09:00",
+  "started_at": "2026-09-23T13:12:24+09:00",
+  "heartbeat_at": "2026-09-23T13:12:24+09:00",
   "completed_at": null,
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260923T105725+0900-R92-6B8E31D4",
@@ -49,7 +49,7 @@
     "zip_sha256": "4df7bac547df7db49c0c68108d8a0d2e40e129f4b0f7ce46ea45cf51c3a08c94",
     "exact_bytes_preserved": true
   },
-  "evidentiary_status": "NO_NEW_SCIENTIFIC_RESULT_R92_NONRESULT_CONTRACT_CLOSURE_COMPLETE_WAITING_FRESH_ANALYST_READY_REVIEW",
+  "evidentiary_status": "NO_NEW_SCIENTIFIC_RESULT_R92_NONRESULT_CONTRACT_CLOSURE_REVALIDATED_COMPLETE_WAITING_FRESH_ANALYST_READY_REVIEW",
   "formal_identity_created_or_consumed": false,
   "started_created": false,
   "formal_protected_evaluation_accessed": false,
@@ -57,7 +57,7 @@
   "official_scoring_performed": false,
   "scientific_preserve_or_evidence_ref_created": false,
   "prior_results_preserved_unchanged": true,
-  "stop_reason": "R92_SINGLE_NONRESULT_R2_CONTRACT_CLOSURE_COMPLETE_EXACT_ARTIFACT_DURABLY_PRESERVED_WAITING_FRESH_ANALYST_READY_REVIEW",
-  "next_action": "Fresh Evidence Analyst review of the exact R92 head and preserved canonical R2 contract. Do not execute D34-Q002, rerun/tune/rescore R2, change R2 semantics, or perform FORMAL work under R92.",
+  "stop_reason": "R92_NONRESULT_R2_CLOSURE_REVALIDATED_COMPLETE_WAITING_FRESH_ANALYST_READY_REVIEW",
+  "next_action": "Wait for fresh Evidence Analyst review of the exact preserved R2 head and contract. If and only if fresh authority marks it READY and authorizes response-bearing PRE_FORMAL execution, execute the prospectively fixed D34-Q002 once. Otherwise do not execute, rerun, tune, rescore, change R2 semantics, or perform FORMAL work.",
   "owner": "main"
 }
