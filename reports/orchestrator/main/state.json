@@ -1,21 +1,19 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T102600+0900-PRIMARY-CAND34-PREFORMALR1-R91-WAITING-PREBIND-C199605F",
-  "run_id": "sparkbrain-main-primary-20260923T102000JST-R91-cand34-preformal-r1",
-  "producer_run_id": "sparkbrain-main-primary-20260923T102000JST-R91-cand34-preformal-r1",
-  "produced_at": "2026-09-23T10:26:00+09:00",
-  "authority_scope": "PRIMARY_MAIN_CAND34_ASSEMBLY_TEMPORAL_ROUTE_IDENTIFIABILITY_PREFORMAL_R1_DEVELOPMENT_ONLY_BIND_UNCHANGED_R2",
-  "supersedes_generation_id": "MAIN-20260923T085900+0900-RELAY-CAND34-ARCHR1-R89-COMPLETED-9A4C2E71",
+  "generation_id": "MAIN-20260923T105500+0900-RELAY-CAND34-PREFORMALR1-R91-READY-C199605F",
+  "run_id": "sparkbrain-main-relay-20260923T104212JST-R91-cand34-preformal-r1",
+  "producer_run_id": "sparkbrain-main-relay-20260923T104212JST-R91-cand34-preformal-r1",
+  "produced_at": "2026-09-23T10:55:00+09:00",
+  "authority_scope": "RELAY_MAIN_CAND34_ASSEMBLY_TEMPORAL_ROUTE_IDENTIFIABILITY_PREFORMAL_R1_DEVELOPMENT_ONLY_BIND_UNCHANGED_R2",
+  "supersedes_generation_id": "MAIN-20260923T102600+0900-PRIMARY-CAND34-PREFORMALR1-R91-WAITING-PREBIND-C199605F",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T101328+0900-R91-C199605F@2840c4171fec8d09ad13e182c5221c2c35647328",
-    "main_previous_lease": "MAIN-20260923T091600+0900-PRIMARY-CAND34-ARCHR2-R90-B84D2C71",
-    "sub": "SUB-20260923T093316+0900-DISC-C35-CONTRACT-R90-4A7E2C91@78231dc1ce2c39b56faf72c694446ba7cf4cc477",
-    "utility": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91@b18a1d76c05efbbfacb9618ac1ca1e9941b17555"
+    "main_previous_lease": "MAIN-20260923T102600+0900-PRIMARY-CAND34-PREFORMALR1-R91-WAITING-PREBIND-C199605F"
   },
-  "execution_mode": "PRIMARY",
-  "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-23T10:20:00+09:00",
-  "heartbeat_at": "2026-09-23T10:26:00+09:00",
+  "execution_mode": "RELAY",
+  "status": "READY_FOR_RELAY",
+  "started_at": "2026-09-23T10:42:12+09:00",
+  "heartbeat_at": "2026-09-23T10:55:00+09:00",
   "completed_at": null,
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260923T101328+0900-R91-C199605F",
@@ -32,21 +30,16 @@
   "development_revision": "PRE_FORMAL-R1_AUTHORIZED_BIND_UNCHANGED_ARCHITECTURE_R2",
   "previous_revision_preserved": "ARCHITECTURE-R2-MEASUREMENT-CONTRACT-CLOSURE",
   "preformal_eligible": true,
-  "preformal_readiness": {
-    "status": "READY",
-    "semantics": "R91 authorizes one bounded development PRE_FORMAL test under the unchanged R2 contract"
-  },
+  "preformal_readiness": {"status": "READY", "semantics": "R91 authorizes one bounded development PRE_FORMAL test under the unchanged R2 contract"},
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "ACTIVE",
-  "queue_state": "MAIN_ACTIVE_PREFORMAL_R1_WAITING_NON_RESULT_PREBIND_CI",
+  "queue_state": "MAIN_WAITING_EXTERNAL_NON_RESULT_PREBIND_VALIDATION",
   "system_priority_exception": {"used": false},
   "cycle_count": 3,
-  "information_gain_rationale": "Architecture R2 prospectively froze checkpoint/prototype selection, response/window, exact execution schedule, reductions, resource bounds and the interventional-equivalence decision rule at an exact green head. R91 records that one bounded development PRE_FORMAL test is now well-defined and informative even if negative.",
+  "information_gain_rationale": "Architecture R2 prospectively froze the response contract; R91 authorizes one bounded development PRE_FORMAL test after exact prebinding. This relay only closed the prebinding prerequisite.",
   "repair_change_classification": {
-    "fresh_preformal_authority_wrapper": "SCIENCE_AFFECTING_INPUT_SURFACE_BINDING_PROSPECTIVELY_AUTHORIZED_BEFORE_RESULT_EXPOSURE",
-    "development_surface_checkpoint_and_cue_binding": "SCIENCE_AFFECTING_PRE_RESULT_INPUT_BINDING_AUTHORIZED_BY_R91",
-    "prebind_tests_and_workflow": "SCIENCE_INVARIANT_PROVENANCE_AND_VALIDATION_PLUMBING",
+    "durable_prebind_commit": "SCIENCE_INVARIANT_PROVENANCE_AND_INTEGRITY_PLUMBING",
     "architecture_r2_contract_changed": false,
     "metric_or_observable_changed": false,
     "intervention_family_changed": false,
@@ -57,65 +50,32 @@
     "one_way_action_performed": false
   },
   "refs": {
-    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "architecture_r2_branch": "research/main-cand34-assembly-route-architecture-r90-cycle2",
     "architecture_r2_head": "a6455a3929b86ad25fd106ea93a03604192fc3be",
     "active_research_branch": "research/main-cand34-assembly-route-preformal-r91-cycle3",
-    "active_research_head": "2f6e8dbaf88215cc18dd98782bec166fe3b7e7b5",
-    "authoritative_evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "h7_started_control_ref_present": false,
-    "h7_scientific_preserve_ref_present": false
+    "active_research_head": "2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0",
+    "durable_prebind_path": "artifacts/preformal/candidate34/r1/cand34-preformal-r1-prebind.json"
   },
   "work_performed": {
-    "fresh_branch_created_from_exact_r2_head": true,
-    "fresh_preformal_wrapper_added": true,
-    "single_development_surface_selected": "cand34-preformal-r1-development-surface-01",
-    "checkpoint_construction": "deterministic controlled v0.5 development checkpoint with two mature Assemblies and fixed explicit topology",
-    "cue_binding": "checkpoint-only prototype direct-threshold arrival replay; relative times derive only from the bound prototype bins and fixed pattern temporal-bin scale",
-    "r2_contract_pinned_unchanged": true,
-    "prebinding_materializer_added": true,
-    "dedicated_non_result_prebind_workflow_added": true,
-    "candidate_response_execution_performed": false
-  },
-  "forge_boundary": {
-    "forge_branch_observed": false,
-    "forge_code_reused": false,
-    "forge_observations_given_confirmatory_credit": false,
-    "note": "The development checkpoint reuses the canonical R2 architecture test topology as an explicit controlled surface; this is canonical branch code, not Forge-derived code or evidence."
+    "recovered_exact_prebind_artifact": true,
+    "source_artifact_zip_sha256": "de538428a77f3b2e3085a64d8751067cf14d3b8bd2b496088462ed764b43e860",
+    "source_prebind_json_sha256": "d0a9cef495a7e4166466ade35e25a683c56a86d80749a563330e74f30c7b50fa",
+    "durably_bound_exact_prebind_bytes": true,
+    "exact_head_generic_ci_green": true,
+    "exact_head_non_result_prebind_validation_green": true,
+    "candidate_response_execution_performed": false,
+    "response_executor_discovered": false
   },
   "workflows": [
-    {
-      "run_id": 35806212293,
-      "name": "ci",
-      "head": "2f6e8dbaf88215cc18dd98782bec166fe3b7e7b5",
-      "status": "queued",
-      "conclusion": null,
-      "result_bearing": false
-    },
-    {
-      "run_id": 35806212439,
-      "name": "cand34-preformal-r1-prebind",
-      "head": "2f6e8dbaf88215cc18dd98782bec166fe3b7e7b5",
-      "status": "queued",
-      "conclusion": null,
-      "result_bearing": false,
-      "expected_artifact": "cand34-preformal-r1-prebind-2f6e8dbaf88215cc18dd98782bec166fe3b7e7b5"
-    }
+    {"run_id": 35806212439, "name": "cand34-preformal-r1-prebind", "head": "2f6e8dbaf88215cc18dd98782bec166fe3b7e7b5", "status": "completed", "conclusion": "success", "result_bearing": false, "artifact_id": 10727962187},
+    {"run_id": 35808210818, "name": "cand34-preformal-r1-prebind", "head": "2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0", "status": "completed", "conclusion": "success", "result_bearing": false},
+    {"run_id": 35808210859, "name": "ci", "head": "2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0", "status": "completed", "conclusion": "success", "result_bearing": false}
   ],
   "observations_evidentiary_status": {
     "formal_evidence": 0,
     "preformal_development_evidence": 0,
-    "mechanism_architecture_observations": 0,
-    "system_architecture_observations": 0,
-    "implementation_readiness_observations": [
-      "A fresh PRE_FORMAL authority wrapper is committed without editing the frozen Architecture R2 scientific contract.",
-      "One deterministic development checkpoint and exact cue construction policy are prospectively selected before candidate response exposure.",
-      "Exact final-head generic CI and dedicated non-result prebinding validation are pending."
-    ],
-    "classification": "PREFORMAL_DEVELOPMENT_PREBIND_IMPLEMENTATION_ONLY_NO_SCIENTIFIC_RESULT"
+    "scientific_result_exposed": false,
+    "classification": "PREFORMAL_DEVELOPMENT_PREBIND_DURABLY_BOUND_NO_SCIENTIFIC_RESULT"
   },
   "prior_result_preservation": {
     "all_prior_results_unchanged": true,
@@ -147,20 +107,17 @@
     "formal_action_attempted": false
   },
   "integrity": {
-    "analyst_generation_rechecked_before_acquisition": true,
     "analyst_generation_rechecked_before_research_mutation": true,
     "analyst_generation_rechecked_before_disposition": true,
-    "stale_r90_main_lease_reconciled_under_superseding_r91": true,
-    "direct_r2_research_ref_rechecked": true,
-    "active_preformal_research_ref_rechecked_before_disposition": true,
-    "sub_collision": false,
-    "forge_collision": false,
-    "stable_main_refetched": true,
-    "immutable_evidence_refs_refetched_from_r91_authoritative_state": true,
+    "main_lease_reconciled_before_research_mutation": true,
+    "active_research_ref_rechecked_before_research_mutation": true,
+    "exact_prebind_artifact_bytes_preserved": true,
+    "exact_head_ci_rechecked": true,
+    "primary_collision": false,
     "immutable_formal_sealed_evidence_refs_mutated": false,
     "scheduler_mutated": false
   },
-  "stop_reason": "WAITING_ONLY_FOR_EXACT_FINAL_HEAD_GENERIC_CI_AND_NON_RESULT_PREBIND_WORKFLOW",
-  "next_action": "Re-fetch R91 authority and exact PRE_FORMAL branch head, then inspect generic CI 35806212293 and non-result prebind 35806212439. If both are green, recover the exact prebinding artifact/hashes, durably bind those bytes without scientific redesign, and only then decide whether the already-authorized bounded PRE_FORMAL development response execution can proceed. Any authority/head mismatch fails closed. FORMAL remains STOP.",
+  "stop_reason": "DURABLE_PREBIND_PREREQUISITE_CLOSED; NO_EXISTING_PROSPECTIVELY_FIXED_RESPONSE_EXECUTOR_FOUND; DO_NOT_INVENT_EXECUTION_BEHAVIOR",
+  "next_action": "Continue only if an exact response-bearing PRE_FORMAL executor/invocation is already prospectively fixed or supplied by fresh Analyst/PRIMARY authority. Do not infer a runner from tests or invent scientific behavior. FORMAL remains STOP.",
   "owner": "main"
 }
