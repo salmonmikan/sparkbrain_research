@@ -1,89 +1,71 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T131224+0900-PRIMARY-CAND34-PREFORMALR2-R92-REVALIDATED-WAITING-ANALYST",
-  "run_id": "sparkbrain-main-primary-20260923T131224JST-R92-cand34-revalidate-waiting",
-  "producer_run_id": "sparkbrain-main-primary-20260923T131224JST-R92-cand34-revalidate-waiting",
-  "produced_at": "2026-09-23T13:12:24+09:00",
-  "authority_scope": "PRIMARY_CANONICAL_R92_FRESHNESS_COLLISION_AND_HARD_FLOOR_REVALIDATION_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "MAIN-20260923T124328+0900-RELAY-CAND34-PREFORMALR2-R92-WAITING-ANALYST-REVIEW",
+  "generation_id": "MAIN-20260923T143200+0900-PRIMARY-CAND34-PREFORMALR2-R93-WAITING-CI-EXECUTOR",
+  "run_id": "sparkbrain-main-primary-20260923T141500JST-R93-cand34-d34q002",
+  "producer_run_id": "sparkbrain-main-primary-20260923T141500JST-R93-cand34-d34q002",
+  "produced_at": "2026-09-23T14:32:00+09:00",
+  "authority_scope": "PRIMARY_CANONICAL_R93_CAND34_ONE_BOUNDED_PREFORMAL_R2_RESPONSE_ONLY",
+  "supersedes_generation_id": "MAIN-20260923T131224+0900-PRIMARY-CAND34-PREFORMALR2-R92-REVALIDATED-WAITING-ANALYST",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "main_previous_generation": "MAIN-20260923T124328+0900-RELAY-CAND34-PREFORMALR2-R92-WAITING-ANALYST-REVIEW",
-    "utility_latest_observed": "ops/utility-orchestrator-requests@15c5b130c868f7a37ab03582ca0225f001c651f7",
-    "fast_forge_latest_observed": "forge/20260923-receptor-suppression-probes-a@c366c4054d2834003fcca20d49b8fc9ad4203edc"
+    "evidence_analyst": "EVA-20260923T140800+0900-R93-4D7C2A91@92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
+    "closed_r2_contract": "research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "fast_forge_latest_observed": "forge/20260923-receptor-suppression-probes-a@c366c4054d2834003fcca20d49b8fc9ad4203edc",
+    "utility_latest_observed": "ops/utility-orchestrator-requests@5d928c"
   },
   "execution_mode": "PRIMARY",
   "status": "WAITING_EXTERNAL",
-  "analyst_generation_id": "EVA-20260923T105725+0900-R92-6B8E31D4",
-  "analyst_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
+  "analyst_generation_id": "EVA-20260923T140800+0900-R93-4D7C2A91",
+  "analyst_commit": "92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
   "research_layer": "PRE_FORMAL",
   "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
-  "preformal_readiness": "NOT_READY",
+  "preformal_readiness": "READY",
   "hold_class": null,
   "hold_reason": null,
   "terminal_state": "NONTERMINAL",
-  "queue_state": "QUEUED_FOR_MAIN_PREFORMAL_R2_OPPORTUNITY_AWARE_CONTRACT_REVISION_NONRESULT",
+  "queue_state": "D34-Q002_AUTHORIZED_ONCE_NOT_YET_EXECUTED",
   "system_priority_exception": {"used": false},
   "development_phase": "OPEN_DEVELOPMENT",
   "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
   "cycle_count": 4,
-  "cycle_reassessment_context": "R92 authorizes exactly one prospective opportunity-aware PRE_FORMAL R2 non-result contract-closure cycle after the pre-response R1 causal-opportunity defect, followed by fresh Analyst READY review before any response-bearing execution. That non-result closure is complete; this invocation only revalidated the authority boundary and collisions.",
+  "cycle_reassessment_context": "R93 records concrete information gain for one bounded D34-Q002 development response under the unchanged closed R2 contract. MAIN implemented only the execution/preservation plumbing needed to realize that prospectively fixed queue and stopped before result exposure until the new executor passes generic CI.",
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "active_research_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-    "active_research_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
-    "analyst_handoff_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "durable_artifact_path": "reports/orchestrator/main/artifacts/cand34/preformal-r2/43d0f25541a3c447d4c7156303647ae94f3119f4/cand34-preformal-r2-contract.zip",
-    "durable_artifact_commit": "878c6df3135546554f6c3dc3c908ebcaa5da7639",
-    "history_path": "reports/orchestrator/main/history/2026-09-23/131224-primary-cand34-r2-revalidated-waiting-analyst.md"
+    "closed_r2_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+    "closed_r2_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "active_research_branch": "research/main-cand34-assembly-route-preformal-r93-response",
+    "active_research_head": "bbbb422da119c864a41f0cdee97bb759aa090139",
+    "executor_path": "scripts/cand34_preformal_r2_execute.py",
+    "analyst_handoff_commit": "92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
+    "preserved_r2_contract_artifact": "reports/orchestrator/main/artifacts/cand34/preformal-r2/43d0f25541a3c447d4c7156303647ae94f3119f4/cand34-preformal-r2-contract.zip"
   },
   "workflow_observation": {
-    "generic_ci_run_id": 35814951496,
-    "generic_ci_status": "completed",
-    "generic_ci_conclusion": "success",
-    "r2_contract_run_id": 35814951495,
-    "r2_contract_status": "completed",
-    "r2_contract_conclusion": "success",
-    "workflow_artifact_id": 10730964708,
-    "workflow_artifact_name": "cand34-preformal-r2-contract",
-    "result_bearing": false
-  },
-  "artifact_integrity": {
-    "zip_sha256": "4df7bac547df7db49c0c68108d8a0d2e40e129f4b0f7ce46ea45cf51c3a08c94",
-    "contract_raw_sha256": "8edce037e77213ff772e1c0dadc985c36aa5f67181c2893e1ebbdab4bf1b61d1",
-    "contract_embedded_sha256": "adf7ef3bf9b8a49477fa9c8a98683280ee0d424007049f402db52fa2cd87f3f9",
-    "queue_raw_sha256": "cf15d9f6cec5cad4c3f68e3446bed9384eca1f71bd0b83a162d01708a81d5426",
-    "queue_embedded_sha256": "befb6b21536b50e0f8e13dcc182e4c9a86e605c9a835833b1a3597d9c214dd58",
-    "exact_workflow_artifact_bytes_preserved": true
-  },
-  "collision_awareness": {
-    "primary_running_collision": false,
-    "forge_branch_observed": "forge/20260923-receptor-suppression-probes-a@c366c4054d2834003fcca20d49b8fc9ad4203edc",
-    "forge_same_object_collision": false,
-    "forge_code_reused": false,
-    "forge_observation_confirmatory_credit": false,
-    "utility_dependency": false,
-    "pr_148_open": true,
-    "pr_149_open": true
-  },
-  "immutable_ref_revalidation": {
-    "authoritative_evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "fresh_candidate34_or_h7_control_ref_observed": false,
-    "fresh_candidate34_or_h7_preserve_ref_observed": false
+    "executor_head_generic_ci_run_id": 35822584950,
+    "executor_head_generic_ci_status": "queued",
+    "executor_head_generic_ci_conclusion": null,
+    "result_bearing_workflow_created": false,
+    "result_bearing_workflow_dispatched": false,
+    "result_bearing_execution_performed": false
   },
   "work_performed": {
-    "classification": "CONTROL_PLANE_REVALIDATION_ONLY",
-    "change_classification": "NO_SCIENCE_CHANGE",
-    "research_branch_mutated": false,
+    "classification": "SCIENCE_INVARIANT_EXECUTION_PLUMBING",
+    "change_classification": "SCIENCE_INVARIANT_REPAIR_OR_PLUMBING_ONLY",
+    "research_branch_created": true,
+    "research_branch_mutated": true,
     "contract_semantics_changed": false,
-    "workflow_rerun_dispatched": false,
+    "queue_science_changed": false,
+    "metric_or_reduction_changed": false,
+    "threshold_or_tolerance_changed": false,
+    "comparator_changed": false,
+    "intervention_family_changed": false,
+    "resource_or_privilege_contract_changed": false,
+    "input_or_seed_policy_changed": false,
+    "falsifier_or_success_criteria_changed": false,
     "response_bearing_execution_performed": false,
-    "fresh_analyst_ready_review_required": true
+    "new_executor_executes_each_frozen_condition_from_independent_checkpoint_clone": true,
+    "new_executor_uses_source_only_cue": true,
+    "new_executor_preserves_raw_uns cored_response": true
   },
   "observations_evidentiary_status": {
     "new_scientific_result": false,
@@ -97,9 +79,34 @@
   "prior_result_preservation": {
     "D34_Q001_preserved_unchanged": true,
     "R1_prebind_preserved_unchanged": true,
+    "R2_closed_contract_preserved_unchanged": true,
     "all_prior_results_unchanged": true,
     "consumed_formal_identity_rerun_retune_rescore": false,
     "immutable_formal_sealed_evidence_refs_mutated": false
+  },
+  "collision_awareness": {
+    "primary_running_collision": false,
+    "forge_same_object_collision": false,
+    "forge_code_reused": false,
+    "forge_observation_confirmatory_credit": false,
+    "utility_dependency": false,
+    "relay_collision": false,
+    "pr_148_open": true,
+    "pr_149_open": true
+  },
+  "immutable_ref_revalidation": {
+    "authoritative_evidence_tag_count": 5,
+    "formal_tag_count": 0,
+    "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "new_candidate34_formal_identity_observed": false,
+    "new_candidate34_started_observed": false
+  },
+  "forge_boundary": {
+    "forge_code_reused": false,
+    "forge_observations_used": false,
+    "forge_confirmatory_credit": 0,
+    "canonical_contract_reestablished_independently": true
   },
   "hard_floor": {
     "formal_identity_created_or_consumed": false,
@@ -111,18 +118,18 @@
     "scientific_preserve_or_evidence_ref_created": false
   },
   "integrity": {
+    "analyst_generation_rechecked_immediately_before_research_mutation": true,
     "analyst_generation_rechecked_immediately_before_control_plane_mutation": true,
-    "exact_research_head_rechecked_immediately_before_control_plane_mutation": true,
-    "exact_head_workflows_rechecked": true,
-    "ops_only_mutation": true,
-    "scheduler_mutated": false,
+    "closed_r2_contract_head_unchanged": true,
+    "executor_branch_is_direct_child_of_closed_r2_head": true,
+    "prior_result_preservation_respected": true,
     "response_stop_respected": true,
     "formal_stop_respected": true
   },
   "remaining_blockers": [
-    "Fresh Evidence Analyst READY review is required before any D34-Q002 response-bearing execution or additional R2 rerun/tuning/re-scoring."
+    "Generic CI for the additive one-shot executor head must complete successfully before MAIN may arm or execute the single R93-authorized D34-Q002 response."
   ],
-  "stop_reason": "R92_NONRESULT_R2_CLOSURE_REVALIDATED_COMPLETE_WAITING_FRESH_ANALYST_READY_REVIEW",
-  "next_action": "Wait for a fresh Evidence Analyst review of exact head 43d0f25541a3c447d4c7156303647ae94f3119f4 and the preserved canonical R2 contract. If and only if fresh authority marks it READY and authorizes response-bearing PRE_FORMAL execution, execute the prospectively fixed D34-Q002 once. Otherwise do not execute, rerun, tune, rescore, change R2 semantics, or perform FORMAL work.",
+  "stop_reason": "WAITING_ONLY_FOR_EXECUTOR_HEAD_GENERIC_CI_BEFORE_ONE_SHOT_RESPONSE_ARMING",
+  "next_action": "Re-fetch R93 and the exact executor branch head. If CI 35822584950 is green and authority is unchanged, create/arm a no-clobber one-shot workflow that rechecks R93 immediately before execution, preserves raw D34-Q002 bytes before interpretation, executes exactly once, and then stops at first meaningful result exposure for fresh Analyst review. If CI fails, apply only science-invariant lint/import/build/plumbing repair and do not execute a response until green.",
   "owner": "main"
 }
