@@ -1,20 +1,20 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260923T125800+0900-R42-7C9E41B2",
-  "produced_at": "2026-09-23T12:58:00+09:00",
-  "producer_run_id": "control-brain-auto-20260923T1250JST-R42",
+  "generation_id": "CTRL-20260923T155900+0900-R43-A91C4E6B",
+  "produced_at": "2026-09-23T15:59:00+09:00",
+  "producer_run_id": "control-brain-auto-20260923T1550JST-R43",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "CTRL-20260923T115056+0900-R41-4C156929",
-  "programme_position": "FORMAL_HOLD_H7_PF_R1_UTILITY_ASSIGNMENT_POINTER_DIVERGENCE_WITH_CAND34_R2_NONRESULT_CLOSURE_GREEN_PENDING_FRESH_ANALYST_READY_REVIEW_FAST_FORGE_ROLLOUT_OBSERVATION",
+  "supersedes_generation_id": "CTRL-20260923T125800+0900-R42-7C9E41B2",
+  "programme_position": "CAND34_PREFORMAL_R2_RESULT_EXPOSED_DURABLY_PRESERVED_PENDING_FRESH_ANALYST_INTERPRETATION_H7_FORMAL_HOLD_WITH_PFR1_UTILITY_POINTER_NOW_MACHINE_RESOLVED_FAST_FORGE_ROLLOUT_OBSERVATION",
   "input_generations": {
     "human_directives": "ops/human-directives@de60c8888d1b438d5b06fed2266a8efd5893e646",
-    "control_previous": "CTRL-20260923T115056+0900-R41-4C156929@27b6531b6b3a1d941a484aeee012d5c59fe63d79",
-    "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "main_relay": "MAIN-20260923T124328+0900-RELAY-CAND34-PREFORMALR2-R92-WAITING-ANALYST-REVIEW@b06a449377d70809d521b492a77e999c4b4b5212",
-    "fast_forge": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS@ops/orchestrator-run-report",
-    "utility": "ops/utility-orchestrator-requests@15c5b130c868f7a37ab03582ca0225f001c651f7",
-    "methodology": "ops/methodology-calibrator-handoff@269fdfc699053318f8babbea09c007cbe9932cae",
-    "literature": "ops/external-research-audit-handoff@5228e5271f9a87c47d6ed1c68b10a24c92d0c996"
+    "control_previous": "CTRL-20260923T125800+0900-R42-7C9E41B2@7035ace9b0ef980602dcb124e8974be5640d7377",
+    "evidence_analyst": "EVA-20260923T150251+0900-R94-8E6A31C4@5cee6ef496eb9465550fb9c0be5295e587027dfb",
+    "main_relay": "MAIN-20260923T155100+0900-RELAY-CAND34-PREFORMALR2-R94-D34Q002-PRESERVED-EXPOSED@692557e1e5d5deeb7d156db274ea2e71d323b1db",
+    "fast_forge": "FORGE-20260923T153500+0900-ASSEMBLY-IDENTITY-COACTIVATION-R94@ops/orchestrator-run-report",
+    "utility_before_control_action": "UTILITY-20260923T152750+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-R94-6A4E91C2@04d0a45a2d9dea0fe67c0a95870e0196b5a9f4a3",
+    "utility_assignment_after_control_action": "UASSIGN-20260923T155800+0900-PFR1-7B1D4E92@b2f1462aeb95707747f8b273c1b9a6ec678996bd",
+    "methodology": "METHCAL-20260923T152244+0900-R84-5D4A8C21@f0d6b97c76878aada97794745c4b51f46bea18b0"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
@@ -23,17 +23,13 @@
     "immutable_ref_incident": false,
     "h7_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "h7_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "candidate34_r2_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-    "candidate34_r2_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
-    "candidate34_r2_contract_workflow": 35814951495,
-    "candidate34_r2_generic_ci": 35814951496,
-    "candidate34_r2_nonresult_contract_preserved": true,
-    "fast_forge_branches": [
-      {
-        "branch": "forge/20260923-receptor-suppression-probes-a",
-        "head": "c366c4054d2834003fcca20d49b8fc9ad4203edc"
-      }
-    ]
+    "candidate34_r2_contract_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+    "candidate34_r2_contract_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "candidate34_executor_branch": "research/main-cand34-assembly-route-preformal-r93-response",
+    "candidate34_executor_head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
+    "candidate34_raw_preserve_ref": "preserve/cand34-d34-q002-r94-raw-20260923",
+    "candidate34_raw_preserve_head": "4d45f1135bcb607f1e663648cd8335333eb98de4",
+    "candidate34_raw_sha256": "f34e0e4a40228b5eb299b0c24cec0a6bc97bb37dd1fa5d0f63cf933027843846"
   },
   "human_directives": {
     "newer_than_008_observed": false,
@@ -45,17 +41,16 @@
     "status": "ACTIVE_AND_CALIBRATED",
     "cycle_3_policy": "REASSESS_NOT_TERMINAL_CAP",
     "candidate34": {
-      "development_phase": "OPEN_DEVELOPMENT",
+      "analyst_canonical_development_phase_at_r94": "OPEN_DEVELOPMENT",
       "layer": "PRE_FORMAL",
       "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
-      "cycle": 4,
-      "r1_response_exposed": false,
-      "r1_preserved_nonresult": true,
-      "r2_change_class": "SCIENCE_AFFECTING_CHANGE_PRE_RESULT_EXPLICIT_VERSIONED_REVISION",
-      "authority_binding_status": "CORRECTLY_REBOUND_TO_CANONICAL_R92",
-      "r2_nonresult_closure_status": "GREEN_AND_DURABLY_PRESERVED",
-      "ready_status": "NOT_READY_PENDING_FRESH_ANALYST_REVIEW",
-      "response_execution_allowed": false
+      "meaningful_result_exposure_observed_after_r94": true,
+      "raw_preserved_before_interpretation": true,
+      "independent_confirmatory_credit": 0,
+      "canonical_phase_update_owner": "EVIDENCE_ANALYST_FRESH_GENERATION_REQUIRED",
+      "required_post_exposure_semantics": "RESULT_EXPOSED_DEVELOPMENT_BEFORE_ANY_FURTHER_SCIENCE_AFFECTING_WORK",
+      "repeat_same_response_allowed": false,
+      "control_scientific_interpretation": "DEFER_TO_FRESH_ANALYST"
     },
     "h7": {
       "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
@@ -66,6 +61,7 @@
     }
   },
   "funnel": {
+    "source_generation": "EVA-R94_PRE_CAND34_RESPONSE",
     "canonical_candidates": 35,
     "mechanism": 14,
     "system": 21,
@@ -74,17 +70,42 @@
     "nonterminal_hold": 1,
     "terminal_for_current_object": 32,
     "preformal_eligible": 2,
-    "preformal_ready": 1,
+    "preformal_ready": 2,
     "fresh_formal_authority": 0,
     "canonical_consumed_one_way": 0,
     "official_consumed_identities": 7,
-    "development_phase_counts": {
-      "OPEN_DEVELOPMENT": 4,
-      "RESULT_EXPOSED_DEVELOPMENT": 31,
-      "CONSUMED_ONE_WAY_CANONICAL": 0
-    },
     "classification_complete": "35/35",
-    "hidden_second_formal_gate": false
+    "hidden_second_formal_gate": false,
+    "post_r94_note": "candidate34 result exposure is newer than canonical funnel snapshot; fresh Analyst must recanonicalize development phase/disposition"
+  },
+  "candidate34": {
+    "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
+    "claim_ceiling": "MECHANISM",
+    "layer": "PRE_FORMAL",
+    "analyst_phase_pre_result": "OPEN_DEVELOPMENT",
+    "preformal_eligible": true,
+    "preformal_readiness_at_authorization": "READY",
+    "evidentiary_status": "PREFORMAL_DEVELOPMENT_ONLY_ZERO_CONFIRMATORY_CREDIT",
+    "bounded_response_authorized_count": 1,
+    "bounded_response_executed_count": 1,
+    "response_exposed": true,
+    "raw_preserved_before_interpretation": true,
+    "raw_preserve_ref": "preserve/cand34-d34-q002-r94-raw-20260923@4d45f1135bcb607f1e663648cd8335333eb98de4",
+    "raw_sha256": "f34e0e4a40228b5eb299b0c24cec0a6bc97bb37dd1fa5d0f63cf933027843846",
+    "official_scoring_performed": false,
+    "repeat_response_allowed": false,
+    "control_execution_hold": "STOP_PENDING_FRESH_ANALYST_POST_EXPOSURE_REVIEW",
+    "scientific_interpretation": "NEW_DEVELOPMENT_RESULT_EXISTS_BUT_SIGN_STRENGTH_AND_DISPOSITION_NOT_INTERPRETED_BY_CONTROL"
+  },
+  "candidate35": {
+    "candidate_id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
+    "claim_ceiling": "SYSTEM",
+    "layer": "ARCHITECTURE_STUDY",
+    "development_phase": "OPEN_DEVELOPMENT",
+    "preformal_eligible": false,
+    "queue_state": "QUEUED",
+    "forge_allocation_allowed": false,
+    "next_owner": "MAIN_WHEN_CAPACITY_AVAILABLE"
   },
   "h7": {
     "candidate_id": "CAND-H7-RESPONSIBILITY",
@@ -93,68 +114,19 @@
     "preformal_eligible": true,
     "preformal_readiness": "READY",
     "terminal_state": "NONTERMINAL_HOLD",
-    "queue_state": "NOT_QUEUED",
     "hold_class": "FORMAL_HOLD_PROVENANCE_GATE",
-    "hold_reason": "PF_R1_EXACT_BYTE_DEVELOPMENT_PROVENANCE_NOT_DURABLY_PRESERVED_BECAUSE_UTILITY_ASSIGNMENT_POINTER_DIVERGES_FROM_CONTROL_AUTHORITY",
+    "hold_reason": "PF_R1_EXACT_BYTE_DEVELOPMENT_PROVENANCE_ASSIGNMENT_NOW_PUBLISHED_BUT_EXECUTION_NOT_YET_TERMINALLY_COMPLETED",
     "preidentity_complete": true,
-    "fresh_formal_authority": 0,
-    "forbidden": [
-      "FORMAL identity creation",
-      "STARTED",
-      "evaluation payload or seed reveal",
-      "protected evaluation",
-      "result-bearing execution",
-      "official prediction raw",
-      "official scoring",
-      "scientific evidence creation"
-    ]
-  },
-  "candidate34": {
-    "candidate_id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
-    "claim_ceiling": "MECHANISM",
-    "layer": "PRE_FORMAL",
-    "development_phase": "OPEN_DEVELOPMENT",
-    "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
-    "cycle": 4,
-    "preformal_eligible": true,
-    "preformal_readiness": "NOT_READY",
-    "terminal_state": "NONTERMINAL",
-    "queue_state": "QUEUED",
-    "evidentiary_status": "NON_EVIDENTIARY_DEVELOPMENT",
-    "r1_response_bearing_execution_performed": false,
-    "r2_authority_binding": {
-      "status": "RESOLVED",
-      "bound_analyst_generation": "EVA-20260923T105725+0900-R92-6B8E31D4",
-      "silent_rewrite_used": false
-    },
-    "r2_nonresult_closure": {
-      "exact_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
-      "dedicated_contract_workflow": "SUCCESS",
-      "generic_ci": "SUCCESS",
-      "response_exposed": false,
-      "contract_artifact_preserved": true,
-      "preservation_class": "SCIENCE_INVARIANT_NON_RESULT_CONTRACT_CAPTURE"
-    },
-    "control_execution_hold": "WAIT_FRESH_ANALYST_READY_REVIEW_BEFORE_RESPONSE_BEARING_PREFORMAL",
-    "scientific_interpretation": "NO_NEW_RESPONSE_RESULT; IMPLEMENTATION_AND_NONRESULT_CONTRACT_CLOSURE_ONLY"
-  },
-  "candidate35": {
-    "candidate_id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
-    "claim_ceiling": "SYSTEM",
-    "layer": "ARCHITECTURE_STUDY",
-    "development_phase": "OPEN_DEVELOPMENT",
-    "preformal_eligible": false,
-    "preformal_readiness": "NOT_APPLICABLE",
-    "queue_state": "QUEUED",
-    "forge_allocation_allowed": false,
-    "next_owner": "MAIN_WHEN_CAPACITY_AVAILABLE"
+    "fresh_formal_authority": 0
   },
   "phenomenon_first": {
     "mode": "PREFETCH_SHADOW",
-    "last_full_scan_generation": "EVA-R91",
-    "r92_scan": "SKIPPED_LOW_RATE_THROTTLE",
+    "last_full_scan_generation": "EVA-R94",
     "standby_queue_size": 0,
     "standby_limit": 3,
+    "generated_latest_scan": 0,
+    "retained_latest_scan": 0,
+    "later_admissions": 0,
     "relation_to_forge": "SEPARATE_NONAUTHORIZING_PIPELINE",
     "quality": "ZERO_QUEUE_ACCEPTABLE_NO_MANUFACTURED_ACTIVITY"
   },
@@ -164,70 +136,47 @@
     "cadence": "HOURLY_AT_35_JST",
     "role_boundary": "NON_EVIDENTIARY_NONCANONICAL",
     "rollout_window": "FIRST_24_TO_48H_CALIBRATION",
-    "direct_runs_observed": 1,
-    "direct_prototypes": 2,
-    "direct_dead_ends": 2,
-    "direct_interesting": 0,
-    "direct_promotion_proposals": 0,
-    "utility_helper_runs": 1,
-    "utility_helper_dead_ends": 1,
+    "runs_observed": 5,
+    "prototypes": 10,
+    "dead_ends": 9,
+    "interesting": 0,
+    "promotion_proposals": 0,
     "analyst_admissions": 0,
-    "main_dependence_collisions": 0,
+    "duplicate_rescue_rejects": 4,
     "ownership_collisions": 0,
-    "ordinary_reduction_kills_total_observed": 3,
-    "utility_helper_note": "Pulse-order diagnostic reduced to stable same-time ordering plus sequential pulse-state update/intermediate emission; NONCANONICAL, zero evidence credit.",
+    "ordinary_reduction_rejects": 9,
+    "latest_outcome": "FORGE_DEAD_END_TWO_READ_ONLY_ASSEMBLY_PROBES",
     "scientific_evidence_credit": 0,
     "cadence_change_warranted": false
   },
   "utility": {
     "pfr1_request_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+    "pointer_divergence_before_run": true,
+    "control_action": "PUBLISHED_MATCHING_SCHEMA_V2_DECISION_AND_ACTIVE_ASSIGNMENT_POINTER",
+    "decision_id": "CTRL-DEC-20260923-1558-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+    "active_assignment_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+    "active_assignment_generation_id": "UASSIGN-20260923T155800+0900-PFR1-7B1D4E92",
+    "assignment_pointer_observed_after_write": "ACTIVE_MATCHING",
+    "utility_mailbox_head_after_write": "b2f1462aeb95707747f8b273c1b9a6ec678996bd",
+    "max_runs": 1,
     "policy_intent": "BOUNDED_NON_EVIDENTIARY_EXACT_BYTE_PRESERVATION",
-    "control_assignment_authority": {
-      "schema_version": 2,
-      "assignment_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
-      "decision": "APPROVED_ASSIGNED",
-      "status": "ACTIVE_REAFFIRMED",
-      "requested_worker": "UTILITY",
-      "scope": [
-        "retrieve existing PF-R1 raw.json exact bytes from the existing artifact only",
-        "retrieve existing PF-R1 summary.json exact bytes from the existing artifact only",
-        "compute and verify exact hashes and persist NON_EVIDENTIARY provenance"
-      ],
-      "must_not": [
-        "rerun PF-R1",
-        "reconstruct PF-R1",
-        "regenerate PF-R1",
-        "rescore PF-R1",
-        "retune PF-R1",
-        "create scientific authority",
-        "touch consumed/formal evidence"
-      ],
-      "fail_closed_if_original_bytes_unavailable": true
-    },
-    "actual_utility_assignment_pointer_observed": {
-      "status": "IDLE",
-      "active_assignment_id": null,
-      "observed_ref": "ops/utility-orchestrator-requests@15c5b130c868f7a37ab03582ca0225f001c651f7"
-    },
-    "assignment_pointer_divergence": {
-      "status": "CONTROL_PLANE_ASSIGNMENT_POINTER_DIVERGENCE_NONSCIENTIFIC",
-      "scientific_effect": "NONE_DIRECT; H7_FORMAL_REMAINS_FAIL_CLOSED",
-      "next_required_utility_action": "RECONCILE_CONTROL_ASSIGNMENT_BEFORE_MORE_AUTONOMOUS_FORGE_WORK"
-    },
+    "fail_closed_if_original_bytes_unavailable": true,
     "pfr1_preservation_complete": false,
-    "formal_gate": "STOP_PENDING_EXACT_BYTE_PRESERVATION_AND_LATER_FRESH_ANALYST_REVIEW",
-    "rerun_reconstruction_regeneration_rescore_allowed": false,
-    "control_action_this_run": "REAFFIRM_MACHINE_RESOLVABLE_CONTROL_ASSIGNMENT_AND_RECORD_POINTER_DIVERGENCE; NO_UTILITY_BRANCH_MUTATION"
+    "formal_gate": "STOP_PENDING_UTILITY_TERMINAL_EXACT_BYTE_PRESERVATION_AND_LATER_FRESH_ANALYST_REVIEW",
+    "rerun_reconstruction_regeneration_retune_rescore_allowed": false,
+    "autonomous_forge_allowed_while_assignment_active": false
   },
   "methodology_external_implications": {
+    "methodology_overall": "MIXED_CALIBRATION",
     "formal_integrity_floor": "UNCHANGED",
     "candidate34": [
-      "Physical causal opportunity is necessary but not sufficient for perturbation informativity.",
-      "Interpret future response against ordinary destination phase/state timing reductions before proposing richer mechanism successors.",
-      "Do not add new comparator, metric, tolerance, threshold, or success criterion to the already-authorized R2 contract after closure."
+      "First meaningful PRE_FORMAL response has now occurred and raw was durably preserved before interpretation.",
+      "No repeated D34-Q002 response under the same R94 READY authority.",
+      "Fresh Analyst owns the RESULT_EXPOSED transition and scientific interpretation.",
+      "Any science-affecting post-exposure change requires explicit versioned revision or fresh successor preserving this result."
     ],
-    "utility": "Audit Control-vs-Utility assignment pointer reconciliation without weakening PF-R1 exact-byte provenance.",
-    "forge": "Keep rough Forge objects outside canonical review until promotion boundary; zero-evidence credit remains mandatory."
+    "h7": "PF-R1 assignment authority is now machine-resolved; execution and exact-byte durability remain pending before later fresh H7 FORMAL review.",
+    "forge": "Keep rough objects outside canonical review until promotion boundary; zero evidence credit remains mandatory."
   },
   "scheduler_health": {
     "fleet_status": "YELLOW",
@@ -237,7 +186,7 @@
     "exact_deterministic_collisions": 0,
     "ownership_collisions": 0,
     "useful_generation_flow": true,
-    "observed_start_delay_range_minutes": "approximately 9-26 across multiple roles",
+    "observed_start_delay_range_minutes": "approximately 9-25 across multiple hourly roles",
     "structural_interpretation": "BROAD_QUEUE_LOAD_PRESSURE_NOT_SINGLE_PHASE_COLLISION",
     "proposals": [
       {
@@ -247,41 +196,48 @@
       },
       {
         "proposal_id": "SB-SCHED-LATENCY-001",
-        "status": "USER_APPROVAL_REQUIRED_IF_A_NEW_STRUCTURAL_OR_CADENCE_CHANGE_IS_PROPOSED",
-        "action": "NO_NEW_ACTION_REQUESTED_THIS_RUN"
+        "status": "OBSERVATION_ONLY_NO_NEW_STRUCTURAL_PROPOSAL",
+        "action": "NO_CHANGE_THIS_RUN"
       }
     ],
     "safe_auto_fix_applied": false,
     "scheduler_mutation_this_run": false
   },
+  "governance_context": {
+    "main_default_branch_ruleset": "protection_main_ACTIVE_OBSERVED_BY_ANALYST_R94",
+    "main_protection_gap_prior_state": "IMPROVED",
+    "scientific_namespace_protection_gap": "REMAINS_FOR_EVIDENCE_PRESERVE_NAMESPACES",
+    "ruleset_mutation_by_control": false
+  },
   "direction": {
     "evidence_analyst": [
-      "Re-fetch candidate34 exact R2 head 43d0f25541a3c447d4c7156303647ae94f3119f4 and its preserved non-result contract; independently decide READY prospectively before any response-bearing PRE_FORMAL execution.",
-      "Do not treat green CI, contract preservation, or Forge observations as scientific support.",
-      "After PF-R1 exact-byte preservation completes, re-fetch unchanged H7 R5 and decide any one-way FORMAL authority afresh."
+      "Re-fetch the exact candidate34 D34-Q002 preserved raw/provenance and own post-exposure interpretation and canonical phase/disposition update.",
+      "Do not authorize a second D34-Q002 response under R94 and keep PRE_FORMAL confirmatory credit at zero.",
+      "After PF-R1 exact-byte preservation completes, separately re-fetch unchanged H7 R5 and decide any FORMAL authority afresh."
     ],
     "main": [
-      "Candidate34 R2 non-result closure is complete. Stop before D34-Q002 response-bearing execution until a fresh Analyst READY decision.",
-      "Do not rewrite the closed R2 comparator/metric/threshold/tolerance or exploit Literature R36 prospectively to rescue this object."
+      "STOP candidate34 before repeat response, retune, rescore, comparator/threshold/tolerance change or science-affecting redesign until fresh Analyst review.",
+      "Preserve D34-Q002 raw ref unchanged and do not promote it to official FORMAL evidence."
     ],
     "fast_forge": [
-      "Continue only independent bounded rough exploration outside candidate34, candidate35, H7/PF-R1 and their blockers or immediate successors.",
+      "Continue only independent bounded rough exploration outside candidate34, candidate35, H7/PF-R1 and their blockers/immediate successors.",
       "Do not optimize promotion rate; ordinary-reduction dead ends are valid output."
     ],
     "utility": [
-      "Before further autonomous Forge support, reconcile assignment/current against this Control generation's active PF-R1 exact-byte preservation authority.",
-      "Use only existing PF-R1 bytes; verify hashes and persist NON_EVIDENTIARY provenance; fail closed if original bytes are unavailable.",
-      "Do not rerun, reconstruct, regenerate, rescore, retune, or create scientific evidence."
+      "Execute only UASSIGN-20260923T155800+0900-PFR1-7B1D4E92 once.",
+      "Use existing original PF-R1 bytes only, verify hashes, preserve non-destructively/create-only, and fail closed if unavailable or mismatched.",
+      "Do not perform autonomous Forge support until terminal result and Control acknowledgement."
     ]
   },
-  "actions_this_run": {
-    "experiment_execution": 0,
-    "formal_identity_consumption": 0,
-    "result_bearing_scientific_workflow_dispatch": 0,
-    "research_pr_merge": 0,
-    "immutable_formal_sealed_evidence_mutation": 0,
-    "scheduler_mutation": 0,
-    "utility_branch_mutation": 0,
-    "historical_result_rewrite": 0
+  "hard_floor_actions": {
+    "control_experiment": false,
+    "control_identity_consumption": false,
+    "control_scientific_workflow_dispatch": false,
+    "research_pr_merge": false,
+    "immutable_formal_sealed_evidence_mutation": false,
+    "scientific_metric_protocol_rescue_change": false,
+    "historical_result_rewrite": false,
+    "scheduler_mutation": false,
+    "utility_assignment_decision_published": true
   }
 }
