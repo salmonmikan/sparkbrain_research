@@ -1,178 +1,129 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T235628+0900-RELAY-CAND35-R100-ONEBATCH-EXPOSED-WAITING-ANALYST",
-  "producer_run_id": "sparkbrain-main-relay-20260923T234230JST-r100-cand35-onebatch",
-  "generated_at": "2026-09-23T23:56:28+09:00",
+  "generation_id": "MAIN-20260924T005300+0900-RELAY-H7-R102-READINESS-WAITING-CI",
+  "producer_run_id": "sparkbrain-main-relay-20260924T004541JST-r102-h7-readiness",
+  "generated_at": "2026-09-24T00:53:00+09:00",
   "status": "WAITING_EXTERNAL",
   "execution_mode": "RELAY",
-  "candidate_id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
-  "research_layer": "ARCHITECTURE_STUDY",
-  "claim_ceiling": "SYSTEM",
-  "development_phase": "OPEN_DEVELOPMENT",
-  "development_revision": "ARCHITECTURE-R2-EXACT-CANDIDATE-SURFACE-AND-EXECUTOR-BINDING-NONRESULT",
-  "implementation_revision": "PRESERVATION-R1-RAW-BEFORE-READ-EXCLUSIVE-CREATE-COMPLETE",
-  "cycle_count": 3,
+  "candidate_id": "CAND-H7-RESPONSIBILITY",
+  "research_layer": "PRE_FORMAL",
+  "claim_ceiling": "MECHANISM",
+  "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+  "development_revision": "H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-AND-PROVISIONING-PROVENANCE-SPLIT",
+  "cycle_count": 12,
   "cycle_reassessment": {
-    "authorized_by_analyst": true,
-    "expected_information_gain": "R100 explicitly authorized one complete five-arm Architecture development response after exact binding; the response was executed once and the authority is now exhausted at first complete batch result exposure.",
-    "relay_extension_beyond_authority": false,
-    "response_authority_exhaustion": "FIRST_COMPLETE_BATCH_RESULT_EXPOSURE",
-    "response_authority_exhausted": true
+    "authorized_scientific_cycle": 12,
+    "relay_extended_scientific_cycle": false,
+    "current_action_is_science_invariant_readiness_plumbing_only": true
   },
   "analyst_authority": {
-    "generation_id": "EVA-20260923T225720+0900-R100-C6A2F18D",
-    "commit": "a32494246245a559ad4e1f8543a1f252b03ef2e7",
-    "decision": "GO_CAND35_ONE_BOUNDED_ARCHITECTURE_RESPONSE_AFTER_R100_EXACT_AUTHORITY_REPIN_FIXED_ORDER_BATCH_PRESERVE_BEFORE_READ_PREFLIGHT; STOP_AFTER_FIRST_COMPLETE_RESULT_EXPOSURE",
-    "classification": "ARCHITECTURE_DEVELOPMENT_RESULT_AUTHORITY_NOT_PREFORMAL_NOT_FORMAL",
-    "freshness_rechecked_before_result_bearing_action": true,
-    "freshness_rechecked_after_result_for_persistence": true,
-    "canonical_post_exposure_phase_update_owner": "EVIDENCE_ANALYST_FRESH_GENERATION_REQUIRED"
+    "generation_id": "EVA-20260924T003800+0900-R102-CAND35-CALIBRATED",
+    "commit": "3d6abd17bbf8804d1656aca90b8ab17d67ab2472",
+    "decision": "GO_H7_SCIENCE_INVARIANT_CAPABILITY_AND_AUTHORITY_PLUMBING_THEN_NON_RESULT_READINESS_ONLY; H7_FORMAL_STOP",
+    "fresh_analyst_required_after_green_readiness": true,
+    "freshness_rechecked_after_controller_mutation": true
   },
-  "prior_main_generation": "MAIN-20260923T235027+0900-RELAY-CAND35-R100-RESPONSE-PREFLIGHT-WAITING-CI",
+  "prior_main_generation": "MAIN-20260923T235628+0900-RELAY-CAND35-R100-ONEBATCH-EXPOSED-WAITING-ANALYST",
   "funnel": {
-    "claim_ceiling": "SYSTEM",
-    "preformal_eligible": false,
-    "preformal_readiness": "NOT_APPLICABLE",
-    "hold_class": null,
-    "hold_reason": null,
-    "terminal_state": "NONTERMINAL",
-    "queue_state": "QUEUED_FOR_MAIN_ARCHITECTURE_ONE_BOUNDED_RESPONSE",
-    "system_priority_exception": {
-      "used": true,
-      "reason": "NO_EXECUTABLE_MECHANISM_WHILE_H7_FORMAL_INTEGRITY_CAPABILITY_BLOCKED"
-    },
-    "development_phase": "OPEN_DEVELOPMENT",
-    "development_revision": "ARCHITECTURE-R2-EXACT-CANDIDATE-SURFACE-AND-EXECUTOR-BINDING-NONRESULT"
-  },
-  "result_exposure": {
-    "observed": true,
-    "complete_batch": true,
-    "canonical_phase_field_changed_by_relay": false,
-    "analyst_required_post_exposure_semantics": "RESULT_EXPOSED_DEVELOPMENT",
-    "phase_transition_pending_owner": "EVIDENCE_ANALYST",
-    "scientific_interpretation_performed_by_relay": false,
-    "pass_fail_assigned": false,
-    "confirmatory_credit": 0
+    "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "READY",
+    "hold_class": "FORMAL_INTEGRITY_CAPABILITY",
+    "hold_reason": "protected sidecar handoff capability is missing; latest readiness failed before identity materialization",
+    "terminal_state": "NONTERMINAL_HOLD",
+    "queue_state": "HOLD",
+    "system_priority_exception": false,
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "H7-FORMAL-R5-CONTENT-ADDRESSED-RUNTIME-IDENTITY-AND-PROVISIONING-PROVENANCE-SPLIT"
   },
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "candidate_branch": "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3",
-    "candidate_branch_control_head": "62db3b437ffc26b931bbe5b9e78ca814bddbeb81",
-    "bound_implementation_head": "b5f312683d50ed3a086348b62770fc8923c78046",
-    "authority_repin_commit": "fac39a9e18ff1f13e05d24436dcb13cde08b7704",
-    "authorized_scientific_source_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
-    "scientific_source_path": "src/sparkbrain/v05/candidate35_architecture.py",
-    "scientific_source_blob_sha1": "4055f42483d5bba73eef51b1753a2c19f18d5ab5",
-    "preservation_wrapper_path": "src/sparkbrain/v05/candidate35_preservation.py",
-    "response_runner_path": "scripts/run_candidate35_r100_response.py",
-    "response_producer": "sparkbrain.v05.candidate35_architecture.execute_candidate35_response",
-    "raw_branch": "raw/cand35-r100-onebatch-20260923",
-    "raw_preservation_head": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
-    "raw_completion_manifest_path": "artifacts/candidate35/r100-onebatch/99-batch-complete.json",
-    "actions_artifact_id": 10759196572,
-    "actions_artifact_digest": "sha256:f10bf3b3f99a2e649abaaad1e5511ddbf5c37bcace353795ab26e470eab0707f",
-    "history_path": "reports/orchestrator/main/history/2026-09-23/2356-r100-relay-cand35-onebatch-result-exposed.md"
+    "analyst_branch": "ops/evidence-analyst-handoff",
+    "analyst_head": "3d6abd17bbf8804d1656aca90b8ab17d67ab2472",
+    "scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+    "scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+    "controller_branch": "research/main-h7-r5-oneway-controller-r98",
+    "controller_head": "ccffe9af2c6d3e04c9d1c7e6a53045d4a569756e",
+    "resource_contract_path": "artifacts/formal_h7_r5/resource_contract.json",
+    "readiness_workflow_path": ".github/workflows/h7-formal-r5-one-way-readiness.yml",
+    "history_path": "reports/orchestrator/main/history/2026-09-24/0053-r102-relay-h7-readiness-authority-repin.md"
   },
-  "repair_change_classification": "SCIENCE_INVARIANT_REPAIR_THEN_PROSPECTIVELY_AUTHORIZED_FROZEN_DEVELOPMENT_EXECUTION",
+  "repair_change_classification": "SCIENCE_INVARIANT_AUTHORITY_PLUMBING_ONLY",
   "work_performed": [
     {
       "classification": "SCIENCE_INVARIANT_REPAIR",
-      "change": "Repinned preservation provenance to exact R100 and added a fail-closed exact-head one-batch runner without changing scientific source or frozen science fields."
+      "change": "Repinned the H7 NON_RESULT readiness controller's exact Analyst authority SHA to current R102 only; no scientific source or frozen science field changed."
     },
     {
-      "classification": "SCIENCE_INVARIANT_REPAIR",
-      "change": "The first launch workflow failed at parse time with zero jobs and zero response execution; repaired workflow syntax/path plumbing only."
-    },
-    {
-      "classification": "PROSPECTIVELY_AUTHORIZED_DEVELOPMENT_EXECUTION",
-      "change": "Executed the exact frozen five-arm Architecture batch once after green exact-head CI and fresh authority/ownership reconciliation; preserved every raw arm artifact before interpretation and then exhausted the one-batch response authority."
+      "classification": "NON_RESULT_READINESS_DISPATCH",
+      "change": "Allowed the controller-branch push trigger to dispatch the already-authorized H7 NON_RESULT readiness workflow and generic CI."
     }
   ],
   "workflows": {
+    "h7_nonresult_readiness": {
+      "run_id": 35884741590,
+      "head": "ccffe9af2c6d3e04c9d1c7e6a53045d4a569756e",
+      "status": "in_progress",
+      "conclusion": null,
+      "result_bearing": false,
+      "last_observed_step": "Recreate locked scientific runtime",
+      "expected_next_action": "Wait for completion. Green readiness requires fresh Evidence Analyst before any FORMAL action; any binding/capability failure remains fail-closed."
+    },
     "generic_ci": {
-      "run_id": 35876830334,
-      "head": "b5f312683d50ed3a086348b62770fc8923c78046",
-      "status": "completed",
-      "conclusion": "success",
+      "run_id": 35884741827,
+      "head": "ccffe9af2c6d3e04c9d1c7e6a53045d4a569756e",
+      "status": "in_progress",
+      "conclusion": null,
       "result_bearing": false
-    },
-    "initial_launch_workflow": {
-      "run_id": 35877629599,
-      "head": "98056bfaee1ee24ccc05b944cd6b7972dec3c684",
-      "status": "completed",
-      "conclusion": "failure",
-      "failure_class": "WORKFLOW_PARSE_SYNTAX_BEFORE_JOB_CREATION",
-      "candidate_response_executed": false,
-      "result_bearing": false
-    },
-    "one_bounded_response": {
-      "run_id": 35877765051,
-      "launch_head": "62db3b437ffc26b931bbe5b9e78ca814bddbeb81",
-      "bound_implementation_head": "b5f312683d50ed3a086348b62770fc8923c78046",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": true,
-      "raw_preservation_ref": "raw/cand35-r100-onebatch-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a"
     }
   },
-  "raw_artifacts": {
-    "preflight_sha256": "2823f3596621ad866b9237e9440f09c05aff2c9e6564e866b3a8e0da3cc3d33f",
-    "arms": [
-      {"arm": "SHAM_STATE", "sha256": "f04d6661700e1c745490a5e95d017de01dc5f52a5d1e47cb6336e4d568e851b3"},
-      {"arm": "POTENTIAL_NULL", "sha256": "da7a25a9ecba2ff90173167d93a4caf3d6adaf038c616f0ee62ded8343ab56af"},
-      {"arm": "ADAPTATION_NULL", "sha256": "7ff459db556184501548930a63ca665b7fbe2ec4188bb371c87cd08729a2a858"},
-      {"arm": "JOINT_SUBTHRESHOLD_NULL", "sha256": "536b202ad4aa6896fc84b7b20986af885f19f8a0266efaee807f0ec2f728840e"},
-      {"arm": "DELAYED_SHAM_32MS", "sha256": "7378a4d2d02e48b6737c93e2800f096b94d94e49efdc868a88bd0e76bdf5ddd4"}
-    ]
-  },
   "observations": {
-    "scientific_result": "COMPLETE_FIVE_ARM_ARCHITECTURE_DEVELOPMENT_RESPONSE_PRESERVED_UNSCORED",
-    "new_scientific_result_this_run": true,
-    "evidentiary_status": "DEVELOPMENT_ONLY_UNSCORED_ARCHITECTURE_RESPONSE",
-    "candidate_response_executed": true,
-    "scientific_raw_response_created": true,
-    "complete_frozen_batch": true,
-    "response_authority_exhausted": true,
-    "raw_preserved_before_interpretation": true,
-    "preformal_execution_performed": false,
+    "new_scientific_result_this_run": false,
+    "evidentiary_status": "NON_RESULT_READINESS_PLUMBING_ONLY",
+    "scientific_source_changed": false,
+    "science_affecting_change_performed": false,
     "formal_identity_created_or_consumed": false,
     "started_marker_created": false,
     "protected_or_heldout_evaluation_accessed": false,
     "official_scoring_performed": false,
-    "pass_fail_assigned": false,
-    "mechanism_credit_assigned": false,
-    "scientific_interpretation_deferred_to_analyst": true,
     "evidence_ref_created_or_mutated": false,
     "prior_results_preserved_unchanged": true,
-    "forge_code_or_observation_reused": false
+    "candidate35_same_object_continuation": false
   },
   "consumed_identities": {
     "new_identity_consumed_this_run": false,
     "official_consumed_identity_count": 7,
-    "candidate35_identity": null
+    "active_h7_identity": null
   },
   "ownership_and_collision": {
-    "fresh_primary_running_same_object_before_execution": false,
+    "fresh_primary_running_same_h7_object_before_mutation": false,
     "prior_main_status": "WAITING_EXTERNAL",
-    "fast_forge_same_object_collision": false,
-    "h7_rank1_repair_still_blocked_on_protected_sidecar_capability": true,
-    "h7_formal_start_authorized_now": false
+    "fast_forge_same_h7_object_collision": false,
+    "fresh_forge_activity_observed_but_not_on_h7_critical_path": true,
+    "h7_formal_authorized_now": false
   },
   "integrity": {
-    "analyst_generation_rechecked_before_result": true,
-    "main_generation_and_lease_rechecked_before_result": true,
-    "candidate_direct_ref_rechecked_before_result": true,
-    "authorized_scientific_source_bytes_unchanged": true,
-    "fixed_arm_order_preserved": true,
-    "raw_before_read_preserved": true,
-    "exclusive_raw_ref_created_once": true,
-    "automatic_rerun_retune_rescore_performed": false,
-    "no_scientific_field_changed_after_exposure": true,
-    "development_phase_not_mutated_by_relay": true,
-    "formal_floor_respected": true,
+    "analyst_generation_rechecked_before_mutation": true,
+    "analyst_generation_rechecked_after_mutation": true,
+    "main_generation_and_lease_rechecked_before_mutation": true,
+    "direct_h7_scientific_ref_rechecked_before_mutation": true,
+    "direct_h7_controller_ref_rechecked_before_mutation": true,
+    "authorized_scientific_source_unchanged": true,
+    "formal_identity_created": false,
+    "started_created": false,
+    "protected_evaluation_accessed": false,
+    "official_scoring_performed": false,
     "historical_pass_fail_rewritten": false,
-    "immutable_formal_sealed_evidence_refs_mutated": false
+    "immutable_formal_sealed_evidence_refs_mutated": false,
+    "development_phase_changed_by_relay": false,
+    "formal_floor_respected": true
   },
-  "stop_reason": "R100_FIRST_COMPLETE_CAND35_ARCHITECTURE_BATCH_RESULT_EXPOSED_AUTHORITY_EXHAUSTED",
-  "next_action": "Fresh Evidence Analyst must review the preserved first-batch raw artifacts, own the canonical development_phase transition required by R100 post-exposure semantics, and decide any versioned successor or termination. MAIN/Relay must not rerun, retune, rescore, reinterpret into mechanism credit, or execute Candidate #35 again without fresh Analyst authority."
+  "do_not_touch": [
+    "H7 FORMAL identity/start/evaluation/scoring without a later fresh Analyst GO",
+    "consumed FORMAL identities",
+    "immutable/formal/sealed/evidence refs",
+    "Candidate #35 current object science, rerun, retune, rescore, or SYSTEM-to-MECHANISM uplift"
+  ],
+  "stop_reason": "H7_R102_NONRESULT_READINESS_WORKFLOW_IN_PROGRESS",
+  "next_action": "Wait for H7 NON_RESULT readiness workflow 35884741590. If green, stop for fresh Evidence Analyst. If exact binding/capability fails, remain fail-closed on FORMAL_INTEGRITY_CAPABILITY hold and continue only if a fresh/current Analyst contingency permits another science-invariant plumbing repair."
 }
