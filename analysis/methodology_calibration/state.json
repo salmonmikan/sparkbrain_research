@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-24T05:19:16+09:00",
+  "timestamp": "2026-09-24T06:22:41+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260924T051916+0900-R98-7D3B4C91",
-    "sequence": 98,
+    "generation_id": "METHCAL-20260924T062241+0900-R99-6E3A91B4",
+    "sequence": 99,
     "material_change": true,
-    "material_change_reason": "H7_RESULT_BEARING_LAUNCH_PATH_NOW_MATERIALIZED_AND_R106_AUTHORIZED_BUT_PRIMARY_RUNTIME_LACKS_FROZEN_TRIGGER_CAPABILITY; TH001_FORGE_PROBE_EXECUTED_ZERO_CREDIT_BUT_DID_NOT_INSTANTIATE_PREDECLARED_Q0_VS_QI_DISCRIMINATOR_AND_WAS_OVERBROADLY_TREATED_AS_THEORY_KILL; REVISIT_UNCHANGED_NO_LIVE_TRIGGER",
-    "supersedes_generation_id": "METHCAL-20260924T042120+0900-R97-C9CE09C7",
+    "material_change_reason": "MAIN_RELAY_NOW_SEPARATES_H7_OPERATIONAL_TRIGGER_BLOCKER_FROM_SCIENTIFIC_FUNNEL_WITHOUT_SCIENCE_CHANGE; ANALYST_EFFECTIVE_EXECUTABILITY_AGGREGATE_REMAINS_STALE; FAST_FORGE_NOOP_USED_STALE_R97_METHODOLOGY_AND_CONTINUES_OVERBROAD_TH001_KILL_SUPPRESSING_PREDECLARED_Q0_VS_QI_TEST; REVISIT_UNCHANGED_NO_LIVE_TRIGGER",
+    "supersedes_generation_id": "METHCAL-20260924T051916+0900-R98-7D3B4C91",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260924T042120+0900-R97-C9CE09C7",
-      "branch_head_before_run": "0b21a6670059060ca3dad054891b8fa89c9bcbd1",
+      "generation_id": "METHCAL-20260924T051916+0900-R98-7D3B4C91",
+      "branch_head_before_run": "967cf3d244e19804c93368526cab4d9ef4b59e9c",
       "overall_classification": "MIXED_CALIBRATION",
       "role": "DESIGNATED_PRIOR_METHODOLOGY_HISTORY_READ_FIRST"
     },
@@ -24,17 +24,17 @@
       "generation_id": "CTRL-20260924T045900+0900-R48-6F2C1A84",
       "branch_head": "8b8cea6136d1b0e2d821fce1d4f75f8709a4fed0",
       "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH",
-      "freshness_note": "PREDATES_ANALYST_R106_AND_MAIN_TRIGGER_CAPABILITY_BLOCK"
+      "freshness_note": "PREDATES_ANALYST_R106_AND_POST_R98_MAIN_RELAY"
     },
     "evidence_analyst": {
       "generation_id": "EVA-20260924T050035+0900-R106-H7-LAUNCH-READY-THEORY-PROBE-KILLED",
       "branch_head": "770edcb0cf050ed7cdf41d4716ed645952e69475",
       "role": "DESIGNATED_CANONICAL_GATE_HISTORY"
     },
-    "main_primary": {
-      "generation_id": "MAIN-20260924T051305+0900-PRIMARY-H7-R106-FORMAL-LAUNCH-TRIGGER-BLOCKED",
-      "branch_head": "a8762d6a72a7722397d38a40942db639f99f0d5b",
-      "role": "FRESH_NONRESULT_EXECUTION_CAPABILITY_OBSERVATION"
+    "main_relay": {
+      "generation_id": "MAIN-20260924T054727+0900-RELAY-H7-R106-FORMAL-LAUNCH-CAPABILITY-BLOCKED",
+      "branch_head": "e5a1927352b0671456dd8c1166cccea72a510817",
+      "role": "FRESH_NONRESULT_CONTROL_PLANE_CAPABILITY_RECONCILIATION"
     },
     "external_theory": {
       "generation_id": "THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91",
@@ -46,6 +46,12 @@
       "branch": "forge/20260924-recurrent-continuation-a",
       "branch_head": "17b2673cd0417fdf931264a71d8df1f9c1c21f23",
       "role": "ANALYST_GATED_NONCANONICAL_ZERO_CREDIT_THEORY_PROBE"
+    },
+    "fast_forge": {
+      "generation_id": "FORGE-20260924T053555+0900-NOOP-R106-R97-THEORY-KILLED",
+      "state_blob": "9eb0dd2bb968e05ba01d6a4aceae59a21724a9cf",
+      "methodology_generation_consumed": "METHCAL-20260924T042120+0900-R97-C9CE09C7",
+      "role": "FRESH_NONCANONICAL_ZERO_CREDIT_SELECTION_NOOP"
     }
   },
   "authoritative_refs": {
@@ -53,8 +59,11 @@
     "evidence_tag_count": 5,
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
+    "freeze_tag_count": 0,
+    "immutable_tag_count": 0,
     "h7_control_refs": 0,
     "h7_preserve_refs": 0,
+    "h7_launch_tags": 0,
     "canonical_candidate_total": 35,
     "terminal_for_current_object": 34,
     "nonterminal_active": 1,
@@ -77,6 +86,7 @@
       "science_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
       "launch_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
       "launch_trigger": "PUSH_TAG_launch/h7-r5-*",
+      "main_operational_blocker": "EXECUTION_CAPABILITY",
       "observed_executor_trigger_capability": "UNAVAILABLE",
       "actual_execution_status": "BLOCKED_BEFORE_IDENTITY_START"
     },
@@ -112,8 +122,9 @@
     "hidden_second_formal_gate": "KEEP",
     "materialized_result_bearing_launch_path_before_fresh_formal_authority": "KEEP",
     "scientific_formal_authority_exact_binding": "KEEP",
-    "effective_executability_requires_trigger_capability": "TIGHTEN",
-    "executor_trigger_capability_before_queueing": "TIGHTEN",
+    "executor_capability_axis_orthogonal_to_scientific_funnel": "KEEP",
+    "scientific_queue_membership_with_operational_blocker": "CLARIFY",
+    "effective_executability_requires_verified_trigger_capability": "TIGHTEN",
     "fresh_formal_one_way_transition": "INSUFFICIENT_EVIDENCE",
     "terminal_current_object_never_reactivated": "KEEP",
     "revisit_axis_orthogonal_to_terminal_state": "KEEP",
@@ -129,24 +140,24 @@
     "theory_forge_zero_credit_bounded_surface": "KEEP",
     "theory_forge_probe_fidelity_to_predeclared_discriminator": "TIGHTEN",
     "whole_theory_kill_from_nondiagnostic_prototype_reduction": "RELAX",
+    "forge_methodology_freshness_before_selection": "TIGHTEN",
     "fast_forge_canonical_separation": "KEEP",
     "claim_ceiling_enforcement": "KEEP",
     "mechanism_supply_health": "CLARIFY",
-    "ready_authority_executable_distinction": "CLARIFY",
     "pass_reachability_without_standard_relaxation": "KEEP"
   },
   "development_iteration_calibration": {
-    "status": "CONSISTENT_CURRENT_OBJECTS_EXECUTION_CAPABILITY_AXIS_NEEDS_EXPLICIT_SEPARATION",
-    "h7": "RESULT_EXPOSED_R5_UNCHANGED_READY_FORMAL_AUTHORIZED_BUT_RUNTIME_TRIGGER_BLOCKED",
+    "status": "CONSISTENT_CURRENT_OBJECTS_OPERATIONAL_CAPABILITY_NOW_ORTHOGONAL_IN_MAIN",
+    "h7": "RESULT_EXPOSED_R5_UNCHANGED_READY_FORMAL_AUTHORIZED_SCIENTIFICALLY_QUEUED_OPERATIONALLY_TRIGGER_BLOCKED",
     "candidate35": "RESULT_EXPOSED_TERMINAL_ZERO_CREDIT_NO_SAME_OBJECT_RESCUE",
     "cycle3": "MANDATORY_REASSESSMENT_NOT_HARD_CAP"
   },
   "formal_calibration": {
     "current_integrity": "UNCHANGED_NO_H7_IDENTITY_START_PRESERVE_RESULT",
-    "r97_path_preexistence_recommendation": "SATISFIED_AT_REPOSITORY_LEVEL",
-    "r106_authority": "EXACT_BINDING_SCIENTIFIC_AUTHORITY_VALID",
-    "main_r106_observation": "AUTHORIZED_EXECUTOR_CANNOT_INVOKE_FROZEN_TAG_TRIGGER",
-    "prospective": "SEPARATE_FORMAL_AUTHORITY_FROM_EXECUTOR_TRIGGER_CAPABILITY_AND_HOLD_EFFECTIVE_EXECUTION_IF_TRIGGER_PRIMITIVE_ABSENT"
+    "scientific_authority": "R106_EXACT_BINDING_VALID",
+    "main_relay_correction": "OPERATIONAL_BLOCKER_SEPARATED_FROM_ANALYST_FUNNEL",
+    "residual_observability_issue": "ANALYST_EFFECTIVELY_EXECUTABLE_MECHANISM_1_WHILE_OBSERVED_TRIGGER_CAPABILITY_UNAVAILABLE",
+    "prospective": "KEEP_SCIENTIFIC_QUEUE_AND_EXECUTOR_CAPABILITY_ORTHOGONAL; DO_NOT_MUTATE_FROZEN_TRIGGER"
   },
   "theory_forge_calibration": {
     "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
@@ -157,7 +168,9 @@
     "predeclared_minimal_discriminator": "Q0_PREDICTIVE_EQUIVALENCE_VS_QI_INTERVENTION_REFINEMENT",
     "probe_instantiates_predeclared_discriminator": false,
     "analyst_theory_kill_inference": "OVERBROAD_SLIGHTLY_OVERCONSERVATIVE",
-    "assessment": "SAFE_ZERO_CREDIT_BUT_FALSE_NEGATIVE_RISK_FROM_OFF_DISCRIMINATOR_KILL"
+    "fresh_fast_forge_action": "NO_OP_DUE_THEORY_KILLED_NO_NEW_SPEC",
+    "fast_forge_methodology_freshness": "STALE_R97_WHILE_R98_ALREADY_DURABLE",
+    "assessment": "SAFE_ZERO_CREDIT_BUT_OBSERVED_FALSE_NEGATIVE_THROUGHPUT_EFFECT"
   },
   "revisit_calibration": {
     "implementation_status": "BOOTSTRAP_COMPLETE_DIFFERENTIAL_SCAN_ACTIVE_LIVE_TRIGGER_PATH_UNOBSERVED",
@@ -189,44 +202,44 @@
     "candidate35": "DEFERRED_REQUIRES_INDEPENDENT_REIDENTIFICATION"
   },
   "preformal_calibration": {
-    "status": "CALIBRATED_READY_DISTINCT_FROM_AUTHORITY_AND_EXECUTOR_CAPABILITY",
+    "status": "CALIBRATED_READY_AUTHORITY_QUEUE_AND_OPERATIONAL_TRIGGERABILITY_ARE_DISTINCT_AXES",
     "ready_means_success": false,
     "repeated_development_observations_independent_confirmation": false,
     "hidden_second_formal_gate_observed": false
   },
   "risks": {
     "false_positive_zombie_inflation": "LOW_CURRENT_MODERATE_FUTURE_TRIGGER_WATCH",
-    "false_negative_forgotten_valuable_lines": "MODERATE_THEORY_FALSE_NEGATIVE_PLUS_REVISIT_LIVE_PATH_UNTESTED",
+    "false_negative_forgotten_valuable_lines": "MODERATE_THEORY_FALSE_NEGATIVE_PLUS_REVISIT_LIVE_PATH_UNTESTED_AND_STALE_FORGE_METHODOLOGY_INPUT",
     "moving_goalpost_rescue": "LOW_CURRENT",
     "over_terminalization": "MODERATE_THEORY_KILL_TOO_BROAD_NO_CURRENT_REVISIT_MISS",
     "formal_integrity": "LOW_CURRENT_FAIL_CLOSED_BEFORE_IDENTITY",
-    "execution_readiness_observability": "MODERATE_QUEUE_STATUS_IGNORED_TRIGGER_CAPABILITY",
-    "mechanism_supply": "FRAGILE_ZERO_AUTONOMOUS_EXECUTABLE_CURRENTLY"
+    "execution_readiness_observability": "MODERATE_BUT_IMPROVING_MAIN_AXIS_SPLIT_ANALYST_AGGREGATE_STALE",
+    "mechanism_supply": "FRAGILE_ONE_SCIENTIFICALLY_QUEUED_ZERO_OBSERVED_TRIGGERABLE"
   },
   "mandatory_questions": {
-    "1_development_phase_end_to_end": "YES_CURRENT_OBJECTS_FORMAL_CONSUMPTION_UNOBSERVED",
+    "1_development_phase_end_to_end": "YES_CURRENT_OBJECTS_H7_RESULT_EXPOSED_R5_UNCHANGED",
     "2_cycle3_hard_cap": "NO",
-    "3_repair_classification": "YES_CURRENT_H7_AND_TERMINAL_PATHS",
+    "3_repair_classification": "YES_FRESH_MAIN_AND_FORGE_CHANGES_NONSCIENCE",
     "4_development_observations_independent_credit": "KEPT_ZERO_CREDIT",
     "5_formal_one_way_integrity": "UNCHANGED_NO_H7_IDENTITY_START_PRESERVE_RESULT",
-    "6_system_to_mechanism_successors": "NO_SAME_OBJECT_MANUFACTURE; NONCANONICAL_THEORY_SUPPLY_SLIGHTLY_OVER_SUPPRESSED_BY_OFF_DISCRIMINATOR_KILL",
-    "7_preformal_genuine_development": "YES_READY_TRUE_WITHOUT_RESULT_AND_DESPITE_EXECUTION_CAPABILITY_BLOCK",
+    "6_system_to_mechanism_successors": "NO_SAME_OBJECT_MANUFACTURE; NONCANONICAL_THEORY_SUPPLY_OVER_SUPPRESSED_BY_OFF_DISCRIMINATOR_KILL",
+    "7_preformal_genuine_development": "YES_READY_WITHOUT_RESULT_AND_WITH_OPERATIONAL_BLOCKER",
     "8_terminal_semantics": "CALIBRATED_34_TERMINAL_OBJECTS_REMAIN_TERMINAL",
     "9_revisit_catches_changed_conditions": "NOT_DEMONSTRATED_LIVE_NO_CURRENT_MATERIAL_TRIGGER_MISSED",
     "10_revisit_avoids_rescue_zombies": "YES_CURRENT_OBSERVATIONS",
     "11_revisit_forge_test": "INSUFFICIENT_EVIDENCE_NO_LIVE_CASE",
     "12_bootstrap_complete_conservative": "YES_WITH_CANDIDATE_SPECIFIC_PROVENANCE_REQUIRED_BEFORE_LIVE_TRIGGER",
-    "13_pass_reachability": "SCIENTIFICALLY_YES_WITHOUT_WEAKER_STANDARDS_OPERATIONALLY_BLOCKED_IN_CURRENT_EXECUTOR_DUE_MISSING_FROZEN_TRIGGER_CAPABILITY"
+    "13_pass_reachability": "SCIENTIFICALLY_YES_WITHOUT_WEAKER_STANDARDS_OPERATIONALLY_BLOCKED_IN_OBSERVED_LANES_DUE_MISSING_FROZEN_TRIGGER_CAPABILITY"
   },
   "prospective_recommendations": [
-    "SEPARATE_FORMAL_AUTHORIZED_FROM_EXECUTOR_TRIGGER_CAPABLE_AND_ONLY_MARK_EFFECTIVELY_EXECUTABLE_WHEN_FROZEN_TRIGGER_CAN_BE_INVOKED",
-    "ADD_NONRESULT_TRIGGER_CAPABILITY_CHECK_BEFORE_QUEUEING_WITHOUT_MODIFYING_BOUND_WORKFLOW",
-    "KEEP_H7_SCIENCE_CONTROLLER_RUNTIME_INPUT_SCORER_PRESERVER_AND_ONE_WAY_RULES_UNCHANGED",
-    "TREAT_RECURRENT_CONTINUATION_FORGE_RESULT_AS_PROTOTYPE_REDUCTION_NOT_SUFFICIENT_TH001_FALSIFICATION",
-    "ALLOW_ONE_BOUNDED_CONTRACT_FAITHFUL_Q0_VS_QI_PROBE_UNDER_ORIGINAL_PREDECLARED_DISCRIMINATOR_WITH_ZERO_CREDIT_IF_ANALYST_CHOOSES_TO_CONTINUE",
-    "KEEP_THEORY_FORGE_NONCANONICAL_ZERO_CREDIT_AND_REQUIRE_FRESH_ANALYST_FOR_ANY_CANONICALIZATION",
-    "KEEP_ALL_OLD_TERMINAL_IDS_TERMINAL_AND_REQUIRE_CANDIDATE_SPECIFIC_INDEPENDENT_TRIGGER_PROVENANCE_FOR_REVISIT",
-    "DO_NOT_WEAKEN_EVIDENCE_STANDARDS_TO_SOLVE_SUPPLY_OR_EXECUTOR_CAPABILITY_GAPS"
+    "KEEP_H7_R106_EXACT_SCIENTIFIC_AUTHORITY_AND_ALL_ONE_WAY_BINDINGS_UNCHANGED",
+    "KEEP_MAIN_OPERATIONAL_BLOCKER_ORTHOGONAL_TO_SCIENTIFIC_FUNNEL_AND_EXPOSE_EXECUTOR_TRIGGER_CAPABLE_FALSE_UNTIL_EXACT_TRIGGER_ACTOR_EXISTS",
+    "RECONCILE_NEXT_ANALYST_EFFECTIVELY_EXECUTABLE_AGGREGATE_WITH_OBSERVED_TRIGGER_CAPABILITY_WITHOUT_MODIFYING_FUNNEL_OR_WORKFLOW",
+    "REQUIRE_FAST_FORGE_TO_READ_LATEST_COMPLETED_METHODOLOGY_GENERATION_BEFORE_SELECTION_WHILE_KEEPING_ANALYST_AS_CANONICAL_GATE",
+    "KEEP_RECURRENT_LOOP_PROTOTYPE_KILLED_BUT_ALLOW_FRESH_ANALYST_TO_RESTORE_ONE_BOUNDED_ZERO_CREDIT_ORIGINAL_Q0_VS_QI_DISCRIMINATOR_WITHOUT_NEW_INFORMATION",
+    "KEEP_THEORY_FORGE_NONCANONICAL_ZERO_CREDIT_NO_INHERITED_PROMOTION_CREDIT",
+    "KEEP_ALL_TERMINAL_IDS_TERMINAL_AND_REQUIRE_CANDIDATE_SPECIFIC_INDEPENDENT_TRIGGER_PROVENANCE_PLUS_FRESH_SUCCESSOR_CONTRACT_FOR_REVISIT",
+    "DO_NOT_WEAKEN_EVIDENCE_STANDARDS_TO_SOLVE_TRIGGER_CAPABILITY_MECHANISM_SUPPLY_OR_THEORY_THROUGHPUT"
   ],
   "utility_request": "NONE",
   "hard_floor_confirmation": {
@@ -238,22 +251,22 @@
     "scientific_criteria_changed": false,
     "consumed_formal_rerun_retune_rescore": false,
     "terminal_object_reactivated": false,
-    "historical_pass_fail_rewritten": false
+    "historical_pass_fail_rewritten": false,
+    "persistence_only_designated_methodology_audit_branch": true
   },
   "confidence": {
     "level": "HIGH",
     "value": 0.99
   },
   "questions_for_control_analyst": [
-    "DISTINGUISH_SCIENTIFIC_FORMAL_AUTHORITY_FROM_ACTUAL_EXECUTOR_TRIGGER_CAPABILITY_AND_HOLD_EFFECTIVE_EXECUTION_IF_FROZEN_TRIGGER_PRIMITIVE_IS_UNAVAILABLE",
-    "DO_NOT_REQUIRE_NEW_INFORMATION_TO_EXECUTE_TH001S_ALREADY_PREDECLARED_Q0_VS_QI_DISCRIMINATOR_MISSING_FROM_THE_RECURRENT_TOY; KEEP_ANY SUCH PROBE_BOUNDED_ZERO_CREDIT_NONCANONICAL",
-    "CONTINUE_CANDIDATE_SPECIFIC_REVISIT_SCANS_AND_EXPOSE_FIRST_GENUINE_TRIGGER_DECISION_FORGE_OR_FRESH_SUCCESSOR_CHAIN_END_TO_END"
+    "Should queue_state=QUEUED be formally defined as scientific queue membership independent of operational triggerability with a separate executor-capability axis?",
+    "Will the next Analyst generation reconcile effectively_executable_mechanism to the observed trigger blocker rather than changing the scientific Funnel?",
+    "Will TH-001's predeclared Q0-vs-QI discriminator be restored as an eligible bounded zero-credit test without demanding new information while the recurrent-loop prototype remains killed?",
+    "Will Fast Forge consume the latest completed methodology generation before selection while preserving Analyst as the only canonical scientific gate?"
   ],
   "persistence": {
-    "history": "analysis/methodology_calibration/history/2026-09-24/0519.md",
-    "history_commit": "87c269528a5adf0863fc83895effa9517aa5faf3",
+    "history": "analysis/methodology_calibration/history/2026-09-24/0622.md",
     "latest": "analysis/methodology_calibration/latest.md",
-    "latest_commit": "872f2a9e4910199c7427a478749c080bc57ecbd6",
     "state": "analysis/methodology_calibration/state.json"
   }
 }
