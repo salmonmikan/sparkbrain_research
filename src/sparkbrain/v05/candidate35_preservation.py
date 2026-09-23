@@ -19,14 +19,14 @@ from .candidate35_architecture import (
     candidate35_nonresult_preflight,
 )
 
-ANALYST_GENERATION = "EVA-20260923T210010+0900-R99-6F2B8C14"
-ANALYST_COMMIT = "59dbcdc2e3541e78a64f64e16fa0be5ef38efc26"
+ANALYST_GENERATION = "EVA-20260923T225720+0900-R100-C6A2F18D"
+ANALYST_COMMIT = "a32494246245a559ad4e1f8543a1f252b03ef2e7"
 DEVELOPMENT_PHASE = "OPEN_DEVELOPMENT"
 CLAIM_CEILING = "SYSTEM"
 PREFORMAL_ELIGIBLE = False
 PREFORMAL_READINESS = "NOT_APPLICABLE"
 TERMINAL_STATE = "NONTERMINAL"
-QUEUE_STATE = "QUEUED_FOR_MAIN_ARCHITECTURE_R3_OR_R4_NONRESULT_PRESERVATION_BOUNDARY"
+QUEUE_STATE = "QUEUED_FOR_MAIN_ARCHITECTURE_ONE_BOUNDED_RESPONSE"
 SYSTEM_PRIORITY_EXCEPTION = "NO_EXECUTABLE_MECHANISM_WHILE_H7_FORMAL_INTEGRITY_CAPABILITY_BLOCKED"
 SOURCE_BRANCH = "research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3"
 SOURCE_HEAD = "8ea6581544c642ad74f1a95955ab2c5f795afccc"
@@ -35,6 +35,11 @@ RESPONSE_PRODUCER = "sparkbrain.v05.candidate35_architecture.execute_candidate35
 RAW_SERIALIZER = "sparkbrain.v04.contracts.canonical_json"
 RAW_SCHEMA = "cand35-architecture-raw-response-v1"
 PRESERVE_MODE = "EXCLUSIVE_CREATE_BEFORE_RETURN"
+RESPONSE_AUTHORITY_DECISION = (
+    "GO_CAND35_ONE_BOUNDED_ARCHITECTURE_RESPONSE_AFTER_R100_EXACT_AUTHORITY_REPIN_"
+    "FIXED_ORDER_BATCH_PRESERVE_BEFORE_READ_PREFLIGHT"
+)
+RESPONSE_AUTHORITY_EXHAUSTION = "FIRST_COMPLETE_BATCH_RESULT_EXPOSURE"
 
 
 @dataclass(frozen=True, slots=True)
@@ -102,6 +107,12 @@ def candidate35_preservation_contract() -> dict[str, Any]:
         "raw_before_read": True,
         "no_clobber": True,
         "candidate_response_execution_allowed": False,
+        "external_response_authority": {
+            "decision": RESPONSE_AUTHORITY_DECISION,
+            "origin_generation": ANALYST_GENERATION,
+            "scope": "ONE_BOUNDED_FIVE_ARM_ARCHITECTURE_BATCH",
+            "exhaustion": RESPONSE_AUTHORITY_EXHAUSTION,
+        },
         "preformal_execution_allowed": False,
         "formal_action_allowed": False,
     }
@@ -148,10 +159,10 @@ def execute_candidate35_response_preserve_before_read(
     output_path: Path,
     response_execution_allowed: bool = False,
 ) -> Candidate35PreservedResponse:
-    """Execute only after future authority, preserving canonical raw bytes before return."""
+    """Execute only under exact external authority, preserving raw bytes before return."""
     if response_execution_allowed is not True:
         raise Candidate35ResponseNotAuthorized(
-            "candidate #35 response remains STOP pending fresh Analyst review"
+            "candidate #35 response requires exact fresh Analyst authority"
         )
 
     preflight = candidate35_preservation_nonresult_preflight()
@@ -166,6 +177,10 @@ def execute_candidate35_response_preserve_before_read(
         "candidate_id": CANDIDATE_ID,
         "development_phase": DEVELOPMENT_PHASE,
         "development_revision": DEVELOPMENT_REVISION,
+        "analyst_generation": ANALYST_GENERATION,
+        "analyst_commit": ANALYST_COMMIT,
+        "response_authority_decision": RESPONSE_AUTHORITY_DECISION,
+        "response_authority_exhaustion": RESPONSE_AUTHORITY_EXHAUSTION,
         "provenance_sha256": preflight.provenance_sha256,
         "source_head": SOURCE_HEAD,
         "source_blob_sha1": SOURCE_BLOB_SHA1,
