@@ -126,7 +126,7 @@ jobs:
         env:
           PYTHONPATH: ${{ github.workspace }}/science/src
         shell: bash
-        run: .h7-r5-scientific/bin/python scripts/preflight_h7_formal_r5_cycle12.py
+        run: GITHUB_WORKSPACE="${GITHUB_WORKSPACE}/science" .h7-r5-scientific/bin/python scripts/preflight_h7_formal_r5_cycle12.py
 
       - name: Assert protected sidecar handoff capability exists without exposing it
         env:
