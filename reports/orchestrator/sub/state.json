@@ -1,60 +1,60 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260923T163218+0900-NOOP-POSTEXPOSURE-R94",
-  "produced_at": "2026-09-23T16:32:18+09:00",
+  "generation_id": "FORGE-20260923T173525+0900-NOOP-NO-TARGET-SHADOW-R95",
+  "produced_at": "2026-09-23T17:35:25+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260923T153500+0900-ASSEMBLY-IDENTITY-COACTIVATION-R94",
+  "supersedes_generation_id": "FORGE-20260923T163218+0900-NOOP-POSTEXPOSURE-R94",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T150251+0900-R94-8E6A31C4@5cee6ef496eb9465550fb9c0be5295e587027dfb",
-    "main_relay": "MAIN-20260923T155100+0900-RELAY-CAND34-PREFORMALR2-R94-D34Q002-PRESERVED-EXPOSED@692557e1e5d5deeb7d156db274ea2e71d323b1db",
-    "literature": "LIT-20260923T153000+0900-R37-SPIKE-RESPONSE-KERNEL-5A8C21E7@1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e",
-    "independent_audit": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8@ops/external-research-audit-handoff",
-    "methodology": "METHCAL-20260923T161855+0900-R85-C41E72A9@d8dd9cfa00a3602fafa0df539ea5fd3df050f2cf",
-    "control": "CTRL-R43@1592c3b52a8a545aa2503fd4618c0a761921ef1e",
+    "evidence_analyst": "EVA-20260923T165919+0900-R95-71C4A8E2@9b9ceffc5c5f4fc8cf68b2d7e28259d8d6d2ea1a",
+    "main_relay": "MAIN-CAND35-ARCHITECTURE-R95@research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1@c640cb3a42faf1f49bee568c1cc167c03fb63646",
+    "literature": "LIT-R37-SPIKE-RESPONSE-KERNEL@1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e",
+    "independent_audit": "AUDIT@1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e",
+    "methodology": "METHCAL@17bee7e4973c38b5cedcdac67fbeb964ab423398",
+    "control": "CONTROL@1592c3b52a8a545aa2503fd4618c0a761921ef1e",
     "utility": "ops/utility-orchestrator-requests@b2f1462aeb95707747f8b273c1b9a6ec678996bd",
-    "previous_forge": "FORGE-20260923T153500+0900-ASSEMBLY-IDENTITY-COACTIVATION-R94@ops/orchestrator-run-report"
+    "previous_forge": "FORGE-20260923T163218+0900-NOOP-POSTEXPOSURE-R94@ops/orchestrator-run-report"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_commit": "5cee6ef496eb9465550fb9c0be5295e587027dfb",
-    "main_relay_commit_before_forge_persistence": "692557e1e5d5deeb7d156db274ea2e71d323b1db",
-    "literature_handoff_commit": "1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e",
-    "methodology_handoff_commit": "d8dd9cfa00a3602fafa0df539ea5fd3df050f2cf",
+    "analyst_commit": "9b9ceffc5c5f4fc8cf68b2d7e28259d8d6d2ea1a",
+    "main_active_branch": "research/main-cand35-queue-free-subthreshold-architecture-r95-cycle1",
+    "main_active_head_before_forge_persistence": "c640cb3a42faf1f49bee568c1cc167c03fb63646",
+    "external_research_audit_commit": "1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e",
+    "methodology_handoff_commit": "17bee7e4973c38b5cedcdac67fbeb964ab423398",
     "control_handoff_commit": "1592c3b52a8a545aa2503fd4618c0a761921ef1e",
     "utility_request_commit": "b2f1462aeb95707747f8b273c1b9a6ec678996bd",
-    "previous_forge_latest_blob": "a8db2622b6f6747490b014818bf05cb7455a91be",
-    "previous_forge_state_blob": "e45a8d41ee402a3d851b0bdd7f13b09e18bb084a",
+    "previous_orchestrator_tip_before_persistence": "cacb0607e2d9a130efc5f88672a60a9e59866587",
+    "previous_forge_latest_blob": "701ec120c00596fe8d55b6cc925e756445dc9ad5",
+    "previous_forge_state_blob": "d0bb196dc8e213398e4df96c612a8edd9e98cdd2",
     "source_assemblies_blob": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
-    "source_brain_blob": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-    "source_plasticity_blob": "bb04eaac527aaa6343018ffb49347d087c6a29e5",
     "forge_branch": null
   },
-  "freshness_note": "The only genuinely new scientific reduction since the prior Forge run is Literature R37's local spike-response/history-filter ladder, but it is explicitly tied to MAIN-owned candidate #34 after first result exposure. Methodology R85 adds result-boundary/provenance guidance, not an independent scientific target. Stable main is unchanged.",
+  "freshness_note": "R95 is the material authority delta: candidate #34 is now terminal-for-current-object and R95 intentionally retains no immediate same-family successor because post-result successor construction would create rescue/laundering risk. Candidate #35 moved to MAIN Architecture and its newest branch delta is lint-only. Stable main and the independent reduction surfaces available to Forge are otherwise unchanged.",
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "avoided": [
-      "candidate #34 preserved result, exact executor, scorer, preserver, response interpretation and any successor/comparator work",
-      "candidate #35 queue-free persistent physical-state canonical architecture surface",
+      "candidate #35 active queue-free subthreshold Architecture object, branch, runtime helpers, response question, scorer and immediate successor surface",
+      "candidate #34 consumed/result-exposed current object, D34-Q002 rerun/retune/rescore and post-result same-family rescue",
       "H7 FORMAL and PF-R1 preservation/provenance path",
-      "all consumed/frozen/evidence/formal/sealed/preserve identities"
+      "all consumed/frozen/evidence/formal/sealed/freeze/preserve identities"
     ],
-    "relay": "Analyst R94 and the latest MAIN/Relay lease were re-read immediately before persistence; no superseding Analyst generation appeared."
+    "relay": "Evidence Analyst R95 and the exact MAIN candidate #35 branch were re-read immediately before persistence. MAIN head c640cb3 is a science-invariant lint-only repair; no superseding Analyst generation appeared."
   },
   "selection_scan": {
     "selection_outcome": "NO_OP",
     "selected": [],
     "rejected_before_execution": [
-      "R37 local spike-response/history/coupling comparator — result-dependent on MAIN-owned #34 after first exposure",
-      "queue-free/persistent physical state — #35 already canonical and queued",
-      "H7/PF-R1 preservation/provenance — protected critical-path work",
-      "Assembly global unit-relabel / realization invariance — exact duplicate of prior R84 QFD rejection",
-      "native responsibility/credit and delayed reward/replay/eligibility — historically dense family with no new discriminator",
-      "receptor/topology aliasing and Assembly completion/prototype/order/capacity/context/coactivation — already covered by prior exploratory/Forge work with no new enabling delta",
-      "R85 execution-source provenance defect — governance/methodology only, does not directly enable independent Forge experimentation"
+      "immediate #34 route-family successor/comparator — R95 explicitly leaves no same-family successor this generation because post-result construction is rescue/laundering-prone",
+      "R37 spike-response/history-filter reduction ladder — tied to the terminal #34 route measurement family; retain only as a future prospective reduction bar",
+      "queue-free/persistent physical state and new clone/reset/serializer tooling — candidate #35 is MAIN-owned active object/runtime and immediate successor surface",
+      "H7/PF-R1 preservation/provenance — protected critical path",
+      "native responsibility/credit and delayed reward/replay/eligibility — historically dense family on unchanged stable main with no new discriminator",
+      "receptor/topology aliasing, Assembly completion/regeneration/prototype/order/capacity/context/coactivation, and pre-semantic functional-table variants — duplicate or near-duplicate prior Forge/exploratory surfaces without a new observable/intervention/comparator/tooling delta",
+      "MAIN c640cb3 branch delta — lint-only line wrapping, no scientific behavior or independent Forge opportunity"
     ],
-    "no_op_reason": "No safe, useful, nonduplicative bounded research direction acquired a new observable, intervention, comparator, reduction or enabling tool independent of MAIN. Building another probe would add activity without information gain."
+    "no_op_reason": "After the fresh R95 no-target-shadow and ownership scan, no safe, useful, nonduplicative bounded research direction has a materially new observable, intervention, comparator, reduction, scaling regime, measurement surface or enabling tool independent of MAIN. A new probe would manufacture activity rather than information gain."
   },
   "overall_status": "FORGE_OBSERVATION",
   "forge_objects": [],
@@ -73,13 +73,13 @@
   },
   "metrics": {
     "scope": "FROM_R92_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 6,
+    "runs": 7,
     "prototypes_attempted": 10,
     "dead_ends": 9,
     "interesting_observations_retained": 0,
     "promotion_proposals": 0,
     "later_admissions": 0,
-    "duplicate_or_rescue_rejects": 6,
+    "duplicate_or_rescue_rejects": 7,
     "ownership_collisions": 0,
     "ordinary_reduction_rejects": 9,
     "idea_to_observation_latency": "N/A_NO_PROTOTYPE"
