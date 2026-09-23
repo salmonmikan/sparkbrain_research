@@ -1,93 +1,92 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260923T223403+0900-V05-HOMEOSTASIS-WINDOWING-R99",
-  "produced_at": "2026-09-23T22:34:03+09:00",
+  "generation_id": "FORGE-20260923T233625+0900-V05-CREDIT-LOCALITY-R100",
+  "produced_at": "2026-09-23T23:36:25+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260923T213223+0900-V03-CONCEPT-CLOSURE-R99",
+  "supersedes_generation_id": "FORGE-20260923T223403+0900-V05-HOMEOSTASIS-WINDOWING-R99",
   "input_generations": {
-    "evidence_analyst": "EVA-20260923T210010+0900-R99-6F2B8C14@59dbcdc2e3541e78a64f64e16fa0be5ef38efc26",
+    "evidence_analyst": "EVA-20260923T225720+0900-R100-C6A2F18D@a32494246245a559ad4e1f8543a1f252b03ef2e7",
     "main_relay": "MAIN-20260923T215545+0900-RELAY-CAND35-PRESERVATION-R99-COMPLETED@ops/orchestrator-run-report",
-    "literature": "LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41@741becd60d3e7dc8f97cedf1347c42c769092011",
-    "independent_audit": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8@ops/external-research-audit-handoff",
-    "methodology": "METHCAL-20260923T221827+0900-R91-7E31B4A2@ea2ab83a78b10dbefb2fe7cc390ced097e18b243",
-    "utility": "UTILITY-20260923T222232+0900-PFR1-TERMINAL-POINTER-BLOCKED-R99-4B6E2D91@6198854592a63156f202f3d5b5f4bedbd180a87e",
-    "previous_forge": "FORGE-20260923T213223+0900-V03-CONCEPT-CLOSURE-R99@ops/orchestrator-run-report"
+    "literature": "LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41@e8e527e1ed399bb26f926237931618d9b93056e0",
+    "independent_audit": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8@e8e527e1ed399bb26f926237931618d9b93056e0",
+    "methodology": "METHCAL-20260923T232021+0900-R92-5C91E7A4@8b92f841227988c1ac7c4faea7d8d95d2517ad55",
+    "utility": "UTILITY-20260923T232600+0900-IDLE-ACK-RECONCILE-R100-6C2A91F4@c231c2652f1c824a276649a7b9b6d752c2b729ae",
+    "previous_forge": "FORGE-20260923T223403+0900-V05-HOMEOSTASIS-WINDOWING-R99@ops/orchestrator-run-report"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "analyst_commit": "59dbcdc2e3541e78a64f64e16fa0be5ef38efc26",
-    "main_lease_blob": "4760c79cd5085758d433ce3af379c7fec40228a8",
+    "analyst_commit": "a32494246245a559ad4e1f8543a1f252b03ef2e7",
     "candidate35_scientific_source_head": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
     "candidate35_nonresult_implementation_head": "5bc64fbd8fd2f3e8d804d18e0a0ad0d58b5a3e4c",
-    "literature_r39_commit": "741becd60d3e7dc8f97cedf1347c42c769092011",
-    "audit_r8_latest_blob": "0afe416906713bc4b04eec34cd8a0035ecacbc1f",
-    "methodology_r91_commit": "ea2ab83a78b10dbefb2fe7cc390ced097e18b243",
-    "utility_r99_commit": "6198854592a63156f202f3d5b5f4bedbd180a87e",
-    "homeostasis_source": "src/sparkbrain/v05/homeostasis.py",
-    "homeostasis_blob": "67b87a4b4c91a7dba41670087a2d1803bb6e3e6c",
+    "literature_audit_branch_head": "e8e527e1ed399bb26f926237931618d9b93056e0",
+    "literature_r39_blob": "9a1e0138ed31f9626c1c269bf2e4a42dba65c56a",
+    "audit_r9_blob": "e0c838636dfb36708df8d86dd9165a2a0acedada",
+    "methodology_r92_commit": "8b92f841227988c1ac7c4faea7d8d95d2517ad55",
+    "utility_r100_commit": "c231c2652f1c824a276649a7b9b6d752c2b729ae",
+    "v05_plasticity_source": "src/sparkbrain/v05/plasticity.py",
+    "v05_plasticity_blob": "bb04eaac527aaa6343018ffb49347d087c6a29e5",
     "v05_brain_source": "src/sparkbrain/v05/brain.py",
     "v05_brain_blob": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
-    "v04_brain_source": "src/sparkbrain/v04/brain.py",
-    "v04_brain_blob": "25fd56b082168a9ea71f313023451858d00b6184",
-    "v05_topology_blob": "d9d292bdedc1288a929d1e53f03b9fc182b45a36",
-    "forge_history_path": "reports/orchestrator/sub/history/2026-09-23/2234-r99-fast-forge-homeostasis-windowing-deadend.md",
-    "forge_history_create_commit": "6cccd9cfcbcd2e438f972d0b432a2d8f0970d696",
-    "forge_latest_update_commit": "36b76adfd7b3020fc5b53ab2cbddf1ef99bcfc57",
+    "v04_plasticity_source": "src/sparkbrain/v04/plasticity.py",
+    "v04_plasticity_blob": "25b965107b903d7634674e24a44afe561aeee518",
+    "forge_history_path": "reports/orchestrator/sub/history/2026-09-23/2336-r100-fast-forge-credit-locality-deadend.md",
+    "forge_history_create_commit": "e6ad748114f196d80bf5647e68914b87e4009b91",
+    "forge_latest_update_commit": "b6ab831e12b16e8a087f9b49e0447de7062afad0",
     "forge_branch": null
   },
-  "freshness_note": "R99 remains the current Analyst authority. MAIN completed Candidate #35's bounded non-result preservation/provenance wrapper without response exposure and now awaits fresh Analyst review. Literature R39's reachable-state/off-manifold successor surface remains MAIN/immediate-successor territory. Methodology R91 confirms Candidate #35 preservation closure and response STOP. Utility R99 remains fail-closed on its terminal pointer. Forge therefore selected an independent stable-main v0.5 homeostasis timing surface.",
+  "freshness_note": "Evidence Analyst R100 supersedes R99 and conditionally assigns Candidate #35's first complete five-arm Architecture result batch to MAIN after exact repin/preflight/preserve-before-read. Candidate #35 direct branch remains at the non-result implementation head at Forge inspection. H7 remains blocked by protected-sidecar capability. Literature R39 remains Candidate #35 intervention-realism/immediate-successor territory; Audit R9 closes Candidate #34 against ordinary local impulse reduction; Methodology R92 preserves those boundaries while leaving independent mechanism discovery open; Utility R100 is clean IDLE. Forge selected an independent stable-main field-plasticity credit-locality surface.",
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "avoided": [
-      "Candidate #35 scientific source, preservation wrapper, response helper/execution, reachable-state/off-manifold successor and fresh Analyst review",
-      "H7 sidecar remediation, runtime/input/component/scorer/preserver, one-way FORMAL identity/start and protected evaluation",
+      "Candidate #35 scientific source, fixed five-arm response, response producer, preserve-before-read runtime/preserver, reachable-state/off-manifold/on-manifold successor surfaces",
+      "H7 sidecar remediation, controller/runtime/input/component/scorer/preserver, one-way FORMAL identity/STARTED and protected evaluation",
       "Candidate #34 terminal temporal-route object and same-family rescue",
-      "PF-R1 Utility terminal-pointer reconciliation",
       "all consumed/frozen/evidence/formal/sealed/freeze/preserve identities",
-      "prior Forge receptor, Assembly, action/prediction, concept-closure and duplicate variants"
+      "prior Forge receptor, Assembly, action/prediction, concept-closure and homeostasis variants"
     ],
-    "recheck": "Evidence Analyst R99 and current MAIN lease were re-read after target inspection and before Forge persistence; ownership remained unchanged."
+    "recheck": "Evidence Analyst R100, current Candidate #35 direct head, current Methodology R92, Literature R39, Audit R9, Utility R100 and prior Forge state/history were re-read before persistence; no ownership collision emerged."
   },
   "selection_scan": {
-    "selection_outcome": "BOUNDED_PROTOTYPE_COMPLETED",
+    "selection_outcome": "BOUNDED_PROTOTYPES_COMPLETED",
     "selected": [
-      "v0.5 HomeostaticController elapsed-time versus observation-window segmentation semantics on stable main"
+      "v0.5 optional reward-modulated field plasticity: delayed outcome ordering and local responsibility semantics on stable main"
     ],
     "rejected_before_execution": [
-      "Literature R39 Candidate #35 reachable-state/intervention-realism ladder — MAIN/immediate-successor collision",
+      "Candidate #35 response and intervention-realism/reachable-state successors — MAIN active/immediate-successor collision",
       "H7 responsibility/formal-integrity family — MAIN critical-path collision",
       "Candidate #34 temporal-route successors — terminal same-family rescue risk",
-      "Assembly completion/regeneration/prototype/order/capacity/context/coactivation, action/prediction tables, receptor traces and v03 concept closure — prior Forge coverage without a new independent discriminator"
+      "Assembly completion/regeneration/prototype/order/capacity/context/coactivation, action/prediction tables, receptor traces, v03 concept closure, homeostasis windowing — prior Forge coverage without a new independent discriminator"
     ]
   },
   "overall_status": "FORGE_DEAD_END",
   "forge_objects": [
     {
-      "forge_id": "FORGE-V05-HOMEOSTASIS-WINDOWING-01",
-      "question": "Does v0.5 homeostatic threshold state represent elapsed physical recovery time, or does it depend on how the same elapsed duration is segmented into process_episode observation windows?",
-      "why_now": "Independent stable-main persistent-state/endogenous-recovery surface available while MAIN owns Candidate #35/H7; prior Forge history does not cover v0.5 homeostasis time semantics.",
+      "forge_id": "FORGE-V05-CREDIT-LOCALITY-01",
+      "question": "Does optional v0.5 reward-modulated field plasticity provide native local responsibility or retrospective delayed credit to the synapses active in the episode whose outcome arrives later?",
+      "why_now": "Native local responsibility/credit is theory-central, independently reachable on stable main, absent from prior Forge history, and independent of Candidate #35/H7 unknown outcomes.",
       "branch": null,
       "prototypes": [
         {
-          "name": "equal_elapsed_different_segmentation",
-          "diagnostic": "exact-source arithmetic for a fresh never-spiking reservoir unit at base_threshold 0.76: one 9376 ms empty episode versus 293 x 32 ms empty episodes",
-          "observation": "one controller update gives 0.7586; 293 updates across the same physical elapsed 9376 ms reach the 0.35 floor"
+          "name": "outcome_after_episode_reward_only_probe",
+          "diagnostic": "exact stable-main call-order inspection plus formula-equivalent one-edge causal pair at 5 ms, followed by reward(-1) and empty-spike apply",
+          "observation": "first apply stores eligibility 0.7574651283969664 and sets weight 0.5007574651283969; reward-only empty apply decays eligibility to 0.6817186155572699 and reward trace to -0.7 while weight remains exactly 0.5007574651283969"
         },
         {
-          "name": "timestamp_noncausality",
-          "diagnostic": "inspect whether HomeostaticController.observe uses supplied time_ms in EMA or threshold update",
-          "observation": "time_ms is copied to the returned snapshot only; controller state evolves once per observe call regardless of timestamp delta"
+          "name": "global_reward_two_edge_locality_probe",
+          "diagnostic": "formula-equivalent two independent plastic edges with identical 5 ms causal timing and global reward(+2)",
+          "observation": "both edges receive identical eligibility 0.7574651283969664, weight 0.501514930256794 and delay 2.012; apply receives no action, Assembly, responsibility id, target synapse or local reward vector"
         }
       ],
-      "commands_diagnostics": "read-only stable-source inspection plus exact recurrence arithmetic; no repository executable, candidate response, protected target, or result-bearing workflow dispatched",
+      "commands_diagnostics": "GitHub exact-source/control-plane inspection plus local formula-equivalent synthetic arithmetic; no repository executable, candidate response, protected target or result-bearing workflow dispatched",
       "ordinary_reductions": [
-        "ordinary discrete-time per-window exponential moving average",
-        "bounded threshold integrator keyed to API observation count / episode segmentation"
+        "ordinary globally neuromodulated STDP",
+        "per-edge eligibility trace decayed and reused only on a later qualifying coactivation",
+        "default-disabled optional reward modulation rather than native field credit assignment"
       ],
       "status": "FORGE_DEAD_END",
-      "dead_end_reason": "PER_WINDOW_HOMEOSTATIC_CONTROL_AND_API_SEGMENTATION_FULLY_EXPLAIN_THE_OBSERVATION; CONFIGURATION_EXPLICITLY_TARGETS_SPIKES_PER_WINDOW",
+      "dead_end_reason": "GLOBAL_REWARD_MODULATED_STDP_PLUS_ELIGIBILITY_TRACE_FULLY_EXPLAINS_THE_REACHABLE_BEHAVIOR; NO_NATIVE_LOCAL_RESPONSIBILITY_OR_REWARD_ONLY_RETROSPECTIVE_UPDATE_PATH_EXISTS",
       "promotion_reason": null
     }
   ],
@@ -107,15 +106,15 @@
   },
   "metrics": {
     "scope": "FROM_R92_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 11,
-    "prototypes_attempted": 14,
-    "dead_ends": 11,
+    "runs": 12,
+    "prototypes_attempted": 16,
+    "dead_ends": 12,
     "interesting_observations_retained": 0,
     "promotion_proposals": 0,
     "later_admissions": 0,
     "duplicate_or_rescue_rejects": 9,
     "ownership_collisions": 0,
-    "ordinary_reduction_rejects": 11,
+    "ordinary_reduction_rejects": 12,
     "idea_to_observation_latency": "SAME_RUN"
   },
   "recommendation": "NONE_DEAD_END"
