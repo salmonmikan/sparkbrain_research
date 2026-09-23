@@ -1,27 +1,24 @@
-# MAIN latest — candidate #34 PRE_FORMAL R1
+# MAIN latest — candidate #34 PRE_FORMAL R2
 
-- execution_mode: `RELAY`
-- status: `READY_FOR_RELAY`
-- Evidence Analyst: `EVA-20260923T101328+0900-R91-C199605F`
-- cycle/reassessment: cycle 3 / `CONTINUE_TO_PREFORMAL`
+- execution_mode: `PRIMARY`
+- status: `WAITING_EXTERNAL`
+- Evidence Analyst: `EVA-20260923T110053+0900-R92-A7B61F3C`
+- layer: `PRE_FORMAL`
+- cycle: 4
 - development_phase: `OPEN_DEVELOPMENT`
-- development_revision: `PRE_FORMAL-R1_AUTHORIZED_BIND_UNCHANGED_ARCHITECTURE_R2`
+- development_revision: `PRE_FORMAL-R2_CONTRACT_CLOSURE_AND_QUEUE_ONLY`
 - claim_ceiling: `MECHANISM`
 - preformal_eligible: `true`
-- preformal_readiness: `READY`
-- hold_class / hold_reason: `null / null`
-- terminal_state: `ACTIVE`
-- queue_state: `MAIN_WAITING_EXTERNAL_NON_RESULT_PREBIND_VALIDATION`
-- system_priority_exception.used: `false`
+- readiness: `NOT_READY` until non-result closure validation and one queue-entry materialization complete
 
-## Relay action
+## Work
 
-Recovered the exact non-result PRE_FORMAL prebind artifact previously produced by the prospectively authorized R91 path and committed those exact JSON bytes to the active research branch as a durable provenance binding. This was classified as `SCIENCE_INVARIANT_PROVENANCE_AND_INTEGRITY_PLUMBING`; no Architecture R2 scientific choice was changed.
+Created a fresh canonical R92 continuation from the exact R1 head. Implemented only the three prospectively authorized R2 changes: one untouched-anchor queue policy for every plan condition, assembly-level reference responses and intervention deltas as the primary ordinary reduction, and a fixed secondary unit-export observability map covering every assembly referenced by the surface/reduction binding. Missing, ambiguous, or degenerate export mappings fail closed.
 
-The resulting exact research head passed both generic CI and the dedicated non-result prebind workflow. No candidate response, PRE_FORMAL development observation, FORMAL identity, STARTED marker, evaluation commitment, protected evaluation, official scoring, preserve, or evidence ref was produced.
+The prior D34-Q001 negative development result is preserved unchanged with zero confirmatory credit. Architecture-R2 metric, threshold, comparator meaning, K/H, seed/quota, intervention magnitude, control family, quiescence/window, and prototype policy were not changed. No Forge-derived code or Forge observation was reused.
 
-## Integrity and stop
+A single fresh queue entry definition, `D34-Q002`, is fixed as `QUEUED_NOT_EXECUTED`; no candidate response has run. Generic CI and the dedicated non-result R2 closure/materialization workflow are running on the exact current research head.
 
-R91 authority, MAIN handoff state, and the exact research ref were re-fetched before mutation and disposition. No fresh PRIMARY collision or superseding Analyst generation was present. Prior results and all immutable/formal/sealed/evidence refs remain unchanged.
+## Hard floor / stop
 
-No existing response-bearing PRE_FORMAL runner/workflow was found on the active head. The frozen R2 contract defines the execution and response contract, but Relay will not invent an execution implementation or infer scientific behavior from tests. Continue only under an already prospectively fixed executor/invocation or fresh Analyst/PRIMARY handoff. FORMAL remains STOP.
+No FORMAL identity, STARTED marker, protected evaluation, result-bearing workflow, official scoring, preserve ref, or evidence ref was created. Stop is external-only: wait for the two exact-head non-result validations. If both are green, capture the exact generated contract/queue bytes durably and stop for fresh Analyst authority before any R2 response-bearing execution.
