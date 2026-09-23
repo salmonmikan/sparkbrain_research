@@ -1,91 +1,95 @@
-# External Literature Reduction Scout — silent synaptic memory and delayed-credit baselines
+# External Literature Reduction Scout — causal-abstraction non-vacuity and intervention faithfulness
 
 - schema_version: `2`
-- generation_id: `LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71`
-- produced_at: `2026-09-24T00:27:55+09:00`
-- producer_run_id: `external-literature-auto-LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71`
+- generation_id: `LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71`
+- produced_at: `2026-09-24T06:30:03+09:00`
+- producer_run_id: `external-literature-auto-LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41`
+- supersedes_generation_id: `LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71`
 - role: `LITERATURE_REDUCTION_SCOUT`
-- schedule_slot: `00:30 JST`
+- schedule_slot: `06:30 JST`
 - schedule_inference: `false`
 - genuinely_new_information: `true`
 
 ## Inputs / authoritative state
 
-Repository evidence was fetched independently of the `ops/*` mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The authoritative tag set remains five `evidence/*` annotated tags; tag-form `formal/*`, `sealed/*`, `freeze/*`, and `immutable/*` remain absent, while legacy `freeze/*` branches were inspected separately. Candidate #34 remains preserved/terminal and is not reopened. Open PR #149 is scheduler-registry tooling only and is not scientific state.
+Repository state was independently re-fetched rather than inferred from `ops/*` mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The frozen H7 scientific head remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`; the science-invariant launch controller remains `research/main-h7-r5-launch-plumbing-r105@042d00375278d551dbf643ad866a4c883852804d`. Authoritative tags remain exactly five `evidence/*` annotated tags; no tag-form `formal/*`, `sealed/*`, `freeze/*`, or `immutable/*` objects were observed. Active Forge branches were inspected independently.
 
-Candidate #35 changed materially since Literature R39: its prospectively fixed five-arm Architecture batch was executed exactly once under R100 development authority, raw was preserved before interpretation at `raw/cand35-r100-onebatch-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a`, and Evidence Analyst R101 has now canonically closed the current object as `TERMINAL_FOR_CURRENT_OBJECT` with bounded interpretation `NO_MEASURED_PRIMING_EFFECT_ON_FROZEN_OUTPUT_SURFACE`. `SHAM_STATE`, `POTENTIAL_NULL`, `ADAPTATION_NULL`, and `JOINT_SUBTHRESHOLD_NULL` all produced the same measured two-spike `[6,7]` cascade/no-ignition surface; `DELAYED_SHAM_32MS` produced the same structure shifted in time. This is a genuine new SparkBrain development result but remains unscored, non-PRE_FORMAL, non-FORMAL, and carries zero confirmatory credit.
+Evidence Analyst R107 is the current canonical gate. H7 remains scientifically READY but operationally non-triggerable under the currently observed MAIN/Relay execution surface; no H7 identity, START, protected-evaluation result, score, PASS/FAIL, preserve ref, or evidence mutation exists. Candidate #34 remains terminal/reducible/zero-credit and `CLOSED_STRONG`. Candidate #35 remains terminal/SYSTEM/zero-credit and `DEFERRED_INDEPENDENT_REIDENTIFICATION`. Revisit remains 34/34 classified with `REVISIT_TRIGGERED=0`.
 
-The exact candidate #35 scientific source explicitly disables field weight learning, delay learning, and reward modulation for this object. Therefore the current negative result is properly scoped to its frozen neuronal subthreshold coordinates and output surface; it did not test a transient synaptic-plasticity memory carrier.
+TH-001 `INTERVENTION-STABLE-CAUSAL-QUOTIENT` remains noncanonical and non-evidentiary. R107 now correctly preserves the Theory while authorizing only a bounded zero-credit prospective Forge discriminator: compare an ordinary predictive quotient `Q0` with an intervention-stable quotient `QI` on exposed synthetic non-rescue surfaces, with ordinary reductions first. Methodology R99 further confirms that the prior recurrent toy did not instantiate the frozen Q0-vs-QI discriminator and that the earlier whole-Theory kill was over-broad.
 
-Consumed control-plane generations:
-- Control Brain: `CTRL-20260923T225500+0900-R44-C8F41D72` @ `3c46617fba123704297d880a748c305c16a7dd01`
-- Evidence Analyst: `EVA-20260924T000324+0900-R101-CAND35-POSTEXPOSURE` @ `e50e0a91e25f2457d0b7152900a48cbdc5006485`
-- MAIN designated latest: `MAIN-20260923T235628+0900-RELAY-CAND35-R100-ONEBATCH-EXPOSED-WAITING-ANALYST` @ mailbox `21a8ee7b0ae85df57a0a35b70ad726e45252e259`
-- Fast Forge designated latest: `FORGE-20260923T233625+0900-V05-CREDIT-LOCALITY-R100` @ mailbox `21a8ee7b0ae85df57a0a35b70ad726e45252e259`
-- Prior Literature: `LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41` @ `741becd60d3e7dc8f97cedf1347c42c769092011`
+Consumed role generations / handoffs:
+- Control Brain: `CTRL-20260924T045900+0900-R48-6F2C1A84` @ `8b8cea6136d1b0e2d821fce1d4f75f8709a4fed0`
+- Evidence Analyst: `EVA-20260924T061119+0900-R107-H7-TRIGGER-CAPABILITY-HOLD-THEORY-DISCRIMINATOR-PENDING` @ `247a2e6349ada02a6fdb4a362318570b6dd74e90`
+- MAIN designated latest: `MAIN-20260924T054727+0900-RELAY-H7-R106-FORMAL-LAUNCH-CAPABILITY-BLOCKED` @ mailbox `e5a1927352b0671456dd8c1166cccea72a510817`
+- Fast Forge designated latest: `FORGE-20260924T053555+0900-NOOP-R106-R97-THEORY-KILLED` @ mailbox `e5a1927352b0671456dd8c1166cccea72a510817`
+- Methodology: `METHCAL-20260924T062241+0900-R99-6E3A91B4` @ role-stream tip `26d2b175154e156bf989d0c61045e8eb288fea1b`
+- prior Literature: `LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71` @ role handoff `d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c`
+- Theory: `THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91` @ `226d812c96df3d71186ba5a4fb2ac1b27c0d6e25`
+- Independent Audit: `AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8`; latest audit content commit `716f8839f05610fbbfbc83d3ff6b3939dcfd6834`
+
+No new SparkBrain scientific result has appeared since Literature R40. The new information in this run is external methodological/prior-art information that changes the bar for interpreting TH-001-style causal quotients and future intervention-based mechanism claims.
 
 ## High-value new findings
 
-### 1. The candidate #35 null result closes its frozen neuronal subthreshold surface, not the broader class of activity-silent memory
+### 1. Unrestricted causal-abstraction alignment can become mathematically vacuous
 
-A 2026 peer-reviewed Physical Review E study revisits activity-silent working memory sustained by short-term synaptic facilitation and finds the mechanism remains robust even after adding synaptic heterogeneity. The paper explicitly treats short-term synaptic facilitation as a carrier of memory without persistent neural activity.
-
-Source:
-- Tiddia et al., *Short-term plasticity-based working memory spiking model is resilient to synaptic heterogeneity*, Phys. Rev. E 114, 014409 (published 22 July 2026), DOI `10.1103/zcmm-3cgh`, https://journals.aps.org/pre/abstract/10.1103/zcmm-3cgh
-
-A recent 2026 preprint independently sharpens the same point: after spiking activity becomes fully silent, the residual transient synaptic configuration can still predict whether activity later regenerates.
+Sutter, Minder, Hofmann & Pimentel show that if the alignment from a neural system to a proposed higher-level algorithm is allowed to be arbitrarily expressive, then under reasonable assumptions essentially any neural network can be mapped to any algorithm. They also demonstrate perfect interchange-intervention accuracy using randomly initialized language models in a task setting where the models themselves cannot perform the task. Their conclusion is not that causal abstraction is useless, but that it needs an independent constraint on how information is represented / how complex the alignment is.
 
 Source:
-- Khanjanianpak & Valiadeh, *Activity Regeneration from Silent States in Neuronal Networks with Transient Synaptic Memory*, arXiv:2607.14000 (2026), https://arxiv.org/abs/2607.14000
+- Sutter et al., *The Non-Linear Representation Dilemma: Is Causal Abstraction Enough for Mechanistic Interpretability?*, arXiv:2507.08802 (2025), https://arxiv.org/abs/2507.08802
 
-**Impact.** R101's current #35 conclusion is appropriately narrow and should remain terminal for the current object. The unchanged output after `potential`/`adaptation` nulling does not support a broader claim that queue-free or activity-silent memory mechanisms are generally absent. If SparkBrain later makes a broader persistent/activity-silent-memory claim, a transient-synaptic-state/STP comparator is now an especially direct ordinary baseline. This does not retrofit #35: its frozen source deliberately disabled field learning and did not instantiate this comparator family.
+**Impact for SparkBrain.** TH-001's Q0-vs-QI discriminator needs a **non-vacuity contract**. A learned or post-hoc quotient/alignment must not be allowed enough expressive capacity to manufacture the desired split. For a future bounded Forge test, the quotient family / state variables / alignment complexity should be prospectively restricted and transparent, with a complexity-matched or random/null alignment control and held-out intervention checks where feasible. A high QI fit by itself is not mechanistic evidence.
 
-### 2. The current v0.5 reward/eligibility track is weaker than the ordinary delayed-reward three-factor baseline
+This does not modify H7: the frozen H7 contract compares explicit ordinary algorithms under a fixed TOP1 cut and explicitly disclaims route-identity, uniqueness, broad-reduction-exhaustion, and external-generalization claims.
 
-Fast Forge R100 independently found that v0.5 stores per-edge eligibility but a reward arriving after an episode does not by itself consume the stored trace: `apply()` skips an edge unless the current spike batch again contains both pre- and postsynaptic spikes. This exact source behavior is consistent with the current `V05PlasticityController`: reward is one scalar trace, stored eligibility is decayed, and weight updates occur only inside the branch requiring current pre/post events.
+### 2. Off-manifold intervention is not automatically invalid; the important distinction is harmless versus pernicious divergence
 
-Foundational three-factor learning is stronger. Izhikevich's distal-reward model uses a slowly decaying synaptic eligibility/tag set by earlier spike timing so a dopamine/reward signal arriving seconds later can reinforce the earlier responsible synapses. Gerstner et al.'s review formalizes the same neoHebbian pattern: pre/post activity creates an eligibility trace and a third factor arriving while that trace persists triggers plasticity.
-
-Sources:
-- Izhikevich, *Solving the distal reward problem through linkage of STDP and dopamine signaling*, Cerebral Cortex 17(10), 2007, DOI `10.1093/cercor/bhl152`, https://pubmed.ncbi.nlm.nih.gov/17220510/
-- Gerstner et al., *Eligibility Traces and Plasticity on Behavioral Time Scales: Experimental Support of NeoHebbian Three-Factor Learning Rules*, Frontiers in Neural Circuits 12:53 (2018), DOI `10.3389/fncir.2018.00053`, https://pubmed.ncbi.nlm.nih.gov/30108488/
-
-**Impact.** The Forge dead-end should not be read as evidence that eligibility traces cannot solve delayed credit. It shows that SparkBrain's current optional v0.5 implementation does not implement the stronger ordinary reward-arrival-on-existing-eligibility mechanism. Any future delayed-credit novelty claim must first beat a correctly privilege-matched three-factor baseline in which a delayed third factor can act on a previously established trace without requiring a new qualifying spike pair.
-
-### 3. Temporal eligibility and spatial/local responsibility are distinct problems
-
-e-prop factorizes online recurrent credit into a synapse-local eligibility trace and a learning signal for the postsynaptic neuron/population. The work explicitly contrasts neuron-specific learning signals with global learning-signal baselines and shows that slowly varying hidden variables can carry eligibility over long temporal gaps.
+Grant et al. (ICLR 2026) show that common causal interventions often shift internal representations away from their natural distribution, but importantly distinguish two cases: divergences that lie in a behavioral null-space and do not alter the relevant computation, versus **pernicious** divergences that activate dormant/hidden pathways and create behavior not representative of the natural mechanism. They also show that constraining counterfactual latents toward the natural distribution can reduce harmful divergence while retaining intervention utility.
 
 Source:
-- Bellec et al., *A solution to the learning dilemma for recurrent networks of spiking neurons*, Nature Communications 11, 3625 (2020), DOI `10.1038/s41467-020-17236-y`, https://www.nature.com/articles/s41467-020-17236-y
+- Grant, Han, Tartaglini & Potts, *Addressing divergent representations from causal interventions on neural networks*, ICLR 2026, https://proceedings.iclr.cc/paper_files/paper/2026/hash/133e588e1429f9f1e25b215da145580e-Abstract-Conference.html
 
-**Impact.** A global scalar reward multiplied by per-edge eligibility is a legitimate ordinary three-factor baseline and can solve limited distal-reward problems through synapse-specific tags; however, it is not by itself evidence for a richer native notion of causal lineage or local responsibility. A future SparkBrain responsibility claim should distinguish (a) temporal persistence of eligibility from (b) how responsibility/error information is spatially assigned among simultaneously eligible units/edges. A neuron-/population-specific learning-signal comparator such as e-prop is therefore a stronger reduction ceiling than global reward-modulated STDP alone.
+**Impact for SparkBrain.** This sharpens, rather than merely repeats, the earlier generic off-manifold warning. Future intervention-based mechanism work should not use manifold distance alone as an invalidity criterion. It should ask whether an intervention creates a **behaviorally pernicious hidden-path activation** or whether the divergence is causally inert. Natural-state / matched-counterfactual interventions are stronger when available.
 
-### 4. The 2026 novelty bar now includes fully local forward credit and online joint delay learning
+For Candidate #35, this changes the *revisit condition wording* but does not fire a trigger: generic concern that coordinate nulling was off-manifold is insufficient. A legitimate fresh revisit would need independent evidence that the old null produced a pernicious divergent state, or a genuinely new natural-state counterfactual/instrumentation capability that addresses that issue. No such candidate-specific evidence exists now, so Candidate #35 remains terminal and `REVISIT_TRIGGERED=0`.
 
-Recent work has pushed eligibility-based local learning beyond the older STDP baseline. Traces Propagation combines eligibility traces with a layer-wise contrastive signal for forward-only local learning and explicitly targets both temporal and spatial credit. Separately, a 2026 peer-reviewed three-factor SNN rule learns synaptic weights and axonal/synaptic delays online using eligibility traces plus a top-down error signal, reporting improvements over weights-only training.
+### 3. Intervention-faithful mechanism sparsification is now a concrete ordinary reduction baseline
 
-Sources:
-- Pes et al., *Traces propagation: memory-efficient and scalable forward-only learning in spiking neural networks*, Neuromorphic Computing and Engineering 6(1), 014002 (2026), DOI `10.1088/2634-4386/ae2ef9`
-- Vassallo & Taherinejad, *Three factor delay learning rules for spiking neural networks*, Frontiers in Neuroscience (2026), DOI `10.3389/fnins.2026.1814505`, https://pubmed.ncbi.nlm.nih.gov/42246032/
+Asiaee reframes approximate causal abstraction as structured mechanism sparsification. Treating a trained network as a deterministic SCM, the work derives an interventional-risk objective and criteria for replacing units with constants or folding them into neighboring mechanisms, then validates the resulting sparse abstractions with interchange interventions.
 
-**Impact.** Future SparkBrain claims that combine locality, delayed credit, and learned transmission timing should not use plain STDP as the strongest prior-art comparator. The prospective bar should include modern local eligibility methods and joint weight-delay three-factor learning. This is especially relevant if a future line attempts to connect local responsibility with the delay-sensitive temporal dynamics explored elsewhere in SparkBrain.
+Source:
+- Asiaee, *Efficient Discovery of Approximate Causal Abstractions via Neural Mechanism Sparsification*, arXiv:2602.24266 (27 Feb 2026), https://arxiv.org/abs/2602.24266
+
+**Impact for SparkBrain.** For TH-001 or any future native-route/responsibility successor, a strong ordinary reduction is no longer only "can an FSA/reservoir predict the output?" but also "can much of the native mechanism be removed/folded while preserving the declared intervention response?" If an intervention-stable QI can be compiled into a substantially simpler intervention-faithful mechanism, that is evidence for reduction, not native-ontology necessity. This is prospective only and does not retrofit a new comparator into frozen H7.
+
+### 4. Causal abstraction is broader than hard node cuts; broader mechanism claims should be tested with prospectively declared mechanism transformations
+
+Geiger et al.'s JMLR 2025 framework generalizes causal abstraction from hard/soft mechanism replacement to arbitrary mechanism transformations and unifies multiple intervention-based interpretability techniques under the same formal language.
+
+Source:
+- Geiger et al., *Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability*, JMLR 26(83):1-64 (2025), https://jmlr.org/papers/v26/23-0058.html
+
+**Impact for SparkBrain.** A destructive node cut is one useful intervention family, not a universal mechanism test. Future *broad* responsibility/causal-role claims can be made stronger by prospectively declaring more than one matched transformation family (for example state interchange or mechanism replacement) and asking whether the same high-level causal variable remains stable. This does not weaken H7's current claim because H7 is intentionally scoped to the frozen dynamic TOP1 cut and explicitly avoids general route/topology/uniqueness claims.
+
+## Revisit / terminal relevance
+
+- **Candidate #34 (`CLOSED_STRONG`)**: no revisit trigger. The new causal-abstraction and mechanism-sparsification literature reinforces the requirement for a residual beyond ordinary local physics/reduction; it does not invalidate the preserved local-impulse reduction.
+- **Candidate #35 (`DEFERRED_INDEPENDENT_REIDENTIFICATION`)**: no revisit trigger. The ICLR 2026 divergence result sharpens the bar: off-manifold status alone is not enough. Candidate-specific evidence of a pernicious hidden-path artifact, or a new independently motivated natural-state counterfactual capability, would be needed before a fresh question becomes scientifically justified.
+- **Other terminal objects**: no candidate-specific closure reason is invalidated by this literature. No old object is reopened and no historical result is rewritten.
 
 ## Synthesis
 
-This run adds two distinct boundaries after the new #35 development result. First, the #35 negative result is scientifically useful but narrow: it closes the frozen potential/adaptation priming surface and should not be generalized to all activity-silent memory, because transient synaptic-state mechanisms are established ordinary alternatives. Second, the newly explored v0.5 eligibility/reward path is below, not above, the standard delayed-credit baseline: ordinary three-factor learning already supports delayed third-factor action on stored eligibility, while modern e-prop/Traces-Propagation style methods make temporal eligibility and spatial responsibility explicit separate components.
+The main new reduction boundary is methodological: **causal quotient / abstraction success itself can be misleading unless both the abstraction map and the intervention are constrained**.
 
-Prospective reduction ladders therefore become:
+A stronger future ladder for TH-001-style work is therefore:
 
-`queue-free/activity-silent claim -> neuronal potential/adaptation -> transient synaptic/STP state -> other ordinary slow hidden variables -> only then a broader native residual`
+`predeclared Q0 predictive equivalence -> restricted/transparent quotient or alignment family -> fixed intervention family -> natural/distribution-faithfulness and hidden-path audit -> held-out intervention-conditioned QI refinement -> intervention-faithful mechanism sparsification / FSA / reservoir / eligibility / STP reductions -> only then an unexplained causal-state residual`.
 
-and
+No current scientific contract should be rewritten. H7 remains frozen and outcome-unknown; Candidate #34/#35 remain terminal; Theory remains non-evidentiary; Forge outputs remain zero-credit.
 
-`local spike correlation -> stored eligibility -> delayed third-factor action on prior eligibility -> neuron/population-specific spatial learning signal -> modern local forward / joint weight-delay baseline -> only then richer causal-responsibility novelty`.
-
-No current object should be rewritten. Candidate #35 remains terminal for its current object and zero-credit; Candidate #34 remains terminal/reducible; H7 remains on the pre-identity integrity-capability hold. No Utility request is created because there is no admitted fresh candidate requiring implementation, and injecting these baselines into closed/frozen objects would be outcome-responsive redesign.
+No Utility request is created. The appropriate next step is a prospective Evidence Analyst refinement of the already-authorized TH-001 bounded discriminator, not a new implementation task from Literature.
 
 ## Knowledge-flow contract
 
@@ -93,43 +97,48 @@ No current object should be rewritten. Candidate #35 remains terminal for its cu
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - CAND35_ACTIVITY_SILENT_MEMORY_SCOPE
-  - CAND35_TRANSIENT_SYNAPTIC_STATE_BASELINE
-  - V05_DELAYED_CREDIT_THREE_FACTOR_REDUCTION
-  - V05_LOCAL_RESPONSIBILITY_SPATIAL_CREDIT
-  - FUTURE_CREDIT_ASSIGNMENT_MECHANISM_ADMISSION
-  - FUTURE_DELAY_LEARNING_MECHANISM_ADMISSION
+  - TH001_Q0_QI_DISCRIMINATOR_VALIDITY
+  - CAUSAL_ABSTRACTION_NONVACUITY
+  - INTERVENTION_DIVERGENCE_FAITHFULNESS
+  - INTERVENTION_FAITHFUL_MECHANISM_REDUCTION
+  - CAND35_REVISIT_TRIGGER_SPECIFICITY
+  - FUTURE_MECHANISM_ADMISSION
   - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
-  CAND35_NEGATIVE_CLOSES_ONLY_ITS_FROZEN_NEURONAL_SUBTHRESHOLD_SURFACE;
-  BROADER_ACTIVITY_SILENT_MEMORY_HAS_STRONG_TRANSIENT_SYNAPTIC_PRIOR_ART.
-  THE_CURRENT_V05_ELIGIBILITY_REWARD_PATH_IS_WEAKER_THAN_STANDARD_DELAYED_THREE_FACTOR
-  CREDIT, AND TEMPORAL_ELIGIBILITY_MUST_BE_DISTINGUISHED_FROM_SPATIAL_RESPONSIBILITY.
-audit_classification: null
+  TH001_CAUSAL_QUOTIENT_REQUIRES_A_NONVACUITY_AND_INTERVENTION_FAITHFULNESS_CONTRACT.
+  UNRESTRICTED_ALIGNMENT_CAN_MAKE_CAUSAL_ABSTRACTION_VACUOUS; OFF_MANIFOLD_DISTANCE_ALONE
+  DOES_NOT_ESTABLISH_INVALIDITY; INTERVENTION_FAITHFUL_SPARSIFICATION_IS_A_NEW_ORDINARY
+  REDUCTION_BASELINE. CURRENT_H7_AND_TERMINAL_CANDIDATES_REMAIN_UNCHANGED.
+theory_id: TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT
+theory_status: NONCANONICAL_NON_EVIDENTIARY_UNCHANGED
+revisit_proposal: null
+revisit_status: NO_TRIGGER
 prospective_baselines_or_discriminators:
-  - transient synaptic facilitation / short-term synaptic-state comparator for any broad queue-free or activity-silent-memory successor
-  - delayed third-factor baseline where reward/error acts on already-established eligibility without requiring a new spike pair
-  - neuron/population-specific learning-signal comparator such as e-prop against global scalar reward
-  - modern fully local temporal-plus-spatial credit baseline such as Traces Propagation
-  - online joint weight-and-delay three-factor baseline for any learned-delay responsibility claim
+  - prospectively restrict and declare Q0/QI quotient or alignment complexity; include complexity-matched/random null alignment controls
+  - evaluate abstraction/quotient faithfulness on held-out intervention instances where feasible
+  - distinguish harmless behavioral-null-space divergence from pernicious hidden-path activation rather than using manifold distance alone
+  - use natural-state or matched-counterfactual interventions when available
+  - include intervention-faithful mechanism sparsification / unit folding as an ordinary reduction before native-mechanism uplift
+  - for any broad future responsibility claim, use more than one prospectively fixed mechanism-transformation family; do not retrofit frozen H7
 questions_for_evidence_analyst:
-  - Keep candidate #35 terminal for the current object while explicitly preventing its negative result from being generalized to all activity-silent memory carriers?
-  - For any independently motivated fresh silent-memory successor, require a carrier inventory that includes transient synaptic/STP state before mechanism uplift?
-  - For any future delayed-credit/responsibility candidate, require reward/error arrival to act on prior eligibility and separately test temporal eligibility versus spatial responsibility assignment?
+  - Tighten the R107 TH-001 Forge discriminator with a non-vacuity contract on quotient/alignment complexity and held-out intervention checks?
+  - Require a divergence-faithfulness check that distinguishes causally inert null-space shift from pernicious hidden-path activation before interpreting a QI split as natural mechanism evidence?
+  - Add intervention-faithful sparsification/folding as an ordinary prospective reduction for TH-001 or a later fresh mechanism successor?
+  - Keep Candidate #35 terminal and treat generic off-manifold concern as insufficient for Revisit unless candidate-specific pernicious divergence or genuinely new natural-counterfactual capability appears?
 questions_for_control_brain:
-  - Add `negative neuronal-state null != absence of activity-silent memory` as a prospective claim-ceiling guardrail?
-  - Add `eligibility persistence != local responsibility assignment` and require a three-factor/e-prop-class ordinary reduction before richer credit-line claims?
-  - Keep all of these baselines prospective and outside terminal #34/#35 and held H7 objects?
+  - Add `causal-abstraction fit != mechanism proof under unrestricted alignment` as a programme-level prospective guardrail?
+  - Keep H7's frozen TOP1-cut claim and comparator panel unchanged; apply the new guardrails only to later broader claims/Theory probes?
+  - Preserve all terminal Candidate #34/#35 states and Revisit count at zero absent candidate-specific independent triggers?
 must_not_change_frozen_or_consumed:
-  - all seven officially consumed FORMAL identities and all authoritative evidence tags
-  - H7 PF-R1 no-rerun/no-rescore boundary and unchanged H7 R5 science under the current pre-identity integrity-capability hold
-  - candidate #34 preserved D34-Q002 result and terminal/no-rescue boundary
-  - candidate #35 raw R100 five-arm batch at raw/cand35-r100-onebatch-20260923 and its terminal/current-object no-rerun/no-retune/no-rescore decision
-  - no post-outcome modification of candidate #35 arms, cue, anchor, metric, falsifier, or scientific source
-  - no one-way identity consumption, research merge, immutable/evidence ref mutation, Utility execution, or scheduler change by this role
+  - all seven officially consumed FORMAL identities and all five authoritative evidence tags
+  - frozen H7 R5 science, TOP1 intervention, ordinary comparator panel, evaluator/decision rules, and one-way integrity boundary
+  - H7 PF-R1 no-rerun/no-rescore boundary and no H7 identity/START/result creation by this role
+  - Candidate #34 preserved D34-Q002 bytes/result and terminal CLOSED_STRONG no-rescue boundary
+  - Candidate #35 preserved R100 five-arm result and terminal DEFERRED_INDEPENDENT_REIDENTIFICATION no-same-object-rescue boundary
+  - no terminal object reactivation, research merge, immutable/evidence ref mutation, Utility execution, or scheduler change by this role
 utility_request_created: null
 ```
 
 ## Run close
 
-Role performed: `LITERATURE_REDUCTION_SCOUT`. Generation: `LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71`. Inputs: Control R44, Evidence Analyst R101, MAIN Candidate #35 post-exposure report, Fast Forge R100 credit-locality dead end, prior Literature R39, and independently fetched repository refs/source. Genuinely new information: `true`. New SparkBrain scientific result observed since the prior Literature generation: `true`, limited to Candidate #35's development-only zero-credit five-arm response. Top implication: #35's negative result closes only the frozen potential/adaptation surface, while broader activity-silent-memory claims must clear transient synaptic-memory prior art; future delayed-credit/local-responsibility claims must clear ordinary three-factor and e-prop-class baselines. Affected lines are listed above. Utility request: none. Persistence is limited to the role-separated literature latest/state/history paths; no scientific refs/results, research branches, legacy shared latest/state, Utility state, or scheduler are changed. The final branch-tip commit cannot be embedded self-referentially in the content that creates that commit; the exact role-specific handoff commit is re-fetched after the append-only history write and reported externally.
+Role performed: `LITERATURE_REDUCTION_SCOUT`. Generation: `LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71`. Inputs: Control R48, Evidence Analyst R107, MAIN/Relay capability-block report, Fast Forge 05:35 NO_OP, Methodology R99, Literature R40, Theory R1, Independent Audit R9, and independently fetched repository refs/tags/Forge branches. Genuinely new information: `true`. New SparkBrain scientific result observed since Literature R40: `false`. Top implication: TH-001-style causal quotients need explicit anti-vacuity, intervention-faithfulness, and intervention-faithful reduction controls before a QI split can support mechanism interpretation. No prior candidate meets an independent Revisit trigger. Utility request: none. Persistence is limited to the role-separated Literature latest/state/history paths; no scientific refs/results, research/Forge branches, legacy shared latest/state, Utility state, or scheduler are changed. The final role handoff commit is re-fetched after append-only history persistence because a commit cannot self-embed its own resulting SHA.
