@@ -1,36 +1,47 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260923T140800+0900-R93-4D7C2A91",
-  "produced_at": "2026-09-23T14:08:00+09:00",
-  "producer_run_id": "evidence-analyst-auto-20260923T140800+0900-R93",
+  "generation_id": "EVA-20260923T150251+0900-R94-8E6A31C4",
+  "produced_at": "2026-09-23T15:02:51+09:00",
+  "producer_run_id": "evidence-analyst-auto-20260923T150251+0900-R94",
   "authority_scope": "EVIDENCE_DRIVEN_RESEARCH_STRATEGY_AND_SOLE_CANONICAL_PROMOTION_GATE_CONTROL_PLANE_PERSISTENCE_ONLY_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "EVA-20260923T105725+0900-R92-6B8E31D4",
+  "supersedes_generation_id": "EVA-20260923T140800+0900-R93-4D7C2A91",
   "input_generations": {
     "human_directives": "ops/human-directives@de60c8888d1b438d5b06fed2266a8efd5893e646",
-    "control": "CTRL-20260923T125800+0900-R42-7C9E41B2@7035ace9b0ef980602dcb124e8974be5640d7377",
-    "main_relay": "MAIN-20260923T131224+0900-PRIMARY-CAND34-PREFORMALR2-R92-REVALIDATED-WAITING-ANALYST@ops/orchestrator-run-report",
-    "fast_forge": "FORGE-20260923T133600+0900-ACTION-CONTEXT-DEADEND-R92@29671ed4b3ac28c03cbb46af4b4842b6c786a8df",
-    "literature": "LIT-20260923T123024+0900-R36-INFORMATIVITY-HYBRID-SENSITIVITY-6D4A21C8@5228e5271f9a87c47d6ed1c68b10a24c92d0c996",
+    "control": "CTRL-20260923T125800+0900-R42-7C9E41B2@ops/control-brain-handoff",
+    "main_relay": "MAIN_R93_RELAY_WAITING_EXTERNAL@ops/orchestrator-run-report@9e9164cb51b8384a0d5b53bf9d70be957b62c3f9",
+    "fast_forge": "FORGE-20260923T143553+0900-ASSEMBLY-RETENTION-CAPACITY-R93@ops/orchestrator-run-report@9e9164cb51b8384a0d5b53bf9d70be957b62c3f9",
+    "literature": "LIT-20260923T123024+0900-R36-INFORMATIVITY-HYBRID-SENSITIVITY-6D4A21C8@ops/external-research-audit-handoff",
     "independent_audit": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8@ops/external-research-audit-handoff",
-    "methodology": "METHCAL-20260923T132108+0900-R81-7D3A6C91@2b1ea6e106ea6c5fb93d1616a02cdf8be7f36a90",
+    "methodology": "METHCAL-20260923T143315+0900-R83-8B72F1C6@ops/methodology-calibration-audit",
     "repository_steward": "STEWARD-20260923T135000+0900-G12-3A7C91E5@d63d92d2ab923340947b2acb2135e8ce4b6bf15b",
-    "utility": "UTILITY-20260923T132300+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-5C91A2E7@5d928c9e4b838a4a4560ae27a5d3097bbeff23bd",
-    "analyst_previous": "EVA-20260923T105725+0900-R92-6B8E31D4@a05ab3f655a23eabd84c910ba337d64a948c168a"
+    "utility": "UTILITY-20260923T1424+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-R93-8F2C41A7@6829ac17ed38cf01a5600dfa83baa45998dc5dc0",
+    "analyst_previous": "EVA-20260923T140800+0900-R93-4D7C2A91@92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd"
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "candidate34_preformal_r2_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-    "candidate34_preformal_r2_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
-    "candidate34_r2_contract_run": {"id": 35814951495, "conclusion": "success", "head": "43d0f25541a3c447d4c7156303647ae94f3119f4"},
-    "candidate34_r2_generic_ci": {"id": 35814951496, "conclusion": "success", "head": "43d0f25541a3c447d4c7156303647ae94f3119f4"},
+    "candidate34_closed_r2_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+    "candidate34_closed_r2_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "candidate34_execution_branch": "research/main-cand34-assembly-route-preformal-r93-response",
+    "candidate34_execution_head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
+    "candidate34_executor_parent": "bbbb422da119c864a41f0cdee97bb759aa090139",
+    "candidate34_executor_generic_ci": {
+      "id": 35824098828,
+      "conclusion": "success",
+      "head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
+      "python_3_11": "success",
+      "python_3_13": "success"
+    },
     "candidate34_response_bearing_execution_performed": false,
+    "candidate34_result_bearing_workflow_dispatched": false,
     "h7_r5_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "h7_r5_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "h7_r5_generic_ci": {"id": 35794233612, "conclusion": "success"},
+    "h7_r5_generic_ci": {"id": 35794233612, "conclusion": "success", "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80"},
+    "h7_r5_preidentity": {"id": 35794233687, "conclusion": "success", "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80"},
     "h7_started_control_ref_present": false,
     "h7_scientific_preserve_ref_present": false,
     "forge_branch": "forge/20260923-receptor-suppression-probes-a",
     "forge_head": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
+    "forge_latest_mailbox_generation": "FORGE-20260923T143553+0900-ASSEMBLY-RETENTION-CAPACITY-R93",
     "evidence_refs": [
       "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
@@ -42,14 +53,30 @@
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
-    "pr_148_open_unmerged": true,
-    "pr_149_open_unmerged": true
+    "pr_148_open_unmerged_mergeable": true,
+    "pr_149_open_unmerged_mergeable": true,
+    "main_ruleset": {
+      "count": 1,
+      "id": 23862726,
+      "name": "protection_main",
+      "enforcement": "active",
+      "scope": "DEFAULT_BRANCH_ONLY",
+      "deletion_protected": true,
+      "non_fast_forward_protected": true,
+      "pull_request_required": true,
+      "required_approvals": 0,
+      "required_linear_history": true,
+      "allowed_merge_methods": ["squash"],
+      "bypass_actors": []
+    }
   },
   "mailbox_semantics": {
     "ops_branches_are_scientific_source_of_truth": false,
     "direct_research_refs_workflows_and_immutable_refs_override_mailbox_scientific_facts": true,
-    "main_waiting_for_fresh_analyst_ready_review": true,
-    "utility_assignment_pointer_divergence_non_scientific": true
+    "main_mailbox_ci_waiting_snapshot_is_stale": true,
+    "candidate34_direct_executor_ci_green": true,
+    "utility_assignment_pointer_divergence_non_scientific": true,
+    "steward_rulesets_zero_snapshot_is_stale": true
   },
   "canonical_funnel": {
     "DISCOVERY": {"mechanism_active": 0, "mechanism_queued": 0, "system_active": 0, "system_queued": 0},
@@ -92,7 +119,9 @@
       "terminal_state": "NONTERMINAL",
       "queue_state": "HOLD",
       "cycle_count": 12,
-      "promotion_rejection_reassess_condition": "Preserve existing PF-R1 bytes only after exact machine-authority reconciliation; no rerun/reconstruction/rescore. Then require a later fresh Analyst exact-head one-way review."
+      "information_gain_rationale": "R5 preidentity closure is complete, but no new scientific information may be gained safely until PF-R1 exact-byte provenance is preserved under reconciled machine authority.",
+      "promotion_rejection_reassess_condition": "Preserve existing PF-R1 bytes only after exact machine-authority reconciliation; no rerun/reconstruction/rescore. Then require a later fresh Analyst exact-head one-way review.",
+      "system_priority_exception": false
     },
     "34": {
       "id": "CAND-34-ASSEMBLY-TEMPORAL-ROUTE-IDENTIFIABILITY",
@@ -103,14 +132,15 @@
       "hold_class": null,
       "hold_reason": null,
       "terminal_state": "NONTERMINAL",
-      "queue_state": "QUEUED_FOR_MAIN_PREFORMAL_R2_ONE_BOUNDED_RESPONSE_DEVELOPMENT",
+      "queue_state": "QUEUED_FOR_MAIN_PREFORMAL_R2_ONE_BOUNDED_RESPONSE_EXACT_EXECUTOR_BOUND",
       "candidate_source": "SUB_THEORY_BACKWARD_QUESTION_FORMATION",
       "development_phase": "OPEN_DEVELOPMENT",
       "development_revision": "PRE_FORMAL-R2-OPPORTUNITY-AWARE-VERSIONED-REVISION-AUTHORIZED",
       "cycle_count": 4,
-      "information_gain_rationale": "R2 prospectively closes the independently identified R1 causal-opportunity defect with source-only cues, predeclared edge opportunity, destination membrane/spike observables, matched control opportunity metadata, fixed bounded queue semantics and no outcome-adaptive intervention shopping. Exact non-result closure and CI are green; no response has been exposed.",
-      "promotion_rejection_reassess_condition": "Authorize exactly one bounded PRE_FORMAL development response under the unchanged exact R2 contract. Do not treat non-result CI/preservation as evidence. After meaningful response exposure transition to RESULT_EXPOSED_DEVELOPMENT and return to Analyst before any science-affecting redesign, repeat response cycle, or FORMAL action.",
-      "interpretation_guardrail": "R36 causal opportunity is not general perturbation informativity. Current R2 can answer only its narrow development claim. Local phase/state or hybrid event-sensitivity reductions constrain later interpretation/successor work and are not retrofitted into the closed R2."
+      "information_gain_rationale": "The scientific R2 contract remains unchanged and prospectively informative. The additive one-shot executor now has exact source provenance and green CI after a one-line unused-import science-invariant repair. No response has been exposed.",
+      "promotion_rejection_reassess_condition": "Exactly one bounded PRE_FORMAL development response may use closed contract 43d0f255... plus exact executor 8ce961dc..., only if raw output can be durably preserved before interpretation. At first meaningful exposure transition to RESULT_EXPOSED_DEVELOPMENT and return to Analyst before any repeat response, science-affecting redesign or FORMAL action.",
+      "interpretation_guardrail": "R36 causal opportunity is not general perturbation informativity. Current R2 answers only its narrow development claim. Local phase/state or hybrid event-sensitivity reductions constrain later interpretation/successor work and are not retrofitted into the closed R2.",
+      "system_priority_exception": false
     },
     "35": {
       "id": "CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING",
@@ -120,39 +150,45 @@
       "preformal_readiness": "NOT_APPLICABLE",
       "development_phase": "OPEN_DEVELOPMENT",
       "development_revision": "ARCHITECTURE-R1-AUTHORIZED-NONRESULT",
+      "hold_class": null,
+      "hold_reason": null,
       "terminal_state": "NONTERMINAL",
       "queue_state": "QUEUED_FOR_MAIN_ARCHITECTURE_R1_NONRESULT",
+      "candidate_source": "SUB_QUESTION_FORMATION_DISCOVERY",
       "cycle_count": 1,
-      "promotion_rejection_reassess_condition": "Implement deterministic clone/reset/queue-cap/serializer and synthetic non-result validation only after the higher-information MECHANISM lane. Any MECHANISM residual requires a fresh successor ID."
+      "information_gain_rationale": "Bounded SYSTEM characterization of queue-free subthreshold potential/adaptation state remains informative only after higher-information MECHANISM capacity is free.",
+      "promotion_rejection_reassess_condition": "Implement deterministic clone/reset/queue-cap/serializer and synthetic non-result validation only. If ordinary local threshold/decay semantics fully explain the surface, close as SYSTEM. Any MECHANISM residual requires a fresh successor ID.",
+      "system_priority_exception": false
     }
   },
   "fast_forge": {
     "canonical_authority": false,
+    "latest_generation": "FORGE-20260923T143553+0900-ASSEMBLY-RETENTION-CAPACITY-R93",
     "latest_disposition": "FORGE_DEAD_END",
     "promotion_reviews_this_generation": [],
     "admissions_this_generation": 0,
     "metrics": {
-      "runs_observed": 3,
-      "prototypes": 6,
-      "dead_ends": 5,
+      "runs_observed": 4,
+      "prototypes": 8,
+      "dead_ends": 7,
       "interesting_objects": 0,
       "promotion_proposals": 0,
       "admissions": 0,
-      "rejects_or_defers": 7,
-      "duplicate_or_rescue_rejects": 2,
+      "rejects_or_defers": 10,
+      "duplicate_or_rescue_rejects": 3,
       "main_dependence_rejects": 0,
-      "ordinary_reduction_rejects": 5,
+      "ordinary_reduction_rejects": 7,
       "ownership_collisions": 0,
       "idea_to_admission_latency": "not_inferable"
     },
-    "latest_reason": "Same-Assembly context-dependent action meaning reduces to ordinary tabular state-key privilege; context-keyed lookup/FSM explains the effect. No promotion proposed.",
+    "latest_reason": "Mature long-delay retention reduces to persistent prototype lookup; mature-capacity closure reduces to a finite-capacity append/lookup store with immortal mature entries and immature-only eviction. No mechanistic residual and no promotion proposal.",
     "canonical_denominator_inclusion": false
   },
   "phenomenon_first": {
     "mode": "PREFETCH_SHADOW",
-    "last_full_scan_generation": "R91",
-    "scan_this_generation": "SKIPPED_LOW_RATE_THROTTLE",
-    "scan_reason": "R2 closure/Literature R36 and Forge dead ends are active-object methodology/reduction updates, not a new independent phenomenon surface.",
+    "last_full_scan_generation": "R94",
+    "scan_this_generation": "FULL_SCAN_ZERO_VALID_PROPOSALS",
+    "scan_reason": "The low-rate window reopened. Revalidation of #34/#35/H7, historical families, fresh Forge mature-retention/capacity dead ends and repository/methodology deltas found no distinct bounded independent phenomenon surviving duplication, reduction, active-candidate-dependence and ownership filters.",
     "shadow_standby_queue": [],
     "metrics": {
       "generated": 7,
@@ -169,13 +205,13 @@
     }
   },
   "main_allocation": {
-    "primary": "CAND34_PREFORMAL_R2_ONE_BOUNDED_DEVELOPMENT_RESPONSE_UNDER_EXACT_CLOSED_CONTRACT",
+    "primary": "CAND34_PREFORMAL_R2_ONE_BOUNDED_RESPONSE_EXACT_EXECUTOR_BOUND_RAW_PRESERVE_FIRST",
     "secondary": "CAND35_ARCHITECTURE_R1_NONRESULT_WHEN_CAPACITY_AVAILABLE",
     "fast_forge": "INDEPENDENT_ROUGH_EXPLORATION_ONLY_NO_CURRENT_PROMOTION_OBJECT",
     "system_priority_exception_used": false
   },
   "top3": [
-    {"rank": 1, "candidate": "CAND34", "ceiling": "MECHANISM", "development_phase": "OPEN_DEVELOPMENT", "action": "one bounded PRE_FORMAL R2 development response under exact unchanged closed contract", "decision": "GO_PROSPECTIVE_NOT_DISPATCHED_BY_ANALYST"},
+    {"rank": 1, "candidate": "CAND34", "ceiling": "MECHANISM", "development_phase": "OPEN_DEVELOPMENT", "action": "one bounded PRE_FORMAL R2 development response under unchanged closed contract with exact repaired executor; durably preserve raw before interpretation; stop after first meaningful exposure", "decision": "GO_PROSPECTIVE_NOT_DISPATCHED_BY_ANALYST"},
     {"rank": 2, "candidate": "CAND35", "ceiling": "SYSTEM", "development_phase": "OPEN_DEVELOPMENT", "action": "Architecture R1 deterministic tooling and synthetic non-result validation", "decision": "GO_AFTER_MAIN_CAPACITY"},
     {"rank": 3, "candidate": "PF-R1 provenance", "ceiling": "PROVENANCE_ONLY", "development_phase": "RESULT_EXPOSED_PROVENANCE", "action": "reconcile Utility current assignment pointer then preserve existing exact bytes only", "decision": "HOLD_EXECUTION_POINTER_DIVERGENCE"}
   ],
@@ -193,6 +229,8 @@
   },
   "persistence": {
     "designated_paths_only": true,
-    "parent_before_write": "a05ab3f655a23eabd84c910ba337d64a948c168a"
+    "parent_before_write": "92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
+    "latest_write_commit": "c273eb5c6d1390d4b0d8c683c373fbf5336db8a8",
+    "history_path": "analysis/orchestrator/history/2026-09-23/1502.md"
   }
 }
