@@ -1,53 +1,56 @@
 {
-  "timestamp": "2026-09-23T09:30:10+09:00",
+  "timestamp": "2026-09-23T12:30:24+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9",
-  "producer_run_id": "external-literature-auto-LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9",
+  "generation_id": "LIT-20260923T123024+0900-R36-INFORMATIVITY-HYBRID-SENSITIVITY-6D4A21C8",
+  "producer_run_id": "external-literature-auto-LIT-20260923T123024+0900-R36-INFORMATIVITY-HYBRID-SENSITIVITY-6D4A21C8",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
+  "supersedes_generation_id": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260923T085000+0900-R40-5E1C7A94",
-      "handoff_commit": "f25d48598584bffc5ca736c6ac52c50a94688d89"
+      "generation_id": "CTRL-20260923T115056+0900-R41-4C156929",
+      "handoff_commit": "27b6531b6b3a1d941a484aeee012d5c59fe63d79"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260923T090047+0900-R90-B84D2C71",
-      "handoff_commit": "91684ca2539d89c6866feecbf1a9e28f26aef2fa"
+      "generation_id": "EVA-20260923T105725+0900-R92-6B8E31D4",
+      "handoff_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a"
     },
     "main_report": {
-      "generation_id": "MAIN-20260923T085900+0900-RELAY-CAND34-ARCHR1-R89-COMPLETED-9A4C2E71",
-      "handoff_commit": "18c9d30aed961b719a4c12db329e9adeb40f2db7",
-      "mailbox_tip_observed": "706a3ba3c25f6c69a791504c93c5ddf540abf96a"
+      "generation_id": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
+      "handoff_commit": "0167aa75e768f51bbc37528868af569a1d054786"
     },
-    "sub_report": {
-      "generation_id": "SUB-20260923T083602+0900-QFD-QUEUEFREE-STATE-R89-6B2E4C91",
-      "handoff_commit": "18c9d30aed961b719a4c12db329e9adeb40f2db7",
-      "mailbox_tip_observed": "706a3ba3c25f6c69a791504c93c5ddf540abf96a"
+    "fast_forge_report": {
+      "generation_id": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS",
+      "handoff_commit": "b2fe7ad25a356d170de1291ab0de0b7e4eec3dfe"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7",
-      "handoff_commit": "027fa9fc45648269c2ebe0ae6408162d155fe840"
+      "generation_id": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9",
+      "handoff_commit": "cd5069201723110acc9e15d60216c9d1f2e63ce7"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "09:30 JST",
+  "schedule_slot": "12:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
     "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "h7_formal_r5": {
       "branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
       "head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-      "evidentiary_status": "NON_EVIDENTIARY_FORMAL_PREIDENTITY_COMPLETE_PROVENANCE_HOLD"
+      "status": "NON_EVIDENTIARY_PREIDENTITY_PROVENANCE_HOLD"
     },
-    "candidate34_architecture_r1": {
-      "branch": "research/main-cand34-assembly-route-architecture-r89-cycle1",
-      "head": "de712b2c3bdbb29c719773c609e884ed9b10e40b",
-      "status": "R1_COMPLETED_NON_EVIDENTIARY"
+    "candidate34_preformal_r1": {
+      "branch": "research/main-cand34-assembly-route-preformal-r91-cycle3",
+      "head": "2de73b9d0f21a2e8f07b43ca517b5247e6a7dfd0",
+      "status": "PREFORMAL_DEVELOPMENT_PREBIND_NO_RESULT_PRESERVED"
     },
-    "candidate34_architecture_r2_repository_movement": {
-      "branch": "research/main-cand34-assembly-route-architecture-r90-cycle2",
-      "head": "a6455a3929b86ad25fd106ea93a03604192fc3be",
-      "status": "R2_PROSPECTIVE_MEASUREMENT_CONTRACT_FROZEN_NON_EVIDENTIARY_PENDING_FRESH_ANALYST_DISPOSITION"
+    "candidate34_preformal_r2_initial_observed": {
+      "branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+      "head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a",
+      "status": "NON_RESULT_AUTHORITY_MISMATCH_BLOCKED_BY_MAIN"
+    },
+    "candidate34_preformal_r2_latest_repository_movement": {
+      "branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+      "head": "a134513838d8f30013d904a95a61cfbcf9454eaa",
+      "status": "OPPORTUNITY_AWARE_R92_ALIGNMENT_REPOSITORY_MOVEMENT_NOT_YET_FRESH_ANALYST_DISPOSITIONED"
     },
     "evidence_tags": [
       "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
@@ -68,128 +71,109 @@
       "148": "OPEN_UNMERGED",
       "149": "OPEN_UNMERGED"
     },
-    "ops_control_tip": "f25d48598584bffc5ca736c6ac52c50a94688d89",
-    "ops_evidence_analyst_tip": "91684ca2539d89c6866feecbf1a9e28f26aef2fa",
-    "ops_orchestrator_tip_observed": "706a3ba3c25f6c69a791504c93c5ddf540abf96a",
-    "ops_external_tip_before_write": "027fa9fc45648269c2ebe0ae6408162d155fe840"
+    "orchestrator_role_history_inspected": true,
+    "orchestrator_role_history_note": "2026-09-23 role-suffixed history directory contains older main history only; designated main/sub latest+state are fresher and were consumed",
+    "ops_control_tip_before_persistence": "27b6531b6b3a1d941a484aeee012d5c59fe63d79",
+    "ops_evidence_analyst_tip_before_persistence": "a05ab3f655a23eabd84c910ba337d64a948c168a",
+    "ops_external_tip_before_write": "6755579f5f21b19ca90788c948d8126529b648c6"
   },
   "workflow_state_observed": {
-    "35799700625": {
-      "head": "de712b2c3bdbb29c719773c609e884ed9b10e40b",
+    "35814833603": {
+      "head": "a134513838d8f30013d904a95a61cfbcf9454eaa",
+      "workflow": "cand34-preformal-r2-contract",
       "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false,
-      "classification": "CAND34_ARCHITECTURE_R1_IMPLEMENTATION_SYNTHETIC_REACHABILITY_CI"
+      "conclusion": "failure",
+      "result_bearing": false
     },
-    "35802555790": {
-      "head": "a6455a3929b86ad25fd106ea93a03604192fc3be",
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false,
-      "classification": "CAND34_ARCHITECTURE_R2_PROSPECTIVE_CONTRACT_GENERIC_CI"
+    "35814833574": {
+      "head": "a134513838d8f30013d904a95a61cfbcf9454eaa",
+      "workflow": "ci",
+      "status": "in_progress",
+      "conclusion": null,
+      "result_bearing": false
     }
   },
   "genuinely_new_information": true,
   "findings": [
     {
-      "id": "POLYCHRONOUS_SYNFIRE_CLOSEST_PRIOR_ART",
-      "type": "MECHANISM_REDUCTION_PRIOR_ART",
+      "id": "CAUSAL_OPPORTUNITY_VS_PERTURBATION_INFORMATIVITY",
+      "type": "RECENT_PERTURBATION_DESIGN_BAR",
       "sources": [
-        "Izhikevich 2006, Polychronization: Computation with Spikes",
-        "Jin 2004, Spiking neural network for recognizing spatiotemporal sequences of spikes"
+        "Ogino et al. 2026, Designing optimal perturbation inputs for system identification in neuroscience, eLife Reviewed Preprint v2"
       ],
-      "finding": "Classical recurrent spiking networks with conduction delays and STDP already produce reproducible millisecond-precision polychronous groups and synfire-chain sequence propagation.",
-      "impact": "Candidate #34 cannot treat edge-weight or +1ms delay sensitivity alone as a novel temporal-route primitive; matched synfire/polychronous coincidence propagation is an ordinary future reduction baseline."
+      "finding": "Modern neural system-identification work shows that perturbations improve identification when their spatial/frequency structure excites otherwise weak or latent modes; intensity or mere physical intervention opportunity is not sufficient.",
+      "impact": "R92's opportunity-aware source-only intervention is directionally supported, but future broad interpretation should require that the frozen perturbation is informative for the exact alternatives named in the claim. This is prospective and must not rewrite current R2."
     },
     {
-      "id": "TIMING_RESOLUTION_AND_BIN_PHASE_ROBUSTNESS",
-      "type": "MEASUREMENT_NUMERICAL_ROBUSTNESS",
+      "id": "CLAIM_SCOPED_DATA_INFORMATIVITY",
+      "type": "METHOD_SCOPE_SHARPENING",
       "sources": [
-        "Pauli et al. 2018, Reproducing Polychronization",
-        "Victor & Purpura spike-train metrics",
-        "van Rossum 2001 spike-train distance"
+        "van Waarde et al. 2020, Data informativity: a new perspective on data-driven analysis and control"
       ],
-      "finding": "Polychronous-group conclusions can change dramatically with timing resolution; Pauli et al. observed about 13,000 groups in a 1ms-locked configuration versus 151 at 0.1ms resolution despite similar coarse network activity.",
-      "repository_specific_observation": "Candidate #34 R2 freezes a +1ms edge-delay perturbation and an integer relative-spike-bin response field, while stable Assembly extraction rounds relative spike timing into 2ms bins. The underlying field is event-driven, so the fixed-step solver failure mode does not directly apply; the relevant risk is representation/bin-boundary sensitivity.",
-      "impact": "A future robust route claim should be visible in continuous-time timing observables or remain qualitatively stable across prospectively fixed resolutions/bin phases. No such discriminator may be retrofitted into frozen R2."
+      "finding": "Persistent excitation sufficient for unique whole-system identification is stronger than necessary for many narrower analysis questions; data can be informative for a specific property without identifying the entire system.",
+      "impact": "Candidate #34 should use a claim-scoped informativity criterion rather than adding a global excitation/identification gate to a bounded local edge-effect question."
     },
     {
-      "id": "TEMPORAL_ROUTE_FSM_REDUCTION",
-      "type": "COMPUTATIONAL_REDUCTION",
+      "id": "LOCAL_PHASE_STATE_RESPONSE_REDUCTION",
+      "type": "ORDINARY_LOCAL_DYNAMICS_REDUCTION",
       "sources": [
-        "Jin 2004, Spiking neural network for recognizing spatiotemporal sequences of spikes"
+        "Gutkin, Ermentrout & Reyes 2005, Phase-response curves give the responses of neurons to transient inputs"
       ],
-      "finding": "A recurrent synfire-chain recognizer with precise spike timing can be mapped to a finite-state machine.",
-      "impact": "Physical route causality and computational irreducibility are distinct. Broader candidate-#34 mechanism claims should compare against a compact temporal-progress FSM/synfire recognizer with matched information privilege."
+      "finding": "The effect of a transient synaptic input on spike timing depends on local phase, firing rate, afterhyperpolarization and adaptation; the same input can have near-zero, positive or negative influence depending on arrival state.",
+      "impact": "A future +1ms candidate-34 effect may be explained by an ordinary low-dimensional destination-state timing response rather than an irreducible Assembly route mechanism."
     },
     {
-      "id": "MODERN_HETEROGENEOUS_DELAY_SNN_BASELINE",
-      "type": "RECENT_NOVELTY_BAR",
+      "id": "HYBRID_EVENT_SENSITIVITY_REDUCTION",
+      "type": "ORDINARY_HYBRID_DYNAMICS_REDUCTION",
       "sources": [
-        "Sun et al. 2023, Learnable axonal delay in spiking neural networks improves spoken word recognition",
-        "Three factor delay learning rules for spiking neural networks, Frontiers in Neuroscience 2026",
-        "Perrinet 2026, Working Memory in a Recurrent Spiking Neural Networks With Heterogeneous Synaptic Delays"
+        "Wunderlich & Pehle 2021, Event-based backpropagation can compute exact gradients for spiking neural networks",
+        "Kong et al. 2024, Saltation Matrices: The Essential Tool for Linearizing Hybrid Dynamical Systems"
       ],
-      "finding": "Learnable and heterogeneous synaptic/axonal delays are established modern SNN machinery for temporal recognition and working-memory motifs, including online three-factor delay learning in recurrent LIF networks.",
-      "impact": "The novelty bar is not that exact delays matter; any stronger SparkBrain claim must leave a residual beyond ordinary heterogeneous-delay sequence mechanisms under matched resource and information privilege."
-    },
-    {
-      "id": "CAND35_LOCAL_ADAPTATION_REDUCTION",
-      "type": "SYSTEM_REDUCTION_SHARPENING",
-      "sources": [
-        "Brette & Gerstner 2005, Adaptive Exponential Integrate-and-Fire Model",
-        "Benda, Maler & Longtin 2010, Linear Versus Nonlinear Signal Transmission in Neuron Models With Adaptation Currents or Dynamic Thresholds"
-      ],
-      "finding": "Membrane potential and adaptation are sufficient local dynamical state in standard adaptive integrate-and-fire models, and adaptation shapes stimulus response over roughly 10ms to beyond 1s.",
-      "impact": "Candidate #35 should remain SYSTEM-scoped and close under ordinary reduction if frozen local potential/adaptation/threshold-margin dynamics predict the later weak-cue divergence."
+      "finding": "Discontinuous event-driven/spiking systems have established exact or first-order sensitivity machinery that accounts for derivative jumps at events; EventProp gradients match finite differences to very high precision in recurrent LIF networks, and saltation matrices provide the general hybrid jump sensitivity update.",
+      "impact": "A fresh successor should test whether ordinary matched local/event sensitivity predicts the delay/weight intervention effect before attributing a residual to a broader Assembly-level mechanism."
     }
   ],
   "affected_lines": [
-    "CAND34_ASSEMBLY_TEMPORAL_ROUTE_IDENTIFIABILITY",
-    "CAND34_TEMPORAL_RESOLUTION_ROBUSTNESS",
-    "CAND34_POLYCHRONOUS_SYNFIRE_REDUCTION",
-    "CAND34_TIMING_BIN_PHASE_SENSITIVITY",
-    "CAND34_COMPUTATIONAL_FSM_REDUCTION",
-    "CAND35_LOCAL_ADAPTATION_REDUCTION",
+    "CAND34_CAUSAL_OPPORTUNITY_VS_INFORMATIVITY",
+    "CAND34_CLAIM_SCOPED_PERTURBATION_DESIGN",
+    "CAND34_LOCAL_PHASE_STATE_REDUCTION",
+    "CAND34_HYBRID_EVENT_SENSITIVITY_REDUCTION",
+    "CAND34_PREFORMAL_R2_INTERPRETATION_CEILING",
     "FUTURE_MECHANISM_SUCCESSOR_ADMISSION",
     "PROGRAMME_NOVELTY"
   ],
   "reduction_candidates": [
-    "MATCHED_POLYCHRONOUS_SYNFIRE_COINCIDENCE_PROPAGATION",
-    "CONTINUOUS_TIME_OR_MULTI_RESOLUTION_SPIKE_RESPONSE",
-    "TEMPORAL_PROGRESS_FSM",
-    "MATCHED_HETEROGENEOUS_DELAY_RECURRENT_SNN",
-    "LOCAL_MEMBRANE_ADAPTATION_STATE_TRANSITION"
+    "CLAIM_SCOPED_PERTURBATION_INFORMATIVITY",
+    "LOCAL_DESTINATION_STATE_RESPONSE_MAP",
+    "HYBRID_EVENT_SENSITIVITY_OR_SALTATION_PREDICTOR"
   ],
-  "novelty_or_reduction_impact": "PRECISE_DELAY_ROUTE_EFFECTS_HAVE_CLOSE_POLYCHRONOUS_SYNFIRE_PRIOR_ART_AND_A_KNOWN_TEMPORAL_DISCRETIZATION_FAILURE_MODE. Candidate #34 must not treat +1ms delay sensitivity or integer spike-bin changes alone as a novel or robust mechanism. Future successors should test ordinary delay-line/synfire explanations, continuous-time or multi-resolution timing robustness, and compact temporal-state reduction. Candidate #35 remains reducible to ordinary local adaptation unless a residual survives that model.",
+  "novelty_or_reduction_impact": "CAUSAL_OPPORTUNITY_IS_NECESSARY_BUT_NOT_SUFFICIENT_FOR_BROAD_MECHANISM_IDENTIFICATION. Modern perturbation-design work supports opportunity-aware intervention but adds claim-scoped informativity; ordinary local phase/refractory dynamics and hybrid event sensitivity are stronger prospective reductions for small delay effects. No current R2 rewrite or mechanism uplift follows.",
   "audit_classification": null,
   "confidence": "HIGH",
   "prospective_baselines_or_discriminators": [
-    "matched synfire/polychronous coincidence-propagation comparator with equal timing and local-state privilege",
-    "fresh-successor-only continuous-time spike metric or prospectively frozen multi-resolution/bin-phase robustness",
-    "compact temporal-progress finite-state recognizer with matched information privilege",
-    "matched heterogeneous-delay recurrent SNN ceiling when resource and learning privilege can be aligned",
-    "candidate #35 local membrane/adaptation/threshold-margin state-transition prediction before any Assembly-level interpretation"
+    "fresh-successor-only claim-scoped perturbation-informativity criterion tied to the exact estimand and alternative set",
+    "local destination-state response map using matched potential/threshold/adaptation/refractory/arrival-time privilege",
+    "hybrid event-sensitivity / saltation / event-Jacobian predictor for delay/weight perturbations",
+    "scale excitation requirements with claim scope rather than requiring global persistent excitation for a local edge-effect claim"
   ],
   "questions_for_evidence_analyst": [
-    "Preserve candidate #34 R2 exactly as frozen and reserve timing-resolution robustness for a fresh successor rather than retrofitting R2?",
-    "If a later #34 response depends on +1ms delay, cap the claim unless the effect is robust to representation/binning or independently visible in continuous-time response observables?",
-    "Treat synfire/polychronous and compact temporal-FSM explanations as ordinary future reduction baselines for broader candidate-#34 mechanism claims?",
-    "Keep candidate #35 at SYSTEM scope whenever frozen local potential/adaptation dynamics predict the weak-cue effect?"
+    "Keep current R2 unchanged by this literature and treat informativity as a future claim-scoped interpretation/successor guardrail?",
+    "If a future R2-like null is interpreted mechanistically, require evidence that the frozen perturbation was informative for the exact alternatives being rejected rather than merely physically executable?",
+    "Before any broad Assembly-route claim, require reduction against a local destination-state timing model or hybrid event-sensitivity predictor with matched information privilege?"
   ],
   "questions_for_control_brain": [
-    "Add 'delay sensitivity != novel temporal mechanism' and 'bin-boundary sensitivity != robust route evidence' as prospective claim-ceiling guardrails?",
-    "Keep all new precision/synfire/FSM discriminators outside the already-frozen candidate #34 R2 object?",
-    "Preserve H7 provenance hold and all existing one-way boundaries unchanged?"
+    "Add 'causal opportunity != perturbation informativity' as a prospective claim-ceiling guardrail without creating a new gate inside active R2?",
+    "Keep persistent-excitation requirements proportional to claim scope rather than converting a local edge-effect question into whole-system identification?",
+    "Preserve all existing response/FORMAL/provenance STOP boundaries while MAIN/Analyst reconcile the new R2 repository head/workflow state?"
   ],
   "must_not_change_frozen_or_consumed": [
     "all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence",
-    "H7 PF-R1 development result/raw and no-rerun/no-rescore boundary",
+    "H7 PF-R1 result/raw and no-rerun/no-rescore boundary",
     "H7 R5 preidentity object and FORMAL provenance hold",
-    "candidate #34 Architecture R1 exact completed head and results",
-    "candidate #34 R2 contract at a6455a3929b86ad25fd106ea93a03604192fc3be must not be rewritten in place because of this literature",
-    "candidate #35 remains prospective SYSTEM Discovery; no mechanism uplift from literature",
-    "no candidate response-bearing execution, PRE_FORMAL/FORMAL action, one-way identity, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
+    "candidate #34 PRE_FORMAL R1 prebind and its no-response provenance",
+    "candidate #34 current R2 opportunity-aware contract/repository work must not be rewritten because of this external literature; fresh Analyst/MAIN owns its reconciliation",
+    "candidate #35 remains SYSTEM-scoped; no mechanism uplift from this literature",
+    "no candidate response-bearing execution, PRE_FORMAL/FORMAL one-way action, identity consumption, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role"
   ],
   "utility_request_created": null,
   "mutations": {
