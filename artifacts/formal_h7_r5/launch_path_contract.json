@@ -83,5 +83,6 @@
   "science_invariant_repair": {
     "classification": "LINT_ONLY_NO_SCIENCE_CHANGE",
     "reason": "remove unused import, wrap long constants, and sort local imports"
-  }
+  },
+  "validation_trigger": "FINAL_POST_REPAIR_CONNECTOR_PUSH"
 }
