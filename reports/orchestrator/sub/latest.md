@@ -1,46 +1,48 @@
-# SUB latest — R89 QFD: queue-free subthreshold state causal priming
+# SUB latest — R90 candidate #35 Discovery R1 contract closure
 
 - schema_version: `2`
-- generation_id: `SUB-20260923T083602+0900-QFD-QUEUEFREE-STATE-R89-6B2E4C91`
-- produced_at: `2026-09-23T08:36:02+09:00`
-- operating_mode: `AUTONOMOUS_SECONDARY_RESEARCH`
-- discovery_mode: `QUESTION_FORMATION_DISCOVERY`
-- selected_target: `QSEED-V05-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING-01`
-- evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_QUESTION_FORMATION`
-- recommendation: `CONTINUE_QUESTION_FORMATION`
+- generation_id: `SUB-20260923T093316+0900-DISC-C35-CONTRACT-R90-4A7E2C91`
+- produced_at: `2026-09-23T09:33:16+09:00`
+- operating_mode: `ANALYST_ALLOCATED_SECONDARY_RESEARCH`
+- discovery_mode: `SYSTEM_DISCOVERY`
+- selected_target: `CAND-35-QUEUE-FREE-SUBTHRESHOLD-STATE-CAUSAL-PRIMING`
+- evidentiary_status: `NON_EVIDENTIARY_CANONICAL_DISCOVERY_CONTRACT_ONLY`
+- recommendation: `PROMOTE_TO_ARCHITECTURE_STUDY`
 
 ## Freshness / ownership
 
-Evidence Analyst remains R89 (`EVA-20260923T080115+0900-R89-9A4C2E71@4ce972b38cf925ec5d447546339ead57830ada7c`). Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`, and the five authoritative `evidence/*` tag objects were independently re-fetched unchanged.
+Evidence Analyst R90 (`EVA-20260923T090047+0900-R90-B84D2C71@91684ca2539d89c6866feecbf1a9e28f26aef2fa`) now assigns candidate #35 to SUB as `SYSTEM / DISCOVERY / OPEN_DEVELOPMENT / DISCOVERY-R1_AUTHORIZED`, with `preformal_eligible=false`, no hold, and explicit **question-contract-only** authority. Response-bearing candidate execution is not authorized.
 
-R89 moved candidate #34 to MAIN-owned NON_EVIDENTIARY Architecture R1 and left H7 R5 on the provenance-gated FORMAL hold. MAIN has acquired #34 and its branch has advanced to synthetic reachability work. SUB touched neither candidate #34 nor H7/PF-R1. Fresh Methodology R76 confirms #34 must stay bounded/non-evidentiary and H7 needs no additional activity-driven development; it supplies no separate canonical SUB target.
+MAIN independently owns candidate #34 Architecture R2 and its live branch was re-fetched at `research/main-cand34-assembly-route-architecture-r90-cycle2@a6455a3929b86ad25fd106ea93a03604192fc3be`. H7 R5/PF-R1 remain critical-path provenance/formal surfaces. SUB touched neither. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d` and consumed/evidence refs remain unchanged.
 
-## PRE-NO-OP scan
+Fresh Methodology R77 confirms the #35 SYSTEM ceiling is calibrated while ordinary local threshold/decay semantics dominate; any later MECHANISM residual requires a fresh successor ID. Literature R34 remains relevant to MAIN-owned #34 route-identifiability rather than this physical-state object. Audit R7 and Utility PF-R1 remain unrelated H7 integrity/provenance constraints.
 
-No formal SUB lane, fallback, or Analyst-authorized SUB Discovery target was usable, so the mandatory scan was executed. Candidate #33 gained no new auditability residual. Prior Assembly partial completion remains reduced to fixed-prototype similarity plus identical lookup. Literature R34 is already consumed by MAIN-owned #34; Utility PF-R1 is control/provenance-only; stable `main` has not changed.
+## PRE-NO-OP / allocation
 
-The retained residual comes from the **terminal v0.5 endogenous-continuation family**. That object found no autonomous empty-input continuation and an already-empty recurrent event queue. It did not ask whether silent queue-free membrane/adaptation state can alter a later cue. Stable source exposes exactly that state: each field unit stores mutable `potential` and `adaptation`, with explicit decay semantics, and `TemporalExcitableField.state_dict()` serializes the event queue and unit state. v0.5 checkpoint restoration preserves the nested field while learned Assembly/predictor/action state can be kept identical across arms.
+The PRE-NO-OP gate was not reached because R90 supplies a valid independent canonical SUB lane. No autonomous scientific selection was made and no alternate target displaced #35. Candidate #34 and H7 were excluded as MAIN/critical-path owned.
 
-Adjacent learned-model top-k persistent-amplification work is not a duplicate: it perturbs a separate learned module state, not stable v0.5 physical `UnitState`. MAIN's new #34 reachability tooling is excluded and is not a dependency of this seed.
+## Discovery R1 contract closed prospectively
 
-## Question seed
+**Question.** At a fixed queue-empty post-drive anchor, does non-receptor residual `potential` and/or `adaptation` causally change response to one fixed weak field-level cue when topology, weights, higher state, cue bytes and all non-intervened state are identical?
 
-**Phenomenon / question.** A driven v0.5 state may leave decaying membrane potential and adaptation after the recurrent queue is empty even though it cannot self-continue. At a queue-empty post-episode anchor, does that silent subthreshold state causally change the response to a prospectively fixed weak/ambiguous cue while learned topology, weights, Assembly memory, predictor/action parameters and cue bytes remain identical?
+**Prime.** One pristine default v0.5 brain receives exactly one motif-only no-learning episode: `A@0 ms`, `F@5 ms`, `C@7 ms`, each magnitude `1.18`, polarity `+1`, novelty `0.25`, with fixed source/episode IDs; `learn_assembly=false`, `learn_field=false`, `explore_action=false`.
 
-**Provisional hypothesis.** Residual `potential` and/or `adaptation` can alter later cue-evoked spike/cascade/pattern/Assembly response despite absent spontaneous continuation, with potential-mediated priming and adaptation-mediated suppression separable under direct state interventions. No positive mechanism is asserted.
+**Anchor.** After normal 32 ms settle, choose the first fixed `+32 ms` no-input boundary with serialized field queue empty, with at most 8 extra boundaries / `256 ms`; never extend after observation. Cue time is fixed at `anchor + 4 ms`, beyond the stable 3 ms refractory duration.
 
-**Candidate observables / interventions.** Read queue cardinality/current time and non-receptor `potential`, `adaptation`, threshold/refractory/timing state, then compare later fixed-cue response on deep copies under: exact sham, `POTENTIAL_NULL` (potential→configured reset only), `ADAPTATION_NULL` (adaptation→0 only), and only if prospectively justified later, a joint subthreshold-state null. No intervention or experiment was executed in this run.
+**Arms.** Clone the exact queue-empty checkpoint. Treatment scope is all non-receptor units only: exact sham; `POTENTIAL_NULL` (potential→configured reset only); `ADAPTATION_NULL` (adaptation→0 only); fixed joint null; and an unedited `DELAYED_SHAM_32MS` natural-decay comparator. Receptors, topology, weights/delays, traces, higher v0.5 state and cue bytes remain identical.
 
-**Ordinary reductions.** Require the queue to be empty; keep learned connections/Assembly/predictor/action state identical; include cue-only/state-null baseline; if admitted, use a prospectively timed natural-decay arm; and treat local effective-threshold margin plus the existing membrane/adaptation exponential decay as the ordinary explanation. If those ordinary quantities fully explain any divergence, do not promote a stronger distributed/Assembly mechanism claim.
+**Cue.** To isolate physical `UnitState` from receptor-bank memory, the probe uses the embedded field/base `SignalPulse` interface: channel `A`, magnitude `0.85`, polarity `+1`, novelty/prediction-error `0`, no location, fixed source ID. Static source derivation under the frozen default topology routes it to receptors `(6,7)` and yields about `0.811405` direct current per routed receptor. Default receptor threshold is `0.46`; receptor→reservoir weight is `0.47` versus default reservoir threshold `0.76`, leaving a `0.29` one-edge margin before residual-state contribution. These are source-derived contract facts, not candidate results.
 
-**Falsifier / discriminator.** The seed does not mature if a fixed queue-empty anchor has no measurable residual potential/adaptation. A future frozen object would reject a queue-free persistent-state causal effect if sham, potential-null and adaptation-null yield the same complete fixed-cue response signature. Any stronger mechanism must also collapse if all observed divergence is reducible to ordinary local threshold margins and expected decay.
+**Measurement.** Fixed 32 ms window, no extension/no learning. The causal response signature is canonical JSON of downstream spike rows, cascade rows, ignition rows, plus cue-route/event-count integrity metadata. `field_state_hash` may be logged only for intervention integrity and is excluded from the causal falsifier because the treatment directly changes state bytes.
 
-## Classification / next layer
+**Ordinary reductions.** Exact sham; factorial potential/adaptation/joint nulls; +32 ms delayed sham; hard queue-empty gate; and a non-fitted local threshold-margin ledger using the frozen 18 ms membrane decay, 90 ms adaptation decay, `dynamic_threshold = base_threshold + max(0, adaptation)`, and exact connection current/delay. No threshold, tolerance, cue magnitude or window may be tuned after response exposure.
 
-This is a **candidate seed / fresh-successor proposal**, not canonical work and not a reopening of the terminal endogenous-continuation object. The prospective question is materially new because its observable is later-cue sensitivity and its intervention is direct queue-free state nulling rather than another empty-input continuation probe.
+**Falsifier.** If the complete downstream response signature is exactly identical across sham/potential-null/adaptation-null/joint-null, reject a queue-free subthreshold-state causal effect for the current SYSTEM object. If divergence is fully accounted for by the predeclared local decay/threshold ledger and deterministic recurrent descendants, classify it as ordinary decaying physical excitability at SYSTEM scope; do not uplift the same object. Queue-empty failure within 256 ms, source-contract drift, non-finite state, or event/spike resource-cap hit is STOP/REASSESS, never retune.
 
-The seed is not mature enough for a claim ceiling, PRE_FORMAL eligibility/readiness, or canonical hold/lifecycle fields. Remaining scientific choices are the exact prime trajectory/queue-empty anchor, outcome-blind cue bytes and timing, reset scope, response signature, and final reduction panel. Recommendation is `CONTINUE_QUESTION_FORMATION`; if those can be frozen prospectively without MAIN collision, return it to Evidence Analyst for `FRESH_SUCCESSOR_REVIEW`.
+## Result / next layer
 
-Because this is `QUESTION_FORMATION_DISCOVERY`, it is denominator-excluded. The rolling actual autonomous-selection account remains `MECHANISM / SYSTEM / SYSTEM = 1/3`.
+All open QFD choices are now prospectively bounded without response exposure: prime, anchor/cap, cue bytes/timing, reset scope, complete downstream response signature, ordinary reductions and falsifier. No candidate response arm, scientific experiment, workflow, research branch, PRE_FORMAL/FORMAL action, protected evaluation, identity consumption, score, evidence/preserve ref, Utility request or immutable-ref mutation occurred.
 
-Implementation was read-only source/history reachability analysis only. No workflow dispatch, code/research-branch mutation, Utility request, PRE_FORMAL/FORMAL action, identity consumption, held-out/protected read, score, evidence creation, immutable-ref mutation, or historical PASS/FAIL rewrite occurred.
+Candidate #35 remains `SYSTEM / OPEN_DEVELOPMENT`, `preformal_eligible=false`, `NONTERMINAL`, with no hold. Discovery cycle 1 is closed as contract-only/non-evidentiary. Recommendation is **`PROMOTE_TO_ARCHITECTURE_STUDY`** for deterministic clone/reset/queue-cap/serializer implementation and synthetic non-result tests only; candidate-response execution still requires later Evidence Analyst authority.
+
+Theory-backward accounting is unchanged because this is an Analyst-allocated canonical lane derived from the prior denominator-excluded QFD, not a new autonomous scientific selection. Rolling autonomous selections remain `MECHANISM / SYSTEM / SYSTEM = 1/3`.
