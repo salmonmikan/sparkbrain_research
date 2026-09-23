@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260923T141500+0900-PRIMARY-CAND34-PREFORMALR2-R93-ACQUIRED",
+  "generation_id": "MAIN-20260923T143200+0900-PRIMARY-CAND34-PREFORMALR2-R93-WAITING-CI-EXECUTOR",
   "run_id": "sparkbrain-main-primary-20260923T141500JST-R93-cand34-d34q002",
   "producer_run_id": "sparkbrain-main-primary-20260923T141500JST-R93-cand34-d34q002",
   "authority_scope": "PRIMARY_CANONICAL_R93_CAND34_ONE_BOUNDED_PREFORMAL_R2_RESPONSE_ONLY",
-  "supersedes_generation_id": "MAIN-20260923T131224+0900-PRIMARY-CAND34-PREFORMALR2-R92-REVALIDATED-WAITING-ANALYST",
+  "supersedes_generation_id": "MAIN-20260923T141500+0900-PRIMARY-CAND34-PREFORMALR2-R93-ACQUIRED",
   "input_generations": {
     "evidence_analyst": "EVA-20260923T140800+0900-R93-4D7C2A91@92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
-    "main_previous_lease": "MAIN-20260923T131224+0900-PRIMARY-CAND34-PREFORMALR2-R92-REVALIDATED-WAITING-ANALYST"
+    "main_previous_lease": "MAIN-20260923T141500+0900-PRIMARY-CAND34-PREFORMALR2-R93-ACQUIRED"
   },
   "execution_mode": "PRIMARY",
-  "status": "RUNNING",
+  "status": "WAITING_EXTERNAL",
   "started_at": "2026-09-23T14:15:00+09:00",
-  "heartbeat_at": "2026-09-23T14:15:00+09:00",
+  "heartbeat_at": "2026-09-23T14:32:00+09:00",
   "completed_at": null,
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260923T140800+0900-R93-4D7C2A91",
@@ -31,15 +31,16 @@
   "terminal_state": "NONTERMINAL",
   "queue_state": "D34-Q002_AUTHORIZED_ONCE_NOT_YET_EXECUTED",
   "system_priority_exception": {"used": false},
-  "active_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-  "active_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+  "active_branch": "research/main-cand34-assembly-route-preformal-r93-response",
+  "active_head": "bbbb422da119c864a41f0cdee97bb759aa090139",
   "active_identity": "D34-Q002",
-  "workflow_wait": null,
-  "artifact_preservation": {
-    "contract_path": "reports/orchestrator/main/artifacts/cand34/preformal-r2/43d0f25541a3c447d4c7156303647ae94f3119f4/cand34-preformal-r2-contract.zip",
-    "exact_bytes_preserved": true
+  "workflow_wait": {
+    "run_id": 35822584950,
+    "workflow": "ci",
+    "status_at_persist": "queued",
+    "result_bearing": false
   },
-  "evidentiary_status": "NO_NEW_RESULT_YET_R93_ONE_BOUNDED_PREFORMAL_RESPONSE_AUTHORIZED",
+  "evidentiary_status": "NO_NEW_RESULT_EXECUTOR_IMPLEMENTED_WAITING_CI",
   "formal_identity_created_or_consumed": false,
   "started_created": false,
   "formal_protected_evaluation_accessed": false,
@@ -47,7 +48,7 @@
   "official_scoring_performed": false,
   "scientific_preserve_or_evidence_ref_created": false,
   "prior_results_preserved_unchanged": true,
-  "stop_reason": null,
-  "next_action": "Under unchanged R93, implement only science-invariant execution plumbing needed to execute the already-frozen D34-Q002 queue exactly once; do not alter the R2 contract, queue science, comparators, thresholds, intervention family, resources, or claim scope; stop after first meaningful response exposure and return to Analyst.",
+  "stop_reason": "WAITING_ONLY_FOR_EXECUTOR_HEAD_GENERIC_CI_BEFORE_ONE_SHOT_RESPONSE_ARMING",
+  "next_action": "Re-fetch R93 and active head. If CI 35822584950 is green, arm a no-clobber one-shot response workflow with an immediate R93 freshness gate, preserve raw bytes before interpretation, execute D34-Q002 exactly once, then stop at first meaningful response exposure for Analyst review. If CI fails, make only science-invariant repair and do not execute until green.",
   "owner": "main"
 }
