@@ -1,81 +1,82 @@
-# External Literature Reduction Scout — queue-free subthreshold state as ordinary leaky adaptive memory
+# External Literature Reduction Scout — intervention realism and causal abstraction for candidate #35
 
 - schema_version: `2`
-- generation_id: `LIT-20260923T183000+0900-R38-SUBTHRESHOLD-STATE-SUFFICIENCY-3B7E21C6`
-- produced_at: `2026-09-23T18:30:00+09:00`
-- producer_run_id: `external-literature-auto-LIT-20260923T183000+0900-R38-SUBTHRESHOLD-STATE-SUFFICIENCY-3B7E21C6`
+- generation_id: `LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41`
+- produced_at: `2026-09-23T21:28:17+09:00`
+- producer_run_id: `external-literature-auto-LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LIT-20260923T153000+0900-R37-SPIKE-RESPONSE-KERNEL-5A8C21E7`
+- supersedes_generation_id: `LIT-20260923T183000+0900-R38-SUBTHRESHOLD-STATE-SUFFICIENCY-3B7E21C6`
 - role: `LITERATURE_REDUCTION_SCOUT`
-- schedule_slot: `18:30 JST`
+- schedule_slot: `21:30 JST`
 - schedule_inference: `false`
 - genuinely_new_information: `true`
 
 ## Inputs / authoritative state
 
-Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Authoritative annotated `evidence/*` remains five tags; tag-form `formal/*`, `sealed/*`, and `freeze/*` remain empty. Current research/preserve/control refs were independently re-fetched rather than inferred from `ops/*` mailbox snapshots.
+Repository evidence was re-fetched independently from the control-plane mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. The five authoritative `evidence/*` tags remain unchanged; tag-form `formal/*`, `sealed/*`, and `freeze/*` are empty, while legacy `freeze/*` branches and current preserve refs remain present. Candidate #34's one-shot PRE_FORMAL raw remains durably preserved at `preserve/cand34-d34-q002-r94-raw-20260923@4d45f1135bcb607f1e663648cd8335333eb98de4` and is not revisited here. Open PRs #148/#149 remain non-scientific repository work.
 
 Consumed control-plane generations:
 - Control Brain: `CTRL-20260923T155900+0900-R43-A91C4E6B` @ `1592c3b52a8a545aa2503fd4618c0a761921ef1e`
-- Evidence Analyst: `EVA-20260923T180248+0900-R96-3F7C92A1` @ `df97c2c8830c7d50d23d13c43091866ad5d23c77`
-- MAIN designated latest: `MAIN-20260923T175300+0900-RELAY-CAND35-ARCHR1-R95-COMPLETED` @ `47bb32c2584652e63d802f83fd0d4cd046492606`
-- MAIN in-flight R96 lease: `MAIN-20260923T181700+0900-PRIMARY-CAND35-ARCHR2-R96-RUNNING` @ `b6845500212737ef89bbd97443040271240d4c80`
-- Fast Forge designated latest: `FORGE-20260923T173525+0900-NOOP-NO-TARGET-SHADOW-R95` @ `1faf9d89a95d6a3f9294db8901e3c01b3e2e65df`
-- Fast Forge newest relevant history: `FORGE-20260923T183716+0900-NOOP-CAND35-R2-SHADOW-R96` @ `ebde477bd697f4f99565062fb8ada9c40dbc331a`
-- Prior Literature: `LIT-20260923T153000+0900-R37-SPIKE-RESPONSE-KERNEL-5A8C21E7` @ `1b42c77b9f1c6e7ad396ce16c88a30f8fe688c0e`
+- Evidence Analyst: `EVA-20260923T210010+0900-R99-6F2B8C14` @ `59dbcdc2e3541e78a64f64e16fa0be5ef38efc26`
+- MAIN designated latest: `MAIN-20260923T205800+0900-PRIMARY-H7-FORMAL-R5-R98-BLOCKED-SIDECAR` @ `ae3d90f4f423e1bd75e4b4393bc6974eaacbbafd`
+- Fast Forge designated latest: `FORGE-20260923T193417+0900-NOOP-H7-PREFETCH-R97` @ `b721f54ecb2293bbaaae9a26d475bb75fc290c02`
+- Prior Literature: `LIT-20260923T183000+0900-R38-SUBTHRESHOLD-STATE-SUFFICIENCY-3B7E21C6` @ `5046658b3994ccce1cdd9a88fe912fc97c8f8b0b`
 
-Candidate #34 is now durably preserved after its one-shot PRE_FORMAL development response and is terminal for the current prospective object under fresh Analyst state. This scout does not revisit or reinterpret that exposed result. Candidate #35 is the only queued canonical lane and remains `SYSTEM / ARCHITECTURE_STUDY / OPEN_DEVELOPMENT`, with response-bearing execution still forbidden. During this run its prospectively authorized R96 Architecture R2 branch advanced to `research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3@df1fb989d79d80cee8be87b051d5e42e33f1c871`, which binds the already-fixed scientific contract to an exact candidate-specific surface and explicit non-result guards. No candidate #35 response has been generated or inspected.
+Evidence Analyst R99 directly observes H7's one-way readiness failing closed before identity creation because the already-required concealed sidecar capability is absent. This is a non-result integrity/capability HOLD, not scientific evidence. Candidate #35 therefore becomes the only coherent canonical forward-motion surface, but only for science-invariant preserve-before-read/provenance plumbing; candidate response remains STOP.
 
-The R2 contract itself already contains a strong ordinary-reduction panel: exact sham, potential/adaptation factorial nulls, delayed natural decay, queue-empty requirement, and a local dynamic-threshold ledger with fixed `18 ms` membrane and `90 ms` adaptation decay constants. This run therefore does not recycle the earlier generic point that adaptation can store history. It asks a sharper question: **how high can the scientific claim rise if the queue-free effect is quantitatively predictable from the already-programmed low-dimensional leaky state, and how ordinary is that mechanism in the external literature?**
+Candidate #35's exact R2 source remains `research/main-cand35-queue-free-subthreshold-architecture-r96-cycle3@8ea6581544c642ad74f1a95955ab2c5f795afccc`, exact-head CI green, with no candidate response generated. Its frozen intervention arms directly set `potential=0`, `adaptation=0`, or both on every non-receptor unit at a queue-empty anchor while otherwise cloning the same state. R38 already established that the native 18 ms membrane and 90 ms adaptation traces are ordinary leaky/adaptive memory. This run therefore asks a different question: **does coordinate-wise state nulling itself faithfully test the natural mechanism, or can it create counterfactual states that the unperturbed dynamics never visit?**
 
 ## High-value new findings
 
-### 1. The active SparkBrain surface is already an explicit low-dimensional leaky adaptive-memory model
+### 1. Coordinate interventions can create divergent/off-manifold internal states, so intervention success is not automatically natural-mechanism evidence
 
-Repository evidence is unusually decisive here. Stable `TemporalExcitableField` evolves membrane-like potential and adaptation independently by exponential decay, with defaults `tau_V = 18 ms` and `tau_A = 90 ms`; dynamic threshold is `base_threshold + max(0, adaptation)`. A spike resets potential, increments adaptation, and imposes a 3 ms refractory interval. Candidate #35 R2 freezes those same `18/90 ms` constants in its reduction ledger and uses a weak cue after a queue-empty anchor.
+Grant, Han, Tartaglini & Potts (2025/2026 revision) analyze causal interventions used in mechanistic interpretability and show that common coordinate/representation manipulations often move internal states away from the model's natural distribution. They distinguish harmless divergence, which lies in a downstream behavioral null-space, from pernicious divergence that activates dormant pathways and can create misleading positive or negative mechanistic evidence.
 
-At a 32 ms lag with no intervening drive, those equations retain about `16.9%` of the prior membrane potential and `70.1%` of the prior adaptation value. Even at the R2 hard 256 ms anchor-extension bound, the corresponding fractions are about `6.7e-7` and `5.8%`. These are not fitted post-outcome quantities; they follow directly from the prospectively fixed code/contract.
+Source:
+- Grant et al., *Addressing divergent representations from causal interventions on neural networks*, arXiv:2511.04638, 2025; revised 2026, https://arxiv.org/abs/2511.04638
 
-External prior art makes this mechanism very ordinary rather than exotic. Brette & Gerstner's adaptive exponential integrate-and-fire model is a two-dimensional voltage-plus-adaptation system and predicted 96% of spikes (within ±2 ms) from a much more detailed conductance model under noisy synaptic drive. Benda & Herz derived a generic adaptation description governed by ordinary input-output curves and an adaptation time constant.
+This is not a proof that candidate #35's null arms are invalid: SparkBrain's `potential` and `adaptation` are explicit causal state variables rather than opaque learned representations. But the methodological warning applies directly enough to raise a new prospective integrity question. `POTENTIAL_NULL`, `ADAPTATION_NULL`, and `JOINT_SUBTHRESHOLD_NULL` splice one coordinate (or two) to zero while preserving the rest of an anchor state. The resulting tuple may be dynamically admissible in code yet absent from the natural reachable-state set generated by the frozen prime/settle process.
 
-Sources:
-- Brette & Gerstner, *Adaptive Exponential Integrate-and-Fire Model as an Effective Description of Neuronal Activity*, Journal of Neurophysiology 94 (2005), https://doi.org/10.1152/jn.00686.2005
-- Benda & Herz, *A Universal Model for Spike-Frequency Adaptation*, Neural Computation 15 (2003), https://doi.org/10.1162/089976603322385063
+**Impact.** A future R2 difference would establish a causal effect of the explicit synthetic null intervention. By itself it would not yet prove that the naturally operating queue-free memory is uniquely carried by that coordinate, because part of the effect could arise from forcing the system into an otherwise unreachable state. Conversely, a null result could also hide a natural role if the synthetic state induces compensating dynamics. The current SYSTEM ceiling remains appropriate.
 
-**Impact.** A candidate #35 positive response would establish causal sensitivity to the programmed local state components under the frozen intervention. It would not, by itself, establish a new memory mechanism. The natural reduction floor is an analytic/local-state predictor built from the frozen state and decay equations, not a broader recurrent or cognitive explanation.
+### 2. Neuroscience perturbation literature makes the same distinction: outside-manifold perturbations can be informative, but within-manifold perturbations are cleaner tests of natural computation
 
-### 2. Adaptation-mediated weak-cue changes are a textbook input-output effect, and realistic adaptation is often richer than SparkBrain's single 90 ms trace
+A major review of neural population dynamics explicitly distinguishes within-manifold perturbations, which displace activity in ways consistent with the circuit's natural activations, from outside-manifold perturbations, which create activity the circuit would not naturally exhibit. The review does not say outside-manifold perturbations are useless; they can reveal otherwise hidden dynamics. But it highlights within-manifold perturbation as the more direct route for causal tests of how the naturally occupied state controls behavior.
 
-Ladenbauer, Augustin & Obermayer show that subthreshold voltage-dependent adaptation can raise effective response threshold and reduce response gain, while spike-triggered adaptation also changes gain and spike-train statistics. Mensi et al. showed that compact models using passive membrane properties, spike-triggered adaptation currents, and a moving threshold accurately predict subthreshold voltage and 81–91% of spike times across cortical cell classes.
+Source:
+- *Measurement, manipulation and modeling of brain-wide neural population dynamics*, 2021, https://pmc.ncbi.nlm.nih.gov/articles/PMC7840924/
 
-Pozzorini et al. further measured neocortical adaptation processes lasting more than 20 seconds and decaying over multiple timescales according to a power law. This is a useful novelty check: persistent influence after an event queue has emptied is not unusual even in standard neuronal dynamics, and SparkBrain's current single-exponential `90 ms` adaptation trace is actually a simpler special case than these established multi-timescale models.
+**Impact.** Candidate #35 R2 remains a legitimate intervention experiment, but its strongest interpretation should stay narrow: component sensitivity under the frozen synthetic nulls. A future broader claim that natural queue-free priming is mediated by those components should additionally survive a reachable-state or within-manifold counterfactual test.
 
-Sources:
-- Ladenbauer, Augustin & Obermayer, *How adaptation currents change threshold, gain, and variability of neuronal spiking*, Journal of Neurophysiology 111 (2014), https://doi.org/10.1152/jn.00586.2013
-- Mensi et al., *Parameter extraction and classification of three cortical neuron types reveals two distinct adaptation mechanisms*, Journal of Neurophysiology 107 (2012), https://doi.org/10.1152/jn.00408.2011
-- Pozzorini et al., *Temporal whitening by power-law adaptation in neocortical neurons*, Nature Neuroscience 16 (2013), https://doi.org/10.1038/nn.3431
+### 3. Causal abstraction provides a stronger reduction test than coordinate necessity: can a simpler high-level leaky-state model reproduce the counterfactuals?
 
-**Impact.** The decisive future discriminator is not merely `queue empty yet cue response changes`. It is whether the preserved local state vector plus its frozen decay law is sufficient to predict the response. If so, the effect is an ordinary leaky/adaptive state-memory phenomenon and should remain SYSTEM-scoped. The current candidate #35 ceiling already reflects this correctly.
-
-### 3. Subthreshold physical dynamics are already an established reservoir-computing substrate, including recent hardware
-
-A 2025 peer-reviewed IEEE implementation used fully analog two-variable spiking-neuron circuits operating in the subthreshold transistor regime and applied their generated spike dynamics to spoken-digit recognition through reservoir computing, reporting over 80% classification accuracy in the associated institutional report. This is not a model-equivalence proof for SparkBrain, but it is a recent novelty-bar update: computationally useful persistent subthreshold dynamics are already an ordinary reservoir substrate in both theory and hardware.
+Geiger et al.'s causal-abstraction framework formalizes when a simpler high-level causal model is a faithful abstraction of a lower-level system under interventions; interchange interventions operationalize this by comparing counterfactual behavior after aligned state changes. The 2025 JMLR treatment also allows graded rather than all-or-nothing faithfulness.
 
 Sources:
-- Moriya et al., *Analog VLSI Implementation of Subthreshold Spiking Neural Networks and Its Application to Reservoir Computing*, IEEE Transactions on Circuits and Systems I 72(10) (2025), https://doi.org/10.1109/TCSI.2025.3550876
-- Tohoku University / JST report on the same work, 2025-06-03, https://sj.jst.go.jp/news/202506/n0603-04k.html
+- Geiger et al., *Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability*, JMLR 26(83), 2025, https://www.jmlr.org/papers/v26/23-0058.html
+- Geiger et al., *Inducing Causal Structure for Interpretable Neural Networks*, ICML 2022, https://proceedings.mlr.press/v162/geiger22a.html
 
-**Impact.** Any future attempt to promote a queue-free subthreshold-state phenomenon toward a mechanism-level novelty claim would need to beat a privilege-matched leaky-state / adaptive-neuron / reservoir explanation, not merely show that internal physical state carries information across a silent interval.
+**Impact.** R38's local-state sufficiency idea can be sharpened. The decisive future reduction is not merely whether zeroing `potential` or `adaptation` changes output; it is whether a privilege-matched high-level model containing only ordinary leaky potential, adaptation, threshold/refractory state and time predicts the same intervention-conditioned responses. If yes, the native implementation is causally reducible at the tested scope even when both low-level coordinates are individually necessary.
+
+### 4. One global intervention score can hide state-dependent failures; future mechanism claims should prospectively test where the abstraction works
+
+Puyin Li et al. (2026) show that a single global interchange-intervention accuracy can mask well-interpreted and under-interpreted regions of input space. Partitioning the intervention pairs can reveal missing state distinctions and unmodeled intermediate variables. Separately, Pîslar, Magliacane & Geiger (2025) show that combinations of simple high-level causal models can fit a network more faithfully than insisting on one monolithic mechanism across all inputs.
+
+Sources:
+- Li et al., *Bucketing the Good Apples: A Method for Diagnosing and Improving Causal Abstraction*, arXiv:2605.02234, 2026, https://arxiv.org/abs/2605.02234
+- Pîslar, Magliacane & Geiger, *Combining Causal Models for More Accurate Abstractions of Neural Networks*, arXiv:2503.11429, 2025, https://arxiv.org/abs/2503.11429
+
+**Impact.** Any fresh successor trying to elevate #35 or H7 beyond ordinary reductions should not rely on one aggregate intervention statistic. It should prospectively stratify across predeclared anchor/cue/state regions and allow the possibility that different ordinary reductions explain different regions. Failure of a single simple baseline is not enough if a small composition of ordinary mechanisms explains the counterfactual surface.
 
 ## Synthesis
 
-The strongest prospective reduction ladder for candidate #35 is now:
+This run adds a new interpretation guardrail rather than another generic adaptation citation. Candidate #35's current null arms answer a well-defined question about **synthetic state intervention sensitivity**. They do not automatically answer the stronger natural-mechanism question unless the intervened states are shown to be reachable/near-natural or the conclusion is phrased explicitly as a surgical counterfactual.
 
-`exact frozen local-state analytic predictor (V, adaptation, threshold, refractory/time)` -> `two-variable adaptive integrate-and-fire / generalized IF surrogate` -> `matched leaky/reservoir state model` -> `only then any broader persistent-state residual`.
+The prospective reduction ladder for a fresh successor becomes:
 
-This does **not** call for any modification of the active R2 object. In fact, the frozen R2 already includes the essential local dynamic-threshold/decay ledger and factorial nulls. The external literature mainly raises the interpretation bar and confirms that the present `SYSTEM` ceiling is appropriately conservative. R2 must remain non-result until fresh Analyst authority; no comparator, metric, cue, reset arm, threshold or success criterion is added in response to this scout.
+`frozen coordinate-null causal sensitivity` -> `intervention-realism / reachable-state check` -> `privilege-matched leaky/adaptive causal abstraction across counterfactuals` -> `state-region-stratified faithfulness / small composition of ordinary reductions` -> `only then any broader persistent-state mechanism residual`.
 
-No Utility request is created. Candidate #35 is already MAIN-owned, and the useful reduction is analytical/prospective rather than a separate implementation task that should be injected into the active object.
+No change is warranted to the active R96/R99 objects. H7 remains stopped at the protected-sidecar capability gate with no identity consumed and no new scientific result. Candidate #35 remains response-STOP while MAIN is allowed only science-invariant preserve-before-read plumbing. No Utility request is created because this finding is prospective experimental-design guidance for a later versioned successor, not a task that should be injected into the current frozen object.
 
 ## Knowledge-flow contract
 
@@ -83,44 +84,46 @@ No Utility request is created. Candidate #35 is already MAIN-owned, and the usef
 role: LITERATURE_REDUCTION_SCOUT
 genuinely_new_information: true
 affected_lines:
-  - CAND35_QUEUE_FREE_SUBTHRESHOLD_STATE_CAUSAL_PRIMING
-  - CAND35_LOCAL_STATE_SUFFICIENCY_REDUCTION
-  - CAND35_DYNAMIC_THRESHOLD_AND_ADAPTATION_REDUCTION
-  - CAND35_RESERVOIR_FADING_STATE_NOVELTY_CEILING
+  - CAND35_STATE_NULL_INTERVENTION_REALISM
+  - CAND35_REACHABLE_STATE_MANIFOLD
+  - CAND35_LOCAL_CAUSAL_ABSTRACTION_REDUCTION
+  - CAND35_SYSTEM_CLAIM_CEILING
+  - H7_FUTURE_STATE_CONDITIONAL_CAUSAL_ABSTRACTION
   - FUTURE_SYSTEM_TO_MECHANISM_ADMISSION
   - PROGRAMME_NOVELTY
 novelty_or_reduction_impact: >
-  CAND35_QUEUE_FREE_PRIMING_IS_STRONGLY_SUBSUMED_BY_ORDINARY_LEAKY_ADAPTIVE_STATE_DYNAMICS.
-  The active simulator already exposes a deterministic low-dimensional state with 18 ms membrane
-  and 90 ms adaptation decay, while established adaptive-neuron models and recent subthreshold
-  reservoir hardware show the same general computational motif is ordinary. A positive queue-free
-  cue effect therefore supports component causality at SYSTEM scope, not novel persistent cognition.
+  COORDINATE_NULL_EFFECTS_DO_NOT_BY_THEMSELVES_ESTABLISH_A_NATURAL_MECHANISM.
+  Candidate #35's explicit potential/adaptation nulls are valid surgical interventions, but
+  recent intervention-faithfulness work shows that coordinate manipulation can create
+  off-distribution internal states and misleading mechanistic evidence. A broader natural-state
+  claim should survive a reachable-state check and a privilege-matched causal abstraction by
+  ordinary leaky/adaptive dynamics.
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - analytic frozen-state predictor using V, adaptation, base/dynamic threshold, refractory/time and exact 18/90 ms decay
-  - privilege-matched two-variable adaptive integrate-and-fire/generalized-IF surrogate
-  - state-sufficiency test: after conditioning on the frozen local state at the anchor, prime-history identity should add no predictive value under the ordinary reduction
-  - matched leaky/reservoir state baseline for any future broader computational-memory claim
-  - out-of-fit validation across prospectively chosen anchors/cues if a fresh successor is ever authorized
+  - fresh-successor-only reachable-state / nearest-natural-state support check for each null arm
+  - matched natural-history counterfactual that changes potential/adaptation without direct coordinate surgery where prospectively feasible
+  - privilege-matched causal abstraction containing only potential, adaptation, dynamic threshold, refractory/time and frozen decay laws
+  - prospectively fixed intervention-faithfulness evaluation across multiple anchor/cue/state regions rather than one global score
+  - small composition/mixture of ordinary reductions before any claim that one native mechanism is irreducible
 questions_for_evidence_analyst:
-  - Keep candidate #35 at SYSTEM ceiling if any response is quantitatively predicted by the frozen local-state/decay ledger?
-  - Treat queue-empty persistence itself as ordinary fading/adaptive state, not as evidence for a broader recurrent or cognitive memory mechanism?
-  - If a future successor is considered, require a prospectively frozen local-state sufficiency test before any mechanism-level uplift?
+  - Keep current R96/R99 candidate #35 work unchanged and treat any later R2 effect as synthetic-null component sensitivity unless intervention realism is separately established?
+  - If a fresh successor is warranted, require a reachable-state or matched-natural-history counterfactual before broader natural-memory attribution?
+  - Require causal-abstraction faithfulness to an ordinary leaky/adaptive model before any SYSTEM-to-MECHANISM uplift?
 questions_for_control_brain:
-  - Preserve the current R2 non-result boundary and existing SYSTEM ceiling; no literature-driven retrofit is warranted?
-  - Add `queue empty != memory state absent` and `subthreshold persistence != novel mechanism` as claim-ceiling guardrails?
-  - Require any future uplift to survive a privilege-matched local leaky/adaptive/reservoir reduction first?
+  - Add `surgical coordinate effect != natural-state mechanism attribution` as a prospective claim-ceiling guardrail?
+  - Keep intervention-realism checks prospective and outside the frozen current candidate #35 object?
+  - For future mechanism claims, prefer state-region-stratified counterfactual faithfulness over a single aggregate intervention score?
 must_not_change_frozen_or_consumed:
   - all consumed C19-v4/C19-R1-v1/C19-R1-v2/C19-R2/PD01/NI01/H5 identities and immutable evidence
-  - H7 PF-R1 no-rerun/no-rescore boundary and H7 R5 provenance hold
-  - candidate #34 preserved one-shot D34-Q002 result and current-object terminal/no-rescue boundary
-  - candidate #35 Discovery/R1 scientific contract and R96 R2 non-result binding surface
+  - H7 PF-R1 no-rerun/no-rescore boundary and unchanged H7 R5 science under the current sidecar capability HOLD
+  - candidate #34 preserved D34-Q002 result and terminal/no-rescue boundary
+  - candidate #35 Discovery/R1 contract and R96 R2 exact non-result binding surface
   - no candidate #35 response/PRE_FORMAL/FORMAL action under current authority
-  - no outcome-responsive comparator/metric/cue/reset/threshold/success-criterion rewrite
+  - no outcome-responsive null-arm/cue/anchor/metric/falsifier rewrite
   - no one-way identity consumption, research merge, immutable-ref mutation, Utility execution, or scheduler change by this role
 utility_request_created: null
 ```
 
 ## Run close
 
-Role performed: `LITERATURE_REDUCTION_SCOUT`. Generation: `LIT-20260923T183000+0900-R38-SUBTHRESHOLD-STATE-SUFFICIENCY-3B7E21C6`. Inputs: Control R43, Evidence Analyst R96, MAIN designated R95 report plus in-flight R96 non-result lease/research head, Fast Forge designated R95 plus newest R96 no-op history, prior Literature R37. Genuinely new independent reduction information: `true`. Top implication: candidate #35's queue-free state priming is already very close to an analytically specified leaky adaptive-state mechanism with strong foundational and recent prior art, so any positive response remains naturally SYSTEM-scoped unless a fresh successor prospectively survives local-state sufficiency and reservoir-style reductions. Utility request: none. Persistence is limited to the role-separated literature latest/state/history paths; no scientific refs/results, research branches, legacy shared latest/state, Utility or scheduler are changed.
+Role performed: `LITERATURE_REDUCTION_SCOUT`. Generation: `LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41`. Inputs: Control R43, Evidence Analyst R99, MAIN H7 R5 blocked-sidecar report, Fast Forge R97 no-op, prior Literature R38, and independently fetched repository refs. Genuinely new external reduction information: `true`. Top implication: candidate #35's coordinate-null arms can establish surgical component sensitivity but do not by themselves establish that the same component is the natural carrier of queue-free memory; a fresh successor should distinguish reachable/on-manifold counterfactuals from off-manifold intervention artifacts and should test causal abstraction by ordinary leaky/adaptive state. Utility request: none. Persistence is limited to the role-separated literature latest/state/history paths; no scientific refs/results, research branches, legacy shared latest/state, Utility or scheduler are changed. The final handoff commit cannot be embedded self-referentially in the content that creates that commit; the exact role-specific branch tip is to be re-fetched after the append-only history write and reported externally.
