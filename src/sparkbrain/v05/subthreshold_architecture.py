@@ -91,7 +91,9 @@ def enforce_queue_cap(
     return report
 
 
-def clone_at_queue_free_anchor(brain: IntegratedV05Brain) -> tuple[IntegratedV05Brain, QueueFreeAnchor]:
+def clone_at_queue_free_anchor(
+    brain: IntegratedV05Brain,
+) -> tuple[IntegratedV05Brain, QueueFreeAnchor]:
     """Clone only an already queue-free state, without advancing the source.
 
     No settling, cue, candidate response, or adaptive waiting is performed.
