@@ -8,6 +8,7 @@ from typing import Any
 from sparkbrain.v04.contracts import canonical_json
 
 from . import candidate35_architecture
+from .brain import IntegratedV05Brain
 from .candidate35_architecture import (
     CANDIDATE_ID,
     DEVELOPMENT_REVISION,
@@ -17,7 +18,6 @@ from .candidate35_architecture import (
     candidate35_frozen_contract,
     candidate35_nonresult_preflight,
 )
-from .brain import IntegratedV05Brain
 
 ANALYST_GENERATION = "EVA-20260923T210010+0900-R99-6F2B8C14"
 ANALYST_COMMIT = "59dbcdc2e3541e78a64f64e16fa0be5ef38efc26"
