@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260923T1424+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-R93-8F2C41A7",
-  "produced_at": "2026-09-23T14:24:29+09:00",
-  "completed_at": "2026-09-23T14:24:29+09:00",
-  "producer_run_id": "utility-auto-20260923T1424+0900-pointer-reconcile-r93",
+  "generation_id": "UTILITY-20260923T152750+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-R94-6A4E91C2",
+  "produced_at": "2026-09-23T15:27:50+09:00",
+  "completed_at": "2026-09-23T15:27:50+09:00",
+  "producer_run_id": "utility-auto-20260923T152750+0900-pointer-reconcile-r94",
   "authority_scope": "UTILITY_CONTROL_PLANE_RECONCILIATION_FAIL_CLOSED_NO_SCIENTIFIC_EXECUTION",
-  "supersedes_generation_id": "UTILITY-20260923T132300+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-5C91A2E7",
+  "supersedes_generation_id": "UTILITY-20260923T1424+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-R93-8F2C41A7",
   "assignment_mode": "FAIL_CLOSED",
   "status": "BLOCKED",
   "selected_task": "CONTROL_PLANE_ASSIGNMENT_POINTER_RECONCILIATION_READ_ONLY",
@@ -15,7 +15,7 @@
   "fast_forge_support": false,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "objective": "Reconcile current Utility assignment pointer against fresh Control authority; fail closed on the persistent PF-R1 pointer divergence; do not infer execution authority and do not fall through to autonomous Forge work while the divergence remains.",
+  "objective": "Reconcile current Utility assignment pointer against fresh Control authority and fresh Analyst/MAIN/Forge ownership; fail closed on the persistent PF-R1 pointer divergence; do not infer execution authority and do not fall through to autonomous Forge work while the divergence remains.",
   "authority_reconciliation": {
     "utility_pointer": {
       "schema_version": 2,
@@ -30,10 +30,11 @@
       "status": "ACTIVE_REAFFIRMED",
       "matching_current_pointer_observed": false
     },
-    "analyst_r93_observation": {
+    "analyst_r94_observation": {
       "pfr1_hold": true,
       "pointer_divergence_persists": true,
-      "utility_fail_closed_confirmed": true
+      "utility_fail_closed_confirmed": true,
+      "candidate34_bounded_r2_response_authorized": true
     },
     "classification": "CONTROL_PLANE_ASSIGNMENT_POINTER_DIVERGENCE_NONSCIENTIFIC",
     "execution_authority_resolved": false,
@@ -41,32 +42,36 @@
     "utility_may_mutate_assignment_pointer": false
   },
   "ownership_generations": {
-    "evidence_analyst": "EVA-20260923T140800+0900-R93-4D7C2A91",
-    "main_latest_durable": "MAIN-20260923T141500+0900-PRIMARY-CAND34-PREFORMALR2-R93-ACQUIRED",
-    "fast_forge": "FORGE-20260923T133600+0900-ACTION-CONTEXT-DEADEND-R92",
+    "evidence_analyst": "EVA-20260923T150251+0900-R94-8E6A31C4",
+    "main_latest_durable": "MAIN-20260923T152800+0900-PRIMARY-CAND34-PREFORMALR2-R94-WAITING-RESPONSE",
+    "fast_forge": "FORGE-20260923T143553+0900-ASSEMBLY-RETENTION-CAPACITY-R93",
     "control": "CTRL-20260923T125800+0900-R42-7C9E41B2"
   },
   "exact_refs": {
     "utility_assignment_pointer_blob": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
-    "evidence_analyst_commit": "92a85ab4f7795e97e5c0e750c8edfcc77a74c0bd",
-    "orchestrator_commit": "f8b7153f2193ec98046ae98e690fd508cc353a66",
-    "main_lease_blob": "98224435cbf3458398f4a32beba419178bf614ab",
+    "evidence_analyst_commit": "5cee6ef496eb9465550fb9c0be5295e587027dfb",
+    "orchestrator_commit": "93a433aa78c7e63a1c654d01a1c8c1f7f287c5e8",
     "control_commit": "7035ace9b0ef980602dcb124e8974be5640d7377",
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "candidate34_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-    "candidate34_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "candidate34_branch": "research/main-cand34-assembly-route-preformal-r93-response",
+    "candidate34_head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
+    "candidate34_closed_r2_contract": "43d0f25541a3c447d4c7156303647ae94f3119f4",
     "h7_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "h7_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "fast_forge_branch": "forge/20260923-receptor-suppression-probes-a",
     "fast_forge_head": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
-    "utility_result_commit": "71d3ba07834f3d4e8a64cd8e6ad21f2c29f0d23a"
+    "utility_result_commit": "5d8042f19da3400b35b27700a7e5d68d02925974"
   },
   "observations": {
     "candidate34_preformal_readiness": "READY",
     "candidate34_one_bounded_response_authorized_by_analyst": true,
     "candidate34_main_lane_running": true,
-    "candidate34_result_bearing_workflow_dispatched_at_check": false,
+    "candidate34_result_bearing_workflow_dispatched_at_check": true,
+    "candidate34_external_workflow_state_at_main_persistence": "WAITING_EXTERNAL",
+    "candidate34_new_scientific_result_available_at_main_persistence": false,
+    "candidate34_output_accessed_by_utility": false,
     "fast_forge_latest_outcome": "FORGE_DEAD_END",
+    "fast_forge_promotion_proposal": false,
     "fast_forge_utility_request": null,
     "pfr1_execution_attempted": false,
     "autonomous_forge_attempted": false,
@@ -86,14 +91,15 @@
     "research_branch_mutation": false,
     "workflow_dispatch": false,
     "scheduler_mutation": false,
-    "research_pr_merge": false
+    "research_pr_merge": false,
+    "hard_floor_actions": "NONE"
   },
   "stop_reason": "BLOCKED_CONTROL_PLANE_ASSIGNMENT_POINTER_DIVERGENCE",
-  "follow_up_recommendation": "Control must satisfy the existing reconciliation request by publishing a matching schema-v2 assignment/current id plus generation for PF-R1 exact-byte preservation, or explicitly withdraw the separately persisted active authority. Utility must not infer authority from Control prose/state and must not perform further autonomous Forge support while this divergence remains.",
+  "follow_up_recommendation": "Control must satisfy the existing reconciliation request by publishing a matching schema-v2 assignment/current id plus generation for PF-R1 exact-byte preservation, or explicitly withdraw the separately persisted active authority. Utility must not infer authority from Control prose/state and must not perform further autonomous Forge support while this divergence remains. Candidate #34 remains fresh MAIN-owned; Utility must not inspect, preserve, score, interpret or rerun its response output.",
   "request_created": null,
   "existing_request": "utility_orchestrator/requests/UTILREQ-20260923T1323+0900-PFR1-ASSIGNMENT-POINTER-RECONCILIATION.md",
   "existing_request_status": "PROPOSED_NOT_APPROVED_NO_DUPLICATE_CREATED",
   "outputs": {
-    "terminal_result_path": "utility_orchestrator/results/2026-09-23/UTILITY-20260923T1424+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-R93-8F2C41A7.md"
+    "terminal_result_path": "utility_orchestrator/results/2026-09-23/UTILITY-20260923T152750+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-R94-6A4E91C2.md"
   }
 }
