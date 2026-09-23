@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T045200+0900-PRIMARY-H7-R105-LAUNCH-PLUMBING-READY-FOR-ANALYST",
-  "producer_run_id": "sparkbrain-main-primary-20260924T0442JST-r105-h7-launch-plumbing-reconcile",
-  "generated_at": "2026-09-24T04:52:00+09:00",
-  "status": "READY_FOR_RELAY",
+  "generation_id": "MAIN-20260924T051305+0900-PRIMARY-H7-R106-FORMAL-LAUNCH-TRIGGER-BLOCKED",
+  "producer_run_id": "sparkbrain-main-primary-20260924T051305JST-r106-h7-formal-launch-trigger-blocked",
+  "generated_at": "2026-09-24T05:13:05+09:00",
+  "status": "BLOCKED",
   "execution_mode": "PRIMARY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "research_layer": "PRE_FORMAL",
@@ -16,23 +16,23 @@
     "authorized_scientific_cycle": 12,
     "primary_extended_scientific_cycle": false,
     "scientific_iteration_performed": false,
-    "information_gain": "FORMAL_CONTROL_PATH_CLOSED_PROSPECTIVELY_NO_NEW_SCIENCE"
+    "information_gain": "FORMAL_PRESTART_EXACT_BINDING_RECONFIRMED_EXECUTION_CAPABILITY_BLOCK_ONLY"
   },
   "analyst_authority": {
-    "generation_id": "EVA-20260924T040500+0900-R105-H7-LAUNCHPATH-HOLD-THEORY-FORGE-TEST",
-    "commit": "c6c4c0347880c55be75d72bc1417a007b7f87cec",
-    "decision": "GO_SCIENCE_INVARIANT_NONRESULT_LAUNCH_PLUMBING_ONLY; FORMAL_STOP_PENDING_FRESH_ANALYST",
-    "fresh_formal_authority": false,
-    "freshness_rechecked_after_validation": true,
+    "generation_id": "EVA-20260924T050035+0900-R106-H7-LAUNCH-READY-THEORY-PROBE-KILLED",
+    "commit": "770edcb0cf050ed7cdf41d4716ed645952e69475",
+    "decision": "GO_ONCE_CONDITIONAL_EXACT_BINDING",
+    "fresh_formal_authority": true,
+    "freshness_rechecked_this_run": true,
     "formal_authority_exercised_this_generation": false
   },
-  "prior_main_generation": "MAIN-20260924T035756+0900-RELAY-H7-R104-PRESTART-CONTROLLER-BLOCKED",
+  "prior_main_generation": "MAIN-20260924T045200+0900-PRIMARY-H7-R105-LAUNCH-PLUMBING-READY-FOR-ANALYST",
   "funnel": {
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
     "preformal_readiness": "READY",
-    "hold_class": "NONTERMINAL_HOLD",
-    "hold_reason": "R105 non-result launch plumbing is materialized and green; fresh Analyst binding/authority is required before any FORMAL identity or START.",
+    "hold_class": "EXECUTION_CAPABILITY",
+    "hold_reason": "R106 exact one-shot FORMAL gates are green, but the current GitHub execution surface exposes neither tag creation nor workflow dispatch for the prospectively fixed tag-triggered launch workflow.",
     "terminal_state": "ACTIVE",
     "queue_state": "HOLD",
     "system_priority_exception": false,
@@ -42,44 +42,41 @@
   "refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "c6c4c0347880c55be75d72bc1417a007b7f87cec",
+    "analyst_head": "770edcb0cf050ed7cdf41d4716ed645952e69475",
     "scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "prior_controller_branch": "research/main-h7-r5-oneway-controller-r98",
-    "prior_controller_head": "9c9f7e312aaf919418806d55dad0f1fcaafa5ee1",
     "launch_controller_branch": "research/main-h7-r5-launch-plumbing-r105",
     "launch_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
+    "launch_contract_blob": "42b4bad5d1ecfbeeaf64c5d893cb02bff92f7ff9",
+    "launch_controller_blob": "7a092741cad6371fbe69adafef6e37845349b6de",
+    "launch_workflow_blob": "a6fb8fec46ad8b6f6b055e701d5c8cf829d4007c",
+    "resource_contract_blob": "267ea4076f01cf480aba3554712870b237dd9cfa",
+    "executor_blob": "f323df048f5479cc80ba4c129a40b0957503180b",
+    "runtime_module_blob": "9bde5379542ecca84157e82868abe679e0099e31",
+    "preserver_blob": "37c9c46febba1baba5580ed1aa803dcc483bef66",
+    "scorer_blob": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
     "resource_contract_path": "artifacts/formal_h7_r5/resource_contract.json",
     "launch_contract_path": "artifacts/formal_h7_r5/launch_path_contract.json",
     "launch_controller_path": "scripts/h7_formal_r5_one_way_controller.py",
     "formal_launch_workflow_path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
-    "launch_readiness_workflow_path": ".github/workflows/h7-formal-r5-launch-plumbing-readiness.yml",
-    "history_path": "reports/orchestrator/main/history/2026-09-24/0452-r105-primary-h7-launch-plumbing-ready-for-analyst.md"
-  },
-  "repair_change_classification": {
-    "repair": "LINT_ONLY_NO_SCIENCE_CHANGE",
-    "change": "SCIENCE_INVARIANT_PROSPECTIVE_FORMAL_LAUNCH_PLUMBING_ONLY"
+    "history_path": "reports/orchestrator/main/history/2026-09-24/051305-r106-primary-h7-formal-launch-trigger-blocked.md"
   },
   "work_performed": [
     {
       "classification": "FRESHNESS_AND_OWNERSHIP_RECONCILIATION",
-      "change": "Re-fetched current Analyst R105, stable main, MAIN state/lease, exact H7 science/controller refs, H7 one-way namespaces, Utility and Forge collision state. Prior MAIN was BLOCKED, Utility had no authority, and Forge work did not overlap H7."
+      "change": "Re-fetched stable main, current Evidence Analyst R106, MAIN state/lease, Relay, exact H7 science/controller refs, Forge refs/latest state, Utility ownership state, open PRs and relevant workflow runs. No H7 ownership collision exists."
     },
     {
-      "classification": "R105_PROSPECTIVE_NONRESULT_LAUNCH_PLUMBING_RECONCILIATION",
-      "change": "Validated the MAIN-owned launch-plumbing branch that prospectively fixes exact controller entry, protected encrypted payload handoff, fresh identity mechanics, START/no-clobber, target-blind raw, preserve-before-read, frozen scorer/preserver binding, and final create-only refs without creating an identity or accessing protected evaluation."
+      "classification": "R106_EXACT_FORMAL_PRESTART_RECHECK",
+      "change": "Re-fetched exact launch contract/controller/workflow, resource contract and frozen executor/runtime/preserver/scorer components. All exact blobs and pinned source heads remain matched; prior launch-plumbing readiness and generic CI remain green."
     },
     {
-      "classification": "SCIENCE_INVARIANT_REPAIR_REVIEW",
-      "change": "Observed only lint/import formatting and exact controller-blob rebinding after implementation; no scientific source, metric, comparator, threshold, intervention, input policy, scorer or preserver semantics changed."
+      "classification": "ONE_WAY_NAMESPACE_RECHECK",
+      "change": "Verified control/h7*, preserve/h7*, formal/h7*, sealed/h7*, freeze/h7*, immutable/h7*, evidence/h7* and launch/h7-r5* namespaces are all unused immediately before the attempted start."
     },
     {
-      "classification": "NONRESULT_VALIDATION_RECONCILIATION",
-      "change": "Observed exact launch-controller-head plumbing readiness and generic CI both complete successfully. The readiness gate remained strictly non-result-bearing."
-    },
-    {
-      "classification": "FORMAL_HARD_STOP",
-      "change": "Stopped before FORMAL identity, START, protected evaluation, result-bearing dispatch, raw production, scoring or evidence mutation because R105 requires a later fresh Analyst after plumbing closure."
+      "classification": "FAIL_CLOSED_EXECUTION_CAPABILITY_BLOCK",
+      "change": "Did not create a FORMAL identity or START because the exact result-bearing workflow is tag-triggered and the available GitHub execution surface provides neither tag creation nor workflow dispatch. Did not alter the exact R106-bound controller to work around the missing capability."
     }
   ],
   "workflows": {
@@ -99,16 +96,16 @@
     },
     "h7_result_bearing_formal_launch": {
       "workflow_path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
-      "prospectively_materialized": true,
+      "trigger": "push tag launch/h7-r5-*",
       "dispatched": false,
-      "r105_can_start": false,
-      "fresh_analyst_required": true
+      "run_id": null,
+      "blocking_capability": "CREATE_TAG_OR_DISPATCH_WORKFLOW_UNAVAILABLE"
     }
   },
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NON_RESULT_SCIENCE_INVARIANT_FORMAL_LAUNCH_PLUMBING_VALIDATED",
-    "information_gain": "FORMAL_CONTROL_PATH_CLOSED_PROSPECTIVELY_NO_NEW_SCIENCE",
+    "evidentiary_status": "NON_RESULT_FORMAL_PRESTART_EXECUTION_CAPABILITY_BLOCK",
+    "information_gain": "OPERATIONAL_ONLY_EXACT_FORMAL_GATES_GREEN_TRIGGER_CAPABILITY_MISSING",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
     "formal_identity_created_or_consumed": false,
@@ -131,15 +128,24 @@
   "ownership_and_collision": {
     "fresh_primary_running_same_h7_object_before_action": false,
     "fast_forge_same_h7_object_collision": false,
-    "fast_forge_new_theory_probe_is_noncanonical_and_non_h7": true,
+    "fast_forge_latest_r106_theory_probe_noncanonical_and_killed": true,
     "utility_status": "IDLE_NO_SCIENTIFIC_AUTHORITY",
-    "h7_formal_authorized_now": false
+    "open_pr_h7_collision": false,
+    "h7_formal_authorized_now": true
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
     "main_generation_and_lease_rechecked": true,
     "direct_h7_scientific_ref_rechecked": true,
     "launch_controller_ref_rechecked": true,
+    "launch_contract_blob_exact": true,
+    "controller_blob_exact": true,
+    "launch_workflow_blob_exact": true,
+    "resource_contract_blob_exact": true,
+    "executor_blob_exact": true,
+    "runtime_module_blob_exact": true,
+    "preserver_blob_exact": true,
+    "scorer_blob_exact": true,
     "launch_plumbing_readiness_green": true,
     "generic_ci_green": true,
     "h7_control_namespace_absent": true,
@@ -149,8 +155,8 @@
     "h7_freeze_tag_namespace_absent": true,
     "h7_immutable_tag_namespace_absent": true,
     "h7_evidence_tag_namespace_absent": true,
+    "h7_launch_tag_namespace_absent": true,
     "authorized_scientific_source_unchanged": true,
-    "result_bearing_launch_controller_prospectively_fixed": true,
     "formal_identity_created": false,
     "started_created": false,
     "protected_evaluation_accessed": false,
@@ -163,11 +169,11 @@
   "do_not_touch": [
     "Consumed FORMAL identities",
     "immutable/formal/sealed/evidence/freeze/preserve refs",
-    "H7 scientific binding, metric, comparator, threshold, tolerance, protocol, input policy, scorer or preserver semantics",
-    "H7 FORMAL identity/STARTED/protected evaluation/result-bearing workflow under R105",
+    "H7 scientific binding, metric, comparator, threshold, tolerance, protocol, input policy, runtime, scorer or preserver semantics",
+    "the exact R106-bound launch controller/workflow merely to obtain a different trigger",
     "Candidate #35 current object or rescue-adjacent successor",
-    "noncanonical Forge theory probes as scientific authority"
+    "noncanonical Forge observations as scientific authority"
   ],
-  "stop_reason": "R105_NONRESULT_LAUNCH_PLUMBING_COMPLETE_FRESH_ANALYST_REQUIRED_BEFORE_FORMAL_START",
-  "next_action": "Return exact launch controller head 042d00375278d551dbf643ad866a4c883852804d and green NON_RESULT validation to Evidence Analyst. Only a later fresh Analyst generation that explicitly binds this controller head and frozen science head and grants one-shot FORMAL authority may permit exactly one fresh identity and one-way START. Re-fetch all authority/bindings/namespaces immediately before any such action."
+  "stop_reason": "R106_FORMAL_AUTHORIZED_EXACT_GATES_GREEN_BUT_LAUNCH_TAG_CREATION_CAPABILITY_UNAVAILABLE",
+  "next_action": "Create exactly one fresh launch/h7-r5-* tag pointing to 042d00375278d551dbf643ad866a4c883852804d using an external GitHub capability. The fixed workflow must then re-fetch current Analyst authority and namespaces before START. Once a workflow run exists, MAIN should be restored to record the exact run ID and wait; never rerun/retune/rescore an identity after START."
 }
