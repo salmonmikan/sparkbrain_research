@@ -1,93 +1,89 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS",
-  "produced_at": "2026-09-23T11:43:44+09:00",
+  "generation_id": "FORGE-20260923T133600+0900-ACTION-CONTEXT-DEADEND-R92",
+  "produced_at": "2026-09-23T13:36:00+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "SUB-20260923T093316+0900-DISC-C35-CONTRACT-R90-4A7E2C91",
+  "supersedes_generation_id": "FORGE-20260923T123420+0900-ASSEMBLY-COMPLETION-ORDER",
   "input_generations": {
     "evidence_analyst": "EVA-R92@a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "main_lease": "MAIN-20260923T113000+0900-PRIMARY-CAND34-PREFORMALR2-R92-WAITING@ops/orchestrator-run-report",
-    "previous_sub": "SUB-20260923T093316+0900-DISC-C35-CONTRACT-R90-4A7E2C91@ops/orchestrator-run-report",
-    "literature": "LIT-20260923T093010+0900-R35-POLYCHRONY-TEMPORAL-ROBUSTNESS-4E7A21C9@cd5069201723110acc9e15d60216c9d1f2e63ce7",
-    "independent_audit": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8@6755579f5f21b19ca90788c948d8126529b648c6",
-    "methodology": "METHCAL-R79@ba219b4c4c9c06913f151e61b2d70ef7cd9a60ab",
-    "utility": "UTILITY-20260923T023100+0900-AUTO-PFR1-AUTH-CONSISTENCY-COMPLETED-4E7A2C91@b18a1d76c05efbbfacb9618ac1ca1e9941b17555"
+    "literature": "LIT-R36@5228e5271f9a87c47d6ed1c68b10a24c92d0c996",
+    "independent_audit": "AUD-R8@ops/external-research-audit-handoff",
+    "methodology": "METHCAL-R81@2b1ea6e106ea6c5fb93d1616a02cdf8be7f36a90",
+    "utility": "UTILITY-PFR1-POINTER-DIVERGENCE@5d928c9e4b838a4a4560ae27a5d3097bbeff23bd",
+    "previous_forge": "FORGE-20260923T123420+0900-ASSEMBLY-COMPLETION-ORDER@ops/orchestrator-run-report"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "analyst_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
     "main_active_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
-    "main_active_head": "1f9c6cec8be0af900a801de17dcc91e57dd71d7a",
-    "forge_branch": "forge/20260923-receptor-suppression-probes-a",
-    "forge_head": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
-    "forge_ci_run": 35811319345,
-    "forge_ci_conclusion": "success",
-    "source_receptors_blob": "86c1cfea1ea70cada5c277d8f5047c32ea611a5c",
-    "source_assemblies_blob": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
-    "source_evaluation_blob": "efd52d236708aea3bf23b6139d8717b1ac1d0559"
+    "main_active_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "literature_head": "5228e5271f9a87c47d6ed1c68b10a24c92d0c996",
+    "literature_latest_blob": "d256f78064ebc1c06c1cc4bcb8e006e09ff809c8",
+    "independent_audit_latest_blob": "0afe416906713bc4b04eec34cd8a0035ecacbc1f",
+    "methodology_head": "2b1ea6e106ea6c5fb93d1616a02cdf8be7f36a90",
+    "methodology_latest_blob": "1acee74dcf22f2de9a89b7aa242c95a2532ecba0",
+    "utility_head": "5d928c9e4b838a4a4560ae27a5d3097bbeff23bd",
+    "source_action_blob": "792cba20ec5411633f12478d641adf35dba505e3",
+    "forge_branch": null
   },
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "avoided": [
-      "candidate34 PRE_FORMAL R2 branch, queue, scorer, runtime and workflow",
-      "candidate35 MAIN Architecture R1 physical UnitState/queue-free response surface",
-      "H7 R5 and PF-R1 provenance/formal path",
-      "all consumed/frozen/evidence/formal/sealed/preserve identities"
+      "candidate #34 route/opportunity contract, response surface, scorer, runtime and workflow",
+      "candidate #35 queue-free physical UnitState surface",
+      "H7 FORMAL/provenance/preservation path",
+      "all consumed/frozen/evidence/formal/sealed/preserve identities",
+      "historical delayed-action responsibility and nonlearning action-visit carryover objects"
     ],
-    "relay": "no separate relay branch observed; current MAIN lease is PRIMARY"
+    "relay": "no separate relay branch observed"
+  },
+  "selection_scan": {
+    "selected": "same-Assembly context-conditioned action formation",
+    "duplicate_or_rescue_rejects": [
+      "receptor/hash route aliasing — existing research/exploratory-sub-topology-fanout-aliasing-20260920",
+      "native responsibility/credit — dense existing responsibility/credit/replay/topology/eligibility family"
+    ]
   },
   "overall_status": "FORGE_DEAD_END",
   "forge_objects": [
     {
-      "forge_id": "FORGE-RECEPTOR-MEMORY-PRIMING-A",
-      "question": "Can persistent state in the v0.5 receptor bank amplify a later identical weak cue, and is any residual richer than the declared multi-timescale filter?",
-      "why_now": "Candidate35 explicitly excludes receptor-bank memory and targets physical field UnitState, leaving receptor memory as an independent local-state surface.",
-      "branch": "forge/20260923-receptor-suppression-probes-a",
-      "prototype": "prime magnitude 1.0 on one receptor channel; cue magnitude 0.10 after 10/120/1000 ms; compare actual receptor output to separately coded closed-form recurrence",
+      "forge_id": "FORGE-ACTION-CONTEXT-BLINDNESS-A",
+      "question": "Can one mature Assembly acquire different functional actions in two external contexts when context neither changes Assembly identity nor enters action-policy state?",
+      "why_now": "Independent pre-semantic-to-functional formation surface; distinct from MAIN route causality and the prior predictor count-table Forge dead end.",
+      "branch": null,
+      "prototypes": [
+        "source-faithful one-Assembly alternating-context reward simulation using stable defaults",
+        "ordinary comparator using explicit context in the table key plus a consistent action-label permutation diagnostic"
+      ],
       "commands_diagnostics": [
-        "pytest probe included in full push CI on Python 3.11 and 3.13",
-        "closed-form comparator for declared fast/medium/slow/gain trace equations"
+        "read-only inspection of src/sparkbrain/v05/action.py at stable main",
+        "60-episode deterministic synthetic reproduction with alternating A/B context",
+        "30-episode consistent action-label permutation invariance check"
       ],
       "observations": {
-        "fresh_cue_emitted_magnitude": 0.228,
-        "gap_10ms_emitted_magnitude": 0.5562423166417022,
-        "gap_120ms_emitted_magnitude": 0.49106890868271347,
-        "gap_1000ms_emitted_magnitude": 0.2285379965673357,
-        "closed_form_match_abs_tolerance": 1e-12
+        "shared_key_total_reward": 29,
+        "shared_key_episodes": 60,
+        "shared_key_reward_rate": 0.48333333333333334,
+        "shared_key_final_scores": {
+          "action-0": 8.4,
+          "action-1": 0.3,
+          "withhold": 0.0
+        },
+        "explicit_context_key_total_reward": 52,
+        "explicit_context_key_episodes": 60,
+        "explicit_context_key_reward_rate": 0.8666666666666667,
+        "consistent_action_label_permutation_reward_sequence_identical": true
       },
       "ordinary_reductions": [
-        "explicit 5/22/120 ms receptor traces",
-        "180 ms mean-absolute-input gain state",
-        "declared derivative and novelty terms",
-        "declared gain clamp"
+        "tabular per-Assembly reward association",
+        "context omitted from state key",
+        "deterministic round-robin exploration",
+        "ordinary lookup/state partition when context is explicitly added"
       ],
       "status": "FORGE_DEAD_END",
-      "dead_end_reason": "The entire persistent cue-priming effect is reproduced by the declared deterministic filter/register recurrence; no residual remains for a distinct research object.",
-      "promotion_reason": null
-    },
-    {
-      "forge_id": "FORGE-ASSEMBLY-SUPPRESSION-SILENT-MATURATION-A",
-      "question": "Does Assembly suppression freeze learning, or only mute readout so an immature Assembly can mature while suppressed?",
-      "why_now": "This is a bounded intervention-semantics check independent of MAIN candidate34's edge/timing route work and distinct from prior unit-suppression latent-state work.",
-      "branch": "forge/20260923-receptor-suppression-probes-a",
-      "prototype": "create one immature Assembly; suppress after episode 1; observe same pattern with learn=true in episodes 2 and 3; unsuppress; query with learn=false",
-      "commands_diagnostics": [
-        "pytest probe included in full push CI on Python 3.11 and 3.13"
-      ],
-      "observations": {
-        "episode_count_while_suppressed": 3,
-        "mature_while_suppressed": true,
-        "mature_after_unsuppress_without_additional_learning": true
-      },
-      "ordinary_reductions": [
-        "suppression set is a readout mask only",
-        "TemporalAssemblyMemory.observe updates occurrence and episode history independent of suppression when learn=true",
-        "retained causal_ablation uses learn=false during suppression, eliminating contamination in that current ablation"
-      ],
-      "status": "FORGE_DEAD_END",
-      "dead_end_reason": "The behavior is fully explained by API/intervention semantics rather than a distinct scientific mechanism.",
+      "dead_end_reason": "The limitation and comparator are completely explained by ordinary tabular state-key privilege; there is no residual for a distinct functional-meaning mechanism.",
       "promotion_reason": null
     }
   ],
@@ -99,21 +95,20 @@
     "protected_heldout_accessed": false,
     "evidence_formal_sealed_freeze_preserve_ref_mutated": false,
     "consumed_or_immutable_evidence_mutated": false,
+    "response_workflow_dispatched": false,
     "forge_branch_merged_to_main_or_research": false
   },
   "metrics": {
     "scope": "FROM_R92_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 1,
-    "prototypes_attempted": 2,
-    "dead_ends": 2,
+    "runs": 3,
+    "prototypes_attempted": 6,
+    "dead_ends": 5,
     "interesting_observations_retained": 0,
     "promotion_proposals": 0,
     "later_admissions": 0,
-    "duplicate_or_rescue_rejects": 0,
+    "duplicate_or_rescue_rejects": 2,
     "ownership_collisions": 0,
-    "ordinary_reduction_rejects": 2,
-    "idea_to_first_executable_probe_latency_seconds_approx": 433,
-    "run_start_to_both_probe_ci_confirmation_seconds_approx": 614
+    "ordinary_reduction_rejects": 5
   },
   "recommendation": "NONE_NO_PROMOTION"
 }
