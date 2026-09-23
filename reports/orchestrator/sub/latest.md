@@ -1,38 +1,42 @@
-# FAST FORGE latest — no independent target after R103/R94 defer boundary
+# FAST FORGE latest — no Analyst-gated Theory/Revisit probe and no independent target
 
 - schema_version: `2`
-- generation_id: `FORGE-20260924T013401+0900-NOOP-R103-R94`
-- produced_at: `2026-09-24T01:34:01+09:00`
+- generation_id: `FORGE-20260924T023750+0900-NOOP-R103-R95-NO-GATED-PROBE`
+- produced_at: `2026-09-24T02:37:50+09:00`
 - worker_role: `FAST_FORGE`
 - evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
 - overall_status: `FORGE_OBSERVATION`
 - selection_outcome: `NO_OP`
 
-## Freshness / independence
+## Freshness / gating
 
-Stable main was re-fetched at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Fresh Evidence Analyst R103, MAIN/Relay, Literature R40, Independent Audit R9, Methodology R94, Utility and prior Forge state were all re-read before target selection.
+Stable main was re-fetched at `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. Fresh Evidence Analyst R103, current MAIN/Relay state, Methodology R95, Literature R40, Independent Audit R9, Utility and prior Forge state were all re-read before target selection.
 
-The material change is that Evidence Analyst R103 has reviewed the prior full-state matched-natural-history proposal and returned `DEFER_NOT_ADMITTED`: no canonical candidate was created and Forge observations retain zero confirmatory credit because the proposal is too immediately adjacent to terminal Candidate #35's exposed result. Methodology R94 tightens the same target-selection boundary. Utility independently reconciles the defer and remains IDLE.
+Evidence Analyst R103 supplies neither a `THEORY_FORGE_TEST` nor a `REVISIT_FORGE_TEST` bounded probe. Methodology R95 is materially newer than the prior Forge run and explicitly reports that no dedicated current Theory/Revisit handoff or live Revisit Forge probe exists; its new finding is a missing Revisit metadata/ledger/routing layer and over-terminalization risk. That is process/governance instrumentation, not scientific dispatch authority, so Forge did not turn it into an experiment.
 
-MAIN ownership remains H7 only: H7 is the sole nonterminal canonical object, FORMAL remains STOP, and current work is science-invariant capability/readiness plumbing only if canonical MAIN is restored. Candidate #35 and Candidate #34 remain terminal for their current objects and non-rescuable in-place.
+MAIN remains H7-only. The latest PRIMARY generation is blocked after strictly NON_RESULT readiness failed at missing external protected-sidecar capability `H7_R5_SIDECAR_PASSPHRASE`; PRIMARY is paused. Forge avoided all H7 science/controller/readiness/runtime/scheduler surfaces.
+
+Candidate #35 remains terminal for the current SYSTEM object and its immediate natural-history/off-manifold/STP successor family remains excluded after R103's post-outcome rescue-adjacency defer. Candidate #34 remains terminal/reducible under Audit R9. Literature R40's STP and delayed three-factor/e-prop baselines strengthen ordinary reductions but do not create a fresh independent SparkBrain phenomenon. Utility remains IDLE.
 
 ## Selection result
 
-No Forge prototype was run.
+No Forge prototype was run. No `forge/*` branch, Utility request, or promotion proposal was created.
 
 Rejected before execution:
-- Candidate #35 matched-natural-history, intervention-realism, activity-silent/STP variants: immediate-successor/rescue-adjacent under R103/R94.
-- Delayed-reward / three-factor eligibility comparator: Literature R40 gives a stronger ordinary baseline, but prior Forge R100 already established the implementation gap; building the baseline now is duplicate reduction work, not a new independent SparkBrain phenomenon.
-- Candidate #34 route residuals: same-family rescue after Independent Audit R9 reduced the measured response to local edge weight/delay plus membrane decay.
-- H7 responsibility/readiness/runtime/sidecar work: MAIN collision.
-- Previously exhausted Assembly/context/concept/homeostasis/action/credit surfaces: no fresh independent observable or intervention appeared.
+- raw/hypothetical Theory or Revisit ideas: no Analyst gate/spec exists;
+- Revisit ledger/bootstrap implementation: governance/state plumbing only;
+- Candidate #35 natural-history/intervention-realism/activity-silent-STP successors: immediate-successor rescue-adjacent under R103;
+- Candidate #34 temporal-route residuals: same-family rescue after reducible closure;
+- H7 responsibility/readiness/capability/runtime: MAIN collision;
+- delayed-reward / three-factor / e-prop comparator: ordinary baseline and duplicate credit-surface reduction work;
+- prior Assembly/context/concept/homeostasis/action/credit Forge families: no fresh independent observable, intervention, or instrumentation capability.
 
-No new phenomenon was observed, so no new ordinary-reduction residual exists. No `forge/*` branch, Utility request, or promotion proposal was created.
+No new phenomenon was observed, so no new ordinary-reduction residual exists.
 
 ## Persistence / metrics
 
-Full technical record: `reports/orchestrator/sub/history/2026-09-24/0134-r103-r94-fast-forge-noop-after-defer.md`.
+Full technical record: `reports/orchestrator/sub/history/2026-09-24/0237-r103-r95-fast-forge-no-gated-probe.md`.
 
-Cumulative metrics: runs `14`, prototypes attempted `17`, dead ends `13`, interesting retained `1`, promotion proposals `1`, later admissions `0`, duplicate/rescue rejects `10`, ownership collisions `0`, ordinary-reduction rejects `13`, Analyst promotion deferrals `1`, latency `NO_OP`.
+Cumulative metrics: runs `15`, prototypes attempted `17`, Theory probes/kills/survivors `0/0/0`, Revisit probes/kills/survivors `0/0/0`, dead ends `13`, interesting retained `1`, promotion proposals `1`, later admissions `0`, duplicate/rescue rejects `10`, ownership collisions `0`, ordinary-reduction rejects `13`, Analyst promotion deferrals `1`, latency `NO_OP`.
 
 No MAIN collision and no hard-floor action occurred. PRE_FORMAL/FORMAL identities, STARTED, official scoring, protected targets, consumed evidence and evidence/formal/sealed/freeze/preserve refs were untouched.
