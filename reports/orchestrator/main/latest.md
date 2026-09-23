@@ -1,6 +1,6 @@
 # MAIN latest — candidate #34 PRE_FORMAL R2
 
-- execution_mode: `RELAY`
+- execution_mode: `PRIMARY`
 - status: `WAITING_EXTERNAL`
 - layer: `PRE_FORMAL`
 - cycle: `4`
@@ -10,15 +10,15 @@
 - preformal_eligible: `true`
 - preformal_readiness: `NOT_READY`
 - hold_class: `null`
-- hold_reason: `null`
 - terminal_state: `NONTERMINAL`
-- queue_state: `QUEUED_FOR_MAIN_PREFORMAL_R2_OPPORTUNITY_AWARE_CONTRACT_REVISION_NONRESULT`
 - system_priority_exception.used: `false`
 
-The exact candidate #34 R92 research head is unchanged. Its dedicated canonical R2 non-result contract workflow and generic CI both completed successfully on that exact head.
+The canonical candidate #34 R92 opportunity-aware non-result contract closure remains complete on the same exact research head. The dedicated R2 contract workflow and generic CI are both successful on that head, and the exact workflow artifact has already been durably preserved with hashes recorded.
 
-Relay then performed only science-invariant artifact preservation: the exact downloaded workflow artifact ZIP was durably archived under MAIN-owned ops storage, with its ZIP hash and both contained JSON raw/embedded hashes recorded in state/history. The research branch was not mutated and no workflow was rerun.
+This PRIMARY invocation re-fetched the Evidence Analyst authority, stable main, exact candidate branch/head, workflows, evidence/formal/sealed/freeze namespaces, preserve/control refs, open PRs, Fast Forge branch awareness, Utility latest activity, and the previous MAIN Relay state. No superseding Analyst generation or PRIMARY RUNNING collision was present.
 
-No response-bearing execution, PRE_FORMAL scientific result, FORMAL identity, STARTED marker, protected evaluation, scoring, or scientific preserve/evidence mutation occurred. Prior results and consumed identities remain unchanged.
+A Fast Forge branch exists, but it is noncanonical and unrelated to the candidate #34 canonical lane. No Forge code or observation was reused or credited. Utility was not used as a dependency.
 
-The single R92 non-result R2 contract-closure cycle is complete. Next action is a fresh Evidence Analyst READY review before any D34-Q002 response-bearing execution, R2 rerun/tuning/re-scoring, or FORMAL action.
+No research branch mutation, response-bearing PRE_FORMAL execution, new scientific observation, FORMAL identity, STARTED marker, protected evaluation, scoring, or scientific preserve/evidence mutation occurred. Prior results and consumed identities remain unchanged.
+
+R92 still leaves candidate #34 NOT_READY after the one allowed non-result R2 contract-closure cycle. MAIN therefore remains fail-closed at `WAITING_EXTERNAL` until a fresh Evidence Analyst READY review. Do not execute D34-Q002, rerun/tune/rescore R2, alter its semantics, or perform FORMAL work under R92.
