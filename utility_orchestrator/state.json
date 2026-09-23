@@ -1,64 +1,74 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260923T123600+0900-AUTO-FORGE-PULSE-ORDER-COMPLETED-6D2A91C4",
-  "produced_at": "2026-09-23T12:36:00+09:00",
-  "completed_at": "2026-09-23T12:36:00+09:00",
-  "producer_run_id": "utility-auto-20260923T1227+0900-forge-pulse-order",
-  "authority_scope": "UTILITY_AUTONOMOUS_IDLE_FAST_FORGE_BOUNDED_NON_EVIDENTIARY_SYNTHETIC_DIAGNOSTIC",
-  "supersedes_generation_id": "UTILITY-20260923T123200+0900-AUTO-FORGE-PULSE-ORDER-RUNNING-6D2A91C4",
-  "assignment_mode": "AUTONOMOUS_IDLE",
+  "generation_id": "UTILITY-20260923T132300+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-5C91A2E7",
+  "produced_at": "2026-09-23T13:23:26+09:00",
+  "completed_at": "2026-09-23T13:23:26+09:00",
+  "producer_run_id": "utility-auto-20260923T1323+0900-pointer-reconcile",
+  "authority_scope": "UTILITY_CONTROL_PLANE_RECONCILIATION_FAIL_CLOSED_NO_SCIENTIFIC_EXECUTION",
+  "supersedes_generation_id": "UTILITY-20260923T123600+0900-AUTO-FORGE-PULSE-ORDER-COMPLETED-6D2A91C4",
+  "assignment_mode": "FAIL_CLOSED",
+  "status": "BLOCKED",
+  "selected_task": "CONTROL_PLANE_ASSIGNMENT_POINTER_RECONCILIATION_READ_ONLY",
   "assignment_id": null,
   "assignment_generation_id": null,
-  "autonomous_task_id": "AUTOUTIL-20260923T1232+0900-FORGE-RECEPTOR-SAME-TIME-ORDER-6D2A91C4",
-  "status": "COMPLETED",
-  "run_count": 1,
-  "max_runs": 1,
+  "autonomous_task_id": null,
+  "fast_forge_support": false,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_authority": "NONE",
-  "fast_forge_support": true,
-  "objective": "Independently test, on source-level synthetic/dev semantics only, whether same-time same-channel receptor pulses are permutation-invariant or whether stable tie ordering creates a transient output-order artifact; reduce any observation to ordinary implementation semantics before considering any follow-up.",
-  "trigger_source": "Fresh Fast Forge run FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS exposed receptor-local state as an independent noncanonical Forge surface; Utility selected a distinct same-timestamp batching diagnostic rather than duplicating the priming or suppression probes.",
-  "outcome_classification": "FORGE_DEAD_END",
+  "objective": "Reconcile current Utility assignment pointer against fresh Control authority and fail closed if authority is inconsistent; do not infer PF-R1 execution authority and do not fall through to autonomous Forge work.",
+  "authority_reconciliation": {
+    "utility_pointer": {
+      "schema_version": 2,
+      "status": "IDLE",
+      "active_assignment_id": null,
+      "active_assignment_generation_id": null,
+      "blob_sha": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7"
+    },
+    "control_r42_observation": {
+      "assignment_id": "UTIL-20260922-1648-PFR1-DEVELOPMENT-PROVENANCE-PRESERVE",
+      "decision": "APPROVED_ASSIGNED",
+      "status": "ACTIVE_REAFFIRMED",
+      "matching_current_pointer_observed": false
+    },
+    "classification": "CONTROL_PLANE_ASSIGNMENT_POINTER_DIVERGENCE_NONSCIENTIFIC",
+    "execution_authority_resolved": false,
+    "fail_closed": true,
+    "utility_may_mutate_assignment_pointer": false
+  },
   "ownership_generations": {
     "evidence_analyst": "EVA-20260923T105725+0900-R92-6B8E31D4",
-    "main_latest_durable": "MAIN-20260923T121719+0900-PRIMARY-CAND34-PREFORMALR2-R92-RECONCILE-AUTHORITY-CONTRACT",
-    "relay_latest_durable": "MAIN-20260923T115328+0900-RELAY-CAND34-PREFORMALR2-R92-BLOCKED-AUTHORITY-INTEGRITY",
+    "main_latest_durable": "MAIN-20260923T131224+0900-PRIMARY-CAND34-PREFORMALR2-R92-REVALIDATED-WAITING-ANALYST",
     "fast_forge": "FORGE-20260923T114344+0900-R92-RECEPTOR-SUPPRESSION-DEADENDS",
-    "control": "CTRL-20260923T115056+0900-R41-4C156929"
+    "control": "CTRL-20260923T125800+0900-R42-7C9E41B2"
   },
   "exact_refs": {
-    "assignment_pointer_status": "IDLE",
-    "assignment_pointer_blob": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
+    "utility_assignment_pointer_blob": "6fe8c6da7192a3021eea9e2c4a94b1a1251e6da7",
     "evidence_analyst_commit": "a05ab3f655a23eabd84c910ba337d64a948c168a",
-    "orchestrator_commit": "92806ba4042af799d26cae17cd14f55faf84bdaf",
-    "control_commit": "27b6531b6b3a1d941a484aeee012d5c59fe63d79",
-    "fast_forge_branch": "forge/20260923-receptor-suppression-probes-a",
-    "fast_forge_head": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
+    "orchestrator_commit": "8f446170ba98142c13025067192fe0ebd4bc7172",
+    "control_commit": "7035ace9b0ef980602dcb124e8974be5640d7377",
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "receptor_source_blob": "86c1cfea1ea70cada5c277d8f5047c32ea611a5c"
+    "candidate34_branch": "research/main-cand34-assembly-route-preformal-r92-cycle4",
+    "candidate34_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
+    "h7_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+    "h7_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+    "fast_forge_branch": "forge/20260923-receptor-suppression-probes-a",
+    "fast_forge_head": "c366c4054d2834003fcca20d49b8fc9ad4203edc"
   },
   "observations": {
-    "same_time_same_channel_permutation_invariant_final_state": true,
-    "same_time_same_channel_permutation_invariant_transient_emission": false,
-    "example_order_positive_then_negative": [[1.14, 1], [0.10363636363636362, -1]],
-    "example_order_negative_then_positive": [[0.228, -1], [1.0363636363636362, 1]],
-    "example_final_state_both_orders": {"fast": 0.9, "medium": 0.9, "slow": 0.9, "mean_abs": 1.1},
-    "ordinary_reduction": "Python stable tie ordering on identical (time_ms, channel) keys plus sequential per-pulse state update and intermediate mean_abs-dependent gain/emission",
-    "canonical_or_scientific_interpretation": "NONE"
-  },
-  "metrics": {
-    "prototype_type": "SOURCE_LEVEL_SYNTHETIC_METAMORPHIC_DIAGNOSTIC",
-    "independent_from_forge_primary": true,
-    "outcome": "FORGE_DEAD_END",
-    "ordinary_reduction_tested": "STABLE_SORT_TIE_ORDER_PLUS_SEQUENTIAL_INTERMEDIATE_STATE_EMISSION",
-    "branch": null,
-    "latency_seconds": 240,
-    "promotion_support_signal_returned": false
+    "candidate34_r2_nonresult_closure_revalidated": true,
+    "candidate34_response_bearing_execution_authorized": false,
+    "candidate34_waiting_fresh_analyst_review": true,
+    "fast_forge_latest_outcome": "FORGE_DEAD_END",
+    "fast_forge_utility_request": null,
+    "pfr1_execution_attempted": false,
+    "autonomous_forge_attempted": false,
+    "scientific_interpretation": "NONE"
   },
   "integrity_checks": {
-    "main_collision_found": false,
-    "forge_primary_collision_found": false,
-    "material_authority_supersession_before_terminal_write": false,
+    "authority_ambiguity_detected": true,
+    "fell_through_to_autonomous_idle": false,
+    "main_collision_created": false,
+    "forge_collision_created": false,
     "hidden_main_dependency_created": false,
     "candidate_or_funnel_mutation": false,
     "preformal_or_formal_action": false,
@@ -70,11 +80,10 @@
     "scheduler_mutation": false,
     "research_pr_merge": false
   },
-  "stop_reason": "COMPLETED_BOUNDED_FORGE_DIAGNOSTIC_ORDINARY_REDUCTION",
-  "follow_up_recommendation": "No promotion request. Retain only as a generic testbed warning: future synthetic probes with multiple pulses on one channel at the same timestamp should define tie ordering explicitly or avoid interpreting within-timestamp output differences as a mechanism.",
-  "request_created": null,
+  "stop_reason": "BLOCKED_CONTROL_PLANE_ASSIGNMENT_POINTER_DIVERGENCE",
+  "follow_up_recommendation": "Control must publish a matching schema-v2 assignment/current id plus generation for PF-R1 exact-byte preservation, or explicitly withdraw the separately persisted active authority. Utility must not infer authority from Control prose/state and must not perform further autonomous Forge support while this divergence remains.",
+  "request_created": "utility_orchestrator/requests/UTILREQ-20260923T1323+0900-PFR1-ASSIGNMENT-POINTER-RECONCILIATION.md",
   "outputs": {
-    "start_result_path": "utility_orchestrator/results/2026-09-23/AUTOUTIL-20260923T1232+0900-FORGE-RECEPTOR-SAME-TIME-ORDER-6D2A91C4-start.md",
-    "terminal_result_path": "utility_orchestrator/results/2026-09-23/AUTOUTIL-20260923T1232+0900-FORGE-RECEPTOR-SAME-TIME-ORDER-6D2A91C4-completed.md"
+    "terminal_result_path": "utility_orchestrator/results/2026-09-23/UTILITY-20260923T1323+0900-PFR1-POINTER-DIVERGENCE-BLOCKED-5C91A2E7.md"
   }
 }
