@@ -1,0 +1,98 @@
+name: h7-r105-lint-repair
+
+on:
+  push:
+    branches:
+      - research/main-h7-r5-launch-plumbing-r105
+    paths:
+      - .github/workflows/h7-r105-lint-repair.yml
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - name: Apply exact non-scientific lint repair and rebind controller blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("scripts/h7_formal_r5_one_way_controller.py")
+          text = path.read_text(encoding="utf-8")
+
+          replacements = [
+              ("import shutil\n", ""),
+              (
+                  '    "artifacts/formal_h7_r3/prior_surface_inventory.json": "e9d43053ab4e3405f7886b289f1c3ea5b09286a0",\n',
+                  '    "artifacts/formal_h7_r3/prior_surface_inventory.json": (\n'
+                  '        "e9d43053ab4e3405f7886b289f1c3ea5b09286a0"\n'
+                  '    ),\n',
+              ),
+              (
+                  '    "artifacts/formal_h7_r4/scientific-runtime.lock": "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583",\n',
+                  '    "artifacts/formal_h7_r4/scientific-runtime.lock": (\n'
+                  '        "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583"\n'
+                  '    ),\n',
+              ),
+              (
+                  '    "artifacts/formal_h7_r4/scientific-runtime-manifest.json": "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",\n',
+                  '    "artifacts/formal_h7_r4/scientific-runtime-manifest.json": (\n'
+                  '        "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223"\n'
+                  '    ),\n',
+              ),
+              (
+                  '    "artifacts/formal_h7_r4/scientific-runtime.versions": "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575",\n',
+                  '    "artifacts/formal_h7_r4/scientific-runtime.versions": (\n'
+                  '        "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575"\n'
+                  '    ),\n',
+              ),
+              (
+                  '        score_post_preserve_rows,\n    )\n    from sparkbrain.learned.training import episode_examples\n',
+                  '        score_post_preserve_rows,\n    )\n\n    from sparkbrain.learned.training import episode_examples\n',
+              ),
+          ]
+          for old, new in replacements:
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f"expected exactly one lint-repair match, got {count}: {old!r}")
+              text = text.replace(old, new)
+          path.write_text(text, encoding="utf-8")
+
+          contract_path = Path("artifacts/formal_h7_r5/launch_path_contract.json")
+          contract = json.loads(contract_path.read_text(encoding="utf-8"))
+          # Git's blob digest is filled in after the script is written below by shell.
+          contract_path.write_text(json.dumps(contract, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+          PY
+
+          script_blob="$(git hash-object scripts/h7_formal_r5_one_way_controller.py)"
+          SCRIPT_BLOB="${script_blob}" python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path("artifacts/formal_h7_r5/launch_path_contract.json")
+          contract = json.loads(path.read_text(encoding="utf-8"))
+          contract["exact_controller_blobs"]["controller_script_blob"] = os.environ["SCRIPT_BLOB"]
+          contract["science_invariant_repair"] = {
+              "classification": "LINT_ONLY_NO_SCIENCE_CHANGE",
+              "reason": "remove unused import, wrap long constants, and sort local imports",
+          }
+          path.write_text(json.dumps(contract, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+          PY
+
+          rm .github/workflows/h7-r105-lint-repair.yml
+          git diff --check
+          python -m py_compile scripts/h7_formal_r5_one_way_controller.py
+          git config user.name github-actions
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add scripts/h7_formal_r5_one_way_controller.py artifacts/formal_h7_r5/launch_path_contract.json .github/workflows/h7-r105-lint-repair.yml
+          git commit -m 'h7 r5: repair launch controller lint without science change'
+          git push origin HEAD:research/main-h7-r5-launch-plumbing-r105
