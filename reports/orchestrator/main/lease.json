@@ -6,7 +6,8 @@
   "authority_scope": "PRIMARY_R121_READ_ONLY_ANALYST_R120_RVT35_TOOLING_PENDING_FORGE_PROBE_RECONCILIATION",
   "supersedes_generation_id": "MAIN-20260924T161228+0900-PRIMARY-R120-WAITING-CAND35-REVISIT-FORGE-TEST",
   "input_generations": {
-    "evidence_analyst": "EVA-20260924T170301+0900-R120-RVT35-FORGE-TOOLING-PENDING-PROBE@92c6ce0b13539317cbc0a020bd968b9546cdf615",
+    "evidence_analyst": "EVA-20260924T170301+0900-R120-RVT35-FORGE-TOOLING-PENDING-PROBE@3b7a3a0fd100614ed1b271ac14010e34683625ac",
+    "evidence_analyst_history_commit": "92c6ce0b13539317cbc0a020bd968b9546cdf615",
     "main_previous": "MAIN-20260924T161228+0900-PRIMARY-R120-WAITING-CAND35-REVISIT-FORGE-TEST@6f1f8ac373b99d4346894f9591e2feb5cc2bcc13",
     "relay_latest_durable": "MAIN-20260924T154307+0900-RELAY-R119-WAITING-CAND35-REVISIT-ANALYST-GATE@adc2b8a69d489a9035a126c834ad755a1f67328a",
     "theory_revisit": "THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4@cc597a993fe30d6ba9ea05a30999d44a489ea467",
@@ -16,7 +17,7 @@
   },
   "persistence": {
     "history_commit": "bac833d0969bad6849695bf4963932f3c243d5fe",
-    "state_commit": "cc61299dc3269a89090edcbdf78188a3f6ef2cb2",
+    "state_commit": "8df2ff4f3ce6e6cb0cdc208aa175ede331c8e737",
     "latest_commit": "7ca8a0b429a48bcfd8d37c184cfb57c88a06fb4a"
   },
   "execution_mode": "PRIMARY",
@@ -27,7 +28,7 @@
   "completed_at": null,
   "blocked_at": null,
   "analyst_generation_id": "EVA-20260924T170301+0900-R120-RVT35-FORGE-TOOLING-PENDING-PROBE",
-  "analyst_commit": "92c6ce0b13539317cbc0a020bd968b9546cdf615",
+  "analyst_commit": "3b7a3a0fd100614ed1b271ac14010e34683625ac",
   "candidate_id": null,
   "research_layer": null,
   "development_phase": null,
@@ -62,8 +63,9 @@
     "utility_harness_ready": true,
     "utility_harness_counts_as_probe_result": false,
     "durable_candidate_specific_probe_result_observed": false,
-    "non_result_ci_run_id": 35974357980,
-    "non_result_ci_status": "in_progress",
+    "latest_non_result_ci_run_id": 35974555995,
+    "latest_non_result_ci_status": "completed",
+    "latest_non_result_ci_conclusion": "success",
     "expected_next_action": "Wait for Fast Forge to execute or decline only RVT35-FORGE-001 and persist a durable candidate-specific result, then wait for a fresh Evidence Analyst generation. Continue only if that later Analyst explicitly admits a fresh successor/new candidate ID with its own prospective canonical contract; otherwise keep Candidate #35 terminal and perform no science."
   },
   "evidentiary_status": "NO_NEW_SCIENCE_WAITING_FOR_DURABLE_RVT35_FAST_FORGE_RESULT_AND_FRESH_ANALYST_CANONICAL_ADMISSION",
@@ -116,6 +118,7 @@
   },
   "integrity": {
     "analyst_generation_freshness_rechecked_before_persistence": true,
+    "analyst_branch_head_rechecked_after_initial_persistence": true,
     "main_generation_and_lease_freshness_rechecked_before_persistence": true,
     "relay_rechecked": true,
     "scientific_and_controller_refs_rechecked_before_persistence": true,
