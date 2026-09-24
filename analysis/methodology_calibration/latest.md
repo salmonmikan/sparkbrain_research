@@ -1,50 +1,35 @@
-# SparkBrain Methodology Calibration Audit — R112
+# SparkBrain Methodology Calibration Audit — R113
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260924T182800+0900-R112-5E7C1A42`
-- generated_at: `2026-09-24T18:28:00+09:00`
+- generation_id: `METHCAL-20260924T192031+0900-R113-8C4F2D11`
+- generated_at: `2026-09-24T19:20:31+09:00`
 - authority_scope: `METHODOLOGY_ADVISORY_ONLY`
-- supersedes: `METHCAL-20260924T172000+0900-R111-C35A7F2E`
+- supersedes: `METHCAL-20260924T182800+0900-R112-5E7C1A42`
 - overall_classification: `MIXED_CALIBRATION`
 - material_change: `true`
-- material_change_scope: `RVT35_FORGE_KILL_COMPLETED_AND_ANALYST_ADJUDICATED_WITH_POST_PROBE_DECISION_ENUM_AND_EXECUTION_REPORTING_CLARIFICATION_NEEDED`
+- material_change_scope: `R122_EXPLICIT_ANALYTIC_KILL_ATTRIBUTION_PLUS_R43_PROSPECTIVE_COALITIONAL_ATTRIBUTION_BAR_PLUS_CAND35_RAW_REF_RESOLUTION_DISCREPANCY`
 - new_scientific_result: `false`
-- history_create_commit: `a769fac2744f7ffd6a8016e161632d9c639d886b`
+- history_create_commit: `e2288673882e0ced8c22fb49b46cd7b986209bf0`
 
 ## Executive calibration
 
-R112 read Methodology R111 first, then independently re-fetched stable `main`, the authoritative tag policy, `evidence/*`, current Control R60, Evidence Analyst R121, Theory/Revisit R3, Utility R119, the candidate-specific `RVT35-FORGE-001` branch, the durable Fast Forge record, current MAIN R122, and repository `TemporalExcitableField` semantics.
+R112 methodology history/state was read first. Stable repository/evidence were then re-fetched independently before current Control/Analyst/Theory/Revisit/Forge/Literature handoffs were used.
 
-The major delta is that the first candidate-specific Revisit Forge path has now completed. Candidate #35's old object remains terminal `SYSTEM` with zero confirmatory credit and unchanged R100 history. The new trigger was not used to rerun, retune or rescore R100. Fast Forge instead created a fresh synthetic zero-credit probe branch that tests the new causal-opportunity/observability rationale only.
+Stable `main` is `d16403414fc7abebd23075fc401240971b8eb91d`. Current Evidence Analyst is `EVA-20260924T190300+0900-R122-R43-PROSPECTIVE-ATTRIBUTION-GATE` on head `18ffc338feebc74fd0d4be0f560ceb2757c7c507`; Control remains R60 at `24f8492e29c22bb202a47ed496b3098a6355ba96`; Theory/Revisit R3 at `cc597a993fe30d6ba9ea05a30999d44a489ea467`; Fast Forge R121/R43 no-op at `3e7d1b7ebc996b4e2b349114eddf3ec31d4343a7`; MAIN/Relay R124 waiting at `949f919a35122425ee83c3cb70d6da620f172dae`; Literature R43 at `c4630889131997b13f703801fc94c6f049ad536b`.
 
-The exact probe source and constants were durably committed at `58b6f3f05c56232ec4913d48635bd26641d73fe5` before the durable Forge kill report was published. The branch has one candidate-specific commit on top of the pre-existing Utility support branch and no observed result-responsive revision chain. This materially resolves R111's main prospective-binding concern for this zero-credit Forge lane.
+R112's execution-attribution concern is now resolved. R122 explicitly states that `RVT35-FORGE-001` was not executed as the exact branch file; the accepted zero-credit kill was analytic/static and independently checked against exact repository field semantics. It also correctly refuses to rerun merely for execution fidelity. This gate moves from `CLARIFY` to `KEEP`.
 
-The kill itself is methodologically defensible. The Analyst-owned contract prospectively listed `apparent separation fully reduced to ordinary mechanisms` as a kill criterion. The committed probe fixes a three-unit synthetic field, treated latent-potential shift, matched probe current/timing, threshold, fixed edge/delay and path-cut control. Stable-main field semantics independently confirm the stated analytic reduction: the 0.20 treated shift decays under the fixed 18 ms membrane time constant before the 10 ms probe; baseline remains below 0.80 while the perturbed arm crosses 0.80, and a fixed 0.85 edge with 2 ms delay is sufficient for the downstream observable. No nonordinary residual is required.
+Candidate #35 remains terminal SYSTEM, zero confirmatory credit, `DEFERRED_INDEPENDENT_REIDENTIFICATION`, no pending probe and no successor. R122 adds explicit post-probe disposition `FORGE_KILLED_NO_SUCCESSOR_RETURN_TO_DEFERRED_INDEPENDENT_REIDENTIFICATION` while preserving historical `REVISIT_FORGE_TEST`. This is operationally safe, but the current disposition is not one of the designated Revisit decision enums. Add an append-only current `REVISIT_REJECTED` or `REVISIT_DORMANT` event while preserving the historical decision. Gate remains `CLARIFY`.
 
-However, the exact branch file was not actually executed in the Forge sandbox because raw-file DNS access failed. Forge instead performed the deterministic arithmetic diagnostic locally and Analyst R121 independently checked the reduction against repository field semantics. For a zero-credit adversarial kill whose criterion is exact ordinary reducibility, this is sufficient to reject the current Revisit rationale, but control-plane metrics should distinguish `ANALYTIC_OR_STATIC_FORGE_KILL` from `EXACT_BRANCH_EXECUTED_PROBE_RESULT`. Counting it simply as an executed probe obscures what actually happened.
+Literature R43 is substantively supported by independent source checks. Interventional causal responsibility can be unique/redundant/synergistic; multi-site and multivariate lesion attribution can correct single-lesion misinference; surrogate perturbation can be useful when validated on intervention response; and threshold-gated latent-state effects are ordinary mechanisms. Accordingly, a single nonzero cut should not support broad unique/privileged distributed-responsibility language.
 
-A second semantics gap remains after the kill. Analyst R121 moves Candidate #35 from `REVISIT_TRIGGERED` to `DEFERRED_INDEPENDENT_REIDENTIFICATION`, explicitly prohibits further search around the killed rationale, and creates no successor. That is substantively conservative and anti-rescue. But the historical Revisit decision is left exactly `REVISIT_FORGE_TEST`; the ledger reports `revisit_rejects=0`, while no explicit post-probe `REVISIT_REJECTED` or `REVISIT_DORMANT` decision is recorded. Because the designated Revisit decision vocabulary is finite, post-Forge closure should be represented explicitly rather than inferred from status plus prose. This is a `CLARIFY` issue, not evidence that the old candidate was reopened or that the scientific kill is invalid.
+This stronger bar must remain claim-specific. For broad unique/privileged MECHANISM responsibility claims, prospective multi-site/coalitional attribution plus adequate ordinary comparators is calibrated. For a narrow SYSTEM statement such as `this frozen intervention changes this frozen output`, requiring full Shapley/coalitional attribution would be overconservative. R43 attribution therefore classifies `SPLIT_BY_CLAIM_TYPE`; R122's current wording is appropriately scoped and should stay that way. Surrogate held-out intervention adequacy is likewise required when the surrogate is offered as a mechanism discriminator or independent comparator capability, not for every descriptive/predictive SYSTEM use.
 
-H7 remains `INCONCLUSIVE / CONSUMED_ONE_WAY / TERMINAL_FOR_CURRENT_OBJECT` with no rerun, retune, rescore or same-object repair. Independent `evidence/*` reconstruction still shows six refs: five annotated tag objects and H7 as a lightweight direct-commit tag. The prospective provenance/publication gate therefore remains `TIGHTEN`; historical H7 refs must remain untouched.
+The R43 bar must not become a hidden second FORMAL. PRE_FORMAL remains genuine zero-credit development and may iterate. What must be prospectively frozen before result exposure is the attribution contract required for the canonical claim being tested, not every exploratory readout or coalition analysis.
 
-## Input generations and authoritative refs
+A fresh Candidate #35 provenance discrepancy was independently confirmed. The current resolvable ref is `raw/cand35-r100-onebatch-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a`; no `preserve/cand35*` head resolves. The raw commit itself is titled `cand35 R100: preserve first bounded raw batch` and records `preserve_mode=EXCLUSIVE_CREATE_BEFORE_RETURN`, development-only status and no FORMAL/official scoring. Therefore preserved bytes remain reachable and must not be recreated or retargeted, but control-plane handoffs should stop presenting the old `preserve/cand35...@afe4` label as a currently resolvable ref. Classification `CLARIFY`, not scientific invalidation.
 
-- prior methodology: `METHCAL-20260924T172000+0900-R111-C35A7F2E`, audit branch head before R112 persistence `ff3f97cd1c899c59d87b05852be700ea6472fec1`
-- stable main: `d16403414fc7abebd23075fc401240971b8eb91d`
-- Evidence Analyst: `EVA-20260924T180900+0900-R121-RVT35-FORGE-KILL-ADJUDICATED`, branch head `79a7ab2322eb55564de788155593e9d68db97ece`
-- Control Brain: `CTRL-20260924T175817+0900-R60-CAND35-REVISIT-FORGE-KILL`, branch head `24f8492e29c22bb202a47ed496b3098a6355ba96`
-- Theory/Revisit: `THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4`, branch head `cc597a993fe30d6ba9ea05a30999d44a489ea467`
-- MAIN: `MAIN-20260924T181620+0900-PRIMARY-R122-RVT35-FORGE-KILL-AWAIT-ANALYST`, report branch head `0b2af6828d685cc6fe50aae7c4e1c04a1449f793`; this generation observed the Forge kill before the later durable R121 Analyst publication and has no scientific execution authority
-- Fast Forge durable report: history blob `99ceed1dc338d42588a1d99f3508663c6c920af0`; latest content commit `f1df5ccde4457dee20247f0f6ebb4a0a5199d6cc`; state commit `eeb5498dbe13d42e6e00c3b23b27f2b4523984de`
-- Candidate-specific Forge branch: `forge/20260924-rvt35-causal-opportunity-a@58b6f3f05c56232ec4913d48635bd26641d73fe5`
-- Utility: `UTILITY-20260924T163300+0900-R119-RVT35-CAUSAL-OPPORTUNITY-HARNESS-A7D13C2E`, ops branch head `e4e6e3f9628f1b766f195cb9579cf8b7e552f1e9`, support branch parent `7123c29804b4538d38c0c308451337279b31958d`
-- Repository field semantics: `src/sparkbrain/v04/field.py` blob `e2279d69cd04030238317361d5ee3abdc1009c32`
-- Repository Steward: `STEWARD-20260924T135000+0900-G15-9F3C6A21`, branch head `72fd00050786e41f1accae6a36efd9752183cd36`
-- authoritative tag policy: `docs/AUTHORITATIVE_TAGS.md` blob `05905e23108722d759a06b226421fd6bbae93e38`
-- H7 result commit: `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`
-- evidence refs: `6`, of which `5` resolve to annotated tag objects and H7 resolves directly to a commit
-
-Ops/control-plane refs are treated as role-separated mailboxes/history only. Scientific claims above were independently checked against stable repository code and scientific/evidence refs where applicable.
+H7 remains `FORMAL / MECHANISM / CONSUMED_ONE_WAY / INCONCLUSIVE / TERMINAL_FOR_CURRENT_OBJECT`; no rerun, retune, rescore or same-object repair is authorized. `evidence/*` still contains six refs: five annotated tag objects and H7 as a lightweight direct-commit tag. Future authoritative publication remains `TIGHTEN`; existing H7 refs must stay untouched.
 
 ## Gate findings
 
@@ -59,6 +44,7 @@ Ops/control-plane refs are treated as role-separated mailboxes/history only. Sci
 - Raw-before-score / preserve-before-read / exact FORMAL binding: `KEEP`
 - Post-FORMAL terminal absorbency: `KEEP`
 - Authoritative tag form/provenance: `TIGHTEN`
+- Candidate #35 development provenance ref naming/resolution: `CLARIFY`
 - Fresh SYSTEM→MECHANISM successor contract: `KEEP`
 - Terminal/Revisit orthogonality: `KEEP`
 - Revisit trigger detection: `KEEP`
@@ -68,10 +54,12 @@ Ops/control-plane refs are treated as role-separated mailboxes/history only. Sci
 - Revisit Forge new-trigger-only scope: `KEEP`
 - Revisit Forge prospective case binding: `KEEP`
 - Revisit Forge ordinary-reduction kill validity: `KEEP`
-- Revisit Forge exact-execution versus analytic-kill reporting: `CLARIFY`
+- Revisit Forge exact-execution versus analytic-kill reporting: `KEEP`
 - Post-Forge Revisit decision enum/closure: `CLARIFY`
 - Revisit canonicalization: `INSUFFICIENT_EVIDENCE`
 - Revisit bootstrap coverage/conservatism: `KEEP`
+- R43 broad unique/privileged responsibility attribution: `SPLIT_BY_CLAIM_TYPE`
+- R43 surrogate mechanism-discriminator adequacy: `SPLIT_BY_CLAIM_TYPE`
 - Theory/canonical separation: `KEEP`
 - Forge/canonical separation: `KEEP`
 - Protected evaluation validity: `KEEP`
@@ -80,81 +68,55 @@ Ops/control-plane refs are treated as role-separated mailboxes/history only. Sci
 
 ## Mandatory questions
 
-1. Development-phase semantics consistent end-to-end? **Yes.** Current census remains `OPEN_DEVELOPMENT=0`, `RESULT_EXPOSED_DEVELOPMENT=34`, `CONSUMED_ONE_WAY=1`; no result-exposed or consumed object was returned to OPEN.
-2. Cycle 3 mistaken for a hard cap? **No evidence of that.** Reassessment remains informational rather than an automatic terminal rule.
-3. Science-invariant vs science-affecting changes distinguished? **Yes.** The Revisit probe is noncanonical zero-credit development work and does not alter metrics/scorers, scientific thresholds, old interventions, hypotheses, falsifiers or success criteria of consumed/terminal objects.
-4. Development observations kept out of independent evidence credit? **Yes.** Audit, Theory/Revisit, Utility and Forge observations retain zero confirmatory credit.
-5. FORMAL one-way integrity unchanged? **Yes.** H7 remains terminal INCONCLUSIVE and consumed with no rerun/retune/rescore/repair path.
-6. Legitimate fresh SYSTEM→MECHANISM successors suppressed or manufactured? **No manufactured successor and no demonstrated legitimate successor suppressed.** Candidate #35 produced no nonordinary residual under its one authorized fresh trigger. Future work is still permitted on genuinely new independent information with a fresh ID/contract.
-7. PRE_FORMAL genuine development? **Yes.** No hidden second FORMAL gate is observed.
-8. Terminal semantics calibrated? **Yes.** All 35 current objects remain terminal; Candidate #35's Revisit status changed without changing terminal state.
-9. Does Revisit catch genuinely changed conditions? **Yes.** Candidate #35's independent trigger completed trigger → proposal → Analyst gate → bounded Forge kill → fresh Analyst adjudication without reopening the old object.
-10. Does Revisit avoid rescue laundering/zombie inflation? **Yes.** No R100 rerun/retune/rescore, old-ID reuse, inherited credit, automatic successor or repeated search around the failed trigger occurred.
-11. Do `REVISIT_FORGE_TEST` probes test new triggers rather than old failures? **Yes for RVT35-FORGE-001.** It tests causal opportunity/observability on fresh synthetic inputs and excludes Candidate #35/R100 outcomes. The durable kill is analytic/static rather than an exact branch-file execution and should be labeled accordingly.
-12. Is bootstrap coverage complete and conservative? **Yes.** Current ledger coverage is `35/35`; distribution is now `CLOSED_STRONG=1`, `DORMANT_REVISITABLE=20`, `DEFERRED_INDEPENDENT_REIDENTIFICATION=14`, `REVISIT_TRIGGERED=0`. Historical evidence is not rewritten.
-13. Is PASS realistically reachable without weakening standards? **Yes prospectively for genuinely fresh canonical work.** Neither H7 repair nor inherited Candidate-35/Audit/Theory/Revisit/Forge observations create a PASS route.
+1. Development-phase semantics consistent end-to-end? **Yes.** `OPEN_DEVELOPMENT=0`, `RESULT_EXPOSED_DEVELOPMENT=34`, `CONSUMED_ONE_WAY=1`; no exposed/consumed object returned to OPEN.
+2. Cycle 3 mistaken for a hard cap? **No.** No automatic cycle-3 termination rule is observed.
+3. Science-invariant vs science-affecting changes distinguished? **Yes.** No consumed-object scientific meaning was changed.
+4. Development observations kept out of independent evidence credit? **Yes.** Audit/Theory/Revisit/Forge/Utility remain zero-credit.
+5. FORMAL one-way integrity unchanged? **Yes.** H7 remains terminal/consumed with no rerun/retune/rescore/repair.
+6. Legitimate fresh SYSTEM→MECHANISM successors suppressed or manufactured? **No current evidence of either.** #35 has no surviving nonordinary residual or successor; genuinely independent future information remains admissible through a fresh ID/contract.
+7. PRE_FORMAL genuine development? **Yes currently.** R43 must remain a claim-specific readiness/interpretation bar, not an iteration ban.
+8. Terminal semantics calibrated? **Yes.** All 35 current objects remain terminal; Revisit metadata did not reverse terminal state.
+9. Does Revisit catch genuinely changed conditions? **Yes.** #35 completed an independent-trigger loop and returned to deferred after its current rationale was killed.
+10. Does Revisit avoid rescue laundering/zombie inflation? **Yes.** No old-ID rerun/retune/rescore, inherited credit, repeated search or successor laundering occurred.
+11. Are `REVISIT_FORGE_TEST` probes testing new triggers rather than old failures? **Yes for RVT35-FORGE-001.** R122 now explicitly reports analytic/static kill versus exact branch execution.
+12. Is bootstrap coverage complete and conservative? **Yes.** `35/35`: `CLOSED_STRONG=1`, `DORMANT_REVISITABLE=20`, `DEFERRED_INDEPENDENT_REIDENTIFICATION=14`, `REVISIT_TRIGGERED=0`.
+13. Is PASS realistically reachable without weakening standards? **Yes.** Narrow SYSTEM claims remain reachable under narrow frozen tests; broad unique/privileged MECHANISM claims appropriately require the stronger interaction-aware bar.
 
-## Development / PRE_FORMAL calibration
+## Risks and calibration
 
-Development semantics remain well calibrated. Repeated PRE_FORMAL, Audit, Theory, Revisit, Utility and Forge observations do not accrue independent confirmatory credit. The RVT35 branch is explicitly development-only/noncanonical and is not a hidden FORMAL gate.
+False-positive/rescue risk is low. The current #35 rationale is exhausted, Fast Forge selected no new question, and no inherited credit or successor exists. The remaining semantic risk is that historical `REVISIT_FORGE_TEST` could be misread as live authority if a consumer ignores the current post-probe disposition.
 
-The exact candidate-specific case was committed before durable result publication, with fixed treated node, observable, shift, probe timing/current, threshold, edge/delay and path-cut control. No candidate-specific revision chain or multiple tuned result-bearing cases was observed. This is sufficient prospective binding for this zero-credit Forge gate.
+False-negative/over-terminalization risk is low-to-moderate. #35 is deferred rather than permanently closed and the programme has demonstrated a working independent-trigger path. Risk would increase if `DEFERRED_INDEPENDENT_REIDENTIFICATION` became implicit permanent closure, or if R43's coalition/validation requirements were generalized to narrow SYSTEM claims or exploratory PRE_FORMAL work.
 
-## Moving-goalpost / rescue risk
+Development and PRE_FORMAL calibration remain well calibrated. Repeated development observations receive zero independent confirmatory credit. R43 should refine later claim contracts, not prevent iterative OPEN/PRE_FORMAL development.
 
-Current rescue-laundering risk is low. The old R100 object was not read into the probe implementation, the old result was not used as positive evidence, and no search around failed conditions followed the kill. Control and Analyst both explicitly prohibit further tuning/search around `RVT35-FORGE-001`.
+Bootstrap remains complete and conservative. There is still no observed `REVISIT_CANONICALIZE`, so canonicalization quality remains `INSUFFICIENT_EVIDENCE`.
 
-The remaining control risk is semantic: because the recorded historical Revisit decision still says `REVISIT_FORGE_TEST` after the test is exhausted, an actor that keys only on the decision field rather than status/probe-count/prose could misread it as still executable. Record a terminal post-probe Revisit decision (`REVISIT_REJECTED` or `REVISIT_DORMANT`, whichever the Analyst means) prospectively in the next Analyst state; do not rewrite R119 history.
-
-## Revisit calibration / over-terminalization
-
-The first full Revisit adversarial loop is now informative. The programme successfully caught a genuinely independent trigger, formulated a distinct question, allowed exactly one bounded zero-credit Forge path, and stopped after an ordinary reduction killed the fresh rationale. That is strong evidence against zombie inflation.
-
-False-negative / over-terminalization risk is currently low-to-moderate, not zero. The accepted kill is valid for the exact R3/RVT35 fresh question because ordinary-reduction survival was a predeclared requirement. It does not establish that all possible future Candidate-35-adjacent questions are worthless. R121's `DEFERRED_INDEPENDENT_REIDENTIFICATION` is therefore appropriate only if interpreted as “this trigger is exhausted; wait for genuinely new information,” not as permanent `CLOSED_STRONG` closure. The current state does make that distinction.
-
-## Bootstrap quality
-
-Bootstrap remains complete and conservative. Candidate #35's historical result stays narrow: same frozen response signature under R100, not general causal irrelevance. The newly exhausted trigger is recorded as historical context without rewriting old evidence or manufacturing confirmatory credit.
-
-## Claim-type / mechanism-supply findings
-
-SYSTEM/MECHANISM boundaries remain intact. Candidate #35 remains terminal SYSTEM and was not upgraded. A future successor is not pre-authorized as MECHANISM and would require a fresh claim ceiling, independent question, reduction/comparator/falsifier contract, informative negative and fresh development state.
-
-Canonical executable MECHANISM supply remains `0`. This is a throughput condition, not evidence that standards are too strict. The now-exhausted #35 Revisit trigger must not be recycled simply to create supply.
-
-## Pass reachability
-
-PASS remains realistically reachable for genuinely fresh prospective candidates without relaxing evidence standards. The hard one-way mechanics remain demonstrated by H7. Future FORMAL evidence publication still needs prospective annotated provenance-tag enforcement so a scientifically valid run also becomes policy-conforming evidence identity.
-
-## Provenance/publication calibration
-
-Independent ref reconstruction remains unchanged: five annotated `evidence/*` tag objects and the H7 evidence ref as a lightweight direct-commit tag. `authoritative_tag_form_and_provenance=TIGHTEN` remains prospective only. Existing H7 refs/result must remain untouched. The policy explicitly requires annotated creation, no replacement, and peeled-target verification for new authoritative tags.
+SYSTEM/MECHANISM boundaries remain intact. Canonical executable MECHANISM supply is `0`; this is a supply condition, not evidence for relaxing gates. PASS remains realistically reachable prospectively without weakening standards because claim burden can scale with claim scope.
 
 ## Prospective recommendations
 
-1. Accept the current `RVT35-FORGE-001` ordinary-reduction kill as a valid zero-credit rejection of this fresh rationale; do not rerun or search around it.
-2. Distinguish `ANALYTIC_OR_STATIC_FORGE_KILL` from `EXACT_BRANCH_EXECUTED_PROBE_RESULT` in Forge/Analyst metrics when exact branch execution did not occur. Do not claim an empirical execution that was blocked.
-3. In the next prospective Analyst state, close the exhausted Revisit proposal with one explicit allowed decision (`REVISIT_REJECTED` or `REVISIT_DORMANT`) while keeping R119 historical `REVISIT_FORGE_TEST` immutable and Candidate #35 terminal. This is control-state clarification only, not historical rewriting.
-4. Keep Candidate #35 `DEFERRED_INDEPENDENT_REIDENTIFICATION` unless genuinely new independent information arrives. Do not recycle Audit R10/Literature R42/RVT35 as a new trigger.
-5. If genuinely new information later arrives, require a fresh proposal/question and zero inherited credit; any canonical successor still needs a fresh ID, reduction/comparator/falsifier contract and informative negative outcome.
-6. Keep H7 identity, outcome, result commit and all existing refs immutable. For future FORMAL publication, require annotated provenance-bearing tag creation and peeled-target verification before counting evidence as policy-conforming.
+1. Preserve R122's explicit analytic/static-kill versus exact-execution distinction; do not rerun RVT35 merely for execution fidelity.
+2. Add one append-only current Revisit decision (`REVISIT_REJECTED` or `REVISIT_DORMANT`) for the exhausted #35 trigger while preserving historical `REVISIT_FORGE_TEST` and the old terminal object.
+3. Keep R43 interaction-aware attribution split by claim type: require coalitional/multivariate attribution for broad unique/privileged responsibility, not every narrow SYSTEM effect or all PRE_FORMAL exploration.
+4. Require ordinary-dynamics adequacy and held-out intervention-response adequacy when a surrogate is used as a mechanism discriminator/independent comparator capability; do not impose the mechanism-level burden on descriptive/predictive SYSTEM use.
+5. Future handoffs should cite the actually resolvable Candidate #35 raw ref/commit. Do not recreate a missing `preserve/cand35*` ref to cosmetically align history.
+6. Keep H7 identity/result/refs immutable. For future FORMAL evidence, require annotated provenance-bearing tag creation plus peeled-target verification before counting the evidence identity as policy-conforming.
 7. Do not weaken gates because canonical MECHANISM supply is zero.
 
 ## Utility request
 
-None. The required bounded support tooling and the one authorized Forge path already exist and have been exhausted. Another Utility request would risk duplicate probing or rescue-surface expansion.
+None. No bounded Utility proposal is warranted.
 
 ## Hard-floor confirmation
 
-This auditor dispatched no experiment, consumed no identity, mutated no research/evidence ref, merged no PR, changed no scheduler, and changed no scientific criterion. No consumed FORMAL rerun/retune/rescore, evaluator leakage, historical PASS/FAIL rewrite, silent post-FORMAL repair, terminal-object reactivation, old Candidate #35 reopen, or inherited confirmatory credit was observed.
+This audit dispatched no experiment, consumed no identity, mutated no research/evidence/scientific ref, merged no PR, changed no scheduler, changed no scientific criterion directly, accessed no protected held-out payload, reopened no terminal object, and reran/retuned/rescored no consumed FORMAL identity. No historical PASS/FAIL rewrite was observed.
 
-## Confidence
+## Confidence / Control-Analyst questions
 
-`HIGH` (`0.97`).
+Confidence: `HIGH_0.98`.
 
-## Questions for Control / Analyst
-
-- Will the next Analyst state record an explicit post-probe Revisit decision (`REVISIT_REJECTED` or `REVISIT_DORMANT`) instead of leaving the exhausted proposal's only decision as historical `REVISIT_FORGE_TEST`?
-- Will Forge/Analyst metrics distinguish exact executable-probe runs from analytic/static ordinary-reduction kills when sandbox execution never occurred?
-- Will `DEFERRED_INDEPENDENT_REIDENTIFICATION` continue to mean the current trigger is exhausted but genuinely new independent information may still create a fresh question, rather than functioning as an implicit permanent closure?
-- Will future FORMAL publication make annotated provenance-bearing tag creation plus peeled-SHA verification a hard precondition for policy-conforming evidence?
+- Record one designated current Revisit decision for the exhausted #35 trigger without rewriting historical `REVISIT_FORGE_TEST`?
+- Keep R43 explicitly split by claim type/stage so it cannot become a hidden second FORMAL gate?
+- Use the resolvable Candidate #35 raw ref/commit in future provenance records rather than the non-resolving historical preserve label?
+- Enforce annotated authoritative tags plus peeled-SHA verification for future FORMAL evidence while leaving H7 historical refs untouched?
