@@ -1,165 +1,114 @@
-# SparkBrain Methodology Calibration Audit — R105
+# SparkBrain Methodology Calibration Audit — R106
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260924T123549+0900-R105-9F3C7A21`
-- generated_at: `2026-09-24T12:35:49+09:00`
+- generation_id: `METHCAL-20260924T124114+0900-R106-C84E6B31`
+- generated_at: `2026-09-24T12:41:14+09:00`
 - authority_scope: `METHODOLOGY_ADVISORY_ONLY`
-- supersedes: `METHCAL-20260924T111949+0900-R104-6B8E2D41`
-- overall_classification: `WELL_CALIBRATED`
+- supersedes: `METHCAL-20260924T123549+0900-R105-9F3C7A21`
+- overall_classification: `MIXED_CALIBRATION`
 - new_scientific_result: `false`
 
 ## Executive calibration
 
-This is a material positive transition from R104. The prior H7 end-to-end bridge/controller pin defect was repaired prospectively without changing H7 science. A fresh Evidence Analyst R114 independently re-fetched and exact-bound the repaired controller/bridge bundle and issued one-shot `GO_ONCE` authority. The bridge subsequently dispatched the exact formal workflow.
+R106 supersedes the in-run R105 snapshot because H7 completed its scoring/final-ref step after R105 was persisted. The core one-way scientific execution order is well calibrated: one exact-bound fresh identity crossed START once, target-blind raw was remotely preserved and frozen before target-side scoring, and the final score commit was then created. No rerun, retune, rescore, second identity, or post-outcome scientific repair was observed.
 
-Authoritative repository refs now show one fresh H7 START identity and one remotely preserved target-blind raw artifact. The raw preserve commit is also referenced by a `freeze/h7-r5-*` tag. No H7 `formal/`, `sealed/`, or `evidence/` final tag is present at this audit snapshot. Therefore the current identity has crossed the irreversible START boundary and is `CONSUMED_ONE_WAY`, while final scoring/sealing remains unobserved.
+A new finalization defect is material, however. The H7 `freeze/*`, `formal/*`, `sealed/*`, and `evidence/*` refs are lightweight tags whose ref object directly targets a commit. Stable-main policy `docs/AUTHORITATIVE_TAGS.md` defines new authoritative scientific tags as annotated tags and the authoritative-tag workflow adds provenance metadata, exact target verification and a no-replacement contract. The five pre-existing authoritative `evidence/*` refs are annotated tag objects, while the new H7 evidence ref is a lightweight tag. Therefore the run's scientific bytes and one-way order are preserved, but its final authoritative-evidence identity does not conform to the repository's designated authoritative-tag representation.
 
-Candidate #35 remains terminal. The independent treatment/readout support audit has now been canonically recognized only as orthogonal `REVISIT_TRIGGERED` metadata; no old ID was reopened, no successor exists, no Revisit Forge test was authorized, and no confirmatory credit was inherited.
+This is not grounds to rerun, rescore, retag in place, delete, move or rewrite the H7 result. The consumed identity and score commit are final historical facts. Any provenance/authority remediation must be explicit, append-only and science-invariant, and must not replace existing refs or change the scientific decision.
 
-## Prior-history-first reconstruction
+Candidate #35 remains terminal and `REVISIT_TRIGGERED`; no successor, Revisit Forge test, or inherited confirmatory credit was observed.
 
-R104 was read before current state. R104 classified the programme `MIXED_CALIBRATION` because (a) the repaired H7 controller was internally self-consistent but the dormant bridge/request still pinned the pre-repair controller, and (b) Candidate #35 had a plausible candidate-specific Revisit signal awaiting fresh Analyst adjudication.
+## Prior-history-first / authoritative reconstruction
 
-Current authoritative reconstruction:
-- stable main: `d16403414fc7abebd23075fc401240971b8eb91d`
-- frozen H7 science: `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`
-- repaired H7 controller: `af3aa97574c365e3e918c3d4d012faa4886760d0`
-- current exact launch workflow blob: `1c4e2199740397c1afbbcc66e89d83f41fe54b21`
-- Evidence Analyst R114 commit: `1824290d67fdf06494c3849fa687997ec29137cf`
-- Control R55 commit: `7fad3ddb4d9c2fab9415c166a09de904358da529`
-- bridge dispatch state: `977e0241f390f6504ebfa4a27a389a487751038c`
-- START commit: `52b17b785364f96cc2e95507b2336252459d5352`
-- preserve commit: `a5e76e7eb117e0270cfdc138fb9da30d696aa7c0`
-- freeze tag points to the preserve commit
-- existing authoritative `evidence/*` tags: exactly 5; no H7 final evidence tag at snapshot
+Prior methodology history R104 and the in-run R105 snapshot were read before this final reconstruction. Ops mailboxes remain control history only.
 
-Ops records are used only as control-history inputs. START/preserve/freeze and final-tag absence were independently re-fetched from repository refs.
+Authoritative repository observations:
+- H7 exact frozen science and controller are unchanged from the R114 one-shot authorization;
+- exactly one H7 START ref exists and binds Analyst R114, controller, frozen science, runtime, scorer and protected-evaluation commitment;
+- exactly one H7 preserve ref exists;
+- the preserve manifest states `preserve_before_target_access: true`;
+- the H7 freeze ref points to the preserve commit;
+- H7 final `formal/`, `sealed/`, and `evidence/` refs now all point to the same final score commit;
+- no second H7 identity/ref family was observed;
+- the final score was produced only after the preserve stage in the prospective workflow.
+
+The audit does not reinterpret the scientific decision contained in the final score.
 
 ## Development iteration calibration
 
-`KEEP`.
-
-The H7 development object was `RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED` before formal launch. The preceding controller/bridge changes were implementation/binding repairs only: no metric, scorer meaning, comparator, threshold, seed/exclusion policy, intervention, resource contract, hypothesis, falsifier, success criterion, or scientific source changed.
-
-The important state transition has now occurred: once `control/h7-r5-...-started` was created, this identity ceased to be development and became `CONSUMED_ONE_WAY`. From that point, even a purely infrastructural failure cannot authorize same-identity repair/retry. The current identity must be preserved as-is and later adjudicated by a fresh Analyst.
-
-Cycle 3 remains a reassessment point, not an automatic cap. No evidence of cycle-count-driven terminalization was found.
+`KEEP`. Pre-START H7 repair remained science-invariant. After START the identity became `CONSUMED_ONE_WAY`. No post-START repair or retry was observed. Cycle 3 remains a reassessment point rather than an automatic terminal cap.
 
 ## PRE_FORMAL calibration
 
-`KEEP`.
-
-The programme allowed meaningful bounded development and no-result infrastructure repair while H7 remained PRE_FORMAL, without awarding independent confirmatory credit. READY meant the next formal test was well-defined and launchable after exact binding, not that the candidate had already succeeded.
-
-No hidden second formal gate was introduced: after exact preconditions were satisfied, one fresh identity was actually allowed to cross START.
+`KEEP`. PRE_FORMAL allowed genuine bounded development and infrastructure testing with zero independent confirmatory credit. READY was not conditioned on prior scientific success, and the programme ultimately crossed the formal boundary without an extra hidden success gate.
 
 ## FORMAL one-way integrity
 
-`KEEP`.
+`KEEP` for execution ordering and identity consumption.
 
-The current workflow prospectively enforced:
-1. exact current Analyst generation/commit and one-shot authority;
-2. exact controller and exact frozen science;
-3. unused one-way namespaces before identity;
-4. locked runtime/preflight before identity;
-5. create-only START;
-6. target-blind raw generation only after START;
-7. remote raw preservation to a create-only preserve ref;
-8. a freeze tag pointing to that exact preserve commit;
-9. target-side scoring only after remote preservation is verified;
-10. create-only final `formal/`, `sealed/`, and `evidence/` refs.
+Observed sequence is consistent with the hard floor: fresh exact-bound one-shot authorization; unused namespace check; locked-runtime preflight; one create-only START identity; target-blind raw; remote preserve/freeze before target-side scoring; scoring after preservation; one final result commit; create-only final refs with no observed overwrite.
 
-Observed repository state matches the critical early ordering:
-- exactly one H7 START ref exists;
-- the START bundle binds Analyst R114, controller, frozen science, runtime, scorer and protected-evaluation commitment;
-- one preserve ref exists;
-- its manifest says `preserve_before_target_access: true`;
-- the freeze tag points to the preserve commit;
-- no H7 final formal/evidence/sealed tag exists yet.
+The namespace guard now prevents a normal rerun from creating a second H7 identity because the existing H7 refs collide before identity creation. The current identity remains one-way consumed regardless of scientific outcome.
 
-The workflow also checks the H7 one-way namespaces before identity. Therefore a rerun/re-entry after the existing START/preserve refs should fail before a new identity can be created. This materially protects the one-shot rule.
+## Authoritative evidence identity / immutability
 
-Current audit disposition: the H7 identity is already consumed. Do not rerun, retune, rescore, repair, or silently restart it. If scoring succeeds, independently verify final refs. If any infrastructure failure occurs after START, preserve that failure and require fresh Analyst adjudication rather than retrying.
+`TIGHTEN` / `CLARIFY`.
+
+The repository's authoritative-tag policy says new authoritative scientific identities use annotated Git tags when tooling permits, and the designated workflow creates an annotated tag carrying provenance and verifies its peeled exact commit. It separately documents that namespace ruleset protection is a remaining protection gap.
+
+The new H7 refs are not annotated tag objects: GitHub reports H7 `freeze`, `formal`, `sealed`, and `evidence` refs as direct commit targets. The H7 workflow did enforce create-only collision checks and all final refs point to the same exact result commit, so there is no evidence of scientific-byte mutation or outcome rewriting. But the new `evidence/*` ref does not conform to the repository's normal authoritative annotated-tag representation and lacks a separate annotated tag object's provenance payload.
+
+Do not move, delete, overwrite or replace any H7 tag. Do not rerun or rescore H7. Before counting the H7 `evidence/*` ref as equivalent to the five existing authoritative annotated evidence tags, require a fresh Analyst/Steward adjudication. If existing policy permits a provenance-only remediation, it must be a distinct create-only annotated identity pointing to the exact already-final result commit and must not alter the old tag, score, result bytes, or historical decision.
 
 ## Revisit / resurrection calibration
 
-`KEEP` for trigger sensitivity and anti-laundering; `INSUFFICIENT_EVIDENCE` for actual `REVISIT_FORGE_TEST` and `REVISIT_CANONICALIZE`.
+`KEEP` for trigger sensitivity and anti-laundering; `INSUFFICIENT_EVIDENCE` for actual Revisit Forge/canonicalization behavior.
 
-Bootstrap remains complete for all 34 terminal current objects:
-- `CLOSED_STRONG`: 1
-- `DORMANT_REVISITABLE`: 19
-- `DEFERRED_INDEPENDENT_REIDENTIFICATION`: 13
-- `REVISIT_TRIGGERED`: 1
+Bootstrap remains complete for all 34 terminal objects. Candidate #35 is the sole `REVISIT_TRIGGERED` object. The old ID remains terminal, its historical result is unchanged, confirmatory credit is zero, and there is no automatic successor. There is still no dedicated Revisit decision, `REVISIT_FORGE_TEST`, or `REVISIT_CANONICALIZE` event.
 
-Candidate #35 is the sole triggered object. This is a useful live test of the ledger: a candidate-specific independent audit found that the old R100 treatment changed non-receptor state while the declared response was receptor spikes, so the treatment-to-readout causal opportunity was not demonstrated by that development negative.
-
-Calibration is currently correct because:
-- #35 remains `TERMINAL_FOR_CURRENT_OBJECT`;
-- its historical result is not rewritten;
-- confirmatory credit remains zero;
-- no old ID is reactivated;
-- no automatic successor is created;
-- no Forge probe is run without a dedicated Revisit decision.
-
-This is evidence against over-terminalization: the system noticed a meaningful changed-understanding trigger instead of forgetting the line. It is also evidence against zombie inflation: recognition of the trigger did not revive the old hypothesis.
-
-The next valid step, if any, is a dedicated fresh Revisit decision. A `REVISIT_FORGE_TEST` may test only the new causal-opportunity/readout-sensitivity rationale and should try to kill it cheaply. It must not rerun or retune the old priming experiment. `REVISIT_CANONICALIZE` remains untested and would require a fresh candidate ID, a meaningfully distinct question, fresh reduction/comparator/falsifier contract, informative negative outcome, and zero inherited credit.
+This shows useful sensitivity to a potentially valuable old line without zombie revival. Any future Forge probe must test only the new causal-opportunity/readout-sensitivity rationale and try to kill it cheaply; it must not rerun or retune old R100 priming.
 
 ## SYSTEM / MECHANISM successors
 
-`KEEP`.
-
-No same-object post-outcome SYSTEM→MECHANISM upgrade was observed. Candidate #35 remains SYSTEM and terminal. No fresh successor has been manufactured merely by renaming the old object. The current Revisit trigger may eventually motivate a fresh successor, but only after independent Revisit gating and a full fresh prospective contract.
-
-No concrete legitimate successor is currently being suppressed: #35 is no longer forgotten, but it has not yet earned a successor.
+`KEEP`. No terminal SYSTEM object was changed back to ACTIVE or upgraded in place. No fresh successor has been manufactured from #35.
 
 ## Theory / Forge calibration
 
-`KEEP`.
+`KEEP`. Theory and Forge remain noncanonical and zero-credit. Fast Forge did not self-authorize from the #35 trigger. No promotion leakage or rescue probing was observed.
 
-Theory and Fast Forge remain separated from canonical evidence and carry zero confirmatory credit. R114 reports no fresh Theory proposal, no Revisit proposal, no Revisit Forge referral and no successor. Fast Forge returned NO_OP rather than self-authorizing work from the #35 trigger. This is the correct anti-rescue behavior.
+## Funnel / observability / pass reachability
 
-The actual Revisit Forge-test policy remains untested because no such test has run.
+The formal pathway is operationally reachable without weakening evidence standards: H7 completed the prospective START → preserve → score path under fixed scientific semantics. This argues against a hidden second FORMAL gate.
 
-## Funnel / claim-type / observability
+The next canonical Analyst state should reconstruct H7 as `CONSUMED_ONE_WAY` and record the final score commit, while separately adjudicating whether the lightweight H7 `evidence/*` tag meets the repository's authoritative-evidence identity requirement. It must not rewrite R114 or the formal result.
 
-Claim-ceiling enforcement remains calibrated. H7 entered formal testing as a MECHANISM candidate under its existing frozen contract; terminal SYSTEM objects were not upgraded.
-
-One observability clarification is now important: the designated Analyst state R114 was necessarily pre-START and described H7 as PRE_FORMAL/READY/QUEUED. Authoritative refs now supersede that operational snapshot for lifecycle reconstruction: the current identity is `CONSUMED_ONE_WAY`. This is not a reason to rewrite R114. The next fresh Analyst should explicitly record the post-START state, irrespective of whether scoring succeeds or fails.
-
-Mechanism supply remains thin. Before launch, H7 was the sole active canonical candidate. This is a throughput risk but not a reason to relax evidence standards. Revisit, Theory and Forge remain appropriate zero-credit supply channels.
-
-## Pass reachability
-
-`KEEP`.
-
-PASS is realistically reachable without weakening evidence standards. The programme has now crossed exact-bound START and target-blind raw preservation under the same prospective contract that enforces one-way scoring. That demonstrates the previous infrastructure gates were not a hidden requirement that demanded prior scientific success.
-
-No PASS/FAIL is inferred by this audit. Final scoring/sealing/evidence refs were absent at the snapshot.
+Mechanism supply remains thin but does not justify lowering scientific gates.
 
 ## False-positive / false-negative risks
 
-False-positive / rescue risk: `LOW`.
-The main live risk would be treating #35's Revisit trigger as proof or repeatedly probing old R100 conditions until a positive appears. Neither has happened.
+False-positive / rescue risk is low for science, but moderate for evidence-status bookkeeping if the lightweight H7 evidence ref is silently counted as equivalent to an authoritative annotated evidence tag without adjudication.
 
-False-negative / over-terminalization risk: `LOW_TO_MODERATE`.
-Candidate supply remains sparse, but #35 shows that the Revisit ledger can catch a candidate-specific trigger without reopening the object. End-to-end Revisit behavior remains unproven until a real Revisit decision and, if warranted, a bounded new-trigger Forge probe occur.
+False-negative / over-terminalization risk remains low-to-moderate. #35 demonstrates useful trigger sensitivity, but no full Revisit decision has yet been tested.
 
 ## Gate classifications
 
-- Hard integrity floor: `KEEP`
+- Hard scientific integrity floor: `KEEP`
 - Development-phase monotonicity: `KEEP`
 - Cycle-3 reassessment: `KEEP`
 - Science-invariant vs science-affecting repair distinction: `KEEP`
-- Development observation credit: `KEEP`
+- Development observations as independent evidence: `KEEP`
 - PRE_FORMAL genuine iteration: `KEEP`
-- READY semantics / no hidden second FORMAL gate: `KEEP`
+- READY / no hidden second FORMAL gate: `KEEP`
 - Exact FORMAL binding: `KEEP`
-- Fresh identity once / namespace collision guard: `KEEP`
-- START → CONSUMED_ONE_WAY transition: `KEEP`
+- Fresh identity once: `KEEP`
+- START → CONSUMED_ONE_WAY: `KEEP`
 - Raw-before-score: `KEEP`
 - Preserve-before-read: `KEEP`
-- Same-identity post-START repair/retry: `KEEP` (forbidden and technically guarded)
+- Same-identity post-START retry/repair prohibition: `KEEP`
+- Final result commit consistency: `KEEP`
+- New authoritative evidence tag form: `TIGHTEN`
+- Authoritative provenance metadata completeness: `TIGHTEN`
+- Namespace server-side protection: `CLARIFY`
 - Terminal object non-reactivation: `KEEP`
 - Fresh SYSTEM→MECHANISM successor contract: `KEEP`
 - Revisit ledger coverage/conservatism: `KEEP`
@@ -168,44 +117,43 @@ Candidate supply remains sparse, but #35 shows that the Revisit ledger can catch
 - Revisit Forge new-trigger-only behavior: `INSUFFICIENT_EVIDENCE`
 - Revisit canonicalization gate: `INSUFFICIENT_EVIDENCE`
 - Theory/canonical separation: `KEEP`
-- Fast Forge/canonical separation: `KEEP`
+- Forge/canonical separation: `KEEP`
 - Mechanism-supply health: `CLARIFY`
-- Post-START funnel observability: `CLARIFY`
-- PASS reachability without standard relaxation: `KEEP`
+- PASS reachability without weaker standards: `KEEP`
 
 ## Mandatory questions
 
-1. Development phases consistent end-to-end? **Yes.** H7 crossed into a single consumed one-way identity only after fresh exact-bound authorization.
+1. Development-phase semantics consistent end-to-end? **Yes.**
 2. Cycle 3 mistaken for a hard cap? **No evidence of that.**
-3. Science-invariant vs science-affecting distinguished? **Yes.**
-4. Development observations excluded from independent evidence credit? **Yes.**
-5. FORMAL one-way integrity unchanged? **Yes so far.** START is unique and raw preservation precedes scoring; final seal/evidence is still pending.
-6. Legitimate SYSTEM→MECHANISM successors suppressed/manufactured? **Neither observed.**
+3. Science-invariant vs science-affecting changes distinguished? **Yes.**
+4. Development observations kept out of independent evidence credit? **Yes.**
+5. FORMAL one-way integrity unchanged? **Yes for execution/order/one-shot semantics; final authoritative-tag representation needs tightening.**
+6. Legitimate fresh SYSTEM→MECHANISM successors suppressed or manufactured? **Neither observed.**
 7. PRE_FORMAL genuine development? **Yes.**
-8. Terminal semantics calibrated? **Yes.** Old terminal objects remain terminal.
-9. Revisit ledger catches genuinely changed conditions? **Yes for sensitivity:** #35 became `REVISIT_TRIGGERED` on candidate-specific independent input.
-10. Revisit avoids rescue/zombies? **Yes so far.**
-11. Revisit Forge probes test new triggers? **Insufficient evidence:** none has run.
+8. Terminal semantics calibrated? **Yes.**
+9. Revisit ledger catches genuinely changed conditions? **Yes for trigger sensitivity via #35.**
+10. Revisit avoids rescue laundering/zombie inflation? **Yes so far.**
+11. Revisit Forge tests the new trigger? **Insufficient evidence; no such probe has run.**
 12. Bootstrap complete/conservative? **Yes, 34/34.**
-13. PASS reachable without weaker standards? **Yes.** The one-way path reached START and remote raw preservation under the unchanged hard floor.
+13. PASS realistically reachable without weaker standards? **Yes as a process property; the one-way formal pipeline completed without relaxing scientific gates.**
 
 ## Prospective recommendations
 
-1. Treat `h7-r5-285a3a206b34c5982b9d4045` as irrevocably consumed from START. No same-identity retry or repair is valid, including after infrastructure failure.
-2. Do not infer H7 scientific outcome until create-only final formal/sealed/evidence refs exist and are independently re-fetched.
-3. Next Analyst should reconstruct H7 from authoritative refs and explicitly record `CONSUMED_ONE_WAY`; do not rewrite the pre-START R114 history.
-4. For #35, require a dedicated fresh Revisit decision before Forge. If Forge is selected, test only the new treatment-to-readout causal-opportunity/readout-sensitivity rationale and try to falsify it cheaply.
-5. Keep #35 terminal and zero-credit. Any later canonical successor requires a fresh ID and complete prospective contract.
+1. Never rerun, retune, rescore or repair the consumed H7 identity. The final score commit and existing refs are historical and must remain untouched.
+2. Fresh Analyst/Steward should adjudicate the H7 lightweight-tag mismatch before counting its `evidence/*` ref as equivalent to the repository's existing authoritative annotated evidence tags.
+3. If a provenance-only annotated mirror is permitted, create it only as a distinct append-only identity pointing to the exact existing result commit, using the established authoritative-tag mechanism; never replace or retarget the existing H7 refs.
+4. Keep Candidate #35 terminal while a dedicated Revisit decision assesses only the new candidate-specific trigger. No old-experiment rescue rerun.
+5. Keep evidence standards unchanged; candidate scarcity is not a reason to relax them.
 
 ## Utility request
 
-None. No additional utility proposal is needed to test calibration in this generation.
+None.
 
 ## Hard-floor confirmation
 
-The auditor did not dispatch experiments, consume identities, mutate research/evidence refs, merge PRs, change schedulers or alter scientific criteria.
+The auditor did not dispatch experiments, consume identities, mutate research/evidence refs, merge PRs, alter schedulers or change scientific criteria. No consumed identity was rerun/retuned/rescored by the auditor. No terminal object was reopened and no historical PASS/FAIL was rewritten.
 
-No consumed FORMAL identity was rerun, retuned or rescored by the auditor. No historical PASS/FAIL was rewritten. No terminal object was reactivated. No same-object SYSTEM→MECHANISM upgrade was performed. No evaluator/held-out leakage or silent post-FORMAL repair was observed in the audited transition.
+The H7 run itself preserved one-way execution order. The newly identified problem is evidence-identity/provenance representation, not a reason to alter or repeat the scientific result.
 
 ## Confidence
 
@@ -213,5 +161,6 @@ No consumed FORMAL identity was rerun, retuned or rescored by the auditor. No hi
 
 ## Questions for Control / Analyst
 
-- After the observed H7 START, will the next canonical Analyst generation explicitly mark this identity `CONSUMED_ONE_WAY` regardless of whether the downstream score/seal succeeds or infrastructure fails?
-- Will Candidate #35 receive a dedicated Revisit decision before any Forge action, with any probe restricted to the newly identified causal-opportunity/readout-sensitivity question?
+- Will the next Analyst distinguish the immutable historical H7 result commit from whether its lightweight `evidence/*` ref satisfies the authoritative annotated-tag policy?
+- If provenance remediation is needed, will it be append-only to the exact existing result commit, with no replacement of existing refs and no change to the formal decision?
+- Will #35 receive a dedicated Revisit decision before any Forge probe, with the old candidate remaining terminal?
