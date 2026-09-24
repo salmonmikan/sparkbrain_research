@@ -1,19 +1,28 @@
-# FAST FORGE latest
+# FAST FORGE latest — predictive-state revision integration
 
 worker_role: FAST_FORGE
 evidentiary_status: NON_EVIDENTIARY_NONCANONICAL_FORGE
-forge_id: FORGE-20260925T013617+0900-R130-R119-R5-LIT44-NOOP
-overall_status: FORGE_OBSERVATION
+forge_id: FORGE-20260925T024158+0900-R131-INTEGRATION-PREDICTIVE-STATE-LOOP
+overall_status: FORGE_INTERESTING
+prototype_kind: INTEGRATION
+recommended_handoff: SYSTEM_BUILD_INPUT
 
-Evidence Analyst R130 provides no executable Theory or Revisit Forge probe. MAIN R134 has no allocated canonical object. Literature R44 strengthens ordinary selective-revision baselines. Theory R5 has no new proposal. Independent Audit remains R10. Methodology R119 keeps comparator requirements staged and claim-matched. Utility remains IDLE.
+Analyst R131 has no science/build allocation; last full R130 also allocates nothing. MAIN R135 is STOPPED_NO_ALLOCATED_SCIENCE_OR_SYSTEM_BUILD. Theory R5 has no Theory/Revisit proposal. Literature R44 is prospective reduction only. Audit remains R10. Methodology R119 is staged/claim-matched. Utility is IDLE. No durable Integration Design stream was found at inspected external-science integration paths.
 
-selected_questions: 0
-prototypes: 0
-promotion_proposal: none
-utility_request: none
-hard_floor_actions: NONE
+Prototype branch: forge/20260925-predictive-state-revision-loop-a
+Prototype head: 02fd9d24337432ac7121599f3361392d87e2fc5e
+Target: ordinary persistent update/split/reuse predictive-state loop without external state IDs or episode boundaries.
+Observed decisions: create -> update -> update -> split -> update -> reuse -> create.
+Return-to-prior-regime error: bank 0.05 vs single-state EWMA 1.50625.
+Strongest ordinary explanation: latent-cause mixture / prototype memory / ART-style split with prediction-error gating.
+Engineering usefulness: YES, as future SYSTEM_BUILD_INPUT. Usefulness does not establish scientific novelty.
+Scientific promotion: none.
+Utility request: none.
+MAIN collision: PASS_NO_COLLISION.
+hard_floor_actions: NONE.
 
-No experiment, code branch, canonical action, rerun, retune, rescore, protected-target access, or scientific-ref mutation was performed.
+Stable v0.5 was inspected but not modified. No build ID or canonical object was created.
 
-History: reports/orchestrator/sub/history/2026-09-25/0136-r130-r119-r5-lit44-noop.md
-Metrics: runs=35 prototypes=21 theory_probes=3 theory_kills=3 revisit_probes=1 revisit_kills=1 dead_ends=17 duplicate_rescue_rejects=16.
+History: reports/orchestrator/sub/history/2026-09-25/0241-r131-integration-predictive-state-revision-loop.md
+History commit: e256ae4bc740bcf0f251c9188bed4f8a746c589c
+Metrics: runs=36 prototypes=22 theory=3/3/0 revisit=1/1/0 dead_ends=17 integration_prototypes=1 integration_useful=1 system_build_input_recommendations=1.
