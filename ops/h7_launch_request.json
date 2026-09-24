@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "request_kind": "H7_R5_ONE_SHOT_LAUNCH_REQUEST",
+  "armed": false,
+  "status": "DORMANT_CAPABILITY_READY_FOR_FRESH_ANALYST_REVALIDATION",
+  "controller_sha": "042d00375278d551dbf643ad866a4c883852804d",
+  "science_sha": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+  "analyst_generation_id": null,
+  "analyst_commit": null,
+  "requested_by": null,
+  "requested_at": null,
+  "note": "Do not arm until a fresh Evidence Analyst generation observes this bridge capability, revalidates exact bindings, sets H7.executor_trigger_capable=true and H7.effectively_executable=true, and retains explicit GO_ONCE formal authority."
+}
