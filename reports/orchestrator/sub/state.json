@@ -4,59 +4,44 @@
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "latest_status": "FORGE_OBSERVATION",
   "current_run": {
-    "forge_id": "FORGE-20260925T003441+0900-R129-R118-AUDIT-GAP-NOOP",
+    "forge_id": "FORGE-20260925T013617+0900-R130-R119-R5-LIT44-NOOP",
     "theory_id": null,
     "source_candidate": null,
     "revisit_trigger": null,
     "analyst_classification": null,
     "analyst_probe_spec": null,
     "selected_questions": [],
-    "why_now": "Fresh Evidence Analyst R129, Methodology R118 and Utility R129 reconciliation confirm an external Independent-Audit durability/discovery-liveness gap but authorize no new science, Theory Forge probe or Revisit Forge probe.",
     "branch": null,
     "prototypes": [],
     "diagnostics": [
-      "Evidence Analyst R129 reports no new scientific result and no executable THEORY_FORGE_TEST or REVISIT_FORGE_TEST.",
-      "MAIN R133 is STOPPED_NO_ALLOCATED_CANONICAL_OBJECT; canonical census remains 35/35 terminal, active 0, scientifically queued 0.",
-      "The external-science branch remains at Theory R4; Literature remains R43 and Independent Audit remains R10 with no newer durable Audit publication.",
-      "Methodology R118 classifies the missing Audit durability as discovery-liveness false-negative risk only, not a reason to relax terminal/Revisit criteria.",
-      "Utility R129 reconciliation observed a delayed scheduler invocation opportunity but no durable Audit publication; the internal cause is not established and Utility created no Forge request."
+      "Analyst R130: no executable THEORY_FORGE_TEST or REVISIT_FORGE_TEST.",
+      "MAIN R134: no allocated canonical object; 35/35 terminal, active 0, queued 0.",
+      "Literature R44 strengthens selective-revision ordinary reductions.",
+      "Theory R5: NO_THEORY_PROPOSAL and NO_REVISIT_PROPOSAL.",
+      "Independent Audit remains R10.",
+      "Methodology R119: comparator burden staged and claim-matched.",
+      "Utility IDLE; no Forge support request."
     ],
     "observations": [
-      "No new scientific phenomenon or reduction-resistant residue was selected for Forge experimentation.",
-      "Independent-trigger discovery coverage is temporarily degraded operationally, but no specific missed scientific trigger is identified.",
-      "Forge substitution for the missing Independent-Audit lane was rejected as role/evidence laundering and duplicate rescue work.",
-      "The prior TH-002 zero-credit FORGE_DEAD_END and associative key-value / separable address-plus-state reduction remain unchanged."
+      "No new reduction-resistant phenomenon selected.",
+      "Future selective-revision work should test cue-as-effective-key first.",
+      "Immediate TH-002 key-obfuscation continuation rejected as post-kill rescue."
     ],
     "ordinary_reductions": [
       "NO_NEW_SCIENTIFIC_OBJECT",
+      "CUE_AS_EFFECTIVE_CONTENT_KEY",
+      "DELTA_RULE_FAST_WEIGHT_MEMORY",
+      "GATED_DELTA_RECURRENT_MEMORY",
+      "HRR_VSA_DISTRIBUTED_BINDING",
+      "KALMAN_STATE_SPACE_ASSOCIATIVE_REVISION",
       "PRIOR_TH002_ASSOCIATIVE_KEY_VALUE_MEMORY",
       "PRIOR_TH002_SEPARABLE_ADDRESS_PLUS_STATE"
     ],
-    "strongest_ordinary_reduction": "NO_NEW_OBJECT; prior TH-002 remains ASSOCIATIVE_KEY_VALUE_MEMORY / SEPARABLE_ADDRESS_PLUS_STATE",
     "status": "FORGE_OBSERVATION",
-    "dead_end_reason": null,
     "promotion_proposed": false,
-    "promotion_reason": null,
     "utility_request": null,
     "main_collision_check": "PASS_NO_COLLISION",
-    "hard_floor_action": false,
-    "methodology_guard": {
-      "source": "METHCAL-20260925T001948+0900-R118-D42E7B19",
-      "classification": "KEEP_R117_RESULT_EXPOSED_REVISION_IDENTITY_GUARD_AND_TIGHTEN_DISCOVERY_LIVENESS",
-      "rule": "After a durable development outcome is exposed, comparator semantics, information/resource privilege, metric, threshold, seed/exclusion policy, intervention, hypothesis, falsifier or success-criterion changes require an explicit revision or fresh successor identity while preserving the first outcome.",
-      "retroactive_th002_rerun_authorized": false,
-      "external_audit_gap_is_scientific_trigger": false
-    }
-  },
-  "last_probe": {
-    "probe_spec": "TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL",
-    "theory_id": "TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY",
-    "branch": "forge/th002-static-addressability-kill-20260924",
-    "branch_commit": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
-    "observation": "A fresh permutation-symmetric three-lineage carrier supports selective delayed revision, but the relation is reducible to ordinary addressable memory; Methodology R117/R118 preserves the historical post-result comparator/access repair as a calibration example and requires explicit revision identity prospectively.",
-    "disposition": "FORGE_DEAD_END",
-    "scientific_credit": 0,
-    "methodology_note": "R118 confirms the R117 guard is adopted and does not authorize rerun, relabel or repair of TH002-FORGE-001."
+    "hard_floor_action": false
   },
   "terminal_current_family_scan": {
     "canonical_candidates_total": 35,
@@ -64,31 +49,15 @@
     "canonical_active": 0,
     "canonical_scientifically_queued": 0,
     "candidate34": "CLOSED_STRONG",
-    "candidate35": "DEFERRED_INDEPENDENT_REIDENTIFICATION_TERMINAL_SYSTEM_TRIGGER_AUTHORITY_NONE_EXHAUSTED",
-    "h7": "DORMANT_REVISITABLE_TERMINAL_FORMAL_INCONCLUSIVE_CONSUMED_ONE_WAY",
-    "theory_r4_th002": "FORGE_KILLED_NO_CANONICALIZATION_ZERO_CREDIT_NO_CONTINUATION",
-    "independent_audit_latest": "R10_NO_NEW_DURABLE_OUTPUT",
-    "external_discovery_liveness": "DEGRADED_OPERATIONAL_NOT_SCIENTIFIC_TRIGGER"
-  },
-  "main_collision_check": {
-    "status": "PASS_NO_COLLISION",
-    "main_owner": "NO_ALLOCATED_ACTIVE_OBJECT",
-    "main_primary": "MAIN_R133_STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
-    "avoided": [
-      "H7 identity/START/raw-preserve/freeze/formal/sealed/evidence/scorer/protected evaluator/runtime/workflow and same-object comparator repair",
-      "H7 coalitional-attribution or surrogate retrofit from Literature R43",
-      "Candidate #35 R100 and killed RVT35-FORGE-001 continuation/search/retune/rename",
-      "Candidate #34 same-object or immediate terminal descendants",
-      "A01/C19 old fixtures or outcome-responsive redesign",
-      "TH002-FORGE-001 rerun/relabel solely to repair methodology history",
-      "using FAST FORGE as a substitute Independent Auditor or manufacturing a trigger from missing Audit durability",
-      "scheduler mutation or duplicate Control/Utility operational request",
-      "HUMAN-009 as evidence or dispatch authority",
-      "all consumed/frozen/FORMAL identities and protected held-out targets"
-    ]
+    "candidate35": "DEFERRED_INDEPENDENT_REIDENTIFICATION_TRIGGER_AUTHORITY_NONE_EXHAUSTED",
+    "h7": "TERMINAL_FORMAL_INCONCLUSIVE_CONSUMED_ONE_WAY",
+    "th002": "FORGE_KILLED_NO_CANONICALIZATION_ZERO_CREDIT",
+    "theory_r5": "NO_THEORY_PROPOSAL_NO_REVISIT_PROPOSAL",
+    "literature_r44": "PROSPECTIVE_REDUCTION_LADDER_ONLY",
+    "audit_latest": "R10"
   },
   "metrics": {
-    "runs": 34,
+    "runs": 35,
     "prototypes": 21,
     "theory_probes": 3,
     "theory_kills": 3,
@@ -100,47 +69,26 @@
     "interesting_observations": 1,
     "promotion_proposals": 1,
     "later_admissions": 0,
-    "duplicate_rescue_rejects": 15,
+    "duplicate_rescue_rejects": 16,
     "ownership_collisions": 0,
     "ordinary_reduction_rejects": 17,
     "idea_to_observation_latency": "NO_NEW_IDEA_SELECTED"
   },
   "refs": {
     "main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "evidence_analyst_r129": "dd0a26b51f77ceafd333bab8a03c21100571c078",
-    "evidence_analyst_r129_latest_blob": "0bd83f8aa78ff846b90e59817e52c0338c25016a",
-    "control_r64": "a92e0eaae0260152e311c1c5a4ca0294daf571a5",
-    "orchestrator_mailbox_pre_forge_tip": "9523d84cfae7b3e95ee438864fa58ec86bfa8e0d",
-    "main_r133_latest_commit": "2a1b4903bf7420a6b6b1ad1126be6ca4950e10e0",
-    "main_r133_state_commit": "385371dbec454bcd7073a78670d07374982a5381",
-    "theory_r4_branch_head": "87d206a3f62c70c393531413445703fd0baa108a",
-    "literature_r43_latest_blob": "bc346dac47b85fdcdeae49a85f4036f97a0aee91",
+    "analyst_r130": "6a8eb246233bc04d5f3ca47aaffba99970acf20b",
+    "analyst_latest_blob": "3817561ee03ee6f519e6bdd07ffefeb5ca3ffa29",
+    "main_r134_pre_forge": "9c8c631b1ff4bad2ced30a023541717bdbf541e9",
+    "control_r65": "857998b44ca7954d3875d3957c447ce3414a7d89",
+    "external_science": "594b2d0ec88e46e9d264877d8420a932ae74671d",
+    "literature_r44_blob": "94b9d1401c04e198670e6a9f774a8b4908db4612",
+    "theory_r5_blob": "3933bd3f8f3ea963341332eea2eaa48d0b8457d3",
     "audit_r10_latest_blob": "a89738c837b2e5bc2eab94adb1722bbb6daeb673",
-    "methodology_r118": "2dccd823d7f37a621a477a8a1fbf3d637edc340d",
-    "methodology_r118_latest_blob": "e7a33f5a141d3a4d190390fe44200e2547c91c5b",
-    "utility_r129": "4fa2dafb418814f277ed19919956cec7e61b381d",
-    "utility_r129_durability_record": "593ce17916bb407081a5ac03f90a581ca617a48e",
-    "previous_forge_branch_record_commit": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
-    "history_create_commit": "fedfd47a80f0aff5449f8026d5c6e2246f5f102c",
-    "latest_update_commit": "c89c7c54e804786032b4cfe95fc57d80a54a4caa",
-    "latest_blob": "e91662617b4669e3af22d907e227e8358b3e8b97",
-    "previous_forge_latest_blob": "21c1f9b70418239d7378fd06217aa4c0c5d5ece8",
-    "previous_forge_state_blob": "fd152639b0b699c39d5e35c2db308791896a1a74"
+    "methodology_r119": "0b8cb86935b4a99958856ae634718893849e62d2",
+    "utility": "4fa2dafb418814f277ed19919956cec7e61b381d",
+    "history_create_commit": "975465b7c2d9bbea5ac25aa97d640c655047e62d"
   },
   "hard_floor": {
-    "prohibited_action_occurred_by_forge": false,
-    "preformal_or_formal_identity_created_or_consumed_by_forge": false,
-    "started_created_by_forge": false,
-    "official_test_or_scoring_performed_by_forge": false,
-    "protected_heldout_accessed_by_forge": false,
-    "evidence_formal_sealed_freeze_preserve_ref_mutated_by_forge": false,
-    "consumed_or_immutable_evidence_mutated_by_forge": false,
-    "result_bearing_canonical_workflow_dispatched_by_forge": false,
-    "scientific_research_branch_mutated_by_forge": false,
-    "forge_branch_created_or_modified_this_run": false,
-    "forge_branch_merged_to_main_or_research": false,
-    "terminal_reopened_by_forge": false,
-    "historical_outcome_rewritten_by_forge": false,
-    "scheduler_mutated_by_forge": false
+    "actions": "NONE"
   }
 }
