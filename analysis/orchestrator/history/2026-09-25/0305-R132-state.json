@@ -1,0 +1,11 @@
+{
+  "schema_version": 2,
+  "generation_id": "EVA-R132",
+  "new_scientific_result": false,
+  "canonical": {"total":35,"MECHANISM":14,"SYSTEM":21,"terminal":35,"active":0,"queued":0},
+  "revisit": {"coverage":"35/35","CLOSED_STRONG":1,"DORMANT_REVISITABLE":20,"DEFERRED_INDEPENDENT_REIDENTIFICATION":14,"REVISIT_TRIGGERED":0},
+  "system_build": {"build_id":"BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT","owner":"MAIN","allocation_state":"ALLOCATED_NOT_STARTED","scientific_credit":0,"built":false,"functionally_verified":false,"comparatively_supported":false,"scientifically_novel":false},
+  "forge_input": {"tip":"02fd9d24337432ac7121599f3361392d87e2fc5e","scientific_credit":0,"functionally_verified":false},
+  "h7": {"status":"CONSUMED_ONE_WAY_INCONCLUSIVE","workflow_run":35951118916},
+  "operations": {"scientific_experiments":0,"identities_consumed":0,"scheduler_changes":0}
+}
