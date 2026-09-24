@@ -1,47 +1,43 @@
-# MAIN RELAY — H7 R114 FORMAL consumed; waiting fresh Evidence Analyst
+# MAIN PRIMARY — H7 FORMAL inconclusive consumed; all canonical objects terminal
 
-- schema_version: `2`
-- generation: `MAIN-20260924T124623+0900-RELAY-H7-R114-FORMAL-CONSUMED-AWAITING-ANALYST`
-- execution_mode: `RELAY`
-- status: `WAITING_EXTERNAL`
-- canonical object: `CAND-H7-RESPONSIBILITY`
-- current Analyst Funnel state preserved exactly: `PRE_FORMAL / MECHANISM / READY / QUEUED / ACTIVE / RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED`
-- authorized scientific cycle: `12`; no cycle extension or reassessment by Relay
-- repair/change classification: `NO_SCIENCE_CHANGE_BY_RELAY; EXTERNAL_FORMAL_OUTCOME_RECONCILIATION`
+Canonical object: `CAND-H7-RESPONSIBILITY` / `FORMAL`  
+Analyst authority: `EVA-20260924T130128+0900-R115-H7-FORMAL-INCONCLUSIVE-CONSUMED-ALL35-TERMINAL`  
+Scientific ref: `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`  
+Controller ref: `research/main-h7-r5-launch-plumbing-r111-workflow-dispatch@af3aa97574c365e3e918c3d4d012faa4886760d0`
 
-## What changed
+## Work performed
 
-The exact R114-bound FORMAL workflow previously dispatched by PRIMARY has completed successfully. Relay did not execute, retry, retune, rescore or redesign science; it re-fetched the terminal workflow and one-way refs, observed the new sealed result, and persisted the post-consumption state.
+PRIMARY re-fetched stable main, exact scientific/controller refs, current `forge/*` heads for collision awareness, the fresh Evidence Analyst R115 allocation, prior MAIN state/lease, latest Fast Forge state, Utility ownership state, open PR identities, the completed H7 FORMAL workflow, and the H7 control/preserve/freeze/formal/sealed/evidence refs.
 
-Workflow `35951118916` completed `success` on exact controller `af3aa97574c365e3e918c3d4d012faa4886760d0`, attempt 1. It created fresh identity `h7-r5-285a3a206b34c5982b9d4045`, STARTED it exactly once, produced target-blind raw after STARTED, preserved raw remotely before target-side scoring, then scored and sealed exactly once.
+No scientific implementation, comparator, metric, threshold, tolerance, protocol, runtime, scorer, preserver, or frozen result was changed. No Forge-derived code, observation, prototype history, or promotion proposal was reused.
 
-The sealed official score decision is `INCONCLUSIVE`. Relay records that result without reinterpretation or rescue. Prior results remain unchanged.
+## Result classification
 
-## One-way integrity
+The one permitted H7 FORMAL identity `h7-r5-285a3a206b34c5982b9d4045` was consumed exactly once. The result is frozen as `INCONCLUSIVE` under the exact bound contract and evaluator.
 
-- STARTED/control: `52b17b785364f96cc2e95507b2336252459d5352`
-- preserve/freeze: `a5e76e7eb117e0270cfdc138fb9da30d696aa7c0`
-- formal/sealed/evidence result: `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`
-- preserved raw SHA-256: `2c001b9893a3d6d3410800824ca2c11df5329f56abd8c419278dcdde6eae1112`
-- official score blob: `d1604868f64db771d9a8c80f637b733607cde547`
-- prior official consumed identities: `7`; exactly one fresh H7 identity consumed, observed post-run count `8`
+Official frozen score:
 
-Evidence Analyst R114 remains current at the final pre-persistence freshness check. MAIN's prior lease was `WAITING_EXTERNAL`, not PRIMARY `RUNNING`; Fast Forge remained noncanonical/no-op and had no H7 ownership collision.
+- native delta accuracy: `0.008626302083333332`
+- simultaneous interval: `[0.002115885416666668, 0.01529947916666667]`
+- native mean total variation: `0.06728831508098665`
+- declared comparator capacity adequate: dense=`false`, eligibility=`false`, fsa=`false`
+- effect reproduced: dense=`false`, eligibility=`false`, fsa=`false`
+- effect conclusively smaller: dense=`false`, eligibility=`false`, fsa=`false`
 
-## Evidentiary status
+R115's canonical interpretation is that a nonzero native declared-surface effect was observed, but a privileged or unique native responsibility mechanism was **not established**, because every declared ordinary comparator family was capacity-inadequate. Rerun, retune, rescore, result-responsive comparator repair, and same-object H7 rescue are prohibited.
 
-- new scientific result observed: `true`
-- evidentiary status: `FORMAL_CONSUMED_RESULT_SEALED_AWAITING_FRESH_ANALYST`
-- science-affecting change by Relay: `false`
-- prior-result preservation: `true`
-- same-identity rerun/retune/rescore: `false`
-- immutable/formal/sealed/evidence/freeze/preserve mutation by Relay: `false`
-- historical PASS/FAIL rewrite: `false`
+## Remaining blockers / ownership
 
-## Stop / next canonical action
+H7 is now `CONSUMED_ONE_WAY`, terminal for the current object, and CLOSED. The canonical funnel is now 35/35 terminal, with 0 active and 0 scientifically queued objects. Candidate #35 is marked `REVISIT_TRIGGERED`, but there is no fresh revisit proposal, prospective contract, successor admission, or MAIN allocation; the trigger alone is not execution authority.
 
-Stop reason: `WAITING_FRESH_EVIDENCE_ANALYST_POST_FORMAL_CONSUMPTION_AND_INCONCLUSIVE_RESULT`.
+Fast Forge remains noncanonical/non-evidentiary and has no H7 collision. Utility is nonauthorizing/idle for current ownership. Open PRs #148 and #149 do not collide with H7 science or result identity.
 
-A fresh Evidence Analyst must now independently assess the consumed identity and sealed result before any further canonical action. MAIN/Relay must not re-arm, redispatch, retry, rerun, retune, rescore, repair the consumed identity, change scientific criteria, or create a successor meanwhile.
+There is a repository provenance-format defect: H7 freeze/formal/sealed/evidence refs are lightweight commit tags while repository policy prefers annotated provenance tags when tooling permits. R115 explicitly says this does not invalidate the science. Existing refs must not be mutated; append-only bookkeeping, if any, belongs to Repository Steward.
 
-Full technical record: `reports/orchestrator/main/history/2026-09-24/124623-r114-relay-h7-formal-consumed-awaiting-analyst.md`.
+## Hard-floor status
+
+FORMAL hard floor respected. STARTED, raw preservation, and frozen score exist; raw was preserved before target-side scoring. No consumed identity or immutable/control/preserve/freeze/formal/sealed/evidence ref was rerun, retuned, rescored, rewritten, or mutated by MAIN.
+
+## Next canonical action
+
+None is currently authorized. Wait for an independently developed fresh canonical admission or an Evidence-Analyst-authorized fresh revisit successor with its own prospective contract. Do not perform any further H7 same-object action.
