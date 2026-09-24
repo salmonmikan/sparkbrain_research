@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260925T033600+0900-PRIMARY-R136-SYSTEM-BUILD-SB001",
-  "producer_run_id": "sparkbrain-main-primary-20260925T033600JST-r136-system-build-sb001",
-  "generated_at": "2026-09-25T03:36:00+09:00",
-  "status": "READY_FOR_RELAY",
+  "generation_id": "MAIN-20260925T061700+0900-PRIMARY-R137-SB001-ENTITY-BOUNDARY-WAITING-CI",
+  "producer_run_id": "sparkbrain-main-primary-20260925T061700JST-r137-sb001-entity-boundary",
+  "generated_at": "2026-09-25T06:17:00+09:00",
+  "status": "WAITING_EXTERNAL",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "candidate_id": null,
@@ -13,18 +13,29 @@
   "development_revision": "build-r1",
   "target_capability": "observation -> persistent competing predictive hypotheses -> abstain/action -> feedback -> update/split/reuse -> selective revision -> next action/prediction",
   "analyst_authority": {
-    "generation": "EVA-R132",
+    "generation": "EVA-20260925T050357+0900-R133-SB001-ACCEPTANCE-BOUNDARY-FORGE-INTEGRATION-NO-SCIENCE",
     "ref": "ops/evidence-analyst-handoff",
-    "head": "97e8ffe2f728cac7bf82f333439d3c83dc055bcc",
+    "head": "784b7f1ab7451a4457b0987750c4304c20ac0e8a",
+    "history_blob": "8313f6f6693d694dfc32777b0c1aeb08772b1cd8",
+    "allocation_decision": "CONTINUE_SYSTEM_BUILD_SAME_BUILD_ID_ACCEPTANCE_CLOSURE",
     "science_action_authorized": false,
     "system_build_authorized": true
   },
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "build_branch": "system-build/sb001-predictive-state-revision-pilot-20260925",
-    "build_head": "e6a59b2601a9a68b46dbb45b02b39e16e3fe95ef",
-    "exact_head_ci_run": 36042005169,
+    "prior_build_head": "76a0dbd8bd1dec4ed6749ca619aeac8f5b96007b",
+    "build_head": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
+    "prior_exact_head_ci_run": 36054109236,
+    "prior_exact_head_ci_conclusion": "success",
+    "exact_head_ci_run": 36060329063,
+    "exact_head_ci_status": "in_progress",
+    "exact_head_ci_conclusion": null,
     "main_report_branch": "ops/orchestrator-run-report",
+    "control_latest_blob": "abc673975f65dccaaecdb421d806a878ba70e8e2",
+    "fast_forge_latest_blob": "1ab9d0826ca5dce8d1a224f2428ed2815a337355",
+    "utility_state_blob": "ef691d662bf7035fef7fffcbe0d64cdab18c8490",
+    "last_relay_record": "reports/orchestrator/main/history/2026-09-24/2249-r131-relay-r127-th002-forge-inflight-wait.md",
     "h7_identity": "h7-r5-285a3a206b34c5982b9d4045"
   },
   "science": {
@@ -47,15 +58,19 @@
     ],
     "forge_design_input": "forge/20260925-predictive-state-revision-loop-a@02fd9d24337432ac7121599f3361392d87e2fc5e",
     "forge_code_reused": false,
+    "delayed_action_credit_admission": "DEFERRED_NOT_ADMITTED",
     "acceptance_tests": {
-      "plural_hypotheses": "PASS",
-      "ambiguity_abstention": "PASS",
-      "selective_revision_and_prior_reuse": "PASS",
-      "checkpoint_restore_next_step_equality": "PASS",
-      "v03_v032_regression_isolation": "PASS",
-      "inspectability_claim_boundary": "IMPLEMENTED_SMOKE_VERIFIED",
-      "privileged_input_negative_coverage": "IMPLEMENTED_COVERAGE_DEBT",
-      "resource_bound_negative_coverage": "IMPLEMENTED_COVERAGE_DEBT"
+      "plural_hypotheses": "PASS_PRIOR_EXACT_HEAD",
+      "ambiguity_abstention": "PASS_PRIOR_EXACT_HEAD",
+      "selective_revision_and_prior_reuse": "PASS_PRIOR_EXACT_HEAD",
+      "checkpoint_restore_next_step_equality": "PASS_PRIOR_EXACT_HEAD",
+      "v03_v032_regression_isolation": "PASS_PRIOR_EXACT_HEAD",
+      "inspectability_claim_boundary": "PASS_PRIOR_EXACT_HEAD",
+      "privileged_state_episode_evaluator_gold_target_negative_coverage": "PASS_PRIOR_EXACT_HEAD",
+      "entity_hint_negative_coverage": "PASS_PRIOR_EXACT_HEAD",
+      "generic_entity_entity_id_entity_key_entity_slot_negative_coverage": "IMPLEMENTED_PENDING_EXACT_HEAD_CI",
+      "max_context_scalars_64_boundary": "PASS_PRIOR_EXACT_HEAD",
+      "max_hypotheses_16_boundary": "PASS_PRIOR_EXACT_HEAD"
     },
     "resource_budget": {
       "runtime": "local single CPU",
@@ -64,12 +79,13 @@
       "max_hypotheses": 16,
       "max_context_scalars": 64
     },
-    "integration_status": "BUILT_CI_GREEN_READY_FOR_PROTECTED_INTEGRATION",
+    "integration_status": "ACCEPTANCE_HARDENING_WAITING_EXACT_HEAD_CI",
+    "full_acceptance_coverage": false,
     "claim_boundary": "NON_EVIDENTIARY_BUILD",
     "observations": [
       {
         "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-        "observation": "bounded core integration loop passed exact-head CI and build tests"
+        "observation": "generic entity-style privileged input channels and nested metadata are now rejected in source and covered by dedicated tests; exact-head CI is pending"
       }
     ]
   },
@@ -78,7 +94,8 @@
     "new_scientific_result": false,
     "new_build_result": true,
     "built": true,
-    "functionally_verified": true,
+    "functionally_verified_core": true,
+    "new_patch_functionally_verified": false,
     "full_acceptance_coverage": false,
     "comparatively_supported": false,
     "scientifically_novel": false,
@@ -91,9 +108,10 @@
     "protected_target_accessed": false,
     "scientific_ref_mutated": false,
     "terminal_object_reopened": false,
-    "scheduler_changed": false
+    "scheduler_changed": false,
+    "protected_integration_pr_opened": false
   },
-  "stop_reason": "READY_FOR_RELAY_PROTECTED_INTEGRATION_PENDING",
-  "next_action": "OPEN_PROTECTED_INTEGRATION_PR_FROM_EXACT_BUILD_HEAD_AND_RUN_PR_CHECKS",
+  "stop_reason": "WAITING_EXACT_HEAD_CI_FOR_SCIENCE_INVARIANT_ACCEPTANCE_HARDENING",
+  "next_action": "RECHECK_CI_36060329063; IF SUCCESS REAUDIT_R133_ACCEPTANCE_CLOSURE AND ONLY THEN OPEN_PROTECTED_INTEGRATION_PR; IF FAILURE REPAIR SCIENCE_INVARIANTLY ONLY",
   "owner": "main"
 }

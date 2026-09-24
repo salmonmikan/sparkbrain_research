@@ -1,19 +1,22 @@
-# MAIN PRIMARY R135
+# MAIN PRIMARY R137
 
 schema_version: 2
-generation_id: MAIN-20260925T021305+0900-PRIMARY-R135-NO-ALLOCATED-SCIENCE-OR-BUILD
-generated_at: 2026-09-25T02:13:05+09:00
-mode: SCIENCE
-status: STOPPED_NO_ALLOCATED_SCIENCE_OR_SYSTEM_BUILD
+generation_id: MAIN-20260925T061700+0900-PRIMARY-R137-SB001-ENTITY-BOUNDARY-WAITING-CI
+generated_at: 2026-09-25T06:17:00+09:00
+mode: SYSTEM_BUILD
+status: WAITING_EXTERNAL
 
-Stable source: `main@d16403414fc7abebd23075fc401240971b8eb91d`.
+Evidence Analyst R133 explicitly continues `BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT` for acceptance closure only. Stable source remains `main@d16403414fc7abebd23075fc401240971b8eb91d`.
 
-Newest Analyst artifact R131 is a control-plane stub with no explicit SCIENCE or SYSTEM_BUILD allocation. Last full authority R130 allocates nothing to MAIN. HUMAN-20260925-001 is OPEN with execution authority NONE; Theory R5 has no proposal; Utility is idle.
+MAIN closed the remaining generic entity-style privileged-input gap by rejecting `entity`, `entity_id`, `entity_key`, and `entity_slot` in observation channels and recursively nested metadata, while preserving the existing explicit `entity_hint` rejection. Dedicated negative tests were expanded accordingly.
 
-No scientific execution or SYSTEM_BUILD was performed. No Forge-derived code was reused. Existing one-way results and scientific refs were left unchanged.
+Build branch: `system-build/sb001-predictive-state-revision-pilot-20260925@5b86dfa6cad634312c81e579e5339b3b47cef6e0`.
+Exact-head CI: run `36060329063`, currently in progress.
 
-Built: no. Functionally verified: no. Comparatively supported: no. Scientifically novel: no.
+No protected integration PR was opened because acceptance closure is not claimed before exact-head CI. No Forge code was reused; delayed-action-credit remains deferred/not admitted. No scientific execution, rerun, retune, rescore, scoring, protected target access, or scientific-ref mutation occurred.
 
-Next: act only after an explicit future Analyst allocation.
+Built: yes. Prior bounded core functionally verified: yes. New entity-boundary hardening exact-head verified: pending CI. Comparatively supported: no. Scientifically novel: no.
 
-Full record: `reports/orchestrator/main/history/2026-09-25/0213-r135-primary-no-allocated-science-or-build.md`.
+Next: recheck CI run 36060329063. On success, re-audit R133 acceptance closure and only then proceed to the protected integration PR path. On failure, repair science-invariantly only.
+
+Full record: `reports/orchestrator/main/history/2026-09-25/0617-r137-sb001-entity-boundary-waiting-ci.md`.
