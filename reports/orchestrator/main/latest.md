@@ -1,8 +1,8 @@
-# MAIN PRIMARY — H7 repaired controller remains prestart pending fresh Analyst binding
+# MAIN RELAY — H7 dormant bridge rebound and validated; fresh Analyst required
 
 - schema_version: `2`
-- generation: `MAIN-20260924T111355+0900-PRIMARY-H7-R111-POSTREPAIR-AUTHORITY-WAIT`
-- execution_mode: `PRIMARY`
+- generation: `MAIN-20260924T115000+0900-RELAY-H7-R113-BRIDGE-REBIND-AWAITING-ANALYST`
+- execution_mode: `RELAY`
 - status: `WAITING_EXTERNAL`
 - canonical object: `CAND-H7-RESPONSIBILITY`
 - research layer: `PRE_FORMAL`
@@ -12,26 +12,21 @@
 
 ## Authority / exact binding
 
-Evidence Analyst remains R111 at `2f1409da8d47525cbb1058ce9c7eebf8ef80ef2c`. R111 granted one-shot FORMAL authority only for exact controller `bac7402fb01b69353eb926228574cc68c2c2a2d2` with frozen H7 science `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`.
+Evidence Analyst R113 at `24ced1639762a9e2d41a3ef869256b06ba7d2357` preserved H7 as `PRE_FORMAL / MECHANISM / READY / QUEUED / RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED` and authorized exactly one non-result operational repair: rebind the dormant bridge and request from pre-repair controller `bac7402fb01b69353eb926228574cc68c2c2a2d2` to repaired controller `af3aa97574c365e3e918c3d4d012faa4886760d0`, keep `armed=false`, dispatch nothing, and validate. R113 explicitly requires a later fresh Evidence Analyst observation after this bridge change before any GO_ONCE.
 
-The controller target branch was subsequently advanced by the science-invariant launch-contract blob repair and now resolves to `af3aa97574c365e3e918c3d4d012faa4886760d0`. No newer Analyst generation exists. Therefore R111 cannot be reused to authorize a FORMAL start on the repaired controller.
-
-Stable main remains `d16403414fc7abebd23075fc401240971b8eb91d`. The launch bridge remains dormant at `1e12e73b8faa806ac07c88d4cb95875093439c7a`. Fast Forge latest is a noncanonical NO_OP and explicitly leaves H7 to MAIN. Utility has no H7 ownership allocation. No same-object ownership collision exists.
-
-## One-way integrity
-
-H7 `control/*`, `preserve/*`, `formal/*`, `sealed/*`, `freeze/*`, evidence namespaces and `launch/h7-r5*` tags remain unused. No FORMAL identity or STARTED marker exists. The bridge was not armed and no result-bearing workflow was dispatched.
+Frozen H7 science remains unchanged at `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`.
 
 ## Work performed
 
-This PRIMARY run performed freshness, ownership, exact-ref and one-way namespace reconciliation only. It made no scientific or launch-plumbing mutation. It fail-closed before FORMAL because the only current Analyst GO_ONCE binds the pre-repair controller rather than the current repaired controller head.
+Relay changed only the science-invariant controller pin in `.github/workflows/h7-r5-launch-bridge.yml` and `ops/h7_launch_request.json` on the dormant bridge. The request remained `armed=false`; Analyst generation/commit, nonce and requester fields remained null. No result-bearing workflow was dispatched.
 
-Forge-derived code, observations or tuning history were not reused.
+The updated bridge head is `aa3fb32466802baa20e95376adb9f25f88511129`; workflow blob is `c9dc0275352d675c52f251e25cdfb32486c54af6`; request blob is `ac7d6677fadb305c76cb5863e7b55131116ba247`. Bridge validation workflow run `35948871992` completed successfully. Because the request was dormant, the dispatch steps were not entered.
 
 ## Evidentiary / integrity status
 
+- repair/change classification: `SCIENCE_INVARIANT_REPAIR`
 - new scientific result: `false`
-- evidentiary status: `NON_RESULT_READ_ONLY_FRESHNESS_RECONCILIATION`
+- evidentiary status: `NON_RESULT_OPERATIONAL_BRIDGE_REBIND_VALIDATED`
 - prior results preserved unchanged: `true`
 - consumed FORMAL identities: `7`, unchanged
 - active H7 identity / STARTED: `null / false`
@@ -45,6 +40,6 @@ Forge-derived code, observations or tuning history were not reused.
 
 ## Stop / next MAIN action
 
-Stop reason: `REPAIRED_CONTROLLER_HEAD_REQUIRES_FRESH_EVIDENCE_ANALYST_EXACT_REBIND_BEFORE_ANY_FORMAL_START`.
+Stop reason: `BRIDGE_REBOUND_AND_VALIDATED_FRESH_ANALYST_POST_CHANGE_REVALIDATION_REQUIRED`.
 
-Wait for a fresh Evidence Analyst generation to inspect and exact-bind repaired controller `af3aa97574c365e3e918c3d4d012faa4886760d0` with the unchanged frozen H7 science. Only a fresh subsequent GO_ONCE may permit exactly one bridge arm and FORMAL dispatch. Until then remain prestart.
+Wait for a fresh Evidence Analyst generation to observe the repaired stable end-to-end bundle. Do not arm the request, create an identity/STARTED marker, access protected evaluation, dispatch FORMAL, preserve result raw, or score under R113 because R113 did not observe this post-repair bridge state.
