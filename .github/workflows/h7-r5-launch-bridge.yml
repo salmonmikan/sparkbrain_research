@@ -1,0 +1,145 @@
+name: H7 R5 one-shot launch bridge
+
+# Operational bridge only. This workflow does not define or alter H7 science.
+# It can only materialize the already-frozen launch tag after a fresh Evidence
+# Analyst generation revalidates the exact bindings and explicitly marks the
+# frozen path as trigger-capable/effectively executable.
+on:
+  push:
+    branches:
+      - ops/h7-r5-launch-bridge
+    paths:
+      - ops/h7_launch_request.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: h7-r5-one-shot-launch-bridge
+  cancel-in-progress: false
+
+env:
+  ANALYST_BRANCH: ops/evidence-analyst-handoff
+  CONTROLLER_SHA: 042d00375278d551dbf643ad866a4c883852804d
+  SCIENCE_SHA: 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80
+  CONTROLLER_WORKFLOW_BLOB_SHA: a6fb8fec46ad8b6f6b055e701d5c8cf829d4007c
+
+jobs:
+  create-launch-tag:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout bridge request
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+
+      - name: Refuse unarmed request
+        shell: bash
+        run: |
+          set -euo pipefail
+          jq -e '.schema_version == 1' ops/h7_launch_request.json >/dev/null
+          jq -e '.request_kind == "H7_R5_ONE_SHOT_LAUNCH_REQUEST"' ops/h7_launch_request.json >/dev/null
+          jq -e '.armed == true' ops/h7_launch_request.json >/dev/null
+          jq -e --arg v "$CONTROLLER_SHA" '.controller_sha == $v' ops/h7_launch_request.json >/dev/null
+          jq -e --arg v "$SCIENCE_SHA" '.science_sha == $v' ops/h7_launch_request.json >/dev/null
+          test "$(jq -r '.analyst_generation_id // empty' ops/h7_launch_request.json)" != ""
+          test "$(jq -r '.analyst_commit // empty' ops/h7_launch_request.json)" != ""
+
+      - name: Fetch exact controller, science, and fresh Analyst
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "$CONTROLLER_SHA" "$SCIENCE_SHA"
+          analyst_sha="$(git ls-remote origin "refs/heads/$ANALYST_BRANCH" | cut -f1)"
+          test -n "$analyst_sha"
+          requested_analyst_sha="$(jq -r '.analyst_commit' ops/h7_launch_request.json)"
+          test "$analyst_sha" = "$requested_analyst_sha"
+          git fetch --no-tags origin "$analyst_sha"
+          git show "$analyst_sha:analysis/orchestrator/state.json" > "$RUNNER_TEMP/analyst-state.json"
+
+      - name: Verify fresh Analyst one-shot authority and exact bindings
+        shell: bash
+        run: |
+          set -euo pipefail
+          state="$RUNNER_TEMP/analyst-state.json"
+          req="ops/h7_launch_request.json"
+          requested_generation="$(jq -r '.analyst_generation_id' "$req")"
+
+          jq -e --arg v "$requested_generation" '.generation_id == $v' "$state" >/dev/null
+          jq -e '.H7.stage == "PRE_FORMAL"' "$state" >/dev/null
+          jq -e '.H7.claim_ceiling == "MECHANISM"' "$state" >/dev/null
+          jq -e '.H7.terminal_state == "ACTIVE"' "$state" >/dev/null
+          jq -e '.H7.queue_state == "QUEUED"' "$state" >/dev/null
+          jq -e '.H7.preformal_eligible == true' "$state" >/dev/null
+          jq -e '.H7.preformal_readiness == "READY"' "$state" >/dev/null
+          jq -e '.H7.development_phase == "RESULT_EXPOSED_DEVELOPMENT"' "$state" >/dev/null
+          jq -e '.H7.development_revision == "R5_UNCHANGED"' "$state" >/dev/null
+          jq -e '.H7.executor_trigger_capable == true' "$state" >/dev/null
+          jq -e '.H7.effectively_executable == true' "$state" >/dev/null
+          jq -e '.H7.identity_status == "NOT_CREATED_NOT_CONSUMED"' "$state" >/dev/null
+          jq -e '.H7.formal_authority | type == "string" and startswith("GO_ONCE")' "$state" >/dev/null
+          jq -e --arg v "$CONTROLLER_SHA" '.H7.exact_bound_controller == $v' "$state" >/dev/null
+          jq -e --arg v "$SCIENCE_SHA" '.H7.exact_bound_science == $v' "$state" >/dev/null
+
+          jq -e '.hard_floor.identity_consumed == false' "$state" >/dev/null
+          jq -e '.hard_floor.result_bearing_workflow_dispatched == false' "$state" >/dev/null
+          jq -e '.hard_floor.protected_evaluation_accessed == false' "$state" >/dev/null
+          jq -e '.hard_floor.terminal_reopened == false' "$state" >/dev/null
+          jq -e '.hard_floor.historical_pass_fail_rewritten == false' "$state" >/dev/null
+
+      - name: Verify frozen controller bytes and unused one-way namespaces
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse "$CONTROLLER_SHA:.github/workflows/h7-formal-r5-one-way-launch.yml")" = "$CONTROLLER_WORKFLOW_BLOB_SHA"
+          git cat-file -e "$SCIENCE_SHA^{commit}"
+          git cat-file -e "$CONTROLLER_SHA^{commit}"
+
+          if git ls-remote --exit-code origin 'refs/tags/launch/h7-r5-*' >/tmp/h7-launch-existing 2>/dev/null; then
+            echo "H7 launch tag already exists; refusing another launch" >&2
+            cat /tmp/h7-launch-existing >&2
+            exit 1
+          fi
+
+          for pattern in \
+            'refs/heads/control/h7*' \
+            'refs/heads/preserve/h7*' \
+            'refs/tags/formal/h7*' \
+            'refs/tags/sealed/h7*' \
+            'refs/tags/freeze/h7*' \
+            'refs/tags/evidence/h7*'
+          do
+            if git ls-remote --exit-code origin "$pattern" >/tmp/h7-one-way-existing 2>/dev/null; then
+              echo "H7 one-way namespace is already occupied: $pattern" >&2
+              cat /tmp/h7-one-way-existing >&2
+              exit 1
+            fi
+          done
+
+      - name: Create exactly one frozen launch tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          analyst_sha="$(jq -r '.analyst_commit' ops/h7_launch_request.json)"
+          launch_tag="launch/h7-r5-${analyst_sha:0:12}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag "$launch_tag" "$CONTROLLER_SHA"
+
+          # No force. A concurrent launch or an already-consumed path must fail.
+          git push origin "refs/tags/$launch_tag:refs/tags/$launch_tag"
+
+          remote_sha="$(git ls-remote origin "refs/tags/$launch_tag" | cut -f1)"
+          test "$remote_sha" = "$CONTROLLER_SHA"
+
+          {
+            echo "### H7 R5 launch bridge"
+            echo
+            echo "- launch tag created: `$launch_tag`"
+            echo "- exact frozen controller: `$CONTROLLER_SHA`"
+            echo "- exact frozen science: `$SCIENCE_SHA`"
+            echo "- fresh Analyst commit: `$analyst_sha`"
+            echo "- this bridge created no FORMAL identity itself; the frozen tagged workflow owns START"
+          } >> "$GITHUB_STEP_SUMMARY"
