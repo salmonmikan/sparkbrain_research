@@ -1,37 +1,35 @@
-# SparkBrain Control Brain — R53
+# SparkBrain Control Brain — R54
 
 ## Position
 
-H7の手動tag push依存は解消済みで、GitHub Actions `workflow_dispatch` 経路を独立再確認した。default branchには常時fail-closedの登録stub、結果を持つ実装はfresh Evidence Analystがbindする専用controller ref、起動入口は`ops/h7-r5-launch-bridge`の一回限りrequest-file gateという分離になっている。
+Evidence Analyst R111 did successfully revalidate and exact-bind the first workflow-dispatch controller, but that authority did **not** survive the next independent prestart refresh. Relay found a science-invariant exact-blob mismatch in the launch contract, repaired only the operational controller, and correctly stopped before identity creation. The repaired controller is now `af3aa97574c365e3e918c3d4d012faa4886760d0`; frozen H7 science remains unchanged at `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`.
 
-- main: `d16403414fc7abebd23075fc401240971b8eb91d`。PR #150でdispatch登録stubを導入済み。
-- H7 science: `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80` のまま不変。
-- 新operational controller候補: `bac7402fb01b69353eb926228574cc68c2c2a2d2`。CI成功。
-- bridge: `ops/h7-r5-launch-bridge`、dormant smoke run成功。requestは`armed=false`でresult-bearing dispatchは0。
-- 手動launch tag / 手動workflow dispatchは今後の前提にしない。
+## H7 gate
 
-## Hard stop
+H7 remains `MECHANISM / PRE_FORMAL / RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED / ACTIVE / READY / QUEUED`. R111 exact-bound the pre-repair controller `bac7402fb01b69353eb926228574cc68c2c2a2d2`, so it cannot authorize the repaired controller. A **fresh Evidence Analyst exact rebind** is required before any one-shot FORMAL start.
 
-現Evidence Analyst R110は依然として旧controller `042d00375278d551dbf643ad866a4c883852804d` をbindしており、`executor_trigger_capable=false` / `effectively_executable=false`。よって**H7 FORMAL STARTはまだ禁止**。
-
-次のfresh Evidence Analystが、新controller・main登録stub・bridge・CI・exact science・one-way namespace未使用を独立再確認し、exact controllerを新revisionへrebindしてGO_ONCEを維持した場合だけ、MAIN/Relayがrequestを1回armする。identity作成、STARTED/no-clobber、raw-before-score、preserve-before-read、protected evaluation、scoringはcontroller workflow側が所有する。
+No H7 identity, STARTED, protected-target access, result-bearing dispatch, raw result, preservation, official score or PASS/FAIL exists. This is an executability/control-plane rollback, not a scientific reversal and not a rescue of an observed outcome.
 
 ## Scheduler health
 
-PRIMARY MAINがユーザー承認済みの「enabled current lane」に反して無効化されている設定回帰を検出したため、**既存の同一タスクをenabledへ復旧した**。時刻・cadence・役割・promptは変更していない。Relayはenabledのまま変更なし。
+PRIMARY MAIN was again found disabled despite the standing user-approved enabled-lane policy. Control restored only `enabled=true`; cadence, role and prompt were unchanged. This is the second consecutive Control reconciliation requiring the same repair, so it is now tracked as recurring enabled-state/definition drift.
 
-## Methodology / Theory / Revisit
+All approved current lanes were enabled after reconciliation. Recent run timing also shows broad fleet lag rather than a single-lane anomaly, roughly 7–28 minutes across MAIN, Relay, Fast Forge, Evidence Analyst and support lanes. No cause is asserted yet and no structural cadence/role change is made without new user approval.
 
-Methodology R102は、MAIN R110のAnalyst generation labelと実際にbindしたAnalyst commitの対応にscience-invariantなprovenance metadata不整合を検出した。科学判断自体は一致しており、identity/STARTは存在しない。今後はidentity start前にexact bound Analyst artifactからgeneration IDを読み、commitとの組をfail-closedで検証する。
+## Theory / Revisit / Forge
 
-Theory 09:30枠は`NO_THEORY_PROPOSAL`。TH-001の現proposalは通常のresidual adaptation/threshold + fixed edge/delayで説明可能としてreject維持。新しいTheoryを活動量のために捏造しない。Literature由来のanti-vacuity / intervention-faithfulness制約はfresh Theoryへprospective適用するだけで、H7やterminal履歴へ遡及しない。
+Latest authoritative Analyst state keeps Theory at `NO_THEORY_PROPOSAL`; TH-001 remains rejected with no Theory canonicalization or Forge referral. Revisit bootstrap remains durable 34/34: `CLOSED_STRONG=1`, `DORMANT_REVISITABLE=19`, `DEFERRED_INDEPENDENT_REIDENTIFICATION=14`, `REVISIT_TRIGGERED=0`. No fresh successor exists and no old terminal candidate has been reopened. Forge remains non-evidentiary/noncanonical and receives no confirmatory credit.
 
-Revisit bootstrapは34/34完了。今回も新しい独立triggerは0、`REVISIT_TRIGGERED=0`、fresh successor=0。旧terminal candidateは一つも再openしていない。
+## Methodology / integrity
 
-## Scientific state
-
-新しい科学結果なし。H7 science/comparator/threshold/runtime/scorer/preserverは変更していない。FORMAL identity作成、STARTED、protected evaluation、result-bearing workflow dispatch、official scoring、immutable evidence mutationはすべて0。
+The prospective Methodology R102 rule remains active: the generation ID must be read from the exact bound Analyst artifact/commit pair and any mismatch must fail closed before identity start. Relay's repair preserved the hard one-way floor and changed no scientific field or prior result.
 
 ## Next
 
-fresh Evidence AnalystによるH7 workflow-dispatch controllerのrebindが次の唯一のH7 gate。通過後はMAIN/Relay + GitHub Actionsで一回限りの起動まで完結し、ユーザーの手動launch操作は要求しない。
+1. Evidence Analyst independently inspects and exact-binds repaired controller `af3aa97574c365e3e918c3d4d012faa4886760d0` against unchanged H7 science, launch contract, bridge, CI and empty one-way namespaces.
+2. MAIN/Relay must not arm under R111. Only a fresh subsequent exact-bound GO_ONCE may arm the existing bridge once with a fresh nonce.
+3. Keep MAIN and Relay enabled at their approved cadences. Continue monitoring recurring MAIN enabled-state drift and fleet-wide lag; persistent structural remediation must be proposed to the user rather than applied silently.
+
+## Scientific state
+
+New scientific result: none. No experiment executed; no FORMAL identity created or consumed; no STARTED; no protected evaluation; no immutable/formal/sealed/evidence mutation; no terminal reopen; no historical PASS/FAIL rewrite.
