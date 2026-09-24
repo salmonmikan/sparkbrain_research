@@ -1,25 +1,30 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T141618+0900-PRIMARY-R116-NO-EXECUTABLE-CANONICAL-SCIENCE",
-  "producer_run_id": "sparkbrain-main-primary-20260924T141618JST-r116-terminal-noop-reconcile",
-  "generated_at": "2026-09-24T14:16:18+09:00",
-  "status": "BLOCKED",
-  "execution_mode": "PRIMARY",
+  "generation_id": "MAIN-20260924T144712+0900-RELAY-R117-WAITING-NO-EXECUTABLE-CANONICAL-SCIENCE",
+  "producer_run_id": "sparkbrain-main-relay-20260924T144712JST-r117-waiting-no-executable-canonical-science",
+  "generated_at": "2026-09-24T14:47:12+09:00",
+  "status": "WAITING_EXTERNAL",
+  "execution_mode": "RELAY",
   "candidate_id": null,
   "research_layer": null,
   "claim_ceiling": null,
   "development_phase": null,
   "development_revision": null,
   "cycle_count": null,
-  "information_gain": "CONTROL_PLANE_ONLY_R116_PROVENANCE_ADJUDICATION_AND_CAND35_TRIGGER_HANDOFF_COMPLETE; NO_NEW_SCIENCE; NO_EXECUTABLE_CANONICAL_OBJECT",
+  "information_gain": "CONTROL_PLANE_ONLY_R117_RECONCILIATION; NO_NEW_SCIENCE; NO_EXECUTABLE_CANONICAL_OBJECT",
   "analyst_authority": {
-    "generation_id": "EVA-20260924T135836+0900-R116-POSTFORMAL-NOOP-PROVENANCE-ADJUDICATED-CAND35-TRIGGER-HELD",
-    "commit": "d609a7897f25bbc1ba2abef8e27ccdc019d1f00c",
-    "decision": "NO_EXECUTABLE_CANONICAL_SCIENCE; H7 SAME_OBJECT STOP; CAND35_TRIGGER_VALID_BUT_NO_REVISIT_PROPOSAL; WAIT_FOR_FRESH_GATED_ADMISSION",
+    "generation_id": "EVA-20260924T142634+0900-R117-POSTFORMAL-NOOP-MAIN-R116-METH-R108",
+    "commit": "b729e046fd4cb29428ff5f59d813850beb4a67b1",
+    "decision": "STOP_NO_EXECUTABLE_CANONICAL_ACTION; H7_SAME_OBJECT_PERMANENT_STOP; CAND35_TRIGGER_RECORDED_NO_PROPOSAL_NO_EXECUTION_AUTHORITY",
     "freshness_rechecked_this_run": true,
     "scientific_execution_mode": "READ_ONLY"
   },
-  "prior_main_generation": "MAIN-20260924T131457+0900-PRIMARY-R115-H7-FORMAL-INCONCLUSIVE-TERMINAL",
+  "prior_main_generation": "MAIN-20260924T141618+0900-PRIMARY-R116-NO-EXECUTABLE-CANONICAL-SCIENCE",
+  "prior_main_durable_commit": "b4e9f84c20b7d148257dc2902555f9dfc186db7c",
+  "persistence": {
+    "history_path": "reports/orchestrator/main/history/2026-09-24/144712-r117-relay-waiting-no-executable-canonical-science.md",
+    "history_create_commit": "f902e3decc77ae4875a443402b3913e559451ffa"
+  },
   "funnel": {
     "canonical": 35,
     "mechanism": 14,
@@ -27,29 +32,53 @@
     "terminal": 35,
     "active": 0,
     "scientifically_queued": 0,
-    "effectively_executable_mechanism": 0,
     "open_development": 0,
     "result_exposed_development": 34,
     "consumed_one_way": 1,
+    "effectively_executable_mechanism": 0,
     "consumed_identities": 8,
-    "candidate35_revisit_status": "REVISIT_TRIGGERED",
-    "candidate35_revisit_proposal_exists": false,
-    "candidate35_successor_admitted": false
+    "new_consumption_since_prior_analyst": 0
   },
-  "last_consumed_object": {
+  "H7": {
     "candidate_id": "CAND-H7-RESPONSIBILITY",
     "research_layer": "FORMAL",
     "claim_ceiling": "MECHANISM",
+    "preformal_eligible": true,
+    "preformal_readiness": "HISTORICAL_READY_BEFORE_FORMAL_NOW_CONSUMED",
+    "hold_class": "NONE_TERMINAL",
+    "hold_reason": null,
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "queue_state": "CLOSED",
     "development_phase": "CONSUMED_ONE_WAY",
     "development_revision": "R5_UNCHANGED",
-    "cycle_count": 12,
+    "cycle_information_gain_rationale": "FORMAL_ONE_WAY_TEST_COMPLETED; RESULT_INCONCLUSIVE_BECAUSE_DECLARED_COMPARATOR_CAPACITY_ADEQUACY_FAILED",
+    "system_priority_exception": false,
+    "official_decision": "INCONCLUSIVE",
+    "same_identity_rerun_retune_rescore": "PROHIBITED",
+    "post_outcome_same_object_repair": "PROHIBITED",
+    "automatic_successor": "PROHIBITED",
+    "revisit_status": "DORMANT_REVISITABLE"
+  },
+  "candidate35": {
     "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-    "queue_state": "CLOSED"
+    "claim_ceiling": "SYSTEM",
+    "confirmatory_credit": 0,
+    "revisit_status": "REVISIT_TRIGGERED",
+    "revisit_proposal_exists": false,
+    "fresh_successor_admitted": false,
+    "execution_authority": false,
+    "revisit_blockers": [
+      "NO_FRESH_REVISIT_PROPOSAL_OR_PROSPECTIVE_CONTRACT",
+      "SAME_OBJECT_RERUN_RETUNE_RESCORE_PROHIBITED",
+      "FRESH_SUCCESSOR_MUST_AVOID_POST_OUTCOME_RESCUE"
+    ]
   },
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "d609a7897f25bbc1ba2abef8e27ccdc019d1f00c",
+    "analyst_head": "b729e046fd4cb29428ff5f59d813850beb4a67b1",
+    "control_branch": "ops/control-brain-handoff",
+    "control_head": "259b3db8f3f120475bc7e3a1b561383cc4c3a451",
     "scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
@@ -59,39 +88,20 @@
     "preserve_ref": "preserve/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
     "preserve_sha": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
     "freeze_ref": "freeze/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
-    "freeze_sha": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
     "formal_ref": "formal/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
     "sealed_ref": "sealed/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
     "evidence_ref": "evidence/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-    "immutable_namespace_empty": true,
-    "history_path": "reports/orchestrator/main/history/2026-09-24/141618-r116-primary-no-executable-canonical-science.md"
+    "result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85"
   },
-  "work_performed": [
-    {
-      "classification": "FRESHNESS_AND_COLLISION_RECONCILIATION",
-      "change": "Re-fetched stable main, current research and forge heads, fresh Evidence Analyst R116, prior MAIN/Relay state, latest Fast Forge and Utility ownership state, open PR identities, H7 FORMAL workflow, and current control/preserve/freeze/formal/sealed/evidence/immutable namespaces."
-    },
-    {
-      "classification": "POSTFORMAL_GOVERNANCE_ADOPTION",
-      "change": "Adopted R116 provenance adjudication and Candidate #35 trigger handoff without modifying scientific evidence, consumed identity, result interpretation, or terminal objects."
-    },
-    {
-      "classification": "MAIN_TERMINAL_PERSISTENCE",
-      "change": "Persisted that no canonical object is allocated or executable; H7 remains consumed/terminal and Candidate #35 remains trigger-only without a REVISIT_PROPOSAL or successor admission."
-    }
-  ],
-  "workflows": {
-    "h7_formal": {
-      "run_id": 35951118916,
-      "head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
-      "run_attempt": 1,
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": true,
-      "rerun_this_generation": false,
-      "rerun_allowed": false
-    }
+  "workflow_wait": {
+    "formal_run_id": 35951118916,
+    "formal_status": "completed",
+    "formal_conclusion": "success",
+    "run_attempt": 1,
+    "result_bearing": true,
+    "rerun_allowed": false,
+    "waiting_on_external_workflow": false,
+    "expected_next_action": "Wait for an independently motivated fresh canonical admission or a fresh dedicated REVISIT_PROPOSAL that passes the Evidence Analyst gate and yields a new candidate ID with a prospectively fixed contract. No H7 same-object action is permitted."
   },
   "formal_identity": {
     "identity_id": "h7-r5-285a3a206b34c5982b9d4045",
@@ -104,40 +114,29 @@
     "native_delta_accuracy": 0.008626302083333332,
     "native_delta_accuracy_interval": [0.002115885416666668, 0.01529947916666667],
     "native_mean_total_variation": 0.06728831508098665,
-    "capacity_adequate": {"dense": false, "eligibility": false, "fsa": false},
-    "interpretation_ceiling": "NONZERO_NATIVE_DECLARED_SURFACE_EFFECT_OBSERVED; PRIVILEGED_OR_UNIQUE_NATIVE_RESPONSIBILITY_MECHANISM_NOT_ESTABLISHED_BECAUSE_ALL_DECLARED_COMPARATOR_FAMILIES_ARE_CAPACITY_INADEQUATE",
+    "capacity_adequate": {
+      "dense": false,
+      "eligibility": false,
+      "fsa": false
+    },
     "rescore_or_reinterpret": "PROHIBITED",
     "changed_this_generation": false
   },
-  "revisit": {
-    "candidate35_status": "REVISIT_TRIGGERED",
-    "trigger_valid_and_independent": true,
-    "revisit_proposal_exists": false,
-    "forge_referral_exists": false,
-    "fresh_successor_canonicalized": false,
-    "execution_authority": false,
-    "required_future_gate": "Fresh dedicated REVISIT_PROPOSAL with a meaningfully fresh question, prospectively verified treatment-to-readout causal opportunity, a sensitive downstream or direct treated-state observable, explicit falsifier, ordinary reduction ladder, and useful negative outcome."
-  },
-  "provenance": {
-    "h7_tag_format": "LIGHTWEIGHT_DIRECT_COMMIT_TAGS",
-    "prospective_policy_prefers_annotated_provenance_tags": true,
-    "representation_defect_invalidates_science": false,
-    "existing_h7_refs_must_remain_exact": true,
-    "destructive_normalization_forbidden": true,
-    "append_only_science_invariant_supplementation_only": true,
-    "append_only_attestation_observed": false,
-    "main_action_required": false
+  "repair_and_change_classification": {
+    "science_invariant_repair": "NONE_PERFORMED",
+    "science_affecting_change": "NONE_PERFORMED",
+    "cycle_extension": "NONE_AUTHORIZED_OR_PERFORMED",
+    "reassessment_execution": "NONE_AUTHORIZED_OR_PERFORMED"
   },
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NO_NEW_SCIENCE_POSTFORMAL_TERMINAL_RECONCILIATION",
+    "evidentiary_status": "NO_NEW_SCIENCE_WAITING_FOR_FRESH_GATED_ADMISSION",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
     "protected_evaluation_reaccessed": false,
-    "official_scoring_performed_by_main": false,
+    "official_scoring_performed_by_relay": false,
     "formal_identity_created_or_consumed_this_run": false,
     "prior_results_preserved_unchanged": true,
-    "forge_derived_code_reused": false,
     "terminal_object_reopened": false
   },
   "consumed_identities": {
@@ -146,26 +145,25 @@
     "new_identity_consumed_this_run": false
   },
   "ownership_and_collision": {
+    "prior_primary_lease_status": "BLOCKED",
+    "fresh_primary_running_same_object_collision": false,
     "fast_forge_latest_generation": "FORGE-20260924T133500+0900-NOOP-R115-ALL35-TERMINAL-NO-GATED-PROBE",
-    "fast_forge_latest_disposition": "NO_OP_NONCANONICAL_NONEVIDENTIARY",
+    "fast_forge_latest_disposition": "NO_OP_NON_EVIDENTIARY_NONCANONICAL",
     "fast_forge_canonical_collision": false,
-    "utility_latest_generation": "UTILITY-20260924T132400+0900-R115-H7-POSTFORMAL-TERMINAL-RECONCILE-7C4A2F91",
-    "utility_allocation": "IDLE_NONAUTHORIZING",
-    "forge_or_utility_dependency_created": false,
-    "open_prs": [148, 149],
-    "open_pr_collision": false
+    "forge_or_utility_dependency_created": false
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
+    "main_generation_and_lease_freshness_rechecked": true,
     "main_and_exact_research_refs_rechecked": true,
-    "forge_refs_rechecked_for_collision": true,
-    "control_preserve_freeze_formal_sealed_evidence_refs_rechecked": true,
-    "immutable_namespace_rechecked": true,
+    "forge_state_rechecked_for_collision": true,
+    "formal_workflow_status_rechecked": true,
     "formal_identity_rerun": false,
     "formal_identity_retuned": false,
     "formal_identity_rescored": false,
     "historical_result_rewritten": false,
     "immutable_or_one_way_refs_mutated": false,
+    "prior_result_preserved_unchanged": true,
     "formal_floor_respected": true
   },
   "do_not_touch": [
@@ -175,6 +173,6 @@
     "H7 same-object repair, rerun, retune, rescore, retry, identity reuse, or automatic successor",
     "Candidate #35 same-object reopen or ungated successor materialization before a fresh REVISIT_PROPOSAL passes the gate"
   ],
-  "stop_reason": "NO_EXECUTABLE_CANONICAL_SCIENCE_R116_ALL35_TERMINAL_NO_REVISIT_PROPOSAL",
-  "next_action": "Wait for an independently motivated fresh canonical admission or a fresh dedicated REVISIT_PROPOSAL that passes the Evidence Analyst gate and yields a new candidate ID with a prospective contract. No H7 same-object action is permitted."
+  "stop_reason": "NO_EXECUTABLE_CANONICAL_SCIENCE_R117_ALL35_TERMINAL_NO_REVISIT_PROPOSAL",
+  "next_action": "Wait for an independently motivated fresh canonical admission or a fresh dedicated REVISIT_PROPOSAL that passes the Evidence Analyst gate and yields a new candidate ID with a prospectively fixed contract. No H7 same-object action is permitted."
 }
