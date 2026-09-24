@@ -46,13 +46,27 @@ def revise(carrier, key, delta):
     return tuple(x + delta * k / DIM for x, k in zip(carrier, key))
 
 
-def explicit_register_read(registers, target_index):
-    return registers[target_index]
+def kv_table(order, values=VALUES):
+    """Ordinary comparator with exactly the same content keys available."""
+    return tuple((KEYS[idx], values[idx]) for idx in order)
 
 
-def explicit_register_revise(registers, target_index, delta):
-    out = list(registers)
-    out[target_index] += delta
+def kv_read(table, query):
+    matches = [value for key, value in table if key == query]
+    assert len(matches) == 1
+    return matches[0]
+
+
+def kv_revise(table, query, delta):
+    out = []
+    matched = 0
+    for key, value in table:
+        if key == query:
+            out.append((key, value + delta))
+            matched += 1
+        else:
+            out.append((key, value))
+    assert matched == 1
     return tuple(out)
 
 
@@ -70,21 +84,20 @@ def main():
     decoded = tuple(read(canonical, k) for k in KEYS)
     assert decoded == VALUES
 
-    for target in range(3):
-        revised_carrier = revise(canonical, KEYS[target], DELTA)
-        decoded_after = tuple(round(read(revised_carrier, k), 12) for k in KEYS)
-        register_after = tuple(
-            round(x, 12)
-            for x in explicit_register_revise(VALUES, target, DELTA)
-        )
-        assert decoded_after == register_after
-        assert round(read(canonical, KEYS[target]), 12) == round(
-            explicit_register_read(VALUES, target), 12
-        )
+    for order in permutations(range(3)):
+        table = kv_table(order)
+        for query in KEYS:
+            assert read(canonical, query) == kv_read(table, query)
+            revised_carrier = revise(canonical, query, DELTA)
+            revised_table = kv_revise(table, query, DELTA)
+            for probe_key in KEYS:
+                assert round(read(revised_carrier, probe_key), 12) == round(
+                    kv_read(revised_table, probe_key), 12
+                )
 
     print("permutation_equivariance=PASS")
     print("target_selective_revision=PASS")
-    print("register_equivalence=PASS")
+    print("matched_access_kv_equivalence=PASS")
     print("disposition=FORGE_DEAD_END")
     print("reduction=ASSOCIATIVE_KEY_VALUE_OR_SEPARABLE_ADDRESS_PLUS_STATE")
 
