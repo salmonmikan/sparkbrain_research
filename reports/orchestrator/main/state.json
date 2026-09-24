@@ -1,249 +1,89 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260925T011502+0900-PRIMARY-R134-R130-LIT44-NO-CANONICAL-ACTION",
-  "producer_run_id": "sparkbrain-main-primary-20260925T011502JST-r134-r130-lit44-no-canonical-action",
-  "generated_at": "2026-09-25T01:15:02+09:00",
-  "status": "STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
+  "generation_id": "MAIN-20260925T021305+0900-PRIMARY-R135-NO-ALLOCATED-SCIENCE-OR-BUILD",
+  "producer_run_id": "sparkbrain-main-primary-20260925T021305JST-r135-no-allocated-science-or-build",
+  "generated_at": "2026-09-25T02:13:05+09:00",
+  "status": "STOPPED_NO_ALLOCATED_SCIENCE_OR_SYSTEM_BUILD",
   "execution_mode": "PRIMARY",
+  "authority_mode": "SCIENCE",
   "candidate_id": null,
+  "build_id": null,
   "research_layer": null,
-  "claim_ceiling": null,
-  "preformal_eligible": null,
-  "preformal_readiness": null,
-  "hold_class": null,
-  "hold_reason": null,
-  "terminal_state": "NO_ALLOCATED_ACTIVE_OBJECT",
-  "queue_state": "EMPTY",
-  "system_priority_exception": null,
   "development_phase": null,
   "development_revision": null,
-  "cycle_count": 30,
-  "cycle_reassessment_context": "CONTROL_RECONCILIATION_ONLY_NO_SCIENTIFIC_CYCLE_EXTENSION_OR_REASSESSMENT_EXECUTION",
-  "information_gain": "LITERATURE_REDUCTION_BOUNDARY_ONLY: ANALYST_R130_TIGHTENS_PROSPECTIVE_SELECTIVE_REVISION_REDUCTION_LADDER; NO_CANONICAL_ADMISSION_REVISIT_TRIGGER_OR_SCIENTIFIC_STATE_CHANGE",
+  "target_capability": null,
   "analyst_authority": {
-    "generation_id": "EVA-20260925T005800+0900-R130-LIT44-REDUCTION-LADDER-NO-SCIENCE",
-    "branch": "ops/evidence-analyst-handoff",
-    "branch_tip": "6a8eb246233bc04d5f3ca47aaffba99970acf20b",
-    "scientific_execution_mode": "READ_ONLY_FOR_MAIN",
-    "new_scientific_result": false,
-    "canonical_science": "STOP_NO_EXECUTABLE_CANONICAL_ACTION",
-    "gate_change": false,
-    "literature_change": true,
-    "literature_decision": "PROSPECTIVE_REDUCTION_LADDER_TIGHTENED_NO_CANONICALIZATION_NO_REVISIT_TRIGGER",
-    "top3": []
-  },
-  "prior_main_generation": "MAIN-20260925T001253+0900-PRIMARY-R133-R129-METH117-NO-CANONICAL-ACTION",
-  "persistence": {
-    "history_path": "reports/orchestrator/main/history/2026-09-25/0013-r133-primary-r129-method117-no-canonical-action.md",
-    "history_create_commit": "5bb845d1d7bf9dce1a5f9cce51e80838491b589a",
-    "state_update_commit": "SELF_THIS_WRITE"
-  },
-  "funnel": {
-    "canonical": 35,
-    "MECHANISM": 14,
-    "SYSTEM": 21,
-    "terminal": 35,
-    "active": 0,
-    "scientifically_queued": 0,
-    "OPEN_DEVELOPMENT": 0,
-    "RESULT_EXPOSED_DEVELOPMENT": 34,
-    "CONSUMED_ONE_WAY": 1,
-    "effectively_executable_mechanism": 0,
-    "consumed_identities": 8,
-    "new_consumption_this_generation": 0
-  },
-  "methodology_guard": {
-    "source": "METHCAL-20260924T232004+0900-R117-7E4B2C19",
-    "adopted_by_analyst_generation": "EVA-20260925T000135+0900-R129-METH117-CONTROL64-SCHEDULER-DURABILITY-NO-SCIENCE",
-    "scope": "PROSPECTIVE_DEVELOPMENT_POLICY",
-    "result_exposed_science_affecting_change": "EXPLICIT_VERSIONED_REVISION_OR_FRESH_SUCCESSOR_REQUIRED",
-    "same_object_allowed_change": "SCIENCE_INVARIANT_REPAIR_ONLY",
-    "retroactive_th002_rerun_or_relabel": "PROHIBITED",
-    "prior_results_preserved": true
-  },
-  "noncanonical_delegated_input": {
-    "type": "ANALYST_GATED_FAST_FORGE_ONLY_CLOSED",
-    "proposal_id": "TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY",
-    "probe_spec": "TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL",
-    "original_classification": "THEORY_FORGE_TEST",
-    "post_probe_disposition": "FORGE_KILLED_NO_CANONICALIZATION",
-    "forge_status": "FORGE_DEAD_END",
-    "scientific_credit": 0,
-    "candidate_admitted": false,
-    "revisit_trigger_created": false,
-    "main_may_execute_now": false,
-    "fast_forge_continuation_authorized": false,
-    "forge_result_directly_authorizes_main": false,
-    "expected_next_action": "NO_TH002_CONTINUATION; MAIN_WAITS_FOR_FUTURE_EXPLICIT_FRESH_CANONICAL_ADMISSION_AND_ALLOCATION"
-  },
-  "H7": {
-    "candidate_id": "CAND-H7-RESPONSIBILITY",
-    "research_layer": "FORMAL",
-    "claim_ceiling": "MECHANISM",
-    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-    "queue_state": "CLOSED",
-    "development_phase": "CONSUMED_ONE_WAY",
-    "development_revision": "R5_UNCHANGED",
-    "official_decision": "INCONCLUSIVE",
-    "same_identity_rerun_retune_rescore": "PROHIBITED",
-    "post_outcome_same_object_repair": "PROHIBITED",
-    "automatic_successor": "PROHIBITED"
-  },
-  "candidate35": {
-    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-    "claim_ceiling": "SYSTEM",
-    "confirmatory_credit": 0,
-    "revisit_status": "DEFERRED_INDEPENDENT_REIDENTIFICATION",
-    "current_trigger_authority": "NONE_EXHAUSTED",
-    "fresh_successor_admitted": false,
-    "execution_authority_for_main": false,
-    "same_object_rerun_retune_rescore": "PROHIBITED"
-  },
-  "formal_identity": {
-    "identity_id": "h7-r5-285a3a206b34c5982b9d4045",
-    "binding_sha256": "285a3a206b34c5982b9d404599aa272019dd9d4dceb661b49c97fd8750fd30d3",
-    "state": "CONSUMED_ONE_WAY",
-    "same_identity_rerun_retune_rescore": "PROHIBITED"
-  },
-  "result": {
-    "decision": "INCONCLUSIVE",
-    "native_delta_accuracy": 0.008626302083333332,
-    "native_delta_accuracy_interval": [
-      0.002115885416666668,
-      0.01529947916666667
-    ],
-    "native_mean_total_variation": 0.06728831508098665,
-    "capacity_adequate": {
-      "dense": false,
-      "eligibility": false,
-      "fsa": false
-    },
-    "rescore_or_reinterpret": "PROHIBITED",
-    "changed_this_generation": false
+    "newest_observed_record": "R131",
+    "newest_record_kind": "CONTROL_PLANE_STUB_NO_EXPLICIT_ALLOCATION",
+    "current_full_generation": "EVA-20260925T005800+0900-R130-LIT44-REDUCTION-LADDER-NO-SCIENCE",
+    "science_action_authorized": false,
+    "system_build_authorized": false
   },
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "main_report_branch": "ops/orchestrator-run-report",
-    "main_report_head_before_persistence": "19fbbf59e30eb90e502ccfe723d1adf2ff7532e6",
-    "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "6a8eb246233bc04d5f3ca47aaffba99970acf20b",
-    "fast_forge_state_head": "56dce32c9ef1b161ce838b6466788e1c5281d243",
-    "fast_forge_last_probe_branch": "forge/th002-static-addressability-kill-20260924",
-    "fast_forge_last_probe_head": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
-    "utility_branch": "ops/utility-orchestrator-requests",
-    "utility_head": "4fa2dafb418814f277ed19919956cec7e61b381d",
-    "control_branch": "ops/control-brain-handoff",
-    "control_head": "857998b44ca7954d3875d3957c447ce3414a7d89",
-    "h7_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-    "h7_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "h7_controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
-    "h7_controller_head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
-    "h7_control_ref": "control/h7-r5-h7-r5-285a3a206b34c5982b9d4045-started",
-    "h7_control_sha": "52b17b785364f96cc2e95507b2336252459d5352",
-    "h7_preserve_ref": "preserve/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
-    "h7_preserve_sha": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
-    "h7_freeze_ref": "freeze/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
-    "h7_formal_ref": "formal/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "h7_sealed_ref": "sealed/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "h7_evidence_ref": "evidence/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "h7_result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-    "immutable_namespace_empty": true
+    "history_commit": "bd45f953d3bb07021a4e09712351f2eae79e41a1",
+    "h7_identity": "h7-r5-285a3a206b34c5982b9d4045"
   },
-  "workflows": {
-    "current_main_result_bearing_workflow": null,
-    "queued_or_in_progress_main_result_bearing_workflow": false,
-    "latest_evidence_analyst_ci_run": 36018532818,
-    "latest_evidence_analyst_ci_status": "completed",
-    "latest_evidence_analyst_ci_conclusion": "success",
-    "last_observed_fast_forge_workflow_id": 36008197169,
-    "last_observed_fast_forge_workflow_status": "completed",
-    "last_observed_fast_forge_workflow_conclusion": "failure",
-    "last_fast_forge_failure_scope": "REPOSITORY_LINT_BEFORE_LATER_TESTS",
-    "h7_rerun_allowed": false
-  },
-  "prs": {
-    "open": [
+  "inventory": {
+    "research_branches": 189,
+    "forge_branches": 7,
+    "open_prs": [
       148,
       149
-    ],
-    "classification": "GOVERNANCE_TOOLING_ONLY_NO_SCIENTIFIC_AUTHORITY"
+    ]
   },
-  "work_performed": [
-    {
-      "classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION",
-      "change": "Re-fetched Analyst R129, prior MAIN R132/Relay resolution, stable main, research/Forge inventories, Fast Forge R33, Utility R128, Control R64, PRs and workflows."
-    },
-    {
-      "classification": "METHODOLOGY_POLICY_SYNC",
-      "change": "Adopted Analyst R129 prospective R117 result-exposed revision guard without retroactive TH-002 repair or scientific reinterpretation."
-    },
-    {
-      "classification": "CANONICAL_AUTHORITY_CHECK",
-      "change": "Confirmed no admitted or allocated canonical object, no candidate #36, no PRE_FORMAL object and no live Revisit trigger."
-    },
-    {
-      "classification": "HARD_FLOOR_CHECK",
-      "change": "Re-verified H7 START/preserve/freeze/formal/sealed/evidence targets and immutable namespace; preserved consumed identities/results unchanged."
-    },
-    {
-      "classification": "PERSISTENCE_ONLY",
-      "change": "Updated only MAIN-owned history/state/latest/lease; no scientific code, scorer, harness, workflow or evidence ref changed."
-    }
-  ],
-  "observations": {
-    "new_scientific_result_this_run": false,
-    "evidentiary_status": "NOT_EVIDENCE; LIT44_PROSPECTIVE_REDUCTION_LADDER_ONLY; NO_CANONICALIZATION; NO_REVISIT_TRIGGER; TH002_FORGE_DEAD_END_ZERO_CREDIT; H7_UNCHANGED_CONSUMED; CAND35_TERMINAL; NO_EXECUTABLE_CANONICAL_OBJECT",
-    "result_classification": "CONTROL_PLANE_RECONCILIATION_ONLY_LIT44_PROSPECTIVE_REDUCTION_BOUNDARY_NO_NEW_SCIENCE",
-    "repair_change_classification": "CONTROL_PLANE_FRESHNESS_AND_METHODOLOGY_POLICY_SYNC_ONLY",
-    "science_invariant_repair_performed": false,
-    "science_affecting_change_performed": false,
-    "cycle_extension_performed": false,
-    "reassessment_execution_performed": false,
-    "protected_evaluation_reaccessed": false,
-    "official_scoring_performed_this_run": false,
-    "formal_identity_created_or_consumed_this_run": false,
-    "prior_results_preserved_unchanged": true,
-    "terminal_object_reopened": false,
-    "forge_derived_code_reused": false,
-    "utility_dependency_created": false,
-    "external_audit_durability_gap_observed": true,
-    "external_audit_gap_scientific_authority": "NONE",
-    "scheduler_mutated_by_main": false
-  },
-  "consumed_identities": {
-    "official_consumed_identity_count": 8,
-    "h7_identity_consumed": true,
-    "new_identity_consumed_this_run": false
-  },
-  "ownership_and_collision": {
-    "fresh_primary_running_same_object_collision": false,
-    "canonical_object_allocated": false,
-    "scientific_collision": false,
-    "relay_waiting_external_resolved_prior_generation": true,
+  "external_state": {
+    "human_directive": "HUMAN-20260925-001",
+    "human_directive_status": "OPEN_ZERO_CREDIT_EXECUTION_AUTHORITY_NONE",
+    "theory": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
+    "utility": "IDLE_SCIENTIFIC_AUTHORITY_NONE",
+    "control": "CTRL-20260924T235000+0900-R64-TH002-KILL-METH117-SCHEDULER-DEGRADATION",
     "fast_forge_live_probe": false,
-    "th002_executed_by_main": false,
-    "forge_derived_code_reused_by_main": false,
-    "utility_status": "IDLE_NONAUTHORIZING",
-    "utility_dependency_created": false
+    "relay_wait_resolved": true
+  },
+  "science": {
+    "allocated": false,
+    "canonical_total": 35,
+    "mechanism": 14,
+    "system": 21,
+    "terminal": 35,
+    "active": 0,
+    "queued": 0,
+    "h7_status": "CONSUMED_ONE_WAY_INCONCLUSIVE",
+    "candidate35_status": "TERMINAL_SYSTEM_TRIGGER_EXHAUSTED"
+  },
+  "system_build": {
+    "entered": false,
+    "allocated": false,
+    "build_id": null,
+    "target_capability": null,
+    "components": [],
+    "acceptance_tests": [],
+    "integration_status": "NOT_STARTED_NO_AUTHORITY",
+    "claim_boundary": "NO_BUILD_CLAIM",
+    "observations": []
+  },
+  "observations": {
+    "evidentiary_status": "NOT_EVIDENCE",
+    "new_scientific_result": false,
+    "new_build_result": false,
+    "built": false,
+    "functionally_verified": false,
+    "comparatively_supported": false,
+    "scientifically_novel": false,
+    "forge_derived_code_reused": false,
+    "prior_results_preserved": true
   },
   "integrity": {
-    "analyst_generation_freshness_rechecked_before_persistence": true,
-    "main_generation_and_lease_freshness_rechecked_before_persistence": true,
-    "research_and_forge_collision_inventory_rechecked": true,
-    "relay_fast_forge_utility_ownership_collision_rechecked": true,
-    "pr_and_workflow_inventory_rechecked": true,
-    "scientific_and_controller_refs_rechecked": true,
-    "start_preserve_freeze_formal_sealed_evidence_refs_rechecked_from_authoritative_refs": true,
-    "immutable_namespace_rechecked": true,
-    "same_identity_rerun_retune_rescore_performed": false,
-    "historical_result_rewritten": false,
-    "immutable_or_one_way_refs_mutated": false,
+    "hard_formal_floor_respected": true,
+    "consumed_formal_rerun_retune_rescore": false,
+    "protected_target_accessed": false,
+    "scientific_ref_mutated": false,
     "terminal_object_reopened": false,
-    "protected_evaluator_or_heldout_accessed": false,
-    "prior_result_preserved_unchanged": true,
-    "formal_floor_respected": true
+    "scheduler_changed": false
   },
-  "stop_reason": "ANALYST_R130_LIT44_NO_CANONICALIZATION_NO_REVISIT_TRIGGER_NO_ALLOCATED_CANONICAL_OBJECT",
-  "next_action": "No MAIN scientific action is authorized. Re-read a future Evidence Analyst generation and resume only on explicit fresh canonical admission and allocation. Apply the R44 prospective reduction ladder to relevant fresh selective-revision claims; do not retrofit old objects.",
+  "stop_reason": "NO_EXPLICIT_ANALYST_ALLOCATED_SCIENCE_OR_SYSTEM_BUILD",
+  "next_action": "READ_NEXT_ANALYST_GENERATION_AND_EXECUTE_ONLY_EXPLICIT_ALLOCATION",
   "owner": "main"
 }
