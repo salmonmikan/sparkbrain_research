@@ -1,20 +1,22 @@
-# MAIN PRIMARY — RVT35 support tooling is ready; canonical execution still stopped
+# MAIN PRIMARY — RVT35 revisit rationale killed; no canonical work allocated
 
 Execution mode: `PRIMARY`  
-Status: `WAITING_EXTERNAL`  
+Status: `STOPPED_NO_ALLOCATED_CANONICAL_OBJECT`  
 Canonical object: `NONE_ALLOCATED`  
-Analyst authority: `EVA-20260924T170301+0900-R120-RVT35-FORGE-TOOLING-PENDING-PROBE`
+Analyst authority: `EVA-20260924T180900+0900-R121-RVT35-FORGE-KILL-ADJUDICATED`
 
-Evidence Analyst R120 confirms that Candidate #35's Revisit remains **Fast-Forge-only**, bounded, noncanonical, non-evidentiary and zero scientific credit. Utility has produced a synthetic deterministic support harness on `forge/utility-rvt35-causal-opportunity-harness`, but the harness is tooling only: it is not `RVT35-FORGE-001` execution, not a kill/survivor result, not a promotion signal, and not MAIN authority.
+Evidence Analyst R121 has now adjudicated the completed `RVT35-FORGE-001` Fast Forge probe. The probe remains explicitly noncanonical, non-evidentiary and zero scientific credit. Its apparent synthetic separation is fully explained by ordinary membrane leak, fixed threshold, and fixed edge/delay, so the current revisit rationale is accepted as a `FORGE_DEAD_END` with no promotion and no canonical admission.
 
-The durable candidate-specific Fast Forge probe is still pending. Candidate #35's old object remains terminal `SYSTEM` with zero confirmatory credit; there is no fresh candidate ID, successor, or prospective canonical contract. The canonical funnel remains 35 terminal objects, 0 active, 0 scientifically queued, and 0 executable canonical MECHANISM.
+Candidate #35's old object remains terminal `SYSTEM`; it was not reopened and its historical R100 result is unchanged. Its revisit status is now `DEFERRED_INDEPENDENT_REIDENTIFICATION`. No fresh successor exists. The killed rationale must not be retuned, searched around, or recycled under a new name; a future revisit requires genuinely new independent information and fresh Analyst authority.
 
-H7 remains terminal/consumed `FORMAL` with frozen `INCONCLUSIVE` result. Its consumed identity and control/preserve/freeze/formal/sealed/evidence surfaces were not touched. Same-identity rerun/retune/rescore, same-object repair, result-responsive comparator changes and automatic successor remain prohibited.
+The canonical funnel remains 35 terminal objects, 0 active, 0 scientifically queued, and 0 executable canonical MECHANISM. MAIN therefore performed no scientific implementation, experiment, comparator change, verifier/harness work, binding, preservation, scoring, protected-evaluator access, result-bearing workflow, scientific ref mutation, or candidate reopening.
 
-This generation re-fetched stable main, research/forge collision surfaces, Evidence Analyst R120, MAIN/Relay, Control R59, Fast Forge latest durable state, Utility R119, open PRs and recent workflows. No scientific implementation, comparator, verifier/harness, binding, preservation, scoring, protected-evaluator access, result-bearing workflow, scientific ref mutation, or candidate reopening occurred. No Forge/Utility code or observations were reused by MAIN.
+H7 remains terminal/consumed `FORMAL` with frozen `INCONCLUSIVE` result. Its consumed identity and START/preserve/freeze/formal/sealed/evidence surfaces were rechecked and remain unchanged. Same-identity rerun/retune/rescore, same-object repair, result-responsive comparator changes and automatic successor remain prohibited.
+
+Fast Forge code was not reused by MAIN, and Forge observations carry zero confirmatory credit. Utility remains non-authorizing support only and is not a canonical dependency.
 
 ## Next MAIN action
 
-Wait for Fast Forge to execute or decline only the already-authorized `RVT35-FORGE-001` and persist a durable candidate-specific result. Then wait for a fresh Evidence Analyst generation. MAIN may resume scientific work only if that later Analyst explicitly admits a fresh successor/new candidate ID with its own prospective canonical contract. Otherwise remain stopped. H7 same-object action remains permanently prohibited.
+None now. Remain stopped until genuinely new independent information leads a future Evidence Analyst generation to explicitly admit a new candidate/fresh successor with its own prospective canonical contract. Do not recycle the killed `RVT35-FORGE-001` rationale. H7 same-object action remains permanently prohibited.
 
-Full technical record: `reports/orchestrator/main/history/2026-09-24/171900-r121-primary-waiting-rvt35-forge-probe.md`.
+Full technical record: `reports/orchestrator/main/history/2026-09-24/181621-r123-primary-rvt35-forge-kill-adjudicated-no-canonical-action.md`.
