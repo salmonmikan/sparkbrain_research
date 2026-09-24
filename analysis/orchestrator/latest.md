@@ -1,130 +1,115 @@
-# SparkBrain Evidence Analyst — Latest
+# Evidence Analyst — R115 H7 FORMAL consumed / INCONCLUSIVE adjudication
 
 - schema_version: `2`
-- generation_id: `EVA-20260924T115823+0900-R114-H7-POSTBRIDGE-GO-ONCE-CAND35-TRIGGER`
-- generated_at: `2026-09-24T11:58:23+09:00`
+- generation_id: `EVA-20260924T130128+0900-R115-H7-FORMAL-INCONCLUSIVE-CONSUMED-ALL35-TERMINAL`
+- generated_at: `2026-09-24T13:01:28+09:00`
 - authority_scope: `EVIDENCE_ANALYST_CANONICAL_PROMOTION_GATE_READ_ONLY_SCIENTIFIC_EXECUTION`
-- supersedes_generation_id: `EVA-20260924T113426+0900-R113-CONVERGED-H7-BRIDGE-HOLD-CAND35-TRIGGER`
+- supersedes_generation_id: `EVA-20260924T115823+0900-R114-H7-POSTBRIDGE-GO-ONCE-CAND35-TRIGGER`
 - material_change: `true`
+- new_scientific_result: `true`
 
-## Executive judgment
+## Fresh reconstruction
 
-Fresh reconstruction after the R113 bridge repair changes the H7 operational gate but not H7 science. There is **no new scientific result**, no new Theory proposal, no new Revisit proposal, no new Forge promotion proposal or materially new interesting object, and no new one-way identity consumption.
+Stable `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`. H7 frozen science remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`; launch controller remains `research/main-h7-r5-launch-plumbing-r111-workflow-dispatch@af3aa97574c365e3e918c3d4d012faa4886760d0`.
 
-H7 remains the sole active canonical object and remains `PRE_FORMAL / MECHANISM / READY / QUEUED / RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED`. Frozen science remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`; repaired operational controller remains `research/main-h7-r5-launch-plumbing-r111-workflow-dispatch@af3aa97574c365e3e918c3d4d012faa4886760d0`.
+R114 one-shot authority was used exactly once. Bridge head is `ops/h7-r5-launch-bridge@977e0241f390f6504ebfa4a27a389a487751038c`. Formal workflow run `35951118916` completed `success`, attempt `1`, on controller head `af3aa97574c365e3e918c3d4d012faa4886760d0`.
 
-The previous end-to-end operational blocker is now resolved. Relay repaired only the dormant bridge/request controller pin, from the stale pre-repair controller to `af3aa97574c365e3e918c3d4d012faa4886760d0`, kept the request `armed=false`, and validated the dormant bridge successfully. The current bridge is `ops/h7-r5-launch-bridge@aa3fb32466802baa20e95376adb9f25f88511129`; its workflow blob is `c9dc0275352d675c52f251e25cdfb32486c54af6`, current request blob is `ac7d6677fadb305c76cb5863e7b55131116ba247`, and validation run `35948871992` completed successfully. The request still has no Analyst generation/commit, nonce, requester, or arm.
+Fresh identity `h7-r5-285a3a206b34c5982b9d4045` crossed START exactly once at `control/h7-r5-h7-r5-285a3a206b34c5982b9d4045-started@52b17b785364f96cc2e95507b2336252459d5352`. The START record binds Analyst R114/commit `1824290d67fdf06494c3849fa687997ec29137cf`, H7 science `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`, controller `af3aa97574c365e3e918c3d4d012faa4886760d0`, runtime/package hashes, scorer blob `dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9`, preserver blob `37c9c46febba1baba5580ed1aa803dcc483bef66`, and binding SHA256 `285a3a206b34c5982b9d404599aa272019dd9d4dceb661b49c97fd8750fd30d3`.
 
-This fresh generation independently re-fetched the post-repair bridge, current controller/science, current MAIN/Relay state, Actions, H7 one-way namespaces and evidence/tag inventory. No H7 `control/*`, `preserve/*` or `launch/h7-r5-*` ref exists; no result-bearing `workflow_dispatch` run exists for the current controller branch; official consumed FORMAL identities remain 7.
+Target-blind raw was preserved at `preserve/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw@a5e76e7eb117e0270cfdc138fb9da30d696aa7c0`; manifest records `preserve_before_target_access=true` and raw SHA256 `2c001b9893a3d6d3410800824ca2c11df5329f56abd8c419278dcdde6eae1112`. Freeze ref points to that exact preserve commit. Final score commit is `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`; formal/sealed/evidence H7 refs all point to that exact result commit.
 
-Accordingly, H7 regains **exact-bound GO_ONCE authority for one fresh identity only**. This Analyst does not arm or dispatch anything. MAIN/Relay may, under this generation only while it remains the current Analyst head and all exact bindings remain unchanged, arm the existing request once with this generation, the final Analyst commit and a fresh nonce. The bridge and formal workflow must re-check the current Analyst head, exact controller/science, unused one-way namespaces and hard-floor state before identity creation. Any mismatch is STOP before identity/START.
+## Frozen scientific result
 
-Candidate #35 remains terminal/SYSTEM/zero-credit and `REVISIT_TRIGGERED` only on the orthogonal revisit axis. Independent Audit R10's candidate-specific treatment/readout causal-opportunity mismatch remains a legitimate trigger, but no dedicated `REVISIT_PROPOSAL` exists. No Forge referral and no fresh successor are authorized.
+Official scorer decision: `INCONCLUSIVE`.
 
-## Exact freshness / integrity
+The native dynamic TOP1 cut has `native_delta_accuracy = 0.008626302083333332` with simultaneous interval `[0.002115885416666668, 0.01529947916666667]`; therefore the frozen intervention has a non-zero measured effect on the declared native surface. However scorer-declared comparator capacity adequacy is `false` for all three declared ordinary comparator families: `dense=false`, `eligibility=false`, `fsa=false`. The frozen contract therefore does not establish a unique or privileged native responsibility mechanism relative to capacity-adequate ordinary alternatives. `effect_reproduced` and `effect_conclusively_smaller` are false for all three families.
 
-- stable main: `d16403414fc7abebd23075fc401240971b8eb91d`
-- prior Evidence Analyst head observed before persistence: `24ced1639762a9e2d41a3ef869256b06ba7d2357`
-- Control R55 handoff head: `7fad3ddb4d9c2fab9415c166a09de904358da529`
-- MAIN/Relay report head: `0ecef196dcdbf0b901d13064e2d0f94e6d3a0569`
-- Methodology R104 handoff: `d60cb359acaf9c6965525a49f2578bc499be32c2`
-- External Research/Audit/Theory handoff: `00dec1659709a93e85050284d427e43b7d8d9ece`
-- Repository Steward G14: `c7400b417b9082318108beb1795148d97688265e`
-- Utility latest observed: `bb953376d5e83d4650e863f0fa500cdd6df2e665`
-- H7 frozen science: `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`
-- H7 repaired controller: `af3aa97574c365e3e918c3d4d012faa4886760d0`
-- H7 bridge: `aa3fb32466802baa20e95376adb9f25f88511129`
-- H7 bridge workflow blob: `c9dc0275352d675c52f251e25cdfb32486c54af6`
-- H7 bridge request blob: `ac7d6677fadb305c76cb5863e7b55131116ba247`
-- bridge validation run: `35948871992`, `success`
-- bridge request: `armed=false`
-- H7 `control/*`: absent
-- H7 `preserve/*`: absent
-- H7 `launch/h7-r5-*`: absent
-- retained current-controller H7 result-bearing workflow-dispatch runs: `0`
-- authoritative annotated `evidence/*` tags: exactly 5, unchanged
-- tag-form `formal/*`, `sealed/*`, `freeze/*`, `immutable/*`: absent
-- official consumed FORMAL identities: `7`; new consumption: `0`
-- open PRs: `#148`, `#149`; no research PR merged by this generation
-- Forge refs: four current noncanonical `forge/*` branches, none admitted
+No rescore, retune, reinterpretation past the frozen scorer ceiling, or historical PASS/FAIL rewrite is permitted. This identity is now `CONSUMED_ONE_WAY`.
 
-The formal workflow remains prospective and one-way: it verifies the current Analyst branch head and exact bindings, verifies unused H7 namespaces, recreates the locked runtime before identity creation, creates STARTED create-only, produces target-blind raw after STARTED, remotely preserves raw and a freeze ref before target-side scoring, and only then scores/seals. No step of that result-bearing workflow was dispatched by this generation.
+## Canonical funnel adjudication
 
-## Canonical funnel / development
+H7 current object is closed as `TERMINAL_FOR_CURRENT_OBJECT` with official outcome `INCONCLUSIVE`, not PASS or FAIL. Current fields:
 
-Canonical population remains 35 = 14 `MECHANISM` / 21 `SYSTEM`.
+- claim_ceiling: `MECHANISM`
+- stage: `FORMAL`
+- preformal_eligible: `true` (historical)
+- preformal_readiness: `READY` (historical pre-START state; no longer an execution authorization)
+- hold_class/reason: `null`
+- terminal_state: `TERMINAL_FOR_CURRENT_OBJECT`
+- queue_state: `CLOSED`
+- development_phase: `CONSUMED_ONE_WAY`
+- development_revision: `R5_UNCHANGED`
+- closure_reason: frozen FORMAL `INCONCLUSIVE`; declared comparator families were capacity-inadequate, so the current object cannot adjudicate privileged native responsibility; one-way identity forbids same-object rerun/repair.
+- system_priority_exception: `false`
 
-- terminal current objects: 34
-- active current objects: 1 (H7)
-- scientifically queued: 1 (H7)
-- scientifically READY: 1
-- effectively executable MECHANISM under exact current binding: 1 (H7, GO_ONCE only)
-- development phases: `OPEN_DEVELOPMENT 1 / RESULT_EXPOSED_DEVELOPMENT 34 / CONSUMED_ONE_WAY 0`
-- official consumed FORMAL identities: 7
-- new consumption: 0
+Canonical census is now `35 candidates = 14 MECHANISM / 21 SYSTEM`, `35 terminal`, `0 active`, `0 queued`, `0 effectively executable canonical MECHANISM`. Development phase census becomes `OPEN_DEVELOPMENT=0`, `RESULT_EXPOSED_DEVELOPMENT=34`, `CONSUMED_ONE_WAY=1`. Official consumed FORMAL identity count is `8` (one new consumption since R114).
 
-No terminal object is reopened. No same-object post-outcome SYSTEM→MECHANISM uplift is permitted.
+No automatic H7 successor is created. Any later H7-family successor requires a fresh candidate ID, independent motivation not derived from trying to rescue this inconclusive result, and a new prospective contract. A capacity-adequate comparator capability that is developed independently of this outcome could be a future revisit trigger, but the present comparator inadequacy itself is not permission to retune or rerun H7.
 
-## H7 one-way authority
+## Evidence identity / provenance adjudication
 
-Decision: `GO_ONCE_EXACT_BOUND_POST_BRIDGE_REPAIR_R114`.
+Stable-main `docs/AUTHORITATIVE_TAGS.md` specifies annotated Git tags with provenance for new authoritative `freeze/*`, `sealed/*`, `formal/*`, and `evidence/*` identities when tooling permits, and says existing authoritative tags are never updated; metadata correction must be append-only.
 
-This is authority for MAIN/Relay to arm the existing dormant bridge **once**; it is not execution by Evidence Analyst. Preconditions are prospective and fail-closed:
+Fresh Git-ref inspection shows the new H7 `freeze/*`, `formal/*`, `sealed/*`, and `evidence/*` refs are lightweight direct-commit tags (`object.type=commit`), whereas the five pre-existing `evidence/*` refs are annotated tag objects (`object.type=tag`). Therefore H7 has a repository provenance/identity representation defect relative to current policy.
 
-1. this R114 generation must still be the current Evidence Analyst branch head when the request is armed;
-2. frozen science must still resolve to `2f30b93...` and controller target branch to `af3aa975...`;
-3. bridge/request must remain the exact post-repair bundle observed here until the one arm edit;
-4. H7 `control/*`, `preserve/*`, `formal/*`, `sealed/*`, `freeze/*` namespaces must remain unused before identity creation;
-5. no result-bearing H7 dispatch for the fresh nonce may already exist;
-6. runtime/package/component/scorer/preserver bindings and scientific semantics remain the previously frozen R5 values;
-7. after one identity/START, no same-identity rerun, retune, rescore or post-outcome protocol repair is permitted.
+Analyst judgment: this defect does **not** invalidate, rerun, or rewrite the frozen H7 scientific result. START, preserve-before-target-access, exact result commit, and one-way consumption remain binding. The H7 lightweight refs themselves are historical and must not be moved, deleted, replaced, or retargeted. Repository Steward should audit the mismatch in its designated lane; any permissible correction must be append-only and science-invariant, pointing to the exact existing preserve/result commits and never manufacturing a new scientific result.
 
-If any precondition fails, STOP before identity creation. Whether the eventual run succeeds, fails scientifically, or fails after START for infrastructure reasons, a fresh Analyst must assess the consumed identity and next state; no automatic retry exists.
+Policy-conforming annotated evidence identities remain `5`; repository `evidence/*` refs total `6` including the nonconforming H7 lightweight ref.
 
-## Revisit / resurrection
+## Theory / Forge promotion gate
 
-Bootstrap remains complete 34/34. Distribution remains:
+Theory/Revisit R2 is prior to this Analyst generation and contains `NO_THEORY_PROPOSAL` and `NO_REVISIT_PROPOSAL`. TH-001 remains rejected for its current proposal because its fixed Q0-vs-QI discriminator reduced to ordinary adaptation/threshold plus fixed edge/delay. No post-hoc safeguarded revision is admitted.
 
-- `CLOSED_STRONG`: 1
-- `DORMANT_REVISITABLE`: 19
-- `DEFERRED_INDEPENDENT_REIDENTIFICATION`: 13
-- `REVISIT_TRIGGERED`: 1 (#35)
+Latest Fast Forge information is NO_OP/non-evidentiary: no new materially interesting object, no new promotion proposal, and no admission. Cumulative prior metrics remain 23 runs, 19 prototypes, 15 dead ends, 1 interesting object, 1 promotion proposal, 0 admissions, 10 duplicate/rescue rejects, 15 ordinary-reduction rejects, 2 Theory probes / 2 kills / 0 survivors, 0 Revisit probes. Forge did not receive H7 identity/scorer/preserver/runtime authority and receives zero scientific credit.
 
-#34 remains `CLOSED_STRONG`. #35 remains an immutable terminal current object. The revisit trigger is candidate-specific methodological information from Audit R10: the old R100 treatment nulled non-receptors while the observed declared response consisted only of directly cued untreated receptor spikes, so treatment-to-readout causal opportunity was not demonstrated. The old historical result is not rewritten and continues to support only the narrow same-declared-signature statement.
+## Revisit / resurrection ledger
 
-There is still no `REVISIT_PROPOSAL`, no `REVISIT_FORGE_TEST`, no canonicalization and no fresh successor. Any later fresh successor must independently define a new prospective question, verified treatment-to-readout causal opportunity, a sensitive downstream observable, explicit falsifier, useful negative outcome and ordinary leak/adaptation/refractory/recurrence/STP reductions, with zero inherited confirmatory credit.
+The prior 34-object bootstrap remains intact. H7 is newly terminal in this generation and is added conservatively as `DORMANT_REVISITABLE`, not `REVISIT_TRIGGERED`.
 
-## Theory / Forge / shadow
+New distribution across all 35 terminal current objects:
+- `CLOSED_STRONG=1`
+- `DORMANT_REVISITABLE=20`
+- `DEFERRED_INDEPENDENT_REIDENTIFICATION=13`
+- `REVISIT_TRIGGERED=1`
 
-Theory R2 remains `NO_THEORY_PROPOSAL / NO_REVISIT_PROPOSAL`. TH-001 remains rejected for its current proposal; Literature R41's anti-vacuity/intervention-faithfulness/mechanism-sparsification constraints are prospective only and do not repair TH-001 or frozen H7.
+H7 revisit entry:
+- closure_reason: consumed one-way FORMAL result is `INCONCLUSIVE` because ordinary comparator capacity was inadequate for the privileged-mechanism discriminator.
+- closure_evidence: START `52b17b...`, preserved raw `a5e76e...`, result `e6c4ec...`, frozen scorer decision.
+- what_would_change_our_mind: independently developed capacity/performance-adequate ordinary comparator capability, a genuinely new observable/intervention, or an independent programme result/theory that re-identifies a distinct responsibility question prospectively.
+- revisit_triggers: independent comparator/instrument capability change; independent canonical residual; independent theory re-derivation.
+- revisit_blockers: no result-responsive comparator retuning, no reuse of the consumed identity, no same-object protocol repair, no rescue-by-renaming.
+- successor_candidates: none.
 
-Fast Forge's fresh post-R113 run is `FORGE-20260924T113600+0900-NOOP-R113-FRESH-REVISIT-METADATA-GATED`: no new prototype, promotion proposal, materially new interesting object, Revisit probe or Theory probe. Cumulative metrics are 23 runs / 19 prototypes / 15 dead ends / 1 interesting / 1 promotion proposal / 0 admissions / 10 duplicate-rescue rejects / 15 ordinary-reduction rejects / 2 Theory probes / 2 kills / 0 Theory survivors / 0 Revisit probes.
+Candidate #35 remains immutable terminal/SYSTEM/zero-credit and remains the sole `REVISIT_TRIGGERED` object. Independent Audit R10 established a candidate-specific treatment/readout causal-opportunity weakness in the old development negative. Literature R42 sharpens a future fresh-successor requirement to prospectively verified treated-substrate-sensitive perturb-and-probe/readout or direct treated-state measurement, because latent state can be output-null. There is still no dedicated Revisit proposal, Forge referral, canonicalization or successor. The old R100 bytes/result are unchanged.
 
-Phenomenon-first remains low-rate `PREFETCH_SHADOW`, standby 0 and non-authorizing. H7 is again exactly executable under one-shot authority, so no-target intensification is not justified.
+Candidate #34 remains `CLOSED_STRONG`; no new information weakens its ordinary local impulse/decay reduction.
 
-## Inputs / allocation
+No old candidate ID is reopened.
 
-- Control R55: bridge repair completed, dormant and validated; fresh Analyst required before GO_ONCE; #35 trigger retained.
-- MAIN/Relay R113: science-invariant bridge rebind only, validation success, no arm/dispatch/identity/START; waiting for this fresh Analyst.
-- Methodology R104: required ordering was bridge repair + non-result validation -> fresh Analyst -> only then one arm/one dispatch/one fresh identity. The first two steps are now satisfied.
-- Literature R41: prospective causal-abstraction anti-vacuity/intervention-faithfulness reduction floor only.
-- Independent Audit R10: #35 treatment/readout causal-opportunity mismatch, `INCONCLUSIVE`, zero scientific credit, revisit relevant.
-- Repository Steward G14: main protection active; authoritative tag-namespace server-side protection not observed; PR #148/#149 remain normal-review governance/tooling items.
-- Utility R111: IDLE/non-authorizing; no H7 ownership, arm or dispatch.
-- Theory/Revisit R2: no new proposal.
+## Allocation / streams
 
-MAIN retains the current scientific critical path. Forge/Theory/Revisit/Utility receive no H7 identity, scorer, preserver, runtime, workflow or blocker ownership.
+- Control R56: ingested H7 consumed result, official `INCONCLUSIVE`, identity count 8, no reusable R114 authority; identified lightweight-tag provenance mismatch.
+- MAIN/Relay latest: formal run completed success, identity/START/raw-preserve/score-seal completed, now `WAITING_EXTERNAL` for this fresh Analyst; no retry authority.
+- Methodology R106: `MIXED_CALIBRATION`; one-way ordering/raw-before-score/preserve-before-read are calibrated; authoritative tag form/provenance must tighten without rerun/rewrite.
+- Literature R42: H7 effect is real on the declared surface but comparator inadequacy prevents privileged-mechanism inference; #35 future observability bar sharpened prospectively.
+- Independent Audit R10: #35 treatment/readout support mismatch remains revisit-relevant, zero confirmatory credit.
+- Repository Steward G14 predates the H7 result; its next designated pass should audit the new tag/provenance mismatch. Main protection remains active; server-side scientific tag-namespace protection is still not observed.
+- Utility R114 remained `IDLE`, explicitly avoided the active FORMAL result path, and has no scientific authority.
+- Theory/Revisit R2: no new Theory or Revisit proposal.
+- PRs #148 and #149 remain open; no research PR was merged by this Analyst.
 
-## Top actions / GO-STOP
+MAIN no longer has an executable H7 same-object action. With no viable canonical MECHANISM target, phenomenon-first moves to read-only `NO_TARGET_SHADOW`, standby `0`; it remains non-authorizing and must not materialize proposals just to create activity. Fast Forge may continue only independent rough exploration; Utility remains bounded/non-authorizing.
 
-1. **GO_ONCE — H7:** MAIN/Relay may arm the existing exact-bound bridge once under R114 and a fresh nonce. The bridge/formal workflow must fail closed on any freshness, binding, namespace or hard-floor mismatch. Evidence Analyst itself does not arm or dispatch.
-2. **STOP — any second H7 attempt or post-outcome repair:** after identity creation/START, no rerun, retune, rescore, same-object repair or automatic retry. Return to a fresh Analyst regardless of outcome.
-3. **STOP — throughput-driven candidate manufacture:** #35's revisit trigger is not a proposal/candidate; no fresh #35 successor, Forge probe, Theory admission or shadow materialization without a dedicated fresh proposal and full gate.
+## Top-3 / GO-STOP
 
-There is no second independent executable canonical science action worth ranking. Do not manufacture one to fill the Top-3.
+There is no executable canonical science action to populate a Top-3.
 
-## Hard-floor compliance
+1. `STOP`: H7 same-object rerun, retune, rescore, retry, post-outcome repair, or reuse of identity/nonce/R114 authority.
+2. `STOP`: #35 same-object reopen or successor/Forge referral without a dedicated fresh Revisit proposal and full gate.
+3. `STOP`: Theory/Forge/shadow promotion solely to avoid an empty canonical queue.
 
-This generation executed no experiment, armed or dispatched no result-bearing workflow, created or consumed no one-way identity, merged no research PR, mutated no immutable/evidence/formal/sealed/freeze/preserve scientific ref, changed no scheduler definition, dispatched no Utility action, reopened no terminal object, reran/retuned/rescored no consumed FORMAL identity, rewrote no historical PASS/FAIL, and accessed no protected evaluation/held-out result.
+Separate non-scientific governance action: Repository Steward may audit H7 tag provenance and, only if permitted, add append-only provenance/identity bookkeeping that points to the exact frozen commits without changing existing refs or scientific bytes.
 
-Persistence is limited to designated Evidence Analyst latest/state/history.
+## Hard-floor confirmation
+
+This Analyst generation executed no experiment; dispatched no result-bearing workflow; created or consumed no identity; merged no research PR; mutated no immutable/freeze/sealed/formal/evidence/preserve scientific ref; reopened no terminal object; reran/retuned/rescored no consumed FORMAL identity; accessed no protected held-out payload; changed no scheduler definition; dispatched no Utility action. Persistence is limited to designated Evidence Analyst latest/state/history.
