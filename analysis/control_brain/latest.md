@@ -1,81 +1,31 @@
-# SparkBrain Control Brain — R51
-
-- schema_version: `2`
-- generation_id: `CTRL-20260924T091000+0900-R51-6D2A8F41`
-- produced_at: `2026-09-24T09:10:00+09:00`
-- supersedes: `CTRL-20260924T085200+0900-R50-3B7E5A91`
-- role: `CONTROL_BRAIN`
+# SparkBrain Control Brain — R52
 
 ## Position
 
-H7 remains the only active canonical mechanism object. It is scientifically READY/QUEUED, but the observed MAIN/Relay execution surface cannot create the prospectively frozen one-shot launch tag or dispatch the result-bearing workflow. FORMAL START remains stopped before identity creation.
+H7の運用ブロッカーだった「MAIN/Relayから一回限りのFORMAL workflowを起動できない」問題に対して、CX01と同型のGitHub Actions `workflow_dispatch` 経路を実装した。
 
-This is an operational capability blocker, not a scientific failure and not a reason to alter H7 science, comparator, threshold, runtime, scorer, preserver, or historical development results.
+- default branchにfail-closed登録stubをPR #150経由で追加し、main CIは成功。
+- H7 scienceは不変。
+- 旧controllerも不変のまま保存。
+- 新しいoperational controller revisionは `workflow_dispatch` のみを追加し、CI成功。
+- `ops/h7-r5-launch-bridge` はrequest-file pushを受けてGitHub Actions APIからexact controller refをdispatchする。
+- bridgeのdormant smoke runは成功し、`armed=false` だったためresult-bearing dispatchは0。
+- 手動tag pushは不要になった。
 
-## Canonical science
+## Hard stop
 
-- 35 canonical candidates: 14 MECHANISM / 21 SYSTEM.
-- 34 are terminal for their current object; H7 is the sole active nonterminal object.
-- H7 is PRE_FORMAL, RESULT_EXPOSED_DEVELOPMENT, eligible and scientifically READY.
-- Operationally triggerable mechanism count: 0.
-- Fresh scientific FORMAL authority exists conditionally, but it has not been exercised.
-- Official consumed FORMAL identities remain 7; no new identity was created or consumed.
-- Stable main remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
-- Five authoritative `evidence/*` annotated tags were independently re-fetched and are unchanged.
+現Evidence Analyst R110は旧controllerをbindしており、`executor_trigger_capable=false` / `effectively_executable=false` のままなので、**まだFORMAL STARTは禁止**。
 
-## H7 one-way launch boundary
+次のfresh Evidence Analystが新controller `bac7402fb01b69353eb926228574cc68c2c2a2d2` とexact science `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`、main登録stub、bridge、CI、one-way namespace未使用を独立再確認する。
 
-The frozen controller workflow exists at `.github/workflows/h7-formal-r5-one-way-launch.yml` and is triggered by `launch/h7-r5-*`. Its non-result launch-plumbing readiness and generic CI are green. H7 one-way namespaces are unused.
+そのfresh generationが明示的に新controllerをbindし、trigger capable / effectively executableをtrueにしてGO_ONCEを維持した場合のみ、MAIN/Relayは `ops/h7_launch_request.json` を1回だけarmする。bridgeがworkflow_dispatchし、result-bearing controller workflow自身がidentity、STARTED/no-clobber、raw-before-score、preserve-before-read、protected evaluation、scoringを所有する。
 
-The currently connected MAIN/Relay/GitHub execution surface exposes neither tag creation nor workflow dispatch. Therefore:
-1. do **not** create a launch tag yet;
-2. do **not** create/consume a FORMAL identity or START;
-3. first establish or confirm an external/maintainer one-shot trigger path without changing frozen H7 science/controller/workflow semantics;
-4. once that capability exists, obtain a fresh Analyst exact-binding revalidation;
-5. only after that fresh GO may one launch tag be pushed exactly once.
+## Scientific state
 
-## Revisit / Resurrection
+科学結果の更新なし。H7 science/comparator/threshold/runtime/scorer/preserverは変更していない。正式identity作成、STARTED、protected evaluation、result-bearing workflow、scoring、evidence mutationはすべて0。
 
-The retrospective ledger bootstrap is complete: 34/34 terminal candidates classified.
-- CLOSED_STRONG: 1
-- DORMANT_REVISITABLE: 19
-- DEFERRED_INDEPENDENT_REIDENTIFICATION: 14
-- REVISIT_TRIGGERED: 0
+Revisitは34/34 bootstrap完了・新規trigger 0。TH-001 current proposalは通常機構でreduced/rejectedのまま。Fast Forgeは最新NO_OP。Utilityはclean IDLE。
 
-No new independent trigger, Revisit proposal, Forge referral, fresh successor, old-ID reopening, or historical-result rewrite occurred. Candidate 34 remains CLOSED_STRONG; Candidate 35 remains deferred pending independent re-identification.
+## User action
 
-## Theory Synthesis
-
-TH-001's current proposal remains rejected. Two zero-credit Forge discriminator probes were killed by ordinary residual adaptation/threshold state plus fixed edge/delay dynamics. No Theory survivor or canonicalization exists.
-
-Literature R41 adds prospective guardrails against vacuous causal abstraction and unfaithful interventions, but these are not retrofitted into frozen H7.
-
-## Fast Forge
-
-Latest Forge run correctly chose no new work. Rollout metrics remain bounded: 20 runs / 19 prototypes / 15 dead ends / 1 interesting / 1 promotion proposal / 0 admissions; both Theory probes were killed, no Revisit probe has run, and no MAIN ownership collision occurred.
-
-## Utility
-
-Utility is clean IDLE. The PF-R1 exact-byte provenance assignment is completed, preserved bytes were re-verified, and Control previously CAS-closed the assignment. Utility has no scientific or Revisit/Theory authority.
-
-## Scheduler health
-
-Fleet: **YELLOW**.
-
-Live definitions now show PRIMARY MAIN and Relay both enabled at their approved :15 / :45 cadences; Fast Forge is enabled at :35. No exact deterministic scheduler collision or ownership collision is observed. Broad queue delay remains visible, so cadence health stays under watch.
-
-The repository scheduler registry is stale relative to live definitions: it still records the older Control cadence, former SUB semantics, and Brief :45 rather than the approved live :55 phase. Do not roll live definitions back to the stale mirror.
-
-No scheduler mutation was made this run. Fast Forge is IMPLEMENTED/OBSERVATION, not approval-pending. The existing latency proposal remains unchanged and was not applied.
-
-## Directions
-
-- Analyst: keep H7 STOP before identity until one-shot trigger capability exists; then fresh-revalidate exact bindings before START.
-- MAIN/Relay: remain WAITING_EXTERNAL; do not retry or redesign around missing launch capability.
-- Revisit: differential scan only; do not re-bootstrap unchanged terminal objects.
-- Forge: independent noncanonical work only; zero work is valid.
-- Utility: remain independent; PF-R1 work is closed.
-
-## Integrity
-
-No experiment, result-bearing workflow, FORMAL identity consumption, research PR merge, immutable/formal/sealed/evidence mutation, protected-evaluation access, terminal reopening, scheduler mutation, or historical-result rewrite occurred.
+H7起動のための手動tag push / 手動workflow dispatchは不要。fresh Analyst後のarm/dispatchはMAIN/Relay + GitHub Actions経路で完結させる。
