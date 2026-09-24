@@ -1,29 +1,30 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T144712+0900-RELAY-R117-WAITING-NO-EXECUTABLE-CANONICAL-SCIENCE",
-  "producer_run_id": "sparkbrain-main-relay-20260924T144712JST-r117-waiting-no-executable-canonical-science",
-  "generated_at": "2026-09-24T14:47:12+09:00",
+  "generation_id": "MAIN-20260924T151735+0900-PRIMARY-R118-WAITING-NO-EXECUTABLE-CANONICAL-SCIENCE",
+  "producer_run_id": "sparkbrain-main-primary-20260924T151735JST-r118-waiting-no-executable-canonical-science",
+  "generated_at": "2026-09-24T15:17:35+09:00",
   "status": "WAITING_EXTERNAL",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "candidate_id": null,
   "research_layer": null,
   "claim_ceiling": null,
   "development_phase": null,
   "development_revision": null,
-  "cycle_count": null,
-  "information_gain": "CONTROL_PLANE_ONLY_R117_RECONCILIATION; NO_NEW_SCIENCE; NO_EXECUTABLE_CANONICAL_OBJECT",
+  "cycle_count": 21,
+  "information_gain": "CONTROL_PLANE_ONLY_R118_SCHEDULER_HEALTH_AND_FRESHNESS_RECONCILIATION; ZERO_NEW_SCIENTIFIC_INFORMATION; NO_EXECUTABLE_CANONICAL_OBJECT",
   "analyst_authority": {
-    "generation_id": "EVA-20260924T142634+0900-R117-POSTFORMAL-NOOP-MAIN-R116-METH-R108",
-    "commit": "b729e046fd4cb29428ff5f59d813850beb4a67b1",
-    "decision": "STOP_NO_EXECUTABLE_CANONICAL_ACTION; H7_SAME_OBJECT_PERMANENT_STOP; CAND35_TRIGGER_RECORDED_NO_PROPOSAL_NO_EXECUTION_AUTHORITY",
+    "generation_id": "EVA-20260924T150100+0900-R118-POSTFORMAL-NOOP-CONTROL-R57-MAIN-R117",
+    "commit": "ec74807c04e23e561275f8a2900e11e8145076c3",
+    "decision": "STOP_NO_EXECUTABLE_CANONICAL_ACTION; H7_SAME_OBJECT_PERMANENT_STOP; CAND35_TRIGGER_ONLY_NO_NEW_PROPOSAL_NO_EXECUTION_AUTHORITY",
     "freshness_rechecked_this_run": true,
-    "scientific_execution_mode": "READ_ONLY"
+    "scientific_execution_mode": "READ_ONLY",
+    "material_change_scope": "CONTROL_PLANE_SCHEDULER_HEALTH_RECONCILIATION_ONLY"
   },
-  "prior_main_generation": "MAIN-20260924T141618+0900-PRIMARY-R116-NO-EXECUTABLE-CANONICAL-SCIENCE",
-  "prior_main_durable_commit": "b4e9f84c20b7d148257dc2902555f9dfc186db7c",
+  "prior_main_generation": "MAIN-20260924T144712+0900-RELAY-R117-WAITING-NO-EXECUTABLE-CANONICAL-SCIENCE",
+  "prior_main_durable_commit": "eacd788f91fe363c272d23fdd81163817f905189",
   "persistence": {
-    "history_path": "reports/orchestrator/main/history/2026-09-24/144712-r117-relay-waiting-no-executable-canonical-science.md",
-    "history_create_commit": "f902e3decc77ae4875a443402b3913e559451ffa"
+    "history_path": "reports/orchestrator/main/history/2026-09-24/151735-r118-primary-waiting-no-executable-canonical-science.md",
+    "history_create_commit": "6d9b39439644986680d5edb3c3b7a7bf2e9605a3"
   },
   "funnel": {
     "canonical": 35,
@@ -37,7 +38,9 @@
     "consumed_one_way": 1,
     "effectively_executable_mechanism": 0,
     "consumed_identities": 8,
-    "new_consumption_since_prior_analyst": 0
+    "new_consumption_since_prior_analyst": 0,
+    "revisit_proposals": 0,
+    "fresh_successors": 0
   },
   "H7": {
     "candidate_id": "CAND-H7-RESPONSIBILITY",
@@ -57,7 +60,8 @@
     "same_identity_rerun_retune_rescore": "PROHIBITED",
     "post_outcome_same_object_repair": "PROHIBITED",
     "automatic_successor": "PROHIBITED",
-    "revisit_status": "DORMANT_REVISITABLE"
+    "revisit_status": "DORMANT_REVISITABLE",
+    "successor_candidates": []
   },
   "candidate35": {
     "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
@@ -76,13 +80,22 @@
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "b729e046fd4cb29428ff5f59d813850beb4a67b1",
+    "analyst_head": "ec74807c04e23e561275f8a2900e11e8145076c3",
     "control_branch": "ops/control-brain-handoff",
-    "control_head": "259b3db8f3f120475bc7e3a1b561383cc4c3a451",
+    "control_head": "376167105b9fb384efda60a98a1088809ddcca2d",
+    "utility_branch": "ops/utility-orchestrator-requests",
+    "utility_head": "3fe8c943215db7973017d35c39dc19cca5034bb2",
+    "prior_main_report_head": "eacd788f91fe363c272d23fdd81163817f905189",
     "scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
     "controller_head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
+    "forge_refs": {
+      "forge/20260923-receptor-suppression-probes-a": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
+      "forge/20260924-coordinate-null-local-witness": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
+      "forge/20260924-recurrent-continuation-a": "17b2673cd0417fdf931264a71d8df1f9c1c21f23",
+      "forge/20260924-th001-q0-qi-adaptation-a": "e2dbe3a5a0db812f777b789a6878af8a0d3eee0f"
+    },
     "control_ref": "control/h7-r5-h7-r5-285a3a206b34c5982b9d4045-started",
     "control_sha": "52b17b785364f96cc2e95507b2336252459d5352",
     "preserve_ref": "preserve/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
@@ -91,7 +104,8 @@
     "formal_ref": "formal/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
     "sealed_ref": "sealed/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
     "evidence_ref": "evidence/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85"
+    "result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
+    "open_prs": [148, 149]
   },
   "workflow_wait": {
     "formal_run_id": 35951118916,
@@ -101,7 +115,7 @@
     "result_bearing": true,
     "rerun_allowed": false,
     "waiting_on_external_workflow": false,
-    "expected_next_action": "Wait for an independently motivated fresh canonical admission or a fresh dedicated REVISIT_PROPOSAL that passes the Evidence Analyst gate and yields a new candidate ID with a prospectively fixed contract. No H7 same-object action is permitted."
+    "expected_next_action": "Wait for an independently motivated fresh canonical admission/allocation, or a substantive new Candidate #35 REVISIT_PROPOSAL that passes the Evidence Analyst gate and yields a new candidate ID with a prospectively fixed contract. No H7 same-object action is permitted."
   },
   "formal_identity": {
     "identity_id": "h7-r5-285a3a206b34c5982b9d4045",
@@ -128,16 +142,31 @@
     "cycle_extension": "NONE_AUTHORIZED_OR_PERFORMED",
     "reassessment_execution": "NONE_AUTHORIZED_OR_PERFORMED"
   },
+  "work_performed": [
+    {
+      "classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION",
+      "change": "Adopted Evidence Analyst R118 and Control R57 scheduler-health reconciliation as read-only control-plane inputs; no scientific allocation or source changed."
+    },
+    {
+      "classification": "CANONICAL_QUEUE_RECHECK",
+      "change": "Confirmed all 35 current canonical objects remain terminal, no object is active or scientifically queued, Candidate #35 remains trigger-only with no REVISIT_PROPOSAL, and H7 remains consumed/terminal."
+    },
+    {
+      "classification": "FORMAL_HARD_FLOOR_RECHECK",
+      "change": "Confirmed the consumed H7 identity and one-way refs remain untouched; no rerun, retune, rescore, protected-evaluation reaccess, or historical rewrite occurred."
+    }
+  ],
   "observations": {
     "new_scientific_result_this_run": false,
     "evidentiary_status": "NO_NEW_SCIENCE_WAITING_FOR_FRESH_GATED_ADMISSION",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
     "protected_evaluation_reaccessed": false,
-    "official_scoring_performed_by_relay": false,
+    "official_scoring_performed_this_run": false,
     "formal_identity_created_or_consumed_this_run": false,
     "prior_results_preserved_unchanged": true,
-    "terminal_object_reopened": false
+    "terminal_object_reopened": false,
+    "forge_derived_code_reused": false
   },
   "consumed_identities": {
     "official_consumed_identity_count": 8,
@@ -145,18 +174,20 @@
     "new_identity_consumed_this_run": false
   },
   "ownership_and_collision": {
-    "prior_primary_lease_status": "BLOCKED",
     "fresh_primary_running_same_object_collision": false,
     "fast_forge_latest_generation": "FORGE-20260924T133500+0900-NOOP-R115-ALL35-TERMINAL-NO-GATED-PROBE",
     "fast_forge_latest_disposition": "NO_OP_NON_EVIDENTIARY_NONCANONICAL",
     "fast_forge_canonical_collision": false,
-    "forge_or_utility_dependency_created": false
+    "utility_dependency_created": false,
+    "control_r57_scheduler_health_restored": true,
+    "exactly_one_enabled_primary_scheduler": true
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
     "main_generation_and_lease_freshness_rechecked": true,
     "main_and_exact_research_refs_rechecked": true,
-    "forge_state_rechecked_for_collision": true,
+    "forge_refs_rechecked_for_collision": true,
+    "utility_and_control_rechecked_for_ownership": true,
     "formal_workflow_status_rechecked": true,
     "formal_identity_rerun": false,
     "formal_identity_retuned": false,
@@ -173,6 +204,6 @@
     "H7 same-object repair, rerun, retune, rescore, retry, identity reuse, or automatic successor",
     "Candidate #35 same-object reopen or ungated successor materialization before a fresh REVISIT_PROPOSAL passes the gate"
   ],
-  "stop_reason": "NO_EXECUTABLE_CANONICAL_SCIENCE_R117_ALL35_TERMINAL_NO_REVISIT_PROPOSAL",
-  "next_action": "Wait for an independently motivated fresh canonical admission or a fresh dedicated REVISIT_PROPOSAL that passes the Evidence Analyst gate and yields a new candidate ID with a prospectively fixed contract. No H7 same-object action is permitted."
+  "stop_reason": "R118_NO_EXECUTABLE_CANONICAL_ACTION_WAIT_FOR_FRESH_ADMISSION",
+  "next_action": "Wait for an independently motivated fresh canonical admission/allocation, or a substantive new Candidate #35 REVISIT_PROPOSAL that passes the Evidence Analyst gate and yields a new candidate ID with a prospectively fixed contract. No H7 same-object action is permitted."
 }
