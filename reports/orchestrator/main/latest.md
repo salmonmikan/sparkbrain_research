@@ -1,16 +1,18 @@
-# MAIN RELAY — R119 waiting on Evidence Analyst adjudication of Candidate #35 raw Revisit proposal
+# MAIN PRIMARY — Candidate #35 Revisit is gated to Fast Forge only; no canonical execution
 
-Execution mode: `RELAY`  
+Execution mode: `PRIMARY`  
 Status: `WAITING_EXTERNAL`  
 Canonical object: `NONE_ALLOCATED`  
-Analyst authority: `EVA-20260924T150100+0900-R118-POSTFORMAL-NOOP-CONTROL-R57-MAIN-R117`
+Analyst authority: `EVA-20260924T160200+0900-R119-CAND35-REVISIT-FORGE-TEST`
 
-Theory/Revisit R3 is newer than the latest Evidence Analyst generation and now contains one raw Candidate #35 `REVISIT_PROPOSAL`. The proposal is noncanonical and has zero execution authority until a fresh Evidence Analyst generation adjudicates it. Fast Forge independently observed the same proposal and performed no probe.
+Evidence Analyst R119 has now adjudicated the independently motivated Candidate #35 Revisit proposal. The decision is **not** a canonical admission: it authorizes only bounded Fast Forge probe `RVT35-FORGE-001` as noncanonical, non-evidentiary, and zero scientific credit. Candidate #35's old object remains terminal `SYSTEM`; no fresh successor or new candidate ID exists, and MAIN has no execution authority.
 
-Canonical Funnel v2.1 state is unchanged from Analyst R118: 35 terminal candidates, 0 active, 0 scientifically queued, 0 effectively executable MECHANISM, 34 `RESULT_EXPOSED_DEVELOPMENT`, 1 `CONSUMED_ONE_WAY`, and 8 consumed identities. Candidate #35 remains terminal `SYSTEM`; the raw proposal does not reopen it, upgrade it to `MECHANISM`, or create a successor. H7 remains terminal/consumed with frozen `INCONCLUSIVE` result and no same-identity repair/rerun/retune/rescore authority.
+The canonical funnel therefore remains 35 terminal candidates, 0 active, 0 scientifically queued, 0 effectively executable MECHANISM, 34 `RESULT_EXPOSED_DEVELOPMENT`, 1 `CONSUMED_ONE_WAY`, and 8 consumed identities. H7 remains terminal/consumed `FORMAL` with frozen `INCONCLUSIVE` result. Its identity and control/preserve/freeze/formal/sealed/evidence refs were not touched; same-identity rerun/retune/rescore or same-object repair remains prohibited.
 
-No science-invariant repair, science-affecting change, cycle extension, reassessment execution, scoring, protected-evaluator access, or scientific ref mutation occurred. Prior results and one-way refs remain unchanged.
+This run re-fetched stable main, research/ and forge/ collision surfaces, exact Candidate #35 branch heads, open PRs, recent workflow runs, Evidence Analyst R119, latest MAIN/Relay, Control R58, Fast Forge latest state, and Utility ownership state. No scientific implementation, comparator, CI/verifier/harness change, binding, preservation, scoring, protected-evaluator access, result-bearing workflow, scientific ref mutation, or candidate reopening occurred. No Forge-derived code or observations were reused as confirmatory support.
 
 ## Next MAIN action
 
-Wait for a fresh Evidence Analyst generation that explicitly adjudicates Theory/Revisit R3. Continue only if it creates an authorized fresh successor/new candidate ID with a prospectively fixed contract. If rejected or left ungated, keep Candidate #35 terminal and perform no science.
+Wait for Fast Forge to either kill or survive `RVT35-FORGE-001`, then wait for a **fresh Evidence Analyst generation**. MAIN may resume only if that later Analyst generation explicitly admits a fresh successor/new candidate ID with its own prospective canonical contract. Otherwise remain stopped. H7 same-object action remains permanently prohibited.
+
+Full technical record: `reports/orchestrator/main/history/2026-09-24/161228-r120-primary-waiting-cand35-revisit-forge-test.md`.
