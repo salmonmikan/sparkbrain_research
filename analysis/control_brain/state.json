@@ -1,73 +1,90 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260924T095000+0900-R52-WORKFLOW-DISPATCH-READY",
-  "produced_at": "2026-09-24T09:50:00+09:00",
-  "generated_at": "2026-09-24T09:50:00+09:00",
-  "producer_run_id": "sparkbrain-control-20260924T0950JST-r52",
+  "generation_id": "CTRL-20260924T100300+0900-R53-MAIN-RESTORED-H7-DISPATCH-VERIFIED",
+  "produced_at": "2026-09-24T10:03:00+09:00",
+  "generated_at": "2026-09-24T10:03:00+09:00",
+  "producer_run_id": "sparkbrain-control-20260924T0950JST-r53-reconcile",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY",
-  "supersedes_generation_id": "CTRL-20260924T091000+0900-R51-6D2A8F41",
-  "programme_position": "H7_WORKFLOW_DISPATCH_CAPABILITY_PROVISIONED_AND_CI_GREEN_PENDING_FRESH_ANALYST_REBIND_NO_FORMAL_START",
+  "supersedes_generation_id": "CTRL-20260924T095000+0900-R52-WORKFLOW-DISPATCH-READY",
+  "programme_position": "H7_WORKFLOW_DISPATCH_CAPABILITY_VERIFIED_PENDING_FRESH_ANALYST_REBIND; PRIMARY_MAIN_ENABLED_STATE_RESTORED",
   "material_delta": {
-    "h7_manual_tag_requirement_removed": true,
-    "workflow_dispatch_registration_main_commit": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "workflow_dispatch_registration_pr": 150,
-    "dispatch_controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
-    "dispatch_controller_head": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
-    "dispatch_controller_ci": {
-      "run_id": 35940002868,
-      "conclusion": "success"
-    },
-    "bridge_branch": "ops/h7-r5-launch-bridge",
-    "bridge_request_head": "1e12e73b8faa806ac07c88d4cb95875093439c7a",
-    "bridge_smoke_run": {
-      "run_id": 35940125697,
-      "conclusion": "success",
-      "armed": false,
-      "formal_dispatch_performed": false
-    },
-    "main_registration_ci": {
-      "run_id": 35939975962,
-      "conclusion": "success"
-    },
-    "scientific_source_changed": false,
-    "science_affecting_change": false,
-    "result_bearing_execution": false
+    "h7_dispatch_route_reverified": true,
+    "h7_scientific_source_changed": false,
+    "h7_result_bearing_execution": false,
+    "primary_main_enabled_regression_observed": true,
+    "primary_main_enabled_regression_repaired": true,
+    "primary_main_cadence_or_role_changed": false,
+    "relay_changed": false
   },
-  "h7": {
-    "candidate_id": "CAND-H7-RESPONSIBILITY",
-    "exact_science": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "prior_controller": "042d00375278d551dbf643ad866a4c883852804d",
-    "proposed_operational_controller": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
-    "proposed_trigger_mode": "WORKFLOW_DISPATCH_VIA_GUARDED_OPS_BRIDGE",
-    "current_analyst_generation": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP",
-    "current_analyst_still_binds_prior_controller": true,
-    "current_analyst_executor_trigger_capable": false,
-    "current_analyst_effectively_executable": false,
-    "formal_start_allowed_now": false,
-    "reason": "Fresh Analyst has not yet revalidated and rebound the new workflow-dispatch controller.",
-    "request_file": "ops/h7_launch_request.json",
-    "request_armed": false,
-    "request_status": "DORMANT_DISPATCH_CAPABILITY_PROVISIONED_PENDING_FRESH_ANALYST_REVALIDATION",
-    "next_gate": [
-      "Fresh Evidence Analyst independently verifies main registration stub, dispatch controller, bridge, CI, exact science/runtime/scorer/preserver bindings.",
-      "If valid, Analyst binds controller bac7402f..., sets executor_trigger_capable/effectively_executable true, and retains explicit GO_ONCE authority.",
-      "Only then MAIN or Relay may update the ops request once with exact Analyst generation/commit and a unique nonce.",
-      "Bridge workflow dispatches the exact controller ref through GitHub Actions API.",
-      "The controller workflow owns identity creation, STARTED/no-clobber, raw-before-score, preserve-before-read, protected evaluation, and scoring."
-    ],
-    "manual_user_tag_push_required": false,
-    "manual_user_workflow_dispatch_required": false
+  "human_directive_dispositions": {
+    "HUMAN-20260918-001": "ACCEPT_OUTCOME_INDEPENDENT_SMALL_INTEGRATION_ONLY",
+    "HUMAN-20260919-002": "ACCEPT_REPORT_PROTECTION_GAPS_WITHOUT_APPLYING_RULES",
+    "HUMAN-20260919-003": "ACCEPT_PRIORITIZE_SUBSTANTIVE_CANONICAL_THROUGHPUT_WITHOUT_WEAKENING_FORMAL",
+    "HUMAN-20260921-004": "ACCEPT_WITH_AUTHORITY_BOUNDARY_UTILITY_AUTONOMY_NONCANONICAL_ONLY",
+    "HUMAN-20260922-005": "ACCEPT_DEVELOPMENT_FLEXIBLE_EVIDENCE_RIGID",
+    "HUMAN-20260922-006": "ACCEPT_VERSION_SEMANTICS_AUDIT_BEFORE_SMALL_MAIN_BASELINE_REFRESH",
+    "HUMAN-20260922-007": "MODIFY_SUPERSEDED_BY_FAST_FORGE_AND_UTILITY_DO_NOT_REENABLE_LEGACY_SUB",
+    "HUMAN-20260922-008": "ACCEPT_FAST_FORGE_SLOW_SCIENCE_ACTIVE"
+  },
+  "authoritative_observations": {
+    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "h7_science": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+    "h7_prior_controller": "042d00375278d551dbf643ad866a4c883852804d",
+    "h7_dispatch_controller": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
+    "h7_dispatch_controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
+    "default_branch_registration_pr": 150,
+    "default_branch_registration_merged": true,
+    "controller_ci_run": 35940002868,
+    "controller_ci_conclusion": "success",
+    "bridge_branch": "ops/h7-r5-launch-bridge",
+    "bridge_head": "1e12e73b8faa806ac07c88d4cb95875093439c7a",
+    "bridge_smoke_run": 35940125697,
+    "bridge_smoke_conclusion": "success",
+    "bridge_request_armed": false
   },
   "canonical_funnel": {
+    "source_generation": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP",
     "candidate_total": 35,
     "MECHANISM": 14,
     "SYSTEM": 21,
     "terminal_for_current_object": 34,
     "active_nonterminal": 1,
+    "scientifically_queued": 1,
+    "scientific_hold": 0,
     "preformal_eligible": 1,
     "preformal_ready": 1,
     "official_consumed_formal_identities": 7,
     "new_consumption_this_run": 0
+  },
+  "h7": {
+    "candidate_id": "CAND-H7-RESPONSIBILITY",
+    "claim_ceiling": "MECHANISM",
+    "stage": "PRE_FORMAL",
+    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "development_revision": "R5_UNCHANGED",
+    "terminal_state": "ACTIVE",
+    "queue_state": "QUEUED",
+    "preformal_eligible": true,
+    "preformal_readiness": "READY",
+    "exact_science": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+    "current_analyst_generation": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP",
+    "current_analyst_bound_controller": "042d00375278d551dbf643ad866a4c883852804d",
+    "proposed_operational_controller": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
+    "proposed_trigger_mode": "WORKFLOW_DISPATCH_VIA_GUARDED_OPS_BRIDGE",
+    "current_analyst_executor_trigger_capable": false,
+    "current_analyst_effectively_executable": false,
+    "identity_status": "NOT_CREATED_NOT_CONSUMED",
+    "formal_authority": "GO_ONCE_CONDITIONAL_EXACT_BINDING_RETAINED_AS_SCIENTIFIC_AUTHORITY",
+    "formal_start_allowed_now": false,
+    "operational_blocker": "FRESH_EVIDENCE_ANALYST_HAS_NOT_YET_REBOUND_NEW_DISPATCH_CONTROLLER",
+    "manual_user_tag_push_required": false,
+    "manual_user_workflow_dispatch_required": false,
+    "next_gate": [
+      "Fresh Evidence Analyst independently re-fetches main registration, dispatch controller, bridge, CI, one-way namespaces and exact scientific bindings.",
+      "If valid, Analyst binds exact_bound_controller to bac7402fb01b69353eb926228574cc68c2c2a2d2, sets executor_trigger_capable/effectively_executable true, and retains GO_ONCE.",
+      "Only then MAIN or Relay arms ops/h7_launch_request.json once with the exact Analyst generation/commit and a unique nonce.",
+      "Bridge workflow dispatches the exact controller ref; controller owns identity, STARTED/no-clobber, raw-before-score, preserve-before-read and scoring."
+    ]
   },
   "revisit": {
     "bootstrap_complete": true,
@@ -76,21 +93,35 @@
     "DORMANT_REVISITABLE": 19,
     "DEFERRED_INDEPENDENT_REIDENTIFICATION": 14,
     "REVISIT_TRIGGERED": 0,
+    "revisit_proposals": 0,
+    "forge_test_referrals": 0,
     "fresh_successors": 0,
-    "old_ids_reopened": 0
+    "old_ids_reopened": 0,
+    "current_scan": "NO_NEW_INDEPENDENT_TRIGGER"
   },
   "theory": {
-    "latest": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
-    "disposition": "THEORY_REJECTED",
+    "latest_generation": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
+    "status": "NO_THEORY_PROPOSAL",
+    "prior_theory": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
+    "prior_theory_disposition": "THEORY_REJECTED_CURRENT_PROPOSAL",
     "scientific_credit": 0,
-    "forge_probe_kills": 2,
-    "survivors": 0
+    "new_information": "PRIOR_TH001_DISCRIMINATOR_REDUCED_BY_ORDINARY_ADAPTATION_THRESHOLD_PLUS_FIXED_EDGE_DELAY; LITERATURE_TIGHTENS_FUTURE_ANTI_VACUITY_AND_INTERVENTION_FAITHFULNESS_ONLY_PROSPECTIVELY",
+    "revisit_trigger_created": false
   },
   "fast_forge": {
     "status": "NON_EVIDENTIARY_NONCANONICAL",
     "latest": "NO_OP_NO_GATED_THEORY_REVISIT_OR_FRESH_INDEPENDENT_TARGET",
     "admissions": 0,
     "ownership_collisions": 0
+  },
+  "methodology": {
+    "generation_id": "METHCAL-20260924T091717+0900-R102-8D31C7A4",
+    "overall_classification": "WELL_CALIBRATED",
+    "new_finding": "MAIN_R110_ANALYST_GENERATION_LABEL_MISMATCH",
+    "finding_class": "SCIENCE_INVARIANT_REPAIR",
+    "scientific_decision_semantics_aligned": true,
+    "prospective_action": "READ_GENERATION_ID_FROM_EXACT_BOUND_ANALYST_ARTIFACT_AND_FAIL_CLOSED_ON_PAIR_MISMATCH_BEFORE_IDENTITY_START",
+    "mechanism_supply": "FRAGILE_ONE_SCIENTIFICALLY_QUEUED"
   },
   "utility": {
     "status": "IDLE",
@@ -101,24 +132,27 @@
   "scheduler_health": {
     "fleet_status": "YELLOW_OBSERVE",
     "primary_main_enabled": true,
+    "primary_main_enabled_repaired_this_run": true,
     "relay_enabled": true,
     "fast_forge_enabled": true,
+    "theory_calibration_policy": "TEMPORARY_4_SLOT_UNTIL_2026-09-26T01:30+09:00_THEN_ALREADY_APPROVED_2_SLOT",
     "exact_collision_count": 0,
     "ownership_collision_count": 0,
-    "live_scheduler_mutation_this_run": false,
-    "note": "No cadence/role changes. H7 execution-capability repair was repository workflow plumbing only."
+    "cadence_or_role_structural_change_this_run": false,
+    "note": "PRIMARY MAIN was found disabled despite explicit user-approved enabled-lane policy and was restored without changing cadence or prompt. Relay was not changed."
   },
   "direction": {
     "evidence_analyst": [
-      "Treat the new workflow-dispatch path as an operational prerequisite candidate, not automatic FORMAL authority.",
-      "Re-fetch and inspect main registration commit d164034..., controller bac740..., bridge request/workflow, CI results, exact H7 science and all one-way namespaces.",
-      "If and only if exact bindings remain valid, bind H7 exact_bound_controller to bac740..., mark trigger capability/effective executability true, and retain GO_ONCE authority.",
+      "Evaluate the already-provisioned H7 workflow-dispatch path as operational capability only; do not infer FORMAL authority from plumbing alone.",
+      "Re-fetch main registration commit d16403414fc7abebd23075fc401240971b8eb91d, controller bac7402fb01b69353eb926228574cc68c2c2a2d2, bridge request/workflow, successful CI, exact H7 science and all one-way namespaces.",
+      "If and only if exact bindings remain valid, bind H7 to the new controller, mark trigger capability/effective executability true, and retain GO_ONCE authority.",
       "Do not consume identity or execute results during Analyst review."
     ],
     "main_relay": [
-      "Do not arm the H7 request under R110.",
-      "After a fresh Analyst generation explicitly binds bac740... and authorizes GO_ONCE, update only ops/h7_launch_request.json once with armed=true, exact Analyst generation/commit and unique nonce.",
-      "Do not create a manual launch tag and do not manually dispatch the workflow."
+      "Do not arm the H7 request under Analyst R110.",
+      "After a fresh Analyst generation explicitly binds bac7402fb01b69353eb926228574cc68c2c2a2d2 and authorizes GO_ONCE, arm only ops/h7_launch_request.json once with exact Analyst generation/commit and a unique nonce.",
+      "Do not require a human launch tag or manual workflow dispatch.",
+      "Prospectively fix the Methodology R102 Analyst generation-label/commit-pair metadata defect before any identity start."
     ]
   },
   "hard_floor": {
