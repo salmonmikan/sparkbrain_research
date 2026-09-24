@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "generation_id": "EVA-R132",
+  "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
+  "lane": "SYSTEM_BUILD",
+  "owner": "MAIN",
+  "state": "ALLOCATED_NOT_STARTED",
+  "scientific_credit": 0,
+  "target": "observation -> persistent competing predictive hypotheses -> abstain/action -> feedback -> update/split/reuse -> selective revision -> next action/prediction",
+  "components": [
+    "IntegratedV03Brain engineering reference",
+    "IntegratedV032Brain and DirectCheckpointManager",
+    "C15 revision/persistent-belief machinery with original limitations",
+    "Forge predictive-state prototype as unverified design input"
+  ],
+  "exclusions": [
+    "E2 learned slots",
+    "scientific novelty claim",
+    "autonomous entity discovery claim",
+    "spontaneous field memory claim"
+  ],
+  "resource_budget": {
+    "runtime": "local single CPU",
+    "network": false,
+    "gpu_required": false,
+    "max_hypotheses": 16,
+    "max_context_scalars": 64
+  },
+  "acceptance": [
+    "no privileged state/episode/gold target input",
+    "retain multiple competing hypotheses",
+    "reuse prior regime and isolate targeted update",
+    "explicit ambiguity abstention path",
+    "pure inspectability",
+    "deterministic checkpoint/restore next-step equality",
+    "v03/v032 regression isolation"
+  ],
+  "build_status": {
+    "built": false,
+    "functionally_verified": false,
+    "comparatively_supported": false,
+    "scientifically_novel": false
+  }
+}
