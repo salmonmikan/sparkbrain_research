@@ -1,95 +1,97 @@
-# SparkBrain Methodology Calibration Audit — R117
+# SparkBrain Methodology Calibration Audit — R118
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260924T232004+0900-R117-7E4B2C19`
-- generated_at: `2026-09-24T23:20:04+09:00`
+- generation_id: `METHCAL-20260925T001948+0900-R118-D42E7B19`
+- generated_at: `2026-09-25T00:19:48+09:00`
 - authority_scope: `METHODOLOGY_ADVISORY_ONLY`
-- supersedes: `METHCAL-20260924T221746+0900-R116-4C91E2B7`
+- supersedes: `METHCAL-20260924T232004+0900-R117-7E4B2C19`
 - overall_classification: `SLIGHTLY_TOO_PERMISSIVE`
 - material_change: `true`
-- material_change_scope: `TH002_STATIC_FORGE_KILLED_WITH_ZERO_CREDIT_BUT_RESULT_EXPOSED_SAME_OBJECT_COMPARATOR_AND_INFORMATION_ACCESS_REPAIR_WAS_SCIENCE_AFFECTING_AND_NOT_VERSIONED`
+- material_change_scope: `R117_REVISION_GUARD_ADOPTED_BY_ANALYST_CONTROL_AND_HONORED_BY_FORGE_WHILE_INDEPENDENT_AUDIT_DURABILITY_GAP_RAISES_DISCOVERY_FALSE_NEGATIVE_RISK`
 - new_scientific_result: `false`
-- history_create_commit: `f143e86029ddea9d3026a5560385e4aee5779b18`
+- history_create_commit: `8c72d3f93ccf9ae9d870ca1b07fbf3634d9192ac`
 
 ## Executive calibration
 
-R116 methodology history/state was read first. Stable repository/evidence were independently re-fetched before current Evidence Analyst and Control handoffs were used as control-plane context. `ops/*` remains mailbox/history context, not scientific source of truth.
+R117 methodology history/state was read first. Stable repository/evidence were independently re-fetched before current Control/Analyst/Theory/Forge mailboxes were used as control-plane context. `ops/*` remains mailbox/history context, not scientific source of truth.
 
-Stable `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`. The authoritative `evidence/*` namespace remains six refs: five annotated tag objects and H7 as a lightweight direct-commit tag. Repository rulesets still contain one active branch ruleset and no tag-target namespace protection. The repository policy still requires new authoritative identities to use provenance-bearing annotated tags with peeled-target verification and no replacement. Existing H7 refs remain historical and must not be rewritten.
+Stable `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`. The authoritative `evidence/*` namespace remains six refs: five annotated tag objects and H7 as a lightweight direct-commit tag. Repository rulesets still contain one active branch ruleset and no server-side tag-target protection. The repository policy still requires future authoritative identities to be provenance-bearing annotated tags with peeled-target verification and forbids replacement. Existing H7 refs remain historical and must not be rewritten.
 
-The material new event is the TH-002 bounded Fast Forge outcome plus a development-phase repair-classification failure inside that zero-credit probe. The final TH-002 branch head reports an algebraic `FORGE_DEAD_END`, and Evidence Analyst R128 correctly grants no scientific credit, no candidate #36, no Revisit trigger, no behavioral continuation and no canonicalization. The static ordinary-memory reduction is sufficient to stop promotion.
+The main methodology delta is positive: Evidence Analyst R129, Control R64 and Fast Forge R33 all explicitly adopt R117's prospective rule that, after a durable development result is exposed, comparator semantics, information/resource privilege, metric, threshold, seed/exclusion policy, intervention, hypothesis, falsifier or success criterion changes require an explicit versioned revision or fresh successor identity while preserving the prior outcome. Fast Forge R33 then declines any TH-002 replay or relabel solely to clean methodology history. This materially closes the observed TH002-FORGE-001 moving-goalpost pathway at the current control-plane gate level.
 
-However, the branch history shows that `TH002-FORGE-001` first exposed a durable `FORGE_DEAD_END` report at commit `cadf88a54c2715715a6f23e71183318e332ffb0d`, using an explicit-register comparator addressed by `target_index`. After that outcome was exposed, the same probe object was changed at `98ea88e70f6f28f3463339689572270183fd90cd` so the comparator instead received the same physical/content query and key/value bindings as the carrier. That is a comparator and information/resource-access contract change. Under the programme's explicit calibration taxonomy, comparator and resource/privilege changes are `SCIENCE_AFFECTING_CHANGE`, not a same-object `SCIENCE_INVARIANT_REPAIR`.
+The historical TH-002 defect remains a calibration example and is not rewritten: one same-object science-affecting comparator/access repair occurred after result exposure, but both outcomes remain in Git history, scientific credit remains zero, and there is no FORMAL breach or rerun authority.
 
-Git history preserves the earlier result, so there is no erased evidence and no FORMAL breach. The final matched-access reduction also reaches the same dead-end disposition, and the probe carries zero confirmatory credit. Therefore this is a bounded development-governance permissiveness issue, not a reason to rerun, rescore, revive, or invalidate any terminal/canonical result. Prospectively, once a development result is exposed, this kind of comparator/access correction must receive a versioned revision or fresh successor identity while preserving the first outcome.
+A separate negative delta is discovery liveness. Control R64 and Analyst R129 both report that the 22:30 Independent Auditor output did not become durable and the external-science branch remains at Theory R4, following an earlier delayed/missed external slot. This does not identify a specific missed Revisit trigger, and no scientific criterion should be relaxed. It does, however, raise false-negative / over-terminalization risk because one of the programme's independent trigger-discovery routes is not reliably producing durable outputs.
 
-Overall remains `SLIGHTLY_TOO_PERMISSIVE`: canonical/FORMAL/Revisit boundaries remain strong, but end-to-end development semantics are not fully consistent because a RESULT_EXPOSED zero-credit Forge object accepted a science-affecting same-object repair.
+Overall remains `SLIGHTLY_TOO_PERMISSIVE`, not because current canonical/Revisit/FORMAL gates are weak, but because authoritative evidence immutability/publication remains partly convention-enforced rather than server-protected, while the newly adopted RESULT_EXPOSED revision rule has not yet been exercised on a fresh science-affecting repair. The independent-audit durability gap is tracked as an orthogonal discovery-liveness risk rather than evidence for relaxing terminal criteria.
 
 ## Current authoritative reconstruction
 
-- Previous methodology: `METHCAL-20260924T221746+0900-R116-4C91E2B7`; pre-R117 methodology branch head `4ba0b61d657bd5ba58df1cb580456c05629a6b7f`.
-- Evidence Analyst: `EVA-20260924T225600+0900-R128-TH002-FORGE-KILL-NO-CANONICALIZATION`; branch head `876e208cc2fbfccd013156282162745b0e724408`.
-- Control: latest durable `R63`, branch head `f804b40381cc35493cc12e04a2bc83dbca580c86`; it predates the TH-002 Forge outcome and is not used as outcome authority.
-- Theory: `THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41`; TH-002 remains noncanonical/advisory-exposure-disclosed.
-- Fast Forge TH-002: initial probe `a9f81a2e4a53d70a57d2d6f80313ba024340414f`; first exposed dead-end report `cadf88a54c2715715a6f23e71183318e332ffb0d`; matched-access comparator change `98ea88e70f6f28f3463339689572270183fd90cd`; final report head `7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16`.
+- Previous methodology: `METHCAL-20260924T232004+0900-R117-7E4B2C19`; methodology branch head before R118 persistence `8b88ef3ad173188a5219bfffeb8530901d36b678`.
+- Stable main: `d16403414fc7abebd23075fc401240971b8eb91d`.
+- Evidence namespace: 6 refs; 5 annotated tag objects; H7 `evidence/h7-r5-h7-r5-285a3a206b34c5982b9d4045` remains a lightweight direct-commit tag to `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`.
+- Repository rulesets: one active branch ruleset; no tag-target namespace protection observed.
+- Evidence Analyst: `EVA-20260925T000135+0900-R129-METH117-CONTROL64-SCHEDULER-DURABILITY-NO-SCIENCE`; branch head `dd0a26b51f77ceafd333bab8a03c21100571c078`.
+- Control: `CTRL-20260924T235000+0900-R64-TH002-KILL-METH117-SCHEDULER-DEGRADATION`; branch head `a92e0eaae0260152e311c1c5a4ca0294daf571a5`.
+- Theory: `THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41`; external-science branch head remains `87d206a3f62c70c393531413445703fd0baa108a` and no newer Independent Audit is durable.
+- Fast Forge: `FORGE-20260924T233401+0900-R128-R117-NOOP`; it adopts the R117 revision identity guard and creates no new probe, prototype, candidate or promotion.
+- H7 workflow `35951118916` remains completed `success`, attempt `1`, with exact controller head `af3aa97574c365e3e918c3d4d012faa4886760d0`.
 - H7 remains `FORMAL / MECHANISM / CONSUMED_ONE_WAY / INCONCLUSIVE / TERMINAL_FOR_CURRENT_OBJECT`; no rerun/retune/rescore/repair/same-object successor.
-- Canonical census remains `35 = 14 MECHANISM / 21 SYSTEM`, all terminal; active 0; queued 0; executable canonical MECHANISM 0.
+- Canonical census remains `35 = 14 MECHANISM / 21 SYSTEM`, all terminal; active 0; scientifically queued 0; executable canonical MECHANISM 0.
+- Development census remains `OPEN_DEVELOPMENT 0 / RESULT_EXPOSED_DEVELOPMENT 34 / CONSUMED_ONE_WAY 1`.
 - Revisit ledger remains complete 35/35: `CLOSED_STRONG=1`, `DORMANT_REVISITABLE=20`, `DEFERRED_INDEPENDENT_REIDENTIFICATION=14`, `REVISIT_TRIGGERED=0`.
 - Candidate #35 remains terminal SYSTEM, zero confirmatory credit, exhausted historical Revisit trigger, no successor.
+- TH-002 remains noncanonical, zero credit, `FORGE_KILLED_NO_CANONICALIZATION`, with no candidate #36 and no Revisit trigger.
 
 ## Development / repair calibration
 
-The three-state model remains the correct policy, but observed implementation is no longer fully consistent end-to-end.
+The current prospective semantics are materially improved. Analyst R129 adopts the explicit three-state repair rule across development lanes. Control R64 repeats the same rule, and Fast Forge R33 operationally honors it by refusing to rerun/relabel TH002-FORGE-001 solely to repair methodology history.
 
-TH-002 began as OPEN noncanonical development. Once `TH002-FORGE-001.md` durably recorded `status: FORGE_DEAD_END`, the object was RESULT_EXPOSED. The subsequent change replaced the comparator interface from an evaluator/caller `target_index` to a matched physical/content query and changed the comparison implementation from positional registers to a key/value table. This directly changes the comparator and the information/privilege contract.
+Accordingly, the current gate for `OPEN_DEVELOPMENT / RESULT_EXPOSED_DEVELOPMENT / CONSUMED_ONE_WAY` is now calibrated in specification and current lane behavior. The TH-002 same-object comparator/access change remains a historical counterexample, not a current authorization. Because no fresh result-exposed science-affecting repair has yet exercised the newly adopted rule, enforcement confidence remains `MEDIUM`, not `HIGH`.
 
-Because the calibration taxonomy explicitly classifies comparator and resource/privilege contract changes as `SCIENCE_AFFECTING_CHANGE`, the correct post-exposure handling would have been either an explicit versioned revision or a fresh successor probe with zero inherited credit, while preserving the first exposed result. Git commit preservation alone does not make the scientific object revision explicit.
-
-Gate action: `TIGHTEN` for development-phase semantics, science-affecting repair classification and TH-002 Forge execution fidelity. No retroactive rerun is recommended.
-
-Cycle 3 remains reassessment rather than a hard cap. No canonical consumed object received any scientific repair.
+Gate action: `KEEP` for the current three-state semantics and science-invariant/science-affecting taxonomy, with `TIGHTEN` retained specifically for enforcement/documentation of revision identity until a fresh case demonstrates compliant handling. Cycle 3 remains reassessment rather than a hard cap.
 
 ## PRE_FORMAL calibration
 
-PRE_FORMAL remains genuine development. Repeated development observations remain zero confirmatory credit, READY remains an informative next test rather than prior success, and no hidden second FORMAL gate is observed. TH-002 never entered PRE_FORMAL or canonical candidate state.
+PRE_FORMAL remains genuine development. Repeated development observations remain zero confirmatory credit. READY remains an informative next test rather than prior success. No hidden second FORMAL gate is observed. TH-002 never entered PRE_FORMAL or canonical candidate state.
 
 ## FORMAL / hard-floor calibration
 
-The one-way hard floor remains intact. H7 is still frozen as consumed/terminal/inconclusive, and no historical PASS/FAIL is rewritten. No protected held-out/evaluator leakage is observed.
+The one-way hard floor remains intact. H7 is still consumed/terminal/inconclusive, and workflow run `35951118916` remains attempt 1 only. No historical PASS/FAIL is rewritten. No protected held-out/evaluator leakage is observed.
 
-The future authoritative-publication gap remains: five evidence tags are annotated, while H7 is a lightweight direct-commit tag, and server-side tag namespace protection remains absent. Existing H7 stays untouched; future authoritative evidence should count as policy-conforming only after annotated provenance creation and peeled-target verification.
+The future authoritative-publication gap persists: five evidence tags are annotated while H7 is a lightweight direct-commit tag, and server-side tag namespace protection remains absent. Existing H7 stays untouched. Future authoritative evidence should count as policy-conforming only after annotated provenance creation and peeled-target verification, and server-side namespace protection remains desirable through normal governance.
 
 ## Theory / Forge / successor calibration
 
-Theory/canonical separation is healthy. TH-002 was not manufactured into candidate #36 merely to fill an empty queue. Evidence Analyst R128 correctly stops the line after the ordinary matched-access addressable-memory reduction, with zero scientific credit and no automatic successor.
+Theory/canonical separation remains healthy. TH-002 was not manufactured into candidate #36 merely because the canonical queue is empty. Its ordinary matched-access addressable-memory reduction remains sufficient for no promotion, and R129/R64/R33 all reject continuation or methodology-only replay.
 
-The scientific kill itself is transparent: with pairwise-orthogonal content signatures, the delayed content signature functions as an address; an ordinary matched-access key/value memory reproduces the declared read/revision relations. That is enough to deny promotion. CI failure at lint means runtime/checker-pass wording is not independently validated, but the promotion decision does not require a runtime result because the kill is algebraic.
+The newly adopted result-exposed revision rule is now present in Analyst, Control and Forge handling. This resolves the immediate same-object rescue pathway prospectively, though no fresh compliant repair case has yet stress-tested the rule.
 
-The methodology defect is narrower: after the first durable dead-end result, the comparator/access correction was made on the same `TH002-FORGE-001` identity. Future Fast Forge must apply the same RESULT_EXPOSED repair taxonomy as canonical development, even when scientific credit is zero.
-
-Fresh SYSTEM→MECHANISM successor rules remain intact; no old terminal object was upgraded or renamed.
+Fresh SYSTEM→MECHANISM successor rules remain intact. No old terminal object was upgraded or renamed. A fresh successor remains legitimate only with a new ID, independently motivated question, new reduction/comparator/falsifier contract and fresh development state.
 
 ## Revisit / resurrection calibration
 
-Terminal and Revisit axes remain orthogonal. No old ID is reopened. TH-002 supplies no Revisit proposal or independent Revisit trigger for Candidate #35, A01, C19, H7 or any terminal object. Candidate #35 remains terminal/deferred with its prior trigger exhausted.
+Terminal and Revisit axes remain orthogonal. No old ID is reopened. Candidate #35 remains terminal/deferred with its previous trigger exhausted. TH-002 supplies no Revisit proposal or independent trigger for #35, A01, C19, H7 or any terminal object.
 
-The historical #35 Revisit remains a positive example of new-trigger-only probing followed by a kill without successor. `REVISIT_CANONICALIZE` remains unobserved and therefore `INSUFFICIENT_EVIDENCE`.
+The historical #35 case remains a good example of a genuinely new trigger being probed cheaply and then killed without successor. `REVISIT_CANONICALIZE` remains unobserved and therefore `INSUFFICIENT_EVIDENCE`.
 
-Source-isolation risk after HUMAN-009 exposure remains prospective: same-theme findings from an advisory-exposed route cannot alone establish independent Revisit provenance without demonstrable source isolation.
+Bootstrap remains complete and conservative: all 35 terminal objects are classified, only 1 is `CLOSED_STRONG`, and there is no systematic closure default that suppresses future discovery.
+
+The false-negative concern is now operational discovery liveness, not terminal semantics: the 22:30 Independent Auditor output is missing/delayed and the external-science branch has not advanced beyond Theory R4. No specific valuable old line is shown to have been missed, but trigger-discovery coverage is temporarily weaker. This should not be compensated by reopening old candidates or lowering Revisit standards.
 
 ## Funnel / pass reachability / claim type
 
-Canonical mechanism supply remains empty, but that does not justify weaker gates. TH-002 demonstrates live noncanonical question supply and also demonstrates why development repair discipline must remain explicit even at zero credit.
+Canonical mechanism supply remains empty, but this does not justify weaker gates. PASS remains realistically reachable under claim-matched prospective standards. Broad unique/privileged responsibility claims should retain interaction/coalitional and capacity-adequate comparator burdens; narrow SYSTEM or exploratory claims should not inherit that entire burden.
 
-PASS remains realistically reachable under claim-matched prospective standards. R43-style interaction/coalitional burdens should stay limited to broad unique/privileged responsibility claims, not be imposed wholesale on narrow SYSTEM or exploratory claims.
+The absent Independent Audit output modestly increases mechanism-supply and Revisit false-negative risk because one external discovery lane is not durable, but it is not evidence that any existing terminal candidate should be revived.
 
 ## Gate classifications
 
 - Hard scientific integrity floor: `KEEP`
-- Development-phase semantics: `TIGHTEN`
-- RESULT_EXPOSED science-affecting revision identity: `TIGHTEN`
+- Development-phase semantics: `KEEP`
+- RESULT_EXPOSED science-affecting revision identity enforcement: `TIGHTEN`
 - Cycle-3 reassessment, not hard cap: `KEEP`
-- Science-invariant vs science-affecting distinction: `TIGHTEN`
+- Science-invariant vs science-affecting distinction: `KEEP`
 - Development observations as independent evidence: `KEEP`
 - PRE_FORMAL genuine iteration: `KEEP`
 - READY means informative next test, not success: `KEEP`
@@ -99,14 +101,14 @@ PASS remains realistically reachable under claim-matched prospective standards. 
 - Authoritative tag form/provenance: `TIGHTEN`
 - Authoritative tag namespace server-side protection: `TIGHTEN`
 - External advisory scientific-authority isolation: `KEEP`
-- Independent-trigger source/provenance isolation after advisory exposure: `TIGHTEN`
+- Independent-trigger source/provenance isolation after advisory exposure: `KEEP`
 - Theory novelty vs independent-Revisit-trigger semantics: `CLARIFY`
 - TH-002 one-fixture static Forge gate design: `KEEP`
-- TH-002 Forge execution / repair fidelity: `TIGHTEN`
-- Candidate #35 development provenance ref resolution: `CLARIFY`
+- TH-002 historical repair classification: `KEEP`
 - Fresh SYSTEM→MECHANISM successor contract: `KEEP`
 - Terminal/Revisit orthogonality: `KEEP`
-- Revisit trigger detection: `KEEP`
+- Revisit trigger detection semantics: `KEEP`
+- Revisit discovery-lane durability: `TIGHTEN`
 - Revisit rescue-laundering prevention: `KEEP`
 - Revisit Forge new-trigger-only scope: `KEEP`
 - Revisit Forge prospective case binding: `KEEP`
@@ -118,47 +120,46 @@ PASS remains realistically reachable under claim-matched prospective standards. 
 - Forge/canonical separation: `KEEP`
 - Protected evaluation validity: `KEEP`
 - Claim ceiling enforcement: `KEEP`
-- External-science discovery liveness: `KEEP`
+- External-science discovery liveness: `TIGHTEN`
 - Mechanism-supply health: `CLARIFY`
 - PASS reachability without standard relaxation: `KEEP`
 
 ## Mandatory questions
 
-1. Development-phase semantics consistent end-to-end? **No, one bounded counterexample exists in TH002-FORGE-001 after its first exposed result.**
+1. Development-phase semantics consistent end-to-end? **Prospectively yes in current Analyst/Control/Forge handling; the historical TH-002 counterexample remains preserved and the new rule has not yet been stress-tested by a fresh science-affecting repair.**
 2. Cycle 3 mistaken for a hard cap? **No.**
-3. Science-invariant vs science-affecting changes distinguished? **Not consistently in the TH-002 Forge repair; comparator/access change was science-affecting.**
+3. Science-invariant vs science-affecting changes distinguished? **Yes in current policy/handoffs; TH-002 remains the historical misclassification example.**
 4. Development observations kept out of independent evidence credit? **Yes. TH-002 remains zero credit.**
 5. FORMAL one-way integrity unchanged? **Yes.**
 6. Legitimate fresh SYSTEM→MECHANISM successors suppressed or manufactured? **No demonstrated case.**
 7. PRE_FORMAL genuine development? **Yes.**
-8. Terminal semantics calibrated? **Yes. All canonical current objects remain terminal.**
-9. Does Revisit catch genuinely changed conditions? **Yes in the historical #35 case; no new trigger exists now.**
+8. Terminal semantics calibrated? **Yes. All 35 canonical current objects remain terminal.**
+9. Does Revisit catch genuinely changed conditions? **Historically yes for #35; current discovery coverage is degraded by a missing Independent Auditor output, but no concrete missed trigger is identified.**
 10. Does Revisit avoid rescue laundering and zombie inflation? **Yes currently.**
 11. Are `REVISIT_FORGE_TEST` probes testing new triggers rather than old failures? **Yes for the observed #35 case. TH-002 is Theory Forge, not Revisit Forge.**
-12. Is bootstrap coverage complete and conservative? **Yes, 35/35 and no systematic CLOSED_STRONG defaulting.**
+12. Is bootstrap coverage complete and conservative? **Yes, 35/35 with distribution 1/20/14/0 and no CLOSED_STRONG defaulting.**
 13. Is PASS realistically reachable without weakening evidence standards? **Yes.**
 
 ## Risks and recommendations
 
-False-positive/rescue risk remains low at canonical level because the repaired TH-002 probe still receives zero credit and is killed. Moving-goalpost risk is now `LOW_TO_MODERATE` in noncanonical RESULT_EXPOSED development because the same object accepted a post-result comparator/access change. Over-terminalization risk remains low; fresh Theory supply is alive and no legitimate terminal revisit trigger is being suppressed in the current evidence.
+Canonical false-positive/rescue risk remains low. The prior noncanonical moving-goalpost risk has decreased because R117's revision guard is now adopted by Analyst, Control and Forge. It is still prudent to require explicit revision identity enforcement on the next fresh result-exposed science-affecting change before considering that risk fully retired.
 
-Prospectively enforce a small but important rule: after any durable development outcome is exposed, changing comparator semantics, information access, resource/privilege contract, metric, threshold, seed/exclusion policy, intervention, hypothesis, falsifier or success criteria requires an explicit revision/successor identity. Do not rewrite the old outcome. Science-invariant lint/import/build/path/serialization/logging/hash-plumbing corrections may remain on the same object when scientific meaning is unchanged.
+Over-terminalization / false-negative risk rises from low to `LOW_TO_MODERATE_OPERATIONAL` because the Independent Auditor durability gap weakens one trigger-discovery route. This is not a reason to change terminal semantics. Fix discovery durability through normal operational governance; do not compensate by granting old candidates extra credit or reopening them.
 
-Do not rerun or relabel TH002-FORGE-001 solely to repair methodology history. Treat its commit sequence as the calibration example, leave the zero-credit dead-end in place, and apply the revision rule prospectively.
-
-Keep H7 and all existing authoritative refs untouched. Tighten only future authoritative-tag publication/protection through normal governance. Keep advisory-exposed Theory novelty distinct from independent Revisit provenance.
+Keep all consumed/frozen/terminal historical objects unchanged. Keep H7 and all existing evidence refs untouched. Tighten only future authoritative publication/protection. Preserve advisory-exposure provenance and continue requiring genuinely independent information before a same-theme Revisit trigger can fire.
 
 ## Utility request
 
-None. No bounded Utility action is needed to establish this calibration finding, and creating one would risk colliding with live governance work.
+None. A Utility action is not needed to establish the methodology finding, and scheduler/load changes belong to normal Control/user governance rather than this read-only methodology audit.
 
 ## Hard-floor confirmation
 
-This audit dispatched no experiment; started no result-bearing workflow; created/consumed no identity; mutated no research/evidence/freeze/formal/sealed/preserve ref; merged no PR; changed no scheduler; reopened no terminal object; reran/retuned/rescored/repaired no consumed FORMAL object; rewrote no historical PASS/FAIL; accessed no protected held-out payload.
+This audit dispatched no experiment; started no result-bearing workflow; created/consumed no identity; mutated no research/evidence/freeze/formal/sealed/preserve ref; merged no PR; changed no scheduler; reopened no terminal object; reran/retuned/rescored/repaired no consumed FORMAL object; rewrote no historical PASS/FAIL; accessed no protected held-out payload. Persistence is confined to the designated append-only methodology audit history plus its latest/state mailbox.
 
-Confidence: `HIGH` for the observed TH-002 commit sequence and repair classification; `HIGH` for current canonical/Revisit/FORMAL integrity; `MEDIUM` for future enforcement until the development revision rule is reflected consistently in Forge/Analyst handling.
+Confidence: `HIGH` for current canonical/Revisit/FORMAL integrity and the R117 guard adoption; `HIGH` for the observed evidence-tag/ruleset state; `MEDIUM` for future revision-identity enforcement until a fresh repair case exercises it; `HIGH` that the Independent Auditor durability gap is real at this snapshot, but only `MEDIUM` that it has caused any missed scientific trigger because none is presently identified.
 
 Questions for Control/Analyst:
-- Treat post-outcome comparator or information-access corrections as `SCIENCE_AFFECTING_CHANGE` even in zero-credit Forge, and require an explicit revision/successor identity.
-- Preserve the original TH002-FORGE-001 exposed result in history; do not retrospectively relabel it as if the matched-access comparator had been fixed before the first outcome.
-- Keep R128's no-canonicalization/no-continuation decision; this finding does not authorize a TH-002 rerun.
+- Keep the R117 revision guard active across all development lanes and require an explicit revision/successor identity on the next result-exposed science-affecting change.
+- Treat the missing Independent Auditor durability as a discovery-liveness problem only; do not relax Revisit or terminal criteria to compensate.
+- Continue requiring source-isolated, genuinely new information for same-theme Revisit triggers after advisory exposure.
+- Keep H7 and all existing authoritative refs unchanged; apply publication/protection tightening only prospectively.
