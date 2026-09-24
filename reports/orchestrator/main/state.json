@@ -17,6 +17,7 @@
     "generation_id": "EVA-20260924T195916+0900-R123-METH-R113-POSTPROBE-CLOSURE",
     "branch": "ops/evidence-analyst-handoff",
     "branch_tip_at_observation": "f03f3a07594bc944169daf373b5836cd87e83e26",
+    "branch_tip_at_final_freshness_check": "f03f3a07594bc944169daf373b5836cd87e83e26",
     "latest_blob": "3334b96981db89ef82251c63b0e7bc4eea5d56aa",
     "history_create_commit": "eb864d3ee36dde66bb61b51822f51258ca895015",
     "latest_update_commit": "18949f46deaf915d7cd3ea03afa676f026f0cc4a",
@@ -24,17 +25,18 @@
     "material_change": true,
     "material_change_scope": "METHODOLOGY_R113_POST_PROBE_REVISIT_ENUM_ADJUDICATION_PLUS_FRESH_MAIN_FORGE_UTILITY_STEWARD_RECONCILIATION",
     "decision": "NO_EXECUTABLE_CANONICAL_SCIENCE; CAND35_POST_PROBE_CLOSURE_RECORDED_SEPARATELY_WITHOUT_RECLASSIFYING_HISTORICAL_REVISIT_FORGE_TEST",
-    "new_scientific_result": false
+    "new_scientific_result": false,
+    "freshness_stable_through_persistence": true
   },
   "prior_main_generation": "MAIN-20260924T191214+0900-PRIMARY-R125-R43-GATE-CAND35-PRESERVE-AUDIT-NO-CANONICAL-ACTION",
   "prior_relay_generation": "MAIN-20260924T185301+0900-RELAY-R124-WAITING-NO-EXECUTABLE-CANONICAL-SCIENCE",
   "persistence": {
     "history_path": "reports/orchestrator/main/history/2026-09-24/202700-r126-primary-r123-postprobe-closure-no-canonical-action.md",
     "history_create_commit": "2c69eb0859bf74edd556074e18d562ab8aae9412",
-    "state_initial_update_commit": null,
-    "latest_update_commit": null,
-    "lease_initial_update_commit": null,
-    "state_final_freshness_update_commit": null
+    "state_initial_update_commit": "1e1f6bb9d4479b923103159005f83159b9e6b33a",
+    "latest_update_commit": "0f5f3a137d395dea4b7e6d60ec0742f41b2c7746",
+    "lease_initial_update_commit": "e7fa8d3753145e0749e4cff788c4ed0fae8baa13",
+    "state_final_freshness_update_commit": "SELF_THIS_WRITE"
   },
   "funnel": {
     "canonical": 35,
@@ -160,6 +162,7 @@
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "main_report_branch": "ops/orchestrator-run-report",
     "main_report_head_before_persistence": "344142e64ed51f514b4d12d127ad94cad2abeeec",
+    "main_report_head_at_final_pre_state_check": "e7fa8d3753145e0749e4cff788c4ed0fae8baa13",
     "analyst_branch": "ops/evidence-analyst-handoff",
     "analyst_head": "f03f3a07594bc944169daf373b5836cd87e83e26",
     "analyst_latest_blob": "3334b96981db89ef82251c63b0e7bc4eea5d56aa",
@@ -200,6 +203,7 @@
     {"classification": "POST_PROBE_CLOSURE_INGEST", "change": "Recorded Analyst R123's separate append-only Candidate #35 closure event while preserving the exactly-once historical REVISIT_FORGE_TEST classification."},
     {"classification": "ONE_WAY_INTEGRITY_AUDIT", "change": "Reverified H7 source/controller/START/preserve/freeze/formal/sealed/evidence identities without mutation."},
     {"classification": "PROVENANCE_DISCREPANCY_RECHECK", "change": "Verified Candidate #35 current raw branch and confirmed unresolved historical preserve label without recreating refs or changing science."},
+    {"classification": "POST_PERSISTENCE_FRESHNESS_CHECK", "change": "Re-read Analyst R123 after MAIN persistence began; authority remained unchanged with no new allocation or scientific result."},
     {"classification": "CANONICAL_BOUNDARY_ENFORCEMENT", "change": "Performed no scientific execution because Analyst R123 allocates no active canonical object."}
   ],
   "observations": {
@@ -224,6 +228,7 @@
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
+    "analyst_generation_freshness_rechecked_after_persistence_began": true,
     "main_generation_and_lease_freshness_rechecked": true,
     "exact_scientific_and_controller_refs_rechecked": true,
     "research_and_forge_collision_surfaces_rechecked": true,
