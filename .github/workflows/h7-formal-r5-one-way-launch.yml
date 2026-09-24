@@ -6,9 +6,28 @@ run-name: H7 R5 one-way FORMAL launch
 # this exact controller SHA and authorizes one fresh identity. R105 itself cannot
 # pass the controller's prepare-identity gate.
 on:
-  push:
-    tags:
-      - launch/h7-r5-*
+  workflow_dispatch:
+    inputs:
+      controller_sha:
+        description: "Exact H7 launch-controller commit authorized by fresh Evidence Analyst"
+        required: true
+        type: string
+      science_sha:
+        description: "Exact frozen H7 science commit"
+        required: true
+        type: string
+      analyst_generation_id:
+        description: "Fresh Evidence Analyst generation authorizing exactly one FORMAL start"
+        required: true
+        type: string
+      analyst_commit:
+        description: "Exact Evidence Analyst mailbox commit for that generation"
+        required: true
+        type: string
+      request_nonce:
+        description: "Unique operational launch request nonce"
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -38,14 +57,25 @@ jobs:
           fetch-depth: 0
           path: controller
 
-      - name: Assert launch tag target is the exact controller commit
+      - name: Assert workflow-dispatch request binds the exact controller and science
         id: controller
         working-directory: controller
         shell: bash
+        env:
+          REQUESTED_CONTROLLER_SHA: ${{ inputs.controller_sha }}
+          REQUESTED_SCIENCE_SHA: ${{ inputs.science_sha }}
+          REQUESTED_ANALYST_GENERATION: ${{ inputs.analyst_generation_id }}
+          REQUESTED_ANALYST_COMMIT: ${{ inputs.analyst_commit }}
+          REQUEST_NONCE: ${{ inputs.request_nonce }}
         run: |
           set -euo pipefail
           controller_sha="$(git rev-parse HEAD)"
           test "${controller_sha}" = "${GITHUB_SHA}"
+          test "${controller_sha}" = "${REQUESTED_CONTROLLER_SHA}"
+          test "${REQUESTED_SCIENCE_SHA}" = "${H7_SOURCE_SHA}"
+          test -n "${REQUESTED_ANALYST_GENERATION}"
+          test -n "${REQUESTED_ANALYST_COMMIT}"
+          test -n "${REQUEST_NONCE}"
           echo "controller_sha=${controller_sha}" >> "${GITHUB_OUTPUT}"
 
       - name: Fetch fresh Evidence Analyst state
@@ -56,8 +86,16 @@ jobs:
           set -euo pipefail
           analyst_sha="$(git ls-remote origin refs/heads/${ANALYST_BRANCH} | cut -f1)"
           test -n "${analyst_sha}"
+          test "${analyst_sha}" = "${{ inputs.analyst_commit }}"
           git fetch --no-tags origin "${analyst_sha}"
           git show "${analyst_sha}:analysis/orchestrator/state.json" > "${RUNNER_TEMP}/analyst-state.json"
+          jq -e --arg v "${{ inputs.analyst_generation_id }}" '.generation_id == $v' "${RUNNER_TEMP}/analyst-state.json" >/dev/null
+          jq -e --arg v "${GITHUB_SHA}" '.H7.exact_bound_controller == $v' "${RUNNER_TEMP}/analyst-state.json" >/dev/null
+          jq -e --arg v "${H7_SOURCE_SHA}" '.H7.exact_bound_science == $v' "${RUNNER_TEMP}/analyst-state.json" >/dev/null
+          jq -e '.H7.executor_trigger_capable == true' "${RUNNER_TEMP}/analyst-state.json" >/dev/null
+          jq -e '.H7.effectively_executable == true' "${RUNNER_TEMP}/analyst-state.json" >/dev/null
+          jq -e '.H7.identity_status == "NOT_CREATED_NOT_CONSUMED"' "${RUNNER_TEMP}/analyst-state.json" >/dev/null
+          jq -e '.H7.formal_authority | type == "string" and startswith("GO_ONCE")' "${RUNNER_TEMP}/analyst-state.json" >/dev/null
           echo "analyst_sha=${analyst_sha}" >> "${GITHUB_OUTPUT}"
 
       - name: Assert H7 one-way namespaces are unused
