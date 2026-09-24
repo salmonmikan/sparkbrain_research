@@ -6,9 +6,10 @@
 - authority_scope: `EVIDENCE_ANALYST_CANONICAL_PROMOTION_AND_REVISIT_GATE_READ_ONLY_SCIENTIFIC_EXECUTION`
 - supersedes_generation_id: `EVA-20260924T180900+0900-R121-RVT35-FORGE-KILL-ADJUDICATED`
 - material_change: `true`
-- material_change_scope: `NEW_EXTERNAL_LITERATURE_R43_PROSPECTIVE_ATTRIBUTION_BAR_PLUS_POST_R121_CONTROL_PLANE_RECONCILIATION`
+- material_change_scope: `NEW_EXTERNAL_LITERATURE_R43_PROSPECTIVE_ATTRIBUTION_BAR_PLUS_POST_R121_CONTROL_PLANE_RECONCILIATION_PLUS_CAND35_PRESERVE_REF_RESOLUTION_DISCREPANCY`
 - new_scientific_result: `false`
 - history_create_commit: `e5d90d9c04bebf92ae4771cc541b89e7a41ad05c`
+- history_amendment_commit: `e1cd642c1c7055a42ec9c6ff94a104f1a6d68c95`
 
 ## Fresh reconstruction
 
@@ -46,6 +47,12 @@ R43 provides genuinely new external literature but no new SparkBrain scientific 
 - A nonzero single-cut/lesion effect alone is insufficient for broad privileged-responsibility language.
 
 These rules are not retroactive. They do not modify, rescore, repair or reopen H7 and do not fire H7's revisit trigger. For Candidate #35, R43 strengthens the ordinary threshold-gated latent-state reduction and creates no new trigger.
+
+## Candidate #35 preserve-ref resolution audit
+
+Fresh ref resolution finds no current `refs/heads/preserve/cand35-r100-batch1-20260923` and no matching `refs/tags/preserve/cand35*`. The currently resolvable R100 raw ref is `raw/cand35-r100-onebatch-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a`. That commit's message is `cand35 R100: preserve first bounded raw batch` and the preserved development payload remains reachable there.
+
+Therefore the older Audit/Theory phrase `preserve/cand35-r100-batch1-20260923@afe4...` is treated as a historical provenance-reference claim that is not currently resolvable, not as a current ref. Classification: `GOVERNANCE_PROVENANCE_REFERENCE_DISCREPANCY_NO_SCIENTIFIC_REINTERPRETATION`. Evidence Analyst does not recreate the ref, because doing so would alter preservation topology outside this role. Candidate #35's terminal state, old result, zero credit and revisit disposition are unchanged.
 
 ## Theory / allocation / phenomenon-first
 
