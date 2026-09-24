@@ -18,21 +18,15 @@ Use exactly three anonymous lineages with content-derived physical signatures
 
 and scalar lineage states `v=(0.25,-0.50,0.75)`. The signatures are pairwise orthogonal with squared norm four. No semantic/entity identifier is supplied. Lineage order is not part of the carrier.
 
-The merge carrier is fixed before evaluation as
+The merge carrier is fixed before evaluation as `M = sum_i(v_i k_i / 4)`. Delayed evidence supplies a physical/content signature `q=k_j`. Readout is `q dot M`. A requested scalar revision `delta=0.20` is applied as `M' = M + delta q / 4`.
 
-`M = sum_i(v_i k_i / 4)`.
-
-Delayed evidence supplies a physical/content signature `q=k_j`. Readout is `q dot M`. A requested scalar revision `delta=0.20` is applied as
-
-`M' = M + delta q / 4`.
-
-The checker must verify all six permutations of the three lineage orderings, all three delayed targets, and exact equivalence of decoded values before/after revision to an explicit three-register representation.
+The ordinary comparator receives exactly the same physical/content query and stores the same `(key,value)` bindings in an associative key-value table. The checker must verify all six lineage orderings, all three delayed queries, and exact equality of every decoded value before and after revision. No comparator receives an evaluator-only target index.
 
 ## Static observation
 
-The checker passes permutation invariance of the merged carrier and target-selective revision. Because `k_i dot k_j = 4 delta_ij`, decoding gives exactly `v_j`, and the revision changes exactly one decoded scalar by `delta`.
+The checker passes permutation invariance of the merged carrier, target-selective revision, and matched-access key-value equivalence. Because `k_i dot k_j = 4 delta_ij`, decoding gives exactly `v_j`, and the revision changes exactly one decoded scalar by `delta`.
 
-That apparent anonymous selective revision is algebraically identical to ordinary addressable storage. The transform between carrier coordinates and `(v0,v1,v2)` is linear and invertible on the three-lineage subspace, and the delayed physical signature is the lookup key. An explicit finite register/provenance representation or associative key-value memory therefore reproduces every read/revision relation under matched information access. The construction also qualifies directly as separable address-plus-state.
+That apparent anonymous selective revision is algebraically ordinary addressable storage. The delayed physical signature is the lookup key; an associative key-value memory given the same content cue reproduces every read/revision relation. On the three-lineage subspace the carrier is also a linear encoding of three finite scalar registers, so it additionally qualifies as a separable address-plus-state representation. No reduction-resistant residue remains.
 
 ## Disposition
 
