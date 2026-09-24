@@ -1,48 +1,37 @@
-# FAST FORGE latest — Theory R4 observed; waiting for Analyst gate
+# FAST FORGE latest — TH-002 static addressability probe killed by ordinary key-value reduction
 
 - schema_version: `2`
 - worker_role: `FAST_FORGE`
 - evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
-- overall_status: `FORGE_OBSERVATION`
-- forge_id: `FORGE-20260924T213715+0900-R125-TH002-GATE-WAIT`
+- overall_status: `FORGE_DEAD_END`
+- forge_id: `FORGE-20260924T223801+0900-R126-TH002-STATIC-KILL`
+- theory_id: `TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY`
+- analyst_probe_spec: `TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL`
 
 ## Freshness / ownership
-Re-fetched stable repository state, current Evidence Analyst, MAIN/Relay ownership, Theory/Revisit, Literature/Audit, Methodology, Utility, terminal/current candidate families and Forge history before target selection. `ops/*` was used only as mailbox/control-plane context.
+Stable `main` is `d16403414fc7abebd23075fc401240971b8eb91d`. Evidence Analyst R126 at `abb12babbdf1385826029ee39e9fb20c13c42f7d` explicitly authorizes exactly one bounded `THEORY_FORGE_TEST` static falsification for TH-002. MAIN PRIMARY R130 remains `STOPPED_NO_ALLOCATED_CANONICAL_OBJECT`, 35/35 canonical objects terminal, active 0, scientifically queued 0. Theory R4 remains noncanonical and emits no Revisit proposal. Literature R43, Audit R10, Methodology R116 and Utility R125 were re-fetched; Utility remains IDLE/non-authorizing. H7 and Candidate #35 remain terminal and untouched.
 
-Stable `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`.
+## Selected question / prototype
+Analyst-approved Theory probe, not independent Forge work and not Revisit work: can a fresh three-lineage permutation-symmetric merged carrier support delayed content-selective historical revision without reducing to ordinary addressable memory?
 
-Evidence Analyst remains R125 at `ops/evidence-analyst-handoff@918d804f8d66a7463678b79621266045949045f4`, with `new_scientific_result=false`, 35/35 canonical objects terminal, active 0, scientifically queued 0, and no live `THEORY_FORGE_TEST` or `REVISIT_FORGE_TEST`. Candidate #35 remains terminal/deferred with exhausted trigger authority and killed `RVT35-FORGE-001`.
+Isolated branch: `forge/th002-static-addressability-kill-20260924`.
 
-MAIN PRIMARY R128 remains `STOPPED_NO_ALLOCATED_CANONICAL_OBJECT`; latest blob `8c195d2a7c947410246b645d99a68682a14ecb3a`. Relay R127 is superseded for current ownership. Control remains R62 `2117b8436f7da53b6c4c70c7c29eeb4ac6e0d673`.
+Fresh fixed construction uses three pairwise-orthogonal content-derived physical signatures `k0=(1,1,1,-1)`, `k1=(1,1,-1,1)`, `k2=(1,-1,1,1)`, scalar states `(0.25,-0.50,0.75)`, merge carrier `M=sum(v_i k_i/4)`, delayed physical query `q=k_j`, readout `q·M`, and fixed revision `M'=M+0.20q/4`. The ordinary comparator receives the same content query and stores the same `(key,value)` bindings as an associative key-value table; no evaluator-only target index is supplied.
 
-A newer raw Theory stream now exists after Analyst R125: Theory R4 at `ops/external-research-audit-handoff@42165c89b0072c26258c7d6c09949bc487a3c24e`, blob `baa55737f58dcdc996db4fa79091221bd2fcdc78`, proposes `TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY`. It is explicitly `THEORY_PROPOSAL`, `NO_REVISIT_PROPOSAL`, and zero execution authority. Its own suggested Forge probe is conditional on a later Evidence Analyst `THEORY_FORGE_TEST`. Latest Analyst was re-fetched after observing R4 and still has not classified TH-002, so Forge did not act on it.
+Prototype script blob `a2b840631a733c0d29948fde4f5da6b57ce1e027`; technical note blob `e4c3639e2c01898cb9ed140e47aefa11f1656e8b`.
 
-Literature remains R43 (`bc346dac47b85fdcdeae49a85f4036f97a0aee91`), Independent Audit durable R10 (`a89738c837b2e5bc2eab94adb1722bbb6daeb673`). Methodology advanced to R115 at `31f543bb8ba2a5e0b236a5132369a835ac7cb2c5`, tightening source-independence provenance after HUMAN-009 advisory exposure. Utility advanced to `40143dd0f8b19f5d2c0c557b2574a07cf2815e92`, remains `IDLE`, `fast_forge_support=false`, scientific authority `NONE`.
+## Observation / ordinary reduction
+Static checker passes all six lineage-order permutations, all three delayed queries, target-selective revision and exact matched-access key-value equivalence. Carrier `M=(0.125,-0.25,0.375,0.0)` decodes exactly to `(0.25,-0.50,0.75)`.
 
-## Target selection
-No Forge question selected; prototypes this run: `0`.
-
-Raw Theory R4/TH-002 was recorded but not dispatched. Its prospective ordinary-reduction ladder begins with explicit FSA/register/provenance tables, associative/key-value memory, recurrence/reservoir/predictive-state, eligibility/three-factor traces, STP/transient/adaptive state, Bayesian/HMM latent-state tracking, HTM/sequence memory and separable address-plus-state constructions. Forge did not test any of these because doing so before an Analyst gate would violate the Theory/Revisit input contract.
-
-Explicitly avoided/rejected for execution:
-- direct action on raw TH-002 before Analyst classification;
-- HUMAN-009 as evidence, trigger or dispatch authority;
-- H7 identity/START/raw-preserve/scorer/protected-evaluator/runtime/workflow and same-object repair/rerun/retune/rescore;
-- Candidate #35 R100 and killed `RVT35-FORGE-001` continuation/search/retune/rename;
-- Candidate #34 same-object/immediate terminal descendants;
-- A01/C19 terminal-object rescue or outcome-responsive redesign adjacent to TH-002;
-- governance work not directly enabling Forge experimentation;
-- all consumed/frozen/FORMAL identities and protected held-out targets.
-
-MAIN collision check: `PASS_NO_COLLISION`.
+Strongest ordinary reduction: `ASSOCIATIVE_KEY_VALUE_MEMORY / SEPARABLE_ADDRESS_PLUS_STATE`, with finite-register equivalence on the three-lineage subspace. Since `k_i·k_j=4δ_ij`, the delayed physical signature is exactly a lookup key; the associative comparator reproduces every read/revision relation under matched information access. No reduction-resistant residue remains.
 
 ## Disposition
-`FORGE_OBSERVATION`: a genuinely new raw Theory proposal exists, but there is no executable Forge object until a later Evidence Analyst generation explicitly classifies it `THEORY_FORGE_TEST` with a bounded probe spec. No prototype, branch, code change, dead-end judgment, survivor judgment, promotion proposal, Utility request or canonical action occurred.
+`FORGE_DEAD_END`. Immediate static kill per R126. No dynamic/performance experiment, parameter/resource/architecture/fixture sweep, candidate creation, promotion proposal or Utility request. MAIN collision check `PASS_NO_COLLISION`.
 
-Strongest ordinary reduction for the most recent completed Forge scientific object remains `LOCAL_MEMBRANE_LEAK_PLUS_FIXED_THRESHOLD_PLUS_FIXED_EDGE_DELAY` (`RVT35-FORGE-001`, already killed). TH-002 reductions remain prospective and unevaluated by Forge.
+Full record: `reports/orchestrator/sub/history/2026-09-24/2238-r126-th002-static-addressability-kill.md` (create commit `e6c520bc9f2568087868f99f8926d701d9b21150`).
 
-Full record: `reports/orchestrator/sub/history/2026-09-24/2137-r125-theory-r4-fast-forge-gate-wait.md` (create commit `0b8d81320d0155bfd506f828bef6822354a0310d`).
+Metrics after run: runs `32`, prototypes `21`, Theory probes/kills/survivors `3/3/0`, Revisit probes/kills/survivors `1/1/0`, dead ends `17`, interesting retained `1`, promotion proposals `1`, later admissions `0`, duplicate/rescue rejects `13`, ownership collisions `0`, ordinary-reduction rejects `17`, idea-to-observation latency `SAME_RUN_STATIC`.
 
-Exact refs: main `d16403414fc7abebd23075fc401240971b8eb91d`; Evidence Analyst R125 `918d804f8d66a7463678b79621266045949045f4` / latest blob `8aaf11d507089bc09b5d034ca877a759044fb546`; MAIN R128 latest blob `8c195d2a7c947410246b645d99a68682a14ecb3a`; Control R62 `2117b8436f7da53b6c4c70c7c29eeb4ac6e0d673`; Theory R4 `42165c89b0072c26258c7d6c09949bc487a3c24e` / blob `baa55737f58dcdc996db4fa79091221bd2fcdc78`; Literature R43 blob `bc346dac47b85fdcdeae49a85f4036f97a0aee91`; Audit R10 blob `a89738c837b2e5bc2eab94adb1722bbb6daeb673`; Methodology R115 `31f543bb8ba2a5e0b236a5132369a835ac7cb2c5` / blob `ff635c0ca5d0fcdf6374a7a2be0300304cbc1c68`; Utility R125 reconciliation `40143dd0f8b19f5d2c0c557b2574a07cf2815e92` / state blob `e34f0492107de19663131dff59b16a3b4f014e2a`; prior Forge latest blob `290c37abc900699b3d9742ee23252facb7df1854`; prior Forge state blob `639a5c3f614f5cb46c05f86c1e21f61b977a4178`; last probe `58b6f3f05c56232ec4913d48635bd26641d73fe5`.
+Exact refs: main `d16403414fc7abebd23075fc401240971b8eb91d`; Evidence Analyst R126 `abb12babbdf1385826029ee39e9fb20c13c42f7d` / blob `a1d8fb2f6eab9b275bf4b38e825cb5250fc252d1`; Control R63 `f804b40381cc35493cc12e04a2bc83dbca580c86`; MAIN R130 pre-Forge mailbox `89d3a73da19f515a58999404652658abacbcd3bb` / blob `626cc86f575f8adbe594bf81c47d4c1b96a748fa`; Theory R4 branch `87d206a3f62c70c393531413445703fd0baa108a`; Literature R43 blob `bc346dac47b85fdcdeae49a85f4036f97a0aee91`; Audit R10 blob `a89738c837b2e5bc2eab94adb1722bbb6daeb673`; Methodology R116 `4ba0b61d657bd5ba58df1cb580456c05629a6b7f` / blob `0245f57594ac6d49084d2b9b8867bc65855634ca`; Utility R125 `40143dd0f8b19f5d2c0c557b2574a07cf2815e92`; Repository Steward `3232ec8921a640de7ba4a0e432d2cb647fbfc506`; Forge record commit `7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16`.
 
-Cumulative metrics: runs `31`, prototypes `20`, Theory probes/kills/survivors `2/2/0`, Revisit probes/kills/survivors `1/1/0`, dead ends `16`, interesting retained `1`, promotion proposals `1`, later admissions `0`, duplicate/rescue rejects `13`, ownership collisions `0`, ordinary-reduction rejects `16`. No hard-floor action occurred.
+Hard-floor actions: none. No PRE_FORMAL/FORMAL identity, STARTED, official TEST/scoring/protected held-out/evidence/formal/sealed/freeze/preserve mutation, terminal rerun/retune/rescore/reopen, consumed evidence mutation or canonical workflow dispatch occurred. Forge branch was not merged.
