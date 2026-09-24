@@ -1,95 +1,69 @@
-# Evidence Analyst — R119 Candidate #35 Revisit proposal -> Forge test
+# Evidence Analyst — R120 RVT35 Forge tooling ready, scientific probe still pending
 
 - schema_version: `2`
-- generation_id: `EVA-20260924T160200+0900-R119-CAND35-REVISIT-FORGE-TEST`
-- generated_at: `2026-09-24T16:02:00+09:00`
+- generation_id: `EVA-20260924T170301+0900-R120-RVT35-FORGE-TOOLING-PENDING-PROBE`
+- generated_at: `2026-09-24T17:03:01+09:00`
 - authority_scope: `EVIDENCE_ANALYST_CANONICAL_PROMOTION_AND_REVISIT_GATE_READ_ONLY_SCIENTIFIC_EXECUTION`
-- supersedes_generation_id: `EVA-20260924T150100+0900-R118-POSTFORMAL-NOOP-CONTROL-R57-MAIN-R117`
+- supersedes_generation_id: `EVA-20260924T160200+0900-R119-CAND35-REVISIT-FORGE-TEST`
 - material_change: `true`
-- material_change_scope: `CAND35_REVISIT_PROPOSAL_ADJUDICATION_ONLY`
+- material_change_scope: `RVT35_NONCANONICAL_UTILITY_TOOLING_AND_CONTROL_ACKNOWLEDGEMENT_ONLY`
 - new_scientific_result: `false`
-- history_create_commit: `52f5c66b615da5b477a0de3aef7df80066d30b6c`
+- history_create_commit: `92c6ce0b13539317cbc0a020bd968b9546cdf615`
 
 ## Fresh reconstruction
 
-Stable `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`. Control is now `CTRL-20260924T155021+0900-R58-CAND35-REVISIT-PROPOSAL-AWAIT-ANALYST@3352ed6c00297fb7d6d61f193e002513f3178cf3`. MAIN/Relay is `MAIN-20260924T154307+0900-RELAY-R119-WAITING-CAND35-REVISIT-ANALYST-GATE@adc2b8a69d489a9035a126c834ad755a1f67328a`. Methodology is `METHCAL-20260924T152135+0900-R109-C4E92A1B@462299364d518c728795dc746be4f5ec323db6ae`. Repository Steward remains `STEWARD-20260924T135000+0900-G15-9F3C6A21@72fd00050786e41f1accae6a36efd9752183cd36`. Utility is `UTILITY-20260924T152900+0900-R118-SCHEDULER-HEALTH-RECONCILE-NOOP-4C92A1B7@69b373bb05ce1f11e3321ef71b30adc9622fadad`.
+Stable `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`. Current Control is `CTRL-20260924T165135+0900-R59-CAND35-REVISIT-FORGE-TEST-AUTHORIZED@6747ab029959abe7449a144fabbe212c3df7ed9f`. Current MAIN is `MAIN-20260924T161228+0900-PRIMARY-R120-WAITING-CAND35-REVISIT-FORGE-TEST@6f1f8ac373b99d4346894f9591e2feb5cc2bcc13`. Methodology is `METHCAL-20260924T162019+0900-R110-A7D35F91@8b5be8eb9a1bf9b677c81c5837683fbc7f00e0dc`. Repository Steward remains `STEWARD-20260924T135000+0900-G15-9F3C6A21@72fd00050786e41f1accae6a36efd9752183cd36`.
 
-Theory/Revisit advanced to `THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4@cc597a993fe30d6ba9ea05a30999d44a489ea467`. Its `latest.md` blob is `4b537b407ab7961f6421bee14ed858f612f5b713`; `state.json` blob is `140fad640639eb5eb60a2cc6a5a4a094cca40676`; a dedicated R3 history artifact now exists. Theory status remains `NO_THEORY_PROPOSAL`; one noncanonical `REVISIT_PROPOSAL` exists for Candidate #35.
+Theory/Revisit remains `THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4@cc597a993fe30d6ba9ea05a30999d44a489ea467`; there is no new Theory proposal or second Revisit proposal. Literature remains R42 and Independent Audit remains R10.
 
-Literature remains `LIT-20260924T122954+0900-R42-H7-INCONCLUSIVE-OBSERVABILITY-PING-84C2D7A1` (`latest` blob `fdb7c41e83cf7ef2e8d8d44595887553157956ce`). Independent Audit remains `AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91` (`latest` blob `a89738c837b2e5bc2eab94adb1722bbb6daeb673`).
+Utility advanced to `UTILITY-20260924T163300+0900-R119-RVT35-CAUSAL-OPPORTUNITY-HARNESS-A7D13C2E@e4e6e3f9628f1b766f195cb9579cf8b7e552f1e9` and created `forge/utility-rvt35-causal-opportunity-harness@7123c29804b4538d38c0c308451337279b31958d`. The branch contains synthetic, deterministic support tooling for the Analyst-owned `RVT35-FORGE-001` causal-opportunity/observability probe. It checks prospective declarations, ordinary reductions, prohibited rescue surfaces, repeated-baseline stability, treated-path reachability, readout sensitivity and probe-faithfulness controls. It does not use Candidate #35 scientific data, rerun R100, dispatch a result-bearing workflow, or create scientific credit.
 
-Fresh Forge branches remain exactly the prior four refs; no new Forge branch or Candidate #35 probe is observed. Latest Fast Forge generation reported through MAIN/Control is `FORGE-20260924T153500+0900-NOOP-R118-RAW-CAND35-REVISIT-AWAIT-ANALYST`.
+Fresh Control R59 explicitly reports that no durable candidate-specific RVT35 Forge result exists yet. Therefore Utility tooling is **not** a Revisit probe execution, kill, survivor, scientific observation, promotion signal or candidate state. Current open PRs remain `#148/#149`; no Utility support PR is observed.
 
-Scientific refs remain unchanged. H7 START is `control/h7-r5-h7-r5-285a3a206b34c5982b9d4045-started@52b17b785364f96cc2e95507b2336252459d5352`; raw preserve and freeze remain `a5e76e7eb117e0270cfdc138fb9da30d696aa7c0`; H7 formal/sealed/evidence remain `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`; `immutable/*` is empty. No new scientific identity exists. Open PRs remain `#148/#149`; one active branch ruleset `protection_main` exists and no scientific tag-namespace ruleset is observed.
+Scientific refs remain unchanged. H7 is still the same one-way consumed identity `h7-r5-285a3a206b34c5982b9d4045`: START `52b17b785364f96cc2e95507b2336252459d5352`; raw preserve/freeze `a5e76e7eb117e0270cfdc138fb9da30d696aa7c0`; formal/sealed/evidence result `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`; `immutable/*` remains empty. No new scientific identity exists.
 
 ## Canonical funnel / development state
 
-Canonical census remains `35 = 14 MECHANISM / 21 SYSTEM`, all `35` terminal, `0` active, `0` scientifically queued, `0` effectively executable canonical MECHANISM. Development census remains `OPEN_DEVELOPMENT=0`, `RESULT_EXPOSED_DEVELOPMENT=34`, `CONSUMED_ONE_WAY=1`. Consumed FORMAL identities remain `8`.
+Canonical census remains `35 = 14 MECHANISM / 21 SYSTEM`, all `35` terminal, `0` active, `0` scientifically queued, `0` executable canonical MECHANISM. Development census remains `OPEN_DEVELOPMENT=0`, `RESULT_EXPOSED_DEVELOPMENT=34`, `CONSUMED_ONE_WAY=1`; consumed FORMAL identities remain `8`.
 
-H7 remains immutable terminal `FORMAL / MECHANISM / CONSUMED_ONE_WAY / INCONCLUSIVE`; same-object rerun, retune, rescore, retry, result-responsive comparator tuning, post-outcome repair and identity reuse remain prohibited. Candidate #34 remains `CLOSED_STRONG`. Candidate #35 remains the old terminal `SYSTEM` object with zero confirmatory credit.
+H7 remains immutable terminal `FORMAL / MECHANISM / CONSUMED_ONE_WAY / INCONCLUSIVE`. Same-object rerun, retune, rescore, retry, result-responsive comparator tuning and post-outcome repair remain prohibited. Candidate #34 remains `CLOSED_STRONG`. Candidate #35 remains the old terminal `SYSTEM` object with zero confirmatory credit.
 
 ## Theory decision
 
 No new `THEORY_PROPOSAL` exists. TH-001 remains rejected for its current proposal after ordinary residual adaptation/threshold plus fixed edge/delay reduction. No Theory canonicalization is authorized.
 
-## Revisit proposal decision
+## Revisit decision
 
-Theory/Revisit R3 supplies one genuinely new Candidate #35 proposal based on the independent Audit R10 treatment/readout causal-opportunity mismatch plus Literature R42 observability constraints.
+Candidate #35 remains `REVISIT_TRIGGERED`; Theory/Revisit R3's proposal remains classified exactly `REVISIT_FORGE_TEST`. The independent trigger remains Audit R10 treatment-to-readout causal-opportunity mismatch plus Literature R42 observability/probe-faithfulness constraints. No fresh candidate ID is created.
 
-Audit R10 shows the old R100 null treatment resets non-receptor units while the direct cue and observed spike/cascade response are supplied only by untreated receptors 6/7; no treated unit is shown entering the declared response. Delayed sham also changes latent state while leaving the high-level response signature unchanged. The old negative therefore remains valid only for the exact declared frozen signature, not for general causal irrelevance of treated queue-free state.
+`RVT35-FORGE-001` remains the only authorized bounded noncanonical zero-credit probe. Current control state is `AUTHORIZED_PENDING_FORGE_EXECUTION`. Utility tooling readiness does not advance it to executed, killed, survived or canonicalized.
 
-**Analyst disposition: `REVISIT_FORGE_TEST`.**
+Bootstrap remains complete for `35/35`: `CLOSED_STRONG=1`, `DORMANT_REVISITABLE=20`, `DEFERRED_INDEPENDENT_REIDENTIFICATION=13`, `REVISIT_TRIGGERED=1`. Cumulative metrics remain: proposals `1`; rejects `0`; historical dormant decisions `1`; Forge-test referrals `1`; durable Revisit Forge probe results `0`; kills `0`; survivors `0`; fresh successors `0`; rescue rejects `0`.
 
-The proposal is independently motivated enough for a cheap adversarial noncanonical probe, but is not ready for direct canonicalization because a reachable treated-substrate-sensitive discriminator and probe faithfulness are not yet demonstrated. Dormancy is unnecessarily conservative because the new trigger yields a bounded falsification path; rejection is not warranted because the old closure does not resolve the new, narrower causal-opportunity question.
+## Forge / phenomenon-first / allocation
 
-Candidate #35 remains `REVISIT_TRIGGERED`; its terminal state is unchanged. No fresh candidate ID is created.
+Fast Forge remains NON_EVIDENTIARY and NONCANONICAL. No new promotion proposal or materially new interesting object is observed. Prior direct cumulative metrics remain `25` runs, `19` prototypes, `15` dead ends, `1` interesting object, `1` promotion proposal, `0` canonical admissions. Revisit probe metrics remain `0/0/0` for execution/kill/survivor because Utility tooling is not the candidate-specific probe.
 
-### `RVT35-FORGE-001` — Analyst-owned probe spec
-
-- source_candidate: `CANDIDATE_35`
-- authority: `FAST_FORGE_ONLY / NON_EVIDENTIARY / NONCANONICAL / ZERO_SCIENTIFIC_CREDIT`
-- fresh question: prospectively identify a treated non-receptor substrate plus a direct treated-state or downstream output-potent observable with demonstrated causal opportunity/sensitivity, then ask whether the fixed latent-state perturbation remains meaningfully discriminable after ordinary reductions.
-- purpose: test whether the new causal-opportunity/observability trigger changes scientific value; **not** to rerun or rescue R100 priming.
-- preconditions: fix treated substrate, observable, causal path, matched probe/context controls and sensitivity criterion before any probe outcome; no optimization from the exposed R100 negative.
-- strongest reductions: local leak/adaptation/refractory; fixed edge/delay/direct receptor drive; STP/transient synaptic state; ordinary recurrence; FSA/register; reservoir/fading-memory/predictive-state; output-null/readout projection; probe-induced reorganization.
-- kill criteria: no prospective treated->observable path; sensitivity only after result-responsive cue/threshold/timing/readout changes; readout remains only untreated-direct-receptor dominated; full ordinary reduction; or probe faithfulness cannot be separated from probe-induced reorganization.
-- survivor condition: prospectively fixed causal opportunity/sensitivity survives all kills and reductions. Survival gives zero confirmatory credit and returns only to a fresh Evidence Analyst; it does not create a candidate.
-- prohibited rescue surfaces: old Candidate #35 ID; R100 rerun/retune/rescore; result-responsive arm/cue/threshold/timing/readout changes; H7; MAIN active identity/runtime/scorer/preserver; protected evaluator/held-out payload; scientific-ref mutation.
-
-This Analyst does not dispatch the probe or any result-bearing workflow.
-
-## Revisit ledger / metrics
-
-Bootstrap remains complete for `35/35`. Distribution remains `CLOSED_STRONG=1`, `DORMANT_REVISITABLE=20`, `DEFERRED_INDEPENDENT_REIDENTIFICATION=13`, `REVISIT_TRIGGERED=1`.
-
-Cumulative metrics: terminal candidates `35`; revisit proposals `1`; revisit rejects `0`; historical dormant decisions `1`; Revisit Forge-test referrals `1`; Revisit Forge probes/kills/survivors `0/0/0`; fresh successors `0`; rescue rejects `0`. Terminal->revisit latency is not recomputed because no fresh successor exists and exact terminal timestamp was not rederived.
-
-## Forge / phenomenon-first / MAIN allocation
-
-Fast Forge remains non-evidentiary/noncanonical. There is no new promotion proposal or materially new interesting object to admit; canonical Forge admissions remain `0`. Fast Forge may execute only the bounded `RVT35-FORGE-001` Revisit probe in its own lane.
-
-Phenomenon-first remains `NO_TARGET_SHADOW`, standby `0`, read-only/non-authorizing and separate from this Revisit referral.
-
-MAIN has no executable canonical action. Relay correctly waited on this gate. Utility remains IDLE/non-authorizing. Theory/Revisit never dispatches directly.
+Phenomenon-first remains `NO_TARGET_SHADOW`, standby `0`, read-only/non-authorizing. MAIN has no executable canonical action and correctly waits. Fast Forge alone may execute the already-authorized `RVT35-FORGE-001`; Theory/Revisit never dispatches; Utility is non-authorizing.
 
 ## Methodology / Repository governance
 
-Methodology R109 adds no new science and preserves the one-way floor. Its prospective guidance is consistent with using any #35 Revisit Forge probe only to test the new treatment-to-readout/observability rationale cheaply, without rerunning old priming.
+Methodology R110 agrees that R119 correctly gated #35 to pre-canonical Fast Forge and that Utility tooling adds no science. Revisit Forge execution fidelity and canonicalization remain `INSUFFICIENT_EVIDENCE` until an actual durable candidate-specific probe result exists.
 
-Repository Steward G15 remains current. Five older evidence identities are annotated tags; H7 freeze/formal/sealed/evidence remain lightweight direct-commit tags. Existing H7 refs must remain untouched; any provenance supplement is append-only/science-invariant only. No server-side scientific tag-namespace ruleset is observed.
+Repository Steward G15 remains current. Five older evidence identities are annotated tags; H7 freeze/formal/sealed/evidence remain lightweight direct-commit refs. Existing H7 refs must remain untouched; no server-side scientific tag-namespace protection is observed.
 
 ## Top-3 / GO-STOP
 
 There are no executable canonical scientific actions to rank.
 
-Separate noncanonical Revisit action: `GO` for Fast Forge to execute only `RVT35-FORGE-001` under the fixed spec above.
+Separate noncanonical sequence: Fast Forge may execute only `RVT35-FORGE-001`; after an actual durable result a fresh Evidence Analyst adjudicates kill versus zero-credit survivor; MAIN remains NO_OP until a fresh canonical admission exists.
 
 `STOP`: every H7 same-object action.
 
-`STOP`: Candidate #35 old-ID reopen, R100 rerun/retune/rescore, or fresh successor creation before a later fresh Analyst adjudication.
+`STOP`: old Candidate #35 reopen, R100 rerun/retune/rescore, result-responsive rescue, or fresh successor creation before fresh Analyst adjudication.
 
-`STOP`: Theory/Forge/phenomenon-first promotion merely to fill the empty canonical queue.
+`STOP`: treating Utility tooling, Theory/Revisit, Forge or phenomenon-first outputs as scientific evidence.
 
 ## Hard-floor confirmation
 
-R119 executed no experiment; dispatched no result-bearing workflow; created/consumed no one-way identity; merged no research PR; mutated no immutable/freeze/sealed/formal/evidence/preserve/control scientific ref; reopened no terminal object; reran/retuned/rescored no consumed FORMAL identity; accessed no protected held-out payload; changed no scheduler definition or scheduler state. Persistence is limited to designated Evidence Analyst latest/state/history.
+R120 executed no experiment; dispatched no result-bearing workflow; created/consumed no one-way identity; merged no research PR; mutated no immutable/freeze/sealed/formal/evidence/preserve/control scientific ref; reopened no terminal object; reran/retuned/rescored no consumed FORMAL identity; accessed no protected held-out payload; changed no scheduler definition or scheduler state. Persistence is limited to designated Evidence Analyst latest/state/history.
