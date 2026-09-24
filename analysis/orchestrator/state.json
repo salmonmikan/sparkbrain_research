@@ -1,24 +1,24 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260924T142634+0900-R117-POSTFORMAL-NOOP-MAIN-R116-METH-R108",
-  "generated_at": "2026-09-24T14:26:34+09:00",
-  "supersedes_generation_id": "EVA-20260924T135836+0900-R116-POSTFORMAL-NOOP-PROVENANCE-ADJUDICATED-CAND35-TRIGGER-HELD",
+  "generation_id": "EVA-20260924T150100+0900-R118-POSTFORMAL-NOOP-CONTROL-R57-MAIN-R117",
+  "generated_at": "2026-09-24T15:01:00+09:00",
+  "supersedes_generation_id": "EVA-20260924T142634+0900-R117-POSTFORMAL-NOOP-MAIN-R116-METH-R108",
   "scientific_execution_mode": "READ_ONLY",
   "material_change": true,
-  "material_change_scope": "CONTROL_PLANE_RECONCILIATION_AND_METHODOLOGY_CALIBRATION_ONLY",
+  "material_change_scope": "CONTROL_PLANE_SCHEDULER_HEALTH_RECONCILIATION_ONLY",
   "new_scientific_result": false,
-  "material_change_reason": "MAIN_R116_CONSUMED_ANALYST_R116_AND_CONFIRMED_EMPTY_CANONICAL_QUEUE; METHODOLOGY_R108_ACCEPTED_CAND35_TRIGGER_HANDOFF_WHILE_FLAGGING_TRIGGER_TO_PROPOSAL_LIVENESS_AND_FUTURE_TAG_PROVENANCE_TIGHTENING; NO_SCIENCE_CHANGED",
+  "material_change_reason": "CONTROL_R57_RESTORED_ONLY_THE_ALREADY_APPROVED_PRIMARY_MAIN_ENABLED_STATE_AFTER_REGRESSION; MAIN_RELAY_R117_RECONCILED_EMPTY_CANONICAL_QUEUE; NO_SCIENCE_CHANGED",
   "persistence": {
-    "history_create_commit": "ab19ff8b4bec9f945db97b33e303ea4447fc41b5",
-    "latest_update_commit": "d4260fc6d5d2301edc11cb2e924b9af767f3c731"
+    "history_create_commit": "6846b5366507b5307c66deffbcb55a5cb2c0db30",
+    "latest_update_commit": "ca8941dd72408caa40d07b76c6caf11fd7acd7b6"
   },
   "refs": {
     "main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "prior_evidence_analyst_commit": "d609a7897f25bbc1ba2abef8e27ccdc019d1f00c",
-    "control": "259b3db8f3f120475bc7e3a1b561383cc4c3a451",
-    "control_generation": "CTRL-20260924T124816+0900-R56-H7-FORMAL-INCONCLUSIVE-TAG-ADJUDICATION",
-    "main_latest_durable_commit": "b4e9f84c20b7d148257dc2902555f9dfc186db7c",
-    "main_generation": "MAIN-20260924T141618+0900-PRIMARY-R116-NO-EXECUTABLE-CANONICAL-SCIENCE",
+    "prior_evidence_analyst_commit": "b729e046fd4cb29428ff5f59d813850beb4a67b1",
+    "control": "376167105b9fb384efda60a98a1088809ddcca2d",
+    "control_generation": "CTRL-20260924T145730+0900-R57-POSTFORMAL-TERMINAL-MAIN-RESTORED",
+    "main_latest_durable_commit": "eacd788f91fe363c272d23fdd81163817f905189",
+    "main_generation": "MAIN_RELAY_R117_RECONCILED_WAITING_FOR_FRESH_GATED_ADMISSION",
     "methodology": "0fff33c56461353207cdb3f358f35f94e0efbdac",
     "methodology_generation": "METHCAL-20260924T141814+0900-R108-D7A41C9E",
     "external_research_audit": "7a477bfb872d915fa1634b5cf54a2be110f92e7e",
@@ -28,12 +28,12 @@
     "theory_latest_blob": "6aa4fc2302336e887cf67070513948312fff0c98",
     "theory_state_blob": "09e6e4a2e93d41726651b4c132dceacd84ec958e",
     "theory_generation": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
+    "theory_history_artifact_observed": false,
     "repository_steward": "72fd00050786e41f1accae6a36efd9752183cd36",
     "repository_steward_generation": "STEWARD-20260924T135000+0900-G15-9F3C6A21",
-    "utility": "bbd96bb233f59171736389be8fdd3f29cc1e09dc",
-    "utility_generation": "UTILITY-20260924T132400+0900-R115-H7-POSTFORMAL-TERMINAL-RECONCILE-7C4A2F91",
+    "utility": "3fe8c943215db7973017d35c39dc19cca5034bb2",
+    "utility_generation": "UTILITY-20260924T142650+0900-R116-GOVERNANCE-RECONCILE-NOOP-8D31C7A4",
     "fast_forge_generation": "FORGE-20260924T133500+0900-NOOP-R115-ALL35-TERMINAL-NO-GATED-PROBE",
-    "fast_forge_generation_source": "MAIN_R116_INPUT_GENERATION",
     "forge_refs": {
       "forge/20260923-receptor-suppression-probes-a": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
       "forge/20260924-coordinate-null-local-witness": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
@@ -68,7 +68,8 @@
     "repository_ruleset_count": 1,
     "active_main_ruleset_id": 23862726,
     "authoritative_tag_namespace_protection_observed": false,
-    "open_prs": [148, 149]
+    "open_prs": [148, 149],
+    "historically_merged_operational_prs": [150]
   },
   "scientific_binding": {
     "binding_sha256": "285a3a206b34c5982b9d404599aa272019dd9d4dceb661b49c97fd8750fd30d3",
@@ -127,9 +128,9 @@
     "what_would_change_our_mind": "INDEPENDENTLY_MOTIVATED_AND_DEVELOPED_CAPACITY_ADEQUATE_ORDINARY_COMPARATOR_CAPABILITY_OR_DISTINCT_INDEPENDENT_REIDENTIFICATION_YIELDING_A_FRESH_QUESTION_AND_FRESH_CANDIDATE_ID",
     "revisit_triggers": ["INDEPENDENT_COMPARATOR_CAPABILITY", "DISTINCT_CANONICAL_RESULT_ELSEWHERE", "NEW_OBSERVABLE_OR_INTERVENTION_THAT_INDEPENDENTLY_REIDENTIFIES_RESPONSIBILITY_QUESTION"],
     "revisit_blockers": ["INCONCLUSIVE_RESULT_ALONE_IS_NOT_A_TRIGGER", "RESULT_RESPONSIVE_COMPARATOR_TUNING_IS_RESCUE_LAUNDERING", "SAME_OBJECT_IDENTITY_REUSE_PROHIBITED"],
-    "last_revisit_at": "2026-09-24T14:26:34+09:00",
+    "last_revisit_at": "2026-09-24T15:01:00+09:00",
     "last_revisit_reason": "NO_INDEPENDENT_TRIGGER_SINCE_FORMAL_CLOSURE",
-    "related_new_information": ["METHODOLOGY_R108_NO_NEW_TRIGGER"],
+    "related_new_information": ["CONTROL_R57_NO_SCIENTIFIC_CHANGE", "MAIN_RELAY_R117_NO_NEW_ADMISSION"],
     "successor_candidates": []
   },
   "CAND34": {
@@ -141,7 +142,7 @@
     "what_would_change_our_mind": "INDEPENDENT_RESIDUAL_NOT_EXPLAINED_BY_THE_EXACT_LOCAL_IMPULSE_DECAY_REDUCTION_OR_A_GENUINELY_NEW_OBSERVABLE_INTERVENTION",
     "revisit_triggers": ["INDEPENDENT_RESIDUAL_BEYOND_LOCAL_IMPULSE_BASELINE"],
     "revisit_blockers": ["CURRENT_EXACT_ORDINARY_REDUCTION_REMAINS_SUFFICIENT"],
-    "last_revisit_at": "2026-09-24T14:26:34+09:00",
+    "last_revisit_at": "2026-09-24T15:01:00+09:00",
     "last_revisit_reason": "NO_NEW_CANDIDATE_SPECIFIC_TRIGGER",
     "related_new_information": [],
     "successor_candidates": []
@@ -156,9 +157,9 @@
     "what_would_change_our_mind": "FRESH_PROSPECTIVE_SUCCESSOR_WITH_VERIFIED_TREATED_SUBSTRATE_TO_READOUT_CAUSAL_OPPORTUNITY_AND_SENSITIVE_DOWNSTREAM_OR_DIRECT_TREATED_STATE_OBSERVABLE_WITH_ORDINARY_REDUCTIONS",
     "revisit_triggers": ["INDEPENDENT_AUDIT_R10_TREATMENT_READOUT_CAUSAL_OPPORTUNITY_MISMATCH"],
     "revisit_blockers": ["NO_FRESH_REVISIT_PROPOSAL_OR_PROSPECTIVE_CONTRACT", "SAME_OBJECT_RERUN_RETUNE_RESCORE_PROHIBITED", "FRESH_SUCCESSOR_MUST_AVOID_POST_OUTCOME_RESCUE"],
-    "last_revisit_at": "2026-09-24T14:26:34+09:00",
-    "last_revisit_reason": "TRIGGER_VALID_AND_HELD; NO_REVISIT_PROPOSAL_OBJECT_EXISTS; LITERATURE_R42_ONLY_SHARPENS_OBSERVABILITY_BAR",
-    "related_new_information": ["AUDIT_R10", "LITERATURE_R42", "METHODOLOGY_R108"],
+    "last_revisit_at": "2026-09-24T15:01:00+09:00",
+    "last_revisit_reason": "TRIGGER_VALID_AND_HELD; NO_REVISIT_PROPOSAL_OBJECT_EXISTS; CONTROL_R57_AND_MAIN_R117_ADD_NO_TRIGGER",
+    "related_new_information": ["AUDIT_R10", "LITERATURE_R42", "METHODOLOGY_R108", "CONTROL_R57", "MAIN_RELAY_R117"],
     "successor_candidates": []
   },
   "revisit_ledger": {
@@ -186,36 +187,32 @@
     "no_proposal_runs": 1,
     "new_proposals_for_this_analyst": 0,
     "prior_art_or_ordinary_reduction_rejects": 1,
-    "rescue_or_duplicate_rejects": 0,
     "forge_test_referrals": 1,
     "forge_probes": 2,
     "forge_kills": 2,
     "forge_survivors": 0,
     "canonicalizations": 0,
-    "retained_phenomena_compression_count": 0,
-    "idea_to_discriminator_latency_seconds": 11535,
-    "idea_to_canonical_admission_latency_seconds": null,
     "TH001_current_proposal": "THEORY_REJECTED_ORDINARY_ADAPTATION_THRESHOLD_PLUS_FIXED_EDGE_DELAY"
   },
   "forge": {
     "latest_disposition": "NO_OP_NON_EVIDENTIARY_NONCANONICAL",
     "latest_generation": "FORGE-20260924T133500+0900-NOOP-R115-ALL35-TERMINAL-NO-GATED-PROBE",
-    "last_directly_verified_cumulative_metrics_source": "EVIDENCE_ANALYST_R116",
-    "runs_observed": 24,
+    "runs_observed": 25,
     "prototypes": 19,
     "dead_ends": 15,
     "interesting_objects": 1,
     "promotion_proposals": 1,
     "admissions": 0,
-    "duplicate_or_rescue_rejects": 10,
+    "duplicate_or_rescue_rejects": 12,
     "ordinary_reduction_rejects": 15,
     "theory_probes": 2,
     "theory_kills": 2,
     "theory_survivors": 0,
     "revisit_probes": 0,
+    "revisit_kills": 0,
+    "revisit_survivors": 0,
     "new_promotion_proposals_this_generation": 0,
-    "new_interesting_objects_this_generation": 0,
-    "counter_update_policy": "DO_NOT_GUESS_FORWARD_WITHOUT_DIRECTLY_READABLE_NEWER_REPORT"
+    "new_interesting_objects_this_generation": 0
   },
   "methodology": {
     "generation": "METHCAL-20260924T141814+0900-R108-D7A41C9E",
@@ -241,6 +238,14 @@
     "permitted_remediation": "APPEND_ONLY_SCIENCE_INVARIANT_PROVENANCE_BOOKKEEPING_POINTING_TO_EXACT_EXISTING_COMMITS_IF_POLICY_PERMITS",
     "server_side_tag_namespace_protection_observed": false
   },
+  "scheduler_health": {
+    "primary_main_enabled_state_regression_observed_by_control_r57": true,
+    "primary_main_restored_by_control_r57": true,
+    "relay_remained_enabled": true,
+    "cadence_role_prompt_changed_by_control_r57": false,
+    "scheduler_change_by_evidence_analyst": false,
+    "scientific_authority_effect": "NONE"
+  },
   "phenomenon_first": {
     "state": "NO_TARGET_SHADOW",
     "standby_proposals": 0,
@@ -248,7 +253,7 @@
     "materialization_for_activity": "PROHIBITED"
   },
   "allocation": {
-    "MAIN": "NO_EXECUTABLE_CANONICAL_SCIENCE; H7 SAME_OBJECT STOP; WAIT_FOR_FRESH_INDEPENDENT_CANONICAL_OR_REVISIT_ADMISSION",
+    "MAIN": "NO_EXECUTABLE_CANONICAL_SCIENCE; H7 SAME_OBJECT STOP; WAIT_FOR_FRESH_INDEPENDENT_CANONICAL_OR REVISIT_ADMISSION",
     "Forge": "INDEPENDENT_ROUGH_EXPLORATION_ONLY; NO_H7_OR_CAND35_RESCUE; ONLY_ANALYST_APPROVED_THEORY_OR_REVISIT_PROBES",
     "Theory_Revisit": "NONCANONICAL_NON_EVIDENTIARY; NO_DIRECT_DISPATCH; NO_REVISIT_PROPOSAL_PRESENT",
     "Utility": "IDLE_NONAUTHORIZING",
@@ -277,7 +282,12 @@
     "consumed_formal_reruns_retunes_rescores": 0,
     "protected_heldout_payload_accesses": 0,
     "scheduler_definition_changes": 0,
+    "scheduler_state_changes_by_evidence_analyst": 0,
     "utility_forge_theory_revisit_dispatches": 0,
-    "persistence_scope": ["analysis/orchestrator/latest.md", "analysis/orchestrator/state.json", "analysis/orchestrator/history/2026-09-24/1426.md"]
+    "persistence_scope": [
+      "analysis/orchestrator/latest.md",
+      "analysis/orchestrator/state.json",
+      "analysis/orchestrator/history/2026-09-24/1501-r118-postformal-control-r57-main-r117-noop.md"
+    ]
   }
 }
