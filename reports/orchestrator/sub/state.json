@@ -1,49 +1,61 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260924T113600+0900-NOOP-R113-FRESH-REVISIT-METADATA-GATED",
-  "produced_at": "2026-09-24T11:36:00+09:00",
+  "generation_id": "FORGE-20260924T123200+0900-NOOP-R114-H7-FORMAL-ACTIVE-GATED",
+  "produced_at": "2026-09-24T12:32:00+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260924T103728+0900-NOOP-R111-R103-H7-BUNDLE-BOUNDARY",
+  "supersedes_generation_id": "FORGE-20260924T113600+0900-NOOP-R113-FRESH-REVISIT-METADATA-GATED",
   "input_generations": {
-    "evidence_analyst": "R113@24ced1639762a9e2d41a3ef869256b06ba7d2357",
-    "main_control": "af352a94118d494d59025708e7db6507047e17ac",
-    "external_research_audit_theory_revisit": "00dec1659709a93e85050284d427e43b7d8d9ece",
-    "methodology": "d60cb359acaf9c6965525a49f2578bc499be32c2",
-    "utility": "bb953376d5e83d4650e863f0fa500cdd6df2e665",
-    "previous_forge_persisted": "FORGE-20260924T103728+0900-NOOP-R111-R103-H7-BUNDLE-BOUNDARY@5e2ce4fe2b468aa561f0b67fe3ee768848d538dc"
+    "evidence_analyst": "R114@1824290d67fdf06494c3849fa687997ec29137cf",
+    "main_latest": "fd5d9551aa562d62df9d2bf5da2bf8791179d206",
+    "control": "R55@7fad3ddb4d9c2fab9415c166a09de904358da529",
+    "external_research_audit": "00dec1659709a93e85050284d427e43b7d8d9ece",
+    "literature": "R41@221f6cd238993d4a07d04ea99838be56449a3c70",
+    "audit": "R10@a89738c837b2e5bc2eab94adb1722bbb6daeb673",
+    "theory_revisit": "R2@6aa4fc2302336e887cf67070513948312fff0c98",
+    "methodology": "R104@d60cb359acaf9c6965525a49f2578bc499be32c2",
+    "utility": "5ddb0cb6f722871edf0f3df1500bd3081f583e27",
+    "previous_forge_persisted": "FORGE-20260924T113600+0900-NOOP-R113-FRESH-REVISIT-METADATA-GATED"
   },
   "exact_refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "evidence_analyst_r113_tip": "24ced1639762a9e2d41a3ef869256b06ba7d2357",
-    "main_control_tip": "af352a94118d494d59025708e7db6507047e17ac",
-    "external_research_audit_theory_revisit_tip": "00dec1659709a93e85050284d427e43b7d8d9ece",
+    "evidence_analyst_r114_tip": "1824290d67fdf06494c3849fa687997ec29137cf",
+    "main_latest_tip": "fd5d9551aa562d62df9d2bf5da2bf8791179d206",
+    "control_r55_tip": "7fad3ddb4d9c2fab9415c166a09de904358da529",
+    "external_research_audit_tip": "00dec1659709a93e85050284d427e43b7d8d9ece",
+    "literature_latest_blob": "221f6cd238993d4a07d04ea99838be56449a3c70",
+    "audit_latest_blob": "a89738c837b2e5bc2eab94adb1722bbb6daeb673",
+    "theory_latest_blob": "6aa4fc2302336e887cf67070513948312fff0c98",
     "methodology_tip": "d60cb359acaf9c6965525a49f2578bc499be32c2",
-    "utility_tip": "bb953376d5e83d4650e863f0fa500cdd6df2e665",
-    "prior_orchestrator_head": "5e2ce4fe2b468aa561f0b67fe3ee768848d538dc",
-    "history_path": "reports/orchestrator/sub/history/2026-09-24/1136-r113-fast-forge-no-gated-probe.md",
-    "history_create_commit": "7ef6c58367b089859120696bab6607c2fcc42111",
-    "latest_update_commit": "f0f266c7798598f588d1e28ff4dc5ec8f2575f5a"
+    "utility_tip": "5ddb0cb6f722871edf0f3df1500bd3081f583e27",
+    "prior_orchestrator_head": "fd5d9551aa562d62df9d2bf5da2bf8791179d206",
+    "h7_formal_workflow_run": 35951118916,
+    "history_path": "reports/orchestrator/sub/history/2026-09-24/1232-r114-fast-forge-h7-formal-active-no-gated-probe.md",
+    "history_create_commit": "e00783d771eab1eccc604a890f96cf4747901331",
+    "latest_update_commit": "f7e49f980451fb5c674671d4fa851f065fe43589"
   },
-  "freshness_note": "Evidence Analyst R113 is latest at persistence and supplies no THEORY_FORGE_TEST or REVISIT_FORGE_TEST. It incorporates newer Candidate #35 revisit-related metadata without reopening the terminal candidate or granting Forge dispatch. H7 exact-binding/bridge/controller preparation remains NON_RESULT MAIN/control-plane work. No independent Forge target appeared.",
+  "freshness_note": "Evidence Analyst R114 is current and supplies no THEORY_FORGE_TEST or REVISIT_FORGE_TEST. Candidate #35 is REVISIT_TRIGGERED metadata from Audit R10 but has no Revisit proposal, no Forge referral and no successor. H7 moved to one MAIN-owned exact-bound FORMAL workflow; this is a collision exclusion, not a Forge target.",
   "theory_revisit_gate": {
     "latest_evidence_analyst_checked_before_selection": true,
-    "latest_evidence_analyst_rechecked_before_persistence": true,
     "theory_forge_test_present": false,
     "revisit_forge_test_present": false,
     "raw_theory_dispatch_authority": false,
     "raw_revisit_dispatch_authority": false,
-    "candidate35_new_metadata_dispatches_forge": false
+    "theory_r2_new_proposal": false,
+    "revisit_proposal_present": false,
+    "candidate35_revisit_triggered_metadata": true,
+    "candidate35_forge_referral_count": 0,
+    "candidate35_dispatches_forge": false
   },
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
-    "main_owner": "H7_CANONICAL_PATH",
+    "main_owner": "H7_CANONICAL_ACTIVE_FORMAL_PATH",
     "selected_work_independent_of_unknown_main_outcome": true,
     "avoided": [
       "H7 science/controller/component/runtime/scorer/preserver/launch/bridge/capability/identity/START/protected-evaluator/workflow/authority surfaces",
-      "H7 NON_RESULT bridge rebind and exact-binding preparation",
-      "Candidate #35 same-object and rescue-adjacent off-manifold/natural-history/STP descendants without Analyst-gated independent trigger",
+      "live H7 FORMAL run 35951118916 jobs/logs/artifacts/results",
+      "Candidate #35 same-object R100 rerun/retune/rescore and ungated successor/Revisit probe",
       "Candidate #34 same-object and temporal-route rescue descendants",
       "consumed/frozen/FORMAL identities and official evidence/formal/sealed/freeze/preserve refs",
       "protected held-out/evaluator targets"
@@ -54,24 +66,24 @@
     "selected": [],
     "excluded": [
       {
-        "surface": "Candidate #35 revisit-related fresh metadata",
-        "reason": "Evidence Analyst R113 does not issue REVISIT_FORGE_TEST and does not reopen the terminal candidate; direct action would violate Analyst gating and risk rescue semantics"
+        "surface": "Candidate #35 treatment/readout causal-opportunity revisit trigger",
+        "reason": "Evidence Analyst R114 marks the terminal object REVISIT_TRIGGERED but records no REVISIT_PROPOSAL, zero Forge referrals and explicit STOP on ungated materialization; action would violate Analyst gating and risk rescue laundering"
       },
       {
         "surface": "Theory follow-up",
-        "reason": "Evidence Analyst R113 supplies no bounded THEORY_FORGE_TEST; prior bounded TH-001 probes remain ordinarily reduced"
+        "reason": "Theory R2 has no new proposal and Evidence Analyst R114 supplies no bounded THEORY_FORGE_TEST; prior TH-001 probes remain ordinarily reduced"
       },
       {
-        "surface": "H7 bridge/controller/provenance",
-        "reason": "MAIN/control-plane owned and limited to NON_RESULT exact-binding preparation; excluded from Forge"
+        "surface": "H7 active FORMAL path",
+        "reason": "MAIN-owned sole active canonical object with one exact-bound result-bearing workflow already dispatched; strictly excluded from Forge"
       },
       {
         "surface": "Candidate #34 descendants",
-        "reason": "Terminal/rescue-adjacent with no independent closure-invalidating trigger"
+        "reason": "CLOSED_STRONG terminal family with no independent closure-invalidating trigger"
       },
       {
-        "surface": "Independent Literature/Audit/Methodology residuals",
-        "reason": "No newly reachable observable/intervention/tooling capability survived ordinary recurrence/FSA-register/lookup/eligibility/STP/local-physics/API-config/timing screening"
+        "surface": "Literature/Audit/Methodology residuals",
+        "reason": "R41/R10/R104 add guardrails and revisit rationale but no separate Analyst-cleared, bounded, reachable Forge observable/intervention independent of terminal rescue and MAIN unknown outcomes"
       }
     ]
   },
@@ -79,29 +91,29 @@
   "forge_objects": [],
   "ordinary_reduction_assessment": {
     "new_phenomenon_observed": false,
-    "assessment": "No new Forge scientific observation exists to reduce. Fresh Candidate #35 material remains Analyst-gated terminal-family metadata; H7 material is MAIN-owned operational binding work. Existing ordinary reductions remain sufficient for adjacent surfaces, so no prototype was justified."
+    "assessment": "No new Forge scientific observation exists to reduce. Candidate #35 R10 material is methodological causal-opportunity information and remains Analyst-gated. Existing ordinary recurrence/FSA-register/lookup/eligibility/reservoir/STP/leak-adaptation-refractory/API-config-timing reductions remain the floor for adjacent ideas."
   },
   "promotion_proposal": null,
   "utility_request": null,
   "hard_floor": {
-    "prohibited_action_occurred": false,
-    "preformal_or_formal_identity_created_or_consumed": false,
-    "started_created": false,
-    "official_test_or_scoring_performed": false,
-    "protected_heldout_accessed": false,
-    "evidence_formal_sealed_freeze_preserve_ref_mutated": false,
-    "consumed_or_immutable_evidence_mutated": false,
-    "result_bearing_canonical_workflow_dispatched": false,
-    "h7_bridge_armed": false,
-    "scientific_research_branch_mutated": false,
+    "prohibited_action_occurred_by_forge": false,
+    "preformal_or_formal_identity_created_or_consumed_by_forge": false,
+    "started_created_by_forge": false,
+    "official_test_or_scoring_performed_by_forge": false,
+    "protected_heldout_accessed_by_forge": false,
+    "evidence_formal_sealed_freeze_preserve_ref_mutated_by_forge": false,
+    "consumed_or_immutable_evidence_mutated_by_forge": false,
+    "result_bearing_canonical_workflow_dispatched_by_forge": false,
+    "h7_bridge_armed_or_rearmed_by_forge": false,
+    "scientific_research_branch_mutated_by_forge": false,
     "forge_branch_created_or_modified_this_run": false,
     "forge_branch_merged_to_main_or_research": false,
-    "terminal_reopened": false,
-    "historical_outcome_rewritten": false
+    "terminal_reopened_by_forge": false,
+    "historical_outcome_rewritten_by_forge": false
   },
   "metrics": {
     "scope": "FROM_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 23,
+    "runs": 24,
     "prototypes_attempted": 19,
     "theory_probes": 2,
     "theory_kills": 2,
@@ -119,5 +131,5 @@
     "analyst_promotion_deferrals": 1,
     "idea_to_observation_latency": "NO_OP"
   },
-  "recommendation": "NO_GATED_THEORY_OR_REVISIT_PROBE_AND_NO_FRESH_INDEPENDENT_TARGET; REMAIN_NO_OP; DO_NOT_TOUCH_MAIN_H7_OR_TERMINAL_CAND34_CAND35; WAIT_FOR_FRESH_ANALYST_GATING_OR_GENUINELY_INDEPENDENT_CAPABILITY"
+  "recommendation": "NO_GATED_THEORY_OR_REVISIT_PROBE_AND_NO_FRESH_INDEPENDENT_TARGET; REMAIN_NO_OP; DO_NOT_TOUCH_ACTIVE_MAIN_H7_OR_TERMINAL_CAND34_CAND35; WAIT_FOR_FRESH_ANALYST_GATING_OR_GENUINELY_INDEPENDENT_CAPABILITY"
 }
