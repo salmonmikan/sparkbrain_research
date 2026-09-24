@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T212000+0900-PRIMARY-R128-R125-HUMAN009-NO-CANONICAL-ACTION",
-  "producer_run_id": "sparkbrain-main-primary-20260924T212000JST-r128-r125-human009-no-canonical-action",
-  "generated_at": "2026-09-24T21:20:00+09:00",
-  "status": "STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
-  "execution_mode": "PRIMARY",
+  "generation_id": "MAIN-20260924T214500+0900-RELAY-R129-R125-THEORYR4-WAITING-ANALYST",
+  "producer_run_id": "sparkbrain-main-relay-20260924T214500JST-r129-r125-theoryr4-waiting-analyst",
+  "generated_at": "2026-09-24T21:45:00+09:00",
+  "status": "WAITING_EXTERNAL",
+  "execution_mode": "RELAY",
   "candidate_id": null,
   "research_layer": null,
   "claim_ceiling": null,
@@ -19,22 +19,20 @@
   "development_revision": null,
   "cycle_count": 25,
   "cycle_reassessment_context": "NO_SCIENTIFIC_CYCLE_EXTENSION_OR_REASSESSMENT_EXECUTION",
-  "information_gain": "CONTROL_PLANE_ONLY: ANALYST_R125_ACCEPTED_HUMAN009_AS_REVALIDATION_LEAD_ONLY; NO_CANONICAL_ADMISSION; NO_NEW_SCIENCE",
+  "information_gain": "CONTROL_PLANE_ONLY: NEW NONCANONICAL THEORY R4 OBSERVED AFTER ANALYST R125; ZERO EXECUTION AUTHORITY; WAITING FOR FRESH ANALYST CLASSIFICATION",
   "analyst_authority": {
     "generation_id": "EVA-20260924T211100+0900-R125-HUMAN009-R62-NO-CANONICAL-ADMISSION",
     "branch": "ops/evidence-analyst-handoff",
     "branch_tip": "918d804f8d66a7463678b79621266045949045f4",
-    "latest_blob": "8aaf11d507089bc09b5d034ca877a759044fb546",
     "scientific_execution_mode": "READ_ONLY",
-    "material_change": true,
     "new_scientific_result": false,
     "canonical_science": "STOP_NO_EXECUTABLE_CANONICAL_ACTION",
     "top3": []
   },
-  "prior_main_generation": "MAIN-20260924T204741+0900-RELAY-R127-WAITING-ANALYST-R123-R114-NO-EXECUTABLE-CANONICAL-SCIENCE",
+  "prior_main_generation": "MAIN-20260924T212000+0900-PRIMARY-R128-R125-HUMAN009-NO-CANONICAL-ACTION",
   "persistence": {
-    "history_path": "reports/orchestrator/main/history/2026-09-24/212000-r128-primary-r125-human009-no-canonical-action.md",
-    "history_create_commit": "a17212584be92a781453130df68e71cb0bbef43c",
+    "history_path": "reports/orchestrator/main/history/2026-09-24/2145-r129-relay-theory-r4-waiting-analyst.md",
+    "history_create_commit": "a0c108d56cd63da39e76c50554afb45669813009",
     "state_update_commit": "SELF_THIS_WRITE"
   },
   "funnel": {
@@ -49,12 +47,21 @@
     "CONSUMED_ONE_WAY": 1,
     "effectively_executable_mechanism": 0,
     "consumed_identities": 8,
-    "new_consumption_this_generation": 0,
-    "revisit_proposals": 1,
-    "revisit_forge_referrals": 1,
-    "revisit_forge_kills": 1,
-    "revisit_forge_survivors": 0,
-    "fresh_successors": 0
+    "new_consumption_this_generation": 0
+  },
+  "pending_external_input": {
+    "type": "NONCANONICAL_THEORY_PROPOSAL",
+    "generation_id": "THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41",
+    "proposal_id": "TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY",
+    "source_commit": "42165c89b0072c26258c7d6c09949bc487a3c24e",
+    "source_path": "analysis/external_research_audit/theory/latest.md",
+    "theory_status": "THEORY_PROPOSAL",
+    "revisit_status": "NO_REVISIT_PROPOSAL",
+    "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
+    "scientific_execution_authority": "NONE",
+    "main_may_execute_now": false,
+    "adopted_by_current_analyst_generation": false,
+    "expected_next_action": "EVIDENCE_ANALYST_CLASSIFICATION_REQUIRED"
   },
   "H7": {
     "candidate_id": "CAND-H7-RESPONSIBILITY",
@@ -79,31 +86,10 @@
     "claim_ceiling": "SYSTEM",
     "confirmatory_credit": 0,
     "revisit_status": "DEFERRED_INDEPENDENT_REIDENTIFICATION",
-    "historical_proposal_classification": "REVISIT_FORGE_TEST",
-    "historical_proposal_reclassified_this_generation": false,
-    "post_probe_closure_event": "FORGE_KILLED_NO_SUCCESSOR_RETURN_TO_DEFERRED_INDEPENDENT_REIDENTIFICATION",
     "current_trigger_authority": "NONE_EXHAUSTED",
-    "revisit_probe_spec_id": "RVT35-FORGE-001",
-    "fast_forge_disposition": "FORGE_DEAD_END",
-    "fast_forge_scientific_credit": 0,
     "fresh_successor_admitted": false,
     "execution_authority_for_main": false,
-    "same_object_rerun_retune_rescore": "PROHIBITED",
-    "killed_rationale_recycling": "PROHIBITED_WITHOUT_GENUINELY_NEW_INDEPENDENT_INFORMATION",
-    "currently_resolvable_raw_ref": "raw/cand35-r100-onebatch-20260923",
-    "currently_resolvable_raw_sha": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
-    "historical_preserve_ref_claim": "preserve/cand35-r100-batch1-20260923",
-    "historical_preserve_ref_currently_resolvable": false,
-    "provenance_discrepancy_classification": "GOVERNANCE_PROVENANCE_REFERENCE_DISCREPANCY_NO_SCIENTIFIC_REINTERPRETATION",
-    "ref_recreation_performed": false
-  },
-  "human009": {
-    "classification": "REVALIDATION_LEAD_ONLY_NO_CANONICAL_OR_REVISIT_AUTHORITY",
-    "creates_main_authority": false,
-    "creates_forge_authority": false,
-    "creates_revisit_trigger": false,
-    "creates_candidate": false,
-    "required_path": "INDEPENDENT_RECONSTRUCTION_THEN_FRESH_ANALYST_GATE"
+    "same_object_rerun_retune_rescore": "PROHIBITED"
   },
   "formal_identity": {
     "identity_id": "h7-r5-285a3a206b34c5982b9d4045",
@@ -120,43 +106,13 @@
     "rescore_or_reinterpret": "PROHIBITED",
     "changed_this_generation": false
   },
-  "fast_forge_awareness": {
-    "latest_run": "FORGE-20260924T203607+0900-R123-R114-NOOP",
-    "latest_blob": "290c37abc900699b3d9742ee23252facb7df1854",
-    "status": "FORGE_OBSERVATION",
-    "selected_questions": 0,
-    "prototypes": 0,
-    "promotion_proposed": false,
-    "main_collision": false,
-    "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-    "scientific_authority_for_main": false
-  },
-  "utility_awareness": {
-    "generation_id": "UTILITY-20260924T202210+0900-R123-POSTPROBE-CLOSURE-RECONCILE-7C2D91A4",
-    "branch_head": "36fe88a4538f4f8bfb438dcc1ab5eb3f09279e0a",
-    "status": "IDLE",
-    "scientific_authority": "NONE",
-    "fast_forge_support": false,
-    "canonical_dependency": false
-  },
-  "control_awareness": {
-    "generation_id": "CTRL-20260924T210200+0900-R62-ADHOC-HUMAN009-REVALIDATION-EXTERNAL-SCIENCE-SLOT-LAG",
-    "branch_head": "2117b8436f7da53b6c4c70c7c29eeb4ac6e0d673",
-    "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY",
-    "scheduler_health": "YELLOW_EXTERNAL_SCIENCE_MISSED_1930_SLOT_PLUS_BROAD_QUEUE_LAG",
-    "creates_scientific_execution_authority": false
-  },
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "main_report_branch": "ops/orchestrator-run-report",
-    "main_report_head_before_persistence": "3eb3fb0cc8786da059c36868da5d4a71e9d65f01",
+    "main_report_head_before_persistence": "d4f905c36d54e21023524420139dee334523cd2a",
     "analyst_branch": "ops/evidence-analyst-handoff",
     "analyst_head": "918d804f8d66a7463678b79621266045949045f4",
-    "control_branch": "ops/control-brain-handoff",
-    "control_head": "2117b8436f7da53b6c4c70c7c29eeb4ac6e0d673",
-    "utility_branch": "ops/utility-orchestrator-requests",
-    "utility_head": "36fe88a4538f4f8bfb438dcc1ab5eb3f09279e0a",
-    "fast_forge_latest_blob": "290c37abc900699b3d9742ee23252facb7df1854",
+    "theory_r4_commit": "42165c89b0072c26258c7d6c09949bc487a3c24e",
     "h7_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "h7_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "h7_controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
@@ -165,37 +121,24 @@
     "h7_control_sha": "52b17b785364f96cc2e95507b2336252459d5352",
     "h7_preserve_ref": "preserve/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
     "h7_preserve_sha": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
-    "h7_freeze_ref": "freeze/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
-    "h7_formal_ref": "formal/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "h7_sealed_ref": "sealed/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "h7_evidence_ref": "evidence/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "h7_result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-    "candidate35_raw_ref": "raw/cand35-r100-onebatch-20260923",
-    "candidate35_raw_sha": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a"
+    "h7_result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85"
   },
   "workflow_wait": {
     "current_external_workflow_id": null,
     "queued_or_in_progress_workflow_observed": false,
-    "latest_analyst_ci_run_id": 35998199766,
-    "latest_analyst_ci_status": "completed",
-    "latest_analyst_ci_conclusion": "success",
-    "h7_formal_workflow_run_id": 35951118916,
-    "h7_formal_workflow_status": "completed",
-    "h7_formal_workflow_conclusion": "success",
-    "h7_formal_workflow_attempt": 1,
     "h7_rerun_allowed": false,
-    "expected_next_action": "No result-bearing external workflow is pending. Await fresh Evidence Analyst canonical admission."
+    "expected_next_action": "Await a later Evidence Analyst generation that explicitly classifies THEORY R4 / TH-002. No result-bearing workflow is pending."
   },
   "work_performed": [
-    {"classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION", "change": "Re-fetched current Evidence Analyst R125, MAIN/Relay state, Control R62, Fast Forge R123/R114, Utility R123, stable main, open PR/workflow surfaces, and exact H7 one-way refs."},
-    {"classification": "COLLISION_CHECK", "change": "Confirmed no allocated canonical object, no fresh same-object MAIN collision, and no Fast Forge/Utility canonical dependency."},
-    {"classification": "HUMAN009_GATE_RECONCILIATION", "change": "Recorded HUMAN-009 as revalidation lead only, with no candidate, Revisit, Forge, or MAIN execution authority."},
-    {"classification": "CANONICAL_BOUNDARY_ENFORCEMENT", "change": "Performed no scientific execution because Analyst R125 allocates no executable canonical object."}
+    {"classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION", "change": "Re-fetched Analyst R125, MAIN R128 lease/state, stable main, exact H7 scientific/controller refs, and newer Theory R4 source."},
+    {"classification": "COLLISION_CHECK", "change": "Confirmed no fresh PRIMARY RUNNING lease on an allocated scientific object and no canonical science collision."},
+    {"classification": "NONCANONICAL_INPUT_ROUTING", "change": "Recorded Theory R4 / TH-002 only as a zero-authority pending input for Evidence Analyst classification; did not operationalize it."},
+    {"classification": "CANONICAL_BOUNDARY_ENFORCEMENT", "change": "Performed no scientific execution because current Analyst R125 allocates no executable canonical object."}
   ],
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NO_NEW_CANONICAL_SCIENCE; ANALYST_R125_NO_CANONICAL_ADMISSION; HUMAN009_REVALIDATION_LEAD_ONLY; H7_UNCHANGED_CONSUMED; CAND35_TERMINAL; FAST_FORGE_NOOP; UTILITY_IDLE; QUEUE_EMPTY",
-    "repair_change_classification": "CONTROL_PLANE_RECONCILIATION_ONLY",
+    "evidentiary_status": "NOT_EVIDENCE; NONCANONICAL_THEORY_R4_AWAITING_ANALYST_CLASSIFICATION; H7_UNCHANGED_CONSUMED; CAND35_TERMINAL; NO_EXECUTABLE_CANONICAL_OBJECT",
+    "repair_change_classification": "CONTROL_STATE_RECONCILIATION_ONLY",
     "science_invariant_repair_performed": false,
     "science_affecting_change_performed": false,
     "cycle_extension_performed": false,
@@ -204,10 +147,7 @@
     "official_scoring_performed_this_run": false,
     "formal_identity_created_or_consumed_this_run": false,
     "prior_results_preserved_unchanged": true,
-    "terminal_object_reopened": false,
-    "forge_derived_code_reused": false,
-    "forge_observations_used_as_confirmatory_support": false,
-    "utility_dependency_created": false
+    "terminal_object_reopened": false
   },
   "consumed_identities": {
     "official_consumed_identity_count": 8,
@@ -218,17 +158,15 @@
     "analyst_generation_freshness_rechecked_before_persistence": true,
     "main_generation_and_lease_freshness_rechecked_before_persistence": true,
     "exact_scientific_and_controller_refs_rechecked": true,
-    "research_and_forge_collision_surfaces_rechecked": true,
     "same_identity_rerun_retune_rescore_performed": false,
     "historical_result_rewritten": false,
     "immutable_or_one_way_refs_mutated": false,
     "terminal_object_reopened": false,
     "protected_evaluator_or_heldout_accessed": false,
-    "candidate35_missing_preserve_ref_recreated": false,
     "prior_result_preserved_unchanged": true,
     "formal_floor_respected": true
   },
-  "stop_reason": "ANALYST_R125_HUMAN009_REVALIDATION_LEAD_ONLY_NO_CANONICAL_ADMISSION; NO_EXECUTABLE_CANONICAL_OBJECT",
-  "next_action": "Await independent HUMAN-009 revalidation outputs and a fresh Evidence Analyst generation. Continue only if it explicitly allocates a fresh candidate/successor with its own prospective canonical contract or authorizes a specific development reassessment. Do not recycle H7, Candidate #35, or RVT35-FORGE-001, and do not mutate historical scientific refs.",
+  "stop_reason": "WAITING_FOR_EVIDENCE_ANALYST_CLASSIFICATION_OF_NONCANONICAL_THEORY_R4_TH002",
+  "next_action": "Wait for a later Evidence Analyst generation. Continue only if that generation explicitly classifies and prospectively admits/allocates a concrete scientific object or authorizes a specific development reassessment. Otherwise preserve all current science unchanged and remain stopped/waiting.",
   "owner": "main"
 }
