@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T101500+0900-PRIMARY-H7-R110-DISPATCH-REGISTRATION-AWAITING-ANALYST",
-  "producer_run_id": "sparkbrain-main-primary-20260924T1015JST-r110-h7-dispatch-registration-wait",
-  "generated_at": "2026-09-24T10:15:00+09:00",
+  "generation_id": "MAIN-20260924T105345+0900-RELAY-H7-R111-EXACT-BLOB-REPAIR-AWAITING-ANALYST",
+  "producer_run_id": "sparkbrain-main-relay-20260924T105345JST-r111-h7-exact-blob-repair-wait",
+  "generated_at": "2026-09-24T10:53:45+09:00",
   "status": "WAITING_EXTERNAL",
-  "execution_mode": "PRIMARY",
+  "execution_mode": "RELAY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "research_layer": "PRE_FORMAL",
   "claim_ceiling": "MECHANISM",
@@ -13,19 +13,27 @@
   "cycle_count": 12,
   "cycle_reassessment": {
     "authorized_scientific_cycle": 12,
-    "primary_extended_scientific_cycle": false,
-    "current_action_was_science_invariant_operational_reconciliation": true,
+    "relay_extended_scientific_cycle": false,
+    "current_action_was_science_invariant_operational_repair": true,
     "expected_information_gain": "CONTROL_PLANE_ONLY"
   },
   "analyst_authority": {
-    "generation_id": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP",
-    "commit": "7bc866c6d4dd1d723156345d056fadb027a85c1c",
-    "decision": "H7 remains READY/QUEUED with conditional GO_ONCE scientific authority bound to the R110 controller, but FORMAL START remains STOP until trigger capability is followed by a fresh Analyst exact-binding revalidation.",
-    "fresh_analyst_required_after_capability_exists": true,
-    "freshness_rechecked_this_run": true,
-    "r111_controller_authorized_by_this_generation": false
+    "generation_id": "EVA-20260924T101155+0900-R111-H7-DISPATCH-BOUND-GO-ONCE",
+    "commit": "2f1409da8d47525cbb1058ce9c7eebf8ef80ef2c",
+    "decision": "R111 recorded GO_ONCE for the exact pre-repair controller/science pair. A subsequently detected pre-identity launch-contract/workflow blob mismatch required a science-invariant repair; the repaired controller head therefore requires a fresh Analyst exact binding before any FORMAL start.",
+    "freshness_rechecked_before_repair": true,
+    "freshness_rechecked_after_repair_before_persistence": true,
+    "pre_repair_exact_bound_controller": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
+    "repaired_controller_authorized_by_r111": false
   },
-  "prior_main_generation": "MAIN-20260924T095600+0900-RELAY-H7-R110-DISPATCH-REGISTRATION-AWAITING-ANALYST",
+  "prior_main_generation": "MAIN-20260924T101500+0900-PRIMARY-H7-R110-DISPATCH-REGISTRATION-AWAITING-ANALYST",
+  "methodology_advisory": {
+    "generation_id": "METHCAL-20260924T103400+0900-R103-C4F19B72",
+    "commit": "6ab4af4f6726890565e1b6945c5b66b8e922b825",
+    "finding": "H7_R111_RESULT_WORKFLOW_LAUNCH_CONTRACT_BLOB_MISMATCH",
+    "classification": "SCIENCE_INVARIANT_REPAIR",
+    "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
+  },
   "funnel": {
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
@@ -41,51 +49,51 @@
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "7bc866c6d4dd1d723156345d056fadb027a85c1c",
+    "analyst_head": "2f1409da8d47525cbb1058ce9c7eebf8ef80ef2c",
     "authorized_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "authorized_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "r110_exact_bound_controller_branch": "research/main-h7-r5-launch-plumbing-r105",
-    "r110_exact_bound_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
-    "registered_dispatch_main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "observed_dispatch_controller_candidate_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
-    "observed_dispatch_controller_candidate_head": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
-    "workflow_path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
-    "utility_head": "fe62883d0c9aa99f383451fb4793c54d53cb77b0",
-    "fast_forge_latest_generation": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED",
-    "history_path": "reports/orchestrator/main/history/2026-09-24/1015-r110-primary-h7-dispatch-registration-awaiting-analyst.md"
+    "controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
+    "controller_head_before_repair": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
+    "controller_head_after_repair": "af3aa97574c365e3e918c3d4d012faa4886760d0",
+    "launch_contract_blob_after_repair": "e24f2a8afa621a3ef758d5f3c7b176b74b7edb59",
+    "controller_script_blob": "7a092741cad6371fbe69adafef6e37845349b6de",
+    "formal_launch_workflow_blob": "1c4e2199740397c1afbbcc66e89d83f41fe54b21",
+    "plumbing_readiness_workflow_blob": "915d79b1243b43794824ce38c05f417721020ea5",
+    "methodology_head": "6ab4af4f6726890565e1b6945c5b66b8e922b825",
+    "history_path": "reports/orchestrator/main/history/2026-09-24/105345-r111-relay-h7-exact-blob-repair-awaiting-analyst.md"
   },
   "work_performed": [
     {
-      "classification": "FRESHNESS_AND_OWNERSHIP_RECONCILIATION",
-      "change": "Re-fetched current Analyst R110, current main, exact H7 science/R110 controller, R111 dispatch candidate, prior MAIN RELAY lease, latest Fast Forge and Utility collision state."
+      "classification": "FRESHNESS_AND_COLLISION_RECONCILIATION",
+      "change": "Re-fetched final Analyst R111, current MAIN generation/lease, exact H7 science, controller candidate and Methodology advisory. MAIN lease was WAITING_EXTERNAL, not PRIMARY RUNNING, so no same-object collision existed."
     },
     {
-      "classification": "SCIENCE_INVARIANT_OPERATIONAL_PLUMBING_OBSERVED_ONLY",
-      "change": "Confirmed default-branch workflow_dispatch registration now exists and R111 candidate remains present; did not substitute R111 for the R110-authorized controller because no fresh Analyst generation binds it."
+      "classification": "SCIENCE_INVARIANT_REPAIR",
+      "change": "Updated only the stale formal_launch_workflow_blob field in artifacts/formal_h7_r5/launch_path_contract.json to the already-existing exact workflow blob. No scientific behavior or frozen source changed."
     },
     {
-      "classification": "ONE_WAY_NAMESPACE_RECHECK",
-      "change": "Re-fetched H7 control/preserve/formal/sealed/freeze/evidence namespaces and confirmed they remain unused."
+      "classification": "NON_RESULT_EXACT_BLOB_VALIDATION",
+      "change": "Verified from the repaired controller tree that controller_script_blob, formal_launch_workflow_blob and plumbing_readiness_workflow_blob exactly match the launch contract; verified frozen H7 science branch/head remains unchanged."
     },
     {
       "classification": "FAIL_CLOSED_PRESTART",
-      "change": "Did not dispatch FORMAL, create identity/STARTED, access protected evaluation, produce/preserve raw, score, or mutate evidence refs."
+      "change": "Did not reuse R111 authority after the controller head advanced. Did not arm the bridge, dispatch FORMAL, create identity/STARTED, access protected evaluation, produce/preserve raw, score, or mutate one-way evidence refs."
     }
   ],
   "workflows": {
-    "registered_dispatch": {
+    "formal_launch": {
       "path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
-      "default_branch_registration_commit": "d16403414fc7abebd23075fc401240971b8eb91d",
-      "observed_controller_candidate": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
+      "controller_head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
+      "workflow_blob": "1c4e2199740397c1afbbcc66e89d83f41fe54b21",
       "formal_run_id": null,
       "dispatched": false,
       "result_bearing": true,
-      "expected_next_action": "Fresh Evidence Analyst exact-binding revalidation of the registered dispatch path and exact executable controller/science pair; only a fresh GO_ONCE may permit one FORMAL dispatch."
+      "expected_next_action": "Fresh Evidence Analyst exact-binding revalidation of repaired controller af3aa97574c365e3e918c3d4d012faa4886760d0 with unchanged frozen science 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80. Only a fresh subsequent GO_ONCE may permit one bridge arm / FORMAL dispatch."
     }
   },
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NON_RESULT_PRESTART_OPERATIONAL_REGISTRATION_RECONCILIATION",
+    "evidentiary_status": "NON_RESULT_SCIENCE_INVARIANT_EXACT_BINDING_REPAIR",
     "information_gain": "OPERATIONAL_ONLY_NO_NEW_SCIENCE",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
@@ -93,54 +101,45 @@
     "started_marker_created": false,
     "protected_or_heldout_evaluation_accessed": false,
     "result_bearing_workflow_dispatched": false,
+    "raw_produced": false,
+    "raw_preserved": false,
     "official_scoring_performed": false,
     "pass_fail_assigned": false,
     "evidence_ref_created_or_mutated": false,
     "prior_results_preserved_unchanged": true,
-    "forge_derived_code_reused": false,
-    "r111_promoted_to_scientific_authority": false
+    "historical_pass_fail_rewritten": false
   },
   "consumed_identities": {
     "new_identity_consumed_this_run": false,
     "official_consumed_identity_count": 7,
-    "active_h7_identity": null
+    "active_h7_identity": null,
+    "r111_identity_status": "NOT_CREATED_NOT_CONSUMED"
   },
   "ownership_and_collision": {
-    "fresh_primary_running_same_h7_object_before_action": false,
-    "prior_main_execution_mode": "RELAY",
+    "fresh_primary_running_same_h7_object_before_repair": false,
+    "prior_main_execution_mode": "PRIMARY",
     "prior_main_status": "WAITING_EXTERNAL",
     "fast_forge_same_h7_object_collision": false,
-    "fast_forge_status": "NO_OP_NON_EVIDENTIARY_NONCANONICAL",
-    "utility_status": "IDLE",
-    "utility_scientific_authority": "NONE",
-    "h7_formal_authorized_now": false
-  },
-  "one_way_namespaces": {
-    "control_h7_heads": 0,
-    "preserve_h7_heads": 0,
-    "formal_h7_tags": 0,
-    "sealed_h7_tags": 0,
-    "freeze_h7_tags": 0,
-    "evidence_h7_tags": 0
+    "repaired_controller_formal_authorized_now": false
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
     "main_generation_and_lease_rechecked": true,
     "direct_h7_scientific_ref_rechecked": true,
-    "r110_exact_bound_controller_rechecked": true,
-    "dispatch_registration_rechecked": true,
-    "r111_controller_candidate_rechecked": true,
-    "utility_collision_rechecked": true,
-    "fast_forge_collision_rechecked": true,
+    "controller_ref_rechecked_before_repair": true,
+    "controller_ref_rechecked_after_repair": true,
+    "repair_commit_single_file_single_field": true,
+    "launch_contract_controller_blob_triad_matches_repaired_tree": true,
+    "scientific_head_unchanged": true,
     "formal_identity_created": false,
     "started_created": false,
     "protected_evaluation_accessed": false,
     "official_scoring_performed": false,
     "historical_pass_fail_rewritten": false,
     "immutable_formal_sealed_evidence_refs_mutated": false,
-    "development_phase_changed_by_primary": false,
+    "development_phase_changed_by_relay": false,
     "formal_floor_respected": true
   },
-  "stop_reason": "R110_FRESH_ANALYST_EXACT_BINDING_REVALIDATION_REQUIRED_AFTER_DISPATCH_PLUMBING_CHANGE",
-  "next_action": "Wait for a fresh Evidence Analyst generation to inspect the registered workflow-dispatch path and explicitly bind the exact executable controller/science pair. Only if that generation supplies a valid GO_ONCE may MAIN dispatch exactly one result-bearing workflow; otherwise remain prestart."
+  "stop_reason": "REPAIRED_CONTROLLER_HEAD_REQUIRES_FRESH_EVIDENCE_ANALYST_EXACT_REBIND_BEFORE_ANY_FORMAL_START",
+  "next_action": "Wait for a fresh Evidence Analyst generation to inspect and exact-bind repaired controller af3aa97574c365e3e918c3d4d012faa4886760d0 with unchanged frozen H7 science. Only if that fresh generation authorizes GO_ONCE may MAIN arm the existing bridge and dispatch exactly one FORMAL run; otherwise remain prestart."
 }
