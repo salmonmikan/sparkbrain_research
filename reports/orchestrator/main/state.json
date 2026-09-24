@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T115000+0900-RELAY-H7-R113-BRIDGE-REBIND-AWAITING-ANALYST",
-  "producer_run_id": "sparkbrain-main-relay-20260924T115000JST-r113-h7-bridge-rebind",
-  "generated_at": "2026-09-24T11:50:00+09:00",
+  "generation_id": "MAIN-20260924T122200+0900-PRIMARY-H7-R114-FORMAL-DISPATCHED-WAITING-EXTERNAL",
+  "producer_run_id": "sparkbrain-main-primary-20260924T1217JST-r114-h7-formal-dispatch",
+  "generated_at": "2026-09-24T12:22:00+09:00",
   "status": "WAITING_EXTERNAL",
-  "execution_mode": "RELAY",
+  "execution_mode": "PRIMARY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "research_layer": "PRE_FORMAL",
   "claim_ceiling": "MECHANISM",
@@ -13,19 +13,19 @@
   "cycle_count": 12,
   "cycle_reassessment": {
     "authorized_scientific_cycle": 12,
-    "relay_extended_scientific_cycle": false,
-    "current_action_was_science_invariant_repair": true,
-    "expected_information_gain": "CONTROL_PLANE_ONLY"
+    "primary_extended_scientific_cycle": false,
+    "current_action_was_exact_bound_one_shot_formal_dispatch": true,
+    "information_gain": "CONTROL_PLANE_ONE_SHOT_DISPATCH_CONFIRMED_SCIENTIFIC_RESULT_PENDING"
   },
   "analyst_authority": {
-    "generation_id": "EVA-20260924T113426+0900-R113-CONVERGED-H7-BRIDGE-HOLD-CAND35-TRIGGER",
-    "commit": "24ced1639762a9e2d41a3ef869256b06ba7d2357",
-    "decision": "GO_NONRESULT_OPERATIONAL_ONLY: rebind dormant H7 bridge/request controller pins from bac7402fb01b69353eb926228574cc68c2c2a2d2 to af3aa97574c365e3e918c3d4d012faa4886760d0, keep armed=false, dispatch nothing, validate; then require a later fresh Evidence Analyst observation before any GO_ONCE.",
-    "freshness_rechecked_before_mutation": true,
-    "superseding_generation_observed_before_mutation": false,
-    "result_bearing_authority_currently_available": false
+    "generation_id": "EVA-20260924T115823+0900-R114-H7-POSTBRIDGE-GO-ONCE-CAND35-TRIGGER",
+    "commit": "1824290d67fdf06494c3849fa687997ec29137cf",
+    "decision": "GO_ONCE_EXACT_BOUND_POST_BRIDGE_REPAIR_R114",
+    "freshness_rechecked_immediately_before_arm": true,
+    "result_bearing_authority_used_for_single_dispatch": true,
+    "automatic_retry_authorized": false
   },
-  "prior_main_generation": "MAIN-20260924T111355+0900-PRIMARY-H7-R111-POSTREPAIR-AUTHORITY-WAIT",
+  "prior_main_generation": "MAIN-20260924T115000+0900-RELAY-H7-R113-BRIDGE-REBIND-AWAITING-ANALYST",
   "funnel": {
     "claim_ceiling": "MECHANISM",
     "preformal_eligible": true,
@@ -41,102 +41,126 @@
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "24ced1639762a9e2d41a3ef869256b06ba7d2357",
+    "analyst_head": "1824290d67fdf06494c3849fa687997ec29137cf",
     "authorized_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "authorized_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
     "controller_head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
     "launch_bridge_branch": "ops/h7-r5-launch-bridge",
-    "launch_bridge_head": "aa3fb32466802baa20e95376adb9f25f88511129",
+    "launch_bridge_prearm_head": "aa3fb32466802baa20e95376adb9f25f88511129",
+    "launch_bridge_arm_head": "977e0241f390f6504ebfa4a27a389a487751038c",
     "launch_bridge_workflow_blob": "c9dc0275352d675c52f251e25cdfb32486c54af6",
-    "launch_bridge_request_blob": "ac7d6677fadb305c76cb5863e7b55131116ba247",
-    "formal_launch_workflow_blob": "1c4e2199740397c1afbbcc66e89d83f41fe54b21",
-    "bridge_validation_run_id": 35948871992,
-    "history_path": "reports/orchestrator/main/history/2026-09-24/115000-r113-relay-h7-bridge-rebind.md"
+    "launch_bridge_request_blob": "5139e7de5a872225c512a273c2da375fe01585db",
+    "request_nonce": "h7-r5-r114-7d5f8c34-9701-48c6-b713-a1c2b3c0a41e",
+    "history_path": "reports/orchestrator/main/history/2026-09-24/122200-r114-primary-h7-formal-dispatched-waiting-external.md"
   },
   "work_performed": [
     {
       "classification": "FRESHNESS_AND_COLLISION_RECONCILIATION",
-      "change": "Re-read R113, MAIN lease/state, Fast Forge no-op context, current controller and frozen science. No fresh PRIMARY RUNNING lease on H7 was present."
+      "change": "Re-fetched stable main, current R114 Analyst head/state, exact frozen science/controller/bridge, MAIN lease/state, Utility ownership, Forge collision context, H7 control/preserve/formal/sealed/freeze/immutable/evidence/launch namespaces, and retained workflow-dispatch inventory before mutation."
     },
     {
-      "classification": "SCIENCE_INVARIANT_REPAIR",
-      "change": "Updated only the dormant bridge workflow CONTROLLER_SHA and dormant request controller_sha from bac7402fb01b69353eb926228574cc68c2c2a2d2 to af3aa97574c365e3e918c3d4d012faa4886760d0. Request remained armed=false."
+      "classification": "EXACT_BOUND_ONE_SHOT_ARM",
+      "change": "Edited only the existing dormant bridge request once: armed=true and populated current R114 generation, final Analyst commit, fresh nonce, requester and timestamp. Exact controller/science pins remained unchanged."
     },
     {
-      "classification": "NON_RESULT_VALIDATION",
-      "change": "Bridge workflow run 35948871992 completed success on the rebound request. No FORMAL dispatch occurred because the request remained dormant."
+      "classification": "FORMAL_ONE_SHOT_DISPATCH",
+      "change": "Bridge run 35951107035 passed exact binding/freshness/duplicate checks and dispatched exactly one R114-bound FORMAL workflow run 35951118916."
     }
   ],
   "workflows": {
-    "bridge_validation": {
+    "bridge_dispatch": {
       "path": ".github/workflows/h7-r5-launch-bridge.yml",
-      "run_id": 35948871992,
+      "run_id": 35951107035,
+      "head": "977e0241f390f6504ebfa4a27a389a487751038c",
       "status": "completed",
       "conclusion": "success",
-      "result_bearing": false
+      "result_bearing": false,
+      "dispatch_count_for_nonce": 1
     },
     "formal_launch": {
       "path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
-      "target_ref": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
-      "current_target_head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
-      "formal_launch_run_id": null,
-      "dispatched": false,
+      "run_id": 35951118916,
+      "job_id": 107479681745,
+      "head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
+      "status": "in_progress",
+      "conclusion": null,
       "result_bearing": true,
-      "expected_next_action": "Fresh Evidence Analyst post-change observation and exact-binding revalidation of the repaired bridge/controller/science bundle. Do not arm or dispatch under R113."
+      "observed_step": "Checkout exact frozen H7 science",
+      "identity_step_observed_completed": false,
+      "started_ref_step_observed_completed": false,
+      "expected_next_action": "Wait for this exact external workflow to reach a terminal state; then re-fetch run, Analyst head and all H7 one-way refs. Do not re-arm, redispatch or retry."
     }
   },
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NON_RESULT_OPERATIONAL_BRIDGE_REBIND_VALIDATED",
-    "information_gain": "OPERATIONAL_ONLY_NO_NEW_SCIENCE",
+    "evidentiary_status": "FORMAL_DISPATCHED_PREIDENTITY_WAITING_EXTERNAL",
+    "information_gain": "CONTROL_PLANE_ONE_SHOT_DISPATCH_CONFIRMED_SCIENTIFIC_RESULT_PENDING_EXTERNAL_WORKFLOW",
     "scientific_source_changed": false,
     "science_affecting_change_performed": false,
-    "formal_identity_created_or_consumed": false,
-    "started_marker_created": false,
-    "protected_or_heldout_evaluation_accessed": false,
-    "result_bearing_workflow_dispatched": false,
-    "raw_produced": false,
-    "raw_preserved": false,
-    "official_scoring_performed": false,
-    "pass_fail_assigned": false,
-    "evidence_ref_created_or_mutated": false,
+    "formal_identity_created_or_consumed_at_observation": false,
+    "started_marker_created_at_observation": false,
+    "protected_or_heldout_evaluation_accessed_at_observation": false,
+    "result_bearing_workflow_dispatched": true,
+    "raw_produced_at_observation": false,
+    "raw_preserved_at_observation": false,
+    "official_scoring_performed_at_observation": false,
+    "pass_fail_assigned_at_observation": false,
+    "evidence_ref_created_or_mutated_at_observation": false,
     "prior_results_preserved_unchanged": true,
     "historical_pass_fail_rewritten": false,
-    "forge_derived_code_reused": false
+    "forge_derived_code_reused": false,
+    "external_workflow_may_advance_after_observation": true
   },
   "consumed_identities": {
-    "new_identity_consumed_this_run": false,
-    "official_consumed_identity_count": 7,
-    "active_h7_identity": null,
-    "h7_identity_status": "NOT_CREATED_NOT_CONSUMED"
+    "new_identity_consumed_at_observation": false,
+    "official_consumed_identity_count_at_observation": 7,
+    "active_h7_identity_at_observation": null,
+    "h7_identity_status_at_observation": "NOT_CREATED_NOT_CONSUMED",
+    "next_generation_must_recheck_after_external_progress": true
   },
   "ownership_and_collision": {
     "fresh_primary_running_same_h7_object_before_action": false,
-    "prior_main_execution_mode": "PRIMARY",
-    "prior_main_status": "WAITING_EXTERNAL",
     "fast_forge_same_h7_object_collision": false,
-    "fast_forge_latest_disposition": "NO_OP_NON_EVIDENTIARY",
-    "result_bearing_formal_authorized_now": false
+    "fast_forge_latest_generation": "FORGE-20260924T113600+0900-NOOP-R113-FRESH-REVISIT-METADATA-GATED",
+    "fast_forge_latest_disposition": "NO_OP_NONCANONICAL_NONEVIDENTIARY",
+    "utility_head": "bb953376d5e83d4650e863f0fa500cdd6df2e665",
+    "utility_status": "IDLE_NONAUTHORIZING",
+    "forge_or_utility_dependency_created": false
   },
   "integrity": {
-    "analyst_generation_freshness_rechecked": true,
+    "analyst_generation_freshness_rechecked_before_arm": true,
     "main_generation_and_lease_rechecked": true,
     "direct_h7_scientific_ref_rechecked": true,
     "controller_ref_rechecked": true,
-    "launch_bridge_rechecked_before_mutation": true,
-    "bridge_request_armed_after_repair": false,
-    "bridge_validation_succeeded": true,
-    "formal_identity_created": false,
-    "started_created": false,
-    "protected_evaluation_accessed": false,
-    "result_bearing_workflow_dispatched": false,
-    "official_scoring_performed": false,
+    "launch_bridge_exact_prearm_head_rechecked": true,
+    "h7_control_namespace_empty_before_arm": true,
+    "h7_preserve_namespace_empty_before_arm": true,
+    "h7_formal_namespace_empty_before_arm": true,
+    "h7_sealed_namespace_empty_before_arm": true,
+    "h7_freeze_namespace_empty_before_arm": true,
+    "h7_immutable_namespace_empty_before_arm": true,
+    "h7_evidence_namespace_empty_before_arm": true,
+    "h7_launch_namespace_empty_before_arm": true,
+    "retained_current_controller_dispatch_runs_before_arm": 0,
+    "bridge_duplicate_nonce_check_passed": true,
+    "one_shot_bridge_arm_performed_once": true,
+    "formal_identity_created_at_observation": false,
+    "started_created_at_observation": false,
+    "protected_evaluation_accessed_at_observation": false,
+    "official_scoring_performed_at_observation": false,
     "historical_pass_fail_rewritten": false,
-    "immutable_formal_sealed_evidence_refs_mutated": false,
-    "development_phase_changed_by_relay": false,
-    "formal_floor_respected": true
+    "immutable_formal_sealed_evidence_refs_mutated_by_main": false,
+    "development_phase_changed_by_primary": false,
+    "formal_floor_respected_at_observation": true
   },
-  "stop_reason": "BRIDGE_REBOUND_AND_VALIDATED_FRESH_ANALYST_POST_CHANGE_REVALIDATION_REQUIRED",
-  "next_action": "Wait for a fresh Evidence Analyst generation to inspect the rebound bridge head aa3fb32466802baa20e95376adb9f25f88511129 and exact-bind the unchanged repaired controller/science bundle. Do not arm or dispatch under R113."
+  "do_not_touch": [
+    "Do not re-arm ops/h7_launch_request.json for R114 or reuse its nonce",
+    "Do not dispatch a second H7 FORMAL workflow",
+    "Do not rerun/retune/rescore any identity created by run 35951118916",
+    "Do not mutate consumed FORMAL identities or immutable/formal/sealed/evidence/freeze/preserve refs",
+    "Do not use Forge or Utility outputs as scientific authority"
+  ],
+  "stop_reason": "WAITING_EXTERNAL_FORMAL_RUN_35951118916_PREIDENTITY",
+  "next_action": "Wait for FORMAL run 35951118916 to reach a terminal state. Then re-fetch the exact run, current Evidence Analyst head, controller/science refs, and all H7 one-way refs/artifacts. No automatic retry or second dispatch is authorized; after any identity/START or outcome, return to a fresh Evidence Analyst before further canonical action."
 }
