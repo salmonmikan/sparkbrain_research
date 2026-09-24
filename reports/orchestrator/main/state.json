@@ -1,204 +1,153 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T124623+0900-RELAY-H7-R114-FORMAL-CONSUMED-AWAITING-ANALYST",
-  "producer_run_id": "sparkbrain-main-relay-20260924T124623JST-r114-h7-formal-outcome-reconcile",
-  "generated_at": "2026-09-24T12:46:23+09:00",
-  "status": "WAITING_EXTERNAL",
-  "execution_mode": "RELAY",
+  "generation_id": "MAIN-20260924T131457+0900-PRIMARY-R115-H7-FORMAL-INCONCLUSIVE-TERMINAL",
+  "producer_run_id": "sparkbrain-main-primary-20260924T131457JST-r115-post-formal-terminal-reconcile",
+  "generated_at": "2026-09-24T13:14:57+09:00",
+  "status": "BLOCKED",
+  "execution_mode": "PRIMARY",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
-  "research_layer": "PRE_FORMAL",
+  "research_layer": "FORMAL",
   "claim_ceiling": "MECHANISM",
-  "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
+  "development_phase": "CONSUMED_ONE_WAY",
   "development_revision": "R5_UNCHANGED",
   "cycle_count": 12,
   "cycle_reassessment": {
     "authorized_scientific_cycle": 12,
-    "relay_extended_scientific_cycle": false,
-    "relay_reassessed_science": false,
-    "external_formal_run_completed": true,
-    "information_gain": "SEALED_FORMAL_RESULT_OBSERVED; FRESH_ANALYST_REQUIRED_BEFORE_CANONICAL_INTERPRETATION_OR_NEXT_ACTION"
+    "primary_extended_scientific_cycle": false,
+    "information_gain": "FRESH_R115_ANALYST_INTERPRETATION_OF_FROZEN_FORMAL_RESULT; H7_TERMINALIZED; ALL_35_CANONICAL_TERMINAL; NO_EXECUTABLE_CANONICAL_SCIENCE"
   },
   "analyst_authority": {
-    "generation_id": "EVA-20260924T115823+0900-R114-H7-POSTBRIDGE-GO-ONCE-CAND35-TRIGGER",
-    "commit": "1824290d67fdf06494c3849fa687997ec29137cf",
-    "decision": "GO_ONCE_EXACT_BOUND_POST_BRIDGE_REPAIR_R114",
-    "freshness_rechecked_immediately_before_mailbox_mutation": true,
-    "branch_head_still_exact_commit": true,
-    "one_shot_authority_already_used": true,
-    "authority_reusable": false,
-    "fresh_analyst_required_after_identity_or_outcome": true,
-    "automatic_retry_authorized": false
+    "generation_id": "EVA-20260924T130128+0900-R115-H7-FORMAL-INCONCLUSIVE-CONSUMED-ALL35-TERMINAL",
+    "commit": "3341acce9c504f3163e34e12152163c845758ad2",
+    "decision": "NO_EXECUTABLE_CANONICAL_SCIENCE; H7 SAME_OBJECT STOP; WAIT_FOR_FRESH_INDEPENDENT_CANONICAL_OR_REVISIT_ADMISSION",
+    "freshness_rechecked_this_run": true,
+    "scientific_execution_mode": "READ_ONLY"
   },
-  "prior_main_generation": "MAIN-20260924T122200+0900-PRIMARY-H7-R114-FORMAL-DISPATCHED-WAITING-EXTERNAL",
+  "prior_main_generation": "MAIN-20260924T124623+0900-RELAY-H7-R114-FORMAL-CONSUMED-AWAITING-ANALYST",
   "funnel": {
-    "claim_ceiling": "MECHANISM",
-    "preformal_eligible": true,
-    "preformal_readiness": "READY",
-    "hold_class": null,
-    "hold_reason": null,
-    "terminal_state": "ACTIVE",
-    "queue_state": "QUEUED",
-    "system_priority_exception": false,
-    "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "development_revision": "R5_UNCHANGED"
+    "canonical": 35,
+    "terminal": 35,
+    "active": 0,
+    "scientifically_queued": 0,
+    "effectively_executable_mechanism": 0,
+    "consumed_identities": 8,
+    "h7_terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "h7_queue_state": "CLOSED",
+    "candidate35_revisit_status": "REVISIT_TRIGGERED",
+    "candidate35_successor_candidates": 0
   },
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "1824290d67fdf06494c3849fa687997ec29137cf",
-    "authorized_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-    "authorized_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+    "analyst_head": "3341acce9c504f3163e34e12152163c845758ad2",
+    "scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
+    "scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
     "controller_head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
-    "launch_bridge_branch": "ops/h7-r5-launch-bridge",
-    "launch_bridge_arm_head": "977e0241f390f6504ebfa4a27a389a487751038c",
-    "request_nonce": "h7-r5-r114-7d5f8c34-9701-48c6-b713-a1c2b3c0a41e",
     "control_ref": "control/h7-r5-h7-r5-285a3a206b34c5982b9d4045-started",
     "control_sha": "52b17b785364f96cc2e95507b2336252459d5352",
     "preserve_ref": "preserve/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
     "preserve_sha": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
-    "freeze_tag": "freeze/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
-    "formal_tag": "formal/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "sealed_tag": "sealed/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "evidence_tag": "evidence/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "result_sha": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-    "history_path": "reports/orchestrator/main/history/2026-09-24/124623-r114-relay-h7-formal-consumed-awaiting-analyst.md"
+    "freeze_ref": "freeze/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
+    "formal_ref": "formal/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
+    "sealed_ref": "sealed/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
+    "evidence_ref": "evidence/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
+    "result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
+    "history_path": "reports/orchestrator/main/history/2026-09-24/131457-r115-primary-h7-formal-inconclusive-terminal.md"
   },
   "work_performed": [
     {
       "classification": "FRESHNESS_AND_COLLISION_RECONCILIATION",
-      "change": "Re-read current R114 Analyst head, current MAIN lease/state, exact frozen science/controller, Fast Forge collision context, terminal FORMAL run and H7 one-way refs before mailbox mutation."
+      "change": "Re-fetched stable main, exact H7 science/controller refs, current forge heads, latest Evidence Analyst R115, prior MAIN state/lease, latest Fast Forge, Utility ownership state, open PR identities, FORMAL workflow, and H7 one-way refs."
     },
     {
-      "classification": "EXTERNAL_FORMAL_OUTCOME_RECONCILIATION",
-      "change": "Observed the already-dispatched exact FORMAL workflow at completed/success, verified STARTED, remote raw preservation before scoring, and create-only formal/sealed/evidence refs. Relay did not rerun, retune, rescore or alter science."
+      "classification": "FROZEN_FORMAL_RESULT_ADOPTION",
+      "change": "Adopted the fresh R115 interpretation of the already frozen H7 FORMAL result without rerun, retune, rescore, reinterpretation rescue, or protocol mutation."
     },
     {
-      "classification": "MAIN_MAILBOX_PERSISTENCE",
-      "change": "Persisted the consumed identity/result state and stopped pending a fresh Evidence Analyst generation."
+      "classification": "MAIN_TERMINAL_PERSISTENCE",
+      "change": "Persisted H7 as CONSUMED_ONE_WAY and terminal for the current object, with no executable canonical science and no authorized successor."
     }
   ],
   "workflows": {
-    "bridge_dispatch": {
-      "run_id": 35951107035,
-      "status": "completed",
-      "conclusion": "success",
-      "result_bearing": false,
-      "dispatch_count_for_nonce": 1
-    },
-    "formal_launch": {
-      "path": ".github/workflows/h7-formal-r5-one-way-launch.yml",
+    "h7_formal": {
       "run_id": 35951118916,
       "head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
       "run_attempt": 1,
       "status": "completed",
       "conclusion": "success",
       "result_bearing": true,
-      "identity_start_job": "completed/success",
-      "raw_preserve_job": "completed/success",
-      "score_seal_job": "completed/success",
-      "identity_created": true,
-      "started_created": true,
-      "raw_produced": true,
-      "raw_preserved_before_target_scoring": true,
-      "official_scoring_performed": true,
-      "sealed_refs_created": true,
-      "expected_next_action": "Fresh Evidence Analyst must independently assess the consumed identity and sealed result. No retry, redispatch, rerun, retune, rescore or post-outcome repair is authorized."
+      "rerun_this_generation": false
     }
   },
   "formal_identity": {
     "identity_id": "h7-r5-285a3a206b34c5982b9d4045",
     "binding_sha256": "285a3a206b34c5982b9d404599aa272019dd9d4dceb661b49c97fd8750fd30d3",
-    "analyst_generation": "EVA-20260924T115823+0900-R114-H7-POSTBRIDGE-GO-ONCE-CAND35-TRIGGER",
-    "analyst_commit": "1824290d67fdf06494c3849fa687997ec29137cf",
-    "scientific_source_sha": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "controller_sha": "af3aa97574c365e3e918c3d4d012faa4886760d0",
-    "state": "STARTED_AND_CONSUMED",
+    "state": "CONSUMED_ONE_WAY",
     "same_identity_rerun_retune_rescore": "PROHIBITED"
   },
   "result": {
-    "official_score_path": "artifacts/formal_h7_r5/scored/h7-r5-285a3a206b34c5982b9d4045/official_score.json",
-    "official_score_blob": "d1604868f64db771d9a8c80f637b733607cde547",
-    "result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
     "decision": "INCONCLUSIVE",
     "contract_id": "H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1",
     "evaluator_id": "H7-FORMAL-R1-EVALUATOR-SPEC-V1",
-    "effect_reproduced": {
-      "dense": false,
-      "eligibility": false,
-      "fsa": false
-    },
-    "effect_conclusively_smaller": {
-      "dense": false,
-      "eligibility": false,
-      "fsa": false
-    },
-    "capacity_adequate": {
-      "dense": false,
-      "eligibility": false,
-      "fsa": false
-    },
-    "relay_interpretation": "NONE_RECORD_EXACT_SEALED_RESULT_ONLY"
+    "bootstrap_confidence": 0.99375,
+    "native_delta_accuracy": 0.008626302083333332,
+    "native_delta_accuracy_interval": [0.002115885416666668, 0.01529947916666667],
+    "native_mean_total_variation": 0.06728831508098665,
+    "capacity_adequate": {"dense": false, "eligibility": false, "fsa": false},
+    "effect_reproduced": {"dense": false, "eligibility": false, "fsa": false},
+    "effect_conclusively_smaller": {"dense": false, "eligibility": false, "fsa": false},
+    "interpretation_ceiling": "NONZERO_NATIVE_DECLARED_SURFACE_EFFECT_OBSERVED; PRIVILEGED_OR_UNIQUE_NATIVE_RESPONSIBILITY_MECHANISM_NOT_ESTABLISHED_BECAUSE_ALL_DECLARED_COMPARATOR_FAMILIES_ARE_CAPACITY_INADEQUATE",
+    "rescore_or_reinterpret": "PROHIBITED"
   },
   "observations": {
     "new_scientific_result_this_run": true,
-    "evidentiary_status": "FORMAL_CONSUMED_RESULT_SEALED_AWAITING_FRESH_ANALYST",
+    "evidentiary_status": "FORMAL_CONSUMED_INCONCLUSIVE_FROZEN_TERMINAL",
     "scientific_source_changed": false,
-    "science_affecting_change_performed_by_relay": false,
-    "formal_identity_created_or_consumed": true,
-    "started_marker_created": true,
-    "raw_produced": true,
-    "raw_preserved": true,
-    "official_scoring_performed": true,
-    "sealed_evidence_created_by_external_formal_workflow": true,
-    "evidence_ref_created_or_mutated_by_relay": false,
+    "science_affecting_change_performed": false,
+    "protected_evaluation_reaccessed": false,
+    "official_scoring_performed_by_main": false,
     "prior_results_preserved_unchanged": true,
-    "historical_pass_fail_rewritten": false,
-    "same_identity_rerun_retune_rescore": false,
-    "post_outcome_protocol_repair": false,
-    "forge_derived_code_reused": false
+    "forge_derived_code_reused": false,
+    "candidate35_revisit_triggered_but_not_admitted": true
   },
   "consumed_identities": {
-    "previous_official_consumed_identity_count": 7,
-    "new_h7_identity_consumed": true,
-    "new_identity_id": "h7-r5-285a3a206b34c5982b9d4045",
-    "observed_post_run_consumed_identity_count": 8,
-    "additional_identity_created_by_relay": false,
-    "fresh_analyst_required_before_any_further_h7_action": true
+    "official_consumed_identity_count": 8,
+    "h7_identity_consumed": true,
+    "new_identity_consumed_this_run": false
   },
   "ownership_and_collision": {
-    "fresh_primary_running_same_h7_object_before_relay_persistence": false,
-    "prior_primary_status": "WAITING_EXTERNAL",
-    "fast_forge_same_h7_object_collision": false,
     "fast_forge_latest_generation": "FORGE-20260924T123200+0900-NOOP-R114-H7-FORMAL-ACTIVE-GATED",
     "fast_forge_latest_disposition": "NO_OP_NONCANONICAL_NONEVIDENTIARY",
-    "forge_or_utility_dependency_created": false
+    "fast_forge_same_h7_object_collision": false,
+    "utility_tip": "5ddb0cb6f722871edf0f3df1500bd3081f583e27",
+    "utility_allocation": "IDLE_NONAUTHORIZING",
+    "forge_or_utility_dependency_created": false,
+    "open_prs": [148, 149],
+    "open_pr_collision": false
   },
   "integrity": {
-    "analyst_generation_freshness_rechecked_before_mailbox_mutation": true,
-    "main_generation_and_lease_rechecked": true,
-    "direct_h7_scientific_commit_rechecked": true,
-    "controller_commit_rechecked": true,
-    "formal_workflow_attempt_one_only": true,
-    "started_identity_binding_matches_analyst_controller_science": true,
-    "preserve_ref_matches_freeze_tag_commit": true,
-    "formal_sealed_evidence_tags_match_result_commit": true,
-    "preserve_manifest_preserve_before_target_access": true,
-    "workflow_order_raw_preserve_before_scoring": true,
-    "historical_pass_fail_rewritten": false,
-    "immutable_formal_sealed_evidence_refs_mutated_by_relay": false,
-    "development_phase_changed_by_relay": false,
-    "formal_floor_respected_by_relay": true
+    "analyst_generation_freshness_rechecked": true,
+    "main_and_exact_research_refs_rechecked": true,
+    "forge_refs_rechecked_for_collision": true,
+    "control_preserve_freeze_formal_sealed_evidence_refs_rechecked": true,
+    "formal_identity_rerun": false,
+    "formal_identity_retuned": false,
+    "formal_identity_rescored": false,
+    "historical_result_rewritten": false,
+    "immutable_or_one_way_refs_mutated": false,
+    "development_phase_matches_analyst": true,
+    "formal_floor_respected": true,
+    "tag_representation_policy_conforming": false,
+    "tag_representation_defect_invalidates_science": false
   },
   "do_not_touch": [
-    "Do not re-arm the R114 H7 request or reuse its nonce",
-    "Do not dispatch a second H7 FORMAL workflow under R114",
-    "Do not rerun, retune or rescore identity h7-r5-285a3a206b34c5982b9d4045",
-    "Do not mutate its control, preserve, freeze, formal, sealed or evidence refs",
-    "Do not change scientific metric, comparator, threshold, tolerance, protocol or criteria in response to the INCONCLUSIVE result",
-    "Do not promote, terminate, reopen or create an H7 successor before a fresh Evidence Analyst decision",
-    "Do not use Forge or Utility outputs as scientific authority"
+    "H7 consumed identity h7-r5-285a3a206b34c5982b9d4045",
+    "H7 control/preserve/freeze/formal/sealed/evidence refs",
+    "H7 metric/comparator/threshold/tolerance/protocol in response to the INCONCLUSIVE result",
+    "H7 same-object repair or automatic successor",
+    "Candidate #35 same-object rerun/retune/rescore or ungated successor materialization"
   ],
-  "stop_reason": "WAITING_FRESH_EVIDENCE_ANALYST_POST_FORMAL_CONSUMPTION_AND_INCONCLUSIVE_RESULT",
-  "next_action": "Wait for a fresh Evidence Analyst generation that independently re-fetches the consumed identity, STARTED/preserve/freeze/formal/sealed/evidence refs and sealed score. Consume only that fresh decision for any further canonical action; otherwise make no H7 scientific mutation."
+  "stop_reason": "NO_EXECUTABLE_CANONICAL_SCIENCE_R115_H7_CONSUMED_TERMINAL",
+  "next_action": "Wait for an independently developed fresh canonical admission or an Evidence-Analyst-authorized fresh revisit successor with a prospective contract. Candidate #35's revisit trigger alone is not execution authority."
 }
