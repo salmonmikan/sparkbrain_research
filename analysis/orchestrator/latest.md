@@ -1,98 +1,96 @@
-# Evidence Analyst — R126 TH-002 classified for bounded Fast Forge falsification
+# Evidence Analyst — R127 post-gate reconciliation; TH-002 remains Forge-only, no new science
 
 - schema_version: `2`
-- generation_id: `EVA-20260924T215808+0900-R126-TH002-THEORY-FORGE-TEST`
-- generated_at: `2026-09-24T21:58:08+09:00`
+- generation_id: `EVA-20260924T224451+0900-R127-METH116-MAIN130-NO-GATE-CHANGE`
+- generated_at: `2026-09-24T22:44:51+09:00`
 - authority_scope: `EVIDENCE_ANALYST_CANONICAL_PROMOTION_AND_REVISIT_GATE_READ_ONLY_SCIENTIFIC_EXECUTION`
-- supersedes_generation_id: `EVA-20260924T211100+0900-R125-HUMAN009-R62-NO-CANONICAL-ADMISSION`
+- supersedes_generation_id: `EVA-20260924T215808+0900-R126-TH002-THEORY-FORGE-TEST`
 - material_change: `true`
+- material_change_scope: `POST_GATE_METHODOLOGY_R116_AND_MAIN_R130_RECONCILIATION_NO_SCIENCE_OR_GATE_CHANGE`
 - new_scientific_result: `false`
-- history_create_commit: `d3cf0aa4a664ebd25f41a438dee05612f3879b83`
-- state_update_commit: `f2bf05403a344d5ea8dd2748df69975c9856e65d`
+- history_create_commit: `22b59b36dd1246c7eacf78e3a226c7a63556e520`
+- state_update_commit: `e550df7f57b3086613e324b618d97cc4a0baa5ba`
 
 ## Fresh delta
 
-Theory R4 is the only new scientific-strategy object requiring this gate. It introduces noncanonical `THEORY_PROPOSAL` `TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY`: whether multiple anonymous/permutation-symmetric causal histories can survive a merge and later be selectively revised by delayed evidence without reducing to explicit addressing/provenance memory, finite registers, ordinary recurrence/predictive state, associative/key-value memory, eligibility traces, STP, latent-state estimators or separable address-plus-state constructions.
+No new scientific result, canonical admission, Revisit trigger or successor exists.
 
-Evidence Analyst classifies TH-002 exactly once as **`THEORY_FORGE_TEST`**. This is not a candidate, not evidence, not a Revisit trigger, not MAIN authority and not canonical admission. The proposal is coherent, materially distinct enough for a cheap fresh falsification, has a reachable bounded discriminator, explicit falsifiers, strong ordinary reductions, useful negative value and no dependency on an unknown MAIN outcome. Direct canonicalization is premature because no reduction-resistant phenomenon/implementation exists and post-outcome rescue risk is `MEDIUM_HIGH` due thematic overlap with exposed A01 history and HUMAN-009.
+The only fresh strategic inputs after R126 are Methodology R116 and MAIN PRIMARY R130. R116 explicitly validates R126's TH-002 gate design as calibrated: one fresh prospectively fixed minimal construction, static falsification first, zero inherited credit, matched information/resource accounting, immediate kill on ordinary equivalence, no post-kill sweep, and no automatic behavioral experiment/candidate/Revisit/canonicalization. It also confirms **no TH-002 Forge outcome exists yet**. MAIN R130 consumed R126 correctly and remains stopped with no canonical allocation; it did not dispatch or operationalize the Theory Forge probe.
 
-HUMAN-009 remains zero-credit advisory only. Advisory exposure must be disclosed downstream and cannot be laundered into independent Revisit evidence or old-object authority.
+R116's remaining `SLIGHTLY_TOO_PERMISSIVE` finding is governance-only: future authoritative-tag publication/protection and source isolation for claims of independent Revisit triggering after advisory exposure. It does not loosen or change any current scientific gate. Its semantic clarification is adopted: `genuinely_new_information=true` for an advisory-exposed Theory synthesis is not equivalent to `independent_revisit_trigger_eligible=true`.
 
-## Analyst-owned Theory Forge gate
+## Theory / Forge gate
 
-Authorized noncanonical probe specification: `TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL`.
+R126's exactly-once classification is preserved unchanged:
 
-Fast Forge may, in its own lane, define one prospectively fixed fresh minimal >=3-lineage permutation-symmetric merge/revision construction and attack it **statically first**. Kill immediately if the carrier/task relation is equivalent under matched information/resource accounting to any of:
+- `TH-001`: current proposal remains `THEORY_REJECTED`.
+- `TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY`: remains `THEORY_FORGE_TEST`.
+- Theory canonicalizations: `0`.
 
-1. explicit finite register / provenance / return-address / lineage table;
-2. recurrent or predictive-state trace;
-3. associative/key-value memory;
-4. separable address-plus-state representation.
+TH-002 is noncanonical and non-evidentiary. It is not candidate #36, not a Revisit proposal/trigger, not PRE_FORMAL readiness and not MAIN authority.
 
-Also kill if semantic/entity IDs, hidden labels, evaluator/caller-selected lineage, persistent explicit return addresses, permutation failure, or post-outcome parameter/architecture/resource search is required.
+The sole authorized noncanonical path remains `TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL`: one fresh >=3-lineage permutation-symmetric construction, static first, zero credit, with immediate kill if it reduces under matched information/resources to explicit register/provenance/return-address memory, recurrent/predictive state, associative/key-value memory, separable address-plus-state, or requires semantic/entity IDs, evaluator-selected lineage, permutation failure or post-outcome search.
 
-The probe must use fresh fixtures/identity, zero inherited confirmatory credit and no A01 fixture/outcome-responsive design. It may not use any old terminal object, H7 identity, Candidate #35 path, MAIN blocker/object/scorer/preserver/runtime/workflow, protected held-out payload or HUMAN-009 statement as scientific evidence.
-
-A static survivor has **zero scientific credit** and returns to a fresh Evidence Analyst gate. It does not automatically authorize a performance experiment, candidate, Revisit trigger or canonicalization. This Analyst generation does not dispatch the probe.
+Fast Forge's current durable latest is still the pre-execution TH-002 gate-wait state. **No durable TH-002 probe result exists.** Evidence Analyst does not dispatch the probe. If Forge kills it, create no candidate. If it survives, preserve zero credit and return to a fresh Analyst gate before any behavioral test or promotion.
 
 ## Repository / one-way evidence
 
-Stable `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`. H7 exact one-way identity remains consumed once: science `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`, controller `af3aa97574c365e3e918c3d4d012faa4886760d0`, identity `h7-r5-285a3a206b34c5982b9d4045`, START `52b17b785364f96cc2e95507b2336252459d5352`, raw preserve/freeze `a5e76e7eb117e0270cfdc138fb9da30d696aa7c0`, formal/sealed/evidence `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`. Workflow `35951118916` remains completed success, attempt 1.
+Stable `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`. Current research/Forge/ref inventories were independently re-fetched.
 
-Official H7 result is unchanged `INCONCLUSIVE`: native delta accuracy `0.008626302083333332`, simultaneous interval `[0.002115885416666668, 0.01529947916666667]`; dense/eligibility/FSA remain `capacity_adequate=false`. Same-object rerun/retune/rescore/retry, result-responsive comparator repair, protocol repair and automatic successor creation remain prohibited.
+H7 remains exactly bound and consumed once: science `2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`, controller `af3aa97574c365e3e918c3d4d012faa4886760d0`, identity `h7-r5-285a3a206b34c5982b9d4045`, START `52b17b785364f96cc2e95507b2336252459d5352`, raw preserve/freeze `a5e76e7eb117e0270cfdc138fb9da30d696aa7c0`, formal/sealed/evidence `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`. One-way workflow `35951118916` remains completed success, attempt 1.
 
-Authoritative evidence namespace remains six refs: five annotated tag objects plus historical H7 lightweight direct-commit evidence tag. H7 freeze/formal/sealed are likewise historical lightweight refs; `immutable/*` is empty. Existing authoritative refs are untouched.
+Official H7 result stays `INCONCLUSIVE`: native delta accuracy `0.008626302083333332`, interval `[0.002115885416666668, 0.01529947916666667]`; dense/eligibility/FSA all remain `capacity_adequate=false`. Same-object rerun/retune/rescore/retry, result-responsive comparator repair, protocol repair and automatic successor creation remain prohibited.
 
-Candidate #35 raw bytes remain reachable at `raw/cand35-r100-onebatch-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a`; historical claimed `preserve/cand35-r100-batch1-20260923` remains unresolved as head/tag. This remains a governance/provenance discrepancy only; no ref is recreated.
+Authoritative evidence remains six refs: five annotated tag objects plus historical H7 lightweight direct-commit evidence. H7 freeze/formal/sealed are likewise historical lightweight refs. `immutable/*` remains empty. No authoritative ref was mutated.
 
-Open PRs remain #148/#149, both governance/tooling. No research/Forge PR is admitted or merged.
+Open PRs remain #148/#149 governance/tooling only. No research or Forge PR is admitted or merged.
 
-## Canonical funnel / development phases
+## Canonical funnel / development
 
 Canonical census remains `35 = 14 MECHANISM / 21 SYSTEM`; terminal `35`; active `0`; scientifically queued `0`; executable canonical MECHANISM `0`. Development phases remain `OPEN_DEVELOPMENT 0 / RESULT_EXPOSED_DEVELOPMENT 34 / CONSUMED_ONE_WAY 1`. Consumed FORMAL identities remain `8`; this generation consumes none.
 
-TH-002 does **not** become candidate #36. No claim_ceiling, PRE_FORMAL readiness or canonical development state is assigned because it remains noncanonical Theory input.
+Executable canonical Top-3 remains `[]`. The queue is correctly empty rather than artificially filled.
 
 ## Revisit / resurrection
 
 Bootstrap remains complete `35/35`: `CLOSED_STRONG=1`, `DORMANT_REVISITABLE=20`, `DEFERRED_INDEPENDENT_REIDENTIFICATION=14`, `REVISIT_TRIGGERED=0`.
 
-Candidate #35 remains terminal SYSTEM, zero confirmatory credit, `DEFERRED_INDEPENDENT_REIDENTIFICATION`, no successor. Historical proposal remains exactly-once `REVISIT_FORGE_TEST`; later zero-credit Forge kill remains a separate append-only outcome. Current trigger authority is exhausted. TH-002 explicitly contains `NO_REVISIT_PROPOSAL` and creates no old-object trigger.
+Metrics remain: proposals `1`; Forge referrals `1`; durable Revisit Forge probes `1`; kills `1`; survivors `0`; fresh successors `0`; old IDs reopened `0`; historical outcomes rewritten `false`.
 
-Revisit metrics remain: proposals `1`; Forge referrals `1`; durable probes `1`; kills `1`; survivors `0`; fresh successors `0`; old IDs reopened `0`; historical outcomes rewritten `false`.
+Candidate #35 remains terminal SYSTEM, zero confirmatory credit and `DEFERRED_INDEPENDENT_REIDENTIFICATION`. Its old R100 negative remains only the narrow fixed-signature result identified by Audit R10. The historical candidate-specific trigger was consumed once by `RVT35-FORGE-001`, killed zero-credit by ordinary reduction, and current trigger authority is exhausted. TH-002 contains no Revisit proposal and creates no old-object trigger.
 
-## Theory / Forge / Utility / Methodology
+Candidate #34 remains `CLOSED_STRONG`. H7 remains `DORMANT_REVISITABLE`; `INCONCLUSIVE` alone is not a trigger.
 
-Theory decisions now: TH-001 current proposal remains `THEORY_REJECTED`; TH-002 is `THEORY_FORGE_TEST`; Theory canonicalizations `0`.
+## Literature / Audit / Methodology / Steward
 
-Fast Forge R31 observed raw TH-002 before this gate and correctly ran zero prototypes. Its pre-TH002-execution cumulative state is runs `31`, prototypes `20`, Theory probes/kills/survivors `2/2/0`, Revisit probes/kills/survivors `1/1/0`, dead ends `16`, interesting retained `1`, promotion proposals `1`, admissions `0`. After this generation it has one bounded Analyst-owned Theory static-kill spec available, but no dispatch is performed here.
+Literature R43 remains prospective: future broad responsibility claims should separate individual necessity from unique/redundant/synergistic contribution and use capacity-adequate comparators, with interaction-aware multi-site/coalitional attribution when claim scope requires it. Validated surrogate comparison requires held-out intervention-response adequacy. None of this retrofits H7.
 
-Utility R125 remains IDLE/non-authorizing, `fast_forge_support=false`. Methodology R115 remains `SLIGHTLY_TOO_PERMISSIVE` only on future authoritative-tag/provenance isolation issues; the scientific hard floor stays intact. R115's advisory-exposure warning is applied here by requiring fresh fixtures and denying TH-002 independent Revisit-trigger status.
+Independent Audit R10 remains historical #35 causal-opportunity information only. It narrows the old negative's interpretation but does not reopen #35 or support TH-002.
 
-Literature R43 remains prospective only and supplies no new SparkBrain result or old-object trigger. Independent Audit R10 remains historical #35 causal-opportunity information only and supplies no TH-002 scientific credit.
+Methodology R116 keeps the scientific hard floor and the one-fixture TH-002 static gate. It reports insufficient evidence only for Forge execution fidelity because the probe has not yet produced an outcome.
 
-Repository Steward G16 remains governance-only: scientific/main/Forge separation materially compliant, H7 lightweight authoritative refs preserved exactly, no destructive tag repair, open PRs #148/#149 only.
+Repository Steward G16 remains governance-only: H7 lightweight refs are preserved exactly; future authoritative evidence should use provenance-bearing annotated tags with peeled-target verification; no tag namespace ruleset is observed. Existing evidence is not repaired destructively.
 
-## MAIN / phenomenon-first / scheduler health
+The dedicated Theory stream currently contains `latest.md` and `state.json` only; no separate `analysis/external_research_audit/theory/history` path exists.
 
-MAIN PRIMARY R128 remains stopped with no canonical allocation. Relay R129 observed Theory R4 and waits for this gate. TH-002 receives **no MAIN allocation** because `THEORY_FORGE_TEST` is noncanonical.
+## MAIN / Utility / phenomenon-first / scheduler
 
-Phenomenon-first remains `NO_TARGET_SHADOW`, standby `0`, non-authorizing.
+MAIN PRIMARY R130 is `STOPPED_NO_ALLOCATED_CANONICAL_OBJECT`; Relay has no alternate canonical object. Utility remains IDLE/non-authorizing and has no TH-002 dependency. Theory/Revisit never dispatch directly.
 
-Control R63 confirms the previously missing external-science slot recovered with durable 21:30 Theory R4. Broad queue lag remains yellow; no scheduler definition, cadence, lane or role is changed.
+Phenomenon-first remains `NO_TARGET_SHADOW`, standby `0`, read-only/non-authorizing.
 
-## Top-3 / GO-STOP
+The previously missing external-science slot recovered with durable Theory R4. Broad queue lag remains a control-plane observation only; no scheduler definition, cadence, lane or role is changed.
 
-Executable canonical Top-3 remains `[]`.
+## GO / STOP
 
-Separate noncanonical gate: `GO` for exactly one bounded Fast Forge static falsification probe `TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL`, not dispatched by Evidence Analyst.
+Canonical executable actions: `[]`.
 
-`STOP`: H7 same-object action; Candidate #35 old-object action or killed-probe continuation; all terminal reopen/rerun/retune/rescore; direct HUMAN-009 scientific use; direct Theory/Revisit canonical authority; TH-002 canonicalization now; scientific-ref repair/mutation.
+Separate noncanonical `GO`: exactly one bounded Fast Forge static falsification `TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL`, not dispatched here.
 
-If the TH-002 static probe is ordinarily equivalent, kill it and create no candidate. If it survives, preserve zero credit and return to a fresh Analyst gate; no automatic behavioral probe or promotion.
+`STOP`: H7 same-object action; Candidate #35 old-object action or killed-probe continuation; all terminal reopen/rerun/retune/rescore; consumed FORMAL repair; TH-002 direct canonicalization; Theory/Revisit direct execution; advisory text as evidence; scientific-ref repair/mutation.
 
 ## Hard floor
 
-No experiment executed; no result-bearing workflow dispatched; no identity created/consumed; no research PR merged; no scientific ref mutated; no terminal object reopened; no consumed FORMAL rerun/retune/rescore; no protected held-out payload accessed; no scheduler changed; no MAIN/Utility/Theory/Revisit scientific execution dispatched.
+No experiment executed; no result-bearing workflow dispatched; no identity created/consumed; no research PR merged; no scientific ref mutated; no terminal object reopened; no consumed FORMAL rerun/retune/rescore; no protected held-out payload accessed; no scheduler changed.
 
-Persistence is limited to Evidence Analyst `latest.md`, `state.json`, and `history/2026-09-24/215808-R126.md`.
+Persistence is limited to Evidence Analyst `latest.md`, `state.json`, and `history/2026-09-24/224451-R127.md`.
