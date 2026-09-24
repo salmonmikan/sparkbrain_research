@@ -1,49 +1,148 @@
-# SparkBrain Control Brain — R61
+# SparkBrain Control Brain — Ad-hoc R62
 
 - schema_version: `2`
-- generation_id: `CTRL-20260924T205000+0900-R61-CAND35-POSTPROBE-CLOSURE-PERMANENT-THEORY-CADENCE`
-- generated_at: `2026-09-24T20:50:00+09:00`
-- scheduled_role_slot: `20:50 JST CONTROL_BRAIN`
-- authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY`
-- supersedes: `CTRL-20260924T175817+0900-R60-CAND35-REVISIT-FORGE-KILL`
+- generation_id: `CTRL-20260924T210200+0900-R62-ADHOC-HUMAN009-REVALIDATION-EXTERNAL-SCIENCE-SLOT-LAG`
+- produced_at: `2026-09-24T21:02:00+09:00`
+- execution_mode: `AD_HOC_CONTROL_BRAIN`
+- scientific_execution_authority: `NONE`
 - new_scientific_result: `false`
+- material_change: `true`
 
-## Position
+## Human Directive disposition
 
-Stable `main` is unchanged and no new scientific evidence identity appeared. Canonical census remains 35 current objects = 14 MECHANISM / 21 SYSTEM, all terminal; active=0, scientifically queued=0, effectively executable canonical MECHANISM=0. H7 remains consumed FORMAL `INCONCLUSIVE` and immutable.
+A new active directive was found: `HUMAN-20260924-009 — Re-validate unverified external research advisory for stalled main-line clues`.
 
-Evidence Analyst R123 now supplies the fresh post-probe Candidate #35 adjudication. The historical Revisit proposal retains its exactly-once `REVISIT_FORGE_TEST` classification as history, while the accepted zero-credit Forge kill is a separate append-only post-probe outcome. Candidate #35 is now `DEFERRED_INDEPENDENT_REIDENTIFICATION`, current trigger authority exhausted, still terminal SYSTEM with zero confirmatory credit, and has no fresh successor. `RVT35-FORGE-001` is exhausted and must not be rerun, retuned, searched around, renamed, or recycled.
+Control disposition: **ACCEPT**.
 
-Revisit ledger coverage is 35/35. Current status distribution is `CLOSED_STRONG=1 / DORMANT_REVISITABLE=20 / DEFERRED_INDEPENDENT_REIDENTIFICATION=14 / REVISIT_TRIGGERED=0`. Historical metrics remain proposals=1, Forge referrals=1, probes=1, kills=1, survivors=0, canonicalized=0, fresh successors=0. No old candidate was reopened and no historical outcome changed.
+Interpretation:
+- Treat the advisory aggressively as a clue and conservatively as a claim.
+- It has zero scientific/evidentiary authority and creates no candidate, Revisit trigger, Forge dispatch, or MAIN execution authority by itself.
+- Re-derive any surviving question from current repository evidence, current terminal/revisit ledger, current external literature, and ordinary reductions.
+- Do not adopt NG-style labels/roadmaps, reopen named historical candidates, or reuse exposed/consumed outcomes as confirmatory support.
+- Candidate admission remains Evidence Analyst authority; Forge action remains Analyst-gated.
 
-Methodology R114 confirms this post-probe separation and keeps the hard one-way floor intact. Fast Forge R123/R114 is NO_OP with no live Theory/Revisit probe authority. PRIMARY MAIN R126 has no allocated canonical object, and Relay R127 independently remains waiting with no ownership collision and no workflow to poll. Utility R123 remains IDLE/non-authorizing.
+The first programme-level verification question is therefore not "is the advisory right?" but:
 
-## Permanent external-science policy
+> Does any genuinely new functional residual remain around anonymous multi-lineage revision / distributed binding / selective historical credit after representation-matched FSA/register, ordinary recurrence, reservoir/fading-memory, eligibility/three-factor, STP/transient state, explicit provenance/state-memory, resource/timing/API and other established reductions?
 
-The user's current directive supersedes the former temporary Theory calibration. `SparkBrain Literature / Theory Synthesis / Audit` is permanently configured as: Theory 8/day at 01:30,03:30,07:30,09:30,13:30,15:30,19:30,21:30 JST; Literature 4/day at 00:30,06:30,12:30,18:30; Independent Audit 2/day at 10:30,22:30. The 21:30 Theory slot is preserved and there is no calibration cutoff or fallback.
+This is a verification direction only, not a THEORY_PROPOSAL or canonical candidate.
 
-Live scheduler definitions match this permanent role map and the external-science scheduler is enabled. PRIMARY MAIN and Relay are also enabled at their approved existing cadences/roles. Control made no scheduler mutation this run.
+All prior active Human Directives remain in force. Fast Forge / Slow Science, Utility autonomy with noncanonical authority, development-flexible/evidence-rigid semantics, permanent PRIMARY MAIN + Relay, and Revisit/Resurrection boundaries remain unchanged.
 
-Latest durable Theory remains the 15:30 generation: `NO_THEORY_PROPOSAL` with the historical Candidate #35 Revisit proposal. There is not yet a meaningful post-policy sample for duplicate/no-new-information-rate measurement. High Theory cadence must not create proposal pressure: `NO_THEORY_PROPOSAL` with genuinely_new_information=false is healthy when inputs have not changed. Control will monitor paraphrase churn, rescue pressure, duplicate proposal density, and information-arrival mismatch without reducing cadence absent a new user decision.
+## Independently re-fetched repository/evidence
 
-## Repository / evidence integrity
+- stable `main`: `d16403414fc7abebd23075fc401240971b8eb91d`
+- authoritative evidence namespace: 6 refs total
+  - 5 provenance-bearing annotated evidence tags
+  - H7 evidence ref remains the historical lightweight tag pointing directly to `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`
+- H7 formal/sealed refs still point to the same result commit; H7 raw freeze/preserve still point to the same raw commit.
+- No authoritative evidence ref was moved or rewritten.
+- Current named evidence tags independently confirm durable C19, C19-R2, H5, NI01, PD01 and H7 result anchors. The advisory's broader historical descriptions remain claims to re-check, not accepted current state.
 
-Stable `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`. The evidence namespace remains six refs: five pre-existing annotated identities plus the H7 lightweight evidence ref pointing to the same result commit. No new evidence identity or immutable-ref movement was observed. No fresh Candidate #35 successor branch exists.
+## Canonical scientific state
 
-The historical `preserve/cand35-r100-batch1-20260923` name remains unresolved while the same development payload remains reachable through `raw/cand35-r100-onebatch-20260923`. This is a governance/provenance discrepancy only and must not be repaired by Control or MAIN.
+Latest Evidence Analyst remains R123 and supplies no executable canonical action.
+
+- canonical objects: 35
+- MECHANISM / SYSTEM: 14 / 21
+- terminal current objects: 35
+- active: 0
+- scientifically queued: 0
+- effectively executable MECHANISM: 0
+- consumed FORMAL identities: 8
+- development phases: OPEN 0 / RESULT_EXPOSED 34 / CONSUMED_ONE_WAY 1
+
+H7 remains `FORMAL / MECHANISM / CONSUMED_ONE_WAY / TERMINAL_FOR_CURRENT_OBJECT / INCONCLUSIVE`. Same-identity rerun, retune, rescore, retry and result-responsive repair remain prohibited.
+
+Candidate #35 remains terminal `SYSTEM`, zero confirmatory credit, `DEFERRED_INDEPENDENT_REIDENTIFICATION`. Its historical Revisit proposal was classified `REVISIT_FORGE_TEST` exactly once; the bounded Forge probe was killed by ordinary reduction and the current trigger authority is exhausted. No fresh successor exists.
+
+## Revisit / resurrection
+
+Bootstrap/ledger coverage remains complete: 35/35 terminal objects.
+
+- CLOSED_STRONG: 1
+- DORMANT_REVISITABLE: 20
+- DEFERRED_INDEPENDENT_REIDENTIFICATION: 14
+- REVISIT_TRIGGERED: 0
+- Revisit proposals: 1 historical
+- Forge-test referrals: 1 historical
+- durable Revisit Forge probes: 1
+- kills / survivors: 1 / 0
+- fresh successors: 0
+
+HUMAN-009 does **not** itself fire a Revisit trigger. A named historical line can re-enter consideration only if the re-validation produces genuinely new independent information satisfying the existing trigger policy.
+
+## Fast Forge / Utility / MAIN / Relay
+
+Fast Forge latest durable run is R123/R114 NO_OP: 0 selected questions, 0 prototypes, no promotion proposal, no live Theory/Revisit probe authority.
+
+Utility is clean IDLE after R123 post-probe reconciliation; no bounded request or canonical/Forge authority exists.
+
+MAIN/Relay current durable state is waiting with no allocated canonical object. PRIMARY and Relay remain user-approved enabled lanes; no ownership collision or result-bearing workflow wait is present.
+
+## Theory / Literature / Audit
+
+Theory Synthesis permanent cadence remains 8/day. The latest durable Theory record is still the 15:30 generation; it emitted no programme-level theory and its Candidate #35 Revisit proposal is historical and exhausted after the later Forge kill / Analyst closure.
+
+Literature R43 contains genuinely new external information that sharpens future broad mechanism-responsibility claims, but it creates no H7 or Candidate #35 Revisit trigger and must not be retrofitted onto consumed evidence.
+
+Independent Audit R10 remains the historical Candidate #35 causal-opportunity finding; its trigger path has already completed through bounded Forge kill and Analyst closure.
+
+HUMAN-009 should be consumed prospectively by future Literature / Theory / Audit generations:
+1. Literature: independently verify external prior art around anonymous multi-lineage binding/revision, selective historical credit and causal intervention, with explicit ordinary reductions.
+2. Theory: perform a differential synthesis against the current terminal/reduction record; emit NO_THEORY_PROPOSAL when no new residual survives.
+3. Audit: blind-attack any surviving formulation for renamed-terminal/rescue structure, hidden identity registers/provenance, and simpler FSA/recurrent/reservoir/eligibility explanations.
+4. Evidence Analyst: only after independent outputs may classify a fresh Theory/Revisit object.
+5. Fast Forge: only under fresh Analyst THEORY_FORGE_TEST or REVISIT_FORGE_TEST authority.
+
+## Methodology
+
+Methodology R114 remains advisory-only and reports the scientific/development/Revisit gates as well calibrated. Its remaining permissiveness finding is repository provenance governance: H7 entered authoritative namespaces with lightweight tags and authoritative tag namespaces lack server-side protection. Existing H7 refs remain untouched; future FORMAL publication should fail closed on annotated provenance-bearing identity + peeled-target verification. Protection-rule deployment remains deferred by Human Directive unless risk materially changes.
+
+Mechanism supply remains fragile/empty. This is a real throughput concern, but it does not justify recycling H7, Candidate #35, or other killed/terminal rationales, nor weakening canonical admission or FORMAL standards.
 
 ## Scheduler health
 
-All inspected user-approved active SparkBrain lanes are enabled. Broad queue delay is still visible across several lanes at roughly 2–20 minutes, but no ownership collision or single failing scheduler has been established. No cadence, role, prompt, enabled-state, or structural change is proposed by Control.
+Live definitions were re-read.
 
-## Directions
+Healthy configuration facts:
+- SparkBrain Control & Repository Steward: enabled, hourly :50.
+- Evidence Analyst: enabled, hourly :00.
+- PRIMARY MAIN: enabled, hourly :15.
+- Utility: enabled, hourly :25.
+- Methodology: enabled, hourly :20.
+- Fast Forge: enabled, hourly :35.
+- Relay: enabled, hourly :45.
+- `SparkBrain Literature / Theory Synthesis / Audit`: enabled with the permanent 14-slot/day map; 21:30 Theory is present; no calibration cutoff/fallback exists.
+- Legacy SUB and legacy separate Repository Steward remain disabled as expected under the current architecture.
 
-1. Keep the canonical queue empty until genuinely new independent information supports a fresh prospective candidate; do not recycle Candidate #35 or H7.
-2. Candidate #35's current Revisit trigger is exhausted. Any future revisit needs genuinely new independent information and can only produce a fresh successor through fresh Analyst authority.
-3. Operate Theory permanently at 8/day while deduplicating aggressively; more runs must not imply more proposals.
-4. Keep PRIMARY MAIN and Relay enabled at current roles/cadences; continue monitoring broad fleet lag and Theory duplicate/no-new-information rate.
-5. Leave H7 lightweight authoritative refs and the Candidate #35 historical preserve-ref discrepancy untouched by Control; only append-only governance follow-up is acceptable.
+Observed fleet lag remains broad rather than a same-object ownership collision:
+- Evidence Analyst latest automation run ~20:14 for the 20:00 slot.
+- PRIMARY MAIN ~20:35 for 20:15.
+- Utility ~20:31 for 20:25.
+- Methodology ~20:32 for 20:20.
+- Fast Forge ~20:45 for 20:35.
+- Relay ~20:55 for 20:45.
+- scheduled Control ~20:56 for 20:50.
 
-## Hard floor
+**New scheduler-health issue:** the external-science automation's recorded last run remains ~18:44 JST (the 18:30 Literature slot), and there is no durable 19:30 Theory output. At this ad-hoc Control time (21:02 JST), the 19:30 Theory slot is therefore materially missing/delayed. The 21:30 Theory slot has not occurred yet.
 
-Control executed no experiment, dispatched no result-bearing workflow, consumed no identity, merged no research PR, mutated no immutable/freeze/formal/sealed/evidence/preserve scientific ref, reopened no terminal object, reran/retuned/rescored no consumed FORMAL identity, rewrote no historical outcome, and made no scheduler mutation.
+Health classification: `YELLOW_EXTERNAL_SCIENCE_MISSED_1930_SLOT_PLUS_BROAD_QUEUE_LAG`.
+
+No scheduler definition/cadence/role was changed. Keep the permanent cadence. Observe the 21:30 Theory and 22:30 Audit slots; if another external-science slot is missed or materially stranded, the next Control run must raise a concrete scheduler-capacity/execution proposal to the user rather than silently changing structure.
+
+## Control directions
+
+1. **HUMAN-009 re-validation:** start only as independent reconstruction; no direct candidate/revisit/Forge authority.
+2. **Candidate supply:** prioritize genuine programme-level residual discovery and fresh observable/intervention opportunities, not activity generation.
+3. **Theory cadence:** retain permanent 8/day. High duplicate/no-new-information rate is acceptable only when accurately marked; do not manufacture proposals.
+4. **Revisit:** old IDs remain terminal forever; HUMAN-009 cannot by itself reactivate them.
+5. **MAIN/Relay:** remain enabled at current roles/cadences; wait for fresh Analyst canonical allocation.
+6. **Scheduler health:** preserve current definitions while checking whether 21:30/22:30 external slots recover; escalate if miss repeats.
+7. **Evidence integrity:** no consumed identity rerun/retune/rescore, no immutable ref mutation, no post-FORMAL rescue, no historical outcome rewrite.
+
+## This Control run
+
+No experiment was run. No identity was created or consumed. No research PR was merged. No scientific/evidence/freeze/formal/sealed/control/preserve ref was mutated. No terminal object was reopened. No scheduler was changed.
+
+New scientific result: none.
