@@ -2,68 +2,57 @@
   "schema_version": 2,
   "worker_role": "FAST_FORGE",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "latest_status": "FORGE_DEAD_END",
+  "latest_status": "FORGE_OBSERVATION",
   "current_run": {
-    "forge_id": "FORGE-20260924T223801+0900-R126-TH002-STATIC-KILL",
-    "theory_id": "TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY",
+    "forge_id": "FORGE-20260924T233401+0900-R128-R117-NOOP",
+    "theory_id": null,
     "source_candidate": null,
     "revisit_trigger": null,
-    "analyst_classification": "THEORY_FORGE_TEST",
-    "analyst_probe_spec": "TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL",
-    "selected_questions": [
-      "Can a fresh three-lineage permutation-symmetric merged carrier support delayed content-selective historical revision without reducing to ordinary addressable memory?"
-    ],
-    "why_now": "Evidence Analyst R126 explicitly authorized exactly one bounded Fast Forge static falsification for TH-002 after the prior Forge run correctly waited at the raw Theory gate.",
-    "branch": "forge/th002-static-addressability-kill-20260924",
-    "prototypes": [
-      {
-        "path": "forge/th002_static_addressability_kill.py",
-        "blob": "a2b840631a733c0d29948fde4f5da6b57ce1e027",
-        "commit": "98ea88e70f6f28f3463339689572270183fd90cd",
-        "kind": "STATIC_SYNTHETIC_EQUIVALENCE_CHECKER"
-      },
-      {
-        "path": "forge/TH002-FORGE-001.md",
-        "blob": "e4c3639e2c01898cb9ed140e47aefa11f1656e8b",
-        "commit": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
-        "kind": "PROSPECTIVE_FIXTURE_AND_STATIC_REDUCTION_RECORD"
-      }
-    ],
+    "analyst_classification": null,
+    "analyst_probe_spec": null,
+    "selected_questions": [],
+    "why_now": "Fresh Methodology R117 materially tightened post-result development revision semantics after the TH-002 Forge kill, while Evidence Analyst R128 and MAIN R132 authorize no new scientific object.",
+    "branch": null,
+    "prototypes": [],
     "diagnostics": [
-      "Three physical content signatures have Gram matrix 4I.",
-      "All six lineage-order permutations produce the same merged carrier.",
-      "All three delayed content queries produce exact target-selective revision.",
-      "An associative key-value comparator with the same content query reproduces every read and revision relation without an evaluator-only target index."
+      "Evidence Analyst R128 leaves no executable TH-002 continuation and no new THEORY_FORGE_TEST or REVISIT_FORGE_TEST.",
+      "MAIN R132 has no allocated canonical object; canonical census remains 35/35 terminal, active 0, scientifically queued 0.",
+      "Methodology R117 identifies a science-affecting same-object comparator/information-access repair after the first exposed TH002-FORGE-001 result.",
+      "R117 explicitly recommends no retroactive TH-002 rerun/relabel; future post-exposure science-affecting changes require explicit revision/successor identity."
     ],
     "observations": [
-      "Merged carrier M=(0.125,-0.25,0.375,0.0) decodes exactly to lineage values (0.25,-0.50,0.75).",
-      "permutation_equivariance=PASS",
-      "target_selective_revision=PASS",
-      "matched_access_kv_equivalence=PASS",
-      "No dynamic or performance experiment is needed because the Analyst immediate-kill criterion is already met statically."
+      "No new scientific phenomenon or reduction-resistant residue was selected for Forge experimentation.",
+      "The previous TH-002 zero-credit FORGE_DEAD_END and associative key-value / separable address-plus-state reduction remain unchanged.",
+      "A methodology-only TH-002 replay was rejected as duplicate/rescue work."
     ],
     "ordinary_reductions": [
-      "ASSOCIATIVE_KEY_VALUE_MEMORY",
-      "SEPARABLE_ADDRESS_PLUS_STATE",
-      "FINITE_REGISTER_EQUIVALENCE_ON_THREE_LINEAGE_SUBSPACE"
+      "PRIOR_TH002_ASSOCIATIVE_KEY_VALUE_MEMORY",
+      "PRIOR_TH002_SEPARABLE_ADDRESS_PLUS_STATE"
     ],
-    "strongest_ordinary_reduction": "ASSOCIATIVE_KEY_VALUE_MEMORY / SEPARABLE_ADDRESS_PLUS_STATE",
-    "status": "FORGE_DEAD_END",
-    "dead_end_reason": "The delayed physical/content signature is exactly a lookup key, and a matched-access associative key-value representation reproduces every read/revision relation for all lineage permutations. No reduction-resistant residue remains.",
+    "strongest_ordinary_reduction": "NO_NEW_OBJECT; prior TH-002 remains ASSOCIATIVE_KEY_VALUE_MEMORY / SEPARABLE_ADDRESS_PLUS_STATE",
+    "status": "FORGE_OBSERVATION",
+    "dead_end_reason": null,
     "promotion_proposed": false,
     "promotion_reason": null,
     "utility_request": null,
     "main_collision_check": "PASS_NO_COLLISION",
-    "hard_floor_action": false
+    "hard_floor_action": false,
+    "methodology_guard": {
+      "source": "METHCAL-20260924T232004+0900-R117-7E4B2C19",
+      "classification": "TIGHTEN_RESULT_EXPOSED_SCIENCE_AFFECTING_REVISION_IDENTITY",
+      "rule": "After a durable development outcome is exposed, comparator semantics, information/resource privilege, metric, threshold, seed/exclusion policy, intervention, hypothesis, falsifier or success-criterion changes require an explicit revision or fresh successor identity while preserving the first outcome.",
+      "retroactive_th002_rerun_authorized": false
+    }
   },
   "last_probe": {
     "probe_spec": "TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL",
     "theory_id": "TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY",
     "branch": "forge/th002-static-addressability-kill-20260924",
     "branch_commit": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
-    "observation": "A fresh permutation-symmetric three-lineage carrier supports selective delayed revision, but the entire relation is exactly reproduced by ordinary matched-access associative key-value memory / separable address-plus-state.",
+    "observation": "A fresh permutation-symmetric three-lineage carrier supports selective delayed revision, but the relation is reducible to ordinary addressable memory; later Methodology R117 additionally records that a post-result comparator/access correction on the same probe identity should prospectively have been a revision/successor.",
     "disposition": "FORGE_DEAD_END",
-    "scientific_credit": 0
+    "scientific_credit": 0,
+    "methodology_note": "R117 does not change the zero-credit dead-end or authorize rerun; it tightens future RESULT_EXPOSED revision handling."
   },
   "terminal_current_family_scan": {
     "canonical_candidates_total": 35,
@@ -73,25 +62,25 @@
     "candidate34": "CLOSED_STRONG",
     "candidate35": "DEFERRED_INDEPENDENT_REIDENTIFICATION_TERMINAL_SYSTEM_TRIGGER_AUTHORITY_NONE_EXHAUSTED",
     "h7": "DORMANT_REVISITABLE_TERMINAL_FORMAL_INCONCLUSIVE_CONSUMED_ONE_WAY",
-    "theory_r4_th002": "THEORY_FORGE_TEST_STATIC_PROBE_KILLED_ZERO_CREDIT_PENDING_FRESH_ANALYST_RECONCILIATION"
+    "theory_r4_th002": "FORGE_KILLED_NO_CANONICALIZATION_ZERO_CREDIT_NO_CONTINUATION"
   },
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "main_owner": "NO_ALLOCATED_ACTIVE_OBJECT",
-    "main_primary": "MAIN_R130_STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
+    "main_primary": "MAIN_R132_STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
     "avoided": [
-      "H7 identity/START/raw-preserve/freeze/formal/sealed/evidence/scorer/protected evaluator/runtime/workflow and same-object repair",
+      "H7 identity/START/raw-preserve/freeze/formal/sealed/evidence/scorer/protected evaluator/runtime/workflow and same-object comparator repair",
+      "H7 coalitional-attribution or surrogate retrofit from Literature R43",
       "Candidate #35 R100 and killed RVT35-FORGE-001 continuation/search/retune/rename",
       "Candidate #34 same-object or immediate terminal descendants",
       "A01/C19 old fixtures or outcome-responsive redesign",
+      "TH002-FORGE-001 rerun/relabel solely to repair methodology history",
       "HUMAN-009 as evidence or dispatch authority",
-      "MAIN active object/blocker/immediate successor/branch/identity/scorer/preserver/runtime/workflow",
-      "all consumed/frozen/FORMAL identities and protected held-out targets",
-      "governance/docs work not directly enabling this Forge experiment"
+      "all consumed/frozen/FORMAL identities and protected held-out targets"
     ]
   },
   "metrics": {
-    "runs": 32,
+    "runs": 33,
     "prototypes": 21,
     "theory_probes": 3,
     "theory_kills": 3,
@@ -103,35 +92,31 @@
     "interesting_observations": 1,
     "promotion_proposals": 1,
     "later_admissions": 0,
-    "duplicate_rescue_rejects": 13,
+    "duplicate_rescue_rejects": 14,
     "ownership_collisions": 0,
     "ordinary_reduction_rejects": 17,
-    "idea_to_observation_latency": "SAME_RUN_STATIC"
+    "idea_to_observation_latency": "NO_NEW_IDEA_SELECTED"
   },
   "refs": {
     "main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "evidence_analyst_r126": "abb12babbdf1385826029ee39e9fb20c13c42f7d",
-    "evidence_analyst_r126_latest_blob": "a1d8fb2f6eab9b275bf4b38e825cb5250fc252d1",
+    "evidence_analyst_r128": "876e208cc2fbfccd013156282162745b0e724408",
+    "evidence_analyst_r128_latest_blob": "cdb687b9d2efd551f5b4aa713b1b18906b047a53",
     "control_r63": "f804b40381cc35493cc12e04a2bc83dbca580c86",
-    "orchestrator_mailbox_pre_forge_tip": "89d3a73da19f515a58999404652658abacbcd3bb",
-    "main_r130_latest_blob": "626cc86f575f8adbe594bf81c47d4c1b96a748fa",
+    "orchestrator_mailbox_pre_forge_tip": "d65e57d19c9ca13cc340feef9761f600ac1a887b",
+    "main_r132_latest_blob": "965f6aac6f2debf983bd3f234a159ca6d3c91d24",
     "theory_r4_branch_head": "87d206a3f62c70c393531413445703fd0baa108a",
-    "theory_r4_history_blob": "771c1c6b9af01616a9e5cda6a30860d9903e554f",
     "literature_r43_latest_blob": "bc346dac47b85fdcdeae49a85f4036f97a0aee91",
     "audit_r10_latest_blob": "a89738c837b2e5bc2eab94adb1722bbb6daeb673",
-    "methodology_r116": "4ba0b61d657bd5ba58df1cb580456c05629a6b7f",
-    "methodology_r116_latest_blob": "0245f57594ac6d49084d2b9b8867bc65855634ca",
+    "methodology_r117": "8b88ef3ad173188a5219bfffeb8530901d36b678",
+    "methodology_r117_latest_blob": "bb13eb6b31c527d781e4b037df34c270c558a83d",
     "utility_r125": "40143dd0f8b19f5d2c0c557b2574a07cf2815e92",
     "utility_r125_state_blob": "e34f0492107de19663131dff59b16a3b4f014e2a",
-    "repository_steward": "3232ec8921a640de7ba4a0e432d2cb647fbfc506",
-    "forge_branch_record_commit": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
-    "forge_branch_script_blob": "a2b840631a733c0d29948fde4f5da6b57ce1e027",
-    "forge_branch_record_blob": "e4c3639e2c01898cb9ed140e47aefa11f1656e8b",
-    "history_create_commit": "e6c520bc9f2568087868f99f8926d701d9b21150",
-    "latest_update_commit": "6f8601ad610597b83a9923c1bba96ebd670c7a38",
-    "latest_blob": "dc9166e0fa97f803d9aededcc38d7d3eaea17d28",
-    "previous_forge_latest_blob": "948e71048921d5c7c0d21aad7d44264e2ab0dc41",
-    "previous_forge_state_blob": "60991489ace1fb6f4ad7ab47e4a12bcb9fba54d1"
+    "previous_forge_branch_record_commit": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
+    "history_create_commit": "e9c16d949973d2554fe5f368ee61196dcf53f3ee",
+    "latest_update_commit": "0817577d2c68c916a2c666860b59214474f2b642",
+    "latest_blob": "21c1f9b70418239d7378fd06217aa4c0c5d5ece8",
+    "previous_forge_latest_blob": "dc9166e0fa97f803d9aededcc38d7d3eaea17d28",
+    "previous_forge_state_blob": "ea3c6d7026837ba512642de8ab7d80e530345154"
   },
   "hard_floor": {
     "prohibited_action_occurred_by_forge": false,
@@ -143,7 +128,7 @@
     "consumed_or_immutable_evidence_mutated_by_forge": false,
     "result_bearing_canonical_workflow_dispatched_by_forge": false,
     "scientific_research_branch_mutated_by_forge": false,
-    "forge_branch_created_or_modified_this_run": true,
+    "forge_branch_created_or_modified_this_run": false,
     "forge_branch_merged_to_main_or_research": false,
     "terminal_reopened_by_forge": false,
     "historical_outcome_rewritten_by_forge": false
