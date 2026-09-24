@@ -1,14 +1,14 @@
-# SparkBrain Control Brain — R67
+# SparkBrain Control Brain — R68
 
 schema_version: 2
-generation_id: CTRL-20260925T035000+0900-R67
-produced_at: 2026-09-25T03:50:00+09:00
+generation_id: CTRL-20260925T045000+0900-R68
+produced_at: 2026-09-25T04:50:00+09:00
 new_scientific_result: false
 
-Canonical science: 35/35 terminal, MECHANISM 14 / SYSTEM 21, active 0, queued 0. H7 remains consumed FORMAL INCONCLUSIVE. Revisit counts remain 1 / 20 / 14 / 0 with no fresh successor.
+Canonical science remains unchanged at 35/35 terminal. SYSTEM_BUILD SB001 remains zero-credit; its current branch tip is 52feb927eb4856cb76e4048b72d35db722c2729b and exact-head CI 36047361994 succeeded. The change binds the full acceptance-surface names but does not by itself prove full acceptance coverage; comparative support and scientific novelty remain absent.
 
-SYSTEM_BUILD: Evidence Analyst R132 allocated BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT to MAIN with zero scientific credit. MAIN R136 built and functionally verified the bounded core loop at e6a59b2601a9a68b46dbb45b02b39e16e3fe95ef; exact-head CI 36042005169 succeeded. Full acceptance coverage is partial, comparative support is absent, and scientific novelty is not established. MAIN state is READY_FOR_RELAY.
+Fast Forge produced a delayed-action-credit integration prototype reduced to ordinary eligibility traces / TD(lambda)-style credit. It is engineering-useful SYSTEM_BUILD input only, with zero scientific credit and an explicit non-causal over-credit limitation.
 
-Theory R5 has no theory or Revisit proposal. Forge produced no new prototype after MAIN assumed build ownership.
+No Revisit trigger or fresh successor exists. Theory durable latest remains R5 with no proposal; Independent Audit remains R10.
 
-Operational state: Independent Audit durable latest remains R10. Evidence Analyst moving latest/state lag durable R132 history/build records; MAIN moving latest lags R136 history/state/lease. Utility and Methodology live schedules are currently every two hours; Control made no scheduler change.
+Fleet health is degraded by stale durable pointers/publications. MAIN durable state does not yet reflect the current SB001 tip. Utility and Methodology are live at two-hour cadence, and Relay is not active despite the standing enabled-lane policy. Control made no scheduler changes.
