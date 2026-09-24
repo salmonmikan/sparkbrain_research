@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T224900+0900-RELAY-R131-R127-TH002-FORGE-INFLIGHT-WAIT",
-  "producer_run_id": "sparkbrain-main-relay-20260924T224900JST-r131-r127-th002-forge-inflight-wait",
-  "generated_at": "2026-09-24T22:49:00+09:00",
-  "status": "WAITING_EXTERNAL",
-  "execution_mode": "RELAY",
+  "generation_id": "MAIN-20260924T231602+0900-PRIMARY-R132-R128-TH002-FORGE-KILL-NO-CANONICAL-ACTION",
+  "producer_run_id": "sparkbrain-main-primary-20260924T231602JST-r132-r128-th002-forge-kill-no-canonical-action",
+  "generated_at": "2026-09-24T23:16:02+09:00",
+  "status": "STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
+  "execution_mode": "PRIMARY",
   "candidate_id": null,
   "research_layer": null,
   "claim_ceiling": null,
@@ -17,23 +17,24 @@
   "system_priority_exception": null,
   "development_phase": null,
   "development_revision": null,
-  "cycle_count": 27,
+  "cycle_count": 28,
   "cycle_reassessment_context": "CONTROL_RECONCILIATION_ONLY_NO_SCIENTIFIC_CYCLE_EXTENSION_OR_REASSESSMENT_EXECUTION",
-  "information_gain": "CONTROL_PLANE_ONLY: ANALYST_R127_PRESERVES_TH002_FORGE_ONLY_GATE_WHILE_FAST_FORGE_CI_IS_IN_PROGRESS; MAIN_REMAINS_WITHOUT_CANONICAL_ALLOCATION",
+  "information_gain": "CONTROL_PLANE_ONLY: ANALYST_R128_CLASSIFIED_DURABLE_TH002_FORGE_KILL_WITH_NO_CANONICALIZATION; PRIOR_EXTERNAL_WAIT_RESOLVED; MAIN_HAS_NO_CANONICAL_ALLOCATION",
   "analyst_authority": {
-    "generation_id": "EVA-20260924T224451+0900-R127-METH116-MAIN130-NO-GATE-CHANGE",
+    "generation_id": "EVA-20260924T225600+0900-R128-TH002-FORGE-KILL-NO-CANONICALIZATION",
     "branch": "ops/evidence-analyst-handoff",
-    "branch_tip": "e550df7f57b3086613e324b618d97cc4a0baa5ba",
+    "branch_tip": "876e208cc2fbfccd013156282162745b0e724408",
     "scientific_execution_mode": "READ_ONLY_FOR_MAIN",
     "new_scientific_result": false,
     "canonical_science": "STOP_NO_EXECUTABLE_CANONICAL_ACTION",
-    "gate_change": false,
+    "gate_change": true,
+    "gate_change_detail": "TH002_FORGE_KILLED_NO_CANONICALIZATION",
     "top3": []
   },
-  "prior_main_generation": "MAIN-20260924T221711+0900-PRIMARY-R130-R126-TH002-FORGE-ONLY-NO-CANONICAL-ACTION",
+  "prior_main_generation": "MAIN-20260924T224900+0900-RELAY-R131-R127-TH002-FORGE-INFLIGHT-WAIT",
   "persistence": {
-    "history_path": "reports/orchestrator/main/history/2026-09-24/2249-r131-relay-r127-th002-forge-inflight-wait.md",
-    "history_create_commit": "ad0d0d057599e711c365120eb875783166c288d1",
+    "history_path": "reports/orchestrator/main/history/2026-09-24/2316-r132-primary-r128-th002-forge-kill-no-canonical-action.md",
+    "history_create_commit": "aca82ffd09c614e83dd3ed3c8b365a15bb51f82e",
     "state_update_commit": "SELF_THIS_WRITE"
   },
   "funnel": {
@@ -51,18 +52,20 @@
     "new_consumption_this_generation": 0
   },
   "noncanonical_delegated_input": {
-    "type": "ANALYST_GATED_FAST_FORGE_ONLY",
+    "type": "ANALYST_GATED_FAST_FORGE_ONLY_CLOSED",
     "proposal_id": "TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY",
     "probe_spec": "TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL",
-    "classification": "THEORY_FORGE_TEST",
+    "original_classification": "THEORY_FORGE_TEST",
+    "post_probe_disposition": "FORGE_KILLED_NO_CANONICALIZATION",
+    "forge_status": "FORGE_DEAD_END",
     "scientific_credit": 0,
     "candidate_admitted": false,
     "revisit_trigger_created": false,
     "main_may_execute_now": false,
-    "fast_forge_may_execute_bounded_probe": true,
+    "fast_forge_continuation_authorized": false,
     "forge_result_directly_authorizes_main": false,
-    "analyst_probe_durable_outcome_present": false,
-    "expected_next_action": "WAIT_FOR_FAST_FORGE_DURABLE_OUTCOME_THEN_FRESH_EVIDENCE_ANALYST_GATE; MAIN_REQUIRES_EXPLICIT_FRESH_CANONICAL_ADMISSION_AND_ALLOCATION"
+    "analyst_probe_durable_outcome_present": true,
+    "expected_next_action": "NO_TH002_CONTINUATION; MAIN_WAITS_FOR_FUTURE_EXPLICIT_FRESH_CANONICAL_ADMISSION_AND_ALLOCATION"
   },
   "H7": {
     "candidate_id": "CAND-H7-RESPONSIBILITY",
@@ -110,11 +113,13 @@
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "main_report_branch": "ops/orchestrator-run-report",
-    "main_report_head_before_persistence": "89d3a73da19f515a58999404652658abacbcd3bb",
+    "main_report_head_before_persistence": "9fd5cb290ef9896bb3288c177b6f03514690a231",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "e550df7f57b3086613e324b618d97cc4a0baa5ba",
+    "analyst_head": "876e208cc2fbfccd013156282162745b0e724408",
     "fast_forge_branch": "forge/th002-static-addressability-kill-20260924",
-    "fast_forge_head": "98ea88e70f6f28f3463339689572270183fd90cd",
+    "fast_forge_head": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
+    "utility_branch": "ops/utility-orchestrator-requests",
+    "utility_head": "40143dd0f8b19f5d2c0c557b2574a07cf2815e92",
     "h7_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "h7_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "h7_controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
@@ -130,24 +135,29 @@
     "h7_result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85"
   },
   "workflow_wait": {
-    "current_external_workflow_id": 36008129336,
+    "current_external_workflow_id": null,
+    "last_observed_fast_forge_workflow_id": 36008197169,
     "workflow_branch": "forge/th002-static-addressability-kill-20260924",
-    "workflow_head_sha": "98ea88e70f6f28f3463339689572270183fd90cd",
-    "workflow_status_at_observation": "in_progress",
-    "workflow_conclusion_at_observation": null,
-    "queued_or_in_progress_workflow_observed": true,
+    "workflow_head_sha": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
+    "workflow_status_at_observation": "completed",
+    "workflow_conclusion_at_observation": "failure",
+    "queued_or_in_progress_workflow_observed": false,
+    "failure_scope": "REPOSITORY_LINT_BEFORE_LATER_TESTS",
+    "runtime_checker_pass_independently_ci_validated": false,
     "h7_rerun_allowed": false,
-    "expected_next_action": "Wait for Fast Forge completion and then a fresh Evidence Analyst classification. No MAIN scientific action is authorized by this workflow itself."
+    "expected_next_action": "No external MAIN workflow is pending. Re-read a future Evidence Analyst generation and act only on explicit fresh canonical allocation."
   },
   "work_performed": [
-    {"classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION", "change": "Re-fetched Analyst R127, MAIN PRIMARY R130 lease/state, stable main, H7 science/controller refs and active TH-002 Fast Forge branch/workflow."},
-    {"classification": "ANALYST_SUPERSESSION_RECONCILIATION", "change": "R127 superseded R126 but explicitly preserved the TH-002 Forge-only noncanonical gate and no MAIN allocation."},
-    {"classification": "COLLISION_AWARENESS", "change": "Observed Fast Forge independently mutating TH-002 and CI in progress; Relay did not touch Forge implementation or execute science."},
-    {"classification": "WAIT_PERSISTENCE", "change": "Recorded exact external workflow and next Analyst-gated MAIN action."}
+    {"classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION", "change": "Re-fetched Analyst R128, MAIN R131 lease/state, stable main, research/Forge inventories, Fast Forge durable outcome/workflow, Utility ownership state, PRs and hard-floor refs."},
+    {"classification": "WAIT_RESOLUTION_RECONCILIATION", "change": "Resolved stale R131 WAITING_EXTERNAL snapshot because Fast Forge is complete and Analyst R128 has classified the zero-credit kill."},
+    {"classification": "CANONICAL_AUTHORITY_CHECK", "change": "Confirmed no candidate #36, PRE_FORMAL object, Revisit trigger or MAIN allocation was created."},
+    {"classification": "HARD_FLOOR_CHECK", "change": "Re-verified H7 START/preserve/freeze/formal/sealed/evidence targets and preserved consumed identities/results unchanged."},
+    {"classification": "PERSISTENCE_ONLY", "change": "Updated only MAIN-owned history/state/latest/lease; no scientific code, scorer, harness, workflow or evidence ref changed."}
   ],
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NOT_EVIDENCE; TH002_FORGE_ONLY_ZERO_CREDIT_EXTERNAL_WORK_IN_PROGRESS; H7_UNCHANGED_CONSUMED; CAND35_TERMINAL; NO_EXECUTABLE_CANONICAL_OBJECT",
+    "evidentiary_status": "NOT_EVIDENCE; TH002_FORGE_DEAD_END_ZERO_CREDIT_NO_CANONICALIZATION; H7_UNCHANGED_CONSUMED; CAND35_TERMINAL; NO_EXECUTABLE_CANONICAL_OBJECT",
+    "result_classification": "CONTROL_PLANE_RECONCILIATION_ONLY_NO_NEW_SCIENCE",
     "repair_change_classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION_ONLY",
     "science_invariant_repair_performed": false,
     "science_affecting_change_performed": false,
@@ -158,17 +168,30 @@
     "formal_identity_created_or_consumed_this_run": false,
     "prior_results_preserved_unchanged": true,
     "terminal_object_reopened": false,
-    "forge_derived_code_reused": false
+    "forge_derived_code_reused": false,
+    "utility_dependency_created": false
   },
   "consumed_identities": {
     "official_consumed_identity_count": 8,
     "h7_identity_consumed": true,
     "new_identity_consumed_this_run": false
   },
+  "ownership_and_collision": {
+    "fresh_primary_running_same_object_collision": false,
+    "canonical_object_allocated": false,
+    "scientific_collision": false,
+    "th002_assigned_to_fast_forge_only": true,
+    "fast_forge_probe_complete": true,
+    "th002_executed_by_main": false,
+    "forge_derived_code_reused_by_main": false,
+    "utility_status": "IDLE_NONAUTHORIZING",
+    "utility_dependency_created": false
+  },
   "integrity": {
     "analyst_generation_freshness_rechecked_before_persistence": true,
     "main_generation_and_lease_freshness_rechecked_before_persistence": true,
     "research_and_forge_collision_inventory_rechecked": true,
+    "utility_ownership_collision_rechecked": true,
     "scientific_and_controller_refs_rechecked": true,
     "start_preserve_freeze_formal_sealed_evidence_refs_rechecked_from_authoritative_state": true,
     "same_identity_rerun_retune_rescore_performed": false,
@@ -179,7 +202,7 @@
     "prior_result_preserved_unchanged": true,
     "formal_floor_respected": true
   },
-  "stop_reason": "ANALYST_R127_NO_GATE_CHANGE_AND_TH002_FAST_FORGE_WORKFLOW_IN_PROGRESS_NO_MAIN_AUTHORITY",
-  "next_action": "Wait for Fast Forge to produce a durable outcome and for a subsequent Evidence Analyst generation. Resume only if that generation prospectively admits and explicitly allocates a fresh canonical candidate/object with its own contract and development fields.",
+  "stop_reason": "ANALYST_R128_TH002_FORGE_KILLED_NO_CANONICALIZATION_NO_ALLOCATED_CANONICAL_OBJECT",
+  "next_action": "No MAIN scientific action is authorized. Re-read a future Evidence Analyst generation and resume only if it prospectively admits and explicitly allocates a fresh canonical candidate/object with its own contract and development fields. Any Forge-derived successor starts with zero inherited confirmatory credit.",
   "owner": "main"
 }
