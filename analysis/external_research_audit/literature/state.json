@@ -1,190 +1,169 @@
 {
-  "timestamp": "2026-09-24T06:30:03+09:00",
+  "timestamp": "2026-09-24T12:29:54+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71",
-  "producer_run_id": "external-literature-auto-LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71",
+  "generation_id": "LIT-20260924T122954+0900-R42-H7-INCONCLUSIVE-OBSERVABILITY-PING-84C2D7A1",
+  "producer_run_id": "external-literature-auto-LIT-20260924T122954+0900-R42-H7-INCONCLUSIVE-OBSERVABILITY-PING-84C2D7A1",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71",
+  "supersedes_generation_id": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71",
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260924T045900+0900-R48-6F2C1A84",
-      "handoff_commit": "8b8cea6136d1b0e2d821fce1d4f75f8709a4fed0"
+      "generation_id": "CTRL-20260924T115231+0900-R55-H7-BRIDGE-REBOUND-CAND35-TRIGGER",
+      "handoff_commit": "7fad3ddb4d9c2fab9415c166a09de904358da529"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260924T061119+0900-R107-H7-TRIGGER-CAPABILITY-HOLD-THEORY-DISCRIMINATOR-PENDING",
-      "handoff_commit": "247a2e6349ada02a6fdb4a362318570b6dd74e90"
+      "generation_id": "EVA-20260924T115823+0900-R114-H7-POSTBRIDGE-GO-ONCE-CAND35-TRIGGER",
+      "handoff_commit": "1824290d67fdf06494c3849fa687997ec29137cf"
     },
     "main_report": {
-      "generation_id": "MAIN-20260924T054727+0900-RELAY-H7-R106-FORMAL-LAUNCH-CAPABILITY-BLOCKED",
-      "handoff_commit": "e5a1927352b0671456dd8c1166cccea72a510817"
+      "generation_id": "MAIN-20260924T122200+0900-PRIMARY-H7-R114-FORMAL-DISPATCHED-WAITING-EXTERNAL",
+      "handoff_commit": "3d30e8391c80b80ad3450c2781526a1bc2ed93e2"
     },
     "fast_forge_report": {
-      "generation_id": "FORGE-20260924T053555+0900-NOOP-R106-R97-THEORY-KILLED",
-      "handoff_commit": "e5a1927352b0671456dd8c1166cccea72a510817"
+      "generation_id": "FORGE-20260924T123200+0900-NOOP-R114-H7-FORMAL-ACTIVE-GATED",
+      "handoff_commit": "3d30e8391c80b80ad3450c2781526a1bc2ed93e2"
     },
     "methodology": {
-      "generation_id": "METHCAL-20260924T062241+0900-R99-6E3A91B4",
-      "handoff_commit": "26d2b175154e156bf989d0c61045e8eb288fea1b"
+      "generation_id": "METHCAL-20260924T123549+0900-R105-9F3C7A21",
+      "handoff_commit": "5f58f7ef57a80f8329768e049fdb77ab43f9f48e"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71",
-      "handoff_commit": "d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c"
-    },
-    "theory": {
-      "generation_id": "THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91",
-      "handoff_commit": "226d812c96df3d71186ba5a4fb2ac1b27c0d6e25"
+      "generation_id": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71",
+      "handoff_commit_at_consumption": "00dec1659709a93e85050284d427e43b7d8d9ece",
+      "latest_update_commit": "c910903a0d95925944df769a9134ce3b38f8feba"
     },
     "independent_audit": {
-      "generation_id": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8",
-      "handoff_commit": "716f8839f05610fbbfbc83d3ff6b3939dcfd6834"
+      "generation_id": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
+      "handoff_commit": "00dec1659709a93e85050284d427e43b7d8d9ece"
+    },
+    "theory": {
+      "generation_id": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
+      "handoff_commit": "00dec1659709a93e85050284d427e43b7d8d9ece"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "06:30 JST",
+  "schedule_slot": "12:30 JST",
   "schedule_inference": false,
   "repository_refs_inspected": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "h7_science_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "h7_science_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "h7_launch_controller_branch": "research/main-h7-r5-launch-plumbing-r105",
-    "h7_launch_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
-    "h7_identity_consumed": false,
-    "evidence_tags": [
-      "evidence/c19-official-v4-c19-external-v2-official-v4",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
-    ],
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
-    "immutable_tag_count": 0,
+    "h7_controller_head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
+    "h7_identity": "h7-r5-285a3a206b34c5982b9d4045",
+    "h7_workflow_run_id": 35951118916,
+    "h7_workflow_conclusion": "success",
+    "h7_formal_ref_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
+    "h7_sealed_ref_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
+    "h7_evidence_ref_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
+    "h7_official_score_blob": "d1604868f64db771d9a8c80f637b733607cde547",
+    "active_research_inventory_inspected": true,
+    "forge_inventory_inspected": true,
     "legacy_freeze_refs_inspected": true,
     "preserve_control_refs_inspected": true,
     "consumed_identities_inspected": true,
-    "official_consumed_identity_count": 7,
-    "forge_refs": {
-      "forge/20260923-receptor-suppression-probes-a": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
-      "forge/20260924-coordinate-null-local-witness": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
-      "forge/20260924-recurrent-continuation-a": "17b2673cd0417fdf931264a71d8df1f9c1c21f23"
-    },
-    "candidate34_status": "TERMINAL_REDUCIBLE_ZERO_CREDIT_CLOSED_STRONG",
-    "candidate35_status": "TERMINAL_SYSTEM_ZERO_CREDIT_DEFERRED_INDEPENDENT_REIDENTIFICATION",
-    "revisit_ledger": {
-      "closed_strong": 1,
-      "dormant_revisitable": 19,
-      "deferred_independent_reidentification": 14,
-      "revisit_triggered": 0
-    },
     "open_pr_inventory_inspected": true,
-    "control_latest_state_recent_history_inspected": true,
-    "evidence_analyst_latest_state_recent_history_inspected": true,
-    "orchestrator_main_latest_state_recent_history_inspected": true,
-    "orchestrator_fast_forge_latest_state_recent_history_inspected": true,
-    "methodology_latest_state_history_inspected": true,
-    "prior_literature_latest_state_history_inspected": true,
-    "theory_latest_state_history_inspected": true,
-    "independent_audit_latest_inspected": true,
-    "ops_control_tip_consumed": "8b8cea6136d1b0e2d821fce1d4f75f8709a4fed0",
-    "ops_evidence_analyst_tip_consumed": "247a2e6349ada02a6fdb4a362318570b6dd74e90",
-    "ops_orchestrator_tip_consumed": "e5a1927352b0671456dd8c1166cccea72a510817",
-    "ops_methodology_tip_consumed": "26d2b175154e156bf989d0c61045e8eb288fea1b",
-    "ops_external_tip_before_first_write": "226d812c96df3d71186ba5a4fb2ac1b27c0d6e25"
+    "open_prs_observed": [148, 149],
+    "candidate34_status": "TERMINAL_REDUCIBLE_CLOSED_STRONG",
+    "candidate35_status": "TERMINAL_FOR_CURRENT_OBJECT_REVISIT_TRIGGERED_NO_SUCCESSOR",
+    "ops_external_tip_before_first_write": "00dec1659709a93e85050284d427e43b7d8d9ece"
   },
   "genuinely_new_information": true,
   "new_sparkbrain_scientific_result_observed": {
-    "present": false,
-    "note": "No new result-bearing SparkBrain scientific result appeared after Literature R40; TH-001 is Theory-only/non-evidentiary and H7 has not started FORMAL execution."
+    "present": true,
+    "candidate": "CAND-H7-RESPONSIBILITY",
+    "identity": "h7-r5-285a3a206b34c5982b9d4045",
+    "evidentiary_status": "FORMAL_SEALED_EVIDENCE_PRESENT",
+    "official_decision": "INCONCLUSIVE",
+    "native_delta_accuracy": 0.008626302083333332,
+    "native_delta_accuracy_simultaneous_interval": [0.002115885416666668, 0.01529947916666667],
+    "capacity_adequate": {
+      "dense": false,
+      "eligibility": false,
+      "fsa": false
+    },
+    "interpretation": "A small native cut effect is present under the frozen scorer, but no declared comparator family passes capacity adequacy, so the formal result cannot establish privileged dynamic responsibility against adequate ordinary alternatives."
   },
   "findings": [
     {
-      "id": "CAUSAL_ABSTRACTION_NONVACUITY",
-      "type": "THEORETICAL_METHOD_GUARDRAIL",
-      "sources": [
-        "Sutter et al. 2025, The Non-Linear Representation Dilemma, arXiv:2507.08802"
-      ],
-      "finding": "With arbitrarily expressive alignment maps, causal abstraction can become vacuous: under stated assumptions any neural network can be mapped to any algorithm, and high interchange-intervention accuracy can be achieved even for randomly initialized models that do not solve the task.",
-      "impact": "TH-001 Q0/QI tests need prospectively restricted/transparent quotient or alignment complexity, null controls, and preferably held-out intervention checks; QI fit alone is not mechanism evidence."
+      "id": "H7_FORMAL_INCONCLUSIVE_CAPACITY_ADEQUACY",
+      "type": "NEW_AUTHORITATIVE_REPOSITORY_RESULT",
+      "finding": "H7 R5 now has formal/sealed/evidence refs and an official INCONCLUSIVE score. The native TOP1 cut accuracy effect is small but nonzero under the frozen interval, while dense, eligibility and FSA comparator families all fail scorer-declared capacity adequacy.",
+      "impact": "Preserve the exact frozen result. It supports neither a zero-effect dismissal nor a unique-responsibility uplift; future independent responsibility work must prospectively solve comparator adequacy."
     },
     {
-      "id": "HARMLESS_VS_PERNICIOUS_INTERVENTION_DIVERGENCE",
-      "type": "ICLR_2026_INTERVENTION_FAITHFULNESS",
+      "id": "ACTIVITY_SILENT_PERTURB_AND_PROBE_OBSERVABILITY",
+      "type": "FOUNDATIONAL_PLUS_RECENT_PEER_REVIEWED_LITERATURE",
       "sources": [
-        "Grant et al. 2026, ICLR, Addressing divergent representations from causal interventions on neural networks"
+        "Wolff et al. 2017, Nature Neuroscience, DOI 10.1038/nn.4546",
+        "Yang et al. 2025, Cerebral Cortex, DOI 10.1093/cercor/bhae494"
       ],
-      "finding": "Causal interventions often create divergent/off-distribution internal states, but divergence can be harmless when it lies in behavioral null-space or pernicious when it activates hidden pathways and dormant behavioral changes.",
-      "impact": "Manifold distance alone is not a valid kill criterion. Future intervention claims should test whether divergence is behaviorally pernicious and use natural/matched counterfactuals where possible. Candidate #35's revisit wording is sharpened, but no candidate-specific trigger fires."
+      "finding": "Latent/activity-silent state can be revealed by a perturbative impulse even when absent from ongoing output, and the ping context can change whether reactivation is transient, durable or behaviorally consequential.",
+      "impact": "Candidate #35's already-triggered revisit condition is sharpened: any fresh successor needs a prospectively sensitive treated-substrate probe/readout and matched/context controls; the old terminal object is not reopened."
     },
     {
-      "id": "INTERVENTION_FAITHFUL_MECHANISM_SPARSIFICATION",
-      "type": "RECENT_APPROXIMATE_CAUSAL_REDUCTION_BASELINE",
+      "id": "OUTPUT_NULL_READOUT_MISMATCH",
+      "type": "FOUNDATIONAL_SYSTEMS_NEUROSCIENCE_REDUCTION",
       "sources": [
-        "Asiaee 2026, Efficient Discovery of Approximate Causal Abstractions via Neural Mechanism Sparsification, arXiv:2602.24266"
+        "Stavisky et al. 2017, Neuron, DOI 10.1016/j.neuron.2017.05.023"
       ],
-      "finding": "Approximate causal abstraction can be searched via mechanism sparsification using an interventional-risk objective, replacing units with constants or folding them into neighbors while validating intervention faithfulness.",
-      "impact": "Future TH-001/native-route responsibility claims should attempt intervention-faithful simplification before treating native microstructure as necessary. This is prospective and is not added retroactively to frozen H7."
+      "finding": "Substantial perturbation-evoked internal activity can occupy output-null dimensions and have negligible downstream readout effect until it enters output-potent dimensions.",
+      "impact": "A downstream null result is weak falsification when treatment-to-readout observability is unverified. This directly supports the Audit R10 causal-opportunity concern for Candidate #35."
     },
     {
-      "id": "ARBITRARY_MECHANISM_TRANSFORMATION_ABSTRACTION",
-      "type": "FOUNDATIONAL_PEER_REVIEWED_CAUSAL_ABSTRACTION",
+      "id": "ACTIVITY_CAUSAL_CONTRIBUTION_DISSOCIATION",
+      "type": "RECENT_CAUSAL_PERTURBATION_FRAMEWORK",
       "sources": [
-        "Geiger et al. 2025, JMLR 26(83):1-64, Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability"
+        "Downstream network transformations dissociate neural activity from causal functional contributions, PMID 38267481"
       ],
-      "finding": "Causal abstraction extends beyond hard/soft intervention to arbitrary mechanism transformations, providing a formal basis for comparing high-level causal variables across more than one intervention family.",
-      "impact": "Future broad responsibility claims can prospectively test stability under multiple declared mechanism transformations. H7 remains correctly narrow to its frozen dynamic TOP1 cut and must not be retrofitted."
+      "finding": "Observed local activity patterns can dissociate from causal contribution after downstream network transformations; multi-site perturbation is needed to resolve contribution more rigorously.",
+      "impact": "H7's comparator-capacity failure is scientifically substantive. Lesion/cut magnitude alone is insufficient for a unique responsibility claim in a distributed system."
     }
   ],
   "affected_lines": [
-    "TH001_Q0_QI_DISCRIMINATOR_VALIDITY",
-    "CAUSAL_ABSTRACTION_NONVACUITY",
-    "INTERVENTION_DIVERGENCE_FAITHFULNESS",
-    "INTERVENTION_FAITHFUL_MECHANISM_REDUCTION",
+    "H7_DYNAMIC_RESPONSIBILITY",
+    "H7_COMPARATOR_ADEQUACY",
     "CAND35_REVISIT_TRIGGER_SPECIFICITY",
-    "FUTURE_MECHANISM_ADMISSION",
-    "PROGRAMME_NOVELTY"
+    "LATENT_STATE_OBSERVABILITY",
+    "PERTURB_AND_PROBE_VALIDITY",
+    "PROGRAMME_CAUSAL_ATTRIBUTION_BAR"
   ],
   "reduction_candidates": [
-    "RESTRICTED_TRANSPARENT_CAUSAL_ALIGNMENT_OR_QUOTIENT",
-    "COMPLEXITY_MATCHED_OR_RANDOM_ALIGNMENT_NULL",
-    "HELD_OUT_INTERVENTION_FAITHFULNESS",
-    "HARMLESS_VS_PERNICIOUS_DIVERGENCE_AUDIT",
-    "NATURAL_OR_MATCHED_COUNTERFACTUAL_INTERVENTION",
-    "INTERVENTION_FAITHFUL_MECHANISM_SPARSIFICATION"
+    "TREATED_SUBSTRATE_SENSITIVE_PERTURB_AND_PROBE",
+    "OUTPUT_POTENT_OR_DIRECT_TREATED_STATE_READOUT",
+    "PING_CONTEXT_AND_MATCHED_PROBE_CONTROL",
+    "LEAK_ADAPTATION_REFRACTORY_STP_RECURRENCE_REDUCTION",
+    "CAPACITY_PERFORMANCE_ADEQUATE_COMPARATOR_GATE",
+    "MULTISITE_OR_NECESSITY_SUFFICIENCY_PERTURBATION"
   ],
-  "novelty_or_reduction_impact": "TH001_CAUSAL_QUOTIENT_REQUIRES_A_NONVACUITY_AND_INTERVENTION_FAITHFULNESS_CONTRACT. UNRESTRICTED_ALIGNMENT_CAN_MAKE_CAUSAL_ABSTRACTION_VACUOUS; OFF_MANIFOLD_DISTANCE_ALONE_DOES_NOT_ESTABLISH_INVALIDITY; INTERVENTION_FAITHFUL_SPARSIFICATION_IS_A_NEW_ORDINARY_REDUCTION_BASELINE. CURRENT_H7_AND_TERMINAL_CANDIDATES_REMAIN_UNCHANGED.",
-  "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
-  "theory_status": "NONCANONICAL_NON_EVIDENTIARY_UNCHANGED",
+  "novelty_or_reduction_impact": "NEW_H7_FORMAL_RESULT_IS_INCONCLUSIVE_DESPITE_A_NONZERO_NATIVE_EFFECT_BECAUSE_ALL_DECLARED_COMPARATOR_FAMILIES_FAIL_CAPACITY_ADEQUACY. ACTIVITY_SILENT_PING_AND_OUTPUT_NULL_LITERATURE_SHARPEN_THE_ALREADY_TRIGGERED_CAND35_REVISIT_CONDITION_TO_VERIFIED_TREATMENT_TO_READOUT_OBSERVABILITY_WITHOUT_REOPENING_R100.",
+  "theory_id": null,
+  "theory_status": "NO_CHANGE_TH001_REMAINS_REJECTED_CURRENT_PROPOSAL",
   "revisit_proposal": null,
-  "revisit_status": "NO_TRIGGER",
+  "revisit_status": "CAND35_ALREADY_REVISIT_TRIGGERED_BY_AUDIT_R10_LITERATURE_SHARPENS_CONDITION_ONLY",
   "audit_classification": null,
-  "confidence": "HIGH_FOR_JMLR_AND_ICLR_FINDINGS_MEDIUM_HIGH_FOR_NONLINEAR_ALIGNMENT_PREPRINT_AND_MECHANISM_SPARSIFICATION_APPLICATION",
+  "confidence": "HIGH_FOR_H7_FROZEN_SCORE_AND_PEER_REVIEWED_OBSERVABILITY_FINDINGS",
   "prospective_baselines_or_discriminators": [
-    "prospectively restrict and declare Q0/QI quotient or alignment complexity and include complexity-matched/random null alignment controls",
-    "evaluate quotient faithfulness on held-out intervention instances where feasible",
-    "distinguish harmless behavioral-null-space divergence from pernicious hidden-path activation rather than using manifold distance alone",
-    "use natural-state or matched-counterfactual interventions when available",
-    "include intervention-faithful mechanism sparsification/unit folding as an ordinary reduction before native-mechanism uplift",
-    "for future broad responsibility claims, use multiple prospectively fixed mechanism-transformation families without retrofitting frozen H7"
+    "pre-register a perturb-and-probe/readout demonstrably sensitive to treated non-receptor state before any fresh Candidate #35-like successor",
+    "distinguish output-null internal change from output-potent downstream effect through direct treated-state measurement or verified coupling",
+    "use matched/context probe controls because the probe itself can reorganize the state",
+    "retain leak/adaptation/refractory, transient synaptic state and ordinary recurrence reductions",
+    "require capacity/performance adequacy for H7-like comparator families before mechanism uplift",
+    "consider complementary multi-site or necessity/sufficiency perturbations for future responsibility claims"
   ],
   "questions_for_evidence_analyst": [
-    "Tighten the R107 TH-001 Forge discriminator with a non-vacuity contract on quotient/alignment complexity and held-out intervention checks?",
-    "Require a divergence-faithfulness check distinguishing causally inert null-space shift from pernicious hidden-path activation before interpreting a QI split as natural mechanism evidence?",
-    "Add intervention-faithful sparsification/folding as an ordinary prospective reduction for TH-001 or a later fresh mechanism successor?",
-    "Keep Candidate #35 terminal and treat generic off-manifold concern as insufficient for Revisit unless candidate-specific pernicious divergence or genuinely new natural-counterfactual capability appears?"
+    "Ingest the new authoritative H7 evidence tag and frozen INCONCLUSIVE decision even while older ops reports remain pre-result.",
+    "For Candidate #35's already-triggered revisit entry, sharpen any fresh-successor contract to require prospectively verified treated-substrate-to-readout observability without reopening or rerunning R100.",
+    "For any future H7-like responsibility candidate, require declared comparator capacity adequacy before causal-mechanism uplift."
   ],
   "questions_for_control_brain": [
-    "Add causal-abstraction-fit-does-not-equal-mechanism-proof-under-unrestricted-alignment as a programme-level prospective guardrail?",
-    "Keep H7's frozen TOP1-cut claim and comparator panel unchanged and apply the new guardrails only to later broader claims/Theory probes?",
-    "Preserve all terminal Candidate #34/#35 states and Revisit count at zero absent candidate-specific independent triggers?"
+    "Keep H7 R5 immutable and route its INCONCLUSIVE result through normal post-result interpretation with no same-object repair or rerun.",
+    "Keep Candidate #35 terminal; permit only a later fresh successor if Evidence Analyst accepts an independent causal-opportunity/observability rationale."
   ],
   "must_not_change_frozen_or_consumed": [
-    "all seven officially consumed FORMAL identities and all five authoritative evidence tags",
-    "frozen H7 R5 science, TOP1 intervention, ordinary comparator panel, evaluator/decision rules, and one-way integrity boundary",
-    "H7 PF-R1 no-rerun/no-rescore boundary and no H7 identity/START/result creation by this role",
-    "Candidate #34 preserved D34-Q002 bytes/result and terminal CLOSED_STRONG no-rescue boundary",
-    "Candidate #35 preserved R100 five-arm result and terminal DEFERRED_INDEPENDENT_REIDENTIFICATION no-same-object-rescue boundary",
-    "no terminal object reactivation, research merge, immutable/evidence ref mutation, Utility execution, or scheduler change by this role"
+    "H7 identity h7-r5-285a3a206b34c5982b9d4045 and all START/preserve/freeze/formal/sealed/evidence refs",
+    "all prior consumed FORMAL identities and authoritative evidence refs",
+    "Candidate #34 preserved result and CLOSED_STRONG no-rescue boundary",
+    "Candidate #35 preserved R100 result and terminal no-same-object-rerun/retune/rescore boundary",
+    "no scientific workflow dispatch, candidate promotion, terminal reopen, immutable ref mutation, Utility execution or scheduler change by this role"
   ],
   "utility_request_created": null,
   "mutations": {
@@ -197,8 +176,8 @@
     "utility_requests_created": 0
   },
   "persistence": {
-    "latest_update_commit": "c910903a0d95925944df769a9134ce3b38f8feba",
-    "history_path": "analysis/external_research_audit/history/2026-09-24/0630-LITERATURE_REDUCTION_SCOUT.md",
+    "latest_update_commit": "45734528abe172e2ede04029461126324ec6a2d2",
+    "history_path": "analysis/external_research_audit/history/2026-09-24/1230-LITERATURE_REDUCTION_SCOUT.md",
     "final_handoff_commit_embedding_limitation": "The append-only history commit is generated by the final write and cannot be embedded self-referentially; re-fetch the branch tip after history persistence."
   }
 }
