@@ -1,13 +1,16 @@
 {
   "schema_version": 1,
-  "request_kind": "H7_R5_ONE_SHOT_LAUNCH_REQUEST",
+  "request_kind": "H7_R5_ONE_SHOT_WORKFLOW_DISPATCH_REQUEST",
   "armed": false,
-  "status": "DORMANT_CAPABILITY_READY_FOR_FRESH_ANALYST_REVALIDATION",
-  "controller_sha": "042d00375278d551dbf643ad866a4c883852804d",
+  "status": "DORMANT_DISPATCH_CAPABILITY_PROVISIONED_PENDING_FRESH_ANALYST_REVALIDATION",
+  "target_workflow": "h7-formal-r5-one-way-launch.yml",
+  "target_ref": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
+  "controller_sha": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
   "science_sha": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
   "analyst_generation_id": null,
   "analyst_commit": null,
+  "request_nonce": null,
   "requested_by": null,
   "requested_at": null,
-  "note": "Do not arm until a fresh Evidence Analyst generation observes this bridge capability, revalidates exact bindings, sets H7.executor_trigger_capable=true and H7.effectively_executable=true, and retains explicit GO_ONCE formal authority."
+  "note": "Remain unarmed until a fresh Evidence Analyst generation observes the workflow-dispatch capability, revalidates exact bindings, sets H7.executor_trigger_capable=true and H7.effectively_executable=true, and retains explicit GO_ONCE formal authority. MAIN/Relay may then arm this file once; the bridge dispatches the exact bound workflow without manual tag creation."
 }
