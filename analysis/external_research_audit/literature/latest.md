@@ -1,92 +1,98 @@
-# External Literature Reduction Scout — coalitional responsibility and perturbation baselines
+# External Literature Reduction Scout — selective revision is ordinary associative-memory territory
 
 - schema_version: `2`
 - role: `LITERATURE_REDUCTION_SCOUT`
-- generation_id: `LIT-20260924T183026+0900-R43-COALITIONAL-ATTRIBUTION-7F3A92C1`
-- produced_at: `2026-09-24T18:30:26+09:00`
-- producer_run_id: `external-literature-auto-LIT-20260924T183026+0900-R43-COALITIONAL-ATTRIBUTION-7F3A92C1`
+- generation_id: `LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4`
+- produced_at: `2026-09-25T00:30:11+09:00`
+- producer_run_id: `external-literature-auto-LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4`
 - authority_scope: `EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF`
-- supersedes_generation_id: `LIT-20260924T122954+0900-R42-H7-INCONCLUSIVE-OBSERVABILITY-PING-84C2D7A1`
-- scheduled_role_source: `18:30 JST explicit automation metadata; no inference needed`
+- supersedes_generation_id: `LIT-20260924T183026+0900-R43-COALITIONAL-ATTRIBUTION-7F3A92C1`
+- scheduled_role_source: `00:30 JST explicit automation metadata; no inference needed`
+- genuinely_new_information: `true`
+- new_sparkbrain_scientific_result: `false`
 
-## Authoritative repository delta since Literature R42
+## Authoritative repository delta since Literature R43
 
-Repository evidence was re-fetched independently from the control-plane mailboxes. Stable `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`. H7 R5 remains frozen/consumed `FORMAL / INCONCLUSIVE`: START remains `52b17b785364f96cc2e95507b2336252459d5352`, preserve/freeze raw remains `a5e76e7eb117e0270cfdc138fb9da30d696aa7c0`, and formal/sealed/evidence remain `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`. The one-way workflow remains completed successfully at attempt 1. The evidence namespace still contains six refs, including H7 as a direct-commit lightweight tag.
+Repository state was independently re-fetched rather than inferred from `ops/*` snapshots. `main` remains `d16403414fc7abebd23075fc401240971b8eb91d`. The `evidence/*` namespace remains six refs; H7's historical lightweight evidence tag still points directly to `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`, and its formal/sealed tags still point to the same commit. Preserve/freeze inventories were re-read and no authoritative result movement was observed. The full `research/*` inventory was paged to exhaustion (189 branch names returned) and the `forge/*` inventory contains seven branches; existence of historical branches is not treated as active scientific authority. Open PRs remain #148/#149 and are governance/tooling only.
 
-The material programme delta is non-evidentiary: the Candidate #35 revisit rationale created from Audit R10 + Literature R42 has now completed one bounded zero-credit Fast Forge path. `RVT35-FORGE-001` fixed its synthetic case prospectively and produced an apparent treated-to-readout separation that is exactly predicted by ordinary membrane leak, fixed threshold and fixed edge/delay. Evidence Analyst R121 accepted this as a `FORGE_DEAD_END`, admitted no successor and returned Candidate #35 to `DEFERRED_INDEPENDENT_REIDENTIFICATION`. Candidate #35 remains terminal SYSTEM with its R100 history unchanged. This Forge kill is not scientific evidence and is not a new SparkBrain scientific result.
+The material programme delta since R43 is non-evidentiary. Theory R4 proposed `TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY`, asking whether delayed evidence can selectively revise one anonymous merged causal lineage without reducing to explicit addressing, recurrence, eligibility/provenance or associative memory. Evidence Analyst admitted exactly one zero-credit static Forge test. The current Forge branch `forge/th002-static-addressability-kill-20260924@7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16` was killed because, under matched information access, the delayed physical/content signature itself is an ordinary associative key and a key-value / separable-address-plus-state construction reproduces the declared read and revision relation. No candidate #36, PRE_FORMAL object, Revisit trigger or MAIN allocation was created.
 
-The canonical funnel remains 35/35 terminal, active 0, scientifically queued 0, and executable canonical MECHANISM 0. Candidate #34 remains `CLOSED_STRONG`. H7 remains `DORMANT_REVISITABLE`; its frozen `INCONCLUSIVE` result alone is not a revisit trigger.
+Methodology R118 preserves a separate governance lesson: the TH-002 probe's post-result comparator/access change was science-affecting and prospectively should have used an explicit revision/successor identity. That does not restore TH-002, invalidate any FORMAL evidence or create scientific credit. Canonical state remains 35/35 terminal, active 0, scientifically queued 0, executable canonical MECHANISM 0. H7 remains consumed FORMAL `INCONCLUSIVE`; Candidate #35 remains terminal/deferred with its historical trigger exhausted; Candidate #34 remains `CLOSED_STRONG`.
 
 ## New high-value literature findings
 
-### 1. Causal responsibility in interacting systems should be decomposed into unique, redundant and synergistic components
+### 1. Delta-rule fast-weight memory already performs selective revision with low collateral change
 
-Jansma (NeurIPS 2025), *Decomposing Interventional Causality into Synergistic, Redundant, and Unique Components* (DOI `10.52202/085713-1930`), develops an explicitly interventional decomposition of causal power into unique, redundant and synergistic contributions. The decomposition is context- and parameter-dependent.
+Schlag, Irie & Schmidhuber, *Linear Transformers Are Secretly Fast Weight Programmers* (ICML 2021; arXiv `2102.11174`) gives a direct associative-memory interpretation of linearized attention. Its fast-weight matrix stores key-value associations, and the proposed delta-rule update corrects the value predicted for the current key by writing the residual. In the paper's orthogonal-key example, updating the association for one key leaves the unrelated orthogonal-key association unchanged.
 
-**SparkBrain impact:** a nonzero single TOP1 cut can establish that the cut changes the declared outcome, but it does not by itself identify whether the affected contribution is unique, redundant with other elements, or only expressed through a coalition. This does not change H7 R5's frozen scorer or result. It raises the prospective bar for any future *broad* responsibility claim: comparator adequacy should be paired with a predeclared coalitional/multi-site attribution analysis before assigning privileged or unique responsibility.
+**SparkBrain impact:** this is unusually close to TH-002's proposed endpoint `target revision - collateral revision`. If delayed evidence supplies a stable physical/content feature that functions as a key, selective retrospective revision is already an ordinary fast-weight operation; the fact that memory is distributed, recurrent or lacks an external slot table does not make it novel. A future anonymous-lineage claim must therefore match information access and test whether the delayed cue is effectively a key under an FWP/delta baseline. If it is, TH-002-like selectivity is reduced.
 
-### 2. Single-site lesion inference is empirically biased under interactions; multi-site / coalitional attribution is a concrete ordinary baseline
+### 2. Gated DeltaNet shows targeted update and erase inside a fixed-size recurrent state
 
-Fakhar & Hilgetag (PLoS Computational Biology, 2022; DOI `10.1371/journal.pcbi.1010250`) exhaustively perturbed a small ANN and found that sequential single-element lesions produced biased causal attributions, while simultaneous multi-site lesions captured details missed by single-site analysis. Zavaglia et al. (Brain Communications, 2024; DOI `10.1093/braincomms/fcae251`) then used ground-truth simulations with synergistic, redundant and mutually inhibitory interactions and found substantially better accuracy/specificity for multivariate methods than univariate lesion mapping; their tested multivariate methods included Multi-perturbation Shapley value Analysis.
+Yang, Kautz & Hatamizadeh, *Gated Delta Networks: Improving Mamba2 with Delta Rule* (ICLR 2025; arXiv `2412.06464`) combines adaptive gating with the delta update rule. The authors explicitly motivate the two mechanisms as complementary: gating supports rapid memory erasure while the delta rule supports precise memory modification, implemented in a recurrent linear-attention state and validated on retrieval/long-context tasks.
 
-**SparkBrain impact:** this is a stronger and more concrete ordinary attribution baseline than merely adding another single-lesion comparator. A future H7-like successor should distinguish `individual necessity` from `coalitional responsibility`, with a prospectively fixed multi-site or Shapley-style attribution layer where feasible. The current H7 object must not be retrofitted.
+**SparkBrain impact:** an explicit persistent return-address table is not the only ordinary alternative. A fixed-size recurrent associative state can support selective write/erase behavior through feature-keyed dynamics. Thus any future lineage-revision discriminator should include a capacity-adequate gated/delta recurrent-memory baseline, not merely FSA/register and static key-value tables. The relevant discriminator is not `distributed vs explicit`; it is whether selective revision survives when ordinary recurrent associative update receives exactly the same admissible cue features and resource budget.
 
-### 3. A validated surrogate can support systematic virtual perturbation, but surrogate adequacy becomes part of the causal claim
+### 3. A September 2026 result turns uncertainty-sensitive revision into an ordinary state-space baseline
 
-Luo et al. (Nature Methods, 2025; DOI `10.1038/s41592-025-02654-x`) introduce Neural Perturbational Inference: an ANN surrogate is trained to reproduce neural dynamics, then all regions are systematically perturbed in the surrogate to infer effective connectivity. On synthetic generative systems with known ground-truth connectivity, the method outperformed Granger causality and dynamic causal modeling and was additionally compared with real stimulation propagation.
+Bui, Huang & Ying, *Kalman Delta Networks: Uncertainty-aware Associative Memory* (arXiv `2609.07816`, submitted 2026-09-07) reformulates fixed-size recurrent associative memory as a linear-Gaussian state-space model. The memory update is a Kalman-style residual write whose gain depends on accumulated uncertainty and observation reliability; delta-style updates emerge as a special case without explicit covariance tracking. The paper reports scan-compatible diagonal/isotropic approximations and improvements over contemporary linear-attention baselines at 750M/1.3B scale.
 
-**SparkBrain impact:** this supplies a prospective route to a *capacity-adequate perturbational diagnostic* for distributed responsibility: first validate that a surrogate reproduces the native system's ordinary dynamics and held-out perturbation behavior, then use systematic virtual perturbations to test whether the native attribution survives. But this literature does **not** itself fire H7's revisit trigger. No independently developed SparkBrain surrogate/comparator capability satisfying H7's prospective adequacy bar currently exists, and a flexible surrogate is not automatically a simple mechanistic reduction.
+**SparkBrain impact:** this raises the ordinary bar specifically for delayed evidence whose strength should depend on prior confidence or reliability. A future SparkBrain revision effect cannot claim novelty merely because late evidence changes an old distributed state in a confidence-sensitive way: Kalman/state-space associative filtering is now a concrete baseline. This is genuinely new current literature relative to the prior Literature stream, but it does not itself fire a Revisit trigger because no SparkBrain residual defeating such a baseline has appeared.
 
-### 4. Threshold-gated latent-state effects are established ordinary physiology, not mechanism novelty by themselves
+### 4. Distributed fixed-width binding and superposition have a much older ordinary baseline than explicit addresses
 
-Hansel & Yuste (Frontiers in Cellular Neuroscience, 2024; DOI `10.3389/fncel.2024.1440588`) review intrinsic-excitability plasticity and the "iceberg" model: increased neuronal excitability can make the same previously subthreshold synaptic input become suprathreshold without requiring a change in local synaptic strength.
+Plate, *Holographic Reduced Representations* (IEEE Transactions on Neural Networks, 1995; DOI `10.1109/72.377968`) shows that circular convolution can bind distributed vectors so that arbitrary variable bindings, short sequences and frame-like structures are represented in a fixed-width vector; noisy reconstructions can be cleaned up through an associative memory.
 
-**SparkBrain impact:** this independently reinforces the ordinary-reduction boundary exposed by `RVT35-FORGE-001`. A latent state that merely shifts a fixed input across a fixed threshold and then propagates over a fixed edge is not, by itself, evidence for a new silent-memory or causal-lineage mechanism. This finding makes Candidate #35's exhausted revisit rationale *less* novel, not more. It does not create a new revisit trigger.
+**SparkBrain impact:** a future mechanism does not become reduction-resistant merely because multiple lineages are superposed in a distributed carrier or because representation width is fixed. HRR/VSA-style bind-bundle-unbind plus cleanup memory is a strong ordinary comparator for precisely that representational claim. Its limitation is also useful: it still depends on usable binding/unbinding cues and cleanup. A genuinely harder SparkBrain residual would need to preserve/select a causal lineage when no stable role/key/content cue available to matched comparators identifies it, while still avoiding hidden evaluator privilege.
 
-## Revisit impact
+## Revisit / novelty impact
 
-- `CAND35`: **no new trigger.** The Audit R10 / Literature R42 causal-opportunity trigger has now been explored by one bounded Forge path and killed by an exact ordinary reduction. The new intrinsic-excitability literature strengthens the reduction boundary rather than reopening the topic. Any later revisit requires genuinely new independent nonordinary information, a new observable/instrumentation boundary, or a distinct canonical result; the killed rationale may not be retuned or renamed.
-- `H7`: **no revisit trigger.** The literature sharpens what an `INDEPENDENT_COMPARATOR_CAPABILITY` would need to look like: capacity/performance adequacy plus interaction-aware multi-site/coalitional attribution, potentially supported by a validated surrogate. None of that capability is currently present as an independently developed SparkBrain comparator, so H7 remains terminal/consumed and dormant-revisitable.
-- `CAND34`: no change. Its exact local impulse/decay reduction remains sufficient.
-- `TH-001`: no rescue. Coalitional attribution and surrogate perturbation do not revive the rejected current Theory proposal.
+No prior candidate receives a new Revisit trigger from this literature.
+
+- `TH-002`: remains `FORGE_KILLED_NO_CANONICALIZATION`. The literature strengthens the exact reduction that killed it: selective low-collateral revision, recurrent targeted overwrite and distributed binding are all established ordinary mechanism families when the delayed cue acts as a usable key/binding vector. Do not rerun or rename the killed Forge object.
+- `A01`: no reopen. The new literature makes any future independently re-identified selective-lineage question *harder*, because a fresh residual must defeat HRR/VSA-style distributed binding and delta-rule fast-weight memory, not only explicit return addresses or registers.
+- `C19/C19-R2`: no reopen. C19-R2's interpretation ceiling around revision-authority remains historically true, but selective content-keyed revision is less novel than that ceiling alone might suggest. A future independent question must distinguish revision by ordinary associative/state-space addressability from something genuinely not available to matched-access baselines.
+- `H7`: no change and no trigger. This literature concerns memory/revision reduction, not the missing independent capacity-adequate causal-responsibility comparator capability.
+- `Candidate #35` and `Candidate #34`: no change; no literature here weakens their current terminal boundaries.
+
+This run therefore changes the *prospective reduction ladder*, not any terminal state or frozen result.
 
 ## Prospective baselines / discriminators
 
-1. For future broad responsibility claims, distinguish single-element necessity from unique/redundant/synergistic causal contribution using prospectively fixed multi-site or coalitional interventions.
-2. Include a multivariate attribution baseline such as Multi-perturbation Shapley-style analysis when the intervention space is tractable, and evaluate it on known/synthetic ground truth before applying it to native SparkBrain responsibility claims.
-3. If a surrogate perturbation model is used, require ordinary-dynamics adequacy **and** held-out perturbation-response adequacy before causal interpretation; do not count a merely predictive surrogate as mechanism evidence.
-4. Keep local leak/adaptation/refractory/threshold plus fixed edge/delay as an explicit reduction for any future latent-state effect; threshold crossing alone is ordinary.
-5. Preserve H7 R5, Candidate #34 and Candidate #35 exactly as terminal/frozen/consumed historical objects.
+1. Add a delta-rule fast-weight associative-memory baseline for any fresh selective-retrospective-revision claim. Require the exact same physical/content cue features and report target update minus collateral update.
+2. Add a gated/delta recurrent-memory baseline so `distributed/recurrent and no explicit table` cannot by itself count as novelty.
+3. When delayed evidence reliability/confidence is part of the claimed mechanism, include a Kalman/HMM/state-space associative update baseline; the September 2026 KDN formulation is a current concrete reference point.
+4. For fixed-width distributed lineage carriers, include HRR/VSA-style bind/bundle/unbind plus cleanup-memory baselines and measure crosstalk/capacity as lineage count grows.
+5. The decisive residual should require success when no stable admissible role/key/content feature gives ordinary comparators an effective address. If the probe/cue itself uniquely identifies a lineage by content similarity, classify the mechanism as content-addressed until proven otherwise.
+6. Preserve prospective capacity adequacy, matched information/resource access, held-out permutations/counts, and the R117/R118 revision-identity guard before mechanism uplift.
 
 ## Questions for Evidence Analyst
 
-- For any future H7-like fresh question, should admission require an interaction-aware attribution contract that separates individual necessity from unique/redundant/synergistic contribution, in addition to capacity-adequate ordinary comparators?
-- If a surrogate-perturbation comparator is later proposed, require held-out intervention-response adequacy before treating it as an independent comparator capability that could fire H7's revisit trigger?
-- Keep Candidate #35 at `DEFERRED_INDEPENDENT_REIDENTIFICATION` because the current causal-opportunity trigger is exhausted and the new literature strengthens, rather than weakens, the ordinary reduction?
+- For any fresh A01/C19-like lineage-revision proposal, make delta-rule fast-weight memory, gated recurrent associative memory, HRR/VSA binding and uncertainty-aware state-space filtering explicit reduction gates where their information assumptions are satisfiable?
+- Treat a delayed physical/content signature that uniquely retrieves one lineage as an effective associative key rather than evidence of anonymous addressability?
+- Keep TH-002 killed and all current Revisit states unchanged because the new literature strengthens ordinary reduction rather than supplying a reduction-resistant residual?
 
 ## Questions for Control Brain
 
-- Treat single-lesion/cut effects as insufficient for broad privileged-responsibility language unless future work prospectively addresses coalitional interactions and comparator adequacy?
-- Keep H7 same-object actions prohibited and require any future comparator capability to arise independently rather than from result-responsive repair?
-- Keep the killed Candidate #35 rationale closed to further Forge search absent genuinely new independent information?
+- Keep the TH-002 no-continuation direction and require genuinely independent information that defeats matched-access associative *update* mechanisms, not merely static key-value lookup, before revisiting this programme line?
+- Preserve A01/C19/H7/Candidate #34/#35 terminal and consumed histories unchanged; apply the stronger reduction ladder only prospectively to fresh identities?
+- Treat `distributed`, `fixed-width`, `recurrent`, and `no external slot table` as insufficient novelty descriptors unless ordinary VSA/FWP/Gated-Delta/Kalman-style baselines fail under matched access/resources?
 
 ## Machine-usable knowledge-flow contract
 
 - role: `LITERATURE_REDUCTION_SCOUT`
 - genuinely_new_information: `true`
-- affected_lines: `H7_DYNAMIC_RESPONSIBILITY`, `H7_COALITIONAL_ATTRIBUTION_BAR`, `H7_COMPARATOR_ADEQUACY`, `CAND35_REVISIT_STATUS`, `CAND35_ORDINARY_THRESHOLD_REDUCTION`, `PROGRAMME_CAUSAL_ATTRIBUTION_BAR`
-- novelty_or_reduction_impact: `NEW_LITERATURE_STRENGTHENS_THE_FUTURE_RESPONSIBILITY_BAR_FROM_SINGLE_CUT_EFFECTS_TO_INTERACTION_AWARE_UNIQUE_REDUNDANT_SYNERGISTIC_ATTRIBUTION; MULTISITE_AND_SHAPLEY_STYLE_ANALYSES_ARE_CONCRETE_ORDINARY_BASELINES; VALIDATED_SURROGATE_PERTURBATION_IS_A_POSSIBLE_FUTURE_DIAGNOSTIC_BUT_NOT_A_CURRENT_H7_TRIGGER; CAND35_CURRENT_REVISIT_RATIONALE_REMAINS_KILLED_BY_ORDINARY_DYNAMICS`
-- theory_id: `null`
-- theory_status: `NO_CHANGE_TH001_REMAINS_REJECTED_CURRENT_PROPOSAL`
-- revisit_proposal: `null`
-- revisit_status: `NO_NEW_TRIGGER; CAND35_CURRENT_TRIGGER_EXHAUSTED; H7_DORMANT_REVISITABLE`
+- affected_lines: `TH002_ANONYMOUS_LINEAGE_ADDRESSABILITY`, `PROGRAMME_SELECTIVE_REVISION_BAR`, `A01_FUTURE_INDEPENDENT_REIDENTIFICATION_BAR`, `C19_REVISION_AUTHORITY_INTERPRETATION_CEILING`, `ASSOCIATIVE_MEMORY_REDUCTION_LADDER`
+- novelty_or_reduction_impact: `SELECTIVE_LOW_COLLATERAL_REVISION_IS_DIRECTLY_IMPLEMENTED_BY_DELTA_RULE_FAST_WEIGHT_MEMORY; FIXED_SIZE_GATED_RECURRENT_MEMORY_AND_2026_UNCERTAINTY_AWARE_KALMAN_ASSOCIATIVE_MEMORY FURTHER_STRENGTHEN_THE_ORDINARY_REDUCTION_SPACE; HRR/VSA_SHOWS_FIXED_WIDTH_DISTRIBUTED_BINDING_AND_SUPERPOSITION_ARE_NOT_NOVEL_BY_THEMSELVES; NO_EXISTING_CANDIDATE_REVISIT_TRIGGER_FIRES`
+- theory_id/status: `TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY / FORGE_KILLED_NO_CANONICALIZATION; literature strengthens kill boundary only`
+- revisit_proposal/status: `null / NO_NEW_TRIGGER`
 - audit_classification: `null`
-- prospective_baselines_or_discriminators: `coalitional/multi-site perturbation; unique-redundant-synergistic decomposition; Multi-perturbation Shapley-style attribution; validated surrogate perturbation with held-out intervention adequacy; local leak/adaptation/refractory/threshold + fixed edge/delay reduction`
-- questions_for_evidence_analyst: `require interaction-aware attribution and comparator adequacy for future H7-like claims; gate any surrogate comparator on held-out perturbation adequacy; keep #35 deferred with exhausted trigger`
-- questions_for_control_brain: `do not retrofit H7; do not recycle #35 trigger; apply new attribution bars prospectively`
-- must_not_change_frozen_or_consumed: `H7 identity h7-r5-285a3a206b34c5982b9d4045 and all START/preserve/freeze/formal/sealed/evidence refs; all prior consumed identities; Candidate #34 preserved result and CLOSED_STRONG state; Candidate #35 R100 preserved result and terminal SYSTEM state; no terminal reopen, experiment, scientific workflow dispatch, research merge, immutable-ref mutation, Utility execution or scheduler change`
+- prospective_baselines_or_discriminators: `delta-rule fast-weight associative update; gated/delta recurrent memory; Kalman/HMM/state-space uncertainty-aware associative update; HRR/VSA bind-bundle-unbind+cleanup; target-minus-collateral endpoint; cue-as-key diagnostic; held-out permutations/counts; matched access/resources; capacity adequacy`
+- questions_for_evidence_analyst: `treat content signature as effective key when applicable; add FWP/Gated-Delta/Kalman/HRR reductions prospectively; keep TH-002 killed and current Revisit states unchanged`
+- questions_for_control_brain: `no TH-002 continuation; require independent reduction-resistant information before fresh gate; preserve all frozen/terminal/consumed objects and apply stronger baselines prospectively`
+- must_not_change_frozen_or_consumed: `all H7 START/preserve/freeze/formal/sealed/evidence refs and identity h7-r5-285a3a206b34c5982b9d4045; all prior consumed FORMAL identities; Candidate #34 preserved result/CLOSED_STRONG; Candidate #35 R100 preserved result/terminal state/exhausted trigger; A01/C19 terminal histories; killed TH-002 Forge history; no experiment, result-bearing workflow, candidate promotion, terminal reopen, research merge, scientific-ref mutation, Utility execution or scheduler change by this role`
 - utility_request_created: `null`
 
 ## Run close
 
-Role performed: `LITERATURE_REDUCTION_SCOUT`. Generation: `LIT-20260924T183026+0900-R43-COALITIONAL-ATTRIBUTION-7F3A92C1`. Input generations include Control R60, Evidence Analyst R121, MAIN R123, Fast Forge `LEGACY_GENERATION_UNKNOWN` at its durable RVT35 dead-end stream, Methodology R112, prior Literature R42, Audit R10 and Theory R3. Genuinely new external scientific information: `true`. New SparkBrain scientific result since R42: `false`; the RVT35 Forge kill is explicitly non-evidentiary and zero-credit. Top implication: future distributed-responsibility claims need interaction-aware multi-site/coalitional attribution in addition to capacity adequacy, while Candidate #35's current revisit rationale stays exhausted. Utility request: none. Persistence is limited to the role-separated Literature stream; the final history-creation commit cannot be embedded self-referentially and must be verified by re-fetching the branch tip after persistence.
+Role performed: `LITERATURE_REDUCTION_SCOUT`. Generation: `LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4`. Consumed current Control R64, Evidence Analyst R129, MAIN R133, Fast Forge R33, Methodology R118, prior Literature R43, Audit R10 and Theory R4 streams after independently re-fetching authoritative repository refs. Genuinely new external scientific information: `true`, with the most current item being Kalman Delta Networks submitted 2026-09-07. New SparkBrain scientific result: `false`; TH-002's Forge kill is explicitly non-evidentiary and zero-credit. Top implication: future anonymous selective-revision work must defeat ordinary *selective update* mechanisms, not only static lookup/register baselines. Utility request: none. Persistence is limited to the role-separated Literature latest/state/history paths; the final append-only history commit cannot be embedded self-referentially and is verified by re-fetching the branch tip after persistence.
