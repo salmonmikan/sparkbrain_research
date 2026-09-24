@@ -741,3 +741,87 @@ Control Brain should independently review the directive through the normal Human
 
 The desired outcome of this directive's first stage is an informed scheduler/control-plane decision about whether and how to implement Fast Forge / Slow Science.
 
+
+
+## HUMAN-20260924-009 — Re-validate unverified external research advisory for stalled main-line clues
+
+Human status: `OPEN`  
+Created: `2026-09-24 JST`
+
+### Intent
+
+The human side has received an **external research advisory** proposing a possible next-generation direction for SparkBrain, but has **not independently verified the advisory's factual claims, repository-state assumptions, numerical claims, branch-status claims, or recommended priorities**.
+
+The programme should therefore treat the advisory only as an **unverified external lead**. Re-check it against the current repository, current branches, authoritative evidence, later successor work, current literature, and current control-plane state before using any part of it.
+
+The purpose is not to adopt the advisory's roadmap. The purpose is to see whether independently surviving parts can provide a useful clue for the currently stalled primary research line.
+
+### External advisory themes to re-check
+
+The advisory's main proposed framing is **Reduction-Resistant Causal Cognition**: rather than adding more architecture for its own sake, search for a mechanism that remains scientifically interesting after strong ordinary reductions such as finite-state/register models, fading-memory/reservoir models, confidence/abstention policies, explicit provenance/eligibility memory, ordinary recurrence, and other simple alternatives.
+
+It specifically suggests re-examining, only after current-state verification:
+
+- anonymous multi-lineage causal revision;
+- distributed binding without privileged entity IDs / fixed identity registers;
+- preservation of multiple unresolved hypotheses followed by selective later resolution;
+- selective historical credit assignment after histories merge;
+- treatment-specific causal intervention with low collateral impairment;
+- scaling behavior only after functional distinctness survives ordinary reductions;
+- whether prior negative/reduced results can serve as a comparator floor for a genuinely fresh question.
+
+The advisory also discusses historical lines including C19/C19-R2, PD01, NI01, H5, A01 P2/P3/P4 and Family-B, CX01, RV01, and RV02. Those descriptions must be treated as claims to verify, not as accepted current state.
+
+### Required independent re-validation
+
+Before this directive influences research direction, the normal research/control system should independently determine:
+
+1. Which factual premises in the advisory are still current, which are only historically true, and which are stale, contradicted, incomplete, or already superseded.
+2. Whether later branches/results already tested, reduced, invalidated, or materially changed the proposed directions.
+3. Whether the suggested core question is genuinely distinct from already terminal objects rather than a renamed or post-outcome rescue successor.
+4. Whether strong ordinary baselines can already explain the proposed phenomenon.
+5. Whether any surviving question has a reachable observable/intervention, prospective falsifier, useful negative outcome, and real information value.
+6. Whether the surviving idea actually helps the stalled primary research line rather than merely creating activity.
+
+### Desired routing if something survives
+
+If independent re-validation leaves a genuinely useful clue, route it through the existing scientific pipeline rather than treating this directive as execution authority.
+
+Depending on what survives, the appropriate next step may be:
+
+- Theory Synthesis for programme-level reconstruction;
+- Revisit review for a materially changed old topic;
+- Fast Forge for a cheap adversarial probe;
+- Evidence Analyst for fresh canonical admission;
+- or no action if the advisory is reduced, stale, or unhelpful.
+
+Any new canonical research object must use a fresh candidate identity and fresh prospective contract, with zero inherited confirmatory credit from this advisory.
+
+### Explicit non-goals
+
+This directive does **not** authorize:
+
+- accepting the advisory's factual claims without checking them;
+- treating the advisory as scientific evidence;
+- reopening terminal/consumed candidates;
+- rerunning, retuning, or rescoring consumed FORMAL identities;
+- promoting A01 Family-B or any named line merely because the advisory recommends it;
+- weakening comparator fairness, held-out integrity, one-way execution rules, or evidence standards;
+- manufacturing a new candidate simply to eliminate MAIN idle time;
+- treating the proposed NG01/NG02/NG03/NG04 labels or roadmap as canonical programme structure without independent review.
+
+### Human preference
+
+Use the advisory **aggressively as a clue, conservatively as a claim**.
+
+The desired behavior is:
+
+> verify first; keep only what survives; use surviving material to search for a real way out of the stalled main research line.
+
+If the advisory does not survive current evidence and ordinary reduction, discard it cleanly rather than repeatedly recycling it.
+
+### Required independent review
+
+This is a human-originated external-advisory routing request, not scientific evidence and not automatic execution authority.
+
+Control Brain should independently classify this directive as `ACCEPT`, `MODIFY`, `DEFER`, or `REJECT`. If accepted or modified, downstream scientific roles should re-derive any research question from verified current evidence rather than from the advisory's authority.
