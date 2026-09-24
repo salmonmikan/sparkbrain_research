@@ -1,34 +1,38 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260924T130128+0900-R115-H7-FORMAL-INCONCLUSIVE-CONSUMED-ALL35-TERMINAL",
-  "generated_at": "2026-09-24T13:01:28+09:00",
-  "supersedes_generation_id": "EVA-20260924T115823+0900-R114-H7-POSTBRIDGE-GO-ONCE-CAND35-TRIGGER",
+  "generation_id": "EVA-20260924T135836+0900-R116-POSTFORMAL-NOOP-PROVENANCE-ADJUDICATED-CAND35-TRIGGER-HELD",
+  "generated_at": "2026-09-24T13:58:36+09:00",
+  "supersedes_generation_id": "EVA-20260924T130128+0900-R115-H7-FORMAL-INCONCLUSIVE-CONSUMED-ALL35-TERMINAL",
   "scientific_execution_mode": "READ_ONLY",
   "material_change": true,
-  "new_scientific_result": true,
-  "material_change_reason": "H7_R114_GO_ONCE_WAS_CONSUMED_EXACTLY_ONCE; START_RAW_PRESERVE_AND_FROZEN_SCORE_NOW_EXIST; OFFICIAL_DECISION_INCONCLUSIVE; H7_CURRENT_OBJECT_TERMINALIZED_AS_CONSUMED_ONE_WAY; H7_AUTHORITATIVE_TAG_REPRESENTATION_IS_LIGHTWEIGHT_AND_NONCONFORMING_TO_ANNOTATED_TAG_POLICY; CAND35_REVISIT_TRIGGER_RETAINED",
+  "material_change_scope": "CONTROL_PLANE_GOVERNANCE_AND_REVISIT_HANDOFF_ONLY",
+  "new_scientific_result": false,
+  "material_change_reason": "REPOSITORY_STEWARD_G15_INDEPENDENTLY_ADJUDICATED_H7_LIGHTWEIGHT_TAG_PROVENANCE_MISMATCH_AS_NONDESTRUCTIVE_APPEND_ONLY_GOVERNANCE_ISSUE; METHODOLOGY_R107_RECONFIRMED_ONE_WAY_TERMINALITY_AND_REQUESTED_TRIGGER_HANDOFF; CAND35_TRIGGER_REVIEW_COMPLETED_WITH_NO_REVISIT_PROPOSAL_TO_CLASSIFY",
   "refs": {
     "main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "prior_evidence_analyst_commit": "1824290d67fdf06494c3849fa687997ec29137cf",
+    "prior_evidence_analyst_commit": "3341acce9c504f3163e34e12152163c845758ad2",
     "control": "259b3db8f3f120475bc7e3a1b561383cc4c3a451",
     "control_generation": "CTRL-20260924T124816+0900-R56-H7-FORMAL-INCONCLUSIVE-TAG-ADJUDICATION",
-    "main_relay_mailbox_tip": "b8981186827ba333ad9645715313a11f9756f73d",
-    "main_generation": "MAIN-20260924T124623+0900-RELAY-H7-R114-FORMAL-CONSUMED-AWAITING-ANALYST",
-    "methodology": "233929c4e01d6603a70fbce7528b3de85f25d829",
-    "methodology_generation": "METHCAL-20260924T124114+0900-R106-C84E6B31",
+    "main_latest_durable_commit": "60137c4315c1231abcce5e94082ee3c223682efd",
+    "main_generation": "MAIN_PRIMARY_R115_TERMINAL_REPORT",
+    "methodology": "bc1e6829253a6126712d17d8e8e895789a56c977",
+    "methodology_generation": "METHCAL-20260924T132112+0900-R107-5B7F2D9A",
     "external_research_audit": "7a477bfb872d915fa1634b5cf54a2be110f92e7e",
     "literature_latest_blob": "fdb7c41e83cf7ef2e8d8d44595887553157956ce",
     "literature_generation": "LIT-20260924T122954+0900-R42-H7-INCONCLUSIVE-OBSERVABILITY-PING-84C2D7A1",
     "audit_latest_blob": "a89738c837b2e5bc2eab94adb1722bbb6daeb673",
     "audit_generation": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
     "theory_latest_blob": "6aa4fc2302336e887cf67070513948312fff0c98",
+    "theory_state_blob": "09e6e4a2e93d41726651b4c132dceacd84ec958e",
     "theory_generation": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
-    "repository_steward": "c7400b417b9082318108beb1795148d97688265e",
-    "utility": "5ddb0cb6f722871edf0f3df1500bd3081f583e27",
-    "utility_generation": "UTILITY-20260924T122600+0900-R114-H7-ACTIVE-FORMAL-COLLISION-GUARD-3E7B9A21",
+    "repository_steward": "72fd00050786e41f1accae6a36efd9752183cd36",
+    "repository_steward_generation": "STEWARD-20260924T135000+0900-G15-9F3C6A21",
+    "utility": "bbd96bb233f59171736389be8fdd3f29cc1e09dc",
+    "utility_generation": "UTILITY-20260924T132400+0900-R115-H7-POSTFORMAL-TERMINAL-RECONCILE-7C4A2F91",
+    "fast_forge_latest_blob": "478287b6a1d9d196023a2445ea64d4087518c166",
+    "fast_forge_generation": "FORGE-20260924T123200+0900-NOOP-R114-H7-FORMAL-ACTIVE-GATED",
     "h7_science": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "h7_controller": "af3aa97574c365e3e918c3d4d012faa4886760d0",
-    "h7_bridge": "977e0241f390f6504ebfa4a27a389a487751038c",
     "h7_formal_workflow_run_id": 35951118916,
     "h7_formal_workflow_status": "completed",
     "h7_formal_workflow_conclusion": "success",
@@ -51,6 +55,7 @@
     "h7_immutable_refs": [],
     "policy_conforming_preexisting_evidence_tag_count": 5,
     "repository_evidence_ref_count_including_h7": 6,
+    "authoritative_namespace_tag_ref_count_total": 9,
     "open_prs": [148, 149]
   },
   "scientific_binding": {
@@ -59,36 +64,17 @@
     "controller_sha": "af3aa97574c365e3e918c3d4d012faa4886760d0",
     "scorer_blob": "dd189f48b1a54bf08921c63d0f0ba3dbfc5c56a9",
     "preserver_blob": "37c9c46febba1baba5580ed1aa803dcc483bef66",
-    "runtime_lock_sha256": "d2053e13bad626b70e044b0da384f547b8e85718343b57d0ac653df01eec0583",
-    "runtime_manifest_sha256": "cf4fd0a568b501242ec65cacc8741d1a743a2f0a911873c77a8581a63c855223",
-    "runtime_versions_sha256": "91fb0b9f7e7a18d855ba8e605bc4533fbf9793a595948ae4ff2dd55859c18575",
     "preserve_before_target_access": true,
     "raw_before_score": true,
     "same_identity_retry_allowed": false
   },
   "h7_formal_result": {
     "decision": "INCONCLUSIVE",
-    "contract_id": "H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1",
-    "evaluator_id": "H7-FORMAL-R1-EVALUATOR-SPEC-V1",
-    "bootstrap_confidence": 0.99375,
     "native_delta_accuracy": 0.008626302083333332,
     "native_delta_accuracy_interval": [0.002115885416666668, 0.01529947916666667],
     "native_mean_total_variation": 0.06728831508098665,
-    "capacity_adequate": {
-      "dense": false,
-      "eligibility": false,
-      "fsa": false
-    },
-    "effect_reproduced": {
-      "dense": false,
-      "eligibility": false,
-      "fsa": false
-    },
-    "effect_conclusively_smaller": {
-      "dense": false,
-      "eligibility": false,
-      "fsa": false
-    },
+    "capacity_adequate": {"dense": false, "eligibility": false, "fsa": false},
+    "effect_reproduced": {"dense": false, "eligibility": false, "fsa": false},
     "interpretation_ceiling": "NONZERO_NATIVE_DECLARED_SURFACE_EFFECT_OBSERVED; PRIVILEGED_OR_UNIQUE_NATIVE_RESPONSIBILITY_MECHANISM_NOT_ESTABLISHED_BECAUSE_ALL_DECLARED_COMPARATOR_FAMILIES_ARE_CAPACITY_INADEQUATE",
     "rescore_or_reinterpret": "PROHIBITED"
   },
@@ -104,38 +90,26 @@
     "CONSUMED_ONE_WAY": 1,
     "effectively_executable_mechanism": 0,
     "consumed_identities": 8,
-    "new_consumption_since_prior_analyst": 1
+    "new_consumption_since_prior_analyst": 0
   },
   "H7": {
     "claim_ceiling": "MECHANISM",
     "stage": "FORMAL",
-    "preformal_eligible": true,
-    "preformal_readiness": "READY_HISTORICAL_PRESTART_ONLY",
-    "hold_class": null,
-    "hold_reason": null,
     "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
     "queue_state": "CLOSED",
     "development_phase": "CONSUMED_ONE_WAY",
     "development_revision": "R5_UNCHANGED",
     "official_decision": "INCONCLUSIVE",
-    "closure_reason": "FROZEN_FORMAL_INCONCLUSIVE_BECAUSE_ALL_DECLARED_ORDINARY_COMPARATOR_FAMILIES_WERE_CAPACITY_INADEQUATE_FOR_THE_PRIVILEGED_MECHANISM_DISCRIMINATOR; ONE_WAY_IDENTITY_CONSUMED",
     "same_identity_rerun_retune_rescore": "PROHIBITED",
     "post_outcome_same_object_repair": "PROHIBITED",
     "automatic_successor": "PROHIBITED",
     "revisit_status": "DORMANT_REVISITABLE",
-    "what_would_change_our_mind": "INDEPENDENTLY_DEVELOPED_CAPACITY_ADEQUATE_ORDINARY_COMPARATOR_OR_NEW_OBSERVABLE_INTERVENTION_OR_INDEPENDENT_PROGRAMME_RESULT_THEORY_REIDENTIFYING_A_DISTINCT_RESPONSIBILITY_QUESTION",
-    "revisit_blockers": [
-      "CURRENT_INCONCLUSIVE_OUTCOME_IS_NOT_BY_ITSELF_AN_INDEPENDENT_TRIGGER",
-      "NO_RESULT_RESPONSIVE_COMPARATOR_RETUNING",
-      "NO_IDENTITY_REUSE_OR_SAME_OBJECT_REPAIR"
-    ],
     "successor_candidates": []
   },
   "CAND34": {
     "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
     "claim_ceiling": "MECHANISM",
     "revisit_status": "CLOSED_STRONG",
-    "closure_reason": "PRESERVED_PRIMARY_RESPONSE_REDUCIBLE_TO_LOCAL_EDGE_WEIGHT_DELAY_AND_MEMBRANE_DECAY_WITH_MATCHED_NONTARGET_BEHAVIOR_AND_NO_DOWNSTREAM_TARGET_SPIKE",
     "successor_candidates": []
   },
   "CAND35": {
@@ -144,19 +118,18 @@
     "confirmatory_credit": 0,
     "revisit_status": "REVISIT_TRIGGERED",
     "closure_reason": "OLD_R100_RESULT_ESTABLISHES_ONLY_SAME_DECLARED_RESPONSE_SIGNATURE_ON_FROZEN_ARMS_NOT_GENERAL_NON_RECEPTOR_SUBTHRESHOLD_CAUSAL_IRRELEVANCE",
-    "closure_evidence": "PRESERVED_R100_FIVE_ARM_RESULT_PLUS_INDEPENDENT_AUDIT_R10_TREATMENT_READOUT_SUPPORT_AUDIT",
     "what_would_change_our_mind": "FRESH_PROSPECTIVE_SUCCESSOR_WITH_VERIFIED_TREATED_SUBSTRATE_TO_READOUT_CAUSAL_OPPORTUNITY_AND_SENSITIVE_DOWNSTREAM_OR_DIRECT_TREATED_STATE_OBSERVABLE_WITH_ORDINARY_REDUCTIONS",
     "revisit_blockers": [
       "NO_FRESH_REVISIT_PROPOSAL_OR_PROSPECTIVE_CONTRACT",
       "SAME_OBJECT_RERUN_RETUNE_RESCORE_PROHIBITED",
       "FRESH_SUCCESSOR_MUST_AVOID_POST_OUTCOME_RESCUE"
     ],
+    "last_revisit_reason": "INDEPENDENT_AUDIT_R10_CANDIDATE_SPECIFIC_TREATMENT_READOUT_CAUSAL_OPPORTUNITY_MISMATCH; LITERATURE_R42_SHARPENS_OBSERVABILITY_REQUIREMENT",
+    "related_new_information": ["AUDIT_R10", "LITERATURE_R42"],
     "successor_candidates": []
   },
   "revisit_ledger": {
     "bootstrap_complete": true,
-    "prior_34_classifications_carried_forward_unchanged_from": "EVA-20260924T115823+0900-R114-H7-POSTBRIDGE-GO-ONCE-CAND35-TRIGGER",
-    "new_terminal_added_this_generation": "H7",
     "terminal_candidates": 35,
     "CLOSED_STRONG": 1,
     "DORMANT_REVISITABLE": 20,
@@ -169,20 +142,22 @@
     "revisit_forge_kills": 0,
     "revisit_forge_survivors": 0,
     "fresh_successors": 0,
-    "rescue_rejects": 0
+    "rescue_rejects": 0,
+    "cand35_trigger_handoff_review": "TRIGGER_VALID_BUT_NO_REVISIT_PROPOSAL_OBJECT_EXISTS; DO_NOT_FABRICATE_A_PROPOSAL_DECISION_OR_EXECUTION_AUTHORITY"
   },
   "theory": {
     "latest_generation": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
+    "runs_observed": 2,
+    "proposals": 1,
+    "no_proposal_runs": 1,
     "new_proposals_for_this_analyst": 0,
     "TH001_current_proposal": "THEORY_REJECTED_ORDINARY_ADAPTATION_THRESHOLD_PLUS_FIXED_EDGE_DELAY",
     "canonicalizations": 0,
-    "forge_test_referrals_total": 2,
-    "forge_kills_total": 2,
     "forge_survivors_total": 0
   },
   "forge": {
     "latest_disposition": "NO_OP_NON_EVIDENTIARY_NONCANONICAL",
-    "runs_observed": 23,
+    "runs_observed": 24,
     "prototypes": 19,
     "dead_ends": 15,
     "interesting_objects": 1,
@@ -190,6 +165,10 @@
     "admissions": 0,
     "duplicate_or_rescue_rejects": 10,
     "ordinary_reduction_rejects": 15,
+    "theory_probes": 2,
+    "theory_kills": 2,
+    "theory_survivors": 0,
+    "revisit_probes": 0,
     "new_promotion_proposals_this_generation": 0,
     "new_interesting_objects_this_generation": 0
   },
@@ -197,10 +176,13 @@
     "scientific_result_frozen": true,
     "result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
     "representation_policy_conforming": false,
-    "defect": "H7_FREEZE_FORMAL_SEALED_EVIDENCE_REFS_ARE_LIGHTWEIGHT_DIRECT_COMMIT_TAGS_WHILE_STABLE_MAIN_POLICY_SPECIFIES_ANNOTATED_PROVENANCE_TAGS_WHEN_TOOLING_PERMITS",
+    "steward_adjudicated": true,
+    "steward_generation": "STEWARD-20260924T135000+0900-G15-9F3C6A21",
+    "defect": "H7_FREEZE_FORMAL_SEALED_EVIDENCE_REFS_ARE_LIGHTWEIGHT_DIRECT_COMMIT_TAGS_WHILE_DOCUMENTED_PROSPECTIVE_POLICY_PREFERS_ANNOTATED_PROVENANCE_TAGS",
     "science_invalidated": false,
     "existing_refs_may_be_mutated": false,
-    "permitted_remediation": "REPOSITORY_STEWARD_AUDIT_AND_APPEND_ONLY_SCIENCE_INVARIANT_PROVENANCE_BOOKKEEPING_POINTING_TO_EXACT_EXISTING_COMMITS_IF_PERMITTED",
+    "append_only_provenance_attestation_observed": false,
+    "permitted_remediation": "APPEND_ONLY_SCIENCE_INVARIANT_PROVENANCE_BOOKKEEPING_POINTING_TO_EXACT_EXISTING_COMMITS_IF_POLICY_PERMITS",
     "server_side_tag_namespace_protection_observed": false
   },
   "phenomenon_first": {
@@ -210,28 +192,31 @@
     "materialization_for_activity": "PROHIBITED"
   },
   "allocation": {
-    "MAIN": "NO_EXECUTABLE_CANONICAL_SCIENCE; H7 SAME_OBJECT_STOP; WAIT_FOR_FRESH_INDEPENDENT_CANONICAL_OR_REVISIT_ADMISSION",
-    "Forge": "INDEPENDENT_ROUGH_EXPLORATION_ONLY; NO_H7_RESCUE_OR_RESULT_AUTHORITY",
-    "Theory_Revisit": "NONCANONICAL_NONAUTHORITATIVE; NO_NEW_PROPOSAL",
+    "MAIN": "NO_EXECUTABLE_CANONICAL_SCIENCE; H7 SAME_OBJECT STOP; WAIT_FOR_FRESH_INDEPENDENT_CANONICAL_OR_REVISIT_ADMISSION",
+    "Forge": "INDEPENDENT_ROUGH_EXPLORATION_ONLY; NO_H7_OR_CAND35_RESCUE",
+    "Theory_Revisit": "NONCANONICAL_NON_EVIDENTIARY; NO_DIRECT_DISPATCH; NO_REVISIT_PROPOSAL_PRESENT",
     "Utility": "IDLE_NONAUTHORIZING",
-    "Repository_Steward": "AUDIT_H7_TAG_PROVENANCE_MISMATCH_IN_DESIGNATED_LANE_ONLY"
+    "phenomenon_first": "READ_ONLY_NO_TARGET_SHADOW"
   },
   "top3": [
-    "NO_EXECUTABLE_CANONICAL_ACTION",
-    "STOP_H7_SAME_OBJECT_RERUN_RETUNE_RESCORE_RETRY_REPAIR_OR_IDENTITY_REUSE",
-    "STOP_CAND35_OR_THEORY_FORGE_SHADOW_MATERIALIZATION_WITHOUT_FRESH_PROPOSAL_AND_GATE"
+    "STOP_H7_SAME_OBJECT_RERUN_RETUNE_RESCORE_RETRY_POSTOUTCOME_REPAIR_OR_RESULT_RESPONSIVE_COMPARATOR_TUNING",
+    "STOP_CAND35_REOPEN_OR_SUCCESSOR_FORGE_MATERIALIZATION_BEFORE_FRESH_REVISIT_PROPOSAL_AND_GATE",
+    "STOP_THEORY_FORGE_SHADOW_PROMOTION_TO_AVOID_EMPTY_QUEUE"
   ],
-  "hard_floor": {
-    "experiment_executed_by_this_analyst": false,
-    "result_bearing_workflow_dispatched_by_this_analyst": false,
-    "one_way_identity_created_or_consumed_by_this_analyst": false,
-    "research_pr_merged": false,
-    "immutable_or_scientific_ref_mutated": false,
-    "terminal_object_reopened": false,
-    "consumed_formal_rerun_retune_rescore": false,
-    "historical_pass_fail_rewritten": false,
-    "protected_evaluation_accessed": false,
-    "scheduler_definition_changed": false,
-    "utility_dispatched": false
+  "go_stop": {
+    "canonical_science": "STOP_NO_EXECUTABLE_CANONICAL_ACTION",
+    "h7_same_object": "STOP_PERMANENT_ONE_WAY_CONSUMED",
+    "cand35": "TRIGGER_RECORDED_NO_PROPOSAL_NO_EXECUTION_AUTHORITY",
+    "repository_provenance": "NONSCIENTIFIC_APPEND_ONLY_GOVERNANCE_FOLLOWUP_PERMITTED_IF_EXISTING_REFS_AND_BYTES_REMAIN_EXACT"
+  },
+  "hard_floor_confirmation": {
+    "experiments_executed": 0,
+    "result_bearing_workflows_dispatched": 0,
+    "one_way_identities_consumed": 0,
+    "research_prs_merged": 0,
+    "scientific_refs_mutated": 0,
+    "terminal_objects_reopened": 0,
+    "consumed_identities_rerun_retuned_rescored": 0,
+    "scheduler_definitions_changed": 0
   }
 }
