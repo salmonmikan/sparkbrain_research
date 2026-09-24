@@ -19,8 +19,8 @@
     "history_commit": "2c69eb0859bf74edd556074e18d562ab8aae9412",
     "state_initial_update_commit": "1e1f6bb9d4479b923103159005f83159b9e6b33a",
     "latest_update_commit": "0f5f3a137d395dea4b7e6d60ec0742f41b2c7746",
-    "lease_initial_update_commit": null,
-    "state_final_freshness_update_commit": null
+    "lease_initial_update_commit": "e7fa8d3753145e0749e4cff788c4ed0fae8baa13",
+    "state_final_freshness_update_commit": "75c824e40fffcaa9afb8343a527447fb985873f4"
   },
   "execution_mode": "PRIMARY",
   "status": "STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
@@ -33,6 +33,7 @@
   "analyst_head": "f03f3a07594bc944169daf373b5836cd87e83e26",
   "analyst_material_change": true,
   "analyst_new_scientific_result": false,
+  "analyst_freshness_stable_after_persistence_began": true,
   "candidate_id": null,
   "research_layer": null,
   "development_phase": null,
@@ -148,6 +149,7 @@
   },
   "integrity": {
     "analyst_generation_freshness_rechecked_before_persistence": true,
+    "analyst_generation_freshness_rechecked_after_persistence_began": true,
     "main_generation_and_lease_freshness_rechecked_before_persistence": true,
     "scientific_and_controller_refs_rechecked_before_persistence": true,
     "research_and_forge_collision_surfaces_rechecked": true,
