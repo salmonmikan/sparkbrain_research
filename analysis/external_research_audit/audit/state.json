@@ -1,119 +1,151 @@
 {
-  "timestamp": "2026-09-23T22:45:10+09:00",
+  "timestamp": "2026-09-24T10:31:04+09:00",
   "schema_version": 2,
-  "generation_id": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8",
-  "produced_at": "2026-09-23T22:45:10+09:00",
-  "producer_run_id": "external-audit-20260923T2230JST-R9-CAND34-LOCAL-IMPULSE",
+  "generation_id": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
+  "produced_at": "2026-09-24T10:31:04+09:00",
+  "producer_run_id": "external-audit-20260924T1030JST-R10-CAND35-TREATMENT-READOUT-SUPPORT",
   "authority_scope": "INDEPENDENT_AUDITOR_READ_ONLY_REPOSITORY_EVIDENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8",
+  "supersedes_generation_id": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8",
   "role": "INDEPENDENT_AUDITOR",
-  "schedule_slot": "22:30 JST",
+  "schedule_slot": "10:30 JST",
   "schedule_inference": false,
   "input_generations": {
-    "control_brain": {"generation_id": "CTRL-20260923T155900+0900-R43-A91C4E6B", "handoff_commit": "1592c3b52a8a545aa2503fd4618c0a761921ef1e"},
-    "evidence_analyst": {"generation_id": "EVA-20260923T210010+0900-R99-6F2B8C14", "handoff_commit": "59dbcdc2e3541e78a64f64e16fa0be5ef38efc26"},
-    "main_report": {"generation_id": "MAIN-20260923T215545+0900-RELAY-CAND35-PRESERVATION-R99-COMPLETED", "mailbox_tip_consumed": "51fc0a51c2f62a2faa146329a3257ae334c90d3c", "history_path": "reports/orchestrator/main/history/2026-09-23/2155-r99-relay-cand35-preservation-nonresult.md"},
-    "fast_forge_report": {"generation_id": "FORGE-20260923T223403+0900-V05-HOMEOSTASIS-WINDOWING-R99", "handoff_commit": "51fc0a51c2f62a2faa146329a3257ae334c90d3c", "history_create_commit": "6cccd9cfcbcd2e438f972d0b432a2d8f0970d696", "history_path": "reports/orchestrator/sub/history/2026-09-23/2234-r99-fast-forge-homeostasis-windowing-deadend.md"},
-    "literature": {"generation_id": "LIT-20260923T213000+0900-R39-OFFMANIFOLD-INTERVENTIONS-6D2A8C41", "handoff_commit": "741becd60d3e7dc8f97cedf1347c42c769092011"},
-    "prior_audit": {"generation_id": "AUD-20260923T103000+0900-R8-CAND34-OPPORTUNITY-7D4A21C8", "state_blob_sha": "71a2ebd2ffc859ee426067aa740cef6950a096af", "latest_blob_sha": "0afe416906713bc4b04eec34cd8a0035ecacbc1f"}
+    "control_brain": {
+      "generation_id": "CTRL-20260924T100300+0900-R53-MAIN-RESTORED-H7-DISPATCH-VERIFIED",
+      "handoff_commit": "8d17debc16e0866b207681553d7045687fafc113"
+    },
+    "evidence_analyst": {
+      "generation_id": "EVA-20260924T101155+0900-R111-H7-DISPATCH-BOUND-GO-ONCE",
+      "handoff_commit": "2f1409da8d47525cbb1058ce9c7eebf8ef80ef2c"
+    },
+    "main_report": {
+      "generation_id": "MAIN-20260924T101500+0900-PRIMARY-H7-R110-DISPATCH-REGISTRATION-AWAITING-ANALYST",
+      "mailbox_tip_consumed": "230e5348f4e3443e5c4323f149ce7889e8073112"
+    },
+    "fast_forge_report": {
+      "generation_id": "FORGE-20260924T093550+0900-NOOP-R110-R101-CONVERGED",
+      "mailbox_tip_consumed": "230e5348f4e3443e5c4323f149ce7889e8073112"
+    },
+    "methodology": {
+      "generation_id": "METHCAL-20260924T103400+0900-R103-C4F19B72",
+      "handoff_commit": "6ab4af4f6726890565e1b6945c5b66b8e922b825",
+      "phase_2_only": true
+    },
+    "literature": {
+      "generation_id": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71",
+      "handoff_commit": "eaab2a8fd08921aa91782825644a5f7e28df0173"
+    },
+    "theory": {
+      "generation_id": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
+      "handoff_commit": "eaab2a8fd08921aa91782825644a5f7e28df0173"
+    },
+    "prior_audit": {
+      "generation_id": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8",
+      "state_blob_sha": "d0aeb53ba6516674dd03b5138d22b218f2c1701c",
+      "latest_blob_sha": "e0c838636dfb36708df8d86dd9165a2a0acedada"
+    }
   },
   "phase_ordering_confirmation": {
     "blind_target_fixed_before_control_brain": true,
     "blind_target_fixed_before_evidence_analyst": true,
     "blind_target_fixed_before_main_fast_forge": true,
     "blind_target_fixed_before_literature": true,
+    "blind_target_fixed_before_theory_revisit": true,
+    "blind_target_fixed_before_methodology": true,
     "prior_audit_used_only_for_dedupe": true,
     "blind_target_changed_after_phase_2": false
   },
   "blind_target_selection": {
-    "target": "Newly preserved Candidate #34 D34-Q002 PRE_FORMAL development result: test whether the primary destination response is Assembly-temporal-route-specific or reducible to ordinary local edge transmission and membrane decay.",
+    "target": "Candidate #35 preserved R100 five-arm development result: test whether the identical null/sham response signature is causally informative for queue-free non-receptor potential/adaptation priming or is structurally insensitive because treatment and observable lack causal overlap/opportunity.",
     "authoritative_refs_inspected": [
-      "main@ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-      "research/main-cand34-assembly-route-preformal-r92-cycle4@43d0f25541a3c447d4c7156303647ae94f3119f4",
-      "research/main-cand34-assembly-route-preformal-r93-response@8ce961dc88fb52afa6399093fce1e3de7e982f2b",
-      "preserve/cand34-d34-q002-r94-raw-20260923@4d45f1135bcb607f1e663648cd8335333eb98de4",
-      "current evidence/formal/sealed/freeze plus legacy preserve/control inventories",
+      "main@d16403414fc7abebd23075fc401240971b8eb91d",
+      "Candidate #35 frozen scientific source@8ea6581544c642ad74f1a95955ab2c5f795afccc",
+      "Candidate #35 exact R100 implementation@b5f312683d50ed3a086348b62770fc8923c78046",
+      "raw/cand35-r100-onebatch-20260923@02aee83227554de884a86a9d1335deb01bf53571",
+      "preserve/cand35-r100-batch1-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
+      "current evidence/formal/sealed/freeze/preserve/control inventories",
       "prior audit history only for dedupe"
     ],
     "attack_hypotheses": [
-      "Primary destination membrane response may be exactly determined by configured edge weight and delay.",
-      "Matched non-target edges may show the same direct response, defeating Assembly specificity.",
-      "Destination units may never spike, leaving no downstream state transition.",
-      "Secondary Assembly response may be passive membrane tails.",
-      "The result may reduce to ordinary local impulse dynamics rather than an Assembly-specific temporal-route mechanism."
+      "Null treatment population may not overlap the directly cued and observed spiking population.",
+      "Spike/cascade/ignition signature may be insensitive or ceiling-limited to subthreshold treatment effects.",
+      "If no treated unit spikes, treated subthreshold state may have no causal opportunity to enter the declared response signature.",
+      "Delayed sham may expose latent state changes that the declared signature collapses.",
+      "The preserved negative may support only a narrow fixed-signature null, not general causal irrelevance."
     ],
-    "why_consequential": "D34-Q002 is the newly preserved response-bearing PRE_FORMAL result on a MECHANISM-track Candidate #34 surface and could otherwise be overinterpreted as mechanism evidence."
+    "why_consequential": "Candidate #35 is terminal/SYSTEM/zero-confirmatory-credit and its preserved negative informs the current independent-reidentification boundary."
   },
   "blind_target_change_reason": null,
   "repository_refs_inspected": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "cand34_r2_contract_head": "43d0f25541a3c447d4c7156303647ae94f3119f4",
-    "cand34_response_head": "8ce961dc88fb52afa6399093fce1e3de7e982f2b",
-    "cand34_preserve_ref": "preserve/cand34-d34-q002-r94-raw-20260923",
-    "cand34_preserve_head": "4d45f1135bcb607f1e663648cd8335333eb98de4",
-    "cand34_raw_path": "artifacts/cand34/d34-q002/development/raw/D34-Q002.raw.json",
+    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "cand35_scientific_source": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
+    "cand35_implementation": "b5f312683d50ed3a086348b62770fc8923c78046",
+    "cand35_raw_ref": "raw/cand35-r100-onebatch-20260923@02aee83227554de884a86a9d1335deb01bf53571",
+    "cand35_preserve_ref": "preserve/cand35-r100-batch1-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
     "evidence_tag_count": 5,
-    "formal_tag_count": 0,
-    "sealed_tag_count": 0,
-    "freeze_tag_count": 0,
     "official_consumed_identity_count": 7,
-    "ops_external_tip_before_first_write": "741becd60d3e7dc8f97cedf1347c42c769092011"
+    "ops_external_tip_before_first_write": "eaab2a8fd08921aa91782825644a5f7e28df0173"
   },
   "genuinely_new_information": true,
   "findings": [
-    {"finding": "All four target-sham destination potentials equal configured edge weight at nominal arrival and equal weight*exp(-1/18) one millisecond later at floating-point precision.", "impact": "Primary response is exactly predicted by ordinary local edge impulse plus frozen 18ms membrane decay."},
-    {"finding": "+1ms shifts the unchanged edge amplitude by one millisecond while transmission-null is exactly zero at both sampled times.", "impact": "No additional temporal-route residual appears in the primary measurements."},
-    {"finding": "Matched non-target controls show the same local null/shift pattern with their own near-matched weights and delays.", "impact": "Immediate destination response is not Assembly-internal-edge specific."},
-    {"finding": "No tested target destination unit spikes within the preserved 64ms target rows.", "impact": "No downstream target-unit spike/state transition is demonstrated beyond the immediate membrane impulse."},
-    {"finding": "Current Control/Evidence/MAIN/Fast Forge streams keep Candidate #34 historical/preserved/development-only with zero confirmatory credit and no repeat response.", "impact": "The reduction conflicts with no current governance and invalidates no FORMAL evidence."}
+    {
+      "finding": "Frozen Candidate #35 treatment nulls potential/adaptation only on ALL_NON_RECEPTOR_UNITS; the preserved non-receptor ledger begins at unit 16.",
+      "impact": "The surgical treatment does not directly modify the receptor population that receives the cue."
+    },
+    {
+      "finding": "Preserved cue routing targets are [6,7], and the observed response contains only unit-6 and unit-7 spikes and cascade [6,7], with no ignition.",
+      "impact": "Observed spikes come from directly cued untreated receptor units; no treated-unit spike demonstrates a path from nulled state into the declared response."
+    },
+    {
+      "finding": "The causal falsifier is the high-level response signature; treatment_state_hash is integrity-only and the reduction ledger is not itself the causal falsifier.",
+      "impact": "Subthreshold treatment effects can exist without entering the declared endpoint."
+    },
+    {
+      "finding": "DELAYED_SHAM_32MS changes unit-7 threshold, excitatory drive and novelty while preserving the same two-unit cascade/no-ignition structure.",
+      "impact": "The declared response demonstrably collapses some state-dependent differences."
+    },
+    {
+      "finding": "SHAM cue-driven receptor spikes have substantial threshold margin (unit6 drive ~0.8114 vs 0.46; unit7 drive ~0.9145 vs ~0.5592).",
+      "impact": "Direct cue response is not a sensitive assay of treated non-receptor state on this batch; ceiling/insensitivity remains plausible."
+    }
   ],
   "affected_lines": [
-    "CAND34_D34_Q002_PREFORMAL_INTERPRETATION",
-    "CAND34_ASSEMBLY_TEMPORAL_ROUTE_SPECIFICITY",
-    "CAND34_LOCAL_IMPULSE_RESPONSE_REDUCTION",
-    "CAND34_FUTURE_MECHANISM_ADMISSION"
+    "CAND35_R100_NEGATIVE_INTERPRETATION",
+    "CAND35_TREATMENT_READOUT_CAUSAL_OPPORTUNITY",
+    "CAND35_REVISIT_TRIGGER_SPECIFICITY",
+    "FUTURE_SUBTHRESHOLD_PRIMING_DISCRIMINATORS"
   ],
-  "novelty_or_reduction_impact": "D34_Q002_PRIMARY_RESPONSE_IS_EXACTLY_REDUCIBLE_TO_LOCAL_EDGE_WEIGHT_DELAY_AND_18MS_MEMBRANE_DECAY; NO_ASSEMBLY_SPECIFIC_MECHANISM_UPLIFT",
-  "audit_classification": "REDUCIBLE",
-  "confidence": "HIGH",
-  "read_only_recompute": {
-    "membrane_tau_ms": 18.0,
-    "exp_minus_1_over_tau": 0.9459594689067654,
-    "target_checks": [
-      {"weight": -0.4, "predicted_plus_1ms": -0.3783837875627062, "observed_plus_1ms": -0.3783837875627062},
-      {"weight": 0.2, "predicted_plus_1ms": 0.1891918937813531, "observed_plus_1ms": 0.1891918937813531},
-      {"weight": 0.9, "predicted_plus_1ms": 0.8513635220160889, "observed_plus_1ms": 0.8513635220160889},
-      {"weight": 0.8, "predicted_plus_1ms": 0.7567675751254124, "observed_plus_1ms": 0.7567675751254124}
-    ],
-    "max_abs_residual": 0.0,
-    "experiment_executed_by_auditor": false
-  },
+  "novelty_or_reduction_impact": "CAND35_R100_NULL_ARMS_RESET_NON_RECEPTOR_STATE_WHILE_OBSERVED_RESPONSE_CONTAINS_ONLY_DIRECTLY_CUED_UNTREATED_RECEPTOR_SPIKES; NEGATIVE_SIGNATURE_IS_NON_DIAGNOSTIC_BEYOND_THE_FIXED_RESPONSE_SURFACE",
+  "audit_classification": "INCONCLUSIVE",
+  "confidence": "HIGH_ON_SUPPORT_MISMATCH_MODERATE_ON_HOW_MUCH_LATENT_CAUSAL_EFFECT_WAS_MISSED",
   "prospective_baselines_or_discriminators": [
-    "Fresh-successor-only exact local impulse-response baseline from edge weight, delay, membrane time constant and local state.",
-    "Assembly-internal versus matched-non-target residual after local-kernel normalization.",
-    "Require downstream target spike/state transition or Assembly-level effect beyond immediate membrane response before mechanism uplift."
+    "Fresh-successor-only explicit treatment-to-readout causal-opportunity validation.",
+    "Read out treated non-receptor state or a downstream variable causally reachable from treated units.",
+    "Prospectively choose a cue/readout regime with measurable sensitivity rather than direct receptor ceiling while preserving ordinary leak/adaptation/refractory reductions.",
+    "Retain natural-state/matched-counterfactual and hidden-path checks from Literature R41."
   ],
   "questions_for_evidence_analyst": [
-    "Cap D34-Q002 at the narrow local physical-edge influence supported by the preserved raw?",
-    "Treat broader Assembly temporal-route interpretation as reduced absent a residual beyond the exact local impulse model?"
+    "Record R100 as same declared response signature rather than evidence of general non-receptor subthreshold-state causal irrelevance?",
+    "Treat the treatment/readout support mismatch as candidate-specific information relevant to the Candidate #35 revisit ledger without reopening the old ID?"
   ],
   "questions_for_control_brain": [
-    "Require a prospectively frozen local-impulse residual discriminator in any fresh successor before mechanism uplift?",
-    "Keep D34-Q002 preserved, development-only, zero-credit, and non-rescuable in place?"
+    "Require explicit causal-opportunity validation in any fresh subthreshold-priming successor before a null response can close the question?",
+    "Preserve Candidate #35 terminal/zero-credit history unchanged while narrowing interpretation of its R100 negative?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "preserve/cand34-d34-q002-r94-raw-20260923 exact bytes and provenance",
-    "frozen Candidate #34 R2 contract/source and response branch",
-    "all consumed identities and immutable evidence",
-    "no D34-Q002 rerun/rescore/retune or outcome-responsive reinterpretation",
-    "no FORMAL action, research merge, immutable-ref mutation, Utility execution, or scheduler change"
+    "Candidate #35 preserved R100 five-arm bytes, source bindings and terminal state",
+    "no same-object rerun/retune/rescore/observable change or SYSTEM-to-MECHANISM uplift",
+    "all consumed identities and authoritative immutable/evidence refs",
+    "no experiment, research merge, Utility execution, scheduler change or historical result rewrite by this role"
   ],
   "phase_2_disposition": {
     "blind_target_remained_valid": true,
     "blind_target_change_reason": null,
     "control_plane_conflict": false,
     "narrow_claim_status": "ROBUST_SO_FAR",
-    "broader_mechanism_status": "REDUCIBLE",
+    "broader_causal_irrelevance_status": "INCONCLUSIVE",
+    "candidate_specific_revisit_signal": true,
+    "terminal_object_reopened": false,
     "existing_formal_or_confirmatory_evidence_invalidated": false
   },
   "utility_request_created": null,
@@ -124,11 +156,12 @@
     "research_prs_merged_by_this_role": 0,
     "immutable_evidence_mutations": 0,
     "scheduler_definition_changes": 0,
-    "utility_requests_created": 0
+    "utility_requests_created": 0,
+    "terminal_objects_reopened": 0
   },
   "persistence": {
-    "latest_update_commit": "716f8839f05610fbbfbc83d3ff6b3939dcfd6834",
-    "history_path": "analysis/external_research_audit/history/2026-09-23/2230-INDEPENDENT_AUDITOR.md",
-    "final_handoff_commit_embedding_limitation": "A Git commit cannot contain its own final SHA without changing itself. Exact post-persistence branch tip is verified after writes and reported externally; state records prior write commits."
+    "latest_update_commit": "54eb9738e37b09c8db70460b672a2955199246f5",
+    "history_path": "analysis/external_research_audit/history/2026-09-24/1030-INDEPENDENT_AUDITOR.md",
+    "final_handoff_commit_embedding_limitation": "A Git commit cannot contain its own final SHA without changing itself. Exact post-persistence branch tip is re-fetched after writes."
   }
 }
