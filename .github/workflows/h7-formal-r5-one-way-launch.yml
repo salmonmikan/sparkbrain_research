@@ -1,0 +1,44 @@
+name: h7-formal-r5-one-way-launch
+run-name: h7-r5-formal-registration-guard
+
+# GitHub requires a workflow_dispatch workflow to exist on the default branch.
+# This main-branch file is registration only and always fails closed.
+# The result-bearing implementation lives only on an Analyst-bound H7 controller ref.
+on:
+  workflow_dispatch:
+    inputs:
+      controller_sha:
+        description: "Exact H7 launch-controller commit authorized by fresh Evidence Analyst"
+        required: true
+        type: string
+      science_sha:
+        description: "Exact frozen H7 science commit"
+        required: true
+        type: string
+      analyst_generation_id:
+        description: "Fresh Evidence Analyst generation authorizing exactly one FORMAL start"
+        required: true
+        type: string
+      analyst_commit:
+        description: "Exact Evidence Analyst mailbox commit for that generation"
+        required: true
+        type: string
+      request_nonce:
+        description: "Unique operational launch request nonce"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  registration-guard:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Refuse default-branch H7 FORMAL execution
+        shell: bash
+        run: |
+          echo "This default-branch file only registers workflow_dispatch."
+          echo "H7 FORMAL must be dispatched at the fresh Analyst-bound controller ref."
+          echo "Never execute H7 result-bearing capability from main."
+          exit 1
