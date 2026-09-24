@@ -1,51 +1,43 @@
-# SparkBrain Control Brain — R59
+# SparkBrain Control Brain — R60
 
 - schema_version: `2`
-- generation_id: `CTRL-20260924T165135+0900-R59-CAND35-REVISIT-FORGE-TEST-AUTHORIZED`
-- generated_at: `2026-09-24T16:51:35+09:00`
-- scheduled_role_slot: `16:50 JST CONTROL_BRAIN`
+- generation_id: `CTRL-20260924T175817+0900-R60-CAND35-REVISIT-FORGE-KILL`
+- generated_at: `2026-09-24T17:58:17+09:00`
+- scheduled_role_slot: `17:50 JST CONTROL_BRAIN`
 - authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY`
-- supersedes: `CTRL-20260924T155021+0900-R58-CAND35-REVISIT-PROPOSAL-AWAIT-ANALYST`
+- supersedes: `CTRL-20260924T165135+0900-R59-CAND35-REVISIT-FORGE-TEST-AUTHORIZED`
 - new_scientific_result: `false`
 
 ## Position
 
-Active Human Directives were read first and remain honored. Stable repository/evidence state was independently re-fetched: no new scientific evidence identity appeared, H7 remains the consumed FORMAL `INCONCLUSIVE` terminal MECHANISM object, and no immutable scientific ref was moved or rewritten. Canonical census remains 35 current objects = 14 MECHANISM / 21 SYSTEM, all terminal; 0 active, 0 scientifically queued, 0 effectively executable canonical MECHANISM.
+Active Human Directives were read first and remain honored. Stable `main` is unchanged, no new scientific evidence identity appeared, H7 remains consumed FORMAL `INCONCLUSIVE`, and no immutable scientific ref moved. Canonical census remains 35 current objects = 14 MECHANISM / 21 SYSTEM, all terminal; active=0, scientifically queued=0, effectively executable canonical MECHANISM=0.
 
 ## Candidate #35 Revisit delta
 
-Evidence Analyst R119 (`EVA-20260924T160200+0900-R119-CAND35-REVISIT-FORGE-TEST`) adjudicated the single Candidate #35 Revisit proposal as **`REVISIT_FORGE_TEST`** and authorized exactly one bounded zero-credit noncanonical probe, **`RVT35-FORGE-001`**.
+The Analyst-authorized bounded zero-credit Fast Forge probe `RVT35-FORGE-001` now has a durable result. Fast Forge classified it `FORGE_DEAD_END`: treated-to-observable causal opportunity and downstream sensitivity are constructible, but the apparent separation is exactly predicted by local membrane leak + fixed threshold + fixed edge/delay. The strongest ordinary reduction therefore survives. No promotion was proposed and scientific credit remains zero.
 
-Candidate #35 itself remains permanently terminal SYSTEM with zero inherited confirmatory credit. This decision does not reopen R100, create a candidate ID, authorize canonical science, or create a fresh successor. Any successor still requires a later `REVISIT_CANONICALIZE` decision with a fresh ID and fresh prospective contract.
+This is not canonical evidence and not a scientific result. Candidate #35 remains permanently terminal SYSTEM, R100 remains unchanged, no old ID was reopened, and no fresh candidate/successor was created. Revisit governance metrics are now probes=1, kills=1, survivors=0, canonicalized=0, fresh successors=0.
 
-## Fast Forge / Utility
+The current Evidence Analyst generation predates this durable Forge result. Its previous `REVISIT_FORGE_TEST` disposition therefore remains the latest Analyst authority until a fresh post-probe generation adjudicates it. Control does not convert the kill into `REVISIT_REJECTED` or `REVISIT_DORMANT` on its own.
 
-The latest durable primary Fast Forge report still contains no Candidate #35 `RVT35-FORGE-001` outcome. Therefore Revisit Forge kills=0 and survivors=0; no execution outcome is inferred from scheduler activity.
+## Theory / Methodology
 
-Utility produced reusable synthetic-only causal-opportunity/output-null diagnostic tooling on `forge/utility-rvt35-causal-opportunity-harness`. It used no Candidate #35 data, retuned no R100 object, produced no scientific result or promotion signal, and carries no Revisit/canonical authority. It is tooling support only and is not counted as the authorized Forge probe.
+Theory remains `NO_THEORY_PROPOSAL`; TH-001 remains rejected. The killed Candidate #35 rationale must not be recycled as Theory or a new Revisit proposal merely to create activity.
 
-## Theory / Revisit / Methodology
-
-Theory remains `NO_THEORY_PROPOSAL`; Candidate #35 remains a Revisit line, not programme Theory.
-
-Revisit terminal classifications remain `CLOSED_STRONG=1`, `DORMANT_REVISITABLE=20`, `DEFERRED_INDEPENDENT_REIDENTIFICATION=13`, `REVISIT_TRIGGERED=1`. Governance metrics now record `revisit_proposals=1`, `REVISIT_FORGE_TEST=1`, Forge kills=0, Forge survivors=0, canonicalized=0, fresh successors=0, rescue-laundering rejects=0, old IDs reopened=0. Legacy bootstrap remains durably complete at 34/34; H7 is covered separately as a later terminal object rather than causing the legacy population to be reprocessed.
-
-Methodology R110 keeps the trigger-to-proposal and proposal-to-bounded-Forge authorization path, while actual Forge execution fidelity and canonicalization remain untested until a durable `RVT35-FORGE-001` result exists.
+Latest Methodology R111 also predates the candidate-specific Forge result, so post-probe execution fidelity has not yet been independently calibrated by Methodology.
 
 ## MAIN / Relay / Scheduler
 
-PRIMARY MAIN R120 correctly stopped `WAITING_EXTERNAL` after Analyst R119: it has no executable canonical object and waits for the bounded Forge result plus a fresh Analyst generation. Relay remains enabled at its approved cadence/role.
-
-All approved lanes are currently enabled. Broad recent lag remains roughly `2–14 minutes`, with no proven ownership collision or single causal scheduler fault. No scheduler enabled-state repair, structural change, cadence change, role change, or prompt change was made this generation. Temporary Theory calibration remains within the already-approved window.
+PRIMARY MAIN and Relay are both enabled at their approved cadence/roles. With no admitted canonical object, both should wait for a fresh Evidence Analyst generation after the Forge kill. Broad scheduler lag remains visible across several lanes (roughly 6–20 minutes) with no proven ownership collision or single scheduler fault. No scheduler enabled-state repair, cadence/role/prompt change, or structural mutation was made.
 
 ## Directions
 
-1. Fast Forge: run at most the bounded Analyst-authorized `RVT35-FORGE-001` as noncanonical/non-evidentiary zero-credit work and persist an explicit kill/survivor result.
-2. Evidence Analyst: only after a durable Forge result, adjudicate independently. Keep old Candidate #35 terminal under every disposition. Only `REVISIT_CANONICALIZE` may create a fresh successor with `candidate_source=REVISIT`, `source_candidate=CANDIDATE_35`, a fresh contract and zero inherited confirmatory credit.
-3. MAIN / Relay: wait; no Candidate #35 canonical execution absent a later fresh successor/admission. PRIMARY MAIN owns any later admitted canonical critical path.
-4. Theory / Utility: remain nonauthorizing; do not turn empty canonical supply into activity-driven Theory/canonicalization.
-5. Scheduler: preserve current approved MAIN/Relay roles and cadences; monitor lag and repeated enabled-state regression; structural remediation requires user approval.
+1. Evidence Analyst: independently adjudicate the durable Forge kill, keeping old Candidate #35 terminal under every outcome. A fresh successor is permitted only through a later `REVISIT_CANONICALIZE` with a genuinely independent surviving reason, fresh ID/contract and zero inherited credit.
+2. Fast Forge: do not retune or search around the killed `RVT35-FORGE-001`; further Candidate #35 probing requires fresh Analyst authority based on genuinely new independent information.
+3. MAIN / Relay: wait; no Candidate #35 canonical work absent fresh successor admission.
+4. Theory / Revisit: do not recycle the killed rationale without new independent information.
+5. Scheduler: keep approved MAIN/Relay lanes enabled at current cadence/roles and continue monitoring broad lag; structural changes require user approval.
 
 ## Hard floor
 
-Control executed no experiment, dispatched no result-bearing workflow, consumed no identity, merged no research PR, mutated no immutable/freeze/formal/sealed/evidence/preserve scientific ref, reopened no terminal object, reran/retuned/rescored no consumed FORMAL identity, and made no scheduler structural/cadence change.
+Control executed no experiment, dispatched no result-bearing workflow, consumed no identity, merged no research PR, mutated no immutable/freeze/formal/sealed/evidence/preserve scientific ref, reopened no terminal object, reran/retuned/rescored no consumed FORMAL identity, rewrote no historical outcome, and made no scheduler structural/cadence change.
