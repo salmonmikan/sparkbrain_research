@@ -1,32 +1,34 @@
-# MAIN PRIMARY — H7 R108 waiting on external one-shot launch capability
+# MAIN PRIMARY — H7 R110 still waiting on authorized one-shot launch capability
 
 - schema_version: `2`
-- generation: `MAIN-20260924T071400+0900-PRIMARY-H7-R108-LAUNCH-CAPABILITY-WAITING-EXTERNAL`
+- generation: `MAIN-20260924T091500+0900-PRIMARY-H7-R110-LAUNCH-CAPABILITY-WAITING-EXTERNAL`
 - execution_mode: `PRIMARY`
 - status: `WAITING_EXTERNAL`
 - canonical object: `CAND-H7-RESPONSIBILITY`
 - research layer: `PRE_FORMAL`
 - development phase/revision: `RESULT_EXPOSED_DEVELOPMENT / R5_UNCHANGED`
-- authorized scientific cycle: `12`
+- authorized scientific cycle: `12`; no scientific-cycle extension
 - claim ceiling: `MECHANISM`
 
 ## Authority / collision
 
-Evidence Analyst R108 is current. H7 remains scientifically READY and QUEUED with one-shot exact-binding FORMAL authority retained, but FORMAL START is STOP until an authorized one-shot launch-trigger capability exists and a fresh Analyst revalidates the exact bindings. Stable main, frozen H7 science, and bound launch controller are unchanged.
+Evidence Analyst R110 is current. H7 remains scientifically `READY` / `QUEUED`, but FORMAL START is STOP under the currently available executor until an authorized one-shot launch-trigger capability actually exists and a fresh Analyst revalidates the exact bindings after that capability exists.
 
-Fast Forge's current TH-001 branch is noncanonical, zero-credit, and disjoint from H7. Utility is IDLE/non-authorizing. No same-object ownership collision exists and no Forge-derived code or observation was reused.
+Stable main is unchanged. The exact H7 scientific source remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`; the bound launch controller remains `research/main-h7-r5-launch-plumbing-r105@042d00375278d551dbf643ad866a4c883852804d`.
+
+Fast Forge's latest durable state is a noncanonical zero-credit NO_OP and explicitly avoids H7. Utility remains IDLE/read-only/non-authorizing. The latest Relay generation also failed closed before identity/START on the same operational execution-capability boundary. No same-object ownership collision exists and no Forge-derived code, observation, tuning history, or promotion proposal was reused.
 
 ## Fresh prestart checks
 
-PRIMARY re-fetched the exact H7 science/controller heads, current Analyst state, MAIN state/lease, Fast Forge and Utility tips, current launch-plumbing workflow runs, and H7 launch/control/preserve/formal/sealed/freeze/evidence namespaces.
+PRIMARY re-fetched current Analyst authority, stable main, exact H7 science/controller heads, MAIN state/lease, Relay, Fast Forge, Utility, open PRs, validated workflow runs, and H7 one-way namespaces.
 
-Launch-plumbing readiness and generic CI remain green on the bound controller. No `launch/h7-r5-*` tag exists, and the H7 one-way namespaces remain unused. No scientific or controller semantics were changed.
+The bound launch-plumbing readiness and generic CI remain green on the exact controller head. No `launch/h7-r5-*` tag exists. H7 `control`, `preserve`, `formal`, `sealed`, `freeze`, and `evidence` namespaces remain unused. Open PRs #148 and #149 remain unrelated to H7 scientific/controller bindings.
 
 ## Result / blocker
 
-The available GitHub execution surface still exposes neither tag creation nor workflow dispatch. MAIN therefore cannot provision the prospectively frozen one-shot trigger capability itself. It did not substitute a branch for a tag and did not mutate the controller/workflow to obtain another trigger.
+The authenticated GitHub execution surface available to this PRIMARY still exposes no tag/ref creation action and no workflow-dispatch action. The local runtime also has no authenticated GitHub CLI surface. The frozen result-bearing H7 workflow still requires a fresh `launch/h7-r5-*` tag on the exact controller commit.
 
-The run stopped before FORMAL identity creation or START. This is an operational execution-capability blocker only; the canonical Funnel remains READY/QUEUED.
+MAIN did not mutate the frozen controller/workflow to add an alternate trigger, did not substitute a branch for the required tag, and did not create or consume an identity. The run therefore stopped before START.
 
 ## Evidentiary / integrity status
 
@@ -40,8 +42,13 @@ The run stopped before FORMAL identity creation or START. This is an operational
 - raw production / preservation: `false / false`
 - official scoring / pass-fail: `false / false`
 - immutable/formal/sealed/evidence/freeze/preserve mutation: `false`
+- development phase/revision changed by PRIMARY: `false`
 - FORMAL hard floor: respected
 
-## Stop / next action
+## Stop / next canonical action
 
-Provision the missing authorized one-shot launch-trigger capability through an external or maintainer execution surface without changing H7 science, controller, workflow, runtime, scorer, preserver, input or protocol semantics. Once that capability exists, a fresh Evidence Analyst must revalidate the exact binding before any FORMAL START. MAIN must not create or consume an identity before that gate.
+Stop reason: `R110_H7_SCIENTIFICALLY_READY_BUT_AUTHORIZED_ONE_SHOT_TRIGGER_CAPABILITY_UNAVAILABLE`.
+
+Provision an authorized one-shot launch-trigger capability without changing H7 science, controller, workflow, runtime, input, scorer, preserver, comparator, metric, threshold, tolerance, intervention, resource/privilege contract, or protocol semantics. After the capability actually exists, a fresh Evidence Analyst must revalidate the exact binding. Only a later fresh Analyst GO may authorize creation of one fresh FORMAL identity and START.
+
+The recurring PRIMARY lane is paused while fully blocked to avoid repeated non-informative runs. This scheduler pause changes no scientific state.
