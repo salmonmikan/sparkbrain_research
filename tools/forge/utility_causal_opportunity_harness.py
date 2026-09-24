@@ -94,7 +94,9 @@ def diagnose_causal_opportunity(
         next_state: dict[str, float] = {}
         for source, value in state.items():
             for edge in adjacency.get(source, ()):
-                next_state[edge.target] = next_state.get(edge.target, 0.0) + value * edge.gain
+                next_state[edge.target] = (
+                    next_state.get(edge.target, 0.0) + value * edge.gain
+                )
         state = next_state
 
     max_abs_readout_effect = max(abs(value) for value in readout_effects)
@@ -117,7 +119,10 @@ def diagnose_causal_opportunity(
 
 def _load_case(path: Path) -> tuple[list[Edge], str, dict[str, float], int, float, float]:
     payload = json.loads(path.read_text(encoding="utf-8"))
-    edges = [Edge(str(item["source"]), str(item["target"]), float(item["gain"])) for item in payload["edges"]]
+    edges = [
+        Edge(str(item["source"]), str(item["target"]), float(item["gain"]))
+        for item in payload["edges"]
+    ]
     return (
         edges,
         str(payload["treated_node"]),
