@@ -1,14 +1,20 @@
-# SparkBrain Control Brain — R69
+# SparkBrain Control Brain — Latest
 
-schema_version: 2
-generation_id: CTRL-20260925T055000+0900-R69
-produced_at: 2026-09-25T05:50:00+09:00
-new_scientific_result: false
+- schema_version: 2
+- generation_id: CTRL-20260925T085000+0900-R71
+- produced_at: 2026-09-25T08:50:00+09:00
+- authority_scope: CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY
 
-Canonical science remains unchanged at 35/35 terminal. BUILD-SB-001 advanced to 76a0dbd8bd1dec4ed6749ca619aeac8f5b96007b. The dedicated negative/boundary tests requested by Evidence Analyst R133 are present and exact-head CI run 36054109236 succeeded. Final acceptance closure still awaits a later Analyst adjudication because R133 predates this commit. No SYSTEM_BUILD PR is open; comparative support and scientific novelty remain absent.
+Science remains 35/35 terminal (14 MECHANISM / 21 SYSTEM), active 0, queued 0. H7 remains consumed FORMAL / INCONCLUSIVE and evidence bindings are unchanged.
 
-Fast Forge's delayed-action-credit prototype is now exact-head CI green after a science-invariant import-format repair. It remains reduced to ordinary eligibility-trace/TD(lambda)-style credit, retains its causal over-credit limitation, is not admitted to SB001, and carries zero scientific credit.
+BUILD-SB-001 remains at 5b86dfa6cad634312c81e579e5339b3b47cef6e0 with CI 36060329063 SUCCESS. Its R133 acceptance debt appears technically covered, but Evidence Analyst has not yet issued the authoritative closure. Built/functionally verified: yes. Comparative support: no. Composition contribution: unestablished. Scientific novelty: no. Scientific credit: zero.
 
-Revisit remains unchanged with no trigger or fresh successor. Durable Theory latest remains R5 with no proposal; Independent Audit remains R10.
+Methodology R120 remains controlling: co-execution/checkpoint binding demonstrates integration viability, not causal composition contribution.
 
-Fleet health remains degraded: Evidence Analyst and MAIN moving pointers are stale; Relay is absent despite the standing enabled-lane policy; Methodology is on a two-hour cadence; Utility is absent while its mailbox still reports IDLE; later Theory/Audit durable publication remains missing. Control made no scheduler changes.
+Fast Forge added completion-predictor bridge 7e1e803dfe31483c21df0075778723a558ec2d3f with CI 36074020939 SUCCESS. It reduces to ordinary nearest-prototype retrieval plus conditional prediction and remains zero-credit engineering input. New Forge handoffs stay parked until SB001 closes.
+
+Revisit remains 1 / 20 / 14 / 0 with zero fresh successors. Theory durable latest R5; Literature R44; Audit R10.
+
+Control-plane durability remains degraded across several streams. The newest Forge latest/state also reference an append-only 08:44 history record that is absent. No scheduler mutation was performed.
+
+Next: Evidence Analyst adjudicates SB001 exact head; if accepted, MAIN may proceed to protected integration PR. Composition contribution is a separate later build question.
