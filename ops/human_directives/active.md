@@ -226,6 +226,7 @@ Control BrainがUtilityへ明示的assignmentを発行した場合は、そのas
 Control BrainはUtilityの活動が重複・低価値・危険・科学的境界違反になっている場合には停止・再割当・scope変更を行ってよい。
 
 ### Throughput objective
+
 Utilityの存在目的の一つを、
 
 > **SparkBrain全体で利用可能な実行能力を遊休させず、既存schedulerの境界から漏れる有益な研究・実装・検証を継続的に拾うこと**
@@ -638,6 +639,7 @@ Candidate metrics to evaluate include:
 - idea -> executable-code latency;
 - Forge promotion proposals/day;
 - admitted canonical candidates/week;
+- Forge attempts per admitted candidate;
 - MAIN idle / low-value polling rate;
 - SUB no-target / NO_OP rate;
 - Utility idle rate;
