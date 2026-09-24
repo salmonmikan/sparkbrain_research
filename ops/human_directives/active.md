@@ -226,7 +226,6 @@ Control BrainがUtilityへ明示的assignmentを発行した場合は、そのas
 Control BrainはUtilityの活動が重複・低価値・危険・科学的境界違反になっている場合には停止・再割当・scope変更を行ってよい。
 
 ### Throughput objective
-
 Utilityの存在目的の一つを、
 
 > **SparkBrain全体で利用可能な実行能力を遊休させず、既存schedulerの境界から漏れる有益な研究・実装・検証を継続的に拾うこと**
@@ -639,7 +638,6 @@ Candidate metrics to evaluate include:
 - idea -> executable-code latency;
 - Forge promotion proposals/day;
 - admitted canonical candidates/week;
-- Forge attempts per admitted candidate;
 - MAIN idle / low-value polling rate;
 - SUB no-target / NO_OP rate;
 - Utility idle rate;
@@ -825,3 +823,41 @@ If the advisory does not survive current evidence and ordinary reduction, discar
 This is a human-originated external-advisory routing request, not scientific evidence and not automatic execution authority.
 
 Control Brain should independently classify this directive as `ACCEPT`, `MODIFY`, `DEFER`, or `REJECT`. If accepted or modified, downstream scientific roles should re-derive any research question from verified current evidence rather than from the advisory's authority.
+
+## HUMAN-20260925-001 — Advisory v2: learned predictive-state organization under matched constraints
+
+Human status: `OPEN`  
+Created: `2026-09-25 JST`
+
+### Intent
+
+旧外部進言の棄却理由と最新の研究記録を再確認し、外部文献も使って次の有益な研究提案へ調整してほしい、というユーザーの依頼に基づく新版。以下はassistantによる調査・提案であり、ユーザーが科学的内容を独立検証済みという意味ではない。
+
+### Proposed direction for review
+
+「匿名な記憶を選択的に更新できるか」だけではなく、連続経験に矛盾が生じたとき、既存の内部モデルを更新するか、別の状態として分離・保持するか、以前の状態を再利用するかをどう学び分けるかを検討する。
+
+この問い自体には潜在原因モデル、Structured Event Memory、ART、学習されたキーを用いる再帰的連想記憶などの先行研究がある。新規性は未確認。普遍的な非還元性を前提にせず、同じ情報・学習条件・記憶量・計算量で、具体的な学習則、予測誤差、干渉、再適応と選択的因果効果の差を検証できるかを問う。
+
+### Requested investigation and safeguards
+
+1. 旧結果の「何が否定されたか」を範囲付きで整理する。TH-002の3キー静的構成の還元を維持しつつ、未試験の動的学習全般の不可能性へ拡張しない。35候補すべてのrawを今回再監査済みとは扱わない。
+2. 最初の成果物は、新しい課題の識別可能性・入力アクセス表・比較設計。外部の正解IDやepisode境界は与えないが、全手法が利用できる学習可能な手掛かりまで取り去らない。内部で作るIDはそれだけで不正としない。
+3. 見た目だけの変化、予測ダイナミクスの変化、過去状況の再来を区別する新しい開発課題を検討する。既存v0.5の類似度・episode依存の成熟条件を新しい自律形成claimへ無検証で引き継がない。
+4. 最も近い適切な比較モデル2〜3系統から段階的に検証する。全既知モデルに勝つことを開発開始条件にしない。比較能力不足や介入から測定値への経路不足を成功・一般的否定と取り違えない。
+5. 同じ結果を後付けで救済することと、過去の失敗から新しい仮説を作ることを区別する。新版は旧進言・旧結果に接触済みと明示し、独立なRevisit triggerや確認証拠に数えない。必要な新規identity、版管理、新しい事前定義試験は既存gateに従う。
+6. 具体的な学習則が既知手法の言い換えならその旨を記録する。限定したSYSTEM価値とMECHANISM新規性を分離し、どちらも事後格上げしない。
+
+### Supporting investigation
+
+詳細な調査範囲、確認したrepositoryのgeneration/blob、旧案の問題点、一次文献と取得レベル、段階別成果物・反証条件は、同branchの以下に保存する。
+
+`ops/human_directives/history/2026-09-25/HUMAN-20260925-001-advisory-v2-predictive-state-research.md`
+
+### Explicit non-goals
+
+HUMAN-20260924-009と旧履歴は変更しない。TH-002、H7、A01、#34/#35その他のterminal/consumed objectを再開・再実行・再採点しない。この登録はscheduler変更、新規scheduler、コード変更、実験実行、candidate作成、既存科学基準の自動変更を許可しない。
+
+### Required independent review
+
+Control Brainが独立に `ACCEPT / MODIFY / DEFER / REJECT` を判定する。採用または修正する場合は、Evidence AnalystとMethodologyを通じて、既存のTheory/Forge/MAIN等へ適切な範囲を割り当てる。最初から新理論の成立を要求せず、次の限定された成果物・担当・判定条件、または価値がない具体的理由を残してほしい。これは科学的証拠ではなく、未実証の研究進言である。
