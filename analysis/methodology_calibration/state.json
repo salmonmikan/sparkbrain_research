@@ -1,56 +1,75 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-24T13:21:12+09:00",
+  "timestamp": "2026-09-24T14:18:14+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260924T132112+0900-R107-5B7F2D9A",
-    "sequence": 107,
+    "generation_id": "METHCAL-20260924T141814+0900-R108-D7A41C9E",
+    "sequence": 108,
     "material_change": true,
-    "material_change_reason": "FRESH_ANALYST_R115_NOW_TERMINALIZES_H7_AS_INCONCLUSIVE_CONSUMED_ONE_WAY_AND_ADDS_H7_TO_REVISIT_LEDGER; H7_AUTHORITATIVE_TAG_PROVENANCE_DEFECT_REMAINS_UNRESOLVED; CAND35_REVISIT_TRIGGER_REMAINS_CAUGHT_BUT_HAS_NO_DEDICATED_REVISIT_DECISION",
-    "supersedes_generation_id": "METHCAL-20260924T124114+0900-R106-C84E6B31",
+    "material_change_reason": "REPOSITORY_STEWARD_G15_NOW_ADJUDICATES_H7_LIGHTWEIGHT_TAG_DEFECT_AS_NONDESTRUCTIVE_APPEND_ONLY_PROVENANCE_ONLY; EVIDENCE_ANALYST_R116_INGESTS_G15_AND_EXPLICITLY_REVIEWS_CAND35_TRIGGER_WITHOUT_FABRICATING_A_REVISIT_DECISION_WHILE_NO_REVISIT_PROPOSAL_EXISTS; NO_NEW_SCIENCE",
+    "supersedes_generation_id": "METHCAL-20260924T132112+0900-R107-5B7F2D9A",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260924T124114+0900-R106-C84E6B31",
-      "branch_head": "233929c4e01d6603a70fbce7528b3de85f25d829"
+      "generation_id": "METHCAL-20260924T132112+0900-R107-5B7F2D9A",
+      "branch_head_before_r108_persistence": "bc1e6829253a6126712d17d8e8e895789a56c977"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260924T130128+0900-R115-H7-FORMAL-INCONCLUSIVE-CONSUMED-ALL35-TERMINAL",
-      "branch_head": "3341acce9c504f3163e34e12152163c845758ad2"
+      "generation_id": "EVA-20260924T135836+0900-R116-POSTFORMAL-NOOP-PROVENANCE-ADJUDICATED-CAND35-TRIGGER-HELD",
+      "branch_head": "d609a7897f25bbc1ba2abef8e27ccdc019d1f00c"
     },
     "control_brain": {
       "generation_id": "CTRL-20260924T124816+0900-R56-H7-FORMAL-INCONCLUSIVE-TAG-ADJUDICATION",
       "branch_head": "259b3db8f3f120475bc7e3a1b561383cc4c3a451"
     },
-    "external_research_audit": {
-      "branch_head": "7a477bfb872d915fa1634b5cf54a2be110f92e7e",
-      "role": "ZERO_CREDIT_CAND35_REVISIT_TRIGGER_INPUT"
-    },
     "repository_steward": {
-      "branch_head": "c7400b417b9082318108beb1795148d97688265e",
-      "role": "DESIGNATED_STEWARD_HISTORY_PREDATES_H7_FINALIZATION"
+      "generation_id": "STEWARD-20260924T135000+0900-G15-9F3C6A21",
+      "branch_head": "72fd00050786e41f1accae6a36efd9752183cd36"
+    },
+    "external_research_audit": {
+      "generation_id": "LIT-20260924T122954+0900-R42-H7-INCONCLUSIVE-OBSERVABILITY-PING-84C2D7A1",
+      "branch_head": "7a477bfb872d915fa1634b5cf54a2be110f92e7e",
+      "role": "PROSPECTIVE_ONLY_CAND35_TRIGGER_SPECIFICITY_AND_H7_REDUCTION_CONTEXT"
+    },
+    "theory_revisit": {
+      "generation": "R2",
+      "source": "EVIDENCE_ANALYST_R116_PERSISTED_RECONSTRUCTION",
+      "theory_proposal_present": false,
+      "revisit_proposal_present": false
+    },
+    "fast_forge": {
+      "latest_durable_status": "NO_OP",
+      "source": "EVIDENCE_ANALYST_R116_PERSISTED_RECONSTRUCTION",
+      "revisit_probe_count": 0,
+      "canonical_admission_count": 0
     }
   },
   "authoritative_refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "authoritative_tag_policy_document": "docs/AUTHORITATIVE_TAGS.md",
+    "authoritative_tag_policy_blob": "05905e23108722d759a06b226421fd6bbae93e38",
     "h7_identity": "h7-r5-285a3a206b34c5982b9d4045",
     "h7_start_commit": "52b17b785364f96cc2e95507b2336252459d5352",
     "h7_preserve_commit": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
     "h7_result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
     "h7_official_outcome": "INCONCLUSIVE",
     "h7_development_state": "CONSUMED_ONE_WAY",
-    "h7_terminal_state": "INCONCLUSIVE",
+    "h7_terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
     "h7_freeze_ref_object_type": "commit_LIGHTWEIGHT_TAG",
     "h7_formal_ref_object_type": "commit_LIGHTWEIGHT_TAG",
     "h7_sealed_ref_object_type": "commit_LIGHTWEIGHT_TAG",
     "h7_evidence_ref_object_type": "commit_LIGHTWEIGHT_TAG",
     "policy_conforming_annotated_evidence_identity_count": 5,
     "repository_evidence_ref_count_including_h7": 6,
-    "authoritative_tag_policy": "docs/AUTHORITATIVE_TAGS.md@stable_main_requires_ANNOTATED_PROVENANCE_BEARING_TAGS_FOR_NEW_AUTHORITATIVE_SCIENTIFIC_IDENTITIES",
+    "h7_provenance_attestation_observed": false,
+    "steward_h7_remediation_posture": "PRESERVE_EXISTING_REFS_EXACTLY_APPEND_ONLY_PROVENANCE_OR_AUDIT_FOLLOWUP_ONLY",
     "candidate35": {
       "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+      "claim_ceiling": "SYSTEM",
       "revisit_status": "REVISIT_TRIGGERED",
       "confirmatory_credit": 0,
+      "trigger_handoff_reviewed": true,
+      "revisit_proposal_observed": false,
       "dedicated_revisit_decision_observed": false,
       "revisit_forge_test_count": 0,
       "fresh_successor_created": false
@@ -61,7 +80,7 @@
     "hard_scientific_integrity_floor": "KEEP",
     "development_phase_semantics": "KEEP",
     "cycle3_reassessment_not_hard_cap": "KEEP",
-    "science_invariant_vs_science_affecting": "CLARIFY",
+    "science_invariant_vs_science_affecting": "KEEP",
     "development_observation_credit_separation": "KEEP",
     "preformal_genuine_iteration": "KEEP",
     "ready_not_success": "KEEP",
@@ -75,7 +94,8 @@
     "terminal_revisit_orthogonality": "KEEP",
     "revisit_trigger_detection": "KEEP",
     "revisit_rescue_laundering_prevention": "KEEP",
-    "revisit_triggered_decision_handoff": "CLARIFY",
+    "revisit_triggered_decision_handoff": "KEEP",
+    "revisit_trigger_to_proposal_liveness": "CLARIFY",
     "revisit_forge_new_trigger_only": "INSUFFICIENT_EVIDENCE",
     "revisit_canonicalization": "INSUFFICIENT_EVIDENCE",
     "revisit_bootstrap_coverage": "KEEP",
@@ -86,22 +106,27 @@
     "pass_reachability_without_standard_relaxation": "KEEP"
   },
   "mandatory_questions": {
-    "1": "YES_H7_NOW_EXPLICITLY_CONSUMED_ONE_WAY_AND_OTHER_DEVELOPMENT_OBJECTS_REMAIN_RESULT_EXPOSED",
+    "1": "YES_H7_IS_CONSUMED_ONE_WAY_AND_OTHER_HISTORICAL_DEVELOPMENT_OBJECTS_REMAIN_RESULT_EXPOSED_WITHOUT_RETROACTIVE_UPGRADE",
     "2": "NO_HARD_CAP_OBSERVED",
-    "3": "YES_IN_SCIENCE; CLARIFY_GOVERNANCE_BOUNDARY_FOR_PROVENANCE_ONLY_TAG_PLUMBING_SO_NO_HISTORICAL_REF_IS_REWRITTEN",
+    "3": "YES_STEWARD_G15_NOW_EXPLICITLY_BOUNDS_H7_PROVENANCE_SUPPLEMENTATION_AS_APPEND_ONLY_SCIENCE_INVARIANT_WITH_NO_EXISTING_REF_REWRITE",
     "4": "YES",
-    "5": "YES_ONE_WAY_SCIENTIFIC_INTEGRITY_UNCHANGED; TAG_CARRIER_NONCONFORMANCE_REMAINS_SEPARATE",
-    "6": "NEITHER_MANUFACTURED_NOR_SAME_OBJECT_UPGRADE_OBSERVED; FUTURE_H7_SUCCESSOR_MUST_HAVE_INDEPENDENT_TRIGGER",
+    "5": "YES_ONE_WAY_SCIENTIFIC_INTEGRITY_UNCHANGED; H7_REMAINS_TERMINAL_INCONCLUSIVE_AND_CANNOT_BE_RERUN_RETUNED_RESCORED_RETRIED_OR_REPAIRED",
+    "6": "NEITHER_MANUFACTURED_NOR_SAME_OBJECT_UPGRADE_OBSERVED; ANY_SUCCESSOR_REQUIRES_FRESH_ID_INDEPENDENT_MOTIVATION_AND_FRESH_FALSIFIER_REDUCTION_CONTRACT",
     "7": "YES",
-    "8": "YES_H7_TERMINAL_INCONCLUSIVE_AND_OLD_TERMINAL_OBJECTS_NOT_REACTIVATED",
-    "9": "YES_CAND35_TRIGGER_WAS_CAUGHT",
-    "10": "YES_SO_FAR_NO_ZOMBIE_REVIVAL_OR_INHERITED_CONFIRMATORY_CREDIT",
+    "8": "YES_TERMINAL_OBJECTS_REMAIN_TERMINAL_AND_REVISIT_METADATA_IS_ORTHOGONAL",
+    "9": "YES_CAND35_REMAINS_A_CONCRETE_CAUGHT_INDEPENDENT_TRIGGER",
+    "10": "YES_SO_FAR_TRIGGER_STATUS_DID_NOT_REOPEN_CAND35_CREATE_A_SUCCESSOR_OR_GRANT_INHERITED_CREDIT",
     "11": "INSUFFICIENT_EVIDENCE_NO_REVISIT_FORGE_TEST_HAS_RUN",
-    "12": "YES_LEGACY_BOOTSTRAP_REMAINS_COMPLETE_AND_CONSERVATIVE; H7_NOW_ADDED_ORTHOGONALLY",
-    "13": "YES_PROSPECTIVELY_FOR_FRESH_WORK_WITHOUT_WEAKENING_STANDARDS; H7_ITSELF_CANNOT_BE_RERUN_OR_RETUNED_TO_CHASE_PASS"
+    "12": "YES_BOOTSTRAP_REMAINS_COMPLETE_AND_CONSERVATIVE_FOR_ALL_35_TERMINAL_CURRENT_OBJECTS",
+    "13": "YES_PROSPECTIVELY_FOR_FRESH_WORK_WITHOUT_WEAKENING_STANDARDS; H7_ITSELF_IS_PERMANENTLY_CONSUMED"
   },
   "development_calibration": {
     "status": "WELL_CALIBRATED",
+    "distribution": {
+      "OPEN_DEVELOPMENT": 0,
+      "RESULT_EXPOSED_DEVELOPMENT": 34,
+      "CONSUMED_ONE_WAY": 1
+    },
     "h7": "CONSUMED_ONE_WAY_TERMINAL_INCONCLUSIVE",
     "same_identity_retry_allowed": false,
     "post_outcome_same_object_science_repair_allowed": false
@@ -121,30 +146,35 @@
     },
     "candidate35_old_object_remains_terminal": true,
     "candidate35_trigger_caught": true,
+    "candidate35_trigger_handoff_reviewed": true,
+    "candidate35_revisit_proposal_observed": false,
     "candidate35_dedicated_revisit_decision_observed": false,
+    "candidate35_no_decision_fabricated_without_proposal": true,
     "h7_revisit_status": "DORMANT_REVISITABLE",
     "h7_future_capacity_trigger_must_be_independently_developed": true,
     "revisit_forge_test_observed": false,
     "canonicalization_observed": false
   },
-  "moving_goalpost_rescue_risk": "LOW_CURRENTLY; MODERATE_IF_H7_CAPACITY_COMPARATOR_IS_ENGINEERED_RESPONSIVELY_TO_THE_OBSERVED_INCONCLUSIVE_OUTCOME_RATHER_THAN_ARRIVING_INDEPENDENTLY",
-  "over_terminalization_risk": "LOW_TO_MODERATE; CAND35_IS_NOT_FORGOTTEN_BUT_TRIGGER_TO_DECISION_HANDOFF_IS_STILL_PENDING",
-  "false_positive_risk": "LOW_FOR_SCIENTIFIC_RESURRECTION; MODERATE_FOR_AUTHORITY_BOOKKEEPING_IF_H7_LIGHTWEIGHT_EVIDENCE_REF_IS_SILENTLY_COUNTED_AS_POLICY_CONFORMING_AUTHORITATIVE_EVIDENCE",
-  "false_negative_risk": "LOW_TO_MODERATE; REVISIT_TRIGGER_DETECTION_WORKS_BUT_END_TO_END_REVISIT_DECISION_AND_TRIGGER_FOCUSED_FORGE_HAVE_NOT_YET_BEEN_EXERCISED",
+  "moving_goalpost_rescue_risk": "LOW_CURRENTLY; MODERATE_IF_H7_COMPARATOR_CAPACITY_IS_ENGINEERED_RESPONSIVELY_TO_THE_OBSERVED_INCONCLUSIVE_OUTCOME_OR_IF_CAND35_TRIGGER_STATUS_IS_TREATED_AS_AUTOMATIC_PERMISSION_TO_REOPEN_OR_PROBE",
+  "over_terminalization_risk": "LOW_TO_MODERATE; CAND35_IS_EXPLICITLY_CAUGHT_AND_HANDOFF_REVIEWED_BUT_TRIGGER_TO_INDEPENDENT_PROPOSAL_TO_TRIGGER_FOCUSED_FORGE_HAS_NOT_BEEN_EXERCISED_END_TO_END",
+  "false_positive_risk": "LOW_FOR_SCIENTIFIC_RESURRECTION; MODERATE_FOR_AUTHORITY_BOOKKEEPING_IF_H7_LIGHTWEIGHT_EVIDENCE_REF_IS_SILENTLY_COUNTED_AS_POLICY_CONFORMING_ANNOTATED_EVIDENCE",
+  "false_negative_risk": "LOW_TO_MODERATE; CAND35_IS_NOT_CURRENTLY_FORGOTTEN_BUT_REVISIT_PROPOSAL_LIVENESS_AND_TRIGGER_FOCUSED_FORGE_REMAIN_UNTESTED",
   "claim_type_findings": "SYSTEM_MECHANISM_BOUNDARY_REMAINS_INTACT; NO_SAME_OBJECT_POST_OUTCOME_UPGRADE; FRESH_SUCCESSOR_RULES_REMAIN_APPROPRIATE",
-  "mechanism_supply_health": "THIN_ZERO_EXECUTABLE_CANONICAL_MECHANISM; DO_NOT_RELAX_EVIDENCE_GATES_TO_CREATE_ACTIVITY",
-  "pass_reachability": "REACHABLE_PROSPECTIVELY_FOR_FRESH_CANDIDATES_OR_GENUINELY_INDEPENDENT_SUCCESSORS; NOT_BY_REPAIRING_OR_RETRYING_H7",
+  "mechanism_supply_health": "THIN_ZERO_EXECUTABLE_CANONICAL_MECHANISM; DO_NOT_RELAX_EVIDENCE_GATES_OR_MANUFACTURE_REVISIT_THEORY_FORGE_ACTIVITY_TO_FILL_THE_QUEUE",
+  "pass_reachability": "REACHABLE_PROSPECTIVELY_FOR_FRESH_CANDIDATES_OR_GENUINELY_INDEPENDENT_SUCCESSORS_WITHOUT_WEAKER_STANDARDS; NOT_BY_REPAIRING_RETRYING_OR_RETUNING_H7",
   "prospective_recommendations": [
-    "Keep H7 identity, score, result commit and all existing refs immutable; never rerun, retune, rescore, delete, move, replace or retarget them.",
-    "Repository Steward should adjudicate H7 against docs/AUTHORITATIVE_TAGS.md. Until adjudicated, keep policy-conforming annotated evidence count separate from total evidence refs.",
-    "For future formal publication, hard-enforce annotated provenance-bearing tag creation and peeled-SHA verification before an evidence identity is counted authoritative.",
-    "If H7 provenance supplementation is permitted, it must be a distinct append-only provenance identity to the exact existing immutable result, never a scientific upgrade or rerun.",
-    "Complete Candidate #35 with a dedicated Revisit decision. If REVISIT_FORGE_TEST is chosen, probe only the new treatment-to-readout causal-opportunity trigger and try to kill that rationale cheaply; do not rerun or retune old priming.",
-    "Treat any future H7 capacity-adequate comparator capability as a valid revisit trigger only if its motivation/development is demonstrably independent of the observed H7 outcome and frozen threshold; outcome-responsive comparator tuning is rescue laundering."
+    "Keep H7 identity, outcome, result commit and all existing H7 refs immutable; never rerun, retune, rescore, retry, delete, move, replace, retype or retarget them.",
+    "Follow Steward G15: preserve existing H7 lightweight refs exactly and keep policy-conforming annotated evidence count 5 separate from raw evidence ref count 6 until or unless a distinct append-only provenance attestation is created.",
+    "For future FORMAL publication, hard-enforce annotated provenance-bearing tag creation and peeled-target verification before an evidence identity is counted policy-conforming.",
+    "Keep Candidate #35 terminal and its independent trigger visible; do not fabricate a Revisit decision while no REVISIT_PROPOSAL exists.",
+    "If a fresh Candidate #35 Revisit proposal is independently motivated and REVISIT_FORGE_TEST is selected, test only the new treatment-to-readout or observability rationale and try to kill it cheaply; do not rerun or retune old priming.",
+    "Require any fresh #35-like proposal to predefine a treated-state-sensitive observable or verified treatment-to-downstream path, falsifier, ordinary reduction ladder and informative negative outcome.",
+    "Treat any future H7 capacity-adequate comparator capability as a valid Revisit trigger only if its motivation and development are demonstrably independent of the observed H7 outcome.",
+    "Do not weaken scientific gates merely because canonical MECHANISM supply is currently zero."
   ],
   "utility_request": {
     "created": false,
-    "reason": "No bounded utility proposal is needed; the live provenance and Revisit handoff questions are already explicit."
+    "reason": "No bounded Utility proposal is needed; provenance governance is already adjudicated by Steward G15 and the Revisit liveness question should remain a methodology/control concern rather than be converted into scientific activity."
   },
   "hard_floor_confirmation": {
     "auditor_dispatched_experiment": false,
@@ -159,9 +189,9 @@
   },
   "confidence": "HIGH",
   "questions_for_control_analyst": [
-    "Will H7 lightweight scientific refs remain explicitly non-policy-conforming for authoritative-evidence counting until Repository Steward adjudicates them under docs/AUTHORITATIVE_TAGS.md?",
-    "If provenance supplementation is allowed, what create-only annotated identity mechanism will ensure the original H7 refs remain untouched and the scientific decision remains unchanged?",
-    "What explicit Revisit decision will be issued for Candidate #35, and if Forge is used how will it isolate the new treatment-to-readout trigger rather than rerun old priming?",
-    "What evidence will establish that any future H7 capacity-adequate comparator capability was developed independently of the observed inconclusive result rather than tuned to rescue it?"
+    "What explicit mechanism, if any, should generate the first independent REVISIT_PROPOSAL for Candidate #35 without making REVISIT_TRIGGERED itself an automatic resurrection permission?",
+    "Will future FORMAL publication tooling make annotated provenance-bearing tag creation and peeled-SHA verification a hard precondition for counting an evidence identity as policy-conforming?",
+    "If H7 provenance supplementation is ever added, what create-only identity convention will keep every original H7 ref immutable and prevent the supplement from being mistaken for a new scientific result?",
+    "What evidence will establish that any future H7 capacity-adequate comparator capability was independently motivated rather than tuned in response to the observed inconclusive result?"
   ]
 }
