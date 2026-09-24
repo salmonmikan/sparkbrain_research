@@ -1,50 +1,39 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-24T12:35:49+09:00",
+  "timestamp": "2026-09-24T12:41:14+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260924T123549+0900-R105-9F3C7A21",
-    "sequence": 105,
+    "generation_id": "METHCAL-20260924T124114+0900-R106-C84E6B31",
+    "sequence": 106,
     "material_change": true,
-    "material_change_reason": "R104_BRIDGE_BINDING_DEFECT_REPAIRED_AND_FRESH_R114_GO_ONCE_WAS_USED; H7_NOW_HAS_ONE_CREATE_ONLY_START_IDENTITY_AND_TARGET_BLIND_RAW_PRESERVED_AND_FROZEN_BEFORE_SCORING; NO_FINAL_H7_EVIDENCE_OR_SEALED_REF_YET; CAND35_IS_REVISIT_TRIGGERED_WITH_OLD_TERMINAL_OBJECT_UNCHANGED",
-    "supersedes_generation_id": "METHCAL-20260924T111949+0900-R104-6B8E2D41",
+    "material_change_reason": "H7_FORMAL_ONE_WAY_PATH_COMPLETED_START_PRESERVE_SCORE_AND_FINAL_REFS_WITHOUT_RERUN; HOWEVER_NEW_H7_FREEZE_FORMAL_SEALED_EVIDENCE_REFS_ARE_LIGHTWEIGHT_TAGS_WHILE_STABLE_MAIN_AUTHORITATIVE_TAG_POLICY_SPECIFIES_ANNOTATED_TAGS_WITH_PROVENANCE; CAND35_REVISIT_TRIGGER_REMAINS_TERMINAL_ZERO_CREDIT",
+    "supersedes_generation_id": "METHCAL-20260924T123549+0900-R105-9F3C7A21",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260924T111949+0900-R104-6B8E2D41",
-      "branch_head_before_run": "d60cb359acaf9c6965525a49f2578bc499be32c2",
-      "overall_classification": "MIXED_CALIBRATION",
-      "role": "DESIGNATED_PRIOR_METHODOLOGY_HISTORY_READ_FIRST"
-    },
-    "human_directive": {
-      "id": "HUMAN-20260922-005",
-      "branch_head": "de60c8888d1b438d5b06fed2266a8efd5893e646",
-      "role": "HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"
+      "generation_id": "METHCAL-20260924T123549+0900-R105-9F3C7A21",
+      "branch_head_before_final_refresh": "5f58f7ef57a80f8329768e049fdb77ab43f9f48e",
+      "overall_classification": "WELL_CALIBRATED",
+      "role": "IN_RUN_PRE_FINALIZATION_SNAPSHOT"
     },
     "evidence_analyst": {
       "generation_id": "EVA-20260924T115823+0900-R114-H7-POSTBRIDGE-GO-ONCE-CAND35-TRIGGER",
       "branch_head": "1824290d67fdf06494c3849fa687997ec29137cf",
-      "role": "DESIGNATED_CANONICAL_GATE_HISTORY_PRE_START"
+      "role": "DESIGNATED_PRESTART_ONE_SHOT_AUTHORITY"
     },
     "control_brain": {
       "generation_id": "CTRL-20260924T115231+0900-R55-H7-BRIDGE-REBOUND-CAND35-TRIGGER",
       "branch_head": "7fad3ddb4d9c2fab9415c166a09de904358da529",
-      "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH"
+      "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX"
     },
     "bridge": {
-      "generation_id": "R10_ARMED_AND_DISPATCHED",
       "branch_head": "977e0241f390f6504ebfa4a27a389a487751038c",
       "role": "CONTROL_PLANE_DISPATCH_RECORD_ONLY"
     },
     "independent_audit": {
       "generation_id": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
       "branch_head": "00dec1659709a93e85050284d427e43b7d8d9ece",
-      "classification": "INCONCLUSIVE",
-      "role": "READ_ONLY_INDEPENDENT_REVISIT_TRIGGER_INPUT_ZERO_SCIENTIFIC_CREDIT"
-    },
-    "theory_revisit": {
-      "generation_id": "THEORY_REVISIT_R2_NO_DEDICATED_REVISIT_DECISION",
-      "role": "NONCANONICAL_ZERO_CREDIT; R114_REPORTS_NO_REVISIT_PROPOSAL_OR_FORGE_REFERRAL"
+      "role": "ZERO_CREDIT_REVISIT_TRIGGER_INPUT"
     }
   },
   "authoritative_refs": {
@@ -52,93 +41,88 @@
     "h7_science": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "h7_controller": "af3aa97574c365e3e918c3d4d012faa4886760d0",
     "h7_launch_workflow_blob": "1c4e2199740397c1afbbcc66e89d83f41fe54b21",
-    "h7_formal_identity": "h7-r5-285a3a206b34c5982b9d4045",
-    "h7_started_ref": "control/h7-r5-h7-r5-285a3a206b34c5982b9d4045-started",
-    "h7_started_commit": "52b17b785364f96cc2e95507b2336252459d5352",
-    "h7_preserve_ref": "preserve/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
+    "h7_identity": "h7-r5-285a3a206b34c5982b9d4045",
+    "h7_start_commit": "52b17b785364f96cc2e95507b2336252459d5352",
     "h7_preserve_commit": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
-    "h7_freeze_tag": "freeze/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
-    "h7_final_formal_tags": 0,
-    "h7_final_evidence_tags": 0,
-    "h7_final_sealed_tags": 0,
-    "evidence_tag_count": 5,
-    "canonical_candidate_total": 35,
-    "terminal_for_current_object": 34,
+    "h7_result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
+    "h7_freeze_ref_object_type": "commit_LIGHTWEIGHT_TAG",
+    "h7_formal_ref_object_type": "commit_LIGHTWEIGHT_TAG",
+    "h7_sealed_ref_object_type": "commit_LIGHTWEIGHT_TAG",
+    "h7_evidence_ref_object_type": "commit_LIGHTWEIGHT_TAG",
+    "h7_final_refs_all_same_result_commit": true,
+    "preexisting_authoritative_evidence_tag_count": 5,
+    "preexisting_authoritative_evidence_ref_object_type": "annotated_tag",
+    "authoritative_tag_policy": "docs/AUTHORITATIVE_TAGS.md@stable_main_requires_new_authoritative_scientific_tags_TO_USE_ANNOTATED_TAGS_WHEN_TOOLING_PERMITS_AND_DESIGNATED_WORKFLOW_EMBEDS_PROVENANCE_AND_VERIFIES_PEELED_SHA",
     "candidate35": {
       "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
       "revisit_status": "REVISIT_TRIGGERED",
       "confirmatory_credit": 0,
       "fresh_successor_created": false,
       "revisit_forge_test_count": 0
-    },
-    "scientific_source_of_truth": "STABLE_MAIN_PLUS_INDEPENDENTLY_FETCHED_EVIDENCE_AND_EXACT_RESEARCH_REFS; OPS_MAILBOXES_ARE_CONTROL_HISTORY_ONLY"
+    }
   },
-  "audit_result": "MATERIAL_POSITIVE_TRANSITION: PRIOR H7 END_TO_END BINDING DEFECT IS RESOLVED; ONE FORMAL IDENTITY HAS STARTED AND RAW PREDICTION IS REMOTELY PRESERVED/FROZEN BEFORE TARGET-SIDE SCORING; CURRENT IDENTITY IS NOW CONSUMED_ONE_WAY AND MUST NEVER BE RETRIED OR REPAIRED; FINAL SCORE/EVIDENCE/SEAL NOT YET OBSERVED. CAND35 REVISIT TRIGGER WAS CAUGHT WITHOUT REOPENING OLD OBJECT.",
-  "overall_classification": "WELL_CALIBRATED",
+  "overall_classification": "MIXED_CALIBRATION",
+  "audit_result": "FORMAL_EXECUTION_ORDER_AND_ONE_WAY_IDENTITY_ARE_WELL_CALIBRATED; FINAL_AUTHORITATIVE_EVIDENCE_IDENTITY_IS_NONCONFORMING_LIGHTWEIGHT_TAG_FORMAT_RELATIVE_TO_STABLE_MAIN_ANNOTATED_TAG_POLICY. DO_NOT_RERUN_OR_REWRITE; REQUIRE_EXPLICIT_APPEND_ONLY_PROVENANCE_ADJUDICATION.",
   "gate_classifications": {
-    "hard_integrity_policy": "KEEP",
+    "hard_scientific_integrity_floor": "KEEP",
     "development_phase_monotonicity": "KEEP",
-    "cycle3_mandatory_reassessment_not_terminal_cap": "KEEP",
+    "cycle3_reassessment_not_hard_cap": "KEEP",
     "science_invariant_vs_science_affecting": "KEEP",
-    "development_observations_as_independent_evidence": "KEEP",
-    "preformal_as_genuine_development": "KEEP",
-    "ready_not_hidden_success_gate": "KEEP",
+    "development_credit_separation": "KEEP",
+    "preformal_genuine_iteration": "KEEP",
+    "ready_no_hidden_second_formal_gate": "KEEP",
     "formal_exact_binding": "KEEP",
     "formal_fresh_identity_once": "KEEP",
-    "formal_start_to_consumed_one_way_transition": "KEEP",
+    "formal_start_to_consumed_one_way": "KEEP",
     "formal_rerun_after_start_guard": "KEEP",
     "raw_before_score": "KEEP",
-    "preserve_before_target_read": "KEEP",
-    "immutable_create_only_ref_semantics": "KEEP",
-    "post_start_same_identity_repair": "KEEP",
-    "terminal_current_object_never_reactivated": "KEEP",
-    "fresh_system_to_mechanism_successor_contract": "KEEP",
-    "revisit_axis_orthogonal_to_terminal": "KEEP",
+    "preserve_before_read": "KEEP",
+    "final_result_commit_consistency": "KEEP",
+    "new_authoritative_evidence_tag_form": "TIGHTEN",
+    "authoritative_provenance_metadata": "TIGHTEN",
+    "namespace_server_side_protection": "CLARIFY",
+    "terminal_never_reactivated": "KEEP",
+    "fresh_system_to_mechanism_successor": "KEEP",
+    "revisit_ledger_bootstrap": "KEEP",
     "revisit_trigger_sensitivity": "KEEP",
     "revisit_rescue_laundering_prevention": "KEEP",
-    "revisit_ledger_bootstrap_coverage": "KEEP",
-    "revisit_bootstrap_conservatism": "KEEP",
-    "revisit_forge_test_new_trigger_only": "INSUFFICIENT_EVIDENCE",
-    "revisit_canonicalize_full_gate": "INSUFFICIENT_EVIDENCE",
+    "revisit_forge_new_trigger_only": "INSUFFICIENT_EVIDENCE",
+    "revisit_canonicalization": "INSUFFICIENT_EVIDENCE",
     "theory_canonical_separation": "KEEP",
-    "fast_forge_canonical_separation": "KEEP",
-    "claim_ceiling_enforcement": "KEEP",
+    "forge_canonical_separation": "KEEP",
     "mechanism_supply_health": "CLARIFY",
-    "funnel_post_start_observability": "CLARIFY",
     "pass_reachability_without_standard_relaxation": "KEEP"
   },
   "mandatory_questions": {
-    "1": "YES; H7 moved from RESULT_EXPOSED_DEVELOPMENT into a single CONSUMED_ONE_WAY identity only after exact-bound fresh authorization.",
-    "2": "NO; no evidence cycle 3 is treated as automatic terminalization.",
-    "3": "YES; bridge/controller plumbing repairs were science-invariant and scientific semantics stayed fixed.",
-    "4": "YES; development/Theory/Forge/Revisit observations retain zero independent confirmatory credit.",
-    "5": "YES SO FAR; START is unique, exact-bound, and raw preservation preceded scoring; final seal/evidence is still pending.",
-    "6": "NO SUPPRESSION/MANUFACTURE OBSERVED; #35 remains terminal and no successor exists.",
-    "7": "YES; PRE_FORMAL allowed genuine bounded iteration without confirmatory credit.",
-    "8": "YES; old terminal objects remain terminal.",
-    "9": "YES FOR SENSITIVITY; #35 independent treatment/readout signal was promoted only to REVISIT_TRIGGERED metadata.",
-    "10": "YES SO FAR; no reopen, automatic successor, inherited credit or rescue rerun.",
-    "11": "INSUFFICIENT_EVIDENCE; no REVISIT_FORGE_TEST has run.",
-    "12": "YES; 34/34 bootstrap remains complete and non-aggressively classified.",
-    "13": "YES; H7 crossed exact-bound START and raw preservation without weakening evidence standards, though final score/seal is not yet observed."
+    "1": "YES",
+    "2": "NO_HARD_CAP_OBSERVED",
+    "3": "YES",
+    "4": "YES",
+    "5": "YES_FOR_ONE_WAY_EXECUTION; AUTHORITATIVE_FINAL_TAG_REPRESENTATION_NEEDS_TIGHTENING",
+    "6": "NEITHER_SUPPRESSED_NOR_MANUFACTURED_OBSERVED",
+    "7": "YES",
+    "8": "YES",
+    "9": "YES_TRIGGER_SENSITIVITY_DEMONSTRATED_BY_CAND35",
+    "10": "YES_SO_FAR",
+    "11": "INSUFFICIENT_EVIDENCE_NO_REVISIT_FORGE_TEST",
+    "12": "YES_34_OF_34_COMPLETE_AND_CONSERVATIVE",
+    "13": "YES_AS_PROCESS_PROPERTY_FORMAL_PATH_COMPLETED_WITHOUT_WEAKENING_SCIENTIFIC_GATES"
   },
-  "false_positive_risk": "LOW. Main live risk would be treating #35 trigger as success or rerunning old priming; neither occurred.",
-  "false_negative_risk": "LOW_TO_MODERATE. Candidate supply remains thin, but #35 demonstrates the ledger can catch a genuinely candidate-specific changed-understanding trigger.",
   "development_iteration_calibration": {
     "status": "WELL_CALIBRATED",
-    "h7_pre_start": "RESULT_EXPOSED_DEVELOPMENT_R5_UNCHANGED",
-    "h7_current": "CONSUMED_ONE_WAY_AFTER_CREATE_ONLY_START",
-    "cycle3": "REASSESSMENT_NOT_HARD_CAP",
-    "repair_classification": "PRE_START_CONTROLLER_BRIDGE_BINDING_CHANGES_WERE_SCIENCE_INVARIANT; NO_POST_START_REPAIR_ALLOWED_FOR_CURRENT_IDENTITY"
+    "h7_current": "CONSUMED_ONE_WAY_FINAL_RESULT_COMMIT_EXISTS",
+    "same_identity_retry_allowed": false,
+    "post_start_science_affecting_change_allowed": false,
+    "post_start_same_identity_invariant_repair_allowed": false
   },
   "formal_calibration": {
-    "status": "IN_PROGRESS_AFTER_RAW_FREEZE",
-    "identity_consumed": true,
-    "same_identity_retry_allowed": false,
-    "namespace_collision_guard": "ANY EXISTING control/preserve/formal/sealed/freeze H7 REF BLOCKS A REENTRY BEFORE IDENTITY",
-    "raw_preserved_before_target_side_scoring": true,
-    "final_evidence_observed": false,
-    "prospective_disposition": "DO_NOT_RELAUNCH_OR_REPAIR_CURRENT_IDENTITY; A LATER FRESH ANALYST MUST ADJUDICATE RESULT OR INFRASTRUCTURE FAILURE AFTER START"
+    "execution_order": "VALID_START_THEN_TARGET_BLIND_RAW_THEN_REMOTE_PRESERVE_FREEZE_THEN_SCORE",
+    "identity_count": 1,
+    "second_identity_observed": false,
+    "result_commit_present": true,
+    "formal_sealed_evidence_refs_present": true,
+    "final_ref_tag_form_conforms_to_authoritative_annotated_policy": false,
+    "disposition": "RESULT_AND_EXISTING_REFS_ARE_HISTORICAL_AND_MUST_NOT_BE_REPLACED_OR_RERUN; FRESH_ANALYST_STEWARD_MUST_ADJUDICATE_PROVENANCE_ONLY_APPEND_ONLY_REMEDIATION_IF_ANY"
   },
   "revisit_calibration": {
     "bootstrap": "COMPLETE_34_OF_34",
@@ -148,46 +132,38 @@
       "DEFERRED_INDEPENDENT_REIDENTIFICATION": 13,
       "REVISIT_TRIGGERED": 1
     },
-    "candidate35": "TRIGGERED_BY_INDEPENDENT_CANDIDATE_SPECIFIC_TREATMENT_TO_READOUT_CAUSAL_OPPORTUNITY_ISSUE; OLD_OBJECT_STAYS_TERMINAL; OLD_RESULT_UNCHANGED; ZERO_CREDIT",
+    "candidate35_old_object_remains_terminal": true,
     "dedicated_revisit_decision_observed": false,
     "revisit_forge_test_observed": false,
     "canonicalization_observed": false
   },
-  "pass_reachability": {
-    "assessment": "REACHABLE_WITHOUT_STANDARD_RELAXATION",
-    "evidence": "EXACT_BOUND_GO_ONCE CREATED ONE START IDENTITY AND PRESERVED/FROZE TARGET_BLIND_RAW BEFORE SCORE; FINAL VERDICT NOT YET OBSERVED"
-  },
-  "mechanism_supply_health": {
-    "assessment": "THIN_BUT_NOT_CURRENTLY_METHODOLOGY_BLOCKED",
-    "active_pre_start_candidates_before_h7_start": 1,
-    "note": "Do not relax scientific standards merely because H7 is the sole current line; Revisit/Theory/Forge remain zero-credit supply channels."
-  },
+  "false_positive_risk": "LOW_FOR_SCIENCE; MODERATE_FOR_EVIDENCE_STATUS_BOOKKEEPING_IF_LIGHTWEIGHT_H7_EVIDENCE_TAG_IS_SILENTLY_TREATED_AS_EQUIVALENT_TO_EXISTING_AUTHORITATIVE_ANNOTATED_TAGS",
+  "false_negative_risk": "LOW_TO_MODERATE; REVISIT_TRIGGER_SENSITIVITY_IS_DEMONSTRATED_BUT_END_TO_END_REVISIT_DECISION_REMAINS_UNTESTED",
   "prospective_recommendations": [
-    "Treat the current H7 identity as irrevocably CONSUMED_ONE_WAY from START onward. If the workflow fails now, preserve the failure and require fresh Analyst adjudication; never rerun, retune, rescore or repair this identity.",
-    "Do not infer a scientific PASS/FAIL until create-only final formal/sealed/evidence refs exist and are independently re-fetched.",
-    "For Candidate #35, let a dedicated fresh Revisit decision assess only the new causal-opportunity/readout-sensitivity trigger. Any Forge probe must cheaply try to kill that new rationale, never rerun or retune old R100 priming.",
-    "Keep old #35 terminal and grant zero inherited confirmatory credit to Audit/Revisit/Forge/Theory observations; canonicalize only via a fresh candidate ID and full prospective contract.",
-    "On the next Analyst update, explicitly reflect H7 as CONSUMED_ONE_WAY rather than stale PRE_FORMAL once START is observed; this is state observability, not a scientific criterion change."
+    "Never rerun, retune, rescore or repair the consumed H7 identity; preserve final score and all existing refs unchanged.",
+    "Fresh Analyst/Steward must adjudicate the H7 lightweight-tag mismatch before counting its evidence ref as equivalent to existing authoritative annotated evidence tags.",
+    "If policy permits provenance-only remediation, use a distinct create-only annotated identity pointing to the exact existing result commit; never replace or retarget an existing H7 ref and never change the scientific decision.",
+    "Keep Candidate #35 terminal and zero-credit; require a dedicated Revisit decision before any Forge probe, and scope any probe only to the new causal-opportunity/readout-sensitivity rationale."
   ],
   "utility_request": {
     "created": false,
-    "reason": "No bounded utility proposal is needed; current calibration questions are already directly observable from authoritative refs and the live one-way transition."
+    "reason": "No additional utility proposal is necessary."
   },
   "hard_floor_confirmation": {
-    "consumed_formal_rerun": false,
-    "formal_retune": false,
-    "formal_rescore": false,
-    "historical_pass_fail_rewrite": false,
-    "terminal_object_reactivated": false,
-    "same_object_system_to_mechanism_upgrade": false,
-    "evaluator_or_heldout_leakage_observed": false,
-    "silent_post_formal_repair_observed": false,
-    "research_evidence_ref_mutated_by_auditor": false,
-    "scheduler_changed_by_auditor": false
+    "auditor_dispatched_experiment": false,
+    "auditor_consumed_identity": false,
+    "auditor_mutated_research_or_evidence_ref": false,
+    "auditor_merged_pr": false,
+    "auditor_changed_scheduler": false,
+    "auditor_changed_scientific_criteria": false,
+    "consumed_identity_rerun_observed": false,
+    "historical_pass_fail_rewrite_observed": false,
+    "terminal_object_reactivated_observed": false
   },
   "confidence": "HIGH",
   "questions_for_control_analyst": [
-    "After the current H7 START, will the next canonical Analyst state explicitly mark this identity CONSUMED_ONE_WAY regardless of whether scoring succeeds or infrastructure fails?",
-    "Will Candidate #35 receive a dedicated Revisit decision before any Forge work, with the probe scoped only to the newly identified treatment-to-readout causal opportunity?"
+    "Will the next Analyst distinguish the final H7 result commit from the separate question of authoritative annotated-tag conformance?",
+    "If provenance remediation is permitted, will it be append-only to the exact existing result commit without replacing any existing H7 ref or changing the formal decision?",
+    "Will Candidate #35 receive a dedicated Revisit decision before any Forge probe?"
   ]
 }
