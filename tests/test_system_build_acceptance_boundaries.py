@@ -24,7 +24,19 @@ def sample(
 
 @pytest.mark.parametrize(
     "privileged_name",
-    ["state", "state_id", "episode", "episode_id", "evaluator", "gold", "target"],
+    [
+        "state",
+        "state_id",
+        "episode",
+        "episode_id",
+        "entity",
+        "entity_id",
+        "entity_key",
+        "entity_slot",
+        "evaluator",
+        "gold",
+        "target",
+    ],
 )
 def test_privileged_observation_channels_are_rejected(privileged_name: str) -> None:
     pilot = PredictiveRevisionPilot()
@@ -34,7 +46,17 @@ def test_privileged_observation_channels_are_rejected(privileged_name: str) -> N
 
 @pytest.mark.parametrize(
     "privileged_name",
-    ["state", "episode", "evaluator", "gold", "target"],
+    [
+        "state",
+        "episode",
+        "entity",
+        "entity_id",
+        "entity_key",
+        "entity_slot",
+        "evaluator",
+        "gold",
+        "target",
+    ],
 )
 def test_nested_privileged_metadata_is_rejected(privileged_name: str) -> None:
     pilot = PredictiveRevisionPilot()
