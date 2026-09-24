@@ -1,110 +1,81 @@
-# SparkBrain Control Brain — R50
+# SparkBrain Control Brain — R51
 
 - schema_version: `2`
-- generation_id: `CTRL-20260924T085200+0900-R50-3B7E5A91`
-- generated_at: `2026-09-24T08:52:00+09:00`
-- authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_NO_SCIENTIFIC_EXECUTION`
-- stable main: `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`
-- Evidence Analyst: `EVA-20260924T075935+0900-R109-H7-OPBLOCK-CONVERGED-NOOP`
-- Methodology: `METHCAL-20260924T081857+0900-R101-4C7A2D91`
-- Fast Forge: `FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED`
+- generation_id: `CTRL-20260924T091000+0900-R51-6D2A8F41`
+- produced_at: `2026-09-24T09:10:00+09:00`
+- supersedes: `CTRL-20260924T085200+0900-R50-3B7E5A91`
+- role: `CONTROL_BRAIN`
 
-## Human Directive dispositions
+## Position
 
-- No active science-changing Human Directive is observed in the current authoritative inputs. `HUMAN-20260922-005` remains consumed as a process directive only, not scientific evidence.
-- Fast Forge / Slow Science remains active and user-approved.
-- PRIMARY MAIN and Relay are user-approved enabled lanes at unchanged `:15` / `:45` cadences. Both were again found disabled at the initial live scheduler check and were restored to the already-approved enabled state only. No prompt, role, cadence, or scientific authority changed.
-- Theory Synthesis remains active with the approved temporary four-slot calibration through `2026-09-26T01:30+09:00`, then returns to two Theory slots/day.
-- Revisit/Resurrection remains active; old terminal IDs remain terminal forever.
+H7 remains the only active canonical mechanism object. It is scientifically READY/QUEUED, but the observed MAIN/Relay execution surface cannot create the prospectively frozen one-shot launch tag or dispatch the result-bearing workflow. FORMAL START remains stopped before identity creation.
 
-## Canonical funnel
+This is an operational capability blocker, not a scientific failure and not a reason to alter H7 science, comparator, threshold, runtime, scorer, preserver, or historical development results.
 
-Evidence Analyst R109 is the latest canonical gate. Population remains 35 (`MECHANISM=14`, `SYSTEM=21`): 34 terminal current objects and one nonterminal object, H7. H7 is scientifically READY and QUEUED, but operationally triggerable count and effectively executable MECHANISM count remain zero.
+## Canonical science
 
-Development phases remain `OPEN_DEVELOPMENT=1`, `RESULT_EXPOSED_DEVELOPMENT=34`, `CONSUMED_ONE_WAY=0`. Official consumed FORMAL identities remain 7; this Control run consumed none.
+- 35 canonical candidates: 14 MECHANISM / 21 SYSTEM.
+- 34 are terminal for their current object; H7 is the sole active nonterminal object.
+- H7 is PRE_FORMAL, RESULT_EXPOSED_DEVELOPMENT, eligible and scientifically READY.
+- Operationally triggerable mechanism count: 0.
+- Fresh scientific FORMAL authority exists conditionally, but it has not been exercised.
+- Official consumed FORMAL identities remain 7; no new identity was created or consumed.
+- Stable main remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`.
+- Five authoritative `evidence/*` annotated tags were independently re-fetched and are unchanged.
 
-### H7
+## H7 one-way launch boundary
 
-H7 remains MECHANISM / PRE_FORMAL / `RESULT_EXPOSED_DEVELOPMENT` with revision `R5_UNCHANGED`. Its conditional one-fresh-identity, exact-binding scientific FORMAL authority is retained. This is not a scientific hold.
+The frozen controller workflow exists at `.github/workflows/h7-formal-r5-one-way-launch.yml` and is triggered by `launch/h7-r5-*`. Its non-result launch-plumbing readiness and generic CI are green. H7 one-way namespaces are unused.
 
-The current blocker is operational execution capability: the observed MAIN/Relay surface cannot create the required fresh one-shot launch tag or dispatch the frozen result-bearing workflow. Therefore:
-
-- no fresh H7 FORMAL identity exists or is consumed;
-- no START exists;
-- no protected evaluation has been accessed;
-- no raw result, score, or PASS/FAIL exists;
-- FORMAL START remains STOP under the currently observed executor.
-
-The only permissible prerequisite is to provision exactly the missing one-shot trigger capability through an authorized maintainer/external execution surface without changing H7 science/controller/runtime/input/scorer/preserver/protocol. After that capability actually exists, a fresh Evidence Analyst generation must revalidate the exact binding before any identity creation or START.
-
-MAIN/Relay must not repeatedly attempt the blocked start and must not alter science to work around an operational limitation.
+The currently connected MAIN/Relay/GitHub execution surface exposes neither tag creation nor workflow dispatch. Therefore:
+1. do **not** create a launch tag yet;
+2. do **not** create/consume a FORMAL identity or START;
+3. first establish or confirm an external/maintainer one-shot trigger path without changing frozen H7 science/controller/workflow semantics;
+4. once that capability exists, obtain a fresh Analyst exact-binding revalidation;
+5. only after that fresh GO may one launch tag be pushed exactly once.
 
 ## Revisit / Resurrection
 
-The one-time bootstrap remains complete at `34/34` terminal objects:
+The retrospective ledger bootstrap is complete: 34/34 terminal candidates classified.
+- CLOSED_STRONG: 1
+- DORMANT_REVISITABLE: 19
+- DEFERRED_INDEPENDENT_REIDENTIFICATION: 14
+- REVISIT_TRIGGERED: 0
 
-- `CLOSED_STRONG`: 1
-- `DORMANT_REVISITABLE`: 19
-- `DEFERRED_INDEPENDENT_REIDENTIFICATION`: 14
-- `REVISIT_TRIGGERED`: 0
+No new independent trigger, Revisit proposal, Forge referral, fresh successor, old-ID reopening, or historical-result rewrite occurred. Candidate 34 remains CLOSED_STRONG; Candidate 35 remains deferred pending independent re-identification.
 
-No new candidate-specific independent trigger, Revisit Forge referral, fresh successor, old-ID reopening, or historical result rewrite occurred. Continue differential trigger scanning only; do not redo the whole bootstrap without material new information.
+## Theory Synthesis
 
-## Theory Synthesis / Fast Forge
+TH-001's current proposal remains rejected. Two zero-credit Forge discriminator probes were killed by ordinary residual adaptation/threshold state plus fixed edge/delay dynamics. No Theory survivor or canonicalization exists.
 
-TH-001 remains rejected for the current proposal only, noncanonical and zero-credit. Its contract-faithful Q0-vs-QI Forge discriminator was explained by ordinary residual adaptation/threshold state plus fixed downstream edge/delay. This is not a universal theorem against all future causal-quotient proposals.
+Literature R41 adds prospective guardrails against vacuous causal abstraction and unfaithful interventions, but these are not retrofitted into frozen H7.
 
-Fast Forge's latest run correctly chose `NO_OP`: no live Analyst-gated Theory or Revisit probe exists, H7 is MAIN-owned, terminal Candidate 34/35 rescue surfaces remain off-limits, and no independent target survived screening. No new prototype, branch, promotion proposal, scientific claim, or evidence was created.
+## Fast Forge
 
-Current Forge totals: 20 runs, 19 prototypes, 15 dead ends, 1 retained interesting observation, 1 promotion proposal, 0 admissions, 2 Theory probes / 2 kills / 0 survivors, 0 Revisit probes, 10 duplicate-or-rescue rejects, 15 ordinary-reduction rejects, and 0 ownership collisions.
+Latest Forge run correctly chose no new work. Rollout metrics remain bounded: 20 runs / 19 prototypes / 15 dead ends / 1 interesting / 1 promotion proposal / 0 admissions; both Theory probes were killed, no Revisit probe has run, and no MAIN ownership collision occurred.
 
-## Methodology
+## Utility
 
-Methodology R101 reports `WELL_CALIBRATED` with no material calibration change. FORMAL one-way integrity remains intact because H7 is still prestart. PASS remains scientifically reachable without weakening standards, but operationally blocked until the authorized launch primitive exists and exact binding is freshly revalidated.
-
-Mechanism supply remains fragile: one scientifically queued mechanism, zero operationally triggerable mechanisms. This is a throughput risk, not a reason to lower evidence standards or manufacture candidates.
-
-Revisit's live end-to-end sensitivity remains untested rather than failed because no actual `REVISIT_FORGE_TEST` or canonicalization has yet occurred.
+Utility is clean IDLE. The PF-R1 exact-byte provenance assignment is completed, preserved bytes were re-verified, and Control previously CAS-closed the assignment. Utility has no scientific or Revisit/Theory authority.
 
 ## Scheduler health
 
-Fleet status: `YELLOW_REPEAT_APPROVED_ENABLED_STATE_DRIFT_REPAIRED_QUEUE_LAG_WATCH`.
+Fleet: **YELLOW**.
 
-PRIMARY MAIN and Relay were again unexpectedly disabled despite the standing user-approved policy that both remain enabled. Control restored both to the already-approved enabled state and then re-listed live definitions; both are currently enabled at the unchanged `:15` and `:45` cadences.
+Live definitions now show PRIMARY MAIN and Relay both enabled at their approved :15 / :45 cadences; Fast Forge is enabled at :35. No exact deterministic scheduler collision or ownership collision is observed. Broad queue delay remains visible, so cadence health stays under watch.
 
-This is now repeated enabled-state drift, not a one-off observation. Control still makes no structural/cadence change: if the drift or queue delay begins causing ownership collisions or useful-throughput loss, bring a concrete proposal to the user rather than silently disabling or retiming either lane.
+The repository scheduler registry is stale relative to live definitions: it still records the older Control cadence, former SUB semantics, and Brief :45 rather than the approved live :55 phase. Do not roll live definitions back to the stale mirror.
 
-## Direction
+No scheduler mutation was made this run. Fast Forge is IMPLEMENTED/OBSERVATION, not approval-pending. The existing latency proposal remains unchanged and was not applied.
 
-### Evidence Analyst
+## Directions
 
-1. Keep H7 scientific readiness/queue status separate from operational triggerability.
-2. After an authorized one-shot H7 launch capability actually exists, freshly verify exact source/controller/runtime/input/scorer/preserver binding before any identity or START.
-3. Continue Revisit as candidate-specific differential trigger scanning; old terminal IDs remain terminal.
+- Analyst: keep H7 STOP before identity until one-shot trigger capability exists; then fresh-revalidate exact bindings before START.
+- MAIN/Relay: remain WAITING_EXTERNAL; do not retry or redesign around missing launch capability.
+- Revisit: differential scan only; do not re-bootstrap unchanged terminal objects.
+- Forge: independent noncanonical work only; zero work is valid.
+- Utility: remain independent; PF-R1 work is closed.
 
-### PRIMARY MAIN / Relay
+## Integrity
 
-1. Stay enabled at the approved existing cadences/roles.
-2. Do not create/consume H7 identity, START, access protected evaluation, score, or futilely retry while trigger capability is absent.
-3. Do not change H7 science to solve the operational blocker.
-
-### Fast Forge
-
-1. Continue to choose NO_OP when no independent target or explicit Analyst Theory/Revisit gate exists.
-2. Do not touch H7 or Candidate 34/35 rescue surfaces.
-
-### Utility
-
-Remain independent and nonauthorizing. Do not create H7 FORMAL trigger, Theory/Revisit authority, or canonical lifecycle changes.
-
-## Hard-floor audit this run
-
-Control executed no experiment, created or consumed no identity, started no FORMAL run, accessed no protected evaluator, dispatched no result-bearing scientific workflow, merged no research PR, changed no scientific metric/protocol, mutated no immutable/evidence ref, reopened no terminal candidate, and rewrote no historical PASS/FAIL.
-
-## User-action state
-
-No research-policy decision is required. Operational action remains required from an authorized maintainer/external execution surface to provision the one-shot H7 FORMAL launch tag or frozen-workflow dispatch capability without changing science. Fresh Analyst exact-binding revalidation is mandatory afterward.
-
-- new_scientific_result: `false`
-- user_decision_required: `false`
-- user_operational_action_required: `true`
+No experiment, result-bearing workflow, FORMAL identity consumption, research PR merge, immutable/formal/sealed/evidence mutation, protected-evaluation access, terminal reopening, scheduler mutation, or historical-result rewrite occurred.
