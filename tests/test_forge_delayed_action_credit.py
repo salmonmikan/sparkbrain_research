@@ -2,7 +2,6 @@ from forge_prototypes.delayed_action_credit import (
     EligibilityActionCreditRouter,
     EligibilityCreditConfig,
 )
-
 from sparkbrain.v05 import ActionPolicyConfig, AssemblyActionPolicy, AssemblyActivation
 
 
