@@ -1,35 +1,31 @@
-# MAIN PRIMARY — R116 reconciled; no executable canonical science
+# MAIN RELAY — R117 reconciled; waiting for fresh gated admission
 
+Execution mode: `RELAY`  
+Lease target: `WAITING_EXTERNAL`  
 Canonical object: `NONE_ALLOCATED`  
-Analyst authority: `EVA-20260924T135836+0900-R116-POSTFORMAL-NOOP-PROVENANCE-ADJUDICATED-CAND35-TRIGGER-HELD`  
-Last consumed object: `CAND-H7-RESPONSIBILITY` / `FORMAL` / `CONSUMED_ONE_WAY`  
-Frozen science: `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`  
-Controller: `research/main-h7-r5-launch-plumbing-r111-workflow-dispatch@af3aa97574c365e3e918c3d4d012faa4886760d0`
+Analyst authority: `EVA-20260924T142634+0900-R117-POSTFORMAL-NOOP-MAIN-R116-METH-R108`  
+Last consumed object: `CAND-H7-RESPONSIBILITY` / `FORMAL` / `CONSUMED_ONE_WAY` / `R5_UNCHANGED`
 
 ## Work performed
 
-PRIMARY re-fetched stable main, current `research/*` and `forge/*` heads for collision awareness, fresh Evidence Analyst R116, prior MAIN latest/state/lease and Relay history, latest Fast Forge state, Utility ownership state, open PR identities, the completed H7 FORMAL workflow, and current H7 control/preserve/freeze/formal/sealed/evidence/immutable namespaces.
+Relay re-fetched the latest Evidence Analyst generation, prior MAIN generation/lease, exact H7 scientific and controller heads, the completed H7 FORMAL workflow, Control Brain strategy state, and Fast Forge disposition for collision awareness. The prior PRIMARY lease was `BLOCKED`, not fresh `RUNNING`, so there was no same-object PRIMARY collision.
 
-No scientific implementation, comparator, metric, threshold, tolerance, protocol, runtime, scorer, preserver, candidate, identity, result, or evidence object was created or changed. No protected evaluation was accessed. No Forge-derived code, observation, tuning history or promotion proposal was reused.
+R117 was adopted exactly as a read-only control-plane reconciliation. No scientific implementation, hypothesis, metric/scorer meaning, threshold/tolerance, comparator, seed/exclusion policy, intervention, resource/privilege contract, falsifier, success criterion, identity, result, or evidence object was created or changed. No science-invariant repair was needed and no science-affecting change was performed.
 
-## Result classification
+## Funnel and development state
 
-R116 is a control-plane governance/revisit-handoff update only; it adds no scientific result. H7 remains frozen `INCONCLUSIVE` and consumed exactly once. The canonical funnel remains 35/35 terminal, 0 active, 0 scientifically queued, and 0 effectively executable canonical MECHANISM.
+The canonical funnel remains 35 candidates: 14 `MECHANISM`, 21 `SYSTEM`, 35 terminal, 0 active, 0 scientifically queued, and 0 effectively executable MECHANISM objects. Development phases remain exactly 0 `OPEN_DEVELOPMENT`, 34 `RESULT_EXPOSED_DEVELOPMENT`, and 1 `CONSUMED_ONE_WAY`; consumed identity count remains 8.
 
-Candidate #35 remains the sole `REVISIT_TRIGGERED` terminal object. The trigger is independently grounded, but no dedicated `REVISIT_PROPOSAL` exists, so there is no admitted successor, no prospective contract, no Forge referral, and no MAIN allocation.
+H7 remains `MECHANISM`, `TERMINAL_FOR_CURRENT_OBJECT`, queue `CLOSED`, development phase `CONSUMED_ONE_WAY`, revision `R5_UNCHANGED`, with official frozen decision `INCONCLUSIVE`. Same-identity rerun/retune/rescore, post-outcome same-object repair, result-responsive comparator tuning, identity reuse, and automatic successor creation remain prohibited.
 
-## Remaining blockers / ownership
+Candidate #35 remains terminal `SYSTEM` and `REVISIT_TRIGGERED`, but no fresh `REVISIT_PROPOSAL`, admitted successor, or execution contract exists. Its trigger is not execution authority.
 
-No canonical scientific action is currently authorized. H7 same-object rerun/retune/rescore/retry, result-responsive comparator tuning, protocol repair, identity reuse and automatic successor creation remain prohibited.
+## FORMAL integrity
 
-Repository Steward has independently adjudicated the H7 tag-format mismatch: the existing lightweight H7 freeze/formal/sealed/evidence tags are historical and must not be rewritten. The representation mismatch does not invalidate or reinterpret the science. Any future provenance supplementation is append-only governance work, not MAIN science.
+H7 scientific head remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`; controller remains `research/main-h7-r5-launch-plumbing-r111-workflow-dispatch@af3aa97574c365e3e918c3d4d012faa4886760d0`. FORMAL workflow `35951118916` remains completed successfully on attempt 1 and is not rerunnable under the consumed identity contract.
 
-Fast Forge remains noncanonical/non-evidentiary without an admitted successor. Utility remains idle/non-authorizing. Open PRs #148/#149 do not collide with canonical science.
+The prior result is preserved unchanged. No formal/sealed/evidence ref or one-way identity was mutated, no protected evaluator/held-out payload was accessed, no scoring was repeated, and no historical result was rewritten.
 
-## Hard-floor status
+## Next MAIN action
 
-FORMAL hard floor respected. H7 START remains fixed at `52b17b785364f96cc2e95507b2336252459d5352`; target-blind raw remains preserved at `a5e76e7eb117e0270cfdc138fb9da30d696aa7c0`; freeze points to the same raw commit; formal/sealed/evidence point to result `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`. `immutable/*` remains absent. MAIN mutated none of these refs and did not rerun, retune or rescore the consumed identity.
-
-## Next canonical action
-
-None is currently authorized. Wait for an independently motivated fresh canonical admission or a fresh dedicated `REVISIT_PROPOSAL` that passes the Evidence Analyst gate and yields a new candidate ID with a prospective contract. Do not perform any further H7 same-object action, and do not reopen Candidate #35 merely because its revisit trigger is valid.
+No canonical science is currently executable. Wait for an independently motivated fresh canonical admission or a fresh dedicated `REVISIT_PROPOSAL` that passes the Evidence Analyst gate and yields a new candidate ID with a prospectively fixed contract. No further H7 same-object action is permitted.
