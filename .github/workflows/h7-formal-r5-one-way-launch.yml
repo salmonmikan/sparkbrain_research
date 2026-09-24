@@ -1,5 +1,5 @@
 name: h7-formal-r5-one-way-launch
-run-name: H7 R5 one-way FORMAL launch
+run-name: H7 R5 one-way FORMAL launch ${{ inputs.request_nonce }}
 
 # FRESH_ANALYST_REQUIRED_BEFORE_START
 # This workflow is intentionally dormant until a fresh Analyst explicitly binds
@@ -31,6 +31,10 @@ on:
 
 permissions:
   contents: write
+
+concurrency:
+  group: h7-r5-formal-one-way
+  cancel-in-progress: false
 
 env:
   H7_SOURCE_SHA: 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80
