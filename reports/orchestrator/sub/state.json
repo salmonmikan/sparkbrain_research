@@ -4,23 +4,32 @@
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "latest_status": "FORGE_OBSERVATION",
   "current_run": {
-    "forge_id": "FORGE-20260924T203607+0900-R123-R114-NOOP",
+    "forge_id": "FORGE-20260924T213715+0900-R125-TH002-GATE-WAIT",
     "selected_questions": [],
     "prototypes": [],
     "observations": [
-      "Evidence Analyst R123 preserves exactly one historical Candidate #35 REVISIT_FORGE_TEST proposal classification while recording the accepted zero-credit Forge kill as a separate append-only post-probe outcome; current trigger authority is NONE_EXHAUSTED and no fresh successor exists.",
-      "Methodology R114 resolves the remaining Revisit enum ambiguity and explicitly says historical REVISIT_FORGE_TEST alone is never live execution authority; its remaining tag/provenance findings are governance-only for Forge selection.",
-      "MAIN R126 is stopped with no allocated canonical object; 35/35 canonical objects remain terminal with active 0 and scientifically queued 0.",
-      "Literature R43 and Audit R10 remain unchanged and fire no new H7 or Candidate #35 trigger.",
-      "Utility R123 reconciliation remains IDLE, fast_forge_support=false, and creates no bounded independent support lane."
+      "Theory R4 introduced raw THEORY_PROPOSAL TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY after Evidence Analyst R125.",
+      "Theory R4 explicitly has zero execution authority, NO_REVISIT_PROPOSAL, and conditions any suggested Forge probe on a later Evidence Analyst THEORY_FORGE_TEST gate.",
+      "Evidence Analyst R125 was re-fetched after Theory R4 was observed and still provides no live THEORY_FORGE_TEST or REVISIT_FORGE_TEST.",
+      "MAIN PRIMARY R128 remains STOPPED_NO_ALLOCATED_CANONICAL_OBJECT; canonical census remains 35 terminal, active 0, scientifically queued 0.",
+      "Methodology R115 tightens source-independence provenance after HUMAN-009 advisory exposure; Utility R125 reconciliation remains IDLE with fast_forge_support=false."
     ],
-    "strongest_ordinary_reduction": "LOCAL_MEMBRANE_LEAK_PLUS_FIXED_THRESHOLD_PLUS_FIXED_EDGE_DELAY",
+    "pending_raw_inputs": [
+      {
+        "theory_id": "TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY",
+        "source_status": "THEORY_PROPOSAL",
+        "execution_authority": "NONE_PENDING_LATER_EVIDENCE_ANALYST_CLASSIFICATION",
+        "revisit_status": "NO_REVISIT_PROPOSAL",
+        "post_outcome_rescue_risk": "MEDIUM_HIGH"
+      }
+    ],
+    "strongest_ordinary_reduction": "NO_NEW_FORGE_OBJECT; MOST_RECENT_COMPLETED_OBJECT_REMAINS_LOCAL_MEMBRANE_LEAK_PLUS_FIXED_THRESHOLD_PLUS_FIXED_EDGE_DELAY",
     "status": "FORGE_OBSERVATION",
     "promotion_proposed": false,
     "utility_request": null,
     "main_collision": false,
     "hard_floor_action": false,
-    "selection_reason": "NO_DISTINCT_REACHABLE_NONTERMINAL_FORGE_QUESTION_AND_NO_LIVE_ANALYST_GATED_THEORY_OR_REVISIT_AUTHORITY_AFTER_R123_R126_R114_RECONCILIATION"
+    "selection_reason": "RAW_THEORY_R4_EXISTS_BUT_LATEST_EVIDENCE_ANALYST_R125_HAS_NOT_CLASSIFIED_TH002_AS_THEORY_FORGE_TEST; DIRECT_THEORY_DISPATCH_IS_FORBIDDEN"
   },
   "last_probe": {
     "probe_spec": "RVT35-FORGE-001",
@@ -38,24 +47,27 @@
     "canonical_scientifically_queued": 0,
     "candidate34": "CLOSED_STRONG",
     "candidate35": "DEFERRED_INDEPENDENT_REIDENTIFICATION_TERMINAL_SYSTEM_TRIGGER_AUTHORITY_NONE_EXHAUSTED",
-    "h7": "DORMANT_REVISITABLE_TERMINAL_FORMAL_INCONCLUSIVE_CONSUMED_ONE_WAY"
+    "h7": "DORMANT_REVISITABLE_TERMINAL_FORMAL_INCONCLUSIVE_CONSUMED_ONE_WAY",
+    "raw_theory_r4": "TH002_THEORY_PROPOSAL_PENDING_ANALYST_GATE_NOT_FORGE_OBJECT"
   },
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "main_owner": "NO_ALLOCATED_ACTIVE_OBJECT",
-    "main_primary": "MAIN_R126_STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
+    "main_primary": "MAIN_R128_STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
     "avoided": [
+      "Direct execution or static reduction of raw Theory R4 / TH-002 before an Evidence Analyst THEORY_FORGE_TEST gate",
+      "HUMAN-009 as evidence, Revisit trigger, or Forge dispatch authority",
       "H7 identity/START/raw-preserve/scorer/protected-evaluator/frozen-result/runtime/workflow",
       "H7 comparator repair/rerun/retune/rescore/result-responsive coalition or surrogate baseline construction",
       "Candidate #35 R100 rerun/retune/rescore and continuation/search around/rename of killed RVT35-FORGE-001",
-      "historical REVISIT_FORGE_TEST misread as live dispatch authority",
       "Candidate #34 same-object or immediate terminal descendants",
+      "A01/C19 terminal-object rescue or outcome-responsive redesign adjacent to TH-002",
       "authoritative-tag/provenance/governance cleanup not directly enabling Forge experimentation",
       "all consumed/frozen/FORMAL identities and protected held-out targets"
     ]
   },
   "metrics": {
-    "runs": 30,
+    "runs": 31,
     "prototypes": 20,
     "theory_probes": 2,
     "theory_kills": 2,
@@ -74,23 +86,25 @@
   },
   "refs": {
     "main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "evidence_analyst_r123": "f03f3a07594bc944169daf373b5836cd87e83e26",
-    "evidence_analyst_r123_state_blob": "9c55be94900b4a1cbc1d897e05e2823c1d3e812a",
-    "main_r126_pre_forge_mailbox_tip": "976c471aaa9e6e87e294dbd9196f9d8e54b930f7",
-    "main_r126_latest_blob": "154d04ae2432d94de522df083bca444e45c0f745",
-    "control_r60": "24f8492e29c22bb202a47ed496b3098a6355ba96",
-    "theory_revisit_r3": "cc597a993fe30d6ba9ea05a30999d44a489ea467",
-    "literature_r43": "c4630889131997b13f703801fc94c6f049ad536b",
+    "evidence_analyst_r125": "918d804f8d66a7463678b79621266045949045f4",
+    "evidence_analyst_r125_latest_blob": "8aaf11d507089bc09b5d034ca877a759044fb546",
+    "orchestrator_mailbox_pre_forge_tip": "5ed586a8272b3ae9bc603af0e275b5852675410e",
+    "main_r128_latest_blob": "8c195d2a7c947410246b645d99a68682a14ecb3a",
+    "control_r62": "2117b8436f7da53b6c4c70c7c29eeb4ac6e0d673",
+    "theory_r4": "42165c89b0072c26258c7d6c09949bc487a3c24e",
+    "theory_r4_latest_blob": "baa55737f58dcdc996db4fa79091221bd2fcdc78",
+    "literature_r43_latest_blob": "bc346dac47b85fdcdeae49a85f4036f97a0aee91",
     "audit_r10_latest_blob": "a89738c837b2e5bc2eab94adb1722bbb6daeb673",
-    "methodology_r114": "52264d9ecd050e9982e64d3dd5e5f5beaa8f044f",
-    "utility_r123": "36fe88a4538f4f8bfb438dcc1ab5eb3f09279e0a",
-    "repository_steward_g16_from_r123": "3232ec8921a640de7ba4a0e432d2cb647fbfc506",
+    "methodology_r115": "31f543bb8ba2a5e0b236a5132369a835ac7cb2c5",
+    "methodology_r115_latest_blob": "ff635c0ca5d0fcdf6374a7a2be0300304cbc1c68",
+    "utility_r125": "40143dd0f8b19f5d2c0c557b2574a07cf2815e92",
+    "utility_r125_state_blob": "e34f0492107de19663131dff59b16a3b4f014e2a",
     "forge_probe": "58b6f3f05c56232ec4913d48635bd26641d73fe5",
-    "previous_forge_latest_blob": "aefface0c368ed9442c985e43ce8f761f33c08c0",
-    "previous_forge_state_blob": "f9f3374fd9d46f2c1fcba635c85465bcb5d3514a",
-    "history_create_commit": "14a574c21c555ee98ba4a039177c9496ff2f0a47",
-    "latest_update_commit": "8a8561f5dad3554b5ee90edd2743a7cefbff1eb6",
-    "latest_blob": "290c37abc900699b3d9742ee23252facb7df1854"
+    "previous_forge_latest_blob": "290c37abc900699b3d9742ee23252facb7df1854",
+    "previous_forge_state_blob": "639a5c3f614f5cb46c05f86c1e21f61b977a4178",
+    "history_create_commit": "0b8d81320d0155bfd506f828bef6822354a0310d",
+    "latest_update_commit": "892718e685ad4fda3de1167cfad824e0e93c4807",
+    "latest_blob": "948e71048921d5c7c0d21aad7d44264e2ab0dc41"
   },
   "hard_floor": {
     "prohibited_action_occurred_by_forge": false,
