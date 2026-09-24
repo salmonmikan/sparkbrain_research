@@ -1,247 +1,154 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-25T00:19:48+09:00",
+  "timestamp": "2026-09-25T01:19:59+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260925T001948+0900-R118-D42E7B19",
-    "sequence": 118,
+    "generation_id": "METHCAL-20260925T011959+0900-R119-6F8C2A41",
+    "sequence": 119,
     "material_change": true,
-    "material_change_reason": "R117_REVISION_GUARD_ADOPTED_BY_ANALYST_CONTROL_AND_HONORED_BY_FORGE_WHILE_INDEPENDENT_AUDIT_DURABILITY_GAP_RAISES_DISCOVERY_FALSE_NEGATIVE_RISK",
-    "supersedes_generation_id": "METHCAL-20260924T232004+0900-R117-7E4B2C19",
+    "material_change_reason": "LITERATURE_R44_EXPANDS_PROSPECTIVE_REDUCTION_LADDER; STAGE_AND_CLAIM_SCOPE_CLARIFIED",
+    "supersedes_generation_id": "METHCAL-20260925T001948+0900-R118-D42E7B19",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
-  },
-  "persistence": {
-    "history_path": "analysis/methodology_calibration/history/2026-09-25/0019.md",
-    "history_create_commit": "8c72d3f93ccf9ae9d870ca1b07fbf3634d9192ac",
-    "latest_update_commit": "7c4d229c7448d9b6c505273e15efb86746f74a09"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260924T232004+0900-R117-7E4B2C19",
-      "branch_head_before_r118_persistence": "8b88ef3ad173188a5219bfffeb8530901d36b678"
+      "generation_id": "METHCAL-20260925T001948+0900-R118-D42E7B19",
+      "branch_head": "2dccd823d7f37a621a477a8a1fbf3d637edc340d"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260925T000135+0900-R129-METH117-CONTROL64-SCHEDULER-DURABILITY-NO-SCIENCE",
-      "branch_head": "dd0a26b51f77ceafd333bab8a03c21100571c078"
+      "generation_id": "EVA-20260925T005800+0900-R130-LIT44-NO-SCIENCE",
+      "branch_head": "6a8eb246233bc04d5f3ca47aaffba99970acf20b"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260924T235000+0900-R64-TH002-KILL-METH117-SCHEDULER-DEGRADATION",
-      "branch_head": "a92e0eaae0260152e311c1c5a4ca0294daf571a5"
+      "generation_id": "CTRL-20260925T005016+0900-R65",
+      "branch_head": "857998b44ca7954d3875d3957c447ce3414a7d89"
+    },
+    "literature": {
+      "generation_id": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
+      "branch_head": "4087356677f1ae60aa87aafeea927949ea0c3d17",
+      "revisit_trigger": false
     },
     "theory": {
       "generation_id": "THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41",
-      "branch_head": "87d206a3f62c70c393531413445703fd0baa108a",
-      "proposal_id": "TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY",
-      "status": "POST_FORGE_KILLED_NO_CANONICALIZATION",
-      "revisit_proposal": false,
-      "canonical_candidate_created": false
-    },
-    "fast_forge": {
-      "generation_id": "FORGE-20260924T233401+0900-R128-R117-NOOP",
-      "state_blob": "fd152639b0b699c39d5e35c2db308791896a1a74",
-      "selected_questions": 0,
-      "new_probe_created": false,
-      "r117_revision_guard_adopted": true,
-      "th002_replay_rejected": true,
-      "last_probe_branch": "forge/th002-static-addressability-kill-20260924",
-      "last_probe_head": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16"
+      "status": "FORGE_KILLED_NO_CANONICALIZATION"
     },
     "independent_audit": {
       "latest_generation": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
-      "expected_2230_output_durable": false,
-      "external_science_branch_head": "87d206a3f62c70c393531413445703fd0baa108a"
+      "expected_2230_output_durable": false
     },
-    "human_directive": {
-      "generation_id": "HUMAN-20260924-009",
-      "authority": "UNVERIFIED_LEAD_ONLY_ZERO_SCIENTIFIC_AUTHORITY",
-      "scientific_credit": 0
+    "main": {
+      "status": "STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
+      "branch_head": "116cb7d0f570fb1482c4ad6bbd1251bcba4aee75"
     }
   },
   "authoritative_refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "authoritative_tag_policy_document": "docs/AUTHORITATIVE_TAGS.md",
-    "repository_evidence_ref_count_including_h7": 6,
-    "policy_conforming_annotated_evidence_identity_count": 5,
-    "h7_evidence_ref_object_type": "commit_LIGHTWEIGHT_TAG",
-    "active_repository_ruleset_count": 1,
-    "authoritative_tag_namespace_protection_observed": false,
+    "evidence_ref_count": 6,
+    "annotated_evidence_count": 5,
+    "h7_evidence_ref_type": "LIGHTWEIGHT_COMMIT_TAG",
+    "tag_namespace_server_protection": false,
     "h7": {
-      "identity": "h7-r5-285a3a206b34c5982b9d4045",
+      "raw_commit": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
+      "preserve_before_target_access": true,
       "result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-      "official_outcome": "INCONCLUSIVE",
-      "development_state": "CONSUMED_ONE_WAY",
-      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-      "workflow_run_id": 35951118916,
-      "workflow_attempt": 1,
-      "workflow_status": "completed",
-      "workflow_conclusion": "success"
+      "decision": "INCONCLUSIVE",
+      "phase": "CONSUMED_ONE_WAY",
+      "terminal": true,
+      "workflow_run": 35951118916,
+      "workflow_attempt": 1
     },
-    "canonical_funnel": {
+    "funnel": {
       "objects": 35,
-      "mechanism": 14,
-      "system": 21,
+      "MECHANISM": 14,
+      "SYSTEM": 21,
       "terminal": 35,
       "active": 0,
-      "scientifically_queued": 0,
-      "executable_canonical_mechanism": 0,
-      "open_development": 0,
-      "result_exposed_development": 34,
-      "consumed_one_way": 1
-    },
-    "candidate35": {
-      "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
-      "claim_ceiling": "SYSTEM",
-      "revisit_status": "DEFERRED_INDEPENDENT_REIDENTIFICATION",
-      "confirmatory_credit": 0,
-      "historical_revisit_proposal_decision": "REVISIT_FORGE_TEST",
-      "post_probe_outcome": "FORGE_KILLED_NO_SUCCESSOR_RETURN_TO_DEFERRED_INDEPENDENT_REIDENTIFICATION",
-      "current_trigger_authority": "NONE_EXHAUSTED",
-      "fresh_successor_created": false
-    },
-    "th002": {
-      "canonical": false,
-      "candidate_id_allocated": false,
-      "revisit_trigger": false,
-      "scientific_credit": 0,
-      "post_probe_disposition": "FORGE_KILLED_NO_CANONICALIZATION",
-      "historical_same_object_post_result_science_affecting_repair": true,
-      "retroactive_rerun_or_relabel_authorized": false,
-      "current_revision_guard_adopted_by_analyst_control_forge": true
-    }
-  },
-  "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
-  "classification_rationale": "CURRENT_CANONICAL_REVISIT_FORMAL_AND_DEVELOPMENT_GATE_SEMANTICS_ARE_WELL_SEPARATED_AND_R117_POST_EXPOSURE_REVISION_GUARD_IS_NOW_ADOPTED_BY_ANALYST_CONTROL_AND_FORGE; RESIDUAL_PERMISSIVENESS_REMAINS_IN_AUTHORITATIVE_TAG_IMMUTABILITY_PUBLICATION_ENFORCEMENT_AND_FRESH_REVISION_GUARD_HAS_NOT_YET_BEEN_STRESS_TESTED; INDEPENDENT_AUDIT_DURABILITY_GAP_RAISES_ORTHOGONAL_FALSE_NEGATIVE_DISCOVERY_RISK_WITHOUT_IDENTIFYING_A_MISSED_TRIGGER",
-  "gate_classifications": {
-    "hard_scientific_integrity_floor": "KEEP",
-    "development_phase_semantics": "KEEP",
-    "result_exposed_science_affecting_revision_identity_enforcement": "TIGHTEN",
-    "cycle3_reassessment_not_hard_cap": "KEEP",
-    "science_invariant_vs_science_affecting": "KEEP",
-    "development_observation_credit_separation": "KEEP",
-    "preformal_genuine_iteration": "KEEP",
-    "ready_not_success": "KEEP",
-    "formal_one_way_integrity": "KEEP",
-    "raw_before_score_preserve_before_read_exact_binding": "KEEP",
-    "post_formal_terminal_absorbency": "KEEP",
-    "authoritative_tag_form_and_provenance": "TIGHTEN",
-    "authoritative_tag_namespace_server_side_protection": "TIGHTEN",
-    "external_advisory_scientific_authority_isolation": "KEEP",
-    "independent_trigger_source_provenance_isolation_after_advisory_exposure": "KEEP",
-    "theory_novelty_vs_independent_revisit_trigger_semantics": "CLARIFY",
-    "th002_single_fixture_static_forge_gate_design": "KEEP",
-    "th002_historical_repair_classification": "KEEP",
-    "fresh_system_to_mechanism_successor_contract": "KEEP",
-    "terminal_revisit_orthogonality": "KEEP",
-    "revisit_trigger_detection_semantics": "KEEP",
-    "revisit_discovery_lane_durability": "TIGHTEN",
-    "revisit_rescue_laundering_prevention": "KEEP",
-    "revisit_forge_new_trigger_only_scope": "KEEP",
-    "revisit_forge_prospective_case_binding": "KEEP",
-    "revisit_canonicalization": "INSUFFICIENT_EVIDENCE",
-    "revisit_bootstrap_coverage_and_conservatism": "KEEP",
-    "broad_unique_privileged_responsibility_attribution": "SPLIT_BY_CLAIM_TYPE",
-    "surrogate_mechanism_discriminator_adequacy": "SPLIT_BY_CLAIM_TYPE",
-    "theory_canonical_separation": "KEEP",
-    "forge_canonical_separation": "KEEP",
-    "protected_evaluation_validity": "KEEP",
-    "claim_ceiling_enforcement": "KEEP",
-    "external_science_discovery_liveness": "TIGHTEN",
-    "mechanism_supply_health": "CLARIFY",
-    "pass_reachability_without_standard_relaxation": "KEEP"
-  },
-  "mandatory_questions": {
-    "1": "YES_PROSPECTIVELY_CURRENT_ANALYST_CONTROL_AND_FORGE_SHARE_THE_THREE_STATE_REVISION_RULE_HISTORICAL_TH002_COUNTEREXAMPLE_PRESERVED_FRESH_ENFORCEMENT_CASE_NOT_YET_OBSERVED",
-    "2": "NO_HARD_CYCLE3_CAP_OBSERVED",
-    "3": "YES_CURRENT_POLICY_EXPLICITLY_CLASSIFIES_COMPARATOR_ACCESS_AND_RESOURCE_PRIVILEGE_CHANGES_AS_SCIENCE_AFFECTING_HISTORICAL_TH002_MISCLASSIFICATION_PRESERVED",
-    "4": "YES_DEVELOPMENT_THEORY_REVISIT_FORGE_AUDIT_LITERATURE_AND_HUMAN009_RETAIN_ZERO_INDEPENDENT_CONFIRMATORY_CREDIT",
-    "5": "YES_H7_ONE_WAY_INTEGRITY_UNCHANGED_NO_RERUN_RETUNE_RESCORE_REPAIR",
-    "6": "NO_MANUFACTURED_OR_DEMONSTRABLY_SUPPRESSED_SYSTEM_TO_MECHANISM_SUCCESSOR",
-    "7": "YES_PREFORMAL_REMAINS_GENUINE_DEVELOPMENT",
-    "8": "YES_ALL_35_CANONICAL_CURRENT_OBJECTS_REMAIN_TERMINAL",
-    "9": "YES_HISTORICALLY_CAND35_TRIGGER_DETECTION_WORKED_BUT_CURRENT_INDEPENDENT_AUDIT_DISCOVERY_DURABILITY_IS_DEGRADED_NO_CONCRETE_MISSED_TRIGGER_IDENTIFIED",
-    "10": "YES_CURRENTLY_NO_OLD_OBJECT_REOPEN_RENAME_INHERITED_CREDIT_OR_CANONICAL_ZOMBIE_INFLATION",
-    "11": "YES_RVT35_TESTED_NEW_TRIGGER_RATIONALE_TH002_IS_THEORY_FORGE_NOT_REVISIT_FORGE",
-    "12": "YES_35_OF_35_COMPLETE_AND_CONSERVATIVE_DISTRIBUTION_1_20_14_0",
-    "13": "YES_PASS_REMAINS_REACHABLE_WITH_CLAIM_MATCHED_PROSPECTIVE_STANDARDS"
-  },
-  "development_calibration": {
-    "status": "CURRENT_RULE_WELL_CALIBRATED_HISTORICAL_TH002_COUNTEREXAMPLE_PRESERVED_ENFORCEMENT_PENDING_FRESH_CASE",
-    "canonical_distribution": {
+      "queued": 0,
       "OPEN_DEVELOPMENT": 0,
       "RESULT_EXPOSED_DEVELOPMENT": 34,
       "CONSUMED_ONE_WAY": 1
     },
-    "cycle3_is_automatic_terminal_cap": false,
-    "historical_counterexample": "TH002_FORGE_001_POST_RESULT_COMPARATOR_ACCESS_CHANGE_WITHOUT_EXPLICIT_REVISION_IDENTITY",
-    "current_guard_adopted_by": [
-      "Evidence Analyst R129",
-      "Control R64",
-      "Fast Forge R33"
-    ]
-  },
-  "preformal_calibration": {
-    "status": "WELL_CALIBRATED",
-    "repeated_development_observations_confirmatory_credit": 0,
-    "hidden_second_formal_gate_observed": false
-  },
-  "revisit_calibration": {
-    "coverage": 35,
-    "distribution": {
+    "revisit": {
+      "coverage": 35,
       "CLOSED_STRONG": 1,
       "DORMANT_REVISITABLE": 20,
       "DEFERRED_INDEPENDENT_REIDENTIFICATION": 14,
       "REVISIT_TRIGGERED": 0
     },
-    "systematic_closed_strong_defaulting_observed": false,
-    "th002_revisit_proposal": false,
-    "canonicalization_observed": false,
-    "discovery_lane_durability": "DEGRADED_INDEPENDENT_AUDIT_2230_OUTPUT_NOT_DURABLE"
+    "candidate35": {
+      "terminal": true,
+      "claim_ceiling": "SYSTEM",
+      "confirmatory_credit": 0,
+      "current_trigger_authority": "NONE_EXHAUSTED",
+      "fresh_successor": false
+    },
+    "th002": {
+      "canonical": false,
+      "scientific_credit": 0,
+      "revisit_trigger": false,
+      "status": "FORGE_KILLED_NO_CANONICALIZATION"
+    }
   },
-  "moving_goalpost_rescue_risk": "LOW_CURRENT_POLICY_HISTORICAL_NONCANONICAL_COUNTEREXAMPLE_PRESERVED_FRESH_ENFORCEMENT_CASE_PENDING",
-  "over_terminalization_risk": "LOW_TO_MODERATE_OPERATIONAL_DUE_INDEPENDENT_AUDIT_DURABILITY_GAP_NO_CONCRETE_MISSED_TRIGGER_IDENTIFIED",
-  "false_positive_risk": "LOW_CURRENT_CANONICAL_AND_REVISIT_NO_ZOMBIE_INFLATION",
-  "false_negative_risk": "LOW_TO_MODERATE_OPERATIONAL_TRIGGER_DISCOVERY_COVERAGE_DEGRADED_BY_MISSING_INDEPENDENT_AUDIT_OUTPUT",
-  "authoritative_evidence_publication_risk": "MODERATE_FUTURE_LIGHTWEIGHT_H7_PRECEDENT_AND_NO_TAG_NAMESPACE_RULESET",
-  "independent_trigger_provenance_risk": "LOW_TO_MODERATE_PROSPECTIVE_ADVISORY_EXPOSURE_IS_CURRENTLY_EXPLICITLY_ISOLATED",
-  "claim_type_findings": "SYSTEM_MECHANISM_BOUNDARY_INTACT_BROAD_PRIVILEGED_RESPONSIBILITY_BURDEN_REMAINS_CLAIM_SCOPED",
-  "mechanism_supply_health": "ZERO_EXECUTABLE_CANONICAL_MECHANISM_NO_CURRENT_LIVE_THEORY_PROPOSAL_AND_INDEPENDENT_AUDIT_DURABILITY_DEGRADED_DO_NOT_RELAX_GATES",
-  "pass_reachability": "REACHABLE_PROSPECTIVELY_WITH_CLAIM_SPECIFIC_BURDEN_AND_NO_STANDARD_RELAXATION",
-  "prospective_recommendations": [
-    "Keep the R117 revision guard active across all development lanes and require explicit versioned revision or fresh successor identity on the next result-exposed science-affecting change.",
-    "Preserve the first TH002-FORGE-001 outcome and later matched-access correction as historical calibration; do not rerun or relabel it solely to clean methodology history.",
-    "Treat the Independent Auditor durability gap as a discovery-liveness problem only; do not relax Revisit or terminal criteria to compensate.",
-    "Continue requiring source-isolated genuinely new information for same-theme Revisit triggers after advisory exposure.",
-    "Preserve all terminal objects, Candidate #35 history, H7 identity/outcome/result commit, and all existing authoritative refs without rewrite.",
-    "For future FORMAL evidence require annotated provenance-bearing tags plus peeled-target verification before policy-conforming counting.",
-    "Route authoritative tag namespace protection and scheduler durability remediation through normal governance; this auditor does not mutate them."
-  ],
+  "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
+  "gate_findings": {
+    "hard_floor": "KEEP",
+    "development_phase_semantics": "KEEP",
+    "result_exposed_revision_identity": "TIGHTEN",
+    "cycle3": "KEEP",
+    "repair_taxonomy": "KEEP",
+    "development_credit": "KEEP",
+    "preformal": "KEEP",
+    "ready_not_success": "KEEP",
+    "reduction_ladder_staging": "CLARIFY",
+    "reduction_ladder_scope": "SPLIT_BY_CLAIM_TYPE",
+    "literature_credit_separation": "KEEP",
+    "formal_one_way": "KEEP",
+    "terminal_absorbency": "KEEP",
+    "authoritative_tag_form": "TIGHTEN",
+    "tag_namespace_protection": "TIGHTEN",
+    "fresh_successor_contract": "KEEP",
+    "terminal_revisit_orthogonality": "KEEP",
+    "revisit_discovery_durability": "TIGHTEN",
+    "revisit_rescue_laundering": "KEEP",
+    "revisit_forge_scope": "KEEP",
+    "revisit_canonicalization": "INSUFFICIENT_EVIDENCE",
+    "revisit_bootstrap": "KEEP",
+    "broad_responsibility_burden": "SPLIT_BY_CLAIM_TYPE",
+    "theory_canonical_separation": "KEEP",
+    "forge_canonical_separation": "KEEP",
+    "protected_evaluation": "KEEP",
+    "claim_ceiling": "KEEP",
+    "external_science_liveness": "TIGHTEN",
+    "mechanism_supply_health": "CLARIFY",
+    "pass_reachability": "KEEP"
+  },
+  "calibration": {
+    "moving_goalpost_risk": "LOW_CURRENT_POLICY_FRESH_R117_STRESS_TEST_PENDING",
+    "false_positive_risk": "LOW_NO_ZOMBIE_INFLATION",
+    "false_negative_risk": "LOW_TO_MODERATE_OPERATIONAL_INDEPENDENT_AUDIT_DURABILITY_GAP",
+    "preformal_risk": "NO_CURRENT_HIDDEN_SECOND_FORMAL; PROSPECTIVE_IF_R44_BASELINES_UNIVERSALIZED",
+    "r44_scope": "STAGED_AND_CLAIM_MATCHED",
+    "pass_reachability": "REALISTIC_WITHOUT_STANDARD_RELAXATION"
+  },
   "utility_request": {
-    "created": false,
-    "reason": "NO_BOUNDED_UTILITY_ACTION_NEEDED_SCHEDULER_AND_REPOSITORY_GOVERNANCE_REMAIN_OUTSIDE_THIS_READ_ONLY_AUDIT"
+    "created": false
   },
   "hard_floor_confirmation": {
     "experiment_dispatched": false,
-    "result_bearing_workflow_started": false,
-    "identity_created_or_consumed": false,
-    "scientific_or_evidence_ref_mutated": false,
+    "identity_consumed": false,
+    "scientific_ref_mutated": false,
     "pr_merged": false,
     "scheduler_changed": false,
-    "terminal_object_reopened": false,
+    "terminal_reopened": false,
     "consumed_formal_rerun_retuned_rescored": false,
     "historical_result_rewritten": false,
     "protected_heldout_accessed": false
   },
   "confidence": {
-    "current_canonical_revisit_formal_integrity": "HIGH",
-    "r117_revision_guard_adoption": "HIGH",
-    "future_revision_identity_enforcement": "MEDIUM_UNTIL_FRESH_REPAIR_CASE",
-    "evidence_tag_and_ruleset_state": "HIGH",
-    "independent_audit_durability_gap": "HIGH",
-    "actual_missed_trigger_due_to_durability_gap": "MEDIUM_NO_CONCRETE_CASE_IDENTIFIED"
-  },
-  "questions_for_control_analyst": [
-    "Keep the R117 revision guard active across all development lanes and require an explicit revision/successor identity on the next result-exposed science-affecting change.",
-    "Treat the missing Independent Auditor durability as a discovery-liveness problem only; do not relax Revisit or terminal criteria to compensate.",
-    "Continue requiring source-isolated genuinely new information for same-theme Revisit triggers after advisory exposure.",
-    "Keep H7 and all existing authoritative refs unchanged; apply publication/protection tightening only prospectively."
-  ]
+    "canonical_revisit_formal_integrity": "HIGH",
+    "r44_no_trigger_disposition": "HIGH",
+    "r44_future_stage_scope_handling": "MEDIUM_UNTIL_FRESH_CANDIDATE",
+    "revision_identity_enforcement": "MEDIUM_UNTIL_FRESH_REPAIR_CASE",
+    "evidence_tag_state": "HIGH",
+    "independent_audit_gap": "HIGH"
+  }
 }
