@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-24T09:17:17+09:00",
+  "timestamp": "2026-09-24T10:34:00+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260924T091717+0900-R102-8D31C7A4",
-    "sequence": 102,
+    "generation_id": "METHCAL-20260924T103400+0900-R103-C4F19B72",
+    "sequence": 103,
     "material_change": true,
-    "material_change_reason": "MAIN_R110_BINDS_CORRECT_ANALYST_COMMIT_BUT_PERSISTS_MISMATCHED_NONEXISTENT_ANALYST_GENERATION_LABEL; SCIENCE_INVARIANT_PROVENANCE_METADATA_DEFECT_ONLY; FORMAL_HARD_FLOOR_REVISIT_THEORY_FORGE_AND_CANONICAL_SCIENCE_UNCHANGED",
-    "supersedes_generation_id": "METHCAL-20260924T081857+0900-R101-4C7A2D91",
+    "material_change_reason": "ANALYST_R111_MARKS_H7_EFFECTIVELY_EXECUTABLE_AND_GO_ONCE_AGAINST_CONTROLLER_BUNDLE_WHOSE_RESULT_WORKFLOW_BLOB_DOES_NOT_MATCH_ITS_OWN_LAUNCH_CONTRACT; FAILS_CLOSED_PREIDENTITY; SCIENCE_UNCHANGED",
+    "supersedes_generation_id": "METHCAL-20260924T091717+0900-R102-8D31C7A4",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260924T081857+0900-R101-4C7A2D91",
-      "branch_head_before_run": "cbba92a23462ff20fde24db60205ebfdb2bac250",
+      "generation_id": "METHCAL-20260924T091717+0900-R102-8D31C7A4",
+      "branch_head_before_run": "6de70b363325c058e34efb1aa69e8e4396df6b98",
       "overall_classification": "WELL_CALIBRATED",
       "role": "DESIGNATED_PRIOR_METHODOLOGY_HISTORY_READ_FIRST"
     },
@@ -21,36 +21,29 @@
       "role": "HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP",
-      "branch_head": "7bc866c6d4dd1d723156345d056fadb027a85c1c",
-      "material_change": false,
+      "generation_id": "EVA-20260924T101155+0900-R111-H7-DISPATCH-BOUND-GO-ONCE",
+      "branch_head": "2f1409da8d47525cbb1058ce9c7eebf8ef80ef2c",
+      "material_change": true,
       "role": "DESIGNATED_CANONICAL_GATE_HISTORY"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260924T091000+0900-R51-6D2A8F41",
-      "branch_head": "b938a9f7356267dceadbe14d60ca4481cbe37d38",
+      "generation_id": "R53",
+      "branch_head": "8d17debc16e0866b207681553d7045687fafc113",
       "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH"
     },
-    "main_primary": {
-      "generation_id": "MAIN-20260924T091500+0900-PRIMARY-H7-R110-LAUNCH-CAPABILITY-WAITING-EXTERNAL",
-      "branch_head": "409416500bbdc080409e74259fde461202cbcdfe",
-      "role": "NONRESULT_PRESTART_OPERATIONAL_CAPABILITY_OBSERVATION"
+    "main_relay": {
+      "generation_id": "MAIN-20260924T101500+0900-PRIMARY-H7-R110-DISPATCH-REGISTRATION-AWAITING-ANALYST",
+      "branch_head": "230e5348f4e3443e5c4323f149ce7889e8073112",
+      "role": "NONRESULT_PRESTART_OPERATIONAL_OBSERVATION_PRECEDING_FINAL_R111_PERSISTENCE"
     },
-    "fast_forge": {
-      "generation_id": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED",
-      "exact_persisted_commit": "6ecce79f76b54b61b873a6e2a385b3f84055099c",
-      "methodology_generation_consumed": "METHCAL-20260924T081857+0900-R101-4C7A2D91",
-      "role": "NONCANONICAL_ZERO_CREDIT_SELECTION_NOOP"
-    },
-    "external_literature_theory_revisit": {
-      "branch_head": "1b91b18460e552df36cbdc3ef050e38ffd72342a",
-      "literature_generation_id": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71",
-      "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
+    "external_theory_revisit": {
+      "branch_head": "eaab2a8fd08921aa91782825644a5f7e28df0173",
+      "theory_generation_id": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
       "role": "READ_ONLY_NONCANONICAL_INPUT"
     }
   },
   "authoritative_refs": {
-    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
+    "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "evidence_tag_count": 5,
     "evidence_tag_objects": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
@@ -69,8 +62,9 @@
     "nonterminal_active": 1,
     "scientifically_queued": 1,
     "scientific_hold": 0,
-    "operationally_triggerable": 0,
-    "effectively_executable_mechanism": 0,
+    "bridge_dispatch_primitive_available": true,
+    "bridge_request_armed": false,
+    "effectively_executable_mechanism_auditor_view": 0,
     "preformal_eligible": 1,
     "scientifically_ready": 1,
     "official_consumed_formal_identities": 7,
@@ -84,14 +78,18 @@
       "queue_state": "QUEUED",
       "preformal_eligible": true,
       "preformal_readiness": "READY",
-      "formal_authority": "GO_ONCE_CONDITIONAL_EXACT_BINDING_REQUIRES_FRESH_REVALIDATION_AFTER_TRIGGER_CAPABILITY",
-      "operational_blocker": "EXECUTION_CAPABILITY",
-      "executor_trigger_capable": false,
-      "effectively_executable": false,
+      "analyst_formal_authority_recorded": "GO_ONCE_EXACT_BOUND_R111_WORKFLOW_DISPATCH_BRIDGE_FRESH_IDENTITY_ONLY",
+      "auditor_formal_authority_disposition": "NOT_ACTIONABLE_PENDING_SCIENCE_INVARIANT_EXACT_BUNDLE_REPAIR_AND_FRESH_ANALYST_REVALIDATION",
+      "executor_trigger_capable_bridge_level": true,
+      "effectively_executable_auditor_view": false,
       "identity_status": "NOT_CREATED_NOT_CONSUMED",
       "science_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-      "launch_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
-      "actual_execution_status": "BLOCKED_BEFORE_IDENTITY_START"
+      "launch_controller_head": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
+      "result_workflow_blob": "1c4e2199740397c1afbbcc66e89d83f41fe54b21",
+      "launch_contract_expected_workflow_blob": "a6fb8fec46ad8b6f6b055e701d5c8cf829d4007c",
+      "exact_bundle_self_consistent": false,
+      "failure_stage": "PREIDENTITY_ASSERT_LAUNCH_CONTRACT",
+      "actual_execution_status": "BLOCKED_BEFORE_IDENTITY_START_BY_EXACT_BLOB_MISMATCH_IF_DISPATCHED"
     },
     "candidate34": {
       "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
@@ -109,15 +107,10 @@
       "same_object_rerun_retune_rescore": "STOP",
       "same_object_system_to_mechanism": "STOP"
     },
-    "repository_rulesets": {
-      "active_branch_rulesets_observed": 1,
-      "active_tag_rulesets_observed": 0,
-      "evidence_ref_mutation_observed": false
-    },
     "scientific_source_of_truth": "STABLE_MAIN_PLUS_INDEPENDENTLY_FETCHED_EVIDENCE_AND_EXACT_RESEARCH_REFS; OPS_MAILBOXES_ARE_CONTROL_HISTORY_ONLY"
   },
-  "audit_result": "MATERIAL_CALIBRATION_UPDATE_PROVENANCE_METADATA_EXACTNESS",
-  "overall_classification": "WELL_CALIBRATED",
+  "audit_result": "MATERIAL_CALIBRATION_UPDATE_PREMATURE_FORMAL_EXECUTABILITY_AUTHORITY_ON_SELF_INCONSISTENT_CONTROLLER_BUNDLE",
+  "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
   "gate_classifications": {
     "hard_integrity_policy": "KEEP",
     "development_phase_monotonicity": "KEEP",
@@ -129,9 +122,11 @@
     "preformal_as_genuine_development": "KEEP",
     "hidden_second_formal_gate": "KEEP",
     "scientific_readiness_queue_orthogonal_to_executor_capability": "KEEP",
-    "effective_executability_requires_verified_trigger_capability": "KEEP",
-    "scientific_formal_authority_exact_binding": "KEEP",
-    "consumer_input_generation_id_exact_commit_metadata_consistency": "TIGHTEN",
+    "dispatch_primitive_availability_dimension": "KEEP",
+    "effective_executability_requires_exact_self_consistent_validated_bundle": "TIGHTEN",
+    "formal_authority_exact_bundle_self_consistency": "TIGHTEN",
+    "launch_contract_result_workflow_exact_blob_consistency": "TIGHTEN",
+    "consumer_input_generation_id_exact_commit_pair_validation": "KEEP",
     "fresh_formal_one_way_transition": "INSUFFICIENT_EVIDENCE",
     "revisit_axis_orthogonal_to_terminal_state": "KEEP",
     "revisit_ledger_bootstrap_coverage": "KEEP",
@@ -145,43 +140,47 @@
     "theory_canonical_separation": "KEEP",
     "theory_forge_zero_credit_bounded_surface": "KEEP",
     "theory_rejection_after_contract_faithful_ordinary_reduction": "KEEP",
-    "forge_methodology_freshness_before_selection": "KEEP",
     "fast_forge_canonical_separation": "KEEP",
     "claim_ceiling_enforcement": "KEEP",
     "mechanism_supply_health": "CLARIFY",
     "pass_reachability_without_standard_relaxation": "KEEP"
   },
   "new_finding": {
-    "id": "MAIN_R110_ANALYST_GENERATION_LABEL_MISMATCH",
+    "id": "H7_R111_RESULT_WORKFLOW_LAUNCH_CONTRACT_BLOB_MISMATCH",
     "classification": "SCIENCE_INVARIANT_REPAIR",
-    "main_recorded_generation_id": "EVA-20260924T085933+0900-R110-H7-OPBLOCK-EXT-MISALIGNED-NOOP",
-    "main_bound_analyst_commit": "7bc866c6d4dd1d723156345d056fadb027a85c1c",
-    "authoritative_generation_id_at_bound_commit": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP",
-    "scientific_decision_semantics_aligned": true,
+    "analyst_generation": "EVA-20260924T101155+0900-R111-H7-DISPATCH-BOUND-GO-ONCE",
+    "analyst_effectively_executable": true,
+    "auditor_effectively_executable": false,
+    "controller": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
+    "current_result_workflow_blob": "1c4e2199740397c1afbbcc66e89d83f41fe54b21",
+    "launch_contract_expected_workflow_blob": "a6fb8fec46ad8b6f6b055e701d5c8cf829d4007c",
+    "prepare_identity_calls_exact_contract_assertion": true,
+    "expected_failure_before_identity": true,
+    "scientific_semantics_changed": false,
     "formal_identity_or_start_exists": false,
+    "bridge_armed": false,
     "historical_rewrite_recommended": false,
-    "prospective_action": "READ_GENERATION_ID_FROM_EXACT_BOUND_ANALYST_ARTIFACT_AND_FAIL_CLOSED_ON_PAIR_MISMATCH_BEFORE_IDENTITY_START"
+    "prospective_action": "REPAIR_ONLY_OPERATIONAL_EXACT_BLOB_BINDING_VALIDATE_NONRESULT_WITH_SAME_CONTRACT_ASSERTION_THEN_REQUIRE_FRESH_ANALYST_EXACT_BINDING_BEFORE_ANY_ARM_OR_START"
   },
   "development_iteration_calibration": {
-    "status": "CONSISTENT_CURRENT_OBJECTS",
-    "h7": "RESULT_EXPOSED_R5_UNCHANGED_READY_QUEUED_OPERATIONALLY_BLOCKED_EFFECTIVELY_EXECUTABLE_FALSE",
+    "status": "SCIENTIFIC_PHASES_CONSISTENT_CURRENT_OBJECTS",
+    "h7": "RESULT_EXPOSED_R5_UNCHANGED_READY_QUEUED_BRIDGE_AVAILABLE_BUT_EXACT_BUNDLE_NOT_EFFECTIVELY_EXECUTABLE",
     "cycle3": "MANDATORY_REASSESSMENT_NOT_HARD_CAP",
-    "new_issue": "PROVENANCE_METADATA_LABEL_ONLY_NOT_SCIENCE_AFFECTING"
+    "new_issue": "SCIENCE_INVARIANT_OPERATIONAL_EXACT_BINDING_REPAIR_INCOMPLETE"
   },
   "formal_calibration": {
     "current_integrity": "UNCHANGED_NO_H7_IDENTITY_START_PROTECTED_RESULT_OR_EVIDENCE",
-    "scientific_authority": "EXACT_BINDING_ONE_SHOT_RETAINED_BUT_REQUIRES_FRESH_REVALIDATION_AFTER_TRIGGER_CAPABILITY",
-    "operational_observability": "CALIBRATED_EFFECTIVELY_EXECUTABLE_FALSE",
-    "provenance_observability": "TIGHTEN_GENERATION_ID_COMMIT_PAIR_VALIDATION_BEFORE_START",
-    "prospective": "PROVISION_ONLY_MISSING_AUTHORIZED_TRIGGER_CAPABILITY_THEN_FRESH_ANALYST_REVALIDATION_BEFORE_START"
+    "analyst_authority": "GO_ONCE_RECORDED_R111",
+    "auditor_authority_disposition": "PREMATURE_NOT_ACTIONABLE_ON_CURRENT_EXACT_BUNDLE",
+    "fail_closed_stage": "PREIDENTITY_LAUNCH_CONTRACT_BLOB_ASSERTION",
+    "prospective": "CORRECT_OPERATIONAL_EXACT_BLOB_BINDING_VALIDATE_NONRESULT_THEN_FRESH_ANALYST_REBIND_BEFORE_ONE_START"
   },
   "theory_forge_calibration": {
     "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
     "canonical_credit": 0,
     "current_proposal_status": "REJECTED_AFTER_CONTRACT_FAITHFUL_ORDINARY_REDUCTION",
-    "fresh_forge_generation": "FORGE_NOOP",
     "fresh_positive_search_authorized": false,
-    "assessment": "CALIBRATED_NOOP_AFTER_PREDECLARED_FALSIFIER_HIT"
+    "assessment": "CALIBRATED_NO_NEW_PROPOSAL_NO_REVISIT_PROPOSAL"
   },
   "revisit_calibration": {
     "implementation_status": "BOOTSTRAP_COMPLETE_DIFFERENTIAL_SCAN_ACTIVE_LIVE_TRIGGER_PATH_UNOBSERVED",
@@ -204,80 +203,89 @@
     "aggressive_resurrection_observed": false,
     "systematic_closed_strong_default_observed": false,
     "historical_reinterpretation_observed": false,
-    "residual_issue": "BROAD_CLASS_LEVEL_WHAT_WOULD_CHANGE_TEMPLATES_ARE_DISCOVERY_SCAFFOLDING_ONLY; REQUIRE_CANDIDATE_SPECIFIC_CLOSURE_PROVENANCE_BEFORE_LIVE_TRIGGER"
+    "residual_issue": "REQUIRE_CANDIDATE_SPECIFIC_CLOSURE_PROVENANCE_BEFORE_LIVE_TRIGGER"
   },
   "preformal_calibration": {
-    "status": "CALIBRATED_READY_QUEUE_AND_OPERATIONAL_TRIGGERABILITY_DISTINCT",
+    "status": "READY_AND_EXECUTION_READINESS_MUST_REMAIN_DISTINCT",
     "ready_means_success": false,
     "repeated_development_observations_independent_confirmation": false,
-    "hidden_second_formal_gate_observed": false
+    "hidden_second_formal_gate_observed": false,
+    "new_failure": "EFFECTIVE_EXECUTABILITY_PROMOTED_BEFORE_EXACT_BUNDLE_SELF_CONSISTENCY"
   },
   "claim_type_findings": {
-    "mechanism": "H7_REMAINS_NARROW_MECHANISM_CEILING_WITH_FROZEN_ONE_SHOT_FORMAL_PATH",
+    "mechanism": "H7_MECHANISM_CEILING_UNCHANGED; CURRENT_GO_ONCE_NOT_ACTIONABLE_UNTIL_SCIENCE_INVARIANT_EXACT_BUNDLE_REPAIR_AND_FRESH_REBIND",
     "system": "NO_SAME_OBJECT_POST_OUTCOME_UPLIFT_OBSERVED",
     "fresh_successors": "NO_CURRENT_INDEPENDENT_SUCCESSOR_SUPPRESSED_OR_MANUFACTURED"
   },
   "mechanism_supply_health": {
     "status": "FRAGILE",
     "scientifically_queued": 1,
-    "operationally_triggerable": 0,
+    "bridge_dispatch_primitive": 1,
+    "effectively_executable_after_independent_exact_bundle_audit": 0,
     "concrete_missed_legitimate_line": false,
     "interpretation": "THROUGHPUT_RISK_NOT_JUSTIFICATION_TO_WEAKEN_EVIDENCE_STANDARDS"
+  },
+  "pass_reachability": {
+    "scientifically_reachable_without_weaker_standards": true,
+    "reachable_on_current_r111_exact_bundle": false,
+    "required_non_scientific_prerequisite": "SCIENCE_INVARIANT_EXACT_WORKFLOW_BLOB_BINDING_REPAIR_PLUS_NONRESULT_VALIDATION_PLUS_FRESH_ANALYST_REBIND"
   },
   "risks": {
     "false_positive_zombie_inflation": "LOW_CURRENT_MODERATE_FUTURE_TRIGGER_WATCH",
     "false_negative_forgotten_valuable_lines": "LOW_CURRENT_MODERATE_UNTESTED_REVISIT_PATH",
     "moving_goalpost_rescue": "LOW_CURRENT",
     "over_terminalization": "LOW_CURRENT_NO_CONCRETE_MISSED_TRIGGER_OR_SUCCESSOR",
-    "formal_integrity": "LOW_CURRENT_FAIL_CLOSED_BEFORE_IDENTITY",
-    "provenance_observability": "LOW_CURRENT_BOUNDED_GENERATION_LABEL_MISMATCH_CORRECT_EXACT_COMMIT",
-    "mechanism_supply": "FRAGILE_ONE_SCIENTIFICALLY_QUEUED_ZERO_OPERATIONALLY_TRIGGERABLE"
+    "formal_evidence_contamination": "LOW_CURRENT_FAIL_CLOSED_BEFORE_IDENTITY",
+    "formal_execution_readiness_false_positive": "MODERATE_CURRENT_BOUNDED_PREIDENTITY",
+    "provenance_observability": "IMPROVED_CURRENT_GENERATION_COMMIT_PAIR_GUARDS",
+    "mechanism_supply": "FRAGILE_ONE_SCIENTIFICALLY_QUEUED_ZERO_CURRENTLY_EFFECTIVELY_EXECUTABLE_AFTER_INDEPENDENT_EXACT_BUNDLE_AUDIT"
   },
   "mandatory_questions": {
-    "1_development_phase_end_to_end": "YES_CURRENT_CANONICAL_OBJECTS_H7_RESULT_EXPOSED_R5_UNCHANGED",
+    "1_development_phase_end_to_end": "YES_SCIENTIFIC_OBJECTS_CURRENT_H7_RESULT_EXPOSED_R5_UNCHANGED",
     "2_cycle3_hard_cap": "NO",
-    "3_repair_classification": "YES_NEW_MAIN_R110_GENERATION_LABEL_DEFECT_IS_SCIENCE_INVARIANT_PROVENANCE_LOGGING",
+    "3_repair_classification": "YES_SCIENCE_AFFECTING_FIELDS_UNCHANGED; CURRENT_DEFECT_IS_SCIENCE_INVARIANT_EXACT_OPERATIONAL_BINDING",
     "4_development_observations_independent_credit": "KEPT_ZERO_CREDIT",
-    "5_formal_one_way_integrity": "UNCHANGED_NO_H7_IDENTITY_START_PROTECTED_RESULT_EVIDENCE",
+    "5_formal_one_way_integrity": "UNCHANGED_NO_H7_IDENTITY_START_PROTECTED_RESULT_EVIDENCE; CURRENT_MISMATCH_FAILS_PREIDENTITY",
     "6_system_to_mechanism_successors": "NO_SAME_OBJECT_MANUFACTURE_NO_CONCRETE_INDEPENDENT_SUCCESSOR_SUPPRESSED",
-    "7_preformal_genuine_development": "YES_READY_DOES_NOT_MEAN_SUCCESS_AND_COEXISTS_WITH_OPERATIONAL_BLOCKER",
+    "7_preformal_genuine_development": "YES_BUT_EFFECTIVE_EXECUTABILITY_WAS_PROMOTED_TOO_EARLY",
     "8_terminal_semantics": "CALIBRATED_34_TERMINAL_OBJECTS_REMAIN_TERMINAL",
-    "9_revisit_catches_changed_conditions": "NOT_DEMONSTRATED_LIVE_NO_CURRENT_INDEPENDENT_CANDIDATE_SPECIFIC_TRIGGER_OBSERVED_AS_MISSED",
+    "9_revisit_detects_changed_conditions": "UNTESTED_LIVE_NO_CONCRETE_MISSED_INDEPENDENT_TRIGGER",
     "10_revisit_avoids_rescue_zombies": "YES_CURRENT_OBSERVATIONS",
-    "11_revisit_forge_test": "INSUFFICIENT_EVIDENCE_NO_LIVE_CASE",
-    "12_bootstrap_complete_conservative": "YES_WITH_CANDIDATE_SPECIFIC_PROVENANCE_REQUIRED_BEFORE_LIVE_TRIGGER",
-    "13_pass_reachability": "SCIENTIFICALLY_YES_WITHOUT_WEAKER_STANDARDS_OPERATIONALLY_BLOCKED_PENDING_AUTHORIZED_ONE_SHOT_TRIGGER_CAPABILITY_AND_FRESH_REVALIDATION"
+    "11_revisit_forge_tests_new_trigger": "INSUFFICIENT_EVIDENCE_NO_LIVE_CASE",
+    "12_bootstrap_complete_conservative": "YES_34_OF_34_NO_AGGRESSIVE_RESURRECTION",
+    "13_pass_reachable": "YES_WITHOUT_WEAKER_STANDARDS_AFTER_SCIENCE_INVARIANT_EXACT_BUNDLE_REPAIR_AND_FRESH_REBIND; NOT_ON_CURRENT_R111_BUNDLE"
   },
   "prospective_recommendations": [
-    "KEEP_H7_R5_SCIENCE_CONTROLLER_RUNTIME_INPUT_SCORER_PRESERVER_AND_ONE_WAY_RULES_UNCHANGED",
-    "KEEP_READY_QUEUED_SEPARATE_FROM_EXECUTOR_TRIGGER_CAPABLE_FALSE_AND_EFFECTIVELY_EXECUTABLE_FALSE",
-    "PROSPECTIVELY_REPAIR_MAIN_RELAY_INPUT_GENERATION_METADATA_TO_READ_GENERATION_ID_FROM_EXACT_BOUND_ANALYST_ARTIFACT_DO_NOT_REWRITE_R110_HISTORY",
-    "BEFORE_ANY_IDENTITY_START_REQUIRE_EXACT_ANALYST_COMMIT_AND_ARTIFACT_GENERATION_ID_PAIR_CONSISTENCY_AND_FAIL_CLOSED_ON_MISMATCH",
-    "KEEP_CURRENT_TH001_REJECTED_ZERO_CREDIT_AND_DO_NOT_REPEAT_RETUNE_TO_SEARCH_FOR_A_POSITIVE",
-    "KEEP_ALL_OLD_TERMINAL_IDS_TERMINAL_AND_REQUIRE_CANDIDATE_SPECIFIC_INDEPENDENT_TRIGGER_FOR_REVISIT",
-    "REQUIRE_REVISIT_FORGE_TO_TEST_ONLY_THE_NEW_TRIGGER_NOT_RERUN_OR_RETUNE_THE_OLD_FAILURE",
-    "DO_NOT_WEAKEN_CLAIM_CEILINGS_OR_EVIDENCE_STANDARDS_TO_COMPENSATE_FOR_FRAGILE_MECHANISM_SUPPLY"
+    "DO_NOT_ACT_ON_CURRENT_R111_GO_ONCE_WHILE_RESULT_WORKFLOW_BLOB_AND_LAUNCH_CONTRACT_EXPECTED_BLOB_DISAGREE",
+    "KEEP_ALL_H7_SCIENTIFIC_SEMANTICS_UNCHANGED",
+    "REPAIR_ONLY_OPERATIONAL_EXACT_WORKFLOW_BLOB_BINDING_PROSPECTIVELY; DO_NOT_REWRITE_R111_HISTORY",
+    "RUN_NONRESULT_CONTRACT_FAITHFUL_VALIDATION_REACHING_THE_SAME_ASSERT_LAUNCH_CONTRACT_GATE_BEFORE_IDENTITY",
+    "REQUIRE_FRESH_ANALYST_EXACT_CONTROLLER_SCIENCE_GENERATION_COMMIT_REBIND_AFTER_REPAIR",
+    "ARM_BRIDGE_AT_MOST_ONCE_ONLY_AFTER_FRESH_REBIND_AND_EMPTY_ONE_WAY_NAMESPACES",
+    "KEEP_TERMINAL_IDS_TERMINAL_AND_REVISIT_TRIGGER_CANDIDATE_SPECIFIC",
+    "DO_NOT_WEAKEN_EVIDENCE_STANDARDS_FOR_MECHANISM_SUPPLY"
   ],
   "utility_request": null,
   "hard_floor_confirmation": {
-    "consumed_formal_identity_rerun_retune_rescore": false,
-    "terminal_current_object_reactivated": false,
-    "frozen_protocol_rewritten": false,
+    "consumed_formal_rerun_retune_rescore": false,
+    "terminal_object_reactivated": false,
+    "frozen_scientific_protocol_rewritten": false,
     "historical_pass_fail_rewritten": false,
-    "evaluator_heldout_leakage_observed": false,
-    "silent_post_formal_repair_observed": false,
+    "evaluator_or_heldout_leakage_observed": false,
+    "silent_post_formal_repair": false,
     "h7_identity_or_start_exists": false,
-    "scientific_or_evidence_ref_mutated_by_audit": false
+    "protected_target_accessed": false,
+    "scientific_or_evidence_ref_mutated_by_methodology_audit": false
   },
   "confidence": {
-    "current_provenance_mismatch": "HIGH",
-    "development_terminal_h7_prestart": "HIGH",
-    "theory_forge_current_disposition": "HIGH",
-    "live_revisit_behavior": "MODERATE_NO_LIVE_CASE"
+    "r111_exact_bundle_mismatch": "HIGH",
+    "preidentity_fail_closed_consequence": "HIGH",
+    "current_h7_terminal_theory_integrity": "HIGH",
+    "live_revisit_behavior": "MODERATE"
   },
   "questions_for_control_analyst": [
-    "NO_BLOCKING_SCIENTIFIC_QUESTION",
-    "PROSPECTIVELY_ENFORCE_GENERATION_ID_EXACT_COMMIT_ARTIFACT_CONSISTENCY_BEFORE_IDENTITY_START",
-    "AT_FIRST_REAL_REVISIT_TRIGGER_RECORD_CANDIDATE_SPECIFIC_HISTORICAL_CLOSURE_PREMISE_CHANGED_BY_INDEPENDENT_TRIGGER_BEFORE_FORGE_REFERRAL"
+    "Treat H7 effectively_executable as false until the corrected exact controller/workflow/contract bundle passes the same launch-contract assertion used by prepare_identity.",
+    "After that bounded science-invariant repair, issue a fresh Analyst exact-binding generation before any bridge arming or FORMAL identity/START.",
+    "At the first real Revisit trigger, record the candidate-specific historical closure premise changed by the independent trigger before any Forge referral."
   ]
 }
