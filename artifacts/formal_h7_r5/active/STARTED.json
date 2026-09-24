@@ -1,0 +1,9 @@
+{
+  "analyst_generation": "EVA-20260924T115823+0900-R114-H7-POSTBRIDGE-GO-ONCE-CAND35-TRIGGER",
+  "binding_sha256": "285a3a206b34c5982b9d404599aa272019dd9d4dceb661b49c97fd8750fd30d3",
+  "controller_sha": "af3aa97574c365e3e918c3d4d012faa4886760d0",
+  "identity_id": "h7-r5-285a3a206b34c5982b9d4045",
+  "schema_version": 2,
+  "scientific_source_sha": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
+  "state": "STARTED"
+}
