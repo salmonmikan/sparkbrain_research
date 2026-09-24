@@ -1,29 +1,29 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED",
-  "produced_at": "2026-09-24T08:37:26+09:00",
+  "generation_id": "FORGE-20260924T093550+0900-NOOP-R110-R101-CONVERGED",
+  "produced_at": "2026-09-24T09:35:50+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260924T073626+0900-NOOP-R108-R100-NO-GATED-PROBE",
+  "supersedes_generation_id": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED",
   "input_generations": {
-    "evidence_analyst": "EVA-20260924T075935+0900-R109-H7-OPBLOCK-CONVERGED-NOOP@b36c7caeb345f4692d901d05562b57b625711d4b",
-    "main": "MAIN-20260924T071400+0900-PRIMARY-H7-R108-LAUNCH-CAPABILITY-WAITING-EXTERNAL@09a5ca04a7d9262015b826bec680e33e7454eadf",
+    "evidence_analyst": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP@7bc866c6d4dd1d723156345d056fadb027a85c1c",
+    "main": "MAIN-20260924T091500+0900-PRIMARY-H7-R110-LAUNCH-CAPABILITY-WAITING-EXTERNAL@756939ec4154cf86c94450df5d674b7a688dee73",
     "methodology": "METHCAL-20260924T081857+0900-R101-4C7A2D91@cbba92a23462ff20fde24db60205ebfdb2bac250",
-    "control": "CTRL-R49@8045fd598d24f832ca4b94a526c2efe6bb59f924",
+    "control": "CTRL-R50@c7e90f5f1edd73b13456577eff19a0f6a781cfd8",
     "external_literature_theory_revisit": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71@1b91b18460e552df36cbdc3ef050e38ffd72342a",
     "independent_audit": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8@716f8839f05610fbbfbc83d3ff6b3939dcfd6834",
     "utility": "UTILITY@263c221b7f2243c19d002ff5cc8af2fd10acf79a",
-    "previous_forge_persisted": "FORGE-20260924T073626+0900-NOOP-R108-R100-NO-GATED-PROBE@e163d1a2825ff4df23ed68863b36f4d93f201956"
+    "previous_forge_persisted": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED@6ecce79f76b54b61b873a6e2a385b3f84055099c"
   },
   "exact_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_r109_tip": "b36c7caeb345f4692d901d05562b57b625711d4b",
-    "main_primary_tip_observed": "09a5ca04a7d9262015b826bec680e33e7454eadf",
+    "evidence_analyst_r110_tip": "7bc866c6d4dd1d723156345d056fadb027a85c1c",
+    "main_primary_r110_tip_observed": "756939ec4154cf86c94450df5d674b7a688dee73",
     "main_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "main_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
     "methodology_r101_tip": "cbba92a23462ff20fde24db60205ebfdb2bac250",
-    "control_r49_tip": "8045fd598d24f832ca4b94a526c2efe6bb59f924",
+    "control_r50_tip": "c7e90f5f1edd73b13456577eff19a0f6a781cfd8",
     "external_literature_r41_tip": "1b91b18460e552df36cbdc3ef050e38ffd72342a",
     "theory_latest_blob": "23b663e0e848e921b6d4efc3b6519f62597da50d",
     "theory_state_blob": "71ee3d7c7338be5a5ed96e4459e1beeb32ac851b",
@@ -31,11 +31,11 @@
     "utility_tip_observed": "263c221b7f2243c19d002ff5cc8af2fd10acf79a",
     "prior_theory_probe_branch": "forge/20260924-th001-q0-qi-adaptation-a",
     "prior_theory_probe_head": "e2dbe3a5a0db812f777b789a6878af8a0d3eee0f",
-    "history_path": "reports/orchestrator/sub/history/2026-09-24/0837-r109-r101-fast-forge-no-gated-probe.md",
-    "history_create_commit": "82de0382bca934b7074a8c91217b3678352fc492",
-    "latest_update_commit": "a992f7dcbc426896d0754296b5d2512649df0f95"
+    "history_path": "reports/orchestrator/sub/history/2026-09-24/0935-r110-r101-fast-forge-no-gated-probe.md",
+    "history_create_commit": "bbf4e9830333c240cc27349fcc1b0ab15590150b",
+    "latest_update_commit": "82e6a5aeeb95adad820f9e341179219290f64902"
   },
-  "freshness_note": "Evidence Analyst R109 is current and converges on R108 with no new science, Theory decision, Revisit trigger, or canonical admission. Methodology R101 independently reports no material calibration change. MAIN remains H7-only and operationally blocked before identity/START by its fixed one-shot launch-trigger capability; Forge did not touch H7 or the blocker.",
+  "freshness_note": "Evidence Analyst R110 is current and converges on R109 with no new science, Theory decision, Revisit trigger, Forge promotion, or canonical admission. Methodology R101 independently reports no material calibration change. MAIN R110 remains H7-only and operationally blocked before identity/START by the authorized one-shot launch-trigger capability; Forge did not touch H7 or the blocker.",
   "theory_revisit_gate": {
     "latest_evidence_analyst_checked_before_selection": true,
     "latest_evidence_analyst_rechecked_before_persistence": true,
@@ -50,7 +50,7 @@
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "main_owner": "H7_ONLY",
-    "main_current_status": "SCIENTIFICALLY_READY_ACTIVE_QUEUED_OPERATIONALLY_TRIGGER_BLOCKED_PRESTART",
+    "main_current_status": "SCIENTIFICALLY_READY_QUEUED_OPERATIONALLY_TRIGGER_BLOCKED_PRESTART",
     "selected_work_independent_of_unknown_main_outcome": true,
     "avoided": [
       "H7 science/controller/component/runtime/scorer/preserver/launch/capability/identity/START/protected-evaluator/workflow/authority surfaces",
@@ -66,7 +66,7 @@
     "excluded": [
       {
         "surface": "TH-001 follow-up",
-        "reason": "Evidence Analyst R109 retains R108 theory rejection; no new bounded THEORY_FORGE_TEST"
+        "reason": "Evidence Analyst R110 retains current theory rejection; no new bounded THEORY_FORGE_TEST"
       },
       {
         "surface": "Revisit-derived probe",
@@ -111,7 +111,7 @@
   },
   "metrics": {
     "scope": "FROM_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 20,
+    "runs": 21,
     "prototypes_attempted": 19,
     "theory_probes": 2,
     "theory_kills": 2,
