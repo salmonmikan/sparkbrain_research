@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260924T075000+0900-G14-5C61A2F8",
-  "produced_at": "2026-09-24T07:50:00+09:00",
-  "producer_run_id": "repository-steward-auto-20260924T075000+0900-G14-5C61A2F8",
+  "generation_id": "STEWARD-20260924T135000+0900-G15-9F3C6A21",
+  "produced_at": "2026-09-24T13:50:00+09:00",
+  "producer_run_id": "repository-steward-auto-20260924T135000+0900-G15-9F3C6A21",
   "authority_scope": "REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY",
-  "supersedes_generation_id": "STEWARD-20260923T195000+0900-G13-B7D42E19",
+  "supersedes_generation_id": "STEWARD-20260924T075000+0900-G14-5C61A2F8",
   "repository": "salmonmikan/sparkbrain_research",
   "mailbox_semantics": {
     "ops_branches_are_scientific_source_of_truth": false,
@@ -12,8 +12,9 @@
     "ops_merge_or_rebase_performed": false
   },
   "authoritative_refs": {
-    "main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "main_changed_since_g13": false,
+    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "main_changed_since_g14": true,
+    "main_change_classification": "FAIL_CLOSED_WORKFLOW_DISPATCH_REGISTRATION_ONLY_NO_SCIENTIFIC_SUBSTRATE_PROMOTION",
     "main_protected_branch_summary": true,
     "repository_ruleset_count": 1,
     "active_main_ruleset": {
@@ -22,30 +23,52 @@
       "enforcement": "active"
     },
     "authoritative_tag_namespace_protection": "NOT_OBSERVED_CURRENT_RULESET_TARGETS_BRANCH_ONLY",
-    "authoritative_evidence_tag_count": 5,
-    "evidence_tags": {
+    "preexisting_annotated_evidence_tag_count": 5,
+    "preexisting_annotated_evidence_tags": {
       "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
       "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
       "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
-    "evidence_tag_objects_changed_since_g13": false,
+    "preexisting_evidence_tag_objects_changed_since_g14": false,
+    "h7_lightweight_authoritative_namespace_ref_count": 4,
+    "h7_lightweight_authoritative_namespace_refs": {
+      "freeze/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
+      "formal/h7-r5-h7-r5-285a3a206b34c5982b9d4045": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
+      "sealed/h7-r5-h7-r5-285a3a206b34c5982b9d4045": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
+      "evidence/h7-r5-h7-r5-285a3a206b34c5982b9d4045": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85"
+    },
+    "h7_tag_format": "LIGHTWEIGHT_OBJECT_TYPE_COMMIT_NOT_ANNOTATED_TAG_OBJECT",
+    "h7_raw_preserve_ref": {
+      "ref": "preserve/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
+      "sha": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0"
+    },
+    "authoritative_namespace_tag_ref_count_total": 9,
+    "evidence_namespace_tag_ref_count_total": 6,
     "legacy_freeze_branch_count": 13,
     "legacy_freeze_exact_sha_map_reverified": true,
     "legacy_preserve_pointers_present": true,
     "immutable_ref_incident": false
+  },
+  "provenance_format_audit": {
+    "classification": "H7_AUTHORITATIVE_NAMESPACE_REFS_LIGHTWEIGHT_WHILE_DOCUMENTED_PROSPECTIVE_CONTRACT_PREFERS_ANNOTATED",
+    "document": "docs/AUTHORITATIVE_TAGS.md",
+    "destructive_fix_allowed": false,
+    "required_posture": "PRESERVE_EXISTING_REFS_EXACTLY_APPEND_ONLY_PROVENANCE_OR_AUDIT_FOLLOWUP_ONLY",
+    "scientific_outcome_reinterpreted": false
   },
   "protection_audit": {
     "main_branch_protection": "ACTIVE_RULESET_PRESENT",
     "issue_139_state": "OPEN",
     "issue_139_scope": "AUTHORITATIVE_TAG_NAMESPACES",
     "issue_139_substantive_status": "STILL_VALID_TAG_RULESET_NOT_OBSERVED",
-    "issue_139_body_freshness": "PARTIALLY_STALE_ZERO_RULESETS_STATEMENT",
+    "issue_139_body_freshness": "PARTIALLY_STALE_ZERO_RULESETS_AND_PREDATES_H7_LIGHTWEIGHT_REFS",
+    "human_directive_20260919_002": "DEFER_PROTECTION_DEPLOYMENT_FOR_NOW",
     "steward_mutated_protection": false
   },
   "separation_audit": {
-    "classification": "COMPLIANT_MAIN_RESEARCH_FORGE_EVIDENCE_SEPARATION_NO_NEW_STABLE_SUBSTRATE",
+    "classification": "COMPLIANT_MAIN_RESEARCH_FORGE_EVIDENCE_SEPARATION_WITH_FAIL_CLOSED_H7_REGISTRATION_STUB_ON_MAIN",
     "current_forge_branches": [
       "forge/20260923-receptor-suppression-probes-a",
       "forge/20260924-coordinate-null-local-witness",
@@ -57,6 +80,17 @@
     "scientific_authority_granted_by_steward": false
   },
   "documentation_audit": {
+    "human_directive_20260922_006_status": "NOT_YET_SATISFIED",
+    "main_contains_v05_runtime_surface": true,
+    "reader_facing_surfaces_still_v03_centered": [
+      "README.md",
+      "pyproject.toml",
+      "docs/START_HERE.md",
+      "docs/PROJECT_STATUS.md",
+      "CHANGELOG.md"
+    ],
+    "package_metadata_version": "0.3.2.dev0",
+    "stable_baseline_refresh_posture": "SMALL_REVIEWED_INTEGRATION_AFTER_VERSION_SEMANTICS_AUDIT_NO_WHOLESALE_RESEARCH_MERGE",
     "legacy_freeze_map_exact_mapping_status": "REVERIFIED_CORRECT",
     "legacy_freeze_map_summary_freshness": "STALE",
     "legacy_freeze_map_stale_claims": [
@@ -64,7 +98,9 @@
       "repository rulesets = 0"
     ],
     "current_observed_counts": {
-      "authoritative_evidence_tags": 5,
+      "authoritative_namespace_tag_refs": 9,
+      "annotated_evidence_tag_objects": 5,
+      "evidence_namespace_tag_refs": 6,
       "repository_rulesets": 1
     },
     "steward_scope_prevented_direct_legacy_map_edit": true
@@ -75,6 +111,7 @@
     "governance_or_tooling_candidates": [
       {"candidate": "PR_148_HUMAN_DIRECTIVES_REPOSITORY_SKILL", "status": "OPEN_UNMERGED_NORMAL_REVIEW_REQUIRED"},
       {"candidate": "PR_149_SCHEDULER_REGISTRY_SKILL", "status": "OPEN_UNMERGED_NORMAL_REVIEW_REQUIRED"},
+      {"candidate": "STABLE_BASELINE_DOC_VERSION_REFRESH", "status": "PENDING_VERSION_SEMANTICS_AUDIT_AND_REVIEWED_INTEGRATION"},
       {"candidate": "GENERIC_EQUIVALENCE_CERTIFICATE_VERIFIER", "status": "DEFER_PENDING_TRUST_BOUNDARY_CLARIFICATION"}
     ],
     "promotions_performed": 0
@@ -97,15 +134,16 @@
     "steward_persistence_only": true
   },
   "persistence": {
-    "history_path": "reports/repository_steward/history/2026-09-24/0750.md",
+    "history_path": "reports/repository_steward/history/2026-09-24/1350.md",
     "latest_path": "reports/repository_steward/latest.md",
     "state_path": "reports/repository_steward/state.json",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
   },
   "next_priorities": [
-    "Re-fetch main protection and authoritative evidence/freeze refs independently each Steward generation.",
-    "Keep Issue #139 open until tag-target protection for freeze/sealed/formal/evidence namespaces is installed and verified.",
-    "Track the stale zero-tags/zero-rulesets summary in legacy_freeze_map.md without editing outside designated Steward latest/state/history scope.",
+    "Re-fetch main, legacy freeze branches, preserve refs, and authoritative tags independently each Steward generation.",
+    "Preserve all existing H7 authoritative-namespace refs exactly; track lightweight-tag provenance mismatch through append-only audit/provenance rather than destructive tag replacement.",
+    "Keep Issue #139 open as a tag-protection risk but do not deploy protection rules while HUMAN-20260919-002 remains active absent a materially changed risk condition.",
+    "Track and route HUMAN-20260922-006 stable-baseline documentation/version refresh through a small reviewed integration after version-semantics audit.",
     "Treat forge/* and Theory/Revisit control-plane material only as mutable noncanonical history, never evidence.",
     "Do not promote scientific research surfaces to main from Steward authority.",
     "Keep PR #148 and #149 under normal reviewed integration only; do not merge from Steward authority.",
