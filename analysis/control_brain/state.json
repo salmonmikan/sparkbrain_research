@@ -1,51 +1,33 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260925T025000+0900-R66",
-  "produced_at": "2026-09-25T02:50:00+09:00",
-  "supersedes_generation_id": "CTRL-20260925T005016+0900-R65",
+  "generation_id": "CTRL-20260925T035000+0900-R67",
+  "produced_at": "2026-09-25T03:50:00+09:00",
+  "supersedes_generation_id": "CTRL-20260925T025000+0900-R66",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY",
   "material_change": true,
   "new_scientific_result": false,
-  "human_directives": {
-    "HUMAN-20260925-001": {
-      "disposition": "MODIFY",
-      "scientific_credit": 0,
-      "execution_authority": "NONE",
-      "routing": "BOUNDED_DEVELOPMENT_AND_SYSTEM_BUILD_INPUT; FRESH_SCIENCE_ONLY_AFTER_PROSPECTIVE_GATE",
-      "revisit_trigger": false
-    }
-  },
-  "refs": {
-    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "analyst_full": "EVA-20260925T005800+0900-R130-LIT44-REDUCTION-LADDER-NO-SCIENCE",
-    "analyst_stub": "R131_NO_ALLOCATION",
-    "main_worker": "MAIN-20260925T021305+0900-PRIMARY-R135-NO-ALLOCATED-SCIENCE-OR-BUILD",
-    "theory": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
-    "methodology": "METHCAL-20260925T011959+0900-R119-6F8C2A41",
-    "forge_head": "02fd9d24337432ac7121599f3361392d87e2fc5e"
-  },
   "canonical_funnel": {
-    "canonical": 35,
+    "total": 35,
     "MECHANISM": 14,
     "SYSTEM": 21,
     "terminal": 35,
     "active": 0,
-    "queued": 0,
-    "OPEN_DEVELOPMENT": 0,
-    "RESULT_EXPOSED_DEVELOPMENT": 34,
-    "CONSUMED_ONE_WAY": 1
+    "queued": 0
   },
   "system_build": {
-    "allocated": 0,
-    "active": 0,
-    "build_id": null,
-    "forge_input": {
-      "branch": "forge/20260925-predictive-state-revision-loop-a",
-      "status": "NON_EVIDENTIARY_INTEGRATION_INPUT",
-      "functionally_verified": false,
-      "scientifically_novel": false,
-      "ci": "36036126862_LINT_FAIL_311_313_TEST_SKIPPED"
-    }
+    "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
+    "owner": "MAIN",
+    "status": "READY_FOR_RELAY",
+    "scientific_credit": 0,
+    "built": true,
+    "functionally_verified": true,
+    "full_acceptance_coverage": false,
+    "comparatively_supported": false,
+    "scientifically_novel": false,
+    "branch": "system-build/sb001-predictive-state-revision-pilot-20260925",
+    "head": "e6a59b2601a9a68b46dbb45b02b39e16e3fe95ef",
+    "ci_run": 36042005169,
+    "ci_conclusion": "success"
   },
   "revisit": {
     "coverage": "35/35",
@@ -56,26 +38,33 @@
     "fresh_successors": 0
   },
   "theory": {
+    "generation": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
     "status": "NO_THEORY_PROPOSAL",
     "revisit_status": "NO_REVISIT_PROPOSAL"
   },
-  "fleet_health": {
-    "classification": "YELLOW_UNAPPROVED_CADENCE_DRIFT_AND_AUDIT_DURABILITY_GAP",
-    "audit_latest": "AUD_R10_20260924_1031JST",
-    "utility_live_cadence": "2H_AT_25",
-    "methodology_live_cadence": "2H_AT_20",
-    "scheduler_mutated_by_control": false,
-    "decision_required": "RATIFY_2H_OR_RESTORE_HOURLY"
+  "human_directives": {
+    "latest_reviewed": "HUMAN-20260925-001",
+    "latest_disposition": "MODIFY_TO_ZERO_CREDIT_SYSTEM_BUILD",
+    "all_active_read": true
   },
-  "directions": [
-    "Analyst review HUMAN-20260925-001 under MODIFY",
-    "Forge may repair lint/test as non-evidentiary development",
-    "MAIN and Relay wait for explicit allocation",
-    "Any build uses fresh build_id and explicit acceptance/provenance/claim boundary",
-    "Any science from build requires fresh prospective object and zero inherited credit",
-    "No Revisit trigger",
-    "No automatic scheduler mutation"
-  ],
+  "fleet_health": {
+    "independent_audit_latest": "R10",
+    "evidence_analyst_pointer_drift": true,
+    "main_pointer_drift": true,
+    "utility_cadence": "2h",
+    "methodology_cadence": "2h",
+    "scheduler_mutation_by_control": false
+  },
+  "refs": {
+    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "evidence_analyst_head": "97e8ffe2f728cac7bf82f333439d3c83dc055bcc",
+    "main_generation": "MAIN-20260925T033600+0900-PRIMARY-R136-SYSTEM-BUILD-SB001"
+  },
+  "persistence": {
+    "history_path": "analysis/control_brain/history/2026-09-25/0350-R67.md",
+    "latest_path": "analysis/control_brain/latest.md",
+    "state_path": "analysis/control_brain/state.json"
+  },
   "mutations": {
     "experiments": 0,
     "identities_consumed": 0,
