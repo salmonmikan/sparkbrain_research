@@ -1,37 +1,27 @@
-# FAST FORGE latest — R116 raw Candidate #35 Revisit proposal observed; awaiting Analyst gate
+# FAST FORGE latest — RVT35 causal-opportunity probe killed by ordinary reduction
 
 - schema_version: `2`
-- generation_id: `FORGE-20260924T153500+0900-NOOP-R118-RAW-CAND35-REVISIT-AWAIT-ANALYST`
-- produced_at: `2026-09-24T15:35:00+09:00`
 - worker_role: `FAST_FORGE`
 - evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
-- overall_status: `FORGE_OBSERVATION`
-- selection_outcome: `NO_OP`
+- overall_status: `FORGE_DEAD_END`
+- source_candidate: `CANDIDATE_35`
+- probe_spec: `RVT35-FORGE-001`
 
-## Freshness / gating
+## Freshness / gate
+Stable main, Evidence Analyst, MAIN/Relay, Theory/Revisit, Literature/Audit, Methodology, Utility, terminal/current families and Forge history were re-fetched. Evidence Analyst R120 keeps Candidate #35 `REVISIT_TRIGGERED`, classifies the sole proposal exactly `REVISIT_FORGE_TEST`, and states that Fast Forge alone may execute `RVT35-FORGE-001`; Control R59 marks it authorized pending Forge execution. Utility R119 provides synthetic zero-credit path/readout tooling only.
 
-Stable `main`, Evidence Analyst, MAIN/Relay, Theory/Revisit, Literature/Audit, Methodology, Utility, terminal/current families and prior Forge history were re-fetched before selection.
+## Probe
+On `forge/20260924-rvt35-causal-opportunity-a`, a prospective synthetic/dev-only three-unit probe fixes a treated non-receptor unit, a downstream observable, treated->observable edge `0.85`, delay `2 ms`, latent treated-potential shift `0.20`, matched probe current `0.70` at `10 ms`, threshold `0.80`, membrane tau `18 ms`, no plasticity/adaptation increment, and a path-cut control. No Candidate #35/R100 data or result-responsive search was used.
 
-The newest material input is Theory/Revisit R3 (`THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4`). It emits one raw `REVISIT_PROPOSAL` for terminal Candidate #35 based on the independent treatment-to-readout causal-opportunity mismatch plus external perturb-and-probe/output-null observability constraints.
+The repository field equation predicts the entire separation: the treated shift decays to `0.1147506841`; control pre-threshold potential is `0.7000 < 0.80`; perturbed is `0.8147506841 >= 0.80`; fixed edge/delay then predicts the observable spike at `12 ms`, while path-cut predicts none. Thus explicit causal opportunity/observability is reachable, but the apparent latent-state effect is fully reduced to local membrane leak + fixed threshold + fixed edge/delay.
 
-That proposal has zero dispatch authority. Evidence Analyst was re-fetched after observing R3 and remains R118, produced before R3. It has not classified the proposal as `REVISIT_FORGE_TEST`, `REVISIT_REJECTED`, `REVISIT_DORMANT`, or `REVISIT_CANONICALIZE`. Therefore Forge did not execute or materialize the raw proposal.
-
-## Selection
-
-No independent non-gated target survived pre-build screening. No prototype executed, no Forge branch was created or modified, no promotion proposal was made, and no Utility request was appended.
-
-If Candidate #35 is later explicitly gated to Forge, the strongest ordinary reductions already declared by the raw proposal are local leak/adaptation/refractory dynamics, fixed edge/delay/direct receptor drive, STP/transient synaptic state, ordinary recurrence, FSA/register, reservoir/fading-memory/predictive-state, output-null/readout projection and probe-induced reorganization. Forge makes no claim in this run that any of these reductions fail.
-
-The old Candidate #35 R100 object remains terminal SYSTEM with zero confirmatory credit and was not rerun, retuned or rescored. Candidate #34 remains CLOSED_STRONG. H7 remains terminal/consumed FORMAL INCONCLUSIVE; no same-object repair, rerun, rescore or result-responsive comparator development occurred.
+Exact branch-file execution was attempted locally but sandbox DNS prevented fetching raw GitHub files; no scientific fallback action was taken. The deterministic arithmetic diagnostic was executed locally. This does not change the kill because the kill rests on an exact ordinary reduction of the prospectively fixed parameters, not an empirical surprise.
 
 ## Disposition
+`FORGE_DEAD_END`: kill criterion `APPARENT_SEPARATION_FULLY_ORDINARY_REDUCIBLE` met. No promotion proposal, Utility request, fresh candidate ID, or canonical credit. Old Candidate #35 remains untouched/terminal. MAIN-owned H7 and all FORMAL/protected surfaces were avoided.
 
-`FORGE_OBSERVATION` / `NO_OP`: a genuinely new raw Revisit proposal now exists, but Forge is waiting for the required Evidence Analyst gate before any probe. This is a gate wait, not a scientific result.
+Full record: `reports/orchestrator/sub/history/2026-09-24/1737-r119-fast-forge-rvt35-causal-opportunity-kill.md`.
 
-Full technical record: `reports/orchestrator/sub/history/2026-09-24/1535-r116-fast-forge-raw-cand35-revisit-await-analyst.md`.
+Exact refs: main `d16403414fc7abebd23075fc401240971b8eb91d`; Evidence Analyst R120 `3b7a3a0fd100614ed1b271ac14010e34683625ac`; MAIN R120 `6f1f8ac373b99d4346894f9591e2feb5cc2bcc13`; Control R59 `6747ab029959abe7449a144fabbe212c3df7ed9f`; Methodology R110 `8b5be8eb9a1bf9b677c81c5837683fbc7f00e0dc`; Theory/Revisit R3 `cc597a993fe30d6ba9ea05a30999d44a489ea467`; Utility R119 `e4e6e3f9628f1b766f195cb9579cf8b7e552f1e9`; Forge branch commit `58b6f3f05c56232ec4913d48635bd26641d73fe5`.
 
-Exact refs: stable main `d16403414fc7abebd23075fc401240971b8eb91d`; Evidence Analyst R118 `ec74807c04e23e561275f8a2900e11e8145076c3` / latest blob `cc1c6a9a589c8750c3de41234aae37e4bc7f6d05`; MAIN PRIMARY R118 mailbox `1bc37f4f1f36cee055204486c11206d7cadee58e`; Theory/Revisit R3 latest blob `4b537b407ab7961f6421bee14ed858f612f5b713` / persistence tip `cc597a993fe30d6ba9ea05a30999d44a489ea467`; Literature R42 blob `fdb7c41e83cf7ef2e8d8d44595887553157956ce`; Audit R10 blob `a89738c837b2e5bc2eab94adb1722bbb6daeb673`; Methodology R109 `462299364d518c728795dc746be4f5ec323db6ae`; Utility R118 `69b373bb05ce1f11e3321ef71b30adc9622fadad`; history create commit `b56eea44d3e5f6ab6410e7b2c948d9ec95edc5c4`.
-
-Cumulative metrics: runs `26`, prototypes attempted `19`, Theory probes/kills/survivors `2/2/0`, Revisit probes/kills/survivors `0/0/0`, dead ends `15`, interesting retained `1`, promotion proposals `1`, later admissions `0`, duplicate/rescue rejects `12`, ownership collisions `0`, ordinary-reduction rejects `15`, Analyst promotion deferrals `1`, latency `NO_OP_GATE_WAIT`.
-
-No hard-floor action occurred by Forge.
+Cumulative metrics: runs `27`, prototypes `20`, Theory probes/kills/survivors `2/2/0`, Revisit probes/kills/survivors `1/1/0`, dead ends `16`, interesting retained `1`, promotion proposals `1`, later admissions `0`, duplicate/rescue rejects `12`, ownership collisions `0`, ordinary-reduction rejects `16`. No hard-floor action occurred.
