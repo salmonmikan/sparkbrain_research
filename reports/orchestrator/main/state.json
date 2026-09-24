@@ -12,21 +12,29 @@
   "development_revision": null,
   "cycle_count": 25,
   "cycle_reassessment_context": "NO_SCIENTIFIC_CYCLE_EXTENSION_OR_REASSESSMENT_EXECUTION",
-  "information_gain": "CONTROL_PLANE_ONLY: ANALYST_R122_ADDS_PROSPECTIVE_INTERACTION_AWARE_ATTRIBUTION_AND_COMPARATOR_ADEQUACY_BAR_PLUS_CAND35_PROVENANCE_REFERENCE_DISCREPANCY; NO_EXECUTABLE_CANONICAL_OBJECT; NO_NEW_SCIENTIFIC_RESULT",
+  "information_gain": "CONTROL_PLANE_ONLY: ANALYST_R122_ADDS_PROSPECTIVE_INTERACTION_AWARE_ATTRIBUTION_AND_COMPARATOR_ADEQUACY_BAR_PLUS_CAND35_PROVENANCE_REFERENCE_DISCREPANCY; R122B_ACKNOWLEDGES_MAIN_R125_WITH_NO_MATERIAL_GATE_CHANGE; NO_EXECUTABLE_CANONICAL_OBJECT; NO_NEW_SCIENTIFIC_RESULT",
   "analyst_authority": {
     "generation_id": "EVA-20260924T190300+0900-R122-R43-PROSPECTIVE-ATTRIBUTION-GATE",
     "history_create_commit": "e5d90d9c04bebf92ae4771cc541b89e7a41ad05c",
     "history_amendment_commit": "e1cd642c1c7055a42ec9c6ff94a104f1a6d68c95",
-    "branch_head": "045d21cbca72506605f0152abd589b8c90f23edd",
+    "decision_content_head": "045d21cbca72506605f0152abd589b8c90f23edd",
+    "branch_tip_at_final_freshness_check": "18ffc338feebc74fd0d4be0f560ceb2757c7c507",
+    "post_persistence_ack_commit": "18ffc338feebc74fd0d4be0f560ceb2757c7c507",
+    "post_persistence_ack_material_gate_change": false,
+    "post_persistence_ack_new_scientific_result": false,
     "scientific_execution_mode": "READ_ONLY",
     "decision": "NO_EXECUTABLE_CANONICAL_SCIENCE; R43_PROSPECTIVE_ATTRIBUTION_BAR_ONLY; CAND35_PRESERVE_REF_DISCREPANCY_NO_SCIENTIFIC_REINTERPRETATION",
     "new_scientific_result": false,
-    "freshness_rechecked_before_persistence": true
+    "freshness_rechecked_before_persistence": true,
+    "freshness_rechecked_after_persistence": true
   },
   "prior_main_generation": "MAIN-20260924T185301+0900-RELAY-R124-WAITING-NO-EXECUTABLE-CANONICAL-SCIENCE",
   "persistence": {
     "history_path": "reports/orchestrator/main/history/2026-09-24/191214-r125-primary-r43-gate-preserve-audit-no-canonical-action.md",
-    "history_create_commit": "4464bdceaada46e93206760615331e54c2ecf0a1"
+    "history_create_commit": "4464bdceaada46e93206760615331e54c2ecf0a1",
+    "state_initial_update_commit": "ed0151fed15e58423eba9a6c95425553f2b2e5e7",
+    "latest_update_commit": "3ee79adb554e3de95886bad4393ca8383b4d37d9",
+    "lease_initial_update_commit": "b687dde82a3817acc2fa4e62f2279771191444aa"
   },
   "funnel": {
     "canonical": 35,
@@ -128,7 +136,8 @@
     "main_report_branch": "ops/orchestrator-run-report",
     "main_report_head_before_persistence": "949f919a35122425ee83c3cb70d6da620f172dae",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "045d21cbca72506605f0152abd589b8c90f23edd",
+    "analyst_decision_head": "045d21cbca72506605f0152abd589b8c90f23edd",
+    "analyst_branch_tip_after_ack": "18ffc338feebc74fd0d4be0f560ceb2757c7c507",
     "control_branch": "ops/control-brain-handoff",
     "control_head": "24f8492e29c22bb202a47ed496b3098a6355ba96",
     "h7_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
@@ -160,11 +169,12 @@
     {"classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION", "change": "Re-fetched current Analyst, MAIN/Relay, Control, Fast Forge, Utility, stable main, relevant research/forge refs, exact H7 one-way refs, open PRs and workflow state."},
     {"classification": "PROSPECTIVE_POLICY_INGEST", "change": "Recorded R43 interaction-aware attribution/comparator adequacy requirements for future fresh objects only; no retroactive application."},
     {"classification": "PROVENANCE_DISCREPANCY_RECONCILIATION", "change": "Verified Candidate #35 current raw branch and recorded unresolved historical preserve-ref claim without recreating refs or changing science."},
+    {"classification": "POST_PERSISTENCE_FRESHNESS_CHECK", "change": "Observed Analyst R122B acknowledgement of MAIN R125; material gate change=false and new scientific result=false; R122 decision remains authoritative."},
     {"classification": "CANONICAL_BOUNDARY_ENFORCEMENT", "change": "Performed no scientific execution because Analyst R122 allocates no active canonical object."}
   ],
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NO_NEW_CANONICAL_SCIENCE; ANALYST_R122_NO_EXECUTABLE_ACTION; R43_PROSPECTIVE_ONLY; CAND35_PROVENANCE_DISCREPANCY_NONSCIENTIFIC; CANONICAL_QUEUE_EMPTY",
+    "evidentiary_status": "NO_NEW_CANONICAL_SCIENCE; ANALYST_R122_NO_EXECUTABLE_ACTION; R43_PROSPECTIVE_ONLY; CAND35_PROVENANCE_DISCREPANCY_NONSCIENTIFIC; R122B_ACK_NO_GATE_CHANGE; CANONICAL_QUEUE_EMPTY",
     "scientific_source_changed": false,
     "science_invariant_repair_performed": false,
     "science_affecting_change_performed": false,
@@ -184,6 +194,7 @@
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
+    "analyst_post_persistence_ack_rechecked": true,
     "main_generation_and_lease_freshness_rechecked": true,
     "exact_scientific_and_controller_refs_rechecked": true,
     "research_and_forge_collision_surfaces_rechecked": true,
