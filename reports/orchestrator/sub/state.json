@@ -1,132 +1,51 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260924T153500+0900-NOOP-R118-RAW-CAND35-REVISIT-AWAIT-ANALYST",
-  "produced_at": "2026-09-24T15:35:00+09:00",
   "worker_role": "FAST_FORGE",
-  "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260924T133500+0900-NOOP-R115-ALL35-TERMINAL-NO-GATED-PROBE",
-  "input_generations": {
-    "evidence_analyst": "R118@ec74807c04e23e561275f8a2900e11e8145076c3",
-    "main_primary": "R118@1bc37f4f1f36cee055204486c11206d7cadee58e",
-    "theory_revisit": "R3@4b537b407ab7961f6421bee14ed858f612f5b713",
-    "literature": "R42@fdb7c41e83cf7ef2e8d8d44595887553157956ce",
-    "audit": "R10@a89738c837b2e5bc2eab94adb1722bbb6daeb673",
-    "methodology": "R109@462299364d518c728795dc746be4f5ec323db6ae",
-    "utility": "R118@69b373bb05ce1f11e3321ef71b30adc9622fadad",
-    "previous_forge_persisted": "FORGE-20260924T133500+0900-NOOP-R115-ALL35-TERMINAL-NO-GATED-PROBE"
-  },
-  "exact_refs": {
-    "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "evidence_analyst_r118_tip": "ec74807c04e23e561275f8a2900e11e8145076c3",
-    "evidence_analyst_latest_blob": "cc1c6a9a589c8750c3de41234aae37e4bc7f6d05",
-    "main_primary_r118_tip": "1bc37f4f1f36cee055204486c11206d7cadee58e",
-    "theory_revisit_r3_tip": "cc597a993fe30d6ba9ea05a30999d44a489ea467",
-    "theory_revisit_latest_blob": "4b537b407ab7961f6421bee14ed858f612f5b713",
-    "literature_latest_blob": "fdb7c41e83cf7ef2e8d8d44595887553157956ce",
-    "audit_latest_blob": "a89738c837b2e5bc2eab94adb1722bbb6daeb673",
-    "methodology_r109_tip": "462299364d518c728795dc746be4f5ec323db6ae",
-    "utility_r118_tip": "69b373bb05ce1f11e3321ef71b30adc9622fadad",
-    "h7_frozen_result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-    "history_path": "reports/orchestrator/sub/history/2026-09-24/1535-r116-fast-forge-raw-cand35-revisit-await-analyst.md",
-    "history_create_commit": "b56eea44d3e5f6ab6410e7b2c948d9ec95edc5c4",
-    "latest_update_commit": "e2c5fb4a6918e9a41ac86135f8189797a30a08d2"
-  },
-  "freshness_note": "Theory/Revisit R3 is newer than Evidence Analyst R118 and emits one raw Candidate #35 REVISIT_PROPOSAL. Evidence Analyst was re-fetched after observing R3 and remains R118, so no Analyst classification of the proposal exists yet. Raw Theory/Revisit proposals have zero dispatch authority; Forge therefore performed no probe.",
-  "theory_revisit_gate": {
-    "latest_evidence_analyst_rechecked_after_raw_proposal_observed": true,
-    "raw_revisit_proposal_present": true,
-    "raw_revisit_source_candidate": "CANDIDATE_35",
-    "raw_revisit_trigger": "CANDIDATE_SPECIFIC_TREATMENT_TO_READOUT_CAUSAL_OPPORTUNITY_MISMATCH + INDEPENDENT_EXTERNAL_LATENT_STATE_OBSERVABILITY_LITERATURE",
-    "analyst_adjudication_of_r3_present": false,
-    "theory_forge_test_present": false,
-    "revisit_forge_test_present": false,
-    "raw_theory_dispatch_authority": false,
-    "raw_revisit_dispatch_authority": false,
-    "forge_execution_permitted": false
-  },
-  "terminal_current_family_scan": {
-    "canonical_candidates_total": 35,
-    "canonical_terminal": 35,
-    "canonical_active": 0,
-    "canonical_queued": 0,
-    "canonical_executable_mechanism": 0,
-    "candidate34": "CLOSED_STRONG",
-    "candidate35": "REVISIT_TRIGGERED_TERMINAL_RAW_PROPOSAL_UNGATED",
-    "h7": "DORMANT_REVISITABLE_TERMINAL_INCONCLUSIVE_CONSUMED_ONE_WAY"
-  },
-  "main_collision_check": {
-    "status": "PASS_NO_COLLISION",
-    "main_owner": "NO_ALLOCATED_ACTIVE_OBJECT_WAITING_FOR_FRESH_GATED_ADMISSION",
-    "selected_work_independent_of_unknown_main_outcome": true,
-    "avoided": [
-      "H7 same-object identity/START/raw-preserve/scorer/protected-evaluator/frozen-result and all H7 scientific authority refs",
-      "H7 rerun/retune/rescore/retry or outcome-responsive comparator repair",
-      "Candidate #35 R100 old-ID rerun/retune/rescore and ungated Revisit probe",
-      "Candidate #34 same-object and terminal descendants",
-      "all consumed/frozen/FORMAL identities and protected held-out targets"
-    ]
-  },
-  "selection_scan": {
-    "selection_outcome": "NO_OP_GATE_WAIT",
-    "selected": [],
-    "excluded": [
-      {
-        "surface": "Candidate #35 raw R3 Revisit proposal",
-        "reason": "NEW_BUT_UNGATED: latest Evidence Analyst predates R3 and has not issued REVISIT_FORGE_TEST; Theory/Revisit has zero dispatch authority."
-      },
-      {
-        "surface": "H7 comparator-capacity repair",
-        "reason": "RESULT_RESPONSIVE_RESCUE: H7 is terminal/consumed and same-object repair is prohibited."
-      },
-      {
-        "surface": "Candidate #34 descendants",
-        "reason": "CLOSED_STRONG with no independent residual beyond ordinary local impulse/decay reduction."
-      }
-    ]
-  },
-  "overall_status": "FORGE_OBSERVATION",
-  "forge_objects": [],
-  "ordinary_reduction_assessment": {
-    "new_phenomenon_observed_by_forge": false,
-    "assessment": "No Forge probe ran. The raw Candidate #35 proposal prospectively names local leak/adaptation/refractory state, fixed edge/delay/direct receptor drive, STP/transient synaptic state, ordinary recurrence, FSA/register, reservoir/fading-memory/predictive-state, output-null/readout projection and probe-induced reorganization as strongest ordinary reductions. Forge does not claim any reduction failed."
-  },
-  "promotion_proposal": null,
-  "utility_request": null,
-  "hard_floor": {
-    "prohibited_action_occurred_by_forge": false,
-    "preformal_or_formal_identity_created_or_consumed_by_forge": false,
-    "started_created_by_forge": false,
-    "official_test_or_scoring_performed_by_forge": false,
-    "protected_heldout_accessed_by_forge": false,
-    "evidence_formal_sealed_freeze_preserve_ref_mutated_by_forge": false,
-    "consumed_or_immutable_evidence_mutated_by_forge": false,
-    "result_bearing_canonical_workflow_dispatched_by_forge": false,
-    "scientific_research_branch_mutated_by_forge": false,
-    "forge_branch_created_or_modified_this_run": false,
-    "forge_branch_merged_to_main_or_research": false,
-    "terminal_reopened_by_forge": false,
-    "historical_outcome_rewritten_by_forge": false
+  "latest_status": "FORGE_DEAD_END",
+  "latest_probe": {
+    "probe_spec": "RVT35-FORGE-001",
+    "source_candidate": "CANDIDATE_35",
+    "branch": "forge/20260924-rvt35-causal-opportunity-a",
+    "branch_commit": "58b6f3f05c56232ec4913d48635bd26641d73fe5",
+    "question": "Does prospectively fixed treated-to-observable causal opportunity leave a latent-state effect after ordinary reductions?",
+    "observation": "Causal opportunity and downstream sensitivity are constructible, but the separation is exactly predicted by membrane leak, fixed threshold, and fixed edge/delay.",
+    "strongest_ordinary_reduction": "LOCAL_MEMBRANE_LEAK_PLUS_FIXED_THRESHOLD_PLUS_FIXED_EDGE_DELAY",
+    "dead_end_reason": "APPARENT_SEPARATION_FULLY_ORDINARY_REDUCIBLE",
+    "promotion_proposed": false,
+    "scientific_credit": 0,
+    "main_collision": false,
+    "hard_floor_action": false
   },
   "metrics": {
-    "scope": "FROM_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 26,
-    "prototypes_attempted": 19,
+    "runs": 27,
+    "prototypes": 20,
     "theory_probes": 2,
     "theory_kills": 2,
     "theory_survivors": 0,
-    "revisit_probes": 0,
-    "revisit_kills": 0,
+    "revisit_probes": 1,
+    "revisit_kills": 1,
     "revisit_survivors": 0,
-    "dead_ends": 15,
-    "interesting_observations_retained": 1,
+    "dead_ends": 16,
+    "interesting_observations": 1,
     "promotion_proposals": 1,
     "later_admissions": 0,
-    "duplicate_or_rescue_rejects": 12,
+    "duplicate_rescue_rejects": 12,
     "ownership_collisions": 0,
-    "ordinary_reduction_rejects": 15,
-    "analyst_promotion_deferrals": 1,
-    "idea_to_observation_latency": "NO_OP_GATE_WAIT"
+    "ordinary_reduction_rejects": 16,
+    "idea_to_observation_latency": "SAME_RUN"
   },
-  "recommendation": "WAIT_FOR_EVIDENCE_ANALYST_ADJUDICATION_OF_THEORY_R3_REVISIT_PROPOSAL; DO_NOT_EXECUTE_RAW_PROPOSAL; IF_REVISIT_FORGE_TEST_IS_LATER_ISSUED_TEST_ONLY_NEW_CAUSAL_OPPORTUNITY_OBSERVABILITY_RATIONALE_AND_PREFER_CHEAP_ORDINARY_REDUCTION_KILL"
+  "refs": {
+    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "evidence_analyst_r120": "3b7a3a0fd100614ed1b271ac14010e34683625ac",
+    "main_r120": "6f1f8ac373b99d4346894f9591e2feb5cc2bcc13",
+    "control_r59": "6747ab029959abe7449a144fabbe212c3df7ed9f",
+    "methodology_r110": "8b5be8eb9a1bf9b677c81c5837683fbc7f00e0dc",
+    "theory_revisit_r3": "cc597a993fe30d6ba9ea05a30999d44a489ea467",
+    "utility_r119": "e4e6e3f9628f1b766f195cb9579cf8b7e552f1e9",
+    "utility_support": "7123c29804b4538d38c0c308451337279b31958d",
+    "forge_probe": "58b6f3f05c56232ec4913d48635bd26641d73fe5",
+    "history": "792afb3aa0672e21dc238d8cf23cbd99f605993a",
+    "latest": "f1df5ccde4457dee20247f0f6ebb4a0a5199d6cc"
+  }
 }
