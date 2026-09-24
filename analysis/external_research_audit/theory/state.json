@@ -1,83 +1,86 @@
 {
-  "timestamp": "2026-09-24T03:27:38+09:00",
+  "timestamp": "2026-09-24T09:30:14+09:00",
   "schema_version": 2,
-  "generation_id": "THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91",
-  "producer_run_id": "external-theory-auto-THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91",
+  "generation_id": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
+  "producer_run_id": "external-theory-auto-THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
-  "supersedes_generation_id": null,
+  "supersedes_generation_id": "THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91",
   "role": "THEORY_SYNTHESIS_ARCHITECT",
-  "schedule_slot": "03:30 JST",
+  "schedule_slot": "09:30 JST",
   "schedule_inference": false,
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260924T025134+0900-R46-7C3A9E12",
-      "handoff_commit": "3e3439ea305d41a511e9a321ac10ef6331d37e78"
+      "generation_id": "CTRL-20260924T091000+0900-R51-6D2A8F41",
+      "handoff_commit": "b938a9f7356267dceadbe14d60ca4481cbe37d38"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260924T031000+0900-R104-H7-GREEN-REVISIT-BOOTSTRAP",
-      "handoff_commit": "0dfa28e2a8d0ddd6731ccbe9eccc7882e7f3be6f"
+      "generation_id": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP",
+      "handoff_commit": "7bc866c6d4dd1d723156345d056fadb027a85c1c"
     },
     "main": {
-      "generation_id": "MAIN-20260924T033000+0900-PRIMARY-H7-R104-AUTHORITY-REPIN-WAITING",
-      "mailbox_commit": "f2ef4b34424adf6fc1362be7032b5a85363625f7"
+      "generation_id": "MAIN-20260924T091500+0900-PRIMARY-H7-R110-LAUNCH-CAPABILITY-WAITING-EXTERNAL",
+      "mailbox_commit": "409416500bbdc080409e74259fde461202cbcdfe"
     },
     "fast_forge": {
-      "generation_id": "FORGE-20260924T023750+0900-NOOP-R103-R95-NO-GATED-PROBE",
-      "role_specific_latest_update_commit": "4dbf250d60e681caef32910c3c53ecf9737935a8"
+      "generation_id": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED",
+      "mailbox_commit": "6ecce79f76b54b61b873a6e2a385b3f84055099c"
     },
     "methodology": {
-      "generation_id": "METHCAL-20260924T032000+0900-R96-A61E94F2",
-      "mailbox_commit": "e2444e38bae0bcbd7817b8d16d8aff4ca7190ed2",
-      "note": "R96 is newest role-specific history; designated latest/state still expose R95."
+      "generation_id": "METHCAL-20260924T091717+0900-R102-8D31C7A4",
+      "latest_blob": "b6c8bc1dbfd7d3124a9a3007b280ca24d6d66beb"
     },
     "literature": {
-      "generation_id": "LIT-20260924T002755+0900-R40-SILENT-SYNAPTIC-CREDIT-9C4E2A71",
-      "handoff_commit_observed": "d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c"
+      "generation_id": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71",
+      "latest_blob": "221f6cd238993d4a07d04ea99838be56449a3c70"
     },
     "independent_audit": {
       "generation_id": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8",
-      "handoff_commit_observed": "d71bb10c171ce1242f9c5c1d6ebc80c1faf9f12c"
+      "latest_blob": "e0c838636dfb36708df8d86dd9165a2a0acedada"
     },
     "prior_theory": {
-      "generation_id": "NOT_INITIALIZED",
-      "handoff_commit": null
-    },
-    "relevant_prior_literature": [
-      "LIT-20260923T003758+0900-R32-PREDICTIVE-QUOTIENT-6A4E21C9",
-      "LIT-20260923T033100+0900-R33-REALIZATION-RUNTIME-5B7E2A91",
-      "LIT-20260923T063434+0900-R34-INTERVENTIONAL-EQUIVALENCE-8F4C21A7"
-    ]
+      "generation_id": "THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91",
+      "latest_blob": "23b663e0e848e921b6d4efc3b6519f62597da50d",
+      "state_blob": "71ee3d7c7338be5a5ed96e4459e1beeb32ac851b"
+    }
   },
   "authoritative_refs_inspected": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "h7_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "h7_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "h7_controller_branch": "research/main-h7-r5-oneway-controller-r98",
-    "h7_controller_head": "9c9f7e312aaf919418806d55dad0f1fcaafa5ee1",
-    "forge_branches": [
-      "forge/20260923-receptor-suppression-probes-a",
-      "forge/20260924-coordinate-null-local-witness"
-    ],
-    "evidence_tags": [
-      "evidence/c19-official-v4-c19-external-v2-official-v4",
-      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1",
-      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1",
-      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1",
-      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1"
-    ],
+    "h7_controller_branch": "research/main-h7-r5-launch-plumbing-r105",
+    "h7_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
+    "forge_branches": {
+      "forge/20260923-receptor-suppression-probes-a": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
+      "forge/20260924-coordinate-null-local-witness": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
+      "forge/20260924-recurrent-continuation-a": "17b2673cd0417fdf931264a71d8df1f9c1c21f23",
+      "forge/20260924-th001-q0-qi-adaptation-a": "e2dbe3a5a0db812f777b789a6878af8a0d3eee0f"
+    },
+    "evidence_tags": {
+      "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
+    },
     "formal_tag_count": 0,
     "sealed_tag_count": 0,
     "freeze_tag_count": 0,
     "immutable_tag_count": 0,
-    "preserve_and_control_namespaces_inspected": true,
-    "open_relevant_prs_observed": [148, 149]
+    "legacy_freeze_branch_count": 13,
+    "h7_control_refs": [],
+    "h7_preserve_refs": [],
+    "h7_launch_tags": [],
+    "open_prs": [148, 149],
+    "consumed_formal_identities": 7
   },
   "canonical_state": {
     "candidate_total": 35,
+    "mechanism": 14,
+    "system": 21,
     "terminal_current_objects": 34,
     "active_objects": 1,
-    "queued_objects": 1,
     "active_object": "CAND-H7-RESPONSIBILITY",
+    "h7_scientific_status": "READY_QUEUED_OPERATIONALLY_BLOCKED_BEFORE_IDENTITY_START",
     "candidate34": {
       "terminal": true,
       "claim_ceiling": "MECHANISM",
@@ -97,144 +100,69 @@
       "dormant_revisitable": 19,
       "deferred_independent_reidentification": 14,
       "revisit_triggered": 0
-    },
-    "h7_current_constraint": {
-      "claim_ceiling": "MECHANISM",
-      "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "formal_authority": "GO_ONCE_CONDITIONAL_EXACT_BINDING",
-      "formal_identity_created": false,
-      "started_created": false,
-      "protected_evaluation_accessed": false,
-      "unknown_outcome_dependency_used_by_theory": false
     }
   },
   "genuinely_new_information": true,
-  "theory_proposal": {
+  "new_information": [
+    "TH-001 frozen Q0-vs-QI Forge discriminator was reduced by ordinary residual adaptation/threshold plus fixed edge/delay dynamics.",
+    "Recurrent-continuation Forge toy is fully explained by explicit recurrent closure and adds no new persistence principle.",
+    "Literature R41 adds prospective anti-vacuity, intervention-faithfulness and mechanism-sparsification reduction requirements.",
+    "Methodology R102 found a science-invariant MAIN provenance generation-label mismatch but no scientific mechanism change."
+  ],
+  "theory_proposal": null,
+  "theory_status": "NO_THEORY_PROPOSAL",
+  "prior_theory_disposition": {
     "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
-    "question": "Is the scientifically meaningful SparkBrain state the coarsest matched-privilege history partition preserving both unperturbed future behavior and responses to a declared family of local interventions, rather than native route/unit/Assembly coordinates?",
-    "observations_to_explain": [
-      "C19-R2 canonical terminal evidence was REDUCED_BY_FSA.",
-      "PD01 canonical terminal evidence was FAIL_REDUCED_BY_FADING_MEMORY.",
-      "NI01 canonical terminal evidence was FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION.",
-      "H5 canonical terminal evidence was FAIL_NO_USEFUL_WORK_REDUCTION.",
-      "Candidate #34 development evidence was independently reducible to local edge weight/delay/18ms decay with no tested downstream spike residual.",
-      "Candidate #35 zero-credit development surface showed no measured potential/adaptation priming effect; STP/transient synaptic state remains an ordinary untested baseline for broader silent-memory claims.",
-      "v0.5 specifies causal-functional temporal assemblies but does not establish native Assembly identity as an irreducible scientific variable."
-    ],
-    "surviving_evidence": [
-      {"status": "CANONICAL_TERMINAL_EVIDENCE", "item": "C19-R2 REDUCED_BY_FSA"},
-      {"status": "CANONICAL_TERMINAL_EVIDENCE", "item": "PD01 FAIL_REDUCED_BY_FADING_MEMORY"},
-      {"status": "CANONICAL_TERMINAL_EVIDENCE", "item": "NI01 FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION"},
-      {"status": "CANONICAL_TERMINAL_EVIDENCE", "item": "H5 FAIL_NO_USEFUL_WORK_REDUCTION"},
-      {"status": "DEVELOPMENT_NONCONFIRMATORY", "item": "Candidate #34 narrow local physical edge influence, no Assembly-specific residual established"},
-      {"status": "DEVELOPMENT_ZERO_CREDIT", "item": "Candidate #35 no measured priming effect on frozen neuronal-state surface"},
-      {"status": "PROGRAMME_SPECIFICATION_NOT_EVIDENCE", "item": "v0.5 causal-functional-assembly target"},
-      {"status": "EXTERNAL_PRIOR_ART_NOT_SPARKBRAIN_EVIDENCE", "item": "predictive-state/bisimulation/causal-abstraction/realization/interventional-equivalence reduction bars"}
-    ],
-    "rejected_or_reduced_explanations": [
-      "persistent state magnitude alone as novelty",
-      "long-history necessity beyond compact fading state",
-      "no-ignition special-state necessity beyond confidence abstention",
-      "native coordinate/route identity as an invariant scientific object",
-      "local edge influence as Assembly-specific mechanism without residual",
-      "event routing as useful work reduction at the tested H5 surface",
-      "queue-empty potential/adaptation as demonstrated memory carrier at Candidate #35 surface"
-    ],
-    "external_prior_art": [
-      "epsilon-transducers and predictive-state representations",
-      "causal/behavioral bisimulation and minimal state abstraction",
-      "causal abstraction with intervention invariance",
-      "minimal realization equivalence",
-      "interventional equivalence classes and intervention-design identifiability"
-    ],
-    "proposed_mechanism_or_principle": "Intervention-Stable Causal Quotient (ISCQ): Q0 is the minimal matched-privilege predictive quotient; QI is the minimal quotient that additionally preserves a predeclared local-intervention response vector. The causal refinement gap QI-vs-Q0 is the programme-level target. Zero gap means no tested causal information beyond ordinary predictive state; nonzero gap is only a mechanism candidate after ordinary local dynamics/FSA/reservoir/eligibility/STP and abstraction-equivalence reductions fail.",
-    "why_existing_models_may_be_insufficient": "Only if histories matched in ordinary predictive state respond differently to the same frozen local intervention. This is not assumed; a compact FSA, reservoir, predictive-state, eligibility, STP, or causal-bisimulation model may absorb the full effect and thereby reduce the Theory.",
-    "predictions": [
-      "Most already reduced terminal surfaces have near-zero causal refinement gap.",
-      "A genuine responsibility phenomenon yields predictive-equivalent histories with divergent response to the same frozen local intervention.",
-      "Any real residual survives admissible realization reparameterization and attaches to a causal equivalence class rather than an arbitrary coordinate name.",
-      "If adaptation/refractory/eligibility/STP variables predict the intervention response, they are ordinary quotient state rather than new mechanism evidence.",
-      "Unique topology is not implied unless a prospective separating intervention design identifies it."
-    ],
-    "falsifiers": [
-      "A compact privilege-matched ordinary model predicts all declared intervention-conditioned outcomes.",
-      "The refinement gap vanishes after matching local state/timing/resource variables.",
-      "The gap exists only under outcome-selected interventions.",
-      "The split depends on arbitrary native coordinate labels and disappears under admissible reparameterization.",
-      "The comparator uses privileged target/global/evaluator information.",
-      "Only microscopic differences remain with no downstream observable effect."
-    ],
-    "ordinary_reduction_ladder": [
-      "local impulse/leak/threshold/refractory/adaptation",
-      "confidence/abstention/decision state",
-      "finite-state/register/history tracker",
-      "fading-memory reservoir / predictive-state representation",
-      "eligibility/three-factor and transient synaptic/STP state",
-      "intervention-stable causal/bisimulation quotient",
-      "realization/interventional-equivalence scope checks",
-      "native local residual only after the above fail"
-    ],
-    "minimal_discriminator": "Prospectively select history pairs assigned to the same matched-privilege unperturbed predictive class, apply the same frozen local intervention family, and require a reproducible downstream response difference that forces QI to split Q0 and is not explained by ordinary local/timing/FSA/reservoir/eligibility/STP state.",
-    "suggested_forge_probe": "Only after later Evidence Analyst gating, on already exposed stable synthetic surfaces, construct a tiny Q0 predictive partition and test whether predeclared local interventions force any QI split. Report class structure and ordinary state variables explaining each split. Do not touch protected H7 or terminal same-object surfaces.",
-    "relation_to_existing_candidates": "Programme-level only. H7 is adjacent but its unknown outcome is not used. Candidates #34 and #35 remain terminal and are not rescued. Canonical terminal evidence supplies reduction constraints, not positive Theory evidence.",
-    "post_outcome_rescue_risk": "LOW_TO_MODERATE",
-    "independence_from_current_main_unknown_outcomes": true,
-    "status": "THEORY_PROPOSAL"
+    "status": "THEORY_REJECTED_CURRENT_PROPOSAL",
+    "reason": "CONTRACT_FAITHFUL_Q0_VS_QI_SPLIT_FULLY_PREDICTED_BY_ORDINARY_RESIDUAL_ADAPTATION_THRESHOLD_AND_FIXED_EDGE_DELAY",
+    "universal_theory_falsification_claim": false,
+    "post_hoc_repair_allowed_this_run": false
   },
   "terminal_relevance_scan": {
     "performed": true,
-    "candidate34": "NO_TRIGGER; theory reinforces the strong local-impulse reduction rather than weakening closure.",
-    "candidate35": "NO_TRIGGER; immediate full-state natural-history Forge idea remains rescue-adjacent and Literature R40 alone does not independently establish a fresh successor.",
-    "legacy_dormant_and_deferred": "NO_TRIGGER_THIS_RUN; theory supplies a programme-level discriminator but candidate-specific historical closure provenance is required before declaring that any concrete old closure is superseded.",
-    "method_limited_objects": "NO_TRIGGER; no new simulator/API/instrumentation capability removing a specific old blocker was established in this run.",
+    "candidate34": "NO_TRIGGER_CLOSED_STRONG; NEW INFORMATION REINFORCES ORDINARY LOCAL-IMPULSE REDUCTION",
+    "candidate35": "NO_TRIGGER_DEFERRED_INDEPENDENT_REIDENTIFICATION; COORDINATE-NULL NATURAL WITNESSES DO NOT ESTABLISH FULL-STATE NATURAL COUNTERFACTUAL OR PERNICIOUS DIVERGENCE",
+    "dormant_revisitable_19": "NO_CANDIDATE_SPECIFIC_CLOSURE_INVALIDATION",
+    "other_deferred_objects": "NO_NEW_SIMULATOR_RUNTIME_API_CAPABILITY_REMOVES_A_SPECIFIC_OLD_BLOCKER",
     "revisit_proposal": null,
     "revisit_status": "NO_REVISIT_PROPOSAL"
   },
   "affected_lines": [
-    "PROGRAMME_THEORY_STATE_ONTOLOGY",
-    "PROGRAMME_CAUSAL_RESPONSIBILITY_REDUCTION_FLOOR",
-    "PREDICTIVE_STATE_VS_INTERVENTIONAL_STATE",
-    "H7_FUTURE_SUCCESSOR_REDUCTION_ONLY_NOT_CURRENT_CONTRACT",
-    "V05_ASSEMBLY_INTERPRETATION_BOUNDARY",
-    "TERMINAL_REVISIT_DIFFERENTIAL_SCAN"
+    "TH001_CURRENT_PROPOSAL_DISPOSITION",
+    "PROGRAMME_THEORY_GENERATION_STATE",
+    "CAUSAL_ABSTRACTION_REDUCTION_FLOOR",
+    "TERMINAL_REVISIT_DIFFERENTIAL_SCAN",
+    "CAND35_REVISIT_TRIGGER_SPECIFICITY"
   ],
-  "novelty_or_reduction_impact": "PROPOSE_INTERVENTION_STABLE_CAUSAL_QUOTIENT_AS_PROGRAMME_LEVEL_FALSIFICATION_OBJECT; native microscopic state is not privileged, and a nonzero intervention-conditioned refinement beyond an ordinary predictive quotient is required before stronger responsibility-state interpretation.",
+  "novelty_or_reduction_impact": "NO_NEW_THEORY_PROPOSAL; TH001 FROZEN DISCRIMINATOR IS REDUCED BY ORDINARY ADAPTATION_THRESHOLD_PLUS_FIXED_EDGE_DELAY, AND NEW LITERATURE TIGHTENS FUTURE THEORY ADMISSIBILITY WITHOUT JUSTIFYING POST_HOC REPAIR OR TERMINAL REVISIT.",
   "audit_classification": null,
   "prospective_baselines_or_discriminators": [
-    "matched-privilege predictive-state / epsilon-transducer Q0",
-    "finite-state/register and fading-memory reservoir",
-    "local impulse/leak/threshold/adaptation/refractory model",
-    "eligibility/three-factor and transient-synaptic/STP state",
-    "intervention-stable causal/bisimulation QI",
-    "realization-equivalence and interventional-equivalence checks",
-    "predictive-equivalent history pairs plus the same predeclared local intervention"
+    "restricted transparent abstraction/alignment family with null or complexity-matched controls",
+    "fixed intervention family with hidden-path/pernicious-divergence faithfulness checks",
+    "ordinary local impulse/leak/threshold/adaptation/refractory reduction",
+    "FSA/register and fading-memory/reservoir/predictive-state reductions",
+    "eligibility/three-factor and transient-synaptic/STP reductions",
+    "intervention-faithful mechanism sparsification/folding",
+    "downstream functional consequence beyond microscopic coordinate differences"
   ],
   "questions_for_evidence_analyst": [
-    "Retain TH-001 only as a programme-level noncanonical Theory proposal, not as H7 or Candidate-34/35 successor support?",
-    "If useful, later gate a bounded Forge falsification on exposed synthetic surfaces that tests Q0-vs-QI refinement without touching protected/terminal same-object surfaces?",
-    "Require candidate-specific historical closure provenance before any terminal row can be triggered by TH-001?"
+    "Keep TH-001 rejected for its current proposal and require any later Theory to be independently motivated rather than a safeguarded post-hoc revision?",
+    "Keep Candidate #34 CLOSED_STRONG and Candidate #35 DEFERRED_INDEPENDENT_REIDENTIFICATION absent candidate-specific new information?"
   ],
   "questions_for_control_brain": [
-    "Use intervention-stable minimal state as a prospective programme-level claim ceiling/falsification lens while keeping it outside current H7 FORMAL authority?",
-    "Keep all terminal objects terminal and route any future Theory-derived probe only through a fresh Evidence Analyst generation with zero evidentiary credit?"
+    "Preserve NO_OP/NO_THEORY_PROPOSAL as an acceptable Theory outcome rather than manufacturing mechanism supply?",
+    "Apply Literature R41 anti-vacuity/intervention-faithfulness controls only prospectively to genuinely fresh Theory objects, not frozen H7 or terminal histories?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "all five authoritative evidence tags and preserved evidence",
-    "all consumed FORMAL identities and historical STARTED/preserve/control refs",
-    "all 34 terminal current objects and historical classifications",
-    "Candidate #34 preserved D34-Q002 raw and reduction classification",
-    "Candidate #35 frozen terminal result and zero-credit Forge history",
-    "H7 PF-R1 exposed development result and no-rerun/no-rescore boundaries",
-    "current H7 R5 scientific source/contract/runtime/input/scorer/preserver/intervention/comparator/threshold/decision semantics",
-    "current H7 conditional one-way authority and namespace guards",
-    "no candidate creation, execution/dispatch, PR merge, immutable ref mutation, terminal reopening, or scheduler change"
+    "all seven officially consumed FORMAL identities",
+    "all five authoritative evidence tags",
+    "frozen H7 R5 science/controller/runtime/input/scorer/preserver/intervention/comparator semantics",
+    "no H7 identity/START/protected result by this role",
+    "Candidate #34 preserved D34-Q002 bytes and CLOSED_STRONG terminal state",
+    "Candidate #35 preserved five-arm result and DEFERRED_INDEPENDENT_REIDENTIFICATION terminal state",
+    "all terminal current objects remain terminal",
+    "no experiment, Forge/Utility/MAIN dispatch, research merge, immutable-ref mutation, or scheduler change"
   ],
   "utility_request_created": null,
-  "new_scientific_result": false,
-  "persistence": {
-    "latest_path": "analysis/external_research_audit/theory/latest.md",
-    "state_path": "analysis/external_research_audit/theory/state.json",
-    "history_path": "analysis/external_research_audit/history/2026-09-24/0330-THEORY_SYNTHESIS_ARCHITECT.md",
-    "persistence_limitation": "The resulting Git commit SHA is not self-addressable inside the content that determines that SHA; exact final handoff commit is verified from the branch tip after persistence."
-  }
+  "confidence": "HIGH"
 }
