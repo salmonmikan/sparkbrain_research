@@ -1,23 +1,25 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260924T110453+0900-R54-H7-REBIND-ROLLED-BACK-MAIN-RESTORED",
-  "produced_at": "2026-09-24T11:04:53+09:00",
-  "generated_at": "2026-09-24T11:04:53+09:00",
-  "producer_run_id": "sparkbrain-control-20260924T1050JST-r54-reconcile",
+  "generation_id": "CTRL-20260924T115231+0900-R55-H7-BRIDGE-REBOUND-CAND35-TRIGGER",
+  "produced_at": "2026-09-24T11:52:31+09:00",
+  "generated_at": "2026-09-24T11:52:31+09:00",
+  "producer_run_id": "sparkbrain-control-20260924T1150JST-r55-reconcile",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY",
-  "supersedes_generation_id": "CTRL-20260924T100300+0900-R53-MAIN-RESTORED-H7-DISPATCH-VERIFIED",
-  "programme_position": "H7_REPAIRED_CONTROLLER_PENDING_FRESH_ANALYST_REBIND; PRIMARY_MAIN_RESTORED_AGAIN; FLEET_LAG_OBSERVED",
+  "supersedes_generation_id": "CTRL-20260924T110453+0900-R54-H7-REBIND-ROLLED-BACK-MAIN-RESTORED",
+  "programme_position": "H7_DORMANT_BRIDGE_REBOUND_AND_VALIDATED_AWAITING_FRESH_POSTCHANGE_ANALYST; CAND35_REVISIT_TRIGGERED_WITHOUT_REOPEN_OR_SUCCESSOR; FLEET_LAG_PERSISTS",
   "material_delta": {
-    "analyst_r111_bound_prior_dispatch_controller": true,
-    "relay_found_preidentity_exact_blob_defect": true,
-    "relay_science_invariant_controller_repair": true,
-    "repaired_controller_requires_fresh_analyst_rebind": true,
-    "h7_scientific_source_changed": false,
+    "h7_bridge_rebound_to_repaired_controller": true,
+    "h7_bridge_nonresult_validation_success": true,
+    "h7_request_armed": false,
     "h7_result_bearing_execution": false,
-    "primary_main_enabled_regression_observed_again": true,
-    "primary_main_enabled_regression_repaired": true,
-    "primary_main_cadence_or_role_changed": false,
-    "fleet_wide_execution_lag_observed": true
+    "fresh_analyst_required_after_bridge_change": true,
+    "cand35_revisit_status_changed_to_triggered": true,
+    "cand35_terminal_state_changed": false,
+    "cand35_revisit_proposal_created": false,
+    "cand35_forge_referral_created": false,
+    "cand35_fresh_successor_created": false,
+    "new_scientific_result": false,
+    "scheduler_mutation": false
   },
   "human_directive_dispositions": {
     "HUMAN-20260918-001": "ACCEPT_OUTCOME_INDEPENDENT_SMALL_INTEGRATION_ONLY",
@@ -29,35 +31,45 @@
     "HUMAN-20260922-007": "MODIFY_SUPERSEDED_BY_FAST_FORGE_AND_UTILITY_DO_NOT_REENABLE_LEGACY_SUB",
     "HUMAN-20260922-008": "ACCEPT_FAST_FORGE_SLOW_SCIENCE_ACTIVE",
     "PRIMARY_MAIN_RELAY_ENABLED": "ACTIVE_USER_APPROVED_NO_SILENT_DISABLE",
-    "THEORY_SYNTHESIS": "ACTIVE_TEMPORARY_4_SLOT_CALIBRATION_UNTIL_2026-09-26T01:30+09:00_THEN_2_SLOT",
+    "THEORY_SYNTHESIS": "ACTIVE_TEMPORARY_4_SLOT_CALIBRATION_UNTIL_2026-09-26T01:30+09:00_THEN_ALREADY_APPROVED_2_SLOT",
     "REVISIT_RESURRECTION": "ACTIVE_FRESH_SUCCESSOR_ONLY_OLD_TERMINAL_IDS_PERMANENTLY_TERMINAL"
   },
   "authoritative_observations": {
     "main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "h7_science": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "analyst_r111_generation": "EVA-20260924T101155+0900-R111-H7-DISPATCH-BOUND-GO-ONCE",
-    "analyst_r111_branch_head": "2f1409da8d47525cbb1058ce9c7eebf8ef80ef2c",
-    "analyst_r111_bound_controller": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
-    "relay_repaired_controller": "af3aa97574c365e3e918c3d4d012faa4886760d0",
-    "relay_generation": "MAIN-20260924T105345+0900-RELAY-H7-R111-EXACT-BLOB-REPAIR-AWAITING-ANALYST",
-    "repair_class": "SCIENCE_INVARIANT_EXACT_BINDING_REPAIR",
-    "repair_reason": "launch_path_contract referenced prior formal-launch workflow blob after workflow change",
-    "bridge_branch": "ops/h7-r5-launch-bridge",
-    "result_bearing_dispatch_observed": false
+    "h7_controller": "af3aa97574c365e3e918c3d4d012faa4886760d0",
+    "h7_bridge": "aa3fb32466802baa20e95376adb9f25f88511129",
+    "h7_bridge_request_blob": "ac7d6677fadb305c76cb5863e7b55131116ba247",
+    "h7_bridge_workflow_blob": "c9dc0275352d675c52f251e25cdfb32486c54af6",
+    "h7_bridge_request_armed": false,
+    "evidence_analyst_generation": "EVA-20260924T113426+0900-R113-CONVERGED-H7-BRIDGE-HOLD-CAND35-TRIGGER",
+    "evidence_analyst_branch_head": "24ced1639762a9e2d41a3ef869256b06ba7d2357",
+    "relay_generation": "MAIN-20260924T115000+0900-RELAY-H7-R113-BRIDGE-REBIND-AWAITING-ANALYST",
+    "audit_generation": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
+    "methodology_generation": "METHCAL-20260924T111949+0900-R104-6B8E2D41",
+    "theory_generation": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
+    "fast_forge_generation": "FORGE-20260924T113600+0900-NOOP-R113-FRESH-REVISIT-METADATA-GATED",
+    "authoritative_evidence_tag_count": 5,
+    "new_h7_evidence_tag": false,
+    "h7_control_refs_present": false
   },
   "canonical_funnel": {
-    "source_generation": "EVA-20260924T101155+0900-R111-H7-DISPATCH-BOUND-GO-ONCE",
+    "source_generation": "EVA-20260924T113426+0900-R113-CONVERGED-H7-BRIDGE-HOLD-CAND35-TRIGGER",
     "candidate_total": 35,
     "MECHANISM": 14,
     "SYSTEM": 21,
     "terminal_for_current_object": 34,
     "active_nonterminal": 1,
     "scientifically_queued": 1,
-    "scientific_hold": 0,
-    "preformal_eligible": 1,
     "preformal_ready": 1,
+    "effectively_executable_mechanism": 0,
     "official_consumed_formal_identities": 7,
-    "new_consumption_this_run": 0
+    "new_consumption_this_run": 0,
+    "development_phases": {
+      "OPEN_DEVELOPMENT": 1,
+      "RESULT_EXPOSED_DEVELOPMENT": 34,
+      "CONSUMED_ONE_WAY": 0
+    }
   },
   "h7": {
     "candidate_id": "CAND-H7-RESPONSIBILITY",
@@ -67,37 +79,58 @@
     "development_revision": "R5_UNCHANGED",
     "terminal_state": "ACTIVE",
     "queue_state": "QUEUED",
-    "preformal_eligible": true,
     "preformal_readiness": "READY",
     "exact_science": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "last_analyst_generation": "EVA-20260924T101155+0900-R111-H7-DISPATCH-BOUND-GO-ONCE",
-    "last_analyst_bound_controller": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
-    "current_repaired_controller": "af3aa97574c365e3e918c3d4d012faa4886760d0",
-    "current_analyst_binding_valid_for_current_controller": false,
+    "exact_controller": "af3aa97574c365e3e918c3d4d012faa4886760d0",
+    "exact_bridge": "aa3fb32466802baa20e95376adb9f25f88511129",
+    "bridge_bound_controller": "af3aa97574c365e3e918c3d4d012faa4886760d0",
+    "bridge_request_armed": false,
+    "bridge_validation": "SUCCESS_NON_RESULT_DORMANT_PATH",
     "identity_status": "NOT_CREATED_NOT_CONSUMED",
     "formal_start_allowed_now": false,
-    "formal_authority_state": "WAITING_FRESH_ANALYST_EXACT_REBIND_AFTER_SCIENCE_INVARIANT_CONTROLLER_REPAIR",
-    "operational_blocker": "R111_EXACT_BOUND_PRE_REPAIR_CONTROLLER_NOT_CURRENT_REPAIRED_CONTROLLER",
+    "formal_authority_state": "STOP_PENDING_FRESH_ANALYST_POST_BRIDGE_REPAIR_REVALIDATION",
+    "operational_blocker": "R113_PREDATES_POST_REPAIR_BRIDGE_STATE_AND_CANNOT_AUTHORIZE_GO_ONCE_ACROSS_CHANGE",
     "manual_user_tag_push_required": false,
     "manual_user_workflow_dispatch_required": false,
     "next_gate": [
-      "Fresh Evidence Analyst independently verifies repaired controller af3aa97574c365e3e918c3d4d012faa4886760d0, unchanged frozen H7 science, launch contract, bridge, CI and empty one-way namespaces.",
-      "Only if exact binding is valid may a new Analyst generation restore conditional GO_ONCE.",
-      "MAIN or Relay must not arm under R111; after fresh exact binding it may arm the existing bridge exactly once with exact Analyst generation/commit and a fresh nonce."
+      "Fresh Evidence Analyst independently re-fetches repaired bridge, controller, unchanged H7 science, request/workflow/contract blobs, CI and empty one-way namespaces.",
+      "Only a later exact-bound Analyst generation may restore conditional GO_ONCE.",
+      "MAIN/Relay may then arm the existing request exactly once with fresh Analyst generation+commit and fresh nonce."
     ]
   },
   "revisit": {
     "bootstrap_complete": true,
     "classified": 34,
+    "terminal_candidates": 34,
     "CLOSED_STRONG": 1,
     "DORMANT_REVISITABLE": 19,
-    "DEFERRED_INDEPENDENT_REIDENTIFICATION": 14,
-    "REVISIT_TRIGGERED": 0,
+    "DEFERRED_INDEPENDENT_REIDENTIFICATION": 13,
+    "REVISIT_TRIGGERED": 1,
+    "triggered_candidates": ["CAND35"],
     "revisit_proposals": 0,
-    "forge_test_referrals": 0,
+    "revisit_forge_tests": 0,
+    "revisit_forge_kills": 0,
+    "revisit_forge_survivors": 0,
+    "canonicalized_fresh_successors": 0,
     "fresh_successors": 0,
     "old_ids_reopened": 0,
-    "current_scan": "NO_NEW_INDEPENDENT_TRIGGER_IN_LATEST_AUTHORITATIVE_ANALYST_STATE"
+    "historical_outcomes_rewritten": false,
+    "rescue_laundering_rejects_separately_enumerated": null,
+    "current_trigger_basis": "INDEPENDENT_AUDIT_R10_CANDIDATE_SPECIFIC_TREATMENT_READOUT_CAUSAL_OPPORTUNITY_MISMATCH",
+    "current_trigger_disposition": "TRIGGER_RECORDED_NO_PROPOSAL_NO_FORGE_REFERRAL_NO_SUCCESSOR",
+    "stale_trigger_watch": "CAND35_NOW_EVALUATED_BY_R112_R113; NO_KNOWN_UNEVALUATED_MATERIAL_TRIGGER_IN_CURRENT_ANALYST_SNAPSHOT"
+  },
+  "cand35": {
+    "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "claim_ceiling": "SYSTEM",
+    "confirmatory_credit": 0,
+    "revisit_status": "REVISIT_TRIGGERED",
+    "old_result_reopened": false,
+    "historical_result_rewritten": false,
+    "narrow_historical_statement": "FROZEN_R100_ARMS_SHARED_THE_SAME_DECLARED_SPIKE_CASCADE_IGNITION_RESPONSE_SIGNATURE",
+    "not_established": "GENERAL_NON_RECEPTOR_SUBTHRESHOLD_CAUSAL_IRRELEVANCE",
+    "fresh_successor_required_for_any_future_canonicalization": true,
+    "successor_candidates": []
   },
   "theory": {
     "latest_generation": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
@@ -105,69 +138,105 @@
     "prior_theory": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
     "prior_theory_disposition": "THEORY_REJECTED_CURRENT_PROPOSAL",
     "scientific_credit": 0,
-    "revisit_trigger_created": false
+    "forge_referral": false,
+    "revisit_proposal": false
   },
   "fast_forge": {
-    "status": "NON_EVIDENTIARY_NONCANONICAL",
-    "latest_authoritative_analyst_snapshot": "FORGE-20260924T093550+0900-NOOP-R110-R101-CONVERGED",
+    "latest_generation": "FORGE-20260924T113600+0900-NOOP-R113-FRESH-REVISIT-METADATA-GATED",
+    "status": "NO_OP_NON_EVIDENTIARY_NONCANONICAL",
+    "candidate_ids_created": 0,
     "canonical_admissions": 0,
-    "control_granted_confirmatory_credit": false
+    "current_revisit_probe_authorized": false,
+    "current_theory_probe_authorized": false,
+    "cumulative": {
+      "runs": 23,
+      "prototypes_attempted": 19,
+      "dead_ends": 15,
+      "interesting_retained": 1,
+      "promotion_proposals": 1,
+      "later_admissions": 0,
+      "duplicate_or_rescue_rejects": 10,
+      "ordinary_reduction_rejects": 15,
+      "theory_probes": 2,
+      "theory_kills": 2,
+      "theory_survivors": 0,
+      "revisit_probes": 0
+    }
   },
   "methodology": {
-    "generation_id": "METHCAL-20260924T091717+0900-R102-8D31C7A4",
-    "overall_classification": "WELL_CALIBRATED",
-    "prospective_generation_commit_pair_rule": "ACTIVE_FAIL_CLOSED_BEFORE_IDENTITY_START",
-    "mechanism_supply": "FRAGILE_ONE_SCIENTIFICALLY_QUEUED"
+    "generation_id": "METHCAL-20260924T111949+0900-R104-6B8E2D41",
+    "overall_classification": "MIXED_CALIBRATION",
+    "end_to_end_binding_order": "BRIDGE_REQUEST_REPAIR_AND_NONRESULT_VALIDATE_THEN_FRESH_ANALYST_THEN_GO_ONCE",
+    "bridge_repair_step_now_completed": true,
+    "cand35_trigger_requires_no_same_object_rescue": true,
+    "mechanism_supply": "FRAGILE_ONE_SCIENTIFICALLY_READY_BUT_ZERO_CURRENTLY_EXECUTABLE"
   },
   "utility": {
-    "status": "IDLE_OR_NONAUTHORIZING_AT_LAST_CONFIRMED_CONTROL_SNAPSHOT",
-    "scientific_authority": "NONE"
+    "latest_durable_generation": "UTILITY-20260924T102800+0900-R111-H7-DISPATCH-BOUND-RECONCILE-91C4E6B2",
+    "latest_durable_status": "IDLE",
+    "scientific_authority": "NONE",
+    "h7_authority": "NONE",
+    "note": "No Utility-owned H7 arm/dispatch or canonical action is authorized."
   },
   "scheduler_health": {
-    "fleet_status": "YELLOW_RECURRING_MAIN_ENABLED_DRIFT_AND_BROAD_LAG",
+    "fleet_status": "YELLOW_BROAD_PERSISTENT_QUEUE_LAG_NO_ENABLED_DRIFT_THIS_RUN",
     "primary_main_enabled": true,
-    "primary_main_enabled_repaired_this_run": true,
-    "primary_main_enabled_drift_consecutive_control_reconciliations": 2,
     "relay_enabled": true,
     "fast_forge_enabled": true,
     "evidence_analyst_enabled": true,
     "methodology_enabled": true,
     "utility_enabled": true,
     "external_research_audit_enabled": true,
+    "primary_main_enabled_repaired_this_run": false,
+    "previous_main_enabled_regressions_under_watch": 2,
     "theory_calibration_policy": "TEMPORARY_4_SLOT_UNTIL_2026-09-26T01:30+09:00_THEN_ALREADY_APPROVED_2_SLOT",
-    "observed_recent_run_lag_minutes_range": "approximately_7_to_28",
+    "observed_latest_run_lag_minutes": {
+      "PRIMARY_MAIN": 8,
+      "Relay": 7,
+      "Fast_Forge": 11,
+      "Evidence_Analyst": 39,
+      "Methodology": 13,
+      "Utility": 12,
+      "External_Research_Audit": 13
+    },
     "lag_scope": "MULTIPLE_LANES_NOT_SINGLE_LANE",
     "lag_cause_established": false,
     "cadence_or_role_structural_change_this_run": false,
-    "note": "PRIMARY MAIN was again found disabled and restored by changing enabled state only. Persistent drift or queue pressure requires a concrete proposal to the user before structural mutation."
+    "collision_evidence_established": false,
+    "direction": "KEEP_APPROVED_LANES_ENABLED; DO_NOT_SILENTLY_RESTRUCTURE; CONTINUE_MEASUREMENT_AND_PROPOSE_ONLY_IF_A_CAUSAL_REMEDIATION_IS_IDENTIFIED"
   },
   "direction": {
     "evidence_analyst": [
-      "Re-fetch repaired H7 controller af3aa97574c365e3e918c3d4d012faa4886760d0 independently; do not inherit R111 execution authority across the controller change.",
-      "Verify unchanged frozen science, launch contract exact blobs, bridge, CI and empty one-way namespaces.",
-      "If and only if exact bindings are valid, issue a fresh generation exact-binding the repaired controller and restore conditional GO_ONCE."
+      "Observe the post-repair bridge state independently and exact-bind the full end-to-end H7 bundle only if unchanged and safe.",
+      "Do not inherit R113 execution authority across the bridge change.",
+      "Retain Candidate #35 as terminal while keeping REVISIT_TRIGGERED metadata orthogonal; no successor without a dedicated fresh proposal."
     ],
     "main_relay": [
-      "Do not arm or dispatch under R111.",
-      "After a fresh Analyst exact binding of the repaired controller, re-fetch the exact Analyst generation+commit, controller/science and namespaces and arm at most once with a fresh nonce.",
-      "Preserve the R102 exact generation/commit provenance check before identity start."
+      "Wait for a later fresh Analyst generation after the bridge repair.",
+      "Do not arm under R113.",
+      "If fresh GO_ONCE is issued, re-fetch exact generation+commit/controller/science/bridge/request/namespaces and arm at most once."
+    ],
+    "forge": [
+      "Do not act on Candidate #35 trigger without explicit REVISIT_FORGE_TEST.",
+      "Do not act on Theory without explicit THEORY_FORGE_TEST."
     ],
     "scheduler": [
       "Keep PRIMARY MAIN and Relay enabled at approved cadences/roles.",
-      "Monitor recurring MAIN enabled-state drift and fleet-wide lag without silent structural changes.",
-      "If persistent, prepare a concrete remediation proposal for user approval."
+      "Monitor broad queue delay and prior MAIN enabled-state drift.",
+      "Make no structural cadence or role change without user approval."
     ]
   },
   "hard_floor": {
     "experiment_executed": false,
     "result_bearing_workflow_dispatched": false,
-    "identity_consumed": false,
+    "identity_created_or_consumed": false,
     "started_created": false,
     "protected_evaluation_accessed": false,
     "official_scoring_performed": false,
     "immutable_evidence_mutated": false,
     "terminal_reopened": false,
-    "historical_pass_fail_rewritten": false
+    "historical_pass_fail_rewritten": false,
+    "research_pr_merged": false
   },
   "user_decision": {
     "needed": false,
