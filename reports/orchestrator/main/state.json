@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260925T001253+0900-PRIMARY-R133-R129-METH117-NO-CANONICAL-ACTION",
-  "producer_run_id": "sparkbrain-main-primary-20260925T001253JST-r133-r129-meth117-no-canonical-action",
-  "generated_at": "2026-09-25T00:12:53+09:00",
+  "generation_id": "MAIN-20260925T011502+0900-PRIMARY-R134-R130-LIT44-NO-CANONICAL-ACTION",
+  "producer_run_id": "sparkbrain-main-primary-20260925T011502JST-r134-r130-lit44-no-canonical-action",
+  "generated_at": "2026-09-25T01:15:02+09:00",
   "status": "STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
   "execution_mode": "PRIMARY",
   "candidate_id": null,
@@ -17,22 +17,22 @@
   "system_priority_exception": null,
   "development_phase": null,
   "development_revision": null,
-  "cycle_count": 29,
+  "cycle_count": 30,
   "cycle_reassessment_context": "CONTROL_RECONCILIATION_ONLY_NO_SCIENTIFIC_CYCLE_EXTENSION_OR_REASSESSMENT_EXECUTION",
-  "information_gain": "METHODOLOGY_CONTROL_ONLY: ANALYST_R129_ADOPTS_R117_PROSPECTIVE_RESULT_EXPOSED_REVISION_GUARD; NO_CANONICAL_OR_SCIENTIFIC_STATE_CHANGE; EXTERNAL_AUDIT_DURABILITY_GAP_REMAINS_CONTROL_PLANE_ONLY",
+  "information_gain": "LITERATURE_REDUCTION_BOUNDARY_ONLY: ANALYST_R130_TIGHTENS_PROSPECTIVE_SELECTIVE_REVISION_REDUCTION_LADDER; NO_CANONICAL_ADMISSION_REVISIT_TRIGGER_OR_SCIENTIFIC_STATE_CHANGE",
   "analyst_authority": {
-    "generation_id": "EVA-20260925T000135+0900-R129-METH117-CONTROL64-SCHEDULER-DURABILITY-NO-SCIENCE",
+    "generation_id": "EVA-20260925T005800+0900-R130-LIT44-REDUCTION-LADDER-NO-SCIENCE",
     "branch": "ops/evidence-analyst-handoff",
-    "branch_tip": "dd0a26b51f77ceafd333bab8a03c21100571c078",
+    "branch_tip": "6a8eb246233bc04d5f3ca47aaffba99970acf20b",
     "scientific_execution_mode": "READ_ONLY_FOR_MAIN",
     "new_scientific_result": false,
     "canonical_science": "STOP_NO_EXECUTABLE_CANONICAL_ACTION",
     "gate_change": false,
-    "methodology_change": true,
-    "methodology_change_detail": "R117_RESULT_EXPOSED_SCIENCE_AFFECTING_CHANGE_REQUIRES_EXPLICIT_VERSIONED_REVISION_OR_FRESH_SUCCESSOR",
+    "literature_change": true,
+    "literature_decision": "PROSPECTIVE_REDUCTION_LADDER_TIGHTENED_NO_CANONICALIZATION_NO_REVISIT_TRIGGER",
     "top3": []
   },
-  "prior_main_generation": "MAIN-20260924T231602+0900-PRIMARY-R132-R128-TH002-FORGE-KILL-NO-CANONICAL-ACTION",
+  "prior_main_generation": "MAIN-20260925T001253+0900-PRIMARY-R133-R129-METH117-NO-CANONICAL-ACTION",
   "persistence": {
     "history_path": "reports/orchestrator/main/history/2026-09-25/0013-r133-primary-r129-method117-no-canonical-action.md",
     "history_create_commit": "5bb845d1d7bf9dce1a5f9cce51e80838491b589a",
@@ -108,9 +108,16 @@
   "result": {
     "decision": "INCONCLUSIVE",
     "native_delta_accuracy": 0.008626302083333332,
-    "native_delta_accuracy_interval": [0.002115885416666668, 0.01529947916666667],
+    "native_delta_accuracy_interval": [
+      0.002115885416666668,
+      0.01529947916666667
+    ],
     "native_mean_total_variation": 0.06728831508098665,
-    "capacity_adequate": {"dense": false, "eligibility": false, "fsa": false},
+    "capacity_adequate": {
+      "dense": false,
+      "eligibility": false,
+      "fsa": false
+    },
     "rescore_or_reinterpret": "PROHIBITED",
     "changed_this_generation": false
   },
@@ -119,14 +126,14 @@
     "main_report_branch": "ops/orchestrator-run-report",
     "main_report_head_before_persistence": "19fbbf59e30eb90e502ccfe723d1adf2ff7532e6",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "dd0a26b51f77ceafd333bab8a03c21100571c078",
-    "fast_forge_state_head": "19fbbf59e30eb90e502ccfe723d1adf2ff7532e6",
+    "analyst_head": "6a8eb246233bc04d5f3ca47aaffba99970acf20b",
+    "fast_forge_state_head": "56dce32c9ef1b161ce838b6466788e1c5281d243",
     "fast_forge_last_probe_branch": "forge/th002-static-addressability-kill-20260924",
     "fast_forge_last_probe_head": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
     "utility_branch": "ops/utility-orchestrator-requests",
-    "utility_head": "75ff9e5516348437b862565573d16803acaf6d58",
+    "utility_head": "4fa2dafb418814f277ed19919956cec7e61b381d",
     "control_branch": "ops/control-brain-handoff",
-    "control_head": "a92e0eaae0260152e311c1c5a4ca0294daf571a5",
+    "control_head": "857998b44ca7954d3875d3957c447ce3414a7d89",
     "h7_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
     "h7_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
     "h7_controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
@@ -155,20 +162,38 @@
     "h7_rerun_allowed": false
   },
   "prs": {
-    "open": [148, 149],
+    "open": [
+      148,
+      149
+    ],
     "classification": "GOVERNANCE_TOOLING_ONLY_NO_SCIENTIFIC_AUTHORITY"
   },
   "work_performed": [
-    {"classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION", "change": "Re-fetched Analyst R129, prior MAIN R132/Relay resolution, stable main, research/Forge inventories, Fast Forge R33, Utility R128, Control R64, PRs and workflows."},
-    {"classification": "METHODOLOGY_POLICY_SYNC", "change": "Adopted Analyst R129 prospective R117 result-exposed revision guard without retroactive TH-002 repair or scientific reinterpretation."},
-    {"classification": "CANONICAL_AUTHORITY_CHECK", "change": "Confirmed no admitted or allocated canonical object, no candidate #36, no PRE_FORMAL object and no live Revisit trigger."},
-    {"classification": "HARD_FLOOR_CHECK", "change": "Re-verified H7 START/preserve/freeze/formal/sealed/evidence targets and immutable namespace; preserved consumed identities/results unchanged."},
-    {"classification": "PERSISTENCE_ONLY", "change": "Updated only MAIN-owned history/state/latest/lease; no scientific code, scorer, harness, workflow or evidence ref changed."}
+    {
+      "classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION",
+      "change": "Re-fetched Analyst R129, prior MAIN R132/Relay resolution, stable main, research/Forge inventories, Fast Forge R33, Utility R128, Control R64, PRs and workflows."
+    },
+    {
+      "classification": "METHODOLOGY_POLICY_SYNC",
+      "change": "Adopted Analyst R129 prospective R117 result-exposed revision guard without retroactive TH-002 repair or scientific reinterpretation."
+    },
+    {
+      "classification": "CANONICAL_AUTHORITY_CHECK",
+      "change": "Confirmed no admitted or allocated canonical object, no candidate #36, no PRE_FORMAL object and no live Revisit trigger."
+    },
+    {
+      "classification": "HARD_FLOOR_CHECK",
+      "change": "Re-verified H7 START/preserve/freeze/formal/sealed/evidence targets and immutable namespace; preserved consumed identities/results unchanged."
+    },
+    {
+      "classification": "PERSISTENCE_ONLY",
+      "change": "Updated only MAIN-owned history/state/latest/lease; no scientific code, scorer, harness, workflow or evidence ref changed."
+    }
   ],
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NOT_EVIDENCE; METHODOLOGY_R117_PROSPECTIVE_REVISION_GUARD_ONLY; TH002_FORGE_DEAD_END_ZERO_CREDIT_NO_CANONICALIZATION; H7_UNCHANGED_CONSUMED; CAND35_TERMINAL; NO_EXECUTABLE_CANONICAL_OBJECT",
-    "result_classification": "CONTROL_PLANE_RECONCILIATION_ONLY_NO_NEW_SCIENCE",
+    "evidentiary_status": "NOT_EVIDENCE; LIT44_PROSPECTIVE_REDUCTION_LADDER_ONLY; NO_CANONICALIZATION; NO_REVISIT_TRIGGER; TH002_FORGE_DEAD_END_ZERO_CREDIT; H7_UNCHANGED_CONSUMED; CAND35_TERMINAL; NO_EXECUTABLE_CANONICAL_OBJECT",
+    "result_classification": "CONTROL_PLANE_RECONCILIATION_ONLY_LIT44_PROSPECTIVE_REDUCTION_BOUNDARY_NO_NEW_SCIENCE",
     "repair_change_classification": "CONTROL_PLANE_FRESHNESS_AND_METHODOLOGY_POLICY_SYNC_ONLY",
     "science_invariant_repair_performed": false,
     "science_affecting_change_performed": false,
@@ -218,7 +243,7 @@
     "prior_result_preserved_unchanged": true,
     "formal_floor_respected": true
   },
-  "stop_reason": "ANALYST_R129_NO_CANONICAL_CHANGE_NO_ALLOCATED_CANONICAL_OBJECT",
-  "next_action": "No MAIN scientific action is authorized. Re-read a future Evidence Analyst generation and resume only if it prospectively admits and explicitly allocates a fresh canonical candidate/object with its own contract and development fields. Any Forge-derived successor starts with zero inherited confirmatory credit. Do not mutate scheduler definitions from MAIN merely to compensate for the external-Audit durability gap.",
+  "stop_reason": "ANALYST_R130_LIT44_NO_CANONICALIZATION_NO_REVISIT_TRIGGER_NO_ALLOCATED_CANONICAL_OBJECT",
+  "next_action": "No MAIN scientific action is authorized. Re-read a future Evidence Analyst generation and resume only on explicit fresh canonical admission and allocation. Apply the R44 prospective reduction ladder to relevant fresh selective-revision claims; do not retrofit old objects.",
   "owner": "main"
 }
