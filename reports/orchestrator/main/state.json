@@ -14,7 +14,8 @@
   "information_gain": "CONTROL_PLANE_ONLY_EVIDENCE_ANALYST_R121_ACCEPTED_RVT35_FORGE_001_AS_ZERO_CREDIT_FORGE_DEAD_END_AND_RETURNED_CAND35_TO_DEFERRED_INDEPENDENT_REIDENTIFICATION; NO_FRESH_SUCCESSOR; NO_NEW_CANONICAL_SCIENCE",
   "analyst_authority": {
     "generation_id": "EVA-20260924T180900+0900-R121-RVT35-FORGE-KILL-ADJUDICATED",
-    "branch_head": "3cb8761a71f99e81e562997ff883ae29dcb995de",
+    "decision_commit": "3cb8761a71f99e81e562997ff883ae29dcb995de",
+    "branch_head": "9364738b303d42fc51be9aeb977737f5e42bdc37",
     "decision": "ACCEPT_RVT35_FORGE_001_AS_NON_EVIDENTIARY_ZERO_CREDIT_DEAD_END; CAND35_REVISIT_STATUS_DEFERRED_INDEPENDENT_REIDENTIFICATION; NO_FRESH_SUCCESSOR; MAIN_STOP_NO_EXECUTABLE_CANONICAL_ACTION",
     "freshness_rechecked_this_run": true,
     "scientific_execution_mode": "READ_ONLY",
@@ -94,7 +95,8 @@
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "main_report_branch": "ops/orchestrator-run-report",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "3cb8761a71f99e81e562997ff883ae29dcb995de",
+    "analyst_decision_commit": "3cb8761a71f99e81e562997ff883ae29dcb995de",
+    "analyst_head": "9364738b303d42fc51be9aeb977737f5e42bdc37",
     "control_branch": "ops/control-brain-handoff",
     "control_head": "24f8492e29c22bb202a47ed496b3098a6355ba96",
     "utility_branch": "ops/utility-orchestrator-requests",
@@ -169,6 +171,7 @@
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
     "fresh_post_probe_analyst_adjudication_present": true,
+    "analyst_branch_head_rechecked_after_state_persistence": true,
     "main_and_exact_research_refs_rechecked": true,
     "relay_rechecked": true,
     "forge_refs_rechecked_for_collision": true,
