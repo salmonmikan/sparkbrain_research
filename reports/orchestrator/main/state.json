@@ -1,75 +1,85 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260925T021305+0900-PRIMARY-R135-NO-ALLOCATED-SCIENCE-OR-BUILD",
-  "producer_run_id": "sparkbrain-main-primary-20260925T021305JST-r135-no-allocated-science-or-build",
-  "generated_at": "2026-09-25T02:13:05+09:00",
-  "status": "STOPPED_NO_ALLOCATED_SCIENCE_OR_SYSTEM_BUILD",
+  "generation_id": "MAIN-20260925T033600+0900-PRIMARY-R136-SYSTEM-BUILD-SB001",
+  "producer_run_id": "sparkbrain-main-primary-20260925T033600JST-r136-system-build-sb001",
+  "generated_at": "2026-09-25T03:36:00+09:00",
+  "status": "READY_FOR_RELAY",
   "execution_mode": "PRIMARY",
-  "authority_mode": "SCIENCE",
+  "authority_mode": "SYSTEM_BUILD",
   "candidate_id": null,
-  "build_id": null,
+  "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
   "research_layer": null,
-  "development_phase": null,
-  "development_revision": null,
-  "target_capability": null,
+  "development_phase": "OPEN_DEVELOPMENT",
+  "development_revision": "build-r1",
+  "target_capability": "observation -> persistent competing predictive hypotheses -> abstain/action -> feedback -> update/split/reuse -> selective revision -> next action/prediction",
   "analyst_authority": {
-    "newest_observed_record": "R131",
-    "newest_record_kind": "CONTROL_PLANE_STUB_NO_EXPLICIT_ALLOCATION",
-    "current_full_generation": "EVA-20260925T005800+0900-R130-LIT44-REDUCTION-LADDER-NO-SCIENCE",
+    "generation": "EVA-R132",
+    "ref": "ops/evidence-analyst-handoff",
+    "head": "97e8ffe2f728cac7bf82f333439d3c83dc055bcc",
     "science_action_authorized": false,
-    "system_build_authorized": false
+    "system_build_authorized": true
   },
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "build_branch": "system-build/sb001-predictive-state-revision-pilot-20260925",
+    "build_head": "e6a59b2601a9a68b46dbb45b02b39e16e3fe95ef",
+    "exact_head_ci_run": 36042005169,
     "main_report_branch": "ops/orchestrator-run-report",
-    "history_commit": "bd45f953d3bb07021a4e09712351f2eae79e41a1",
     "h7_identity": "h7-r5-285a3a206b34c5982b9d4045"
-  },
-  "inventory": {
-    "research_branches": 189,
-    "forge_branches": 7,
-    "open_prs": [
-      148,
-      149
-    ]
-  },
-  "external_state": {
-    "human_directive": "HUMAN-20260925-001",
-    "human_directive_status": "OPEN_ZERO_CREDIT_EXECUTION_AUTHORITY_NONE",
-    "theory": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
-    "utility": "IDLE_SCIENTIFIC_AUTHORITY_NONE",
-    "control": "CTRL-20260924T235000+0900-R64-TH002-KILL-METH117-SCHEDULER-DEGRADATION",
-    "fast_forge_live_probe": false,
-    "relay_wait_resolved": true
   },
   "science": {
     "allocated": false,
     "canonical_total": 35,
-    "mechanism": 14,
-    "system": 21,
     "terminal": 35,
     "active": 0,
     "queued": 0,
-    "h7_status": "CONSUMED_ONE_WAY_INCONCLUSIVE",
-    "candidate35_status": "TERMINAL_SYSTEM_TRIGGER_EXHAUSTED"
+    "h7_status": "CONSUMED_ONE_WAY_INCONCLUSIVE"
   },
   "system_build": {
-    "entered": false,
-    "allocated": false,
-    "build_id": null,
-    "target_capability": null,
-    "components": [],
-    "acceptance_tests": [],
-    "integration_status": "NOT_STARTED_NO_AUTHORITY",
-    "claim_boundary": "NO_BUILD_CLAIM",
-    "observations": []
+    "entered": true,
+    "allocated": true,
+    "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
+    "components": [
+      "IntegratedV03Brain engineering reference",
+      "IntegratedV032Brain",
+      "DirectCheckpointManager",
+      "explicit/reference predictive-state bank"
+    ],
+    "forge_design_input": "forge/20260925-predictive-state-revision-loop-a@02fd9d24337432ac7121599f3361392d87e2fc5e",
+    "forge_code_reused": false,
+    "acceptance_tests": {
+      "plural_hypotheses": "PASS",
+      "ambiguity_abstention": "PASS",
+      "selective_revision_and_prior_reuse": "PASS",
+      "checkpoint_restore_next_step_equality": "PASS",
+      "v03_v032_regression_isolation": "PASS",
+      "inspectability_claim_boundary": "IMPLEMENTED_SMOKE_VERIFIED",
+      "privileged_input_negative_coverage": "IMPLEMENTED_COVERAGE_DEBT",
+      "resource_bound_negative_coverage": "IMPLEMENTED_COVERAGE_DEBT"
+    },
+    "resource_budget": {
+      "runtime": "local single CPU",
+      "network": false,
+      "gpu_required": false,
+      "max_hypotheses": 16,
+      "max_context_scalars": 64
+    },
+    "integration_status": "BUILT_CI_GREEN_READY_FOR_PROTECTED_INTEGRATION",
+    "claim_boundary": "NON_EVIDENTIARY_BUILD",
+    "observations": [
+      {
+        "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+        "observation": "bounded core integration loop passed exact-head CI and build tests"
+      }
+    ]
   },
   "observations": {
-    "evidentiary_status": "NOT_EVIDENCE",
+    "evidentiary_status": "NON_EVIDENTIARY_BUILD",
     "new_scientific_result": false,
-    "new_build_result": false,
-    "built": false,
-    "functionally_verified": false,
+    "new_build_result": true,
+    "built": true,
+    "functionally_verified": true,
+    "full_acceptance_coverage": false,
     "comparatively_supported": false,
     "scientifically_novel": false,
     "forge_derived_code_reused": false,
@@ -83,7 +93,7 @@
     "terminal_object_reopened": false,
     "scheduler_changed": false
   },
-  "stop_reason": "NO_EXPLICIT_ANALYST_ALLOCATED_SCIENCE_OR_SYSTEM_BUILD",
-  "next_action": "READ_NEXT_ANALYST_GENERATION_AND_EXECUTE_ONLY_EXPLICIT_ALLOCATION",
+  "stop_reason": "READY_FOR_RELAY_PROTECTED_INTEGRATION_PENDING",
+  "next_action": "OPEN_PROTECTED_INTEGRATION_PR_FROM_EXACT_BUILD_HEAD_AND_RUN_PR_CHECKS",
   "owner": "main"
 }
