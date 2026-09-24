@@ -10,3 +10,4 @@ work: refreshed main, 189 research branches, 7 forge branches, H7 protected refs
 R44: prospective reductions DELTA_FAST_WEIGHT, GATED_DELTA_RECURRENT, STATE_SPACE_ASSOCIATIVE, HRR_VSA, CUE_AS_KEY; no canonicalization or Revisit trigger.
 hard_floor: H7 consumed INCONCLUSIVE; START/preserve/freeze/formal/sealed/evidence unchanged; no rerun, retune, rescore, protected-target access, or scientific-ref mutation.
 classification: CONTROL_PLANE_RECONCILIATION_ONLY_LIT44_PROSPECTIVE_REDUCTION_BOUNDARY_NO_NEW_SCIENCE; evidentiary_status: NOT_EVIDENCE; Forge-derived code reused: false; prior results preserved: true.
+stop_reason: NO_ALLOCATED_CANONICAL_OBJECT; next canonical action exists only after a fresh Analyst admission and allocation.
