@@ -22,7 +22,7 @@ env:
   ANALYST_BRANCH: ops/evidence-analyst-handoff
   TARGET_WORKFLOW: h7-formal-r5-one-way-launch.yml
   TARGET_REF: research/main-h7-r5-launch-plumbing-r111-workflow-dispatch
-  CONTROLLER_SHA: bac7402fb01b69353eb926228574cc68c2c2a2d2
+  CONTROLLER_SHA: af3aa97574c365e3e918c3d4d012faa4886760d0
   SCIENCE_SHA: 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80
 
 jobs:
