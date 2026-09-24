@@ -1,46 +1,47 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260924T093550+0900-NOOP-R110-R101-CONVERGED",
-  "produced_at": "2026-09-24T09:35:50+09:00",
+  "generation_id": "FORGE-20260924T103728+0900-NOOP-R111-R103-H7-BUNDLE-BOUNDARY",
+  "produced_at": "2026-09-24T10:37:28+09:00",
   "worker_role": "FAST_FORGE",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE_EXPLORATORY_IMPLEMENTATION",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-  "supersedes_generation_id": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED",
+  "supersedes_generation_id": "FORGE-20260924T093550+0900-NOOP-R110-R101-CONVERGED",
   "input_generations": {
-    "evidence_analyst": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP@7bc866c6d4dd1d723156345d056fadb027a85c1c",
-    "main": "MAIN-20260924T091500+0900-PRIMARY-H7-R110-LAUNCH-CAPABILITY-WAITING-EXTERNAL@756939ec4154cf86c94450df5d674b7a688dee73",
-    "methodology": "METHCAL-20260924T081857+0900-R101-4C7A2D91@cbba92a23462ff20fde24db60205ebfdb2bac250",
-    "control": "CTRL-R50@c7e90f5f1edd73b13456577eff19a0f6a781cfd8",
-    "external_literature_theory_revisit": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71@1b91b18460e552df36cbdc3ef050e38ffd72342a",
+    "evidence_analyst": "EVA-20260924T101155+0900-R111-H7-DISPATCH-BOUND-GO-ONCE@2f1409da8d47525cbb1058ce9c7eebf8ef80ef2c",
+    "main": "MAIN-20260924T101500+0900-PRIMARY-H7-R110-DISPATCH-REGISTRATION-AWAITING-ANALYST@230e5348f4e3443e5c4323f149ce7889e8073112",
+    "methodology": "METHCAL-20260924T103400+0900-R103-C4F19B72@6ab4af4f6726890565e1b6945c5b66b8e922b825",
+    "control": "CTRL-R53@8d17debc16e0866b207681553d7045687fafc113",
+    "theory_revisit": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94@eaab2a8fd08921aa91782825644a5f7e28df0173",
+    "literature": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71@1b91b18460e552df36cbdc3ef050e38ffd72342a",
     "independent_audit": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8@716f8839f05610fbbfbc83d3ff6b3939dcfd6834",
-    "utility": "UTILITY@263c221b7f2243c19d002ff5cc8af2fd10acf79a",
-    "previous_forge_persisted": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED@6ecce79f76b54b61b873a6e2a385b3f84055099c"
+    "utility": "UTILITY-20260924T102800+0900-R111-H7-DISPATCH-BOUND-RECONCILE-91C4E6B2@bb953376d5e83d4650e863f0fa500cdd6df2e665",
+    "previous_forge_persisted": "FORGE-20260924T093550+0900-NOOP-R110-R101-CONVERGED@02155ffb4405ac399a62614240b59d5639a17907"
   },
   "exact_refs": {
-    "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
-    "evidence_analyst_r110_tip": "7bc866c6d4dd1d723156345d056fadb027a85c1c",
-    "main_primary_r110_tip_observed": "756939ec4154cf86c94450df5d674b7a688dee73",
+    "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "evidence_analyst_r111_tip": "2f1409da8d47525cbb1058ce9c7eebf8ef80ef2c",
+    "main_primary_tip_observed": "230e5348f4e3443e5c4323f149ce7889e8073112",
     "main_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "main_controller_head": "042d00375278d551dbf643ad866a4c883852804d",
-    "methodology_r101_tip": "cbba92a23462ff20fde24db60205ebfdb2bac250",
-    "control_r50_tip": "c7e90f5f1edd73b13456577eff19a0f6a781cfd8",
-    "external_literature_r41_tip": "1b91b18460e552df36cbdc3ef050e38ffd72342a",
-    "theory_latest_blob": "23b663e0e848e921b6d4efc3b6519f62597da50d",
-    "theory_state_blob": "71ee3d7c7338be5a5ed96e4459e1beeb32ac851b",
+    "main_controller_r111_head": "bac7402fb01b69353eb926228574cc68c2c2a2d2",
+    "h7_bridge_head": "1e12e73b8faa806ac07c88d4cb95875093439c7a",
+    "methodology_r103_tip": "6ab4af4f6726890565e1b6945c5b66b8e922b825",
+    "control_r53_tip": "8d17debc16e0866b207681553d7045687fafc113",
+    "theory_revisit_r2_tip": "eaab2a8fd08921aa91782825644a5f7e28df0173",
+    "literature_r41_tip": "1b91b18460e552df36cbdc3ef050e38ffd72342a",
     "audit_r9_content_commit": "716f8839f05610fbbfbc83d3ff6b3939dcfd6834",
-    "utility_tip_observed": "263c221b7f2243c19d002ff5cc8af2fd10acf79a",
+    "utility_r111_tip": "bb953376d5e83d4650e863f0fa500cdd6df2e665",
     "prior_theory_probe_branch": "forge/20260924-th001-q0-qi-adaptation-a",
     "prior_theory_probe_head": "e2dbe3a5a0db812f777b789a6878af8a0d3eee0f",
-    "history_path": "reports/orchestrator/sub/history/2026-09-24/0935-r110-r101-fast-forge-no-gated-probe.md",
-    "history_create_commit": "bbf4e9830333c240cc27349fcc1b0ab15590150b",
-    "latest_update_commit": "82e6a5aeeb95adad820f9e341179219290f64902"
+    "history_path": "reports/orchestrator/sub/history/2026-09-24/1037-r111-r103-fast-forge-no-gated-probe.md",
+    "history_create_commit": "91c407f32d684a0147cbefe64fb4d89ce5d76e7b",
+    "latest_update_commit": "6ff53eb4355c7a5219933890b0e6730e7ee6b83b"
   },
-  "freshness_note": "Evidence Analyst R110 is current and converges on R109 with no new science, Theory decision, Revisit trigger, Forge promotion, or canonical admission. Methodology R101 independently reports no material calibration change. MAIN R110 remains H7-only and operationally blocked before identity/START by the authorized one-shot launch-trigger capability; Forge did not touch H7 or the blocker.",
+  "freshness_note": "Evidence Analyst R111 remains latest and supplies no Theory/Revisit Forge dispatch. Methodology R103 is newer and finds an H7 controller/result-workflow/launch-contract exact-artifact mismatch; this changes operational executability only and remains MAIN-owned. No new science, canonical admission, Theory/Revisit trigger, or independent Forge target appeared.",
   "theory_revisit_gate": {
     "latest_evidence_analyst_checked_before_selection": true,
     "latest_evidence_analyst_rechecked_before_persistence": true,
     "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
-    "theory_stream_status": "THEORY_REJECTED_NO_THEORY_FORGE_TEST",
+    "theory_stream_status": "NO_THEORY_PROPOSAL_NO_THEORY_FORGE_TEST_CURRENT_PROPOSAL_REDUCED_REJECTED",
     "theory_forge_test_present": false,
     "revisit_stream_status": "LEDGER_34_OF_34_REVISIT_TRIGGERED_0_NO_FORGE_REFERRALS",
     "revisit_forge_test_present": false,
@@ -50,10 +51,11 @@
   "main_collision_check": {
     "status": "PASS_NO_COLLISION",
     "main_owner": "H7_ONLY",
-    "main_current_status": "SCIENTIFICALLY_READY_QUEUED_OPERATIONALLY_TRIGGER_BLOCKED_PRESTART",
+    "main_current_status": "SCIENTIFICALLY_READY_QUEUED_OPERATIONALLY_NOT_EFFECTIVELY_EXECUTABLE_PENDING_EXACT_BUNDLE_REPAIR_AND_FRESH_ANALYST_REVALIDATION",
     "selected_work_independent_of_unknown_main_outcome": true,
     "avoided": [
-      "H7 science/controller/component/runtime/scorer/preserver/launch/capability/identity/START/protected-evaluator/workflow/authority surfaces",
+      "H7 science/controller/component/runtime/scorer/preserver/launch/bridge/capability/identity/START/protected-evaluator/workflow/authority surfaces",
+      "H7 R103 exact-bundle repair and fresh Analyst binding, which are MAIN/control-plane work",
       "Candidate #35 same-object and rescue-adjacent off-manifold/natural-history/STP/pernicious-divergence family without independent trigger",
       "Candidate #34 same-object and temporal-route rescue family",
       "consumed/frozen/FORMAL identities and official evidence/formal/sealed/freeze/preserve refs",
@@ -66,7 +68,7 @@
     "excluded": [
       {
         "surface": "TH-001 follow-up",
-        "reason": "Evidence Analyst R110 retains current theory rejection; no new bounded THEORY_FORGE_TEST"
+        "reason": "Evidence Analyst R111 supplies no bounded THEORY_FORGE_TEST; Theory R2 has NO_THEORY_PROPOSAL and current TH-001 proposal remains ordinarily reduced/rejected"
       },
       {
         "surface": "Revisit-derived probe",
@@ -74,15 +76,15 @@
       },
       {
         "surface": "Candidate #34 temporal-route descendants",
-        "reason": "CLOSED_STRONG; no independent closure-invalidating trigger"
+        "reason": "CLOSED_STRONG; Independent Audit R9 retains ordinary local-edge reduction and no independent closure-invalidating trigger exists"
       },
       {
         "surface": "Candidate #35 descendants",
-        "reason": "DEFERRED_INDEPENDENT_REIDENTIFICATION; no new independent natural-state/counterfactual/instrumentation trigger"
+        "reason": "DEFERRED_INDEPENDENT_REIDENTIFICATION; Literature R41 sharpens prospective guardrails but supplies no candidate-specific independent trigger"
       },
       {
-        "surface": "H7 responsibility/launch/capability/runtime",
-        "reason": "Sole active MAIN-owned canonical object and operational blocker; explicit Forge exclusion"
+        "surface": "H7 exact-bundle mismatch",
+        "reason": "MAIN-owned controller/workflow/provenance issue found by Methodology R103; ordinary API/config/artifact-binding explanation and explicit Forge exclusion"
       }
     ]
   },
@@ -90,7 +92,7 @@
   "forge_objects": [],
   "ordinary_reduction_assessment": {
     "new_phenomenon_observed": false,
-    "assessment": "No new Forge observation exists to reduce. TH-001 remains reduced by ordinary adaptation plus fixed-edge transmission; Candidate #34 by local edge physics; Candidate #35 has no independent trigger."
+    "assessment": "No new Forge scientific observation exists to reduce. The only fresh material item is H7's operational exact-bundle mismatch, adequately explained as an API/config/provenance/artifact-binding inconsistency and excluded under MAIN ownership. TH-001 remains reduced by ordinary adaptation plus fixed-edge transmission; Candidate #34 by local edge physics; Candidate #35 has no independent trigger."
   },
   "promotion_proposal": null,
   "utility_request": null,
@@ -103,6 +105,7 @@
     "evidence_formal_sealed_freeze_preserve_ref_mutated": false,
     "consumed_or_immutable_evidence_mutated": false,
     "result_bearing_canonical_workflow_dispatched": false,
+    "h7_bridge_armed": false,
     "scientific_research_branch_mutated": false,
     "forge_branch_created_or_modified_this_run": false,
     "forge_branch_merged_to_main_or_research": false,
@@ -111,7 +114,7 @@
   },
   "metrics": {
     "scope": "FROM_FAST_FORGE_PROMOTION_GATE_ACTIVATION",
-    "runs": 21,
+    "runs": 22,
     "prototypes_attempted": 19,
     "theory_probes": 2,
     "theory_kills": 2,
@@ -129,5 +132,5 @@
     "analyst_promotion_deferrals": 1,
     "idea_to_observation_latency": "NO_OP"
   },
-  "recommendation": "NO_GATED_THEORY_OR_REVISIT_PROBE_AND_NO_FRESH_INDEPENDENT_TARGET; REMAIN_NO_OP; DO_NOT_TOUCH_MAIN_H7_OR_TERMINAL_CAND34_CAND35; WAIT_FOR_FRESH_ANALYST_GATING_OR_GENUINELY_INDEPENDENT_CAPABILITY"
+  "recommendation": "NO_GATED_THEORY_OR_REVISIT_PROBE_AND_NO_FRESH_INDEPENDENT_TARGET; REMAIN_NO_OP; DO_NOT_TOUCH_MAIN_H7_OR_R103_EXACT_BUNDLE_REPAIR_OR_TERMINAL_CAND34_CAND35; WAIT_FOR_FRESH_ANALYST_GATING_OR_GENUINELY_INDEPENDENT_CAPABILITY"
 }
