@@ -4,4 +4,5 @@
 - purpose: verify GitHub Contents API write path only
 - scientific mutation: none
 - scheduler mutation: none
-- phase: create
+- phase: create+update
+- result: create_file and update_file both succeeded
