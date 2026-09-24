@@ -1,0 +1,78 @@
+{
+  "bootstrap": {
+    "confidence": 0.99375,
+    "method": "paired_stratified_cluster_bootstrap_percentile",
+    "percentile_interpolation": "linear_type7",
+    "resamples": 50000,
+    "rng": "python_random_mt19937",
+    "seed": 8885678
+  },
+  "capacity_adequate": {
+    "dense": false,
+    "eligibility": false,
+    "fsa": false
+  },
+  "contract_id": "H7-FORMAL-R1-DYNAMIC-TOP1-CONFIRMATORY-CONTRACT-DESIGN-V1",
+  "decision": "INCONCLUSIVE",
+  "effect_conclusively_smaller": {
+    "dense": false,
+    "eligibility": false,
+    "fsa": false
+  },
+  "effect_reproduced": {
+    "dense": false,
+    "eligibility": false,
+    "fsa": false
+  },
+  "evaluator_id": "H7-FORMAL-R1-EVALUATOR-SPEC-V1",
+  "point_estimates": {
+    "dense_baseline_accuracy_minus_native_baseline_accuracy": -0.0011393229166667407,
+    "dense_delta_accuracy_minus_native_delta_accuracy": -0.008138020833333334,
+    "eligibility_baseline_accuracy_minus_native_baseline_accuracy": -0.1767578125000001,
+    "eligibility_delta_accuracy_minus_native_delta_accuracy": -0.0234375,
+    "fsa_baseline_accuracy_minus_native_baseline_accuracy": -0.3432617187500001,
+    "fsa_delta_accuracy_minus_native_delta_accuracy": 0.08089192708333334,
+    "native_baseline_accuracy_minus_one_third": 0.4850260416666668,
+    "native_delta_accuracy": 0.008626302083333332,
+    "native_mean_total_variation": 0.06728831508098665
+  },
+  "schema_version": 2,
+  "simultaneous_intervals": {
+    "dense_baseline_accuracy_minus_native_baseline_accuracy": [
+      -0.01741536458333337,
+      0.014648437499999778
+    ],
+    "dense_delta_accuracy_minus_native_delta_accuracy": [
+      -0.015462239583333332,
+      -0.0011393229166666672
+    ],
+    "eligibility_baseline_accuracy_minus_native_baseline_accuracy": [
+      -0.20589192708333348,
+      -0.1474609374999998
+    ],
+    "eligibility_delta_accuracy_minus_native_delta_accuracy": [
+      -0.03662109375000001,
+      -0.010416666666666664
+    ],
+    "fsa_baseline_accuracy_minus_native_baseline_accuracy": [
+      -0.3806966145833335,
+      -0.30680338541666685
+    ],
+    "fsa_delta_accuracy_minus_native_delta_accuracy": [
+      0.054076639811197834,
+      0.10791015625000001
+    ],
+    "native_baseline_accuracy_minus_one_third": [
+      0.46305338541666674,
+      0.5056564331054683
+    ],
+    "native_delta_accuracy": [
+      0.002115885416666668,
+      0.01529947916666667
+    ],
+    "native_mean_total_variation": [
+      0.06482541282547023,
+      0.06977643553047139
+    ]
+  }
+}
