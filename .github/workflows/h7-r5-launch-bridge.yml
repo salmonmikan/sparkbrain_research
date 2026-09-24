@@ -1,9 +1,8 @@
-name: H7 R5 one-shot launch bridge
+name: H7 R5 workflow-dispatch bridge
 
-# Operational bridge only. This workflow does not define or alter H7 science.
-# It can only materialize the already-frozen launch tag after a fresh Evidence
-# Analyst generation revalidates the exact bindings and explicitly marks the
-# frozen path as trigger-capable/effectively executable.
+# Operational, non-scientific bridge. A scheduler/MAIN/Relay updates only the
+# request file after a fresh Evidence Analyst generation has revalidated the
+# exact controller/science binding and retained GO_ONCE authority.
 on:
   push:
     branches:
@@ -12,61 +11,68 @@ on:
       - ops/h7_launch_request.json
 
 permissions:
-  contents: write
+  actions: write
+  contents: read
 
 concurrency:
-  group: h7-r5-one-shot-launch-bridge
+  group: h7-r5-workflow-dispatch-bridge
   cancel-in-progress: false
 
 env:
   ANALYST_BRANCH: ops/evidence-analyst-handoff
-  CONTROLLER_SHA: 042d00375278d551dbf643ad866a4c883852804d
+  TARGET_WORKFLOW: h7-formal-r5-one-way-launch.yml
+  TARGET_REF: research/main-h7-r5-launch-plumbing-r111-workflow-dispatch
+  CONTROLLER_SHA: bac7402fb01b69353eb926228574cc68c2c2a2d2
   SCIENCE_SHA: 2f30b93f8f3cf226ef55ed5af7e341089d2c3c80
-  CONTROLLER_WORKFLOW_BLOB_SHA: a6fb8fec46ad8b6f6b055e701d5c8cf829d4007c
 
 jobs:
-  create-launch-tag:
+  dispatch-once:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     steps:
-      - name: Checkout bridge request
+      - name: Checkout launch request
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
 
-      - name: Refuse unarmed request
+      - name: Read request gate
+        id: gate
         shell: bash
         run: |
           set -euo pipefail
           jq -e '.schema_version == 1' ops/h7_launch_request.json >/dev/null
-          jq -e '.request_kind == "H7_R5_ONE_SHOT_LAUNCH_REQUEST"' ops/h7_launch_request.json >/dev/null
-          jq -e '.armed == true' ops/h7_launch_request.json >/dev/null
-          jq -e --arg v "$CONTROLLER_SHA" '.controller_sha == $v' ops/h7_launch_request.json >/dev/null
-          jq -e --arg v "$SCIENCE_SHA" '.science_sha == $v' ops/h7_launch_request.json >/dev/null
-          test "$(jq -r '.analyst_generation_id // empty' ops/h7_launch_request.json)" != ""
-          test "$(jq -r '.analyst_commit // empty' ops/h7_launch_request.json)" != ""
+          jq -e '.request_kind == "H7_R5_ONE_SHOT_WORKFLOW_DISPATCH_REQUEST"' ops/h7_launch_request.json >/dev/null
+          armed="$(jq -r '.armed' ops/h7_launch_request.json)"
+          test "$armed" = "true" -o "$armed" = "false"
+          echo "armed=$armed" >> "$GITHUB_OUTPUT"
+          if [ "$armed" != "true" ]; then
+            echo "H7 launch bridge is dormant; no workflow dispatch requested."
+          fi
 
-      - name: Fetch exact controller, science, and fresh Analyst
+      - name: Verify request and fresh Analyst authority
+        if: ${{ steps.gate.outputs.armed == 'true' }}
         shell: bash
         run: |
           set -euo pipefail
-          git fetch --no-tags origin "$CONTROLLER_SHA" "$SCIENCE_SHA"
+          req=ops/h7_launch_request.json
+
+          jq -e --arg v "$CONTROLLER_SHA" '.controller_sha == $v' "$req" >/dev/null
+          jq -e --arg v "$SCIENCE_SHA" '.science_sha == $v' "$req" >/dev/null
+          test "$(jq -r '.analyst_generation_id // empty' "$req")" != ""
+          test "$(jq -r '.analyst_commit // empty' "$req")" != ""
+          test "$(jq -r '.request_nonce // empty' "$req")" != ""
+
+          current_target_sha="$(git ls-remote origin "refs/heads/$TARGET_REF" | cut -f1)"
+          test "$current_target_sha" = "$CONTROLLER_SHA"
+
           analyst_sha="$(git ls-remote origin "refs/heads/$ANALYST_BRANCH" | cut -f1)"
           test -n "$analyst_sha"
-          requested_analyst_sha="$(jq -r '.analyst_commit' ops/h7_launch_request.json)"
-          test "$analyst_sha" = "$requested_analyst_sha"
+          test "$analyst_sha" = "$(jq -r '.analyst_commit' "$req")"
           git fetch --no-tags origin "$analyst_sha"
           git show "$analyst_sha:analysis/orchestrator/state.json" > "$RUNNER_TEMP/analyst-state.json"
 
-      - name: Verify fresh Analyst one-shot authority and exact bindings
-        shell: bash
-        run: |
-          set -euo pipefail
           state="$RUNNER_TEMP/analyst-state.json"
-          req="ops/h7_launch_request.json"
-          requested_generation="$(jq -r '.analyst_generation_id' "$req")"
-
-          jq -e --arg v "$requested_generation" '.generation_id == $v' "$state" >/dev/null
+          jq -e --arg v "$(jq -r '.analyst_generation_id' "$req")" '.generation_id == $v' "$state" >/dev/null
           jq -e '.H7.stage == "PRE_FORMAL"' "$state" >/dev/null
           jq -e '.H7.claim_ceiling == "MECHANISM"' "$state" >/dev/null
           jq -e '.H7.terminal_state == "ACTIVE"' "$state" >/dev/null
@@ -88,58 +94,67 @@ jobs:
           jq -e '.hard_floor.terminal_reopened == false' "$state" >/dev/null
           jq -e '.hard_floor.historical_pass_fail_rewritten == false' "$state" >/dev/null
 
-      - name: Verify frozen controller bytes and unused one-way namespaces
+      - name: Verify no retained duplicate dispatch
+        if: ${{ steps.gate.outputs.armed == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
         shell: bash
         run: |
           set -euo pipefail
-          test "$(git rev-parse "$CONTROLLER_SHA:.github/workflows/h7-formal-r5-one-way-launch.yml")" = "$CONTROLLER_WORKFLOW_BLOB_SHA"
-          git cat-file -e "$SCIENCE_SHA^{commit}"
-          git cat-file -e "$CONTROLLER_SHA^{commit}"
+          nonce="$(jq -r '.request_nonce' ops/h7_launch_request.json)"
+          run_name="H7 R5 one-way FORMAL launch $nonce"
 
-          if git ls-remote --exit-code origin 'refs/tags/launch/h7-r5-*' >/tmp/h7-launch-existing 2>/dev/null; then
-            echo "H7 launch tag already exists; refusing another launch" >&2
-            cat /tmp/h7-launch-existing >&2
+          curl --fail --silent --show-error \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/$REPOSITORY/actions/workflows/$TARGET_WORKFLOW/runs?event=workflow_dispatch&per_page=100" \
+            > "$RUNNER_TEMP/h7-formal-runs.json"
+
+          if jq -e --arg run_name "$run_name" '.workflow_runs[] | select(.display_title == $run_name)' "$RUNNER_TEMP/h7-formal-runs.json" >/dev/null; then
+            echo "A retained H7 workflow-dispatch run already exists for this nonce." >&2
             exit 1
           fi
 
-          for pattern in \
-            'refs/heads/control/h7*' \
-            'refs/heads/preserve/h7*' \
-            'refs/tags/formal/h7*' \
-            'refs/tags/sealed/h7*' \
-            'refs/tags/freeze/h7*' \
-            'refs/tags/evidence/h7*'
-          do
-            if git ls-remote --exit-code origin "$pattern" >/tmp/h7-one-way-existing 2>/dev/null; then
-              echo "H7 one-way namespace is already occupied: $pattern" >&2
-              cat /tmp/h7-one-way-existing >&2
-              exit 1
-            fi
-          done
-
-      - name: Create exactly one frozen launch tag
+      - name: Dispatch exact Analyst-bound H7 controller once
+        if: ${{ steps.gate.outputs.armed == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
         shell: bash
         run: |
           set -euo pipefail
-          analyst_sha="$(jq -r '.analyst_commit' ops/h7_launch_request.json)"
-          launch_tag="launch/h7-r5-${analyst_sha:0:12}"
+          req=ops/h7_launch_request.json
+          payload="$(jq -nc \
+            --arg ref "$TARGET_REF" \
+            --arg controller_sha "$CONTROLLER_SHA" \
+            --arg science_sha "$SCIENCE_SHA" \
+            --arg analyst_generation_id "$(jq -r '.analyst_generation_id' "$req")" \
+            --arg analyst_commit "$(jq -r '.analyst_commit' "$req")" \
+            --arg request_nonce "$(jq -r '.request_nonce' "$req")" \
+            '{ref:$ref,inputs:{controller_sha:$controller_sha,science_sha:$science_sha,analyst_generation_id:$analyst_generation_id,analyst_commit:$analyst_commit,request_nonce:$request_nonce}}')"
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git tag "$launch_tag" "$CONTROLLER_SHA"
+          status="$(curl --silent --show-error --output "$RUNNER_TEMP/dispatch-response.txt" --write-out '%{http_code}' \
+            --request POST \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer $GH_TOKEN" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/$REPOSITORY/actions/workflows/$TARGET_WORKFLOW/dispatches" \
+            --data "$payload")"
 
-          # No force. A concurrent launch or an already-consumed path must fail.
-          git push origin "refs/tags/$launch_tag:refs/tags/$launch_tag"
-
-          remote_sha="$(git ls-remote origin "refs/tags/$launch_tag" | cut -f1)"
-          test "$remote_sha" = "$CONTROLLER_SHA"
+          if [ "$status" != "204" ]; then
+            cat "$RUNNER_TEMP/dispatch-response.txt"
+            echo "H7 workflow dispatch failed with HTTP $status; no retry is automatic." >&2
+            exit 1
+          fi
 
           {
-            echo "### H7 R5 launch bridge"
+            echo "### H7 R5 workflow-dispatch bridge"
             echo
-            echo "- launch tag created: `$launch_tag`"
-            echo "- exact frozen controller: `$CONTROLLER_SHA`"
-            echo "- exact frozen science: `$SCIENCE_SHA`"
-            echo "- fresh Analyst commit: `$analyst_sha`"
-            echo "- this bridge created no FORMAL identity itself; the frozen tagged workflow owns START"
+            echo "- exact controller: `$CONTROLLER_SHA`"
+            echo "- exact science: `$SCIENCE_SHA`"
+            echo "- analyst generation: `$(jq -r '.analyst_generation_id' "$req")`"
+            echo "- request nonce: `$(jq -r '.request_nonce' "$req")`"
+            echo "- workflow_dispatch accepted: HTTP 204"
           } >> "$GITHUB_STEP_SUMMARY"
