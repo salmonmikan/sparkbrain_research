@@ -1,22 +1,20 @@
-# MAIN PRIMARY R130 — R126 TH-002 Forge-only gate reconciled; no canonical MAIN action
+# MAIN RELAY R131 — Analyst R127 unchanged gate; TH-002 Fast Forge in flight
 
-Execution mode: `PRIMARY`  
-Status: `STOPPED_NO_ALLOCATED_CANONICAL_OBJECT`  
+Execution mode: `RELAY`  
+Status: `WAITING_EXTERNAL`  
 Canonical object: `NONE_ALLOCATED`  
-Analyst authority: `EVA-20260924T215808+0900-R126-TH002-THEORY-FORGE-TEST`
+Analyst authority: `EVA-20260924T224451+0900-R127-METH116-MAIN130-NO-GATE-CHANGE`
 
-Evidence Analyst R126 has now classified `TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY` as noncanonical `THEORY_FORGE_TEST` and authorized exactly one bounded Fast Forge static falsification spec, `TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL`. This classification is not a candidate admission, not evidence, not a Revisit trigger, not PRE_FORMAL readiness and not MAIN execution authority.
+Evidence Analyst R127 supersedes R126 but explicitly records no science or gate change. TH-002 remains noncanonical `THEORY_FORGE_TEST`, zero-credit, not a candidate, not evidence, not a Revisit trigger and not MAIN execution authority.
 
-MAIN re-fetched stable `main`, `research/*`, `forge/*`, current PR/workflow state, the fresh Analyst generation, MAIN Relay/lease/state, Fast Forge durable state, Utility state and the exact H7 science/controller/START/preserve/freeze/formal/sealed/evidence bindings. No active canonical object is allocated to MAIN. Canonical census remains 35 total / 35 terminal / 0 active / 0 scientifically queued; development phases remain 0 OPEN_DEVELOPMENT / 34 RESULT_EXPOSED_DEVELOPMENT / 1 CONSUMED_ONE_WAY.
+Fast Forge is independently advancing `TH002-FORGE-001-STATIC-ADDRESSABILITY-KILL`; the latest observed branch tip is under CI and no durable Analyst-classified outcome exists yet. MAIN did not touch the Forge implementation, run science, score anything, create/consume an identity, or change any scientific criterion.
 
-The prior Relay wait is therefore resolved without scientific execution: TH-002 belongs only to Fast Forge's noncanonical lane unless and until a later Evidence Analyst generation admits a fresh canonical object. MAIN did not dispatch the Forge probe, create a branch, port code, implement a comparator, run a test, score a result or consume an identity. Forge-derived code and observations were not reused.
+Canonical Funnel v2.1 remains unchanged: 35 canonical = 14 MECHANISM / 21 SYSTEM; 35 terminal; 0 active; 0 scientifically queued; development phases 0 OPEN_DEVELOPMENT / 34 RESULT_EXPOSED_DEVELOPMENT / 1 CONSUMED_ONE_WAY. H7 remains consumed one-way with official `INCONCLUSIVE`; Candidate #35 remains terminal SYSTEM with no current trigger authority.
 
-H7 remains the consumed one-way FORMAL object with official `INCONCLUSIVE` result unchanged. Its exact science and controller heads, START, target-blind raw preservation/freeze, formal/sealed/evidence refs and completed one-way workflow remain unchanged. Same-identity rerun/retune/rescore/retry and result-responsive repair remain prohibited. Candidate #35 remains terminal SYSTEM with trigger authority exhausted and no successor.
-
-Result classification: `CONTROL_PLANE_RECONCILIATION_ONLY_NO_CANONICAL_ACTION`. New scientific result: `false`. Prior results are preserved unchanged; no protected held-out payload was accessed and no immutable/formal/sealed/evidence/control/preserve ref was mutated.
+Prior results and H7 one-way refs remain unchanged. No immutable/formal/sealed/evidence ref was mutated and no protected held-out payload was accessed.
 
 ## Next MAIN action
 
-Wait for a future Evidence Analyst generation. Resume only if it prospectively admits and explicitly allocates a fresh canonical candidate/object with its own contract and development fields. If Fast Forge later runs the TH-002 static probe, its outcome has zero direct confirmatory credit for MAIN and must return through a fresh Analyst gate first.
+Wait for Fast Forge to finish its own bounded probe, then re-read a fresh Evidence Analyst generation. Resume only on explicit fresh canonical admission and allocation; a Forge result by itself does not authorize MAIN.
 
-Full technical record: `reports/orchestrator/main/history/2026-09-24/2217-r130-primary-r126-th002-forge-only-no-canonical-action.md`.
+Full technical record: `reports/orchestrator/main/history/2026-09-24/2249-r131-relay-r127-th002-forge-inflight-wait.md`.
