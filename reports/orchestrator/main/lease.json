@@ -1,25 +1,25 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T071400+0900-PRIMARY-H7-R108-LAUNCH-CAPABILITY-WAITING-EXTERNAL",
-  "run_id": "sparkbrain-main-primary-20260924T0714JST-r108-h7-launch-capability-wait",
-  "producer_run_id": "sparkbrain-main-primary-20260924T0714JST-r108-h7-launch-capability-wait",
-  "authority_scope": "PRIMARY_R108_H7_PRESTART_FRESHNESS_AND_TRIGGER_CAPABILITY_ONLY",
-  "supersedes_generation_id": "MAIN-20260924T054727+0900-RELAY-H7-R106-FORMAL-LAUNCH-CAPABILITY-BLOCKED",
+  "generation_id": "MAIN-20260924T091500+0900-PRIMARY-H7-R110-LAUNCH-CAPABILITY-WAITING-EXTERNAL",
+  "run_id": "sparkbrain-main-primary-20260924T0915JST-r110-h7-launch-capability-wait",
+  "producer_run_id": "sparkbrain-main-primary-20260924T0915JST-r110-h7-launch-capability-wait",
+  "authority_scope": "PRIMARY_R110_H7_PRESTART_FRESHNESS_AND_TRIGGER_CAPABILITY_ONLY",
+  "supersedes_generation_id": "MAIN-20260924T071400+0900-PRIMARY-H7-R108-LAUNCH-CAPABILITY-WAITING-EXTERNAL",
   "input_generations": {
-    "evidence_analyst": "EVA-20260924T070844+0900-R108-H7-OPBLOCK-TH001-ORDINARY-REDUCTION@f709230ec122a96b9acb27ab39d070825a8217be",
-    "main_previous": "MAIN-20260924T054727+0900-RELAY-H7-R106-FORMAL-LAUNCH-CAPABILITY-BLOCKED",
-    "fast_forge": "forge/20260924-th001-q0-qi-adaptation-a@e2dbe3a5a0db812f777b789a6878af8a0d3eee0f; NONCANONICAL_ZERO_CREDIT",
-    "utility": "ops/utility-orchestrator-requests@d4b9804aeb6d2f88534bff6326f7fb2b2798dff3; IDLE_NON_AUTHORIZING"
+    "evidence_analyst": "EVA-20260924T085933+0900-R110-H7-OPBLOCK-EXT-MISALIGNED-NOOP@7bc866c6d4dd1d723156345d056fadb027a85c1c",
+    "main_previous": "MAIN-20260924T071400+0900-PRIMARY-H7-R108-LAUNCH-CAPABILITY-WAITING-EXTERNAL",
+    "fast_forge": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED; NONCANONICAL_ZERO_CREDIT",
+    "utility": "UTILITY-20260924T072626+0900-R108-H7-OPCAP-RECONCILE-6C91B4D2; IDLE_NON_AUTHORIZING"
   },
   "execution_mode": "PRIMARY",
   "status": "WAITING_EXTERNAL",
-  "started_at": "2026-09-24T07:14:00+09:00",
-  "heartbeat_at": "2026-09-24T07:14:00+09:00",
-  "waiting_since": "2026-09-24T07:14:00+09:00",
+  "started_at": "2026-09-24T09:15:00+09:00",
+  "heartbeat_at": "2026-09-24T09:15:00+09:00",
+  "waiting_since": "2026-09-24T09:15:00+09:00",
   "completed_at": null,
   "blocked_at": null,
-  "analyst_generation_id": "EVA-20260924T070844+0900-R108-H7-OPBLOCK-TH001-ORDINARY-REDUCTION",
-  "analyst_commit": "f709230ec122a96b9acb27ab39d070825a8217be",
+  "analyst_generation_id": "EVA-20260924T085933+0900-R110-H7-OPBLOCK-EXT-MISALIGNED-NOOP",
+  "analyst_commit": "7bc866c6d4dd1d723156345d056fadb027a85c1c",
   "research_layer": "PRE_FORMAL",
   "candidate_id": "CAND-H7-RESPONSIBILITY",
   "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
@@ -28,8 +28,11 @@
   "claim_ceiling": "MECHANISM",
   "preformal_eligible": true,
   "preformal_readiness": "READY",
+  "hold_class": null,
+  "hold_reason": null,
   "terminal_state": "ACTIVE",
   "queue_state": "QUEUED",
+  "system_priority_exception": false,
   "scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
   "scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
   "controller_branch": "research/main-h7-r5-launch-plumbing-r105",
@@ -45,7 +48,7 @@
     "formal_launch_run_id": null,
     "formal_launch_dispatched": false,
     "result_bearing": false,
-    "expected_next_action": "Provision authorized one-shot launch-trigger capability externally; then fresh Evidence Analyst revalidates exact bindings before any START."
+    "expected_next_action": "Provision authorized one-shot launch-trigger capability externally; then obtain fresh Evidence Analyst exact-binding revalidation before any START."
   },
   "evidentiary_status": "NON_RESULT_PRESTART_OPERATIONAL_TRIGGER_CAPABILITY_BLOCK",
   "new_scientific_result_this_run": false,
@@ -73,7 +76,11 @@
     "development_phase_changed_by_primary": false,
     "formal_floor_respected": true
   },
-  "stop_reason": "R108_H7_SCIENTIFICALLY_READY_BUT_AUTHORIZED_ONE_SHOT_TRIGGER_CAPABILITY_UNAVAILABLE",
-  "next_action": "External/maintainer provision of the missing one-shot launch-trigger capability without altering frozen science/controller/workflow, followed by fresh Analyst exact-binding revalidation before START.",
+  "scheduler_state": {
+    "primary_recurring_lane_paused_due_full_external_block": true,
+    "scientific_state_changed_by_pause": false
+  },
+  "stop_reason": "R110_H7_SCIENTIFICALLY_READY_BUT_AUTHORIZED_ONE_SHOT_TRIGGER_CAPABILITY_UNAVAILABLE",
+  "next_action": "Provision an authorized one-shot launch-trigger capability without altering frozen science/controller/workflow/runtime/input/scorer/preserver/protocol semantics; after capability actually exists, obtain fresh Evidence Analyst exact-binding revalidation before any FORMAL START.",
   "owner": "main"
 }
