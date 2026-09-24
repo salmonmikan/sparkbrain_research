@@ -1,20 +1,24 @@
-# MAIN RELAY — no executable canonical science; waiting for fresh Analyst admission
+# MAIN PRIMARY — Analyst R122 reconciled; no executable canonical science
 
-Execution mode: `RELAY`  
-Status: `WAITING_EXTERNAL`  
+Execution mode: `PRIMARY`  
+Status: `STOPPED_NO_ALLOCATED_CANONICAL_OBJECT`  
 Canonical object: `NONE_ALLOCATED`  
-Analyst authority: `EVA-20260924T180900+0900-R121-RVT35-FORGE-KILL-ADJUDICATED`
+Analyst authority: `EVA-20260924T190300+0900-R122-R43-PROSPECTIVE-ATTRIBUTION-GATE`
 
-Evidence Analyst R121 remains the latest scientific authority. It accepts `RVT35-FORGE-001` only as a noncanonical, non-evidentiary, zero-credit Forge dead end, leaves Candidate #35 terminal `SYSTEM` in `DEFERRED_INDEPENDENT_REIDENTIFICATION`, admits no fresh successor, and grants MAIN no canonical execution authority.
+Evidence Analyst R122 remains the current scientific authority and allocates no executable canonical object. The canonical funnel remains 35 terminal objects, 0 active, 0 scientifically queued, and 0 executable canonical MECHANISM.
 
-A newer Fast Forge R121/R43 observation was checked only for collision awareness. It selected no question, created no prototype, proposed no promotion, and introduced no fresh revisit trigger or dispatchable canonical object. It therefore does not change the Analyst gate or create a MAIN dependency.
+Literature R43 changes only the **prospective** admission bar for future fresh distributed-responsibility questions: ordinary comparator capacity/performance adequacy remains mandatory; broad privileged-responsibility claims must separate individual necessity from unique/redundant/synergistic or coalitional contribution with multi-site/coalitional intervention and multivariate attribution where tractable; surrogate-perturbation comparators must establish ordinary-dynamics and held-out intervention-response adequacy. This is not retroactive and does not reopen, repair, rescore or reinterpret H7 or Candidate #35.
 
-The canonical funnel remains 35 terminal objects, 0 active, 0 scientifically queued, and 0 executable canonical MECHANISM. No scientific implementation, experiment, metric/scorer/comparator/threshold/tolerance/protocol change, formal action, scoring, held-out access, ref mutation, or terminal-object reopening was performed.
+Candidate #35 remains terminal `SYSTEM`, zero confirmatory credit, `DEFERRED_INDEPENDENT_REIDENTIFICATION`, with no fresh successor. The historical `preserve/cand35-r100-batch1-20260923` provenance reference is not currently resolvable; the preserved development raw payload remains reachable at `raw/cand35-r100-onebatch-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a`. This is a governance/provenance discrepancy only. MAIN did not recreate the missing ref or change any scientific interpretation.
 
-H7 remains terminal/consumed `FORMAL`: claim ceiling `MECHANISM`, development phase `CONSUMED_ONE_WAY`, development revision `R5_UNCHANGED`, official decision `INCONCLUSIVE`. Its consumed identity, result, and START/preserve/freeze/formal/sealed/evidence surfaces remain unchanged; same-identity rerun/retune/rescore and same-object repair remain prohibited.
+H7 remains terminal/consumed `FORMAL / MECHANISM / CONSUMED_ONE_WAY / INCONCLUSIVE`. Its scientific source, controller, identity, START, preserve, freeze, formal, sealed and evidence surfaces remain unchanged. Same-identity rerun/retune/rescore/retry and same-object result-responsive repair remain prohibited.
+
+Fast Forge remains noncanonical/non-evidentiary with no selected question, prototype or promotion; Utility remains IDLE/non-authorizing. MAIN reused no Forge-derived code or observation and created no Utility dependency.
+
+No scientific implementation, experiment, comparator/scorer/metric/threshold/tolerance/protocol change, held-out access, FORMAL action, scoring, one-way ref mutation or terminal-object reopening was performed.
 
 ## Next MAIN action
 
-Wait for genuinely new independent information that leads a fresh Evidence Analyst generation to explicitly allocate a new candidate/fresh successor with its own prospective canonical contract. Do not recycle or search around the killed `RVT35-FORGE-001` rationale. H7 same-object action remains prohibited.
+Wait for genuinely new independent information that leads a fresh Evidence Analyst generation to explicitly allocate a new candidate/fresh successor with its own prospective canonical contract. Do not recycle or search around the killed `RVT35-FORGE-001` rationale, do not take H7 same-object action, and do not recreate Candidate #35's unresolved historical preserve ref from MAIN.
 
-Full technical record: `reports/orchestrator/main/history/2026-09-24/185301-r124-relay-waiting-no-executable-canonical-science.md`.
+Full technical record: `reports/orchestrator/main/history/2026-09-24/191214-r125-primary-r43-gate-preserve-audit-no-canonical-action.md`.
