@@ -1,0 +1,13 @@
+{
+  "schema_version": 2,
+  "generation_id": "EVA-20260925T005800+0900-R130-LIT44-NO-SCIENCE",
+  "generated_at": "2026-09-25T00:58:00+09:00",
+  "new_scientific_result": false,
+  "canonical": {"total":35,"MECHANISM":14,"SYSTEM":21,"terminal":35,"active":0,"queued":0,"consumed_formal_identities":8},
+  "revisit": {"coverage":"35/35","CLOSED_STRONG":1,"DORMANT_REVISITABLE":20,"DEFERRED_INDEPENDENT_REIDENTIFICATION":14,"REVISIT_TRIGGERED":0,"proposals":1,"forge_kills":1,"fresh_successors":0},
+  "literature_r44": {"decision":"PROSPECTIVE_REDUCTION_LADDER_TIGHTENED_NO_CANONICALIZATION_NO_REVISIT_TRIGGER","baselines":["DELTA_FAST_WEIGHT","GATED_DELTA","STATE_SPACE_ASSOCIATIVE","HRR_VSA","CUE_AS_KEY"]},
+  "refs": {"main":"d16403414fc7abebd23075fc401240971b8eb91d","control":"857998b44ca7954d3875d3957c447ce3414a7d89","external_research":"4087356677f1ae60aa87aafeea927949ea0c3d17","h7_raw":"a5e76e7eb117e0270cfdc138fb9da30d696aa7c0","h7_result":"e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85"},
+  "main_status": "STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
+  "theory_status": "TH002_FORGE_KILLED_NO_CANONICALIZATION",
+  "scheduler_health": {"literature_0030_durable":true,"audit_2230_durable":false,"scientific_gate_effect":"NONE"}
+}
