@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260924T135000+0900-G15-9F3C6A21",
-  "produced_at": "2026-09-24T13:50:00+09:00",
-  "producer_run_id": "repository-steward-auto-20260924T135000+0900-G15-9F3C6A21",
+  "generation_id": "STEWARD-20260924T195000+0900-G16-4E71C2B9",
+  "produced_at": "2026-09-24T19:50:00+09:00",
+  "producer_run_id": "repository-steward-auto-20260924T195000+0900-G16-4E71C2B9",
   "authority_scope": "REPOSITORY_GOVERNANCE_ONLY_NO_SCIENTIFIC_AUTHORITY",
-  "supersedes_generation_id": "STEWARD-20260924T075000+0900-G14-5C61A2F8",
+  "supersedes_generation_id": "STEWARD-20260924T135000+0900-G15-9F3C6A21",
   "repository": "salmonmikan/sparkbrain_research",
   "mailbox_semantics": {
     "ops_branches_are_scientific_source_of_truth": false,
@@ -13,8 +13,8 @@
   },
   "authoritative_refs": {
     "main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "main_changed_since_g14": true,
-    "main_change_classification": "FAIL_CLOSED_WORKFLOW_DISPATCH_REGISTRATION_ONLY_NO_SCIENTIFIC_SUBSTRATE_PROMOTION",
+    "main_changed_since_g15": false,
+    "main_change_classification": "UNCHANGED_FAIL_CLOSED_H7_WORKFLOW_DISPATCH_REGISTRATION_HEAD",
     "main_protected_branch_summary": true,
     "repository_ruleset_count": 1,
     "active_main_ruleset": {
@@ -31,7 +31,7 @@
       "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
       "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
     },
-    "preexisting_evidence_tag_objects_changed_since_g14": false,
+    "preexisting_evidence_tag_objects_changed_since_g15": false,
     "h7_lightweight_authoritative_namespace_ref_count": 4,
     "h7_lightweight_authoritative_namespace_refs": {
       "freeze/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
@@ -48,6 +48,7 @@
     "evidence_namespace_tag_ref_count_total": 6,
     "legacy_freeze_branch_count": 13,
     "legacy_freeze_exact_sha_map_reverified": true,
+    "legacy_freeze_map_changed_since_g15": false,
     "legacy_preserve_pointers_present": true,
     "immutable_ref_incident": false
   },
@@ -69,11 +70,18 @@
   },
   "separation_audit": {
     "classification": "COMPLIANT_MAIN_RESEARCH_FORGE_EVIDENCE_SEPARATION_WITH_FAIL_CLOSED_H7_REGISTRATION_STUB_ON_MAIN",
+    "current_forge_branch_count": 6,
     "current_forge_branches": [
+      "forge/utility-rvt35-causal-opportunity-harness",
       "forge/20260923-receptor-suppression-probes-a",
       "forge/20260924-coordinate-null-local-witness",
       "forge/20260924-recurrent-continuation-a",
+      "forge/20260924-rvt35-causal-opportunity-a",
       "forge/20260924-th001-q0-qi-adaptation-a"
+    ],
+    "new_forge_branches_since_g15": [
+      "forge/utility-rvt35-causal-opportunity-harness",
+      "forge/20260924-rvt35-causal-opportunity-a"
     ],
     "forge_policy": "MUTABLE_NONCANONICAL_EXPLORATORY_HISTORY_ONLY",
     "forge_on_main_observed": false,
@@ -108,6 +116,7 @@
   "main_promotion_review": {
     "scientific_candidates": [],
     "open_governance_tooling_prs": [148, 149],
+    "open_research_or_forge_prs_to_main_observed": 0,
     "governance_or_tooling_candidates": [
       {"candidate": "PR_148_HUMAN_DIRECTIVES_REPOSITORY_SKILL", "status": "OPEN_UNMERGED_NORMAL_REVIEW_REQUIRED"},
       {"candidate": "PR_149_SCHEDULER_REGISTRY_SKILL", "status": "OPEN_UNMERGED_NORMAL_REVIEW_REQUIRED"},
@@ -134,7 +143,7 @@
     "steward_persistence_only": true
   },
   "persistence": {
-    "history_path": "reports/repository_steward/history/2026-09-24/1350.md",
+    "history_path": "reports/repository_steward/history/2026-09-24/1950.md",
     "latest_path": "reports/repository_steward/latest.md",
     "state_path": "reports/repository_steward/state.json",
     "mode": "SEQUENTIAL_GITHUB_CONTENTS_FAST_FORWARD"
@@ -144,7 +153,7 @@
     "Preserve all existing H7 authoritative-namespace refs exactly; track lightweight-tag provenance mismatch through append-only audit/provenance rather than destructive tag replacement.",
     "Keep Issue #139 open as a tag-protection risk but do not deploy protection rules while HUMAN-20260919-002 remains active absent a materially changed risk condition.",
     "Track and route HUMAN-20260922-006 stable-baseline documentation/version refresh through a small reviewed integration after version-semantics audit.",
-    "Treat forge/* and Theory/Revisit control-plane material only as mutable noncanonical history, never evidence.",
+    "Treat all six current forge/* branches and Theory/Revisit control-plane material only as mutable noncanonical history, never evidence.",
     "Do not promote scientific research surfaces to main from Steward authority.",
     "Keep PR #148 and #149 under normal reviewed integration only; do not merge from Steward authority.",
     "Do not promote the generic equivalence verifier until its trust boundary is explicit."
