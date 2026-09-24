@@ -1,84 +1,75 @@
-# SparkBrain Theory Synthesis — no new proposal after TH-001 reduction
+# SparkBrain Theory Synthesis — Candidate #35 revisit proposal from independent causal-opportunity trigger
 
 - schema_version: `2`
-- generation_id: `THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94`
-- produced_at: `2026-09-24T09:30:14+09:00`
-- producer_run_id: `external-theory-auto-THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94`
+- generation_id: `THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4`
+- produced_at: `2026-09-24T15:28:49+09:00`
+- producer_run_id: `external-theory-auto-THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4`
 - authority_scope: `NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY`
-- supersedes_generation_id: `THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91`
+- supersedes_generation_id: `THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94`
 - role: `THEORY_SYNTHESIS_ARCHITECT`
-- schedule_slot: `09:30 JST`
+- schedule_slot: `15:30 JST`
 - schedule_inference: `false`
 - genuinely_new_information: `true`
 - theory_status: `NO_THEORY_PROPOSAL`
-- revisit_status: `NO_REVISIT_PROPOSAL`
+- revisit_status: `REVISIT_PROPOSAL`
 
 ## Current reconstruction
 
-Repository evidence was re-fetched independently from control-plane mailboxes. Stable `main` remains `ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d`. H7 science remains `research/main-h7-formal-r5-runtime-identity-r88-cycle12@2f30b93f8f3cf226ef55ed5af7e341089d2c3c80`; the current launch controller remains `research/main-h7-r5-launch-plumbing-r105@042d00375278d551dbf643ad866a4c883852804d`. The five authoritative annotated `evidence/*` tags remain unchanged; tag-form `formal/*`, `sealed/*`, `freeze/*`, and `immutable/*` remain absent. H7 control/preserve/launch namespaces remain unused.
+Repository evidence was re-fetched independently from the control-plane mailboxes. Stable `main` is `d16403414fc7abebd23075fc401240971b8eb91d`. H7 is now a completed one-way FORMAL object with authoritative result commit `e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85`; its frozen decision is `INCONCLUSIVE`. Native dynamic TOP1 cut has a small positive accuracy delta (`0.008626302083333332`, simultaneous interval `[0.002115885416666668, 0.01529947916666667]`), but dense, eligibility and FSA comparator families are all scorer-declared `capacity_adequate=false`. H7 is terminal/consumed and cannot be repaired or rerun.
 
-Evidence Analyst R110 remains the canonical gate: 35 current candidates, 34 terminal, H7 the sole nonterminal/queued object, no new FORMAL identity or result, and Revisit coverage 34/34 with `CLOSED_STRONG=1`, `DORMANT_REVISITABLE=19`, `DEFERRED_INDEPENDENT_REIDENTIFICATION=14`, `REVISIT_TRIGGERED=0`.
+The canonical funnel is now `35` candidates = `14 MECHANISM / 21 SYSTEM`, all `35` terminal, `0` active and `0` scientifically queued. Candidate #34 remains `CLOSED_STRONG`. Candidate #35 remains terminal `SYSTEM`, zero confirmatory credit, but is now the sole `REVISIT_TRIGGERED` object. No fresh successor, Revisit Forge probe or canonical admission exists.
 
-Consumed control-plane generations, treated only as mailboxes/history:
-- Control Brain: `CTRL-20260924T091000+0900-R51-6D2A8F41` (current R51; methodology records handoff commit `b938a9f7356267dceadbe14d60ca4481cbe37d38`).
-- Evidence Analyst: `EVA-20260924T085900+0900-R110-CONVERGED-NOOP` at `7bc866c6d4dd1d723156345d056fadb027a85c1c`.
-- MAIN PRIMARY: `MAIN-20260924T091500+0900-PRIMARY-H7-R110-LAUNCH-CAPABILITY-WAITING-EXTERNAL` at `409416500bbdc080409e74259fde461202cbcdfe`.
-- Fast Forge: `FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED` at `6ecce79f76b54b61b873a6e2a385b3f84055099c`.
-- Methodology: `METHCAL-20260924T091717+0900-R102-8D31C7A4`; designated latest reports a bounded provenance-label exactness issue only and no science change.
-- Literature: `LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71`.
-- Independent Audit: `AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8`.
-- Prior Theory: `THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91`.
+Current control-plane generations consumed as mailbox/history only:
+- Control Brain: `CTRL-20260924T145730+0900-R57-POSTFORMAL-TERMINAL-MAIN-RESTORED` at `376167105b9fb384efda60a98a1088809ddcca2d`.
+- Evidence Analyst: `EVA-20260924T150100+0900-R118-POSTFORMAL-NOOP-CONTROL-R57-MAIN-R117` at `ec74807c04e23e561275f8a2900e11e8145076c3`.
+- MAIN PRIMARY: `MAIN-20260924T151735+0900-PRIMARY-R118-WAITING-NO-EXECUTABLE-CANONICAL-SCIENCE`; orchestrator mailbox tip `1bc37f4f1f36cee055204486c11206d7cadee58e`.
+- Fast Forge: `FORGE-20260924T133500+0900-NOOP-R115-ALL35-TERMINAL-NO-GATED-PROBE`; same mailbox tip `1bc37f4f1f36cee055204486c11206d7cadee58e`.
+- Methodology: `METHCAL-20260924T152135+0900-R109-C4E92A1B` at `462299364d518c728795dc746be4f5ec323db6ae`.
+- Literature: `LIT-20260924T122954+0900-R42-H7-INCONCLUSIVE-OBSERVABILITY-PING-84C2D7A1`, latest blob `fdb7c41e83cf7ef2e8d8d44595887553157956ce`.
+- Independent Audit: `AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91`, latest blob `a89738c837b2e5bc2eab94adb1722bbb6daeb673`.
+- Prior Theory: `THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94`, latest blob `6aa4fc2302336e887cf67070513948312fff0c98`.
 
-## Differential synthesis since prior Theory
+## Differential synthesis since Theory R2
 
-There is genuinely new information since Theory R1, but it does **not** support a new Theory proposal.
+Three genuinely new inputs matter.
 
-1. **TH-001's contract-faithful discriminator was actually killed by an ordinary reduction.** The non-evidentiary Forge probe constructed histories that are identical under the declared unperturbed future (`Q0`) and split under the same local intervention (`QI`), but the split is completely predicted before downstream observation by standard residual adaptation shifting the threshold; the subsequent downstream difference follows the fixed ordinary edge/delay. This satisfies TH-001's own falsifier rather than leaving a SparkBrain-specific causal-state residual.
+1. H7 finished FORMAL as `INCONCLUSIVE`, not because the native cut was zero, but because every declared ordinary comparator family failed capacity adequacy. This leaves no clean programme-level mechanism residual: the result is informative about comparator design, but it does not justify a new SparkBrain theory or a same-object repair.
+2. Independent Audit R10 identified a candidate-specific defect in Candidate #35's old negative: the null treatment modifies non-receptor units, while the observed response is supplied only by directly cued untreated receptors 6/7. No treated unit spikes into the declared response surface, and delayed sham changes latent state while leaving the same high-level signature. Thus the old negative establishes only `same declared signature`, not general causal irrelevance of treated queue-free state.
+3. Literature R42 independently sharpens that trigger with perturb-and-probe and output-null precedents: latent state may be causally real but invisible to a chosen readout, while a probe can itself reorganize state. A fresh question therefore needs prospectively verified treatment-to-readout causal opportunity plus probe-faithfulness controls.
 
-2. **A simpler recurrent-continuation toy adds post-drive activity, but only by closing an explicit recurrent loop.** This is ordinary recurrence, not a new persistence principle. It provides no reason to promote a higher-level mechanism theory.
-
-3. **Candidate #35-adjacent coordinate-null reachability remains non-diagnostic.** Natural histories can separately reach qualitative coordinate pairs such as zero potential with positive adaptation or zero adaptation with nonzero potential, but the full state also records spike count, refractory state, drive and source lineage. This does not establish that the original Candidate #35 synthetic coordinate-null arms were natural counterfactuals, nor does it provide candidate-specific evidence of pernicious intervention divergence. Analyst correctly keeps it deferred/rescue-adjacent.
-
-4. **Literature R41 raises the admissibility bar for any future causal-abstraction theory rather than reviving TH-001.** Unrestricted alignments can make causal abstraction vacuous; off-manifold distance alone does not establish invalidity; intervention-faithful mechanism sparsification is an additional ordinary reduction. Adding these controls now to TH-001 would be a post-hoc repair of a proposal already killed by its frozen discriminator, so this Theory run does not issue a revised TH-001 successor.
-
-5. **Methodology R102 adds only a provenance-metadata exactness requirement.** MAIN bound the correct Analyst commit but persisted a mismatched generation label. This is operational/provenance hygiene and does not create a scientific mechanism or revisit trigger.
+These inputs do not justify a new programme-level Theory mechanism. They do, however, satisfy the explicit Revisit trigger boundary for one terminal object: Candidate #35.
 
 ## THEORY_PROPOSAL
 
 `NO_THEORY_PROPOSAL`.
 
-After removing ordinary recurrence, explicit threshold/adaptation state, fixed edge/delay dynamics, FSA/registers, fading-memory/reservoir explanations, confidence abstention, eligibility/STP/transient state, timing/resource/API effects, and the newly explicit causal-abstraction/sparsification reductions, no new cross-result residual remains that warrants a distinct programme-level Theory object in this generation.
+After ordinary recurrence, explicit leak/adaptation/refractory state, fixed edge/delay, FSA/registers, fading-memory/reservoir/predictive-state, eligibility/three-factor learning, STP/transient synaptic state, timing/resource/API effects and causal-abstraction/sparsification reductions are retained, there is still no cross-result residual that warrants a new SparkBrain mechanism theory. H7 is formally inconclusive and Candidate #35 is a measurement-identifiability problem, not a positive mechanism observation.
 
-A new proposal would currently either:
-- restate TH-001 with extra anti-vacuity safeguards after seeing its negative Forge result;
-- reinterpret a terminal Candidate #34/#35 surface;
-- elevate ordinary recurrence or explicit state variables into a novel principle; or
-- depend on H7's still-unknown FORMAL outcome.
+## REVISIT_PROPOSAL
 
-All four violate the anti-rescue/novelty boundary. Therefore the scientifically preferable output is no proposal.
+- source_candidate: `CANDIDATE_35`
+- original_question: `Whether queue-free subthreshold potential/adaptation state left by a prime causally changes a later cue response on the frozen R100 surface.`
+- original_closure_reason: `Frozen R100 SHAM/POTENTIAL_NULL/ADAPTATION_NULL/JOINT_SUBTHRESHOLD_NULL arms produced the same declared spike/cascade/ignition signature; object was closed terminal SYSTEM with zero confirmatory credit and later deferred to independent re-identification.`
+- new_information: `Independent Audit R10 shows the treatment acts on non-receptors while the observed response is only directly cued untreated receptors 6/7, so causal opportunity from treated state to the declared readout was not demonstrated. Literature R42 supplies independent perturb-and-probe/output-null precedent and a probe-faithfulness bar.`
+- fired_revisit_trigger: `CANDIDATE_SPECIFIC_TREATMENT_TO_READOUT_CAUSAL_OPPORTUNITY_MISMATCH + INDEPENDENT_EXTERNAL_LATENT_STATE_OBSERVABILITY_LITERATURE`
+- why_original_closure_may_no_longer_be_sufficient: `The old negative remains valid on its exact declared signature, but that signature was not shown to be sensitive to the treated substrate. Therefore it cannot close the broader question of whether a queue-free treated non-receptor latent state can become causally output-potent under a prospectively verified readout path.`
+- what_remains_unchanged: `All R100 bytes, frozen contract, old null result, terminal SYSTEM state, zero confirmatory credit, and prohibition on same-object rerun/retune/rescore remain unchanged. No positive priming effect is inferred from the audit or literature.`
+- proposed_fresh_question: `Under a prospectively verified treated-non-receptor-to-readout causal path, can a queue-free latent local state alter a downstream output-potent observable beyond ordinary leak/adaptation/refractory dynamics, STP/transient synaptic state and ordinary recurrence?`
+- strongest_ordinary_reductions: `local leak/adaptation/refractory state; fixed edge/delay; direct receptor drive; STP/transient synaptic state; ordinary recurrence; FSA/register; reservoir/fading-memory/predictive-state; output-null/readout projection; probe-induced reorganization.`
+- minimal_discriminator: `Before any result-bearing test, fix a treated non-receptor substrate and a downstream or direct treated-state observable with demonstrated causal opportunity/sensitivity; use matched probe/context controls; then compare the prospectively fixed latent-state perturbation against ordinary local-state/STP/recurrence reductions. A null is informative only if the treated substrate is verified to have had an opportunity to affect the declared observable. No R100 arm, threshold, cue strength or readout may be tuned from the exposed R100 result.`
+- post_outcome_rescue_risk: `MEDIUM; the source object is result-exposed, so any fresh proposal must be independently specified from Audit R10 + external observability theory and must not optimize conditions to obtain the missing effect.`
+- independence_from_original_result: `CONDITIONAL_YES; the rationale is the independently selected blind audit attack plus external observability literature, but independence is preserved only if no R100 result-responsive tuning, arm reuse as evidence, or old-ID execution occurs.`
+- independence_from_current_main_unknown_outcomes: `YES; H7 is already terminal/consumed and there is no active MAIN unknown outcome.`
+- status: `REVISIT_PROPOSAL`
+
+This is a proposal for later Evidence Analyst adjudication only. It is not a candidate, not a reopen, not evidence, and not execution authority.
 
 ## Terminal relevance scan
 
-The required differential scan was performed against current Analyst Revisit state and all genuinely new information since Theory R1.
-
-- **Candidate #34 / `CLOSED_STRONG`: no trigger.** Audit R9 and current literature continue to strengthen the ordinary local impulse/decay reduction. No new observable, intervention, or independent mechanism weakens the exact closure.
-- **Candidate #35 / `DEFERRED_INDEPENDENT_REIDENTIFICATION`: no trigger.** Coordinate-null natural witnesses do not show that the frozen Candidate #35 null states were full-state natural counterfactuals and do not establish pernicious hidden-path divergence. Literature R41 explicitly makes generic off-manifold concern insufficient. No new natural-state counterfactual capability independently re-identifies the old question.
-- **19 `DORMANT_REVISITABLE` objects: no trigger.** No candidate-specific closure premise was invalidated by the new Theory/Forge/Literature/Methodology information.
-- **Other deferred objects: no trigger.** No new simulator/runtime/API capability removes a known candidate-specific observability or reachability blocker.
-- **H7:** not a Revisit object. It remains current, scientifically READY/QUEUED but operationally blocked before identity/START. This Theory uses no unknown H7 outcome.
-
-`REVISIT_PROPOSAL: null`.
-
-## Prospective boundary for a genuinely fresh Theory
-
-A later Theory generation should not merely repair TH-001. It needs an independently motivated unexplained phenomenon or new canonical result, and should prospectively satisfy at least these reduction conditions before proposing a mechanism:
-- transparent/restricted state abstraction or alignment with null/complexity controls;
-- fixed interventions with hidden-path/divergence faithfulness checks;
-- ordinary local-state, FSA/register, reservoir/predictive-state, eligibility/STP and mechanism-sparsification reductions;
-- downstream consequence beyond microscopic coordinate differences;
-- independence from current H7 unknown outcomes and from terminal-object post-outcome rescue paths.
-
-No Forge/Utility/MAIN execution is suggested or dispatched by this Theory run.
+- Candidate #35: `TRIGGER FIRED` and one bounded `REVISIT_PROPOSAL` emitted above. Old object remains terminal.
+- Candidate #34: no change; exact local impulse/decay reduction remains sufficient.
+- H7: `DORMANT_REVISITABLE`; the INCONCLUSIVE result alone is not a trigger. A future independently developed capacity-adequate comparator capability could be a trigger, but no such independent capability exists now.
+- Other terminal objects: no candidate-specific new literature, observable, instrumentation, simulator/API capability or independent canonical result invalidates their recorded closure reasons in this generation.
 
 ## Knowledge-flow contract
 
@@ -86,44 +77,43 @@ No Forge/Utility/MAIN execution is suggested or dispatched by this Theory run.
 role: THEORY_SYNTHESIS_ARCHITECT
 genuinely_new_information: true
 affected_lines:
-  - TH001_CURRENT_PROPOSAL_DISPOSITION
+  - CAND35_REVISIT_TRIGGER
+  - CAND35_FRESH_QUESTION_OBSERVABILITY
+  - H7_POSTFORMAL_THEORY_BOUNDARY
   - PROGRAMME_THEORY_GENERATION_STATE
-  - CAUSAL_ABSTRACTION_REDUCTION_FLOOR
-  - TERMINAL_REVISIT_DIFFERENTIAL_SCAN
-  - CAND35_REVISIT_TRIGGER_SPECIFICITY
 novelty_or_reduction_impact: >
-  NO_NEW_THEORY_PROPOSAL. TH001'S FROZEN Q0_VS_QI DISCRIMINATOR WAS REDUCED BY ORDINARY
-  ADAPTATION_THRESHOLD_PLUS_FIXED_EDGE_DELAY; NEW LITERATURE TIGHTENS FUTURE THEORY ADMISSIBILITY
-  BUT DOES NOT JUSTIFY A POST_HOC TH001 REPAIR OR ANY TERMINAL REVISIT.
+  NO_NEW_PROGRAMME_THEORY. INDEPENDENT AUDIT R10 PLUS LITERATURE R42 JUSTIFY ONE BOUNDED
+  CAND35 REVISIT PROPOSAL CENTERED ON PROSPECTIVELY VERIFIED TREATMENT_TO_READOUT CAUSAL
+  OPPORTUNITY; THE OLD R100 RESULT AND TERMINAL STATE REMAIN UNCHANGED.
 theory_id: null
 theory_status: NO_THEORY_PROPOSAL
-revisit_proposal: null
-revisit_status: NO_REVISIT_PROPOSAL
+revisit_proposal:
+  source_candidate: CANDIDATE_35
+  status: REVISIT_PROPOSAL
+  fresh_question: queue-free treated non-receptor latent state under verified output-potent causal opportunity
+revisit_status: REVISIT_PROPOSAL
 audit_classification: null
 prospective_baselines_or_discriminators:
-  - restricted transparent abstraction/alignment family with null or complexity-matched controls
-  - fixed intervention family with hidden-path/pernicious-divergence faithfulness checks
-  - ordinary local impulse/leak/threshold/adaptation/refractory reduction
-  - FSA/register and fading-memory/reservoir/predictive-state reductions
-  - eligibility/three-factor and transient-synaptic/STP reductions
-  - intervention-faithful mechanism sparsification/folding
-  - downstream functional consequence beyond microscopic coordinate differences
+  - verified treated-substrate-to-readout causal opportunity before interpreting a null
+  - direct treated-state or output-potent downstream observable
+  - matched probe/context controls to separate revelation from probe-induced reorganization
+  - leak/adaptation/refractory plus fixed edge/delay reduction
+  - STP/transient-synaptic-state and ordinary recurrence reduction
+  - FSA/register and reservoir/fading-memory/predictive-state reduction
 questions_for_evidence_analyst:
-  - Keep TH-001 rejected for its current proposal and require any later Theory to be independently motivated rather than a safeguarded post-hoc revision?
-  - Keep Candidate #34 CLOSED_STRONG and Candidate #35 DEFERRED_INDEPENDENT_REIDENTIFICATION absent candidate-specific new information?
+  - Does this trigger-derived fresh question satisfy independence strongly enough for REVISIT_FORGE_TEST, or should it remain dormant until a more independent phenomenon appears?
+  - If admitted for Forge only, require causal-opportunity validation as a precondition before any priming-effect interpretation?
 questions_for_control_brain:
-  - Preserve NO_OP/NO_THEORY_PROPOSAL as an acceptable Theory outcome rather than manufacturing mechanism supply?
-  - Apply Literature R41 anti-vacuity/intervention-faithfulness controls only prospectively to genuinely fresh Theory objects, not frozen H7 or terminal histories?
+  - Keep Candidate #35 old ID permanently terminal and route this proposal only through the Analyst Revisit gate?
+  - Keep H7 same-object terminal/consumed and do not treat comparator inadequacy as a reason to manufacture a new Theory proposal?
 must_not_change_frozen_or_consumed:
-  - all seven officially consumed FORMAL identities and all five authoritative evidence tags
-  - frozen H7 R5 science/controller/runtime/input/scorer/preserver/intervention/comparator semantics
-  - no H7 identity/START/protected result by this role
-  - Candidate #34 preserved D34-Q002 bytes and CLOSED_STRONG terminal state
-  - Candidate #35 preserved five-arm result and DEFERRED_INDEPENDENT_REIDENTIFICATION terminal state
-  - all terminal current objects remain terminal; no old-ID reopening or historical result rewrite
-  - no experiment, Forge/Utility/MAIN dispatch, research merge, immutable-ref mutation, or scheduler change
+  - all eight consumed FORMAL identities and all authoritative H7 control/preserve/freeze/formal/sealed/evidence refs
+  - H7 frozen INCONCLUSIVE result and all frozen comparator/scorer semantics
+  - Candidate #34 terminal CLOSED_STRONG state and preserved result
+  - Candidate #35 R100 preserved bytes, terminal SYSTEM state and zero confirmatory credit
+  - no old-ID reopen, rerun, retune, rescore, candidate creation, Forge/Utility/MAIN dispatch, research merge, immutable-ref mutation or scheduler change
 ```
 
 ## Run close
 
-Role performed: `THEORY_SYNTHESIS_ARCHITECT`. Generation: `THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94`. Genuinely new input was found, but it strengthens reduction/guardrails rather than supporting a new Theory or Revisit proposal. Top implication: the first Theory proposal was falsified at its own bounded discriminator by ordinary state, and the correct next Theory action is to wait for an independently motivated residual rather than repair the proposal post hoc. Affected lines are TH-001 disposition, future Theory admissibility and terminal Revisit specificity. No Utility request exists because Theory has no Utility-dispatch authority. Persistence is limited to the role-separated Theory latest/state/history paths; no scientific refs/results, research/Forge branches, legacy shared latest/state, Utility state, or scheduler are changed.
+Role performed: `THEORY_SYNTHESIS_ARCHITECT`. Generation `THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4`. Genuinely new information exists because H7 is now FORMAL/INCONCLUSIVE and Candidate #35 received an independent candidate-specific causal-opportunity audit trigger strengthened by external observability literature. No new Theory proposal is emitted. One `REVISIT_PROPOSAL` is emitted for later Analyst adjudication only. No Utility request exists. No scientific ref/result, research/Forge branch, terminal status, legacy shared latest/state or scheduler is changed.
