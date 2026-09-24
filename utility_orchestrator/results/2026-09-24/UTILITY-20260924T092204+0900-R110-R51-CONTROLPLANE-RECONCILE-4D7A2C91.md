@@ -14,7 +14,7 @@
 
 ## Assignment / request gate
 
-The Control-owned Utility pointer was re-read immediately before mutation and remains clean schema-v2 `IDLE` with no active assignment. The previous PF-R1 single-run assignment remains terminally acknowledged and CAS-closed. No fresh bounded Utility request was found; the only top-level Utility requests remain historical PF-R1 reconciliation/closure records already satisfied by the current clean pointer.
+The Control-owned Utility pointer was re-read immediately before mutation and remains clean schema-v2 `IDLE` with no active assignment. The previous PF-R1 single-run assignment remains terminally acknowledged and CAS-closed. No fresh bounded Utility request was present at selection time; the pre-existing top-level Utility requests were historical PF-R1 reconciliation/closure records already satisfied by the current clean pointer.
 
 ## Ownership checks immediately before mutation
 
@@ -34,7 +34,12 @@ No MAIN/Relay/Forge ownership collision was found. H7 remains MAIN-critical and 
 2. MAIN's R110 prestart recheck confirms launch-plumbing readiness and generic CI remain green, with no H7 science/controller semantic change. It stopped before identity and START.
 3. The next authorized prerequisite remains non-scientific: establish an authorized one-shot trigger-capable maintainer/external execution surface without changing H7 science/controller/workflow/runtime/input/scorer/preserver/protocol semantics; only after capability exists may a fresh Analyst exact-binding revalidation decide whether one FORMAL launch is GO.
 4. Fast Forge has no fresh independent target. Starting a Utility second Forge lane would be duplicate/idle work and was not selected.
-5. Control R51 observed PRIMARY/Relay enabled earlier in the cycle, while the newer MAIN R110 record says PRIMARY paused its recurring lane because the external capability blocker is complete. This is operational enabled-state drift/ordering only, not a scientific-state change. Utility made no scheduler mutation and created no scheduler request because Control already tracks repeated enabled-state drift as an operational watch item.
+5. Control R51 observed PRIMARY/Relay enabled earlier in the cycle, while the newer MAIN R110 record says PRIMARY paused its recurring lane because the external capability blocker is complete. This is operational enabled-state drift/ordering only, not a scientific-state change. Utility made no scheduler mutation.
+6. A control-plane metadata mismatch was found: authoritative Analyst latest/state/history expose R110 as `EVA-20260924T085900+0900-R110-CONVERGED-NOOP`, while the newer MAIN R110 lease cites the same Analyst commit but names `EVA-20260924T085933+0900-R110-H7-OPBLOCK-EXT-MISALIGNED-NOOP`. No matching durable `085933` R110 generation exists in the inspected Analyst latest/state/history. Because MAIN is still stopped before identity/START, this has not affected scientific execution.
+
+## Request created
+
+Append-only request `utility_orchestrator/requests/UTILREQ-20260924T092204+0900-R110-MAIN-ANALYST-GENERATION-METADATA-RECONCILIATION.md` was created for Control. It asks that future MAIN/Relay handoffs carry the exact durable Analyst generation ID plus exact commit consistently, and that the unmatched `085933` string not be treated as FORMAL authority. It authorizes no science or launch action and does not request rewriting historical mailbox records.
 
 ## Forge metrics
 
@@ -49,11 +54,11 @@ No MAIN/Relay/Forge ownership collision was found. H7 remains MAIN-critical and 
 ## Actions / disposition
 
 - implementation: none
-- scientific diagnostic: none beyond read-only authority/ownership reconciliation
+- diagnostic: read-only authority/ownership/control-plane reconciliation
 - Forge disposition: `NO_OP`; no Utility Forge object created
-- request created: none
-- stop reason: `COMPLETED_READ_ONLY_RECONCILIATION_NO_INDEPENDENT_MUTATING_TASK`
-- follow-up: remain clean IDLE; do not create H7 launch tags, identities, or result-bearing workflow dispatch; Control may reconcile scheduler enabled-state drift on its own authority; await authorized external trigger capability and subsequent fresh Analyst exact-binding gate.
+- request created: `UTILREQ-20260924T092204+0900-R110-MAIN-ANALYST-GENERATION-METADATA-RECONCILIATION`
+- stop reason: `COMPLETED_READ_ONLY_RECONCILIATION_METADATA_MISMATCH_ESCALATED_NONSCIENTIFICALLY`
+- follow-up: remain clean IDLE; do not create H7 launch tags, identities, or result-bearing workflow dispatch; Control should reconcile the MAIN/Analyst generation metadata before any later FORMAL gate and may separately reconcile scheduler enabled-state drift on its own authority; await authorized external trigger capability and subsequent fresh Analyst exact-binding gate.
 
 ## Hard-floor compliance
 
