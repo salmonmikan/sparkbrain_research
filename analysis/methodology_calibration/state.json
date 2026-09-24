@@ -1,26 +1,27 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-24T19:20:31+09:00",
+  "timestamp": "2026-09-24T20:20:00+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260924T192031+0900-R113-8C4F2D11",
-    "sequence": 113,
+    "generation_id": "METHCAL-20260924T202000+0900-R114-D7A31C5E",
+    "sequence": 114,
     "material_change": true,
-    "material_change_reason": "R122_EXPLICIT_ANALYTIC_KILL_ATTRIBUTION_PLUS_R43_PROSPECTIVE_COALITIONAL_ATTRIBUTION_BAR_PLUS_CAND35_RAW_REF_RESOLUTION_DISCREPANCY",
-    "supersedes_generation_id": "METHCAL-20260924T182800+0900-R112-5E7C1A42",
+    "material_change_reason": "R123_REVISIT_PROPOSAL_CLASSIFICATION_VS_POST_PROBE_OUTCOME_SEMANTICS_RESOLVED_WITH_AUTHORITATIVE_TAG_ENFORCEMENT_RISK_REMAINING",
+    "supersedes_generation_id": "METHCAL-20260924T192031+0900-R113-8C4F2D11",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "persistence": {
-    "history_create_commit": "e2288673882e0ced8c22fb49b46cd7b986209bf0",
-    "latest_update_commit": "e9955aeb81ad7c4e3a623a9df58067bca62e568d"
+    "history_path": "analysis/methodology_calibration/history/2026-09-24/2020.md",
+    "history_create_commit": "f2e1aca8edd4dca2f4660fce2d9eb3945dc53e62",
+    "latest_update_commit": "d9fa7ab9f553e12a2f236102a158d48a6678884f"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260924T182800+0900-R112-5E7C1A42",
-      "branch_head_before_r113_persistence": "2e7ba7d59a96fafd16e6b6c1b058517ad732549c"
+      "generation_id": "METHCAL-20260924T192031+0900-R113-8C4F2D11",
+      "branch_head_before_r114_persistence": "b54b0806d06236f3843841abd8930eb11a7ad745"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260924T190300+0900-R122-R43-PROSPECTIVE-ATTRIBUTION-GATE",
-      "branch_head": "18ffc338feebc74fd0d4be0f560ceb2757c7c507"
+      "generation_id": "EVA-20260924T195916+0900-R123-METH-R113-POSTPROBE-CLOSURE",
+      "branch_head": "f03f3a07594bc944169daf373b5836cd87e83e26"
     },
     "control_brain": {
       "generation_id": "CTRL-20260924T175817+0900-R60-CAND35-REVISIT-FORGE-KILL",
@@ -35,58 +36,63 @@
       "history_commit": "c4630889131997b13f703801fc94c6f049ad536b"
     },
     "main_orchestrator": {
-      "generation_id": "MAIN-20260924T185301+0900-RELAY-R124-WAITING-NO-EXECUTABLE-CANONICAL-SCIENCE",
-      "commit": "949f919a35122425ee83c3cb70d6da620f172dae",
-      "scientific_execution_authority": false
+      "generation_id": "MAIN-20260924T191214+0900-PRIMARY-R125-R43-GATE-CAND35-PRESERVE-AUDIT-NO-CANONICAL-ACTION",
+      "scientific_execution_authority": false,
+      "allocated_canonical_object": null
     },
     "fast_forge": {
-      "generation_id": "FORGE-20260924T183750+0900-R121-R43-NOOP",
-      "commit": "3e7d1b7ebc996b4e2b349114eddf3ec31d4343a7",
+      "generation_id": "FORGE-20260924T193801+0900-R122-R113-NOOP",
+      "commit": "344142e64ed51f514b4d12d127ad94cad2abeeec",
       "candidate_specific_probe_commit": "58b6f3f05c56232ec4913d48635bd26641d73fe5",
       "exact_branch_execution_completed": false,
       "analytic_static_kill": true
     },
     "utility": {
-      "generation_id": "UTILITY-20260924T182413+0900-R121-RVT35-POST-FORGE-RECONCILE-F3A71C28",
-      "commit": "3ee0c6d81cd4cc26f16a39c4f041e4182086826b"
+      "generation_id": "UTILITY-20260924T192650+0900-R122-R43-PROSPECTIVE-GATE-RECONCILE-B61C4E9A",
+      "commit": "48804cba7ea30d86e51aaf3a8ccdfe5ced33ecbe",
+      "status": "IDLE_NON_AUTHORIZING"
     },
     "repository_steward": {
-      "generation_id": "STEWARD-20260924T135000+0900-G15-9F3C6A21",
-      "branch_head": "72fd00050786e41f1accae6a36efd9752183cd36"
+      "generation_id": "STEWARD-20260924T195000+0900-G16-4E71C2B9",
+      "branch_head": "3232ec8921a640de7ba4a0e432d2cb647fbfc506"
     }
   },
   "authoritative_refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "authoritative_tag_policy_document": "docs/AUTHORITATIVE_TAGS.md",
     "authoritative_tag_policy_blob": "05905e23108722d759a06b226421fd6bbae93e38",
-    "claims_register_blob": "b0d5e7cb134f0b784ab3b46218d640bbfdbc148f",
     "h7_identity": "h7-r5-285a3a206b34c5982b9d4045",
     "h7_result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
     "h7_official_outcome": "INCONCLUSIVE",
     "h7_development_state": "CONSUMED_ONE_WAY",
     "h7_terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
+    "h7_formal_workflow_run_id": 35951118916,
+    "h7_formal_workflow_attempt": 1,
     "h7_evidence_ref_object_type": "commit_LIGHTWEIGHT_TAG",
     "policy_conforming_annotated_evidence_identity_count": 5,
     "repository_evidence_ref_count_including_h7": 6,
+    "active_repository_ruleset_count": 1,
+    "authoritative_tag_namespace_protection_observed": false,
     "candidate35": {
       "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
       "claim_ceiling": "SYSTEM",
       "revisit_status": "DEFERRED_INDEPENDENT_REIDENTIFICATION",
       "confirmatory_credit": 0,
-      "historical_revisit_decision": "REVISIT_FORGE_TEST",
-      "post_probe_disposition": "FORGE_KILLED_NO_SUCCESSOR_RETURN_TO_DEFERRED_INDEPENDENT_REIDENTIFICATION",
-      "designated_current_revisit_decision_present": false,
-      "probe_id": "RVT35-FORGE-001",
-      "forge_disposition": "FORGE_DEAD_END",
+      "historical_revisit_proposal_decision": "REVISIT_FORGE_TEST",
+      "historical_proposal_classification_count": 1,
+      "post_probe_outcome": "FORGE_KILLED_NO_SUCCESSOR_RETURN_TO_DEFERRED_INDEPENDENT_REIDENTIFICATION",
+      "current_trigger_authority": "NONE_EXHAUSTED",
+      "historical_revisit_forge_test_is_live_authority": false,
       "fresh_successor_created": false,
       "fresh_candidate_id_allocated": false,
       "resolvable_raw_ref": "raw/cand35-r100-onebatch-20260923",
       "raw_commit": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
-      "preserve_ref_currently_resolves": false,
+      "historical_preserve_ref_currently_resolves": false,
       "raw_commit_preserve_mode": "EXCLUSIVE_CREATE_BEFORE_RETURN"
     }
   },
-  "overall_classification": "MIXED_CALIBRATION",
+  "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
+  "classification_rationale": "SCIENTIFIC_DEVELOPMENT_FORMAL_REVISIT_AND_CLAIM_SCOPE_GATES_ARE_CURRENTLY_WELL_CALIBRATED; R123_RESOLVES_POST_FORGE_ENUM_AMBIGUITY; REMAINING_OBSERVED_PERMISSIVENESS_IS_AUTHORITATIVE_EVIDENCE_PUBLICATION_WHERE_H7_ENTERED_AUTHORITATIVE_NAMESPACES_AS_LIGHTWEIGHT_TAGS_AND_TAG_NAMESPACES_LACK_SERVER_SIDE_PROTECTION",
   "gate_classifications": {
     "hard_scientific_integrity_floor": "KEEP",
     "development_phase_semantics": "KEEP",
@@ -98,28 +104,30 @@
     "formal_one_way_integrity": "KEEP",
     "raw_before_score": "KEEP",
     "preserve_before_read": "KEEP",
-    "exact_binding": "KEEP",
+    "exact_execution_binding": "KEEP",
     "post_formal_terminal_absorbency": "KEEP",
     "authoritative_tag_form_and_provenance": "TIGHTEN",
+    "authoritative_tag_namespace_server_side_protection": "TIGHTEN",
     "candidate35_development_provenance_ref_resolution": "CLARIFY",
     "fresh_system_to_mechanism_successor_contract": "KEEP",
     "terminal_revisit_orthogonality": "KEEP",
     "revisit_trigger_detection": "KEEP",
     "revisit_rescue_laundering_prevention": "KEEP",
-    "revisit_trigger_to_proposal_liveness": "KEEP",
-    "revisit_proposal_adjudication": "KEEP",
+    "revisit_one_proposal_one_decision_classification": "KEEP",
+    "revisit_post_probe_outcome_separate_from_proposal_decision": "KEEP",
     "revisit_forge_new_trigger_only_scope": "KEEP",
     "revisit_forge_prospective_case_binding": "KEEP",
     "revisit_forge_ordinary_reduction_kill_validity": "KEEP",
     "revisit_forge_exact_execution_vs_analytic_kill_reporting": "KEEP",
-    "post_forge_revisit_decision_enum_closure": "CLARIFY",
     "revisit_canonicalization": "INSUFFICIENT_EVIDENCE",
     "revisit_bootstrap_coverage": "KEEP",
+    "revisit_bootstrap_conservatism": "KEEP",
     "r43_unique_privileged_responsibility_attribution": "SPLIT_BY_CLAIM_TYPE",
     "r43_surrogate_mechanism_discriminator_adequacy": "SPLIT_BY_CLAIM_TYPE",
     "theory_canonical_separation": "KEEP",
     "forge_canonical_separation": "KEEP",
     "protected_evaluation_validity": "KEEP",
+    "claim_ceiling_enforcement": "KEEP",
     "mechanism_supply_health": "CLARIFY",
     "pass_reachability_without_standard_relaxation": "KEEP"
   },
@@ -127,16 +135,16 @@
     "1": "YES_DEVELOPMENT_PHASE_SEMANTICS_REMAIN_CONSISTENT_OPEN_0_RESULT_EXPOSED_34_CONSUMED_ONE_WAY_1",
     "2": "NO_HARD_CYCLE3_CAP_OBSERVED",
     "3": "YES_SCIENCE_INVARIANT_AND_SCIENCE_AFFECTING_CHANGES_REMAIN_DISTINCT",
-    "4": "YES_AUDIT_THEORY_REVISIT_UTILITY_FORGE_AND_LITERATURE_OBSERVATIONS_RETAIN_ZERO_INDEPENDENT_CONFIRMATORY_CREDIT",
+    "4": "YES_DEVELOPMENT_AUDIT_THEORY_REVISIT_UTILITY_FORGE_AND_LITERATURE_OBSERVATIONS_RETAIN_ZERO_INDEPENDENT_CONFIRMATORY_CREDIT",
     "5": "YES_H7_FORMAL_ONE_WAY_INTEGRITY_UNCHANGED_TERMINAL_INCONCLUSIVE_NO_RERUN_RETUNE_RESCORE_REPAIR",
     "6": "NO_MANUFACTURED_SUCCESSOR_AND_NO_CURRENT_DEMONSTRATED_LEGITIMATE_SUCCESSOR_SUPPRESSED",
-    "7": "YES_PREFORMAL_REMAINS_GENUINE_DEVELOPMENT_R43_MUST_REMAIN_CLAIM_SPECIFIC_NOT_ITERATION_BAN",
+    "7": "YES_PREFORMAL_REMAINS_GENUINE_DEVELOPMENT_R43_IS_CLAIM_SPECIFIC_NOT_ITERATION_BAN",
     "8": "YES_ALL_35_CURRENT_OBJECTS_REMAIN_TERMINAL_AND_REVISIT_METADATA_IS_ORTHOGONAL",
-    "9": "YES_CAND35_COMPLETED_INDEPENDENT_TRIGGER_TO_BOUNDED_FORGE_KILL_AND_RETURNED_TO_DEFERRED",
+    "9": "YES_CAND35_DEMONSTRATES_INDEPENDENT_TRIGGER_TO_BOUNDED_FORGE_KILL_AND_RETURN_TO_DEFERRED",
     "10": "YES_NO_OLD_ID_RERUN_RETUNE_RESCORE_INHERITED_CREDIT_REPEATED_SEARCH_OR_SUCCESSOR_LAUNDERING",
-    "11": "YES_RVT35_TESTED_NEW_CAUSAL_OPPORTUNITY_TRIGGER_AND_R122_NOW_EXPLICITLY_LABELS_ANALYTIC_STATIC_KILL_NOT_EXACT_BRANCH_EXECUTION",
+    "11": "YES_RVT35_TESTED_THE_NEW_CAUSAL_OPPORTUNITY_RATIONALE_NOT_THE_OLD_R100_FAILURE_AND_IS_EXPLICITLY_REPORTED_AS_ANALYTIC_STATIC_KILL_NOT_EXACT_BRANCH_EXECUTION",
     "12": "YES_TERMINAL_LEDGER_35_OF_35_COMPLETE_AND_CONSERVATIVE_DISTRIBUTION_1_20_14_0",
-    "13": "YES_PASS_REMAINS_REACHABLE_WITH_CLAIM_BURDEN_SCALED_TO_CLAIM_SCOPE_WITHOUT_WEAKER_EVIDENCE_STANDARDS"
+    "13": "YES_PASS_REMAINS_REACHABLE_WITH_CLAIM_BURDEN_SCALED_PROSPECTIVELY_TO_CLAIM_SCOPE_WITHOUT_WEAKER_EVIDENCE_STANDARDS"
   },
   "development_calibration": {
     "status": "WELL_CALIBRATED",
@@ -147,13 +155,13 @@
     },
     "same_identity_retry_allowed": false,
     "post_outcome_same_object_science_repair_allowed": false,
-    "r43_must_not_block_preformal_iteration": true
+    "cycle3_is_automatic_terminal_cap": false
   },
   "preformal_calibration": {
     "status": "WELL_CALIBRATED",
     "repeated_development_observations_confirmatory_credit": 0,
     "hidden_second_formal_gate_observed": false,
-    "r43_attribution_requirement_scope": "CANONICAL_CLAIM_SPECIFIC_NOT_UNIVERSAL_PRE_FORMAL"
+    "r43_attribution_requirement_scope": "CANONICAL_CLAIM_SPECIFIC_NOT_UNIVERSAL_PREFORMAL"
   },
   "revisit_calibration": {
     "legacy_bootstrap_population": 34,
@@ -164,39 +172,41 @@
       "DEFERRED_INDEPENDENT_REIDENTIFICATION": 14,
       "REVISIT_TRIGGERED": 0
     },
+    "systematic_closed_strong_defaulting_observed": false,
     "candidate35_old_object_remains_terminal": true,
     "candidate35_trigger_caught": true,
     "candidate35_new_trigger_probe_scope_valid": true,
-    "candidate35_prospective_case_bound_before_durable_result": true,
     "candidate35_exact_branch_executed": false,
     "candidate35_analytic_static_ordinary_reduction_kill_valid": true,
-    "candidate35_execution_attribution_explicit": true,
-    "candidate35_historical_revisit_decision": "REVISIT_FORGE_TEST",
-    "candidate35_post_probe_disposition_present": true,
-    "candidate35_designated_current_decision_enum_present": false,
+    "candidate35_historical_proposal_decision": "REVISIT_FORGE_TEST",
+    "candidate35_proposal_classification_count": 1,
+    "candidate35_post_probe_outcome_present": true,
+    "candidate35_current_trigger_authority": "NONE_EXHAUSTED",
     "candidate35_fresh_successor_created": false,
     "candidate35_inherited_confirmatory_credit": 0,
     "canonicalization_observed": false
   },
-  "moving_goalpost_rescue_risk": "LOW_CURRENT_TRIGGER_EXHAUSTED_NO_RESULT_RESPONSIVE_SEARCH_REMAINING_SEMANTIC_RISK_IF_HISTORICAL_REVISIT_FORGE_TEST_IS_MISREAD_AS_LIVE_AUTHORITY",
-  "over_terminalization_risk": "LOW_TO_MODERATE_DEFERRED_REMAINS_REOPENABLE_ONLY_BY_GENUINELY_NEW_INFORMATION_RISK_RISES_IF_R43_IS_GENERALIZED_BEYOND_BROAD_RESPONSIBILITY_CLAIMS",
-  "false_positive_risk": "LOW_SINGLE_CUT_TO_UNIQUE_RESPONSIBILITY_INFERENCE_IS_NOW_EXPLICITLY_GUARDED_BY_R43_CLAIM_SPECIFIC_ATTRIBUTION_BAR",
-  "false_negative_risk": "LOW_TO_MODERATE_NO_LEGITIMATE_CURRENT_SUCCESSOR_DEMONSTRATED_BUT_OVERBROAD_R43_APPLICATION_COULD_SUPPRESS_NARROW_SYSTEM_OR_PRE_FORMAL_WORK",
-  "claim_type_findings": "SYSTEM_MECHANISM_BOUNDARY_INTACT_R43_SHOULD_TIGHTEN_BROAD_UNIQUE_PRIVILEGED_RESPONSIBILITY_ONLY_NOT_NARROW_SYSTEM_EFFECTS",
-  "mechanism_supply_health": "THIN_ZERO_EXECUTABLE_CANONICAL_MECHANISM_DO_NOT_RELAX_GATES_OR_RECYCLE_KILLED_C35_H7_RATIONALES",
-  "pass_reachability": "REACHABLE_PROSPECTIVELY_WITH_CLAIM_SPECIFIC_BURDEN_NARROW_SYSTEM_EFFECTS_DO_NOT_REQUIRE_FULL_COALITIONAL_ATTRIBUTION_BROAD_MECHANISM_RESPONSIBILITY_DOES",
+  "moving_goalpost_rescue_risk": "LOW_CURRENT_TRIGGER_EXHAUSTED_NO_RESULT_RESPONSIVE_SEARCH_OR_RECLASSIFICATION",
+  "over_terminalization_risk": "LOW_CURRENT_LIVE_CAND35_TRIGGER_PATH_DEMONSTRATES_DEFERRED_OBJECTS_CAN_BE_RECONSIDERED_WITHOUT_REOPENING",
+  "false_positive_risk": "LOW_CURRENT_REVISIT_KILL_NO_SUCCESSOR_NO_INHERITED_CREDIT",
+  "false_negative_risk": "LOW_CURRENT_NO_CONCRETE_MISSED_TRIGGER_R43_REMAINS_CLAIM_SCOPED",
+  "authoritative_evidence_publication_risk": "MODERATE_FUTURE_LIGHTWEIGHT_H7_AUTHORITATIVE_TAG_PRECEDENT_AND_NO_SERVER_SIDE_TAG_NAMESPACE_RULESET",
+  "claim_type_findings": "SYSTEM_MECHANISM_BOUNDARY_INTACT_R43_TIGHTENS_BROAD_UNIQUE_PRIVILEGED_RESPONSIBILITY_ONLY_NOT_NARROW_SYSTEM_EFFECTS_OR_PREFORMAL_ITERATION",
+  "mechanism_supply_health": "FRAGILE_ZERO_EXECUTABLE_CANONICAL_MECHANISM_DO_NOT_RELAX_GATES_OR_RECYCLE_KILLED_C35_OR_H7_RATIONALES",
+  "pass_reachability": "REACHABLE_PROSPECTIVELY_WITH_CLAIM_SPECIFIC_BURDEN_NARROW_SYSTEM_EFFECTS_DO_NOT_REQUIRE_FULL_COALITIONAL_ATTRIBUTION_BROAD_MECHANISM_RESPONSIBILITY_MAY",
   "prospective_recommendations": [
-    "Preserve R122's explicit analytic/static-kill versus exact-execution distinction and do not rerun RVT35 merely for execution fidelity.",
-    "Add an append-only current REVISIT_REJECTED or REVISIT_DORMANT decision for the exhausted Candidate #35 trigger while preserving historical REVISIT_FORGE_TEST and old terminal state.",
-    "Keep R43 interaction-aware attribution split by claim type: coalitional/multivariate attribution for broad unique/privileged responsibility, not every narrow SYSTEM effect or all PRE_FORMAL exploration.",
-    "Require ordinary-dynamics and held-out intervention-response adequacy when a surrogate is used as a mechanism discriminator or independent comparator capability, not for descriptive/predictive SYSTEM use.",
-    "Use Candidate #35's resolvable raw ref and exact commit in future handoffs; do not recreate a missing preserve ref to cosmetically align history.",
-    "Keep H7 identity, outcome, result commit and all existing refs immutable; enforce annotated provenance-bearing tags plus peeled-target verification prospectively for future FORMAL evidence.",
-    "Do not weaken gates because canonical MECHANISM supply is zero."
+    "Preserve Evidence Analyst R123 semantics: exactly one REVISIT decision classification per proposal and separate append-only post-probe outcome records.",
+    "Require current revisit status, trigger authority and probe outcome before acting; historical REVISIT_FORGE_TEST alone is never live execution authority.",
+    "Keep Candidate #35 terminal/deferred and do not rerun, retune, rescore, search around or rename RVT35-FORGE-001; later proposals require genuinely new independent information.",
+    "Keep R43 interaction-aware attribution split by claim type and stage; do not turn it into a hidden second FORMAL for narrow SYSTEM or PRE_FORMAL work.",
+    "Use Candidate #35's resolvable raw ref and exact commit in future provenance handoffs; do not recreate the missing preserve ref.",
+    "Keep H7 identity, outcome, result commit and existing refs immutable; for future FORMAL evidence require annotated provenance-bearing tag creation plus peeled-target verification before policy-conforming evidence counting.",
+    "Route any server-side authoritative tag namespace protection through normal repository governance; this auditor does not mutate rulesets.",
+    "Do not weaken scientific gates because canonical MECHANISM supply is zero."
   ],
   "utility_request": {
     "created": false,
-    "reason": "No additional Utility proposal is warranted; no live methodology calibration question needs new tooling or probing."
+    "reason": "No bounded Utility proposal is warranted; current methodology questions are answerable from existing authoritative repository and control-plane history."
   },
   "hard_floor_confirmation": {
     "auditor_dispatched_experiment": false,
@@ -212,11 +222,11 @@
     "inherited_confirmatory_credit_observed": false,
     "protected_heldout_access_observed": false
   },
-  "confidence": "HIGH_0.98",
+  "confidence": "HIGH_0.99",
   "questions_for_control_analyst": [
-    "Will the exhausted Candidate #35 trigger receive one designated current Revisit decision REVISIT_REJECTED or REVISIT_DORMANT as an append-only event while historical REVISIT_FORGE_TEST remains intact?",
-    "Will R43 remain explicitly split by claim type and stage so coalitional attribution cannot become a hidden second FORMAL gate for PRE_FORMAL or narrow SYSTEM claims?",
-    "Will future handoffs cite the resolvable Candidate #35 raw ref/commit instead of the non-resolving historical preserve label?",
-    "Will future FORMAL evidence require annotated authoritative tags plus peeled-SHA verification while leaving H7's historical lightweight refs untouched?"
+    "Will future Revisit consumers preserve one-proposal-one-decision semantics and store Forge outcomes separately without treating historical REVISIT_FORGE_TEST as live authority?",
+    "Will current trigger authority/status/outcome be required before any repeated Forge action?",
+    "Will R43 remain explicitly split by claim type and stage so it cannot become a hidden second FORMAL gate?",
+    "Will future FORMAL evidence fail closed on annotated authoritative-tag creation plus peeled-target verification while leaving H7 historical refs untouched?"
   ]
 }
