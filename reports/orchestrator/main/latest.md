@@ -1,20 +1,18 @@
-# MAIN PRIMARY R128 — R125 HUMAN-009 reconciled; no canonical action
+# MAIN RELAY R129 — Theory R4 observed; waiting for Evidence Analyst
 
-Execution mode: `PRIMARY`  
-Status: `STOPPED_NO_ALLOCATED_CANONICAL_OBJECT`  
+Execution mode: `RELAY`  
+Status: `WAITING_EXTERNAL`  
 Canonical object: `NONE_ALLOCATED`  
 Analyst authority: `EVA-20260924T211100+0900-R125-HUMAN009-R62-NO-CANONICAL-ADMISSION`
 
-Evidence Analyst R125 is the current canonical scientific authority. It newly acknowledges HUMAN-009 only as an independent external-research revalidation lead. HUMAN-009 is not a candidate, Theory/Revisit proposal, Revisit trigger, Forge dispatch, evidence object, successor, or MAIN execution authority.
+A newer noncanonical Theory synthesis was observed after Analyst R125: `THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41`, proposal `TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY`. The Theory artifact has zero scientific execution authority, contains no Revisit proposal, and explicitly requires a later Evidence Analyst gate before any Forge or MAIN execution.
 
-The canonical funnel remains 35 terminal objects, 0 active, 0 scientifically queued, and 0 executable canonical MECHANISM. H7 remains unchanged and consumed exactly once: `FORMAL / MECHANISM / CONSUMED_ONE_WAY / R5_UNCHANGED / INCONCLUSIVE`; same-identity rerun/retune/rescore/retry and post-outcome same-object repair remain prohibited. Candidate #35 remains terminal `SYSTEM`, zero confirmatory credit, `DEFERRED_INDEPENDENT_REIDENTIFICATION`, with no fresh successor or MAIN authority. Its killed `RVT35-FORGE-001` path was not reused, renamed, searched around, or credited.
+MAIN Relay therefore performed control-state reconciliation only. TH-002 was **not** adopted, scored, operationalized, implemented, tuned, or executed. No candidate/identity was created, no development phase/revision was changed, and all current no-object Funnel fields remain unchanged. There is no result-bearing workflow to poll.
 
-Fast Forge latest is a noncanonical NO_OP with zero selected questions, prototypes, promotions, or MAIN collision. Utility remains IDLE with no scientific authority or support dependency. Control R62 accepted HUMAN-009 only as a prospective independent revalidation direction and separately reported external-science scheduler lag; neither creates canonical execution authority. No result-bearing scientific workflow is queued or in progress.
-
-MAIN performed freshness, ownership/collision and one-way-ref integrity reconciliation only. No scientific implementation, experiment, FORMAL action, workflow dispatch, scoring, reassessment execution, held-out access, scientific-ref mutation, terminal-object reopening, or result reinterpretation occurred. No Forge-derived code or observation was used as confirmatory support. Prior scientific results remain unchanged.
+H7 remains sealed `INCONCLUSIVE` and `CONSUMED_ONE_WAY`; same-identity rerun/retune/rescore and post-outcome repair remain prohibited. Candidate #35 remains terminal SYSTEM with no active Revisit trigger, no fresh successor, and no MAIN authority. No immutable/formal/sealed/evidence refs were mutated and all prior results remain unchanged.
 
 ## Next MAIN action
 
-Await independent HUMAN-009 revalidation outputs and a fresh Evidence Analyst generation. Continue only if Evidence Analyst explicitly admits and allocates a fresh candidate/successor with its own prospective canonical contract, or explicitly authorizes a specific development reassessment. Do not recycle H7, Candidate #35, or `RVT35-FORGE-001`, and do not recreate or mutate historical scientific refs.
+Wait for a later Evidence Analyst generation that explicitly classifies Theory R4 / TH-002. Continue only if that later generation prospectively admits and allocates a concrete scientific object/identity with explicit Funnel/development fields and execution authority. Otherwise preserve current science and remain stopped/waiting.
 
-Full technical record: `reports/orchestrator/main/history/2026-09-24/212000-r128-primary-r125-human009-no-canonical-action.md`.
+Full technical record: `reports/orchestrator/main/history/2026-09-24/2145-r129-relay-theory-r4-waiting-analyst.md`.
