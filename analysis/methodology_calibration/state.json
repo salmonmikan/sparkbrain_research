@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-24T08:18:57+09:00",
+  "timestamp": "2026-09-24T09:17:17+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260924T081857+0900-R101-4C7A2D91",
-    "sequence": 101,
-    "material_change": false,
-    "material_change_reason": "NO_MATERIAL_CALIBRATION_CHANGE; ANALYST_R109_CONVERGED_NOOP_AND_FORGE_R108_R100_NOOP; AUTHORITATIVE_MAIN_EVIDENCE_H7_REFS_UNCHANGED; NO_REVISIT_TRIGGER_OR_FORMAL_CONSUMPTION",
-    "supersedes_generation_id": "METHCAL-20260924T072143+0900-R100-2F6C9D71",
+    "generation_id": "METHCAL-20260924T091717+0900-R102-8D31C7A4",
+    "sequence": 102,
+    "material_change": true,
+    "material_change_reason": "MAIN_R110_BINDS_CORRECT_ANALYST_COMMIT_BUT_PERSISTS_MISMATCHED_NONEXISTENT_ANALYST_GENERATION_LABEL; SCIENCE_INVARIANT_PROVENANCE_METADATA_DEFECT_ONLY; FORMAL_HARD_FLOOR_REVISIT_THEORY_FORGE_AND_CANONICAL_SCIENCE_UNCHANGED",
+    "supersedes_generation_id": "METHCAL-20260924T081857+0900-R101-4C7A2D91",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260924T072143+0900-R100-2F6C9D71",
-      "branch_head_before_run": "8b82ae3c2a9f37cf45e463675dc458edf2426fb2",
+      "generation_id": "METHCAL-20260924T081857+0900-R101-4C7A2D91",
+      "branch_head_before_run": "cbba92a23462ff20fde24db60205ebfdb2bac250",
       "overall_classification": "WELL_CALIBRATED",
       "role": "DESIGNATED_PRIOR_METHODOLOGY_HISTORY_READ_FIRST"
     },
@@ -20,43 +20,45 @@
       "id": "HUMAN-20260922-005",
       "role": "HUMAN_PROCESS_DIRECTIVE_NOT_SCIENTIFIC_EVIDENCE"
     },
-    "control_brain": {
-      "generation_id": "CTRL-20260924T065014+0900-R49-A7D4C2E1",
-      "branch_head": "8045fd598d24f832ca4b94a526c2efe6bb59f924",
-      "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH"
-    },
     "evidence_analyst": {
-      "generation_id": "EVA-20260924T075935+0900-R109-H7-OPBLOCK-CONVERGED-NOOP",
-      "branch_head": "b36c7caeb345f4692d901d05562b57b625711d4b",
+      "generation_id": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP",
+      "branch_head": "7bc866c6d4dd1d723156345d056fadb027a85c1c",
       "material_change": false,
       "role": "DESIGNATED_CANONICAL_GATE_HISTORY"
     },
+    "control_brain": {
+      "generation_id": "CTRL-20260924T091000+0900-R51-6D2A8F41",
+      "branch_head": "b938a9f7356267dceadbe14d60ca4481cbe37d38",
+      "role": "DESIGNATED_CONTROL_HISTORY_MAILBOX_NOT_SCIENTIFIC_SOURCE_OF_TRUTH"
+    },
     "main_primary": {
-      "generation_id": "MAIN-20260924T071400+0900-PRIMARY-H7-R108-LAUNCH-CAPABILITY-WAITING-EXTERNAL",
-      "branch_head": "09a5ca04a7d9262015b826bec680e33e7454eadf",
-      "role": "NONRESULT_PRESTART_OPERATIONAL_CAPABILITY_OBSERVATION_VIA_CURRENT_ANALYST"
-    },
-    "external_theory": {
-      "generation_id": "THEORY-20260924T032738+0900-R1-INTERVENTION-STABLE-QUOTIENT-7B4E2C91",
-      "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
-      "current_analyst_disposition": "THEORY_REJECTED_CURRENT_PROPOSAL_ZERO_CREDIT",
-      "role": "NON_EVIDENTIARY_NONCANONICAL_THEORY_INPUT"
-    },
-    "external_literature": {
-      "generation_id": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71",
-      "branch_head": "1b91b18460e552df36cbdc3ef050e38ffd72342a",
-      "role": "READ_ONLY_EXTERNAL_REDUCTION_AND_REVISIT_TRIGGER_INPUT"
+      "generation_id": "MAIN-20260924T091500+0900-PRIMARY-H7-R110-LAUNCH-CAPABILITY-WAITING-EXTERNAL",
+      "branch_head": "409416500bbdc080409e74259fde461202cbcdfe",
+      "role": "NONRESULT_PRESTART_OPERATIONAL_CAPABILITY_OBSERVATION"
     },
     "fast_forge": {
-      "generation_id": "FORGE-20260924T073626+0900-NOOP-R108-R100-NO-GATED-PROBE",
-      "branch_head": "e163d1a2825ff4df23ed68863b36f4d93f201956",
-      "methodology_generation_consumed": "METHCAL-20260924T072143+0900-R100-2F6C9D71",
+      "generation_id": "FORGE-20260924T083726+0900-NOOP-R109-R101-CONVERGED",
+      "exact_persisted_commit": "6ecce79f76b54b61b873a6e2a385b3f84055099c",
+      "methodology_generation_consumed": "METHCAL-20260924T081857+0900-R101-4C7A2D91",
       "role": "NONCANONICAL_ZERO_CREDIT_SELECTION_NOOP"
+    },
+    "external_literature_theory_revisit": {
+      "branch_head": "1b91b18460e552df36cbdc3ef050e38ffd72342a",
+      "literature_generation_id": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71",
+      "theory_id": "TH-001-INTERVENTION-STABLE-CAUSAL-QUOTIENT",
+      "role": "READ_ONLY_NONCANONICAL_INPUT"
     }
   },
   "authoritative_refs": {
     "stable_main": "ebed6abfa941c83b36d2e3bddd04e7c5fb0dbe9d",
     "evidence_tag_count": 5,
+    "evidence_tag_objects": {
+      "evidence/c19-official-v4-c19-external-v2-official-v4": "4d6c0bd9a6c06c17352941d3fa730502e72b8540",
+      "evidence/c19-r2-fsa-state-tracker-c19-r2-fsa-state-tracker-official-v1": "82b88f3e2ad524fed8b72300dcba46053c1f2c7e",
+      "evidence/h5-event-routing-work-reduction-h5-event-routing-work-reduction-official-v1": "e7d99cc806206ac27ced225d4779c9fc5bb67ff5",
+      "evidence/ni01-no-ignition-selective-prediction-ni01-no-ignition-selective-prediction-official-v1": "185b741e69ea8a0ce0d076153d36e9296a748765",
+      "evidence/pd01-long-history-fading-memory-pd01-long-history-fading-memory-official-v1": "e4c4e6428d8ef9e09e92cae231041de0788162e2"
+    },
     "h7_control_refs": 0,
     "h7_preserve_refs": 0,
     "h7_launch_tags": 0,
@@ -107,9 +109,14 @@
       "same_object_rerun_retune_rescore": "STOP",
       "same_object_system_to_mechanism": "STOP"
     },
+    "repository_rulesets": {
+      "active_branch_rulesets_observed": 1,
+      "active_tag_rulesets_observed": 0,
+      "evidence_ref_mutation_observed": false
+    },
     "scientific_source_of_truth": "STABLE_MAIN_PLUS_INDEPENDENTLY_FETCHED_EVIDENCE_AND_EXACT_RESEARCH_REFS; OPS_MAILBOXES_ARE_CONTROL_HISTORY_ONLY"
   },
-  "audit_result": "NO_MATERIAL_CALIBRATION_CHANGE",
+  "audit_result": "MATERIAL_CALIBRATION_UPDATE_PROVENANCE_METADATA_EXACTNESS",
   "overall_classification": "WELL_CALIBRATED",
   "gate_classifications": {
     "hard_integrity_policy": "KEEP",
@@ -124,6 +131,7 @@
     "scientific_readiness_queue_orthogonal_to_executor_capability": "KEEP",
     "effective_executability_requires_verified_trigger_capability": "KEEP",
     "scientific_formal_authority_exact_binding": "KEEP",
+    "consumer_input_generation_id_exact_commit_metadata_consistency": "TIGHTEN",
     "fresh_formal_one_way_transition": "INSUFFICIENT_EVIDENCE",
     "revisit_axis_orthogonal_to_terminal_state": "KEEP",
     "revisit_ledger_bootstrap_coverage": "KEEP",
@@ -136,7 +144,6 @@
     "revisit_canonicalize_full_gate": "INSUFFICIENT_EVIDENCE",
     "theory_canonical_separation": "KEEP",
     "theory_forge_zero_credit_bounded_surface": "KEEP",
-    "theory_forge_probe_fidelity_to_predeclared_discriminator": "KEEP",
     "theory_rejection_after_contract_faithful_ordinary_reduction": "KEEP",
     "forge_methodology_freshness_before_selection": "KEEP",
     "fast_forge_canonical_separation": "KEEP",
@@ -144,17 +151,28 @@
     "mechanism_supply_health": "CLARIFY",
     "pass_reachability_without_standard_relaxation": "KEEP"
   },
+  "new_finding": {
+    "id": "MAIN_R110_ANALYST_GENERATION_LABEL_MISMATCH",
+    "classification": "SCIENCE_INVARIANT_REPAIR",
+    "main_recorded_generation_id": "EVA-20260924T085933+0900-R110-H7-OPBLOCK-EXT-MISALIGNED-NOOP",
+    "main_bound_analyst_commit": "7bc866c6d4dd1d723156345d056fadb027a85c1c",
+    "authoritative_generation_id_at_bound_commit": "EVA-20260924T085900+0900-R110-CONVERGED-NOOP",
+    "scientific_decision_semantics_aligned": true,
+    "formal_identity_or_start_exists": false,
+    "historical_rewrite_recommended": false,
+    "prospective_action": "READ_GENERATION_ID_FROM_EXACT_BOUND_ANALYST_ARTIFACT_AND_FAIL_CLOSED_ON_PAIR_MISMATCH_BEFORE_IDENTITY_START"
+  },
   "development_iteration_calibration": {
     "status": "CONSISTENT_CURRENT_OBJECTS",
     "h7": "RESULT_EXPOSED_R5_UNCHANGED_READY_QUEUED_OPERATIONALLY_BLOCKED_EFFECTIVELY_EXECUTABLE_FALSE",
-    "candidate34": "RESULT_EXPOSED_TERMINAL_LAST_INSPECTED_CHANGE_SCIENCE_INVARIANT_IMPORT_CLEANUP",
-    "candidate35": "RESULT_EXPOSED_TERMINAL_ZERO_CREDIT_LAST_INSPECTED_CHANGE_SCIENCE_INVARIANT_WORKFLOW_PLUMBING",
-    "cycle3": "MANDATORY_REASSESSMENT_NOT_HARD_CAP"
+    "cycle3": "MANDATORY_REASSESSMENT_NOT_HARD_CAP",
+    "new_issue": "PROVENANCE_METADATA_LABEL_ONLY_NOT_SCIENCE_AFFECTING"
   },
   "formal_calibration": {
     "current_integrity": "UNCHANGED_NO_H7_IDENTITY_START_PROTECTED_RESULT_OR_EVIDENCE",
     "scientific_authority": "EXACT_BINDING_ONE_SHOT_RETAINED_BUT_REQUIRES_FRESH_REVALIDATION_AFTER_TRIGGER_CAPABILITY",
-    "operational_observability": "CALIBRATED_R109_EFFECTIVELY_EXECUTABLE_FALSE",
+    "operational_observability": "CALIBRATED_EFFECTIVELY_EXECUTABLE_FALSE",
+    "provenance_observability": "TIGHTEN_GENERATION_ID_COMMIT_PAIR_VALIDATION_BEFORE_START",
     "prospective": "PROVISION_ONLY_MISSING_AUTHORIZED_TRIGGER_CAPABILITY_THEN_FRESH_ANALYST_REVALIDATION_BEFORE_START"
   },
   "theory_forge_calibration": {
@@ -162,7 +180,6 @@
     "canonical_credit": 0,
     "current_proposal_status": "REJECTED_AFTER_CONTRACT_FAITHFUL_ORDINARY_REDUCTION",
     "fresh_forge_generation": "FORGE_NOOP",
-    "fresh_forge_consumed_current_methodology": true,
     "fresh_positive_search_authorized": false,
     "assessment": "CALIBRATED_NOOP_AFTER_PREDECLARED_FALSIFIER_HIT"
   },
@@ -213,13 +230,13 @@
     "moving_goalpost_rescue": "LOW_CURRENT",
     "over_terminalization": "LOW_CURRENT_NO_CONCRETE_MISSED_TRIGGER_OR_SUCCESSOR",
     "formal_integrity": "LOW_CURRENT_FAIL_CLOSED_BEFORE_IDENTITY",
-    "execution_readiness_observability": "LOW_CURRENT_R109_CONSISTENT",
+    "provenance_observability": "LOW_CURRENT_BOUNDED_GENERATION_LABEL_MISMATCH_CORRECT_EXACT_COMMIT",
     "mechanism_supply": "FRAGILE_ONE_SCIENTIFICALLY_QUEUED_ZERO_OPERATIONALLY_TRIGGERABLE"
   },
   "mandatory_questions": {
     "1_development_phase_end_to_end": "YES_CURRENT_CANONICAL_OBJECTS_H7_RESULT_EXPOSED_R5_UNCHANGED",
     "2_cycle3_hard_cap": "NO",
-    "3_repair_classification": "YES_FRESH_INSPECTED_CAND34_AND_CAND35_CHANGES_SCIENCE_INVARIANT_AND_H7_SCIENCE_UNCHANGED",
+    "3_repair_classification": "YES_NEW_MAIN_R110_GENERATION_LABEL_DEFECT_IS_SCIENCE_INVARIANT_PROVENANCE_LOGGING",
     "4_development_observations_independent_credit": "KEPT_ZERO_CREDIT",
     "5_formal_one_way_integrity": "UNCHANGED_NO_H7_IDENTITY_START_PROTECTED_RESULT_EVIDENCE",
     "6_system_to_mechanism_successors": "NO_SAME_OBJECT_MANUFACTURE_NO_CONCRETE_INDEPENDENT_SUCCESSOR_SUPPRESSED",
@@ -234,35 +251,33 @@
   "prospective_recommendations": [
     "KEEP_H7_R5_SCIENCE_CONTROLLER_RUNTIME_INPUT_SCORER_PRESERVER_AND_ONE_WAY_RULES_UNCHANGED",
     "KEEP_READY_QUEUED_SEPARATE_FROM_EXECUTOR_TRIGGER_CAPABLE_FALSE_AND_EFFECTIVELY_EXECUTABLE_FALSE",
-    "AFTER_AUTHORIZED_TRIGGER_CAPABILITY_EXISTS_REQUIRE_FRESH_ANALYST_EXACT_BINDING_REVALIDATION_BEFORE_ANY_IDENTITY_OR_START",
+    "PROSPECTIVELY_REPAIR_MAIN_RELAY_INPUT_GENERATION_METADATA_TO_READ_GENERATION_ID_FROM_EXACT_BOUND_ANALYST_ARTIFACT_DO_NOT_REWRITE_R110_HISTORY",
+    "BEFORE_ANY_IDENTITY_START_REQUIRE_EXACT_ANALYST_COMMIT_AND_ARTIFACT_GENERATION_ID_PAIR_CONSISTENCY_AND_FAIL_CLOSED_ON_MISMATCH",
     "KEEP_CURRENT_TH001_REJECTED_ZERO_CREDIT_AND_DO_NOT_REPEAT_RETUNE_TO_SEARCH_FOR_A_POSITIVE",
     "KEEP_ALL_OLD_TERMINAL_IDS_TERMINAL_AND_REQUIRE_CANDIDATE_SPECIFIC_INDEPENDENT_TRIGGER_FOR_REVISIT",
     "REQUIRE_REVISIT_FORGE_TO_TEST_ONLY_THE_NEW_TRIGGER_NOT_RERUN_OR_RETUNE_THE_OLD_FAILURE",
-    "REQUIRE_CANDIDATE_SPECIFIC_HISTORICAL_CLOSURE_PROVENANCE_BEFORE_REVISIT_TRIGGERED",
     "DO_NOT_WEAKEN_CLAIM_CEILINGS_OR_EVIDENCE_STANDARDS_TO_COMPENSATE_FOR_FRAGILE_MECHANISM_SUPPLY"
   ],
   "utility_request": null,
   "hard_floor_confirmation": {
-    "consumed_formal_rerun_retune_rescore": false,
-    "terminal_reactivated": false,
+    "consumed_formal_identity_rerun_retune_rescore": false,
+    "terminal_current_object_reactivated": false,
     "frozen_protocol_rewritten": false,
     "historical_pass_fail_rewritten": false,
-    "evaluator_or_heldout_leakage_observed": false,
+    "evaluator_heldout_leakage_observed": false,
     "silent_post_formal_repair_observed": false,
-    "h7_identity_or_start_created": false,
+    "h7_identity_or_start_exists": false,
     "scientific_or_evidence_ref_mutated_by_audit": false
   },
   "confidence": {
-    "current_development_formal_theory_terminal_calibration": "HIGH",
-    "live_revisit_end_to_end": "MODERATE_UNTESTED"
+    "current_provenance_mismatch": "HIGH",
+    "development_terminal_h7_prestart": "HIGH",
+    "theory_forge_current_disposition": "HIGH",
+    "live_revisit_behavior": "MODERATE_NO_LIVE_CASE"
   },
   "questions_for_control_analyst": [
-    "WHEN_H7_TRIGGER_CAPABILITY_EXISTS_REVALIDATE_EXACT_SCIENCE_CONTROLLER_RUNTIME_INPUT_SCORER_PRESERVER_BINDING_BEFORE_IDENTITY_OR_START",
-    "AT_FIRST_REAL_REVISIT_TRIGGER_RECORD_THE_CANDIDATE_SPECIFIC_HISTORICAL_CLOSURE_PREMISE_CHANGED_BY_THE_INDEPENDENT_TRIGGER_BEFORE_FORGE_REFERRAL"
-  ],
-  "persistence": {
-    "history": "analysis/methodology_calibration/history/2026-09-24/0818.md",
-    "latest": "analysis/methodology_calibration/latest.md",
-    "state": "analysis/methodology_calibration/state.json"
-  }
+    "NO_BLOCKING_SCIENTIFIC_QUESTION",
+    "PROSPECTIVELY_ENFORCE_GENERATION_ID_EXACT_COMMIT_ARTIFACT_CONSISTENCY_BEFORE_IDENTITY_START",
+    "AT_FIRST_REAL_REVISIT_TRIGGER_RECORD_CANDIDATE_SPECIFIC_HISTORICAL_CLOSURE_PREMISE_CHANGED_BY_INDEPENDENT_TRIGGER_BEFORE_FORGE_REFERRAL"
+  ]
 }
