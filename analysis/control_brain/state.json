@@ -1,28 +1,30 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260924T155021+0900-R58-CAND35-REVISIT-PROPOSAL-AWAIT-ANALYST",
-  "produced_at": "2026-09-24T15:50:21+09:00",
-  "generated_at": "2026-09-24T15:50:21+09:00",
-  "producer_run_id": "sparkbrain-control-20260924T1550JST-r58-revisit-proposal-gate",
-  "scheduled_role_slot": "15:50 JST CONTROL_BRAIN",
+  "generation_id": "CTRL-20260924T165135+0900-R59-CAND35-REVISIT-FORGE-TEST-AUTHORIZED",
+  "produced_at": "2026-09-24T16:51:35+09:00",
+  "generated_at": "2026-09-24T16:51:35+09:00",
+  "producer_run_id": "sparkbrain-control-20260924T1650JST-r59-cand35-revisit-forge-test-authorized",
+  "scheduled_role_slot": "16:50 JST CONTROL_BRAIN",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY",
-  "supersedes_generation_id": "CTRL-20260924T145730+0900-R57-POSTFORMAL-TERMINAL-MAIN-RESTORED",
-  "programme_position": "ALL35_CURRENT_OBJECTS_TERMINAL_ZERO_CANONICAL_QUEUE; CAND35_REVISIT_PROPOSAL_EXISTS_NONCANONICAL_AWAITING_ANALYST; H7_CONSUMED_FORMAL_INCONCLUSIVE_TERMINAL",
+  "supersedes_generation_id": "CTRL-20260924T155021+0900-R58-CAND35-REVISIT-PROPOSAL-AWAIT-ANALYST",
+  "programme_position": "ALL35_CURRENT_OBJECTS_TERMINAL_ZERO_CANONICAL_QUEUE; CAND35_REVISIT_PROPOSAL_ADJUDICATED_REVISIT_FORGE_TEST; BOUNDED_NONCANONICAL_RVT35_FORGE_001_AUTHORIZED_AWAIT_DURABLE_RESULT; H7_CONSUMED_FORMAL_INCONCLUSIVE_TERMINAL",
   "persistence": {
-    "history_create_commit": "a977f9d75551c9fc2e1891d1994b5d49b7de5812",
-    "latest_update_commit": "192099edd19767ca616dd67472c65659c4b6e767"
+    "history_create_commit": "67136b4d67e58e3e8832c6c8d9706641f9a39462",
+    "latest_update_commit": "3c36f8dcaba211aae8260021f2bd78d33fcb02b9"
   },
   "material_delta": {
     "new_scientific_result": false,
     "canonical_queue_changed": false,
     "cand35_trigger_changed": false,
-    "revisit_proposal_created": true,
-    "revisit_proposal_source": "THEORY_REVISIT_R3",
-    "revisit_proposal_analyst_adjudicated": false,
-    "revisit_forge_test_authorized": false,
+    "revisit_proposal_created_this_generation": false,
+    "revisit_proposal_analyst_adjudicated": true,
+    "revisit_decision": "REVISIT_FORGE_TEST",
+    "revisit_forge_test_authorized": true,
+    "revisit_forge_probe_spec_id": "RVT35-FORGE-001",
+    "durable_candidate_specific_forge_result_observed": false,
     "fresh_successor_created": false,
     "theory_proposal_created": false,
-    "primary_main_enabled_regression_detected": false,
+    "utility_synthetic_tooling_created": true,
     "scheduler_mutation_performed": false,
     "scheduler_cadence_or_role_changed": false
   },
@@ -41,18 +43,21 @@
   },
   "authoritative_observations": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "evidence_analyst_generation": "EVA-20260924T150100+0900-R118-POSTFORMAL-NOOP-CONTROL-R57-MAIN-R117",
-    "evidence_analyst_commit": "ec74807c04e23e561275f8a2900e11e8145076c3",
+    "evidence_analyst_generation": "EVA-20260924T160200+0900-R119-CAND35-REVISIT-FORGE-TEST",
+    "evidence_analyst_commit": "b56a9c604f1e859076b2c721ffc53cc0c6739b21",
     "theory_revisit_generation": "THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4",
     "theory_revisit_commit": "cc597a993fe30d6ba9ea05a30999d44a489ea467",
-    "main_relay_generation": "MAIN-20260924T154307+0900-RELAY-R119-WAITING-CAND35-REVISIT-ANALYST-GATE",
-    "main_relay_commit": "adc2b8a69d489a9035a126c834ad755a1f67328a",
-    "methodology_generation": "METHCAL-20260924T152135+0900-R109-C4E92A1B",
-    "methodology_commit": "462299364d518c728795dc746be4f5ec323db6ae",
+    "main_generation": "MAIN-20260924T161228+0900-PRIMARY-R120-WAITING-CAND35-REVISIT-FORGE-TEST",
+    "main_commit": "6f1f8ac373b99d4346894f9591e2feb5cc2bcc13",
+    "methodology_generation": "METHCAL-20260924T162019+0900-R110-A7D35F91",
+    "methodology_commit": "8b5be8eb9a1bf9b677c81c5837683fbc7f00e0dc",
+    "utility_commit": "e4e6e3f9628f1b766f195cb9579cf8b7e552f1e9",
+    "utility_forge_branch": "forge/utility-rvt35-causal-opportunity-harness",
+    "utility_forge_head": "7123c29804b4538d38c0c308451337279b31958d",
     "h7_result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
     "h7_evidence_ref_type": "LIGHTWEIGHT_DIRECT_COMMIT_REF",
     "preexisting_annotated_evidence_identities": 5,
-    "new_evidence_identity_since_r57": false
+    "new_evidence_identity_since_r58": false
   },
   "canonical_funnel": {
     "candidate_total": 35,
@@ -67,7 +72,7 @@
     "CONSUMED_ONE_WAY": 1,
     "consumed_formal_identities": 8,
     "mechanism_supply_status": "EMPTY_NO_ADMITTED_CANONICAL_ACTION",
-    "throughput_interpretation": "RAW_REVISIT_PROPOSAL_IS_NOT_CANONICAL_SUPPLY_UNTIL_ANALYST_ADJUDICATES_AND_FRESH_SUCCESSOR_IS_CREATED"
+    "throughput_interpretation": "REVISIT_FORGE_TEST_REFERRAL_IS_NONCANONICAL_AND_DOES_NOT_COUNT_AS_CANONICAL_SUPPLY"
   },
   "h7": {
     "candidate_id": "CAND-H7-RESPONSIBILITY",
@@ -85,18 +90,24 @@
     "tag_issue_scientific_effect": "NONE"
   },
   "revisit": {
-    "bootstrap_complete": true,
-    "classified_terminal_population": 35,
+    "legacy_bootstrap_complete": true,
+    "legacy_bootstrap_population": 34,
+    "legacy_bootstrap_classified": 34,
+    "current_terminal_ledger_coverage": 35,
     "CLOSED_STRONG": 1,
     "DORMANT_REVISITABLE": 20,
     "DEFERRED_INDEPENDENT_REIDENTIFICATION": 13,
     "REVISIT_TRIGGERED": 1,
-    "triggered_candidates": ["CAND35"],
+    "triggered_candidates": [
+      "CAND35"
+    ],
     "revisit_proposals": 1,
     "revisit_rejected": 0,
     "revisit_dormant_decisions": 0,
-    "revisit_forge_test_referrals": 0,
-    "revisit_forge_probes": 0,
+    "revisit_forge_test_referrals": 1,
+    "revisit_forge_probe_spec_id": "RVT35-FORGE-001",
+    "revisit_forge_probe_authorized": true,
+    "revisit_forge_probes_with_durable_candidate_specific_result": 0,
     "revisit_forge_kills": 0,
     "revisit_forge_survivors": 0,
     "canonicalized_fresh_successors": 0,
@@ -105,17 +116,17 @@
     "old_ids_reopened": 0,
     "historical_outcomes_rewritten": false,
     "cand35_trigger_basis": "INDEPENDENT_AUDIT_R10_TREATMENT_TO_READOUT_CAUSAL_OPPORTUNITY_MISMATCH_PLUS_LITERATURE_R42_OBSERVABILITY_CONSTRAINTS",
-    "cand35_proposal_status": "RAW_NONCANONICAL_REVISIT_PROPOSAL_AWAITING_EVIDENCE_ANALYST_ADJUDICATION",
-    "cand35_proposed_fresh_question": "UNDER_A_PROSPECTIVELY_VERIFIED_TREATED_NONRECEPTOR_TO_READOUT_CAUSAL_PATH_CAN_QUEUE_FREE_LATENT_LOCAL_STATE_ALTER_AN_OUTPUT_POTENT_OBSERVABLE_BEYOND_ORDINARY_LOCAL_STATE_STP_AND_RECURRENCE",
-    "cand35_current_disposition": "OLD_ID_TERMINAL; NO_FORGE; NO_SUCCESSOR; WAIT_FOR_ANALYST",
-    "terminal_to_revisit_latency": "TRACK_WHEN_ANALYST_DISPOSITION_OR_FRESH_SUCCESSOR_MAKES_IT_MEANINGFUL",
-    "stale_trigger_status": "NOT_STALE_TRIGGER_HAS_ADVANCED_TO_PROPOSAL"
+    "cand35_proposal_status": "ADJUDICATED_REVISIT_FORGE_TEST",
+    "cand35_current_disposition": "OLD_ID_TERMINAL_SYSTEM_ZERO_CREDIT; BOUNDED_NONCANONICAL_FORGE_PROBE_AUTHORIZED; NO_SUCCESSOR",
+    "cand35_fresh_successor_allowed_now": false,
+    "terminal_to_revisit_latency": "TRACK_AFTER_DURABLE_FORGE_DISPOSITION_OR_FRESH_SUCCESSOR_IF_MEANINGFUL",
+    "stale_trigger_status": "NOT_STALE_TRIGGER_ADVANCED_TO_PROPOSAL_AND_FORGE_TEST_REFERRAL"
   },
   "theory": {
     "latest_generation": "THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4",
     "status": "NO_THEORY_PROPOSAL",
     "revisit_proposal_present": true,
-    "revisit_proposal_count_this_generation": 1,
+    "revisit_proposal_count": 1,
     "th001_disposition": "THEORY_REJECTED_CURRENT_PROPOSAL",
     "canonicalizations": 0,
     "scientific_credit": 0,
@@ -123,37 +134,50 @@
   },
   "fast_forge": {
     "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL",
-    "latest_durable_status": "NOOP_RAW_CAND35_REVISIT_AWAIT_ANALYST",
-    "cand35_revisit_probe_authorized": false,
-    "cand35_revisit_probe_performed": false,
+    "latest_durable_generation": "FORGE-20260924T153500+0900-NOOP-R118-RAW-CAND35-REVISIT-AWAIT-ANALYST",
+    "cand35_revisit_probe_authorized": true,
+    "cand35_revisit_probe_spec_id": "RVT35-FORGE-001",
+    "durable_candidate_specific_result_observed": false,
+    "cand35_kill_count": 0,
+    "cand35_survivor_count": 0,
     "canonical_admissions": 0,
     "scientific_credit": 0
   },
   "methodology": {
-    "generation_id": "METHCAL-20260924T152135+0900-R109-C4E92A1B",
+    "generation_id": "METHCAL-20260924T162019+0900-R110-A7D35F91",
     "new_science": false,
     "hard_floor": "KEEP",
-    "authoritative_tag_form_provenance": "TIGHTEN",
-    "trigger_to_proposal_liveness": "R3_NOW_EXERCISED_PENDING_FRESH_METHODOLOGY_REVIEW",
-    "revisit_forge_canonicalization": "INSUFFICIENT_EVIDENCE_NO_ANALYST_DECISION_OR_PROBE_YET",
+    "revisit_trigger_to_proposal_liveness": "KEEP",
+    "revisit_proposal_adjudication": "KEEP",
+    "revisit_forge_new_trigger_only_authorization_contract": "KEEP",
+    "revisit_forge_execution_fidelity": "INSUFFICIENT_EVIDENCE",
+    "revisit_canonicalization": "INSUFFICIENT_EVIDENCE",
     "prospective_only": true
   },
   "utility": {
-    "status": "IDLE_OR_NONAUTHORIZING_NO_NEW_CANONICAL_DEPENDENCY_OBSERVED",
+    "status": "TOOLING_READY_SYNTHETIC_ONLY",
+    "classification": "REUSABLE_SYNTHETIC_CAUSAL_OPPORTUNITY_OUTPUT_NULL_DIAGNOSTIC",
+    "branch": "forge/utility-rvt35-causal-opportunity-harness",
+    "head": "7123c29804b4538d38c0c308451337279b31958d",
+    "candidate35_data_used": false,
+    "r100_tuning_performed": false,
+    "result_bearing_workflow_created": false,
+    "promotion_support_signal": false,
     "scientific_authority": "NONE",
-    "canonical_dependency_created": false
+    "canonical_dependency_created": false,
+    "counts_as_revisit_forge_probe": false
   },
   "main_relay": {
     "primary_main_enabled": true,
     "relay_enabled": true,
-    "latest_primary_status": "WAITING_NO_EXECUTABLE_CANONICAL_SCIENCE",
-    "latest_relay_status": "WAITING_EXTERNAL_FOR_CAND35_REVISIT_ANALYST_GATE",
+    "latest_durable_main_generation": "MAIN-20260924T161228+0900-PRIMARY-R120-WAITING-CAND35-REVISIT-FORGE-TEST",
+    "latest_primary_status": "WAITING_EXTERNAL_FOR_NONCANONICAL_RVT35_FORGE_001_AND_FRESH_ANALYST",
     "ownership_collision_established": false,
-    "science_executed_from_raw_revisit_proposal": false,
+    "science_executed_from_revisit_referral": false,
     "fresh_successor_created": false
   },
   "fleet_health": {
-    "status": "YELLOW_BROAD_QUEUE_LAG_AND_HISTORICAL_REPEATED_PRIMARY_MAIN_ENABLED_REGRESSION",
+    "status": "YELLOW_BROAD_QUEUE_LAG_WITHOUT_PROVEN_COLLISION",
     "primary_main_currently_enabled": true,
     "relay_currently_enabled": true,
     "fast_forge_enabled": true,
@@ -161,33 +185,40 @@
     "methodology_enabled": true,
     "utility_enabled": true,
     "external_research_audit_enabled": true,
+    "control_enabled": true,
     "theory_calibration_definition_matches_approved_policy": true,
-    "observed_queue_lag_minutes_latest_range": [3, 13],
+    "observed_queue_lag_minutes_latest_range": [
+      2,
+      14
+    ],
     "lag_cause_established": false,
     "ownership_collision_established": false,
     "structural_scheduler_change_this_run": false,
     "scheduler_mutation_this_run": false,
-    "direction": "KEEP_PRIMARY_MAIN_AND_RELAY_ENABLED; MONITOR_REPEAT_DISABLEMENT_AND_FLEET_LAG; REQUIRE_USER_APPROVAL_BEFORE_STRUCTURAL_CADENCE_OR_ROLE_CHANGE"
+    "direction": "KEEP_PRIMARY_MAIN_AND_RELAY_ENABLED; MONITOR_FLEET_LAG_AND_ANY_ENABLED_STATE_REGRESSION; REQUIRE_USER_APPROVAL_BEFORE_STRUCTURAL_CADENCE_OR_ROLE_CHANGE"
   },
   "directions": {
+    "fast_forge": [
+      "Execute at most the Analyst-authorized bounded RVT35-FORGE-001 under noncanonical, non-evidentiary, zero-credit rules.",
+      "Persist an explicit kill/survivor disposition without candidate creation, canonical authority, or scientific evidence."
+    ],
     "evidence_analyst": [
-      "Adjudicate the single Candidate #35 Revisit proposal independently as REVISIT_REJECTED, REVISIT_DORMANT, REVISIT_FORGE_TEST, or REVISIT_CANONICALIZE.",
+      "After a durable RVT35-FORGE-001 result exists, adjudicate independently.",
       "Keep old Candidate #35 terminal under every disposition.",
-      "If REVISIT_CANONICALIZE, create a fresh candidate ID with candidate_source=REVISIT, source_candidate=CANDIDATE_35, fresh prospective contract, and zero inherited confirmatory credit."
+      "Only REVISIT_CANONICALIZE may create a fresh candidate ID with candidate_source=REVISIT, source_candidate=CANDIDATE_35, fresh prospective contract, and zero inherited confirmatory credit."
     ],
     "main_relay": [
-      "Wait for fresh Evidence Analyst authority; raw Theory/Revisit output is not canonical execution authority.",
-      "PRIMARY MAIN owns any later admitted canonical critical path subject to collision/lease authority."
+      "Wait for the bounded Forge result and a later fresh Evidence Analyst authority.",
+      "Do no Candidate #35 canonical science absent explicit fresh successor admission; PRIMARY MAIN owns any later admitted canonical critical path."
     ],
-    "theory_revisit_forge": [
-      "Keep NO_THEORY_PROPOSAL unless an independently justified programme-level theory exists.",
-      "No Candidate #35 Forge probe without explicit REVISIT_FORGE_TEST.",
-      "No old terminal ID may reopen or inherit confirmatory credit."
+    "theory_utility": [
+      "Keep NO_THEORY_PROPOSAL unless independently justified programme-level theory appears.",
+      "Utility remains synthetic/tooling support only and cannot decide Revisit, create candidates, mutate the funnel, or promote work."
     ],
     "scheduler": [
       "Keep PRIMARY MAIN and Relay enabled at existing approved cadences and roles.",
-      "Continue monitoring repeated PRIMARY MAIN enabled-state regression and fleet-wide latency.",
-      "Do not alter cadence or role without user approval; propose any causal structural remediation explicitly."
+      "Continue monitoring broad fleet latency and any repeated enabled-state regression.",
+      "Do not alter cadence, role, or scheduler structure without user approval."
     ]
   },
   "hard_floor": {
@@ -203,6 +234,6 @@
   },
   "user_decision": {
     "needed": false,
-    "reason": "The material change is a noncanonical Candidate #35 Revisit proposal already within the approved Revisit gate. No canonical successor, Forge authorization, scheduler structural change, or scientific ref mutation is being proposed by Control."
+    "reason": "Candidate #35 progressed only to an already-approved bounded noncanonical Revisit Forge-test referral. No old object was reopened, no fresh successor or canonical admission exists, no scientific result changed, and no scheduler structural change is proposed."
   }
 }
