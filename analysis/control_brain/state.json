@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260925T035000+0900-R67",
-  "produced_at": "2026-09-25T03:50:00+09:00",
-  "supersedes_generation_id": "CTRL-20260925T025000+0900-R66",
+  "generation_id": "CTRL-20260925T045000+0900-R68",
+  "produced_at": "2026-09-25T04:50:00+09:00",
+  "supersedes_generation_id": "CTRL-20260925T035000+0900-R67",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY",
   "material_change": true,
   "new_scientific_result": false,
@@ -27,7 +27,11 @@
     "branch": "system-build/sb001-predictive-state-revision-pilot-20260925",
     "head": "e6a59b2601a9a68b46dbb45b02b39e16e3fe95ef",
     "ci_run": 36042005169,
-    "ci_conclusion": "success"
+    "ci_conclusion": "success",
+    "current_head": "52feb927eb4856cb76e4048b72d35db722c2729b",
+    "exact_head_ci_run": 36047361994,
+    "exact_head_ci_conclusion": "SUCCESS",
+    "main_state_pointer_status": "STALE_RELATIVE_TO_BUILD_BRANCH"
   },
   "revisit": {
     "coverage": "35/35",
@@ -51,9 +55,16 @@
     "independent_audit_latest": "R10",
     "evidence_analyst_pointer_drift": true,
     "main_pointer_drift": true,
-    "utility_cadence": "2h",
-    "methodology_cadence": "2h",
-    "scheduler_mutation_by_control": false
+    "utility_cadence": "EVERY_2_HOURS",
+    "methodology_cadence": "EVERY_2_HOURS",
+    "scheduler_mutation_by_control": false,
+    "independent_audit_durable_latest": "R10",
+    "external_theory_later_slot_durable_output": "MISSING",
+    "evidence_analyst_durable_tip": "R132",
+    "main_durable_pointer": "STALE_RELATIVE_TO_52FEB_HEAD",
+    "relay_live_state": "NOT_ACTIVE",
+    "primary_main_live_state": "ACTIVE",
+    "user_decision_needed": true
   },
   "refs": {
     "main": "d16403414fc7abebd23075fc401240971b8eb91d",
@@ -61,7 +72,7 @@
     "main_generation": "MAIN-20260925T033600+0900-PRIMARY-R136-SYSTEM-BUILD-SB001"
   },
   "persistence": {
-    "history_path": "analysis/control_brain/history/2026-09-25/0350-R67.md",
+    "history_path": "analysis/control_brain/history/2026-09-25/0450-R68.md",
     "latest_path": "analysis/control_brain/latest.md",
     "state_path": "analysis/control_brain/state.json"
   },
@@ -72,5 +83,14 @@
     "scientific_ref_mutations": 0,
     "terminal_reopens": 0,
     "scheduler_changes": 0
+  },
+  "fast_forge": {
+    "latest_forge_id": "FORGE-20260925T0435+0900-INTEGRATION-DELAYED-ACTION-CREDIT",
+    "status": "FORGE_INTERESTING",
+    "handoff": "SYSTEM_BUILD_INPUT",
+    "ordinary_reduction": "ELIGIBILITY_TRACES_TD_LAMBDA_STYLE_TEMPORAL_CREDIT",
+    "engineering_usefulness": "YES_BOUNDED",
+    "scientific_credit": 0,
+    "scientific_novelty": false
   }
 }
