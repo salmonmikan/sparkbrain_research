@@ -8,7 +8,7 @@
   "evidentiary_status": "NON_RESULT_SCIENCE_INVARIANT_FORMAL_LAUNCH_PLUMBING",
   "exact_controller_blobs": {
     "controller_script_blob": "7a092741cad6371fbe69adafef6e37845349b6de",
-    "formal_launch_workflow_blob": "a6fb8fec46ad8b6f6b055e701d5c8cf829d4007c",
+    "formal_launch_workflow_blob": "1c4e2199740397c1afbbcc66e89d83f41fe54b21",
     "plumbing_readiness_workflow_blob": "915d79b1243b43794824ce38c05f417721020ea5"
   },
   "fresh_identity_mechanics": {
