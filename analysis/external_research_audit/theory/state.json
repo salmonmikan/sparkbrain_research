@@ -1,75 +1,74 @@
 {
-  "timestamp": "2026-09-24T15:28:49+09:00",
+  "timestamp": "2026-09-24T21:30:41+09:00",
   "schema_version": 2,
-  "generation_id": "THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4",
-  "producer_run_id": "external-theory-auto-THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4",
+  "generation_id": "THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41",
+  "producer_run_id": "external-theory-auto-THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
-  "supersedes_generation_id": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
+  "supersedes_generation_id": "THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4",
   "role": "THEORY_SYNTHESIS_ARCHITECT",
-  "schedule_slot": "15:30 JST",
+  "schedule_slot": "21:30 JST",
   "schedule_inference": false,
   "input_generations": {
     "control_brain": {
-      "generation_id": "CTRL-20260924T145730+0900-R57-POSTFORMAL-TERMINAL-MAIN-RESTORED",
-      "handoff_commit": "376167105b9fb384efda60a98a1088809ddcca2d"
+      "generation_id": "CTRL-20260924T210200+0900-R62-ADHOC-HUMAN009-REVALIDATION-EXTERNAL-SCIENCE-SLOT-LAG",
+      "handoff_commit": "2117b8436f7da53b6c4c70c7c29eeb4ac6e0d673"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260924T150100+0900-R118-POSTFORMAL-NOOP-CONTROL-R57-MAIN-R117",
-      "handoff_commit": "ec74807c04e23e561275f8a2900e11e8145076c3"
+      "generation_id": "EVA-20260924T211100+0900-R125-HUMAN009-R62-NO-CANONICAL-ADMISSION",
+      "handoff_commit": "918d804f8d66a7463678b79621266045949045f4"
     },
     "main": {
-      "generation_id": "MAIN-20260924T151735+0900-PRIMARY-R118-WAITING-NO-EXECUTABLE-CANONICAL-SCIENCE",
-      "mailbox_commit": "1bc37f4f1f36cee055204486c11206d7cadee58e"
+      "generation_id": "MAIN-20260924T212000+0900-PRIMARY-R128-R125-HUMAN009-NO-CANONICAL-ACTION",
+      "mailbox_commit": "5ed586a8272b3ae9bc603af0e275b5852675410e"
     },
     "fast_forge": {
-      "generation_id": "FORGE-20260924T133500+0900-NOOP-R115-ALL35-TERMINAL-NO-GATED-PROBE",
-      "mailbox_commit": "1bc37f4f1f36cee055204486c11206d7cadee58e"
+      "generation_id": "FORGE-20260924T203607+0900-R123-R114-NOOP",
+      "mailbox_commit": "5ed586a8272b3ae9bc603af0e275b5852675410e",
+      "state_blob": "639a5c3f614f5cb46c05f86c1e21f61b977a4178"
     },
     "methodology": {
-      "generation_id": "METHCAL-20260924T152135+0900-R109-C4E92A1B",
-      "handoff_commit": "462299364d518c728795dc746be4f5ec323db6ae"
+      "generation_id": "METHCAL-20260924T211729+0900-R115-A84E6C19",
+      "handoff_commit": "31f543bb8ba2a5e0b236a5132369a835ac7cb2c5"
     },
     "literature": {
-      "generation_id": "LIT-20260924T122954+0900-R42-H7-INCONCLUSIVE-OBSERVABILITY-PING-84C2D7A1",
-      "handoff_commit": "7a477bfb872d915fa1634b5cf54a2be110f92e7e",
-      "latest_blob": "fdb7c41e83cf7ef2e8d8d44595887553157956ce"
+      "generation_id": "LIT-20260924T183026+0900-R43-COALITIONAL-ATTRIBUTION-7F3A92C1",
+      "handoff_branch_tip_at_consumption": "d3046a8c7b2d2b3788f20517147a39bf224299cb",
+      "state_blob": "aa898fc9c35128df2f6d3b3db5593f11b42d0180"
     },
     "independent_audit": {
       "generation_id": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
-      "handoff_commit": "7a477bfb872d915fa1634b5cf54a2be110f92e7e",
-      "latest_blob": "a89738c837b2e5bc2eab94adb1722bbb6daeb673"
+      "handoff_branch_tip_at_consumption": "d3046a8c7b2d2b3788f20517147a39bf224299cb",
+      "state_blob": "d458db27265b5171279f7f158cce53491bdbb7a9"
     },
     "prior_theory": {
-      "generation_id": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
-      "handoff_commit": "7a477bfb872d915fa1634b5cf54a2be110f92e7e",
-      "latest_blob": "6aa4fc2302336e887cf67070513948312fff0c98",
-      "state_blob": "09e6e4a2e93d41726651b4c132dceacd84ec958e"
+      "generation_id": "THEORY-20260924T152849+0900-R3-CAND35-REVISIT-CAUSAL-OPPORTUNITY-9C61E2B4",
+      "handoff_branch_tip_at_consumption": "d3046a8c7b2d2b3788f20517147a39bf224299cb",
+      "latest_blob": "4b537b407ab7961f6421bee14ed858f612f5b713",
+      "state_blob": "140fad640639eb5eb60a2cc6a5a4a094cca40676"
+    },
+    "human_directive": {
+      "generation_id": "HUMAN-20260924-009",
+      "handoff_commit": "cb996bbdab89220435c413afbdf98a8af2b8a203",
+      "authority": "UNVERIFIED_LEAD_ONLY_ZERO_SCIENTIFIC_AUTHORITY"
     }
   },
   "authoritative_refs_inspected": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "h7_scientific_branch": "research/main-h7-formal-r5-runtime-identity-r88-cycle12",
-    "h7_scientific_head": "2f30b93f8f3cf226ef55ed5af7e341089d2c3c80",
-    "h7_controller_branch": "research/main-h7-r5-launch-plumbing-r111-workflow-dispatch",
-    "h7_controller_head": "af3aa97574c365e3e918c3d4d012faa4886760d0",
-    "h7_control_ref": "control/h7-r5-h7-r5-285a3a206b34c5982b9d4045-started",
-    "h7_control_sha": "52b17b785364f96cc2e95507b2336252459d5352",
-    "h7_preserve_ref": "preserve/h7-r5-h7-r5-285a3a206b34c5982b9d4045-raw",
-    "h7_preserve_sha": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
-    "h7_evidence_ref": "evidence/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
+    "evidence_namespace_count": 6,
+    "c19_evidence_commit": "a0f83318356ced1c84863737803080d0dc69d208",
+    "c19_r2_fsa_evidence_commit": "6197fa801a78a0c5de4c2b6ff5d03216ac5539db",
+    "pd01_evidence_commit": "fc5c8cda283360addddb7da482b14e69beaba1f7",
+    "ni01_evidence_commit": "69aa785a48bbdb531229b7f71f7fa84a5fde9948",
+    "h5_evidence_commit": "61aff6d74b82b68a326f3d90505d70bcd4071fd5",
     "h7_result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-    "candidate35_scientific_source": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
-    "candidate35_r100_implementation": "b5f312683d50ed3a086348b62770fc8923c78046",
-    "candidate35_raw": "02aee83227554de884a86a9d1335deb01bf53571",
-    "candidate35_preserve": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
-    "forge_refs": {
-      "forge/20260923-receptor-suppression-probes-a": "c366c4054d2834003fcca20d49b8fc9ad4203edc",
-      "forge/20260924-coordinate-null-local-witness": "c5bd7af762e2ddcbc5662859bfee86d841a6ca47",
-      "forge/20260924-recurrent-continuation-a": "17b2673cd0417fdf931264a71d8df1f9c1c21f23",
-      "forge/20260924-th001-q0-qi-adaptation-a": "e2dbe3a5a0db812f777b789a6878af8a0d3eee0f"
-    },
-    "open_prs": [148, 149],
-    "consumed_formal_identities": 8
+    "a01_family_a_b_closeout_commit": "db66596ed4479e8dac8b713b4f92a73f76a25047",
+    "a01_family_c_closeout_commit": "cfe1c3e5506d9fd8b41028dbfe0f8a8dd31a82c5",
+    "a01_abc_terminal_provenance_audit_commit": "e127c3989780ebd5a78b8db914d4d6271920497e",
+    "a01_family_b_branch_head": "49cf002ed83a47910090d022937fd91b735e202d",
+    "candidate35_raw_commit": "afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
+    "open_prs_observed": [148, 149],
+    "consumed_formal_identities": 8,
+    "ops_external_tip_before_first_write": "d3046a8c7b2d2b3788f20517147a39bf224299cb"
   },
   "canonical_state": {
     "candidate_total": 35,
@@ -87,8 +86,10 @@
       "terminal": true,
       "claim_ceiling": "SYSTEM",
       "confirmatory_credit": 0,
-      "revisit_status": "REVISIT_TRIGGERED",
-      "revisit_proposal_exists_before_this_generation": false
+      "revisit_status": "DEFERRED_INDEPENDENT_REIDENTIFICATION",
+      "current_trigger_authority": "NONE_EXHAUSTED",
+      "revisit_probe": "RVT35-FORGE-001",
+      "revisit_probe_disposition": "FORGE_DEAD_END"
     },
     "h7": {
       "terminal": true,
@@ -102,85 +103,172 @@
       "coverage": "35/35",
       "closed_strong": 1,
       "dormant_revisitable": 20,
-      "deferred_independent_reidentification": 13,
-      "revisit_triggered": 1
+      "deferred_independent_reidentification": 14,
+      "revisit_triggered": 0,
+      "historical_revisit_proposals": 1,
+      "historical_revisit_forge_kills": 1,
+      "fresh_successors": 0
     }
   },
   "genuinely_new_information": true,
   "new_information": [
-    "H7 completed FORMAL one-way evaluation with frozen INCONCLUSIVE decision; native cut effect is nonzero but every declared comparator family is capacity-inadequate.",
-    "Independent Audit R10 found a Candidate #35 treatment/readout causal-opportunity mismatch: the null treatment acts on non-receptors while the observed response is only directly cued untreated receptors 6/7.",
-    "Literature R42 independently sharpens Candidate #35's trigger with perturb-and-probe, output-null, and probe-faithfulness requirements.",
-    "Methodology R109 confirms Candidate #35 remains the sole REVISIT_TRIGGERED object and that no Revisit proposal/probe/successor yet exists."
+    "HUMAN-20260924-009 introduces an unverified advisory only; it has no scientific or Revisit authority but creates a legitimate revalidation task.",
+    "Independent re-fetch confirms C19-R2 is REDUCED_BY_FSA while its own claim boundary leaves revision-authority scientifically unresolved.",
+    "Independent re-fetch confirms PD01 is reduced by fading memory, NI01 by confidence abstention, and H5 has no useful work reduction, removing persistence/abstention/routing as programme-level novelty sources.",
+    "Independent re-fetch confirms A01 Family-A P4 failed selective historical-lineage resolution after merged ancestry; P2/P3 effects remain reducible to explicit local provenance/return-address memory.",
+    "Independent re-fetch confirms A01 Family-B Gen1 was statically subsumed by an equal-resource recurrent causal-trace null and Family-C Gen1 by an equal-resource separable address-plus-Field null before STARTED.",
+    "Methodology R115 requires future same-theme independent-trigger claims to account for HUMAN-009 advisory exposure rather than claiming blind provenance."
   ],
-  "theory_proposal": null,
-  "theory_status": "NO_THEORY_PROPOSAL",
-  "revisit_proposal": {
-    "source_candidate": "CANDIDATE_35",
-    "original_question": "Whether queue-free subthreshold potential/adaptation state left by a prime causally changes a later cue response on the frozen R100 surface.",
-    "original_closure_reason": "Frozen R100 immediate null/sham arms returned the same declared spike/cascade/ignition signature; object closed terminal SYSTEM with zero confirmatory credit and later required independent re-identification.",
-    "new_information": "Independent Audit R10 shows the treatment/readout support mismatch; Literature R42 independently supplies perturb-and-probe/output-null precedent and probe-faithfulness constraints.",
-    "fired_revisit_trigger": "CANDIDATE_SPECIFIC_TREATMENT_TO_READOUT_CAUSAL_OPPORTUNITY_MISMATCH_PLUS_INDEPENDENT_EXTERNAL_LATENT_STATE_OBSERVABILITY_LITERATURE",
-    "why_original_closure_may_no_longer_be_sufficient": "The old negative remains valid for its exact signature but did not demonstrate that treated non-receptor state had causal opportunity to affect that signature, so it cannot close the broader latent-state causal-potency question.",
-    "what_remains_unchanged": "All R100 bytes, frozen contract, negative result, terminal SYSTEM state, zero confirmatory credit, and same-object rerun/retune/rescore prohibition.",
-    "proposed_fresh_question": "Under a prospectively verified treated-non-receptor-to-readout causal path, can a queue-free latent local state alter a downstream output-potent observable beyond ordinary leak/adaptation/refractory dynamics, STP/transient synaptic state and ordinary recurrence?",
-    "strongest_ordinary_reductions": [
-      "local leak/adaptation/refractory state",
-      "fixed edge/delay and direct receptor drive",
-      "STP/transient synaptic state",
-      "ordinary recurrence",
-      "FSA/register",
-      "reservoir/fading-memory/predictive-state",
-      "output-null/readout projection",
-      "probe-induced reorganization"
+  "theory_proposal": {
+    "theory_id": "TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY",
+    "question": "Can a fixed-privilege system maintain multiple anonymous causal histories through a merge and later use delayed evidence to selectively revise only the causally appropriate history, while remaining permutation-equivariant and irreducible to explicit addressing/provenance memory or ordinary recurrent/predictive-state mechanisms?",
+    "observations_to_explain": [
+      "C19-R2 fixed seven-state FSA reduction succeeds while revision-authority remains unresolved by that contrast.",
+      "PD01 reduces long-history dependence to fading memory.",
+      "NI01 reduces no-ignition/selective prediction to confidence abstention.",
+      "H5 rejects useful event-routing work reduction.",
+      "A01 P2/P3 anonymous provenance effects are reducible to explicit eligibility/provenance/return-address memory.",
+      "A01 Family-A P4 fails selective historical-lineage resolution after merged ancestry.",
+      "A01 Family-B and Family-C Gen1 are statically reduced before STARTED by equal-resource ordinary nulls."
     ],
-    "minimal_discriminator": "Prospectively fix a treated non-receptor substrate and a direct or downstream output-potent observable with demonstrated causal opportunity/sensitivity, use matched probe/context controls, and only then compare a fixed latent-state perturbation against ordinary local-state/STP/recurrence reductions. Do not tune R100 cue strength, arms, thresholds or readouts from the exposed result.",
-    "post_outcome_rescue_risk": "MEDIUM",
-    "independence_from_original_result": "CONDITIONAL_YES_IF_NO_R100_RESULT_RESPONSIVE_TUNING_OR_OLD_ID_REUSE",
-    "independence_from_current_main_unknown_outcomes": "YES_NO_ACTIVE_MAIN_UNKNOWN_OUTCOME_H7_ALREADY_TERMINAL_CONSUMED",
-    "status": "REVISIT_PROPOSAL"
+    "surviving_evidence": [
+      "C19-R2 FORMAL terminal REDUCED_BY_FSA with explicit revision-authority interpretation ceiling.",
+      "PD01 FORMAL terminal FAIL_REDUCED_BY_FADING_MEMORY.",
+      "NI01 FORMAL terminal FAIL_REDUCED_BY_CONFIDENCE_ABSTENTION.",
+      "H5 FORMAL terminal FAIL_NO_USEFUL_WORK_REDUCTION.",
+      "A01 Family-A P4 consumed development negative UNSUPPORTED_EN_BLOC_MERGED_CREDIT, non-FORMAL.",
+      "A01 Family-B/C pre-START static reduction decisions, non-measurement.",
+      "H7 FORMAL terminal INCONCLUSIVE, used only as a causal-methodology constraint."
+    ],
+    "rejected_or_reduced_explanations": [
+      "fixed small FSA/state tracker as novelty explanation",
+      "mere long-history fading memory",
+      "mere confidence abstention/non-ignition",
+      "event-routing/work sparsity",
+      "explicit local eligibility/provenance/return-address memory",
+      "distributed Field trace equivalent to recurrent causal trace",
+      "separable transient address plus local Field state",
+      "Candidate #35 latent-state rationale killed by ordinary local dynamics"
+    ],
+    "external_prior_art": [
+      "ordinary recurrent/reservoir/predictive-state memory",
+      "eligibility traces and three-factor/e-prop-style temporal credit",
+      "content-addressable/associative/key-value memory",
+      "Bayesian/HMM/latent-state and particle-style belief tracking",
+      "HTM/sequence memory",
+      "STP/transient synaptic state",
+      "interaction-aware causal attribution and multi-site perturbation"
+    ],
+    "proposed_mechanism_or_principle": "Permutation-Equivariant Causal Addressability: delayed consequence selects and revises a past causal lineage through anonymous physical/content-derived overlap in distributed state, without semantic/entity IDs, evaluator lookup, persistent explicit return address, or privileged lineage selector. The theory claims a functional invariance/selectivity relation, not an implementation.",
+    "why_existing_models_may_be_insufficient": "Not established. Existing associative/key-value memories, Bayesian latent-state estimators, recurrent networks, eligibility/provenance stores or finite registers may fully solve the capability. They count as reductions unless a prospective, capacity-adequate, resource-matched discriminator leaves a residual.",
+    "predictions": [
+      "After prospectively merging anonymous histories into matched recent surface states, delayed content/causal evidence selectively revises the supported history with low collateral change.",
+      "The effect follows physical/content-derived history under arbitrary entity permutation rather than labels or slot identity.",
+      "The effect generalizes to held-out lineage counts and merge patterns without hidden address-table expansion.",
+      "Carrier intervention yields target-specific impairment that follows the carrier under permutation; broad impairment does not count.",
+      "Any compact-carrier claim must show resource scaling distinct from an equivalent explicit lineage table/register."
+    ],
+    "falsifiers": [
+      "capacity-adequate FSA/register/provenance table reproduces full held-out behavior with equal/lower resources or privilege",
+      "recurrent/reservoir/predictive-state comparator reproduces behavior and intervention responses",
+      "eligibility/three-factor, STP, associative/key-value, Bayesian/HMM/latent-state or HTM baseline reproduces the residual with matched information access",
+      "selective revision requires semantic/entity IDs, caller-selected lineage, hidden task labels, evaluator lookup or persistent explicit return address",
+      "intervention yields broad collateral impairment rather than lineage-selective impairment",
+      "memory/state scales as an explicit lineage-address table",
+      "effect depends on exposed A01 fixtures or outcome-responsive task/parameter/readout choices"
+    ],
+    "ordinary_reduction_ladder": [
+      "stateless/lookup and explicit transition memory",
+      "finite-state/register and explicit provenance/return-address tables",
+      "content-addressable/key-value/associative memory",
+      "ordinary recurrence, reservoir and predictive-state models",
+      "eligibility traces / three-factor / e-prop-like temporal credit",
+      "STP/transient synaptic and adaptive/refractory local state",
+      "Bayesian/HMM/latent-state or particle-style estimator",
+      "HTM/sequence-memory baseline where representation permits",
+      "resource-equivalent separable address-plus-state constructions",
+      "causal-abstraction/sparsification and interaction-aware attribution before privileged-responsibility claims"
+    ],
+    "minimal_discriminator": "Fresh prospective synthetic task with at least three anonymous lineages, entity permutation, variable lineage count, and a controlled merge making recent surface state insufficient to identify remote provenance. Delayed evidence may expose only content/causal overlap. Primary endpoint is target revision minus collateral revision on held-out permutations/counts. Candidate and comparators require matched access, predeclared resource accounting, capacity adequacy before mechanism comparison, and no lineage IDs/evaluator-selected addresses. Comparator equality or superiority reduces the theory.",
+    "suggested_forge_probe": "Only after later Analyst THEORY_FORGE_TEST authority, perform a tiny fresh three-lineage static construction and first prove/disprove algebraic equivalence to explicit register, recurrent trace, associative key-value memory, or separable address-plus-state. Kill immediately if equivalent. Theory dispatches nothing.",
+    "relation_to_existing_candidates": "Fresh programme-level theory question only; not Candidate #35, H7, A01 Family-A/B/C Gen2, C19/C19-R2 reopen, or immediate successor. Terminal results provide reduction constraints only. Any scientific object requires fresh Analyst admission, identity, prospective contract and zero inherited confirmatory credit.",
+    "post_outcome_rescue_risk": "MEDIUM_HIGH_ADVISORY_EXPOSED_AND_OVERLAPS_A01; downstream work must disclose HUMAN-009 exposure, use fresh fixtures/identity, avoid A01 outcome-responsive design, and never claim TH-002 as an independent Revisit trigger for old objects.",
+    "independence_from_current_main_unknown_outcomes": "YES_NO_ALLOCATED_MAIN_OBJECT_NO_PENDING_RESULT_BEARING_WORKFLOW",
+    "status": "THEORY_PROPOSAL"
   },
-  "revisit_status": "REVISIT_PROPOSAL",
+  "theory_status": "THEORY_PROPOSAL",
+  "revisit_proposal": null,
+  "revisit_status": "NO_REVISIT_PROPOSAL",
   "terminal_relevance_scan": {
     "performed": true,
-    "candidate34": "NO_TRIGGER_CLOSED_STRONG",
-    "candidate35": "TRIGGER_VALID_AND_NOW_HAS_ONE_BOUNDED_REVISIT_PROPOSAL_FOR_ANALYST_ADJUDICATION_ONLY",
-    "h7": "DORMANT_REVISITABLE; INCONCLUSIVE_RESULT_ALONE_NOT_A_TRIGGER",
-    "other_terminal_objects": "NO_CANDIDATE_SPECIFIC_NEW_TRIGGER",
-    "revisit_proposal_count": 1
+    "candidate35": "NO_NEW_TRIGGER_CURRENT_TRIGGER_EXHAUSTED_AFTER_FORGE_KILL",
+    "h7": "DORMANT_REVISITABLE_NO_NEW_TRIGGER_R43_RAISES_PROSPECTIVE_BAR_ONLY",
+    "a01_family_a_p4": "TERMINAL_CONSUMED_NEGATIVE_UNCHANGED_NO_REOPEN",
+    "a01_family_b_gen1": "PRESTART_STATIC_REDUCTION_UNCHANGED_NO_SAME_ID_RESCUE",
+    "a01_family_c_gen1": "PRESTART_STATIC_REDUCTION_UNCHANGED_NO_SAME_ID_RESCUE",
+    "c19_c19_r2": "TERMINAL_UNCHANGED_REVISION_AUTHORITY_GAP_MOTIVATES_FRESH_PROGRAMME_QUESTION_ONLY",
+    "pd01_ni01_h5": "TERMINAL_UNCHANGED_USED_AS_REDUCTION_CONSTRAINTS",
+    "other_terminal_objects": "NO_CANDIDATE_SPECIFIC_NEW_INDEPENDENT_TRIGGER",
+    "revisit_proposal_count": 0,
+    "advisory_exposure_rule": "TH002_MUST_NOT_BE_CREDITED_AS_INDEPENDENT_REVISIT_TRIGGER"
   },
   "affected_lines": [
-    "CAND35_REVISIT_TRIGGER",
-    "CAND35_FRESH_QUESTION_OBSERVABILITY",
-    "H7_POSTFORMAL_THEORY_BOUNDARY",
-    "PROGRAMME_THEORY_GENERATION_STATE"
+    "PROGRAMME_REDUCTION_RESISTANT_CAUSAL_REVISION",
+    "ANONYMOUS_MULTI_LINEAGE_ADDRESSABILITY",
+    "A01_NEGATIVE_AND_STATIC_REDUCTION_BOUNDARY",
+    "C19_R2_REVISION_AUTHORITY_INTERPRETATION_CEILING",
+    "FUTURE_CAUSAL_ATTRIBUTION_AND_RESOURCE_MATCHING_BAR"
   ],
-  "novelty_or_reduction_impact": "NO_NEW_PROGRAMME_THEORY; AUDIT_R10_PLUS_LITERATURE_R42_JUSTIFY_ONE_BOUNDED_CAND35_REVISIT_PROPOSAL_CENTERED_ON_PROSPECTIVELY_VERIFIED_TREATMENT_TO_READOUT_CAUSAL_OPPORTUNITY_WITHOUT_REOPENING_OR_REINTERPRETING_OLD_R100.",
+  "novelty_or_reduction_impact": "A_FRESH_PROGRAMME_LEVEL_QUESTION_SURVIVES_INDEPENDENT_RECONSTRUCTION_NOT_WHETHER_HISTORY_OR_PROVENANCE_EXISTS_BUT_WHETHER_MERGED_ANONYMOUS_HISTORIES_CAN_BE_SELECTIVELY_REVISED_BY_DELAYED_EVIDENCE_WITHOUT_COLLAPSING_TO_EXPLICIT_ADDRESSING_ORDINARY_RECURRENCE_ELIGIBILITY_PROVENANCE_ASSOCIATIVE_MEMORY_OR_OTHER_CAPACITY_ADEQUATE_ORDINARY_MODELS_NO_POSITIVE_SPARKBRAIN_MECHANISM_EVIDENCE_CLAIMED",
   "audit_classification": null,
+  "confidence": "MODERATE_THEORY_VALUE_HIGH_ON_REPOSITORY_REDUCTION_BOUNDARIES_LOW_ON_MECHANISM_NOVELTY_UNTIL_REDUCTION_TOURNAMENT",
   "prospective_baselines_or_discriminators": [
-    "verified treated-substrate-to-readout causal opportunity before interpreting a null",
-    "direct treated-state or output-potent downstream observable",
-    "matched probe/context controls to separate revelation from probe-induced reorganization",
-    "local leak/adaptation/refractory plus fixed edge/delay reduction",
-    "STP/transient-synaptic-state and ordinary recurrence reduction",
-    "FSA/register and reservoir/fading-memory/predictive-state reduction"
+    "fresh >=3-lineage permutation-symmetric merge/revision task with recent-surface matching",
+    "target-revision minus collateral-revision endpoint",
+    "held-out entity permutations, lineage counts and merge patterns",
+    "FSA/register/provenance and explicit return-address baseline",
+    "associative/key-value memory baseline",
+    "recurrence/reservoir/predictive-state baseline",
+    "eligibility/three-factor and STP/transient-state baseline",
+    "Bayesian/HMM/latent-state and HTM/sequence-memory baseline where task-appropriate",
+    "capacity adequacy and matched resource/information access before mechanism comparison",
+    "interaction-aware intervention attribution for any responsibility claim"
   ],
   "questions_for_evidence_analyst": [
-    "Does this trigger-derived fresh question satisfy independence strongly enough for REVISIT_FORGE_TEST, or should it remain dormant until a more independent phenomenon appears?",
-    "If admitted for Forge only, require causal-opportunity validation as a precondition before any priming-effect interpretation?"
+    "Does TH-002 define a sufficiently fresh programme-level question for THEORY_FORGE_TEST despite HUMAN-009 exposure, provided it is never treated as an independent Revisit trigger and uses fresh fixtures/identity?",
+    "Before any Forge referral, require static equivalence to explicit register, recurrent trace, associative key-value and separable address-plus-state models as a mandatory kill gate?",
+    "Use target-minus-collateral selective revision under entity permutation as the primary functional discriminator rather than accuracy alone?"
   ],
   "questions_for_control_brain": [
-    "Keep Candidate #35 old ID permanently terminal and route this proposal only through the Analyst Revisit gate?",
-    "Keep H7 same-object terminal/consumed and do not treat comparator inadequacy as a reason to manufacture a new Theory proposal?"
+    "Treat TH-002 as a noncanonical hypothesis-generation object only, not adoption of HUMAN-009?",
+    "Keep all A01/C19/H7/Candidate #35 old IDs terminal and require downstream work to enter through a fresh Analyst gate with zero inherited credit?",
+    "Preserve the empty canonical queue unless Analyst independently judges TH-002 worth a bounded Forge test?"
   ],
   "must_not_change_frozen_or_consumed": [
-    "all eight consumed FORMAL identities",
-    "all authoritative H7 control/preserve/freeze/formal/sealed/evidence refs and frozen INCONCLUSIVE result",
-    "Candidate #34 preserved result and CLOSED_STRONG terminal state",
-    "Candidate #35 R100 preserved bytes, terminal SYSTEM state and zero confirmatory credit",
-    "all terminal current objects remain terminal; no old-ID reopening or historical result rewrite",
-    "no experiment, candidate creation, Forge/Utility/MAIN dispatch, research merge, immutable-ref mutation, scheduler change or same-object rerun/retune/rescore"
+    "all eight consumed FORMAL identities and all authoritative evidence/freeze/formal/sealed/control/preserve refs",
+    "H7 frozen INCONCLUSIVE result and same-object prohibition",
+    "Candidate #35 R100 and killed RVT35-FORGE-001 history",
+    "A01 Family-A consumed P4 negative and Family-B/C pre-START static reductions",
+    "C19/C19-R2, PD01, NI01 and H5 terminal evidence",
+    "no terminal reopen, old-ID reuse, experiment, Forge/Utility/MAIN dispatch, candidate creation, research merge, result rewrite, immutable-ref mutation or scheduler change by Theory"
   ],
   "utility_request_created": null,
-  "confidence": "HIGH"
+  "mutations": {
+    "scientific_experiments_executed_by_this_role": 0,
+    "scientific_workflows_dispatched_by_this_role": 0,
+    "one_way_identities_consumed_by_this_role": 0,
+    "research_prs_merged_by_this_role": 0,
+    "immutable_evidence_mutations": 0,
+    "terminal_objects_reopened": 0,
+    "scheduler_definition_changes": 0,
+    "utility_requests_created": 0,
+    "candidate_ids_created": 0,
+    "forge_dispatches": 0
+  },
+  "persistence": {
+    "latest_update_commit": "96d209fb8864c5abadac6d50c59c2c293987d841",
+    "state_update_commit": "SELF_THIS_WRITE",
+    "history_path": "analysis/external_research_audit/history/2026-09-24/2130-THEORY_SYNTHESIS_ARCHITECT.md",
+    "final_handoff_commit_embedding_limitation": "The append-only history commit is generated by the final write and cannot be embedded in itself without changing the commit. Re-fetch the role branch after persistence for the exact final handoff tip."
+  }
 }
