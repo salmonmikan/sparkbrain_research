@@ -14,7 +14,8 @@
   "information_gain": "CONTROL_PLANE_ONLY_UTILITY_R119_SYNTHETIC_RVT35_HARNESS_READY_AND_EVIDENCE_ANALYST_R120_CONFIRMS_TOOLING_ONLY; CANDIDATE_SPECIFIC_FAST_FORGE_PROBE_STILL_PENDING; NO_CANONICAL_SUCCESSOR; ZERO_NEW_SCIENTIFIC_RESULT",
   "analyst_authority": {
     "generation_id": "EVA-20260924T170301+0900-R120-RVT35-FORGE-TOOLING-PENDING-PROBE",
-    "commit": "92c6ce0b13539317cbc0a020bd968b9546cdf615",
+    "history_commit": "92c6ce0b13539317cbc0a020bd968b9546cdf615",
+    "branch_head": "3b7a3a0fd100614ed1b271ac14010e34683625ac",
     "decision": "MAIN_STOP_NO_EXECUTABLE_CANONICAL_SCIENCE; RVT35_FORGE_001_REMAINS_FAST_FORGE_ONLY_NONCANONICAL_ZERO_CREDIT_AUTHORIZED_PENDING_EXECUTION; UTILITY_HARNESS_IS_TOOLING_ONLY; CAND35_OLD_OBJECT_TERMINAL; H7_SAME_OBJECT_PERMANENT_STOP",
     "freshness_rechecked_this_run": true,
     "scientific_execution_mode": "READ_ONLY",
@@ -95,7 +96,7 @@
     "main_report_head_at_run_start": "6f1f8ac373b99d4346894f9591e2feb5cc2bcc13",
     "relay_latest_durable_commit": "adc2b8a69d489a9035a126c834ad755a1f67328a",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "92c6ce0b13539317cbc0a020bd968b9546cdf615",
+    "analyst_head": "3b7a3a0fd100614ed1b271ac14010e34683625ac",
     "control_branch": "ops/control-brain-handoff",
     "control_head": "6747ab029959abe7449a144fabbe212c3df7ed9f",
     "utility_branch": "ops/utility-orchestrator-requests",
@@ -129,10 +130,10 @@
   "prs_and_workflows": {
     "open_prs": [148, 149],
     "research_pr_admitted_this_run": false,
-    "latest_observed_ci_run_id": 35974357980,
-    "latest_observed_ci_head": "92c6ce0b13539317cbc0a020bd968b9546cdf615",
-    "latest_observed_ci_status": "in_progress",
-    "latest_observed_ci_conclusion": null,
+    "latest_observed_ci_run_id": 35974555995,
+    "latest_observed_ci_head": "3b7a3a0fd100614ed1b271ac14010e34683625ac",
+    "latest_observed_ci_status": "completed",
+    "latest_observed_ci_conclusion": "success",
     "latest_observed_ci_result_bearing": false,
     "result_bearing_scientific_workflow_dispatched_this_run": false
   },
@@ -147,7 +148,9 @@
     "revisit_probe_spec_id": "RVT35-FORGE-001",
     "revisit_probe_authority": "FAST_FORGE_ONLY_NONCANONICAL_ZERO_CREDIT",
     "durable_candidate_specific_probe_result_observed": false,
-    "non_result_ci_in_progress": 35974357980,
+    "latest_non_result_ci_run_id": 35974555995,
+    "latest_non_result_ci_status": "completed",
+    "latest_non_result_ci_conclusion": "success",
     "expected_next_action": "Wait for Fast Forge to execute or decline only RVT35-FORGE-001 and persist a durable candidate-specific result, then wait for a fresh Evidence Analyst generation. MAIN may continue only if that later Analyst explicitly admits a fresh successor/new candidate ID with a prospective canonical contract."
   },
   "work_performed": [
@@ -193,6 +196,7 @@
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
+    "analyst_branch_head_rechecked_after_initial_persistence": true,
     "main_generation_and_lease_freshness_rechecked": true,
     "main_and_exact_research_refs_rechecked": true,
     "relay_rechecked": true,
