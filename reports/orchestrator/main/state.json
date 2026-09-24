@@ -1,29 +1,30 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260924T181620+0900-PRIMARY-R122-RVT35-FORGE-KILL-AWAIT-ANALYST",
-  "producer_run_id": "sparkbrain-main-primary-20260924T181620JST-r122-rvt35-forge-kill-await-analyst",
-  "generated_at": "2026-09-24T18:16:20+09:00",
-  "status": "WAITING_EXTERNAL",
+  "generation_id": "MAIN-20260924T181621+0900-PRIMARY-R123-RVT35-FORGE-KILL-ADJUDICATED-NO-CANONICAL-ACTION",
+  "producer_run_id": "sparkbrain-main-primary-20260924T181621JST-r123-rvt35-forge-kill-adjudicated-no-canonical-action",
+  "generated_at": "2026-09-24T18:16:21+09:00",
+  "status": "STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
   "execution_mode": "PRIMARY",
   "candidate_id": null,
   "research_layer": null,
   "claim_ceiling": null,
   "development_phase": null,
   "development_revision": null,
-  "cycle_count": 24,
-  "information_gain": "CONTROL_PLANE_ONLY_RVT35_FORGE_001_COMPLETED_AS_ZERO_CREDIT_FORGE_DEAD_END_WITH_ORDINARY_REDUCTION_SUFFICIENT; LATEST_EVIDENCE_ANALYST_PREDATES_RESULT; NO_CANONICAL_SUCCESSOR; ZERO_NEW_CANONICAL_SCIENTIFIC_RESULT",
+  "cycle_count": 25,
+  "information_gain": "CONTROL_PLANE_ONLY_EVIDENCE_ANALYST_R121_ACCEPTED_RVT35_FORGE_001_AS_ZERO_CREDIT_FORGE_DEAD_END_AND_RETURNED_CAND35_TO_DEFERRED_INDEPENDENT_REIDENTIFICATION; NO_FRESH_SUCCESSOR; NO_NEW_CANONICAL_SCIENCE",
   "analyst_authority": {
-    "generation_id": "EVA-20260924T170301+0900-R120-RVT35-FORGE-TOOLING-PENDING-PROBE",
-    "branch_head": "3b7a3a0fd100614ed1b271ac14010e34683625ac",
-    "decision": "RVT35_FORGE_001_FAST_FORGE_ONLY_NONCANONICAL_ZERO_CREDIT; CAND35_OLD_OBJECT_TERMINAL; NO_FRESH_SUCCESSOR; H7_SAME_OBJECT_PERMANENT_STOP",
-    "postdates_durable_forge_kill": false,
+    "generation_id": "EVA-20260924T180900+0900-R121-RVT35-FORGE-KILL-ADJUDICATED",
+    "branch_head": "3cb8761a71f99e81e562997ff883ae29dcb995de",
+    "decision": "ACCEPT_RVT35_FORGE_001_AS_NON_EVIDENTIARY_ZERO_CREDIT_DEAD_END; CAND35_REVISIT_STATUS_DEFERRED_INDEPENDENT_REIDENTIFICATION; NO_FRESH_SUCCESSOR; MAIN_STOP_NO_EXECUTABLE_CANONICAL_ACTION",
     "freshness_rechecked_this_run": true,
-    "scientific_execution_mode": "READ_ONLY"
+    "scientific_execution_mode": "READ_ONLY",
+    "material_change_scope": "CAND35_REVISIT_FORGE_POST_PROBE_ADJUDICATION_ONLY",
+    "new_scientific_result": false
   },
-  "prior_main_generation": "MAIN-20260924T171900+0900-PRIMARY-R121-WAITING-RVT35-FORGE-PROBE",
+  "prior_main_generation": "MAIN-20260924T181620+0900-PRIMARY-R122-RVT35-FORGE-KILL-AWAIT-ANALYST",
   "persistence": {
-    "history_path": "reports/orchestrator/main/history/2026-09-24/181620-r122-primary-rvt35-forge-kill-await-analyst.md",
-    "history_create_commit": "e9c973156da3a632c722211f979470a76b965b2a"
+    "history_path": "reports/orchestrator/main/history/2026-09-24/181621-r123-primary-rvt35-forge-kill-adjudicated-no-canonical-action.md",
+    "history_create_commit": "3fdbf3cbb66163f2a6c6dfc51d1cd091e78d1505"
   },
   "funnel": {
     "canonical": 35,
@@ -49,18 +50,17 @@
     "terminal_state": "TERMINAL_FOR_CURRENT_OBJECT",
     "claim_ceiling": "SYSTEM",
     "confirmatory_credit": 0,
-    "revisit_status": "REVISIT_TRIGGERED",
-    "revisit_decision_before_probe": "REVISIT_FORGE_TEST",
+    "revisit_status": "DEFERRED_INDEPENDENT_REIDENTIFICATION",
+    "historical_revisit_decision": "REVISIT_FORGE_TEST",
     "revisit_probe_spec_id": "RVT35-FORGE-001",
-    "fast_forge_probe_performed": true,
     "fast_forge_disposition": "FORGE_DEAD_END",
     "fast_forge_scientific_credit": 0,
     "fast_forge_promotion_proposed": false,
     "strongest_ordinary_reduction": "LOCAL_MEMBRANE_LEAK_PLUS_FIXED_THRESHOLD_PLUS_FIXED_EDGE_DELAY",
-    "fresh_post_probe_analyst_adjudication_present": false,
     "fresh_successor_admitted": false,
     "execution_authority_for_main": false,
-    "same_object_rerun_retune_rescore": "PROHIBITED"
+    "same_object_rerun_retune_rescore": "PROHIBITED",
+    "killed_rationale_recycling": "PROHIBITED_WITHOUT_GENUINELY_NEW_INDEPENDENT_INFORMATION"
   },
   "H7": {
     "candidate_id": "CAND-H7-RESPONSIBILITY",
@@ -94,12 +94,11 @@
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "main_report_branch": "ops/orchestrator-run-report",
     "analyst_branch": "ops/evidence-analyst-handoff",
-    "analyst_head": "3b7a3a0fd100614ed1b271ac14010e34683625ac",
+    "analyst_head": "3cb8761a71f99e81e562997ff883ae29dcb995de",
     "control_branch": "ops/control-brain-handoff",
     "control_head": "24f8492e29c22bb202a47ed496b3098a6355ba96",
     "utility_branch": "ops/utility-orchestrator-requests",
     "utility_head": "e4e6e3f9628f1b766f195cb9579cf8b7e552f1e9",
-    "fast_forge_report_branch": "ops/orchestrator-run-report",
     "fast_forge_report_commit": "eeb5498dbe13d42e6e00c3b23b27f2b4523984de",
     "fast_forge_probe_branch": "forge/20260924-rvt35-causal-opportunity-a",
     "fast_forge_probe_head": "58b6f3f05c56232ec4913d48635bd26641d73fe5",
@@ -128,29 +127,15 @@
     "latest_observed_ci_result_bearing": false,
     "result_bearing_scientific_workflow_dispatched_this_run": false
   },
-  "workflow_wait": {
-    "h7_formal_run_id": 35951118916,
-    "h7_formal_status": "completed",
-    "h7_formal_conclusion": "success",
-    "h7_run_attempt": 1,
-    "h7_result_bearing": true,
-    "h7_rerun_allowed": false,
-    "waiting_on_fresh_post_forge_evidence_analyst": true,
-    "revisit_probe_spec_id": "RVT35-FORGE-001",
-    "revisit_probe_authority": "FAST_FORGE_ONLY_NONCANONICAL_ZERO_CREDIT",
-    "durable_candidate_specific_probe_result_observed": true,
-    "probe_disposition": "FORGE_DEAD_END",
-    "expected_next_action": "Wait for a fresh Evidence Analyst generation that explicitly adjudicates the durable RVT35-FORGE-001 dead end. MAIN may continue only if that later Analyst explicitly admits a fresh successor/new candidate ID with a prospective canonical contract; otherwise keep Candidate #35 terminal and perform no science."
-  },
   "work_performed": [
-    {"classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION", "change": "Re-fetched stable main, research/forge collision surfaces, H7 one-way refs, Evidence Analyst R120, previous MAIN/Relay, Fast Forge durable state, Control R60, Utility R119, open PRs and recent workflows."},
-    {"classification": "RVT35_FORGE_RESULT_RECONCILIATION", "change": "Observed durable zero-credit Fast Forge disposition FORGE_DEAD_END: causal opportunity/sensitivity are constructible but apparent separation is fully explained by local membrane leak, fixed threshold and fixed edge/delay."},
-    {"classification": "CANONICAL_BOUNDARY_ENFORCEMENT", "change": "Did not promote, port, rerun, retune, rescore, reopen, or execute science because latest Evidence Analyst predates the Forge result and no fresh successor exists."},
-    {"classification": "FORMAL_FLOOR_RECHECK", "change": "Confirmed H7 START/preserve/freeze/formal/sealed/evidence surfaces remain unchanged and consumed identity remains no-rerun."}
+    {"classification": "CONTROL_PLANE_FRESHNESS_RECONCILIATION", "change": "Re-fetched stable main, research/forge collision surfaces, exact H7 one-way refs, Evidence Analyst, previous MAIN/Relay, Control, Fast Forge, Utility, open PRs and workflows."},
+    {"classification": "RVT35_POST_FORGE_ANALYST_ADJUDICATION", "change": "Applied fresh Evidence Analyst R121: accepted the zero-credit Forge dead end, moved Candidate #35 revisit status to DEFERRED_INDEPENDENT_REIDENTIFICATION, created no successor and granted MAIN no science authority."},
+    {"classification": "CANONICAL_BOUNDARY_ENFORCEMENT", "change": "Did not promote, port, rerun, retune, rescore, reopen, or execute science. Forge-derived code/history provides zero confirmatory credit."},
+    {"classification": "FORMAL_FLOOR_RECHECK", "change": "Confirmed H7 consumed identity and START/preserve/freeze/formal/sealed/evidence surfaces remain unchanged."}
   ],
   "observations": {
     "new_scientific_result_this_run": false,
-    "evidentiary_status": "NO_NEW_CANONICAL_SCIENCE; ZERO_CREDIT_FORGE_DEAD_END_OBSERVED; WAITING_FOR_FRESH_POST_PROBE_ANALYST_ADJUDICATION",
+    "evidentiary_status": "NO_NEW_CANONICAL_SCIENCE; RVT35_ZERO_CREDIT_FORGE_DEAD_END_ADJUDICATED; CAND35_DEFERRED_INDEPENDENT_REIDENTIFICATION; CANONICAL_QUEUE_EMPTY",
     "scientific_source_changed": false,
     "science_invariant_repair_performed": false,
     "science_affecting_change_performed": false,
@@ -170,7 +155,6 @@
   },
   "ownership_and_collision": {
     "fresh_primary_running_same_object_collision": false,
-    "prior_main_status": "WAITING_EXTERNAL",
     "fast_forge_latest_status": "FORGE_DEAD_END",
     "fast_forge_authority_scope": "NONCANONICAL_ZERO_CREDIT_ONLY",
     "fast_forge_canonical_collision": false,
@@ -184,7 +168,7 @@
   },
   "integrity": {
     "analyst_generation_freshness_rechecked": true,
-    "analyst_postdates_forge_result": false,
+    "fresh_post_probe_analyst_adjudication_present": true,
     "main_and_exact_research_refs_rechecked": true,
     "relay_rechecked": true,
     "forge_refs_rechecked_for_collision": true,
@@ -198,7 +182,7 @@
     "prior_result_preserved_unchanged": true,
     "formal_floor_respected": true
   },
-  "stop_reason": "RVT35_FORGE_001_DURABLE_DEAD_END_OBSERVED_BUT_LATEST_EVIDENCE_ANALYST_PREDATES_RESULT_AND_HAS_NOT_ISSUED_POST_PROBE_CANONICAL_ADJUDICATION; MAIN_HAS_NO_EXECUTABLE_CANONICAL_OBJECT",
-  "next_action": "Wait for a fresh Evidence Analyst generation that adjudicates the durable RVT35-FORGE-001 dead end. Continue only on explicit admission of a fresh successor/new candidate ID with its own prospective canonical contract; otherwise perform no science. H7 same-object action remains prohibited.",
+  "stop_reason": "EVIDENCE_ANALYST_R121_ACCEPTS_RVT35_FORGE_001_AS_ZERO_CREDIT_DEAD_END_AND_ADMITS_NO_FRESH_SUCCESSOR; ALL_35_CURRENT_CANONICAL_OBJECTS_TERMINAL; MAIN_HAS_NO_EXECUTABLE_CANONICAL_ACTION",
+  "next_action": "Remain stopped until genuinely new independent information leads a fresh Evidence Analyst generation to explicitly admit a new candidate/fresh successor with its own prospective canonical contract. Do not recycle RVT35-FORGE-001 rationale. H7 same-object action remains prohibited.",
   "owner": "main"
 }
