@@ -1,29 +1,58 @@
 {
   "schema_version": 2,
   "worker_role": "FAST_FORGE",
-  "latest_status": "FORGE_INTERESTING",
-  "forge_id": "FORGE-20260925T114511+0900-R134-COMPLETION-ACTION-PREVIEW",
-  "branch": "forge/20260925-completion-action-preview-a",
-  "branch_head": "f3a04d175f5add1018f4aa2280dff9bc0fd2d24e",
+  "latest_status": "FORGE_PROTOTYPE",
+  "forge_id": "FORGE-20260925T123752+0900-R134-COMPLETION-REPLAY-PREVIEW",
+  "branch": "forge/20260925-completion-replay-preview-a",
+  "branch_head": "7037e5024e791f8ecb545a0675637f39d3c41383",
   "prototype_kind": "INTEGRATION",
-  "target_capability": "partial internal ActivityPattern -> native Assembly or guarded completion -> side-effect-free learned action preview / abstain",
-  "recommended_handoff": "SYSTEM_BUILD_INPUT",
+  "target_capability": "partial internal ActivityPattern -> guarded mature Assembly completion -> cloned-field cue replay -> recurrent recruitment / abstain",
+  "recommended_handoff": "NONE_PENDING_EXACT_PACKAGE_VALIDATION",
+  "future_handoff_if_validated": "SYSTEM_BUILD_INPUT",
   "handoff_scope": "FUTURE_INPUT_ONLY_NOT_SB001",
   "scientific_credit": 0,
-  "ordinary_reduction": "nearest-prototype/content-addressable retrieval + greedy score-table policy + margin rejection/confidence gating",
-  "engineering_usefulness": "SUPPORTED_ROUGH_PROTOTYPE_EXACT_PACKAGE_CI_GREEN",
-  "scientific_claim_boundary": "NON_EVIDENTIARY_NONCANONICAL_ENGINEERING_ONLY_NO_NOVELTY",
-  "main_collision_check": "PASS_NO_COLLISION_SB001_ACCEPTED_EXACT_HEAD_AND_REVIEWED_INTEGRATION_UNTOUCHED",
-  "exact_head_ci": {
-    "run_id": 36087387136,
-    "head": "f3a04d175f5add1018f4aa2280dff9bc0fd2d24e",
-    "status": "completed",
-    "conclusion": "success",
-    "python_3_11": "success",
-    "python_3_13": "success"
+  "ordinary_reduction": "ordinary recurrent/attractor pattern completion + content-addressable cue selection",
+  "engineering_usefulness": "PROMISING_NOT_YET_EXACT_PACKAGE_VERIFIED",
+  "scientific_claim_boundary": "NON_EVIDENTIARY_NONCANONICAL_ENGINEERING_ONLY_NO_NOVELTY_NO_AUTONOMOUS_REGENERATION_CLAIM",
+  "main_collision_check": "PASS_NO_COLLISION_SB001_ACCEPTED_EXACT_HEAD_REVIEWED_INTEGRATION_UNTOUCHED",
+  "exact_package_validation": {
+    "syntax_compile": "pass",
+    "ci_observed": false,
+    "ci_claim": "NOT_CLAIMED"
   },
-  "runs": 44,
-  "prototypes": 26,
+  "diagnostics": {
+    "prototype_units": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "cue_units": [
+      1,
+      3
+    ],
+    "similarity": 0.6000000000000001,
+    "missing_units": [
+      2,
+      4
+    ],
+    "recurrent_weights": {
+      "1->2": 0.6,
+      "3->4": 0.6,
+      "1->5": 0.2
+    },
+    "threshold": 0.5,
+    "expected_replay_units": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "expected_missing_recovery_fraction": 1,
+    "recurrence_cut_expected_missing_recovery_fraction": 0
+  },
+  "runs": 45,
+  "prototypes": 27,
   "theory_probes": 3,
   "theory_kills": 3,
   "theory_survivors": 0,
@@ -31,13 +60,13 @@
   "revisit_kills": 1,
   "revisit_survivors": 0,
   "dead_ends": 17,
-  "integration_prototypes": 5,
+  "integration_prototypes": 6,
   "integration_useful": 5,
   "integration_ci_green": 4,
   "system_build_input_recommendations": 5,
   "later_build_input_admissions": 1,
-  "history_path": "reports/orchestrator/sub/history/2026-09-25/1145-r134-fast-forge-completion-action-preview.md",
-  "prototype_record": "forge/20260925-completion-action-preview-a@f3a04d175f5add1018f4aa2280dff9bc0fd2d24e:forge_prototypes/completion_action_preview.md",
+  "history_path": "reports/orchestrator/sub/history/2026-09-25/1237-r134-fast-forge-completion-replay-preview.md",
+  "prototype_record": "forge/20260925-completion-replay-preview-a@7037e5024e791f8ecb545a0675637f39d3c41383:forge_prototypes/completion_replay_preview.md",
   "refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "evidence_analyst_r134_history_blob": "43c8a92adbe1c321efd8ee2d5d2d1766da626980",
@@ -47,14 +76,14 @@
     "theory_r5_latest_blob": "3933bd3f8f3ea963341332eea2eaa48d0b8457d3",
     "literature_r44_latest_blob": "a55899dc10db66b3cc741412f0fd61cf6d023fd0",
     "audit_r10_latest_blob": "a89738c837b2e5bc2eab94adb1722bbb6daeb673",
-    "methodology_r121_history_blob": "1a991a68fe9ce6ce73d9cc57daa4f2cd4d022002",
-    "utility_state_blob": "ef691d662bf7035fef7fffcbe0d64cdab18c8490",
+    "methodology_r121_latest_blob": "7adc5be83e94adf278ae6284336373c93dc8b7cf",
+    "utility_branch_head": "4fa2dafb418814f277ed19919956cec7e61b381d",
     "sb001_accepted_head": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
     "sb001_ci_run": 36060329063,
-    "parent_forge_head": "7e1e803dfe31483c21df0075778723a558ec2d3f",
-    "prototype_code_blob": "145c9eda9b207a48545b2f36471e0defc715dda2",
-    "prototype_test_blob": "1f9ae96dd47519054278096f386f452e5fbd58d8",
-    "prototype_doc_blob": "1873e4b8e24cc221ed7b8e0b164e9345657ba657"
+    "parent_forge_completion_head": "dfc053332e95563b076f4e5e70b792710f696125",
+    "prototype_code_blob": "e982939502abd072bd7e27a534fa1d7472d6e2b1",
+    "prototype_test_blob": "97a0d7e3dc9aa46a462eef45d787aaae7d825689",
+    "prototype_doc_blob": "bf5599432006bffc1f5108c959617d04e10faeac"
   },
   "hard_floor_actions": "NONE"
 }
