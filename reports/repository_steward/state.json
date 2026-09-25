@@ -67,9 +67,10 @@
     "prior_state_generation": "STEWARD-20260925T075000+0900-G17",
     "history_write_this_run": "success",
     "latest_write_this_run": "success",
-    "state_write_this_run": "pending_until_commit",
+    "state_write_this_run": "success",
     "cross_stream_pointer_debt_observed": true,
-    "durable_control_incident_record_found": false
+    "durable_control_incident_record_found": false,
+    "persistence_complete": true
   },
   "mutations": {
     "scientific": false,
