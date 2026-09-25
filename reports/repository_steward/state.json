@@ -1,16 +1,17 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260925T075000+0900-G17",
-  "produced_at": "2026-09-25T07:50:00+09:00",
-  "supersedes_generation_id": "STEWARD-20260924T195000+0900-G16-4E71C2B9",
+  "generation_id": "STEWARD-20260925T195000+0900-G19",
+  "produced_at": "2026-09-25T19:50:00+09:00",
+  "supersedes_generation_id": "STEWARD-20260925T135000+0900-G18",
   "repository": "salmonmikan/sparkbrain_research",
   "main": "d16403414fc7abebd23075fc401240971b8eb91d",
   "inventories": {
     "research_branches": 189,
-    "forge_branches": 12,
+    "forge_branches": 22,
     "system_build_branches": 1,
     "legacy_freeze_branches": 13,
     "preserve_branches": 26,
+    "authoritative_tag_refs": 9,
     "evidence_tag_refs": 6
   },
   "system_build": {
@@ -26,7 +27,8 @@
   },
   "immutable_refs": {
     "legacy_freeze_map_exact": true,
-    "h7_refs_unchanged": true,
+    "mapped_preserve_pointers_exact": true,
+    "h7_started": "52b17b785364f96cc2e95507b2336252459d5352",
     "h7_raw_preserve": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
     "incident": false
   },
@@ -34,25 +36,40 @@
     "ruleset_count": 1,
     "main_ruleset": "protection_main",
     "tag_namespace_ruleset": false,
-    "issue_139": "open_still_valid_body_partly_stale"
+    "issue_139": "open_still_valid_body_stale",
+    "issue_139_stale_facts": [
+      "repository rulesets = 0",
+      "evidence tags = 5"
+    ]
   },
   "mapping": {
     "legacy_freeze_rows": 13,
+    "mapped_preserve_rows": 16,
     "summary_stale": true,
     "current_authoritative_tag_refs": 9,
-    "current_annotated_evidence_tag_objects": 5
-  },
-  "documentation": {
-    "v05_on_main": true,
-    "reader_facing_version_semantics": "incomplete"
+    "current_evidence_tag_refs": 6
   },
   "promotion": {
     "open_prs": [
       148,
       149
     ],
-    "system_build_status": "future_engineering_candidate_after_normal_acceptance_and_review",
+    "only_governance_tooling_prs_open": true,
+    "system_build_status": "accepted_bounded_engineering_candidate_pending_normal_review_pr",
     "scientific_candidates": []
+  },
+  "separation": {
+    "main_research_forge_build_evidence": "intact",
+    "forge_or_research_or_build_pr_to_main": false
+  },
+  "persistence_health": {
+    "prior_latest_generation": "STEWARD-20260925T135000+0900-G18",
+    "prior_state_generation": "STEWARD-20260925T075000+0900-G17",
+    "history_write_this_run": "success",
+    "latest_write_this_run": "success",
+    "state_write_this_run": "pending_until_commit",
+    "cross_stream_pointer_debt_observed": true,
+    "durable_control_incident_record_found": false
   },
   "mutations": {
     "scientific": false,
@@ -63,7 +80,7 @@
     "steward_persistence_only": true
   },
   "persistence": {
-    "history": "reports/repository_steward/history/2026-09-25/0750.md",
+    "history": "reports/repository_steward/history/2026-09-25/1950.md",
     "latest": "reports/repository_steward/latest.md",
     "state": "reports/repository_steward/state.json"
   }
