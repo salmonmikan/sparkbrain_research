@@ -1,20 +1,40 @@
 # SparkBrain Control Brain — Latest
 
 - schema_version: `2`
-- generation_id: `CTRL-20260925T125000+0900-R74`
-- produced_at: `2026-09-25T12:50:00+09:00`
-- authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY`
+- generation_id: `CTRL-20260925T205800+0900-R75-MANUAL-P0`
+- produced_at: `2026-09-25T20:58:00+09:00`
+- authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_AND_INCIDENT_CONTROL`
+- invocation_kind: `MANUAL_IMMEDIATE_RESPONSE`
+- history_path: `analysis/control_brain/history/2026-09-25/2058-R75-MANUAL-P0.md`
 
-Canonical science is unchanged: 35/35 terminal (14 MECHANISM / 21 SYSTEM), active 0, queued 0; H7 remains consumed FORMAL / INCONCLUSIVE with authoritative bindings unchanged.
+## P0 directive
 
-Evidence Analyst R134 formally accepted BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT as a bounded non-evidentiary pilot at exact head 5b86dfa6cad634312c81e579e5339b3b47cef6e0. Exact-head CI 36060329063 is successful. Built and bounded functionally verified: yes. Comparative support: no. Composition contribution: not established. Scientific novelty and scientific credit: none. Lifecycle: BUILD_ACCEPTED_BOUNDED_PENDING_INTEGRATION.
+HUMAN-20260925-002 is ACCEPTED and active immediately as the highest operational priority until its completion criteria are met. Control Brain owns incident `INC-GITHUB-PERSISTENCE-20260925-001`.
 
-No SYSTEM_BUILD PR exists. Next authorized build action is normal reviewed integration of that exact accepted head without feature mixing; any head change requires exact-head re-verification. MAIN's moving R137 report is stale relative to R134.
+Scientific hard floors are unchanged. No cadence change, scheduler creation/deletion, or scientific-standard change is authorized by this application.
 
-Fast Forge produced a CI-green read-only completion-to-action preview as a future SYSTEM_BUILD input with zero scientific credit, followed by a completion-to-cloned-field replay prototype that remains unvalidated and unadmitted. The designated Forge moving mailbox is stale relative to these prototype records.
+## Immediate fleet posture
 
-Revisit remains 1/20/14/0. Durable Theory/Literature/Audit remain R5/R44/R10. External-science publication durability remains degraded.
+- MAIN: enabled; owns accepted SB001 critical path.
+- Utility: enabled as `RESTARTING_DIAGNOSTIC`; next run is a persistence/runtime canary. On material failure, return to FAULT_SUSPENDED rather than rapid restart.
+- Relay: disabled under `DEPENDENCY_WAIT_SUSPEND`; restart only when MAIN provides a safe handoff, the mutation/publication path is sufficiently bounded, and first post-restart durable publication can be validated.
+- Evidence Analyst / Methodology / Fast Forge / External Science / Current State Brief / Control: enabled for discovery, integrity audit, and independent incident evidence.
+- No cadence changes were made.
 
-Scheduler health remains misaligned with standing policy: the intended MAIN/Relay execution path is not active in the current live fleet, and Methodology remains two-hourly. No scheduler mutation was made.
+## Persistence authority
 
-Next: preserve science; after explicit scheduler-change approval, restore the intended build execution path and integrate the exact accepted SB001 head; then define a separate prospective composition-development contract.
+A complete append-only generation history is the primary durable record. latest/state are moving pointers/caches and must not override a newer complete history generation.
+
+Before mutation: refresh branch head/blob SHA. Prefer atomic multi-file persistence where available. Otherwise use bounded compare-and-swap retry, never force-push, never overwrite a newer concurrent generation, and record write telemetry where possible.
+
+A single successful later write does not resolve the P0 incident.
+
+## Science / build
+
+Canonical science remains 35/35 terminal (14 MECHANISM / 21 SYSTEM), active 0, queued 0. Consumed FORMAL identities remain immutable.
+
+BUILD-SB-001 remains an accepted bounded NON_EVIDENTIARY_BUILD at its accepted exact head. Built/functionally verified within bounded acceptance: yes. Comparative support: no. Composition contribution: not established. Scientific novelty/credit: none. Reviewed integration PR remains pending.
+
+## Next
+
+Prioritize root-cause bounding, partial-state reconciliation, canary validation, and safe worker restoration over low-priority research/cleanup until HUMAN-20260925-002 completion criteria are satisfied.
