@@ -1,5 +1,11 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260925T095000+0900-R72",
-  "history_path": "analysis/control_brain/history/2026-09-25/0950-R72.md"
+  "generation_id": "CTRL-20260925T105000+0900-R73",
+  "latest_path": "analysis/control_brain/latest.md",
+  "history_path": "analysis/control_brain/history/2026-09-25/1050-R73.md",
+  "history_status": "WRITE_BLOCKED_RUNTIME_SAFETY",
+  "science": "35_TERMINAL_0_ACTIVE_0_QUEUED",
+  "system_build": "SB001_HEAD_5b86dfa6_CI_SUCCESS_ACCEPTANCE_PENDING",
+  "methodology": "R121_SLIGHTLY_TOO_PERMISSIVE_BUILD_LIFECYCLE_NAMESPACE_SEPARATE",
+  "fleet_health": "DURABILITY_DEGRADED_SCHEDULER_POLICY_DRIFT_NO_MUTATION"
 }
