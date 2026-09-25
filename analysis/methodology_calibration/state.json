@@ -1,60 +1,48 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-25T01:19:59+09:00",
+  "timestamp": "2026-09-25T10:21:31+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260925T011959+0900-R119-6F8C2A41",
-    "sequence": 119,
+    "generation_id": "METHCAL-20260925T102131+0900-R121-4D8A7C21",
+    "sequence": 121,
     "material_change": true,
-    "material_change_reason": "LITERATURE_R44_EXPANDS_PROSPECTIVE_REDUCTION_LADDER; STAGE_AND_CLAIM_SCOPE_CLARIFIED",
-    "supersedes_generation_id": "METHCAL-20260925T001948+0900-R118-D42E7B19",
+    "material_change_reason": "SYSTEM_BUILD_SYNTHESIS_VALIDATED_AND_BUILD_LIFECYCLE_NAMESPACE_CLARIFIED",
+    "supersedes_generation_id": "METHCAL-20260925T061738+0900-R120-A4C79E12",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260925T001948+0900-R118-D42E7B19",
-      "branch_head": "2dccd823d7f37a621a477a8a1fbf3d637edc340d"
+      "generation_id": "METHCAL-20260925T061738+0900-R120-A4C79E12",
+      "branch_head": "3c7799410005155c1c9f05a473359940e5d8fed3"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260925T005800+0900-R130-LIT44-NO-SCIENCE",
-      "branch_head": "6a8eb246233bc04d5f3ca47aaffba99970acf20b"
+      "generation_id": "EVA-20260925T050357+0900-R133-SB001-ACCEPTANCE-BOUNDARY-FORGE-INTEGRATION-NO-SCIENCE",
+      "branch_head": "784b7f1ab7451a4457b0987750c4304c20ac0e8a"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260925T005016+0900-R65",
-      "branch_head": "857998b44ca7954d3875d3957c447ce3414a7d89"
+      "generation_id": "CTRL-20260925T095000+0900-R72",
+      "branch_head": "1f3d17c2deb9c389aa7668e21f9f5bf907a51499"
     },
-    "literature": {
-      "generation_id": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
-      "branch_head": "4087356677f1ae60aa87aafeea927949ea0c3d17",
-      "revisit_trigger": false
+    "main_fast_forge": {
+      "branch_head": "c3eaea34bbd5d1f9d2d1e745a5a1774db2fc9e5f",
+      "main_generation": "MAIN-20260925T061700+0900-PRIMARY-R137-SB001-ENTITY-BOUNDARY-WAITING-CI",
+      "forge_generation": "FORGE-20260925T093434+0900-R133-R137-PARKED-NOOP"
     },
-    "theory": {
-      "generation_id": "THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41",
-      "status": "FORGE_KILLED_NO_CANONICALIZATION"
-    },
-    "independent_audit": {
-      "latest_generation": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
-      "expected_2230_output_durable": false
-    },
-    "main": {
-      "status": "STOPPED_NO_ALLOCATED_CANONICAL_OBJECT",
-      "branch_head": "116cb7d0f570fb1482c4ad6bbd1251bcba4aee75"
+    "external_science": {
+      "branch_head": "fcd9175a672da456e5b16f4799fb234eb7c26d07",
+      "theory": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
+      "literature": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
+      "independent_audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91"
     }
   },
   "authoritative_refs": {
     "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "evidence_ref_count": 6,
-    "annotated_evidence_count": 5,
-    "h7_evidence_ref_type": "LIGHTWEIGHT_COMMIT_TAG",
-    "tag_namespace_server_protection": false,
     "h7": {
       "raw_commit": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
       "preserve_before_target_access": true,
       "result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
       "decision": "INCONCLUSIVE",
       "phase": "CONSUMED_ONE_WAY",
-      "terminal": true,
-      "workflow_run": 35951118916,
-      "workflow_attempt": 1
+      "terminal": true
     },
     "funnel": {
       "objects": 35,
@@ -62,10 +50,7 @@
       "SYSTEM": 21,
       "terminal": 35,
       "active": 0,
-      "queued": 0,
-      "OPEN_DEVELOPMENT": 0,
-      "RESULT_EXPOSED_DEVELOPMENT": 34,
-      "CONSUMED_ONE_WAY": 1
+      "queued": 0
     },
     "revisit": {
       "coverage": 35,
@@ -74,60 +59,60 @@
       "DEFERRED_INDEPENDENT_REIDENTIFICATION": 14,
       "REVISIT_TRIGGERED": 0
     },
-    "candidate35": {
-      "terminal": true,
-      "claim_ceiling": "SYSTEM",
-      "confirmatory_credit": 0,
-      "current_trigger_authority": "NONE_EXHAUSTED",
-      "fresh_successor": false
-    },
-    "th002": {
-      "canonical": false,
+    "system_build": {
+      "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
+      "branch_head": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
+      "candidate_id": null,
+      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
       "scientific_credit": 0,
-      "revisit_trigger": false,
-      "status": "FORGE_KILLED_NO_CANONICALIZATION"
+      "component_function": "SUPPORTED_BOUNDED_TARGET",
+      "integration_viability": "SUPPORTED_CURRENT_PILOT",
+      "composition_contribution": "NOT_ESTABLISHED",
+      "scientific_novelty": "NOT_ESTABLISHED_NOT_CLAIMED"
+    },
+    "forge_integration": {
+      "assembly_completion_head": "dfc053332e95563b076f4e5e70b792710f696125",
+      "completion_predictor_bridge_head": "7e1e803dfe31483c21df0075778723a558ec2d3f",
+      "ordinary_reduction_preserved": true,
+      "scientific_credit": 0
     }
   },
   "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
   "gate_findings": {
     "hard_floor": "KEEP",
-    "development_phase_semantics": "KEEP",
-    "result_exposed_revision_identity": "TIGHTEN",
-    "cycle3": "KEEP",
-    "repair_taxonomy": "KEEP",
+    "formal_one_way": "KEEP",
     "development_credit": "KEEP",
     "preformal": "KEEP",
-    "ready_not_success": "KEEP",
-    "reduction_ladder_staging": "CLARIFY",
-    "reduction_ladder_scope": "SPLIT_BY_CLAIM_TYPE",
-    "literature_credit_separation": "KEEP",
-    "formal_one_way": "KEEP",
-    "terminal_absorbency": "KEEP",
-    "authoritative_tag_form": "TIGHTEN",
-    "tag_namespace_protection": "TIGHTEN",
-    "fresh_successor_contract": "KEEP",
-    "terminal_revisit_orthogonality": "KEEP",
-    "revisit_discovery_durability": "TIGHTEN",
+    "result_exposed_revision_identity": "TIGHTEN",
+    "reduced_component_reuse": "KEEP",
+    "system_build_identity_separation": "KEEP",
+    "system_build_provenance_manifest": "TIGHTEN",
+    "system_build_interface_state_loop_manifest": "TIGHTEN",
+    "composition_contribution_state": "TIGHTEN",
+    "system_build_lifecycle_namespace": "CLARIFY",
+    "functionally_verified_scope": "CLARIFY",
+    "whole_system_reduction_guard": "KEEP",
+    "build_to_science_boundary": "KEEP",
+    "build_to_science_live_transition": "INSUFFICIENT_EVIDENCE",
     "revisit_rescue_laundering": "KEEP",
-    "revisit_forge_scope": "KEEP",
-    "revisit_canonicalization": "INSUFFICIENT_EVIDENCE",
-    "revisit_bootstrap": "KEEP",
-    "broad_responsibility_burden": "SPLIT_BY_CLAIM_TYPE",
-    "theory_canonical_separation": "KEEP",
-    "forge_canonical_separation": "KEEP",
-    "protected_evaluation": "KEEP",
-    "claim_ceiling": "KEEP",
-    "external_science_liveness": "TIGHTEN",
-    "mechanism_supply_health": "CLARIFY",
+    "revisit_discovery_durability": "TIGHTEN",
     "pass_reachability": "KEEP"
   },
   "calibration": {
-    "moving_goalpost_risk": "LOW_CURRENT_POLICY_FRESH_R117_STRESS_TEST_PENDING",
-    "false_positive_risk": "LOW_NO_ZOMBIE_INFLATION",
-    "false_negative_risk": "LOW_TO_MODERATE_OPERATIONAL_INDEPENDENT_AUDIT_DURABILITY_GAP",
-    "preformal_risk": "NO_CURRENT_HIDDEN_SECOND_FORMAL; PROSPECTIVE_IF_R44_BASELINES_UNIVERSALIZED",
-    "r44_scope": "STAGED_AND_CLAIM_MATCHED",
+    "over_reduction_risk": "LOW",
+    "overclaim_risk": "LOW",
+    "false_negative_risk": "LOW_TO_MODERATE_OPERATIONAL_DURABILITY",
+    "moving_goalpost_risk": "LOW_CURRENT_POLICY",
     "pass_reachability": "REALISTIC_WITHOUT_STANDARD_RELAXATION"
+  },
+  "persistence_health": {
+    "analyst_history_generation": "R133",
+    "analyst_latest_generation": "R130",
+    "analyst_state_generation": "R129",
+    "control_history_state_generation": "R72",
+    "control_latest_generation": "R71",
+    "methodology_prior_history_generation": "R120",
+    "methodology_prior_moving_generation": "R119"
   },
   "utility_request": {
     "created": false
@@ -144,11 +129,10 @@
     "protected_heldout_accessed": false
   },
   "confidence": {
-    "canonical_revisit_formal_integrity": "HIGH",
-    "r44_no_trigger_disposition": "HIGH",
-    "r44_future_stage_scope_handling": "MEDIUM_UNTIL_FRESH_CANDIDATE",
-    "revision_identity_enforcement": "MEDIUM_UNTIL_FRESH_REPAIR_CASE",
-    "evidence_tag_state": "HIGH",
-    "independent_audit_gap": "HIGH"
+    "canonical_formal_revisit_integrity": "HIGH",
+    "system_build_separation": "HIGH",
+    "forge_reduction_synthesis_balance": "HIGH",
+    "build_lifecycle_namespace_risk": "MEDIUM",
+    "future_build_to_science_transition": "LOW_UNTIL_OBSERVED"
   }
 }
