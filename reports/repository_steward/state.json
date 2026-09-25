@@ -1,17 +1,22 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260925T195000+0900-G19",
-  "produced_at": "2026-09-25T19:50:00+09:00",
-  "supersedes_generation_id": "STEWARD-20260925T135000+0900-G18",
+  "generation_id": "STEWARD-20260926T015000+0900-G20",
+  "produced_at": "2026-09-26T01:50:00+09:00",
+  "supersedes_generation_id": "STEWARD-20260925T195000+0900-G19",
   "repository": "salmonmikan/sparkbrain_research",
   "main": "d16403414fc7abebd23075fc401240971b8eb91d",
   "inventories": {
+    "branches_total": 408,
     "research_branches": 189,
     "forge_branches": 22,
     "system_build_branches": 1,
     "legacy_freeze_branches": 13,
     "preserve_branches": 26,
+    "ops_branches": 23,
     "authoritative_tag_refs": 9,
+    "freeze_tag_refs": 1,
+    "sealed_tag_refs": 1,
+    "formal_tag_refs": 1,
     "evidence_tag_refs": 6
   },
   "system_build": {
@@ -28,33 +33,34 @@
   "immutable_refs": {
     "legacy_freeze_map_exact": true,
     "mapped_preserve_pointers_exact": true,
-    "h7_started": "52b17b785364f96cc2e95507b2336252459d5352",
-    "h7_raw_preserve": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
-    "incident": false
+    "legacy_freeze_rows": 13,
+    "mapped_preserve_rows": 16,
+    "mutated_this_run": false
   },
   "protection": {
     "ruleset_count": 1,
     "main_ruleset": "protection_main",
     "tag_namespace_ruleset": false,
-    "issue_139": "open_still_valid_body_stale",
+    "human_directive_20260919_002": "OPEN_DEFER_PROTECTION_DEPLOYMENT",
+    "issue_139": "open_body_stale",
     "issue_139_stale_facts": [
       "repository rulesets = 0",
       "evidence tags = 5"
     ]
   },
   "mapping": {
-    "legacy_freeze_rows": 13,
-    "mapped_preserve_rows": 16,
     "summary_stale": true,
-    "current_authoritative_tag_refs": 9,
-    "current_evidence_tag_refs": 6
+    "stale_footer_facts": [
+      "Git tags = 0",
+      "repository rulesets = 0"
+    ],
+    "rows_exact": true
   },
   "promotion": {
-    "open_prs": [
-      148,
-      149
-    ],
-    "only_governance_tooling_prs_open": true,
+    "open_prs": [148, 149],
+    "open_prs_classification": "governance_tooling_only",
+    "pr_148": "human-directives repository skill",
+    "pr_149": "Git-backed SparkBrain scheduler registry skill",
     "system_build_status": "accepted_bounded_engineering_candidate_pending_normal_review_pr",
     "scientific_candidates": []
   },
@@ -62,15 +68,30 @@
     "main_research_forge_build_evidence": "intact",
     "forge_or_research_or_build_pr_to_main": false
   },
+  "incident": {
+    "id": "INC-GITHUB-PERSISTENCE-20260925-001",
+    "status": "OPEN_P0",
+    "repository_wide_write_outage_supported": false,
+    "steward_path_previous_complete": true,
+    "observed_partial_streams": [
+      "Evidence Analyst R136 history-only follow-up",
+      "Methodology R124 history-only follow-up",
+      "MAIN R138/R139/R140 history-only follow-up"
+    ],
+    "utility_assignment_without_later_completion_generation": true,
+    "exact_root_cause_resolved": false,
+    "steward_conclusion": "PATH_RUNTIME_ACTION_DEPENDENT_FAILURE_REMAINS_PLAUSIBLE_AND_NONATOMIC_PUBLICATION_AMPLIFIES_POINTER_DEBT"
+  },
   "persistence_health": {
-    "prior_latest_generation": "STEWARD-20260925T135000+0900-G18",
-    "prior_state_generation": "STEWARD-20260925T075000+0900-G17",
+    "branch_head_before": "b6a18938bd0838f9c8d9c427d24665a29e1f6e35",
     "history_write_this_run": "success",
+    "history_commit": "a81b7056a997c74f27fb96cbb652fd8d1671887e",
     "latest_write_this_run": "success",
-    "state_write_this_run": "success",
+    "latest_commit": "5b6a4502d859b6f96840848086f3662030f5dd82",
+    "state_write_this_run": "in_progress",
+    "retry_count": 0,
     "cross_stream_pointer_debt_observed": true,
-    "durable_control_incident_record_found": false,
-    "persistence_complete": true
+    "persistence_complete": false
   },
   "mutations": {
     "scientific": false,
@@ -81,7 +102,7 @@
     "steward_persistence_only": true
   },
   "persistence": {
-    "history": "reports/repository_steward/history/2026-09-25/1950.md",
+    "history": "reports/repository_steward/history/2026-09-26/0150.md",
     "latest": "reports/repository_steward/latest.md",
     "state": "reports/repository_steward/state.json"
   }
