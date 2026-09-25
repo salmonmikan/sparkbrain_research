@@ -1,18 +1,20 @@
 # SparkBrain Control Brain — Latest
 
 - schema_version: `2`
-- generation_id: `CTRL-20260925T105000+0900-R73`
-- produced_at: `2026-09-25T10:50:00+09:00`
+- generation_id: `CTRL-20260925T125000+0900-R74`
+- produced_at: `2026-09-25T12:50:00+09:00`
 - authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_ONLY`
 
-Science remains 35/35 terminal; H7 remains consumed FORMAL / INCONCLUSIVE and authoritative refs are unchanged.
+Canonical science is unchanged: 35/35 terminal (14 MECHANISM / 21 SYSTEM), active 0, queued 0; H7 remains consumed FORMAL / INCONCLUSIVE with authoritative bindings unchanged.
 
-BUILD-SB-001 remains at `5b86dfa6cad634312c81e579e5339b3b47cef6e0`; exact-head CI is successful, no build PR exists, bounded function is verified, full Analyst acceptance is pending, composition contribution is not established, and scientific novelty/credit remains zero.
+Evidence Analyst R134 formally accepted BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT as a bounded non-evidentiary pilot at exact head 5b86dfa6cad634312c81e579e5339b3b47cef6e0. Exact-head CI 36060329063 is successful. Built and bounded functionally verified: yes. Comparative support: no. Composition contribution: not established. Scientific novelty and scientific credit: none. Lifecycle: BUILD_ACCEPTED_BOUNDED_PENDING_INTEGRATION.
 
-Methodology R121 is the material new governance input. Control adopts its clarification prospectively: SYSTEM_BUILD must use a build-specific lifecycle namespace rather than scientific `OPEN_DEVELOPMENT` semantics after build outcomes are visible. This does not invalidate SB001 or alter science.
+No SYSTEM_BUILD PR exists. Next authorized build action is normal reviewed integration of that exact accepted head without feature mixing; any head change requires exact-head re-verification. MAIN's moving R137 report is stale relative to R134.
 
-Fast Forge is correctly parked with no new handoff. Revisit is unchanged at 1/20/14/0. Durable Theory/Literature/Audit remain R5/R44/R10.
+Fast Forge produced a CI-green read-only completion-to-action preview as a future SYSTEM_BUILD input with zero scientific credit, followed by a completion-to-cloned-field replay prototype that remains unvalidated and unadmitted. The designated Forge moving mailbox is stale relative to these prototype records.
 
-Operational durability remains degraded for Analyst, MAIN and External Science. Methodology persistence recovered at R121 and Forge durability is healthy. Scheduler standing policy and live fleet/cadence remain not fully aligned. No scheduler mutation was made.
+Revisit remains 1/20/14/0. Durable Theory/Literature/Audit remain R5/R44/R10. External-science publication durability remains degraded.
 
-Next: Evidence Analyst adjudicates the exact SB001 head, records build-specific lifecycle semantics, and if accepted MAIN proceeds to normal reviewed integration. Composition contribution remains a separate later BUILD question.
+Scheduler health remains misaligned with standing policy: the intended MAIN/Relay execution path is not active in the current live fleet, and Methodology remains two-hourly. No scheduler mutation was made.
+
+Next: preserve science; after explicit scheduler-change approval, restore the intended build execution path and integrate the exact accepted SB001 head; then define a separate prospective composition-development contract.
