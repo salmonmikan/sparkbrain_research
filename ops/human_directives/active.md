@@ -957,3 +957,14 @@ P0解除には少なくとも、
 これはユーザーからの明示的運用Directiveであり、Controlは単なる提案待ちとして放置せず、既に承認されているfleet ON/OFF authorityとincident-management authorityの範囲で直ちに運用へ反映すること。
 
 科学的判断を伴う変更は従来authorityを通すが、障害診断・安全停止・durable state reconciliation・canary・再起動は既存運用権限の範囲で進めてよい。
+
+
+### Incident-scoped prompt mutation authority
+
+追加承認として、本GitHub persistence障害の診断・封じ込め・修復・検証・再発防止を目的とする範囲に限り、Control Brainは現行SparkBrain schedulerのpromptを直接変更してよい。**Control Brain自身のprompt変更も明示的に許可する。**
+
+対象には persistence write順序、atomic commit、fresh SHA/head取得、CAS/bounded retry、telemetry、history/latest/state authority、shared-branch coordination、fault suspension/restart/canary、incident協力指示等を含めてよい。
+
+この例外権限は本incidentに関係する変更に限定する。科学的基準・FORMAL integrity・held-out規則の変更、無関係なrole再設計、cadence変更、scheduler新設/削除は別承認なしには行わない。
+
+Controlは可能な限り、変更対象scheduler、変更理由、変更箇所、temporary/durable、検証結果、temporary変更のrollback条件をdurableに記録する。incident解消後はtemporaryな診断指示を見直し、一般的に有効なpersistence hardeningのみ残す。
