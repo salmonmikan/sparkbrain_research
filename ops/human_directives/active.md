@@ -863,3 +863,97 @@ HUMAN-20260924-009と旧履歴は変更しない。TH-002、H7、A01、#34/#35�
 ### Required independent review
 
 Control Brainが独立に `ACCEPT / MODIFY / DEFER / REJECT` を判定する。採用または修正する場合は、Evidence AnalystとMethodologyを通じて、既存のTheory/Forge/MAIN等へ適切な範囲を割り当てる。最初から新理論の成立を要求せず、次の限定された成果物・担当・判定条件、または価値がない具体的理由を残してほしい。これは科学的証拠ではなく、未実証の研究進言である。
+
+
+## HUMAN-20260925-002 — P0 GitHub persistence incident resolution across the SparkBrain fleet
+
+Human status: `OPEN`  
+Created: `2026-09-25 JST`  
+Priority: `P0 / HIGHEST OPERATIONAL PRIORITY UNTIL RESOLVED`
+
+### Intent
+
+現在発生している **GitHubへの書き込み不整合・partial persistence・durable publication欠落等を、SparkBrain全体の最優先解消課題に設定する。**
+
+本障害が解消されるまで、全ての現行SparkBrain schedulerは、自身の役割・権限・hard floorを守りながら、通常の低優先度研究・探索・整理よりも、原因特定、影響範囲把握、durable state整合性回復、再発防止、正常復帰確認へ優先的に協力する。
+
+### Control ownership
+
+Control Brainをincident統括ownerとする。
+
+- affected scheduler / branch / path / last-safe-generationを管理する;
+- 必要なら該当workerを `OPERATIONAL_FAULT_SUSPEND` する;
+- 停止時には必ずrestart条件・diagnostic ownerを設定する;
+- Repository Steward capability / Utility / Methodology / Evidence Analyst / その他適任workerを使って原因調査を進める;
+- partial persistenceをreconcileする;
+- canaryおよびrestart後first generationを検証する;
+- 解消または十分にboundedされたら速やかに必要workerを復帰させる;
+- 単発write成功だけではincidentを閉じない。
+
+GitHub書き込み不整合を理由とする停止は認めるが、「停止した」で終えることは禁止する。
+
+### Fleet-wide requirement
+
+全schedulerはrun開始時に、自身または依存streamのGitHub persistence障害とControlのincident状態を確認する。
+
+自身が診断・証拠収集・整合性確認・修復支援に寄与できる具体的作業を持つ場合は、それを通常業務より優先する。
+
+ただし、全workerが同一branchへ無秩序に修復writeすることは避け、Controlのincident planとownershipに従う。科学的one-way integrity、immutable evidence、held-out隔離、FORMAL hard floorは維持する。
+
+### Required investigation
+
+最低限、以下を横断確認する。
+
+- GitHub App / repository write permissions / rulesets;
+- affected branchのrecent commit sequence;
+- generation内のhistory/latest/state write ordering;
+- blob SHA / branch head freshness;
+- shared ops branchのconcurrent writers;
+- scheduler queue delay / actual overlap;
+- 403 / 409 / 422 / runtime mutation refusal等のerror class;
+- direct canary writeとscheduled writeの差;
+- atomic multi-file commit / CAS / bounded retryの適用可否;
+- stale pointer/cacheの安全なreconciliation;
+- restart後first-generationのdurable completeness.
+
+不明点を推測で確定しない。
+
+### Preferred remediation direction
+
+原因調査が支持する場合、以下を優先する。
+
+- append-only generation historyをprimary durable record;
+- latest/stateをmoving pointer/cache;
+- history/latest/stateを可能なら1 atomic commit;
+- write直前のbranch head / blob SHA再取得;
+- optimistic concurrency / compare-and-swap;
+- stale conflict時のbounded retry;
+- newer generationの上書き禁止;
+- force push禁止;
+- write_attempt / error_class / head_before / head_after / retry_count / persistence_complete telemetry.
+
+### Completion criteria
+
+P0解除には少なくとも、
+
+1. principal root cause(s)が特定または十分にbounded;
+2. affected durable streamsのpartial stateがreconcile;
+3. write pathの安全策または明確な回避策が成立;
+4. affected workerでcanaryまたは実generationのdurable success;
+5. authority ruleが明確でstale pointerがscientific/build allocationを誤らせない;
+6. 必要workerがrestart条件成立後に復帰;
+7. 同一failure patternが複数関連runで継続していないことを確認;
+
+を要求する。
+
+詳細なincident handling / role別責務 / integrity boundaryは history:
+
+`ops/human_directives/history/2026-09-25/HUMAN-20260925-002-github-persistence-p0.md`
+
+を参照する。
+
+### Required handling
+
+これはユーザーからの明示的運用Directiveであり、Controlは単なる提案待ちとして放置せず、既に承認されているfleet ON/OFF authorityとincident-management authorityの範囲で直ちに運用へ反映すること。
+
+科学的判断を伴う変更は従来authorityを通すが、障害診断・安全停止・durable state reconciliation・canary・再起動は既存運用権限の範囲で進めてよい。
