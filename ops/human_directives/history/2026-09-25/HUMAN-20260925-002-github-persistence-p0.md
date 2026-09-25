@@ -262,3 +262,52 @@ restart条件が満たされたら速やかに再起動する。fault/collision 
 Controlは本Directiveを単なる提案待ちとして放置せず、既存のscheduler fleet authorityとincident-management authorityの範囲内で直ちに運用へ反映すること。
 
 科学的判断を伴う変更は従来どおり各authorityを通すが、障害診断・安全停止・durable state reconciliation・canary・再起動は既に承認された運用権限の範囲で進めてよい。
+
+
+## Addendum — incident-scoped scheduler prompt mutation authority
+
+User authorization added on 2026-09-25 JST.
+
+For the sole purpose of diagnosing, containing, repairing, validating, and preventing recurrence of the current GitHub persistence incident, Control Brain is exceptionally authorized to modify scheduler prompts for current legitimate SparkBrain schedulers.
+
+This exception explicitly includes **Control Brain's own scheduler prompt**.
+
+Authorized prompt changes include, when materially related to this incident:
+- persistence write ordering and atomic-write behavior;
+- fresh branch-head/blob-SHA re-fetch requirements;
+- compare-and-swap / stale-head retry behavior;
+- persistence telemetry and error capture;
+- history/latest/state authority and reconciliation rules;
+- shared-branch writer coordination and ownership rules;
+- fault-suspension / restart / canary behavior;
+- incident reporting and cross-worker diagnostic cooperation;
+- temporary reduction or deferral of normal low-priority work when needed to resolve the incident safely.
+
+Control may apply these prompt changes directly without a new per-change user approval while HUMAN-20260925-002 remains OPEN/P0.
+
+### Boundaries
+
+This exception does NOT authorize unrelated scheduler redesign.
+
+Control must not use the incident as a pretext to:
+- change scientific claim standards, FORMAL integrity, held-out rules, or evidence interpretation;
+- change scheduler cadence unless separately authorized;
+- create/delete schedulers unless separately authorized;
+- permanently redefine a worker's scientific role beyond what is necessary for incident resolution;
+- rewrite scientific history or immutable evidence;
+- broaden permissions unrelated to GitHub persistence recovery.
+
+### Change accountability
+
+For every incident-scoped prompt mutation, Control must durably record when possible:
+- scheduler ID/title;
+- reason for the prompt change;
+- incident hypothesis or failure it addresses;
+- materially changed prompt sections;
+- whether the change is temporary or intended as a durable persistence hardening;
+- validation result;
+- rollback/revert condition when temporary.
+
+Control may also modify its own prompt again as new evidence about the incident appears, provided the same scope and accountability rules are followed.
+
+If the incident is declared resolved, temporary incident-only prompt modifications should be reviewed. Keep only generally useful persistence hardening; revert temporary diagnostic instructions that no longer add value.
