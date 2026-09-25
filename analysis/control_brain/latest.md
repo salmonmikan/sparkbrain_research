@@ -1,40 +1,19 @@
 # SparkBrain Control Brain — Latest
 
 - schema_version: `2`
-- generation_id: `CTRL-20260925T205800+0900-R75-MANUAL-P0`
-- produced_at: `2026-09-25T20:58:00+09:00`
+- generation_id: `CTRL-20260926T035000+0900-R76-P0-ATOMIC-PERSISTENCE-BOUNDARY`
+- produced_at: `2026-09-26T03:50:00+09:00`
 - authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_AND_INCIDENT_CONTROL`
-- invocation_kind: `MANUAL_IMMEDIATE_RESPONSE`
-- history_path: `analysis/control_brain/history/2026-09-25/2058-R75-MANUAL-P0.md`
+- history_path: `analysis/control_brain/history/2026-09-26/0350-R76.md`
 
-## P0 directive
+P0 GitHub persistence incident remains open. Canonical science is unchanged at 35/35 terminal (14 MECHANISM / 21 SYSTEM), active 0, queued 0; H7 remains consumed FORMAL / INCONCLUSIVE.
 
-HUMAN-20260925-002 is ACCEPTED and active immediately as the highest operational priority until its completion criteria are met. Control Brain owns incident `INC-GITHUB-PERSISTENCE-20260925-001`.
+SB001 remains accepted bounded NON_EVIDENTIARY_BUILD at exact head 5b86dfa6cad634312c81e579e5339b3b47cef6e0 with successful exact-head CI, built/functionally verified bounded pilot, no comparative support, no composition contribution established, no scientific novelty/credit, and no integration PR.
 
-Scientific hard floors are unchanged. No cadence change, scheduler creation/deletion, or scientific-standard change is authorized by this application.
+Latest complete authority uses append-only histories: Analyst R136, Methodology R124, MAIN R140, Steward G20. Their moving pointers may be stale and do not override newer complete history.
 
-## Immediate fleet posture
+Managed persistence-producing workers remain intentionally suspended under P0; Control and Current State Brief remain enabled. Restart conditions are not yet met. The expired Utility P0 assignment must not be replayed.
 
-- MAIN: enabled; owns accepted SB001 critical path.
-- Utility: enabled as `RESTARTING_DIAGNOSTIC`; next run is a persistence/runtime canary. On material failure, return to FAULT_SUSPENDED rather than rapid restart.
-- Relay: disabled under `DEPENDENCY_WAIT_SUSPEND`; restart only when MAIN provides a safe handoff, the mutation/publication path is sufficiently bounded, and first post-restart durable publication can be validated.
-- Evidence Analyst / Methodology / Fast Forge / External Science / Current State Brief / Control: enabled for discovery, integrity audit, and independent incident evidence.
-- No cadence changes were made.
+Current failure boundary is automation-runtime/action-path dependent mutation refusal plus pointer debt amplified by non-atomic multi-write publication; repository-wide GitHub write loss is not supported.
 
-## Persistence authority
-
-A complete append-only generation history is the primary durable record. latest/state are moving pointers/caches and must not override a newer complete history generation.
-
-Before mutation: refresh branch head/blob SHA. Prefer atomic multi-file persistence where available. Otherwise use bounded compare-and-swap retry, never force-push, never overwrite a newer concurrent generation, and record write telemetry where possible.
-
-A single successful later write does not resolve the P0 incident.
-
-## Science / build
-
-Canonical science remains 35/35 terminal (14 MECHANISM / 21 SYSTEM), active 0, queued 0. Consumed FORMAL identities remain immutable.
-
-BUILD-SB-001 remains an accepted bounded NON_EVIDENTIARY_BUILD at its accepted exact head. Built/functionally verified within bounded acceptance: yes. Comparative support: no. Composition contribution: not established. Scientific novelty/credit: none. Reviewed integration PR remains pending.
-
-## Next
-
-Prioritize root-cause bounding, partial-state reconciliation, canary validation, and safe worker restoration over low-priority research/cleanup until HUMAN-20260925-002 completion criteria are satisfied.
+The user-proposed scheduler fleet rebuild is not executed because scheduler creation remains outside current authority. Recommended next diagnostic is one brand-new isolated persistence canary followed by blue-green replacement only after explicit approval and only if the canary succeeds.

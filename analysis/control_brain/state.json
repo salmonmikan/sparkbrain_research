@@ -1,54 +1,83 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260925T205800+0900-R75-MANUAL-P0",
-  "produced_at": "2026-09-25T20:58:00+09:00",
-  "invocation_kind": "MANUAL_IMMEDIATE_RESPONSE",
-  "latest_path": "analysis/control_brain/latest.md",
-  "history_path": "analysis/control_brain/history/2026-09-25/2058-R75-MANUAL-P0.md",
-  "history_status": "PERSISTED",
-  "human_directive_20260925_002": "ACCEPT_IMMEDIATE_APPLY_P0",
-  "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
-  "incident_status": "OPEN_P0",
-  "science": "35_TERMINAL_0_ACTIVE_0_QUEUED",
-  "system_build": "SB001_ACCEPTED_BOUNDED_PENDING_REVIEWED_INTEGRATION",
-  "fleet": {
-    "main": "ENABLED_RUNNING",
-    "utility": "ENABLED_RESTARTING_DIAGNOSTIC",
-    "relay": "DISABLED_DEPENDENCY_WAIT_SUSPEND",
-    "evidence_analyst": "ENABLED_RUNNING",
-    "methodology": "ENABLED_RUNNING",
-    "fast_forge": "ENABLED_RUNNING",
-    "external_science": "ENABLED_RUNNING",
-    "current_state_brief": "ENABLED_RUNNING",
-    "control": "ENABLED_RUNNING"
-  },
-  "relay_restart_conditions": [
-    "MAIN_SAFE_HANDOFF",
-    "MUTATION_PUBLICATION_PATH_SUFFICIENTLY_BOUNDED",
-    "FIRST_POST_RESTART_DURABLE_GENERATION_VALIDATED"
-  ],
-  "utility_diagnostic": {
-    "prompt_override": "TEMPORARY_P0_INCIDENT_OVERRIDE_ACTIVE",
-    "assignment_id": "UTIL-20260925-P0-GITHUB-PERSISTENCE-DIAG-001",
-    "assignment_generation_id": "UASSIGN-20260925T210500+0900-P0-GITHUB-PERSISTENCE-001",
-    "max_runs": 1,
-    "expires_at": "2026-09-25T23:55:00+09:00",
-    "validation": "NEXT_RUN_IS_PERSISTENCE_RUNTIME_CANARY",
-    "success_does_not_close_incident": true
-  },
-  "persistence_authority": {
-    "primary": "COMPLETE_APPEND_ONLY_HISTORY",
-    "moving_pointers": "LATEST_STATE_CACHE_ONLY",
-    "fresh_head_before_write": true,
-    "bounded_cas_retry": true,
-    "force_push": false,
+  "generation_id": "CTRL-20260926T035000+0900-R76-P0-ATOMIC-PERSISTENCE-BOUNDARY",
+  "produced_at": "2026-09-26T03:50:00+09:00",
+  "history_path": "analysis/control_brain/history/2026-09-26/0350-R76.md",
+  "incident": {
+    "id": "INC-GITHUB-PERSISTENCE-20260925-001",
+    "status": "OPEN_P0",
+    "root_cause_boundary": "AUTOMATION_RUNTIME_ACTION_PATH_MUTATION_REFUSAL_WITH_NONATOMIC_POINTER_DEBT",
+    "repository_wide_write_outage_supported": false,
     "single_success_closes_incident": false
   },
-  "confirmed_repository_facts": {
-    "collaborator_permission": "admin",
-    "ruleset_count": 1,
-    "ruleset_name": "protection_main",
-    "global_repository_write_outage_supported": false
+  "science": {
+    "canonical": 35,
+    "mechanism": 14,
+    "system": 21,
+    "terminal": 35,
+    "active": 0,
+    "queued": 0,
+    "consumed_formal_identities": 8,
+    "h7": "CONSUMED_ONE_WAY_INCONCLUSIVE"
   },
-  "next_priority": "P0_ROOT_CAUSE_BOUND_RECONCILE_CANARY_RESTORE"
+  "revisit": {
+    "closed_strong": 1,
+    "dormant_revisitable": 20,
+    "deferred_independent_reidentification": 14,
+    "triggered": 0,
+    "fresh_successors": 0
+  },
+  "system_build": {
+    "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
+    "exact_head": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
+    "ci_run": 36060329063,
+    "ci": "success",
+    "lifecycle": "BUILD_ACCEPTED_BOUNDED_PENDING_INTEGRATION",
+    "built": true,
+    "functionally_verified_bounded": true,
+    "comparatively_supported": false,
+    "composition_contribution": "NOT_ESTABLISHED",
+    "scientific_novelty": false,
+    "scientific_credit": 0,
+    "pr_to_main": false
+  },
+  "authority_histories": {
+    "evidence_analyst": "R136",
+    "methodology": "R124",
+    "main": "R140",
+    "repository_steward": "G20",
+    "external_science": "LIT_R44_THEORY_R5_AUDIT_R10"
+  },
+  "fleet": {
+    "control": "ENABLED_RUNNING",
+    "current_state_brief": "ENABLED_RUNNING",
+    "evidence_analyst": "DISABLED_OPERATIONAL_FAULT_SUSPEND",
+    "methodology": "DISABLED_OPERATIONAL_FAULT_SUSPEND",
+    "main": "DISABLED_OPERATIONAL_FAULT_SUSPEND",
+    "utility": "DISABLED_OPERATIONAL_FAULT_SUSPEND_EXPIRED_ASSIGNMENT_DO_NOT_REPLAY",
+    "external_science": "DISABLED_OPERATIONAL_FAULT_SUSPEND",
+    "fast_forge": "DISABLED_IDLE_SUSPEND_P0",
+    "relay": "DISABLED_DEPENDENCY_WAIT_SUSPEND"
+  },
+  "restart_contract": {
+    "safe_mutation_path_or_workaround_required": true,
+    "pointer_debt_reconciled_or_bounded": true,
+    "no_newer_generation_conflict": true,
+    "first_post_restart_generation_full_durable_readback": true
+  },
+  "scheduler_rebuild": {
+    "status": "PENDING_EXPLICIT_APPROVAL",
+    "recommended_first_step": "ONE_NEW_ISOLATED_PERSISTENCE_CANARY",
+    "conditional_followup": "BLUE_GREEN_REPLACE_CURRENT_FLEET_IF_CANARY_SUCCEEDS",
+    "old_schedulers": "KEEP_OFF_FOR_ROLLBACK_UNTIL_REPLACEMENT_VALIDATED"
+  },
+  "hard_floor": {
+    "experiment_dispatched": false,
+    "identity_consumed": false,
+    "scientific_ref_mutated": false,
+    "evidence_ref_mutated": false,
+    "terminal_reopened": false,
+    "consumed_formal_rerun_retune_rescore": false,
+    "scheduler_created_deleted_or_cadence_changed": false
+  }
 }
