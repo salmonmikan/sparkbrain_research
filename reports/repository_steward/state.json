@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260926T015000+0900-G20",
-  "produced_at": "2026-09-26T01:50:00+09:00",
-  "supersedes_generation_id": "STEWARD-20260925T195000+0900-G19",
+  "generation_id": "STEWARD-20260926T075000+0900-G21",
+  "produced_at": "2026-09-26T07:50:00+09:00",
+  "supersedes_generation_id": "STEWARD-20260926T015000+0900-G20",
   "repository": "salmonmikan/sparkbrain_research",
   "main": "d16403414fc7abebd23075fc401240971b8eb91d",
   "inventories": {
@@ -13,11 +13,13 @@
     "legacy_freeze_branches": 13,
     "preserve_branches": 26,
     "ops_branches": 23,
-    "authoritative_tag_refs": 9,
-    "freeze_tag_refs": 1,
-    "sealed_tag_refs": 1,
-    "formal_tag_refs": 1,
-    "evidence_tag_refs": 6
+    "authoritative_namespace_refs": 9,
+    "freeze_refs": 1,
+    "sealed_refs": 1,
+    "formal_refs": 1,
+    "evidence_refs": 6,
+    "annotated_tag_objects": 5,
+    "lightweight_authoritative_refs": 4
   },
   "system_build": {
     "ref": "system-build/sb001-predictive-state-revision-pilot-20260925",
@@ -35,63 +37,61 @@
     "mapped_preserve_pointers_exact": true,
     "legacy_freeze_rows": 13,
     "mapped_preserve_rows": 16,
+    "h7_lightweight_authoritative_refs_preserved": true,
     "mutated_this_run": false
   },
   "protection": {
     "ruleset_count": 1,
     "main_ruleset": "protection_main",
+    "main_ruleset_target": "DEFAULT_BRANCH_ONLY",
     "tag_namespace_ruleset": false,
     "human_directive_20260919_002": "OPEN_DEFER_PROTECTION_DEPLOYMENT",
-    "issue_139": "open_body_stale",
-    "issue_139_stale_facts": [
-      "repository rulesets = 0",
-      "evidence tags = 5"
-    ]
+    "issue_139": "OPEN_BODY_PARTIALLY_STALE",
+    "issue_139_correction": {
+      "annotated_evidence_tags_5": "ACCURATE",
+      "repository_rulesets_0": "STALE_ACTUAL_1",
+      "h7_lightweight_authoritative_refs": "OMITTED_FROM_ISSUE"
+    }
   },
   "mapping": {
+    "rows_exact": true,
     "summary_stale": true,
     "stale_footer_facts": [
       "Git tags = 0",
       "repository rulesets = 0"
-    ],
-    "rows_exact": true
+    ]
   },
   "promotion": {
-    "open_prs": [148, 149],
-    "open_prs_classification": "governance_tooling_only",
+    "open_prs": [
+      148,
+      149
+    ],
+    "classification": "GOVERNANCE_TOOLING_ONLY",
     "pr_148": "human-directives repository skill",
     "pr_149": "Git-backed SparkBrain scheduler registry skill",
-    "system_build_status": "accepted_bounded_engineering_candidate_pending_normal_review_pr",
+    "system_build_status": "ACCEPTED_BOUNDED_ENGINEERING_PENDING_NORMAL_REVIEW_PR",
     "scientific_candidates": []
   },
   "separation": {
-    "main_research_forge_build_evidence": "intact",
-    "forge_or_research_or_build_pr_to_main": false
+    "main_research_forge_build_evidence": "INTACT",
+    "scientific_or_build_pr_to_main": false
   },
   "incident": {
     "id": "INC-GITHUB-PERSISTENCE-20260925-001",
     "status": "OPEN_P0",
+    "latest_complete_control": "R76",
+    "control_atomic_commit": "209ae608ddf0aed6cf838d3b23aa9db728b502a2",
     "repository_wide_write_outage_supported": false,
-    "steward_path_previous_complete": true,
-    "observed_partial_streams": [
-      "Evidence Analyst R136 history-only follow-up",
-      "Methodology R124 history-only follow-up",
-      "MAIN R138/R139/R140 history-only follow-up"
-    ],
-    "utility_assignment_without_later_completion_generation": true,
-    "exact_root_cause_resolved": false,
-    "steward_conclusion": "PATH_RUNTIME_ACTION_DEPENDENT_FAILURE_REMAINS_PLAUSIBLE_AND_NONATOMIC_PUBLICATION_AMPLIFIES_POINTER_DEBT"
+    "principal_boundary": "AUTOMATION_RUNTIME_ACTION_PATH_MUTATION_REFUSAL_WITH_NONATOMIC_POINTER_DEBT",
+    "prior_steward_state_telemetry_stale": true,
+    "exact_root_cause_resolved": false
   },
   "persistence_health": {
-    "branch_head_before": "b6a18938bd0838f9c8d9c427d24665a29e1f6e35",
-    "history_write_this_run": "success",
-    "history_commit": "a81b7056a997c74f27fb96cbb652fd8d1671887e",
-    "latest_write_this_run": "success",
-    "latest_commit": "5b6a4502d859b6f96840848086f3662030f5dd82",
-    "state_write_this_run": "in_progress",
+    "branch_head_before": "538c8ed17fcdee49cb52153a18a15c211dfd7cd4",
+    "publication_method": "ATOMIC_GIT_TREE_COMMIT_NONFORCE_REF_UPDATE",
     "retry_count": 0,
-    "cross_stream_pointer_debt_observed": true,
-    "persistence_complete": false
+    "persistence_complete_intent": true,
+    "readback_required": true
   },
   "mutations": {
     "scientific": false,
@@ -102,7 +102,7 @@
     "steward_persistence_only": true
   },
   "persistence": {
-    "history": "reports/repository_steward/history/2026-09-26/0150.md",
+    "history": "reports/repository_steward/history/2026-09-26/0750.md",
     "latest": "reports/repository_steward/latest.md",
     "state": "reports/repository_steward/state.json"
   }
