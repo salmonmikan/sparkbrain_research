@@ -1,29 +1,9 @@
-# SparkBrain Methodology Calibration Audit — R119
+# SparkBrain Methodology Calibration Audit — R121
 
-- schema_version: 2
-- generation_id: METHCAL-20260925T011959+0900-R119-6F8C2A41
-- generated_at: 2026-09-25T01:19:59+09:00
-- supersedes: METHCAL-20260925T001948+0900-R118-D42E7B19
-- overall_classification: SLIGHTLY_TOO_PERMISSIVE
-- new_scientific_result: false
+schema_version: 2
+generation_id: METHCAL-20260925T102131+0900-R121-4D8A7C21
+generated_at: 2026-09-25T10:21:31+09:00
+overall_classification: SLIGHTLY_TOO_PERMISSIVE
+new_scientific_result: false
 
-## Current reconstruction
-R118 history/state was read first. Stable main remains d16403414fc7abebd23075fc401240971b8eb91d. Evidence remains six refs: five annotated tags plus historical H7 lightweight evidence pointing to e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85. Server-side tag namespace protection remains absent. H7 raw commit a5e76e7eb117e0270cfdc138fb9da30d696aa7c0 still records preserve_before_target_access=true; workflow 35951118916 remains attempt 1; result remains INCONCLUSIVE.
-
-Canonical funnel remains 35 objects = 14 MECHANISM / 21 SYSTEM, all terminal, active 0, queued 0. Development remains OPEN 0 / RESULT_EXPOSED 34 / CONSUMED_ONE_WAY 1. Revisit remains 35/35: CLOSED_STRONG 1, DORMANT_REVISITABLE 20, DEFERRED_INDEPENDENT_REIDENTIFICATION 14, REVISIT_TRIGGERED 0.
-
-## Delta
-Literature R44 adds prospective ordinary reductions for selective revision: delta-rule fast-weight memory, gated/delta recurrent memory, uncertainty-aware state-space/Kalman associative memory, and HRR/VSA distributed binding. Analyst R130 correctly creates no candidate, no Revisit trigger, no scientific credit, and keeps TH-002 killed/noncanonical.
-
-The new methodology issue is prospective only: this stronger reduction ladder must be staged and claim-matched. It must not become a rule that READY or PRE_FORMAL requires defeating every advanced comparator before genuine development. Cheap static reductions may kill early; unresolved questions should still enter iterative PRE_FORMAL with only relevant capacity-adequate, matched-access/resource comparators; contracts freeze before one-way evidence collection.
-
-## Gate summary
-KEEP: hard floor; development states; cycle-3 reassessment; repair taxonomy; development-credit separation; PRE_FORMAL; READY-not-success; FORMAL one-way integrity; terminal absorbency; advisory isolation; fresh successor contract; terminal/Revisit orthogonality; rescue-laundering prevention; Theory/Forge-canonical separation; claim ceiling; protected evaluation; pass reachability.
-TIGHTEN: result-exposed revision-identity enforcement; authoritative tag form/provenance; server-side tag protection; Revisit discovery-lane durability; external-science liveness.
-CLARIFY: reduction-ladder staging; Theory novelty vs independent Revisit trigger; mechanism-supply health.
-SPLIT_BY_CLAIM_TYPE: advanced comparator scope; broad privileged-responsibility attribution; surrogate mechanism-discriminator burden.
-INSUFFICIENT_EVIDENCE: REVISIT_CANONICALIZE.
-
-Independent Audit durability remains degraded, but Literature 00:30 is durable. This is an operational false-negative risk only; no concrete missed trigger is identified and no standards should be relaxed.
-
-PASS remains realistically reachable if comparator burden is staged and claim-matched. No Utility request. Existing H7 and terminal histories remain untouched.
+R120 history was read first. Current review keeps the hard scientific floor unchanged. BUILD-SB-001 remains non-evidentiary and separate from canonical science; useful Forge integration prototypes are retained as engineering inputs without novelty claims. New clarification: SYSTEM_BUILD should use its own lifecycle namespace rather than scientific OPEN_DEVELOPMENT terminology after build outcomes are visible. Composition contribution remains unestablished. Analyst/Control moving pointers remain stale relative to durable history. No Utility request.
