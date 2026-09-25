@@ -27,7 +27,15 @@
     "MUTATION_PUBLICATION_PATH_SUFFICIENTLY_BOUNDED",
     "FIRST_POST_RESTART_DURABLE_GENERATION_VALIDATED"
   ],
-  "utility_validation": "NEXT_RUN_IS_PERSISTENCE_RUNTIME_CANARY",
+  "utility_diagnostic": {
+    "prompt_override": "TEMPORARY_P0_INCIDENT_OVERRIDE_ACTIVE",
+    "assignment_id": "UTIL-20260925-P0-GITHUB-PERSISTENCE-DIAG-001",
+    "assignment_generation_id": "UASSIGN-20260925T210500+0900-P0-GITHUB-PERSISTENCE-001",
+    "max_runs": 1,
+    "expires_at": "2026-09-25T23:55:00+09:00",
+    "validation": "NEXT_RUN_IS_PERSISTENCE_RUNTIME_CANARY",
+    "success_does_not_close_incident": true
+  },
   "persistence_authority": {
     "primary": "COMPLETE_APPEND_ONLY_HISTORY",
     "moving_pointers": "LATEST_STATE_CACHE_ONLY",
@@ -35,6 +43,12 @@
     "bounded_cas_retry": true,
     "force_push": false,
     "single_success_closes_incident": false
+  },
+  "confirmed_repository_facts": {
+    "collaborator_permission": "admin",
+    "ruleset_count": 1,
+    "ruleset_name": "protection_main",
+    "global_repository_write_outage_supported": false
   },
   "next_priority": "P0_ROOT_CAUSE_BOUND_RECONCILE_CANARY_RESTORE"
 }
