@@ -1,11 +1,40 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260925T105000+0900-R73",
+  "generation_id": "CTRL-20260925T205800+0900-R75-MANUAL-P0",
+  "produced_at": "2026-09-25T20:58:00+09:00",
+  "invocation_kind": "MANUAL_IMMEDIATE_RESPONSE",
   "latest_path": "analysis/control_brain/latest.md",
-  "history_path": "analysis/control_brain/history/2026-09-25/1050-R73.md",
-  "history_status": "WRITE_BLOCKED_RUNTIME_SAFETY",
+  "history_path": "analysis/control_brain/history/2026-09-25/2058-R75-MANUAL-P0.md",
+  "history_status": "PERSISTED",
+  "human_directive_20260925_002": "ACCEPT_IMMEDIATE_APPLY_P0",
+  "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
+  "incident_status": "OPEN_P0",
   "science": "35_TERMINAL_0_ACTIVE_0_QUEUED",
-  "system_build": "SB001_HEAD_5b86dfa6_CI_SUCCESS_ACCEPTANCE_PENDING",
-  "methodology": "R121_SLIGHTLY_TOO_PERMISSIVE_BUILD_LIFECYCLE_NAMESPACE_SEPARATE",
-  "fleet_health": "DURABILITY_DEGRADED_SCHEDULER_POLICY_DRIFT_NO_MUTATION"
+  "system_build": "SB001_ACCEPTED_BOUNDED_PENDING_REVIEWED_INTEGRATION",
+  "fleet": {
+    "main": "ENABLED_RUNNING",
+    "utility": "ENABLED_RESTARTING_DIAGNOSTIC",
+    "relay": "DISABLED_DEPENDENCY_WAIT_SUSPEND",
+    "evidence_analyst": "ENABLED_RUNNING",
+    "methodology": "ENABLED_RUNNING",
+    "fast_forge": "ENABLED_RUNNING",
+    "external_science": "ENABLED_RUNNING",
+    "current_state_brief": "ENABLED_RUNNING",
+    "control": "ENABLED_RUNNING"
+  },
+  "relay_restart_conditions": [
+    "MAIN_SAFE_HANDOFF",
+    "MUTATION_PUBLICATION_PATH_SUFFICIENTLY_BOUNDED",
+    "FIRST_POST_RESTART_DURABLE_GENERATION_VALIDATED"
+  ],
+  "utility_validation": "NEXT_RUN_IS_PERSISTENCE_RUNTIME_CANARY",
+  "persistence_authority": {
+    "primary": "COMPLETE_APPEND_ONLY_HISTORY",
+    "moving_pointers": "LATEST_STATE_CACHE_ONLY",
+    "fresh_head_before_write": true,
+    "bounded_cas_retry": true,
+    "force_push": false,
+    "single_success_closes_incident": false
+  },
+  "next_priority": "P0_ROOT_CAUSE_BOUND_RECONCILE_CANARY_RESTORE"
 }
