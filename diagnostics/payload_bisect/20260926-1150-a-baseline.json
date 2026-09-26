@@ -1,0 +1,8 @@
+{
+  "diagnostic_id": "P0-PAYLOAD-BISECT-A-20260926T1150+0900",
+  "category": "BASELINE",
+  "purpose": "Isolated non-scientific persistence payload classification",
+  "scientific_action": false,
+  "scheduler_action": false,
+  "immutable_refs_touched": false
+}
