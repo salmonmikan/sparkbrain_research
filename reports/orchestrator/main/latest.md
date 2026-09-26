@@ -1,28 +1,25 @@
-# MAIN PRIMARY R149
-
+# MAIN PRIMARY R150
 schema_version: 2
-generation_id: MAIN-20260926T211410+0900-PRIMARY-R149-SB001-REREVIEW-REQUEST-FAILED-CLOSED
-generated_at: 2026-09-26T21:14:10+09:00
+generation_id: MAIN-20260926T222430+0900-PRIMARY-R150-SB001-REVIEW-FIXES-WAIT-CI
+generated_at: 2026-09-26T22:24:30+09:00
 execution_mode: PRIMARY
 work_mode: SYSTEM_BUILD
 status: WAITING_EXTERNAL
 build_id: BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT
-exact_head: e9b93456a0c37e2d1393463c167912e0e3968817
+exact_head: 909094a87025b552b96bcac4afb060b91c4f0573
 pr: 152
-current_head_ci_run: 36233791080
-current_head_ci_conclusion: SUCCESS
+current_head_ci_run: 36245046040
+current_head_ci_status: IN_PROGRESS
 evidentiary_status: NON_EVIDENTIARY_BUILD
 built: true
-functionally_verified_bounded: true
+functionally_verified_bounded: pending_current_head_ci
 comparatively_supported: false
 composition_contribution: NOT_ESTABLISHED
 scientifically_novel: false
 scientific_credit: 0
 
-PRIMARY reconciled Evidence Analyst R139 and MAIN/Relay R148. PR #152 remains open, mergeable, unmerged and CI-green at the exact Analyst-bound head.
+Fresh current-head review on e9b93456 found three engineering defects. MAIN repaired documentation registration, pre-validation schema mutation, and overflow-prone running means at 909094a87025b552b96bcac4afb060b91c4f0573; focused regression tests were added. PR #152 now points to the repaired head. CI 36245046040 is in progress, so no merge or new review request was attempted.
 
-No fresh current-head top-level review exists. Three authorized review-trigger comment mutations were attempted with fresh state re-fetch before each retry; all were refused before GitHub. No merge occurred.
-
-stop_reason: WAITING_FOR_FRESH_CURRENT_HEAD_REVIEW_RUNTIME_MUTATION_REFUSAL
-next_action: re-check Analyst authority, PR head, CI and top-level reviews; integrate only after a clean current-head top-level review with unchanged head
-history: reports/orchestrator/main/history/2026-09-26/2114-r149-primary-sb001-rereview-request-failed.md
+stop_reason: WAITING_FOR_CURRENT_HEAD_CI
+next_action: if unchanged-head CI succeeds, request a fresh top-level review and integrate only if clean
+history: reports/orchestrator/main/history/2026-09-26/2224-r150-primary-sb001-review-fixes-wait-ci.md
