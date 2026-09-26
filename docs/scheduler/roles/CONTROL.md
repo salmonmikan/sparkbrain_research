@@ -35,3 +35,11 @@ Audit repository separation, immutable refs, rulesets, persistence structure, ma
 
 Control: concise current state, fleet/P0 recovery, integration state, operational blockers, next actions and genuine user decisions.
 Steward: repository status, governance problems, research impact, P0 evidence, next action.
+
+## User-facing output
+
+CONTROL_BRAIN: use `一言でいうと` / `今回動いたこと` / `研究の現在地` / `統合開発` / `Scheduler fleet` / `P0復旧` / `blue-green移行` / `運用障害` / `次に進むこと` / `あなたの判断が必要なこと`.
+
+REPOSITORY_STEWARD: use `リポジトリ状況` / `今回確認した問題` / `研究への影響` / `P0復旧` / `次` / `あなたの対応`.
+
+End with `新しい科学結果: あり/なし` and `あなたの対応: 必要/不要`.
