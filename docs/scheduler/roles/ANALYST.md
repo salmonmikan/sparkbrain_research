@@ -207,6 +207,16 @@ Durable Analyst state/history should separately preserve:
 - refs/generations used for the decision;
 - unresolved blockers.
 
+## P0 persistence status vocabulary
+
+When the bridge is relevant, expose one of these operational states when useful:
+- `not-created`;
+- `request-durable-pending`;
+- `action-persisted-and-verified`;
+- `failed-closed`.
+
+Do not call request-file existence publication complete.
+
 ## Final report / user-facing output
 
 Report:
