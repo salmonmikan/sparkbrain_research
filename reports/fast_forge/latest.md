@@ -1,22 +1,21 @@
 # SparkBrain Fast Forge — Latest
 schema_version: 2
-generation_id: FORGE-20260927T043947+0900-STABLE-SCOPE-LIFECYCLE-CI-CLEAN
-produced_at: 2026-09-27T04:39:47+09:00
-forge_id: FORGE-STABLE-SCOPE-LIFECYCLE-A
+generation_id: FORGE-20260927T060912+0900-INTERNAL-SCOPE-ALLOCATOR-CI-CLEAN
+produced_at: 2026-09-27T06:09:12+09:00
+forge_id: FORGE-INTERNAL-SCOPE-ALLOCATOR-A
 status: FORGE_INTERESTING
 recommended_handoff: SYSTEM_BUILD_INPUT
-branch: forge/20260927-stable-scope-lifecycle-a
-exact_head: 49be62ba9ae9d82fd5563e51d69cde865f3b5225
-ci_run: 36266677211
+branch: forge/20260927-internal-scope-allocator-a
+exact_head: a31c727d0f41fe5f788d1fa6b1aef11e175a9334
+ci_run: 36270938359
 ci_result: SUCCESS
 evidentiary_status: NON_EVIDENTIARY
 scientific_credit: 0
 new_scientific_result: false
 
-The stable-scope lifecycle prototype is now exact-head CI clean on Python 3.11 and 3.13. It adds explicit close/tombstone semantics so retired scope tokens cannot resurrect stale support, while fresh tokens and different Assemblies remain isolated.
+The internal-scope allocator is exact-head CI clean on Python 3.11 and 3.13. It removes caller-provided scope/regime labels, internally issues opaque Assembly-local scope tokens, supports bounded reuse/separation/abstention, fails explicitly instead of silently evicting, and is checkpoint-replayable.
 
-This is ordinary session/cache lifecycle engineering, not scientific novelty. It is recommended as a future SYSTEM_BUILD input for Analyst reconciliation and is not admitted to merged SB001.
+Evidence Analyst R143 accepts it only as optional future SYSTEM_BUILD input. Its ordinary reduction is deterministic nearest-centroid cache namespace allocation plus a thresholded change-point heuristic. It establishes no comparative advantage, composition contribution or scientific novelty and is not admitted to SB001 or RV02.
 
-The prior stale CI-running pointer is reconciled. The one-line update_file mutation succeeded on this run's first attempt, after three pre-GitHub refusals in the preceding run, further supporting an intermittent/context-selective P0 pattern without proving root cause.
+history: reports/fast_forge/history/2026-09-27/0609-internal-scope-allocator-ci-clean.md
 
-history: reports/fast_forge/history/2026-09-27/0439-stable-scope-lifecycle-ci-clean.md
