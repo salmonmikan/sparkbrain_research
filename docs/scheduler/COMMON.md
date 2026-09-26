@@ -46,14 +46,17 @@ This does not bypass OpenAI/platform safety, GitHub permissions/rulesets, scient
 
 ## GitHub mutation reliability contract
 
-During an open GitHub persistence incident:
-- same-purpose mutation: at most 3 total attempts;
+For every already-authorized GitHub persistence/publication purpose, including final publication and P0 incidents:
+- same-purpose mutation: at most 5 total attempts (the initial attempt plus up to 4 retries), shared across tools/routes for that purpose;
+- stop after verified success; this is a ceiling, not a requirement to exhaust attempts;
+- existing role authority and actual platform/GitHub permissions remain unchanged; a refusal does not authorize an alternate path that bypasses the refused boundary;
 - before every retry, re-fetch the target ref/head and any state needed for a safe mutation;
 - stale SHA/head/CAS/concurrency failures require a fresh rebuild against the new state;
 - never force-push or overwrite a newer generation;
 - for idempotence-sensitive actions, verify whether the previous attempt succeeded before retrying;
 - after success, independently read back the relevant ref/files/PR and verify;
-- after 3 failures, fail closed for the current run and report the observed failure layer/class and attempt count;
+- after 5 failures, fail closed for the current run and report the observed failure layer/class and attempt count;
+- this retry budget applies only to persistence/publication, not to scientific experiment execution, scoring, or result-bearing workflow dispatch; separate execution authority remains required;
 - retries never authorize rerunning, retuning, rescoring, or redispatching consumed scientific/FORMAL work.
 
 Prefer one atomic multi-file publication where tooling supports it. Append-only history is durable authority; moving latest/state pointers are caches unless a role-specific contract says otherwise.
