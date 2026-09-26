@@ -1,0 +1,6 @@
+{
+  "diagnostic_id": "P0-BISECT-C2",
+  "category": "FORMAL_COUNT_ONLY",
+  "consumed_formal_identities": 8,
+  "scientific_action": false
+}
