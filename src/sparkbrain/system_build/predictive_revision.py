@@ -208,7 +208,10 @@ class PredictiveRevisionPilot:
             raise ValueError("context dimensions must match")
         return math.sqrt(sum((a - b) ** 2 for a, b in zip(left, right, strict=True)))
 
-    def _sample_context(self, sample: SensorySample) -> tuple[float, ...]:
+    def _sample_context(
+        self,
+        sample: SensorySample,
+    ) -> tuple[tuple[str, ...], tuple[float, ...]]:
         sample.validate()
         if sample.entity_hint is not None:
             raise ValueError("entity_hint is forbidden in BUILD-SB-001 observation input")
@@ -221,14 +224,13 @@ class PredictiveRevisionPilot:
         for channel in channels:
             if _contains_privileged_name(channel):
                 raise ValueError(f"privileged observation channel is forbidden: {channel}")
-        if self._context_channels is None:
-            self._context_channels = channels
-        elif channels != self._context_channels:
-            raise ValueError("observation channels must match the established context schema")
-        return tuple(
+        context = tuple(
             _finite(sample.values[channel], name=f"values[{channel}]")
             for channel in channels
         )
+        if self._context_channels is not None and channels != self._context_channels:
+            raise ValueError("observation channels must match the established context schema")
+        return channels, context
 
     def _candidate_views(self, context: tuple[float, ...]) -> tuple[CandidateView, ...]:
         rows = []
@@ -250,8 +252,10 @@ class PredictiveRevisionPilot:
 
         if self._pending_context is not None:
             raise RuntimeError("feedback must resolve the pending observation before another observe")
-        context = self._sample_context(sample)
+        channels, context = self._sample_context(sample)
         reference_result = self.reference_brain.step(sample)
+        if self._context_channels is None:
+            self._context_channels = channels
         self._pending_context = context
         self._pending_sample_id = sample.sample_id
         candidates = self._candidate_views(context)
@@ -317,6 +321,18 @@ class PredictiveRevisionPilot:
         return state
 
     @staticmethod
+    def _running_mean(current: float, observed: float, count: int) -> float:
+        new_count = count + 1
+        observed_weight = 1.0 / new_count
+        result = math.fsum(
+            (
+                current * (1.0 - observed_weight),
+                observed * observed_weight,
+            )
+        )
+        return _finite(result, name="running_mean")
+
+    @staticmethod
     def _update_state(
         state: PredictiveHypothesis,
         context: tuple[float, ...],
@@ -325,11 +341,21 @@ class PredictiveRevisionPilot:
         revision_step: int,
     ) -> None:
         new_count = state.count + 1
-        state.context_mean = tuple(
-            (state.context_mean[index] * state.count + context[index]) / new_count
+        context_mean = tuple(
+            PredictiveRevisionPilot._running_mean(
+                state.context_mean[index],
+                context[index],
+                state.count,
+            )
             for index in range(len(context))
         )
-        state.outcome_mean = (state.outcome_mean * state.count + outcome) / new_count
+        outcome_mean = PredictiveRevisionPilot._running_mean(
+            state.outcome_mean,
+            outcome,
+            state.count,
+        )
+        state.context_mean = context_mean
+        state.outcome_mean = outcome_mean
         state.count = new_count
         state.last_used_step = revision_step
 

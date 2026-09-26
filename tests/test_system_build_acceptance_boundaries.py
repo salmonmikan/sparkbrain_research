@@ -1,6 +1,9 @@
+import math
+
 import pytest
 
 from sparkbrain.system_build import PilotConfig, PredictiveRevisionPilot
+from sparkbrain.system_build.predictive_revision import PredictiveHypothesis
 from sparkbrain.v03_seed import SensorySample
 
 
@@ -124,3 +127,35 @@ def test_resource_budget_configuration_cannot_exceed_analyst_ceiling(
 ) -> None:
     with pytest.raises(ValueError, match=message):
         config.validate()
+
+def test_invalid_first_scalar_does_not_establish_context_schema() -> None:
+    pilot = PredictiveRevisionPilot()
+    with pytest.raises(ValueError, match="finite number"):
+        pilot.observe(sample(1, values={"poison": "1.0"}))  # type: ignore[dict-item]
+
+    assert pilot.inspect()["context_channels"] is None
+    assert pilot.observe(sample(2, values={"x": 0.0})).decision == "abstain"
+
+
+def test_running_mean_stays_finite_near_float_limit() -> None:
+    state = PredictiveHypothesis(
+        state_id="state-001",
+        channels=("x",),
+        context_mean=(1e308,),
+        outcome_mean=1e308,
+        count=1,
+        last_used_step=1,
+    )
+
+    PredictiveRevisionPilot._update_state(
+        state,
+        (1e308,),
+        1e308,
+        revision_step=2,
+    )
+
+    assert math.isfinite(state.context_mean[0])
+    assert math.isfinite(state.outcome_mean)
+    assert state.context_mean[0] == 1e308
+    assert state.outcome_mean == 1e308
+

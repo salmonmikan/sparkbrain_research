@@ -591,3 +591,24 @@ authenticity signature. Unsupported learned-runtime object graphs fail closed.
 rename primitives on Linux, macOS, and Windows. Candidate release groups are fully staged and
 validated before that single publication operation. Post-publication validation failure raises
 without deleting the published path, preventing path-based cleanup from removing a replacement.
+
+## 20. SYSTEM_BUILD predictive-state revision pilot
+
+src/sparkbrain/system_build/ is an orthogonal integration-development namespace. Its first allocated build is BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT:
+
+    external SensorySample
+            |
+            v
+    IntegratedV032Brain ---------> reference action / inspectable runtime state
+            |
+            +--> explicit predictive-state bank
+                     |
+                     +--> plural compatible hypotheses
+                     +--> ambiguity -> abstain
+                     +--> later feedback -> selective revision
+                     +--> save / restore / deterministic replay
+
+The v0.3/v0.3.2 runtime is a direct SparkBrain engineering component. The predictive bank is an explicit/reference latent-state mechanism derived from Forge design input and independently implemented in MAIN; it is not an emergent-memory claim. PilotCheckpointManager binds the reference-brain checkpoint and build state with no-clobber publication and state-hash validation.
+
+This namespace is NON_EVIDENTIARY_BUILD. Functional build success does not establish component novelty, composition necessity, whole-system superiority, autonomous entity discovery, or scientific support. Any future comparative or causal composition study requires a separate prospective contract.
+
