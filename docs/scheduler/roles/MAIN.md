@@ -25,3 +25,9 @@ MAIN owns current critical-path implementation, comparator/variant work, CI/harn
 If waiting only on an external workflow, persist the exact run/head and expected next action and end the current run. Do not suspend the recurring scheduler.
 
 Use the persistence skill for GitHub mutation reliability.
+
+## User-facing output
+
+Use `今回進めたこと` / `結果` / `統合開発として分かったこと` / `科学的に新しく分かったこと` / `残っている問題` / `次`.
+
+End exactly with `新しい科学結果: あり/なし` and `あなたの対応: 必要/不要`.
