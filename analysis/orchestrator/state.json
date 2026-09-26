@@ -1,25 +1,24 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260927T055834+0900-R143-FORGE-INTERNAL-SCOPE-REVIEW-RV02-D0-WAIT",
-  "generated_at": "2026-09-27T05:58:34+09:00",
+  "generation_id": "EVA-20260927T070206+0900-R144-RD006-BRANCH-LIT45-FORGE-HANDOFF-RECONCILED",
+  "generated_at": "2026-09-27T07:02:06+09:00",
   "cache_role": "MOVING_CACHE_ONLY",
   "durable_authority": {
-    "history_path": "analysis/orchestrator/history/2026-09-27/0558-R143.md",
+    "history_path": "analysis/orchestrator/history/2026-09-27/0702-R144.md",
     "complete": true
   },
   "new_scientific_result": false,
   "scientific_execution_mode": "READ_ONLY",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "prior_analyst_target_head": "045d26dd19905daf4b040e289a26af5195ba3aa2",
-    "request_branch_head": "bdf2ff81a62a3e37e268f701202fae9b32cdf7b0",
+    "prior_analyst_target_head": "066eff35eaa8f10b130907701bd8b553f2406426",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
-    "control": "edf5a05a6c4a578584e67d4c3f739a965d76548e",
+    "control": "e170d62e76a4bcda1eab661749e82e3b68b0630a",
     "main_reports": "c1b091cf3c51dab38f6855e3d252b58feac0784c",
-    "external_science": "640200451b9b18d0e12249786ba92649b6f2cb22",
+    "external_science_literature": "3d766142d9b967b22c5d364d599e35aa5b064d65",
     "methodology": "4c3483754ad9db5120b4414743a757a02d5c5aa8",
     "utility": "c4ef0f130e26be72e1ffcc31c2675b2feaf6fc02",
-    "forge_internal_scope": "a31c727d0f41fe5f788d1fa6b1aef11e175a9334"
+    "forge_confirmation_guard": "0b3f8a5e074b346ef18b10ddf3c0893ba6996043"
   },
   "canonical_funnel": {
     "candidates": 35,
@@ -40,8 +39,9 @@
     "current_question_layer": "COMPONENT_FUNCTION_REACHABILITY",
     "evidentiary_status": "DEVELOPMENT_ONLY_ZERO_CONFIRMATORY_CREDIT",
     "owner": "MAIN",
-    "branch_to_create": "research/rv02-rd006-external-learning-reachability-a",
-    "branch_observed": false,
+    "branch": "research/rv02-rd006-external-learning-reachability-a",
+    "branch_observed": true,
+    "branch_status": "EXISTS_AT_MAIN_NO_DURABLE_IMPLEMENTATION_OR_RESULT",
     "source_start": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "output_namespace": "artifacts/rv02_rd006/external_learning_reachability_a_v1",
     "allocation": "PREPARE_AND_RUN_RV02_RD006_STAGE_D0_DEVELOPMENT_ONLY",
@@ -71,6 +71,15 @@
         "lag_ms_max": 6.5,
         "valid_visible_return_edge": true
       },
+      "required_reporting": [
+        "ELIGIBLE_ORDINARY_EXTERNAL_EDGE_IDENTITY_AND_UPDATE_COUNT",
+        "PRE_POST_TIMING",
+        "WEIGHT_BEFORE_AFTER",
+        "DISTINCT_HIDDEN_SOURCE_CERTIFICATE",
+        "VISIBLE_RETURN_PATH_AND_LAG",
+        "RAW_DRIVEN_ACTIVITY_FOR_SILENT_OR_EXPLOSIVE_REGIME_DIAGNOSIS"
+      ],
+      "interpretation_ceiling": "EXTERNAL_LEARNING_MAY_EXPOSE_FIXED_RECURRENT_RETURN_DYNAMICS_NOT_HIDDEN_RETURN_LEARNING",
       "later_e0_e1_es": "REQUIRES_DURABLE_D0_AND_FRESH_ANALYST_ALLOCATION",
       "scale_reservoir": "NOT_AUTHORIZED"
     },
@@ -105,14 +114,22 @@
     },
     "forge_internal_scope": {
       "forge_id": "FORGE-INTERNAL-SCOPE-ALLOCATOR-A",
-      "durable_forge_handoff": false,
-      "exact_head": "a31c727d0f41fe5f788d1fa6b1aef11e175a9334",
-      "ci_run": 36270938359,
-      "ci_result": "SUCCESS",
-      "status": "ACCEPT_AS_OPTIONAL_FUTURE_SYSTEM_BUILD_INPUT_PENDING_FORGE_DURABLE_HANDOFF",
+      "durable_forge_handoff": true,
+      "status": "ACCEPT_AS_OPTIONAL_FUTURE_SYSTEM_BUILD_INPUT",
       "component_function": "BOUNDED_TESTS_SUPPORTED",
       "ordinary_reduction": "DETERMINISTIC_NEAREST_CENTROID_CACHE_NAMESPACE_PLUS_THRESHOLD_CHANGE_HEURISTIC",
-      "caller_privileged_scope_labels": false,
+      "comparatively_supported": false,
+      "composition_contribution": "NOT_ESTABLISHED",
+      "scientific_credit": 0
+    },
+    "forge_confirmation_guard": {
+      "forge_id": "FORGE-INTERNAL-SCOPE-CONFIRMATION-GUARD-A",
+      "handoff_commit": "0b3f8a5e074b346ef18b10ddf3c0893ba6996043",
+      "exact_head": "aac3c657a2b941b6971f0161e8132f1905a91a6c",
+      "ci_run": 36273702567,
+      "ci_result": "SUCCESS",
+      "status": "ACCEPT_AS_OPTIONAL_FUTURE_SYSTEM_BUILD_INPUT",
+      "ordinary_reduction": "TEMPORAL_DEBOUNCE_PERSISTENCE_CONFIRMATION_FOR_THRESHOLD_CACHE_NAMESPACE",
       "comparatively_supported": false,
       "composition_contribution": "NOT_ESTABLISHED",
       "scientific_credit": 0
@@ -128,12 +145,13 @@
   },
   "p0_incident": {
     "id": "INC-GITHUB-PERSISTENCE-20260925-001",
-    "status": "OPEN_P0",
+    "status": "OPEN_P0_RECOVERY_OBSERVATION_WINDOW",
     "persistence_route": "GITHUB_ACTIONS_BRIDGE",
-    "analyst_r142_complete": true,
-    "diagnosis": "INTERMITTENT_OR_ACTION_CONTEXT_SELECTIVE_MUTATION_FAILURE_PLUS_POINTER_DEBT",
+    "analyst_r143_complete": true,
+    "diagnosis": "INTERMITTENT_OR_RUNTIME_ACTION_CONTEXT_SELECTIVE_MUTATION_REFUSAL_PLUS_MOVING_POINTER_DEBT",
     "repository_wide_outage_supported": false,
-    "root_cause_proven": false
+    "root_cause_proven": false,
+    "theory_pointer_debt": "R6_LATEST_R5_STATE"
   },
   "allocations": {
     "main": "PREPARE_AND_RUN_RV02_RD006_STAGE_D0_DEVELOPMENT_ONLY",
