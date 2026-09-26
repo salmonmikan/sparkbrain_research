@@ -1,37 +1,47 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260926T213500+0900-SCOPED-HYPOTHESIS-REVISION-A",
-  "produced_at": "2026-09-26T21:35:00+09:00",
+  "generation_id": "FORGE-20260926T223612+0900-SCOPED-HYPOTHESIS-REVISION-CI-CLEAN",
+  "produced_at": "2026-09-26T22:36:12+09:00",
   "forge_id": "FORGE-SCOPED-HYPOTHESIS-REVISION-A",
-  "status": "FORGE_PROTOTYPE",
-  "recommended_handoff": "SYSTEM_BUILD_INPUT_IF_CI_CLEAN",
+  "status": "FORGE_INTERESTING",
+  "recommended_handoff": "SYSTEM_BUILD_INPUT",
   "branch": "forge/20260926-scoped-hypothesis-revision-a",
+  "exact_head": "d0b48d76cac47f472ee073462964fd0ad0eabac8",
   "base_forge": "forge/20260926-late-evidence-hypothesis-overlay-a@c1c1cba455b7b5098d30173ac4cadfc2031c1719",
   "input_generations": {
     "evidence_analyst": "EVA-20260926T205808+0900-R139-SB001-WAIT-REVIEW-LATE-EVIDENCE-INPUT-NO-SCIENCE",
-    "main": "MAIN-20260926T211410+0900-PRIMARY-R149-SB001-REREVIEW-REQUEST-FAILED-CLOSED",
+    "main_control_plane_cache": "MAIN-20260926T222430+0900-PRIMARY-R150-SB001-REVIEW-FIXES-WAIT-CI",
     "methodology": "METHCAL-20260926T201857+0900-R126-4B7E2C91",
-    "utility": "UTILITY-20260926T192601+0900-PR152-REVIEW-ANCHOR-RECONCILE-6E7F2C91",
     "literature": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
     "theory": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
     "audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91"
   },
-  "finding": "unscoped late-evidence events leak between Assemblies that reuse the same labels",
+  "current_authoritative_refs": {
+    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "sb001_pr_152_head": "909094a87025b552b96bcac4afb060b91c4f0573",
+    "forge_head": "d0b48d76cac47f472ee073462964fd0ad0eabac8"
+  },
   "target_capability": "isolated saveable replayable persistent hypothesis-revision state",
   "diagnostics": {
-    "unscoped_cross_assembly": "LEAK_EXPECTED",
-    "scoped_cross_assembly": "ISOLATED_EXPECTED",
-    "changed_hypothesis_set": "FRESH_SCOPE_EXPECTED",
-    "replay": "IDENTICAL_EXPECTED"
+    "unscoped_cross_assembly": "LEAK_CONFIRMED_BY_FORGE_TEST",
+    "scoped_cross_assembly": "ISOLATED_CONFIRMED_BY_FORGE_TEST",
+    "changed_hypothesis_set": "FRESH_SCOPE_CONFIRMED_BY_FORGE_TEST",
+    "replay": "IDENTICAL_CONFIRMED_BY_FORGE_TEST"
+  },
+  "ci": {
+    "run_id": 36242697179,
+    "exact_head": "d0b48d76cac47f472ee073462964fd0ad0eabac8",
+    "status": "completed",
+    "result": "SUCCESS",
+    "python_311": "SUCCESS",
+    "python_313": "SUCCESS"
   },
   "ordinary_reduction": "namespaced keyed state / cache partitioning",
   "engineering_usefulness": "future SYSTEM_BUILD guard against cross-context evidence leakage",
+  "limitation": "exact hypothesis-set scoping intentionally fragments continuity when pool membership changes; a later build with an explicit episode/context identity may prefer that identity as the namespace",
   "scientific_disposition": "NO_PROMOTION_PROPOSED",
-  "main_collision_check": "PASS_R139_R149_SB001_UNTOUCHED",
-  "sb001_head": "e9b93456a0c37e2d1393463c167912e0e3968817",
-  "ci": {
-    "status": "PENDING_POST_PUSH"
-  },
+  "main_collision_check": "PASS_SB001_UNTOUCHED",
+  "admitted_to_sb001": false,
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_credit": 0,
   "new_scientific_result": false,
