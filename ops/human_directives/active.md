@@ -1022,3 +1022,34 @@ Control Brainは本Directiveを受理後、P0解消とfleet復旧を単なる長
 Control Brainは独立評価を行ってよいが、単なる保守性・不確実性のみを理由に長期DEFERしてはならない。
 科学的hard floorとの具体的衝突がない限り、P0解決速度とscheduler復旧を優先する。
 
+## HUMAN-20260926-004 — Abolish mandatory SYSTEM_BUILD review gate
+
+Human status: `OPEN`  
+Created: `2026-09-26 JST`
+
+### Intent
+
+SYSTEM_BUILD の必須 code / PR review gate を廃止する。review は任意の engineering advisory input として利用してよいが、fresh / top-level / approval / Codex / repeated review の欠如を SYSTEM_BUILD の readiness・Analyst reconciliation・integration・merge authorization の必須 blocker にしてはならない。
+
+### Requested operating posture
+
+- review 自体を SYSTEM_BUILD の必須 merge/readiness 条件にしない。
+- review 指摘を直して head が変わったことだけを理由に再 review を要求しない。
+- 既に review で判明した具体的 defect は通常の engineering defect として修正・検証する。
+- current-head CI / acceptance tests、必要な exact-head reconciliation、Analyst allocation / build authority、provenance、resource / claim boundary、repository rules は維持する。
+- `main` の GitHub PR requirement は維持し、SparkBrain 内部の追加 review gate だけを廃止する。
+- SB001 および今後の SYSTEM_BUILD に適用する。
+- review request の失敗や欠如を SYSTEM_BUILD blocker / WAIT_REVIEW 理由にしない。
+
+### Scientific hard floor
+
+FORMAL one-way integrity、immutable evidence、held-out isolation、consumed identity の no-rerun / no-retune / no-rescore、prospective scientific contract は一切緩和しない。SYSTEM_BUILD は引き続き NON_EVIDENTIARY_BUILD であり、この変更から科学的 credit は発生しない。
+
+### Immediate SB001 disposition
+
+SB001 の exact-current-head clean review requirement は撤回する。残る条件は current-head CI / acceptance、current Analyst head reconciliation / authority、repository PR/ruleset requirements、scientific hard floor とする。
+
+### Required handling
+
+Control Brain と Evidence Analyst はこの user-approved governance change を prospectively 適用し、同等の mandatory SYSTEM_BUILD review gate を別名で再導入しない。
+
