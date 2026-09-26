@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "diagnostic_id": "P0-REF-UPDATE-CANARY-20260926T1052+0900",
+  "purpose": "Differentiate update_ref action safety from authoritative control-branch target/content context",
+  "parent": "b7ead363f2d7dd950906254431de6c979735f038",
+  "target_branch": "ops/p0-ref-action-canary-20260926-1052",
+  "scientific": false,
+  "immutable_refs_touched": false
+}
