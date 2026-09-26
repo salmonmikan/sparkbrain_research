@@ -1,22 +1,25 @@
 # SparkBrain Fast Forge — Latest
 
 - schema_version: `2`
-- generation_id: `FORGE-20260926T193511+0900-MULTI-HYPOTHESIS-PREDICTION-POOL-A`
-- produced_at: `2026-09-26T19:35:11+09:00`
+- generation_id: `FORGE-20260926T203500+0900-LATE-EVIDENCE-HYPOTHESIS-OVERLAY-A`
+- produced_at: `2026-09-26T20:35:00+09:00`
 - authority_scope: `NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE`
-- forge_id: `FORGE-MULTI-HYPOTHESIS-PREDICTION-POOL-A`
-- status: `FORGE_INTERESTING`
-- recommended_handoff: `SYSTEM_BUILD_INPUT`
-- branch: `forge/20260926-multi-hypothesis-prediction-pool-a`
+- forge_id: `FORGE-LATE-EVIDENCE-HYPOTHESIS-OVERLAY-A`
+- status: `FORGE_PROTOTYPE`
+- recommended_handoff: `SYSTEM_BUILD_INPUT_IF_CI_CLEAN`
+- branch: `forge/20260926-late-evidence-hypothesis-overlay-a`
+- base_forge: `forge/20260926-multi-hypothesis-prediction-pool-a@07218c80d62f06ba3c5bf43badb77ba38f93fe28`
 - base_main: `d16403414fc7abebd23075fc401240971b8eb91d`
 - evidentiary_status: `NON_EVIDENTIARY`
 - scientific_credit: `0`
 - new_scientific_result: `false`
 
-Built one isolated read-only integration prototype that exposes plural future-event hypotheses from the existing v0.5 Assembly predictor and abstains when observations, confidence, or separation are insufficient.
+Built one isolated integration prototype that overlays bounded later-evidence support on the existing Forge plural-hypothesis pool without mutating the stable v0.5 predictor. The overlay is append-only, serializable/replayable, keeps alternatives visible, fails closed for unknown labels, and does not override a pool rejected for insufficient observations.
 
-The strongest reduction is ordinary categorical counts + top-k/beam retention + a reject option. The probe therefore does not support novelty, but it is potentially useful as a future SYSTEM_BUILD input for the `plural hypotheses -> abstain/select` seam.
+The strongest reduction is ordinary Bayesian/log-linear reweighting or multiplicative weights. This is therefore an engineering seam only, not a scientific mechanism claim.
 
-MAIN collision check passed. BUILD-SB-001, PR #152, scientific refs, consumed identities, and existing Forge branches were not touched.
+MAIN collision check passed against Evidence Analyst R138 and MAIN R147. BUILD-SB-001, PR #152, scientific refs, consumed identities and protected workflows were not touched.
 
-History: `reports/fast_forge/history/2026-09-26/1935-multi-hypothesis-prediction-pool-a.md`
+CI status at publication: pending post-push verification.
+
+History: `reports/fast_forge/history/2026-09-26/2035-late-evidence-hypothesis-overlay-a.md`
