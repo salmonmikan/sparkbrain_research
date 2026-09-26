@@ -2,7 +2,9 @@
 
 ## Mode selection
 
-The combined scheduler has two modes according to its configured JST slot. Only `CONTROL_BRAIN` has scheduler mutation authority. `REPOSITORY_STEWARD` is governance/read-audit mode and must not change scheduler state.
+The combined scheduler runs at :50 JST. At 01:50 / 07:50 / 13:50 / 19:50 execute `REPOSITORY_STEWARD` only. At every other :50 slot execute `CONTROL_BRAIN` only. Never execute both in one run.
+
+Only `CONTROL_BRAIN` has scheduler mutation authority. `REPOSITORY_STEWARD` is governance/read-audit mode and must not change scheduler state.
 
 ## CONTROL_BRAIN responsibilities
 
