@@ -87,7 +87,7 @@ class ManagedScopeHypothesisRevisionOverlay:
         }
 
     @classmethod
-    def from_state_dict(cls, state: dict[str, Any]) -> "ManagedScopeHypothesisRevisionOverlay":
+    def from_state_dict(cls, state: dict[str, Any]) -> ManagedScopeHypothesisRevisionOverlay:
         overlay_state = state["overlay"]
         result = cls(RevisionOverlayConfig(**overlay_state["config"]))
         result._overlay = StableScopeHypothesisRevisionOverlay.from_state_dict(overlay_state)
