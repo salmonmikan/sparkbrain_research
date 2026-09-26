@@ -56,6 +56,10 @@ Build observations remain NON_EVIDENTIARY_BUILD.
 
 A terminal scientific candidate is not reopened merely because implementation/code/known mechanisms are reused.
 
+## SYSTEM_BUILD review policy
+
+Relay inherits the current SYSTEM_BUILD review rule: mandatory code/PR/Codex review is not a build gate. Missing/stale/fresh review alone must not block continuation. Concrete defects already identified by review remain normal engineering defects and must be repaired/verified.
+
 ## Synthesis variants
 
 Relay may continue full integration, component-replacement, interaction/feedback-loop ablation, or alternative architecture only when already authorized/spec'd by Analyst/MAIN.
