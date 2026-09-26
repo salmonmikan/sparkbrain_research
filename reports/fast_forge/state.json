@@ -1,29 +1,38 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260927T0337+0900-STABLE-SCOPE-LIFECYCLE-CI-RUNNING",
-  "produced_at": "2026-09-27T03:37:00+09:00",
+  "generation_id": "FORGE-20260927T043947+0900-STABLE-SCOPE-LIFECYCLE-CI-CLEAN",
+  "produced_at": "2026-09-27T04:39:47+09:00",
   "forge_id": "FORGE-STABLE-SCOPE-LIFECYCLE-A",
-  "status": "FORGE_PROTOTYPE",
-  "recommended_handoff": null,
+  "status": "FORGE_INTERESTING",
+  "recommended_handoff": "SYSTEM_BUILD_INPUT",
   "branch": "forge/20260927-stable-scope-lifecycle-a",
-  "prototype_head": "d52bb83041abc719f94d4f11e7cbad585ad37fc8",
+  "exact_head": "49be62ba9ae9d82fd5563e51d69cde865f3b5225",
+  "prior_prototype_head": "d52bb83041abc719f94d4f11e7cbad585ad37fc8",
   "input_generations": {
-    "evidence_analyst": "EVA-20260927T031000+0900-R140-SB001-READY-INTEGRATION-P0-BRIDGE-RETRY",
-    "main": "MAIN-20260927T031500+0900-PRIMARY-R153-SB001-MERGE-REFUSED",
+    "control": "CTRL-20260927T005724+0900-R84-P0-HISTORY-FIRST-ANALYST-WORKAROUND",
+    "evidence_analyst": "EVA-20260927T035800+0900-R141-SB001-RETRY2-RV02-PENDING-THEORY6",
+    "main": "MAIN-20260927T041727+0900-PRIMARY-R154-SB001-INTEGRATED",
     "methodology": "METHCAL-20260926T201857+0900-R126-4B7E2C91",
-    "utility": "UTILITY-20260926T192601+0900-PR152-REVIEW-ANCHOR-RECONCILE-6E7F2C91",
+    "utility": "UTILITY-20260927T0320+0900-P0-UTILITY-PERSISTENCE-RETRY",
     "literature": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
-    "theory": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
+    "theory": "THEORY-20260927T033309+0900-R6-LATENT-SCOPE-PLURAL-REVISION-DESIGN-6F8C2A41",
     "audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91"
   },
   "target_capability": "make stable-scope evidence lifetime explicit, replayable, and non-resurrecting after closure",
+  "repair": {
+    "file": "forge_prototypes/managed_scope_hypothesis_revision.py",
+    "change": "remove redundant quotes from from_state_dict return annotation",
+    "scope": "SCIENCE_INVARIANT_ONE_LINE_LINT_REPAIR",
+    "publication_attempts_this_run": 1,
+    "readback_verified": true
+  },
   "prototype": {
     "files": [
       "forge_prototypes/managed_scope_hypothesis_revision.py",
       "tests/test_forge_managed_scope_hypothesis_revision.py"
     ],
     "lifecycle_semantics": [
-      "close removes accumulated evidence for one Assembly+scope pair",
+      "close removes accumulated support for one Assembly+scope pair",
       "closed token is tombstoned and cannot be reused on the same Assembly",
       "fresh token starts clean",
       "same token on another Assembly remains independent",
@@ -31,26 +40,38 @@
     ]
   },
   "ci": {
-    "run_id": 36263166258,
-    "exact_head": "d52bb83041abc719f94d4f11e7cbad585ad37fc8",
-    "status": "in_progress",
-    "result": null
+    "run_id": 36266677211,
+    "exact_head": "49be62ba9ae9d82fd5563e51d69cde865f3b5225",
+    "status": "completed",
+    "conclusion": "success",
+    "python_311": {
+      "lint": "success",
+      "readiness": "success",
+      "tests": "success",
+      "bundle_validation": "success"
+    },
+    "python_313": {
+      "lint": "success",
+      "readiness": "success",
+      "tests": "success",
+      "bundle_validation": "success"
+    }
   },
   "ordinary_reduction": "ordinary session/cache namespace lifecycle and tombstoning",
-  "engineering_usefulness": "prevents accidental stale-support resurrection when stable scope tokens are retired",
+  "engineering_usefulness": "prevents stale-support resurrection when stable scope tokens are retired",
   "limitation": "scope issuance and closure remain caller-defined external authority and must be prospective/non-privileged in any future build",
-  "p0_observation": {
-    "update_ref_attempt_1": "PRE_GITHUB_OPENAI_SAFETY_BLOCK",
-    "update_ref_attempt_2": "SUCCESS_VERIFIED",
-    "interpretation": "repeats intermittent/context-selective mutation behavior; does not establish root cause"
-  },
-  "human_directive_boundary": {
-    "rv02": "HUMAN-20260927-001 observed but not executed; current Analyst R140 contains no RV02 allocation and the directive requires Control/Analyst review before execution"
-  },
-  "main_collision_check": "PASS_SB001_UNTOUCHED",
+  "main_collision_check": "PASS_MAIN_R154_SB001_INTEGRATED_AND_UNTOUCHED",
   "admitted_to_sb001": false,
+  "build_id_created": false,
+  "candidate_id_created": false,
+  "p0_observation": {
+    "preceding_run_update_file": "PRE_GITHUB_REFUSAL_X3",
+    "current_run_update_file_attempt_1": "SUCCESS_VERIFIED",
+    "diagnosis": "INTERMITTENT_OR_CONTEXT_SELECTIVE_MUTATION_FAILURE_SUPPORTED_NOT_ROOT_CAUSE_PROVEN"
+  },
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_credit": 0,
   "new_scientific_result": false,
-  "scheduler_state_changed": false
+  "scheduler_state_changed": false,
+  "history_path": "reports/fast_forge/history/2026-09-27/0439-stable-scope-lifecycle-ci-clean.md"
 }
