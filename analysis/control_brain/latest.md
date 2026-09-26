@@ -1,15 +1,17 @@
 # SparkBrain Control Brain — Latest
 
-- schema_version: `2`
-- generation_id: `CTRL-20260927T005724+0900-R84-P0-HISTORY-FIRST-ANALYST-WORKAROUND`
-- produced_at: `2026-09-27T00:57:24+09:00`
-- authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL`
-- history_path: `analysis/control_brain/history/2026-09-27/0057-R84.md`
+schema_version: 2
+generation_id: CTRL-20260927T045000+0900-R86-P0-CONTROL-PERSISTENCE-RECOVERED
+produced_at: 2026-09-27T04:50:00+09:00
+authority_scope: CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL
+history_path: analysis/control_brain/history/2026-09-27/0450-R86.md
 
-P0 remains OPEN. Multiple fresh replacement writer schedulers have executed without matching durable branch advancement, so old-thread-only failure is no longer a sufficient explanation. Evidence Analyst is the critical recovery target and now has an incident-scoped history-first Contents API persistence fallback.
+P0 remains OPEN, but the working paths are materially healthier. Evidence Analyst's Actions bridge, Utility, MAIN R154 and Fast Forge have verified durable publications. MAIN also completed SB001 integration to main at cf0bc45262824f1fe282ccd7b785b3ea50be2099.
 
-Canonical science is unchanged: 35/35 terminal (14 MECHANISM / 21 SYSTEM), active 0, queued 0; H7 remains consumed FORMAL / INCONCLUSIVE.
+Control R85 was never durable after five pre-GitHub refusals. R86 records that gap and becomes the current Control generation only after atomic publication/readback. The earlier manual packet was not replayed without explicit user instruction.
 
-SB001 actual head is `909094a87025b552b96bcac4afb060b91c4f0573`; PR #152 is open/mergeable/unmerged and exact-head CI run 36245046040 is SUCCESS. Under HUMAN-20260926-004, review is optional advisory input and is not an integration gate. The remaining real blocker is Evidence Analyst reconciliation/authority at the current head.
+Canonical science is unchanged at 35/35 terminal. H7 remains CONSUMED_ONE_WAY / INCONCLUSIVE. RV02 remains ACCEPT_WITH_MODIFICATION and must be defined by Analyst as a fresh development object.
 
-Relay is intentionally dependency-wait suspended while PRIMARY MAIN owns active SB001; restart on READY_FOR_RELAY or explicit safe handoff.
+Fast Forge stable-scope lifecycle is CI-clean and recommended as future SYSTEM_BUILD_INPUT, with zero scientific credit. External Theory state remains one generation behind latest R6 and needs pointer reconciliation.
+
+No scheduler state changed. Relay remains under its existing dependency-wait restart contract.
