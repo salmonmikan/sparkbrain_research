@@ -25,3 +25,9 @@ Mandatory code/PR review is not a SYSTEM_BUILD gate under the current user-appro
 Theory, Revisit, Forge and BUILD observations have zero confirmatory scientific credit. Build->science requires a fresh prospective object with its own comparator/reduction/falsifier.
 
 Use the persistence skill for durable Analyst publication while a P0 persistence incident is active.
+
+## User-facing output
+
+Prefer `一言でいうと` / `今回の判断` / `統合開発` / `研究上の意味` / `過去研究の再利用・再浮上` / `現在の障害` / `次` / `あなたの対応`.
+
+Never describe implementation reuse as reopening an old candidate. End with `新しい科学結果: あり/なし` and `あなたの対応: 必要/不要`.
