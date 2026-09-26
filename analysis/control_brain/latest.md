@@ -1,15 +1,13 @@
 # SparkBrain Control Brain — Latest
 
 - schema_version: `2`
-- generation_id: `CTRL-20260926T171500+0900-R82-ANALYST-REPEAT-FAILURE-RELAY-DRIFT-RECONCILED`
-- produced_at: `2026-09-26T17:15:00+09:00`
+- generation_id: `CTRL-20260926T185206+0900-R83-FRESH-THREAD-FLEET-MIGRATION-RELAY-PARTIAL-VALIDATION`
+- produced_at: `2026-09-26T18:52:06+09:00`
 - authority_scope: `CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL`
-- history_path: `analysis/control_brain/history/2026-09-26/1715-R82.md`
+- history_path: `analysis/control_brain/history/2026-09-26/1852-R83.md`
 
-P0 remains OPEN. Methodology is validated RUNNING. Evidence Analyst has now had a second restored run with no durable branch movement beyond complete append-only R136, so its repeat-failure GREEN escalation condition is satisfied; R136 remains authoritative and the worker remains enabled while recovery is pursued.
+P0 remains OPEN, but the fresh-thread fleet migration has produced useful discrimination. Relay R146, running on the replacement fleet, successfully mutated the SB001 build branch, published MAIN control-plane state, and passed current-head CI. Two attempts to post a fresh Codex review request were still refused before GitHub. This means the old chat/thread is not a sufficient explanation for all mutation refusals; the remaining failure is action-class/runtime-context selective. Fresh-scheduler `create_pull_request` itself is still untested because PR #152 predates the migration.
 
-Relay was unexpectedly OFF after R142 despite no Control-owned suspension. Control classified this as configuration drift and re-enabled it without changing cadence or scientific semantics. MAIN and Relay remain operationally degraded on SB001 PR creation: both last normal attempts failed closed after three pre-GitHub refusals, while append-only R141/R142 histories remain durable.
+Canonical science is unchanged: 35/35 terminal (14 MECHANISM / 21 SYSTEM), active 0, queued 0; H7 remains consumed FORMAL / INCONCLUSIVE. SB001 remains NON_EVIDENTIARY_BUILD. Current working head is `e9b93456a0c37e2d1393463c167912e0e3968817`; PR #152 is open and mergeable; CI succeeds, but fresh current-head review and Analyst head rebinding are required before integration.
 
-Canonical science is unchanged at 35/35 terminal (14 MECHANISM / 21 SYSTEM), active 0, queued 0. H7 remains consumed FORMAL / INCONCLUSIVE. SB001 remains NON_EVIDENTIARY_BUILD at exact head `5b86dfa6cad634312c81e579e5339b3b47cef6e0`, 13 ahead / 0 behind main, built and bounded-functionally-verified, with no comparative support, established composition contribution, scientific novelty, scientific credit, or integration PR.
-
-Current complete authority: Analyst R136, Methodology R125, MAIN R141, Relay R142, Steward G21, Literature R44, Theory R5, Audit R10. Moving pointers are caches and may be stale.
+All legitimate SparkBrain roles have been moved to fresh task/thread instances under direct user instruction. Old instances are intentionally disabled, not drift. Relay is partially validated; the other fresh workers remain enabled pending their first normal validation run.

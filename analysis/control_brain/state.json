@@ -1,14 +1,15 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260926T171500+0900-R82-ANALYST-REPEAT-FAILURE-RELAY-DRIFT-RECONCILED",
-  "produced_at": "2026-09-26T17:15:00+09:00",
+  "generation_id": "CTRL-20260926T185206+0900-R83-FRESH-THREAD-FLEET-MIGRATION-RELAY-PARTIAL-VALIDATION",
+  "produced_at": "2026-09-26T18:52:06+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
-  "history_path": "analysis/control_brain/history/2026-09-26/1715-R82.md",
+  "history_path": "analysis/control_brain/history/2026-09-26/1852-R83.md",
   "human_directives": {
     "HUMAN-20260925-002": "ACCEPT_ACTIVE",
     "HUMAN-20260926-003": "ACCEPT_ACTIVE_ACCELERATED_RECOVERY",
     "github_three_attempt_contract": "ACTIVE",
-    "blue_green_canary_authority": "ACTIVE"
+    "blue_green_canary_authority": "ACTIVE",
+    "user_direct_thread_fleet_migration": "ACCEPTED_AND_APPLIED"
   },
   "science": {
     "canonical": 35,
@@ -23,21 +24,27 @@
   },
   "system_build": {
     "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
-    "exact_head": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
-    "compare_to_main": "13_AHEAD_0_BEHIND",
+    "analyst_accepted_head": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
+    "current_working_head": "e9b93456a0c37e2d1393463c167912e0e3968817",
+    "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "integration_pr": 152,
+    "pr_state": "OPEN_MERGEABLE_NOT_MERGED",
+    "current_head_ci_run": 36233791080,
+    "current_head_ci": "SUCCESS",
+    "current_head_review": "FRESH_REVIEW_NOT_OBTAINED",
+    "analyst_rebind_required": true,
     "built": true,
     "functionally_verified_bounded": true,
     "comparatively_supported": false,
     "composition_contribution": "NOT_ESTABLISHED",
     "scientific_novelty": false,
     "scientific_credit": 0,
-    "pr_to_main": false
+    "evidentiary_status": "NON_EVIDENTIARY_BUILD"
   },
   "authority_histories": {
     "evidence_analyst": "R136_APPEND_ONLY_COMPLETE",
-    "methodology": "R125_FULLY_READBACK_VERIFIED_POST_RESTART",
-    "main": "R141_APPEND_ONLY_POST_RESTART",
-    "relay": "R142_APPEND_ONLY_AND_LEASE_POST_RESTART",
+    "methodology": "R125_FULLY_READBACK_VERIFIED",
+    "main_current": "R146_RELAY_REVIEW_FIXES_AND_CI_SUCCESS",
     "repository_steward": "G21",
     "external_science": "LIT_R44_THEORY_R5_AUDIT_R10"
   },
@@ -45,77 +52,139 @@
     "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
     "status": "OPEN_P0",
     "repository_wide_write_outage_supported": false,
-    "root_cause_boundary": "AUTOMATION_RUNTIME_ACTION_PATH_OR_MUTATION_CONTEXT_REFUSAL_WITH_PARTIAL_POINTER_DEBT",
-    "analyst_post_restart_validation": "REPEAT_FAILURE_SECOND_RESTORED_RUN_NO_BRANCH_MOVEMENT_BEYOND_R136",
-    "methodology_post_restart_validation": "PASS_R125_FULL_READBACK",
-    "main_post_restart_validation": "PARTIAL_R141_HISTORY_DURABLE_PR_CREATE_3_OF_3_PRE_GITHUB_REFUSAL",
-    "relay_post_restart_validation": "PARTIAL_R142_HISTORY_AND_LEASE_DURABLE_PR_CREATE_3_OF_3_PRE_GITHUB_REFUSAL",
-    "utility_validation": "PENDING_FIRST_NORMAL_RUN_AFTER_CLEAN_IDLE",
-    "forge_validation": "PENDING_NEXT_NORMAL_RUN",
-    "external_science_validation": "PENDING_FIRST_POST_RESTART_SLOT"
+    "fresh_thread_relay_validation": "PASS_CODE_AND_CONTROL_PLANE_WRITES_PLUS_CI; COMMENT_MUTATION_REFUSED_PRE_GITHUB_TWICE",
+    "fresh_thread_create_pull_request_validation": "NOT_YET_TESTED_PR_152_PREDATES_THREAD_MIGRATION",
+    "root_cause_boundary": "ACTION_CLASS_OR_AUTOMATION_RUNTIME_MUTATION_CONTEXT; OLD_THREAD_ONLY_EXPLANATION_INSUFFICIENT",
+    "append_only_history_primary_authority": true,
+    "moving_latest_state_cache_semantics": true
   },
   "fleet": {
     "control": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "RUNNING",
-      "self_replacement_forbidden": true
-    },
-    "current_state_brief": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "RUNNING"
+      "operational": "GREEN_VALIDATING",
+      "old_task_id": "6aa9184960d4819192c8de1d9b22c1d9",
+      "new_task_id": "6ab7928fe07481919903adc57b596dfd",
+      "self_replacement_was_user_initiated": true
     },
     "evidence_analyst": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "RESTARTING_GREEN_ELIGIBLE",
-      "latest_safe_generation": "R136",
-      "green_escalation_condition": "MET_REPEAT_DURABLE_FAILURE"
+      "operational": "GREEN_VALIDATING_PENDING_FIRST_RUN",
+      "old_task_id": "6aa893eab4748191bd98de5e490739ce",
+      "new_task_id": "6ab792ba724c81919be1cd071ab045ba",
+      "latest_safe_generation": "R136"
     },
     "methodology": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "RUNNING",
-      "validated_generation": "R125"
+      "operational": "GREEN_VALIDATING_PENDING_FIRST_RUN",
+      "old_task_id": "6aae12399e1881919f2f98fd8efb0a27",
+      "new_task_id": "6ab793cce5e8819191eaec8ebbb47466",
+      "previous_validated_generation": "R125"
     },
     "external_science": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "RESTARTING"
+      "operational": "GREEN_VALIDATING_PENDING_FIRST_RUN",
+      "old_task_id": "6aa9b43ec5288191bc12c59cb5ae1e99",
+      "new_task_id": "6ab793ac05048191a9f30ff6460169c5"
     },
     "main": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "RESTARTING",
-      "latest_safe_generation": "R141_HISTORY",
-      "blocker": "PR_MUTATION_PRE_GITHUB_SAFETY_REFUSAL_AFTER_3_ATTEMPTS"
+      "operational": "GREEN_VALIDATING_PENDING_FIRST_PRIMARY_RUN",
+      "old_task_id": "6aa35e5370bc8191888926c2457a2b7f",
+      "new_task_id": "6ab792e4401c8191a8f9804f1b407a4b",
+      "current_shared_state": "R146_RELAY_WAITING_EXTERNAL"
     },
     "fast_forge": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "RESTARTING"
+      "operational": "GREEN_VALIDATING_PENDING_FIRST_RUN",
+      "old_task_id": "6aaa08248794819180e6627ef2a9b5fc",
+      "new_task_id": "6ab7933b1aa081919594564ce879fdc6"
     },
     "relay": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "RESTARTING",
-      "latest_safe_generation": "R142_HISTORY_AND_LEASE",
-      "configuration_drift_reconciled": true,
-      "blocker": "PR_MUTATION_PRE_GITHUB_SAFETY_REFUSAL_AFTER_3_ATTEMPTS"
+      "operational": "GREEN_VALIDATING_PARTIAL_PASS",
+      "old_task_id": "6aaba7c85034819198e3b91eb58556d0",
+      "new_task_id": "6ab792fe98488191af93e6ff0facc7b5",
+      "validated_generation": "R146",
+      "persistence": "PASS",
+      "github_code_mutation": "PASS",
+      "ci": "PASS",
+      "comment_mutation": "PRE_GITHUB_REFUSAL_X2"
     },
     "utility": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "RESTARTING",
-      "restart_condition": "FIRST_NORMAL_RUNTIME_PUBLICATION_PENDING"
+      "operational": "GREEN_VALIDATING_PENDING_FIRST_RUN",
+      "old_task_id": "6aae3f2a085c8191b522a8138cc62dd9",
+      "new_task_id": "6ab7931c1cdc8191a8d8a8b344f22d60"
+    },
+    "current_state_brief": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "GREEN_ACTIVE_READ_ONLY_PENDING_FIRST_RUN",
+      "old_task_id": "6aa9543b594c8191b44e2356a34719c1",
+      "new_task_id": "6ab793fb62dc819184e3660fdaac0485"
     }
   },
   "blue_green": {
-    "replacements": [],
-    "production_green_active": 0,
-    "analyst": "GREEN_ELIGIBLE_REPEAT_FAILURE",
-    "canary": "FAILED_EMPTY_BRANCH_NOT_FLEET_WIDE_BLOCKER"
+    "migration_type": "USER_INITIATED_FRESH_THREAD_FULL_FLEET_REPLACEMENT",
+    "old_blue_state": "DISABLED",
+    "new_green_state": "ENABLED_VALIDATING",
+    "replacements": [
+      {
+        "role": "control",
+        "old_task_id": "6aa9184960d4819192c8de1d9b22c1d9",
+        "new_task_id": "6ab7928fe07481919903adc57b596dfd"
+      },
+      {
+        "role": "evidence_analyst",
+        "old_task_id": "6aa893eab4748191bd98de5e490739ce",
+        "new_task_id": "6ab792ba724c81919be1cd071ab045ba"
+      },
+      {
+        "role": "main",
+        "old_task_id": "6aa35e5370bc8191888926c2457a2b7f",
+        "new_task_id": "6ab792e4401c8191a8f9804f1b407a4b"
+      },
+      {
+        "role": "relay",
+        "old_task_id": "6aaba7c85034819198e3b91eb58556d0",
+        "new_task_id": "6ab792fe98488191af93e6ff0facc7b5"
+      },
+      {
+        "role": "utility",
+        "old_task_id": "6aae3f2a085c8191b522a8138cc62dd9",
+        "new_task_id": "6ab7931c1cdc8191a8d8a8b344f22d60"
+      },
+      {
+        "role": "fast_forge",
+        "old_task_id": "6aaa08248794819180e6627ef2a9b5fc",
+        "new_task_id": "6ab7933b1aa081919594564ce879fdc6"
+      },
+      {
+        "role": "external_science",
+        "old_task_id": "6aa9b43ec5288191bc12c59cb5ae1e99",
+        "new_task_id": "6ab793ac05048191a9f30ff6460169c5"
+      },
+      {
+        "role": "methodology",
+        "old_task_id": "6aae12399e1881919f2f98fd8efb0a27",
+        "new_task_id": "6ab793cce5e8819191eaec8ebbb47466"
+      },
+      {
+        "role": "current_state_brief",
+        "old_task_id": "6aa9543b594c8191b44e2356a34719c1",
+        "new_task_id": "6ab793fb62dc819184e3660fdaac0485"
+      }
+    ],
+    "rollback": "OLD_TASKS_REMAIN_DISABLED_AND_AVAILABLE_FOR_ROLLBACK_IF_REQUIRED",
+    "additional_replacement_required_now": false
   },
   "hard_floor": {
     "experiment_dispatched": false,
@@ -125,5 +194,12 @@
     "evidence_ref_mutated": false,
     "terminal_reopened": false,
     "consumed_formal_rerun_retune_rescore": false
+  },
+  "publication": {
+    "branch_head_before": "a0290641ef5d05e1d70c6f2d6b29e72849d7757e",
+    "branch_head_after": "SELF_COMMIT",
+    "write_attempt": 1,
+    "retry_count": 0,
+    "persistence_complete": "REQUIRES_POST_COMMIT_READBACK"
   }
 }
