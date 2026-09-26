@@ -1,50 +1,37 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260926T205200+0900-LATE-EVIDENCE-OVERLAY-CI-CLEAN",
-  "produced_at": "2026-09-26T20:52:00+09:00",
-  "forge_id": "FORGE-LATE-EVIDENCE-HYPOTHESIS-OVERLAY-A",
-  "status": "FORGE_INTERESTING",
-  "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260926-late-evidence-hypothesis-overlay-a",
-  "verified_code_head": "32f5120ba3a3c6524818e78ee821078c0f6338bc",
+  "generation_id": "FORGE-20260926T213500+0900-SCOPED-HYPOTHESIS-REVISION-A",
+  "produced_at": "2026-09-26T21:35:00+09:00",
+  "forge_id": "FORGE-SCOPED-HYPOTHESIS-REVISION-A",
+  "status": "FORGE_PROTOTYPE",
+  "recommended_handoff": "SYSTEM_BUILD_INPUT_IF_CI_CLEAN",
+  "branch": "forge/20260926-scoped-hypothesis-revision-a",
+  "base_forge": "forge/20260926-late-evidence-hypothesis-overlay-a@c1c1cba455b7b5098d30173ac4cadfc2031c1719",
   "input_generations": {
-    "evidence_analyst": "EVA-20260926T200150+0900-R138-SB001-WAIT-REVIEW-FORGE-INPUT-NO-SCIENCE",
-    "main": "MAIN-20260926T204633+0900-RELAY-R148-SB001-REREVIEW-REQUEST-FAILED-CLOSED",
+    "evidence_analyst": "EVA-20260926T205808+0900-R139-SB001-WAIT-REVIEW-LATE-EVIDENCE-INPUT-NO-SCIENCE",
+    "main": "MAIN-20260926T211410+0900-PRIMARY-R149-SB001-REREVIEW-REQUEST-FAILED-CLOSED",
     "methodology": "METHCAL-20260926T201857+0900-R126-4B7E2C91",
     "utility": "UTILITY-20260926T192601+0900-PR152-REVIEW-ANCHOR-RECONCILE-6E7F2C91",
     "literature": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
     "theory": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
     "audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91"
   },
-  "target_capability": "plural hypotheses -> later evidence -> selective reweighting -> abstain/select",
-  "prototype": {
-    "predictor_mutation": false,
-    "append_only_overlay": true,
-    "replayable": true,
-    "unknown_label": "FAIL_CLOSED",
-    "insufficient_base_observations": "NOT_RESCUABLE"
-  },
+  "finding": "unscoped late-evidence events leak between Assemblies that reuse the same labels",
+  "target_capability": "isolated saveable replayable persistent hypothesis-revision state",
   "diagnostics": {
-    "tie_plus_support": "SELECT",
-    "balanced_support": "ABSTAIN",
-    "replay": "IDENTICAL",
-    "predictor_state": "UNCHANGED"
+    "unscoped_cross_assembly": "LEAK_EXPECTED",
+    "scoped_cross_assembly": "ISOLATED_EXPECTED",
+    "changed_hypothesis_set": "FRESH_SCOPE_EXPECTED",
+    "replay": "IDENTICAL_EXPECTED"
   },
-  "ordinary_reduction": "log-linear/Bayesian categorical reweighting + multiplicative weights + reject option",
-  "engineering_usefulness": "SURVIVED_AS_FUTURE_SYSTEM_BUILD_INPUT",
+  "ordinary_reduction": "namespaced keyed state / cache partitioning",
+  "engineering_usefulness": "future SYSTEM_BUILD guard against cross-context evidence leakage",
   "scientific_disposition": "NO_PROMOTION_PROPOSED",
-  "scientific_kills": 0,
-  "scientific_survivors": 0,
+  "main_collision_check": "PASS_R139_R149_SB001_UNTOUCHED",
+  "sb001_head": "e9b93456a0c37e2d1393463c167912e0e3968817",
   "ci": {
-    "run_id": 36239974219,
-    "result": "SUCCESS",
-    "python": [
-      "3.11",
-      "3.13"
-    ],
-    "code_head": "32f5120ba3a3c6524818e78ee821078c0f6338bc"
+    "status": "PENDING_POST_PUSH"
   },
-  "main_collision_check": "PASS_R138_R148_SB001_UNTOUCHED",
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_credit": 0,
   "new_scientific_result": false,
