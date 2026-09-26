@@ -1,25 +1,26 @@
-# MAIN PRIMARY R150
+# MAIN PRIMARY R152
 schema_version: 2
-generation_id: MAIN-20260926T222430+0900-PRIMARY-R150-SB001-REVIEW-FIXES-WAIT-CI
-generated_at: 2026-09-26T22:24:30+09:00
+generation_id: MAIN-20260927T012500+0900-PRIMARY-R152-SB001-WAIT-ANALYST-RECONCILE
+generated_at: 2026-09-27T01:25:00+09:00
 execution_mode: PRIMARY
 work_mode: SYSTEM_BUILD
 status: WAITING_EXTERNAL
 build_id: BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT
 exact_head: 909094a87025b552b96bcac4afb060b91c4f0573
 pr: 152
+current_main: 2f41f02dd36f9a12d4ef5b02108db6b74db81b74
 current_head_ci_run: 36245046040
-current_head_ci_status: IN_PROGRESS
+current_head_ci_status: SUCCESS
 evidentiary_status: NON_EVIDENTIARY_BUILD
 built: true
-functionally_verified_bounded: pending_current_head_ci
+functionally_verified_bounded: true
 comparatively_supported: false
 composition_contribution: NOT_ESTABLISHED
 scientifically_novel: false
 scientific_credit: 0
 
-Fresh current-head review on e9b93456 found three engineering defects. MAIN repaired documentation registration, pre-validation schema mutation, and overflow-prone running means at 909094a87025b552b96bcac4afb060b91c4f0573; focused regression tests were added. PR #152 now points to the repaired head. CI 36245046040 is in progress, so no merge or new review request was attempted.
+HUMAN-20260926-004 removes review as a SYSTEM_BUILD gate. PR #152 is open/mergeable and current-head CI is green. Evidence Analyst durable authority remains R139 at prior head e9b93456..., while current build head is 909094a.... Current Analyst head reconciliation/authority is therefore the remaining integration blocker.
 
-stop_reason: WAITING_FOR_CURRENT_HEAD_CI
-next_action: if unchanged-head CI succeeds, request a fresh top-level review and integrate only if clean
-history: reports/orchestrator/main/history/2026-09-26/2224-r150-primary-sb001-review-fixes-wait-ci.md
+stop_reason: WAITING_FOR_ANALYST_CURRENT_HEAD_RECONCILIATION
+next_action: re-fetch Analyst authority and, once exact-head reconciliation is durable and repository/CI conditions remain valid, integrate without requiring another review.
+history: reports/orchestrator/main/history/2026-09-27/0125-r152-primary-sb001-wait-analyst-reconcile.md
