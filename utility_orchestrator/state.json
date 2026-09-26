@@ -1,34 +1,66 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260927T0320+0900-P0-UTILITY-PERSISTENCE-RETRY",
-  "produced_at": "2026-09-27T03:20:00+09:00",
+  "generation_id": "UTILITY-20260927T052236+0900-P0-DURABILITY-WINDOW-RECON",
+  "produced_at": "2026-09-27T05:22:36+09:00",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "status": "COMPLETED",
-  "autonomous_task_id": "UTILITY-AUTO-20260927T0320+0900-P0-UTILITY-PERSISTENCE-RETRY",
+  "autonomous_task_id": "UTILITY-AUTO-20260927T052236+0900-P0-DURABILITY-WINDOW-RECON",
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY_OPERATIONAL_DIAGNOSTIC_ONLY",
   "scientific_authority": "NONE",
   "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
-  "analyst_generation": "EVA-20260927T031000+0900-R140-SB001-READY-INTEGRATION-P0-BRIDGE-RETRY",
-  "main_generation": "MAIN-20260927T031500+0900-PRIMARY-R153-SB001-MERGE-REFUSED",
-  "relay_ownership_source_generation": "CTRL-20260927T005724+0900-R84-P0-HISTORY-FIRST-ANALYST-WORKAROUND",
-  "relay_ownership_state": "DEPENDENCY_WAIT_SUSPENDED_WHILE_PRIMARY_MAIN_OWNS_SB001",
-  "control_generation": "CTRL-20260927T005724+0900-R84-P0-HISTORY-FIRST-ANALYST-WORKAROUND",
-  "utility_branch_head_before": "6ad09ae400fb6b6c0b1d4ea8895bb455957569b9",
-  "objective": "Re-test Utility-owned result/state GitHub persistence under P0 without touching MAIN/scientific authority.",
+  "analyst_generation": "EVA-20260927T050131+0900-R142-RV02-RD006-OPEN-SB001-INTEGRATED",
+  "main_generation": "MAIN-20260927T041727+0900-PRIMARY-R154-SB001-INTEGRATED",
+  "relay_ownership_source_generation": "CTRL-20260927T045000+0900-R86-P0-CONTROL-PERSISTENCE-RECOVERED",
+  "relay_ownership_state": "DEPENDENCY_WAIT_SUSPENDED_DISABLED",
+  "control_generation": "CTRL-20260927T045000+0900-R86-P0-CONTROL-PERSISTENCE-RECOVERED",
+  "utility_branch_head_before": "1bb7cbed00662f34ffed88e43bca59901e5d4330",
+  "objective": "Verify later-window durability and atomic completeness of the prior Utility-owned P0 result/state publication.",
   "allowed_actions": [
+    "READ_UTILITY_OWNED_RESULT_AND_STATE",
     "UTILITY_OWNED_APPEND_ONLY_RESULT",
     "UTILITY_OWNED_MOVING_STATE_CACHE",
     "POST_WRITE_READBACK"
   ],
   "forbidden_actions": [
     "SCHEDULER_MUTATION",
-    "RESEARCH_OR_SYSTEM_BUILD_MERGE",
+    "RESEARCH_OR_SYSTEM_BUILD_MUTATION",
     "SCIENTIFIC_WORKFLOW_DISPATCH",
     "SCIENTIFIC_REF_MUTATION",
     "CONTROL_ASSIGNMENT_POINTER_MUTATION"
   ],
-  "stop_condition": "ONE_BOUNDED_PUBLICATION_SEQUENCE_THEN_STOP",
-  "result_path": "utility_orchestrator/results/2026-09-27/0320-p0-utility-persistence-retry.md",
-  "follow_up_recommendation": "Control may treat this as bounded Utility persistence evidence only."
+  "collision_checks": {
+    "utility_assignment": "SCHEMA_V2_CLEAN_IDLE",
+    "rv02_rd006_owner": "MAIN",
+    "utility_scope_overlap": false,
+    "main_critical_dependency": false
+  },
+  "prior_publication_readback": {
+    "commit": "1bb7cbed00662f34ffed88e43bca59901e5d4330",
+    "parent": "6ad09ae400fb6b6c0b1d4ea8895bb455957569b9",
+    "committed_at": "2026-09-27T03:36:55+09:00",
+    "result_path": "utility_orchestrator/results/2026-09-27/0320-p0-utility-persistence-retry.md",
+    "result_blob": "02f483920762e2226d6ed45062ef2ae5d4923403",
+    "result_sha256": "3947bf4d2e93411d191476e5f061b757e7846ab82e5fe6acd1555bbfe08a77a0",
+    "state_blob": "d2a122a7fd924ecd71a564307beb139401d273ee",
+    "state_sha256": "f65378f89049382dcf9d755e239eb61c29e1ab0b7e9686764531eccb0c9cf462",
+    "atomic_pair": true,
+    "later_window_minutes_minimum": 105,
+    "failure_observed": false
+  },
+  "diagnosis": {
+    "classification": "TESTED_UTILITY_PATH_DURABLE_NO_FAILURE_OBSERVED",
+    "scope": "UTILITY_OWNED_OPS_BRANCH_ONLY",
+    "root_cause_proven": false,
+    "p0_close_authority": "CONTROL_ONLY"
+  },
+  "stop_condition": "ONE_BOUNDED_DURABILITY_RECONCILIATION_AND_VERIFIED_PUBLICATION_THEN_STOP",
+  "result_path": "utility_orchestrator/results/2026-09-27/0522-p0-utility-durability-window-recon.md",
+  "follow_up_recommendation": "Control may count this as later-time Utility-path durability evidence; do not generalize to repository-wide recovery.",
+  "publication": {
+    "branch": "ops/utility-orchestrator-requests",
+    "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
+    "attempt": 1,
+    "persistence_complete": "EXTERNAL_POST_COMMIT_READBACK_REQUIRED"
+  }
 }
