@@ -1,170 +1,118 @@
 {
-  "timestamp": "2026-09-25T00:30:11+09:00",
+  "timestamp": "2026-09-27T06:27:09+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
-  "producer_run_id": "external-literature-auto-LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
+  "generation_id": "LIT-20260927T062709+0900-R45-RV02-RD006-REACHABILITY-91C4A8E2",
+  "producer_run_id": "external-literature-auto-LIT-20260927T062709+0900-R45-RV02-RD006-REACHABILITY-91C4A8E2",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_READ_ONLY_SCIENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "LIT-20260924T183026+0900-R43-COALITIONAL-ATTRIBUTION-7F3A92C1",
+  "supersedes_generation_id": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
   "input_generations": {
-    "control_brain": {
-      "generation_id": "CTRL-20260924T235000+0900-R64-TH002-KILL-METH117-SCHEDULER-DEGRADATION",
-      "handoff_commit": "a92e0eaae0260152e311c1c5a4ca0294daf571a5"
-    },
     "evidence_analyst": {
-      "generation_id": "EVA-20260925T000135+0900-R129-METH117-CONTROL64-SCHEDULER-DURABILITY-NO-SCIENCE",
-      "handoff_commit": "dd0a26b51f77ceafd333bab8a03c21100571c078"
+      "generation_id": "EVA-20260927T055834+0900-R143-FORGE-INTERNAL-SCOPE-REVIEW-RV02-D0-WAIT",
+      "handoff_commit": "066eff35eaa8f10b130907701bd8b553f2406426"
     },
     "main_report": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "report_identity": "MAIN PRIMARY R133",
-      "handoff_commit": "9523d84cfae7b3e95ee438864fa58ec86bfa8e0d",
-      "report_blob": "5e36756e433c5a8393a33730ff01fcd2502f24bc"
+      "generation_id": "MAIN-R154-SB001-INTEGRATION-COMPLETE-ZERO-CREDIT",
+      "handoff_commit": "c1b091cf3c51dab38f6855e3d252b58feac0784c"
     },
-    "fast_forge_report": {
-      "generation_id": "LEGACY_GENERATION_UNKNOWN",
-      "producer_object_id": "FORGE-20260924T233401+0900-R128-R117-NOOP",
-      "report_identity": "FAST FORGE R33",
-      "handoff_commit": "9523d84cfae7b3e95ee438864fa58ec86bfa8e0d",
-      "report_blob": "21c1f9b70418239d7378fd06217aa4c0c5d5ece8"
+    "control_brain": {
+      "generation_id": "CTRL-R87-P0-OPEN",
+      "handoff_commit": "edf5a05a6c4a578584e67d4c3f739a965d76548e"
     },
-    "methodology": {
-      "generation_id": "METHCAL-20260925T001948+0900-R118-D42E7B19",
-      "handoff_commit": "2dccd823d7f37a621a477a8a1fbf3d637edc340d",
-      "latest_blob": "e7a33f5a141d3a4d190390fe44200e2547c91c5b"
+    "forge": {
+      "generation_id": "FORGE-20260927T060912+0900-INTERNAL-SCOPE-ALLOCATOR-CI-CLEAN",
+      "handoff_commit": "17064c30056b82b6f19bd7dd3ea2d86a46164817"
     },
     "prior_literature": {
-      "generation_id": "LIT-20260924T183026+0900-R43-COALITIONAL-ATTRIBUTION-7F3A92C1",
-      "handoff_branch_tip_at_consumption": "87d206a3f62c70c393531413445703fd0baa108a",
-      "latest_blob": "bc346dac47b85fdcdeae49a85f4036f97a0aee91"
-    },
-    "independent_audit": {
-      "generation_id": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
-      "handoff_branch_tip_at_consumption": "87d206a3f62c70c393531413445703fd0baa108a",
-      "latest_blob": "a89738c837b2e5bc2eab94adb1722bbb6daeb673"
+      "generation_id": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
+      "branch_tip": "640200451b9b18d0e12249786ba92649b6f2cb22"
     },
     "theory": {
-      "generation_id": "THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41",
-      "handoff_branch_tip_at_consumption": "87d206a3f62c70c393531413445703fd0baa108a"
+      "generation_id": "THEORY-20260927T033309+0900-R6-LATENT-SCOPE-PLURAL-REVISION-DESIGN-6F8C2A41",
+      "branch_tip": "640200451b9b18d0e12249786ba92649b6f2cb22"
     }
   },
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "00:30 JST",
-  "schedule_inference": false,
-  "repository_refs_inspected": {
-    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "evidence_ref_count": 6,
-    "h7_evidence_ref": "evidence/h7-r5-h7-r5-285a3a206b34c5982b9d4045",
-    "h7_evidence_ref_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-    "h7_formal_ref_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-    "h7_sealed_ref_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-    "h7_preserve_raw_commit": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
-    "active_research_inventory_paged_to_exhaustion": true,
-    "research_branch_names_observed": 189,
-    "forge_inventory_inspected": true,
-    "forge_branch_names_observed": 7,
-    "th002_forge_branch": "forge/th002-static-addressability-kill-20260924",
-    "th002_forge_head": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
-    "freeze_inventory_inspected": true,
-    "preserve_inventory_inspected": true,
-    "formal_tag_inventory_inspected": true,
-    "sealed_tag_inventory_inspected": true,
-    "consumed_identity_surfaces_inspected": true,
-    "open_pr_inventory_inspected": true,
-    "open_prs_observed": [148, 149],
-    "canonical_objects": 35,
-    "canonical_terminal": 35,
-    "canonical_active": 0,
-    "scientifically_queued": 0,
-    "candidate34_status": "TERMINAL_REDUCIBLE_CLOSED_STRONG",
-    "candidate35_status": "TERMINAL_SYSTEM_DEFERRED_INDEPENDENT_REIDENTIFICATION_CURRENT_TRIGGER_EXHAUSTED",
-    "h7_status": "TERMINAL_CONSUMED_FORMAL_INCONCLUSIVE_DORMANT_REVISITABLE",
-    "th002_status": "FORGE_KILLED_NO_CANONICALIZATION_ZERO_CREDIT",
-    "ops_external_tip_before_first_write": "87d206a3f62c70c393531413445703fd0baa108a"
-  },
+  "schedule_slot": "06:30 JST",
   "genuinely_new_information": true,
   "new_sparkbrain_scientific_result_observed": {
     "present": false,
-    "interpretation": "No new canonical/PRE_FORMAL/FORMAL SparkBrain result appeared. TH-002's bounded Forge kill is non-evidentiary, noncanonical and zero-credit."
+    "interpretation": "External literature sharpens RD006's interpretation and later comparator contract; no canonical SparkBrain result was created."
+  },
+  "repository_refs_inspected": {
+    "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
+    "evidence_analyst": "066eff35eaa8f10b130907701bd8b553f2406426",
+    "main_report": "c1b091cf3c51dab38f6855e3d252b58feac0784c",
+    "control": "edf5a05a6c4a578584e67d4c3f739a965d76548e",
+    "forge_internal_scope": "17064c30056b82b6f19bd7dd3ea2d86a46164817",
+    "external_science_before_write": "640200451b9b18d0e12249786ba92649b6f2cb22",
+    "rd006_branch": "research/rv02-rd006-external-learning-reachability-a",
+    "rd006_remote_head": "cf0bc45262824f1fe282ccd7b785b3ea50be2099"
+  },
+  "current_object": {
+    "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
+    "identity": "rv02-rd006-external-learning-reachability-a-v1",
+    "status": "OPEN_DEVELOPMENT",
+    "question_layer": "COMPONENT_FUNCTION_REACHABILITY",
+    "confirmatory_credit": 0,
+    "d0_scope": "ordinary external-learning OFF vs ON; hidden-return learning OFF; fixed topology/schedule/inputs/initial state/threshold/gain/delay/stimulus",
+    "later_execution_authority": "NONE_UNTIL_DURABLE_D0_AND_FRESH_ANALYST_RECONCILIATION"
   },
   "findings": [
     {
-      "id": "DELTA_RULE_FAST_WEIGHT_SELECTIVE_REVISION",
-      "type": "FOUNDATIONAL_MODERN_ASSOCIATIVE_MEMORY_PRIOR_ART",
-      "sources": ["Schlag, Irie & Schmidhuber, ICML 2021, arXiv:2102.11174"],
-      "finding": "Fast-weight associative memory with a delta-rule update can correct the association addressed by the current key while leaving an unrelated orthogonal-key association unchanged.",
-      "impact": "Directly supplies an ordinary mechanism for TH-002's target-revision-minus-collateral endpoint whenever delayed physical/content evidence functions as an effective key."
+      "id": "TIMING_LOCAL_PLASTICITY_IS_ESTABLISHED",
+      "classifications": [
+        "NOVELTY_REDUCTION",
+        "DESIGN_PRIMITIVE"
+      ],
+      "sources": [
+        "Bi & Poo 1998, J Neurosci, doi:10.1523/JNEUROSCI.18-24-10464.1998",
+        "Song, Miller & Abbott 2000, Nat Neurosci, doi:10.1038/78829"
+      ],
+      "impact": "External-only timing-dependent weight change is ordinary prior art; D0 can establish only exposed-edge update plus reachability."
     },
     {
-      "id": "GATED_DELTANET_FIXED_STATE_TARGETED_MEMORY_UPDATE",
-      "type": "RECENT_PEER_REVIEWED_SEQUENCE_MEMORY_PRIOR_ART",
-      "sources": ["Yang, Kautz & Hatamizadeh, ICLR 2025, arXiv:2412.06464"],
-      "finding": "Gated DeltaNet combines adaptive erasure with precise delta-rule modification inside a recurrent linear-attention memory and improves retrieval/long-context performance.",
-      "impact": "Shows that distributed/fixed-size recurrent state without an external slot table can still implement targeted associative update; future lineage claims need a matched gated/delta recurrent baseline."
+      "id": "DELAY_STDP_POLYCHRONY_IS_ESTABLISHED",
+      "classifications": [
+        "NOVELTY_REDUCTION",
+        "DESIGN_PRIMITIVE"
+      ],
+      "sources": [
+        "Izhikevich 2006, Neural Computation, doi:10.1162/089976606775093882"
+      ],
+      "impact": "Delay-aligned recurrent spike groups are established; D0 must distinguish fixed-path exposure from learned hidden-return structure."
     },
     {
-      "id": "KALMAN_DELTA_UNCERTAINTY_AWARE_ASSOCIATIVE_MEMORY",
-      "type": "CURRENT_2026_ASSOCIATIVE_STATE_SPACE_PRIOR_ART",
-      "sources": ["Bui, Huang & Ying, arXiv:2609.07816, submitted 2026-09-07"],
-      "finding": "Kalman Delta Networks formulate recurrent associative memory as a linear-Gaussian state-space model with uncertainty- and observation-reliability-weighted residual writes; Delta-style updates are a special case without covariance tracking.",
-      "impact": "Confidence/reliability-sensitive delayed revision is now a concrete ordinary baseline rather than a novelty signal by itself."
+      "id": "LIQUID_STATE_REQUIRES_SEPARATION_AND_READOUT",
+      "classifications": [
+        "SYSTEM_LEVEL_COMPARATOR",
+        "DESIGN_PRIMITIVE"
+      ],
+      "sources": [
+        "Maass, Natschläger & Markram 2002, Neural Computation, doi:10.1162/089976602760407955"
+      ],
+      "impact": "Hidden firing/return is not capability; later stages need matched reservoir/liquid-state plus readout evaluation."
     },
     {
-      "id": "HRR_DISTRIBUTED_FIXED_WIDTH_BINDING",
-      "type": "FOUNDATIONAL_DISTRIBUTED_BINDING_PRIOR_ART",
-      "sources": ["Plate, IEEE Transactions on Neural Networks 1995, DOI 10.1109/72.377968"],
-      "finding": "Holographic Reduced Representations bind distributed vectors with circular convolution so variable bindings, sequences and frame-like structures can be superposed in fixed-width vectors and recovered with associative cleanup.",
-      "impact": "Distributed superposition and fixed-width lineage carriers are not novel by themselves; HRR/VSA bind-bundle-unbind plus cleanup is an ordinary comparator when its cue assumptions are satisfiable."
+      "id": "DRIVEN_STABILITY_NOT_PROVED_BY_GAIN_DEGREE_MATCH",
+      "classifications": [
+        "DESIGN_PRIMITIVE",
+        "NO_MATERIAL_CHANGE"
+      ],
+      "sources": [
+        "Gallicchio 2019, ESANN, arXiv:1811.10892"
+      ],
+      "impact": "Later scale comparisons need empirical driven stability/saturation and resource measurements."
     }
   ],
-  "affected_lines": [
-    "TH002_ANONYMOUS_LINEAGE_ADDRESSABILITY",
-    "PROGRAMME_SELECTIVE_REVISION_BAR",
-    "A01_FUTURE_INDEPENDENT_REIDENTIFICATION_BAR",
-    "C19_REVISION_AUTHORITY_INTERPRETATION_CEILING",
-    "ASSOCIATIVE_MEMORY_REDUCTION_LADDER"
-  ],
-  "reduction_candidates": [
-    "DELTA_RULE_FAST_WEIGHT_ASSOCIATIVE_MEMORY",
-    "GATED_DELTA_RECURRENT_ASSOCIATIVE_MEMORY",
-    "KALMAN_HMM_STATE_SPACE_UNCERTAINTY_AWARE_ASSOCIATIVE_UPDATE",
-    "HRR_VSA_BIND_BUNDLE_UNBIND_WITH_CLEANUP_MEMORY"
-  ],
-  "novelty_or_reduction_impact": "SELECTIVE_LOW_COLLATERAL_REVISION_IS_ALREADY_AN_ORDINARY_DELTA_RULE_FAST_WEIGHT_OPERATION_WHEN_DELAYED_EVIDENCE_FUNCTIONS_AS_A_KEY; FIXED_SIZE_GATED_RECURRENT_AND_2026_UNCERTAINTY_AWARE_KALMAN_ASSOCIATIVE_MEMORY_FURTHER_RAISE_THE_REDUCTION_BAR; HRR_VSA_SHOWS_DISTRIBUTED_FIXED_WIDTH_BINDING_IS_NOT_NOVEL_BY_ITSELF; NO_CURRENT_REVISIT_TRIGGER_FIRES",
-  "theory_id": "TH-002-ANONYMOUS-LINEAGE-ADDRESSABILITY",
-  "theory_status": "FORGE_KILLED_NO_CANONICALIZATION_ZERO_CREDIT_LITERATURE_STRENGTHENS_REDUCTION_BOUNDARY",
   "revisit_proposal": null,
-  "revisit_status": "NO_NEW_TRIGGER; A01_C19_H7_CAND34_CAND35_REMAIN_UNCHANGED",
-  "audit_classification": null,
-  "confidence": "HIGH_FOR_FWP_HRR_AND_GATED_DELTANET_MECHANISM_FACTS; MODERATE_HIGH_FOR_TRANSFER_TO_SPARKBRAIN_FUTURE_REDUCTION_BAR; MODERATE_FOR_KDN_UNTIL_PEER_REVIEW_BECAUSE_IT_IS_A_CURRENT_ARXIV_PREPRINT",
+  "revisit_status": "NO_NEW_TRIGGER; RD005_REMAINS_CONSUMED; SB001_REMAINS_SEPARATE",
   "prospective_baselines_or_discriminators": [
-    "delta-rule fast-weight associative memory with exactly matched delayed cue features and target-minus-collateral endpoint",
-    "gated/delta fixed-size recurrent associative memory so lack of an explicit slot table does not count as novelty",
-    "Kalman/HMM/state-space uncertainty-aware associative update when evidence reliability or confidence is part of the claim",
-    "HRR/VSA bind-bundle-unbind plus associative cleanup for fixed-width distributed lineage carriers",
-    "cue-as-key diagnostic: if delayed evidence uniquely retrieves a lineage by admissible content similarity, classify it as content-addressed until a stronger discriminator rejects that reduction",
-    "held-out entity permutations, lineage counts and merge patterns with capacity adequacy and matched information/resource access",
-    "R117/R118 explicit revision/successor identity after any result-exposed science-affecting change"
+    "D0 event-chain certificate from external timing pair through eligible-edge update to distinct hidden sources and visible return lag",
+    "fixed-return-path exposure vs learned-hidden-return distinction",
+    "matched liquid-state/reservoir comparator with capacity-adequate readout for later capability claims",
+    "driven stability, saturation, activity and resource diagnostics before scale claims",
+    "separate component-function, SYSTEM_BUILD, composition-contribution and scientific-novelty claims"
   ],
-  "questions_for_evidence_analyst": [
-    "For any fresh A01/C19-like lineage-revision proposal, require delta-rule FWP, gated recurrent associative memory, HRR/VSA and uncertainty-aware state-space reductions where their information assumptions are satisfiable?",
-    "Treat a delayed physical/content signature that uniquely retrieves one lineage as an effective associative key rather than evidence of anonymous addressability?",
-    "Keep TH-002 killed and all current Revisit states unchanged because the new literature strengthens ordinary reduction rather than supplying a reduction-resistant residual?"
-  ],
-  "questions_for_control_brain": [
-    "Keep TH-002 no-continuation and require genuinely independent information defeating matched-access associative update mechanisms, not merely static lookup, before a fresh gate?",
-    "Preserve A01/C19/H7/Candidate #34/#35 terminal and consumed histories unchanged and apply the stronger reduction ladder only prospectively?",
-    "Treat distributed, fixed-width, recurrent and no-external-slot-table descriptions as insufficient novelty unless VSA/FWP/Gated-Delta/Kalman-style baselines fail under matched access/resources?"
-  ],
-  "must_not_change_frozen_or_consumed": [
-    "H7 identity h7-r5-285a3a206b34c5982b9d4045 and all START/preserve/freeze/formal/sealed/evidence refs",
-    "all prior consumed FORMAL identities and authoritative evidence refs",
-    "Candidate #34 preserved result and CLOSED_STRONG state",
-    "Candidate #35 R100 preserved result, terminal SYSTEM state and exhausted historical trigger",
-    "A01 and C19 terminal histories",
-    "TH-002 killed zero-credit Forge history",
-    "no scientific experiment/workflow dispatch, candidate promotion, terminal reopen, research merge, immutable-ref mutation, Utility execution or scheduler change by this role"
-  ],
-  "utility_request_created": null,
   "mutations": {
     "scientific_experiments_executed_by_this_role": 0,
     "scientific_workflows_dispatched_by_this_role": 0,
@@ -176,8 +124,11 @@
     "utility_requests_created": 0
   },
   "persistence": {
-    "latest_update_commit": "a9e50b95f125fbc4fd954efcd70ce267d43aadb2",
-    "history_path": "analysis/external_research_audit/history/2026-09-25/0030-LITERATURE_REDUCTION_SCOUT.md",
-    "final_handoff_commit_embedding_limitation": "The append-only history commit is generated by the final write and cannot be embedded self-referentially; re-fetch the branch tip after history persistence."
+    "branch": "ops/external-research-audit-handoff",
+    "latest_path": "analysis/external_research_audit/literature/latest.md",
+    "state_path": "analysis/external_research_audit/literature/state.json",
+    "history_path": "analysis/external_research_audit/literature/history/2026-09-27/0630-LITERATURE_REDUCTION_SCOUT.md",
+    "expected_parent": "640200451b9b18d0e12249786ba92649b6f2cb22",
+    "final_commit_embedding_limitation": "The final commit cannot be embedded self-referentially; verify branch tip and file content after ref update."
   }
 }
