@@ -1,27 +1,42 @@
-# SparkBrain Theory Synthesis — NO_THEORY_PROPOSAL
-schema_version: 2
-generation_id: THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E
-produced_at: 2026-09-25T01:31:35+09:00
-producer_run_id: external-theory-auto-THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E
-authority_scope: NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY
-supersedes_generation_id: THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41
-role: THEORY_SYNTHESIS_ARCHITECT
-genuinely_new_information: true
-theory_status: NO_THEORY_PROPOSAL
-revisit_status: NO_REVISIT_PROPOSAL
+# SparkBrain Theory Synthesis — INTEGRATION_DESIGN_PROPOSAL
 
-Main remains d16403414fc7abebd23075fc401240971b8eb91d; canonical state remains 35/35 terminal, active 0, queued 0. H7 remains consumed FORMAL INCONCLUSIVE. Candidate #35 remains terminal/deferred with exhausted trigger authority. TH-002 remains zero-credit FORGE_KILLED_NO_CANONICALIZATION.
+- schema_version: `2`
+- generation_id: `THEORY-20260927T033309+0900-R6-LATENT-SCOPE-PLURAL-REVISION-DESIGN-6F8C2A41`
+- produced_at: `2026-09-27T03:33:09+09:00`
+- authority_scope: `NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY`
+- supersedes_generation_id: `THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E`
+- role: `THEORY_SYNTHESIS_ARCHITECT`
+- genuinely_new_information: `true`
+- theory_status: `INTEGRATION_DESIGN_PROPOSAL`
+- revisit_status: `NO_REVISIT_PROPOSAL`
+- new_sparkbrain_scientific_result: `false`
 
-Literature R44 materially strengthens the reduction that killed TH-002: delta-rule fast-weight selective update, gated/delta recurrent associative memory, Kalman/state-space delayed revision, and HRR/VSA distributed binding make selective revision ordinary when the admissible delayed cue acts as an effective key. An immediate “TH-002 but hide the key” successor would be post-kill rescue, not independent re-identification.
+## Design
 
-Evidence Analyst R130 created no admission or Revisit trigger. Methodology R119 says advanced comparators must be staged and claim-matched, preserving PASS reachability while retaining matched information/resources and capacity adequacy. Fast Forge reports no new phenomenon; MAIN R134 has no allocation.
+`ID-SB-LATENT-SCOPE-PLURAL-REVISION-001`
 
-No Revisit trigger fires for A01, C19/C19-R2, H7, Candidate #34/#35, or any other terminal object.
+Target loop:
 
-Prospective baselines: cue-as-key diagnostic; register/provenance; delta fast-weight; gated-delta recurrent memory; HRR/VSA; recurrence/reservoir/predictive state; eligibility/three-factor/STP where applicable; Kalman/HMM/state-space when confidence/reliability is claimed; separable address+state. Use only claim-matched, information-compatible, capacity-adequate comparators.
+`observation -> predictive mismatch/context posterior -> internally inferred scope -> plural predictions -> abstain/select/action -> later evidence -> selective revision -> next prediction/action`
 
-Inputs: Literature R44 @ 4087356677f1ae60aa87aafeea927949ea0c3d17; Audit R10; Control R65 @ 857998b44ca7954d3875d3957c447ce3414a7d89; Analyst R130 @ 6a8eb246233bc04d5f3ca47aaffba99970acf20b; MAIN R134 @ 9c8c631b1ff4bad2ced30a023541717bdbf541e9; Fast Forge FORGE-20260925T003441+0900-R129-R118-AUDIT-GAP-NOOP; Methodology R119 @ 0b8cb86935b4a99958856ae634718893849e62d2.
+Use the existing SB001 local runtime/input guards/checkpoint-replay contract as engineering infrastructure. Add one established latent-cause/change-point-style reference allocator that creates opaque scope IDs internally from admissible observations and prediction error. Do not accept caller-provided regime, episode, entity, target, truth, evaluator or stable-scope identifiers.
 
-Knowledge-flow: affected_lines=TH002, selective-revision reduction boundary, A01/C19 future bar, comparator staging; novelty_or_reduction_impact=R44 strengthens ordinary associative reduction and R119 stages comparator burden; theory_id=null; revisit_proposal=null; prospective_baselines_or_discriminators=cue-as-key/delta/gated-delta/HRR-VSA/Kalman-state-space/matched-access-capacity; questions_for_evidence_analyst=keep TH-002 killed and R44 prospective/claim-matched; questions_for_control_brain=preserve empty frontier and old terminal identities; must_not_change_frozen_or_consumed=all existing consumed/terminal scientific identities, refs and results.
+Use the current Forge plural-prediction, later-evidence and stable-scope prototypes only as zero-credit engineering inputs. Their ordinary reductions remain explicit: top-k/beam + reject; Bayesian/log-linear/multiplicative reweighting; namespaced keyed state. The stable-scope token must come from the internal allocator, never an external oracle.
 
-No new SparkBrain scientific result. No execution, dispatch, candidate creation, terminal reopen, scientific-result rewrite, Utility request or scheduler change.
+Acceptance surface: appearance-only change should not force fragmentation; identifiable dynamics change should allow update/separate; returning dynamics should permit prior-scope reuse; a deliberately non-identifiable control should remain uncertain/abstaining; an easy cue-rich control should be solvable by established methods; at least three competing hypotheses must survive an ambiguous case; later evidence and collateral revision must be measured separately; no silent eviction; checkpoint/replay must reproduce internal state; resource/search budgets must be explicit.
+
+Prospective component replacements: latent-cause allocator vs SB001 nearest-context/error heuristic vs another matched change-point/mixture model; plural pool vs ordinary beam/top-k; later-evidence update vs direct Bayesian/log-linear update; explicit predictive bank vs ordinary recurrent/PSR/reservoir implementation.
+
+Prospective interaction ablations: remove old-scope reuse; remove later-evidence feedback; force top-1; force action instead of abstention; remove scope-to-hypothesis routing; remove revised-state-to-next-prediction feedback.
+
+Primary alternative established architecture: matched Bayesian latent-cause/HMM-style belief-state controller with per-context predictors and explicit rejection.
+
+No scientific novelty, composition contribution, emergent concept/context, anonymous-lineage mechanism, system superiority, biological-equivalence or other stronger claim is made. Known components may still have engineering value; successful integration would not by itself establish novelty.
+
+Evidence Analyst may treat this only as optional future SYSTEM_BUILD input. Do not feature-mix it into current SB001/PR #152 under Theory authority.
+
+No Revisit trigger is created. All terminal/consumed scientific objects remain unchanged.
+
+History: `analysis/external_research_audit/theory/history/2026-09-27/0330-THEORY_SYNTHESIS_ARCHITECT.md`
+
+No new SparkBrain scientific result.
