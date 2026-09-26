@@ -143,3 +143,79 @@ def test_checkpoint_roundtrip_preserves_allocator_and_revision_state() -> None:
     assert returned.revision is not None
     assert returned.revision.selected_value == "later-c"
     assert restored.state_dict() == json.loads(json.dumps(restored.state_dict()))
+
+
+def test_confirmation_guard_does_not_split_on_one_high_error_outlier() -> None:
+    allocator = InternalScopeAllocator(
+        InternalScopeAllocatorConfig(create_confirmation_count=2)
+    )
+    original = allocator.observe([0.0, 0.0], prediction_error=0.8)
+    outlier = allocator.observe([2.0, 2.0], prediction_error=0.9)
+
+    assert original.action == "created"
+    assert outlier.action == "pending"
+    assert outlier.scope_token is None
+    assert len(allocator.state_dict()["scopes"]) == 1
+
+
+def test_nearby_repeated_high_error_observations_confirm_new_scope() -> None:
+    allocator = InternalScopeAllocator(
+        InternalScopeAllocatorConfig(create_confirmation_count=2)
+    )
+    allocator.observe([0.0, 0.0], prediction_error=0.8)
+    first = allocator.observe([2.0, 2.0], prediction_error=0.9)
+    second = allocator.observe([2.1, 2.0], prediction_error=0.9)
+
+    assert first.action == "pending"
+    assert second.action == "created"
+    assert second.reason == "confirmed_mismatch"
+    assert len(allocator.state_dict()["scopes"]) == 2
+
+
+def test_inconsistent_outliers_do_not_combine_into_confirmation() -> None:
+    allocator = InternalScopeAllocator(
+        InternalScopeAllocatorConfig(
+            create_confirmation_count=2,
+            pending_match_radius=0.2,
+        )
+    )
+    allocator.observe([0.0], prediction_error=0.8)
+    first = allocator.observe([2.0], prediction_error=0.9)
+    reset = allocator.observe([4.0], prediction_error=0.9)
+    confirmed = allocator.observe([4.1], prediction_error=0.9)
+
+    assert first.action == "pending"
+    assert reset.action == "pending"
+    assert confirmed.action == "created"
+    assert len(allocator.state_dict()["scopes"]) == 2
+
+
+def test_known_scope_reuse_clears_pending_confirmation() -> None:
+    allocator = InternalScopeAllocator(
+        InternalScopeAllocatorConfig(create_confirmation_count=2)
+    )
+    original = allocator.observe([0.0], prediction_error=0.8)
+    allocator.observe([2.0], prediction_error=0.9)
+    returned = allocator.observe([0.05], prediction_error=0.1)
+    retry = allocator.observe([2.0], prediction_error=0.9)
+
+    assert returned.scope_token == original.scope_token
+    assert retry.action == "pending"
+    assert len(allocator.state_dict()["scopes"]) == 1
+
+
+def test_pending_confirmation_survives_checkpoint_roundtrip() -> None:
+    allocator = InternalScopeAllocator(
+        InternalScopeAllocatorConfig(create_confirmation_count=2)
+    )
+    allocator.observe([0.0], prediction_error=0.8)
+    allocator.observe([2.0], prediction_error=0.9)
+
+    restored = InternalScopeAllocator.from_state_dict(
+        json.loads(json.dumps(allocator.state_dict()))
+    )
+    confirmed = restored.observe([2.1], prediction_error=0.9)
+
+    assert confirmed.action == "created"
+    assert confirmed.reason == "confirmed_mismatch"
+    assert len(restored.state_dict()["scopes"]) == 2

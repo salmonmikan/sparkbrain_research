@@ -22,6 +22,8 @@ class InternalScopeAllocatorConfig:
     create_error_threshold: float = 0.5
     centroid_learning_rate: float = 0.1
     max_scopes: int = 8
+    create_confirmation_count: int = 1
+    pending_match_radius: float = 0.35
 
     def __post_init__(self) -> None:
         if not isfinite(self.reuse_radius) or self.reuse_radius < 0.0:
@@ -34,6 +36,10 @@ class InternalScopeAllocatorConfig:
             raise ValueError("centroid_learning_rate must be finite and in [0, 1]")
         if self.max_scopes < 1:
             raise ValueError("max_scopes must be positive")
+        if self.create_confirmation_count < 1:
+            raise ValueError("create_confirmation_count must be positive")
+        if not isfinite(self.pending_match_radius) or self.pending_match_radius < 0.0:
+            raise ValueError("pending_match_radius must be finite and non-negative")
 
 
 @dataclass(frozen=True)
@@ -69,6 +75,8 @@ class InternalScopeAllocator:
         self._dimension: int | None = None
         self._next_scope_index = 1
         self._scopes: list[_ScopePrototype] = []
+        self._pending_vector: list[float] | None = None
+        self._pending_count = 0
 
     @staticmethod
     def _vector(observation: Sequence[float]) -> list[float]:
@@ -91,8 +99,59 @@ class InternalScopeAllocator:
         token = f"scope-{self._next_scope_index:08d}"
         self._next_scope_index += 1
         self._scopes.append(_ScopePrototype(token, list(vector)))
+        self._clear_pending()
         reason = "bootstrap" if len(self._scopes) == 1 else "mismatch"
         return ScopeAllocation(token, "created", None, reason)
+
+    def _clear_pending(self) -> None:
+        self._pending_vector = None
+        self._pending_count = 0
+
+    def _confirm_new_scope(
+        self,
+        vector: list[float],
+        *,
+        nearest_distance: float,
+    ) -> ScopeAllocation:
+        required = self.config.create_confirmation_count
+        if required == 1:
+            created = self._create_scope(vector)
+            return ScopeAllocation(
+                created.scope_token,
+                created.action,
+                nearest_distance,
+                created.reason,
+            )
+
+        if self._pending_vector is None or (
+            self._distance(vector, self._pending_vector) > self.config.pending_match_radius
+        ):
+            self._pending_vector = list(vector)
+            self._pending_count = 1
+        else:
+            self._pending_count += 1
+            count = self._pending_count
+            self._pending_vector = [
+                current + (observed - current) / count
+                for current, observed in zip(self._pending_vector, vector, strict=True)
+            ]
+
+        if self._pending_count < required:
+            return ScopeAllocation(
+                None,
+                "pending",
+                nearest_distance,
+                "awaiting_change_confirmation",
+            )
+
+        confirmed = list(self._pending_vector)
+        created = self._create_scope(confirmed)
+        return ScopeAllocation(
+            created.scope_token,
+            created.action,
+            nearest_distance,
+            "confirmed_mismatch",
+        )
 
     def observe(
         self,
@@ -115,6 +174,7 @@ class InternalScopeAllocator:
         nearest = min(self._scopes, key=lambda row: self._distance(vector, row.centroid))
         distance = self._distance(vector, nearest.centroid)
         if distance <= self.config.reuse_radius:
+            self._clear_pending()
             rate = self.config.centroid_learning_rate
             nearest.centroid = [
                 current + rate * (observed - current)
@@ -124,16 +184,20 @@ class InternalScopeAllocator:
             return ScopeAllocation(nearest.scope_token, "reused", distance, "within_reuse_radius")
 
         if error < self.config.create_error_threshold:
+            self._clear_pending()
             return ScopeAllocation(None, "abstained", distance, "insufficient_change_evidence")
 
-        created = self._create_scope(vector)
-        return ScopeAllocation(created.scope_token, created.action, distance, created.reason)
+        return self._confirm_new_scope(vector, nearest_distance=distance)
 
     def state_dict(self) -> dict[str, Any]:
         return {
             "config": asdict(self.config),
             "dimension": self._dimension,
             "next_scope_index": self._next_scope_index,
+            "pending_vector": (
+                None if self._pending_vector is None else list(self._pending_vector)
+            ),
+            "pending_count": self._pending_count,
             "scopes": [
                 {
                     "scope_token": row.scope_token,
@@ -161,6 +225,16 @@ class InternalScopeAllocator:
             result._scopes.append(_ScopePrototype(token, centroid, observations))
         if len(result._scopes) > result.config.max_scopes:
             raise ValueError("persisted scopes exceed configured budget")
+        pending = state.get("pending_vector")
+        result._pending_vector = None if pending is None else cls._vector(pending)
+        result._pending_count = int(state.get("pending_count", 0))
+        if (result._pending_vector is None) != (result._pending_count == 0):
+            raise ValueError("invalid persisted pending confirmation")
+        if result._pending_vector is not None:
+            if result._dimension != len(result._pending_vector):
+                raise ValueError("persisted pending dimension mismatch")
+            if not 0 < result._pending_count < result.config.create_confirmation_count:
+                raise ValueError("invalid persisted pending confirmation count")
         expected_tokens = {f"scope-{index:08d}" for index in range(1, result._next_scope_index)}
         actual_tokens = {row.scope_token for row in result._scopes}
         if len(actual_tokens) != len(result._scopes) or not actual_tokens <= expected_tokens:
