@@ -1,22 +1,26 @@
-# MAIN PRIMARY R137
+# MAIN RELAY R142
 
 schema_version: 2
-generation_id: MAIN-20260925T061700+0900-PRIMARY-R137-SB001-ENTITY-BOUNDARY-WAITING-CI
-generated_at: 2026-09-25T06:17:00+09:00
-mode: SYSTEM_BUILD
-status: WAITING_EXTERNAL
+generation_id: MAIN-20260926T164402+0900-RELAY-R142-SB001-PR-RETRY-FAILED-CLOSED
+generated_at: 2026-09-26T16:44:02+09:00
+execution_mode: RELAY
+work_mode: SYSTEM_BUILD
+status: BLOCKED
+build_id: BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT
+exact_head: 5b86dfa6cad634312c81e579e5339b3b47cef6e0
+exact_head_ci: 36060329063 attempt 1 success
+evidentiary_status: NON_EVIDENTIARY_BUILD
+built: true
+functionally_verified_bounded: true
+comparatively_supported: false
+composition_contribution: NOT_ESTABLISHED
+scientifically_novel: false
+scientific_credit: 0
 
-Evidence Analyst R133 explicitly continues `BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT` for acceptance closure only. Stable source remains `main@d16403414fc7abebd23075fc401240971b8eb91d`.
+Relay found no fresh PRIMARY RUNNING lease. It re-fetched Analyst R136, MAIN R141, build/main refs and PR state, then attempted the authorized normal reviewed SB001 PR three total times. All three were refused before GitHub mutation execution; no PR was created and refs stayed unchanged.
 
-MAIN closed the remaining generic entity-style privileged-input gap by rejecting `entity`, `entity_id`, `entity_key`, and `entity_slot` in observation channels and recursively nested metadata, while preserving the existing explicit `entity_hint` rejection. Dedicated negative tests were expanded accordingly.
+No consumed FORMAL rerun/retune/rescore, immutable scientific/evidence ref mutation, terminal reopen, or science-credit change occurred.
 
-Build branch: `system-build/sb001-predictive-state-revision-pilot-20260925@5b86dfa6cad634312c81e579e5339b3b47cef6e0`.
-Exact-head CI: run `36060329063`, currently in progress.
-
-No protected integration PR was opened because acceptance closure is not claimed before exact-head CI. No Forge code was reused; delayed-action-credit remains deferred/not admitted. No scientific execution, rerun, retune, rescore, scoring, protected target access, or scientific-ref mutation occurred.
-
-Built: yes. Prior bounded core functionally verified: yes. New entity-boundary hardening exact-head verified: pending CI. Comparatively supported: no. Scientifically novel: no.
-
-Next: recheck CI run 36060329063. On success, re-audit R133 acceptance closure and only then proceed to the protected integration PR path. On failure, repair science-invariantly only.
-
-Full record: `reports/orchestrator/main/history/2026-09-25/0617-r137-sb001-entity-boundary-waiting-ci.md`.
+stop_reason: PR_CREATION_FAILED_CLOSED_AFTER_THREE_PRE_GITHUB_EXECUTION_SAFETY_REFUSALS
+next_action: refresh authority/refs/PR state next run; retry only under the bounded three-attempt contract; reverify exact-head CI if build head changes
+history: reports/orchestrator/main/history/2026-09-26/1644-r142-relay-sb001-pr-retry-failed-closed.md
