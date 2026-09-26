@@ -1053,3 +1053,25 @@ SB001 の exact-current-head clean review requirement は撤回する。残る�
 
 Control Brain と Evidence Analyst はこの user-approved governance change を prospectively 適用し、同等の mandatory SYSTEM_BUILD review gate を別名で再導入しない。
 
+
+## HUMAN-20260927-001 — RV02の開発再開と通常外部学習の有無による構成診断
+
+Human status: `OPEN`  
+Created: `2026-09-27 JST`
+
+### Intent
+
+RV02の開発再開を依頼する。旧RD005 D1の18条件すべてでhidden spikeが0、RD005の能力試験未実施だった記録を保持し、新しい開発版で評価可能な構成まで進める。RD004等の既存の能力比較・否定結果は維持する。
+
+### Requested sequence
+
+- RD003/RD004とRD005構成探索の通常外部学習の条件差を再照合する。
+- hidden-return学習を無効のまま、共通条件で通常外部学習あり／なしを小さく比較する。通常学習を追加すれば成功するとは仮定しない。
+- 内部発火とreturn到達・適格性を確認し、gate成立後は事前固定した別段階のE0／E1／ES比較で結合更新・後続可視応答を検証する。
+- 構成と機構比較が評価可能になった場合に、同じ外部経験・平均接続次数を保った1倍／3倍／10倍と資源条件を整合したreservoir比較へ進む。正確な経路選択・余計な活動・容量利用まで測る。
+
+### Boundaries / required independent review
+
+消費済みRD005の識別子・証拠・旧判定を保持し、HUMAN-20260922-005に沿った新開発対象として扱う。Control Brainは `ACCEPT / MODIFY / DEFER / REJECT` を独立に判断し、Evidence Analystの対象・比較・担当割当へつなぐ。登録に伴うスケジュール変更や即時実験実行は求めない。
+
+Full directive: [HUMAN-20260927-001](history/2026-09-27/HUMAN-20260927-001-rv02-development-restart.md)
