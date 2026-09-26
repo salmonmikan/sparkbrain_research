@@ -1,25 +1,18 @@
 # SparkBrain Fast Forge — Latest
+schema_version: 2
+generation_id: FORGE-20260926T205200+0900-LATE-EVIDENCE-OVERLAY-CI-CLEAN
+produced_at: 2026-09-26T20:52:00+09:00
+forge_id: FORGE-LATE-EVIDENCE-HYPOTHESIS-OVERLAY-A
+status: FORGE_INTERESTING
+recommended_handoff: SYSTEM_BUILD_INPUT
+branch: forge/20260926-late-evidence-hypothesis-overlay-a
+verified_code_head: 32f5120ba3a3c6524818e78ee821078c0f6338bc
+ci_run: 36239974219
+ci_result: SUCCESS
+evidentiary_status: NON_EVIDENTIARY
+scientific_credit: 0
+new_scientific_result: false
 
-- schema_version: `2`
-- generation_id: `FORGE-20260926T203500+0900-LATE-EVIDENCE-HYPOTHESIS-OVERLAY-A`
-- produced_at: `2026-09-26T20:35:00+09:00`
-- authority_scope: `NON_EVIDENTIARY_NONCANONICAL_FAST_FORGE`
-- forge_id: `FORGE-LATE-EVIDENCE-HYPOTHESIS-OVERLAY-A`
-- status: `FORGE_PROTOTYPE`
-- recommended_handoff: `SYSTEM_BUILD_INPUT_IF_CI_CLEAN`
-- branch: `forge/20260926-late-evidence-hypothesis-overlay-a`
-- base_forge: `forge/20260926-multi-hypothesis-prediction-pool-a@07218c80d62f06ba3c5bf43badb77ba38f93fe28`
-- base_main: `d16403414fc7abebd23075fc401240971b8eb91d`
-- evidentiary_status: `NON_EVIDENTIARY`
-- scientific_credit: `0`
-- new_scientific_result: `false`
+A bounded later-evidence overlay now sits above the prior plural-hypothesis Forge pool. It keeps the stable predictor read-only, only revises already-exposed hypotheses, preserves abstention, and saves/replays its own evidence events. Final code head passed Python 3.11/3.13 CI, full tests and bundle validation.
 
-Built one isolated integration prototype that overlays bounded later-evidence support on the existing Forge plural-hypothesis pool without mutating the stable v0.5 predictor. The overlay is append-only, serializable/replayable, keeps alternatives visible, fails closed for unknown labels, and does not override a pool rejected for insufficient observations.
-
-The strongest reduction is ordinary Bayesian/log-linear reweighting or multiplicative weights. This is therefore an engineering seam only, not a scientific mechanism claim.
-
-MAIN collision check passed against Evidence Analyst R138 and MAIN R147. BUILD-SB-001, PR #152, scientific refs, consumed identities and protected workflows were not touched.
-
-CI status at publication: pending post-push verification.
-
-History: `reports/fast_forge/history/2026-09-26/2035-late-evidence-hypothesis-overlay-a.md`
+Reduction: ordinary log-linear/Bayesian reweighting or multiplicative weights plus reject option. Useful as a future engineering seam only; no novelty or causal claim. Analyst R138 still excludes Forge feature mixing from SB001. MAIN R148 remains WAITING_EXTERNAL on PR #152 review.
