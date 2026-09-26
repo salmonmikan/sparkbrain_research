@@ -1,19 +1,34 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260926T192601+0900-PR152-REVIEW-ANCHOR-RECONCILE-6E7F2C91",
-  "produced_at": "2026-09-26T19:26:01+09:00",
+  "generation_id": "UTILITY-20260927T0320+0900-P0-UTILITY-PERSISTENCE-RETRY",
+  "produced_at": "2026-09-27T03:20:00+09:00",
   "assignment_mode": "AUTONOMOUS_IDLE",
-  "status": "IDLE",
-  "autonomous_task_id": "UTILITY-AUTO-20260926-PR152-REVIEW-ANCHOR-RECONCILE",
+  "status": "COMPLETED",
+  "autonomous_task_id": "UTILITY-AUTO-20260927T0320+0900-P0-UTILITY-PERSISTENCE-RETRY",
+  "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY_OPERATIONAL_DIAGNOSTIC_ONLY",
   "scientific_authority": "NONE",
-  "analyst_generation": "EVA-20260926T185717+0900-R137-SB001-HEAD-REBOUND-PENDING-FRESH-REVIEW-NO-SCIENCE",
-  "main_generation": "MAIN-20260926T184206+0900-RELAY-R146-SB001-REVIEW-FIXES-CI-SUCCESS",
-  "control_generation": "CTRL-20260926T185206+0900-R83-FRESH-THREAD-FLEET-MIGRATION-RELAY-PARTIAL-VALIDATION",
-  "build_head": "e9b93456a0c37e2d1393463c167912e0e3968817",
-  "fresh_current_head_review": false,
-  "review_anchor_rule": "USE_TOP_LEVEL_REVIEW_COMMIT_ID",
-  "result_path": "utility_orchestrator/results/2026-09-26/1926-PR152-REVIEW-ANCHOR-RECONCILE.md",
-  "result_commit": "297e1627062385043df6db52c67e53b2c02efc19",
-  "stop_reason": "BOUNDED_READ_ONLY_RECONCILIATION_COMPLETE"
+  "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
+  "analyst_generation": "EVA-20260927T031000+0900-R140-SB001-READY-INTEGRATION-P0-BRIDGE-RETRY",
+  "main_generation": "MAIN-20260927T031500+0900-PRIMARY-R153-SB001-MERGE-REFUSED",
+  "relay_ownership_source_generation": "CTRL-20260927T005724+0900-R84-P0-HISTORY-FIRST-ANALYST-WORKAROUND",
+  "relay_ownership_state": "DEPENDENCY_WAIT_SUSPENDED_WHILE_PRIMARY_MAIN_OWNS_SB001",
+  "control_generation": "CTRL-20260927T005724+0900-R84-P0-HISTORY-FIRST-ANALYST-WORKAROUND",
+  "utility_branch_head_before": "6ad09ae400fb6b6c0b1d4ea8895bb455957569b9",
+  "objective": "Re-test Utility-owned result/state GitHub persistence under P0 without touching MAIN/scientific authority.",
+  "allowed_actions": [
+    "UTILITY_OWNED_APPEND_ONLY_RESULT",
+    "UTILITY_OWNED_MOVING_STATE_CACHE",
+    "POST_WRITE_READBACK"
+  ],
+  "forbidden_actions": [
+    "SCHEDULER_MUTATION",
+    "RESEARCH_OR_SYSTEM_BUILD_MERGE",
+    "SCIENTIFIC_WORKFLOW_DISPATCH",
+    "SCIENTIFIC_REF_MUTATION",
+    "CONTROL_ASSIGNMENT_POINTER_MUTATION"
+  ],
+  "stop_condition": "ONE_BOUNDED_PUBLICATION_SEQUENCE_THEN_STOP",
+  "result_path": "utility_orchestrator/results/2026-09-27/0320-p0-utility-persistence-retry.md",
+  "follow_up_recommendation": "Control may treat this as bounded Utility persistence evidence only."
 }
