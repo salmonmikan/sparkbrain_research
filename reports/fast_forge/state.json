@@ -1,69 +1,72 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260927T060912+0900-INTERNAL-SCOPE-ALLOCATOR-CI-CLEAN",
-  "produced_at": "2026-09-27T06:09:12+09:00",
-  "forge_id": "FORGE-INTERNAL-SCOPE-ALLOCATOR-A",
+  "generation_id": "FORGE-20260927T064227+0900-INTERNAL-SCOPE-CONFIRMATION-CI-CLEAN",
+  "produced_at": "2026-09-27T06:42:27+09:00",
+  "forge_id": "FORGE-INTERNAL-SCOPE-CONFIRMATION-GUARD-A",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260927-internal-scope-allocator-a",
-  "exact_head": "a31c727d0f41fe5f788d1fa6b1aef11e175a9334",
-  "branch_head_before_publication": "a31c727d0f41fe5f788d1fa6b1aef11e175a9334",
+  "branch": "forge/20260927-internal-scope-confirmation-guard-a",
+  "exact_head": "aac3c657a2b941b6971f0161e8132f1905a91a6c",
   "input_generations": {
+    "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "control": "CTRL-20260927T055000+0900-R87-P0-LATER-WINDOW-RECONCILED",
     "evidence_analyst": "EVA-20260927T055834+0900-R143-FORGE-INTERNAL-SCOPE-REVIEW-RV02-D0-WAIT",
-    "main": "MAIN-20260927T041727+0900-PRIMARY-R154-SB001-INTEGRATED",
+    "main_orchestrator": "MAIN-20260927T041727+0900-PRIMARY-R154-SB001-INTEGRATED",
     "methodology": "METHCAL-20260926T201857+0900-R126-4B7E2C91",
     "utility": "UTILITY-20260927T052236+0900-P0-DURABILITY-WINDOW-RECON",
     "theory": "THEORY-20260927T033309+0900-R6-LATENT-SCOPE-PLURAL-REVISION-DESIGN-6F8C2A41",
-    "theory_state_pointer": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E"
+    "literature": "LIT-20260927T062709+0900-R45-RV02-RD006-REACHABILITY-91C4A8E2",
+    "audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
+    "prior_forge": "FORGE-20260927T060912+0900-INTERNAL-SCOPE-ALLOCATOR-CI-CLEAN"
   },
   "source_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-  "target_capability": "internally allocate opaque Assembly-local scopes from admissible observations and prediction error without caller-supplied privileged scope labels",
+  "source_forge_id": "FORGE-INTERNAL-SCOPE-ALLOCATOR-A",
+  "target_capability": "prevent one high-error outlier from immediately fragmenting a bounded internally allocated scope namespace",
   "prototype": {
     "files": [
       "forge_prototypes/internal_scope_allocator.py",
-      "forge_prototypes/internal_scope_allocator.md",
+      "forge_prototypes/internal_scope_confirmation_guard.md",
       "tests/test_forge_internal_scope_allocator.py"
     ],
-    "public_inputs": [
-      "observation_vector",
-      "prediction_error"
+    "config": [
+      "create_confirmation_count",
+      "pending_match_radius"
     ],
-    "forbidden_caller_inputs_absent": [
-      "scope",
-      "episode",
-      "regime",
-      "entity",
-      "target",
-      "truth",
-      "evaluator"
-    ],
-    "bounded_behaviors": [
-      "appearance_only_reuse",
-      "identifiable_change_split",
-      "returning_scope_reuse",
-      "non_identifiable_abstention",
-      "three_hypotheses_retained",
-      "explicit_budget_exhaustion_without_silent_eviction",
-      "checkpoint_replay"
+    "verified_behaviors": [
+      "single_outlier_pending",
+      "nearby_repetition_confirms",
+      "inconsistent_candidate_resets",
+      "known_scope_reuse_clears_pending",
+      "pending_checkpoint_replay",
+      "default_one_preserves_behavior",
+      "no_silent_eviction_preserved"
     ]
   },
+  "local_validation": {
+    "focused_tests": "12 PASSED",
+    "focused_ruff": "PASSED",
+    "repository_ruff": "PASSED",
+    "readiness": "PASSED",
+    "full_local_suite": "BLOCKED_MISSING_OPTIONAL_FASTAPI_TORCH_JSONSCHEMA",
+    "bundle_validation": "BLOCKED_MISSING_OPTIONAL_JSONSCHEMA"
+  },
   "ci": {
-    "run_id": 36270938359,
-    "exact_head": "a31c727d0f41fe5f788d1fa6b1aef11e175a9334",
+    "run_id": 36273702567,
+    "exact_head": "aac3c657a2b941b6971f0161e8132f1905a91a6c",
     "status": "completed",
     "conclusion": "success",
-    "python_311": "SUCCESS_LINT_READINESS_TEST_BUNDLE",
-    "python_313": "SUCCESS_LINT_READINESS_TEST_BUNDLE"
+    "python_311": "SUCCESS",
+    "python_313": "SUCCESS"
   },
-  "ordinary_reduction": "deterministic nearest-centroid cache namespace allocation plus fixed thresholded change-point heuristic",
-  "engineering_usefulness": "removes caller-provided stable-scope tokens and supplies replayable opaque internal namespaces with explicit budget failure",
+  "ordinary_reduction": "ordinary temporal debounce / persistence confirmation for a thresholded change-point cache namespace",
+  "engineering_usefulness": "prevents a single outlier from consuming a scope and fragmenting evidence while preserving replayable pending state",
   "limitations": [
-    "fixed_not_learned_or_calibrated_parameters",
-    "no_prospective_identifiability_task",
-    "no_matched_allocator_comparison",
-    "selective_scope_closure_unresolved",
-    "resource_matched_scaling_unresolved"
+    "fixed_not_learned_confirmation_and_radii",
+    "real_change_detection_delayed",
+    "complex_gradual_drift_unresolved",
+    "no_true_latent_cause_identification",
+    "no_matched_comparison",
+    "no_composition_or_system_capability_evidence"
   ],
   "claim_boundary": {
     "component_function": "BOUNDED_TESTS_SUPPORTED",
@@ -73,22 +76,21 @@
     "scientifically_novel": false,
     "scientific_credit": 0
   },
-  "analyst_disposition": "ACCEPT_AS_OPTIONAL_FUTURE_SYSTEM_BUILD_INPUT_PENDING_FORGE_DURABLE_HANDOFF",
-  "forge_durable_handoff": true,
-  "main_collision_check": "PASS_MAIN_OWNS_RV02_RD006_STAGE_D0_AND_WAS_UNTOUCHED",
+  "collision_check": "PASS_MAIN_OWNS_RV02_RD006_D0_AND_SB001_IS_COMPLETE; BOTH_UNTOUCHED",
   "admitted_to_sb001": false,
   "admitted_to_rv02": false,
   "build_id_created": false,
   "candidate_id_created": false,
   "revisit_trigger_created": false,
   "p0_observation": {
-    "scope": "FORGE_OWNED_ATOMIC_HISTORY_LATEST_STATE_PUBLICATION_ONLY",
+    "code_publication_attempts": 1,
+    "code_publication_result": "SUCCESS_READBACK_VERIFIED",
     "repository_wide_recovery_proven": false,
     "root_cause_proven": false
   },
-  "evidentiary_status": "NON_EVIDENTIARY",
+  "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-27/0609-internal-scope-allocator-ci-clean.md"
+  "history_path": "reports/fast_forge/history/2026-09-27/0642-internal-scope-confirmation-ci-clean.md"
 }
