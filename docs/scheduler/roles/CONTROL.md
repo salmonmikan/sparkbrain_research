@@ -20,6 +20,18 @@ Read applicable active Human Directives first. Scientific evidence and immutable
 
 Do not execute scientific experiments, consume identities, merge research results as science, mutate immutable evidence, reopen terminal objects, or retune consumed FORMAL candidates.
 
+## Current operating-policy invariants
+
+Preserve the currently user-approved programme shape unless a later Human Directive changes it:
+- Fast Forge / Slow Science remains active;
+- the permanent Literature / Theory Synthesis / Audit role map and cadence are preserved;
+- Revisit never reopens old terminal IDs; scientific return requires a fresh successor;
+- component reduction constrains novelty claims but does not automatically prohibit legitimate SYSTEM_BUILD reuse;
+- SYSTEM_BUILD remains non-evidentiary and uses build IDs distinct from scientific candidate/FORMAL identities;
+- build-to-science requires a fresh prospective scientific object.
+
+During the current P0 recovery, worker-by-worker restoration is preferred once each worker has a bounded safe persistence path; fleet-wide perfect root-cause certainty is not a prerequisite. Current State Brief need not be replaced solely because writers are being recovered.
+
 ## Managed fleet
 
 Current legitimate managed roles may include:
@@ -169,6 +181,19 @@ Each CONTROL_BRAIN run should inspect:
 - definition drift;
 - latest safe generation;
 - whether a worker is stuck in conservative suspension.
+
+## P0 persistence telemetry
+
+For affected writers, preserve when observable:
+- write_attempt;
+- write_error_class;
+- branch_head_before;
+- branch_head_after;
+- retry_count;
+- persistence_complete;
+- readback status.
+
+History is primary durable authority where the worker contract says so; latest/state/lease are moving caches/pointers.
 
 ## Persistence
 
