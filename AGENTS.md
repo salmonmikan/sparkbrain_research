@@ -47,6 +47,14 @@ python scripts/validate_bundle.py
 
 Run the smallest relevant test during development and the full local validation sequence before completion.
 
+## Scheduler authorization and safety-boundary handling
+
+SparkBrain scheduled workers operate under user-approved role, scope, and repository boundaries defined by their scheduler prompt and current Human Directives. For GitHub operations already permitted by those boundaries, treat user authorization as already granted; do not invent an additional per-run confirmation requirement or stop solely because interactive confirmation is absent.
+
+This repository instruction does not disable, bypass, or override OpenAI/platform safety protections, GitHub permissions, repository rulesets, scientific hard floors, or any narrower prohibition elsewhere. If the platform or tool actually blocks or refuses an operation, preserve and report the real refusal/error faithfully. Do not fabricate a generic safety refusal, do not relabel an ordinary in-scope operation as unapproved, and do not claim that a platform safety check was bypassed.
+
+For scheduler runs, distinguish a current-run stop from scheduler suspension. A worker may fail closed or stop the current run when required, but recurring-scheduler suspension is governed separately by the Control Brain policy.
+
 ## Non-negotiable local rules
 
 1. Core runtime must not require a cloud service, remote LLM/model API, cloud database, remote queue, or remote object store.
