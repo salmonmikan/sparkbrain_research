@@ -5,7 +5,7 @@ description: Persist SparkBrain scheduler state, history, leases, build records,
 
 # SparkBrain persistence workflow
 
-Use only inside the invoking role's existing authority.
+Use only inside the invoking role's existing authority. The retry limit never grants new write authority or permits bypassing an actual platform/GitHub refusal. Non-retryable permission, integrity, or concurrency conditions still stop earlier.
 
 ## General safe-write contract
 
@@ -13,15 +13,15 @@ Use only inside the invoking role's existing authority.
 2. Prefer append-only history plus moving cache pointers.
 3. Prefer one atomic multi-file commit where supported.
 4. Never force-push or overwrite a newer generation.
-5. During an active P0 incident, allow at most THREE TOTAL ATTEMPTS for the same mutation purpose.
+5. For every already-authorized persistence/publication purpose, including final publication and P0 incidents, allow at most FIVE TOTAL ATTEMPTS: the initial attempt plus up to FOUR retries. Count all tools/routes toward that same-purpose limit; stop after verified success.
 6. Before every retry, re-fetch target branch/ref and required file/blob/head/PR/workflow state and rebuild against fresh state.
 7. Never blindly replay a stale SHA/head mutation.
 8. For idempotence-sensitive actions, verify whether the previous attempt already succeeded before retrying.
 9. After apparent success, independently read back relevant branch/ref/files/PR state.
 10. Publication is complete only after readback verification.
-11. After three failures, fail closed for the current run and report actual observed failure layer/class plus attempt count.
+11. After five failures, fail closed for the current run and report actual observed failure layer/class plus attempt count.
 12. Never disable the recurring scheduler merely because the write failed.
-13. GitHub retries never authorize rerunning/retuning/rescoring/redispatching consumed scientific/FORMAL execution.
+13. This retry budget applies only to persistence/publication, not to scientific experiment execution, scoring, or result-bearing workflow dispatch; separate execution authority remains required. It never authorizes rerunning/retuning/rescoring/redispatching consumed scientific/FORMAL execution.
 
 ## Failure classification
 
@@ -84,7 +84,7 @@ After a request is accepted, do not separately create/update Analyst history/lat
 
 ### Request retry / idempotence
 
-Apply the three-total-attempt contract to creation of the same request file.
+Apply the five-total-attempt contract to creation of the same request file.
 
 Before every retry:
 - re-fetch request branch;
@@ -102,7 +102,7 @@ Never overwrite an existing request file.
 
 After apparent request success, read back the exact request and verify its contents.
 
-If request creation is refused/fails three times, fail closed for the run and do not bypass the bridge with ad-hoc direct target writes.
+If request creation is refused/fails five times, fail closed for the run and do not bypass the bridge with ad-hoc direct target writes.
 
 ### GitHub Action semantics
 
