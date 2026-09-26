@@ -1,36 +1,36 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-25T14:20:38+09:00",
+  "timestamp": "2026-09-26T16:17:44+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260925T142038+0900-R122-91C6E4B2",
-    "sequence": 122,
+    "generation_id": "METHCAL-20260926T161744+0900-R125-8F3C2A71",
+    "sequence": 125,
     "material_change": true,
-    "material_change_reason": "FORGE_REPLAY_EXACT_HEAD_FAILURE_FAILS_CLOSED_WITHOUT_BUILD_OR_SCIENCE_ADMISSION",
-    "supersedes_generation_id": "METHCAL-20260925T102131+0900-R121-4D8A7C21",
+    "material_change_reason": "P0_MUTATION_BOUNDARY_NARROWED_CONTROL_R76_AND_MINIMAL_REF_PROBE_SCIENCE_UNCHANGED",
+    "supersedes_generation_id": "METHCAL-20260925T221911+0900-R124-C4E18B72",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
     "previous_methodology": {
-      "generation_id": "METHCAL-20260925T102131+0900-R121-4D8A7C21",
-      "branch_head_before_r122_history": "50b8a55845b2151781bf500260008353cc551036"
+      "generation_id": "METHCAL-20260925T221911+0900-R124-C4E18B72",
+      "branch_head": "1376d0f37f736f5f0cacaed759417b2309395545"
     },
     "evidence_analyst": {
-      "generation_id": "EVA-20260925T140000+0900-R135-SB001-INTEGRATION-WRITE-BLOCKED-FORGE-REPLAY-CI-FAIL-NO-SCIENCE",
-      "branch_head": "2bb1929ba6c8c92d6cf2da03087b333b4037438c"
+      "generation_id": "EVA-20260925T211000+0900-R136-CONTROL75-P0-PERSISTENCE-SB001-NO-SCIENCE",
+      "branch_head": "71c6d5a8e2a8dc4449f68958976f9f0f8a011db9"
     },
     "control_brain": {
-      "generation_id": "CTRL-20260925T125000+0900-R74",
-      "branch_head": "81db382a90add5fd6a9324dfd3d9101c28c6de3e"
+      "generation_id": "CTRL-20260926T035000+0900-R76-P0-ATOMIC-PERSISTENCE-BOUNDARY",
+      "branch_head_current": "f1d8b709fa87de900f5d1f62ef90e97757332b4e"
     },
     "main": {
-      "generation_id": "MAIN-20260925T131500+0900-PRIMARY-R138-SB001-ACCEPTED-INTEGRATION-WRITE-BLOCKED",
-      "mailbox_head": "3cdf0054e2be37e0d2ec7574222a709910e75c5d"
+      "generation_id": "MAIN-20260925T191533+0900-PRIMARY-R140-SB001-ACCEPTED-INTEGRATION-WRITE-BLOCKED",
+      "mailbox_head": "9b06473e095ef913021d60051de69d9728be9344"
     },
     "external_science": {
       "branch_head": "fcd9175a672da456e5b16f4799fb234eb7c26d07",
-      "theory": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
-      "literature": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
-      "independent_audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91"
+      "theory": "THEORY_R5_NO_PROPOSAL",
+      "literature": "LIT_R44",
+      "independent_audit": "AUD_R10"
     }
   },
   "authoritative_refs": {
@@ -48,7 +48,6 @@
     },
     "evidence": {
       "count": 6,
-      "annotated_tag_objects": 5,
       "h7_evidence_tag_type": "LIGHTWEIGHT_DIRECT_COMMIT",
       "h7_formal_tag_type": "LIGHTWEIGHT_DIRECT_COMMIT",
       "h7_sealed_tag_type": "LIGHTWEIGHT_DIRECT_COMMIT",
@@ -84,17 +83,18 @@
       "composition_contribution": "NOT_ESTABLISHED",
       "scientific_novelty": "NOT_ESTABLISHED_NOT_CLAIMED"
     },
-    "forge_replay": {
-      "branch_head": "7037e5024e791f8ecb545a0675637f39d3c41383",
-      "ci_run": 36091600957,
-      "ci_attempt": 1,
-      "ci_conclusion": "failure",
-      "python_311_test": "failure",
-      "python_313_test": "failure",
-      "failed_guard": "ambiguity_abstention",
-      "admission": "HOLD_NON_EVIDENTIARY_NONCANONICAL",
-      "scientific_credit": 0,
-      "ordinary_reduction": "RECURRENT_ATTRACTOR_PATTERN_COMPLETION_PLUS_CONTENT_ADDRESSED_CUE_SELECTION"
+    "forge": {
+      "delayed_action_credit": {
+        "head": "6507d3b1a302326a92eec0c92673d0a326c12add",
+        "status": "REVIEWED_RETAINED_FUTURE_SYSTEM_BUILD_INPUT_NOT_ADMITTED_TO_SB001",
+        "scientific_credit": 0
+      },
+      "completion_replay": {
+        "head": "7037e5024e791f8ecb545a0675637f39d3c41383",
+        "status": "HOLD_AFTER_EXACT_HEAD_CI_FAILURE",
+        "scientific_credit": 0
+      },
+      "new_20260926_forge_refs": 0
     }
   },
   "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
@@ -114,8 +114,8 @@
     "exact_component_provenance_manifest": "TIGHTEN",
     "interface_state_loop_manifest": "TIGHTEN",
     "resource_and_acceptance_boundary": "KEEP",
-    "build_lifecycle_namespace": "KEEP",
-    "forge_development_evidence_terminology": "CLARIFY"
+    "build_lifecycle_namespace": "TIGHTEN",
+    "forge_to_analyst_inventory": "TIGHTEN"
   },
   "synthesis_gate_findings": {
     "component_function": "KEEP",
@@ -136,32 +136,27 @@
     "revisit_canonicalize_live_case": "INSUFFICIENT_EVIDENCE"
   },
   "governance_gate_findings": {
-    "moving_pointer_generation_consistency": "TIGHTEN",
+    "publication_durability_open_p0": "TIGHTEN",
     "authoritative_tag_form": "TIGHTEN",
     "server_side_tag_namespace_protection": "TIGHTEN"
   },
   "calibration": {
     "over_reduction_risk": "LOW",
     "overclaim_risk": "LOW",
-    "false_negative_risk": "LOW_TO_MODERATE_OPERATIONAL_DURABILITY",
-    "moving_goalpost_risk": "LOW_CURRENT_POLICY",
+    "false_negative_risk": "LOW_TO_MODERATE_DISCOVERY_DURABILITY",
+    "moving_goalpost_risk": "LOW_CURRENT_POLICY_REPRESENTATIONAL_NAMESPACE_RISK",
     "pass_reachability": "REALISTIC_WITHOUT_STANDARD_RELAXATION"
   },
   "persistence_health": {
-    "analyst_history_generation": "R135",
-    "analyst_latest_generation": "R130",
-    "analyst_state_generation": "R129",
-    "control_history_latest_generation": "R74",
-    "control_state_generation": "R73",
-    "main_history_generation": "R138",
-    "main_moving_generation": "R137",
-    "forge_moving_generation": "10:37_PARKED_BEHIND_NEWER_PROTOTYPES",
-    "external_science_durable": "THEORY_R5_LITERATURE_R44_AUDIT_R10",
-    "methodology_history_path": "analysis/methodology_calibration/history/2026-09-25/1420.md",
-    "methodology_history_create_commit": "c5ecb529dfd9d026534a9e943e913464f632e064"
-  },
-  "utility_request": {
-    "created": false
+    "incident": "INC-GITHUB-PERSISTENCE-20260925-001",
+    "incident_status": "OPEN_P0",
+    "control_r76_latest_state_consistent": true,
+    "control_current_head_after_minimal_nonsemantic_ref_probe": "f1d8b709fa87de900f5d1f62ef90e97757332b4e",
+    "methodology_prior_history_generation": "R124",
+    "methodology_prior_latest_generation": "R122",
+    "methodology_prior_state_generation": "R122",
+    "append_only_history_authoritative": true,
+    "publication_contract": "MAX_3_TOTAL_ATTEMPTS_REFETCH_BEFORE_RETRY_NO_FORCE_READBACK_REQUIRED"
   },
   "hard_floor_confirmation": {
     "experiment_dispatched": false,
@@ -179,7 +174,6 @@
   "confidence": {
     "canonical_formal_revisit_integrity": "HIGH",
     "system_build_separation": "HIGH",
-    "failed_function_fail_closed": "HIGH",
     "composition_contribution": "LOW_UNTIL_PROSPECTIVE_TEST",
     "future_build_to_science_transition": "LOW_UNTIL_OBSERVED"
   }

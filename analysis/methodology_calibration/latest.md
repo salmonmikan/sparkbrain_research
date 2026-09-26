@@ -1,13 +1,16 @@
-# SparkBrain Methodology Calibration Audit — R122
+# SparkBrain Methodology Calibration Audit — Latest
 
-schema_version: 2
-generation_id: METHCAL-20260925T142038+0900-R122-91C6E4B2
-generated_at: 2026-09-25T14:20:38+09:00
-overall_classification: SLIGHTLY_TOO_PERMISSIVE
-new_scientific_result: false
+- schema_version: `2`
+- generation_id: `METHCAL-20260926T161744+0900-R125-8F3C2A71`
+- generated_at: `2026-09-26T16:17:44+09:00`
+- history_path: `analysis/methodology_calibration/history/2026-09-26/1617.md`
+- overall_classification: `SLIGHTLY_TOO_PERMISSIVE`
+- new_scientific_result: `false`
 
-R121 history/state was read first and current repository/evidence was independently refreshed. Material delta: the new completion-replay Fast Forge prototype failed exact-head CI on both Python 3.11 and 3.13 at its ambiguity-abstention test, and Evidence Analyst R135 correctly held it as non-evidentiary/noncanonical with no SYSTEM_BUILD or science admission. This positively validates the failed-target-function guard and build/science separation.
+R124 was read first, then current repository/evidence was independently refreshed. Scientific calibration is unchanged: FORMAL one-way integrity is intact; SB001 remains a bounded NON_EVIDENTIARY_BUILD with zero scientific credit; composition contribution and scientific novelty remain unestablished; no Revisit trigger or fresh scientific successor exists.
 
-SB001 remains the accepted bounded NON_EVIDENTIARY_BUILD at its unchanged exact head; composition contribution and scientific novelty remain unestablished. H7 remains CONSUMED_ONE_WAY / INCONCLUSIVE with no rerun or ref movement.
+The current permissiveness risk remains representational and governance-level: durable MAIN R140 still uses scientific `OPEN_DEVELOPMENT` vocabulary for SYSTEM_BUILD, and exact component/interface/state-loop/limitations provenance is not yet one first-class build manifest. Useful reduced components are not being suppressed: delayed-action-credit remains retained as future SYSTEM_BUILD input with zero scientific credit.
 
-Overall remains SLIGHTLY_TOO_PERMISSIVE because exact SYSTEM_BUILD provenance/interface topology is not yet first-class, moving latest/state pointers remain stale relative to durable history, authoritative tag namespaces lack server-side protection, and a live BUILD-to-science transition has not yet been observed. No Utility request.
+Control R76 keeps the GitHub persistence incident OPEN_P0. A later minimal non-semantic Control ref-update probe succeeded, narrowing the failure boundary away from repository-wide outage but not closing the incident. Append-only complete history remains authoritative; moving latest/state are caches.
+
+No new SparkBrain scientific result.
