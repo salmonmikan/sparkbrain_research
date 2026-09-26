@@ -1,18 +1,25 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260927T031000+0900-R140-SB001-READY-INTEGRATION-P0-BRIDGE-RETRY",
-  "generated_at": "2026-09-27T03:10:00+09:00",
+  "generation_id": "EVA-20260927T035800+0900-R141-SB001-RETRY2-RV02-PENDING-THEORY6",
+  "generated_at": "2026-09-27T03:58:00+09:00",
   "cache_role": "MOVING_CACHE_ONLY",
   "durable_authority": {
-    "history_path": "analysis/orchestrator/history/2026-09-27/0310-R140.md",
+    "history_path": "analysis/orchestrator/history/2026-09-27/0358-R141.md",
     "complete": true
   },
   "new_scientific_result": false,
   "scientific_execution_mode": "READ_ONLY",
   "refs_observed": {
-    "main": "4065381fc4e584fa0fae84cc1c9da0f3442dcd21",
-    "prior_analyst_target_head": "77f50ecfdac70d661477be1ab7c6f31ee5fd2fe8",
-    "sb001": "909094a87025b552b96bcac4afb060b91c4f0573"
+    "main": "0bc2844f8e349e54e95dd52af8dd72903546b8a5",
+    "prior_analyst_target_head": "c3f8a53eb09b17b0d447428943720e90afecd6d9",
+    "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
+    "control": "854733fc23fa24bb4bfebb5cbfa4b1a95b8d6647",
+    "main_reports": "8ffeeab27194779350aa71f18e3c54c19b87fbd8",
+    "external_science": "640200451b9b18d0e12249786ba92649b6f2cb22",
+    "methodology": "4c3483754ad9db5120b4414743a757a02d5c5aa8",
+    "sb001": "909094a87025b552b96bcac4afb060b91c4f0573",
+    "forge_stable_scope_lifecycle_branch": "505b11e61beadcd600587a5c09e9d52edd70b8e1",
+    "forge_stable_scope_lifecycle_prototype": "d52bb83041abc719f94d4f11e7cbad585ad37fc8"
   },
   "canonical_funnel": {
     "candidates": 35,
@@ -28,15 +35,23 @@
     "fresh_scientific_successor": 0,
     "old_ids_reopened": 0
   },
+  "human_directive_review": {
+    "directive": "HUMAN-20260927-001",
+    "subject": "RV02 development restart",
+    "status": "PENDING_CONTROL_REVIEW",
+    "analyst_execution_authority": false,
+    "candidate_minted": false,
+    "next_on_control_accept": "BIND_FRESH_RV02_OPEN_DEVELOPMENT_OBJECT_AND_MINIMAL_EXTERNAL_LEARNING_DIAGNOSTIC"
+  },
   "system_build_ledger": {
     "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
     "target_capability": "bounded persistent predictive-state revision loop",
     "branch": "system-build/sb001-predictive-state-revision-pilot-20260925",
     "exact_head": "909094a87025b552b96bcac4afb060b91c4f0573",
-    "base_main_observed": "4065381fc4e584fa0fae84cc1c9da0f3442dcd21",
+    "base_main_observed": "0bc2844f8e349e54e95dd52af8dd72903546b8a5",
     "compare": {
       "ahead": 15,
-      "behind": 4
+      "behind": 5
     },
     "exact_head_ci": {
       "run_id": 36245046040,
@@ -44,14 +59,28 @@
       "conclusion": "success"
     },
     "integration_pr": {
-      "number": 152
+      "number": 152,
+      "state": "open",
+      "mergeable": true,
+      "merged": false
     },
-    "review_gate": {
-      "mandatory": false,
-      "policy": "HUMAN-20260926-004",
-      "integration_authority": "READY_FOR_INTEGRATION_IF_909094A_HEAD_CI_PR_RULESET_UNCHANGED"
+    "ruleset": {
+      "id": 23862726,
+      "pr_required": true,
+      "required_approvals": 0,
+      "allowed_merge_methods": [
+        "squash"
+      ],
+      "linear_history": true
     },
-    "lifecycle": "BUILD_ACCEPTED_BOUNDED_READY_FOR_INTEGRATION",
+    "merge_publication": {
+      "attempts_consumed": 3,
+      "total_ceiling": 5,
+      "remaining_attempts": 2,
+      "last_failure_class": "PLATFORM_PRE_GITHUB_SAFETY_REFUSAL"
+    },
+    "integration_authority": "RETRY_SB001_SQUASH_MERGE_WITH_AT_MOST_2_REMAINING_ATTEMPTS_IF_909094A_CI_PR_RULESET_UNCHANGED",
+    "lifecycle": "BUILD_ACCEPTED_BOUNDED_READY_FOR_INTEGRATION_RETRY",
     "built": true,
     "functionally_verified_bounded": true,
     "comparatively_supported": false,
@@ -59,6 +88,21 @@
     "scientifically_novel": false,
     "scientific_credit": 0,
     "evidentiary_status": "NON_EVIDENTIARY_BUILD"
+  },
+  "future_system_build_input": {
+    "theory_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
+    "theory_generation": "THEORY-20260927T033309+0900-R6-LATENT-SCOPE-PLURAL-REVISION-DESIGN-6F8C2A41",
+    "status": "RETAIN_AFTER_SB001_RECONCILIATION",
+    "scientific_credit": 0,
+    "admitted_to_sb001": false
+  },
+  "forge_review": {
+    "forge_id": "FORGE-STABLE-SCOPE-LIFECYCLE-A",
+    "prototype_head": "d52bb83041abc719f94d4f11e7cbad585ad37fc8",
+    "ci_run": 36263166258,
+    "ci_result": "FAILURE_LINT_TESTS_SKIPPED",
+    "handoff": "NOT_ACCEPTED",
+    "scientific_credit": 0
   },
   "h7": {
     "identity": "h7-r5-285a3a206b34c5982b9d4045",
@@ -71,11 +115,12 @@
     "id": "INC-GITHUB-PERSISTENCE-20260925-001",
     "status": "OPEN_P0",
     "persistence_route": "GITHUB_ACTIONS_BRIDGE",
-    "request_id": "EA-R140-20260927T0310JST-strong-retry"
+    "diagnosis": "INTERMITTENT_OR_ACTION_CONTEXT_SELECTIVE_PRE_GITHUB_MUTATION_FAILURE"
   },
   "allocations": {
     "canonical_science": "STOP_NO_OP",
-    "main_system_build": "READY_FOR_INTEGRATION_IF_909094A_HEAD_CI_PR_RULESET_UNCHANGED",
+    "main_system_build": "RETRY_SB001_SQUASH_MERGE_WITH_AT_MOST_2_REMAINING_ATTEMPTS_IF_909094A_CI_PR_RULESET_UNCHANGED",
+    "rv02": "WAIT_CONTROL_CLASSIFICATION",
     "no_feature_mixing": true
   },
   "hard_floor": {
