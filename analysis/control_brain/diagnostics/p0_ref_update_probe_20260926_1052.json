@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "diagnostic_id": "P0-CONTROL-REF-UPDATE-MINIMAL-20260926T1052+0900",
+  "purpose": "Test authoritative Control branch ref movement with minimal non-semantic diagnostic payload",
+  "changes_scientific_state": false,
+  "changes_scheduler_state": false,
+  "changes_control_latest_or_state": false,
+  "parent": "209ae608ddf0aed6cf838d3b23aa9db728b502a2"
+}
