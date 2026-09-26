@@ -1,16 +1,15 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260926T233236+0900-STABLE-SCOPE-HYPOTHESIS-REVISION-A",
-  "produced_at": "2026-09-26T23:32:36+09:00",
+  "generation_id": "FORGE-20260927T0138+0900-STABLE-SCOPE-REVISION-CI-CLEAN",
+  "produced_at": "2026-09-27T01:38:00+09:00",
   "forge_id": "FORGE-STABLE-SCOPE-HYPOTHESIS-REVISION-A",
-  "status": "FORGE_PROTOTYPE",
-  "recommended_handoff": "SYSTEM_BUILD_INPUT_IF_CI_CLEAN",
+  "status": "FORGE_INTERESTING",
+  "recommended_handoff": "SYSTEM_BUILD_INPUT",
   "branch": "forge/20260926-stable-scope-revision-a",
-  "base_forge": "forge/20260926-scoped-hypothesis-revision-a@3f820d4826e3ca0dcf07248637e0cbf3730337f4",
+  "prototype_head": "700705fb8112fedcbe7fc2eaa9fb28fcc29b00ba",
   "input_generations": {
     "evidence_analyst": "EVA-20260926T205808+0900-R139-SB001-WAIT-REVIEW-LATE-EVIDENCE-INPUT-NO-SCIENCE",
-    "main": "MAIN-20260926T222900+0900-PRIMARY-R151-SB001-CI-GREEN-REVIEW-REQUEST-REFUSED",
-    "control": "CTRL-20260926T185206+0900-R83-FRESH-THREAD-FLEET-MIGRATION-RELAY-PARTIAL-VALIDATION",
+    "control": "CTRL-20260927T005724+0900-R84-P0-HISTORY-FIRST-ANALYST-WORKAROUND",
     "methodology": "METHCAL-20260926T201857+0900-R126-4B7E2C91",
     "utility": "UTILITY-20260926T192601+0900-PR152-REVIEW-ANCHOR-RECONCILE-6E7F2C91",
     "literature": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4",
@@ -18,27 +17,35 @@
     "audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91"
   },
   "current_authoritative_refs": {
-    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "sb001_pr_152_head": "909094a87025b552b96bcac4afb060b91c4f0573",
-    "forge_parent": "3f820d4826e3ca0dcf07248637e0cbf3730337f4"
+    "stable_scope_prototype_head": "700705fb8112fedcbe7fc2eaa9fb28fcc29b00ba"
   },
   "target_capability": "preserve valid late-evidence continuity across hypothesis-pool membership changes without cross-context leakage",
   "comparison": {
     "hypothesis_set_scope": "ISOLATED_BUT_FRAGMENTING",
     "stable_scope_token": "CONTINUITY_WITH_CALLER_DEFINED_LIFETIME",
-    "different_scope_same_assembly": "ISOLATED_EXPECTED",
-    "same_scope_different_assembly": "ISOLATED_EXPECTED",
-    "temporary_absence_then_reappearance": "PRIOR_SUPPORT_REUSED_BY_DESIGN"
+    "different_scope_same_assembly": "ISOLATED_CONFIRMED_BY_TEST",
+    "same_scope_different_assembly": "ISOLATED_CONFIRMED_BY_TEST",
+    "temporary_absence_then_reappearance": "PRIOR_SUPPORT_REUSED_BY_DESIGN_AND_TEST"
+  },
+  "ci": {
+    "run_id": 36256004295,
+    "exact_head": "700705fb8112fedcbe7fc2eaa9fb28fcc29b00ba",
+    "status": "completed",
+    "result": "SUCCESS",
+    "python_311": "SUCCESS",
+    "python_313": "SUCCESS"
   },
   "ordinary_reduction": "namespaced keyed state / ordinary cache or session partitioning around an associative reweighting overlay",
-  "engineering_usefulness": "potential future SYSTEM_BUILD namespace/lifecycle option",
+  "engineering_usefulness": "future SYSTEM_BUILD namespace/lifecycle option",
   "limitation": "scope-token lifetime is external authority; over-broad reuse intentionally retains prior evidence, so a future build must define the token prospectively and keep it non-privileged",
+  "p0_observation": {
+    "ref_update": "SUCCESS_VERIFIED_THIS_RUN",
+    "interpretation": "INTERMITTENT_OR_CONTEXT_SELECTIVE_FAILURE_REMAINS_MORE_PLAUSIBLE_THAN_PERMANENT_REF_UPDATE_OUTAGE"
+  },
   "scientific_disposition": "NO_PROMOTION_PROPOSED",
   "main_collision_check": "PASS_SB001_UNTOUCHED",
   "admitted_to_sb001": false,
-  "ci": {
-    "status": "PENDING_POST_PUSH"
-  },
   "evidentiary_status": "NON_EVIDENTIARY",
   "scientific_credit": 0,
   "new_scientific_result": false,

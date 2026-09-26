@@ -1,15 +1,20 @@
 # SparkBrain Fast Forge — Latest
 schema_version: 2
-generation_id: FORGE-20260926T233236+0900-STABLE-SCOPE-HYPOTHESIS-REVISION-A
-produced_at: 2026-09-26T23:32:36+09:00
+generation_id: FORGE-20260927T0138+0900-STABLE-SCOPE-REVISION-CI-CLEAN
+produced_at: 2026-09-27T01:38:00+09:00
 forge_id: FORGE-STABLE-SCOPE-HYPOTHESIS-REVISION-A
-status: FORGE_PROTOTYPE
-recommended_handoff: SYSTEM_BUILD_INPUT_IF_CI_CLEAN
+status: FORGE_INTERESTING
+recommended_handoff: SYSTEM_BUILD_INPUT
 branch: forge/20260926-stable-scope-revision-a
+prototype_head: 700705fb8112fedcbe7fc2eaa9fb28fcc29b00ba
+ci_run: 36256004295
+ci_result: SUCCESS
 evidentiary_status: NON_EVIDENTIARY
 scientific_credit: 0
 new_scientific_result: false
 
-Compared two ordinary persistence namespaces for the prior late-evidence overlay. Exact hypothesis-set scoping prevents stale cross-pool reuse but fragments support whenever pool membership changes. A new stable opaque-scope variant preserves common-hypothesis support across pool changes while isolating different scopes and Assemblies.
+The stable-scope variant is now durably published and CI-clean. It preserves late-evidence continuity across hypothesis-pool membership changes when the caller supplies the same explicit opaque scope token, while isolating different scope tokens and different Assemblies.
 
-This reduces to ordinary cache/session partitioning. Its usefulness depends on a future prospective non-privileged scope lifecycle; over-broad token reuse intentionally retains old evidence. SB001 remains untouched.
+This is ordinary cache/session namespace design, not scientific novelty. Its usefulness depends on a future build defining a prospective non-privileged scope lifecycle. SB001 remains untouched.
+
+P0 note: the non-force branch-ref update succeeded and verified in this run after prior Forge refusals, supporting an intermittent/context-selective mutation failure rather than a permanent ref-update outage.
