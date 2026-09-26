@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260926T075000+0900-G21",
-  "produced_at": "2026-09-26T07:50:00+09:00",
-  "supersedes_generation_id": "STEWARD-20260926T015000+0900-G20",
+  "generation_id": "STEWARD-20260926T195000+0900-G22",
+  "produced_at": "2026-09-26T19:50:00+09:00",
+  "supersedes_generation_id": "STEWARD-20260926T075000+0900-G21",
   "repository": "salmonmikan/sparkbrain_research",
   "main": "d16403414fc7abebd23075fc401240971b8eb91d",
   "inventories": {
-    "branches_total": 408,
+    "branches_total": 413,
     "research_branches": 189,
-    "forge_branches": 22,
+    "forge_branches": 24,
     "system_build_branches": 1,
     "legacy_freeze_branches": 13,
     "preserve_branches": 26,
-    "ops_branches": 23,
+    "ops_branches": 26,
     "authoritative_namespace_refs": 9,
     "freeze_refs": 1,
     "sealed_refs": 1,
@@ -23,14 +23,17 @@
   },
   "system_build": {
     "ref": "system-build/sb001-predictive-state-revision-pilot-20260925",
-    "sha": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
-    "ahead_of_main": 13,
+    "sha": "e9b93456a0c37e2d1393463c167912e0e3968817",
+    "ahead_of_main": 14,
     "behind_main": 0,
-    "exact_head_ci_run": 36060329063,
+    "exact_head_ci_run": 36233791080,
     "exact_head_ci": "success",
     "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
     "evidence_status": "NON_EVIDENTIARY_BUILD",
-    "open_pr_to_main": false
+    "open_pr_to_main": 152,
+    "pr_mergeable": true,
+    "fresh_current_head_review": false,
+    "analyst_generation": "R137"
   },
   "immutable_refs": {
     "legacy_freeze_map_exact": true,
@@ -46,48 +49,48 @@
     "main_ruleset_target": "DEFAULT_BRANCH_ONLY",
     "tag_namespace_ruleset": false,
     "human_directive_20260919_002": "OPEN_DEFER_PROTECTION_DEPLOYMENT",
-    "issue_139": "OPEN_BODY_PARTIALLY_STALE",
-    "issue_139_correction": {
-      "annotated_evidence_tags_5": "ACCURATE",
-      "repository_rulesets_0": "STALE_ACTUAL_1",
-      "h7_lightweight_authoritative_refs": "OMITTED_FROM_ISSUE"
-    }
+    "issue_139": "OPEN_BODY_STALE_CORRECTION_REFUSED_PRE_GITHUB_X3"
   },
   "mapping": {
     "rows_exact": true,
-    "summary_stale": true,
-    "stale_footer_facts": [
-      "Git tags = 0",
-      "repository rulesets = 0"
-    ]
+    "summary_corrected_this_run": true,
+    "authoritative_refs": 9,
+    "annotated_tag_objects": 5,
+    "lightweight_tags": 4,
+    "repository_rulesets": 1,
+    "tag_namespace_rulesets": 0
   },
   "promotion": {
     "open_prs": [
       148,
+      149,
+      151,
+      152
+    ],
+    "governance_tooling_prs": [
+      148,
       149
     ],
-    "classification": "GOVERNANCE_TOOLING_ONLY",
-    "pr_148": "human-directives repository skill",
-    "pr_149": "Git-backed SparkBrain scheduler registry skill",
-    "system_build_status": "ACCEPTED_BOUNDED_ENGINEERING_PENDING_NORMAL_REVIEW_PR",
-    "scientific_candidates": []
+    "p0_diagnostic_pr": 151,
+    "system_build_pr": 152,
+    "scientific_candidates": [],
+    "pr152_metadata_drift": "BODY_STILL_REFERENCES_OLD_HEAD_AND_R136"
   },
   "separation": {
     "main_research_forge_build_evidence": "INTACT",
-    "scientific_or_build_pr_to_main": false
+    "scientific_pr_to_main": false
   },
   "incident": {
     "id": "INC-GITHUB-PERSISTENCE-20260925-001",
     "status": "OPEN_P0",
-    "latest_complete_control": "R76",
-    "control_atomic_commit": "209ae608ddf0aed6cf838d3b23aa9db728b502a2",
     "repository_wide_write_outage_supported": false,
-    "principal_boundary": "AUTOMATION_RUNTIME_ACTION_PATH_MUTATION_REFUSAL_WITH_NONATOMIC_POINTER_DEBT",
-    "prior_steward_state_telemetry_stale": true,
-    "exact_root_cause_resolved": false
+    "principal_boundary": "ACTION_CLASS_OR_AUTOMATION_RUNTIME_MUTATION_CONTEXT_SELECTIVE_REFUSAL",
+    "issue139_mutation_attempts": 3,
+    "issue139_mutation_result": "FAILED_CLOSED_PRE_GITHUB_RUNTIME_SAFETY_REFUSAL",
+    "fresh_thread_create_pull_request_validation": "NOT_YET_TESTED"
   },
   "persistence_health": {
-    "branch_head_before": "538c8ed17fcdee49cb52153a18a15c211dfd7cd4",
+    "branch_head_before": "d7453a5d008c6c0130170f5e1aad29b74d9d7f68",
     "publication_method": "ATOMIC_GIT_TREE_COMMIT_NONFORCE_REF_UPDATE",
     "retry_count": 0,
     "persistence_complete_intent": true,
@@ -99,10 +102,11 @@
     "rulesets": false,
     "issues_prs": false,
     "immutable_refs": false,
-    "steward_persistence_only": true
+    "steward_persistence_only": true,
+    "mapping_summary_only": true
   },
   "persistence": {
-    "history": "reports/repository_steward/history/2026-09-26/0750.md",
+    "history": "reports/repository_steward/history/2026-09-26/1950.md",
     "latest": "reports/repository_steward/latest.md",
     "state": "reports/repository_steward/state.json"
   }

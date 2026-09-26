@@ -2,7 +2,7 @@
 
 Governance inventory only. This file does **not** redefine canonical scientific status or results. Canonical science remains in git-managed research status/docs and immutable evidence. Existing legacy `freeze/*` branches remain authoritative historical anchors and must not be moved, rewritten, deleted, or force-migrated.
 
-Observed 2026-09-17 07:46 JST.
+Observed 2026-09-17 07:46 JST; exact-SHA rows reverified 2026-09-26 19:50 JST.
 
 | Legacy freeze branch | Exact commit SHA | Retained evidence pointer(s), when obvious |
 |---|---|---|
@@ -22,6 +22,6 @@ Observed 2026-09-17 07:46 JST.
 
 ## Prospective migration rule
 
-True annotated-tag creation is now available on `main` through `.github/workflows/create-authoritative-tag.yml`, but repository rulesets/tag-namespace protection are still absent. Legacy branch mirrors therefore remain deferred by stewardship: a mirror may be created only under an explicitly safe migration procedure, must point to the exact same commit SHA, and must never replace or remove the legacy branch. Never retarget or delete an authoritative tag after creation/consumption.
+True annotated-tag creation is available on `main` through `.github/workflows/create-authoritative-tag.yml`. One active repository branch ruleset (`protection_main`) exists, but authoritative tag-namespace protection is still absent. Legacy branch mirrors therefore remain deferred by stewardship: a mirror may be created only under an explicitly safe migration procedure, must point to the exact same commit SHA, and must never replace or remove the legacy branch. Never retarget or delete an authoritative tag after creation/consumption.
 
-Current migration status: **0 legacy branch mirrors created; 13 legacy freeze branches inventoried and exact-SHA reverified; Git tags = 0; repository rulesets = 0.**
+Current migration status: **0 legacy branch mirrors created; 13 legacy freeze branches inventoried and exact-SHA reverified; authoritative namespace refs = 9 (5 annotated tag objects + 4 already-consumed H7 lightweight tags); repository rulesets = 1 branch ruleset; authoritative tag-namespace rulesets = 0.**
