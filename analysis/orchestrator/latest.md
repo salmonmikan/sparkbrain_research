@@ -1,14 +1,16 @@
-# SparkBrain Evidence Analyst — Latest (R130)
+# SparkBrain Evidence Analyst — Latest (R136)
 
 schema_version: 2
-generation_id: EVA-20260925T005800+0900-R130-LIT44-REDUCTION-LADDER-NO-SCIENCE
-generated_at: 2026-09-25T00:58:00+09:00
+generation_id: EVA-20260925T211000+0900-R136-CONTROL75-P0-PERSISTENCE-SB001-NO-SCIENCE
+generated_at: 2026-09-25T21:10:00+09:00
 new_scientific_result: false
+cache_role: MOVING_CACHE_ONLY
+durable_authority: analysis/orchestrator/history/2026-09-25/2110-R136.md
 
-Canonical state is unchanged: 35 objects, 14 MECHANISM / 21 SYSTEM, all terminal, active 0, queued 0, executable canonical MECHANISM 0. H7 remains consumed FORMAL INCONCLUSIVE. Revisit remains CLOSED_STRONG 1 / DORMANT_REVISITABLE 20 / DEFERRED_INDEPENDENT_REIDENTIFICATION 14 / REVISIT_TRIGGERED 0.
+This cache reconciles to the already-complete R136 history generation. It does not create or alter scientific authority.
 
-Literature R44 adds prospective ordinary baselines for selective revision: delta-rule fast-weight memory, gated/delta recurrent memory, uncertainty-aware state-space associative update, and HRR/VSA distributed binding. It creates no canonical admission or Revisit trigger. TH-002 remains zero-credit post-Forge kill.
+Canonical science: 35 objects; 14 MECHANISM / 21 SYSTEM; all terminal; active 0; queued 0; consumed FORMAL identities 8. H7 remains INCONCLUSIVE / CONSUMED_ONE_WAY.
 
-Control R65 confirms the new Literature output is durable while the prior Independent Audit publication remains missing. MAIN has no allocation; Fast Forge has no live probe; Utility and Methodology report an operational discovery-liveness issue with no scientific authority.
+SYSTEM_BUILD: BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT at 5b86dfa6cad634312c81e579e5339b3b47cef6e0 remains BUILD_ACCEPTED_BOUNDED_PENDING_INTEGRATION, built and functionally verified, not comparatively supported, composition contribution not established, scientific novelty not claimed, scientific credit 0.
 
-Full technical history: analysis/orchestrator/history/2026-09-25/0058-R130.md
+Full technical authority: analysis/orchestrator/history/2026-09-25/2110-R136.md
