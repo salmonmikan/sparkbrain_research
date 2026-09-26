@@ -1,14 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260926T035000+0900-R76-P0-ATOMIC-PERSISTENCE-BOUNDARY",
-  "produced_at": "2026-09-26T03:50:00+09:00",
-  "history_path": "analysis/control_brain/history/2026-09-26/0350-R76.md",
-  "incident": {
-    "id": "INC-GITHUB-PERSISTENCE-20260925-001",
-    "status": "OPEN_P0",
-    "root_cause_boundary": "AUTOMATION_RUNTIME_ACTION_PATH_MUTATION_REFUSAL_WITH_NONATOMIC_POINTER_DEBT",
-    "repository_wide_write_outage_supported": false,
-    "single_success_closes_incident": false
+  "generation_id": "CTRL-20260926T165000+0900-R81-ACCELERATED-FLEET-RECOVERY",
+  "produced_at": "2026-09-26T16:50:00+09:00",
+  "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
+  "history_path": "analysis/control_brain/history/2026-09-26/1650-R81.md",
+  "human_directives": {
+    "HUMAN-20260925-002": "ACCEPT_ACTIVE",
+    "HUMAN-20260926-003": "ACCEPT_ACTIVE_ACCELERATED_RECOVERY",
+    "current_user_blue_green_canary_authority": "ACCEPT_ACTIVE"
   },
   "science": {
     "canonical": 35,
@@ -18,7 +17,8 @@
     "active": 0,
     "queued": 0,
     "consumed_formal_identities": 8,
-    "h7": "CONSUMED_ONE_WAY_INCONCLUSIVE"
+    "h7": "CONSUMED_ONE_WAY_INCONCLUSIVE",
+    "new_scientific_result": false
   },
   "revisit": {
     "closed_strong": 1,
@@ -30,9 +30,10 @@
   "system_build": {
     "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
     "exact_head": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
-    "ci_run": 36060329063,
-    "ci": "success",
-    "lifecycle": "BUILD_ACCEPTED_BOUNDED_PENDING_INTEGRATION",
+    "compare_to_main": "13_AHEAD_0_BEHIND",
+    "exact_head_ci_run": 36060329063,
+    "exact_head_ci": "SUCCESS",
+    "lifecycle": "BUILD_ACCEPTED_BOUNDED_PENDING_INTEGRATION_PR",
     "built": true,
     "functionally_verified_bounded": true,
     "comparatively_supported": false,
@@ -42,42 +43,125 @@
     "pr_to_main": false
   },
   "authority_histories": {
-    "evidence_analyst": "R136",
-    "methodology": "R124",
-    "main": "R140",
-    "repository_steward": "G20",
+    "evidence_analyst": "R136_APPEND_ONLY_COMPLETE",
+    "methodology": "R125_FULLY_READBACK_VERIFIED_POST_RESTART",
+    "main": "R141_APPEND_ONLY_POST_RESTART",
+    "relay": "R142_APPEND_ONLY_AND_LEASE_POST_RESTART",
+    "repository_steward": "G21",
     "external_science": "LIT_R44_THEORY_R5_AUDIT_R10"
   },
+  "durability": {
+    "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
+    "status": "OPEN_P0",
+    "root_cause_boundary": "AUTOMATION_RUNTIME_ACTION_PATH_OR_MUTATION_CONTEXT_REFUSAL_WITH_PARTIAL_POINTER_DEBT",
+    "repository_wide_write_outage_supported": false,
+    "append_only_history_primary_authority": true,
+    "moving_latest_state_cache_semantics": true,
+    "control_previous_authoritative_generation": "R76",
+    "control_branch_head_before": "f1d8b709fa87de900f5d1f62ef90e97757332b4e",
+    "methodology_post_restart_validation": "PASS_R125_HISTORY_LATEST_STATE_READBACK",
+    "analyst_post_restart_validation": "NO_NEW_DURABLE_GENERATION_OBSERVED_BRANCH_STILL_R136",
+    "main_post_restart_validation": "PARTIAL_R141_HISTORY_DURABLE_POINTERS_STALE_PR_CREATE_3_OF_3_PRE_GITHUB_REFUSAL",
+    "relay_post_restart_validation": "PARTIAL_R142_HISTORY_AND_LEASE_DURABLE_POINTERS_STALE_PR_CREATE_3_OF_3_PRE_GITHUB_REFUSAL",
+    "forge_post_restart_validation": "NO_NEW_2026_09_26_DURABLE_FORGE_RECORD_OBSERVED",
+    "utility_recovery": "EXPIRED_ASSIGNMENT_RECONCILED_TO_CLEAN_IDLE_AT_6920a9b935281b4ed2be0b4c39919414b9f8ff75",
+    "external_science_post_restart_validation": "PENDING_FIRST_SCHEDULED_SLOT"
+  },
   "fleet": {
-    "control": "ENABLED_RUNNING",
-    "current_state_brief": "ENABLED_RUNNING",
-    "evidence_analyst": "DISABLED_OPERATIONAL_FAULT_SUSPEND",
-    "methodology": "DISABLED_OPERATIONAL_FAULT_SUSPEND",
-    "main": "DISABLED_OPERATIONAL_FAULT_SUSPEND",
-    "utility": "DISABLED_OPERATIONAL_FAULT_SUSPEND_EXPIRED_ASSIGNMENT_DO_NOT_REPLAY",
-    "external_science": "DISABLED_OPERATIONAL_FAULT_SUSPEND",
-    "fast_forge": "DISABLED_IDLE_SUSPEND_P0",
-    "relay": "DISABLED_DEPENDENCY_WAIT_SUSPEND"
+    "control": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "RUNNING",
+      "self_replacement_forbidden": true
+    },
+    "current_state_brief": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "RUNNING"
+    },
+    "evidence_analyst": {
+      "task_id": "6aa893eab4748191bd98de5e490739ce",
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "RESTARTING",
+      "restart_owner": "CONTROL_BRAIN",
+      "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
+      "next_escalation": "IF_NEXT_POST_RESTART_RUN_STILL_HAS_NO_COMPLETE_DURABLE_GENERATION_CONSIDER_GREEN_REPLACEMENT"
+    },
+    "methodology": {
+      "task_id": "6aae12399e1881919f2f98fd8efb0a27",
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "RUNNING",
+      "validated_generation": "R125"
+    },
+    "external_science": {
+      "task_id": "6aa9b43ec5288191bc12c59cb5ae1e99",
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "RESTARTING",
+      "validation": "PENDING_FIRST_POST_RESTART_SLOT"
+    },
+    "main": {
+      "task_id": "6aa35e5370bc8191888926c2457a2b7f",
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "RESTARTING",
+      "latest_safe_generation": "R141_HISTORY",
+      "blocker": "PR_MUTATION_PRE_GITHUB_SAFETY_REFUSAL_AFTER_3_ATTEMPTS"
+    },
+    "fast_forge": {
+      "task_id": "6aaa08248794819180e6627ef2a9b5fc",
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "RESTARTING",
+      "validation": "NO_NEW_DURABLE_2026_09_26_RECORD_OBSERVED"
+    },
+    "relay": {
+      "task_id": "6aaba7c85034819198e3b91eb58556d0",
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "RESTARTING",
+      "latest_safe_generation": "R142_HISTORY_AND_LEASE",
+      "blocker": "PR_MUTATION_PRE_GITHUB_SAFETY_REFUSAL_AFTER_3_ATTEMPTS"
+    },
+    "utility": {
+      "task_id": "6aae3f2a085c8191b522a8138cc62dd9",
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "RESTARTING",
+      "restart_conditions": "CLEAN_IDLE_POINTER_SATISFIED; FIRST_NORMAL_RUNTIME_PUBLICATION_PENDING"
+    }
   },
-  "restart_contract": {
-    "safe_mutation_path_or_workaround_required": true,
-    "pointer_debt_reconciled_or_bounded": true,
-    "no_newer_generation_conflict": true,
-    "first_post_restart_generation_full_durable_readback": true
-  },
-  "scheduler_rebuild": {
-    "status": "PENDING_EXPLICIT_APPROVAL",
-    "recommended_first_step": "ONE_NEW_ISOLATED_PERSISTENCE_CANARY",
-    "conditional_followup": "BLUE_GREEN_REPLACE_CURRENT_FLEET_IF_CANARY_SUCCEEDS",
-    "old_schedulers": "KEEP_OFF_FOR_ROLLBACK_UNTIL_REPLACEMENT_VALIDATED"
+  "blue_green": {
+    "replacements": [],
+    "production_green_active": 0,
+    "policy": "CREATE_PER_WORKER_ONLY_AFTER_REPEAT_FAILURE_OR_CLEAR_INSTANCE_SPECIFIC_NEED",
+    "canary": "FAILED_EMPTY_BRANCH_NOT_FLEET_WIDE_BLOCKER",
+    "rollback_debt": "NONE_NEW"
   },
   "hard_floor": {
     "experiment_dispatched": false,
     "identity_consumed": false,
+    "research_pr_merged": false,
     "scientific_ref_mutated": false,
     "evidence_ref_mutated": false,
     "terminal_reopened": false,
-    "consumed_formal_rerun_retune_rescore": false,
-    "scheduler_created_deleted_or_cadence_changed": false
+    "consumed_formal_rerun_retune_rescore": false
+  },
+  "next_directions": [
+    "KEEP_VALIDATED_METHODOLOGY_RUNNING_WHILE_P0_REMAINS_OPEN",
+    "ALLOW_NEXT_ANALYST_AND_FORGE_POST_RESTART_RUNS_UNDER_THREE_ATTEMPT_CONTRACT; ESCALATE_TO_GREEN_ONLY_ON_REPEAT_DURABLE_FAILURE",
+    "VALIDATE_UTILITY_FIRST_NORMAL_RUN_NOW_THAT_ASSIGNMENT_POINTER_IS_CLEAN_IDLE",
+    "KEEP_MAIN_AND_RELAY_ENABLED; APPEND_ONLY_HISTORY_IS_CURRENT_AUTHORITY; PR_CREATION_REMAINS_OPERATIONALLY_BLOCKED",
+    "VALIDATE_EXTERNAL_SCIENCE_AT_ITS_NEXT_SCHEDULED_ROLE_SLOT",
+    "DO_NOT_REOPEN_OR_RERUN_TERMINAL_OR_CONSUMED_SCIENCE"
+  ],
+  "publication": {
+    "branch_head_before": "f1d8b709fa87de900f5d1f62ef90e97757332b4e",
+    "branch_head_after": "THIS_GENERATION_COMMIT",
+    "write_attempt": "ATOMIC_HISTORY_LATEST_STATE_INCIDENT",
+    "retry_count": "SET_BY_RUNTIME_TELEMETRY",
+    "persistence_complete": "REQUIRES_POST_COMMIT_READBACK"
   }
 }
