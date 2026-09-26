@@ -1,3 +1,5 @@
+import pytest
+
 from forge_prototypes.multi_hypothesis_prediction_pool import (
     MultiHypothesisPredictionPool,
     PredictionPoolConfig,
@@ -42,7 +44,7 @@ def test_clear_prediction_can_be_selected_without_mutating_predictor() -> None:
     assert snapshot.reason == "selected"
     assert snapshot.selected_value == "later-a"
     assert snapshot.confidence == 0.8
-    assert snapshot.margin == 0.6
+    assert snapshot.margin == pytest.approx(0.6)
     assert predictor.state_dict() == before
 
 
