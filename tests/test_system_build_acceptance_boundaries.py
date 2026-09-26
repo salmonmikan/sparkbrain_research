@@ -36,6 +36,9 @@ def sample(
         "evaluator",
         "gold",
         "target",
+        "gold_target",
+        "episode_id_v2",
+        "GoldTarget",
     ],
 )
 def test_privileged_observation_channels_are_rejected(privileged_name: str) -> None:
@@ -56,6 +59,9 @@ def test_privileged_observation_channels_are_rejected(privileged_name: str) -> N
         "evaluator",
         "gold",
         "target",
+        "gold_target",
+        "episode_id_v2",
+        "GoldTarget",
     ],
 )
 def test_nested_privileged_metadata_is_rejected(privileged_name: str) -> None:
@@ -96,8 +102,12 @@ def test_max_hypotheses_accepts_exact_boundary_and_fails_closed_on_overflow() ->
 
     assert len(pilot.inspect()["hypotheses"]) == 16
     pilot.observe(sample(17))
+    pending_before = pilot.inspect()
+    state_hash_before = pilot.state_hash()
     with pytest.raises(RuntimeError, match="max_hypotheses"):
         pilot.feedback(16.0)
+    assert pilot.inspect() == pending_before
+    assert pilot.state_hash() == state_hash_before
     assert len(pilot.inspect()["hypotheses"]) == 16
 
 

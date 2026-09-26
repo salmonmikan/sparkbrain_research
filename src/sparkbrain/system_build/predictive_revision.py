@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
@@ -66,13 +67,21 @@ def _finite(value: object, *, name: str) -> float:
 
 
 def _normalised_name(value: object) -> str:
-    return str(value).strip().lower().replace("-", "_")
+    raw = str(value).strip()
+    raw = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", "_", raw)
+    return re.sub(r"[^a-zA-Z0-9]+", "_", raw).strip("_").lower()
+
+
+def _contains_privileged_name(value: object) -> bool:
+    normalised = _normalised_name(value)
+    padded = f"_{normalised}_"
+    return any(f"_{name}_" in padded for name in _FORBIDDEN_CONTEXT_NAMES)
 
 
 def _reject_privileged_names(value: object, *, path: str) -> None:
     if isinstance(value, dict):
         for key, child in value.items():
-            if _normalised_name(key) in _FORBIDDEN_CONTEXT_NAMES:
+            if _contains_privileged_name(key):
                 raise ValueError(f"privileged build input is forbidden at {path}.{key}")
             _reject_privileged_names(child, path=f"{path}.{key}")
     elif isinstance(value, (list, tuple)):
@@ -210,7 +219,7 @@ class PredictiveRevisionPilot:
         if len(channels) > self.config.max_context_scalars:
             raise ValueError("observation exceeds max_context_scalars")
         for channel in channels:
-            if _normalised_name(channel) in _FORBIDDEN_CONTEXT_NAMES:
+            if _contains_privileged_name(channel):
                 raise ValueError(f"privileged observation channel is forbidden: {channel}")
         if self._context_channels is None:
             self._context_channels = channels
@@ -258,24 +267,23 @@ class PredictiveRevisionPilot:
                 reference_action,
                 reference_state_hash,
             )
-        if len(candidates) > 1:
-            first, second = candidates[:2]
-            prediction_gap = abs(first.prediction - second.prediction)
-            distance_gap = abs(first.context_distance - second.context_distance)
-            if (
-                prediction_gap >= self.config.ambiguity_prediction_gap
-                and distance_gap <= self.config.ambiguity_distance_margin
-            ):
-                return PilotPrediction(
-                    "abstain",
-                    "competing_hypotheses_ambiguous",
-                    None,
-                    None,
-                    candidates,
-                    reference_action,
-                    reference_state_hash,
-                )
         selected = candidates[0]
+        if any(
+            abs(selected.prediction - competitor.prediction)
+            >= self.config.ambiguity_prediction_gap
+            and abs(selected.context_distance - competitor.context_distance)
+            <= self.config.ambiguity_distance_margin
+            for competitor in candidates[1:]
+        ):
+            return PilotPrediction(
+                "abstain",
+                "competing_hypotheses_ambiguous",
+                None,
+                None,
+                candidates,
+                reference_action,
+                reference_state_hash,
+            )
         return PilotPrediction(
             "act",
             "nearest_compatible_hypothesis",
@@ -290,6 +298,8 @@ class PredictiveRevisionPilot:
         self,
         context: tuple[float, ...],
         outcome: float,
+        *,
+        revision_step: int,
     ) -> PredictiveHypothesis:
         if len(self._states) >= self.config.max_hypotheses:
             raise RuntimeError("max_hypotheses reached; BUILD-SB-001 does not evict silently")
@@ -301,7 +311,7 @@ class PredictiveRevisionPilot:
             context_mean=context,
             outcome_mean=outcome,
             count=1,
-            last_used_step=self._revision_step,
+            last_used_step=revision_step,
         )
         self._states.append(state)
         return state
@@ -330,7 +340,7 @@ class PredictiveRevisionPilot:
             raise RuntimeError("feedback requires a pending observation")
         resolved_outcome = _finite(outcome, name="outcome")
         context = self._pending_context
-        self._revision_step += 1
+        next_revision_step = self._revision_step + 1
         before = {state.state_id: state.as_dict() for state in self._states}
         compatible: list[tuple[float, float, PredictiveHypothesis]] = []
         for state in self._states:
@@ -339,7 +349,11 @@ class PredictiveRevisionPilot:
                 compatible.append((abs(resolved_outcome - state.outcome_mean), distance, state))
 
         if not compatible:
-            state = self._create_state(context, resolved_outcome)
+            state = self._create_state(
+                context,
+                resolved_outcome,
+                revision_step=next_revision_step,
+            )
             action = "create"
             error = 0.0
             distance = 0.0
@@ -359,13 +373,18 @@ class PredictiveRevisionPilot:
                     state,
                     context,
                     resolved_outcome,
-                    revision_step=self._revision_step,
+                    revision_step=next_revision_step,
                 )
             else:
-                state = self._create_state(context, resolved_outcome)
+                state = self._create_state(
+                    context,
+                    resolved_outcome,
+                    revision_step=next_revision_step,
+                )
                 action = "split"
                 distance = 0.0
 
+        self._revision_step = next_revision_step
         self._active_state_id = state.state_id
         self._pending_context = None
         self._pending_sample_id = None
