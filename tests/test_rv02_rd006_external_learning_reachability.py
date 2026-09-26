@@ -4,8 +4,11 @@ from sparkbrain.research.rv02_rd006_external_learning_reachability import (
     ARMS,
     FAMILIES,
     RD006Config,
+    build_initial_field,
     development_worlds,
+    run_arm,
     run_cell,
+    training_schedule,
 )
 
 
@@ -28,6 +31,7 @@ def test_paired_arms_isolate_ordinary_external_learning() -> None:
         "same_schedule": True,
         "same_initial_state": True,
         "same_measurement_clocks": True,
+        "identical_requested_measurement_clocks": True,
         "only_factor": "ordinary_external_learning_on_vs_off",
     }
     off = cell["arms"]["external_learning_off"]
@@ -54,3 +58,21 @@ def test_all_measurement_clocks_retain_raw_activity() -> None:
     for arm in cell["arms"].values():
         assert len(arm["inspected_clocks"]) == cell["schedule_event_count"]
         assert all("raw_spikes" in row for row in arm["inspected_clocks"])
+
+
+def test_bounded_explosion_is_a_diagnostic_not_a_capability_negative() -> None:
+    config = RD006Config()
+    world = development_worlds(config)[0]
+    initial_state = build_initial_field(config, world).state_dict()
+    initial_state["config"]["max_events_per_run"] = 1
+    result = run_arm(
+        initial_state,
+        training_schedule(world),
+        arm="external_learning_off",
+        config=config,
+    )
+    assert result["status"] in {
+        "D0_EXPLOSION_BOUNDED",
+        "D0_REACHABLE_WITH_BOUNDED_EXPLOSION",
+    }
+    assert result["bounded_failure"]["error"] == "max_events_per_run exceeded"

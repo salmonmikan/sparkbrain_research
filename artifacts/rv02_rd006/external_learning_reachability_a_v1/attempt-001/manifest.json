@@ -1,0 +1,9 @@
+{
+  "artifact_path": "artifact.json",
+  "capability_scoring": false,
+  "formal_execution": false,
+  "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
+  "protocol_id": "rv02-rd006-external-learning-reachability-a-v1",
+  "source_git_sha": "1a9779c5f0e72f9f4f1cac08442256f351e83cd4",
+  "status": "STARTED"
+}

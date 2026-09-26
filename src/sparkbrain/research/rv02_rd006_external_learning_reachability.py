@@ -509,10 +509,30 @@ def run_arm(
     initial_connection_sha256 = digest(connection_rows(field))
     clocks: list[dict[str, Any]] = []
     updates: list[dict[str, Any]] = []
+    bounded_failure: dict[str, Any] | None = None
 
     for row in schedule:
         time_ms = float(row["time_ms"])
-        spikes = field.run_until(time_ms)
+        try:
+            spikes = field.run_until(time_ms)
+        except RuntimeError as exc:
+            if str(exc) not in {
+                "max_events_per_run exceeded",
+                "max_spikes_per_run exceeded",
+            }:
+                raise
+            bounded_failure = {
+                "error_class": type(exc).__name__,
+                "error": str(exc),
+                "return_event_id": row["event_id"],
+                "return_time_ms": time_ms,
+                "return_unit_id": row["unit_id"],
+                "last_run_arrivals": field.last_run_arrivals,
+                "last_run_spikes": field.last_run_spikes,
+                "total_arrivals": field.total_arrivals,
+                "total_spikes": field.total_spikes,
+            }
+            break
         eligible = eligible_hidden_sources(
             field,
             spikes,
@@ -574,6 +594,9 @@ def run_arm(
         "hidden_return_update_count": 0,
         "ordinary_updates": updates,
         "inspected_clocks": clocks,
+        "planned_clock_count": len(schedule),
+        "inspected_clock_count": len(clocks),
+        "bounded_failure": bounded_failure,
         "hidden_spike_count": sum(len(clock["hidden_spikes"]) for clock in clocks),
         "distinct_hidden_source_count": len(
             {
@@ -584,7 +607,15 @@ def run_arm(
         ),
         "maximum_eligible_hidden_sources_at_return": maximum_eligible,
         "selected_reachable_clock": selected,
-        "status": "D0_REACHABLE" if selected is not None else "D0_UNREACHABLE",
+        "status": (
+            "D0_REACHABLE_WITH_BOUNDED_EXPLOSION"
+            if selected is not None and bounded_failure is not None
+            else "D0_REACHABLE"
+            if selected is not None
+            else "D0_EXPLOSION_BOUNDED"
+            if bounded_failure is not None
+            else "D0_UNREACHABLE"
+        ),
     }
 
 
@@ -602,7 +633,16 @@ def run_cell(config: RD006Config, world: dict[str, Any]) -> dict[str, Any]:
     }
     if len({result["initial_connection_sha256"] for result in arms.values()}) != 1:
         raise RuntimeError("paired arms do not share identical initial connections")
-    ready_arms = tuple(arm for arm in ARMS if arms[arm]["status"] == "D0_REACHABLE")
+    ready_arms = tuple(
+        arm for arm in ARMS if arms[arm]["status"].startswith("D0_REACHABLE")
+    )
+    bounded_arms = tuple(
+        arm for arm in ARMS if arms[arm]["bounded_failure"] is not None
+    )
+    measured_clock_ids = {
+        arm: tuple(row["return_event_id"] for row in arms[arm]["inspected_clocks"])
+        for arm in ARMS
+    }
     return {
         "cell_id": f"rv02-rd006-{world['family']}-scale-1",
         "family": world["family"],
@@ -618,12 +658,20 @@ def run_cell(config: RD006Config, world: dict[str, Any]) -> dict[str, Any]:
             "same_topology": True,
             "same_schedule": True,
             "same_initial_state": True,
-            "same_measurement_clocks": True,
+            "same_measurement_clocks": len(set(measured_clock_ids.values())) == 1,
+            "identical_requested_measurement_clocks": True,
             "only_factor": "ordinary_external_learning_on_vs_off",
         },
         "arms": arms,
         "ready_arms": ready_arms,
-        "status": "D0_REACHABLE" if ready_arms else "D0_UNREACHABLE",
+        "bounded_arms": bounded_arms,
+        "status": (
+            "D0_REACHABLE"
+            if ready_arms
+            else "D0_INCONCLUSIVE_BOUNDED_EXPLOSION"
+            if bounded_arms
+            else "D0_UNREACHABLE"
+        ),
     }
 
 
@@ -632,6 +680,11 @@ def run_matrix(source_git_sha: str) -> dict[str, Any]:
     config = RD006Config()
     cells = tuple(run_cell(config, world) for world in development_worlds(config))
     ready_cells = tuple(cell["cell_id"] for cell in cells if cell["status"] == "D0_REACHABLE")
+    bounded_cells = tuple(
+        cell["cell_id"]
+        for cell in cells
+        if cell["status"] == "D0_INCONCLUSIVE_BOUNDED_EXPLOSION"
+    )
     artifact = {
         "schema_version": 1,
         "object_id": OBJECT_ID,
@@ -653,8 +706,15 @@ def run_matrix(source_git_sha: str) -> dict[str, Any]:
         },
         "cells": cells,
         "ready_cell_ids": ready_cells,
+        "bounded_explosion_cell_ids": bounded_cells,
         "matrix_status": (
-            "D0_MECHANISM_SURFACE_EVALUABLE" if ready_cells else "D0_ZERO_REACHABLE_STOP"
+            "D0_MECHANISM_SURFACE_EVALUABLE_WITH_BOUNDED_EXPLOSIONS"
+            if ready_cells and bounded_cells
+            else "D0_MECHANISM_SURFACE_EVALUABLE"
+            if ready_cells
+            else "D0_INCONCLUSIVE_BOUNDED_EXPLOSION"
+            if bounded_cells
+            else "D0_ZERO_REACHABLE_STOP"
         ),
         "later_e0_e1_es_authorized": False,
         "scale_expansion_authorized": False,

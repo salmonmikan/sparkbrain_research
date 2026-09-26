@@ -36,7 +36,20 @@ def main() -> int:
         json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
-    artifact = run_matrix(args.source_git_sha)
+    try:
+        artifact = run_matrix(args.source_git_sha)
+    except Exception as exc:
+        failed = {
+            **manifest,
+            "status": "FAILED_INCOMPLETE",
+            "error_class": type(exc).__name__,
+            "error": str(exc),
+        }
+        manifest_path.write_text(
+            json.dumps(failed, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
+        raise
     encoded = (
         json.dumps(artifact, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     ).encode("utf-8")
