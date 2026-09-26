@@ -1,0 +1,276 @@
+name: Persist Evidence Analyst state
+
+on:
+  push:
+    branches:
+      - ops/evidence-persistence-requests
+    paths:
+      - "ops/persistence_requests/evidence-analyst/*.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sparkbrain-evidence-analyst-persistence
+  cancel-in-progress: false
+
+jobs:
+  persist:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out persistence request
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate append-only request
+        id: request
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          before="${{ github.event.before }}"
+          after="${{ github.sha }}"
+
+          mapfile -t added_requests < <(
+            git diff --diff-filter=A --name-only "$before" "$after" |
+              grep -E '^ops/persistence_requests/evidence-analyst/[^/]+\.json$' || true
+          )
+
+          if [ "${#added_requests[@]}" -ne 1 ]; then
+            echo "::error::Exactly one new Evidence Analyst persistence request must be added per push."
+            printf 'Observed request paths:\n%s\n' "${added_requests[*]:-<none>}"
+            exit 1
+          fi
+
+          request_path="${added_requests[0]}"
+          cp "$request_path" /tmp/request.json
+
+          REQUEST_PATH="$request_path" GITHUB_OUTPUT="$GITHUB_OUTPUT" python - <<'PY'
+          import hashlib
+          import json
+          import os
+          import re
+          from pathlib import Path
+
+          request_path = os.environ["REQUEST_PATH"]
+          raw = Path("/tmp/request.json").read_bytes()
+          try:
+              request = json.loads(raw)
+          except json.JSONDecodeError as exc:
+              raise SystemExit(f"invalid JSON request: {exc}")
+
+          required = {
+              "schema_version",
+              "request_id",
+              "role",
+              "persistence_only",
+              "target_branch",
+              "expected_target_head",
+              "generation",
+              "history_path",
+              "history_content",
+              "latest_content",
+              "state_content",
+          }
+          missing = sorted(required - request.keys())
+          if missing:
+              raise SystemExit(f"missing required request fields: {missing}")
+
+          if request["schema_version"] != 1:
+              raise SystemExit("schema_version must be 1")
+          if request["role"] != "EVIDENCE_ANALYST":
+              raise SystemExit("role must be EVIDENCE_ANALYST")
+          if request["persistence_only"] is not True:
+              raise SystemExit("persistence_only must be true")
+          if request["target_branch"] != "ops/evidence-analyst-handoff":
+              raise SystemExit("target_branch is not allowed")
+          if not re.fullmatch(r"[0-9a-f]{40}", request["expected_target_head"]):
+              raise SystemExit("expected_target_head must be a lowercase 40-character SHA")
+          if not re.fullmatch(r"R[0-9]+", request["generation"]):
+              raise SystemExit("generation must match R<number>")
+          if not re.fullmatch(r"[A-Za-z0-9._-]{1,120}", request["request_id"]):
+              raise SystemExit("request_id contains unsupported characters")
+
+          expected_path = (
+              "ops/persistence_requests/evidence-analyst/"
+              + request["request_id"]
+              + ".json"
+          )
+          if request_path != expected_path:
+              raise SystemExit(
+                  f"request_id/path mismatch: expected {expected_path}, got {request_path}"
+              )
+
+          history_path = request["history_path"]
+          if not isinstance(history_path, str) or not re.fullmatch(
+              r"analysis/orchestrator/history/[0-9]{4}-[0-9]{2}-[0-9]{2}/[^/]+\.md",
+              history_path,
+          ):
+              raise SystemExit("history_path is outside the allowed append-only namespace")
+
+          for key in ("history_content", "latest_content", "state_content"):
+              if not isinstance(request[key], str) or not request[key]:
+                  raise SystemExit(f"{key} must be a non-empty string")
+
+          try:
+              state_obj = json.loads(request["state_content"])
+          except json.JSONDecodeError as exc:
+              raise SystemExit(f"state_content must itself be valid JSON: {exc}")
+          if not isinstance(state_obj, dict):
+              raise SystemExit("state_content must decode to a JSON object")
+
+          payload_dir = Path("/tmp/evidence-persistence")
+          payload_dir.mkdir(parents=True, exist_ok=True)
+          (payload_dir / "history.md").write_text(request["history_content"], encoding="utf-8")
+          (payload_dir / "latest.md").write_text(request["latest_content"], encoding="utf-8")
+          (payload_dir / "state.json").write_text(request["state_content"], encoding="utf-8")
+
+          request_sha256 = hashlib.sha256(raw).hexdigest()
+          receipt_path = (
+              "analysis/orchestrator/persistence_receipts/"
+              + request["request_id"]
+              + ".json"
+          )
+
+          outputs = {
+              "request_path": request_path,
+              "request_id": request["request_id"],
+              "request_sha256": request_sha256,
+              "generation": request["generation"],
+              "target_branch": request["target_branch"],
+              "expected_target_head": request["expected_target_head"],
+              "history_path": history_path,
+              "receipt_path": receipt_path,
+          }
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as fh:
+              for key, value in outputs.items():
+                  fh.write(f"{key}={value}\n")
+          PY
+
+      - name: Persist history, latest, state, and receipt in one commit
+        id: persist
+        env:
+          REQUEST_PATH: ${{ steps.request.outputs.request_path }}
+          REQUEST_ID: ${{ steps.request.outputs.request_id }}
+          REQUEST_SHA256: ${{ steps.request.outputs.request_sha256 }}
+          GENERATION: ${{ steps.request.outputs.generation }}
+          TARGET_BRANCH: ${{ steps.request.outputs.target_branch }}
+          EXPECTED_TARGET_HEAD: ${{ steps.request.outputs.expected_target_head }}
+          HISTORY_PATH: ${{ steps.request.outputs.history_path }}
+          RECEIPT_PATH: ${{ steps.request.outputs.receipt_path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git fetch --no-tags origin "refs/heads/${TARGET_BRANCH}:refs/remotes/origin/${TARGET_BRANCH}"
+          observed_head="$(git rev-parse "refs/remotes/origin/${TARGET_BRANCH}")"
+
+          if [ "$observed_head" != "$EXPECTED_TARGET_HEAD" ]; then
+            echo "::error::CAS mismatch: target branch moved from $EXPECTED_TARGET_HEAD to $observed_head."
+            exit 1
+          fi
+
+          if git cat-file -e "${observed_head}:${HISTORY_PATH}" 2>/dev/null; then
+            echo "::error::Append-only history path already exists: ${HISTORY_PATH}"
+            exit 1
+          fi
+
+          if git cat-file -e "${observed_head}:${RECEIPT_PATH}" 2>/dev/null; then
+            echo "::error::Persistence receipt already exists: ${RECEIPT_PATH}"
+            exit 1
+          fi
+
+          git switch --detach "$observed_head"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          mkdir -p "$(dirname "$HISTORY_PATH")"
+          mkdir -p "analysis/orchestrator"
+          mkdir -p "$(dirname "$RECEIPT_PATH")"
+
+          cp /tmp/evidence-persistence/history.md "$HISTORY_PATH"
+          cp /tmp/evidence-persistence/latest.md "analysis/orchestrator/latest.md"
+          cp /tmp/evidence-persistence/state.json "analysis/orchestrator/state.json"
+
+          TARGET_HEAD_BEFORE="$observed_head"           REQUEST_PATH="$REQUEST_PATH"           REQUEST_ID="$REQUEST_ID"           REQUEST_SHA256="$REQUEST_SHA256"           GENERATION="$GENERATION"           RECEIPT_PATH="$RECEIPT_PATH"           python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          receipt = {
+              "schema_version": 1,
+              "role": "EVIDENCE_ANALYST",
+              "generation": os.environ["GENERATION"],
+              "request_id": os.environ["REQUEST_ID"],
+              "request_path": os.environ["REQUEST_PATH"],
+              "request_commit_sha": os.environ["GITHUB_SHA"],
+              "request_sha256": os.environ["REQUEST_SHA256"],
+              "target_branch": "ops/evidence-analyst-handoff",
+              "target_head_before": os.environ["TARGET_HEAD_BEFORE"],
+              "result_commit_binding": "CONTAINING_COMMIT",
+              "workflow_run_id": os.environ["GITHUB_RUN_ID"],
+              "workflow_run_attempt": int(os.environ["GITHUB_RUN_ATTEMPT"]),
+              "persistence_complete": True,
+              "scientific_execution": False,
+              "note": "This receipt records persistence only; it is not scientific evidence or scientific authority by itself.",
+          }
+          Path(os.environ["RECEIPT_PATH"]).write_text(
+              json.dumps(receipt, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+          git add -- "$HISTORY_PATH"             "analysis/orchestrator/latest.md"             "analysis/orchestrator/state.json"             "$RECEIPT_PATH"
+
+          mapfile -t staged < <(git diff --cached --name-only)
+          if [ "${#staged[@]}" -ne 4 ]; then
+            echo "::error::Unexpected number of staged files: ${#staged[@]}"
+            printf '%s\n' "${staged[@]}"
+            exit 1
+          fi
+
+          git commit -m "persist(evidence-analyst): ${GENERATION} via ${REQUEST_ID}"
+          new_head="$(git rev-parse HEAD)"
+
+          # Deliberately no --force. Concurrent target-branch movement must make this fail closed.
+          git push origin "HEAD:refs/heads/${TARGET_BRANCH}"
+
+          git fetch --no-tags origin "refs/heads/${TARGET_BRANCH}:refs/remotes/origin/${TARGET_BRANCH}"
+          remote_head="$(git rev-parse "refs/remotes/origin/${TARGET_BRANCH}")"
+          if [ "$remote_head" != "$new_head" ]; then
+            echo "::error::Readback head mismatch: local=$new_head remote=$remote_head"
+            exit 1
+          fi
+
+          verify_same() {
+            local path="$1"
+            local local_hash remote_hash
+            local_hash="$(sha256sum "$path" | awk '{print $1}')"
+            remote_hash="$(git show "${remote_head}:${path}" | sha256sum | awk '{print $1}')"
+            if [ "$local_hash" != "$remote_hash" ]; then
+              echo "::error::Readback content mismatch for $path"
+              exit 1
+            fi
+          }
+
+          verify_same "$HISTORY_PATH"
+          verify_same "analysis/orchestrator/latest.md"
+          verify_same "analysis/orchestrator/state.json"
+          verify_same "$RECEIPT_PATH"
+
+          {
+            echo "## Evidence Analyst persistence complete"
+            echo
+            echo "- request: \`$REQUEST_PATH\`"
+            echo "- request SHA-256: \`$REQUEST_SHA256\`"
+            echo "- generation: \`$GENERATION\`"
+            echo "- target head before: \`$observed_head\`"
+            echo "- target head after: \`$new_head\`"
+            echo "- history: \`$HISTORY_PATH\`"
+            echo "- receipt: \`$RECEIPT_PATH\`"
+            echo
+            echo "History/latest/state/receipt were committed together and independently read back."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+          echo "new_head=$new_head" >> "$GITHUB_OUTPUT"
