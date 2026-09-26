@@ -1,0 +1,14 @@
+{
+  "diagnostic_id": "P0-PAYLOAD-BISECT-D-20260926T1150+0900",
+  "category": "RECOVERY_AUTHORITY_DESCRIPTION_ONLY",
+  "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
+  "recovery_policy": {
+    "canary_authorized": true,
+    "blue_green_replacement_authorized": true,
+    "control_self_replacement_allowed": false,
+    "old_workers_kept_disabled_for_rollback": true,
+    "production_rollout_requires_validated_canary": true
+  },
+  "scientific_action": false,
+  "scheduler_action": false
+}
