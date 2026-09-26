@@ -192,7 +192,7 @@ class HypothesisRevisionOverlay:
         }
 
     @classmethod
-    def from_state_dict(cls, state: dict[str, Any]) -> "HypothesisRevisionOverlay":
+    def from_state_dict(cls, state: dict[str, Any]) -> HypothesisRevisionOverlay:
         overlay = cls(RevisionOverlayConfig(**state["config"]))
         overlay.events = [EvidenceUpdate(**row) for row in state.get("events", [])]
         return overlay
