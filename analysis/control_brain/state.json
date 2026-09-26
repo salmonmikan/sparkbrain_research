@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260927T055000+0900-R87-P0-LATER-WINDOW-RECONCILED",
-  "produced_at": "2026-09-27T05:50:00+09:00",
+  "generation_id": "CTRL-20260927T065000+0900-R88-P0-FORGE-HANDOFF-RECONCILED",
+  "produced_at": "2026-09-27T06:50:00+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
   "mode": "CONTROL_BRAIN",
   "policy_refs": {
@@ -11,17 +11,18 @@
   "human_directives": {
     "HUMAN-20260925-002": "ACCEPT_ACTIVE_OPEN_P0",
     "HUMAN-20260926-003": "ACCEPT_ACTIVE_ACCELERATED_RECOVERY",
+    "HUMAN-20260926-004": "ACCEPT_ACTIVE_REVIEW_OPTIONAL",
     "HUMAN-20260927-001": "ACCEPT_WITH_MODIFICATION_BOUND_AS_FRESH_RV02_RD006",
     "HUMAN-20260927-002": "ACCEPT_ACTIVE_FIVE_TOTAL_ATTEMPTS"
   },
   "refs_observed": {
-    "control": "854c507c777218af77946398270c057d988411e4",
-    "evidence_analyst": "045d26dd19905daf4b040e289a26af5195ba3aa2",
+    "control": "edf5a05a6c4a578584e67d4c3f739a965d76548e",
+    "evidence_analyst": "066eff35eaa8f10b130907701bd8b553f2406426",
     "main_reports": "c1b091cf3c51dab38f6855e3d252b58feac0784c",
     "methodology": "4c3483754ad9db5120b4414743a757a02d5c5aa8",
-    "external_science": "640200451b9b18d0e12249786ba92649b6f2cb22",
+    "external_science_literature": "3d766142d9b967b22c5d364d599e35aa5b064d65",
     "utility": "c4ef0f130e26be72e1ffcc31c2675b2feaf6fc02",
-    "forge_internal_scope": "a31c727d0f41fe5f788d1fa6b1aef11e175a9334"
+    "forge_confirmation_guard": "0b3f8a5e074b346ef18b10ddf3c0893ba6996043"
   },
   "science": {
     "canonical": 35,
@@ -52,58 +53,121 @@
     "scientific_credit": 0
   },
   "forge": {
-    "prior_durable_generation": "FORGE-20260927T043947+0900-STABLE-SCOPE-LIFECYCLE-CI-CLEAN",
-    "new_branch": "forge/20260927-internal-scope-allocator-a",
-    "new_head": "a31c727d0f41fe5f788d1fa6b1aef11e175a9334",
-    "ci_run": 36270938359,
+    "generation_id": "FORGE-20260927T064227+0900-INTERNAL-SCOPE-CONFIRMATION-CI-CLEAN",
+    "branch": "forge/20260927-internal-scope-confirmation-guard-a",
+    "handoff_commit": "0b3f8a5e074b346ef18b10ddf3c0893ba6996043",
+    "exact_head": "aac3c657a2b941b6971f0161e8132f1905a91a6c",
+    "ci_run": 36273702567,
     "ci_result": "SUCCESS",
-    "status": "DURABLE_CODE_PENDING_FORGE_OWNED_POINTER_RECONCILIATION",
-    "ordinary_reduction": "NEAREST_CENTROID_PLUS_CHANGE_THRESHOLD_CACHE_SCOPE_ALLOCATION",
-    "evidentiary_status": "NON_EVIDENTIARY",
+    "prior_pointer_debt_resolved": true,
+    "status": "FORGE_INTERESTING_SYSTEM_BUILD_INPUT",
+    "ordinary_reduction": "TEMPORAL_DEBOUNCE_PERSISTENCE_CONFIRMATION_FOR_THRESHOLD_CACHE_NAMESPACE",
+    "admitted_to_sb001": false,
+    "admitted_to_rv02": false,
+    "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
     "scientific_credit": 0
   },
   "durability": {
     "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
-    "status": "OPEN_P0",
+    "status": "OPEN_P0_RECOVERY_OBSERVATION_WINDOW",
     "repository_wide_write_outage_supported": false,
     "root_cause_proven": false,
-    "evidence_analyst_r142": {
-      "target_head": "045d26dd19905daf4b040e289a26af5195ba3aa2",
-      "request_id": "EA-R142-20260927T0501JST",
-      "workflow_run": 36268605364,
+    "bounded_failure_class": "INTERMITTENT_OR_RUNTIME_ACTION_CONTEXT_SELECTIVE_MUTATION_REFUSAL_PLUS_MOVING_POINTER_DEBT",
+    "durable_success_paths": [
+      "EVIDENCE_ANALYST_ACTIONS_BRIDGE",
+      "MAIN",
+      "UTILITY_LATER_WINDOW",
+      "METHODOLOGY",
+      "CONTROL",
+      "FORGE_INTERNAL_SCOPE",
+      "FORGE_CONFIRMATION_GUARD"
+    ],
+    "evidence_analyst_r143": {
+      "target_head": "066eff35eaa8f10b130907701bd8b553f2406426",
+      "request_id": "EA-R143-20260927T0558JST",
+      "workflow_run": 36271781017,
       "persistence_complete": true,
       "readback_verified": true
-    },
-    "utility_later_window": {
-      "generation": "UTILITY-20260927T052236+0900-P0-DURABILITY-WINDOW-RECON",
-      "target_head": "c4ef0f130e26be72e1ffcc31c2675b2feaf6fc02",
-      "prior_pair_later_window_minutes_minimum": 105,
-      "atomic_pair": true,
-      "failure_observed": false,
-      "scope": "UTILITY_OWNED_PATH_ONLY"
     },
     "theory_pointer_debt": {
       "latest": "R6",
       "state": "R5",
-      "authority_rule": "R6_APPEND_ONLY_HISTORY_AND_LATEST_PRIMARY"
+      "authority_rule": "R6_APPEND_ONLY_HISTORY_AND_LATEST_PRIMARY",
+      "repair_owner": "EXTERNAL_SCIENCE_THEORY_SLOT"
     },
     "forge_pointer_debt": {
-      "branch_ci": "SUCCESS",
-      "latest_state_reflects_new_head": false,
-      "repair_owner": "FAST_FORGE"
+      "resolved": true,
+      "latest_state_generation": "FORGE-20260927T064227+0900-INTERNAL-SCOPE-CONFIRMATION-CI-CLEAN"
     },
-    "p0_close_ready": false
+    "p0_close_ready": false,
+    "close_conditions": [
+      "THEORY_R6_STATE_CACHE_RECONCILED_WITHOUT_SCIENTIFIC_CHANGE",
+      "NO_REPEAT_OF_SAME_FAILURE_PATTERN_ACROSS_SUBSEQUENT_RELATED_RUNS"
+    ]
   },
   "fleet": {
-    "control": {"desired": "ENABLED", "actual": "ENABLED", "operational": "RUNNING", "scheduler_id": "6ab7928fe07481919903adc57b596dfd"},
-    "evidence_analyst": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE", "scheduler_id": "6ab792ba724c81919be1cd071ab045ba"},
-    "main": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE_NO_NEW_DURABLE_GENERATION_OBSERVED", "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b"},
-    "relay": {"desired": "DISABLED", "actual": "DISABLED", "operational": "DEPENDENCY_WAIT_SUSPENDED", "scheduler_id": "6ab792fe98488191af93e6ff0facc7b5", "restart_conditions": "READY_FOR_RELAY_OR_EXPLICIT_SAFE_HANDOFF", "restart_owner": "CONTROL_BRAIN"},
-    "utility": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE", "scheduler_id": "6ab7931c1cdc8191a8d8a8b344f22d60"},
-    "fast_forge": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE_POINTER_RECONCILIATION_DUE", "scheduler_id": "6ab7933b1aa081919594564ce879fdc6"},
-    "methodology": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE", "scheduler_id": "6ab793cce5e8819191eaec8ebbb47466"},
-    "external_science": {"desired": "ENABLED", "actual": "ENABLED", "operational": "YELLOW_POINTER_DEBT", "scheduler_id": "6ab793ac05048191a9f30ff6460169c5"},
-    "current_state_brief": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE_READ_ONLY", "scheduler_id": "6ab793fb62dc819184e3660fdaac0485"}
+    "control": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "RUNNING",
+      "scheduler_id": "6ab7928fe07481919903adc57b596dfd"
+    },
+    "evidence_analyst": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "GREEN_ACTIVE",
+      "scheduler_id": "6ab792ba724c81919be1cd071ab045ba"
+    },
+    "main": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "GREEN_ACTIVE_RD006_ALLOCATION_PENDING_DURABLE_PROGRESS",
+      "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b"
+    },
+    "relay": {
+      "desired": "DISABLED",
+      "actual": "DISABLED",
+      "operational": "DEPENDENCY_WAIT_SUSPENDED",
+      "scheduler_id": "6ab792fe98488191af93e6ff0facc7b5",
+      "restart_conditions": "READY_FOR_RELAY_OR_EXPLICIT_SAFE_HANDOFF",
+      "restart_owner": "CONTROL_BRAIN"
+    },
+    "utility": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "GREEN_ACTIVE",
+      "scheduler_id": "6ab7931c1cdc8191a8d8a8b344f22d60"
+    },
+    "fast_forge": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "GREEN_ACTIVE_POINTER_RECONCILED",
+      "scheduler_id": "6ab7933b1aa081919594564ce879fdc6"
+    },
+    "methodology": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "GREEN_ACTIVE",
+      "scheduler_id": "6ab793cce5e8819191eaec8ebbb47466"
+    },
+    "external_science": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "YELLOW_THEORY_POINTER_DEBT",
+      "scheduler_id": "6ab793ac05048191a9f30ff6460169c5"
+    },
+    "current_state_brief": {
+      "desired": "ENABLED",
+      "actual": "ENABLED",
+      "operational": "GREEN_ACTIVE_READ_ONLY",
+      "scheduler_id": "6ab793fb62dc819184e3660fdaac0485"
+    }
+  },
+  "scheduler_health": {
+    "classification": "YELLOW_OBSERVE",
+    "queue_delay": "BOUNDED_RECENT_RUNS_COMPLETE",
+    "unexplained_current_production_off": false,
+    "change_required": false
   },
   "blue_green": {
     "current_fleet": "GREEN_PRODUCTION",
@@ -112,7 +176,7 @@
   },
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "branch_head_before": "854c507c777218af77946398270c057d988411e4",
+    "branch_head_before": "edf5a05a6c4a578584e67d4c3f739a965d76548e",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
     "persistence_complete": "REQUIRES_POST_COMMIT_READBACK"
@@ -126,5 +190,5 @@
     "consumed_formal_rerun_retune_rescore": false,
     "scheduler_changed": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-27/0550-R87.md"
+  "history_path": "analysis/control_brain/history/2026-09-27/0650-R88.md"
 }
