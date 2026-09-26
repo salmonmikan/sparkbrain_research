@@ -1289,3 +1289,12 @@ feedback may re-enter only as truth-free sensory/evidence and must reject evalua
 repair C15's unsupported residual advantage, promote C16 candidates or C17 organs, or unblock C19.
 Keeping those boundaries explicit prevents engineering completion from becoming a scientific
 claim upgrade.
+
+## D-SB001-0001 — Keep the predictive-state revision pilot in the non-evidentiary build lane
+
+**Decision (2026-09-26):** Register BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT as SYSTEM_BUILD engineering work rather than a scientific candidate. The build may reuse the accepted IntegratedV032Brain engineering facade and an explicit predictive-state/reference-memory mechanism, preserving Forge provenance with zero inherited scientific credit. The public pilot must preserve explicit abstention, selective later-evidence revision, inspectability, checkpoint/replay, privileged-input rejection, and fail-closed resource boundaries.
+
+Integration review and CI may repair implementation or documentation defects on the build branch. Those repairs do not reopen terminal candidates, alter consumed FORMAL identities, or create scientific evidence. Successful integration is only engineering evidence that the bounded loop can be built and functionally exercised. Claims about composition contribution, superiority to an established alternative, or scientific novelty require a fresh prospective scientific contract.
+
+**Reason:** Component reduction and scientific closure do not prevent legitimate engineering reuse, but allowing build observations to inherit scientific credit would collapse the separation between component function, system construction, causal contribution, and novelty.
+

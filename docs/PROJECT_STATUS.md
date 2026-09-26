@@ -454,3 +454,12 @@ network-blocked official run evaluated all 1,744 Belief-R pairs without test fit
 tuning. Spark BU/BM/BREU were 0.0391/0.0896/0.0643, below direct and chance BREU 0.25. The C05
 external feature path maps unseen categorical tokens to UNK, parameter/compute matching is
 false, and evidence attribution is unavailable. Gate P3 and CL-007 therefore remain unmet.
+
+## 9. SYSTEM_BUILD — BUILD-SB-001 predictive-state revision pilot
+
+BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT is a non-evidentiary integration-development track, separate from the canonical scientific candidate funnel. The public sparkbrain.system_build.PredictiveRevisionPilot surface composes the direct IntegratedV032Brain engineering runtime with an explicit predictive-state bank used as reference memory. It maintains multiple hypotheses, may abstain under ambiguity, accepts later feedback, selectively revises one compatible hypothesis, and checkpoints both the v0.3.2 runtime and explicit build state.
+
+The predictive bank is an established/reference latent-state mechanism and must not be described as emergent field memory. Its Forge design provenance is retained as design input only; Forge and BUILD observations carry zero confirmatory scientific credit. The bounded build is implemented and functionally verified, but it is not comparatively supported, does not establish causal composition contribution, and does not establish scientific novelty.
+
+Integration is tracked through PR #152. Review, CI, and documentation completion are engineering gates only and do not reopen any terminal scientific candidate or change any historical result.
+
