@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260926T185717+0900-R137-SB001-HEAD-REBOUND-PENDING-FRESH-REVIEW-NO-SCIENCE",
-  "generated_at": "2026-09-26T18:57:17+09:00",
+  "generation_id": "EVA-20260926T200150+0900-R138-SB001-WAIT-REVIEW-FORGE-INPUT-NO-SCIENCE",
+  "generated_at": "2026-09-26T20:01:50+09:00",
   "cache_role": "MOVING_CACHE_ONLY",
   "durable_authority": {
-    "history_path": "analysis/orchestrator/history/2026-09-26/1857-R137.md",
+    "history_path": "analysis/orchestrator/history/2026-09-26/2001-R138.md",
     "complete": true
   },
   "new_scientific_result": false,
@@ -39,21 +39,14 @@
     "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
     "target_capability": "bounded persistent predictive-state revision loop",
     "branch": "system-build/sb001-predictive-state-revision-pilot-20260925",
-    "prior_accepted_head": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
     "exact_head": "e9b93456a0c37e2d1393463c167912e0e3968817",
     "base_main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "compare": {
       "ahead": 14,
       "behind": 0
     },
-    "corrective_delta": {
-      "commits": 1,
-      "science_invariant": true,
-      "review_findings_addressed": 3
-    },
     "exact_head_ci": {
       "run_id": 36233791080,
-      "attempt": 1,
       "status": "completed",
       "conclusion": "success"
     },
@@ -64,10 +57,11 @@
       "merged": false
     },
     "review_gate": {
-      "prior_review_head": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
-      "fresh_current_head_review": false,
+      "fresh_current_head_top_level_review": false,
+      "accepted_review_anchor_rule": "TOP_LEVEL_REVIEW_COMMIT_ID_EQUALS_EXACT_PR_HEAD",
+      "inline_comment_original_commit_id_required_for_historical_anchor": true,
       "analyst_head_rebind": "PASS",
-      "integration_authority": "CONDITIONAL_ON_FRESH_CURRENT_HEAD_REVIEW_AND_UNCHANGED_HEAD"
+      "integration_authority": "CONDITIONAL_ON_FRESH_CURRENT_HEAD_TOP_LEVEL_REVIEW_AND_UNCHANGED_HEAD"
     },
     "lifecycle": "BUILD_ACCEPTED_BOUNDED_PENDING_FRESH_REVIEW_INTEGRATION",
     "built": true,
@@ -86,11 +80,15 @@
     "development_phase": "CONSUMED_ONE_WAY"
   },
   "forge": {
-    "assembly_completion": {
-      "branch": "forge/20260926-multi-hypothesis-completion-a",
-      "head": "dfc053332e95563b076f4e5e70b792710f696125",
+    "multi_hypothesis_prediction_pool": {
+      "forge_id": "FORGE-MULTI-HYPOTHESIS-PREDICTION-POOL-A",
+      "branch": "forge/20260926-multi-hypothesis-prediction-pool-a",
+      "head": "07218c80d62f06ba3c5bf43badb77ba38f93fe28",
+      "target_capability": "plural hypotheses maintained/competing -> abstain or select",
+      "ordinary_reduction": "categorical histogram + top-k/beam retention + selective-classification reject option",
       "status": "FORGE_INTERESTING",
       "recommended_handoff": "SYSTEM_BUILD_INPUT",
+      "analyst_disposition": "RETAIN_FUTURE_SYSTEM_BUILD_INPUT_NOT_SB001",
       "admitted_to_sb001": false,
       "scientific_credit": 0
     }
@@ -106,19 +104,28 @@
     "overall": "SLIGHTLY_TOO_PERMISSIVE",
     "hard_formal_floor": "KEEP"
   },
+  "repository_steward": {
+    "generation": "STEWARD-20260926T195000+0900-G22",
+    "separation": "INTACT",
+    "pr152_body_metadata": "STALE_OLD_HEAD_R136_NONAUTHORITATIVE"
+  },
+  "utility": {
+    "generation": "UTILITY-20260926T192601+0900-PR152-REVIEW-ANCHOR-RECONCILE-6E7F2C91",
+    "finding": "INLINE_COMMENT_COMMIT_ID_CAN_BE_REMAPPED_USE_TOP_LEVEL_REVIEW_COMMIT_ID_FOR_EXACT_HEAD_GATE"
+  },
   "p0_incident": {
     "id": "INC-GITHUB-PERSISTENCE-20260925-001",
     "status": "OPEN_P0",
     "repository_wide_write_outage_supported": false,
-    "fresh_thread_relay": "CODE_AND_CONTROL_PLANE_WRITES_PASS_CI_PASS",
-    "fresh_thread_comment_mutation": "PRE_GITHUB_REFUSAL_X2",
+    "principal_boundary": "ACTION_CLASS_OR_AUTOMATION_RUNTIME_MUTATION_CONTEXT_SELECTIVE_REFUSAL",
     "fresh_thread_create_pull_request": "NOT_YET_TESTED_PR152_PREDATES_MIGRATION"
   },
   "allocations": {
     "canonical_science": "STOP_NO_OP",
     "main_system_build": "CONTINUE_PR152_REVIEW_AND_INTEGRATION_ONLY_UNDER_EXACT_HEAD_CONDITIONS",
+    "future_system_build_input": "FORGE-MULTI-HYPOTHESIS-PREDICTION-POOL-A_RETAIN_AFTER_SB001_INTEGRATION",
     "no_feature_mixing": true,
-    "post_integration": "SEPARATE_PROSPECTIVE_COMPOSITION_DEVELOPMENT_CONTRACT_REQUIRED"
+    "post_integration": "SEPARATE_PROSPECTIVE_SYSTEM_BUILD_CONTRACT_REQUIRED"
   },
   "hard_floor": {
     "experiments_dispatched": false,
