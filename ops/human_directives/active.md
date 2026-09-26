@@ -994,6 +994,8 @@ HUMAN-20260925-002を置き換えるのではなく、同Directiveを強化す�
 
 ## Fleet-wide GitHub mutation retry contract
 
+> Retry-count update: HUMAN-20260927-002 supersedes only the three-attempt limits below with five total attempts. All other applicable clauses remain in effect; the old wording is retained for provenance.
+
 GitHubへのwrite / mutationが失敗した場合、関連schedulerは原則として次を適用する。
 
 1. 初回attemptを含め、**同一目的のmutationは合計最大3 attemptまで**許可する。
@@ -1075,3 +1077,15 @@ RV02の開発再開を依頼する。旧RD005 D1の18条件すべてでhidden sp
 消費済みRD005の識別子・証拠・旧判定を保持し、HUMAN-20260922-005に沿った新開発対象として扱う。Control Brainは `ACCEPT / MODIFY / DEFER / REJECT` を独立に判断し、Evidence Analystの対象・比較・担当割当へつなぐ。登録に伴うスケジュール変更や即時実験実行は求めない。
 
 Full directive: [HUMAN-20260927-001](history/2026-09-27/HUMAN-20260927-001-rv02-development-restart.md)
+
+
+## HUMAN-20260927-002 — GitHub書込み・最終公開の試行上限を合計5回へ変更
+
+Human status: `OPEN`  
+Created: `2026-09-27 JST`
+
+ユーザーの明示的指示により、全ての関連SparkBrain schedulerの既存権限内の書込み・永続化・最終公開は、同一目的につき **初回込み合計最大5回（初回1回＋再試行最大4回）** とする。P0 incident外と停止中定義の再開時にも適用し、読取専用roleに新しい書込み権限は与えない。
+
+HUMAN-20260926-003の3回という数値規則のみを置き換える。tool/API/経路を変更しても同一目的のcountをリセットしない。再試行前のfresh head/state取得、idempotence、成功後の独立readback、成功時の早期終了、既存の非再試行条件を維持する。実際の権限・拒否境界を迂回せず、実験回数・科学的integrity・scheduler時刻/頻度/有効状態を変更しない。
+
+Full directive: [HUMAN-20260927-002](history/2026-09-27/HUMAN-20260927-002-publication-five-attempts.md)
