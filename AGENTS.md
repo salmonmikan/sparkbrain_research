@@ -47,6 +47,24 @@ python scripts/validate_bundle.py
 
 Run the smallest relevant test during development and the full local validation sequence before completion.
 
+## Scheduler execution bootstrap
+
+SparkBrain scheduled workers must treat `AGENTS.md@main` as the current repository-wide policy on every run, even when their code or scientific work is on another branch. A main-policy update alone does not authorize merging or rebasing the working branch.
+
+After reading this file, scheduled workers must load:
+- `docs/scheduler/COMMON.md@main`;
+- `docs/scheduler/SCIENTIFIC_INTEGRITY.md@main`;
+- the applicable role file under `docs/scheduler/roles/@main`;
+- `docs/scheduler/ACTIVE_POLICY.md@main`, then only the active Human Directives relevant to the current role/task.
+
+Keep scheduler prompts small. Durable authority and role policy belong in the files above. Procedural details belong in repository skills and should be loaded only when relevant:
+- `$sparkbrain-persistence` for GitHub persistence/publication;
+- `$sparkbrain-system-build` for SYSTEM_BUILD execution/audit;
+- `$sparkbrain-formal-integrity` for one-way FORMAL work;
+- `$sparkbrain-p0-diagnose` for scheduler/GitHub persistence incidents.
+
+Policy is always-on; skills are procedures. A skill never broadens role authority or overrides scientific integrity.
+
 ## Scheduler authorization and safety-boundary handling
 
 SparkBrain scheduled workers operate under user-approved role, scope, and repository boundaries defined by their scheduler prompt and current Human Directives. For GitHub operations already permitted by those boundaries, treat user authorization as already granted; do not invent an additional per-run confirmation requirement or stop solely because interactive confirmation is absent.
