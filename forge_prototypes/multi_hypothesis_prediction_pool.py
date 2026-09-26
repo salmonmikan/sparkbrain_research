@@ -60,7 +60,11 @@ class PredictionPoolSnapshot:
 class MultiHypothesisPredictionPool:
     """Forge-only read-only view over the stable v0.5 predictor histogram."""
 
-    def __init__(\n        self,\n        predictor: AssemblyPredictor,\n        config: PredictionPoolConfig | None = None,\n    ) -> None:
+    def __init__(
+        self,
+        predictor: AssemblyPredictor,
+        config: PredictionPoolConfig | None = None,
+    ) -> None:
         self.predictor = predictor
         self.config = config or PredictionPoolConfig()
 
