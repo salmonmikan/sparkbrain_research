@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260927T045000+0900-R86-P0-CONTROL-PERSISTENCE-RECOVERED",
-  "produced_at": "2026-09-27T04:50:00+09:00",
+  "generation_id": "CTRL-20260927T055000+0900-R87-P0-LATER-WINDOW-RECONCILED",
+  "produced_at": "2026-09-27T05:50:00+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
   "mode": "CONTROL_BRAIN",
   "policy_refs": {
@@ -11,9 +11,17 @@
   "human_directives": {
     "HUMAN-20260925-002": "ACCEPT_ACTIVE_OPEN_P0",
     "HUMAN-20260926-003": "ACCEPT_ACTIVE_ACCELERATED_RECOVERY",
-    "HUMAN-20260926-004": "ACCEPT_ACTIVE_REVIEW_OPTIONAL",
-    "HUMAN-20260927-001": "ACCEPT_WITH_MODIFICATION_ROUTED_TO_ANALYST_FRESH_DEVELOPMENT_ONLY",
+    "HUMAN-20260927-001": "ACCEPT_WITH_MODIFICATION_BOUND_AS_FRESH_RV02_RD006",
     "HUMAN-20260927-002": "ACCEPT_ACTIVE_FIVE_TOTAL_ATTEMPTS"
+  },
+  "refs_observed": {
+    "control": "854c507c777218af77946398270c057d988411e4",
+    "evidence_analyst": "045d26dd19905daf4b040e289a26af5195ba3aa2",
+    "main_reports": "c1b091cf3c51dab38f6855e3d252b58feac0784c",
+    "methodology": "4c3483754ad9db5120b4414743a757a02d5c5aa8",
+    "external_science": "640200451b9b18d0e12249786ba92649b6f2cb22",
+    "utility": "c4ef0f130e26be72e1ffcc31c2675b2feaf6fc02",
+    "forge_internal_scope": "a31c727d0f41fe5f788d1fa6b1aef11e175a9334"
   },
   "science": {
     "canonical": 35,
@@ -24,124 +32,78 @@
     "h7": "CONSUMED_ONE_WAY_INCONCLUSIVE",
     "new_scientific_result": false
   },
+  "development": {
+    "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
+    "phase": "OPEN_DEVELOPMENT",
+    "owner": "MAIN",
+    "allocation": "PREPARE_AND_RUN_RV02_RD006_STAGE_D0_DEVELOPMENT_ONLY",
+    "durable_main_generation_observed": "MAIN-20260927T041727+0900-PRIMARY-R154-SB001-INTEGRATED",
+    "rv02_branch_observed": false,
+    "failure_proven": false,
+    "later_e0_e1_es_authorized": false,
+    "scale_reservoir_authorized": false,
+    "old_rd005_preserved": true
+  },
   "system_build": {
     "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
-    "source_head": "909094a87025b552b96bcac4afb060b91c4f0573",
-    "integration_pr": 152,
     "merge_commit": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "main_generation": "MAIN-20260927T041727+0900-PRIMARY-R154-SB001-INTEGRATED",
     "lifecycle": "INTEGRATED_COMPLETE",
-    "built": true,
-    "functionally_verified_bounded": true,
-    "comparatively_supported": false,
-    "composition_contribution": "NOT_ESTABLISHED",
-    "scientifically_novel": false,
-    "scientific_credit": 0,
-    "evidentiary_status": "NON_EVIDENTIARY_BUILD"
-  },
-  "forge": {
-    "generation_id": "FORGE-20260927T043947+0900-STABLE-SCOPE-LIFECYCLE-CI-CLEAN",
-    "branch_head": "dcd29dcc477d62b4f802b6985f77380a498fb8b1",
-    "exact_head": "49be62ba9ae9d82fd5563e51d69cde865f3b5225",
-    "ci_run": 36266677211,
-    "ci_result": "SUCCESS",
-    "status": "FORGE_INTERESTING",
-    "recommended_handoff": "SYSTEM_BUILD_INPUT",
+    "evidentiary_status": "NON_EVIDENTIARY_BUILD",
     "scientific_credit": 0
   },
-  "rv02": {
-    "directive": "HUMAN-20260927-001",
-    "disposition": "ACCEPT_WITH_MODIFICATION",
-    "execution_authority": "ANALYST_MUST_DEFINE_FRESH_OBJECT",
-    "old_rd005_preserved": true,
-    "immediate_experiment_dispatch": false
+  "forge": {
+    "prior_durable_generation": "FORGE-20260927T043947+0900-STABLE-SCOPE-LIFECYCLE-CI-CLEAN",
+    "new_branch": "forge/20260927-internal-scope-allocator-a",
+    "new_head": "a31c727d0f41fe5f788d1fa6b1aef11e175a9334",
+    "ci_run": 36270938359,
+    "ci_result": "SUCCESS",
+    "status": "DURABLE_CODE_PENDING_FORGE_OWNED_POINTER_RECONCILIATION",
+    "ordinary_reduction": "NEAREST_CENTROID_PLUS_CHANGE_THRESHOLD_CACHE_SCOPE_ALLOCATION",
+    "evidentiary_status": "NON_EVIDENTIARY",
+    "scientific_credit": 0
   },
   "durability": {
     "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
     "status": "OPEN_P0",
     "repository_wide_write_outage_supported": false,
-    "diagnosis": "INTERMITTENT_OR_RUNTIME_ACTION_CONTEXT_SELECTIVE_MUTATION_REFUSAL_PLUS_POINTER_DEBT",
     "root_cause_proven": false,
-    "evidence_analyst_bridge": {
-      "generation": "R140",
-      "workflow_run": 36261794352,
-      "persistence_complete": true
+    "evidence_analyst_r142": {
+      "target_head": "045d26dd19905daf4b040e289a26af5195ba3aa2",
+      "request_id": "EA-R142-20260927T0501JST",
+      "workflow_run": 36268605364,
+      "persistence_complete": true,
+      "readback_verified": true
     },
-    "evidence_analyst_current": "R141_DURABLE",
-    "main": "R154_DURABLE",
-    "utility": "UTILITY-20260927T0320+0900-P0-UTILITY-PERSISTENCE-RETRY_DURABLE",
-    "methodology": "R126_DURABLE",
-    "forge": "CI_CLEAN_GENERATION_DURABLE",
-    "control_r85": {
-      "durable": false,
-      "attempts": 5,
-      "failure_layer": "PLATFORM_PRE_GITHUB_SAFETY_REFUSAL",
-      "manual_packet_replayed": false
+    "utility_later_window": {
+      "generation": "UTILITY-20260927T052236+0900-P0-DURABILITY-WINDOW-RECON",
+      "target_head": "c4ef0f130e26be72e1ffcc31c2675b2feaf6fc02",
+      "prior_pair_later_window_minutes_minimum": 105,
+      "atomic_pair": true,
+      "failure_observed": false,
+      "scope": "UTILITY_OWNED_PATH_ONLY"
     },
     "theory_pointer_debt": {
       "latest": "R6",
       "state": "R5",
-      "authority_rule": "LATEST_AND_APPEND_ONLY_HISTORY_PRIMARY_FOR_THIS_DEBT"
+      "authority_rule": "R6_APPEND_ONLY_HISTORY_AND_LATEST_PRIMARY"
+    },
+    "forge_pointer_debt": {
+      "branch_ci": "SUCCESS",
+      "latest_state_reflects_new_head": false,
+      "repair_owner": "FAST_FORGE"
     },
     "p0_close_ready": false
   },
   "fleet": {
-    "control": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "RUNNING",
-      "scheduler_id": "6ab7928fe07481919903adc57b596dfd"
-    },
-    "evidence_analyst": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE",
-      "scheduler_id": "6ab792ba724c81919be1cd071ab045ba"
-    },
-    "main": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE",
-      "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b"
-    },
-    "relay": {
-      "desired": "DISABLED",
-      "actual": "DISABLED",
-      "operational": "DEPENDENCY_WAIT_SUSPENDED",
-      "scheduler_id": "6ab792fe98488191af93e6ff0facc7b5",
-      "restart_conditions": "READY_FOR_RELAY_OR_EXPLICIT_SAFE_HANDOFF",
-      "restart_owner": "CONTROL_BRAIN"
-    },
-    "utility": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE",
-      "scheduler_id": "6ab7931c1cdc8191a8d8a8b344f22d60"
-    },
-    "fast_forge": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE",
-      "scheduler_id": "6ab7933b1aa081919594564ce879fdc6"
-    },
-    "methodology": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE",
-      "scheduler_id": "6ab793cce5e8819191eaec8ebbb47466"
-    },
-    "external_science": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "YELLOW_POINTER_DEBT",
-      "scheduler_id": "6ab793ac05048191a9f30ff6460169c5"
-    },
-    "current_state_brief": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_READ_ONLY",
-      "scheduler_id": "6ab793fb62dc819184e3660fdaac0485"
-    }
+    "control": {"desired": "ENABLED", "actual": "ENABLED", "operational": "RUNNING", "scheduler_id": "6ab7928fe07481919903adc57b596dfd"},
+    "evidence_analyst": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE", "scheduler_id": "6ab792ba724c81919be1cd071ab045ba"},
+    "main": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE_NO_NEW_DURABLE_GENERATION_OBSERVED", "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b"},
+    "relay": {"desired": "DISABLED", "actual": "DISABLED", "operational": "DEPENDENCY_WAIT_SUSPENDED", "scheduler_id": "6ab792fe98488191af93e6ff0facc7b5", "restart_conditions": "READY_FOR_RELAY_OR_EXPLICIT_SAFE_HANDOFF", "restart_owner": "CONTROL_BRAIN"},
+    "utility": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE", "scheduler_id": "6ab7931c1cdc8191a8d8a8b344f22d60"},
+    "fast_forge": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE_POINTER_RECONCILIATION_DUE", "scheduler_id": "6ab7933b1aa081919594564ce879fdc6"},
+    "methodology": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE", "scheduler_id": "6ab793cce5e8819191eaec8ebbb47466"},
+    "external_science": {"desired": "ENABLED", "actual": "ENABLED", "operational": "YELLOW_POINTER_DEBT", "scheduler_id": "6ab793ac05048191a9f30ff6460169c5"},
+    "current_state_brief": {"desired": "ENABLED", "actual": "ENABLED", "operational": "GREEN_ACTIVE_READ_ONLY", "scheduler_id": "6ab793fb62dc819184e3660fdaac0485"}
   },
   "blue_green": {
     "current_fleet": "GREEN_PRODUCTION",
@@ -150,7 +112,7 @@
   },
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "branch_head_before": "854733fc23fa24bb4bfebb5cbfa4b1a95b8d6647",
+    "branch_head_before": "854c507c777218af77946398270c057d988411e4",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
     "persistence_complete": "REQUIRES_POST_COMMIT_READBACK"
@@ -158,12 +120,11 @@
   "hard_floor": {
     "experiment_dispatched": false,
     "identity_consumed": false,
-    "research_pr_merged_as_science": false,
     "scientific_ref_mutated": false,
     "evidence_ref_mutated": false,
     "terminal_reopened": false,
     "consumed_formal_rerun_retune_rescore": false,
     "scheduler_changed": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-27/0450-R86.md"
+  "history_path": "analysis/control_brain/history/2026-09-27/0550-R87.md"
 }
