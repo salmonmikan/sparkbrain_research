@@ -1,16 +1,18 @@
 # SparkBrain Methodology Calibration Audit — Latest
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260926T161744+0900-R125-8F3C2A71`
-- generated_at: `2026-09-26T16:17:44+09:00`
-- history_path: `analysis/methodology_calibration/history/2026-09-26/1617.md`
-- overall_classification: `SLIGHTLY_TOO_PERMISSIVE`
+- generation_id: `METHCAL-20260926T201857+0900-R126-4B7E2C91`
+- generated_at: `2026-09-26T20:18:57+09:00`
+- history_path: `analysis/methodology_calibration/history/2026-09-26/2018.md`
+- overall_classification: `WELL_CALIBRATED`
 - new_scientific_result: `false`
 
-R124 was read first, then current repository/evidence was independently refreshed. Scientific calibration is unchanged: FORMAL one-way integrity is intact; SB001 remains a bounded NON_EVIDENTIARY_BUILD with zero scientific credit; composition contribution and scientific novelty remain unestablished; no Revisit trigger or fresh scientific successor exists.
+R125 was read first and current state independently refreshed. The prior representational permissiveness defect is resolved: current MAIN R147 types SB001 as SYSTEM_BUILD with build_id and candidate_id=null instead of reusing scientific OPEN_DEVELOPMENT vocabulary.
 
-The current permissiveness risk remains representational and governance-level: durable MAIN R140 still uses scientific `OPEN_DEVELOPMENT` vocabulary for SYSTEM_BUILD, and exact component/interface/state-loop/limitations provenance is not yet one first-class build manifest. Useful reduced components are not being suppressed: delayed-action-credit remains retained as future SYSTEM_BUILD input with zero scientific credit.
+FORMAL one-way integrity remains intact. Canonical science is still 35/35 terminal; H7 remains INCONCLUSIVE / CONSUMED_ONE_WAY. SB001 is built and bounded-functionally verified but remains NON_EVIDENTIARY_BUILD, comparatively unsupported, with composition contribution unestablished and scientific novelty not claimed.
 
-Control R76 keeps the GitHub persistence incident OPEN_P0. A later minimal non-semantic Control ref-update probe succeeded, narrowing the failure boundary away from repository-wide outage but not closing the incident. Append-only complete history remains authoritative; moving latest/state are caches.
+Target capability, component provenance, interfaces/state loop, acceptance tests, resource ceilings, explicit/reference-memory labeling and the no-novelty claim boundary are now recorded across Analyst state and exact-head code/tests. A consolidated machine-readable build manifest is only a CLARIFY recommendation.
+
+Over-reduction risk is LOW; overclaim risk is LOW; PASS remains realistically reachable without weakening standards. P0 remains operationally open and does not change scientific gates.
 
 No new SparkBrain scientific result.

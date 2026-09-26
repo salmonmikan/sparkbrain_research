@@ -1,59 +1,31 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-26T16:17:44+09:00",
+  "timestamp": "2026-09-26T20:18:57+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260926T161744+0900-R125-8F3C2A71",
-    "sequence": 125,
+    "generation_id": "METHCAL-20260926T201857+0900-R126-4B7E2C91",
+    "sequence": 126,
     "material_change": true,
-    "material_change_reason": "P0_MUTATION_BOUNDARY_NARROWED_CONTROL_R76_AND_MINIMAL_REF_PROBE_SCIENCE_UNCHANGED",
-    "supersedes_generation_id": "METHCAL-20260925T221911+0900-R124-C4E18B72",
+    "material_change_reason": "R125_BUILD_NAMESPACE_PERMISSIVENESS_RESOLVED_AND_SB001_CONTRACT_RECORDING_CONFIRMED",
+    "supersedes_generation_id": "METHCAL-20260926T161744+0900-R125-8F3C2A71",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
-    "previous_methodology": {
-      "generation_id": "METHCAL-20260925T221911+0900-R124-C4E18B72",
-      "branch_head": "1376d0f37f736f5f0cacaed759417b2309395545"
-    },
-    "evidence_analyst": {
-      "generation_id": "EVA-20260925T211000+0900-R136-CONTROL75-P0-PERSISTENCE-SB001-NO-SCIENCE",
-      "branch_head": "71c6d5a8e2a8dc4449f68958976f9f0f8a011db9"
-    },
-    "control_brain": {
-      "generation_id": "CTRL-20260926T035000+0900-R76-P0-ATOMIC-PERSISTENCE-BOUNDARY",
-      "branch_head_current": "f1d8b709fa87de900f5d1f62ef90e97757332b4e"
-    },
-    "main": {
-      "generation_id": "MAIN-20260925T191533+0900-PRIMARY-R140-SB001-ACCEPTED-INTEGRATION-WRITE-BLOCKED",
-      "mailbox_head": "9b06473e095ef913021d60051de69d9728be9344"
-    },
-    "external_science": {
-      "branch_head": "fcd9175a672da456e5b16f4799fb234eb7c26d07",
-      "theory": "THEORY_R5_NO_PROPOSAL",
-      "literature": "LIT_R44",
-      "independent_audit": "AUD_R10"
-    }
+    "previous_methodology": "METHCAL-20260926T161744+0900-R125-8F3C2A71@5e1719969dde080f78ff63a175b3b04be687820f",
+    "evidence_analyst": "EVA-20260926T200150+0900-R138-SB001-WAIT-REVIEW-FORGE-INPUT-NO-SCIENCE@adf9d058df164bf78915903ba663b7135c3473b6",
+    "control": "CTRL-20260926T185206+0900-R83-FRESH-THREAD-FLEET-MIGRATION-RELAY-PARTIAL-VALIDATION@0e834adf925fc91da1a9439c41c433fe45292c02",
+    "main": "MAIN-20260926T194544+0900-RELAY-R147-SB001-REREVIEW-REQUEST-FAILED-CLOSED@847c861f6c31de10451d1557c59df0974965cc6f",
+    "utility": "UTILITY-20260926T192601+0900-PR152-REVIEW-ANCHOR-RECONCILE-6E7F2C91@6a0c49a4183f1a8f310ff942c33e50789a941959",
+    "repository_steward": "G22@aa7a1e651f706f647e6941fbdf91aaa66f99e3d4",
+    "external_science": "LIT_R44_THEORY_R5_AUD_R10@fcd9175a672da456e5b16f4799fb234eb7c26d07"
   },
   "authoritative_refs": {
-    "stable_main": "d16403414fc7abebd23075fc401240971b8eb91d",
+    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
     "h7": {
-      "raw_commit": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
-      "preserve_before_target_access": true,
-      "result_commit": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-      "formal_workflow_run": 35951118916,
-      "formal_workflow_attempt": 1,
-      "formal_workflow_conclusion": "success",
-      "decision": "INCONCLUSIVE",
-      "phase": "CONSUMED_ONE_WAY",
-      "terminal": true
-    },
-    "evidence": {
-      "count": 6,
-      "h7_evidence_tag_type": "LIGHTWEIGHT_DIRECT_COMMIT",
-      "h7_formal_tag_type": "LIGHTWEIGHT_DIRECT_COMMIT",
-      "h7_sealed_tag_type": "LIGHTWEIGHT_DIRECT_COMMIT",
-      "server_side_authoritative_tag_namespace_protection": false,
-      "repository_ruleset_count": 1,
-      "repository_ruleset_target": "branch"
+      "identity": "h7-r5-285a3a206b34c5982b9d4045",
+      "raw": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
+      "result": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
+      "disposition": "INCONCLUSIVE",
+      "phase": "CONSUMED_ONE_WAY"
     },
     "funnel": {
       "objects": 35,
@@ -61,102 +33,121 @@
       "SYSTEM": 21,
       "terminal": 35,
       "active": 0,
-      "queued": 0
+      "queued": 0,
+      "OPEN_DEVELOPMENT": 0,
+      "RESULT_EXPOSED_DEVELOPMENT": 34,
+      "CONSUMED_ONE_WAY": 1,
+      "consumed_formal_identities": 8
     },
     "revisit": {
-      "coverage": 35,
       "CLOSED_STRONG": 1,
       "DORMANT_REVISITABLE": 20,
       "DEFERRED_INDEPENDENT_REIDENTIFICATION": 14,
       "REVISIT_TRIGGERED": 0,
-      "fresh_scientific_successors": 0
+      "fresh_successors": 0,
+      "old_ids_reopened": 0
     },
     "system_build": {
       "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
-      "branch_head": "5b86dfa6cad634312c81e579e5339b3b47cef6e0",
       "candidate_id": null,
-      "lifecycle": "BUILD_ACCEPTED_BOUNDED_PENDING_INTEGRATION",
-      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-      "scientific_credit": 0,
-      "component_function": "SUPPORTED_BOUNDED_TARGET",
-      "integration_viability": "SUPPORTED_CURRENT_PILOT",
+      "head": "e9b93456a0c37e2d1393463c167912e0e3968817",
+      "pr": 152,
+      "ci_run": 36233791080,
+      "ci": "SUCCESS",
+      "fresh_current_head_review": false,
+      "built": true,
+      "functionally_verified_bounded": true,
+      "comparatively_supported": false,
       "composition_contribution": "NOT_ESTABLISHED",
-      "scientific_novelty": "NOT_ESTABLISHED_NOT_CLAIMED"
+      "scientifically_novel": false,
+      "scientific_credit": 0,
+      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+      "namespace_separation": "PASS",
+      "contract_recording": {
+        "target_capability": true,
+        "component_provenance": true,
+        "interfaces_state_loop": true,
+        "acceptance_tests": true,
+        "resource_budget": true,
+        "limitations_claim_boundary": true,
+        "single_machine_readable_manifest": false
+      }
     },
-    "forge": {
-      "delayed_action_credit": {
-        "head": "6507d3b1a302326a92eec0c92673d0a326c12add",
-        "status": "REVIEWED_RETAINED_FUTURE_SYSTEM_BUILD_INPUT_NOT_ADMITTED_TO_SB001",
-        "scientific_credit": 0
-      },
-      "completion_replay": {
-        "head": "7037e5024e791f8ecb545a0675637f39d3c41383",
-        "status": "HOLD_AFTER_EXACT_HEAD_CI_FAILURE",
-        "scientific_credit": 0
-      },
-      "new_20260926_forge_refs": 0
+    "forge_future_input": {
+      "id": "FORGE-MULTI-HYPOTHESIS-PREDICTION-POOL-A",
+      "head": "07218c80d62f06ba3c5bf43badb77ba38f93fe28",
+      "scientific_credit": 0,
+      "admitted_to_sb001": false,
+      "direct_ci_status_visible": false
     }
   },
-  "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
+  "overall_classification": "WELL_CALIBRATED",
   "scientific_gate_findings": {
     "hard_floor": "KEEP",
     "formal_one_way": "KEEP",
+    "development_phase_semantics": "KEEP",
     "development_credit": "KEEP",
     "preformal": "KEEP",
-    "result_exposed_revision_identity": "TIGHTEN",
+    "result_exposed_revision_rule": "KEEP",
     "same_object_system_to_mechanism_uplift": "KEEP",
     "pass_reachability": "KEEP"
   },
   "system_build_gate_findings": {
     "identity_separation": "KEEP",
+    "build_lifecycle_namespace": "KEEP",
+    "target_capability": "KEEP",
+    "component_provenance": "KEEP",
+    "interface_state_loop": "KEEP",
+    "acceptance_resources": "KEEP",
+    "explicit_claim_boundary": "KEEP",
     "reduced_component_reuse": "KEEP",
-    "failed_target_function_guard": "KEEP",
-    "exact_component_provenance_manifest": "TIGHTEN",
-    "interface_state_loop_manifest": "TIGHTEN",
-    "resource_and_acceptance_boundary": "KEEP",
-    "build_lifecycle_namespace": "TIGHTEN",
-    "forge_to_analyst_inventory": "TIGHTEN"
+    "failed_function_guard": "KEEP",
+    "consolidated_manifest": "CLARIFY",
+    "future_forge_functional_verification": "CLARIFY"
   },
   "synthesis_gate_findings": {
     "component_function": "KEEP",
-    "system_build_viability": "KEEP",
+    "system_build": "KEEP",
     "composition_contribution": "INSUFFICIENT_EVIDENCE",
     "scientific_novelty": "KEEP",
     "whole_system_reduction_guard": "KEEP",
     "build_success_to_novelty_guard": "KEEP",
     "build_to_science_boundary": "KEEP",
-    "build_to_science_live_transition": "INSUFFICIENT_EVIDENCE"
+    "live_build_to_science_transition": "INSUFFICIENT_EVIDENCE"
   },
   "revisit_gate_findings": {
     "terminal_absorbency": "KEEP",
     "implementation_reuse_without_revisit": "KEEP",
     "rescue_laundering": "KEEP",
     "fresh_successor_contract": "KEEP",
-    "discovery_durability": "TIGHTEN",
-    "revisit_canonicalize_live_case": "INSUFFICIENT_EVIDENCE"
-  },
-  "governance_gate_findings": {
-    "publication_durability_open_p0": "TIGHTEN",
-    "authoritative_tag_form": "TIGHTEN",
-    "server_side_tag_namespace_protection": "TIGHTEN"
+    "candidate35_signal_handling": "KEEP",
+    "live_revisit_case": "INSUFFICIENT_EVIDENCE"
   },
   "calibration": {
     "over_reduction_risk": "LOW",
     "overclaim_risk": "LOW",
-    "false_negative_risk": "LOW_TO_MODERATE_DISCOVERY_DURABILITY",
-    "moving_goalpost_risk": "LOW_CURRENT_POLICY_REPRESENTATIONAL_NAMESPACE_RISK",
+    "false_negative_risk": "LOW",
+    "moving_goalpost_risk": "LOW",
     "pass_reachability": "REALISTIC_WITHOUT_STANDARD_RELAXATION"
   },
-  "persistence_health": {
+  "mandatory_questions": {
+    "development_semantics_consistent": true,
+    "formal_one_way_unchanged": true,
+    "development_observations_excluded_from_evidence": true,
+    "four_way_separation": true,
+    "reduced_component_reusable": true,
+    "whole_system_reduction_without_system_evidence": false,
+    "integration_overclaimed_as_novelty": false,
+    "build_ids_separate": true,
+    "build_to_science_fresh_contract_required": true,
+    "successors_suppressed_or_manufactured": false,
+    "revisit_avoids_zombie_rescue": true,
+    "pass_reachable_without_weakening": true
+  },
+  "p0": {
     "incident": "INC-GITHUB-PERSISTENCE-20260925-001",
-    "incident_status": "OPEN_P0",
-    "control_r76_latest_state_consistent": true,
-    "control_current_head_after_minimal_nonsemantic_ref_probe": "f1d8b709fa87de900f5d1f62ef90e97757332b4e",
-    "methodology_prior_history_generation": "R124",
-    "methodology_prior_latest_generation": "R122",
-    "methodology_prior_state_generation": "R122",
-    "append_only_history_authoritative": true,
-    "publication_contract": "MAX_3_TOTAL_ATTEMPTS_REFETCH_BEFORE_RETRY_NO_FORCE_READBACK_REQUIRED"
+    "status": "OPEN_P0",
+    "repository_wide_write_outage_supported": false
   },
   "hard_floor_confirmation": {
     "experiment_dispatched": false,
@@ -171,10 +162,12 @@
     "historical_result_rewritten": false,
     "protected_heldout_accessed": false
   },
-  "confidence": {
-    "canonical_formal_revisit_integrity": "HIGH",
-    "system_build_separation": "HIGH",
-    "composition_contribution": "LOW_UNTIL_PROSPECTIVE_TEST",
-    "future_build_to_science_transition": "LOW_UNTIL_OBSERVED"
+  "persistence": {
+    "history_path": "analysis/methodology_calibration/history/2026-09-26/2018.md",
+    "branch_head_before": "5e1719969dde080f78ff63a175b3b04be687820f",
+    "branch_head_after": "SELF_COMMIT",
+    "write_attempt": 2,
+    "retry_count": 1,
+    "persistence_complete": "REQUIRES_POST_COMMIT_READBACK"
   }
 }
