@@ -1,66 +1,43 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260928T013534+0900-PRIMARY-R164-SB002-PUBLISHED-WAIT-ANALYST",
-  "generated_at": "2026-09-28T01:35:34+09:00",
-  "status": "SYSTEM_BUILD_SB002_PUBLISHED_WAIT_ANALYST_RECONCILIATION",
+  "generation_id": "MAIN-20260928T032256+0900-PRIMARY-R165-SB002-INTEGRATED",
+  "generated_at": "2026-09-28T03:22:56+09:00",
+  "status": "SYSTEM_BUILD_SB002_INTEGRATED_COMPLETE_WAIT_ANALYST",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT",
-  "analyst_generation_id": "EVA-20260928T010015+0900-R159-SB002-ATOMICITY-CLARIFICATION",
-  "analyst_authority": "analysis/orchestrator/history/2026-09-28/0100-R159.md",
-  "prior_main_generation": "MAIN-20260927T233306+0900-PRIMARY-R163-RD006-V4-RETURN-ALIGNMENT-AUDIT",
-  "branch": "system-build/sb002-causal-scope-revision-pilot-20260928",
-  "base_main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-  "exact_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
-  "exact_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
+  "analyst_generation_id": "EVA-20260928T025931+0900-R160-SB002-EXACT-HEAD-INTEGRATION-AUTHORITY",
+  "analyst_authority": "analysis/orchestrator/history/2026-09-28/0259-R160.md",
+  "prior_main_generation": "MAIN-20260928T013534+0900-PRIMARY-R164-SB002-PUBLISHED-WAIT-ANALYST",
+  "source_branch": "system-build/sb002-causal-scope-revision-pilot-20260928",
+  "authorized_exact_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
+  "authorized_exact_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
+  "base_main_before_merge": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
+  "integration": {
+    "pr_number": 158,
+    "pr_url": "https://github.com/salmonmikan/sparkbrain_research/pull/158",
+    "pr_state": "MERGED",
+    "head_sha": "720e18bcff53be76c861fa8c09d24d5320b90455",
+    "changed_files": 8,
+    "merge_method": "SQUASH",
+    "merge_commit": "76b0cc94edf0fec2e46d69978e0794a37759b862",
+    "merge_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
+    "source_tree_equal": true
+  },
   "ci": {
-    "run_id": 36333624083,
-    "status": "completed",
-    "conclusion": "success",
+    "source_run_id": 36333624083,
+    "source_conclusion": "success",
+    "pr_run_id": 36340192931,
+    "pr_conclusion": "success",
     "python_311": "success",
-    "python_313": "success"
+    "python_313": "success",
+    "lint": "success",
+    "local_readiness": "success",
+    "tests": "success",
+    "bundle": "success"
   },
-  "integration_status": "PUBLISHED_BUILD_BRANCH_WAIT_ANALYST_RECONCILIATION",
+  "integration_status": "INTEGRATED_COMPLETE_WAIT_FRESH_ANALYST_RECONCILIATION",
   "target_capability": "CURRENT_OBSERVATION_CAUSAL_MAX_TWO_SCOPE_ROUTING_PLUS_ROUTE_LOCAL_REVISION_WITH_ATOMIC_ROLLBACK_AND_REPLAY",
-  "components": {
-    "causal_online_router": {
-      "prototype_head": "f980c13d984460f158a95e8181239db8d19c8468",
-      "handoff_head": "164ce39b99fbfa7146e439215c804c638305dea3",
-      "scientific_credit": 0
-    },
-    "route_local_revision": {
-      "source": "SELECTIVE_FORGE_OVERLAY_REIMPLEMENTATION",
-      "scientific_credit": 0
-    },
-    "integration_design": {
-      "id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-      "source": "THEORY_R11",
-      "scientific_credit": 0
-    },
-    "causal_opportunity_certificate_admitted": false
-  },
-  "acceptance": {
-    "three_fixed_arrival_orders": "PASS",
-    "cross_order_partition_and_route_local_outcomes": "PASS",
-    "midpoint_no_write": "PASS",
-    "out_of_support_no_write": "PASS",
-    "identical_conflict_no_write": "PASS",
-    "invalid_revision_full_rollback": "PASS",
-    "shared_prefix_invariance": "PASS",
-    "exact_checkpoint_replay": "PASS",
-    "oracle_free_runtime_interface": "PASS",
-    "fixed_k2_resource_ceiling": "PASS",
-    "full_local_readiness": "PASS",
-    "exact_head_ci": "PASS"
-  },
-  "local_validation": {
-    "focused_sb002_tests": 17,
-    "system_build_tests": 56,
-    "full_repository_pytest": "PASS",
-    "ruff": "PASS",
-    "local_readiness": "PASS",
-    "bundle_required_files": 88
-  },
   "built": true,
   "bounded_functionally_verified": true,
   "comparatively_supported": false,
@@ -68,47 +45,12 @@
   "scientifically_novel": false,
   "scientific_credit": 0,
   "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-  "resource_budget": {
-    "cpu_only": true,
-    "deterministic": true,
-    "max_components": 2,
-    "maximum_dimensions": 8,
-    "dependencies_added": 0,
-    "scientific_workflow": false
-  },
-  "limitations": [
-    "FIXED_K_AND_THRESHOLDS",
-    "ORDER_DEPENDENT_OPAQUE_TOKEN_NAMES",
-    "FIRST_OBSERVATION_SEEDING",
-    "ONE_DIMENSIONAL_SYNTHETIC_ACCEPTANCE_FIXTURE",
-    "NO_DRIFT_MERGE_SPLIT",
-    "NO_MATCHED_COMPARATOR",
-    "NO_REAL_TASK",
-    "NO_CAPABILITY_OR_SCIENTIFIC_SCORE"
-  ],
-  "publication_attempts": 4,
-  "publication_attempt_1": {
-    "result": "FAILED_LOCAL_GIT_HTTPS_CREDENTIALS_BEFORE_REF_CREATION",
-    "branch_absent_after_readback": true
-  },
-  "publication_attempt_2": {
-    "result": "FAILED_GITHUB_422_INVALID_BASE_TREE_BEFORE_REF_CREATION",
-    "branch_absent_after_readback": true
-  },
-  "publication_attempt_3": {
-    "result": "REF_CREATED_READBACK_FAILED_DECISION_LOG_NON_UTF8_TRUNCATION",
-    "commit": "308b981f8e88c1cb8d2bacabdc6770da89abbf73"
-  },
-  "publication_attempt_4": {
-    "result": "SUCCESS_FAST_FORWARD_REPAIR_ALL_BLOBS_READBACK_VERIFIED_EXACT_HEAD_CI_SUCCESS",
-    "commit": "720e18bcff53be76c861fa8c09d24d5320b90455",
-    "ci_run_id": 36333624083
-  },
+  "new_build_result": true,
+  "new_scientific_result": false,
   "result_bearing_execution_authorized": false,
   "result_bearing_execution_performed": false,
   "result_bearing_invocations": 0,
-  "new_scientific_result": false,
-  "new_build_result": true,
+  "review_policy": "OPTIONAL_ADVISORY_NOT_A_SYSTEM_BUILD_GATE",
   "active_pointer_debt": [],
   "hard_floor": {
     "experiments_dispatched": false,
@@ -119,9 +61,17 @@
     "held_out_access": false,
     "scheduler_changes": false
   },
-  "stop_reason": "SB002_BUILD_PUBLISHED_EXACT_HEAD_CI_GREEN_WAIT_FRESH_ANALYST_RECONCILIATION",
-  "next_action": "EVIDENCE_ANALYST_RECONCILE_EXACT_SB002_HEAD_NO_MAIN_CONTINUATION_WITHOUT_FRESH_AUTHORITY",
+  "stop_reason": "SB002_MERGED_EXACT_TREE_PUBLISHED_WAIT_FRESH_ANALYST_INTEGRATION_RECONCILIATION",
+  "next_action": "EVIDENCE_ANALYST_RECONCILE_MAIN_MERGE_76B0CC94_AND_DEFINE_ANY_NEXT_BOUNDED_MILESTONE",
   "scheduler_state_changed": false,
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-28/0135-r164-primary-sb002-published-wait-analyst.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-28/0322-r165-primary-sb002-integrated.md",
+  "publication": {
+    "branch": "ops/orchestrator-run-report",
+    "branch_head_before": "c185fba70087122131274dcc911cb2f725665bb2",
+    "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
+    "attempt": 1,
+    "maximum_attempts": 5,
+    "commit_record_semantics": "INTENT_RECORDED_IN_COMMIT_COMPLETION_REQUIRES_EXTERNAL_READBACK"
+  }
 }
