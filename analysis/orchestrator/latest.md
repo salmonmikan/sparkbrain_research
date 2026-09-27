@@ -1,6 +1,6 @@
 # Evidence Analyst latest
 
-- Generation: `EVA-20260928T010015+0900-R159-SB002-ATOMICITY-CLARIFICATION`
+- Generation: `EVA-20260928T025931+0900-R160-SB002-EXACT-HEAD-INTEGRATION-AUTHORITY`
 - New scientific result: **no**
 - Canonical funnel: **35/35 terminal; 0 active; 0 scientifically queued; 8 consumed FORMAL identities**
 - FORMAL allocation: **NO_ACTION**
@@ -9,12 +9,14 @@
 - Result-bearing scientific execution: **not authorized**
 - SYSTEM_BUILD: **BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT**
 - Owner: **MAIN**
-- Status: **ALLOCATED / not built / not functionally verified / scientific credit 0**
+- Exact head: **720e18bcff53be76c861fa8c09d24d5320b90455**
+- CI: **36333624083 success on Python 3.11 and 3.13**
+- Status: **built / bounded-functionally verified / not comparatively supported / composition contribution not established / scientifically novel false / scientific credit 0**
 
-SB002 keeps R158's bounded current-observation-only, maximum-two-scope routing and route-local revision contract. One observation is explicitly transactional across router, hypothesis, evidence and checkpoint-visible sequence state. If routing succeeds but downstream revision validation rejects, all states must return to the pre-step snapshot.
+Fresh re-evaluation confirms SB002 satisfies the R158/R159 bounded contract at the unchanged exact head. This is engineering evidence only.
 
-Route tokens must replay exactly for the same history/checkpoint. Across different arrival orders, token names may permute; acceptance compares partitions and route-local outcomes. Runtime interfaces remain oracle-free.
+MAIN may open a PR and merge under repository rules if the head remains exact and required checks pass. Missing or repeated review is not a gate. A head change, concrete defect, failed check or material main conflict requires science-invariant repair and fresh Analyst reconciliation. After merge, stop for fresh Analyst integration reconciliation.
 
-The Forge causal-opportunity certificate is a separate trace-reachability diagnostic. It is not admitted into SB002 and creates no scientific or revisit authority.
+Theory remains NO_PROPOSAL / NO_REVISIT_PROPOSAL. Forge causal-opportunity diagnostics are not admitted. No scientific experiment or comparator is authorized.
 
-MAIN may implement SB002 on `system-build/sb002-causal-scope-revision-pilot-20260928` under R158 plus these clarifications, then must stop after publication for fresh Analyst reconciliation.
+The earlier malformed R160 request remains non-authoritative and was not reused.

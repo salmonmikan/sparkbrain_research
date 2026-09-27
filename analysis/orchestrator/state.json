@@ -1,27 +1,29 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260928T010015+0900-R159-SB002-ATOMICITY-CLARIFICATION",
-  "generated_at": "2026-09-28T01:00:15+09:00",
+  "generation_id": "EVA-20260928T025931+0900-R160-SB002-EXACT-HEAD-INTEGRATION-AUTHORITY",
+  "generated_at": "2026-09-28T02:59:31+09:00",
   "cache_role": "MOVING_CACHE_ONLY",
   "durable_authority": {
-    "history_path": "analysis/orchestrator/history/2026-09-28/0100-R159.md",
+    "history_path": "analysis/orchestrator/history/2026-09-28/0259-R160.md",
     "complete": true
   },
   "new_scientific_result": false,
   "scientific_execution_mode": "READ_ONLY",
-  "go_stop": "GO_SYSTEM_BUILD_SB002_WITH_TRANSACTIONAL_ACCEPTANCE_STOP_SCIENCE",
+  "go_stop": "GO_SYSTEM_BUILD_SB002_EXACT_HEAD_PR_INTEGRATION_STOP_SCIENCE",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
-    "prior_analyst_target_head": "7e1942e8dfe5fa5333d956ab717e041f79206075",
-    "prior_request_commit": "e8fa2c9a81359f2d227172e6571599fda434dfb0",
-    "main_reports": "5568912a42644582d9fd763bd05fc94a17ecf233",
+    "prior_analyst_target_head": "17a58e31127f8e2e47848ef4794f53bcd3908900",
+    "failed_prior_request_head": "4ebd70ef68f34bae203a901ba9cbfe05524961eb",
+    "failed_prior_request_id": "EA-R160-20260928T020000JST",
+    "main_reports": "c185fba70087122131274dcc911cb2f725665bb2",
+    "sb002_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
+    "sb002_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
+    "sb002_ci_run_id": 36333624083,
     "control": "57fe5474dea444fe21cd4e1be9b4c81be8cd582a",
-    "methodology": "70ec61002581d55ebb29b01fc5f240b7aca4b467",
-    "external_science": "c4066afb33fdb6a67d53fa1dc9eaabfc78d211a3",
-    "utility": "f196d437c28fa377f925c832c3e1df6ba1fd2ecb",
-    "forge_certificate_prototype": "c8280a8aaebc29881c07369680777633aa5f7ac7",
-    "forge_certificate_handoff": "fd3b3a43e4bc8030b5f9fc33e23bb90f91611d69"
+    "methodology": "b22575ee46b081aacc1194aaae3eb3d4b6311066",
+    "theory": "8f035e911bf7b1c965b97695b04834265cf415cc",
+    "forge": "d3c28d579ddb00099471975e3a967863d752d32e"
   },
   "canonical_funnel": {
     "candidates": 35,
@@ -56,77 +58,101 @@
     },
     "sb002": {
       "build_id": "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT",
-      "state": "ALLOCATED",
+      "state": "BUILD_COMPLETE_INTEGRATION_AUTHORIZED",
       "owner": "MAIN",
       "target_branch": "system-build/sb002-causal-scope-revision-pilot-20260928",
-      "branch_observed": false,
+      "branch_observed": true,
+      "exact_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
+      "exact_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
+      "base_main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
+      "ahead_by": 2,
+      "behind_by": 0,
+      "changed_files": 8,
+      "ci": {
+        "run_id": 36333624083,
+        "conclusion": "success",
+        "python": [
+          "3.11",
+          "3.13"
+        ]
+      },
+      "pr_observed": false,
       "execution_class": "NON_EVIDENTIARY_SYSTEM_BUILD",
-      "built": false,
-      "bounded_functionally_verified": false,
+      "built": true,
+      "bounded_functionally_verified": true,
       "comparatively_supported": false,
       "composition_contribution": "NOT_ESTABLISHED",
       "scientifically_novel": false,
       "scientific_credit": 0,
-      "inherited_r158_contract": true,
-      "r159_clarifications": {
-        "transaction_state": [
-          "ROUTER",
-          "HYPOTHESIS",
-          "EVIDENCE",
-          "CHECKPOINT_VISIBLE_SEQUENCE"
-        ],
-        "revision_rejection": "ROLLBACK_ALL_TO_PRE_STEP",
-        "fail_closed": [
+      "acceptance": {
+        "fixed_k": 2,
+        "current_observation_only": true,
+        "route_local_revision": true,
+        "transactional_all_state_rollback": true,
+        "fail_closed_no_write": [
           "MIDPOINT",
           "OUT_OF_SUPPORT",
           "IDENTICAL_CONFLICT",
           "INVALID_REVISION"
         ],
         "token_semantics": "EXACT_SAME_HISTORY_REPLAY_CROSS_ORDER_PERMUTATION_ALLOWED",
-        "cross_order_acceptance": "PARTITION_AND_ROUTE_LOCAL_OUTCOMES",
-        "runtime_oracle_fields": false,
-        "mandatory_review_gate": false
+        "shared_prefix_invariance": true,
+        "runtime_oracle_fields": false
       },
-      "stop_after_publication_for_fresh_analyst": true
+      "known_limits": [
+        "FIXED_K2_THRESHOLDS",
+        "ARRIVAL_ORDER_TOKEN_NAMES",
+        "FIRST_OBSERVATION_SEEDING",
+        "ONE_DIMENSIONAL_SYNTHETIC_FIXTURE",
+        "NO_DRIFT_MERGE_SPLIT",
+        "NO_MATCHED_COMPARATOR",
+        "NO_REAL_TASK"
+      ],
+      "next_action": "OPEN_EXACT_HEAD_PR_AND_MERGE_IF_UNCHANGED_AND_REQUIRED_RULES_PASS",
+      "head_change_requires_fresh_analyst": true,
+      "stop_after_merge_for_fresh_analyst": true
     }
   },
+  "theory": {
+    "generation": "THEORY-20260928T012709+0900-R12-NO-PROPOSAL-SB002-ALLOCATION-84D1B6C2",
+    "status": "NO_PROPOSAL",
+    "revisit_status": "NO_REVISIT_PROPOSAL"
+  },
   "forge_review": {
-    "generation": "FORGE-20260928T004156+0900-CAUSAL-OPPORTUNITY-CERTIFICATE-CI-CLEAN",
-    "forge_id": "FORGE-CAUSAL-OPPORTUNITY-CERTIFICATE-A",
-    "component_function": "BOUNDED_TIME_RESPECTING_TRACE_REACHABILITY",
-    "admitted_to_sb002": false,
+    "latest_generation": "FORGE-20260928T024250+0900-CAUSAL-OPPORTUNITY-NODE-RESILIENCE-CI-CLEAN",
+    "causal_opportunity_diagnostics_admitted_to_sb002": false,
     "scientific_promotion": false,
     "revisit_trigger": false,
     "scientific_credit": 0
-  },
-  "theory": {
-    "generation": "THEORY-20260927T213213+0900-R11-NO-PROPOSAL-ROUTER-RESOLUTION-BOUNDARY-5A8C31D4",
-    "status": "NO_PROPOSAL",
-    "revisit_status": "NO_REVISIT_PROPOSAL"
   },
   "main_allocation": {
     "owner": "MAIN",
     "work_mode": "SYSTEM_BUILD",
     "build_id": "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT",
-    "next_action": "IMPLEMENT_R158_PLUS_R159_THEN_STOP_FOR_ANALYST"
+    "exact_head_authorized": "720e18bcff53be76c861fa8c09d24d5320b90455",
+    "next_action": "OPEN_PR_MERGE_IF_EXACT_HEAD_AND_RULES_PASS_THEN_STOP_FOR_ANALYST",
+    "result_bearing_science_authorized": false
   },
   "relay_allocation": null,
   "methodology": {
-    "generation": "METHCAL-20260928T002022+0900-R135-SB002-ALLOCATION-CALIBRATION",
+    "generation": "METHCAL-20260928T022000+0900-R136-SB002-POSTBUILD-PERSISTENCE-CALIBRATION",
     "classification": "WELL_CALIBRATED",
     "scientific_blocker": false
   },
   "persistence": {
     "route": "EVIDENCE_ANALYST_ACTIONS_BRIDGE_RETAINED_HARDENING",
-    "prior_generation": "R158",
+    "prior_generation": "R159",
     "prior_complete": true,
-    "prior_receipt": "EA-R158-20260928T0006JST",
-    "prior_target_head": "7e1942e8dfe5fa5333d956ab717e041f79206075",
+    "prior_receipt": "EA-R159-20260928T010015JST",
+    "prior_target_head": "17a58e31127f8e2e47848ef4794f53bcd3908900",
     "pending_prior_requests": 0,
     "active_pointer_debt": [],
-    "operational_state": "REQUEST_TO_BE_PUBLISHED",
+    "request_id": "EA-R160-20260928T025931JST",
+    "request_generation": "R160",
+    "operational_state": "REQUEST_ACCEPTED_BY_BRIDGE_COMPLETION_REQUIRES_RECEIPT_READBACK",
     "request_publication_attempt": 1
   },
+  "blockers": [],
   "hard_floor": {
     "experiments_dispatched_by_analyst": false,
     "result_bearing_workflow_dispatched": false,
@@ -134,5 +160,17 @@
     "terminal_objects_reopened": false,
     "consumed_formal_rerun_retune_rescore": false,
     "scheduler_changes": false
+  },
+  "prior_persistence_failure": {
+    "request_id": "EA-R160-20260928T020000JST",
+    "workflow_run_id": 36335640518,
+    "failure_class": "REQUEST_SCHEMA_VALIDATION",
+    "failure_detail": "generation must match R<number>",
+    "target_head_unchanged": "17a58e31127f8e2e47848ef4794f53bcd3908900",
+    "history_written": false,
+    "latest_state_written": false,
+    "receipt_written": false,
+    "partial_target_publication": false,
+    "request_payload_is_authority": false
   }
 }
