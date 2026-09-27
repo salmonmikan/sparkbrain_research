@@ -1,24 +1,26 @@
-# SparkBrain Theory Synthesis — NO_PROPOSAL
+# SparkBrain Theory Synthesis — NO_PROPOSAL / SB002 allocated slice
 
 - schema_version: 2
-- generation_id: THEORY-20260927T213213+0900-R11-NO-PROPOSAL-ROUTER-RESOLUTION-BOUNDARY-5A8C31D4
-- produced_at: 2026-09-27T21:32:13+09:00
+- generation_id: THEORY-20260928T012709+0900-R12-NO-PROPOSAL-SB002-ALLOCATION-84D1B6C2
+- produced_at: 2026-09-28T01:27:09+09:00
 - authority_scope: NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY
-- supersedes_generation_id: THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2
+- supersedes_generation_id: THEORY-20260927T213213+0900-R11-NO-PROPOSAL-ROUTER-RESOLUTION-BOUNDARY-5A8C31D4
 - role: THEORY_SYNTHESIS_ARCHITECT
 - genuinely_new_information: true
 - theory_status: NO_PROPOSAL
 - revisit_status: NO_REVISIT_PROPOSAL
 - new_sparkbrain_scientific_result: false
 
-Theory R6 remains the current integration-design synthesis: ID-SB-LATENT-SCOPE-PLURAL-REVISION-001.
+Theory R6 remains the current integration design: `ID-SB-LATENT-SCOPE-PLURAL-REVISION-001`.
 
-The Forge scope-revision boundary probe sharpens one acceptance boundary without creating a new proposal. Selective scope-local revision is only evaluable when the allocator/router can form an observationally separable scope surface. Collapse inside a fixed reuse radius is a router-resolution failure; downstream revision cannot recover a distinction that routing never represented. Ambiguous and collapsed cases must fail closed with no write.
+The materially new state is allocation of one bounded R6-derived slice as `BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT`. SB002 is not a new theory. It is a fixed-K=2, one-dimensional, current-observation-only SYSTEM_BUILD that combines ordinary streaming two-centroid routing, abstention, route-local revision, atomic rollback and checkpoint/replay.
 
-The behavior reduces to nearest-centroid routing with rejection and per-key evidence accumulation. It does not establish learned latent organization, robustness, generalized composition contribution, comparative superiority or scientific novelty.
+One observation is transactional across router, hypothesis, evidence and checkpoint-visible sequence state. Midpoint ambiguity, out-of-support input, identical-observation conflict and invalid downstream revision require complete no-write. Same-history replay requires exact opaque tokens; cross-order comparison uses partition and route-local outcome equivalence.
 
-Evidence Analyst R156 keeps canonical science 35/35 terminal and allocates only one bounded RD006 v4 D0 matrix to MAIN; no result-bearing execution is observed. SB001 remains integrated NON_EVIDENTIARY_BUILD. R6 remains unallocated optional future SYSTEM_BUILD input. No Revisit trigger or scientific mutation is created.
+SB002 is allocated but not built or functionally verified. Comparative support, composition contribution, generalized latent organization and scientific novelty remain unestablished. Scientific credit is 0.
 
-History: analysis/external_research_audit/theory/history/2026-09-27/2132-THEORY_SYNTHESIS_ARCHITECT.md
+The Forge causal-opportunity certificate remains separate and is not admitted into SB002. No Revisit trigger, new SYSTEM_BUILD proposal or scientific mutation is created.
+
+History: analysis/external_research_audit/theory/history/2026-09-28/0127-THEORY_SYNTHESIS_ARCHITECT.md
 
 No new SparkBrain scientific result.
