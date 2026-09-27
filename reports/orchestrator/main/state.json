@@ -1,105 +1,127 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260927T233306+0900-PRIMARY-R163-RD006-V4-RETURN-ALIGNMENT-AUDIT",
-  "generated_at": "2026-09-27T23:33:06+09:00",
-  "status": "RESULT_EXPOSED_DEVELOPMENT_V4_PRESERVED_AUDIT_WAIT_ANALYST",
+  "generation_id": "MAIN-20260928T013534+0900-PRIMARY-R164-SB002-PUBLISHED-WAIT-ANALYST",
+  "generated_at": "2026-09-28T01:35:34+09:00",
+  "status": "SYSTEM_BUILD_SB002_PUBLISHED_WAIT_ANALYST_RECONCILIATION",
   "execution_mode": "PRIMARY",
-  "authority_mode": "SCIENCE",
-  "candidate_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-  "identity_namespace": "rv02-rd006-external-learning-reachability-a-v4-port-to-hidden-trace-boundary-d0-execution",
-  "build_id": null,
-  "development_phase": "RESULT_EXPOSED_DEVELOPMENT",
-  "revision": "v4-preserved-output-return-alignment-audit",
-  "claim_ceiling": "SYSTEM",
-  "analyst_generation_id": "EVA-20260927T230711+0900-R157-RD006-V4-POSTRESULT-RECONCILIATION",
-  "analyst_authority": "analysis/orchestrator/history/2026-09-27/2307-R157.md",
-  "allocation": "RD006_V4_PRESERVED_OUTPUT_RETURN_ALIGNMENT_AUDIT",
-  "execution_class": "READ_ONLY_PRESERVED_RESULT_DIAGNOSTIC",
-  "prior_main_generation": "MAIN-20260927T213647+0900-PRIMARY-R162-RD006-V4-D0-INCONCLUSIVE",
-  "branch": "research/rv02-rd006-external-learning-reachability-a-v4-d0-execution",
-  "preserved_input_head": "50112626ef6a4da364e3fa9268e8feb0d723ea7f",
-  "preserved_input_tree": "ef12cc8279b3043ef6dfc2577f155ed4e3bdbb15",
-  "exact_head": "abbadcd1a803199501a33379d4e9030967a9655c",
-  "exact_tree": "1642d3e5b849daeed134d9c8cf50ea3ac4a0d107",
-  "audit_ci_run_id": 36326067694,
-  "audit_ci_status": "completed",
-  "audit_ci_conclusion": "success",
-  "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+  "authority_mode": "SYSTEM_BUILD",
+  "build_id": "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT",
+  "analyst_generation_id": "EVA-20260928T010015+0900-R159-SB002-ATOMICITY-CLARIFICATION",
+  "analyst_authority": "analysis/orchestrator/history/2026-09-28/0100-R159.md",
+  "prior_main_generation": "MAIN-20260927T233306+0900-PRIMARY-R163-RD006-V4-RETURN-ALIGNMENT-AUDIT",
+  "branch": "system-build/sb002-causal-scope-revision-pilot-20260928",
+  "base_main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
+  "exact_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
+  "exact_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
+  "ci": {
+    "run_id": 36333624083,
+    "status": "completed",
+    "conclusion": "success",
+    "python_311": "success",
+    "python_313": "success"
+  },
+  "integration_status": "PUBLISHED_BUILD_BRANCH_WAIT_ANALYST_RECONCILIATION",
+  "target_capability": "CURRENT_OBSERVATION_CAUSAL_MAX_TWO_SCOPE_ROUTING_PLUS_ROUTE_LOCAL_REVISION_WITH_ATOMIC_ROLLBACK_AND_REPLAY",
+  "components": {
+    "causal_online_router": {
+      "prototype_head": "f980c13d984460f158a95e8181239db8d19c8468",
+      "handoff_head": "164ce39b99fbfa7146e439215c804c638305dea3",
+      "scientific_credit": 0
+    },
+    "route_local_revision": {
+      "source": "SELECTIVE_FORGE_OVERLAY_REIMPLEMENTATION",
+      "scientific_credit": 0
+    },
+    "integration_design": {
+      "id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
+      "source": "THEORY_R11",
+      "scientific_credit": 0
+    },
+    "causal_opportunity_certificate_admitted": false
+  },
+  "acceptance": {
+    "three_fixed_arrival_orders": "PASS",
+    "cross_order_partition_and_route_local_outcomes": "PASS",
+    "midpoint_no_write": "PASS",
+    "out_of_support_no_write": "PASS",
+    "identical_conflict_no_write": "PASS",
+    "invalid_revision_full_rollback": "PASS",
+    "shared_prefix_invariance": "PASS",
+    "exact_checkpoint_replay": "PASS",
+    "oracle_free_runtime_interface": "PASS",
+    "fixed_k2_resource_ceiling": "PASS",
+    "full_local_readiness": "PASS",
+    "exact_head_ci": "PASS"
+  },
+  "local_validation": {
+    "focused_sb002_tests": 17,
+    "system_build_tests": 56,
+    "full_repository_pytest": "PASS",
+    "ruff": "PASS",
+    "local_readiness": "PASS",
+    "bundle_required_files": 88
+  },
+  "built": true,
+  "bounded_functionally_verified": true,
+  "comparatively_supported": false,
+  "composition_contribution": "NOT_ESTABLISHED",
+  "scientifically_novel": false,
+  "scientific_credit": 0,
+  "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+  "resource_budget": {
+    "cpu_only": true,
+    "deterministic": true,
+    "max_components": 2,
+    "maximum_dimensions": 8,
+    "dependencies_added": 0,
+    "scientific_workflow": false
+  },
+  "limitations": [
+    "FIXED_K_AND_THRESHOLDS",
+    "ORDER_DEPENDENT_OPAQUE_TOKEN_NAMES",
+    "FIRST_OBSERVATION_SEEDING",
+    "ONE_DIMENSIONAL_SYNTHETIC_ACCEPTANCE_FIXTURE",
+    "NO_DRIFT_MERGE_SPLIT",
+    "NO_MATCHED_COMPARATOR",
+    "NO_REAL_TASK",
+    "NO_CAPABILITY_OR_SCIENTIFIC_SCORE"
+  ],
+  "publication_attempts": 4,
+  "publication_attempt_1": {
+    "result": "FAILED_LOCAL_GIT_HTTPS_CREDENTIALS_BEFORE_REF_CREATION",
+    "branch_absent_after_readback": true
+  },
+  "publication_attempt_2": {
+    "result": "FAILED_GITHUB_422_INVALID_BASE_TREE_BEFORE_REF_CREATION",
+    "branch_absent_after_readback": true
+  },
+  "publication_attempt_3": {
+    "result": "REF_CREATED_READBACK_FAILED_DECISION_LOG_NON_UTF8_TRUNCATION",
+    "commit": "308b981f8e88c1cb8d2bacabdc6770da89abbf73"
+  },
+  "publication_attempt_4": {
+    "result": "SUCCESS_FAST_FORWARD_REPAIR_ALL_BLOBS_READBACK_VERIFIED_EXACT_HEAD_CI_SUCCESS",
+    "commit": "720e18bcff53be76c861fa8c09d24d5320b90455",
+    "ci_run_id": 36333624083
+  },
   "result_bearing_execution_authorized": false,
   "result_bearing_execution_performed": false,
   "result_bearing_invocations": 0,
-  "new_dynamic_execution": false,
-  "artifact_mutated": false,
-  "result_reclassified": false,
-  "planned_on_clock_count": 416,
-  "inspected_on_clock_count": 400,
-  "eligibility_failure_classification": {
-    "NO_OTHER_SOURCE_IN_PRESERVED_CONSTRUCTION": 184,
-    "NO_SECOND_HIDDEN_SPIKE": 205,
-    "SPIKE_WITHOUT_ELIGIBLE_EDGE_TO_CURRENT_RETURN_TARGET": 11,
-    "ELIGIBLE_EDGE_BUT_LAG_OUTSIDE_0_5_TO_6_5_MS": 0,
-    "ADJACENT_CLOCK_NOT_SAME_CLOCK": 0,
-    "CEILING_CENSORED": 16
-  },
-  "minimum_observed_gate_deficit": 1,
-  "maximum_observed_gate_deficit": 2,
-  "sum_gate_deficit_over_inspected_on_clocks": 793,
-  "one_eligible_source_clock_count": 7,
-  "two_eligible_source_clock_count": 0,
-  "port_to_hidden_update_linkage": {
-    "updates": 58,
-    "target_spikes_located_by_source_id_and_inferred_time": 58,
-    "followed_by_later_same_source_hidden_spike": 51,
-    "followed_by_later_same_source_dynamic_eligible_spike": 6,
-    "causal_effect_identified": false
-  },
-  "trace_sufficiency": "SUFFICIENT_FOR_CLOCK_CLASSIFICATION_AND_DESCRIPTIVE_RECURRENCE_NOT_CAUSAL_UPDATE_ATTRIBUTION",
-  "unknown_fields": [
-    "DYNAMIC_OUTCOMES_FOR_16_CEILING_CENSORED_CLOCKS",
-    "DIRECT_UPDATE_TARGET_EVENT_ID_TO_HIDDEN_SPIKE_EVENT_JOIN",
-    "COUNTERFACTUAL_WITH_EACH_PORT_TO_HIDDEN_UPDATE_REMOVED",
-    "CAUSAL_CONTRIBUTION_OF_A_SPECIFIC_UPDATE_TO_LATER_SPIKE_OR_ELIGIBILITY"
-  ],
-  "audit_path": "artifacts/rv02_rd006/external_learning_reachability_a_v4_d0_execution/audits/preserved_return_alignment_audit_v4.json.gz",
-  "audit_payload_sha256": "0883e5ffc271f2a32eadb232178ef529f7256188f602869d8b5790a603bd55a5",
-  "audit_rendered_json_sha256": "37cce402dcdd1a816117eca68284ccde48afea26923e2cad359aebf9aa2512a1",
-  "audit_gzip_sha256": "7eea2a1dff11986e4431366da013ddcea170c190c21c609254ea575552baf589",
-  "recommendation": "NO_PROPOSAL",
-  "later_e0_e1_es_authorized": false,
-  "second_matrix_authorized": false,
-  "v5_dynamics_authorized": false,
-  "scale_expansion_authorized": false,
-  "reservoir_comparison_authorized": false,
-  "capability_scoring": false,
-  "held_out_access": false,
-  "publication_attempts": 4,
-  "publication_attempt_1": {
-    "result": "FAILED_CONNECTOR_RESPONSE_PARSE_BEFORE_REF_UPDATE",
-    "branch_head_unchanged_after_readback": true
-  },
-  "publication_attempt_2": {
-    "result": "REF_UPDATE_SUCCESS_READBACK_VERIFIED_EXACT_HEAD_CI_FAILED_LINT",
-    "commit": "31c06fb8d6261535b42ef000a8f5e72873384a8b",
-    "ci_run_id": 36325741197
-  },
-  "publication_attempt_3": {
-    "result": "REF_UPDATE_SUCCESS_READBACK_VERIFIED_EXACT_HEAD_CI_FAILED_LINE_LENGTH",
-    "commit": "f24cc2f5a3a3720806bd561a086583d68e00f785",
-    "ci_run_id": 36325914281
-  },
-  "publication_attempt_4": {
-    "result": "SUCCESS_READBACK_VERIFIED_EXACT_HEAD_CI_SUCCESS",
-    "commit": "abbadcd1a803199501a33379d4e9030967a9655c",
-    "ci_run_id": 36326067694
-  },
-  "active_pointer_debt": [],
   "new_scientific_result": false,
-  "scientific_credit": 0,
-  "evidentiary_status": "DEVELOPMENT_DIAGNOSTIC_ZERO_CONFIRMATORY_CREDIT",
-  "hard_formal_floor_respected": true,
-  "stop_reason": "R157_READ_ONLY_AUDIT_PUBLISHED_NO_PROPOSAL_WAIT_FRESH_ANALYST",
-  "next_action": "EVIDENCE_ANALYST_RECONCILE_EXACT_V4_AUDIT_HEAD",
+  "new_build_result": true,
+  "active_pointer_debt": [],
+  "hard_floor": {
+    "experiments_dispatched": false,
+    "formal_workflow_dispatched": false,
+    "consumed_identity_changed": false,
+    "terminal_object_reopened": false,
+    "immutable_evidence_changed": false,
+    "held_out_access": false,
+    "scheduler_changes": false
+  },
+  "stop_reason": "SB002_BUILD_PUBLISHED_EXACT_HEAD_CI_GREEN_WAIT_FRESH_ANALYST_RECONCILIATION",
+  "next_action": "EVIDENCE_ANALYST_RECONCILE_EXACT_SB002_HEAD_NO_MAIN_CONTINUATION_WITHOUT_FRESH_AUTHORITY",
   "scheduler_state_changed": false,
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-27/2333-r163-primary-rd006-v4-preserved-return-alignment-audit.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-28/0135-r164-primary-sb002-published-wait-analyst.md"
 }
