@@ -1,81 +1,61 @@
 {
   "schema_version": 2,
-  "generation_id": "THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
-  "produced_at": "2026-09-25T01:31:35+09:00",
-  "producer_run_id": "external-theory-auto-THEORY-20260925T013135+0900-R5-NO-PROPOSAL-8A3C1D7E",
+  "generation_id": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
+  "produced_at": "2026-09-27T09:41:00+09:00",
+  "producer_run_id": "external-theory-auto-THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
-  "supersedes_generation_id": "THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41",
+  "supersedes_generation_id": "THEORY-20260927T033309+0900-R6-LATENT-SCOPE-PLURAL-REVISION-DESIGN-6F8C2A41",
   "role": "THEORY_SYNTHESIS_ARCHITECT",
-  "schedule_slot": "01:30 JST",
+  "schedule_slot": "09:30 JST",
   "schedule_inference": false,
   "genuinely_new_information": true,
   "new_sparkbrain_scientific_result": false,
   "theory_id": null,
-  "theory_status": "NO_THEORY_PROPOSAL",
+  "theory_status": "NO_PROPOSAL",
+  "retained_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
   "revisit_proposal": null,
   "revisit_status": "NO_REVISIT_PROPOSAL",
-  "rationale": "R44 strengthens the ordinary associative-memory reduction that killed TH-002; R119 requires claim-matched staged comparator burden; no independent reduction-resistant residue warrants a new theory.",
-  "affected_lines": [
-    "TH002_ANONYMOUS_LINEAGE_ADDRESSABILITY",
-    "PROGRAMME_SELECTIVE_REVISION_REDUCTION_BOUNDARY",
-    "A01_C19_FUTURE_INDEPENDENT_REIDENTIFICATION_BAR",
-    "THEORY_COMPARATOR_STAGING_METHOD"
-  ],
-  "novelty_or_reduction_impact": "STRONGER_ASSOCIATIVE_REDUCTION_NO_NEW_THEORY_OR_REVISIT",
+  "rationale": "New R45/R144/Forge lifecycle information sharpens reductions and engineering lifecycle semantics but does not materially change the R6 architecture or expose a reduction-resistant scientific residue; a new proposal would be reformulation.",
   "input_generations": {
-    "prior_theory": "THEORY-20260924T213041+0900-R4-ANONYMOUS-LINEAGE-ADDRESSABILITY-6B2D9F41",
-    "literature": "LIT-20260925T003011+0900-R44-SELECTIVE-ASSOCIATIVE-REVISION-5D91A7C4@4087356677f1ae60aa87aafeea927949ea0c3d17",
+    "prior_theory": "THEORY-20260927T033309+0900-R6-LATENT-SCOPE-PLURAL-REVISION-DESIGN-6F8C2A41",
+    "literature": "LIT-20260927T062709+0900-R45-RV02-RD006-REACHABILITY-91C4A8E2",
     "audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
-    "control": "CTRL-20260925T005016+0900-R65@857998b44ca7954d3875d3957c447ce3414a7d89",
-    "evidence_analyst": "EVA-20260925T005800+0900-R130-LIT44-NO-SCIENCE@6a8eb246233bc04d5f3ca47aaffba99970acf20b",
-    "main": "MAIN-20260925T011502+0900-PRIMARY-R134-R130-LIT44-NO-CANONICAL-ACTION@9c8c631b1ff4bad2ced30a023541717bdbf541e9",
-    "fast_forge": "FORGE-20260925T003441+0900-R129-R118-AUDIT-GAP-NOOP",
-    "methodology": "METHCAL-20260925T011959+0900-R119-6F8C2A41@0b8cb86935b4a99958856ae634718893849e62d2"
+    "evidence_analyst": "EVA-20260927T070206+0900-R144-RD006-BRANCH-LIT45-FORGE-HANDOFF-RECONCILED",
+    "methodology": "METHCAL-20260926T201857+0900-R126-4B7E2C91",
+    "forge_lifecycle": "FORGE-20260927T043947+0900-STABLE-SCOPE-LIFECYCLE-CI-CLEAN"
   },
   "repository_refs_inspected": {
-    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "forge_count": 7,
-    "th002_forge": "7db8abb08e7862e3bb98c985f2e7ec4d81cd9d16",
-    "h7_raw": "a5e76e7eb117e0270cfdc138fb9da30d696aa7c0",
-    "h7_result": "e6c4ec404b6264ccf8aa7e61eb69708e3b8cdc85",
-    "research_and_scientific_ref_inventories_refetched": true,
-    "workflows_refetched": true,
-    "open_prs": [
-      148,
-      149
-    ]
+    "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
+    "external_science_before_publish": "3d766142d9b967b22c5d364d599e35aa5b064d65",
+    "forge_lifecycle_branch": "dcd29dcc477d62b4f802b6985f77380a498fb8b1",
+    "evidence_analyst_ref": "066eff35eaa8f10b130907701bd8b553f2406426",
+    "system_build_branch": "system-build/sb001-predictive-state-revision-pilot-20260925",
+    "human_directives_ref": "ops/human-directives"
   },
   "terminal_relevance_scan": {
-    "th002": "KILLED_REDUCTION_STRENGTHENED",
-    "a01": "NO_TRIGGER",
-    "c19": "NO_TRIGGER",
+    "rd005": "NO_REOPEN_CONSUMED",
     "h7": "NO_TRIGGER",
-    "candidate35": "NO_TRIGGER_TRIGGER_AUTHORITY_EXHAUSTED",
-    "candidate34": "NO_TRIGGER"
+    "th002": "NO_TRIGGER_KILLED",
+    "candidate34": "NO_TRIGGER",
+    "candidate35": "NO_NEW_TRIGGER_THIS_RUN",
+    "a01": "NO_TRIGGER",
+    "c19": "NO_TRIGGER"
   },
-  "prospective_baselines_or_discriminators": [
-    "CUE_AS_KEY",
-    "DELTA_FAST_WEIGHT",
-    "GATED_DELTA",
-    "HRR_VSA",
-    "KALMAN_HMM_STATE_SPACE_WHEN_MATCHED",
-    "MATCHED_ACCESS_RESOURCES",
-    "CAPACITY_ADEQUACY"
-  ],
-  "questions_for_evidence_analyst": [
-    "Keep TH-002 killed absent independent new information?",
-    "Apply R44 reductions prospectively and claim-matched?"
-  ],
-  "questions_for_control_brain": [
-    "Preserve empty theory/canonical frontier?",
-    "Keep old terminal identities terminal?"
-  ],
+  "system_build_handling": {
+    "sb001": "INTEGRATED_COMPLETE_NON_EVIDENTIARY",
+    "retained_future_design": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
+    "forge_lifecycle": "OPTIONAL_ENGINEERING_INPUT_AWAIT_ANALYST_RECONCILIATION",
+    "new_build_id_created": false
+  },
   "must_not_change_frozen_or_consumed": [
     "all consumed FORMAL identities and authoritative scientific refs/results",
-    "H7 frozen INCONCLUSIVE",
-    "Candidate #34/#35 terminal histories",
-    "A01/C19 terminal histories",
-    "TH-002 zero-credit killed Forge history"
+    "RD005 consumed identity/result",
+    "H7 INCONCLUSIVE / CONSUMED_ONE_WAY",
+    "all terminal candidate histories",
+    "SB001 scientific credit remains zero"
   ],
-  "utility_request_created": null
+  "scientific_mutations": 0,
+  "experiments_dispatched": 0,
+  "scheduler_changes": 0,
+  "history_path": "analysis/external_research_audit/theory/history/2026-09-27/0930-THEORY_SYNTHESIS_ARCHITECT.md"
 }
