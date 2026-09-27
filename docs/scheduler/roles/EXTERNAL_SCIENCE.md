@@ -181,6 +181,20 @@ Synthesis handling classification:
 - OVERCLAIMED;
 - INSUFFICIENT_SYSTEM_TEST.
 
+## Parallel support for Integrated Prototype Milestone 1
+
+When Milestone 1 is active, Literature/Theory/Audit should run in parallel with ordinary SYSTEM_BUILD engineering unless a concrete integrity violation, evidence contamination, irreversible risk, or material scientific overclaim requires escalation.
+
+Do not create a de facto mandatory review gate through repeated formal reconfirmation.
+
+High-value support includes:
+- established primitives/comparators for remaining M1 interfaces;
+- system-level alternative architectures;
+- replacement/ablation designs;
+- failure modes relevant to checkpoint/replay/rollback/observability;
+- prior art and matched controls for the fly-inspired sensorimotor track.
+
+For fly-like work, distinguish engineering inspiration from biological fidelity. Literature may identify insect/fly circuit principles and comparator designs, but neither literature similarity nor Forge/BUILD success establishes biological equivalence or topology-specific scientific novelty.
 ## Role-separated persistence
 
 Use moving branch `ops/external-research-audit-handoff` and `$sparkbrain-persistence`.
