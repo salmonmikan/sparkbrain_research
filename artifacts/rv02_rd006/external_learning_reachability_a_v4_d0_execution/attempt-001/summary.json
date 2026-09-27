@@ -1,0 +1,37 @@
+{
+  "attribution_boundary": "OFF/ON estimates the complete ordinary-learning package effect; it does not identify incremental PORT-to-hidden contribution.",
+  "bounded_cell_count": 1,
+  "complete_cell_count": 11,
+  "execution_cell_count": 12,
+  "gate_open": false,
+  "gate_open_cell_ids": [],
+  "hidden_spike_count_by_arm": {
+    "external_learning_off": 0,
+    "external_learning_on": 148
+  },
+  "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+  "maximum_same_clock_source_count_by_arm": {
+    "external_learning_off": 0,
+    "external_learning_on": 1
+  },
+  "new_edge_count": 0,
+  "next_action": "STOP_FOR_FRESH_EVIDENCE_ANALYST_RECONCILIATION",
+  "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
+  "ordinary_updates_by_class": {
+    "external_learning_off": {
+      "PORT_TO_HIDDEN": 0,
+      "PORT_TO_PORT": 0
+    },
+    "external_learning_on": {
+      "PORT_TO_HIDDEN": 58,
+      "PORT_TO_PORT": 356
+    }
+  },
+  "prohibited_update_count": 0,
+  "protocol_id": "rv02-rd006-external-learning-reachability-a-v4-port-to-hidden-trace-boundary-d0-execution",
+  "raw_artifact_file_sha256": "62b3ffb6d52926b583b006799d88511c9f840b626bc776cdcaf6ee2f857faf61",
+  "raw_artifact_sha256": "e40a88cd596b79d1a6b78030c8f7ea3baac5fc5c8579551b7494b37f6b89d3ba",
+  "schema_version": 1,
+  "scientific_credit": 0,
+  "source_git_sha": "44bef35c90f24a11e27000e3c328778733da92b6"
+}
