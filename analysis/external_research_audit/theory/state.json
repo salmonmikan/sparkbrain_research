@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "generation_id": "THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2",
-  "produced_at": "2026-09-27T19:28:43+09:00",
-  "producer_run_id": "external-theory-auto-THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2",
+  "generation_id": "THEORY-20260927T213213+0900-R11-NO-PROPOSAL-ROUTER-RESOLUTION-BOUNDARY-5A8C31D4",
+  "produced_at": "2026-09-27T21:32:13+09:00",
+  "producer_run_id": "external-theory-auto-THEORY-20260927T213213+0900-R11-NO-PROPOSAL-ROUTER-RESOLUTION-BOUNDARY-5A8C31D4",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
-  "supersedes_generation_id": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4",
+  "supersedes_generation_id": "THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2",
   "role": "THEORY_SYNTHESIS_ARCHITECT",
-  "schedule_slot": "19:30 JST",
+  "schedule_slot": "21:30 JST",
   "schedule_inference": false,
   "genuinely_new_information": true,
   "new_sparkbrain_scientific_result": false,
@@ -15,39 +15,36 @@
   "retained_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
   "revisit_proposal": null,
   "revisit_status": "NO_REVISIT_PROPOSAL",
-  "rationale": "Epoch-fenced receipt rotation closes a delivery-lifecycle seam around the retained R6 loop but adds no new target capability, reduction-resistant principle, prediction or falsifier.",
+  "rationale": "The Forge boundary-stress probe sharpens allocator-resolution acceptance and failure classification for the retained R6 loop but adds no new target capability, mechanism, prediction or falsifier.",
   "input_generations": {
-    "prior_theory": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4",
+    "prior_theory": "THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2",
     "literature": "LIT-20260927T062709+0900-R45-RV02-RD006-REACHABILITY-91C4A8E2",
     "audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
-    "evidence_analyst": "EVA-20260927T185823+0900-R153-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT",
-    "forge_epoch_fencing": "FORGE-20260927T184516+0900-EPOCH-FENCED-RECEIPT-ROTATION-CI-CLEAN"
+    "evidence_analyst": "EVA-20260927T210004+0900-R156-RD006-V4-ATTRIBUTION-CLARIFICATION",
+    "forge_boundary_stress": "FORGE-20260927T204727+0900-SCOPE-REVISION-BOUNDARY-STRESS-CI-CLEAN"
   },
   "repository_refs_inspected": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "external_science_before_publish": "cf3c49a4affa31e21ed9229983766da7ee064587",
-    "evidence_analyst": "3ab32e673ad23749da2283db4eab2aa3cf31b4ec",
-    "forge_epoch_prototype": "af5fe79be6120a7fc385a441f33c9f4c25365f2c",
-    "forge_epoch_handoff": "13d523fd2aab2f14842ff5a5722946a694b5322c",
+    "external_science_before_publish": "e56c5b8c6b4f263265fb2f1b0ebe9b76d0ec22ac",
+    "evidence_analyst": "0359aea01323bcf6d11e311242ed51ba6c087dd5",
+    "forge_boundary_prototype": "89a51ba5a9506afc0f0f77b7ecccca224cd42ce4",
+    "forge_boundary_handoff": "eed8e01fb2823b5459cbe48bfdba8f2b7cd70246",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7"
   },
   "retained_design_sharpening": {
-    "semantic_revision_state_separate_from_transport_state": true,
-    "rotation_preserves_revision_coordinator": true,
-    "rotation_resets_only_current_delivery_namespace": true,
-    "exact_next_epoch_and_locked_sequence_fence_required": true,
-    "stale_future_or_noncontiguous_epoch_no_write": true,
-    "checkpoint_preserves_epoch_fence_and_retired_chain": true,
-    "checkpoint_corruption_fails_closed": true,
-    "transport_epoch_must_not_encode_latent_or_evaluator_identity": true,
-    "producer_mislabel_counterexample_required": true,
-    "distributed_exactly_once_not_claimed": true,
-    "component_replacement_and_connection_ablation_separate": true
+    "scope_resolution_adequacy_separate_from_revision_correctness": true,
+    "separable_ambiguous_and_collapsed_outcomes_distinct": true,
+    "unresolved_routing_requires_complete_no_write": true,
+    "generated_scope_id_not_itself_success": true,
+    "prospective_threshold_radius_sweep_required": true,
+    "allocator_component_replacement_separate_from_scope_revision_interaction_ablation": true,
+    "matched_established_allocator_required_for_comparative_claim": true,
+    "checkpoint_replay_and_transport_semantic_separation_retained": true
   },
   "terminal_relevance_scan": {
     "rd005": "NO_REOPEN_CONSUMED",
     "rd006_v1_v2_v3": "CLOSED_ZERO_CREDIT",
-    "rd006_v4": "CONSTRUCTION_AND_SYNTHETIC_PREFLIGHT_ONLY_RESULT_BEARING_STOP",
+    "rd006_v4": "ONE_BOUNDED_D0_MATRIX_ALLOCATED_RESULT_BEARING_NOT_OBSERVED",
     "h7": "NO_TRIGGER",
     "th002": "NO_TRIGGER_KILLED",
     "candidate34": "NO_TRIGGER",
@@ -58,20 +55,20 @@
   "system_build_handling": {
     "sb001": "INTEGRATED_COMPLETE_NON_EVIDENTIARY",
     "retained_future_design": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-    "forge_epoch_input": "OPTIONAL_FUTURE_SEPARATELY_ALLOCATED_SYSTEM_BUILD_ONLY",
+    "forge_boundary_input": "OPTIONAL_FUTURE_SEPARATELY_ALLOCATED_SYSTEM_BUILD_ONLY",
     "admitted_to_rd006": false,
     "new_build_id_created": false,
     "mandatory_review_gate": false
   },
   "claim_boundary": {
-    "component_function": "BOUNDED_LOCAL_EPOCH_FENCED_RECEIPT_ROTATION_SUPPORTED_BY_FORGE_TESTS",
+    "component_function": "BOUNDED_SYNTHETIC_ROUTING_REVISION_BOUNDARY_BEHAVIOR_SUPPORTED_BY_FORGE_TESTS",
     "system_build": "NOT_ALLOCATED",
-    "composition_contribution": "NOT_ESTABLISHED",
+    "composition_contribution": "FIXTURE_LEVEL_DEPENDENCE_ONLY_NOT_GENERALIZED",
     "scientific_novelty": false,
     "scientific_credit": 0
   },
   "scientific_mutations": 0,
   "experiments_dispatched": 0,
   "scheduler_changes": 0,
-  "history_path": "analysis/external_research_audit/theory/history/2026-09-27/1928-THEORY_SYNTHESIS_ARCHITECT.md"
+  "history_path": "analysis/external_research_audit/theory/history/2026-09-27/2132-THEORY_SYNTHESIS_ARCHITECT.md"
 }
