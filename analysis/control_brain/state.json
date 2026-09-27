@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260927T065000+0900-R88-P0-FORGE-HANDOFF-RECONCILED",
-  "produced_at": "2026-09-27T06:50:00+09:00",
+  "generation_id": "CTRL-20260927T105500+0900-R89-P0-RECOVERY-CLOSED",
+  "produced_at": "2026-09-27T10:55:00+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
   "mode": "CONTROL_BRAIN",
   "policy_refs": {
@@ -9,20 +9,20 @@
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7"
   },
   "human_directives": {
-    "HUMAN-20260925-002": "ACCEPT_ACTIVE_OPEN_P0",
-    "HUMAN-20260926-003": "ACCEPT_ACTIVE_ACCELERATED_RECOVERY",
+    "HUMAN-20260925-002": "ACCEPT_COMPLETED_P0_RECOVERED",
+    "HUMAN-20260926-003": "ACCEPT_COMPLETED_FLEET_RECOVERED",
     "HUMAN-20260926-004": "ACCEPT_ACTIVE_REVIEW_OPTIONAL",
     "HUMAN-20260927-001": "ACCEPT_WITH_MODIFICATION_BOUND_AS_FRESH_RV02_RD006",
     "HUMAN-20260927-002": "ACCEPT_ACTIVE_FIVE_TOTAL_ATTEMPTS"
   },
   "refs_observed": {
-    "control": "edf5a05a6c4a578584e67d4c3f739a965d76548e",
-    "evidence_analyst": "066eff35eaa8f10b130907701bd8b553f2406426",
-    "main_reports": "c1b091cf3c51dab38f6855e3d252b58feac0784c",
-    "methodology": "4c3483754ad9db5120b4414743a757a02d5c5aa8",
-    "external_science_literature": "3d766142d9b967b22c5d364d599e35aa5b064d65",
-    "utility": "c4ef0f130e26be72e1ffcc31c2675b2feaf6fc02",
-    "forge_confirmation_guard": "0b3f8a5e074b346ef18b10ddf3c0893ba6996043"
+    "control": "e170d62e76a4bcda1eab661749e82e3b68b0630a",
+    "evidence_analyst": "a36cec3432f0bf9757453f5b8a139cb8f0a6b4a6",
+    "main_reports": "136e03e209f777bd3ea2276467e118834f543de1",
+    "methodology": "a63e512a1d1e59857d3634b682b2c795f03df6ab",
+    "external_science": "3538e527ded0e494dca889d4dc55eef34a9d0f3e",
+    "utility": "be6507bc7e2c2c032a855304a85c28f435a9b035",
+    "rd006": "49b91ca801522f3d6685ebd22097a1e64f9234c9"
   },
   "science": {
     "canonical": 35,
@@ -35,15 +35,25 @@
   },
   "development": {
     "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-    "phase": "OPEN_DEVELOPMENT",
+    "identity_namespace": "rv02-rd006-external-learning-reachability-a-v1",
+    "phase": "RESULT_EXPOSED_DEVELOPMENT",
     "owner": "MAIN",
-    "allocation": "PREPARE_AND_RUN_RV02_RD006_STAGE_D0_DEVELOPMENT_ONLY",
-    "durable_main_generation_observed": "MAIN-20260927T041727+0900-PRIMARY-R154-SB001-INTEGRATED",
-    "rv02_branch_observed": false,
-    "failure_proven": false,
-    "later_e0_e1_es_authorized": false,
-    "scale_reservoir_authorized": false,
-    "old_rd005_preserved": true
+    "analyst_generation": "EVA-20260927T094500+0900-R145-RD006-D0-INCONCLUSIVE-OPPORTUNITY-AUDIT",
+    "main_generation": "MAIN-20260927T092301+0900-PRIMARY-R155-RD006-D0-INCONCLUSIVE",
+    "result_head": "49b91ca801522f3d6685ebd22097a1e64f9234c9",
+    "ci_run": 36282136143,
+    "ci_result": "SUCCESS",
+    "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+    "allocation": "RD006_D0_PRESERVED_CAUSAL_OPPORTUNITY_AUDIT",
+    "forbidden_until_fresh_reconciliation": [
+      "RERUN_OR_RETUNE_V1",
+      "E0_E1_ES",
+      "SCALE_EXPANSION",
+      "RESERVOIR_COMPARISON",
+      "PARAMETER_TOPOLOGY_TIMING_CHANGE"
+    ],
+    "old_rd005_preserved": true,
+    "scientific_credit": 0
   },
   "system_build": {
     "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
@@ -52,58 +62,42 @@
     "evidentiary_status": "NON_EVIDENTIARY_BUILD",
     "scientific_credit": 0
   },
-  "forge": {
-    "generation_id": "FORGE-20260927T064227+0900-INTERNAL-SCOPE-CONFIRMATION-CI-CLEAN",
-    "branch": "forge/20260927-internal-scope-confirmation-guard-a",
-    "handoff_commit": "0b3f8a5e074b346ef18b10ddf3c0893ba6996043",
-    "exact_head": "aac3c657a2b941b6971f0161e8132f1905a91a6c",
-    "ci_run": 36273702567,
-    "ci_result": "SUCCESS",
-    "prior_pointer_debt_resolved": true,
-    "status": "FORGE_INTERESTING_SYSTEM_BUILD_INPUT",
-    "ordinary_reduction": "TEMPORAL_DEBOUNCE_PERSISTENCE_CONFIRMATION_FOR_THRESHOLD_CACHE_NAMESPACE",
-    "admitted_to_sb001": false,
-    "admitted_to_rv02": false,
-    "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-    "scientific_credit": 0
-  },
   "durability": {
     "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
-    "status": "OPEN_P0_RECOVERY_OBSERVATION_WINDOW",
+    "status": "CLOSED_P0_RECOVERED",
+    "closed_at": "2026-09-27T10:55:00+09:00",
     "repository_wide_write_outage_supported": false,
     "root_cause_proven": false,
-    "bounded_failure_class": "INTERMITTENT_OR_RUNTIME_ACTION_CONTEXT_SELECTIVE_MUTATION_REFUSAL_PLUS_MOVING_POINTER_DEBT",
+    "bounded_failure_class": "INTERMITTENT_OR_RUNTIME_ACTION_CONTEXT_SELECTIVE_PRE_GITHUB_REFUSAL_PLUS_PARTIAL_MOVING_POINTER_PUBLICATION",
+    "active_pointer_debt": [],
+    "theory_pointer_debt": "RESOLVED_BY_R7_MATCHING_LATEST_STATE",
     "durable_success_paths": [
-      "EVIDENCE_ANALYST_ACTIONS_BRIDGE",
-      "MAIN",
-      "UTILITY_LATER_WINDOW",
+      "EVIDENCE_ANALYST_ACTIONS_BRIDGE_MULTIPLE_GENERATIONS",
+      "MAIN_R154_R155",
+      "UTILITY",
       "METHODOLOGY",
-      "CONTROL",
-      "FORGE_INTERNAL_SCOPE",
-      "FORGE_CONFIRMATION_GUARD"
+      "CONTROL_R86_R88",
+      "MULTIPLE_FORGE_PATHS",
+      "EXTERNAL_THEORY_R7"
     ],
-    "evidence_analyst_r143": {
-      "target_head": "066eff35eaa8f10b130907701bd8b553f2406426",
-      "request_id": "EA-R143-20260927T0558JST",
-      "workflow_run": 36271781017,
-      "persistence_complete": true,
-      "readback_verified": true
-    },
-    "theory_pointer_debt": {
-      "latest": "R6",
-      "state": "R5",
-      "authority_rule": "R6_APPEND_ONLY_HISTORY_AND_LATEST_PRIMARY",
-      "repair_owner": "EXTERNAL_SCIENCE_THEORY_SLOT"
-    },
-    "forge_pointer_debt": {
-      "resolved": true,
-      "latest_state_generation": "FORGE-20260927T064227+0900-INTERNAL-SCOPE-CONFIRMATION-CI-CLEAN"
-    },
-    "p0_close_ready": false,
-    "close_conditions": [
-      "THEORY_R6_STATE_CACHE_RECONCILED_WITHOUT_SCIENTIFIC_CHANGE",
-      "NO_REPEAT_OF_SAME_FAILURE_PATTERN_ACROSS_SUBSEQUENT_RELATED_RUNS"
-    ]
+    "recurrence_observation": "NO_SAME_FAILURE_PATTERN_ACROSS_MULTIPLE_SUBSEQUENT_RELATED_RUNS",
+    "historical_gaps": [
+      {
+        "generation": "R85",
+        "status": "DOCUMENTED_MISSING_APPEND_ONLY_RECORD_NOT_RECONSTRUCTED",
+        "active_authority_impact": false
+      }
+    ],
+    "retained_hardening": [
+      "FIVE_TOTAL_ATTEMPTS",
+      "FRESH_HEAD_BEFORE_RETRY",
+      "ATOMIC_GIT_DATA_PUBLICATION",
+      "NON_FORCE_REF_UPDATE",
+      "INDEPENDENT_READBACK",
+      "EVIDENCE_ANALYST_ACTIONS_BRIDGE",
+      "EXACT_MANUAL_RECOVERY_PACKET"
+    ],
+    "p0_close_ready": true
   },
   "fleet": {
     "control": {
@@ -115,13 +109,13 @@
     "evidence_analyst": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE",
+      "operational": "GREEN_ACTIVE_RETAINED_BRIDGE",
       "scheduler_id": "6ab792ba724c81919be1cd071ab045ba"
     },
     "main": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_RD006_ALLOCATION_PENDING_DURABLE_PROGRESS",
+      "operational": "GREEN_ACTIVE_RD006_AUDIT_ALLOCATED",
       "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b"
     },
     "relay": {
@@ -141,7 +135,7 @@
     "fast_forge": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_POINTER_RECONCILED",
+      "operational": "GREEN_ACTIVE",
       "scheduler_id": "6ab7933b1aa081919594564ce879fdc6"
     },
     "methodology": {
@@ -153,7 +147,7 @@
     "external_science": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "YELLOW_THEORY_POINTER_DEBT",
+      "operational": "GREEN_ACTIVE_POINTER_RECONCILED",
       "scheduler_id": "6ab793ac05048191a9f30ff6460169c5"
     },
     "current_state_brief": {
@@ -163,9 +157,20 @@
       "scheduler_id": "6ab793fb62dc819184e3660fdaac0485"
     }
   },
+  "scheduler_change": {
+    "changed": true,
+    "scheduler_id": "6ab792ba724c81919be1cd071ab045ba",
+    "title": "SparkBrain Evidence Analyst",
+    "reason": "RETAIN_VALIDATED_ACTIONS_BRIDGE_AS_POST_P0_DURABLE_HARDENING",
+    "prompt_change": "P0_CONDITIONAL_BRIDGE_TO_RETAINED_HARDENING_AND_RECURRENCE_DIAGNOSIS_WORDING",
+    "cadence_changed": false,
+    "enabled_state_changed": false,
+    "role_semantics_changed": false,
+    "scientific_authority_changed": false,
+    "verification": "ENABLED_TRUE_SCHEDULE_UNCHANGED_HEADING_PRESENT"
+  },
   "scheduler_health": {
-    "classification": "YELLOW_OBSERVE",
-    "queue_delay": "BOUNDED_RECENT_RUNS_COMPLETE",
+    "classification": "GREEN_RECOVERED",
     "unexplained_current_production_off": false,
     "change_required": false
   },
@@ -176,10 +181,10 @@
   },
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "branch_head_before": "edf5a05a6c4a578584e67d4c3f739a965d76548e",
+    "branch_head_before": "e170d62e76a4bcda1eab661749e82e3b68b0630a",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
-    "persistence_complete": "REQUIRES_POST_COMMIT_READBACK"
+    "completion_contract": "POST_COMMIT_INDEPENDENT_READBACK_REQUIRED"
   },
   "hard_floor": {
     "experiment_dispatched": false,
@@ -187,8 +192,7 @@
     "scientific_ref_mutated": false,
     "evidence_ref_mutated": false,
     "terminal_reopened": false,
-    "consumed_formal_rerun_retune_rescore": false,
-    "scheduler_changed": false
+    "consumed_formal_rerun_retune_rescore": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-27/0650-R88.md"
+  "history_path": "analysis/control_brain/history/2026-09-27/1055-R89.md"
 }

@@ -1,15 +1,16 @@
 # SparkBrain Control Brain — Latest
 
 schema_version: 2
-generation_id: CTRL-20260927T065000+0900-R88-P0-FORGE-HANDOFF-RECONCILED
-produced_at: 2026-09-27T06:50:00+09:00
-authority_scope: CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL
-history_path: analysis/control_brain/history/2026-09-27/0650-R88.md
+generation_id: CTRL-20260927T105500+0900-R89-P0-RECOVERY-CLOSED
+produced_at: 2026-09-27T10:55:00+09:00
+history_path: analysis/control_brain/history/2026-09-27/1055-R89.md
 
-P0 remains OPEN in RECOVERY_OBSERVATION_WINDOW. Durable success now spans Analyst bridge, MAIN, Utility, Methodology, Control and multiple Forge paths; a repository-wide outage is not supported.
+P0 is closed as RECOVERED. Repository-wide write outage is disproven; the remaining internal root cause is not proven but the failure class is sufficiently bounded. Theory R7 latest/state is reconciled, active pointer debt is zero, and multiple subsequent writer generations completed durably without the same failure pattern.
 
-Forge's internal-scope handoff debt is resolved. Its follow-up confirmation guard is durable at 0b3f8a5e074b346ef18b10ddf3c0893ba6996043 and exact-head CI succeeded. It remains NON_EVIDENTIARY ordinary cache/debounce engineering with scientific credit 0 and is not admitted to SB001 or RV02.
+Evidence Analyst retains the validated GitHub Actions bridge as post-P0 durable hardening. Its cadence, enabled state and scientific authority are unchanged.
 
-Canonical science remains 35/35 terminal; H7 remains CONSUMED_ONE_WAY / INCONCLUSIVE. RV02-RD006 Stage D0 remains allocated only to MAIN, with no durable execution progress yet observed.
+Canonical science remains 35/35 terminal and H7 remains CONSUMED_ONE_WAY / INCONCLUSIVE.
 
-Theory latest/state remains R6/R5 and is the remaining moving-pointer debt blocking P0 closure. Current workers remain enabled except Relay under its intentional dependency-wait contract; no scheduler state changed.
+RV02-RD006 v1 is RESULT_EXPOSED_DEVELOPMENT with D0_INCONCLUSIVE_BOUNDED_EXPLOSION at result head 49b91ca801522f3d6685ebd22097a1e64f9234c9. MAIN may perform only the preserved-result causal-opportunity audit allocated by Analyst R145; rerun/retune, E0/E1/ES and scale work remain closed.
+
+Control R85 remains a documented historical append-only gap, not an active pointer or allocation ambiguity.
