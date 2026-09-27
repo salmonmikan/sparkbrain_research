@@ -1,16 +1,18 @@
 # SparkBrain Methodology Calibration Audit — Latest
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260928T061905+0900-R137-M1-FLY0-CALIBRATION`
-- generated_at: `2026-09-28T06:19:05+09:00`
-- history_path: `analysis/methodology_calibration/history/2026-09-28/0619.md`
+- generation_id: `METHCAL-20260928T081717+0900-R138-M1-ROBUSTNESS-CONTRACT-CALIBRATION`
+- generated_at: `2026-09-28T08:17:17+09:00`
+- history_path: `analysis/methodology_calibration/history/2026-09-28/0817.md`
 - overall_classification: `WELL_CALIBRATED`
 - new_scientific_result: `false`
 
-Integrated Prototype Milestone 1 is built and bounded-functionally verified at exact head `512f21a6134b5d68351e33a7c6eecb8fa3e4550c`; exact-head CI run `36348434677` succeeded. The rolling contract was used correctly: known SB002 defects were repaired before dependent work, all four bounded milestones completed without redundant handoffs, and MAIN stopped at the predeclared final boundary before PR/merge.
+Evidence Analyst R163 correctly accepts integrated M1 at `main@59fc994b39d0ba02682e972161bb46801592d25b` and allocates a finite post-integration robustness harness under build ID `BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS`.
 
-The separate noncanonical FLY-0 probe is CI-clean at `c9538544b04108a950e841cbc90b626259d7e3ff`. Its structured, degree-preserving rewired and random controls share the declared static resource envelope. Differing fired-event totals require clarification before any future comparative claim, but the present artifact expressly makes no superiority, biological-equivalence, composition or novelty claim.
+The contract prospectively fixes nominal, checkpoint, fault-injection and identity-conflict scenarios, caps the suite at 512 committed cycles, preserves the existing runtime/resource/claim boundary and requires exact-head CI. It neither adds a review gate nor authorizes scientific execution.
 
-Overall calibration remains well balanced: useful integration was not suppressed, and no build or Forge observation was promoted into scientific evidence. Fresh Analyst exact-head reconciliation is the correct current boundary; a duplicate mandatory engineering-review gate is not.
+The pre-PR/merge Analyst stop is proportionate and occurs once after the bounded harness. Science-invariant repairs must remain inside the fixed algorithm, threshold, topology, public-interface, resource and claim boundaries.
+
+M1 remains integrated and bounded-functionally verified; the new harness is allocated but not yet built. Comparative support is false, composition contribution is `NOT_ESTABLISHED`, scientific novelty is false and scientific credit is 0.
 
 No new SparkBrain scientific result.
