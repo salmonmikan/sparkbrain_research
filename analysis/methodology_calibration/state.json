@@ -1,41 +1,41 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-27T18:19:47+09:00",
+  "timestamp": "2026-09-27T20:17:21+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260927T181947+0900-R132-RD006-V3-POSTRESULT-CALIBRATION",
-    "sequence": 132,
+    "generation_id": "METHCAL-20260927T201721+0900-R133-RD006-V4-PREMATRIX-CALIBRATION",
+    "sequence": 133,
     "material_change": true,
-    "material_change_reason": "R151_GATE_CLARIFICATION_R159_RESULT_R152_POSTRESULT_RECONCILIATION",
-    "supersedes_generation_id": "METHCAL-20260927T161705+0900-R131-RD006-V3-D0-GATE-CALIBRATION",
+    "material_change_reason": "R153_V4_PREFLIGHT_R161_IMPLEMENTATION_R154_R155_ONE_SHOT_MATRIX_AUTHORITY",
+    "supersedes_generation_id": "METHCAL-20260927T181947+0900-R132-RD006-V3-POSTRESULT-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
-    "previous_methodology": "METHCAL-20260927T161705+0900-R131-RD006-V3-D0-GATE-CALIBRATION@deb7e6781eaf1c6139cee0056c51365346e70543",
-    "evidence_analyst": "EVA-20260927T180100+0900-R152-RD006-V3-POSTRESULT-CAUSAL-AUDIT@80991262b47bce0bc06bda919fe1f5a8d89cb0be",
-    "main_durable_state": "MAIN-20260927T172900+0900-PRIMARY-R159-RD006-V3-D0@15b3e90dee1359e7e9673d7043c7f077284b309a",
-    "control": "CTRL-20260927T175000+0900-R94-RD006-V3-D0-RESULT@c631d7d3203cea1f69723c055f59e1ce92e23562",
-    "theory": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4@cf3c49a4affa31e21ed9229983766da7ee064587",
-    "forge": "FORGE-20260927T174452+0900-BOUNDED-RECEIPT-RETENTION-CI-CLEAN@8937342eea5f05777bdccd13aaa7e6f0c13fd609"
+    "previous_methodology": "METHCAL-20260927T181947+0900-R132-RD006-V3-POSTRESULT-CALIBRATION@6c0a1beaf7a146d995fc5ba6ed0cce004d686f09",
+    "evidence_analyst": "EVA-20260927T200932+0900-R155-R154-REF-METADATA-CORRECTION@9c2ad87325834c01afed2282a882627438248964",
+    "analyst_decision": "EVA-20260927T200051+0900-R154-RD006-V4-D0-MATRIX-AUTHORIZATION@81db1de1b53814edf177c466e63a0042cad702f7",
+    "main_durable_state": "MAIN-20260927T193131+0900-PRIMARY-R161-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT@08ae5aeb797f705a38fcd4e62598b16b179ea51e",
+    "control": "CTRL-20260927T185000+0900-R95-RD006-V3-CAUSAL-AUDIT@991241ea64657a13a1863e18c51e7a47eeb49dda",
+    "theory": "THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2@e56c5b8c6b4f263265fb2f1b0ebe9b76d0ec22ac",
+    "forge": "FORGE-20260927T184516+0900-EPOCH-FENCED-RECEIPT-ROTATION-CI-CLEAN@13d523fd2aab2f14842ff5a5722946a694b5322c"
   },
   "authoritative_refs": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
-    "rd006_v3": {
+    "rd006_v4": {
       "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-      "revision": "v3-d0-execution",
-      "phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "contract_disposition": "CLOSED",
+      "revision": "v4-port-to-hidden-trace-boundary",
+      "phase_before_first_cell": "OPEN_DEVELOPMENT",
+      "phase_after_any_cell_start": "RESULT_EXPOSED_DEVELOPMENT",
       "claim_ceiling": "SYSTEM",
-      "source_head": "8867c0565e25a0c76749c12eec7f4c03238b7aef",
-      "result_head": "540fa54f45a8cdc467eb2695270035cb9332f2fb",
-      "ci_run": 36306014977,
-      "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
-      "total_cells": 12,
-      "complete_non_exploded_cells": 11,
-      "bounded_cells": 1,
-      "max_dynamic_eligible_sources": 1,
-      "required_dynamic_eligible_sources": 2,
-      "gate_open_cells": 0,
+      "preflight_head": "78594102ea03fe3ffc0f6e1e0b8b94dd66351005",
+      "preflight_tree": "f41b9bd97630e4822584f3994692eec5d82c66fa",
+      "ci_run": 36312637388,
+      "preflight_status": "PASS",
+      "changed_invariant": "ORDINARY_EXTERNAL_LEARNER_TRACE_BOUNDARY_PORT_TO_PORT_ONLY_TO_PORT_TO_PORT_PLUS_PORT_TO_HIDDEN",
+      "authorized_matrix_count": 1,
+      "authorized_cells": 12,
+      "hidden_return_learning": "OFF",
+      "result_bearing_matrix_executed": false,
       "scientific_credit": 0
     },
     "system_build": {
@@ -50,14 +50,13 @@
       "scientific_credit": 0
     },
     "theory": {
-      "generation": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4",
+      "generation": "THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2",
       "status": "NO_PROPOSAL",
       "revisit_status": "NO_REVISIT_PROPOSAL"
     },
     "forge": {
-      "generation": "FORGE-20260927T174452+0900-BOUNDED-RECEIPT-RETENTION-CI-CLEAN",
-      "status": "FORGE_INTERESTING",
-      "recommended_handoff": "SYSTEM_BUILD_INPUT",
+      "generation": "FORGE-20260927T184516+0900-EPOCH-FENCED-RECEIPT-ROTATION-CI-CLEAN",
+      "disposition": "OPTIONAL_FUTURE_SEPARATELY_ALLOCATED_SYSTEM_BUILD_ONLY",
       "admitted_to_rd006": false,
       "admitted_to_sb001": false,
       "scientific_credit": 0
@@ -69,20 +68,25 @@
     "formal_one_way": "KEEP",
     "development_credit": "KEEP",
     "rd005_preservation": "KEEP",
-    "v1_v2_preservation": "KEEP",
-    "v3_explicit_revision": "KEEP",
-    "r151_actual_spike_gate": "KEEP",
-    "static_vs_dynamic_reachability": "KEEP",
-    "exact_head_binding": "KEEP",
+    "v1_v2_v3_preservation": "KEEP",
+    "v4_explicit_revision": "KEEP",
+    "single_changed_invariant": "KEEP",
+    "exact_preflight_binding": "KEEP",
     "single_matrix_only": "KEEP",
-    "raw_preservation": "KEEP",
-    "result_exposed_transition": "KEEP",
-    "v3_contract_closure": "KEEP",
+    "fixed_surface_and_resources": "KEEP",
+    "hidden_return_learning_off": "KEEP",
+    "actual_spike_edge_lag_gate": "KEEP",
+    "static_vs_dynamic_reachability": "KEEP",
+    "raw_before_interpretation": "KEEP",
+    "no_clobber": "KEEP",
+    "partial_or_failure_result_exposure": "KEEP",
     "same_revision_rerun_retune_rescore": "KEEP",
+    "execution_adapter_freeze": "KEEP",
+    "off_on_attribution": "CLARIFY_PACKAGE_EFFECT_NOT_ISOLATED_PORT_TO_HIDDEN_CAUSAL_CONTRIBUTION",
     "later_e0_e1_es": "KEEP",
+    "capability_heldout": "KEEP",
     "scale_reservoir": "KEEP",
-    "causal_audit_taxonomy": "CLARIFY_DETERMINISTIC_PRECEDENCE",
-    "pass_reachability": "KEEP"
+    "pass_reachability": "PLAUSIBLE_NOT_GUARANTEED"
   },
   "system_build_gate_findings": {
     "identity_separation": "KEEP",
@@ -96,15 +100,15 @@
   "revisit_gate_findings": {
     "rd005_no_reopen": "KEEP",
     "rd006_v1_v2_v3_preserved": "KEEP",
-    "v3_not_rescue_laundering": "KEEP",
-    "future_fresh_revision_not_globally_suppressed": "KEEP",
-    "theory_r9": "NO_REVISIT_PROPOSAL"
+    "v4_not_rescue_laundering": "KEEP",
+    "fresh_successor_not_suppressed": "KEEP",
+    "theory_r10": "NO_REVISIT_PROPOSAL"
   },
   "calibration": {
     "over_reduction_risk": "LOW",
-    "overclaim_risk": "LOW",
+    "overclaim_risk": "LOW_IF_ATTRIBUTION_BOUNDARY_KEPT",
     "moving_goalpost_risk": "LOW",
-    "pass_reachability": "REALISTIC_BUT_NOT_REACHED",
+    "pass_reachability": "PLAUSIBLE_NOT_GUARANTEED",
     "overall": "WELL_CALIBRATED"
   },
   "mandatory_questions": {
@@ -142,7 +146,7 @@
     "protected_heldout_accessed": false
   },
   "persistence": {
-    "history_path": "analysis/methodology_calibration/history/2026-09-27/1819.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-27/2017.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts_per_mutation_purpose": 5,
     "attempt": 1,
