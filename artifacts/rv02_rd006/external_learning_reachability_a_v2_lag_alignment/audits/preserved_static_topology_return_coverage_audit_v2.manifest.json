@@ -1,0 +1,15 @@
+{
+  "artifact_file_sha256": "90e1939262a7602d575ae1cc95f4bd6a4bae817a9163c815faf3ac00eb73d010",
+  "artifact_path": "preserved_static_topology_return_coverage_audit_v2.json.gz",
+  "audit_id": "RD006_V2_PRESERVED_STATIC_TOPOLOGY_RETURN_COVERAGE_AUDIT",
+  "audit_sha256": "69a6263b50375e207705d65f567a2660d0389b53dceed4f6b9722d2338a0fd6c",
+  "capability_scoring": false,
+  "new_dynamic_execution": false,
+  "new_result_bearing_matrix": false,
+  "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
+  "preserved_result_head": "d2462ebc52e3bf1e6a50334ee6b8d7cf437b416a",
+  "preserved_source_head": "7896433af675b77b1f442e9efaf268d16564c564",
+  "status": "COMPLETED",
+  "topology_mutated": false,
+  "v3_execution_authorized": false
+}
