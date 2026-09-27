@@ -1,38 +1,33 @@
-# MAIN PRIMARY R165
+# MAIN PRIMARY R166
 
 schema_version: 2
-generation_id: MAIN-20260928T032256+0900-PRIMARY-R165-SB002-INTEGRATED
-generated_at: 2026-09-28T03:22:56+09:00
+generation_id: MAIN-20260928T041557+0900-PRIMARY-R166-SB002-DEFECTS-WAIT-ANALYST
+generated_at: 2026-09-28T04:15:57+09:00
 execution_mode: PRIMARY
 work_mode: SYSTEM_BUILD
-status: SYSTEM_BUILD_SB002_INTEGRATED_COMPLETE_WAIT_ANALYST
+status: SYSTEM_BUILD_SB002_POSTMERGE_DEFECTS_WAIT_ANALYST_REPAIR_AUTHORITY
 build_id: BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT
 analyst_generation_id: EVA-20260928T025931+0900-R160-SB002-EXACT-HEAD-INTEGRATION-AUTHORITY
 analyst_authority: analysis/orchestrator/history/2026-09-28/0259-R160.md
-source_branch: system-build/sb002-causal-scope-revision-pilot-20260928
-authorized_exact_head: 720e18bcff53be76c861fa8c09d24d5320b90455
-authorized_exact_tree: f4806298df53d12a6c1845aaa78ebd8e0c126a73
-pr: 158
-pr_ci_run_id: 36340192931
-pr_ci_conclusion: success
-merge_method: squash
+main: 292c80b3e77fd7176eae6329de14882187689ee2
 merge_commit: 76b0cc94edf0fec2e46d69978e0794a37759b862
-merge_tree: f4806298df53d12a6c1845aaa78ebd8e0c126a73
+control_generation_id: CTRL-20260928T040316+0900-R100-ACTIVE-DIRECTIVE-RECONCILIATION
 built: true
-functionally_verified_bounded: true
+prior_functionally_verified_bounded: true
+current_functional_verification_status: REPAIR_AND_REVERIFY_REQUIRED
 comparatively_supported: false
 composition_contribution: NOT_ESTABLISHED
 scientifically_novel: false
 scientific_credit: 0
 evidentiary_status: NON_EVIDENTIARY_BUILD
-new_build_result: true
+new_build_result: false
 new_scientific_result: false
 
-PR #158 was opened from the unchanged Analyst-authorized exact head. Its Python 3.11/3.13 jobs passed lint, readiness, full tests and bundle validation. The squash merge produced main commit `76b0cc94edf0fec2e46d69978e0794a37759b862`; independent readback confirmed the merged tree exactly equals the authorized SB002 tree.
+Three post-merge defects are confirmed: duplicate evidence identity, checkpoint route-ledger completeness and global evidence-sequence integrity. They are normal engineering defects, but current durable Analyst R160 stops after merge and grants no repair authority.
 
-This is engineering integration only. It establishes neither comparative support, composition contribution, capability improvement nor scientific novelty.
+MAIN performed no code or scientific execution. It is waiting for a fresh complete Analyst allocation before repair or IPM1 continuation.
 
-stop_reason: SB002_MERGED_EXACT_TREE_PUBLISHED_WAIT_FRESH_ANALYST_INTEGRATION_RECONCILIATION
-next_action: Fresh Evidence Analyst reconciliation of the main merge identity; no further MAIN continuation without new authority.
+stop_reason: NO_DURABLE_ANALYST_REPAIR_OR_NEXT_MILESTONE_AUTHORITY
+next_action: Evidence Analyst must publish a fresh durable repair/rolling allocation; MAIN then re-fetches exact authority and branch state.
 scheduler_state_changed: false
-history: reports/orchestrator/main/history/2026-09-28/0322-r165-primary-sb002-integrated.md
+history: reports/orchestrator/main/history/2026-09-28/0415-r166-primary-sb002-defects-wait-analyst.md

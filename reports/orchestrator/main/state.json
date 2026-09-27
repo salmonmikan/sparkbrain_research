@@ -1,57 +1,93 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260928T032256+0900-PRIMARY-R165-SB002-INTEGRATED",
-  "generated_at": "2026-09-28T03:22:56+09:00",
-  "status": "SYSTEM_BUILD_SB002_INTEGRATED_COMPLETE_WAIT_ANALYST",
+  "generation_id": "MAIN-20260928T041557+0900-PRIMARY-R166-SB002-DEFECTS-WAIT-ANALYST",
+  "generated_at": "2026-09-28T04:15:57+09:00",
+  "status": "SYSTEM_BUILD_SB002_POSTMERGE_DEFECTS_WAIT_ANALYST_REPAIR_AUTHORITY",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT",
   "analyst_generation_id": "EVA-20260928T025931+0900-R160-SB002-EXACT-HEAD-INTEGRATION-AUTHORITY",
   "analyst_authority": "analysis/orchestrator/history/2026-09-28/0259-R160.md",
-  "prior_main_generation": "MAIN-20260928T013534+0900-PRIMARY-R164-SB002-PUBLISHED-WAIT-ANALYST",
-  "source_branch": "system-build/sb002-causal-scope-revision-pilot-20260928",
-  "authorized_exact_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
-  "authorized_exact_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
-  "base_main_before_merge": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
+  "analyst_target_head": "6cedfd56ddc3e88e73441ea8b0db59932ccd90fb",
+  "analyst_authority_scope": "EXACT_HEAD_PR_INTEGRATION_THEN_STOP_FOR_FRESH_ANALYST",
+  "repair_authority_present": false,
+  "next_milestone_authority_present": false,
+  "prior_main_generation": "MAIN-20260928T032256+0900-PRIMARY-R165-SB002-INTEGRATED",
+  "refs_observed": {
+    "main": "292c80b3e77fd7176eae6329de14882187689ee2",
+    "control": "13e3667ac485ce8857c2e6e8a3363aa32dc54909",
+    "evidence_analyst": "6cedfd56ddc3e88e73441ea8b0db59932ccd90fb",
+    "evidence_persistence_requests": "796972861f0c52a5b4d24f7edb07597fd62d7a0d",
+    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "main_reports_before": "282981a96148e071e2f985bf8b8f60563cda9563",
+    "sb002_source_head": "720e18bcff53be76c861fa8c09d24d5320b90455"
+  },
   "integration": {
     "pr_number": 158,
-    "pr_url": "https://github.com/salmonmikan/sparkbrain_research/pull/158",
     "pr_state": "MERGED",
-    "head_sha": "720e18bcff53be76c861fa8c09d24d5320b90455",
-    "changed_files": 8,
-    "merge_method": "SQUASH",
     "merge_commit": "76b0cc94edf0fec2e46d69978e0794a37759b862",
     "merge_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
-    "source_tree_equal": true
+    "authorized_tree_equal": true,
+    "pr_ci_run_id": 36340192931,
+    "pr_ci_conclusion": "success"
   },
-  "ci": {
-    "source_run_id": 36333624083,
-    "source_conclusion": "success",
-    "pr_run_id": 36340192931,
-    "pr_conclusion": "success",
-    "python_311": "success",
-    "python_313": "success",
-    "lint": "success",
-    "local_readiness": "success",
-    "tests": "success",
-    "bundle": "success"
-  },
-  "integration_status": "INTEGRATED_COMPLETE_WAIT_FRESH_ANALYST_RECONCILIATION",
-  "target_capability": "CURRENT_OBSERVATION_CAUSAL_MAX_TWO_SCOPE_ROUTING_PLUS_ROUTE_LOCAL_REVISION_WITH_ATOMIC_ROLLBACK_AND_REPLAY",
   "built": true,
-  "bounded_functionally_verified": true,
+  "prior_bounded_functionally_verified": true,
+  "bounded_functional_verification_status": "REPAIR_AND_REVERIFY_REQUIRED",
   "comparatively_supported": false,
   "composition_contribution": "NOT_ESTABLISHED",
   "scientifically_novel": false,
   "scientific_credit": 0,
   "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-  "new_build_result": true,
+  "confirmed_postmerge_defects": [
+    {
+      "severity": "P1",
+      "id": "SB002-DUPLICATE-EVIDENCE-IDENTITY"
+    },
+    {
+      "severity": "P2",
+      "id": "SB002-CHECKPOINT-ROUTE-LEDGER-COMPLETENESS"
+    },
+    {
+      "severity": "P2",
+      "id": "SB002-CHECKPOINT-GLOBAL-SEQUENCE-PERMUTATION"
+    }
+  ],
+  "control": {
+    "generation_id": "CTRL-20260928T040316+0900-R100-ACTIVE-DIRECTIVE-RECONCILIATION",
+    "sb002_state": "INTEGRATED_POSTMERGE_CONCRETE_DEFECTS_WAIT_ANALYST_REPAIR_AUTHORITY",
+    "primary_objective": "INTEGRATED_PROTOTYPE_MILESTONE_1",
+    "control_is_not_analyst_allocation": true
+  },
+  "relay_collision": {
+    "desired": "DISABLED",
+    "actual": "DISABLED",
+    "operational": "DEPENDENCY_WAIT_SUSPENDED",
+    "competing_allocation": false
+  },
+  "action": {
+    "code_changed": false,
+    "branch_created": false,
+    "pr_changed": false,
+    "workflow_dispatched": false,
+    "result_bearing_execution_performed": false,
+    "result_bearing_invocations": 0
+  },
+  "new_build_result": false,
   "new_scientific_result": false,
-  "result_bearing_execution_authorized": false,
-  "result_bearing_execution_performed": false,
-  "result_bearing_invocations": 0,
-  "review_policy": "OPTIONAL_ADVISORY_NOT_A_SYSTEM_BUILD_GATE",
-  "active_pointer_debt": [],
+  "stop_reason": "NO_DURABLE_ANALYST_REPAIR_OR_NEXT_MILESTONE_AUTHORITY",
+  "next_action": "WAIT_FOR_FRESH_DURABLE_EVIDENCE_ANALYST_ALLOCATION_THEN_REFETCH_EXACT_AUTHORITY_AND_BRANCH_STATE",
+  "scheduler_state_changed": false,
+  "owner": "main",
+  "history_path": "reports/orchestrator/main/history/2026-09-28/0415-r166-primary-sb002-defects-wait-analyst.md",
+  "publication": {
+    "branch": "ops/orchestrator-run-report",
+    "branch_head_before": "282981a96148e071e2f985bf8b8f60563cda9563",
+    "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
+    "attempt": 1,
+    "maximum_attempts": 5,
+    "commit_record_semantics": "INTENT_RECORDED_IN_COMMIT_COMPLETION_REQUIRES_EXTERNAL_READBACK"
+  },
   "hard_floor": {
     "experiments_dispatched": false,
     "formal_workflow_dispatched": false,
@@ -60,18 +96,5 @@
     "immutable_evidence_changed": false,
     "held_out_access": false,
     "scheduler_changes": false
-  },
-  "stop_reason": "SB002_MERGED_EXACT_TREE_PUBLISHED_WAIT_FRESH_ANALYST_INTEGRATION_RECONCILIATION",
-  "next_action": "EVIDENCE_ANALYST_RECONCILE_MAIN_MERGE_76B0CC94_AND_DEFINE_ANY_NEXT_BOUNDED_MILESTONE",
-  "scheduler_state_changed": false,
-  "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-28/0322-r165-primary-sb002-integrated.md",
-  "publication": {
-    "branch": "ops/orchestrator-run-report",
-    "branch_head_before": "c185fba70087122131274dcc911cb2f725665bb2",
-    "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
-    "attempt": 1,
-    "maximum_attempts": 5,
-    "commit_record_semantics": "INTENT_RECORDED_IN_COMMIT_COMPLETION_REQUIRES_EXTERNAL_READBACK"
   }
 }
