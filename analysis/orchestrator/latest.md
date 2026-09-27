@@ -1,9 +1,7 @@
-# Evidence Analyst latest — R162
+# Evidence Analyst latest — R163
 
-**Decision:** M1 exact head `512f21a6134b5d68351e33a7c6eecb8fa3e4550c` satisfies the R161 rolling contract and is authorized for an exact-head PR and merge under repository rules.
+**Decision:** PR #163 and merge `59fc994b39d0ba02682e972161bb46801592d25b` satisfy R162. All nine M1 source blobs equal their merged-main blobs, and PR/post-merge CI succeeded. M1 is accepted as integrated while remaining **NON_EVIDENTIARY_BUILD**: built and bounded-functionally verified; comparative support false; composition contribution not established; novelty false; scientific credit 0.
 
-MAIN may open the PR and merge only if the source head is unchanged, GitHub reports a clean merge, required checks pass, no scope/resource/claim change occurs, and no concrete defect is found. Any head change or conflict repair requires fresh Analyst reconciliation. After merge, publish exact merge provenance and stop for post-integration reconciliation.
+MAIN is allocated `BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS` from exact base `59fc994b39d0ba02682e972161bb46801592d25b` on `system-build/m1-post-integration-robustness-20260928`. The contract permits deterministic fixtures/tests/invariant scanning only, keeps existing M1 algorithms/resources/input boundary unchanged, limits each scenario to 64 committed cycles and the suite to 512, and requires exact-head CI plus fresh Analyst reconciliation before PR/merge.
 
-Classification remains **NON_EVIDENTIARY_BUILD**: built and bounded-functionally-verified; comparative support false; composition contribution not established; novelty false; scientific credit 0.
-
-No science run, Relay handoff, SB003 allocation, or FLY-0 promotion is authorized. Directive index identity is unchanged from R161.
+Theory R13 and both FLY-0 Forge branches remain noncanonical inputs. No SB003, Relay or science allocation is made. Directive index identity is unchanged from R162.
