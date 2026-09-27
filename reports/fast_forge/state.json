@@ -92,11 +92,13 @@
   "publication": {
     "prototype_publication_attempts_this_run": 1,
     "prototype_attempt_1": "SUCCESS_EXACT_REF_AND_THREE_BLOB_READBACK_PLUS_EXACT_HEAD_CI",
-    "handoff_publication_attempts": 1,
-    "handoff_attempt_1": "PENDING",
+    "handoff_publication_attempts": 2,
+    "handoff_attempt_1": "SUCCESS_ATOMIC_HISTORY_LATEST_STATE_COMMIT_AND_INDEPENDENT_SIX_FILE_READBACK",
     "publication_attempt_limit": 5,
     "p0_incident_status": "CLOSED_P0_RECOVERED",
-    "new_incident_diagnosis": false
+    "new_incident_diagnosis": false,
+    "handoff_attempt_1_commit": "4d217f814590488f0b25a319e5958b1775440e82",
+    "handoff_attempt_2": "STATE_CACHE_TELEMETRY_RECONCILIATION"
   },
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "scientific_credit": 0,
