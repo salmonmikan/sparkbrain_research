@@ -1,16 +1,16 @@
 # SparkBrain Control Brain — Latest
 
 schema_version: 2
-generation_id: CTRL-20260927T105500+0900-R89-P0-RECOVERY-CLOSED
-produced_at: 2026-09-27T10:55:00+09:00
-history_path: analysis/control_brain/history/2026-09-27/1055-R89.md
+generation_id: CTRL-20260927T115000+0900-R90-RD006-AUDIT-OBSERVED
+produced_at: 2026-09-27T11:50:00+09:00
+history_path: analysis/control_brain/history/2026-09-27/1150-R90.md
 
-P0 is closed as RECOVERED. Repository-wide write outage is disproven; the remaining internal root cause is not proven but the failure class is sufficiently bounded. Theory R7 latest/state is reconciled, active pointer debt is zero, and multiple subsequent writer generations completed durably without the same failure pattern.
+P0 remains closed as RECOVERED. Post-closure Analyst, MAIN and Utility publication paths remain durable and active pointer debt is zero.
 
-Evidence Analyst retains the validated GitHub Actions bridge as post-P0 durable hardening. Its cadence, enabled state and scientific authority are unchanged.
+Canonical science remains 35/35 terminal; H7 remains CONSUMED_ONE_WAY / INCONCLUSIVE.
 
-Canonical science remains 35/35 terminal and H7 remains CONSUMED_ONE_WAY / INCONCLUSIVE.
+MAIN R156 completed the preserved-result causal-opportunity audit for RV02-RD006 v1 at 2e4b27b620c7fdd2d4d1803df0f11f13b5ed28e8 with CI success. It found no eligible hidden-return clock; all ordinary external-learning updates were PORT-to-PORT. This is a development diagnostic with zero scientific credit, not a new scientific result.
 
-RV02-RD006 v1 is RESULT_EXPOSED_DEVELOPMENT with D0_INCONCLUSIVE_BOUNDED_EXPLOSION at result head 49b91ca801522f3d6685ebd22097a1e64f9234c9. MAIN may perform only the preserved-result causal-opportunity audit allocated by Analyst R145; rerun/retune, E0/E1/ES and scale work remain closed.
+A non-persisted local unit-test dynamics invocation was disclosed and excluded. Evidence Analyst must reconcile the audit before any versioned revision. v1 rerun/retune, E0/E1/ES, scale/reservoir work and parameter/topology/timing changes remain unauthorized.
 
-Control R85 remains a documented historical append-only gap, not an active pointer or allocation ambiguity.
+Production workers remain enabled except Relay under its intentional dependency-wait contract. No scheduler state changed.
