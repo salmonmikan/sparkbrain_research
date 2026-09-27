@@ -1,0 +1,65 @@
+{
+  "degree_preservation": true,
+  "fingerprints": {
+    "degree_preserving_rewired": "c6b5d2e62f8a7ba4906700168820e43127ed2e2aba3df02cd04cb4e5fb05db97",
+    "fly_like_structured": "7cdae0568360aa9bd989bcb86ccd7b0e4d3dbbf8a3fa708ce2280258c3f5d61b",
+    "random_sparse": "0d0afcd2905f32f5fa75b9725d8db7bff3e782e40ce224cb563a39c6b59b4afc"
+  },
+  "resource_signature": {
+    "delay_counts": {
+      "1": 384,
+      "2": 128
+    },
+    "edge_count": 512,
+    "node_count": 128,
+    "role_counts": {
+      "local": 96,
+      "modulation": 8,
+      "motor": 8,
+      "sensory": 16
+    },
+    "role_pair_counts": {
+      "local->local": 288,
+      "local->motor": 96,
+      "modulation->local": 32,
+      "motor->local": 32,
+      "sensory->local": 64
+    },
+    "sign_counts": {
+      "-1": 80,
+      "1": 432
+    }
+  },
+  "topologies": {
+    "degree_preserving_rewired": {
+      "fired_events": 1185,
+      "first_matched_motor_times": [
+        2,
+        2
+      ],
+      "matched_motor_events": 51,
+      "motor_side_selectivity": -0.019230769230769232,
+      "opposite_motor_events": 53
+    },
+    "fly_like_structured": {
+      "fired_events": 600,
+      "first_matched_motor_times": [
+        2,
+        2
+      ],
+      "matched_motor_events": 50,
+      "motor_side_selectivity": 1.0,
+      "opposite_motor_events": 0
+    },
+    "random_sparse": {
+      "fired_events": 1074,
+      "first_matched_motor_times": [
+        2,
+        2
+      ],
+      "matched_motor_events": 47,
+      "motor_side_selectivity": -0.030927835051546393,
+      "opposite_motor_events": 50
+    }
+  }
+}
