@@ -144,8 +144,11 @@ def test_feedback_exposes_runtime_metrics_not_world_target() -> None:
 def test_probe_summary_records_exact_replay_and_resource_mismatch() -> None:
     summary = probe_summary()
     controllers = summary["controllers"]
+    fly_counts = controllers["fly0_structured"]["active_event_counts"]
+    reactive_counts = controllers["reactive_reference"]["active_event_counts"]
 
     assert controllers["fly0_structured"]["same_history_replay_exact"] is True
     assert controllers["reactive_reference"]["same_history_replay_exact"] is True
-    assert controllers["fly0_structured"]["active_event_counts"] == [300, 300, 300]
-    assert controllers["reactive_reference"]["active_event_counts"] == [1, 1, 1]
+    assert len(set(fly_counts)) == 1
+    assert min(fly_counts) > max(reactive_counts)
+    assert reactive_counts == [1, 1, 1]

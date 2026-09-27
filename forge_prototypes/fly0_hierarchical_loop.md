@@ -36,10 +36,11 @@ Both controller implementations move the world from position 2 to target -1
 in three accepted steps and reproduce identical same-history checkpoint tokens
 after restore/replay.
 
-Their resource exposures are deliberately not declared matched:
-
-- wrapped structured FLY-0: 300 fired events per active step;
-- reactive reference: 1 counted event per active step.
+Their resource exposures are deliberately not declared matched. The wrapped
+structured FLY-0 controller records a deterministic multi-event trace at each
+active step, while the reactive reference records one counted event. Exact
+runtime counts are emitted by the summary command rather than frozen as a
+cross-controller fairness claim.
 
 The shared interface and closed-loop function therefore survive a simple
 replacement, but the result is not a fair performance comparison. The resource
