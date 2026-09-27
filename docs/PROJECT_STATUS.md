@@ -461,5 +461,16 @@ BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT is a non-evidentiary integration-de
 
 The predictive bank is an established/reference latent-state mechanism and must not be described as emergent field memory. Its Forge design provenance is retained as design input only; Forge and BUILD observations carry zero confirmatory scientific credit. The bounded build is implemented and functionally verified, but it is not comparatively supported, does not establish causal composition contribution, and does not establish scientific novelty.
 
-Integration is tracked through PR #152. Review, CI, and documentation completion are engineering gates only and do not reopen any terminal scientific candidate or change any historical result.
+Integration is tracked through PR #152. CI and documentation completion are engineering gates only and do not reopen any terminal scientific candidate or change any historical result. Code review remains optional advisory input rather than a mandatory SYSTEM_BUILD gate.
 
+## 10. SYSTEM_BUILD — BUILD-SB-002 causal scope revision pilot
+
+BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT is a separate non-evidentiary integration-development slice. `sparkbrain.system_build.CausalScopeRevisionPilot` composes a current-observation-only, fixed-K=2 online centroid router with explicit route-local hypothesis and evidence state. One observation is committed as a transaction across router centroids/counts/tokens, hypothesis support, the evidence ledger, identical-observation bindings, and checkpoint-visible sequence state.
+
+Ambiguous midpoints, observations outside learned support, identical observations carrying conflicting candidate evidence, and invalid downstream revisions fail closed without any state write. A downstream validation rejection after successful routing restores the complete pre-step checkpoint payload. Opaque route tokens replay exactly from the same checkpoint; different arrival orders may permute token names, so cross-order acceptance compares the induced partition and route-local result instead.
+
+The public runtime accepts only a current numeric observation and candidate-local evidence. It has no label, true scope/regime/episode identity, future suffix, evaluator output, held-out field, or scientific scoring interface. The implementation is CPU-only, deterministic, dependency-light, fixed to at most two online components and at most eight numeric dimensions, with no drift, merge, split, scale sweep, learned representation, model selection, or real-task claim.
+
+Component provenance is explicit: the router selectively reimplements the Forge `CausalOnlineScopeRouter` from prototype `f980c13d984460f158a95e8181239db8d19c8468` / handoff `164ce39b99fbfa7146e439215c804c638305dea3`; route-local revision selectively reimplements ordinary Forge scoped-overlay patterns; and Theory R11 design `ID-SB-LATENT-SCOPE-PLURAL-REVISION-001` is non-evidentiary design input. All inputs transfer zero scientific credit.
+
+Status at this branch head: built and bounded-functionally verified by the fixed synthetic acceptance surface, deterministic checkpoint/replay, rollback and oracle-field boundary tests. It is not comparatively supported; composition contribution is not established; scientific novelty/support is not established; scientific credit is 0. Exact-head CI remains required before reporting the published build complete.

@@ -612,3 +612,28 @@ The v0.3/v0.3.2 runtime is a direct SparkBrain engineering component. The predic
 
 This namespace is NON_EVIDENTIARY_BUILD. Functional build success does not establish component novelty, composition necessity, whole-system superiority, autonomous entity discovery, or scientific support. Any future comparative or causal composition study requires a separate prospective contract.
 
+## 21. SYSTEM_BUILD causal scope revision pilot
+
+`causal_scope_revision.py` adds the bounded `BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT` path without modifying SB001 or the canonical science runtime:
+
+```text
+current numeric observation + candidate-local evidence
+                    |
+                    v
+        fixed-K=2 online scope router
+             | route token / abstain
+             v
+     route-local hypothesis + evidence state
+                    |
+                    v
+       atomic commit or full rollback
+                    |
+                    v
+       canonical checkpoint / exact replay
+```
+
+`CausalScopeRouter` is ordinary streaming two-centroid clustering with fixed birth, assignment and ambiguity thresholds. `CausalScopeRevisionPilot` owns the transaction boundary. Its pre-step checkpoint payload covers router state, per-route hypothesis support, append-only evidence records, exact-observation candidate bindings and the committed sequence counter. Router abstention must be state-neutral; downstream revision rejection reconstructs every component from the pre-step payload before returning a no-write result.
+
+`ScopeRevisionCheckpointManager` writes one canonical, no-clobber local checkpoint envelope with a payload digest and restored-state hash. Loading validates exact schemas, K=2 resource bounds, component token order, route/component binding, evidence-to-support equality, sequence/evidence equality and observation-binding consistency. Querying is a pure projection.
+
+Runtime interfaces contain no label, true scope/regime/episode identifier, future suffix, evaluator output or held-out field. Opaque tokens are exact only within the same history/checkpoint; cross-order checks compare partition membership and route-local selected hypotheses. This implementation is NON_EVIDENTIARY_BUILD and does not establish comparative support, composition contribution, general scope learning, capability improvement or novelty.
