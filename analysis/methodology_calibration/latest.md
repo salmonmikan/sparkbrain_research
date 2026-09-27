@@ -1,18 +1,18 @@
 # SparkBrain Methodology Calibration Audit — Latest
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260927T102000+0900-R128-RD006-PHASE-RESOLVED`
-- generated_at: `2026-09-27T10:20:00+09:00`
-- history_path: `analysis/methodology_calibration/history/2026-09-27/1020.md`
+- generation_id: `METHCAL-20260927T122033+0900-R129-RD006-V2-BOUNDARY`
+- generated_at: `2026-09-27T12:20:33+09:00`
+- history_path: `analysis/methodology_calibration/history/2026-09-27/1220.md`
 - overall_classification: `WELL_CALIBRATED`
 - new_scientific_result: `false`
 
-Evidence Analyst R145 resolved R127's sole material defect by moving RD006 v1 to RESULT_EXPOSED_DEVELOPMENT, preserving its inconclusive bounded-explosion result, and limiting MAIN to a no-new-dynamics audit of preserved source/artifact.
+RD006 v2 is methodologically sound as an explicit versioned development revision. It changed only the prospectively authorized 5.0 ms to 5.5 ms event spacing, executed one bounded matrix, preserved v1/RD005, and retained zero confirmatory credit.
 
-Current calibration is balanced: v1 cannot be rescued by silent rerun/retune, but a future explicitly versioned revision remains available if the preserved audit identifies a concrete structural, timing or stability opportunity. RD005 stays consumed; E0/E1/ES and scale/reservoir work stay closed.
+The gate did not open: maximum eligible connected hidden sources was one, no ready cell existed, and opposing-reversal/ON stopped at the unchanged ceiling. E0/E1/ES, scale/reservoir work, learner-boundary changes and further v2 timing changes remain closed.
 
-SB001 remains integrated and NON_EVIDENTIARY_BUILD with zero scientific credit. Reduced mechanisms and Forge engineering remain reusable without Revisit, while composition and novelty remain unclaimed.
+The next MAIN moving state should mark v2 RESULT_EXPOSED_DEVELOPMENT. This is a cache-alignment clarification, not a defect in the preserved result. Failure closes v2, not the whole RV02 phenomenon family; any successor still requires fresh Analyst authority and a new prospective contract.
 
-MAIN R155's OPEN_DEVELOPMENT text predates R145 and should remain historical; the next moving MAIN state should adopt R145. P0 remains Control-owned and open despite Theory R7 resolving the named pointer debt.
+SB001 remains integrated NON_EVIDENTIARY_BUILD with no comparative, composition or novelty support. Theory R7 remains NO_PROPOSAL / NO_REVISIT_PROPOSAL. P0 is closed as recovered.
 
 No new SparkBrain scientific result.
