@@ -1,11 +1,11 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260928T040316+0900-R100-ACTIVE-DIRECTIVE-RECONCILIATION",
-  "produced_at": "2026-09-28T04:03:16+09:00",
+  "generation_id": "CTRL-20260928T042704+0900-R101-SCHEDULER-POLICY-NORMALIZATION",
+  "produced_at": "2026-09-28T04:27:04+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
   "mode": "CONTROL_BRAIN",
   "policy_refs": {
-    "main": "76b0cc94edf0fec2e46d69978e0794a37759b862",
+    "main": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
     "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d"
   },
   "human_directives": {
@@ -19,15 +19,21 @@
     "HUMAN-20260928-002": "ACCEPT_WITH_MODIFICATION_PARALLEL_FLY0_FORGE_TRACK_DO_NOT_BLOCK_M1"
   },
   "refs_observed": {
-    "control_before": "57fe5474dea444fe21cd4e1be9b4c81be8cd582a",
+    "control_before": "13e3667ac485ce8857c2e6e8a3363aa32dc54909",
     "evidence_analyst": "6cedfd56ddc3e88e73441ea8b0db59932ccd90fb",
     "main_reports": "282981a96148e071e2f985bf8b8f60563cda9563",
-    "main": "76b0cc94edf0fec2e46d69978e0794a37759b862",
+    "main": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
     "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "sb002_authorized_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
     "sb002_authorized_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
     "sb002_merge_commit": "76b0cc94edf0fec2e46d69978e0794a37759b862",
-    "sb002_pr": 158
+    "sb002_pr": 158,
+    "scheduler_policy_pr": 160,
+    "scheduler_policy_merge": "2b11e571e3a30108d5d3e5e56ba52dfe2993a62d",
+    "scheduler_policy_ci_run": 36343734909,
+    "decision_log_fix_pr": 161,
+    "decision_log_fix_merge": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
+    "decision_log_fix_ci_run": 36344180458
   },
   "science": {
     "canonical": 35,
@@ -165,14 +171,14 @@
     "evidence_analyst": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R160_NEXT_RUN_DIRECTIVE_AND_SB002_RECONCILIATION_REQUIRED",
+      "operational": "GREEN_ACTIVE_PROMPT_NORMALIZED_NEXT_RUN_RECONCILE_M1_SB002",
       "scheduler_id": "6ab792ba724c81919be1cd071ab045ba",
       "cadence": "HOURLY_AT_00"
     },
     "main": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R165_WAIT_ANALYST_ROLLING_CONTRACT_OR_REPAIR_AUTHORITY",
+      "operational": "GREEN_ACTIVE_PROMPT_NORMALIZED_WAIT_ANALYST_ROLLING_CONTRACT_OR_REPAIR_AUTHORITY",
       "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b",
       "cadence": "HOURLY_AT_15"
     },
@@ -188,14 +194,14 @@
     "utility": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R157_RECONCILIATION",
+      "operational": "GREEN_ACTIVE_PROMPT_NORMALIZED_M1_SUPPORT_PRIORITY",
       "scheduler_id": "6ab7931c1cdc8191a8d8a8b344f22d60",
       "cadence": "EVERY_TWO_HOURS_AT_25"
     },
     "fast_forge": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_CAUSAL_ROUTER_WITH_NONBLOCKING_TELEMETRY_CACHE_DEBT",
+      "operational": "GREEN_ACTIVE_PROMPT_NORMALIZED_M1_FLY0_PARALLEL_ALLOWED",
       "scheduler_id": "6ab7933b1aa081919594564ce879fdc6",
       "cadence": "HOURLY_AT_35"
     },
@@ -222,13 +228,16 @@
     }
   },
   "scheduler_change": {
-    "changed": false
+    "changed": true,
+    "class": "PROMPT_ONLY_POLICY_NORMALIZATION",
+    "cadence_changed": false,
+    "enabled_state_changed": false
   },
   "scheduler_health": {
-    "classification": "GREEN_WITH_M1_ACCELERATION_AND_SB002_REPAIR_PENDING",
+    "classification": "GREEN_POLICY_NORMALIZED_WITH_SB002_REPAIR_PENDING",
     "unexplained_current_production_off": false,
     "change_required": false,
-    "live_definition_audit_at": "2026-09-28T03:53:35+09:00"
+    "live_definition_audit_at": "2026-09-28T04:27:04+09:00"
   },
   "blue_green": {
     "current_fleet": "GREEN_PRODUCTION",
@@ -237,10 +246,11 @@
   },
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "branch_head_before": "a8fb7e9bcfcc04377f8385ffe9b67d70a2591518",
+    "branch_head_before": "13e3667ac485ce8857c2e6e8a3363aa32dc54909",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
-    "attempt": 1,
+    "attempt": 2,
     "maximum_attempts": 5,
+    "attempt_1_failure_class": "PRE_GITHUB_RUNTIME_SAFETY_REFUSAL",
     "commit_record_semantics": "INTENT_RECORDED_IN_COMMIT; COMPLETION_REQUIRES_EXTERNAL_POST_COMMIT_READBACK"
   },
   "hard_floor": {
@@ -250,19 +260,18 @@
     "evidence_ref_mutated": false,
     "terminal_reopened": false,
     "consumed_formal_rerun_retune_rescore": false,
-    "scheduler_state_changed": false
+    "result_bearing_science_dispatched": false,
+    "scheduler_prompt_changed": true,
+    "scheduler_cadence_changed": false,
+    "scheduler_enabled_state_changed": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-28/0403-R100.md",
+  "history_path": "analysis/control_brain/history/2026-09-28/0427-R101.md",
   "human_directives_reconciliation": {
     "source": "ops/human_directives/active.md@ops/human-directives",
-    "source_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "correction_of_prior_generation": "CTRL-20260928T035335+0900-R99-SB002-POSTMERGE-DEFECT-GOVERNANCE",
-    "omission_class": "ACTIVE_INDEX_NOT_FETCHED_BEFORE_DIRECTIVE_SELECTION",
-    "corrected": true,
-    "newly_discovered_active_directives": [
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002"
-    ]
+    "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "previous_directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "newly_active_or_materially_changed": [],
+    "freshness_verified": true
   },
   "strategy": {
     "primary_objective": "INTEGRATED_PROTOTYPE_MILESTONE_1",
@@ -334,5 +343,22 @@
       "NO_SCIENTIFIC_CREDIT"
     ],
     "promotion_boundary": "EVIDENCE_ANALYST_REVIEW_BEFORE_SYSTEM_BUILD_ALLOCATION"
+  },
+  "scheduler_policy_normalization": {
+    "completed": true,
+    "primary_pr": 160,
+    "primary_merge": "2b11e571e3a30108d5d3e5e56ba52dfe2993a62d",
+    "primary_ci_run": 36343734909,
+    "decision_log_fix_pr": 161,
+    "decision_log_fix_merge": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
+    "decision_log_fix_ci_run": 36344180458,
+    "ci_python_311": "success",
+    "ci_python_313": "success",
+    "scheduler_prompts_updated": 9,
+    "schedules_changed": false,
+    "timing_modes_changed": false,
+    "enabled_states_changed": false,
+    "relay_remains_disabled": true,
+    "unrelated_tasks_changed": false
   }
 }
