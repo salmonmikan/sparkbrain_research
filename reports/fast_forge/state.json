@@ -1,77 +1,76 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260927T095427+0900-PLURAL-SCOPE-POSTERIOR-CI-CLEAN",
-  "produced_at": "2026-09-27T09:54:27+09:00",
-  "forge_id": "FORGE-PLURAL-SCOPE-POSTERIOR-A",
+  "generation_id": "FORGE-20260927T104030+0900-PLURAL-SCOPE-REVISION-BRIDGE-CI-CLEAN",
+  "produced_at": "2026-09-27T10:40:30+09:00",
+  "forge_id": "FORGE-PLURAL-SCOPE-REVISION-BRIDGE-A",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260927-plural-scope-posterior-a",
-  "exact_head": "f5e0968f5292a392c984fbe2efb011a23a49f86f",
+  "branch": "forge/20260927-plural-scope-revision-bridge-a",
+  "exact_head": "55c87d618a9a0a778250b02e20b846c9521ad429",
   "source_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-  "source_forge_head": "0b3f8a5e074b346ef18b10ddf3c0893ba6996043",
-  "target_capability": "retain multiple plausible internally allocated scopes and abstain under ambiguity without caller-supplied privileged identity",
+  "source_forge_head": "5f3cc33d3c4b62e5e62ed730cb5d902b95f00599",
+  "target_capability": "gate late-evidence revision with internally generated plural scope hypotheses while keeping ambiguity and router/allocator disagreement non-mutating",
   "prototype": {
     "files": [
-      "forge_prototypes/plural_scope_posterior.py",
-      "forge_prototypes/plural_scope_posterior.md",
-      "tests/test_forge_plural_scope_posterior.py"
+      "forge_prototypes/plural_scope_revision_bridge.py",
+      "forge_prototypes/plural_scope_revision_bridge.md",
+      "tests/test_forge_plural_scope_revision_bridge.py"
     ],
     "public_inputs": [
-      "internal_allocator_state",
+      "prediction_pool_snapshot",
       "observation_vector",
-      "prediction_error"
-    ],
-    "outputs": [
-      "bounded_scope_hypotheses",
-      "selected_scope_or_abstain",
-      "new_scope_plausibility_without_mutation"
+      "prediction_error",
+      "late_evidence_value",
+      "late_evidence_strength"
     ],
     "verified_behaviors": [
-      "no_privileged_identity_route_inputs",
-      "equal_scope_ambiguity_abstains",
-      "clear_return_reuses_prior_scope",
-      "new_scope_can_rank_without_mutation",
-      "three_bounded_alternatives_retained",
-      "checkpoint_deterministic_routing"
+      "no_privileged_scope_identity_input",
+      "bootstrap_internal_scope_commit",
+      "ambiguous_route_zero_mutation",
+      "clear_return_existing_scope_revision",
+      "new_scope_confirmation_before_revision",
+      "router_allocator_conflict_rollback",
+      "checkpoint_deterministic_replay"
     ]
   },
   "ci": {
-    "run_id": 36283779602,
-    "exact_head": "f5e0968f5292a392c984fbe2efb011a23a49f86f",
+    "run_id": 36286123520,
+    "exact_head": "55c87d618a9a0a778250b02e20b846c9521ad429",
     "status": "completed",
     "conclusion": "success",
     "python_311": "SUCCESS",
     "python_313": "SUCCESS"
   },
-  "ordinary_reduction": "normalized radial/RBF-like prototype scoring plus fixed prediction-error NEW_SCOPE score and explicit reject option",
-  "engineering_usefulness": "preserves scope ambiguity and separates NEW_SCOPE plausibility from allocator mutation while keeping identity internal",
+  "ordinary_reduction": "normalized radial/mixture routing plus reject option and transactional validation/rollback around cache namespace mutation",
+  "engineering_usefulness": "closes the plural-scope-to-late-revision mutation seam and makes threshold-policy conflict an explicit no-write outcome",
   "limitations": [
-    "fixed_uncalibrated_temperature_and_thresholds",
-    "heuristic_masses_not_bayesian_posteriors",
-    "no_matched_hmm_bocpd_mixture_comparison",
-    "no_system_level_task",
-    "no_composition_contribution",
-    "no_true_latent_cause_identification"
+    "fixed_uncalibrated_router_and_allocator_thresholds",
+    "caller_supplied_prediction_error",
+    "no_end_to_end_stream_task",
+    "no_matched_allocator_comparison",
+    "no_resource_match",
+    "no_interaction_ablation",
+    "no_composition_contribution"
   ],
   "claim_boundary": {
-    "component_function": "BOUNDED_TESTS_SUPPORTED",
+    "component_composition": "BOUNDED_TESTS_SUPPORTED",
     "system_build_admission": false,
     "comparatively_supported": false,
     "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
     "scientific_credit": 0
   },
-  "collision_check": "PASS_MAIN_R155_OWNS_RV02_RD006_AND_AWAITS_ANALYST; SB001_COMPLETE; BOTH_UNTOUCHED",
+  "collision_check": "PASS_ANALYST_R145_MAIN_ONLY_RD006_PRESERVED_NO_NEW_DYNAMICS_AUDIT; SB001_COMPLETE; BOTH_UNTOUCHED",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "analyst": "EVA-20260927T070206+0900-R144-RD006-BRANCH-LIT45-FORGE-HANDOFF-RECONCILED",
-    "control": "CTRL-20260927T065000+0900-R88-P0-FORGE-HANDOFF-RECONCILED",
+    "analyst": "EVA-20260927T094500+0900-R145-RD006-D0-INCONCLUSIVE-OPPORTUNITY-AUDIT",
     "main_orchestrator": "MAIN-20260927T092301+0900-PRIMARY-R155-RD006-D0-INCONCLUSIVE",
+    "control": "CTRL-20260927T065000+0900-R88-P0-FORGE-HANDOFF-RECONCILED",
+    "methodology": "METHCAL-20260927T102000+0900-R128-RD006-PHASE-RESOLVED",
+    "utility": "UTILITY-20260927T094600+0900-P0-THEORY-POINTER-RECON",
     "theory": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
-    "literature": "R45",
-    "audit": "R10",
-    "methodology": "R126",
-    "utility": "UTILITY-20260927T052236+0900-P0-DURABILITY-WINDOW-RECON"
+    "literature": "LIT-R45",
+    "audit": "AUD-R10"
   },
   "metrics_this_run": {
     "scientific_novelty_probes": 0,
@@ -84,6 +83,7 @@
   "p0_observation": {
     "prototype_publication_attempts": 1,
     "prototype_publication_result": "SUCCESS_READBACK_VERIFIED",
+    "handoff_publication_attempts": 1,
     "repository_wide_recovery_proven": false,
     "root_cause_proven": false
   },
@@ -91,5 +91,5 @@
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-27/0954-plural-scope-posterior-ci-clean.md"
+  "history_path": "reports/fast_forge/history/2026-09-27/1040-plural-scope-revision-bridge-ci-clean.md"
 }
