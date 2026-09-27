@@ -1,25 +1,30 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260927T170004+0900-R151-RD006-V3-D0-DYNAMIC-GATE-CLARIFIED",
-  "generated_at": "2026-09-27T17:00:04+09:00",
+  "generation_id": "EVA-20260927T180100+0900-R152-RD006-V3-POSTRESULT-CAUSAL-AUDIT",
+  "generated_at": "2026-09-27T18:01:00+09:00",
   "cache_role": "MOVING_CACHE_ONLY",
   "durable_authority": {
-    "history_path": "analysis/orchestrator/history/2026-09-27/1700-R151.md",
+    "history_path": "analysis/orchestrator/history/2026-09-27/1801-R152.md",
     "complete": true
   },
   "new_scientific_result": false,
   "scientific_execution_mode": "READ_ONLY",
-  "go_stop": "GO_ONE_BOUNDED_V3_D0_MATRIX_WITH_ACTUAL_SPIKE_GATE_STOP_LATER_STAGES",
+  "go_stop": "STOP_RESULT_BEARING_WORK_GO_PRESERVED_RESULT_CAUSAL_AUDIT_ONLY",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
-    "prior_analyst_target_head": "32e17655e21c4dbdb686a5234c00f58a854796aa",
-    "control": "927a2c84dccc49140dc720a48c52f399d4e0692a",
-    "main_reports": "48d02ef9bb015b2c7c30fba0364bea65c6abe665",
+    "prior_analyst_target_head": "1a0a56b9f9360c95c77ac24d9a217f2945169a6e",
+    "control": "c631d7d3203cea1f69723c055f59e1ce92e23562",
+    "main_reports": "15b3e90dee1359e7e9673d7043c7f077284b309a",
     "rd006_v3_static_preflight_head": "6b273e531c22729759cacabcced9df3319227a8e",
-    "rd006_v3_ci_run_id": 36300144023,
+    "rd006_v3_source_head": "8867c0565e25a0c76749c12eec7f4c03238b7aef",
+    "rd006_v3_result_head": "540fa54f45a8cdc467eb2695270035cb9332f2fb",
+    "rd006_v3_ci_run_id": 36306014977,
     "methodology": "deb7e6781eaf1c6139cee0056c51365346e70543",
-    "external_science": "cf3c49a4affa31e21ed9229983766da7ee064587"
+    "external_science": "cf3c49a4affa31e21ed9229983766da7ee064587",
+    "utility": "c428c1d393322fc9e42ab9506d1acb98d4342053",
+    "forge_handoff": "8937342eea5f05777bdccd13aaa7e6f0c13fd609",
+    "forge_exact_prototype_head": "090d52373a094a728c4ca93d13af4a572ad15d10"
   },
   "canonical_funnel": {
     "candidates": 35,
@@ -53,85 +58,73 @@
     },
     "current_revision": {
       "revision": "v3-structural-temporal-role-preflight",
-      "phase": "OPEN_DEVELOPMENT",
+      "phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+      "contract_disposition": "CLOSED",
       "claim_ceiling": "SYSTEM",
       "preformal_eligible": false,
       "preformal_readiness": "NOT_READY",
-      "queue_state": "ALLOCATED_ONE_BOUNDED_D0_MATRIX_GATE_CLARIFIED",
+      "queue_state": "ALLOCATED_READ_ONLY_PRESERVED_RESULT_CAUSAL_AUDIT",
       "evidentiary_status": "DEVELOPMENT_ZERO_CONFIRMATORY_CREDIT",
       "scientific_credit": 0,
-      "static_preflight": {
-        "status": "PASS",
-        "family_count": 6,
-        "families_passing": 6,
-        "construction_rule_id": "STATIC_PORT_HIDDEN_RETURN_CLOCK_V1",
-        "research_head": "6b273e531c22729759cacabcced9df3319227a8e",
-        "ci_run_id": 36300144023
+      "matrix_result": {
+        "total_cells": 12,
+        "complete_non_exploded_cells": 11,
+        "bounded_cells": 1,
+        "planned_clocks": 832,
+        "inspected_clocks": 816,
+        "hidden_spikes": 144,
+        "ordinary_external_learning_updates": 356,
+        "update_boundary": "PORT_TO_PORT",
+        "dynamic_nonzero_return_clocks": 7,
+        "max_distinct_dynamic_eligible_sources_same_clock": 1,
+        "required_distinct_dynamic_eligible_sources_same_clock": 2,
+        "gate_open_cells": 0,
+        "off_cells_hidden_firing": 0,
+        "bounded_cell": "opposing-reversal/ON",
+        "bounded_clocks": 32,
+        "artifact_preserved": true
       }
     },
     "allocation": {
       "owner": "MAIN",
-      "task": "RD006_V3_ONE_BOUNDED_D0_OFF_ON_MATRIX",
-      "result_bearing_execution_authorized": true,
-      "total_cells": 12,
-      "families": 6,
-      "ordinary_external_learning": [
-        "OFF",
-        "ON"
+      "task": "RD006_V3_PRESERVED_RESULT_CAUSAL_OPPORTUNITY_AUDIT",
+      "result_bearing_execution_authorized": false,
+      "dynamics_execution_authorized": false,
+      "artifact_mutation_authorized": false,
+      "source_refs": [
+        "540fa54f45a8cdc467eb2695270035cb9332f2fb",
+        "8867c0565e25a0c76749c12eec7f4c03238b7aef"
       ],
-      "hidden_return_learning": "OFF",
-      "dynamic_eligible_source_definition": {
-        "actual_hidden_spike_required": true,
-        "distinct_source_id_required": true,
-        "eligible_non_negative_edge_to_current_scheduled_visible_return_target_required": true,
-        "observed_spike_to_return_lag_window_ms": [
-          0.5,
-          6.5
-        ],
-        "static_connectivity_or_nominal_time_alone_sufficient": false
-      },
-      "complete_non_exploded_gate": {
-        "minimum_distinct_dynamic_eligible_hidden_sources_same_return_clock": 2,
-        "at_least_one_cell": true,
-        "cell_must_complete_without_ceiling": true,
-        "status_on_open": "REACHABLE_FOR_LATER_ANALYST_REVIEW"
-      },
-      "reporting": {
-        "static_path_counts_separate_from_dynamic_eligible_source_counts": true,
-        "off_on_arms_separate": true,
-        "off_on_difference": "DIAGNOSTIC_ONLY"
-      },
-      "stop_after": "PRESERVE_AND_WAIT_FRESH_ANALYST_RECONCILIATION"
-    },
-    "fixed_contract": {
-      "seed": 92701,
-      "scale": 1,
-      "unit_count": 48,
-      "degree": 8,
-      "threshold": 0.5,
-      "initial_weight": 0.05,
-      "initial_delay_ms": 5,
-      "boundary_gain": 4,
-      "input_magnitude": 1,
-      "event_spacing_ms": 5.5,
-      "minimum_return_lag_ms": 0.5,
-      "maximum_return_lag_ms": 6.5,
-      "max_events_per_run": 4096,
-      "max_spikes_per_run": 512,
-      "construction_rule_id": "STATIC_PORT_HIDDEN_RETURN_CLOCK_V1"
+      "classify_missing_second_source": [
+        "NO_SECOND_HIDDEN_SPIKE",
+        "SPIKE_WITHOUT_ELIGIBLE_EDGE_TO_CURRENT_RETURN_TARGET",
+        "ELIGIBLE_EDGE_BUT_LAG_OUTSIDE_0_5_TO_6_5_MS",
+        "ADJACENT_CLOCK_NOT_SAME_CLOCK",
+        "CEILING_CENSORED",
+        "NO_OTHER_SOURCE_IN_PRESERVED_CONSTRUCTION"
+      ],
+      "reporting": [
+        "SEPARATE_OFF_ON",
+        "SEPARATE_COMPLETE_BOUNDED",
+        "MINIMUM_DEFICIT_TO_FIXED_TWO_SOURCE_GATE",
+        "CLOSE_LINE_OR_FRESH_PROSPECTIVE_REVISION_RECOMMENDATION"
+      ],
+      "stop_after": "WAIT_FRESH_ANALYST_RECONCILIATION"
     },
     "forbidden_until_fresh_reconciliation": [
-      "SECOND_V3_MATRIX",
-      "V2_RERUN_RETUNE",
+      "RERUN_RETUNE_RESCORE",
+      "SECOND_MATRIX",
       "EVENT_OR_SPIKE_CEILING_INCREASE",
       "TOPOLOGY_OR_TIMING_CHANGE",
       "E0_E1_ES",
       "SCALE_EXPANSION",
-      "RESERVOIR_COMPARISON",
+      "ONE_THREE_TEN_X_COMPARISON",
+      "RESERVOIR_OR_LIQUID_STATE_COMPARISON",
       "LEARNER_BOUNDARY_CHANGE",
+      "HELD_OUT_ACCESS",
       "CAPABILITY_SCORING"
-    ],
-    "phase_transition_after_meaningful_matrix_output": "RESULT_EXPOSED_DEVELOPMENT"
+    ]
   },
   "system_build_ledger": {
     "sb001": {
@@ -157,23 +150,25 @@
     },
     "methodology": {
       "generation": "METHCAL-20260927T161705+0900-R131-RD006-V3-D0-GATE-CALIBRATION",
-      "classification": "SLIGHTLY_TOO_PERMISSIVE",
-      "disposition": "ACCEPT_DYNAMIC_GATE_CLARIFICATION"
+      "disposition": "DYNAMIC_GATE_BINDING_AND_UNMET"
     },
     "control": {
-      "generation": "CTRL-20260927T165000+0900-R93-RD006-V3-D0-ALLOCATION-BOUNDARY",
+      "generation": "CTRL-20260927T175000+0900-R94-RD006-V3-RESULT-OBSERVED",
       "incident": "CLOSED_P0_RECOVERED",
-      "disposition": "NARROW_INTERPRETATION_NO_EXECUTION_SURFACE_CHANGE"
+      "active_pointer_debt": [],
+      "disposition": "ROUTE_TO_ANALYST_RECONCILIATION"
     },
     "forge": {
+      "generation": "FORGE-20260927T174452+0900-BOUNDED-RECEIPT-RETENTION-CI-CLEAN",
       "disposition": "OPTIONAL_FUTURE_SEPARATELY_BOUND_SYSTEM_BUILD_ONLY",
       "admitted_to_rd006": false,
+      "admitted_to_sb001": false,
       "scientific_credit": 0
     }
   },
   "persistence": {
     "route": "EVIDENCE_ANALYST_ACTIONS_BRIDGE_RETAINED_HARDENING",
-    "prior_generation": "R150",
+    "prior_generation": "R151",
     "prior_complete": true,
     "active_pointer_debt": []
   },
