@@ -1,35 +1,41 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-27T16:17:05+09:00",
+  "timestamp": "2026-09-27T18:19:47+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260927T161705+0900-R131-RD006-V3-D0-GATE-CALIBRATION",
-    "sequence": 131,
+    "generation_id": "METHCAL-20260927T181947+0900-R132-RD006-V3-POSTRESULT-CALIBRATION",
+    "sequence": 132,
     "material_change": true,
-    "material_change_reason": "RD006_R150_V3_D0_DYNAMIC_GATE_AMBIGUITY",
-    "supersedes_generation_id": "METHCAL-20260927T142036+0900-R130-RD006-V3-STATIC-PREFLIGHT-CALIBRATION",
+    "material_change_reason": "R151_GATE_CLARIFICATION_R159_RESULT_R152_POSTRESULT_RECONCILIATION",
+    "supersedes_generation_id": "METHCAL-20260927T161705+0900-R131-RD006-V3-D0-GATE-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
-    "previous_methodology": "METHCAL-20260927T142036+0900-R130-RD006-V3-STATIC-PREFLIGHT-CALIBRATION@f036226a374f4518adfab515bbe0e78f847040ee",
-    "evidence_analyst": "EVA-20260927T160005+0900-R150-RD006-V3-D0-MATRIX-ALLOCATION@32e17655e21c4dbdb686a5234c00f58a854796aa",
-    "main_durable_state": "MAIN-20260927T153015+0900-PRIMARY-R158-RD006-V3-STATIC-PREFLIGHT@48d02ef9bb015b2c7c30fba0364bea65c6abe665",
-    "control": "CTRL-20260927T155000+0900-R92-RD006-V3-STATIC-PREFLIGHT-OBSERVED@0981407a0455fa11a536d5ecf9333a4af336832b",
-    "theory": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4@cf3c49a4affa31e21ed9229983766da7ee064587"
+    "previous_methodology": "METHCAL-20260927T161705+0900-R131-RD006-V3-D0-GATE-CALIBRATION@deb7e6781eaf1c6139cee0056c51365346e70543",
+    "evidence_analyst": "EVA-20260927T180100+0900-R152-RD006-V3-POSTRESULT-CAUSAL-AUDIT@80991262b47bce0bc06bda919fe1f5a8d89cb0be",
+    "main_durable_state": "MAIN-20260927T172900+0900-PRIMARY-R159-RD006-V3-D0@15b3e90dee1359e7e9673d7043c7f077284b309a",
+    "control": "CTRL-20260927T175000+0900-R94-RD006-V3-D0-RESULT@c631d7d3203cea1f69723c055f59e1ce92e23562",
+    "theory": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4@cf3c49a4affa31e21ed9229983766da7ee064587",
+    "forge": "FORGE-20260927T174452+0900-BOUNDED-RECEIPT-RETENTION-CI-CLEAN@8937342eea5f05777bdccd13aaa7e6f0c13fd609"
   },
   "authoritative_refs": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
     "rd006_v3": {
       "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-      "revision": "v3-structural-temporal-role-preflight",
-      "phase_before_dynamic_result": "OPEN_DEVELOPMENT",
+      "revision": "v3-d0-execution",
+      "phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "contract_disposition": "CLOSED",
       "claim_ceiling": "SYSTEM",
-      "static_preflight_head": "6b273e531c22729759cacabcced9df3319227a8e",
-      "exact_head_ci_run": 36300144023,
-      "exact_head_ci_conclusion": "success",
-      "static_preflight": "PASS_6_OF_6_CONSTRUCTION_ONLY",
-      "matrix_authority": "ONE_BOUNDED_12_CELL_OFF_ON_MATRIX",
-      "matrix_count_limit": 1,
+      "source_head": "8867c0565e25a0c76749c12eec7f4c03238b7aef",
+      "result_head": "540fa54f45a8cdc467eb2695270035cb9332f2fb",
+      "ci_run": 36306014977,
+      "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+      "total_cells": 12,
+      "complete_non_exploded_cells": 11,
+      "bounded_cells": 1,
+      "max_dynamic_eligible_sources": 1,
+      "required_dynamic_eligible_sources": 2,
+      "gate_open_cells": 0,
       "scientific_credit": 0
     },
     "system_build": {
@@ -47,40 +53,36 @@
       "generation": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4",
       "status": "NO_PROPOSAL",
       "revisit_status": "NO_REVISIT_PROPOSAL"
+    },
+    "forge": {
+      "generation": "FORGE-20260927T174452+0900-BOUNDED-RECEIPT-RETENTION-CI-CLEAN",
+      "status": "FORGE_INTERESTING",
+      "recommended_handoff": "SYSTEM_BUILD_INPUT",
+      "admitted_to_rd006": false,
+      "admitted_to_sb001": false,
+      "scientific_credit": 0
     }
   },
-  "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
+  "overall_classification": "WELL_CALIBRATED",
   "scientific_gate_findings": {
     "hard_floor": "KEEP",
     "formal_one_way": "KEEP",
     "development_credit": "KEEP",
+    "rd005_preservation": "KEEP",
     "v1_v2_preservation": "KEEP",
     "v3_explicit_revision": "KEEP",
+    "r151_actual_spike_gate": "KEEP",
+    "static_vs_dynamic_reachability": "KEEP",
     "exact_head_binding": "KEEP",
-    "one_matrix_only": "KEEP",
-    "resource_and_privilege_matching": "KEEP",
+    "single_matrix_only": "KEEP",
     "raw_preservation": "KEEP",
-    "static_vs_dynamic_reachability": "SPLIT_BY_CLAIM_TYPE",
-    "dynamic_source_eligibility_wording": "TIGHTEN",
-    "result_exposed_phase_transition": "CLARIFY",
+    "result_exposed_transition": "KEEP",
+    "v3_contract_closure": "KEEP",
+    "same_revision_rerun_retune_rescore": "KEEP",
     "later_e0_e1_es": "KEEP",
-    "second_matrix": "KEEP",
     "scale_reservoir": "KEEP",
-    "same_object_system_to_mechanism_uplift": "KEEP",
-    "pass_reachability": "KEEP_IF_ACTUAL_SPIKE_SEMANTICS"
-  },
-  "required_gate_interpretation": {
-    "complete_non_exploded_cell": true,
-    "distinct_hidden_source_ids_minimum": 2,
-    "actual_hidden_spikes_required": true,
-    "eligible_non_negative_edges_to_current_scheduled_visible_return_target_required": true,
-    "observed_lag_window_ms": [
-      0.5,
-      6.5
-    ],
-    "static_connectivity_or_nominal_time_alone_sufficient": false,
-    "off_on_report_separately": true,
-    "off_on_difference_evidentiary": false
+    "causal_audit_taxonomy": "CLARIFY_DETERMINISTIC_PRECEDENCE",
+    "pass_reachability": "KEEP"
   },
   "system_build_gate_findings": {
     "identity_separation": "KEEP",
@@ -93,19 +95,20 @@
   },
   "revisit_gate_findings": {
     "rd005_no_reopen": "KEEP",
-    "rd006_v1_v2_closed": "KEEP",
+    "rd006_v1_v2_v3_preserved": "KEEP",
     "v3_not_rescue_laundering": "KEEP",
-    "future_question_not_globally_suppressed": "KEEP",
+    "future_fresh_revision_not_globally_suppressed": "KEEP",
     "theory_r9": "NO_REVISIT_PROPOSAL"
   },
   "calibration": {
     "over_reduction_risk": "LOW",
-    "overclaim_risk": "MODERATE_IF_STRUCTURAL_ONLY_GATE_IS_USED",
+    "overclaim_risk": "LOW",
     "moving_goalpost_risk": "LOW",
-    "pass_reachability": "REALISTIC_WITH_ACTUAL_SPIKE_ELIGIBILITY"
+    "pass_reachability": "REALISTIC_BUT_NOT_REACHED",
+    "overall": "WELL_CALIBRATED"
   },
   "mandatory_questions": {
-    "development_semantics_consistent": "CONDITIONAL_ON_RESULT_EXPOSED_UPDATE_AFTER_MATRIX",
+    "development_semantics_consistent": true,
     "formal_one_way_unchanged": true,
     "development_observations_excluded_from_evidence": true,
     "four_way_separation": true,
@@ -139,7 +142,7 @@
     "protected_heldout_accessed": false
   },
   "persistence": {
-    "history_path": "analysis/methodology_calibration/history/2026-09-27/1617.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-27/1819.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts_per_mutation_purpose": 5,
     "attempt": 1,
