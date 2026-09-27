@@ -1,53 +1,53 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260927T104030+0900-PLURAL-SCOPE-REVISION-BRIDGE-CI-CLEAN",
-  "produced_at": "2026-09-27T10:40:30+09:00",
-  "forge_id": "FORGE-PLURAL-SCOPE-REVISION-BRIDGE-A",
+  "generation_id": "FORGE-20260927T115008+0900-OBSERVED-OUTCOME-REVISION-LOOP-CI-CLEAN",
+  "produced_at": "2026-09-27T11:50:08+09:00",
+  "forge_id": "FORGE-OBSERVED-OUTCOME-REVISION-LOOP-A",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260927-plural-scope-revision-bridge-a",
-  "exact_head": "55c87d618a9a0a778250b02e20b846c9521ad429",
+  "branch": "forge/20260927-observed-outcome-revision-loop-a",
+  "exact_head": "74194d38dddacc1bee6559699b26e5723125719f",
   "source_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-  "source_forge_head": "5f3cc33d3c4b62e5e62ed730cb5d902b95f00599",
-  "target_capability": "gate late-evidence revision with internally generated plural scope hypotheses while keeping ambiguity and router/allocator disagreement non-mutating",
+  "source_forge_head": "77814d0c2ea97a7c350f443809bc3f23f294c3ce",
+  "target_capability": "derive bounded routing error from exposed predictions and the actual later observed outcome without caller-supplied error or scope identity",
   "prototype": {
     "files": [
-      "forge_prototypes/plural_scope_revision_bridge.py",
-      "forge_prototypes/plural_scope_revision_bridge.md",
-      "tests/test_forge_plural_scope_revision_bridge.py"
+      "forge_prototypes/observed_outcome_revision_loop.py",
+      "forge_prototypes/observed_outcome_revision_loop.md",
+      "tests/test_forge_observed_outcome_revision_loop.py"
     ],
     "public_inputs": [
       "prediction_pool_snapshot",
       "observation_vector",
-      "prediction_error",
-      "late_evidence_value",
+      "observed_value",
       "late_evidence_strength"
     ],
     "verified_behaviors": [
-      "no_privileged_scope_identity_input",
-      "bootstrap_internal_scope_commit",
-      "ambiguous_route_zero_mutation",
+      "no_caller_prediction_error_or_scope_identity",
+      "bounded_error_derived_from_observed_probability",
+      "exposed_outcome_scope_commit_and_revision",
       "clear_return_existing_scope_revision",
-      "new_scope_confirmation_before_revision",
-      "router_allocator_conflict_rollback",
+      "unexposed_outcome_zero_mutation",
+      "invalid_probability_mass_fails_closed",
       "checkpoint_deterministic_replay"
     ]
   },
   "ci": {
-    "run_id": 36286123520,
-    "exact_head": "55c87d618a9a0a778250b02e20b846c9521ad429",
+    "run_id": 36289483166,
+    "exact_head": "74194d38dddacc1bee6559699b26e5723125719f",
     "status": "completed",
     "conclusion": "success",
     "python_311": "SUCCESS",
     "python_313": "SUCCESS"
   },
-  "ordinary_reduction": "normalized radial/mixture routing plus reject option and transactional validation/rollback around cache namespace mutation",
-  "engineering_usefulness": "closes the plural-scope-to-late-revision mutation seam and makes threshold-policy conflict an explicit no-write outcome",
+  "ordinary_reduction": "categorical residual scoring 1 - P(observed outcome) plus validation and transactional API-boundary engineering",
+  "engineering_usefulness": "closes the caller-error seam and drives the plural-scope revision bridge from observable prediction/outcome data while keeping unexposed outcomes non-mutating",
   "limitations": [
-    "fixed_uncalibrated_router_and_allocator_thresholds",
-    "caller_supplied_prediction_error",
+    "fixed_uncalibrated_prediction_pool_and_routing_thresholds",
+    "bounded_residual_not_proper_scoring_rule_study",
+    "unexposed_outcome_not_revisable",
     "no_end_to_end_stream_task",
-    "no_matched_allocator_comparison",
+    "no_matched_comparison",
     "no_resource_match",
     "no_interaction_ablation",
     "no_composition_contribution"
@@ -60,14 +60,14 @@
     "scientifically_novel": false,
     "scientific_credit": 0
   },
-  "collision_check": "PASS_ANALYST_R145_MAIN_ONLY_RD006_PRESERVED_NO_NEW_DYNAMICS_AUDIT; SB001_COMPLETE; BOTH_UNTOUCHED",
+  "collision_check": "PASS_ANALYST_R146_FORMAL_NO_ACTION_MAIN_R156_RD006_PRESERVED_AUDIT_COMPLETE_SB001_COMPLETE_ALL_UNTOUCHED",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "analyst": "EVA-20260927T094500+0900-R145-RD006-D0-INCONCLUSIVE-OPPORTUNITY-AUDIT",
-    "main_orchestrator": "MAIN-20260927T092301+0900-PRIMARY-R155-RD006-D0-INCONCLUSIVE",
-    "control": "CTRL-20260927T065000+0900-R88-P0-FORGE-HANDOFF-RECONCILED",
+    "analyst": "EVA-20260927T110000+0900-R146-P0-CLOSED-FORGE-PLURAL-BRIDGE-REVIEWED",
+    "main_orchestrator": "MAIN-20260927T112511+0900-PRIMARY-R156-RD006-PRESERVED-AUDIT",
+    "control": "CTRL-20260927T115000+0900-R90-RD006-AUDIT-OBSERVED",
     "methodology": "METHCAL-20260927T102000+0900-R128-RD006-PHASE-RESOLVED",
-    "utility": "UTILITY-20260927T094600+0900-P0-THEORY-POINTER-RECON",
+    "utility": "UTILITY-20260927T112640+0900-POST-P0-CLOSURE-RECON",
     "theory": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
     "literature": "LIT-R45",
     "audit": "AUD-R10"
@@ -80,16 +80,16 @@
     "integration_useful": 1,
     "integration_ci_green": 1
   },
-  "p0_observation": {
+  "publication": {
     "prototype_publication_attempts": 1,
     "prototype_publication_result": "SUCCESS_READBACK_VERIFIED",
     "handoff_publication_attempts": 1,
-    "repository_wide_recovery_proven": false,
-    "root_cause_proven": false
+    "p0_incident_status": "CLOSED_BY_CONTROL",
+    "new_incident_diagnosis": false
   },
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-27/1040-plural-scope-revision-bridge-ci-clean.md"
+  "history_path": "reports/fast_forge/history/2026-09-27/1150-observed-outcome-revision-loop-ci-clean.md"
 }
