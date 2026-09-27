@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260927T175000+0900-R94-RD006-V3-D0-RESULT",
-  "produced_at": "2026-09-27T17:50:00+09:00",
+  "generation_id": "CTRL-20260927T185000+0900-R95-RD006-V3-CAUSAL-AUDIT",
+  "produced_at": "2026-09-27T18:50:00+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
   "mode": "CONTROL_BRAIN",
   "policy_refs": {
@@ -16,13 +16,15 @@
     "HUMAN-20260927-002": "ACCEPT_ACTIVE_FIVE_TOTAL_ATTEMPTS"
   },
   "refs_observed": {
-    "control_before": "927a2c84dccc49140dc720a48c52f399d4e0692a",
-    "evidence_analyst": "1a0a56b9f9360c95c77ac24d9a217f2945169a6e",
-    "evidence_analyst_receipt": "EA-R151-20260927T1700JST",
-    "main_reports": "15b3e90dee1359e7e9673d7043c7f077284b309a",
+    "control_before": "c631d7d3203cea1f69723c055f59e1ce92e23562",
+    "evidence_analyst": "80991262b47bce0bc06bda919fe1f5a8d89cb0be",
+    "evidence_analyst_receipt": "EA-R152-20260927T1801JST",
+    "main_reports": "2a8ee1c29a53bce878e8252ffb7c4627ff7fe23c",
     "rd006_v3_result": "540fa54f45a8cdc467eb2695270035cb9332f2fb",
-    "methodology": "deb7e6781eaf1c6139cee0056c51365346e70543",
+    "rd006_v3_audit": "b22b58bccdf9538c6f1c741592db4f415d404262",
+    "methodology": "6c0a1beaf7a146d995fc5ba6ed0cce004d686f09",
     "external_science": "cf3c49a4affa31e21ed9229983766da7ee064587",
+    "utility": "c428c1d393322fc9e42ab9506d1acb98d4342053",
     "repository_steward": "76583e7e4320c59fe8e1ad218c1ada63c41a553e",
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7"
@@ -40,8 +42,8 @@
     "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
     "phase": "RESULT_EXPOSED_DEVELOPMENT",
     "owner": "EVIDENCE_ANALYST_RECONCILIATION",
-    "analyst_generation": "EVA-20260927T170004+0900-R151-RD006-V3-D0-DYNAMIC-GATE-CLARIFIED",
-    "latest_main_generation": "MAIN-20260927T172900+0900-PRIMARY-R159-RD006-V3-D0",
+    "analyst_generation": "EVA-20260927T180100+0900-R152-RD006-V3-POSTRESULT-CAUSAL-AUDIT",
+    "latest_main_generation": "MAIN-20260927T183500+0900-PRIMARY-R160-RD006-V3-CAUSAL-AUDIT",
     "prior_revisions": {
       "v1": {
         "disposition": "CLOSED_PRESERVED",
@@ -57,45 +59,60 @@
       }
     },
     "current_revision": {
-      "revision": "v3-d0-execution",
+      "revision": "v3-preserved-result-causal-opportunity-audit",
+      "phase": "RESULT_EXPOSED_DEVELOPMENT",
       "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
-      "research_head": "540fa54f45a8cdc467eb2695270035cb9332f2fb",
-      "ci_run_id": 36306014977,
+      "contract_disposition": "CLOSED",
+      "preserved_result_head": "540fa54f45a8cdc467eb2695270035cb9332f2fb",
+      "audit_head": "b22b58bccdf9538c6f1c741592db4f415d404262",
+      "ci_run_id": 36309642259,
       "ci_conclusion": "success",
       "claim_ceiling": "SYSTEM",
-      "evidentiary_status": "DEVELOPMENT_ZERO_CONFIRMATORY_CREDIT",
+      "evidentiary_status": "DEVELOPMENT_DIAGNOSTIC_ZERO_CONFIRMATORY_CREDIT",
       "scientific_credit": 0,
-      "total_cells": 12,
-      "complete_non_exploded_cells": 11,
-      "bounded_cells": 1,
-      "gate_open_cells": 0,
+      "new_dynamic_execution": false,
+      "artifact_mutated": false,
+      "parameter_change": false,
+      "held_out_execution": false,
+      "capability_scoring": false,
       "planned_clocks": 832,
       "inspected_clocks": 816,
-      "hidden_spikes": 144,
-      "ordinary_external_learning_updates": 356,
-      "ordinary_update_edge_classes": {
-        "PORT_TO_PORT": 356
+      "cause_counts": {
+        "NO_OTHER_SOURCE_IN_PRESERVED_CONSTRUCTION": 372,
+        "NO_SECOND_HIDDEN_SPIKE": 433,
+        "SPIKE_WITHOUT_ELIGIBLE_EDGE_TO_CURRENT_RETURN_TARGET": 10,
+        "ELIGIBLE_EDGE_BUT_LAG_OUTSIDE_0_5_TO_6_5_MS": 0,
+        "ADJACENT_CLOCK_NOT_SAME_CLOCK": 1,
+        "CEILING_CENSORED": 16
       },
-      "dynamic_nonzero_clocks": 7,
-      "maximum_dynamic_eligible_hidden_sources_at_return": 1,
-      "required_dynamic_eligible_hidden_sources_at_return": 2,
-      "bounded_cell": "opposing-reversal / ON",
-      "bounded_error": "max_events_per_run exceeded",
+      "minimum_observed_deficit_to_fixed_two_source_gate": 1,
+      "recommendation": {
+        "disposition": "AT_MOST_ONE_FRESH_PROSPECTIVE_REVISION",
+        "single_changed_invariant": "ORDINARY_EXTERNAL_LEARNER_TRACE_BOUNDARY",
+        "implementation_or_execution_authorized": false
+      },
       "new_development_diagnostic": true,
       "new_scientific_result": false
     },
-    "next_action": "EVIDENCE_ANALYST_RECONCILE_PRESERVED_V3_D0_RESULT",
+    "next_action": "EVIDENCE_ANALYST_RECONCILE_PRESERVED_V3_CAUSAL_AUDIT",
     "forbidden_until_fresh_reconciliation": [
-      "SECOND_V3_MATRIX",
-      "V3_RERUN_RETUNE",
+      "RERUN_RETUNE_RESCORE",
+      "SECOND_MATRIX",
       "EVENT_OR_SPIKE_CEILING_INCREASE",
       "TOPOLOGY_OR_TIMING_CHANGE",
       "E0_E1_ES",
       "SCALE_EXPANSION",
-      "RESERVOIR_COMPARISON",
+      "ONE_THREE_TEN_X_COMPARISON",
+      "RESERVOIR_OR_LIQUID_STATE_COMPARISON",
       "LEARNER_BOUNDARY_CHANGE",
+      "HELD_OUT_ACCESS",
       "CAPABILITY_SCORING"
-    ]
+    ],
+    "methodology_advisory": {
+      "generation": "METHCAL-20260927T181947+0900-R132-RD006-V3-POSTRESULT-CALIBRATION",
+      "classification": "WELL_CALIBRATED",
+      "note": "Use deterministic cause precedence; separate OFF/ON and complete/bounded; do not treat ceiling-censored clocks as observed negatives."
+    }
   },
   "system_build": {
     "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
@@ -112,11 +129,11 @@
     "repository_wide_write_outage_supported": false,
     "active_pointer_debt": [],
     "post_closure_success_paths": [
-      "CONTROL_R93",
-      "EVIDENCE_ANALYST_R151_ACTIONS_BRIDGE_RECEIPT_COMPLETE",
-      "MAIN_R159_ATOMIC_READBACK",
-      "THEORY_R9",
-      "METHODOLOGY_R131"
+      "CONTROL_R94",
+      "EVIDENCE_ANALYST_R152_ACTIONS_BRIDGE_RECEIPT_COMPLETE",
+      "MAIN_R160_ATOMIC_READBACK",
+      "METHODOLOGY_R132_ATOMIC_READBACK",
+      "THEORY_R9"
     ],
     "recurrence_observation": "NO_SAME_FAILURE_PATTERN_OBSERVED",
     "historical_gaps": [
@@ -146,13 +163,13 @@
     "evidence_analyst": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R151_DURABLE_RETAINED_BRIDGE",
+      "operational": "GREEN_ACTIVE_R152_DURABLE_RETAINED_BRIDGE",
       "scheduler_id": "6ab792ba724c81919be1cd071ab045ba"
     },
     "main": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R159_RESULT_PRESERVED_WAIT_ANALYST",
+      "operational": "GREEN_ACTIVE_R160_AUDIT_COMPLETE_WAIT_ANALYST",
       "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b"
     },
     "relay": {
@@ -200,7 +217,8 @@
   "scheduler_health": {
     "classification": "GREEN_RECOVERED",
     "unexplained_current_production_off": false,
-    "change_required": false
+    "change_required": false,
+    "live_definition_audit_at": "2026-09-27T18:50:00+09:00"
   },
   "blue_green": {
     "current_fleet": "GREEN_PRODUCTION",
@@ -209,7 +227,7 @@
   },
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "branch_head_before": "927a2c84dccc49140dc720a48c52f399d4e0692a",
+    "branch_head_before": "c631d7d3203cea1f69723c055f59e1ce92e23562",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
     "completion_contract": "POST_COMMIT_INDEPENDENT_READBACK_REQUIRED"
@@ -222,7 +240,7 @@
     "terminal_reopened": false,
     "consumed_formal_rerun_retune_rescore": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-27/1750-R94.md",
+  "history_path": "analysis/control_brain/history/2026-09-27/1850-R95.md",
   "theory": {
     "generation": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4",
     "status": "NO_PROPOSAL",

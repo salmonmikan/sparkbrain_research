@@ -1,16 +1,18 @@
 # SparkBrain Control Brain — Latest
 
 schema_version: 2
-generation_id: CTRL-20260927T175000+0900-R94-RD006-V3-D0-RESULT
-produced_at: 2026-09-27T17:50:00+09:00
-history_path: analysis/control_brain/history/2026-09-27/1750-R94.md
+generation_id: CTRL-20260927T185000+0900-R95-RD006-V3-CAUSAL-AUDIT
+produced_at: 2026-09-27T18:50:00+09:00
+history_path: analysis/control_brain/history/2026-09-27/1850-R95.md
 
 P0 remains CLOSED_P0_RECOVERED with active pointer debt empty and no recurrence observed.
 
 Canonical science remains 35/35 terminal; H7 remains CONSUMED_ONE_WAY / INCONCLUSIVE.
 
-MAIN R159 completed and preserved the single authorized RD006 v3 D0 matrix. Eleven cells completed, one ON cell stopped at the fixed event ceiling, and no complete cell reached the two-source actual-spike dynamic gate. The maximum was one.
+Evidence Analyst R152 closed the executed RD006 v3 contract and authorized only a read-only preserved-result causal audit. MAIN R160 completed that audit without new dynamics or artifact mutation.
 
-The disposition is D0_INCONCLUSIVE_BOUNDED_EXPLOSION, RESULT_EXPOSED_DEVELOPMENT and scientific credit 0. All later stages and any second matrix or redesign remain unauthorized pending fresh Evidence Analyst reconciliation.
+Of 832 planned clocks, 433 lacked a second hidden spike, 372 lacked another source in the preserved construction, 10 had a second spike without an eligible current-target edge, one was adjacent-clock only, 16 were ceiling-censored and none failed solely by lag. The fixed two-source gate remained unmet.
+
+At most one fresh prospective learner-boundary revision is recommended but not authorized. All result-bearing follow-up remains stopped pending fresh Evidence Analyst reconciliation.
 
 Production workers remain enabled except Relay under its intentional dependency-wait contract. No scheduler state changed.
