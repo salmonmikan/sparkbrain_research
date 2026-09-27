@@ -1,0 +1,210 @@
+{
+  "allowed_update_edge_classes": [
+    "PORT_TO_PORT",
+    "PORT_TO_HIDDEN"
+  ],
+  "analyst_generation_id": "EVA-20260927T185823+0900-R153-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT",
+  "capability_scoring": false,
+  "changed_invariant": "ORDINARY_EXTERNAL_LEARNER_TRACE_BOUNDARY: PORT_TO_PORT_ONLY -> PORT_TO_PORT_PLUS_PORT_TO_HIDDEN",
+  "changed_invariant_count": 1,
+  "claim_ceiling": "SYSTEM",
+  "development_phase": "OPEN_DEVELOPMENT",
+  "evidentiary_status": "DEVELOPMENT_IMPLEMENTATION_ZERO_CONFIRMATORY_CREDIT",
+  "fixed_future_evaluation_surface": {
+    "boundary_gain": 4.0,
+    "degree": 8,
+    "edge_count": 384,
+    "event_spacing_ms": 5.5,
+    "families": 6,
+    "initial_delay_ms": 5.0,
+    "initial_weight": 0.05,
+    "input_magnitude": 1.0,
+    "max_events_per_run": 4096,
+    "max_spikes_per_run": 512,
+    "maximum_return_lag_ms": 6.5,
+    "minimum_return_lag_ms": 0.5,
+    "seed": 92701,
+    "threshold": 0.5,
+    "topology": "V3_FIXED",
+    "unit_count": 48
+  },
+  "forbidden_update_edge_classes": [
+    "HIDDEN_TO_PORT",
+    "HIDDEN_TO_HIDDEN",
+    "ABSENT_EDGE",
+    "NEGATIVE_EDGE",
+    "NONPLASTIC_EDGE",
+    "NEW_EDGE_CREATION"
+  ],
+  "held_out_access": false,
+  "hidden_return_learning_enabled": false,
+  "negative_microfixtures": {
+    "absent_edge": {
+      "connection_set_unchanged": true,
+      "connection_values_unchanged": true,
+      "status": "PASS",
+      "update_count": 0
+    },
+    "hidden_external_trace_rejected": {
+      "status": "PASS"
+    },
+    "hidden_to_hidden": {
+      "connection_values_unchanged": true,
+      "status": "PASS",
+      "update_count": 0
+    },
+    "hidden_to_port": {
+      "connection_values_unchanged": true,
+      "status": "PASS",
+      "update_count": 0
+    },
+    "negative_edge": {
+      "connection_set_unchanged": true,
+      "connection_values_unchanged": true,
+      "status": "PASS",
+      "update_count": 0
+    },
+    "nonplastic_edge": {
+      "connection_set_unchanged": true,
+      "connection_values_unchanged": true,
+      "status": "PASS",
+      "update_count": 0
+    },
+    "out_of_window": {
+      "connection_set_unchanged": true,
+      "connection_values_unchanged": true,
+      "status": "PASS",
+      "update_count": 0
+    },
+    "port_spike_not_hidden_target": {
+      "ignored_port_spike_count": 1,
+      "status": "PASS",
+      "update_count": 0
+    }
+  },
+  "new_scientific_result": false,
+  "next_action": "STOP_FOR_FRESH_EVIDENCE_ANALYST_RECONCILIATION",
+  "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
+  "ordinary_learner_parameters": {
+    "delay_learning_rate": 0.5,
+    "depression_rate": 0.15,
+    "depression_tau_ms": 10.0,
+    "maximum_delay_ms": 20.0,
+    "maximum_lag_ms": 6.5,
+    "maximum_modulation": 2.0,
+    "maximum_updates_per_event": 256,
+    "maximum_weight": 1.25,
+    "minimum_delay_ms": 0.5,
+    "minimum_lag_ms": 0.5,
+    "minimum_weight": 0.0,
+    "potentiation_rate": 0.5,
+    "potentiation_tau_ms": 10.0
+  },
+  "outcome_conditioning_inputs_accepted": false,
+  "parent_audit_head": "b22b58bccdf9538c6f1c741592db4f415d404262",
+  "port_to_port_behavior": {
+    "final_field_state_equal": true,
+    "parent_updates_equal": true,
+    "status": "PASS",
+    "updates": [
+      {
+        "delay_after_ms": 5.25,
+        "delay_before_ms": 5.0,
+        "lag_ms": 5.5,
+        "mode": "causal_potentiation",
+        "source_event_id": "p2p-000",
+        "source_id": 0,
+        "target_event_id": "p2p-001",
+        "target_id": 1,
+        "weight_after": 0.3384749051902433,
+        "weight_before": 0.05
+      }
+    ]
+  },
+  "positive_microfixture": {
+    "actual_hidden_spikes": [
+      {
+        "dynamic_threshold": 0.5,
+        "excitatory_drive": 0.75,
+        "inhibitory_drive": 0.0,
+        "novelty": 0.0,
+        "potential_before_reset": 0.75,
+        "prediction_error": 0.0,
+        "source_pulse_ids": [
+          "d274109729b28e25c0c8"
+        ],
+        "time_ms": 5.5,
+        "unit_id": 36,
+        "x": 36.0,
+        "y": 0.0
+      }
+    ],
+    "actual_port_spikes": [
+      {
+        "dynamic_threshold": 0.5,
+        "excitatory_drive": 1.0,
+        "inhibitory_drive": 0.0,
+        "novelty": 0.0,
+        "potential_before_reset": 1.0,
+        "prediction_error": 0.0,
+        "source_pulse_ids": [
+          "port-pulse-000"
+        ],
+        "time_ms": 0.0,
+        "unit_id": 0,
+        "x": 0.0,
+        "y": 0.0
+      }
+    ],
+    "checkpoint_roundtrip_deterministic": true,
+    "external_port_pulse": {
+      "event_id": "port-pulse-000",
+      "magnitude": 1.0,
+      "origin": "external",
+      "target": "unit:0",
+      "time_ms": 0.0
+    },
+    "final_field_state_equal": true,
+    "replay_updates_equal": true,
+    "updated_edge_class": "PORT_TO_HIDDEN",
+    "updates": [
+      {
+        "delay_after_ms": 5.5,
+        "delay_before_ms": 5.5,
+        "lag_ms": 5.5,
+        "mode": "causal_port_to_hidden_potentiation",
+        "source_event_id": "port-pulse-000",
+        "source_id": 0,
+        "target_event_id": "hidden-spike:116c248992857cc97f5e665d",
+        "target_id": 36,
+        "weight_after": 1.0384749051902433,
+        "weight_before": 0.75
+      }
+    ]
+  },
+  "preflight_status": "PASS",
+  "protocol_id": "rv02-rd006-external-learning-reachability-a-v4-port-to-hidden-trace-boundary-preflight",
+  "report_sha256": "1759bbef913585b6883cd580c5d256e9b7de5ab8bed9edfa4fb05b507812b6ca",
+  "schema_version": 1,
+  "scientific_credit": 0,
+  "six_family_result_bearing_matrix_executed": false,
+  "synthetic_microfixture_dynamics_executed": true,
+  "trace_contract": {
+    "hidden_spike_creates_trace": false,
+    "hidden_target_event_magnitude": 1.0,
+    "same_clock_precedence": [
+      "FIELD_RUN_UNTIL_CLOCK",
+      "OBSERVE_ACTUAL_HIDDEN_SPIKES",
+      "OBSERVE_CURRENT_EXTERNAL_PORT_PULSE",
+      "ENQUEUE_CURRENT_EXTERNAL_PORT_PULSE"
+    ],
+    "serialization": "FIELD_AND_LEARNER_CHECKPOINT_SCHEMA_1",
+    "source": "ACTUAL_EXTERNAL_PULSE_ON_PORT_ONLY",
+    "target": "ACTUAL_HIDDEN_SPIKE",
+    "trace_lifetime_ms": [
+      0.5,
+      6.5
+    ]
+  },
+  "v3_static_preflight_report_sha256": "98a41044c15293b404a04590242b2d7ec3100615ab9aa1ee2aba3ec0ce3e27f5"
+}
