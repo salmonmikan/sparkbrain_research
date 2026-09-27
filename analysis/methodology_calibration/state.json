@@ -1,47 +1,35 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-27T14:20:36+09:00",
+  "timestamp": "2026-09-27T16:17:05+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260927T142036+0900-R130-RD006-V3-STATIC-PREFLIGHT-CALIBRATION",
-    "sequence": 130,
+    "generation_id": "METHCAL-20260927T161705+0900-R131-RD006-V3-D0-GATE-CALIBRATION",
+    "sequence": 131,
     "material_change": true,
-    "material_change_reason": "RD006_R157_STATIC_AUDIT_AND_R149_V3_CONSTRUCTION_ONLY_REVISION",
-    "supersedes_generation_id": "METHCAL-20260927T122033+0900-R129-RD006-V2-BOUNDARY",
+    "material_change_reason": "RD006_R150_V3_D0_DYNAMIC_GATE_AMBIGUITY",
+    "supersedes_generation_id": "METHCAL-20260927T142036+0900-R130-RD006-V3-STATIC-PREFLIGHT-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
-    "previous_methodology": "METHCAL-20260927T122033+0900-R129-RD006-V2-BOUNDARY@4763b74f8bc9f9f684cb7ef86e97ea9a7361bcf4",
-    "evidence_analyst": "EVA-20260927T135700+0900-R149-RD006-V3-STATIC-PREFLIGHT@79b2e7e67144804393911853b7bd405fafec629e",
-    "main_durable_state": "MAIN-20260927T133210+0900-PRIMARY-R157-RD006-V2-STATIC-TOPOLOGY-AUDIT@d868b7ff14677100b9c6e29e90b265f99f14c64c",
-    "theory": "THEORY-20260927T133111+0900-R8-NO-PROPOSAL-FORGE-SEAM-RECONCILIATION-8D3F6A27@b1e0e2d8d19b908e27d49495ad9f299ad4d86607",
-    "forge": "FORGE-20260927T134529+0900-TRANSACTIONAL-OUTCOME-REVISION-CI-CLEAN@a5dbdbcb7e1302e5e08689f3e62e8eab899bebda"
+    "previous_methodology": "METHCAL-20260927T142036+0900-R130-RD006-V3-STATIC-PREFLIGHT-CALIBRATION@f036226a374f4518adfab515bbe0e78f847040ee",
+    "evidence_analyst": "EVA-20260927T160005+0900-R150-RD006-V3-D0-MATRIX-ALLOCATION@32e17655e21c4dbdb686a5234c00f58a854796aa",
+    "main_durable_state": "MAIN-20260927T153015+0900-PRIMARY-R158-RD006-V3-STATIC-PREFLIGHT@48d02ef9bb015b2c7c30fba0364bea65c6abe665",
+    "control": "CTRL-20260927T155000+0900-R92-RD006-V3-STATIC-PREFLIGHT-OBSERVED@0981407a0455fa11a536d5ecf9333a4af336832b",
+    "theory": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4@cf3c49a4affa31e21ed9229983766da7ee064587"
   },
   "authoritative_refs": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
-    "rd006_v2": {
-      "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-      "revision": "v2-lag-alignment",
-      "phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "contract_disposition": "CLOSED",
-      "preserved_result_head": "d2462ebc52e3bf1e6a50334ee6b8d7cf437b416a",
-      "static_audit_head": "cdb985e16dda2b38f7a0713e51992fa16f128ad5",
-      "exact_head_ci_run": 36294422868,
-      "exact_head_ci_conclusion": "success",
-      "actual_eligible_ge2": 0,
-      "balanced_rule_eligible_ge2_on_preserved_timing": 0,
-      "scientific_credit": 0
-    },
     "rd006_v3": {
+      "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
       "revision": "v3-structural-temporal-role-preflight",
-      "phase": "OPEN_DEVELOPMENT",
+      "phase_before_dynamic_result": "OPEN_DEVELOPMENT",
       "claim_ceiling": "SYSTEM",
-      "queue_state": "ALLOCATED_CONSTRUCTION_ONLY",
-      "evidentiary_status": "DEVELOPMENT_CONSTRUCTION_ZERO_CONFIRMATORY_CREDIT",
-      "static_preflight_only": true,
-      "new_dynamics_authorized": false,
-      "result_bearing_execution_authorized": false,
-      "after_success": "STOP_FOR_FRESH_ANALYST_RECONCILIATION",
+      "static_preflight_head": "6b273e531c22729759cacabcced9df3319227a8e",
+      "exact_head_ci_run": 36300144023,
+      "exact_head_ci_conclusion": "success",
+      "static_preflight": "PASS_6_OF_6_CONSTRUCTION_ONLY",
+      "matrix_authority": "ONE_BOUNDED_12_CELL_OFF_ON_MATRIX",
+      "matrix_count_limit": 1,
       "scientific_credit": 0
     },
     "system_build": {
@@ -56,34 +44,43 @@
       "scientific_credit": 0
     },
     "theory": {
-      "generation": "THEORY-20260927T133111+0900-R8-NO-PROPOSAL-FORGE-SEAM-RECONCILIATION-8D3F6A27",
+      "generation": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4",
       "status": "NO_PROPOSAL",
       "revisit_status": "NO_REVISIT_PROPOSAL"
-    },
-    "forge": {
-      "generation": "FORGE-20260927T134529+0900-TRANSACTIONAL-OUTCOME-REVISION-CI-CLEAN",
-      "disposition": "OPTIONAL_FUTURE_SEPARATELY_BOUND_SYSTEM_BUILD_ONLY",
-      "admitted_to_rd006": false,
-      "scientific_credit": 0
     }
   },
-  "overall_classification": "WELL_CALIBRATED",
+  "overall_classification": "SLIGHTLY_TOO_PERMISSIVE",
   "scientific_gate_findings": {
     "hard_floor": "KEEP",
     "formal_one_way": "KEEP",
     "development_credit": "KEEP",
     "v1_v2_preservation": "KEEP",
     "v3_explicit_revision": "KEEP",
-    "v3_open_development_phase": "KEEP",
-    "outcome_independent_static_inputs": "KEEP",
+    "exact_head_binding": "KEEP",
+    "one_matrix_only": "KEEP",
     "resource_and_privilege_matching": "KEEP",
-    "static_success_claim_boundary": "KEEP",
-    "result_bearing_execution_stop": "KEEP",
-    "post_preflight_analyst_reconciliation": "KEEP",
+    "raw_preservation": "KEEP",
+    "static_vs_dynamic_reachability": "SPLIT_BY_CLAIM_TYPE",
+    "dynamic_source_eligibility_wording": "TIGHTEN",
+    "result_exposed_phase_transition": "CLARIFY",
     "later_e0_e1_es": "KEEP",
+    "second_matrix": "KEEP",
     "scale_reservoir": "KEEP",
     "same_object_system_to_mechanism_uplift": "KEEP",
-    "pass_reachability": "KEEP"
+    "pass_reachability": "KEEP_IF_ACTUAL_SPIKE_SEMANTICS"
+  },
+  "required_gate_interpretation": {
+    "complete_non_exploded_cell": true,
+    "distinct_hidden_source_ids_minimum": 2,
+    "actual_hidden_spikes_required": true,
+    "eligible_non_negative_edges_to_current_scheduled_visible_return_target_required": true,
+    "observed_lag_window_ms": [
+      0.5,
+      6.5
+    ],
+    "static_connectivity_or_nominal_time_alone_sufficient": false,
+    "off_on_report_separately": true,
+    "off_on_difference_evidentiary": false
   },
   "system_build_gate_findings": {
     "identity_separation": "KEEP",
@@ -99,17 +96,16 @@
     "rd006_v1_v2_closed": "KEEP",
     "v3_not_rescue_laundering": "KEEP",
     "future_question_not_globally_suppressed": "KEEP",
-    "theory_r8": "NO_REVISIT_PROPOSAL",
-    "candidate35_no_reopen": "KEEP"
+    "theory_r9": "NO_REVISIT_PROPOSAL"
   },
   "calibration": {
     "over_reduction_risk": "LOW",
-    "overclaim_risk": "LOW",
+    "overclaim_risk": "MODERATE_IF_STRUCTURAL_ONLY_GATE_IS_USED",
     "moving_goalpost_risk": "LOW",
-    "pass_reachability": "REALISTIC_EX_ANTE_WITHOUT_STANDARD_RELAXATION"
+    "pass_reachability": "REALISTIC_WITH_ACTUAL_SPIKE_ELIGIBILITY"
   },
   "mandatory_questions": {
-    "development_semantics_consistent": true,
+    "development_semantics_consistent": "CONDITIONAL_ON_RESULT_EXPOSED_UPDATE_AFTER_MATRIX",
     "formal_one_way_unchanged": true,
     "development_observations_excluded_from_evidence": true,
     "four_way_separation": true,
@@ -143,7 +139,7 @@
     "protected_heldout_accessed": false
   },
   "persistence": {
-    "history_path": "analysis/methodology_calibration/history/2026-09-27/1420.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-27/1617.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts_per_mutation_purpose": 5,
     "attempt": 1,

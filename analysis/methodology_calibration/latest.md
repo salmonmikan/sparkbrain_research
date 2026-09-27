@@ -1,18 +1,18 @@
 # SparkBrain Methodology Calibration Audit — Latest
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260927T142036+0900-R130-RD006-V3-STATIC-PREFLIGHT-CALIBRATION`
-- generated_at: `2026-09-27T14:20:36+09:00`
-- history_path: `analysis/methodology_calibration/history/2026-09-27/1420.md`
-- overall_classification: `WELL_CALIBRATED`
+- generation_id: `METHCAL-20260927T161705+0900-R131-RD006-V3-D0-GATE-CALIBRATION`
+- generated_at: `2026-09-27T16:17:05+09:00`
+- history_path: `analysis/methodology_calibration/history/2026-09-27/1617.md`
+- overall_classification: `SLIGHTLY_TOO_PERMISSIVE`
 - new_scientific_result: `false`
 
-MAIN R157 correctly showed that balanced hidden-to-return in-degree is resource-feasible but insufficient on preserved v2 timing: both the actual and balanced plans still produced zero two-source intersections.
+Evidence Analyst R150 is otherwise well bounded: exact v3 head, one fixed 12-cell OFF/ON matrix, unchanged resources/ceilings, raw preservation, no capability score or held-out access, and stop for fresh reconciliation.
 
-Analyst R149's v3 is methodologically valid as an explicit, zero-credit development revision limited to a deterministic static construction preflight. v1/v2 remain closed and unchanged; observed spike identities and artifact outcomes are forbidden as design inputs; new dynamics and result-bearing matrix execution remain stopped.
+One material ambiguity must be tightened before interpretation. R150's gate says “two distinct structurally connected hidden sources” in the fixed lag window, while the original D0 contract requires two distinct hidden sources to actually spike and have eligible non-negative edges to the current scheduled visible-return target. Because the static preflight already guarantees structural paths, a structural-only reading would make the dynamic gate tautological.
 
-Static preflight success would establish only construction reachability. It does not establish component dynamics, capability, comparative support, composition contribution or novelty. A later matrix requires fresh Analyst reconciliation and unchanged gates/resources.
+Count dynamic eligibility only from actual hidden spikes plus eligible edges and observed fixed-window lags; keep static-path counts separate. After meaningful matrix exposure, move v3 to RESULT_EXPOSED_DEVELOPMENT. Gate opening remains development diagnostic only and creates no capability, learning-contribution, composition or novelty credit.
 
-SB001 remains NON_EVIDENTIARY_BUILD. Theory R8 remains NO_PROPOSAL / NO_REVISIT_PROPOSAL. Latest Forge work remains ordinary optional SYSTEM_BUILD engineering with zero scientific credit. P0 remains closed as recovered.
+SB001 remains NON_EVIDENTIARY_BUILD. Theory R9 remains NO_PROPOSAL / NO_REVISIT_PROPOSAL. RD005 remains consumed and RD006 v1/v2 remain closed. P0 remains closed as recovered.
 
 No new SparkBrain scientific result.
