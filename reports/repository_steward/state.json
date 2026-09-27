@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260927T195000+0900-G24",
-  "produced_at": "2026-09-27T19:50:00+09:00",
-  "supersedes_generation_id": "STEWARD-20260927T135000+0900-G23",
+  "generation_id": "STEWARD-20260928T015000+0900-G25",
+  "produced_at": "2026-09-28T01:50:00+09:00",
+  "supersedes_generation_id": "STEWARD-20260927T195000+0900-G24",
   "repository": "salmonmikan/sparkbrain_research",
   "authority_scope": "REPOSITORY_STEWARD_GOVERNANCE_ONLY",
   "policy_refs": {
@@ -10,10 +10,10 @@
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7"
   },
   "inventories": {
-    "branches_total": 443,
-    "research_branches": 194,
-    "forge_branches": 41,
-    "system_build_branches": 1,
+    "branches_total": 450,
+    "research_branches": 195,
+    "forge_branches": 46,
+    "system_build_branches": 2,
     "legacy_freeze_branches": 13,
     "preserve_branches": 26,
     "ops_branches": 34,
@@ -31,45 +31,71 @@
     "mapped_unique_preserve_pointers_exact": true,
     "mapped_unique_preserve_pointer_count": 15,
     "h7_lightweight_authoritative_refs_preserved": true,
-    "authoritative_namespace_targets_unchanged": true,
+    "authoritative_namespace_names_types_targets_exact": true,
     "mutated_this_run": false
   },
   "separation": {
     "main_research_forge_system_build_ops_evidence": "INTACT",
     "scientific_ref_mutated": false
   },
-  "system_build": {
-    "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
-    "merge_commit": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "lifecycle": "INTEGRATED_COMPLETE",
-    "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-    "scientific_credit": 0
-  },
   "science": {
     "canonical_candidates": 35,
     "terminal": 35,
     "active": 0,
     "scientifically_queued": 0,
+    "consumed_formal_identities": 8,
     "h7": "CONSUMED_ONE_WAY_INCONCLUSIVE",
+    "rd005": "CONSUMED_ONE_WAY_UNCHANGED",
+    "rd006_v1_v4": "CLOSED_ZERO_CREDIT",
     "new_scientific_result": false
   },
-  "current_development": {
-    "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-    "analyst_generation": "EVA-20260927T185823+0900-R153-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT",
-    "analyst_receipt": "EA-R153-20260927T1858JST",
-    "analyst_persistence_complete": true,
-    "main_generation": "MAIN-20260927T193131+0900-PRIMARY-R161-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT",
-    "revision": "v4-port-to-hidden-trace-boundary-preflight",
-    "exact_head": "78594102ea03fe3ffc0f6e1e0b8b94dd66351005",
-    "exact_tree": "f41b9bd97630e4822584f3994692eec5d82c66fa",
-    "pointer_set": "HISTORY_LATEST_STATE_LEASE_MATCH",
-    "ci_run_id": 36312637388,
-    "ci_conclusion": "success",
-    "preflight_status": "PASS",
-    "result_bearing_execution": false,
-    "evidentiary_status": "DEVELOPMENT_IMPLEMENTATION_ZERO_CONFIRMATORY_CREDIT",
-    "scientific_credit": 0,
-    "stop_reason": "WAIT_FRESH_ANALYST_RECONCILIATION"
+  "system_build": {
+    "sb001": {
+      "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
+      "merge_commit": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
+      "lifecycle": "INTEGRATED_COMPLETE",
+      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+      "comparatively_supported": false,
+      "composition_contribution": "NOT_ESTABLISHED",
+      "scientific_credit": 0
+    },
+    "sb002": {
+      "build_id": "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT",
+      "branch": "system-build/sb002-causal-scope-revision-pilot-20260928",
+      "exact_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
+      "exact_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
+      "main_generation": "MAIN-20260928T013534+0900-PRIMARY-R164-SB002-PUBLISHED-WAIT-ANALYST",
+      "analyst_generation": "EVA-20260928T010015+0900-R159-SB002-ATOMICITY-CLARIFICATION",
+      "ci_run_id": 36333624083,
+      "ci_conclusion": "success",
+      "built": true,
+      "bounded_functionally_verified": true,
+      "comparatively_supported": false,
+      "composition_contribution": "NOT_ESTABLISHED",
+      "scientifically_novel": false,
+      "scientific_credit": 0,
+      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+      "stop_reason": "WAIT_FRESH_ANALYST_RECONCILIATION",
+      "active_pointer_debt": []
+    }
+  },
+  "publication_audit": {
+    "sb002_attempts": 4,
+    "attempt_3": "REF_CREATED_READBACK_DETECTED_TRUNCATED_NON_UTF8_DECISION_LOG",
+    "attempt_4": "FAST_FORWARD_REPAIR_SUCCESS_ALL_EIGHT_BLOBS_AND_EXACT_HEAD_CI_VERIFIED",
+    "classification": "BOUNDED_DEFECT_CAUGHT_BY_READBACK_NO_ACTIVE_DEBT",
+    "p0_recurrence": false
+  },
+  "forge": {
+    "generation": "FORGE-20260928T014020+0900-CAUSAL-OPPORTUNITY-RESILIENCE-CI-CLEAN",
+    "branch": "forge/20260928-causal-opportunity-resilience-a",
+    "prototype_head": "e165e4794d81e873328eb75f82ad51f6bcb820ff",
+    "final_head": "b225a315e39b5a215dee599a19a695d3d89a4a74",
+    "final_ci_run_id": 36334203618,
+    "final_ci_conclusion": "success",
+    "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
+    "system_build_allocated": false,
+    "scientific_credit": 0
   },
   "protection": {
     "ruleset_count": 1,
@@ -77,14 +103,9 @@
     "main_ruleset_target": "DEFAULT_BRANCH_ONLY",
     "tag_namespace_ruleset": false,
     "human_directive_20260919_002": "OPEN_DEFER_ADDITIONAL_PROTECTION_DEPLOYMENT",
+    "issue_139": "OPEN_FACTUALLY_CURRENT",
     "changed_this_run": false,
     "ruleset_detail_readable": true
-  },
-  "issue_139": {
-    "state": "OPEN",
-    "factual_body_current": true,
-    "tag_protection_action": "DEFERRED",
-    "mutated_this_run": false
   },
   "p0": {
     "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
@@ -92,9 +113,11 @@
     "control_incident_file_status": "CLOSED_P0_RECOVERED",
     "active_pointer_debt": [],
     "recovered_paths_confirmed": [
-      "EVIDENCE_ANALYST_R153_ACTIONS_BRIDGE",
-      "MAIN_R161_ATOMIC_READBACK",
-      "CONTROL_R95"
+      "EVIDENCE_ANALYST_R159_ACTIONS_BRIDGE",
+      "MAIN_R164_ATOMIC_CONTROL_PLANE",
+      "SB002_ATTEMPT4_EXACT_HEAD_REPAIR",
+      "FORGE_FINAL_HEAD_CI",
+      "CONTROL_R98"
     ],
     "same_failure_recurrence_observed": false,
     "repository_wide_outage_supported": false,
@@ -110,7 +133,7 @@
     ]
   },
   "fleet": {
-    "registry_alignment": "MATCHES_CONTROL_R95",
+    "registry_alignment": "MATCHES_CONTROL_R98",
     "relay": "INTENTIONAL_DEPENDENCY_WAIT_SUSPENDED",
     "unexplained_current_production_off": false,
     "scheduler_changed": false
@@ -118,22 +141,29 @@
   "mutations": {
     "steward_persistence_only": true,
     "issue_metadata": false,
+    "pull_request": false,
     "scientific": false,
     "scheduler": false,
     "rulesets": false,
     "immutable_refs": false,
+    "main": false,
+    "research": false,
+    "forge": false,
+    "system_build": false,
     "control_branch": false
   },
   "persistence": {
-    "history": "reports/repository_steward/history/2026-09-27/1950.md",
+    "history": "reports/repository_steward/history/2026-09-28/0150.md",
     "latest": "reports/repository_steward/latest.md",
     "state": "reports/repository_steward/state.json",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
+    "attempt_limit": 5,
     "readback_required": true
   },
   "hard_floor": {
     "experiment_dispatched": false,
+    "result_bearing_workflow_dispatched": false,
     "identity_consumed": false,
     "scientific_ref_mutated": false,
     "evidence_ref_mutated": false,
