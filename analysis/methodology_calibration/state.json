@@ -1,42 +1,67 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-27T20:17:21+09:00",
+  "timestamp": "2026-09-27T22:24:38+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260927T201721+0900-R133-RD006-V4-PREMATRIX-CALIBRATION",
-    "sequence": 133,
+    "generation_id": "METHCAL-20260927T222438+0900-R134-RD006-V4-POSTRESULT-CALIBRATION",
+    "sequence": 134,
     "material_change": true,
-    "material_change_reason": "R153_V4_PREFLIGHT_R161_IMPLEMENTATION_R154_R155_ONE_SHOT_MATRIX_AUTHORITY",
-    "supersedes_generation_id": "METHCAL-20260927T181947+0900-R132-RD006-V3-POSTRESULT-CALIBRATION",
+    "material_change_reason": "RD006_V4_ONE_SHOT_RESULT_EXPOSED_POSTRESULT_CALIBRATION",
+    "supersedes_generation_id": "METHCAL-20260927T201721+0900-R133-RD006-V4-PREMATRIX-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
-    "previous_methodology": "METHCAL-20260927T181947+0900-R132-RD006-V3-POSTRESULT-CALIBRATION@6c0a1beaf7a146d995fc5ba6ed0cce004d686f09",
-    "evidence_analyst": "EVA-20260927T200932+0900-R155-R154-REF-METADATA-CORRECTION@9c2ad87325834c01afed2282a882627438248964",
-    "analyst_decision": "EVA-20260927T200051+0900-R154-RD006-V4-D0-MATRIX-AUTHORIZATION@81db1de1b53814edf177c466e63a0042cad702f7",
-    "main_durable_state": "MAIN-20260927T193131+0900-PRIMARY-R161-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT@08ae5aeb797f705a38fcd4e62598b16b179ea51e",
-    "control": "CTRL-20260927T185000+0900-R95-RD006-V3-CAUSAL-AUDIT@991241ea64657a13a1863e18c51e7a47eeb49dda",
-    "theory": "THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2@e56c5b8c6b4f263265fb2f1b0ebe9b76d0ec22ac",
-    "forge": "FORGE-20260927T184516+0900-EPOCH-FENCED-RECEIPT-ROTATION-CI-CLEAN@13d523fd2aab2f14842ff5a5722946a694b5322c"
+    "previous_methodology": "METHCAL-20260927T201721+0900-R133-RD006-V4-PREMATRIX-CALIBRATION@fda6ca14abb73203cc7aca8d99933a5a2871fa74",
+    "evidence_analyst": "EVA-20260927T210004+0900-R156-RD006-V4-ATTRIBUTION-CLARIFICATION@0359aea01323bcf6d11e311242ed51ba6c087dd5",
+    "main_durable_state": "MAIN-20260927T213647+0900-PRIMARY-R162-RD006-V4-D0-INCONCLUSIVE@b314b3d08e51a17b0466730784c238d6287716b2",
+    "control": "CTRL-20260927T205043+0900-R96-RD006-V4-PREMATRIX-GOVERNANCE@d8e4cde1dd0d12a258531b10f41691ee19b09078",
+    "theory": "THEORY-20260927T213213+0900-R11-NO-PROPOSAL-ROUTER-RESOLUTION-BOUNDARY-5A8C31D4@c4066afb33fdb6a67d53fa1dc9eaabfc78d211a3",
+    "forge_latest_handoff": "FORGE-20260927T204727+0900-SCOPE-REVISION-BOUNDARY-STRESS-CI-CLEAN@eed8e01fb2823b5459cbe48bfdba8f2b7cd70246",
+    "forge_unhanded_branch_head": "e74940775ef6b098abfbc1a80e96a558bc2d5474"
   },
   "authoritative_refs": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
     "rd006_v4": {
       "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-      "revision": "v4-port-to-hidden-trace-boundary",
-      "phase_before_first_cell": "OPEN_DEVELOPMENT",
-      "phase_after_any_cell_start": "RESULT_EXPOSED_DEVELOPMENT",
+      "revision": "v4-port-to-hidden-trace-boundary-d0-execution",
+      "phase": "RESULT_EXPOSED_DEVELOPMENT",
       "claim_ceiling": "SYSTEM",
-      "preflight_head": "78594102ea03fe3ffc0f6e1e0b8b94dd66351005",
-      "preflight_tree": "f41b9bd97630e4822584f3994692eec5d82c66fa",
-      "ci_run": 36312637388,
-      "preflight_status": "PASS",
-      "changed_invariant": "ORDINARY_EXTERNAL_LEARNER_TRACE_BOUNDARY_PORT_TO_PORT_ONLY_TO_PORT_TO_PORT_PLUS_PORT_TO_HIDDEN",
-      "authorized_matrix_count": 1,
-      "authorized_cells": 12,
+      "source_head": "44bef35c90f24a11e27000e3c328778733da92b6",
+      "source_tree": "040215d8f260f0b9084558cde4d65ce0755b92e5",
+      "result_head": "50112626ef6a4da364e3fa9268e8feb0d723ea7f",
+      "result_tree": "ef12cc8279b3043ef6dfc2577f155ed4e3bdbb15",
+      "source_ci_run_id": 36319160839,
+      "source_ci_conclusion": "success",
+      "result_ci_run_id": 36319533095,
+      "result_ci_conclusion": "success",
+      "result_bearing_invocations": 1,
+      "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+      "execution_cells": 12,
+      "complete_cells": 11,
+      "bounded_cells": 1,
+      "gate_open_cells": 0,
+      "hidden_spikes": {
+        "external_learning_off": 0,
+        "external_learning_on": 148
+      },
+      "maximum_same_clock_dynamic_eligible_sources": {
+        "external_learning_off": 0,
+        "external_learning_on": 1
+      },
+      "required_same_clock_dynamic_eligible_sources": 2,
+      "ordinary_updates_on": {
+        "PORT_TO_PORT": 356,
+        "PORT_TO_HIDDEN": 58
+      },
+      "prohibited_updates": 0,
+      "new_edges": 0,
+      "attribution_boundary": "COMPLETE_ORDINARY_LEARNING_PACKAGE_NOT_INCREMENTAL_PORT_TO_HIDDEN_CONTRIBUTION",
+      "bounded_cell_interpretation": "CEILING_CENSORED_NOT_ORDINARY_NEGATIVE",
       "hidden_return_learning": "OFF",
-      "result_bearing_matrix_executed": false,
-      "scientific_credit": 0
+      "capability_scoring": false,
+      "held_out_access": false,
+      "scientific_credit": 0,
+      "analyst_postresult_reconciliation_observed": false
     },
     "system_build": {
       "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
@@ -50,12 +75,12 @@
       "scientific_credit": 0
     },
     "theory": {
-      "generation": "THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2",
+      "generation": "THEORY-20260927T213213+0900-R11-NO-PROPOSAL-ROUTER-RESOLUTION-BOUNDARY-5A8C31D4",
       "status": "NO_PROPOSAL",
       "revisit_status": "NO_REVISIT_PROPOSAL"
     },
     "forge": {
-      "generation": "FORGE-20260927T184516+0900-EPOCH-FENCED-RECEIPT-ROTATION-CI-CLEAN",
+      "latest_handoff_generation": "FORGE-20260927T204727+0900-SCOPE-REVISION-BOUNDARY-STRESS-CI-CLEAN",
       "disposition": "OPTIONAL_FUTURE_SEPARATELY_ALLOCATED_SYSTEM_BUILD_ONLY",
       "admitted_to_rd006": false,
       "admitted_to_sb001": false,
@@ -69,30 +94,32 @@
     "development_credit": "KEEP",
     "rd005_preservation": "KEEP",
     "v1_v2_v3_preservation": "KEEP",
-    "v4_explicit_revision": "KEEP",
+    "v4_result_preservation": "KEEP",
     "single_changed_invariant": "KEEP",
-    "exact_preflight_binding": "KEEP",
+    "exact_source_binding": "KEEP",
     "single_matrix_only": "KEEP",
     "fixed_surface_and_resources": "KEEP",
     "hidden_return_learning_off": "KEEP",
     "actual_spike_edge_lag_gate": "KEEP",
-    "static_vs_dynamic_reachability": "KEEP",
     "raw_before_interpretation": "KEEP",
     "no_clobber": "KEEP",
-    "partial_or_failure_result_exposure": "KEEP",
+    "bounded_result_exposure": "KEEP",
     "same_revision_rerun_retune_rescore": "KEEP",
-    "execution_adapter_freeze": "KEEP",
-    "off_on_attribution": "CLARIFY_PACKAGE_EFFECT_NOT_ISOLATED_PORT_TO_HIDDEN_CAUSAL_CONTRIBUTION",
+    "off_on_attribution": "CLARIFY",
+    "bounded_cell_interpretation": "CLARIFY",
+    "gate_closed_scope": "KEEP",
     "later_e0_e1_es": "KEEP",
     "capability_heldout": "KEEP",
     "scale_reservoir": "KEEP",
-    "pass_reachability": "PLAUSIBLE_NOT_GUARANTEED"
+    "pass_reachability": "KEEP"
   },
   "system_build_gate_findings": {
     "identity_separation": "KEEP",
     "sb001_claim_boundary": "KEEP",
     "reduced_component_reuse": "KEEP",
     "forge_optional_engineering_only": "KEEP",
+    "mandatory_review_non_gate": "KEEP",
+    "known_defect_and_exact_head_verification": "KEEP",
     "build_success_to_novelty_guard": "KEEP",
     "composition_contribution": "INSUFFICIENT_EVIDENCE",
     "build_to_science_boundary": "KEEP"
@@ -100,15 +127,16 @@
   "revisit_gate_findings": {
     "rd005_no_reopen": "KEEP",
     "rd006_v1_v2_v3_preserved": "KEEP",
+    "v4_closed_preserved": "KEEP",
     "v4_not_rescue_laundering": "KEEP",
     "fresh_successor_not_suppressed": "KEEP",
-    "theory_r10": "NO_REVISIT_PROPOSAL"
+    "theory_r11": "NO_REVISIT_PROPOSAL"
   },
   "calibration": {
     "over_reduction_risk": "LOW",
-    "overclaim_risk": "LOW_IF_ATTRIBUTION_BOUNDARY_KEPT",
+    "overclaim_risk": "LOW_IF_PACKAGE_ATTRIBUTION_AND_CENSORING_BOUNDARIES_KEPT",
     "moving_goalpost_risk": "LOW",
-    "pass_reachability": "PLAUSIBLE_NOT_GUARANTEED",
+    "pass_reachability": "REALISTIC_NOT_ACHIEVED",
     "overall": "WELL_CALIBRATED"
   },
   "mandatory_questions": {
@@ -130,6 +158,14 @@
     "status": "CLOSED_P0_RECOVERED",
     "active_pointer_debt": [],
     "new_recurrence_observed": false,
+    "source_attempt_1": {
+      "layer": "AUTHENTICATION_PERMISSION_TOOL_AVAILABILITY",
+      "scope": "LOCAL_GIT_PUSH_PATH",
+      "github_mutation": false,
+      "repository_wide_outage_supported": false
+    },
+    "source_attempt_2": "SUCCESS_READBACK_VERIFIED",
+    "result_publication_attempt_1": "SUCCESS_READBACK_VERIFIED",
     "methodology_closure_authority": false
   },
   "hard_floor_confirmation": {
@@ -146,7 +182,7 @@
     "protected_heldout_accessed": false
   },
   "persistence": {
-    "history_path": "analysis/methodology_calibration/history/2026-09-27/2017.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-27/2224.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts_per_mutation_purpose": 5,
     "attempt": 1,

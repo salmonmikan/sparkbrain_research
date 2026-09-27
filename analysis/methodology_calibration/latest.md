@@ -1,20 +1,20 @@
 # SparkBrain Methodology Calibration Audit — Latest
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260927T201721+0900-R133-RD006-V4-PREMATRIX-CALIBRATION`
-- generated_at: `2026-09-27T20:17:21+09:00`
-- history_path: `analysis/methodology_calibration/history/2026-09-27/2017.md`
+- generation_id: `METHCAL-20260927T222438+0900-R134-RD006-V4-POSTRESULT-CALIBRATION`
+- generated_at: `2026-09-27T22:24:38+09:00`
+- history_path: `analysis/methodology_calibration/history/2026-09-27/2224.md`
 - overall_classification: `WELL_CALIBRATED`
 - new_scientific_result: `false`
 
-Analyst R154/R155's RD006 v4 allocation is methodologically sound: one fresh versioned revision, one fixed 12-cell OFF/ON matrix, hidden-return learning OFF, actual-spike/edge/lag dynamic eligibility, raw-before-interpretation, no-clobber and no automatic rerun after any exposure.
+RD006 v4 executed the prospectively fixed 12-cell OFF/ON matrix exactly once from frozen source `44bef35c90f24a11e27000e3c328778733da92b6` and preserved result `50112626ef6a4da364e3fa9268e8feb0d723ea7f`. Eleven cells completed normally and one ON cell reached the fixed spike ceiling.
 
-MAIN R161's synthetic preflight is implementation verification only and receives scientific credit 0. RD005 remains consumed; v1/v2/v3 remain preserved closed negative/bounded revisions.
+OFF produced 0 hidden spikes and ON produced 148; ON recorded 356 PORT-to-PORT and 58 PORT-to-hidden updates. The largest same-return-clock eligible-source set was 1 against a fixed requirement of 2, so the gate remained closed. No prohibited updates or new edges occurred.
 
-One interpretation boundary needs emphasis but does not block execution: v4 OFF/ON diagnoses the complete ordinary-learning package versus no ordinary learning. It does not by itself isolate the incremental causal contribution of PORT-to-hidden updates from retained PORT-to-PORT updates, and cannot establish composition contribution or novelty.
+The method remains well calibrated: no gate weakening, rerun, retune or rescore occurred, and the bounded outcome is preserved at scientific credit 0. OFF/ON estimates the complete ordinary-learning package, not the incremental PORT-to-hidden contribution. The bounded cell cannot support an uncensored negative or general impossibility claim.
 
-The execution adapter must be frozen and invariant-checked before dynamics. Any learner, fixed-surface, gate or measurement-semantics change requires a pre-execution stop. After one matrix, preserve every partial/bounded/negative outcome and return to Analyst.
+v4 is now RESULT_EXPOSED_DEVELOPMENT and must remain closed pending fresh Evidence Analyst reconciliation. SB001 remains NON_EVIDENTIARY_BUILD. Theory R11 remains NO_PROPOSAL / NO_REVISIT_PROPOSAL. Forge remains optional noncanonical build input.
 
-SB001 remains NON_EVIDENTIARY_BUILD. Theory R10 remains NO_PROPOSAL / NO_REVISIT_PROPOSAL. P0 remains closed as recovered with no active pointer debt.
+The initial local-push authentication failure occurred before GitHub mutation; the alternate Git Data path and result publication succeeded with independent readback. No partial publication or active pointer debt is observed.
 
 No new SparkBrain scientific result.
