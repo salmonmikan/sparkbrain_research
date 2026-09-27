@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260927T145000+0900-R91-INCIDENT-REGISTRY-RECONCILED",
-  "produced_at": "2026-09-27T14:50:00+09:00",
+  "generation_id": "CTRL-20260927T155000+0900-R92-RD006-V3-STATIC-PREFLIGHT-OBSERVED",
+  "produced_at": "2026-09-27T15:50:00+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
   "mode": "CONTROL_BRAIN",
   "policy_refs": {
@@ -16,9 +16,12 @@
     "HUMAN-20260927-002": "ACCEPT_ACTIVE_FIVE_TOTAL_ATTEMPTS"
   },
   "refs_observed": {
-    "control": "ca934c91c2e371a41e1a8b88ca8c7827f128f64f",
+    "control_before": "048ff40c40f8319db4d7ae55db634e940205e4b5",
     "evidence_analyst": "79b2e7e67144804393911853b7bd405fafec629e",
-    "main_reports": "d868b7ff14677100b9c6e29e90b265f99f14c64c",
+    "main_reports": "48d02ef9bb015b2c7c30fba0364bea65c6abe665",
+    "external_science": "cf3c49a4affa31e21ed9229983766da7ee064587",
+    "methodology": "f036226a374f4518adfab515bbe0e78f847040ee",
+    "utility": "97835e1ca4c55c80c22e72220dc8b6aeaa70c608",
     "repository_steward": "76583e7e4320c59fe8e1ad218c1ada63c41a553e",
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7"
@@ -37,7 +40,7 @@
     "phase": "OPEN_DEVELOPMENT",
     "owner": "MAIN",
     "analyst_generation": "EVA-20260927T135700+0900-R149-RD006-V3-STATIC-PREFLIGHT",
-    "latest_main_generation": "MAIN-20260927T133210+0900-PRIMARY-R157-RD006-V2-STATIC-TOPOLOGY-AUDIT",
+    "latest_main_generation": "MAIN-20260927T153015+0900-PRIMARY-R158-RD006-V3-STATIC-PREFLIGHT",
     "prior_revisions": {
       "v1": {
         "disposition": "CLOSED_PRESERVED",
@@ -55,7 +58,13 @@
     "current_revision": {
       "revision": "v3-structural-temporal-role-preflight",
       "allocation": "PROSPECTIVE_CONTRACT_AND_STATIC_PREFLIGHT_ONLY",
-      "static_preflight_durable": false,
+      "static_preflight_durable": true,
+      "static_preflight_status": "PASS",
+      "families_passing": 6,
+      "family_count": 6,
+      "research_head": "6b273e531c22729759cacabcced9df3319227a8e",
+      "ci_run_id": 36300144023,
+      "ci_conclusion": "success",
       "result_bearing_execution_authorized": false,
       "new_dynamics_authorized": false,
       "claim_ceiling": "SYSTEM",
@@ -68,7 +77,7 @@
       "preserved_timing_two_source_intersections": 0,
       "inference": "EDGE_COUNT_ALONE_INSUFFICIENT"
     },
-    "next_action": "MAIN_STATIC_PREFLIGHT_THEN_FRESH_ANALYST_RECONCILIATION",
+    "next_action": "FRESH_EVIDENCE_ANALYST_RECONCILIATION_BEFORE_ANY_V3_MATRIX",
     "forbidden_until_fresh_reconciliation": [
       "V3_RESULT_BEARING_EXECUTION",
       "V2_RERUN_RETUNE",
@@ -97,10 +106,11 @@
     "repository_wide_write_outage_supported": false,
     "active_pointer_debt": [],
     "post_closure_success_paths": [
-      "EVIDENCE_ANALYST_R148_R149",
-      "MAIN_R157",
-      "THEORY_R8",
-      "CONTROL_R90"
+      "CONTROL_R91",
+      "UTILITY_1527",
+      "MAIN_R158",
+      "THEORY_R9",
+      "METHODOLOGY_R130"
     ],
     "recurrence_observation": "NO_SAME_FAILURE_PATTERN_OBSERVED",
     "historical_gaps": [
@@ -136,7 +146,7 @@
     "main": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_V3_STATIC_PREFLIGHT_ALLOCATED",
+      "operational": "GREEN_ACTIVE_WAIT_ANALYST_AFTER_R158",
       "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b"
     },
     "relay": {
@@ -193,7 +203,7 @@
   },
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "branch_head_before": "ca934c91c2e371a41e1a8b88ca8c7827f128f64f",
+    "branch_head_before": "048ff40c40f8319db4d7ae55db634e940205e4b5",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
     "completion_contract": "POST_COMMIT_INDEPENDENT_READBACK_REQUIRED"
@@ -206,5 +216,12 @@
     "terminal_reopened": false,
     "consumed_formal_rerun_retune_rescore": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-27/1450-R91.md"
+  "history_path": "analysis/control_brain/history/2026-09-27/1550-R92.md",
+  "theory": {
+    "generation": "THEORY-20260927T153101+0900-R9-NO-PROPOSAL-TRANSACTION-IDEMPOTENCE-2C7A91E4",
+    "status": "NO_PROPOSAL",
+    "revisit_status": "NO_REVISIT_PROPOSAL",
+    "retained_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
+    "scientific_credit": 0
+  }
 }
