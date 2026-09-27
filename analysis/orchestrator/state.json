@@ -1,247 +1,126 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260928T045927+0900-R161-M1-ROLLING-CONTRACT-SB002-INTEGRITY",
-  "generated_at": "2026-09-28T04:59:27+09:00",
-  "cache_role": "MOVING_CACHE_ONLY",
-  "durable_authority": {
-    "history_path": "analysis/orchestrator/history/2026-09-28/0459-R161.md",
-    "complete": true
-  },
-  "new_scientific_result": false,
-  "scientific_execution_mode": "READ_ONLY",
-  "go_stop": "GO_SYSTEM_BUILD_M1_ROLLING_CONTRACT_REPAIR_FIRST_STOP_SCIENCE",
+  "generation": "R162",
+  "generation_id": "EVA-20260928T070312+0900-R162-M1-EXACT-HEAD-PR-MERGE",
+  "generated_at": "2026-09-28T07:03:12+09:00",
+  "role": "EVIDENCE_ANALYST",
+  "mode": "READ_ONLY_ADJUDICATION",
+  "outcome": "GO_M1_EXACT_HEAD_PR_MERGE_EXACT_ONLY_STOP_SCIENCE",
   "directive_freshness": {
-    "prior_recorded_index_head": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
-    "current_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "current_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "newly_active_or_materially_changed": [
+    "branch": "ops/human-directives",
+    "branch_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "prior_generation": "R161",
+    "changed": false,
+    "newly_active_or_materially_changed": [],
+    "applicable": [
       "HUMAN-20260928-001",
       "HUMAN-20260928-002"
-    ],
-    "dispositions": {
-      "HUMAN-20260928-001": "APPLIED_M1_PRIMARY_ROLLING_CONTRACT",
-      "HUMAN-20260928-002": "APPLIED_FLY0_PARALLEL_ISOLATED_NO_SB003"
-    }
+    ]
   },
-  "refs_observed": {
-    "main": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
-    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "prior_analyst_target_head": "6cedfd56ddc3e88e73441ea8b0db59932ccd90fb",
-    "control": "cb607e05466b5b223eee330834a839b711af1884",
-    "main_reports": "8dd7a689f6b376791dd2c368956c5157550cbbd6",
-    "evidence_persistence_requests": "796972861f0c52a5b4d24f7edb07597fd62d7a0d",
-    "methodology": "b22575ee46b081aacc1194aaae3eb3d4b6311066",
-    "theory_and_external_audit": "8f035e911bf7b1c965b97695b04834265cf415cc",
-    "utility_requests": "59e263ebc389a3ac9674376c2b5448fb54c3b426"
-  },
-  "canonical_funnel": {
-    "candidates": 35,
-    "terminal": 35,
-    "active": 0,
-    "scientifically_queued": 0,
-    "consumed_formal_identities": 8,
-    "formal_allocation": "NO_ACTION",
-    "h7": "INCONCLUSIVE_CONSUMED_ONE_WAY"
-  },
-  "development_queue": {
-    "count": 0,
-    "rd005": "CONSUMED_ONE_WAY_UNCHANGED",
-    "rd006": {
-      "v1": "CLOSED_ZERO_CREDIT",
-      "v2": "CLOSED_ZERO_CREDIT",
-      "v3": "CLOSED_ZERO_CREDIT",
-      "v4": "CLOSED_ZERO_CREDIT_AFTER_ONE_MATRIX_AND_READ_ONLY_AUDIT"
-    },
-    "result_bearing_execution_authorized": false
+  "refs": {
+    "main": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
+    "control_state": "dbca69cc12a4eb3a2e57c5ccf9aa00d38ed20126",
+    "analyst_target_before": "195ca2d230928c7cada86e51d4f04b25904ffc04",
+    "main_report": "a821aa4314d7b9501159462374931150d955405e",
+    "methodology": "0eb0caf458dbd81b11ed99094135941ab40bddd9",
+    "external_science": "64f161a43986cefc5f25e644cb504761c038d187",
+    "fly0_branch": "forge/20260928-fly0-topology-probe-a",
+    "fly0_head": "c9538544"
   },
   "control_authority": {
-    "generation": "CTRL-20260928T045012+0900-R102-M1-AUTHORITY-GAP-HOLD",
-    "disposition": "M1_PRIMARY_REPAIR_THEN_ROLLING_CONTRACT",
-    "relay_state": "INTENTIONALLY_DISABLED_NO_COLLISION"
+    "generation": "CTRL-20260928T065013+0900-R104-M1-WAIT-ANALYST",
+    "state": "M1_COMPLETE_WAITING_ANALYST_EXACT_HEAD_RECONCILIATION",
+    "critical_path": "ANALYST_EXACT_HEAD_RECONCILIATION"
   },
-  "system_build_ledger": {
-    "sb001": {
-      "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
-      "state": "INTEGRATED_COMPLETE",
-      "built": true,
-      "bounded_functionally_verified": true,
-      "comparatively_supported": false,
-      "composition_contribution": "NOT_ESTABLISHED",
-      "scientifically_novel": false,
-      "scientific_credit": 0
-    },
-    "sb002": {
-      "build_id": "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT",
-      "state": "INTEGRATED_DEFECT_REPAIR_REQUIRED",
-      "merge_commit": "76b0cc94edf0fec2e46d69978e0794a37759b862",
-      "confirmed_defects": [
-        "SB002-DUPLICATE-EVIDENCE-IDENTITY",
-        "SB002-CHECKPOINT-ROUTE-LEDGER-COMPLETENESS",
-        "SB002-CHECKPOINT-GLOBAL-SEQUENCE-PERMUTATION"
-      ],
-      "repair_is_science_invariant": true,
-      "built": true,
-      "bounded_functionally_verified": "PARTIAL_INVALIDATED_BY_ENGINEERING_DEFECTS",
-      "comparatively_supported": false,
-      "composition_contribution": "NOT_ESTABLISHED",
-      "scientifically_novel": false,
-      "scientific_credit": 0
-    },
-    "m1": {
-      "build_id": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
-      "state": "ROLLING_CONTRACT_ALLOCATED_REPAIR_FIRST",
-      "execution_class": "NON_EVIDENTIARY_SYSTEM_BUILD",
-      "owner": "MAIN",
-      "branch": "system-build/ipm1-continuous-revision-20260928",
-      "base_main": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
-      "branch_observed_at_allocation": false,
-      "target_capability": "BOUNDED_CONTINUOUS_OBSERVATION_STATE_PLURAL_HYPOTHESIS_COMPETITION_ABSTAIN_ACTION_LATER_OUTCOME_SELECTIVE_REVISION_NEXT_ACTION_LOOP",
-      "component_set": [
-        "INTEGRATED_V032_REFERENCE_RUNTIME_VIA_SB001",
-        "SB001_PREDICTIVE_REVISION_PILOT",
-        "REPAIRED_SB002_CAUSAL_SCOPE_REVISION_PILOT",
-        "FRESH_TYPED_COMPOSITOR_CHECKPOINT_TRACE",
-        "BOUNDED_DETERMINISTIC_LOCAL_ENGINEERING_ENVIRONMENT"
-      ],
-      "component_provenance": "DIRECT_OR_ESTABLISHED_REFERENCE_COMPONENTS_PLUS_FRESH_GLUE_ZERO_INHERITED_SCIENTIFIC_CREDIT",
-      "built": false,
-      "bounded_functionally_verified": false,
-      "comparatively_supported": false,
-      "composition_contribution": "NOT_ESTABLISHED",
-      "scientifically_novel": false,
-      "scientific_credit": 0,
-      "rolling_contract": {
-        "ordered": true,
-        "continue_without_fresh_analyst_only_after_prior_acceptance": true,
-        "milestones": [
-          {
-            "id": "M1.1_SB002_INTEGRITY_REPAIR",
-            "target": "CLOSE_THREE_CONFIRMED_DEFECTS_BEFORE_DEPENDENT_WORK",
-            "acceptance": [
-              "REQUIRED_STABLE_EVIDENCE_ID",
-              "EXACT_DUPLICATE_ID_NO_WRITE_IDEMPOTENT",
-              "CONFLICTING_ID_REUSE_NO_WRITE",
-              "IDENTITY_LEDGER_BIDIRECTIONAL_EXACTNESS",
-              "ROUTE_TOKENS_EQUAL_ROUTE_STATE_KEYS",
-              "GLOBAL_SEQUENCE_EXACT_UNIQUE_1_TO_N",
-              "SCHEMA_BUMP_FAIL_CLOSED_OLD_PAYLOAD",
-              "EXISTING_SB002_ACCEPTANCE_RETAINS_PASS",
-              "FULL_ENGINEERING_GATES_PASS"
-            ]
-          },
-          {
-            "id": "M1.2_INTEGRATED_LOOP_SHELL",
-            "target": "COMPOSE_SB001_AND_REPAIRED_SB002_WITH_TYPED_DELAYED_OUTCOME_TRANSACTION",
-            "acceptance": [
-              "NO_PRIVILEGED_RUNTIME_FIELDS",
-              "FIXED_AGREEMENT_ACTION_RULE",
-              "AMBIGUITY_OR_DISAGREEMENT_ABSTAINS",
-              "ONE_PENDING_EVENT",
-              "ONE_FEEDBACK_AND_ONE_EVIDENCE_REVISION_PER_RECEIPT",
-              "CROSS_COMPONENT_ATOMIC_ROLLBACK",
-              "PURE_INSPECT_AND_STATE_HASH"
-            ]
-          },
-          {
-            "id": "M1.3_BOUNDED_CONTINUOUS_ENVIRONMENT_REPLAY",
-            "target": "CLOSE_THREE_OR_MORE_ACTION_COUPLED_CYCLES_ACROSS_TWO_SCOPES",
-            "acceptance": [
-              "ACTION_AFFECTS_LATER_TRANSITION_OR_OUTCOME",
-              "PLURAL_HYPOTHESES_EXPOSED",
-              "TWO_SCOPES_EXERCISED",
-              "VALID_ABSTENTION",
-              "MIDRUN_CHECKPOINT_EXACT_CONTINUATION",
-              "NO_HIDDEN_ENVIRONMENT_FIELD_LEAKAGE",
-              "MAX_64_CYCLES_PER_SCENARIO"
-            ]
-          },
-          {
-            "id": "M1.4_HARDENING_EXACT_HEAD_HANDOFF",
-            "target": "FAULT_IDEMPOTENCE_SCHEMA_FULL_GATES_AND_FINAL_HEAD",
-            "acceptance": [
-              "FAULT_INJECTION_NO_PARTIAL_WRITE",
-              "DUPLICATE_RECEIPT_IDEMPOTENT",
-              "CONFLICTING_RECEIPT_FAIL_CLOSED",
-              "STRICT_CANONICAL_NO_CLOBBER_CHECKPOINT",
-              "FOCUSED_AND_FULL_TESTS_LINT_READINESS_BUNDLE_PASS",
-              "DOCS_AND_LIMITATIONS_CURRENT",
-              "EXACT_HEAD_TREE_FILES_CI_RECORDED"
-            ],
-            "stop_after": "FRESH_ANALYST_EXACT_HEAD_RECONCILIATION_BEFORE_PR_MERGE"
-          }
-        ]
-      },
-      "resource_budget": {
-        "runtime": "CPU_ONLY_LOCAL_OFFLINE",
-        "new_dependencies": false,
-        "network": false,
-        "max_hypotheses": 16,
-        "max_context_scalars": 64,
-        "scope_components": 2,
-        "max_scope_dimensions": 8,
-        "max_acceptance_cycles_per_scenario": 64,
-        "optimization_or_sweep": false
-      },
-      "forbidden_claims": [
-        "SCIENTIFIC_EVIDENCE",
-        "COMPARATIVE_SUPPORT",
-        "COMPOSITION_CONTRIBUTION",
-        "SCIENTIFIC_NOVELTY",
-        "BIOLOGICAL_EQUIVALENCE",
-        "ENERGY_EFFICIENCY",
-        "REAL_TASK_CAPABILITY",
-        "INHERITED_FORGE_OR_PRIOR_SCIENCE_CREDIT"
-      ],
-      "stop_conditions": [
-        "MILESTONE_ACCEPTANCE_FAILURE_REQUIRING_OUTCOME_RESPONSIVE_REDESIGN",
-        "CONTRACT_EXTERNAL_INTERFACE_OR_TARGET_CHANGE",
-        "HIDDEN_PRIVILEGED_INPUT",
-        "RESOURCE_CEILING_INCREASE",
-        "SCIENTIFIC_FORMAL_OR_CONSUMED_BOUNDARY",
-        "BRANCH_COLLISION_OR_BASE_MISMATCH",
-        "FLY0_MIXING",
-        "FINAL_M1_4_EXACT_HEAD"
-      ]
-    }
+  "persistence_reconciliation": {
+    "prior_generation": "R161",
+    "request_id": "EA-R161-20260928T045927JST",
+    "request_verified": true,
+    "receipt_verified": true,
+    "receipt_persistence_complete": true,
+    "target_history_latest_state_verified": true,
+    "unresolved_requests_after_prior": false
+  },
+  "canonical_science": {
+    "terminal": 35,
+    "total": 35,
+    "active": 0,
+    "queued": 0,
+    "consumed_formal_identities": 8,
+    "new_scientific_execution_authorized": false
+  },
+  "system_build": {
+    "build_id": "SB002",
+    "milestone": "Integrated Prototype Milestone 1",
+    "branch": "system-build/ipm1-continuous-revision-20260928",
+    "base": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
+    "exact_head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
+    "tree": "10d252a52abdafed7806fc81b39ee8ba126713a9",
+    "actions_run_id": 36348434677,
+    "actions_conclusion": "success",
+    "python": [
+      "3.11",
+      "3.13"
+    ],
+    "milestones_complete": [
+      "integrated_deterministic_harness",
+      "sb002_integrity_repair",
+      "checkpoint_replay",
+      "invariant_resource_audit"
+    ],
+    "built": true,
+    "bounded_functionally_verified": true,
+    "comparative_support": false,
+    "composition_contribution": "NOT_ESTABLISHED",
+    "scientifically_novel": false,
+    "scientific_credit": 0,
+    "evidence_class": "NON_EVIDENTIARY_BUILD"
+  },
+  "pr_merge_authority": {
+    "authorized": true,
+    "exact_source_head_only": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
+    "conditions": [
+      "github_mergeable_without_substantive_conflict_repair",
+      "required_checks_pass",
+      "no_code_configuration_resource_provenance_or_claim_change",
+      "no_new_concrete_defect_or_integrity_violation"
+    ],
+    "invalidators": [
+      "source_head_change",
+      "conflict_repair",
+      "acceptance_condition_change",
+      "required_check_failure",
+      "material_scope_change"
+    ],
+    "post_merge_required": [
+      "publish_pr_number",
+      "publish_merge_commit",
+      "publish_merged_tree",
+      "publish_post_merge_check_state",
+      "stop_for_analyst_reconciliation"
+    ]
+  },
+  "allocation": {
+    "main": "OPEN_EXACT_HEAD_PR_THEN_MERGE_IF_ALL_CONDITIONS_HOLD",
+    "relay": null,
+    "science": null,
+    "sb003": null
   },
   "fly0": {
-    "state": "PARALLEL_FORGE_ONLY_NON_EVIDENTIARY",
-    "sb003_allocated": false,
-    "dependency_of_m1": false,
-    "mixed_with_scientific_objects": false,
+    "classification": "NON_EVIDENTIARY_NONCANONICAL_FORGE_COMPARATOR",
+    "allocation": null,
+    "promotion_authorized": false,
     "scientific_credit": 0
   },
-  "main_allocation": {
-    "owner": "MAIN",
-    "work_mode": "SYSTEM_BUILD",
-    "build_id": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
-    "branch": "system-build/ipm1-continuous-revision-20260928",
-    "required_base_main": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
-    "next_action": "CREATE_BRANCH_FROM_EXACT_BASE_EXECUTE_M1_1_THEN_CONTINUE_ONLY_ON_ACCEPTANCE",
-    "result_bearing_science_authorized": false,
-    "pr_merge_authorized": false
-  },
-  "relay_allocation": null,
-  "persistence": {
-    "route": "EVIDENCE_ANALYST_ACTIONS_BRIDGE_RETAINED_HARDENING",
-    "prior_generation": "R160",
-    "prior_complete": true,
-    "prior_receipt": "EA-R160-20260928T025931JST",
-    "prior_target_head": "6cedfd56ddc3e88e73441ea8b0db59932ccd90fb",
-    "pending_prior_requests": 0,
-    "active_pointer_debt": [],
-    "request_id": "EA-R161-20260928T045927JST",
-    "request_generation": "R161",
-    "operational_state": "REQUEST_ACCEPTED_BY_BRIDGE_COMPLETION_REQUIRES_RECEIPT_READBACK",
-    "request_publication_attempt": 1
-  },
   "blockers": [],
-  "hard_floor": {
-    "experiments_dispatched_by_analyst": false,
-    "result_bearing_workflow_dispatched": false,
-    "immutable_refs_mutated": false,
-    "terminal_objects_reopened": false,
-    "consumed_formal_rerun_retune_rescore": false,
-    "scheduler_changes": false
-  }
+  "persistence": {
+    "route": "retained_evidence_analyst_actions_bridge",
+    "request_branch": "ops/evidence-persistence-requests",
+    "target_branch": "ops/evidence-analyst-handoff",
+    "expected_target_head": "195ca2d230928c7cada86e51d4f04b25904ffc04",
+    "request_id": "EA-R162-20260928T070312JST",
+    "status_at_request_creation": "PENDING_ACTION_RECEIPT"
+  },
+  "hard_floor": "No claim beyond exact-head bounded functional readiness; no scientific promotion or credit."
 }
