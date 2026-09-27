@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260927T205043+0900-R96-RD006-V4-PREMATRIX-GOVERNANCE",
-  "produced_at": "2026-09-27T20:50:43+09:00",
+  "generation_id": "CTRL-20260927T225449+0900-R97-RD006-V4-POSTRESULT-GOVERNANCE",
+  "produced_at": "2026-09-27T22:54:49+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
   "mode": "CONTROL_BRAIN",
   "policy_refs": {
@@ -13,22 +13,19 @@
     "HUMAN-20260926-003": "ACCEPT_COMPLETED_FLEET_RECOVERED",
     "HUMAN-20260926-004": "ACCEPT_ACTIVE_REVIEW_OPTIONAL",
     "HUMAN-20260927-001": "ACCEPT_WITH_MODIFICATION_BOUND_AS_FRESH_RV02_RD006",
-    "HUMAN-20260927-002": "ACCEPT_ACTIVE_FIVE_TOTAL_ATTEMPTS"
+    "HUMAN-20260927-002": "ACCEPT_ACTIVE_FIVE_TOTAL_ATTEMPTS",
+    "HUMAN-20260922-005": "ACCEPT_ACTIVE_DEVELOPMENT_FLEXIBLE_EVIDENCE_RIGID"
   },
   "refs_observed": {
-    "control_before": "991241ea64657a13a1863e18c51e7a47eeb49dda",
-    "evidence_analyst": "9c2ad87325834c01afed2282a882627438248964",
-    "evidence_analyst_receipt": "EA-R155-20260927T200932JST",
-    "evidence_analyst_receipt_workflow_run_id": "36314887647",
-    "main_reports": "08ae5aeb797f705a38fcd4e62598b16b179ea51e",
-    "rd006_v4_preflight": "78594102ea03fe3ffc0f6e1e0b8b94dd66351005",
-    "rd006_v4_preflight_tree": "f41b9bd97630e4822584f3994692eec5d82c66fa",
-    "methodology": "fda6ca14abb73203cc7aca8d99933a5a2871fa74",
-    "external_science": "e56c5b8c6b4f263265fb2f1b0ebe9b76d0ec22ac",
-    "utility": "83418fc7abd1353db426fe062ac91e2ec4d92fec",
-    "repository_steward": "c992b00130979937a7aeecf6a8d185edf50db6ee",
-    "forge_handoff": "eed8e01fb2823b5459cbe48bfdba8f2b7cd70246",
-    "forge_prototype": "89a51ba5a9506afc0f0f77b7ecccca224cd42ce4",
+    "control_before": "d8e4cde1dd0d12a258531b10f41691ee19b09078",
+    "evidence_analyst": "0359aea01323bcf6d11e311242ed51ba6c087dd5",
+    "main_reports": "b314b3d08e51a17b0466730784c238d6287716b2",
+    "rd006_v4_result": "50112626ef6a4da364e3fa9268e8feb0d723ea7f",
+    "methodology": "c6e68a991f973fa30c7edb101cbe840d5a561c17",
+    "external_science": "c4066afb33fdb6a67d53fa1dc9eaabfc78d211a3",
+    "utility": "5284786320215243e0fc05b04f1067d74a7a5350",
+    "forge_handoff": "fe54902c7b3fc8b020debe7d1514ffe1b6be7e29",
+    "forge_prototype": "e74940775ef6b098abfbc1a80e96a558bc2d5474",
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7"
   },
@@ -43,71 +40,37 @@
   },
   "development": {
     "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-    "phase": "OPEN_DEVELOPMENT",
-    "owner": "MAIN_UNDER_EVIDENCE_ANALYST_R154_R155",
-    "analyst_generation": "EVA-20260927T200932+0900-R155-R154-REF-METADATA-CORRECTION",
-    "analyst_decision_generation": "EVA-20260927T200051+0900-R154-RD006-V4-D0-MATRIX-AUTHORIZATION",
-    "latest_main_generation": "MAIN-20260927T193131+0900-PRIMARY-R161-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT",
-    "prior_revisions": {
-      "rd005": {
-        "phase": "CONSUMED_ONE_WAY",
-        "preserve_unchanged": true
-      },
-      "v1": {
-        "phase": "RESULT_EXPOSED_DEVELOPMENT",
-        "disposition": "CLOSED_PRESERVED",
-        "scientific_credit": 0
-      },
-      "v2": {
-        "phase": "RESULT_EXPOSED_DEVELOPMENT",
-        "disposition": "CLOSED_PRESERVED",
-        "scientific_credit": 0
-      },
-      "v3": {
-        "phase": "RESULT_EXPOSED_DEVELOPMENT",
-        "disposition": "CLOSED_PRESERVED",
-        "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
-        "scientific_credit": 0
-      }
+    "phase": "RESULT_EXPOSED_DEVELOPMENT",
+    "owner": "MAIN_RESULT_PRESERVED_WAIT_EVIDENCE_ANALYST",
+    "analyst_generation": "EVA-20260927T210004+0900-R156-RD006-V4-ATTRIBUTION-CLARIFICATION",
+    "main_generation": "MAIN-20260927T213647+0900-PRIMARY-R162-RD006-V4-D0-INCONCLUSIVE",
+    "revision": "v4-port-to-hidden-trace-boundary-d0-execution",
+    "exact_result_head": "50112626ef6a4da364e3fa9268e8feb0d723ea7f",
+    "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+    "authorized_matrix_count": 1,
+    "executed_matrix_count": 1,
+    "complete_cell_count": 11,
+    "bounded_cell_count": 1,
+    "gate_open_cell_count": 0,
+    "hidden_spikes": {
+      "off": 0,
+      "on": 148
     },
-    "current_revision": {
-      "revision": "v4-port-to-hidden-trace-boundary",
-      "phase": "OPEN_DEVELOPMENT",
-      "phase_transition_on_first_cell": "RESULT_EXPOSED_DEVELOPMENT",
-      "claim_ceiling": "SYSTEM",
-      "evidentiary_status": "DEVELOPMENT_RESULT_BEARING_ZERO_CONFIRMATORY_CREDIT",
-      "scientific_credit": 0,
-      "single_changed_invariant": "ORDINARY_EXTERNAL_LEARNER_TRACE_BOUNDARY_PORT_TO_PORT_ONLY_TO_PORT_TO_PORT_PLUS_PORT_TO_HIDDEN",
-      "preflight_status": "PASS",
-      "preflight_head": "78594102ea03fe3ffc0f6e1e0b8b94dd66351005",
-      "preflight_tree": "f41b9bd97630e4822584f3994692eec5d82c66fa",
-      "preflight_ci_run_id": 36312637388,
-      "result_bearing_execution_authorized": true,
-      "result_bearing_execution_observed": false,
-      "research_ref_still_at_preflight_head": true,
-      "authorized_matrix_count": 1,
-      "authorized_cell_count": 12,
-      "conditions": [
-        "ORDINARY_EXTERNAL_LEARNING_OFF",
-        "ORDINARY_EXTERNAL_LEARNING_ON_V4"
-      ],
-      "families": 6,
-      "hidden_return_learning": "OFF",
-      "fixed_surface_unchanged": true,
-      "raw_before_interpretation": true,
-      "rerun_authorized": false,
-      "retune_authorized": false,
-      "rescore_authorized": false,
-      "after_any_exposure": "PRESERVE_AND_STOP_FOR_FRESH_ANALYST"
+    "ordinary_updates_on": {
+      "PORT_TO_PORT": 356,
+      "PORT_TO_HIDDEN": 58
     },
-    "methodology_advisory": {
-      "generation": "METHCAL-20260927T201721+0900-R133-RD006-V4-PREMATRIX-CALIBRATION",
-      "classification": "WELL_CALIBRATED",
-      "execution_blocking": false,
-      "required_clarification": "OFF_ON_ESTIMATES_COMPLETE_ORDINARY_LEARNING_PACKAGE_EFFECT_NOT_INCREMENTAL_PORT_TO_HIDDEN_CAUSAL_CONTRIBUTION",
-      "adapter_guard": "FREEZE_ADAPTER_AND_STOP_BEFORE_DYNAMICS_IF_ANY_MATERIAL_INVARIANT_OR_MEASUREMENT_CHANGE_IS_REQUIRED"
+    "maximum_same_clock_eligible_hidden_sources": {
+      "off": 0,
+      "on": 1,
+      "required": 2
     },
-    "next_action": "MAIN_MAY_EXECUTE_ONLY_THE_EXISTING_ANALYST_AUTHORIZED_ONE_SHOT_MATRIX; CONTROL_DOES_NOT_DISPATCH",
+    "prohibited_updates": 0,
+    "new_edges": 0,
+    "scientific_credit": 0,
+    "evidentiary_status": "DEVELOPMENT_ZERO_CONFIRMATORY_CREDIT",
+    "attribution_boundary": "COMPLETE_ORDINARY_LEARNING_PACKAGE_NOT_INCREMENTAL_PORT_TO_HIDDEN_CONTRIBUTION",
+    "next_action": "EVIDENCE_ANALYST_RECONCILE_EXACT_V4_RESULT_HEAD",
     "forbidden": [
       "SECOND_V4_MATRIX",
       "V4_RERUN_RETUNE_RESCORE",
@@ -123,6 +86,12 @@
       "SCIENTIFIC_PROMOTION_WITHOUT_FRESH_ANALYST"
     ]
   },
+  "methodology": {
+    "generation": "METHCAL-20260927T222438+0900-R134-RD006-V4-POSTRESULT-CALIBRATION",
+    "classification": "WELL_CALIBRATED",
+    "bounded_cell_claim_limit": "NO_UNCENSORED_NEGATIVE_OR_GENERAL_IMPOSSIBILITY_CLAIM",
+    "active_pointer_debt": []
+  },
   "system_build": {
     "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
     "merge_commit": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
@@ -133,27 +102,28 @@
     "scientific_credit": 0
   },
   "forge": {
-    "generation": "FORGE-20260927T204727+0900-SCOPE-REVISION-BOUNDARY-STRESS-CI-CLEAN",
+    "generation": "FORGE-20260927T223910+0900-SCOPE-ALLOCATOR-COMPONENT-REPLACEMENT-CI-CLEAN",
     "status": "FORGE_INTERESTING",
     "recommended_handoff": "SYSTEM_BUILD_INPUT",
-    "branch": "forge/20260927-scope-revision-boundary-stress-a",
-    "prototype_head": "89a51ba5a9506afc0f0f77b7ecccca224cd42ce4",
-    "handoff_head": "eed8e01fb2823b5459cbe48bfdba8f2b7cd70246",
-    "prototype_ci_run_id": 36316697157,
-    "handoff_ci_run_id": 36316979540,
+    "branch": "forge/20260927-scope-allocator-component-replacement-a",
+    "prototype_head": "e74940775ef6b098abfbc1a80e96a558bc2d5474",
+    "handoff_head": "fe54902c7b3fc8b020debe7d1514ffe1b6be7e29",
+    "handoff_ci_run_id": 36323239755,
     "handoff_ci_conclusion": "success",
-    "explicit_failure_boundary": "WITHIN_FIXED_REUSE_RADIUS_COLLISION_FORMS_ONE_SCOPE_AND_CONNECTED_ARM_CANNOT_RECOVER_B",
-    "ordinary_reduction": "NEAREST_CENTROID_ROUTING_WITH_REJECT_OPTION_AND_PER_KEY_EVIDENCE_ACCUMULATION",
+    "ordinary_reduction": "BATCH_TWO_COMPONENT_GAUSSIAN_MIXTURE_WITH_POSTERIOR_REJECTION_PLUS_PER_KEY_EVIDENCE_ACCUMULATION",
+    "system_build_allocated": false,
     "admitted_to_rd006": false,
     "admitted_to_sb001": false,
-    "system_build_allocated": false,
-    "composition_contribution": "FIXTURE_LEVEL_DEPENDENCE_ONLY_NOT_GENERALIZED",
+    "comparatively_supported": false,
+    "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
     "scientific_credit": 0,
-    "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE"
+    "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
+    "telemetry_cache_issue": "HANDOFF_ATTEMPT_FIELD_STILL_PENDING_AFTER_VERIFIED_SUCCESS",
+    "telemetry_cache_classification": "NONBLOCKING_TELEMETRY_CACHE_STALE"
   },
   "theory": {
-    "generation": "THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2",
+    "generation": "THEORY-20260927T213213+0900-R11-NO-PROPOSAL-ROUTER-RESOLUTION-BOUNDARY-5A8C31D4",
     "status": "NO_PROPOSAL",
     "revisit_status": "NO_REVISIT_PROPOSAL",
     "retained_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
@@ -166,21 +136,9 @@
     "root_cause_proven": false,
     "repository_wide_write_outage_supported": false,
     "active_pointer_debt": [],
-    "post_closure_success_paths": [
-      "CONTROL_R95",
-      "EVIDENCE_ANALYST_R155_ACTIONS_BRIDGE_RECEIPT_COMPLETE",
-      "MAIN_R161_ATOMIC_READBACK",
-      "METHODOLOGY_R133_ATOMIC_READBACK",
-      "THEORY_R10_ATOMIC_READBACK",
-      "FORGE_SCOPE_REVISION_BOUNDARY_STRESS_HANDOFF_ATOMIC_READBACK_AND_CI"
-    ],
     "recurrence_observation": "NO_SAME_FAILURE_PATTERN_OBSERVED",
-    "historical_gaps": [
-      {
-        "generation": "R85",
-        "status": "DOCUMENTED_MISSING_APPEND_ONLY_RECORD_NOT_RECONSTRUCTED",
-        "active_authority_impact": false
-      }
+    "nonblocking_operational_debt": [
+      "FORGE_HANDOFF_ATTEMPT_TELEMETRY_CACHE_PENDING_AFTER_VERIFIED_SUCCESS"
     ],
     "retained_hardening": [
       "FIVE_TOTAL_ATTEMPTS",
@@ -189,7 +147,7 @@
       "NON_FORCE_REF_UPDATE",
       "INDEPENDENT_READBACK",
       "EVIDENCE_ANALYST_ACTIONS_BRIDGE",
-      "EXACT_MANUAL_RECOVERY_PACKET"
+      "APPEND_ONLY_HISTORY_PRIMARY"
     ]
   },
   "fleet": {
@@ -197,25 +155,29 @@
       "desired": "ENABLED",
       "actual": "ENABLED",
       "operational": "RUNNING",
-      "scheduler_id": "6ab7928fe07481919903adc57b596dfd"
+      "scheduler_id": "6ab7928fe07481919903adc57b596dfd",
+      "cadence": "HOURLY_AT_50"
     },
     "evidence_analyst": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R155_DURABLE_RETAINED_BRIDGE",
-      "scheduler_id": "6ab792ba724c81919be1cd071ab045ba"
+      "operational": "GREEN_ACTIVE_R156_DURABLE_RETAINED_BRIDGE",
+      "scheduler_id": "6ab792ba724c81919be1cd071ab045ba",
+      "cadence": "HOURLY_AT_00"
     },
     "main": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R161_PREFLIGHT_COMPLETE_R154_R155_MATRIX_AUTHORIZED",
-      "scheduler_id": "6ab792e4401c8191a8d8a8b344f22d60"
+      "operational": "GREEN_ACTIVE_R162_RESULT_PRESERVED_WAIT_ANALYST",
+      "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b",
+      "cadence": "HOURLY_AT_15"
     },
     "relay": {
       "desired": "DISABLED",
       "actual": "DISABLED",
       "operational": "DEPENDENCY_WAIT_SUSPENDED",
       "scheduler_id": "6ab792fe98488191af93e6ff0facc7b5",
+      "cadence": "HOURLY_AT_45",
       "restart_conditions": "READY_FOR_RELAY_OR_EXPLICIT_SAFE_HANDOFF",
       "restart_owner": "CONTROL_BRAIN"
     },
@@ -223,41 +185,52 @@
       "desired": "ENABLED",
       "actual": "ENABLED",
       "operational": "GREEN_ACTIVE",
-      "scheduler_id": "6ab7931c1cdc8191a8d8a8b344f22d60"
+      "scheduler_id": "6ab7931c1cdc8191a8d8a8b344f22d60",
+      "cadence": "EVERY_TWO_HOURS_AT_25"
     },
     "fast_forge": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE",
-      "scheduler_id": "6ab7933b1aa081919594564ce879fdc6"
+      "operational": "GREEN_ACTIVE_WITH_NONBLOCKING_TELEMETRY_CACHE_DEBT",
+      "scheduler_id": "6ab7933b1aa081919594564ce879fdc6",
+      "cadence": "HOURLY_AT_35"
     },
     "methodology": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE",
-      "scheduler_id": "6ab793cce5e8819191eaec8ebbb47466"
+      "operational": "GREEN_ACTIVE_R134",
+      "scheduler_id": "6ab793cce5e8819191eaec8ebbb47466",
+      "cadence": "EVERY_TWO_HOURS_AT_20"
     },
     "external_science": {
       "desired": "ENABLED",
       "actual": "ENABLED",
       "operational": "GREEN_ACTIVE",
-      "scheduler_id": "6ab793ac05048191a9f30ff6460169c5"
+      "scheduler_id": "6ab793ac05048191a9f30ff6460169c5",
+      "cadence": "PERMANENT_ROLE_MAP"
     },
     "current_state_brief": {
       "desired": "ENABLED",
       "actual": "ENABLED",
       "operational": "GREEN_ACTIVE_READ_ONLY",
-      "scheduler_id": "6ab793fb62dc819184e3660fdaac0485"
+      "scheduler_id": "6ab793fb62dc819184e3660fdaac0485",
+      "cadence": "DAILY_5_SLOTS_AT_55"
     }
+  },
+  "fleet_registry_reconciliation": {
+    "corrected_field": "fleet.main.scheduler_id",
+    "old_value": "6ab792e4401c8191a8d8a8b344f22d60",
+    "new_value": "6ab792e4401c8191a8f9804f1b407a4b",
+    "scheduler_definition_changed": false
   },
   "scheduler_change": {
     "changed": false
   },
   "scheduler_health": {
-    "classification": "GREEN_RECOVERED",
+    "classification": "GREEN_RECOVERED_WITH_MINOR_NONBLOCKING_TELEMETRY_DEBT",
     "unexplained_current_production_off": false,
     "change_required": false,
-    "live_definition_audit_at": "2026-09-27T20:50:43+09:00"
+    "live_definition_audit_at": "2026-09-27T22:54:49+09:00"
   },
   "blue_green": {
     "current_fleet": "GREEN_PRODUCTION",
@@ -266,11 +239,11 @@
   },
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "branch_head_before": "991241ea64657a13a1863e18c51e7a47eeb49dda",
+    "branch_head_before": "d8e4cde1dd0d12a258531b10f41691ee19b09078",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
     "maximum_attempts": 5,
-    "completion_contract": "POST_COMMIT_INDEPENDENT_READBACK_REQUIRED"
+    "commit_record_semantics": "INTENT_RECORDED_IN_COMMIT; COMPLETION_REQUIRES_EXTERNAL_POST_COMMIT_READBACK"
   },
   "hard_floor": {
     "experiment_dispatched": false,
@@ -278,7 +251,8 @@
     "scientific_ref_mutated": false,
     "evidence_ref_mutated": false,
     "terminal_reopened": false,
-    "consumed_formal_rerun_retune_rescore": false
+    "consumed_formal_rerun_retune_rescore": false,
+    "scheduler_state_changed": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-27/2050-R96.md"
+  "history_path": "analysis/control_brain/history/2026-09-27/2254-R97.md"
 }
