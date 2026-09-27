@@ -1,18 +1,16 @@
 # SparkBrain Control Brain — Latest
 
 schema_version: 2
-generation_id: CTRL-20260928T035335+0900-R99-SB002-POSTMERGE-DEFECT-GOVERNANCE
-produced_at: 2026-09-28T03:53:35+09:00
-history_path: analysis/control_brain/history/2026-09-28/0353-R99.md
+generation_id: CTRL-20260928T040316+0900-R100-ACTIVE-DIRECTIVE-RECONCILIATION
+produced_at: 2026-09-28T04:03:16+09:00
+history_path: analysis/control_brain/history/2026-09-28/0403-R100.md
 
-P0 remains CLOSED_P0_RECOVERED with no active pointer debt or recurrence.
+This generation corrects R99's Human Directive bootstrap omission. The authoritative active Human Directive index was fetched and two newly active directives were found and formally dispositioned.
 
-Canonical science remains 35/35 terminal, active 0, scientifically queued 0, with 8 consumed FORMAL identities. No result-bearing scientific execution is authorized.
+HUMAN-20260928-001: ACCEPT_WITH_MODIFICATION. Integrated Prototype Milestone 1 is now the primary programme objective. Evidence Analyst should prefer a prospective rolling SYSTEM_BUILD contract for the next 2–4 bounded milestones so MAIN can continue through successful preauthorized engineering milestones without unnecessary fine-grained handoff stops. Immediate critical path is first to repair and reverify the three concrete SB002 defects already confirmed on main.
 
-SB002 was merged through PR #158 as exact authorized tree `f4806298df53d12a6c1845aaa78ebd8e0c126a73` into main commit `76b0cc94edf0fec2e46d69978e0794a37759b862`.
+HUMAN-20260928-002: ACCEPT_WITH_MODIFICATION. Start the fly-inspired sensorimotor direction as a bounded parallel FLY-0 Fast Forge track when non-colliding. Keep the fly-like / degree-preserving rewired / random sparse comparison resource-matched as feasible. Do not make it M1-critical yet, do not reserve SB003 yet, do not mix it into A01/RV02/H9/C07, and give it zero scientific credit. Evidence Analyst owns any later SYSTEM_BUILD allocation.
 
-After merge, three concrete engineering defects were reported by Codex and independently confirmed on current main: duplicate evidence can be accumulated without stable evidence identity (P1), checkpoint route-ledger completeness is not enforced (P2), and checkpoint evidence sequence identities are not globally validated as the unique range 1..sequence (P2).
+Canonical science is unchanged: 35/35 terminal, active 0, scientifically queued 0, 8 consumed FORMAL identities. No result-bearing science is authorized.
 
-Review itself remains optional and is not a gate. The concrete defects are real engineering defects under HUMAN-20260926-004. SB002 remains INTEGRATED / NON_EVIDENTIARY_BUILD / scientific credit 0, but repair plus fresh bounded verification is now required before treating the implementation as clean.
-
-Next authority owner: Evidence Analyst must reconcile the merge identity and these defects and define any science-invariant repair allocation. MAIN remains enabled but its current work item is complete and waiting for Analyst. Relay remains intentionally dependency-wait suspended. No scheduler state changed.
+Fleet remains unchanged: Evidence Analyst and MAIN enabled, Relay intentionally dependency-wait suspended, Forge/Utility available for parallel preparation. P0 remains CLOSED_P0_RECOVERED.

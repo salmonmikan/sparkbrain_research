@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260928T035335+0900-R99-SB002-POSTMERGE-DEFECT-GOVERNANCE",
-  "produced_at": "2026-09-28T03:53:35+09:00",
+  "generation_id": "CTRL-20260928T040316+0900-R100-ACTIVE-DIRECTIVE-RECONCILIATION",
+  "produced_at": "2026-09-28T04:03:16+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
   "mode": "CONTROL_BRAIN",
   "policy_refs": {
@@ -14,7 +14,9 @@
     "HUMAN-20260926-004": "ACCEPT_ACTIVE_REVIEW_OPTIONAL",
     "HUMAN-20260927-001": "ACCEPT_WITH_MODIFICATION_BOUND_AS_FRESH_RV02_RD006",
     "HUMAN-20260927-002": "ACCEPT_ACTIVE_FIVE_TOTAL_ATTEMPTS",
-    "HUMAN-20260922-005": "ACCEPT_ACTIVE_DEVELOPMENT_FLEXIBLE_EVIDENCE_RIGID"
+    "HUMAN-20260922-005": "ACCEPT_ACTIVE_DEVELOPMENT_FLEXIBLE_EVIDENCE_RIGID",
+    "HUMAN-20260928-001": "ACCEPT_WITH_MODIFICATION_INTEGRATED_PROTOTYPE_M1_PRIMARY_ROLLING_CONTRACT_TO_ANALYST",
+    "HUMAN-20260928-002": "ACCEPT_WITH_MODIFICATION_PARALLEL_FLY0_FORGE_TRACK_DO_NOT_BLOCK_M1"
   },
   "refs_observed": {
     "control_before": "57fe5474dea444fe21cd4e1be9b4c81be8cd582a",
@@ -97,7 +99,7 @@
       ],
       "defect_source": "POST_MERGE_CODEX_REVIEW_INDEPENDENTLY_CONFIRMED_ON_MAIN",
       "review_gate_status": "OPTIONAL_ADVISORY_NOT_A_GATE",
-      "next_action": "EVIDENCE_ANALYST_RECONCILE_MERGE_AND_AUTHORIZE_SCIENCE_INVARIANT_REPAIR_IF_APPROPRIATE",
+      "next_action": "EVIDENCE_ANALYST_RECONCILE_MERGE_DEFECTS_AND_M1_ROLLING_CONTRACT",
       "result_bearing_science_authorized": false
     }
   },
@@ -163,14 +165,14 @@
     "evidence_analyst": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R160_WAIT_POSTMERGE_RECONCILIATION",
+      "operational": "GREEN_ACTIVE_R160_NEXT_RUN_DIRECTIVE_AND_SB002_RECONCILIATION_REQUIRED",
       "scheduler_id": "6ab792ba724c81919be1cd071ab045ba",
       "cadence": "HOURLY_AT_00"
     },
     "main": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R165_SB002_INTEGRATED_WAIT_ANALYST",
+      "operational": "GREEN_ACTIVE_R165_WAIT_ANALYST_ROLLING_CONTRACT_OR_REPAIR_AUTHORITY",
       "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b",
       "cadence": "HOURLY_AT_15"
     },
@@ -223,7 +225,7 @@
     "changed": false
   },
   "scheduler_health": {
-    "classification": "GREEN_WITH_SB002_ENGINEERING_DEFECT_REPAIR_PENDING",
+    "classification": "GREEN_WITH_M1_ACCELERATION_AND_SB002_REPAIR_PENDING",
     "unexplained_current_production_off": false,
     "change_required": false,
     "live_definition_audit_at": "2026-09-28T03:53:35+09:00"
@@ -235,7 +237,7 @@
   },
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "branch_head_before": "57fe5474dea444fe21cd4e1be9b4c81be8cd582a",
+    "branch_head_before": "a8fb7e9bcfcc04377f8385ffe9b67d70a2591518",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
     "maximum_attempts": 5,
@@ -250,5 +252,87 @@
     "consumed_formal_rerun_retune_rescore": false,
     "scheduler_state_changed": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-28/0353-R99.md"
+  "history_path": "analysis/control_brain/history/2026-09-28/0403-R100.md",
+  "human_directives_reconciliation": {
+    "source": "ops/human_directives/active.md@ops/human-directives",
+    "source_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "correction_of_prior_generation": "CTRL-20260928T035335+0900-R99-SB002-POSTMERGE-DEFECT-GOVERNANCE",
+    "omission_class": "ACTIVE_INDEX_NOT_FETCHED_BEFORE_DIRECTIVE_SELECTION",
+    "corrected": true,
+    "newly_discovered_active_directives": [
+      "HUMAN-20260928-001",
+      "HUMAN-20260928-002"
+    ]
+  },
+  "strategy": {
+    "primary_objective": "INTEGRATED_PROTOTYPE_MILESTONE_1",
+    "priority_order": [
+      "REPAIR_AND_REVERIFY_SB002_CONCRETE_ENGINEERING_DEFECTS",
+      "EVIDENCE_ANALYST_DEFINE_ROLLING_BOUNDED_SYSTEM_BUILD_CONTRACT",
+      "MAIN_CONTINUE_PREAUTHORIZED_MILESTONES_WITHOUT_FINE_GRAIN_STOP_WHEN_CONTRACT_ALLOWS",
+      "FORGE_AND_UTILITY_PREPARE_NONCOLLIDING_NEXT_MILESTONES_IN_PARALLEL",
+      "OBSERVE_SYSTEM_LEVEL_PHENOMENA_AFTER_INTEGRATED_LOOP_EXISTS",
+      "CREATE_FRESH_PROSPECTIVE_SCIENCE_ONLY_FROM_NEW_PHENOMENA"
+    ],
+    "anti_idle": true,
+    "scientific_hard_floor_unchanged": true
+  },
+  "integrated_prototype_m1": {
+    "target_loop": [
+      "external_observation",
+      "persistent_internal_state",
+      "multiple_hypotheses_or_scopes",
+      "competition_abstention_selection",
+      "prediction_or_action",
+      "later_observation_or_outcome",
+      "selective_revision",
+      "updated_persistent_state",
+      "next_prediction_or_action"
+    ],
+    "required_crosscutting": [
+      "checkpoint_restore_replay",
+      "transactional_rollback",
+      "internal_state_observability",
+      "deterministic_bounded_test_worlds",
+      "reuse_provenance"
+    ],
+    "currently_confirmed_building_blocks": [
+      "SB001_INTEGRATED_PREDICTIVE_STATE_REVISION_NON_EVIDENTIARY",
+      "SB002_INTEGRATED_CAUSAL_SCOPE_REVISION_NON_EVIDENTIARY_REPAIR_PENDING"
+    ],
+    "critical_path": [
+      "SB002_DEFECT_REPAIR_AND_REVERIFICATION",
+      "ANALYST_RECONCILE_EXISTING_COMPONENTS_AGAINST_M1_LOOP",
+      "ANALYST_DEFINE_NEXT_2_TO_4_PROSPECTIVE_BOUNDED_MILESTONES",
+      "MAIN_EXECUTE_ROLLING_CONTRACT_UNTIL_EXPLICIT_STOP_BOUNDARY"
+    ],
+    "parallel_work": [
+      "FORGE_NEXT_MILESTONE_PRIMITIVES_AND_GUARDS",
+      "UTILITY_LONG_RUN_STABILITY_OBSERVABILITY_CHECKPOINT_REPLAY_CI_TOOLING_SYNTHETIC_WORLDS",
+      "FLY0_BOUNDED_FORGE_TRACK_IF_NONCOLLIDING"
+    ],
+    "claim_boundary": "NON_EVIDENTIARY_SYSTEM_BUILD_UNTIL_FRESH_PROSPECTIVE_SCIENTIFIC_OBJECT"
+  },
+  "flylike_track": {
+    "directive": "HUMAN-20260928-002",
+    "disposition": "ACCEPT_WITH_MODIFICATION",
+    "initial_lane": "FAST_FORGE_PARALLEL_NON_EVIDENTIARY",
+    "candidate_build_id": "BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT",
+    "build_id_reserved": false,
+    "m1_critical_path": false,
+    "forge_probe": "FLY0",
+    "required_initial_comparison": [
+      "FLYLIKE_STRUCTURED_TOPOLOGY",
+      "DEGREE_PRESERVING_REWIRED_TOPOLOGY",
+      "RANDOM_SPARSE_TOPOLOGY"
+    ],
+    "constraints": [
+      "BOUNDED_RESOURCE_ENVELOPE",
+      "MATCH_UNIT_EDGE_IO_AND_DELAY_BUDGET_WHERE_FEASIBLE",
+      "SEPARATE_FROM_A01_RV02_H9_C07_SCIENTIFIC_IDENTITIES",
+      "NO_BIOLOGICAL_EQUIVALENCE_CLAIM",
+      "NO_SCIENTIFIC_CREDIT"
+    ],
+    "promotion_boundary": "EVIDENCE_ANALYST_REVIEW_BEFORE_SYSTEM_BUILD_ALLOCATION"
+  }
 }
