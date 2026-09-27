@@ -90,6 +90,21 @@ def test_unexposed_outcome_uses_tail_interval_without_mutation() -> None:
     assert guard.state_dict() == before
 
 
+def test_first_unexposed_outcome_does_not_create_allocator_cache() -> None:
+    guard = CoverageAwareOutcomeGuard()
+    before = json.loads(json.dumps(guard.state_dict()))
+
+    result = guard.apply_observed_outcome(
+        base(("later-a", 0.6), ("later-b", 0.3)),
+        observation=[0.0],
+        observed_value="later-c",
+    )
+
+    assert not result.outcome_exposed
+    assert result.action == "unexposed_route_stable_no_revision"
+    assert guard.state_dict() == before
+
+
 def test_tail_interval_that_changes_route_abstains_without_mutation() -> None:
     guard = CoverageAwareOutcomeGuard()
     guard.apply_observed_outcome(

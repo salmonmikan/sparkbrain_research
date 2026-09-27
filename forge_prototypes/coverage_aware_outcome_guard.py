@@ -124,10 +124,14 @@ class CoverageAwareOutcomeGuard:
                 f"exposed_{applied.action}",
             )
 
-        lower_route = self._bridge.evaluate(
+        # Evaluate omissions against an isolated copy.  Even read-only routing
+        # lazily creates an empty per-Assembly allocator cache, which must not
+        # leak into the live checkpoint on a no-write path.
+        probe = PluralScopeRevisionBridge.from_state_dict(self._bridge.state_dict())
+        lower_route = probe.evaluate(
             base, observation=observation, prediction_error=error_lower
         )
-        upper_route = self._bridge.evaluate(
+        upper_route = probe.evaluate(
             base, observation=observation, prediction_error=error_upper
         )
         stable = self._route_identity(lower_route) == self._route_identity(upper_route)
