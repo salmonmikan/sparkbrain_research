@@ -14,6 +14,30 @@ Use this precedence for conflicts:
 
 Never broaden authority because a lower-precedence document is more permissive.
 
+## Human Directive freshness handshake
+
+Before selecting, interpreting, or applying any Human Directive, every scheduler run must complete this order:
+
+1. fetch `AGENTS.md@main`, `COMMON.md@main`, `SCIENTIFIC_INTEGRITY.md@main`, the current role file, and `ACTIVE_POLICY.md@main`;
+2. fetch `ops/human_directives/active.md` explicitly from ref `ops/human-directives`;
+3. record the current Human Directive branch/index identity needed for freshness (branch head and/or exact index blob/ref as available);
+4. when the role has durable prior state, compare the current index identity with the previous generation and identify newly active or materially changed directives;
+5. derive the applicable directive set from the current index, not from memory, copied prompts, or a hard-coded list;
+6. fetch only directive bodies relevant to the current role/task/incident, plus directives explicitly referenced by current higher-priority authority;
+7. only then make role decisions, allocate work, or mutate repository/scheduler state.
+
+A copied directive inside a scheduler prompt is not proof that the directive is still current. Prompt-local copies should be treated only as temporary routing hints and removed when durable main policy/skills cover the behavior.
+
+If the authoritative active index cannot be fetched, or if a material directive conflict cannot be resolved under the normal precedence rules, fail closed for the current run only. Do not self-suspend the recurring scheduler.
+
+For stateful roles, durable state should record when applicable:
+- `directive_index_head` / exact active-index identity;
+- `previous_directive_index_head`;
+- newly active/materially changed directives;
+- applicable directives actually read;
+- each material Control/Analyst disposition or interpretation.
+
+When a newly active or materially changed directive affects the current decision, the user-facing report must mention that directive and the applied disposition/interpretation. If there is no directive delta, routine reports need not repeat the whole directive set.
 ## Branch semantics
 
 - `main`: stable shared repository policy, common runtime, stable docs/interfaces and reusable outcome-independent tooling.

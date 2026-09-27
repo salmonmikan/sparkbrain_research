@@ -176,6 +176,60 @@ Utility may support bounded independent Forge/tooling or Analyst/Control-assigne
 
 Rank executable work by information value and progress toward the stated SparkBrain system, not novelty count or candidate count. A top action may legitimately be SYSTEM_BUILD when no new scientific candidate is ready.
 
+## Integrated Prototype Milestone 1 / rolling SYSTEM_BUILD contracts
+
+Treat Integrated Prototype Milestone 1 as the current primary SYSTEM_BUILD objective unless a later active Human Directive supersedes it.
+
+Maintain a remaining-integration graph with:
+- completed components;
+- remaining capabilities/interfaces;
+- current critical path;
+- parallelizable work;
+- concrete blockers;
+- next 2–4 bounded milestones.
+
+When safe, allocate a **rolling SYSTEM_BUILD contract** rather than one tiny task per generation. For every milestone in the rolling contract predefine:
+- target capability;
+- permitted components/provenance;
+- acceptance tests;
+- resource limits;
+- stop conditions;
+- explicit scientific claim boundary.
+
+If a milestone passes without crossing a stop boundary, MAIN may continue directly to the next prospectively authorized milestone without waiting for a new Analyst generation.
+
+Require fresh Analyst reconciliation when:
+- contract-external design change is needed;
+- target capability must change;
+- acceptance fails and outcome-responsive redesign is required;
+- scientific candidate/claim execution is proposed;
+- immutable/FORMAL/consumed boundaries are approached;
+- an explicit Analyst stop boundary is reached.
+
+Concrete known engineering defects in an integrated build must be repaired and re-verified before treating that component as clean. Review itself is not a gate; the defect is.
+
+For the current integration sequence, prioritize resolving concrete SB002 engineering defects before extending Milestone 1 on top of the affected behavior.
+
+## Fly-inspired sensorimotor handling
+
+Evaluate `FLY-0` as a parallel NON_EVIDENTIARY Forge track when it does not collide with MAIN/Milestone 1.
+
+The initial engineering comparison should include:
+- fly-like structured topology;
+- degree-preserving rewired topology;
+- random sparse topology;
+
+under a bounded, as-matched-as-feasible resource envelope.
+
+Do not allocate or reserve `BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT` solely because the directive names it. Allocate a build only after current ledger/collision/engineering usefulness review.
+
+Keep fly-like work separate from A01, RV02, H9/C07 and all consumed/terminal scientific identities. Any later scientific topology claim requires a fresh prospective candidate/protocol and zero inherited Forge/BUILD credit.
+
+## Retained Evidence Analyst persistence hardening
+
+Unless a later applicable Human Directive or Control disposition supersedes it, use the Evidence Analyst GitHub Actions persistence bridge described by `$sparkbrain-persistence` as the normal Analyst publication route.
+
+Do not copy bridge request schema, retry rules, or historical directive payloads into the scheduler prompt. The main-branch skill/role policy is the procedural source of truth.
 ## Persistence reconciliation first during P0
 
 Before minting a new Analyst generation, reconcile any pending Analyst persistence request/current bridge state required by the active Human Directive.

@@ -122,6 +122,31 @@ Return FORGE_PROMOTION_PROPOSED for a scientific idea only when distinct, bounde
 
 For useful engineering work lacking novelty, use FORGE_INTERESTING with `recommended_handoff=SYSTEM_BUILD_INPUT`; do not manufacture a scientific promotion proposal.
 
+## Milestone 1 parallel preparation
+
+When Integrated Prototype Milestone 1 is active, prefer non-colliding prototypes that reduce future critical-path latency, including:
+- next/next-next integration primitives;
+- state/replay mechanisms;
+- failure guards;
+- causal diagnostics;
+- component-replacement variants;
+- interaction-ablation tooling;
+- observability/test-world helpers that belong naturally in Forge.
+
+Do not wait merely from generalized caution when a safe, independent, bounded Forge task exists. Zero-work/NO_OP remains valid when no useful non-colliding task exists.
+
+## FLY-0 bounded sensorimotor track
+
+`HUMAN-20260928-002` permits a parallel fly-inspired Forge track when it does not delay MAIN/Milestone 1.
+
+Initial FLY-0 comparison:
+1. fly-like structured topology;
+2. degree-preserving rewired topology;
+3. random sparse topology.
+
+Use a bounded resource envelope and match or explicitly account for unit count, edge count, input/output surface, activity/resource budget and delay budget where feasible.
+
+Keep FLY-0 NON_EVIDENTIARY/NONCANONICAL. Do not assign a build ID, do not mix it into A01/RV02/H9/C07, do not claim biological equivalence, and do not inherit scientific credit. Handoff engineering usefulness to Analyst; only Analyst may allocate a later SYSTEM_BUILD.
 ## Persistence
 
 Use Forge-owned latest/state/history and `$sparkbrain-persistence`.

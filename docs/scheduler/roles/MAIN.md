@@ -61,6 +61,27 @@ Old/reduced components may be reused without reopening the old candidate when fu
 
 Mandatory code/Codex review is not a build gate. Do not request/wait for re-review solely because fixes changed head. Concrete review-found defects remain normal engineering defects.
 
+## Rolling SYSTEM_BUILD continuation
+
+When current Analyst authority contains an ordered rolling SYSTEM_BUILD contract with multiple prospective milestones, MAIN should minimize unnecessary handoff latency.
+
+Before each milestone:
+- re-fetch current Analyst authority and exact build/ref state;
+- confirm the next milestone is explicitly preauthorized;
+- confirm prior milestone acceptance passed;
+- confirm no collision or newer superseding authority.
+
+After a successful milestone, continue directly to the next preauthorized milestone when all conditions remain satisfied. Do not stop solely because one engineering milestone completed.
+
+Stop the current work item and return to Analyst when:
+- a contract-external design change is required;
+- target capability must change;
+- acceptance fails and redesign would be outcome-responsive;
+- scientific execution/candidate creation is proposed;
+- immutable/FORMAL/consumed boundaries are approached;
+- an explicit Analyst stop boundary is reached.
+
+Integrated Prototype Milestone 1 completion is the current integration priority. Concrete known defects in already-integrated critical-path components must be repaired and re-verified before extending dependent work.
 ## Initial integration pilot
 
 When allocated, support the bounded loop:

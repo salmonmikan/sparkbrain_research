@@ -132,6 +132,29 @@ Publication is complete only after independently re-fetching the target branch a
 
 If the Action has not finished in the current run, perform no direct target mutation. Report WAITING_EXTERNAL with request_id/path and verify next run.
 
+## Manual Analyst persistence recovery packet
+
+If Evidence Analyst request publication exhausts the authorized publication-attempt ceiling without verified success, fail closed for the current run and emit `MANUAL_PERSISTENCE_REQUIRED`.
+
+When reasonably sized, preserve in the user-facing completion:
+- the exact intended request JSON;
+- SHA-256 of that exact JSON payload;
+- request_id and request path;
+- target branch;
+- expected target head;
+- observed failure layer/class;
+- actual publication-attempt count.
+
+This packet is recovery material only. It is not repository authority or scientific evidence.
+
+If the user later explicitly requests persistence from that packet:
+- use the exact packet rather than reconstructing it from memory;
+- re-fetch target/request branch state first;
+- verify payload hash and idempotence;
+- never overwrite/reuse a conflicting request;
+- independently read back request/receipt/target state after success.
+
+This fallback never authorizes scientific rerun/retune/rescore/redispatch and never authorizes bypassing the configured bridge with ad-hoc direct target writes.
 ## Pending-request reconciliation first
 
 Before minting a new Analyst generation during the bridge incident:
