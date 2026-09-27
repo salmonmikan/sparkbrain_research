@@ -1,22 +1,19 @@
 # Evidence Analyst latest
 
-- Generation: `EVA-20260927T230711+0900-R157-RD006-V4-POSTRESULT-RECONCILIATION`
+- Generation: `EVA-20260928T000605+0900-R158-RD006-V4-AUDIT-CLOSURE-SB002-ALLOCATION`
 - New scientific result: **no**
 - Canonical funnel: **35/35 terminal; 0 active; 0 scientifically queued; 8 consumed FORMAL identities**
 - FORMAL allocation: **NO_ACTION**
 - RD005: **CONSUMED_ONE_WAY / unchanged**
-- RD006 v1/v2/v3: **preserved closed revisions / scientific credit 0**
-- RD006 v4: **preserved closed RESULT_EXPOSED_DEVELOPMENT revision**
-- Exact result head: `50112626ef6a4da364e3fa9268e8feb0d723ea7f`
-- Matrix status: **D0_INCONCLUSIVE_BOUNDED_EXPLOSION**
-- Gate: **closed — maximum same-clock eligible hidden sources 1; requirement 2**
-- Scientific credit: **0**
-- MAIN allocation: **one read-only preserved-output return-alignment audit**
-- Result-bearing execution authorized: **no**
-- Result-bearing repetitions: **none authorized**
+- RD006 v1/v2/v3/v4: **preserved closed revisions / scientific credit 0**
+- RD006 v4 audit: **complete / NO_PROPOSAL**
+- Result-bearing scientific execution authorized: **no**
+- SYSTEM_BUILD allocation: **BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT**
+- SYSTEM_BUILD owner: **MAIN**
+- Build status: **ALLOCATED / NON_EVIDENTIARY_BUILD / scientific credit 0**
 
-The one authorized v4 matrix ran exactly once. OFF produced 0 hidden spikes; ON produced 148 hidden spikes, 356 PORT-to-PORT updates and 58 PORT-to-hidden updates. Eleven cells completed normally; opposing-reversal ON reached the fixed spike ceiling. This supports only a bounded development observation about the complete ordinary-learning package on the fixed surface. It does not isolate incremental PORT-to-hidden causality and does not establish composition contribution, novelty, capability improvement or PRE_FORMAL readiness.
+The preserved-output audit found no return clock with two dynamically eligible hidden sources. It can describe the deficit and later recurrence after PORT-to-hidden updates, but lacks a direct event join and counterfactual, so it cannot identify incremental PORT-to-hidden causality. No v5, E0/E1/ES, second matrix, ceiling change, scaling, reservoir comparison, capability scoring or held-out access is authorized.
 
-MAIN may inspect the exact preserved raw/progress outputs without invoking dynamics to locate why a second eligible hidden source did not co-occur at a return clock. Missing trace fields must remain UNKNOWN. No v5 dynamics, E0/E1/ES, capability/held-out work, scaling or reservoir comparison is authorized.
+MAIN may build one separate bounded integration slice on `system-build/sb002-causal-scope-revision-pilot-20260928`: current-observation-only online routing into at most two scopes, abstention before any ambiguous write, per-scope revision and exact checkpoint/replay. It may selectively reuse the exact Forge causal router and existing repository revision primitives with explicit provenance. It must not modify or extend RD006 or SB001, and it inherits zero scientific credit.
 
-SB001 remains built and bounded-functionally verified, but not comparatively supported; composition contribution and scientific novelty remain unestablished. Theory/Revisit remains NO_PROPOSAL. Forge remains optional noncanonical future SYSTEM_BUILD input only.
+Acceptance requires deterministic separable-order behavior, fail-closed conflict/midpoint/out-of-support cases, shared-prefix invariance, exact checkpoint replay, oracle-free interfaces, full local readiness and exact-head green CI. Comparative support, composition contribution, capability improvement, novelty and scientific support remain unestablished by construction.
