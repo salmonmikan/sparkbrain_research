@@ -2,13 +2,27 @@
 
 This role preserves the pre-optimization Control/Steward operational contract while keeping common policy in `AGENTS.md`, `COMMON.md`, and `SCIENTIFIC_INTEGRITY.md`.
 
-## Exact role selection — JST
+## Role selection and scheduler drift — JST
 
-The scheduler runs hourly at `:50` Asia/Tokyo.
+The canonical scheduler slots are hourly at `:50` Asia/Tokyo.
 
+Canonical role mapping:
 - 01:50 / 07:50 / 13:50 / 19:50 => `REPOSITORY_STEWARD` only.
-- Every other `:50` slot => `CONTROL_BRAIN` only.
+- Every other canonical `:50` slot => `CONTROL_BRAIN` only.
 - Never execute both modes in the same run.
+
+Role identity must not depend on exact wall-clock equality alone. Resolve the current mode in this order:
+
+1. Use an explicit, unambiguous current-run role/mode identity from scheduler metadata, scheduler prompt, task context, or an equivalent authoritative execution field when one is present.
+2. Otherwise, map the actual start time to the nearest canonical `:50` slot when the start is within ±10 minutes of exactly one canonical slot, then use that slot's role mapping.
+3. Treat timing outside that tolerance as a drift/anomaly signal, not by itself as proof that authorization is absent. If explicit current-run role identity is still unambiguous and no authoritative source conflicts with it, continue in that explicitly identified mode and report the abnormal drift.
+4. Fail closed for the current run only when the role remains ambiguous, multiple authoritative signals conflict, or no authorized role can be established.
+
+Examples:
+- 03:48 with no conflicting explicit identity maps to the 03:50 canonical slot => `CONTROL_BRAIN`.
+- 07:56 with no conflicting explicit identity maps to the 07:50 canonical slot => `REPOSITORY_STEWARD`.
+- A start far outside the tolerance may still proceed when explicit authoritative role identity is unambiguous; record the timing anomaly.
+- If role metadata and authoritative scheduler context disagree, do not guess; fail closed and report the conflict.
 
 Only `CONTROL_BRAIN` has scheduler mutation authority. `REPOSITORY_STEWARD` never toggles, creates, replaces, deletes, pauses, or otherwise changes scheduler state.
 
