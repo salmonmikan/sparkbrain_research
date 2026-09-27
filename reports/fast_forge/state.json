@@ -1,72 +1,57 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260927T064227+0900-INTERNAL-SCOPE-CONFIRMATION-CI-CLEAN",
-  "produced_at": "2026-09-27T06:42:27+09:00",
-  "forge_id": "FORGE-INTERNAL-SCOPE-CONFIRMATION-GUARD-A",
+  "generation_id": "FORGE-20260927T095427+0900-PLURAL-SCOPE-POSTERIOR-CI-CLEAN",
+  "produced_at": "2026-09-27T09:54:27+09:00",
+  "forge_id": "FORGE-PLURAL-SCOPE-POSTERIOR-A",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260927-internal-scope-confirmation-guard-a",
-  "exact_head": "aac3c657a2b941b6971f0161e8132f1905a91a6c",
-  "input_generations": {
-    "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "control": "CTRL-20260927T055000+0900-R87-P0-LATER-WINDOW-RECONCILED",
-    "evidence_analyst": "EVA-20260927T055834+0900-R143-FORGE-INTERNAL-SCOPE-REVIEW-RV02-D0-WAIT",
-    "main_orchestrator": "MAIN-20260927T041727+0900-PRIMARY-R154-SB001-INTEGRATED",
-    "methodology": "METHCAL-20260926T201857+0900-R126-4B7E2C91",
-    "utility": "UTILITY-20260927T052236+0900-P0-DURABILITY-WINDOW-RECON",
-    "theory": "THEORY-20260927T033309+0900-R6-LATENT-SCOPE-PLURAL-REVISION-DESIGN-6F8C2A41",
-    "literature": "LIT-20260927T062709+0900-R45-RV02-RD006-REACHABILITY-91C4A8E2",
-    "audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
-    "prior_forge": "FORGE-20260927T060912+0900-INTERNAL-SCOPE-ALLOCATOR-CI-CLEAN"
-  },
+  "branch": "forge/20260927-plural-scope-posterior-a",
+  "exact_head": "f5e0968f5292a392c984fbe2efb011a23a49f86f",
   "source_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-  "source_forge_id": "FORGE-INTERNAL-SCOPE-ALLOCATOR-A",
-  "target_capability": "prevent one high-error outlier from immediately fragmenting a bounded internally allocated scope namespace",
+  "source_forge_head": "0b3f8a5e074b346ef18b10ddf3c0893ba6996043",
+  "target_capability": "retain multiple plausible internally allocated scopes and abstain under ambiguity without caller-supplied privileged identity",
   "prototype": {
     "files": [
-      "forge_prototypes/internal_scope_allocator.py",
-      "forge_prototypes/internal_scope_confirmation_guard.md",
-      "tests/test_forge_internal_scope_allocator.py"
+      "forge_prototypes/plural_scope_posterior.py",
+      "forge_prototypes/plural_scope_posterior.md",
+      "tests/test_forge_plural_scope_posterior.py"
     ],
-    "config": [
-      "create_confirmation_count",
-      "pending_match_radius"
+    "public_inputs": [
+      "internal_allocator_state",
+      "observation_vector",
+      "prediction_error"
+    ],
+    "outputs": [
+      "bounded_scope_hypotheses",
+      "selected_scope_or_abstain",
+      "new_scope_plausibility_without_mutation"
     ],
     "verified_behaviors": [
-      "single_outlier_pending",
-      "nearby_repetition_confirms",
-      "inconsistent_candidate_resets",
-      "known_scope_reuse_clears_pending",
-      "pending_checkpoint_replay",
-      "default_one_preserves_behavior",
-      "no_silent_eviction_preserved"
+      "no_privileged_identity_route_inputs",
+      "equal_scope_ambiguity_abstains",
+      "clear_return_reuses_prior_scope",
+      "new_scope_can_rank_without_mutation",
+      "three_bounded_alternatives_retained",
+      "checkpoint_deterministic_routing"
     ]
   },
-  "local_validation": {
-    "focused_tests": "12 PASSED",
-    "focused_ruff": "PASSED",
-    "repository_ruff": "PASSED",
-    "readiness": "PASSED",
-    "full_local_suite": "BLOCKED_MISSING_OPTIONAL_FASTAPI_TORCH_JSONSCHEMA",
-    "bundle_validation": "BLOCKED_MISSING_OPTIONAL_JSONSCHEMA"
-  },
   "ci": {
-    "run_id": 36273702567,
-    "exact_head": "aac3c657a2b941b6971f0161e8132f1905a91a6c",
+    "run_id": 36283779602,
+    "exact_head": "f5e0968f5292a392c984fbe2efb011a23a49f86f",
     "status": "completed",
     "conclusion": "success",
     "python_311": "SUCCESS",
     "python_313": "SUCCESS"
   },
-  "ordinary_reduction": "ordinary temporal debounce / persistence confirmation for a thresholded change-point cache namespace",
-  "engineering_usefulness": "prevents a single outlier from consuming a scope and fragmenting evidence while preserving replayable pending state",
+  "ordinary_reduction": "normalized radial/RBF-like prototype scoring plus fixed prediction-error NEW_SCOPE score and explicit reject option",
+  "engineering_usefulness": "preserves scope ambiguity and separates NEW_SCOPE plausibility from allocator mutation while keeping identity internal",
   "limitations": [
-    "fixed_not_learned_confirmation_and_radii",
-    "real_change_detection_delayed",
-    "complex_gradual_drift_unresolved",
-    "no_true_latent_cause_identification",
-    "no_matched_comparison",
-    "no_composition_or_system_capability_evidence"
+    "fixed_uncalibrated_temperature_and_thresholds",
+    "heuristic_masses_not_bayesian_posteriors",
+    "no_matched_hmm_bocpd_mixture_comparison",
+    "no_system_level_task",
+    "no_composition_contribution",
+    "no_true_latent_cause_identification"
   ],
   "claim_boundary": {
     "component_function": "BOUNDED_TESTS_SUPPORTED",
@@ -76,15 +61,29 @@
     "scientifically_novel": false,
     "scientific_credit": 0
   },
-  "collision_check": "PASS_MAIN_OWNS_RV02_RD006_D0_AND_SB001_IS_COMPLETE; BOTH_UNTOUCHED",
-  "admitted_to_sb001": false,
-  "admitted_to_rv02": false,
-  "build_id_created": false,
-  "candidate_id_created": false,
-  "revisit_trigger_created": false,
+  "collision_check": "PASS_MAIN_R155_OWNS_RV02_RD006_AND_AWAITS_ANALYST; SB001_COMPLETE; BOTH_UNTOUCHED",
+  "refs_observed": {
+    "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
+    "analyst": "EVA-20260927T070206+0900-R144-RD006-BRANCH-LIT45-FORGE-HANDOFF-RECONCILED",
+    "control": "CTRL-20260927T065000+0900-R88-P0-FORGE-HANDOFF-RECONCILED",
+    "main_orchestrator": "MAIN-20260927T092301+0900-PRIMARY-R155-RD006-D0-INCONCLUSIVE",
+    "theory": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
+    "literature": "R45",
+    "audit": "R10",
+    "methodology": "R126",
+    "utility": "UTILITY-20260927T052236+0900-P0-DURABILITY-WINDOW-RECON"
+  },
+  "metrics_this_run": {
+    "scientific_novelty_probes": 0,
+    "scientific_kills": 0,
+    "scientific_survivors": 0,
+    "integration_prototypes": 1,
+    "integration_useful": 1,
+    "integration_ci_green": 1
+  },
   "p0_observation": {
-    "code_publication_attempts": 1,
-    "code_publication_result": "SUCCESS_READBACK_VERIFIED",
+    "prototype_publication_attempts": 1,
+    "prototype_publication_result": "SUCCESS_READBACK_VERIFIED",
     "repository_wide_recovery_proven": false,
     "root_cause_proven": false
   },
@@ -92,5 +91,5 @@
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-27/0642-internal-scope-confirmation-ci-clean.md"
+  "history_path": "reports/fast_forge/history/2026-09-27/0954-plural-scope-posterior-ci-clean.md"
 }
