@@ -1,20 +1,20 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260927T124400+0900-COVERAGE-AWARE-OUTCOME-GUARD-CI-CLEAN",
-  "produced_at": "2026-09-27T12:44:00+09:00",
-  "forge_id": "FORGE-COVERAGE-AWARE-OUTCOME-GUARD-A",
+  "generation_id": "FORGE-20260927T134529+0900-TRANSACTIONAL-OUTCOME-REVISION-CI-CLEAN",
+  "produced_at": "2026-09-27T13:45:29+09:00",
+  "forge_id": "FORGE-TRANSACTIONAL-OUTCOME-REVISION-A",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260927-coverage-aware-outcome-guard-a",
-  "exact_head": "a946b1713eb8286039aac5457cbc2b32c8d4868b",
+  "branch": "forge/20260927-transactional-stream-coordinator-a",
+  "exact_head": "a5dbdbcb7e1302e5e08689f3e62e8eab899bebda",
   "source_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-  "source_forge_head": "66ac0fa9824a6e1a4c9d8fe5763be0f7d1b0e04e",
-  "target_capability": "represent omitted observed-outcome probability as a tail-bounded interval and abstain when routing depends on an unknown tail assignment",
+  "source_forge_head": "751b4d72185e87ea88521aa93bf780048ccac4ae",
+  "target_capability": "atomically commit one observed-outcome step across scope allocation and late-evidence revision while preserving exact prior state on validation failure or no-write routing",
   "prototype": {
     "files": [
-      "forge_prototypes/coverage_aware_outcome_guard.py",
-      "forge_prototypes/coverage_aware_outcome_guard.md",
-      "tests/test_forge_coverage_aware_outcome_guard.py"
+      "forge_prototypes/transactional_outcome_revision_coordinator.py",
+      "forge_prototypes/transactional_outcome_revision_coordinator.md",
+      "tests/test_forge_transactional_outcome_revision_coordinator.py"
     ],
     "public_inputs": [
       "prediction_pool_snapshot",
@@ -23,61 +23,69 @@
       "late_evidence_strength"
     ],
     "verified_behaviors": [
-      "exposed_outcome_exact_revision_path",
-      "unexposed_probability_interval_zero_to_tail_mass",
-      "prediction_error_interval_exposed_mass_to_one",
-      "endpoint_stable_route_diagnostic_no_revision",
-      "tail_sensitive_route_abstains_no_write",
-      "checkpoint_isolated_endpoint_evaluation",
-      "first_unexposed_outcome_zero_live_mutation",
-      "invalid_probability_mass_fails_closed",
-      "checkpoint_deterministic_replay"
+      "successful_allocator_and_revision_atomic_commit",
+      "late_validation_failure_exact_checkpoint_preservation",
+      "failed_step_no_effect_on_following_valid_step",
+      "unexposed_tail_sensitive_no_write",
+      "checkpoint_deterministic_next_transaction",
+      "no_caller_scope_error_or_tail_assignment"
     ]
   },
+  "diagnostic": {
+    "pre_fix_partial_state_reproduced": true,
+    "trigger": "exposed_outcome_with_invalid_evidence_strength",
+    "observed_effect": "revision_rejected_but_new_allocator_scope_retained",
+    "repair": "copy_on_write_candidate_then_commit_only_intentional_mutation_actions"
+  },
   "ci": {
-    "run_id": 36292138103,
-    "exact_head": "a946b1713eb8286039aac5457cbc2b32c8d4868b",
+    "run_id": 36295091484,
+    "exact_head": "a5dbdbcb7e1302e5e08689f3e62e8eab899bebda",
     "status": "completed",
     "conclusion": "success",
     "python_311": "SUCCESS",
     "python_313": "SUCCESS"
   },
-  "ordinary_reduction": "interval or imprecise probability handling for top-k categorical truncation plus monotone endpoint robustness and checkpoint-isolated inspection",
-  "engineering_usefulness": "prevents an omitted top-k outcome from masquerading as exact zero probability and makes tail-sensitive routing an explicit no-write outcome",
+  "local_validation": {
+    "focused_integration_tests": "26/26 PASS",
+    "all_forge_tests": "67/67 PASS",
+    "ruff": "PASS",
+    "local_readiness": "PASS",
+    "full_collection": "UNAVAILABLE_MISSING_OPTIONAL_FASTAPI_TORCH_JSONSCHEMA"
+  },
+  "ordinary_reduction": "copy-on-write transaction and checkpoint isolation around stateful components",
+  "engineering_usefulness": "closes the partial-write seam between internal scope allocation and late-evidence revision and provides a bounded atomic step boundary",
   "limitations": [
+    "one_step_only_no_continuous_stream_task",
     "fixed_uncalibrated_prediction_pool_and_routing_thresholds",
-    "requires_full_support_normalization_for_exposed_probabilities",
-    "endpoint_robustness_depends_on_current_monotone_router",
-    "unexposed_outcome_never_allocates_or_revises",
-    "no_open_set_learner",
-    "no_end_to_end_stream_task",
+    "pending_confirmation_is_intentional_allocator_state",
     "no_matched_comparison",
     "no_resource_match",
     "no_interaction_ablation",
     "no_composition_contribution"
   ],
   "claim_boundary": {
-    "component_composition": "BOUNDED_TESTS_SUPPORTED",
+    "component_composition": "BOUNDED_ATOMICITY_TESTS_SUPPORTED",
     "system_build_admission": false,
     "comparatively_supported": false,
     "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
     "scientific_credit": 0
   },
-  "collision_check": "PASS_ANALYST_R147_MAIN_ONLY_RD006_V2; MAIN_AND_RD006_UNTOUCHED; SB001_COMPLETE; RELAY_DEPENDENCY_WAIT",
+  "collision_check": "PASS_ANALYST_R148_MAIN_ONLY_RD006_V2_STATIC_AUDIT; MAIN_R157_COMPLETE_WAIT_ANALYST; RELAY_DEPENDENCY_WAIT; THEORY_R8_NO_PROPOSAL; SB001_COMPLETE_ALL_UNTOUCHED",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "analyst": "EVA-20260927T115839+0900-R147-RD006-V2-LAG-ALIGNMENT",
-    "analyst_head": "df0ab5d5dc4941de8a9bba95949a00d6a7c4ce16",
-    "main_orchestrator": "MAIN-20260927T112511+0900-PRIMARY-R156-RD006-PRESERVED-AUDIT",
-    "main_orchestrator_head": "8d5b6c36122c3e8a2ee2ada2a9c6d40272131885",
+    "analyst": "EVA-20260927T130000+0900-R148-RD006-V2-RECONCILIATION",
+    "analyst_head": "437f36985cbf6573af0d02599710020a462194e5",
+    "main_orchestrator": "MAIN-20260927T133210+0900-PRIMARY-R157-RD006-V2-STATIC-TOPOLOGY-AUDIT",
+    "main_orchestrator_head": "d868b7ff14677100b9c6e29e90b265f99f14c64c",
     "control": "CTRL-20260927T115000+0900-R90-RD006-AUDIT-OBSERVED",
     "control_head": "ca934c91c2e371a41e1a8b88ca8c7827f128f64f",
     "methodology": "METHCAL-20260927T122033+0900-R129-RD006-V2-BOUNDARY",
     "methodology_head": "4763b74f8bc9f9f684cb7ef86e97ea9a7361bcf4",
-    "utility_head": "fdb220d7ee6880910d244127bc960b5ba82e7593",
-    "external_science_head": "3538e527ded0e494dca889d4dc55eef34a9d0f3e",
-    "source_forge_handoff": "66ac0fa9824a6e1a4c9d8fe5763be0f7d1b0e04e"
+    "utility_head": "625b613aee256390c5e868bdb26a21bdd5320cfb",
+    "theory": "THEORY-20260927T133111+0900-R8-NO-PROPOSAL-FORGE-SEAM-RECONCILIATION-8D3F6A27",
+    "external_science_head": "b1e0e2d8d19b908e27d49495ad9f299ad4d86607",
+    "source_forge_handoff": "751b4d72185e87ea88521aa93bf780048ccac4ae"
   },
   "metrics_this_run": {
     "scientific_novelty_probes": 0,
@@ -88,8 +96,8 @@
     "integration_ci_green": 1
   },
   "publication": {
+    "prototype_publication_attempts": 1,
     "prototype_publication_result": "SUCCESS_READBACK_VERIFIED",
-    "pre_handoff_defect_repairs": 1,
     "handoff_attempt_limit": 5,
     "p0_incident_status": "CLOSED_BY_CONTROL",
     "new_incident_diagnosis": false
@@ -98,5 +106,5 @@
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-27/1244-coverage-aware-outcome-guard-ci-clean.md"
+  "history_path": "reports/fast_forge/history/2026-09-27/1345-transactional-outcome-revision-ci-clean.md"
 }
