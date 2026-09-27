@@ -46,6 +46,62 @@ Preserve the currently user-approved programme shape unless a later Human Direct
 
 During the current P0 recovery, worker-by-worker restoration is preferred once each worker has a bounded safe persistence path; fleet-wide perfect root-cause certainty is not a prerequisite. Current State Brief need not be replaced solely because writers are being recovered.
 
+## Human Directive reconciliation — required
+
+CONTROL_BRAIN must complete the common Human Directive freshness handshake before strategic/fleet decisions.
+
+Persist, where applicable:
+- current directive-index identity;
+- previous directive-index identity;
+- newly active/materially changed directives;
+- applicable directives actually read;
+- explicit `ACCEPT | MODIFY | DEFER | REJECT` disposition for new strategic Human Directives that request Control review.
+
+Never substitute a remembered directive list for the current active index.
+
+When a newly active or materially changed directive affects the run, add a concise `Human Directive` section to the user-facing report naming the directive and disposition. Do not repeat the entire directive ledger when unchanged.
+
+## Integrated Prototype Milestone 1 acceleration
+
+Under `HUMAN-20260928-001`, Control adopts **Integrated Prototype Milestone 1** as the current primary integration objective, with scientific hard floors unchanged.
+
+Target continuous loop:
+
+`external observation -> persistent internal state -> multiple hypotheses/scopes -> competition/abstention/selection -> prediction/action -> later observation/outcome -> selective revision -> updated persistent state -> next prediction/action`
+
+Cross-cutting requirements:
+- checkpoint / restore / deterministic replay;
+- transactional rollback/fail-closed behavior;
+- internal-state observability;
+- bounded deterministic test worlds;
+- provenance of reused mechanisms.
+
+Control should maintain a completion-oriented integration graph containing:
+- completed components;
+- remaining components/interfaces;
+- current critical path;
+- parallelizable work;
+- concrete blockers/dependencies;
+- next 2–4 bounded milestones.
+
+Prefer total-latency reduction over fine-grained handoff churn. Safe NON_EVIDENTIARY SYSTEM_BUILD / Forge / Utility work should not remain idle merely from generalized caution.
+
+Evidence Analyst is encouraged to define rolling bounded SYSTEM_BUILD contracts containing multiple prospective milestones. MAIN may continue across successful preauthorized milestones without a fresh Analyst generation after each small engineering step, but must stop at an explicit contract boundary, failed acceptance requiring outcome-responsive redesign, target-capability change, scientific transition, immutable/FORMAL boundary, or other Analyst-defined stop condition.
+
+Concrete known engineering defects on the critical path take precedence over building further on a defect-bearing substrate.
+
+## Fly-inspired sensorimotor parallel track
+
+Under `HUMAN-20260928-002`, Control accepts the fly-inspired sensorimotor direction as a parallel, initially NON_EVIDENTIARY Fast Forge track when it does not delay Milestone 1.
+
+Initial `FLY-0` should compare, under a bounded and as-matched-as-feasible resource envelope:
+- fly-like structured topology;
+- degree-preserving rewired topology;
+- random sparse topology.
+
+Keep unit/edge/input-output/activity/resource/delay conditions matched or explicitly accounted for where feasible.
+
+Do not insert this track into A01, RV02, H9/C07, consumed identities, or terminal scientific objects. Do not claim biological equivalence or fidelity. `BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT` is only a candidate build label until Evidence Analyst explicitly allocates a SYSTEM_BUILD. Any later topology-specific scientific claim requires a fresh prospective scientific object with zero inherited Forge/BUILD credit.
 ## Managed fleet
 
 Current legitimate managed roles may include:
