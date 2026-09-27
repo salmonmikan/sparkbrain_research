@@ -1,88 +1,99 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260928T041557+0900-PRIMARY-R166-SB002-DEFECTS-WAIT-ANALYST",
-  "generated_at": "2026-09-28T04:15:57+09:00",
-  "status": "SYSTEM_BUILD_SB002_POSTMERGE_DEFECTS_WAIT_ANALYST_REPAIR_AUTHORITY",
+  "generation_id": "MAIN-20260928T053648+0900-PRIMARY-R167-M1-EXACT-HEAD-HANDOFF",
+  "generated_at": "2026-09-28T05:36:48+09:00",
+  "status": "SYSTEM_BUILD_M1_MILESTONES_COMPLETE_EXACT_HEAD_CI_GREEN_WAIT_ANALYST",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
-  "build_id": "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT",
-  "analyst_generation_id": "EVA-20260928T025931+0900-R160-SB002-EXACT-HEAD-INTEGRATION-AUTHORITY",
-  "analyst_authority": "analysis/orchestrator/history/2026-09-28/0259-R160.md",
-  "analyst_target_head": "6cedfd56ddc3e88e73441ea8b0db59932ccd90fb",
-  "analyst_authority_scope": "EXACT_HEAD_PR_INTEGRATION_THEN_STOP_FOR_FRESH_ANALYST",
-  "repair_authority_present": false,
-  "next_milestone_authority_present": false,
-  "prior_main_generation": "MAIN-20260928T032256+0900-PRIMARY-R165-SB002-INTEGRATED",
+  "build_id": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
+  "analyst_generation_id": "EVA-20260928T045927+0900-R161-M1-ROLLING-CONTRACT-SB002-INTEGRITY",
+  "analyst_authority": "analysis/orchestrator/history/2026-09-28/0459-R161.md",
+  "analyst_authority_scope": "FOUR_ORDERED_ROLLING_MILESTONES_THEN_STOP_AT_FINAL_EXACT_HEAD_BEFORE_PR_MERGE",
+  "required_base_main": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
+  "prior_main_generation": "MAIN-20260928T041557+0900-PRIMARY-R166-SB002-DEFECTS-WAIT-ANALYST",
   "refs_observed": {
-    "main": "292c80b3e77fd7176eae6329de14882187689ee2",
-    "control": "13e3667ac485ce8857c2e6e8a3363aa32dc54909",
-    "evidence_analyst": "6cedfd56ddc3e88e73441ea8b0db59932ccd90fb",
-    "evidence_persistence_requests": "796972861f0c52a5b4d24f7edb07597fd62d7a0d",
+    "main_policy": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
+    "required_base_main": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
+    "evidence_analyst": "195ca2d230928c7cada86e51d4f04b25904ffc04",
     "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "main_reports_before": "282981a96148e071e2f985bf8b8f60563cda9563",
-    "sb002_source_head": "720e18bcff53be76c861fa8c09d24d5320b90455"
+    "main_reports_before": "8dd7a689f6b376791dd2c368956c5157550cbbd6",
+    "working_head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
+    "working_tree": "10d252a52abdafed7806fc81b39ee8ba126713a9"
   },
-  "integration": {
-    "pr_number": 158,
-    "pr_state": "MERGED",
-    "merge_commit": "76b0cc94edf0fec2e46d69978e0794a37759b862",
-    "merge_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
-    "authorized_tree_equal": true,
-    "pr_ci_run_id": 36340192931,
-    "pr_ci_conclusion": "success"
+  "directive_freshness": {
+    "analyst_recorded_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "current_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "newly_active_or_materially_changed": []
+  },
+  "working_object": {
+    "branch": "system-build/ipm1-continuous-revision-20260928",
+    "head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
+    "tree": "10d252a52abdafed7806fc81b39ee8ba126713a9",
+    "target_capability": "BOUNDED_CONTINUOUS_OBSERVATION_STATE_PLURAL_HYPOTHESIS_COMPETITION_ABSTAIN_ACTION_LATER_OUTCOME_SELECTIVE_REVISION_NEXT_ACTION_LOOP",
+    "milestones_completed": [
+      "M1.1_SB002_INTEGRITY_REPAIR",
+      "M1.2_INTEGRATED_LOOP_SHELL",
+      "M1.3_BOUNDED_CONTINUOUS_ENVIRONMENT_REPLAY",
+      "M1.4_HARDENING_EXACT_HEAD_HANDOFF"
+    ],
+    "exact_head_ci": {
+      "run_id": 36348434677,
+      "workflow": "ci",
+      "conclusion": "success",
+      "matrix_jobs": 2,
+      "python_versions": ["3.11", "3.13"],
+      "duration_seconds": 156
+    }
+  },
+  "verification": {
+    "focused_sb002_m1_tests": "PASS",
+    "system_build_tests": "PASS",
+    "full_repository_tests": "PASS",
+    "ruff": "PASS",
+    "local_readiness": "PASS",
+    "bundle_validation": "PASS_88_REQUIRED_FILES",
+    "checkpoint_replay": "PASS_EXACT_CONTINUATION",
+    "fault_rollback": "PASS_NO_PARTIAL_WRITE"
   },
   "built": true,
-  "prior_bounded_functionally_verified": true,
-  "bounded_functional_verification_status": "REPAIR_AND_REVERIFY_REQUIRED",
+  "bounded_functionally_verified": true,
   "comparatively_supported": false,
   "composition_contribution": "NOT_ESTABLISHED",
   "scientifically_novel": false,
   "scientific_credit": 0,
   "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-  "confirmed_postmerge_defects": [
-    {
-      "severity": "P1",
-      "id": "SB002-DUPLICATE-EVIDENCE-IDENTITY"
-    },
-    {
-      "severity": "P2",
-      "id": "SB002-CHECKPOINT-ROUTE-LEDGER-COMPLETENESS"
-    },
-    {
-      "severity": "P2",
-      "id": "SB002-CHECKPOINT-GLOBAL-SEQUENCE-PERMUTATION"
-    }
-  ],
   "control": {
-    "generation_id": "CTRL-20260928T040316+0900-R100-ACTIVE-DIRECTIVE-RECONCILIATION",
-    "sb002_state": "INTEGRATED_POSTMERGE_CONCRETE_DEFECTS_WAIT_ANALYST_REPAIR_AUTHORITY",
-    "primary_objective": "INTEGRATED_PROTOTYPE_MILESTONE_1",
+    "generation_id": "CTRL-20260928T045012+0900-R102-M1-AUTHORITY-GAP-HOLD",
+    "disposition": "M1_PRIMARY_REPAIR_THEN_ROLLING_CONTRACT",
     "control_is_not_analyst_allocation": true
   },
   "relay_collision": {
     "desired": "DISABLED",
     "actual": "DISABLED",
-    "operational": "DEPENDENCY_WAIT_SUSPENDED",
     "competing_allocation": false
   },
   "action": {
-    "code_changed": false,
-    "branch_created": false,
-    "pr_changed": false,
+    "code_changed": true,
+    "branch_created": true,
+    "branch_published": true,
+    "pr_created": false,
+    "merge_performed": false,
     "workflow_dispatched": false,
     "result_bearing_execution_performed": false,
     "result_bearing_invocations": 0
   },
-  "new_build_result": false,
+  "new_build_result": true,
   "new_scientific_result": false,
-  "stop_reason": "NO_DURABLE_ANALYST_REPAIR_OR_NEXT_MILESTONE_AUTHORITY",
-  "next_action": "WAIT_FOR_FRESH_DURABLE_EVIDENCE_ANALYST_ALLOCATION_THEN_REFETCH_EXACT_AUTHORITY_AND_BRANCH_STATE",
+  "stop_reason": "R161_FINAL_M1_4_EXACT_HEAD_BOUNDARY",
+  "next_action": "EVIDENCE_ANALYST_EXACT_HEAD_RECONCILIATION_BEFORE_PR_MERGE",
   "scheduler_state_changed": false,
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-28/0415-r166-primary-sb002-defects-wait-analyst.md",
+  "history_path": "reports/orchestrator/main/history/2026-09-28/0536-r167-primary-m1-exact-head-handoff.md",
   "publication": {
-    "branch": "ops/orchestrator-run-report",
-    "branch_head_before": "282981a96148e071e2f985bf8b8f60563cda9563",
+    "work_branch_attempts": 2,
+    "work_branch_success_attempt": 2,
+    "main_state_branch": "ops/orchestrator-run-report",
+    "main_state_branch_head_before": "8dd7a689f6b376791dd2c368956c5157550cbbd6",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
     "maximum_attempts": 5,
@@ -95,6 +106,9 @@
     "terminal_object_reopened": false,
     "immutable_evidence_changed": false,
     "held_out_access": false,
-    "scheduler_changes": false
+    "scheduler_changes": false,
+    "fly0_mixed": false,
+    "sb003_allocated": false
   }
 }
+
