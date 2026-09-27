@@ -474,3 +474,28 @@ The public runtime accepts only a current numeric observation and candidate-loca
 Component provenance is explicit: the router selectively reimplements the Forge `CausalOnlineScopeRouter` from prototype `f980c13d984460f158a95e8181239db8d19c8468` / handoff `164ce39b99fbfa7146e439215c804c638305dea3`; route-local revision selectively reimplements ordinary Forge scoped-overlay patterns; and Theory R11 design `ID-SB-LATENT-SCOPE-PLURAL-REVISION-001` is non-evidentiary design input. All inputs transfer zero scientific credit.
 
 Status at this branch head: built and bounded-functionally verified by the fixed synthetic acceptance surface, deterministic checkpoint/replay, rollback and oracle-field boundary tests. It is not comparatively supported; composition contribution is not established; scientific novelty/support is not established; scientific credit is 0. Exact-head CI remains required before reporting the published build complete.
+
+## 11. SYSTEM_BUILD — Integrated Prototype Milestone 1 candidate
+
+`BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT` is a non-evidentiary integration
+candidate that composes the integrated SB001 predictive-state revision pilot with the repaired
+SB002 causal-scope revision pilot. It closes a bounded observation, persistent state, plural
+hypothesis, agreement/abstention/action, later-outcome, selective-revision and next-action loop.
+
+Before dependent composition, SB002 now requires stable evidence identity, exact duplicate
+idempotence, conflicting-ID fail-closed behavior, exact router/route-ledger completeness, a unique
+global `1..N` evidence sequence and exact checkpoint identity-ledger correspondence. Its changed
+checkpoint contract is schema 2 and rejects the old schema rather than silently reinterpreting it.
+
+The M1 compositor permits one pending event, uses a fixed predictive/scope agreement rule and
+commits later outcomes atomically across both integrated components. A deterministic local fixture
+exercises two observable regions, plural hypotheses, abstention and both actions; action changes a
+later outcome. Strict digest-bound checkpoints reproduce exact continuation from a mid-run save.
+
+The acceptance surface is CPU-only, offline, dependency-light and bounded to 64 cycles per fixture.
+It excludes labels, truth/gold values, oracle scope/regime/entity identifiers, evaluator output,
+future suffixes and held-out fields from runtime input. See `docs/SYSTEM_BUILD_M1.md`.
+
+This remains engineering work with scientific credit 0. Comparative support, composition
+contribution, real-task capability, biological equivalence, energy efficiency and scientific
+novelty are not established. FLY-0 is separate and is not a dependency or SB003 allocation.

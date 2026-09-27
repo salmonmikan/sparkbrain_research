@@ -3,13 +3,14 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import re
 from collections.abc import Sequence
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any
 
 BUILD_ID = "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT"
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 CLAIM_BOUNDARY = (
     "NON_EVIDENTIARY_BUILD: ordinary bounded online two-centroid routing plus "
     "route-local evidence revision. This build carries zero scientific credit and does "
@@ -152,6 +153,7 @@ class ScopeRevisionConfig:
 @dataclass(frozen=True, slots=True)
 class CandidateEvidence:
     candidate: str
+    evidence_id: str
     strength: float = 1.0
 
 
@@ -354,9 +356,22 @@ class CausalScopeRouter:
 @dataclass(frozen=True, slots=True)
 class EvidenceRecord:
     sequence: int
+    evidence_id: str
     observation_digest: str
     candidate: str
     strength: float
+
+    def as_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True, slots=True)
+class EvidenceIdentityRecord:
+    route_token: str
+    observation_digest: str
+    candidate: str
+    strength: float
+    sequence: int
 
     def as_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -440,7 +455,29 @@ class CausalScopeRevisionPilot:
         self._router = CausalScopeRouter(self.config)
         self._routes: dict[str, RouteLocalState] = {}
         self._observation_bindings: dict[str, str] = {}
+        self._evidence_bindings: dict[str, EvidenceIdentityRecord] = {}
         self._sequence = 0
+
+    @staticmethod
+    def _evidence_id(value: object) -> str:
+        if not isinstance(value, str) or re.fullmatch(r"[A-Za-z0-9._:-]{1,128}", value) is None:
+            raise _RevisionRejected(
+                "evidence_id must contain 1..128 ASCII letters, digits, dot, "
+                "underscore, colon or hyphen"
+            )
+        return value
+
+    def _resolved_evidence(self, evidence: CandidateEvidence) -> tuple[str, str, float]:
+        evidence_id = self._evidence_id(evidence.evidence_id)
+        if evidence.candidate not in self.config.candidates:
+            raise _RevisionRejected("candidate is absent from the exposed hypothesis set")
+        try:
+            strength = _finite(evidence.strength, name="evidence strength")
+        except ValueError as exc:
+            raise _RevisionRejected(str(exc)) from exc
+        if not -1 <= strength <= 1:
+            raise _RevisionRejected("evidence strength must be in [-1, 1]")
+        return evidence_id, evidence.candidate, strength
 
     def _revision_view(self, state: RouteLocalState) -> RevisionView:
         logits = [
@@ -491,18 +528,11 @@ class CausalScopeRevisionPilot:
         observation_digest: str,
         sequence: int,
     ) -> RevisionView:
-        if evidence.candidate not in self.config.candidates:
-            raise _RevisionRejected("candidate is absent from the exposed hypothesis set")
-        try:
-            strength = _finite(evidence.strength, name="evidence strength")
-        except ValueError as exc:
-            raise _RevisionRejected(str(exc)) from exc
-        if not -1 <= strength <= 1:
-            raise _RevisionRejected("evidence strength must be in [-1, 1]")
+        evidence_id, candidate, strength = self._resolved_evidence(evidence)
         state = self._routes.setdefault(token, RouteLocalState.empty(self.config.candidates))
-        state.supports[evidence.candidate] += strength
+        state.supports[candidate] += strength
         state.evidence.append(
-            EvidenceRecord(sequence, observation_digest, evidence.candidate, strength)
+            EvidenceRecord(sequence, evidence_id, observation_digest, candidate, strength)
         )
         return self._revision_view(state)
 
@@ -527,8 +557,51 @@ class CausalScopeRevisionPilot:
             maximum_dimensions=self.config.maximum_dimensions,
         )
         observation_digest = self._observation_digest(vector)
+        try:
+            evidence_id, candidate, strength = self._resolved_evidence(evidence)
+        except _RevisionRejected:
+            return ScopeRevisionStep(
+                False,
+                True,
+                "invalid_downstream_revision",
+                None,
+                self._router.route(vector),
+                None,
+                self._sequence,
+            )
+
+        prior_evidence = self._evidence_bindings.get(evidence_id)
+        if prior_evidence is not None:
+            routing = self._router.route(vector)
+            identical = (
+                prior_evidence.observation_digest == observation_digest
+                and prior_evidence.candidate == candidate
+                and prior_evidence.strength == strength
+                and routing.token == prior_evidence.route_token
+            )
+            if identical:
+                revision = self._revision_view(self._routes[prior_evidence.route_token])
+                return ScopeRevisionStep(
+                    False,
+                    False,
+                    "duplicate_evidence_id",
+                    prior_evidence.route_token,
+                    routing,
+                    revision,
+                    self._sequence,
+                )
+            return ScopeRevisionStep(
+                False,
+                True,
+                "evidence_identity_conflict",
+                None,
+                routing,
+                None,
+                self._sequence,
+            )
+
         prior_candidate = self._observation_bindings.get(observation_digest)
-        if prior_candidate is not None and prior_candidate != evidence.candidate:
+        if prior_candidate is not None and prior_candidate != candidate:
             routing = self._router.route(vector)
             return ScopeRevisionStep(
                 False,
@@ -582,7 +655,14 @@ class CausalScopeRevisionPilot:
                 self._sequence,
             )
 
-        self._observation_bindings.setdefault(observation_digest, evidence.candidate)
+        self._observation_bindings.setdefault(observation_digest, candidate)
+        self._evidence_bindings[evidence_id] = EvidenceIdentityRecord(
+            routing.token,
+            observation_digest,
+            candidate,
+            strength,
+            next_sequence,
+        )
         self._sequence = next_sequence
         return ScopeRevisionStep(
             True,
@@ -615,6 +695,10 @@ class CausalScopeRevisionPilot:
                     "component_provenance": COMPONENT_PROVENANCE,
                     "config": self.config.as_dict(),
                     "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+                    "evidence_bindings": {
+                        evidence_id: binding.as_dict()
+                        for evidence_id, binding in sorted(self._evidence_bindings.items())
+                    },
                     "observation_bindings": dict(sorted(self._observation_bindings.items())),
                     "router": self._router.state_dict(),
                     "routes": {
@@ -633,6 +717,10 @@ class CausalScopeRevisionPilot:
         return {
             "build_id": BUILD_ID,
             "config": self.config.as_dict(),
+            "evidence_bindings": {
+                evidence_id: binding.as_dict()
+                for evidence_id, binding in sorted(self._evidence_bindings.items())
+            },
             "observation_bindings": dict(sorted(self._observation_bindings.items())),
             "router": self._router.state_dict(),
             "routes": {token: state.as_dict() for token, state in sorted(self._routes.items())},
@@ -646,6 +734,7 @@ class CausalScopeRevisionPilot:
         self._router = restored._router
         self._routes = restored._routes
         self._observation_bindings = restored._observation_bindings
+        self._evidence_bindings = restored._evidence_bindings
         self._sequence = restored._sequence
 
     @classmethod
@@ -653,6 +742,7 @@ class CausalScopeRevisionPilot:
         expected = {
             "build_id",
             "config",
+            "evidence_bindings",
             "observation_bindings",
             "router",
             "routes",
@@ -677,9 +767,11 @@ class CausalScopeRevisionPilot:
         if not isinstance(routes, dict):
             raise ValueError("checkpoint routes must be an object")
         component_tokens = {row.token for row in router.components}
-        if not set(routes) <= component_tokens:
-            raise ValueError("checkpoint route state has no matching router component")
+        if set(routes) != component_tokens:
+            raise ValueError("checkpoint route state must exactly match router components")
         total_evidence = 0
+        observed_sequences: list[int] = []
+        expected_evidence_bindings: dict[str, EvidenceIdentityRecord] = {}
         for token, raw in routes.items():
             row = _strict_dict(raw, {"evidence", "supports"}, name="route-local state")
             supports = row["supports"]
@@ -697,10 +789,11 @@ class CausalScopeRevisionPilot:
             for raw_record in evidence_rows:
                 record = _strict_dict(
                     raw_record,
-                    {"candidate", "observation_digest", "sequence", "strength"},
+                    {"candidate", "evidence_id", "observation_digest", "sequence", "strength"},
                     name="evidence record",
                 )
                 candidate = record["candidate"]
+                evidence_id = record["evidence_id"]
                 strength = _finite(record["strength"], name="evidence strength")
                 record_sequence = record["sequence"]
                 digest = record["observation_digest"]
@@ -714,7 +807,23 @@ class CausalScopeRevisionPilot:
                     or len(digest) != 64
                 ):
                     raise ValueError("invalid evidence record")
-                records.append(EvidenceRecord(record_sequence, digest, candidate, strength))
+                try:
+                    pilot._evidence_id(evidence_id)
+                except _RevisionRejected as exc:
+                    raise ValueError("invalid evidence record") from exc
+                if evidence_id in expected_evidence_bindings:
+                    raise ValueError("checkpoint evidence ids must be unique")
+                records.append(
+                    EvidenceRecord(record_sequence, evidence_id, digest, candidate, strength)
+                )
+                expected_evidence_bindings[evidence_id] = EvidenceIdentityRecord(
+                    token,
+                    digest,
+                    candidate,
+                    strength,
+                    record_sequence,
+                )
+                observed_sequences.append(record_sequence)
                 calculated[candidate] += strength
             if calculated != resolved_supports:
                 raise ValueError("route-local support does not match evidence ledger")
@@ -722,6 +831,53 @@ class CausalScopeRevisionPilot:
             total_evidence += len(records)
         if total_evidence != sequence:
             raise ValueError("checkpoint sequence does not match committed evidence count")
+        if sorted(observed_sequences) != list(range(1, sequence + 1)):
+            raise ValueError(
+                "checkpoint evidence sequence must be the unique permutation 1..sequence"
+            )
+
+        evidence_bindings = payload["evidence_bindings"]
+        if not isinstance(evidence_bindings, dict):
+            raise ValueError("evidence_bindings must be an object")
+        resolved_evidence_bindings: dict[str, EvidenceIdentityRecord] = {}
+        for evidence_id, raw_binding in evidence_bindings.items():
+            try:
+                pilot._evidence_id(evidence_id)
+            except _RevisionRejected as exc:
+                raise ValueError("invalid evidence binding identity") from exc
+            binding = _strict_dict(
+                raw_binding,
+                {"candidate", "observation_digest", "route_token", "sequence", "strength"},
+                name="evidence binding",
+            )
+            route_token = binding["route_token"]
+            observation_digest = binding["observation_digest"]
+            candidate = binding["candidate"]
+            strength = _finite(binding["strength"], name="evidence binding strength")
+            binding_sequence = binding["sequence"]
+            if (
+                not isinstance(route_token, str)
+                or route_token not in component_tokens
+                or not isinstance(observation_digest, str)
+                or len(observation_digest) != 64
+                or not isinstance(candidate, str)
+                or candidate not in config.candidates
+                or not -1 <= strength <= 1
+                or isinstance(binding_sequence, bool)
+                or not isinstance(binding_sequence, int)
+                or not 1 <= binding_sequence <= sequence
+            ):
+                raise ValueError("invalid evidence binding")
+            resolved_evidence_bindings[evidence_id] = EvidenceIdentityRecord(
+                route_token,
+                observation_digest,
+                candidate,
+                strength,
+                binding_sequence,
+            )
+        if resolved_evidence_bindings != expected_evidence_bindings:
+            raise ValueError("evidence bindings do not match committed evidence ledger")
+        pilot._evidence_bindings = resolved_evidence_bindings
 
         bindings = payload["observation_bindings"]
         if not isinstance(bindings, dict):
@@ -787,6 +943,7 @@ __all__ = [
     "CausalScopeRevisionPilot",
     "CausalScopeRouter",
     "EvidenceRecord",
+    "EvidenceIdentityRecord",
     "HypothesisView",
     "OnlineScope",
     "RevisionView",

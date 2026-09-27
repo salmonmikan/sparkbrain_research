@@ -10,6 +10,7 @@ from .causal_scope_revision import (
     CandidateEvidence,
     CausalScopeRevisionPilot,
     CausalScopeRouter,
+    EvidenceIdentityRecord,
     EvidenceRecord,
     HypothesisView,
     OnlineScope,
@@ -19,6 +20,23 @@ from .causal_scope_revision import (
     ScopeRevisionConfig,
     ScopeRevisionQuery,
     ScopeRevisionStep,
+)
+from .integrated_m1 import (
+    BUILD_ID as M1_BUILD_ID,
+)
+from .integrated_m1 import (
+    COMPONENT_PROVENANCE as M1_COMPONENT_PROVENANCE,
+)
+from .integrated_m1 import (
+    DeterministicM1World,
+    IntegratedM1CheckpointManager,
+    IntegratedM1Pilot,
+    IntegratedM1Session,
+    M1Action,
+    M1Cycle,
+    M1Observation,
+    M1OutcomeReceipt,
+    M1Revision,
 )
 from .predictive_revision import (
     BUILD_ID,
@@ -44,7 +62,15 @@ __all__ = [
     "CausalScopeRevisionPilot",
     "CausalScopeRouter",
     "EvidenceRecord",
+    "EvidenceIdentityRecord",
     "HypothesisView",
+    "M1Action",
+    "M1_BUILD_ID",
+    "M1_COMPONENT_PROVENANCE",
+    "M1Cycle",
+    "M1Observation",
+    "M1OutcomeReceipt",
+    "M1Revision",
     "OnlineScope",
     "RevisionView",
     "RoutingDecision",
@@ -52,4 +78,8 @@ __all__ = [
     "ScopeRevisionConfig",
     "ScopeRevisionQuery",
     "ScopeRevisionStep",
+    "DeterministicM1World",
+    "IntegratedM1CheckpointManager",
+    "IntegratedM1Pilot",
+    "IntegratedM1Session",
 ]
