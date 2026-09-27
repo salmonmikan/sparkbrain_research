@@ -1298,3 +1298,12 @@ Integration review and CI may repair implementation or documentation defects on 
 
 **Reason:** Component reduction and scientific closure do not prevent legitimate engineering reuse, but allowing build observations to inherit scientific credit would collapse the separation between component function, system construction, causal contribution, and novelty.
 
+## D-SB002-0001 — Make each routed observation an all-state transaction
+
+**Decision (2026-09-28):** Implement BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT as a separate NON_EVIDENTIARY_BUILD surface with a current-observation-only fixed-K=2 router and route-local hypothesis/evidence revision. Treat one observation as one transaction across router, hypothesis, evidence, exact-observation binding and checkpoint-visible sequence state. Ambiguous midpoint, out-of-support input, identical-observation conflict and invalid downstream revision return fail-closed no-write. If downstream validation rejects after routing changed a centroid or created a component, restore the exact pre-step checkpoint payload before returning.
+
+Route tokens are opaque: exact replay of the same history/checkpoint preserves literal tokens, while different arrival orders may permute token names. Acceptance therefore compares induced partitions and route-local outcomes across orders. The runtime exposes no label, true scope/regime/episode identity, future suffix, evaluator output or held-out field. Expected synthetic outputs remain test-side assertions rather than runtime input.
+
+The router is selectively reimplemented from Forge prototype `f980c13d984460f158a95e8181239db8d19c8468` and handoff `164ce39b99fbfa7146e439215c804c638305dea3`; scoped revision patterns and Theory R11 design `ID-SB-LATENT-SCOPE-PLURAL-REVISION-001` are engineering inputs only. No working branch is merged wholesale and all inherited scientific credit is zero. The build may establish only construction and bounded functional verification. Comparative support, composition contribution and scientific novelty remain unestablished.
+
+**Reason:** Routing before downstream revision creates a partial-write hazard unless the whole observation is atomic. Explicit rollback and checkpoint validation make the integration behavior inspectable and replayable without turning a synthetic engineering fixture into scientific evidence.
