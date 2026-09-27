@@ -1,98 +1,101 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260927T134529+0900-TRANSACTIONAL-OUTCOME-REVISION-CI-CLEAN",
-  "produced_at": "2026-09-27T13:45:29+09:00",
-  "forge_id": "FORGE-TRANSACTIONAL-OUTCOME-REVISION-A",
+  "generation_id": "FORGE-20260927T144929+0900-IDEMPOTENT-OUTCOME-STREAM-CI-CLEAN",
+  "produced_at": "2026-09-27T14:49:29+09:00",
+  "forge_id": "FORGE-IDEMPOTENT-OUTCOME-STREAM-A",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260927-transactional-stream-coordinator-a",
-  "exact_head": "a5dbdbcb7e1302e5e08689f3e62e8eab899bebda",
+  "branch": "forge/20260927-idempotent-outcome-stream-a",
+  "exact_head": "87adfb63ac8c92236acf42aa308cea3020169629",
   "source_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-  "source_forge_head": "751b4d72185e87ea88521aa93bf780048ccac4ae",
-  "target_capability": "atomically commit one observed-outcome step across scope allocation and late-evidence revision while preserving exact prior state on validation failure or no-write routing",
+  "source_forge_head": "0b141b3570f7f30357d182659ff7a8b2cab8ecfa",
+  "target_capability": "provide ordered idempotent local delivery around transactional observed-outcome revision, with content conflict and sequence conflict fail-closed",
   "prototype": {
     "files": [
-      "forge_prototypes/transactional_outcome_revision_coordinator.py",
-      "forge_prototypes/transactional_outcome_revision_coordinator.md",
-      "tests/test_forge_transactional_outcome_revision_coordinator.py"
+      "forge_prototypes/idempotent_outcome_revision_stream.py",
+      "forge_prototypes/idempotent_outcome_revision_stream.md",
+      "tests/test_forge_idempotent_outcome_revision_stream.py"
     ],
     "public_inputs": [
+      "event_id",
+      "sequence",
       "prediction_pool_snapshot",
-      "observation_vector",
+      "observation",
       "observed_value",
       "late_evidence_strength"
     ],
     "verified_behaviors": [
-      "successful_allocator_and_revision_atomic_commit",
-      "late_validation_failure_exact_checkpoint_preservation",
-      "failed_step_no_effect_on_following_valid_step",
-      "unexposed_tail_sensitive_no_write",
-      "checkpoint_deterministic_next_transaction",
-      "no_caller_scope_error_or_tail_assignment"
+      "contiguous_new_event_order",
+      "content_addressed_event_binding",
+      "exact_redelivery_no_reapplication",
+      "event_id_content_conflict_fail_closed",
+      "stale_or_gapped_new_event_fail_closed",
+      "no_write_outcome_deduplicated_after_later_state_change",
+      "invalid_payload_does_not_consume_sequence_or_event_id",
+      "checkpoint_preserves_ledger_and_next_transaction",
+      "malformed_noncontiguous_checkpoint_rejected",
+      "no_caller_scope_error_tail_truth_or_evaluator_identity"
     ]
   },
-  "diagnostic": {
-    "pre_fix_partial_state_reproduced": true,
-    "trigger": "exposed_outcome_with_invalid_evidence_strength",
-    "observed_effect": "revision_rejected_but_new_allocator_scope_retained",
-    "repair": "copy_on_write_candidate_then_commit_only_intentional_mutation_actions"
-  },
   "ci": {
-    "run_id": 36295091484,
-    "exact_head": "a5dbdbcb7e1302e5e08689f3e62e8eab899bebda",
+    "run_id": 36298170312,
+    "exact_head": "87adfb63ac8c92236acf42aa308cea3020169629",
     "status": "completed",
     "conclusion": "success",
     "python_311": "SUCCESS",
     "python_313": "SUCCESS"
   },
   "local_validation": {
-    "focused_integration_tests": "26/26 PASS",
-    "all_forge_tests": "67/67 PASS",
+    "focused_stream_and_transaction_tests": "16/16 PASS",
+    "all_forge_tests": "77/77 PASS",
     "ruff": "PASS",
+    "compile": "PASS",
     "local_readiness": "PASS",
     "full_collection": "UNAVAILABLE_MISSING_OPTIONAL_FASTAPI_TORCH_JSONSCHEMA"
   },
-  "ordinary_reduction": "copy-on-write transaction and checkpoint isolation around stateful components",
-  "engineering_usefulness": "closes the partial-write seam between internal scope allocation and late-evidence revision and provides a bounded atomic step boundary",
+  "ordinary_reduction": "ordered idempotent consumer with a content-addressed deduplication ledger and copy-on-write state transition",
+  "engineering_usefulness": "prevents transport retry from reapplying or later reinterpreting a successful, pending or no-write revision decision",
   "limitations": [
-    "one_step_only_no_continuous_stream_task",
+    "bounded_in_memory_event_sequence_not_continuous_scientific_task",
+    "no_receipt_retention_or_compaction_policy",
+    "no_external_durable_store",
+    "no_distributed_crash_partition_broker_or_concurrent_writer_test",
     "fixed_uncalibrated_prediction_pool_and_routing_thresholds",
-    "pending_confirmation_is_intentional_allocator_state",
     "no_matched_comparison",
     "no_resource_match",
     "no_interaction_ablation",
     "no_composition_contribution"
   ],
   "claim_boundary": {
-    "component_composition": "BOUNDED_ATOMICITY_TESTS_SUPPORTED",
+    "component_composition": "BOUNDED_LOCAL_RETRY_REPLAY_TESTS_SUPPORTED",
     "system_build_admission": false,
     "comparatively_supported": false,
     "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
     "scientific_credit": 0
   },
-  "collision_check": "PASS_ANALYST_R148_MAIN_ONLY_RD006_V2_STATIC_AUDIT; MAIN_R157_COMPLETE_WAIT_ANALYST; RELAY_DEPENDENCY_WAIT; THEORY_R8_NO_PROPOSAL; SB001_COMPLETE_ALL_UNTOUCHED",
+  "collision_check": "PASS_ANALYST_R149_MAIN_ONLY_RD006_V3_STATIC_PREFLIGHT; RESULT_BEARING_EXECUTION_STOPPED; MAIN_R157_DURABLE; RELAY_DEPENDENCY_WAIT; THEORY_R8_NO_PROPOSAL; SB001_COMPLETE_ALL_UNTOUCHED",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "analyst": "EVA-20260927T130000+0900-R148-RD006-V2-RECONCILIATION",
-    "analyst_head": "437f36985cbf6573af0d02599710020a462194e5",
+    "analyst": "EVA-20260927T135700+0900-R149-RD006-V3-STATIC-PREFLIGHT",
+    "analyst_head": "79b2e7e67144804393911853b7bd405fafec629e",
     "main_orchestrator": "MAIN-20260927T133210+0900-PRIMARY-R157-RD006-V2-STATIC-TOPOLOGY-AUDIT",
     "main_orchestrator_head": "d868b7ff14677100b9c6e29e90b265f99f14c64c",
     "control": "CTRL-20260927T115000+0900-R90-RD006-AUDIT-OBSERVED",
     "control_head": "ca934c91c2e371a41e1a8b88ca8c7827f128f64f",
-    "methodology": "METHCAL-20260927T122033+0900-R129-RD006-V2-BOUNDARY",
-    "methodology_head": "4763b74f8bc9f9f684cb7ef86e97ea9a7361bcf4",
+    "methodology": "METHCAL-20260927T142036+0900-R130-RD006-V3-STATIC-PREFLIGHT-CALIBRATION",
+    "methodology_head": "f036226a374f4518adfab515bbe0e78f847040ee",
     "utility_head": "625b613aee256390c5e868bdb26a21bdd5320cfb",
     "theory": "THEORY-20260927T133111+0900-R8-NO-PROPOSAL-FORGE-SEAM-RECONCILIATION-8D3F6A27",
     "external_science_head": "b1e0e2d8d19b908e27d49495ad9f299ad4d86607",
-    "source_forge_handoff": "751b4d72185e87ea88521aa93bf780048ccac4ae"
+    "source_forge_handoff": "0b141b3570f7f30357d182659ff7a8b2cab8ecfa"
   },
   "metrics_this_run": {
     "scientific_novelty_probes": 0,
-    "scientific_kills": 0,
-    "scientific_survivors": 0,
-    "integration_prototypes": 1,
-    "integration_useful": 1,
+    "integration_ideas": 1,
+    "working_prototypes": 1,
+    "dead_ends": 0,
+    "promotion_proposals": 0,
     "integration_ci_green": 1
   },
   "publication": {
@@ -102,9 +105,8 @@
     "p0_incident_status": "CLOSED_BY_CONTROL",
     "new_incident_diagnosis": false
   },
-  "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-27/1345-transactional-outcome-revision-ci-clean.md"
+  "history_path": "reports/fast_forge/history/2026-09-27/1449-idempotent-outcome-stream-ci-clean.md"
 }
