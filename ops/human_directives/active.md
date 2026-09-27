@@ -1089,3 +1089,51 @@ Created: `2026-09-27 JST`
 HUMAN-20260926-003の3回という数値規則のみを置き換える。tool/API/経路を変更しても同一目的のcountをリセットしない。再試行前のfresh head/state取得、idempotence、成功後の独立readback、成功時の早期終了、既存の非再試行条件を維持する。実際の権限・拒否境界を迂回せず、実験回数・科学的integrity・scheduler時刻/頻度/有効状態を変更しない。
 
 Full directive: [HUMAN-20260927-002](history/2026-09-27/HUMAN-20260927-002-publication-five-attempts.md)
+
+## HUMAN-20260928-001 — Accelerated Integrated SparkBrain Completion
+
+Human status: `OPEN`  
+Created: `2026-09-28 JST`  
+Priority: `HIGH / SYSTEM INTEGRATION ACCELERATION`
+
+### Intent
+
+既存の科学的hard floorを維持したまま、個別機構の探索よりも**連続稼働する統合SparkBrainの早期成立**を当面の最優先にする。
+
+Integrated Prototype Milestone 1を、
+
+`observation → persistent state → multiple hypotheses/scopes → competition/abstention/selection → prediction/action → later outcome → selective revision → updated state → next prediction/action`
+
+が一つの連続システムとして動き、checkpoint/replay、transactional rollback、internal-state observability、bounded test worlds、reuse provenanceを備えた状態とする。
+
+### Requested operating posture
+
+- Evidence Analystは、単一の細粒度作業ごとにMAINを停止させるのではなく、可能な場合は複数のprospective bounded SYSTEM_BUILD milestonesを一括して定義するrolling contractを評価する。
+- 前段milestoneのacceptance後、既にprospectiveに承認された次milestoneへMAINが連続して進める運用を優先的に検討する。
+- Fast Forgeはcritical pathと衝突しない次工程・次々工程のintegration primitive、guard、replay/state、causal diagnostic、ablation/replacement toolingを先行試作してよい。
+- Utilityはlong-run/stability、observability、checkpoint/replay、CI/tooling、provenance、synthetic worlds、benchmark infrastructure等を自律的に先回りしてよい。
+- Theory / Literature / Audit / Methodologyはintegrity violation等の具体的理由がない限り、通常のSYSTEM_BUILD engineeringと並列して監査し、形式的再確認だけでcritical pathを止めない方向を優先する。
+- 安全なSYSTEM_BUILD / Forge / Utility作業が存在する場合、単なる慎重さによるWAITING / NO_OP / IDLEを避ける。
+- Control BrainとEvidence AnalystはIntegrated Prototype Milestone 1までのremaining integration graph、critical path、parallel work、blocker、next 2–4 milestonesを維持する方向を評価する。
+
+### Priority
+
+1. Integrated Prototype Milestone 1完成
+2. integration blocker / interface gap解消
+3. 統合後に現れるsystem-level phenomenaの観測
+4. そこからfresh prospective scientific questionを作る
+5. 独立した新規mechanism探索
+
+### Scientific boundary
+
+このDirectiveはSYSTEM_BUILD / developmentの速度を上げるためのものであり、consumed FORMAL identity、immutable evidence、held-out isolation、prospective contract、novelty claim、build-to-science boundaryを一切緩和しない。
+
+Build observationはscientific evidenceへ自動昇格せず、科学的主張にはfresh candidate identityとfresh prospective contractを要求する。
+
+### Required independent review
+
+Control Brainは `ACCEPT / MODIFY / DEFER / REJECT` を独立判断し、既存のthroughput改善、Utility autonomy、development iteration、Fast Forge / Slow Scienceの方針と明示的にreconcileする。
+
+詳細Directive:
+`ops/human_directives/history/2026-09-28/HUMAN-20260928-001-accelerated-integrated-sparkbrain-completion.md`
+
