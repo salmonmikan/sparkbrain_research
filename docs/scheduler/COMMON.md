@@ -38,6 +38,33 @@ For stateful roles, durable state should record when applicable:
 - each material Control/Analyst disposition or interpretation.
 
 When a newly active or materially changed directive affects the current decision, the user-facing report must mention that directive and the applied disposition/interpretation. If there is no directive delta, routine reports need not repeat the whole directive set.
+
+## Scheduled role resolution for time-multiplexed schedulers
+
+This section applies when one scheduler uses a canonical schedule/role map to select exactly one internal role for each invocation.
+
+Wall-clock start-time drift is an operational-health signal, not role identity. Timing drift alone must never cause a current run to execute zero roles, fail closed, or guess multiple roles.
+
+Resolve exactly one canonical slot and role in this order:
+
+1. If authoritative execution metadata exposes the invocation's original scheduled occurrence / scheduled-for timestamp, use that scheduled occurrence after normalizing it to the scheduler's declared timezone. Actual start time does not override it.
+2. Otherwise use the actual start time and the role file's canonical slot map:
+   - exact canonical-slot time => that slot;
+   - if the next canonical slot is within 5 minutes, resolve to that next slot as early-dispatch grace;
+   - otherwise resolve to the most recent canonical slot at or before actual start time, wrapping to the previous day when necessary.
+3. There is no maximum lateness cutoff for role selection. A +10m, +20m, +1h, or larger delay remains resolvable to one canonical slot by the rules above.
+4. One invocation resolves to exactly one role. Never replay multiple missed canonical slots, run multiple internal roles, or perform catch-up fan-out from a single delayed invocation.
+5. Record or report material drift when observable, preferably with:
+   - `actual_start`;
+   - `scheduled_occurrence` when available;
+   - `resolved_slot`;
+   - `selected_role`;
+   - `resolution_source` = `SCHEDULED_OCCURRENCE | EXACT_SLOT | EARLY_GRACE | PREVIOUS_CANONICAL_SLOT`;
+   - `drift` when scheduled occurrence is known or can be safely derived.
+6. Fail closed for role selection only when the authoritative role policy/map itself is unavailable, structurally contradictory, or conflicting authoritative role identities cannot be reconciled. Do not fail closed merely because execution started early or late.
+
+Role-specific files define the canonical slot map and role authorities. This common resolver changes only how a delayed/early invocation is associated with one slot; it never broadens the selected role's permissions.
+
 ## Branch semantics
 
 - `main`: stable shared repository policy, common runtime, stable docs/interfaces and reusable outcome-independent tooling.
