@@ -1,19 +1,17 @@
 # Evidence Analyst latest
 
-- Generation: `EVA-20260927T115839+0900-R147-RD006-V2-LAG-ALIGNMENT`
+- Generation: `EVA-20260927T130000+0900-R148-RD006-V2-RECONCILIATION`
 - New scientific result: **no**
 - Canonical funnel: **35/35 terminal; 0 active; 0 scientifically queued; 8 consumed FORMAL identities**
 - FORMAL allocation: **NO_ACTION**
-- MAIN allocation: **RD006 v2 lag-alignment paired matrix**
+- MAIN allocation: **RD006 v2 preserved static topology-return coverage audit only**
 
-RD006 v1 remains `RESULT_EXPOSED_DEVELOPMENT / D0_INCONCLUSIVE_BOUNDED_EXPLOSION` with zero scientific credit.
+RD006 v2 completed once at `d2462ebc52e3bf1e6a50334ee6b8d7cf437b416a`. Ordinary external learning produced hidden activity, but the two-source reachability gate did not open: maximum eligible sources 1, ready cells 0, with one ON arm bounded at the unchanged ceiling.
 
-The preserved audit found no eligible hidden-return clock. Eight connected hidden spikes were simultaneous with the return at lag 0.0 ms, and all 356 ordinary updates were PORT-to-PORT.
+v2 is now `RESULT_EXPOSED_DEVELOPMENT / D0_INCONCLUSIVE_BOUNDED_EXPLOSION` with zero scientific credit. No second v2 matrix, ceiling increase or further v2 timing change is allowed.
 
-Authorize a distinct v2 revision with one change only: within-route external-event spacing `5.0 ms → 5.5 ms`. The 5.0 ms topology delay and every other v1 condition remain fixed. MAIN may run one bounded paired OFF/ON matrix and preserve complete diagnostics.
+The preserved artifact contains 12 return clocks with at least two time-window hidden sources but zero clocks with two structurally eligible sources. MAIN may perform a read-only static topology/return-edge coverage audit and propose a general resource-matched v3 contract. It may not execute new dynamics or select edges from observed spike identities.
 
-v1 must not be overwritten. E0/E1/ES, scale/reservoir work, learner-boundary changes and further timing/parameter changes remain unauthorized pending fresh Analyst reconciliation.
+E0/E1/ES, scale/reservoir work, learner-boundary changes, topology mutation and any new result-bearing matrix remain unauthorized pending fresh Analyst reconciliation.
 
-R156's accidental non-persisted dynamics output is quarantined as unused and non-evidentiary. It does not invalidate the preserved-byte audit and must not influence v2.
-
-P0 remains closed as recovered; the Analyst Actions bridge remains retained hardening.
+SB001 remains integrated NON_EVIDENTIARY_BUILD with scientific credit 0. Theory R7 remains NO_PROPOSAL. P0 remains closed as recovered.

@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260927T115839+0900-R147-RD006-V2-LAG-ALIGNMENT",
-  "generated_at": "2026-09-27T11:58:39+09:00",
+  "generation_id": "EVA-20260927T130000+0900-R148-RD006-V2-RECONCILIATION",
+  "generated_at": "2026-09-27T13:00:00+09:00",
   "cache_role": "MOVING_CACHE_ONLY",
   "durable_authority": {
-    "history_path": "analysis/orchestrator/history/2026-09-27/1158-R147.md",
+    "history_path": "analysis/orchestrator/history/2026-09-27/1300-R148.md",
     "complete": true
   },
   "new_scientific_result": false,
@@ -14,11 +14,11 @@
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
     "control": "ca934c91c2e371a41e1a8b88ca8c7827f128f64f",
     "main_reports": "8d5b6c36122c3e8a2ee2ada2a9c6d40272131885",
-    "methodology": "a63e512a1d1e59857d3634b682b2c795f03df6ab",
+    "methodology": "4763b74f8bc9f9f684cb7ef86e97ea9a7361bcf4",
     "external_science": "3538e527ded0e494dca889d4dc55eef34a9d0f3e",
-    "rd006_v1_result": "49b91ca801522f3d6685ebd22097a1e64f9234c9",
-    "rd006_v1_audit": "2e4b27b620c7fdd2d4d1803df0f11f13b5ed28e8",
-    "prior_analyst_target_head": "a8dfad75ff6d99f184e570d7aeb01b4951446f82"
+    "prior_analyst_target_head": "df0ab5d5dc4941de8a9bba95949a00d6a7c4ce16",
+    "rd006_v2_result": "d2462ebc52e3bf1e6a50334ee6b8d7cf437b416a",
+    "rd006_v2_source": "7896433af675b77b1f442e9efaf268d16564c564"
   },
   "canonical_funnel": {
     "candidates": 35,
@@ -32,92 +32,74 @@
   "development_queue": {
     "count": 1,
     "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-    "prior_revision": {
-      "identity_namespace": "rv02-rd006-external-learning-reachability-a-v1",
-      "phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "result_head": "49b91ca801522f3d6685ebd22097a1e64f9234c9",
-      "audit_head": "2e4b27b620c7fdd2d4d1803df0f11f13b5ed28e8",
-      "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
-      "eligible_hidden_return_clock_observed": false,
-      "ordinary_update_edge_classes": [
-        "PORT_TO_PORT"
-      ],
-      "connected_hidden_spike_lags_ms": [
-        0
-      ],
-      "preserve_unchanged": true,
-      "scientific_credit": 0
-    },
     "current_revision": {
       "revision": "v2-lag-alignment",
-      "identity_namespace": "rv02-rd006-external-learning-reachability-a-v2-lag-alignment",
-      "branch": "research/rv02-rd006-external-learning-reachability-a-v2-lag-alignment",
-      "parent_basis": "2e4b27b620c7fdd2d4d1803df0f11f13b5ed28e8",
-      "phase": "OPEN_DEVELOPMENT",
-      "candidate_id": null,
+      "phase": "RESULT_EXPOSED_DEVELOPMENT",
       "claim_ceiling": "SYSTEM",
-      "current_question_layer": "COMPONENT_FUNCTION_REACHABILITY",
-      "evidentiary_status": "DEVELOPMENT_ONLY_ZERO_CONFIRMATORY_CREDIT",
+      "evidentiary_status": "DEVELOPMENT_DIAGNOSTIC_ZERO_CONFIRMATORY_CREDIT",
+      "result_head": "d2462ebc52e3bf1e6a50334ee6b8d7cf437b416a",
+      "source_head": "7896433af675b77b1f442e9efaf268d16564c564",
+      "ci_run_id": 36291112754,
+      "ci_conclusion": "success",
+      "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+      "hidden_spike_count": 144,
+      "ready_cell_count": 0,
+      "maximum_eligible_hidden_sources": 1,
+      "planned_clock_count": 832,
+      "inspected_clock_count": 816,
+      "bounded_arm": "opposing-reversal/external_learning_on",
+      "unobserved_clock_count": 16,
+      "artifact_sha256": "5898fdcb75b10747fb88f8a19329f2d063422bb5012e80683c2c413cbbfb76d6",
+      "artifact_file_sha256": "7ce4ffa4366f60290b26ead6edd31f9a2083f0822949c7c11815aefe8df5c468",
+      "scientific_credit": 0,
+      "contract_disposition": "CLOSED_CURRENT_V2_CONTRACT"
+    },
+    "preserved_artifact_reconciliation": {
+      "on_arm_return_clocks_with_time_window_hidden_sources": 51,
+      "clocks_with_at_least_two_time_window_hidden_sources": 12,
+      "clocks_with_one_structurally_eligible_source": 7,
+      "clocks_with_two_structurally_eligible_sources": 0,
+      "inference": "NEXT_UNCERTAINTY_IS_STATIC_TOPOLOGY_RETURN_EDGE_COVERAGE_NOT_TIMING_ONLY"
+    },
+    "allocation": {
       "owner": "MAIN",
-      "allocation": "RD006_V2_LAG_ALIGNMENT_PAIRED_MATRIX",
-      "execution_class": "ONE_BOUNDED_RESULT_BEARING_DEVELOPMENT_MATRIX",
-      "only_science_affecting_change": {
-        "field": "WITHIN_ROUTE_EXTERNAL_EVENT_POSITION_INTERVAL_MS",
-        "from": 5,
-        "to": 5.5,
-        "formula": "route_index*10000 + episode*100 + position*5.5",
-        "rationale": "ALIGN_FIXED_5MS_HIDDEN_ARRIVAL_TO_UNCHANGED_0.5MS_MINIMUM_RETURN_LAG"
-      },
-      "fixed": [
-        "SEED_WORLDS_ROUTES_EXPOSURES_ALL_SIX_FAMILIES",
-        "UNIT_COUNT_DEGREE_SCALE_TOPOLOGY",
-        "THRESHOLD_INITIAL_WEIGHT_INITIAL_DELAY_5MS_BOUNDARY_GAIN_INPUT_MAGNITUDE",
-        "RETURN_LAG_WINDOW_0.5_TO_6.5MS",
-        "REQUIRED_DISTINCT_HIDDEN_SOURCES",
-        "EVENT_AND_SPIKE_CEILINGS",
-        "ORDINARY_EXTERNAL_LEARNING_OFF_VS_ON",
-        "HIDDEN_RETURN_LEARNING_OFF",
-        "NO_CAPABILITY_SCORING_OR_HELDOUT"
-      ],
-      "reachability_gate": {
-        "minimum_distinct_structurally_connected_hidden_sources": 2,
-        "lag_window_ms": [
-          0.5,
-          6.5
-        ],
-        "requires_non_exploded_complete_cell": true
-      },
-      "contingencies": {
-        "gate_open": "PRESERVE_AND_RETURN_TO_ANALYST_NO_E0_E1_ES",
-        "gate_closed": "PRESERVE_NEGATIVE_AND_STOP_NO_FURTHER_V2_TIMING_CHANGE",
-        "bounded_explosion": "PRESERVE_INCOMPLETE_NO_CEILING_INCREASE"
-      },
-      "forbidden_until_fresh_reconciliation": [
-        "E0_E1_ES",
-        "SCALE_EXPANSION",
-        "RESERVOIR_COMPARISON",
-        "LEARNER_BOUNDARY_CHANGE",
-        "TOPOLOGY_CHANGE",
-        "THRESHOLD_GAIN_STIMULUS_CHANGE",
-        "LAG_WINDOW_CHANGE",
-        "EVENT_CEILING_EXPANSION",
-        "SECOND_V2_RESULT_BEARING_MATRIX_WITH_CHANGED_CONTRACT"
+      "task": "RD006_V2_PRESERVED_STATIC_TOPOLOGY_RETURN_COVERAGE_AUDIT",
+      "execution_class": "READ_ONLY_PRESERVED_RESULT_AND_STATIC_CONSTRUCTION_AUDIT",
+      "new_dynamics_authorized": false,
+      "output": "OPTIONAL_PROSPECTIVE_V3_CONTRACT_PROPOSAL_ONLY",
+      "constraints": [
+        "NO_OBSERVED_SPIKE_ID_EDGE_SELECTION",
+        "SAME_UNIT_COUNT",
+        "MATCH_MEAN_DEGREE_OR_EDGE_BUDGET",
+        "MATCH_RESOURCE_AND_PRIVILEGE",
+        "SEPARATE_STRUCTURAL_TEMPORAL_AND_BOUNDED_FAILURES"
       ]
     },
-    "procedure_nonconformance": {
-      "class": "NON_PERSISTED_LOCAL_DYNAMIC_UNIT_TEST_INVOCATION",
-      "disposition": "QUARANTINED_UNUSED_NO_EVIDENCE_TRANSFER_NO_V1_INVALIDATION",
-      "used_for_audit": false,
-      "persisted_as_scientific_output": false,
-      "v1_mutated": false,
-      "may_influence_v2": false,
-      "operational_correction": "AUDIT_ONLY_COMMANDS_MUST_EXCLUDE_RESULT_BEARING_DYNAMIC_TEST_MODULES"
+    "prior_revisions": {
+      "v1": {
+        "phase": "RESULT_EXPOSED_DEVELOPMENT",
+        "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+        "preserve_unchanged": true,
+        "scientific_credit": 0
+      },
+      "rd005": {
+        "phase": "CONSUMED_ONE_WAY",
+        "preserve_unchanged": true
+      }
     },
-    "prior_rd005": {
-      "consumed": true,
-      "terminal_result": "D1_CONSTRUCTION_FAILED_TERMINAL_IDENTITY_CONSUMED",
-      "preserve_unchanged": true
-    }
+    "forbidden_until_fresh_reconciliation": [
+      "SECOND_V2_MATRIX",
+      "EVENT_CEILING_INCREASE",
+      "FURTHER_V2_TIMING_CHANGE",
+      "E0_E1_ES",
+      "SCALE_EXPANSION",
+      "RESERVOIR_COMPARISON",
+      "LEARNER_BOUNDARY_CHANGE",
+      "TOPOLOGY_MUTATION",
+      "THRESHOLD_GAIN_STIMULUS_CHANGE",
+      "LAG_WINDOW_CHANGE",
+      "NEW_RESULT_BEARING_MATRIX"
+    ]
   },
   "system_build_ledger": {
     "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
@@ -131,32 +113,37 @@
     "scientific_credit": 0,
     "evidentiary_status": "NON_EVIDENTIARY_BUILD"
   },
-  "theory": {
-    "generation": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
-    "status": "NO_PROPOSAL",
-    "retained_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-    "forge_inputs": {
+  "supporting_streams": {
+    "theory": {
+      "generation": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
+      "status": "NO_PROPOSAL",
+      "revisit_status": "NO_REVISIT_PROPOSAL"
+    },
+    "forge": {
       "disposition": "OPTIONAL_FUTURE_SEPARATELY_BOUND_SYSTEM_BUILD_ONLY",
       "admitted_to_rd006": false,
-      "admitted_to_sb001": false,
-      "revisit_triggered": false,
       "scientific_credit": 0
+    },
+    "independent_audit": {
+      "candidate35": "INCONCLUSIVE_SEPARATE_REVISIT_SIGNAL_NO_REOPEN"
+    },
+    "methodology": {
+      "generation": "METHCAL-20260927T122033+0900-R129-RD006-V2-BOUNDARY",
+      "classification": "WELL_CALIBRATED"
     }
   },
   "p0_incident": {
     "id": "INC-GITHUB-PERSISTENCE-20260925-001",
     "status": "CLOSED_P0_RECOVERED",
     "persistence_route": "GITHUB_ACTIONS_BRIDGE_RETAINED_HARDENING",
-    "active_pointer_debt": [],
-    "closure_owner": "CONTROL_BRAIN",
-    "closure_generation": "CTRL-20260927T105500+0900-R89-P0-RECOVERY-CLOSED"
+    "active_pointer_debt": []
   },
   "allocations": {
-    "main": "RD006_V2_LAG_ALIGNMENT_PAIRED_MATRIX",
+    "main": "RD006_V2_PRESERVED_STATIC_TOPOLOGY_RETURN_COVERAGE_AUDIT",
     "formal_science": "NO_ACTION",
     "later_e0_e1_es": "NOT_AUTHORIZED",
     "scale_reservoir": "NOT_AUTHORIZED",
-    "successor_system_build": "DEFER_SEPARATE_BINDING"
+    "v3_result_bearing_execution": "NOT_AUTHORIZED"
   },
   "hard_floor": {
     "experiments_dispatched_by_analyst": false,
