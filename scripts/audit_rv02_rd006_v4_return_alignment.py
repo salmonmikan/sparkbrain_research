@@ -369,20 +369,36 @@ def build_audit(preserved_artifact_path: Path) -> dict[str, Any]:
         "port_to_hidden_update_linkage_aggregate": dict(update_aggregate),
         "linkage_interpretation": {
             "status": "DESCRIPTIVE_NOT_CAUSAL",
-            "join_basis": "target hidden source id plus target time inferred from source return time and recorded update lag",
+            "join_basis": (
+                "target hidden source id plus target time inferred from source "
+                "return time and recorded update lag"
+            ),
             "causal_effect_identified": False,
         },
         "trace_sufficiency": {
             "sufficient_for": [
-                "classifying every inspected ON return clock by structural source coverage, hidden firing, current-target edge, lag window, and same-clock eligibility",
-                "checking immediately adjacent clocks for split dynamic-eligible source identities",
+                (
+                    "classifying every inspected ON return clock by structural source "
+                    "coverage, hidden firing, current-target edge, lag window, and "
+                    "same-clock eligibility"
+                ),
+                (
+                    "checking immediately adjacent clocks for split dynamic-eligible "
+                    "source identities"
+                ),
                 "describing whether a PORT_TO_HIDDEN update target source spikes again later",
             ],
             "unknown_or_not_identified": [
                 "dynamic outcomes for 16 ceiling-censored opposing-reversal ON clocks",
-                "direct hidden event-id join because hidden spike rows do not carry target_event_id",
+                (
+                    "direct hidden event-id join because hidden spike rows do not carry "
+                    "target_event_id"
+                ),
                 "counterfactual later spike trajectory without each PORT_TO_HIDDEN update",
-                "causal contribution of a particular update to a later same-source spike or return-clock eligibility",
+                (
+                    "causal contribution of a particular update to a later same-source "
+                    "spike or return-clock eligibility"
+                ),
             ],
         },
         "cells": cells,
@@ -390,7 +406,12 @@ def build_audit(preserved_artifact_path: Path) -> dict[str, Any]:
         "preserved_v4_result_changed": False,
         "recommendation": {
             "disposition": "NO_PROPOSAL",
-            "reason": "The preserved trace supports descriptive recurrence and failure classification but not a causal attribution separating learner-update effect from concurrent network state; one fresh scientific invariant is not identified by these bytes alone.",
+            "reason": (
+                "The preserved trace supports descriptive recurrence and failure "
+                "classification but not a causal attribution separating learner-update "
+                "effect from concurrent network state; one fresh scientific invariant "
+                "is not identified by these bytes alone."
+            ),
             "implementation_or_execution_authorized": False,
         },
         "later_e0_e1_es_authorized": False,
