@@ -60,6 +60,18 @@ A terminal scientific candidate is not reopened merely because implementation/co
 
 Relay inherits the current SYSTEM_BUILD review rule: mandatory code/PR/Codex review is not a build gate. Missing/stale/fresh review alone must not block continuation. Concrete defects already identified by review remain normal engineering defects and must be repaired/verified.
 
+## Rolling SYSTEM_BUILD continuation
+
+If PRIMARY MAIN handed off a valid rolling SYSTEM_BUILD contract, Relay preserves the same milestone sequence and stop boundaries exactly.
+
+Relay may continue to the next prospectively authorized milestone only when:
+- PRIMARY is no longer mutating the same object;
+- prior milestone acceptance passed;
+- current Analyst authority still covers the next milestone;
+- exact refs/state remain reconciled;
+- no collision or superseding authority exists.
+
+Relay must not invent additional milestones or broaden the contract. The same stop conditions as MAIN apply for contract-external redesign, target change, failed acceptance needing outcome-responsive redesign, scientific transition, immutable/FORMAL boundary, or explicit Analyst stop.
 ## Synthesis variants
 
 Relay may continue full integration, component-replacement, interaction/feedback-loop ablation, or alternative architecture only when already authorized/spec'd by Analyst/MAIN.
