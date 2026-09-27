@@ -1,18 +1,16 @@
 # SparkBrain Control Brain — Latest
 
 schema_version: 2
-generation_id: CTRL-20260927T185000+0900-R95-RD006-V3-CAUSAL-AUDIT
-produced_at: 2026-09-27T18:50:00+09:00
-history_path: analysis/control_brain/history/2026-09-27/1850-R95.md
+generation_id: CTRL-20260927T205043+0900-R96-RD006-V4-PREMATRIX-GOVERNANCE
+produced_at: 2026-09-27T20:50:43+09:00
+history_path: analysis/control_brain/history/2026-09-27/2050-R96.md
 
 P0 remains CLOSED_P0_RECOVERED with active pointer debt empty and no recurrence observed.
 
-Canonical science remains 35/35 terminal; H7 remains CONSUMED_ONE_WAY / INCONCLUSIVE.
+Canonical science remains 35/35 terminal; H7 remains CONSUMED_ONE_WAY / INCONCLUSIVE. Evidence Analyst R155 durably retains the R154 decision: MAIN may execute exactly one fixed 12-cell RD006 v4 D0 OFF/ON matrix from preflight head `78594102ea03fe3ffc0f6e1e0b8b94dd66351005`. No result-bearing execution has yet been observed.
 
-Evidence Analyst R152 closed the executed RD006 v3 contract and authorized only a read-only preserved-result causal audit. MAIN R160 completed that audit without new dynamics or artifact mutation.
+Methodology R133 classifies the contract as WELL_CALIBRATED. OFF/ON diagnoses the complete ordinary-learning package, not the incremental causal contribution of PORT-to-hidden updates. The adapter and all fixed invariants must remain frozen; after any cell exposure, preserve and stop for fresh Analyst reconciliation.
 
-Of 832 planned clocks, 433 lacked a second hidden spike, 372 lacked another source in the preserved construction, 10 had a second spike without an eligible current-target edge, one was adjacent-clock only, 16 were ceiling-censored and none failed solely by lag. The fixed two-source gate remained unmet.
+Forge's scope-revision boundary probe and both exact-head CI jobs are green, but the handoff remains NON_EVIDENTIARY/NONCANONICAL, unallocated, outside RD006 and SB001, and worth zero scientific credit.
 
-At most one fresh prospective learner-boundary revision is recommended but not authorized. All result-bearing follow-up remains stopped pending fresh Evidence Analyst reconciliation.
-
-Production workers remain enabled except Relay under its intentional dependency-wait contract. No scheduler state changed.
+Managed production definitions remain consistent. No scheduler state changed.
