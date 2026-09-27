@@ -1,27 +1,28 @@
-# SparkBrain Fast Forge — epoch-fenced receipt rotation
+# SparkBrain Fast Forge — continuous scope-revision interaction ablation
 
 - schema_version: 2
-- generation_id: FORGE-20260927T184516+0900-EPOCH-FENCED-RECEIPT-ROTATION-CI-CLEAN
-- produced_at: 2026-09-27T18:45:16+09:00
-- forge_id: FORGE-EPOCH-FENCED-RECEIPT-ROTATION-A
+- generation_id: FORGE-20260927T194635+0900-CONTINUOUS-SCOPE-REVISION-ABLATION-CI-CLEAN
+- produced_at: 2026-09-27T19:46:35+09:00
+- forge_id: FORGE-CONTINUOUS-SCOPE-REVISION-ABLATION-A
 - status: FORGE_INTERESTING
 - recommended_handoff: SYSTEM_BUILD_INPUT
-- branch: forge/20260927-epoch-fenced-receipt-rotation-a
-- exact_prototype_head: af5fe79be6120a7fc385a441f33c9f4c25365f2c
-- ci_run: 36310182579
+- branch: forge/20260927-continuous-scope-revision-ablation-a
+- exact_prototype_head: 30b3179752200c5b5c1a04d64d412c00578aa9f1
+- ci_run: 36313445949
 - ci_result: SUCCESS
 - evidentiary_status: NON_EVIDENTIARY_NONCANONICAL_FORGE
 - scientific_credit: 0
 - new_scientific_result: false
 
-Added transport-only epoch fencing to the bounded, locked local outcome-revision store. Rotation is accepted only for the immediately following epoch and only when the caller's expected next sequence matches the locked checkpoint.
+Added a continuous synthetic interaction-ablation harness for the retained R6 integration loop. Both arms run the same internal scope router, allocator, coverage guard and transaction boundary. The connected arm stores evidence in the selected scope; the cut arm redirects the same evidence to one Assembly-wide overlay.
 
-Rotation hashes the retired epoch into a rolling chain digest, preserves the revision coordinator, and starts a fresh delivery namespace with empty current-epoch receipts and identity filter. Prior epochs and unopened future epochs fail closed; an identifier may be reused in a new epoch only because deliveries from retired epochs must carry their retired epoch and are rejected.
+Across an A/B/A/B return stream, both arms created/reused the same two scopes and committed 4/4 steps. Connected queries recovered A for the A context and B for the B context. The cut arm abstained for both after contradictory support mixed globally. In a single-context control, both arms selected A.
 
-New tests passed 8/8, focused chain 26/26, all Forge tests 103/103, Ruff, compileall and readiness passed. Exact prototype head `af5fe79be6120a7fc385a441f33c9f4c25365f2c` passed CI `36310182579` on Python 3.11 and 3.13 with full tests and bundle validation.
+New tests passed 6/6 and the related chain passed 65/65 locally. Exact prototype head `30b3179752200c5b5c1a04d64d412c00578aa9f1` passed GitHub CI `36313445949` on Python 3.11 and 3.13 with lint, readiness, full tests and bundle validation.
 
-This reduces to ordinary epoch fencing, log rotation, rolling hashing, POSIX advisory locking and atomic snapshot replacement. The digest is not an archive or membership proof; exact retired receipts are unrecoverable; a producer can lie about an epoch; coordinated producer/broker fencing is not supplied; coordinator and total checkpoint state are not generally bounded.
+This reduces to ordinary context-keyed state separation versus a shared accumulator. It is a hand-constructed fixture with fixed uncalibrated components, no established system comparator, no resource match and no noise/overlap stress. Usefulness does not establish general composition contribution or scientific novelty.
 
-Usefulness does not establish novelty. No SYSTEM_BUILD admission, comparative support, composition contribution or scientific result is established. RD006 R159/R152, SB001 and all scientific refs remain untouched.
+RD006 R153/R161, SB001 and all scientific refs remain untouched.
 
-History: reports/fast_forge/history/2026-09-27/1845-epoch-fenced-receipt-rotation-ci-clean.md
+History: reports/fast_forge/history/2026-09-27/1946-continuous-scope-revision-ablation-ci-clean.md
+
