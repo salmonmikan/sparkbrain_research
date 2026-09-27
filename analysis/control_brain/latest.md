@@ -1,20 +1,18 @@
 # SparkBrain Control Brain — Latest
 
 schema_version: 2
-generation_id: CTRL-20260927T235243+0900-R98-RD006-V4-AUDIT-RECONCILIATION
-produced_at: 2026-09-27T23:52:43+09:00
-history_path: analysis/control_brain/history/2026-09-27/2352-R98.md
+generation_id: CTRL-20260928T035335+0900-R99-SB002-POSTMERGE-DEFECT-GOVERNANCE
+produced_at: 2026-09-28T03:53:35+09:00
+history_path: analysis/control_brain/history/2026-09-28/0353-R99.md
 
-P0 remains CLOSED_P0_RECOVERED. The dedicated incident record, Control latest/state and current writer evidence remain consistent; no recurrence of the prior partial-publication pattern or active pointer debt is observed.
+P0 remains CLOSED_P0_RECOVERED with no active pointer debt or recurrence.
 
-Evidence Analyst R157 authorized one read-only preserved-output audit. MAIN R163 completed it at exact audit head `abbadcd1a803199501a33379d4e9030967a9655c`, with successful exact-head CI. Of 400 inspected ON return clocks, 184 lacked another source in the preserved construction, 205 lacked a second hidden spike and 11 lacked two eligible edges to the current return target. Sixteen clocks remain ceiling-censored. No observed clock had the required two eligible sources.
+Canonical science remains 35/35 terminal, active 0, scientifically queued 0, with 8 consumed FORMAL identities. No result-bearing scientific execution is authorized.
 
-The 58 PORT-to-hidden update targets could be located descriptively, but no direct event-ID join or matched counterfactual exists. MAIN therefore returned NO_PROPOSAL. RD006 v4 remains D0_INCONCLUSIVE_BOUNDED_EXPLOSION, RESULT_EXPOSED_DEVELOPMENT, scientific credit 0. No further dynamics, rescore, E0/E1/ES, capability/held-out work, scaling or reservoir comparison is authorized pending fresh Evidence Analyst reconciliation.
+SB002 was merged through PR #158 as exact authorized tree `f4806298df53d12a6c1845aaa78ebd8e0c126a73` into main commit `76b0cc94edf0fec2e46d69978e0794a37759b862`.
 
-SB001 remains INTEGRATED_COMPLETE / NON_EVIDENTIARY_BUILD. Theory R11 remains NO_PROPOSAL / NO_REVISIT_PROPOSAL.
+After merge, three concrete engineering defects were reported by Codex and independently confirmed on current main: duplicate evidence can be accumulated without stable evidence identity (P1), checkpoint route-ledger completeness is not enforced (P2), and checkpoint evidence sequence identities are not globally validated as the unique range 1..sequence (P2).
 
-Forge's causal online two-centroid router is CI-clean and optional future SYSTEM_BUILD input only. It removes future-stream context on a bounded synthetic fixture and fails closed on ambiguous, unsupported and identical observations. Fixed K=2, hand-set thresholds, order dependence and the narrow fixture leave comparative support, composition contribution and scientific novelty unestablished.
+Review itself remains optional and is not a gate. The concrete defects are real engineering defects under HUMAN-20260926-004. SB002 remains INTEGRATED / NON_EVIDENTIARY_BUILD / scientific credit 0, but repair plus fresh bounded verification is now required before treating the implementation as clean.
 
-Live fleet definitions remain consistent: Control, Evidence Analyst, MAIN, Utility, Fast Forge, Methodology, External Science and Current State Brief are enabled. Relay remains intentionally DEPENDENCY_WAIT_SUSPENDED because no safe continuation package exists. No scheduler state changed.
-
-Forge's handoff-attempt field remains stale PENDING despite verified final head, files and final-head CI. This is nonblocking telemetry-cache debt, not a P0 recurrence.
+Next authority owner: Evidence Analyst must reconcile the merge identity and these defects and define any science-invariant repair allocation. MAIN remains enabled but its current work item is complete and waiting for Analyst. Relay remains intentionally dependency-wait suspended. No scheduler state changed.

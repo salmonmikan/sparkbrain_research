@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260927T235243+0900-R98-RD006-V4-AUDIT-RECONCILIATION",
-  "produced_at": "2026-09-27T23:52:43+09:00",
+  "generation_id": "CTRL-20260928T035335+0900-R99-SB002-POSTMERGE-DEFECT-GOVERNANCE",
+  "produced_at": "2026-09-28T03:53:35+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
   "mode": "CONTROL_BRAIN",
   "policy_refs": {
-    "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7"
+    "main": "76b0cc94edf0fec2e46d69978e0794a37759b862",
+    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d"
   },
   "human_directives": {
     "HUMAN-20260925-002": "ACCEPT_COMPLETED_P0_RECOVERED_RETAIN_HARDENING",
@@ -17,18 +17,15 @@
     "HUMAN-20260922-005": "ACCEPT_ACTIVE_DEVELOPMENT_FLEXIBLE_EVIDENCE_RIGID"
   },
   "refs_observed": {
-    "control_before": "67890f4bf2366bf34d6b72e1ab982f377fea722e",
-    "evidence_analyst": "ff5246652823ab1c036f489ce3b410ffec37483f",
-    "main_reports": "5568912a42644582d9fd763bd05fc94a17ecf233",
-    "rd006_v4_result": "50112626ef6a4da364e3fa9268e8feb0d723ea7f",
-    "rd006_v4_audit": "abbadcd1a803199501a33379d4e9030967a9655c",
-    "methodology": "c6e68a991f973fa30c7edb101cbe840d5a561c17",
-    "external_science": "c4066afb33fdb6a67d53fa1dc9eaabfc78d211a3",
-    "utility": "f196d437c28fa377f925c832c3e1df6ba1fd2ecb",
-    "forge_handoff": "164ce39b99fbfa7146e439215c804c638305dea3",
-    "forge_prototype": "f980c13d984460f158a95e8181239db8d19c8468",
-    "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7"
+    "control_before": "57fe5474dea444fe21cd4e1be9b4c81be8cd582a",
+    "evidence_analyst": "6cedfd56ddc3e88e73441ea8b0db59932ccd90fb",
+    "main_reports": "282981a96148e071e2f985bf8b8f60563cda9563",
+    "main": "76b0cc94edf0fec2e46d69978e0794a37759b862",
+    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "sb002_authorized_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
+    "sb002_authorized_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
+    "sb002_merge_commit": "76b0cc94edf0fec2e46d69978e0794a37759b862",
+    "sb002_pr": 158
   },
   "science": {
     "canonical": 35,
@@ -37,58 +34,15 @@
     "scientifically_queued": 0,
     "consumed_formal_identities": 8,
     "h7": "CONSUMED_ONE_WAY_INCONCLUSIVE",
-    "new_scientific_result": false
+    "new_scientific_result": false,
+    "result_bearing_execution_authorized": false
   },
   "development": {
-    "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-    "phase": "RESULT_EXPOSED_DEVELOPMENT",
-    "owner": "MAIN_AUDIT_PUBLISHED_WAIT_EVIDENCE_ANALYST",
-    "analyst_generation": "EVA-20260927T230711+0900-R157-RD006-V4-POSTRESULT-RECONCILIATION",
-    "main_generation": "MAIN-20260927T233306+0900-PRIMARY-R163-RD006-V4-RETURN-ALIGNMENT-AUDIT",
-    "revision": "v4-preserved-output-return-alignment-audit",
-    "preserved_result_head": "50112626ef6a4da364e3fa9268e8feb0d723ea7f",
-    "audit_head": "abbadcd1a803199501a33379d4e9030967a9655c",
-    "audit_ci_run_id": 36326067694,
-    "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
-    "planned_on_clock_count": 416,
-    "inspected_on_clock_count": 400,
-    "ceiling_censored_clock_count": 16,
-    "eligibility_failure_classification": {
-      "NO_OTHER_SOURCE_IN_PRESERVED_CONSTRUCTION": 184,
-      "NO_SECOND_HIDDEN_SPIKE": 205,
-      "SPIKE_WITHOUT_ELIGIBLE_EDGE_TO_CURRENT_RETURN_TARGET": 11,
-      "ELIGIBLE_EDGE_BUT_LAG_OUTSIDE_0_5_TO_6_5_MS": 0,
-      "ADJACENT_CLOCK_NOT_SAME_CLOCK": 0
-    },
-    "one_eligible_source_clock_count": 7,
-    "two_eligible_source_clock_count": 0,
-    "required_eligible_sources": 2,
-    "port_to_hidden_update_linkage": {
-      "updates": 58,
-      "targets_located": 58,
-      "later_same_source_hidden_spike": 51,
-      "later_same_source_dynamic_eligibility": 6,
-      "causal_effect_identified": false
-    },
-    "recommendation": "NO_PROPOSAL",
-    "scientific_credit": 0,
-    "evidentiary_status": "DEVELOPMENT_DIAGNOSTIC_ZERO_CONFIRMATORY_CREDIT",
-    "next_action": "EVIDENCE_ANALYST_RECONCILE_EXACT_R163_AUDIT_HEAD",
-    "forbidden": [
-      "SECOND_V4_MATRIX",
-      "V4_RERUN_RETUNE_RESCORE",
-      "V5_DYNAMICS",
-      "E0_E1_ES",
-      "CAPABILITY_SCORING",
-      "HELD_OUT_ACCESS",
-      "EVENT_OR_SPIKE_CEILING_INCREASE",
-      "TOPOLOGY_TIMING_STIMULUS_THRESHOLD_WEIGHT_DELAY_GAIN_CHANGE",
-      "SCALE_EXPANSION",
-      "ONE_THREE_TEN_X_COMPARISON",
-      "RESERVOIR_OR_LIQUID_STATE_COMPARISON",
-      "HIDDEN_RETURN_LEARNER_ENABLE",
-      "SCIENTIFIC_PROMOTION_WITHOUT_FRESH_ANALYST"
-    ]
+    "active_scientific_object": null,
+    "rd005": "CONSUMED_ONE_WAY_UNCHANGED",
+    "rd006_v1_v4": "CLOSED_ZERO_CREDIT",
+    "result_bearing_execution_authorized": false,
+    "next_action": "NO_SCIENTIFIC_EXECUTION_PENDING_FRESH_ANALYST"
   },
   "methodology": {
     "generation": "METHCAL-20260927T222438+0900-R134-RD006-V4-POSTRESULT-CALIBRATION",
@@ -97,13 +51,55 @@
     "active_pointer_debt": []
   },
   "system_build": {
-    "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
-    "merge_commit": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "lifecycle": "INTEGRATED_COMPLETE",
-    "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-    "comparatively_supported": false,
-    "composition_contribution": "NOT_ESTABLISHED",
-    "scientific_credit": 0
+    "sb001": {
+      "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
+      "state": "INTEGRATED_COMPLETE",
+      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+      "comparatively_supported": false,
+      "composition_contribution": "NOT_ESTABLISHED",
+      "scientifically_novel": false,
+      "scientific_credit": 0
+    },
+    "sb002": {
+      "build_id": "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT",
+      "state": "INTEGRATED_POSTMERGE_CONCRETE_DEFECTS_WAIT_ANALYST_REPAIR_AUTHORITY",
+      "source_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
+      "source_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
+      "merge_commit": "76b0cc94edf0fec2e46d69978e0794a37759b862",
+      "pr_number": 158,
+      "built": true,
+      "prior_bounded_functional_verification": true,
+      "bounded_functional_verification_status": "CONCRETE_DEFECTS_DISCOVERED_POST_MERGE_REPAIR_AND_REVERIFY_REQUIRED",
+      "comparatively_supported": false,
+      "composition_contribution": "NOT_ESTABLISHED",
+      "scientifically_novel": false,
+      "scientific_credit": 0,
+      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+      "concrete_postmerge_defects": [
+        {
+          "severity": "P1",
+          "id": "SB002-DUPLICATE-EVIDENCE-IDENTITY",
+          "confirmed_on_main": true,
+          "summary": "Repeated delivery of the same evidence can accumulate support more than once because no stable evidence identity is preserved."
+        },
+        {
+          "severity": "P2",
+          "id": "SB002-CHECKPOINT-ROUTE-LEDGER-COMPLETENESS",
+          "confirmed_on_main": true,
+          "summary": "Checkpoint restore accepts router components with no corresponding route ledger entry because only subset inclusion is checked."
+        },
+        {
+          "severity": "P2",
+          "id": "SB002-CHECKPOINT-GLOBAL-SEQUENCE-PERMUTATION",
+          "confirmed_on_main": true,
+          "summary": "Checkpoint restore does not require evidence record sequence values to be the unique complete range 1..sequence."
+        }
+      ],
+      "defect_source": "POST_MERGE_CODEX_REVIEW_INDEPENDENTLY_CONFIRMED_ON_MAIN",
+      "review_gate_status": "OPTIONAL_ADVISORY_NOT_A_GATE",
+      "next_action": "EVIDENCE_ANALYST_RECONCILE_MERGE_AND_AUTHORIZE_SCIENCE_INVARIANT_REPAIR_IF_APPROPRIATE",
+      "result_bearing_science_authorized": false
+    }
   },
   "forge": {
     "generation": "FORGE-20260927T234359+0900-CAUSAL-ONLINE-SCOPE-ROUTER-CI-CLEAN",
@@ -167,14 +163,14 @@
     "evidence_analyst": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R157",
+      "operational": "GREEN_ACTIVE_R160_WAIT_POSTMERGE_RECONCILIATION",
       "scheduler_id": "6ab792ba724c81919be1cd071ab045ba",
       "cadence": "HOURLY_AT_00"
     },
     "main": {
       "desired": "ENABLED",
       "actual": "ENABLED",
-      "operational": "GREEN_ACTIVE_R163_AUDIT_PUBLISHED_WAIT_ANALYST",
+      "operational": "GREEN_ACTIVE_R165_SB002_INTEGRATED_WAIT_ANALYST",
       "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b",
       "cadence": "HOURLY_AT_15"
     },
@@ -227,10 +223,10 @@
     "changed": false
   },
   "scheduler_health": {
-    "classification": "GREEN_RECOVERED_WITH_MINOR_NONBLOCKING_TELEMETRY_DEBT",
+    "classification": "GREEN_WITH_SB002_ENGINEERING_DEFECT_REPAIR_PENDING",
     "unexplained_current_production_off": false,
     "change_required": false,
-    "live_definition_audit_at": "2026-09-27T23:52:43+09:00"
+    "live_definition_audit_at": "2026-09-28T03:53:35+09:00"
   },
   "blue_green": {
     "current_fleet": "GREEN_PRODUCTION",
@@ -239,7 +235,7 @@
   },
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "branch_head_before": "67890f4bf2366bf34d6b72e1ab982f377fea722e",
+    "branch_head_before": "57fe5474dea444fe21cd4e1be9b4c81be8cd582a",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
     "maximum_attempts": 5,
@@ -254,5 +250,5 @@
     "consumed_formal_rerun_retune_rescore": false,
     "scheduler_state_changed": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-27/2352-R98.md"
+  "history_path": "analysis/control_brain/history/2026-09-28/0353-R99.md"
 }
