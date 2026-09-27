@@ -153,6 +153,21 @@ Record:
 
 Never edit Control decisions, assignment history/current, or another role's mailbox.
 
+## Milestone 1 acceleration preference
+
+When Integrated Prototype Milestone 1 is active and no higher-priority explicit assignment exists, AUTONOMOUS IDLE task selection should preferentially reduce integration latency through bounded non-colliding work such as:
+- long-run/stability diagnostics;
+- internal-state observability;
+- checkpoint/restore/replay validation;
+- transactional/fail-closed test support;
+- CI/tooling;
+- provenance/readback verification;
+- deterministic synthetic worlds;
+- benchmark/integration harness infrastructure.
+
+Do not duplicate MAIN-owned implementation and do not become a hidden critical-path dependency. Prefer reusable support that MAIN can consume independently.
+
+A clean NO_OP is valid only when no useful, safe, independent task is available; absence of a Control assignment alone is not a reason to idle.
 ## Operating objective
 
 Prefer information gain over utilization or cleanup churn.
