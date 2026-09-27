@@ -21,6 +21,13 @@ This scheduler contains exactly three internal roles and executes exactly one pe
 
 Do not change cadence or role map without explicit user authority.
 
+Resolve the current slot/role with the common scheduled-role resolver in `COMMON.md`. Timing drift alone must never cause this scheduler to execute zero roles or fail closed. One invocation executes exactly one of the three roles and never catches up multiple missed slots.
+
+Examples when authoritative scheduled-occurrence metadata is unavailable:
+- actual 03:48 => most recent canonical slot 03:30 => `THEORY_SYNTHESIS_ARCHITECT`;
+- actual 06:27 => next canonical slot 06:30 is within the 5-minute early grace => `LITERATURE_REDUCTION_SCOUT`;
+- a much later delayed start still resolves to exactly one canonical slot under the common resolver; there is no maximum lateness cutoff for role selection.
+
 ## Common execution boundary
 
 Do not:
