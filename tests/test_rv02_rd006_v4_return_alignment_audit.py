@@ -10,7 +10,11 @@ from scripts.audit_rv02_rd006_v4_return_alignment import (
     build_audit,
 )
 
-ARTIFACT = Path(\n    "artifacts/rv02_rd006/"\n    "external_learning_reachability_a_v4_d0_execution/"\n    "attempt-001/artifact.json.gz"\n)
+ARTIFACT = Path(
+    "artifacts/rv02_rd006/"
+    "external_learning_reachability_a_v4_d0_execution/"
+    "attempt-001/artifact.json.gz"
+)
 
 
 def test_exact_preserved_result_and_no_dynamic_execution() -> None:
@@ -36,7 +40,10 @@ def test_each_planned_on_clock_has_one_exclusive_class() -> None:
         NO_OTHER_CONSTRUCTION_SOURCE: 184,
     }
     assert sum(audit["aggregate_cause_counts"].values()) == 416
-    assert all(sum(cell["cause_counts"].values()) == cell["planned_clock_count"] for cell in audit["cells"])
+    assert all(
+        sum(cell["cause_counts"].values()) == cell["planned_clock_count"]
+        for cell in audit["cells"]
+    )
 
 
 def test_fixed_gate_deficit_and_censoring_are_bounded() -> None:
@@ -54,7 +61,10 @@ def test_fixed_gate_deficit_and_censoring_are_bounded() -> None:
         if row["cause"] == CEILING_CENSORED
     ]
     assert len(censored) == 16
-    assert all(row["observed"] is False and row["dynamic_gate_deficit"] is None for row in censored)
+    assert all(
+        row["observed"] is False and row["dynamic_gate_deficit"] is None
+        for row in censored
+    )
 
 
 def test_port_to_hidden_linkage_is_descriptive_only() -> None:
@@ -75,4 +85,3 @@ def test_audit_stops_without_a_new_invariant_proposal() -> None:
     assert audit["recommendation"]["implementation_or_execution_authorized"] is False
     assert audit["later_e0_e1_es_authorized"] is False
     assert audit["scale_expansion_authorized"] is False
-

@@ -12,11 +12,17 @@ from typing import Any
 
 AUDIT_SCHEMA_VERSION = 1
 AUDIT_ID = "RD006_V4_PRESERVED_OUTPUT_RETURN_ALIGNMENT_AUDIT"
-ANALYST_GENERATION_ID = "EVA-20260927T230711+0900-R157-RD006-V4-POSTRESULT-RECONCILIATION"
+ANALYST_GENERATION_ID = (
+    "EVA-20260927T230711+0900-R157-RD006-V4-POSTRESULT-RECONCILIATION"
+)
 PRESERVED_RESULT_HEAD = "50112626ef6a4da364e3fa9268e8feb0d723ea7f"
 PRESERVED_SOURCE_HEAD = "44bef35c90f24a11e27000e3c328778733da92b6"
-EXPECTED_ARTIFACT_SHA256 = "e40a88cd596b79d1a6b78030c8f7ea3baac5fc5c8579551b7494b37f6b89d3ba"
-EXPECTED_ARTIFACT_FILE_SHA256 = "62b3ffb6d52926b583b006799d88511c9f840b626bc776cdcaf6ee2f857faf61"
+EXPECTED_ARTIFACT_SHA256 = (
+    "e40a88cd596b79d1a6b78030c8f7ea3baac5fc5c8579551b7494b37f6b89d3ba"
+)
+EXPECTED_ARTIFACT_FILE_SHA256 = (
+    "62b3ffb6d52926b583b006799d88511c9f840b626bc776cdcaf6ee2f857faf61"
+)
 
 NO_SECOND_HIDDEN_SPIKE = "NO_SECOND_HIDDEN_SPIKE"
 SPIKE_WITHOUT_EDGE = "SPIKE_WITHOUT_ELIGIBLE_EDGE_TO_CURRENT_RETURN_TARGET"
@@ -35,7 +41,13 @@ CAUSES = (
 
 
 def _canonical_json(value: object) -> str:
-    return json.dumps(value, allow_nan=False, ensure_ascii=False, separators=(",", ":"), sort_keys=True)
+    return json.dumps(
+        value,
+        allow_nan=False,
+        ensure_ascii=False,
+        separators=(",", ":"),
+        sort_keys=True,
+    )
 
 
 def _digest(value: object) -> str:
@@ -60,7 +72,9 @@ def _load_preserved_artifact(path: Path) -> dict[str, Any]:
     claimed = payload.pop("artifact_sha256", None)
     computed = _digest(payload)
     if claimed != computed or claimed != EXPECTED_ARTIFACT_SHA256:
-        raise ValueError(f"preserved artifact payload identity mismatch: claimed={claimed} computed={computed}")
+        raise ValueError(
+            f"preserved artifact payload identity mismatch: claimed={claimed} computed={computed}"
+        )
     if artifact.get("source_git_sha") != PRESERVED_SOURCE_HEAD:
         raise ValueError("preserved source identity mismatch")
     if artifact.get("matrix_status") != "D0_INCONCLUSIVE_BOUNDED_EXPLOSION":
@@ -73,24 +87,32 @@ def _source_ids(rows: list[dict[str, Any]], predicate=lambda _row: True) -> set[
 
 
 def _eligible_source_ids(clock: dict[str, Any]) -> set[int]:
-    return _source_ids(clock["hidden_spike_diagnostics"], lambda row: bool(row["dynamically_eligible"]))
+    return _source_ids(
+        clock["hidden_spike_diagnostics"], lambda row: bool(row["dynamically_eligible"])
+    )
 
 
-def _classify_clock(clocks: list[dict[str, Any]], index: int, required_sources: int) -> dict[str, Any]:
+def _classify_clock(
+    clocks: list[dict[str, Any]], index: int, required_sources: int
+) -> dict[str, Any]:
     clock = clocks[index]
     diagnostics = clock["hidden_spike_diagnostics"]
     structural = _source_ids(
-        clock["structurally_connected_hidden_sources"], lambda row: bool(row["edge_non_negative"])
+        clock["structurally_connected_hidden_sources"],
+        lambda row: bool(row["edge_non_negative"]),
     )
     spiking = _source_ids(diagnostics)
     eligible_edge = _source_ids(
-        diagnostics, lambda row: bool(row["edge_exists"]) and bool(row["edge_non_negative"])
+        diagnostics,
+        lambda row: bool(row["edge_exists"]) and bool(row["edge_non_negative"]),
     )
     outside = _source_ids(
         diagnostics,
-        lambda row: bool(row["edge_exists"])
-        and bool(row["edge_non_negative"])
-        and not bool(row["lag_in_fixed_window"]),
+        lambda row: (
+            bool(row["edge_exists"])
+            and bool(row["edge_non_negative"])
+            and not bool(row["lag_in_fixed_window"])
+        ),
     )
     eligible = _eligible_source_ids(clock)
     adjacent_rows = []
@@ -102,7 +124,10 @@ def _classify_clock(clocks: list[dict[str, Any]], index: int, required_sources: 
         sources = _eligible_source_ids(adjacent_clock)
         adjacent_eligible.update(sources)
         adjacent_rows.append(
-            {"return_event_id": adjacent_clock["return_event_id"], "eligible_hidden_source_ids": sorted(sources)}
+            {
+                "return_event_id": adjacent_clock["return_event_id"],
+                "eligible_hidden_source_ids": sorted(sources),
+            }
         )
 
     if len(eligible) >= required_sources:
@@ -110,7 +135,11 @@ def _classify_clock(clocks: list[dict[str, Any]], index: int, required_sources: 
     if len(structural) < required_sources:
         cause = NO_OTHER_CONSTRUCTION_SOURCE
     elif len(spiking) >= required_sources:
-        cause = LAG_OUTSIDE if len(eligible_edge) >= required_sources and outside else SPIKE_WITHOUT_EDGE
+        cause = (
+            LAG_OUTSIDE
+            if len(eligible_edge) >= required_sources and outside
+            else SPIKE_WITHOUT_EDGE
+        )
     elif len(eligible | adjacent_eligible) >= required_sources:
         cause = ADJACENT_ONLY
     else:
@@ -138,7 +167,9 @@ def _counter_payload(counter: Counter[str]) -> dict[str, int]:
 
 def _update_linkage(cell: dict[str, Any]) -> dict[str, Any]:
     clocks = cell["return_clocks"]
-    return_times = {str(row["return_event_id"]): float(row["return_time_ms"]) for row in clocks}
+    return_times = {
+        str(row["return_event_id"]): float(row["return_time_ms"]) for row in clocks
+    }
     spikes: set[tuple[int, float]] = set()
     eligible_occurrences: set[tuple[int, float]] = set()
     for clock in clocks:
@@ -146,7 +177,9 @@ def _update_linkage(cell: dict[str, Any]) -> dict[str, Any]:
             spikes.add((int(spike["unit_id"]), float(spike["time_ms"])))
         for row in clock["hidden_spike_diagnostics"]:
             if bool(row["dynamically_eligible"]):
-                eligible_occurrences.add((int(row["source_id"]), float(row["spike_time_ms"])))
+                eligible_occurrences.add(
+                    (int(row["source_id"]), float(row["spike_time_ms"]))
+                )
 
     rows = []
     for update in cell["ordinary_updates"]:
@@ -154,13 +187,21 @@ def _update_linkage(cell: dict[str, Any]) -> dict[str, Any]:
             continue
         source_time = return_times.get(str(update["source_event_id"]))
         if source_time is None:
-            raise ValueError("PORT_TO_HIDDEN source event is absent from preserved return clocks")
+            raise ValueError(
+                "PORT_TO_HIDDEN source event is absent from preserved return clocks"
+            )
         target_id = int(update["target_id"])
         target_time = source_time + float(update["lag_ms"])
         target_seen = (target_id, target_time) in spikes
-        later = sorted(time for source, time in spikes if source == target_id and time > target_time)
+        later = sorted(
+            time
+            for source, time in spikes
+            if source == target_id and time > target_time
+        )
         later_eligible = sorted(
-            time for source, time in eligible_occurrences if source == target_id and time > target_time
+            time
+            for source, time in eligible_occurrences
+            if source == target_id and time > target_time
         )
         rows.append(
             {
@@ -171,15 +212,25 @@ def _update_linkage(cell: dict[str, Any]) -> dict[str, Any]:
                 "target_hidden_spike_time_ms_inferred_from_source_plus_lag": target_time,
                 "target_hidden_spike_located_by_id_and_time": target_seen,
                 "later_same_source_hidden_spike_count": len(later),
-                "first_later_same_source_hidden_spike_time_ms": later[0] if later else None,
+                "first_later_same_source_hidden_spike_time_ms": later[0]
+                if later
+                else None,
                 "later_same_source_dynamic_eligible_spike_count": len(later_eligible),
-                "first_later_same_source_dynamic_eligible_spike_time_ms": later_eligible[0] if later_eligible else None,
+                "first_later_same_source_dynamic_eligible_spike_time_ms": later_eligible[
+                    0
+                ]
+                if later_eligible
+                else None,
             }
         )
     return {
         "port_to_hidden_update_count": len(rows),
-        "target_hidden_spike_located_count": sum(row["target_hidden_spike_located_by_id_and_time"] for row in rows),
-        "updates_followed_by_later_same_source_hidden_spike": sum(bool(row["later_same_source_hidden_spike_count"]) for row in rows),
+        "target_hidden_spike_located_count": sum(
+            row["target_hidden_spike_located_by_id_and_time"] for row in rows
+        ),
+        "updates_followed_by_later_same_source_hidden_spike": sum(
+            bool(row["later_same_source_hidden_spike_count"]) for row in rows
+        ),
         "updates_followed_by_later_same_source_dynamic_eligible_spike": sum(
             bool(row["later_same_source_dynamic_eligible_spike_count"]) for row in rows
         ),
@@ -189,7 +240,11 @@ def _update_linkage(cell: dict[str, Any]) -> dict[str, Any]:
 
 def build_audit(preserved_artifact_path: Path) -> dict[str, Any]:
     artifact = _load_preserved_artifact(preserved_artifact_path)
-    required = int(artifact["dynamic_gate_definition"]["minimum_distinct_sources_same_return_clock"])
+    required = int(
+        artifact["dynamic_gate_definition"][
+            "minimum_distinct_sources_same_return_clock"
+        ]
+    )
     if required != 2:
         raise ValueError("preserved gate is not the fixed two-source gate")
 
@@ -210,7 +265,9 @@ def build_audit(preserved_artifact_path: Path) -> dict[str, Any]:
         observed_ids = [row["return_event_id"] for row in clocks]
         reference_ids = [row["return_event_id"] for row in reference]
         if observed_ids != reference_ids[:inspected]:
-            raise ValueError(f"ON clocks are not the paired preserved prefix for {family}")
+            raise ValueError(
+                f"ON clocks are not the paired preserved prefix for {family}"
+            )
 
         counter = Counter[str]()
         clock_rows = []
@@ -245,10 +302,14 @@ def build_audit(preserved_artifact_path: Path) -> dict[str, Any]:
             {
                 "family": family,
                 "execution_cell_id": cell["execution_cell_id"],
-                "completion_class": "COMPLETE" if bool(cell["complete_non_exploded"]) else "BOUNDED",
+                "completion_class": "COMPLETE"
+                if bool(cell["complete_non_exploded"])
+                else "BOUNDED",
                 "planned_clock_count": planned,
                 "inspected_clock_count": inspected,
-                "distinct_hidden_source_count": int(cell["distinct_hidden_source_count"]),
+                "distinct_hidden_source_count": int(
+                    cell["distinct_hidden_source_count"]
+                ),
                 "observed_hidden_spike_count": int(cell["observed_hidden_spike_count"]),
                 "cause_counts": _counter_payload(counter),
                 "port_to_hidden_update_linkage": linkage,
@@ -281,7 +342,9 @@ def build_audit(preserved_artifact_path: Path) -> dict[str, Any]:
         "held_out_use": False,
         "fixed_gate": {
             "required_distinct_hidden_sources_same_clock": required,
-            "lag_window_ms": artifact["dynamic_gate_definition"]["observed_spike_to_return_lag_window_ms"],
+            "lag_window_ms": artifact["dynamic_gate_definition"][
+                "observed_spike_to_return_lag_window_ms"
+            ],
             "unchanged": True,
         },
         "classification_precedence": [
@@ -299,7 +362,9 @@ def build_audit(preserved_artifact_path: Path) -> dict[str, Any]:
             "minimum_observed_clock_deficit": min(deficits),
             "maximum_observed_clock_deficit": max(deficits),
             "sum_over_inspected_on_clocks": sum(deficits),
-            "unobserved_ceiling_censored_on_clocks_excluded": aggregate[CEILING_CENSORED],
+            "unobserved_ceiling_censored_on_clocks_excluded": aggregate[
+                CEILING_CENSORED
+            ],
         },
         "port_to_hidden_update_linkage_aggregate": dict(update_aggregate),
         "linkage_interpretation": {
