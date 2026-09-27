@@ -1,0 +1,18 @@
+{
+  "artifact_file_sha256": "ad7dc60af79681a30d67f1c0d2a4e39607a8984122f52bf9a65949950772b3f9",
+  "artifact_path": "artifact.json.gz",
+  "artifact_sha256": "a71e324014b92ecf5680608f60f78e431c192f353d29af0633193546eec7a8da",
+  "artifact_uncompressed_sha256": "567293813f6391fc6fae528fb4043deb3da75eeaad6a6ad2aeb73c008b8fc4f5",
+  "bounded_cell_count": 1,
+  "capability_scoring": false,
+  "complete_cell_count": 11,
+  "execution_cell_count": 12,
+  "formal_execution": false,
+  "gate_open_cell_count": 0,
+  "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+  "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
+  "parent_static_preflight_head": "6b273e531c22729759cacabcced9df3319227a8e",
+  "protocol_id": "rv02-rd006-external-learning-reachability-a-v3-d0-execution",
+  "source_git_sha": "8867c0565e25a0c76749c12eec7f4c03238b7aef",
+  "status": "COMPLETED"
+}
