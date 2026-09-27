@@ -1137,3 +1137,26 @@ Control Brainは `ACCEPT / MODIFY / DEFER / REJECT` を独立判断し、既存�
 詳細Directive:
 `ops/human_directives/history/2026-09-28/HUMAN-20260928-001-accelerated-integrated-sparkbrain-completion.md`
 
+## HUMAN-20260928-002 — Fly-inspired Sensorimotor Integration Track
+
+Human status: `OPEN`  
+Created: `2026-09-28 JST`  
+Priority: `HIGH / PARALLEL SYSTEM INTEGRATION TRACK`
+
+### Intent
+
+昆虫・ショウジョウバエ神経系から着想したfly-like sensorimotor trackをSparkBrainへ追加する方向を検討する。A01 / RV02へ直接混ぜるのではなく、まず縮約fly-like topologyをFast Forgeでboundedに比較し、有用ならEvidence Analyst経由でSYSTEM_BUILDへ昇格する。
+
+初期比較は、fly-like structured topology / degree-preserving rewired topology / random sparse topologyを、unit/edge/input-output/resource/delay条件を可能な限り整合して比較する。BUILD候補名は `BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT` を例とするが、正確なID・順序はcurrent build ledgerに応じて変更可能。
+
+SYSTEM_BUILDでは、`WORLD → sensory/event → local sensorimotor loop → SparkBrain state/modulation → local action → WORLD` の継続閉ループを目標とし、高速micro-controlは下位local loop、SparkBrainは高位goal/modulationを担う方向を優先する。
+
+現行H9 / C07 fully-spiking lineとは分離し、historical hybrid C07をfully-spiking evidenceへ読み替えない。実FlyWire全脳/全CNS規模は初期必須条件にせず、縮約motifで情報を得た後に別途再評価する。
+
+Forge / SYSTEM_BUILDの観測はNON_EVIDENTIARYのまま維持し、topology固有の科学的主張へ進む場合はfresh candidate / prospective protocol / matched reductions / falsifierを新規に要求する。
+
+HUMAN-20260928-001のIntegrated Prototype Milestone 1を不必要に遅らせず、当面はparallel Forge trackとして開始可能かをControl / Analystが評価する。
+
+Full directive:
+`ops/human_directives/history/2026-09-28/HUMAN-20260928-002-flylike-sensorimotor-integration-track.md`
+
