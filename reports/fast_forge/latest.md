@@ -1,28 +1,25 @@
-# SparkBrain Fast Forge — continuous scope-revision interaction ablation
+# SparkBrain Fast Forge — scope-revision boundary stress probe
 
 - schema_version: 2
-- generation_id: FORGE-20260927T194635+0900-CONTINUOUS-SCOPE-REVISION-ABLATION-CI-CLEAN
-- produced_at: 2026-09-27T19:46:35+09:00
-- forge_id: FORGE-CONTINUOUS-SCOPE-REVISION-ABLATION-A
-- status: FORGE_INTERESTING
-- recommended_handoff: SYSTEM_BUILD_INPUT
-- branch: forge/20260927-continuous-scope-revision-ablation-a
-- exact_prototype_head: 30b3179752200c5b5c1a04d64d412c00578aa9f1
-- ci_run: 36313445949
-- ci_result: SUCCESS
-- evidentiary_status: NON_EVIDENTIARY_NONCANONICAL_FORGE
+- generation_id: `FORGE-20260927T204727+0900-SCOPE-REVISION-BOUNDARY-STRESS-CI-CLEAN`
+- produced_at: `2026-09-27T20:47:27+09:00`
+- forge_id: `FORGE-SCOPE-REVISION-BOUNDARY-STRESS-A`
+- status: `FORGE_INTERESTING`
+- recommended_handoff: `SYSTEM_BUILD_INPUT`
+- branch: `forge/20260927-scope-revision-boundary-stress-a`
+- exact_prototype_head: `89a51ba5a9506afc0f0f77b7ecccca224cd42ce4`
+- ci_run: `36316697157`
+- ci_result: `SUCCESS`
+- evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
 - scientific_credit: 0
 - new_scientific_result: false
 
-Added a continuous synthetic interaction-ablation harness for the retained R6 integration loop. Both arms run the same internal scope router, allocator, coverage guard and transaction boundary. The connected arm stores evidence in the selected scope; the cut arm redirects the same evidence to one Assembly-wide overlay.
+The prior connected-versus-cut scope-revision ablation was extended with three fixed boundary cases. Under moderate overlap and small within-cluster jitter, both arms formed the same two scopes; the connected arm recovered A/B while the cut arm abstained, and both rejected an ambiguous midpoint. With observations inside the fixed reuse radius, only one scope formed and the connected arm failed to recover B. With one conflicting A-cluster label, the connected arm retained the two per-scope majorities while the cut arm returned the global majority for both contexts.
 
-Across an A/B/A/B return stream, both arms created/reused the same two scopes and committed 4/4 steps. Connected queries recovered A for the A context and B for the B context. The cut arm abstained for both after contradictory support mixed globally. In a single-context control, both arms selected A.
+New tests passed 5/5, the related chain passed 49/49 and all Forge tests passed 114/114 locally. Ruff, compileall, readiness and bundle validation passed. Exact prototype head `89a51ba5a9506afc0f0f77b7ecccca224cd42ce4` passed GitHub CI `36316697157` on Python 3.11 and 3.13 with lint, readiness, full tests and bundle validation.
 
-New tests passed 6/6 and the related chain passed 65/65 locally. Exact prototype head `30b3179752200c5b5c1a04d64d412c00578aa9f1` passed GitHub CI `36313445949` on Python 3.11 and 3.13 with lint, readiness, full tests and bundle validation.
+This reduces to nearest-centroid routing with a reject option and per-key evidence accumulation. The within-radius failure is an explicit limitation: the prototype is not general latent-cause discovery. It remains hand-built, uncalibrated and unmatched against system comparators; no general composition contribution, robustness or scientific novelty is established.
 
-This reduces to ordinary context-keyed state separation versus a shared accumulator. It is a hand-constructed fixture with fixed uncalibrated components, no established system comparator, no resource match and no noise/overlap stress. Usefulness does not establish general composition contribution or scientific novelty.
+RD006 v4, SB001, MAIN/Relay ownership and all scientific refs remain untouched.
 
-RD006 R153/R161, SB001 and all scientific refs remain untouched.
-
-History: reports/fast_forge/history/2026-09-27/1946-continuous-scope-revision-ablation-ci-clean.md
-
+History: `reports/fast_forge/history/2026-09-27/2047-scope-revision-boundary-stress-ci-clean.md`

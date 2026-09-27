@@ -1,46 +1,44 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260927T194635+0900-CONTINUOUS-SCOPE-REVISION-ABLATION-CI-CLEAN",
-  "produced_at": "2026-09-27T19:46:35+09:00",
-  "forge_id": "FORGE-CONTINUOUS-SCOPE-REVISION-ABLATION-A",
+  "generation_id": "FORGE-20260927T204727+0900-SCOPE-REVISION-BOUNDARY-STRESS-CI-CLEAN",
+  "produced_at": "2026-09-27T20:47:27+09:00",
+  "forge_id": "FORGE-SCOPE-REVISION-BOUNDARY-STRESS-A",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260927-continuous-scope-revision-ablation-a",
-  "exact_head": "30b3179752200c5b5c1a04d64d412c00578aa9f1",
+  "branch": "forge/20260927-scope-revision-boundary-stress-a",
+  "exact_head": "89a51ba5a9506afc0f0f77b7ecccca224cd42ce4",
   "source_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-  "source_forge_head": "13d523fd2aab2f14842ff5a5722946a694b5322c",
-  "target_capability": "compare a connected internal-scope-to-revision loop against a connection-cut arm on the same ordered synthetic return stream",
+  "source_forge_head": "6914ddd14e2141ff76dcd18e9153406cb3e82b02",
+  "target_capability": "characterize overlap, ambiguity and one-label-conflict boundaries of the connected internal-scope-to-revision fixture",
   "prototype": {
     "files": [
-      "forge_prototypes/continuous_scope_revision_ablation.py",
-      "forge_prototypes/continuous_scope_revision_ablation.md",
-      "tests/test_forge_continuous_scope_revision_ablation.py"
+      "forge_prototypes/scope_revision_boundary_stress.py",
+      "forge_prototypes/scope_revision_boundary_stress.md",
+      "tests/test_forge_scope_revision_boundary_stress.py"
     ],
-    "public_inputs": [
-      "prediction_pool_snapshot",
-      "observation",
-      "observed_value",
-      "late_evidence_strength"
-    ],
+    "case_count": 3,
     "verified_behaviors": [
-      "matched_router_allocator_guard_transaction_and_commit_count_across_arms",
-      "connected_arm_separates_contradictory_support_by_internal_scope",
-      "connected_arm_recovers_A_and_B_after_context_return",
-      "connection_cut_arm_abstains_after_global_support_collision",
-      "single_context_control_succeeds_in_both_arms",
-      "unexposed_outcome_no_write_in_both_arms",
-      "query_inspection_does_not_mutate_live_state",
-      "checkpoint_restore_reproduces_query_and_state",
+      "moderate_overlap_and_small_jitter_preserve_two_internal_scopes",
+      "connected_arm_recovers_A_and_B_under_moderate_overlap",
+      "cut_arm_abstains_after_global_support_collision",
+      "ambiguous_midpoint_is_rejected_by_both_arms",
+      "within_reuse_radius_collision_forms_one_scope_and_connected_arm_cannot_recover_B",
+      "single_conflicting_label_preserves_only_context_specific_majorities_in_connected_arm",
+      "deterministic_serializable_report",
       "no_caller_scope_regime_episode_truth_or_evaluator_identity"
     ]
   },
   "validation": {
-    "new_tests": "6/6 PASS",
-    "focused_chain": "65/65 PASS",
+    "new_tests": "5/5 PASS",
+    "focused_chain": "49/49 PASS",
+    "forge_tests": "114/114 PASS",
     "ruff": "PASS",
     "compileall": "PASS",
-    "ci_run_id": 36313445949,
-    "ci_head": "30b3179752200c5b5c1a04d64d412c00578aa9f1",
+    "local_readiness": "PASS",
+    "local_bundle_validation": "PASS",
+    "local_full_repository_tests": "COLLECTION_BLOCKED_MISSING_OPTIONAL_FASTAPI_AND_TORCH",
+    "ci_run_id": 36316697157,
+    "ci_head": "89a51ba5a9506afc0f0f77b7ecccca224cd42ce4",
     "ci_status": "completed",
     "ci_conclusion": "success",
     "python_311": "SUCCESS",
@@ -48,46 +46,47 @@
     "full_repository_tests": "SUCCESS",
     "bundle_validation": "SUCCESS"
   },
-  "ordinary_reduction": "deterministic interaction ablation of context-keyed state separation versus a shared global accumulator",
-  "engineering_usefulness": "provides an executable R6 connection ablation showing fixture-level dependence on scope-specific revision state while matching routing and commit counts",
+  "observations": {
+    "moderate_overlap": "CONNECTED_A_B_CUT_ABSTAINS_MIDPOINT_REJECTED",
+    "within_reuse_radius": "ONE_SCOPE_CONNECTED_B_ABSTAINS_EXPLICIT_FAILURE_BOUNDARY",
+    "single_conflicting_label": "CONNECTED_PER_SCOPE_MAJORITIES_A_B_CUT_GLOBAL_MAJORITY_B_B"
+  },
+  "ordinary_reduction": "nearest-centroid allocation plus reject option plus per-key evidence accumulation versus one shared accumulator",
+  "engineering_usefulness": "provides a bounded regression surface showing both fixture-level benefit and the router-resolution failure boundary for an optional separately bound SYSTEM_BUILD",
   "limitations": [
-    "hand_constructed_two_cluster_stream",
-    "deliberately_easy_observation_separation",
+    "hand_constructed_one_dimensional_deterministic_cases",
     "fixed_uncalibrated_distances_temperatures_thresholds_evidence_gain_and_pool",
+    "one_conflicting_label_is_not_noise_robustness",
     "no_matched_hmm_bocpd_latent_cause_psr_reservoir_or_other_system_comparator",
-    "no_parameter_seed_noise_overlap_or_resource_study",
-    "global_overlay_is_only_one_possible_connection_cut",
-    "equal_event_and_commit_counts_do_not_establish_runtime_or_memory_match",
+    "no_parameter_seed_resource_or_scaling_study",
     "no_real_continuous_task_or_learned_observation_representation",
     "no_system_build_admission_or_external_validity"
   ],
   "claim_boundary": {
-    "component_function": "BOUNDED_CONTINUOUS_INTERACTION_ABLATION_TESTS_SUPPORTED",
+    "component_function": "BOUNDED_SYNTHETIC_BOUNDARY_TESTS_SUPPORTED",
     "system_build_admission": false,
     "comparatively_supported": false,
     "composition_contribution": "FIXTURE_LEVEL_DEPENDENCE_ONLY_NOT_GENERALIZED",
     "scientifically_novel": false,
     "scientific_credit": 0
   },
-  "collision_check": "PASS_ANALYST_R153_AND_MAIN_R161_OWN_RD006_V4_PREFLIGHT_AND_RECONCILIATION; RESULT_BEARING_RD006_STOP; RELAY_DEPENDENCY_WAIT; THEORY_R10_NO_PROPOSAL_RETAINS_R6; UTILITY_R153_HANDOFF_RECON_NO_OVERLAP; METHODOLOGY_R132; SB001_COMPLETE; ALL_SCIENTIFIC_REFS_UNTOUCHED",
+  "collision_check": "PASS_ANALYST_R155_AND_MAIN_R161_OWN_RD006_V4_ONE_SHOT_MATRIX; RELAY_DEPENDENCY_WAIT; THEORY_R10_NO_PROPOSAL; METHODOLOGY_R133; UTILITY_R153_NO_OVERLAP; SB001_COMPLETE; ALL_SCIENTIFIC_REFS_UNTOUCHED",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
-    "analyst_generation": "EVA-20260927T185823+0900-R153-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT",
-    "analyst_head": "3ab32e673ad23749da2283db4eab2aa3cf31b4ec",
+    "analyst_generation": "EVA-20260927T200932+0900-R155-R154-REF-METADATA-CORRECTION",
+    "analyst_head": "9c2ad87325834c01afed2282a882627438248964",
     "main_generation": "MAIN-20260927T193131+0900-PRIMARY-R161-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT",
     "main_reports_head": "08ae5aeb797f705a38fcd4e62598b16b179ea51e",
     "control_generation": "CTRL-20260927T185000+0900-R95-RD006-V3-CAUSAL-AUDIT",
     "control_head": "991241ea64657a13a1863e18c51e7a47eeb49dda",
-    "methodology_generation": "METHCAL-20260927T181947+0900-R132-RD006-V3-POSTRESULT-CALIBRATION",
-    "methodology_head": "6c0a1beaf7a146d995fc5ba6ed0cce004d686f09",
+    "methodology_generation": "METHCAL-20260927T201721+0900-R133-RD006-V4-PREMATRIX-CALIBRATION",
+    "methodology_head": "fda6ca14abb73203cc7aca8d99933a5a2871fa74",
     "utility_generation": "UTILITY-20260927T192800+0900-R153-V4-HANDOFF-RECON",
     "utility_head": "83418fc7abd1353db426fe062ac91e2ec4d92fec",
-    "literature_generation": "LIT-20260927T062709+0900-R45-RV02-RD006-REACHABILITY-91C4A8E2",
-    "audit_generation": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
     "theory_generation": "THEORY-20260927T192843+0900-R10-NO-PROPOSAL-EPOCH-FENCING-7C4E91A2",
     "theory_head": "e56c5b8c6b4f263265fb2f1b0ebe9b76d0ec22ac",
-    "source_forge_handoff": "13d523fd2aab2f14842ff5a5722946a694b5322c"
+    "source_forge_handoff": "6914ddd14e2141ff76dcd18e9153406cb3e82b02"
   },
   "metrics_this_run": {
     "scientific_novelty_probes": 0,
@@ -96,7 +95,8 @@
     "integration_prototypes": 1,
     "integration_useful": 1,
     "integration_ci_green": 1,
-    "interaction_ablations": 1
+    "boundary_cases": 3,
+    "explicit_failure_boundaries": 1
   },
   "publication": {
     "prototype_publication_attempts": 1,
@@ -111,5 +111,5 @@
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-27/1946-continuous-scope-revision-ablation-ci-clean.md"
+  "history_path": "reports/fast_forge/history/2026-09-27/2047-scope-revision-boundary-stress-ci-clean.md"
 }
