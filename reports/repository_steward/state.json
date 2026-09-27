@@ -1,18 +1,22 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260926T195000+0900-G22",
-  "produced_at": "2026-09-26T19:50:00+09:00",
-  "supersedes_generation_id": "STEWARD-20260926T075000+0900-G21",
+  "generation_id": "STEWARD-20260927T135000+0900-G23",
+  "produced_at": "2026-09-27T13:50:00+09:00",
+  "supersedes_generation_id": "STEWARD-20260926T195000+0900-G22",
   "repository": "salmonmikan/sparkbrain_research",
-  "main": "d16403414fc7abebd23075fc401240971b8eb91d",
+  "authority_scope": "REPOSITORY_STEWARD_GOVERNANCE_ONLY",
+  "policy_refs": {
+    "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
+    "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7"
+  },
   "inventories": {
-    "branches_total": 413,
-    "research_branches": 189,
-    "forge_branches": 24,
+    "branches_total": 434,
+    "research_branches": 191,
+    "forge_branches": 35,
     "system_build_branches": 1,
     "legacy_freeze_branches": 13,
     "preserve_branches": 26,
-    "ops_branches": 26,
+    "ops_branches": 34,
     "authoritative_namespace_refs": 9,
     "freeze_refs": 1,
     "sealed_refs": 1,
@@ -21,93 +25,106 @@
     "annotated_tag_objects": 5,
     "lightweight_authoritative_refs": 4
   },
-  "system_build": {
-    "ref": "system-build/sb001-predictive-state-revision-pilot-20260925",
-    "sha": "e9b93456a0c37e2d1393463c167912e0e3968817",
-    "ahead_of_main": 14,
-    "behind_main": 0,
-    "exact_head_ci_run": 36233791080,
-    "exact_head_ci": "success",
-    "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
-    "evidence_status": "NON_EVIDENTIARY_BUILD",
-    "open_pr_to_main": 152,
-    "pr_mergeable": true,
-    "fresh_current_head_review": false,
-    "analyst_generation": "R137"
-  },
   "immutable_refs": {
     "legacy_freeze_map_exact": true,
-    "mapped_preserve_pointers_exact": true,
     "legacy_freeze_rows": 13,
-    "mapped_preserve_rows": 16,
+    "mapped_unique_preserve_pointers_exact": true,
+    "mapped_unique_preserve_pointer_count": 15,
     "h7_lightweight_authoritative_refs_preserved": true,
     "mutated_this_run": false
+  },
+  "separation": {
+    "main_research_forge_system_build_ops_evidence": "INTACT",
+    "scientific_ref_mutated": false
+  },
+  "system_build": {
+    "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
+    "merge_commit": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
+    "lifecycle": "INTEGRATED_COMPLETE",
+    "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+    "scientific_credit": 0
+  },
+  "science": {
+    "canonical_candidates": 35,
+    "terminal": 35,
+    "active": 0,
+    "h7": "CONSUMED_ONE_WAY_INCONCLUSIVE",
+    "new_scientific_result": false
+  },
+  "current_development": {
+    "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
+    "main_generation": "MAIN-20260927T133210+0900-PRIMARY-R157-RD006-V2-STATIC-TOPOLOGY-AUDIT",
+    "pointer_set": "LATEST_STATE_LEASE_MATCH",
+    "evidentiary_status": "DEVELOPMENT_DIAGNOSTIC_ZERO_CONFIRMATORY_CREDIT",
+    "scientific_credit": 0
   },
   "protection": {
     "ruleset_count": 1,
     "main_ruleset": "protection_main",
     "main_ruleset_target": "DEFAULT_BRANCH_ONLY",
     "tag_namespace_ruleset": false,
-    "human_directive_20260919_002": "OPEN_DEFER_PROTECTION_DEPLOYMENT",
-    "issue_139": "OPEN_BODY_STALE_CORRECTION_REFUSED_PRE_GITHUB_X3"
+    "human_directive_20260919_002": "OPEN_DEFER_ADDITIONAL_PROTECTION_DEPLOYMENT",
+    "changed_this_run": false,
+    "branch_protection_detail_endpoint": "FORBIDDEN_TO_GITHUB_APP",
+    "ruleset_detail_readable": true
   },
-  "mapping": {
-    "rows_exact": true,
-    "summary_corrected_this_run": true,
-    "authoritative_refs": 9,
-    "annotated_tag_objects": 5,
-    "lightweight_tags": 4,
-    "repository_rulesets": 1,
-    "tag_namespace_rulesets": 0
+  "issue_139": {
+    "state": "OPEN",
+    "factual_body_corrected": true,
+    "mutation_attempts": 1,
+    "readback_verified": true,
+    "tag_protection_action": "DEFERRED"
   },
-  "promotion": {
-    "open_prs": [
-      148,
-      149,
-      151,
-      152
+  "p0": {
+    "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
+    "control_declared_status": "CLOSED_P0_RECOVERED",
+    "recovered_paths_confirmed": [
+      "EVIDENCE_ANALYST_R148",
+      "MAIN_R157",
+      "THEORY_R8"
     ],
-    "governance_tooling_prs": [
-      148,
-      149
-    ],
-    "p0_diagnostic_pr": 151,
-    "system_build_pr": 152,
-    "scientific_candidates": [],
-    "pr152_metadata_drift": "BODY_STILL_REFERENCES_OLD_HEAD_AND_R136"
+    "same_failure_recurrence_observed": false,
+    "repository_wide_outage_supported": false,
+    "governance_validation": "RECOVERED_PATHS_SUPPORTED_WITH_ONE_CONTROL_INCIDENT_RECORD_DEBT",
+    "control_incident_file_status": "OPEN_P0_STALE",
+    "control_latest_state_status": "CLOSED_P0_RECOVERED",
+    "active_pointer_debt": [
+      {
+        "path": "analysis/control_brain/incidents/INC-GITHUB-PERSISTENCE-20260925-001.md",
+        "owner": "CONTROL_BRAIN",
+        "required_action": "RECONCILE_TO_CLOSED_OR_EXPLICIT_HISTORICAL_RECORD"
+      }
+    ]
   },
-  "separation": {
-    "main_research_forge_build_evidence": "INTACT",
-    "scientific_pr_to_main": false
-  },
-  "incident": {
-    "id": "INC-GITHUB-PERSISTENCE-20260925-001",
-    "status": "OPEN_P0",
-    "repository_wide_write_outage_supported": false,
-    "principal_boundary": "ACTION_CLASS_OR_AUTOMATION_RUNTIME_MUTATION_CONTEXT_SELECTIVE_REFUSAL",
-    "issue139_mutation_attempts": 3,
-    "issue139_mutation_result": "FAILED_CLOSED_PRE_GITHUB_RUNTIME_SAFETY_REFUSAL",
-    "fresh_thread_create_pull_request_validation": "NOT_YET_TESTED"
-  },
-  "persistence_health": {
-    "branch_head_before": "d7453a5d008c6c0130170f5e1aad29b74d9d7f68",
-    "publication_method": "ATOMIC_GIT_TREE_COMMIT_NONFORCE_REF_UPDATE",
-    "retry_count": 0,
-    "persistence_complete_intent": true,
-    "readback_required": true
+  "fleet": {
+    "registry_alignment": "MATCHES_CONTROL",
+    "relay": "INTENTIONAL_DEPENDENCY_WAIT_SUSPENDED",
+    "unexplained_current_production_off": false,
+    "scheduler_changed": false
   },
   "mutations": {
+    "issue_metadata": true,
+    "steward_persistence_only": true,
     "scientific": false,
     "scheduler": false,
     "rulesets": false,
-    "issues_prs": false,
     "immutable_refs": false,
-    "steward_persistence_only": true,
-    "mapping_summary_only": true
+    "control_branch": false
   },
   "persistence": {
-    "history": "reports/repository_steward/history/2026-09-26/1950.md",
+    "history": "reports/repository_steward/history/2026-09-27/1350.md",
     "latest": "reports/repository_steward/latest.md",
-    "state": "reports/repository_steward/state.json"
+    "state": "reports/repository_steward/state.json",
+    "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
+    "attempt": 1,
+    "readback_required": true
+  },
+  "hard_floor": {
+    "experiment_dispatched": false,
+    "identity_consumed": false,
+    "scientific_ref_mutated": false,
+    "evidence_ref_mutated": false,
+    "terminal_reopened": false,
+    "consumed_formal_rerun_retune_rescore": false
   }
 }
