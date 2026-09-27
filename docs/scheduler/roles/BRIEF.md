@@ -87,6 +87,25 @@ State should be observable/saveable/replayable.
 
 Report direct SparkBrain implementations vs established/reference substitutes.
 
+## Integrated Prototype Milestone 1 tracking
+
+When Milestone 1 is active, report the distance to completion rather than only local build status.
+
+Track:
+- completed M1 components;
+- remaining components/interfaces;
+- current critical path;
+- parallel work;
+- concrete blockers/dependencies;
+- next 2–4 milestones;
+- whether rolling SYSTEM_BUILD authority is reducing handoff latency;
+- whether safe workers are idling despite available non-colliding integration work.
+
+Also track the fly-inspired sensorimotor line separately:
+- FLY-0 Forge status;
+- whether it is parallel or critical-path;
+- whether Analyst allocated a SYSTEM_BUILD;
+- whether any claim is being overextended beyond NON_EVIDENTIARY engineering.
 ## Theory / Forge / Revisit
 
 Fast Forge is NON_EVIDENTIARY/NONCANONICAL.
@@ -200,6 +219,9 @@ Before user-facing output cover:
 
 Do not hide negative/terminal evidence, integrity issues, build-vs-science distinction, restart conditions or real approval needs for brevity.
 
+## Human Directive delta reporting
+
+Read the current active Human Directive index through the common freshness handshake. When Control/Analyst records a newly active or materially changed directive that changes programme direction, summarize the practical effect in the brief. Do not repeat unchanged directive inventories every time.
 ## User-facing output contract
 
 Normally use:
