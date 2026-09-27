@@ -1,0 +1,29 @@
+{
+  "controllers": {
+    "fly0_structured": {
+      "accepted_steps": 3,
+      "active_event_counts": [
+        300,
+        300,
+        300
+      ],
+      "final_position": -1,
+      "final_token": "c4f45204aae8648a66892b1fec08464cb98b28137376f615a4a69a104b92757a",
+      "same_history_replay_exact": true
+    },
+    "reactive_reference": {
+      "accepted_steps": 3,
+      "active_event_counts": [
+        1,
+        1,
+        1
+      ],
+      "final_position": -1,
+      "final_token": "2f6d331ebc3650c215968df6991ef655f3d2a927d50c5f7d3f44f5fbddf61a6c",
+      "same_history_replay_exact": true
+    }
+  },
+  "initial_position": 2,
+  "status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
+  "target": -1
+}
