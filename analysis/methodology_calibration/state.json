@@ -1,70 +1,70 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-27T12:20:33+09:00",
+  "timestamp": "2026-09-27T14:20:36+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260927T122033+0900-R129-RD006-V2-BOUNDARY",
-    "sequence": 129,
+    "generation_id": "METHCAL-20260927T142036+0900-R130-RD006-V3-STATIC-PREFLIGHT-CALIBRATION",
+    "sequence": 130,
     "material_change": true,
-    "material_change_reason": "RD006_V2_RESULT_EXPOSED_BOUNDARY_AND_P0_CLOSURE_RECONCILIATION",
-    "supersedes_generation_id": "METHCAL-20260927T102000+0900-R128-RD006-PHASE-RESOLVED",
+    "material_change_reason": "RD006_R157_STATIC_AUDIT_AND_R149_V3_CONSTRUCTION_ONLY_REVISION",
+    "supersedes_generation_id": "METHCAL-20260927T122033+0900-R129-RD006-V2-BOUNDARY",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "input_generations": {
-    "previous_methodology": "METHCAL-20260927T102000+0900-R128-RD006-PHASE-RESOLVED@a63e512a1d1e59857d3634b682b2c795f03df6ab",
-    "evidence_analyst": "EVA-20260927T115839+0900-R147-RD006-V2-LAG-ALIGNMENT@df0ab5d5dc4941de8a9bba95949a00d6a7c4ce16",
-    "main_durable_state": "MAIN-20260927T112511+0900-PRIMARY-R156-RD006-PRESERVED-AUDIT@8d5b6c36122c3e8a2ee2ada2a9c6d40272131885",
-    "control": "CTRL-20260927T115000+0900-R90-RD006-AUDIT-OBSERVED@ca934c91c2e371a41e1a8b88ca8c7827f128f64f",
-    "theory": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31@3538e527ded0e494dca889d4dc55eef34a9d0f3e"
+    "previous_methodology": "METHCAL-20260927T122033+0900-R129-RD006-V2-BOUNDARY@4763b74f8bc9f9f684cb7ef86e97ea9a7361bcf4",
+    "evidence_analyst": "EVA-20260927T135700+0900-R149-RD006-V3-STATIC-PREFLIGHT@79b2e7e67144804393911853b7bd405fafec629e",
+    "main_durable_state": "MAIN-20260927T133210+0900-PRIMARY-R157-RD006-V2-STATIC-TOPOLOGY-AUDIT@d868b7ff14677100b9c6e29e90b265f99f14c64c",
+    "theory": "THEORY-20260927T133111+0900-R8-NO-PROPOSAL-FORGE-SEAM-RECONCILIATION-8D3F6A27@b1e0e2d8d19b908e27d49495ad9f299ad4d86607",
+    "forge": "FORGE-20260927T134529+0900-TRANSACTIONAL-OUTCOME-REVISION-CI-CLEAN@a5dbdbcb7e1302e5e08689f3e62e8eab899bebda"
   },
   "authoritative_refs": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
     "rd006_v2": {
       "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-      "identity_namespace": "rv02-rd006-external-learning-reachability-a-v2-lag-alignment",
-      "branch": "research/rv02-rd006-external-learning-reachability-a-v2-lag-alignment",
-      "result_head": "d2462ebc52e3bf1e6a50334ee6b8d7cf437b416a",
-      "source_head": "7896433af675b77b1f442e9efaf268d16564c564",
-      "analyst_authority": "EVA_R147",
-      "phase_at_execution": "OPEN_DEVELOPMENT",
-      "current_phase_required": "RESULT_EXPOSED_DEVELOPMENT",
-      "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
-      "ready_cell_count": 0,
-      "maximum_eligible_hidden_sources": 1,
-      "planned_arm_clocks": 832,
-      "inspected_arm_clocks": 816,
-      "bounded_arm": "opposing-reversal/external_learning_on",
-      "unobserved_clocks": 16,
-      "artifact_sha256": "5898fdcb75b10747fb88f8a19329f2d063422bb5012e80683c2c413cbbfb76d6",
-      "artifact_file_sha256": "7ce4ffa4366f60290b26ead6edd31f9a2083f0822949c7c11815aefe8df5c468",
-      "ci_run_id": 36291112754,
-      "ci_conclusion": "success",
-      "confirmatory_credit": 0,
-      "later_e0_e1_es_authorized": false,
-      "scale_reservoir_authorized": false,
-      "further_v2_contract_change_authorized": false
+      "revision": "v2-lag-alignment",
+      "phase": "RESULT_EXPOSED_DEVELOPMENT",
+      "contract_disposition": "CLOSED",
+      "preserved_result_head": "d2462ebc52e3bf1e6a50334ee6b8d7cf437b416a",
+      "static_audit_head": "cdb985e16dda2b38f7a0713e51992fa16f128ad5",
+      "exact_head_ci_run": 36294422868,
+      "exact_head_ci_conclusion": "success",
+      "actual_eligible_ge2": 0,
+      "balanced_rule_eligible_ge2_on_preserved_timing": 0,
+      "scientific_credit": 0
     },
-    "prior_revisions": {
-      "rd006_v1": "RESULT_EXPOSED_DEVELOPMENT_PRESERVED",
-      "rd005": "CONSUMED_PRESERVED"
+    "rd006_v3": {
+      "revision": "v3-structural-temporal-role-preflight",
+      "phase": "OPEN_DEVELOPMENT",
+      "claim_ceiling": "SYSTEM",
+      "queue_state": "ALLOCATED_CONSTRUCTION_ONLY",
+      "evidentiary_status": "DEVELOPMENT_CONSTRUCTION_ZERO_CONFIRMATORY_CREDIT",
+      "static_preflight_only": true,
+      "new_dynamics_authorized": false,
+      "result_bearing_execution_authorized": false,
+      "after_success": "STOP_FOR_FRESH_ANALYST_RECONCILIATION",
+      "scientific_credit": 0
     },
     "system_build": {
       "build_id": "BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT",
-      "merge_commit": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
       "lifecycle": "INTEGRATED_COMPLETE",
+      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
       "built": true,
       "functionally_verified_bounded": true,
       "comparatively_supported": false,
       "composition_contribution": "NOT_ESTABLISHED",
       "scientifically_novel": false,
-      "scientific_credit": 0,
-      "evidentiary_status": "NON_EVIDENTIARY_BUILD"
+      "scientific_credit": 0
     },
     "theory": {
-      "generation": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
+      "generation": "THEORY-20260927T133111+0900-R8-NO-PROPOSAL-FORGE-SEAM-RECONCILIATION-8D3F6A27",
       "status": "NO_PROPOSAL",
-      "revisit_status": "NO_REVISIT_PROPOSAL",
-      "forge_inputs": "OPTIONAL_FUTURE_SEPARATELY_BOUND_SYSTEM_BUILD_ONLY_ZERO_CREDIT"
+      "revisit_status": "NO_REVISIT_PROPOSAL"
+    },
+    "forge": {
+      "generation": "FORGE-20260927T134529+0900-TRANSACTIONAL-OUTCOME-REVISION-CI-CLEAN",
+      "disposition": "OPTIONAL_FUTURE_SEPARATELY_BOUND_SYSTEM_BUILD_ONLY",
+      "admitted_to_rd006": false,
+      "scientific_credit": 0
     }
   },
   "overall_classification": "WELL_CALIBRATED",
@@ -72,36 +72,35 @@
     "hard_floor": "KEEP",
     "formal_one_way": "KEEP",
     "development_credit": "KEEP",
-    "v1_preservation": "KEEP",
-    "v2_explicit_revision": "KEEP",
-    "v2_single_change_contract": "KEEP",
-    "v2_fixed_two_source_gate": "KEEP",
-    "v2_no_second_matrix": "KEEP",
-    "post_result_phase_alignment": "CLARIFY",
+    "v1_v2_preservation": "KEEP",
+    "v3_explicit_revision": "KEEP",
+    "v3_open_development_phase": "KEEP",
+    "outcome_independent_static_inputs": "KEEP",
+    "resource_and_privilege_matching": "KEEP",
+    "static_success_claim_boundary": "KEEP",
+    "result_bearing_execution_stop": "KEEP",
+    "post_preflight_analyst_reconciliation": "KEEP",
     "later_e0_e1_es": "KEEP",
-    "future_fresh_successor_path": "KEEP",
+    "scale_reservoir": "KEEP",
     "same_object_system_to_mechanism_uplift": "KEEP",
     "pass_reachability": "KEEP"
   },
   "system_build_gate_findings": {
     "identity_separation": "KEEP",
-    "target_capability": "KEEP",
-    "component_provenance": "KEEP",
-    "acceptance_and_exact_head_ci": "KEEP",
-    "review_optional": "KEEP",
-    "explicit_claim_boundary": "KEEP",
+    "sb001_claim_boundary": "KEEP",
     "reduced_component_reuse": "KEEP",
+    "forge_optional_engineering_only": "KEEP",
     "build_success_to_novelty_guard": "KEEP",
     "composition_contribution": "INSUFFICIENT_EVIDENCE",
     "build_to_science_boundary": "KEEP"
   },
   "revisit_gate_findings": {
-    "rd005_terminal_absorbency": "KEEP",
-    "rd006_v2_not_rescue_laundering": "KEEP",
-    "current_v2_contract_closed_after_gate_failure": "KEEP",
-    "future_successor_not_globally_suppressed": "KEEP",
-    "theory_r7": "NO_REVISIT_PROPOSAL",
-    "forge_reuse_without_revisit": "KEEP"
+    "rd005_no_reopen": "KEEP",
+    "rd006_v1_v2_closed": "KEEP",
+    "v3_not_rescue_laundering": "KEEP",
+    "future_question_not_globally_suppressed": "KEEP",
+    "theory_r8": "NO_REVISIT_PROPOSAL",
+    "candidate35_no_reopen": "KEEP"
   },
   "calibration": {
     "over_reduction_risk": "LOW",
@@ -127,6 +126,7 @@
     "incident": "INC-GITHUB-PERSISTENCE-20260925-001",
     "status": "CLOSED_P0_RECOVERED",
     "active_pointer_debt": [],
+    "new_recurrence_observed": false,
     "methodology_closure_authority": false
   },
   "hard_floor_confirmation": {
@@ -143,7 +143,7 @@
     "protected_heldout_accessed": false
   },
   "persistence": {
-    "history_path": "analysis/methodology_calibration/history/2026-09-27/1220.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-27/1420.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts_per_mutation_purpose": 5,
     "attempt": 1,
