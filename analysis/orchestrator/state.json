@@ -1,24 +1,28 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260927T130000+0900-R148-RD006-V2-RECONCILIATION",
-  "generated_at": "2026-09-27T13:00:00+09:00",
+  "generation_id": "EVA-20260927T135700+0900-R149-RD006-V3-STATIC-PREFLIGHT",
+  "generated_at": "2026-09-27T13:57:00+09:00",
   "cache_role": "MOVING_CACHE_ONLY",
   "durable_authority": {
-    "history_path": "analysis/orchestrator/history/2026-09-27/1300-R148.md",
+    "history_path": "analysis/orchestrator/history/2026-09-27/1357-R149.md",
     "complete": true
   },
   "new_scientific_result": false,
   "scientific_execution_mode": "READ_ONLY",
+  "go_stop": "GO_CONSTRUCTION_ONLY_STOP_RESULT_BEARING_EXECUTION",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
+    "prior_analyst_target_head": "437f36985cbf6573af0d02599710020a462194e5",
     "control": "ca934c91c2e371a41e1a8b88ca8c7827f128f64f",
-    "main_reports": "8d5b6c36122c3e8a2ee2ada2a9c6d40272131885",
-    "methodology": "4763b74f8bc9f9f684cb7ef86e97ea9a7361bcf4",
-    "external_science": "3538e527ded0e494dca889d4dc55eef34a9d0f3e",
-    "prior_analyst_target_head": "df0ab5d5dc4941de8a9bba95949a00d6a7c4ce16",
+    "main_reports": "d868b7ff14677100b9c6e29e90b265f99f14c64c",
+    "rd006_v2_audit_head": "cdb985e16dda2b38f7a0713e51992fa16f128ad5",
     "rd006_v2_result": "d2462ebc52e3bf1e6a50334ee6b8d7cf437b416a",
-    "rd006_v2_source": "7896433af675b77b1f442e9efaf268d16564c564"
+    "rd006_v2_source": "7896433af675b77b1f442e9efaf268d16564c564",
+    "methodology": "4763b74f8bc9f9f684cb7ef86e97ea9a7361bcf4",
+    "external_science": "b1e0e2d8d19b908e27d49495ad9f299ad4d86607",
+    "forge_transactional": "a5dbdbcb7e1302e5e08689f3e62e8eab899bebda",
+    "utility": "625b613aee256390c5e868bdb26a21bdd5320cfb"
   },
   "canonical_funnel": {
     "candidates": 35,
@@ -32,53 +36,18 @@
   "development_queue": {
     "count": 1,
     "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
-    "current_revision": {
-      "revision": "v2-lag-alignment",
-      "phase": "RESULT_EXPOSED_DEVELOPMENT",
-      "claim_ceiling": "SYSTEM",
-      "evidentiary_status": "DEVELOPMENT_DIAGNOSTIC_ZERO_CONFIRMATORY_CREDIT",
-      "result_head": "d2462ebc52e3bf1e6a50334ee6b8d7cf437b416a",
-      "source_head": "7896433af675b77b1f442e9efaf268d16564c564",
-      "ci_run_id": 36291112754,
-      "ci_conclusion": "success",
-      "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
-      "hidden_spike_count": 144,
-      "ready_cell_count": 0,
-      "maximum_eligible_hidden_sources": 1,
-      "planned_clock_count": 832,
-      "inspected_clock_count": 816,
-      "bounded_arm": "opposing-reversal/external_learning_on",
-      "unobserved_clock_count": 16,
-      "artifact_sha256": "5898fdcb75b10747fb88f8a19329f2d063422bb5012e80683c2c413cbbfb76d6",
-      "artifact_file_sha256": "7ce4ffa4366f60290b26ead6edd31f9a2083f0822949c7c11815aefe8df5c468",
-      "scientific_credit": 0,
-      "contract_disposition": "CLOSED_CURRENT_V2_CONTRACT"
-    },
-    "preserved_artifact_reconciliation": {
-      "on_arm_return_clocks_with_time_window_hidden_sources": 51,
-      "clocks_with_at_least_two_time_window_hidden_sources": 12,
-      "clocks_with_one_structurally_eligible_source": 7,
-      "clocks_with_two_structurally_eligible_sources": 0,
-      "inference": "NEXT_UNCERTAINTY_IS_STATIC_TOPOLOGY_RETURN_EDGE_COVERAGE_NOT_TIMING_ONLY"
-    },
-    "allocation": {
-      "owner": "MAIN",
-      "task": "RD006_V2_PRESERVED_STATIC_TOPOLOGY_RETURN_COVERAGE_AUDIT",
-      "execution_class": "READ_ONLY_PRESERVED_RESULT_AND_STATIC_CONSTRUCTION_AUDIT",
-      "new_dynamics_authorized": false,
-      "output": "OPTIONAL_PROSPECTIVE_V3_CONTRACT_PROPOSAL_ONLY",
-      "constraints": [
-        "NO_OBSERVED_SPIKE_ID_EDGE_SELECTION",
-        "SAME_UNIT_COUNT",
-        "MATCH_MEAN_DEGREE_OR_EDGE_BUDGET",
-        "MATCH_RESOURCE_AND_PRIVILEGE",
-        "SEPARATE_STRUCTURAL_TEMPORAL_AND_BOUNDED_FAILURES"
-      ]
-    },
     "prior_revisions": {
       "v1": {
         "phase": "RESULT_EXPOSED_DEVELOPMENT",
         "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+        "contract_disposition": "CLOSED",
+        "preserve_unchanged": true,
+        "scientific_credit": 0
+      },
+      "v2": {
+        "phase": "RESULT_EXPOSED_DEVELOPMENT",
+        "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+        "contract_disposition": "CLOSED",
         "preserve_unchanged": true,
         "scientific_credit": 0
       },
@@ -87,18 +56,59 @@
         "preserve_unchanged": true
       }
     },
+    "current_revision": {
+      "revision": "v3-structural-temporal-role-preflight",
+      "phase": "OPEN_DEVELOPMENT",
+      "claim_ceiling": "SYSTEM",
+      "preformal_eligible": false,
+      "preformal_readiness": "NOT_READY",
+      "hold_class": "PROSPECTIVE_CONSTRUCTION",
+      "hold_reason": "STATIC_PREFLIGHT_NOT_YET_DURABLE",
+      "terminal_state": null,
+      "queue_state": "ALLOCATED_CONSTRUCTION_ONLY",
+      "evidentiary_status": "DEVELOPMENT_CONSTRUCTION_ZERO_CONFIRMATORY_CREDIT",
+      "scientific_credit": 0
+    },
+    "r157_static_audit": {
+      "family_local_return_roles": 88,
+      "zero_hidden_incoming": 12,
+      "one_hidden_incoming": 29,
+      "two_or_more_hidden_incoming": 47,
+      "preserved_time_aligned_ge1": 51,
+      "preserved_time_aligned_ge2": 12,
+      "actual_eligible_ge1": 7,
+      "actual_eligible_ge2": 0,
+      "balanced_rule_structurally_feasible": true,
+      "balanced_rule_eligible_ge1": 19,
+      "balanced_rule_eligible_ge2": 0,
+      "inference": "EDGE_COUNT_ALONE_INSUFFICIENT_REQUIRE_OUTCOME_INDEPENDENT_STRUCTURAL_TEMPORAL_PREFLIGHT"
+    },
+    "allocation": {
+      "owner": "MAIN",
+      "task": "RD006_V3_PROSPECTIVE_STATIC_CONSTRUCTION_PREFLIGHT",
+      "execution_class": "NON_RESULT_BEARING_CONTRACT_AND_STATIC_PREFLIGHT_ONLY",
+      "result_bearing_execution_authorized": false,
+      "new_dynamics_authorized": false,
+      "static_acceptance": [
+        "EVERY_FAMILY_HAS_AT_LEAST_ONE_DECLARED_RETURN_CLOCK_WITH_TWO_DISTINCT_STATIC_HIDDEN_SOURCE_PATHS_IN_FIXED_LAG_WINDOW",
+        "SAME_48_UNITS_384_EDGES_OUTDEGREE_8",
+        "PRESERVE_PORT_ROUTE_AND_HIDDEN_RING_EDGES",
+        "NO_OBSERVED_SPIKE_OR_ARTIFACT_OUTCOME_EDGE_SELECTION",
+        "DETERMINISTIC_SERIALIZATION_REPLAY",
+        "FAIL_FAST_IF_DYNAMICS_ENTRYPOINT_INVOKED"
+      ],
+      "after_success": "STOP_FOR_FRESH_ANALYST_RECONCILIATION"
+    },
     "forbidden_until_fresh_reconciliation": [
-      "SECOND_V2_MATRIX",
+      "V3_RESULT_BEARING_EXECUTION",
+      "V2_RERUN_RETUNE",
       "EVENT_CEILING_INCREASE",
-      "FURTHER_V2_TIMING_CHANGE",
+      "FURTHER_TIMING_CHANGE",
       "E0_E1_ES",
       "SCALE_EXPANSION",
       "RESERVOIR_COMPARISON",
       "LEARNER_BOUNDARY_CHANGE",
-      "TOPOLOGY_MUTATION",
-      "THRESHOLD_GAIN_STIMULUS_CHANGE",
-      "LAG_WINDOW_CHANGE",
-      "NEW_RESULT_BEARING_MATRIX"
+      "CAPABILITY_SCORING"
     ]
   },
   "system_build_ledger": {
@@ -113,19 +123,22 @@
     "scientific_credit": 0,
     "evidentiary_status": "NON_EVIDENTIARY_BUILD"
   },
+  "revisit_ledger": {
+    "rd005": "NO_REOPEN_CONSUMED",
+    "candidate35": "INCONCLUSIVE_SEPARATE_SIGNAL_NO_REOPEN",
+    "current_revisit_proposal": null
+  },
   "supporting_streams": {
     "theory": {
-      "generation": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
+      "generation": "THEORY-20260927T133111+0900-R8-NO-PROPOSAL-FORGE-SEAM-RECONCILIATION-8D3F6A27",
       "status": "NO_PROPOSAL",
       "revisit_status": "NO_REVISIT_PROPOSAL"
     },
     "forge": {
+      "generation": "FORGE-20260927T134529+0900-TRANSACTIONAL-OUTCOME-REVISION-CI-CLEAN",
       "disposition": "OPTIONAL_FUTURE_SEPARATELY_BOUND_SYSTEM_BUILD_ONLY",
       "admitted_to_rd006": false,
       "scientific_credit": 0
-    },
-    "independent_audit": {
-      "candidate35": "INCONCLUSIVE_SEPARATE_REVISIT_SIGNAL_NO_REOPEN"
     },
     "methodology": {
       "generation": "METHCAL-20260927T122033+0900-R129-RD006-V2-BOUNDARY",
@@ -139,11 +152,11 @@
     "active_pointer_debt": []
   },
   "allocations": {
-    "main": "RD006_V2_PRESERVED_STATIC_TOPOLOGY_RETURN_COVERAGE_AUDIT",
+    "main": "RD006_V3_PROSPECTIVE_STATIC_CONSTRUCTION_PREFLIGHT",
     "formal_science": "NO_ACTION",
-    "later_e0_e1_es": "NOT_AUTHORIZED",
-    "scale_reservoir": "NOT_AUTHORIZED",
-    "v3_result_bearing_execution": "NOT_AUTHORIZED"
+    "v3_result_bearing_execution": "NOT_AUTHORIZED",
+    "e0_e1_es": "NOT_AUTHORIZED",
+    "scale_reservoir": "NOT_AUTHORIZED"
   },
   "hard_floor": {
     "experiments_dispatched_by_analyst": false,
