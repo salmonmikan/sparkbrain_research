@@ -1,30 +1,27 @@
-# MAIN PRIMARY R154
+# MAIN PRIMARY R155
+
 schema_version: 2
-generation_id: MAIN-20260927T041727+0900-PRIMARY-R154-SB001-INTEGRATED
-generated_at: 2026-09-27T04:17:27+09:00
+generation_id: MAIN-20260927T092301+0900-PRIMARY-R155-RD006-D0-INCONCLUSIVE
+generated_at: 2026-09-27T09:23:01+09:00
 execution_mode: PRIMARY
-work_mode: SYSTEM_BUILD
-status: SYSTEM_BUILD_INTEGRATION_COMPLETE
-build_id: BUILD-SB-001-PREDICTIVE-STATE-REVISION-PILOT
-analyst_generation_id: EVA-20260927T035800+0900-R141-SB001-RETRY2-RV02-PENDING-THEORY6
-exact_head: 909094a87025b552b96bcac4afb060b91c4f0573
-pr: 152
-merge_commit: cf0bc45262824f1fe282ccd7b785b3ea50be2099
-merge_attempts_this_run: 1
-merge_attempts_total_in_authorized_sequence: 4
-current_head_ci_run: 36245046040
-current_head_ci_status: SUCCESS
-evidentiary_status: NON_EVIDENTIARY_BUILD
-built: true
-functionally_verified_bounded: true
-comparatively_supported: false
-composition_contribution: NOT_ESTABLISHED
-scientifically_novel: false
+work_mode: SCIENCE
+status: OPEN_DEVELOPMENT_D0_INCONCLUSIVE_STOP
+candidate_id: RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A
+development_phase: OPEN_DEVELOPMENT
+claim_ceiling: SYSTEM
+analyst_generation_id: EVA-20260927T070206+0900-R144-RD006-BRANCH-LIT45-FORGE-HANDOFF-RECONCILED
+result_head: 49b91ca801522f3d6685ebd22097a1e64f9234c9
+result_ci_run: 36282136143
+result_ci_status: SUCCESS
+matrix_status: D0_INCONCLUSIVE_BOUNDED_EXPLOSION
+evidentiary_status: DEVELOPMENT_ONLY_ZERO_CONFIRMATORY_CREDIT
+new_scientific_result: false
+new_development_result: true
 scientific_credit: 0
 
-Evidence Analyst R141's guarded SB001 integration allocation was completed by squash-merging PR #152 on the first additional attempt. Independent readback confirmed the PR merged and main at cf0bc45262824f1fe282ccd7b785b3ea50be2099.
+The R144 Stage D0 ON/OFF external-learning matrix is durably preserved. Ordinary external learning produced updates and hidden firing, but no eligible hidden-source to visible-return certificate in any completed arm. Opposing-reversal ON hit the bounded event ceiling after 32/48 clocks, so the matrix is inconclusive rather than a capability negative.
 
-stop_reason: AUTHORIZED_SYSTEM_BUILD_INTEGRATION_COMPLETE
-next_action: Analyst reconciliation and a separately bound allocation for any successor SYSTEM_BUILD or scientific work.
+stop_reason: D0_MECHANISM_SURFACE_NOT_DEMONSTRATED_AND_ONE_ARM_BOUNDED_INCOMPLETE
+next_action: Evidence Analyst reconciliation is required. E0/E1/ES, scale expansion and reservoir/resource-matched comparisons remain closed.
 scheduler_state_changed: false
-history: reports/orchestrator/main/history/2026-09-27/0417-r154-primary-sb001-integrated.md
+history: reports/orchestrator/main/history/2026-09-27/0923-r155-primary-rd006-d0-inconclusive.md
