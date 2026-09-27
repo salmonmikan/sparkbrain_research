@@ -1,28 +1,25 @@
-# SparkBrain Fast Forge — causal-opportunity certificate
+# SparkBrain Fast Forge — causal-opportunity resilience
 
 - schema_version: 2
-- generation_id: `FORGE-20260928T004156+0900-CAUSAL-OPPORTUNITY-CERTIFICATE-CI-CLEAN`
-- produced_at: `2026-09-28T00:41:56+09:00`
-- forge_id: `FORGE-CAUSAL-OPPORTUNITY-CERTIFICATE-A`
+- generation_id: `FORGE-20260928T014020+0900-CAUSAL-OPPORTUNITY-RESILIENCE-CI-CLEAN`
+- produced_at: `2026-09-28T01:40:20+09:00`
+- forge_id: `FORGE-CAUSAL-OPPORTUNITY-RESILIENCE-A`
 - status: `FORGE_INTERESTING`
 - recommended_handoff: `SYSTEM_BUILD_INPUT`
-- branch: `forge/20260928-causal-opportunity-certificate-a`
-- exact_prototype_head: `c8280a8aaebc29881c07369680777633aa5f7ac7`
-- ci_run: `36330332740`
+- branch: `forge/20260928-causal-opportunity-resilience-a`
+- exact_prototype_head: `e165e4794d81e873328eb75f82ad51f6bcb820ff`
+- ci_run: `36333889368`
 - ci_result: `SUCCESS`
 - evidentiary_status: `NON_EVIDENTIARY_NONCANONICAL_FORGE`
 - scientific_credit: 0
 - new_scientific_result: false
 
-An isolated diagnostic now checks whether a complete, caller-supplied event graph contains a time-respecting path from post-intervention state-bearing activity of a treated actor to a declared readout. It returns a deterministic shortest witness path when one exists and fails closed for incomplete, invalid, disconnected or treatment-silent traces.
+An isolated companion diagnostic now measures whether a certified treatment-to-readout opportunity depends on a single traced influence edge or has multiple edge-disjoint routes. It reports the unit-capacity maximum-flow count and one deterministic minimum edge cut only after the base causal-opportunity certificate succeeds.
 
-The direct-cue counterexample rejects a readout produced only by untreated actors, even when that untreated path is complete. This addresses the general treatment/readout support risk identified by Independent Audit R10 without rerunning, repairing, reinterpreting or reopening Candidate #35.
+Focused tests passed 8/8. Exact prototype head `e165e4794d81e873328eb75f82ad51f6bcb820ff` passed full GitHub CI on Python 3.11 and 3.13, including repository tests, Ruff, readiness and bundle validation.
 
-Local validation passed 10/10 focused tests, all 587 locally selected repository tests, Ruff, compileall, readiness and bundle validation. Exact prototype head `c8280a8aaebc29881c07369680777633aa5f7ac7` passed GitHub CI run `36330332740` on Python 3.11 and 3.13.
+The implementation reduces entirely to maximum-flow/minimum-cut on a validated time-respecting event graph. It does not establish causal effect, trace completeness, hidden-path absence, readout sensitivity, capability, composition contribution or scientific novelty.
 
-The implementation reduces entirely to deterministic directed-graph reachability, event-order validation and fail-closed input checking. A certificate establishes only opportunity on the supplied trace; it does not prove treatment effect, counterfactual contribution, hidden-path absence, readout sensitivity, capability, composition contribution or scientific novelty.
+MAIN R164 has independently published SB002 and stopped for Analyst reconciliation. This prototype does not implement or modify SB002 routing, revision, rollback or checkpoint logic.
 
-The prototype is independent of MAIN-owned `BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT`: it implements no scope routing, route-local revision, checkpoint/replay or RD006 dynamics.
-
-History: `reports/fast_forge/history/2026-09-28/0041-causal-opportunity-certificate-ci-clean.md`
-
+History: `reports/fast_forge/history/2026-09-28/0140-causal-opportunity-resilience-ci-clean.md`

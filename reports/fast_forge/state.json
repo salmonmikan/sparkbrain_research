@@ -1,91 +1,84 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260928T004156+0900-CAUSAL-OPPORTUNITY-CERTIFICATE-CI-CLEAN",
-  "produced_at": "2026-09-28T00:41:56+09:00",
-  "forge_id": "FORGE-CAUSAL-OPPORTUNITY-CERTIFICATE-A",
+  "generation_id": "FORGE-20260928T014020+0900-CAUSAL-OPPORTUNITY-RESILIENCE-CI-CLEAN",
+  "produced_at": "2026-09-28T01:40:20+09:00",
+  "forge_id": "FORGE-CAUSAL-OPPORTUNITY-RESILIENCE-A",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260928-causal-opportunity-certificate-a",
-  "exact_prototype_head": "c8280a8aaebc29881c07369680777633aa5f7ac7",
-  "source_audit_generation": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
-  "target_capability": "certify a complete time-respecting event path from post-intervention treated activity to a declared readout before interpreting a null intervention",
+  "branch": "forge/20260928-causal-opportunity-resilience-a",
+  "exact_prototype_head": "e165e4794d81e873328eb75f82ad51f6bcb820ff",
+  "source_forge_id": "FORGE-CAUSAL-OPPORTUNITY-CERTIFICATE-A",
+  "target_capability": "measure single-edge fragility and edge-disjoint route count for a certified treatment-to-readout opportunity",
   "prototype": {
     "files": [
-      "forge_prototypes/causal_opportunity_certificate.py",
-      "forge_prototypes/causal_opportunity_certificate.md",
-      "tests/test_forge_causal_opportunity_certificate.py"
+      "forge_prototypes/causal_opportunity_resilience.py",
+      "forge_prototypes/causal_opportunity_resilience.md",
+      "tests/test_forge_causal_opportunity_resilience.py"
     ],
-    "algorithm": "DETERMINISTIC_DIRECTED_GRAPH_REACHABILITY_WITH_EVENT_ORDER_VALIDATION",
+    "algorithm": "UNIT_CAPACITY_MAXIMUM_FLOW_MINIMUM_CUT_ON_VALIDATED_TIME_RESPECTING_EVENT_GRAPH",
     "statuses": [
-      "CERTIFIED",
-      "NO_TREATED_ACTIVITY",
-      "NO_PATH_TO_READOUT",
-      "INCOMPLETE_TRACE",
-      "INVALID_TRACE"
+      "REDUNDANT_PATHS",
+      "SINGLE_EDGE_FRAGILE",
+      "DIRECT_READOUT",
+      "NOT_CERTIFIED"
     ],
     "verified_behaviors": [
-      "treated_time_respecting_path_returns_deterministic_shortest_witness",
-      "untreated_direct_cue_path_does_not_count",
-      "disconnected_treated_activity_returns_no_path",
-      "incomplete_trace_fails_closed",
-      "unknown_or_backward_edges_invalidate_trace",
-      "same_time_sequence_order_is_respected",
-      "pre_intervention_and_non_state_bearing_events_cannot_seed",
-      "input_reordering_does_not_change_witness"
+      "single_chain_reports_one_edge_disjoint_path_and_one_edge_cut",
+      "diamond_reports_two_edge_disjoint_paths",
+      "multiple_treated_seeds_can_supply_independent_routes",
+      "input_reordering_preserves_flow_and_deterministic_cut",
+      "direct_treated_readout_is_separated_from_edge_cut_analysis",
+      "incomplete_invalid_and_disconnected_traces_produce_no_resilience_claim"
     ]
   },
   "validation": {
-    "focused_tests": "10/10 PASS",
-    "full_local_selected_tests": "587/587 PASS",
-    "default_marker_deselected": 392,
-    "ruff": "PASS",
-    "compileall": "PASS",
-    "local_readiness": "PASS",
-    "bundle_validation": "PASS",
-    "ci_run_id": 36330332740,
-    "ci_head": "c8280a8aaebc29881c07369680777633aa5f7ac7",
+    "focused_tests": "8/8 PASS",
+    "local_ruff": "PASS",
+    "full_ci_run_id": 36333889368,
+    "ci_head": "e165e4794d81e873328eb75f82ad51f6bcb820ff",
     "ci_status": "completed",
     "ci_conclusion": "success",
     "python_311": "SUCCESS",
-    "python_313": "SUCCESS"
+    "python_313": "SUCCESS",
+    "full_repository_tests": "SUCCESS",
+    "readiness": "SUCCESS",
+    "bundle_validation": "SUCCESS"
   },
-  "ordinary_reduction": "deterministic directed-graph reachability plus temporal-order and input-validity checks",
-  "engineering_usefulness": "precondition diagnostic that prevents treatment/readout support mismatch from being silently treated as an informative null",
+  "ordinary_reduction": "unit-capacity maximum-flow/minimum-cut and edge-disjoint path counting",
+  "engineering_usefulness": "diagnose whether an opportunity witness depends on a single traced edge before interpreting or operationalizing an intervention probe",
   "limitations": [
-    "caller_must_independently_justify_trace_completeness",
-    "caller_supplied_edges_are_trusted_not_discovered",
-    "certificate_does_not_establish_intervention_effect",
-    "no_counterfactual_or_incremental_causal_attribution",
-    "no_hidden_path_absence_guarantee",
-    "no_readout_sensitivity_or_ceiling_diagnostic",
+    "caller_must_independently_justify_trace_completeness_and_edges",
+    "edge_disjoint_not_node_disjoint",
+    "hidden_or_unrecorded_paths_not_detected",
+    "edge_strength_sign_effect_size_and_readout_sensitivity_not_assessed",
+    "redundancy_does_not_establish_counterfactual_causal_contribution",
     "no_real_task_external_validity_or_resource_comparison"
   ],
   "claim_boundary": {
-    "component_function": "BOUNDED_CAUSAL_OPPORTUNITY_REACHABILITY_CERTIFICATE_SUPPORTED",
+    "component_function": "BOUNDED_TRACE_ROUTE_RESILIENCE_DIAGNOSTIC_SUPPORTED",
     "system_build_admission": false,
     "comparatively_supported": false,
     "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
     "scientific_credit": 0
   },
-  "collision_check": "PASS_SB002_MAIN_OWNED_AND_UNTOUCHED; NO_SCOPE_ROUTING_REVISION_CHECKPOINT_OR_RD006_DYNAMICS; CAND35_TERMINAL_HISTORY_UNCHANGED; ALL_SCIENTIFIC_REFS_UNTOUCHED",
+  "collision_check": "PASS_MAIN_R164_SB002_PUBLISHED_AND_UNTOUCHED; NO_SCOPE_ROUTING_REVISION_ROLLBACK_CHECKPOINT_OR_RD006_DYNAMICS; TERMINAL_AND_EVIDENCE_REFS_UNTOUCHED",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
-    "analyst_generation": "EVA-20260928T000605+0900-R158-RD006-V4-AUDIT-CLOSURE-SB002-ALLOCATION",
-    "analyst_head": "7e1942e8dfe5fa5333d956ab717e041f79206075",
-    "main_generation": "MAIN-20260927T233306+0900-PRIMARY-R163-RD006-V4-RETURN-ALIGNMENT-AUDIT",
-    "main_reports_head": "5568912a42644582d9fd763bd05fc94a17ecf233",
+    "analyst_generation": "EVA-20260928T010015+0900-R159-SB002-ATOMICITY-CLARIFICATION",
+    "analyst_head": "17a58e31127f8e2e47848ef4794f53bcd3908900",
+    "main_generation": "MAIN-20260928T013534+0900-PRIMARY-R164-SB002-PUBLISHED-WAIT-ANALYST",
+    "main_reports_head": "c185fba70087122131274dcc911cb2f725665bb2",
+    "sb002_exact_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
     "control_generation": "CTRL-20260927T235243+0900-R98-RD006-V4-AUDIT-RECONCILIATION",
     "control_head": "57fe5474dea444fe21cd4e1be9b4c81be8cd582a",
     "methodology_generation": "METHCAL-20260928T002022+0900-R135-SB002-ALLOCATION-CALIBRATION",
     "methodology_head": "70ec61002581d55ebb29b01fc5f240b7aca4b467",
-    "theory_generation": "THEORY-20260927T213213+0900-R11-NO-PROPOSAL-ROUTER-RESOLUTION-BOUNDARY-5A8C31D4",
-    "external_science_head": "c4066afb33fdb6a67d53fa1dc9eaabfc78d211a3",
-    "utility_generation": "UTILITY-20260927T233140+0900-R157-BRIDGE-HANDOFF-RECONCILIATION",
-    "utility_head": "f196d437c28fa377f925c832c3e1df6ba1fd2ecb",
-    "prior_forge_handoff": "164ce39b99fbfa7146e439215c804c638305dea3",
-    "sb002_branch": null
+    "theory_generation": "THEORY-20260928T012709+0900-R12-NO-PROPOSAL-SB002-ALLOCATION-84D1B6C2",
+    "external_science_head": "8f035e911bf7b1c965b97695b04834265cf415cc",
+    "utility_head": "123d720717cc5efcb0adcf1a07187efe7e78caba",
+    "prior_forge_handoff": "fd3b3a43e4bc8030b5f9fc33e23bb90f91611d69"
   },
   "metrics_this_run": {
     "scientific_novelty_probes": 0,
@@ -94,13 +87,13 @@
     "integration_prototypes_newly_created": 1,
     "integration_useful": 1,
     "integration_ci_green": 1,
-    "focused_boundary_tests": 10
+    "focused_boundary_tests": 8
   },
   "publication": {
     "prototype_publication_attempts_this_run": 1,
-    "prototype_attempt_1": "SUCCESS_EXACT_REF_PARENT_TREE_AND_THREE_BLOB_READBACK_PLUS_EXACT_HEAD_CI",
+    "prototype_attempt_1": "SUCCESS_EXACT_REF_AND_THREE_BLOB_READBACK_PLUS_EXACT_HEAD_CI",
     "handoff_publication_attempts": 1,
-    "handoff_attempt_1": "ATOMIC_COMMIT_COMPLETION_DEFINED_BY_EXTERNAL_BRANCH_AND_THREE_FILE_READBACK",
+    "handoff_attempt_1": "PENDING",
     "publication_attempt_limit": 5,
     "p0_incident_status": "CLOSED_P0_RECOVERED",
     "new_incident_diagnosis": false
@@ -109,5 +102,5 @@
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-28/0041-causal-opportunity-certificate-ci-clean.md"
+  "history_path": "reports/fast_forge/history/2026-09-28/0140-causal-opportunity-resilience-ci-clean.md"
 }
