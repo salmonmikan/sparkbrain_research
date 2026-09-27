@@ -1,53 +1,60 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-28T02:20:00+09:00",
+  "timestamp": "2026-09-28T06:19:05+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260928T022000+0900-R136-SB002-POSTBUILD-PERSISTENCE-CALIBRATION",
-    "sequence": 136,
+    "generation_id": "METHCAL-20260928T061905+0900-R137-M1-FLY0-CALIBRATION",
+    "sequence": 137,
     "material_change": true,
-    "material_change_reason": "SB002_EXACT_HEAD_BUILD_VERIFIED_AND_ANALYST_R160_PERSISTENCE_VALIDATION_FAILED",
-    "supersedes_generation_id": "METHCAL-20260928T002022+0900-R135-SB002-ALLOCATION-CALIBRATION",
+    "material_change_reason": "M1_ROLLING_CONTRACT_COMPLETED_AND_FLY0_COMPARATOR_AVAILABLE",
+    "supersedes_generation_id": "METHCAL-20260928T022000+0900-R136-SB002-POSTBUILD-PERSISTENCE-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
+  "directive_freshness": {
+    "human_directives_ref": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "newly_applicable_since_r136": [
+      "HUMAN-20260928-001",
+      "HUMAN-20260928-002"
+    ],
+    "freshness_established": true
+  },
   "input_generations": {
-    "previous_methodology": "METHCAL-20260928T002022+0900-R135-SB002-ALLOCATION-CALIBRATION@70ec61002581d55ebb29b01fc5f240b7aca4b467",
-    "evidence_analyst_durable": "EVA-20260928T010015+0900-R159-SB002-ATOMICITY-CLARIFICATION@17a58e31127f8e2e47848ef4794f53bcd3908900",
-    "analyst_failed_request": "EA-R160-20260928T020000JST@4ebd70ef68f34bae203a901ba9cbfe05524961eb",
-    "main": "MAIN-20260928T013534+0900-PRIMARY-R164-SB002-PUBLISHED-WAIT-ANALYST@c185fba70087122131274dcc911cb2f725665bb2",
-    "control": "CTRL-20260927T235243+0900-R98-RD006-V4-AUDIT-RECONCILIATION@57fe5474dea444fe21cd4e1be9b4c81be8cd582a",
-    "theory": "THEORY-20260928T012709+0900-R12-NO-PROPOSAL-SB002-ALLOCATION-84D1B6C2@8f035e911bf7b1c965b97695b04834265cf415cc",
-    "forge": "FORGE-20260927T234359+0900-CAUSAL-ONLINE-SCOPE-ROUTER-CI-CLEAN@164ce39b99fbfa7146e439215c804c638305dea3"
+    "previous_methodology": "METHCAL-20260928T022000+0900-R136-SB002-POSTBUILD-PERSISTENCE-CALIBRATION@b22575ee46b081aacc1194aaae3eb3d4b6311066",
+    "evidence_analyst": "EVA-20260928T045927+0900-R161-M1-ROLLING-CONTRACT-SB002-INTEGRITY@195ca2d230928c7cada86e51d4f04b25904ffc04",
+    "main": "MAIN-20260928T061500+0900-PRIMARY-R168-M1-WAIT-ANALYST@a821aa4314d7b9501159462374931150d955405e",
+    "control": "CTRL-20260928T055408+0900-R103-M1-BUILT-WAIT-ANALYST@c155cf09495a25bff87868aaba1b90bb06459310",
+    "theory": "THEORY-20260928T012709+0900-R12-NO-PROPOSAL-SB002-ALLOCATION-84D1B6C2@8f035e911bf7b1c965b97695b04834265cf415cc"
   },
   "authoritative_refs": {
-    "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
-    "analyst": "17a58e31127f8e2e47848ef4794f53bcd3908900",
-    "analyst_request": "4ebd70ef68f34bae203a901ba9cbfe05524961eb",
-    "main_reports": "c185fba70087122131274dcc911cb2f725665bb2",
-    "control": "57fe5474dea444fe21cd4e1be9b4c81be8cd582a",
+    "main": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
+    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "analyst": "195ca2d230928c7cada86e51d4f04b25904ffc04",
+    "main_reports": "a821aa4314d7b9501159462374931150d955405e",
+    "control": "c155cf09495a25bff87868aaba1b90bb06459310",
     "theory": "8f035e911bf7b1c965b97695b04834265cf415cc",
-    "sb002": "720e18bcff53be76c861fa8c09d24d5320b90455",
-    "forge_handoff": "164ce39b99fbfa7146e439215c804c638305dea3",
-    "forge_prototype": "f980c13d984460f158a95e8181239db8d19c8468",
-    "methodology_before": "70ec61002581d55ebb29b01fc5f240b7aca4b467"
+    "m1": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
+    "fly0": "c9538544b04108a950e841cbc90b626259d7e3ff",
+    "methodology_before": "b22575ee46b081aacc1194aaae3eb3d4b6311066"
   },
   "overall_classification": "WELL_CALIBRATED",
   "scientific_gate_findings": {
     "formal_one_way": "KEEP",
     "rd005_preservation": "KEEP",
     "rd006_v1_v2_v3_v4_preservation": "KEEP",
-    "development_and_build_credit_zero": "KEEP",
+    "development_build_forge_credit_zero": "KEEP",
     "e0_e1_es_capability_heldout_scale_reservoir": "KEEP",
     "build_to_science_fresh_contract": "KEEP",
-    "failed_r160_non_authority": "KEEP"
+    "scientific_execution_unauthorized": "KEEP"
   },
   "system_build": {
-    "build_id": "BUILD-SB-002-CAUSAL-SCOPE-REVISION-PILOT",
-    "state_observed": "BUILT_BOUNDED_FUNCTIONALLY_VERIFIED_PENDING_DURABLE_ANALYST_RECONCILIATION",
-    "target_branch": "system-build/sb002-causal-scope-revision-pilot-20260928",
-    "exact_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
-    "exact_tree": "f4806298df53d12a6c1845aaa78ebd8e0c126a73",
-    "ci_run_id": 36333624083,
+    "build_id": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
+    "state_observed": "BUILT_BOUNDED_FUNCTIONALLY_VERIFIED_WAIT_FRESH_ANALYST_EXACT_HEAD_RECONCILIATION",
+    "target_branch": "system-build/ipm1-continuous-revision-20260928",
+    "exact_head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
+    "exact_tree": "10d252ce87a35240f2fde98a17b92eb9fe97524b",
+    "base": "6b4d219",
+    "ci_run_id": 36348434677,
     "ci_conclusion": "success",
     "evidentiary_status": "NON_EVIDENTIARY_BUILD",
     "built": true,
@@ -56,36 +63,65 @@
     "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
     "scientific_credit": 0,
+    "milestones_completed": 4,
     "gate_findings": {
       "identity_separation": "KEEP",
-      "target_capability": "KEEP",
-      "component_provenance": "KEEP",
-      "observation_only_interface": "KEEP",
-      "resource_budget": "KEEP",
-      "known_limitations": "KEEP",
-      "claim_boundary": "KEEP",
+      "rolling_contract_scope": "KEEP",
+      "known_defects_before_dependent_continuation": "KEEP",
+      "milestone_continuation_without_redundant_handoffs": "KEEP",
+      "typed_observation_only_runtime": "KEEP",
+      "atomic_cross_component_rollback": "KEEP",
+      "deterministic_action_affecting_world": "KEEP",
+      "checkpoint_replay_state_hash": "KEEP",
+      "exact_head_ci_acceptance": "KEEP",
       "mandatory_review_non_gate": "KEEP",
-      "current_head_ci_and_acceptance": "KEEP",
-      "matched_comparator_not_required_for_bounded_build": "KEEP",
-      "atomic_router_revision_no_write": "KEEP",
-      "scope_token_stability_semantics": "KEEP",
-      "fixture_oracle_runtime_separation": "KEEP",
-      "fresh_durable_analyst_before_integration": "KEEP"
+      "final_stop_before_pr_merge": "KEEP",
+      "post_m1_handoff_latency": "KEEP",
+      "overpermissive_rolling_authority": "KEEP",
+      "claim_boundary": "KEEP"
+    }
+  },
+  "fly0": {
+    "status": "NON_EVIDENTIARY_NONCANONICAL_FORGE_PROTOTYPE",
+    "exact_head": "c9538544b04108a950e841cbc90b626259d7e3ff",
+    "ci_run_id": 36349327771,
+    "ci_conclusion": "success",
+    "build_id_allocated": false,
+    "sb003_allocated": false,
+    "m1_dependency": false,
+    "scientific_credit": 0,
+    "resource_signature": {
+      "node_count": 128,
+      "edge_count": 512,
+      "roles": {"sensory": 16, "local": 96, "motor": 8, "modulation": 8},
+      "signs": {"excitatory": 432, "inhibitory": 80},
+      "delays": {"1": 384, "2": 128}
     },
-    "limitations": [
-      "FIXED_K2_AND_THRESHOLDS",
-      "ARRIVAL_ORDER_TOKEN_NAMES_NOT_SEMANTIC_IDENTITIES",
-      "FIRST_OBSERVATION_SEEDING",
-      "ONE_DIMENSIONAL_SYNTHETIC_FIXTURE",
-      "NO_DRIFT_MERGE_OR_SPLIT",
-      "NO_MATCHED_COMPARATOR",
-      "NO_REAL_TASK",
-      "NO_CAPABILITY_OR_SCIENTIFIC_SCORE"
-    ]
+    "observations": {
+      "structured": {"fired_events": 600, "selectivity": 1.0},
+      "degree_preserving_rewired": {"fired_events": 1185, "selectivity": -0.019230769230769232},
+      "random_sparse": {"fired_events": 1074, "selectivity": -0.030927835051546393}
+    },
+    "gate_findings": {
+      "forge_isolation": "KEEP",
+      "m1_noncollision": "KEEP",
+      "static_resource_matching": "KEEP",
+      "degree_preserving_rewired_control": "KEEP",
+      "random_control_degree_limitation_disclosed": "KEEP",
+      "equal_horizon_and_event_ceiling": "KEEP",
+      "activity_compute_exposure_for_future_comparative_claim": "CLARIFY",
+      "fixed_seed_hand_authored_structure_limitations": "KEEP",
+      "biological_equivalence_absent": "KEEP",
+      "topology_superiority_absent": "KEEP",
+      "scientific_credit_zero": "KEEP",
+      "forge_handoff_provenance_pointer": "CLARIFY"
+    }
   },
   "calibration": {
     "over_reduction_risk": "LOW",
-    "overclaim_risk": "LOW_IF_R164_BOUNDARY_IS_KEPT",
+    "overclaim_risk": "LOW_IF_CURRENT_BOUNDARIES_ARE_KEPT",
+    "overconservative_handoff_latency": false,
+    "overpermissive_rolling_authority": false,
     "bounded_engineering_pass_reachability": "DEMONSTRATED",
     "scientific_pass_claimed": false,
     "overall": "WELL_CALIBRATED"
@@ -93,30 +129,15 @@
   "revisit_gate_findings": {
     "rd005_no_reopen": "KEEP",
     "rd006_closed_preserved": "KEEP",
-    "sb002_not_rescue_laundering": "KEEP",
+    "m1_not_rescue_laundering": "KEEP",
     "reduced_component_reuse_without_revisit": "KEEP",
+    "fly0_no_revisit_trigger": "KEEP",
     "theory_r12": "NO_REVISIT_PROPOSAL"
-  },
-  "analyst_persistence_incident": {
-    "request_id": "EA-R160-20260928T020000JST",
-    "request_ref": "4ebd70ef68f34bae203a901ba9cbfe05524961eb",
-    "workflow_run_id": 36335640518,
-    "conclusion": "failure",
-    "failure_class": "REQUEST_SCHEMA_VALIDATION",
-    "failure_detail": "generation must match R<number>",
-    "target_head_unchanged": "17a58e31127f8e2e47848ef4794f53bcd3908900",
-    "history_written": false,
-    "latest_state_written": false,
-    "durable_receipt_written": false,
-    "partial_target_publication": false,
-    "request_payload_is_authority": false,
-    "methodology_repair_authority": false,
-    "recommended_route": "FRESH_REEVALUATION_THEN_NEW_APPEND_ONLY_VALID_REQUEST"
   },
   "mandatory_questions": {
     "development_semantics_consistent": true,
     "formal_one_way_unchanged": true,
-    "development_build_observations_excluded_from_evidence": true,
+    "development_build_forge_observations_excluded_from_evidence": true,
     "four_way_separation": true,
     "reduced_component_reusable": true,
     "whole_system_reduction_without_system_evidence": false,
@@ -129,12 +150,9 @@
   },
   "p0": {
     "control_recorded_status": "CLOSED_P0_RECOVERED",
-    "new_scoped_incident_observed": true,
-    "incident_scope": "EVIDENCE_ANALYST_REQUEST_SCHEMA_VALIDATION",
-    "github_api_outage": false,
+    "new_scoped_incident_observed": false,
     "active_target_pointer_debt": [],
-    "repository_wide_persistence_failure_inferred": false,
-    "methodology_reopen_authority": false
+    "repository_wide_persistence_failure_inferred": false
   },
   "hard_floor_confirmation": {
     "experiment_dispatched": false,
@@ -150,7 +168,7 @@
     "protected_heldout_accessed": false
   },
   "persistence": {
-    "history_path": "analysis/methodology_calibration/history/2026-09-28/0220.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-28/0619.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts_per_mutation_purpose": 5,
     "attempt": 1,

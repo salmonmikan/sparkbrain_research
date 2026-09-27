@@ -1,18 +1,16 @@
 # SparkBrain Methodology Calibration Audit — Latest
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260928T022000+0900-R136-SB002-POSTBUILD-PERSISTENCE-CALIBRATION`
-- generated_at: `2026-09-28T02:20:00+09:00`
-- history_path: `analysis/methodology_calibration/history/2026-09-28/0220.md`
+- generation_id: `METHCAL-20260928T061905+0900-R137-M1-FLY0-CALIBRATION`
+- generated_at: `2026-09-28T06:19:05+09:00`
+- history_path: `analysis/methodology_calibration/history/2026-09-28/0619.md`
 - overall_classification: `WELL_CALIBRATED`
 - new_scientific_result: `false`
 
-SB002 is now built and bounded-functionally verified at exact head `720e18bcff53be76c861fa8c09d24d5320b90455`; exact-head CI run `36333624083` succeeded. The R135 atomic rollback, token-semantics and fixture-oracle clarifications are satisfied.
+Integrated Prototype Milestone 1 is built and bounded-functionally verified at exact head `512f21a6134b5d68351e33a7c6eecb8fa3e4550c`; exact-head CI run `36348434677` succeeded. The rolling contract was used correctly: known SB002 defects were repaired before dependent work, all four bounded milestones completed without redundant handoffs, and MAIN stopped at the predeclared final boundary before PR/merge.
 
-The result remains a non-evidentiary SYSTEM_BUILD: comparative support is false, composition contribution is `NOT_ESTABLISHED`, scientific novelty is false and scientific credit is 0. RD005 and RD006 remain closed and untouched. Theory remains `NO_PROPOSAL / NO_REVISIT_PROPOSAL`.
+The separate noncanonical FLY-0 probe is CI-clean at `c9538544b04108a950e841cbc90b626259d7e3ff`. Its structured, degree-preserving rewired and random controls share the declared static resource envelope. Differing fired-event totals require clarification before any future comparative claim, but the present artifact expressly makes no superiority, biological-equivalence, composition or novelty claim.
 
-Durable Analyst authority remains R159. Request `EA-R160-20260928T020000JST` failed bridge validation because its generation field was not in required `R<number>` form. No R160 history, latest/state update or complete receipt exists, so the request payload is not authority.
-
-Fresh durable Analyst reconciliation is required before PR/integration. The correct repair is a new append-only valid request after fresh state evaluation, not overwriting the malformed request, bypassing the bridge, rebuilding SB002 or changing scientific state.
+Overall calibration remains well balanced: useful integration was not suppressed, and no build or Forge observation was promoted into scientific evidence. Fresh Analyst exact-head reconciliation is the correct current boundary; a duplicate mandatory engineering-review gate is not.
 
 No new SparkBrain scientific result.
