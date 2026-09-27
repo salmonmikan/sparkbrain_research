@@ -1,31 +1,46 @@
 # INC-GITHUB-PERSISTENCE-20260925-001
 
-status: OPEN_P0
-updated_at: 2026-09-26T18:52:06+09:00
+status: CLOSED_P0_RECOVERED
+opened_at: 2026-09-25 JST
+closed_at: 2026-09-27T10:55:00+09:00
+updated_at: 2026-09-27T14:50:00+09:00
 owner: CONTROL_BRAIN
+closure_generation: CTRL-20260927T105500+0900-R89-P0-RECOVERY-CLOSED
+registry_reconciliation_generation: CTRL-20260927T145000+0900-R91-INCIDENT-REGISTRY-RECONCILED
 
-## Current evidence
+## Closure disposition
 
-- Repository-wide GitHub write outage is not supported.
-- User-directed full fresh-thread scheduler migration is active; old scheduler instances are intentionally disabled.
-- Fresh-thread Relay R146 successfully mutated the SB001 build branch, durably published MAIN state/history/lease, and current-head CI succeeded.
-- The same fresh-thread Relay had two pre-GitHub refusals when attempting to post a Codex re-review request comment.
-- Therefore old-thread state alone cannot explain all scheduler mutation refusals. Failure remains selective by automation runtime/action path or mutation context.
-- Exact fresh-thread `create_pull_request` health remains unresolved because PR #152 was created before the migration.
-- Evidence Analyst durable scientific authority remains R136 and is exact-head-bound to pre-review-fix SB001 head `5b86dfa6...`.
-- PR #152 current head is `e9b93456...`, open/mergeable with successful CI, but it awaits fresh review/re-check and Analyst rebinding.
+The incident remains closed as recovered. This update reconciles the dedicated incident registry with the already-durable Control latest/state closure and does not represent a second closure decision.
 
-## Current authority
+The principal internal root cause is not proven. Repository-wide GitHub write outage is not supported. Evidence bounded the incident to selective runtime/action-context publication refusal and partial moving-pointer debt, with safe bounded recovery paths established.
 
-Append-only histories remain primary where caches are stale:
-- Analyst R136
-- Methodology R125
-- MAIN current shared stream R146 (Relay execution)
-- Steward G21
-- Literature R44 / Theory R5 / Audit R10
+## Completion evidence
 
-## Recovery posture
+- Evidence Analyst Actions-bridge persistence completed across multiple generations and remains retained hardening; R149 is durable.
+- MAIN publication remained durable through R157.
+- Theory latest/state pointer debt was reconciled by R7 and subsequent R8 publication remained healthy.
+- Control publications R86, R88, R89 and R90 succeeded with atomic commit and readback.
+- Repository Steward G23 found repository/immutable-ref separation intact and no recurrence of the prior failure pattern.
+- Current active pointer debt is zero after this incident file reconciliation.
+- Required production workers are enabled; Relay is intentionally dependency-wait suspended under a durable restart contract.
 
-Keep the fresh-thread replacement fleet enabled and validate worker-by-worker. Do not create another Analyst replacement yet: the user-initiated full migration already supplies a fresh Analyst instance and its first run should be observed. Keep PR #152 unmerged until the new head receives fresh Analyst authority and current-head review/re-check.
+## Retained hardening
 
-P0 remains open until relevant writer/action classes are demonstrated healthy or a stable workaround is established. Scientific hard floor is unchanged.
+- maximum five total attempts for the same authorized publication purpose;
+- fresh target head/state before retry and rebuild against fresh state;
+- one atomic multi-file Git-data commit where supported;
+- non-force ref update;
+- independent post-write readback;
+- append-only history as durable authority and latest/state/lease as moving caches;
+- Evidence Analyst GitHub Actions bridge;
+- exact manual recovery packets after exhausted retries where applicable.
+
+## Historical limitations
+
+- Control R85 remains a documented missing append-only history record and was not reconstructed.
+- The unproven internal root cause remains a limitation, but it does not create current allocation or authority ambiguity.
+- Any future recurrence must be opened as a new incident or explicit recurrence record; this closed record must not be silently changed back to OPEN.
+
+## Scientific boundary
+
+No scientific experiment, consumed identity, immutable evidence, terminal object, score or claim changed as part of incident recovery or this registry reconciliation.
