@@ -106,6 +106,24 @@ Audit both over-terminalization and rescue laundering.
 
 Old candidate IDs remain terminal; fresh scientific successors require independent triggers and fresh contracts.
 
+## Integration-acceleration calibration
+
+Audit the accelerated Milestone 1 posture prospectively.
+
+Check that:
+- rolling SYSTEM_BUILD contracts remain bounded and prospectively specified;
+- MAIN continuation across milestones never becomes implicit scientific authority;
+- concrete acceptance failure still forces reconciliation before outcome-responsive redesign;
+- known engineering defects are repaired/verified rather than ignored;
+- ordinary engineering is not repeatedly stopped for purely formal re-confirmation when no concrete integrity issue exists;
+- Forge/Utility parallel work remains non-colliding and NON_EVIDENTIARY;
+- build-to-science boundaries remain intact.
+
+Flag both:
+- `OVERCONSERVATIVE_HANDOFF_LATENCY` when safe preauthorized engineering is repeatedly forced into unnecessary WAITING/NO_OP;
+- `OVERPERMISSIVE_ROLLING_AUTHORITY` when a rolling contract is used to bypass a real design/claim/integrity boundary.
+
+For FLY-0 / fly-like SYSTEM_BUILD, audit resource matching, degree-preserving rewired/random controls, provenance, and claim boundaries without making biological fidelity a default requirement.
 ## Classification
 
 Overall classification must be exactly one:
