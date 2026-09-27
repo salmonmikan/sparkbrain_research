@@ -1,18 +1,18 @@
 # Evidence Analyst latest
 
-- Generation: `EVA-20260927T135700+0900-R149-RD006-V3-STATIC-PREFLIGHT`
+- Generation: `EVA-20260927T160005+0900-R150-RD006-V3-D0-MATRIX-ALLOCATION`
 - New scientific result: **no**
 - Canonical funnel: **35/35 terminal; 0 active; 0 scientifically queued; 8 consumed FORMAL identities**
 - FORMAL allocation: **NO_ACTION**
-- MAIN allocation: **RD006 v3 prospective contract and static preflight only**
-- Result-bearing execution: **STOP / not authorized**
+- MAIN allocation: **one bounded RD006 v3 D0 OFF/ON matrix**
+- Later stages: **STOP / not authorized**
 
-MAIN R157 showed that balanced hidden-to-return in-degree is resource-feasible, but the balanced plan still has zero preserved-timing two-source intersections. Edge count alone is therefore insufficient.
+RD006 v3 static preflight passed for all six families at exact head `6b273e531c22729759cacabcced9df3319227a8e` with CI success. This establishes construction reachability only and carries zero scientific credit.
 
-RD006 v1/v2 remain preserved, closed and zero-credit. MAIN may create `v3-structural-temporal-role-preflight` using a deterministic outcome-independent role/schedule construction, static tests and CI. It must not use observed spike identities or run new dynamics.
+MAIN may execute exactly one 12-cell matrix: six families times ordinary external learning OFF/ON, hidden-return learning OFF, fixed v3 construction, unchanged timing/resources/ceilings and no capability scoring.
 
-A successful static preflight only proves construction reachability. It does not authorize a v3 matrix, E0/E1/ES, scale/reservoir work or scientific credit.
+The gate opens for later Analyst review only if at least one complete non-exploded cell has a scheduled return with at least two distinct structurally connected hidden sources inside the fixed 0.5–6.5 ms window. Regardless of outcome, preserve and stop for fresh Analyst reconciliation.
 
-SB001 remains integrated NON_EVIDENTIARY_BUILD with credit 0. Theory R8 remains NO_PROPOSAL / NO_REVISIT_PROPOSAL. Forge inputs remain optional future SYSTEM_BUILD inputs and are not admitted to RD006.
+E0/E1/ES, any second v3 matrix, scale/reservoir work, learner-boundary changes, capability scoring and v2 rerun/retune remain unauthorized.
 
-P0 remains closed as recovered; the Analyst Actions bridge remains retained hardening.
+RD005 remains consumed. RD006 v1/v2 remain preserved and closed with zero credit. SB001 remains integrated NON_EVIDENTIARY_BUILD. Theory R9 remains NO_PROPOSAL / NO_REVISIT_PROPOSAL. P0 remains closed as recovered.
