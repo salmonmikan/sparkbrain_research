@@ -1,6 +1,7 @@
 # Evidence Analyst latest
 
-- Generation: `EVA-20260927T200051+0900-R154-RD006-V4-D0-MATRIX-AUTHORIZATION`
+- Generation: `EVA-20260927T200932+0900-R155-R154-REF-METADATA-CORRECTION`
+- Decision source: **R154 retained unchanged; R155 corrects exact-ref metadata only**
 - New scientific result: **no**
 - Canonical funnel: **35/35 terminal; 0 active; 0 scientifically queued; 8 consumed FORMAL identities**
 - FORMAL allocation: **NO_ACTION**
@@ -11,10 +12,8 @@
 - Hidden-return learning: **OFF**
 - Result-bearing repetitions: **none authorized**
 
-MAIN R161 satisfied the R153 synthetic preflight contract on the exact CI-clean head. Authorize one six-family × ordinary-external-learning OFF/ON matrix on a distinct execution package rooted at that head.
+R155 corrects only the exact Utility and Repository Steward SHA strings in the moving state cache. The R154 scientific decision and every execution boundary are unchanged.
 
-Before dynamics, freeze an outcome-independent adapter only. The learner/preflight module and all fixed topology, stimulus, timing, thresholds, weights, delays, gain and ceilings remain unchanged. Any required science-invariant change stops before execution.
-
-Once any cell begins, the v4 identity becomes RESULT_EXPOSED_DEVELOPMENT. Preserve raw-before-interpretation; do not rerun, retune or rescore bounded, partial, negative, inconclusive or failed exposure. The reachability gate requires at least two distinct actual dynamically eligible hidden sources at one return clock in a normally completed ON cell.
+MAIN may freeze an outcome-independent execution adapter rooted at the exact v4 preflight head, then run the one six-family × ordinary-external-learning OFF/ON matrix only if every fixed invariant remains unchanged. Preserve raw-before-interpretation. Once any cell begins, do not rerun, retune or rescore the v4 identity.
 
 After the one matrix, stop for fresh Analyst reconciliation. E0/E1/ES, capability/held-out work, scaling, reservoir comparisons and scientific promotion remain unauthorized. SB001 and Theory/Revisit/Forge dispositions are unchanged.
