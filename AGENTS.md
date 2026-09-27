@@ -55,7 +55,8 @@ After reading this file, scheduled workers must load:
 - `docs/scheduler/COMMON.md@main`;
 - `docs/scheduler/SCIENTIFIC_INTEGRITY.md@main`;
 - the applicable role file under `docs/scheduler/roles/@main`;
-- `docs/scheduler/ACTIVE_POLICY.md@main`, then only the active Human Directives relevant to the current role/task.
+- `docs/scheduler/ACTIVE_POLICY.md@main`;
+- then fetch the authoritative active Human Directive index from `ops/human_directives/active.md` on ref `ops/human-directives` before selecting any directive by ID, record the index ref/head, and fetch only the directives relevant to the current role/task.
 
 Keep scheduler prompts small. Durable authority and role policy belong in the files above. Procedural details belong in repository skills and should be loaded only when relevant:
 - `$sparkbrain-persistence` for GitHub persistence/publication;
@@ -64,6 +65,14 @@ Keep scheduler prompts small. Durable authority and role policy belong in the fi
 - `$sparkbrain-p0-diagnose` for scheduler/GitHub persistence incidents.
 
 Policy is always-on; skills are procedures. A skill never broadens role authority or overrides scientific integrity.
+
+## Scheduler Human Directive freshness
+
+Do not infer the active directive set from memory, copied scheduler prompts, prior Control state, or previously known directive IDs.
+
+Every scheduler run must first establish the current active directive index through the `ACTIVE_POLICY.md` routing contract. Stateful roles should compare the current directive-index ref/head with the previous durable generation and record newly active or materially changed directives when relevant. If the authoritative active index cannot be fetched or a material directive conflict cannot be resolved, fail closed for the current run only.
+
+Dynamic Human Directives belong in the directive stream and current durable role state, not duplicated indefinitely in scheduler prompts.
 
 ## Scheduler authorization and safety-boundary handling
 
