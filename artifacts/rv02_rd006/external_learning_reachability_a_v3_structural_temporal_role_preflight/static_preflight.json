@@ -1,0 +1,591 @@
+{
+  "analyst_generation_id": "EVA-20260927T135700+0900-R149-RD006-V3-STATIC-PREFLIGHT",
+  "capability_scoring": false,
+  "claim_ceiling": "SYSTEM",
+  "configuration": {
+    "boundary_gain": 4.0,
+    "degree": 8,
+    "initial_delay_ms": 5.0,
+    "initial_weight": 0.05,
+    "input_magnitude": 1.0,
+    "max_events_per_run": 4096,
+    "max_spikes_per_run": 512,
+    "maximum_return_lag_ms": 6.5,
+    "minimum_return_lag_ms": 0.5,
+    "required_distinct_hidden_sources": 2,
+    "scale": 1,
+    "seed": 92701,
+    "threshold": 0.5,
+    "unit_count": 48
+  },
+  "construction_inputs": [
+    "fixed_seed",
+    "family",
+    "sorted_static_unit_roles",
+    "declared_5.5ms_schedule",
+    "fixed_5.0ms_edge_delay",
+    "fixed_0.5_to_6.5ms_return_lag_window"
+  ],
+  "construction_rule_id": "STATIC_PORT_HIDDEN_RETURN_CLOCK_V1",
+  "development_phase": "OPEN_DEVELOPMENT",
+  "evidentiary_status": "DEVELOPMENT_CONSTRUCTION_ZERO_CONFIRMATORY_CREDIT",
+  "families": [
+    {
+      "added_edges": [
+        [
+          38,
+          27
+        ],
+        [
+          40,
+          27
+        ]
+      ],
+      "baseline_topology_sha256": "566b5d30ed9c57ae04f1fd7548fda212f8a68ede5415f559e59536e87634cede",
+      "declared_return_clock": {
+        "hidden_source_ids": [
+          38,
+          40
+        ],
+        "nominal_hidden_time_ms": 5.0,
+        "predecessor_event_id": "rd006-v2-ext-000000",
+        "predecessor_time_ms": 0.0,
+        "predecessor_unit_id": 32,
+        "return_event_id": "rd006-v2-ext-000001",
+        "return_time_ms": 5.5,
+        "return_unit_id": 27,
+        "schedule_relation_lag_ms": 0.5
+      },
+      "declared_schedule_sha256": "50b6bb59de79b563276ce8838f081137e155a89d42049e7674b22ec484be752a",
+      "dynamic_reachability_claimed": false,
+      "family": "disjoint-routes",
+      "invariants": {
+        "all_declared_lags_in_fixed_window": true,
+        "all_hidden_to_return_edge_delays_in_fixed_window": true,
+        "all_source_outdegrees_exact": true,
+        "all_static_path_edges_present": true,
+        "distinct_hidden_source_count": 2,
+        "hidden_ring_edges_preserved": true,
+        "mean_out_degree": 8.0,
+        "no_self_edges": true,
+        "port_source_edges_preserved": true,
+        "route_edges_preserved": true,
+        "total_edge_count": 384,
+        "unit_count": 48
+      },
+      "planned_topology_sha256": "cff9971b52ab09893d15121c42586cab431171b92f7162774ce726f5e6e663a0",
+      "removed_edges": [
+        [
+          38,
+          45
+        ],
+        [
+          40,
+          47
+        ]
+      ],
+      "schedule_event_count": 48,
+      "static_acceptance": "PASS",
+      "static_hidden_source_paths": [
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 38,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            38,
+            27
+          ],
+          "nominal_hidden_time_ms": 5.0,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            32,
+            38
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        },
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 40,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            40,
+            27
+          ],
+          "nominal_hidden_time_ms": 5.0,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            32,
+            40
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        }
+      ],
+      "world_sha256": "587c14e52da43d5d9518b54add9de58978b6b7698d5e12dfc23bea66ae4c6376"
+    },
+    {
+      "added_edges": [
+        [
+          42,
+          27
+        ],
+        [
+          46,
+          27
+        ]
+      ],
+      "baseline_topology_sha256": "56629e1291dd23c9ecb7bc903f5fefa20921703924695d04c05ad63e89a405ee",
+      "declared_return_clock": {
+        "hidden_source_ids": [
+          42,
+          46
+        ],
+        "nominal_hidden_time_ms": 5.0,
+        "predecessor_event_id": "rd006-v2-ext-000000",
+        "predecessor_time_ms": 0.0,
+        "predecessor_unit_id": 32,
+        "return_event_id": "rd006-v2-ext-000001",
+        "return_time_ms": 5.5,
+        "return_unit_id": 27,
+        "schedule_relation_lag_ms": 0.5
+      },
+      "declared_schedule_sha256": "b32cc17a543f16915feaea7f5a94c4f81511486468161482661fee6c54da79de",
+      "dynamic_reachability_claimed": false,
+      "family": "shared-cue",
+      "invariants": {
+        "all_declared_lags_in_fixed_window": true,
+        "all_hidden_to_return_edge_delays_in_fixed_window": true,
+        "all_source_outdegrees_exact": true,
+        "all_static_path_edges_present": true,
+        "distinct_hidden_source_count": 2,
+        "hidden_ring_edges_preserved": true,
+        "mean_out_degree": 8.0,
+        "no_self_edges": true,
+        "port_source_edges_preserved": true,
+        "route_edges_preserved": true,
+        "total_edge_count": 384,
+        "unit_count": 48
+      },
+      "planned_topology_sha256": "254739562f9a409757a8cc05b58deeb93b700c871c32003e37c67a03a1da0383",
+      "removed_edges": [
+        [
+          42,
+          44
+        ],
+        [
+          46,
+          44
+        ]
+      ],
+      "schedule_event_count": 48,
+      "static_acceptance": "PASS",
+      "static_hidden_source_paths": [
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 42,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            42,
+            27
+          ],
+          "nominal_hidden_time_ms": 5.0,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            32,
+            42
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        },
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 46,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            46,
+            27
+          ],
+          "nominal_hidden_time_ms": 5.0,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            32,
+            46
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        }
+      ],
+      "world_sha256": "bf2129fb29b82dbcfac349a0ddcb6a6ad86ab9269f36165aca0fabbb500a1545"
+    },
+    {
+      "added_edges": [
+        [
+          38,
+          27
+        ],
+        [
+          44,
+          27
+        ]
+      ],
+      "baseline_topology_sha256": "022b0f5c41678799df3927831fdaea97664ccc2bccbaecf0a1645d452997c5ca",
+      "declared_return_clock": {
+        "hidden_source_ids": [
+          38,
+          44
+        ],
+        "nominal_hidden_time_ms": 5.0,
+        "predecessor_event_id": "rd006-v2-ext-000000",
+        "predecessor_time_ms": 0.0,
+        "predecessor_unit_id": 32,
+        "return_event_id": "rd006-v2-ext-000001",
+        "return_time_ms": 5.5,
+        "return_unit_id": 27,
+        "schedule_relation_lag_ms": 0.5
+      },
+      "declared_schedule_sha256": "a54d28cab2ede2ac32525b33b4bd50a59c7d659d01073e2cf4edacaa8afb5655",
+      "dynamic_reachability_claimed": false,
+      "family": "shared-prefix",
+      "invariants": {
+        "all_declared_lags_in_fixed_window": true,
+        "all_hidden_to_return_edge_delays_in_fixed_window": true,
+        "all_source_outdegrees_exact": true,
+        "all_static_path_edges_present": true,
+        "distinct_hidden_source_count": 2,
+        "hidden_ring_edges_preserved": true,
+        "mean_out_degree": 8.0,
+        "no_self_edges": true,
+        "port_source_edges_preserved": true,
+        "route_edges_preserved": true,
+        "total_edge_count": 384,
+        "unit_count": 48
+      },
+      "planned_topology_sha256": "348e34b05f19baa9b09df7ae812a6f0440f84599c40cac13a35031b8878d6a57",
+      "removed_edges": [
+        [
+          38,
+          45
+        ],
+        [
+          44,
+          43
+        ]
+      ],
+      "schedule_event_count": 48,
+      "static_acceptance": "PASS",
+      "static_hidden_source_paths": [
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 38,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            38,
+            27
+          ],
+          "nominal_hidden_time_ms": 5.0,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            32,
+            38
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        },
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 44,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            44,
+            27
+          ],
+          "nominal_hidden_time_ms": 5.0,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            32,
+            44
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        }
+      ],
+      "world_sha256": "71fcc7cccfc5efacca04e10bf0bc85069e900d5e5cc94f9d3ec7815206943724"
+    },
+    {
+      "added_edges": [
+        [
+          40,
+          27
+        ]
+      ],
+      "baseline_topology_sha256": "4091fce089ab6a73cc22be22987cac2cfc939509996002522f6dc9bc6acdd40a",
+      "declared_return_clock": {
+        "hidden_source_ids": [
+          40,
+          43
+        ],
+        "nominal_hidden_time_ms": 5.0,
+        "predecessor_event_id": "rd006-v2-ext-000000",
+        "predecessor_time_ms": 0.0,
+        "predecessor_unit_id": 32,
+        "return_event_id": "rd006-v2-ext-000001",
+        "return_time_ms": 5.5,
+        "return_unit_id": 27,
+        "schedule_relation_lag_ms": 0.5
+      },
+      "declared_schedule_sha256": "d23b8317ac1df400d189e6cd20639e7d0eaa44f596f1e80e25898c7d4b7ab27d",
+      "dynamic_reachability_claimed": false,
+      "family": "opposing-reversal",
+      "invariants": {
+        "all_declared_lags_in_fixed_window": true,
+        "all_hidden_to_return_edge_delays_in_fixed_window": true,
+        "all_source_outdegrees_exact": true,
+        "all_static_path_edges_present": true,
+        "distinct_hidden_source_count": 2,
+        "hidden_ring_edges_preserved": true,
+        "mean_out_degree": 8.0,
+        "no_self_edges": true,
+        "port_source_edges_preserved": true,
+        "route_edges_preserved": true,
+        "total_edge_count": 384,
+        "unit_count": 48
+      },
+      "planned_topology_sha256": "f904f6ad5989fd3896a9529fb565f6efcc05fc9942cc37df2ce7ceba97971a3d",
+      "removed_edges": [
+        [
+          40,
+          45
+        ]
+      ],
+      "schedule_event_count": 48,
+      "static_acceptance": "PASS",
+      "static_hidden_source_paths": [
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 40,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            40,
+            27
+          ],
+          "nominal_hidden_time_ms": 5.0,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            32,
+            40
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        },
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 43,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            43,
+            27
+          ],
+          "nominal_hidden_time_ms": 5.0,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            32,
+            43
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        }
+      ],
+      "world_sha256": "e75b8f1316d185a7b0dc366020945be6ac01b3fb52cf67e1f35f689bf2063b83"
+    },
+    {
+      "added_edges": [
+        [
+          37,
+          33
+        ],
+        [
+          47,
+          33
+        ]
+      ],
+      "baseline_topology_sha256": "c0fae2d7bb83331a44f500ec114de6fd46591a89e1eb9611bf328083445e1025",
+      "declared_return_clock": {
+        "hidden_source_ids": [
+          37,
+          47
+        ],
+        "nominal_hidden_time_ms": 5.0,
+        "predecessor_event_id": "rd006-v2-ext-000000",
+        "predecessor_time_ms": 0.0,
+        "predecessor_unit_id": 32,
+        "return_event_id": "rd006-v2-ext-000001",
+        "return_time_ms": 5.5,
+        "return_unit_id": 33,
+        "schedule_relation_lag_ms": 0.5
+      },
+      "declared_schedule_sha256": "5311703e2a9fb2fd88c54dfa95f6f9a2b7840c0721a7e28ede6a3c5f93c89c75",
+      "dynamic_reachability_claimed": false,
+      "family": "dense-load",
+      "invariants": {
+        "all_declared_lags_in_fixed_window": true,
+        "all_hidden_to_return_edge_delays_in_fixed_window": true,
+        "all_source_outdegrees_exact": true,
+        "all_static_path_edges_present": true,
+        "distinct_hidden_source_count": 2,
+        "hidden_ring_edges_preserved": true,
+        "mean_out_degree": 8.0,
+        "no_self_edges": true,
+        "port_source_edges_preserved": true,
+        "route_edges_preserved": true,
+        "total_edge_count": 384,
+        "unit_count": 48
+      },
+      "planned_topology_sha256": "9b4a956b101e777441cf988d0bd85d7e9b3dd30b589d87f3d7399ef9d2d83073",
+      "removed_edges": [
+        [
+          37,
+          31
+        ],
+        [
+          47,
+          44
+        ]
+      ],
+      "schedule_event_count": 128,
+      "static_acceptance": "PASS",
+      "static_hidden_source_paths": [
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 37,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            37,
+            33
+          ],
+          "nominal_hidden_time_ms": 5.0,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            32,
+            37
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        },
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 47,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            47,
+            33
+          ],
+          "nominal_hidden_time_ms": 5.0,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            32,
+            47
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        }
+      ],
+      "world_sha256": "5e476d03bbb185770a30b354945e64812ab210a0cd7c6e6c34a639ca0a29a924"
+    },
+    {
+      "added_edges": [],
+      "baseline_topology_sha256": "ade05a01415df63b932eb6addf7018b019a8e7bdd031e2c664c601b07801d763",
+      "declared_return_clock": {
+        "hidden_source_ids": [
+          37,
+          40
+        ],
+        "nominal_hidden_time_ms": 10010.5,
+        "predecessor_event_id": "rd006-v2-ext-000017",
+        "predecessor_time_ms": 10005.5,
+        "predecessor_unit_id": 17,
+        "return_event_id": "rd006-v2-ext-000018",
+        "return_time_ms": 10011.0,
+        "return_unit_id": 20,
+        "schedule_relation_lag_ms": 0.5
+      },
+      "declared_schedule_sha256": "2411c37a393a5c268269844a9c042445d81024cf2d8813bc6d6108d0229f1321",
+      "dynamic_reachability_claimed": false,
+      "family": "capacity-pressure",
+      "invariants": {
+        "all_declared_lags_in_fixed_window": true,
+        "all_hidden_to_return_edge_delays_in_fixed_window": true,
+        "all_source_outdegrees_exact": true,
+        "all_static_path_edges_present": true,
+        "distinct_hidden_source_count": 2,
+        "hidden_ring_edges_preserved": true,
+        "mean_out_degree": 8.0,
+        "no_self_edges": true,
+        "port_source_edges_preserved": true,
+        "route_edges_preserved": true,
+        "total_edge_count": 384,
+        "unit_count": 48
+      },
+      "planned_topology_sha256": "ade05a01415df63b932eb6addf7018b019a8e7bdd031e2c664c601b07801d763",
+      "removed_edges": [],
+      "schedule_event_count": 96,
+      "static_acceptance": "PASS",
+      "static_hidden_source_paths": [
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 37,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            37,
+            20
+          ],
+          "nominal_hidden_time_ms": 10010.5,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            17,
+            37
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        },
+        {
+          "first_edge_present": true,
+          "hidden_source_id": 40,
+          "hidden_to_return_delay_ms": 5.0,
+          "hidden_to_return_edge": [
+            40,
+            20
+          ],
+          "nominal_hidden_time_ms": 10010.5,
+          "predecessor_to_hidden_delay_ms": 5.0,
+          "predecessor_to_hidden_edge": [
+            17,
+            40
+          ],
+          "return_clock_lag_ms": 0.5,
+          "second_edge_present": true
+        }
+      ],
+      "world_sha256": "64dd2fc8f0b7880fb93e52b3774d38ffbf22a7a6b2e2c3c342129b6c4e6da74f"
+    }
+  ],
+  "families_passing": 6,
+  "family_count": 6,
+  "held_out_use": false,
+  "interpretation": "Construction reachability only: each family has one declared clock with two static hidden-source paths in the fixed lag window. This does not show that either source fires, returns visibly, learns, or improves capability.",
+  "later_e0_e1_es_authorized": false,
+  "new_dynamic_execution": false,
+  "new_result_bearing_matrix": false,
+  "next_action": "STOP_FOR_FRESH_EVIDENCE_ANALYST_RECONCILIATION",
+  "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
+  "observed_spike_or_artifact_outcome_used": false,
+  "parent_static_audit_head": "cdb985e16dda2b38f7a0713e51992fa16f128ad5",
+  "protocol_id": "rv02-rd006-external-learning-reachability-a-v3-structural-temporal-role-preflight",
+  "report_sha256": "98a41044c15293b404a04590242b2d7ec3100615ab9aa1ee2aba3ec0ce3e27f5",
+  "reservoir_comparison_authorized": false,
+  "scale_expansion_authorized": false,
+  "schema_version": 1,
+  "scientific_credit": 0,
+  "static_preflight_status": "PASS",
+  "v3_result_bearing_execution_authorized": false
+}
