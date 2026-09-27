@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260928T042704+0900-R101-SCHEDULER-POLICY-NORMALIZATION",
-  "produced_at": "2026-09-28T04:27:04+09:00",
+  "generation_id": "CTRL-20260928T045012+0900-R102-M1-AUTHORITY-GAP-HOLD",
+  "produced_at": "2026-09-28T04:50:12+09:00",
   "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
   "mode": "CONTROL_BRAIN",
   "policy_refs": {
@@ -19,9 +19,9 @@
     "HUMAN-20260928-002": "ACCEPT_WITH_MODIFICATION_PARALLEL_FLY0_FORGE_TRACK_DO_NOT_BLOCK_M1"
   },
   "refs_observed": {
-    "control_before": "13e3667ac485ce8857c2e6e8a3363aa32dc54909",
+    "control_before": "0b8c21cb6519c247330f22dd33d2c81b7bf81cc7",
     "evidence_analyst": "6cedfd56ddc3e88e73441ea8b0db59932ccd90fb",
-    "main_reports": "282981a96148e071e2f985bf8b8f60563cda9563",
+    "main_reports": "8dd7a689f6b376791dd2c368956c5157550cbbd6",
     "main": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
     "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "sb002_authorized_head": "720e18bcff53be76c861fa8c09d24d5320b90455",
@@ -228,16 +228,16 @@
     }
   },
   "scheduler_change": {
-    "changed": true,
-    "class": "PROMPT_ONLY_POLICY_NORMALIZATION",
+    "changed": false,
+    "class": "NO_CHANGE",
     "cadence_changed": false,
     "enabled_state_changed": false
   },
   "scheduler_health": {
-    "classification": "GREEN_POLICY_NORMALIZED_WITH_SB002_REPAIR_PENDING",
+    "classification": "GREEN_FLEET_ALIGNED_SB002_ANALYST_REPAIR_CONTRACT_PENDING",
     "unexplained_current_production_off": false,
     "change_required": false,
-    "live_definition_audit_at": "2026-09-28T04:27:04+09:00"
+    "live_definition_audit_at": "2026-09-28T04:50:12+09:00"
   },
   "blue_green": {
     "current_fleet": "GREEN_PRODUCTION",
@@ -246,12 +246,11 @@
   },
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "branch_head_before": "13e3667ac485ce8857c2e6e8a3363aa32dc54909",
+    "branch_head_before": "0b8c21cb6519c247330f22dd33d2c81b7bf81cc7",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
-    "attempt": 2,
+    "attempt": 1,
     "maximum_attempts": 5,
-    "attempt_1_failure_class": "PRE_GITHUB_RUNTIME_SAFETY_REFUSAL",
-    "commit_record_semantics": "INTENT_RECORDED_IN_COMMIT; COMPLETION_REQUIRES_EXTERNAL_POST_COMMIT_READBACK"
+    "commit_record_semantics": "INTENT_RECORDED_IN_COMMIT_COMPLETION_REQUIRES_EXTERNAL_POST_COMMIT_READBACK"
   },
   "hard_floor": {
     "experiment_dispatched": false,
@@ -261,16 +260,21 @@
     "terminal_reopened": false,
     "consumed_formal_rerun_retune_rescore": false,
     "result_bearing_science_dispatched": false,
-    "scheduler_prompt_changed": true,
+    "scheduler_prompt_changed": false,
     "scheduler_cadence_changed": false,
     "scheduler_enabled_state_changed": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-28/0427-R101.md",
+  "history_path": "analysis/control_brain/history/2026-09-28/0450-R102.md",
   "human_directives_reconciliation": {
     "source": "ops/human_directives/active.md@ops/human-directives",
     "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "previous_directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "newly_active_or_materially_changed": [],
+    "applicable_directives_read": [
+      "HUMAN-20260928-001",
+      "HUMAN-20260928-002"
+    ],
     "freshness_verified": true
   },
   "strategy": {
@@ -310,10 +314,10 @@
       "SB002_INTEGRATED_CAUSAL_SCOPE_REVISION_NON_EVIDENTIARY_REPAIR_PENDING"
     ],
     "critical_path": [
-      "SB002_DEFECT_REPAIR_AND_REVERIFICATION",
+      "EVIDENCE_ANALYST_DEFINE_SB002_DEFECT_REPAIR_AND_ROLLING_NEXT_2_TO_4_MILESTONE_CONTRACT",
+      "MAIN_REPAIR_AND_REVERIFY_SB002_CONCRETE_ENGINEERING_DEFECTS",
       "ANALYST_RECONCILE_EXISTING_COMPONENTS_AGAINST_M1_LOOP",
-      "ANALYST_DEFINE_NEXT_2_TO_4_PROSPECTIVE_BOUNDED_MILESTONES",
-      "MAIN_EXECUTE_ROLLING_CONTRACT_UNTIL_EXPLICIT_STOP_BOUNDARY"
+      "MAIN_CONTINUE_PREAUTHORIZED_MILESTONES_UNTIL_EXPLICIT_STOP_BOUNDARY"
     ],
     "parallel_work": [
       "FORGE_NEXT_MILESTONE_PRIMITIVES_AND_GUARDS",
@@ -360,5 +364,17 @@
     "enabled_states_changed": false,
     "relay_remains_disabled": true,
     "unrelated_tasks_changed": false
+  },
+  "current_run": {
+    "control_mode": "CONTROL_BRAIN",
+    "slot_jst": "04:50",
+    "analyst_generation_observed": "EVA-20260928T025931+0900-R160-SB002-EXACT-HEAD-INTEGRATION-AUTHORITY",
+    "main_generation_observed": "MAIN-20260928T041557+0900-PRIMARY-R166-SB002-DEFECTS-WAIT-ANALYST",
+    "analyst_repair_authority_present": false,
+    "rolling_next_milestone_contract_present": false,
+    "live_enabled_current_workers": 8,
+    "relay_intentionally_disabled": true,
+    "scheduler_mutation_required": false,
+    "scientific_execution_authorized": false
   }
 }
