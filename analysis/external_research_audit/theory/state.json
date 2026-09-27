@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "generation_id": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
-  "produced_at": "2026-09-27T09:41:00+09:00",
-  "producer_run_id": "external-theory-auto-THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
+  "generation_id": "THEORY-20260927T133111+0900-R8-NO-PROPOSAL-FORGE-SEAM-RECONCILIATION-8D3F6A27",
+  "produced_at": "2026-09-27T13:31:11+09:00",
+  "producer_run_id": "external-theory-auto-THEORY-20260927T133111+0900-R8-NO-PROPOSAL-FORGE-SEAM-RECONCILIATION-8D3F6A27",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
-  "supersedes_generation_id": "THEORY-20260927T033309+0900-R6-LATENT-SCOPE-PLURAL-REVISION-DESIGN-6F8C2A41",
+  "supersedes_generation_id": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
   "role": "THEORY_SYNTHESIS_ARCHITECT",
-  "schedule_slot": "09:30 JST",
+  "schedule_slot": "13:30 JST",
   "schedule_inference": false,
   "genuinely_new_information": true,
   "new_sparkbrain_scientific_result": false,
@@ -15,25 +15,35 @@
   "retained_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
   "revisit_proposal": null,
   "revisit_status": "NO_REVISIT_PROPOSAL",
-  "rationale": "New R45/R144/Forge lifecycle information sharpens reductions and engineering lifecycle semantics but does not materially change the R6 architecture or expose a reduction-resistant scientific residue; a new proposal would be reformulation.",
+  "rationale": "The new Forge bridge, observed-outcome adapter and top-k tail guard implement and harden interfaces already present in R6; they reduce implementation uncertainty but add no new target capability, reduction-resistant principle, prediction or falsifier.",
   "input_generations": {
-    "prior_theory": "THEORY-20260927T033309+0900-R6-LATENT-SCOPE-PLURAL-REVISION-DESIGN-6F8C2A41",
+    "prior_theory": "THEORY-20260927T094100+0900-R7-NO-PROPOSAL-LIFECYCLE-RECONCILIATION-5A7C9E31",
     "literature": "LIT-20260927T062709+0900-R45-RV02-RD006-REACHABILITY-91C4A8E2",
     "audit": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
-    "evidence_analyst": "EVA-20260927T070206+0900-R144-RD006-BRANCH-LIT45-FORGE-HANDOFF-RECONCILED",
-    "methodology": "METHCAL-20260926T201857+0900-R126-4B7E2C91",
-    "forge_lifecycle": "FORGE-20260927T043947+0900-STABLE-SCOPE-LIFECYCLE-CI-CLEAN"
+    "evidence_analyst": "EVA-20260927T130000+0900-R148-RD006-V2-RECONCILIATION",
+    "forge_plural_scope_bridge": "FORGE-20260927T104030+0900-PLURAL-SCOPE-REVISION-BRIDGE-CI-CLEAN",
+    "forge_coverage_guard": "FORGE-20260927T124400+0900-COVERAGE-AWARE-OUTCOME-GUARD-CI-CLEAN"
   },
   "repository_refs_inspected": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "external_science_before_publish": "3d766142d9b967b22c5d364d599e35aa5b064d65",
-    "forge_lifecycle_branch": "dcd29dcc477d62b4f802b6985f77380a498fb8b1",
-    "evidence_analyst_ref": "066eff35eaa8f10b130907701bd8b553f2406426",
-    "system_build_branch": "system-build/sb001-predictive-state-revision-pilot-20260925",
+    "external_science_before_publish": "3538e527ded0e494dca889d4dc55eef34a9d0f3e",
+    "evidence_analyst_generation": "EVA-20260927T130000+0900-R148-RD006-V2-RECONCILIATION",
+    "forge_plural_scope_handoff": "77814d0c2ea97a7c350f443809bc3f23f294c3ce",
+    "forge_coverage_handoff": "751b4d72185e87ea88521aa93bf780048ccac4ae",
     "human_directives_ref": "ops/human-directives"
+  },
+  "retained_design_sharpening": {
+    "caller_supplied_scope_identity_forbidden": true,
+    "caller_supplied_derivable_prediction_error_forbidden": true,
+    "top_k_omission": "TAIL_BOUNDED_INTERVAL",
+    "ambiguous_or_tail_sensitive": "ABSTAIN_COMPLETE_NO_WRITE",
+    "lazy_cache_creation_on_no_write_forbidden": true,
+    "checkpoint_replay_required": true,
+    "component_replacement_and_connection_ablation_separate": true
   },
   "terminal_relevance_scan": {
     "rd005": "NO_REOPEN_CONSUMED",
+    "rd006_v2": "CLOSED_CURRENT_V2_CONTRACT_NO_NEW_THEORY",
     "h7": "NO_TRIGGER",
     "th002": "NO_TRIGGER_KILLED",
     "candidate34": "NO_TRIGGER",
@@ -44,12 +54,14 @@
   "system_build_handling": {
     "sb001": "INTEGRATED_COMPLETE_NON_EVIDENTIARY",
     "retained_future_design": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-    "forge_lifecycle": "OPTIONAL_ENGINEERING_INPUT_AWAIT_ANALYST_RECONCILIATION",
-    "new_build_id_created": false
+    "forge_inputs": "OPTIONAL_FUTURE_SEPARATELY_BOUND_SYSTEM_BUILD_ONLY",
+    "new_build_id_created": false,
+    "mandatory_review_gate": false
   },
   "must_not_change_frozen_or_consumed": [
     "all consumed FORMAL identities and authoritative scientific refs/results",
     "RD005 consumed identity/result",
+    "RD006 v2 closed development result",
     "H7 INCONCLUSIVE / CONSUMED_ONE_WAY",
     "all terminal candidate histories",
     "SB001 scientific credit remains zero"
@@ -57,5 +69,5 @@
   "scientific_mutations": 0,
   "experiments_dispatched": 0,
   "scheduler_changes": 0,
-  "history_path": "analysis/external_research_audit/theory/history/2026-09-27/0930-THEORY_SYNTHESIS_ARCHITECT.md"
+  "history_path": "analysis/external_research_audit/theory/history/2026-09-27/1330-THEORY_SYNTHESIS_ARCHITECT.md"
 }
