@@ -1,24 +1,24 @@
 {
   "schema_version": 2,
-  "generation_id": "EVA-20260927T160005+0900-R150-RD006-V3-D0-MATRIX-ALLOCATION",
-  "generated_at": "2026-09-27T16:00:05+09:00",
+  "generation_id": "EVA-20260927T170004+0900-R151-RD006-V3-D0-DYNAMIC-GATE-CLARIFIED",
+  "generated_at": "2026-09-27T17:00:04+09:00",
   "cache_role": "MOVING_CACHE_ONLY",
   "durable_authority": {
-    "history_path": "analysis/orchestrator/history/2026-09-27/1600-R150.md",
+    "history_path": "analysis/orchestrator/history/2026-09-27/1700-R151.md",
     "complete": true
   },
   "new_scientific_result": false,
   "scientific_execution_mode": "READ_ONLY",
-  "go_stop": "GO_ONE_BOUNDED_V3_D0_MATRIX_STOP_LATER_STAGES",
+  "go_stop": "GO_ONE_BOUNDED_V3_D0_MATRIX_WITH_ACTUAL_SPIKE_GATE_STOP_LATER_STAGES",
   "refs_observed": {
     "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
     "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7",
-    "prior_analyst_target_head": "79b2e7e67144804393911853b7bd405fafec629e",
-    "control": "0981407a0455fa11a536d5ecf9333a4af336832b",
+    "prior_analyst_target_head": "32e17655e21c4dbdb686a5234c00f58a854796aa",
+    "control": "927a2c84dccc49140dc720a48c52f399d4e0692a",
     "main_reports": "48d02ef9bb015b2c7c30fba0364bea65c6abe665",
     "rd006_v3_static_preflight_head": "6b273e531c22729759cacabcced9df3319227a8e",
     "rd006_v3_ci_run_id": 36300144023,
-    "methodology": "f036226a374f4518adfab515bbe0e78f847040ee",
+    "methodology": "deb7e6781eaf1c6139cee0056c51365346e70543",
     "external_science": "cf3c49a4affa31e21ed9229983766da7ee064587"
   },
   "canonical_funnel": {
@@ -57,7 +57,7 @@
       "claim_ceiling": "SYSTEM",
       "preformal_eligible": false,
       "preformal_readiness": "NOT_READY",
-      "queue_state": "ALLOCATED_ONE_BOUNDED_D0_MATRIX",
+      "queue_state": "ALLOCATED_ONE_BOUNDED_D0_MATRIX_GATE_CLARIFIED",
       "evidentiary_status": "DEVELOPMENT_ZERO_CONFIRMATORY_CREDIT",
       "scientific_credit": 0,
       "static_preflight": {
@@ -80,7 +80,27 @@
         "ON"
       ],
       "hidden_return_learning": "OFF",
-      "complete_non_exploded_gate": "AT_LEAST_ONE_SCHEDULED_RETURN_WITH_TWO_DISTINCT_STRUCTURALLY_CONNECTED_HIDDEN_SOURCES_IN_FIXED_LAG_WINDOW",
+      "dynamic_eligible_source_definition": {
+        "actual_hidden_spike_required": true,
+        "distinct_source_id_required": true,
+        "eligible_non_negative_edge_to_current_scheduled_visible_return_target_required": true,
+        "observed_spike_to_return_lag_window_ms": [
+          0.5,
+          6.5
+        ],
+        "static_connectivity_or_nominal_time_alone_sufficient": false
+      },
+      "complete_non_exploded_gate": {
+        "minimum_distinct_dynamic_eligible_hidden_sources_same_return_clock": 2,
+        "at_least_one_cell": true,
+        "cell_must_complete_without_ceiling": true,
+        "status_on_open": "REACHABLE_FOR_LATER_ANALYST_REVIEW"
+      },
+      "reporting": {
+        "static_path_counts_separate_from_dynamic_eligible_source_counts": true,
+        "off_on_arms_separate": true,
+        "off_on_difference": "DIAGNOSTIC_ONLY"
+      },
       "stop_after": "PRESERVE_AND_WAIT_FRESH_ANALYST_RECONCILIATION"
     },
     "fixed_contract": {
@@ -110,7 +130,8 @@
       "RESERVOIR_COMPARISON",
       "LEARNER_BOUNDARY_CHANGE",
       "CAPABILITY_SCORING"
-    ]
+    ],
+    "phase_transition_after_meaningful_matrix_output": "RESULT_EXPOSED_DEVELOPMENT"
   },
   "system_build_ledger": {
     "sb001": {
@@ -135,12 +156,14 @@
       "revisit_status": "NO_REVISIT_PROPOSAL"
     },
     "methodology": {
-      "generation": "METHCAL-20260927T142036+0900-R130-RD006-V3-STATIC-PREFLIGHT-CALIBRATION",
-      "classification": "WELL_CALIBRATED"
+      "generation": "METHCAL-20260927T161705+0900-R131-RD006-V3-D0-GATE-CALIBRATION",
+      "classification": "SLIGHTLY_TOO_PERMISSIVE",
+      "disposition": "ACCEPT_DYNAMIC_GATE_CLARIFICATION"
     },
     "control": {
-      "generation": "CTRL-20260927T155000+0900-R92-RD006-V3-STATIC-PREFLIGHT-OBSERVED",
-      "incident": "CLOSED_P0_RECOVERED"
+      "generation": "CTRL-20260927T165000+0900-R93-RD006-V3-D0-ALLOCATION-BOUNDARY",
+      "incident": "CLOSED_P0_RECOVERED",
+      "disposition": "NARROW_INTERPRETATION_NO_EXECUTION_SURFACE_CHANGE"
     },
     "forge": {
       "disposition": "OPTIONAL_FUTURE_SEPARATELY_BOUND_SYSTEM_BUILD_ONLY",
@@ -150,7 +173,7 @@
   },
   "persistence": {
     "route": "EVIDENCE_ANALYST_ACTIONS_BRIDGE_RETAINED_HARDENING",
-    "prior_generation": "R149",
+    "prior_generation": "R150",
     "prior_complete": true,
     "active_pointer_debt": []
   },
