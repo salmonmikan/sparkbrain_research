@@ -1,262 +1,209 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260928T065013+0900-R104-M1-WAIT-ANALYST",
-  "produced_at": "2026-09-28T06:50:13+09:00",
-  "authority_scope": "CONTROL_BRAIN_STRATEGY_GOVERNANCE_SCHEDULER_FLEET_AND_P0_INCIDENT_CONTROL",
+  "generation_id": "CTRL-20260928T084949+0900-R105-M1-ROBUSTNESS-ALLOCATED",
+  "produced_at": "2026-09-28T08:49:49+09:00",
   "mode": "CONTROL_BRAIN",
-  "policy_refs": {
-    "main": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
-    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d"
+  "role_resolution": {
+    "canonical_slot": "08:50",
+    "window": "EARLY_GRACE",
+    "drift_seconds": -11
   },
-  "human_directives_reconciliation": {
-    "source": "ops/human_directives/active.md@ops/human-directives",
-    "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "previous_directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "newly_active_or_materially_changed": [],
-    "applicable_directives_read": [
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002"
-    ],
-    "dispositions": {
-      "HUMAN-20260928-001": "ACCEPT_WITH_MODIFICATION_M1_PRIMARY_WAIT_EXACT_HEAD_RECONCILIATION",
-      "HUMAN-20260928-002": "ACCEPT_WITH_MODIFICATION_PARALLEL_FLY0_FORGE_ONLY_NO_SB003"
+  "authority": {
+    "main": {
+      "ref": "main",
+      "head": "59fc994b39d0ba02682e972161bb46801592d25b"
     },
-    "freshness_verified": true
-  },
-  "refs_observed": {
-    "control_before": "c155cf09495a25bff87868aaba1b90bb06459310",
-    "evidence_analyst": "195ca2d230928c7cada86e51d4f04b25904ffc04",
-    "main_reports": "a821aa4314d7b9501159462374931150d955405e",
-    "main": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
-    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "m1_exact_head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
-    "m1_exact_tree": "10d252a52abdafed7806fc81b39ee8ba126713a9",
-    "fly0_prototype_head": "c9538544b04108a950e841cbc90b626259d7e3ff",
-    "methodology": "0eb0caf458dbd81b11ed99094135941ab40bddd9",
-    "external_science": "64f161a43986cefc5f25e644cb504761c038d187"
-  },
-  "science": {
-    "canonical": 35,
-    "terminal": 35,
-    "active": 0,
-    "scientifically_queued": 0,
-    "consumed_formal_identities": 8,
-    "new_scientific_result": false,
-    "result_bearing_execution_authorized": false
-  },
-  "system_build": {
-    "sb001": {
-      "state": "INTEGRATED_COMPLETE",
-      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-      "scientific_credit": 0
+    "directive_index": {
+      "ref": "ops/human-directives",
+      "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+      "path": "ops/human_directives/active.md",
+      "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+      "delta_from_prior": "NONE"
     },
-    "sb002": {
-      "state": "THREE_CONFIRMED_INTEGRITY_DEFECTS_REPAIRED_IN_M1_BRANCH",
-      "repairs": [
-        "STABLE_EVIDENCE_IDENTITY_AND_IDEMPOTENCE",
-        "EXACT_CHECKPOINT_ROUTE_LEDGER_COMPLETENESS",
-        "UNIQUE_GLOBAL_EVIDENCE_SEQUENCE"
-      ],
-      "scientific_credit": 0
+    "analyst": {
+      "ref": "ops/evidence-analyst-handoff",
+      "head": "75ca5511739e6174cafc485d3c5fa6ffe9fda8b0",
+      "generation": "EVA-20260928T080240+0900-R163-M1-POST-INTEGRATION-ROBUSTNESS"
     },
-    "m1": {
-      "build_id": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
-      "state": "ALL_FOUR_ROLLING_MILESTONES_COMPLETE_EXACT_HEAD_CI_GREEN_WAIT_ANALYST_RECONCILIATION",
-      "owner": "MAIN",
-      "branch": "system-build/ipm1-continuous-revision-20260928",
-      "base_main": "6b4d219d4cc929a63981b98d6d5d73fd8e175f48",
-      "head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
-      "tree": "10d252a52abdafed7806fc81b39ee8ba126713a9",
-      "ci_run": 36348434677,
-      "ci_conclusion": "success",
-      "python_311": "success",
-      "python_313": "success",
-      "built": true,
-      "bounded_functionally_verified": true,
-      "comparatively_supported": false,
-      "composition_contribution": "NOT_ESTABLISHED",
-      "scientifically_novel": false,
-      "scientific_credit": 0,
-      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-      "pr_merge_authorized": false,
-      "stop_boundary": "FRESH_ANALYST_EXACT_HEAD_RECONCILIATION_BEFORE_PR_OR_MERGE"
+    "main_reports": {
+      "ref": "ops/orchestrator-run-report",
+      "head": "53890fc113ba4e9c0680e138376485b11bf0a849",
+      "latest_generation": "R169"
+    },
+    "methodology": {
+      "ref": "ops/methodology-calibration-audit",
+      "head": "39571a5710d1a6a545f933ed76f383f505ad38b8"
+    },
+    "external_science": {
+      "ref": "ops/external-research-audit-handoff",
+      "head": "b1105da77d78de20c3974fea5f384a6846416c8c"
+    },
+    "utility": {
+      "ref": "ops/utility-orchestrator-requests",
+      "head": "12ca71d25f431c024009c698ddd19234a1ecca60"
+    },
+    "forge": {
+      "ref": "forge/20260928-fly0-hierarchical-loop-a",
+      "head": "03f812775199166638796c379d461e4f1f1e1259",
+      "prototype_code_head": "250708bf93edebc9d83d097a0f2fc1232d185368"
+    },
+    "control_before": {
+      "ref": "ops/control-brain-handoff",
+      "head": "dbca69cc12a4eb3a2e57c5ccf9aa00d38ed20126"
     }
   },
-  "integrated_prototype_m1": {
-    "primary_objective": true,
-    "target_loop_built": true,
-    "checkpoint_restore_replay": "BOUNDED_VERIFIED",
-    "transactional_rollback": "BOUNDED_VERIFIED",
-    "internal_state_observability": "BOUNDED_VERIFIED",
-    "deterministic_bounded_test_worlds": "BOUNDED_VERIFIED",
-    "reuse_provenance": "DOCUMENTED_ZERO_INHERITED_SCIENTIFIC_CREDIT",
-    "current_critical_path": [
-      "EVIDENCE_ANALYST_EXACT_HEAD_RECONCILIATION",
-      "ANALYST_PR_MERGE_DISPOSITION",
-      "MAIN_ACT_ONLY_WITH_FRESH_AUTHORITY"
+  "directives": {
+    "new_or_materially_changed": [],
+    "dispositions": {
+      "HUMAN-20260925-002": "ACCEPT_RETAIN_CLOSED_P0_MONITORING",
+      "HUMAN-20260926-003": "ACCEPT_APPLIED_FLEET_RESTORED_BOUNDED_MONITORING",
+      "HUMAN-20260926-004": "ACCEPT_SYSTEM_BUILD_REVIEW_OPTIONAL",
+      "HUMAN-20260927-002": "ACCEPT_FIVE_ATTEMPT_LIMIT",
+      "HUMAN-20260928-001": "ACCEPT_WITH_MODIFICATION_M1_INTEGRATED_CONTINUE_M1_002",
+      "HUMAN-20260928-002": "ACCEPT_WITH_MODIFICATION_FORGE_HANDOFF_DURABLE_NO_SB003"
+    }
+  },
+  "science": {
+    "total": 35,
+    "terminal": 35,
+    "active": 0,
+    "queued": 0,
+    "consumed_formal_identities": 8,
+    "new_result": false
+  },
+  "system_build": {
+    "milestone_1": {
+      "status": "INTEGRATED_ACCEPTED_NON_EVIDENTIARY_BUILD",
+      "merge_head": "59fc994b39d0ba02682e972161bb46801592d25b",
+      "pull_request": 163,
+      "built": true,
+      "bounded_functionally_verified": true,
+      "comparative_support": false,
+      "composition_contribution": "NOT_ESTABLISHED",
+      "novelty": false,
+      "credit": 0
+    },
+    "current_allocation": {
+      "id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
+      "owner": "MAIN",
+      "required_base": "59fc994b39d0ba02682e972161bb46801592d25b",
+      "required_branch": "system-build/m1-post-integration-robustness-20260928",
+      "status": "ALLOCATED_NOT_EXECUTED",
+      "branch_observed": false,
+      "fixed_scenarios": [
+        "nominal_64_cycle_invariants",
+        "checkpoint_cutpoints_1_8_31_63",
+        "faults_early_middle_late",
+        "duplicate_conflict_pending_identity_paths"
+      ],
+      "caps": {
+        "execution": "offline_cpu",
+        "new_dependencies": false,
+        "cycles_per_scenario": 64,
+        "total_cycles": 512
+      },
+      "prohibited": [
+        "algorithms",
+        "thresholds",
+        "routing_topology",
+        "public_runtime_fields",
+        "resource_maxima",
+        "FLY-0",
+        "Theory",
+        "canonical_science"
+      ],
+      "next_boundary": [
+        "exact_head_ci",
+        "fresh_analyst_reconciliation"
+      ]
+    }
+  },
+  "integration_graph": {
+    "completed": [
+      "M1 integration",
+      "post-merge CI",
+      "Analyst R163 acceptance"
     ],
-    "next_bounded_milestones": [
-      "EXACT_HEAD_ACCEPTANCE_RECONCILIATION",
-      "PR_AND_MAIN_INTEGRATION_IF_AUTHORIZED",
-      "POST_INTEGRATION_BUILD_OBSERVATION_ONLY",
-      "FRESH_PROSPECTIVE_SCIENCE_ONLY_IF_NEW_SYSTEM_PHENOMENON_JUSTIFIES_IT"
+    "critical_path": [
+      "MAIN implements M1-002",
+      "exact-head CI",
+      "fresh Analyst reconciliation"
+    ],
+    "parallel": [
+      "Forge matched-resource/comparator refinement",
+      "Utility non-colliding support"
+    ],
+    "blockers": [
+      "M1-002 required branch absent"
+    ],
+    "next_milestones": [
+      "robustness harness implementation",
+      "exact-head verification",
+      "Analyst reconciliation",
+      "authorized PR/merge continuation"
     ]
   },
-  "flylike_track": {
-    "directive": "HUMAN-20260928-002",
-    "state": "FLY0_PROTOTYPE_HEAD_CI_GREEN_FORGE_HANDOFF_PENDING",
-    "branch": "forge/20260928-fly0-topology-probe-a",
-    "prototype_head": "c9538544b04108a950e841cbc90b626259d7e3ff",
-    "ci_run": 36349327771,
-    "ci_conclusion": "success",
-    "resource_signature": {
-      "nodes": 128,
-      "edges": 512,
-      "degree_preserving_rewire_verified": true
-    },
-    "bounded_observation": {
-      "structured_motor_side_selectivity": 1,
-      "structured_opposite_motor_events": 0,
-      "rewired_motor_side_selectivity": -0.019230769230769232,
-      "random_motor_side_selectivity": -0.030927835051546393
-    },
-    "future_claim_requirements": [
-      "MULTIPLE_UNBIASED_DEGREE_PRESERVING_REWIRES",
-      "BLOCK_OR_SPATIAL_NULL",
-      "ACTIVITY_EXPOSURE_REPORTING",
-      "STRONGER_CONTROLLER_REPLACEMENTS"
-    ],
+  "fly0": {
+    "status": "FORGE_INTERESTING_SYSTEM_BUILD_INPUT",
+    "durable_handoff": true,
+    "noncanonical": true,
+    "nonevidentiary": true,
+    "no_scientific_credit": true,
     "sb003_allocated": false,
     "m1_dependency": false,
-    "biological_equivalence_claimed": false,
-    "scientific_credit": 0,
-    "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE"
-  },
-  "durability": {
-    "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
-    "status": "CLOSED_P0_RECOVERED",
-    "active_pointer_debt": [],
-    "analyst_r161_persistence": "VERIFIED_COMPLETE",
-    "fly0_handoff": "PROTOTYPE_AND_CI_DURABLE_FORGE_POINTER_PUBLICATION_NOT_YET_OBSERVED",
-    "new_incident_opened": false,
-    "retained_hardening": [
-      "FIVE_TOTAL_ATTEMPTS",
-      "FRESH_HEAD_BEFORE_RETRY",
-      "ATOMIC_GIT_DATA_PUBLICATION",
-      "NON_FORCE_REF_UPDATE",
-      "INDEPENDENT_READBACK",
-      "APPEND_ONLY_HISTORY_PRIMARY"
+    "remaining_blockers": [
+      "activity_resource_exposure_mismatch",
+      "incomplete_matched_replacement_ladder",
+      "missing_interaction_ablation_matrix"
     ]
   },
   "fleet": {
-    "control": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "RUNNING",
-      "scheduler_id": "6ab7928fe07481919903adc57b596dfd"
-    },
-    "evidence_analyst": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "RUNNING_NEXT_RECONCILE_M1_EXACT_HEAD",
-      "scheduler_id": "6ab792ba724c81919be1cd071ab045ba"
-    },
-    "main": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "WAIT_ANALYST_EXACT_HEAD_RECONCILIATION_CURRENT_RUN_STOP_ONLY",
-      "scheduler_id": "6ab792e4401c8191a8f9804f1b407a4b"
-    },
+    "enabled_green": [
+      "CONTROL",
+      "EVIDENCE_ANALYST",
+      "PRIMARY_MAIN",
+      "FAST_FORGE",
+      "UTILITY",
+      "METHODOLOGY",
+      "EXTERNAL_SCIENCE",
+      "STATE_BRIEF"
+    ],
+    "enabled_count": 8,
     "relay": {
-      "desired": "DISABLED",
-      "actual": "DISABLED",
-      "operational": "DEPENDENCY_WAIT_SUSPENDED",
-      "scheduler_id": "6ab792fe98488191af93e6ff0facc7b5",
-      "restart_conditions": "READY_FOR_RELAY_OR_EXPLICIT_SAFE_HANDOFF",
-      "restart_owner": "CONTROL_BRAIN"
+      "state": "DISABLED_INTENTIONAL",
+      "restart_condition_met": false
     },
-    "utility": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "RUNNING",
-      "scheduler_id": "6ab7931c1cdc8191a8d8a8b344f22d60"
-    },
-    "fast_forge": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "RUNNING_FLY0_HANDOFF_PENDING",
-      "scheduler_id": "6ab7933b1aa081919594564ce879fdc6"
-    },
-    "methodology": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "RUNNING",
-      "scheduler_id": "6ab793cce5e8819191eaec8ebbb47466"
-    },
-    "external_science": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "RUNNING",
-      "scheduler_id": "6ab793ac05048191a9f30ff6460169c5"
-    },
-    "current_state_brief": {
-      "desired": "ENABLED",
-      "actual": "ENABLED",
-      "operational": "RUNNING_READ_ONLY",
-      "scheduler_id": "6ab793fb62dc819184e3660fdaac0485"
-    }
+    "deprecated_blue": "DISABLED_ROLLBACK_HISTORY_ONLY",
+    "scheduler_change": "NONE"
   },
   "scheduler_health": {
-    "classification": "GREEN_FLEET_ALIGNED_M1_BUILT_WAIT_ANALYST_EXACT_HEAD_RECONCILIATION",
-    "live_enabled_current_workers": 8,
-    "relay_intentionally_disabled": true,
-    "unexplained_current_production_off": false,
-    "definition_drift": false,
-    "scheduler_mutation_required": false
+    "classification": "YELLOW_OBSERVE_M1_002_ALLOCATED_BRANCH_NOT_YET_CREATED_AFTER_ONE_MAIN_CYCLE",
+    "material_definition_drift": false,
+    "incident": false,
+    "action": "OBSERVE_NEXT_MAIN_RUN"
   },
-  "scheduler_change": {
-    "changed": false,
-    "class": "NO_CHANGE",
-    "cadence_changed": false,
-    "enabled_state_changed": false,
-    "prompt_changed": false
+  "persistence": {
+    "p0_incident": "INC-GITHUB-PERSISTENCE-20260925-001",
+    "status": "CLOSED_P0_RECOVERED",
+    "analyst_r163_request_receipt_complete": true,
+    "forge_handoff_readback_complete": true,
+    "active_pointer_debt": false
   },
   "blue_green": {
-    "current_fleet": "GREEN_PRODUCTION",
-    "old_blue": "DISABLED_ROLLBACK_HISTORY_ONLY",
-    "additional_replacement_required": false
-  },
-  "publication": {
-    "branch": "ops/control-brain-handoff",
-    "branch_head_before": "c155cf09495a25bff87868aaba1b90bb06459310",
-    "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
-    "attempt": 1,
-    "maximum_attempts": 5,
-    "commit_record_semantics": "INTENT_RECORDED_IN_COMMIT_COMPLETION_REQUIRES_EXTERNAL_POST_COMMIT_READBACK"
+    "action": "NONE_REQUIRED",
+    "green_active": true,
+    "blue_disabled": true
   },
   "hard_floor": {
-    "experiment_dispatched": false,
-    "identity_consumed": false,
-    "scientific_ref_mutated": false,
-    "evidence_ref_mutated": false,
-    "terminal_reopened": false,
-    "consumed_formal_rerun_retune_rescore": false,
-    "result_bearing_science_dispatched": false,
-    "scheduler_changed": false
+    "science_system_build_separation": true,
+    "relay_ownership_respected": true,
+    "review_not_a_system_build_gate": true
   },
-  "current_run": {
-    "control_mode": "CONTROL_BRAIN",
-    "slot_jst": "06:50",
-    "resolution_source": "SCHEDULED_OCCURRENCE",
-    "analyst_generation_observed": "EVA-20260928T045927+0900-R161-M1-ROLLING-CONTRACT-SB002-INTEGRITY",
-    "main_generation_observed": "MAIN-20260928T061500+0900-PRIMARY-R168-M1-WAIT-ANALYST",
-    "methodology_generation_observed": "METHCAL-20260928T061905+0900-R137-M1-FLY0-CALIBRATION",
-    "external_science_generation_observed": "LIT-20260928T063000+0900-R46-FLY0-DISTRIBUTED-CONTROL-B7D3C4A1",
-    "analyst_rolling_contract_present": true,
-    "m1_all_milestones_complete": true,
-    "analyst_exact_head_reconciliation_present": false,
-    "scientific_execution_authorized": false
-  },
-  "history_path": "analysis/control_brain/history/2026-09-28/0650-R104.md"
+  "history_path": "analysis/control_brain/history/2026-09-28/0850-R105.md",
+  "publication": {
+    "branch": "ops/control-brain-handoff",
+    "head_before": "dbca69cc12a4eb3a2e57c5ccf9aa00d38ed20126",
+    "atomic": true,
+    "attempt": 1
+  }
 }
