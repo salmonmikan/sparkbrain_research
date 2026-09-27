@@ -23,6 +23,10 @@ class DurableCheckpointCorruptError(ValueError):
     """Raised when a checkpoint is malformed or fails its content digest."""
 
 
+class ReceiptCapacityMismatchError(ValueError):
+    """Raised when an existing checkpoint is opened with a different capacity."""
+
+
 FaultHook = Callable[[str], None]
 
 
@@ -64,20 +68,27 @@ class DurableOutcomeRevisionStore:
         cls,
         path: str | os.PathLike[str],
         *,
+        receipt_capacity: int | None = None,
         fault_hook: FaultHook | None = None,
     ) -> DurableOutcomeRevisionStore:
         checkpoint_path = Path(path)
         if not checkpoint_path.exists():
             return cls(
                 checkpoint_path,
-                IdempotentOutcomeRevisionStream(),
+                IdempotentOutcomeRevisionStream(receipt_capacity=receipt_capacity),
                 checkpoint_sha256=None,
                 fault_hook=fault_hook,
             )
         state, digest = cls._read_checkpoint(checkpoint_path)
+        stream = IdempotentOutcomeRevisionStream.from_state_dict(state)
+        stored_capacity = stream.state_dict()["receipt_capacity"]
+        if receipt_capacity is not None and receipt_capacity != stored_capacity:
+            raise ReceiptCapacityMismatchError(
+                "receipt_capacity does not match the existing checkpoint"
+            )
         return cls(
             checkpoint_path,
-            IdempotentOutcomeRevisionStream.from_state_dict(state),
+            stream,
             checkpoint_sha256=digest,
             fault_hook=fault_hook,
         )
@@ -216,4 +227,5 @@ __all__ = [
     "DurableCheckpointConflictError",
     "DurableCheckpointCorruptError",
     "DurableOutcomeRevisionStore",
+    "ReceiptCapacityMismatchError",
 ]

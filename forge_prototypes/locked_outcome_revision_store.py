@@ -42,12 +42,14 @@ class LockedOutcomeRevisionStore:
         self,
         path: Path,
         *,
+        receipt_capacity: int | None,
         lock_timeout_seconds: float | None,
         fault_hook: FaultHook | None,
     ) -> None:
         self._path = path
         self._lock_path = path.with_name(f".{path.name}.lock")
         self._lock_timeout_seconds = self._validate_timeout(lock_timeout_seconds)
+        self._receipt_capacity = receipt_capacity
         self._fault_hook = fault_hook
 
     @classmethod
@@ -55,11 +57,13 @@ class LockedOutcomeRevisionStore:
         cls,
         path: str | os.PathLike[str],
         *,
+        receipt_capacity: int | None = None,
         lock_timeout_seconds: float | None = 5.0,
         fault_hook: FaultHook | None = None,
     ) -> LockedOutcomeRevisionStore:
         return cls(
             Path(path),
+            receipt_capacity=receipt_capacity,
             lock_timeout_seconds=lock_timeout_seconds,
             fault_hook=fault_hook,
         )
@@ -117,6 +121,7 @@ class LockedOutcomeRevisionStore:
         try:
             fresh = DurableOutcomeRevisionStore.open(
                 self._path,
+                receipt_capacity=self._receipt_capacity,
                 fault_hook=self._fault_hook,
             )
             return fresh.process(
@@ -133,7 +138,10 @@ class LockedOutcomeRevisionStore:
     def state_dict(self) -> dict[str, Any]:
         descriptor = self._acquire_lock()
         try:
-            return DurableOutcomeRevisionStore.open(self._path).state_dict()
+            return DurableOutcomeRevisionStore.open(
+                self._path,
+                receipt_capacity=self._receipt_capacity,
+            ).state_dict()
         finally:
             self._release_lock(descriptor)
 
