@@ -158,7 +158,11 @@ def _maximum_internally_event_disjoint_paths(
             high_capacity if event_id in terminals else 1,
         )
     for edge in edges:
-        add_arc(_node(edge.source_event_id, "out"), _node(edge.target_event_id, "in"), high_capacity)
+        add_arc(
+            _node(edge.source_event_id, "out"),
+            _node(edge.target_event_id, "in"),
+            high_capacity,
+        )
     for seed in seeds:
         add_arc(source, _node(seed, "in"), high_capacity)
     for readout in readouts:

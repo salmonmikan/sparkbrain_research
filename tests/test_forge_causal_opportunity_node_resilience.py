@@ -121,7 +121,8 @@ def test_reordering_preserves_count_and_cut() -> None:
     first = assess(events, edges)
     second = assess(tuple(reversed(events)), tuple(reversed(edges)))
 
-    assert first.internally_event_disjoint_path_count == second.internally_event_disjoint_path_count == 2
+    assert first.internally_event_disjoint_path_count == 2
+    assert second.internally_event_disjoint_path_count == 2
     assert first.minimum_internal_event_cut == second.minimum_internal_event_cut
 
 
