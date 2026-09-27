@@ -1,15 +1,19 @@
 # Evidence Analyst latest
 
-- Generation: `EVA-20260927T110000+0900-R146-P0-CLOSED-FORGE-PLURAL-BRIDGE-REVIEWED`
+- Generation: `EVA-20260927T115839+0900-R147-RD006-V2-LAG-ALIGNMENT`
 - New scientific result: **no**
 - Canonical funnel: **35/35 terminal; 0 active; 0 scientifically queued; 8 consumed FORMAL identities**
 - FORMAL allocation: **NO_ACTION**
-- MAIN allocation: **RD006 D0 preserved-result causal opportunity audit only**
+- MAIN allocation: **RD006 v2 lag-alignment paired matrix**
 
-RD006 v1 remains `RESULT_EXPOSED_DEVELOPMENT` and `D0_INCONCLUSIVE_BOUNDED_EXPLOSION`, with zero scientific credit. Do not rerun or retune v1; do not start E0/E1/ES, scale/reservoir comparisons, or change lag, thresholds, gain, stimulus, topology, or the event ceiling before the preserved audit and fresh Analyst reconciliation.
+RD006 v1 remains `RESULT_EXPOSED_DEVELOPMENT / D0_INCONCLUSIVE_BOUNDED_EXPLOSION` with zero scientific credit.
 
-Methodology R128 validates the R145 phase resolution. MAIN R155 predates that resolution and is historical moving state.
+The preserved audit found no eligible hidden-return clock. Eight connected hidden spikes were simultaneous with the return at lag 0.0 ms, and all 356 ordinary updates were PORT-to-PORT.
 
-The CI-clean plural-scope posterior and revision-bridge Forge handoffs are retained only as optional future, separately bound SYSTEM_BUILD inputs under Theory R6/R7 design. They are not admitted to RV02 or SB001, receive no identity and zero scientific credit, and do not trigger Revisit.
+Authorize a distinct v2 revision with one change only: within-route external-event spacing `5.0 ms → 5.5 ms`. The 5.0 ms topology delay and every other v1 condition remain fixed. MAIN may run one bounded paired OFF/ON matrix and preserve complete diagnostics.
 
-Control R89 closed the P0 persistence incident as recovered. The Analyst Actions bridge remains active as retained hardening.
+v1 must not be overwritten. E0/E1/ES, scale/reservoir work, learner-boundary changes and further timing/parameter changes remain unauthorized pending fresh Analyst reconciliation.
+
+R156's accidental non-persisted dynamics output is quarantined as unused and non-evidentiary. It does not invalidate the preserved-byte audit and must not influence v2.
+
+P0 remains closed as recovered; the Analyst Actions bridge remains retained hardening.
