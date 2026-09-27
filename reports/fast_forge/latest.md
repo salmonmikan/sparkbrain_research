@@ -1,27 +1,27 @@
-# SparkBrain Fast Forge — locked local outcome store
+# SparkBrain Fast Forge — bounded receipt retention
 
 - schema_version: 2
-- generation_id: FORGE-20260927T164800+0900-LOCKED-LOCAL-STORE-CI-CLEAN
-- produced_at: 2026-09-27T16:48:00+09:00
-- forge_id: FORGE-LOCKED-LOCAL-OUTCOME-STORE-A
+- generation_id: FORGE-20260927T174452+0900-BOUNDED-RECEIPT-RETENTION-CI-CLEAN
+- produced_at: 2026-09-27T17:44:52+09:00
+- forge_id: FORGE-BOUNDED-RECEIPT-RETENTION-A
 - status: FORGE_INTERESTING
 - recommended_handoff: SYSTEM_BUILD_INPUT
-- branch: forge/20260927-locked-outcome-store-a
-- exact_prototype_head: 84df89612e11de2b1ec43f5acb0d4e25b5b6c0b0
-- ci_run: 36304033688
+- branch: forge/20260927-bounded-receipt-retention-a
+- exact_prototype_head: 090d52373a094a728c4ca93d13af4a572ad15d10
+- ci_run: 36307039134
 - ci_result: SUCCESS
 - evidentiary_status: NON_EVIDENTIARY_NONCANONICAL_FORGE
 - scientific_credit: 0
 - new_scientific_result: false
 
-Added a stable POSIX advisory lock and in-lock checkpoint reload around the prior crash-consistent local outcome store. Cooperating processes now serialize before evaluating an event against the durable receipt ledger.
+Added optional bounded exact-receipt retention to the prior locked, durable local outcome stream. Within the retained window, exact replay still returns the stored duplicate receipt. Older replay now fails closed and is never reapplied.
 
-Bounded tests verify previously opened instances committing contiguous events, two-process exact redelivery applying once, timeout-without-mutation, post-replace recovery, and absence of caller scope/error/tail/truth/evaluator inputs.
+Compaction retains a rolling prefix digest and a fixed 2,048-bit, four-position conservative event-identity filter. Possible reuse of a compacted identifier is rejected. The filter deliberately permits false positives rather than false negatives, so safety is preserved while liveness degrades as the filter saturates.
 
-New tests passed 5/5, focused chain 28/28, all Forge tests 89/89, Ruff, compileall and readiness passed. Exact prototype head `84df89612e11de2b1ec43f5acb0d4e25b5b6c0b0` passed CI `36304033688` on Python 3.11 and 3.13 with full tests and bundle validation.
+New tests passed 6/6, focused chain 28/28, all Forge tests 95/95, Ruff, compileall and readiness passed. Exact prototype head `090d52373a094a728c4ca93d13af4a572ad15d10` passed CI `36307039134` on Python 3.11 and 3.13 with full tests and bundle validation.
 
-This reduces to ordinary POSIX `flock`, fresh state reload, atomic snapshot replace and idempotent receipt handling. It is not distributed consensus, remote exactly-once execution, learned memory or scientific evidence.
+This reduces to ordinary bounded log retention, rolling hashing, a Bloom-style filter, POSIX advisory locking and atomic snapshot replacement. It bounds only the exact receipt ledger, not coordinator state or total checkpoint size. Exact old receipts are lost, false-positive refusal increases with history, and no archive/rotation policy exists.
 
-Advisory-lock bypass, non-POSIX/network filesystems, actual process/power/filesystem faults, high-contention fairness, remote storage and receipt compaction remain unresolved. No SYSTEM_BUILD admission, comparative support, composition contribution or novelty is established. RD006, SB001 and scientific refs are untouched.
+Usefulness does not establish novelty. No SYSTEM_BUILD admission, comparative support, composition contribution or scientific result is established. RD006 R159, Analyst reconciliation, SB001 and all scientific refs remain untouched.
 
-History: reports/fast_forge/history/2026-09-27/1648-locked-local-outcome-store-ci-clean.md
+History: reports/fast_forge/history/2026-09-27/1744-bounded-receipt-retention-ci-clean.md
