@@ -1,24 +1,26 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260928T061500+0900-PRIMARY-R168-M1-WAIT-ANALYST",
-  "generated_at": "2026-09-28T06:15:00+09:00",
-  "status": "SYSTEM_BUILD_M1_EXACT_HEAD_UNCHANGED_WAIT_ANALYST_AUTHORITY",
+  "generation_id": "MAIN-20260928T072510+0900-PRIMARY-R169-M1-INTEGRATED",
+  "generated_at": "2026-09-28T07:25:10+09:00",
+  "status": "SYSTEM_BUILD_M1_INTEGRATED_WAIT_ANALYST_POST_INTEGRATION_RECONCILIATION",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
-  "analyst_generation_id": "EVA-20260928T045927+0900-R161-M1-ROLLING-CONTRACT-SB002-INTEGRITY",
-  "analyst_authority": "analysis/orchestrator/history/2026-09-28/0459-R161.md",
-  "analyst_authority_scope": "FOUR_ORDERED_ROLLING_MILESTONES_THEN_STOP_AT_FINAL_EXACT_HEAD_BEFORE_PR_MERGE",
-  "prior_main_generation": "MAIN-20260928T053648+0900-PRIMARY-R167-M1-EXACT-HEAD-HANDOFF",
+  "analyst_generation_id": "EVA-20260928T070312+0900-R162-M1-EXACT-HEAD-PR-MERGE",
+  "analyst_authority": "analysis/orchestrator/history/2026-09-28/0703-R162.md",
+  "analyst_authority_scope": "OPEN_EXACT_HEAD_PR_THEN_MERGE_IF_ALL_CONDITIONS_HOLD_THEN_STOP_FOR_POST_INTEGRATION_RECONCILIATION",
+  "prior_main_generation": "MAIN-20260928T061500+0900-PRIMARY-R168-M1-WAIT-ANALYST",
   "refs_observed": {
-    "main_policy": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
+    "main_policy_before_merge": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
+    "main_after_merge": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "merged_tree": "7c5c86300a0097cd20b76076eeecb748b3c11134",
     "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "human_directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "evidence_analyst": "195ca2d230928c7cada86e51d4f04b25904ffc04",
-    "control": "c155cf09495a25bff87868aaba1b90bb06459310",
-    "main_reports_before": "daccf1f39edb50e1d67d4727f59df2098b2a3a01",
-    "working_head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
-    "working_tree": "10d252a52abdafed7806fc81b39ee8ba126713a9"
+    "evidence_analyst": "6b07d54f009486a88d1a8427cd3ae3b1cf7fa1ea",
+    "control": "dbca69cc12a4eb3a2e57c5ccf9aa00d38ed20126",
+    "main_reports_before": "a821aa4314d7b9501159462374931150d955405e",
+    "source_head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
+    "source_tree": "10d252a52abdafed7806fc81b39ee8ba126713a9"
   },
   "directive_freshness": {
     "prior_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
@@ -27,27 +29,42 @@
     "newly_active_or_materially_changed": [],
     "applicable_directives_read": [
       "HUMAN-20260928-001",
-      "HUMAN-20260928-002"
+      "HUMAN-20260928-002",
+      "HUMAN-20260927-002",
+      "HUMAN-20260926-004"
     ]
   },
-  "working_object": {
+  "integration": {
     "branch": "system-build/ipm1-continuous-revision-20260928",
-    "head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
-    "tree": "10d252a52abdafed7806fc81b39ee8ba126713a9",
-    "target_capability": "BOUNDED_CONTINUOUS_OBSERVATION_STATE_PLURAL_HYPOTHESIS_COMPETITION_ABSTAIN_ACTION_LATER_OUTCOME_SELECTIVE_REVISION_NEXT_ACTION_LOOP",
-    "milestones_completed": [
-      "M1.1_SB002_INTEGRITY_REPAIR",
-      "M1.2_INTEGRATED_LOOP_SHELL",
-      "M1.3_BOUNDED_CONTINUOUS_ENVIRONMENT_REPLAY",
-      "M1.4_HARDENING_EXACT_HEAD_HANDOFF"
-    ],
-    "exact_head_ci": {
-      "run_id": 36348434677,
+    "exact_source_head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
+    "exact_source_tree": "10d252a52abdafed7806fc81b39ee8ba126713a9",
+    "pr_number": 163,
+    "pr_url": "https://github.com/salmonmikan/sparkbrain_research/pull/163",
+    "pr_base_at_creation": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
+    "mergeability_before_merge": {
+      "mergeable": true,
+      "mergeable_state": "clean"
+    },
+    "pr_ci": {
+      "run_id": 36354898589,
       "conclusion": "success",
       "python_311": "success",
       "python_313": "success"
     },
-    "open_pr": false
+    "merge_method": "squash",
+    "merge_commit": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "merged_tree": "7c5c86300a0097cd20b76076eeecb748b3c11134",
+    "merge_parent": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
+    "post_merge_ci": {
+      "run_id": 36355074172,
+      "conclusion": "success",
+      "python_311": "success",
+      "python_313": "success"
+    },
+    "source_head_unchanged": true,
+    "substantive_conflict_repair": false,
+    "scope_or_claim_change": false,
+    "changed_paths_count": 9
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -57,9 +74,9 @@
   "scientific_credit": 0,
   "evidentiary_status": "NON_EVIDENTIARY_BUILD",
   "control": {
-    "generation_id": "CTRL-20260928T055408+0900-R103-M1-BUILT-WAIT-ANALYST",
-    "disposition": "M1_BUILT_WAIT_ANALYST_EXACT_HEAD_RECONCILIATION",
-    "control_is_not_analyst_allocation": true
+    "generation_id": "CTRL-20260928T065013+0900-R104-M1-WAIT-ANALYST",
+    "disposition": "M1_COMPLETE_WAITING_ANALYST_EXACT_HEAD_RECONCILIATION",
+    "satisfied_by_analyst_generation": "R162"
   },
   "relay_collision": {
     "desired": "DISABLED",
@@ -68,23 +85,26 @@
   },
   "action": {
     "code_changed": false,
-    "branch_changed": false,
-    "pr_created": false,
-    "merge_performed": false,
+    "source_branch_changed": false,
+    "pr_created": true,
+    "pr_number": 163,
+    "merge_performed": true,
     "workflow_dispatched": false,
+    "automatic_pr_workflow_observed": 36354898589,
+    "automatic_post_merge_workflow_observed": 36355074172,
     "result_bearing_execution_performed": false,
     "result_bearing_invocations": 0
   },
-  "new_build_result": false,
+  "new_build_result": true,
   "new_scientific_result": false,
-  "stop_reason": "R161_FINAL_M1_4_EXACT_HEAD_BOUNDARY_NO_NEW_DURABLE_ANALYST_AUTHORITY",
-  "next_action": "EVIDENCE_ANALYST_EXACT_HEAD_RECONCILIATION_BEFORE_PR_MERGE",
+  "stop_reason": "R162_POST_MERGE_STOP_FOR_ANALYST_RECONCILIATION",
+  "next_action": "EVIDENCE_ANALYST_POST_INTEGRATION_RECONCILIATION_OF_PR_163_MERGE_59FC994B_AND_CI_36355074172",
   "scheduler_state_changed": false,
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-28/0615-r168-primary-m1-wait-analyst.md",
+  "history_path": "reports/orchestrator/main/history/2026-09-28/0725-r169-primary-m1-integrated.md",
   "publication": {
     "main_state_branch": "ops/orchestrator-run-report",
-    "main_state_branch_head_before": "daccf1f39edb50e1d67d4727f59df2098b2a3a01",
+    "main_state_branch_head_before": "a821aa4314d7b9501159462374931150d955405e",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
     "attempt": 1,
     "maximum_attempts": 5,
