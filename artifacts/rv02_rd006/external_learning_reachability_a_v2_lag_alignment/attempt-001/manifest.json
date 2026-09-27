@@ -1,0 +1,13 @@
+{
+  "artifact_file_sha256": "7ce4ffa4366f60290b26ead6edd31f9a2083f0822949c7c11815aefe8df5c468",
+  "artifact_path": "artifact.json.gz",
+  "artifact_sha256": "5898fdcb75b10747fb88f8a19329f2d063422bb5012e80683c2c413cbbfb76d6",
+  "artifact_uncompressed_sha256": "104c21ddb5e8d06f85567ea86f795ea55df7f8c33524cb154453f1247913a439",
+  "capability_scoring": false,
+  "formal_execution": false,
+  "matrix_status": "D0_INCONCLUSIVE_BOUNDED_EXPLOSION",
+  "object_id": "RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A",
+  "protocol_id": "rv02-rd006-external-learning-reachability-a-v2-lag-alignment",
+  "source_git_sha": "7896433af675b77b1f442e9efaf268d16564c564",
+  "status": "COMPLETED"
+}
