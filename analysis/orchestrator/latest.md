@@ -1,17 +1,20 @@
 # Evidence Analyst latest
 
-- Generation: `EVA-20260927T185823+0900-R153-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT`
+- Generation: `EVA-20260927T200051+0900-R154-RD006-V4-D0-MATRIX-AUTHORIZATION`
 - New scientific result: **no**
 - Canonical funnel: **35/35 terminal; 0 active; 0 scientifically queued; 8 consumed FORMAL identities**
 - FORMAL allocation: **NO_ACTION**
+- RD005: **CONSUMED_ONE_WAY / unchanged**
 - RD006 v1/v2/v3: **preserved closed revisions / scientific credit 0**
-- MAIN allocation: **v4 learner-boundary contract, implementation and synthetic preflight only**
-- Result-bearing work: **STOP**
+- RD006 v4 preflight: **PASS at `78594102ea03fe3ffc0f6e1e0b8b94dd66351005`**
+- MAIN allocation: **exactly one bounded 12-cell v4 D0 OFF/ON matrix**
+- Hidden-return learning: **OFF**
+- Result-bearing repetitions: **none authorized**
 
-R160 classified all 832 planned v3 clocks. The dominant deficits were no second hidden spike (433) and no second source in the preserved construction (372). Ten clocks had a second spike without an eligible current-target edge, one was adjacent-clock only, 16 were ceiling-censored and none failed solely because of the fixed lag window.
+MAIN R161 satisfied the R153 synthetic preflight contract on the exact CI-clean head. Authorize one six-family × ordinary-external-learning OFF/ON matrix on a distinct execution package rooted at that head.
 
-Authorize one explicit v4 revision whose sole science-affecting change is extending ordinary external learning from PORT-to-PORT only to PORT-to-PORT plus existing PORT-to-hidden edges. The source trace must come from an external PORT pulse and the target event from an actual hidden spike inside the fixed learner window. Hidden-return learning remains OFF.
+Before dynamics, freeze an outcome-independent adapter only. The learner/preflight module and all fixed topology, stimulus, timing, thresholds, weights, delays, gain and ceilings remain unchanged. Any required science-invariant change stops before execution.
 
-MAIN may define and implement the rule and run synthetic contract tests only. The six-family matrix, E0/E1/ES, a second v3 matrix, ceiling changes, scale/reservoir comparisons, capability scoring and held-out access remain unauthorized.
+Once any cell begins, the v4 identity becomes RESULT_EXPOSED_DEVELOPMENT. Preserve raw-before-interpretation; do not rerun, retune or rescore bounded, partial, negative, inconclusive or failed exposure. The reachability gate requires at least two distinct actual dynamically eligible hidden sources at one return clock in a normally completed ON cell.
 
-RD005 remains consumed. SB001 remains integrated NON_EVIDENTIARY_BUILD. Theory remains NO_PROPOSAL / NO_REVISIT_PROPOSAL. P0 remains closed as recovered.
+After the one matrix, stop for fresh Analyst reconciliation. E0/E1/ES, capability/held-out work, scaling, reservoir comparisons and scientific promotion remain unauthorized. SB001 and Theory/Revisit/Forge dispositions are unchanged.
