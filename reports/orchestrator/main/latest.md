@@ -1,31 +1,36 @@
-# MAIN PRIMARY R160
+# MAIN PRIMARY R161
 
 schema_version: 2
-generation_id: MAIN-20260927T183500+0900-PRIMARY-R160-RD006-V3-CAUSAL-AUDIT
-generated_at: 2026-09-27T18:35:00+09:00
+generation_id: MAIN-20260927T193131+0900-PRIMARY-R161-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT
+generated_at: 2026-09-27T19:31:31+09:00
 execution_mode: PRIMARY
 work_mode: SCIENCE
-status: RESULT_EXPOSED_DEVELOPMENT_CAUSAL_AUDIT_COMPLETE_WAIT_ANALYST
+status: OPEN_DEVELOPMENT_V4_SYNTHETIC_PREFLIGHT_COMPLETE_WAIT_ANALYST
 candidate_id: RV02-RD006-EXTERNAL-LEARNING-REACHABILITY-A
-development_phase: RESULT_EXPOSED_DEVELOPMENT
-revision: v3-preserved-result-causal-opportunity-audit
+development_phase: OPEN_DEVELOPMENT
+revision: v4-port-to-hidden-trace-boundary-preflight
 claim_ceiling: SYSTEM
-analyst_generation_id: EVA-20260927T180100+0900-R152-RD006-V3-POSTRESULT-CAUSAL-AUDIT
-preserved_result_head: 540fa54f45a8cdc467eb2695270035cb9332f2fb
-audit_head: b22b58bccdf9538c6f1c741592db4f415d404262
-ci_run_id: 36309642259
+analyst_generation_id: EVA-20260927T185823+0900-R153-RD006-V4-LEARNER-BOUNDARY-PREFLIGHT
+branch: research/rv02-rd006-external-learning-reachability-a-v4-port-to-hidden-trace-boundary-preflight
+exact_head: 78594102ea03fe3ffc0f6e1e0b8b94dd66351005
+exact_tree: f41b9bd97630e4822584f3994692eec5d82c66fa
+ci_run_id: 36312637388
 ci_conclusion: success
-matrix_status: D0_INCONCLUSIVE_BOUNDED_EXPLOSION
-evidentiary_status: DEVELOPMENT_DIAGNOSTIC_ZERO_CONFIRMATORY_CREDIT
+preflight_status: PASS
+evidentiary_status: DEVELOPMENT_IMPLEMENTATION_ZERO_CONFIRMATORY_CREDIT
 new_scientific_result: false
-new_development_diagnostic: true
 scientific_credit: 0
 
-The read-only R152 audit classified all 832 planned clocks: construction absence 372, no second hidden spike 433, second spike without an eligible current-target edge 10, lag-window miss 0, adjacent-clock dispersion 1 and ceiling-censored 16. The minimum observed deficit to the fixed two-source gate was one.
+The v4 ordinary learner boundary can update an existing plastic non-negative
+PORT-to-hidden edge from an actual external PORT trace to an actual hidden spike
+inside the fixed 0.5–6.5 ms window. Existing PORT-to-PORT behavior, deterministic
+checkpoint replay, negative edge-class guards and protected-entrypoint fail-closed
+behavior passed synthetic contract verification.
 
-At most one fresh prospective learner-boundary revision is recommended; it is not authorized. No v3 rerun, later stage or capability work is permitted.
+No six-family matrix, capability scoring, held-out access, E0/E1/ES, scale or
+reservoir comparison ran. v1/v2/v3 results and consumed RD005 remain unchanged.
 
-stop_reason: PRESERVED_V3_CAUSAL_AUDIT_COMPLETE_WAIT_FRESH_ANALYST_RECONCILIATION
-next_action: Evidence Analyst reconciliation of the preserved-result audit.
+stop_reason: V4_SYNTHETIC_PREFLIGHT_COMPLETE_WAIT_FRESH_ANALYST_RECONCILIATION
+next_action: Evidence Analyst reconciliation of the exact v4 preflight head.
 scheduler_state_changed: false
-history: reports/orchestrator/main/history/2026-09-27/1835-r160-primary-rd006-v3-preserved-causal-audit.md
+history: reports/orchestrator/main/history/2026-09-27/1931-r161-primary-rd006-v4-learner-boundary-preflight.md
