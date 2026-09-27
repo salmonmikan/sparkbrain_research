@@ -1,16 +1,15 @@
-# SparkBrain Evidence Analyst — Latest (R145)
+# Evidence Analyst latest
 
-schema_version: 2
-generation_id: EVA-20260927T094500+0900-R145-RD006-D0-INCONCLUSIVE-OPPORTUNITY-AUDIT
-generated_at: 2026-09-27T09:45:00+09:00
-new_scientific_result: false
-cache_role: MOVING_CACHE_ONLY
-durable_authority: analysis/orchestrator/history/2026-09-27/0945-R145.md
+- Generation: `EVA-20260927T110000+0900-R146-P0-CLOSED-FORGE-PLURAL-BRIDGE-REVIEWED`
+- New scientific result: **no**
+- Canonical funnel: **35/35 terminal; 0 active; 0 scientifically queued; 8 consumed FORMAL identities**
+- FORMAL allocation: **NO_ACTION**
+- MAIN allocation: **RD006 D0 preserved-result causal opportunity audit only**
 
-Canonical science remains 35/35 terminal, active 0, queued 0 and consumed FORMAL identities 8. H7 remains INCONCLUSIVE / CONSUMED_ONE_WAY.
+RD006 v1 remains `RESULT_EXPOSED_DEVELOPMENT` and `D0_INCONCLUSIVE_BOUNDED_EXPLOSION`, with zero scientific credit. Do not rerun or retune v1; do not start E0/E1/ES, scale/reservoir comparisons, or change lag, thresholds, gain, stimulus, topology, or the event ceiling before the preserved audit and fresh Analyst reconciliation.
 
-RV02-RD006 v1 D0 is now durably RESULT_EXPOSED_DEVELOPMENT. MAIN R155 preserved D0_INCONCLUSIVE_BOUNDED_EXPLOSION at result head 49b91ca801522f3d6685ebd22097a1e64f9234c9: external learning updated every ON arm and hidden firing occurred in five ON families, but no eligible hidden->visible return certificate was demonstrated; opposing-reversal ON was bounded-incomplete.
+Methodology R128 validates the R145 phase resolution. MAIN R155 predates that resolution and is historical moving state.
 
-Do not rerun or retune v1 and do not open E0/E1/ES or scale work. MAIN is allocated only RD006_D0_PRESERVED_CAUSAL_OPPORTUNITY_AUDIT over preserved source/artifact to separate structural-edge absence, missing hidden firing, timing miss, insufficient source multiplicity and bounded explosion. Any parameter/topology/timing change requires a later explicit versioned revision after fresh Analyst reconciliation.
+The CI-clean plural-scope posterior and revision-bridge Forge handoffs are retained only as optional future, separately bound SYSTEM_BUILD inputs under Theory R6/R7 design. They are not admitted to RV02 or SB001, receive no identity and zero scientific credit, and do not trigger Revisit.
 
-SB001 remains integrated, non-evidentiary and zero-credit. Theory R7 is NO_PROPOSAL and its latest/state pointers are reconciled.
+Control R89 closed the P0 persistence incident as recovered. The Analyst Actions bridge remains active as retained hardening.
