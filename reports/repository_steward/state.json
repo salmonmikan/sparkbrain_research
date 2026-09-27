@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260928T015000+0900-G25",
-  "produced_at": "2026-09-28T01:50:00+09:00",
-  "supersedes_generation_id": "STEWARD-20260927T195000+0900-G24",
+  "generation_id": "STEWARD-20260928T075000+0900-G26",
+  "produced_at": "2026-09-28T07:50:00+09:00",
+  "supersedes_generation_id": "STEWARD-20260928T015000+0900-G25",
   "repository": "salmonmikan/sparkbrain_research",
   "authority_scope": "REPOSITORY_STEWARD_GOVERNANCE_ONLY",
   "policy_refs": {
-    "main": "cf0bc45262824f1fe282ccd7b785b3ea50be2099",
-    "human_directives": "3f8bc8d387ad6c8333c43c90b81a80dc3241f0f7"
+    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d"
   },
   "inventories": {
     "branches_total": 450,
@@ -32,10 +32,15 @@
     "mapped_unique_preserve_pointer_count": 15,
     "h7_lightweight_authoritative_refs_preserved": true,
     "authoritative_namespace_names_types_targets_exact": true,
+    "authoritative_namespace_count": 9,
+    "annotated_tag_objects": 5,
+    "lightweight_authoritative_refs": 4,
     "mutated_this_run": false
   },
   "separation": {
     "main_research_forge_system_build_ops_evidence": "INTACT",
+    "pr_163_changed_paths_count": 9,
+    "pr_163_scientific_or_immutable_paths": false,
     "scientific_ref_mutated": false
   },
   "science": {
@@ -77,6 +82,26 @@
       "evidentiary_status": "NON_EVIDENTIARY_BUILD",
       "stop_reason": "WAIT_FRESH_ANALYST_RECONCILIATION",
       "active_pointer_debt": []
+    },
+    "m1": {
+      "build_id": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
+      "source_head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
+      "pr": 163,
+      "merge_commit": "59fc994b39d0ba02682e972161bb46801592d25b",
+      "merged_tree": "7c5c86300a0097cd20b76076eeecb748b3c11134",
+      "pr_ci_run": 36354898589,
+      "post_merge_ci_run": 36355074172,
+      "ci_conclusion": "success",
+      "lifecycle": "INTEGRATED_WAIT_ANALYST_POST_INTEGRATION_RECONCILIATION",
+      "built": true,
+      "bounded_functionally_verified": true,
+      "comparatively_supported": false,
+      "composition_contribution": "NOT_ESTABLISHED",
+      "scientifically_novel": false,
+      "scientific_credit": 0,
+      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+      "exact_source_to_merged_blobs": true,
+      "active_pointer_debt": []
     }
   },
   "publication_audit": {
@@ -87,25 +112,34 @@
     "p0_recurrence": false
   },
   "forge": {
-    "generation": "FORGE-20260928T014020+0900-CAUSAL-OPPORTUNITY-RESILIENCE-CI-CLEAN",
-    "branch": "forge/20260928-causal-opportunity-resilience-a",
-    "prototype_head": "e165e4794d81e873328eb75f82ad51f6bcb820ff",
-    "final_head": "b225a315e39b5a215dee599a19a695d3d89a4a74",
-    "final_ci_run_id": 36334203618,
-    "final_ci_conclusion": "success",
+    "original_fly0_head": "c9538544b04108a950e841cbc90b626259d7e3ff",
+    "hierarchical_loop_head": "250708bf93edebc9d83d097a0f2fc1232d185368",
+    "hierarchical_loop_ci_run": 36356510355,
+    "hierarchical_loop_ci_conclusion": "success",
     "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
     "system_build_allocated": false,
+    "sb003_allocated": false,
+    "m1_dependency": false,
     "scientific_credit": 0
   },
   "protection": {
     "ruleset_count": 1,
     "main_ruleset": "protection_main",
     "main_ruleset_target": "DEFAULT_BRANCH_ONLY",
+    "main_ruleset_enforcement": "active",
+    "pull_request_required": true,
+    "required_approving_review_count": 0,
+    "allowed_merge_methods": [
+      "squash"
+    ],
+    "deletion_blocked": true,
+    "non_fast_forward_blocked": true,
+    "linear_history_required": true,
     "tag_namespace_ruleset": false,
     "human_directive_20260919_002": "OPEN_DEFER_ADDITIONAL_PROTECTION_DEPLOYMENT",
-    "issue_139": "OPEN_FACTUALLY_CURRENT",
     "changed_this_run": false,
-    "ruleset_detail_readable": true
+    "ruleset_detail_readable": true,
+    "branch_protection_rest_detail": "FORBIDDEN_TO_GITHUB_APP"
   },
   "p0": {
     "incident_id": "INC-GITHUB-PERSISTENCE-20260925-001",
@@ -130,7 +164,9 @@
       "NON_FORCE_REF_UPDATE",
       "INDEPENDENT_READBACK",
       "EVIDENCE_ANALYST_ACTIONS_BRIDGE"
-    ]
+    ],
+    "new_incident_opened": false,
+    "post_integration_readback": "VERIFIED_COMPLETE"
   },
   "fleet": {
     "registry_alignment": "MATCHES_CONTROL_R98",
@@ -153,10 +189,11 @@
     "control_branch": false
   },
   "persistence": {
-    "history": "reports/repository_steward/history/2026-09-28/0150.md",
+    "history": "reports/repository_steward/history/2026-09-28/0750.md",
     "latest": "reports/repository_steward/latest.md",
     "state": "reports/repository_steward/state.json",
     "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
+    "branch_head_before": "36cf203edde3df6546c261b54bd00a7ba7a59263",
     "attempt": 1,
     "attempt_limit": 5,
     "readback_required": true
@@ -169,5 +206,22 @@
     "evidence_ref_mutated": false,
     "terminal_reopened": false,
     "consumed_formal_rerun_retune_rescore": false
+  },
+  "human_directives_reconciliation": {
+    "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "previous_directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "newly_active_or_materially_changed": [],
+    "freshness_verified": true
+  },
+  "control_plane": {
+    "control_generation": "CTRL-20260928T065013+0900-R104-M1-WAIT-ANALYST",
+    "analyst_generation": "EVA-20260928T070312+0900-R162-M1-EXACT-HEAD-PR-MERGE",
+    "main_generation": "MAIN-20260928T072510+0900-PRIMARY-R169-M1-INTEGRATED",
+    "utility_generation": "UTILITY-20260928T072930+0900-R162-M1-INTEGRATION-VERIFIED",
+    "current_boundary": "WAIT_ANALYST_POST_INTEGRATION_RECONCILIATION",
+    "active_pointer_debt": [],
+    "classification": "CONSISTENT_EXPECTED_AUTHORITY_LAG"
   }
 }
