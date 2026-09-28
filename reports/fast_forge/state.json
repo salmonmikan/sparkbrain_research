@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260928T163500+0900-FLY0-COMMON-WORK-COUNTER-VERIFICATION-BLOCKED",
-  "produced_at": "2026-09-28T16:35:00+09:00",
+  "generation_id": "FORGE-20260928T173500+0900-FLY0-COMMON-WORK-COUNTER-VERIFICATION-BLOCKED-REPEAT",
+  "produced_at": "2026-09-28T17:35:00+09:00",
   "forge_id": "FORGE-FLY0-COMMON-WORK-COUNTER-A",
   "status": "FORGE_PROTOTYPE",
   "recommended_handoff": "NONE_PENDING_VERIFICATION",
@@ -25,21 +25,16 @@
     "prototype": "26c740b302b5c6eb2549eca4033a3e79618931a8",
     "recommended_handoff": "SYSTEM_BUILD_INPUT"
   },
-  "common_work_design": {
-    "basis": "cpython_opcode_events_forge_path",
-    "native_activity_namespaced": true,
-    "strict_internal_activity_resource_comparability": false,
-    "actual_common_work_exposure_matched": "UNVERIFIED",
-    "exact_head_focused_verification": false
-  },
   "analyst_reconciliation": {
     "durable_generation": "R167",
     "head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
     "sb003_allocated": false
   },
   "collision_check": {
-    "control_generation": "R111",
+    "control_generation": "R112",
+    "control_head": "d42e7d244abde36b60269aa45af0e21ab4af6c6b",
     "main_generation": "MAIN-20260928T161528+0900-PRIMARY-R175-M1-002-PR-CREATE-BLOCKED",
+    "main_reports_head": "3367248d69c3160736f4db20520aa6c2e71ef2e4",
     "main_owned_build": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
     "relay_competing_allocation": false,
     "collision": false
@@ -60,13 +55,14 @@
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "test_publication": "FAILED_CLOSED_AFTER_5_PRE_GITHUB_PLATFORM_REFUSALS",
-    "interpretation": "CONSISTENT_WITH_PATH_ACTION_REF_CONTEXT_OR_INTERMITTENCY_ROOT_CAUSE_UNKNOWN"
+    "test_publication": "FAILED_CLOSED_AFTER_5_PRE_GITHUB_PLATFORM_REFUSALS_THIS_RUN",
+    "repeated_same_path_block": true,
+    "interpretation": "PATH_ACTION_REF_CONTEXT_OR_INTERMITTENCY_REMAINS_SUPPORTED_ROOT_CAUSE_UNKNOWN"
   },
-  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; CPython opcode events do not establish energy, biological activity, algorithmic efficiency, topology superiority, composition contribution, novelty, external validity, scientific credit or SB003 allocation.",
+  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no biological equivalence, topology superiority, compute/energy efficiency, composition contribution, novelty, external validity, scientific credit or SB003 allocation.",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-28/1635-fly0-common-work-counter-verification-blocked.md"
+  "history_path": "reports/fast_forge/history/2026-09-28/1735-fly0-common-work-counter-verification-blocked-repeat.md"
 }
