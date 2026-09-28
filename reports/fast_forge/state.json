@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260928T173500+0900-FLY0-COMMON-WORK-COUNTER-VERIFICATION-BLOCKED-REPEAT",
-  "produced_at": "2026-09-28T17:35:00+09:00",
+  "generation_id": "FORGE-20260928T183223+0900-FLY0-COMMON-WORK-COUNTER-STATIC-AUDIT",
+  "produced_at": "2026-09-28T18:32:23+09:00",
   "forge_id": "FORGE-FLY0-COMMON-WORK-COUNTER-A",
-  "status": "FORGE_PROTOTYPE",
+  "status": "FORGE_OBSERVATION",
   "recommended_handoff": "NONE_PENDING_VERIFICATION",
   "branch": "forge/20260928-fly0-common-work-counter-a",
   "source_head": "1aead704453501875de05234f2d7cbca7582d690",
@@ -13,12 +13,20 @@
     "conclusion": "success",
     "focused_test_present": false
   },
+  "diagnostics": {
+    "mode": "STATIC_SOURCE_AUDIT_ONLY",
+    "source_mutated": false,
+    "blocked_test_path_retried_this_run": false,
+    "findings": [
+      "RUNTIME_FINGERPRINT_DOES_NOT_BIND_EXACT_SOURCE_OR_BYTECODE_IDENTITY",
+      "TRACE_ELIGIBILITY_USES_BASENAME_NOT_EXACT_RESOLVED_MODULE_PATH"
+    ],
+    "interpretation": "SAME_PROCESS_ENGINEERING_DIAGNOSTIC_REMAINS_PLAUSIBLE; CROSS_ENVIRONMENT_REPRODUCIBILITY_AND_CONTAMINATION_EXCLUSION_REQUIRE_STRONGER_BINDING"
+  },
   "verification": {
     "target_path": "tests/test_forge_fly0_common_work_counter.py",
-    "attempts_total": 5,
-    "pre_github_platform_refusals": 5,
-    "target_present_after": false,
-    "disposition": "SOURCE_ONLY_VERIFICATION_BLOCKED_CURRENT_RUN"
+    "target_present": false,
+    "disposition": "SOURCE_ONLY_PENDING_FOCUSED_VERIFICATION"
   },
   "prior_verified_forge": {
     "handoff": "8bcb7323df35248e3e3c8b3e6f0eaca3f8d30f63",
@@ -32,15 +40,17 @@
   },
   "collision_check": {
     "control_generation": "R112",
-    "control_head": "d42e7d244abde36b60269aa45af0e21ab4af6c6b",
-    "main_generation": "MAIN-20260928T161528+0900-PRIMARY-R175-M1-002-PR-CREATE-BLOCKED",
-    "main_reports_head": "3367248d69c3160736f4db20520aa6c2e71ef2e4",
+    "main_generation": "MAIN-20260928T181802+0900-PRIMARY-R176-M1-002-PR-CREATE-BLOCKED",
     "main_owned_build": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
     "relay_competing_allocation": false,
     "collision": false
   },
+  "methodology": {
+    "generation": "R143",
+    "overall_classification": "WELL_CALIBRATED",
+    "common_work_counter": "CLARIFY"
+  },
   "directive_freshness": {
-    "branch_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "previous_active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "material_delta": false,
@@ -55,8 +65,7 @@
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "test_publication": "FAILED_CLOSED_AFTER_5_PRE_GITHUB_PLATFORM_REFUSALS_THIS_RUN",
-    "repeated_same_path_block": true,
+    "test_publication": "NOT_RETRIED_THIS_RUN_LOW_INFORMATION_VALUE_AFTER_REPEATED_IDENTICAL_REFUSALS",
     "interpretation": "PATH_ACTION_REF_CONTEXT_OR_INTERMITTENCY_REMAINS_SUPPORTED_ROOT_CAUSE_UNKNOWN"
   },
   "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no biological equivalence, topology superiority, compute/energy efficiency, composition contribution, novelty, external validity, scientific credit or SB003 allocation.",
@@ -64,5 +73,5 @@
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-28/1735-fly0-common-work-counter-verification-blocked-repeat.md"
+  "history_path": "reports/fast_forge/history/2026-09-28/1832-fly0-common-work-counter-static-audit.md"
 }
