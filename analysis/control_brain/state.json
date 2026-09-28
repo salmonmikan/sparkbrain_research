@@ -1,21 +1,86 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260928T155000+0900-R111-P0-REF-CONTEXT-BOUND",
-  "produced_at": "2026-09-28T15:50:00+09:00",
+  "generation_id": "CTRL-20260928T165451+0900-R112-P0-POINTER-RECONCILED-FLEET-NOWORK",
+  "produced_at": "2026-09-28T16:54:51+09:00",
   "mode": "CONTROL_BRAIN",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "delta": false
   },
-  "science": {"total":35,"terminal":35,"active":0,"queued":0,"consumed_formal_identities":8,"new_result":false},
-  "analyst": {"durable_generation":"R167","head":"844928373dbe3873738ea4f1be69ee9b23f1f696","r168_request_present":false,"r169_request_present":false,"sb003_durably_allocated":false},
-  "m1_002": {"head":"2a21d3e879f1db4e81a58273180ad2124e823a5e","base_main":"59fc994b39d0ba02682e972161bb46801592d25b","ci_run":36361950457,"ci":"success","pr_open":false,"main_generation":"R174","scientific_credit":0},
-  "fly0": {"handoff":"8bcb7323df35248e3e3c8b3e6f0eaca3f8d30f63","verified_prototype":"26c740b302b5c6eb2549eca4033a3e79618931a8","ci_run":36382942094,"matched_replacement_ladder_complete":true,"matched_logical_delay_surface":true,"strict_internal_activity_resource_comparability":false,"ordinary_reactive_sufficient_for_bounded_task":true,"sb003_allocated":false,"evidentiary_status":"NON_EVIDENTIARY_NONCANONICAL","scientific_credit":0},
-  "fleet": {"enabled_managed_count":8,"no_work_policy":true,"work_backed_enabled_detected_in_exposed_metadata":false,"backend_provenance_exposed":false,"relay":"DISABLED_INTENTIONAL","scheduler_changes":"NONE"},
-  "pointer_debt": {"theory":"history_latest_R16_state_R15"},
-  "p0": {"incident":"INC-GITHUB-MUTATION-RECURRENCE-20260928-001","status":"OPEN","classification":"PRE_GITHUB_MUTATION_REFUSAL_PATH_ACTION_REF_CONTEXT_OR_INTERMITTENCY_SUPPORTED_ROOT_CAUSE_UNKNOWN","repository_wide_outage_supported":false,"root_cause":"UNKNOWN","utility_r166_ref_context_evidence":true},
-  "hard_floor": {"science_system_build_separation":true,"consumed_identity_changed":false,"immutable_evidence_changed":false,"scheduler_changed":false,"work_mode_used":false},
-  "history_path": "analysis/control_brain/history/2026-09-28/1550-R111.md",
-  "reconciliation": {"reconstructed_from_append_only_history":true,"repaired_at":"2026-09-28T16:54:51+09:00","source_history_sha":"c1789c803ed8ff6c5a6371abd3faa4e3d2bf4bbd"}
+  "science": {
+    "total": 35,
+    "terminal": 35,
+    "active": 0,
+    "queued": 0,
+    "consumed_formal_identities": 8,
+    "new_result": false
+  },
+  "analyst": {
+    "durable_generation": "R167",
+    "head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
+    "r168_request_present": false,
+    "r169_request_present": false,
+    "r170_request_present": false,
+    "r168_r169_r170_receipt_present": false,
+    "sb003_durably_allocated": false
+  },
+  "m1_002": {
+    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "ahead_by": 1,
+    "behind_by": 0,
+    "ci_run": 36361950457,
+    "ci": "success",
+    "pr_open": false,
+    "main_generation": "R175",
+    "main_reports_head": "3367248d69c3160736f4db20520aa6c2e71ef2e4",
+    "scientific_credit": 0
+  },
+  "fly0": {
+    "handoff": "8bcb7323df35248e3e3c8b3e6f0eaca3f8d30f63",
+    "verified_prototype": "26c740b302b5c6eb2549eca4033a3e79618931a8",
+    "strict_internal_activity_resource_comparability": false,
+    "common_work_counter_status": "SOURCE_ONLY",
+    "sb003_allocated": false,
+    "scientific_credit": 0
+  },
+  "fleet": {
+    "enabled_managed_count": 8,
+    "enabled_current_prompts_no_work": true,
+    "work_backed_enabled_detected_in_exposed_metadata": false,
+    "backend_provenance_exposed": false,
+    "relay": "DISABLED_INTENTIONAL",
+    "scheduler_changes": "NONE"
+  },
+  "pointer_debt": {
+    "control": "CLOSED_BEFORE_R112_PUBLICATION",
+    "methodology": "history_R142_latest_state_R141",
+    "theory": "history_latest_R16_state_R15"
+  },
+  "p0": {
+    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "status": "OPEN",
+    "classification": "PRE_GITHUB_MUTATION_REFUSAL_PATH_ACTION_REF_CONTEXT_OR_INTERMITTENCY_SUPPORTED_ROOT_CAUSE_UNKNOWN",
+    "repository_wide_outage_supported": false,
+    "root_cause": "UNKNOWN",
+    "r112_publication_attempts_before_this_atomic_attempt": 2,
+    "control_state_repair_attempts": 2,
+    "control_state_repair_success_attempt": 2,
+    "control_repair_verified_head": "5f642e8e88a7b8e5a3343d38c4ef3391ce6f1d78"
+  },
+  "hard_floor": {
+    "science_system_build_separation": true,
+    "consumed_identity_changed": false,
+    "immutable_evidence_changed": false,
+    "scheduler_changed": false,
+    "work_mode_used": false
+  },
+  "history_path": "analysis/control_brain/history/2026-09-28/1654-R112.md",
+  "publication": {
+    "branch": "ops/control-brain-handoff",
+    "head_before": "5f642e8e88a7b8e5a3343d38c4ef3391ce6f1d78",
+    "atomic": true,
+    "attempt_limit": 5
+  }
 }
