@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import asdict, dataclass
+from hashlib import sha256
 
 from forge_prototypes.fly0_hierarchical_loop import (
     LocalFeedback,
@@ -23,6 +24,7 @@ from forge_prototypes.fly0_matched_replacement import (
     Variant,
     _build_bundle,
     _side,
+    _topology_for,
     _zero,
 )
 
@@ -32,6 +34,65 @@ _VARIANTS: tuple[Variant, ...] = (
     "random_sparse",
     "reactive",
 )
+
+_SEMANTIC_SURFACE_VERSION = "fly0-semantic-surface-v1"
+_RANDOMIZATION_SEEDS: dict[Variant, int | None] = {
+    "structured": None,
+    "rewired": 2801,
+    "random_sparse": 2802,
+    "reactive": None,
+}
+
+
+def _semantic_surface_contract() -> dict[str, object]:
+    """Describe the task-facing meaning that replacements must preserve."""
+
+    return {
+        "version": _SEMANTIC_SURFACE_VERSION,
+        "channels": [
+            {
+                "channel_id": "sensory-left-signed-error",
+                "direction": "sensory/input",
+                "functional_role": "signed_error",
+                "side": "left",
+                "world_meaning": "target_is_left_of_position",
+                "envelope_class": "bounded_observation_v1",
+            },
+            {
+                "channel_id": "sensory-right-signed-error",
+                "direction": "sensory/input",
+                "functional_role": "signed_error",
+                "side": "right",
+                "world_meaning": "target_is_right_of_position",
+                "envelope_class": "bounded_observation_v1",
+            },
+            {
+                "channel_id": "motor-left-unit-step",
+                "direction": "motor/output",
+                "functional_role": "unit_step",
+                "side": "left",
+                "world_meaning": "position_decrements_by_one",
+                "envelope_class": "bounded_action_v1",
+            },
+            {
+                "channel_id": "motor-right-unit-step",
+                "direction": "motor/output",
+                "functional_role": "unit_step",
+                "side": "right",
+                "world_meaning": "position_increments_by_one",
+                "envelope_class": "bounded_action_v1",
+            },
+        ],
+        "world_scenario": "bounded-line-position-v1",
+        "resource_envelope_class": "fly0-matched-envelope-v1",
+    }
+
+
+def _contract_fingerprint(contract: dict[str, object]) -> str:
+    payload = json.dumps(
+        contract, sort_keys=True, separators=(",", ":")
+    ).encode()
+    return sha256(payload).hexdigest()
 
 
 class ComposedCausalReplacementLoop:
@@ -60,6 +121,15 @@ class ComposedCausalReplacementLoop:
         self._controllers = bundle.controllers
         self._activity_basis = bundle.activity_basis
         self._topology_resource_signature = bundle.topology_resource_signature
+        topology = _topology_for(variant)
+        self._topology_fingerprint = (
+            topology.fingerprint() if topology is not None else None
+        )
+        self._randomization_seed = _RANDOMIZATION_SEEDS[variant]
+        self._semantic_surface_contract = _semantic_surface_contract()
+        self._semantic_surface_fingerprint = _contract_fingerprint(
+            self._semantic_surface_contract
+        )
         self._mask_observation = mask_observation
         self._mask_feedback = mask_feedback
         self._feedback_delay_steps = feedback_delay_steps
@@ -84,6 +154,22 @@ class ComposedCausalReplacementLoop:
         return self._topology_resource_signature
 
     @property
+    def topology_fingerprint(self) -> str | None:
+        return self._topology_fingerprint
+
+    @property
+    def randomization_seed(self) -> int | None:
+        return self._randomization_seed
+
+    @property
+    def semantic_surface_contract(self) -> dict[str, object]:
+        return json.loads(json.dumps(self._semantic_surface_contract))
+
+    @property
+    def semantic_surface_fingerprint(self) -> str:
+        return self._semantic_surface_fingerprint
+
+    @property
     def feedback_delay_steps(self) -> int:
         return self._feedback_delay_steps
 
@@ -97,9 +183,13 @@ class ComposedCausalReplacementLoop:
 
     def checkpoint(self) -> str:
         payload = {
-            "schema_version": 1,
+            "schema_version": 2,
             "variant": self._variant,
             "module_ids": [item.module_id for item in self._controllers],
+            "semantic_surface_contract": self._semantic_surface_contract,
+            "semantic_surface_fingerprint": self._semantic_surface_fingerprint,
+            "topology_fingerprint": self._topology_fingerprint,
+            "randomization_seed": self._randomization_seed,
             "mask_observation": self._mask_observation,
             "mask_feedback": self._mask_feedback,
             "feedback_delay_steps": self._feedback_delay_steps,
@@ -113,12 +203,23 @@ class ComposedCausalReplacementLoop:
     def restore(self, checkpoint: str) -> None:
         payload = json.loads(checkpoint)
         expected_ids = [item.module_id for item in self._controllers]
-        if payload.get("schema_version") != 1:
+        if payload.get("schema_version") != 2:
             raise ValueError("checkpoint schema mismatch")
         if payload.get("variant") != self._variant:
             raise ValueError("checkpoint replacement variant mismatch")
         if payload.get("module_ids") != expected_ids:
             raise ValueError("checkpoint controller contract mismatch")
+        if payload.get("semantic_surface_contract") != self._semantic_surface_contract:
+            raise ValueError("checkpoint semantic-surface contract mismatch")
+        if (
+            payload.get("semantic_surface_fingerprint")
+            != self._semantic_surface_fingerprint
+        ):
+            raise ValueError("checkpoint semantic-surface fingerprint mismatch")
+        if payload.get("topology_fingerprint") != self._topology_fingerprint:
+            raise ValueError("checkpoint topology fingerprint mismatch")
+        if payload.get("randomization_seed") != self._randomization_seed:
+            raise ValueError("checkpoint randomization-seed mismatch")
         if payload.get("mask_observation") != self._mask_observation:
             raise ValueError("checkpoint observation-mask contract mismatch")
         if payload.get("mask_feedback") != self._mask_feedback:
@@ -363,8 +464,21 @@ def build_composed_causal_report() -> dict[str, object]:
             "FOUR_WAY_COMPOSED_CAUSAL_COMPARISON_BLOCKED_BY_BASELINE_CAPABILITY"
         )
 
+    reference = ComposedCausalReplacementLoop(
+        WorldState(position=0, target=0), variant="structured"
+    )
+    topology_fingerprints = {
+        variant: ComposedCausalReplacementLoop(
+            WorldState(position=0, target=0), variant=variant
+        ).topology_fingerprint
+        for variant in _VARIANTS
+    }
+
     return {
         "status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
+        "semantic_surface_contract": reference.semantic_surface_contract,
+        "semantic_surface_fingerprint": reference.semantic_surface_fingerprint,
+        "topology_fingerprints": topology_fingerprints,
         "rows": {row.variant: asdict(row) for row in rows},
         "functional_variants": functional,
         "baseline_incapable_variants": incapable,

@@ -114,3 +114,61 @@ def test_report_is_deterministic() -> None:
         second,
         sort_keys=True,
     )
+
+
+def test_checkpoint_binds_semantic_surface_and_topology_provenance() -> None:
+    loop = ComposedCausalReplacementLoop(
+        WorldState(position=2, target=-1),
+        variant="random_sparse",
+    )
+    payload = json.loads(loop.checkpoint())
+
+    assert payload["schema_version"] == 2
+    assert (
+        payload["semantic_surface_contract"]["version"]
+        == "fly0-semantic-surface-v1"
+    )
+    assert (
+        payload["semantic_surface_fingerprint"]
+        == loop.semantic_surface_fingerprint
+    )
+    assert payload["topology_fingerprint"] == loop.topology_fingerprint
+    assert payload["randomization_seed"] == 2802
+
+    payload["semantic_surface_contract"]["version"] = "tampered"
+    with pytest.raises(ValueError, match="semantic-surface contract"):
+        loop.restore(json.dumps(payload, sort_keys=True))
+
+
+def test_checkpoint_rejects_topology_fingerprint_tamper() -> None:
+    loop = ComposedCausalReplacementLoop(
+        WorldState(position=2, target=-1),
+        variant="structured",
+    )
+    payload = json.loads(loop.checkpoint())
+    payload["topology_fingerprint"] = "0" * 64
+
+    with pytest.raises(ValueError, match="topology fingerprint"):
+        loop.restore(json.dumps(payload, sort_keys=True))
+
+
+def test_report_exposes_semantic_surface_and_topology_provenance() -> None:
+    report = build_composed_causal_report()
+
+    assert (
+        report["semantic_surface_contract"]["version"]
+        == "fly0-semantic-surface-v1"
+    )
+    assert len(report["semantic_surface_fingerprint"]) == 64
+    fingerprints = report["topology_fingerprints"]
+    assert fingerprints["structured"] is not None
+    assert fingerprints["rewired"] is not None
+    assert fingerprints["random_sparse"] is not None
+    assert fingerprints["reactive"] is None
+    assert len(
+        {
+            fingerprints["structured"],
+            fingerprints["rewired"],
+            fingerprints["random_sparse"],
+        }
+    ) == 3
