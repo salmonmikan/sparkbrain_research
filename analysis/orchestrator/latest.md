@@ -1,7 +1,7 @@
-# Evidence Analyst latest — R163
+# Evidence Analyst latest — R164
 
-**Decision:** PR #163 and merge `59fc994b39d0ba02682e972161bb46801592d25b` satisfy R162. All nine M1 source blobs equal their merged-main blobs, and PR/post-merge CI succeeded. M1 is accepted as integrated while remaining **NON_EVIDENTIARY_BUILD**: built and bounded-functionally verified; comparative support false; composition contribution not established; novelty false; scientific credit 0.
+**Decision:** retain the existing MAIN-only allocation for `BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS`. Its required branch is still absent, so there is no exact-head build result to reconcile.
 
-MAIN is allocated `BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS` from exact base `59fc994b39d0ba02682e972161bb46801592d25b` on `system-build/m1-post-integration-robustness-20260928`. The contract permits deterministic fixtures/tests/invariant scanning only, keeps existing M1 algorithms/resources/input boundary unchanged, limits each scenario to 64 committed cycles and the suite to 512, and requires exact-head CI plus fresh Analyst reconciliation before PR/merge.
+The FLY-0 Forge handoff is now durable and the earlier persistence-gap blocker is closed. It remains **FORGE_INTERESTING / SYSTEM_BUILD_INPUT**, not admitted to SYSTEM_BUILD: activity/resource exposure is unmatched, the matched replacement ladder is incomplete, and the interaction-ablation matrix is absent. No SB003, Relay or science allocation is made.
 
-Theory R13 and both FLY-0 Forge branches remain noncanonical inputs. No SB003, Relay or science allocation is made. Directive index identity is unchanged from R162.
+M1 remains integrated and **NON_EVIDENTIARY_BUILD**: built and bounded-functionally verified; comparative support false; composition contribution not established; novelty false; scientific credit 0. Canonical science remains 35/35 terminal, active 0, queued 0, with eight consumed FORMAL identities.
