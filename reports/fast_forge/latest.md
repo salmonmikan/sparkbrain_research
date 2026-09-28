@@ -1,19 +1,9 @@
-# Fast Forge latest — FLY-0 directional descending modulation green
+# Fast Forge latest — FLY-0 intent supersession guard green
 
-Status: FORGE_INTERESTING / SYSTEM_BUILD_INPUT / NON_EVIDENTIARY / NONCANONICAL.
+FORGE_INTERESTING / SYSTEM_BUILD_INPUT / NON_EVIDENTIARY / NONCANONICAL.
 
-Exact source `4a68fde7cc3ba519a978810ab1002d1e9312f839` implements `fly0-modulation-frame-v2` with
-`neutral`, `hold`, and a coarse `permit_side(left|right)` permission gate.
-Across structured, degree-rewired, random-sparse and reactive variants, matching
-permission allows the local controller's ordinary step, mismatching permission
-vetoes it without direct motor substitution, and a descending cut restores the
-local baseline. Existing checkpoint/provenance, fail-closed, transactional
-restore and local-feedback-cut guarantees remain intact.
+Exact source 8452bff9e1d0dc91c47c1d968f5ddcddd5335a22 is CI-green in run 36487505532 on Python 3.11/3.13 through lint, local readiness, tests and bundle validation. Superseded authority epoch/token frames fail closed before local execution while fresh frames retain ModulationFrame v2; checkpoint/restore is transactional and replayable.
 
-CI `36474193214` is green on Python 3.11 and 3.13, including lint, local
-readiness, tests and bundle validation.
+Optional future SYSTEM_BUILD input only. Analyst R169 remains authority and SB003 remains conditionally inactive behind M1-002. Scientific credit 0.
 
-Durable Analyst remains R168; SB003 remains unallocated. No scientific claim or
-credit is created.
-
-Authoritative history: `reports/fast_forge/history/2026-09-29/0447-fly0-directional-modulation-green.md`
+Authoritative history: reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md
