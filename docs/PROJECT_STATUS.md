@@ -499,3 +499,20 @@ future suffixes and held-out fields from runtime input. See `docs/SYSTEM_BUILD_M
 This remains engineering work with scientific credit 0. Comparative support, composition
 contribution, real-task capability, biological equivalence, energy efficiency and scientific
 novelty are not established. FLY-0 is separate and is not a dependency or SB003 allocation.
+
+## 12. SYSTEM_BUILD — M1 post-integration robustness harness
+
+`BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS` adds a dedicated deterministic acceptance surface
+for the integrated M1 implementation without modifying its algorithms, thresholds, routing
+topology, public runtime fields or resource ceilings. The fixed harness covers a nominal 64-cycle
+timeline, exact suffix replay from cycles 1/8/31/63, all seven existing fault injection points at
+early/middle/late positions, and duplicate/conflicting/pending identity paths.
+
+The complete acceptance surface contains exactly 267 successful committed cycles, below the
+prospective 512-cycle aggregate ceiling. Rejected faults and identity conflicts commit no state.
+See `docs/SYSTEM_BUILD_M1_ROBUSTNESS.md`.
+
+This is NON_EVIDENTIARY_BUILD verification only. Comparative support remains false, composition
+contribution and real-task capability remain unestablished, scientific novelty is false and
+scientific credit is 0. FLY-0 and all canonical/consumed scientific objects remain outside the
+harness.
