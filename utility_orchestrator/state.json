@@ -1,32 +1,35 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260928T132440+0900-R165-P0-MUTATION-ROUTE-MATRIX",
-  "produced_at": "2026-09-28T13:24:40+09:00",
+  "generation_id": "UTILITY-20260928T153400+0900-R166-P0-MINIMAL-PR-CANARY",
+  "produced_at": "2026-09-28T15:34:00+09:00",
   "assignment_mode": "AUTONOMOUS_IDLE",
-  "status": "COMPLETED",
-  "autonomous_task_id": "UTILITY-20260928T1325+0900-P0-MUTATION-ROUTE-MATRIX",
+  "status": "BLOCKED",
+  "autonomous_task_id": "UTILITY-20260928T1529+0900-P0-MINIMAL-PR-CREATE-CANARY",
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY_OPERATIONAL_DIAGNOSTIC_ONLY",
   "scientific_authority": "NONE",
-  "classification": "PRE_GITHUB_MUTATION_REFUSAL_PATH_DEPENDENT_ACTION_SKEWED",
+  "classification": "PRE_GITHUB_MUTATION_REFUSAL_REF_CONTEXT_OR_INTERMITTENCY_SUPPORTED_NOT_ROOT_CAUSE",
   "directive_freshness": {
     "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "previous_directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "newly_active_or_materially_changed": [],
     "applicable_directives_read": [
+      "HUMAN-20260921-004",
       "HUMAN-20260925-002",
+      "HUMAN-20260926-003",
       "HUMAN-20260927-002",
       "HUMAN-20260928-001"
     ]
   },
   "ownership_checks": {
     "utility_assignment": "SCHEMA_V2_CLEAN_IDLE",
-    "control_branch_head": "1b097bf1055d36f68e3d34cff212b3b720adde66",
+    "control_generation": "R110",
+    "control_branch_head": "86071fbe85ab04cc1313db111f6a35f3dbd4c096",
     "analyst_generation": "R167",
     "analyst_branch_head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
-    "main_generation": "MAIN-20260928T131630+0900-PRIMARY-R173-M1-002-PR-CREATE-BLOCKED",
-    "main_reports_head": "7d1f1809c64a5223b128f2b6e693f4d6f4f4df90",
+    "main_generation": "MAIN-20260928T141253+0900-PRIMARY-R174-M1-002-PR-CREATE-BLOCKED",
+    "main_reports_head": "bbf1108c61541f26e66f460b8c097f14185ce3fc",
     "relay_allocated": false,
     "m1_002_owner": "MAIN",
     "m1_002_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
@@ -34,43 +37,34 @@
   },
   "diagnostic": {
     "incident_id": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "repository_wide_outage_supported": false,
-    "pr_create_success_reference": {
-      "pr": 163,
-      "created_jst": "2026-09-28T07:19:36+09:00",
-      "merged_jst": "2026-09-28T07:22:38+09:00"
-    },
-    "m1_002_pr_create_failures": {
-      "main_generations": [
-        "R170",
-        "R171",
-        "R172",
-        "R173"
-      ],
-      "attempts_per_generation": 5,
-      "total_observed_attempts": 20,
-      "failure_layer": "PRE_GITHUB_PLATFORM_REFUSAL",
-      "pr_exists": false
-    },
-    "same_worker_contrast": {
-      "main_generation": "R173",
-      "pr_create_attempts_failed": 5,
-      "subsequent_ops_commit": "7d1f1809c64a5223b128f2b6e693f4d6f4f4df90"
-    },
-    "utility_start_publication": {
-      "attempts_total": 3,
-      "attempts_1_2": "PRE_GITHUB_PLATFORM_REFUSAL",
-      "attempt_3": "SUCCESS",
-      "commit": "5e69b06a0170aaf562fb90c0d5a83efc5497c69c",
+    "start_publication": {
+      "attempts_total": 1,
+      "success": true,
+      "commit": "224c1abda475ae05635d70f587f1f24595839f9a",
       "readback": true
     },
-    "interpretation": "Branch-content publication remains possible but can be intermittently refused; PR creation shows sustained pre-GitHub failure. Exact runtime/platform root cause remains unknown.",
-    "control_recommendation": "Isolated Control-owned non-scientific PR-create canary plus simple branch-content canary."
+    "canary_branch": {
+      "name": "utility/p0-pr-create-canary-20260928-1529",
+      "creation_attempts": 1,
+      "created": true,
+      "initial_and_final_head": "224c1abda475ae05635d70f587f1f24595839f9a"
+    },
+    "marker_write": {
+      "path": "utility_orchestrator/prototypes/p0_pr_create_canary_20260928T1529.txt",
+      "attempts_total": 5,
+      "failures": 5,
+      "failure_layer": "PRE_GITHUB_PLATFORM_REFUSAL",
+      "marker_present_after": false
+    },
+    "pr_create": {
+      "attempted": false,
+      "reason": "CANARY_CONTENT_SETUP_EXHAUSTED_FIVE_ATTEMPTS"
+    },
+    "interpretation": "Same create_file action succeeded on ops/utility-orchestrator-requests and then failed 5/5 on a newly-created utility/* canary branch; ref/path context or strong intermittency remains material. Root cause unknown."
   },
-  "result_path": "utility_orchestrator/results/2026-09-28/1324-r165-p0-mutation-route-matrix.md",
-  "result_commit": "79685618d46ec92e5f45a058ba51edd0ff318cec",
-  "start_path": "utility_orchestrator/results/2026-09-28/1325-r165-p0-mutation-route-matrix-start.md",
-  "stop_reason": "BOUNDED_DIAGNOSTIC_COMPLETE",
+  "result_path": "utility_orchestrator/results/2026-09-28/1534-r166-p0-minimal-pr-canary.md",
+  "start_path": "utility_orchestrator/results/2026-09-28/1529-r166-p0-minimal-pr-canary-start.md",
+  "stop_reason": "CANARY_BRANCH_CONTENT_SETUP_BLOCKED_AFTER_5_ATTEMPTS",
   "hard_floor": {
     "main_or_m1_branch_mutated": false,
     "pr_mutated": false,
@@ -78,13 +72,13 @@
     "scheduler_changed": false,
     "scientific_execution": false,
     "scientific_ref_mutated": false,
-    "evidence_ref_mutated": false
+    "evidence_ref_mutated": false,
+    "work_mode_used": false
   },
   "publication": {
     "branch": "ops/utility-orchestrator-requests",
-    "start_publication_attempts": 3,
-    "final_result_publication_attempts": 2,
-    "state_update_attempt_number_within_final_purpose": 3,
+    "final_result_atomic": true,
+    "attempt_limit": 5,
     "force_push": false,
     "completion_contract": "FINAL_RESULT_AND_STATE_READBACK_REQUIRED"
   }
