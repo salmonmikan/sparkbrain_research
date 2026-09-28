@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation": "R168",
-  "generation_id": "EVA-20260928T231445+0900-R168-FLY0-COMPOSED-CI-FAILURE",
-  "generated_at": "2026-09-28T23:14:45+09:00",
+  "generation": "R169",
+  "generation_id": "EVA-20260929T050453+0900-R169-FLY0-V2-SB003-CONDITIONAL-ALLOCATION",
+  "generated_at": "2026-09-29T05:04:53+09:00",
   "role": "EVIDENCE_ANALYST",
   "mode": "READ_ONLY_ADJUDICATION",
   "directive_index": {
@@ -13,16 +13,15 @@
   },
   "refs": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "control_append_only_generation": "R115",
-    "control_r115_commit": "77b03725f1cc91f6f5fcb85c8a4a5c1e6d42751d",
-    "analyst_before": "844928373dbe3873738ea4f1be69ee9b23f1f696",
-    "main_generation": "R179",
+    "analyst_before": "266864682894af7745156ec899da3377cacc18fb",
+    "control_generation": "R117",
+    "control_head": "08d49d5086726b5b7e409abdd58a00ae2a478790",
+    "main_generation": "R183",
     "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "fly0_durable_handoff": "8bcb7323df35248e3e3c8b3e6f0eaca3f8d30f63",
-    "fly0_composed_candidate": "5541043d53bbcde26fc930cb054a1158fb90a727",
-    "methodology_generation": "R144",
-    "theory_generation": "R18",
-    "external_audit_generation": "R11"
+    "forge_branch_head": "ba3324d3ac8084891b5454a117a552b60e502928",
+    "fly0_exact_source": "4a68fde7cc3ba519a978810ab1002d1e9312f839",
+    "methodology_append_only_generation": "R146",
+    "theory_generation": "R20"
   },
   "science": {
     "terminal": 35,
@@ -33,51 +32,105 @@
     "new_result": false,
     "new_execution_authorized": false
   },
+  "persistence_reconciliation": {
+    "newer_pending_request": false,
+    "request_mailbox_latest_durable_generation": "R168",
+    "stale_unreceipted_request": "EA-R160-20260928T020000JST",
+    "stale_request_expected_target_head": "17a58e31127f8e2e47848ef4794f53bcd3908900",
+    "current_target_head_before_r169": "266864682894af7745156ec899da3377cacc18fb",
+    "prior_failed_r169_request_present": false
+  },
   "m1_002": {
+    "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
+    "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "ahead_by": 1,
+    "behind_by": 0,
+    "ci_run": 36361950457,
+    "ci": "success",
+    "pr_open": false,
+    "authority": "RETAIN_EXACT_HEAD_PR_CONDITIONAL_MERGE",
     "built": true,
     "bounded_functionally_verified": true,
     "comparatively_supported": false,
     "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
     "scientific_credit": 0,
-    "ahead_by": 1,
-    "behind_by": 0,
-    "pr_created": false,
-    "status": "EXACT_HEAD_AUTHORITY_RETAINED_P0_PR_MUTATION_ROUTE_BLOCKER"
+    "blocker": "P0_PRE_GITHUB_PR_CREATE_PATH"
   },
   "fly0": {
-    "composed_path_present": true,
-    "composed_exact_head": "5541043d53bbcde26fc930cb054a1158fb90a727",
-    "composed_ci_run": 36434348027,
-    "python_311": "failure",
-    "python_313": "in_progress",
-    "failing_focused_tests": 5,
-    "failing_variants": [
-      "rewired",
-      "random_sparse"
+    "forge_generation": "FORGE-20260929T044715+0900-FLY0-DIRECTIONAL-MODULATION-GREEN",
+    "branch": "forge/20260929-fly0-directional-modulation-a",
+    "branch_head": "ba3324d3ac8084891b5454a117a552b60e502928",
+    "exact_source": "4a68fde7cc3ba519a978810ab1002d1e9312f839",
+    "report_only_commits_after_exact_source": 1,
+    "ci_run": 36474193214,
+    "ci": "success",
+    "modulation_schema": "fly0-modulation-frame-v2",
+    "modes": [
+      "neutral",
+      "hold",
+      "permit_side"
     ],
-    "observation_and_feedback_cuts_composed": true,
-    "exact_current_head_accepted": false,
+    "max_ttl_local_steps": 4,
+    "semantic_surface_preserved": true,
+    "checkpoint_provenance_bound": true,
+    "transactional_cross_layer_restore": true,
+    "descending_cut": true,
+    "local_feedback_cut": true,
+    "four_way_same_interface": true,
+    "rich_goal_policy_established": false,
     "strict_internal_activity_resource_comparability": false,
-    "common_work_counter_status": "SOURCE_ONLY",
-    "ordinary_reactive_reduction_retained": true,
-    "sb003_allocated": false,
-    "scientific_credit": 0,
-    "disposition": "FORGE_REPAIR_AND_REVERIFY_BEFORE_SYSTEM_BUILD_INPUT"
+    "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
+    "scientific_credit": 0
   },
   "allocation": {
     "main": "M1_002_EXACT_HEAD_PR_CONDITIONAL_MERGE",
     "relay": null,
-    "forge": "REPAIR_AND_REVERIFY_FLY0_COMPOSED_CAUSAL_REPLACEMENT",
-    "sb003": null,
+    "sb003": {
+      "build_id": "BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT",
+      "owner": "PRIMARY_MAIN",
+      "state": "ALLOCATED_CONDITIONAL_INACTIVE",
+      "activates_after": [
+        "M1_002_EXACT_AUTHORIZED_HEAD_INTEGRATED_VIA_REQUIRED_PR_PATH",
+        "POST_MERGE_M1_ACCEPTANCE_RECONCILIATION_GREEN",
+        "NO_NEWER_AUTHORITY_SUPERSEDES_SCOPE_OR_PRIORITY",
+        "NO_MAIN_RELAY_OWNERSHIP_COLLISION"
+      ],
+      "rolling_milestones": [
+        "A_PORT_GREEN_SEMANTIC_SURFACE_CHECKPOINT_AND_MODULATION_V2_INTO_ACCEPTED_M1",
+        "B_CLOSE_BOUNDED_WORLD_LOCAL_M1_MODULATION_ACTION_LOOP",
+        "C_FOUR_WAY_REPLACEMENT_AND_DESCENDING_LOCAL_FEEDBACK_CAUSAL_DIAGNOSTICS"
+      ],
+      "max_modulation_ttl_local_steps": 4,
+      "continuous_gain_bias_authorized": false,
+      "richer_goal_vocabulary_authorized": false,
+      "flywire_scale_authorized": false,
+      "real_task_benchmark_authorized": false,
+      "evidentiary_status": "NON_EVIDENTIARY_SYSTEM_BUILD",
+      "scientific_credit": 0
+    },
     "science": null
   },
   "next_milestones": [
     "M1_002_PR_CREATE_EXACT_HEAD_AND_CONDITIONAL_MERGE",
     "M1_002_POST_MERGE_ACCEPTANCE_AND_RECONCILIATION",
-    "FLY0_COMPOSED_FOUR_VARIANT_REPAIR_AND_GREEN_CI",
-    "REASSESS_SB003_AFTER_M1_AND_FLY0_GREEN"
+    "SB003_A_PORT_GREEN_ENGINEERING_PRIMITIVES",
+    "SB003_B_CLOSE_BOUNDED_HIERARCHICAL_SENSORIMOTOR_LOOP",
+    "SB003_C_FOUR_WAY_REPLACEMENT_AND_CAUSAL_DIAGNOSTICS"
   ],
+  "methodology": {
+    "durable_append_only_generation": "R146",
+    "overall_classification": "WELL_CALIBRATED",
+    "strict_internal_activity_resource_comparability": "CLAIM_SCOPED_NOT_DEFAULT_SYSTEM_BUILD_GATE",
+    "pointer_debt": "LATEST_STATE_R145"
+  },
+  "theory": {
+    "generation": "R20",
+    "status": "INTEGRATION_DESIGN_PROPOSAL",
+    "design": "DESCENDING_MODULATION_AUTHORITY_CONTRACT",
+    "revisit_status": "NO_REVISIT_PROPOSAL"
+  },
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
@@ -85,10 +138,33 @@
     "pr_create_strongest_recurring_failure_surface": true,
     "root_cause": "UNKNOWN"
   },
+  "claim_boundary": {
+    "biological_fidelity_equivalence": false,
+    "topology_necessity_superiority": false,
+    "compute_energy_efficiency": false,
+    "composition_contribution": "NOT_ESTABLISHED",
+    "whole_system_superiority": false,
+    "external_validity": false,
+    "rich_goal_conditioned_behavior": false,
+    "scientific_novelty": false,
+    "scientific_credit": 0
+  },
+  "hard_floor": {
+    "experiments_dispatched_by_analyst": false,
+    "result_bearing_workflow_dispatched": false,
+    "immutable_refs_mutated": false,
+    "terminal_objects_reopened": false,
+    "consumed_formal_rerun_retune_rescore": false,
+    "scheduler_changes": false,
+    "work_mode_used": false
+  },
   "persistence": {
-    "request_id": "EA-R168-20260928T231445JST",
+    "route": "EVIDENCE_ANALYST_ACTIONS_BRIDGE",
+    "request_id": "EA-R169-20260929T050453JST",
     "target_branch": "ops/evidence-analyst-handoff",
-    "expected_target_head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
-    "status_at_request_creation": "PENDING_ACTION_RECEIPT"
+    "expected_target_head": "266864682894af7745156ec899da3377cacc18fb",
+    "history_path": "analysis/orchestrator/history/2026-09-29/0504-R169-fly0-v2-sb003-conditional-allocation.md",
+    "status_at_generation": "REQUEST_TO_BE_PUBLISHED",
+    "maximum_attempts": 5
   }
 }
