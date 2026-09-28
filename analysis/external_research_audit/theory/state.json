@@ -1,22 +1,15 @@
 {
   "schema_version": 2,
-  "generation_id": "THEORY-20260928T193231+0900-R17-NO-PROPOSAL-P0-PUBLICATION-CHECK",
-  "produced_at": "2026-09-28T19:32:31+09:00",
+  "generation_id": "THEORY-20260928T213100+0900-R18-NO-PROPOSAL-CURRENT-STATE",
+  "produced_at": "2026-09-28T21:31:00+09:00",
+  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20260928T213100+0900",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
-  "supersedes_generation_id": "THEORY-20260928T153540+0900-R16-RESOURCE-FAIRNESS-SPLIT-5F2C8A11",
+  "supersedes_generation_id": "THEORY-20260928T193231+0900-R17-NO-PROPOSAL-P0-PUBLICATION-CHECK",
   "role": "THEORY_SYNTHESIS_ARCHITECT",
-  "schedule_slot": "19:30 JST",
-  "role_resolution_source": "PREVIOUS_CANONICAL_SLOT",
   "genuinely_new_information": false,
   "new_sparkbrain_scientific_result": false,
   "theory_status": "NO_PROPOSAL",
-  "design": {
-    "design_id": "ID-SB-FLY-HIERARCHICAL-SENSORIMOTOR-LOOP-001",
-    "revision": 3,
-    "disposition": "UNCHANGED_R16",
-    "sb003_allocated": false,
-    "execution_authorized": false
-  },
+  "revisit_status": "NO_REVISIT_PROPOSAL",
   "directive_freshness": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
@@ -25,13 +18,19 @@
   "inputs": {
     "analyst": "EVA-20260928T125724+0900-R167-P0-RECURRENCE-FLY0-BOTTOMUP",
     "control_append_only": "CTRL-20260928T185000+0900-R113-P0-ACTION-PATH-SENSITIVITY-M1-PR-BLOCKED",
-    "main": "MAIN-20260928T181802+0900-PRIMARY-R176-M1-002-PR-CREATE-BLOCKED",
-    "methodology": "METHCAL-20260928T182248+0900-R143-STABLE-CALIBRATION-P0-OPERATIONS",
+    "main": "MAIN-20260928T212312+0900-PRIMARY-R178-M1-002-PR-CREATE-BLOCKED",
     "literature": "LIT-20260928T123000+0900-R47-ASCENDING-FEEDBACK-GATING-C4E8A2D7",
-    "prior_theory": "THEORY-20260928T153540+0900-R16-RESOURCE-FAIRNESS-SPLIT-5F2C8A11"
+    "audit": "AUD-20260928T102955+0900-R11-M1-002-ROBUSTNESS-HARNESS-3A7C91D4",
+    "prior_theory": "THEORY-20260928T193231+0900-R17-NO-PROPOSAL-P0-PUBLICATION-CHECK"
+  },
+  "design": {
+    "design_id": "ID-SB-FLY-HIERARCHICAL-SENSORIMOTOR-LOOP-001",
+    "revision": 3,
+    "disposition": "UNCHANGED_R16",
+    "sb003_allocated": false,
+    "execution_authorized": false
   },
   "claim_boundary": {
-    "system_build": "NO_NEW_ALLOCATION",
     "composition": "NOT_ESTABLISHED",
     "novelty": false,
     "credit": 0,
@@ -39,23 +38,13 @@
     "topology_superiority": false,
     "resource_efficiency_claim": false
   },
-  "revisit_status": "NO_REVISIT_PROPOSAL",
-  "p0": {
-    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "status": "OPEN",
-    "purpose": "ROLE_OWNED_PUBLICATION_PATH_OBSERVATION_ONLY",
-    "interpretation_ceiling": "PATH_ACTION_TIME_LOCAL_ONLY"
-  },
-  "scientific_mutations": 0,
-  "experiments_dispatched": 0,
-  "scheduler_changes": 0,
-  "history_path": "analysis/external_research_audit/theory/history/2026-09-28/1932-THEORY_SYNTHESIS_ARCHITECT.md",
+  "history_path": "analysis/external_research_audit/theory/history/2026-09-28/2131-THEORY_SYNTHESIS_ARCHITECT.md",
   "persistence": {
     "branch": "ops/external-research-audit-handoff",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "attempt_limit": 5,
     "force_push": false,
     "readback_required": true,
-    "head_before": "2c0dcd8f033b6d398e6bf8e8c92bc5c050a8de27"
+    "head_before": "c5931d23b9a3be5e538e5fbb91518b464076b898"
   }
 }
