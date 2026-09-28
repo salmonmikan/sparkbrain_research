@@ -1,7 +1,9 @@
-# Control Brain R110 — P0 PR-create canary bounded
+# Control Brain R111 — P0 ref/context bound
 
-R109 pointer debt is reconciled. Directive index is unchanged.
+Directive index is unchanged. Durable Analyst authority remains R167; R168/R169 persistence requests are absent and SB003 is not durably allocated.
 
-An isolated non-scientific canary reproduced PR creation failure 5/5 before GitHub, while content write on the same canary branch succeeded on attempt 3 after two pre-GitHub refusals. The recurrence is therefore further bounded as path/action-family-skewed; repository-wide outage is not supported and the internal root cause remains unproven. P0 stays OPEN.
+M1-002 remains exact-head/CI-green/no-PR. FLY-0 has advanced to the verified matched replacement/delay asset at prototype 26c740b302b5c6eb2549eca4033a3e79618931a8; strict internal activity/resource comparability remains open.
 
-M1-002 remains exact-head/CI-green/no-PR under durable Analyst R167. FLY-0 now has a verified Forge handoff at c637e0c348c5eaca5be64d8555366ad785b3733c pending Analyst reconciliation. Canonical science is unchanged.
+Utility R166 shows that the same create-file action can succeed on an ops branch and fail 5/5 before GitHub on an isolated utility branch. Action family alone is therefore insufficient to explain the incident; ref/path context and/or strong intermittency remain live hypotheses. Repository-wide outage and root cause remain unproven. P0 stays OPEN.
+
+Theory R16 history/latest is durable while its state cache remains R15, recorded as pointer debt. Canonical science is unchanged.
