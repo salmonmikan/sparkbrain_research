@@ -1,102 +1,106 @@
 {
   "schema_version": 2,
-  "generation_id": "THEORY-20260928T093233+0900-R14-NO-PROPOSAL-M1-002-ROBUSTNESS-6C2F91A4",
-  "produced_at": "2026-09-28T09:32:33+09:00",
-  "producer_run_id": "external-theory-auto-THEORY-20260928T093233+0900-R14-NO-PROPOSAL-M1-002-ROBUSTNESS-6C2F91A4",
+  "generation_id": "THEORY-20260928T132946+0900-R15-GATED-ASCENDING-REFINEMENT-6E3A91C4",
+  "produced_at": "2026-09-28T13:29:46+09:00",
+  "producer_run_id": "external-theory-auto-THEORY-20260928T132946+0900-R15-GATED-ASCENDING-REFINEMENT-6E3A91C4",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
-  "supersedes_generation_id": "THEORY-20260928T073157+0900-R13-FLY-HIERARCHICAL-INTEGRATION-DESIGN-4F7A2C91",
+  "supersedes_generation_id": "THEORY-20260928T093233+0900-R14-NO-PROPOSAL-M1-002-ROBUSTNESS-6C2F91A4",
   "role": "THEORY_SYNTHESIS_ARCHITECT",
-  "schedule_slot": "09:30 JST",
-  "role_resolution_source": "SCHEDULED_OCCURRENCE",
-  "genuinely_new_information": false,
+  "schedule_slot": "13:30 JST",
+  "role_resolution_source": "EARLY_GRACE",
+  "genuinely_new_information": true,
   "new_sparkbrain_scientific_result": false,
-  "theory_status": "NO_PROPOSAL",
-  "primary_proposal": null,
-  "retained_design_id": "ID-SB-FLY-HIERARCHICAL-SENSORIMOTOR-LOOP-001",
-  "retained_secondary_design_id": "ID-SB-LATENT-SCOPE-PLURAL-REVISION-001",
-  "revisit_proposal": null,
-  "revisit_status": "NO_REVISIT_PROPOSAL",
-  "directive_freshness": {
-    "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "previous_directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "changed": false,
-    "newly_active_or_materially_changed": [],
-    "applicable_directives_read": [
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002",
-      "HUMAN-20260927-002"
-    ],
-    "interpretation": "M1_002_IS_EXISTING_M1_ACCEPTANCE_HARNESS_NO_NEW_THEORY_OR_REVIEW_GATE"
-  },
-  "input_generations": {
-    "prior_theory": "THEORY-20260928T073157+0900-R13-FLY-HIERARCHICAL-INTEGRATION-DESIGN-4F7A2C91",
-    "evidence_analyst": "EVA-20260928T090051+0900-R164-M1-WAIT-FLY0-HANDOFF-REVIEW",
-    "control": "CTRL-20260928T084949+0900-R105-M1-ROBUSTNESS-ALLOCATED",
-    "main": "MAIN-20260928T072510+0900-PRIMARY-R169-M1-INTEGRATED",
-    "utility": "UTILITY-20260928T092746+0900-R163-M1-002-READINESS-VERIFIED",
-    "fly0": "FORGE-20260928T083304+0900-FLY0-HIERARCHICAL-LOOP-HANDOFF"
-  },
-  "repository_refs_inspected": {
-    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "external_science_before_publish": "b1105da77d78de20c3974fea5f384a6846416c8c",
-    "evidence_analyst": "64dc3c5105b9f1a754f9d1dfdc9b79072e54f2fa",
-    "control": "24d9fdc16d3403f585d5034f9f1809450b875a46",
-    "main_reports": "53890fc113ba4e9c0680e138376485b11bf0a849",
-    "utility": "74f9442b450e3b9c3571a8ac5190fd9c324a84e2",
-    "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "fly0": "03f812775199166638796c379d461e4f1f1e1259"
-  },
-  "m1_002_handling": {
-    "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
-    "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "exact_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
-    "ci_run_id": 36361950457,
-    "ci_conclusion": "success",
-    "runtime_design_changed": false,
-    "existing_acceptance_properties_only": true,
-    "new_theory_required": false,
-    "analyst_reconciliation_pending": true
-  },
-  "retained_integration_design": {
+  "theory_status": "INTEGRATION_DESIGN_PROPOSAL_REFINEMENT",
+  "design": {
     "design_id": "ID-SB-FLY-HIERARCHICAL-SENSORIMOTOR-LOOP-001",
-    "status": "INTEGRATION_DESIGN_PROPOSAL_RETAINED",
-    "component_map": [
+    "revision": 2,
+    "target": "CAUSAL_GATED_ASCENDING_STATE_WITH_MATCHED_DELAY",
+    "components": [
       "BOUNDED_WORLD",
       "EVENT_ADAPTER",
       "PLURAL_LOCAL_MODULES",
+      "ASCENDING_STATE_ENCODER",
+      "CONTEXTUAL_PREDICTIVE_GATE",
+      "DELAY_BUDGET_LEDGER",
       "M1_SUPERVISOR",
       "DESCENDING_MODULATION",
-      "ASCENDING_FEEDBACK",
       "ACTION_ARBITER",
       "TRANSACTION_COORDINATOR"
     ],
-    "m1_002_role": "REUSABLE_ACCEPTANCE_PATTERN_NOT_COMPONENT_OR_DEPENDENCY",
+    "reduction_comparator": "ORDINARY_HIERARCHICAL_REACTIVE_FSM_WITH_SAME_ENCODER_GATE_DELAY",
     "sb003_allocated": false,
     "execution_authorized": false
   },
-  "claim_boundary": {
-    "component_function": "M1_002_BOUNDED_ACCEPTANCE_HARNESS_ONLY",
-    "system_build": "EXACT_HEAD_CI_SUCCESS_PENDING_ANALYST_RECONCILIATION",
-    "composition_contribution": "NOT_ESTABLISHED",
-    "scientific_novelty": false,
-    "scientific_credit": 0
+  "directive_freshness": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "changed": false,
+    "applicable": [
+      "HUMAN-20260925-002",
+      "HUMAN-20260926-003",
+      "HUMAN-20260926-004",
+      "HUMAN-20260927-002",
+      "HUMAN-20260928-001",
+      "HUMAN-20260928-002"
+    ]
   },
+  "inputs": {
+    "theory": "THEORY-20260928T093233+0900-R14-NO-PROPOSAL-M1-002-ROBUSTNESS-6C2F91A4",
+    "literature": "LIT-20260928T123000+0900-R47-ASCENDING-FEEDBACK-GATING-C4E8A2D7",
+    "audit": "AUD-20260928T102955+0900-R11-M1-002-ROBUSTNESS-HARNESS-3A7C91D4",
+    "analyst": "EVA-20260928T125724+0900-R167-P0-RECURRENCE-FLY0-BOTTOMUP",
+    "control": "CTRL-20260928T125039+0900-R109-FLEET-WORK-PROHIBITION-P0-OBSERVE",
+    "main": "MAIN-20260928T131630+0900-PRIMARY-R173-M1-002-PR-CREATE-BLOCKED"
+  },
+  "refs": {
+    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "external_before": "3d19f54227cfaad7b152b0b44eefb47c951a0916",
+    "analyst": "844928373dbe3873738ea4f1be69ee9b23f1f696",
+    "control": "1b097bf1055d36f68e3d34cff212b3b720adde66",
+    "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "fly0_source": "f41aad9a726b985ea654900eb8a7c807d558fc08"
+  },
+  "gaps": {
+    "prior": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT",
+    "forge_status": "SOURCE_ONLY_HARD_FEEDBACK_GATE_UNVERIFIED",
+    "resource_matching": false,
+    "delay_matching": false,
+    "replacement_ladder": false,
+    "forge_verified": false
+  },
+  "m1_002": {
+    "bounded_verified": true,
+    "pr_created": false,
+    "operational_blocker": "PRE_GITHUB_PLATFORM_REFUSAL",
+    "theory_blocks": false
+  },
+  "p0": {
+    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "status": "OPEN",
+    "repo_wide_outage": false,
+    "control_pointer_debt": true
+  },
+  "claim_boundary": {
+    "system_build": "NO_NEW_ALLOCATION",
+    "composition": "NOT_ESTABLISHED",
+    "novelty": false,
+    "credit": 0,
+    "biological_fidelity": false,
+    "topology_superiority": false
+  },
+  "revisit_status": "NO_REVISIT_PROPOSAL",
   "scientific_mutations": 0,
   "experiments_dispatched": 0,
   "scheduler_changes": 0,
-  "history_path": "analysis/external_research_audit/theory/history/2026-09-28/0932-THEORY_SYNTHESIS_ARCHITECT.md",
+  "history_path": "analysis/external_research_audit/theory/history/2026-09-28/1330-THEORY_SYNTHESIS_ARCHITECT.md",
   "persistence": {
     "branch": "ops/external-research-audit-handoff",
-    "latest_path": "analysis/external_research_audit/theory/latest.md",
-    "state_path": "analysis/external_research_audit/theory/state.json",
-    "history_path": "analysis/external_research_audit/theory/history/2026-09-28/0932-THEORY_SYNTHESIS_ARCHITECT.md",
-    "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
-    "branch_head_before": "b1105da77d78de20c3974fea5f384a6846416c8c",
-    "maximum_attempts_per_mutation_purpose": 5,
-    "attempt": 1,
-    "force_push": false,
-    "readback_required": true
+    "mode": "ATOMIC_HISTORY_LATEST_STATE",
+    "attempt": 3,
+    "max_attempts": 5,
+    "force": false,
+    "readback": true
   }
 }
