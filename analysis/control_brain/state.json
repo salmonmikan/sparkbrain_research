@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260928T095119+0900-R106-M1-002-CI-READY-ANALYST",
-  "produced_at": "2026-09-28T09:51:19+09:00",
+  "generation_id": "CTRL-RECOVERY-20260928T123100+0900-R108-P0-MUTATION-RECURRENCE-BACKFILL",
+  "produced_at": "2026-09-28T12:31:00+09:00",
   "mode": "CONTROL_BRAIN",
   "role_resolution": {
-    "canonical_slot": "09:50",
-    "resolution_source": "SCHEDULED_OCCURRENCE",
-    "drift_seconds": 79
+    "canonical_slot": "RECOVERY_BACKFILL",
+    "resolution_source": "DIRECT_USER_AUTHORIZED_MANUAL_RECONCILIATION",
+    "drift_seconds": null
   },
   "authority": {
     "main": {
@@ -22,29 +22,31 @@
     },
     "analyst": {
       "ref": "ops/evidence-analyst-handoff",
-      "head": "64dc3c5105b9f1a754f9d1dfdc9b79072e54f2fa",
-      "generation": "EVA-20260928T090051+0900-R164-M1-WAIT-FLY0-HANDOFF-REVIEW"
+      "head": "46c93259af8ec986fd8465ed5f5cf8fe893cb2e5",
+      "generation": "EVA-20260928T120024+0900-R166-M1-002-FLY0-ABLATION"
     },
     "main_reports": {
       "ref": "ops/orchestrator-run-report",
-      "head": "53890fc113ba4e9c0680e138376485b11bf0a849",
-      "latest_generation": "R169"
+      "head": "1dedab2a37411efa4e3ae222255910fa8c82856e",
+      "latest_generation": "R172"
     },
     "methodology": {
       "ref": "ops/methodology-calibration-audit",
-      "head": "39571a5710d1a6a545f933ed76f383f505ad38b8"
+      "head": "0102ca2c537a4fb9704f4b3d2def933d7d56f152",
+      "latest_generation": "R140_RECOVERY_BACKFILL"
     },
     "external_science": {
       "ref": "ops/external-research-audit-handoff",
-      "head": "f46d87c7eed103e2185238cf48c792d653862ccd"
+      "head": "3d19f54227cfaad7b152b0b44eefb47c951a0916"
     },
     "utility": {
       "ref": "ops/utility-orchestrator-requests",
-      "head": "74f9442b450e3b9c3571a8ac5190fd9c324a84e2"
+      "head": "df5de71f2f5788272d04001a9e6cf3f9957a9920",
+      "latest_generation": "R164_RECOVERY_BACKFILL"
     },
     "control_before": {
       "ref": "ops/control-brain-handoff",
-      "head": "24d9fdc16d3403f585d5034f9f1809450b875a46"
+      "head": "c5156a7fbbe2439563ded358044673d258bec5c1"
     }
   },
   "directives": {
@@ -56,7 +58,8 @@
       "HUMAN-20260927-002": "ACCEPT_FIVE_ATTEMPT_LIMIT",
       "HUMAN-20260928-001": "ACCEPT_WITH_MODIFICATION_M1_INTEGRATED_CONTINUE_M1_002",
       "HUMAN-20260928-002": "ACCEPT_WITH_MODIFICATION_FORGE_PARALLEL_NO_SB003"
-    }
+    },
+    "manual_recovery_authorization": "APPLIED_STATE_BACKFILL_ONLY_NO_SCHEDULER_DEFINITION_CHANGE"
   },
   "science": {
     "total": 35,
@@ -85,7 +88,7 @@
       "required_branch": "system-build/m1-post-integration-robustness-20260928",
       "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
       "tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
-      "status": "BUILT_CI_GREEN_WAITING_FRESH_ANALYST_RECONCILIATION",
+      "status": "EXACT_HEAD_AUTHORIZED_PR_ROUTE_BLOCKED_OPERATIONAL",
       "ci": {
         "run_id": 36361950457,
         "event": "push",
@@ -94,9 +97,10 @@
         "python_311": "success",
         "python_313": "success"
       },
-      "next_boundary": "FRESH_ANALYST_EXACT_HEAD_RECONCILIATION_BEFORE_PR_OR_MERGE",
+      "next_boundary": "MAIN_MAY_RETRY_EXACT_HEAD_PR_AFTER_FRESH_STATE_CHECK_UNDER_R166_AUTHORITY",
       "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-      "scientific_credit": 0
+      "scientific_credit": 0,
+      "pr_open": false
     }
   },
   "integration_graph": {
@@ -104,52 +108,48 @@
       "M1 integration",
       "post-merge CI",
       "M1-002 exact-base implementation",
-      "M1-002 exact-head push CI"
+      "M1-002 exact-head push CI",
+      "Evidence Analyst exact-head reconciliation R166",
+      "FLY-0 interaction-ablation engineering handoff"
     ],
     "critical_path": [
-      "Evidence Analyst reconciles M1-002 exact head/tree/scope/CI",
-      "MAIN opens PR and merges only if freshly authorized",
-      "exact integrated-head/post-merge CI",
+      "MAIN fresh-state retry of exact-head M1-002 PR creation",
+      "conditional merge only if R166 conditions remain satisfied",
+      "post-merge exact-head CI and provenance",
       "fresh Analyst post-integration reconciliation"
     ],
     "parallel": [
-      "Forge resource-normalization handoff publication",
+      "Control P0 mutation-route recurrence management",
+      "Forge activity/resource comparability",
       "Forge matched replacement ladder",
-      "Forge interaction-ablation matrix",
+      "Forge bottom-up causal integration",
       "Utility non-colliding support"
     ],
     "blockers": [
-      "FRESH_ANALYST_M1_002_EXACT_HEAD_RECONCILIATION"
+      "M1_002_PR_MUTATION_ROUTE_BLOCKED"
     ],
     "next_milestones": [
-      "M1-002 exact-head Analyst reconciliation",
-      "authorized PR/merge continuation",
-      "post-merge exact-head verification",
+      "M1-002 exact-head PR retry",
+      "conditional merge and post-merge CI",
+      "fresh post-integration reconciliation",
       "next bounded integration allocation"
     ]
   },
   "fly0": {
-    "status": "GREEN_NONCANONICAL_CODE_AWAITING_FORGE_HANDOFF",
-    "prior_durable_handoff": "03f812775199166638796c379d461e4f1f1e1259",
-    "resource_normalization_branch": "forge/20260928-fly0-resource-normalization-a",
-    "resource_normalization_head": "669030dda2911709c9eae4cedf6ae21a2fda6f88",
-    "ci_run_id": 36363537665,
-    "ci_conclusion": "success",
+    "status": "NON_EVIDENTIARY_NONCANONICAL_ENGINEERING_HANDOFF_DURABLE",
+    "interaction_ablation_handoff": "1f455853b58fdad0be4cae42499b0df41dbee20a",
+    "engineering_gap": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT",
     "common_interface_exposure_matched": true,
     "activity_resource_exposure_matched": false,
-    "durable_new_handoff": false,
+    "matched_replacement_ladder_complete": false,
+    "interaction_ablation_matrix_present": true,
     "system_build_admission": false,
     "sb003_allocated": false,
     "m1_dependency": false,
     "comparative_support": false,
     "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
-    "scientific_credit": 0,
-    "remaining_blockers": [
-      "durable_resource_normalization_handoff_absent",
-      "incomplete_matched_replacement_ladder",
-      "missing_interaction_ablation_matrix"
-    ]
+    "scientific_credit": 0
   },
   "fleet": {
     "enabled_green": [
@@ -170,26 +170,43 @@
     "deprecated_blue": "DISABLED_ROLLBACK_HISTORY_ONLY",
     "standalone_steward": "DISABLED_REPLACED_BY_TIME_MULTIPLEXED_CONTROL",
     "completed_canary": "DISABLED_COMPLETE",
-    "scheduler_change": "NONE"
+    "scheduler_change": "NONE_DURING_RECOVERY_BACKFILL"
   },
   "scheduler_health": {
-    "classification": "GREEN_M1_002_CI_READY_FOR_ANALYST",
-    "prior_yellow_observe_resolved": true,
+    "classification": "P0_GITHUB_MUTATION_RECURRENCE_OPEN",
+    "prior_yellow_observe_resolved": false,
     "material_definition_drift": false,
-    "incident": false,
-    "action": "OBSERVE_NEXT_ANALYST_RUN"
+    "incident": true,
+    "incident_id": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "action": "BOUNDED_RECOVERY_AND_FRESH_STATE_RETRY_WITHOUT_SCHEDULER_REDEFINITION"
   },
   "persistence": {
-    "p0_incident": "INC-GITHUB-PERSISTENCE-20260925-001",
-    "status": "CLOSED_P0_RECOVERED",
-    "analyst_r164_request_receipt_complete": true,
-    "analyst_r164_workflow_run_id": 36360862351,
+    "p0_incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "predecessor_incident": "INC-GITHUB-PERSISTENCE-20260925-001",
+    "predecessor_status": "CLOSED_P0_RECOVERED_DO_NOT_REOPEN_IN_PLACE",
+    "status": "OPEN_RECURRENCE_RECONCILED",
     "active_pointer_debt": false,
-    "local_git_https_auth_unavailable": true,
-    "github_app_git_data_route_verified": true
+    "repository_wide_outage_supported": false,
+    "scheduler_runtime_mutation_recurrence_supported": true,
+    "observed_streams": [
+      "MAIN PR creation: repeated pre-GitHub refusal",
+      "Evidence Analyst persistence: intermittent pre-GitHub refusal with later success",
+      "Utility R164 start publication: five-attempt failure with partial blob creation",
+      "Methodology R140 original publication: five-attempt pre-GitHub failure",
+      "Control R107/R108 publication: exhausted attempts without ref update"
+    ],
+    "retained_hardening": [
+      "five total attempts per authorized publication purpose",
+      "fresh head/state before retry",
+      "atomic multi-file Git-data commit where supported",
+      "non-force ref update",
+      "independent readback",
+      "append-only history as durable authority"
+    ],
+    "recovery_backfill_publication": "PENDING_READBACK_AT_CONTENT_GENERATION"
   },
   "blue_green": {
-    "action": "NONE_REQUIRED",
+    "action": "NONE_REQUIRED_FOR_THIS_BACKFILL",
     "green_active": true,
     "blue_disabled": true
   },
@@ -201,12 +218,25 @@
     "immutable_evidence_changed": false,
     "scheduler_changed": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-28/0951-R106.md",
+  "history_path": "analysis/control_brain/history/2026-09-28/1231-R108-recovery-backfill.md",
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "head_before": "24d9fdc16d3403f585d5034f9f1809450b875a46",
+    "head_before": "c5156a7fbbe2439563ded358044673d258bec5c1",
     "atomic": true,
     "attempt_limit": 5,
-    "completion_contract": "POST_COMMIT_INDEPENDENT_READBACK_REQUIRED"
+    "completion_contract": "POST_COMMIT_INDEPENDENT_READBACK_REQUIRED",
+    "recovery_backfill": true
+  },
+  "recovery": {
+    "recovery_backfill": true,
+    "reconstructed_generations": [
+      "R107",
+      "R108"
+    ],
+    "original_payload_available": false,
+    "reconstruction_source": "user-visible unpersisted Control run reports in the current ChatGPT conversation",
+    "user_authorized": "2026-09-28 explicit authorization to reflect all unpersisted state",
+    "supersedes_durable_generation": "CTRL-20260928T095119+0900-R106-M1-002-CI-READY-ANALYST",
+    "integrity_note": "Operational recovery reconstruction only. It does not claim byte-for-byte recovery of the original unpublished R107/R108 payloads."
   }
 }
