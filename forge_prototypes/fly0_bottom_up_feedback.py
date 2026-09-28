@@ -74,6 +74,7 @@ class FeedbackIntegratedLoop:
                 Fly0LocalController("fly0-right", "right", topology), mask_observation
             ),
         )
+        self._mask_observation = mask_observation
         self._mask_feedback = mask_feedback
         self._event_budget = event_budget
         self._snapshot = LoopSnapshot(initial_world, 0)
@@ -86,6 +87,7 @@ class FeedbackIntegratedLoop:
         data = {
             "schema_version": 1,
             "module_ids": [c.module_id for c in self._controllers],
+            "mask_observation": self._mask_observation,
             "mask_feedback": self._mask_feedback,
             "snapshot": asdict(self._snapshot),
             "token": self._snapshot.token(),
@@ -98,6 +100,8 @@ class FeedbackIntegratedLoop:
             raise ValueError("checkpoint schema mismatch")
         if data.get("module_ids") != [c.module_id for c in self._controllers]:
             raise ValueError("checkpoint controller contract mismatch")
+        if data.get("mask_observation") != self._mask_observation:
+            raise ValueError("checkpoint observation-mask contract mismatch")
         if data.get("mask_feedback") != self._mask_feedback:
             raise ValueError("checkpoint feedback-mask contract mismatch")
         raw = data["snapshot"]
@@ -245,8 +249,10 @@ def probe_summary() -> dict[str, object]:
         },
         "ordinary_reduction":
             "Reactive control remains sufficient for the bounded movement task.",
-        "claim_boundary":
-            "No topology superiority, biological fidelity, novelty, scientific credit or SB003 allocation.",
+        "claim_boundary": (
+            "No topology superiority, biological fidelity, novelty, scientific credit "
+            "or SB003 allocation."
+        ),
     }
 
 
