@@ -1,102 +1,94 @@
 {
-  "timestamp": "2026-09-28T06:30:00+09:00",
   "schema_version": 2,
-  "generation_id": "LIT-20260928T063000+0900-R46-FLY0-DISTRIBUTED-CONTROL-B7D3C4A1",
-  "producer_run_id": "external-literature-auto-LIT-20260928T063000+0900-R46-FLY0-DISTRIBUTED-CONTROL-B7D3C4A1",
+  "generation_id": "LIT-20260928T123000+0900-R47-ASCENDING-FEEDBACK-GATING-C4E8A2D7",
+  "produced_at": "2026-09-28T12:29:03+09:00",
+  "producer_run_id": "external-literature-auto-LIT-20260928T123000+0900-R47-ASCENDING-FEEDBACK-GATING-C4E8A2D7",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_NON_EVIDENTIARY_NONCANONICAL_HANDOFF",
-  "supersedes_generation_id": "LIT-20260927T062709+0900-R45-RV02-RD006-REACHABILITY-91C4A8E2",
+  "supersedes_generation_id": "LIT-20260928T063000+0900-R46-FLY0-DISTRIBUTED-CONTROL-B7D3C4A1",
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "06:30 JST",
-  "role_resolution_source": "SCHEDULED_OCCURRENCE",
+  "schedule_slot": "12:30 JST",
+  "role_resolution_source": "EARLY_GRACE",
   "genuinely_new_information": true,
   "new_sparkbrain_scientific_result_observed": false,
-  "directive_freshness": {
-    "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "newly_applicable_since_prior_literature": [
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002"
-    ],
-    "applicable_directives_read": [
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002"
-    ],
-    "interpretation": "SUPPORT_M1_AND_FLY0_IN_PARALLEL_WITH_PRIOR_ART_AND_COMPARATOR_BOUNDARIES; NO_REVIEW_GATE_OR_SCIENTIFIC_CREDIT"
+  "directive_index": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "delta": false
   },
   "input_generations": {
-    "prior_literature": "LIT-20260927T062709+0900-R45-RV02-RD006-REACHABILITY-91C4A8E2",
-    "control": "CTRL-20260928T055408+0900-R103-M1-BUILT-WAIT-ANALYST",
-    "evidence_analyst": "EVA-20260928T045927+0900-R161-M1-ROLLING-CONTRACT-SB002-INTEGRITY",
-    "m1": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
-    "fly0": "NON_EVIDENTIARY_NONCANONICAL_FORGE_PROTOTYPE"
+    "prior_literature": "LIT-20260928T063000+0900-R46-FLY0-DISTRIBUTED-CONTROL-B7D3C4A1",
+    "control": "CTRL-20260928T095119+0900-R106-M1-002-CI-READY-ANALYST",
+    "evidence_analyst": "EVA-20260928T120024+0900-R166-M1-002-FLY0-ABLATION",
+    "main": "MAIN-20260928T121729+0900-PRIMARY-R172-M1-002-PR-CREATE-BLOCKED",
+    "theory": "THEORY-20260928T093233+0900-R14-NO-PROPOSAL-M1-002-ROBUSTNESS-6C2F91A4",
+    "audit": "AUD-20260928T102955+0900-R11-M1-002-ROBUSTNESS-HARNESS-3A7C91D4"
   },
-  "repository_refs_inspected": {
-    "main": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
+  "refs_inspected": {
+    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "control": "c155cf09495a25bff87868aaba1b90bb06459310",
-    "evidence_analyst": "195ca2d230928c7cada86e51d4f04b25904ffc04",
-    "external_science_before_write": "8f035e911bf7b1c965b97695b04834265cf415cc",
-    "m1": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
-    "fly0": "c9538544b04108a950e841cbc90b626259d7e3ff"
+    "control": "c5156a7fbbe2439563ded358044673d258bec5c1",
+    "evidence_analyst": "46c93259af8ec986fd8465ed5f5cf8fe893cb2e5",
+    "main_reports": "1dedab2a37411efa4e3ae222255910fa8c82856e",
+    "external_science_before_write": "57c96e4af78cb9acbba529b17778fe1a33449e2f",
+    "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "fly0_handoff": "1f455853b58fdad0be4cae42499b0df41dbee20a",
+    "fly0_prototype": "4c4706e9915cfac4cb9fd667cb3a0f96ebfb4a09"
   },
   "findings": [
     {
-      "id": "DISTRIBUTED_LOCAL_LOOPS_WITH_ASCENDING_DESCENDING_SUPERVISION",
-      "classifications": ["NOVELTY_REDUCTION", "DESIGN_PRIMITIVE", "SYSTEM_LEVEL_COMPARATOR"],
-      "source": "Bates et al. 2026 Nature doi:10.1038/s41586-026-10735-w",
-      "impact": "Supports local micro-control plus supervisory SparkBrain modulation; future SB003 should expose ascending feedback; does not establish FLY0 fidelity."
-    },
-    {
-      "id": "CONNECTOME_CONSTRAINED_LIF_IS_ESTABLISHED_SENSORIMOTOR_COMPARATOR",
-      "classifications": ["NOVELTY_REDUCTION", "DESIGN_PRIMITIVE", "SYSTEM_LEVEL_COMPARATOR"],
-      "source": "Shiu et al. 2024 Nature doi:10.1038/s41586-024-07763-9",
-      "impact": "A reduced connectome-LIF replacement is a stronger future system comparator than random topology alone."
-    },
-    {
-      "id": "PREMOTOR_CONTROL_IS_MODULAR_AND_BODY_PART_SPECIFIC",
-      "classifications": ["DESIGN_PRIMITIVE", "NOVELTY_REDUCTION", "NO_MATERIAL_CHANGE"],
-      "source": "Lesser et al. 2024 Nature doi:10.1038/s41586-024-07600-z",
-      "impact": "Future SB003 should prefer plural local modules and explicit body/action mapping; current FLY0 remains a generic engineering abstraction."
-    },
-    {
-      "id": "DEGREE_PRESERVING_SINGLE_REWIRE_IS_NOT_FULL_NULL_LADDER",
-      "classifications": ["SYSTEM_LEVEL_COMPARATOR", "DESIGN_PRIMITIVE"],
-      "sources": [
-        "Lin et al. 2024 Nature doi:10.1038/s41586-024-07968-y",
-        "Roberts & Coolen 2012 Phys Rev E doi:10.1103/PhysRevE.85.046103"
+      "id": "ASCENDING_FEEDBACK_ESTABLISHED",
+      "classes": [
+        "NOVELTY_REDUCTION",
+        "DESIGN_PRIMITIVE",
+        "SYSTEM_LEVEL_COMPARATOR"
       ],
-      "impact": "Future scientific topology claims require an unbiased rewire ensemble plus suitable role-block/spatial nulls and activity-exposure reporting; no current Forge blocker."
+      "source": "Wang-Chen et al. 2024 Nature Methods doi:10.1038/s41592-024-02497-y"
+    },
+    {
+      "id": "ASCENDING_STATE_SIGNAL",
+      "classes": [
+        "NOVELTY_REDUCTION",
+        "DESIGN_PRIMITIVE"
+      ],
+      "source": "Chen et al. 2023 Nature Neuroscience doi:10.1038/s41593-023-01281-z"
+    },
+    {
+      "id": "SELECTIVE_PROPRIOCEPTIVE_GATING",
+      "classes": [
+        "NOVELTY_REDUCTION",
+        "DESIGN_PRIMITIVE"
+      ],
+      "source": "Dallmann et al. 2025 Nature doi:10.1038/s41586-025-09554-2"
+    },
+    {
+      "id": "DELAY_AS_MATCHED_RESOURCE",
+      "classes": [
+        "DESIGN_PRIMITIVE",
+        "SYSTEM_LEVEL_COMPARATOR"
+      ],
+      "source": "Karashchuk et al. 2025 eLife doi:10.7554/eLife.99005.3"
     }
   ],
-  "revisit_proposal": null,
-  "revisit_status": "NO_NEW_TRIGGER",
-  "prospective_handoff": [
-    "Retain FLY0 as bounded engineering fixture without blocking M1",
-    "If SB003 is allocated, expose descending modulation and ascending local-state feedback",
-    "Use plural local modules with explicit world/action mapping",
-    "Add simple modular-controller and reduced connectome-LIF replacements",
-    "Ablate descending modulation, ascending feedback and local recurrence separately",
-    "For science only, use unbiased degree-preserving ensembles plus suitable block/spatial nulls and report activity exposure"
-  ],
-  "mutations": {
-    "scientific_experiments_executed_by_this_role": 0,
-    "scientific_workflows_dispatched_by_this_role": 0,
-    "one_way_identities_consumed_by_this_role": 0,
-    "research_prs_merged_by_this_role": 0,
-    "immutable_evidence_mutations": 0,
-    "terminal_objects_reopened": 0,
-    "scheduler_definition_changes": 0,
-    "system_build_allocations": 0
+  "engineering_handoff": {
+    "fly0_gap": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT",
+    "recommended": [
+      "causal ascending-state summary",
+      "selective contextual feedback gating",
+      "delay-matched comparisons",
+      "ordinary hierarchical ascending-feedback replacement comparator"
+    ],
+    "sb003_allocated": false,
+    "m1_blocked_by_this_run": false,
+    "revisit_trigger": false
   },
   "persistence": {
     "branch": "ops/external-research-audit-handoff",
     "latest_path": "analysis/external_research_audit/literature/latest.md",
     "state_path": "analysis/external_research_audit/literature/state.json",
-    "history_path": "analysis/external_research_audit/literature/history/2026-09-28/0630-LITERATURE_REDUCTION_SCOUT.md",
+    "history_path": "analysis/external_research_audit/literature/history/2026-09-28/1230-LITERATURE_REDUCTION_SCOUT.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts_per_mutation_purpose": 5,
-    "attempt": 1,
-    "force_push": false,
+    "attempt": 5,
     "readback_required": true
   }
 }
