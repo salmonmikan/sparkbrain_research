@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-29T00:15:32+09:00",
+  "timestamp": "2026-09-29T08:21:24+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260929T001532+0900-R145-FLY0-COMPARATOR-SEMANTIC-SURFACE",
-    "sequence": 145,
+    "generation_id": "METHCAL-20260929T082124+0900-R147-SB003-ROLLING-CALIBRATION-AND-P0-LATENCY",
+    "sequence": 147,
     "material_change": true,
-    "material_change_reason": "FLY0_TASK_INTERFACE_COMPARATOR_CONFOUND_EXPOSED_AND_CONTAINED",
-    "supersedes_generation_id": "METHCAL-20260928T222308+0900-R144-P0-PR-ACTION-CROSS-CONTEXT-STABLE",
+    "material_change_reason": "SB003_DURABLE_CONDITIONAL_ALLOCATION_AND_P0_INTEGRATION_LATENCY_RECALIBRATED",
+    "supersedes_generation_id": "METHCAL-20260929T022210+0900-R146-FLY0-REPAIR-GREEN-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "directive_freshness": {
@@ -15,11 +15,9 @@
     "previous_human_directives_ref": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "newly_active_or_materially_changed": [],
     "applicable_directives_read": [
-      "HUMAN-20260922-005",
       "HUMAN-20260925-002",
       "HUMAN-20260926-003",
       "HUMAN-20260926-004",
-      "HUMAN-20260927-001",
       "HUMAN-20260927-002",
       "HUMAN-20260928-001",
       "HUMAN-20260928-002"
@@ -27,18 +25,17 @@
     "freshness_established": true
   },
   "inputs": {
-    "analyst_durable": "EVA-20260928T231445+0900-R168-FLY0-COMPOSED-CI-FAILURE",
-    "analyst_branch": "266864682894af7745156ec899da3377cacc18fb",
-    "main": "MAIN-20260928T231533+0900-PRIMARY-R180-M1-002-PR-CREATE-BLOCKED",
-    "main_reports": "8b5c88201202483974306232ab581750c5fe764c",
-    "control_append_only": "CTRL-20260928T235000+0900-R116-P0-RECONCILIATION",
-    "control_branch": "5507f1d8588f112cad720c1d638e8675c8e8fac8",
-    "control_moving_pointer": "R112",
-    "theory": "THEORY-20260928T213100+0900-R18-NO-PROPOSAL-CURRENT-STATE",
-    "theory_branch": "6319ac53b9f4cafe0d9c0b9d99807116c86fdea6",
-    "forge_composed_head": "a3c50403f7c7863b8a78b5ce8f3937eee1113215",
-    "forge_lateral_diagnosis_branch": "0c49be17a33e744e5d5e874157f587f79d1b2bae",
-    "utility_branch": "17f64b1cf7d91f9a74af02b5e9bdde8afcef5245"
+    "analyst_durable": "EVA-20260929T050453+0900-R169-FLY0-V2-SB003-CONDITIONAL-ALLOCATION",
+    "analyst_branch": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
+    "control": "CTRL-20260929T064945+0900-R118-R169-SB003-AND-P0-PR-CANARY",
+    "control_branch": "86f646965c0216f3f7c4f488c78038c65ddffc12",
+    "main": "MAIN-20260929T081507+0900-PRIMARY-R185-M1-002-PR-CREATE-BLOCKED",
+    "main_reports": "79c650c228b0f215f8e5b4894d98e0c26dbd4424",
+    "theory": "THEORY-20260929T033117+0900-R20-DESCENDING-MODULATION-AUTHORITY",
+    "forge_supersession_report": "d9ad549b5d0f65dda90095d9d412f908a1d38f1b",
+    "forge_observed_state_source": "3dd3f4f729ff0ee3e6d09a1683bf0464d43552b7",
+    "utility_durable": "AUTOUTIL-20260929T032701+0900-P0-CROSSSTREAM-WINDOW-RECON-71C4E9A2",
+    "prior_methodology_append_only": "METHCAL-20260929T022210+0900-R146-FLY0-REPAIR-GREEN-CALIBRATION"
   },
   "overall_classification": "WELL_CALIBRATED",
   "findings": {
@@ -48,19 +45,24 @@
     "four_layer_separation": "KEEP",
     "mandatory_system_build_review": "KEEP_AS_NON_GATE",
     "m1_rolling_authority": "KEEP",
+    "sb003_conditional_activation": "KEEP",
+    "sb003_rolling_contract": "KEEP",
     "known_defect_handling": "KEEP",
-    "fly0_task_interface_comparator_fairness": "TIGHTEN",
-    "fly0_green_ci_interpretation": "CLARIFY",
-    "fly0_causal_cut_baseline_eligibility": "KEEP",
+    "fly0_semantic_surface_comparator_fairness": "KEEP",
     "fly0_resource_comparator_fairness": "SPLIT_BY_CLAIM_TYPE",
+    "fly0_supersession_guard_reuse": "KEEP_OPTIONAL_NON_GATE",
+    "fly0_observed_state_summary": "CLARIFY_UNVERIFIED_NO_HANDOFF",
     "operational_pr_route": "CLARIFY_NOT_METHODOLOGY_GATE",
-    "control_pointer_debt": "CLARIFY_OPERATIONAL_ONLY",
-    "rv02_fresh_development_successor": "KEEP"
+    "revisit_reuse_boundary": "KEEP"
   },
   "m1_002": {
     "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "ahead_by": 1,
+    "behind_by": 0,
     "pr_open": false,
+    "ci_run": 36361950457,
+    "ci": "success",
     "built": true,
     "bounded_functionally_verified": true,
     "comparatively_supported": false,
@@ -69,30 +71,32 @@
     "scientific_credit": 0,
     "blocker": "PRE_GITHUB_PR_CREATE_ROUTE"
   },
+  "sb003": {
+    "build_id": "BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT",
+    "owner": "PRIMARY_MAIN",
+    "state": "ALLOCATED_CONDITIONAL_INACTIVE",
+    "rolling_contract": [
+      "A_PORT_GREEN_ENGINEERING_PRIMITIVES",
+      "B_CLOSE_BOUNDED_HIERARCHICAL_SENSORIMOTOR_LOOP",
+      "C_FOUR_WAY_REPLACEMENT_AND_CAUSAL_DIAGNOSTICS"
+    ],
+    "rolling_authority_calibration": "BOUNDED_PROSPECTIVE_SYSTEM_BUILD_ONLY",
+    "scientific_credit": 0
+  },
   "fly0": {
-    "analyst_generation": "R168",
-    "composed_current_head": "a3c50403f7c7863b8a78b5ce8f3937eee1113215",
-    "composed_ci_green": true,
-    "green_ci_meaning": "DIAGNOSTIC_MISMATCH_EXPOSED_NOT_FOUR_WAY_ACCEPTANCE",
-    "functional_variants": [
-      "structured",
-      "reactive"
-    ],
-    "baseline_incapable_variants": [
-      "rewired",
-      "random_sparse"
-    ],
-    "replacement_ladder_functionally_matched": false,
-    "comparator_confound": "LATERAL_SENSORIMOTOR_SOURCE_TARGET_SIDE_NOT_PRESERVED",
-    "proposed_repair_status": "LOCAL_RECONSTRUCTION_ONLY_NOT_DURABLE_EXECUTABLE_REPAIR",
-    "repaired_ci_green": false,
+    "supersession_guard_exact_source": "8452bff9e1d0dc91c47c1d968f5ddcddd5335a22",
+    "supersession_guard_ci_run": 36487505532,
+    "supersession_guard_status": "OPTIONAL_SYSTEM_BUILD_HARDENING_NOT_GATE",
+    "observed_state_source": "3dd3f4f729ff0ee3e6d09a1683bf0464d43552b7",
+    "observed_state_status": "FORGE_PROTOTYPE_UNVERIFIED",
     "strict_internal_activity_resource_comparability": false,
-    "ordinary_reactive_reduction_retained": true,
-    "sb003_allocated": false,
+    "resource_fairness_policy": "CLAIM_SCOPED_NOT_DEFAULT_SYSTEM_BUILD_GATE",
     "scientific_credit": 0
   },
   "calibration": {
     "overconservative_handoff_latency": false,
+    "operational_integration_latency_material": true,
+    "operational_latency_source": "P0_PR_CREATE_PATH",
     "overpermissive_rolling_authority": false,
     "overreduction_risk_material": false,
     "overclaim_risk_material": false,
@@ -101,7 +105,9 @@
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "methodology_interpretation": "OPERATIONAL_LATENCY_NOT_METHODOLOGY_GATE",
+    "main_r185_pr_create_attempts": 5,
+    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+    "methodology_interpretation": "OPERATIONAL_LATENCY_NOT_SCIENTIFIC_OR_REVIEW_GATE",
     "repository_wide_outage_supported": false,
     "root_cause": "UNKNOWN"
   },
@@ -120,10 +126,11 @@
   },
   "persistence": {
     "branch": "ops/methodology-calibration-audit",
-    "history_path": "analysis/methodology_calibration/history/2026-09-29/0015-R145-fly0-comparator-semantic-surface.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-29/0821-R147-sb003-rolling-calibration-and-p0-latency.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts": 5,
     "force_push": false,
-    "readback_required": true
+    "readback_required": true,
+    "head_before": "366c1d692ca74e01616d5957b489d852f795e144"
   }
 }

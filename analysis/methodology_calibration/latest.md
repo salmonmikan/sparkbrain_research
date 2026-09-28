@@ -1,17 +1,17 @@
-# SparkBrain Methodology Calibration Audit — Latest R145
+# SparkBrain Methodology Calibration Audit — Latest R147
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260929T001532+0900-R145-FLY0-COMPARATOR-SEMANTIC-SURFACE`
-- generated_at: `2026-09-29T00:15:32+09:00`
-- history_path: `analysis/methodology_calibration/history/2026-09-29/0015-R145-fly0-comparator-semantic-surface.md`
+- generation_id: `METHCAL-20260929T082124+0900-R147-SB003-ROLLING-CALIBRATION-AND-P0-LATENCY`
+- generated_at: `2026-09-29T08:21:24+09:00`
+- history_path: `analysis/methodology_calibration/history/2026-09-29/0821-R147-sb003-rolling-calibration-and-p0-latency.md`
 - overall_classification: `WELL_CALIBRATED`
 - material_change: `true`
 - new_scientific_result: `false`
 
-FLY-0 has a material comparator-fairness clarification. Current head `a3c50403f7c7863b8a78b5ce8f3937eee1113215` is CI-green only because it now exposes the rewired/random-sparse baseline incapability; it is not a repaired four-way acceptance.
+R169's SB003 allocation is methodologically calibrated: it is conditionally inactive behind M1-002, prospectively bounded across A/B/C, NON_EVIDENTIARY, and does not create scientific authority. The green FLY-0 supersession guard remains optional engineering hardening, not a gate. The newer observed-state summary remains unverified and must not be promoted yet.
 
-The concrete defect is that the structured topology preserves bilateral left/right sensorimotor surfaces while the rewired/random-sparse controls currently preserve role/resource summaries without preserving source/target side. This conflates topology change with task-interface change. Prospectively, comparator randomization must preserve the task-relevant input/output semantic surface in addition to the declared degree/resource envelope.
+M1-002 remains exact-head/CI-green but PR creation is operationally blocked after five fresh-state pre-GitHub refusals in MAIN R185. This is severe integration latency but not a methodology/review gate. Repository PR requirements and scientific hard floors remain intact.
 
-Analyst R168 correctly keeps SB003 unallocated and routes the defect to Forge repair. This is ordinary known-defect handling, not a mandatory review gate. M1-002 remains independently blocked only by the operational PR-create path. Strict internal activity/resource commensurability remains claim-typed and is not a default gate for ordinary NON_EVIDENTIARY integration.
+FLY-0 resource fairness remains split by claim type: stronger topology/efficiency claims require stricter matching, while ordinary SYSTEM_BUILD reuse does not.
 
-Canonical science and all one-way hard floors are unchanged.
+Canonical science is unchanged. PASS remains reachable without weakening standards.
