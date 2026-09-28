@@ -100,10 +100,10 @@ class CommonWorkRow:
     replay_opcode_events: int
     work_count_replay_exact: bool
     committed_world_transitions: int
-    opcode_events_per_transition: float
+    opcode_events_per_transition: float | None
     raw_activity_basis: str
     raw_fired_events: int
-    raw_fired_events_per_transition: float
+    raw_fired_events_per_transition: float | None
     position_trace: tuple[int, ...]
     reached_target: bool
     state_replay_exact: bool
@@ -111,8 +111,8 @@ class CommonWorkRow:
     def __post_init__(self) -> None:
         if self.opcode_events < 1 or self.replay_opcode_events < 1:
             raise ValueError("opcode work counters must be positive")
-        if self.committed_world_transitions < 1:
-            raise ValueError("at least one committed transition is required")
+        if self.committed_world_transitions < 0:
+            raise ValueError("committed transition count must be non-negative")
         if self.raw_fired_events < 0:
             raise ValueError("raw activity must be non-negative")
 
@@ -197,10 +197,14 @@ def _capture_row(variant: Variant) -> CommonWorkRow:
         replay_opcode_events=replay_count,
         work_count_replay_exact=first_count == replay_count,
         committed_world_transitions=transitions,
-        opcode_events_per_transition=first_count / transitions,
+        opcode_events_per_transition=(
+            first_count / transitions if transitions else None
+        ),
         raw_activity_basis=loop.activity_basis,
         raw_fired_events=raw_fired,
-        raw_fired_events_per_transition=raw_fired / transitions,
+        raw_fired_events_per_transition=(
+            raw_fired / transitions if transitions else None
+        ),
         position_trace=(
             initial.position,
             *(result.after.world.position for result in first),
@@ -241,6 +245,8 @@ def build_common_work_report() -> CommonWorkReport:
         remaining.append("RAW_ACTIVITY_SEMANTICS_DISTINCT")
     if not equal_actual_work:
         remaining.append("ACTUAL_COMMON_WORK_EXPOSURE_NOT_EQUAL")
+    if any(row.committed_world_transitions == 0 for row in rows):
+        remaining.append("SOME_VARIANTS_NO_COMMITTED_WORLD_TRANSITIONS")
 
     return CommonWorkReport(
         status="NON_EVIDENTIARY_NONCANONICAL_FORGE",
@@ -258,7 +264,9 @@ def build_common_work_report() -> CommonWorkReport:
             "paths. The counter does not measure energy, biological activity, "
             "algorithmic efficiency, or scientific superiority. Raw topology/"
             "reactive activity semantics remain separately labeled, and unequal "
-            "measured work is reported rather than normalized away."
+            "measured work is reported rather than normalized away. Variants "
+            "with no committed world transition retain total work counts while "
+            "per-transition ratios remain undefined."
         ),
     )
 

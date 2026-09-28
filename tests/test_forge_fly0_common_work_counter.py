@@ -63,6 +63,23 @@ def test_common_work_report_is_replay_deterministic() -> None:
     assert all(row.state_replay_exact for row in report.rows)
 
 
+
+def test_zero_transition_variants_remain_reportable() -> None:
+    report = counter.build_common_work_report()
+    zero_rows = [
+        row for row in report.rows if row.committed_world_transitions == 0
+    ]
+    assert zero_rows
+    assert all(row.opcode_events_per_transition is None for row in zero_rows)
+    assert all(
+        row.raw_fired_events_per_transition is None for row in zero_rows
+    )
+    assert (
+        "SOME_VARIANTS_NO_COMMITTED_WORLD_TRANSITIONS"
+        in report.remaining_gap_codes
+    )
+
+
 def test_raw_activity_semantics_remain_separate() -> None:
     report = counter.build_common_work_report()
     assert report.raw_activity_instrumentation_commensurate is False
