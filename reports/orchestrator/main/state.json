@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260928T131630+0900-PRIMARY-R173-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-28T13:16:30+09:00",
+  "generation_id": "MAIN-20260928T141253+0900-PRIMARY-R174-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-28T14:12:53+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
@@ -10,17 +10,18 @@
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "delta": false
   },
   "refs_observed": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "analyst_branch_head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
-    "control_branch_head": "1b097bf1055d36f68e3d34cff212b3b720adde66",
-    "main_reports_before": "1dedab2a37411efa4e3ae222255910fa8c82856e"
+    "main_reports_before": "7d1f1809c64a5223b128f2b6e693f4d6f4f4df90"
   },
   "integration": {
     "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "ahead_by": 1,
     "behind_by": 0,
@@ -61,5 +62,5 @@
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-28/1316-r173-pr-create-platform-blocked.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-28/1412-r174-pr-create-platform-blocked.md"
 }
