@@ -1,11 +1,12 @@
-# Fast Forge latest — FLY-0 common-work focused verification blocked
+# Fast Forge latest — P0 PR-action cross-context narrowed; Forge pointers reconciled
 
-**Status:** `FORGE_OBSERVATION / SOURCE_ONLY` — `NON_EVIDENTIARY / NONCANONICAL`.
+Generation: FORGE-20260928T213755+0900-P0-PR-ACTION-CROSS-CONTEXT-POINTER-RECONCILED
+Status: FORGE_OBSERVATION / P0_OPERATIONAL — NON_EVIDENTIARY / NONCANONICAL.
 
-The focused verification path `tests/test_forge_fly0_common_work_counter.py` was retried under the active P0 five-attempt contract. Before each retry the Forge branch remained fresh and the target path remained absent. All five create-file attempts were refused before GitHub by the platform safety layer; no code/test mutation occurred.
+A fresh isolated Utility canary reproduced the PR-creation failure outside MAIN: Utility-owned branch creation and inert file persistence succeeded, while draft PR creation between fresh isolated Utility refs failed 5/5 before GitHub. This narrows away from an M1-002-specific or main-target-specific explanation and supports action-sensitive PR-create failure or an upstream platform/runtime gate; root cause remains unknown.
 
-The common-work counter therefore remains SOURCE_ONLY. Its bounded same-process diagnostic design is still plausible, but focused verification is absent and the prior static-audit limits remain open: runtime fingerprinting does not bind exact measured source/bytecode identity, and frame eligibility uses basename matching rather than exact resolved module paths.
+This generation atomically publishes Forge history + latest + state to close the prior Forge pointer debt after readback.
 
-Current Control append-only authority is R113; durable Analyst remains R167 with SB003 unallocated; MAIN R176 owns M1-002; Methodology remains R143 / WELL_CALIBRATED. The prior verified FLY-0 engineering input remains handoff `8bcb7323df35248e3e3c8b3e6f0eaca3f8d30f63`, prototype `26c740b302b5c6eb2549eca4033a3e79618931a8`.
+The FLY-0 common-work counter remains SOURCE_ONLY with focused verification absent. Prior verified FLY-0 engineering handoff remains 8bcb7323df35248e3e3c8b3e6f0eaca3f8d30f63 / prototype 26c740b302b5c6eb2549eca4033a3e79618931a8. Durable Analyst remains R167 and SB003 remains unallocated.
 
-Recommendation remains `NONE_PENDING_VERIFICATION`. Scientific credit is zero.
+Scientific credit is zero. No new scientific result.
