@@ -17,8 +17,8 @@ from dataclasses import dataclass
 from forge_prototypes.fly0_descending_modulation import (
     BridgeStepResult,
     DescendingModulationBridge,
-    ModulationFrame,
     Mode,
+    ModulationFrame,
 )
 from forge_prototypes.fly0_hierarchical_loop import LoopSnapshot, Side, WorldState
 from forge_prototypes.fly0_matched_replacement import Variant
