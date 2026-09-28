@@ -1,192 +1,68 @@
 {
   "schema_version": 2,
-  "generation": "R165",
-  "generation_id": "EVA-20260928T100231+0900-R165-M1-002-EXACT-HEAD-PR-MERGE",
-  "generated_at": "2026-09-28T10:02:31+09:00",
+  "generation": "R166",
+  "generation_id": "EVA-20260928T120024+0900-R166-M1-002-FLY0-ABLATION",
+  "generated_at": "2026-09-28T12:00:24+09:00",
   "role": "EVIDENCE_ANALYST",
   "mode": "READ_ONLY_ADJUDICATION",
-  "outcome": "ACCEPT_M1_002_EXACT_HEAD_AUTHORIZE_PR_CONDITIONAL_MERGE_DEFER_SB003_STOP_SCIENCE",
-  "directive_freshness": {
-    "branch": "ops/human-directives",
-    "branch_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "prior_generation": "R164",
-    "changed": false,
-    "newly_active_or_materially_changed": [],
-    "applicable": [
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002",
-      "HUMAN-20260927-002",
-      "HUMAN-20260926-004"
-    ]
+  "directive_index": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "delta": false
   },
   "refs": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "control": "c5156a7fbbe2439563ded358044673d258bec5c1",
-    "analyst_target_before": "64dc3c5105b9f1a754f9d1dfdc9b79072e54f2fa",
-    "analyst_request_r164": "6cdd3e79a7fa815c29ddd428613400af50dc19f0",
-    "main_report": "53890fc113ba4e9c0680e138376485b11bf0a849",
-    "utility": "74f9442b450e3b9c3571a8ac5190fd9c324a84e2",
-    "methodology": "39571a5710d1a6a545f933ed76f383f505ad38b8",
-    "external_science": "f46d87c7eed103e2185238cf48c792d653862ccd",
+    "analyst_before": "895bbc6301f4e7a06a8b7e4aaf2bc57c35404f8c",
+    "main_report": "08e3ea9c9fb684022ca35234ad8c892b3373b2d2",
     "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "m1_002_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
-    "forge_handoff": "03f812775199166638796c379d461e4f1f1e1259",
-    "forge_resource_diagnostic": "669030dda2911709c9eae4cedf6ae21a2fda6f88"
+    "fly0_handoff": "1f455853b58fdad0be4cae42499b0df41dbee20a",
+    "fly0_prototype": "4c4706e9915cfac4cb9fd667cb3a0f96ebfb4a09"
   },
-  "persistence_reconciliation": {
-    "prior_generation": "R164",
-    "request_id": "EA-R164-20260928T090051JST",
-    "request_verified": true,
-    "receipt_verified": true,
-    "receipt_persistence_complete": true,
-    "target_history_latest_state_verified": true,
-    "unresolved_requests_after_prior": false
-  },
-  "canonical_science": {
+  "science": {
     "terminal": 35,
     "total": 35,
     "active": 0,
     "queued": 0,
     "consumed_formal_identities": 8,
-    "new_scientific_execution_authorized": false,
-    "new_scientific_result": false
+    "new_result": false,
+    "new_execution_authorized": false
   },
-  "m1_integration": {
-    "build_id": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
-    "merge_commit": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "integrated": true,
-    "built": true,
-    "bounded_functionally_verified": true,
-    "comparative_support": false,
-    "composition_contribution": "NOT_ESTABLISHED",
-    "scientifically_novel": false,
-    "scientific_credit": 0,
-    "evidence_class": "NON_EVIDENTIARY_BUILD"
-  },
-  "system_build_allocation": {
-    "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
-    "owner": "MAIN",
-    "required_base": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "branch": "system-build/m1-post-integration-robustness-20260928",
-    "branch_observed": true,
-    "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "exact_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
-    "parent": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "changed_paths_count": 5,
-    "runtime_source_changed": false,
-    "committed_acceptance_cycles": 267,
-    "maximum_committed_cycles": 512,
-    "exact_head_ci": {
-      "run_id": 36361950457,
-      "status": "completed",
-      "conclusion": "success",
-      "python_311": "success",
-      "python_313": "success"
-    },
-    "status": "EXACT_HEAD_ACCEPTED_PR_MERGE_AUTHORIZED",
-    "merge_authority": "EXACT_HEAD_ONLY_CONDITIONAL_ON_CLEAN_SCOPE_AND_REQUIRED_CHECKS",
-    "stop_boundary": "POST_MERGE_PROVENANCE_AND_CI_THEN_FRESH_ANALYST_RECONCILIATION",
-    "evidentiary_status": "NON_EVIDENTIARY_BUILD",
+  "m1_002": {
     "built": true,
     "bounded_functionally_verified": true,
     "comparatively_supported": false,
     "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
-    "scientific_credit": 0
-  },
-  "integration_graph": {
-    "completed": [
-      "M1 integration",
-      "M1 post-merge CI",
-      "M1-002 exact-base implementation",
-      "M1-002 fixed robustness acceptance",
-      "M1-002 exact-head CI",
-      "M1-002 exact-head Analyst reconciliation"
-    ],
-    "critical_path": [
-      "MAIN opens exact-head PR",
-      "merge only if conditions remain satisfied",
-      "post-merge exact-head CI and provenance",
-      "fresh Analyst post-integration reconciliation"
-    ],
-    "parallel": [
-      "Forge durable resource-normalization handoff",
-      "Forge matched replacement ladder",
-      "Forge interaction-ablation matrix",
-      "Utility non-colliding support"
-    ],
-    "blockers": [
-      "M1_002_PR_NOT_CREATED"
-    ],
-    "next_milestones": [
-      "M1-002 exact-head PR",
-      "conditional merge and post-merge CI",
-      "fresh post-integration reconciliation",
-      "next bounded integration allocation"
-    ]
+    "scientific_credit": 0,
+    "pr_created": false,
+    "status": "EXACT_HEAD_AUTHORITY_RETAINED_OPERATIONAL_PR_ROUTE_BLOCKER"
   },
   "fly0": {
-    "durable_handoff": "03f812775199166638796c379d461e4f1f1e1259",
-    "resource_diagnostic_head": "669030dda2911709c9eae4cedf6ae21a2fda6f88",
-    "resource_diagnostic_ci": 36363537665,
-    "common_interface_exposure_matched": true,
-    "internal_activity_exposure_matched": false,
-    "durable_resource_handoff": false,
-    "classification": "FORGE_INTERESTING_SYSTEM_BUILD_INPUT",
-    "system_build_admission": false,
-    "promotion_authorized": false,
-    "sb003_allocation": null,
-    "m1_dependency": false,
-    "comparative_support": false,
-    "composition_contribution": "NOT_ESTABLISHED",
-    "scientifically_novel": false,
-    "scientific_credit": 0,
-    "remaining_blockers": [
-      "durable_resource_normalization_handoff_absent",
-      "activity_resource_exposure_noncommensurate",
-      "complete_matched_replacement_ladder_absent",
-      "interaction_ablation_matrix_absent"
-    ]
+    "interaction_ablation_matrix_present": true,
+    "engineering_gap": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT",
+    "activity_resource_comparability": false,
+    "matched_replacement_ladder_complete": false,
+    "sb003_allocated": false,
+    "scientific_credit": 0
+  },
+  "p0": {
+    "open_directive": true,
+    "durable_control_status": "CLOSED_P0_RECOVERED",
+    "newer_mutation_recurrence_evidence": true,
+    "control_re_evaluation_warranted": true
   },
   "allocation": {
-    "main": "GO_M1_002_EXACT_HEAD_PR_THEN_CONDITIONAL_MERGE",
+    "main": "M1_002_EXACT_HEAD_PR_CONDITIONAL_MERGE",
     "relay": null,
-    "science": null,
-    "sb003": null
+    "forge": "NON_EVIDENTIARY_ONLY",
+    "sb003": null,
+    "science": null
   },
-  "blockers": {
-    "critical_path": [
-      "M1_002_PR_NOT_CREATED"
-    ],
-    "fly0_promotion": [
-      "DURABLE_RESOURCE_HANDOFF",
-      "ACTIVITY_RESOURCE_COMPARABILITY",
-      "MATCHED_REPLACEMENT_LADDER",
-      "INTERACTION_ABLATION_MATRIX"
-    ]
-  },
-  "contingencies": {
-    "source_head_change": "STOP_AND_FRESH_ANALYST_RECONCILIATION",
-    "required_check_failure": "STOP_AND_FRESH_ANALYST_RECONCILIATION",
-    "substantive_conflict_repair": "STOP_AND_FRESH_ANALYST_RECONCILIATION",
-    "scope_or_claim_change": "STOP_AND_FRESH_ANALYST_RECONCILIATION",
-    "concrete_engineering_defect": "REPAIR_ONLY_UNDER_FRESH_ANALYST_AUTHORITY"
-  },
-  "next_actions": [
-    "MAIN_OPEN_EXACT_HEAD_M1_002_PR",
-    "MERGE_ONLY_IF_ALL_R165_CONDITIONS_HOLD",
-    "RECORD_PR_MERGE_TREE_AND_POST_MERGE_CI",
-    "STOP_FOR_FRESH_ANALYST_POST_INTEGRATION_RECONCILIATION",
-    "KEEP_FLY0_PARALLEL_NONCANONICAL"
-  ],
   "persistence": {
-    "route": "retained_evidence_analyst_actions_bridge",
-    "request_branch": "ops/evidence-persistence-requests",
+    "request_id": "EA-R166-20260928T120024JST",
     "target_branch": "ops/evidence-analyst-handoff",
-    "expected_target_head": "64dc3c5105b9f1a754f9d1dfdc9b79072e54f2fa",
-    "request_id": "EA-R165-20260928T100231JST",
+    "expected_target_head": "895bbc6301f4e7a06a8b7e4aaf2bc57c35404f8c",
     "status_at_request_creation": "PENDING_ACTION_RECEIPT"
-  },
-  "hard_floor": "No experiment or scientific execution; no claim beyond bounded engineering; no consumed or immutable mutation."
+  }
 }
