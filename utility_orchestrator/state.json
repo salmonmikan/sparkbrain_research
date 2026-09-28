@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-20260928T172500+0900-R167-EA-R171-PERSISTENCE-RECONCILE",
-  "produced_at": "2026-09-28T17:25:00+09:00",
+  "generation_id": "UTILITY-20260928T213104+0900-P0-ISOLATED-PR-ACTION-CANARY-V2",
+  "produced_at": "2026-09-28T21:31:04+09:00",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "status": "COMPLETED",
-  "autonomous_task_id": "UTILITY-20260928T1725+0900-EA-R171-PERSISTENCE-RECONCILIATION",
+  "autonomous_task_id": "UTILITY-20260928T213104+0900-P0-ISOLATED-PR-ACTION-CANARY-V2",
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY_OPERATIONAL_DIAGNOSTIC_ONLY",
   "scientific_authority": "NONE",
-  "classification": "ANALYST_R171_NOT_DURABLE_REQUEST_ABSENT",
+  "classification": "PR_CREATE_ACTION_BLOCKED_IN_ISOLATED_UTILITY_CONTEXT",
   "directive_freshness": {
     "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
@@ -16,40 +16,43 @@
   },
   "ownership_checks": {
     "utility_assignment": "SCHEMA_V2_CLEAN_IDLE",
-    "control_generation": "R112",
+    "control_generation": "R113",
     "analyst_generation": "R167",
-    "main_generation": "R175",
+    "main_generation": "R178",
     "relay_allocated": false,
     "m1_002_owner": "MAIN",
     "m1_002_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e"
   },
   "diagnostic": {
     "incident_id": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "request_id": "EA-R171-20260928T165727JST",
-    "request_branch_head": "3463b693137797afb4ec025d3012bca06acd600c",
-    "target_branch_head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
-    "request_present": false,
-    "receipt_present": false,
-    "target_generation": "R167",
+    "canary_base": "utility/p0-pr-canary-base-20260928-2131",
+    "canary_base_head": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "canary_head": "utility/p0-pr-canary-head-20260928-2131",
+    "canary_head_commit": "84df5b6bed6746a27ad6ea1e4671aa48aa8471d3",
+    "branch_create_succeeded": true,
+    "marker_write_succeeded": true,
+    "pr_create_attempts": 5,
+    "pr_create_success": false,
+    "explicit_pre_github_refusals": 5,
+    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+    "final_pr_present": false,
+    "repository_wide_write_outage_supported": false,
     "root_cause": "UNKNOWN"
   },
-  "start_publication": {
-    "attempts_total": 3,
-    "success_attempt": 3,
-    "commit": "8e0bed84a888d47dee646b73df2b1652fab93e85",
-    "readback_verified": true
-  },
-  "result_path": "utility_orchestrator/results/2026-09-28/1725-r167-ea-r171-persistence-reconciliation.md",
-  "stop_reason": "COMPLETED_SINGLE_BOUNDED_R171_PERSISTENCE_RECONCILIATION",
+  "result_path": "utility_orchestrator/results/2026-09-28/2131-p0-isolated-pr-action-canary-v2.md",
+  "stop_reason": "COMPLETED_SINGLE_BOUNDED_P0_PR_ACTION_CANARY",
   "hard_floor": {
     "non_utility_mutation": false,
     "scheduler_changed": false,
     "scientific_execution": false,
+    "workflow_dispatched": false,
+    "merge_performed": false,
     "work_mode_used": false
   },
   "publication": {
     "branch": "ops/utility-orchestrator-requests",
     "attempt_limit": 5,
+    "atomic": true,
     "force_push": false
   }
 }
