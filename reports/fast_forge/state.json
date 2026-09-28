@@ -1,76 +1,63 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260928T113500+0900-FLY0-INTERACTION-ABLATION-A",
-  "produced_at": "2026-09-28T11:35:00+09:00",
-  "forge_id": "FORGE-FLY0-INTERACTION-ABLATION-A",
+  "generation_id": "FORGE-20260928T133500+0900-FLY0-BOTTOMUP-FEEDBACK-A",
+  "produced_at": "2026-09-28T13:35:00+09:00",
+  "forge_id": "FORGE-FLY0-BOTTOM-UP-FEEDBACK-A",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260928-fly0-interaction-ablation-a",
-  "exact_prototype_head": "4c4706e9915cfac4cb9fd667cb3a0f96ebfb4a09",
-  "exact_prototype_tree": "5233c7615520360992fd6f7de97e2c5b6e254d8f",
-  "parent_forge_handoff": "1ee0ccd4951159937d98610a3705a9791a178f46",
+  "branch": "forge/20260928-fly0-bottom-up-feedback-a",
+  "exact_prototype_head": "8e0b7c859a1f96fbf303173ed6dc974938cca8cc",
+  "exact_prototype_tree": "584b95d87d24b7d00ebc0b2a6a2f3129c27bb535",
+  "parent_source_only_head": "f41aad9a726b985ea654900eb8a7c807d558fc08",
+  "parent_durable_forge_handoff": "1f455853b58fdad0be4cae42499b0df41dbee20a",
   "ci": {
-    "run_id": 36371102852,
+    "run_id": 36378701624,
     "status": "completed",
     "conclusion": "success",
     "python_311": "success",
-    "python_313": "success"
+    "python_313": "success",
+    "prior_source_only_run_id": 36374798033,
+    "prior_source_only_conclusion": "failure_lint_E501"
   },
-  "interaction_ablation": {
-    "matrix_present": true,
-    "conditions": [
-      "intact",
-      "local_observation_payload_cut",
-      "ascending_feedback_payload_cut",
-      "descending_modulation_cut",
-      "local_action_cut"
-    ],
+  "bottom_up_causal_integration": {
     "intact_position_trace": [
       2,
       1,
       0,
       -1
     ],
-    "local_observation_payload_causal_for_bounded_trajectory": false,
-    "ascending_feedback_payload_causal_for_bounded_trajectory": false,
-    "descending_modulation_required_for_bounded_progress": true,
-    "local_action_required_for_bounded_progress": true,
-    "reason_codes": [
-      "LOCAL_OBSERVATION_PAYLOAD_NOT_CAUSALLY_CONSUMED",
-      "ASCENDING_FEEDBACK_PAYLOAD_NOT_CAUSALLY_CONSUMED",
-      "DESCENDING_MODULATION_REQUIRED_FOR_PROGRESS",
-      "LOCAL_ACTION_REQUIRED_FOR_PROGRESS"
-    ],
-    "engineering_gap": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT"
-  },
-  "prior_resource_normalization": {
-    "common_interface_exposure_matched": true,
-    "activity_instrumentation_commensurate": false,
-    "activity_resource_exposure_matched": false,
-    "structured_fired_events_per_transition": 288,
-    "reactive_fired_events_per_transition": 1
+    "local_observation_payload_causal_for_bounded_trajectory": true,
+    "observation_cut_behavior": "FAIL_CLOSED_BEFORE_WORLD_PROGRESS",
+    "ascending_feedback_payload_causal_for_bounded_trajectory": true,
+    "feedback_cut_behavior": "FIRST_STEP_COMMITS_THEN_NEXT_MODULATION_FAILS_CLOSED",
+    "checkpoint_replay_exact": true,
+    "checkpoint_observation_mask_contract_bound": true,
+    "checkpoint_feedback_mask_contract_bound": true,
+    "engineering_gap": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT",
+    "forge_side_disposition": "CLOSED_FOR_THIS_VERIFIED_PROTOTYPE_PENDING_ANALYST_RECONCILIATION"
   },
   "ordinary_reduction": "REACTIVE_CONTROLLER_SUFFICIENT_FOR_BOUNDED_MOVEMENT_TASK",
+  "remaining_comparator_blockers": [
+    "ACTIVITY_RESOURCE_COMPARABILITY",
+    "COMPLETE_MATCHED_REPLACEMENT_LADDER"
+  ],
   "engineering_usefulness": [
-    "interaction-ablation matrix",
-    "causal interface localization",
-    "fail-closed descending-modulation cut",
-    "explicit bottom-up integration gap before later SYSTEM_BUILD"
+    "causally active local Observation gate",
+    "prior LocalFeedback gate on subsequent descending modulation",
+    "deterministic checkpoint/replay coverage",
+    "fail-closed checkpoint semantic guards",
+    "focused bottom-up interaction-cut tests"
   ],
   "analyst_reconciliation": {
-    "current_generation": "EVA-20260928T100231+0900-R165-M1-002-EXACT-HEAD-PR-MERGE",
-    "current_head": "895bbc6301f4e7a06a8b7e4aaf2bc57c35404f8c",
-    "sb003_allocated": false,
-    "interaction_ablation_absence_forge_side": "RESOLVED_ARTIFACT_PRESENT_PENDING_ANALYST_RECONCILIATION",
-    "remaining_promotion_blockers": [
-      "ACTIVITY_RESOURCE_COMPARABILITY",
-      "COMPLETE_MATCHED_REPLACEMENT_LADDER",
-      "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT"
-    ]
+    "current_generation": "EVA-20260928T125724+0900-R167-P0-RECURRENCE-FLY0-BOTTOMUP",
+    "current_head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
+    "prior_status": "FORGE_PROTOTYPE_UNVERIFIED",
+    "forge_side_status_now": "VERIFIED_FORGE_ASSET_PENDING_ANALYST_RECONCILIATION",
+    "sb003_allocated": false
   },
   "collision_check": {
-    "main_current_generation": "MAIN-20260928T111649+0900-PRIMARY-R171-M1-002-PR-CREATE-BLOCKED",
-    "main_reports_head": "08e3ea9c9fb684022ca35234ad8c892b3373b2d2",
+    "main_current_generation": "MAIN-20260928T131630+0900-PRIMARY-R173-M1-002-PR-CREATE-BLOCKED",
+    "main_reports_head": "7d1f1809c64a5223b128f2b6e693f4d6f4f4df90",
     "main_owned_build": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
     "relay_competing_allocation": false,
     "collision": false
@@ -88,29 +75,37 @@
   },
   "refs_observed": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "evidence_analyst": "895bbc6301f4e7a06a8b7e4aaf2bc57c35404f8c",
-    "control_durable": "c5156a7fbbe2439563ded358044673d258bec5c1",
-    "main_reports": "08e3ea9c9fb684022ca35234ad8c892b3373b2d2",
-    "prior_forge_handoff": "1ee0ccd4951159937d98610a3705a9791a178f46"
+    "evidence_analyst": "844928373dbe3873738ea4f1be69ee9b23f1f696",
+    "control_durable": "1b097bf1055d36f68e3d34cff212b3b720adde66",
+    "main_reports": "7d1f1809c64a5223b128f2b6e693f4d6f4f4df90",
+    "utility": "e6cef62c31ac81959bc78f27b097d2e893feef83",
+    "methodology": "0102ca2c537a4fb9704f4b3d2def933d7d56f152",
+    "external_science": "76398cf1451dfaa39fee2741c2b227331282a021"
   },
   "publication": {
-    "prototype": {
+    "prototype_repair": {
       "mode": "ATOMIC_GIT_DATA_BRANCH_PUBLICATION",
-      "attempts": 2,
+      "attempts": 1,
       "attempt_limit": 5,
-      "first_failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
       "success_readback_verified": true
     },
     "handoff": {
       "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
+      "attempts": 1,
       "attempt_limit": 5,
       "readback_required": true
     }
   },
-  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no topology superiority, biological fidelity, composition contribution, energy efficiency, external validity, novelty, scientific credit or SB003 allocation.",
+  "p0": {
+    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "status": "OPEN",
+    "this_run_prototype_write": "FIRST_ATTEMPT_SUCCESS",
+    "interpretation": "TESTED_PATH_ONLY_NO_ROOT_CAUSE_OR_INCIDENT_CLOSURE"
+  },
+  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no topology superiority, biological fidelity, energy efficiency, whole-system superiority, composition contribution, external validity, novelty, scientific credit or SB003 allocation.",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-28/1135-fly0-interaction-ablation.md"
+  "history_path": "reports/fast_forge/history/2026-09-28/1335-fly0-bottom-up-feedback.md"
 }
