@@ -1,11 +1,11 @@
-# Control Brain R112 — P0 Control pointer reconciled
+# Control Brain R117 — P0 pointer reconciled / FLY-0 Forge green
 
-generation_id: CTRL-20260928T165451+0900-R112-P0-POINTER-RECONCILED-FLEET-NOWORK
+generation_id: CTRL-20260929T025430+0900-R117-P0-POINTER-RECONCILIATION-FLY0-GREEN
 
-Directive index is unchanged. Durable Analyst remains R167; R168/R169/R170 persistence has not become durable, so SB003 is not allocated.
+Directive index is unchanged. Durable Analyst remains R168; SB003 remains unallocated.
 
-M1-002 remains exact-head/CI-green/no-PR. MAIN R175 is fully durable.
+M1-002 remains exact-head/CI-green/no-PR. MAIN durable generation is R181.
 
-The eight enabled current SparkBrain workers retain explicit no-Work routing; Relay remains intentionally disabled. No scheduler state changed.
+FLY-0 Forge exact source f93483b927470f48a311fe9ef711ca770648da7c is four-way bounded-function green with semantic-surface/topology checkpoint binding; it remains NON_EVIDENTIARY/NONCANONICAL pending fresh Analyst adjudication.
 
-Control's prior latest=R111/state=R110 debt was repaired and independently read back. P0 remains OPEN; repository-wide outage is unsupported and root cause remains unknown. Canonical science is unchanged.
+P0 remains OPEN. Control's prior append-only R116 versus latest/state R112 pointer debt is reconciled by this atomic generation. No scheduler state changed and no Work-backed execution path was used.
