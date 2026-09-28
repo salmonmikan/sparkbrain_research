@@ -1,8 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260929T025430+0900-R117-P0-POINTER-RECONCILIATION-FLY0-GREEN",
-  "produced_at": "2026-09-29T02:54:30+09:00",
+  "generation_id": "CTRL-20260929T064945+0900-R118-R169-SB003-AND-P0-PR-CANARY",
+  "produced_at": "2026-09-29T06:49:45+09:00",
   "mode": "CONTROL_BRAIN",
+  "role_resolution": {
+    "canonical_slot": "06:50 JST",
+    "source": "EARLY_GRACE",
+    "invocation_observed": "06:49:45 JST"
+  },
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
@@ -18,9 +23,9 @@
     "new_result": false
   },
   "analyst": {
-    "durable_generation": "R168",
-    "head": "266864682894af7745156ec899da3377cacc18fb",
-    "sb003_durably_allocated": false
+    "durable_generation": "R169",
+    "head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
+    "sb003_durably_allocated": true
   },
   "m1_002": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
@@ -30,43 +35,73 @@
     "ci_run": 36361950457,
     "ci": "success",
     "pr_open": false,
-    "main_generation": "R181",
+    "main_generation": "R183",
+    "main_reports_head": "b8bcdc8790cb30857f837e0d544ee381922bc551",
+    "authority": "RETAIN_EXACT_HEAD_PR_CONDITIONAL_MERGE",
+    "scientific_credit": 0
+  },
+  "sb003": {
+    "build_id": "BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT",
+    "owner": "PRIMARY_MAIN",
+    "state": "ALLOCATED_CONDITIONAL_INACTIVE",
+    "activation_conditions": [
+      "M1_002_EXACT_AUTHORIZED_HEAD_INTEGRATED_VIA_REQUIRED_PR_PATH",
+      "POST_MERGE_M1_ACCEPTANCE_RECONCILIATION_GREEN",
+      "NO_NEWER_AUTHORITY_SUPERSEDES_SCOPE_OR_PRIORITY",
+      "NO_MAIN_RELAY_OWNERSHIP_COLLISION"
+    ],
+    "rolling_milestones": [
+      "A_PORT_GREEN_ENGINEERING_PRIMITIVES",
+      "B_CLOSE_BOUNDED_HIERARCHICAL_SENSORIMOTOR_LOOP",
+      "C_FOUR_WAY_REPLACEMENT_AND_CAUSAL_DIAGNOSTICS"
+    ],
     "scientific_credit": 0
   },
   "fly0": {
-    "forge_branch_head": "59c8411ca33de980b4c900c6d090c496591e6113",
-    "exact_source_head": "f93483b927470f48a311fe9ef711ca770648da7c",
-    "ci_run": 36459501642,
-    "ci": "success",
-    "semantic_checkpoint_binding": true,
-    "four_way_bounded_functional_acceptance": true,
-    "strict_internal_activity_resource_comparability": false,
-    "sb003_allocated": false,
+    "accepted_r169_basis": "4a68fde7cc3ba519a978810ab1002d1e9312f839",
+    "accepted_r169_ci_run": 36474193214,
+    "optional_supersession_guard_exact_source": "8452bff9e1d0dc91c47c1d968f5ddcddd5335a22",
+    "optional_supersession_guard_ci_run": 36487505532,
+    "optional_supersession_guard_report_head": "d9ad549b5d0f65dda90095d9d412f908a1d38f1b",
+    "optional_supersession_guard_status": "FORGE_INTERESTING_SYSTEM_BUILD_INPUT_NOT_SB003_GATE",
     "scientific_credit": 0
   },
   "methodology": {
     "durable_append_only_generation": "R146",
     "branch_head": "366c1d692ca74e01616d5957b489d852f795e144",
-    "moving_pointer_generation": "R145",
     "pointer_debt": true
+  },
+  "external_science": {
+    "branch_head": "160e1be04dac5d52dc3ea6c4f90caba79cbf3249"
+  },
+  "utility": {
+    "branch_head": "99a9ae0c4256156d4941e24f952d8af29da556c4"
   },
   "fleet": {
     "enabled_managed_count": 8,
     "enabled_current_prompts_no_work": true,
-    "work_backed_enabled_detected_in_exposed_metadata": false,
     "backend_provenance_exposed": false,
+    "work_backed_enabled_detected_in_exposed_metadata": false,
     "scheduler_changes": "NONE"
-  },
-  "pointer_debt": {
-    "control": "CLOSED_BY_R117_ATOMIC_PUBLICATION_IF_READBACK_VERIFIED",
-    "methodology": "HISTORY_R146_LATEST_STATE_R145"
   },
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "classification": "PRE_GITHUB_MUTATION_REFUSAL_PATH_ACTION_REF_CONTEXT_OR_INTERMITTENCY_SUPPORTED_ROOT_CAUSE_UNKNOWN",
+    "classification": "PRE_GITHUB_MUTATION_REFUSAL_ACTION_PATH_CONTEXT_OR_INTERMITTENCY_SUPPORTED_ROOT_CAUSE_UNKNOWN",
     "repository_wide_outage_supported": false,
-    "root_cause": "UNKNOWN"
+    "root_cause": "UNKNOWN",
+    "control_pr_canary": {
+      "base_ref": "ops/p0-pr-canary-control-base-20260929-0350",
+      "base_head": "59fc994b39d0ba02682e972161bb46801592d25b",
+      "head_ref": "ops/p0-pr-canary-control-head-20260929-0350",
+      "head_head": "561d0d192e6126c6ea561b2c71a6232ad5e20e81",
+      "final_pr_present": false,
+      "bundled_sequence_telemetry": "CODE_MODE_TOOL_CALL_CEILING_BEFORE_PER_ATTEMPT_OUTPUT",
+      "bundled_possible_mutation_attempts_conservatively_budgeted": 2,
+      "individually_observed_attempts": 3,
+      "individually_observed_failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+      "retry_budget_conservatively_exhausted": true
+    }
   },
   "hard_floor": {
     "science_system_build_separation": true,
@@ -75,12 +110,12 @@
     "scheduler_changed": false,
     "work_mode_used": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-29/0254-R117.md",
+  "history_path": "analysis/control_brain/history/2026-09-29/0649-R118.md",
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "expected_head_before": "5507f1d8588f112cad720c1d638e8675c8e8fac8",
+    "expected_head_before": "08d49d5086726b5b7e409abdd58a00ae2a478790",
     "atomic": true,
     "attempt_limit": 5,
-    "attempt": 1
+    "attempt": 5
   }
 }

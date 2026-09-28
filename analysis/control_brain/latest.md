@@ -1,11 +1,13 @@
-# Control Brain R117 — P0 pointer reconciled / FLY-0 Forge green
+# Control Brain R118 — R169 reconciled / SB003 conditionally allocated / P0 PR canary still blocked
 
-generation_id: CTRL-20260929T025430+0900-R117-P0-POINTER-RECONCILIATION-FLY0-GREEN
+generation_id: CTRL-20260929T064945+0900-R118-R169-SB003-AND-P0-PR-CANARY
 
-Directive index is unchanged. Durable Analyst remains R168; SB003 remains unallocated.
+Directive index is unchanged. Durable Analyst is R169; SB003 is prospectively allocated to PRIMARY MAIN as `ALLOCATED_CONDITIONAL_INACTIVE` behind M1-002.
 
-M1-002 remains exact-head/CI-green/no-PR. MAIN durable generation is R181.
+M1-002 remains exact-head/CI-green/no-PR at `2a21d3e879f1db4e81a58273180ad2124e823a5e`; MAIN durable generation remains R183. The operational PR-create path remains the critical blocker.
 
-FLY-0 Forge exact source f93483b927470f48a311fe9ef711ca770648da7c is four-way bounded-function green with semantic-surface/topology checkpoint binding; it remains NON_EVIDENTIARY/NONCANONICAL pending fresh Analyst adjudication.
+Forge intent-supersession guard source `8452bff9e1d0dc91c47c1d968f5ddcddd5335a22` is current Forge-green optional SYSTEM_BUILD input, not an SB003 gate and not scientific evidence.
 
-P0 remains OPEN. Control's prior append-only R116 versus latest/state R112 pointer debt is reconciled by this atomic generation. No scheduler state changed and no Work-backed execution path was used.
+P0 remains OPEN. The isolated Control PR canary still has no PR after a conservatively bounded retry window; three individually observed attempts were pre-GitHub platform safety refusals. Repository-wide outage is unsupported; root cause remains UNKNOWN.
+
+Eight enabled current SparkBrain managed prompts explicitly prohibit Work-backed execution. Hidden backend provenance is not exposed; no Work-backed enabled scheduler was detected and no scheduler state changed.
