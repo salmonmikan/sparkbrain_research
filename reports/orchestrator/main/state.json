@@ -1,6 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260928-PRIMARY-R170-M1-002-PR-CREATE-BLOCKED",
+  "generation_id": "MAIN-20260928T111649+0900-PRIMARY-R171-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-28T11:16:49+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
@@ -10,26 +11,22 @@
   "directive_freshness": {
     "current_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "current_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "newly_active_or_materially_changed": [],
-    "applicable_directives_read": [
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002",
-      "HUMAN-20260927-002",
-      "HUMAN-20260926-004"
-    ]
+    "newly_active_or_materially_changed": []
   },
   "refs_observed": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "m1_002_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
-    "analyst": "64dc3c5105b9f1a754f9d1dfdc9b79072e54f2fa",
-    "main_reports_before": "53890fc113ba4e9c0680e138376485b11bf0a849"
+    "analyst_branch_head": "895bbc6301f4e7a06a8b7e4aaf2bc57c35404f8c",
+    "main_reports_before": "b4c2d64933b11917c6378041297da3ed0dbb6047"
   },
   "integration": {
     "branch": "system-build/m1-post-integration-robustness-20260928",
     "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "exact_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "ahead_by": 1,
+    "behind_by": 0,
     "changed_paths_count": 5,
     "runtime_source_changed": false,
     "push_ci": {
@@ -39,6 +36,9 @@
     },
     "pr_created": false,
     "merge_performed": false
+  },
+  "relay_collision": {
+    "active_competing_relay_observed": false
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -50,15 +50,17 @@
   "action": {
     "pull_request_creation_attempts": 5,
     "maximum_attempts": 5,
-    "failure_layer": "PRE_GITHUB_PLATFORM_REFUSAL",
-    "repository_mutation_performed": false,
+    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+    "repository_mutation_performed_by_pr_attempts": false,
     "result_bearing_execution_performed": false
   },
   "new_build_result": false,
   "new_scientific_result": false,
-  "stop_reason": "PR_CREATION_PRE_GITHUB_REFUSAL_AFTER_5_ATTEMPTS",
-  "next_action": "REFETCH_AUTHORITY_AND_STATE_NEXT_RUN_THEN_RETRY_IF_STILL_AUTHORIZED",
+  "stop_reason": "PR_CREATION_PRE_GITHUB_PLATFORM_SAFETY_REFUSAL_AFTER_5_ATTEMPTS",
+  "next_action": "REFETCH_CURRENT_ANALYST_AUTHORITY_AND_EXACT_REPOSITORY_PR_STATE_NEXT_RUN_THEN_RETRY_IF_STILL_AUTHORIZED",
   "scheduler_state_changed": false,
+  "owner": "main",
+  "history_path": "reports/orchestrator/main/history/2026-09-28/1116-r171-pr-create-platform-blocked.md",
   "hard_floor": {
     "experiments_dispatched": false,
     "consumed_identity_changed": false,
@@ -66,6 +68,7 @@
     "immutable_evidence_changed": false,
     "held_out_access": false,
     "fly0_mixed": false,
-    "sb003_allocated": false
+    "sb003_allocated": false,
+    "scheduler_changed": false
   }
 }
