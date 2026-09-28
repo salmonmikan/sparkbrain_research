@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation": "R166",
-  "generation_id": "EVA-20260928T120024+0900-R166-M1-002-FLY0-ABLATION",
-  "generated_at": "2026-09-28T12:00:24+09:00",
+  "generation": "R167",
+  "generation_id": "EVA-20260928T125724+0900-R167-P0-RECURRENCE-FLY0-BOTTOMUP",
+  "generated_at": "2026-09-28T12:57:24+09:00",
   "role": "EVIDENCE_ANALYST",
   "mode": "READ_ONLY_ADJUDICATION",
   "directive_index": {
@@ -12,12 +12,16 @@
   },
   "refs": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "control": "c5156a7fbbe2439563ded358044673d258bec5c1",
-    "analyst_before": "895bbc6301f4e7a06a8b7e4aaf2bc57c35404f8c",
-    "main_report": "08e3ea9c9fb684022ca35234ad8c892b3373b2d2",
+    "control": "1b097bf1055d36f68e3d34cff212b3b720adde66",
+    "analyst_before": "46c93259af8ec986fd8465ed5f5cf8fe893cb2e5",
+    "main_report": "1dedab2a37411efa4e3ae222255910fa8c82856e",
     "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "fly0_handoff": "1f455853b58fdad0be4cae42499b0df41dbee20a",
-    "fly0_prototype": "4c4706e9915cfac4cb9fd667cb3a0f96ebfb4a09"
+    "fly0_durable_handoff": "1f455853b58fdad0be4cae42499b0df41dbee20a",
+    "fly0_durable_prototype": "4c4706e9915cfac4cb9fd667cb3a0f96ebfb4a09",
+    "fly0_bottomup_source_only": "f41aad9a726b985ea654900eb8a7c807d558fc08",
+    "methodology": "0102ca2c537a4fb9704f4b3d2def933d7d56f152",
+    "utility": "df5de71f2f5788272d04001a9e6cf3f9957a9920",
+    "external_science": "3d19f54227cfaad7b152b0b44eefb47c951a0916"
   },
   "science": {
     "terminal": 35,
@@ -36,33 +40,40 @@
     "scientifically_novel": false,
     "scientific_credit": 0,
     "pr_created": false,
-    "status": "EXACT_HEAD_AUTHORITY_RETAINED_OPERATIONAL_PR_ROUTE_BLOCKER"
+    "status": "EXACT_HEAD_AUTHORITY_RETAINED_P0_PR_MUTATION_ROUTE_BLOCKER"
   },
   "fly0": {
-    "interaction_ablation_matrix_present": true,
-    "engineering_gap": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT",
+    "durable_interaction_ablation_present": true,
+    "durable_engineering_gap": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT",
+    "bottomup_source_only_prototype_present": true,
+    "bottomup_prototype_verification": "UNVERIFIED_NO_TEST_CI_HANDOFF",
+    "bottomup_prototype_status": "FORGE_PROTOTYPE",
     "activity_resource_comparability": false,
     "matched_replacement_ladder_complete": false,
     "sb003_allocated": false,
     "scientific_credit": 0
   },
   "p0": {
-    "open_directive": true,
-    "durable_control_status": "CLOSED_P0_RECOVERED",
-    "newer_mutation_recurrence_evidence": true,
-    "control_re_evaluation_warranted": true
+    "directive_open": true,
+    "predecessor_incident_status": "CLOSED_P0_RECOVERED",
+    "recurrence_incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "recurrence_status": "OPEN_RECURRENCE_RECONCILED",
+    "repository_wide_outage_supported": false,
+    "path_dependent_runtime_mutation_recurrence_supported": true,
+    "analyst_r166_persistence_complete": true,
+    "active_pointer_debt": false
   },
   "allocation": {
     "main": "M1_002_EXACT_HEAD_PR_CONDITIONAL_MERGE",
     "relay": null,
-    "forge": "NON_EVIDENTIARY_ONLY",
+    "forge": "NON_EVIDENTIARY_BOTTOMUP_VERIFICATION_AND_COMPARATOR_GAPS",
     "sb003": null,
     "science": null
   },
   "persistence": {
-    "request_id": "EA-R166-20260928T120024JST",
+    "request_id": "EA-R167-20260928T125724JST",
     "target_branch": "ops/evidence-analyst-handoff",
-    "expected_target_head": "895bbc6301f4e7a06a8b7e4aaf2bc57c35404f8c",
+    "expected_target_head": "46c93259af8ec986fd8465ed5f5cf8fe893cb2e5",
     "status_at_request_creation": "PENDING_ACTION_RECEIPT"
   }
 }

@@ -1,7 +1,9 @@
-# Evidence Analyst latest — R166
+# Evidence Analyst latest — R167
 
-M1-002 remains built and bounded-functionally verified at exact head 2a21d3e879f1db4e81a58273180ad2124e823a5e, with no PR and no runtime-source change. MAIN R171's five PR-creation failures are operational pre-GitHub refusals; exact-head authority remains unchanged subject to fresh-state checks.
+Control has now reconciled the post-closure GitHub mutation recurrence as a new open incident, INC-GITHUB-MUTATION-RECURRENCE-20260928-001. Current evidence supports intermittent/path-dependent scheduler/runtime mutation refusal, not a repository-wide outage.
 
-FLY-0 now has a durable interaction-ablation artifact. The missing-matrix blocker is resolved, but bottom-up Observation/LocalFeedback is not causally active in the bounded trajectory. Activity/resource comparability and the complete matched replacement ladder remain unresolved. No SB003 allocation.
+M1-002 remains unchanged at exact head 2a21d3e879f1db4e81a58273180ad2124e823a5e on main 59fc994b39d0ba02682e972161bb46801592d25b. MAIN R172 again exhausted five PR-create attempts before GitHub and no PR exists. R166 exact-head PR/conditional-merge authority remains valid subject to fresh-state and unchanged-scope checks. This remains an operational blocker, not a bounded-functionality or scientific failure.
 
-Canonical science remains 35/35 terminal with eight consumed FORMAL identities. No new scientific result. Control should re-evaluate the open persistence/mutation P0 against the newer recurrence evidence.
+FLY-0 has a new source-only Forge prototype at f41aad9a726b985ea654900eb8a7c807d558fc08 intended to close the bottom-up Observation/LocalFeedback gap. It has no tests, CI workflow run, docs or durable Forge handoff, so it is FORGE_PROTOTYPE only and is not SYSTEM_BUILD_INPUT. SB003 remains unallocated. Activity/resource comparability and the complete matched replacement ladder remain unresolved.
+
+Canonical science remains 35/35 terminal with eight consumed FORMAL identities. No new scientific result and no result-bearing execution is authorized.
