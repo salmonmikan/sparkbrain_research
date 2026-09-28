@@ -1,18 +1,16 @@
-# SparkBrain Methodology Calibration Audit — Latest
+# SparkBrain Methodology Calibration Audit — Latest (R140 recovery backfill)
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260928T102000+0900-R139-M1-002-PR-ROUTE-CALIBRATION`
-- generated_at: `2026-09-28T10:20:00+09:00`
-- history_path: `analysis/methodology_calibration/history/2026-09-28/1020.md`
+- generation_id: `METHCAL-RECOVERY-20260928T123100+0900-R140-P0-MUTATION-RECURRENCE-BACKFILL`
+- generated_at: `2026-09-28T12:31:00+09:00`
+- history_path: `analysis/methodology_calibration/history/2026-09-28/1231-R140-recovery-backfill.md`
 - overall_classification: `WELL_CALIBRATED`
+- recovery_backfill: `true`
+- original_payload_available: `false`
 - new_scientific_result: `false`
 
-M1-002 is built and bounded-functionally verified at exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e`; CI `36361950457` passed and Evidence Analyst R165 authorized exact-head PR creation plus conditional merge without adding a mandatory review gate.
+R140 is durably reconstructed from the previously unpersisted run report. M1-002 remains built and bounded-functionally verified at exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e`, with no comparative/scientific credit.
 
-MAIN R170 reports five PR-creation attempts refused before GitHub. Direct repository readback confirms main/source heads are unchanged and no M1-002 PR exists. This is an operational mutation-route blocker, not a scientific, review or methodology failure.
+FLY-0 now has an interaction-ablation artifact exposing `BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT`, but remains NON_EVIDENTIARY/NONCANONICAL and not admitted to SB003.
 
-Keep the exact engineering/scientific claim boundaries. Retry only under current authority/freshness rules; repeated route refusal belongs to Control as an operational incident. Do not add extra review/Analyst gates and do not bypass platform/repository boundaries.
-
-FLY-0 remains parallel, noncanonical and nonevidentiary; internal activity/resource exposure is unmatched and no SB003 allocation exists.
-
-No new SparkBrain scientific result.
+The operational blocker remains scheduler/runtime GitHub mutation reliability. The original R140 persistence exhausted five attempts; this recovery publication does not reinterpret science or add a methodology gate.

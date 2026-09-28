@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-28T10:20:00+09:00",
+  "timestamp": "2026-09-28T12:31:00+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260928T102000+0900-R139-M1-002-PR-ROUTE-CALIBRATION",
-    "sequence": 139,
+    "generation_id": "METHCAL-RECOVERY-20260928T123100+0900-R140-P0-MUTATION-RECURRENCE-BACKFILL",
+    "sequence": 140,
     "material_change": true,
-    "material_change_reason": "M1_002_BUILT_ACCEPTED_PR_CREATION_BLOCKED_PRE_GITHUB",
-    "supersedes_generation_id": "METHCAL-20260928T081717+0900-R138-M1-ROBUSTNESS-CONTRACT-CALIBRATION",
+    "material_change_reason": "RECOVER_UNPERSISTED_R140_AND_RECORD_GENERIC_SCHEDULER_GITHUB_MUTATION_RECURRENCE",
+    "supersedes_generation_id": "METHCAL-20260928T102000+0900-R139-M1-002-PR-ROUTE-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "directive_freshness": {
@@ -23,12 +23,12 @@
     "freshness_established": true
   },
   "input_generations": {
-    "previous_methodology": "METHCAL-20260928T081717+0900-R138-M1-ROBUSTNESS-CONTRACT-CALIBRATION",
-    "evidence_analyst": "EVA-20260928T100231+0900-R165-M1-002-EXACT-HEAD-PR-MERGE",
-    "main": "MAIN-20260928-PRIMARY-R170-M1-002-PR-CREATE-BLOCKED",
-    "control": "CTRL-20260928T095119+0900-R106-M1-002-CI-READY-ANALYST",
+    "previous_methodology": "METHCAL-20260928T102000+0900-R139-M1-002-PR-ROUTE-CALIBRATION",
+    "evidence_analyst": "EVA-20260928T120024+0900-R166-M1-002-FLY0-ABLATION",
+    "main": "MAIN-R172@1dedab2a37411efa4e3ae222255910fa8c82856e",
+    "control": "CTRL-R106@c5156a7fbbe2439563ded358044673d258bec5c1",
     "theory": "THEORY-20260928T093233+0900-R14-NO-PROPOSAL-M1-002-ROBUSTNESS-6C2F91A4",
-    "utility": "UTILITY-20260928T092746+0900-R163-M1-002-READINESS-VERIFIED"
+    "utility": "UTILITY-R163@74f9442b450e3b9c3571a8ac5190fd9c324a84e2"
   },
   "authoritative_refs": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
@@ -36,7 +36,8 @@
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "m1_002_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
-    "fly0_resource_normalization": "669030dda2911709c9eae4cedf6ae21a2fda6f88"
+    "fly0_resource_normalization": "669030dda2911709c9eae4cedf6ae21a2fda6f88",
+    "fly0_interaction_ablation_handoff": "1f455853b58fdad0be4cae42499b0df41dbee20a"
   },
   "overall_classification": "WELL_CALIBRATED",
   "scientific_gate_findings": {
@@ -72,14 +73,16 @@
       "next_run_freshness_recheck": "KEEP",
       "overpermissive_rolling_authority": "KEEP",
       "overconservative_handoff_latency": "KEEP"
-    }
+    },
+    "main_r172_pr_attempts": 5,
+    "main_r172_failure_class": "PRE_GITHUB_PLATFORM_REFUSAL_REPORTED_BY_MAIN"
   },
   "fly0": {
     "status": "NON_EVIDENTIARY_NONCANONICAL_NOT_ALLOCATED_TO_SB003",
-    "resource_normalization_head": "669030dda2911709c9eae4cedf6ae21a2fda6f88",
-    "common_interface_exposure_matched": true,
-    "internal_activity_resource_exposure_matched": false,
-    "durable_new_handoff": false,
+    "interaction_ablation_matrix_present": true,
+    "engineering_gap": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT",
+    "activity_resource_comparability": false,
+    "matched_replacement_ladder_complete": false,
     "m1_dependency": false,
     "scientific_credit": 0
   },
@@ -88,7 +91,7 @@
     "overclaim_risk": "LOW_IF_BOUNDARIES_RETAINED",
     "overconservative_handoff_latency": false,
     "overpermissive_rolling_authority": false,
-    "current_blocker_type": "OPERATIONAL_PR_MUTATION_ROUTE",
+    "current_blocker_type": "OPERATIONAL_SCHEDULER_GITHUB_MUTATION_RELIABILITY",
     "bounded_engineering_pass_reachability": "DEMONSTRATED",
     "scientific_pass_claimed": false,
     "overall": "WELL_CALIBRATED"
@@ -121,11 +124,26 @@
     "protected_heldout_accessed": false
   },
   "persistence": {
-    "history_path": "analysis/methodology_calibration/history/2026-09-28/1020.md",
-    "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
+    "history_path": "analysis/methodology_calibration/history/2026-09-28/1231-R140-recovery-backfill.md",
+    "publication_mode": "RECOVERY_BACKFILL_ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts_per_mutation_purpose": 5,
-    "attempt": 3,
     "force_push": false,
-    "readback_required": true
+    "readback_required": true,
+    "original_r140_publication": "FAILED_CLOSED_AFTER_5_PRE_GITHUB_REFUSALS",
+    "recovery_status": "PENDING_READBACK_AT_CONTENT_GENERATION"
+  },
+  "recovery": {
+    "recovery_backfill": true,
+    "original_scheduler_generation": "R140",
+    "original_payload_available": false,
+    "reconstruction_source": "user-visible unpersisted R140 run report in current ChatGPT conversation",
+    "user_authorized": "2026-09-28 explicit authorization to reflect all unpersisted state",
+    "integrity_note": "This is a recovery reconstruction, not a claim that the original failed publication payload was recovered byte-for-byte."
+  },
+  "operational_incident": {
+    "evidence": "R140 publication itself exhausted five total attempts with pre-GitHub refusal; MAIN PR route and other scheduler persistence paths also showed recurrence",
+    "repository_wide_github_outage_supported": false,
+    "scheduler_runtime_mutation_recurrence_supported": true,
+    "control_re_evaluation_warranted": true
   }
 }
