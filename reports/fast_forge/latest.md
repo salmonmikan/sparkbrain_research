@@ -1,23 +1,18 @@
-# Fast Forge latest — FLY-0 matched replacement and delay envelope
+# Fast Forge latest — FLY-0 lateral-surface diagnosis
 
-**Status:** `FORGE_INTERESTING / SYSTEM_BUILD_INPUT` — still
-`NON_EVIDENTIARY / NONCANONICAL`.
+Status: FORGE_OBSERVATION / NON_EVIDENTIARY / NONCANONICAL.
 
-Exact verified prototype `26c740b302b5c6eb2549eca4033a3e79618931a8`
-adds structured, degree-preserving rewired, random-sparse, and ordinary reactive
-variants behind the same observation/action gate, configured event budget, and
-one-step logical feedback-delay envelope. CI `36382942094` passed on Python
-3.11 and 3.13.
+Analyst R168 keeps SB003 unallocated and permits Forge repair of the composed
+FLY-0 path. The rewired and random-sparse controls are not functional baselines
+because their randomization preserves role/resource summaries but not the
+structured fixture's left/right sensorimotor interface.
 
-Structured and ordinary reactive variants both reach the bounded target with
-trace `2 -> 1 -> 0 -> -1`. A delay-over-budget perturbation fails closed after
-the first committed step, and checkpoint semantics bind replacement variant,
-event budget, delay and delay budget.
+A bounded repair is to preserve source/target side in addition to role/resource
+constraints. Local deterministic reconstruction supports that direction, but no
+executable repository repair or repaired CI is durable yet.
 
-The replacement ladder and logical-delay comparison surface are now present,
-but strict internal activity/resource comparability remains unresolved because
-topology trace events and reactive activation events are not commensurate.
+Authoritative history:
+reports/fast_forge/history/2026-09-28/2337-fly0-lateral-surface-repair-diagnosis.md
 
-Ordinary reactive control remains sufficient for the bounded movement task.
-No topology superiority, biological fidelity, efficiency, scientific credit,
-or SB003 allocation is established.
+No scientific result, scientific credit, topology superiority, biological
+fidelity, efficiency claim, or SB003 allocation is established.
