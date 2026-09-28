@@ -1,38 +1,15 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260928T141253+0900-PRIMARY-R174-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-28T14:12:53+09:00",
+  "generation_id": "MAIN-20260928T161528+0900-PRIMARY-R175-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-28T16:15:28+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
   "analyst_generation_id": "EVA-20260928T125724+0900-R167-P0-RECURRENCE-FLY0-BOTTOMUP",
-  "directive_index": {
-    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "delta": false
-  },
-  "refs_observed": {
-    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "analyst_branch_head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
-    "main_reports_before": "7d1f1809c64a5223b128f2b6e693f4d6f4f4df90"
-  },
-  "integration": {
-    "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
-    "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "ahead_by": 1,
-    "behind_by": 0,
-    "push_ci": {
-      "run_id": 36361950457,
-      "status": "completed",
-      "conclusion": "success"
-    },
-    "pr_created": false,
-    "merge_performed": false
-  },
+  "directive_index": {"head":"8ce979b9ec0bc7eede5225c0403698f8886d3e8d","blob":"1ba1e173344f36e14d0e21e6f3e823254e031f7d","previous_head":"8ce979b9ec0bc7eede5225c0403698f8886d3e8d","delta":false},
+  "refs_observed": {"main":"59fc994b39d0ba02682e972161bb46801592d25b","m1_002":"2a21d3e879f1db4e81a58273180ad2124e823a5e","analyst_branch_head":"844928373dbe3873738ea4f1be69ee9b23f1f696","control_branch_head":"d43124ad0c7309225e8c8e76014f911912687e07","main_reports_before":"bbf1108c61541f26e66f460b8c097f14185ce3fc"},
+  "integration": {"exact_head":"2a21d3e879f1db4e81a58273180ad2124e823a5e","tree":"2237f3b1e8ac72d193fc2c3879f2b67f71d302e0","base_main":"59fc994b39d0ba02682e972161bb46801592d25b","ahead_by":1,"behind_by":0,"push_ci":{"run_id":36361950457,"status":"completed","conclusion":"success"},"pr_created":false,"merge_performed":false},
   "built": true,
   "bounded_functionally_verified": true,
   "comparatively_supported": false,
@@ -40,27 +17,13 @@
   "scientifically_novel": false,
   "scientific_credit": 0,
   "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-  "p0": {
-    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "status": "OPEN_RECURRENCE_RECONCILED",
-    "failure_layer": "PRE_GITHUB_PLATFORM_REFUSAL",
-    "repository_wide_outage_supported": false
-  },
-  "action": {
-    "pull_request_creation_attempts": 5,
-    "maximum_attempts": 5,
-    "retries_had_fresh_state_checks": true,
-    "pr_absent_after_final_attempt": true
-  },
-  "collision": {
-    "main_prior_lease_status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
-    "relay_allocated": false,
-    "collision_observed": false
-  },
+  "p0": {"incident":"INC-GITHUB-MUTATION-RECURRENCE-20260928-001","status":"OPEN","failure_layer":"PRE_GITHUB_PLATFORM_REFUSAL","repository_wide_outage_supported":false},
+  "action": {"pull_request_creation_attempts":5,"attempt_counting":"CONSERVATIVE","explicit_pre_github_refusals":4,"indeterminate_orchestration_attempts":1,"indeterminate_detail":"Code Mode sub-tool-call ceiling after fresh reads; mutation invocation point not provable","maximum_attempts":5,"retries_had_fresh_state_checks":true,"pr_absent_after_final_attempt":true},
+  "collision": {"main_prior_lease_status":"SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN","relay_allocated":false,"collision_observed":false},
   "new_build_result": false,
   "new_scientific_result": false,
-  "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_ATTEMPTS",
+  "stop_reason": "PR_CREATION_BLOCKED_AFTER_CONSERVATIVE_5_ATTEMPT_CEILING",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-28/1412-r174-pr-create-platform-blocked.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-28/1615-r175-pr-create-platform-blocked.md"
 }
