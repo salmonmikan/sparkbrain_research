@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260929T071019+0900-PRIMARY-R184-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-29T07:10:19+09:00",
+  "generation_id": "MAIN-20260929T081507+0900-PRIMARY-R185-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-29T08:15:07+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
@@ -19,24 +19,18 @@
     "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "analyst_branch_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
     "control_branch_head": "86f646965c0216f3f7c4f488c78038c65ddffc12",
-    "main_reports_before": "b8bcdc8790cb30857f837e0d544ee381922bc551"
+    "main_reports_before": "0cbfe4b3125d8ac88cb3e85aeff219f570baa499"
   },
   "integration": {
     "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "ahead_by": 1,
     "behind_by": 0,
-    "changed_paths": [
-      "artifacts/validation_manifest.json",
-      "docs/PROJECT_STATUS.md",
-      "docs/SYSTEM_BUILD_M1.md",
-      "docs/SYSTEM_BUILD_M1_ROBUSTNESS.md",
-      "tests/test_system_build_m1_robustness.py"
-    ],
     "push_ci": {
       "run_id": 36361950457,
       "status": "completed",
-      "conclusion": "success"
+      "conclusion": "success",
+      "head_sha": "2a21d3e879f1db4e81a58273180ad2124e823a5e"
     },
     "pr_created": false,
     "merge_performed": false
@@ -77,10 +71,10 @@
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_EXPLICIT_PRE_GITHUB_REFUSALS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-29/0710-r184-pr-create-platform-blocked.md",
+  "history_path": "reports/orchestrator/main/history/2026-09-29/0815-r185-pr-create-platform-blocked.md",
   "publication": {
     "branch": "ops/orchestrator-run-report",
-    "expected_head_before": "b8bcdc8790cb30857f837e0d544ee381922bc551",
+    "expected_head_before": "0cbfe4b3125d8ac88cb3e85aeff219f570baa499",
     "atomic": true,
     "attempt_limit": 5,
     "attempt": 1
