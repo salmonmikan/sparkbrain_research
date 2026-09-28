@@ -1,12 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260929T011852+0900-PRIMARY-R181-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-29T01:18:52+09:00",
+  "generation_id": "MAIN-20260929T031015+0900-PRIMARY-R182-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-29T03:10:15+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
   "analyst_generation_id": "EVA-20260928T231445+0900-R168-FLY0-COMPOSED-CI-FAILURE",
+  "control_generation_id": "CTRL-20260929T025430+0900-R117-P0-POINTER-RECONCILIATION-FLY0-GREEN",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
@@ -17,7 +18,7 @@
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "analyst_branch_head": "266864682894af7745156ec899da3377cacc18fb",
-    "main_reports_before": "8b5c88201202483974306232ab581750c5fe764c"
+    "main_reports_before": "9fd26d7ce946fed546350349271edad18cf8782a"
   },
   "integration": {
     "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
@@ -63,5 +64,5 @@
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_EXPLICIT_PRE_GITHUB_REFUSALS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-29/0118-r181-pr-create-platform-blocked.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-29/0310-r182-pr-create-platform-blocked.md"
 }
