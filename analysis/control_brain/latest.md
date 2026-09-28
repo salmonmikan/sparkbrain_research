@@ -1,58 +1,32 @@
-# Control Brain R105 — M1 integrated, robustness harness allocated
+# Control Brain R106 — M1-002 exact-head CI green
 
-- generation_id: `CTRL-20260928T084949+0900-R105-M1-ROBUSTNESS-ALLOCATED`
-- produced_at: `2026-09-28T08:49:49+09:00`
+- generation_id: `CTRL-20260928T095119+0900-R106-M1-002-CI-READY-ANALYST`
+- produced_at: `2026-09-28T09:51:19+09:00`
 - mode: `CONTROL_BRAIN`
-- slot: `08:50 JST` (`EARLY_GRACE`, drift `-11s`)
-- authority main: `59fc994b39d0ba02682e972161bb46801592d25b`
-- directive index: `8ce979b9ec0bc7eede5225c0403698f8886d3e8d` / blob `1ba1e173344f36e14d0e21e6f3e823254e031f7d`
-- directive delta from R104: none
+- directive delta: none
 
-## Control decision
+## Decision
 
-Milestone 1 integration remains accepted at merged main `59fc994b39d0ba02682e972161bb46801592d25b` (PR #163). Evidence Analyst R163 allocates the next bounded MAIN-only work item, `BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS`, on required branch `system-build/m1-post-integration-robustness-20260928`. The branch is not yet present, so the critical path is implementation, exact-head CI, fresh Analyst reconciliation, then PR/merge only if authorized.
+M1-002 has progressed to exact head
+`2a21d3e879f1db4e81a58273180ad2124e823a5e` with successful push CI run
+`36361950457`. The current critical path is fresh Evidence Analyst exact-head
+reconciliation before PR or merge. R105's `YELLOW_OBSERVE` condition is
+resolved; no incident or fleet mutation is needed.
 
-One enabled MAIN cycle occurred after R163 without a newer durable MAIN report or required branch. Classify `YELLOW_OBSERVE` for handoff latency, not a scheduler or persistence incident. Do not suspend or mutate the fleet; the next MAIN run should act.
+FLY-0 resource-normalization code is green at
+`669030dda2911709c9eae4cedf6ae21a2fda6f88` / CI `36363537665`, but remains
+noncanonical, nonevidentiary and without a new durable Forge handoff. No SB003
+allocation or scientific claim is created.
 
-## Science boundary
+## Fleet and persistence
 
-Canonical science remains 35/35 terminal, 0 active, 0 queued, with 8 consumed FORMAL identities. M1 is `NON_EVIDENTIARY_BUILD`: built and bounded-functionally verified, but comparative support and composition contribution remain unestablished. No new science, credit, or Relay allocation.
-
-## Integration state
-
-- completed: M1 integration; post-merge CI; Analyst R163 acceptance
-- current: MAIN-only M1-002 deterministic robustness harness
-- fixed scenarios: nominal 64-cycle invariants; checkpoint cutpoints 1/8/31/63; early/middle/late faults; duplicate/conflict/pending identity paths
-- caps: offline CPU, no new dependencies, 64 cycles/scenario, 512 total
-- prohibited: algorithms, thresholds, routing topology, public runtime fields, resource maxima, FLY-0, Theory, canonical science
-- next boundary: exact-head CI followed by fresh Analyst reconciliation
-
-## FLY-0 parallel track
-
-Forge promotion handoff is now durable at `forge/20260928-fly0-hierarchical-loop-a@03f812775199166638796c379d461e4f1f1e1259`; prototype code head `250708bf93edebc9d83d097a0f2fc1232d185368` and publication CI are green. Status remains `FORGE_INTERESTING / SYSTEM_BUILD_INPUT`, noncanonical and nonevidentiary. Remaining comparator blockers are activity/resource exposure mismatch, incomplete matched-replacement ladder, and absent interaction-ablation matrix. No SB003 allocation and no M1 dependency.
-
-## Fleet, durability, and migration
-
-- enabled green fleet: Control, Analyst, MAIN, Forge, Utility, Methodology, External Science, State Brief (8)
-- Relay: intentionally disabled; restart condition not met
-- deprecated blue schedulers: disabled rollback/history only
-- P0 incident `INC-GITHUB-PERSISTENCE-20260925-001`: `CLOSED_P0_RECOVERED`
-- Analyst R163 request/receipt and Forge handoff readbacks are complete; no active pointer debt
-- scheduler mutation: none
-- blue-green action: none required
-
-## Directive disposition retained
-
-- HUMAN-20260925-002: `ACCEPT_RETAIN_CLOSED_P0_MONITORING`
-- HUMAN-20260926-003: `ACCEPT_APPLIED_FLEET_RESTORED_BOUNDED_MONITORING`
-- HUMAN-20260926-004: `ACCEPT_SYSTEM_BUILD_REVIEW_OPTIONAL`
-- HUMAN-20260927-002: `ACCEPT_FIVE_ATTEMPT_LIMIT`
-- HUMAN-20260928-001: `ACCEPT_WITH_MODIFICATION_M1_INTEGRATED_CONTINUE_M1_002`
-- HUMAN-20260928-002: `ACCEPT_WITH_MODIFICATION_FORGE_HANDOFF_DURABLE_NO_SB003`
+Eight GREEN schedulers remain enabled. Relay is intentionally disabled and its
+restart condition remains unmet. BLUE copies and the completed canary remain
+disabled. Analyst R164 persistence and receipt are complete. P0 remains closed,
+with no active pointer debt, scheduler change or blue-green action.
 
 ## Next
 
-1. MAIN implements M1-002 on the exact required base and branch.
-2. Exact-head CI completes.
-3. Evidence Analyst reconciles the result before any PR/merge continuation.
-4. Control observes the next MAIN cycle; escalate only if durable non-advancement persists or a concrete incident appears.
+Evidence Analyst reconciles M1-002. MAIN may continue only under the resulting
+fresh authority. Forge should publish its new handoff before that prototype is
+treated as durable input.
