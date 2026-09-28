@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-28T16:23:24+09:00",
+  "timestamp": "2026-09-28T18:22:48+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260928T162324+0900-R142-FLY0-CLAIM-TYPED-RESOURCE-FAIRNESS",
-    "sequence": 142,
-    "material_change": true,
-    "material_change_reason": "FLY0_MATCHED_REPLACEMENT_DELAY_VERIFIED_WITH_CLAIM_TYPED_RESOURCE_BOUNDARY",
-    "supersedes_generation_id": "METHCAL-20260928T141807+0900-R141-FLY0-VERIFIED-CALIBRATION",
+    "generation_id": "METHCAL-20260928T182248+0900-R143-STABLE-CALIBRATION-P0-OPERATIONS",
+    "sequence": 143,
+    "material_change": false,
+    "material_change_reason": "NO_METHODOLOGY_CHANGE_OPERATIONAL_P0_AND_POINTER_RECONCILIATION_ONLY",
+    "supersedes_generation_id": "METHCAL-20260928T162324+0900-R142-FLY0-CLAIM-TYPED-RESOURCE-FAIRNESS",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "directive_freshness": {
@@ -18,10 +18,16 @@
   },
   "inputs": {
     "analyst_durable": "EVA-20260928T125724+0900-R167-P0-RECURRENCE-FLY0-BOTTOMUP",
+    "analyst_branch": "844928373dbe3873738ea4f1be69ee9b23f1f696",
     "main": "MAIN-20260928T161528+0900-PRIMARY-R175-M1-002-PR-CREATE-BLOCKED",
+    "main_reports": "3367248d69c3160736f4db20520aa6c2e71ef2e4",
     "control": "CTRL-20260928T165451+0900-R112-P0-POINTER-RECONCILED-FLEET-NOWORK",
-    "theory": "R16_RESOURCE_LEDGER_SPLIT",
-    "common_work_counter": "SOURCE_ONLY"
+    "control_branch": "d42e7d244abde36b60269aa45af0e21ab4af6c6b",
+    "theory": "THEORY-20260928T153540+0900-R16-RESOURCE-FAIRNESS-SPLIT-5F2C8A11",
+    "theory_branch": "2c0dcd8f033b6d398e6bf8e8c92bc5c050a8de27",
+    "forge": "FORGE-20260928T173500+0900-FLY0-COMMON-WORK-COUNTER-VERIFICATION-BLOCKED-REPEAT",
+    "forge_branch": "6b6515f3a7cffa74721e39a70c2ea17b162216a3",
+    "utility": "UTILITY-20260928T172500+0900-R167-EA-R171-PERSISTENCE-RECONCILE"
   },
   "overall_classification": "WELL_CALIBRATED",
   "findings": {
@@ -32,6 +38,7 @@
     "mandatory_system_build_review": "KEEP_AS_NON_GATE",
     "m1_rolling_authority": "KEEP",
     "operational_pr_route": "CLARIFY_NOT_METHODOLOGY_GATE",
+    "analyst_persistence_route": "CLARIFY_NOT_METHODOLOGY_GATE",
     "fly0_component_vs_topology": "SPLIT_BY_CLAIM_TYPE",
     "fly0_resource_comparator_fairness": "SPLIT_BY_CLAIM_TYPE",
     "common_work_counter": "CLARIFY",
@@ -39,14 +46,19 @@
     "rv02_fresh_development_successor": "KEEP"
   },
   "m1_002": {
+    "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "ahead_by": 1,
+    "behind_by": 0,
+    "ci_run_id": 36361950457,
+    "ci": "success",
+    "pr_open": false,
     "built": true,
     "bounded_functionally_verified": true,
     "comparatively_supported": false,
     "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
-    "scientific_credit": 0,
-    "pr_open": false,
-    "ci_run_id": 36361950457
+    "scientific_credit": 0
   },
   "fly0": {
     "verified_handoff": "8bcb7323df35248e3e3c8b3e6f0eaca3f8d30f63",
@@ -56,6 +68,7 @@
     "ordinary_reactive_sufficient_for_bounded_task": true,
     "native_activity_instrumentation_commensurate": false,
     "common_work_counter_status": "SOURCE_ONLY",
+    "focused_common_work_test_present": false,
     "sb003_allocated": false,
     "scientific_credit": 0
   },
@@ -63,6 +76,12 @@
     "overconservative_handoff_latency": false,
     "overpermissive_rolling_authority": false,
     "pass_reachable_without_weakening": true
+  },
+  "p0": {
+    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "status": "OPEN",
+    "methodology_interpretation": "OPERATIONAL_LATENCY_NOT_METHODOLOGY_GATE",
+    "root_cause": "UNKNOWN"
   },
   "hard_floor": {
     "experiment_dispatched": false,
@@ -77,10 +96,9 @@
     "consumed_formal_rerun_retuned_rescored": false
   },
   "persistence": {
-    "history_path": "analysis/methodology_calibration/history/2026-09-28/1623-R142-fly0-claim-typed-resource-fairness.md",
-    "history_commit": "921b9782cc84b11b55b72c3211005f5347584e52",
-    "reconciliation": "CONTROL_P0_POINTER_REPAIR_FROM_APPEND_ONLY_HISTORY",
-    "repair_attempt": 3,
+    "branch": "ops/methodology-calibration-audit",
+    "history_path": "analysis/methodology_calibration/history/2026-09-28/1822-R143-stable-calibration-p0-operations.md",
+    "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts": 5,
     "force_push": false,
     "readback_required": true
