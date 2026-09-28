@@ -1,0 +1,3 @@
+SparkBrain P0 non-scientific PR-create canary.
+Base control head: 1b097bf1055d36f68e3d34cff212b3b720adde66
+No scientific or build authority.
