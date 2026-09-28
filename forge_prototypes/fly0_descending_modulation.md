@@ -8,15 +8,23 @@ path.
 
 The local controller remains responsible for fast sensorimotor progression.
 High-level state can interact with it only through a versioned
-`ModulationFrame`.  The first bounded vocabulary is deliberately small:
+`ModulationFrame`. The bounded v2 vocabulary remains deliberately small:
 
 - `neutral`: permit the ordinary local closed-loop step;
-- `hold`: commit a high-level hold while issuing no local action.
+- `hold`: commit a high-level hold while issuing no local action;
+- `permit_side(left|right)`: permit the ordinary local action only when the
+  local task-facing desired side matches the declared high-level side.
 
-Each frame binds a monotonic frame sequence, local sequence at issue time,
-bounded TTL, and the exact local checkpoint token that supplied its provenance.
-Stale, expired, future-issued, wrong-provenance, unknown-schema, and out-of-
-contract frames fail closed.
+`permit_side` is intentionally a coarse permission gate, not a direct motor
+command. A mismatch suppresses the local step; it does not inject an opposite
+action, alter local controller internals, change topology, or introduce a
+continuous gain/bias tuning parameter. A descending cut removes the high-level
+gate and restores the ordinary local baseline.
+
+Each frame binds a monotonic frame sequence, optional declared semantic side,
+local sequence at issue time, bounded TTL, and the exact local checkpoint token
+that supplied its provenance. Stale, expired, future-issued, wrong-provenance,
+unknown-schema, invalid-side, and out-of-contract frames fail closed.
 
 The bridge checkpoint binds the modulation contract and fingerprint together
 with the complete local-loop checkpoint. Restore is transactional: if either
@@ -35,14 +43,23 @@ The same frame interface is exercised against:
 The probe requires:
 
 - neutral modulation reproduces the existing local baseline;
-- a `hold` frame changes behavior without direct local-controller commands;
-- a descending cut removes only the high-level hold and restores the local
+- `hold` changes behavior without direct local-controller commands;
+- matching `permit_side` allows the local controller to produce its own
+  ordinary action;
+- mismatching `permit_side` vetoes that local step without issuing another
+  motor command;
+- a descending cut removes the high-level side veto and restores the local
   baseline;
 - the existing local-feedback cut still blocks dependent continuation;
 - checkpoint/replay is exact;
 - failed frame/local operations do not partially advance bridge state.
 
+This adds one inspectable directional modulation degree of freedom beyond the
+v1 neutral/hold contract while deliberately avoiding richer policy semantics or
+continuous tuning.
+
 This is an engineering contract probe. It does **not** establish biological
 fidelity/equivalence, topology necessity/superiority, resource or energy
 efficiency, composition contribution, whole-system superiority, external
-validity, scientific novelty, scientific credit, or SYSTEM_BUILD allocation.
+validity, scientific novelty, scientific credit, rich goal-conditioned
+behavior, or SYSTEM_BUILD allocation.

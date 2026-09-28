@@ -2,7 +2,7 @@
 
 This bridge probes a narrow engineering boundary proposed by Theory R20:
 high-level state may gate a local sensorimotor controller only through a
-versioned, replayable frame.  It is Forge-only, non-evidentiary work.
+versioned, replayable frame. It is Forge-only, non-evidentiary work.
 """
 
 from __future__ import annotations
@@ -15,13 +15,13 @@ from typing import Literal
 from forge_prototypes.fly0_composed_causal_replacement import (
     ComposedCausalReplacementLoop,
 )
-from forge_prototypes.fly0_hierarchical_loop import LoopSnapshot, WorldState
+from forge_prototypes.fly0_hierarchical_loop import LoopSnapshot, Side, WorldState
 from forge_prototypes.fly0_matched_replacement import Variant
 
-Mode = Literal["neutral", "hold"]
+Mode = Literal["neutral", "hold", "permit_side"]
 
-_FRAME_SCHEMA = "fly0-modulation-frame-v1"
-_BRIDGE_SCHEMA = 1
+_FRAME_SCHEMA = "fly0-modulation-frame-v2"
+_BRIDGE_SCHEMA = 2
 _MAX_TTL_STEPS = 4
 
 
@@ -32,15 +32,20 @@ def _contract() -> dict[str, object]:
             "schema_version",
             "frame_sequence",
             "mode",
+            "target_side",
             "issued_at_local_sequence",
             "ttl_steps",
             "source_checkpoint_token",
         ],
-        "modes": ["neutral", "hold"],
+        "modes": ["neutral", "hold", "permit_side"],
         "max_ttl_steps": _MAX_TTL_STEPS,
         "semantics": {
             "neutral": "permit the ordinary local closed-loop step",
             "hold": "commit high-level hold without issuing a local action",
+            "permit_side": (
+                "permit ordinary local action only when the local task-facing "
+                "desired side matches the declared high-level target side"
+            ),
         },
         "forbidden": [
             "arbitrary_internal_controller_commands",
@@ -60,6 +65,7 @@ class ModulationFrame:
     schema_version: str
     frame_sequence: int
     mode: Mode
+    target_side: Side | None
     issued_at_local_sequence: int
     ttl_steps: int
     source_checkpoint_token: str
@@ -133,12 +139,14 @@ class DescendingModulationBridge:
         *,
         frame_sequence: int,
         mode: Mode = "neutral",
+        target_side: Side | None = None,
         ttl_steps: int = 1,
     ) -> ModulationFrame:
         return ModulationFrame(
             schema_version=_FRAME_SCHEMA,
             frame_sequence=frame_sequence,
             mode=mode,
+            target_side=target_side,
             issued_at_local_sequence=self.snapshot.sequence,
             ttl_steps=ttl_steps,
             source_checkpoint_token=self.snapshot.token(),
@@ -154,8 +162,13 @@ class DescendingModulationBridge:
             and frame.frame_sequence <= self._last_frame_sequence
         ):
             raise ValueError("stale modulation frame sequence")
-        if frame.mode not in {"neutral", "hold"}:
+        if frame.mode not in {"neutral", "hold", "permit_side"}:
             raise ValueError("unsupported modulation mode")
+        if frame.mode == "permit_side":
+            if frame.target_side not in {"left", "right"}:
+                raise ValueError("permit_side requires a declared target side")
+        elif frame.target_side is not None:
+            raise ValueError("target side is only valid for permit_side")
         if not 1 <= frame.ttl_steps <= _MAX_TTL_STEPS:
             raise ValueError("modulation frame TTL outside bounded contract")
         if frame.issued_at_local_sequence > self.snapshot.sequence:
@@ -164,6 +177,11 @@ class DescendingModulationBridge:
             raise ValueError("expired modulation frame")
         if frame.source_checkpoint_token != self.snapshot.token():
             raise ValueError("modulation frame provenance token mismatch")
+
+    def _commit_frame(self, frame: ModulationFrame) -> None:
+        self._bridge_sequence += 1
+        self._last_frame_sequence = frame.frame_sequence
+        self._last_frame = frame
 
     def step(
         self,
@@ -185,19 +203,38 @@ class DescendingModulationBridge:
                 False,
             )
 
-        if frame.mode == "hold" and not descending_cut:
-            self._bridge_sequence += 1
-            self._last_frame_sequence = frame.frame_sequence
-            self._last_frame = frame
-            return BridgeStepResult(
-                True,
-                "HIGH_LEVEL_HOLD_COMMITTED",
-                before,
-                before,
-                frame,
-                False,
-                False,
-            )
+        if not descending_cut:
+            if frame.mode == "hold":
+                self._commit_frame(frame)
+                return BridgeStepResult(
+                    True,
+                    "HIGH_LEVEL_HOLD_COMMITTED",
+                    before,
+                    before,
+                    frame,
+                    False,
+                    False,
+                )
+            if frame.mode == "permit_side":
+                error = before.world.target - before.world.position
+                local_side: Side | None
+                if error < 0:
+                    local_side = "left"
+                elif error > 0:
+                    local_side = "right"
+                else:
+                    local_side = None
+                if local_side is not None and local_side != frame.target_side:
+                    self._commit_frame(frame)
+                    return BridgeStepResult(
+                        True,
+                        "HIGH_LEVEL_SIDE_VETO_COMMITTED",
+                        before,
+                        before,
+                        frame,
+                        False,
+                        False,
+                    )
 
         local = self._local.step()
         if not local.accepted:
@@ -211,14 +248,16 @@ class DescendingModulationBridge:
                 False,
             )
 
-        self._bridge_sequence += 1
-        self._last_frame_sequence = frame.frame_sequence
-        self._last_frame = frame
+        self._commit_frame(frame)
+        if descending_cut:
+            reason = "DESCENDING_CUT_LOCAL_BASELINE"
+        elif frame.mode == "permit_side":
+            reason = "HIGH_LEVEL_SIDE_MATCH_LOCAL_STEP_COMMITTED"
+        else:
+            reason = "NEUTRAL_LOCAL_STEP_COMMITTED"
         return BridgeStepResult(
             True,
-            "DESCENDING_CUT_LOCAL_BASELINE"
-            if descending_cut
-            else "NEUTRAL_LOCAL_STEP_COMMITTED",
+            reason,
             before,
             self.snapshot,
             frame,
@@ -331,15 +370,46 @@ def build_descending_modulation_report() -> dict[str, object]:
             WorldState(position=2, target=-1),
             variant=variant,
         )
-        hold_frame = hold.make_frame(frame_sequence=0, mode="hold")
-        hold_result = hold.step(hold_frame)
+        hold_result = hold.step(
+            hold.make_frame(frame_sequence=0, mode="hold")
+        )
+
+        match = DescendingModulationBridge(
+            WorldState(position=2, target=-1),
+            variant=variant,
+        )
+        match_result = match.step(
+            match.make_frame(
+                frame_sequence=0,
+                mode="permit_side",
+                target_side="left",
+            )
+        )
+
+        veto = DescendingModulationBridge(
+            WorldState(position=2, target=-1),
+            variant=variant,
+        )
+        veto_result = veto.step(
+            veto.make_frame(
+                frame_sequence=0,
+                mode="permit_side",
+                target_side="right",
+            )
+        )
 
         cut = DescendingModulationBridge(
             WorldState(position=2, target=-1),
             variant=variant,
         )
-        cut_frame = cut.make_frame(frame_sequence=0, mode="hold")
-        cut_result = cut.step(cut_frame, descending_cut=True)
+        cut_result = cut.step(
+            cut.make_frame(
+                frame_sequence=0,
+                mode="permit_side",
+                target_side="right",
+            ),
+            descending_cut=True,
+        )
 
         feedback_cut = DescendingModulationBridge(
             WorldState(position=2, target=-1),
@@ -361,6 +431,16 @@ def build_descending_modulation_report() -> dict[str, object]:
                 and not hold_result.local_step_committed
                 and hold.snapshot.world.position == 2
             ),
+            "matching_side_permits_local_action": (
+                match_result.accepted
+                and match_result.local_step_committed
+                and match.snapshot.world.position == 1
+            ),
+            "mismatched_side_vetoes_local_action": (
+                veto_result.accepted
+                and not veto_result.local_step_committed
+                and veto.snapshot.world.position == 2
+            ),
             "descending_cut_restores_local_baseline": (
                 cut_result.accepted
                 and cut_result.local_step_committed
@@ -380,7 +460,7 @@ def build_descending_modulation_report() -> dict[str, object]:
     )
     return {
         "status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-        "design": "DESCENDING_MODULATION_AUTHORITY_CONTRACT",
+        "design": "DESCENDING_DIRECTIONAL_MODULATION_AUTHORITY_CONTRACT",
         "modulation_contract": reference.modulation_contract,
         "modulation_contract_fingerprint": (
             reference.modulation_contract_fingerprint
@@ -389,6 +469,14 @@ def build_descending_modulation_report() -> dict[str, object]:
         "all_variants_same_interface": len(rows) == len(_VARIANTS),
         "all_neutral_baselines_green": all(
             row["neutral_reaches_target"] for row in rows.values()
+        ),
+        "all_hold_gates_green": all(
+            row["hold_commits_without_local_action"] for row in rows.values()
+        ),
+        "all_directional_gates_green": all(
+            row["matching_side_permits_local_action"]
+            and row["mismatched_side_vetoes_local_action"]
+            for row in rows.values()
         ),
         "all_descending_cuts_green": all(
             row["descending_cut_restores_local_baseline"]
@@ -399,11 +487,13 @@ def build_descending_modulation_report() -> dict[str, object]:
             for row in rows.values()
         ),
         "claim_boundary": (
-            "This is a bounded Forge engineering contract probe. It does not "
-            "establish biological fidelity or equivalence, topology necessity "
-            "or superiority, compute or energy efficiency, composition "
-            "contribution, whole-system superiority, external validity, "
-            "scientific novelty, scientific credit, or SB003 allocation."
+            "This is a bounded Forge engineering contract probe. The coarse "
+            "directional permission gate is not a rich goal policy and does "
+            "not establish biological fidelity or equivalence, topology "
+            "necessity or superiority, compute or energy efficiency, "
+            "composition contribution, whole-system superiority, external "
+            "validity, scientific novelty, scientific credit, or SB003 "
+            "allocation."
         ),
     }
 

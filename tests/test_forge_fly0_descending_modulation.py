@@ -69,6 +69,60 @@ def test_hold_and_descending_cut_separate_high_level_influence(
 
 
 @pytest.mark.parametrize("variant", _ALL_VARIANTS)
+def test_directional_gate_is_coarse_permission_not_direct_motor_command(
+    variant: str,
+) -> None:
+    matching = DescendingModulationBridge(
+        WorldState(position=2, target=-1),
+        variant=variant,
+    )
+    match_result = matching.step(
+        matching.make_frame(
+            frame_sequence=0,
+            mode="permit_side",
+            target_side="left",
+        )
+    )
+    assert match_result.accepted is True
+    assert match_result.reason == "HIGH_LEVEL_SIDE_MATCH_LOCAL_STEP_COMMITTED"
+    assert match_result.local_step_committed is True
+    assert matching.snapshot.world.position == 1
+
+    veto = DescendingModulationBridge(
+        WorldState(position=2, target=-1),
+        variant=variant,
+    )
+    veto_result = veto.step(
+        veto.make_frame(
+            frame_sequence=0,
+            mode="permit_side",
+            target_side="right",
+        )
+    )
+    assert veto_result.accepted is True
+    assert veto_result.reason == "HIGH_LEVEL_SIDE_VETO_COMMITTED"
+    assert veto_result.local_step_committed is False
+    assert veto.snapshot.world.position == 2
+
+    cut = DescendingModulationBridge(
+        WorldState(position=2, target=-1),
+        variant=variant,
+    )
+    cut_result = cut.step(
+        cut.make_frame(
+            frame_sequence=0,
+            mode="permit_side",
+            target_side="right",
+        ),
+        descending_cut=True,
+    )
+    assert cut_result.accepted is True
+    assert cut_result.reason == "DESCENDING_CUT_LOCAL_BASELINE"
+    assert cut_result.local_step_committed is True
+    assert cut.snapshot.world.position == 1
+
+
+@pytest.mark.parametrize("variant", _ALL_VARIANTS)
 def test_local_feedback_cut_blocks_dependent_continuation(
     variant: str,
 ) -> None:
@@ -100,7 +154,11 @@ def test_checkpoint_replay_is_exact_and_binds_modulation_contract() -> None:
         variant="rewired",
     )
     checkpoint = bridge.checkpoint()
-    frame = bridge.make_frame(frame_sequence=0, mode="neutral")
+    frame = bridge.make_frame(
+        frame_sequence=0,
+        mode="permit_side",
+        target_side="left",
+    )
 
     first = bridge.step(frame)
     first_after = bridge.snapshot.token()
@@ -120,7 +178,7 @@ def test_checkpoint_replay_is_exact_and_binds_modulation_contract() -> None:
     assert bridge.checkpoint() == before
 
 
-def test_stale_expired_and_wrong_provenance_frames_fail_closed() -> None:
+def test_stale_expired_wrong_provenance_and_invalid_side_frames_fail_closed() -> None:
     bridge = DescendingModulationBridge(
         WorldState(position=2, target=-1),
         variant="reactive",
@@ -133,6 +191,7 @@ def test_stale_expired_and_wrong_provenance_frames_fail_closed() -> None:
         schema_version=first.schema_version,
         frame_sequence=0,
         mode="neutral",
+        target_side=None,
         issued_at_local_sequence=bridge.snapshot.sequence,
         ttl_steps=1,
         source_checkpoint_token=bridge.snapshot.token(),
@@ -144,6 +203,7 @@ def test_stale_expired_and_wrong_provenance_frames_fail_closed() -> None:
         schema_version=first.schema_version,
         frame_sequence=1,
         mode="neutral",
+        target_side=None,
         issued_at_local_sequence=0,
         ttl_steps=1,
         source_checkpoint_token=bridge.snapshot.token(),
@@ -155,6 +215,7 @@ def test_stale_expired_and_wrong_provenance_frames_fail_closed() -> None:
         schema_version=first.schema_version,
         frame_sequence=1,
         mode="neutral",
+        target_side=None,
         issued_at_local_sequence=bridge.snapshot.sequence,
         ttl_steps=1,
         source_checkpoint_token="0" * 64,
@@ -162,6 +223,27 @@ def test_stale_expired_and_wrong_provenance_frames_fail_closed() -> None:
     assert (
         bridge.step(wrong_source).reason
         == "modulation frame provenance token mismatch"
+    )
+    assert bridge.checkpoint() == stable
+
+    missing_side = bridge.make_frame(
+        frame_sequence=1,
+        mode="permit_side",
+    )
+    assert (
+        bridge.step(missing_side).reason
+        == "permit_side requires a declared target side"
+    )
+    assert bridge.checkpoint() == stable
+
+    undeclared_side = bridge.make_frame(
+        frame_sequence=1,
+        mode="neutral",
+        target_side="left",
+    )
+    assert (
+        bridge.step(undeclared_side).reason
+        == "target side is only valid for permit_side"
     )
     assert bridge.checkpoint() == stable
 
@@ -187,6 +269,8 @@ def test_report_is_four_way_green_without_overclaim() -> None:
 
     assert report["all_variants_same_interface"] is True
     assert report["all_neutral_baselines_green"] is True
+    assert report["all_hold_gates_green"] is True
+    assert report["all_directional_gates_green"] is True
     assert report["all_descending_cuts_green"] is True
     assert report["all_local_feedback_cuts_green"] is True
     assert len(report["modulation_contract_fingerprint"]) == 64
