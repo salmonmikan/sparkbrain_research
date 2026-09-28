@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260929T031015+0900-PRIMARY-R182-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-29T03:10:15+09:00",
+  "generation_id": "MAIN-20260929T041237+0900-PRIMARY-R183-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-29T04:12:37+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
@@ -18,17 +18,27 @@
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "analyst_branch_head": "266864682894af7745156ec899da3377cacc18fb",
-    "main_reports_before": "9fd26d7ce946fed546350349271edad18cf8782a"
+    "control_branch_head": "08d49d5086726b5b7e409abdd58a00ae2a478790",
+    "main_reports_before": "8980597ebc5858c8c13fa64187be42a284a8fadd"
   },
   "integration": {
     "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "ahead_by": 1,
     "behind_by": 0,
+    "changed_paths": [
+      "artifacts/validation_manifest.json",
+      "docs/PROJECT_STATUS.md",
+      "docs/SYSTEM_BUILD_M1.md",
+      "docs/SYSTEM_BUILD_M1_ROBUSTNESS.md",
+      "tests/test_system_build_m1_robustness.py"
+    ],
     "push_ci": {
       "run_id": 36361950457,
       "status": "completed",
-      "conclusion": "success"
+      "conclusion": "success",
+      "python_311": "success",
+      "python_313": "success"
     },
     "pr_created": false,
     "merge_performed": false
@@ -48,12 +58,12 @@
     "repository_wide_outage_supported": false
   },
   "action": {
+    "mutation_action": "create_pull_request",
     "pull_request_creation_attempts": 5,
     "explicit_pre_github_refusals": 5,
     "maximum_attempts": 5,
     "retries_had_fresh_state_checks": true,
-    "pr_absent_after_final_attempt": true,
-    "mutation_action": "create_pull_request"
+    "pr_absent_after_final_attempt": true
   },
   "collision": {
     "relay_allocated": false,
@@ -64,5 +74,5 @@
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_EXPLICIT_PRE_GITHUB_REFUSALS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-29/0310-r182-pr-create-platform-blocked.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-29/0412-r183-pr-create-platform-blocked.md"
 }
