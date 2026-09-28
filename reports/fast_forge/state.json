@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260929T034700+0900-FLY0-DESCENDING-MODULATION-CONTRACT-GREEN",
-  "produced_at": "2026-09-29T03:47:00+09:00",
-  "forge_id": "FORGE-FLY0-DESCENDING-MODULATION-CONTRACT",
+  "generation_id": "FORGE-20260929T044715+0900-FLY0-DIRECTIONAL-MODULATION-GREEN",
+  "produced_at": "2026-09-29T04:47:15+09:00",
+  "forge_id": "FORGE-FLY0-DIRECTIONAL-MODULATION-CONTRACT",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260929-fly0-descending-modulation-a",
-  "exact_source_head": "02b3574269c41220b950b2b748840296c9b5006b",
-  "authoritative_history": "reports/fast_forge/history/2026-09-29/0347-fly0-descending-modulation-contract-green.md",
+  "branch": "forge/20260929-fly0-directional-modulation-a",
+  "exact_source_head": "4a68fde7cc3ba519a978810ab1002d1e9312f839",
+  "authoritative_history": "reports/fast_forge/history/2026-09-29/0447-fly0-directional-modulation-green.md",
   "directive_freshness": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
@@ -26,6 +26,7 @@
     "build": "M1-002",
     "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "pr_open": false,
     "relay_allocated": false,
     "collision": false
   },
@@ -34,57 +35,71 @@
     "design": "DESCENDING_MODULATION_AUTHORITY_CONTRACT"
   },
   "prior_forge": {
-    "generation": "FORGE-20260929T024200+0900-FLY0-SEMANTIC-CHECKPOINT-BINDING-GREEN",
-    "branch_head": "59c8411ca33de980b4c900c6d090c496591e6113",
-    "exact_source_head": "f93483b927470f48a311fe9ef711ca770648da7c"
+    "generation": "FORGE-20260929T034700+0900-FLY0-DESCENDING-MODULATION-CONTRACT-GREEN",
+    "branch_head": "fb61f668155ca018ee7c393c0b69e903aa240abf",
+    "exact_source_head": "02b3574269c41220b950b2b748840296c9b5006b"
   },
   "modulation": {
-    "schema": "fly0-modulation-frame-v1",
+    "schema": "fly0-modulation-frame-v2",
     "modes": [
       "neutral",
-      "hold"
+      "hold",
+      "permit_side"
     ],
+    "permit_side_values": [
+      "left",
+      "right"
+    ],
+    "coarse_permission_not_direct_motor_command": true,
     "max_ttl_steps": 4,
     "monotonic_frame_sequence": true,
-    "local_sequence_bound": true,
     "source_checkpoint_token_bound": true,
+    "invalid_side_usage_fail_closed": true,
     "stale_expired_wrong_provenance_fail_closed": true,
-    "forbidden_shortcuts": [
-      "UNDECLARED_FINE_GRAINED_LOCAL_CONTROL",
-      "ARBITRARY_INTERNAL_CONTROLLER_COMMANDS",
-      "OPAQUE_CALLBACK_CONTROL"
-    ],
     "checkpoint_binds_modulation_contract": true,
     "transactional_cross_layer_restore": true,
     "four_way_same_interface": true,
     "neutral_baseline_green": true,
+    "hold_gate_green": true,
+    "directional_permission_green": true,
     "descending_cut_green": true,
     "local_feedback_cut_green": true,
-    "failed_local_step_no_bridge_advance": true
+    "failed_local_step_no_bridge_advance": true,
+    "rich_goal_policy_established": false,
+    "continuous_gain_bias_added": false
   },
   "ci": {
-    "run_id": 36467350489,
-    "head": "02b3574269c41220b950b2b748840296c9b5006b",
+    "run_id": 36474193214,
+    "head": "4a68fde7cc3ba519a978810ab1002d1e9312f839",
+    "status": "completed",
+    "conclusion": "success",
     "python_311": "success",
     "python_313": "success",
     "lint": "success",
     "local_readiness": "success",
     "tests": "success",
-    "bundle_validation": "success"
+    "bundle_validation": "success",
+    "separate_automation_container_checkout_run": false,
+    "separate_checkout_unavailable_reason": "AUTOMATION_CONTAINER_EXTERNAL_DNS_UNAVAILABLE"
   },
   "resource_claims": {
     "strict_internal_activity_resource_comparability": false,
     "efficiency_claim": false
   },
+  "source_publication": {
+    "branch_creation_attempts": 1,
+    "branch_creation_result": "SUCCESS",
+    "source_publication_attempts": 2,
+    "source_publication_result": "SUCCESS",
+    "first_source_publication_error_detail_retained": false
+  },
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "branch_creation_attempts": 2,
-    "branch_creation_attempt_1": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "branch_creation_attempt_2": "SUCCESS",
-    "root_cause": "UNKNOWN"
+    "root_cause": "UNKNOWN",
+    "repository_wide_outage_supported": false
   },
-  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no SB003 allocation, topology superiority/necessity, biological fidelity/equivalence, efficiency, composition contribution, whole-system superiority, external validity, novelty or scientific credit.",
+  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no SB003 allocation, biological fidelity/equivalence, topology necessity/superiority, efficiency, composition contribution, whole-system superiority, external validity, rich goal-conditioned behavior, novelty or scientific credit.",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "scientific_credit": 0,
   "new_scientific_result": false,
