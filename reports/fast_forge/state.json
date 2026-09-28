@@ -1,94 +1,52 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260928T143500+0900-FLY0-MATCHED-REPLACEMENT-A",
-  "produced_at": "2026-09-28T14:35:00+09:00",
-  "forge_id": "FORGE-FLY0-MATCHED-REPLACEMENT-A",
-  "status": "FORGE_INTERESTING",
-  "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260928-fly0-matched-replacement-a",
-  "exact_prototype_head": "26c740b302b5c6eb2549eca4033a3e79618931a8",
-  "exact_prototype_tree": "f513f42e9a49a2cc7b3c04c6447ae0c41f5b1913",
-  "parent_durable_forge_handoff": "c637e0c348c5eaca5be64d8555366ad785b3733c",
-  "ci": {
-    "run_id": 36382942094,
-    "status": "completed",
-    "conclusion": "success",
-    "python_311": "success",
-    "python_313": "success"
-  },
-  "replacement_ladder": {
-    "variants": [
-      "structured",
-      "degree_preserving_rewired",
-      "random_sparse",
-      "ordinary_reactive"
-    ],
-    "ladder_surface_present": true,
-    "common_observation_action_gate": true,
-    "configured_event_budget_matched": true,
-    "feedback_delay_envelope_matched": true,
-    "topology_resource_envelope_matched_for_topology_variants": true,
-    "structured_trace": [
-      2,
-      1,
-      0,
-      -1
-    ],
-    "ordinary_reactive_trace": [
-      2,
-      1,
-      0,
-      -1
-    ],
-    "delay_over_budget_behavior": "FIRST_STEP_COMMITS_THEN_NEXT_MODULATION_FAILS_CLOSED",
-    "checkpoint_replay_exact_for_structured_and_reactive": true,
-    "checkpoint_variant_contract_bound": true
-  },
-  "remaining_comparator_blockers": [
-    "STRICT_INTERNAL_ACTIVITY_RESOURCE_COMPARABILITY"
-  ],
-  "activity_resource": {
-    "activity_instrumentation_commensurate_across_all": false,
-    "strict_activity_resource_match": false,
-    "topology_activity_basis": "topology_trace_events",
-    "reactive_activity_basis": "reactive_activation_events"
-  },
-  "ordinary_reduction": "REACTIVE_CONTROLLER_SUFFICIENT_FOR_BOUNDED_MOVEMENT_TASK",
-  "analyst_reconciliation": {
-    "current_generation": "EVA-20260928T125724+0900-R167-P0-RECURRENCE-FLY0-BOTTOMUP",
-    "current_head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
+  "generation_id": "FORGE-20260928T233700+0900-FLY0-LATERAL-SURFACE-DIAGNOSIS",
+  "produced_at": "2026-09-28T23:37:00+09:00",
+  "forge_id": "FORGE-FLY0-LATERAL-SURFACE-DIAGNOSIS",
+  "status": "FORGE_OBSERVATION",
+  "recommended_handoff": "FORGE_REPAIR_CONTINUATION",
+  "branch": "forge/20260928-fly0-lateral-surface-repair-a",
+  "exact_branch_head": "a89f243c13ae8d7fce029f1aeb8b261e51ee498a",
+  "diagnostic_commit": "f1a7c05075ab3179991ad558878885d7a0e66807",
+  "authoritative_history": "reports/fast_forge/history/2026-09-28/2337-fly0-lateral-surface-repair-diagnosis.md",
+  "analyst": {
+    "generation": "R168",
     "sb003_allocated": false,
-    "forge_side_status_now": "VERIFIED_REPLACEMENT_DELAY_ASSET_PENDING_ANALYST_RECONCILIATION"
+    "disposition": "FORGE_REPAIR_AND_REVERIFY_BEFORE_SYSTEM_BUILD_INPUT"
   },
-  "collision_check": {
-    "main_current_generation": "MAIN-20260928T141253+0900-PRIMARY-R174-M1-002-PR-CREATE-BLOCKED",
-    "main_owned_build": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
-    "relay_competing_allocation": false,
+  "main": {
+    "build": "M1-002",
+    "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "collision": false
+  },
+  "repair_diagnosis": {
+    "failing_variants": [
+      "rewired",
+      "random_sparse"
+    ],
+    "failure_class": "LATERAL_SENSORIMOTOR_SURFACE_NOT_PRESERVED_BY_COMPARATOR_RANDOMIZATION",
+    "repaired_source_published": false,
+    "repaired_ci_green": false,
+    "local_reconstruction_only": true,
+    "proposed_constraint": "PRESERVE_SOURCE_AND_TARGET_SIDE_WITH_ROLE_RESOURCE_CONSTRAINTS"
+  },
+  "source_repair_publication": {
+    "attempts": 5,
+    "attempts_1_to_4": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+    "attempt_5": "DIAGNOSTIC_NOTE_ONLY_SUCCESS",
+    "executable_repair_published": false
   },
   "directive_freshness": {
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "previous_active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "material_delta": false,
-    "applicable": [
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002",
-      "HUMAN-20260927-002",
-      "HUMAN-20260925-002"
-    ]
+    "material_delta": false
   },
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "status": "OPEN",
-    "source_write": "FIRST_ATTEMPT_SUCCESS",
-    "test_write": "ATTEMPT_5_SUCCESS_AFTER_4_PRE_GITHUB_REFUSALS",
-    "optional_design_note": "FAILED_CLOSED_AFTER_5_PRE_GITHUB_REFUSALS",
-    "interpretation": "PATH_DEPENDENT_INTERMITTENT_REFUSAL_OBSERVATION_ONLY_NO_ROOT_CAUSE"
+    "status": "OPEN"
   },
-  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no topology superiority, biological fidelity, energy efficiency, whole-system superiority, composition contribution, external validity, novelty, scientific credit or SB003 allocation.",
+  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no topology superiority, biological fidelity, efficiency, composition contribution, external validity, novelty, scientific credit or SB003 allocation.",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "scientific_credit": 0,
   "new_scientific_result": false,
-  "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-28/1435-fly0-matched-replacement.md"
+  "scheduler_state_changed": false
 }
