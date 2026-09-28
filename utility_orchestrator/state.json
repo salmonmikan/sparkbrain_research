@@ -1,159 +1,91 @@
 {
   "schema_version": 2,
-  "generation_id": "UTILITY-RECOVERY-20260928T123100+0900-R164-P0-MUTATION-DIAGNOSTIC-FAILED-CLOSED",
-  "produced_at": "2026-09-28T12:31:00+09:00",
+  "generation_id": "UTILITY-20260928T132440+0900-R165-P0-MUTATION-ROUTE-MATRIX",
+  "produced_at": "2026-09-28T13:24:40+09:00",
   "assignment_mode": "AUTONOMOUS_IDLE",
-  "status": "FAILED_CLOSED",
-  "autonomous_task_id": "UTILITY-RECOVERY-R164-P0-MUTATION-ROUTE-DIAGNOSTIC",
+  "status": "COMPLETED",
+  "autonomous_task_id": "UTILITY-20260928T1325+0900-P0-MUTATION-ROUTE-MATRIX",
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY_OPERATIONAL_DIAGNOSTIC_ONLY",
   "scientific_authority": "NONE",
-  "classification": "SCHEDULER_RUNTIME_GITHUB_MUTATION_RECURRENCE_OBSERVED_DIAGNOSTIC_BODY_NOT_STARTED",
+  "classification": "PRE_GITHUB_MUTATION_REFUSAL_PATH_DEPENDENT_ACTION_SKEWED",
   "directive_freshness": {
     "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "previous_directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "newly_active_or_materially_changed": [],
     "applicable_directives_read": [
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002",
-      "HUMAN-20260927-002"
-    ],
-    "dispositions": {
-      "HUMAN-20260928-001": "APPLIED_NONCOLLIDING_M1_002_CI_PROVENANCE_READBACK",
-      "HUMAN-20260928-002": "APPLIED_FLY0_SEPARATION_NO_SB003_NO_M1_MIXING",
-      "HUMAN-20260927-002": "APPLIED_UTILITY_PUBLICATION_FIVE_ATTEMPT_CEILING"
-    }
+      "HUMAN-20260925-002",
+      "HUMAN-20260927-002",
+      "HUMAN-20260928-001"
+    ]
   },
   "ownership_checks": {
-    "utility_assignment": "SCHEMA_V2_CLEAN_IDLE_REPORTED_AT_ORIGINAL_RUN",
-    "control_generation": "CTRL-R106_DURABLE_AT_ORIGINAL_RUN",
-    "analyst_generation": "EVA-R165_DURABLE_AT_ORIGINAL_RUN",
-    "main_generation": "MAIN-R171_REPORTED_AT_ORIGINAL_RUN",
-    "relay_state": "NO_COLLISION_REPORTED",
+    "utility_assignment": "SCHEMA_V2_CLEAN_IDLE",
+    "control_branch_head": "1b097bf1055d36f68e3d34cff212b3b720adde66",
+    "analyst_generation": "R167",
+    "analyst_branch_head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
+    "main_generation": "MAIN-20260928T131630+0900-PRIMARY-R173-M1-002-PR-CREATE-BLOCKED",
+    "main_reports_head": "7d1f1809c64a5223b128f2b6e693f4d6f4f4df90",
+    "relay_allocated": false,
     "m1_002_owner": "MAIN",
-    "utility_scope_overlap": false,
-    "collision_action": "OPERATIONAL_DIAGNOSTIC_ONLY"
+    "m1_002_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "utility_scope_overlap": false
   },
-  "m1_002_verification": {
-    "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
-    "required_base": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "branch": "system-build/m1-post-integration-robustness-20260928",
-    "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "parent": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
-    "changed_paths_count": 5,
-    "runtime_source_changed": false,
-    "prohibited_scope_change_observed": false,
-    "fixed_scenarios": {
-      "nominal_cycles": 64,
-      "checkpoint_cutpoints": [
-        1,
-        8,
-        31,
-        63
+  "diagnostic": {
+    "incident_id": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "repository_wide_outage_supported": false,
+    "pr_create_success_reference": {
+      "pr": 163,
+      "created_jst": "2026-09-28T07:19:36+09:00",
+      "merged_jst": "2026-09-28T07:22:38+09:00"
+    },
+    "m1_002_pr_create_failures": {
+      "main_generations": [
+        "R170",
+        "R171",
+        "R172",
+        "R173"
       ],
-      "fault_positions": [
-        1,
-        31,
-        63
-      ],
-      "fault_points": 7,
-      "identity_paths": [
-        "duplicate_receipt",
-        "conflicting_receipt_id",
-        "reused_event_id",
-        "pending_overlap",
-        "mismatched_pending_receipt"
-      ]
+      "attempts_per_generation": 5,
+      "total_observed_attempts": 20,
+      "failure_layer": "PRE_GITHUB_PLATFORM_REFUSAL",
+      "pr_exists": false
     },
-    "committed_acceptance_cycles": 267,
-    "maximum_committed_cycles": 512,
-    "exact_head_ci": {
-      "run_id": 36361950457,
-      "event": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "python_311": "success",
-      "python_313": "success"
+    "same_worker_contrast": {
+      "main_generation": "R173",
+      "pr_create_attempts_failed": 5,
+      "subsequent_ops_commit": "7d1f1809c64a5223b128f2b6e693f4d6f4f4df90"
     },
-    "focused_local_exact_tree": {
-      "command": "TMPDIR=/dev/shm python -m pytest -q tests/test_system_build_m1_robustness.py",
-      "conclusion": "success",
-      "tests_passed": 1
+    "utility_start_publication": {
+      "attempts_total": 3,
+      "attempts_1_2": "PRE_GITHUB_PLATFORM_REFUSAL",
+      "attempt_3": "SUCCESS",
+      "commit": "5e69b06a0170aaf562fb90c0d5a83efc5497c69c",
+      "readback": true
     },
-    "diff_check": "PASS",
-    "next_boundary": "FRESH_ANALYST_EXACT_HEAD_RECONCILIATION_BEFORE_PR_OR_MERGE"
+    "interpretation": "Branch-content publication remains possible but can be intermittently refused; PR creation shows sustained pre-GitHub failure. Exact runtime/platform root cause remains unknown.",
+    "control_recommendation": "Isolated Control-owned non-scientific PR-create canary plus simple branch-content canary."
   },
-  "build_classification": {
-    "built": true,
-    "bounded_functionally_verified": true,
-    "comparatively_supported": false,
-    "composition_contribution": "NOT_ESTABLISHED",
-    "scientifically_novel": false,
-    "scientific_credit": 0,
-    "evidentiary_status": "NON_EVIDENTIARY_BUILD"
-  },
-  "canonical_science": {
-    "new_scientific_result": false,
-    "scientific_execution": false,
-    "formal_allocation": "NO_ACTION",
-    "sb003_allocation": null
-  },
+  "result_path": "utility_orchestrator/results/2026-09-28/1324-r165-p0-mutation-route-matrix.md",
+  "result_commit": "79685618d46ec92e5f45a058ba51edd0ff318cec",
+  "start_path": "utility_orchestrator/results/2026-09-28/1325-r165-p0-mutation-route-matrix-start.md",
+  "stop_reason": "BOUNDED_DIAGNOSTIC_COMPLETE",
   "hard_floor": {
     "main_or_m1_branch_mutated": false,
     "pr_mutated": false,
     "workflow_dispatched": false,
+    "scheduler_changed": false,
     "scientific_execution": false,
-    "formal_or_heldout_executed": false,
     "scientific_ref_mutated": false,
-    "evidence_ref_mutated": false,
-    "analyst_state_mutated": false,
-    "main_state_mutated": false,
-    "control_state_mutated": false,
-    "scheduler_changed": false
+    "evidence_ref_mutated": false
   },
-  "refs_observed": {
-    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "control_durable_at_original_run": "c5156a7fbbe2439563ded358044673d258bec5c1",
-    "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "analyst_current_after_recovery": "46c93259af8ec986fd8465ed5f5cf8fe893cb2e5",
-    "main_reports_current_after_recovery": "1dedab2a37411efa4e3ae222255910fa8c82856e",
-    "methodology_current_after_recovery": "0102ca2c537a4fb9704f4b3d2def933d7d56f152"
-  },
-  "result_path": "utility_orchestrator/results/2026-09-28/1231-R164-p0-mutation-recurrence-recovery.md",
-  "stop_reason": "UTILITY_OWNED_START_PUBLICATION_INCOMPLETE_AFTER_5_ATTEMPTS_RECOVERED_AS_FAILED_CLOSED_RECORD",
-  "follow_up_recommendation": "CONTROL_REEVALUATE_P0_AS_SCHEDULER_RUNTIME_GITHUB_MUTATION_RECURRENCE",
   "publication": {
     "branch": "ops/utility-orchestrator-requests",
-    "mode": "RECOVERY_BACKFILL_ATOMIC_RESULT_STATE",
-    "attempt_limit": 5,
+    "start_publication_attempts": 3,
+    "final_result_publication_attempts": 2,
+    "state_update_attempt_number_within_final_purpose": 3,
     "force_push": false,
-    "completion_contract": "POST_COMMIT_INDEPENDENT_READBACK_REQUIRED",
-    "original_r164_start_publication": "FAILED_CLOSED_AFTER_5_ATTEMPTS"
-  },
-  "recovery": {
-    "recovery_backfill": true,
-    "original_scheduler_generation": "R164",
-    "original_payload_available": false,
-    "reconstruction_source": "user-visible unpersisted Utility run report in the current ChatGPT conversation",
-    "user_authorized": "2026-09-28 explicit authorization to reflect all unpersisted state",
-    "supersedes_durable_generation": "UTILITY-20260928T092746+0900-R163-M1-002-READINESS-VERIFIED",
-    "integrity_note": "Reconstructed operational state only; no scientific result or original unpublished payload is claimed."
-  },
-  "operational_diagnostic": {
-    "objective": "Distinguish repository-wide GitHub outage from scheduler/runtime mutation-route recurrence without touching MAIN-owned M1-002.",
-    "selected_task": "P0 mutation-route diagnostic",
-    "body_started": false,
-    "blocked_at": "UTILITY_OWNED_START_PUBLICATION",
-    "attempts_total": 5,
-    "attempt_1_to_4": "PRE_GITHUB_PLATFORM_REFUSAL",
-    "attempt_5": "ONE_GIT_BLOB_CREATED_THEN_PRE_GITHUB_REFUSAL_BEFORE_ATOMIC_COMMIT_REF_UPDATE",
-    "atomic_commit_created": false,
-    "branch_ref_updated": false,
-    "original_branch_head_unchanged": "74f9442b450e3b9c3571a8ac5190fd9c324a84e2",
-    "interpretation": "Repository-wide GitHub outage not supported; intermittent/path-dependent scheduler runtime mutation refusal supported.",
-    "control_re_evaluation_warranted": true
+    "completion_contract": "FINAL_RESULT_AND_STATE_READBACK_REQUIRED"
   }
 }
