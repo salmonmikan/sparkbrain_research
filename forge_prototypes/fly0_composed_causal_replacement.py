@@ -267,10 +267,29 @@ class CausalRow:
     intact_trace: tuple[int, ...]
     intact_reached_target: bool
     intact_replay_exact: bool
+    intact_rejection_reason: str | None
     observation_cut_trace: tuple[int, ...]
     observation_cut_reason: str | None
     feedback_cut_trace: tuple[int, ...]
     feedback_cut_reason: str | None
+
+    @property
+    def causal_probe_eligible(self) -> bool:
+        return self.intact_reached_target
+
+    @property
+    def observation_cut_causal(self) -> bool:
+        return (
+            self.causal_probe_eligible
+            and self.observation_cut_trace != self.intact_trace
+        )
+
+    @property
+    def feedback_cut_causal(self) -> bool:
+        return (
+            self.causal_probe_eligible
+            and self.feedback_cut_trace != self.intact_trace
+        )
 
 
 def _trace(initial: WorldState, results: tuple[StepResult, ...]) -> tuple[int, ...]:
@@ -313,6 +332,7 @@ def _capture_row(variant: Variant) -> CausalRow:
         intact_reached_target=reached_target,
         intact_replay_exact=first_tokens
         == tuple(item.after.token() for item in second),
+        intact_rejection_reason=_first_rejection(first),
         observation_cut_trace=_trace(initial, observation_results),
         observation_cut_reason=_first_rejection(observation_results),
         feedback_cut_trace=_trace(initial, feedback_results),
@@ -322,24 +342,43 @@ def _capture_row(variant: Variant) -> CausalRow:
 
 def build_composed_causal_report() -> dict[str, object]:
     rows = tuple(_capture_row(variant) for variant in _VARIANTS)
+    functional = tuple(
+        row.variant for row in rows if row.intact_reached_target
+    )
+    incapable = tuple(
+        row.variant for row in rows if not row.intact_reached_target
+    )
+    composed_causal = tuple(
+        row.variant
+        for row in rows
+        if row.observation_cut_causal and row.feedback_cut_causal
+    )
+    remaining: list[str] = []
+    if "rewired" in incapable:
+        remaining.append("REWIRED_BASELINE_FUNCTIONAL_CAPABILITY_ABSENT")
+    if "random_sparse" in incapable:
+        remaining.append("RANDOM_SPARSE_BASELINE_FUNCTIONAL_CAPABILITY_ABSENT")
+    if len(composed_causal) != len(_VARIANTS):
+        remaining.append(
+            "FOUR_WAY_COMPOSED_CAUSAL_COMPARISON_BLOCKED_BY_BASELINE_CAPABILITY"
+        )
+
     return {
         "status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
         "rows": {row.variant: asdict(row) for row in rows},
-        "all_variants_intact_reach_target": all(
-            row.intact_reached_target for row in rows
-        ),
+        "functional_variants": functional,
+        "baseline_incapable_variants": incapable,
+        "composed_causal_variants": composed_causal,
+        "replacement_ladder_functionally_matched": not incapable,
         "all_variants_replay_exact": all(row.intact_replay_exact for row in rows),
-        "observation_cut_causal_across_all_variants": all(
-            row.observation_cut_trace != row.intact_trace for row in rows
-        ),
-        "feedback_cut_causal_across_all_variants": all(
-            row.feedback_cut_trace != row.intact_trace for row in rows
-        ),
+        "remaining_gap_codes": tuple(remaining),
         "claim_boundary": (
-            "This is a bounded Forge engineering diagnostic. It does not "
-            "establish biological fidelity, topology necessity/superiority, "
-            "compute or energy efficiency, composition contribution, novelty, "
-            "external validity, scientific credit, or SB003 allocation."
+            "This is a bounded Forge engineering diagnostic. Baseline failure "
+            "of a replacement prevents attributing a cut effect to that edge. "
+            "It does not establish biological fidelity, topology necessity or "
+            "superiority, compute or energy efficiency, composition "
+            "contribution, novelty, external validity, scientific credit, or "
+            "SB003 allocation."
         ),
     }
 
