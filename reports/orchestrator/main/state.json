@@ -1,29 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260928T072510+0900-PRIMARY-R169-M1-INTEGRATED",
-  "generated_at": "2026-09-28T07:25:10+09:00",
-  "status": "SYSTEM_BUILD_M1_INTEGRATED_WAIT_ANALYST_POST_INTEGRATION_RECONCILIATION",
+  "generation_id": "MAIN-20260928-PRIMARY-R170-M1-002-PR-CREATE-BLOCKED",
+  "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
-  "build_id": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
-  "analyst_generation_id": "EVA-20260928T070312+0900-R162-M1-EXACT-HEAD-PR-MERGE",
-  "analyst_authority": "analysis/orchestrator/history/2026-09-28/0703-R162.md",
-  "analyst_authority_scope": "OPEN_EXACT_HEAD_PR_THEN_MERGE_IF_ALL_CONDITIONS_HOLD_THEN_STOP_FOR_POST_INTEGRATION_RECONCILIATION",
-  "prior_main_generation": "MAIN-20260928T061500+0900-PRIMARY-R168-M1-WAIT-ANALYST",
-  "refs_observed": {
-    "main_policy_before_merge": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
-    "main_after_merge": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "merged_tree": "7c5c86300a0097cd20b76076eeecb748b3c11134",
-    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "human_directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "evidence_analyst": "6b07d54f009486a88d1a8427cd3ae3b1cf7fa1ea",
-    "control": "dbca69cc12a4eb3a2e57c5ccf9aa00d38ed20126",
-    "main_reports_before": "a821aa4314d7b9501159462374931150d955405e",
-    "source_head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
-    "source_tree": "10d252a52abdafed7806fc81b39ee8ba126713a9"
-  },
+  "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
+  "analyst_generation_id": "EVA-20260928T100231+0900-R165-M1-002-EXACT-HEAD-PR-MERGE",
+  "analyst_authority_scope": "EXACT_HEAD_ACCEPTED_PR_MERGE_AUTHORIZED",
   "directive_freshness": {
-    "prior_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "current_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "current_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "newly_active_or_materially_changed": [],
@@ -34,37 +18,27 @@
       "HUMAN-20260926-004"
     ]
   },
+  "refs_observed": {
+    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "m1_002_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
+    "analyst": "64dc3c5105b9f1a754f9d1dfdc9b79072e54f2fa",
+    "main_reports_before": "53890fc113ba4e9c0680e138376485b11bf0a849"
+  },
   "integration": {
-    "branch": "system-build/ipm1-continuous-revision-20260928",
-    "exact_source_head": "512f21a6134b5d68351e33a7c6eecb8fa3e4550c",
-    "exact_source_tree": "10d252a52abdafed7806fc81b39ee8ba126713a9",
-    "pr_number": 163,
-    "pr_url": "https://github.com/salmonmikan/sparkbrain_research/pull/163",
-    "pr_base_at_creation": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
-    "mergeability_before_merge": {
-      "mergeable": true,
-      "mergeable_state": "clean"
+    "branch": "system-build/m1-post-integration-robustness-20260928",
+    "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "exact_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
+    "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "changed_paths_count": 5,
+    "runtime_source_changed": false,
+    "push_ci": {
+      "run_id": 36361950457,
+      "status": "completed",
+      "conclusion": "success"
     },
-    "pr_ci": {
-      "run_id": 36354898589,
-      "conclusion": "success",
-      "python_311": "success",
-      "python_313": "success"
-    },
-    "merge_method": "squash",
-    "merge_commit": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "merged_tree": "7c5c86300a0097cd20b76076eeecb748b3c11134",
-    "merge_parent": "fe2bd06139fa36b7a8b28d55bebd795db924749f",
-    "post_merge_ci": {
-      "run_id": 36355074172,
-      "conclusion": "success",
-      "python_311": "success",
-      "python_313": "success"
-    },
-    "source_head_unchanged": true,
-    "substantive_conflict_repair": false,
-    "scope_or_claim_change": false,
-    "changed_paths_count": 9
+    "pr_created": false,
+    "merge_performed": false
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -73,51 +47,24 @@
   "scientifically_novel": false,
   "scientific_credit": 0,
   "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-  "control": {
-    "generation_id": "CTRL-20260928T065013+0900-R104-M1-WAIT-ANALYST",
-    "disposition": "M1_COMPLETE_WAITING_ANALYST_EXACT_HEAD_RECONCILIATION",
-    "satisfied_by_analyst_generation": "R162"
-  },
-  "relay_collision": {
-    "desired": "DISABLED",
-    "actual": "DISABLED",
-    "competing_allocation": false
-  },
   "action": {
-    "code_changed": false,
-    "source_branch_changed": false,
-    "pr_created": true,
-    "pr_number": 163,
-    "merge_performed": true,
-    "workflow_dispatched": false,
-    "automatic_pr_workflow_observed": 36354898589,
-    "automatic_post_merge_workflow_observed": 36355074172,
-    "result_bearing_execution_performed": false,
-    "result_bearing_invocations": 0
-  },
-  "new_build_result": true,
-  "new_scientific_result": false,
-  "stop_reason": "R162_POST_MERGE_STOP_FOR_ANALYST_RECONCILIATION",
-  "next_action": "EVIDENCE_ANALYST_POST_INTEGRATION_RECONCILIATION_OF_PR_163_MERGE_59FC994B_AND_CI_36355074172",
-  "scheduler_state_changed": false,
-  "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-28/0725-r169-primary-m1-integrated.md",
-  "publication": {
-    "main_state_branch": "ops/orchestrator-run-report",
-    "main_state_branch_head_before": "a821aa4314d7b9501159462374931150d955405e",
-    "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
-    "attempt": 1,
+    "pull_request_creation_attempts": 5,
     "maximum_attempts": 5,
-    "commit_record_semantics": "INTENT_RECORDED_IN_COMMIT_COMPLETION_REQUIRES_EXTERNAL_READBACK"
+    "failure_layer": "PRE_GITHUB_PLATFORM_REFUSAL",
+    "repository_mutation_performed": false,
+    "result_bearing_execution_performed": false
   },
+  "new_build_result": false,
+  "new_scientific_result": false,
+  "stop_reason": "PR_CREATION_PRE_GITHUB_REFUSAL_AFTER_5_ATTEMPTS",
+  "next_action": "REFETCH_AUTHORITY_AND_STATE_NEXT_RUN_THEN_RETRY_IF_STILL_AUTHORIZED",
+  "scheduler_state_changed": false,
   "hard_floor": {
     "experiments_dispatched": false,
-    "formal_workflow_dispatched": false,
     "consumed_identity_changed": false,
     "terminal_object_reopened": false,
     "immutable_evidence_changed": false,
     "held_out_access": false,
-    "scheduler_changes": false,
     "fly0_mixed": false,
     "sb003_allocated": false
   }
