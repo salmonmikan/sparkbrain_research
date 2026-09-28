@@ -1,65 +1,17 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-RECOVERY-20260928T123100+0900-R108-P0-MUTATION-RECURRENCE-BACKFILL",
-  "produced_at": "2026-09-28T12:31:00+09:00",
+  "generation_id": "CTRL-20260928T145000+0900-R110-P0-PR-CREATE-CANARY-BOUND",
+  "produced_at": "2026-09-28T14:50:00+09:00",
   "mode": "CONTROL_BRAIN",
   "role_resolution": {
-    "canonical_slot": "RECOVERY_BACKFILL",
-    "resolution_source": "DIRECT_USER_AUTHORIZED_MANUAL_RECONCILIATION",
-    "drift_seconds": null
+    "canonical_slot": "14:50",
+    "resolution_source": "EARLY_GRACE",
+    "actual_start": "2026-09-28T14:47:52+09:00"
   },
-  "authority": {
-    "main": {
-      "ref": "main",
-      "head": "59fc994b39d0ba02682e972161bb46801592d25b"
-    },
-    "directive_index": {
-      "ref": "ops/human-directives",
-      "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-      "path": "ops/human_directives/active.md",
-      "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-      "delta_from_prior": "NONE"
-    },
-    "analyst": {
-      "ref": "ops/evidence-analyst-handoff",
-      "head": "46c93259af8ec986fd8465ed5f5cf8fe893cb2e5",
-      "generation": "EVA-20260928T120024+0900-R166-M1-002-FLY0-ABLATION"
-    },
-    "main_reports": {
-      "ref": "ops/orchestrator-run-report",
-      "head": "1dedab2a37411efa4e3ae222255910fa8c82856e",
-      "latest_generation": "R172"
-    },
-    "methodology": {
-      "ref": "ops/methodology-calibration-audit",
-      "head": "0102ca2c537a4fb9704f4b3d2def933d7d56f152",
-      "latest_generation": "R140_RECOVERY_BACKFILL"
-    },
-    "external_science": {
-      "ref": "ops/external-research-audit-handoff",
-      "head": "3d19f54227cfaad7b152b0b44eefb47c951a0916"
-    },
-    "utility": {
-      "ref": "ops/utility-orchestrator-requests",
-      "head": "df5de71f2f5788272d04001a9e6cf3f9957a9920",
-      "latest_generation": "R164_RECOVERY_BACKFILL"
-    },
-    "control_before": {
-      "ref": "ops/control-brain-handoff",
-      "head": "c5156a7fbbe2439563ded358044673d258bec5c1"
-    }
-  },
-  "directives": {
-    "new_or_materially_changed": [],
-    "dispositions": {
-      "HUMAN-20260925-002": "ACCEPT_RETAIN_CLOSED_P0_MONITORING",
-      "HUMAN-20260926-003": "ACCEPT_APPLIED_FLEET_RESTORED_BOUNDED_MONITORING",
-      "HUMAN-20260926-004": "ACCEPT_SYSTEM_BUILD_REVIEW_OPTIONAL",
-      "HUMAN-20260927-002": "ACCEPT_FIVE_ATTEMPT_LIMIT",
-      "HUMAN-20260928-001": "ACCEPT_WITH_MODIFICATION_M1_INTEGRATED_CONTINUE_M1_002",
-      "HUMAN-20260928-002": "ACCEPT_WITH_MODIFICATION_FORGE_PARALLEL_NO_SB003"
-    },
-    "manual_recovery_authorization": "APPLIED_STATE_BACKFILL_ONLY_NO_SCHEDULER_DEFINITION_CHANGE"
+  "directive_index": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "delta": false
   },
   "science": {
     "total": 35,
@@ -69,174 +21,73 @@
     "consumed_formal_identities": 8,
     "new_result": false
   },
-  "system_build": {
-    "milestone_1": {
-      "status": "INTEGRATED_ACCEPTED_NON_EVIDENTIARY_BUILD",
-      "merge_head": "59fc994b39d0ba02682e972161bb46801592d25b",
-      "pull_request": 163,
-      "built": true,
-      "bounded_functionally_verified": true,
-      "comparative_support": false,
-      "composition_contribution": "NOT_ESTABLISHED",
-      "novelty": false,
-      "credit": 0
-    },
-    "current_allocation": {
-      "id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
-      "owner": "MAIN",
-      "required_base": "59fc994b39d0ba02682e972161bb46801592d25b",
-      "required_branch": "system-build/m1-post-integration-robustness-20260928",
-      "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-      "tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
-      "status": "EXACT_HEAD_AUTHORIZED_PR_ROUTE_BLOCKED_OPERATIONAL",
-      "ci": {
-        "run_id": 36361950457,
-        "event": "push",
-        "status": "completed",
-        "conclusion": "success",
-        "python_311": "success",
-        "python_313": "success"
-      },
-      "next_boundary": "MAIN_MAY_RETRY_EXACT_HEAD_PR_AFTER_FRESH_STATE_CHECK_UNDER_R166_AUTHORITY",
-      "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-      "scientific_credit": 0,
-      "pr_open": false
-    }
+  "analyst": {
+    "durable_generation": "R167",
+    "head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
+    "r168_request_present": false
   },
-  "integration_graph": {
-    "completed": [
-      "M1 integration",
-      "post-merge CI",
-      "M1-002 exact-base implementation",
-      "M1-002 exact-head push CI",
-      "Evidence Analyst exact-head reconciliation R166",
-      "FLY-0 interaction-ablation engineering handoff"
-    ],
-    "critical_path": [
-      "MAIN fresh-state retry of exact-head M1-002 PR creation",
-      "conditional merge only if R166 conditions remain satisfied",
-      "post-merge exact-head CI and provenance",
-      "fresh Analyst post-integration reconciliation"
-    ],
-    "parallel": [
-      "Control P0 mutation-route recurrence management",
-      "Forge activity/resource comparability",
-      "Forge matched replacement ladder",
-      "Forge bottom-up causal integration",
-      "Utility non-colliding support"
-    ],
-    "blockers": [
-      "M1_002_PR_MUTATION_ROUTE_BLOCKED"
-    ],
-    "next_milestones": [
-      "M1-002 exact-head PR retry",
-      "conditional merge and post-merge CI",
-      "fresh post-integration reconciliation",
-      "next bounded integration allocation"
-    ]
-  },
-  "fly0": {
-    "status": "NON_EVIDENTIARY_NONCANONICAL_ENGINEERING_HANDOFF_DURABLE",
-    "interaction_ablation_handoff": "1f455853b58fdad0be4cae42499b0df41dbee20a",
-    "engineering_gap": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT",
-    "common_interface_exposure_matched": true,
-    "activity_resource_exposure_matched": false,
-    "matched_replacement_ladder_complete": false,
-    "interaction_ablation_matrix_present": true,
-    "system_build_admission": false,
-    "sb003_allocated": false,
-    "m1_dependency": false,
-    "comparative_support": false,
-    "composition_contribution": "NOT_ESTABLISHED",
-    "scientifically_novel": false,
+  "m1_002": {
+    "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "ci_run": 36361950457,
+    "ci": "success",
+    "pr_open": false,
+    "main_generation": "R174",
     "scientific_credit": 0
   },
+  "fly0": {
+    "handoff": "c637e0c348c5eaca5be64d8555366ad785b3733c",
+    "verified_prototype": "8e0b7c859a1f96fbf303173ed6dc974938cca8cc",
+    "ci_run": 36378701624,
+    "bottom_up_gap": "CLOSED_FOR_BOUNDED_PROTOTYPE",
+    "activity_resource_comparability": false,
+    "matched_replacement_ladder_complete": false,
+    "sb003_allocated": false,
+    "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL"
+  },
   "fleet": {
-    "enabled_green": [
-      "CONTROL",
-      "EVIDENCE_ANALYST",
-      "PRIMARY_MAIN",
-      "FAST_FORGE",
-      "UTILITY",
-      "METHODOLOGY",
-      "EXTERNAL_SCIENCE",
-      "STATE_BRIEF"
-    ],
-    "enabled_count": 8,
-    "relay": {
-      "state": "DISABLED_INTENTIONAL",
-      "restart_condition_met": false
-    },
-    "deprecated_blue": "DISABLED_ROLLBACK_HISTORY_ONLY",
-    "standalone_steward": "DISABLED_REPLACED_BY_TIME_MULTIPLEXED_CONTROL",
-    "completed_canary": "DISABLED_COMPLETE",
-    "scheduler_change": "NONE_DURING_RECOVERY_BACKFILL"
+    "enabled_managed_count": 8,
+    "no_work_policy": true,
+    "work_backed_enabled_detected": false,
+    "backend_provenance_exposed": false,
+    "relay": "DISABLED_INTENTIONAL",
+    "scheduler_changes": "NONE"
   },
-  "scheduler_health": {
-    "classification": "P0_GITHUB_MUTATION_RECURRENCE_OPEN",
-    "prior_yellow_observe_resolved": false,
-    "material_definition_drift": false,
-    "incident": true,
-    "incident_id": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "action": "BOUNDED_RECOVERY_AND_FRESH_STATE_RETRY_WITHOUT_SCHEDULER_REDEFINITION"
-  },
-  "persistence": {
-    "p0_incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "predecessor_incident": "INC-GITHUB-PERSISTENCE-20260925-001",
-    "predecessor_status": "CLOSED_P0_RECOVERED_DO_NOT_REOPEN_IN_PLACE",
-    "status": "OPEN_RECURRENCE_RECONCILED",
-    "active_pointer_debt": false,
+  "p0": {
+    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "status": "OPEN",
+    "classification": "PRE_GITHUB_MUTATION_REFUSAL_PATH_DEPENDENT_ACTION_SKEWED",
     "repository_wide_outage_supported": false,
-    "scheduler_runtime_mutation_recurrence_supported": true,
-    "observed_streams": [
-      "MAIN PR creation: repeated pre-GitHub refusal",
-      "Evidence Analyst persistence: intermittent pre-GitHub refusal with later success",
-      "Utility R164 start publication: five-attempt failure with partial blob creation",
-      "Methodology R140 original publication: five-attempt pre-GitHub failure",
-      "Control R107/R108 publication: exhausted attempts without ref update"
-    ],
-    "retained_hardening": [
-      "five total attempts per authorized publication purpose",
-      "fresh head/state before retry",
-      "atomic multi-file Git-data commit where supported",
-      "non-force ref update",
-      "independent readback",
-      "append-only history as durable authority"
-    ],
-    "recovery_backfill_publication": "PENDING_READBACK_AT_CONTENT_GENERATION"
-  },
-  "blue_green": {
-    "action": "NONE_REQUIRED_FOR_THIS_BACKFILL",
-    "green_active": true,
-    "blue_disabled": true
+    "canary": {
+      "branch": "ops/p0-pr-create-canary-20260928-1447",
+      "content_write": {
+        "attempts": 3,
+        "pre_github_failures": 2,
+        "success_attempt": 3,
+        "head": "8a275b4b08ed5e5d712972d0603e4e266cb1bee1",
+        "readback": true
+      },
+      "pr_create": {
+        "attempts": 5,
+        "pre_github_failures": 5,
+        "pr_created": false,
+        "fresh_state_each_retry": true
+      }
+    },
+    "control_pointer_debt_before": true,
+    "control_pointer_debt_after": "CLOSED_BY_R110_IF_READBACK_VERIFIES"
   },
   "hard_floor": {
     "science_system_build_separation": true,
-    "relay_ownership_respected": true,
-    "review_not_a_system_build_gate": true,
     "consumed_identity_changed": false,
     "immutable_evidence_changed": false,
-    "scheduler_changed": false
+    "scheduler_changed": false,
+    "work_mode_used": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-28/1231-R108-recovery-backfill.md",
+  "history_path": "analysis/control_brain/history/2026-09-28/1450-R110.md",
   "publication": {
     "branch": "ops/control-brain-handoff",
-    "head_before": "c5156a7fbbe2439563ded358044673d258bec5c1",
+    "head_before": "1b097bf1055d36f68e3d34cff212b3b720adde66",
     "atomic": true,
-    "attempt_limit": 5,
-    "completion_contract": "POST_COMMIT_INDEPENDENT_READBACK_REQUIRED",
-    "recovery_backfill": true
-  },
-  "recovery": {
-    "recovery_backfill": true,
-    "reconstructed_generations": [
-      "R107",
-      "R108"
-    ],
-    "original_payload_available": false,
-    "reconstruction_source": "user-visible unpersisted Control run reports in the current ChatGPT conversation",
-    "user_authorized": "2026-09-28 explicit authorization to reflect all unpersisted state",
-    "supersedes_durable_generation": "CTRL-20260928T095119+0900-R106-M1-002-CI-READY-ANALYST",
-    "integrity_note": "Operational recovery reconstruction only. It does not claim byte-for-byte recovery of the original unpublished R107/R108 payloads."
+    "attempt_limit": 5
   }
 }
