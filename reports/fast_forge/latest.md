@@ -1,11 +1,23 @@
-# Fast Forge latest — FLY-0 bottom-up feedback closure
+# Fast Forge latest — FLY-0 matched replacement and delay envelope
 
-**Status:** `FORGE_INTERESTING / SYSTEM_BUILD_INPUT` — still `NON_EVIDENTIARY / NONCANONICAL`.
+**Status:** `FORGE_INTERESTING / SYSTEM_BUILD_INPUT` — still
+`NON_EVIDENTIARY / NONCANONICAL`.
 
-Exact verified prototype `8e0b7c859a1f96fbf303173ed6dc974938cca8cc` repairs the prior lint-red source-only prototype, adds focused tests/docs, and binds checkpoint semantics across the observation/feedback ablations. CI `36378701624` passed on Python 3.11 and 3.13.
+Exact verified prototype `26c740b302b5c6eb2549eca4033a3e79618931a8`
+adds structured, degree-preserving rewired, random-sparse, and ordinary reactive
+variants behind the same observation/action gate, configured event budget, and
+one-step logical feedback-delay envelope. CI `36382942094` passed on Python
+3.11 and 3.13.
 
-For the bounded wrapper, the local Observation payload and prior LocalFeedback are now causally consumed: observation cut fails closed before progress, while feedback cut permits the first step and blocks the next descending modulation. The intact loop still reaches the target with trace `2 -> 1 -> 0 -> -1`, and checkpoint/replay is exact.
+Structured and ordinary reactive variants both reach the bounded target with
+trace `2 -> 1 -> 0 -> -1`. A delay-over-budget perturbation fails closed after
+the first committed step, and checkpoint semantics bind replacement variant,
+event budget, delay and delay budget.
 
-This closes the Forge-side `BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT` gap for this prototype, pending Evidence Analyst reconciliation. It does **not** establish fly-like topology necessity or superiority. Ordinary reactive control remains sufficient for the movement task.
+The replacement ladder and logical-delay comparison surface are now present,
+but strict internal activity/resource comparability remains unresolved because
+topology trace events and reactive activation events are not commensurate.
 
-Activity/resource comparability and the complete matched replacement ladder remain unresolved. SB003 is not allocated. No scientific result or scientific credit is created.
+Ordinary reactive control remains sufficient for the bounded movement task.
+No topology superiority, biological fidelity, efficiency, scientific credit,
+or SB003 allocation is established.
