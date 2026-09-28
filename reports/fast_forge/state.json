@@ -1,50 +1,74 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260928T233700+0900-FLY0-LATERAL-SURFACE-DIAGNOSIS",
-  "produced_at": "2026-09-28T23:37:00+09:00",
-  "forge_id": "FORGE-FLY0-LATERAL-SURFACE-DIAGNOSIS",
-  "status": "FORGE_OBSERVATION",
-  "recommended_handoff": "FORGE_REPAIR_CONTINUATION",
+  "generation_id": "FORGE-20260929T024200+0900-FLY0-SEMANTIC-CHECKPOINT-BINDING-GREEN",
+  "produced_at": "2026-09-29T02:42:00+09:00",
+  "forge_id": "FORGE-FLY0-SEMANTIC-CHECKPOINT-BINDING",
+  "status": "FORGE_INTERESTING",
+  "recommended_handoff": "SYSTEM_BUILD_INPUT",
   "branch": "forge/20260928-fly0-lateral-surface-repair-a",
-  "exact_branch_head": "a89f243c13ae8d7fce029f1aeb8b261e51ee498a",
-  "diagnostic_commit": "f1a7c05075ab3179991ad558878885d7a0e66807",
-  "authoritative_history": "reports/fast_forge/history/2026-09-28/2337-fly0-lateral-surface-repair-diagnosis.md",
+  "exact_source_head": "f93483b927470f48a311fe9ef711ca770648da7c",
+  "authoritative_history": "reports/fast_forge/history/2026-09-29/0242-fly0-semantic-checkpoint-binding-green.md",
   "analyst": {
     "generation": "R168",
+    "head": "266864682894af7745156ec899da3377cacc18fb",
     "sb003_allocated": false,
     "disposition": "FORGE_REPAIR_AND_REVERIFY_BEFORE_SYSTEM_BUILD_INPUT"
   },
+  "control": {
+    "durable_append_only_generation": "R116",
+    "branch_head": "5507f1d8588f112cad720c1d638e8675c8e8fac8"
+  },
   "main": {
+    "generation": "R181",
     "build": "M1-002",
     "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "relay_allocated": false,
     "collision": false
   },
-  "repair_diagnosis": {
-    "failing_variants": [
-      "rewired",
-      "random_sparse"
-    ],
-    "failure_class": "LATERAL_SENSORIMOTOR_SURFACE_NOT_PRESERVED_BY_COMPARATOR_RANDOMIZATION",
-    "repaired_source_published": false,
-    "repaired_ci_green": false,
-    "local_reconstruction_only": true,
-    "proposed_constraint": "PRESERVE_SOURCE_AND_TARGET_SIDE_WITH_ROLE_RESOURCE_CONSTRAINTS"
+  "fly0": {
+    "repair_green": true,
+    "semantic_checkpoint_binding": true,
+    "checkpoint_schema_version": 2,
+    "semantic_surface_version": "fly0-semantic-surface-v1",
+    "semantic_surface_fingerprint": "b09d5d2f3cc88c80fa6d0e785a18e8a402b8b149d9ed1d22543028c717798063",
+    "topology_fingerprint_bound": true,
+    "randomization_seed_bound": true,
+    "causal_cut_contracts_bound": true,
+    "four_way_bounded_functional_acceptance": true,
+    "strict_internal_activity_resource_comparability": false,
+    "scientific_credit": 0
   },
-  "source_repair_publication": {
-    "attempts": 5,
-    "attempts_1_to_4": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "attempt_5": "DIAGNOSTIC_NOTE_ONLY_SUCCESS",
-    "executable_repair_published": false
+  "ci": {
+    "run_id": 36459501642,
+    "head": "f93483b927470f48a311fe9ef711ca770648da7c",
+    "python_311": "success",
+    "python_313": "success",
+    "lint": "success",
+    "local_readiness": "success",
+    "tests": "success",
+    "bundle_validation": "success"
+  },
+  "methodology": {
+    "generation": "R146",
+    "head": "366c1d692ca74e01616d5957b489d852f795e144"
+  },
+  "external_science": {
+    "theory": "R19",
+    "literature": "R48",
+    "head": "2227cad77817a62a6e5fe624f5772b05b1c5572b"
   },
   "directive_freshness": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "material_delta": false
   },
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "status": "OPEN"
+    "status": "OPEN",
+    "source_publication_attempts": 1,
+    "source_publication_result": "SUCCESS"
   },
-  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no topology superiority, biological fidelity, efficiency, composition contribution, external validity, novelty, scientific credit or SB003 allocation.",
+  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no SB003 allocation, topology superiority/necessity, biological fidelity/equivalence, efficiency, composition contribution, whole-system superiority, external validity, novelty or scientific credit.",
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "scientific_credit": 0,
   "new_scientific_result": false,
