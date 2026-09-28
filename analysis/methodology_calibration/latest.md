@@ -1,17 +1,17 @@
-# SparkBrain Methodology Calibration Audit — Latest R144
+# SparkBrain Methodology Calibration Audit — Latest R145
 
 - schema_version: `2`
-- generation_id: `METHCAL-20260928T222308+0900-R144-P0-PR-ACTION-CROSS-CONTEXT-STABLE`
-- generated_at: `2026-09-28T22:23:08+09:00`
-- history_path: `analysis/methodology_calibration/history/2026-09-28/2223-R144-p0-pr-action-cross-context-stable.md`
+- generation_id: `METHCAL-20260929T001532+0900-R145-FLY0-COMPARATOR-SEMANTIC-SURFACE`
+- generated_at: `2026-09-29T00:15:32+09:00`
+- history_path: `analysis/methodology_calibration/history/2026-09-29/0015-R145-fly0-comparator-semantic-surface.md`
 - overall_classification: `WELL_CALIBRATED`
-- material_change: `false`
+- material_change: `true`
 - new_scientific_result: `false`
 
-No methodology gate changed from R143.
+FLY-0 has a material comparator-fairness clarification. Current head `a3c50403f7c7863b8a78b5ce8f3937eee1113215` is CI-green only because it now exposes the rewired/random-sparse baseline incapability; it is not a repaired four-way acceptance.
 
-M1-002 remains bounded-functionally verified and blocked by an operational PR-creation route. The Utility isolated canary now reproduces PR-create failure outside MAIN while branch/file writes succeed, strengthening the action/path diagnosis without creating a methodology gate.
+The concrete defect is that the structured topology preserves bilateral left/right sensorimotor surfaces while the rewired/random-sparse controls currently preserve role/resource summaries without preserving source/target side. This conflates topology change with task-interface change. Prospectively, comparator randomization must preserve the task-relevant input/output semantic surface in addition to the declared degree/resource envelope.
 
-Durable Analyst remains R167, so SB003 is still unallocated. FLY-0 remains claim-typed: ordinary reactive control preserves the bounded-task reduction; strict native activity/resource comparability is required for strong efficiency/resource/topology claims, not ordinary NON_EVIDENTIARY integration. The CPython common-work counter remains SOURCE_ONLY.
+Analyst R168 correctly keeps SB003 unallocated and routes the defect to Forge repair. This is ordinary known-defect handling, not a mandatory review gate. M1-002 remains independently blocked only by the operational PR-create path. Strict internal activity/resource commensurability remains claim-typed and is not a default gate for ordinary NON_EVIDENTIARY integration.
 
-Control append-only R114 is current authority despite moving latest/state remaining at R112; this is operational pointer debt only. Scientific hard floors and zero-credit BUILD/Forge boundaries are unchanged.
+Canonical science and all one-way hard floors are unchanged.
