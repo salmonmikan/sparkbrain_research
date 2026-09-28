@@ -11,6 +11,7 @@ import json
 import platform
 import sys
 from dataclasses import asdict, dataclass
+from hashlib import sha256
 from pathlib import Path
 from types import FrameType
 from typing import Literal
@@ -24,13 +25,41 @@ from forge_prototypes.fly0_matched_replacement import (
 
 WorkBasis = Literal["cpython_opcode_events_forge_path"]
 
-_ALLOWED_RUNTIME_FILES = frozenset(
-    {
+_RUNTIME_DIR = Path(__file__).resolve().parent
+_ALLOWED_RUNTIME_PATHS = frozenset(
+    (_RUNTIME_DIR / name).resolve()
+    for name in (
         "fly0_hierarchical_loop.py",
         "fly0_matched_replacement.py",
         "fly0_topology_probe.py",
-    }
+    )
 )
+
+
+def _runtime_path_eligible(filename: str) -> bool:
+    """Match only exact resolved Forge runtime source paths."""
+    try:
+        return Path(filename).resolve() in _ALLOWED_RUNTIME_PATHS
+    except (OSError, RuntimeError):
+        return False
+
+
+def _runtime_source_manifest() -> tuple[tuple[str, str], ...]:
+    """Bind the measurement identity to the measured source bytes."""
+    return tuple(
+        (path.name, sha256(path.read_bytes()).hexdigest())
+        for path in sorted(_ALLOWED_RUNTIME_PATHS)
+    )
+
+
+def _runtime_fingerprint() -> str:
+    payload = {
+        "implementation": platform.python_implementation(),
+        "version": platform.python_version(),
+        "cache_tag": sys.implementation.cache_tag,
+        "source_sha256": dict(_runtime_source_manifest()),
+    }
+    return json.dumps(payload, sort_keys=True, separators=(",", ":"))
 
 
 class _OpcodeCounter:
@@ -41,7 +70,7 @@ class _OpcodeCounter:
 
     @staticmethod
     def _eligible(frame: FrameType) -> bool:
-        return Path(frame.f_code.co_filename).name in _ALLOWED_RUNTIME_FILES
+        return _runtime_path_eligible(frame.f_code.co_filename)
 
     def trace(
         self,
@@ -162,9 +191,7 @@ def _capture_row(variant: Variant) -> CommonWorkRow:
     raw_fired = sum(item.feedback.fired_events for item in proposals)
     return CommonWorkRow(
         variant=variant,
-        runtime_fingerprint=(
-            f"{platform.python_implementation()}-{platform.python_version()}"
-        ),
+        runtime_fingerprint=_runtime_fingerprint(),
         work_basis="cpython_opcode_events_forge_path",
         opcode_events=first_count,
         replay_opcode_events=replay_count,
@@ -226,11 +253,12 @@ def build_common_work_report() -> CommonWorkReport:
         remaining_gap_codes=tuple(remaining),
         claim_boundary=(
             "CPython opcode events provide one implementation-level work basis "
-            "only within the same interpreter/runtime fingerprint. They do not "
-            "measure energy, biological activity, algorithmic efficiency, or "
-            "scientific superiority. Raw topology/reactive activity semantics "
-            "remain separately labeled, and unequal measured work is reported "
-            "rather than normalized away."
+            "only within one interpreter/cache-tag and exact source manifest. "
+            "Frame eligibility is restricted to exact resolved Forge runtime "
+            "paths. The counter does not measure energy, biological activity, "
+            "algorithmic efficiency, or scientific superiority. Raw topology/"
+            "reactive activity semantics remain separately labeled, and unequal "
+            "measured work is reported rather than normalized away."
         ),
     )
 
