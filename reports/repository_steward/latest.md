@@ -1,9 +1,9 @@
 # SparkBrain Repository Steward — Latest
 
 schema_version: 2
-generation_id: STEWARD-20260928T075000+0900-G26
-produced_at: 2026-09-28T07:50:00+09:00
-supersedes_generation_id: STEWARD-20260928T015000+0900-G25
+generation_id: STEWARD-20260928T135007+0900-G27
+produced_at: 2026-09-28T13:50:07+09:00
+supersedes_generation_id: STEWARD-20260928T075000+0900-G26
 main: 59fc994b39d0ba02682e972161bb46801592d25b
-history: reports/repository_steward/history/2026-09-28/0750.md
-summary: M1 was integrated through PR #163 with exact-head and post-merge CI success while remaining NON_EVIDENTIARY_BUILD. The nine merged paths preserve main/research/Forge/ops/evidence separation; all 13 freeze heads, 15 mapped preserve pointers and 9 authoritative namespace refs remain exact. Evidence Analyst post-integration reconciliation is pending. P0 remains closed with no active pointer debt.
+history: reports/repository_steward/history/2026-09-28/1350.md
+summary: P0 mutation recurrence is open. Control R109 history is durable but Control latest/state remain stale at R108, creating active pointer debt. M1-002 remains exact-head verified with no PR. FLY-0 bottom-up feedback is now CI-green NON_EVIDENTIARY Forge work pending Analyst reconciliation. Immutable mappings and the main ruleset remain intact in this audit.
