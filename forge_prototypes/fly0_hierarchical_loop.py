@@ -197,6 +197,12 @@ class HierarchicalSensorimotorLoop:
     def snapshot(self) -> LoopSnapshot:
         return self._snapshot
 
+    @property
+    def event_budget(self) -> int:
+        """Expose the configured guard without exposing mutable loop state."""
+
+        return self._event_budget
+
     def checkpoint(self) -> str:
         payload = {
             "schema_version": 1,
