@@ -1,15 +1,14 @@
-# External Literature Reduction Scout — causal ascending feedback and selective gating
+# External Literature Reduction Scout — bilateral semantic surfaces and matched fly-control nulls
 
 - schema_version: `2`
-- role: `LITERATURE_REDUCTION_SCOUT`
-- generation_id: `LIT-20260928T123000+0900-R47-ASCENDING-FEEDBACK-GATING-C4E8A2D7`
-- produced_at: `2026-09-28T12:29:03+09:00`
-- history_path: `analysis/external_research_audit/literature/history/2026-09-28/1230-LITERATURE_REDUCTION_SCOUT.md`
+- generation_id: `LIT-20260929T003503+0900-R48-BILATERAL-SEMANTIC-NULLS-BANC`
+- produced_at: `2026-09-29T00:35:03+09:00`
+- history_path: `analysis/external_research_audit/literature/history/2026-09-29/0030-LITERATURE_REDUCTION_SCOUT.md`
 - genuinely_new_information: `true`
 - new_sparkbrain_scientific_result: `false`
 
-Four findings sharpen the FLY-0 bottom-up gap. NeuroMechFly v2 already demonstrates useful ascending motor feedback in a hierarchical embodied controller; adult-fly ascending neurons carry behavioral-state/self-motion information toward integrative/action-selection regions; proprioceptive feedback is selectively and predictively gated during self-generated movement; and hierarchical locomotor robustness depends materially on sensorimotor delay.
+New prior art strengthens Methodology R145's FLY-0 repair direction. Adult-fly BANC shows same-body-part local feedback loops linked by long-range behaviour modules; bilateral steering work makes left/right activity functionally meaningful; connectome-null studies show that degree preservation alone does not make a neural-network comparator matched.
 
-Engineering consequence: do not "fix" FLY-0 by merely increasing bottom-up traffic. Prefer a compact causal ascending-state summary, selective/contextual gating, explicit delay matching, and a reduced ordinary hierarchical controller with ascending feedback as a replacement comparator.
+Engineering consequence: preserve declared role + side/I/O semantics in the primary topology-randomization comparator. Keep degree/role-only rewiring as a coarse diagnostic null. Stronger spatial/contact matching remains claim-typed, not a default SYSTEM_BUILD gate.
 
-This is NON_EVIDENTIARY/NONCANONICAL prior-art/design support only. No M1 stop, Revisit trigger, SB003 allocation, biological-fidelity claim, topology-superiority claim, or scientific result is created.
+NON_EVIDENTIARY/NONCANONICAL. No M1 stop, SB003 allocation, biological-fidelity/topology-superiority/novelty claim, or scientific result.

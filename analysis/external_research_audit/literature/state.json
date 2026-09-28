@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "LIT-20260928T123000+0900-R47-ASCENDING-FEEDBACK-GATING-C4E8A2D7",
-  "produced_at": "2026-09-28T12:29:03+09:00",
-  "producer_run_id": "external-literature-auto-LIT-20260928T123000+0900-R47-ASCENDING-FEEDBACK-GATING-C4E8A2D7",
+  "generation_id": "LIT-20260929T003503+0900-R48-BILATERAL-SEMANTIC-NULLS-BANC",
+  "produced_at": "2026-09-29T00:35:03+09:00",
+  "producer_run_id": "external-literature-auto-LIT-20260929T003503+0900-R48-BILATERAL-SEMANTIC-NULLS-BANC",
   "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_NON_EVIDENTIARY_NONCANONICAL_HANDOFF",
-  "supersedes_generation_id": "LIT-20260928T063000+0900-R46-FLY0-DISTRIBUTED-CONTROL-B7D3C4A1",
+  "supersedes_generation_id": "LIT-20260928T123000+0900-R47-ASCENDING-FEEDBACK-GATING-C4E8A2D7",
   "role": "LITERATURE_REDUCTION_SCOUT",
-  "schedule_slot": "12:30 JST",
-  "role_resolution_source": "EARLY_GRACE",
+  "schedule_slot": "00:30 JST",
+  "role_resolution_source": "PREVIOUS_CANONICAL_SLOT",
   "genuinely_new_information": true,
   "new_sparkbrain_scientific_result_observed": false,
   "directive_index": {
@@ -16,67 +16,62 @@
     "delta": false
   },
   "input_generations": {
-    "prior_literature": "LIT-20260928T063000+0900-R46-FLY0-DISTRIBUTED-CONTROL-B7D3C4A1",
-    "control": "CTRL-20260928T095119+0900-R106-M1-002-CI-READY-ANALYST",
-    "evidence_analyst": "EVA-20260928T120024+0900-R166-M1-002-FLY0-ABLATION",
-    "main": "MAIN-20260928T121729+0900-PRIMARY-R172-M1-002-PR-CREATE-BLOCKED",
-    "theory": "THEORY-20260928T093233+0900-R14-NO-PROPOSAL-M1-002-ROBUSTNESS-6C2F91A4",
-    "audit": "AUD-20260928T102955+0900-R11-M1-002-ROBUSTNESS-HARNESS-3A7C91D4"
+    "prior_literature": "LIT-20260928T123000+0900-R47-ASCENDING-FEEDBACK-GATING-C4E8A2D7",
+    "control": "CTRL-20260928T235000+0900-R116-P0-RECONCILIATION",
+    "evidence_analyst": "EVA-20260928T231445+0900-R168-FLY0-COMPOSED-CI-FAILURE",
+    "methodology": "METHCAL-20260929T001532+0900-R145-FLY0-COMPARATOR-SEMANTIC-SURFACE",
+    "forge": "FORGE-20260928T233700+0900-FLY0-LATERAL-SURFACE-DIAGNOSIS"
   },
   "refs_inspected": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "control": "c5156a7fbbe2439563ded358044673d258bec5c1",
-    "evidence_analyst": "46c93259af8ec986fd8465ed5f5cf8fe893cb2e5",
-    "main_reports": "1dedab2a37411efa4e3ae222255910fa8c82856e",
-    "external_science_before_write": "57c96e4af78cb9acbba529b17778fe1a33449e2f",
-    "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "fly0_handoff": "1f455853b58fdad0be4cae42499b0df41dbee20a",
-    "fly0_prototype": "4c4706e9915cfac4cb9fd667cb3a0f96ebfb4a09"
+    "control": "5507f1d8588f112cad720c1d638e8675c8e8fac8",
+    "evidence_analyst": "266864682894af7745156ec899da3377cacc18fb",
+    "methodology": "a0f088a4d3d8f680ad3bbe879aa3dfda403168ac",
+    "fly0_forge_diagnosis": "0c49be17a33e744e5d5e874157f587f79d1b2bae",
+    "external_science_before_write": "6319ac53b9f4cafe0d9c0b9d99807116c86fdea6"
   },
   "findings": [
     {
-      "id": "ASCENDING_FEEDBACK_ESTABLISHED",
+      "id": "BANC_DISTRIBUTED_LOCAL_BODY_PART_CONTROL",
       "classes": [
         "NOVELTY_REDUCTION",
         "DESIGN_PRIMITIVE",
         "SYSTEM_LEVEL_COMPARATOR"
       ],
-      "source": "Wang-Chen et al. 2024 Nature Methods doi:10.1038/s41592-024-02497-y"
+      "source": "Bates et al. 2026 Nature doi:10.1038/s41586-026-10735-w"
     },
     {
-      "id": "ASCENDING_STATE_SIGNAL",
+      "id": "BILATERAL_STEERING_SEMANTICS",
       "classes": [
         "NOVELTY_REDUCTION",
-        "DESIGN_PRIMITIVE"
+        "DESIGN_PRIMITIVE",
+        "SYSTEM_LEVEL_COMPARATOR"
       ],
-      "source": "Chen et al. 2023 Nature Neuroscience doi:10.1038/s41593-023-01281-z"
+      "source": "Rayshubskiy et al. 2025 eLife doi:10.7554/eLife.102230.1; Braun et al. 2024 Nature doi:10.1038/s41586-024-07523-9"
     },
     {
-      "id": "SELECTIVE_PROPRIOCEPTIVE_GATING",
-      "classes": [
-        "NOVELTY_REDUCTION",
-        "DESIGN_PRIMITIVE"
-      ],
-      "source": "Dallmann et al. 2025 Nature doi:10.1038/s41586-025-09554-2"
-    },
-    {
-      "id": "DELAY_AS_MATCHED_RESOURCE",
+      "id": "BILATERAL_NULL_DEFINITION_SENSITIVE",
       "classes": [
         "DESIGN_PRIMITIVE",
         "SYSTEM_LEVEL_COMPARATOR"
       ],
-      "source": "Karashchuk et al. 2025 eLife doi:10.7554/eLife.99005.3"
+      "source": "Pedigo et al. 2023 eLife doi:10.7554/eLife.83739"
+    },
+    {
+      "id": "DEGREE_ONLY_NULL_INSUFFICIENT",
+      "classes": [
+        "DESIGN_PRIMITIVE",
+        "SYSTEM_LEVEL_COMPARATOR"
+      ],
+      "source": "Hao et al. 2025 Network Neuroscience doi:10.1162/netn_a_00428"
     }
   ],
   "engineering_handoff": {
-    "fly0_gap": "BOTTOM_UP_OBSERVATION_FEEDBACK_CAUSAL_INTEGRATION_ABSENT",
-    "recommended": [
-      "causal ascending-state summary",
-      "selective contextual feedback gating",
-      "delay-matched comparisons",
-      "ordinary hierarchical ascending-feedback replacement comparator"
-    ],
+    "fly0_gap": "COMPARATOR_LATERAL_SENSORIMOTOR_SEMANTIC_SURFACE_NOT_PRESERVED",
+    "recommended_primary_comparator": "PRESERVE_SOURCE_TARGET_ROLE_AND_SIDE_WHILE_RANDOMIZING_TOPOLOGY",
+    "retain_coarse_degree_role_only_null_as_diagnostic": true,
+    "stronger_spatial_contact_matching": "CLAIM_TYPED_NOT_DEFAULT_ENGINEERING_GATE",
     "sb003_allocated": false,
     "m1_blocked_by_this_run": false,
     "revisit_trigger": false
@@ -85,10 +80,10 @@
     "branch": "ops/external-research-audit-handoff",
     "latest_path": "analysis/external_research_audit/literature/latest.md",
     "state_path": "analysis/external_research_audit/literature/state.json",
-    "history_path": "analysis/external_research_audit/literature/history/2026-09-28/1230-LITERATURE_REDUCTION_SCOUT.md",
+    "history_path": "analysis/external_research_audit/literature/history/2026-09-29/0030-LITERATURE_REDUCTION_SCOUT.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts_per_mutation_purpose": 5,
-    "attempt": 5,
+    "attempt": 2,
     "readback_required": true
   }
 }
