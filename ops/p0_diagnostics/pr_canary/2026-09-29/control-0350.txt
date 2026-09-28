@@ -1,0 +1,5 @@
+NON_SCIENTIFIC P0 PR-create action canary
+role=CONTROL_BRAIN
+incident=INC-GITHUB-MUTATION-RECURRENCE-20260928-001
+purpose=distinguish create_pull_request action behavior from ordinary Git data/Contents persistence
+no scientific authority or evidence
