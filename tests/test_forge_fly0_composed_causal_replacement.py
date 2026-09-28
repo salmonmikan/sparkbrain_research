@@ -11,13 +11,11 @@ from forge_prototypes.fly0_composed_causal_replacement import (
 )
 from forge_prototypes.fly0_hierarchical_loop import WorldState
 
-_FUNCTIONAL_VARIANTS = ("structured", "reactive")
-_BASELINE_INCAPABLE_VARIANTS = ("rewired", "random_sparse")
-_ALL_VARIANTS = (*_FUNCTIONAL_VARIANTS, *_BASELINE_INCAPABLE_VARIANTS)
+_ALL_VARIANTS = ("structured", "rewired", "random_sparse", "reactive")
 
 
-@pytest.mark.parametrize("variant", _FUNCTIONAL_VARIANTS)
-def test_functional_variants_reach_target_and_replay_exact(
+@pytest.mark.parametrize("variant", _ALL_VARIANTS)
+def test_all_variants_reach_target_and_replay_exact(
     variant: str,
 ) -> None:
     initial = WorldState(position=2, target=-1)
@@ -39,32 +37,6 @@ def test_functional_variants_reach_target_and_replay_exact(
     assert tuple(item.after.token() for item in second) == first_tokens
 
 
-@pytest.mark.parametrize("variant", _BASELINE_INCAPABLE_VARIANTS)
-def test_matched_topology_controls_fail_closed_before_progress(
-    variant: str,
-) -> None:
-    loop = ComposedCausalReplacementLoop(
-        WorldState(position=2, target=-1),
-        variant=variant,
-    )
-    checkpoint = loop.checkpoint()
-    before = loop.snapshot
-
-    first = run_to_target(loop)
-
-    assert len(first) == 1
-    assert first[0].accepted is False
-    assert first[0].reason == "action arbitration requires one active module"
-    assert first[0].after == before
-    assert loop.snapshot == before
-
-    loop.restore(checkpoint)
-    second = run_to_target(loop)
-    assert tuple(item.after.token() for item in second) == tuple(
-        item.after.token() for item in first
-    )
-
-
 @pytest.mark.parametrize("variant", _ALL_VARIANTS)
 def test_observation_cut_fails_closed_before_progress(variant: str) -> None:
     loop = ComposedCausalReplacementLoop(
@@ -82,7 +54,7 @@ def test_observation_cut_fails_closed_before_progress(variant: str) -> None:
     assert loop.snapshot == before
 
 
-@pytest.mark.parametrize("variant", _FUNCTIONAL_VARIANTS)
+@pytest.mark.parametrize("variant", _ALL_VARIANTS)
 def test_feedback_cut_blocks_second_modulation(variant: str) -> None:
     loop = ComposedCausalReplacementLoop(
         WorldState(position=2, target=-1),
@@ -99,23 +71,6 @@ def test_feedback_cut_blocks_second_modulation(variant: str) -> None:
     assert second.reason == "ascending feedback insufficient for modulation"
     assert second.after == first.after
     assert loop.snapshot == first.after
-
-
-@pytest.mark.parametrize("variant", _BASELINE_INCAPABLE_VARIANTS)
-def test_feedback_cut_is_not_attributable_when_baseline_already_fails(
-    variant: str,
-) -> None:
-    loop = ComposedCausalReplacementLoop(
-        WorldState(position=2, target=-1),
-        variant=variant,
-        mask_feedback=True,
-    )
-
-    first = loop.step()
-
-    assert first.accepted is False
-    assert first.reason == "action arbitration requires one active module"
-    assert first.after == first.before
 
 
 def test_checkpoint_binds_both_causal_cut_contracts() -> None:
@@ -140,22 +95,15 @@ def test_checkpoint_binds_both_causal_cut_contracts() -> None:
         feedback_cut.restore(intact.checkpoint())
 
 
-def test_report_exposes_functional_mismatch_without_overclaim() -> None:
+def test_report_exposes_repaired_functional_surface_without_overclaim() -> None:
     report = build_composed_causal_report()
 
-    assert report["functional_variants"] == ("structured", "reactive")
-    assert report["baseline_incapable_variants"] == (
-        "rewired",
-        "random_sparse",
-    )
-    assert report["composed_causal_variants"] == ("structured", "reactive")
-    assert report["replacement_ladder_functionally_matched"] is False
+    assert report["functional_variants"] == _ALL_VARIANTS
+    assert report["baseline_incapable_variants"] == ()
+    assert report["composed_causal_variants"] == _ALL_VARIANTS
+    assert report["replacement_ladder_functionally_matched"] is True
     assert report["all_variants_replay_exact"] is True
-    assert report["remaining_gap_codes"] == (
-        "REWIRED_BASELINE_FUNCTIONAL_CAPABILITY_ABSENT",
-        "RANDOM_SPARSE_BASELINE_FUNCTIONAL_CAPABILITY_ABSENT",
-        "FOUR_WAY_COMPOSED_CAUSAL_COMPARISON_BLOCKED_BY_BASELINE_CAPABILITY",
-    )
+    assert report["remaining_gap_codes"] == ()
 
 
 def test_report_is_deterministic() -> None:

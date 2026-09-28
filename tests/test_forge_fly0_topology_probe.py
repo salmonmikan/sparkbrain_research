@@ -68,6 +68,8 @@ def test_comparison_is_bounded_and_exposes_matched_controls() -> None:
         "random_sparse",
     }
     assert all(scenario.fired_events <= 4096 for scenario in result.scenarios)
+    assert all(scenario.matched_motor_events > 0 for scenario in result.scenarios)
+    assert all(scenario.opposite_motor_events == 0 for scenario in result.scenarios)
 
 
 def test_topology_rejects_duplicate_and_invalid_edges() -> None:

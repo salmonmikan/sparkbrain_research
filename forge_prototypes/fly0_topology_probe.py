@@ -14,6 +14,7 @@ from hashlib import sha256
 from typing import Literal
 
 Role = Literal["sensory", "local", "motor", "modulation"]
+Side = Literal["left", "right"]
 
 
 @dataclass(frozen=True, order=True)
@@ -74,6 +75,15 @@ class Topology:
                 sorted(
                     Counter(
                         f"{self.roles[edge.source]}->{self.roles[edge.target]}"
+                        for edge in self.edges
+                    ).items()
+                )
+            ),
+            "lateral_role_pair_counts": dict(
+                sorted(
+                    Counter(
+                        f"{self.roles[edge.source]}:{_node_side(edge.source)}->"
+                        f"{self.roles[edge.target]}:{_node_side(edge.target)}"
                         for edge in self.edges
                     ).items()
                 )
@@ -155,6 +165,16 @@ LEFT_MOTOR = MOTOR[:4]
 RIGHT_MOTOR = MOTOR[4:]
 LEFT_MODULATION = MODULATION[:4]
 RIGHT_MODULATION = MODULATION[4:]
+LEFT_NODES = frozenset(LEFT_SENSORY + LEFT_LOCAL + LEFT_MOTOR + LEFT_MODULATION)
+RIGHT_NODES = frozenset(RIGHT_SENSORY + RIGHT_LOCAL + RIGHT_MOTOR + RIGHT_MODULATION)
+
+
+def _node_side(node: int) -> Side:
+    if node in LEFT_NODES:
+        return "left"
+    if node in RIGHT_NODES:
+        return "right"
+    raise ValueError("node outside bilateral surface")
 
 
 def _roles() -> tuple[Role, ...]:
@@ -223,16 +243,23 @@ def _role_pair(topology: Topology, edge: Edge) -> tuple[Role, Role]:
     return topology.roles[edge.source], topology.roles[edge.target]
 
 
+def _role_side_pair(
+    topology: Topology, edge: Edge
+) -> tuple[Role, Role, Side, Side]:
+    source_role, target_role = _role_pair(topology, edge)
+    return source_role, target_role, _node_side(edge.source), _node_side(edge.target)
+
+
 def build_degree_preserving_rewire(
     structured: Topology, *, seed: int = 2801, swap_factor: int = 24
 ) -> Topology:
-    """Rewire targets within role-pair strata while preserving each node's degrees."""
+    """Rewire within role+side strata while preserving each node's degrees."""
 
     rng = random.Random(seed)
     edges = list(structured.edges)
-    buckets: dict[tuple[Role, Role], list[int]] = defaultdict(list)
+    buckets: dict[tuple[Role, Role, Side, Side], list[int]] = defaultdict(list)
     for index, edge in enumerate(edges):
-        buckets[_role_pair(structured, edge)].append(index)
+        buckets[_role_side_pair(structured, edge)].append(index)
     pairs = {(edge.source, edge.target) for edge in edges}
     attempts = max(1, len(edges) * swap_factor)
     swaps = 0
@@ -264,27 +291,34 @@ def build_degree_preserving_rewire(
 
 
 def build_random_sparse(structured: Topology, *, seed: int = 2802) -> Topology:
-    """Build a random sparse control matched on role pairs, signs and delays."""
+    """Build a random sparse control matched on role+side, signs and delays."""
 
     rng = random.Random(seed)
-    nodes_by_role: dict[Role, tuple[int, ...]] = {
-        role: tuple(index for index, value in enumerate(structured.roles) if value == role)
+    nodes_by_role_side: dict[tuple[Role, Side], tuple[int, ...]] = {
+        (role, side): tuple(
+            index
+            for index, value in enumerate(structured.roles)
+            if value == role and _node_side(index) == side
+        )
         for role in ("sensory", "local", "motor", "modulation")
+        for side in ("left", "right")
     }
     edges: list[Edge] = []
     used: set[tuple[int, int]] = set()
     template_edges = list(structured.edges)
     rng.shuffle(template_edges)
     for template in template_edges:
-        source_role, target_role = _role_pair(structured, template)
+        source_role, target_role, source_side, target_side = _role_side_pair(
+            structured, template
+        )
         candidates = [
             (source, target)
-            for source in nodes_by_role[source_role]
-            for target in nodes_by_role[target_role]
+            for source in nodes_by_role_side[(source_role, source_side)]
+            for target in nodes_by_role_side[(target_role, target_side)]
             if source != target and (source, target) not in used
         ]
         if not candidates:
-            raise RuntimeError("random sparse role-pair stratum exhausted")
+            raise RuntimeError("random sparse role+side stratum exhausted")
         source, target = rng.choice(candidates)
         used.add((source, target))
         edges.append(Edge(source, target, template.sign, template.delay))
