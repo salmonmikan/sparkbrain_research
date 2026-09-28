@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260928T221732+0900-PRIMARY-R179-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-28T22:17:32+09:00",
+  "generation_id": "MAIN-20260928T231533+0900-PRIMARY-R180-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-28T23:15:33+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
@@ -17,19 +17,14 @@
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "analyst_branch_head": "844928373dbe3873738ea4f1be69ee9b23f1f696",
-    "control_generation": "R114",
-    "main_reports_before": "219ded5a161ff984c9f65b97dcb165d59a35ca84"
+    "control_generation": "R115",
+    "main_reports_before": "8d5568ddeede7cb2c63267ac5e63bce43a734de1"
   },
   "integration": {
     "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "ahead_by": 1,
     "behind_by": 0,
-    "push_ci": {
-      "run_id": 36361950457,
-      "status": "completed",
-      "conclusion": "success"
-    },
     "pr_created": false,
     "merge_performed": false
   },
@@ -63,5 +58,5 @@
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_EXPLICIT_PRE_GITHUB_REFUSALS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-28/2217-r179-pr-create-platform-blocked.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-28/2315-r180-pr-create-platform-blocked.md"
 }

@@ -1,12 +1,11 @@
-# MAIN PRIMARY R179
+# MAIN PRIMARY R180
 
-generation_id: MAIN-20260928T221732+0900-PRIMARY-R179-M1-002-PR-CREATE-BLOCKED
+generation_id: MAIN-20260928T231533+0900-PRIMARY-R180-M1-002-PR-CREATE-BLOCKED
 status: SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN
 analyst: R167
-control_append_only: R114
+control_append_only: R115
 source_head: 2a21d3e879f1db4e81a58273180ad2124e823a5e
 base_main: 59fc994b39d0ba02682e972161bb46801592d25b
-ci: 36361950457 success
 pr_created: false
 merge_performed: false
 attempts: 5
