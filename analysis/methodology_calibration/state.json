@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-28T08:17:17+09:00",
+  "timestamp": "2026-09-28T10:20:00+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260928T081717+0900-R138-M1-ROBUSTNESS-CONTRACT-CALIBRATION",
-    "sequence": 138,
+    "generation_id": "METHCAL-20260928T102000+0900-R139-M1-002-PR-ROUTE-CALIBRATION",
+    "sequence": 139,
     "material_change": true,
-    "material_change_reason": "ANALYST_R163_ACCEPTED_M1_AND_ALLOCATED_BOUNDED_POST_INTEGRATION_ROBUSTNESS",
-    "supersedes_generation_id": "METHCAL-20260928T061905+0900-R137-M1-FLY0-CALIBRATION",
+    "material_change_reason": "M1_002_BUILT_ACCEPTED_PR_CREATION_BLOCKED_PRE_GITHUB",
+    "supersedes_generation_id": "METHCAL-20260928T081717+0900-R138-M1-ROBUSTNESS-CONTRACT-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "directive_freshness": {
@@ -23,21 +23,20 @@
     "freshness_established": true
   },
   "input_generations": {
-    "previous_methodology": "METHCAL-20260928T061905+0900-R137-M1-FLY0-CALIBRATION@0eb0caf458dbd81b11ed99094135941ab40bddd9",
-    "evidence_analyst": "EVA-20260928T080240+0900-R163-M1-POST-INTEGRATION-ROBUSTNESS@75ca5511739e6174cafc485d3c5fa6ffe9fda8b0",
-    "main": "MAIN-20260928T072510+0900-PRIMARY-R169-M1-INTEGRATED@53890fc113ba4e9c0680e138376485b11bf0a849",
-    "control": "CTRL-20260928T065013+0900-R104-M1-WAIT-ANALYST@dbca69cc12a4eb3a2e57c5ccf9aa00d38ed20126",
-    "theory": "THEORY-20260928T073157+0900-R13-FLY-HIERARCHICAL-INTEGRATION-DESIGN-4F7A2C91"
+    "previous_methodology": "METHCAL-20260928T081717+0900-R138-M1-ROBUSTNESS-CONTRACT-CALIBRATION",
+    "evidence_analyst": "EVA-20260928T100231+0900-R165-M1-002-EXACT-HEAD-PR-MERGE",
+    "main": "MAIN-20260928-PRIMARY-R170-M1-002-PR-CREATE-BLOCKED",
+    "control": "CTRL-20260928T095119+0900-R106-M1-002-CI-READY-ANALYST",
+    "theory": "THEORY-20260928T093233+0900-R14-NO-PROPOSAL-M1-002-ROBUSTNESS-6C2F91A4",
+    "utility": "UTILITY-20260928T092746+0900-R163-M1-002-READINESS-VERIFIED"
   },
   "authoritative_refs": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "main_tree": "7c5c86300a0097cd20b76076eeecb748b3c11134",
     "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "analyst": "75ca5511739e6174cafc485d3c5fa6ffe9fda8b0",
-    "main_reports": "53890fc113ba4e9c0680e138376485b11bf0a849",
-    "control": "dbca69cc12a4eb3a2e57c5ccf9aa00d38ed20126",
-    "methodology_before": "0eb0caf458dbd81b11ed99094135941ab40bddd9"
+    "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "m1_002_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0",
+    "fly0_resource_normalization": "669030dda2911709c9eae4cedf6ae21a2fda6f88"
   },
   "overall_classification": "WELL_CALIBRATED",
   "scientific_gate_findings": {
@@ -46,78 +45,53 @@
     "consumed_identities": "KEEP",
     "build_forge_credit_zero": "KEEP",
     "build_to_science_fresh_contract": "KEEP",
-    "scientific_execution_unauthorized": "KEEP"
+    "scientific_execution_unauthorized": "KEEP",
+    "pr_route_failure_not_scientific_evidence": "CLARIFY"
   },
   "system_build": {
-    "integrated_build_id": "BUILD-SB-M1-001-INTEGRATED-CONTINUOUS-REVISION-PILOT",
-    "integrated_state": "INTEGRATED_BOUNDED_FUNCTIONALLY_VERIFIED",
-    "integration_commit": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "pr_ci_run_id": 36354898589,
-    "post_merge_ci_run_id": 36355074172,
-    "new_build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
-    "new_build_state": "ALLOCATED_NOT_YET_BUILT",
-    "required_base": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "required_branch": "system-build/m1-post-integration-robustness-20260928",
-    "branch_observed": false,
+    "current_build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
+    "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "push_ci_run_id": 36361950457,
+    "analyst_authority": "EXACT_HEAD_ACCEPTED_PR_MERGE_AUTHORIZED",
+    "pr_open": false,
+    "main_r170_pr_attempts": 5,
+    "main_r170_failure_class": "PRE_GITHUB_PLATFORM_REFUSAL_REPORTED_BY_MAIN",
     "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-    "built_integrated_m1": true,
-    "built_new_harness": false,
+    "built": true,
+    "bounded_functionally_verified": true,
     "comparatively_supported": false,
     "composition_contribution": "NOT_ESTABLISHED",
     "scientifically_novel": false,
     "scientific_credit": 0,
-    "scenario_families": [
-      "NOMINAL_64_CYCLE_INVARIANTS",
-      "CHECKPOINT_SUFFIX_EQUALITY_1_8_31_63",
-      "ALL_EXISTING_FAULT_POINTS_EARLY_MIDDLE_LATE",
-      "IDENTITY_DUPLICATE_CONFLICT_PENDING_OVERLAP"
-    ],
-    "limits": {
-      "committed_cycles_per_scenario": 64,
-      "committed_cycles_suite": 512,
-      "routing_components": 2,
-      "routing_dimensions": 8,
-      "predictive_hypotheses": 16,
-      "context_scalars": 64,
-      "pending_events": 1
-    },
     "gate_findings": {
-      "identity_separation": "KEEP",
-      "exact_base_branch": "KEEP",
-      "target_capability": "KEEP",
-      "fixed_scenarios": "KEEP",
-      "resource_privilege_bounds": "KEEP",
-      "acceptance_ci": "KEEP",
       "mandatory_review_non_gate": "KEEP",
-      "final_analyst_reconciliation": "KEEP",
-      "science_invariant_repair_boundary": "CLARIFY",
+      "exact_head_analyst_reconciliation": "KEEP",
+      "repository_pr_boundary": "KEEP",
+      "five_attempt_publication_ceiling": "KEEP",
+      "pre_github_route_failure": "CLARIFY",
+      "next_run_freshness_recheck": "KEEP",
       "overpermissive_rolling_authority": "KEEP",
-      "overconservative_handoff_latency": "KEEP",
-      "claim_boundary": "KEEP"
+      "overconservative_handoff_latency": "KEEP"
     }
   },
   "fly0": {
     "status": "NON_EVIDENTIARY_NONCANONICAL_NOT_ALLOCATED_TO_SB003",
-    "methodology_r137_activity_exposure_clarification_retained": true,
+    "resource_normalization_head": "669030dda2911709c9eae4cedf6ae21a2fda6f88",
+    "common_interface_exposure_matched": true,
+    "internal_activity_resource_exposure_matched": false,
+    "durable_new_handoff": false,
     "m1_dependency": false,
     "scientific_credit": 0
   },
   "calibration": {
     "over_reduction_risk": "LOW",
-    "overclaim_risk": "LOW_IF_CONTRACT_BOUNDARIES_ARE_KEPT",
+    "overclaim_risk": "LOW_IF_BOUNDARIES_RETAINED",
     "overconservative_handoff_latency": false,
     "overpermissive_rolling_authority": false,
-    "bounded_engineering_pass_reachability": "REALISTIC_PROSPECTIVE",
+    "current_blocker_type": "OPERATIONAL_PR_MUTATION_ROUTE",
+    "bounded_engineering_pass_reachability": "DEMONSTRATED",
     "scientific_pass_claimed": false,
     "overall": "WELL_CALIBRATED"
-  },
-  "revisit_gate_findings": {
-    "rd005_no_reopen": "KEEP",
-    "rd006_v1_v2_v3_v4_preserved": "KEEP",
-    "m1_not_rescue_laundering": "KEEP",
-    "reduced_component_reuse_without_revisit": "KEEP",
-    "fly0_no_revisit_trigger": "KEEP",
-    "fresh_successor_created": false
   },
   "mandatory_questions": {
     "development_semantics_consistent": true,
@@ -133,30 +107,24 @@
     "revisit_avoids_zombie_rescue": true,
     "pass_reachable_without_weakening": true
   },
-  "p0": {
-    "control_recorded_status": "CLOSED_P0_RECOVERED",
-    "new_scoped_incident_observed": false,
-    "active_target_pointer_debt": [],
-    "repository_wide_persistence_failure_inferred": false
-  },
   "hard_floor_confirmation": {
     "experiment_dispatched": false,
     "identity_consumed": false,
     "scientific_ref_mutated": false,
+    "build_ref_mutated_by_methodology": false,
     "evidence_ref_mutated": false,
     "pr_created_or_merged": false,
     "workflow_or_scheduler_changed": false,
     "scientific_criteria_changed": false,
     "terminal_reopened": false,
     "consumed_formal_rerun_retuned_rescored": false,
-    "historical_result_rewritten": false,
     "protected_heldout_accessed": false
   },
   "persistence": {
-    "history_path": "analysis/methodology_calibration/history/2026-09-28/0817.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-28/1020.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts_per_mutation_purpose": 5,
-    "attempt": 1,
+    "attempt": 3,
     "force_push": false,
     "readback_required": true
   }
