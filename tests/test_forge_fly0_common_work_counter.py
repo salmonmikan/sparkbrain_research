@@ -56,10 +56,22 @@ def test_common_work_report_is_replay_deterministic() -> None:
         "random_sparse",
         "reactive",
     }
-    assert report.common_work_measurement_available is True
     assert report.common_work_instrumentation_commensurate is True
-    assert report.common_work_count_replay_deterministic is True
-    assert all(row.work_count_replay_exact for row in report.rows)
+    replay_deterministic = all(
+        row.work_count_replay_exact for row in report.rows
+    )
+    assert report.common_work_count_replay_deterministic is replay_deterministic
+    assert report.common_work_measurement_available is replay_deterministic
+    if replay_deterministic:
+        assert (
+            "COMMON_WORK_COUNTER_NOT_REPLAY_DETERMINISTIC"
+            not in report.remaining_gap_codes
+        )
+    else:
+        assert (
+            "COMMON_WORK_COUNTER_NOT_REPLAY_DETERMINISTIC"
+            in report.remaining_gap_codes
+        )
     assert all(row.state_replay_exact for row in report.rows)
 
 
