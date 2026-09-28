@@ -1,167 +1,83 @@
 {
-  "timestamp": "2026-09-24T10:31:04+09:00",
   "schema_version": 2,
-  "generation_id": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
-  "produced_at": "2026-09-24T10:31:04+09:00",
-  "producer_run_id": "external-audit-20260924T1030JST-R10-CAND35-TREATMENT-READOUT-SUPPORT",
-  "authority_scope": "INDEPENDENT_AUDITOR_READ_ONLY_REPOSITORY_EVIDENCE_AND_CONTROL_PLANE_HANDOFF",
-  "supersedes_generation_id": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8",
+  "generation_id": "AUD-20260928T102955+0900-R11-M1-002-ROBUSTNESS-HARNESS-3A7C91D4",
+  "produced_at": "2026-09-28T10:29:55+09:00",
+  "producer_run_id": "external-audit-20260928T1030JST-R11-M1-002-ROBUSTNESS",
   "role": "INDEPENDENT_AUDITOR",
   "schedule_slot": "10:30 JST",
-  "schedule_inference": false,
-  "input_generations": {
-    "control_brain": {
-      "generation_id": "CTRL-20260924T100300+0900-R53-MAIN-RESTORED-H7-DISPATCH-VERIFIED",
-      "handoff_commit": "8d17debc16e0866b207681553d7045687fafc113"
-    },
-    "evidence_analyst": {
-      "generation_id": "EVA-20260924T101155+0900-R111-H7-DISPATCH-BOUND-GO-ONCE",
-      "handoff_commit": "2f1409da8d47525cbb1058ce9c7eebf8ef80ef2c"
-    },
-    "main_report": {
-      "generation_id": "MAIN-20260924T101500+0900-PRIMARY-H7-R110-DISPATCH-REGISTRATION-AWAITING-ANALYST",
-      "mailbox_tip_consumed": "230e5348f4e3443e5c4323f149ce7889e8073112"
-    },
-    "fast_forge_report": {
-      "generation_id": "FORGE-20260924T093550+0900-NOOP-R110-R101-CONVERGED",
-      "mailbox_tip_consumed": "230e5348f4e3443e5c4323f149ce7889e8073112"
-    },
-    "methodology": {
-      "generation_id": "METHCAL-20260924T103400+0900-R103-C4F19B72",
-      "handoff_commit": "6ab4af4f6726890565e1b6945c5b66b8e922b825",
-      "phase_2_only": true
-    },
-    "literature": {
-      "generation_id": "LIT-20260924T063003+0900-R41-CAUSAL-ABSTRACTION-NONVACUITY-3F8C2A71",
-      "handoff_commit": "eaab2a8fd08921aa91782825644a5f7e28df0173"
-    },
-    "theory": {
-      "generation_id": "THEORY-20260924T093014+0900-R2-NO-PROPOSAL-5D7C1A94",
-      "handoff_commit": "eaab2a8fd08921aa91782825644a5f7e28df0173"
-    },
-    "prior_audit": {
-      "generation_id": "AUD-20260923T224510+0900-R9-CAND34-LOCAL-IMPULSE-7C4A21D8",
-      "state_blob_sha": "d0aeb53ba6516674dd03b5138d22b218f2c1701c",
-      "latest_blob_sha": "e0c838636dfb36708df8d86dd9165a2a0acedada"
-    }
+  "role_resolution": {
+    "selected_role": "INDEPENDENT_AUDITOR",
+    "resolution_source": "EARLY_GRACE"
   },
-  "phase_ordering_confirmation": {
-    "blind_target_fixed_before_control_brain": true,
-    "blind_target_fixed_before_evidence_analyst": true,
-    "blind_target_fixed_before_main_fast_forge": true,
-    "blind_target_fixed_before_literature": true,
-    "blind_target_fixed_before_theory_revisit": true,
-    "blind_target_fixed_before_methodology": true,
-    "prior_audit_used_only_for_dedupe": true,
-    "blind_target_changed_after_phase_2": false
+  "directive_freshness": {
+    "branch_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "relevant": [
+      "HUMAN-20260926-004",
+      "HUMAN-20260927-002",
+      "HUMAN-20260928-001",
+      "HUMAN-20260928-002"
+    ]
   },
-  "blind_target_selection": {
-    "target": "Candidate #35 preserved R100 five-arm development result: test whether the identical null/sham response signature is causally informative for queue-free non-receptor potential/adaptation priming or is structurally insensitive because treatment and observable lack causal overlap/opportunity.",
-    "authoritative_refs_inspected": [
-      "main@d16403414fc7abebd23075fc401240971b8eb91d",
-      "Candidate #35 frozen scientific source@8ea6581544c642ad74f1a95955ab2c5f795afccc",
-      "Candidate #35 exact R100 implementation@b5f312683d50ed3a086348b62770fc8923c78046",
-      "raw/cand35-r100-onebatch-20260923@02aee83227554de884a86a9d1335deb01bf53571",
-      "preserve/cand35-r100-batch1-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
-      "current evidence/formal/sealed/freeze/preserve/control inventories",
-      "prior audit history only for dedupe"
-    ],
-    "attack_hypotheses": [
-      "Null treatment population may not overlap the directly cued and observed spiking population.",
-      "Spike/cascade/ignition signature may be insensitive or ceiling-limited to subthreshold treatment effects.",
-      "If no treated unit spikes, treated subthreshold state may have no causal opportunity to enter the declared response signature.",
-      "Delayed sham may expose latent state changes that the declared signature collapses.",
-      "The preserved negative may support only a narrow fixed-signature null, not general causal irrelevance."
-    ],
-    "why_consequential": "Candidate #35 is terminal/SYSTEM/zero-confirmatory-credit and its preserved negative informs the current independent-reidentification boundary."
+  "supersedes_generation_id": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
+  "target": {
+    "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
+    "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "exact_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0"
   },
-  "blind_target_change_reason": null,
-  "repository_refs_inspected": {
-    "main": "d16403414fc7abebd23075fc401240971b8eb91d",
-    "cand35_scientific_source": "8ea6581544c642ad74f1a95955ab2c5f795afccc",
-    "cand35_implementation": "b5f312683d50ed3a086348b62770fc8923c78046",
-    "cand35_raw_ref": "raw/cand35-r100-onebatch-20260923@02aee83227554de884a86a9d1335deb01bf53571",
-    "cand35_preserve_ref": "preserve/cand35-r100-batch1-20260923@afe4b7ad0f908f3b01eca9e391a2b05cb3be9a7a",
-    "evidence_tag_count": 5,
-    "official_consumed_identity_count": 7,
-    "ops_external_tip_before_first_write": "eaab2a8fd08921aa91782825644a5f7e28df0173"
+  "inputs": {
+    "analyst": "EVA-20260928T100231+0900-R165-M1-002-EXACT-HEAD-PR-MERGE",
+    "main": "MAIN-20260928-PRIMARY-R170-M1-002-PR-CREATE-BLOCKED",
+    "control": "CTRL-20260928T095119+0900-R106-M1-002-CI-READY-ANALYST",
+    "theory": "THEORY-20260928T093233+0900-R14-NO-PROPOSAL-M1-002-ROBUSTNESS-6C2F91A4",
+    "literature": "LIT-20260928T063000+0900-R46-FLY0-DISTRIBUTED-CONTROL-B7D3C4A1"
   },
+  "findings": {
+    "runtime_source_changed": false,
+    "committed_cycles": 267,
+    "committed_cycle_ceiling": 512,
+    "cycle_budget_reconciles": true,
+    "fault_points": 7,
+    "fault_positions": 3,
+    "exact_rollback_and_control_continuation": true,
+    "identity_no_write_paths": true,
+    "privileged_input_leak_found": false,
+    "process_crash_durability_tested": false,
+    "comparative_support": false,
+    "composition_contribution": "NOT_ESTABLISHED",
+    "scientific_novelty": false,
+    "scientific_credit": 0
+  },
+  "synthesis_handling_classification": "SYNTHESIS_OK",
+  "bounded_engineering_interpretation": "ROBUST_SO_FAR_FIXED_DETERMINISTIC_ACCEPTANCE_ONLY",
   "genuinely_new_information": true,
-  "findings": [
-    {
-      "finding": "Frozen Candidate #35 treatment nulls potential/adaptation only on ALL_NON_RECEPTOR_UNITS; the preserved non-receptor ledger begins at unit 16.",
-      "impact": "The surgical treatment does not directly modify the receptor population that receives the cue."
-    },
-    {
-      "finding": "Preserved cue routing targets are [6,7], and the observed response contains only unit-6 and unit-7 spikes and cascade [6,7], with no ignition.",
-      "impact": "Observed spikes come from directly cued untreated receptor units; no treated-unit spike demonstrates a path from nulled state into the declared response."
-    },
-    {
-      "finding": "The causal falsifier is the high-level response signature; treatment_state_hash is integrity-only and the reduction ledger is not itself the causal falsifier.",
-      "impact": "Subthreshold treatment effects can exist without entering the declared endpoint."
-    },
-    {
-      "finding": "DELAYED_SHAM_32MS changes unit-7 threshold, excitatory drive and novelty while preserving the same two-unit cascade/no-ignition structure.",
-      "impact": "The declared response demonstrably collapses some state-dependent differences."
-    },
-    {
-      "finding": "SHAM cue-driven receptor spikes have substantial threshold margin (unit6 drive ~0.8114 vs 0.46; unit7 drive ~0.9145 vs ~0.5592).",
-      "impact": "Direct cue response is not a sensitive assay of treated non-receptor state on this batch; ceiling/insensitivity remains plausible."
-    }
-  ],
-  "affected_lines": [
-    "CAND35_R100_NEGATIVE_INTERPRETATION",
-    "CAND35_TREATMENT_READOUT_CAUSAL_OPPORTUNITY",
-    "CAND35_REVISIT_TRIGGER_SPECIFICITY",
-    "FUTURE_SUBTHRESHOLD_PRIMING_DISCRIMINATORS"
-  ],
-  "novelty_or_reduction_impact": "CAND35_R100_NULL_ARMS_RESET_NON_RECEPTOR_STATE_WHILE_OBSERVED_RESPONSE_CONTAINS_ONLY_DIRECTLY_CUED_UNTREATED_RECEPTOR_SPIKES; NEGATIVE_SIGNATURE_IS_NON_DIAGNOSTIC_BEYOND_THE_FIXED_RESPONSE_SURFACE",
-  "audit_classification": "INCONCLUSIVE",
-  "confidence": "HIGH_ON_SUPPORT_MISMATCH_MODERATE_ON_HOW_MUCH_LATENT_CAUSAL_EFFECT_WAS_MISSED",
-  "prospective_baselines_or_discriminators": [
-    "Fresh-successor-only explicit treatment-to-readout causal-opportunity validation.",
-    "Read out treated non-receptor state or a downstream variable causally reachable from treated units.",
-    "Prospectively choose a cue/readout regime with measurable sensitivity rather than direct receptor ceiling while preserving ordinary leak/adaptation/refractory reductions.",
-    "Retain natural-state/matched-counterfactual and hidden-path checks from Literature R41."
-  ],
-  "questions_for_evidence_analyst": [
-    "Record R100 as same declared response signature rather than evidence of general non-receptor subthreshold-state causal irrelevance?",
-    "Treat the treatment/readout support mismatch as candidate-specific information relevant to the Candidate #35 revisit ledger without reopening the old ID?"
-  ],
-  "questions_for_control_brain": [
-    "Require explicit causal-opportunity validation in any fresh subthreshold-priming successor before a null response can close the question?",
-    "Preserve Candidate #35 terminal/zero-credit history unchanged while narrowing interpretation of its R100 negative?"
-  ],
-  "must_not_change_frozen_or_consumed": [
-    "Candidate #35 preserved R100 five-arm bytes, source bindings and terminal state",
-    "no same-object rerun/retune/rescore/observable change or SYSTEM-to-MECHANISM uplift",
-    "all consumed identities and authoritative immutable/evidence refs",
-    "no experiment, research merge, Utility execution, scheduler change or historical result rewrite by this role"
-  ],
-  "phase_2_disposition": {
-    "blind_target_remained_valid": true,
-    "blind_target_change_reason": null,
-    "control_plane_conflict": false,
-    "narrow_claim_status": "ROBUST_SO_FAR",
-    "broader_causal_irrelevance_status": "INCONCLUSIVE",
-    "candidate_specific_revisit_signal": true,
-    "terminal_object_reopened": false,
-    "existing_formal_or_confirmatory_evidence_invalidated": false
+  "new_scientific_result": false,
+  "m1_stop_required": false,
+  "additional_review_gate_required": false,
+  "fly0": {
+    "m1_dependency": false,
+    "activity_resource_exposure_matched": false,
+    "sb003_allocated": false,
+    "scientific_credit": 0
   },
-  "utility_request_created": null,
   "mutations": {
-    "scientific_experiments_executed_by_this_role": 0,
-    "scientific_workflows_dispatched_by_this_role": 0,
-    "one_way_identities_consumed_by_this_role": 0,
-    "research_prs_merged_by_this_role": 0,
-    "immutable_evidence_mutations": 0,
-    "scheduler_definition_changes": 0,
-    "utility_requests_created": 0,
-    "terminal_objects_reopened": 0
+    "scientific_experiments": 0,
+    "result_bearing_workflows": 0,
+    "consumed_identities": 0,
+    "immutable_evidence": 0,
+    "research_merges": 0,
+    "scheduler_changes": 0,
+    "terminal_reopens": 0
   },
   "persistence": {
-    "latest_update_commit": "54eb9738e37b09c8db70460b672a2955199246f5",
-    "history_path": "analysis/external_research_audit/history/2026-09-24/1030-INDEPENDENT_AUDITOR.md",
-    "final_handoff_commit_embedding_limitation": "A Git commit cannot contain its own final SHA without changing itself. Exact post-persistence branch tip is re-fetched after writes."
-  }
+    "branch": "ops/external-research-audit-handoff",
+    "head_before": "f46d87c7eed103e2185238cf48c792d653862ccd",
+    "attempt_number": 4,
+    "attempt_limit": 5,
+    "atomic_multi_file_publication": true,
+    "head_after_embedded": null,
+    "readback_required": true
+  },
+  "history_path": "analysis/external_research_audit/audit/history/2026-09-28/1030-INDEPENDENT_AUDITOR.md"
 }
