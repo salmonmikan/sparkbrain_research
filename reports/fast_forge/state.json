@@ -1,106 +1,68 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260928T083304+0900-FLY0-HIERARCHICAL-LOOP-HANDOFF",
-  "produced_at": "2026-09-28T08:33:04+09:00",
-  "forge_id": "FORGE-FLY0-HIERARCHICAL-LOOP-A",
+  "generation_id": "FORGE-20260928T103500+0900-FLY0-RESOURCE-NORMALIZATION-HANDOFF",
+  "produced_at": "2026-09-28T10:35:00+09:00",
+  "forge_id": "FORGE-FLY0-RESOURCE-NORMALIZATION-A",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260928-fly0-hierarchical-loop-a",
-  "exact_head": "250708bf93edebc9d83d097a0f2fc1232d185368",
-  "source_design_id": "ID-SB-FLY-HIERARCHICAL-SENSORIMOTOR-LOOP-001",
-  "source_forge_head": "c9538544b04108a950e841cbc90b626259d7e3ff",
-  "question": "Can replaceable bounded local controllers close an explicit descending-modulation/ascending-feedback loop with deterministic arbitration and atomic world-step rollback?",
-  "why_now": "Analyst R163 observed a green exact-head prototype but no durable Forge handoff; persistence can be closed without touching MAIN or its allocated robustness harness.",
-  "prototype": {
-    "files": [
-      "forge_prototypes/fly0_hierarchical_loop.py",
-      "forge_prototypes/fly0_hierarchical_loop.md",
-      "tests/test_forge_fly0_hierarchical_loop.py"
+  "branch": "forge/20260928-fly0-resource-normalization-a",
+  "exact_prototype_head": "669030dda2911709c9eae4cedf6ae21a2fda6f88",
+  "ci": {
+    "run_id": 36363537665,
+    "conclusion": "success"
+  },
+  "observations": {
+    "common_interface_exposure_matched": true,
+    "activity_instrumentation_commensurate": false,
+    "activity_resource_exposure_matched": false,
+    "fired_events_per_transition": {
+      "fly0_structured": 288,
+      "reactive_reference": 1
+    },
+    "reason_codes": [
+      "DISTINCT_ACTIVITY_INSTRUMENTATION",
+      "RAW_ACTIVITY_EXPOSURE_MISMATCH"
     ],
-    "verified_behaviors": [
-      "shared_local_controller_interface",
-      "three_step_bounded_target_reach",
-      "same_history_checkpoint_replay_exact",
-      "multi_active_conflict_complete_rollback",
-      "event_budget_overflow_complete_rollback",
-      "restore_controller_contract_rejection",
-      "bounded_action_arbitration",
-      "feedback_excludes_world_target"
-    ],
-    "controller_replacements": [
-      "fly0_structured",
-      "reactive_reference"
+    "replay_exact": true
+  },
+  "ordinary_reduction": "Reactive control is sufficient for the bounded movement task; resource normalization does not establish topology necessity or superiority.",
+  "engineering_usefulness": [
+    "fail-closed resource-comparability guard",
+    "basis-labeled activity metrics",
+    "common-interface accounting",
+    "replay-compatible comparison surface"
+  ],
+  "claim_boundary": "NON_EVIDENTIARY/NONCANONICAL; no matched compute or energy claim, topology superiority, biological fidelity, composition contribution, external validity, novelty, or SB003 allocation.",
+  "collision_check": "PASS: MAIN owns M1-002 only; MAIN R170 current-run PR creation blocked; Relay disabled; Forge branch isolated.",
+  "directive_freshness": {
+    "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "material_delta": false,
+    "applicable": [
+      "HUMAN-20260928-001",
+      "HUMAN-20260928-002",
+      "HUMAN-20260927-002"
     ]
   },
-  "ci": {
-    "run_id": 36356510355,
-    "exact_head": "250708bf93edebc9d83d097a0f2fc1232d185368",
-    "status": "completed",
-    "conclusion": "success",
-    "python_311": "SUCCESS",
-    "python_313": "SUCCESS"
-  },
-  "observations": [
-    "both_controllers_reach_target_in_three_accepted_steps",
-    "same_history_replay_exact_for_both_controllers",
-    "fail_closed_guards_hold_in_bounded_tests",
-    "activity_exposure_is_unmatched"
-  ],
-  "ordinary_reduction": "ordinary hierarchical reactive control with a narrow replaceable interface, deterministic arbitration, checkpoint/replay and transactional rollback",
-  "engineering_usefulness": "reusable controller replacement surface and fail-closed transaction boundary for a future separately allocated SYSTEM_BUILD",
-  "limitations": [
-    "structured_and_reactive_activity_exposure_unmatched",
-    "not_a_fair_performance_efficiency_or_topology_comparison",
-    "complete_matched_replacement_ladder_absent",
-    "interaction_ablation_matrix_absent",
-    "tiny_fixed_deterministic_line_world",
-    "no_biological_fidelity_or_external_validity",
-    "no_composition_contribution"
-  ],
-  "claim_boundary": {
-    "component_function": "BOUNDED_FORGE_TESTS_SUPPORTED",
-    "system_build_admission": false,
-    "promotion_authorized": false,
-    "comparative_support": false,
-    "composition_contribution": "NOT_ESTABLISHED",
-    "scientifically_novel": false,
-    "scientific_credit": 0
-  },
-  "collision_check": "PASS_ANALYST_R163_MAIN_ONLY_M1_002_ROBUSTNESS; REQUIRED_MAIN_BRANCH_NOT_PRESENT_AT_CHECK; MAIN_R169_INTEGRATED_STOP; RELAY_NO_COMPETING_ALLOCATION; ALL_NON_FORGE_REFS_UNTOUCHED",
   "refs_observed": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "analyst": "EVA-20260928T080240+0900-R163-M1-POST-INTEGRATION-ROBUSTNESS",
-    "analyst_head": "75ca5511739e6174cafc485d3c5fa6ffe9fda8b0",
-    "main_orchestrator": "MAIN-20260928T072510+0900-PRIMARY-R169-M1-INTEGRATED",
-    "main_orchestrator_head": "53890fc113ba4e9c0680e138376485b11bf0a849",
-    "control": "CTRL-20260928T065013+0900-R104-M1-WAIT-ANALYST",
-    "control_head": "dbca69cc12a4eb3a2e57c5ccf9aa00d38ed20126",
-    "methodology": "METHCAL-20260928T081717+0900-R138-M1-ROBUSTNESS-CONTRACT-CALIBRATION",
-    "methodology_head": "39571a5710d1a6a545f933ed76f383f505ad38b8",
-    "theory": "THEORY-20260928T073157+0900-R13-FLY-HIERARCHICAL-INTEGRATION-DESIGN-4F7A2C91",
-    "external_science_head": "b1105da77d78de20c3974fea5f384a6846416c8c",
-    "utility_head": "12ca71d25f431c024009c698ddd19234a1ecca60"
-  },
-  "metrics_this_run": {
-    "scientific_novelty_probes": 0,
-    "scientific_kills": 0,
-    "scientific_survivors": 0,
-    "integration_prototypes_created": 0,
-    "existing_integration_prototypes_handed_off": 1,
-    "promotion_proposals": 0
+    "control_latest_blob": "9f95ee7254a6efa7bf77c80721dbf3d7a4657cbb",
+    "evidence_analyst_latest_blob": "b1448552715776f09c5f479dc92ebbaca718ea62",
+    "main_latest_blob": "218daab880e81f932330b5d29f5fb64887eeef15",
+    "methodology_latest_blob": "540eeb00c3ff5c95046e4473f66a8ff1e5873605",
+    "theory_latest_blob": "7cc894fe4140060d9eea3d3499d0d8b937b4138d",
+    "utility_state_blob": "890324524f5ac0bde432deac43bedf1988a5a3db"
   },
   "publication": {
-    "prototype_publication_result": "PREEXISTING_EXACT_HEAD_READBACK_VERIFIED",
-    "prototype_ci_result": "SUCCESS",
-    "handoff_attempt_limit": 5,
-    "p0_incident_status": "CLOSED_BY_CONTROL",
-    "new_incident_diagnosis": false
+    "branch_head_before": "669030dda2911709c9eae4cedf6ae21a2fda6f88",
+    "mode": "ATOMIC_GIT_DATA_COMMIT_NON_FORCE",
+    "attempt": 5,
+    "attempt_limit": 5,
+    "readback_required": true
   },
   "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
-  "history_path": "reports/fast_forge/history/2026-09-28/0833-fly0-hierarchical-loop-handoff.md"
+  "history_path": "reports/fast_forge/history/2026-09-28/1035-fly0-resource-normalization-handoff.md"
 }
