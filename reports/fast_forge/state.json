@@ -1,21 +1,22 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260929T064200+0900-FLY0-INTENT-SUPERSESSION-GUARD-GREEN",
-  "forge_id": "FORGE-FLY0-INTENT-SUPERSESSION-GUARD",
+  "generation_id": "FORGE-20260930T053800+0900-FLY0-RESYNC-LINEAGE-FENCE-GREEN",
+  "forge_id": "FORGE-FLY0-RESYNC-LINEAGE-FENCE",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260929-fly0-intent-supersession-guard-a",
-  "exact_source_head": "8452bff9e1d0dc91c47c1d968f5ddcddd5335a22",
-  "authoritative_history": "reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md",
-  "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-  "analyst_generation": "R169",
-  "analyst_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
-  "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
-  "main_generation": "R183",
-  "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-  "relay_allocated": false,
+  "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL",
+  "branch": "forge/20260930-fly0-resync-lineage-fence-a",
+  "exact_validated_head": "4c5147a5c39b6c5da8320226de3ddc75d30de6b1",
+  "source": {
+    "path": "forge_prototypes/fly0_recovery_epoch_fence.py",
+    "blob": "e090f524100f701af5979549bc693099f5a97a6d"
+  },
+  "focused_test": {
+    "path": "tests/test_forge_fly0_recovery_epoch_fence.py",
+    "blob": "dfeda8ee1a278a90df788698f9a074039e07bb2c"
+  },
   "ci": {
-    "run_id": 36487505532,
+    "run_id": 36620923633,
     "status": "success",
     "python_311": "success",
     "python_313": "success",
@@ -24,16 +25,47 @@
     "tests": "success",
     "bundle_validation": "success"
   },
-  "source_repair": {
-    "attempts": 2,
-    "attempt_1": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "attempt_2": "SUCCESS"
+  "directive_index": {
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "delta": false
   },
+  "authority": {
+    "control": "R131",
+    "evidence_analyst": "R173",
+    "primary_main": "R200",
+    "methodology": "R153",
+    "theory": "R25",
+    "audit": "R13",
+    "relay_allocated": false
+  },
+  "m1_002": {
+    "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "critical_path": true,
+    "mutated_by_forge": false
+  },
+  "sb003": {
+    "state": "ALLOCATED_CONDITIONAL_INACTIVE",
+    "exact_head_admitted_by_analyst": false,
+    "activation_changed": false
+  },
+  "acceptance": {
+    "four_variant_composition": true,
+    "pre_resync_newer_sequence_rejected": true,
+    "pre_resync_pending_retired": true,
+    "checkpoint_restore_preserves_epoch_fence": true,
+    "future_or_mismatched_epoch_fail_closed": true
+  },
+  "limitations": [
+    "COOPERATIVE_ISSUE_TIME_RECOVERY_EPOCH_REQUIRED",
+    "NON_COOPERATING_PRODUCER_FORGERY_NOT_SOLVED"
+  ],
   "p0": {
-    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "root_cause": "UNKNOWN"
+    "root_cause": "UNKNOWN",
+    "report_history_reconciled": true,
+    "latest_reconciled": true
   },
+  "history_path": "reports/fast_forge/history/2026-09-30/0538-resync-lineage-fence-green.md",
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
