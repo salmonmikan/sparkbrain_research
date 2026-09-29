@@ -1,21 +1,48 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260929T064200+0900-FLY0-INTENT-SUPERSESSION-GUARD-GREEN",
-  "forge_id": "FORGE-FLY0-INTENT-SUPERSESSION-GUARD",
+  "generation_id": "FORGE-20260930T013500+0900-FLY0-UPSTREAM-RECEIPT-VALIDATOR-FOCUSED-ACCEPTANCE-GREEN",
+  "forge_id": "FORGE-FLY0-UPSTREAM-RECEIPT-VALIDATOR-FOCUSED-ACCEPTANCE",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260929-fly0-intent-supersession-guard-a",
-  "exact_source_head": "8452bff9e1d0dc91c47c1d968f5ddcddd5335a22",
-  "authoritative_history": "reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md",
-  "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-  "analyst_generation": "R169",
-  "analyst_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
-  "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
-  "main_generation": "R183",
-  "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-  "relay_allocated": false,
+  "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL",
+  "branch": "forge/20260930-fly0-upstream-receipt-validator-a",
+  "validated_exact_head": "9cbb8949c26bf6ff9fd030b5fe6e2328310d2c74",
+  "source_commit": "af238d1bd6fcb4d5433a5caaa96a246e880b1121",
+  "source_blob": "6aa21e9a9b1c336c87defc224690bc1a21f33fc9",
+  "test_blob": "97a2141f69644c9e02a5ab3d736a68e0a4b584df",
+  "directive_index": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "delta": false
+  },
+  "authority": {
+    "control": "R129",
+    "evidence_analyst": "R172",
+    "methodology": "R153",
+    "theory": "R24",
+    "audit": "R13",
+    "primary_main": "R196",
+    "relay": null
+  },
+  "m1_002": {
+    "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "modified": false
+  },
+  "sb003": {
+    "state": "ALLOCATED_CONDITIONAL_INACTIVE",
+    "modified": false
+  },
+  "acceptance": {
+    "four_variant_composition": true,
+    "stale_authority_without_control_restore": true,
+    "tamper_rejection": true,
+    "rollback_rejection": true,
+    "masked_feedback_unresolved": true,
+    "fresh_analyst_reconciliation_required": true,
+    "long_running_pipeline_complete": false
+  },
   "ci": {
-    "run_id": 36487505532,
+    "run_id": 36599658868,
     "status": "success",
     "python_311": "success",
     "python_313": "success",
@@ -24,16 +51,17 @@
     "tests": "success",
     "bundle_validation": "success"
   },
-  "source_repair": {
-    "attempts": 2,
-    "attempt_1": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "attempt_2": "SUCCESS"
+  "source_test_publication": {
+    "attempts": 4,
+    "attempts_1_to_3": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+    "attempt_4": "SUCCESS",
+    "readback_verified": true
   },
   "p0": {
-    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
     "root_cause": "UNKNOWN"
   },
+  "authoritative_history": "reports/fast_forge/history/2026-09-30/0135-upstream-receipt-validator-focused-acceptance-green.md",
   "scientific_credit": 0,
   "new_scientific_result": false,
   "scheduler_state_changed": false,
