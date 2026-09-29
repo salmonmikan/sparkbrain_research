@@ -1,14 +1,14 @@
-# SparkBrain Methodology Calibration Audit — Latest R152
+# SparkBrain Methodology Calibration Audit — Latest R153
 
-generation_id: `METHCAL-20260929T221651+0900-R152-R24-GATE-LIVENESS-P0-CALIBRATION`
-history_path: `analysis/methodology_calibration/history/2026-09-29/2216-R152-r24-gate-liveness-p0-calibration.md`
+generation_id: `METHCAL-20260930T001533+0900-R153-R171-LAYERED-ADMISSION-P0-CALIBRATION`
+history_path: `analysis/methodology_calibration/history/2026-09-30/0015-R153-r171-layered-admission-p0-calibration.md`
 overall_classification: WELL_CALIBRATED
 new_scientific_result: false
 
-R152 keeps M1/SB003 methodology unchanged while calibrating the newer Theory R24 + FLY-0 reconciliation-gate and feedback-liveness Forge inputs.
+R153 accepts Evidence Analyst R171's scoped FLY-0 admissions as methodologically sound: typed ascending is optional B/C, feedback liveness is optional B/C semantics only with bounded retention/expiry required for long-running use, and the repaired reconciliation gate at `dde6270...` is optional B/C only behind a separate validated upstream R24 proof issuer.
 
-The admission gate at exact head `41e021fef824e0bc899184c9d102d69a19e58255` / CI `36563852129` and feedback-liveness layer at `c67fad2891f8209b05edbf21e2d86ce50b2ad27b` / CI `36570573445` are engineering-green, NON_EVIDENTIARY/NONCANONICAL, and pending fresh scoped Analyst reconciliation.
+Audit R13's consumer proof-identity defect is closed at the repaired consumer scope. The caller-constructible `make_validation_proof()` helper remains a self-attestation risk if misused as SYSTEM_BUILD authority, but R171 explicitly forbids that use; the upstream validator requirement remains open and non-gating.
 
-Methodology boundary: if the gate is adopted, its caller-mintable `ValidatedReceiptProof` helper must not become the trusted SYSTEM_BUILD validator; use a separate source-frame + execution-journal validator as R24 proposes. Feedback liveness also needs bounded pending-state retention/expiry if used long-running. Neither point is an M1 gate or SB003 activation condition.
+M1-002 remains 1 ahead / 0 behind current main with no PR; the blocker remains the pre-GitHub PR-create route rather than methodology. SB003 stays `ALLOCATED_CONDITIONAL_INACTIVE` with unchanged activation conditions. Scientific credit added is 0.
 
-M1-002 remains 1 ahead / 0 behind current main, with no open PR. P0 remains OPEN / root cause UNKNOWN; Control R126 again shows 5/5 isolated `create_pull_request` refusals while other write paths succeed intermittently. Scientific credit added is 0.
+P0 remains OPEN/root cause UNKNOWN. Control append-only R128 and MAIN append-only R196 both have moving-cache lag; append-only histories remain authority and no stale-pointer misallocation is observed.

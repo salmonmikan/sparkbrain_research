@@ -1,32 +1,35 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-29T22:16:51+09:00",
+  "timestamp": "2026-09-30T00:15:33+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260929T221651+0900-R152-R24-GATE-LIVENESS-P0-CALIBRATION",
-    "sequence": 152,
+    "generation_id": "METHCAL-20260930T001533+0900-R153-R171-LAYERED-ADMISSION-P0-CALIBRATION",
+    "sequence": 153,
     "material_change": true,
-    "material_change_reason": "R24_RECEIPT_PROOF_BOUNDARY_AND_FORGE_GATE_LIVENESS_GREEN_RECALIBRATION",
-    "supersedes_generation_id": "METHCAL-20260929T201559+0900-R151-R170-R23-TYPED-ASCENDING-P0-CALIBRATION",
+    "material_change_reason": "R171_SCOPED_LAYERED_FLY0_ADMISSION_AND_R13_CONSUMER_DEFECT_CLOSURE",
+    "supersedes_generation_id": "METHCAL-20260929T221651+0900-R152-R24-GATE-LIVENESS-P0-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "directive_freshness": {
     "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "newly_active_or_materially_changed": [],
     "freshness_established": true
   },
   "inputs": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "analyst_generation": "R170",
-    "analyst_head": "cebf72d66ee5d0c9ef27395af847f58799e99bcb",
-    "control_generation": "R126",
-    "control_head": "38ca9f3942e1f7aadabbc3a25592a95459911ac1",
-    "main_generation": "R194",
+    "analyst_generation": "R171",
+    "analyst_head": "956cca5db131e15c8d0c16a8dff572ece9f779a3",
+    "control_generation": "R128",
+    "control_head": "847d89df0cd8520be018a169d74d32a1843fe5af",
+    "main_generation": "R196",
+    "main_reports_head": "382618beca01406dc1717d3612feaf692b91eef8",
     "theory_generation": "R24",
     "literature_generation": "R50",
-    "audit_generation": "R12",
-    "prior_methodology": "R151",
-    "utility_head": "cfff53f87c41db7bf94497a7d777a5a184a22975"
+    "audit_generation": "R13",
+    "external_science_head": "f5c35efb13d287dc8fdaedb221adf81dcb2fb9c7",
+    "prior_methodology": "R152",
+    "forge_repaired_gate_head": "dde6270db4238ca78d1678a8826b8a463cd2d8dc"
   },
   "overall_classification": "WELL_CALIBRATED",
   "findings": {
@@ -40,11 +43,13 @@
     "sb003_rolling_contract": "KEEP",
     "known_defect_handling": "KEEP",
     "fly0_observed_state_summary": "KEEP_ADMITTED_NARROW_OPTIONAL",
-    "fly0_typed_ascending_semantics": "CLARIFY_ENGINEERING_GREEN_PENDING_ANALYST",
-    "fly0_reconciliation_admission_gate": "TIGHTEN_IF_ADOPTED_SEPARATE_TRUSTED_VALIDATOR",
-    "fly0_feedback_liveness": "CLARIFY_ENGINEERING_GREEN_PENDING_ANALYST",
+    "fly0_typed_ascending_semantics": "KEEP_ADMITTED_OPTIONAL_B_C",
+    "fly0_feedback_liveness": "KEEP_ADMITTED_LIVENESS_ONLY_NO_WORLD_COMMIT",
     "fly0_feedback_pending_retention": "TIGHTEN_IF_LONG_RUNNING_ADOPTED",
-    "r24_receipt_validation_boundary": "KEEP_OPTIONAL_NON_GATING",
+    "fly0_reconciliation_gate": "KEEP_ADMITTED_OPTIONAL_B_C_BEHIND_TRUSTED_UPSTREAM_VALIDATOR",
+    "audit_r13_consumer_proof_identity_defect": "CLOSED_AT_REPAIRED_EXACT_HEAD",
+    "r24_upstream_receipt_validator": "KEEP_OPTIONAL_NON_GATING_OPEN",
+    "gate_self_attestation_helper": "CLARIFY_FIXTURE_ONLY_NOT_SYSTEM_BUILD_AUTHORITY",
     "fly0_resource_comparator_fairness": "SPLIT_BY_CLAIM_TYPE",
     "forge_utility_noncollision": "KEEP",
     "append_only_primary_authority": "KEEP",
@@ -72,40 +77,65 @@
     "build_id": "BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT",
     "owner": "PRIMARY_MAIN",
     "state": "ALLOCATED_CONDITIONAL_INACTIVE",
-    "narrow_observer_admission": "OPTIONAL_PREAUTHORIZED_NARROW_OBSERVER_SYSTEM_BUILD_INPUT",
-    "newer_layered_inputs": "ENGINEERING_GREEN_PENDING_FRESH_ANALYST_RECONCILIATION",
+    "activation_conditions_unchanged": true,
+    "optional_inputs": [
+      "INTENT_SUPERSESSION_A_B",
+      "NARROW_OBSERVER_B_C",
+      "TYPED_ASCENDING_B_C",
+      "LIVENESS_SEMANTICS_ONLY_B_C",
+      "REPAIRED_CONSUMER_RECONCILIATION_GATE_B_C"
+    ],
+    "held_inputs": [
+      "FULL_RECEIPT_PATH_PENDING_UPSTREAM_VALIDATOR",
+      "COMPOSED_LONG_RUNNING_LIVENESS_PENDING_RETENTION_EXPIRY"
+    ],
     "scientific_credit": 0
   },
   "fly0": {
-    "observed_state_validated_head": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
-    "observed_state_ci_run": 36503631615,
     "typed_ascending_validated_head": "da0d6cae7c863ce3ded5e9fc2ea7306d6d78e2a1",
     "typed_ascending_ci_run": 36557302058,
-    "reconciliation_gate_validated_head": "41e021fef824e0bc899184c9d102d69a19e58255",
-    "reconciliation_gate_ci_run": 36563852129,
     "feedback_liveness_validated_head": "c67fad2891f8209b05edbf21e2d86ce50b2ad27b",
     "feedback_liveness_ci_run": 36570573445,
-    "upstream_receipt_validator_implemented": false,
-    "gate_self_attestation_risk_if_misused": true,
+    "repaired_reconciliation_gate_head": "dde6270db4238ca78d1678a8826b8a463cd2d8dc",
+    "repaired_reconciliation_gate_ci_run": 36585889206,
+    "source_blob": "076b5184468c4c90b2ca0bf385cf1bdee972e2e8",
+    "test_blob": "796c9421c1adb9b5e41b558e5cd42b2e896dfe9d",
+    "cross_transaction_signal_replay_rejected": true,
+    "conflicting_sequence_rejected": true,
+    "checkpoint_restore_signal_dedupe": true,
+    "caller_constructible_proof_helper_present": true,
+    "upstream_validator_required": true,
+    "consumer_self_certification_authorized": false,
     "pending_retention_policy_established": false,
     "scientific_credit": 0
   },
+  "science": {
+    "terminal": 35,
+    "total": 35,
+    "active": 0,
+    "queued": 0,
+    "consumed_formal_identities": 8,
+    "new_result": false
+  },
+  "revisit": {
+    "new_object": false
+  },
   "persistence_audit": {
     "control": {
-      "append_only": "R126",
+      "append_only": "R128",
       "latest": "R125",
-      "state": "R125"
+      "state": "R128"
     },
     "main": {
-      "append_only": "R194",
-      "latest": "R194",
-      "state": "R194",
-      "lease": "R194"
+      "append_only": "R196",
+      "latest": "R195",
+      "state": "R195",
+      "lease": "R195"
     },
     "analyst": {
-      "append_only": "R170",
-      "latest": "R170",
-      "state": "R170"
+      "append_only": "R171",
+      "latest": "R171",
+      "state": "R171"
     },
     "authority_rule": "APPEND_ONLY_HISTORY_PRIMARY_MOVING_POINTERS_CACHE",
     "stale_pointer_misallocation_observed": false
@@ -121,8 +151,9 @@
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "classification": "NONUNIFORM_INTERMITTENT_PRE_GITHUB_MUTATION_REFUSAL_ACTION_PATH_PURPOSE_EXECUTION_CONTEXT_TIMING_SENSITIVE",
+    "classification": "PERSISTENT_CREATE_PULL_REQUEST_PRE_GITHUB_REFUSAL_WITH_NONUNIFORM_INTERMITTENT_OTHER_MUTATIONS",
     "strongest_recurring_surface": "CREATE_PULL_REQUEST",
+    "main_r196_pr_refused_5_of_5": true,
     "root_cause": "UNKNOWN"
   },
   "hard_floor": {
@@ -139,12 +170,12 @@
   },
   "persistence": {
     "branch": "ops/methodology-calibration-audit",
-    "history_path": "analysis/methodology_calibration/history/2026-09-29/2216-R152-r24-gate-liveness-p0-calibration.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-30/0015-R153-r171-layered-admission-p0-calibration.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts": 5,
-    "attempt": 1,
+    "attempt": 2,
     "force_push": false,
     "readback_required": true,
-    "head_before": "bda3933ea5fa5ea46667a8912559e9b9ca3ff236"
+    "head_before": "fc7bb030862a822a4d7596ee0331a5ff649a03bb"
   }
 }
