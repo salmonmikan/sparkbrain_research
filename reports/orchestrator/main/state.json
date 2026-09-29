@@ -1,19 +1,18 @@
 {
   "schema_version": 2,
-  "generation": "R186",
-  "generation_id": "MAIN-20260929T091129+0900-PRIMARY-R186-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-29T09:11:29+09:00",
+  "generation": "R187",
+  "generation_id": "MAIN-20260929T111310+0900-PRIMARY-R187-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-29T11:13:10+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
   "analyst_generation": "R169",
   "analyst_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
-  "control_generation": "R118",
-  "control_head": "86f646965c0216f3f7c4f488c78038c65ddffc12",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "delta": false
   },
   "integration": {
@@ -45,28 +44,28 @@
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
     "root_cause": "UNKNOWN",
     "repository_wide_outage_supported": false
   },
   "action": {
     "mutation_action": "create_pull_request",
     "attempts": 5,
-    "explicit_pre_github_refusals": 5,
+    "explicit_pre_github_refusals": 4,
+    "attempt_1_error_capture": "LOST_TO_CODE_MODE_TOOL_CALL_LIMIT",
     "retries_had_fresh_state_checks": true,
     "pr_absent_after_final_attempt": true
   },
   "new_build_result": false,
   "new_scientific_result": false,
-  "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_EXPLICIT_PRE_GITHUB_REFUSALS",
+  "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-29/0911-r186-pr-create-platform-blocked.md",
+  "history_path": "reports/orchestrator/main/history/2026-09-29/1113-r187-pr-create-platform-blocked.md",
   "publication": {
     "branch": "ops/orchestrator-run-report",
-    "expected_head_before": "79c650c228b0f215f8e5b4894d98e0c26dbd4424",
+    "expected_head_before": "5abef3ce110b71c4d3eb44da0ddb501fc017cdea",
     "atomic": true,
     "attempt_limit": 5,
-    "attempt": 3
+    "attempt": 2
   }
 }
