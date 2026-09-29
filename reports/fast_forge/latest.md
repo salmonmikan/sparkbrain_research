@@ -1,9 +1,11 @@
-# Fast Forge latest — FLY-0 intent supersession guard green
+# Fast Forge latest — FLY-0 reconciliation admission gate green
 
 FORGE_INTERESTING / SYSTEM_BUILD_INPUT / NON_EVIDENTIARY / NONCANONICAL.
 
-Exact source 8452bff9e1d0dc91c47c1d968f5ddcddd5335a22 is CI-green in run 36487505532 on Python 3.11/3.13 through lint, local readiness, tests and bundle validation. Superseded authority epoch/token frames fail closed before local execution while fresh frames retain ModulationFrame v2; checkpoint/restore is transactional and replayable.
+Exact source head `41e021fef824e0bc899184c9d102d69a19e58255` is CI-green in run `36563852129` on Python 3.11/3.13.
 
-Optional future SYSTEM_BUILD input only. Analyst R169 remains authority and SB003 remains conditionally inactive behind M1-002. Scientific credit 0.
+The consumer gate requires an upstream receipt-validation proof for WORLD reconciliation, preserves dual validity for committed outcomes without restoring stale control, and handles duplicate/out-of-order delivery without rollback. Full R22 receipt validation remains upstream and unimplemented.
 
-Authoritative history: reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md
+Fresh Analyst reconciliation is required before SYSTEM_BUILD adoption. SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`; scientific credit 0.
+
+History: `reports/fast_forge/history/2026-09-29/2049-fly0-reconciliation-admission-gate-green.md`
