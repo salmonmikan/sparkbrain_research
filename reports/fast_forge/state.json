@@ -1,22 +1,22 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260929T064200+0900-FLY0-INTENT-SUPERSESSION-GUARD-GREEN",
-  "forge_id": "FORGE-FLY0-INTENT-SUPERSESSION-GUARD",
+  "generation_id": "FORGE-20260930T035503+0900-FLY0-R25-BOUNDED-HORIZON-RECOVERY-GREEN",
+  "forge_id": "FORGE-FLY0-R25-BOUNDED-HORIZON-RECOVERY",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260929-fly0-intent-supersession-guard-a",
-  "exact_source_head": "8452bff9e1d0dc91c47c1d968f5ddcddd5335a22",
-  "authoritative_history": "reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md",
-  "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-  "analyst_generation": "R169",
-  "analyst_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
-  "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
-  "main_generation": "R183",
-  "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-  "relay_allocated": false,
-  "ci": {
-    "run_id": 36487505532,
-    "status": "success",
+  "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL",
+  "branch": "forge/20260930-fly0-bounded-horizon-recovery-a",
+  "exact_validated_head": "b21a9495e207ab7af66b021968985993c4428c31",
+  "source": {
+    "path": "forge_prototypes/fly0_bounded_reconciliation_horizon.py",
+    "blob": "0a604b98931b08e42a87fa9528fd6f9739c4c6f4",
+    "original_source_commit": "2eba4dbc21f31cd16cc46a54f7e731259b4a1f43"
+  },
+  "focused_acceptance": {
+    "path": "tests/test_forge_fly0_bounded_reconciliation_horizon.py",
+    "blob": "1e429aad804b2dde55fa5dd18374c6a475029c6c",
+    "ci_run": 36615136680,
+    "ci": "success",
     "python_311": "success",
     "python_313": "success",
     "lint": "success",
@@ -24,18 +24,69 @@
     "tests": "success",
     "bundle_validation": "success"
   },
-  "source_repair": {
-    "attempts": 2,
-    "attempt_1": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "attempt_2": "SUCCESS"
+  "acceptance": {
+    "four_variant_composition": true,
+    "pending_blocks_horizon_without_explicit_expiry": true,
+    "explicit_expiry_creates_causal_gap": true,
+    "outside_horizon_never_mutates_world": true,
+    "checkpoint_restore_pending_lineage": true,
+    "checkpoint_restore_horizon_watermark_dedupe_gap": true,
+    "ordinary_receipt_does_not_clear_gap": true,
+    "explicit_resynchronization_clears_gap": true,
+    "long_run_exact_identity_bounded": true,
+    "configured_long_run_window": 4,
+    "global_exactly_once_claimed": false
+  },
+  "directive_index": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "delta": false
+  },
+  "authority": {
+    "control": "R129",
+    "evidence_analyst": "R173",
+    "primary_main": "R199",
+    "methodology": "R153",
+    "theory": "R25",
+    "literature": "R51_APPEND_ONLY",
+    "audit": "R13",
+    "relay_allocated": false
+  },
+  "m1_002": {
+    "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "critical_path": true,
+    "mutated_by_forge": false
+  },
+  "sb003": {
+    "build_id": "BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT",
+    "state": "ALLOCATED_CONDITIONAL_INACTIVE",
+    "activation_changed": false,
+    "exact_head_admitted_by_analyst": false
+  },
+  "retries": {
+    "initial_test_publication_commit": "858607dd6b5ef7f2cf71a4147b990b82c4048df8",
+    "initial_ci_run": 36614087678,
+    "initial_ci": "failure_fixture_out_of_declared_world_bounds",
+    "fixture_repair_attempts": 3,
+    "fixture_repair_pre_github_refusals": 2,
+    "fixture_repair_commit": "d48d6e2dfcde36be8c30462a42de8ea077306e25",
+    "fixture_repair_ci_run": 36614612442,
+    "fixture_repair_ci": "success",
+    "recovery_test_publication_attempts": 3,
+    "recovery_test_pre_github_refusals": 2,
+    "final_recovery_test_commit": "b21a9495e207ab7af66b021968985993c4428c31"
   },
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "root_cause": "UNKNOWN"
+    "root_cause": "UNKNOWN",
+    "classification": "NONUNIFORM_INTERMITTENT_PRE_GITHUB_MUTATION_REFUSAL",
+    "repository_wide_outage_supported": false
   },
+  "history_path": "reports/fast_forge/history/2026-09-30/0355-r25-bounded-horizon-recovery-green.md",
   "scientific_credit": 0,
   "new_scientific_result": false,
+  "system_build_allocation_changed": false,
   "scheduler_state_changed": false,
   "work_mode_used": false
 }
