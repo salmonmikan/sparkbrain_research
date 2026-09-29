@@ -1,12 +1,10 @@
-# SparkBrain Methodology Calibration Audit — Latest R150
+# SparkBrain Methodology Calibration Audit — Latest R151
 
-generation_id: METHCAL-20260929T162451+0900-R150-DUAL-VALIDITY-P0-POINTER-DEBT-CALIBRATION
-history_path: analysis/methodology_calibration/history/2026-09-29/1624-R150-dual-validity-p0-pointer-debt-calibration.md
+generation_id: METHCAL-20260929T201559+0900-R151-R170-R23-TYPED-ASCENDING-P0-CALIBRATION
+history_path: analysis/methodology_calibration/history/2026-09-29/2015-R151-r170-r23-typed-ascending-p0-calibration.md
 overall_classification: WELL_CALIBRATED
 new_scientific_result: false
 
-Append-only R150 is the current methodology authority. M1-002 and SB003 gates remain unchanged. FLY-0 observed-state stays engineering-green pending Analyst. The newer outcome-receipt correlation prototype remains unverified/non-gating, and Theory R22 exposes a concrete dual-validity semantic gap that must be tightened only if the fuller receipt contract is adopted.
+R170 now narrowly admits the CI-green FLY-0 observed-state adapter as optional SB003 B/C engineering input. Theory R23 / Literature R50 add typed ascending semantics; Forge has a CI-green implementation at `da0d6cae7c863ce3ded5e9fc2ea7306d6d78e2a1` / run `36557302058`, pending fresh scoped Analyst reconciliation. The fuller R22 receipt remains unverified/non-gating.
 
-P0 remains OPEN / root cause UNKNOWN. A minimal non-code payload under the Forge `tests/` namespace also received five pre-GitHub refusals, weakening payload-semantics-only explanations. Multiple ops streams currently have moving-pointer debt; append-only history remains primary authority and stale latest/state/lease caches must not be mistaken for absence of newer durable generations.
-
-Canonical science is unchanged; scientific credit added is 0.
+M1-002 and SB003 activation remain unchanged. P0 stays OPEN / root cause UNKNOWN; MAIN R194 still records 5/5 pre-GitHub PR-create refusals while other write surfaces succeed after retry. Scientific credit added is 0.

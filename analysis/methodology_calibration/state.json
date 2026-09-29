@@ -1,43 +1,31 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-29T16:24:51+09:00",
+  "timestamp": "2026-09-29T20:15:59+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260929T162451+0900-R150-DUAL-VALIDITY-P0-POINTER-DEBT-CALIBRATION",
-    "sequence": 150,
+    "generation_id": "METHCAL-20260929T201559+0900-R151-R170-R23-TYPED-ASCENDING-P0-CALIBRATION",
+    "sequence": 151,
     "material_change": true,
-    "material_change_reason": "R22_DUAL_VALIDITY_RECEIPT_SEMANTICS_AND_CROSS_STREAM_POINTER_DEBT_RECALIBRATED",
-    "supersedes_generation_id": "METHCAL-20260929T142030+0900-R149-OUTCOME-RECEIPT-CORRELATION-P0-CALIBRATION",
+    "material_change_reason": "R170_NARROW_OBSERVER_ADMISSION_AND_R23_TYPED_ASCENDING_GREEN_RECALIBRATION",
+    "supersedes_generation_id": "METHCAL-20260929T162451+0900-R150-DUAL-VALIDITY-P0-POINTER-DEBT-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "directive_freshness": {
+    "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "previous_active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "newly_active_or_materially_changed": [],
-    "applicable_directives_read": [
-      "HUMAN-20260925-002",
-      "HUMAN-20260926-003",
-      "HUMAN-20260926-004",
-      "HUMAN-20260927-002",
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002"
-    ],
     "freshness_established": true
   },
   "inputs": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "analyst_generation": "R169",
-    "analyst_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
-    "control_generation": "R121",
-    "control_head": "5eadeb0d0a2c619d105f6ea8819a1b5bbef530cf",
-    "main_generation": "R192",
-    "main_history_commit": "a6d11d760cbd1a07637decf2c63a561f3b392fa1",
-    "main_reports_head": "36c006f99eab11f16f1142998272e93f18594a58",
-    "theory_generation": "R22",
-    "theory_head": "6ae93380fb834e0e67eb0bd3c676ede2111aa8b7",
-    "forge_outcome_receipt_branch_head": "87477329241aa6fa97d56847bff5bee05b759059",
-    "forge_outcome_receipt_source": "d569130d1c512d6b75b6b381c8a90ed14934e64c",
-    "forge_observed_state_validated_head": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
-    "prior_methodology": "R149"
+    "analyst_generation": "R170",
+    "analyst_head": "cebf72d66ee5d0c9ef27395af847f58799e99bcb",
+    "control_generation": "R124",
+    "main_generation": "R194",
+    "main_lease": "R193",
+    "theory_generation": "R23",
+    "literature_generation": "R50",
+    "audit_generation": "R12",
+    "prior_methodology": "R150"
   },
   "overall_classification": "WELL_CALIBRATED",
   "findings": {
@@ -50,12 +38,13 @@
     "sb003_conditional_activation": "KEEP",
     "sb003_rolling_contract": "KEEP",
     "known_defect_handling": "KEEP",
-    "fly0_observed_state_summary": "KEEP_GREEN_PENDING_ANALYST",
+    "fly0_observed_state_summary": "KEEP_ADMITTED_NARROW_OPTIONAL",
+    "fly0_typed_ascending_semantics": "CLARIFY_ENGINEERING_GREEN_PENDING_ANALYST",
     "fly0_outcome_receipt_prototype": "CLARIFY_UNVERIFIED_NON_GATING",
     "r22_dual_validity_receipt_semantics": "TIGHTEN_IF_FULLER_RECEIPT_ADOPTED",
-    "r22_receipt_tests": "CLARIFY_SCOPED_ACCEPTANCE_NOT_ACTIVATION_GATE",
+    "r50_topology_novelty_boundary": "TIGHTEN_FOR_FUTURE_SCIENTIFIC_CLAIMS_ONLY",
     "fly0_resource_comparator_fairness": "SPLIT_BY_CLAIM_TYPE",
-    "p0_tests_namespace_minimal_canary": "CLARIFY_SIGNAL_NOT_ROOT_CAUSE_PROOF",
+    "forge_utility_noncollision": "KEEP",
     "append_only_primary_authority": "KEEP",
     "moving_cache_debt": "CLARIFY_OPERATIONAL_NOT_SCIENCE_GATE",
     "operational_pr_route": "CLARIFY_NOT_METHODOLOGY_GATE",
@@ -66,9 +55,9 @@
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "ahead_by": 1,
     "behind_by": 0,
-    "pr_open": false,
     "ci_run": 36361950457,
     "ci": "success",
+    "pr_open": false,
     "built": true,
     "bounded_functionally_verified": true,
     "comparatively_supported": false,
@@ -81,44 +70,32 @@
     "build_id": "BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT",
     "owner": "PRIMARY_MAIN",
     "state": "ALLOCATED_CONDITIONAL_INACTIVE",
-    "rolling_contract": [
-      "A_PORT_GREEN_ENGINEERING_PRIMITIVES",
-      "B_CLOSE_BOUNDED_HIERARCHICAL_SENSORIMOTOR_LOOP",
-      "C_FOUR_WAY_REPLACEMENT_AND_CAUSAL_DIAGNOSTICS"
-    ],
-    "rolling_authority_calibration": "BOUNDED_PROSPECTIVE_SYSTEM_BUILD_ONLY",
+    "narrow_observer_admission": "OPTIONAL_PREAUTHORIZED_NARROW_OBSERVER_SYSTEM_BUILD_INPUT",
+    "typed_ascending_status": "ENGINEERING_GREEN_PENDING_FRESH_ANALYST_RECONCILIATION",
     "scientific_credit": 0
   },
   "fly0": {
     "observed_state_validated_head": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
     "observed_state_ci_run": 36503631615,
-    "observed_state_status": "ENGINEERING_GREEN_PENDING_ANALYST",
-    "outcome_receipt_source": "d569130d1c512d6b75b6b381c8a90ed14934e64c",
-    "outcome_receipt_branch_head": "87477329241aa6fa97d56847bff5bee05b759059",
-    "focused_test_present": false,
-    "outcome_receipt_status": "FORGE_PROTOTYPE_UNVERIFIED",
-    "current_source_conflates_current_authority_with_committed_outcome_validity": true,
-    "r22_required_distinction": "CAUSAL_TRANSACTION_VALIDITY_SEPARATE_FROM_CONTROL_AUTHORITY_CURRENCY",
-    "tests_path_minimal_canary_attempts": 5,
-    "tests_path_minimal_canary_failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+    "typed_ascending_validated_head": "da0d6cae7c863ce3ded5e9fc2ea7306d6d78e2a1",
+    "typed_ascending_ci_run": 36557302058,
+    "full_r22_receipt_implemented": false,
+    "outcome_receipt_branch_head": "674ace66a4c7d404954138a0c7a941a7f7f210f0",
+    "outcome_receipt_source_blob": "ab83eae491145bb08447d2b9d0c61766c88aa24f",
+    "outcome_receipt_focused_test_present": false,
     "scientific_credit": 0
   },
   "persistence_audit": {
-    "methodology_before": {
-      "append_only": "R149",
-      "latest": "R149",
-      "state": "R147"
-    },
     "control": {
-      "append_only": "R121",
-      "latest": "R120",
-      "state": "R119"
+      "append_only": "R124",
+      "latest": "R123",
+      "state": "R122"
     },
     "main": {
-      "append_only": "R192",
-      "latest": "R192",
-      "state": "R191",
-      "lease": "R191"
+      "append_only": "R194",
+      "latest": "R194",
+      "state": "R194",
+      "lease": "R193"
     },
     "authority_rule": "APPEND_ONLY_HISTORY_PRIMARY_MOVING_POINTERS_CACHE",
     "stale_pointer_misallocation_observed": false
@@ -126,7 +103,6 @@
   "calibration": {
     "overconservative_handoff_latency": false,
     "operational_integration_latency_material": true,
-    "operational_latency_source": "P0_PR_CREATE_AND_NONUNIFORM_PRE_GITHUB_MUTATION_FAILURE",
     "overpermissive_rolling_authority": false,
     "overreduction_risk_material": false,
     "overclaim_risk_material": false,
@@ -135,10 +111,7 @@
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "classification": "NONUNIFORM_PRE_GITHUB_MUTATION_FAILURE_ACTION_PATH_CONTEXT_SENSITIVE",
-    "repository_wide_outage_supported": false,
-    "payload_semantics_only_explanation_weakened": true,
-    "tests_namespace_root_cause_proven": false,
+    "classification": "NONUNIFORM_INTERMITTENT_PRE_GITHUB_MUTATION_REFUSAL_ACTION_PATH_PURPOSE_EXECUTION_CONTEXT_TIMING_SENSITIVE",
     "root_cause": "UNKNOWN"
   },
   "hard_floor": {
@@ -149,19 +122,18 @@
     "evidence_ref_mutated": false,
     "pr_created_or_merged": false,
     "scheduler_changed": false,
-    "scientific_criteria_changed": false,
     "terminal_reopened": false,
     "consumed_formal_rerun_retuned_rescored": false,
     "work_mode_used": false
   },
   "persistence": {
     "branch": "ops/methodology-calibration-audit",
-    "history_path": "analysis/methodology_calibration/history/2026-09-29/1624-R150-dual-validity-p0-pointer-debt-calibration.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-29/2015-R151-r170-r23-typed-ascending-p0-calibration.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts": 5,
     "attempt": 2,
     "force_push": false,
     "readback_required": true,
-    "head_before": "c62edd083f5bc0d5da65b26afd2b8e4790cd54b6"
+    "head_before": "ca1b2dc6306b8cd4277363e0b8bf71cf8fe6d3e5"
   }
 }
