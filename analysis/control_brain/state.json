@@ -1,122 +1,31 @@
 {
   "schema_version": 2,
-  "generation": "R122",
-  "generation_id": "CTRL-20260929T164924+0900-R122-FRESH-P0-RECONCILIATION",
-  "produced_at": "2026-09-29T16:49:24+09:00",
+  "generation": "R125",
+  "generation_id": "CTRL-20260929T205218+0900-R125-P0-RECONCILIATION",
+  "produced_at": "2026-09-29T20:52:18+09:00",
   "mode": "CONTROL_BRAIN",
-  "directive_index": {
-    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "delta": false
-  },
-  "science": {
-    "total": 35,
-    "terminal": 35,
-    "active": 0,
-    "queued": 0,
-    "consumed_formal_identities": 8,
-    "new_result": false
-  },
-  "analyst": {
-    "durable_generation": "R169",
-    "head": "95972cb31cb26d5994e506bfa46e6a11dc786a15"
-  },
-  "m1_002": {
-    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "ahead_by": 1,
-    "behind_by": 0,
-    "ci_run": 36361950457,
-    "ci": "success",
-    "pr_open": false,
-    "main_generation": "R192",
-    "main_history_commit": "a6d11d760cbd1a07637decf2c63a561f3b392fa1",
-    "main_reports_head": "36c006f99eab11f16f1142998272e93f18594a58",
-    "main_pointer_debt": "STATE_AND_LEASE_R191",
-    "scientific_credit": 0
-  },
-  "sb003": {
-    "build_id": "BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT",
-    "owner": "PRIMARY_MAIN",
-    "state": "ALLOCATED_CONDITIONAL_INACTIVE",
-    "scientific_credit": 0
-  },
+  "directive_index": {"head":"8ce979b9ec0bc7eede5225c0403698f8886d3e8d","blob":"1ba1e173344f36e14d0e21e6f3e823254e031f7d","delta":false},
+  "science": {"total":35,"terminal":35,"active":0,"queued":0,"consumed_formal_identities":8,"new_result":false},
+  "analyst": {"durable_generation":"R170","head":"cebf72d66ee5d0c9ef27395af847f58799e99bcb"},
+  "m1_002": {"main":"59fc994b39d0ba02682e972161bb46801592d25b","head":"2a21d3e879f1db4e81a58273180ad2124e823a5e","ahead_by":1,"behind_by":0,"ci_run":36361950457,"ci":"success","pr_open":false,"main_generation":"R194","main_reports_head":"43fe22b40863a2f8ed9d80a2aeca85bdac8aed2f","main_pointer_debt":false,"pr_create_attempts":5,"pr_create_failure_layer":"PRE_GITHUB_PLATFORM_SAFETY_REFUSAL","scientific_credit":0},
+  "sb003": {"build_id":"BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT","owner":"PRIMARY_MAIN","state":"ALLOCATED_CONDITIONAL_INACTIVE","scientific_credit":0},
   "fly0": {
-    "observed_state_validated_head": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
-    "observed_state_ci_run": 36503631615,
-    "observed_state_status": "ENGINEERING_GREEN_PENDING_ANALYST",
-    "outcome_receipt_branch_head": "470640f378033c20e859abdc5bd58be3608b3b29",
-    "outcome_receipt_source_status": "FORGE_PROTOTYPE_UNVERIFIED",
-    "dual_validity_source_repair_attempts": 5,
-    "dual_validity_source_repair_failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "scientific_credit": 0
+    "observed_state_validated_head":"1acc34b2a0bbfc623561dac114111b66a6b383a7",
+    "observed_state_ci_run":36503631615,
+    "observed_state_status":"ANALYST_R170_OPTIONAL_NARROW_OBSERVER_INPUT",
+    "typed_ascending":{"theory_generation":"R23","validated_exact_head":"da0d6cae7c863ce3ded5e9fc2ea7306d6d78e2a1","current_branch_head":"fefca5230905712bef1a874c1f4f69ef823f6fb0","ci_run":36557302058,"ci":"success","status":"ENGINEERING_GREEN_PENDING_ANALYST","full_r22_receipt_contract_implemented":false,"source_publication_attempts":2},
+    "outcome_receipt_branch_head":"674ace66a4c7d404954138a0c7a941a7f7f210f0",
+    "outcome_receipt_status":"FORGE_PROTOTYPE_UNVERIFIED",
+    "scientific_credit":0
   },
-  "methodology": {
-    "durable_generation": "R150",
-    "branch_head": "ca1b2dc6306b8cd4277363e0b8bf71cf8fe6d3e5",
-    "overall_classification": "WELL_CALIBRATED",
-    "pointer_debt": false
-  },
-  "theory": {
-    "generation": "R22",
-    "branch_head": "6ae93380fb834e0e67eb0bd3c676ede2111aa8b7",
-    "design": "DUAL_VALIDITY_OUTCOME_RECEIPT_RECONCILIATION",
-    "m1_gate": false,
-    "sb003_activation_changed": false
-  },
-  "repository": {
-    "principal_permissions": {
-      "admin": true,
-      "maintain": true,
-      "push": true
-    },
-    "ruleset_id": 23862726,
-    "ruleset_name": "protection_main",
-    "ruleset_enforcement": "active",
-    "required_pr": true,
-    "allowed_merge_methods": [
-      "squash"
-    ],
-    "linear_history": true,
-    "bypass_actors": 0,
-    "current_user_can_bypass": "never"
-  },
-  "fleet": {
-    "enabled_managed_sparkbrain_count": 8,
-    "enabled_current_prompts_no_work": true,
-    "backend_provenance_exposed": false,
-    "work_backed_enabled_detected_in_exposed_metadata": false,
-    "scheduler_changes": "NONE"
-  },
-  "p0": {
-    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "status": "OPEN",
-    "classification": "NONUNIFORM_PRE_GITHUB_MUTATION_REFUSAL_ACTION_PATH_PURPOSE_EXECUTION_CONTEXT_SENSITIVE",
-    "strongest_recurring_surface": "CREATE_PULL_REQUEST",
-    "repository_wide_outage_supported": false,
-    "root_cause": "UNKNOWN"
-  },
-  "pointer_debt_before_publication": {
-    "control": {
-      "append_only": "R121",
-      "latest": "R120",
-      "state": "R119"
-    },
-    "main": {
-      "append_only": "R192",
-      "latest": "R192",
-      "state": "R191",
-      "lease": "R191"
-    }
-  },
-  "hard_floor": {
-    "science_system_build_separation": true,
-    "consumed_identity_changed": false,
-    "immutable_evidence_changed": false,
-    "scheduler_changed": false,
-    "work_mode_used": false
-  },
-  "history_path": "analysis/control_brain/history/2026-09-29/1649-R122.md",
-  "pointer_debt": false,
-  "scientific_credit": 0
+  "methodology":{"durable_generation":"R151","branch_head":"bda3933ea5fa5ea46667a8912559e9b9ca3ff236","overall_classification":"WELL_CALIBRATED","pointer_debt":false},
+  "theory":{"generation":"R23","branch_head":"5a877bb3f226e1f710c9ae52f32944b685258b85","design":"TYPED_ASCENDING_SEMANTIC_RECONCILIATION","m1_gate":false,"sb003_activation_changed":false,"scientific_credit":0},
+  "utility":{"branch_head":"a21395878b9ae4edd71e6387e29896d4441848a7","request":"UTILREQ-20260929T1922+0900-P0-PARTIAL-POINTER-RECONCILIATION","disposition":"MAIN_ALREADY_RECONCILED_ACCEPT_CONTROL_RECONCILIATION"},
+  "fleet":{"enabled_managed_sparkbrain_count":8,"enabled_current_prompts_no_work":true,"backend_provenance_exposed":false,"work_backed_enabled_detected_in_exposed_metadata":false,"scheduler_changes":"NONE"},
+  "p0":{"incident":"INC-GITHUB-MUTATION-RECURRENCE-20260928-001","status":"OPEN","classification":"NONUNIFORM_INTERMITTENT_PRE_GITHUB_MUTATION_REFUSAL_ACTION_PATH_PURPOSE_EXECUTION_CONTEXT_TIMING_SENSITIVE","strongest_recurring_surface":"CREATE_PULL_REQUEST","repository_wide_outage_supported":false,"root_cause":"UNKNOWN"},
+  "pointer_debt_before_publication":{"control":{"append_only":"R124","latest":"R123","state":"R122"},"main":{"append_only":"R194","latest":"R194","state":"R194","lease":"R194"}},
+  "hard_floor":{"science_system_build_separation":true,"consumed_identity_changed":false,"immutable_evidence_changed":false,"scheduler_changed":false,"work_mode_used":false},
+  "history_path":"analysis/control_brain/history/2026-09-29/2052-R125.md",
+  "pointer_debt":false,
+  "scientific_credit":0
 }
