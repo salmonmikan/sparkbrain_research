@@ -1,18 +1,19 @@
 {
   "schema_version": 2,
-  "generation_id": "AUD-20260929T102734+0900-R12-FLY0-OBSERVED-STATE-6D91B4E2",
-  "produced_at": "2026-09-29T10:27:34+09:00",
-  "producer_run_id": "external-audit-20260929T1030JST-R12-FLY0-OBSERVED-STATE",
+  "generation_id": "AUD-20260929T222507+0900-R13-FLY0-RECONCILIATION-GATE-7C4A91E3",
+  "produced_at": "2026-09-29T22:25:07+09:00",
+  "producer_run_id": "external-audit-20260929T2230JST-R13-FLY0-RECONCILIATION-GATE",
   "role": "INDEPENDENT_AUDITOR",
-  "schedule_slot": "10:30 JST",
+  "schedule_slot": "22:30 JST",
   "role_resolution": {
     "selected_role": "INDEPENDENT_AUDITOR",
     "resolution_source": "EARLY_GRACE",
-    "actual_start": "2026-09-29T10:27:34+09:00"
+    "actual_start": "2026-09-29T22:25:07+09:00"
   },
   "directive_freshness": {
     "branch_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_branch_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "changed": false,
     "relevant": [
       "HUMAN-20260926-004",
@@ -21,63 +22,71 @@
       "HUMAN-20260928-002"
     ]
   },
-  "supersedes_generation_id": "AUD-20260928T102955+0900-R11-M1-002-ROBUSTNESS-HARNESS-3A7C91D4",
+  "supersedes_generation_id": "AUD-20260929T102734+0900-R12-FLY0-OBSERVED-STATE-6D91B4E2",
   "target": {
-    "branch": "forge/20260929-fly0-observed-state-summary-a",
-    "exact_head": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
-    "source_commit": "3dd3f4f729ff0ee3e6d09a1683bf0464d43552b7",
-    "source_path": "forge_prototypes/fly0_ascending_observed_state.py",
-    "test_path": "tests/test_forge_fly0_ascending_observed_state.py",
-    "ci_run": 36503631615,
+    "branch": "forge/20260929-fly0-reconciliation-admission-gate-a",
+    "exact_source_test_head": "41e021fef824e0bc899184c9d102d69a19e58255",
+    "published_branch_head": "a9ff8acf8997c17a07ebde70c46a1b0c87a5440c",
+    "source_path": "forge_prototypes/fly0_reconciliation_admission_gate.py",
+    "source_blob": "9a44a7717fecbb0118f88659df72f3802f9424a5",
+    "test_path": "tests/test_forge_fly0_reconciliation_admission_gate.py",
+    "test_blob": "20a0ffe32f294e457e5079f78854ae3153ade9bb",
+    "ci_run": 36563852129,
     "ci": "success",
     "python_311": "success",
     "python_313": "success"
   },
   "inputs": {
-    "control": "R118",
-    "analyst": "R169",
-    "theory": "R21",
-    "prior_audit": "R11"
+    "control": "R125",
+    "analyst": "R170",
+    "theory": "R24",
+    "prior_audit": "R12",
+    "forge_generation": "FORGE-20260929T204927+0900-FLY0-RECONCILIATION-ADMISSION-GATE-GREEN"
   },
   "findings": {
-    "current_forge_claim_scope": "SYNTHESIS_OK",
-    "promotion_readiness": "INSUFFICIENT_SYSTEM_TEST",
-    "realized_outcome_not_command_echo_tested": true,
-    "superseded_frame_no_false_advance_tested": true,
-    "mismatch_path_tested": true,
-    "checkpoint_replay_tested": true,
-    "four_way_interface_tested": true,
-    "source_frame_provenance_self_contained": false,
-    "current_authority_conflated_with_source_authority": true,
-    "explicit_outcome_sequence": false,
-    "explicit_transaction_checkpoint_binding": false,
-    "feedback_mask_freshness_explicit": false,
-    "ascending_cut_tested": false,
-    "duplicate_stale_outcome_consumer_tested": false,
+    "typed_semantic_gate_present": true,
+    "exact_signal_token_binding_checked": true,
+    "explicit_invalid_provenance_rejected": true,
+    "explicit_invalid_transaction_rejected": true,
+    "stale_control_committed_outcome_no_control_restore": true,
+    "transaction_id_duplicate_noop": true,
+    "transaction_id_collision_rejected": true,
+    "out_of_order_no_rollback": true,
+    "checkpoint_restore_tested": true,
+    "upstream_receipt_validator_implemented": false,
+    "consumer_exactly_once_scope": "TRANSACTION_ID_SCOPED_ONLY",
+    "same_signal_cross_transaction_dedupe": false,
+    "proof_identity_binds_outcome_sequence": false,
+    "same_tx_same_signal_conflicting_sequence_rejected": false,
+    "cross_transaction_duplicate_can_advance_watermark": true,
+    "cross_transaction_duplicate_can_suppress_legitimate_later_outcome": true,
     "scientific_overclaim_found": false,
     "evaluator_or_heldout_leak_found": false
   },
   "authority_reconciliation": {
-    "control_generation": "R118",
-    "analyst_generation": "R169",
+    "control_generation": "R125",
+    "analyst_generation": "R170",
     "m1_stop_required": false,
     "additional_review_gate_required": false,
     "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
-    "observed_state_admitted_to_sb003": false,
-    "forge_moving_pointer_current_for_target": false
+    "gate_admitted_to_sb003": false,
+    "fresh_analyst_reconciliation_required": true
   },
   "classification": {
     "scientific_evidence": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-    "synthesis_handling": "INSUFFICIENT_SYSTEM_TEST",
-    "current_scope_synthesis": "SYNTHESIS_OK",
+    "current_bounded_design": "SYNTHESIS_OK",
+    "generic_exactly_once_wording": "OVERCLAIMED",
+    "full_receipt_promotion": "INSUFFICIENT_SYSTEM_TEST",
     "scientific_credit": 0,
     "new_scientific_result": false
   },
   "recommended_follow_up": [
-    "ADD_DISTINCT_SOURCE_FRAME_AND_ACTIVE_AUTHORITY_IDENTITY",
-    "ADD_OUTCOME_SEQUENCE_AND_TRANSACTION_CHECKPOINT_BINDING",
-    "MAKE_FEEDBACK_MASK_DELAY_FRESHNESS_EXPLICIT",
-    "ADD_ASCENDING_CUT_AND_DUPLICATE_STALE_OUTCOME_TESTS"
+    "BIND_CANONICAL_PROOF_IDENTITY_SIGNAL_TRANSACTION_SEQUENCE",
+    "REJECT_SAME_SIGNAL_UNDER_SECOND_TRANSACTION_ID",
+    "REJECT_CONFLICTING_SEQUENCE_FOR_SAME_TX_SIGNAL",
+    "PERSIST_SIGNAL_PROOF_IDENTITY_REGISTRY_IN_CHECKPOINT",
+    "ADD_CROSS_TRANSACTION_DUPLICATE_WATERMARK_ADVERSARIAL_TEST",
+    "KEEP_R24_UPSTREAM_RECEIPT_VALIDATOR_BOUNDARY"
   ],
   "mutations": {
     "scientific_experiments": 0,
@@ -88,13 +97,13 @@
     "scheduler_changes": 0,
     "terminal_reopens": 0
   },
-  "history_path": "analysis/external_research_audit/audit/history/2026-09-29/1030-INDEPENDENT_AUDITOR.md",
+  "history_path": "analysis/external_research_audit/audit/history/2026-09-29/2230-INDEPENDENT_AUDITOR.md",
   "persistence": {
     "branch": "ops/external-research-audit-handoff",
-    "head_before": "4941f40cf7ce6698125ce01782d369a14f3f5a36",
+    "head_before": "ccdab97d82915ee65d5462d94e52e9d44ccaf176",
     "atomic_multi_file_publication": true,
     "attempt_limit": 5,
-    "attempt_number": 5,
+    "attempt_number": 1,
     "force_push": false,
     "readback_required": true
   }

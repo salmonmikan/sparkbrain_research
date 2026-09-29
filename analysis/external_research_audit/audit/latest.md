@@ -1,11 +1,14 @@
-# Independent Audit R12 — FLY-0 observed-state summary
+# Independent Audit R13 — FLY-0 reconciliation admission gate
 
-generation_id: AUD-20260929T102734+0900-R12-FLY0-OBSERVED-STATE-6D91B4E2
-classification: INSUFFICIENT_SYSTEM_TEST for R21/SB003 promotion; SYNTHESIS_OK at current Forge-only scope.
+generation_id: `AUD-20260929T222507+0900-R13-FLY0-RECONCILIATION-GATE-7C4A91E3`
 new_scientific_result: false
 
-The exact Forge head 1acc34b2a0bbfc623561dac114111b66a6b383a7 is CI-green in run 36503631615 on Python 3.11/3.13. It supports bounded realized-outcome reporting, stale-authority fail-closed behavior, one command/outcome mismatch, replay and four-way interface compatibility.
+Exact source/test head `41e021fef824e0bc899184c9d102d69a19e58255` is CI-green in run `36563852129` on Python 3.11/3.13.
 
-Promotion is premature because the summary is not a self-contained source-command receipt and lacks explicit outcome/transaction identity, feedback freshness/masking, ascending-cut and duplicate/stale-outcome semantics required by the fuller R21 contract.
+The gate is SYNTHESIS_OK as a bounded transaction-admission/idempotence primitive, but its generic “consumer-side exactly-once” wording is too broad: deduplication is keyed only by transaction ID. The same exact signal can be reconciled again under a different transaction ID and higher sequence, advancing the watermark and potentially suppressing a legitimate subsequent outcome as out-of-order. Same transaction + same signal + conflicting sequence is also silently treated as a duplicate rather than an inconsistent proof.
 
-This does not affect canonical science or justify stopping M1. Durable Analyst R169 keeps SB003 conditionally inactive behind M1-002, and Forge moving pointers still reference the prior supersession-guard generation. Scientific credit remains 0.
+Full R24/R22 promotion therefore remains INSUFFICIENT_SYSTEM_TEST. Add canonical proof identity / cross-transaction signal dedupe and adversarial replay tests, while retaining the separate upstream receipt validator required by Theory R24.
+
+No science changes. Control R125 / Analyst R170 remain authoritative; M1 is not stopped and SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`. Scientific credit remains 0.
+
+History: `analysis/external_research_audit/audit/history/2026-09-29/2230-INDEPENDENT_AUDITOR.md`
