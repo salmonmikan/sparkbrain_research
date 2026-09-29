@@ -1,6 +1,5 @@
-# MAIN PRIMARY R185
-
-generation_id: MAIN-20260929T081507+0900-PRIMARY-R185-M1-002-PR-CREATE-BLOCKED
+# MAIN PRIMARY R186
+generation_id: MAIN-20260929T091129+0900-PRIMARY-R186-M1-002-PR-CREATE-BLOCKED
 status: SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN
 analyst: R169
 control: R118
@@ -10,9 +9,7 @@ ci: 36361950457 success
 pr_created: false
 merge_performed: false
 attempts: 5
-explicit_pre_github_refusals: 5
 failure_layer: PRE_GITHUB_PLATFORM_SAFETY_REFUSAL
-incident: INC-GITHUB-MUTATION-RECURRENCE-20260928-001
 built: true
 functionally_verified_bounded: true
 comparatively_supported: false

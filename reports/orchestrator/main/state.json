@@ -1,39 +1,39 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260929T081507+0900-PRIMARY-R185-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-29T08:15:07+09:00",
+  "generation": "R186",
+  "generation_id": "MAIN-20260929T091129+0900-PRIMARY-R186-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-29T09:11:29+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
-  "analyst_generation_id": "EVA-20260929T050453+0900-R169-FLY0-V2-SB003-CONDITIONAL-ALLOCATION",
-  "control_generation_id": "CTRL-20260929T064945+0900-R118-R169-SB003-AND-P0-PR-CANARY",
+  "analyst_generation": "R169",
+  "analyst_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
+  "control_generation": "R118",
+  "control_head": "86f646965c0216f3f7c4f488c78038c65ddffc12",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "delta": false
-  },
-  "refs_observed": {
-    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "analyst_branch_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
-    "control_branch_head": "86f646965c0216f3f7c4f488c78038c65ddffc12",
-    "main_reports_before": "0cbfe4b3125d8ac88cb3e85aeff219f570baa499"
   },
   "integration": {
     "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "ahead_by": 1,
     "behind_by": 0,
-    "push_ci": {
-      "run_id": 36361950457,
-      "status": "completed",
-      "conclusion": "success",
-      "head_sha": "2a21d3e879f1db4e81a58273180ad2124e823a5e"
-    },
+    "ci_run": 36361950457,
+    "ci": "success",
     "pr_created": false,
     "merge_performed": false
+  },
+  "collision": {
+    "relay_allocated": false,
+    "relay_branch_found": false,
+    "collision_observed": false
+  },
+  "sb003": {
+    "state": "ALLOCATED_CONDITIONAL_INACTIVE",
+    "activation_conditions_satisfied": false
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -51,32 +51,22 @@
   },
   "action": {
     "mutation_action": "create_pull_request",
-    "pull_request_creation_attempts": 5,
+    "attempts": 5,
     "explicit_pre_github_refusals": 5,
-    "maximum_attempts": 5,
     "retries_had_fresh_state_checks": true,
     "pr_absent_after_final_attempt": true
-  },
-  "collision": {
-    "relay_allocated": false,
-    "relay_branch_found": false,
-    "collision_observed": false
-  },
-  "sb003": {
-    "state": "ALLOCATED_CONDITIONAL_INACTIVE",
-    "activation_conditions_satisfied": false
   },
   "new_build_result": false,
   "new_scientific_result": false,
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_EXPLICIT_PRE_GITHUB_REFUSALS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-29/0815-r185-pr-create-platform-blocked.md",
+  "history_path": "reports/orchestrator/main/history/2026-09-29/0911-r186-pr-create-platform-blocked.md",
   "publication": {
     "branch": "ops/orchestrator-run-report",
-    "expected_head_before": "0cbfe4b3125d8ac88cb3e85aeff219f570baa499",
+    "expected_head_before": "79c650c228b0f215f8e5b4894d98e0c26dbd4424",
     "atomic": true,
     "attempt_limit": 5,
-    "attempt": 1
+    "attempt": 3
   }
 }
