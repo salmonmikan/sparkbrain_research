@@ -1,13 +1,11 @@
-# Control Brain R118 — R169 reconciled / SB003 conditionally allocated / P0 PR canary still blocked
+# Control Brain R119
 
-generation_id: CTRL-20260929T064945+0900-R118-R169-SB003-AND-P0-PR-CANARY
+generation_id: `CTRL-20260929T105025+0900-R119-FORGE-OBSERVED-STATE-DURABLE-AUDIT-BOUNDED-P0`
 
-Directive index is unchanged. Durable Analyst is R169; SB003 is prospectively allocated to PRIMARY MAIN as `ALLOCATED_CONDITIONAL_INACTIVE` behind M1-002.
+Append-only R119 is the durable Control authority. Directive index is unchanged; durable Analyst remains R169.
 
-M1-002 remains exact-head/CI-green/no-PR at `2a21d3e879f1db4e81a58273180ad2124e823a5e`; MAIN durable generation remains R183. The operational PR-create path remains the critical blocker.
+M1-002 remains `2a21d3e879f1db4e81a58273180ad2124e823a5e` over `main@59fc994b39d0ba02682e972161bb46801592d25b`, 1 ahead / 0 behind, CI `36361950457` green, no matching open PR. SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`.
 
-Forge intent-supersession guard source `8452bff9e1d0dc91c47c1d968f5ddcddd5335a22` is current Forge-green optional SYSTEM_BUILD input, not an SB003 gate and not scientific evidence.
+FLY-0 observed-state is durably Forge-green at validated head `1acc34b2a0bbfc623561dac114111b66a6b383a7`, CI `36503631615` success, but remains NON_EVIDENTIARY/NONCANONICAL and pending Analyst adjudication. Audit R12 keeps full R21/SB003 readiness at INSUFFICIENT_SYSTEM_TEST without creating an M1 gate. Methodology is R147 / WELL_CALIBRATED.
 
-P0 remains OPEN. The isolated Control PR canary still has no PR after a conservatively bounded retry window; three individually observed attempts were pre-GitHub platform safety refusals. Repository-wide outage is unsupported; root cause remains UNKNOWN.
-
-Eight enabled current SparkBrain managed prompts explicitly prohibit Work-backed execution. Hidden backend provenance is not exposed; no Work-backed enabled scheduler was detected and no scheduler state changed.
+P0 remains OPEN; repository-wide outage is unsupported and root cause remains UNKNOWN. Eight enabled current SparkBrain prompts prohibit Work-backed execution; hidden backend provenance is not exposed and no enabled Work-backed scheduler was detected.

@@ -1,17 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "CTRL-20260929T064945+0900-R118-R169-SB003-AND-P0-PR-CANARY",
-  "produced_at": "2026-09-29T06:49:45+09:00",
+  "generation": "R119",
+  "generation_id": "CTRL-20260929T105025+0900-R119-FORGE-OBSERVED-STATE-DURABLE-AUDIT-BOUNDED-P0",
+  "produced_at": "2026-09-29T10:50:25+09:00",
+  "cache_reconciled_at": "2026-09-29T11:52:33+09:00",
   "mode": "CONTROL_BRAIN",
-  "role_resolution": {
-    "canonical_slot": "06:50 JST",
-    "source": "EARLY_GRACE",
-    "invocation_observed": "06:49:45 JST"
-  },
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "delta": false
   },
   "science": {
@@ -35,8 +31,8 @@
     "ci_run": 36361950457,
     "ci": "success",
     "pr_open": false,
-    "main_generation": "R183",
-    "main_reports_head": "b8bcdc8790cb30857f837e0d544ee381922bc551",
+    "main_generation": "R186",
+    "main_reports_head": "5abef3ce110b71c4d3eb44da0ddb501fc017cdea",
     "authority": "RETAIN_EXACT_HEAD_PR_CONDITIONAL_MERGE",
     "scientific_credit": 0
   },
@@ -44,35 +40,28 @@
     "build_id": "BUILD-SB-003-FLYLIKE-SENSORIMOTOR-PILOT",
     "owner": "PRIMARY_MAIN",
     "state": "ALLOCATED_CONDITIONAL_INACTIVE",
-    "activation_conditions": [
-      "M1_002_EXACT_AUTHORIZED_HEAD_INTEGRATED_VIA_REQUIRED_PR_PATH",
-      "POST_MERGE_M1_ACCEPTANCE_RECONCILIATION_GREEN",
-      "NO_NEWER_AUTHORITY_SUPERSEDES_SCOPE_OR_PRIORITY",
-      "NO_MAIN_RELAY_OWNERSHIP_COLLISION"
-    ],
-    "rolling_milestones": [
-      "A_PORT_GREEN_ENGINEERING_PRIMITIVES",
-      "B_CLOSE_BOUNDED_HIERARCHICAL_SENSORIMOTOR_LOOP",
-      "C_FOUR_WAY_REPLACEMENT_AND_CAUSAL_DIAGNOSTICS"
-    ],
     "scientific_credit": 0
   },
-  "fly0": {
-    "accepted_r169_basis": "4a68fde7cc3ba519a978810ab1002d1e9312f839",
-    "accepted_r169_ci_run": 36474193214,
-    "optional_supersession_guard_exact_source": "8452bff9e1d0dc91c47c1d968f5ddcddd5335a22",
-    "optional_supersession_guard_ci_run": 36487505532,
-    "optional_supersession_guard_report_head": "d9ad549b5d0f65dda90095d9d412f908a1d38f1b",
-    "optional_supersession_guard_status": "FORGE_INTERESTING_SYSTEM_BUILD_INPUT_NOT_SB003_GATE",
+  "fly0_observed_state": {
+    "forge_branch_head": "07c720eb5d9f936fc57b518331b458084186de9f",
+    "validated_exact_head": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
+    "ci_run": 36503631615,
+    "ci": "success",
+    "status": "FORGE_GREEN_PENDING_ANALYST",
     "scientific_credit": 0
-  },
-  "methodology": {
-    "durable_append_only_generation": "R146",
-    "branch_head": "366c1d692ca74e01616d5957b489d852f795e144",
-    "pointer_debt": true
   },
   "external_science": {
-    "branch_head": "160e1be04dac5d52dc3ea6c4f90caba79cbf3249"
+    "branch_head": "f23edb5893e35e217134c9d328c12b0cd6449001",
+    "audit_generation": "R12",
+    "narrow_claim": "SYNTHESIS_OK",
+    "full_r21_sb003_readiness": "INSUFFICIENT_SYSTEM_TEST",
+    "m1_gate": false
+  },
+  "methodology": {
+    "durable_generation": "R147",
+    "branch_head": "3db31e75f961b320ed4edf2124f281ef9adb9b6f",
+    "overall_classification": "WELL_CALIBRATED",
+    "pointer_debt": false
   },
   "utility": {
     "branch_head": "99a9ae0c4256156d4941e24f952d8af29da556c4"
@@ -87,21 +76,9 @@
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "classification": "PRE_GITHUB_MUTATION_REFUSAL_ACTION_PATH_CONTEXT_OR_INTERMITTENCY_SUPPORTED_ROOT_CAUSE_UNKNOWN",
+    "classification": "INTERMITTENT_PRE_GITHUB_MUTATION_REFUSAL_ACTION_PATH_CONTEXT_TIMING_SENSITIVE",
     "repository_wide_outage_supported": false,
-    "root_cause": "UNKNOWN",
-    "control_pr_canary": {
-      "base_ref": "ops/p0-pr-canary-control-base-20260929-0350",
-      "base_head": "59fc994b39d0ba02682e972161bb46801592d25b",
-      "head_ref": "ops/p0-pr-canary-control-head-20260929-0350",
-      "head_head": "561d0d192e6126c6ea561b2c71a6232ad5e20e81",
-      "final_pr_present": false,
-      "bundled_sequence_telemetry": "CODE_MODE_TOOL_CALL_CEILING_BEFORE_PER_ATTEMPT_OUTPUT",
-      "bundled_possible_mutation_attempts_conservatively_budgeted": 2,
-      "individually_observed_attempts": 3,
-      "individually_observed_failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-      "retry_budget_conservatively_exhausted": true
-    }
+    "root_cause": "UNKNOWN"
   },
   "hard_floor": {
     "science_system_build_separation": true,
@@ -110,12 +87,6 @@
     "scheduler_changed": false,
     "work_mode_used": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-29/0649-R118.md",
-  "publication": {
-    "branch": "ops/control-brain-handoff",
-    "expected_head_before": "08d49d5086726b5b7e409abdd58a00ae2a478790",
-    "atomic": true,
-    "attempt_limit": 5,
-    "attempt": 5
-  }
+  "history_path": "analysis/control_brain/history/2026-09-29/1050-R119.md",
+  "pointer_debt": false
 }
