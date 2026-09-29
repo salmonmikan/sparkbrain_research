@@ -1,41 +1,42 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260930T015351+0900-G32",
-  "produced_at": "2026-09-30T01:53:51+09:00",
+  "generation_id": "STEWARD-20260930T075500+0900-G33",
+  "produced_at": "2026-09-30T07:55:00+09:00",
   "mode": "REPOSITORY_STEWARD",
-  "history": "reports/repository_steward/history/2026-09-30/0153.md",
+  "history": "reports/repository_steward/history/2026-09-30/0755.md",
   "main": "59fc994b39d0ba02682e972161bb46801592d25b",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "delta": false
   },
   "p0_incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
   "p0_status": "OPEN",
-  "p0_classification": "PERSISTENT_CREATE_PULL_REQUEST_PATH_FAILURE_MIXED_ORCHESTRATION_CEILING_AND_PRE_GITHUB_REFUSAL_WITH_NONUNIFORM_INTERMITTENT_OTHER_MUTATIONS_ROOT_CAUSE_UNKNOWN",
+  "p0_classification": "PERSISTENT_CREATE_PULL_REQUEST_PRE_GITHUB_REFUSAL_WITH_NONUNIFORM_INTERMITTENT_OTHER_MUTATIONS_ROOT_CAUSE_UNKNOWN",
   "control": {
-    "durable_generation": "R129",
-    "head": "a48bd4d0284eed9a05b9a564f41df33166184f05",
-    "append_only_generation": "R129",
+    "durable_generation": "R132",
+    "head": "83646cbb9353ead8ae9a8d4efdb32b4af2b2bb7d",
+    "append_only_generation": "R132",
     "latest_generation": "R129",
     "state_generation": "R128",
-    "pointer_debt": "R129_HISTORY_LATEST_STATE_R128"
+    "pointer_debt": "R132_HISTORY_R129_LATEST_R128_STATE"
   },
   "main_orchestrator": {
-    "durable_generation": "R197",
-    "head": "d27d36a5e3f6ad064063333531002225e3fe8dbe",
-    "latest_generation": "R197",
-    "state_generation": "R196",
-    "lease_generation": "R196",
-    "pointer_debt": "R197_HISTORY_LATEST_STATE_LEASE_R196",
+    "durable_generation": "R203",
+    "head": "47aa05981f3b3b69a60ac1df8b4824c32280ae7c",
+    "latest_generation": "R203",
+    "state_generation": "R203",
+    "lease_generation": "R203",
+    "pointer_debt": false,
     "pr_create_attempts": 5,
-    "failure_layer": "MIXED_ORCHESTRATION_CEILING_AND_PRE_GITHUB_PLATFORM_SAFETY_REFUSAL"
+    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL"
   },
   "analyst": {
-    "durable_generation": "R172",
-    "head": "c7eeb100609dc9419e340752ff2fe2f924cd2f79",
+    "durable_generation": "R173",
+    "head": "f8fb637be2983bca7f7ae2b24f2b7edfa327ae54",
     "persistence_complete": true,
-    "receipt": "EA-R172-20260930T005826JST",
+    "receipt": "EA-R173-20260930T020101JST",
     "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE"
   },
   "methodology": {
@@ -46,13 +47,12 @@
     "classification": "WELL_CALIBRATED"
   },
   "external_science": {
-    "head": "d087acdfb93f89ffb03ca82702b8f7125476e3c3",
+    "head": "f62b8af634eeb8322b05e85cf69322eeb1334ee4",
     "literature": {
-      "durable_generation": "R51",
-      "append_only_commit": "c60a3033479f1993035f8a177d83bf14b75caed4",
-      "latest_generation": "R50",
-      "state_generation": "R50",
-      "pointer_debt": "R51_HISTORY_LATEST_STATE_R50"
+      "durable_generation": "R52",
+      "latest_generation": "R52",
+      "state_generation": "R52",
+      "pointer_debt": false
     },
     "theory": {
       "generation": "R25",
@@ -69,7 +69,7 @@
     "ci_run": 36361950457,
     "ci": "success",
     "pr_open": false,
-    "main_generation": "R197",
+    "main_generation": "R203",
     "scientific_credit": 0
   },
   "repository_ruleset": {
@@ -99,7 +99,7 @@
     "annotated_tag_objects": 5,
     "lightweight_h7_tags": 4,
     "authoritative_tag_namespace_rulesets": 0,
-    "full_exact_freeze_map_verification_generation": "G32"
+    "full_exact_freeze_map_verification_generation": "G33"
   },
   "science": {
     "total": 35,
@@ -118,7 +118,7 @@
     "attempt_limit": 5,
     "attempt": 1,
     "force_push": false,
-    "head_before": "7581118702c43682f7ef92be8ccf0fd4168ab9d8",
+    "head_before": "5f79766bc913144f830adce0066e18b98e849a1c",
     "readback_required": true
   }
 }
