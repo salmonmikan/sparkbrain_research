@@ -1,1 +1,67 @@
-{"schema_version":2,"generation_id":"THEORY-20260929T152609+0900-R22-DUAL-VALIDITY-OUTCOME-RECEIPT","produced_at":"2026-09-29T15:26:09+09:00","producer_run_id":"EXTERNAL_SCIENCE_TRIROLE-20260929T152609+0900","authority_scope":"NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY","supersedes_generation_id":"THEORY-20260929T092655+0900-R21-OBSERVED-OUTCOME-RECONCILIATION","input_generations":{"control":"R120","analyst":"R169","main":"R191","methodology":"R149","literature":"R49","audit":"R12","theory":"R21"},"refs_inspected":{"main":"59fc994b39d0ba02682e972161bb46801592d25b","directives":"8ce979b9ec0bc7eede5225c0403698f8886d3e8d","control":"9e4e029b65957c866765baa67af1634727bf2922","analyst":"95972cb31cb26d5994e506bfa46e6a11dc786a15","forge":"87477329241aa6fa97d56847bff5bee05b759059","external_before":"af5fd9cdcabb6fcf57941563ff8de10de646aaf2"},"genuinely_new_information":true,"new_sparkbrain_scientific_result":false,"status":"INTEGRATION_DESIGN_PROPOSAL","design_id":"ID-SB-FLY-HIERARCHICAL-SENSORIMOTOR-LOOP-001","revision":7,"proposal":"DUAL_VALIDITY_OUTCOME_RECEIPT_RECONCILIATION","forge_source":"d569130d1c512d6b75b6b381c8a90ed14934e64c","forge_status":"FORGE_PROTOTYPE_UNVERIFIED","m1_gate":false,"sb003_activation_condition":false,"scientific_credit":0,"history_path":"analysis/external_research_audit/theory/history/2026-09-29/1526-THEORY_SYNTHESIS_ARCHITECT.md","publication_attempt":5}
+{
+  "schema_version": 2,
+  "generation_id": "THEORY-20260929T193236+0900-R23-TYPED-ASCENDING-SEMANTIC-RECONCILIATION",
+  "produced_at": "2026-09-29T19:32:36+09:00",
+  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20260929T193236+0900",
+  "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
+  "supersedes_generation_id": "THEORY-20260929T152609+0900-R22-DUAL-VALIDITY-OUTCOME-RECEIPT",
+  "directive_index": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "delta": false
+  },
+  "applicable_directives_read": [
+    "HUMAN-20260925-002",
+    "HUMAN-20260926-003",
+    "HUMAN-20260926-004",
+    "HUMAN-20260927-002",
+    "HUMAN-20260928-001",
+    "HUMAN-20260928-002"
+  ],
+  "input_generations": {
+    "control": "R123",
+    "analyst": "R170",
+    "main": "R192",
+    "methodology": "R150",
+    "literature": "R50",
+    "audit": "R12",
+    "theory": "R22"
+  },
+  "refs_inspected": {
+    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "control": "7e18da3d58b168c38ddc884a3b5df70199569ff5",
+    "analyst": "cebf72d66ee5d0c9ef27395af847f58799e99bcb",
+    "forge_outcome_receipt": "674ace66a4c7d404954138a0c7a941a7f7f210f0",
+    "external_before": "214bbb7513661617e7b7ef8e01eeba1fb936bc3c"
+  },
+  "genuinely_new_information": true,
+  "new_sparkbrain_scientific_result": false,
+  "status": "INTEGRATION_DESIGN_PROPOSAL",
+  "design_id": "ID-SB-FLY-HIERARCHICAL-SENSORIMOTOR-LOOP-001",
+  "revision": 8,
+  "proposal": "TYPED_ASCENDING_SEMANTIC_RECONCILIATION",
+  "semantic_lanes": [
+    "PREDICTIVE_MOTOR_COPY",
+    "REALIZED_LOCAL_STATE",
+    "REAFFERENT_WORLD_OUTCOME"
+  ],
+  "availability_states": [
+    "OBSERVED",
+    "GATED",
+    "MASKED",
+    "DELAYED",
+    "MISSING"
+  ],
+  "r22_dual_validity_retained": true,
+  "forge_source_blob": "ab83eae491145bb08447d2b9d0c61766c88aa24f",
+  "forge_status": "FORGE_PROTOTYPE_UNVERIFIED",
+  "analyst_narrow_observer_admission": "OPTIONAL_PREAUTHORIZED_NARROW_OBSERVER_SYSTEM_BUILD_INPUT",
+  "m1_gate": false,
+  "sb003_activation_condition": false,
+  "mandatory_review_gate": false,
+  "scientific_credit": 0,
+  "history_path": "analysis/external_research_audit/theory/history/2026-09-29/1932-THEORY_SYNTHESIS_ARCHITECT.md",
+  "publication_attempt": 2
+}
