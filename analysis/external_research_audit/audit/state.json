@@ -1,17 +1,19 @@
 {
   "schema_version": 2,
-  "generation_id": "AUD-20260928T102955+0900-R11-M1-002-ROBUSTNESS-HARNESS-3A7C91D4",
-  "produced_at": "2026-09-28T10:29:55+09:00",
-  "producer_run_id": "external-audit-20260928T1030JST-R11-M1-002-ROBUSTNESS",
+  "generation_id": "AUD-20260929T102734+0900-R12-FLY0-OBSERVED-STATE-6D91B4E2",
+  "produced_at": "2026-09-29T10:27:34+09:00",
+  "producer_run_id": "external-audit-20260929T1030JST-R12-FLY0-OBSERVED-STATE",
   "role": "INDEPENDENT_AUDITOR",
   "schedule_slot": "10:30 JST",
   "role_resolution": {
     "selected_role": "INDEPENDENT_AUDITOR",
-    "resolution_source": "EARLY_GRACE"
+    "resolution_source": "EARLY_GRACE",
+    "actual_start": "2026-09-29T10:27:34+09:00"
   },
   "directive_freshness": {
     "branch_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "changed": false,
     "relevant": [
       "HUMAN-20260926-004",
       "HUMAN-20260927-002",
@@ -19,48 +21,64 @@
       "HUMAN-20260928-002"
     ]
   },
-  "supersedes_generation_id": "AUD-20260924T103104+0900-R10-CAND35-TREATMENT-READOUT-SUPPORT-4E7A2C91",
+  "supersedes_generation_id": "AUD-20260928T102955+0900-R11-M1-002-ROBUSTNESS-HARNESS-3A7C91D4",
   "target": {
-    "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
-    "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "exact_tree": "2237f3b1e8ac72d193fc2c3879f2b67f71d302e0"
+    "branch": "forge/20260929-fly0-observed-state-summary-a",
+    "exact_head": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
+    "source_commit": "3dd3f4f729ff0ee3e6d09a1683bf0464d43552b7",
+    "source_path": "forge_prototypes/fly0_ascending_observed_state.py",
+    "test_path": "tests/test_forge_fly0_ascending_observed_state.py",
+    "ci_run": 36503631615,
+    "ci": "success",
+    "python_311": "success",
+    "python_313": "success"
   },
   "inputs": {
-    "analyst": "EVA-20260928T100231+0900-R165-M1-002-EXACT-HEAD-PR-MERGE",
-    "main": "MAIN-20260928-PRIMARY-R170-M1-002-PR-CREATE-BLOCKED",
-    "control": "CTRL-20260928T095119+0900-R106-M1-002-CI-READY-ANALYST",
-    "theory": "THEORY-20260928T093233+0900-R14-NO-PROPOSAL-M1-002-ROBUSTNESS-6C2F91A4",
-    "literature": "LIT-20260928T063000+0900-R46-FLY0-DISTRIBUTED-CONTROL-B7D3C4A1"
+    "control": "R118",
+    "analyst": "R169",
+    "theory": "R21",
+    "prior_audit": "R11"
   },
   "findings": {
-    "runtime_source_changed": false,
-    "committed_cycles": 267,
-    "committed_cycle_ceiling": 512,
-    "cycle_budget_reconciles": true,
-    "fault_points": 7,
-    "fault_positions": 3,
-    "exact_rollback_and_control_continuation": true,
-    "identity_no_write_paths": true,
-    "privileged_input_leak_found": false,
-    "process_crash_durability_tested": false,
-    "comparative_support": false,
-    "composition_contribution": "NOT_ESTABLISHED",
-    "scientific_novelty": false,
-    "scientific_credit": 0
+    "current_forge_claim_scope": "SYNTHESIS_OK",
+    "promotion_readiness": "INSUFFICIENT_SYSTEM_TEST",
+    "realized_outcome_not_command_echo_tested": true,
+    "superseded_frame_no_false_advance_tested": true,
+    "mismatch_path_tested": true,
+    "checkpoint_replay_tested": true,
+    "four_way_interface_tested": true,
+    "source_frame_provenance_self_contained": false,
+    "current_authority_conflated_with_source_authority": true,
+    "explicit_outcome_sequence": false,
+    "explicit_transaction_checkpoint_binding": false,
+    "feedback_mask_freshness_explicit": false,
+    "ascending_cut_tested": false,
+    "duplicate_stale_outcome_consumer_tested": false,
+    "scientific_overclaim_found": false,
+    "evaluator_or_heldout_leak_found": false
   },
-  "synthesis_handling_classification": "SYNTHESIS_OK",
-  "bounded_engineering_interpretation": "ROBUST_SO_FAR_FIXED_DETERMINISTIC_ACCEPTANCE_ONLY",
-  "genuinely_new_information": true,
-  "new_scientific_result": false,
-  "m1_stop_required": false,
-  "additional_review_gate_required": false,
-  "fly0": {
-    "m1_dependency": false,
-    "activity_resource_exposure_matched": false,
-    "sb003_allocated": false,
-    "scientific_credit": 0
+  "authority_reconciliation": {
+    "control_generation": "R118",
+    "analyst_generation": "R169",
+    "m1_stop_required": false,
+    "additional_review_gate_required": false,
+    "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
+    "observed_state_admitted_to_sb003": false,
+    "forge_moving_pointer_current_for_target": false
   },
+  "classification": {
+    "scientific_evidence": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
+    "synthesis_handling": "INSUFFICIENT_SYSTEM_TEST",
+    "current_scope_synthesis": "SYNTHESIS_OK",
+    "scientific_credit": 0,
+    "new_scientific_result": false
+  },
+  "recommended_follow_up": [
+    "ADD_DISTINCT_SOURCE_FRAME_AND_ACTIVE_AUTHORITY_IDENTITY",
+    "ADD_OUTCOME_SEQUENCE_AND_TRANSACTION_CHECKPOINT_BINDING",
+    "MAKE_FEEDBACK_MASK_DELAY_FRESHNESS_EXPLICIT",
+    "ADD_ASCENDING_CUT_AND_DUPLICATE_STALE_OUTCOME_TESTS"
+  ],
   "mutations": {
     "scientific_experiments": 0,
     "result_bearing_workflows": 0,
@@ -70,14 +88,14 @@
     "scheduler_changes": 0,
     "terminal_reopens": 0
   },
+  "history_path": "analysis/external_research_audit/audit/history/2026-09-29/1030-INDEPENDENT_AUDITOR.md",
   "persistence": {
     "branch": "ops/external-research-audit-handoff",
-    "head_before": "f46d87c7eed103e2185238cf48c792d653862ccd",
-    "attempt_number": 4,
-    "attempt_limit": 5,
+    "head_before": "4941f40cf7ce6698125ce01782d369a14f3f5a36",
     "atomic_multi_file_publication": true,
-    "head_after_embedded": null,
+    "attempt_limit": 5,
+    "attempt_number": 5,
+    "force_push": false,
     "readback_required": true
-  },
-  "history_path": "analysis/external_research_audit/audit/history/2026-09-28/1030-INDEPENDENT_AUDITOR.md"
+  }
 }
