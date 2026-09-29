@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260929T194934+0900-G31",
-  "produced_at": "2026-09-29T19:49:34+09:00",
+  "generation_id": "STEWARD-20260930T015351+0900-G32",
+  "produced_at": "2026-09-30T01:53:51+09:00",
   "mode": "REPOSITORY_STEWARD",
-  "history": "reports/repository_steward/history/2026-09-29/1949.md",
+  "history": "reports/repository_steward/history/2026-09-30/0153.md",
   "main": "59fc994b39d0ba02682e972161bb46801592d25b",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
@@ -12,36 +12,55 @@
   },
   "p0_incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
   "p0_status": "OPEN",
-  "p0_classification": "NONUNIFORM_INTERMITTENT_PRE_GITHUB_MUTATION_REFUSAL_ACTION_PATH_PURPOSE_EXECUTION_CONTEXT_TIMING_SENSITIVE_ROOT_CAUSE_UNKNOWN",
+  "p0_classification": "PERSISTENT_CREATE_PULL_REQUEST_PATH_FAILURE_MIXED_ORCHESTRATION_CEILING_AND_PRE_GITHUB_REFUSAL_WITH_NONUNIFORM_INTERMITTENT_OTHER_MUTATIONS_ROOT_CAUSE_UNKNOWN",
   "control": {
-    "durable_generation": "R124",
-    "head": "7e18da3d58b168c38ddc884a3b5df70199569ff5",
-    "append_only_generation": "R124",
-    "latest_generation": "R123",
-    "state_generation": "R122",
-    "pointer_debt": "R124_HISTORY_R123_LATEST_R122_STATE"
+    "durable_generation": "R129",
+    "head": "a48bd4d0284eed9a05b9a564f41df33166184f05",
+    "append_only_generation": "R129",
+    "latest_generation": "R129",
+    "state_generation": "R128",
+    "pointer_debt": "R129_HISTORY_LATEST_STATE_R128"
   },
   "main_orchestrator": {
-    "durable_generation": "R194",
-    "head": "20adeab0bbc2e175feb406bbea75b3a79ff03054",
-    "latest_generation": "R194",
-    "state_generation": "R194",
-    "lease_generation": "R193",
-    "pointer_debt": "R194_HISTORY_LATEST_STATE_LEASE_R193"
+    "durable_generation": "R197",
+    "head": "d27d36a5e3f6ad064063333531002225e3fe8dbe",
+    "latest_generation": "R197",
+    "state_generation": "R196",
+    "lease_generation": "R196",
+    "pointer_debt": "R197_HISTORY_LATEST_STATE_LEASE_R196",
+    "pr_create_attempts": 5,
+    "failure_layer": "MIXED_ORCHESTRATION_CEILING_AND_PRE_GITHUB_PLATFORM_SAFETY_REFUSAL"
   },
   "analyst": {
-    "durable_generation": "R170",
-    "head": "cebf72d66ee5d0c9ef27395af847f58799e99bcb",
+    "durable_generation": "R172",
+    "head": "c7eeb100609dc9419e340752ff2fe2f924cd2f79",
     "persistence_complete": true,
-    "receipt": "EA-R170-20260929T175854JST",
+    "receipt": "EA-R172-20260930T005826JST",
     "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE"
   },
   "methodology": {
-    "durable_generation": "R150",
-    "head": "ca1b2dc6306b8cd4277363e0b8bf71cf8fe6d3e5",
-    "latest_state_generation": "R150",
+    "durable_generation": "R153",
+    "head": "85267c9cae49bc61358c501ba36f5e9061421790",
+    "latest_state_generation": "R153",
     "pointer_debt": false,
     "classification": "WELL_CALIBRATED"
+  },
+  "external_science": {
+    "head": "d087acdfb93f89ffb03ca82702b8f7125476e3c3",
+    "literature": {
+      "durable_generation": "R51",
+      "append_only_commit": "c60a3033479f1993035f8a177d83bf14b75caed4",
+      "latest_generation": "R50",
+      "state_generation": "R50",
+      "pointer_debt": "R51_HISTORY_LATEST_STATE_R50"
+    },
+    "theory": {
+      "generation": "R25",
+      "pointer_debt": false
+    },
+    "audit": {
+      "generation": "R13"
+    }
   },
   "m1_002": {
     "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
@@ -50,13 +69,13 @@
     "ci_run": 36361950457,
     "ci": "success",
     "pr_open": false,
-    "main_generation": "R194",
-    "pr_create_attempts": 5,
-    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL"
+    "main_generation": "R197",
+    "scientific_credit": 0
   },
   "repository_ruleset": {
     "id": 23862726,
     "name": "protection_main",
+    "created_at": "2026-09-23T14:34:28.710+09:00",
     "enforcement": "active",
     "target": "branch",
     "pr_required": true,
@@ -80,7 +99,7 @@
     "annotated_tag_objects": 5,
     "lightweight_h7_tags": 4,
     "authoritative_tag_namespace_rulesets": 0,
-    "full_exact_freeze_map_verification_generation": "G31"
+    "full_exact_freeze_map_verification_generation": "G32"
   },
   "science": {
     "total": 35,
@@ -99,6 +118,7 @@
     "attempt_limit": 5,
     "attempt": 1,
     "force_push": false,
-    "head_before": "52a61e0e1929fef1bfe53a77ddd1600c8b332355"
+    "head_before": "7581118702c43682f7ef92be8ccf0fd4168ab9d8",
+    "readback_required": true
   }
 }
