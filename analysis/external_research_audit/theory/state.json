@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generation_id": "THEORY-20260929T193236+0900-R23-TYPED-ASCENDING-SEMANTIC-RECONCILIATION",
-  "produced_at": "2026-09-29T19:32:36+09:00",
-  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20260929T193236+0900",
+  "generation_id": "THEORY-20260929T213153+0900-R24-RECEIPT-VALIDATION-PROOF-BOUNDARY",
+  "produced_at": "2026-09-29T21:31:53+09:00",
+  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20260929T213153+0900",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
-  "supersedes_generation_id": "THEORY-20260929T152609+0900-R22-DUAL-VALIDITY-OUTCOME-RECEIPT",
+  "supersedes_generation_id": "THEORY-20260929T193236+0900-R23-TYPED-ASCENDING-SEMANTIC-RECONCILIATION",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
@@ -20,48 +20,49 @@
     "HUMAN-20260928-002"
   ],
   "input_generations": {
-    "control": "R123",
+    "control": "R125",
     "analyst": "R170",
-    "main": "R192",
-    "methodology": "R150",
+    "main": "R194",
+    "methodology": "R151",
     "literature": "R50",
     "audit": "R12",
-    "theory": "R22"
+    "theory": "R23"
   },
   "refs_inspected": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "control": "7e18da3d58b168c38ddc884a3b5df70199569ff5",
+    "control": "4460a3d28784d5106186e8fa29a0ec8de304c819",
     "analyst": "cebf72d66ee5d0c9ef27395af847f58799e99bcb",
-    "forge_outcome_receipt": "674ace66a4c7d404954138a0c7a941a7f7f210f0",
-    "external_before": "214bbb7513661617e7b7ef8e01eeba1fb936bc3c"
+    "methodology": "bda3933ea5fa5ea46667a8912559e9b9ca3ff236",
+    "forge_typed_validated_head": "da0d6cae7c863ce3ded5e9fc2ea7306d6d78e2a1",
+    "forge_gate_branch_head": "a9ff8acf8997c17a07ebde70c46a1b0c87a5440c",
+    "forge_gate_exact_source_head": "41e021fef824e0bc899184c9d102d69a19e58255",
+    "external_before": "5a877bb3f226e1f710c9ae52f32944b685258b85"
   },
   "genuinely_new_information": true,
   "new_sparkbrain_scientific_result": false,
   "status": "INTEGRATION_DESIGN_PROPOSAL",
   "design_id": "ID-SB-FLY-HIERARCHICAL-SENSORIMOTOR-LOOP-001",
-  "revision": 8,
-  "proposal": "TYPED_ASCENDING_SEMANTIC_RECONCILIATION",
-  "semantic_lanes": [
-    "PREDICTIVE_MOTOR_COPY",
-    "REALIZED_LOCAL_STATE",
-    "REAFFERENT_WORLD_OUTCOME"
-  ],
-  "availability_states": [
-    "OBSERVED",
-    "GATED",
-    "MASKED",
-    "DELAYED",
-    "MISSING"
-  ],
-  "r22_dual_validity_retained": true,
-  "forge_source_blob": "ab83eae491145bb08447d2b9d0c61766c88aa24f",
-  "forge_status": "FORGE_PROTOTYPE_UNVERIFIED",
+  "revision": 9,
+  "proposal": "RECEIPT_VALIDATION_PROOF_BOUNDARY",
+  "upstream_validator_required": true,
+  "downstream_gate": {
+    "status": "FORGE_INTERESTING_ENGINEERING_GREEN_PENDING_ANALYST",
+    "exact_source_head": "41e021fef824e0bc899184c9d102d69a19e58255",
+    "source_blob": "9a44a7717fecbb0118f88659df72f3802f9424a5",
+    "test_blob": "20a0ffe32f294e457e5079f78854ae3153ade9bb",
+    "ci_run": 36563852129
+  },
+  "typed_semantics": {
+    "exact_head": "da0d6cae7c863ce3ded5e9fc2ea7306d6d78e2a1",
+    "ci_run": 36557302058,
+    "analyst_status": "PENDING_FRESH_SCOPED_RECONCILIATION"
+  },
   "analyst_narrow_observer_admission": "OPTIONAL_PREAUTHORIZED_NARROW_OBSERVER_SYSTEM_BUILD_INPUT",
   "m1_gate": false,
   "sb003_activation_condition": false,
   "mandatory_review_gate": false,
   "scientific_credit": 0,
-  "history_path": "analysis/external_research_audit/theory/history/2026-09-29/1932-THEORY_SYNTHESIS_ARCHITECT.md",
+  "history_path": "analysis/external_research_audit/theory/history/2026-09-29/2131-THEORY_SYNTHESIS_ARCHITECT.md",
   "publication_attempt": 2
 }
