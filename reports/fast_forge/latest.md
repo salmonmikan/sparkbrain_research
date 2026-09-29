@@ -1,9 +1,13 @@
-# Fast Forge latest — FLY-0 intent supersession guard green
+# Fast Forge latest — FLY-0 feedback liveness reconciliation green
 
-FORGE_INTERESTING / SYSTEM_BUILD_INPUT / NON_EVIDENTIARY / NONCANONICAL.
+generation_id: `FORGE-20260929T215115+0900-FLY0-FEEDBACK-LIVENESS-RECONCILIATION-GREEN`
 
-Exact source 8452bff9e1d0dc91c47c1d968f5ddcddd5335a22 is CI-green in run 36487505532 on Python 3.11/3.13 through lint, local readiness, tests and bundle validation. Superseded authority epoch/token frames fail closed before local execution while fresh frames retain ModulationFrame v2; checkpoint/restore is transactional and replayable.
+`FORGE_INTERESTING / SYSTEM_BUILD_INPUT / NON_EVIDENTIARY / NONCANONICAL`.
 
-Optional future SYSTEM_BUILD input only. Analyst R169 remains authority and SB003 remains conditionally inactive behind M1-002. Scientific credit 0.
+Validated exact head `c67fad2891f8209b05edbf21e2d86ce50b2ad27b` is CI-green in run `36570573445` on Python 3.11/3.13 through lint, local readiness, tests and bundle validation.
 
-Authoritative history: reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md
+The coordinator separates feedback liveness from WORLD truth: unavailable feedback never implies zero/no-change; timeout does not erase a later receipt-valid committed outcome; late valid feedback can reconcile exactly once; repeated unavailable feedback does not extend its deadline; source-lineage mismatch fails closed.
+
+Full R22 source-command receipt validation remains upstream and unimplemented. Optional future SB003 B/C input only after fresh Analyst reconciliation. SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`; scientific credit 0.
+
+History: `reports/fast_forge/history/2026-09-29/2151-fly0-feedback-liveness-reconciliation-green.md`

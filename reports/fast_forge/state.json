@@ -1,34 +1,63 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260929T064200+0900-FLY0-INTENT-SUPERSESSION-GUARD-GREEN",
-  "forge_id": "FORGE-FLY0-INTENT-SUPERSESSION-GUARD",
+  "generation_id": "FORGE-20260929T215115+0900-FLY0-FEEDBACK-LIVENESS-RECONCILIATION-GREEN",
+  "produced_at": "2026-09-29T21:51:15+09:00",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260929-fly0-intent-supersession-guard-a",
-  "exact_source_head": "8452bff9e1d0dc91c47c1d968f5ddcddd5335a22",
-  "authoritative_history": "reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md",
-  "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-  "analyst_generation": "R169",
-  "analyst_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
-  "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
-  "main_generation": "R183",
-  "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-  "relay_allocated": false,
+  "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
+  "branch": "forge/20260929-fly0-feedback-liveness-reconciliation-a",
+  "parent_reconciliation_gate_head": "41e021fef824e0bc899184c9d102d69a19e58255",
+  "validated_exact_head": "c67fad2891f8209b05edbf21e2d86ce50b2ad27b",
+  "source_blob": "62e476a2d7211022907a3cf5c55f0100cf6e1465",
+  "test_blob": "8138d7fe6e6c35fcd5128815c04e3006e0eb24dc",
+  "authoritative_history": "reports/fast_forge/history/2026-09-29/2151-fly0-feedback-liveness-reconciliation-green.md",
+  "directive_index": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "delta": false
+  },
+  "authority": {
+    "control": "R125",
+    "analyst": "R170",
+    "main": "R194",
+    "methodology": "R151",
+    "theory": "R23",
+    "literature": "R50",
+    "audit": "R12",
+    "relay_allocated": false,
+    "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
+    "m1_002_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e"
+  },
+  "semantics": {
+    "timeout_implies_zero_world_change": false,
+    "late_valid_committed_outcome_may_reconcile": true,
+    "repeated_unavailable_extends_deadline": false,
+    "source_lineage_mismatch_fails_closed": true,
+    "checkpoint_preserves_liveness_and_exactly_once_state": true,
+    "full_r22_receipt_contract_implemented": false,
+    "upstream_receipt_validator_required": true
+  },
   "ci": {
-    "run_id": 36487505532,
-    "status": "success",
+    "final_run_id": 36570573445,
+    "conclusion": "success",
     "python_311": "success",
     "python_313": "success",
     "lint": "success",
     "local_readiness": "success",
     "tests": "success",
-    "bundle_validation": "success"
+    "bundle_validation": "success",
+    "initial_failed_run_id": 36569847515,
+    "initial_failure_class": "TEST_FIXTURE_ASSUMPTION"
   },
-  "source_repair": {
-    "attempts": 2,
-    "attempt_1": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "attempt_2": "SUCCESS"
+  "test_repair": {
+    "mutation_attempts": 4,
+    "pre_github_refusals": 2,
+    "intermediate_editing_defect_landed": true,
+    "final_repair_success": true
   },
+  "ordinary_reduction": "ASYNCHRONOUS_EVENT_LIVENESS_TRACKER_IDEMPOTENT_TRANSACTION_CONSUMER",
+  "analyst_reconciliation_required": true,
+  "sb003_activation_changed": false,
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
