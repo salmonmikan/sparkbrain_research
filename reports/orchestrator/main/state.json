@@ -1,16 +1,15 @@
 {
   "schema_version": 2,
-  "generation": "R193",
-  "generation_id": "MAIN-20260929T181925+0900-PRIMARY-R193-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-29T18:19:25+09:00",
+  "generation": "R194",
+  "generation_id": "MAIN-20260929T191407+0900-PRIMARY-R194-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-29T19:14:07+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
   "analyst_generation": "R170",
   "analyst_head": "cebf72d66ee5d0c9ef27395af847f58799e99bcb",
-  "control_generation": "R123",
-  "control_head": "ccd58081057a94908d2775f45ca22bcc0fbeb0d6",
+  "control_generation": "R124",
   "directive_index": {
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "delta": false
@@ -25,6 +24,10 @@
     "ci": "success",
     "pr_created": false,
     "merge_performed": false
+  },
+  "relay": {
+    "allocated": false,
+    "collision_observed": false
   },
   "sb003": {
     "state": "ALLOCATED_CONDITIONAL_INACTIVE"
@@ -50,5 +53,5 @@
   "new_scientific_result": false,
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
-  "history_path": "reports/orchestrator/main/history/2026-09-29/1819-r193-pr-create-platform-blocked.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-29/1914-r194-pr-create-platform-blocked.md"
 }
