@@ -65,7 +65,7 @@ def test_four_variants_compose_validator_gate_and_bounded_horizon(
     variant: str,
 ) -> None:
     bridge = AscendingObservedStateBridge(
-        WorldState(position=8, target=-20),
+        WorldState(position=4, target=-4),
         variant=variant,
         authority_token="intent-a",
     )
@@ -80,7 +80,7 @@ def test_four_variants_compose_validator_gate_and_bounded_horizon(
     decision = _submit(horizon, bridge, signal, source, journal)
 
     assert decision.status == "RECONCILED"
-    assert decision.world_position == 7
+    assert decision.world_position == 3
     assert decision.outcome_watermark == 1
     assert decision.observer_certainty == "EXACT_WITHIN_HORIZON"
     assert decision.pending_count == 0
@@ -89,7 +89,7 @@ def test_four_variants_compose_validator_gate_and_bounded_horizon(
 
 def test_horizon_blocks_pending_lineage_until_explicit_expiry() -> None:
     bridge = AscendingObservedStateBridge(
-        WorldState(position=8, target=-20),
+        WorldState(position=4, target=-4),
         variant="structured",
         authority_token="intent-a",
     )
@@ -122,7 +122,7 @@ def test_horizon_blocks_pending_lineage_until_explicit_expiry() -> None:
 
 def test_checkpoint_restore_preserves_pending_then_accepts_same_lineage() -> None:
     bridge = AscendingObservedStateBridge(
-        WorldState(position=8, target=-20),
+        WorldState(position=4, target=-4),
         variant="rewired",
         authority_token="intent-a",
     )
@@ -165,12 +165,12 @@ def test_checkpoint_restore_preserves_pending_then_accepts_same_lineage() -> Non
     assert resolved.status == "RECONCILED"
     assert resolved.pending_count == 0
     assert resolved.outcome_watermark == 2
-    assert resolved.world_position == 6
+    assert resolved.world_position == 2
 
 
 def test_outside_horizon_is_unresolved_and_never_rolls_back_world() -> None:
     bridge = AscendingObservedStateBridge(
-        WorldState(position=20, target=-40),
+        WorldState(position=4, target=-4),
         variant="random_sparse",
         authority_token="intent-a",
     )
@@ -207,7 +207,7 @@ def test_outside_horizon_is_unresolved_and_never_rolls_back_world() -> None:
 
 def test_ordinary_new_receipt_does_not_clear_gap_only_resync_does() -> None:
     bridge = AscendingObservedStateBridge(
-        WorldState(position=20, target=-40),
+        WorldState(position=4, target=-4),
         variant="reactive",
         authority_token="intent-a",
     )
@@ -254,7 +254,7 @@ def test_ordinary_new_receipt_does_not_clear_gap_only_resync_does() -> None:
 
 def test_long_run_exact_identity_state_is_bounded_by_window() -> None:
     bridge = AscendingObservedStateBridge(
-        WorldState(position=100, target=-100),
+        WorldState(position=4, target=-4),
         variant="structured",
         authority_token="intent-a",
     )
