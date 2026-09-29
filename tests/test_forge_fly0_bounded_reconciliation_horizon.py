@@ -276,3 +276,42 @@ def test_long_run_exact_identity_state_is_bounded_by_window() -> None:
     assert horizon.retained_exact_count == 4
     assert horizon.pending_count == 0
     assert horizon.observer_certainty == "EXACT_WITHIN_HORIZON"
+
+
+def test_checkpoint_restore_preserves_horizon_gap_and_exact_replay_state() -> None:
+    bridge = AscendingObservedStateBridge(
+        WorldState(position=4, target=-4),
+        variant="structured",
+        authority_token="intent-a",
+    )
+    horizon = BoundedReconciliationHorizon(exact_window=2, max_pending=2)
+    records = []
+    for index in range(4):
+        item = _record(
+            bridge,
+            frame_sequence=index,
+            outcome_sequence=index + 1,
+            transaction_id=f"checkpoint-tx-{index + 1}",
+        )
+        records.append(item)
+        assert _submit(horizon, bridge, item[1], item[2], item[3]).status == "RECONCILED"
+
+    assert horizon.reconciliation_horizon_floor == 3
+    old = records[0]
+    assert _submit(horizon, bridge, old[1], old[2], old[3]).status == "OUTSIDE_RETENTION_HORIZON"
+    checkpoint = horizon.checkpoint()
+
+    restored = BoundedReconciliationHorizon(exact_window=2, max_pending=2)
+    restored.restore(checkpoint)
+    assert restored.checkpoint() == checkpoint
+    assert restored.reconciliation_horizon_floor == 3
+    assert restored.outcome_watermark == 4
+    assert restored.retained_exact_count == 2
+    assert restored.observer_certainty == "DEGRADED_CAUSAL_GAP"
+    assert restored.pending_count == 0
+
+    latest = records[-1]
+    duplicate = _submit(restored, bridge, latest[1], latest[2], latest[3])
+    assert duplicate.status == "DUPLICATE_NOOP"
+    assert duplicate.outcome_watermark == 4
+    assert duplicate.observer_certainty == "DEGRADED_CAUSAL_GAP"
