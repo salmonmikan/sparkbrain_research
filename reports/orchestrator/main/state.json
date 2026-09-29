@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation": "R200",
-  "generation_id": "MAIN-20260930T051033+0900-PRIMARY-R200-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-30T05:10:33+09:00",
+  "generation": "R201",
+  "generation_id": "MAIN-20260930T062448+0900-PRIMARY-R201-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-30T06:24:48+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
@@ -46,9 +46,9 @@
     "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL"
   },
   "persistence": {
-    "history_publication_attempts": 5,
-    "history_publication_commit": "26d5adf15cd44edeafab03694d05b9099a7a86f8",
-    "cache_reconciliation_in_progress": true
+    "history_publication_attempts": 1,
+    "history_publication_commit": "315cba0d0a339de77c940aa198aa5dadb6061ca2",
+    "cache_reconciliation_in_progress": false
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -60,5 +60,5 @@
   "new_scientific_result": false,
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
-  "history_path": "reports/orchestrator/main/history/2026-09-30/0510-r200-pr-create-platform-blocked.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-30/0624-r201-pr-create-platform-blocked.md"
 }
