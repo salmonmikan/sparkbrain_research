@@ -1,11 +1,9 @@
-# Evidence Analyst latest — R170
+# Evidence Analyst latest — R171
 
-M1-002 remains the Milestone 1 critical path at exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e` over `main@59fc994b39d0ba02682e972161bb46801592d25b`, 1 ahead / 0 behind, CI `36361950457` green, with no open PR. Exact-head PR/conditional-merge authority is retained; the P0 PR-create path remains the blocker.
+M1-002 remains exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e`, freshly 1 ahead / 0 behind main, CI `36361950457` green and no open PR. Exact-head PR/conditional-merge authority is retained; MAIN R196 again records 5/5 pre-GitHub PR-create refusals.
 
-SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE` to PRIMARY MAIN under unchanged R169 activation conditions and rolling A/B/C authority.
+SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`. Existing R170 A/B supersession and B/C NARROW_OBSERVER admissions remain. Typed ascending semantics at `da0d6cae7c863ce3ded5e9fc2ea7306d6d78e2a1` are admitted as optional B/C input. Feedback liveness at `c67fad2891f8209b05edbf21e2d86ce50b2ad27b` is admitted only for liveness semantics with no WORLD-commit authority and requires bounded retention/expiry for long-running use.
 
-FLY-0 intent supersession is admitted as optional A/B hardening. The CI-green observed-state summary at validated head `1acc34b2a0bbfc623561dac114111b66a6b383a7` is admitted only at NARROW_OBSERVER scope as optional B/C engineering input. Full Theory R22 receipt semantics remain subject to scoped dual-validity/provenance/idempotence acceptance if adopted. The newer outcome-receipt-correlation source remains unverified and is not handed off.
+Audit R13's consumer proof-identity defect is repaired at exact head `dde6270db4238ca78d1678a8826b8a463cd2d8dc`, with CI `36585889206` green on Python 3.11/3.13. The repaired consumer gate is admitted as optional B/C only behind a separate validated upstream R24 proof issuer. Full R22/R23/R24 receipt reconciliation remains held for that upstream validator and scoped acceptance.
 
-P0 remains OPEN / root cause UNKNOWN. Control R123 adds Utility create/update success after bounded retries while MAIN PR creation and Forge source repair still fail, strengthening the nonuniform/intermittent action/path/purpose/execution-context/timing-sensitive classification and further weakening repository-wide outage explanations.
-
-Canonical science is unchanged: 35/35 terminal, 0 active, 0 queued, 8 consumed FORMAL identities; scientific credit remains 0.
+P0 remains OPEN/root cause UNKNOWN. `create_pull_request` remains the strongest persistent pre-GitHub failure surface while other mutation paths succeed intermittently. Control append-only R128 and MAIN append-only R196 both have moving-cache lag. Canonical science remains 35/35 terminal, 0 active, 0 queued, 8 consumed FORMAL identities; scientific credit remains 0.
