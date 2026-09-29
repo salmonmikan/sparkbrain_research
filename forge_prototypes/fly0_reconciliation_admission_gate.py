@@ -46,7 +46,15 @@ class ValidatedReceiptProof:
             raise ValueError("outcome_sequence must be non-negative")
 
     def identity(self) -> str:
-        raw = json.dumps({"signal_token": self.signal_token, "transaction_id": self.transaction_id, "outcome_sequence": self.outcome_sequence}, sort_keys=True, separators=(",", ":")).encode()
+        raw = json.dumps(
+            {
+                "signal_token": self.signal_token,
+                "transaction_id": self.transaction_id,
+                "outcome_sequence": self.outcome_sequence,
+            },
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode()
         return sha256(raw).hexdigest()
 
 
@@ -130,16 +138,34 @@ class ReconciliationAdmissionGate:
         prior_proof = self._consumed_transactions.get(proof.transaction_id)
         if prior_proof is not None:
             prior_signal, prior_sequence = prior_proof
-            if prior_signal == proof.signal_token and prior_sequence == proof.outcome_sequence:
-                return self._decision("DUPLICATE_NOOP", "TRANSACTION_ALREADY_RECONCILED")
+            if (
+                prior_signal == proof.signal_token
+                and prior_sequence == proof.outcome_sequence
+            ):
+                return self._decision(
+                    "DUPLICATE_NOOP",
+                    "TRANSACTION_ALREADY_RECONCILED",
+                )
             if prior_signal == proof.signal_token:
-                return self._decision("REJECTED_RECEIPT", "TRANSACTION_PROOF_SEQUENCE_CONFLICT")
-            return self._decision("REJECTED_RECEIPT", "TRANSACTION_ID_COLLISION")
+                return self._decision(
+                    "REJECTED_RECEIPT",
+                    "TRANSACTION_PROOF_SEQUENCE_CONFLICT",
+                )
+            return self._decision(
+                "REJECTED_RECEIPT",
+                "TRANSACTION_ID_COLLISION",
+            )
 
         if proof.signal_token in self._consumed_signals:
-            return self._decision("REJECTED_RECEIPT", "SIGNAL_REPLAY_ACROSS_TRANSACTION")
+            return self._decision(
+                "REJECTED_RECEIPT",
+                "SIGNAL_REPLAY_ACROSS_TRANSACTION",
+            )
 
-        self._consumed_transactions[proof.transaction_id] = (proof.signal_token, proof.outcome_sequence)
+        self._consumed_transactions[proof.transaction_id] = (
+            proof.signal_token,
+            proof.outcome_sequence,
+        )
         self._consumed_signals[proof.signal_token] = proof.transaction_id
         if proof.outcome_sequence <= self._last_outcome_sequence:
             return self._decision(
@@ -165,8 +191,14 @@ class ReconciliationAdmissionGate:
             "last_outcome_sequence": self._last_outcome_sequence,
             "world_position": self._world_position,
             "consumed_transactions": {
-                transaction_id: {"signal_token": signal_token, "outcome_sequence": outcome_sequence}
-                for transaction_id, (signal_token, outcome_sequence) in sorted(self._consumed_transactions.items())
+                transaction_id: {
+                    "signal_token": signal_token,
+                    "outcome_sequence": outcome_sequence,
+                }
+                for transaction_id, (
+                    signal_token,
+                    outcome_sequence,
+                ) in sorted(self._consumed_transactions.items())
             },
         }
         return json.dumps(payload, sort_keys=True, separators=(",", ":"))
@@ -185,7 +217,11 @@ class ReconciliationAdmissionGate:
         restored_transactions: dict[str, tuple[str, int]] = {}
         restored_signals: dict[str, str] = {}
         for transaction_id, entry in consumed.items():
-            if not isinstance(transaction_id, str) or not transaction_id or not isinstance(entry, dict):
+            if (
+                not isinstance(transaction_id, str)
+                or not transaction_id
+                or not isinstance(entry, dict)
+            ):
                 raise ValueError("invalid consumed transaction proof")
             signal_token = entry.get("signal_token")
             outcome_sequence = entry.get("outcome_sequence")
