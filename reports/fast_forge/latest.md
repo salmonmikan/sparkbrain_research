@@ -1,9 +1,11 @@
-# Fast Forge latest — FLY-0 intent supersession guard green
+# Fast Forge latest — FLY-0 observed-state summary green
 
-FORGE_INTERESTING / SYSTEM_BUILD_INPUT / NON_EVIDENTIARY / NONCANONICAL.
+generation_id: `FORGE-20260929T103115+0900-FLY0-OBSERVED-STATE-SUMMARY-GREEN`
 
-Exact source 8452bff9e1d0dc91c47c1d968f5ddcddd5335a22 is CI-green in run 36487505532 on Python 3.11/3.13 through lint, local readiness, tests and bundle validation. Superseded authority epoch/token frames fail closed before local execution while fresh frames retain ModulationFrame v2; checkpoint/restore is transactional and replayable.
+`FORGE_INTERESTING / SYSTEM_BUILD_INPUT / NON_EVIDENTIARY / NONCANONICAL`.
 
-Optional future SYSTEM_BUILD input only. Analyst R169 remains authority and SB003 remains conditionally inactive behind M1-002. Scientific credit 0.
+Validated exact head `1acc34b2a0bbfc623561dac114111b66a6b383a7` is CI-green in run `36503631615`. The observer reports realized local/WORLD outcomes rather than assuming issued intent succeeded, fails closed on superseded authority without false advance, and replays exactly after checkpoint/restore.
 
-Authoritative history: reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md
+Ordinary observer/outcome-receipt reduction is sufficient. Analyst R169 remains authority; SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`; scientific credit is 0.
+
+Authoritative history: `reports/fast_forge/history/2026-09-29/1031-fly0-observed-state-summary-green.md`

@@ -1,22 +1,36 @@
 {
   "schema_version": 2,
-  "generation_id": "FORGE-20260929T064200+0900-FLY0-INTENT-SUPERSESSION-GUARD-GREEN",
-  "forge_id": "FORGE-FLY0-INTENT-SUPERSESSION-GUARD",
+  "generation_id": "FORGE-20260929T103115+0900-FLY0-OBSERVED-STATE-SUMMARY-GREEN",
+  "produced_at": "2026-09-29T10:31:15+09:00",
+  "forge_id": "FORGE-FLY0-ASCENDING-OBSERVED-STATE-SUMMARY",
   "status": "FORGE_INTERESTING",
   "recommended_handoff": "SYSTEM_BUILD_INPUT",
-  "branch": "forge/20260929-fly0-intent-supersession-guard-a",
-  "exact_source_head": "8452bff9e1d0dc91c47c1d968f5ddcddd5335a22",
-  "authoritative_history": "reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md",
-  "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-  "analyst_generation": "R169",
-  "analyst_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
-  "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
-  "main_generation": "R183",
-  "m1_002": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-  "relay_allocated": false,
+  "evidentiary_status": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
+  "branch": "forge/20260929-fly0-observed-state-summary-a",
+  "implementation_source_head": "3dd3f4f729ff0ee3e6d09a1683bf0464d43552b7",
+  "validated_exact_head": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
+  "authoritative_history": "reports/fast_forge/history/2026-09-29/1031-fly0-observed-state-summary-green.md",
+  "directive_index": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "delta": false
+  },
+  "authority": {
+    "control": "R118",
+    "analyst": "R169",
+    "main": "R186",
+    "relay_allocated": false,
+    "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
+    "m1_002_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e"
+  },
+  "dependencies": {
+    "theory": "R21",
+    "methodology": "R147"
+  },
   "ci": {
-    "run_id": 36487505532,
-    "status": "success",
+    "run_id": 36503631615,
+    "head_sha": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
+    "conclusion": "success",
     "python_311": "success",
     "python_313": "success",
     "lint": "success",
@@ -24,18 +38,51 @@
     "tests": "success",
     "bundle_validation": "success"
   },
-  "source_repair": {
-    "attempts": 2,
-    "attempt_1": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "attempt_2": "SUCCESS"
+  "diagnostics": {
+    "variants": [
+      "structured",
+      "rewired",
+      "random_sparse",
+      "reactive"
+    ],
+    "committed_outcome": true,
+    "superseded_fail_closed": true,
+    "no_false_advance": true,
+    "descending_cut_realized_outcome": true,
+    "checkpoint_replay": true,
+    "control_surface_expanded": false,
+    "modulation_vocabulary_expanded": false
+  },
+  "ordinary_reduction": "HIERARCHICAL_CONTROL_OBSERVER_OUTCOME_RECEIPT",
+  "analyst_reconciliation_required": true,
+  "sb003_activation_changed": false,
+  "claim_boundary": {
+    "biological_fidelity_equivalence": false,
+    "topology_necessity_superiority": false,
+    "compute_energy_efficiency": false,
+    "composition_contribution": "NOT_ESTABLISHED",
+    "whole_system_superiority": false,
+    "external_validity": false,
+    "scientific_novelty": false,
+    "scientific_credit": 0
   },
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
     "root_cause": "UNKNOWN"
   },
-  "scientific_credit": 0,
+  "publication": {
+    "branch": "forge/20260929-fly0-observed-state-summary-a",
+    "head_before": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
+    "mode": "ATOMIC_HISTORY_LATEST_STATE",
+    "attempt_limit": 5,
+    "attempt": 4,
+    "force_push": false,
+    "readback_required": true,
+    "prior_pointer_debt": true
+  },
   "new_scientific_result": false,
+  "scientific_credit": 0,
   "scheduler_state_changed": false,
   "work_mode_used": false
 }
