@@ -1,7 +1,8 @@
 {
   "schema_version": 2,
-  "generation_id": "MAIN-20260929T131547+0900-PRIMARY-R189-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-29T13:15:47+09:00",
+  "generation_id": "MAIN-20260929T141901+0900-PRIMARY-R190-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-29T14:19:01+09:00",
+  "cache_reconciled_at": "2026-09-29T15:12:15+09:00",
   "execution_mode": "PRIMARY",
   "mode": "SYSTEM_BUILD",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
@@ -11,9 +12,8 @@
   "analyst": "R169",
   "control": "R120",
   "pr_creation_attempts": 5,
-  "explicit_pre_github_refusals": 4,
-  "attempt_1_error_capture": "CODE_MODE_TOOL_CALL_LIMIT_PR_ABSENT_ON_READBACK",
-  "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL_OBSERVED_ATTEMPTS_2_TO_5",
+  "explicit_pre_github_refusals": 5,
+  "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main"
 }
