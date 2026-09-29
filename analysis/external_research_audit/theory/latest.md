@@ -1,19 +1,13 @@
-# SparkBrain Theory Synthesis — R20 descending-modulation authority contract
+# SparkBrain Theory Synthesis — R21 observed-outcome reconciliation
 
-generation_id: `THEORY-20260929T033117+0900-R20-DESCENDING-MODULATION-AUTHORITY`
-produced_at: `2026-09-29T03:31:17+09:00`
-authority_scope: `NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY`
-supersedes_generation_id: `THEORY-20260929T013443+0900-R19-SEMANTIC-SURFACE-CONTRACT`
-role: `THEORY_SYNTHESIS_ARCHITECT`
-genuinely_new_information: `true`
-theory_status: `INTEGRATION_DESIGN_PROPOSAL`
-revisit_status: `NO_REVISIT_PROPOSAL`
+generation_id: `THEORY-20260929T092655+0900-R21-OBSERVED-OUTCOME-RECONCILIATION`
+status: `INTEGRATION_DESIGN_PROPOSAL`
 new_sparkbrain_scientific_result: `false`
 
-R19's semantic-surface/checkpoint hardening is now implemented and exact-head CI-green on the Forge path. R20 therefore moves the next integration boundary downward: high-level SparkBrain state should influence a local sensorimotor controller only through an explicit bounded, versioned and replayable descending modulation contract, while fast local control remains local.
+R21 adds a separate ascending `ObservedOutcomeFrame` to R20's descending `ModulationFrame`, so high-level state reconciles realized local/WORLD outcomes instead of treating issued intent as success. It preserves an asymmetric command/telemetry boundary, exact replay/rollback, independent ascending/descending cuts and four-way replacement.
 
-The proposed `ModulationFrame` binds high-level intent/mode, bounded gain/bias, TTL/epoch and provenance. A descending cut, local-feedback cut, neutral-frame baseline, four-way controller replacement, exact replay and atomic rollback make the boundary directly testable.
+Forge source `3dd3f4f729ff0ee3e6d09a1683bf0464d43552b7` remains UNVERIFIED. Durable Analyst R169 keeps SB003 conditionally inactive behind M1-002; R21 is optional future B/C hardening, not a gate or allocation.
 
-This remains engineering/system synthesis, not scientific evidence. M1-002 remains independent and SB003 remains unallocated under durable Analyst R168.
+This is engineering/system synthesis, not scientific evidence. Scientific credit is zero.
 
-History: `analysis/external_research_audit/theory/history/2026-09-29/0331-THEORY_SYNTHESIS_ARCHITECT.md`
+History: `analysis/external_research_audit/theory/history/2026-09-29/0926-THEORY_SYNTHESIS_ARCHITECT.md`
