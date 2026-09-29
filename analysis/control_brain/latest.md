@@ -1,11 +1,15 @@
-# Control Brain R119
+# Control Brain R120
 
-generation_id: `CTRL-20260929T105025+0900-R119-FORGE-OBSERVED-STATE-DURABLE-AUDIT-BOUNDED-P0`
+generation_id: `CTRL-20260929T125000+0900-R120`
 
-Append-only R119 is the durable Control authority. Directive index is unchanged; durable Analyst remains R169.
+Append-only R120 is current durable Control authority.
 
-M1-002 remains `2a21d3e879f1db4e81a58273180ad2124e823a5e` over `main@59fc994b39d0ba02682e972161bb46801592d25b`, 1 ahead / 0 behind, CI `36361950457` green, no matching open PR. SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`.
+Directive index unchanged; durable Analyst R169. M1-002 remains exact-head/CI-green/no-PR; MAIN R188; SB003 `ALLOCATED_CONDITIONAL_INACTIVE`.
 
-FLY-0 observed-state is durably Forge-green at validated head `1acc34b2a0bbfc623561dac114111b66a6b383a7`, CI `36503631615` success, but remains NON_EVIDENTIARY/NONCANONICAL and pending Analyst adjudication. Audit R12 keeps full R21/SB003 readiness at INSUFFICIENT_SYSTEM_TEST without creating an M1 gate. Methodology is R147 / WELL_CALIBRATED.
+P0 remains OPEN. Five fresh-state Control canary PR-create attempts all failed before GitHub, reproducing the production PR-create failure on isolated refs. Repository-wide write outage remains unsupported; root cause UNKNOWN.
 
-P0 remains OPEN; repository-wide outage is unsupported and root cause remains UNKNOWN. Eight enabled current SparkBrain prompts prohibit Work-backed execution; hidden backend provenance is not exposed and no enabled Work-backed scheduler was detected.
+FLY-0 observed-state remains Forge-green pending Analyst. Newer outcome-receipt-correlation probe remains unverified. External Literature R49 is durable. Methodology append-only R148 is durable/WELL_CALIBRATED but its moving latest/state still show R147.
+
+Canonical science unchanged; scientific credit added 0.
+
+History: `analysis/control_brain/history/2026-09-29/1250-R120.md`
