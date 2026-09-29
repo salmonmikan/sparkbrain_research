@@ -1,9 +1,13 @@
-# Fast Forge latest — FLY-0 intent supersession guard green
+# Fast Forge latest — FLY-0 typed ascending semantics green
 
-FORGE_INTERESTING / SYSTEM_BUILD_INPUT / NON_EVIDENTIARY / NONCANONICAL.
+generation_id: `FORGE-20260929T194600+0900-FLY0-TYPED-ASCENDING-SEMANTICS-GREEN`
 
-Exact source 8452bff9e1d0dc91c47c1d968f5ddcddd5335a22 is CI-green in run 36487505532 on Python 3.11/3.13 through lint, local readiness, tests and bundle validation. Superseded authority epoch/token frames fail closed before local execution while fresh frames retain ModulationFrame v2; checkpoint/restore is transactional and replayable.
+`FORGE_INTERESTING / SYSTEM_BUILD_INPUT / NON_EVIDENTIARY / NONCANONICAL`.
 
-Optional future SYSTEM_BUILD input only. Analyst R169 remains authority and SB003 remains conditionally inactive behind M1-002. Scientific credit 0.
+Validated exact head `da0d6cae7c863ce3ded5e9fc2ea7306d6d78e2a1` is CI-green in run `36557302058` on Python 3.11/3.13 through lint, local readiness, tests and bundle validation.
 
-Authoritative history: reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md
+The adapter separates predictive motor-copy, realized local state and reafferent WORLD outcome from orthogonal OBSERVED/GATED/MASKED/DELAYED/MISSING availability. Only an accepted committed OBSERVED reafferent event becomes a narrow WORLD-reconciliation candidate, and it still explicitly requires full R22 receipt/transaction validation. Gated/masked/delayed/missing feedback is never invented as zero/no-change outcome.
+
+Optional future SB003 B/C engineering input only; fresh Analyst reconciliation is required because R170 predates Theory R23. M1-002 and SB003 activation are unchanged. Scientific credit 0.
+
+Authoritative history: `reports/fast_forge/history/2026-09-29/1946-fly0-typed-ascending-semantics-green.md`
