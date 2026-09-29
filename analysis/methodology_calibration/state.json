@@ -1,18 +1,17 @@
 {
   "schema_version": 2,
-  "timestamp": "2026-09-29T08:21:24+09:00",
+  "timestamp": "2026-09-29T16:24:51+09:00",
   "generation": {
-    "generation_id": "METHCAL-20260929T082124+0900-R147-SB003-ROLLING-CALIBRATION-AND-P0-LATENCY",
-    "sequence": 147,
+    "generation_id": "METHCAL-20260929T162451+0900-R150-DUAL-VALIDITY-P0-POINTER-DEBT-CALIBRATION",
+    "sequence": 150,
     "material_change": true,
-    "material_change_reason": "SB003_DURABLE_CONDITIONAL_ALLOCATION_AND_P0_INTEGRATION_LATENCY_RECALIBRATED",
-    "supersedes_generation_id": "METHCAL-20260929T022210+0900-R146-FLY0-REPAIR-GREEN-CALIBRATION",
+    "material_change_reason": "R22_DUAL_VALIDITY_RECEIPT_SEMANTICS_AND_CROSS_STREAM_POINTER_DEBT_RECALIBRATED",
+    "supersedes_generation_id": "METHCAL-20260929T142030+0900-R149-OUTCOME-RECEIPT-CORRELATION-P0-CALIBRATION",
     "authority_scope": "METHODOLOGY_ADVISORY_ONLY"
   },
   "directive_freshness": {
-    "human_directives_ref": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "previous_human_directives_ref": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "previous_active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "newly_active_or_materially_changed": [],
     "applicable_directives_read": [
       "HUMAN-20260925-002",
@@ -25,17 +24,20 @@
     "freshness_established": true
   },
   "inputs": {
-    "analyst_durable": "EVA-20260929T050453+0900-R169-FLY0-V2-SB003-CONDITIONAL-ALLOCATION",
-    "analyst_branch": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
-    "control": "CTRL-20260929T064945+0900-R118-R169-SB003-AND-P0-PR-CANARY",
-    "control_branch": "86f646965c0216f3f7c4f488c78038c65ddffc12",
-    "main": "MAIN-20260929T081507+0900-PRIMARY-R185-M1-002-PR-CREATE-BLOCKED",
-    "main_reports": "79c650c228b0f215f8e5b4894d98e0c26dbd4424",
-    "theory": "THEORY-20260929T033117+0900-R20-DESCENDING-MODULATION-AUTHORITY",
-    "forge_supersession_report": "d9ad549b5d0f65dda90095d9d412f908a1d38f1b",
-    "forge_observed_state_source": "3dd3f4f729ff0ee3e6d09a1683bf0464d43552b7",
-    "utility_durable": "AUTOUTIL-20260929T032701+0900-P0-CROSSSTREAM-WINDOW-RECON-71C4E9A2",
-    "prior_methodology_append_only": "METHCAL-20260929T022210+0900-R146-FLY0-REPAIR-GREEN-CALIBRATION"
+    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "analyst_generation": "R169",
+    "analyst_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
+    "control_generation": "R121",
+    "control_head": "5eadeb0d0a2c619d105f6ea8819a1b5bbef530cf",
+    "main_generation": "R192",
+    "main_history_commit": "a6d11d760cbd1a07637decf2c63a561f3b392fa1",
+    "main_reports_head": "36c006f99eab11f16f1142998272e93f18594a58",
+    "theory_generation": "R22",
+    "theory_head": "6ae93380fb834e0e67eb0bd3c676ede2111aa8b7",
+    "forge_outcome_receipt_branch_head": "87477329241aa6fa97d56847bff5bee05b759059",
+    "forge_outcome_receipt_source": "d569130d1c512d6b75b6b381c8a90ed14934e64c",
+    "forge_observed_state_validated_head": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
+    "prior_methodology": "R149"
   },
   "overall_classification": "WELL_CALIBRATED",
   "findings": {
@@ -48,10 +50,14 @@
     "sb003_conditional_activation": "KEEP",
     "sb003_rolling_contract": "KEEP",
     "known_defect_handling": "KEEP",
-    "fly0_semantic_surface_comparator_fairness": "KEEP",
+    "fly0_observed_state_summary": "KEEP_GREEN_PENDING_ANALYST",
+    "fly0_outcome_receipt_prototype": "CLARIFY_UNVERIFIED_NON_GATING",
+    "r22_dual_validity_receipt_semantics": "TIGHTEN_IF_FULLER_RECEIPT_ADOPTED",
+    "r22_receipt_tests": "CLARIFY_SCOPED_ACCEPTANCE_NOT_ACTIVATION_GATE",
     "fly0_resource_comparator_fairness": "SPLIT_BY_CLAIM_TYPE",
-    "fly0_supersession_guard_reuse": "KEEP_OPTIONAL_NON_GATE",
-    "fly0_observed_state_summary": "CLARIFY_UNVERIFIED_NO_HANDOFF",
+    "p0_tests_namespace_minimal_canary": "CLARIFY_SIGNAL_NOT_ROOT_CAUSE_PROOF",
+    "append_only_primary_authority": "KEEP",
+    "moving_cache_debt": "CLARIFY_OPERATIONAL_NOT_SCIENCE_GATE",
     "operational_pr_route": "CLARIFY_NOT_METHODOLOGY_GATE",
     "revisit_reuse_boundary": "KEEP"
   },
@@ -84,19 +90,43 @@
     "scientific_credit": 0
   },
   "fly0": {
-    "supersession_guard_exact_source": "8452bff9e1d0dc91c47c1d968f5ddcddd5335a22",
-    "supersession_guard_ci_run": 36487505532,
-    "supersession_guard_status": "OPTIONAL_SYSTEM_BUILD_HARDENING_NOT_GATE",
-    "observed_state_source": "3dd3f4f729ff0ee3e6d09a1683bf0464d43552b7",
-    "observed_state_status": "FORGE_PROTOTYPE_UNVERIFIED",
-    "strict_internal_activity_resource_comparability": false,
-    "resource_fairness_policy": "CLAIM_SCOPED_NOT_DEFAULT_SYSTEM_BUILD_GATE",
+    "observed_state_validated_head": "1acc34b2a0bbfc623561dac114111b66a6b383a7",
+    "observed_state_ci_run": 36503631615,
+    "observed_state_status": "ENGINEERING_GREEN_PENDING_ANALYST",
+    "outcome_receipt_source": "d569130d1c512d6b75b6b381c8a90ed14934e64c",
+    "outcome_receipt_branch_head": "87477329241aa6fa97d56847bff5bee05b759059",
+    "focused_test_present": false,
+    "outcome_receipt_status": "FORGE_PROTOTYPE_UNVERIFIED",
+    "current_source_conflates_current_authority_with_committed_outcome_validity": true,
+    "r22_required_distinction": "CAUSAL_TRANSACTION_VALIDITY_SEPARATE_FROM_CONTROL_AUTHORITY_CURRENCY",
+    "tests_path_minimal_canary_attempts": 5,
+    "tests_path_minimal_canary_failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
     "scientific_credit": 0
+  },
+  "persistence_audit": {
+    "methodology_before": {
+      "append_only": "R149",
+      "latest": "R149",
+      "state": "R147"
+    },
+    "control": {
+      "append_only": "R121",
+      "latest": "R120",
+      "state": "R119"
+    },
+    "main": {
+      "append_only": "R192",
+      "latest": "R192",
+      "state": "R191",
+      "lease": "R191"
+    },
+    "authority_rule": "APPEND_ONLY_HISTORY_PRIMARY_MOVING_POINTERS_CACHE",
+    "stale_pointer_misallocation_observed": false
   },
   "calibration": {
     "overconservative_handoff_latency": false,
     "operational_integration_latency_material": true,
-    "operational_latency_source": "P0_PR_CREATE_PATH",
+    "operational_latency_source": "P0_PR_CREATE_AND_NONUNIFORM_PRE_GITHUB_MUTATION_FAILURE",
     "overpermissive_rolling_authority": false,
     "overreduction_risk_material": false,
     "overclaim_risk_material": false,
@@ -105,10 +135,10 @@
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
-    "main_r185_pr_create_attempts": 5,
-    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "methodology_interpretation": "OPERATIONAL_LATENCY_NOT_SCIENTIFIC_OR_REVIEW_GATE",
+    "classification": "NONUNIFORM_PRE_GITHUB_MUTATION_FAILURE_ACTION_PATH_CONTEXT_SENSITIVE",
     "repository_wide_outage_supported": false,
+    "payload_semantics_only_explanation_weakened": true,
+    "tests_namespace_root_cause_proven": false,
     "root_cause": "UNKNOWN"
   },
   "hard_floor": {
@@ -126,11 +156,12 @@
   },
   "persistence": {
     "branch": "ops/methodology-calibration-audit",
-    "history_path": "analysis/methodology_calibration/history/2026-09-29/0821-R147-sb003-rolling-calibration-and-p0-latency.md",
+    "history_path": "analysis/methodology_calibration/history/2026-09-29/1624-R150-dual-validity-p0-pointer-debt-calibration.md",
     "publication_mode": "ATOMIC_HISTORY_LATEST_STATE",
     "maximum_attempts": 5,
+    "attempt": 2,
     "force_push": false,
     "readback_required": true,
-    "head_before": "366c1d692ca74e01616d5957b489d852f795e144"
+    "head_before": "c62edd083f5bc0d5da65b26afd2b8e4790cd54b6"
   }
 }
