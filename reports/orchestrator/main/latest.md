@@ -1,20 +1,11 @@
-# MAIN PRIMARY R187
-generation_id: MAIN-20260929T111310+0900-PRIMARY-R187-M1-002-PR-CREATE-BLOCKED
-status: SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN
-analyst: R169
-source_head: 2a21d3e879f1db4e81a58273180ad2124e823a5e
-base_main: 59fc994b39d0ba02682e972161bb46801592d25b
-ci: 36361950457 success
-pr_created: false
-merge_performed: false
-attempts: 5
-explicit_pre_github_refusals: 4
-attempt_1_error_capture: LOST_TO_CODE_MODE_TOOL_CALL_LIMIT
-built: true
-functionally_verified_bounded: true
-comparatively_supported: false
-composition_contribution: NOT_ESTABLISHED
-scientifically_novel: false
-scientific_credit: 0
-new_scientific_result: false
-next_action: re-fetch authority and exact state before retry
+# PRIMARY MAIN latest — R188
+
+M1-002 remains the Milestone 1 critical path under durable Evidence Analyst R169.
+
+Exact source `system-build/m1-post-integration-robustness-20260928@2a21d3e879f1db4e81a58273180ad2124e823a5e` remains 1 ahead / 0 behind `main@59fc994b39d0ba02682e972161bb46801592d25b`, with CI run `36361950457` completed / success.
+
+The current run consumed the five-total-attempt ceiling for required PR creation. Attempt 1 ended with Code Mode tool-call-limit ambiguity and independent readback found no PR; attempts 2-5 were explicit pre-GitHub platform safety refusals. Final readback found no matching open PR, so no merge was attempted.
+
+M1-002 remains NON_EVIDENTIARY_BUILD: built=true, bounded-functionally-verified=true, comparatively-supported=false, composition-contribution=NOT_ESTABLISHED, scientifically-novel=false, scientific-credit=0.
+
+SB003 remains ALLOCATED_CONDITIONAL_INACTIVE. P0 INC-GITHUB-MUTATION-RECURRENCE-20260928-001 remains OPEN / root cause UNKNOWN.

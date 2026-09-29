@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation": "R187",
-  "generation_id": "MAIN-20260929T111310+0900-PRIMARY-R187-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-29T11:13:10+09:00",
+  "generation": "R188",
+  "generation_id": "MAIN-20260929T121340+0900-PRIMARY-R188-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-29T12:13:40+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
@@ -51,7 +51,7 @@
     "mutation_action": "create_pull_request",
     "attempts": 5,
     "explicit_pre_github_refusals": 4,
-    "attempt_1_error_capture": "LOST_TO_CODE_MODE_TOOL_CALL_LIMIT",
+    "attempt_1_error_capture": "CODE_MODE_TOOL_CALL_LIMIT_PR_ABSENT_ON_READBACK",
     "retries_had_fresh_state_checks": true,
     "pr_absent_after_final_attempt": true
   },
@@ -60,12 +60,12 @@
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-29/1113-r187-pr-create-platform-blocked.md",
+  "history_path": "reports/orchestrator/main/history/2026-09-29/1213-r188-pr-create-platform-blocked.md",
   "publication": {
     "branch": "ops/orchestrator-run-report",
-    "expected_head_before": "5abef3ce110b71c4d3eb44da0ddb501fc017cdea",
+    "expected_head_before": "fe3e7ec572e9e359e47cacd1311eb44889def95e",
     "atomic": true,
     "attempt_limit": 5,
-    "attempt": 2
+    "attempt": 1
   }
 }
