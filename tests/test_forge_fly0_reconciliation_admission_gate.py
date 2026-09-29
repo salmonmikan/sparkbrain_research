@@ -253,3 +253,30 @@ def test_checkpoint_restore_preserves_exactly_once_state() -> None:
     assert duplicate.status == "DUPLICATE_NOOP"
     assert restored.world_position == 1
     assert restored.last_outcome_sequence == 1
+
+
+@pytest.mark.parametrize("variant", _VARIANTS)
+def test_cross_transaction_signal_replay_is_rejected_without_poisoning_next_outcome(variant: str) -> None:
+    bridge = AscendingObservedStateBridge(WorldState(position=2, target=-1), variant=variant, authority_token="intent-a")
+    first = _world_signal(bridge, frame_sequence=0)
+    second = _world_signal(bridge, frame_sequence=1)
+    gate = ReconciliationAdmissionGate()
+    assert gate.admit(first, make_validation_proof(first, transaction_id=f"{variant}-tx-1", outcome_sequence=1)).status == "RECONCILED"
+    replay = gate.admit(first, make_validation_proof(first, transaction_id=f"{variant}-replay", outcome_sequence=2))
+    assert replay.status == "REJECTED_RECEIPT"
+    assert replay.reason == "SIGNAL_REPLAY_ACROSS_TRANSACTION"
+    assert gate.last_outcome_sequence == 1
+    next_outcome = gate.admit(second, make_validation_proof(second, transaction_id=f"{variant}-tx-2", outcome_sequence=2))
+    assert next_outcome.status == "RECONCILED"
+    assert gate.last_outcome_sequence == 2
+
+
+def test_same_transaction_signal_with_conflicting_sequence_is_rejected() -> None:
+    bridge = AscendingObservedStateBridge(WorldState(position=2, target=-1), variant="structured", authority_token="intent-a")
+    signal = _world_signal(bridge, frame_sequence=0)
+    gate = ReconciliationAdmissionGate()
+    assert gate.admit(signal, make_validation_proof(signal, transaction_id="tx-sequence", outcome_sequence=1)).status == "RECONCILED"
+    conflict = gate.admit(signal, make_validation_proof(signal, transaction_id="tx-sequence", outcome_sequence=2))
+    assert conflict.status == "REJECTED_RECEIPT"
+    assert conflict.reason == "TRANSACTION_PROOF_SEQUENCE_CONFLICT"
+    assert gate.last_outcome_sequence == 1
