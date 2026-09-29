@@ -1,28 +1,22 @@
 {
   "schema_version": 2,
-  "generation": "R192",
-  "generation_id": "MAIN-20260929T161612+0900-PRIMARY-R192-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-29T16:16:12+09:00",
+  "generation": "R193",
+  "generation_id": "MAIN-20260929T181925+0900-PRIMARY-R193-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-29T18:19:25+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
-  "analyst_generation": "R169",
-  "analyst_head": "95972cb31cb26d5994e506bfa46e6a11dc786a15",
-  "control_generation": "R120",
-  "control_head": "9e4e029b65957c866765baa67af1634727bf2922",
+  "analyst_generation": "R170",
+  "analyst_head": "cebf72d66ee5d0c9ef27395af847f58799e99bcb",
+  "control_generation": "R123",
+  "control_head": "ccd58081057a94908d2775f45ca22bcc0fbeb0d6",
   "directive_index": {
-    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "delta": false
   },
-  "persistence_reconciliation": {
-    "prior_generation": "R190",
-    "repaired": true,
-    "repair_commit": "ef5f128d4b9bcebb5ead7e120b862ddd00963652",
-    "readback_verified": true
-  },
   "integration": {
+    "branch": "system-build/m1-post-integration-robustness-20260928",
     "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "ahead_by": 1,
@@ -32,14 +26,19 @@
     "pr_created": false,
     "merge_performed": false
   },
-  "collision": {
-    "relay_allocated": false,
-    "relay_branch_found": false,
-    "collision_observed": false
-  },
   "sb003": {
-    "state": "ALLOCATED_CONDITIONAL_INACTIVE",
-    "activation_conditions_satisfied": false
+    "state": "ALLOCATED_CONDITIONAL_INACTIVE"
+  },
+  "p0": {
+    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "status": "OPEN",
+    "root_cause": "UNKNOWN"
+  },
+  "action": {
+    "mutation_action": "create_pull_request",
+    "attempts": 5,
+    "explicit_pre_github_refusals": 5,
+    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL"
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -48,31 +47,8 @@
   "scientifically_novel": false,
   "scientific_credit": 0,
   "evidentiary_status": "NON_EVIDENTIARY_BUILD",
-  "p0": {
-    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "status": "OPEN",
-    "root_cause": "UNKNOWN",
-    "repository_wide_outage_supported": false
-  },
-  "action": {
-    "mutation_action": "create_pull_request",
-    "attempts": 5,
-    "orchestration_tool_call_ceiling": 1,
-    "explicit_pre_github_refusals": 4,
-    "retries_had_fresh_state_checks": true,
-    "pr_absent_after_final_attempt": true,
-    "failure_layer": "MIXED_ORCHESTRATION_TOOL_CALL_CEILING_AND_PRE_GITHUB_PLATFORM_SAFETY_REFUSAL"
-  },
-  "new_build_result": false,
   "new_scientific_result": false,
-  "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_COUNTED_MUTATION_ATTEMPTS",
+  "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
-  "owner": "main",
-  "history_path": "reports/orchestrator/main/history/2026-09-29/1616-r192-pr-create-platform-blocked.md",
-  "publication": {
-    "branch": "ops/orchestrator-run-report",
-    "history_commit": "a6d11d760cbd1a07637decf2c63a561f3b392fa1",
-    "latest_commit": "36c006f99eab11f16f1142998272e93f18594a58",
-    "cache_reconciliation": true
-  }
+  "history_path": "reports/orchestrator/main/history/2026-09-29/1819-r193-pr-create-platform-blocked.md"
 }
