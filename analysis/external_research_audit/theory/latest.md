@@ -1,13 +1,15 @@
-# SparkBrain Theory Synthesis — R21 observed-outcome reconciliation
+# Theory R22 — dual-validity outcome receipt reconciliation
 
-generation_id: `THEORY-20260929T092655+0900-R21-OBSERVED-OUTCOME-RECONCILIATION`
-status: `INTEGRATION_DESIGN_PROPOSAL`
-new_sparkbrain_scientific_result: `false`
+generation_id: THEORY-20260929T152609+0900-R22-DUAL-VALIDITY-OUTCOME-RECEIPT
+status: INTEGRATION_DESIGN_PROPOSAL
+new_sparkbrain_scientific_result: false
 
-R21 adds a separate ascending `ObservedOutcomeFrame` to R20's descending `ModulationFrame`, so high-level state reconciles realized local/WORLD outcomes instead of treating issued intent as success. It preserves an asymmetric command/telemetry boundary, exact replay/rollback, independent ascending/descending cuts and four-way replacement.
+R22 separates causal/transaction validity from current control-authority currency. A committed realized outcome from authority A can still reconcile WORLD/observer state after authority B supersedes A, while A remains unable to regain or extend control authority.
 
-Forge source `3dd3f4f729ff0ee3e6d09a1683bf0464d43552b7` remains UNVERIFIED. Durable Analyst R169 keeps SB003 conditionally inactive behind M1-002; R21 is optional future B/C hardening, not a gate or allocation.
+The current Forge receipt source adds exact frame correlation but remains unverified and currently rejects superseded-authority receipts before this distinction is made. R22 is a design contract, not implementation approval.
 
-This is engineering/system synthesis, not scientific evidence. Scientific credit is zero.
+Tests should cover commit-before-supersede, supersede-before-execution, exact source/transaction binding, duplicate/out-of-order idempotence, freshness/mask/delay, ascending cut, replay and the common four-way interface.
 
-History: `analysis/external_research_audit/theory/history/2026-09-29/0926-THEORY_SYNTHESIS_ARCHITECT.md`
+This is ordinary event-sourcing/observer/idempotent-consumer engineering, not scientific evidence or novelty. Optional SB003 B/C hardening only after R169 activation conditions; no M1 gate or SB003 activation change. Scientific credit 0.
+
+History: analysis/external_research_audit/theory/history/2026-09-29/1526-THEORY_SYNTHESIS_ARCHITECT.md
