@@ -1,10 +1,14 @@
-# SparkBrain Methodology Calibration Audit — Latest R151
+# SparkBrain Methodology Calibration Audit — Latest R152
 
-generation_id: METHCAL-20260929T201559+0900-R151-R170-R23-TYPED-ASCENDING-P0-CALIBRATION
-history_path: analysis/methodology_calibration/history/2026-09-29/2015-R151-r170-r23-typed-ascending-p0-calibration.md
+generation_id: `METHCAL-20260929T221651+0900-R152-R24-GATE-LIVENESS-P0-CALIBRATION`
+history_path: `analysis/methodology_calibration/history/2026-09-29/2216-R152-r24-gate-liveness-p0-calibration.md`
 overall_classification: WELL_CALIBRATED
 new_scientific_result: false
 
-R170 now narrowly admits the CI-green FLY-0 observed-state adapter as optional SB003 B/C engineering input. Theory R23 / Literature R50 add typed ascending semantics; Forge has a CI-green implementation at `da0d6cae7c863ce3ded5e9fc2ea7306d6d78e2a1` / run `36557302058`, pending fresh scoped Analyst reconciliation. The fuller R22 receipt remains unverified/non-gating.
+R152 keeps M1/SB003 methodology unchanged while calibrating the newer Theory R24 + FLY-0 reconciliation-gate and feedback-liveness Forge inputs.
 
-M1-002 and SB003 activation remain unchanged. P0 stays OPEN / root cause UNKNOWN; MAIN R194 still records 5/5 pre-GitHub PR-create refusals while other write surfaces succeed after retry. Scientific credit added is 0.
+The admission gate at exact head `41e021fef824e0bc899184c9d102d69a19e58255` / CI `36563852129` and feedback-liveness layer at `c67fad2891f8209b05edbf21e2d86ce50b2ad27b` / CI `36570573445` are engineering-green, NON_EVIDENTIARY/NONCANONICAL, and pending fresh scoped Analyst reconciliation.
+
+Methodology boundary: if the gate is adopted, its caller-mintable `ValidatedReceiptProof` helper must not become the trusted SYSTEM_BUILD validator; use a separate source-frame + execution-journal validator as R24 proposes. Feedback liveness also needs bounded pending-state retention/expiry if used long-running. Neither point is an M1 gate or SB003 activation condition.
+
+M1-002 remains 1 ahead / 0 behind current main, with no open PR. P0 remains OPEN / root cause UNKNOWN; Control R126 again shows 5/5 isolated `create_pull_request` refusals while other write paths succeed intermittently. Scientific credit added is 0.
