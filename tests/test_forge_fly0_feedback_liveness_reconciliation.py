@@ -50,12 +50,6 @@ def test_timeout_never_invents_zero_and_late_valid_outcome_reconciles(
         observed=observed,
         delay_steps=2,
     )
-    mismatched_signal = make_typed_signal(
-        semantic_kind="REAFFERENT_WORLD_OUTCOME",
-        availability="OBSERVED",
-        observed=first_observed,
-        source_token="different-source-lineage",
-    )
     reconciler = FeedbackLivenessReconciler()
 
     pending = reconciler.submit(
@@ -185,6 +179,12 @@ def test_pending_source_lineage_mismatch_fails_closed() -> None:
         observed=first_observed,
         delay_steps=2,
     )
+    mismatched_signal = make_typed_signal(
+        semantic_kind="REAFFERENT_WORLD_OUTCOME",
+        availability="OBSERVED",
+        observed=first_observed,
+        source_token="different-source-lineage",
+    )
     reconciler = FeedbackLivenessReconciler()
     reconciler.submit(
         "feedback-1",
@@ -209,7 +209,6 @@ def test_pending_source_lineage_mismatch_fails_closed() -> None:
     assert rejected.reason == "OBSERVED_FEEDBACK_DOES_NOT_MATCH_PENDING_SOURCE"
     assert reconciler.world_position is None
     assert reconciler.pending_count == 1
-
 
 def test_observed_feedback_still_requires_upstream_receipt_proof() -> None:
     _, signal = _observation("random_sparse")
