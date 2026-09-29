@@ -50,6 +50,12 @@ def test_timeout_never_invents_zero_and_late_valid_outcome_reconciles(
         observed=observed,
         delay_steps=2,
     )
+    mismatched_signal = make_typed_signal(
+        semantic_kind="REAFFERENT_WORLD_OUTCOME",
+        availability="OBSERVED",
+        observed=first_observed,
+        source_token="different-source-lineage",
+    )
     reconciler = FeedbackLivenessReconciler()
 
     pending = reconciler.submit(
@@ -170,9 +176,8 @@ def test_repeated_unavailable_signal_does_not_extend_deadline() -> None:
 
 
 def test_pending_source_lineage_mismatch_fails_closed() -> None:
-    first_observed, _ = _observation("structured", frame_sequence=0)
-    second_observed, second_signal = _observation(
-        "structured", frame_sequence=1
+    first_observed, first_signal = _observation(
+        "structured", frame_sequence=0
     )
     delayed = make_typed_signal(
         semantic_kind="REAFFERENT_WORLD_OUTCOME",
@@ -190,16 +195,16 @@ def test_pending_source_lineage_mismatch_fails_closed() -> None:
 
     rejected = reconciler.submit(
         "feedback-1",
-        second_signal,
+        mismatched_signal,
         current_step=1,
         proof=make_validation_proof(
-            second_signal,
+            mismatched_signal,
             transaction_id="tx-wrong-lineage",
             outcome_sequence=1,
         ),
     )
 
-    assert second_observed.token() != first_observed.token()
+    assert mismatched_signal.source_token != first_signal.source_token
     assert rejected.status == "LINEAGE_REJECTED"
     assert rejected.reason == "OBSERVED_FEEDBACK_DOES_NOT_MATCH_PENDING_SOURCE"
     assert reconciler.world_position is None
