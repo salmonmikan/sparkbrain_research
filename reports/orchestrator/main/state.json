@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
-  "generation": "R209",
-  "generation_id": "MAIN-20260930T171710+0900-PRIMARY-R209-R174-R136-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-30T17:17:10+09:00",
+  "generation": "R210",
+  "generation_id": "MAIN-20260930T181118+0900-PRIMARY-R210-R174-R137-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-30T18:11:18+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
   "analyst_generation": "R174",
   "analyst_head": "8cce9c66fd31d5696b973b3bc9cf1dc12bacd5f8",
-  "control_generation": "R136",
-  "control_head": "76644d32199038ac9554324dd0ee28a8ad56adc6",
+  "control_generation": "R137",
+  "control_head": "33939766441ca7981cef9ffe42c1b9ca0e944591",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
@@ -52,7 +52,7 @@
   },
   "persistence": {
     "route": "ATOMIC_GIT_DATA",
-    "branch_head_before": "96361edd3a8cd3e3d49126fb0277f0ec19d41e33"
+    "branch_head_before": "30057c5c7955a81185caddb1ec0dfb5ddf349f73"
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -64,5 +64,5 @@
   "new_scientific_result": false,
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
-  "history_path": "reports/orchestrator/main/history/2026-09-30/1717-r209-control-r136-m1-002-pr-create-blocked.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-30/1811-r210-control-r137-m1-002-pr-create-blocked.md"
 }
