@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation": "R210",
-  "generation_id": "MAIN-20260930T181118+0900-PRIMARY-R210-R174-R137-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-30T18:11:18+09:00",
+  "generation": "R211",
+  "generation_id": "MAIN-20260930T201700+0900-PRIMARY-R211-R174-R138-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-30T20:17:00+09:00",
   "execution_mode": "PRIMARY",
   "mode": "SYSTEM_BUILD",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
@@ -10,11 +10,11 @@
   "source_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
   "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
   "analyst": "R174",
-  "control": "R137",
+  "control": "R138",
   "pr_creation_attempts": 5,
-  "explicit_pre_github_refusals": 5,
-  "orchestration_tool_call_ceiling": 0,
-  "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+  "explicit_pre_github_refusals": 4,
+  "orchestration_tool_call_ceiling": 1,
+  "failure_layer": "MIXED_ORCHESTRATION_TOOL_CALL_CEILING_AND_PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main"
 }
