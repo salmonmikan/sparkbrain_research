@@ -1,16 +1,17 @@
 {
   "schema_version": 2,
-  "generation_id": "AUTOUTIL-20260930T192144+0900-P0-UTILITY-SELFSTREAM-RECON-6E4B2A91",
-  "produced_at": "2026-09-30T19:21:44+09:00",
-  "completed_at": "2026-09-30T19:21:44+09:00",
+  "generation_id": "AUTOUTIL-20261001T052300+0900-P0-CONTROL-STATE-POINTER-AUDIT-3A7C91E4",
+  "produced_at": "2026-10-01T05:23:00+09:00",
+  "completed_at": "2026-10-01T05:23:00+09:00",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "status": "COMPLETED",
-  "autonomous_task_id": "AUTOUTIL-20260930T192144+0900-P0-UTILITY-SELFSTREAM-RECON-6E4B2A91",
+  "autonomous_task_id": "AUTOUTIL-20261001T052300+0900-P0-CONTROL-STATE-POINTER-AUDIT-3A7C91E4",
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY_OPERATIONAL_DIAGNOSTIC_ONLY",
   "scientific_authority": "NONE",
-  "classification": "P0_UTILITY_SELFSTREAM_RECONCILED_ROOT_CAUSE_UNKNOWN",
+  "classification": "P0_CONTROL_STATE_ONLY_POINTER_DEBT_ROOT_CAUSE_UNKNOWN",
   "directive_freshness": {
+    "directive_index_ref": "ops/human-directives",
     "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "previous_directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
@@ -18,34 +19,50 @@
   },
   "ownership_checks": {
     "utility_assignment": "SCHEMA_V2_CLEAN_IDLE",
-    "control_generation": "R138",
-    "control_pointers_aligned": true,
-    "analyst_generation": "R174",
-    "main_generation": "R210",
-    "main_lease_generation": "R210",
+    "control_append_only": "R143",
+    "control_latest": "R143",
+    "control_state": "R141",
+    "control_pointer_debt": "STATE_ONLY_TWO_GENERATIONS",
+    "analyst_generation": "R176",
+    "main_generation": "R214",
+    "main_lease_generation": "R214",
     "main_pointers_aligned": true,
     "relay_allocated": false,
     "m1_002_owner": "PRIMARY_MAIN",
     "sb003": "ALLOCATED_CONDITIONAL_INACTIVE"
   },
-  "reconciliation": {
-    "prior_state_generation": "AUTOUTIL-20260929T212624+0900-P0-POST-R125-POINTER-AUDIT-4F6A2C91",
-    "prior_1321_started_only": "INCOMPLETE_NOT_REPLAYED",
-    "started_publication_attempts": 5,
-    "started_pre_github_refusals": 4,
-    "started_success_attempt": 5,
-    "started_commit": "a4899dccb135c0b0184a3a6cf8e1430f4a3ab595",
-    "terminal_commit": "dfcd2303b31813309ccafa717b722b4bbf8d6ee0"
+  "audit": {
+    "m1_002_exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "ahead_by": 1,
+    "behind_by": 0,
+    "pr_open": false,
+    "current_authority_collision_observed": false,
+    "control_state_only_debt_material_allocation_change_observed": false
   },
   "p0": {
     "incident_id": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
     "strongest_recurring_surface": "CREATE_PULL_REQUEST",
     "root_cause": "UNKNOWN",
-    "repository_wide_write_outage_supported": false
+    "repository_wide_write_outage_supported": false,
+    "fresh_control_partial_publication_recurrence": true,
+    "fresh_utility_contents_intermittency_observed": true
   },
-  "result_path": "utility_orchestrator/results/2026-09-30/1921-p0-utility-selfstream-reconciliation.md",
-  "stop_reason": "COMPLETED_SINGLE_BOUNDED_P0_UTILITY_SELFSTREAM_RECONCILIATION",
+  "publication": {
+    "branch": "ops/utility-orchestrator-requests",
+    "started_path": "utility_orchestrator/results/2026-10-01/0523-p0-control-state-pointer-audit-started.md",
+    "started_attempts": 2,
+    "started_pre_github_refusals": 1,
+    "started_commit": "8290f2c3d0315826b9c722daf40312b5a20c4248",
+    "result_path": "utility_orchestrator/results/2026-10-01/0523-p0-control-state-pointer-audit.md",
+    "result_attempts": 1,
+    "result_commit": "eef682b808de9bdb99a84b4676be5650ffd772a9",
+    "state_update_attempts": 3,
+    "state_update_pre_github_refusals": 2,
+    "force_push": false
+  },
+  "stop_reason": "COMPLETED_SINGLE_BOUNDED_P0_CONTROL_STATE_POINTER_AUDIT",
   "hard_floor": {
     "non_utility_mutation": false,
     "scheduler_changed": false,
@@ -54,11 +71,5 @@
     "pr_created": false,
     "merge_performed": false,
     "work_mode_used": false
-  },
-  "publication": {
-    "branch": "ops/utility-orchestrator-requests",
-    "route": "CONTENTS_SEQUENTIAL_AFTER_ATOMIC_PATH_REFUSALS",
-    "attempt_limit": 5,
-    "force_push": false
   }
 }
