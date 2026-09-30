@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "generation": "R14",
-  "generation_id": "AUD-20260930T103330+0900-R14-RESYNC-WATERMARK-MONOTONICITY",
-  "produced_at": "2026-09-30T10:33:30+09:00",
-  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20260930T103330+0900",
+  "generation": "R15",
+  "generation_id": "AUD-20260930T222842+0900-R15-ISSUE-WORLD-COMMIT-GAP",
+  "produced_at": "2026-09-30T22:28:42+09:00",
+  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20260930T222842+0900",
   "authority_scope": "INDEPENDENT_AUDIT_NON_EVIDENTIARY_NONCANONICAL",
-  "supersedes_generation_id": "AUD-20260929T222507+0900-R13-FLY0-RECONCILIATION-GATE-7C4A91E3",
+  "supersedes_generation_id": "AUD-20260930T103330+0900-R14-RESYNC-WATERMARK-MONOTONICITY",
   "role_resolution": {
     "selected_role": "INDEPENDENT_AUDITOR",
-    "resolved_slot": "10:30 JST",
-    "resolution_source": "PREVIOUS_CANONICAL_SLOT"
+    "resolved_slot": "22:30 JST",
+    "resolution_source": "EARLY_GRACE"
   },
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
@@ -25,41 +25,50 @@
     "HUMAN-20260928-001",
     "HUMAN-20260928-002"
   ],
+  "blind_target": {
+    "exact_head": "f65716dfbdd42dafc954dec9d9f3ea8dd621abe1",
+    "question": "Does exact issue-time lineage also prove the corresponding independent WORLD commit?",
+    "selected_before_control_analyst_summary_read": true
+  },
   "input_generations": {
-    "control": "R132_APPEND_ONLY",
-    "analyst": "R174",
-    "theory": "R26",
-    "literature": "R52",
-    "audit": "R13"
+    "control": "R140_APPEND_ONLY",
+    "analyst": "R175",
+    "theory": "R29",
+    "literature": "R53_APPEND_ONLY",
+    "audit": "R14"
   },
   "refs_inspected": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "bounded_horizon": "b21a9495e207ab7af66b021968985993c4428c31",
-    "recovery_epoch_fence": "4c5147a5c39b6c5da8320226de3ddc75d30de6b1",
-    "external_before": "d8245e283ad1e7beaf77b5c1f70d5c84dda3f144"
+    "issue_time_provenance": "f65716dfbdd42dafc954dec9d9f3ea8dd621abe1",
+    "external_before": "0ea16a79a3e53903466c0bd1586ec5593e948d3e",
+    "control_head": "b067a505b8e800196173bceaeafffd5afc0926ea",
+    "analyst_head": "0dc403147643caff4f6955a3e41edd9b9bf2d8b4"
   },
   "genuinely_new_information": true,
   "new_scientific_result": false,
   "finding": {
-    "narrow_recovery_epoch_fence": "SYNTHESIS_OK",
-    "authoritative_resynchronization_composition": "INSUFFICIENT_SYSTEM_TEST",
-    "pre_resync_watermark_checked_by_wrapper": false,
-    "backward_same_session_resync_code_path_possible": true,
-    "backward_resync_focused_test_present": false,
-    "theory_r26_monotonic_anchor_requirement": true
+    "r28_issue_time_lineage": "SYNTHESIS_OK",
+    "issue_to_world_commit_composition": "INSUFFICIENT_SYSTEM_TEST",
+    "upstream_receipt_validator_checks_independent_world_commit": false,
+    "issue_submit_requires_world_commit_record": false,
+    "reconciliation_gate_requires_world_commit_record": false,
+    "code_path_can_advance_observer_without_matching_world_ledger_commit": true,
+    "observed_runtime_exploit": false,
+    "theory_r29_seam_supported_by_static_code_path": true
   },
   "required_acceptance": [
-    "reject same-session resync below pre-resync watermark",
-    "preserve world/watermark/pending/epoch on rejection",
-    "require explicit new WORLD/session namespace for sequence reset",
-    "test N then M<N and prevent M<k<N from becoming forward progress"
+    "skip WorldSessionLedger.commit_action for an otherwise valid issue/journal/signal and require fail-closed with no observer advance",
+    "cross-wire issue A with WORLD commit B and require exact rejection",
+    "bind issue token to exact WORLD action/commit record before receipt/frontier advance",
+    "preserve matching WORLD commit record across crash-after-commit-before-receipt recovery"
   ],
   "authority_reconciliation": {
-    "analyst_generation": "R174",
+    "analyst_generation": "R175",
     "m1_stop_required": false,
     "mandatory_review_gate_required": false,
     "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
-    "narrow_lineage_fence_admission_invalidated": false
+    "r28_bounded_admission_invalidated": false,
+    "r29_system_build_admitted": false
   },
   "science": {
     "terminal": 35,
@@ -70,15 +79,15 @@
     "scientific_credit": 0
   },
   "p0": {
+    "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
     "root_cause": "UNKNOWN"
   },
-  "history_path": "analysis/external_research_audit/audit/history/2026-09-30/1030-INDEPENDENT_AUDITOR.md",
+  "history_path": "analysis/external_research_audit/audit/history/2026-09-30/2230-INDEPENDENT_AUDITOR.md",
   "persistence": {
     "branch": "ops/external-research-audit-handoff",
-    "history_commit": "ddf348dae1dbd12fac20a18adca312e35b1f3c67",
-    "history_publication_attempt": 3,
-    "pointer_reconciliation_attempt": 2,
+    "intended_atomic_multi_file_commit": true,
+    "publication_attempt": 2,
     "attempt_limit": 5,
     "force_push": false,
     "readback_required": true
