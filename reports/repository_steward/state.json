@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20261001T014902+0900-G36",
-  "produced_at": "2026-10-01T01:49:02+09:00",
+  "generation_id": "STEWARD-20261001T074715+0900-G37",
+  "produced_at": "2026-10-01T07:47:15+09:00",
   "mode": "REPOSITORY_STEWARD",
-  "history": "reports/repository_steward/history/2026-10-01/0149.md",
+  "history": "reports/repository_steward/history/2026-10-01/0747.md",
   "main": "59fc994b39d0ba02682e972161bb46801592d25b",
   "role_resolution": {
-    "actual_start": "2026-10-01T01:49:02+09:00",
-    "resolved_slot": "01:50 JST",
+    "actual_start": "2026-10-01T07:47:15+09:00",
+    "resolved_slot": "07:50 JST",
     "resolution_source": "EARLY_GRACE",
     "selected_role": "REPOSITORY_STEWARD"
   },
@@ -19,31 +19,36 @@
   },
   "p0_incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
   "p0_status": "OPEN",
-  "p0_classification": "PERSISTENT_CREATE_PULL_REQUEST_PRE_GITHUB_REFUSAL_WITH_NONUNIFORM_INTERMITTENT_OTHER_MUTATIONS_ROOT_CAUSE_UNKNOWN",
+  "p0_classification": "INTERMITTENT_PRE_GITHUB_MUTATION_REFUSALS_WITH_CREATE_PULL_REQUEST_RECOVERY_OBSERVED_ROOT_CAUSE_UNKNOWN",
   "control": {
-    "durable_generation": "R142",
-    "head": "5c3e5587376a58788566de96b6e5b902f18b1f65",
-    "append_only_generation": "R142",
-    "latest_generation": "R141",
+    "durable_generation": "R143",
+    "head": "2b13447570e203b3efccdc5ded9ecd5bd0503d05",
+    "append_only_generation": "R143",
+    "latest_generation": "R143",
     "state_generation": "R141",
     "pointer_debt": true
   },
   "main_orchestrator": {
-    "durable_generation": "R214",
-    "head": "1b39a5b4fde5cc2b684afbb3b317c4e7aa604ee8",
-    "latest_generation": "R214",
-    "state_generation": "R214",
-    "lease_generation": "R214",
+    "durable_generation": "R215",
+    "head": "df64986609dc42987bd797daaf61ecb442c25e79",
+    "latest_generation": "R215",
+    "state_generation": "R215",
+    "lease_generation": "R215",
     "pointer_debt": false,
-    "pr_create_attempts": 5,
-    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "pr_open": false
+    "pr_number": 164,
+    "pr_open": true,
+    "pr_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "pr_ci_run": 36778206722,
+    "pr_ci": "success",
+    "concrete_review_defects": 2,
+    "merge_performed": false
   },
   "analyst": {
     "durable_generation": "R176",
     "head": "acf01924d3db1fef0cbba3565db8aba2433ab642",
     "persistence_complete": true,
     "receipt": "EA-R176-20260930T230301JST",
+    "r27_fresh_reconciliation": false,
     "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE"
   },
   "methodology": {
@@ -53,18 +58,19 @@
     "classification": "WELL_CALIBRATED"
   },
   "external_science": {
-    "head": "d3a9e19d702916d99a49d48e67f08e59e0ded2f2",
+    "head": "d61bb4c72ead87a11802bf65e0217c07bd311642",
     "literature": {
-      "durable_generation": "R53",
+      "durable_generation": "R54",
       "latest_generation": "R53",
       "state_generation": "R53",
-      "pointer_debt": false
+      "pointer_debt": true
     },
     "theory": {
-      "durable_generation": "R29",
-      "latest_generation": "R29",
-      "state_generation": "R29",
-      "pointer_debt": false
+      "durable_generation": "R30",
+      "latest_generation": "R30",
+      "state_generation": "R30",
+      "pointer_debt": false,
+      "status": "INTEGRATION_DESIGN_PROPOSAL"
     },
     "audit": {
       "generation": "R15",
@@ -75,10 +81,12 @@
     "head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "ahead_by": 1,
     "behind_by": 0,
-    "ci_run": 36361950457,
-    "ci": "success",
-    "pr_open": false,
-    "main_generation": "R214",
+    "pr_number": 164,
+    "pr_open": true,
+    "pr_ci_run": 36778206722,
+    "pr_ci": "success",
+    "unresolved_concrete_review_defects": 2,
+    "disposition": "PR_OPEN_CI_GREEN_ENGINEERING_DEFECT_REPAIR_REQUIRED",
     "scientific_credit": 0
   },
   "fly0_r27": {
@@ -87,6 +95,24 @@
     "ci_run": 36731193715,
     "ci": "success",
     "disposition": "ENGINEERING_GREEN_PENDING_FRESH_ANALYST_RECONCILIATION_NO_SYSTEM_BUILD_HANDOFF",
+    "scientific_credit": 0
+  },
+  "fly0_r29": {
+    "branch_head": "251763b2c3130d3ad5bc26c19dc892fe4701c0a4",
+    "exact_source_head": "e26f8c0ec0f0bb9dd302f605a33180f3093e37c4",
+    "source_persisted": true,
+    "ci_run": 36787388376,
+    "ci": "failure",
+    "failure_step": "Lint",
+    "local_readiness": "skipped",
+    "tests": "skipped",
+    "bundle_validation": "skipped",
+    "lint_repair_attempts": 5,
+    "lint_repair_result": "PRE_GITHUB_REFUSALS_5_OF_5",
+    "focused_test_persisted": false,
+    "focused_test_publication_attempts": 5,
+    "focused_test_publication_result": "PRE_GITHUB_REFUSALS_5_OF_5",
+    "disposition": "SOURCE_PERSISTED_CI_LINT_BLOCKED_SEMANTIC_ACCEPTANCE_NOT_RUN_UNVERIFIED_NO_HANDOFF",
     "scientific_credit": 0
   },
   "repository_ruleset": {
@@ -108,13 +134,14 @@
     "freeze_branches": 13,
     "freeze_exact_sha_mismatches": 0,
     "preserve_branches": 26,
-    "mapped_preserve_pointers": 16,
+    "mapped_preserve_pointer_mentions": 16,
+    "mapped_preserve_unique_refs": 15,
     "mapped_preserve_pointer_mismatches": 0,
     "authoritative_tags": 9,
     "annotated_tag_objects": 5,
     "lightweight_h7_tags": 4,
     "authoritative_tag_namespace_rulesets": 0,
-    "full_exact_freeze_map_verification_generation": "G36"
+    "full_exact_freeze_map_verification_generation": "G37"
   },
   "science": {
     "total": 35,
@@ -132,9 +159,16 @@
     "branch": "ops/repository-steward",
     "mode": "ATOMIC_GIT_DATA",
     "attempt_limit": 5,
-    "successful_attempt": 1,
+    "successful_attempt": 2,
+    "prior_failures": [
+      {
+        "attempt": 1,
+        "error_class": "ORCHESTRATION_TOOL_CALL_LIMIT",
+        "branch_ref_moved": false
+      }
+    ],
     "force_push": false,
-    "head_before": "9962e607af361efe38973aed78a447494310a6df",
+    "head_before": "12265d0c3ae09a4663e6ec6c1e303c09784d2537",
     "readback_required": true
   }
 }
