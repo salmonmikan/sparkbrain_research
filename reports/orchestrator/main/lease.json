@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation": "R203",
-  "generation_id": "MAIN-20260930T071806+0900-PRIMARY-R203-CONTROL-R132-RECONCILIATION",
-  "generated_at": "2026-09-30T07:18:06+09:00",
+  "generation": "R204",
+  "generation_id": "MAIN-20260930T091353+0900-PRIMARY-R204-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-30T09:13:53+09:00",
   "execution_mode": "PRIMARY",
   "mode": "SYSTEM_BUILD",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
@@ -12,8 +12,9 @@
   "analyst": "R173",
   "control": "R132",
   "pr_creation_attempts": 5,
-  "explicit_pre_github_refusals": 5,
-  "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+  "orchestration_tool_call_ceiling": 1,
+  "explicit_pre_github_refusals": 4,
+  "failure_layer": "MIXED_ORCHESTRATION_TOOL_CALL_CEILING_AND_PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
   "owner": "main"
 }

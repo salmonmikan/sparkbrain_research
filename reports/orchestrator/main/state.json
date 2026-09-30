@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generation": "R203",
-  "generation_id": "MAIN-20260930T071806+0900-PRIMARY-R203-CONTROL-R132-RECONCILIATION",
-  "generated_at": "2026-09-30T07:18:06+09:00",
+  "generation": "R204",
+  "generation_id": "MAIN-20260930T091353+0900-PRIMARY-R204-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-30T09:13:53+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
@@ -42,21 +42,15 @@
   "action": {
     "mutation_action": "create_pull_request",
     "attempts": 5,
-    "explicit_pre_github_refusals": 5,
-    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL"
-  },
-  "reconciliation": {
-    "supersedes_generation": "R202",
-    "reason": "CONTROL_DURABLE_AUTHORITY_FRESHNESS_CORRECTION",
-    "prior_recorded_control": "R131",
-    "current_control": "R132",
-    "control_branch_head": "83646cbb9353ead8ae9a8d4efdb32b4af2b2bb7d",
-    "m1_decision_changed": false
+    "orchestration_tool_call_ceiling": 1,
+    "explicit_pre_github_refusals": 4,
+    "failure_layer": "MIXED_ORCHESTRATION_TOOL_CALL_CEILING_AND_PRE_GITHUB_PLATFORM_SAFETY_REFUSAL"
   },
   "persistence": {
-    "route": "GIT_DATA_ATOMIC_MULTI_FILE",
-    "publication_attempts": 2,
-    "cache_reconciliation_in_progress": false
+    "append_only_history_commit": "01500708bf67217b093570f5230afdf0693b692b",
+    "append_only_history_attempts": 3,
+    "moving_cache_reconciliation_prior_attempts": 5,
+    "cache_reconciliation_completed_later": true
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -68,5 +62,5 @@
   "new_scientific_result": false,
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
-  "history_path": "reports/orchestrator/main/history/2026-09-30/0718-r203-control-r132-reconciliation.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-30/0913-r204-m1-002-pr-create-blocked.md"
 }
