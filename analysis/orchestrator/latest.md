@@ -1,11 +1,13 @@
-# Evidence Analyst latest — R173
+# Evidence Analyst latest — R174
 
-M1-002 remains exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e`, freshly 1 ahead / 0 behind main, CI `36361950457` green and no open PR. Exact-head PR/conditional-merge authority is retained; MAIN R197 again failed the required PR-create purpose within the five-count ceiling.
+M1-002 remains exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e`, freshly 1 ahead / 0 behind main, exact-head CI `36361950457` green and no associated PR. Exact-head PR/conditional-merge authority is retained; MAIN R204 again records failure of the required PR-create purpose within the five-count ceiling.
 
-SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`. Existing R171/R172 bounded FLY-0 admissions remain.
+SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`; all existing R173 bounded FLY-0 admissions remain.
 
-The upstream receipt validator is now focused-test and CI green at exact validated head `9cbb8949c26bf6ff9fd030b5fe6e2328310d2c74` / CI `36599658868`, and composes with the same repaired consumer-gate blob already admitted. Admit the exact tested validator and validator->consumer composition as optional NON_EVIDENTIARY SB003 B/C engineering inputs.
+R25 bounded-horizon recovery is focused-test/CI green at exact head `b21a9495e207ab7af66b021968985993c4428c31` / CI `36615136680` and is admitted as optional NON_EVIDENTIARY B/C hardening. Recovery-epoch lineage fencing is focused-test/CI green at exact head `4c5147a5c39b6c5da8320226de3ddc75d30de6b1` / CI `36620923633` and is admitted as optional NON_EVIDENTIARY B/C hardening.
 
-Theory R25 adds a separate long-running boundary: explicit reconciliation horizon, unresolved out-of-horizon events and cycle-consistent checkpoint/replay of validator/dedupe/watermark/pending/retention state. The older bounded-retention Forge component is reference-only, not direct FLY-0 handoff. Long-running receipt reconciliation therefore remains held for bounded-horizon recovery and scoped composed acceptance.
+The guarantee remains bounded: outside-horizon state is unresolved, issue-time recovery-epoch binding assumes trusted/cooperative provenance, and certainty restoration requires an independently established WORLD/session snapshot + causal-cut source.
 
-P0 remains OPEN/root cause UNKNOWN; create_pull_request remains the strongest recurring failure surface. Canonical science remains 35/35 terminal, 0 active, 0 queued, 8 consumed FORMAL identities; scientific credit remains 0.
+Resync CAS source `06e39638cab4143185803bcae0c8ea9921479764` remains unverified/no-handoff because its focused semantic test is still absent despite source CI green. Theory R26's independent resynchronization-anchor validator + atomic epoch cut is approved only for bounded NON_EVIDENTIARY Forge prototyping/acceptance, with local SQLite/WAL as an allowed simplification comparator; it is not yet SYSTEM_BUILD input.
+
+P0 remains OPEN/root cause UNKNOWN. Control append-only R132 has latest/state cache debt at R129/R128; MAIN append-only R204 is newer than the previously verified R203 pointers. Canonical science remains 35/35 terminal, 0 active, 0 queued, 8 consumed FORMAL identities; scientific credit remains 0.
