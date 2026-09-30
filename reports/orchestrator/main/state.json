@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generation": "R212",
-  "generation_id": "MAIN-20260930T221715+0900-PRIMARY-R212-R175-R140-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-30T22:17:15+09:00",
+  "generation": "R213",
+  "generation_id": "MAIN-20260930T231244+0900-PRIMARY-R213-R176-R140-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-30T23:12:44+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
-  "analyst_generation": "R175",
-  "analyst_head": "0dc403147643caff4f6955a3e41edd9b9bf2d8b4",
+  "analyst_generation": "R176",
+  "analyst_head": "acf01924d3db1fef0cbba3565db8aba2433ab642",
   "control_generation": "R140_APPEND_ONLY",
   "control_head": "b067a505b8e800196173bceaeafffd5afc0926ea",
   "control_moving_cache_generation": "R139",
@@ -26,17 +26,13 @@
     "behind_by": 0,
     "ci_run": 36361950457,
     "ci": "success",
-    "ci_python": [
-      "3.11",
-      "3.13"
-    ],
     "pr_created": false,
     "merge_performed": false
   },
   "relay": {
     "allocated": false,
     "collision_observed": false,
-    "source": "EVIDENCE_ANALYST_R175"
+    "source": "EVIDENCE_ANALYST_R176"
   },
   "sb003": {
     "state": "ALLOCATED_CONDITIONAL_INACTIVE"
@@ -57,8 +53,8 @@
   },
   "persistence": {
     "route": "ATOMIC_GIT_DATA",
-    "publication_attempt": 1,
-    "branch_head_before": "f1d683b72c3f79a273b5c7264f4d01a2e69fd6ba"
+    "publication_attempt": 5,
+    "branch_head_before": "7e1cd53a1b8fe8551adef0313b208a81979187f0"
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -70,5 +66,5 @@
   "new_scientific_result": false,
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
-  "history_path": "reports/orchestrator/main/history/2026-09-30/2217-r212-analyst-r175-control-r140-m1-002-pr-create-blocked.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-30/2312-r213-analyst-r176-control-r140-m1-002-pr-create-blocked.md"
 }
