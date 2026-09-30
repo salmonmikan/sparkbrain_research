@@ -1,14 +1,16 @@
-# External Literature Reduction Scout R52 — resynchronization fencing and topology prior art
+# External Literature Reduction Scout R53 — issue lineage, transactional cut, and efference-copy prior art
 
-- generation_id: `LIT-20260930T062517+0900-R52-RESYNC-FENCING-TOPOLOGY-PRIORART`
-- produced_at: `2026-09-30T06:25:17+09:00`
+- generation_id: `LIT-20260930T182752+0900-R53-ISSUE-LINEAGE-TRANSACTION-EFFERENCE-PRIORART`
+- produced_at: `2026-09-30T18:27:52+09:00`
 - genuinely_new_information: `true`
 - new_sparkbrain_scientific_result: `false`
 
-Chubby (Burrows, OSDI 2006) and Raft (Ongaro & Ousterhout, 2014) strongly reduce any novelty claim for stale-authority epoch fencing or snapshot rebasing with explicit boundary identity: these are established systems-engineering patterns. They do not establish WORLD/causal truth, so provenance validation must remain separate from authority currency.
+R53 reduces FLY-0 issue-time provenance to established systems primitives: Kafka-style stable transactional identity / epoch fencing / sequence semantics; separation of event identity from causal frontier as in dotted version vectors; and checkpoint-plus-transaction/WAL coordination for WORLD-side effects. Issue provenance does not prove WORLD commit.
 
-Fisher et al. (Nature 2019) provides a biological design analogue for re-anchoring persistent heading state through cue-dependent plastic recalibration rather than a one-shot authoritative reset. Vilimelis Aceituno et al. (eLife 2024) shows that many circuits can encode heading and that the sinusoidal circuit's modeled advantage is specifically noise resilience under matching sinusoidal connectivity, sharpening future fly-topology comparator requirements.
+For the biology-inspired track, the defensible analogue is an efference-copy / predicted-reafference channel associated with action issuance, not a digital transaction ledger. Transaction IDs, epochs, provenance registries and WORLD commit records remain ordinary systems engineering.
 
-No M1 stop, no SB003 activation change, no mandatory review gate, no Revisit trigger. Evidence Analyst R173's long-running receipt hold remains unchanged. NON_EVIDENTIARY / NONCANONICAL; scientific credit 0.
+No M1 stop, no SB003 activation change, no mandatory review gate and no Revisit trigger. NON_EVIDENTIARY / NONCANONICAL; scientific credit 0.
 
-History: `analysis/external_research_audit/literature/history/2026-09-30/0630-LITERATURE_REDUCTION_SCOUT.md`
+History: `analysis/external_research_audit/literature/history/2026-09-30/1830-LITERATURE_REDUCTION_SCOUT.md`
+
+Pointer note: this moving cache was reconciled from the durable append-only R53 history during P0 recovery; no scientific result or interpretation was changed.
