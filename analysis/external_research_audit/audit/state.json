@@ -1,110 +1,94 @@
 {
   "schema_version": 2,
-  "generation_id": "AUD-20260929T222507+0900-R13-FLY0-RECONCILIATION-GATE-7C4A91E3",
-  "produced_at": "2026-09-29T22:25:07+09:00",
-  "producer_run_id": "external-audit-20260929T2230JST-R13-FLY0-RECONCILIATION-GATE",
-  "role": "INDEPENDENT_AUDITOR",
-  "schedule_slot": "22:30 JST",
+  "generation": "R14",
+  "generation_id": "AUD-20260930T103330+0900-R14-RESYNC-WATERMARK-MONOTONICITY",
+  "produced_at": "2026-09-30T10:33:30+09:00",
+  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20260930T103330+0900",
+  "authority_scope": "INDEPENDENT_AUDIT_NON_EVIDENTIARY_NONCANONICAL",
+  "supersedes_generation_id": "AUD-20260929T222507+0900-R13-FLY0-RECONCILIATION-GATE-7C4A91E3",
   "role_resolution": {
     "selected_role": "INDEPENDENT_AUDITOR",
-    "resolution_source": "EARLY_GRACE",
-    "actual_start": "2026-09-29T22:25:07+09:00"
+    "resolved_slot": "10:30 JST",
+    "resolution_source": "PREVIOUS_CANONICAL_SLOT"
   },
-  "directive_freshness": {
-    "branch_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "active_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "previous_branch_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "changed": false,
-    "relevant": [
-      "HUMAN-20260926-004",
-      "HUMAN-20260927-002",
-      "HUMAN-20260928-001",
-      "HUMAN-20260928-002"
-    ]
+  "directive_index": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "delta": false
   },
-  "supersedes_generation_id": "AUD-20260929T102734+0900-R12-FLY0-OBSERVED-STATE-6D91B4E2",
-  "target": {
-    "branch": "forge/20260929-fly0-reconciliation-admission-gate-a",
-    "exact_source_test_head": "41e021fef824e0bc899184c9d102d69a19e58255",
-    "published_branch_head": "a9ff8acf8997c17a07ebde70c46a1b0c87a5440c",
-    "source_path": "forge_prototypes/fly0_reconciliation_admission_gate.py",
-    "source_blob": "9a44a7717fecbb0118f88659df72f3802f9424a5",
-    "test_path": "tests/test_forge_fly0_reconciliation_admission_gate.py",
-    "test_blob": "20a0ffe32f294e457e5079f78854ae3153ade9bb",
-    "ci_run": 36563852129,
-    "ci": "success",
-    "python_311": "success",
-    "python_313": "success"
-  },
-  "inputs": {
-    "control": "R125",
-    "analyst": "R170",
-    "theory": "R24",
-    "prior_audit": "R12",
-    "forge_generation": "FORGE-20260929T204927+0900-FLY0-RECONCILIATION-ADMISSION-GATE-GREEN"
-  },
-  "findings": {
-    "typed_semantic_gate_present": true,
-    "exact_signal_token_binding_checked": true,
-    "explicit_invalid_provenance_rejected": true,
-    "explicit_invalid_transaction_rejected": true,
-    "stale_control_committed_outcome_no_control_restore": true,
-    "transaction_id_duplicate_noop": true,
-    "transaction_id_collision_rejected": true,
-    "out_of_order_no_rollback": true,
-    "checkpoint_restore_tested": true,
-    "upstream_receipt_validator_implemented": false,
-    "consumer_exactly_once_scope": "TRANSACTION_ID_SCOPED_ONLY",
-    "same_signal_cross_transaction_dedupe": false,
-    "proof_identity_binds_outcome_sequence": false,
-    "same_tx_same_signal_conflicting_sequence_rejected": false,
-    "cross_transaction_duplicate_can_advance_watermark": true,
-    "cross_transaction_duplicate_can_suppress_legitimate_later_outcome": true,
-    "scientific_overclaim_found": false,
-    "evaluator_or_heldout_leak_found": false
-  },
-  "authority_reconciliation": {
-    "control_generation": "R125",
-    "analyst_generation": "R170",
-    "m1_stop_required": false,
-    "additional_review_gate_required": false,
-    "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
-    "gate_admitted_to_sb003": false,
-    "fresh_analyst_reconciliation_required": true
-  },
-  "classification": {
-    "scientific_evidence": "NON_EVIDENTIARY_NONCANONICAL_FORGE",
-    "current_bounded_design": "SYNTHESIS_OK",
-    "generic_exactly_once_wording": "OVERCLAIMED",
-    "full_receipt_promotion": "INSUFFICIENT_SYSTEM_TEST",
-    "scientific_credit": 0,
-    "new_scientific_result": false
-  },
-  "recommended_follow_up": [
-    "BIND_CANONICAL_PROOF_IDENTITY_SIGNAL_TRANSACTION_SEQUENCE",
-    "REJECT_SAME_SIGNAL_UNDER_SECOND_TRANSACTION_ID",
-    "REJECT_CONFLICTING_SEQUENCE_FOR_SAME_TX_SIGNAL",
-    "PERSIST_SIGNAL_PROOF_IDENTITY_REGISTRY_IN_CHECKPOINT",
-    "ADD_CROSS_TRANSACTION_DUPLICATE_WATERMARK_ADVERSARIAL_TEST",
-    "KEEP_R24_UPSTREAM_RECEIPT_VALIDATOR_BOUNDARY"
+  "applicable_directives_read": [
+    "HUMAN-20260925-002",
+    "HUMAN-20260926-003",
+    "HUMAN-20260926-004",
+    "HUMAN-20260927-002",
+    "HUMAN-20260928-001",
+    "HUMAN-20260928-002"
   ],
-  "mutations": {
-    "scientific_experiments": 0,
-    "result_bearing_workflows": 0,
-    "consumed_identities": 0,
-    "immutable_evidence": 0,
-    "research_merges": 0,
-    "scheduler_changes": 0,
-    "terminal_reopens": 0
+  "input_generations": {
+    "control": "R132_APPEND_ONLY",
+    "analyst": "R174",
+    "theory": "R26",
+    "literature": "R52",
+    "audit": "R13"
   },
-  "history_path": "analysis/external_research_audit/audit/history/2026-09-29/2230-INDEPENDENT_AUDITOR.md",
+  "refs_inspected": {
+    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "bounded_horizon": "b21a9495e207ab7af66b021968985993c4428c31",
+    "recovery_epoch_fence": "4c5147a5c39b6c5da8320226de3ddc75d30de6b1",
+    "external_before": "d8245e283ad1e7beaf77b5c1f70d5c84dda3f144"
+  },
+  "genuinely_new_information": true,
+  "new_scientific_result": false,
+  "finding": {
+    "narrow_recovery_epoch_fence": "SYNTHESIS_OK",
+    "authoritative_resynchronization_composition": "INSUFFICIENT_SYSTEM_TEST",
+    "pre_resync_watermark_checked_by_wrapper": false,
+    "backward_same_session_resync_code_path_possible": true,
+    "backward_resync_focused_test_present": false,
+    "theory_r26_monotonic_anchor_requirement": true
+  },
+  "required_acceptance": [
+    "reject same-session resync below pre-resync watermark",
+    "preserve world/watermark/pending/epoch on rejection",
+    "require explicit new WORLD/session namespace for sequence reset",
+    "test N then M<N and prevent M<k<N from becoming forward progress"
+  ],
+  "authority_reconciliation": {
+    "analyst_generation": "R174",
+    "m1_stop_required": false,
+    "mandatory_review_gate_required": false,
+    "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE",
+    "narrow_lineage_fence_admission_invalidated": false
+  },
+  "science": {
+    "terminal": 35,
+    "total": 35,
+    "active": 0,
+    "queued": 0,
+    "consumed_formal_identities": 8,
+    "scientific_credit": 0
+  },
+  "p0": {
+    "status": "OPEN",
+    "root_cause": "UNKNOWN"
+  },
+  "history_path": "analysis/external_research_audit/audit/history/2026-09-30/1030-INDEPENDENT_AUDITOR.md",
   "persistence": {
     "branch": "ops/external-research-audit-handoff",
-    "head_before": "ccdab97d82915ee65d5462d94e52e9d44ccaf176",
-    "atomic_multi_file_publication": true,
+    "history_commit": "ddf348dae1dbd12fac20a18adca312e35b1f3c67",
+    "history_publication_attempt": 3,
+    "pointer_reconciliation_attempt": 2,
     "attempt_limit": 5,
-    "attempt_number": 1,
     "force_push": false,
     "readback_required": true
+  },
+  "hard_floor": {
+    "scientific_experiments": 0,
+    "result_bearing_workflows": 0,
+    "consumed_identities_changed": false,
+    "immutable_evidence_changed": false,
+    "scheduler_changed": false,
+    "work_mode_used": false
   }
 }
