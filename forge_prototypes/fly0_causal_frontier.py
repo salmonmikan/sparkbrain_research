@@ -57,11 +57,12 @@ class ReconciliationFrontier:
         for value, label in (
             (self.world_cut_generation, "world_cut_generation"),
             (self.recovery_epoch, "recovery_epoch"),
-            (self.outcome_watermark, "outcome_watermark"),
             (self.horizon_floor, "horizon_floor"),
         ):
             if value < 0:
                 raise ValueError(f"{label} must be non-negative")
+        if self.outcome_watermark < -1:
+            raise ValueError("outcome_watermark must be >= -1")
         if not self.observer_certainty:
             raise ValueError("observer_certainty must be non-empty")
 
