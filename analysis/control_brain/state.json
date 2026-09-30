@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "generation": "R139",
-  "generation_id": "CTRL-20260930T204524+0900-R139-P0-M1-R211-FLY0-R29",
-  "produced_at": "2026-09-30T20:45:24+09:00",
+  "generation": "R141",
+  "generation_id": "CTRL-20260930T234705+0900-R141-P0-M1-R213-FLY0-R27-GREEN",
+  "produced_at": "2026-09-30T23:47:05+09:00",
   "mode": "CONTROL_BRAIN",
   "role_resolution": {
     "selected_role": "CONTROL_BRAIN",
-    "resolved_slot": "20:50 JST",
+    "resolved_slot": "23:50 JST",
     "resolution_source": "EARLY_GRACE"
   },
   "directive_index": {
@@ -24,10 +24,9 @@
     "scientific_credit": 0
   },
   "analyst": {
-    "durable_generation": "R174",
-    "head": "8cce9c66fd31d5696b973b3bc9cf1dc12bacd5f8",
-    "persistence_complete": true,
-    "pending_request_observed": false
+    "durable_generation": "R176",
+    "head": "acf01924d3db1fef0cbba3565db8aba2433ab642",
+    "persistence_complete": true
   },
   "methodology": {
     "durable_generation": "R153",
@@ -35,15 +34,14 @@
     "overall_classification": "WELL_CALIBRATED"
   },
   "external_science": {
-    "branch_head": "071e5fcf0cc2d0769a3edd98187cc6569d0e4db7",
+    "branch_head": "e4b3e36736d7ee7722239bf987633c862373000e",
     "literature_append_only": "R53",
     "literature_latest": "R52",
     "literature_state": "R52",
     "theory_append_only": "R29",
-    "theory_latest": "R27",
-    "theory_state": "R27",
-    "audit": "R14",
-    "r29_control_disposition": "ACCEPT_NON_EVIDENTIARY_INTEGRATION_DESIGN_NO_GATE_NO_CLAIM_UPGRADE"
+    "theory_latest": "R29",
+    "theory_state": "R29",
+    "audit": "R15"
   },
   "m1_002": {
     "main": "59fc994b39d0ba02682e972161bb46801592d25b",
@@ -53,11 +51,11 @@
     "ci_run": 36361950457,
     "ci": "success",
     "pr_open": false,
-    "main_generation": "R211",
-    "main_reports_head": "f1d683b72c3f79a273b5c7264f4d01a2e69fd6ba",
+    "main_generation": "R213",
+    "main_reports_head": "f7721dda28bbac725a9233f0bd443e1a25a2c42c",
     "main_pointers_aligned": true,
     "pr_create_attempts": 5,
-    "pr_create_failure_layer": "MIXED_ORCHESTRATION_TOOL_CALL_CEILING_AND_PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+    "pr_create_failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
     "scientific_credit": 0
   },
   "sb003": {
@@ -66,27 +64,33 @@
     "scientific_credit": 0
   },
   "fly0": {
-    "issue_time_provenance": {
+    "r28_issue_time_provenance": {
       "exact_tested_head": "f65716dfbdd42dafc954dec9d9f3ea8dd621abe1",
-      "branch_head": "0e18b119be47c62f94ef6aa3ca9601b60b3fe628",
       "ci_run": 36691794340,
       "ci": "success",
-      "status": "ENGINEERING_GREEN_PENDING_FRESH_ANALYST_RECONCILIATION"
+      "scientific_credit": 0
     },
-    "causal_frontier": {
+    "r27_causal_frontier": {
       "branch": "forge/20260930-fly0-causal-frontier-a",
-      "branch_head": "bc5ba8c41ac30a81333f66120a98c965a9ab9ef1",
-      "focused_test_commit": "b427a2417c3657cedcf9886a8b3041785f34e533",
-      "candidate_ledger_repair_commit": "6c246ce34f2b4e51e6521b19240e7d39b908c6d0",
-      "ci_runs": [
-        36710041575,
-        36710169579
-      ],
-      "ci": "lint_failed_before_semantic_tests",
-      "lint_defect": "F401_UNUSED_DATACLASSES_REPLACE_IMPORT",
-      "lint_repair_attempts": 5,
-      "lint_repair_failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-      "status": "FORGE_PROTOTYPE_CI_LINT_BLOCKED_UNVERIFIED_NO_HANDOFF"
+      "prior_analyst_observed_head": "1776dbb4c83c411b535347a7315d39e7be43d836",
+      "exact_tested_head": "8db5eb55e65cbd436e465cde8a879d90dad8cac2",
+      "ci_run": 36731193715,
+      "ci": "success",
+      "python_311": "success",
+      "python_313": "success",
+      "lint": "success",
+      "local_readiness": "success",
+      "tests": "success",
+      "bundle_validation": "success",
+      "disposition": "ENGINEERING_GREEN_EXACT_HEAD_PENDING_FRESH_ANALYST_RECONCILIATION_NO_SYSTEM_BUILD_HANDOFF",
+      "scientific_credit": 0
+    },
+    "r29_world_commit_lineage_join": {
+      "status": "BOUNDED_FORGE_ONLY",
+      "r27_green_prerequisite_satisfied": true,
+      "fresh_analyst_reconciliation_required": true,
+      "audit_r15_gap": "ISSUE_TO_WORLD_COMMIT_INSUFFICIENT_SYSTEM_TEST",
+      "scientific_credit": 0
     }
   },
   "fleet": {
@@ -101,33 +105,35 @@
     "status": "OPEN",
     "classification": "PERSISTENT_CREATE_PULL_REQUEST_PRE_GITHUB_REFUSAL_WITH_NONUNIFORM_INTERMITTENT_OTHER_MUTATIONS",
     "root_cause": "UNKNOWN",
-    "repository_wide_outage_supported": false
+    "repository_wide_outage_supported": false,
+    "constant_permission_loss_supported": false,
+    "control_r141_publication_attempts": 5,
+    "control_r141_attempt_sequence": [
+      "ATOMIC_GIT_DATA_PRE_GITHUB_REFUSAL",
+      "HISTORY_CONTENTS_PRE_GITHUB_REFUSAL",
+      "HISTORY_CONTENTS_SUCCESS",
+      "LATEST_CONTENTS_SUCCESS",
+      "STATE_CONTENTS_SUCCESS"
+    ]
   },
   "pointer_debt": {
-    "control_before_publication": {
-      "append_only": "R138",
-      "latest": "R138",
-      "state": "R138"
+    "control": {
+      "append_only": "R141",
+      "latest": "R141",
+      "state": "R141"
     },
+    "main": "NONE_R213_ALIGNED",
     "external_literature": {
       "append_only": "R53",
       "latest": "R52",
       "state": "R52"
     },
-    "external_theory": {
-      "append_only": "R29",
-      "latest": "R27",
-      "state": "R27"
-    },
-    "forge_causal_frontier_branch": {
-      "append_only_report": "2044-R27-focused-acceptance-lint-blocked",
-      "moving_latest_state": "stale_inherited_fast_forge_generation"
-    }
+    "external_theory": "NONE_R29_ALIGNED"
   },
   "next": {
     "m1": "RETRY_REQUIRED_PR_CREATION_ONLY_UNDER_FRESH_EXACT_HEAD_AUTHORITY_NO_DIRECT_MAIN_BYPASS",
-    "fly0": "REPAIR_FOCUSED_TEST_LINT_THEN_RUN_SEMANTIC_ACCEPTANCE_BEFORE_R29_STACKING",
-    "analyst": "FRESH_RECONCILIATION_REQUIRED_BEFORE_SYSTEM_BUILD_HANDOFF"
+    "fly0": "FRESH_ANALYST_RECONCILIATION_OF_R27_GREEN_THEN_BOUNDED_R29_ACCEPTANCE",
+    "external_literature": "OWNER_STREAM_POINTER_RECONCILIATION"
   },
   "hard_floor": {
     "science_system_build_separation": true,
@@ -136,6 +142,6 @@
     "scheduler_changed": false,
     "work_mode_used": false
   },
-  "history_path": "analysis/control_brain/history/2026-09-30/2045-R139.md",
+  "history_path": "analysis/control_brain/history/2026-09-30/2347-R141.md",
   "scientific_credit": 0
 }
