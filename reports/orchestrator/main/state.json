@@ -1,20 +1,26 @@
 {
   "schema_version": 2,
-  "generation": "R206",
-  "generation_id": "MAIN-20260930T111318+0900-PRIMARY-R206-R174-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-30T11:13:18+09:00",
+  "generation": "R207",
+  "generation_id": "MAIN-20260930T121057+0900-PRIMARY-R207-R174-R133-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-30T12:10:57+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
   "analyst_generation": "R174",
   "analyst_head": "8cce9c66fd31d5696b973b3bc9cf1dc12bacd5f8",
-  "control_generation": "R132",
-  "control_head": "83646cbb9353ead8ae9a8d4efdb32b4af2b2bb7d",
+  "control_generation": "R133",
+  "control_head": "41b5cf3e6ac4d08f418fb4731463c4ea0adcf5cf",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "delta": false
+  },
+  "prior_reconciliation": {
+    "generation": "R206",
+    "commit": "285ae0b1890fe34b294531ac655aecabdb638d4c",
+    "attempt": 4,
+    "history_latest_state_lease_aligned": true
   },
   "integration": {
     "branch": "system-build/m1-post-integration-robustness-20260928",
@@ -44,9 +50,14 @@
   "action": {
     "mutation_action": "create_pull_request",
     "attempts": 5,
-    "explicit_pre_github_refusals": 5,
-    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+    "explicit_pre_github_refusals": 4,
+    "orchestration_tool_call_ceiling": 1,
+    "failure_layer": "MIXED_ORCHESTRATION_TOOL_CALL_CEILING_AND_PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
     "final_open_or_associated_pr_count": 0
+  },
+  "persistence": {
+    "history_commit": "15703566f12348319aafed61cee063e7a0e44920",
+    "history_publication_attempt": 1
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -58,6 +69,5 @@
   "new_scientific_result": false,
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
-  "history_path": "reports/orchestrator/main/history/2026-09-30/1113-r206-r174-m1-002-pr-create-blocked.md",
-  "pointer_reconciled_at": "2026-09-30T12:10:57+09:00"
+  "history_path": "reports/orchestrator/main/history/2026-09-30/1210-r207-control-r133-m1-002-pr-create-blocked.md"
 }
