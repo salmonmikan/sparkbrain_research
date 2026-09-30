@@ -1,17 +1,18 @@
 {
   "schema_version": 2,
-  "generation": "R214",
-  "generation_id": "MAIN-20261001T011543+0900-PRIMARY-R214-R176-R142-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-10-01T01:15:43+09:00",
-  "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
+  "generation": "R215",
+  "generation_id": "MAIN-20261001T061136+0900-PRIMARY-R215-R176-R143-M1-002-PR164-WAITING-CI",
+  "generated_at": "2026-10-01T06:11:36+09:00",
+  "status": "WAITING_EXTERNAL_PR_CI",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
   "analyst_generation": "R176",
   "analyst_head": "acf01924d3db1fef0cbba3565db8aba2433ab642",
-  "control_generation": "R142_APPEND_ONLY",
-  "control_head": "5c3e5587376a58788566de96b6e5b902f18b1f65",
-  "control_moving_cache_generation": "R141",
+  "control_generation": "R143_APPEND_ONLY",
+  "control_head": "2b13447570e203b3efccdc5ded9ecd5bd0503d05",
+  "control_moving_latest_generation": "R143",
+  "control_moving_state_generation": "R141",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
@@ -24,13 +25,22 @@
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
     "ahead_by": 1,
     "behind_by": 0,
-    "ci_run": 36361950457,
-    "ci": "success",
+    "push_ci_run": 36361950457,
+    "push_ci": "success",
     "ci_python": [
       "3.11",
       "3.13"
     ],
-    "pr_created": false,
+    "pr_created": true,
+    "pr_number": 164,
+    "pr_url": "https://github.com/salmonmikan/sparkbrain_research/pull/164",
+    "pr_head_sha": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
+    "pr_base_sha": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "pr_mergeable": true,
+    "pr_mergeable_state": "unstable",
+    "pr_ci_run": 36778206722,
+    "pr_ci_status": "in_progress",
+    "pr_ci_conclusion": null,
     "merge_performed": false
   },
   "relay": {
@@ -49,16 +59,19 @@
   },
   "action": {
     "mutation_action": "create_pull_request",
-    "attempts": 5,
-    "explicit_pre_github_refusals": 5,
-    "orchestration_tool_call_ceiling": 0,
-    "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "final_open_or_associated_pr_count": 0
+    "attempts": 3,
+    "explicit_pre_github_refusals": 2,
+    "success_attempt": 3,
+    "observed_sequence": [
+      "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+      "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
+      "SUCCESS_PR_164"
+    ],
+    "final_open_or_associated_pr_count": 1
   },
   "persistence": {
     "route": "ATOMIC_GIT_DATA",
-    "publication_attempt": 1,
-    "branch_head_before": "f7721dda28bbac725a9233f0bd443e1a25a2c42c"
+    "publication_attempt": 1
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -68,7 +81,7 @@
   "scientific_credit": 0,
   "evidentiary_status": "NON_EVIDENTIARY_BUILD",
   "new_scientific_result": false,
-  "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
-  "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
-  "history_path": "reports/orchestrator/main/history/2026-10-01/0115-r214-analyst-r176-control-r142-m1-002-pr-create-blocked.md"
+  "stop_reason": "WAITING_EXTERNAL_PR_CI_36778206722",
+  "next_action": "REFETCH_AUTHORITY_MAIN_HEAD_PR_AND_PR_CI_THEN_CONDITIONAL_MERGE_IF_STILL_AUTHORIZED_AND_GREEN",
+  "history_path": "reports/orchestrator/main/history/2026-10-01/0611-r215-pr164-waiting-ci.md"
 }
