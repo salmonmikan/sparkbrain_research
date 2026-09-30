@@ -1,9 +1,20 @@
-# Fast Forge latest — FLY-0 intent supersession guard green
+# Fast Forge latest — R27 causal frontier green
 
-FORGE_INTERESTING / SYSTEM_BUILD_INPUT / NON_EVIDENTIARY / NONCANONICAL.
+FORGE_INTERESTING / SYSTEM_BUILD_INPUT recommended / NON_EVIDENTIARY / NONCANONICAL.
 
-Exact source 8452bff9e1d0dc91c47c1d968f5ddcddd5335a22 is CI-green in run 36487505532 on Python 3.11/3.13 through lint, local readiness, tests and bundle validation. Superseded authority epoch/token frames fail closed before local execution while fresh frames retain ModulationFrame v2; checkpoint/restore is transactional and replayable.
+Exact tested head: `8db5eb55e65cbd436e465cde8a879d90dad8cac2`.
+Source blob: `ee91e7535f6d61b219d0a4a8c684a75d0cb6e514`.
+Focused-test blob: `92232504539a16978c2c7a41c1a978cf2f8f2821`.
+CI `36731193715` is green on Python 3.11/3.13 through lint, local readiness,
+full tests and bundle validation.
 
-Optional future SYSTEM_BUILD input only. Analyst R169 remains authority and SB003 remains conditionally inactive behind M1-002. Scientific credit 0.
+The outer R27 frontier preserves session/cut/recovery/watermark monotonicity
+across replaceable inner reconciliation state and now accepts the underlying
+`outcome_watermark=-1` initialization sentinel.
 
-Authoritative history: reports/fast_forge/history/2026-09-29/0642-fly0-intent-supersession-guard-green.md
+Fresh Evidence Analyst reconciliation is still required before SYSTEM_BUILD
+allocation. SB003 remains conditionally inactive. Audit R15's separate
+issue-to-WORLD-commit gap remains open for R29. Scientific credit 0.
+
+Authoritative history:
+`reports/fast_forge/history/2026-09-30/2349-r27-causal-frontier-green.md`
