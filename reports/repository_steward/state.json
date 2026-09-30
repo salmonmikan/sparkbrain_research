@@ -1,12 +1,14 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20260930T195302+0900-G35",
-  "produced_at": "2026-09-30T19:53:02+09:00",
+  "generation_id": "STEWARD-20261001T014902+0900-G36",
+  "produced_at": "2026-10-01T01:49:02+09:00",
   "mode": "REPOSITORY_STEWARD",
-  "history": "reports/repository_steward/history/2026-09-30/1953.md",
+  "history": "reports/repository_steward/history/2026-10-01/0149.md",
   "main": "59fc994b39d0ba02682e972161bb46801592d25b",
   "role_resolution": {
-    "resolved_slot": "19:50 JST",
+    "actual_start": "2026-10-01T01:49:02+09:00",
+    "resolved_slot": "01:50 JST",
+    "resolution_source": "EARLY_GRACE",
     "selected_role": "REPOSITORY_STEWARD"
   },
   "directive_index": {
@@ -19,29 +21,29 @@
   "p0_status": "OPEN",
   "p0_classification": "PERSISTENT_CREATE_PULL_REQUEST_PRE_GITHUB_REFUSAL_WITH_NONUNIFORM_INTERMITTENT_OTHER_MUTATIONS_ROOT_CAUSE_UNKNOWN",
   "control": {
-    "durable_generation": "R138",
-    "head": "8af97750308edb18459a113079ef6282a30b49f1",
-    "append_only_generation": "R138",
-    "latest_generation": "R138",
-    "state_generation": "R138",
-    "pointer_debt": false
+    "durable_generation": "R142",
+    "head": "5c3e5587376a58788566de96b6e5b902f18b1f65",
+    "append_only_generation": "R142",
+    "latest_generation": "R141",
+    "state_generation": "R141",
+    "pointer_debt": true
   },
   "main_orchestrator": {
-    "durable_generation": "R210",
-    "head": "df91b315cea768a533e369eb4eba0f43cbcb4617",
-    "latest_generation": "R210",
-    "state_generation": "R210",
-    "lease_generation": "R210",
+    "durable_generation": "R214",
+    "head": "1b39a5b4fde5cc2b684afbb3b317c4e7aa604ee8",
+    "latest_generation": "R214",
+    "state_generation": "R214",
+    "lease_generation": "R214",
     "pointer_debt": false,
     "pr_create_attempts": 5,
     "failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
     "pr_open": false
   },
   "analyst": {
-    "durable_generation": "R174",
-    "head": "8cce9c66fd31d5696b973b3bc9cf1dc12bacd5f8",
+    "durable_generation": "R176",
+    "head": "acf01924d3db1fef0cbba3565db8aba2433ab642",
     "persistence_complete": true,
-    "receipt": "EA-R174-20260930T095954JST",
+    "receipt": "EA-R176-20260930T230301JST",
     "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE"
   },
   "methodology": {
@@ -51,21 +53,21 @@
     "classification": "WELL_CALIBRATED"
   },
   "external_science": {
-    "head": "071e5fcf0cc2d0769a3edd98187cc6569d0e4db7",
+    "head": "d3a9e19d702916d99a49d48e67f08e59e0ded2f2",
     "literature": {
       "durable_generation": "R53",
-      "latest_generation": "R52",
-      "state_generation": "R52",
-      "pointer_debt": true
+      "latest_generation": "R53",
+      "state_generation": "R53",
+      "pointer_debt": false
     },
     "theory": {
       "durable_generation": "R29",
-      "latest_generation": "R27",
-      "state_generation": "R27",
-      "pointer_debt": true
+      "latest_generation": "R29",
+      "state_generation": "R29",
+      "pointer_debt": false
     },
     "audit": {
-      "generation": "R14",
+      "generation": "R15",
       "pointer_debt": false
     }
   },
@@ -76,7 +78,15 @@
     "ci_run": 36361950457,
     "ci": "success",
     "pr_open": false,
-    "main_generation": "R210",
+    "main_generation": "R214",
+    "scientific_credit": 0
+  },
+  "fly0_r27": {
+    "branch_head": "c2c4edf5596a75906318a7f8eee51ee393a15370",
+    "exact_tested_head": "8db5eb55e65cbd436e465cde8a879d90dad8cac2",
+    "ci_run": 36731193715,
+    "ci": "success",
+    "disposition": "ENGINEERING_GREEN_PENDING_FRESH_ANALYST_RECONCILIATION_NO_SYSTEM_BUILD_HANDOFF",
     "scientific_credit": 0
   },
   "repository_ruleset": {
@@ -104,7 +114,7 @@
     "annotated_tag_objects": 5,
     "lightweight_h7_tags": 4,
     "authoritative_tag_namespace_rulesets": 0,
-    "full_exact_freeze_map_verification_generation": "G35"
+    "full_exact_freeze_map_verification_generation": "G36"
   },
   "science": {
     "total": 35,
@@ -112,20 +122,19 @@
     "active": 0,
     "queued": 0,
     "consumed_formal_identities": 8,
-    "new_result": false
+    "new_result": false,
+    "scientific_credit": 0
   },
   "scheduler_changed": false,
   "scientific_ref_mutated": false,
   "work_mode_used": false,
   "publication": {
     "branch": "ops/repository-steward",
-    "mode": "HISTORY_THEN_ATOMIC_LATEST_STATE",
+    "mode": "ATOMIC_GIT_DATA",
     "attempt_limit": 5,
-    "history_attempt": 3,
-    "history_commit": "4efd42870bb69894a8e4b91c2c1c57c63d7f220c",
-    "pointer_reconciliation_attempt": 4,
+    "successful_attempt": 1,
     "force_push": false,
-    "head_before_pointer_reconciliation": "4efd42870bb69894a8e4b91c2c1c57c63d7f220c",
+    "head_before": "9962e607af361efe38973aed78a447494310a6df",
     "readback_required": true
   }
 }
