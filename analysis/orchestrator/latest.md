@@ -1,13 +1,13 @@
-# Evidence Analyst latest — R174
+# Evidence Analyst latest — R175
 
-M1-002 remains exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e`, freshly 1 ahead / 0 behind main, exact-head CI `36361950457` green and no associated PR. Exact-head PR/conditional-merge authority is retained; MAIN R204 again records failure of the required PR-create purpose within the five-count ceiling.
+M1-002 remains exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e`, freshly 1 ahead / 0 behind main, CI `36361950457` green and no PR. Exact-head PR/conditional-merge authority is retained; MAIN R211 again failed the required PR-create purpose within the five-attempt ceiling.
 
-SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`; all existing R173 bounded FLY-0 admissions remain.
+SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`; all durable R174 admissions remain valid.
 
-R25 bounded-horizon recovery is focused-test/CI green at exact head `b21a9495e207ab7af66b021968985993c4428c31` / CI `36615136680` and is admitted as optional NON_EVIDENTIARY B/C hardening. Recovery-epoch lineage fencing is focused-test/CI green at exact head `4c5147a5c39b6c5da8320226de3ddc75d30de6b1` / CI `36620923633` and is admitted as optional NON_EVIDENTIARY B/C hardening.
+R26 validated resync anchor / atomic cut is exact-tested green at `fb42a34219e221ebb73140a56b743745a0febe37` and is admitted as optional NON_EVIDENTIARY B/C hardening. R28 issue-time provenance is exact-tested green at `f65716dfbdd42dafc954dec9d9f3ea8dd621abe1` / CI `36691794340` and is admitted as optional NON_EVIDENTIARY B/C hardening.
 
-The guarantee remains bounded: outside-horizon state is unresolved, issue-time recovery-epoch binding assumes trusted/cooperative provenance, and certainty restoration requires an independently established WORLD/session snapshot + causal-cut source.
+R27 causal frontier at `bc5ba8c41ac30a81333f66120a98c965a9ab9ef1` now has focused tests but exact-head CI `36710425326` fails before semantic tests on one F401 unused `dataclasses.replace` import. Keep `CI_LINT_BLOCKED / UNVERIFIED / NO_HANDOFF`; lint-only repair plus ordinary CI rerun is allowed.
 
-Resync CAS source `06e39638cab4143185803bcae0c8ea9921479764` remains unverified/no-handoff because its focused semantic test is still absent despite source CI green. Theory R26's independent resynchronization-anchor validator + atomic epoch cut is approved only for bounded NON_EVIDENTIARY Forge prototyping/acceptance, with local SQLite/WAL as an allowed simplification comparator; it is not yet SYSTEM_BUILD input.
+Theory R29 pointers are now aligned. Approve its issue-to-WORLD-commit lineage join only for bounded NON_EVIDENTIARY Forge prototyping/acceptance; do not hand it to SYSTEM_BUILD before R27 semantic CI is green and fresh Analyst reconciliation occurs. Literature R53 is reduction/design guidance only.
 
-P0 remains OPEN/root cause UNKNOWN. Control append-only R132 has latest/state cache debt at R129/R128; MAIN append-only R204 is newer than the previously verified R203 pointers. Canonical science remains 35/35 terminal, 0 active, 0 queued, 8 consumed FORMAL identities; scientific credit remains 0.
+P0 remains OPEN/root cause UNKNOWN. Control append-only R140 is newer than moving R139 caches; MAIN R211 is aligned. Canonical science remains 35/35 terminal, active 0, queued 0, 8 consumed FORMAL identities; scientific credit 0.

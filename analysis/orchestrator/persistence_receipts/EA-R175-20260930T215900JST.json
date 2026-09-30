@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "role": "EVIDENCE_ANALYST",
+  "generation": "R175",
+  "request_id": "EA-R175-20260930T215900JST",
+  "request_path": "ops/persistence_requests/evidence-analyst/EA-R175-20260930T215900JST.json",
+  "request_commit_sha": "5dd1845c414746a1c88915d188cfdc04726d22dc",
+  "request_sha256": "47e2a03c5c577d89a14570f343d813461cf36c1e8680124bf6db80eeeaa6b11e",
+  "target_branch": "ops/evidence-analyst-handoff",
+  "target_head_before": "8cce9c66fd31d5696b973b3bc9cf1dc12bacd5f8",
+  "result_commit_binding": "CONTAINING_COMMIT",
+  "workflow_run_id": "36720412587",
+  "workflow_run_attempt": 1,
+  "persistence_complete": true,
+  "scientific_execution": false,
+  "note": "This receipt records persistence only; it is not scientific evidence or scientific authority by itself."
+}
