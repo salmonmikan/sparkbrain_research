@@ -1,0 +1,21 @@
+# Utility P0 reconciliation result
+
+schema_version: 2
+autonomous_task_id: AUTOUTIL-20260930T112028+0900-P0-UTILITY-SELFSTREAM-RECON-B73E6D91
+status: COMPLETED
+assignment_mode: AUTONOMOUS_IDLE
+evidentiary_status: NON_EVIDENTIARY_OPERATIONAL_DIAGNOSTIC_ONLY
+
+prior_utility_started_only: INCOMPLETE_NOT_REPLAYED
+control_coherence: APPEND_ONLY_R132_LATEST_R129_STATE_R128
+analyst_coherence: R174_ALIGNED
+main_coherence: APPEND_ONLY_R206_LATEST_STATE_LEASE_R205
+relay_allocated: false
+m1_002_owner: PRIMARY_MAIN
+sb003: ALLOCATED_CONDITIONAL_INACTIVE
+p0_status: OPEN
+root_cause: UNKNOWN
+strongest_recurring_surface: CREATE_PULL_REQUEST
+repository_wide_write_outage_supported: false
+
+No scientific or scheduler authority was exercised.
