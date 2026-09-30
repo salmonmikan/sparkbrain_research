@@ -1,15 +1,13 @@
-# Control Brain latest — R137
+# Control Brain latest — R138
 
-Durable authority is append-only R137 at `analysis/control_brain/history/2026-09-30/1750-R137.md`.
+R138: directive identity unchanged; no directive delta. Canonical science remains 35/35 terminal, active 0, queued 0, consumed FORMAL identities 8, scientific credit 0.
 
-Directive identity remains `ops/human-directives@8ce979b9ec0bc7eede5225c0403698f8886d3e8d` / blob `1ba1e173344f36e14d0e21e6f3e823254e031f7d`, with no newly active or materially changed directive. Canonical science remains 35/35 terminal, active 0, queued 0, consumed FORMAL identities 8, scientific credit 0.
+Evidence Analyst remains R174 and Methodology R153 / WELL_CALIBRATED. PRIMARY MAIN is R210 with history/latest/state/lease aligned. M1-002 exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e` is freshly 1 ahead / 0 behind main `59fc994b39d0ba02682e972161bb46801592d25b`; required PR creation again exhausted 5/5 pre-GitHub platform refusals and open-PR readback remains empty.
 
-Evidence Analyst remains R174; Methodology R153 / WELL_CALIBRATED; Literature R52; append-only Theory R28 remains NON_EVIDENTIARY/NONCANONICAL; Independent Audit R14. SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`.
+External Literature append-only R53 is newly durable while its latest/state caches remain R52. Control ACCEPTS R53 only as NON_EVIDENTIARY/NONCANONICAL reduction guidance: issue identity/fencing, causal frontier, external side-effect commit, and fly efference-copy analogy remain separate interfaces; no novelty or biology claim is upgraded.
 
-PRIMARY MAIN is R209 with history/latest/state/lease aligned. M1-002 remains exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e`, 1 ahead / 0 behind `main@59fc994b39d0ba02682e972161bb46801592d25b`. R209 again exhausted five required PR-create attempts, all `PRE_GITHUB_PLATFORM_SAFETY_REFUSAL`; no PR or merge exists.
+FLY-0 R28 issue-time provenance remains engineering-green at exact tested head `f65716dfbdd42dafc954dec9d9f3ea8dd621abe1` / CI `36691794340`, pending fresh Analyst reconciliation. A newer Theory-R27-derived causal-frontier source exists at `forge/20260930-fly0-causal-frontier-a@2ccb4df11241b8547b69c06c6d8731f245625c27`, but current durable evidence is source-only with no focused test/status/workflow evidence observed, so it is UNVERIFIED / NO_HANDOFF.
 
-FLY-0 now has a new engineering-green R28 issue-time provenance prototype at exact tested head `f65716dfbdd42dafc954dec9d9f3ea8dd621abe1`, CI `36691794340` success. It is FORGE_INTERESTING / NON_EVIDENTIARY / NONCANONICAL and still requires fresh Evidence Analyst reconciliation before any SYSTEM_BUILD handoff. The R14 monotonicity repair remains preserved.
+SB003 remains ALLOCATED_CONDITIONAL_INACTIVE. P0 `INC-GITHUB-MUTATION-RECURRENCE-20260928-001` remains OPEN / root cause UNKNOWN with classification `PERSISTENT_CREATE_PULL_REQUEST_PRE_GITHUB_REFUSAL_WITH_NONUNIFORM_INTERMITTENT_OTHER_MUTATIONS`.
 
-P0 `INC-GITHUB-MUTATION-RECURRENCE-20260928-001` remains OPEN / root cause UNKNOWN. New bounded evidence: the same Forge run created the source on attempt 1, had three consecutive pre-GitHub focused-test create refusals, then succeeded on attempt 4 after fresh readback. This supports nonuniform/intermittent mutation behavior but does not identify a root cause.
-
-This file is a moving cache. Append-only R137 history is primary authority.
+History: `analysis/control_brain/history/2026-09-30/1853-R138.md`.
