@@ -1,19 +1,20 @@
 {
   "schema_version": 2,
-  "generation": "R208",
-  "generation_id": "MAIN-20260930T131500+0900-PRIMARY-R208-R174-R134-M1-002-PR-CREATE-BLOCKED",
-  "generated_at": "2026-09-30T13:15:00+09:00",
+  "generation": "R209",
+  "generation_id": "MAIN-20260930T171710+0900-PRIMARY-R209-R174-R136-M1-002-PR-CREATE-BLOCKED",
+  "generated_at": "2026-09-30T17:17:10+09:00",
   "status": "SYSTEM_BUILD_M1_002_PR_CREATE_BLOCKED_CURRENT_RUN",
   "execution_mode": "PRIMARY",
   "authority_mode": "SYSTEM_BUILD",
   "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
   "analyst_generation": "R174",
   "analyst_head": "8cce9c66fd31d5696b973b3bc9cf1dc12bacd5f8",
-  "control_generation": "R134",
-  "control_head": "8d3968f3e1ea09a25171ae3fc0c928c103bdc3e2",
+  "control_generation": "R136",
+  "control_head": "76644d32199038ac9554324dd0ee28a8ad56adc6",
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "delta": false
   },
   "integration": {
@@ -50,8 +51,8 @@
     "final_open_or_associated_pr_count": 0
   },
   "persistence": {
-    "history_commit": "4b1a0ded35e43307d9ffdfa3ee9ef319ccc49af7",
-    "latest_commit": "926227b2f4266b765e2f1c282b4680f7d2b2b77a"
+    "route": "ATOMIC_GIT_DATA",
+    "branch_head_before": "96361edd3a8cd3e3d49126fb0277f0ec19d41e33"
   },
   "built": true,
   "bounded_functionally_verified": true,
@@ -63,5 +64,5 @@
   "new_scientific_result": false,
   "stop_reason": "PR_CREATION_BLOCKED_AFTER_5_MUTATION_ATTEMPTS",
   "next_action": "REFETCH_AND_RETRY_IF_STILL_AUTHORIZED",
-  "history_path": "reports/orchestrator/main/history/2026-09-30/1315-r208-control-r134-m1-002-pr-create-blocked.md"
+  "history_path": "reports/orchestrator/main/history/2026-09-30/1717-r209-control-r136-m1-002-pr-create-blocked.md"
 }
