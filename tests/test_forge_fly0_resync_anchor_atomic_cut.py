@@ -500,3 +500,117 @@ def test_anchor_and_world_cut_identity_are_bounded_over_long_run() -> None:
     assert reconciler.replay_anchor(first_anchor).status == (
         "ANCHOR_OUTSIDE_REPLAY_HORIZON"
     )
+
+
+def test_audit_r14_same_session_backward_anchor_cannot_create_false_forward_progress() -> None:
+    bridge = AscendingObservedStateBridge(
+        WorldState(position=4, target=-4),
+        variant="structured",
+        authority_token="intent-a",
+    )
+    ledger = WorldSessionLedger(
+        world_session_id="monotonic-world",
+        initial_world_position=4,
+        cut_window=4,
+    )
+    reconciler = AnchoredRecoveryReconciler(
+        ledger=ledger,
+        exact_window=4,
+        max_pending=3,
+        anchor_window=3,
+    )
+
+    for index in range(5):
+        result, signal, source, journal = _record(
+            bridge,
+            frame_sequence=index,
+            outcome_sequence=index + 1,
+            transaction_id=f"monotonic-{index + 1}",
+        )
+        if index < 2:
+            _commit_world(
+                ledger,
+                result,
+                journal,
+                action_id=f"world-commit-{index + 1}",
+            )
+        bound_source, bound_journal = _bind(reconciler, source, journal)
+        accepted = _submit(
+            reconciler,
+            bridge,
+            signal,
+            bound_source,
+            bound_journal,
+        )
+        assert accepted.reconciliation_status == "RECONCILED"
+
+    delayed = _record(
+        bridge,
+        frame_sequence=5,
+        outcome_sequence=6,
+        transaction_id="pending-six",
+        availability="DELAYED",
+    )
+    delayed_source, delayed_journal = _bind(reconciler, delayed[2], delayed[3])
+    pending = _submit(
+        reconciler,
+        bridge,
+        delayed[1],
+        delayed_source,
+        delayed_journal,
+    )
+    assert pending.reconciliation_status == "PENDING"
+
+    assert reconciler.outcome_watermark == 5
+    assert ledger.outcome_sequence == 2
+    before = reconciler.checkpoint()
+    ledger_before = ledger.checkpoint()
+    before_position = reconciler.world_position
+    before_pending = reconciler.pending_count
+    before_epoch = reconciler.recovery_epoch
+
+    backward = reconciler.atomic_rebase(anchor_id="backward-same-session")
+
+    assert backward.status == "ANCHOR_VALIDATION_REJECTED"
+    assert backward.reason == "ANCHOR_DOES_NOT_COVER_CURRENT_OBSERVER_WATERMARK"
+    assert reconciler.checkpoint() == before
+    assert ledger.checkpoint() == ledger_before
+    assert reconciler.world_position == before_position
+    assert reconciler.outcome_watermark == 5
+    assert reconciler.pending_count == before_pending == 1
+    assert reconciler.recovery_epoch == before_epoch == 0
+
+    between = _record(
+        bridge,
+        frame_sequence=6,
+        outcome_sequence=4,
+        transaction_id="between-m-and-n",
+    )
+    between_source, between_journal = _bind(reconciler, between[2], between[3])
+    no_false_progress = _submit(
+        reconciler,
+        bridge,
+        between[1],
+        between_source,
+        between_journal,
+    )
+    assert no_false_progress.reconciliation_status == "OUT_OF_ORDER_NO_ROLLBACK"
+    assert no_false_progress.state_advanced is False
+    assert reconciler.outcome_watermark == 5
+    assert reconciler.world_position == before_position
+    assert reconciler.pending_count == 1
+
+    wrong_session = WorldAnchorSnapshot(
+        world_session_id="different-world-session",
+        anchor_id="sequence-reset-attempt",
+        world_cut_generation=0,
+        source_checkpoint_token="other-session-checkpoint",
+        causal_cut_id="other-session-cut",
+        covered_through_outcome_sequence=0,
+        world_position=0,
+        old_recovery_epoch=0,
+        proposed_recovery_epoch=1,
+        snapshot_digest="other-session-digest",
+    )
+    wrong_session_decision = reconciler.validate_external_snapshot(wrong_session)
+    assert wrong_session_decision.status == "WRONG_WORLD_SESSION"
