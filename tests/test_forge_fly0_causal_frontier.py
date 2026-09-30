@@ -1,8 +1,6 @@
 from __future__ import annotations
 
 import json
-from dataclasses import replace
-
 import pytest
 
 from forge_prototypes.fly0_ascending_observed_state import AscendingObservedStateBridge
