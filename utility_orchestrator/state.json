@@ -1,15 +1,15 @@
 {
   "schema_version": 2,
-  "generation_id": "AUTOUTIL-20260929T212624+0900-P0-POST-R125-POINTER-AUDIT-4F6A2C91",
-  "produced_at": "2026-09-29T21:26:24+09:00",
-  "completed_at": "2026-09-29T21:26:24+09:00",
+  "generation_id": "AUTOUTIL-20260930T192144+0900-P0-UTILITY-SELFSTREAM-RECON-6E4B2A91",
+  "produced_at": "2026-09-30T19:21:44+09:00",
+  "completed_at": "2026-09-30T19:21:44+09:00",
   "assignment_mode": "AUTONOMOUS_IDLE",
   "status": "COMPLETED",
-  "autonomous_task_id": "AUTOUTIL-20260929T212624+0900-P0-POST-R125-POINTER-AUDIT-4F6A2C91",
+  "autonomous_task_id": "AUTOUTIL-20260930T192144+0900-P0-UTILITY-SELFSTREAM-RECON-6E4B2A91",
   "max_runs": 1,
   "evidentiary_status": "NON_EVIDENTIARY_OPERATIONAL_DIAGNOSTIC_ONLY",
   "scientific_authority": "NONE",
-  "classification": "P0_POINTER_DEBT_CURRENTLY_RECONCILED_INTERMITTENT_CREATE_FILE_REFUSAL_REPRODUCED_ROOT_CAUSE_UNKNOWN",
+  "classification": "P0_UTILITY_SELFSTREAM_RECONCILED_ROOT_CAUSE_UNKNOWN",
   "directive_freshness": {
     "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
@@ -18,31 +18,34 @@
   },
   "ownership_checks": {
     "utility_assignment": "SCHEMA_V2_CLEAN_IDLE",
-    "control_generation": "R125",
-    "analyst_generation": "R170",
-    "main_generation": "R194",
-    "main_lease_generation": "R194",
+    "control_generation": "R138",
+    "control_pointers_aligned": true,
+    "analyst_generation": "R174",
+    "main_generation": "R210",
+    "main_lease_generation": "R210",
+    "main_pointers_aligned": true,
     "relay_allocated": false,
     "m1_002_owner": "PRIMARY_MAIN",
-    "m1_002_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "sb003": "ALLOCATED_CONDITIONAL_INACTIVE"
   },
-  "diagnostic": {
-    "incident_id": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
-    "control_pointer_debt_current": false,
-    "main_pointer_debt_current": false,
-    "analyst_pointer_debt_current": false,
-    "utility_started_create_attempts": 3,
-    "utility_started_pre_github_refusals": 2,
-    "utility_started_success_attempt": 3,
-    "utility_started_commit": "9fe261c3c7d2845291565eac4ba23e8e0b609bb5",
-    "repository_wide_write_outage_supported": false,
-    "generic_contents_outage_supported": false,
-    "strongest_recurring_surface": "CREATE_PULL_REQUEST",
-    "root_cause": "UNKNOWN"
+  "reconciliation": {
+    "prior_state_generation": "AUTOUTIL-20260929T212624+0900-P0-POST-R125-POINTER-AUDIT-4F6A2C91",
+    "prior_1321_started_only": "INCOMPLETE_NOT_REPLAYED",
+    "started_publication_attempts": 5,
+    "started_pre_github_refusals": 4,
+    "started_success_attempt": 5,
+    "started_commit": "a4899dccb135c0b0184a3a6cf8e1430f4a3ab595",
+    "terminal_commit": "dfcd2303b31813309ccafa717b722b4bbf8d6ee0"
   },
-  "result_path": "utility_orchestrator/results/2026-09-29/2126-p0-post-r125-pointer-audit.md",
-  "stop_reason": "COMPLETED_SINGLE_BOUNDED_P0_POST_R125_POINTER_AUDIT",
+  "p0": {
+    "incident_id": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
+    "status": "OPEN",
+    "strongest_recurring_surface": "CREATE_PULL_REQUEST",
+    "root_cause": "UNKNOWN",
+    "repository_wide_write_outage_supported": false
+  },
+  "result_path": "utility_orchestrator/results/2026-09-30/1921-p0-utility-selfstream-reconciliation.md",
+  "stop_reason": "COMPLETED_SINGLE_BOUNDED_P0_UTILITY_SELFSTREAM_RECONCILIATION",
   "hard_floor": {
     "non_utility_mutation": false,
     "scheduler_changed": false,
@@ -54,7 +57,7 @@
   },
   "publication": {
     "branch": "ops/utility-orchestrator-requests",
-    "route": "ATOMIC_GIT_DATA_COMMIT",
+    "route": "CONTENTS_SEQUENTIAL_AFTER_ATOMIC_PATH_REFUSALS",
     "attempt_limit": 5,
     "force_push": false
   }
