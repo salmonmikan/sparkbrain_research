@@ -88,11 +88,25 @@ class SessionCausalFrontierGuard:
     ) -> None:
         self._ledger = ledger
         self._reconciler = reconciler
-        self._frontier = self._observe(reconciler)
+        observed = self._observe(reconciler)
+        if observed.world_session_id != ledger.world_session_id:
+            raise ValueError("reconciler WORLD session mismatch")
+        if observed.world_cut_generation != ledger.world_cut_generation:
+            raise ValueError("reconciler WORLD cut mismatch")
+        self._frontier = observed
 
     @property
     def frontier(self) -> ReconciliationFrontier:
         return self._frontier
+
+    @staticmethod
+    def _reconciler_ledger(
+        reconciler: AnchoredRecoveryReconciler,
+    ) -> WorldSessionLedger:
+        ledger = getattr(reconciler, "_ledger", None)
+        if not isinstance(ledger, WorldSessionLedger):
+            raise ValueError("reconciler has no inspectable WORLD ledger")
+        return ledger
 
     @staticmethod
     def _horizon_floor(reconciler: AnchoredRecoveryReconciler) -> int:
@@ -105,9 +119,10 @@ class SessionCausalFrontierGuard:
         self,
         reconciler: AnchoredRecoveryReconciler,
     ) -> ReconciliationFrontier:
+        ledger = self._reconciler_ledger(reconciler)
         return ReconciliationFrontier(
-            world_session_id=self._ledger.world_session_id,
-            world_cut_generation=self._ledger.world_cut_generation,
+            world_session_id=ledger.world_session_id,
+            world_cut_generation=ledger.world_cut_generation,
             recovery_epoch=reconciler.recovery_epoch,
             outcome_watermark=reconciler.outcome_watermark,
             horizon_floor=self._horizon_floor(reconciler),
