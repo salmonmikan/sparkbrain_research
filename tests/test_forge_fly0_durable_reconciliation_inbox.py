@@ -4,7 +4,6 @@ import json
 import sqlite3
 import subprocess
 import sys
-from dataclasses import asdict
 from pathlib import Path
 
 import pytest
