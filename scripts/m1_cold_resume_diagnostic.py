@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import copy
 import hashlib
+import importlib.metadata
 import json
 import os
 import platform
@@ -100,6 +101,33 @@ def record_row(stream: Any, row: dict[str, Any]) -> None:
     os.fsync(stream.fileno())
 
 
+def failure_category(status: dict[str, Any], error_path: Path) -> str | None:
+    if status["returncode"] == 0 and not status["timed_out"]:
+        return None
+    if status["timed_out"]:
+        return "worker_timeout"
+    if error_path.is_file():
+        error = json.loads(error_path.read_bytes())
+        message = error.get("error", "")
+        if message.startswith("serialized state mismatch"):
+            return "serialized_byte_mismatch"
+        if message.startswith("future transition mismatch"):
+            return "future_transition_mismatch"
+        if message.startswith("save changed inspect"):
+            return "save_observer_effect"
+    return "incomplete_resource_worker_or_runner"
+
+
+def dependency_versions() -> dict[str, str | None]:
+    versions = {}
+    for name in ("jsonschema", "numpy", "torch"):
+        try:
+            versions[name] = importlib.metadata.version(name)
+        except importlib.metadata.PackageNotFoundError:
+            versions[name] = None
+    return versions
+
+
 def runtime_imports() -> tuple[Any, Any]:
     # Source/config freeze and STARTED precede this import in the worker.
     sys.path.insert(0, str(ROOT / "src"))
@@ -117,6 +145,7 @@ def worker(args: argparse.Namespace, protocol: dict[str, Any]) -> None:
         "runner_sha256": digest(Path(__file__).read_bytes()),
         "python": sys.version, "executable": sys.executable, "platform": platform.platform(),
         "pid": os.getpid(), "parent_pid": os.getppid(),
+        "reference_timeline": "observed" if args.mode in {"restore", "secondary"} else None,
     })
     budget = protocol["budget"]
     resource.setrlimit(resource.RLIMIT_AS, (budget["max_address_space_bytes_per_worker"],) * 2)
@@ -230,11 +259,14 @@ def run(args: argparse.Namespace, protocol: dict[str, Any]) -> int:
     changes = subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True)
     if changes:
         raise RuntimeError("runner requires clean tracked/untracked source workspace")
-    subprocess.run(["git", "diff", "--exit-code", protocol["runtime_source_commit"], "--", "src"],
+    subprocess.run(["git", "diff", "--exit-code", protocol["runtime_source_commit"],
+                    "--", "src", "schemas"],
                    cwd=ROOT, check=True, capture_output=True)
     write_json(out / "STARTED.json", {
         "protocol": protocol, "protocol_sha256": digest(PROTOCOL.read_bytes()),
         "source_commit": head, "runtime_source_files_sha256": source_files,
+        "schema_assets_sha256": inventory(ROOT / "schemas"),
+        "dependency_versions": dependency_versions(),
         "runner_sha256": digest(Path(__file__).read_bytes()),
         "python": sys.version, "executable": sys.executable, "platform": platform.platform(),
         "scientific_credit": 0,
@@ -266,7 +298,8 @@ def run(args: argparse.Namespace, protocol: dict[str, Any]) -> int:
             except subprocess.TimeoutExpired:
                 status = {"returncode": None, "timed_out": True}
         row = {"name": name, "mode": mode, "cut": cut, "hashseed": seed,
-               "elapsed_seconds": time.monotonic() - begin, **status}
+               "elapsed_seconds": time.monotonic() - begin, **status,
+               "failure_category": failure_category(status, out / name / "ERROR.json")}
         workers.append(row)
         write_json(out / "worker-status" / f"{name}.json", row)
         enforce_disk(out, protocol["budget"]["max_output_bytes"])
@@ -296,7 +329,13 @@ def run(args: argparse.Namespace, protocol: dict[str, Any]) -> int:
     secondary_path = out / "secondary/secondary.json"
     secondary_commits = (json.loads(secondary_path.read_bytes())["automatic_cycle"]
                          ["committed_cycles"] if secondary_path.exists() else None)
-    summary = {"primary_status": "pass" if complete else "failed_or_incomplete",
+    failures = [{"worker": row["name"], "category": row["failure_category"]}
+                for row in workers if row["mode"] != "secondary" and row["failure_category"]]
+    for name, comparison in comparisons.items():
+        if not comparison["equal"]:
+            failures.append({"worker": "observer_control", "category": name + "_mismatch"})
+    summary = {"primary_status": "pass" if complete else "not_pass",
+               "primary_failures": failures,
                "expected_committed_cycles": protocol["expected_committed_cycles"],
                "recorded_committed_cycles": actual, "secondary_completed": secondary_ok,
                "secondary_actual_committed_cycles": secondary_commits,

@@ -76,3 +76,14 @@ def test_cli_existing_output_is_completely_untouched(tmp_path: Path, mode: str) 
     assert result.returncode != 0
     assert TOOL.inventory(output) == before
     assert (output / "sentinel.bin").read_bytes() == b"prior-artifact\x00\xff"
+
+
+def test_summary_separates_byte_behavior_and_execution_failures(tmp_path: Path) -> None:
+    status = {"returncode": 1, "timed_out": False}
+    error = tmp_path / "ERROR.json"
+    TOOL.write_json(error, {"error": "serialized state mismatch: state"})
+    assert TOOL.failure_category(status, error) == "serialized_byte_mismatch"
+    error.write_bytes(TOOL.canonical({"error": "future transition mismatch at step 8"}))
+    assert TOOL.failure_category(status, error) == "future_transition_mismatch"
+    assert TOOL.failure_category({"returncode": None, "timed_out": True}, error) == "worker_timeout"
+    assert TOOL.failure_category({"returncode": 0, "timed_out": False}, error) is None

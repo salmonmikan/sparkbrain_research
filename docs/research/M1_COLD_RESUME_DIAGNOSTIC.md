@@ -142,3 +142,11 @@ defect: a rejected existing output directory could receive a new error file.
 Output ownership is now tracked explicitly, with CLI-level synthetic regression
 checks for all five modes proving every pre-existing byte remains untouched.
 This repair occurred before any M1 diagnostic run.
+
+Matched intermediate restored payloads are deduplicated only after exact byte
+comparison: restore-<hashseed>-<cut>/file-records/step-NNN.json maps to the retained
+observed/checkpoints/step-NNN directory. Initial/final restored checkpoints and
+all divergent checkpoints are retained in full. STARTED also records schema-asset
+hashes and installed jsonschema/NumPy/Torch versions without importing them.
+Summary failures distinguish serialized bytes, future transitions, observer
+effects, timeouts and incomplete worker/resource/runner paths.
