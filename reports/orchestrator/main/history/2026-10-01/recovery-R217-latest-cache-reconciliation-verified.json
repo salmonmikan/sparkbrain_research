@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "persistence_only": true,
+  "source_scheduler": "6ab9bed600a481919adade50e72fe837",
+  "recovery_supervisor": "6abdbad842c881918e1247a8b4592b26",
+  "generation": "R217",
+  "recovery_identity": {
+    "source_scheduler": "6ab9bed600a481919adade50e72fe837",
+    "source_role": "PRIMARY_MAIN",
+    "generation": "R217",
+    "requested_action": "RECONCILE_MAIN_LATEST_EXACTLY_FROM_VERIFIED_APPEND_ONLY_HISTORY",
+    "repository": "salmonmikan/sparkbrain_research",
+    "target_ref": "ops/orchestrator-run-report",
+    "head": "c2d921a24e8dc78786b4b6d2a0cc9b733ac79161",
+    "base": "c2d921a24e8dc78786b4b6d2a0cc9b733ac79161",
+    "source_history_path": "reports/orchestrator/main/history/2026-10-01/0916-r217-pr164-merge-blocked.md",
+    "source_history_blob": "58b4fe08d94b889408e040a82af42b4975403312",
+    "expected_success_criteria": [
+      "latest.md byte-for-byte equals saved R217 history",
+      "R217 history blob unchanged",
+      "state/lease and other files unchanged",
+      "one append-only operational recovery receipt",
+      "non-force descendant ref update"
+    ]
+  },
+  "publication_attempt": 1,
+  "publication_commit": "b9ca10ed1c6d0e3a830288535a81b1eb1c11a1ed",
+  "persistence_complete": true,
+  "independent_readback": {
+    "head_matches": true,
+    "latest_exact": true,
+    "history_blob_unchanged": true,
+    "operational_record_exact": true,
+    "state_unchanged": true,
+    "lease_unchanged": true,
+    "descendant": true,
+    "changed_files": [
+      "reports/orchestrator/main/history/2026-10-01/recovery-R217-latest-cache-reconciliation.md",
+      "reports/orchestrator/main/latest.md"
+    ]
+  },
+  "verification_time_utc": "2026-10-01T02:06:01.109Z",
+  "unresolved": [
+    "MAIN_STATE_LEASE_R215_EXACT_R217_JSON_PAYLOAD_UNAVAILABLE",
+    "PR164_CURRENT_CONTROL_R145_PROHIBITS_MERGE_PENDING_TWO_DEFECT_REPAIRS",
+    "FORGE_EXACT_FOCUSED_TEST_PAYLOAD_UNAVAILABLE_CI36802219899_LINT_FAILURE",
+    "P0_OPEN_ROOT_CAUSE_UNKNOWN"
+  ],
+  "no_scientific_execution": true,
+  "no_scheduler_changes": true,
+  "backend_mode_provenance": "NOT_EXPOSED_BY_RUNTIME_API"
+}
