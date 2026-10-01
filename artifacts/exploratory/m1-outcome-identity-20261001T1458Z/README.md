@@ -17,6 +17,8 @@ support and later abstention. The direct Pilot API was exercised; Session rollba
   manifests, failure provenance, test logs and run summaries from the archive
 - `verify_bundle.py`: read-only standard-library audit of the archive, all member hashes,
   readable copies, freeze identities, call accounting and corrected byte reproduction
+- `verify_reproduction.py`: portable read-only comparison of fresh runs with retained
+  semantic/state records, with narrowly declared execution-provenance exceptions
 
 Concatenating the 22 chunks in listed order yields the exact original 11,449,912-byte gzip
 archive, containing 3,319 files totaling 64,819,728 file bytes. Each chunk is at most 512 KiB.
@@ -105,24 +107,27 @@ cd "$evidence"
 PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=1 python r2-freeze/driver.py --output "$runs/primary"
 PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=37 python r2-freeze/driver.py --output "$runs/reproduction"
 PYTHONDONTWRITEBYTECODE=1 python r2-freeze/verify_results.py --run1 "$runs/primary" --run37 "$runs/reproduction" --output "$runs/verification.json"
-python - "$runs/verification.json" <<'CHECK'
-import json
-import sys
-from pathlib import Path
-result = json.loads(Path(sys.argv[1]).read_text())
-passed = (
-    result["run1"]["all_expected_checks_pass"]
-    and result["run37"]["all_expected_checks_pass"]
-    and result["reproducibility"]["reproducible_all_runtime_records_and_checkpoints"]
-)
-if not passed:
-    raise SystemExit("Reproduction verification failed; inspect retained fresh outputs")
-print("Reproduction verification passed")
-CHECK
+PYTHONDONTWRITEBYTECODE=1 python "$artifact/verify_reproduction.py" \
+  --verification "$runs/verification.json" \
+  --primary "$runs/primary" --replica "$runs/reproduction" \
+  --retained-root "$evidence"
 printf 'Fresh reproduction retained at %s\n' "$runs"
 ```
 
-The explicit final check compensates for the frozen verifier's historical zero-exit behavior.
+The final comparator checks all recorded inputs, actions, revisions, supported checkpoint
+and snapshot bytes, and exception types/messages against the retained evidence. It binds the
+extracted retained files to the published artifact manifest and validates each run's own raw
+call digest before comparing. Two consistently wrong fresh runs cannot pass merely by agreeing
+with each other.
+
+This is portable semantic/state reproduction, not whole-directory byte identity. Only root
+`environment.json` and the declared traceback text in known exception fields are treated as
+execution provenance: an expected error's absolute source paths change after extraction.
+Raw tracebacks and environment files remain untouched. `COMPLETED.json` may have a different
+raw-call digest only after that digest has been independently validated against its own run.
+All other fields and physical checkpoint/snapshot bytes remain exact comparisons; numerical
+differences are reported as mismatches, not normalized away.
+
 Failures leave the fresh outputs available for inspection; do not delete or rewrite the
 original evidence to make a retry succeed. None of these reproduction commands was rerun
 merely to publish this documentation repair.

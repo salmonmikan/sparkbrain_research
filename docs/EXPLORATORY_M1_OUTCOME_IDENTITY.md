@@ -255,3 +255,23 @@ paths, with an explicit acceptance-boolean exit check. A narrowly scoped append-
 in `RESULTS_LEDGER.md` records this bounded limitation with zero scientific credit. Existing
 ledger entries, scientific dispositions, authority state and `PROJECT_STATUS.md` are unchanged.
 Frozen files and archive bytes are unchanged; no diagnostic matrix was rerun for these edits.
+
+The fresh-output recipe also checks fresh inputs, actions, revisions, exception types/messages
+and supported checkpoint/snapshot bytes against the retained runs before declaring successful
+portable semantic/state reproduction. It binds extracted retained files to the artifact manifest
+and validates each run's own raw-call digest. Only root environment metadata and traceback text
+in known exception fields are treated as execution provenance; expected-error paths change
+when the frozen source is extracted into a fresh directory. Original raw files are untouched.
+All other numerical/state differences fail the comparison. No whole-directory byte-identity
+claim is made for a relocated reproduction. No-dynamics regression cases include relocated
+tracebacks with recomputed raw digests, consistent semantic drift in both fresh runs, changed
+error messages, invalid digests, physical checkpoint drift, missing files and environment-only
+differences. Frozen sources and the original diagnostic executions remain unchanged.
+
+After the portable comparator repair, final local configured validation passed **681 tests**
+with the same **392 exclusions**. The focused publication module passed 29 tests, including
+27 portable-comparison/negative cases and the two retained-archive checks. A read-only audit
+under optimized Python authenticated both retained runs: per run, 973 files were bound to
+the artifact manifest, 897 physical files compared byte-exactly, 75 record/summary JSON files
+compared with the declared provenance handling, and environment metadata reported separately.
+Both own raw-call digests validated. This audit did not execute M1 or produce new outcomes.
