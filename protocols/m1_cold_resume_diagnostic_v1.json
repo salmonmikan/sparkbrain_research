@@ -1,0 +1,57 @@
+{
+  "protocol_id": "m1-cold-resume-diagnostic-20261001-v1",
+  "status": "EXPLORATORY_NON_EVIDENTIARY",
+  "scientific_credit": 0,
+  "runtime_source_commit": "bd337bef2edddb2d388cbcf47bf176d469c2b180",
+  "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+  "fixture": "unmodified default IntegratedM1Session / DeterministicM1World",
+  "horizon": 24,
+  "cutpoints": [
+    2,
+    7,
+    15
+  ],
+  "baseline_hashseed": 1,
+  "observed_hashseed": 1,
+  "restore_hashseeds": [
+    1,
+    37
+  ],
+  "model_seed": 31,
+  "python": "one interpreter executable and version throughout; no cross-version claim",
+  "primary_runs": [
+    "uninterrupted",
+    "checkpoint_observed",
+    "cold_restore"
+  ],
+  "expected_committed_cycles": 144,
+  "expected_resume_cycle_rows": 96,
+  "budget": {
+    "worker_timeout_seconds": 120,
+    "total_timeout_seconds": 1200,
+    "max_output_bytes": 67108864,
+    "max_address_space_bytes_per_worker": 1073741824,
+    "max_cpu_seconds_per_worker": 90,
+    "max_workers_concurrent": 1,
+    "scope": "per matrix, including secondary probes"
+  },
+  "comparisons": [
+    "uninterrupted vs checkpoint_observed exact cycle rows, inspect hash at every step and final checkpoint full-file bytes",
+    "cold restore initial checkpoint save-back full-file bytes vs selected cutpoint",
+    "cold continuation exact cycle rows and inspect hash at every future step",
+    "cold continuation complete checkpoint full-file bytes at every future step vs checkpoint_observed counterpart"
+  ],
+  "secondary_probes": {
+    "deepcopy": "one copy.deepcopy of quiet cutpoint 7; report success/error without adapting or replacing API; no continuation cycles",
+    "pending": "one next_observation then pilot.observe at loaded cut7, without world.resolve: save/load/save exact bytes, then Session.cycle rejection and no-write; count/retain any unexpected committed cycle; data roundtrip and automatic resume separate"
+  },
+  "error_policy": "write STARTED before runtime construction; no-clobber output; retain stdout/stderr and every completed raw row; exact equality with no tolerance; first mismatch records both hashes and full divergent payloads then marks diagnostic failed; worker exception/timeout/resource failure is incomplete not checkpoint scientific failure; do not retune/retry silently; secondary unsupported deepcopy/pending-cycle exception cannot fail the primary checkpoint claim",
+  "claim_ceiling": "bounded serialization and next-transition fidelity of explicit/reference M1 state only; zero scientific credit, no superiority, composition, generalization, biological, energy or emergent-learning claim",
+  "clean_reproduction_limit": 1,
+  "maximum_primary_commits_across_original_and_reproduction": 288,
+  "divergence_classification": {
+    "byte_only": "serialized-fidelity mismatch; not necessarily behavioral corruption",
+    "cycle_output": "future transition/behavior divergence",
+    "infrastructure": "incomplete diagnostic"
+  }
+}

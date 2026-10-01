@@ -1134,3 +1134,27 @@ contract correction only.
   robustness, natural-noise performance, composition contribution, novelty,
   energy, general adaptation or runtime-defect claim is established. No scientific
   evidence grade, consumed/formal identity, authority ledger, or runtime changed.
+
+
+## 2026-10-01 — Exploratory M1 cold-process serialized checkpoint fidelity
+
+- Status: bounded engineering diagnostic complete; EXPLORATORY_NON_EVIDENTIARY,
+  scientific credit 0. No runtime or historical scientific status changed
+- Original run at `3addef5bc9c4494f23b38b2e28e2f9e02958cdca` made 54 commits and
+  stopped all six cold workers at their first resumed step due to a harness
+  tuple-versus-JSON-list comparison bug. Original raw data and not-pass summary
+  remain unchanged; independent read-only inspection found matching JSON rows,
+  inspect hashes and complete checkpoint bytes in all six alleged mismatches
+- A prospectively amended, independently reviewed canonical-JSON-only comparison
+  repair ran once at `642c61a3a950aea176cb284eb7df44f7bc09bcbc`: 144 commits, all 96
+  resumed transitions equal across cuts 2/7/15 and hashseeds 1/37, and 103 complete
+  six-file checkpoint comparisons equal including the observer control. Total
+  actual primary commits across both attempts: 198; no extra reproduction
+- Boundary diagnostics: ordinary deepcopy is unavailable due to RLock; pending
+  after-observe state saves/restores exactly, while Session.cycle rejects an
+  automatic mid-cycle restart without modifying state. This is not a checkpoint
+  corruption result. The fixed 24-cycle/default-seed 31/Linux/Python 3.12 scope is
+  not a generalization, cross-version, superiority or emergent-learning claim
+- Raw transport, data-only verifier, source/config/protocol hashes, negative
+  history and limitations: `docs/research/M1_COLD_RESUME_DIAGNOSTIC.md` and
+  `artifacts/m1_cold_resume_diagnostic_20261001/`
