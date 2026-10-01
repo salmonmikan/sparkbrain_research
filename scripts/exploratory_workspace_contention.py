@@ -21,7 +21,8 @@ PROTOCOL_SHA256 = "8f4be213aee46e83e9f992156d712301b9910de383290407186974cb3bce1
 
 
 def canonical(value: Any) -> bytes:
-    return (json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False) + "\n").encode()
+    text = json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False)
+    return (text + "\n").encode()
 
 
 def sha256(data: bytes) -> str:
