@@ -73,18 +73,18 @@ A useful next question is whether event-local or elapsed-time stability can pres
 ## Provenance and reproduction
 
 - Base: `18ff183983a2657d7199a708e4d3398550d7740c`
-- Executed source checkpoint: `2a5d4c0faac1f09128a32f0e8a92f6dddf26f4f7`
+- Corrected executed source checkpoint: `35ccc513b56b32825006a88fb5def2df286c6b4d`
 - Protocol SHA-256: `778a37f8507879f6a84f68ce0d00980542cb59932aa9b321e98f15392f088ebc`
-- Runner SHA-256: `8a36eb7d8f4e40c1363aeaa3ea8e455495358c1fcc04ae1f04d4f4659fd04b70`
+- Corrected runner SHA-256: `978eb10c55e9351073f7d30230269eb293a3bbc3c4004282be55ec7261224335`
 - Raw JSONL: 1,080 complete rows, 9,806,601 bytes; SHA-256 `00bf97d0ae8f72045abcc831ec534386a4c0d70ea764a446ed9d65bab47f2f4d`
 - Summary SHA-256: `06e3706bab25d266804e8338557ee51580f11f9c8e8b132fe9fe33f77bd9a473`
-- Manifest SHA-256: `8acc629a4c1ad0856796f601125c3e3eec98ed31c6991c05715438f810bc3c44`
+- Corrected manifest SHA-256: `02de1ecce3ae54065fcc5606aec7e232eea77059fa01502f66dd221772f3fefd`
 
 The repository stores complete raw and summary bytes as lossless gzip files with mtime=0, alongside the uncompressed manifest and a transport manifest. The runner emits the original uncompressed three-file bundle; its manifest hashes those uncompressed bytes. Compression changes transport only.
 
 ```bash
-PYTHONHASHSEED=1 PYTHONPATH=src python scripts/exploratory_event_clock.py --output /tmp/event-clock-1 --source-commit 2a5d4c0faac1f09128a32f0e8a92f6dddf26f4f7
-PYTHONHASHSEED=37 PYTHONPATH=src python scripts/exploratory_event_clock.py --output /tmp/event-clock-37 --source-commit 2a5d4c0faac1f09128a32f0e8a92f6dddf26f4f7
+PYTHONHASHSEED=1 PYTHONPATH=src python scripts/exploratory_event_clock.py --output /tmp/event-clock-1 --source-commit 35ccc513b56b32825006a88fb5def2df286c6b4d
+PYTHONHASHSEED=37 PYTHONPATH=src python scripts/exploratory_event_clock.py --output /tmp/event-clock-37 --source-commit 35ccc513b56b32825006a88fb5def2df286c6b4d
 diff -qr /tmp/event-clock-1 /tmp/event-clock-37
 gzip -dc artifacts/exploratory/event_clock/raw_episodes.jsonl.gz > /tmp/retained-event-clock.jsonl
 gzip -dc artifacts/exploratory/event_clock/summary.json.gz > /tmp/retained-event-clock-summary.json
@@ -100,8 +100,8 @@ Python 3.12.14, full-history cloud checkout. This did not run on the user's pers
 
 | Check | Result |
 |---|---|
-| Focused event-clock tests | 17 passed |
-| Repository configured pytest | 651 passed; 392 scientific/reproduction/external tests deselected |
+| Focused event-clock tests | 18 passed after failure-provenance correction |
+| Repository configured pytest | 652 passed after correction; 392 scientific/reproduction/external tests deselected |
 | local_readiness_check | passed |
 | ruff check . | passed |
 | run_demo | passed, 7 frames |
@@ -112,7 +112,13 @@ Python 3.12.14, full-history cloud checkout. This did not run on the user's pers
 
 The first configured-suite attempt stopped in collection because optional torch/numpy imports were missing, including imports in deselected suites. After installing numpy 2.5.3, official CPU torch 2.13.0+cpu, and snntorch 1.0.0 in the dedicated cloud environment, the configured suite passed. CUDA was unavailable. A pre-existing non-failing Starlette/httpx deprecation warning remains. These checks do not claim execution of the 392 excluded tests.
 
-Independent source review found no blocking correctness issue in the successful-run protocol. The failure path retains completed raw rows and error/count metadata, but a failure.json does not itself repeat the successful manifest's source/runtime hashes; external source provenance would need to accompany any future implementation-failure bundle. No full-grid failure occurred here.
+### Failure-provenance correction
+
+The initial source review identified an incomplete failure artifact as a nonblocking successful-run limitation. Actual Codex review on PR #166 classified it as P2 because the frozen failure-retention promise requires self-contained provenance. Source checkpoint `35ccc513b56b32825006a88fb5def2df286c6b4d` corrects that path: failure.json now binds the declared source checkpoint, runner/protocol hashes, runtime pins and hashes, failing cell and stage, and retained-file hashes/lengths. A new adversarial test covers one completed raw row followed by failure on the next cell.
+
+No protocol, condition, metric, runtime, gate, or experimental choice changed. Two new complete executions under hash seeds 1 and 37 were byte-identical to each other; their raw and summary bytes were also identical to the initial execution. Only `declared_source_checkpoint` and `runner_sha256` changed in the successful manifest. The initial manifest is preserved at `artifacts/exploratory/event_clock/pre_failure_provenance_fix/manifest.json` with SHA-256 `8acc629a4c1ad0856796f601125c3e3eec98ed31c6991c05715438f810bc3c44`; it references the same retained raw and summary bytes.
+
+After correction, independent review found no blocking issue, 18 focused tests and 652 configured tests passed, with the same 392 exclusions. No full-grid failure occurred. An independent equation-based audit recalculated all 2,916 Coalition decisions from the retained 1,080 rows and matched every first/repeat ignition sequence and event counter; summary metrics exactly matched the raw-row projection.
 
 ## Collision boundary
 
