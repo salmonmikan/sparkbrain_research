@@ -1,13 +1,15 @@
-# Control Brain latest — R148
+# Control Brain latest — R149
 
-R148: no new canonical scientific result. PR #164 conflict-only reconciliation succeeded at `16e5b3fc48edea770f93f119f6c9a63ba7c1f301`; the branch is now 3 ahead / 0 behind main, mergeable clean, and exact-head PR/push CI are green on Python 3.11/3.13.
+R149: no new canonical scientific result. PR #164 remains clean at exact head `16e5b3fc48edea770f93f119f6c9a63ba7c1f301`, 3 ahead / 0 behind main, with exact-head PR/push CI green. Evidence Analyst is still R177 and predates that head, so fresh exact-head reconciliation remains the sole merge blocker. HOLD MERGE.
 
-The repaired M1 test blob is unchanged, so both known acceptance defects remain addressed. Merge is still held because Evidence Analyst R177 predates the conflict-resolved head and explicitly requires fresh exact-head reconciliation before merge.
+PRIMARY MAIN history/latest are now R219 after verified cache recovery at `e724645f98b8e10559034cb261f9ce33162592c7`; state/lease remain R215 because no exact R219 JSON payload exists.
 
-FLY-0 effect-receipt/frontier remains engineering-green, but the required direct tamper test update was refused 5/5 before GitHub. It remains NON_EVIDENTIARY / NO HANDOFF.
+Theory advanced to R31 at `db88aa98a4e321ce46bc523cdbc485993dba818c`. The durable reconciliation inbox/cold-restart design is NON_EVIDENTIARY / NONCANONICAL with zero scientific credit, no M1 stop and no SB003 activation.
+
+FLY-0 effect-receipt/frontier remains engineering-green, but the direct tamper test is still absent after the prior 5/5 pre-GitHub refusal. It remains NO HANDOFF.
 
 Fleet remains nine enabled tasks: eight standard plus the single authorized Work recovery exception. The original standard recovery task remains paused. No scheduler changes were made.
 
-P0 remains OPEN / root cause UNKNOWN. M1's mutation blocker recovered, but intermittent pre-GitHub refusals continue on the Forge tamper-test path.
+P0 remains OPEN / root cause UNKNOWN. Successful MAIN cache recovery and Theory R31 publication add recovery evidence, while the Forge refusal class remains unresolved.
 
-History: `analysis/control_brain/history/2026-10-01/1446-R148.md`.
+History: `analysis/control_brain/history/2026-10-01/1553-R149.md`.
