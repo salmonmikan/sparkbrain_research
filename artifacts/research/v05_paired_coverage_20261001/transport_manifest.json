@@ -1,0 +1,24 @@
+{
+  "archive_bytes": 57948,
+  "archive_files": 98,
+  "archive_sha256": "ec8046484daa8406784c60dd66d503df2568c6e03f3d4e4c254c555f589026d4",
+  "empty_runtime_pycache_directory_excluded": true,
+  "encoding": "base64-then-xz-tar",
+  "model_execution_for_packaging": false,
+  "parts": [
+    {
+      "bytes": 48632,
+      "path": "evidence-000.b64",
+      "sha256": "8981e5681e2423b2ec6fbb5dd82219ed98132e7c43f359f0fe696eb5e6c0428e"
+    },
+    {
+      "bytes": 29650,
+      "path": "evidence-001.b64",
+      "sha256": "e6d2bdf0174da3f27ead133623527b63c350a66149650a2806fa64a231feea50"
+    }
+  ],
+  "raw_bytes": 2265041,
+  "raw_files": 92,
+  "schema": "v05-paired-coverage-transport-1",
+  "source_commit": "22d7aba1af0e55d58b6414cd55fe1c1ea1cd2b0d"
+}
