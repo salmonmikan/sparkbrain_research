@@ -1,14 +1,14 @@
 {
   "schema_version": 2,
-  "generation_id": "STEWARD-20261001T134547+0900-G38",
-  "produced_at": "2026-10-01T13:45:47+09:00",
+  "generation_id": "STEWARD-20261001T195424+0900-G39",
+  "produced_at": "2026-10-01T19:54:24+09:00",
   "mode": "REPOSITORY_STEWARD",
-  "history": "reports/repository_steward/history/2026-10-01/1345.md",
+  "history": "reports/repository_steward/history/2026-10-01/1954.md",
   "main": "18ff183983a2657d7199a708e4d3398550d7740c",
   "role_resolution": {
-    "actual_start": "2026-10-01T13:45:47+09:00",
-    "resolved_slot": "13:50 JST",
-    "resolution_source": "EARLY_GRACE",
+    "actual_start": "2026-10-01T19:54:24+09:00",
+    "resolved_slot": "19:50 JST",
+    "resolution_source": "PREVIOUS_CANONICAL_SLOT",
     "selected_role": "REPOSITORY_STEWARD"
   },
   "directive_index": {
@@ -20,36 +20,36 @@
   "prompt_local_user_directive": {
     "work_task_id": "6abdbad842c881918e1247a8b4592b26",
     "work_exception_enabled": true,
+    "work_exception_last_run": "2026-10-01T19:04:14+09:00",
     "standard_recovery_task_id": "6abd34233b188191adc5c7e6c6942d93",
     "standard_recovery_enabled": false,
     "conflict_status": "RESOLVED_BY_LATER_NARROWER_USER_AUTHORITY"
   },
   "p0_incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
   "p0_status": "OPEN",
-  "p0_classification": "INTERMITTENT_PRE_GITHUB_MUTATION_REFUSALS_WITH_MULTIPLE_RECOVERIES_ROOT_CAUSE_UNKNOWN",
+  "p0_classification": "INTERMITTENT_PRE_GITHUB_MUTATION_REFUSALS_WITH_RECOVERIES_PLUS_R178_TRIGGER_OR_ENQUEUE_NOT_OBSERVED",
   "control": {
-    "durable_generation": "R147",
-    "head": "32f113b684daf4d213fe959a68372f9077945794",
-    "append_only_generation": "R147",
-    "latest_generation": "R147",
-    "state_generation": "R147",
+    "durable_generation": "R152",
+    "head": "8e888eb7300766b9b0d2fb9c848b5730c416dbce",
+    "append_only_generation": "R152",
+    "latest_generation": "R152",
+    "state_generation": "R152",
     "pointer_debt": false
   },
   "main_orchestrator": {
-    "durable_generation": "R218",
-    "head": "fdd45bee076f50420e9060f4388a9466acfc4e91",
-    "latest_generation": "R218",
+    "durable_generation": "R221",
+    "head": "1817d0b2d63617cce892733cc8ef29eb3199a804",
+    "latest_generation": "R219",
     "state_generation": "R215",
     "lease_generation": "R215",
     "pointer_debt": true,
     "pr_number": 164,
     "pr_open": true,
-    "pr_head": "9f197003ee936f68de55a1121244ab7bfdee08d1",
-    "pr_mergeable": false,
-    "pr_mergeable_state": "dirty",
-    "conflict_reconciliation_attempts": 5,
-    "conflict_reconciliation_result": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL_5_OF_5",
-    "merge_performed": false
+    "pr_head": "16e5b3fc48edea770f93f119f6c9a63ba7c1f301",
+    "pr_mergeable": true,
+    "pr_mergeable_state": "clean",
+    "merge_performed": false,
+    "disposition": "HOLD_CLEAN_HEAD_WAIT_DURABLE_ANALYST_R178"
   },
   "analyst": {
     "durable_generation": "R177",
@@ -57,6 +57,12 @@
     "persistence_complete": true,
     "receipt": "EA-R177-20261001T115855JST",
     "workflow_run": 36808871606,
+    "pending_request": "EA-R178-20261001T170142JST",
+    "pending_request_commit": "6aa74180364ecae5acca90ff33140017d34249b6",
+    "pending_request_runs": 0,
+    "pending_request_check_suites": 0,
+    "pending_failure_layer": "WORKFLOW_TRIGGER_OR_ENQUEUE_NOT_OBSERVED_BEFORE_WORKFLOW_EXECUTION",
+    "target_advanced": false,
     "effect_gate_fresh_reconciliation": false,
     "sb003_state": "ALLOCATED_CONDITIONAL_INACTIVE"
   },
@@ -67,7 +73,7 @@
     "classification": "WELL_CALIBRATED"
   },
   "external_science": {
-    "head": "649c8ee99446343d564882b29f573db2925f8b1a",
+    "head": "9c9f0b4a2fece6c57d4679347b649c0e1a2db7a4",
     "literature": {
       "durable_generation": "R55",
       "latest_generation": "R55",
@@ -75,11 +81,11 @@
       "pointer_debt": true
     },
     "theory": {
-      "durable_generation": "R30",
-      "latest_generation": "R30",
-      "state_generation": "R30",
+      "durable_generation": "R31",
+      "latest_generation": "R31",
+      "state_generation": "R31",
       "pointer_debt": false,
-      "status": "INTEGRATION_DESIGN_PROPOSAL"
+      "status": "NON_EVIDENTIARY_NONCANONICAL_INTEGRATION_DESIGN_PROPOSAL"
     },
     "audit": {
       "generation": "R15",
@@ -87,18 +93,20 @@
     }
   },
   "m1_002": {
-    "head": "9f197003ee936f68de55a1121244ab7bfdee08d1",
+    "head": "16e5b3fc48edea770f93f119f6c9a63ba7c1f301",
     "main": "18ff183983a2657d7199a708e4d3398550d7740c",
-    "ahead_by": 2,
-    "behind_by": 1,
+    "ahead_by": 3,
+    "behind_by": 0,
     "pr_number": 164,
     "pr_open": true,
-    "pr_mergeable": false,
-    "pr_mergeable_state": "dirty",
+    "pr_mergeable": true,
+    "pr_mergeable_state": "clean",
     "known_acceptance_defects_addressed": 2,
-    "repair_ci_run": 36805429022,
-    "repair_ci": "success",
-    "disposition": "HOLD_DIRTY_HEAD_CONFLICT_ONLY_RECONCILIATION_THEN_EXACT_HEAD_CI_AND_FRESH_ANALYST_RECONCILIATION",
+    "exact_head_ci_run": 36817710419,
+    "exact_head_ci": "success",
+    "analyst_durable_generation": "R177",
+    "analyst_r178_persistence_complete": false,
+    "disposition": "HOLD_CLEAN_HEAD_WAIT_DURABLE_ANALYST_R178",
     "scientific_credit": 0
   },
   "fly0": {
@@ -115,16 +123,28 @@
       "disposition": "OPTIONAL_PREAUTHORIZED_BOUNDED_LOCAL_ACID_COMPARATOR_NO_DIRECT_HANDOFF"
     },
     "effect_receipt_frontier_gate": {
-      "exact_head": "74536fb9e3063c48d68080e392121175037e3215",
-      "focused_test_blob": "0ccbdc0ee63d57c02416c15a04a3cb2dd2c53d23",
-      "recovery_change": "RUFF_ONLY_IMPORT_FORMATTING",
-      "ci_run": 36812964770,
+      "exact_head": "979baf0edcbc247d60cbb3092022bbb5d3dac65f",
+      "focused_test_blob": "fd3018fa239ae863aea5091abf1793264328025f",
+      "ci_run": 36831706771,
       "ci": "success",
       "python_311_all_steps_green": true,
       "python_313_all_steps_green": true,
       "analyst_exact_head_reconciliation": false,
       "system_build_handoff": false,
       "disposition": "ENGINEERING_GREEN_EXACT_HEAD_NON_EVIDENTIARY_PENDING_FRESH_ANALYST_RECONCILIATION_NO_HANDOFF",
+      "scientific_credit": 0
+    },
+    "durable_reconciliation_inbox": {
+      "implementation_commit": "8c571c405127b5adb89a481e7500dfafc51acaeb",
+      "exact_green_head": "1d2c5edc7db894827108ab3a3ae325dac2da41b4",
+      "report_commit": "1ac3ccbf3d160112c03813a6eb81486b346dc7ae",
+      "focused_test_blob": "0056e912a2a58ae2b5814259aca09041685d8a47",
+      "ci_run": 36839614462,
+      "report_ci_run": 36840139426,
+      "ci": "success",
+      "analyst_exact_head_reconciliation": false,
+      "system_build_handoff": false,
+      "disposition": "FORGE_INTERESTING_ENGINEERING_GREEN_NON_EVIDENTIARY_NONCANONICAL_NO_HANDOFF",
       "scientific_credit": 0
     }
   },
@@ -153,13 +173,14 @@
     "annotated_tag_objects": 5,
     "lightweight_h7_tags": 4,
     "authoritative_tag_namespace_rulesets": 0,
-    "full_exact_freeze_map_verification_generation": "G38"
+    "full_exact_freeze_map_verification_generation": "G39"
   },
   "scheduler_fleet": {
     "managed_enabled": 9,
     "standard_enabled": 8,
     "authorized_work_exception_enabled": 1,
     "work_exception_task_id": "6abdbad842c881918e1247a8b4592b26",
+    "work_exception_last_run": "2026-10-01T19:04:14+09:00",
     "original_standard_recovery_task_id": "6abd34233b188191adc5c7e6c6942d93",
     "original_standard_recovery_enabled": false,
     "scheduler_changed": false
@@ -182,7 +203,7 @@
     "successful_attempt": 1,
     "prior_failures": [],
     "force_push": false,
-    "head_before": "0436f456ae710346e878e1dd2df0f454c5dc3400",
+    "head_before": "9ddb9130dc08444fd31b52727c174a3c8d483988",
     "readback_required": true
   }
 }
