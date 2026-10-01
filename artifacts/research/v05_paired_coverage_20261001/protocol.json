@@ -1,0 +1,459 @@
+{
+  "arm_order": [
+    "single",
+    "paired_4ms",
+    "spaced_40ms"
+  ],
+  "arms": [
+    {
+      "arm": "single",
+      "episodes": [
+        {
+          "episode_id": "paired-coverage-20261001-single-01",
+          "pulses": [
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 8.0
+            }
+          ]
+        },
+        {
+          "episode_id": "paired-coverage-20261001-single-02",
+          "pulses": [
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 208.0
+            }
+          ]
+        },
+        {
+          "episode_id": "paired-coverage-20261001-single-03",
+          "pulses": [
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 408.0
+            }
+          ]
+        }
+      ],
+      "target": false
+    },
+    {
+      "arm": "paired_4ms",
+      "episodes": [
+        {
+          "episode_id": "paired-coverage-20261001-paired_4ms-01",
+          "pulses": [
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 8.0
+            },
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 12.0
+            }
+          ]
+        },
+        {
+          "episode_id": "paired-coverage-20261001-paired_4ms-02",
+          "pulses": [
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 208.0
+            },
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 212.0
+            }
+          ]
+        },
+        {
+          "episode_id": "paired-coverage-20261001-paired_4ms-03",
+          "pulses": [
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 408.0
+            },
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 412.0
+            }
+          ]
+        }
+      ],
+      "target": true
+    },
+    {
+      "arm": "spaced_40ms",
+      "episodes": [
+        {
+          "episode_id": "paired-coverage-20261001-spaced_40ms-01",
+          "pulses": [
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 8.0
+            },
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 48.0
+            }
+          ]
+        },
+        {
+          "episode_id": "paired-coverage-20261001-spaced_40ms-02",
+          "pulses": [
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 208.0
+            },
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 248.0
+            }
+          ]
+        },
+        {
+          "episode_id": "paired-coverage-20261001-spaced_40ms-03",
+          "pulses": [
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 408.0
+            },
+            {
+              "channel": "Q",
+              "location": null,
+              "magnitude": 1.2,
+              "metadata": {},
+              "novelty": 0.0,
+              "polarity": 1,
+              "prediction_error": 0.0,
+              "source_id": "paired-coverage-probe",
+              "time_ms": 448.0
+            }
+          ]
+        }
+      ],
+      "target": false
+    }
+  ],
+  "classification": "EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY",
+  "configuration": {
+    "action": {
+      "actions": [
+        "action-0",
+        "action-1",
+        "withhold"
+      ],
+      "exploration_visits": 6,
+      "learning_rate": 0.3
+    },
+    "assembly": {
+      "immature_stale_episodes": 2,
+      "mature_episodes": 3,
+      "max_candidates": 256,
+      "similarity_threshold": 0.66,
+      "stale_after_ms": 50000.0
+    },
+    "base": {
+      "enable_expectations": false,
+      "enable_plasticity": false,
+      "height": 8,
+      "ignition_threshold": 4.0,
+      "max_cascade_gap_ms": 6.0,
+      "receptor_rows": 1,
+      "settle_ms": 32.0,
+      "topology_seed": 920041,
+      "width": 8
+    },
+    "base_plasticity": {
+      "delay_learning_rate": 0.02,
+      "depression_ratio": 0.75,
+      "learning_rate": 0.012,
+      "max_delay_ms": 30.0,
+      "max_weight": 1.5,
+      "min_delay_ms": 0.5,
+      "min_weight": -1.5,
+      "reward_decay": 0.85,
+      "tau_minus_ms": 24.0,
+      "tau_plus_ms": 18.0
+    },
+    "brain": {
+      "enable_action": false,
+      "enable_assembly": true,
+      "enable_delay_learning": true,
+      "enable_homeostasis": true,
+      "enable_prediction": false,
+      "enable_receptor_bank": true,
+      "enable_reward_modulation": false,
+      "enable_weight_learning": true,
+      "height": 8,
+      "min_pattern_spikes": 2,
+      "pattern_temporal_bin_ms": 0.25,
+      "receptor_rows": 1,
+      "settle_ms": 32.0,
+      "topology_seed": 920041,
+      "width": 8
+    },
+    "burst": {
+      "min_spikes": 4,
+      "min_units": 3,
+      "window_ms": 8.0
+    },
+    "cascade": {
+      "max_gap_ms": 6.0,
+      "min_spikes": 2,
+      "temporal_bin_ms": 2.0
+    },
+    "field": {
+      "adaptation_increment": 0.16,
+      "adaptation_tau_ms": 90.0,
+      "input_gain": 1.35,
+      "max_events_per_run": 120000,
+      "max_sources_per_unit": 16,
+      "max_spikes_per_run": 20000,
+      "membrane_tau_ms": 18.0,
+      "novelty_gain": 0.2,
+      "prediction_error_gain": 0.34,
+      "receptor_fanout": 2,
+      "refractory_ms": 3.0,
+      "reset_potential": 0.0
+    },
+    "homeostasis": {
+      "dead_windows_before_flag": 6,
+      "learning_rate": 0.004,
+      "max_threshold": 2.8,
+      "min_threshold": 0.35,
+      "rate_decay": 0.88,
+      "runaway_spikes_per_window": 800,
+      "target_spikes_per_window": 0.35
+    },
+    "ignition": {
+      "diversity_weight": 1.0,
+      "min_spikes": 4,
+      "min_units": 3,
+      "novelty_weight": 0.55,
+      "prediction_error_weight": 0.9,
+      "recurrence_weight": 0.8,
+      "size_weight": 1.25,
+      "spread_weight": 0.25,
+      "threshold": 4.0
+    },
+    "plasticity": {
+      "delay_learning_rate": 0.004,
+      "depression_ratio": 0.75,
+      "eligibility_decay": 0.9,
+      "enable_delay_learning": true,
+      "enable_weight_learning": true,
+      "learning_rate": 0.001,
+      "max_delay_ms": 30.0,
+      "max_updates_per_step": 2000,
+      "max_weight": 1.4,
+      "min_delay_ms": 0.5,
+      "min_weight": -1.4,
+      "tau_minus_ms": 24.0,
+      "tau_plus_ms": 18.0
+    },
+    "receptor": {
+      "derivative_gain": 0.42,
+      "direct_gain": 0.95,
+      "emission_threshold": 0.08,
+      "fast_tau_ms": 5.0,
+      "gain_tau_ms": 180.0,
+      "max_gain": 2.4,
+      "medium_tau_ms": 22.0,
+      "min_gain": 1.0,
+      "novelty_gain": 0.28,
+      "output_cap": 2.0,
+      "prediction_error_gain": 0.45,
+      "slow_tau_ms": 120.0,
+      "target_abs_input": 1.2
+    }
+  },
+  "decision": {
+    "exception_or_resource_or_invariant": "stop immediately; preserve partial raw data; do not retry",
+    "target_missing": "coverage_blocked; no additional episodes or control substitution",
+    "target_present_control_surprise": "target_coverage_present; expected timing contrast unsupported",
+    "target_present_controls_expected": "target_coverage_present; expected descriptive contrast present"
+  },
+  "diagnostic_id": "v05-paired-coverage-20261001",
+  "execution_requires": "separate exact runner-source freeze and independent pre-execution review",
+  "expected_control_contrast": "single and spaced have zero internal patterns/candidates/activations in all three episodes; record separately from target coverage",
+  "first_episode_gate": "No mature candidate or activation; pending_activation is null",
+  "forbidden": [
+    "No extra episodes, alternate stimuli/seeds or external parameter overrides",
+    "No runtime edits; no M1 edits or execution; no receipt/future outcome learning, intervention/suppression or comparator scoring",
+    "No rerun or import-and-execute of PR176 probe; no ownership abort/commit tests in this diagnostic",
+    "No historical acceptance or scientific-claim promotion",
+    "No selecting a successful control as a replacement target"
+  ],
+  "limits": {
+    "address_space_bytes": 536870912,
+    "artifact_bytes": 33554432,
+    "cpu_seconds": 60,
+    "fresh_brains": 3,
+    "native_loads": 0,
+    "outcome_calls": 0,
+    "process_episode_attempts": 9,
+    "raw_pulses": 15,
+    "raw_pulses_per_call": 2,
+    "wall_seconds": 120,
+    "whole_brain_copies": 0
+  },
+  "preservation": [
+    "Write source/config/input manifest before model imports",
+    "After each attempted call preserve raw result or exception before gate/summary",
+    "Save initial and per-call native value view, explicitly not complete ownership or resumable snapshot",
+    "Save all candidate/prototype/activation values, actual identity links to retained result indices, receptor routes/traces, spikes/cascades/patterns, and thresholds/edges",
+    "Save raw-before-summary SHA256 manifest, counts, versions, source hashes and terminal status"
+  ],
+  "prior_result": "PR176 coverage_blocked remains unchanged",
+  "process_episode_flags": {
+    "explore_action": false,
+    "learn_assembly": true,
+    "learn_field": true,
+    "metadata": {}
+  },
+  "schema": "v05-paired-coverage-protocol-1",
+  "scientific_credit": 0,
+  "source_files_sha256": {
+    "src/sparkbrain/__init__.py": "c3d4ccc1ed07e0984e4cd1e37bcd88c6f6bb692d76ebda41c14046f0e2be8b32",
+    "src/sparkbrain/v04/__init__.py": "662b361d7df0fbdc4cdc2cc08a90feb0ad78386a3247a515e02e920bf1fde074",
+    "src/sparkbrain/v04/action.py": "abe5148050dd11e11358716f43842409bac49c960a9704cca253f90583e992ff",
+    "src/sparkbrain/v04/brain.py": "e731ea237eb7cdd6826d04a030f46770b5e2606c8f9e56aaaf810f7d6e7d6593",
+    "src/sparkbrain/v04/contracts.py": "551490fa3cb25bd2723ee5e02d1b2a10a58a992b759c3ff953d754847e18439b",
+    "src/sparkbrain/v04/dynamics.py": "840b2fcfa318c4a0cfec2e7525ffaf8a768f610cb13bb8ed00fc704aaad87c75",
+    "src/sparkbrain/v04/evaluation.py": "adc2b0113976b2e8a281063506866b61940177ca4bb7bdda7aabac95e700647c",
+    "src/sparkbrain/v04/field.py": "6f36f27d84bf6721fd62f21cd6c06a9d550d88aafd8ed4051dc5b14a4014a97c",
+    "src/sparkbrain/v04/plasticity.py": "faad5033cd36236965d48ebd5e43ae9beb31f9488a10d3b11cce7b47f7646fc7",
+    "src/sparkbrain/v04/topology.py": "6194e4094a1e6ee0f4c09041720ca35a8b751a0e5fb7a13d49a2d8220a73906c",
+    "src/sparkbrain/v04/transduction.py": "198d2a2818b06c49be9c212793457a9ef3012e032893c06127d44404a33c9298",
+    "src/sparkbrain/v04/visualizer.py": "105d3cb0f184402851544f4e29d14dd91484d8607a977ee21d9cdcc4bea719bf",
+    "src/sparkbrain/v04/worlds.py": "d5da295e691ee8f972ebe61a4e73beab65b6148a75877118edc765d54bb90ac6",
+    "src/sparkbrain/v05/__init__.py": "4265bc98707e75e243e663f52efd3bc671cd4db94086d60ae8f5572c1adb5512",
+    "src/sparkbrain/v05/action.py": "ce75b7508301bf477a47b306e9f2909fe1a2f12c43c9aa36646fd941286383a6",
+    "src/sparkbrain/v05/assemblies.py": "f2dc1b7bbe71fb70ea27bb661111dca2d68ebfeb3e6044e4ec221120d7d12394",
+    "src/sparkbrain/v05/brain.py": "d11680e60ebd7d3301a81a1e0e6ffddf39f2d1707843892c241b0865734439c9",
+    "src/sparkbrain/v05/checkpoint.py": "02176243f907ce468f7db6c275a783d198e1b35d2690030df50c9dec6e8f1984",
+    "src/sparkbrain/v05/contracts.py": "f363728e9d574a5274cb6b20fcbd82d6d183cfad695718260b94f78b588e17c8",
+    "src/sparkbrain/v05/evaluation.py": "f5b0b5db558d649f14d9141fa0ff10a453ce4ee21345be49605a0921e89c4a84",
+    "src/sparkbrain/v05/homeostasis.py": "0026eeb202a5720263c094474615c907285f7cd06181e67652a2d04e9d68dd91",
+    "src/sparkbrain/v05/plasticity.py": "3729e6f9556382988441116240ca0fa36897048b56e7e789a7ff453b444c3429",
+    "src/sparkbrain/v05/prediction.py": "dcd8f45ba4cd1a0478685bf7f8f9764aeed135820f29d5b3381111631345e169",
+    "src/sparkbrain/v05/receptors.py": "4071d0d5d2f0ab487e3324528053997ecbdeb65953bfa211312d0da918c75942",
+    "src/sparkbrain/v05/topology.py": "8e4347700e36a042bf4dda02cab769d513c02764e86348e5996994a7fa904182",
+    "src/sparkbrain/v05/visualizer.py": "feee2f29d906146fb1a2145dfe607ba2c84388c03d8b92cb72279bb1f5562b9e",
+    "src/sparkbrain/v05/worlds.py": "cde958aee23279c29d67473e8e1b5b798bcbb4d4b1574c89654b38774be6df43"
+  },
+  "source_pin": "a5b231db84fb7017b5df5e7653739c65bb4175bb",
+  "status": "PROSPECTIVE_SOURCE_ONLY",
+  "target_endpoint_gate": [
+    "After exactly third target episode: actual mature unsuppressed non-null pending_activation",
+    "Activation assembly_id resolves to a candidate with exactly all three target episode IDs",
+    "Candidate prototype is identical to a pattern in retained results, with saved indices",
+    "Pending activation is identical to an activation in retained results, with saved indices"
+  ],
+  "topology_arguments": {
+    "receptor_count": 16,
+    "reservoir_height": 6,
+    "reservoir_width": 8,
+    "seed": 920041
+  }
+}
