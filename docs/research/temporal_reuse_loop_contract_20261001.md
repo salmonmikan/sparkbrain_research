@@ -98,7 +98,8 @@ Each cycle receives exactly these raw pulses, all with constant source
 `probe-input`, polarity +1, novelty 0, prediction_error 0, and empty metadata:
 
 - cue: either A,F,C or C,F,A at cycle-relative times 8,13,15 ms, magnitude 1.18
-- two distractors: channels sampled from H,I,J,K,L,M, magnitude 0.025, times uniform
+- two distractors: channels sampled independently with replacement from H,I,J,K,L,M,
+  magnitude 0.025, times uniform
   on [0,36] ms; sampling does not depend on cue/target
 - common query: Q at 40 ms, magnitude 1.18
 
@@ -232,7 +233,8 @@ No target or match means `intervention_not_identifiable`, not zero impairment or
 Do not relax the criteria, replace a missing control with an inactive unit, or add training.
 
 At the prefix checkpoint, evaluate 8 independent paired A/B presentations with new
-distractors/jitter. Each fork begins from the identical checkpoint **before the first cue**,
+distractors/jitter. Each paired fork begins from the identical checkpoint **before the first cue**, with
+identical occurrence ID and presentation time across its A/B/removed counterparts,
 uses cycle_start=12,800 ms (not sequentially increasing probe times), receives one
 presentation, and stops before outcome learning. All probe forks set
 `learn_assembly=False`, `learn_field=False`, and `explore_action=False`; pulse/receptor/
@@ -243,6 +245,15 @@ differ between interventions:
 - targeted: suppress the selected target assembly ID through the existing public API
 - matched non-target: suppress the chosen B assembly ID
 - observer-only: remove no state; omit the diagnostic display row only
+
+The exact maximum matrix per seed is: for each S/F arm, 8 pairs × 2 intact cues ×
+4 intervention states = 64 forks, plus 8 pairs × 2 identical removed-cue sham inputs
+= 16 forks; for each Q/H/R arm, 8 pairs × 2 intact cues × sham plus 8 pairs × 2 identical
+removed-cue sham inputs = 32 forks. Across two seeds this is at most 512 one-query forks.
+If an S/F target/match is unavailable, skip only targeted and matched forks, record all
+missing slots explicitly, and retain sham/observer/input-control forks; the causal gate
+cannot pass. Each fork has a 10 CPU-second / 15 wall-second limit including checkpoint
+load, prediction, serialization and measurement. No post-fork outcome update is performed.
 
 This measures assembly-path/readout causality, not physical-unit specificity.
 Require the observer-only prediction/state transition to equal sham exactly.
@@ -269,14 +280,16 @@ Report A-target impairment, B-collateral impairment, and targeted-minus-matched 
 A useful further integration proposal requires, descriptively in **both** seeds:
 
 - return and interleaved S Brier are each at least 0.02 lower than both H and R
-- first-return S p1 assigns at least 0.75 probability to the correct outcome before receipt
+- first-return S confidence is 1-p1(A)>=0.75 before its outcome receipt
 - mean A targeted-minus-matched impairment >=0.05, mean absolute B collateral <=0.02
-- at least 6/8 intact swapped pairs change p1 toward the corresponding correct outcome
+- at least 6/8 intact sham swapped pairs have p1(B)>p1(A)
 - identical removed-cue prefixes and observer-only forks produce identical outputs
 - every execution/information/resource/replay guard passes
 
 These thresholds are engineering decision thresholds only, not scientific evidence grades.
-If raw retained reuse matches/beats S, report conventional reuse suffices here.
+If raw retained reuse matches/beats S, report this conventional reuse model suffices here.
+R's fixed raster and 0.25 threshold can be sensitive to suffix jitter; an S advantage is
+relative to these specified alternatives, not conventional temporal-memory methods generally.
 If F matches/beats S, no benefit of weight/delay learning is shown even if an assembly-path
 effect exists. If S cannot use the common query, report that interface gap. If interventions
 are unmatched, global, ineffective, or harm B similarly, no cue-specific causal conclusion.
