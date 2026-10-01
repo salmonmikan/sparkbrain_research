@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from dataclasses import replace
+
 import pytest
 
 from forge_prototypes.fly0_ascending_observed_state import AscendingObservedStateBridge
@@ -165,4 +167,22 @@ def test_frontier_advanced_without_binding_cannot_be_bound_later(tmp_path):
     assert rejected.state_advanced is False
     assert rejected.binding is None
     assert frontier.checkpoint() == before
+    effects.close()
+
+
+def test_tampered_effect_is_rejected_without_frontier_advance(tmp_path):
+    bridge, inner, provenance, frontier, effects, gate = _fixture(tmp_path)
+    item = _issue(bridge, provenance, effects, 0, 1, "tampered")
+    effect = _commit(effects, item)
+    tampered = replace(effect, observed_token=f"{effect.observed_token}-tampered")
+    before_frontier = frontier.checkpoint()
+    before_inner = inner.checkpoint()
+
+    rejected = _submit(gate, bridge, item, tampered)
+
+    assert rejected.status == "EFFECT_JOIN_REJECTED"
+    assert rejected.state_advanced is False
+    assert rejected.binding is None
+    assert frontier.checkpoint() == before_frontier
+    assert inner.checkpoint() == before_inner
     effects.close()
