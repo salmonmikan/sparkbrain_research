@@ -1,0 +1,158 @@
+{
+  "case_count": 22,
+  "cases": [
+    {
+      "expected": "A enters both consumers; act_alpha",
+      "id": "C01",
+      "name": "accept_a"
+    },
+    {
+      "expected": "B enters both consumers; act_beta",
+      "id": "C02",
+      "name": "accept_b"
+    },
+    {
+      "expected": "Identical sentinel and input yield identical action and owned state",
+      "id": "C03",
+      "name": "sham"
+    },
+    {
+      "expected": "Only representation changes A to B; action changes alpha to beta",
+      "id": "C04",
+      "name": "both_consumer_swap"
+    },
+    {
+      "expected": "Swapped sensory representation with unchanged routing abstains",
+      "id": "C05",
+      "name": "prediction_only_swap"
+    },
+    {
+      "expected": "Swapped routing representation with unchanged sensory copy abstains",
+      "id": "C06",
+      "name": "route_only_swap"
+    },
+    {
+      "expected": "Zero representation abstains",
+      "id": "C07",
+      "name": "zero_context"
+    },
+    {
+      "expected": "Configured context/route limits 3/3 accept one original plus two added",
+      "id": "C08",
+      "name": "reduced_capacity_accept"
+    },
+    {
+      "expected": "Route ceiling 4 with three originals rejects before backend advance",
+      "id": "C09",
+      "name": "capacity_precheck"
+    },
+    {
+      "expected": "Configured total ceiling 2 rejects before backend advance",
+      "id": "C10",
+      "name": "insufficient_capacity"
+    },
+    {
+      "expected": "Renamed occurrence and receipt IDs preserve fake outputs and numeric projection",
+      "id": "C11",
+      "name": "identity_rename"
+    },
+    {
+      "expected": "Later receipt credits exact earlier adapted context without another extraction",
+      "id": "C12",
+      "name": "pending_credit"
+    },
+    {
+      "expected": "Identical committed receipt returns previous revision with no state change",
+      "id": "C13",
+      "name": "duplicate_receipt"
+    },
+    {
+      "expected": "Changed outcome under same receipt ID rejects with no state change",
+      "id": "C14",
+      "name": "conflicting_receipt"
+    },
+    {
+      "expected": "Wrong pending event binding rejects with no state change",
+      "id": "C15",
+      "name": "wrong_event_receipt"
+    },
+    {
+      "expected": "Future pulse and delivery at decision time reject with no state change",
+      "id": "C16",
+      "name": "clock_boundaries"
+    },
+    {
+      "expected": "Fault after backend advance, consumer observe, consumer feedback, or ledger commit restores full owned state",
+      "id": "C17",
+      "name": "complete_fake_rollback"
+    },
+    {
+      "expected": "Calling actual pure renderer changes no outputs, state or counters",
+      "id": "C18",
+      "name": "observer_noninterference"
+    },
+    {
+      "expected": "NaN or wrong-width representation rejects and restores backend advance",
+      "id": "C19",
+      "name": "invalid_context"
+    },
+    {
+      "expected": "Pre-existing temporal_0 sensory channel rejects before backend advance",
+      "id": "C20",
+      "name": "reserved_channel"
+    },
+    {
+      "expected": "New original channel after a committed cycle rejects before backend advance",
+      "id": "C21",
+      "name": "channel_schema"
+    },
+    {
+      "expected": "Second observation while pending rejects without advancing either component",
+      "id": "C22",
+      "name": "single_pending"
+    }
+  ],
+  "default_window": {
+    "decision_ms": 72,
+    "delivered_ms": 80,
+    "input_cutoff_ms": 40,
+    "original_route": [
+      0.0
+    ],
+    "original_sensory": [
+      [
+        "signal",
+        0.0
+      ]
+    ],
+    "pulses": [
+      [
+        40,
+        "Q",
+        1.0
+      ]
+    ],
+    "start_ms": 0
+  },
+  "max_coordinator_fixtures": 64,
+  "max_observations_per_fixture": 4,
+  "real_runtime_execution": false,
+  "schema": "assembly-m1-contract-sentinel-cases-1",
+  "scientific_credit": 0,
+  "sentinels": {
+    "A": [
+      1.0,
+      0.0
+    ],
+    "B": [
+      0.0,
+      1.0
+    ],
+    "zero": [
+      0.0,
+      0.0
+    ]
+  },
+  "source_main": "9073a563dea936c6f76610387503f9583c0d3966",
+  "status": "FROZEN_BEFORE_TEST_EXECUTION"
+}

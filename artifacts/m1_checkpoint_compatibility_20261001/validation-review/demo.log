@@ -1,0 +1,9 @@
+t=1.01 event=fur            truth=cat  belief=None top=0.698
+t=2.02 event=meow           truth=cat  belief=cat  top=1.457
+t=3.02 event=bark           truth=cat  belief=cat  top=1.108
+t=4.01 event=motionless     truth=toy  belief=cat  top=0.691
+t=5.02 event=plastic_seam   truth=toy  belief=toy  top=1.619
+t=6.01 event=warm_body      truth=cat  belief=toy  top=0.851
+t=7.03 event=purr           truth=cat  belief=cat  top=1.372
+
+Visualizer: /workspace/shared/m1-checkpoint-compatibility-review-validation-20261001/demo/visualizer.html

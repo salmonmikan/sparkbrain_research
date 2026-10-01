@@ -1217,3 +1217,9 @@ contract correction only.
 - No production loader, scientific claim grade, formal identity, scheduler/authority
   state, PROJECT_STATUS or PR #164 scope was changed. Caller-selected deployment
   config/adoption policy and any strict-integer schema policy remain separate work.
+
+- Review follow-up (2026-10-01): the data-only deterministic packager now reproduces
+  the retained archive, transport and anchors byte-for-byte. A narrow EOF
+  PROJECT_STATUS pointer records engineering completion with scientific credit 0;
+  the earlier unchanged-status statement describes the initial publication. All
+  preceding ledger/status bytes and the original execution evidence are preserved.

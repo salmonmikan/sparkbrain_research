@@ -309,6 +309,37 @@ stage and raw-to-summary count, and rejects rewritten self-descriptions or optim
 Python that would disable assertions. The tests include transport replacement,
 missing provenance, inconsistent records and a runtime-import blocker.
 
+### Deterministic data-only packaging
+
+The retained bytes can be repackaged without model imports, fixture construction
+or checkpoint loading. The packager validates the complete raw inventory, checks
+source/schema manifests and runner/protocol/input bytes against the exact retained
+Git execution commit, then recreates the archive, split transport and anchors.
+It uses canonical metadata and component-wise archive order from the original
+packaging. A checkout with the frozen Git objects is required (`fetch-depth: 0` in
+CI); the standalone verifier above has no Git-history dependency.
+
+Use a new absent output directory with the committed evidence:
+
+```bash
+python scripts/package_m1_checkpoint_compatibility_artifacts.py \
+  --published artifacts/m1_checkpoint_compatibility_20261001 \
+  --output /absolute/absent/repacked
+cmp /absolute/absent/repacked/run.parts/manifest.json \
+  artifacts/m1_checkpoint_compatibility_20261001/run.parts/manifest.json
+cmp /absolute/absent/repacked/run.parts/part-000.b64 \
+  artifacts/m1_checkpoint_compatibility_20261001/run.parts/part-000.b64
+cmp /absolute/absent/repacked/anchors.json \
+  protocols/m1_checkpoint_compatibility_artifact_anchors_v1.json
+python scripts/verify_m1_checkpoint_compatibility_artifacts.py \
+  --artifacts /absolute/absent/repacked
+```
+
+Alternatively replace `--published ...` with `--raw /absolute/existing/raw` to
+package the original retained directory. Both paths reproduce the same 34,500-byte
+archive and anchor bytes. This is lossless data transformation, not another run or
+scientific replicate. The tool refuses an existing output and imports no runtime.
+
 The recorded execution command was:
 
 ```bash
@@ -336,7 +367,8 @@ pin and interpreter environment. It does not establish arbitrary version migrati
 all schema aliases, concurrency, crash consistency, hostile-input safety, continual
 learning capability, model superiority, novelty, biological fidelity or energy
 benefit. Existing historical results, #164 ownership, formal identities, claim
-grades, scheduler authority and PROJECT_STATUS are unchanged.
+grades and scheduler authority are unchanged. A narrow PROJECT_STATUS index note
+records only this completed zero-credit engineering result; existing entries are unchanged.
 
 ### Final integration validation
 
@@ -356,3 +388,26 @@ After integrating current main `9073a563dea936c6f76610387503f9583c0d3966`
 These are regression checks separate from the exhausted ten-load, zero-transition
 compatibility matrix. Logs are retained under the artifact's `validation/` directory.
 Final-head remote CI and Codex review are still required before merge.
+
+### Review follow-up validation
+
+The two initial Codex findings were addressed with the deterministic data-only
+packager above and a narrow PROJECT_STATUS completion pointer. All prior ledger
+and status bytes are preserved; the dated ledger clarification records this
+index-only follow-up without changing scientific authority or acceptance. An
+independent review reproduced every archive/transport/anchor byte, found no blocker,
+and verified that PR #164's separate status insertion patch still applies cleanly.
+
+After integrating main `00ef5bac171b3ec05f581a157cccd9528bb71e8f` (PR #175):
+
+- 916 default tests passed, 392 deselected, one existing warning, 120.13 seconds
+- 57 focused checks passed, including ten new data-only packaging checks
+- Ruff, readiness, demo, 40×30 legacy benchmark and bundle validation passed
+- Raw and published-data packaging both reproduce the original archive, manifest,
+  part and anchor bytes; standalone verification of the repackaged transport passes
+- Original source, frozen protocol/inputs, raw outcomes and execution allocation
+  remain unchanged; no checkpoint diagnostic was repeated
+
+Exact commands are above; review-fix regression logs are retained separately under
+`validation-review/`. The original validation logs remain unchanged. Latest-head
+Codex review and CI are still required before merge.
