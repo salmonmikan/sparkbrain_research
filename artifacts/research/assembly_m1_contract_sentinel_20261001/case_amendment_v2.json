@@ -1,0 +1,18 @@
+{
+  "schema": "assembly-m1-contract-sentinel-amendment-2",
+  "status": "FROZEN_BEFORE_AMENDED_TEST_EXECUTION",
+  "original_case_freeze_commit": "7420f176334e5b54ed5f608387d959794db90faf",
+  "original_case_freeze_sha256": "6fec3deccf77888a0a93927c67d60cbb13bedadfb2c153730388cb44b0f81609",
+  "reason": "Source review found outer-tuple validation permits a mutable inner pulse record alias; add strict immutable row-shape rejection before backend advance",
+  "existing_22_expectations_unchanged": true,
+  "total_cases": 23,
+  "max_coordinator_fixtures": 64,
+  "added_case": {
+    "id": "C23",
+    "name": "immutable_record_shapes",
+    "inputs": ["tuple containing list pulse triple", "tuple containing two-item pulse tuple", "tuple containing list sensory pair", "tuple containing one-item sensory tuple"],
+    "expected": "Each malformed or mutable record rejects with ValueError before backend advance; complete owned state remains identical"
+  },
+  "real_runtime_execution": false,
+  "scientific_credit": 0
+}
