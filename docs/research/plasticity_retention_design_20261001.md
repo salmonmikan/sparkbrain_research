@@ -139,9 +139,10 @@ equations 3–5 in the [primary PDF](https://proceedings.mlr.press/v70/zenke17a/
 ## 4. Minimal hypothesis and falsifiers
 
 **H-locality:** conditional on fixed learned delays and live homeostasis, removing
-cross-occurrence eligibility carry improves sustained return prediction relative
-to the prespecified steady-state attenuation control, while retaining functional
-novel-pattern acquisition.
+cross-occurrence eligibility carry improves sustained return prediction over the
+current-carry C arm, while retaining functional novel-pattern acquisition. The
+primary contrast is C versus L; L versus the prespecified attenuation G arm is a
+secondary check, never a substitute for the direct carry-removal comparison.
 
 For an edge active on every call with constant Δ, the carry reaches Δ/(1−ρ)=10Δ.
 Therefore η×(1−ρ)=0.0001 is a prespecified *steady-state attenuation control*.
@@ -171,9 +172,17 @@ not match delay *trajectories*: changed weights can alter spikes and later lag u
 That coupled-system question is a separately justified follow-on, not another hidden
 arm. No proposed outcome would establish that all plasticity or delay learning is bad.
 
-H-locality is not supported if L fails to improve return behavior, if G explains the
-same improvement, if gains are solely wrong-to-abstention conversions, or if L cannot
-preserve novel learning/stationary performance. Even successful novel prediction with
+The prospective primary return margin is fixed here at 0.02 all-row mean Brier:
+Brier(C) − Brier(L) >= 0.02 in each of the two new diagnostic seeds. L must also have
+no fewer correct native decisions and no lower native coverage than C on those
+same return rows. This is a descriptive engineering margin, not a significance
+threshold or a biologically justified constant. The secondary attenuation check
+requires Brier(G) − Brier(L) >= 0.02 in each seed, while retaining the residual gain
+confounding above. If C and L tie, the primary contrast fails even when both beat G.
+
+H-locality is not supported if the primary L-versus-C margin fails, if the secondary
+L-versus-G check fails, if gains are solely wrong-to-abstention conversions, or if L
+cannot preserve novel learning/stationary performance. Even successful novel prediction with
 Fw would show that assembly/readout learning may suffice; active weight changes alone
 would not establish an incremental benefit from field plasticity.
 
@@ -232,14 +241,15 @@ accounting before any execution):
 - Record actual per-edge weight/delay changes, clipping, proposed current Δ versus
   carry contribution, cumulative absolute update mass, spikes, assemblies and count
   updates. Do not substitute `update_count` for parameter learning
-- A return-only win cannot pass. Before execution, freeze numeric improvement and
-  non-inferiority margins for return, stationary, novel acquisition and coverage,
-  plus how ceiling/abstention cases are classified. None is selected in this document
+- A return-only win cannot pass. Preserve the explicit primary L-versus-C and
+  secondary L-versus-G return margins above. Before execution, freeze the remaining
+  stationary/novel non-inferiority and acquisition criteria, plus ceiling/abstention
+  classification; those criteria are not selected in this outline
 - Predefine driver and worker CPU/wall/RSS/output limits, STARTED/no-clobber behavior,
   preserved incomplete rows and a separate result package. Include observer overhead
   and every prefix/fork call. No runtime network dependence or cloud model is needed
 
-The exact seeds, balanced sequence bytes, numeric decision margins, resource caps,
+The exact seeds, balanced sequence bytes, remaining decision margins, resource caps,
 source-checked runner and independent review remain prerequisites. This intentionally
 is a bounded design outline, not an execution-ready preregistration.
 

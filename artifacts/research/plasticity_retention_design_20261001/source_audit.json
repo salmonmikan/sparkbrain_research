@@ -2,6 +2,11 @@
   "blocked_pr173_results_included": false,
   "classification": "SOURCE_ONLY_DESIGN_NON_EVIDENTIARY",
   "created_utc": "2026-10-01",
+  "decision_outline": {
+    "primary": "Brier(C)-Brier(L) >= 0.02 per seed, with no lower native correct count or coverage",
+    "remaining_stationary_novel_criteria_frozen": false,
+    "secondary": "Brier(G)-Brier(L) >= 0.02 per seed; residual gain confounding remains"
+  },
   "execution_ready": false,
   "future_ceiling_only": {
     "ordinary_memory_pairs": 640,
@@ -10,9 +15,10 @@
   },
   "independent_review": {
     "scope": "source and primary literature only",
-    "status": "approved for source-only publication after final readback including PR176 boundary; no execution approval"
+    "status": "approved after final source-only readback, including explicit primary carry contrast; no execution approval"
   },
   "local_checks": {
+    "direct_carry_tie_and_no_improvement_rejected": true,
     "relative_links_valid": true,
     "source_pins_present_in_report": true
   },
@@ -21,14 +27,14 @@
   "pending_before_future_execution": [
     "new exact source/runner/input freeze",
     "fresh seed registration",
-    "numeric decision margins",
+    "remaining stationary/novel decision margins and acquisition criteria",
     "driver and worker resource caps",
     "independent protocol/runner review",
     "explicit bounded execution approval"
   ],
   "publication_base_commit": "a5b231db84fb7017b5df5e7653739c65bb4175bb",
   "report_path": "docs/research/plasticity_retention_design_20261001.md",
-  "report_sha256": "13ec2016cb4967b5f0158b3909dd8efd98a056c0f4662a009f29f986639019ec",
+  "report_sha256": "d3cf80b829e422f17f96685803f0d4a5fad1bd09bb17582084318cec871e9b70",
   "runtime_imports": 0,
   "schema_version": 1,
   "scientific_credit": 0,
