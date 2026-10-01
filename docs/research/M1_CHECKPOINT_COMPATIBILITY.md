@@ -1,5 +1,14 @@
 # M1 checkpoint compatibility and rejection-stage diagnostic
 
+Current result (2026-10-01 UTC): the single frozen ten-case load diagnostic completed
+with zero dynamics transitions. Both valid controls restored exactly, all seven
+invalid schema/config cases rejected, and the outer boolean schema tag was accepted
+and normalized to integer 1 on save-back. This is bounded source-contract behavior,
+not a security vulnerability or general compatibility claim. Full retained results
+and data-only verification instructions follow the historical protocol below.
+
+## Historical prospective protocol and review record
+
 Status: prospective source-only proposal; no fixture construction, checkpoint load
 or dynamics execution has occurred for this diagnostic. Classification:
 EXPLORATORY / NONCANONICAL / NON_EVIDENTIARY, scientific credit 0.
@@ -204,3 +213,146 @@ Thirty-five outcome-independent synthetic tests and Ruff passed before execution
 The reviewer inspected source and hashes only and did not independently run tests,
 construct fixtures, import the runtime or load checkpoints. These checks authorize
 no expansion of the fixed ten-case/zero-transition execution allocation.
+
+## Completed single-run result
+
+Execution source pin: `b76b1af42800871b89cf966718c1a1aeb602e5d6`, tree
+`20c576c438d2fef2d7b589d6b0175b8b72d14c62`. The runner, protocol and input pins
+listed above were committed, remotely read back and independently source-reviewed
+before the first fixture construction. No rerun or reproduction was performed.
+The ten primary load calls consume the entire allocated matrix; no further
+execution is authorized by this protocol.
+
+| Case | Observed result | Rejection or restoration boundary |
+|---|---|---|
+| C01 | Accepted; exact six-file save-back | Retained default cut-7 checkpoint |
+| C02 | Accepted; exact six-file save-back | Full valid nondefault configs preserved, including context_gate 0.25 and minimum_confidence 0.65 |
+| C03 | ValueError | Outer identity, before either child loader |
+| C04 | Accepted | Boolean true treated as version 1; save-back changes only manifest.json to integer 1 |
+| C05 | ValueError | Predictive identity after reference-brain restoration, before predictive pilot construction |
+| C06 | ValueError | Direct schema guard before brain reconstruction |
+| C07 | ValueError | Scope identity after predictive restoration, before scope pilot construction |
+| C08 | ValueError | Compositor identity after both components/compositor exist, before world/session construction |
+| C09 | ValueError | Missing predictive config field after reference-brain restoration, before predictive pilot construction |
+| C10 | ValueError | Router/config disagreement after temporary scope pilot/router construction |
+
+Every rejected case returned no session. Every retained input file matched its
+before/after byte hash, and the original #170 archive/transport remained unchanged.
+These measured boundaries do not prove absence of transient heap/global side
+effects. There is no existing-session replacement API in this test: temporary
+candidate construction must not be called mutation or publication of a live
+incumbent session.
+
+C04 has the same returned state hash as C01. Its save-back is exactly the original
+six-file retained fixture: the sole difference from its mutated input is the outer
+schema tag `true` becoming `1`. This follows the current Python equality guard and
+manifest serialization contract. No arbitrary-class payload, pickle, hostile-input
+attack, production repair or security inference was tested or introduced.
+
+### Counts, resources and retained failures
+
+- Ten integrated loader calls completed: three returned sessions and seven raised
+  the prospectively specified ValueErrors
+- Thirteen `_load_bytes` validation invocations completed: twelve returned and C06
+  rejected early. The raw field named `direct_reconstructions_completed_observed`
+  counts completed validator invocations, including that rejection; it does not
+  mean thirteen successful brain reconstructions
+- One zero-cycle setup save and three accepted-candidate save-backs; zero dynamics
+  transitions, observe/outcome/feedback operations, or retry/reproduction runs
+- Eleven sequential subprocesses; no timeout, capture truncation, observation
+  failure or incomplete row
+- Recorded total duration 3.276620659 seconds; slowest worker 0.342794947 seconds
+- 206 retained files, 1,177,728 bytes including final metadata, below the 32 MiB
+  admission/checkpoint threshold. CPU/address-space limits were configured as
+  frozen; peak RSS was not measured. These timings are provenance, not speed or
+  energy comparisons
+
+The original prospective text remains above for chronology. Its source-only status
+is historical, not the current execution status. The pre-execution review defects
+concerned harness reliability and were corrected before this one run; they did not
+consume or justify another diagnostic matrix. The boolean alias acceptance is a
+retained compatibility boundary, not a failed result that was repaired afterward.
+
+### Independent data audit
+
+An independent standard-library/source-only audit recalculated every mutant byte,
+input hash, saved configuration and journal sequence. It confirmed all ten outcomes
+and their rejection stages, the accepted inspection/state hashes, unchanged source
+transport, 160 tracked runtime/source assets, 15 schema assets, and all eleven
+worker provenance records. It did not import the model, load a checkpoint or rerun
+the matrix. Scientific credit remains 0 and no independent scientific replicate is
+claimed.
+
+### Artifact access and no-model verification
+
+`artifacts/m1_checkpoint_compatibility_20261001/` contains the exact run in ordered
+base64 transport plus manifest, the controller log, the machine verification result
+and regression validation logs. The lossless xz archive is 34,500 bytes, SHA-256:
+
+`ae440c596046867aacc4ef5b72a3b1b1e3bd3bdeef10e6fced37e57030a192d8`
+
+`protocols/m1_checkpoint_compatibility_artifact_anchors_v1.json` binds all 206 raw
+file hashes, the exact archive, and execution provenance outside the transport.
+Its digest is pinned in the verifier. Source manifests were independently checked
+against Git objects at the execution pin before anchoring. This is repository
+integrity binding, not an external authenticity signature.
+
+Run the standard-library verifier without any model import or execution:
+
+```bash
+python scripts/verify_m1_checkpoint_compatibility_artifacts.py
+```
+
+It independently rebuilds mutants in memory, checks every initial/final file,
+configuration, protocol/source/worker binding, completed call journal, rejection
+stage and raw-to-summary count, and rejects rewritten self-descriptions or optimized
+Python that would disable assertions. The tests include transport replacement,
+missing provenance, inconsistent records and a runtime-import blocker.
+
+The recorded execution command was:
+
+```bash
+python scripts/m1_checkpoint_compatibility_diagnostic.py \
+  --source-commit b76b1af42800871b89cf966718c1a1aeb602e5d6 \
+  --output /absolute/absent/output
+```
+
+That command documents the exhausted allocation, not permission for another run.
+Future execution needs a fresh bounded allocation and the appropriate frozen source.
+Current-main regression tests are separate from this diagnostic and do not replay it.
+
+### Operational implication and limits
+
+Completed-cycle recovery can distinguish an invalid stored candidate from a valid
+saved nondefault configuration. The current loader validates nested components at
+different construction stages and restores the saved settings; it does not compare
+them with a caller-selected deployment configuration. A future recovery controller
+should define any expected-config/adoption policy explicitly. Whether schema tags
+should require strict integer types is likewise a separate compatibility-policy
+choice; no production loader change is made here.
+
+The result is limited to these ten trusted synthetic/local-file cases at one source
+pin and interpreter environment. It does not establish arbitrary version migration,
+all schema aliases, concurrency, crash consistency, hostile-input safety, continual
+learning capability, model superiority, novelty, biological fidelity or energy
+benefit. Existing historical results, #164 ownership, formal identities, claim
+grades, scheduler authority and PROJECT_STATUS are unchanged.
+
+### Final integration validation
+
+After integrating current main `9073a563dea936c6f76610387503f9583c0d3966`
+(the merged #169/#170/#174 history, not the unmerged #171 branch):
+
+- 883 default tests passed; 392 scientific/reproduction/external tests deselected;
+  one existing Starlette/httpx deprecation warning; 116.87 seconds
+- 47 focused synthetic/data-only checks passed
+- Repository-wide Ruff, local readiness, standard demo, 40-episode/30-step legacy
+  benchmark, bundle validation and data-only compatibility verification passed
+- Regression outputs used separate scratch destinations; the generated bundle
+  validation manifest was retained separately and the tracked manifest preserved
+- The existing main Results Ledger is an unchanged prefix followed by one new
+  standalone entry; no historical result was overwritten
+
+These are regression checks separate from the exhausted ten-load, zero-transition
+compatibility matrix. Logs are retained under the artifact's `validation/` directory.
+Final-head remote CI and Codex review are still required before merge.

@@ -1,0 +1,162 @@
+{
+  "claim_limit": "enumerated syntax checks, not whole-program dependence or runtime proof",
+  "files": {
+    "src/sparkbrain/system_build/causal_scope_revision.py": {
+      "sha256": "5a613f8a0cc4a98545e7aed8d5ebabbe31eb3e40a80adfd8ebd86f0fcaf53ad3",
+      "symbols": {
+        "CausalScopeRevisionPilot.step": {
+          "end_line": 675,
+          "start_line": 543
+        },
+        "ScopeRevisionConfig": {
+          "end_line": 150,
+          "start_line": 74
+        }
+      }
+    },
+    "src/sparkbrain/system_build/integrated_m1.py": {
+      "sha256": "019032c043ac598c4696da0438f190553f757c2018144e1c0b2c7251d09a5837",
+      "symbols": {
+        "IntegratedM1Pilot._sensory_sample": {
+          "end_line": 284,
+          "start_line": 277
+        },
+        "IntegratedM1Pilot.apply_outcome": {
+          "end_line": 526,
+          "start_line": 452
+        },
+        "IntegratedM1Pilot.observe": {
+          "end_line": 450,
+          "start_line": 391
+        },
+        "IntegratedM1Session.cycle": {
+          "end_line": 663,
+          "start_line": 643
+        },
+        "M1Observation": {
+          "end_line": 167,
+          "start_line": 117
+        },
+        "M1OutcomeReceipt": {
+          "end_line": 213,
+          "start_line": 194
+        }
+      }
+    },
+    "src/sparkbrain/system_build/predictive_revision.py": {
+      "sha256": "686e1b0df7b489de626d5f16b61a2be6da0628f79db20d9d33eb077af0181f44",
+      "symbols": {
+        "PilotConfig": {
+          "end_line": 126,
+          "start_line": 93
+        },
+        "PredictiveRevisionPilot._candidate_views": {
+          "end_line": 248,
+          "start_line": 235
+        },
+        "PredictiveRevisionPilot._sample_context": {
+          "end_line": 233,
+          "start_line": 211
+        },
+        "PredictiveRevisionPilot.feedback": {
+          "end_line": 431,
+          "start_line": 362
+        },
+        "PredictiveRevisionPilot.observe": {
+          "end_line": 299,
+          "start_line": 250
+        }
+      }
+    },
+    "src/sparkbrain/v03/runtime.py": {
+      "sha256": "74374965dbf7989505cc50f6dedc0741677159a5261940747dbbdea225071ea1",
+      "symbols": {
+        "IntegratedV03Brain._interpret": {
+          "end_line": 630,
+          "start_line": 595
+        },
+        "V03BrainConfig": {
+          "end_line": 183,
+          "start_line": 103
+        }
+      }
+    },
+    "src/sparkbrain/v032/runtime.py": {
+      "sha256": "66fc7ae494ba37396fdf99eb1625239c7b8d910ff7a2e00b323748facff9114e",
+      "symbols": {
+        "IntegratedV032Brain.__init__": {
+          "end_line": 105,
+          "start_line": 94
+        },
+        "IntegratedV032Brain.step": {
+          "end_line": 159,
+          "start_line": 110
+        }
+      }
+    },
+    "src/sparkbrain/v05/assemblies.py": {
+      "sha256": "f2dc1b7bbe71fb70ea27bb661111dca2d68ebfeb3e6044e4ec221120d7d12394",
+      "symbols": {
+        "TemporalAssemblyMemory.best_match": {
+          "end_line": 242,
+          "start_line": 230
+        },
+        "TemporalAssemblyMemory.observe": {
+          "end_line": 280,
+          "start_line": 244
+        }
+      }
+    },
+    "src/sparkbrain/v05/brain.py": {
+      "sha256": "d11680e60ebd7d3301a81a1e0e6ffddf39f2d1707843892c241b0865734439c9",
+      "symbols": {
+        "IntegratedV05Brain.learn_outcome": {
+          "end_line": 257,
+          "start_line": 247
+        },
+        "IntegratedV05Brain.load_checkpoint": {
+          "end_line": 361,
+          "start_line": 313
+        },
+        "IntegratedV05Brain.process_episode": {
+          "end_line": 245,
+          "start_line": 132
+        },
+        "IntegratedV05Brain.state_dict": {
+          "end_line": 298,
+          "start_line": 278
+        },
+        "V05BrainConfig": {
+          "end_line": 50,
+          "start_line": 35
+        }
+      }
+    },
+    "src/sparkbrain/v05/prediction.py": {
+      "sha256": "dcd8f45ba4cd1a0478685bf7f8f9764aeed135820f29d5b3381111631345e169",
+      "symbols": {
+        "AssemblyPredictor.observe": {
+          "end_line": 31,
+          "start_line": 27
+        },
+        "AssemblyPredictor.predict": {
+          "end_line": 25,
+          "start_line": 13
+        }
+      }
+    }
+  },
+  "method": "raw-byte SHA-256 and Python AST only; no runtime imports or model execution",
+  "schema": "assembly-m1-source-audit-1",
+  "source_pin": "ff51abdc7f1f8ae777a9536494cd83d29b4bb769",
+  "syntactic_facts": {
+    "default_reference_input_track_is_i1": true,
+    "m1_module_has_no_direct_v05_import": true,
+    "m1_observe_calls_predictive_observe": true,
+    "m1_observe_calls_scoped_query": true,
+    "m1_observe_has_no_reference_action_attribute_read": true,
+    "m1_outcome_calls_predictive_feedback": true,
+    "m1_outcome_calls_scoped_step": true,
+    "reference_interpret_uses_sample_id_as_text_fallback": true
+  }
+}

@@ -1158,3 +1158,62 @@ contract correction only.
 - Raw transport, data-only verifier, source/config/protocol hashes, negative
   history and limitations: `docs/research/M1_COLD_RESUME_DIAGNOSTIC.md` and
   `artifacts/m1_cold_resume_diagnostic_20261001/`
+
+
+## 2026-10-01 — Continuous temporal reuse: added benefit not supported
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`; scientific credit 0.
+  This standalone append changes no historical v0.5 acceptance, formal identity,
+  scientific allocation, runtime, or scheduler/control-plane disposition.
+- Frozen source: `0bcb2c1b23c29e5107111343a757c57c1f7bbb41`; two diagnostic seeds,
+  unchanged v0.5 runtime, matched input histories and explicit conventional reuse
+  alternatives. Prediction was scored before each later outcome.
+- Negative result: full v0.5 return Brier was 0.3118064367697691 in both seeds,
+  versus 0.0725 for recent raw history and 0.06415165974581612 /
+  0.07765357213323473 for retained raw prototypes. After 14 correct return-A
+  predictions and three abstentions, the last 15 selected a B-trained assembly.
+  Frozen weight/delay learning had lower Brier but more abstention. No incremental
+  prediction benefit or weight/delay-learning benefit was shown by this fixture.
+- Suppressing the acquired A path changed predictions, but S's prefix-matched
+  B control was inactive on B probe shams. In one seed, suppression converted two
+  wrong B predictions to abstention and violated the absolute collateral bound.
+  Both prospective integration-proposal gates failed; no general causal or
+  physical-unit specificity claim follows.
+- Evidence: [bounded result and limitations](research/temporal_reuse_loop_results_20261001.md),
+  [complete checksum-bound transport](../artifacts/research/temporal_reuse_loop_20261001/transport_manifest.json).
+  Archive SHA-256: `2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082`.
+  All 1,792 raw rows and 512 forks were independently recalculated/checked; no
+  full-model reproduction was run. Observer is duplicate-sham, driver peak RSS
+  was not recorded, and network denial is Python-level rather than OS isolation.
+- Follow-on boundary: inspect saved traces, then define any new prospective test;
+  do not tune or replace this completed negative run.
+
+
+## 2026-10-01 — M1 checkpoint compatibility and typed-schema boundary
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`, scientific credit 0.
+  One prospectively frozen ten-case loader matrix completed at source
+  `b76b1af42800871b89cf966718c1a1aeb602e5d6`; zero dynamics transitions and no rerun.
+- Both valid controls restored/save-backed all six files exactly, including the
+  planned valid nondefault predictive/scope configuration. Seven unsupported
+  nested schema or invalid/inconsistent config cases raised the expected
+  ValueErrors at their specified construction boundaries; no rejected candidate
+  returned a session. Temporary component construction is not live-session mutation.
+- The retained boundary is outer `schema_version: true`: ordinary equality accepts
+  it as version 1; save-back normalizes only manifest.json to integer 1. This is
+  source-contract tolerance on a trusted synthetic fixture, not a security
+  vulnerability, universal migration guarantee, or reason for an automatic patch.
+- All input bytes and the reused PR #170 transport remained unchanged at measured
+  boundaries. Ten integrated loads and thirteen direct-validation invocations
+  were observed (twelve direct returns, one early schema rejection), with one
+  setup save and three save-backs. No timeout, output truncation or observation
+  failure; 206 raw files / 1,177,728 bytes retained. The old 198-commit replay
+  diagnostic was not rerun or reclassified.
+- Source/protocol/input/worker provenance, complete mutant bytes, stage journals,
+  configs and save-backs passed independent data-only audit. Full report and
+  limitations: `docs/research/M1_CHECKPOINT_COMPATIBILITY.md`; exact archive,
+  external integrity anchors and no-model verifier are linked there. Archive
+  SHA-256: `ae440c596046867aacc4ef5b72a3b1b1e3bd3bdeef10e6fced37e57030a192d8`.
+- No production loader, scientific claim grade, formal identity, scheduler/authority
+  state, PROJECT_STATUS or PR #164 scope was changed. Caller-selected deployment
+  config/adoption policy and any strict-integer schema policy remain separate work.
