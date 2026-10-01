@@ -165,7 +165,10 @@ jsonschema 4.26.0, referencing 0.37.0, attrs 26.1.0, rpds-py 2026.6.3,
 jsonschema-specifications 2025.9.1. The driver invokes no network service.
 No package was installed and no external compute was purchased for this diagnostic.
 
-Core commands, executed from this artifact directory:
+The following are historical invocation records, not overwrite instructions. For a runnable
+recipe that preserves all retained outputs, use the [fresh-directory reproduction instructions](../artifacts/exploratory/m1-outcome-identity-20261001T1458Z/README.md#reproduce-into-fresh-output-directories).
+
+Core commands originally executed from the artifact directory:
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=1 python freeze/driver.py --output run1
@@ -244,3 +247,11 @@ Ruff, local readiness, the seven-frame standard demo, the 40-episode/30-step ben
 warning remains. No package installation or new runtime dependency was needed.
 Exact published-head CI and Codex review are separate PR integration checks; these local
 results do not claim those checks have already completed.
+
+### Review follow-up
+
+The reproducibility recipe now uses a newly allocated staging directory and fresh output
+paths, with an explicit acceptance-boolean exit check. A narrowly scoped append-only entry
+in `RESULTS_LEDGER.md` records this bounded limitation with zero scientific credit. Existing
+ledger entries, scientific dispositions, authority state and `PROJECT_STATUS.md` are unchanged.
+Frozen files and archive bytes are unchanged; no diagnostic matrix was rerun for these edits.

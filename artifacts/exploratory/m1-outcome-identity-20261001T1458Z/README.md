@@ -75,27 +75,57 @@ and uses fresh diagnostic IDs. It adds missing unchanged schemas and failure-saf
 Total public-API attempts: **192**, including the failed original attempt. Re-deliveries are
 attempts, not fresh committed evidence. This is no formal/consumed identity rerun.
 
-## Historical reproduction commands
+## Reproduce into fresh output directories
 
-The completed fixed study is stopped. The following commands document how the retained corrected
-records were produced; verification above is sufficient to inspect the saved evidence and does
-not spend another execution budget. Any further runtime work needs a separately bounded task.
+The completed fixed study is stopped. Verification above inspects its evidence without
+executing the runtime. The optional recipe below performs a new local reproduction with
+the unchanged frozen driver; it is not independent scientific confirmation and does not
+replace or overwrite any retained attempt. Historical invocations remain in the archived
+report. Use Python 3.11+ and the repository development environment (including jsonschema,
+unittest and Ruff); original dependency versions are in `review/r2-run1/environment.json`.
 
-The archive expands to `m1-outcome-identity-20261001T1458Z/`. Relative to that extracted root:
+After verifying the bundle above, run this POSIX-shell block from repository root. Each
+invocation creates a fresh staging directory, and both driver output directories and the
+verifier output file start absent. The archive's existing `r2-run1`, `r2-run37` and
+`FINAL_VERIFICATION.json` are preserved inside the extracted evidence directory.
 
 ```sh
-cd r2-freeze
+set -eu
+artifact="$PWD/artifacts/exploratory/m1-outcome-identity-20261001T1458Z"
+staging="$(mktemp -d "${TMPDIR:-/tmp}/m1-outcome-repro.XXXXXX")"
+cat "$artifact"/chunks/bundle.tar.gz.part-* > "$staging/bundle.tar.gz"
+tar -xzf "$staging/bundle.tar.gz" -C "$staging"
+evidence="$staging/m1-outcome-identity-20261001T1458Z"
+runs="$staging/fresh-runs"
+mkdir "$runs"
+cd "$evidence/r2-freeze"
 PYTHONDONTWRITEBYTECODE=1 python -m unittest -v test_driver
 python -m ruff check --no-cache --config source/pyproject.toml driver.py test_driver.py verify_results.py
-cd ..
-PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=1 python r2-freeze/driver.py --output r2-run1
-PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=37 python r2-freeze/driver.py --output r2-run37
-PYTHONDONTWRITEBYTECODE=1 python r2-freeze/verify_results.py --run1 r2-run1 --run37 r2-run37 --output FINAL_VERIFICATION.json
+cd "$evidence"
+PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=1 python r2-freeze/driver.py --output "$runs/primary"
+PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=37 python r2-freeze/driver.py --output "$runs/reproduction"
+PYTHONDONTWRITEBYTECODE=1 python r2-freeze/verify_results.py --run1 "$runs/primary" --run37 "$runs/reproduction" --output "$runs/verification.json"
+python - "$runs/verification.json" <<'CHECK'
+import json
+import sys
+from pathlib import Path
+result = json.loads(Path(sys.argv[1]).read_text())
+passed = (
+    result["run1"]["all_expected_checks_pass"]
+    and result["run37"]["all_expected_checks_pass"]
+    and result["reproducibility"]["reproducible_all_runtime_records_and_checkpoints"]
+)
+if not passed:
+    raise SystemExit("Reproduction verification failed; inspect retained fresh outputs")
+print("Reproduction verification passed")
+CHECK
+printf 'Fresh reproduction retained at %s\n' "$runs"
 ```
 
-Saved output directories already exist and are intentionally no-clobber. The commands above
-therefore document historical invocations rather than instructions to overwrite them.
-Installed dependency versions are in `review/r2-run1/environment.json`.
+The explicit final check compensates for the frozen verifier's historical zero-exit behavior.
+Failures leave the fresh outputs available for inspection; do not delete or rewrite the
+original evidence to make a retry succeed. None of these reproduction commands was rerun
+merely to publish this documentation repair.
 
 ## Validation and boundaries
 

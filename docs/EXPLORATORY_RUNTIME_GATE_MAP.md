@@ -124,7 +124,7 @@ Stop this bounded study after the complete fixed matrix, one reproducibility com
 - Analyst R177 retains 35/35 terminal scientific objects and no new scientific execution. Its assigned M1 robustness integration is PR #164; this audit does not execute that acceptance contract, repair its branch, reconcile authority, or alter its hold
 - Current open PR scan found #164, #151, #149 and #148. #151 is explicitly a do-not-merge diagnostic. This task does not touch those PRs
 - The prior event-clock report and its results remain unchanged
-- This dedicated report owns its own status. Shared `PROJECT_STATUS.md` and result/authority ledgers are left untouched to avoid the PR #164 status-file conflict
+- This dedicated report owns its own status. During the source audit, shared `PROJECT_STATUS.md` and result/authority ledgers were left untouched to avoid the PR #164 status-file conflict. Subsequent PR review requested a narrowly scoped append-only `RESULTS_LEDGER.md` entry for the completed diagnostic; that publication entry changes no existing disposition or authority, and `PROJECT_STATUS.md` remains untouched
 - No scheduler, scheduler registry, Control/Analyst state, protected evidence, scientific identity or formal ref changes
 
 ## Verification status

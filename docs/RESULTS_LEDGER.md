@@ -1092,3 +1092,45 @@ contract correction only.
   full raw rows retained losslessly as gzip under the corresponding artifact root.
 - Claim impact: none. No evidence grade, consumed/formal identity, canonical
   scientific result, scheduler state, package/schema, or runtime is changed.
+
+## 2026-10-01 — Independent M1 outcome-identity boundary diagnostic
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`; scientific credit 0. This
+  append-only historical record is not a canonical candidate, formal identity,
+  scheduler directive, build allocation, or change to any existing disposition.
+- Scope: eight constructed cases at runtime source
+  `3cb955cd42474b36d2d37617e5390d08656c06f1`, using only the direct
+  `IntegratedM1Pilot.observe` / `apply_outcome` APIs. Two contexts each have an
+  original, exact-reversal, near-alias-reversal and null-perturbation arm.
+- Bounded negative observation: fresh opposite-sign outcomes at exactly repeated
+  routing features are rejected by the intentional `identical_observation_conflict`
+  guard. Full supported serialized pre-outcome state is restored and the original
+  observation remains pending in this direct-Pilot interface. A fixed routing-only
+  offset of 0.000001 commits on the same route, but splits the predictive bank,
+  leaves route-local supports tied and produces abstention on the next observation.
+  Commitment therefore did not establish successful adaptation in these cases.
+- Controls: original and same-sign perturbation cases commit and retain their
+  expected next action; successful receipt redelivery is state-neutral. Rejected
+  receipt retry remains uncommitted. No threshold, offset or outcome tuning.
+- Retained failure: the initial source package omitted a required schema; all
+  64 API attempts failed and no outcome committed. Its raw records and original
+  verifier failure remain intact. A separately frozen r2 packaging/verification
+  correction retains all matrix parameters, supplies unchanged pinned schemas,
+  and uses fresh diagnostic IDs. No production runtime was changed.
+- Reproduction and budget: each corrected process made 32 observation and
+  32 outcome-delivery attempts, with 22 new commits. Primary and reproduction
+  match in all 972 non-environment files; only hashseed metadata differs.
+  All three attempts together total 192 API calls and 44 commits. This is a
+  deterministic implementation diagnostic, not an accuracy sample or independent
+  confirmatory replication.
+- Evidence: [full report](EXPLORATORY_M1_OUTCOME_IDENTITY.md) and
+  [complete artifact bundle](../artifacts/exploratory/m1-outcome-identity-20261001T1458Z/README.md).
+  Exact retained archive SHA-256:
+  `9b69d389eff5967d4d61b9b10174636ad544e298d7c84b6a9e3f67a306bda6cc`.
+  Corrected raw-call SHA-256:
+  `dc37ae6df77da579b75fa6795374265f77cea407a7c15def790b223e6ee6cd29`.
+- Limits and claim impact: Session whole-cycle rollback is source-backed only;
+  direct-Pilot pending behavior is not a demonstrated Session deadlock. No
+  robustness, natural-noise performance, composition contribution, novelty,
+  energy, general adaptation or runtime-defect claim is established. No scientific
+  evidence grade, consumed/formal identity, authority ledger, or runtime changed.
