@@ -1187,3 +1187,58 @@ contract correction only.
   was not recorded, and network denial is Python-level rather than OS isolation.
 - Follow-on boundary: inspect saved traces, then define any new prospective test;
   do not tune or replace this completed negative run.
+
+
+## 2026-10-01 — M1 checkpoint compatibility and typed-schema boundary
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`, scientific credit 0.
+  One prospectively frozen ten-case loader matrix completed at source
+  `b76b1af42800871b89cf966718c1a1aeb602e5d6`; zero dynamics transitions and no rerun.
+- Both valid controls restored/save-backed all six files exactly, including the
+  planned valid nondefault predictive/scope configuration. Seven unsupported
+  nested schema or invalid/inconsistent config cases raised the expected
+  ValueErrors at their specified construction boundaries; no rejected candidate
+  returned a session. Temporary component construction is not live-session mutation.
+- The retained boundary is outer `schema_version: true`: ordinary equality accepts
+  it as version 1; save-back normalizes only manifest.json to integer 1. This is
+  source-contract tolerance on a trusted synthetic fixture, not a security
+  vulnerability, universal migration guarantee, or reason for an automatic patch.
+- All input bytes and the reused PR #170 transport remained unchanged at measured
+  boundaries. Ten integrated loads and thirteen direct-validation invocations
+  were observed (twelve direct returns, one early schema rejection), with one
+  setup save and three save-backs. No timeout, output truncation or observation
+  failure; 206 raw files / 1,177,728 bytes retained. The old 198-commit replay
+  diagnostic was not rerun or reclassified.
+- Source/protocol/input/worker provenance, complete mutant bytes, stage journals,
+  configs and save-backs passed independent data-only audit. Full report and
+  limitations: `docs/research/M1_CHECKPOINT_COMPATIBILITY.md`; exact archive,
+  external integrity anchors and no-model verifier are linked there. Archive
+  SHA-256: `ae440c596046867aacc4ef5b72a3b1b1e3bd3bdeef10e6fced37e57030a192d8`.
+- No production loader, scientific claim grade, formal identity, scheduler/authority
+  state, PROJECT_STATUS or PR #164 scope was changed. Caller-selected deployment
+  config/adoption policy and any strict-integer schema policy remain separate work.
+
+- Review follow-up (2026-10-01): the data-only deterministic packager now reproduces
+  the retained archive, transport and anchors byte-for-byte. A narrow EOF
+  PROJECT_STATUS pointer records engineering completion with scientific credit 0;
+  the earlier unchanged-status statement describes the initial publication. All
+  preceding ledger/status bytes and the original execution evidence are preserved.
+
+
+## 2026-10-01 — v0.5 owned-state acquired coverage remained blocked
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`; scientific credit 0.
+  This engineering pointer changes no scientific acceptance or prior disposition.
+- The sole six-case probe used frozen source
+  `7578f7aac1a915da9fc90541f71bdc6bb97b37f0`. Three fixed Q episodes produced six
+  receptor spikes, zero internal patterns/candidates and no mature activation.
+  Required acquired-state abort/commit cases P5/P6 were not executed.
+- Whole-graph copies matched the exercised narrower states. The native P3 load
+  lost a hand-prepared cascade, while suffix spikes matched; this does not prove
+  acquired-state rollback, prediction divergence or general checkpoint failure.
+- Evidence: [bounded result and limits](research/v05_owned_state_results_20261001.md),
+  [prospective protocol](research/v05_owned_state_rollback_20261001.md), and
+  [complete checksum-bound archive](../artifacts/research/v05_owned_state_20261001/transport_manifest.json).
+- Preserve this coverage block: no extra episodes, tuning or rerun of this probe.
+  Any new input characterization requires a separate prospective contract; success
+  there would not retroactively execute or clear P5/P6.

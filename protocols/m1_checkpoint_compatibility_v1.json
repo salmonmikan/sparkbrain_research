@@ -1,0 +1,164 @@
+{
+  "protocol_id": "m1-checkpoint-compatibility-20261001-v1",
+  "status": "PROSPECTIVE_SOURCE_ONLY_NOT_EXECUTED",
+  "classification": "EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY",
+  "scientific_credit": 0,
+  "source_commit": "367904e10525ca43ac066ff9fc0701fa89e6b91e",
+  "directive_index_ref": "ops/human-directives",
+  "directive_index_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+  "question": "How do M1 file loaders handle unsupported nested identities, saved configuration mismatches and schema type aliases, and at which construction boundary do they reject?",
+  "source_files_sha256": {
+    "src/sparkbrain/system_build/integrated_m1.py": "019032c043ac598c4696da0438f190553f757c2018144e1c0b2c7251d09a5837",
+    "src/sparkbrain/system_build/predictive_revision.py": "686e1b0df7b489de626d5f16b61a2be6da0628f79db20d9d33eb077af0181f44",
+    "src/sparkbrain/system_build/causal_scope_revision.py": "5a613f8a0cc4a98545e7aed8d5ebabbe31eb3e40a80adfd8ebd86f0fcaf53ad3",
+    "src/sparkbrain/v032/checkpoint.py": "7a7f597ad7698a55ebe5e32c31062dd81ad06e93d06192a6c117c915b0e1d25b"
+  },
+  "reused_fixture": {
+    "source_pr": 170,
+    "archive_sha256": "8a4d423371ca1dc45d72d22a231c1651f839a975502f58b5834dd59495951210",
+    "checkpoint_prefix": "observed/checkpoints/step-007/",
+    "expected_file_count": 6,
+    "contact_disclosure": "Existing deterministic default-world checkpoint deliberately reused as engineering input; not fresh or independent scientific evidence. No earlier matrix rerun."
+  },
+  "new_fixture": {
+    "construction": "Public IntegratedM1Session and IntegratedM1Pilot with PredictiveRevisionPilot(PilotConfig(context_gate=0.25)) and CausalScopeRevisionPilot(ScopeRevisionConfig(minimum_confidence=0.65)); all other defaults",
+    "cycles": 0,
+    "observe_calls": 0,
+    "feedback_or_outcome_calls": 0
+  },
+  "cases": [
+    {
+      "case_id": "C01",
+      "fixture": "retained_cut7",
+      "mutation_path": "none",
+      "mutation_value": null,
+      "prospective_expectation": "accept_same_bytes",
+      "rationale": "One positive control; no future cycle"
+    },
+    {
+      "case_id": "C02",
+      "fixture": "new_nondefault_zero_cycle",
+      "mutation_path": "none",
+      "mutation_value": null,
+      "prospective_expectation": "accept_preserved_nondefault_config",
+      "rationale": "Different valid saved config is not incompatibility"
+    },
+    {
+      "case_id": "C03",
+      "fixture": "retained_cut7",
+      "mutation_path": "manifest.json/schema_version",
+      "mutation_value": 2,
+      "prospective_expectation": "reject_outer_identity",
+      "rationale": "No child loader expected"
+    },
+    {
+      "case_id": "C04",
+      "fixture": "retained_cut7",
+      "mutation_path": "manifest.json/schema_version",
+      "mutation_value": true,
+      "prospective_expectation": "characterize_typed_version_alias",
+      "rationale": "Source predicts Python bool/int equality may accept; not yet executed"
+    },
+    {
+      "case_id": "C05",
+      "fixture": "retained_cut7",
+      "mutation_path": "predictive/pilot-state.json/schema_version",
+      "mutation_value": 2,
+      "prospective_expectation": "reject_predictive_identity",
+      "rationale": "Refresh outer file digest only"
+    },
+    {
+      "case_id": "C06",
+      "fixture": "retained_cut7",
+      "mutation_path": "predictive/reference-brain.json/schema_version",
+      "mutation_value": 2,
+      "prospective_expectation": "reject_direct_schema",
+      "rationale": "Refresh direct payload_hash and outer file digest only"
+    },
+    {
+      "case_id": "C07",
+      "fixture": "retained_cut7",
+      "mutation_path": "scope/sb002-state.json/payload/schema_version",
+      "mutation_value": 3,
+      "prospective_expectation": "reject_scope_identity",
+      "rationale": "Refresh scope payload_sha256 and outer file digest only"
+    },
+    {
+      "case_id": "C08",
+      "fixture": "retained_cut7",
+      "mutation_path": "pilot-state.json/schema_version",
+      "mutation_value": 2,
+      "prospective_expectation": "reject_compositor_identity",
+      "rationale": "Refresh outer file digest only"
+    },
+    {
+      "case_id": "C09",
+      "fixture": "retained_cut7",
+      "mutation_path": "predictive/pilot-state.json/config/context_gate",
+      "mutation_value": "DELETE",
+      "prospective_expectation": "reject_predictive_config_shape",
+      "rationale": "Refresh outer file digest only"
+    },
+    {
+      "case_id": "C10",
+      "fixture": "retained_cut7",
+      "mutation_path": "scope/sb002-state.json/payload/config/minimum_confidence",
+      "mutation_value": 0.65,
+      "prospective_expectation": "reject_scope_router_config_mismatch",
+      "rationale": "Leave nested router.config unchanged; refresh scope payload_sha256 and outer file digest only"
+    }
+  ],
+  "transport_rule": "Mutate only an isolated copy. Canonicalize the explicitly modified JSON and refresh only the listed transport digests to isolate the semantic defect. The direct schema guard precedes its payload digest check, so the C06 inner digest refresh preserves envelope consistency rather than being needed to reach that guard. Never repair semantic state hashes, cross-component hashes, reference-brain bindings or configuration inconsistency. Retain exact pre/post bytes and mutation list.",
+  "primary_observations": [
+    "load returned or exact exception type/message",
+    "ordered loader/construction milestones from outcome-neutral delegating wrappers",
+    "complete input file inventory and SHA-256 before/after load",
+    "returned inspect/state hash if accepted",
+    "complete save-back bytes once for each accepted load",
+    "saved config values vs source config and defaults",
+    "old fixture/archive byte hashes before/after full matrix"
+  ],
+  "atomicity_scope": "No existing-session restore or hot-swap API is called: load constructs a new candidate and returns only after validation. Measure no published session on rejection and no input-file writes. Temporary object allocation is allowed and reported; do not claim no heap/global side effects or deployment swap atomicity.",
+  "instrumentation": "Delegate to unchanged loader methods, record call/return/error only, and restore wrappers in finally. No private state injection, production edits or module-global policy changes. Source-level construction order is distinct from observed milestones. Tag every event by setup/primary-load/save-back phase. Each save internally calls DirectCheckpointManager._load_bytes to validate its own output: those up-to-eleven reconstructions are mandatory save validation, never additional primary integrated load attempts. Do not infer the primary rejection stage from setup/save-back events.",
+  "budget": {
+    "primary_load_calls": 10,
+    "maximum_reproduction_runs": 0,
+    "new_fixture_saves": 1,
+    "maximum_accepted_savebacks": 10,
+    "dynamics_transitions": 0,
+    "max_concurrent_workers": 1,
+    "max_worker_seconds": 30,
+    "max_total_seconds": 330,
+    "max_address_space_bytes": 1073741824,
+    "max_retained_bytes": 33554432,
+    "max_setup_seconds": 30,
+    "max_case_seconds": 30,
+    "max_cpu_seconds_per_process": 30,
+    "maximum_setup_processes": 1,
+    "maximum_case_processes": 10,
+    "maximum_direct_save_validations": 11,
+    "maximum_total_direct_reconstructions": 21,
+    "limit_start": "Activate CPU/address-space limits and child wall deadline before runtime imports. Apply the overall deadline to parent preparation and artifact writes too. The 32MiB value is an admission/checkpoint threshold, not an OS instantaneous filesystem quota: project sizes before harness writes/copies, check immediately before/after model serialization, and drain stdout/stderr through bounded pipes. Observed aggregate excess or pipe overflow stops further runtime work, preserves available bytes, and explicitly reports any overshoot/truncation and incomplete/blocked rows; no retry.",
+    "max_emergency_metadata_bytes_per_file": 262144,
+    "emergency_metadata_rule": "After a stop, bounded JSON error/summary/journal-reconciliation metadata may still be retained without starting any runtime work. Report its bytes and any threshold/deadline overshoot honestly; never delete raw evidence to pretend compliance."
+  },
+  "execution_gate": "Commit protocol and source-only scope review before any runtime import/fixture construction or load. Implement and independently source-review runner and outcome-independent synthetic tests before the one matrix. This proposal remains source-only until independent review and a separately recorded bounded execution go-ahead.",
+  "failure_policy": "Retain all ten planned rows including blocked/incomplete cells, input mutations, exceptions and raw before/after hashes. Stop a case after its first load; no hidden retry. Infrastructure failure is not a semantic rejection. Any unexpected acceptance or source-predicted alias acceptance is preserved without changing expectations or validators. Record primary load and save-back as separate outcomes. A save-back error cannot retroactively classify an accepted primary load as rejection.",
+  "exclusions": [
+    "Production checkpoint patches",
+    "Any M1 cycle/observe/outcome/feedback execution",
+    "Cross-Python-version or cross-release compatibility claims",
+    "Crash/concurrent-save/hostile-input security testing",
+    "PR164 files and same-process continuation matrix",
+    "Scheduler/authority/FORMAL or historical result changes",
+    "Inference that valid configuration variation should be rejected"
+  ],
+  "deliverables": [
+    "10-case raw matrix and immutable mutant fixtures",
+    "source-map/rejection-stage report",
+    "data-only verifier with independent archive/provenance anchors",
+    "separate dated negative/boundary result entry",
+    "PR and exact-head validation"
+  ],
+  "pre_execution_clarification": "2026-10-01: independent runner review clarified measurable output-limit enforcement boundaries before any runtime import or fixture construction. Numeric limits, cases and semantic expectations are unchanged; original source-only protocol bytes remain in commit4087cd4."
+}

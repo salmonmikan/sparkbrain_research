@@ -1,0 +1,10 @@
+{
+  "archive_bytes": 34500,
+  "archive_sha256": "ae440c596046867aacc4ef5b72a3b1b1e3bd3bdeef10e6fced37e57030a192d8",
+  "parts": [
+    {
+      "path": "part-000.b64",
+      "sha256": "8f5fa1cedb128f8ea4d224ca48b9b23db6f4bd3c4bd8baa9b2817971a5449484"
+    }
+  ]
+}
