@@ -251,6 +251,34 @@ full initial/final snapshots and intermediate deduplication hash mappings. It do
 not launch a model or replay the exhausted diagnostic. It also confirms the two
 attempts' baseline and observed raw streams are identical.
 
+### Review follow-up: independent integrity and provenance anchors
+
+The first publication's verifier relied on self-described archive inventories and
+underchecked execution provenance. Codex identified both as P1 verification gaps.
+The unchanged original and corrected archives are now bound to
+`protocols/m1_cold_resume_artifact_anchors_v1.json`, whose SHA-256 is pinned in the
+verifier. This post-execution audit record was created from the already-published
+bytes; it is not a prospective experiment protocol or fresh scientific evidence.
+
+The anchors fix both archive digests/sizes and the complete 356-file original and
+446-file corrected inventories, including their internal inventory files. Rewriting
+the transport manifests and internal inventories cannot substitute a truncated or
+changed archive. These are reviewed repository integrity anchors, not an external
+signature against a party that can replace the verifier and its trusted source.
+
+All 157 runtime-source and 15 schema hashes were independently checked against
+Git objects at baseline `bd337bef` and both execution pins. Each frozen runner and
+protocol was also checked against its execution commit. Verification checks the
+top-level embedded protocol, execution commit, source/schema manifests, runner,
+interpreter, dependency provenance and zero-credit binding, then all nine worker
+STARTED records per attempt against expected mode/cut/hashseed/reference and
+common runner/protocol/interpreter fields. Worker configurations and process
+identities are checked too. Tamper tests exercise rewritten transport, missing raw
+files, changed anchors, source metadata, every worker's protocol, mode parameters,
+interpreter and configuration without importing or running M1.
+
+### Recorded execution commands
+
 The original and corrected matrix commands were, respectively, at their recorded
 source pins, using the same interpreter executable:
 
@@ -294,3 +322,11 @@ Logs are under the diagnostic artifact's `validation/` directory. These are
 regression checks, separate from the 198-commit bounded diagnostic allocation.
 The 392 scientific/reproduction/external-marked tests were not executed. Remote
 CI and review must be checked on the final PR head before merge.
+
+After the verifier review repair: 71 focused checks and 752 default tests passed
+(392 deselected; the same existing dependency warning). Repository Ruff, local
+readiness, bundle validation and data-only verification passed again. The generated
+bundle-validation manifest was retained outside the tracked shared manifest.
+`validation/pytest-review-fix.log` retains the default regression output. The two
+original raw bundles, their protocol bytes and every result row remain unchanged;
+no additional diagnostic matrix was executed.

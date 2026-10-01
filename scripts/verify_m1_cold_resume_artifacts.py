@@ -13,6 +13,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT = ROOT / "artifacts/m1_cold_resume_diagnostic_20261001"
+ANCHORS = ROOT / "protocols/m1_cold_resume_artifact_anchors_v1.json"
+ANCHORS_SHA256 = "921f0c86668f706ee058615bc3f04e3c46a80482c29715598fcc10ea937f7fa3"
 
 
 def sha(raw: bytes) -> str:
@@ -23,7 +25,25 @@ def canonical(value: Any) -> bytes:
     return json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
 
 
-def read_bundle(parts: Path) -> tuple[dict[str, bytes], str]:
+def load_anchors() -> dict[str, Any]:
+    """Use reviewed repository anchors, never a transport-supplied trust root."""
+    raw = ANCHORS.read_bytes()
+    if sha(raw) != ANCHORS_SHA256:
+        raise ValueError("frozen artifact anchors digest mismatch")
+    return json.loads(raw)
+
+
+def verify_inventory(files: dict[str, bytes], anchor: dict[str, Any]) -> None:
+    actual = {name: sha(raw) for name, raw in files.items()}
+    if actual != anchor["raw_files_sha256"]:
+        raise ValueError("frozen raw inventory or file digests mismatch")
+    expected = json.loads(files["inventory.json"])
+    if {name: digest for name, digest in actual.items() if name != "inventory.json"} != expected:
+        raise ValueError("internal raw inventory or file digests mismatch")
+
+
+def read_bundle(parts: Path, identity: str) -> tuple[dict[str, bytes], str]:
+    anchor = load_anchors()["attempts"][identity]
     manifest = json.loads((parts / "manifest.json").read_bytes())
     rows = manifest["parts"]
     expected_names = {"manifest.json"} | {row["path"] for row in rows}
@@ -40,6 +60,8 @@ def read_bundle(parts: Path) -> tuple[dict[str, bytes], str]:
     payload = b"".join(chunks)
     if len(payload) != manifest["archive_bytes"] or sha(payload) != manifest["archive_sha256"]:
         raise ValueError("reconstructed archive digest/size mismatch")
+    if len(payload) != anchor["archive_bytes"] or sha(payload) != anchor["archive_sha256"]:
+        raise ValueError("frozen archive digest/size mismatch")
     files = {}
     total = 0
     with tarfile.open(fileobj=io.BytesIO(payload), mode="r:*") as archive:
@@ -55,11 +77,51 @@ def read_bundle(parts: Path) -> tuple[dict[str, bytes], str]:
             stream = archive.extractfile(member)
             assert stream is not None
             files[member.name] = stream.read()
-    expected = json.loads(files["inventory.json"])
-    actual = {name: sha(raw) for name, raw in files.items() if name != "inventory.json"}
-    if actual != expected:
-        raise ValueError("raw inventory or file digests mismatch")
+    verify_inventory(files, anchor)
     return files, sha(payload)
+
+
+def verify_provenance(files: dict[str, bytes], identity: str) -> None:
+    anchors = load_anchors()
+    anchor = anchors["attempts"][identity]
+    protocol = json.loads(files["protocol.json"])
+    version = anchor["protocol_version"]
+    if files["protocol.json"] != (ROOT / "protocols" /
+                                   f"m1_cold_resume_diagnostic_v{version}.json").read_bytes():
+        raise ValueError("frozen protocol bytes mismatch")
+    provenance = anchor["provenance"]
+    if sha(files["protocol.json"]) != provenance["protocol_sha256"]:
+        raise ValueError("frozen protocol digest mismatch")
+    if protocol["runtime_source_commit"] != anchors["runtime_source_commit"]:
+        raise ValueError("frozen runtime source commit mismatch")
+    expected = {**provenance, "protocol": protocol,
+                "runtime_source_files_sha256": anchors["runtime_source_files_sha256"],
+                "schema_assets_sha256": anchors["schema_assets_sha256"]}
+    if canonical(json.loads(files["STARTED.json"])) != canonical(expected):
+        raise ValueError("top-level execution provenance mismatch")
+    cases = [("baseline", "baseline", 0, 1), ("observed", "observed", 0, 1)]
+    cases += [(f"restore-{seed}-{cut}", "restore", cut, seed)
+              for seed in (1, 37) for cut in (2, 7, 15)]
+    cases.append(("secondary", "secondary", 7, 1))
+    pids, parents = set(), set()
+    for name, mode, cut, seed in cases:
+        started = json.loads(files[f"{name}/STARTED.json"])
+        for key in ("pid", "parent_pid"):
+            if type(started[key]) is not int or started[key] <= 0:
+                raise ValueError("invalid worker process provenance")
+        pids.add(started["pid"])
+        parents.add(started["parent_pid"])
+        common = {key: provenance[key] for key in (
+            "protocol_sha256", "runner_sha256", "python", "executable", "platform")}
+        expected_worker = {**common, "mode": mode, "cut": cut, "hashseed": str(seed),
+                           "reference_timeline": "observed" if cut else None,
+                           "pid": started["pid"], "parent_pid": started["parent_pid"]}
+        if canonical(started) != canonical(expected_worker):
+            raise ValueError(f"worker execution provenance mismatch: {name}")
+        if sha(files[f"{name}/config.json"]) != anchor["worker_config_sha256"]:
+            raise ValueError(f"frozen worker configuration mismatch: {name}")
+    if len(pids) != len(cases) or len(parents) != 1 or pids & parents:
+        raise ValueError("worker process identity mismatch")
 
 
 def snapshot(files: dict[str, bytes], prefix: str) -> dict[str, bytes]:
@@ -74,8 +136,10 @@ def rows(files: dict[str, bytes], name: str) -> list[dict[str, Any]]:
 def verify(root: Path) -> dict[str, Any]:
     if not __debug__:
         raise RuntimeError("artifact verification requires Python without -O")
-    original, original_archive = read_bundle(root / "original.parts")
-    corrected, corrected_archive = read_bundle(root / "corrected.parts")
+    original, original_archive = read_bundle(root / "original.parts", "original")
+    corrected, corrected_archive = read_bundle(root / "corrected.parts", "corrected")
+    verify_provenance(original, "original")
+    verify_provenance(corrected, "corrected")
     old_summary = json.loads(original["summary.json"])
     summary = json.loads(corrected["summary.json"])
     assert old_summary["recorded_committed_cycles"] == 54
@@ -112,6 +176,7 @@ def verify(root: Path) -> dict[str, Any]:
             resumed += len(actual)
             for step in (cut, 24):
                 checkpoint = f"checkpoints/step-{step:03d}/"
+                assert len(snapshot(corrected, "observed/" + checkpoint)) == 6
                 assert snapshot(corrected, case + "/" + checkpoint) == snapshot(
                     corrected, "observed/" + checkpoint)
             record_names = {name for name in corrected if name.startswith(case + "/file-records/")}
@@ -125,6 +190,7 @@ def verify(root: Path) -> dict[str, Any]:
                 assert recorded == {name: sha(raw) for name, raw in saved.items()}
             old = json.loads(original[f"{case}/transition-mismatch.json"])
             assert canonical(old["left"]) == canonical(old["right"])
+            assert len(snapshot(original, case + "/transition-mismatch-checkpoint/")) == 6
             assert snapshot(original, case + "/transition-mismatch-checkpoint/") == snapshot(
                 original, f"observed/checkpoints/step-{cut + 1:03d}/")
             original_checked += 1
@@ -139,11 +205,6 @@ def verify(root: Path) -> dict[str, Any]:
     pending = snapshot(corrected, "secondary/pending/")
     assert pending == snapshot(corrected, "secondary/pending-roundtrip/")
     assert pending == snapshot(corrected, "secondary/pending-after-cycle/")
-    for files, version in ((original, 1), (corrected, 2)):
-        started = json.loads(files["STARTED.json"])
-        assert started["protocol_sha256"] == sha(files["protocol.json"])
-        assert files["protocol.json"] == (ROOT / "protocols" /
-                                         f"m1_cold_resume_diagnostic_v{version}.json").read_bytes()
     return {"status": "verified_without_runtime_execution", "primary_commits": primary_rows,
             "resumed_transitions": resumed, "original_preserved_commits": 54,
             "total_primary_commits": 198, "original_harness_mismatches_rechecked": original_checked,
