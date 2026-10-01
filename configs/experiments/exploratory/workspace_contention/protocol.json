@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "EXPLORATORY_NON_EVIDENTIARY",
+  "target": "legacy_sparkbrain_engine_only",
+  "base_commit": "59fc994b39d0ba02682e972161bb46801592d25b",
+  "runtime_git_blobs": {
+    "src/sparkbrain/engine.py": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
+    "src/sparkbrain/model.py": "ab450dba5943fa9184e66c00a4e992d6588bf6a5",
+    "src/sparkbrain/validation.py": "4a0edac44a434b84ac4fa3e138e221852cbac1cb"
+  },
+  "seeds": [
+    11,
+    29,
+    47
+  ],
+  "task_counts": [
+    1,
+    2,
+    4
+  ],
+  "workspace_slots": [
+    1,
+    4
+  ],
+  "orders": [
+    "interleaved",
+    "task_blocked"
+  ],
+  "strength_profiles": [
+    "balanced",
+    "dominant_first"
+  ],
+  "variants": [
+    "shared",
+    "shared_zero_margin",
+    "isolated_reference"
+  ],
+  "rounds": 4,
+  "sources_per_task": 2,
+  "event_spacing": 0.01,
+  "base_strength": 0.4,
+  "dominant_strength": 0.8,
+  "spark_threshold": 100,
+  "spark_decay_tau": 2.5,
+  "config_overrides": {
+    "random_seed": "cell_seed",
+    "workspace_slots": "cell_slots"
+  },
+  "label_mapping": "seeded permutation of task-to-hypothesis IDs; logical task zero is dominant when requested",
+  "event_order": "seeded permutation of task IDs, fixed within episode; source 0 then source 1; interleaved loops rounds then tasks then sources; task_blocked loops tasks then rounds then sources",
+  "reference": "one unmodified engine per explicit task; same task input subsequence with original timestamps; total workspace capacity and engine overhead are unmatched; diagnostic isolation control, not superiority baseline",
+  "primary_metrics": [
+    "fraction_tasks_ever_ignited",
+    "fraction_tasks_in_final_workspace",
+    "per_task_first_ignition_input_index"
+  ],
+  "secondary_metrics": [
+    "ignition_count",
+    "events_processed",
+    "spark_updates",
+    "edge_evaluations"
+  ],
+  "raw_contract": "one JSONL episode per exact Cartesian cell, containing cell/config, all input records, ignition records, final workspace and coalition state, work counters and per-task metrics",
+  "stopping_rule": "execute frozen Cartesian grid once, replicate bytes under two PYTHONHASHSEED values, report all cells; implementation failure stops interpretation; any changed experimental choice requires a new protocol",
+  "claims": "bounded implementation diagnostic only; no formal identity, promotion, default-world performance, v03/v032/v05/M1 inference, biological, novelty or energy claim",
+  "controls": "single task, capacity-only intervention, zero global margin, task isolation, balanced/dominant strength, arrival order and seeded relabeling",
+  "output_files": [
+    "raw_episodes.jsonl",
+    "summary.json",
+    "manifest.json"
+  ],
+  "protocol_mutation": "reject any value, type, field or order that differs from this committed protocol"
+}
