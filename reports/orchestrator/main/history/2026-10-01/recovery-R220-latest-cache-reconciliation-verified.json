@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "persistence_only": true,
+  "source_scheduler": "6ab9bed600a481919adade50e72fe837",
+  "recovery_supervisor": "6abdbad842c881918e1247a8b4592b26",
+  "generation": "R220",
+  "recovery_identity": {
+    "source_scheduler": "6ab9bed600a481919adade50e72fe837",
+    "source_role": "PRIMARY_MAIN",
+    "generation": "R220",
+    "requested_action": "RECONCILE_MAIN_LATEST_EXACTLY_FROM_VERIFIED_APPEND_ONLY_HISTORY",
+    "repository": "salmonmikan/sparkbrain_research",
+    "target_ref": "ops/orchestrator-run-report",
+    "head": "7627d209981f8225336e9b6daca38767095e4cfc",
+    "base": "7627d209981f8225336e9b6daca38767095e4cfc",
+    "source_history_path": "reports/orchestrator/main/history/2026-10-01/1810-r220-waiting-analyst-r178-persistence.md",
+    "source_history_blob": "bfdafa0833058090e072cc55ba704368a30b57c8",
+    "expected_success_criteria": [
+      "latest.md byte-for-byte equals saved R220 history",
+      "R220 history blob unchanged",
+      "state/lease and other files unchanged",
+      "one append-only operational recovery record",
+      "non-force descendant ref update"
+    ]
+  },
+  "publication_attempt": 1,
+  "publication_commit": "9edd42373872dd7ae7ddb3473a1b4c01788ae6fb",
+  "persistence_complete": true,
+  "independent_readback": {
+    "head_matches": true,
+    "latest_exact": true,
+    "history_blob_unchanged": true,
+    "operational_record_exact": true,
+    "state_unchanged": true,
+    "lease_unchanged": true,
+    "descendant": true,
+    "changed_files": [
+      "reports/orchestrator/main/history/2026-10-01/recovery-R220-latest-cache-reconciliation.md",
+      "reports/orchestrator/main/latest.md"
+    ]
+  },
+  "verification_time_utc": "2026-10-01T10:03:34.454Z",
+  "unresolved": [
+    "EVIDENCE_ANALYST_R178_REQUEST_HAS_ZERO_WORKFLOW_RUNS_ZERO_CHECK_SUITES_AND_NO_RECEIPT_OR_TARGET_ADVANCE",
+    "PR164_HOLD_MERGE_UNTIL_R178_DURABLE_AND_EXACT_LIVE_STATE_REVALIDATED",
+    "MAIN_STATE_LEASE_R215_EXACT_R220_JSON_PAYLOAD_UNAVAILABLE",
+    "LITERATURE_STATE_R54_BEHIND_LATEST_R55_EXACT_PAYLOAD_UNAVAILABLE",
+    "P0_OPEN_ROOT_CAUSE_UNKNOWN"
+  ],
+  "no_scientific_execution": true,
+  "no_scheduler_changes": true,
+  "backend_mode_provenance": "NOT_EXPOSED_BY_RUNTIME_API"
+}
