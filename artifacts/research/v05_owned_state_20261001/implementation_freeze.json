@@ -1,11 +1,18 @@
 {
   "model_execution_performed": false,
+  "pre_execution_corrections": [
+    "support exact two-int tuple burst-key set members",
+    "preserve P6 candidate/reference suffix outputs and states before comparing",
+    "separate native expected-loss regions and additional changed regions",
+    "reserve terminal resource headroom and record finalization limits"
+  ],
+  "previous_source_freeze": "6ba3e73b57e33f742afa2ebbab21ad8568e20edb",
   "proposal_commit": "ee43c2141197ef9f094db56e4a8c9c5a42eb9edd",
-  "schema": "v05-owned-state-implementation-freeze-1",
+  "schema": "v05-owned-state-implementation-freeze-2",
   "sha256": {
     "artifacts/research/v05_owned_state_20261001/property_proposal.json": "7cc32052fa07c9b2e7df7073b48de50f42d0f6d09086d19708f017eaaf18de04",
     "artifacts/research/v05_owned_state_20261001/source_map.json": "af3e00d35f8272fc2819b6b059a1ac18c872343496ec7a99f8651c6edb14dd69",
-    "scripts/v05_owned_state_probe.py": "3ef6bceba8c4f16e6e878fa62d7cb7421239af42de51e6889fa3f6aef0e0f4a1"
+    "scripts/v05_owned_state_probe.py": "4ac7f630a0f1094a0952df28b0ec3313ecd5ae885d9c4b1d135bea7904f13913"
   },
   "source_main": "00ef5bac171b3ec05f581a157cccd9528bb71e8f",
   "status": "FROZEN_FOR_SOURCE_REVIEW_BEFORE_EXECUTION"

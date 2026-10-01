@@ -189,3 +189,21 @@ rechecked without importing SparkBrain or running any fixture. The state invento
 clock, nested metadata isolation, output-before-commit ordering and native negative-control
 interpretation incorporate that review. Actual implementation hashes and eligibility
 checks must still be frozen before any model execution.
+
+
+## Implementation freeze review before execution
+
+The first implementation freeze was `6ba3e73b57e33f742afa2ebbab21ad8568e20edb`.
+Independent source review blocked execution: burst emitted-key sets require two-integer
+tuples, and P6 must preserve both suffix outputs/states before asserting equality. The
+pre-execution correction also categorizes native changed field regions and reserves a
+bounded terminal-report interval. Those changes do not alter the six cases, input pulses,
+maturity gates, model-call budgets or scientific boundary. No model was run from the first
+freeze. The next exact source freeze must pass independent review before execution.
+
+The implementation reserves the final five seconds inside the 60 CPU / 120 wall ceilings
+for terminal metadata; a hard process death can still prevent finalization, leaving the
+start record and already preserved raw files. Python socket-audit denial is not OS-level
+network isolation. Native difference-region labels are descriptive; matching an expected
+region does not prove every value-level difference is explained. Full inventories remain
+available, and additional changed regions must be examined before final reporting.

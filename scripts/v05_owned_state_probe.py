@@ -128,12 +128,25 @@ class GraphAudit:
                     row["maxlen"] = value.maxlen
                 return row
             if cls is set:
-                require(all(type(v) in (str, int) for v in value), "unsupported set elements")
+                require(
+                    all(
+                        type(v) in (str, int)
+                        or (
+                            type(v) is tuple
+                            and len(v) == 2
+                            and all(type(item) is int for item in v)
+                        )
+                        for v in value
+                    ),
+                    "unsupported set elements",
+                )
                 return {
                     "type": "set",
                     "items": [
                         visit(v, f"{path}.set[{i}]")
-                        for i, v in enumerate(sorted(value, key=lambda x: (type(x).__name__, x)))
+                        for i, v in enumerate(
+                            sorted(value, key=lambda x: (type(x).__name__, canonical(x)))
+                        )
                     ],
                 }
             names = (
@@ -369,6 +382,54 @@ class Probe:
         self.write(f"{label}-maturity.json", coverage)
         return brain, ready
 
+    def native_difference_regions(self, original: Any, native: Any) -> dict[str, Any]:
+        left, _ = self.audit.inspect(original)
+        right, _ = self.audit.inspect(native)
+
+        def changed(a: object, b: object, path: str) -> list[str]:
+            if a == b:
+                return []
+            if (
+                type(a) is dict
+                and type(b) is dict
+                and "fields" in a
+                and "fields" in b
+                and a.get("type") == b.get("type")
+            ):
+                return [
+                    child
+                    for name in sorted(set(a["fields"]) | set(b["fields"]))
+                    for child in changed(
+                        a["fields"].get(name), b["fields"].get(name), f"{path}.{name}"
+                    )
+                ]
+            return [path]
+
+        paths = changed(left, right, "brain")
+        expected = {
+            "brain.results",
+            "brain.base.results",
+            "brain.base.config",
+            "brain.base._topology",
+            "brain.base.burst_detector._window",
+            "brain.base.burst_detector._emitted_keys",
+            "brain.base.cascade_tracker._pending",
+            "brain.base.field.last_run_arrivals",
+            "brain.base.field.last_run_spikes",
+            "brain.base.field.last_input_routes",
+            "brain.base.field.outgoing",
+            "brain.base.field.incoming",
+            "brain.base.field.units",
+            "brain.base.field.receptor_ids",
+            "brain.base.field._queue",
+        }
+        return {
+            "source_expected_loss_regions_changed": [path for path in paths if path in expected],
+            "additional_changed_regions": [path for path in paths if path not in expected],
+            "qualification": "Region matches are descriptive, not proof that every value-level "
+            "difference is explained. Complete inventories are retained.",
+        }
+
     def native(self, brain: Any, label: str) -> Any:
         path = self.out / f"{label}-native.json"
         payload = brain.state_dict()
@@ -409,6 +470,7 @@ class Probe:
                     ),
                 },
                 "interpretation": "descriptive native negative control, not clone acceptance",
+                "difference_regions": self.native_difference_regions(brain, result),
             },
         )
         return result
@@ -578,8 +640,11 @@ class Probe:
         exported = self.detached(result)
         self.graph(candidate)  # all fallible validation precedes commit
         reference = self.detached(self.step(direct, self.spec["suffix"]))
+        candidate_state, reference_state = self.graph(candidate), self.graph(direct)
+        self.write("P6-candidate-suffix.json", {"result": exported, "state": candidate_state})
+        self.write("P6-direct-suffix.json", {"result": reference, "state": reference_state})
         require(
-            exported == reference and self.graph(candidate) == self.graph(direct),
+            exported == reference and candidate_state == reference_state,
             "P6 candidate/direct mismatch",
         )
         require(bool(exported["emitted_pulses"]), "P6 emitted metadata control absent")
@@ -612,23 +677,7 @@ def main() -> None:
     require(args.out is not None and not args.out.exists(), "fresh output directory required")
     args.out.mkdir(parents=True)
     limits = proposal["limits"]
-    resource.setrlimit(
-        resource.RLIMIT_AS, (limits["address_space_bytes"], limits["address_space_bytes"])
-    )
-    resource.setrlimit(resource.RLIMIT_CPU, (limits["cpu_seconds"], limits["cpu_seconds"] + 1))
-
-    def stop(signum: int, frame: object) -> None:
-        raise RuntimeError(f"resource limit signal {signum}")
-
-    def deny_network(event: str, args: tuple[object, ...]) -> None:
-        if event.startswith("socket."):
-            raise RuntimeError("network is disabled for this probe")
-
-    signal.signal(signal.SIGALRM, stop)
-    signal.signal(signal.SIGXCPU, stop)
-    signal.alarm(limits["wall_seconds"])
     started = time.monotonic()
-    sys.addaudithook(deny_network)
     start_record = {
         "proposal_commit": PROPOSAL_COMMIT,
         "proposal_sha256": hashlib.sha256(
@@ -640,16 +689,47 @@ def main() -> None:
         "hash_seed": os.getenv("PYTHONHASHSEED"),
         "scope": "NON_EVIDENTIARY producer ownership only",
         "network_isolation": "Python socket-audit denial, not OS namespace isolation",
+        "limits": {
+            **limits,
+            "cpu_work_soft": limits["cpu_seconds"] - 5,
+            "wall_work_soft": limits["wall_seconds"] - 5,
+            "terminal_reserve_seconds": 5,
+        },
     }
     with (args.out / "start.json").open("x") as stream:
         stream.write(canonical(start_record) + "\n")
-    sys.path.insert(0, str(ROOT / "src"))
+
+    def stop(signum: int, frame: object) -> None:
+        raise RuntimeError(f"resource limit signal {signum}")
+
+    def deny_network(event: str, args: tuple[object, ...]) -> None:
+        if event.startswith("socket."):
+            raise RuntimeError("network is disabled for this probe")
+
     error, probe = None, None
+    limits_installed = False
     try:
+        resource.setrlimit(
+            resource.RLIMIT_AS, (limits["address_space_bytes"], limits["address_space_bytes"])
+        )
+        resource.setrlimit(resource.RLIMIT_CPU, (limits["cpu_seconds"] - 5, limits["cpu_seconds"]))
+        signal.signal(signal.SIGALRM, stop)
+        signal.signal(signal.SIGXCPU, stop)
+        signal.setitimer(signal.ITIMER_REAL, limits["wall_seconds"] - 5)
+        limits_installed = True
+        sys.addaudithook(deny_network)
+        sys.path.insert(0, str(ROOT / "src"))
         probe = Probe(args.out, proposal, source_map)
         probe.run()
     except Exception as exc:
         error = f"{type(exc).__name__}: {exc}"
+    # Reserve five seconds for terminal metadata, without relaxing either hard ceiling.
+    if limits_installed:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        resource.setrlimit(resource.RLIMIT_CPU, (limits["cpu_seconds"], limits["cpu_seconds"]))
+        signal.signal(signal.SIGALRM, lambda signum, frame: os._exit(124))
+        remaining = max(0.001, limits["wall_seconds"] - (time.monotonic() - started))
+        signal.setitimer(signal.ITIMER_REAL, remaining)
     status = (
         "failed"
         if error
@@ -665,19 +745,27 @@ def main() -> None:
         "wall_seconds": time.monotonic() - started,
         "cpu_seconds": time.process_time(),
         "scientific_credit": 0,
+        "terminal_limit": "Hard process death may prevent finalization; start/raw files remain",
     }
-    if probe is None:
-        with (args.out / "report.json").open("x") as stream:
-            stream.write(canonical(report) + "\n")
-    else:
-        probe.write("report.json", report)
-        manifest = {
-            str(path.relative_to(args.out)): hashlib.sha256(path.read_bytes()).hexdigest()
-            for path in sorted(args.out.rglob("*"))
-            if path.is_file()
-        }
-        probe.write("manifest.json", manifest)
-    signal.alarm(0)
+    try:
+        if probe is None:
+            with (args.out / "report.json").open("x") as stream:
+                stream.write(canonical(report) + "\n")
+        else:
+            probe.write("report.json", report)
+            manifest = {
+                str(path.relative_to(args.out)): hashlib.sha256(path.read_bytes()).hexdigest()
+                for path in sorted(args.out.rglob("*"))
+                if path.is_file()
+            }
+            probe.write("manifest.json", manifest)
+    except Exception as exc:
+        # A tiny separate fallback preserves the actual finalization error when possible.
+        with (args.out / "finalization-error.txt").open("x") as stream:
+            stream.write(f"{type(exc).__name__}: {exc}\n")
+        raise
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
     print(canonical(report))
     if error:
         raise SystemExit(1)
