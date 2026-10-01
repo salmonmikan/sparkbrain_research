@@ -139,6 +139,7 @@ def run_episode(cell: dict[str, Any], protocol: dict[str, Any]) -> dict[str, Any
         "final_workspace": workspace, "final_coalitions": coalitions,
         "engine_count": len(brains), "counters": counters,
         "metrics": {
+            "ignition_count": len(ignitions),
             "fraction_tasks_ever_ignited": sum(v is not None for v in first.values())
             / cell["task_count"],
             "fraction_tasks_in_final_workspace": len({row["task"] for row in workspace})

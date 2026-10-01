@@ -96,6 +96,12 @@ def test_artifact_reproduction_and_no_clobber(tmp_path):
     for path in left.iterdir():
         assert path.read_bytes() == (right / path.name).read_bytes()
     rows = [json.loads(line) for line in (left / "raw_episodes.jsonl").read_text().splitlines()]
+    protocol = runner.load_protocol()
+    for row in rows:
+        declared = set(protocol["primary_metrics"] + protocol["secondary_metrics"])
+        assert declared <= row["metrics"].keys() | row["counters"].keys()
+        assert row["metrics"]["ignition_count"] == len(row["ignitions"])
+        assert row["metrics"]["ignition_count"] == row["counters"]["ignitions"]
     assert json.loads((left / "summary.json").read_text()) == runner.summarize(rows)
     manifest = json.loads((left / "manifest.json").read_text())
     for name, expected in manifest["files"].items():
