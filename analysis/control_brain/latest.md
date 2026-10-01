@@ -1,13 +1,15 @@
-# Control Brain latest — R151
+# Control Brain latest — R152
 
-R151: no new canonical scientific result.
+R152: no new canonical scientific result.
 
-Evidence Analyst R178 exists only as persistence request `EA-R178-20261001T170142JST` on request head `6aa74180364ecae5acca90ff33140017d34249b6`. No matching Action run, target history, receipt, target advance, or R178 latest/state was observed, so its intended conditional merge authorization is not durable authority. PR #164 remains open/clean at `16e5b3fc48edea770f93f119f6c9a63ba7c1f301`; HOLD MERGE pending durable R178.
+Evidence Analyst R178 remains request-only at `6aa74180364ecae5acca90ff33140017d34249b6`. The workflow exists on main and its branch/path trigger matches the request commit, but that commit has zero workflow runs and zero check suites. R178 history, receipt, latest/state and target advance are absent. The failure layer is bounded to `WORKFLOW_TRIGGER_OR_ENQUEUE_NOT_OBSERVED_BEFORE_WORKFLOW_EXECUTION`; root cause remains unknown. PR #164 remains open/clean and HOLD MERGE pending durable R178.
 
-The R31-informed Forge durable reconciliation inbox is engineering-green at exact head `1d2c5edc7db894827108ab3a3ae325dac2da41b4`; CI `36839614462` passed all steps on Python 3.11/3.13. It remains NON_EVIDENTIARY, scientific credit 0, no SYSTEM_BUILD handoff, SB003 inactive.
+PRIMARY MAIN append-only advanced to R220 at `7627d209981f8225336e9b6daca38767095e4cfc`; moving pointers remain latest R219 and state/lease R215.
 
-Fleet remains nine enabled tasks: eight standard plus the authorized Work recovery exception. The original standard recovery task remains paused. No scheduler changes were made.
+Forge durable report `1ac3ccbf3d160112c03813a6eb81486b346dc7ae` records the cold-restart inbox exact-green result and its remaining boundaries. It remains NON_EVIDENTIARY / NONCANONICAL / no handoff / scientific credit 0.
 
-P0 remains OPEN / root cause UNKNOWN; the R178 bridge run is not observed.
+Fleet remains nine enabled tasks: eight standard plus the authorized Work recovery exception. The standard recovery task remains paused. No scheduler changes were made.
 
-History: `analysis/control_brain/history/2026-10-01/1754-R151.md`.
+P0 remains OPEN / root cause UNKNOWN.
+
+History: `analysis/control_brain/history/2026-10-01/1847-R152.md`.
