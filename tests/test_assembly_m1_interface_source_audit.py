@@ -76,3 +76,34 @@ def test_rejects_reference_action_read_added_to_observe():
     )
     with pytest.raises(ValueError, match="source facts"):
         AUDIT.build_audit(sources)
+
+
+@pytest.mark.parametrize("args,expected", [
+    ((64, 8, 62, 6), (62, 6)),
+    ((10, 4, 8, 2), (8, 2)),
+    ((3, 3, 1, 1), (1, 1)),
+])
+def test_capacity_from_actual_config(args, expected):
+    assert AUDIT.validate_feature_capacity(*args) == expected
+
+
+@pytest.mark.parametrize("args", [
+    (64, 4, 1, 6),
+    (4, 8, 3, 1),
+    (2, 8, 1, 1),
+    (64, 2, 1, 1),
+    (0, 8, 1, 1),
+    (64, 0, 1, 1),
+    (True, 8, 1, 1),
+    (64, True, 1, 1),
+    (65, 8, 1, 1),
+    (64, 9, 1, 1),
+    (64, 8, 0, 1),
+    (64, 8, 1, 0),
+    (64, 8, True, 1),
+    (64, 8, 1, True),
+    (64, 8, 1.0, 1),
+])
+def test_capacity_rejects_insufficient_or_invalid_config_and_counts(args):
+    with pytest.raises(ValueError):
+        AUDIT.validate_feature_capacity(*args)

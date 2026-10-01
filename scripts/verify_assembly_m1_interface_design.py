@@ -43,9 +43,13 @@ EXPECTED_CONTRACT = {
     "model_execution_authorized": False,
     "source_pin": SOURCE_PIN,
     "feature_dimensions": 2,
-    "maximum_original_route_dimensions": 6,
-    "maximum_original_sensory_scalars": 62,
+    "default_maximum_original_route_dimensions": 6,
+    "default_maximum_original_sensory_scalars": 62,
     "maximum_pending_occurrences": 1,
+    "headroom_from": ["predictive.config.max_context_scalars",
+                      "scoped.config.maximum_dimensions"],
+    "minimum_configured_total_dimensions": 3,
+    "capacity_validation_before_backend_advance": True,
     "coordinate_names": ["temporal_0", "temporal_1"],
     "consumers": ["M1Observation.sensory_values", "M1Observation.routing_features"],
     "backend_outcome_updates": False,
@@ -69,6 +73,22 @@ EXPECTED_CONTRACT = {
 
 def canonical(value: object) -> str:
     return json.dumps(value, ensure_ascii=False, allow_nan=False, indent=2, sort_keys=True) + "\n"
+
+
+def validate_feature_capacity(
+    context_ceiling: int, route_ceiling: int, original_context: int, original_route: int,
+) -> tuple[int, int]:
+    """Pure arithmetic for the proposed preflight; this is not a runtime adapter."""
+    for value, lower, upper in (
+        (context_ceiling, 3, 64), (route_ceiling, 3, 8),
+        (original_context, 1, 62), (original_route, 1, 6),
+    ):
+        if type(value) is not int or not lower <= value <= upper:
+            raise ValueError("invalid configured capacity or original feature count")
+    context_headroom, route_headroom = context_ceiling - 2, route_ceiling - 2
+    if original_context > context_headroom or original_route > route_headroom:
+        raise ValueError("original features exceed configured headroom")
+    return context_headroom, route_headroom
 
 
 def validate_contract(value: object) -> None:

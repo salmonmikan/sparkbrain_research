@@ -172,8 +172,17 @@ The original features are preserved, not overwritten. Their scale is prospective
 no epsilon, receipt digest, counter, label, regime flag, or post-outcome correction is added.
 The physical-time adapter explicitly declares M1 time in seconds and v0.5 time in ms;
 current M1 only validates nonnegative numeric time, so the coordinator enforces the conversion.
-Two added route dimensions leave at most six original dimensions; two added sensory scalars
-leave at most 62 originals. Fail before mutation if either cap or channel schema is violated.
+Before advancing the backend, read and validate the actual injected component configs.
+The allowed original counts are
+`predictive.config.max_context_scalars - 2` and
+`scoped.config.maximum_dimensions - 2`. The default ceilings 64 and 8 therefore leave
+62 sensory scalars and six route dimensions; these are default/absolute upper bounds,
+not allowances for every valid configuration. Both original inputs remain nonempty, so
+reject a configured total ceiling below 3. For example, a scope ceiling of 4 permits
+at most two original route dimensions. Reject an oversized current input, a changed
+channel schema, or a config that cannot fit the added coordinates **before any backend
+advance or M1 mutation**. Freeze/bind both component configs for the adapter lifetime;
+never infer their values from class constants or silently raise a smaller configured cap.
 No default threshold, evidence strength, candidate-sign mapping, router capacity or gate changes.
 Start a **fresh M1 instance** with this expanded schema before its first observation;
 `_sample_context` rejects a changed channel set, so this is not hot-pluggable into a
@@ -364,12 +373,16 @@ certificate, or verification that the proposed interface already exists. The sep
 model-free tests exercise corruption rejection in that auditor only.
 
 Local verification: the auditor passed for eight pinned source files and eight explicit
-syntax facts; all 11 model-free auditor tests passed; scoped Ruff and `git diff --check`
+syntax facts; all 29 model-free auditor tests passed; scoped Ruff and `git diff --check`
 passed. Full runtime tests, demo, benchmark and model execution were intentionally not run
 in this source-only scope. Independent source-only peer review identified the pre-existing reference semantic-ID
 path. The narrowed guard and explicit global-identity blocker above resolved that finding;
 review reported no remaining blocking design issue. It independently reran the auditor
-and all 11 model-free tests. Exact-head Codex review and CI remain publication gates.
+and all 11 initial model-free tests. Codex review then identified that the capacity preflight must use actual injected
+component ceilings rather than only absolute class maxima. This design now derives both
+headrooms from those configs and rejects insufficient headroom before backend advance.
+Eighteen additional model-free tests cover default/reduced caps and invalid/count boundaries.
+Exact-head Codex re-review and CI remain publication gates.
 
 The deliverable stops at this source-bound design and its audit, after peer review. The next useful
 implementation is the small sentinel and then a fresh producer bridge test, subject to the

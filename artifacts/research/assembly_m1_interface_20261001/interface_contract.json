@@ -3,6 +3,7 @@
   "backend_outcome_updates": false,
   "backend_parameter_updates_after_freeze": false,
   "backend_time_unit": "milliseconds",
+  "capacity_validation_before_backend_advance": true,
   "consumers": [
     "M1Observation.sensory_values",
     "M1Observation.routing_features"
@@ -11,11 +12,17 @@
     "temporal_0",
     "temporal_1"
   ],
+  "default_maximum_original_route_dimensions": 6,
+  "default_maximum_original_sensory_scalars": 62,
   "delivery_requires_strictly_after_decision": true,
   "feature_dimensions": 2,
   "future_test_layers": [
     "consumer_sentinel",
     "acquired_producer_bridge"
+  ],
+  "headroom_from": [
+    "predictive.config.max_context_scalars",
+    "scoped.config.maximum_dimensions"
   ],
   "identity_invariance_scope": "adapter_and_m1_decision_state_only",
   "intervention_controls": [
@@ -30,9 +37,8 @@
   ],
   "m1_outcome_updates": true,
   "m1_time_unit": "seconds",
-  "maximum_original_route_dimensions": 6,
-  "maximum_original_sensory_scalars": 62,
   "maximum_pending_occurrences": 1,
+  "minimum_configured_total_dimensions": 3,
   "model_execution_authorized": false,
   "native_v05_checkpoint_sufficient": false,
   "new_runtime_api_implemented": false,
