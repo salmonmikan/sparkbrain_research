@@ -59,12 +59,17 @@ hashseed. The exact model default seed is recorded before the first cycle.
 2. Fresh-process checkpoint-observed run, hashseed 1: 24 commits, additionally
    save every cycle boundary 0..24. Compare all cycle rows/state hashes and final
    full checkpoint bytes to the uninterrupted run. This detects added-save
-   observer effects at the externally visible/serialized boundary
+   observer effects at the externally visible/serialized boundary. It does not
+   rule out transient hidden-state differences between measured boundaries
 3. Six fresh-process restorations: cuts 2/7/15 crossed with PYTHONHASHSEED 1/37.
    Save back immediately and after every remaining cycle. Compare all file paths
    and exact file bytes to the observed timeline, plus full future cycle rows
    and inspect hashes. Per seed: (24-2)+(24-7)+(24-15)=48 commits; both seeds 96.
-   Total primary budget: 24+24+96=144 committed cycles
+   Total primary expected/maximum completion: 24+24+96=144 committed cycles;
+   retain actual row/commit counts on early stop
+
+Serialized-byte divergence and future-cycle/action divergence are separate
+outcomes; bytes alone do not establish behavioral corruption.
 
 A cycle row includes observation, prediction/action, receipt and revision. Full
 serialized file equality is exact, with no float tolerance or digest-field
@@ -79,15 +84,17 @@ At quiet cutpoint 7, try ordinary `copy.deepcopy` once and retain its exception
 if unsupported. Do not bypass facade locking or call this file restoration.
 No deepcopy result contributes continuation rows or the primary conclusion.
 
-On a separately loaded cutpoint-7 session, call `pilot.observe` once without
-resolving the world. This is a sequential pending state, not a concurrent save.
+On a separately loaded cutpoint-7 session, obtain `session.world.next_observation()`
+and pass exactly that to `pilot.observe` once, without `world.resolve`. This is a sequential pending state, not a concurrent save.
 Save/load/save and compare bytes. Then call `Session.cycle` once: a pending event
 may make it reject, because it begins with a new observe instead of completing
 a pending action. Preserve the exact error and prove no-write with a new save.
 A successful state roundtrip and lack of an automatic mid-cycle resume API are
 separate outcomes. Do not call this an unsupported checkpoint corruption or a
 failure of the documented quiet-boundary continuation contract. No outcome
-commit is made by these secondary probes.
+commit is expected from these secondary probes. If `Session.cycle` unexpectedly
+succeeds, retain the cycle output and record its actual commit count separately
+rather than hiding a budget deviation.
 
 ## Freeze, resources and failure handling
 
@@ -105,9 +112,10 @@ payloads and stop scoring that case. No failed row is dropped, no silent retry,
 and no outcome-responsive retuning. A launch/timeout/resource/runner error is an
 incomplete diagnostic, distinct from an observed continuation mismatch.
 
-A separate clean reproduction may run only the identical frozen matrix under a
-new output path; retain both provenance records and compare deterministic raw
-contents. No formal or historical experiment is executed or reclassified.
+At most one separate clean reproduction may run the identical frozen matrix under
+a new output path (another 144 primary commits, at most 288 across both matrices); retain both provenance records and compare deterministic raw
+contents. Resource/output/time caps are per matrix, including secondary attempts. No formal
+or historical experiment is executed or reclassified.
 
 ## Verification and boundaries
 
@@ -120,3 +128,11 @@ in this report and a separate dated Results Ledger entry after coordination.
 
 No external paper is needed to justify an exact replay engineering invariant.
 Prior-art novelty is not asserted. Runtime source/API contracts are primary.
+
+## Independent source-only review
+
+Before M1 execution, a separate reviewer read protocol/source and confirmed the
+fresh-interpreter/full-byte scope complements PR #164. Four requested boundaries
+were clarified prospectively: per-matrix versus reproduction budgets, unexpected
+pending-cycle commit accounting, observer-control limits, and separate byte/behavior
+divergence classification. Review involved no runtime execution.
