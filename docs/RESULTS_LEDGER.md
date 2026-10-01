@@ -1055,3 +1055,40 @@ contract correction only.
 - Claim impact: none. C06 remains negative; C15 residual superiority remains unsupported; C16
   remains candidate-level; C17 v1 remains an implementation failure and C17 v2 remains
   scientifically unsupported; C19 remains blocked/not evaluated; CL-007 and CL-008 remain E0.
+
+## 2026-10-01 — Independent legacy workspace-contention diagnostic
+
+- Status: `EXPLORATORY_NON_EVIDENTIARY`; bounded implementation observation only,
+  with no formal candidate identity or scientific credit. This standalone entry
+  is not a scheduler directive and changes no existing ledger disposition.
+- Scope: frozen 216-cell grid for legacy `sparkbrain.engine.SparkBrain` at base
+  `59fc994b39d0ba02682e972161bb46801592d25b`. No v03/v032/v05/M1 execution or claim.
+- Negative/bounded result: slots 1 versus 4 produced identical complete Ignition
+  sequences in all 108 capacity pairs. Mean ever-admitted task fraction for the
+  ordinary shared gate was 54.1667% with two tasks and 29.1667% with four tasks
+  at either capacity. Zero margin raised the four-task mean to 58.3333%, still
+  short of admitting all compatible tasks. It did not improve the two-task mean.
+- Confounds: these are hand-authored compatible facts, high firing thresholds,
+  explicit task groups and descriptive relabel/order seeds, not population
+  samples. Isolated engines admitted 100% with unmatched engine/state budgets;
+  this is not a resource-matched superiority result. Global competition may be
+  intentional; remaining top-selection/stability contributions are not isolated.
+- Contract correction: initial output omitted the protocol's `ignition_count`
+  key despite preserving the underlying count. The original output and manifest
+  are retained under `artifacts/exploratory/workspace_contention/pre_metric_contract_fix/`.
+  A corrected full grid from source `86408cf4ee16860badb25574f8d11bc1ef74bc95`
+  adds the missing key, without protocol/input/dynamics changes; all prior row
+  fields and summary bytes are unchanged. Two corrected fresh processes are
+  byte-identical across raw, summary and manifest.
+- Bindings: protocol SHA-256
+  `8f4be213aee46e83e9f992156d712301b9910de383290407186974cb3bce19b0`;
+  corrected decompressed raw SHA-256
+  `b8f543bc7ccbcaa4d02f79d79641c3420f3c6fc6b45af4281354189d2fc1c2b4`;
+  summary SHA-256
+  `18ba9e705a7ad8e5aaa25ca1a4163ab45cc41102e1802829855d8ac6b3d67d15`;
+  corrected manifest SHA-256
+  `0da2d5e2f4ae6864207922d34b001d33031c2391892273bc5f773516b16fdb26`.
+- Report and reproduction: `docs/EXPLORATORY_WORKSPACE_CONTENTION.md`;
+  full raw rows retained losslessly as gzip under the corresponding artifact root.
+- Claim impact: none. No evidence grade, consumed/formal identity, canonical
+  scientific result, scheduler state, package/schema, or runtime is changed.

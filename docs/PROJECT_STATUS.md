@@ -499,3 +499,15 @@ future suffixes and held-out fields from runtime input. See `docs/SYSTEM_BUILD_M
 This remains engineering work with scientific credit 0. Comparative support, composition
 contribution, real-task capability, biological equivalence, energy efficiency and scientific
 novelty are not established. FLY-0 is separate and is not a dependency or SB003 allocation.
+
+## Independent legacy workspace-contention diagnostic (2026-10-01)
+
+A separate `EXPLORATORY_NON_EVIDENTIARY` diagnostic of legacy
+`sparkbrain.engine.SparkBrain` completed the frozen 216-cell grid. Increasing
+retained Workspace capacity did not alter any of 108 paired Ignition sequences;
+zero margin did not remove all compatible-task contention. This is a synthetic
+implementation boundary, not scientific support or a v03/v032/v05/M1 result.
+See `docs/EXPLORATORY_WORKSPACE_CONTENTION.md` and the dated standalone
+`docs/RESULTS_LEDGER.md` entry for raw provenance, the preserved metric-contract
+failure and corrected replay. Existing project statuses, formal identities,
+claim grades and scheduler authority are unchanged.
