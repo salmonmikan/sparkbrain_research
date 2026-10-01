@@ -24,7 +24,7 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
-PROTOCOL = ROOT / "protocols/m1_cold_resume_diagnostic_v1.json"
+PROTOCOL = ROOT / "protocols/m1_cold_resume_diagnostic_v2.json"
 
 
 def canonical(value: Any) -> bytes:
@@ -79,7 +79,7 @@ def compare_rows(left: list[dict[str, Any]], right: list[dict[str, Any]]) -> dic
     if len(left) != len(right):
         return {"equal": False, "reason": "row_count", "left": len(left), "right": len(right)}
     for index, (a, b) in enumerate(zip(left, right, strict=True)):
-        if row_signature(a) != row_signature(b):
+        if canonical(row_signature(a)) != canonical(row_signature(b)):
             return {"equal": False, "reason": "row_mismatch", "index": index,
                     "left": a, "right": b}
     return {"equal": True, "rows": len(left)}
@@ -230,7 +230,7 @@ def worker(args: argparse.Namespace, protocol: dict[str, Any]) -> None:
             record_row(stream, row)
             if args.mode == "restore":
                 expected = reference_rows[step - 1]
-                if row_signature(row) != row_signature(expected):
+                if canonical(row_signature(row)) != canonical(row_signature(expected)):
                     write_json(out / "transition-mismatch.json", {"left": expected, "right": row})
                     manager.save(session, out / "transition-mismatch-checkpoint")
                     raise AssertionError(f"future transition mismatch at step {step}")

@@ -87,3 +87,15 @@ def test_summary_separates_byte_behavior_and_execution_failures(tmp_path: Path) 
     assert TOOL.failure_category(status, error) == "future_transition_mismatch"
     assert TOOL.failure_category({"returncode": None, "timed_out": True}, error) == "worker_timeout"
     assert TOOL.failure_category({"returncode": 0, "timed_out": False}, error) is None
+
+
+def test_cycle_rows_use_the_frozen_json_contract_without_numeric_normalization() -> None:
+    live = {"step": 1, "cycle": {"nested": {"centroid": (0.0, 0.45)}}, "inspect_hash": "x"}
+    saved = {"step": 1, "cycle": {"nested": {"centroid": [0.0, 0.45]}}, "inspect_hash": "x"}
+    assert TOOL.compare_rows([live], [saved])["equal"]
+    changed = {**saved, "cycle": {"nested": {"centroid": [0, 0.45]}}}
+    assert not TOOL.compare_rows([saved], [changed])["equal"]
+    reordered = {**saved, "cycle": {"nested": {"centroid": [0.45, 0.0]}}}
+    changed_value = {**saved, "cycle": {"nested": {"centroid": [0.0, 0.46]}}}
+    assert not TOOL.compare_rows([saved], [reordered])["equal"]
+    assert not TOOL.compare_rows([saved], [changed_value])["equal"]

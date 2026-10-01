@@ -1,6 +1,7 @@
 # M1 cold-process serialized-state continuation diagnostic
 
-Status: prospective source review; no model/fixture execution at this stage.
+Original status at protocol freeze: prospective source review; no fixture execution.
+Execution and repair history are recorded separately below.
 Classification: EXPLORATORY / NONCANONICAL / NON_EVIDENTIARY, scientific credit 0.
 The machine contract is `protocols/m1_cold_resume_diagnostic_v1.json`.
 
@@ -150,3 +151,34 @@ all divergent checkpoints are retained in full. STARTED also records schema-asse
 hashes and installed jsonschema/NumPy/Torch versions without importing them.
 Summary failures distinguish serialized bytes, future transitions, observer
 effects, timeouts and incomplete worker/resource/runner paths.
+
+## Preserved original run and explicit v2 repair
+
+The original run at `3addef5bc9c4494f23b38b2e28e2f9e02958cdca` made 54 primary
+commits: baseline24 + observed24 + six first resumed steps. All six restore
+workers stopped at the first transition because the runner compared live nested
+tuples with JSON-loaded lists. Their retained left/right JSON records, inspect
+hashes and complete saved checkpoint bytes are identical. The original summary
+and every raw file remain unchanged in `original.tar.gz`; a separate read-only
+analysis records why the runner's original `future_transition_mismatch` labels
+are not evidence of runtime behavior divergence.
+
+The v1 protocol is preserved unchanged. The explicit v2 amendment changes only
+cycle-row equality to exact canonical JSON bytes (the existing raw-row contract),
+with a synthetic tuple/list regression and an int-versus-float non-normalization
+check. It does not change runtime, inputs, cuts, seeds, horizon, thresholds or
+state equality. Byte equality remains exact with no normalization.
+
+Before correction execution, independently review and commit the amended runner
+and `protocols/m1_cold_resume_diagnostic_v2.json`. Allow one corrected144-commit
+matrix only: at most198 actual primary commits across the original and corrected
+runs. No additional clean reproduction is authorized by this amended diagnostic
+budget. Preserve both runs and report the failed/incomplete harness honestly.
+
+Independent read-only review verified all six original JSON pairs and six full
+checkpoint inventories agree, and source-traced live tuple preservation through
+dataclasses.asdict. The canonical-row repair was reviewed with numeric and order
+change rejection tests. The single corrected144/total198 budget was approved
+before execution. Original compressed bytes are transported in ordered base64
+parts under `artifacts/m1_cold_resume_diagnostic_20261001/original.parts/`;
+its manifest binds the reconstructed archive SHA-256.
