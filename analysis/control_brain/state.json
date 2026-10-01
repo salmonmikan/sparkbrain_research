@@ -1,15 +1,30 @@
 {
   "schema_version": 2,
-  "generation": "R144",
-  "generation_id": "CTRL-20261001T095338+0900-R144-M1-DEFECT-BOUNDARY-R30-FOCUSED-GREEN",
-  "generated_at": "2026-10-01T09:53:38+09:00",
+  "generation": "R145",
+  "generation_id": "CTRL-20261001T104546+0900-R145-WORK-RECOVERY-EXCEPTION-FORGE-GATE-BLOCKED",
+  "generated_at": "2026-10-01T10:45:46+09:00",
   "role": "CONTROL_BRAIN",
+  "role_resolution": {
+    "actual_start": "2026-10-01T10:45:46+09:00",
+    "resolved_slot": "10:50 JST",
+    "resolution_source": "EARLY_GRACE",
+    "selected_role": "CONTROL_BRAIN"
+  },
   "new_scientific_result": false,
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
     "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "delta": false
+  },
+  "prompt_local_user_directive": {
+    "name": "NARROW USER-AUTHORIZED EXCEPTION — 2026-10-01",
+    "disposition": "ACCEPT",
+    "scope": "ONLY_SPARKBRAIN_RECOVERY_SUPERVISOR_WORK",
+    "work_task_id": "6abdbad842c881918e1247a8b4592b26",
+    "standard_task_id": "6abd34233b188191adc5c7e6c6942d93",
+    "standard_task_desired_state": "DISABLED",
+    "conflict_status": "RESOLVED_BY_LATER_NARROWER_USER_AUTHORITY"
   },
   "science": {
     "terminal": 35,
@@ -48,18 +63,15 @@
     "branch": "system-build/m1-post-integration-robustness-20260928",
     "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
     "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
-    "ahead_by": 1,
-    "behind_by": 0,
     "pr_number": 164,
     "pr_state": "OPEN",
+    "pr_merged": false,
     "pr_mergeable": true,
-    "pr_mergeable_state": "clean",
     "pr_ci_run": 36778206722,
     "pr_ci": "success",
     "known_concrete_defects": 2,
     "control_disposition": "REPAIR_KNOWN_ACCEPTANCE_DEFECTS_BEFORE_MERGE",
-    "current_head_merge_authorized_by_control": false,
-    "next": "MAIN_FIX_DEFECTS_NEW_EXACT_HEAD_CI_THEN_ANALYST_EXACT_HEAD_RECONCILIATION_IF_REQUIRED"
+    "current_head_merge_authorized_by_control": false
   },
   "fly0": {
     "r27": {
@@ -76,14 +88,30 @@
       "exact_head": "36c2a321767dd6c18606eaeea51d3e818c446a20",
       "ci_run": 36797189243,
       "ci": "success",
-      "focused_test_blob": "399cff810aa38aab379df97c841dc1e47275af9d",
       "status": "ENGINEERING_GREEN_EXACT_HEAD_NON_EVIDENTIARY_NONCANONICAL_PENDING_FRESH_ANALYST_RECONCILIATION_NO_HANDOFF"
+    },
+    "effect_receipt_frontier_gate": {
+      "branch": "forge/20261001-fly0-effect-receipt-frontier-gate-a",
+      "source_commit": "3034febcc8fa49880ef5dd2c72755d886cd4b855",
+      "report_head": "96e1855491e09f4bf1cad067f768d9b77c399d67",
+      "focused_test_status": "NOT_PERSISTED_5_OF_5_PRE_GITHUB_REFUSAL",
+      "semantic_acceptance": "NOT_RUN",
+      "ci_run": 36802219899,
+      "ci": "failure",
+      "failure_step": "LINT_IMPORT_ORDER",
+      "status": "SOURCE_PERSISTED_FOCUSED_TEST_NOT_PERSISTED_CI_LINT_BLOCKED_UNVERIFIED_NO_HANDOFF"
     },
     "sb003": "ALLOCATED_CONDITIONAL_INACTIVE"
   },
   "scheduler_fleet": {
-    "managed_enabled": 8,
-    "visible_prompts_prohibit_work": true,
+    "managed_enabled": 9,
+    "standard_enabled": 8,
+    "authorized_work_exception_enabled": 1,
+    "work_exception_task_id": "6abdbad842c881918e1247a8b4592b26",
+    "work_exception_last_run": null,
+    "original_standard_recovery_task_id": "6abd34233b188191adc5c7e6c6942d93",
+    "original_standard_recovery_enabled": false,
+    "all_non_exception_enabled_prompts_standard_only": true,
     "backend_provenance_exposed": false,
     "changes_this_run": false
   },
@@ -92,20 +120,14 @@
     "status": "OPEN",
     "root_cause": "UNKNOWN",
     "classification": "INTERMITTENT_PRE_GITHUB_MUTATION_REFUSALS_WITH_PR_CREATE_RECOVERY_AND_MERGE_REFUSAL_PERSISTING",
-    "repository_permissions": {
-      "admin": true,
-      "maintain": true,
-      "push": true,
-      "triage": true,
-      "pull": true
-    },
+    "repository_permission": "admin",
+    "ruleset": "protection_main",
     "repository_wide_outage_supported": false,
     "constant_permission_loss_supported": false,
-    "main_r217_conditional_merge_attempts": 5,
-    "main_r217_explicit_pre_github_refusals": 4
+    "new_observation": "FORGE_BRANCH_SOURCE_AND_REPORT_WRITES_SUCCEEDED_WHILE_FOCUSED_TEST_CREATE_FAILED_5_OF_5_PRE_GITHUB"
   },
-  "pointer_debt_before": {
-    "control": "HISTORY_LATEST_R143_STATE_R141",
+  "pointer_debt": {
+    "control": "NONE_R145_AFTER_VERIFIED_PUBLICATION",
     "main": "APPEND_ONLY_R217_LATEST_STATE_LEASE_R215",
     "literature": "APPEND_ONLY_R54_LATEST_STATE_R53"
   },
@@ -115,13 +137,13 @@
     "immutable_refs_mutated": false,
     "consumed_formal_rerun_retune_rescore": false,
     "scheduler_changes": false,
-    "work_mode_used": false
+    "work_mode_used_by_this_run": false
   },
   "persistence": {
     "route": "ATOMIC_GIT_DATA",
     "publication_attempt": 1,
     "attempt_limit": 5,
     "force_push": false,
-    "history_path": "analysis/control_brain/history/2026-10-01/0953-R144.md"
+    "history_path": "analysis/control_brain/history/2026-10-01/1045-R145.md"
   }
 }

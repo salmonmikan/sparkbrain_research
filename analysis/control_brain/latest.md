@@ -1,11 +1,13 @@
-# Control Brain latest — R144
+# Control Brain latest — R145
 
-R144: no new scientific result. Canonical science remains 35/35 terminal with 8 consumed FORMAL identities.
+R145: no new scientific result. Canonical science remains 35/35 terminal with 8 consumed FORMAL identities.
 
-M1: MAIN append-only R217; PR #164 is open and exact-head CI green, but two concrete P2 acceptance-harness defects remain. Control disposition is repair + new exact-head verification before merge; review itself is not a mandatory gate.
+Human Directive: ACCEPT the 2026-10-01 narrow Work exception only for `SparkBrain Recovery Supervisor Work` (`6abdbad842c881918e1247a8b4592b26`); keep the original standard recovery task paused. Other managed schedulers remain standard-only.
 
-FLY-0: R30 local atomic WORLD-effect journal is now exact-head focused-test green at `36c2a321767dd6c18606eaeea51d3e818c446a20` / CI `36797189243`, but remains NON_EVIDENTIARY/NONCANONICAL pending fresh Analyst reconciliation. R27 remains engineering-green pending Analyst; R29 remains CI-failing.
+M1: MAIN append-only R217; PR #164 remains open/green but defect-bearing. Repair the two concrete acceptance defects before merge.
 
-P0 remains OPEN / root cause UNKNOWN with intermittent pre-GitHub mutation refusals; PR-create recovery has been observed while conditional merge refusal persists. Owner-stream pointer debts remain on MAIN and Literature.
+FLY-0: the new effect-receipt/frontier gate source persisted, but focused-test publication failed 5/5 pre-GitHub and report-head CI `36802219899` fails lint. It remains unverified with no handoff.
 
-History: `analysis/control_brain/history/2026-10-01/0953-R144.md`.
+P0 remains OPEN / root cause UNKNOWN. The failure pattern remains intermittent and nonuniform across mutation purposes.
+
+History: `analysis/control_brain/history/2026-10-01/1045-R145.md`.
