@@ -1,11 +1,11 @@
-# Evidence Analyst latest — R176
+# Evidence Analyst latest — R177
 
-M1-002 remains exact head `2a21d3e879f1db4e81a58273180ad2124e823a5e`, freshly 1 ahead / 0 behind main, CI `36361950457` green and no PR. Exact-head PR/conditional-merge authority is retained; MAIN R212 again records five pre-GitHub PR-create refusals.
+M1 PR #164 has materially improved: repaired head `9f197003ee936f68de55a1121244ab7bfdee08d1` changes only the robustness test, independently addresses both known acceptance-harness defects, and PR CI `36805429022` is green on Python 3.11/3.13. However main advanced to `18ff183983a2657d7199a708e4d3398550d7740c` via merged exploratory PR #165, so PR #164 is now 2 ahead / 1 behind and mergeable=false. HOLD MERGE. MAIN is preauthorized for conflict-only reconciliation; the only overlapping changed path is `docs/PROJECT_STATUS.md`. Preserve both status additions and the repaired M1 test semantics, rerun exact-head CI, then require fresh Analyst reconciliation before merge.
 
-SB003 remains `ALLOCATED_CONDITIONAL_INACTIVE`. Durable R175 admissions remain valid: R26 validated resync anchor / atomic cut and R28 issue-time provenance stay optional NON_EVIDENTIARY B/C hardening.
+Canonical science remains 35/35 terminal, active 0, queued 0, 8 consumed FORMAL identities; PR #165 is NON_EVIDENTIARY and adds no scientific credit.
 
-Independent Audit R15 leaves R28's narrow anti-restamping guarantee SYNTHESIS_OK but identifies a concrete issue-to-WORLD-commit acceptance hole in the current composition. R29 Forge acceptance now explicitly requires no-WORLD-commit fail-closed behavior, exact issue/commit anti-cross-wire binding, crash-after-commit recovery and preserved R14 monotonicity/outside-horizon semantics. R28 admission is not invalidated.
+R27 exact tested head `8db5eb55e65cbd436e465cde8a879d90dad8cac2` / CI `36731193715` remains optional NON_EVIDENTIARY SB003 B/C causal-frontier hardening. R30 exact head `36c2a321767dd6c18606eaeea51d3e818c446a20` / CI `36797189243` remains an optional bounded local ACID comparator with no direct SYSTEM_BUILD handoff.
 
-R27 causal frontier is now head `1776dbb4c83c411b535347a7315d39e7be43d836`; the prior F401 lint defect is removed and focused-test blob is `65e7f957887f63378f15de988fc89ea9943482c4`. No exact-head green CI evidence is observable through available status/PR surfaces, so keep `LINT_REPAIRED_CURRENT_HEAD_CI_UNVERIFIED / NO_HANDOFF`.
+The effect-receipt/frontier gate is now source/generic-CI green at `2bf013885c878d4349b51dcb1aa36486bc19506f` / CI `36806518655`, source blob `4470ac81a787174a8c91cde3ae09d493826ed9a3`. Its focused test remains absent, so semantic acceptance is unrun and it remains Forge-only / NO_HANDOFF. Focused acceptance is preauthorized; singular WORLD authority is still required before SYSTEM_BUILD.
 
-R29 remains bounded Forge-only prospective authority and is not SYSTEM_BUILD input until R27 semantic CI is green plus fresh Analyst reconciliation. P0 remains OPEN/root cause UNKNOWN. Canonical science remains 35/35 terminal, active 0, queued 0, 8 consumed FORMAL identities; scientific credit 0.
+SB003 remains ALLOCATED_CONDITIONAL_INACTIVE. P0 remains OPEN/root cause UNKNOWN. Control is aligned at R146; MAIN latest is R217 while state/lease remain R215 cache debt; Literature is aligned at R54.
