@@ -1,0 +1,43 @@
+{
+  "blocked_pr173_results_included": false,
+  "classification": "SOURCE_ONLY_DESIGN_NON_EVIDENTIARY",
+  "created_utc": "2026-10-01",
+  "execution_ready": false,
+  "future_ceiling_only": {
+    "ordinary_memory_pairs": 640,
+    "total_pairs": 1536,
+    "v05_pairs": 896
+  },
+  "independent_review": {
+    "scope": "source and primary literature only",
+    "status": "approved for source-only publication after final readback including PR176 boundary; no execution approval"
+  },
+  "local_checks": {
+    "relative_links_valid": true,
+    "source_pins_present_in_report": true
+  },
+  "model_calls": 0,
+  "new_scientific_results": false,
+  "pending_before_future_execution": [
+    "new exact source/runner/input freeze",
+    "fresh seed registration",
+    "numeric decision margins",
+    "driver and worker resource caps",
+    "independent protocol/runner review",
+    "explicit bounded execution approval"
+  ],
+  "publication_base_commit": "a5b231db84fb7017b5df5e7653739c65bb4175bb",
+  "report_path": "docs/research/plasticity_retention_design_20261001.md",
+  "report_sha256": "13ec2016cb4967b5f0158b3909dd8efd98a056c0f4662a009f29f986639019ec",
+  "runtime_imports": 0,
+  "schema_version": 1,
+  "scientific_credit": 0,
+  "source_commit": "51feb9de68713b864489540602c94b6080784e27",
+  "source_sha256": {
+    "src/sparkbrain/v05/assemblies.py": "f2dc1b7bbe71fb70ea27bb661111dca2d68ebfeb3e6044e4ec221120d7d12394",
+    "src/sparkbrain/v05/brain.py": "d11680e60ebd7d3301a81a1e0e6ffddf39f2d1707843892c241b0865734439c9",
+    "src/sparkbrain/v05/plasticity.py": "3729e6f9556382988441116240ca0fa36897048b56e7e789a7ff453b444c3429",
+    "src/sparkbrain/v05/prediction.py": "dcd8f45ba4cd1a0478685bf7f8f9764aeed135820f29d5b3381111631345e169",
+    "src/sparkbrain/v05/receptors.py": "4071d0d5d2f0ab487e3324528053997ecbdeb65953bfa211312d0da918c75942"
+  }
+}
