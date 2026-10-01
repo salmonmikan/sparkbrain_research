@@ -29,3 +29,27 @@ Recovery identity:
 ```
 
 Publication attempt: 1. Atomic latest/state/operational-record publication. No history reinterpretation, no experiment/workflow rerun, no scheduler changes, no scientific or build ref mutation. The latest cache is an exact copy of the existing history. The state cache projects only metadata explicitly present there; unknown original producer metadata is not reconstructed. Original R54 history remains primary durable record. Independent post-publication readback is required before reporting recovery complete.
+
+## Independent readback verified
+
+Verified at: 2026-10-01 02:00:00 UTC
+Verified publication commit: `fdda62fb56f62fcf4a606aef416b622290fde4a6`
+Persistence complete: true.
+
+```json
+{
+  "head_matches": true,
+  "latest_exact": true,
+  "state_exact": true,
+  "history_blob_unchanged": true,
+  "operational_record_exact": true,
+  "descendant": true,
+  "changed_files": [
+    "analysis/external_research_audit/literature/history/2026-10-01/recovery-R54-cache-reconciliation.md",
+    "analysis/external_research_audit/literature/latest.md",
+    "analysis/external_research_audit/literature/state.json"
+  ]
+}
+```
+
+Observed runtime evidence: GitHub create_tree, create_commit and non-force update_ref returned success; independent fresh ref/file/compare reads matched. This proves this specific scheduled recovery publication path, not fleet-wide recovery or backend-mode provenance. P0 remains open. MAIN R217/cache R215 and missing Forge focused-test payload are unresolved; PR #164 already exists and current Control R145 prohibits merging its defect-bearing head.
