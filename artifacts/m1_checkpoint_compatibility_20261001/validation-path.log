@@ -1,0 +1,168 @@
+
+=== ruff.log ===
+All checks passed!
+
+=== readiness.log ===
+SparkBrain local readiness: PASS
+Python: 3.12.14 (Linux x86_64)
+Package version: 0.3.2.dev0
+Persisted schema version: 0.2
+CPU smoke frames: 7 final belief: cat
+Core runtime dependencies: []
+Optional tools present: {'pytest': True, 'ruff': True, 'jsonschema': True, 'torch': True}
+Runtime network/cloud dependency: none detected in core reference package
+
+=== pytest.log ===
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0
+rootdir: /workspace/shared/sparkbrain-checkpoint-compatibility-20261001
+configfile: pyproject.toml
+testpaths: tests
+plugins: anyio-4.15.1
+collected 1321 items / 392 deselected / 929 selected
+
+tests/test_assembly_m1_contract_sentinel.py .......................      [  2%]
+tests/test_assembly_m1_interface_source_audit.py ....................... [  4%]
+......                                                                   [  5%]
+tests/test_baseline_package.py ...                                       [  5%]
+tests/test_brain_lab_api.py ......                                       [  6%]
+tests/test_brain_lab_e2e.py ..                                           [  6%]
+tests/test_brain_lab_service.py ........                                 [  7%]
+tests/test_c11_input_diagnosis.py ............................           [ 10%]
+tests/test_c12_sensory_field.py ...................                      [ 12%]
+tests/test_c12_sensory_runner.py .......                                 [ 13%]
+tests/test_c13_evidence_entity.py ..............................         [ 16%]
+tests/test_c13_evidence_runner.py ........                               [ 17%]
+tests/test_c14_coalition_gate.py ...........                             [ 18%]
+tests/test_c14_coalition_runner.py ..........                            [ 19%]
+tests/test_c15_revision_runner.py ...................................... [ 23%]
+............                                                             [ 25%]
+tests/test_c16_concept_runner.py ....................................... [ 29%]
+........................                                                 [ 31%]
+tests/test_c17_organ_runner.py ..........                                [ 33%]
+tests/test_c18_brain_lab.py .........                                    [ 34%]
+tests/test_c18_preregistration.py .....                                  [ 34%]
+tests/test_dynamics.py ..........                                        [ 35%]
+tests/test_exploratory_event_clock.py ..................                 [ 37%]
+tests/test_exploratory_m1_outcome_archive.py ........................... [ 40%]
+..                                                                       [ 40%]
+tests/test_exploratory_workspace_contention.py ...........               [ 41%]
+tests/test_invariants.py .......                                         [ 42%]
+tests/test_learned_routing.py .................                          [ 44%]
+tests/test_local_only.py ....                                            [ 44%]
+tests/test_m1_checkpoint_compatibility_artifacts.py ............         [ 46%]
+tests/test_m1_checkpoint_compatibility_diagnostic_tool.py .............. [ 47%]
+.....................                                                    [ 49%]
+tests/test_m1_checkpoint_compatibility_packaging.py .................... [ 52%]
+...                                                                      [ 52%]
+tests/test_m1_cold_resume_artifacts.py ................................. [ 55%]
+.........................                                                [ 58%]
+tests/test_m1_cold_resume_diagnostic_tool.py .............               [ 60%]
+tests/test_matched_baselines.py ........                                 [ 60%]
+tests/test_outputs.py .                                                  [ 61%]
+tests/test_phase1_ablations.py .................                         [ 62%]
+tests/test_phase1_metrics.py .....                                       [ 63%]
+tests/test_phase1_suite.py ..                                            [ 63%]
+tests/test_prior_art_audit.py ..                                         [ 63%]
+tests/test_run_tests.py .....                                            [ 64%]
+tests/test_schemas.py ..                                                 [ 64%]
+tests/test_serialization.py ..................                           [ 66%]
+tests/test_spiking_backend.py ...........                                [ 67%]
+tests/test_structural_plasticity.py .................                    [ 69%]
+tests/test_system_build_acceptance_boundaries.py ....................... [ 72%]
+..........                                                               [ 73%]
+tests/test_system_build_causal_scope_revision.py ....................... [ 75%]
+....                                                                     [ 75%]
+tests/test_system_build_checkpoint.py .                                  [ 76%]
+tests/test_system_build_choice.py ..                                     [ 76%]
+tests/test_system_build_integrated_m1.py ...................             [ 78%]
+tests/test_system_build_reuse.py .                                       [ 78%]
+tests/test_system_build_revision_loop.py .                               [ 78%]
+tests/test_system_build_smoke.py .                                       [ 78%]
+tests/test_task_schemas.py .....                                         [ 79%]
+tests/test_temporal_reuse_evidence.py .................................. [ 82%]
+..............                                                           [ 84%]
+tests/test_temporal_reuse_probe_contract.py .......                      [ 85%]
+tests/test_test_tiers.py ...                                             [ 85%]
+tests/test_v031_brain_lab_api.py .....                                   [ 86%]
+tests/test_v031_brain_lab_artifact.py ..                                 [ 86%]
+tests/test_v031_corrective_runtime.py ...............                    [ 87%]
+tests/test_v031_integrated_runtime.py .................                  [ 89%]
+tests/test_v032_direct_checkpoint.py ......                              [ 90%]
+tests/test_v032_input_semantics.py .....                                 [ 90%]
+tests/test_v032_metrics.py ..........                                    [ 91%]
+tests/test_v032_runtime.py ......                                        [ 92%]
+tests/test_v03_seed_demo.py .                                            [ 92%]
+tests/test_v03_seed_primitives.py ...................                    [ 94%]
+tests/test_validation.py .............                                   [ 96%]
+tests/v04/test_v04_brain.py .....                                        [ 96%]
+tests/v04/test_v04_dynamics.py ....                                      [ 97%]
+tests/v04/test_v04_field.py ...                                          [ 97%]
+tests/v04/test_v04_plasticity.py ..                                      [ 97%]
+tests/v04/test_v04_transduction.py .....                                 [ 98%]
+tests/v05/test_v05_assemblies.py ...                                     [ 98%]
+tests/v05/test_v05_brain.py .....                                        [ 99%]
+tests/v05/test_v05_homeostasis_plasticity.py ..                          [ 99%]
+tests/v05/test_v05_receptors.py ...                                      [ 99%]
+tests/v05/test_v05_visualizer.py .                                       [ 99%]
+tests/v05/test_v05_worlds_evaluation.py ...                              [100%]
+
+=============================== warnings summary ===============================
+../sparkbrain-event-clock-venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /workspace/shared/sparkbrain-event-clock-venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========== 929 passed, 392 deselected, 1 warning in 115.80s (0:01:55) ==========
+
+=== focused.log ===
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0
+rootdir: /workspace/shared/sparkbrain-checkpoint-compatibility-20261001
+configfile: pyproject.toml
+plugins: anyio-4.15.1
+collected 70 items
+
+tests/test_m1_checkpoint_compatibility_diagnostic_tool.py .............. [ 20%]
+.....................                                                    [ 50%]
+tests/test_m1_checkpoint_compatibility_artifacts.py ............         [ 67%]
+tests/test_m1_checkpoint_compatibility_packaging.py .................... [ 95%]
+...                                                                      [100%]
+
+============================== 70 passed in 1.83s ==============================
+
+=== demo.log ===
+t=1.01 event=fur            truth=cat  belief=None top=0.698
+t=2.02 event=meow           truth=cat  belief=cat  top=1.457
+t=3.02 event=bark           truth=cat  belief=cat  top=1.108
+t=4.01 event=motionless     truth=toy  belief=cat  top=0.691
+t=5.02 event=plastic_seam   truth=toy  belief=toy  top=1.619
+t=6.01 event=warm_body      truth=cat  belief=toy  top=0.851
+t=7.03 event=purr           truth=cat  belief=cat  top=1.372
+
+Visualizer: /workspace/shared/m1-checkpoint-compatibility-canonical-path-validation-20261001/demo/visualizer.html
+
+=== benchmark.log ===
+/workspace/shared/m1-checkpoint-compatibility-canonical-path-validation-20261001/benchmark/benchmark_results.json
+/workspace/shared/m1-checkpoint-compatibility-canonical-path-validation-20261001/benchmark/benchmark_aggregate.csv
+/workspace/shared/m1-checkpoint-compatibility-canonical-path-validation-20261001/benchmark/benchmark_report.md
+
+=== bundle.log ===
+SparkBrain local readiness: PASS
+Python: 3.12.14 (Linux x86_64)
+Package version: 0.3.2.dev0
+Persisted schema version: 0.2
+CPU smoke frames: 7 final belief: cat
+Core runtime dependencies: []
+Optional tools present: {'pytest': True, 'ruff': True, 'jsonschema': True, 'torch': True}
+Runtime network/cloud dependency: none detected in core reference package
+Validated 88 required files
+Trace frames: 7
+Benchmark episode rows: 240
+Wrote: artifacts/validation_manifest.json
+
+=== packaging.json ===
+{"anchors_sha256": "a370ff202cef218e11889a3959cac73892c13ff7ea5576242621712c0bac2ef8", "archive_bytes": 34500, "archive_sha256": "ae440c596046867aacc4ef5b72a3b1b1e3bd3bdeef10e6fced37e57030a192d8", "model_executed": false, "raw_files": 206}
+
+=== repacked-verification.json ===
+{"alias_saveback_changed_files": ["manifest.json"], "all_retained_inputs_match_before_after": true, "archive_sha256": "ae440c596046867aacc4ef5b72a3b1b1e3bd3bdeef10e6fced37e57030a192d8", "case_count": 10, "direct_validation_calls": 13, "direct_validation_rejections": 1, "direct_validation_returns": 12, "dynamics_transitions": 0, "exact_valid_controls": 2, "expected_semantic_rejections": 7, "outer_boolean_schema_accepted": true, "primary_load_calls": 10, "scientific_credit": 0, "status": "verified_without_runtime_execution"}

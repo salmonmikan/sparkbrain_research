@@ -344,7 +344,8 @@ python scripts/verify_m1_checkpoint_compatibility_artifacts.py \
 Alternatively replace `--published ...` with `--raw /absolute/existing/raw` to
 package the original retained directory. Both paths reproduce the same 34,500-byte
 archive and anchor bytes. This is lossless data transformation, not another run or
-scientific replicate. The tool refuses an existing output and imports no runtime.
+scientific replicate. The tool refuses existing or input-overlapping output paths after resolving
+symlink aliases and `..` components, and imports no runtime.
 
 The recorded execution command was:
 
@@ -430,3 +431,13 @@ warning; 62 focused checks passed. Ruff, readiness, demo, 40×30 legacy benchmar
 bundle checks, raw/published packaging equality and repackaged verification all
 passed. Full logs are in `validation-anchor.log`; earlier logs are unchanged.
 The experiment and its original bytes were not rerun or rewritten.
+
+The final packaging path review also closed a P2 input-contamination risk: output
+must be disjoint from raw/published input after resolving aliases and path segments,
+and all writes use that resolved destination. This prevents both descendant
+outputs and creation of lexical intermediate directories inside retained input.
+Eight path-boundary tests and independent no-write review cover the correction.
+All 929 default tests and 70 focused checks pass, with 392 default deselections
+and one existing warning. The full readiness/lint/demo/40×30 benchmark/bundle
+sequence and data-only packaging/verification pass; see `validation-path.log`.
+No actual retained evidence was contaminated, and no diagnostic rerun occurred.

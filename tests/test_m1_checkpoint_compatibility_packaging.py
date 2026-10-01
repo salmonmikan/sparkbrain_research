@@ -142,3 +142,56 @@ def test_external_anchor_replacement_is_rejected(retained, monkeypatch: pytest.M
     monkeypatch.setattr(TOOL, "verifier", lambda: verifier)
     with pytest.raises(ValueError, match="external anchor"):
         TOOL.build_package(retained)
+
+
+@pytest.mark.parametrize("kind", ["--raw", "--published"])
+@pytest.mark.parametrize("route", ["child", "symlink", "normalized"])
+def test_cli_rejects_input_output_overlap_without_touching_input(
+    tmp_path: Path, kind: str, route: str,
+) -> None:
+    source = tmp_path / "retained"
+    source.mkdir()
+    sentinel = source / "untouched"
+    sentinel.write_bytes(b"original")
+    if route == "symlink":
+        alias = tmp_path / "alias"
+        alias.symlink_to(source, target_is_directory=True)
+        output = alias / "package"
+    elif route == "normalized":
+        output = source / "unused" / ".." / "package"
+    else:
+        output = source / "package"
+    result = subprocess.run([sys.executable, str(SOURCE), kind, str(source),
+                             "--output", str(output)], capture_output=True, text=True)
+    assert result.returncode != 0
+    assert "input and output must not overlap" in result.stderr
+    assert list(source.iterdir()) == [sentinel]
+    assert sentinel.read_bytes() == b"original"
+    assert not output.exists()
+
+
+def test_disjoint_path_check_rejects_equal_and_ancestor(tmp_path: Path) -> None:
+    source = tmp_path / "raw"
+    source.mkdir()
+    for output in (source, tmp_path):
+        with pytest.raises(ValueError, match="must not overlap"):
+            TOOL.require_disjoint_paths(source, output)
+    TOOL.require_disjoint_paths(source, tmp_path / "sibling")
+    TOOL.require_disjoint_paths(source, source / ".." / "sibling")
+
+
+def test_resolved_disjoint_output_does_not_create_intermediate_raw_directory(
+    retained, tmp_path: Path,
+) -> None:
+    source = tmp_path / "retained"
+    for name, raw in retained.items():
+        path = source / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(raw)
+    output = source / "must-not-be-created" / ".." / ".." / "repacked"
+    result = subprocess.run([sys.executable, str(SOURCE), "--raw", str(source),
+                             "--output", str(output)], capture_output=True, text=True)
+    assert result.returncode == 0, result.stderr
+    assert not (source / "must-not-be-created").exists()
+    assert TOOL.read_raw(source) == retained
+    assert (tmp_path / "repacked/run.tar.xz").is_file()

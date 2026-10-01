@@ -136,6 +136,11 @@ def write_package(
 ) -> dict[str, Any]:
     if output.exists() or output.is_symlink():
         raise FileExistsError("packaging output must be absent; no clobber")
+    # Write the checked canonical path: mkdir on an unresolved a/new/../ spelling
+    # can create the intermediate directory even when the final destination is elsewhere.
+    output = output.resolve()
+    if output.exists():
+        raise FileExistsError("packaging output must be absent; no clobber")
     package = build_package(files, git_root)
     output.mkdir(parents=True, exist_ok=False)
     for name, raw in package.items():
@@ -149,6 +154,13 @@ def write_package(
             "raw_files": len(files), "model_executed": False}
 
 
+def require_disjoint_paths(input_root: Path, output: Path) -> None:
+    source = input_root.resolve()
+    destination = output.resolve()
+    if destination.is_relative_to(source) or source.is_relative_to(destination):
+        raise ValueError("packaging input and output must not overlap")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     inputs = parser.add_mutually_exclusive_group(required=True)
@@ -158,6 +170,7 @@ def main() -> None:
                         help="optional additional source-object audit in a full-history checkout")
     parser.add_argument("--output", type=Path, required=True, help="new absent packaging directory")
     args = parser.parse_args()
+    require_disjoint_paths(args.raw if args.raw else args.published, args.output)
     if args.output.exists() or args.output.is_symlink():
         raise FileExistsError("packaging output must be absent; no clobber")
     files = read_raw(args.raw) if args.raw else read_published(args.published)
