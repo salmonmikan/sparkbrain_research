@@ -1,12 +1,12 @@
 {
   "schema_version": 2,
-  "generation": "R145",
-  "generation_id": "CTRL-20261001T104546+0900-R145-WORK-RECOVERY-EXCEPTION-FORGE-GATE-BLOCKED",
-  "generated_at": "2026-10-01T10:45:46+09:00",
+  "generation": "R146",
+  "generation_id": "CTRL-20261001T114800+0900-R146-WORK-RECOVERY-VERIFIED-M1-REPAIRED-DIRTY",
+  "generated_at": "2026-10-01T11:48:00+09:00",
   "role": "CONTROL_BRAIN",
   "role_resolution": {
-    "actual_start": "2026-10-01T10:45:46+09:00",
-    "resolved_slot": "10:50 JST",
+    "actual_start": "2026-10-01T11:48:00+09:00",
+    "resolved_slot": "11:50 JST",
     "resolution_source": "EARLY_GRACE",
     "selected_role": "CONTROL_BRAIN"
   },
@@ -19,7 +19,7 @@
   },
   "prompt_local_user_directive": {
     "name": "NARROW USER-AUTHORIZED EXCEPTION — 2026-10-01",
-    "disposition": "ACCEPT",
+    "disposition": "ACCEPT_RETAINED",
     "scope": "ONLY_SPARKBRAIN_RECOVERY_SUPERVISOR_WORK",
     "work_task_id": "6abdbad842c881918e1247a8b4592b26",
     "standard_task_id": "6abd34233b188191adc5c7e6c6942d93",
@@ -35,7 +35,7 @@
     "scientific_credit": 0
   },
   "refs": {
-    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "main": "18ff183983a2657d7199a708e4d3398550d7740c",
     "analyst": {
       "generation": "R176",
       "head": "acf01924d3db1fef0cbba3565db8aba2433ab642"
@@ -47,30 +47,46 @@
     },
     "main_reports": {
       "append_only_generation": "R217",
-      "head": "c2d921a24e8dc78786b4b6d2a0cc9b733ac79161",
-      "moving_generation": "R215"
+      "head": "51cf41eb5cbb4ae1b208b4fda89c60d1fd4ef8df",
+      "latest_generation": "R217",
+      "state_generation": "R215",
+      "lease_generation": "R215"
     },
     "external": {
-      "head": "d61bb4c72ead87a11802bf65e0217c07bd311642",
+      "head": "5c75bd9fe1b4b0e7c50ea524974115f1f7afc609",
       "literature_append_only": "R54",
-      "literature_moving": "R53",
+      "literature_latest": "R54",
+      "literature_state": "R54",
       "theory": "R30",
       "audit": "R15"
     }
   },
+  "main_pr165": {
+    "merged": true,
+    "merge_commit": "18ff183983a2657d7199a708e4d3398550d7740c",
+    "ci_run": 36807207854,
+    "ci": "success",
+    "classification": "EXPLORATORY_NON_EVIDENTIARY_NO_SCIENTIFIC_CREDIT"
+  },
   "m1": {
     "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
     "branch": "system-build/m1-post-integration-robustness-20260928",
-    "exact_head": "2a21d3e879f1db4e81a58273180ad2124e823a5e",
-    "base_main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "exact_head": "9f197003ee936f68de55a1121244ab7bfdee08d1",
+    "current_main": "18ff183983a2657d7199a708e4d3398550d7740c",
+    "ahead_by": 2,
+    "behind_by": 1,
     "pr_number": 164,
     "pr_state": "OPEN",
     "pr_merged": false,
-    "pr_mergeable": true,
-    "pr_ci_run": 36778206722,
-    "pr_ci": "success",
-    "known_concrete_defects": 2,
-    "control_disposition": "REPAIR_KNOWN_ACCEPTANCE_DEFECTS_BEFORE_MERGE",
+    "pr_mergeable": false,
+    "pr_mergeable_state": "dirty",
+    "repair_pr_ci_run": 36805429022,
+    "repair_push_ci_run": 36805424711,
+    "repair_ci": "success",
+    "concrete_defects_addressed": 2,
+    "review_threads_mechanically_resolved": false,
+    "analyst_exact_head_reconciliation": "REQUIRED_AFTER_CONFLICT_RESOLUTION",
+    "control_disposition": "RESOLVE_MAIN_DIVERGENCE_NEW_EXACT_HEAD_CI_THEN_FRESH_ANALYST_RECONCILIATION_BEFORE_MERGE",
     "current_head_merge_authorized_by_control": false
   },
   "fly0": {
@@ -91,15 +107,12 @@
       "status": "ENGINEERING_GREEN_EXACT_HEAD_NON_EVIDENTIARY_NONCANONICAL_PENDING_FRESH_ANALYST_RECONCILIATION_NO_HANDOFF"
     },
     "effect_receipt_frontier_gate": {
-      "branch": "forge/20261001-fly0-effect-receipt-frontier-gate-a",
-      "source_commit": "3034febcc8fa49880ef5dd2c72755d886cd4b855",
-      "report_head": "96e1855491e09f4bf1cad067f768d9b77c399d67",
-      "focused_test_status": "NOT_PERSISTED_5_OF_5_PRE_GITHUB_REFUSAL",
+      "head": "2bf013885c878d4349b51dcb1aa36486bc19506f",
+      "ci_run": 36806518655,
+      "ci": "success",
+      "focused_test_present": false,
       "semantic_acceptance": "NOT_RUN",
-      "ci_run": 36802219899,
-      "ci": "failure",
-      "failure_step": "LINT_IMPORT_ORDER",
-      "status": "SOURCE_PERSISTED_FOCUSED_TEST_NOT_PERSISTED_CI_LINT_BLOCKED_UNVERIFIED_NO_HANDOFF"
+      "status": "SOURCE_LINT_REPAIRED_GENERIC_CI_GREEN_FOCUSED_TEST_ABSENT_UNVERIFIED_NO_HANDOFF"
     },
     "sb003": "ALLOCATED_CONDITIONAL_INACTIVE"
   },
@@ -108,28 +121,44 @@
     "standard_enabled": 8,
     "authorized_work_exception_enabled": 1,
     "work_exception_task_id": "6abdbad842c881918e1247a8b4592b26",
-    "work_exception_last_run": null,
+    "work_exception_first_run_time": "2026-10-01T11:06:52+09:00",
+    "work_backend_provenance_exposed": false,
     "original_standard_recovery_task_id": "6abd34233b188191adc5c7e6c6942d93",
     "original_standard_recovery_enabled": false,
     "all_non_exception_enabled_prompts_standard_only": true,
-    "backend_provenance_exposed": false,
     "changes_this_run": false
+  },
+  "work_recovery": {
+    "main_r217_latest": {
+      "publication_commit": "b9ca10ed1c6d0e3a830288535a81b1eb1c11a1ed",
+      "verification_commit": "51cf41eb5cbb4ae1b208b4fda89c60d1fd4ef8df",
+      "persistence_complete": true,
+      "residual_state_lease_debt": "R215"
+    },
+    "literature_r54": {
+      "publication_commit": "fdda62fb56f62fcf4a606aef416b622290fde4a6",
+      "verification_commit": "5c75bd9fe1b4b0e7c50ea524974115f1f7afc609",
+      "persistence_complete": true,
+      "latest_state_aligned": true
+    }
   },
   "p0": {
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
     "root_cause": "UNKNOWN",
-    "classification": "INTERMITTENT_PRE_GITHUB_MUTATION_REFUSALS_WITH_PR_CREATE_RECOVERY_AND_MERGE_REFUSAL_PERSISTING",
+    "classification": "INTERMITTENT_PRE_GITHUB_MUTATION_REFUSALS_WITH_MULTIPLE_RECOVERIES_ROOT_CAUSE_UNKNOWN",
     "repository_permission": "admin",
     "ruleset": "protection_main",
     "repository_wide_outage_supported": false,
     "constant_permission_loss_supported": false,
-    "new_observation": "FORGE_BRANCH_SOURCE_AND_REPORT_WRITES_SUCCEEDED_WHILE_FOCUSED_TEST_CREATE_FAILED_5_OF_5_PRE_GITHUB"
+    "current_m1_blocker_layer": "GITHUB_MERGEABILITY_DIRTY_AFTER_MAIN_ADVANCE_NOT_PLATFORM_REFUSAL"
   },
   "pointer_debt": {
-    "control": "NONE_R145_AFTER_VERIFIED_PUBLICATION",
-    "main": "APPEND_ONLY_R217_LATEST_STATE_LEASE_R215",
-    "literature": "APPEND_ONLY_R54_LATEST_STATE_R53"
+    "control": "NONE_R146_AFTER_VERIFIED_PUBLICATION",
+    "analyst": "NONE_R176_ALIGNED_BUT_SEMANTICALLY_STALE_FOR_NEW_HEADS",
+    "main": "APPEND_ONLY_LATEST_R217_STATE_LEASE_R215",
+    "literature": "NONE_R54_ALIGNED",
+    "theory": "NONE_R30_ALIGNED"
   },
   "hard_floor": {
     "scientific_experiments": 0,
@@ -144,6 +173,6 @@
     "publication_attempt": 1,
     "attempt_limit": 5,
     "force_push": false,
-    "history_path": "analysis/control_brain/history/2026-10-01/1045-R145.md"
+    "history_path": "analysis/control_brain/history/2026-10-01/1148-R146.md"
   }
 }
