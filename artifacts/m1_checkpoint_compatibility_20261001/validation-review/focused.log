@@ -1,0 +1,13 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0
+rootdir: /workspace/shared/sparkbrain-checkpoint-compatibility-20261001
+configfile: pyproject.toml
+plugins: anyio-4.15.1
+collected 57 items
+
+tests/test_m1_checkpoint_compatibility_diagnostic_tool.py .............. [ 24%]
+.....................                                                    [ 61%]
+tests/test_m1_checkpoint_compatibility_artifacts.py ............         [ 82%]
+tests/test_m1_checkpoint_compatibility_packaging.py ..........           [100%]
+
+============================== 57 passed in 3.02s ==============================

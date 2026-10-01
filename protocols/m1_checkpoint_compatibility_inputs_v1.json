@@ -1,0 +1,56 @@
+{
+  "contact_boundary": "Existing engineering input deliberately reused; not independent scientific evidence. This input-manifest generation reads JSON/archive data only and constructs no model.",
+  "nondefault_public_configs": {
+    "predictive": {
+      "ambiguity_distance_margin": 0.05,
+      "ambiguity_prediction_gap": 0.5,
+      "context_gate": 0.25,
+      "max_context_scalars": 64,
+      "max_hypotheses": 16,
+      "reuse_error": 0.35
+    },
+    "scope": {
+      "birth_distance": 0.25,
+      "candidates": [
+        "alpha",
+        "beta"
+      ],
+      "evidence_gain": 1.0,
+      "max_components": 2,
+      "maximum_absolute_support": 4.0,
+      "maximum_assignment_distance": 0.25,
+      "maximum_dimensions": 8,
+      "minimum_confidence": 0.65,
+      "minimum_distance_margin": 0.05,
+      "minimum_hypothesis_margin": 0.2
+    }
+  },
+  "protocol_sha256": "0889e1984865a93c4663f9ca5bd6e29d2ccdd97cf523ceb62f80ce768ac84c14",
+  "reference_brain_config": {
+    "ablations": [],
+    "action_prefix": "broadcast",
+    "allow_oracle_diagnostics": false,
+    "entity_track": "E0_global",
+    "ignition_margin": 0.2,
+    "ignition_threshold": 1.2,
+    "input_track": "I1_local_compositional",
+    "random_seed": 31,
+    "stability_steps": 1,
+    "workspace_capacity": 1
+  },
+  "reference_default_config_record_sha256": "ef9e4bd4362bf30410f5d4af59b2462d48bd41eed7cf130d5134f437705a7d9c",
+  "retained_fixture": {
+    "archive_sha256": "8a4d423371ca1dc45d72d22a231c1651f839a975502f58b5834dd59495951210",
+    "files": {
+      "manifest.json": "3fdaa4fa63be0bd5f8894ca08c37e6fb2d951e984548cf931aee76273c4bc5fc",
+      "pilot-state.json": "50400d2b5b4e634fdc42d8b3d6f12436a133944a4a32f0ff4c6cf2d85020e1ee",
+      "predictive/pilot-state.json": "53d05bea4d0f20dce2ae26b06e1e5c2c577f4a406747c55339ac5f623a99487a",
+      "predictive/reference-brain.json": "795169e74f82863305d59b5811eecc538b6bdddce44d6b333d7d952022d26ed9",
+      "scope/sb002-state.json": "fc43e44f80e0ee4f60dc33406348097f58e0fad28dcbeea0a8ea6b985dc5dcfc",
+      "world-state.json": "662cd8159a06117278f69777131c90d8b446bd56d7b73a16831b2b497c29c18b"
+    },
+    "prefix": "observed/checkpoints/step-007/"
+  },
+  "runtime_baseline_commit": "367904e10525ca43ac066ff9fc0701fa89e6b91e",
+  "schema_version": 1
+}

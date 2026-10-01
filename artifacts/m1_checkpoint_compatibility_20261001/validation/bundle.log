@@ -1,0 +1,12 @@
+SparkBrain local readiness: PASS
+Python: 3.12.14 (Linux x86_64)
+Package version: 0.3.2.dev0
+Persisted schema version: 0.2
+CPU smoke frames: 7 final belief: cat
+Core runtime dependencies: []
+Optional tools present: {'pytest': True, 'ruff': True, 'jsonschema': True, 'torch': True}
+Runtime network/cloud dependency: none detected in core reference package
+Validated 88 required files
+Trace frames: 7
+Benchmark episode rows: 240
+Wrote: artifacts/validation_manifest.json

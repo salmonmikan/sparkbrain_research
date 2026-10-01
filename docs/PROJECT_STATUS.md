@@ -511,3 +511,14 @@ See `docs/EXPLORATORY_WORKSPACE_CONTENTION.md` and the dated standalone
 `docs/RESULTS_LEDGER.md` entry for raw provenance, the preserved metric-contract
 failure and corrected replay. Existing project statuses, formal identities,
 claim grades and scheduler authority are unchanged.
+
+
+## Independent M1 checkpoint-compatibility diagnostic (2026-10-01)
+
+A ten-case `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY` file-loader diagnostic
+completed with zero dynamics transitions: two valid controls restored exactly,
+seven invalid schema/config cases rejected, and outer `true` normalized to integer
+`1` on save-back. See the [dedicated report](research/M1_CHECKPOINT_COMPATIBILITY.md)
+and [Results Ledger](RESULTS_LEDGER.md). This records engineering completion only,
+with scientific credit 0; it adds no build acceptance, scientific authority,
+security claim or general compatibility guarantee. Existing status entries are unchanged.
