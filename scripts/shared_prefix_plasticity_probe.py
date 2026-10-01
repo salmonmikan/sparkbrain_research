@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import contextlib
 import copy
+import ctypes
 import hashlib
 import importlib.util
 import json
@@ -17,7 +18,9 @@ import math
 import os
 import platform
 import resource
+import select
 import signal
+import stat
 import subprocess
 import sys
 import sysconfig
@@ -33,6 +36,8 @@ ARTIFACT = ROOT / "artifacts/research/shared_prefix_plasticity_20261001"
 VENDOR = ARTIFACT / "source/predecessor_temporal_reuse_loop_probe.py"
 PROTOCOL = ROOT / "docs/research/shared_prefix_plasticity_protocol_20261001.md"
 ADDENDUM = ROOT / "docs/research/shared_prefix_plasticity_freeze_20261001.md"
+ADDENDUM_V2 = ROOT / "docs/research/shared_prefix_plasticity_freeze_v2_20261001.md"
+_WORKER_SUPERVISOR: Any = None
 PREDECESSOR_COMMIT = "0bcb2c1b23c29e5107111343a757c57c1f7bbb41"
 BASE_COMMIT = "367904e10525ca43ac066ff9fc0701fa89e6b91e"
 VENDOR_SHA256 = "28ea3207cc5b9a2cce2219df7754a22cd8f05c83915eb4962630450dc0e220ae"
@@ -84,6 +89,8 @@ def output_bytes(root: Path) -> int:
 
 
 def write(path: Path, value: Any, *, append: bool = False, terminal: bool = False) -> None:
+    if _WORKER_SUPERVISOR is not None:
+        _WORKER_SUPERVISOR.check_live()
     data = (canonical(value) + "\n").encode()
     root = os.environ.get("SHARED_PREFIX_OUTPUT_ROOT")
     if root:
@@ -278,6 +285,7 @@ def source_paths() -> list[Path]:
             VENDOR,
             PROTOCOL,
             ADDENDUM,
+            ADDENDUM_V2,
             ROOT / "tests/test_shared_prefix_plasticity_contract.py",
             ROOT / "pyproject.toml",
             ROOT / "AGENTS.md",
@@ -291,7 +299,7 @@ def source_paths() -> list[Path]:
 
 
 def dependency_inventory() -> dict[str, Any]:
-    """Hash the executable and entire stdlib source/native-extension dependency set.
+    """Inventory executable and stdlib source, bytecode and native-extension bytes.
 
     No site-packages are required by the pinned runtime. Site-packages are
     disabled for execution (-S). This inventory is machine-specific by design.
@@ -300,20 +308,29 @@ def dependency_inventory() -> dict[str, Any]:
     files = {}
     for path in sorted(stdlib.rglob("*")):
         relative = path.relative_to(stdlib)
-        if any(
-            part in {"site-packages", "dist-packages", "__pycache__"} for part in relative.parts
-        ):
+        if any(part in {"site-packages", "dist-packages"} for part in relative.parts):
             continue
-        if path.is_file() and (path.suffix in {".py", ".so"} or ".so." in path.name):
+        if path.is_file() and (path.suffix in {".py", ".pyc", ".so"} or ".so." in path.name):
             files[str(relative)] = sha(path)
+    optional_zip = stdlib.parent / f"python{sys.version_info.major}{sys.version_info.minor}.zip"
+    zip_present = optional_zip.exists() or optional_zip.is_symlink()
+    require(not zip_present or optional_zip.is_file(), "stdlib zip path is not a readable file")
     return {
         "python_version": sys.version,
         "implementation": platform.python_implementation(),
         "executable_sha256": sha(Path(sys.executable).resolve()),
         "stdlib_path": str(stdlib),
         "stdlib_files": files,
+        "optional_stdlib_zip": {
+            "path": str(optional_zip),
+            "present": zip_present,
+            "sha256": sha(optional_zip) if zip_present else None,
+        },
         "third_party_runtime_dependencies": [],
-        "scope_limit": "does not hash kernel or transitive system shared libraries",
+        "scope_limit": "file inventory, not full-machine attestation; excludes kernel and "
+        "transitive system shared libraries",
+        "bytecode_policy": "includes all stdlib .pyc, including __pycache__; -B only "
+        "disables writes, not reads",
     }
 
 
@@ -655,6 +672,8 @@ def run_rows(
 ) -> None:
     p = predecessor()
     for index, supplied in enumerate(inputs):
+        require(_WORKER_SUPERVISOR is not None, "trajectory requires driver supervision")
+        _WORKER_SUPERVISOR.check_live()
         before = inspect_model(model)
         # Durable attempted-call ledger includes any transition that raises.
         budget.reserve_predict()
@@ -717,6 +736,7 @@ def run_rows(
             write(directory / "first-output.json", projection)
             if first_expected is not None:
                 require(projection == first_expected, "first suffix invariant violated")
+        _WORKER_SUPERVISOR.check_live()
         budget.reserve_outcome()
         write(
             directory / "calls.jsonl",
@@ -905,11 +925,165 @@ def planned_reservations() -> list[dict[str, Any]]:
     return result
 
 
+def validate_output_roots(output: Path, *, initialize: bool = False) -> None:
+    require(output.resolve() == PLANNED_OUTPUT, "output root differs from frozen plan")
+    for key in ("SHARED_PREFIX_OUTPUT_ROOT", "SPARK_PROBE_OUTPUT_ROOT"):
+        value = os.environ.get(key)
+        require(value is not None or initialize, f"missing output-cap root: {key}")
+        if value is not None:
+            require(Path(value).resolve() == output.resolve(), f"mismatched output-cap root: {key}")
+    if initialize:
+        for key in ("SHARED_PREFIX_OUTPUT_ROOT", "SPARK_PROBE_OUTPUT_ROOT"):
+            os.environ[key] = str(output.resolve())
+
+
+def process_start_ticks(pid: int) -> str:
+    # /proc stat field22, after the parenthesized comm field and state field3.
+    return Path(f"/proc/{pid}/stat").read_text().rsplit(")", 1)[1].split()[19]
+
+
+def validate_driver_command(command: list[str], cwd: Path, executable: Path) -> None:
+    require(executable.resolve() == Path(sys.executable).resolve(), "supervisor executable differs")
+    require(
+        len(command) >= 6 and set(command[1:4]) == {"-S", "-P", "-B"},
+        "worker parent is not the bounded driver invocation",
+    )
+    require(
+        (cwd / command[4]).resolve() == Path(__file__).resolve() and command[5] == "run",
+        "worker parent is not this runner's run command",
+    )
+    require("--output" in command[6:], "driver output argument missing")
+    at = command.index("--output", 6)
+    require(
+        at + 1 < len(command) and (cwd / command[at + 1]).resolve() == PLANNED_OUTPUT,
+        "driver command targets another output",
+    )
+
+
+def validate_supervisor_envelope(
+    header: dict[str, Any], job: dict[str, Any], directory: Path, *, parent_pid: int, now: float
+) -> tuple[float, float]:
+    require(header.get("schema") == "shared-prefix-supervision-1", "supervisor schema mismatch")
+    require(header.get("parent_pid") == parent_pid, "supervisor parent PID mismatch")
+    require(
+        header.get("job_sha256") == digest(job)
+        and header.get("directory") == str(directory.resolve()),
+        "supervisor job mismatch",
+    )
+    require(header.get("output_root") == str(PLANNED_OUTPUT), "supervisor output mismatch")
+    require("wall_deadline_monotonic" not in job, "caller-supplied job deadline forbidden")
+    cpu, wall = header.get("cpu_limit"), header.get("wall_limit")
+    for value, cap in ((cpu, 119.0), (wall, 179.0)):
+        require(
+            type(value) in (float, int) and math.isfinite(value) and 0 < value <= cap,
+            "supervisor resource allowance outside local bound",
+        )
+    require(
+        job.get("cpu_limit") == cpu and job.get("wall_limit") == wall,
+        "job allowance differs from supervisor",
+    )
+    issued, stop = header.get("issued_monotonic"), header.get("wall_stop_monotonic")
+    require(
+        all(type(v) in (float, int) and math.isfinite(v) for v in (issued, stop)),
+        "invalid supervisor clock",
+    )
+    require(
+        issued <= now < stop and stop <= issued + wall, "supervisor deadline outside local bound"
+    )
+    return min(float(cpu), 119.0), min(float(wall), stop - now, 179.0)
+
+
+@dataclass
+class WorkerSupervisor:
+    read_fd: int
+    parent_pid: int
+    parent_start_ticks: str
+    job_sha256: str
+    directory: Path
+    cpu_limit: float
+    wall_stop: float
+
+    def check_live(self) -> None:
+        validate_output_roots(PLANNED_OUTPUT)
+        require(
+            os.getppid() == self.parent_pid
+            and process_start_ticks(self.parent_pid) == self.parent_start_ticks,
+            "driver supervision lost",
+        )
+        require(time.monotonic() < self.wall_stop, "resource_limit: supervisor wall deadline")
+        ready, _, _ = select.select([self.read_fd], [], [], 0)
+        require(not ready, "driver supervision pipe closed or changed")
+
+    def check_job(self, job: dict[str, Any], directory: Path) -> None:
+        self.check_live()
+        require(
+            directory.resolve() == self.directory and digest(job) == self.job_sha256,
+            "worker job differs from supervised job",
+        )
+
+
+def accept_supervision(
+    read_fd: int | None, job: dict[str, Any], directory: Path
+) -> WorkerSupervisor:
+    """Require a live actual driver plus an inherited one-shot anonymous pipe."""
+    validate_output_roots(PLANNED_OUTPUT)
+    require(read_fd is not None and read_fd >= 3, "worker requires inherited driver supervision")
+    require(stat.S_ISFIFO(os.fstat(read_fd).st_mode), "supervisor descriptor is not a pipe")
+    parent = os.getppid()
+    command = Path(f"/proc/{parent}/cmdline").read_bytes().rstrip(b"\0").split(b"\0")
+    validate_driver_command(
+        [arg.decode() for arg in command],
+        Path(os.readlink(f"/proc/{parent}/cwd")),
+        Path(os.readlink(f"/proc/{parent}/exe")),
+    )
+    start = process_start_ticks(parent)
+    ready, _, _ = select.select([read_fd], [], [], 0.25)
+    require(bool(ready), "supervisor envelope missing")
+    raw = os.read(read_fd, 4097)
+    require(0 < len(raw) <= 4096 and raw.endswith(b"\n"), "invalid supervisor envelope")
+    header = json.loads(raw)
+    cpu, wall = validate_supervisor_envelope(
+        header, job, directory, parent_pid=parent, now=time.monotonic()
+    )
+    require(header.get("parent_start_ticks") == start, "supervisor process identity changed")
+    parent_fd = header.get("writer_fd")
+    require(type(parent_fd) is int and parent_fd >= 3, "supervisor writer missing")
+    require(
+        os.readlink(f"/proc/{parent}/fd/{parent_fd}") == os.readlink(f"/proc/self/fd/{read_fd}"),
+        "pipe not held by actual driver",
+    )
+    # Linux-only harness already relies on /proc and wait4. Kill on parent death,
+    # then recheck the parent to close the race while installing PDEATHSIG.
+    libc = ctypes.CDLL(None, use_errno=True)
+    require(libc.prctl(1, signal.SIGKILL, 0, 0, 0) == 0, "cannot arm parent-death guard")
+    require(
+        os.getppid() == parent and process_start_ticks(parent) == start,
+        "driver exited during supervision setup",
+    )
+    supervisor = WorkerSupervisor(
+        read_fd,
+        parent,
+        start,
+        digest(job),
+        directory.resolve(),
+        cpu,
+        min(header["wall_stop_monotonic"], time.monotonic() + wall),
+    )
+    supervisor.check_job(job, directory)
+    return supervisor
+
+
+def require_supervised_worker(job: dict[str, Any], directory: Path) -> None:
+    require(_WORKER_SUPERVISOR is not None, "worker requires live driver supervision")
+    _WORKER_SUPERVISOR.check_job(job, directory)
+
+
 def worker(job: dict[str, Any], directory: Path) -> dict[str, Any]:
     require(
         {path.name for path in directory.iterdir()} == {"job.json"},
         "worker directory is not fresh; no resume or repeated worker",
     )
+    require_supervised_worker(job, directory)
     freeze = Path(job["freeze"])
     gate = verify_execution_gate(freeze, Path(job["review"]), Path(job["publication"]))
     require(
@@ -999,6 +1173,7 @@ def worker(job: dict[str, Any], directory: Path) -> dict[str, Any]:
     limit = {"prefix": 64, "suffix": 32, "baseline": 96}[stage]
     require(job["reserved_pairs"] == limit, "worker reservation mismatch")
     budget = CallBudget(limit)
+    require_supervised_worker(job, directory)
     if stage == "prefix":
         model = p.Model("S")
         assert_configuration(model, freeze)
@@ -1054,6 +1229,13 @@ def validate_execution_environment() -> None:
     require(os.environ.get("PYTHONHASHSEED") == "0", "execution requires PYTHONHASHSEED=0")
     require(sys.flags.no_site == 1 and sys.flags.safe_path, "execution requires python -S -P")
     require(sys.dont_write_bytecode, "execution requires python -B")
+    require(sys.pycache_prefix is None, "execution forbids alternate pycache prefix")
+    require(not sys._xoptions, "execution forbids Python -X options")
+    require(sys.flags.optimize == 0, "execution forbids optimized interpreter mode")
+    require(
+        sys.flags.ignore_environment == 0 and sys.flags.isolated == 0,
+        "execution forbids -E/-I modes that ignore PYTHONHASHSEED",
+    )
     unexpected = {
         k
         for k in os.environ
@@ -1080,16 +1262,19 @@ def process_limits(cpu: float) -> None:
     resource.setrlimit(resource.RLIMIT_CPU, (hard, hard))
 
 
-def worker_main(directory: Path) -> None:
+def worker_main(directory: Path, supervisor_fd: int | None = None) -> None:
+    global _WORKER_SUPERVISOR
+    validate_output_roots(PLANNED_OUTPUT)
     validate_execution_environment()
     job = read(directory / "job.json")
-    process_limits(job["cpu_limit"])
+    supervisor = accept_supervision(supervisor_fd, job, directory)
+    _WORKER_SUPERVISOR = supervisor
+    process_limits(supervisor.cpu_limit)
     sys.addaudithook(deny_network)
     begun = (cpu_clock(), time.monotonic())
     try:
         with deadline(
-            job["cpu_limit"] - cpu_clock(),
-            job["wall_deadline_monotonic"] - time.monotonic(),
+            supervisor.cpu_limit - cpu_clock(), min(179.0, supervisor.wall_stop - time.monotonic())
         ):
             result = worker(job, directory)
             result.update(
@@ -1103,12 +1288,18 @@ def worker_main(directory: Path) -> None:
             write(directory / "result.json", result)
     except BaseException as exc:
         if not (directory / "result.json").exists():
-            write(
-                directory / "result.json",
-                {"status": "failed", "error": repr(exc), "traceback": traceback.format_exc()},
-                terminal=True,
-            )
+            # No dynamics follows failure, even when supervision or caps prevent
+            # this best-effort terminal write; the driver retains exit/accounting.
+            with contextlib.suppress(Exception):
+                write(
+                    directory / "result.json",
+                    {"status": "failed", "error": repr(exc), "traceback": traceback.format_exc()},
+                    terminal=True,
+                )
         raise
+    finally:
+        _WORKER_SUPERVISOR = None
+        os.close(supervisor.read_fd)
 
 
 def execute(freeze: Path, output: Path, review: Path, publication: Path) -> None:
@@ -1116,6 +1307,7 @@ def execute(freeze: Path, output: Path, review: Path, publication: Path) -> None
     require(output.resolve() == PLANNED_OUTPUT, "output root differs from frozen plan")
     require(not output.exists(), "output root must be absent and fresh; never resume")
     validate_execution_environment()
+    validate_output_roots(output, initialize=True)
     process_limits(1800)
     start_cpu, start_wall = 0.0, time.monotonic()
     reserved = 0
@@ -1125,8 +1317,6 @@ def execute(freeze: Path, output: Path, review: Path, publication: Path) -> None
     # generated as if approved by prepare. Their verification is under global caps.
     sys.addaudithook(deny_network)
     output.mkdir(parents=True)
-    os.environ["SHARED_PREFIX_OUTPUT_ROOT"] = str(output)
-    os.environ["SPARK_PROBE_OUTPUT_ROOT"] = str(output)
 
     def remaining() -> tuple[float, float]:
         return (
@@ -1154,7 +1344,6 @@ def execute(freeze: Path, output: Path, review: Path, publication: Path) -> None
                 "reserved_pairs": pairs,
                 "cpu_limit": cpu - 1,
                 "wall_limit": wall - 1,
-                "wall_deadline_monotonic": begun_wall + wall - 1,
                 "review": str(review),
                 "publication": str(publication),
             }
@@ -1165,22 +1354,48 @@ def execute(freeze: Path, output: Path, review: Path, publication: Path) -> None
             {"job": name, "pairs": pairs, "cumulative_pairs": reserved},
             append=True,
         )
-        proc = subprocess.Popen(
-            [
-                sys.executable,
-                "-S",
-                "-P",
-                "-B",
-                str(Path(__file__).resolve()),
-                "worker",
-                "--directory",
-                str(work),
-            ],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-            env={**os.environ, "PYTHONHASHSEED": "0"},
-            preexec_fn=lambda: process_limits(job["cpu_limit"]),
-        )
+        read_fd, writer_fd = os.pipe2(os.O_CLOEXEC)
+        header = {
+            "schema": "shared-prefix-supervision-1",
+            "parent_pid": os.getpid(),
+            "parent_start_ticks": process_start_ticks(os.getpid()),
+            "writer_fd": writer_fd,
+            "job_sha256": digest(job),
+            "directory": str(work.resolve()),
+            "output_root": str(output),
+            "cpu_limit": job["cpu_limit"],
+            "wall_limit": job["wall_limit"],
+            "issued_monotonic": begun_wall,
+            "wall_stop_monotonic": begun_wall + job["wall_limit"],
+        }
+        envelope = (canonical(header) + "\n").encode()
+        require(len(envelope) <= 4096, "supervision envelope too large")
+        require(os.write(writer_fd, envelope) == len(envelope), "partial supervision envelope")
+        try:
+            proc = subprocess.Popen(
+                [
+                    sys.executable,
+                    "-S",
+                    "-P",
+                    "-B",
+                    str(Path(__file__).resolve()),
+                    "worker",
+                    "--directory",
+                    str(work),
+                    "--supervisor-fd",
+                    str(read_fd),
+                ],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                env={**os.environ, "PYTHONHASHSEED": "0"},
+                pass_fds=(read_fd,),
+                preexec_fn=lambda: process_limits(job["cpu_limit"]),
+            )
+        except BaseException:
+            os.close(writer_fd)
+            raise
+        finally:
+            os.close(read_fd)
         usage = None
         timed_out = False
         result = {}
@@ -1211,6 +1426,7 @@ def execute(freeze: Path, output: Path, review: Path, publication: Path) -> None
                 proc.kill()
                 _, status, usage = os.wait4(proc.pid, 0)
                 proc.returncode = os.waitstatus_to_exitcode(status)
+            os.close(writer_fd)
             require(usage is not None, "missing worker resource accounting")
             child_cpu = usage.ru_utime + usage.ru_stime
             # Conservative terminal-write reserve is charged to each trajectory.
@@ -1389,6 +1605,7 @@ def main() -> None:
     command.add_argument("--publication", type=Path, required=True)
     command = commands.add_parser("worker")
     command.add_argument("--directory", type=Path, required=True)
+    command.add_argument("--supervisor-fd", type=int)
     args = parser.parse_args()
     if args.command == "prepare":
         print(canonical(prepare(args.freeze.resolve())))
@@ -1404,7 +1621,7 @@ def main() -> None:
                 args.publication.resolve(),
             )
     else:
-        worker_main(args.directory.resolve())
+        worker_main(args.directory.resolve(), args.supervisor_fd)
 
 
 if __name__ == "__main__":

@@ -6,7 +6,10 @@ import ast
 import copy
 import importlib.util
 import json
+import os
+import py_compile
 import sys
+import zipfile
 from dataclasses import asdict
 from pathlib import Path
 from types import SimpleNamespace
@@ -395,6 +398,7 @@ def test_direct_worker_must_pass_same_execution_gate(tmp_path, monkeypatch):
     def denied(*args, **kwargs):
         raise RuntimeError("review required")
 
+    monkeypatch.setattr(probe, "require_supervised_worker", lambda *a: None)
     monkeypatch.setattr(probe, "verify_execution_gate", denied)
     monkeypatch.setattr(probe, "predecessor", lambda: pytest.fail("model imported"))
     with pytest.raises(RuntimeError, match="review required"):
@@ -459,3 +463,337 @@ def test_fixed_reservations_contain_only_planned_jobs():
     assert [j["pairs"] for j in plan] == [64, 64] + [32] * 4 + [96] * 2 + [32] * 4 + [96] * 2
     assert plan[-1]["cumulative_pairs"] == 768
     assert len({j["job"] for j in plan}) == 14
+
+
+def test_stdlib_inventory_includes_loadable_cached_and_standalone_bytecode(tmp_path, monkeypatch):
+    stdlib = tmp_path / "stdlib"
+    stdlib.mkdir()
+    source = stdlib / "example.py"
+    source.write_text("VALUE = 1\n")
+    cached = stdlib / "__pycache__/example.cpython-312.pyc"
+    standalone = stdlib / "standalone.pyc"
+    py_compile.compile(str(source), cfile=str(cached), doraise=True)
+    py_compile.compile(str(source), cfile=str(standalone), doraise=True)
+    excluded = stdlib / "site-packages/example.pyc"
+    excluded.parent.mkdir()
+    excluded.write_bytes(cached.read_bytes())
+    monkeypatch.setattr(probe.sysconfig, "get_path", lambda name: str(stdlib))
+    inventory = probe.dependency_inventory()
+    assert set(inventory["stdlib_files"]) == {
+        "example.py",
+        "__pycache__/example.cpython-312.pyc",
+        "standalone.pyc",
+    }
+    assert inventory["stdlib_files"]["__pycache__/example.cpython-312.pyc"] == probe.sha(cached)
+    assert "-B only disables writes" in inventory["bytecode_policy"]
+    assert "not full-machine attestation" in inventory["scope_limit"]
+
+
+def test_bytecode_tampering_fails_data_only_freeze_verification(tmp_path, monkeypatch):
+    stdlib = tmp_path / "stdlib"
+    stdlib.mkdir()
+    source = stdlib / "example.py"
+    source.write_text("VALUE = 1\n")
+    cached = stdlib / "__pycache__/example.cpython-312.pyc"
+    py_compile.compile(str(source), cfile=str(cached), doraise=True)
+    monkeypatch.setattr(probe.sysconfig, "get_path", lambda name: str(stdlib))
+    freeze = tmp_path / "fixture-freeze"
+    probe.prepare(freeze)
+    probe.verify_freeze(freeze)
+    cached.write_bytes(cached.read_bytes() + b"tampered")
+    with pytest.raises(RuntimeError, match="dependency mismatch"):
+        probe.verify_freeze(freeze)
+
+
+def cap_roots(monkeypatch):
+    for key in ("SHARED_PREFIX_OUTPUT_ROOT", "SPARK_PROBE_OUTPUT_ROOT"):
+        monkeypatch.setenv(key, str(probe.PLANNED_OUTPUT))
+
+
+@pytest.mark.parametrize("missing", ["SHARED_PREFIX_OUTPUT_ROOT", "SPARK_PROBE_OUTPUT_ROOT"])
+def test_worker_cap_roots_must_both_exist_before_job_read(tmp_path, monkeypatch, missing):
+    cap_roots(monkeypatch)
+    monkeypatch.delenv(missing)
+    monkeypatch.setattr(
+        probe, "read", lambda *a: pytest.fail("read happened before cap validation")
+    )
+    with pytest.raises(RuntimeError, match="missing output-cap root"):
+        probe.worker_main(tmp_path)
+
+
+@pytest.mark.parametrize("wrong", ["SHARED_PREFIX_OUTPUT_ROOT", "SPARK_PROBE_OUTPUT_ROOT"])
+def test_worker_rejects_mismatched_cap_roots(tmp_path, monkeypatch, wrong):
+    cap_roots(monkeypatch)
+    monkeypatch.setenv(wrong, str(tmp_path))
+    with pytest.raises(RuntimeError, match="mismatched output-cap root"):
+        probe.validate_output_roots(probe.PLANNED_OUTPUT)
+
+
+def test_driver_initializes_both_roots_but_never_repairs_conflicts(tmp_path, monkeypatch):
+    for key in ("SHARED_PREFIX_OUTPUT_ROOT", "SPARK_PROBE_OUTPUT_ROOT"):
+        monkeypatch.delenv(key, raising=False)
+    probe.validate_output_roots(probe.PLANNED_OUTPUT, initialize=True)
+    assert os.environ["SHARED_PREFIX_OUTPUT_ROOT"] == str(probe.PLANNED_OUTPUT)
+    assert os.environ["SPARK_PROBE_OUTPUT_ROOT"] == str(probe.PLANNED_OUTPUT)
+    monkeypatch.setenv("SPARK_PROBE_OUTPUT_ROOT", str(tmp_path))
+    with pytest.raises(RuntimeError, match="mismatched"):
+        probe.validate_output_roots(probe.PLANNED_OUTPUT, initialize=True)
+    assert os.environ["SPARK_PROBE_OUTPUT_ROOT"] == str(tmp_path)
+
+
+def test_unsupervised_worker_fails_before_gate_or_model(tmp_path, monkeypatch):
+    (tmp_path / "job.json").write_text("{}")
+    monkeypatch.setattr(probe, "verify_execution_gate", lambda *a: pytest.fail("gate reached"))
+    with pytest.raises(RuntimeError, match="live driver supervision"):
+        probe.worker({}, tmp_path)
+
+
+def test_worker_main_requires_inherited_supervisor_before_setting_limits(tmp_path, monkeypatch):
+    cap_roots(monkeypatch)
+    monkeypatch.setattr(probe, "validate_execution_environment", lambda: None)
+    (tmp_path / "job.json").write_text("{}")
+    monkeypatch.setattr(probe, "process_limits", lambda *a: pytest.fail("limits changed"))
+    with pytest.raises(RuntimeError, match="inherited driver supervision"):
+        probe.worker_main(tmp_path)
+
+
+def supervisor_fixture(tmp_path):
+    job = {"cpu_limit": 119.0, "wall_limit": 179.0}
+    header = {
+        "schema": "shared-prefix-supervision-1",
+        "parent_pid": 123,
+        "job_sha256": probe.digest(job),
+        "directory": str(tmp_path.resolve()),
+        "output_root": str(probe.PLANNED_OUTPUT),
+        "cpu_limit": 119.0,
+        "wall_limit": 179.0,
+        "issued_monotonic": 100.0,
+        "wall_stop_monotonic": 279.0,
+    }
+    return job, header
+
+
+def test_supervisor_envelope_clips_to_remaining_local_wall(tmp_path):
+    job, header = supervisor_fixture(tmp_path)
+    assert probe.validate_supervisor_envelope(header, job, tmp_path, parent_pid=123, now=200) == (
+        119.0,
+        79.0,
+    )
+
+
+@pytest.mark.parametrize("value", [float("inf"), float("nan"), 120.0, -1.0, True])
+def test_supervisor_rejects_invalid_cpu_allowance(tmp_path, value):
+    job, header = supervisor_fixture(tmp_path)
+    job["cpu_limit"] = header["cpu_limit"] = value
+    if isinstance(value, float) and not probe.math.isfinite(value):
+        # Invalid nonfinite JSON is already rejected by canonical; a decoded
+        # envelope is checked independently before any timer/model operation.
+        header["job_sha256"] = "irrelevant"
+        with pytest.raises(ValueError):
+            probe.digest(job)
+        return
+    header["job_sha256"] = probe.digest(job)
+    with pytest.raises(RuntimeError, match="outside local bound"):
+        probe.validate_supervisor_envelope(header, job, tmp_path, parent_pid=123, now=101)
+
+
+def test_job_cannot_supply_future_deadline(tmp_path):
+    job, header = supervisor_fixture(tmp_path)
+    job["wall_deadline_monotonic"] = 1e100
+    header["job_sha256"] = probe.digest(job)
+    with pytest.raises(RuntimeError, match="caller-supplied job deadline forbidden"):
+        probe.validate_supervisor_envelope(header, job, tmp_path, parent_pid=123, now=101)
+    del job["wall_deadline_monotonic"]
+    header["job_sha256"] = probe.digest(job)
+    header["wall_stop_monotonic"] = 1e100
+    with pytest.raises(RuntimeError, match="deadline outside local bound"):
+        probe.validate_supervisor_envelope(header, job, tmp_path, parent_pid=123, now=101)
+
+
+def test_supervisor_rejects_job_substitution_and_expiry(tmp_path):
+    job, header = supervisor_fixture(tmp_path)
+    with pytest.raises(RuntimeError, match="job mismatch"):
+        probe.validate_supervisor_envelope(
+            header, {**job, "arm": "X"}, tmp_path, parent_pid=123, now=101
+        )
+    with pytest.raises(RuntimeError, match="deadline outside local bound"):
+        probe.validate_supervisor_envelope(header, job, tmp_path, parent_pid=123, now=279)
+    with pytest.raises(RuntimeError, match="parent PID"):
+        probe.validate_supervisor_envelope(header, job, tmp_path, parent_pid=124, now=101)
+
+
+def test_supervisor_requires_real_run_parent_command():
+    command = [
+        sys.executable,
+        "-B",
+        "-S",
+        "-P",
+        str(SCRIPT),
+        "run",
+        "--output",
+        str(probe.PLANNED_OUTPUT),
+    ]
+    probe.validate_driver_command(command, SCRIPT.parent, Path(sys.executable))
+    for changed in (
+        [*command[:5], "worker", *command[6:]],
+        [sys.executable, "-c", "pass"],
+        [*command[:4], "/tmp/not-the-runner.py", *command[5:]],
+    ):
+        with pytest.raises(RuntimeError):
+            probe.validate_driver_command(changed, SCRIPT.parent, Path(sys.executable))
+
+
+def test_live_supervision_refuses_closed_pipe_or_changed_parent(tmp_path, monkeypatch):
+    cap_roots(monkeypatch)
+    monkeypatch.setattr(probe.os, "getppid", lambda: 123)
+    monkeypatch.setattr(probe, "process_start_ticks", lambda pid: "start")
+    monkeypatch.setattr(probe.time, "monotonic", lambda: 101.0)
+    monkeypatch.setattr(probe.select, "select", lambda *a: ([], [], []))
+    supervisor = probe.WorkerSupervisor(19, 123, "start", "hash", tmp_path, 119, 279)
+    supervisor.check_live()
+    monkeypatch.setattr(probe.select, "select", lambda *a: ([19], [], []))
+    with pytest.raises(RuntimeError, match="pipe closed or changed"):
+        supervisor.check_live()
+    monkeypatch.setattr(probe.os, "getppid", lambda: 124)
+    with pytest.raises(RuntimeError, match="supervision lost"):
+        supervisor.check_live()
+
+
+def test_synthetic_pipe_acceptance_installs_mocked_parent_death_guard(tmp_path, monkeypatch):
+    cap_roots(monkeypatch)
+    job, header = supervisor_fixture(tmp_path)
+    read_fd, writer_fd = os.pipe()
+    header.update({"parent_start_ticks": "start", "writer_fd": writer_fd})
+    real_readlink = os.readlink
+    real_executable = str(Path(sys.executable).resolve())
+    real_read_bytes = Path.read_bytes
+    monkeypatch.setattr(probe.os, "getppid", lambda: 123)
+    monkeypatch.setattr(probe, "process_start_ticks", lambda pid: "start")
+    monkeypatch.setattr(probe.time, "monotonic", lambda: 101.0)
+    command = [
+        sys.executable,
+        "-B",
+        "-S",
+        "-P",
+        str(SCRIPT),
+        "run",
+        "--output",
+        str(probe.PLANNED_OUTPUT),
+    ]
+
+    def fake_read_bytes(path):
+        if str(path) == "/proc/123/cmdline":
+            return b"\0".join(arg.encode() for arg in command) + b"\0"
+        return real_read_bytes(path)
+
+    def fake_readlink(path):
+        mapping = {
+            "/proc/123/cwd": str(SCRIPT.parent),
+            "/proc/123/exe": real_executable,
+            f"/proc/123/fd/{writer_fd}": real_readlink(f"/proc/self/fd/{writer_fd}"),
+        }
+        return mapping.get(str(path)) or real_readlink(path)
+
+    monkeypatch.setattr(Path, "read_bytes", fake_read_bytes)
+    monkeypatch.setattr(probe.os, "readlink", fake_readlink)
+    calls = []
+    monkeypatch.setattr(
+        probe.ctypes,
+        "CDLL",
+        lambda *a, **k: SimpleNamespace(prctl=lambda *args: calls.append(args) or 0),
+    )
+    try:
+        os.write(writer_fd, (probe.canonical(header) + "\n").encode())
+        supervisor = probe.accept_supervision(read_fd, job, tmp_path)
+        assert supervisor.cpu_limit == 119
+        assert calls == [(1, probe.signal.SIGKILL, 0, 0, 0)]
+        supervisor.check_job(job, tmp_path)
+    finally:
+        os.close(read_fd)
+        os.close(writer_fd)
+
+
+def test_optional_stdlib_zip_absence_presence_and_hash_are_bound(tmp_path, monkeypatch):
+    stdlib = tmp_path / "stdlib"
+    stdlib.mkdir()
+    archive = stdlib.parent / f"python{sys.version_info.major}{sys.version_info.minor}.zip"
+    monkeypatch.setattr(probe.sysconfig, "get_path", lambda name: str(stdlib))
+    absent = probe.dependency_inventory()["optional_stdlib_zip"]
+    assert absent == {"path": str(archive), "present": False, "sha256": None}
+    with zipfile.ZipFile(archive, "w") as stream:
+        stream.writestr("marker.py", "VALUE = 1\n")
+    present = probe.dependency_inventory()["optional_stdlib_zip"]
+    assert present == {"path": str(archive), "present": True, "sha256": probe.sha(archive)}
+    with zipfile.ZipFile(archive, "w") as stream:
+        stream.writestr("marker.py", "VALUE = 2\n")
+    assert probe.dependency_inventory()["optional_stdlib_zip"]["sha256"] != present["sha256"]
+
+
+def test_adding_previously_absent_stdlib_zip_breaks_freeze(tmp_path, monkeypatch):
+    stdlib = tmp_path / "stdlib"
+    stdlib.mkdir()
+    archive = stdlib.parent / f"python{sys.version_info.major}{sys.version_info.minor}.zip"
+    monkeypatch.setattr(probe.sysconfig, "get_path", lambda name: str(stdlib))
+    freeze = tmp_path / "fixture-freeze"
+    probe.prepare(freeze)
+    probe.verify_freeze(freeze)
+    with zipfile.ZipFile(archive, "w") as stream:
+        stream.writestr("marker.py", "VALUE = 1\n")
+    with pytest.raises(RuntimeError, match="dependency mismatch"):
+        probe.verify_freeze(freeze)
+
+
+def test_optional_stdlib_zip_path_cannot_be_a_directory(tmp_path, monkeypatch):
+    stdlib = tmp_path / "stdlib"
+    stdlib.mkdir()
+    archive = stdlib.parent / f"python{sys.version_info.major}{sys.version_info.minor}.zip"
+    archive.mkdir()
+    monkeypatch.setattr(probe.sysconfig, "get_path", lambda name: str(stdlib))
+    with pytest.raises(RuntimeError, match="zip path is not a readable file"):
+        probe.dependency_inventory()
+
+
+def execution_environment_fixture(monkeypatch):
+    flags = {
+        name: getattr(probe.sys.flags, name)
+        for name in dir(probe.sys.flags)
+        if not name.startswith("_")
+    }
+    flags.update(no_site=1, safe_path=True, optimize=0, ignore_environment=0, isolated=0)
+    monkeypatch.setattr(probe.sys, "flags", SimpleNamespace(**flags))
+    monkeypatch.setattr(probe.sys, "dont_write_bytecode", True)
+    monkeypatch.setattr(probe.sys, "pycache_prefix", None)
+    monkeypatch.setattr(probe.sys, "_xoptions", {})
+    monkeypatch.setenv("PYTHONHASHSEED", "0")
+    for key in list(os.environ):
+        if key.startswith("PYTHON") and key not in {"PYTHONHASHSEED", "PYTHONDONTWRITEBYTECODE"}:
+            monkeypatch.delenv(key)
+    stdlib = Path(probe.sysconfig.get_path("stdlib")).resolve()
+    monkeypatch.setattr(probe.sys, "path", [str(stdlib), str(stdlib / "lib-dynload")])
+
+
+def test_bound_execution_mode_accepts_plain_unoptimized_flags(monkeypatch):
+    execution_environment_fixture(monkeypatch)
+    probe.validate_execution_environment()
+
+
+@pytest.mark.parametrize(
+    "setting,value,message",
+    [
+        ("pycache_prefix", "/tmp/alternate-cache", "alternate pycache prefix"),
+        ("_xoptions", {"dev": True}, "Python -X options"),
+        ("optimize", 1, "optimized interpreter"),
+        ("ignore_environment", 1, "ignore PYTHONHASHSEED"),
+        ("isolated", 1, "ignore PYTHONHASHSEED"),
+    ],
+)
+def test_execution_rejects_unbound_interpreter_modes(monkeypatch, setting, value, message):
+    execution_environment_fixture(monkeypatch)
+    if setting in {"pycache_prefix", "_xoptions"}:
+        monkeypatch.setattr(probe.sys, setting, value)
+    else:
+        monkeypatch.setattr(probe.sys.flags, setting, value)
+    monkeypatch.setattr(probe, "predecessor", lambda: pytest.fail("production imported"))
+    with pytest.raises(RuntimeError, match=message):
+        probe.validate_execution_environment()
+    assert os.environ["PYTHONHASHSEED"] == "0"
