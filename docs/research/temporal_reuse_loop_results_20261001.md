@@ -123,6 +123,8 @@ certification of every isolation or resource requirement.
    more, so lower Brier must not be reported as uniformly better native accuracy.
    Recorded F weight/delay changes are zero; its nonzero `eligibility_update_work`
    counts eligible-edge work, not learned parameter changes.
+   F changes learning throughout the prefix as well as the suffix. This full-arm
+   contrast does not isolate suffix-only plasticity effects from a common learned prefix.
 
 These are two small synthetic diagnostic streams with fixed model topology, not a
 population estimate, significance test, novelty claim, brain-equivalence claim, or
@@ -200,14 +202,22 @@ python scripts/verify_temporal_reuse_evidence.py
 ```
 
 The standalone verifier passed, checking transport/archive/member hashes and suffix/
-causal arithmetic. Its role is narrower than the independent source/input audit above;
-neither is a fresh full-model reproduction.
+causal arithmetic. After Codex identified that the first publication verifier trusted the
+reported proposal booleans, the verifier was corrected to independently reconstruct all
+gate inputs, including cue direction and fork equalities, then compare per-seed control
+guards, per-seed proposal gates, and the two-seed proposal gate. It checks exact seed/arm/
+condition/fork inventories and rejects numeric substitutes for decision booleans.
+Thirty-three no-model tests include coherently rehashed false reports, altered raw control
+hashes, a passing hand-written arithmetic fixture, and failure of every gate predicate.
+This repairs publication verification only: the frozen runner, protocol, raw evidence,
+reported values, and negative decision are unchanged. Its role remains narrower than the
+independent source/input audit above; neither is a fresh full-model reproduction.
 
 At the frozen execution-source head, 659 configured pytest tests passed. After preserving
-merged PR #167 and adding publication corruption checks, the final local suite passed
-691 configured tests with 392 scientific/reproduction/external tests deselected. Ruff,
-local readiness, demo, the 40-episode/30-step benchmark, and bundle validation also passed.
-These are repository
+merged PR #167 and adding initial publication corruption checks, 691 configured tests
+passed. After the verifier correction, the final local suite passed 721 configured tests
+with 392 scientific/reproduction/external tests deselected. Ruff, local readiness, demo,
+the 40-episode/30-step benchmark, and bundle validation also passed. These are repository
 validation results, separate from the diagnostic run and its resource accounting.
 At report preparation, exact-head CI and Codex review of the publication are pending.
 No publication/merge readiness claim is made here.
