@@ -1,0 +1,11 @@
+test_false_check_boolean_is_rejected_even_with_true_summary (test_verify_bundle.PhysicalPayloadTests.test_false_check_boolean_is_rejected_even_with_true_summary) ... ok
+test_intact_physical_payloads_match (test_verify_bundle.PhysicalPayloadTests.test_intact_physical_payloads_match) ... ok
+test_raw_checkpoint_mismatch_rejected (test_verify_bundle.PhysicalPayloadTests.test_raw_checkpoint_mismatch_rejected) ... ok
+test_corrupted_chunk_rejected (test_verify_bundle.TransportTests.test_corrupted_chunk_rejected) ... ok
+test_intact_chunks_reconstruct_exact_bytes (test_verify_bundle.TransportTests.test_intact_chunks_reconstruct_exact_bytes) ... ok
+test_missing_chunk_rejected (test_verify_bundle.TransportTests.test_missing_chunk_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK

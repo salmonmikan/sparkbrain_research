@@ -1,0 +1,28 @@
+{
+  "actual_call_counts": {
+    "r2-run1": {
+      "new_commits": 22,
+      "observations": 32,
+      "outcome_deliveries": 32
+    },
+    "r2-run37": {
+      "new_commits": 22,
+      "observations": 32,
+      "outcome_deliveries": 32
+    },
+    "run1": {
+      "new_commits": 0,
+      "observations": 32,
+      "outcome_deliveries": 32
+    }
+  },
+  "archive_files_verified": 3319,
+  "archive_sha256": "9b69d389eff5967d4d61b9b10174636ad544e298d7c84b6a9e3f67a306bda6cc",
+  "byte_identical_corrected_non_environment_files": 972,
+  "corrected_cases_independently_recomputed": 16,
+  "physical_checkpoint_payload_comparisons": 2304,
+  "readable_copies_verified": 43,
+  "runtime_executed_by_verifier": false,
+  "scientific_credit": 0,
+  "total_public_api_attempts": 192
+}

@@ -1,0 +1,9 @@
+test_exception_is_retained_as_exact_failed_record (test_driver.RecorderTests.test_exception_is_retained_as_exact_failed_record) ... ok
+test_hidden_checkpoint_difference_is_not_masked_by_inspection (test_driver.RecorderTests.test_hidden_checkpoint_difference_is_not_masked_by_inspection) ... ok
+test_rejection_mutation_is_preserved_then_stops (test_driver.RecorderTests.test_rejection_mutation_is_preserved_then_stops) ... ok
+test_success_preserves_input_output_and_state_change (test_driver.RecorderTests.test_success_preserves_input_output_and_state_change) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK
