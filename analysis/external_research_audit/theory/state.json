@@ -1,16 +1,16 @@
 {
   "schema_version": 2,
-  "generation": "R32",
-  "generation_id": "THEORY-20261001T192955+0900-R32-SINGLE-AUTHORITY-DURABLE-CAUSAL-FRONTIER",
-  "produced_at": "2026-10-01T19:29:55+09:00",
-  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20261001T192955+0900",
+  "generation": "R33",
+  "generation_id": "THEORY-20261001T212811+0900-R33-ATOMIC-ISSUE-LINEAGE-ADMISSION-FENCE",
+  "produced_at": "2026-10-01T21:28:11+09:00",
+  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20261001T212811+0900",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
-  "supersedes_generation_id": "THEORY-20261001T153237+0900-R31-DURABLE-RECONCILIATION-INBOX",
+  "supersedes_generation_id": "THEORY-20261001T192955+0900-R32-SINGLE-AUTHORITY-DURABLE-CAUSAL-FRONTIER",
   "status": "INTEGRATION_DESIGN_PROPOSAL",
-  "design_id": "ID-SB-FLY-SINGLE-AUTHORITY-DURABLE-CAUSAL-FRONTIER-001",
+  "design_id": "ID-SB-FLY-ATOMIC-ISSUE-LINEAGE-ADMISSION-FENCE-001",
   "role_resolution": {
-    "actual_start": "2026-10-01T19:29:55+09:00",
-    "resolved_slot": "19:30 JST",
+    "actual_start": "2026-10-01T21:28:11+09:00",
+    "resolved_slot": "21:30 JST",
     "resolution_source": "EARLY_GRACE",
     "selected_role": "THEORY_SYNTHESIS_ARCHITECT"
   },
@@ -29,67 +29,84 @@
     ]
   },
   "input_generations": {
-    "control": "R152",
+    "control": "R153",
     "evidence_analyst": "R177",
-    "theory": "R31",
+    "theory": "R32",
     "literature_append_only_latest": "R55",
     "literature_state": "R54",
     "audit": "R15",
-    "forge_durable_reconciliation_inbox": "FORGE_INTERESTING_ENGINEERING_GREEN"
+    "forge_r32_report": "FORGE_OBSERVATION_PUBLICATION_EXHAUSTED_NON_EVIDENTIARY_NO_HANDOFF"
   },
   "refs_inspected": {
     "main": "18ff183983a2657d7199a708e4d3398550d7740c",
     "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "control": "8e888eb7300766b9b0d2fb9c848b5730c416dbce",
+    "control": "442346a66d183fd08597d9dd4972e1e399554ddc",
     "analyst": "6eabb82d512db004d2bc411bd494f2bbea584ea4",
-    "external_before": "db88aa98a4e321ce46bc523cdbc485993dba818c",
-    "forge_durable_reconciliation_inbox_branch": "1ac3ccbf3d160112c03813a6eb81486b346dc7ae",
-    "forge_durable_reconciliation_inbox_exact_tested": "1d2c5edc7db894827108ab3a3ae325dac2da41b4",
-    "r30_exact_head": "36c2a321767dd6c18606eaeea51d3e818c446a20",
-    "r27_exact_tested": "8db5eb55e65cbd436e465cde8a879d90dad8cac2"
+    "external_before": "9c9f0b4a2fece6c57d4679347b649c0e1a2db7a4",
+    "forge_durable_reconciliation_inbox": "1ac3ccbf3d160112c03813a6eb81486b346dc7ae",
+    "forge_durable_reconciliation_exact_tested": "1d2c5edc7db894827108ab3a3ae325dac2da41b4",
+    "forge_r32_report": "4fe1a817140a97455078410e7b1da0af4022e2e0",
+    "r30_exact_head": "36c2a321767dd6c18606eaeea51d3e818c446a20"
   },
   "genuinely_new_information": true,
   "new_sparkbrain_scientific_result": false,
   "scientific_credit": 0,
-  "target_capability": "SINGLE_DURABLE_CAUSAL_PROGRESS_AUTHORITY_WITH_REBUILDABLE_R27_PROJECTION_AND_DURABLE_HORIZON_UNCERTAINTY",
+  "target_capability": "EXACT_ISSUE_EFFECT_CURRENT_LINEAGE_FENCING_AT_DURABLE_RECEIPT_ADMISSION",
   "proposal": {
-    "sole_local_authority": "R31_SQLITE_WAL_RECONCILIATION_FRONTIER",
-    "persist_horizon_floor": true,
-    "persist_unresolved_gap_count": true,
-    "observer_certainty_derived": true,
-    "r27_checkpoint_authoritative": false,
-    "r27_rebuildable_projection": true,
-    "atomic_receipt_frontier_update": true,
-    "scalar_frontier_baseline": true,
-    "alternative_baselines": [
-      "APPEND_ONLY_EVENT_HISTORY_DETERMINISTIC_REPLAY",
-      "CONSISTENT_CHECKPOINT_PLUS_REPLAY_POSITION"
+    "single_authority_r32_preserved": true,
+    "new_durable_authority_added": false,
+    "lineage_tuple": [
+      "world_session_id",
+      "world_cut_generation",
+      "recovery_epoch"
     ],
-    "external_physical_exactly_once_claim": false
+    "require_source_effect_lineage_match": true,
+    "require_source_effect_current_world_frontier_lineage_match": true,
+    "recheck_inside_admission_transaction": true,
+    "require_effect_base_outcome_equals_frontier": true,
+    "receipt_frontier_atomic_commit": true,
+    "stale_r27_projection_non_authoritative": true,
+    "remote_physical_exactly_once_claim": false
   },
-  "acceptance_tests": [
-    "TRUE_SUBPROCESS_RESTART_REBUILDS_R27_EQUIVALENT_PROJECTION_FROM_DURABLE_ROW_ONLY",
-    "POST_DB_COMMIT_PRE_PROJECTION_CRASH_RECOVERS_WITHOUT_DUPLICATE_ADVANCE",
-    "STALE_OR_TAMPERED_R27_CHECKPOINT_CANNOT_OVERRIDE_DURABLE_AUTHORITY",
-    "HORIZON_EXPIRY_AND_GAP_CERTAINTY_SURVIVE_RESTART",
-    "REBASE_CUT_EPOCH_MONOTONICITY_AND_OLD_ISSUE_FENCING_SURVIVE_RESTART",
-    "DUPLICATE_RECEIPT_IDEMPOTENCE_INCLUDING_TRUE_CONCURRENT_RACE_WHERE_PRACTICAL",
-    "MISSING_OR_CORRUPT_DURABLE_HORIZON_STATE_FAILS_CLOSED_OR_REQUIRES_EXPLICIT_MIGRATION",
-    "TOPOLOGY_VARIANTS_SHARE_IDENTICAL_PROVENANCE_SEMANTICS"
+  "evidence_status": {
+    "forge_trigger": "STATIC_NON_EVIDENTIARY_OBSERVATION_ONLY",
+    "r32_source_or_test_persisted": false,
+    "r32_tests_run": false,
+    "runtime_exploit_observed": false
+  },
+  "known_reductions": [
+    "SQLITE_WAL_ACID",
+    "IDEMPOTENT_CONSUMER_TRANSACTIONAL_INBOX",
+    "COMPOSITE_GENERATION_EPOCH_FENCING",
+    "SCALAR_WATERMARK",
+    "EVENT_HISTORY_OR_CHECKPOINT_REPLAY_ALTERNATIVE"
   ],
+  "acceptance_tests": [
+    "SOURCE_EFFECT_LINEAGE_EXACT_MATCH",
+    "OLD_LINEAGE_AFTER_ATOMIC_REBASE_REJECTED",
+    "VALID_DELAY_SAME_LINEAGE_ACCEPTED",
+    "IN_TRANSACTION_LINEAGE_RECHECK",
+    "BASE_OUTCOME_BINDS_FRONTIER",
+    "TRUE_CONCURRENT_DUPLICATE_RACE",
+    "CRASH_BEFORE_AFTER_ADMISSION_COMMIT",
+    "STALE_R27_PROJECTION_CANNOT_OVERRIDE_DB",
+    "TOPOLOGY_INVARIANT"
+  ],
+  "suggested_scope": "BOUNDED_FORGE_ONLY_PENDING_FRESH_EVIDENCE_ANALYST_RECONCILIATION_NO_DIRECT_SYSTEM_BUILD_HANDOFF",
   "m1_stop": false,
   "sb003_activation_change": false,
   "mandatory_review_gate": false,
   "p0": "OPEN_ROOT_CAUSE_UNKNOWN",
   "pointer_debt_observed": {
-    "literature": "LATEST_R55_STATE_R54_OUTSIDE_THEORY_OWNERSHIP",
-    "theory": "NONE_BEFORE_R32_PUBLICATION"
+    "literature": "APPEND_ONLY_LATEST_R55_STATE_R54_OUTSIDE_THEORY_OWNERSHIP",
+    "analyst": "R178_REQUEST_ONLY_TARGET_R177",
+    "theory": "NONE_BEFORE_R33_PUBLICATION"
   },
-  "history_path": "analysis/external_research_audit/theory/history/2026-10-01/1930-THEORY_SYNTHESIS_ARCHITECT.md",
+  "history_path": "analysis/external_research_audit/theory/history/2026-10-01/2130-THEORY_SYNTHESIS_ARCHITECT.md",
   "persistence": {
     "branch": "ops/external-research-audit-handoff",
     "intended_atomic_multi_file_commit": true,
-    "publication_attempt": 2,
+    "publication_attempt": 4,
     "attempt_limit": 5,
     "force_push": false,
     "readback_required": true
