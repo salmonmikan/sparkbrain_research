@@ -1,4 +1,4 @@
-# Continuous temporal-reuse probe: source-audited design v1
+# Continuous temporal-reuse probe: source-audited design v2
 
 Status: **DESIGN / EXPLORATORY / NONCANONICAL / NON_EVIDENTIARY**. Scientific credit: **0**.
 Prepared 2026-10-01 UTC. No new model, stream generator, or scientific runner has been
@@ -9,6 +9,14 @@ Source pin: `bd337bef2edddb2d388cbcf47bf176d469c2b180` (merged literature PR #16
 Human Directive index: `ops/human-directives:ops/human_directives/active.md`,
 branch head `8ce979b9ec0bc7eede5225c0403698f8886d3e8d`,
 index blob `1ba1e173344f36e14d0e21e6f3e823254e031f7d`, freshly read 2026-10-01 UTC.
+
+## Amendment before execution
+
+v1 was published at `250eee30df5768fd9bdc8e8a9b32a5fcc9e15cc5` before any new
+model/stream execution. Independent source/protocol review found that zero-valued cue
+records do not create identical inputs, native checkpoint coverage needs a quiet-boundary
+restriction, and timing/metric/resource language needed tightening. This v2 addresses
+those points prospectively; v1 remains immutable Git history. No result informed the changes.
 
 ## 1. The decision this would inform
 
@@ -65,9 +73,14 @@ The source supports an isolated wrapper, provisionally, without runtime edits:
   substantial collateral damage for physical-unit ablation. Those results are prior
   exposure, not new evidence, and are neither rerun nor reinterpreted here.
 
-The added diagnostic is delayed common-query aliasing, uninterrupted A→B→A reuse,
+The added diagnostic is fixed-window common-query aliasing, uninterrupted A→B→A reuse,
 stronger raw-history alternatives, and same-checkpoint input/intervention contrasts.
-It is not a repeat of the old alternating, cue-complete motif evaluation. Existing
+The unchanged API pools cue and Q cascades within one call before strongest selection.
+Thus this is a fixed-window temporal-pattern classification/reuse diagnostic, not evidence
+that Q reads only an independently persisting post-cue latent state. It cannot establish an
+event-by-event streaming representation or M1's complete hypothesis-selection loop.
+It differs from the old alternating motif evaluation in its common query, intervening
+context, matched raw-reuse alternatives and paired input controls. Existing
 `v05.evaluation`, historical seeds/checkpoints, and consumed protocols are not invoked.
 
 The wrapper may call existing APIs and inspect read-only state. It must not change
@@ -115,6 +128,13 @@ Two suffixes branch from the same 64-cycle development/training history per seed
 1. **Return:** A for 32 cycles, B for 32, then A for 32
 2. **Interleaved:** the same A32,B32 prefix, then 32 independently drawn fair A/B cues
 
+RNG contract: independent Python `random.Random` generators seeded by the integer SHA-256
+of UTF-8 `910071|prefix|0`-style strings: seed, stream key, and zero-based cycle/probe
+index joined by "|". Keys are `prefix`, `return`, `interleaved`, `probe`.
+For each cycle draw two distractor channels with `randrange(6)`, each followed by its
+uniform time; suffix/probe cycles then draw three cue jitters; interleaved cycles finally
+draw one cue bit with `randrange(2)`. Paired probe A/B variants reuse all sampled values.
+Prefix indices are 0..63; suffix indices 0..31; probe indices 0..7.
 The prefix uses exact cue timing. Each suffix cue gets independent uniform timing jitter
 in [-0.35,+0.35] ms; Q remains at 40 ms. Order cannot change at that jitter. Fresh suffix
 distractors differ from prefix. The prefix is development exposure, not evaluated evidence.
@@ -157,6 +177,12 @@ native prediction, or training. Preserve native abstention and coverage separate
 S/F are described as acquired prototype-bank plus learned count-readout models; improved
 prediction alone must not be called learned field dynamics.
 
+Q/H/R hard decisions are 0 for p1<0.5, 1 for p1>0.5, and abstain at exactly 0.5.
+S/F preserve the native predictor's decision, including its existing count-tie rule.
+For every arm, accuracy counts an abstention as incorrect and uses all scored rows;
+coverage is non-abstaining rows divided by all scored rows. Brier always scores p1,
+including 0.5 for an abstention. Label native-decision results separately from Brier.
+
 All arms learn from each outcome once, immediately after prediction. No offline extra
 epochs, replay training, hyperparameter grid, restart at a block, or best-seed selection.
 For H/R, earlier outcomes affect retained records/counts; they are not regime labels.
@@ -175,10 +201,17 @@ during diagnostic execution.
 - Full diagnostic cap: 30 CPU minutes, 45 wall minutes, 1 GiB output; stop, preserve,
   and report `resource_limit` if any required trajectory cannot finish
 - Existing S/F event/spike/update safety caps remain unchanged and are separately logged
+- Per-trajectory cost is measured prefix cost plus that suffix cost, including checkpoint
+  serialization/restoration and measurement/output overhead; shared-prefix CPU is charged
+  once to total diagnostic cost, while every suffix, causal fork and guard is charged
+- No model execution is hidden outside these caps; implementation-only unit tests are
+  reported separately. Unfinished or killed required runs have no complete-result status
 
 Slot counts are not equivalent byte counts or compute. Record peak memory, state bytes,
 CPU time, wall time, model queries, prototype comparisons, field processed events/spikes,
-and plasticity updates. All arms have the same outer cap, but **equal actual resources
+and eligibility/update work. The source's plasticity `update_count` is eligible-edge work,
+even when both learning flags are disabled; it is not a count of learned changes.
+Separately record pre/post weight and delay hashes and changed-parameter counts. All arms have the same outer cap, but **equal actual resources
 are not established**. Do not claim efficiency or exact resource matching merely from
 caps; report the observed resource/accuracy trade-off.
 
@@ -198,10 +231,13 @@ mature assembly with >=8 B selections, zero A selections, and prefix selection c
 No target or match means `intervention_not_identifiable`, not zero impairment or a pass.
 Do not relax the criteria, replace a missing control with an inactive unit, or add training.
 
-At the prefix checkpoint, evaluate a separate fixed 16-cycle probe suffix of 8 paired
-A/B presentations with new distractors/jitter. Preserve the checkpoint between paired forks.
-Each fork receives one presentation, makes one prediction, and stops before outcome
-learning, so interventions cannot change later training:
+At the prefix checkpoint, evaluate 8 independent paired A/B presentations with new
+distractors/jitter. Each fork begins from the identical checkpoint **before the first cue**,
+uses cycle_start=12,800 ms (not sequentially increasing probe times), receives one
+presentation, and stops before outcome learning. All probe forks set
+`learn_assembly=False`, `learn_field=False`, and `explore_action=False`; pulse/receptor/
+field state still evolves according to the existing dynamics. Future training cannot
+differ between interventions:
 
 - sham: unchanged checkpoint
 - targeted: suppress the selected target assembly ID through the existing public API
@@ -211,10 +247,11 @@ learning, so interventions cannot change later training:
 This measures assembly-path/readout causality, not physical-unit specificity.
 Require the observer-only prediction/state transition to equal sham exactly.
 
-For the same eight pairs, use identical distractors and pre-query state, swap only the
+For the same eight pairs, use identical distractors and pre-cue checkpoint state, swap only the
 A/C order while preserving Q, amplitudes and times. A prediction difference now has an
-identified causal input difference. Cue removal sets the three cue magnitudes to zero;
-the target remains evaluator-side. On a removed-cue A/B pair the complete model-visible
+identified causal input difference. Cue removal **omits all three cue records**, leaving only the identical distractor and Q
+records; do not pass zero-valued A/C/F records, since channel-specific receptor state can
+still change or emit on those records. The target remains evaluator-side. On a removed-cue A/B pair the complete model-visible
 prefix is identical, so deterministic predictions must coincide. This exact fork property
 does not imply loss of every history advantage on an ordinary block stream.
 
@@ -286,6 +323,30 @@ protocol review; any required change becomes an explicit v2/amendment before exe
 After clean review, freeze implementation/config/source hashes and guard tests separately.
 No actual execution is authorized by this document alone; the task's already granted
 non-formal diagnostic scope and applicable current repository policy must both be verified.
+
+### Restricted checkpoint eligibility
+
+Native v0.5 save/load omits live `CascadeTracker._pending`, `BurstDetector._window`
+and emitted-key caches; field restoration also rebuilds outgoing lists ordered by current
+(delay_ms,target_id), while live delay learning does not re-sort them. The wrapper must
+not silently repair, clear, serialize new hidden fields, or claim general checkpoint fidelity.
+
+Permit a saved-prefix fork only if read-only inspection proves all of:
+
+1. the field event queue and CascadeTracker pending-spike list are empty
+2. every buffered burst spike is strictly earlier than 12,800-8 ms, so it expires before
+   any permitted next pulse; all old emitted-key times are earlier than the next cycle
+3. each live outgoing list already equals sorting by current (delay_ms,target_id)
+4. wrapper receipt/pending state is also saved and restored exactly
+
+Pre-run hand-constructed fixtures must demonstrate direct versus native-save/load
+continuation equality with nonzero learned delay changes at an eligible quiet boundary,
+and rejection of pending-cascade, queued-event, live-burst, or noncanonical-outgoing cases.
+Equality means returned outputs and checkpoint-visible operational state, not irrelevant
+Python result/cache object identity. At the real 64-cycle prefix, recheck and record every
+eligibility fact; stop with `checkpoint_boundary_ineligible` if any fails. No measured
+suffix or intervention is run from an ineligible checkpoint. This can legitimately stop
+the diagnostic after the prefix and expose a wrapper/integration constraint.
 
 Before model execution: check input isolation and query-time cutoff, receipt idempotency,
 ID-renaming invariance, paired-prefix equality, checkpoint continuation and budget enforcement.
