@@ -1134,3 +1134,32 @@ contract correction only.
   robustness, natural-noise performance, composition contribution, novelty,
   energy, general adaptation or runtime-defect claim is established. No scientific
   evidence grade, consumed/formal identity, authority ledger, or runtime changed.
+
+## 2026-10-01 — Read-only temporal-reuse causal triage
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`; scientific credit 0.
+  Retrospective arithmetic only; no new model execution or formal identity.
+- Independently reconstructed all 256 saved S/F suffix routing/readout decisions
+  and 384 ordinary-memory rows from PR #169's retained inputs; verified all 232
+  manifest-listed files and eleven inspected source blobs at execution pin
+  `0bcb2c1b23c29e5107111343a757c57c1f7bbb41`.
+- Full S initially recalls A, then selects an old B-trained prototype for the last
+  15/32 return predictions in each seed. Those wrong predictions contribute
+  0.28806374 of total Brier 0.31180644. Existing prototypes remain fixed; the
+  current spike order changes. F's lower loss includes substantially more
+  abstention, with 19/32 return rows containing only one internal spike.
+- No edges connect the three firing internal units in the retained trajectories;
+  these observations do not establish recurrent assembly benefit. S/F histories
+  differ before the suffix, so continuing weight versus delay learning remains
+  causally unresolved. The full-S matched B control is inactive on B shams;
+  that limitation does not uniformly apply to F.
+- [Report](research/temporal_reuse_causal_triage_20261001.md) and
+  [audited artifacts](../artifacts/research/temporal_reuse_causal_triage_20261001/README.md)
+  retain source/provenance hashes and a zero-model-call reproduction command.
+  Decompressed audit SHA-256:
+  `4faff4e9ad3f3f613f463c630bb5a191354eb3a6d438fd87fd72dfe07d1489a9`.
+- A separate [shared-prefix protocol proposal](research/shared_prefix_plasticity_protocol_20261001.md)
+  specifies two fresh seeds, four suffix-only weight/delay branches, unchanged H/R
+  and a 768-transition ceiling. It is unexecuted and needs a separate reviewed
+  runner/input freeze. No old negative result, evidence grade, runtime,
+  scheduler, authority state or integrated-runtime capability is changed.

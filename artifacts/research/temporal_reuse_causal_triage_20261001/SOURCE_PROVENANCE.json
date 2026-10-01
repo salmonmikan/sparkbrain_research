@@ -1,0 +1,49 @@
+{
+  "files": {
+    "docs/research/temporal_reuse_loop_contract_20261001.md": {
+      "github_blob": "c1bf2abe36f8832cdd460c5859cbe53677b1dc74",
+      "sha256": "83fe87ded3ac1b2797d46f64070f0197ef37db953d202099dcdefd4aca243f15"
+    },
+    "scripts/temporal_reuse_loop_probe.py": {
+      "github_blob": "9f1f3894109ed40f8d00c9534b438a12b0275be1",
+      "sha256": "28ea3207cc5b9a2cce2219df7754a22cd8f05c83915eb4962630450dc0e220ae"
+    },
+    "src/sparkbrain/v04/brain.py": {
+      "github_blob": "25fd56b082168a9ea71f313023451858d00b6184",
+      "sha256": "e731ea237eb7cdd6826d04a030f46770b5e2606c8f9e56aaaf810f7d6e7d6593"
+    },
+    "src/sparkbrain/v04/field.py": {
+      "github_blob": "e2279d69cd04030238317361d5ee3abdc1009c32",
+      "sha256": "6f36f27d84bf6721fd62f21cd6c06a9d550d88aafd8ed4051dc5b14a4014a97c"
+    },
+    "src/sparkbrain/v05/assemblies.py": {
+      "github_blob": "a0a8c41e21db68cafc08ace8dac50b7a56607a52",
+      "sha256": "f2dc1b7bbe71fb70ea27bb661111dca2d68ebfeb3e6044e4ec221120d7d12394"
+    },
+    "src/sparkbrain/v05/brain.py": {
+      "github_blob": "652552f8dc6a53a68e441f593e9bfd82cebb9f7c",
+      "sha256": "d11680e60ebd7d3301a81a1e0e6ffddf39f2d1707843892c241b0865734439c9"
+    },
+    "src/sparkbrain/v05/homeostasis.py": {
+      "github_blob": "67b87a4b4c91a7dba41670087a2d1803bb6e3e6c",
+      "sha256": "0026eeb202a5720263c094474615c907285f7cd06181e67652a2d04e9d68dd91"
+    },
+    "src/sparkbrain/v05/plasticity.py": {
+      "github_blob": "bb04eaac527aaa6343018ffb49347d087c6a29e5",
+      "sha256": "3729e6f9556382988441116240ca0fa36897048b56e7e789a7ff453b444c3429"
+    },
+    "src/sparkbrain/v05/prediction.py": {
+      "github_blob": "9805031fb8db235d2f3cf4c81421b896d2597af4",
+      "sha256": "dcd8f45ba4cd1a0478685bf7f8f9764aeed135820f29d5b3381111631345e169"
+    },
+    "src/sparkbrain/v05/receptors.py": {
+      "github_blob": "86c1cfea1ea70cada5c277d8f5047c32ea611a5c",
+      "sha256": "4071d0d5d2f0ab487e3324528053997ecbdeb65953bfa211312d0da918c75942"
+    },
+    "src/sparkbrain/v05/topology.py": {
+      "github_blob": "d9d292bdedc1288a929d1e53f03b9fc182b45a36",
+      "sha256": "8e4347700e36a042bf4dda02cab769d513c02764e86348e5996994a7fa904182"
+    }
+  },
+  "source_pin": "0bcb2c1b23c29e5107111343a757c57c1f7bbb41"
+}
