@@ -753,7 +753,7 @@ def test_optional_stdlib_zip_path_cannot_be_a_directory(tmp_path, monkeypatch):
         probe.dependency_inventory()
 
 
-def execution_environment_fixture(monkeypatch):
+def execution_environment_fixture(monkeypatch, tmp_path):
     flags = {
         name: getattr(probe.sys.flags, name)
         for name in dir(probe.sys.flags)
@@ -768,12 +768,23 @@ def execution_environment_fixture(monkeypatch):
     for key in list(os.environ):
         if key.startswith("PYTHON") and key not in {"PYTHONHASHSEED", "PYTHONDONTWRITEBYTECODE"}:
             monkeypatch.delenv(key)
-    stdlib = Path(probe.sysconfig.get_path("stdlib")).resolve()
+    # This fixture exercises validation policy, not the checkout's current cache
+    # state. Ordinary CI tests may already have generated real runtime bytecode.
+    root = tmp_path / "isolated-project"
+    (root / "src").mkdir(parents=True)
+    vendor = root / "artifacts/source/predecessor.py"
+    vendor.parent.mkdir(parents=True)
+    vendor.write_text("# Environment-validation fixture; never imported.\n")
+    stdlib = tmp_path / "isolated-stdlib"
+    (stdlib / "lib-dynload").mkdir(parents=True)
+    monkeypatch.setattr(probe, "ROOT", root)
+    monkeypatch.setattr(probe, "VENDOR", vendor)
+    monkeypatch.setattr(probe.sysconfig, "get_path", lambda name: str(stdlib))
     monkeypatch.setattr(probe.sys, "path", [str(stdlib), str(stdlib / "lib-dynload")])
 
 
-def test_bound_execution_mode_accepts_plain_unoptimized_flags(monkeypatch):
-    execution_environment_fixture(monkeypatch)
+def test_bound_execution_mode_accepts_plain_unoptimized_flags(monkeypatch, tmp_path):
+    execution_environment_fixture(monkeypatch, tmp_path)
     probe.validate_execution_environment()
 
 
@@ -787,8 +798,10 @@ def test_bound_execution_mode_accepts_plain_unoptimized_flags(monkeypatch):
         ("isolated", 1, "ignore PYTHONHASHSEED"),
     ],
 )
-def test_execution_rejects_unbound_interpreter_modes(monkeypatch, setting, value, message):
-    execution_environment_fixture(monkeypatch)
+def test_execution_rejects_unbound_interpreter_modes(
+    monkeypatch, tmp_path, setting, value, message
+):
+    execution_environment_fixture(monkeypatch, tmp_path)
     if setting in {"pycache_prefix", "_xoptions"}:
         monkeypatch.setattr(probe.sys, setting, value)
     else:
@@ -797,3 +810,16 @@ def test_execution_rejects_unbound_interpreter_modes(monkeypatch, setting, value
     with pytest.raises(RuntimeError, match=message):
         probe.validate_execution_environment()
     assert os.environ["PYTHONHASHSEED"] == "0"
+
+
+@pytest.mark.parametrize("cache_kind", ["runtime", "vendor"])
+def test_execution_rejects_controlled_cache_files(monkeypatch, tmp_path, cache_kind):
+    execution_environment_fixture(monkeypatch, tmp_path)
+    cache_root = probe.ROOT / "src" if cache_kind == "runtime" else probe.VENDOR.parent
+    cache = cache_root / "__pycache__/fixture.cpython-311.pyc"
+    cache.parent.mkdir()
+    cache.write_bytes(b"presence-only bytecode fixture; never imported")
+    monkeypatch.setattr(probe, "predecessor", lambda: pytest.fail("production imported"))
+    with pytest.raises(RuntimeError, match=f"{cache_kind} bytecode caches must be absent"):
+        probe.validate_execution_environment()
+    assert cache.read_bytes() == b"presence-only bytecode fixture; never imported"
