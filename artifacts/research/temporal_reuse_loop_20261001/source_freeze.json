@@ -1,0 +1,23 @@
+{
+  "diagnostic_seeds": [
+    910071,
+    910072
+  ],
+  "files": {
+    "docs/research/temporal_reuse_loop_contract_20261001.md": "83fe87ded3ac1b2797d46f64070f0197ef37db953d202099dcdefd4aca243f15",
+    "docs/research/temporal_reuse_loop_execution_20261001.md": "71a1c02d0fdd96d9b7c2a9b2bf67fb3d5829c2ab3b24ffa3b96f482b12acd881",
+    "scripts/temporal_reuse_loop_probe.py": "28ea3207cc5b9a2cce2219df7754a22cd8f05c83915eb4962630450dc0e220ae",
+    "tests/test_temporal_reuse_probe_contract.py": "2d5cf65f67d9fca00c95291cda0017c541dea39be0b733c545a9d4a4e0edbd42"
+  },
+  "independent_source_review": "cleared at script SHA-256 28ea3207cc5b9a2cce2219df7754a22cd8f05c83915eb4962630450dc0e220ae",
+  "model_or_stream_executed": false,
+  "protocol_review_head": "7e4368550fb3826a2b9847e8275ef07849de33b0",
+  "scientific_credit": 0,
+  "source_runtime_pin": "bd337bef2edddb2d388cbcf47bf176d469c2b180",
+  "status": "SOURCE_CONFIG_TEST_FREEZE_BEFORE_EXECUTION",
+  "validation": {
+    "diff_check": "passed",
+    "pure_helper_tests": 7,
+    "ruff": "passed"
+  }
+}
