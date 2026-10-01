@@ -138,7 +138,9 @@
     "maximum_case_processes": 10,
     "maximum_direct_save_validations": 11,
     "maximum_total_direct_reconstructions": 21,
-    "limit_start": "Activate CPU/address-space limits and wall deadline before runtime imports; setup, primary load and save-back all count; enforce retained-output cap at each write and case completion."
+    "limit_start": "Activate CPU/address-space limits and child wall deadline before runtime imports. Apply the overall deadline to parent preparation and artifact writes too. The 32MiB value is an admission/checkpoint threshold, not an OS instantaneous filesystem quota: project sizes before harness writes/copies, check immediately before/after model serialization, and drain stdout/stderr through bounded pipes. Observed aggregate excess or pipe overflow stops further runtime work, preserves available bytes, and explicitly reports any overshoot/truncation and incomplete/blocked rows; no retry.",
+    "max_emergency_metadata_bytes_per_file": 262144,
+    "emergency_metadata_rule": "After a stop, bounded JSON error/summary/journal-reconciliation metadata may still be retained without starting any runtime work. Report its bytes and any threshold/deadline overshoot honestly; never delete raw evidence to pretend compliance."
   },
   "execution_gate": "Commit protocol and source-only scope review before any runtime import/fixture construction or load. Implement and independently source-review runner and outcome-independent synthetic tests before the one matrix. This proposal remains source-only until independent review and a separately recorded bounded execution go-ahead.",
   "failure_policy": "Retain all ten planned rows including blocked/incomplete cells, input mutations, exceptions and raw before/after hashes. Stop a case after its first load; no hidden retry. Infrastructure failure is not a semantic rejection. Any unexpected acceptance or source-predicted alias acceptance is preserved without changing expectations or validators. Record primary load and save-back as separate outcomes. A save-back error cannot retroactively classify an accepted primary load as rejection.",
@@ -157,5 +159,6 @@
     "data-only verifier with independent archive/provenance anchors",
     "separate dated negative/boundary result entry",
     "PR and exact-head validation"
-  ]
+  ],
+  "pre_execution_clarification": "2026-10-01: independent runner review clarified measurable output-limit enforcement boundaries before any runtime import or fixture construction. Numeric limits, cases and semantic expectations are unchanged; original source-only protocol bytes remain in commit4087cd4."
 }

@@ -155,3 +155,52 @@ used in that review. Source-derived expected rejection stages are:
 
 These construction-stage expectations will be checked without equating temporary
 candidate construction with publication or mutation of a live incumbent session.
+
+## Pre-execution runner and input freeze clarification
+
+A subsequent independent source-only runner review required durable primary-load
+outcomes before save-back, explicit infrastructure-error classification, and child
+input verification against the parent’s exact mutation inventory. Its corrections
+are implemented before any runtime import or fixture execution. An append-only
+stage journal and the initial full ten-row plan preserve incomplete/interrupted
+attempts; observed entry counts are lower bounds when a worker is interrupted.
+
+`protocols/m1_checkpoint_compatibility_inputs_v1.json` separately freezes all six
+retained checkpoint file hashes and complete nondefault predictive/scope configs.
+It was generated through data-only archive/JSON inspection; no checkpoint loader or
+model constructor was called. The runner pins its hash and the updated protocol
+hash. Original source-only protocol bytes remain in commit `4087cd4`.
+
+The numeric output threshold remains 32 MiB, with more precise enforcement wording:
+it is an admission/checkpoint threshold, not an OS-enforced instantaneous quota.
+Project sizes before harness writes/copies, check immediately before and after
+model serialization, and drain stdout/stderr through bounded pipes. The parent’s
+overall deadline applies to preparation and writes too. Any observed excess stops
+further runtime work and marks incomplete/blocked cases without retry. Available
+raw bytes are preserved, and possible output truncation or overshoot is explicit.
+After a stop, each error/summary reconciliation file may retain at most 256 KiB of
+JSON metadata; its storage/time is reported rather than hidden as quota compliance.
+No semantic case, expectation, dynamics allocation or claim changed.
+
+The final pre-execution journaling contract distinguishes invocation intent from
+observed completed method calls. A worker interrupted after an intent has an
+unknown invocation/completion boundary, not a fabricated zero actual count. A
+journal failure cannot replace an already-running method’s own return or exception:
+retain that outcome, mark measurement incomplete, and admit no next primary or
+save-back operation. The already-admitted call remains under its original process
+deadline and may still be terminated externally, in which case its outcome remains
+unknown. Pipe overflow or a child-reported budget stop is latched in the controller,
+even if discarded output kept the retained directory below 32 MiB.
+
+Independent final runner review approved the single frozen matrix after source
+commit, with no remaining blocker. Reviewed SHA-256 pins:
+
+- runner: `16798c355caa0f47e5f3653f8c94a7ef3adde5546670518d82156b946c8971a1`
+- synthetic tests: `09b86b9528ea2ee372135178d9f3bd9a832c5e1841414c19777136104f06ce22`
+- protocol: `0889e1984865a93c4663f9ca5bd6e29d2ccdd97cf523ceb62f80ce768ac84c14`
+- input manifest: `974850e46c8e8e472b03ff341e821087481f9efe47f3138646f7147501d77100`
+
+Thirty-five outcome-independent synthetic tests and Ruff passed before execution.
+The reviewer inspected source and hashes only and did not independently run tests,
+construct fixtures, import the runtime or load checkpoints. These checks authorize
+no expansion of the fixed ten-case/zero-transition execution allocation.
