@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "generation": "R147",
-  "generation_id": "CTRL-20261001T125408+0900-R147-R177-R218-M1-REFUSAL-FORGE-TEST-LINT-BLOCKED-LIT-R55",
-  "generated_at": "2026-10-01T12:54:08+09:00",
+  "generation": "R148",
+  "generation_id": "CTRL-20261001T144619+0900-R148-M1-CONFLICT-RESOLVED-CI-GREEN-FORGE-TAMPER-BLOCKED",
+  "generated_at": "2026-10-01T14:46:19+09:00",
   "role": "CONTROL_BRAIN",
   "role_resolution": {
-    "actual_start": "2026-10-01T12:54:08+09:00",
-    "resolved_slot": "12:50 JST",
-    "resolution_source": "MOST_RECENT_CANONICAL_OCCURRENCE",
+    "actual_start": "2026-10-01T14:46:19+09:00",
+    "resolved_slot": "14:50 JST",
+    "resolution_source": "EARLY_GRACE",
     "selected_role": "CONTROL_BRAIN"
   },
   "new_scientific_result": false,
@@ -36,11 +36,13 @@
   },
   "refs": {
     "main": "18ff183983a2657d7199a708e4d3398550d7740c",
+    "steward": {
+      "generation": "G38",
+      "head": "9ddb9130dc08444fd31b52727c174a3c8d483988"
+    },
     "analyst": {
       "generation": "R177",
       "head": "6eabb82d512db004d2bc411bd494f2bbea584ea4",
-      "request_commit": "3bd2169f802c71003519cb322ac3ed01d6c779eb",
-      "workflow_run": 36808871606,
       "persistence_complete": true
     },
     "methodology": {
@@ -67,21 +69,30 @@
   "m1": {
     "build_id": "BUILD-SB-M1-002-INTEGRATED-ROBUSTNESS-HARNESS",
     "branch": "system-build/m1-post-integration-robustness-20260928",
-    "exact_head": "9f197003ee936f68de55a1121244ab7bfdee08d1",
+    "prior_repaired_head": "9f197003ee936f68de55a1121244ab7bfdee08d1",
+    "exact_head": "16e5b3fc48edea770f93f119f6c9a63ba7c1f301",
     "current_main": "18ff183983a2657d7199a708e4d3398550d7740c",
-    "ahead_by": 2,
-    "behind_by": 1,
+    "reconciliation_commit_parents": [
+      "9f197003ee936f68de55a1121244ab7bfdee08d1",
+      "18ff183983a2657d7199a708e4d3398550d7740c"
+    ],
+    "ahead_by": 3,
+    "behind_by": 0,
     "pr_number": 164,
     "pr_state": "OPEN",
     "pr_merged": false,
-    "pr_mergeable": false,
-    "pr_mergeable_state": "dirty",
+    "pr_mergeable": true,
+    "pr_mergeable_state": "clean",
+    "repair_test_blob": "c35c9f764ef169a50b8b120df6c1ad23148e65af",
+    "known_acceptance_defects_addressed": 2,
+    "exact_head_pr_ci_run": 36817710419,
+    "exact_head_push_ci_run": 36817707414,
+    "exact_head_ci": "success",
+    "python_311_all_steps_green": true,
+    "python_313_all_steps_green": true,
     "analyst_generation": "R177",
-    "analyst_disposition": "CONFLICT_ONLY_RECONCILIATION_THEN_EXACT_HEAD_CI_THEN_FRESH_ANALYST_RECONCILIATION",
-    "main_generation": "R218",
-    "reconciliation_attempts": 5,
-    "reconciliation_failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL",
-    "reconciliation_commit_created": false,
+    "analyst_exact_head_reconciliation": false,
+    "disposition": "READY_FOR_FRESH_ANALYST_EXACT_HEAD_RECONCILIATION_HOLD_MERGE",
     "current_head_merge_authorized_by_control": false
   },
   "fly0": {
@@ -90,10 +101,6 @@
       "status": "OPTIONAL_PREAUTHORIZED_NON_EVIDENTIARY",
       "system_build_handoff": false
     },
-    "r29": {
-      "head": "251763b2c3130d3ad5bc26c19dc892fe4701c0a4",
-      "status": "NO_HANDOFF_DEPRIORITIZED"
-    },
     "r30": {
       "exact_head": "36c2a321767dd6c18606eaeea51d3e818c446a20",
       "ci_run": 36797189243,
@@ -101,23 +108,19 @@
       "status": "OPTIONAL_PREAUTHORIZED_BOUNDED_LOCAL_ACID_COMPARATOR_NO_DIRECT_HANDOFF"
     },
     "effect_receipt_frontier_gate": {
-      "source_green_head": "2bf013885c878d4349b51dcb1aa36486bc19506f",
-      "focused_test_code_head": "caeef6f9e23061b8741c754e6d71120f520f8618",
-      "reporting_head": "4696ee831b6ef1fd32de01b6863873aefa346129",
-      "focused_test_blob": "4516ca352f046a97a4a9067ad94efea9842faf41",
-      "test_publication_attempts": 3,
-      "test_publication_success": true,
-      "ci_run": 36812098493,
-      "report_ci_run": 36812397275,
-      "ci": "failure_lint",
-      "semantic_acceptance": "NOT_RUN",
-      "format_repair_attempts": 5,
-      "format_repair_failures": {
-        "local_schema_validation": 1,
-        "pre_github_refusal": 4
-      },
-      "format_repair_commit_created": false,
-      "status": "FOCUSED_TEST_PERSISTED_LINT_BLOCKED_UNVERIFIED_NO_HANDOFF"
+      "test_bearing_head": "74536fb9e3063c48d68080e392121175037e3215",
+      "reporting_head": "edf5f7629c2049f412777d597713ff3f9b9ac616",
+      "source_blob": "4470ac81a787174a8c91cde3ae09d493826ed9a3",
+      "focused_test_blob": "0ccbdc0ee63d57c02416c15a04a3cb2dd2c53d23",
+      "focused_ci_run": 36812964770,
+      "report_ci_run": 36821223187,
+      "ci": "success",
+      "direct_tamper_test_present": false,
+      "direct_tamper_publication_attempts": 5,
+      "direct_tamper_publication_result": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL_5_OF_5",
+      "analyst_exact_head_reconciliation": false,
+      "system_build_handoff": false,
+      "status": "ENGINEERING_GREEN_CORE_FOCUSED_TEST_DIRECT_TAMPER_GAP_PENDING_ANALYST_NO_HANDOFF"
     },
     "sb003": "ALLOCATED_CONDITIONAL_INACTIVE"
   },
@@ -126,9 +129,10 @@
     "standard_enabled": 8,
     "authorized_work_exception_enabled": 1,
     "work_exception_task_id": "6abdbad842c881918e1247a8b4592b26",
-    "work_exception_latest_run_time": "2026-10-01T11:59:54+09:00",
-    "work_exception_new_durable_recovery_observed": false,
+    "work_exception_latest_run_time": "2026-10-01T14:05:06+09:00",
     "work_backend_provenance_exposed": false,
+    "m1_recovery_commit_in_run_window": "16e5b3fc48edea770f93f119f6c9a63ba7c1f301",
+    "m1_recovery_task_id_receipt_present": false,
     "original_standard_recovery_task_id": "6abd34233b188191adc5c7e6c6942d93",
     "original_standard_recovery_enabled": false,
     "all_non_exception_enabled_prompts_standard_only": true,
@@ -141,17 +145,16 @@
     "classification": "INTERMITTENT_PRE_GITHUB_MUTATION_REFUSALS_WITH_MULTIPLE_RECOVERIES_ROOT_CAUSE_UNKNOWN",
     "repository_wide_outage_supported": false,
     "constant_permission_loss_supported": false,
-    "current_m1_structural_blocker": "GITHUB_MERGEABILITY_DIRTY_AFTER_MAIN_ADVANCE",
-    "current_m1_repair_failure_layer": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL_5_OF_5",
-    "forge_test_create": "TWO_REFUSALS_THEN_SUCCESS",
-    "forge_format_repair": "ONE_LOCAL_SCHEMA_ERROR_PLUS_FOUR_PRE_GITHUB_REFUSALS"
+    "m1_conflict_reconciliation": "RECOVERED_EXACT_HEAD_CI_GREEN",
+    "current_m1_gate": "FRESH_ANALYST_EXACT_HEAD_RECONCILIATION",
+    "forge_direct_tamper_publication": "PRE_GITHUB_REFUSAL_5_OF_5"
   },
   "pointer_debt": {
-    "control": "NONE_R146_BEFORE_R147_PUBLICATION",
-    "analyst": "NONE_R177_ALIGNED",
+    "control": "NONE_R147_BEFORE_R148_PUBLICATION",
+    "steward": "NONE_G38_ALIGNED",
+    "analyst": "NONE_R177_ALIGNED_BUT_SEMANTICALLY_STALE_FOR_NEW_M1_AND_FORGE_HEADS",
     "main": "APPEND_ONLY_LATEST_R218_STATE_LEASE_R215",
     "literature": "APPEND_ONLY_LATEST_R55_STATE_R54",
-    "forge_effect_gate": "APPEND_ONLY_REPORT_CURRENT_MOVING_LATEST_STATE_LEGACY_STALE",
     "theory": "NONE_R30_ALIGNED"
   },
   "hard_floor": {
@@ -167,6 +170,6 @@
     "publication_attempt": 1,
     "attempt_limit": 5,
     "force_push": false,
-    "history_path": "analysis/control_brain/history/2026-10-01/1254-R147.md"
+    "history_path": "analysis/control_brain/history/2026-10-01/1446-R148.md"
   }
 }
