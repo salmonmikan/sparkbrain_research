@@ -1,0 +1,44 @@
+{
+  "backend_live_dynamics_continue": true,
+  "backend_outcome_updates": false,
+  "backend_parameter_updates_after_freeze": false,
+  "backend_time_unit": "milliseconds",
+  "consumers": [
+    "M1Observation.sensory_values",
+    "M1Observation.routing_features"
+  ],
+  "coordinate_names": [
+    "temporal_0",
+    "temporal_1"
+  ],
+  "delivery_requires_strictly_after_decision": true,
+  "feature_dimensions": 2,
+  "future_test_layers": [
+    "consumer_sentinel",
+    "acquired_producer_bridge"
+  ],
+  "identity_invariance_scope": "adapter_and_m1_decision_state_only",
+  "intervention_controls": [
+    "sham",
+    "both_consumer_swap",
+    "prediction_only_swap",
+    "route_only_swap",
+    "zero_context",
+    "identity_rename",
+    "receipt_clock_faults",
+    "actual_observer_removal"
+  ],
+  "m1_outcome_updates": true,
+  "m1_time_unit": "seconds",
+  "maximum_original_route_dimensions": 6,
+  "maximum_original_sensory_scalars": 62,
+  "maximum_pending_occurrences": 1,
+  "model_execution_authorized": false,
+  "native_v05_checkpoint_sufficient": false,
+  "new_runtime_api_implemented": false,
+  "reference_identity_neutrality_established": false,
+  "schema": "assembly-m1-interface-design-1",
+  "scientific_credit": 0,
+  "source_pin": "ff51abdc7f1f8ae777a9536494cd83d29b4bb769",
+  "status": "DESIGN_NOT_IMPLEMENTED"
+}
