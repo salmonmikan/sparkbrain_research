@@ -1,6 +1,6 @@
 # Independent workspace-contention diagnostic
 
-Status: executed; EXPLORATORY / NON_EVIDENTIARY. Review and repository-wide CI remain pending.
+Status: executed; EXPLORATORY / NON_EVIDENTIARY. Final-head review and CI disposition are recorded in PR #165.
 
 ## Question and scope
 
@@ -74,38 +74,39 @@ evaluated. A global competition gate may intentionally impose this bottleneck.
 Runtime source: base 59fc994b39d0ba02682e972161bb46801592d25b; the runner verifies
 exact Git blob hashes of engine.py, model.py and validation.py before execution.
 Protocol SHA-256: 8f4be213aee46e83e9f992156d712301b9910de383290407186974cb3bce19b0.
-Final source checkpoint: fc125e570677dd2ca215dd9e4da95b6db1cfcd3e.
+Corrected source checkpoint: 86408cf4ee16860badb25574f8d11bc1ef74bc95.
 
 Python 3.12.14, standard-library-only runtime, cloud CPU execution. All 11
 focused tests and repository-configured Ruff rules passed. Two fresh processes
 with PYTHONHASHSEED=1 and 37 produced byte-identical raw episodes, summary and
-manifest. The raw file has 216 complete episode rows (1,036,443 bytes), retaining
+manifest. The raw file has 216 complete episode rows (1,040,547 bytes), retaining
 all inputs, configs, Ignitions, final Coalition/Workspace state and counters.
 
-- raw_episodes.jsonl SHA-256: 1f84a20fd63b2597b8471627e5fb30fa64849dfb3c87c19a07d94254eb077b83
+- raw_episodes.jsonl SHA-256: b8f543bc7ccbcaa4d02f79d79641c3420f3c6fc6b45af4281354189d2fc1c2b4
 - summary.json SHA-256: 18ba9e705a7ad8e5aaa25ca1a4163ab45cc41102e1802829855d8ac6b3d67d15
-- manifest.json SHA-256: fcf29f6b9cbec94ac6032df0fd3b992b22f0479974a7e8a286b00de818b7980f
+- manifest.json SHA-256: 0da2d5e2f4ae6864207922d34b001d33031c2391892273bc5f773516b16fdb26
 
 Commands from a normal repository checkout:
 
 ```bash
 PYTHONPATH=src python -m pytest tests/test_exploratory_workspace_contention.py -q
 python -m ruff check scripts/exploratory_workspace_contention.py tests/test_exploratory_workspace_contention.py
-PYTHONHASHSEED=1 PYTHONPATH=src python scripts/exploratory_workspace_contention.py --output /tmp/workspace-check-1 --source-commit fc125e570677dd2ca215dd9e4da95b6db1cfcd3e
-PYTHONHASHSEED=37 PYTHONPATH=src python scripts/exploratory_workspace_contention.py --output /tmp/workspace-check-37 --source-commit fc125e570677dd2ca215dd9e4da95b6db1cfcd3e
+PYTHONHASHSEED=1 PYTHONPATH=src python scripts/exploratory_workspace_contention.py --output /tmp/workspace-check-1 --source-commit 86408cf4ee16860badb25574f8d11bc1ef74bc95
+PYTHONHASHSEED=37 PYTHONPATH=src python scripts/exploratory_workspace_contention.py --output /tmp/workspace-check-37 --source-commit 86408cf4ee16860badb25574f8d11bc1ef74bc95
 diff -qr /tmp/workspace-check-1 /tmp/workspace-check-37
 ```
 
 The source checkpoint is an externally verified GitHub readback recorded by the
-runner, not a claim of a full clean Git checkout. Execution used a minimal cloud
-source materialization. Full repository tests, local readiness, demo, benchmark
-and bundle validation were not run in that partial checkout. Required final-head
-GitHub CI and Codex review must be checked separately before merge.
+runner. Initial execution used minimal cloud source materialization. The
+corrected execution and repository validation use a complete cloud CPU checkout
+with the published runner/test correction, without requiring remote services at
+runtime. This is not execution on the user's personal computer. The full
+command outcomes are recorded below; GitHub CI supplements those commands.
 
 A line-wrap-only lint correction followed initial source 40bbc3296c39e41f6e164afcc8abe80a3ebdc621.
-No protocol or experimental choice changed. Final-checkpoint raw and summary
-bytes exactly match the initial execution; only source-bound manifest metadata
-changed. The negative/bounded outcomes were retained without tuning.
+No protocol or experimental choice changed. At checkpoint fc125e570677dd2ca215dd9e4da95b6db1cfcd3e, raw and summary
+bytes exactly matched the initial execution; only source-bound manifest metadata
+changed. The later metric-contract correction is recorded separately below. The negative/bounded outcomes were retained without tuning.
 
 ## Interpretation and next question
 
@@ -125,4 +126,56 @@ sha256sum /tmp/workspace-retained-raw.jsonl
 cmp /tmp/workspace-retained-raw.jsonl /tmp/workspace-check-1/raw_episodes.jsonl
 ```
 
-The decompressed SHA-256 must be `1f84a20fd63b2597b8471627e5fb30fa64849dfb3c87c19a07d94254eb077b83`. This contains the exact original data, not a sample or a rerun.
+The decompressed SHA-256 must be `b8f543bc7ccbcaa4d02f79d79641c3420f3c6fc6b45af4281354189d2fc1c2b4`. This contains all corrected-run rows, not a sample. The retained gzip SHA-256 is
+`1077b4467796ccbcb8b697840a3076a325ae6216538f494386905aae18b42aa6`.
+
+
+### Metric-contract correction (2026-10-01)
+
+Codex review identified that the original runner exposed `counters.ignitions` but
+omitted the frozen name `metrics.ignition_count`. Source checkpoint
+`86408cf4ee16860badb25574f8d11bc1ef74bc95` adds that key and tests that every
+registered metric is present in every generated row. The protocol and all
+experimental choices remain byte-for-byte unchanged. The entire 216-cell grid
+was rerun twice, with hash seeds 1 and 37; raw, summary and manifest were byte
+identical between those corrected executions. Removing only the added metric
+key from each new row reproduces every original row exactly; summary bytes and
+all numerical observations are unchanged.
+
+The initial implementation-contract failure is preserved under
+`artifacts/exploratory/workspace_contention/pre_metric_contract_fix/` with its
+original raw gzip, summary and manifest. Its source checkpoint is
+`fc125e570677dd2ca215dd9e4da95b6db1cfcd3e`, raw SHA-256 is
+`1f84a20fd63b2597b8471627e5fb30fa64849dfb3c87c19a07d94254eb077b83`,
+and manifest SHA-256 is
+`fcf29f6b9cbec94ac6032df0fd3b992b22f0479974a7e8a286b00de818b7980f`.
+This preserved version is provenance only; the corrected root artifacts are
+the complete metric-contract output. No scientific claim is upgraded.
+
+### Complete-checkout CPU validation (2026-10-01)
+
+After the metric correction, the repository's full configured local command
+sequence ran in a complete, unshallow cloud CPU checkout using Python 3.12.14.
+Dependencies were installed into a dedicated virtual environment with the
+repository's dev/learned/spiking extras and official CPU Torch 2.13.0+cpu.
+
+| Command | Result |
+|---|---|
+| `python scripts/local_readiness_check.py` | passed; CPU reference, no mandatory runtime network dependency |
+| `python -m pytest -q` (JUnit output enabled) | 634 passed, 0 failed/skipped, 392 deselected by the repository's configured scientific/reproduction/external marker exclusions |
+| focused workspace-contention test file | 11 passed |
+| `python -m ruff check .` | passed |
+| `python scripts/run_demo.py` | passed; 7 frames, final prediction cat |
+| `python scripts/checkpoint_demo.py` | round trip passed |
+| `python scripts/replay_trace.py` | passed; 7 frames, final prediction cat |
+| `python scripts/run_benchmark.py --episodes 40 --steps 30` | passed; 240 episode rows across variants |
+| `python scripts/validate_bundle.py` | passed; 88 required files validated |
+
+The configured pytest command is not a claim that the 392 excluded scientific,
+reproduction or external tests ran. No test selection or CI settings were changed.
+Initial environment checks surfaced missing collection-time torch/numpy and a
+historical C16 source-pin failure caused by shallow Git history. Installing the
+required extras and fetching full history resolved both without source changes;
+the complete suite was rerun afterward. The remaining Starlette/httpx
+TestClient deprecation warning is non-failing. Final-head GitHub CI and actual
+Codex review remain independent merge gates recorded in PR #165.
