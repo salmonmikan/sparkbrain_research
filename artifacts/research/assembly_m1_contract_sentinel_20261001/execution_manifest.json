@@ -1,0 +1,10 @@
+{
+  "command": "python -m pytest -q tests/test_assembly_m1_contract_sentinel.py --junitxml=artifacts/research/assembly_m1_contract_sentinel_20261001/junit.xml",
+  "scope": "fake-only contract tests; no scientific credit",
+  "source_freeze_commit": "7420f176334e5b54ed5f608387d959794db90faf",
+  "source_sha256_before_execution": {
+    "artifacts/research/assembly_m1_contract_sentinel_20261001/case_freeze.json": "6fec3deccf77888a0a93927c67d60cbb13bedadfb2c153730388cb44b0f81609",
+    "scripts/assembly_m1_contract_sentinel.py": "86bdeb1a8defb41b8c73006838d513113252c6f48015aaef13ed3e9e19cf3359",
+    "tests/test_assembly_m1_contract_sentinel.py": "54d7e25e1776141c5a91c45be5cdf463685fcaf770a7fbb183b4a8ec24af1630"
+  }
+}

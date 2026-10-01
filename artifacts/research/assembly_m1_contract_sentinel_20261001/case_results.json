@@ -1,0 +1,138 @@
+{
+  "cases": [
+    {
+      "assertion_boundary": "A enters both consumers; act_alpha",
+      "id": "C01",
+      "status": "passed",
+      "test_name": "test_c01_accept_a"
+    },
+    {
+      "assertion_boundary": "B enters both consumers; act_beta",
+      "id": "C02",
+      "status": "passed",
+      "test_name": "test_c02_accept_b"
+    },
+    {
+      "assertion_boundary": "Identical sentinel and input yield identical action and owned state",
+      "id": "C03",
+      "status": "passed",
+      "test_name": "test_c03_sham"
+    },
+    {
+      "assertion_boundary": "Only representation changes A to B; action changes alpha to beta",
+      "id": "C04",
+      "status": "passed",
+      "test_name": "test_c04_both_consumer_swap"
+    },
+    {
+      "assertion_boundary": "Swapped sensory representation with unchanged routing abstains",
+      "id": "C05",
+      "status": "passed",
+      "test_name": "test_c05_prediction_only_swap"
+    },
+    {
+      "assertion_boundary": "Swapped routing representation with unchanged sensory copy abstains",
+      "id": "C06",
+      "status": "passed",
+      "test_name": "test_c06_route_only_swap"
+    },
+    {
+      "assertion_boundary": "Zero representation abstains",
+      "id": "C07",
+      "status": "passed",
+      "test_name": "test_c07_zero_context"
+    },
+    {
+      "assertion_boundary": "Configured context/route limits 3/3 accept one original plus two added",
+      "id": "C08",
+      "status": "passed",
+      "test_name": "test_c08_reduced_capacity_accept"
+    },
+    {
+      "assertion_boundary": "Route ceiling 4 with three originals rejects before backend advance",
+      "id": "C09",
+      "status": "passed",
+      "test_name": "test_c09_capacity_precheck"
+    },
+    {
+      "assertion_boundary": "Configured total ceiling 2 rejects before backend advance",
+      "id": "C10",
+      "status": "passed",
+      "test_name": "test_c10_insufficient_capacity"
+    },
+    {
+      "assertion_boundary": "Renamed occurrence and receipt IDs preserve fake outputs and numeric projection",
+      "id": "C11",
+      "status": "passed",
+      "test_name": "test_c11_identity_rename"
+    },
+    {
+      "assertion_boundary": "Later receipt credits exact earlier adapted context without another extraction",
+      "id": "C12",
+      "status": "passed",
+      "test_name": "test_c12_pending_credit"
+    },
+    {
+      "assertion_boundary": "Identical committed receipt returns previous revision with no state change",
+      "id": "C13",
+      "status": "passed",
+      "test_name": "test_c13_duplicate_receipt"
+    },
+    {
+      "assertion_boundary": "Changed outcome under same receipt ID rejects with no state change",
+      "id": "C14",
+      "status": "passed",
+      "test_name": "test_c14_conflicting_receipt"
+    },
+    {
+      "assertion_boundary": "Wrong pending event binding rejects with no state change",
+      "id": "C15",
+      "status": "passed",
+      "test_name": "test_c15_wrong_event_receipt"
+    },
+    {
+      "assertion_boundary": "Future pulse and delivery at decision time reject with no state change",
+      "id": "C16",
+      "status": "passed",
+      "test_name": "test_c16_clock_boundaries"
+    },
+    {
+      "assertion_boundary": "Fault after backend advance, consumer observe, consumer feedback, or ledger commit restores full owned state",
+      "id": "C17",
+      "status": "passed",
+      "test_name": "test_c17_complete_fake_rollback"
+    },
+    {
+      "assertion_boundary": "Calling actual pure renderer changes no outputs, state or counters",
+      "id": "C18",
+      "status": "passed",
+      "test_name": "test_c18_observer_noninterference"
+    },
+    {
+      "assertion_boundary": "NaN or wrong-width representation rejects and restores backend advance",
+      "id": "C19",
+      "status": "passed",
+      "test_name": "test_c19_invalid_context"
+    },
+    {
+      "assertion_boundary": "Pre-existing temporal_0 sensory channel rejects before backend advance",
+      "id": "C20",
+      "status": "passed",
+      "test_name": "test_c20_reserved_channel"
+    },
+    {
+      "assertion_boundary": "New original channel after a committed cycle rejects before backend advance",
+      "id": "C21",
+      "status": "passed",
+      "test_name": "test_c21_channel_schema"
+    },
+    {
+      "assertion_boundary": "Second observation while pending rejects without advancing either component",
+      "id": "C22",
+      "status": "passed",
+      "test_name": "test_c22_single_pending"
+    }
+  ],
+  "schema": "assembly-m1-contract-sentinel-results-1",
+  "scope": "synthetic assertions only; no real runtime inference"
+}

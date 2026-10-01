@@ -1,0 +1,12 @@
+{
+  "coordinator_fixtures_created": 32,
+  "elapsed_seconds": 0.13717367500066757,
+  "pytest_exit_code": 0,
+  "source_sha256_after_execution": {
+    "artifacts/research/assembly_m1_contract_sentinel_20261001/case_amendment_v2.json": "df1832583597b815211b55c60d21b38e3ae2981b5e2e3ab68a02f9a23b3c44e4",
+    "artifacts/research/assembly_m1_contract_sentinel_20261001/case_freeze.json": "6fec3deccf77888a0a93927c67d60cbb13bedadfb2c153730388cb44b0f81609",
+    "scripts/assembly_m1_contract_sentinel.py": "c3ca7c28e25e1305d8694db05c2e44c944cc93190442c45367131e6729e6c9b8",
+    "tests/test_assembly_m1_contract_sentinel.py": "e39a2a77aad0113941ce660a2c2496152b3115defb0cf88a641e3c5c98511c82"
+  },
+  "sparkbrain_imports": []
+}
