@@ -16,8 +16,8 @@ from typing import Literal
 from forge_prototypes.fly0_causal_frontier import SessionCausalFrontierGuard
 from forge_prototypes.fly0_issue_time_provenance_binding import (
     IssueBoundExecution,
-    IssueTimeProvenanceBinding,
     IssuedSourceFrame,
+    IssueTimeProvenanceBinding,
 )
 from forge_prototypes.fly0_local_atomic_world_effect_journal import (
     LocalAtomicWorldEffectJournal,
