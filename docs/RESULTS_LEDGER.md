@@ -1148,7 +1148,7 @@ contract correction only.
   0.28806374 of total Brier 0.31180644. Existing prototypes remain fixed; the
   current spike order changes. F's lower loss includes substantially more
   abstention, with 19/32 return rows containing only one internal spike.
-- No edges connect the three firing internal units in the retained trajectories;
+- No edges connect the three firing internal units in the audited suffixes;
   these observations do not establish recurrent assembly benefit. S/F histories
   differ before the suffix, so continuing weight versus delay learning remains
   causally unresolved. The full-S matched B control is inactive on B shams;

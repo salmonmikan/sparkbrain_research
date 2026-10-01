@@ -86,7 +86,7 @@ Source: [`brain.py:74–103`](https://github.com/salmonmikan/sparkbrain_research
 
 ## 3. What this says about assembly causal value
 
-The recorded prefix and suffix internal firing population is confined to units 45, 56, and 63 (F return uses only 45 and 63). The frozen topology has **no connections among those firing internal units**. The topology has recurrent connections elsewhere, and they receive propagated activity, but none of those other internal units fires in these retained trajectories. Consequently this fixture does not demonstrate recurrently sustained collective firing among the active units. Its measured predictive memory is an acquired internal-pattern prototype bank plus outcome counts.
+The audited suffix internal firing population is confined to units 45, 56, and 63 (F return uses only 45 and 63). The frozen topology has **no connections among those firing internal units**. The topology has recurrent connections elsewhere, and they receive propagated activity, but none of those other internal units fires in these audited suffix trajectories. Consequently this fixture does not demonstrate recurrently sustained collective firing among the active units. Its measured predictive memory is an acquired internal-pattern prototype bank plus outcome counts.
 
 The existing target-suppression result establishes dependence on that selected representation/readout path in the tested forks. It cannot by itself distinguish assemblies from an ordinary prototype memory: disabling a useful ordinary-memory entry can also impair prediction. Moreover, in the full-S arm, the matched B candidate was not selected on the intact B probe shams, so its suppression is an inactive control there. This does not apply uniformly to F, whose matched candidate is selected on 5/8 and 2/8 B shams. A lower B loss after target suppression can mean a wrong confident prediction became an abstention, not that B was correctly recognized.
 
@@ -107,7 +107,7 @@ The papers constrain interpretation; none validates SparkBrain's mechanism.
    [implementation page](https://www.izhikevich.org/publications/spnet.htm) also
    provides a shuffled-connectivity comparison. Here, matching a stored ordered
    spike sequence is not sufficient to establish an analogous causal group:
-   the recorded firing internal units have no edges among them. The concrete
+   the audited suffix firing internal units have no edges among them. The concrete
    implication is to retain connection-level timing/weight changes and keep
    prototype routing separate from recurrent contribution. This does not imply
    that delay learning in SparkBrain implements the paper's mechanism.
@@ -167,3 +167,10 @@ Cloud CPU validation on Python 3.12.14:
 These standard engineering tests/smokes are separate from the data-only triage:
 no PR169 diagnostic or prospective 910073/910074 trajectory was run again or
 executed for this publication. The future protocol remains a proposal.
+
+
+A subsequent GitHub Codex review identified that the published auditor reads
+prefix checkpoints but does not reconstruct prefix spike populations. The firing
+population/topology claim above is therefore restricted to audited suffixes.
+No prefix-population verification is claimed by this published auditor; this
+wording correction changes neither retained arithmetic nor the negative result.
