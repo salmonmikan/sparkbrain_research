@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "generation": "R152",
-  "generation_id": "CTRL-20261001T184735+0900-R152-R178-TRIGGER-ABSENT-R220-FORGE-REPORT",
-  "generated_at": "2026-10-01T18:47:35+09:00",
+  "generation": "R153",
+  "generation_id": "CTRL-20261001T205354+0900-R153-R178-TRIGGER-ABSENT-MAIN-R222-FORGE-R32-BLOCKED",
+  "generated_at": "2026-10-01T20:53:54+09:00",
   "role": "CONTROL_BRAIN",
   "role_resolution": {
-    "actual_start": "2026-10-01T18:47:35+09:00",
-    "resolved_slot": "2026-10-01T18:50:00+09:00",
-    "resolution_source": "EARLY_GRACE",
+    "actual_start": "2026-10-01T20:53:54+09:00",
+    "resolved_slot": "2026-10-01T20:50:00+09:00",
+    "resolution_source": "PREVIOUS_CANONICAL_SLOT",
     "selected_role": "CONTROL_BRAIN"
   },
   "new_scientific_result": false,
@@ -46,8 +46,8 @@
   "refs": {
     "main": "18ff183983a2657d7199a708e4d3398550d7740c",
     "steward": {
-      "generation": "G38",
-      "head": "9ddb9130dc08444fd31b52727c174a3c8d483988"
+      "generation": "G39",
+      "head": "6cbc64bb444784796898c30c6ba99d7c4135cf8f"
     },
     "analyst": "6eabb82d512db004d2bc411bd494f2bbea584ea4",
     "methodology": {
@@ -56,27 +56,28 @@
       "classification": "WELL_CALIBRATED"
     },
     "main_reports": {
-      "append_only_generation": "R220",
-      "head": "7627d209981f8225336e9b6daca38767095e4cfc",
-      "latest_generation": "R219",
-      "latest_blob": "ff732dafc8c2212e3dccf3ff03cf83e0c22c36c5",
+      "append_only_generation": "R222",
+      "head": "6a8d57f348d2be18a86982d6b3b32be317993251",
+      "latest_generation": "R221",
+      "latest_blob": "f3b88f675af47a32e5ba49915a6a5f5f71dafd73",
       "state_generation": "R215",
       "state_blob": "ab210d8e092427f3fd0004cbc1fa4715f62855bd",
       "lease_generation": "R215",
       "lease_blob": "149c8cf304c9435f17cdae7490ffd6db19f57459",
-      "latest_recovery_publication_commit": "e724645f98b8e10559034cb261f9ce33162592c7",
-      "recovery_verification_commit": "4b5fb86592831f848ae2ec57534c31151fba782f",
+      "latest_recovery_publication_commit": "235103c3c8341c2f74ccc147b4169db7e7b7ad04",
+      "recovery_verification_file": "reports/orchestrator/main/history/2026-10-01/recovery-R221-latest-cache-reconciliation-verified.json",
       "recovery_persistence_complete": true
     },
     "external": {
-      "head": "db88aa98a4e321ce46bc523cdbc485993dba818c",
+      "head": "9c9f0b4a2fece6c57d4679347b649c0e1a2db7a4",
       "literature_append_only": "R55",
       "literature_latest": "R55",
       "literature_state": "R54",
-      "theory": "R31",
+      "theory": "R32",
       "audit": "R15",
       "analyst_request_branch": "6aa74180364ecae5acca90ff33140017d34249b6",
-      "forge_cold_restart": "1ac3ccbf3d160112c03813a6eb81486b346dc7ae"
+      "forge_cold_restart": "1ac3ccbf3d160112c03813a6eb81486b346dc7ae",
+      "forge_r32_report": "4fe1a817140a97455078410e7b1da0af4022e2e0"
     }
   },
   "m1": {
@@ -198,6 +199,32 @@
         "focused_test": "SUCCESS_ATTEMPT_1",
         "lint_repair": "SUCCESS_ATTEMPT_2_AFTER_1_PRE_GITHUB_REFUSAL"
       }
+    },
+    "theory_r32": {
+      "generation": "R32",
+      "external_head": "9c9f0b4a2fece6c57d4679347b649c0e1a2db7a4",
+      "history_blob": "0bddbef412cd27ce2dc51f73e6e92857c21a0d40",
+      "status": "NON_EVIDENTIARY_NONCANONICAL_INTEGRATION_DESIGN_PROPOSAL",
+      "proposal": "SINGLE_DURABLE_CAUSAL_PROGRESS_AUTHORITY_WITH_REBUILDABLE_R27_PROJECTION",
+      "m1_stop": false,
+      "sb003_activation_change": false,
+      "scientific_credit": 0
+    },
+    "r32_lineage_race_probe": {
+      "branch": "forge/20261001-fly0-single-authority-lineage-race-a",
+      "report_commit": "4fe1a817140a97455078410e7b1da0af4022e2e0",
+      "source_or_test_persisted": false,
+      "tests_run": false,
+      "publication_attempts": 5,
+      "failure_sequence": [
+        "ORCHESTRATION_TYPEERROR_BEFORE_REF_UPDATE",
+        "PRE_GITHUB_PLATFORM_REFUSAL",
+        "PRE_GITHUB_PLATFORM_REFUSAL",
+        "PRE_GITHUB_PLATFORM_REFUSAL",
+        "PRE_GITHUB_PLATFORM_REFUSAL"
+      ],
+      "status": "FORGE_OBSERVATION_PUBLICATION_EXHAUSTED_NON_EVIDENTIARY_NO_HANDOFF",
+      "scientific_credit": 0
     }
   },
   "scheduler_fleet": {
@@ -205,9 +232,10 @@
     "standard_enabled": 8,
     "authorized_work_exception_enabled": 1,
     "work_exception_task_id": "6abdbad842c881918e1247a8b4592b26",
-    "work_exception_latest_run_time": "2026-10-01T17:58:05+09:00",
+    "work_exception_latest_run_time": "2026-10-01T20:03:44+09:00",
     "work_backend_provenance_exposed": false,
-    "latest_repository_recovery_commit": "4b5fb86592831f848ae2ec57534c31151fba782f",
+    "latest_repository_recovery_commit": "235103c3c8341c2f74ccc147b4169db7e7b7ad04",
+    "latest_recovery_generation": "R221",
     "latest_recovery_task_id_receipt_present": true,
     "latest_recovery_receipt_persistence_complete": true,
     "original_standard_recovery_task_id": "6abd34233b188191adc5c7e6c6942d93",
@@ -219,7 +247,7 @@
     "incident": "INC-GITHUB-MUTATION-RECURRENCE-20260928-001",
     "status": "OPEN",
     "root_cause": "UNKNOWN",
-    "classification": "INTERMITTENT_PRE_GITHUB_MUTATION_REFUSALS_WITH_RECOVERIES_PLUS_R178_TRIGGER_OR_ENQUEUE_NOT_OBSERVED",
+    "classification": "INTERMITTENT_PRE_GITHUB_MUTATION_REFUSALS_WITH_RECOVERIES_PLUS_R178_TRIGGER_OR_ENQUEUE_NOT_OBSERVED_PLUS_FORGE_R32_PUBLICATION_EXHAUSTION",
     "repository_wide_outage_supported": false,
     "constant_permission_loss_supported": false,
     "m1_conflict_reconciliation": "RECOVERED_EXACT_HEAD_CI_GREEN",
@@ -246,15 +274,22 @@
       "root_cause": "UNKNOWN"
     },
     "forge_cold_restart_exact_head_ci": "SUCCESS",
-    "main_r220_diagnosis": "CONFIRMED_TRIGGER_CONFIGURATION_MATCH_ZERO_RUN_ZERO_CHECK_SUITE"
+    "main_r220_diagnosis": "CONFIRMED_TRIGGER_CONFIGURATION_MATCH_ZERO_RUN_ZERO_CHECK_SUITE",
+    "main_r221_latest_recovery": "VERIFIED_WITH_WORK_TASK_ID_RECEIPT",
+    "main_r222_pointer_state": "APPEND_ONLY_R222_LATEST_R221_STATE_LEASE_R215",
+    "theory_r32_publication": "SUCCESS_ATTEMPT_2_NON_EVIDENTIARY",
+    "forge_r32_publication": {
+      "attempts": 5,
+      "persisted_source_or_test": false,
+      "report_commit": "4fe1a817140a97455078410e7b1da0af4022e2e0",
+      "failure_layer": "ORCHESTRATION_ERROR_THEN_PRE_GITHUB_REFUSALS",
+      "status": "EXHAUSTED"
+    }
   },
   "pointer_debt": {
-    "control": "NONE_BEFORE_R152_PUBLICATION",
-    "steward": "NONE_G38_ALIGNED",
-    "analyst": "R177_ALIGNED_R178_REQUEST_PENDING_WITHOUT_RUN_CHECK_SUITE_RECEIPT_OR_TARGET_ADVANCE",
-    "main": "APPEND_ONLY_R220_LATEST_R219_STATE_LEASE_R215",
+    "main": "APPEND_ONLY_R222_LATEST_R221_STATE_LEASE_R215",
     "literature": "APPEND_ONLY_LATEST_R55_STATE_R54",
-    "theory": "NONE_R31_ALIGNED"
+    "analyst": "R178_REQUEST_ONLY_TARGET_R177"
   },
   "hard_floor": {
     "scientific_experiments": 0,
@@ -268,6 +303,6 @@
     "publication_attempt": 1,
     "attempt_limit": 5,
     "force_push": false,
-    "history_path": "analysis/control_brain/history/2026-10-01/1847-R152.md"
+    "history_path": "analysis/control_brain/history/2026-10-01/2053-R153.md"
   }
 }

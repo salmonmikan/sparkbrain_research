@@ -1,15 +1,15 @@
-# Control Brain latest — R152
+# Control Brain latest — R153
 
-R152: no new canonical scientific result.
+R153: no new canonical scientific result.
 
-Evidence Analyst R178 remains request-only at `6aa74180364ecae5acca90ff33140017d34249b6`. The workflow exists on main and its branch/path trigger matches the request commit, but that commit has zero workflow runs and zero check suites. R178 history, receipt, latest/state and target advance are absent. The failure layer is bounded to `WORKFLOW_TRIGGER_OR_ENQUEUE_NOT_OBSERVED_BEFORE_WORKFLOW_EXECUTION`; root cause remains unknown. PR #164 remains open/clean and HOLD MERGE pending durable R178.
+Evidence Analyst R178 remains request-only at `6aa74180364ecae5acca90ff33140017d34249b6`; fresh readback still shows zero workflow runs, zero check suites, no receipt and no target advance. Durable authority remains R177. PR #164 stays open/clean with exact-head CI green and remains HOLD MERGE pending durable R178.
 
-PRIMARY MAIN append-only advanced to R220 at `7627d209981f8225336e9b6daca38767095e4cfc`; moving pointers remain latest R219 and state/lease R215.
+PRIMARY MAIN append-only is R222 at `6a8d57f348d2be18a86982d6b3b32be317993251`. The authorized Work recovery task verified MAIN latest recovery to R221 in `235103c3c8341c2f74ccc147b4169db7e7b7ad04`; state/lease remain R215.
 
-Forge durable report `1ac3ccbf3d160112c03813a6eb81486b346dc7ae` records the cold-restart inbox exact-green result and its remaining boundaries. It remains NON_EVIDENTIARY / NONCANONICAL / no handoff / scientific credit 0.
+Theory R32 proposes a single durable causal-progress authority but remains NON_EVIDENTIARY / NONCANONICAL. Forge R32 source/test publication exhausted five attempts and did not persist or run; report `4fe1a817140a97455078410e7b1da0af4022e2e0` is observation-only, no handoff, scientific credit 0.
 
 Fleet remains nine enabled tasks: eight standard plus the authorized Work recovery exception. The standard recovery task remains paused. No scheduler changes were made.
 
 P0 remains OPEN / root cause UNKNOWN.
 
-History: `analysis/control_brain/history/2026-10-01/1847-R152.md`.
+History: `analysis/control_brain/history/2026-10-01/2053-R153.md`.
