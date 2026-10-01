@@ -207,15 +207,22 @@ reported proposal booleans, the verifier was corrected to independently reconstr
 gate inputs, including cue direction and fork equalities, then compare per-seed control
 guards, per-seed proposal gates, and the two-seed proposal gate. It checks exact seed/arm/
 condition/fork inventories and rejects numeric substitutes for decision booleans.
-Thirty-three no-model tests include coherently rehashed false reports, altered raw control
-hashes, a passing hand-written arithmetic fixture, and failure of every gate predicate.
+The subsequent provenance review also led to reconstructing intact/removed observations
+from archived pair inputs, binding every prefix/suffix/fork input digest to its supplied
+input and job copy, and reconstructing target/matched selection from prefix activations.
+The selector must agree with the prefix result, fork job, and report. A hard-coded digest
+of the original publication archive additionally rejects a wholly coherent replacement;
+this verifier is for this immutable publication, not arbitrary repackaged experiments.
+Forty-eight no-model tests include coherently rehashed false reports, altered raw control
+hashes/input files/selection records, a passing hand-written arithmetic fixture, selector
+eligibility/tie boundaries, and failure of every gate predicate.
 This repairs publication verification only: the frozen runner, protocol, raw evidence,
 reported values, and negative decision are unchanged. Its role remains narrower than the
 independent source/input audit above; neither is a fresh full-model reproduction.
 
 At the frozen execution-source head, 659 configured pytest tests passed. After preserving
 merged PR #167 and adding initial publication corruption checks, 691 configured tests
-passed. After the verifier correction, the final local suite passed 721 configured tests
+passed. After the gate and provenance corrections, the final local suite passed 736 configured tests
 with 392 scientific/reproduction/external tests deselected. Ruff, local readiness, demo,
 the 40-episode/30-step benchmark, and bundle validation also passed. These are repository
 validation results, separate from the diagnostic run and its resource accounting.

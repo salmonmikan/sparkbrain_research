@@ -154,7 +154,7 @@ def test_rehashed_false_report_is_rejected(
     ("state", "removed", "field", "error"),
     [
         ("observer", False, "operational_sha256", "observer_equal"),
-        ("sham", True, "input_sha256", "removed_equal"),
+        ("sham", True, "input_sha256", "input digest"),
         ("sham", True, "operational_sha256", "removed_equal"),
     ],
 )
@@ -239,3 +239,127 @@ def test_each_gate_predicate_is_required(
         verifier.decision_gates(target["arms"], target["causal"])["integration_proposal_gate"]
         is False
     )
+
+
+@pytest.mark.parametrize(
+    ("case", "error"),
+    [
+        ("pair_distractor", "paired removed input mismatch"),
+        ("pair_shared_distractor", "fork job pairs"),
+        ("fork_job_pairs", "fork job pairs"),
+        ("prefix_selected_id", "prefix selected assembly"),
+        ("prefix_maturity", "prefix maturity"),
+        ("prefix_ineligible", "prefix target selection"),
+        ("prefix_outcome", "outcome binding"),
+        ("prefix_result_selection", "prefix target selection"),
+        ("fork_job_selection", "fork target selection"),
+        ("report_selection", "report target selection"),
+        ("coherent_selections", "prefix target selection"),
+        ("prefix_input", "prefix job inputs"),
+        ("suffix_input", "job inputs"),
+        ("immutable_archive", "immutable publication archive identity"),
+    ],
+)
+def test_rehashed_provenance_drift_is_rejected(
+    tmp_path: Path,
+    archived_values: dict[str, bytes],
+    case: str,
+    error: str,
+) -> None:
+    values = dict(archived_values)
+
+    def edit(path: str, change: Any) -> None:
+        data = json.loads(values[path])
+        change(data)
+        values[path] = json.dumps(data).encode()
+
+    if case.startswith("pair_"):
+
+        def change_pair(data: Any) -> None:
+            cues = (0, 1) if case == "pair_shared_distractor" else (1,)
+            for cue in cues:
+                row = next(p for p in data[0][cue]["pulses"] if p["channel"] in "HIJKLM")
+                row["magnitude"] += 0.001
+
+        edit("run/inputs-910071-pairs.json", change_pair)
+    elif case == "fork_job_pairs":
+        edit("run/910071-S-forks/job.json", lambda d: d["pairs"][0][1].update(start_ms=0.0))
+    elif case in {"prefix_selected_id", "prefix_maturity", "prefix_ineligible", "prefix_outcome"}:
+        path = "run/910071-S-prefix/raw.jsonl"
+        raw = [json.loads(line) for line in values[path].splitlines()]
+        row = next(r for r in raw if r["mature"])
+        if case == "prefix_selected_id":
+            row["assembly_id"] = "bogus"
+        elif case == "prefix_maturity":
+            row["mature"] = False
+        elif case == "prefix_outcome":
+            row["outcome"] = 1
+        else:
+            for row in raw:
+                row["assembly_id"], row["mature"] = None, False
+                for activation in row["raw_result"]["assembly_activations"]:
+                    activation["mature"] = False
+        values[path] = ("\n".join(json.dumps(r) for r in raw) + "\n").encode()
+    elif case.endswith("selection") or case == "coherent_selections":
+        bogus = {
+            "target": "bogus",
+            "matched": "missing",
+            "prefix_counts": {},
+            "status": "intervention_not_identifiable",
+        }
+        if case in {"prefix_result_selection", "coherent_selections"}:
+            edit("run/910071-S-prefix/result.json", lambda d: d.update(target=bogus))
+        if case in {"fork_job_selection", "coherent_selections"}:
+            edit("run/910071-S-forks/job.json", lambda d: d.update(target=bogus))
+        if case in {"report_selection", "coherent_selections"}:
+            edit(
+                "run/report.json",
+                lambda d: d["seeds"]["910071"]["causal"]["S"].update(selection=bogus),
+            )
+    elif case in {"prefix_input", "suffix_input"}:
+        condition = "prefix" if case == "prefix_input" else "return"
+        edit(f"run/inputs-910071-{condition}.json", lambda d: d[0].update(start_ms=1.0))
+    else:
+        # A semantically equivalent re-compression is still a different publication.
+        assert case == "immutable_archive"
+    repack(values, tmp_path)
+    with pytest.raises(ValueError, match=error):
+        verifier.verify(tmp_path)
+
+
+def test_frozen_selector_thresholds_ties_and_absence() -> None:
+    raw = []
+
+    def add(aid: str, outcome: int, count: int) -> None:
+        for _ in range(count):
+            raw.append(
+                {
+                    "assembly_id": aid,
+                    "mature": True,
+                    "outcome": outcome,
+                    "raw_result": {
+                        "assembly_activations": [
+                            {
+                                "assembly_id": aid,
+                                "mature": True,
+                                "suppressed": False,
+                                "similarity": 1.0,
+                                "episode_count": 8,
+                            }
+                        ]
+                    },
+                }
+            )
+
+    assert verifier.select_target(raw, "fixture")["status"] == "intervention_not_identifiable"
+    add("A2", 0, 8)
+    add("A1", 0, 8)
+    add("B2", 1, 10)
+    add("B1", 1, 10)
+    # Target count tie resolves by ID; matches at exactly 25% count difference remain eligible.
+    result = verifier.select_target(raw, "fixture")
+    assert (result["target"], result["matched"], result["status"]) == ("A1", "B1", "identifiable")
+    add("B1", 1, 1)
+    assert verifier.select_target(raw, "fixture")["matched"] == "B2"
+    add("B2", 0, 1)
+    assert verifier.select_target(raw, "fixture")["status"] == "intervention_not_identifiable"

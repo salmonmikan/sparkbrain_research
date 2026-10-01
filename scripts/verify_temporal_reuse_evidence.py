@@ -15,6 +15,8 @@ from typing import Any
 SEEDS = ("910071", "910072")
 ARMS = ("Q", "H", "R", "S", "F")
 CONDITIONS = ("return", "interleaved")
+# This verifier audits one immutable publication, not an arbitrary self-described archive.
+EXPECTED_ARCHIVE_SHA256 = "2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082"
 
 
 def check(value: bool, message: str) -> None:
@@ -24,6 +26,74 @@ def check(value: bool, message: str) -> None:
 
 def sha(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def canonical(value: Any) -> bytes:
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
+
+
+def exact(calculated: Any, reported: Any, label: str) -> None:
+    check(canonical(calculated) == canonical(reported), label)
+
+
+def observation(supplied: dict[str, Any], removed: bool = False) -> dict[str, Any]:
+    expected = {key: supplied[key] for key in ("occurrence_id", "start_ms", "pulses")}
+    if removed:
+        expected["pulses"] = [p for p in expected["pulses"] if p["channel"] not in "ACF"]
+    return expected
+
+
+def bind_input(
+    row: dict[str, Any], supplied: dict[str, Any], label: str, *, removed: bool = False
+) -> None:
+    expected = observation(supplied, removed)
+    check(row["input_sha256"] == sha(canonical(expected)), label + "/input digest")
+    exact(expected["occurrence_id"], row["occurrence_id"], label + "/occurrence identity")
+    compare(expected["start_ms"] + 72, row["query_time_ms"], label + "/query time")
+    exact(supplied["outcome"], row["outcome"], label + "/outcome binding")
+    if "raw_result" in row:
+        exact(expected["pulses"], row["raw_result"]["raw_pulses"], label + "/raw input binding")
+
+
+def select_target(raw: list[dict[str, Any]], label: str) -> dict[str, Any]:
+    """Independent frozen-selector arithmetic on archived prefix activations only."""
+    counts: dict[str, list[int]] = {}
+    for row in raw:
+        activations = row["raw_result"]["assembly_activations"]
+        usable = [a for a in activations if a["mature"] is True and a["suppressed"] is False]
+        selected = max(
+            usable,
+            key=lambda a: (a["similarity"], a["episode_count"], a["assembly_id"]),
+            default=None,
+        )
+        aid = selected["assembly_id"] if selected else None
+        exact(aid, row["assembly_id"], label + "/prefix selected assembly")
+        exact(selected is not None, row["mature"], label + "/prefix maturity")
+        if selected:
+            counts.setdefault(aid, [0, 0])[row["outcome"]] += 1
+    candidates = [aid for aid, count in counts.items() if count[0] >= 8 and count[1] == 0]
+    target = min(candidates, key=lambda aid: (-counts[aid][0], aid), default=None)
+    eligible = (
+        []
+        if target is None
+        else [
+            aid
+            for aid, count in counts.items()
+            if aid != target
+            and count[1] >= 8
+            and count[0] == 0
+            and abs(count[1] - counts[target][0]) <= 0.25 * counts[target][0]
+        ]
+    )
+    matched = min(
+        eligible, key=lambda aid: (abs(counts[aid][1] - counts[target][0]), aid), default=None
+    )
+    return {
+        "target": target,
+        "matched": matched,
+        "prefix_counts": counts,
+        "status": "identifiable" if target and matched else "intervention_not_identifiable",
+    }
 
 
 def compare(calculated: Any, reported: Any, label: str) -> None:
@@ -51,7 +121,9 @@ def validate_predictions(raw: list[dict[str, Any]], label: str) -> None:
         )
 
 
-def causal_metrics(raw: list[dict[str, Any]], arm: str, label: str) -> dict[str, Any]:
+def causal_metrics(
+    raw: list[dict[str, Any]], arm: str, label: str, pairs: list[list[dict[str, Any]]]
+) -> dict[str, Any]:
     validate_predictions(raw, label)
     states = ("sham", "targeted", "matched", "observer") if arm in ("S", "F") else ("sham",)
     required = {
@@ -70,6 +142,8 @@ def causal_metrics(raw: list[dict[str, Any]], arm: str, label: str) -> dict[str,
         )
     grouped = {(r["pair"], r["cue"], r["intervention"], r["removed"]): r for r in raw}
     check(len(raw) == len(grouped) and set(grouped) == required, label + "/fork inventory")
+    for row in raw:
+        bind_input(row, pairs[row["pair"]][row["cue"]], label + "/fork", removed=row["removed"])
 
     def equal(left: dict[str, Any], right: dict[str, Any], fields: tuple[str, ...]) -> bool:
         return all(left[field] == right[field] for field in fields)
@@ -197,13 +271,56 @@ def verify(directory: Path, extract: Path | None = None) -> dict[str, Any]:
             check(set(result["causal"]) == set(ARMS), f"{seed}/causal arm inventory")
             calculated_arms: dict[str, Any] = {}
             calculated_causal = {}
+            prefix_inputs = document(f"run/inputs-{seed}-prefix.json")
+            check(len(prefix_inputs) == 64, f"{seed}/prefix input inventory")
+            pairs = document(f"run/inputs-{seed}-pairs.json")
+            check(
+                len(pairs) == 8 and all(len(pair) == 2 for pair in pairs),
+                f"{seed}/pair input inventory",
+            )
+            for pair in pairs:
+                exact([0, 1], [p["outcome"] for p in pair], f"{seed}/paired outcome order")
+                exact(
+                    observation(pair[0], True),
+                    observation(pair[1], True),
+                    f"{seed}/paired removed input mismatch",
+                )
             for arm, conditions in result["arms"].items():
                 check(set(conditions) == set(CONDITIONS), f"{seed}/{arm}/condition inventory")
                 calculated_arms[arm] = {}
+                prefix_label = f"{seed}/{arm}"
+                prefix = rows(f"run/{seed}-{arm}-prefix/raw.jsonl")
+                check(len(prefix) == 64, prefix_label + "/prefix row inventory")
+                validate_predictions(prefix, prefix_label + "/prefix")
+                prefix_job = document(f"run/{seed}-{arm}-prefix/job.json")
+                exact(prefix_inputs, prefix_job["inputs"], prefix_label + "/prefix job inputs")
+                for row, supplied in zip(prefix, prefix_inputs, strict=True):
+                    bind_input(row, supplied, prefix_label + "/prefix")
+                selection = select_target(prefix, prefix_label) if arm in ("S", "F") else None
+                prefix_result = document(f"run/{seed}-{arm}-prefix/result.json")
+                fork_job = document(f"run/{seed}-{arm}-forks/job.json")
+                exact(selection, prefix_result["target"], prefix_label + "/prefix target selection")
+                exact(selection, fork_job["target"], prefix_label + "/fork target selection")
+                exact(pairs, fork_job["pairs"], prefix_label + "/fork job pairs")
+                if arm in ("S", "F"):
+                    exact(
+                        selection,
+                        result["causal"][arm]["selection"],
+                        prefix_label + "/report target selection",
+                    )
+                    check(
+                        selection["status"] == "identifiable", prefix_label + "/target eligibility"
+                    )
                 for condition, expected in conditions.items():
                     raw = rows(f"run/{seed}-{arm}-{condition}/raw.jsonl")
                     check(len(raw) == 32, f"{seed}/{arm}/{condition}/suffix inventory")
                     validate_predictions(raw, f"{seed}/{arm}/{condition}")
+                    supplied = document(f"run/inputs-{seed}-{condition}.json")
+                    job = document(f"run/{seed}-{arm}-{condition}/job.json")
+                    check(len(supplied) == 32, f"{seed}/{condition}/input inventory")
+                    exact(supplied, job["inputs"], f"{seed}/{arm}/{condition}/job inputs")
+                    for row, item in zip(raw, supplied, strict=True):
+                        bind_input(row, item, f"{seed}/{arm}/{condition}")
                     count += len(raw)
                     losses = [(r["p1"] - r["outcome"]) ** 2 for r in raw]
                     calculated = {
@@ -220,7 +337,7 @@ def verify(directory: Path, extract: Path | None = None) -> dict[str, Any]:
                     calculated_arms[arm][condition] = calculated
                 raw = rows(f"run/{seed}-{arm}-forks/raw.jsonl")
                 forks += len(raw)
-                calculated_causal[arm] = causal_metrics(raw, arm, f"{seed}/{arm}")
+                calculated_causal[arm] = causal_metrics(raw, arm, f"{seed}/{arm}", pairs)
                 expected = result["causal"][arm]
                 for key, value in calculated_causal[arm].items():
                     if key == "impairment":
@@ -242,6 +359,9 @@ def verify(directory: Path, extract: Path | None = None) -> dict[str, Any]:
             "integration_proposal_gate_both_seeds",
         )
         check(count == 640 and forks == 512, "measured row inventory")
+        # Last so semantic corruption tests exercise the independent calculations above.
+        # Even a wholly coherent rewrite cannot replace the already published evidence.
+        check(sha(archive) == EXPECTED_ARCHIVE_SHA256, "immutable publication archive identity")
         if extract is not None:
             extract.mkdir(parents=True, exist_ok=False)
             for row in members:
