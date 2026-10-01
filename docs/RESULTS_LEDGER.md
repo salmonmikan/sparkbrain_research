@@ -1223,3 +1223,22 @@ contract correction only.
   PROJECT_STATUS pointer records engineering completion with scientific credit 0;
   the earlier unchanged-status statement describes the initial publication. All
   preceding ledger/status bytes and the original execution evidence are preserved.
+
+
+## 2026-10-01 — v0.5 owned-state acquired coverage remained blocked
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`; scientific credit 0.
+  This engineering pointer changes no scientific acceptance or prior disposition.
+- The sole six-case probe used frozen source
+  `7578f7aac1a915da9fc90541f71bdc6bb97b37f0`. Three fixed Q episodes produced six
+  receptor spikes, zero internal patterns/candidates and no mature activation.
+  Required acquired-state abort/commit cases P5/P6 were not executed.
+- Whole-graph copies matched the exercised narrower states. The native P3 load
+  lost a hand-prepared cascade, while suffix spikes matched; this does not prove
+  acquired-state rollback, prediction divergence or general checkpoint failure.
+- Evidence: [bounded result and limits](research/v05_owned_state_results_20261001.md),
+  [prospective protocol](research/v05_owned_state_rollback_20261001.md), and
+  [complete checksum-bound archive](../artifacts/research/v05_owned_state_20261001/transport_manifest.json).
+- Preserve this coverage block: no extra episodes, tuning or rerun of this probe.
+  Any new input characterization requires a separate prospective contract; success
+  there would not retroactively execute or clear P5/P6.

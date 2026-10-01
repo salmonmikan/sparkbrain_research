@@ -1,0 +1,791 @@
+{
+  "claim_limit": "Source-derived exact-class/field allowlist proposal, including configs and contracts; no live graph coverage or clone/continuation guarantee",
+  "files": {
+    "src/sparkbrain/v04/action.py": {
+      "classes": {
+        "ActionAssociator": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "actions",
+            "last_action",
+            "last_signature",
+            "learning_rate",
+            "scores"
+          ],
+          "end_line": 44,
+          "start_line": 9
+        }
+      },
+      "sha256": "abe5148050dd11e11358716f43842409bac49c960a9704cca253f90583e992ff"
+    },
+    "src/sparkbrain/v04/brain.py": {
+      "classes": {
+        "IntegratedV04Brain": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "_step_index",
+            "_topology",
+            "action_associator",
+            "assembly_memory",
+            "burst_detector",
+            "cascade_tracker",
+            "config",
+            "expectations",
+            "field",
+            "frame_transducer",
+            "ignition_gate",
+            "plasticity",
+            "results",
+            "scalar_transducer",
+            "text_transducer",
+            "trace"
+          ],
+          "end_line": 310,
+          "start_line": 61
+        },
+        "V04BrainConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "enable_expectations",
+            "enable_plasticity",
+            "height",
+            "ignition_threshold",
+            "max_cascade_gap_ms",
+            "receptor_rows",
+            "settle_ms",
+            "topology_seed",
+            "width"
+          ],
+          "end_line": 58,
+          "start_line": 37
+        }
+      },
+      "sha256": "e731ea237eb7cdd6826d04a030f46770b5e2606c8f9e56aaaf810f7d6e7d6593"
+    },
+    "src/sparkbrain/v04/contracts.py": {
+      "classes": {
+        "BurstEvent": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "burst_id",
+            "end_ms",
+            "spatial_spread",
+            "spike_count",
+            "start_ms",
+            "unit_ids"
+          ],
+          "end_line": 127,
+          "start_line": 116
+        },
+        "CascadeEvent": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "cascade_id",
+            "end_ms",
+            "novelty",
+            "ordered_units",
+            "prediction_error",
+            "recurrence",
+            "signature",
+            "spatial_spread",
+            "spike_count",
+            "start_ms",
+            "unit_ids"
+          ],
+          "end_line": 148,
+          "start_line": 131
+        },
+        "IgnitionEvent": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "cascade_id",
+            "ignition_id",
+            "reason",
+            "score",
+            "signature",
+            "threshold",
+            "time_ms",
+            "unit_ids"
+          ],
+          "end_line": 165,
+          "start_line": 152
+        },
+        "SignalPulse": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "channel",
+            "location",
+            "magnitude",
+            "metadata",
+            "novelty",
+            "polarity",
+            "prediction_error",
+            "source_id",
+            "time_ms"
+          ],
+          "end_line": 81,
+          "start_line": 30
+        },
+        "SpikeEvent": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "dynamic_threshold",
+            "excitatory_drive",
+            "inhibitory_drive",
+            "novelty",
+            "potential_before_reset",
+            "prediction_error",
+            "source_pulse_ids",
+            "time_ms",
+            "unit_id",
+            "x",
+            "y"
+          ],
+          "end_line": 112,
+          "start_line": 96
+        },
+        "SynapticArrival": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "current",
+            "novelty",
+            "prediction_error",
+            "pulse_id",
+            "source_id",
+            "target_id",
+            "time_ms"
+          ],
+          "end_line": 92,
+          "start_line": 85
+        },
+        "V04StepResult": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "action",
+            "bursts",
+            "cascades",
+            "end_ms",
+            "field_state_hash",
+            "ignitions",
+            "input_pulses",
+            "spikes",
+            "start_ms",
+            "trace_hash"
+          ],
+          "end_line": 193,
+          "start_line": 169
+        }
+      },
+      "sha256": "551490fa3cb25bd2723ee5e02d1b2a10a58a992b759c3ff953d754847e18439b"
+    },
+    "src/sparkbrain/v04/dynamics.py": {
+      "classes": {
+        "AssemblyMemory": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "counts",
+            "last_seen_ms"
+          ],
+          "end_line": 102,
+          "start_line": 84
+        },
+        "BurstDetector": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "_emitted_keys",
+            "_window",
+            "config"
+          ],
+          "end_line": 73,
+          "start_line": 38
+        },
+        "BurstDetectorConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "min_spikes",
+            "min_units",
+            "window_ms"
+          ],
+          "end_line": 35,
+          "start_line": 32
+        },
+        "CascadeTracker": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "_pending",
+            "config",
+            "memory"
+          ],
+          "end_line": 189,
+          "start_line": 105
+        },
+        "CascadeTrackerConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "max_gap_ms",
+            "min_spikes",
+            "temporal_bin_ms"
+          ],
+          "end_line": 80,
+          "start_line": 77
+        },
+        "IgnitionGate": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "config"
+          ],
+          "end_line": 246,
+          "start_line": 205
+        },
+        "IgnitionGateConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "diversity_weight",
+            "min_spikes",
+            "min_units",
+            "novelty_weight",
+            "prediction_error_weight",
+            "recurrence_weight",
+            "size_weight",
+            "spread_weight",
+            "threshold"
+          ],
+          "end_line": 202,
+          "start_line": 193
+        }
+      },
+      "sha256": "840b2fcfa318c4a0cfec2e7525ffaf8a768f610cb13bb8ed00fc704aaad87c75"
+    },
+    "src/sparkbrain/v04/field.py": {
+      "classes": {
+        "ExcitableFieldConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "adaptation_increment",
+            "adaptation_tau_ms",
+            "input_gain",
+            "max_events_per_run",
+            "max_sources_per_unit",
+            "max_spikes_per_run",
+            "membrane_tau_ms",
+            "novelty_gain",
+            "prediction_error_gain",
+            "receptor_fanout",
+            "refractory_ms",
+            "reset_potential"
+          ],
+          "end_line": 64,
+          "start_line": 25
+        },
+        "TemporalExcitableField": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "_counter",
+            "_queue",
+            "config",
+            "connections",
+            "current_time_ms",
+            "incoming",
+            "last_input_routes",
+            "last_run_arrivals",
+            "last_run_spikes",
+            "outgoing",
+            "receptor_ids",
+            "total_arrivals",
+            "total_spikes",
+            "units"
+          ],
+          "end_line": 354,
+          "start_line": 67
+        }
+      },
+      "sha256": "6f36f27d84bf6721fd62f21cd6c06a9d550d88aafd8ed4051dc5b14a4014a97c"
+    },
+    "src/sparkbrain/v04/plasticity.py": {
+      "classes": {
+        "TimingPlasticityConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "delay_learning_rate",
+            "depression_ratio",
+            "learning_rate",
+            "max_delay_ms",
+            "max_weight",
+            "min_delay_ms",
+            "min_weight",
+            "reward_decay",
+            "tau_minus_ms",
+            "tau_plus_ms"
+          ],
+          "end_line": 22,
+          "start_line": 12
+        },
+        "TimingPlasticityRule": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "config",
+            "reward_trace",
+            "update_count"
+          ],
+          "end_line": 88,
+          "start_line": 25
+        }
+      },
+      "sha256": "faad5033cd36236965d48ebd5e43ae9beb31f9488a10d3b11cce7b47f7646fc7"
+    },
+    "src/sparkbrain/v04/topology.py": {
+      "classes": {
+        "Connection": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "delay_ms",
+            "plastic",
+            "source_id",
+            "target_id",
+            "weight"
+          ],
+          "end_line": 35,
+          "start_line": 30
+        },
+        "FieldTopology": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "connections",
+            "receptor_ids",
+            "units"
+          ],
+          "end_line": 42,
+          "start_line": 39
+        },
+        "UnitState": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "adaptation",
+            "base_threshold",
+            "excitatory",
+            "excitatory_drive",
+            "inhibitory_drive",
+            "last_spike_ms",
+            "last_update_ms",
+            "novelty_trace",
+            "potential",
+            "prediction_error_trace",
+            "refractory_until_ms",
+            "source_pulse_ids",
+            "spike_count",
+            "unit_id",
+            "x",
+            "y"
+          ],
+          "end_line": 26,
+          "start_line": 10
+        }
+      },
+      "sha256": "6194e4094a1e6ee0f4c09041720ca35a8b751a0e5fb7a13d49a2d8220a73906c"
+    },
+    "src/sparkbrain/v04/transduction.py": {
+      "classes": {
+        "FrameDeltaTransducer": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "gain",
+            "previous",
+            "threshold"
+          ],
+          "end_line": 138,
+          "start_line": 95
+        },
+        "ScalarDeltaTransducer": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "gain",
+            "previous",
+            "threshold"
+          ],
+          "end_line": 48,
+          "start_line": 16
+        },
+        "TemporalExpectationTracker": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "alpha",
+            "emitted_deadline",
+            "interval",
+            "last_time",
+            "min_observations",
+            "observations",
+            "tolerance_fraction"
+          ],
+          "end_line": 191,
+          "start_line": 142
+        },
+        "TextPulseTransducer": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "channel_buckets",
+            "magnitude",
+            "symbol_interval_ms",
+            "transition_magnitude"
+          ],
+          "end_line": 91,
+          "start_line": 52
+        }
+      },
+      "sha256": "198d2a2818b06c49be9c212793457a9ef3012e032893c06127d44404a33c9298"
+    },
+    "src/sparkbrain/v05/action.py": {
+      "classes": {
+        "ActionPolicyConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "actions",
+            "exploration_visits",
+            "learning_rate"
+          ],
+          "end_line": 13,
+          "start_line": 10
+        },
+        "AssemblyActionPolicy": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "config",
+            "pending",
+            "scores",
+            "visits"
+          ],
+          "end_line": 87,
+          "start_line": 17
+        }
+      },
+      "sha256": "ce75b7508301bf477a47b306e9f2909fe1a2f12c43c9aa36646fd941286383a6"
+    },
+    "src/sparkbrain/v05/assemblies.py": {
+      "classes": {
+        "AssemblyCandidate": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "assembly_id",
+            "episode_ids",
+            "first_seen_ms",
+            "last_seen_ms",
+            "occurrences",
+            "prototype",
+            "similarity_sum"
+          ],
+          "end_line": 201,
+          "start_line": 173
+        },
+        "AssemblyConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "immature_stale_episodes",
+            "mature_episodes",
+            "max_candidates",
+            "similarity_threshold",
+            "stale_after_ms"
+          ],
+          "end_line": 169,
+          "start_line": 164
+        },
+        "TemporalAssemblyMemory": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "candidates",
+            "config",
+            "next_id",
+            "suppressed"
+          ],
+          "end_line": 333,
+          "start_line": 205
+        }
+      },
+      "sha256": "f2dc1b7bbe71fb70ea27bb661111dca2d68ebfeb3e6044e4ec221120d7d12394"
+    },
+    "src/sparkbrain/v05/brain.py": {
+      "classes": {
+        "IntegratedV05Brain": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "_episode_index",
+            "action_policy",
+            "assemblies",
+            "base",
+            "config",
+            "homeostasis",
+            "pending_action",
+            "pending_activation",
+            "plasticity",
+            "predictor",
+            "receptors",
+            "results",
+            "suppressed_unit_ids",
+            "trace"
+          ],
+          "end_line": 361,
+          "start_line": 53
+        },
+        "V05BrainConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "enable_action",
+            "enable_assembly",
+            "enable_delay_learning",
+            "enable_homeostasis",
+            "enable_prediction",
+            "enable_receptor_bank",
+            "enable_reward_modulation",
+            "enable_weight_learning",
+            "height",
+            "min_pattern_spikes",
+            "pattern_temporal_bin_ms",
+            "receptor_rows",
+            "settle_ms",
+            "topology_seed",
+            "width"
+          ],
+          "end_line": 50,
+          "start_line": 35
+        }
+      },
+      "sha256": "d11680e60ebd7d3301a81a1e0e6ffddf39f2d1707843892c241b0865734439c9"
+    },
+    "src/sparkbrain/v05/contracts.py": {
+      "classes": {
+        "ActionDecision": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "action",
+            "assembly_id",
+            "confidence"
+          ],
+          "end_line": 81,
+          "start_line": 75
+        },
+        "ActivityPattern": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "end_ms",
+            "ordered_units",
+            "pattern_id",
+            "relative_bins",
+            "source_cascade_id",
+            "source_kind",
+            "spike_count",
+            "start_ms",
+            "unit_ids"
+          ],
+          "end_line": 43,
+          "start_line": 28
+        },
+        "AssemblyActivation": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "assembly_id",
+            "episode_count",
+            "mature",
+            "occurrences",
+            "pattern_id",
+            "similarity",
+            "suppressed",
+            "time_ms",
+            "unit_ids"
+          ],
+          "end_line": 61,
+          "start_line": 47
+        },
+        "PredictionDecision": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "assembly_id",
+            "confidence",
+            "value"
+          ],
+          "end_line": 71,
+          "start_line": 65
+        },
+        "ReceptorTrace": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "channel",
+            "derivative",
+            "emitted",
+            "emitted_magnitude",
+            "fast_trace",
+            "gain",
+            "medium_trace",
+            "novelty",
+            "signed_input",
+            "slow_trace",
+            "time_ms"
+          ],
+          "end_line": 24,
+          "start_line": 10
+        },
+        "StabilitySnapshot": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "active_unit_fraction",
+            "dead",
+            "mean_threshold",
+            "runaway",
+            "spike_count",
+            "time_ms"
+          ],
+          "end_line": 94,
+          "start_line": 85
+        },
+        "V05StepResult": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "action",
+            "assembly_activations",
+            "emitted_pulses",
+            "end_ms",
+            "metadata",
+            "patterns",
+            "prediction",
+            "raw_pulses",
+            "receptor_traces",
+            "stability",
+            "start_ms",
+            "state_hash",
+            "trace_hash",
+            "v04_result"
+          ],
+          "end_line": 130,
+          "start_line": 98
+        }
+      },
+      "sha256": "f363728e9d574a5274cb6b20fcbd82d6d183cfad695718260b94f78b588e17c8"
+    },
+    "src/sparkbrain/v05/homeostasis.py": {
+      "classes": {
+        "HomeostasisConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "dead_windows_before_flag",
+            "learning_rate",
+            "max_threshold",
+            "min_threshold",
+            "rate_decay",
+            "runaway_spikes_per_window",
+            "target_spikes_per_window"
+          ],
+          "end_line": 21,
+          "start_line": 14
+        },
+        "HomeostaticController": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "config",
+            "dead_streak",
+            "rate_ema",
+            "windows"
+          ],
+          "end_line": 105,
+          "start_line": 25
+        }
+      },
+      "sha256": "0026eeb202a5720263c094474615c907285f7cd06181e67652a2d04e9d68dd91"
+    },
+    "src/sparkbrain/v05/plasticity.py": {
+      "classes": {
+        "V05PlasticityConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "delay_learning_rate",
+            "depression_ratio",
+            "eligibility_decay",
+            "enable_delay_learning",
+            "enable_weight_learning",
+            "learning_rate",
+            "max_delay_ms",
+            "max_updates_per_step",
+            "max_weight",
+            "min_delay_ms",
+            "min_weight",
+            "tau_minus_ms",
+            "tau_plus_ms"
+          ],
+          "end_line": 26,
+          "start_line": 13
+        },
+        "V05PlasticityController": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "config",
+            "eligibility",
+            "reward_trace",
+            "update_count"
+          ],
+          "end_line": 120,
+          "start_line": 30
+        }
+      },
+      "sha256": "3729e6f9556382988441116240ca0fa36897048b56e7e789a7ff453b444c3429"
+    },
+    "src/sparkbrain/v05/prediction.py": {
+      "classes": {
+        "AssemblyPredictor": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "counts"
+          ],
+          "end_line": 48,
+          "start_line": 10
+        }
+      },
+      "sha256": "dcd8f45ba4cd1a0478685bf7f8f9764aeed135820f29d5b3381111631345e169"
+    },
+    "src/sparkbrain/v05/receptors.py": {
+      "classes": {
+        "MultiTimescaleReceptorBank": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "channels",
+            "config"
+          ],
+          "end_line": 149,
+          "start_line": 50
+        },
+        "ReceptorConfig": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "derivative_gain",
+            "direct_gain",
+            "emission_threshold",
+            "fast_tau_ms",
+            "gain_tau_ms",
+            "max_gain",
+            "medium_tau_ms",
+            "min_gain",
+            "novelty_gain",
+            "output_cap",
+            "prediction_error_gain",
+            "slow_tau_ms",
+            "target_abs_input"
+          ],
+          "end_line": 36,
+          "start_line": 14
+        },
+        "_ChannelState": {
+          "custom_copy_hooks": [],
+          "declared_fields": [
+            "fast",
+            "last_time_ms",
+            "mean_abs",
+            "medium",
+            "observations",
+            "slow"
+          ],
+          "end_line": 46,
+          "start_line": 40
+        }
+      },
+      "sha256": "4071d0d5d2f0ab487e3324528053997ecbdeb65953bfa211312d0da918c75942"
+    }
+  },
+  "schema": "v05-owned-state-source-map-1",
+  "scope": "AST constructors/dataclass fields only; no imported runtime or model execution",
+  "source_pin": "00ef5bac171b3ec05f581a157cccd9528bb71e8f"
+}

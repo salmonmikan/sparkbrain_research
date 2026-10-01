@@ -1,0 +1,172 @@
+{
+  "brain_config": {
+    "enable_action": false,
+    "enable_assembly": true,
+    "enable_delay_learning": true,
+    "enable_homeostasis": true,
+    "enable_prediction": false,
+    "enable_receptor_bank": true,
+    "enable_reward_modulation": false,
+    "enable_weight_learning": true,
+    "height": 8,
+    "min_pattern_spikes": 2,
+    "pattern_temporal_bin_ms": 0.25,
+    "receptor_rows": 1,
+    "settle_ms": 32.0,
+    "topology_seed": 920041,
+    "width": 8
+  },
+  "cases": [
+    {
+      "brain_copies": 1,
+      "details": "copy fresh whole graph; add 0.125 to cloned lowest-unit potential and 0.01 to cloned lexicographically lowest edge weight; original stays exact",
+      "fresh_constructors": 1,
+      "id": "P1",
+      "native_loads": 0,
+      "pulse_calls": 0
+    },
+    {
+      "brain_copies": 1,
+      "details": "three prefix calls, then original/clone/native suffix once each; retain first-episode immature negative control",
+      "fresh_constructors": 1,
+      "id": "P2",
+      "native_loads": 1,
+      "pulse_calls": 6
+    },
+    {
+      "brain_copies": 1,
+      "details": "public empty field run_until(3); detector/tracker updates using same four SpikeEvent objects; schedule arrival 4; suffix on original/clone/native",
+      "fresh_constructors": 1,
+      "id": "P3",
+      "native_loads": 1,
+      "pulse_calls": 3
+    },
+    {
+      "brain_copies": 1,
+      "details": "lowest source with >=2 outgoing edges: first.delay = second.delay + 0.25, no resort; suffix original/clone/native",
+      "fresh_constructors": 1,
+      "id": "P4",
+      "native_loads": 1,
+      "pulse_calls": 3
+    },
+    {
+      "brain_copies": 2,
+      "details": "two three-episode prefixes; candidate suffix then injected export failure; independent prefix with event cap replaced by 1 before copy/suffix real exception",
+      "fresh_constructors": 2,
+      "id": "P5",
+      "native_loads": 0,
+      "pulse_calls": 8
+    },
+    {
+      "brain_copies": 1,
+      "details": "independent owner/reference three-episode prefixes; clone/reference suffix; export/validate before final owner commit; nested input/output metadata mutation isolation",
+      "fresh_constructors": 2,
+      "id": "P6",
+      "native_loads": 0,
+      "pulse_calls": 8
+    }
+  ],
+  "common_pulse_fields": {
+    "location": null,
+    "metadata": {},
+    "novelty": 0.0,
+    "polarity": 1,
+    "prediction_error": 0.0,
+    "source_id": "owned-state-probe"
+  },
+  "comparison": "type-tagged complete allowed instance state with repeated references/dict order, mutable isolation and explicit aliases; native persistence/value hash is a separate negative control",
+  "execution_authorized_by_this_file": false,
+  "failure": "unexpected direct/whole-copy or ownership mismatch blocks; expected native losses are recorded, not classified as clone failure",
+  "independent_prefix_gate": "Every independently constructed P2/P5/P6 prefix must satisfy the same actual-maturity and alias gates; no extra episodes after failure",
+  "limits": {
+    "address_space_bytes": 536870912,
+    "artifact_bytes": 33554432,
+    "cpu_seconds": 60,
+    "fresh_constructors_plus_native_loads": 11,
+    "handbuilt_spike_records": 4,
+    "input_pulses_per_call": 1,
+    "pulse_calls_or_attempts": 28,
+    "wall_seconds": 120,
+    "whole_brain_copies": 7
+  },
+  "no_m1_execution": true,
+  "no_runtime_edits": true,
+  "p3_arrival": {
+    "current": 0.25,
+    "novelty": 0.0,
+    "prediction_error": 0.0,
+    "pulse_id": "owned-arrival",
+    "source_id": null,
+    "target_id": "lowest receptor ID",
+    "time_ms": 4
+  },
+  "p3_spikes": {
+    "dynamic_threshold": 1.0,
+    "excitatory_drive": 1.0,
+    "inhibitory_drive": 0.0,
+    "novelty": 0.0,
+    "potential_before_reset": 1.0,
+    "prediction_error": 0.0,
+    "same_objects_passed_to_both_detectors": true,
+    "source_pulse_ids": [
+      "owned-fixture"
+    ],
+    "source_pulse_ids_materialization": "exact tuple, not the JSON array/list",
+    "times_ms": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tracker_flush_until_ms": 3,
+    "unit_ids": [
+      0,
+      1,
+      2,
+      0
+    ],
+    "xy": "corresponding field unit coordinates"
+  },
+  "p5_abort_baseline": "Capture after the prospective event-cap replacement and before copying/processing the candidate",
+  "prefix": [
+    {
+      "channel": "Q",
+      "episode_id": "owned-0001",
+      "magnitude": 1.2,
+      "time_ms": 8
+    },
+    {
+      "channel": "Q",
+      "episode_id": "owned-0002",
+      "magnitude": 1.2,
+      "time_ms": 208
+    },
+    {
+      "channel": "Q",
+      "episode_id": "owned-0003",
+      "magnitude": 1.2,
+      "time_ms": 408
+    }
+  ],
+  "prefix_gates": {
+    "after_first_episode": "no mature candidate or pending activation",
+    "after_third_episode": "mature non-null pending activation bound to existing candidate with all three distinct prefix episode IDs; retained prototype alias must be exercised",
+    "on_missing_target": "record coverage block; skip P5/P6; no additional training or retuning"
+  },
+  "process_episode_flags": {
+    "explore_action": false,
+    "learn_assembly": true,
+    "learn_field": true,
+    "metadata": {}
+  },
+  "schema": "v05-owned-state-property-proposal-1",
+  "scientific_credit": 0,
+  "source_pin": "00ef5bac171b3ec05f581a157cccd9528bb71e8f",
+  "status": "SOURCE_REVIEWED_PENDING_IMPLEMENTATION_FREEZE",
+  "suffix": {
+    "channel": "R",
+    "episode_id": "owned-0004",
+    "magnitude": 1.2,
+    "time_ms": 600
+  }
+}
