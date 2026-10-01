@@ -108,3 +108,43 @@ def test_verifier_import_and_execution_do_not_import_sparkbrain() -> None:
     )
     result = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
+
+
+def with_standalone_copies(tmp_path: Path) -> Path:
+    root = tmp_path / "package"
+    shutil.copytree(TOOL.DEFAULT, root)
+    manifest = json.loads((root / "run.parts/manifest.json").read_bytes())
+    payload = b"".join(base64.b64decode((root / "run.parts" / row["path"]).read_bytes())
+                       for row in manifest["parts"])
+    (root / "run.tar.xz").write_bytes(payload)
+    (root / "anchors.json").write_bytes(TOOL.ANCHORS.read_bytes())
+    return root
+
+
+def test_all_emitted_package_representations_verify(tmp_path: Path) -> None:
+    result = TOOL.verify(with_standalone_copies(tmp_path))
+    assert result["status"] == "verified_without_runtime_execution"
+
+
+@pytest.mark.parametrize("name", ["run.tar.xz", "anchors.json"])
+@pytest.mark.parametrize("damage", ["truncated", "appended", "directory", "symlink"])
+def test_optional_package_copies_cannot_hide_corruption(
+    tmp_path: Path, name: str, damage: str,
+) -> None:
+    root = with_standalone_copies(tmp_path)
+    path = root / name
+    original = path.read_bytes()
+    if damage == "truncated":
+        path.write_bytes(original[:len(original) // 2])
+    elif damage == "appended":
+        path.write_bytes(original + b" ")
+    else:
+        path.unlink()
+        if damage == "directory":
+            path.mkdir()
+        else:
+            target = tmp_path / "copy"
+            target.write_bytes(original)
+            path.symlink_to(target)
+    with pytest.raises(ValueError, match="standalone package copy"):
+        TOOL.verify(root)

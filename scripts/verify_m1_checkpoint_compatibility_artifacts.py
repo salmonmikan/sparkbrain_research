@@ -61,6 +61,15 @@ def read_bundle(root: Path) -> dict[str, bytes]:
     for expected in (manifest, fixed):
         if sha(payload) != expected["archive_sha256"] or len(payload) != expected["archive_bytes"]:
             raise ValueError("frozen archive digest/size mismatch")
+    # Repackaged directories also contain standalone copies. Legacy committed
+    # transport may omit them, but every present representation must be verified.
+    for name, expected in (("run.tar.xz", payload), ("anchors.json", ANCHORS.read_bytes())):
+        path = root / name
+        if path.exists() or path.is_symlink():
+            if path.is_symlink() or not path.is_file():
+                raise ValueError(f"standalone package copy is not a regular file: {name}")
+            if path.read_bytes() != expected:
+                raise ValueError(f"standalone package copy mismatch: {name}")
     files = {}
     with tarfile.open(fileobj=io.BytesIO(payload), mode="r:*") as archive:
         for entry in archive:

@@ -307,7 +307,11 @@ It independently rebuilds mutants in memory, checks every initial/final file,
 configuration, protocol/source/worker binding, completed call journal, rejection
 stage and raw-to-summary count, and rejects rewritten self-descriptions or optimized
 Python that would disable assertions. The tests include transport replacement,
-missing provenance, inconsistent records and a runtime-import blocker.
+missing provenance, inconsistent records and a runtime-import blocker. When a
+repackaged directory includes standalone `run.tar.xz` or `anchors.json` copies,
+each present copy must be an ordinary file matching the verified split payload or
+pinned external anchor byte-for-byte. Corruption in an optional copy is an error;
+the historical transport-only layout remains supported.
 
 ### Deterministic data-only packaging
 
@@ -441,3 +445,11 @@ All 929 default tests and 70 focused checks pass, with 392 default deselections
 and one existing warning. The full readiness/lint/demo/40×30 benchmark/bundle
 sequence and data-only packaging/verification pass; see `validation-path.log`.
 No actual retained evidence was contaminated, and no diagnostic rerun occurred.
+
+A final verifier review extended coverage from split transport to every standalone
+archive/anchor copy emitted by repackaging. Present copies must be regular files
+and byte-identical; transport-only historical layouts remain supported. Nine
+additional tests plus independent data-only review cover the fix. All 938 default
+tests and 79 focused checks pass (392 default deselections, one existing warning),
+along with the full validation sequence and exact repackaging verification; see
+`validation-representations.log`. Original diagnostic evidence remains unchanged.
