@@ -1242,3 +1242,22 @@ contract correction only.
 - Preserve this coverage block: no extra episodes, tuning or rerun of this probe.
   Any new input characterization requires a separate prospective contract; success
   there would not retroactively execute or clear P5/P6.
+
+
+## 2026-10-01 — Paired-input v0.5 acquired-state fixture coverage
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`; scientific credit 0.
+  This pointer changes no historical acceptance or prior disposition.
+- Frozen source `22d7aba1af0e55d58b6414cd55fe1c1ea1cd2b0d`; one predeclared
+  three-arm run, exactly three fresh brains, nine calls and 15 raw pulses.
+- The sole 4-ms paired target formed one internal pattern per episode and a
+  candidate with exactly three target episode IDs. Actual mature pending state
+  and both retained-object identity witnesses passed. Single/40-ms spaced
+  controls remained receptor-only with no patterns/candidates.
+- This identifies a bounded acquisition sequence, not a resumable ownership
+  snapshot or evidence of rollback, M1 contribution or general learned benefit.
+  PR176's earlier coverage block and unexecuted P5/P6 remain unchanged.
+- Evidence: [result and limits](research/v05_paired_coverage_results_20261001.md),
+  [prospective protocol](research/v05_paired_coverage_protocol_20261001.md), and
+  [all 92 raw files plus frozen sources](../artifacts/research/v05_paired_coverage_20261001/transport_manifest.json).
+  Any ownership execution requires a separate finite contract and source freeze.
