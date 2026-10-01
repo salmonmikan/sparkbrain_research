@@ -40,21 +40,30 @@ def read_raw(root: Path) -> dict[str, bytes]:
     return files
 
 
-def read_published(root: Path) -> dict[str, bytes]:
+def verifier() -> Any:
     source = ROOT / "scripts/verify_m1_checkpoint_compatibility_artifacts.py"
     spec = importlib.util.spec_from_file_location("compatibility_transport_reader", source)
     if spec is None or spec.loader is None:
         raise RuntimeError("data-only transport reader is unavailable")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    return module.read_bundle(root)
+    return module
+
+
+def read_published(root: Path) -> dict[str, bytes]:
+    return verifier().read_bundle(root)
 
 
 def git_bytes(root: Path, *args: str) -> bytes:
     return subprocess.check_output(["git", *args], cwd=root)
 
 
-def validate_source(files: dict[str, bytes], git_root: Path) -> dict[str, Any]:
+def validate_source(files: dict[str, bytes], git_root: Path | None) -> dict[str, Any]:
+    # This command republishes one exhausted allocation, never arbitrary new data.
+    # The verifier pins the external anchor digest independently of raw inventory.
+    anchor = verifier().anchors()
+    if {name: sha(raw) for name, raw in files.items()} != anchor["raw_files_sha256"]:
+        raise ValueError("raw files do not match the frozen external evidence anchor")
     if {name: sha(raw) for name, raw in files.items() if name != "inventory.json"} != json.loads(
             files["inventory.json"]):
         raise ValueError("raw inventory mismatch")
@@ -63,6 +72,8 @@ def validate_source(files: dict[str, bytes], git_root: Path) -> dict[str, Any]:
     if (not isinstance(source, str) or len(source) != 40
             or any(char not in "0123456789abcdef" for char in source)):
         raise ValueError("source commit must be an exact lowercase Git SHA")
+    if git_root is None:
+        return started
     tree = git_bytes(git_root, "rev-parse", source + "^{tree}").decode().strip()
     if tree != started["source_tree"]:
         raise ValueError("source tree does not match retained provenance")
@@ -85,7 +96,7 @@ def validate_source(files: dict[str, bytes], git_root: Path) -> dict[str, Any]:
     return started
 
 
-def build_package(files: dict[str, bytes], git_root: Path) -> dict[str, bytes]:
+def build_package(files: dict[str, bytes], git_root: Path | None = None) -> dict[str, bytes]:
     started = validate_source(files, git_root)
     output = io.BytesIO()
     with tarfile.open(fileobj=output, mode="w:xz", format=tarfile.PAX_FORMAT) as archive:
@@ -120,7 +131,9 @@ def build_package(files: dict[str, bytes], git_root: Path) -> dict[str, bytes]:
     return result
 
 
-def write_package(files: dict[str, bytes], output: Path, git_root: Path) -> dict[str, Any]:
+def write_package(
+    files: dict[str, bytes], output: Path, git_root: Path | None = None,
+) -> dict[str, Any]:
     if output.exists() or output.is_symlink():
         raise FileExistsError("packaging output must be absent; no clobber")
     package = build_package(files, git_root)
@@ -141,8 +154,8 @@ def main() -> None:
     inputs = parser.add_mutually_exclusive_group(required=True)
     inputs.add_argument("--raw", type=Path, help="existing raw output; never generated here")
     inputs.add_argument("--published", type=Path, help="existing committed artifact directory")
-    parser.add_argument("--git-root", type=Path, default=ROOT,
-                        help="checkout containing the frozen execution Git objects")
+    parser.add_argument("--git-root", type=Path,
+                        help="optional additional source-object audit in a full-history checkout")
     parser.add_argument("--output", type=Path, required=True, help="new absent packaging directory")
     args = parser.parse_args()
     if args.output.exists() or args.output.is_symlink():

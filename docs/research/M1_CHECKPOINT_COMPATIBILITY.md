@@ -312,12 +312,18 @@ missing provenance, inconsistent records and a runtime-import blocker.
 ### Deterministic data-only packaging
 
 The retained bytes can be repackaged without model imports, fixture construction
-or checkpoint loading. The packager validates the complete raw inventory, checks
-source/schema manifests and runner/protocol/input bytes against the exact retained
-Git execution commit, then recreates the archive, split transport and anchors.
+or checkpoint loading. Before creating output, the packager compares every raw
+file hash, including inventory/provenance, against the immutable external anchor
+whose own digest is independently pinned in the verifier. A coherently edited raw
+directory cannot relabel replacement bytes as the original exhausted allocation.
+It then recreates the archive, split transport and anchors.
 It uses canonical metadata and component-wise archive order from the original
-packaging. A checkout with the frozen Git objects is required (`fetch-depth: 0` in
-CI); the standalone verifier above has no Git-history dependency.
+packaging. Default packaging and verification require no Git history or subprocess;
+this also works after a squash merge or branch deletion. An optional `--git-root .`
+adds a complete source/schema/runner/protocol/input Git-object audit, requiring the
+frozen execution objects; it fails closed if those objects are unavailable. Their
+source binding was independently audited against Git before the immutable anchor
+was published.
 
 Use a new absent output directory with the committed evidence:
 
@@ -411,3 +417,16 @@ After integrating main `00ef5bac171b3ec05f581a157cccd9528bb71e8f` (PR #175):
 Exact commands are above; review-fix regression logs are retained separately under
 `validation-review/`. The original validation logs remain unchanged. Latest-head
 Codex review and CI are still required before merge.
+
+A further Codex check found that the initial `--raw` packager trusted a coherently
+rewritten inventory. That data-labeling gap is repaired: the full retained hash
+map must match the digest-pinned external anchor before any output is created.
+Independent data-only review rejected coherent edits to four records, confirmed
+exact valid packaging with runtime imports/subprocesses forbidden, and approved
+the fix. The additional optional Git audit remains fail-closed.
+
+Final anchor-fix validation: 921 default tests passed, 392 deselected, one existing
+warning; 62 focused checks passed. Ruff, readiness, demo, 40×30 legacy benchmark,
+bundle checks, raw/published packaging equality and repackaged verification all
+passed. Full logs are in `validation-anchor.log`; earlier logs are unchanged.
+The experiment and its original bytes were not rerun or rewritten.
