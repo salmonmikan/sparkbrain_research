@@ -4,7 +4,9 @@ import json
 import sqlite3
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from threading import Barrier
 
 import pytest
 
@@ -452,3 +454,70 @@ def test_exact_duplicate_is_idempotent_across_store_instances(tmp_path):
     peer.close()
     durable.close()
     effects.close()
+
+
+
+def test_old_issue_lineage_is_rejected_after_world_and_frontier_advance(tmp_path):
+    stack = _prepare(tmp_path)
+    db_path, bridge, _, effects, durable, signal, issued = stack
+    before = durable.snapshot()
+    durable.close()
+    effects.close()
+
+    with sqlite3.connect(db_path) as db:
+        db.execute("UPDATE world_state SET cut=cut+1, epoch=epoch+1 WHERE id=1")
+        db.execute(
+            """
+            UPDATE reconciliation_frontier
+            SET cut=cut+1, epoch=epoch+1
+            WHERE id=1
+            """
+        )
+
+    restarted = DurableReconciliationInbox(db_path)
+    rejected = _accept(restarted, bridge, signal, issued.stamp.issue_id)
+
+    assert rejected.status == "LINEAGE_RETIRED_OR_FUTURE"
+    assert rejected.state_advanced is False
+    assert rejected.frontier.world_cut_generation == before.world_cut_generation + 1
+    assert rejected.frontier.recovery_epoch == before.recovery_epoch + 1
+    assert rejected.frontier.outcome_watermark == before.outcome_watermark
+    assert rejected.frontier.accepted_receipts == before.accepted_receipts
+    restarted.close()
+
+
+def test_exact_duplicate_race_advances_frontier_once(tmp_path):
+    stack = _prepare(tmp_path)
+    db_path, bridge, _, effects, durable, signal, issued = stack
+    issue_id = issued.stamp.issue_id
+    authority_epoch = bridge.guard.authority_epoch
+    authority_token = bridge.guard.authority_token
+    durable.close()
+    effects.close()
+    barrier = Barrier(2)
+
+    def submit_once():
+        inbox = DurableReconciliationInbox(db_path)
+        try:
+            barrier.wait(timeout=5)
+            return inbox.accept_receipt(
+                signal,
+                issue_id=issue_id,
+                current_authority_epoch=authority_epoch,
+                current_authority_token=authority_token,
+            )
+        finally:
+            inbox.close()
+
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        futures = [executor.submit(submit_once) for _ in range(2)]
+        results = [future.result(timeout=10) for future in futures]
+
+    assert sorted(result.status for result in results) == ["ACCEPTED", "EXACT_REPLAY"]
+    assert sum(result.state_advanced for result in results) == 1
+
+    inspector = DurableReconciliationInbox(db_path)
+    frontier = inspector.snapshot()
+    assert frontier.outcome_watermark == 1
+    assert frontier.accepted_receipts == 1
+    inspector.close()

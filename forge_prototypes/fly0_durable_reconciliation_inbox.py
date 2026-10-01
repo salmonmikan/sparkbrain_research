@@ -36,6 +36,7 @@ Status = Literal[
     "MISSING_EFFECT",
     "EFFECT_TAMPERED",
     "WORLD_AUTHORITY_DIVERGED",
+    "LINEAGE_RETIRED_OR_FUTURE",
     "RECEIPT_REJECTED",
     "OUTCOME_GAP",
     "FRONTIER_AHEAD_UNBOUND",
@@ -405,6 +406,27 @@ class DurableReconciliationInbox:
             return self._decision(
                 "WORLD_AUTHORITY_DIVERGED",
                 "WORLD lineage differs from durable receipt frontier",
+                effect_token=effect.token(),
+            )
+        source_lineage = (
+            source.stamp.world_session_id,
+            source.stamp.world_cut_generation,
+            source.stamp.recovery_epoch,
+        )
+        effect_lineage = (
+            effect.world_session_id,
+            effect.world_cut_generation,
+            effect.recovery_epoch,
+        )
+        frontier_lineage = (
+            frontier.world_session_id,
+            frontier.world_cut_generation,
+            frontier.recovery_epoch,
+        )
+        if source_lineage != frontier_lineage or effect_lineage != frontier_lineage:
+            return self._decision(
+                "LINEAGE_RETIRED_OR_FUTURE",
+                "issue/effect lineage differs from durable causal frontier",
                 effect_token=effect.token(),
             )
         receipt = UpstreamReceiptValidator().validate(
