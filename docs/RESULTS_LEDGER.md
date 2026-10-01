@@ -1158,3 +1158,32 @@ contract correction only.
 - Raw transport, data-only verifier, source/config/protocol hashes, negative
   history and limitations: `docs/research/M1_COLD_RESUME_DIAGNOSTIC.md` and
   `artifacts/m1_cold_resume_diagnostic_20261001/`
+
+
+## 2026-10-01 — Continuous temporal reuse: added benefit not supported
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`; scientific credit 0.
+  This standalone append changes no historical v0.5 acceptance, formal identity,
+  scientific allocation, runtime, or scheduler/control-plane disposition.
+- Frozen source: `0bcb2c1b23c29e5107111343a757c57c1f7bbb41`; two diagnostic seeds,
+  unchanged v0.5 runtime, matched input histories and explicit conventional reuse
+  alternatives. Prediction was scored before each later outcome.
+- Negative result: full v0.5 return Brier was 0.3118064367697691 in both seeds,
+  versus 0.0725 for recent raw history and 0.06415165974581612 /
+  0.07765357213323473 for retained raw prototypes. After 14 correct return-A
+  predictions and three abstentions, the last 15 selected a B-trained assembly.
+  Frozen weight/delay learning had lower Brier but more abstention. No incremental
+  prediction benefit or weight/delay-learning benefit was shown by this fixture.
+- Suppressing the acquired A path changed predictions, but S's prefix-matched
+  B control was inactive on B probe shams. In one seed, suppression converted two
+  wrong B predictions to abstention and violated the absolute collateral bound.
+  Both prospective integration-proposal gates failed; no general causal or
+  physical-unit specificity claim follows.
+- Evidence: [bounded result and limitations](research/temporal_reuse_loop_results_20261001.md),
+  [complete checksum-bound transport](../artifacts/research/temporal_reuse_loop_20261001/transport_manifest.json).
+  Archive SHA-256: `2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082`.
+  All 1,792 raw rows and 512 forks were independently recalculated/checked; no
+  full-model reproduction was run. Observer is duplicate-sham, driver peak RSS
+  was not recorded, and network denial is Python-level rather than OS isolation.
+- Follow-on boundary: inspect saved traces, then define any new prospective test;
+  do not tune or replace this completed negative run.

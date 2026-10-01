@@ -1,0 +1,394 @@
+"""Verify published bytes, descriptive arithmetic and gates without importing a model."""
+
+from __future__ import annotations
+
+import argparse
+import base64
+import hashlib
+import io
+import json
+import math
+import tarfile
+from pathlib import Path, PurePosixPath
+from typing import Any
+
+SEEDS = ("910071", "910072")
+ARMS = ("Q", "H", "R", "S", "F")
+CONDITIONS = ("return", "interleaved")
+# This verifier audits one immutable publication, not an arbitrary self-described archive.
+EXPECTED_ARCHIVE_SHA256 = "2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082"
+
+
+def check(value: bool, message: str) -> None:
+    if not value:
+        raise ValueError(message)
+
+
+def sha(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def canonical(value: Any) -> bytes:
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
+
+
+def exact(calculated: Any, reported: Any, label: str) -> None:
+    check(canonical(calculated) == canonical(reported), label)
+
+
+def observation(supplied: dict[str, Any], removed: bool = False) -> dict[str, Any]:
+    expected = {key: supplied[key] for key in ("occurrence_id", "start_ms", "pulses")}
+    if removed:
+        expected["pulses"] = [p for p in expected["pulses"] if p["channel"] not in "ACF"]
+    return expected
+
+
+def bind_input(
+    row: dict[str, Any], supplied: dict[str, Any], label: str, *, removed: bool = False
+) -> None:
+    expected = observation(supplied, removed)
+    check(row["input_sha256"] == sha(canonical(expected)), label + "/input digest")
+    exact(expected["occurrence_id"], row["occurrence_id"], label + "/occurrence identity")
+    compare(expected["start_ms"] + 72, row["query_time_ms"], label + "/query time")
+    exact(supplied["outcome"], row["outcome"], label + "/outcome binding")
+    if "raw_result" in row:
+        exact(expected["pulses"], row["raw_result"]["raw_pulses"], label + "/raw input binding")
+
+
+def select_target(raw: list[dict[str, Any]], label: str) -> dict[str, Any]:
+    """Independent frozen-selector arithmetic on archived prefix activations only."""
+    counts: dict[str, list[int]] = {}
+    for row in raw:
+        activations = row["raw_result"]["assembly_activations"]
+        usable = [a for a in activations if a["mature"] is True and a["suppressed"] is False]
+        selected = max(
+            usable,
+            key=lambda a: (a["similarity"], a["episode_count"], a["assembly_id"]),
+            default=None,
+        )
+        aid = selected["assembly_id"] if selected else None
+        exact(aid, row["assembly_id"], label + "/prefix selected assembly")
+        exact(selected is not None, row["mature"], label + "/prefix maturity")
+        if selected:
+            counts.setdefault(aid, [0, 0])[row["outcome"]] += 1
+    candidates = [aid for aid, count in counts.items() if count[0] >= 8 and count[1] == 0]
+    target = min(candidates, key=lambda aid: (-counts[aid][0], aid), default=None)
+    eligible = (
+        []
+        if target is None
+        else [
+            aid
+            for aid, count in counts.items()
+            if aid != target
+            and count[1] >= 8
+            and count[0] == 0
+            and abs(count[1] - counts[target][0]) <= 0.25 * counts[target][0]
+        ]
+    )
+    matched = min(
+        eligible, key=lambda aid: (abs(counts[aid][1] - counts[target][0]), aid), default=None
+    )
+    return {
+        "target": target,
+        "matched": matched,
+        "prefix_counts": counts,
+        "status": "identifiable" if target and matched else "intervention_not_identifiable",
+    }
+
+
+def compare(calculated: Any, reported: Any, label: str) -> None:
+    if isinstance(calculated, float):
+        check(
+            type(reported) in (int, float)
+            and math.isclose(calculated, reported, rel_tol=0, abs_tol=1e-12),
+            label,
+        )
+    else:
+        # JSON booleans must not be accepted as numerically equal 0/1 (or vice versa).
+        check(type(reported) is type(calculated) and calculated == reported, label)
+
+
+def validate_predictions(raw: list[dict[str, Any]], label: str) -> None:
+    for row in raw:
+        check(
+            type(row["p1"]) in (int, float)
+            and math.isfinite(row["p1"])
+            and 0 <= row["p1"] <= 1
+            and type(row["outcome"]) is int
+            and row["outcome"] in (0, 1)
+            and (row["native"] is None or (type(row["native"]) is int and row["native"] in (0, 1))),
+            label + "/prediction domain",
+        )
+
+
+def causal_metrics(
+    raw: list[dict[str, Any]], arm: str, label: str, pairs: list[list[dict[str, Any]]]
+) -> dict[str, Any]:
+    validate_predictions(raw, label)
+    states = ("sham", "targeted", "matched", "observer") if arm in ("S", "F") else ("sham",)
+    required = {
+        (pair, cue, state, removed)
+        for pair in range(8)
+        for cue in (0, 1)
+        for state, removed in [(state, False) for state in states] + [("sham", True)]
+    }
+    for row in raw:
+        check(
+            type(row["pair"]) is int
+            and type(row["cue"]) is int
+            and row["cue"] == row["outcome"]
+            and type(row["removed"]) is bool,
+            label + "/fork key domain",
+        )
+    grouped = {(r["pair"], r["cue"], r["intervention"], r["removed"]): r for r in raw}
+    check(len(raw) == len(grouped) and set(grouped) == required, label + "/fork inventory")
+    for row in raw:
+        bind_input(row, pairs[row["pair"]][row["cue"]], label + "/fork", removed=row["removed"])
+
+    def equal(left: dict[str, Any], right: dict[str, Any], fields: tuple[str, ...]) -> bool:
+        return all(left[field] == right[field] for field in fields)
+
+    output_fields = ("p1", "native", "operational_sha256")
+    calculated: dict[str, Any] = {
+        "cue_directions": sum(
+            grouped[(i, 1, "sham", False)]["p1"] > grouped[(i, 0, "sham", False)]["p1"]
+            for i in range(8)
+        ),
+        "removed_equal": all(
+            equal(
+                grouped[(i, 0, "sham", True)],
+                grouped[(i, 1, "sham", True)],
+                ("input_sha256", *output_fields),
+            )
+            for i in range(8)
+        ),
+        # The recorded observer branch is a duplicate sham, not a renderer test.
+        "observer_equal": all(
+            equal(
+                grouped[(i, cue, "sham", False)],
+                grouped[(i, cue, "observer", False)],
+                output_fields,
+            )
+            for i in range(8)
+            for cue in (0, 1)
+        )
+        if arm in ("S", "F")
+        else None,
+    }
+    if arm in ("S", "F"):
+        impairment = {}
+        for cue in (0, 1):
+            for state in ("targeted", "matched"):
+                changes = [
+                    (grouped[(i, cue, state, False)]["p1"] - cue) ** 2
+                    - (grouped[(i, cue, "sham", False)]["p1"] - cue) ** 2
+                    for i in range(8)
+                ]
+                impairment[f"{cue}_{state}"] = sum(changes) / 8
+                if cue == 1 and state == "targeted":
+                    calculated["absolute_B_collateral"] = sum(abs(x) for x in changes) / 8
+        calculated["impairment"] = impairment
+        calculated["targeted_minus_matched_A"] = impairment["0_targeted"] - impairment["0_matched"]
+    return calculated
+
+
+def decision_gates(arms: dict[str, Any], causal: dict[str, Any]) -> dict[str, bool]:
+    """Rebuild the frozen runner's gates from recalculated inputs only."""
+    # This summarizes fork equalities, not independent execution/isolation certification.
+    guards = all(
+        causal[arm]["removed_equal"] and causal[arm]["observer_equal"] is not False for arm in ARMS
+    )
+    s, c = arms["S"], causal["S"]
+    gate = (
+        all(
+            s[key]["brier"] <= arms[arm][key]["brier"] - 0.02
+            for key in CONDITIONS
+            for arm in ("H", "R")
+        )
+        and 1 - s["return"]["first_p1"] >= 0.75
+        and c["targeted_minus_matched_A"] >= 0.05
+        and c["absolute_B_collateral"] <= 0.02
+        and c["cue_directions"] >= 6
+        and c["removed_equal"]
+        and c["observer_equal"]
+        and guards
+    )
+    return {"all_control_guards_passed": guards, "integration_proposal_gate": gate}
+
+
+def verify(directory: Path, extract: Path | None = None) -> dict[str, Any]:
+    transport = json.loads((directory / "transport_manifest.json").read_text())
+    chunks = []
+    for part in transport["parts"]:
+        check(PurePosixPath(part["path"]).name == part["path"], "unsafe transport path")
+        encoded = (directory / part["path"]).read_bytes()
+        check(sha(encoded) == part["encoded_sha256"], "encoded part mismatch")
+        data = base64.b64decode(b"".join(encoded.split()), validate=True)
+        check(len(data) == part["bytes"] and sha(data) == part["sha256"], "decoded part mismatch")
+        chunks.append(data)
+    archive = b"".join(chunks)
+    check(len(archive) == transport["archive_bytes"], "archive length mismatch")
+    check(sha(archive) == transport["archive_sha256"], "archive hash mismatch")
+    with tarfile.open(fileobj=io.BytesIO(archive), mode="r:gz") as bundle:
+        members = bundle.getmembers()
+        names = [row.name for row in members]
+        check(len(names) == len(set(names)) == transport["archive_files"], "archive inventory")
+        for row in members:
+            path = PurePosixPath(row.name)
+            check(
+                row.isfile() and not path.is_absolute() and ".." not in path.parts,
+                "unsafe archive member",
+            )
+
+        def read(name: str) -> bytes:
+            stream = bundle.extractfile(name)
+            check(stream is not None, f"missing {name}")
+            return stream.read()
+
+        def document(name: str) -> Any:
+            return json.loads(read(name))
+
+        def rows(name: str) -> list[dict[str, Any]]:
+            return [json.loads(line) for line in read(name).splitlines()]
+
+        manifest = document("ARCHIVE_MANIFEST.json")
+        check(set(manifest["files"]) | {"ARCHIVE_MANIFEST.json"} == set(names), "archive coverage")
+        for name, expected in manifest["files"].items():
+            raw = read(name)
+            check(len(raw) == expected["bytes"] and sha(raw) == expected["sha256"], name)
+        inner = document("run/manifest.json")
+        check(inner["complete"], "run inventory incomplete")
+        for name, expected in inner["files"].items():
+            check(sha(read("run/" + name)) == expected, "run manifest: " + name)
+        report = document("run/report.json")
+        check(report["status"] == "completed", "run not completed")
+        check(transport["raw_run_exit_code_observed"] == 0, "nonzero recorded process exit")
+        count, forks = 0, 0
+        gates = {}
+        check(set(report["seeds"]) == set(SEEDS), "seed inventory")
+        for seed, result in report["seeds"].items():
+            check(set(result["arms"]) == set(ARMS), f"{seed}/arm inventory")
+            check(set(result["causal"]) == set(ARMS), f"{seed}/causal arm inventory")
+            calculated_arms: dict[str, Any] = {}
+            calculated_causal = {}
+            prefix_inputs = document(f"run/inputs-{seed}-prefix.json")
+            check(len(prefix_inputs) == 64, f"{seed}/prefix input inventory")
+            pairs = document(f"run/inputs-{seed}-pairs.json")
+            check(
+                len(pairs) == 8 and all(len(pair) == 2 for pair in pairs),
+                f"{seed}/pair input inventory",
+            )
+            for pair in pairs:
+                exact([0, 1], [p["outcome"] for p in pair], f"{seed}/paired outcome order")
+                exact(
+                    observation(pair[0], True),
+                    observation(pair[1], True),
+                    f"{seed}/paired removed input mismatch",
+                )
+            for arm, conditions in result["arms"].items():
+                check(set(conditions) == set(CONDITIONS), f"{seed}/{arm}/condition inventory")
+                calculated_arms[arm] = {}
+                prefix_label = f"{seed}/{arm}"
+                prefix = rows(f"run/{seed}-{arm}-prefix/raw.jsonl")
+                check(len(prefix) == 64, prefix_label + "/prefix row inventory")
+                validate_predictions(prefix, prefix_label + "/prefix")
+                prefix_job = document(f"run/{seed}-{arm}-prefix/job.json")
+                exact(prefix_inputs, prefix_job["inputs"], prefix_label + "/prefix job inputs")
+                for row, supplied in zip(prefix, prefix_inputs, strict=True):
+                    bind_input(row, supplied, prefix_label + "/prefix")
+                selection = select_target(prefix, prefix_label) if arm in ("S", "F") else None
+                prefix_result = document(f"run/{seed}-{arm}-prefix/result.json")
+                fork_job = document(f"run/{seed}-{arm}-forks/job.json")
+                exact(selection, prefix_result["target"], prefix_label + "/prefix target selection")
+                exact(selection, fork_job["target"], prefix_label + "/fork target selection")
+                exact(pairs, fork_job["pairs"], prefix_label + "/fork job pairs")
+                if arm in ("S", "F"):
+                    exact(
+                        selection,
+                        result["causal"][arm]["selection"],
+                        prefix_label + "/report target selection",
+                    )
+                    check(
+                        selection["status"] == "identifiable", prefix_label + "/target eligibility"
+                    )
+                for condition, expected in conditions.items():
+                    raw = rows(f"run/{seed}-{arm}-{condition}/raw.jsonl")
+                    check(len(raw) == 32, f"{seed}/{arm}/{condition}/suffix inventory")
+                    validate_predictions(raw, f"{seed}/{arm}/{condition}")
+                    supplied = document(f"run/inputs-{seed}-{condition}.json")
+                    job = document(f"run/{seed}-{arm}-{condition}/job.json")
+                    check(len(supplied) == 32, f"{seed}/{condition}/input inventory")
+                    exact(supplied, job["inputs"], f"{seed}/{arm}/{condition}/job inputs")
+                    for row, item in zip(raw, supplied, strict=True):
+                        bind_input(row, item, f"{seed}/{arm}/{condition}")
+                    count += len(raw)
+                    losses = [(r["p1"] - r["outcome"]) ** 2 for r in raw]
+                    calculated = {
+                        "n": len(raw),
+                        "brier": sum(losses) / len(raw),
+                        "coverage": sum(r["native"] is not None for r in raw) / len(raw),
+                        "accuracy_all": sum(r["native"] == r["outcome"] for r in raw) / len(raw),
+                        "first_p1": raw[0]["p1"],
+                        "first_loss": losses[0],
+                        "first_four_brier": sum(losses[:4]) / 4,
+                    }
+                    for key, value in calculated.items():
+                        compare(value, expected[key], f"{seed}/{arm}/{key}")
+                    calculated_arms[arm][condition] = calculated
+                raw = rows(f"run/{seed}-{arm}-forks/raw.jsonl")
+                forks += len(raw)
+                calculated_causal[arm] = causal_metrics(raw, arm, f"{seed}/{arm}", pairs)
+                expected = result["causal"][arm]
+                for key, value in calculated_causal[arm].items():
+                    if key == "impairment":
+                        check(
+                            set(expected[key]) == set(value), f"{seed}/{arm}/impairment inventory"
+                        )
+                        for name, impairment in value.items():
+                            compare(impairment, expected[key][name], f"{seed}/{arm}/{key}/{name}")
+                    else:
+                        compare(value, expected[key], f"{seed}/{arm}/{key}")
+            recalculated = decision_gates(calculated_arms, calculated_causal)
+            for key, value in recalculated.items():
+                compare(value, result[key], f"{seed}/{key}")
+            gates[seed] = recalculated["integration_proposal_gate"]
+        both_seeds = all(gates[seed] for seed in SEEDS)
+        compare(
+            both_seeds,
+            report["integration_proposal_gate_both_seeds"],
+            "integration_proposal_gate_both_seeds",
+        )
+        check(count == 640 and forks == 512, "measured row inventory")
+        # Last so semantic corruption tests exercise the independent calculations above.
+        # Even a wholly coherent rewrite cannot replace the already published evidence.
+        check(sha(archive) == EXPECTED_ARCHIVE_SHA256, "immutable publication archive identity")
+        if extract is not None:
+            extract.mkdir(parents=True, exist_ok=False)
+            for row in members:
+                target = extract.joinpath(*PurePosixPath(row.name).parts)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(read(row.name))
+    return {
+        "status": "verified",
+        "archive_files": len(names),
+        "run_manifest_files": len(inner["files"]),
+        "measured_suffix_rows": count,
+        "causal_fork_rows": forks,
+        "integration_proposal_gates": gates,
+        "integration_proposal_gate_both_seeds": both_seeds,
+        "archive_sha256": sha(archive),
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--directory", type=Path, default=Path("artifacts/research/temporal_reuse_loop_20261001")
+    )
+    parser.add_argument("--extract", type=Path)
+    args = parser.parse_args()
+    print(json.dumps(verify(args.directory, args.extract), indent=2))
+
+
+if __name__ == "__main__":
+    main()
