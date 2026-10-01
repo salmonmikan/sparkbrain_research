@@ -4,8 +4,6 @@ Status: **SOURCE AUDIT / EXPLORATORY / NON_EVIDENTIARY**.
 Source pin: `3cb955cd42474b36d2d37617e5390d08656c06f1` (main after PR #166).
 Date: 2026-10-01 UTC. No runtime execution, parameter tuning, runtime edit, or new scientific result is reported here.
 
-**Follow-on publication:** This document preserves the source-audit/prospective stage. The separate bounded Pilot diagnostic has since completed; see [M1 outcome-identity results](EXPLORATORY_M1_OUTCOME_IDENTITY.md) for observations, the retained failed packaging attempt, corrected reproduction, and publication validation. The frozen pre-execution protocol remains unchanged inside that artifact bundle.
-
 ## Decision
 
 The PR #166 event-clock result applies to a still-exposed legacy reference path, including the standard demo and benchmark. It does **not** describe the gate executed inside Integrated M1. Stop expanding that legacy grid merely as a proxy for current integration.
