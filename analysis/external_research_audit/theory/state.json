@@ -1,39 +1,87 @@
 {
   "schema_version": 2,
-  "generation": "R30",
-  "generation_id": "THEORY-20261001T073425+0900-R30-LOCAL-ATOMIC-WORLD-EFFECT-JOURNAL",
-  "produced_at": "2026-10-01T07:34:25+09:00",
-  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20261001T073425+0900",
+  "generation": "R31",
+  "generation_id": "THEORY-20261001T153237+0900-R31-DURABLE-RECONCILIATION-INBOX",
+  "produced_at": "2026-10-01T15:32:37+09:00",
+  "producer_run_id": "EXTERNAL_SCIENCE_TRIROLE-20261001T153237+0900",
   "authority_scope": "NON_EVIDENTIARY_NONCANONICAL_THEORY_SYNTHESIS_ZERO_EXECUTION_AUTHORITY",
-  "supersedes_generation_id": "THEORY-20260930T193342+0900-R29-WORLD-COMMIT-LINEAGE-JOIN",
+  "supersedes_generation_id": "THEORY-20261001T073425+0900-R30-LOCAL-ATOMIC-WORLD-EFFECT-JOURNAL",
   "status": "INTEGRATION_DESIGN_PROPOSAL",
-  "design_id": "ID-SB-FLY-LOCAL-ATOMIC-WORLD-EFFECT-JOURNAL-001",
+  "design_id": "ID-SB-FLY-DURABLE-RECONCILIATION-INBOX-001",
+  "role_resolution": {
+    "actual_start": "2026-10-01T15:32:37+09:00",
+    "resolved_slot": "15:30 JST",
+    "resolution_source": "PREVIOUS_CANONICAL_SLOT",
+    "selected_role": "THEORY_SYNTHESIS_ARCHITECT"
+  },
   "directive_index": {
     "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
     "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
-    "delta": false
+    "previous_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "delta": false,
+    "applicable_directives_read": [
+      "HUMAN-20260925-002",
+      "HUMAN-20260926-003",
+      "HUMAN-20260926-004",
+      "HUMAN-20260927-002",
+      "HUMAN-20260928-001",
+      "HUMAN-20260928-002"
+    ]
   },
   "input_generations": {
-    "control": "R143",
-    "evidence_analyst": "R176",
-    "theory": "R29",
-    "literature_current_complete": "R53",
-    "literature_partial_append_only": "R54",
+    "control": "R148",
+    "evidence_analyst": "R177",
+    "theory": "R30",
+    "literature_append_only_latest": "R55",
+    "literature_state": "R54",
     "audit": "R15"
   },
   "refs_inspected": {
-    "main": "59fc994b39d0ba02682e972161bb46801592d25b",
+    "main": "18ff183983a2657d7199a708e4d3398550d7740c",
     "human_directives": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
-    "control": "2b13447570e203b3efccdc5ded9ecd5bd0503d05",
-    "analyst": "acf01924d3db1fef0cbba3565db8aba2433ab642",
-    "external_before": "fbe44c805bed0eff8b76b9ae19bcccfb5de1bc57"
+    "control": "c4eadd7c199d2430a635edc71a1ae430d5465ece",
+    "analyst": "6eabb82d512db004d2bc411bd494f2bbea584ea4",
+    "external_before": "649c8ee99446343d564882b29f573db2925f8b1a",
+    "effect_gate_branch": "edf5f7629c2049f412777d597713ff3f9b9ac616",
+    "effect_gate_test_bearing": "74536fb9e3063c48d68080e392121175037e3215",
+    "r30_exact_head": "36c2a321767dd6c18606eaeea51d3e818c446a20"
   },
   "genuinely_new_information": true,
   "new_sparkbrain_scientific_result": false,
   "scientific_credit": 0,
-  "history_path": "analysis/external_research_audit/theory/history/2026-10-01/0734-THEORY_SYNTHESIS_ARCHITECT.md",
+  "target_capability": "TRUE_COLD_RESTART_RECONSTRUCTION_PLUS_EXACTLY_ONCE_LOCAL_RECEIPT_FRONTIER_ADMISSION",
+  "proposal": {
+    "durable_issued_source": true,
+    "durable_full_execution_journal": true,
+    "reuse_r30_atomic_world_effect": true,
+    "transactional_receipt_inbox_and_frontier": true,
+    "r27_as_rebuildable_projection": true,
+    "scalar_frontier_baseline": true,
+    "external_physical_exactly_once_claim": false
+  },
   "m1_stop": false,
   "sb003_activation_change": false,
   "mandatory_review_gate": false,
-  "p0": "OPEN_ROOT_CAUSE_UNKNOWN"
+  "p0": "OPEN_ROOT_CAUSE_UNKNOWN",
+  "pointer_debt_observed": {
+    "literature": "LATEST_R55_STATE_R54_OUTSIDE_THEORY_OWNERSHIP",
+    "theory": "NONE_BEFORE_R31_PUBLICATION"
+  },
+  "history_path": "analysis/external_research_audit/theory/history/2026-10-01/1532-THEORY_SYNTHESIS_ARCHITECT.md",
+  "persistence": {
+    "branch": "ops/external-research-audit-handoff",
+    "intended_atomic_multi_file_commit": true,
+    "publication_attempt": 3,
+    "attempt_limit": 5,
+    "force_push": false,
+    "readback_required": true
+  },
+  "hard_floor": {
+    "scientific_experiments": 0,
+    "result_bearing_workflows": 0,
+    "consumed_identities_changed": false,
+    "immutable_evidence_changed": false,
+    "scheduler_changed": false,
+    "work_mode_used": false
+  }
 }
