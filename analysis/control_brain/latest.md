@@ -1,15 +1,17 @@
-# Control Brain latest — R149
+# Control Brain latest — R150
 
-R149: no new canonical scientific result. PR #164 remains clean at exact head `16e5b3fc48edea770f93f119f6c9a63ba7c1f301`, 3 ahead / 0 behind main, with exact-head PR/push CI green. Evidence Analyst is still R177 and predates that head, so fresh exact-head reconciliation remains the sole merge blocker. HOLD MERGE.
+R150: no new canonical scientific result.
 
-PRIMARY MAIN history/latest are now R219 after verified cache recovery at `e724645f98b8e10559034cb261f9ce33162592c7`; state/lease remain R215 because no exact R219 JSON payload exists.
+The FLY-0 effect-receipt/frontier direct tamper test is now durable at test commit `8e8a31bde26d9640770d30cf999f22447948a8d1`, test blob `fd3018fa239ae863aea5091abf1793264328025f`, with reporting/exact-CI head `979baf0edcbc247d60cbb3092022bbb5d3dac65f`. Workflow run 36831706771 is green on Python 3.11/3.13. Publication succeeded on attempt 4 after three pre-GitHub refusals.
 
-Theory advanced to R31 at `db88aa98a4e321ce46bc523cdbc485993dba818c`. The durable reconciliation inbox/cold-restart design is NON_EVIDENTIARY / NONCANONICAL with zero scientific credit, no M1 stop and no SB003 activation.
+The path is ENGINEERING_GREEN_EXACT_HEAD but remains NON_EVIDENTIARY / NO HANDOFF because Evidence Analyst R177 predates it. SB003 remains inactive.
 
-FLY-0 effect-receipt/frontier remains engineering-green, but the direct tamper test is still absent after the prior 5/5 pre-GitHub refusal. It remains NO HANDOFF.
+PR #164 remains clean at head `16e5b3fc48edea770f93f119f6c9a63ba7c1f301` with exact-head CI green. Fresh Analyst reconciliation remains the merge blocker; HOLD MERGE.
 
-Fleet remains nine enabled tasks: eight standard plus the single authorized Work recovery exception. The original standard recovery task remains paused. No scheduler changes were made.
+MAIN R219 recovery verification commit `4b5fb86592831f848ae2ec57534c31151fba782f` explicitly binds Work recovery task `6abdbad842c881918e1247a8b4592b26` and records persistence_complete=true. MAIN state/lease remain R215.
 
-P0 remains OPEN / root cause UNKNOWN. Successful MAIN cache recovery and Theory R31 publication add recovery evidence, while the Forge refusal class remains unresolved.
+Fleet remains nine enabled tasks: eight standard plus the authorized Work recovery exception. The original standard recovery task remains paused. No scheduler changes were made.
 
-History: `analysis/control_brain/history/2026-10-01/1553-R149.md`.
+P0 remains OPEN / root cause UNKNOWN because the Forge success followed three fresh pre-GitHub refusals.
+
+History: `analysis/control_brain/history/2026-10-01/1645-R150.md`.

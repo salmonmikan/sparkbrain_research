@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "generation": "R149",
-  "generation_id": "CTRL-20261001T155354+0900-R149-M1-WAIT-ANALYST-MAIN-R219-LATEST-RECOVERED-THEORY-R31",
-  "generated_at": "2026-10-01T15:53:54+09:00",
+  "generation": "R150",
+  "generation_id": "CTRL-20261001T164550+0900-R150-FORGE-TAMPER-GREEN-WORK-RECEIPT-M1-WAIT-ANALYST",
+  "generated_at": "2026-10-01T16:45:50+09:00",
   "role": "CONTROL_BRAIN",
   "role_resolution": {
-    "actual_start": "2026-10-01T15:53:54+09:00",
-    "resolved_slot": "15:50 JST",
-    "resolution_source": "PREVIOUS_CANONICAL_SLOT",
+    "actual_start": "2026-10-01T16:45:50+09:00",
+    "resolved_slot": "16:50 JST",
+    "resolution_source": "EARLY_GRACE",
     "selected_role": "CONTROL_BRAIN"
   },
   "new_scientific_result": false,
@@ -60,12 +60,14 @@
     },
     "main_reports": {
       "append_only_generation": "R219",
-      "head": "e724645f98b8e10559034cb261f9ce33162592c7",
+      "head": "4b5fb86592831f848ae2ec57534c31151fba782f",
       "latest_generation": "R219",
       "latest_blob": "ff732dafc8c2212e3dccf3ff03cf83e0c22c36c5",
       "state_generation": "R215",
       "lease_generation": "R215",
-      "latest_recovery_commit": "e724645f98b8e10559034cb261f9ce33162592c7"
+      "latest_recovery_publication_commit": "e724645f98b8e10559034cb261f9ce33162592c7",
+      "recovery_verification_commit": "4b5fb86592831f848ae2ec57534c31151fba782f",
+      "recovery_persistence_complete": true
     },
     "external": {
       "head": "db88aa98a4e321ce46bc523cdbc485993dba818c",
@@ -113,23 +115,26 @@
       "status": "OPTIONAL_PREAUTHORIZED_BOUNDED_LOCAL_ACID_COMPARATOR_NO_DIRECT_HANDOFF"
     },
     "effect_receipt_frontier_gate": {
-      "test_bearing_head": "74536fb9e3063c48d68080e392121175037e3215",
-      "reporting_head": "edf5f7629c2049f412777d597713ff3f9b9ac616",
-      "focused_ci_run": 36812964770,
-      "report_ci_run": 36821223187,
+      "prior_test_bearing_head": "74536fb9e3063c48d68080e392121175037e3215",
+      "direct_tamper_test_commit": "8e8a31bde26d9640770d30cf999f22447948a8d1",
+      "exact_ci_head": "979baf0edcbc247d60cbb3092022bbb5d3dac65f",
+      "focused_test_blob": "fd3018fa239ae863aea5091abf1793264328025f",
+      "exact_head_ci_run": 36831706771,
       "ci": "success",
-      "direct_tamper_test_present": false,
-      "direct_tamper_publication_attempts": 5,
-      "direct_tamper_publication_result": "PRE_GITHUB_PLATFORM_SAFETY_REFUSAL_5_OF_5",
+      "python_311_all_steps_green": true,
+      "python_313_all_steps_green": true,
+      "direct_tamper_test_present": true,
+      "direct_tamper_publication_attempts": 4,
+      "direct_tamper_pre_github_refusals_before_success": 3,
+      "direct_tamper_publication_result": "SUCCESS_ATTEMPT_4",
       "analyst_exact_head_reconciliation": false,
       "system_build_handoff": false,
-      "status": "ENGINEERING_GREEN_CORE_FOCUSED_TEST_DIRECT_TAMPER_GAP_PENDING_ANALYST_NO_HANDOFF"
+      "status": "ENGINEERING_GREEN_EXACT_HEAD_DIRECT_TAMPER_COVERED_PENDING_FRESH_ANALYST_NO_HANDOFF"
     },
     "theory_r31": {
       "generation": "R31",
       "head": "db88aa98a4e321ce46bc523cdbc485993dba818c",
       "status": "NON_EVIDENTIARY_NONCANONICAL_INTEGRATION_DESIGN_PROPOSAL",
-      "target_capability": "TRUE_COLD_RESTART_RECONSTRUCTION_PLUS_EXACTLY_ONCE_LOCAL_RECEIPT_FRONTIER_ADMISSION",
       "m1_stop": false,
       "sb003_activation_change": false,
       "scientific_credit": 0
@@ -141,10 +146,11 @@
     "standard_enabled": 8,
     "authorized_work_exception_enabled": 1,
     "work_exception_task_id": "6abdbad842c881918e1247a8b4592b26",
-    "work_exception_latest_run_time": "2026-10-01T15:03:56+09:00",
+    "work_exception_latest_run_time": "2026-10-01T15:57:38+09:00",
     "work_backend_provenance_exposed": false,
-    "latest_repository_recovery_commit": "e724645f98b8e10559034cb261f9ce33162592c7",
-    "latest_recovery_task_id_receipt_present": false,
+    "latest_repository_recovery_commit": "4b5fb86592831f848ae2ec57534c31151fba782f",
+    "latest_recovery_task_id_receipt_present": true,
+    "latest_recovery_receipt_persistence_complete": true,
     "original_standard_recovery_task_id": "6abd34233b188191adc5c7e6c6942d93",
     "original_standard_recovery_enabled": false,
     "all_non_exception_enabled_prompts_standard_only": true,
@@ -159,14 +165,15 @@
     "constant_permission_loss_supported": false,
     "m1_conflict_reconciliation": "RECOVERED_EXACT_HEAD_CI_GREEN",
     "current_m1_gate": "FRESH_ANALYST_EXACT_HEAD_RECONCILIATION",
-    "main_r219_latest_recovery": "SUCCESS",
+    "main_r219_latest_recovery": "VERIFIED_WITH_WORK_TASK_ID_RECEIPT",
     "theory_r31_publication": "SUCCESS_ATTEMPT_3",
-    "forge_direct_tamper_publication": "PRE_GITHUB_REFUSAL_5_OF_5"
+    "forge_direct_tamper_publication": "SUCCESS_ATTEMPT_4_AFTER_3_PRE_GITHUB_REFUSALS",
+    "forge_direct_tamper_exact_head_ci": "SUCCESS"
   },
   "pointer_debt": {
-    "control": "NONE_BEFORE_R149_PUBLICATION",
+    "control": "NONE_BEFORE_R150_PUBLICATION",
     "steward": "NONE_G38_ALIGNED",
-    "analyst": "NONE_R177_ALIGNED_BUT_SEMANTICALLY_STALE_FOR_M1_HEAD_16E5_AND_CURRENT_FORGE_EVIDENCE",
+    "analyst": "NONE_R177_ALIGNED_BUT_SEMANTICALLY_STALE_FOR_M1_HEAD_16E5_AND_FORGE_HEAD_979BAF",
     "main": "APPEND_ONLY_LATEST_R219_STATE_LEASE_R215",
     "literature": "APPEND_ONLY_LATEST_R55_STATE_R54",
     "theory": "NONE_R31_ALIGNED"
@@ -183,6 +190,6 @@
     "publication_attempt": 1,
     "attempt_limit": 5,
     "force_push": false,
-    "history_path": "analysis/control_brain/history/2026-10-01/1553-R149.md"
+    "history_path": "analysis/control_brain/history/2026-10-01/1645-R150.md"
   }
 }
