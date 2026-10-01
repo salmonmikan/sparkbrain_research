@@ -194,6 +194,11 @@ class SentinelCoordinator:
             raise ValueError("immutable original feature tuples required")
         _integer(len(window.sensory), 1, self.caps.context_scalars - 2)
         _integer(len(window.route), 1, self.caps.route_dimensions - 2)
+        for row in window.sensory:
+            if not isinstance(row, tuple) or len(row) != 2:
+                raise ValueError("immutable sensory pairs required")
+            if not isinstance(row[0], str):
+                raise ValueError("sensory channel must be text")
         names = tuple(sorted(name for name, _ in window.sensory))
         if len(set(names)) != len(names) or any(
             not isinstance(name, str) or not name or name in {"temporal_0", "temporal_1"}
@@ -215,7 +220,10 @@ class SentinelCoordinator:
         if not isinstance(window.pulses, tuple) or not 1 <= len(window.pulses) <= 4:
             raise ValueError("bounded immutable pulse tuple required")
         previous = window.start_ms
-        for time_ms, channel, magnitude in window.pulses:
+        for pulse in window.pulses:
+            if not isinstance(pulse, tuple) or len(pulse) != 3:
+                raise ValueError("immutable pulse triples required")
+            time_ms, channel, magnitude = pulse
             _integer(time_ms, window.start_ms, window.input_cutoff_ms)
             if time_ms < previous or not isinstance(channel, str) or not channel:
                 raise ValueError("invalid pulse ordering or channel")

@@ -124,3 +124,34 @@ tuple and each pulse row to be an immutable length-three tuple. All 23 cases ret
 same 64-fixture ceiling. This amendment will be published before executing the corrected
 suite; it is ordinary prototype input-validation repair, not scientific rescue or a new
 model experiment.
+
+## Corrected execution: 23 cases
+
+The C23 amendment was published and independently read back at
+`cda8776fb4c2191412e2cad4c0fb757a2b1e58bb` before the corrected suite ran. That commit
+also preserves the exact first-run prototype/test source, including the input-isolation
+gap. All first-run artifacts and the original 22-case freeze remain unchanged.
+
+With strict nested record validation, all **23 cases passed**, using **32 fake fixtures**.
+C23 rejected all four mutable/malformed record variants before backend advance, with
+identical full before/after state. The measured pytest invocation was 0.137174 seconds,
+with zero SparkBrain module imports and unchanged pre/post source hashes. Original
+expectations were not relaxed.
+
+Corrected evidence is separate:
+[JUnit](../../artifacts/research/assembly_m1_contract_sentinel_20261001/junit-v2.xml),
+[case results](../../artifacts/research/assembly_m1_contract_sentinel_20261001/case_results-v2.json),
+[execution manifest](../../artifacts/research/assembly_m1_contract_sentinel_20261001/execution_manifest-v2.json),
+and [execution result](../../artifacts/research/assembly_m1_contract_sentinel_20261001/execution_result-v2.json).
+The record preserves the exact `pytest.main` arguments; temporary workspace paths are
+execution provenance, not required reproduction locations.
+
+The useful outcome is a small, exercised contract skeleton and explicit rejection cases
+that can guide a later real adapter. It supplies neither real temporal representation
+extraction nor M1 runtime replacement, real checkpoint completeness, global identity
+neutrality, learned adaptation, assembly-specific causality, or predictive benefit.
+
+Independent source review accepted the corrected boundary and separately reran the same
+23 cases: 32 fixtures, zero SparkBrain imports, and unchanged source hashes. No blocking
+finding remained. Scoped Ruff, whitespace and report-link checks passed. Exact-head
+Codex review and CI remain pending at this report revision.

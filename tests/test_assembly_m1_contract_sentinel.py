@@ -265,3 +265,19 @@ def test_c22_single_pending():
         coordinator.observe(window("occ-002", 1), supplied_context=B)
     assert coordinator.inspect() == before
     assert asdict(coordinator._pending.window) == asdict(window())
+
+
+def test_c23_immutable_record_shapes():
+    malformed = (
+        window(pulses=([40, "Q", 1.0],)),
+        window(pulses=((40, "Q"),)),
+        window(sensory=(["signal", 0.0],)),
+        window(sensory=(("signal",),)),
+    )
+    for candidate in malformed:
+        coordinator = make()
+        before = coordinator.inspect()
+        with pytest.raises(ValueError, match="immutable"):
+            coordinator.observe(candidate, supplied_context=A)
+        assert coordinator.inspect() == before
+        assert coordinator.inspect()["_backend"]["advance_calls"] == 0
