@@ -1,0 +1,22 @@
+{
+  "archive_bytes": 64052,
+  "archive_file_count": 53,
+  "archive_format": "tar.xz",
+  "archive_sha256": "cf0d5b5a57589f28a597ceded382c6334579ba1a8b5d1e2f7a795c3b31299405",
+  "execution_source": "7578f7aac1a915da9fc90541f71bdc6bb97b37f0",
+  "parts": [
+    {
+      "bytes": 48632,
+      "path": "evidence-000.b64",
+      "sha256": "6b7814b2f1b2c452be40a5e5f7b2d9be1497a85a3fe06aac5c7a57d4b1ec57af"
+    },
+    {
+      "bytes": 37897,
+      "path": "evidence-001.b64",
+      "sha256": "b6d8bc8808edb89f933669d64ce234de92c999cf6124bf99c3f5d473e4b37648"
+    }
+  ],
+  "raw_bytes": 4688900,
+  "raw_file_count": 47,
+  "schema": "v05-owned-state-transport-1"
+}
