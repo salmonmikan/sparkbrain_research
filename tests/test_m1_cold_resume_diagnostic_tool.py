@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import importlib.util
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -59,3 +61,18 @@ def test_artifact_write_is_no_clobber_and_disk_budget_is_real(tmp_path: Path) ->
 def test_missing_checkpoint_is_not_equal_to_missing_checkpoint(tmp_path: Path) -> None:
     with pytest.raises(FileNotFoundError):
         TOOL.compare_directories(tmp_path / "missing-a", tmp_path / "missing-b")
+
+
+@pytest.mark.parametrize("mode", ["run", "baseline", "observed", "restore", "secondary"])
+def test_cli_existing_output_is_completely_untouched(tmp_path: Path, mode: str) -> None:
+    output = tmp_path / "existing"
+    output.mkdir()
+    (output / "sentinel.bin").write_bytes(b"prior-artifact\x00\xff")
+    before = TOOL.inventory(output)
+    result = subprocess.run(
+        [sys.executable, str(SOURCE), "--mode", mode, "--output", str(output)],
+        capture_output=True, text=True, check=False,
+    )
+    assert result.returncode != 0
+    assert TOOL.inventory(output) == before
+    assert (output / "sentinel.bin").read_bytes() == b"prior-artifact\x00\xff"

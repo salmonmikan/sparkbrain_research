@@ -110,11 +110,13 @@ def runtime_imports() -> tuple[Any, Any]:
 def worker(args: argparse.Namespace, protocol: dict[str, Any]) -> None:
     out = args.output
     out.mkdir(parents=True, exist_ok=False)
+    args.output_created = True
     write_json(out / "STARTED.json", {
         "mode": args.mode, "cut": args.cut, "hashseed": os.environ.get("PYTHONHASHSEED"),
         "protocol_sha256": digest(PROTOCOL.read_bytes()),
         "runner_sha256": digest(Path(__file__).read_bytes()),
         "python": sys.version, "executable": sys.executable, "platform": platform.platform(),
+        "pid": os.getpid(), "parent_pid": os.getppid(),
     })
     budget = protocol["budget"]
     resource.setrlimit(resource.RLIMIT_AS, (budget["max_address_space_bytes_per_worker"],) * 2)
@@ -220,6 +222,7 @@ def worker(args: argparse.Namespace, protocol: dict[str, Any]) -> None:
 def run(args: argparse.Namespace, protocol: dict[str, Any]) -> int:
     out = args.output.resolve()
     out.mkdir(parents=True, exist_ok=False)
+    args.output_created = True
     started = time.monotonic()
     source_files = {str(p.relative_to(ROOT)): digest(p.read_bytes())
                     for p in sorted((ROOT / "src" / "sparkbrain").rglob("*.py"))}
@@ -315,12 +318,13 @@ def main() -> int:
     parser.add_argument("--reference", type=Path)
     parser.add_argument("--cut", type=int, default=0)
     args = parser.parse_args()
+    args.output_created = False
     protocol = json.loads(PROTOCOL.read_bytes())
     if args.mode == "run":
         try:
             return run(args, protocol)
         except Exception as exc:
-            if args.output.is_dir() and not (args.output / "RUN_ERROR.json").exists():
+            if args.output_created and not (args.output / "RUN_ERROR.json").exists():
                 write_json(args.output / "RUN_ERROR.json", {
                     "status": "incomplete_infrastructure_or_runner",
                     "type": type(exc).__name__, "error": str(exc),
@@ -331,7 +335,7 @@ def main() -> int:
         worker(args, protocol)
         return 0
     except Exception as exc:
-        if args.output.is_dir() and not (args.output / "ERROR.json").exists():
+        if args.output_created and not (args.output / "ERROR.json").exists():
             write_json(args.output / "ERROR.json", {"type": type(exc).__name__, "error": str(exc),
                                                    "traceback": traceback.format_exc()})
         traceback.print_exc()

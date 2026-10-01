@@ -136,3 +136,9 @@ fresh-interpreter/full-byte scope complements PR #164. Four requested boundaries
 were clarified prospectively: per-matrix versus reproduction budgets, unexpected
 pending-cycle commit accounting, observer-control limits, and separate byte/behavior
 divergence classification. Review involved no runtime execution.
+
+The independent runner audit caught a pre-execution error-handler no-clobber
+defect: a rejected existing output directory could receive a new error file.
+Output ownership is now tracked explicitly, with CLI-level synthetic regression
+checks for all five modes proving every pre-existing byte remains untouched.
+This repair occurred before any M1 diagnostic run.
