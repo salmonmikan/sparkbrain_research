@@ -1,0 +1,346 @@
+{
+  "arms": {
+    "C": {
+      "eligibility_decay": 0.9,
+      "enable_weight_learning": true,
+      "learning_rate": 0.001
+    },
+    "Fw": {
+      "eligibility_decay": 0.9,
+      "enable_weight_learning": false,
+      "learning_rate": 0.001
+    },
+    "G": {
+      "eligibility_decay": 0.9,
+      "enable_weight_learning": true,
+      "learning_rate": 0.0001
+    },
+    "L": {
+      "eligibility_decay": 0.0,
+      "enable_weight_learning": true,
+      "learning_rate": 0.001
+    }
+  },
+  "budget": {
+    "extra_runtime_guard_calls": 0,
+    "memory_branch_loads": 8,
+    "memory_pairs": 256,
+    "model_wrapper_constructions": 26,
+    "new_prefix_pairs": 0,
+    "order": "fixtures in listed order; return,stationary,novel; v05 arms then memory arms in listed order; sequential worker per branch",
+    "parameter_grid": false,
+    "reproductions": 0,
+    "retries": 0,
+    "total_outcome_calls": 768,
+    "total_pairs": 768,
+    "total_prediction_calls": 768,
+    "v05_branch_loads": 18,
+    "v05_constructions_from_published_load": 36,
+    "v05_native_load_calls": 18,
+    "v05_pairs": 512
+  },
+  "classification": "PROSPECTIVE_NONCANONICAL_NON_EVIDENTIARY",
+  "common_v05": {
+    "enable_action": false,
+    "enable_delay_learning": false,
+    "enable_homeostasis": true,
+    "enable_reward_modulation": false,
+    "learn_assembly": true,
+    "learn_field": true,
+    "topology_seed": 41
+  },
+  "conditions": {
+    "novel": {
+      "balanced_blocks": [
+        {
+          "counts": {
+            "0": 8,
+            "1": 8
+          },
+          "rows": 16,
+          "start": 0
+        },
+        {
+          "counts": {
+            "0": 8,
+            "1": 8
+          },
+          "rows": 16,
+          "start": 16
+        }
+      ],
+      "cue_orders": [
+        "ACF",
+        "CAF"
+      ],
+      "memory_arms": [
+        "H",
+        "R"
+      ],
+      "outcomes": [
+        0,
+        1
+      ],
+      "rows": 32,
+      "v05_arms": [
+        "C",
+        "L",
+        "Fw"
+      ]
+    },
+    "return": {
+      "cue_orders": [
+        "AFC"
+      ],
+      "memory_arms": [
+        "H",
+        "R"
+      ],
+      "outcomes": [
+        0
+      ],
+      "rows": 32,
+      "v05_arms": [
+        "C",
+        "L",
+        "G",
+        "Fw"
+      ]
+    },
+    "stationary": {
+      "cue_orders": [
+        "CFA"
+      ],
+      "memory_arms": [],
+      "outcomes": [
+        1
+      ],
+      "rows": 16,
+      "v05_arms": [
+        "C",
+        "L"
+      ]
+    }
+  },
+  "decision": {
+    "Fw": "Separate assembly/readout acquisition from weights/delays. Fw prediction success does not prove field-learning benefit.",
+    "memory_baselines": "Report H/R return and novel comparisons; no general superiority gate or stationary comparator claim.",
+    "novel": {
+      "L_actual_absolute_weight_change_positive": true,
+      "L_early_minus_late_brier_at_least": 0.02,
+      "L_late_correct_at_least": 12,
+      "L_late_correct_minus_early_correct_at_least": 2,
+      "L_late_correct_per_label_at_least": 6,
+      "L_late_coverage_at_least_early": true,
+      "ceiling_outcome": "acquisition_inconclusive; overall supported gate cannot pass; never alter inputs or thresholds after outcomes",
+      "early_ceiling_if_brier_below": 0.02,
+      "early_ceiling_if_correct_at_least": 15,
+      "early_indices": [
+        0,
+        15
+      ],
+      "late_L_correct_at_least_C_minus": 1,
+      "late_L_coverage_at_least_C": true,
+      "late_L_minus_C_brier_at_most": 0.02,
+      "late_indices": [
+        16,
+        31
+      ],
+      "per_block_label_counts": [
+        8,
+        8
+      ]
+    },
+    "overall": "Primary return AND secondary return AND stationary preservation AND informative novel acquisition/preservation for each fixture. Missing/incomplete/invalid rows cannot pass.",
+    "primary_return": {
+      "C_equals_L": "fail",
+      "C_minus_L_brier_at_least": 0.02,
+      "L_correct_at_least_C": true,
+      "L_coverage_at_least_C": true
+    },
+    "scope": "Each fixture separately; both must meet gates. No significance/population claim.",
+    "secondary_return": {
+      "G_minus_L_brier_at_least": 0.02,
+      "residual_gain_confound": "Single analytic steady-state control does not remove all finite-horizon/history-dependent gain explanations."
+    },
+    "stationary": {
+      "L_correct_at_least_C_minus": 1,
+      "L_coverage_at_least_C": true,
+      "L_minus_C_brier_at_most": 0.02,
+      "rows": 16
+    }
+  },
+  "execution_authorized": false,
+  "execution_runner_present": false,
+  "fixtures": [
+    {
+      "prefix_seed": 910071,
+      "suffix_seed": 910075
+    },
+    {
+      "prefix_seed": 910072,
+      "suffix_seed": 910076
+    }
+  ],
+  "input_contract": {
+    "cue_jitter_range_ms": [
+      -0.35,
+      0.35
+    ],
+    "cue_magnitude": 1.18,
+    "cue_offsets_ms": [
+      8,
+      13,
+      15
+    ],
+    "cycle_ms": 200,
+    "distractor_channels": "HIJKLM",
+    "distractor_count": 2,
+    "distractor_magnitude": 0.025,
+    "distractor_time_range_ms": [
+      0,
+      36
+    ],
+    "first_cycle": 64,
+    "forbidden_model_fields": [
+      "outcome",
+      "receipt_time_ms",
+      "condition",
+      "prefix_seed",
+      "suffix_seed",
+      "arm",
+      "target",
+      "regime",
+      "split"
+    ],
+    "model_keys": [
+      "occurrence_id",
+      "start_ms",
+      "pulses"
+    ],
+    "occurrence_id": "occ-{64+index:06d}; same IDs across independent suffix branches, no condition/seed/target encoding",
+    "prediction_offset_ms": 72,
+    "pulse_fixed_fields": {
+      "location": null,
+      "metadata": {},
+      "novelty": 0.0,
+      "polarity": 1,
+      "prediction_error": 0.0,
+      "source_id": "probe-input"
+    },
+    "query_channel": "Q",
+    "query_magnitude": 1.18,
+    "query_offset_ms": 40,
+    "receipt_offset_ms": 80,
+    "rng": {
+      "family": "Python random.Random seeded by int(SHA256(UTF-8 key).hexdigest(),16)",
+      "novel_block_key": "retention-v1|{suffix_seed}|novel-order|{block_index}",
+      "novel_order": "Construct [0]*8+[1]*8 for each block independently, then rng.shuffle once. No random target/count draws. Mapping0->ACF/outcome0 and1->CAF/outcome1 fixed.",
+      "pairing": "Every arm receives identical bytes for its fixture/condition. Distractor RNG is outcome-independent, shared across arms; no target-based reseeding or branching.",
+      "row_draw_order": [
+        "distractor1 randrange(6)",
+        "distractor1 uniform(0,36)",
+        "distractor2 randrange(6)",
+        "distractor2 uniform(0,36)",
+        "cue1 uniform(-.35,.35)",
+        "cue2 uniform(-.35,.35)",
+        "cue3 uniform(-.35,.35)"
+      ],
+      "row_key": "retention-v1|{suffix_seed}|{condition}|{row_index}"
+    },
+    "settle_ms": 32
+  },
+  "intervention_boundary": {
+    "L_semantics": "Each apply starts with e_old multiplied by0; for currently coactive plastic edges with nonzero signed current STDP sum delta, e_new=delta and weight=clip(weight+0.001*reward_trace*delta). Exactly one apply per occurrence. No separate eligibility clearing, episode reset or state reset.",
+    "accounting": "Record pre-apply eligibility, decayed carry, signed current delta, unclipped proposal, clipped actual signed/absolute weight change, update eligibility, and clipping flags without extra apply calls.",
+    "baseline_semantics": "C/G: e_new=0.9*e_old+delta only on currently eligible nonzero-delta edges; no current pre/post or delta=0 means no weight write. All stored traces still decay per apply.",
+    "delay_boundary": "No delay writes in any v05 branch; compare complete delay maps to restored prefix after every occurrence. Conditional fixed-delay question, not equivalence to the live-delay default full model.",
+    "homeostasis": "Remains live; do not set learn_field=False. No claim of isolated weight trajectories independent of homeostasis.",
+    "when": "After one native restoration per branch and before first suffix process_episode; replace only specified plasticity-config fields and corresponding brain learning flags, preserving all other state."
+  },
+  "limitations": [
+    "Restricted native-restored prefix question, not full live-graph rollback/ownership",
+    "PR176 mature acquired-state transaction coverage remains blocked",
+    "Exposed169prefixes; no new training replicate or confirmatoryholdout",
+    "No173unpublished outcome/raw reuse",
+    "No production runtime or scheduler/authority changes",
+    "No claim that frozenweights are generally superior or that novelty/biological/energy benefit is established"
+  ],
+  "metrics": {
+    "additional": [
+      "first-suffix prediction equality within v05 arms",
+      "early/late novel learning curves",
+      "assembly selection and fixed-prototype match",
+      "count-readout updates",
+      "current-STDP versus eligibility-carry contribution",
+      "signed/absolute weight writes",
+      "delay map equality",
+      "clipping",
+      "spikes/arrivals",
+      "native wrong-to-correct versus wrong-to-abstain differences"
+    ],
+    "bin_convention": "left-closed right-open, finalbin includes1; empty bins null; raw count,mean probability,outcome fraction only; no calibration fit",
+    "brier": "Mean (p1-outcome)^2 on every allocated row, including abstention; use Python math.fsum of double-precision row losses divided by exact row count; compare unrounded values.",
+    "native": [
+      "correct/total",
+      "correct/nonabstaining or null ifzero",
+      "wrong/total",
+      "abstain/total",
+      "coverage"
+    ],
+    "probability": "Published wrapper Laplace count adapter unchanged, separate from native confidence.",
+    "probability_bins": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ]
+  },
+  "pre_execution_requirements": [
+    "Publish and read back protocol, exact inputs/jobs/prefix sources and source hashes",
+    "Independent source review of these preparation artifacts",
+    "Implement/source-review a separate bounded execution runner and model-free tests",
+    "Freeze execution runner, interpreter/dependencies, counters, deadlines/output enforcement and output-root absence",
+    "Use only allocated observations or source/static guards; any extra runtime probe requires prospective budget change before execution",
+    "Obtain explicit approval of exact reviewed execution freeze; this preparation is not that approval",
+    "Bind actual worker-loaded runtime, interpreter/stdlib/dependencies to independent authoritative execution pins before method admission; a Git-blob inventory alone is not loaded-code verification"
+  ],
+  "preparation_only": true,
+  "proposal": "docs/research/plasticity_retention_design_20261001.md",
+  "public_prefix_source": {
+    "archive_sha256": "2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082",
+    "prefix_occurrences": 64,
+    "regenerate_prefix": false,
+    "status": "exposed development fixtures, not independent training replicates or confirmatory heldout data",
+    "transport_directory": "artifacts/research/temporal_reuse_loop_20261001",
+    "wrapper_sha256": "28ea3207cc5b9a2cce2219df7754a22cd8f05c83915eb4962630450dc0e220ae",
+    "wrapper_source": "scripts/temporal_reuse_loop_probe.py"
+  },
+  "resources": {
+    "aggregate_cpu_seconds": 360,
+    "driver_and_worker_address_space_bytes": 536870912,
+    "execution_mode": "future CPU-only sequential subprocess per branch; not implemented/enforced by this preparation",
+    "failure": "Stop admitting work on any resource/measurement/integrity failure, preserve partial rows and method intents/completions; no retry; no clean rerun. Threshold is admission/checkpoint, not instantaneous filesystem quota.",
+    "max_driver_terminal_metadata_bytes": 524288,
+    "max_worker_terminal_metadata_bytes": 131072,
+    "memory_worker_cpu_seconds": 3,
+    "memory_worker_wall_seconds": 5,
+    "network": "offline runtime; required enforcement and its actual layer must be declared/tested before execution.",
+    "ordinary_output_bytes": 264241152,
+    "output_safety": "fresh absent output disjoint from original archive and snapshots; bounded pipe draining, projected writes before admission, exact truncation/overshoot accounting, capped failure metadata only inside reserve.",
+    "output_total_bytes": 268435456,
+    "overall_wall_seconds": 480,
+    "reserved_failure_metadata_bytes": 4194304,
+    "rss": "Measure driver and each worker peakRSS separately; address-space limit is not RSS measurement.",
+    "stderr_bytes_per_worker": 65536,
+    "stdout_bytes_per_worker": 65536,
+    "terminal_metadata_arithmetic": "26*131072+524288=3932160 <=4194304 reserve; reserve is WITHIN256MiB, never additive",
+    "v05_worker_cpu_seconds": 16,
+    "v05_worker_wall_seconds": 20
+  },
+  "runtime_source_commit": "f3eda0045a5e4dfd777ffbc619123e0b3b5011e7",
+  "schema_version": 1,
+  "scientific_credit": 0,
+  "study_id": "plasticity-retention-locality-20261001-v1"
+}
