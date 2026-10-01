@@ -1,29 +1,52 @@
-# External Literature Reduction Scout R54
+# External Literature Reduction Scout R55
 
-generation_id: LIT-20261001T063344+0900-R54-ATOMIC-COMMIT-EXTERNAL-EFFECT-PRIORART
-produced_at: 2026-10-01T06:33:44+09:00
+generation_id: LIT-20261001T123446+0900-R55-COLD-RESTART-FRONTIER-INBOX-PRIORART
+produced_at: 2026-10-01T12:34:46+09:00
 role: LITERATURE_REDUCTION_SCOUT
 status: NON_EVIDENTIARY / NONCANONICAL
 genuinely_new_information: true
 new_sparkbrain_scientific_result: false
 scientific_credit: 0
 
-Freshness: directive index head 8ce979b9ec0bc7eede5225c0403698f8886d3e8d, blob 1ba1e173344f36e14d0e21e6f3e823254e031f7d, unchanged. Inputs: Control R143, Evidence Analyst R176, Theory R29, Audit R15, prior Literature R53.
+Freshness: active Human Directive index blob 1ba1e173344f36e14d0e21e6f3e823254e031f7d matches Literature R54; current Control R146 records directive-index head 8ce979b9ec0bc7eede5225c0403698f8886d3e8d, so directive delta is false. Inputs: Control R146, Evidence Analyst R176, Theory R30, Audit R15, prior Literature R54.
 
 ## Findings
 
-1. Kafka external-output guidance — DESIGN_PRIMITIVE / SYSTEM_LEVEL_COMPARATOR / NOVELTY_REDUCTION. Co-locating processing position and output in one transactional destination supplies the core local issue-to-WORLD commit/progress join. It does not make unrelated remote or physical effects atomic. Source: https://kafka.apache.org/design/
+1. Naiad / Timely Dataflow progress frontiers — DESIGN_PRIMITIVE / SYSTEM_LEVEL_COMPARATOR / NOVELTY_REDUCTION.
+   Function: logical timestamps plus a progress frontier; with partial orders the frontier is an antichain rather than a single scalar. Comparator for R27-style “nothing earlier can still arrive” semantics.
+   Limitations: progress tracking is not semantic provenance validation; if WORLD order is total, a scalar watermark is simpler.
+   Must not imply: causal-frontier novelty, biological causality, or fly-topology advantage.
+   Sources: https://www.microsoft.com/en-us/research/publication/naiad-a-timely-dataflow-system-2/ ; https://docs.rs/timely/latest/timely/progress/index.html
 
-2. Transactional outbox — DESIGN_PRIMITIVE / SYSTEM_LEVEL_COMPARATOR / NOVELTY_REDUCTION. One local transaction can persist a domain/WORLD mutation and a durable issue/action-bound commit record together. Relay duplication still requires idempotence and the pattern does not prove external WORLD truth. Source: https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html
+2. Apache Flink consistent checkpoints — DESIGN_PRIMITIVE / SYSTEM_LEVEL_COMPARATOR / NOVELTY_REDUCTION.
+   Function: checkpoint replayable source positions together with state, restore both after failure, and replay from the checkpoint.
+   Limitations: replayable source and durable state are required; end-to-end exactly-once further needs transactional or idempotent sinks.
+   Must not imply: checkpoint success proves remote actuation or scientific novelty.
+   Sources: https://nightlies.apache.org/flink/flink-docs-master/docs/learn-flink/fault_tolerance/ ; https://nightlies.apache.org/flink/flink-docs-release-2.3/docs/connectors/datastream/guarantees/
 
-3. ARIES / SQLite atomic transactions — DESIGN_PRIMITIVE / NOVELTY_REDUCTION. WAL/ACID recovery already supplies crash-atomic persistence for local WORLD state plus its commit row. Semantic anti-cross-wire identity remains application-level and local durability does not prove remote actuation. Sources: https://research.ibm.com/publications/aries-a-transaction-recovery-method-supporting-fine-granularity-locking-and-partial-rollbacks-using-write-ahead-logging ; https://www.sqlite.org/atomiccommit.html ; https://www.sqlite.org/transactional.html
+3. Temporal-style durable event-history replay — DESIGN_PRIMITIVE / SYSTEM_LEVEL_COMPARATOR / NOVELTY_REDUCTION.
+   Function: reconstruct in-memory workflow state after process loss by deterministic replay of durable event history; prior completed operations resolve from history instead of executing again.
+   Limitations: workflow replay must remain deterministic; external operations are outside replay and retries still require idempotency/effect identity.
+   Must not imply: novel cognition/memory/biological recurrence or exactly-once external-world execution.
+   Sources: https://docs.temporal.io/tasks ; https://docs.temporal.io/workflow-definition
 
-4. Sagas — DESIGN_PRIMITIVE / SYSTEM_LEVEL_COMPARATOR / NOVELTY_REDUCTION. Once action leaves the local atomic domain, use durable intent -> external action -> acknowledgement/observation -> completion or compensation. Compensation is semantic repair, not literal undo, and some actions are irreversible. Source: https://doi.org/10.1145/38713.38742
+4. Transactional idempotent-consumer / inbox — DESIGN_PRIMITIVE / NOVELTY_REDUCTION.
+   Function: commit a stable receipt/dedup key and consumer state update in the same transaction, with a unique constraint resolving duplicate races. This maps to “receipt accepted + frontier advanced” as one idempotent commit.
+   Limitations: only protects state in that transaction; external/physical effects still need explicit uncertainty/acknowledgement/compensation handling.
+   Must not imply: a local inbox marker proves external WORLD truth or end-to-end exactly-once actuation.
+   Source: https://learn.microsoft.com/ja-jp/azure/architecture/patterns/idempotent-consumer
 
 ## SparkBrain consequence
 
-For a deterministic local synthetic WORLD, compare R29 first against one ACID transaction containing WORLD mutation plus a unique issue/action-bound world_commit row, then reconcile journal/receipt and advance the causal frontier. A bespoke commit-certificate layer should only remain if it provides tested value beyond this established architecture.
+R54 reduced local WORLD commit durability to established ACID/WAL/outbox machinery. R55 reduces the next seam: cold restart, receipt replay and causal-progress admission also have established counterparts.
 
-For remote APIs/devices/physical actions, keep local intent, external effect/acknowledgement, and compensation distinct. A local ledger row proves local bookkeeping, not the external effect itself.
+Baseline for R30 -> receipt/frontier:
+1. persist reconstructible issue/execution/effect history or a complete checkpoint plus replay position;
+2. after process loss rebuild runtime provenance only from durable state/history, never surviving in-memory objects;
+3. validate exact issue/effect/receipt identity;
+4. atomically commit receipt-dedup marker and frontier advance;
+5. keep a scalar frontier when WORLD time is total; use an antichain only if incomparable progress dimensions are real.
 
-No Revisit trigger. No M1 stop. No SB003 activation change. No mandatory review gate. P0 remains OPEN / root cause UNKNOWN. Control currently has an owner-stream pointer mismatch: latest R143 while state.json reports R141; this Literature role did not repair it.
+A bespoke cold-restart certificate/frontier structure therefore carries zero novelty by default and should survive only if focused replacement tests show capability not supplied by event-history/checkpoint + inbox + scalar-watermark baselines.
+
+No Revisit trigger. No M1 stop. No SB003 activation change. No mandatory review gate. P0 remains OPEN / root cause UNKNOWN. Literature R54 was already reconciled before this run.
