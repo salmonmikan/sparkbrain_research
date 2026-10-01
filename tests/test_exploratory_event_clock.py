@@ -192,4 +192,37 @@ def test_implementation_failure_is_retained(tmp_path, monkeypatch):
     failure = json.loads((output / "failure.json").read_bytes())
     assert failure["status"] == "IMPLEMENTATION_FAILURE"
     assert failure["completed_rows"] == 0
+    assert failure["declared_source_checkpoint"] == "1" * 40
+    assert failure["protocol_sha256"] == runner.PROTOCOL_SHA256
+    assert failure["runner_sha256"] == runner.sha256(Path(runner.__file__).read_bytes())
+    assert failure["runtime_git_blobs"] == runner.load_protocol()["runtime_git_blobs"]
+    assert failure["runtime_sha256"] == runner.verify_runtime(runner.load_protocol())
+    assert failure["failing_cell"] == condition()
+    assert failure["failure_stage"] == "run_cell"
+    assert failure["retained_files"]["raw_episodes.jsonl"]["sha256"] == runner.sha256(b"")
     assert (output / "raw_episodes.jsonl").read_bytes() == b""
+
+
+def test_partial_failure_binds_retained_rows_and_failing_cell(tmp_path, monkeypatch):
+    first = condition(padding_kind="sensory")
+    second = condition(padding_kind="reward")
+    monkeypatch.setattr(runner, "cells", lambda protocol: [first, second])
+    original = runner.run_episode
+
+    def fail_second(cell, protocol):
+        if cell == second:
+            raise RuntimeError("synthetic failure in second cell")
+        return original(cell, protocol)
+
+    monkeypatch.setattr(runner, "run_episode", fail_second)
+    output = tmp_path / "partial"
+    with pytest.raises(RuntimeError, match="synthetic failure"):
+        runner.produce(output, "2" * 40)
+    raw = (output / "raw_episodes.jsonl").read_bytes()
+    failure = json.loads((output / "failure.json").read_bytes())
+    assert failure["completed_rows"] == 1
+    assert failure["failing_cell"] == second
+    assert failure["retained_files"]["raw_episodes.jsonl"] == {
+        "sha256": runner.sha256(raw), "bytes": len(raw)
+    }
+    assert raw == runner.canonical(original(first, runner.load_protocol()))

@@ -246,31 +246,51 @@ def produce(output: Path, source_commit: str, protocol_path: Path = PROTOCOL) ->
         raise ValueError("source_commit must be the readback-verified source checkpoint")
     protocol = load_protocol(protocol_path)
     runtime_hashes = verify_runtime(protocol)
+    provenance = {
+        "base_commit": protocol["base_commit"],
+        "declared_source_checkpoint": source_commit,
+        "checkpoint_note": "GitHub source readback is verified outside this offline runner",
+        "runner_sha256": sha256(Path(__file__).read_bytes()),
+        "protocol_sha256": PROTOCOL_SHA256,
+        "runtime_sha256": runtime_hashes,
+        "runtime_git_blobs": protocol["runtime_git_blobs"],
+    }
     output.mkdir(parents=True, exist_ok=False)
     rows = []
+    active_cell = None
+    stage = "open_raw"
     try:
         with (output / "raw_episodes.jsonl").open("wb") as raw:
             for cell in cells(protocol):
+                active_cell = cell
+                stage = "run_cell"
                 row = run_episode(cell, protocol)
+                stage = "write_raw"
                 raw.write(canonical(row))
                 raw.flush()
                 rows.append(row)
+        active_cell = None
+        stage = "write_summary"
         (output / "summary.json").write_bytes(canonical(summarize(rows)))
         manifest = {
-            "status": protocol["status"], "base_commit": protocol["base_commit"],
-            "declared_source_checkpoint": source_commit,
-            "checkpoint_note": "GitHub source readback is verified outside this offline runner",
-            "runner_sha256": sha256(Path(__file__).read_bytes()),
-            "protocol_sha256": PROTOCOL_SHA256, "runtime_sha256": runtime_hashes,
-            "runtime_git_blobs": protocol["runtime_git_blobs"], "episodes": len(rows),
+            "status": protocol["status"], **provenance, "episodes": len(rows),
             "files": {name: sha256((output / name).read_bytes())
                       for name in ("raw_episodes.jsonl", "summary.json")},
         }
+        stage = "write_manifest"
         (output / "manifest.json").write_bytes(canonical(manifest))
     except Exception as exc:
         (output / "failure.json").write_bytes(canonical({
+            **provenance,
             "status": "IMPLEMENTATION_FAILURE", "completed_rows": len(rows),
             "error_type": type(exc).__name__, "error": str(exc),
+            "failure_stage": stage, "failing_cell": active_cell,
+            "retained_files": {
+                name: {"sha256": sha256((output / name).read_bytes()),
+                       "bytes": (output / name).stat().st_size}
+                for name in ("raw_episodes.jsonl", "summary.json", "manifest.json")
+                if (output / name).is_file()
+            },
         }))
         raise
 
