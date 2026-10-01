@@ -15,7 +15,7 @@ The strongest next bounded question is whether M1 can accept a fresh, opposite-s
 All source links below are pinned to the audited commit.
 
 1. **Legacy engine gate.** `sparkbrain.engine.SparkBrain` calls its inline `_evaluate_coalitions` after hypothesis-target events or Spark firing, then `_maybe_ignite`. These are methods, not a `CoalitionManager` or `Workspace` class. This is the path tested by PR #166: [event dispatch](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/engine.py#L280-L310), [scoring and ignition](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/engine.py#L386-L541).
-2. **Versioned v03/v032 gate.** `IntegratedV03Brain` constructs `v03_seed.CoalitionGate` and calls its `evaluate` method. That method defaults to `LEGACY_MODE = "legacy_v03_seed"`; this is a different implementation from item 1. Its bounded C14 mode is available but is not selected by this call. [Construction](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/v03/runtime.py#L256-L267), [call](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/v03/runtime.py#L737-L749), [mode dispatch](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/v03_seed/coalition.py#L10-L11).
+2. **Versioned v03/v032 gate.** `IntegratedV03Brain` constructs `v03_seed.CoalitionGate` and calls its `evaluate` method. That method defaults to `LEGACY_MODE = "legacy_v03_seed"`; this is a different implementation from item 1. Its bounded C14 mode is available but is not selected by this call. [Construction](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/v03/runtime.py#L256-L267), [call](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/v03/runtime.py#L737-L749), [mode dispatch](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/v03_seed/coalition.py#L104-L116).
 3. **M1 decision rule.** M1 acts when an explicit predictive-bank decision and a route-local candidate agree. Its outer action is not selected by either item 1 or the v03 reference action. [M1 observation/action rule](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/integrated_m1.py#L390-L443).
 
 ### Entry points that still reach the PR #166 implementation
@@ -42,7 +42,7 @@ These paths make PR #166 relevant to compatibility/reference behavior. They do n
 Successful M1 processing is:
 
 1. `IntegratedM1Session.cycle` requests the current observation, calls `pilot.observe`, resolves the chosen action in the world, and calls `pilot.apply_outcome`. [Session](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/integrated_m1.py#L633-L663)
-2. `PredictiveRevisionPilot.observe` reads the raw sensory values into its own context and executes `reference_brain.step(sample)`. The v032 facade directly executes v03. [SB001 observation](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/predictive_revision.py#L250-L299), [v032 facade](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/v032/runtime.py#L91-L167)
+2. `PredictiveRevisionPilot.observe` reads the raw sensory values into its own context and executes `reference_brain.step(sample)`. The v032 facade directly executes v03. [SB001 observation](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/predictive_revision.py#L250-L299), [v032 facade](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/v032/runtime.py#L91-L159)
 3. SB001 chooses among explicit predictive hypotheses by context distance and an ambiguity rule. `reference_action` and `reference_state_hash` are returned as additional fields; they are not arguments to this selection.
 4. M1 reads the predictive decision/scalar/state ID and the independently queried route-local candidate. It does not read `prediction.reference_action` or `prediction.reference_state_hash` when constructing `M1Action`. [Agreement rule](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/integrated_m1.py#L407-L439)
 5. Later outcome first updates or splits one explicit predictive hypothesis. It then supplies an alpha/beta candidate, derived from the outcome sign, to SB002. SB002 selects route-local hypotheses using clipped accumulated supports, softmax confidence and margin, without calling either legacy Coalition gate. [Predictive revision](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/predictive_revision.py#L362-L433), [scope selection](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/causal_scope_revision.py#L482-L537), [M1 outcome bridge](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/integrated_m1.py#L475-L525)
@@ -59,7 +59,9 @@ M1 maps nonnegative outcomes to alpha and negative outcomes to beta. If SB002 re
 
 The built-in world uses only signal 0.0 or 0.45 and outcomes +0.8 or -0.8 respectively, modified by at most 0.1 by the action. Action effects therefore never reverse the sign for a given routing vector. [World](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/integrated_m1.py#L571-L592)
 
-Consequently, repeated deterministic-world success does not answer whether M1 can revise through an opposite outcome at exactly the same observed routing context. The guard is explicitly tested at the SB002 component level; the missing question is its integrated effect on selective revision, pending-event liveness and exact-versus-near-identical input boundaries. No existing guard is to be weakened merely to make this diagnostic succeed.
+Consequently, repeated deterministic-world success does not answer whether M1 can revise through an opposite outcome at exactly the same observed routing context. The guard is explicitly tested at the SB002 component level; the missing question is its integrated-pilot effect on selective revision, pending-event liveness and exact-versus-near-identical input boundaries. No existing guard is to be weakened merely to make this diagnostic succeed.
+
+Important API boundary: direct `IntegratedM1Pilot.apply_outcome` restores the pre-outcome pending state, whereas `IntegratedM1Session.cycle` catches an exception and restores both pilot and world from the pre-cycle checkpoint. The normal session route therefore does not retain that pending observation. Any pending-event blockage measured by the proposed direct-pilot driver is a Pilot-API observation, not a demonstrated session deadlock or system-wide liveness failure. [Outer rollback](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/integrated_m1.py#L643-L663)
 
 ## Proposed next protocol, not executed
 
@@ -71,7 +73,7 @@ Use public `IntegratedM1Pilot` observation/outcome APIs in an independent diagno
 
 Eight deterministic cases:
 - Two target contexts: routing/sensory scalar 0.0 with baseline outcome +0.8, or 0.45 with baseline outcome -0.8
-- In each case, bootstrap both contexts in the same order using fresh event and receipt IDs, times 0 and 1
+- Start each case with a fresh default `IntegratedM1Pilot`. Bootstrap scalar 0.0 / outcome +0.8 first, then scalar 0.45 / outcome -0.8, using fresh event and receipt IDs at times 0 and 1
 - Four probe arms at time 2:
   1. exact target routing features, same-sign outcome (original control)
   2. exact target routing features, opposite-sign outcome (reversal)
@@ -82,7 +84,9 @@ Eight deterministic cases:
 
 ### Fixed budget and observations
 
-Each case attempts three observation/outcome pairs. Capture complete JSON-safe pilot state and state hash before and after every call, all inputs/actions/revisions, exact exceptions and reasons, predictive hypotheses, scope supports/evidence/identity bindings, sequence and pending state.
+Each case attempts three observation/outcome pairs. Capture the JSON-safe pilot inspection and state hash before and after every call, all inputs/actions/revisions, exact exceptions and reasons, predictive hypotheses, scope supports/evidence/identity bindings, sequence and pending state.
+
+Inspection hashes alone are insufficient for a full-rollback claim: the nested v03 inspection omits CoalitionGate stability/signatures, RNG and other internals. Also retain and compare the supported canonical component checkpoints from `PilotCheckpointManager.save` (including `reference-brain.json` from the direct v032 serializer) and `ScopeRevisionCheckpointManager.save`, alongside all compositor pending/event/receipt/trace/sequence fields from inspection. Use fresh no-clobber directories; compare parsed canonical payloads without discarding semantic fields. Repeated serialization must be state-neutral. If only inspection snapshots can be captured, narrow the report to inspection-visible rollback and mark complete serialized-state verification blocked. [Inspection boundary](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/v03/runtime.py#L362-L393), [predictive checkpoint](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/predictive_revision.py#L593-L615), [scope checkpoint](https://github.com/salmonmikan/sparkbrain_research/blob/3cb955cd42474b36d2d37617e5390d08656c06f1/src/sparkbrain/system_build/causal_scope_revision.py#L903-L920)
 
 Then perform two fixed integrity probes:
 1. Re-deliver the exact probe receipt once. On successful first delivery it should be idempotent; after rejection it is a retry of an uncommitted receipt, not duplicate committed evidence
@@ -96,12 +100,14 @@ Keep failing cases and raw snapshots. No failed receipt may be dropped or replac
 
 Source-derived predictions:
 - Original and null controls commit the probe
-- Exact reversals reject through `identical_observation_conflict`, preserve the complete pre-outcome state and leave the original pending observation unresolved
+- Exact reversals reject through `identical_observation_conflict`, preserve the complete pre-outcome state and leave the original pending observation unresolved in this direct-Pilot-API driver
 - A 0.000001 routing offset avoids the exact digest match while remaining in the original routing neighborhood; whether the whole integrated commit succeeds must be observed, not assumed
 - If exact reversal commits, or rejection changes any pre-outcome state, preserve the result and stop for source/contract reconciliation
 - If the near-alias changes route, hits another guard or fails differently, report that boundary instead of adjusting the offset
 
-The primary result is a transaction/identity boundary and its pending-event consequence. This is not yet evidence of adaptation quality, route learning, robustness under natural noise or comparative performance.
+A near-alias commit must not be mistaken for successful adaptation: opposite support can leave the scope probabilities tied and the next predictive observation ambiguous. Record the fourth action and reason as well as whether its call succeeded.
+
+The primary result is a transaction/identity boundary and its direct-Pilot-API pending-event consequence. The independent scripted driver does not execute `IntegratedM1Session.cycle` or establish its liveness under a modified world. This is not yet evidence of adaptation quality, route learning, robustness under natural noise or comparative performance.
 
 ### Reproducibility, authority and stopping condition
 
