@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "persistence_only": true,
+  "source_scheduler": "6ab9bed600a481919adade50e72fe837",
+  "recovery_supervisor": "6abdbad842c881918e1247a8b4592b26",
+  "generation": "R219",
+  "recovery_identity": {
+    "source_scheduler": "6ab9bed600a481919adade50e72fe837",
+    "source_role": "PRIMARY_MAIN",
+    "generation": "R219",
+    "requested_action": "RECONCILE_MAIN_LATEST_EXACTLY_FROM_VERIFIED_APPEND_ONLY_HISTORY",
+    "repository": "salmonmikan/sparkbrain_research",
+    "target_ref": "ops/orchestrator-run-report",
+    "head": "d37b3f0b5a4a77d1a9d8dafccf7f455d57afad0a",
+    "base": "d37b3f0b5a4a77d1a9d8dafccf7f455d57afad0a",
+    "source_history_path": "reports/orchestrator/main/history/2026-10-01/1516-r219-pr164-waiting-analyst-exact-head.md",
+    "source_history_blob": "ff732dafc8c2212e3dccf3ff03cf83e0c22c36c5",
+    "expected_success_criteria": [
+      "latest.md byte-for-byte equals saved R219 history",
+      "R219 history blob unchanged",
+      "state/lease and other files unchanged",
+      "one append-only operational recovery record",
+      "non-force descendant ref update"
+    ]
+  },
+  "publication_attempt": 1,
+  "publication_commit": "e724645f98b8e10559034cb261f9ce33162592c7",
+  "persistence_complete": true,
+  "independent_readback": {
+    "head_matches": true,
+    "latest_exact": true,
+    "history_blob_unchanged": true,
+    "operational_record_exact": true,
+    "state_unchanged": true,
+    "lease_unchanged": true,
+    "descendant": true,
+    "changed_files": [
+      "reports/orchestrator/main/history/2026-10-01/recovery-R219-latest-cache-reconciliation.md",
+      "reports/orchestrator/main/latest.md"
+    ]
+  },
+  "verification_time_utc": "2026-10-01T06:56:57.498Z",
+  "unresolved": [
+    "FRESH_ANALYST_EXACT_HEAD_RECONCILIATION_FOR_PR164_HEAD_16E5B3FC_NOT_DURABLE",
+    "MAIN_STATE_LEASE_R215_EXACT_R219_JSON_PAYLOAD_UNAVAILABLE",
+    "LITERATURE_STATE_R54_BEHIND_LATEST_R55_EXACT_PAYLOAD_UNAVAILABLE",
+    "FORGE_DIRECT_TAMPER_TEST_PUBLICATION_PRE_GITHUB_REFUSAL_5_OF_5",
+    "P0_OPEN_ROOT_CAUSE_UNKNOWN"
+  ],
+  "no_scientific_execution": true,
+  "no_scheduler_changes": true,
+  "backend_mode_provenance": "NOT_EXPOSED_BY_RUNTIME_API"
+}
