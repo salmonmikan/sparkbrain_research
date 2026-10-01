@@ -1,0 +1,22 @@
+{
+  "status": "EXPLORATORY_NON_EVIDENTIARY",
+  "compression": "gzip mtime=0; lossless transport only",
+  "files": {
+    "raw_episodes.jsonl.gz": {
+      "sha256": "eb3210d7891c0af8db1e606d2d0f82de90e03620925a098d92c8c74635e3f1b5",
+      "bytes": 126994,
+      "uncompressed_name": "raw_episodes.jsonl",
+      "uncompressed_bytes": 9806601,
+      "uncompressed_sha256": "00bf97d0ae8f72045abcc831ec534386a4c0d70ea764a446ed9d65bab47f2f4d"
+    },
+    "summary.json.gz": {
+      "sha256": "3c498e11740a923e5af45ffe382d29986e487d951889bc0812a047e4a7d6e26a",
+      "bytes": 11204,
+      "uncompressed_name": "summary.json",
+      "uncompressed_bytes": 889905,
+      "uncompressed_sha256": "06e3706bab25d266804e8338557ee51580f11f9c8e8b132fe9fe33f77bd9a473"
+    }
+  },
+  "manifest_sha256": "02de1ecce3ae54065fcc5606aec7e232eea77059fa01502f66dd221772f3fefd",
+  "source_checkpoint": "35ccc513b56b32825006a88fb5def2df286c6b4d"
+}

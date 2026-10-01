@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "status": "EXPLORATORY_NON_EVIDENTIARY",
+  "target": "legacy_sparkbrain_engine_only",
+  "base_commit": "18ff183983a2657d7199a708e4d3398550d7740c",
+  "runtime_git_blobs": {
+    "src/sparkbrain/engine.py": "48fa64414f539ec4a00acc9e25ffc9b1d26a4982",
+    "src/sparkbrain/model.py": "ab450dba5943fa9184e66c00a4e992d6588bf6a5",
+    "src/sparkbrain/validation.py": "4a0edac44a434b84ac4fa3e138e221852cbac1cb"
+  },
+  "random_seed": 7,
+  "evidence_strengths": [
+    0.1,
+    0.43,
+    0.6
+  ],
+  "source_counts": [
+    1,
+    2
+  ],
+  "stability_evaluations": [
+    1,
+    2,
+    4
+  ],
+  "temporal_coherence_bonuses": [
+    0,
+    0.06
+  ],
+  "padding_gaps": [
+    0,
+    0.01,
+    1
+  ],
+  "padding_counts": [
+    0,
+    1,
+    2,
+    4
+  ],
+  "padding_kinds": [
+    "hypothesis",
+    "sensory",
+    "reward"
+  ],
+  "evidence_times": [
+    0,
+    0.01
+  ],
+  "spark_threshold": 100,
+  "spark_decay_tau": 2.5,
+  "grid": "For each strength/source-count/stability/bonus/gap tuple, include one count=0,kind=none row and all count=1,2,4 x kind=hypothesis,sensory,reward rows;1080 cells",
+  "graph": "Exactly three Sparks in every arm: target hypothesis, independent zero-state hypothesis, zero-state sensory Spark. No edges, listeners, plasticity, or initial activation; high threshold prevents firing.",
+  "evidence": "Two distinct evidence IDs on the same target hypothesis at fixed times and equal strength. Only metadata.sensor differs between source-count1 and2. All arms share identical genuine evidence bytes within the source/strength condition.",
+  "padding": "Schedule each padding event after both genuine events are processed. Times t=.01+gap*k for k=1..count. Strength0, no evidence_id, origin_kind=internal. Hypothesis/sensory arms use PROPAGATION to the corresponding unrelated Spark. Reward uses REWARD target=None. Same explicit priority10. Run to empty after each event.",
+  "horizon": "After every arm including no padding, inject zero REWARD target=None at .01+4*gap and run to empty. This aligns final engine time without triggering Coalition evaluation; it does not synchronize last Coalition evaluation.",
+  "initial_hypothesis": "Unrelated hypothesis padding may advance global incumbent stability and its coherence score, causing first ignition without changing external evidence. This is a source-motivated prediction, not an observed result.",
+  "primary_comparisons": [
+    "kind=hypothesis versus sensory and reward at same count/gap",
+    "PRIMARY gap0, bonus0, strength.6, sources2, stability4 isolates hard stability gate; first-ignition onset only",
+    "bonus.06 versus0, strength.43, sources2, stability2 isolates near-threshold coherence contribution",
+    "gap0 versus positive gap separates event count from elapsed decay"
+  ],
+  "null_controls": [
+    "single source with same two IDs/events",
+    "weak strength.1",
+    "zero padding",
+    "sensory no-fire padding",
+    "reward padding",
+    "strong evidence stability1/2 may already ignite before padding",
+    "gap1 may allow decay to prevent a would-be ignition",
+    "one-source pure diversity interpretation is restricted to strength.6; strength.43 also loses diversity bonus"
+  ],
+  "primary_metrics": [
+    "pre_padding_ignition_count",
+    "post_padding_first_ignition",
+    "first_ignition_time",
+    "first_ignition_input_index",
+    "first_ignition_phase",
+    "target_stability_after_evidence",
+    "target_stability_at_end",
+    "target_support_count",
+    "target_source_count"
+  ],
+  "secondary_metrics": [
+    "ignition_count",
+    "events_processed",
+    "spark_updates",
+    "fires",
+    "edge_evaluations",
+    "target_activation_projected_at_horizon",
+    "target_support_strength_projected_at_horizon",
+    "post_padding_repeat_ignition_count"
+  ],
+  "raw_contract": "Retain cell/config, exact full graph parameters and all inputs, observation after each event (raw incumbent Coalition, stability, evidence records, projected state at current time, new Ignitions, counters), final workspace/coalitions and every named metric. Record null if no ignition. Projected data is labeled observer-only and never fed to runtime.",
+  "measurement": "Inspection must not invoke evaluation, snapshot recording, or touch. Pure read of dataclass state and analytic projection only; verify serialized state unchanged across observer use. Last-coalition data retains its actual last-evaluation time, distinct from final horizon.",
+  "comparability": "One unmodified engine, identical three Sparks and zero edges per arm. Padding count adds actual events/work; controls at same count match event count but not executed Spark updates. No compute superiority inference.",
+  "analysis": "Per-cell results and exact matched contrasts only. Cells are deterministic constructed cases, not independent samples; no p-values, population rates, confidence intervals, or seed-as-replication inference.",
+  "output_files": [
+    "raw_episodes.jsonl",
+    "summary.json",
+    "manifest.json"
+  ],
+  "stopping_rule": "Publish frozen protocol and source checkpoint before full grid. Execute exact grid, preserve all/null/negative outcomes, reproduce in a second fresh process at PYTHONHASHSEED1 and37. No outcome-based retuning. Any experimental choice change requires new protocol. Implementation failure retains failed artifact provenance.",
+  "claims": "Only bounded legacy gate behavior; no runtime fix/defect assertion, formal identity, promotion, v03/v032/v05/M1 inference, biological/novelty/energy/performance claim.",
+  "collision": "Main18ff183; AnalystR177; ControlR153. ActivePR164/M1 and FLY-0 remain untouched. No PROJECT_STATUS, scheduler/control, official artifacts, or formal refs changed.",
+  "numeric_policy": "Preserve exact engine gate comparisons. Any independent analytic consistency check uses absolute tolerance1e-9; never apply tolerance to decide engine ignition."
+}
