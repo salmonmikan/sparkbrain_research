@@ -1,9 +1,16 @@
 # M1 cold-process serialized-state continuation diagnostic
 
+Current result: corrected v2 passes this bounded engineering check. All 96 future
+transitions and 103 complete checkpoint comparisons agree, including the observer
+control. The first 54-commit run is preserved as an incomplete harness failure;
+the corrected run made 144 commits, for 198 total. No runtime was changed.
+
 Original status at protocol freeze: prospective source review; no fixture execution.
 Execution and repair history are recorded separately below.
 Classification: EXPLORATORY / NONCANONICAL / NON_EVIDENTIARY, scientific credit 0.
-The machine contract is `protocols/m1_cold_resume_diagnostic_v1.json`.
+The original machine contract is `protocols/m1_cold_resume_diagnostic_v1.json`.
+The explicit corrective contract is `protocols/m1_cold_resume_diagnostic_v2.json`;
+its execution and budget supersede the original reproduction allowance below.
 
 ## Question and complementary scope
 
@@ -170,15 +177,120 @@ check. It does not change runtime, inputs, cuts, seeds, horizon, thresholds or
 state equality. Byte equality remains exact with no normalization.
 
 Before correction execution, independently review and commit the amended runner
-and `protocols/m1_cold_resume_diagnostic_v2.json`. Allow one corrected144-commit
-matrix only: at most198 actual primary commits across the original and corrected
+and `protocols/m1_cold_resume_diagnostic_v2.json`. Allow one corrected 144-commit
+matrix only: at most 198 actual primary commits across the original and corrected
 runs. No additional clean reproduction is authorized by this amended diagnostic
 budget. Preserve both runs and report the failed/incomplete harness honestly.
 
 Independent read-only review verified all six original JSON pairs and six full
 checkpoint inventories agree, and source-traced live tuple preservation through
 dataclasses.asdict. The canonical-row repair was reviewed with numeric and order
-change rejection tests. The single corrected144/total198 budget was approved
+change rejection tests. The single corrected 144/total198 budget was approved
 before execution. Original compressed bytes are transported in ordered base64
 parts under `artifacts/m1_cold_resume_diagnostic_20261001/original.parts/`;
 its manifest binds the reconstructed archive SHA-256.
+
+## Corrected result and interpretation
+
+Corrected execution pin: `642c61a3a950aea176cb284eb7df44f7bc09bcbc`.
+Runner SHA-256: `3c5f8082a3a648c689757bfdd5c5e44fc108d59d73e41e6ec10e983b814b5504`.
+V2 protocol SHA-256: `b61db091642a050441e06efebc92e7c1df8e1ca0cc81af91f04de60e76f105ec`.
+
+- Both baseline and checkpoint-observed runs completed 24 cycles with equal raw
+  JSON observations/actions/receipts/revisions and inspect hashes, plus equal
+  full final checkpoint bytes
+- All six true cold restorations completed their 48 + 48 = 96 future transitions
+  without a prediction, action, outcome, revision, inspect-hash or file-byte
+  mismatch. Six immediate restore/save-backs plus 96 future saves and the one
+  observer final check give 103 complete six-file comparisons (618 file pairs)
+- The sequence includes abstention, act_alpha and act_beta. This is one fixed
+  deterministic two-region fixture, not a diverse task or generalization suite
+- Ordinary deepcopy failed with TypeError: cannot pickle '_thread.RLock' object
+- A sequential after-observe pending checkpoint roundtripped exactly. Calling
+  Session.cycle then rejected the unresolved event, and every serialized byte
+  remained unchanged. This separates checkpoint preservation from an automatic
+  mid-cycle continuation API; no secondary probe committed a cycle
+
+The corrected bundle contains 446 files  / 5,211,555 uncompressed bytes and stayed
+within the frozen per-worker/overall/output caps. The longest observed worker
+wall duration was about 1.47 seconds; this is execution provenance, not a speed or
+energy comparison. Linux / Python 3.12.14 was used throughout. Installed dependency
+versions were jsonschema 4.26.0, NumPy 2.5.3 and Torch 2.13.0+cpu; installation does
+not imply those optional backends contributed to this default explicit/reference
+path. Address-space and CPU caps were enforced; no peak-RSS measurement is claimed.
+
+All results remain EXPLORATORY_NON_EVIDENTIARY with scientific credit 0. Exact
+restoration of these serialized snapshots is not proof that the serializer covers
+all future/alternative reachable states. No cross-version portability, concurrency,
+crash consistency during a write, model capability, composition contribution,
+scientific novelty, biological fidelity or energy claim follows.
+
+## Artifact access and data-only verification
+
+`artifacts/m1_cold_resume_diagnostic_20261001/` contains:
+
+- original.parts/: ordered base64 chunks and manifest reconstructing the exact
+  gzip original archive, SHA-256
+  `89c9c964ecfcdf2abce2bb37111f53a4a814e15f0e8c5c3bd70d4519321a4794`
+- original_analysis.json: separate read-only attribution of the preserved
+  original harness failure; the original summary is not rewritten
+- corrected.parts/: ordered chunks/manifest for a lossless xz archive, SHA-256
+  `8a4d423371ca1dc45d72d22a231c1651f839a975502f58b5834dd59495951210`
+- verification.json: data-only recomputation of counts, raw comparisons, source
+  protocol bindings, archive integrity and the original failure attribution
+
+Run without executing any M1 dynamics:
+
+```bash
+python scripts/verify_m1_cold_resume_artifacts.py
+```
+
+The verifier uses only the standard library, checks transport and raw inventories,
+rejects unsafe/duplicate archive members and verifies the retained raw observations,
+full initial/final snapshots and intermediate deduplication hash mappings. It does
+not launch a model or replay the exhausted diagnostic. It also confirms the two
+attempts' baseline and observed raw streams are identical.
+
+The original and corrected matrix commands were, respectively, at their recorded
+source pins, using the same interpreter executable:
+
+```bash
+python scripts/m1_cold_resume_diagnostic.py --output /absolute/absent/original
+python scripts/m1_cold_resume_diagnostic.py --output /absolute/absent/corrected
+```
+
+These are provenance/reproduction instructions, not permission for another run
+under the completed 198-commit budget. A new execution needs its own explicit
+bounded diagnostic allocation. Read-only artifact verification does not.
+
+## Next useful engineering boundary
+
+If future integration needs recovery with an outstanding external outcome, define
+an explicit receipt-journal/pending-action resume contract before adding a resume
+entry point. The present result supports using completed-cycle checkpoints on
+this reference path. It does not warrant a production checkpoint repair or a new
+scientific claim.
+
+The current runner additionally has an outcome-independent portability guard after
+the recorded execution: Windows may import its pure file/row helpers, but bounded
+execution fails explicitly if POSIX resource limits are unavailable. The data-only
+verifier remains standard-library portable. Exact replay provenance refers to the
+recorded execution pin, not an assertion that later wrapper edits were rerun.
+
+## Local validation at publication
+
+- Focused outcome-independent harness and data-only archive checks: 16 passed
+- Default regression selection: 697 passed, 392 deselected, one existing
+  Starlette/httpx deprecation warning, 45.10 seconds (Python 3.12)
+- Repository-wide Ruff: pass
+- Local readiness: pass, CPU-only reference path, no core runtime network dependency
+- Standard demo and 40-episode/30-step benchmark commands: pass in separate absent
+  scratch output directories, with no historical artifact overwrite
+- Bundle validation: pass, 88 required files; its generated validation manifest
+  was retained separately and the tracked shared manifest left unchanged
+- Data-only diagnostic artifact verification: pass; no additional M1 matrix run
+
+Logs are under the diagnostic artifact's `validation/` directory. These are
+regression checks, separate from the 198-commit bounded diagnostic allocation.
+The 392 scientific/reproduction/external-marked tests were not executed. Remote
+CI and review must be checked on the final PR head before merge.

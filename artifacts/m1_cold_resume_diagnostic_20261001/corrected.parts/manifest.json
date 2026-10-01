@@ -1,0 +1,15 @@
+{
+  "archive_bytes": 52120,
+  "archive_sha256": "8a4d423371ca1dc45d72d22a231c1651f839a975502f58b5834dd59495951210",
+  "compression": "xz",
+  "parts": [
+    {
+      "path": "part-000.b64",
+      "sha256": "1a644e79a3bb418fa77480df45546ac3d025ac15ca9b460604ee64bb5873677f"
+    },
+    {
+      "path": "part-001.b64",
+      "sha256": "e5e8d286bcfe210b86b33dd74ec44dcfb33955889e39030ba8b733d2d28eaf9f"
+    }
+  ]
+}

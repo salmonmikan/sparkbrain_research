@@ -13,7 +13,6 @@ import importlib.metadata
 import json
 import os
 import platform
-import resource
 import shutil
 import subprocess
 import sys
@@ -22,6 +21,11 @@ import traceback
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any
+
+try:
+    import resource
+except ImportError:  # Windows can still import the data-only harness helpers.
+    resource = None
 
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "protocols/m1_cold_resume_diagnostic_v2.json"
@@ -148,6 +152,8 @@ def worker(args: argparse.Namespace, protocol: dict[str, Any]) -> None:
         "reference_timeline": "observed" if args.mode in {"restore", "secondary"} else None,
     })
     budget = protocol["budget"]
+    if resource is None:
+        raise RuntimeError("bounded execution requires POSIX resource limits; verifier is portable")
     resource.setrlimit(resource.RLIMIT_AS, (budget["max_address_space_bytes_per_worker"],) * 2)
     resource.setrlimit(resource.RLIMIT_CPU, (budget["max_cpu_seconds_per_worker"],) * 2)
     manager, session_class = runtime_imports()

@@ -1,0 +1,11 @@
+test_exception_is_retained_as_exact_failed_record (test_driver.RecorderTests.test_exception_is_retained_as_exact_failed_record) ... ok
+test_failed_observation_verifier_is_total (test_driver.RecorderTests.test_failed_observation_verifier_is_total) ... ok
+test_hidden_checkpoint_difference_is_not_masked_by_inspection (test_driver.RecorderTests.test_hidden_checkpoint_difference_is_not_masked_by_inspection) ... ok
+test_local_runtime_schema_dependencies_are_present (test_driver.RecorderTests.test_local_runtime_schema_dependencies_are_present) ... ok
+test_rejection_mutation_is_preserved_then_stops (test_driver.RecorderTests.test_rejection_mutation_is_preserved_then_stops) ... ok
+test_success_preserves_input_output_and_state_change (test_driver.RecorderTests.test_success_preserves_input_output_and_state_change) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.112s
+
+OK

@@ -1,0 +1,12 @@
+{
+  "all_failed_calls_inspection_and_serialized_components_unchanged": true,
+  "classification": "IMPLEMENTATION_ENVIRONMENT_FAILURE_NON_EVIDENTIARY",
+  "committed_outcomes": 0,
+  "fixed_matrix_attempts_completed": 64,
+  "frozen_verifier_failure": "TypeError on probe observation None output; missing failure-path guard",
+  "observations_failed_missing_schema": 32,
+  "primary_question_executed": false,
+  "raw_calls_sha256": "d5eab96d552f33627acfd2a4629b70d8b72677c61af610d1515516d69b5277bc",
+  "reproduction_executed": false,
+  "requested_correction": "Fresh revision including unmodified pinned schemas; failure-safe verifier; same matrix, no parameter changes"
+}

@@ -2,9 +2,11 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import subprocess
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 import pytest
 
@@ -99,3 +101,17 @@ def test_cycle_rows_use_the_frozen_json_contract_without_numeric_normalization()
     changed_value = {**saved, "cycle": {"nested": {"centroid": [0.0, 0.46]}}}
     assert not TOOL.compare_rows([saved], [reordered])["equal"]
     assert not TOOL.compare_rows([saved], [changed_value])["equal"]
+
+
+def test_missing_posix_limits_stops_before_any_runtime_import(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(TOOL, "resource", None)
+    monkeypatch.setattr(TOOL, "runtime_imports",
+                        lambda: pytest.fail("runtime must not be imported"))
+    args = SimpleNamespace(output=tmp_path / "new", mode="baseline", cut=0,
+                           reference=None, output_created=False)
+    with pytest.raises(RuntimeError, match="requires POSIX"):
+        TOOL.worker(args, json.loads(TOOL.PROTOCOL.read_bytes()))
+    assert args.output_created is True
+    assert (args.output / "STARTED.json").exists()

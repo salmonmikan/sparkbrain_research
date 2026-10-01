@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/shared/m1-outcome-identity-20261001T1458Z/freeze/verify_results.py", line 148, in <module>
+    result = {"run1": check_run(args.run1)}
+                      ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/shared/m1-outcome-identity-20261001T1458Z/freeze/verify_results.py", line 44, in check_run
+    predicted_route = group[4]["output"]["route_token"]
+                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not subscriptable

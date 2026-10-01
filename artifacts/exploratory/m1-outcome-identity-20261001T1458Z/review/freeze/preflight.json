@@ -1,0 +1,22 @@
+{
+  "main": "3cb955cd42474b36d2d37617e5390d08656c06f1",
+  "directive_head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+  "directive_index_blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+  "analyst_head": "6eabb82d512db004d2bc411bd494f2bbea584ea4",
+  "control_head": "442346a66d183fd08597d9dd4972e1e399554ddc",
+  "main_ops_head": "e6b99bcce4201e3b4a4b36cae4a4cd5f5966b79a",
+  "fetched_at_utc": "2026-10-01T14:57:20Z",
+  "analyst_generation": "R177",
+  "control_generation": "R153",
+  "main_generation": "R222",
+  "pr164": {
+    "number": 164,
+    "head": "16e5b3fc48edea770f93f119f6c9a63ba7c1f301",
+    "state": "open",
+    "hold": "R177 requires fresh durable Analyst reconciliation",
+    "touched": false
+  },
+  "publication_authorized": false,
+  "source_mutation": false,
+  "diagnostic_authority": "Explicit independent cloud diagnostic; no scheduler-role authority assumed"
+}

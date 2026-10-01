@@ -1,0 +1,141 @@
+{
+  "archive_bytes": 11449912,
+  "archive_filename": "bundle.tar.gz",
+  "archive_sha256": "9b69d389eff5967d4d61b9b10174636ad544e298d7c84b6a9e3f67a306bda6cc",
+  "chunk_bytes": 524288,
+  "parts": [
+    {
+      "bytes": 524288,
+      "index": 0,
+      "name": "chunks/bundle.tar.gz.part-000",
+      "sha256": "f8466560e186fc6da72b193e7b91808895f4a755d8e74f9380717a149a512a4b"
+    },
+    {
+      "bytes": 524288,
+      "index": 1,
+      "name": "chunks/bundle.tar.gz.part-001",
+      "sha256": "64d87ec379b9c3c1732d6ddc6fbf8e2312a7fd962ee412169058e75632378624"
+    },
+    {
+      "bytes": 524288,
+      "index": 2,
+      "name": "chunks/bundle.tar.gz.part-002",
+      "sha256": "3b581a69f11a49178e47d92a889f2ef9d40e270c8cc04bcc524629c5246ef5fa"
+    },
+    {
+      "bytes": 524288,
+      "index": 3,
+      "name": "chunks/bundle.tar.gz.part-003",
+      "sha256": "e2a4c13db7cbb3687bb8c51aeba9d3eb85b28ae100fe11809b3aa248867f7c73"
+    },
+    {
+      "bytes": 524288,
+      "index": 4,
+      "name": "chunks/bundle.tar.gz.part-004",
+      "sha256": "503eb85931a118cefbc01d0d3db2342922f9aa0a9fcb0cf62e2d08a9d56afb37"
+    },
+    {
+      "bytes": 524288,
+      "index": 5,
+      "name": "chunks/bundle.tar.gz.part-005",
+      "sha256": "cd9fd4aedc1d9fc00da5eeb1c28033fd9cac5671c2be2a554286f0497ec9187d"
+    },
+    {
+      "bytes": 524288,
+      "index": 6,
+      "name": "chunks/bundle.tar.gz.part-006",
+      "sha256": "cd248944d19f29dfe5522fae227bf47d0a088962697481049dc256645e1cb41a"
+    },
+    {
+      "bytes": 524288,
+      "index": 7,
+      "name": "chunks/bundle.tar.gz.part-007",
+      "sha256": "44bf128938b9e8a262123c05989b1b4dac74e80c5ba16faa697b785fa4ac02b7"
+    },
+    {
+      "bytes": 524288,
+      "index": 8,
+      "name": "chunks/bundle.tar.gz.part-008",
+      "sha256": "b5c7fc48323772fcdc0b3afc45c2351b7eb74c8a0a057d26675b149538cb6250"
+    },
+    {
+      "bytes": 524288,
+      "index": 9,
+      "name": "chunks/bundle.tar.gz.part-009",
+      "sha256": "ef93089f6bcd02d3892769db9a171099fe7d464c5b8787081664fa5835f2e118"
+    },
+    {
+      "bytes": 524288,
+      "index": 10,
+      "name": "chunks/bundle.tar.gz.part-010",
+      "sha256": "5942373ab500f70665fd49b8ba707897728f6b091a2b653ebe0832dfc4ed48a4"
+    },
+    {
+      "bytes": 524288,
+      "index": 11,
+      "name": "chunks/bundle.tar.gz.part-011",
+      "sha256": "ad66a3141f508f18c4f5c799e73bcb95cc01f73dbd0d769f913aed208a74b4bb"
+    },
+    {
+      "bytes": 524288,
+      "index": 12,
+      "name": "chunks/bundle.tar.gz.part-012",
+      "sha256": "e0f4df235d92cf1594d1580baf13d178b0ff709bbdafbed828877a16f81f7158"
+    },
+    {
+      "bytes": 524288,
+      "index": 13,
+      "name": "chunks/bundle.tar.gz.part-013",
+      "sha256": "1d3f0f0edc226a6f25b753d23aca89d35c6728afd9ae0d46cfb836aec306f4fd"
+    },
+    {
+      "bytes": 524288,
+      "index": 14,
+      "name": "chunks/bundle.tar.gz.part-014",
+      "sha256": "26f40717c9562ef3cda8018f4577d722925abe54e96f1e3284f5be54a62d3ce3"
+    },
+    {
+      "bytes": 524288,
+      "index": 15,
+      "name": "chunks/bundle.tar.gz.part-015",
+      "sha256": "2469efe6a5917cedc7c084eac2f6efe7106d4608f5aa8ea910a8a1c279df04b8"
+    },
+    {
+      "bytes": 524288,
+      "index": 16,
+      "name": "chunks/bundle.tar.gz.part-016",
+      "sha256": "0fc454d17df18014a3964457eb9f811ccbe2d42036f1a629d47b36750c9e1c7b"
+    },
+    {
+      "bytes": 524288,
+      "index": 17,
+      "name": "chunks/bundle.tar.gz.part-017",
+      "sha256": "a7d954b11694ac075d650946da5e5347315c6db129efcc843dd5ebf6249094de"
+    },
+    {
+      "bytes": 524288,
+      "index": 18,
+      "name": "chunks/bundle.tar.gz.part-018",
+      "sha256": "2d187d69d98c2ffc40063ccc2fbbdb391b3ec12ffe7b7c4a451e1dc43318cb7e"
+    },
+    {
+      "bytes": 524288,
+      "index": 19,
+      "name": "chunks/bundle.tar.gz.part-019",
+      "sha256": "46280a18f26577fcf840a64bf1e7ea60e4a272797746c4ed6689af8c58bc41bb"
+    },
+    {
+      "bytes": 524288,
+      "index": 20,
+      "name": "chunks/bundle.tar.gz.part-020",
+      "sha256": "2e9cdc32533ad5757b7b83e6db5e0ed4458e3f761c49299894c3bb2f8d4a446f"
+    },
+    {
+      "bytes": 439864,
+      "index": 21,
+      "name": "chunks/bundle.tar.gz.part-021",
+      "sha256": "5a21a8b47a777e8dcf21d54f711ceddc67cc34ac35c4ff7ffc2a226c259b7293"
+    }
+  ],
+  "reconstruction": "Concatenate raw bytes in ascending index order; no transformation"
+}
