@@ -222,8 +222,10 @@ independent source/input audit above; neither is a fresh full-model reproduction
 
 At the frozen execution-source head, 659 configured pytest tests passed. After preserving
 merged PR #167 and adding initial publication corruption checks, 691 configured tests
-passed. After the gate and provenance corrections, the final local suite passed 736 configured tests
-with 392 scientific/reproduction/external tests deselected. Ruff, local readiness, demo,
+passed. The gate and provenance corrections passed 736 configured tests. After preserving
+merged PR #170 and both studies' complete ledger entries, the final integrated local suite
+passed 807 configured tests with 392 scientific/reproduction/external tests deselected.
+Ruff, local readiness, demo,
 the 40-episode/30-step benchmark, and bundle validation also passed. These are repository
 validation results, separate from the diagnostic run and its resource accounting.
 At report preparation, exact-head CI and Codex review of the publication are pending.
