@@ -1,1 +1,49 @@
-{"schema_version":2,"generation":"R53","generation_id":"LIT-20260930T182752+0900-R53-ISSUE-LINEAGE-TRANSACTION-EFFERENCE-PRIORART","produced_at":"2026-09-30T18:27:52+09:00","authority_scope":"EXTERNAL_LITERATURE_REDUCTION_SCOUT_NON_EVIDENTIARY_NONCANONICAL_HANDOFF","supersedes_generation_id":"LIT-20260930T062517+0900-R52-RESYNC-FENCING-TOPOLOGY-PRIORART","input_generations":{"control":"R137","evidence_analyst":"R174","theory":"R28_APPEND_ONLY","audit":"R14","prior_literature":"R52","main":"R209"},"directive_index":{"head":"8ce979b9ec0bc7eede5225c0403698f8886d3e8d","blob":"1ba1e173344f36e14d0e21e6f3e823254e031f7d","delta":false},"genuinely_new_information":true,"new_sparkbrain_scientific_result":false,"scientific_credit":0,"history_path":"analysis/external_research_audit/literature/history/2026-09-30/1830-LITERATURE_REDUCTION_SCOUT.md","reconciliation":{"source_history_blob":"7ab3b00ccd0f92d09d09e1545e914293f9d03dbd","prior_generation":"R52","no_scientific_reinterpretation":true}}
+{
+  "schema_version": 2,
+  "generation": "R54",
+  "generation_id": "LIT-20261001T063344+0900-R54-ATOMIC-COMMIT-EXTERNAL-EFFECT-PRIORART",
+  "produced_at": "2026-10-01T06:33:44+09:00",
+  "authority_scope": "EXTERNAL_LITERATURE_REDUCTION_SCOUT_NON_EVIDENTIARY_NONCANONICAL_HANDOFF",
+  "supersedes_generation_id": "LIT-20260930T182752+0900-R53-ISSUE-LINEAGE-TRANSACTION-EFFERENCE-PRIORART",
+  "input_generations": {
+    "control": "R143",
+    "evidence_analyst": "R176",
+    "theory": "R29",
+    "audit": "R15",
+    "prior_literature": "R53"
+  },
+  "directive_index": {
+    "head": "8ce979b9ec0bc7eede5225c0403698f8886d3e8d",
+    "blob": "1ba1e173344f36e14d0e21e6f3e823254e031f7d",
+    "delta": false
+  },
+  "genuinely_new_information": true,
+  "new_sparkbrain_scientific_result": false,
+  "scientific_credit": 0,
+  "history_path": "analysis/external_research_audit/literature/history/2026-10-01/0633-LITERATURE_REDUCTION_SCOUT.md",
+  "reconciliation": {
+    "source_history_blob": "0181586f8635652f4bb6b126263d968cd17ab662",
+    "source_ref_head": "d61bb4c72ead87a11802bf65e0217c07bd311642",
+    "prior_generation": "R53",
+    "no_scientific_reinterpretation": true,
+    "recovery_identity": {
+      "source_scheduler": "6ab9be6d715881919a20c1152bc15541",
+      "source_role": "LITERATURE_REDUCTION_SCOUT",
+      "generation": "R54",
+      "requested_action": "RECONCILE_LITERATURE_LATEST_STATE_FROM_VERIFIED_APPEND_ONLY_HISTORY",
+      "repository": "salmonmikan/sparkbrain_research",
+      "target_ref": "ops/external-research-audit-handoff",
+      "head": "d61bb4c72ead87a11802bf65e0217c07bd311642",
+      "base": "d61bb4c72ead87a11802bf65e0217c07bd311642",
+      "source_history_path": "analysis/external_research_audit/literature/history/2026-10-01/0633-LITERATURE_REDUCTION_SCOUT.md",
+      "source_history_blob": "0181586f8635652f4bb6b126263d968cd17ab662",
+      "expected_success_criteria": [
+        "latest.md exactly equals verified R54 history",
+        "state.json generation_id/produced_at/inputs/claims match R54 history",
+        "source history unchanged",
+        "other stream files unchanged",
+        "non-force descendant ref update"
+      ]
+    }
+  }
+}
