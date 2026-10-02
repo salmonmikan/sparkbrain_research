@@ -1,0 +1,82 @@
+{
+  "classification": "SOURCE_ONLY_NON_EVIDENTIARY",
+  "corrective_review": {
+    "additional_parent_requirement": "Bind launcher bytes and independently verified materialized-source provenance",
+    "ci_fixture_corrections": "Isolate synthetic resource samples and prior module state; reject unsupported passive lock API before runtime imports",
+    "directory_durability_followup": {
+      "adjacent_existing_enforcement": "Post-logging and acknowledgment checks within unchanged resource envelope; no zero-gap realtime claim",
+      "finding": "Sync reservation directory entry after creation before fallible marker payload",
+      "prior_head_ci": "Python3.11 and3.13 full CI passed; newest source still requires current-head CI",
+      "resolution": "Shared exclusive durable write helper for reservation and evidence, guarded namespace ordering and failure retention; older ancestors are trusted provisioned and storage deletion is excluded",
+      "reviewed_head": "c062851b5de0ebaf5bd025b3879c3262ce37615c"
+    },
+    "findings": [
+      "Reject insufficient inherited hard limits before identity reservation",
+      "Require completed return/birth/event/cleanup evidence before verdict"
+    ],
+    "initial_head": "95d21bd9bd5edd5de187c04f1ac2e9989185948b",
+    "soft_limit_followup": {
+      "finding": "Reject inherited low soft limits before consuming the identity",
+      "prior_head_ci": "Python3.11 and3.13 full CI passed; latest correction still requires current-head CI",
+      "resolution": "Complete lower/equal/higher/unlimited soft-hard matrix across all four enforced resources; malformed/inconsistent metadata and reservation error semantics independently reviewed",
+      "reviewed_head": "aacb50b9060e58f4ce958507ac76620d2b1486ec"
+    }
+  },
+  "diff_check": "clean",
+  "freeze_sha256": "9733f757562ec476a54f2b2db9e7574603ff4b74ebc99aa1d86b5c6c35170674",
+  "full_runtime_local_suite": "Not run in this source-only preparation scope; ordinary CI is separate and cannot grant research execution authority",
+  "identity": "assembly-m1-g0-v1-20261002",
+  "independent_review": {
+    "reviewed_freeze": true,
+    "scope": "Source/enforcement and model-free stand-ins; no real G0 eligibility conclusion",
+    "status": "no_unresolved_source_only_findings"
+  },
+  "next_gate": "Publish exact source, obtain latest-head clean Codex/required CI, then request separate exact-freeze one-shot parent execution clearance",
+  "preparation_check": "python -B -s -m scripts.launch_g0_joint_eligibility --check-source",
+  "read_only_host_preflight": "CPU/AS/FSIZE soft+hard unlimited; CORE soft0/hard unlimited; no limits changed",
+  "real_g0_executed": false,
+  "reviewed_files_sha256": {
+    "scripts/g0_execution_support.py": "d5b96748a62a8280fca01194c2a4beeff562e83c16d631d5af340a75d9866813",
+    "scripts/launch_g0_joint_eligibility.py": "e4a69800ceadf7ae46c6ec1f4115171535d3baa15a2b51ac93c611ad9a4c71f1",
+    "scripts/run_g0_joint_eligibility.py": "2c7d8311bdbbd9e09f10194687d61065cd6ae1e504712ff37736088e7547baa4",
+    "tests/test_g0_execution_protocol.py": "2a98ce108aa87019a9bfc5bc3ca890bee2e10f38839a405d754f4130631f5a0c",
+    "tests/test_g0_execution_support.py": "8175f8dd05b640215b27bcff3355e37bdad3709503560eb3cd27574e7e01ded0",
+    "tests/test_g0_joint_eligibility_runner.py": "815e6d4b6ebad73ce7bf1697fe72daa87a1f9d49e28cbec2fc3c0a4abfdb02d1",
+    "tests/test_g0_joint_launcher.py": "ab1555022f8ecaeda1efdae76ef9567d96b89b9acfe97f2d6504b0ad4f3966fe"
+  },
+  "ruff": "entire local source tree clean",
+  "runtime_execution_authorized": false,
+  "runtime_python_files": 157,
+  "runtime_schema_files": 15,
+  "schema": "g0-execution-preparation-validation-v1",
+  "scientific_credit": 0,
+  "selected_base_files_git_blob_verified": 180,
+  "selected_source_commit": "b9caed4797c9cd8217361b6e523864aabdd4cbcc",
+  "selected_source_tree": "6ec2b75c725bedd067a1f2a1d9c9e4ba74f025fc",
+  "source_files": 192,
+  "source_inventory_sha256": "a470f8dae10d846c69f8ee69d2dd17443f487ae38efbdc87ba0f14a9b99439e1",
+  "source_materialization": "All execution-relevant bytes independently matched to published Git tree; local scaffold HEAD is not authority",
+  "superseded_unexecuted_freeze_sha256": "5ba561bbc9869472f353f23d14892e302988ae9b2e9b8480ddf053797ffd1a2d",
+  "tests": {
+    "durability_boundary": "reservation/output directory+parent synchronization, descriptor ownership,12post-create failures, terminal acknowledgment",
+    "limit_matrix_cases": 64,
+    "native_import_tripwire": true,
+    "passed": 428,
+    "post_logging_budget": "finite checks after attempt/callback/durable IO; no recursive logging or unrestricted polling",
+    "real_constructors": 0,
+    "real_model_transitions": 0,
+    "real_native_imports": 0,
+    "reservation_failures": "exclusive open, write, flush, fsync and same/different-output reuse",
+    "simulated_ambient_preloaded_module_and_large_memory": "pass without native imports or actual memory allocation",
+    "subtests_passed": 12,
+    "suites": [
+      "tests/test_g0_execution_support.py",
+      "tests/test_g0_joint_eligibility_runner.py",
+      "tests/test_g0_execution_protocol.py",
+      "tests/test_g0_joint_ownership.py",
+      "tests/test_g0_joint_source_contract.py",
+      "tests/test_g0_joint_launcher.py"
+    ]
+  },
+  "validation_command": "PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 python -B -s with SparkBrain import tripwire; pytest -q -p no:cacheprovider on the six listed suites"
+}

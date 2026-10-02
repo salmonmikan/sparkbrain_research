@@ -1,0 +1,5063 @@
+{
+  "acquisition": [
+    {
+      "occurrence_id": "g0-20261002-000000",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 15.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 15.6649873017386
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 25.945999468134943
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 40.0
+        }
+      ],
+      "start_ms": 0.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000001",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 208.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 211.13686228312642
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 213.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 215.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 235.38433326790647
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 240.0
+        }
+      ],
+      "start_ms": 200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000002",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 408.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 413.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 415.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 415.5565502916378
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 426.9088579694411
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 440.0
+        }
+      ],
+      "start_ms": 400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000003",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 608.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 613.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 615.0
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 626.7846298669012
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 630.1410499847456
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 640.0
+        }
+      ],
+      "start_ms": 600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000004",
+      "pulses": [
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 803.3899318454887
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 808.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 813.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 815.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 833.3979235457613
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 840.0
+        }
+      ],
+      "start_ms": 800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000005",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1008.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1013.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1015.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1027.8784735014165
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1034.1634451352606
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1040.0
+        }
+      ],
+      "start_ms": 1000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000006",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1213.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1215.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1231.5467675735374
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1232.3571021187352
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1240.0
+        }
+      ],
+      "start_ms": 1200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000007",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1408.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1413.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1413.161199732219
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1415.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1422.687367080847
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1440.0
+        }
+      ],
+      "start_ms": 1400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000008",
+      "pulses": [
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1603.4328162466957
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1608.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1613.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1615.0
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1628.400610030295
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1640.0
+        }
+      ],
+      "start_ms": 1600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000009",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1808.0
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1808.8748444716316
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1813.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1814.697486884056
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1815.0
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 1840.0
+        }
+      ],
+      "start_ms": 1800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000010",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2008.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2013.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2015.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2018.1090800102609
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2019.4525576958501
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2040.0
+        }
+      ],
+      "start_ms": 2000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000011",
+      "pulses": [
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2200.6699859572072
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2203.447145020204
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2213.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2215.0
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2240.0
+        }
+      ],
+      "start_ms": 2200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000012",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2408.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2408.2697910613956
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2413.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2415.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2415.9428145248967
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2440.0
+        }
+      ],
+      "start_ms": 2400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000013",
+      "pulses": [
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2604.4315976594016
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2608.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2613.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2615.0
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2635.9440673230038
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2640.0
+        }
+      ],
+      "start_ms": 2600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000014",
+      "pulses": [
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2801.856361651115
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2808.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2813.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2815.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2835.0826891656775
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 2840.0
+        }
+      ],
+      "start_ms": 2800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000015",
+      "pulses": [
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3006.8809316893417
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3008.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3013.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3015.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3016.6995536042637
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3040.0
+        }
+      ],
+      "start_ms": 3000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000016",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3213.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3215.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3218.5549152690633
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3221.1761135415913
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3240.0
+        }
+      ],
+      "start_ms": 3200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000017",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3408.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3413.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3415.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3415.719703600251
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3418.178357661958
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3440.0
+        }
+      ],
+      "start_ms": 3400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000018",
+      "pulses": [
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3603.15929714175
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3608.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3610.4526852506096
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3613.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3615.0
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3640.0
+        }
+      ],
+      "start_ms": 3600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000019",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3808.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3813.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3815.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3820.718190149131
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3830.760766185537
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 3840.0
+        }
+      ],
+      "start_ms": 3800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000020",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4008.0
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4010.9651535720986
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4011.8501672629936
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4013.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4015.0
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4040.0
+        }
+      ],
+      "start_ms": 4000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000021",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4213.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4215.0
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4218.247567161319
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4235.879176765847
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4240.0
+        }
+      ],
+      "start_ms": 4200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000022",
+      "pulses": [
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4401.653369839446
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4408.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4413.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4415.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4424.2380883675405
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4440.0
+        }
+      ],
+      "start_ms": 4400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000023",
+      "pulses": [
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4604.2435715698275
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4608.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4613.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4615.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4627.165394987399
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4640.0
+        }
+      ],
+      "start_ms": 4600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000024",
+      "pulses": [
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4806.731306686635
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4808.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4813.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4815.0
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4835.513701615284
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 4840.0
+        }
+      ],
+      "start_ms": 4800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000025",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5008.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5013.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5015.0
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5017.7769443151565
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5023.633819897359
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5040.0
+        }
+      ],
+      "start_ms": 5000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000026",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5213.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5215.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5217.144918819644
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5231.829740243827
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5240.0
+        }
+      ],
+      "start_ms": 5200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000027",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5408.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5413.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5415.0
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5428.0104404004405
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5432.419093129812
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5440.0
+        }
+      ],
+      "start_ms": 5400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000028",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5608.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5613.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5615.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5615.424379449121
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5622.194070800642
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5640.0
+        }
+      ],
+      "start_ms": 5600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000029",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5801.5483740551135
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5802.712983426537
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5808.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5813.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5815.0
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 5840.0
+        }
+      ],
+      "start_ms": 5800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000030",
+      "pulses": [
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6004.883561026194
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6008.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6013.0
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6015.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6035.397355693105
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6040.0
+        }
+      ],
+      "start_ms": 6000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000031",
+      "pulses": [
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6213.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6213.893269193087
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6215.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6234.946621376707
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6240.0
+        }
+      ],
+      "start_ms": 6200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000032",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6408.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6410.722862356206
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6413.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6415.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6432.349896970371
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6440.0
+        }
+      ],
+      "start_ms": 6400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000033",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6608.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6610.881398541862
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6613.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6615.0
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6628.646877100919
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6640.0
+        }
+      ],
+      "start_ms": 6600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000034",
+      "pulses": [
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6805.351800212419
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6808.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6813.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6815.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6815.631622270366
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 6840.0
+        }
+      ],
+      "start_ms": 6800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000035",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7008.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7013.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7014.564312129925
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7015.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7032.529603431758
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7040.0
+        }
+      ],
+      "start_ms": 7000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000036",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7208.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7209.290405308689
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7213.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7215.0
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7233.028759793669
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7240.0
+        }
+      ],
+      "start_ms": 7200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000037",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7408.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7411.717261471334
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7413.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7415.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7422.189347857271
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7440.0
+        }
+      ],
+      "start_ms": 7400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000038",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7608.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7613.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7615.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7627.302727186751
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7628.156017877743
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7640.0
+        }
+      ],
+      "start_ms": 7600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000039",
+      "pulses": [
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7806.795727194407
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7807.128534626647
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7808.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7813.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7815.0
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 7840.0
+        }
+      ],
+      "start_ms": 7800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000040",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8008.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8013.0
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8013.829179383006
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8015.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8019.629526951064
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8040.0
+        }
+      ],
+      "start_ms": 8000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000041",
+      "pulses": [
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8205.652050017277
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8213.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8215.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8215.790204211404
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8240.0
+        }
+      ],
+      "start_ms": 8200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000042",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8408.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8413.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8415.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8431.09807299512
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8435.884517615597
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8440.0
+        }
+      ],
+      "start_ms": 8400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000043",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8608.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8613.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8615.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8635.173920803241
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8635.276486375387
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8640.0
+        }
+      ],
+      "start_ms": 8600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000044",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8808.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8813.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8815.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8815.26766229285
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8822.158951609867
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 8840.0
+        }
+      ],
+      "start_ms": 8800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000045",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9005.667041110213
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9008.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9013.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9015.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9029.00253177297
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9040.0
+        }
+      ],
+      "start_ms": 9000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000046",
+      "pulses": [
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9200.518941219287
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9213.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9215.0
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9217.382081653313
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9240.0
+        }
+      ],
+      "start_ms": 9200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000047",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9408.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9413.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9415.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9422.54846491588
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9434.245765191332
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9440.0
+        }
+      ],
+      "start_ms": 9400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000048",
+      "pulses": [
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9607.736863604607
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9608.0
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9609.82413949235
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9613.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9615.0
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9640.0
+        }
+      ],
+      "start_ms": 9600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000049",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9805.79568107106
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9808.0
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9811.559847541257
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9813.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9815.0
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 9840.0
+        }
+      ],
+      "start_ms": 9800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000050",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10008.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10013.0
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10014.88856600131
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10015.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10019.065662819256
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10040.0
+        }
+      ],
+      "start_ms": 10000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000051",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10213.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10215.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10231.343296135117
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10233.225502447254
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10240.0
+        }
+      ],
+      "start_ms": 10200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000052",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10408.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10408.37281491765
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10413.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10415.0
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10432.20660690836
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10440.0
+        }
+      ],
+      "start_ms": 10400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000053",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10600.568652311296
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10608.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10613.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10615.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10627.916699909052
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10640.0
+        }
+      ],
+      "start_ms": 10600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000054",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10808.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10813.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10815.0
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10820.68935714001
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10831.476632536096
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 10840.0
+        }
+      ],
+      "start_ms": 10800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000055",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11008.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11013.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11015.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11026.707320139261
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11030.306319378533
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11040.0
+        }
+      ],
+      "start_ms": 11000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000056",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11213.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11215.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11221.271136504367
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11223.361820741318
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11240.0
+        }
+      ],
+      "start_ms": 11200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000057",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11408.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11413.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11415.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11417.51125605128
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11431.164332534901
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11440.0
+        }
+      ],
+      "start_ms": 11400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000058",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11608.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11613.0
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11613.778395036099
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11615.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11635.463839097396
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11640.0
+        }
+      ],
+      "start_ms": 11600.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000059",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11808.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11812.870785839807
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11813.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11815.0
+        },
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11820.254338913555
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 11840.0
+        }
+      ],
+      "start_ms": 11800.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000060",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12008.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12009.507746157638
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12013.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12015.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12023.27225327449
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12040.0
+        }
+      ],
+      "start_ms": 12000.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000061",
+      "pulses": [
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12207.220620683918
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12208.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12213.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12215.0
+        },
+        {
+          "channel": "M",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12228.274161905028
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12240.0
+        }
+      ],
+      "start_ms": 12200.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000062",
+      "pulses": [
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12408.0
+        },
+        {
+          "channel": "L",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12410.851692719563
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12413.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12415.0
+        },
+        {
+          "channel": "H",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12416.52510578252
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12440.0
+        }
+      ],
+      "start_ms": 12400.0
+    },
+    {
+      "occurrence_id": "g0-20261002-000063",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12607.096504443876
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12608.0
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12613.0
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12615.0
+        },
+        {
+          "channel": "K",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12615.540839023693
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12640.0
+        }
+      ],
+      "start_ms": 12600.0
+    }
+  ],
+  "queries": {
+    "abort_m1": {
+      "occurrence_id": "g0-20261002-000065",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13000.031067481343
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13008.080556704235
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13013.198596641443
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13014.840384863317
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13021.494814587282
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13040.0
+        }
+      ],
+      "start_ms": 13000.0
+    },
+    "abort_producer": {
+      "occurrence_id": "g0-20261002-000065",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13000.031067481343
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13008.080556704235
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13013.198596641443
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13014.840384863317
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13021.494814587282
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13040.0
+        }
+      ],
+      "start_ms": 13000.0
+    },
+    "bootstrap": {
+      "occurrence_id": "g0-20261002-000064",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12800.031067481343
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12808.080556704235
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12813.198596641443
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12814.840384863317
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12821.494814587282
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 12840.0
+        }
+      ],
+      "start_ms": 12800.0
+    },
+    "export_failure": {
+      "occurrence_id": "g0-20261002-000065",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13000.031067481343
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13008.080556704235
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13013.198596641443
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13014.840384863317
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13021.494814587282
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13040.0
+        }
+      ],
+      "start_ms": 13000.0
+    },
+    "publish_observe": {
+      "occurrence_id": "g0-20261002-000065",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13000.031067481343
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13008.080556704235
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13013.198596641443
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13014.840384863317
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13021.494814587282
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13040.0
+        }
+      ],
+      "start_ms": 13000.0
+    },
+    "reference_observe": {
+      "occurrence_id": "g0-20261002-000065",
+      "pulses": [
+        {
+          "channel": "J",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13000.031067481343
+        },
+        {
+          "channel": "A",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13008.080556704235
+        },
+        {
+          "channel": "F",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13013.198596641443
+        },
+        {
+          "channel": "C",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13014.840384863317
+        },
+        {
+          "channel": "I",
+          "location": null,
+          "magnitude": 0.025,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13021.494814587282
+        },
+        {
+          "channel": "Q",
+          "location": null,
+          "magnitude": 1.18,
+          "metadata": {},
+          "novelty": 0.0,
+          "polarity": 1,
+          "prediction_error": 0.0,
+          "source_id": "probe-input",
+          "time_ms": 13040.0
+        }
+      ],
+      "start_ms": 13000.0
+    }
+  },
+  "receipts": {
+    "bootstrap": {
+      "event_id": "g0-20261002-000064",
+      "outcome": 0.8,
+      "receipt_id": "g0-receipt-000001"
+    },
+    "conflict": {
+      "event_id": "g0-20261002-000065",
+      "outcome": -0.8,
+      "receipt_id": "g0-receipt-000002"
+    },
+    "teach": {
+      "event_id": "g0-20261002-000065",
+      "outcome": 0.8,
+      "receipt_id": "g0-receipt-000002"
+    }
+  }
+}

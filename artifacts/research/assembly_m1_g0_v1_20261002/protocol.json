@@ -1,0 +1,456 @@
+{
+  "acquisition_calls": 64,
+  "adapter": {
+    "detach_caller_inputs_and_outputs": true,
+    "include_all_mature_coordinates": true,
+    "m1_time": "decision_ms /1000.0",
+    "maximum_native_coordinates": 7,
+    "native_channel_template": "assembly_{index:03d}",
+    "native_projection_version": "native-strongest-canonical-mature-1",
+    "original_channel": "signal",
+    "original_value": 0.1,
+    "producer_decision_offset_ms": 72.0,
+    "routing_features": "same ordered original scalar followed by all native values"
+  },
+  "adapter_reviewed_head": "40f3ccd61164208bdc7aba29eac5a807d38e1dcf",
+  "call_caps": {
+    "clone_joint": 14,
+    "direct_checkpoint_load": 1,
+    "direct_checkpoint_save": 9,
+    "direct_load_bytes": 10,
+    "facade_init": 25,
+    "m1_apply_outcome": 6,
+    "m1_init": 1,
+    "m1_observe": 5,
+    "model_rng_init": 25,
+    "pilot_checkpoint_load": 1,
+    "pilot_checkpoint_save": 9,
+    "predictive_feedback": 4,
+    "predictive_init": 2,
+    "producer_learn_outcome": 0,
+    "producer_process_episode": 70,
+    "scope_init": 2,
+    "scope_router_init": 3,
+    "scope_step": 3,
+    "topology_rng_init": 1,
+    "v03_allocations": 25,
+    "v03_init": 1,
+    "v05_allocations": 15,
+    "v05_init": 1
+  },
+  "call_flags": {
+    "acquisition": {
+      "explore_action": false,
+      "learn_assembly": true,
+      "learn_field": true,
+      "metadata": {}
+    },
+    "query": {
+      "explore_action": false,
+      "learn_assembly": false,
+      "learn_field": false,
+      "metadata": {}
+    }
+  },
+  "cases": [
+    {
+      "candidate": 1,
+      "expected": "publish",
+      "literal_key": "bootstrap",
+      "name": "bootstrap_observe",
+      "observe_calls": 1,
+      "outcome_calls": 0,
+      "producer_calls": 1,
+      "source_boundary": "initial"
+    },
+    {
+      "candidate": 2,
+      "expected": "publish",
+      "literal_key": "bootstrap",
+      "name": "bootstrap_outcome",
+      "observe_calls": 0,
+      "outcome_calls": 1,
+      "producer_calls": 0,
+      "source_boundary": "bootstrap_pending"
+    },
+    {
+      "candidate": 3,
+      "expected": "dispose_reverse",
+      "literal_key": null,
+      "name": "copy_isolation_first",
+      "observe_calls": 0,
+      "outcome_calls": 0,
+      "producer_calls": 0,
+      "source_boundary": "bootstrap_committed"
+    },
+    {
+      "candidate": 4,
+      "expected": "dispose_reverse",
+      "literal_key": null,
+      "name": "copy_isolation_second",
+      "observe_calls": 0,
+      "outcome_calls": 0,
+      "producer_calls": 0,
+      "source_boundary": "bootstrap_committed"
+    },
+    {
+      "candidate": 5,
+      "expected": "expected_injected_abort",
+      "literal_key": "abort_producer",
+      "name": "producer_abort",
+      "observe_calls": 0,
+      "outcome_calls": 0,
+      "producer_calls": 1,
+      "source_boundary": "bootstrap_committed"
+    },
+    {
+      "candidate": 6,
+      "expected": "expected_injected_abort",
+      "literal_key": "abort_m1",
+      "name": "m1_observe_abort",
+      "observe_calls": 1,
+      "outcome_calls": 0,
+      "producer_calls": 1,
+      "source_boundary": "bootstrap_committed"
+    },
+    {
+      "candidate": 7,
+      "expected": "expected_export_rejection",
+      "literal_key": "export_failure",
+      "name": "export_validation_abort",
+      "observe_calls": 1,
+      "outcome_calls": 0,
+      "producer_calls": 1,
+      "source_boundary": "bootstrap_committed"
+    },
+    {
+      "candidate": 8,
+      "expected": "preserve_reference_then_dispose",
+      "literal_key": "reference_observe",
+      "name": "reference_observe",
+      "observe_calls": 1,
+      "outcome_calls": 0,
+      "producer_calls": 1,
+      "source_boundary": "bootstrap_committed"
+    },
+    {
+      "candidate": 9,
+      "expected": "publish_equal_reference",
+      "literal_key": "publish_observe",
+      "name": "publish_observe",
+      "observe_calls": 1,
+      "outcome_calls": 0,
+      "producer_calls": 1,
+      "source_boundary": "bootstrap_committed"
+    },
+    {
+      "candidate": 10,
+      "expected": "expected_native_after_predictive_revision_abort",
+      "literal_key": "teach",
+      "name": "outcome_after_predictive_abort",
+      "observe_calls": 0,
+      "outcome_calls": 1,
+      "producer_calls": 0,
+      "source_boundary": "pending"
+    },
+    {
+      "candidate": 11,
+      "expected": "preserve_reference_then_dispose",
+      "literal_key": "teach",
+      "name": "reference_outcome",
+      "observe_calls": 0,
+      "outcome_calls": 1,
+      "producer_calls": 0,
+      "source_boundary": "pending"
+    },
+    {
+      "candidate": 12,
+      "expected": "publish_equal_reference",
+      "literal_key": "teach",
+      "name": "publish_outcome",
+      "observe_calls": 0,
+      "outcome_calls": 1,
+      "producer_calls": 0,
+      "source_boundary": "pending"
+    },
+    {
+      "candidate": 13,
+      "expected": "unchanged_no_duplicate_credit",
+      "literal_key": "teach",
+      "name": "receipt_replay",
+      "observe_calls": 0,
+      "outcome_calls": 1,
+      "producer_calls": 0,
+      "source_boundary": "final"
+    },
+    {
+      "candidate": 14,
+      "expected": "unchanged_expected_identity_conflict",
+      "literal_key": "conflict",
+      "name": "receipt_conflict",
+      "observe_calls": 0,
+      "outcome_calls": 1,
+      "producer_calls": 0,
+      "source_boundary": "final"
+    }
+  ],
+  "claim_limits": [
+    "ownership and transaction eligibility only",
+    "no efficacy or learned-weight/locality/acquisition-necessity claim",
+    "no longer teaching or mature-concept checkpoint certification",
+    "no cold-restart or arbitrary-state or concurrency claim",
+    "no retries,resume,top-up or outcome-responsive configuration/seed change"
+  ],
+  "classification": "EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY",
+  "constructor_count_proof": {
+    "predictive_init": "One initial M1 child, plus one PredictiveRevisionPilot._from_checkpoint_payload constructor during native fault rollback",
+    "scope_init": "One initial M1 child, plus one CausalScopeRevisionPilot._from_checkpoint_payload constructor during native fault rollback",
+    "scope_router_init": "One initial scoped child router, plus the rollback restored-pilot router and CausalScopeRouter.from_state_dict router",
+    "status": "Source-derived before execution; no increase in planned dynamics or automatic top-up"
+  },
+  "execution_requires_separate_parent_clearance": true,
+  "external_mutation_targets": [
+    "actual caller pulse metadata dictionaries",
+    "actual caller sensory dictionary",
+    "detached native feature list",
+    "detached export binding dictionary",
+    "detached action/revision output dictionaries"
+  ],
+  "identity": "assembly-m1-g0-v1-20261002",
+  "input_provenance": {
+    "changes": "Fresh opaque occurrence IDs; only next-query absolute times shifted by exactly200ms",
+    "exposure": "Inherited exposed development recipe; not a fresh replicate or rerun of a consumed identity",
+    "seed": 910071,
+    "sha256": "69a25de3c3aef84743d45494a1193df0eac695b4d0c8a0beb8f07fad5129ee39",
+    "source": "artifacts/research/v05_history_export_20261002/inputs.jsonl"
+  },
+  "inputs": {
+    "path": "artifacts/research/assembly_m1_g0_v1_20261002/inputs.json",
+    "sha256": "edbdf26c0479c6adfc26f2cdb87f8fd616712d8f5b1c351867ac3847f3bee624",
+    "unique_rows_path": "artifacts/research/assembly_m1_g0_v1_20261002/inputs.jsonl",
+    "unique_rows_sha256": "41b08e4b8b6f174253cd9ee75f9660b26faf0cb818f9c7cdd9358bb1f404f999"
+  },
+  "limits": {
+    "address_space_bytes": 1073741824,
+    "cpu_seconds": 600,
+    "output_bytes": 268435456,
+    "wall_seconds": 900
+  },
+  "m1_configuration": {
+    "predictive": {
+      "ambiguity_distance_margin": 0.05,
+      "ambiguity_prediction_gap": 0.5,
+      "context_gate": 0.35,
+      "max_context_scalars": 64,
+      "max_hypotheses": 16,
+      "reuse_error": 0.35
+    },
+    "scope": {
+      "birth_distance": 0.25,
+      "candidates": [
+        "alpha",
+        "beta"
+      ],
+      "evidence_gain": 1.0,
+      "max_components": 2,
+      "maximum_absolute_support": 4.0,
+      "maximum_assignment_distance": 0.25,
+      "maximum_dimensions": 8,
+      "minimum_confidence": 0.6,
+      "minimum_distance_margin": 0.05,
+      "minimum_hypothesis_margin": 0.2
+    },
+    "v03": {
+      "ablations": [],
+      "action_prefix": "broadcast",
+      "allow_oracle_diagnostics": false,
+      "entity_track": "E0_global",
+      "ignition_margin": 0.2,
+      "ignition_threshold": 1.2,
+      "input_track": "I1_local_compositional",
+      "random_seed": 31,
+      "stability_steps": 1,
+      "workspace_capacity": 1
+    }
+  },
+  "negative_preflight_cases": [
+    "malformed_primitive_pulse",
+    "privileged_sensory_name",
+    "nonfinite_export",
+    "native_coordinate_capacity_exceeds_actual_M1_headroom",
+    "schema_mismatch"
+  ],
+  "negative_preflight_model_calls": 0,
+  "ownership_contract_sha256": "281e71fd1bbc11d9d705e6a02524f4071d39573ce0bc36b040da1de40a04e7c8",
+  "producer_configuration": {
+    "action": {
+      "actions": [
+        "action-0",
+        "action-1",
+        "withhold"
+      ],
+      "exploration_visits": 6,
+      "learning_rate": 0.3
+    },
+    "assembly": {
+      "immature_stale_episodes": 2,
+      "mature_episodes": 3,
+      "max_candidates": 32,
+      "similarity_threshold": 0.66,
+      "stale_after_ms": 50000.0
+    },
+    "base": {
+      "enable_expectations": false,
+      "enable_plasticity": false,
+      "height": 8,
+      "ignition_threshold": 4.0,
+      "max_cascade_gap_ms": 6.0,
+      "receptor_rows": 1,
+      "settle_ms": 32.0,
+      "topology_seed": 41,
+      "width": 8
+    },
+    "base_plasticity": {
+      "delay_learning_rate": 0.02,
+      "depression_ratio": 0.75,
+      "learning_rate": 0.012,
+      "max_delay_ms": 30.0,
+      "max_weight": 1.5,
+      "min_delay_ms": 0.5,
+      "min_weight": -1.5,
+      "reward_decay": 0.85,
+      "tau_minus_ms": 24.0,
+      "tau_plus_ms": 18.0
+    },
+    "brain": {
+      "enable_action": false,
+      "enable_assembly": true,
+      "enable_delay_learning": true,
+      "enable_homeostasis": true,
+      "enable_prediction": false,
+      "enable_receptor_bank": true,
+      "enable_reward_modulation": false,
+      "enable_weight_learning": true,
+      "height": 8,
+      "min_pattern_spikes": 2,
+      "pattern_temporal_bin_ms": 0.25,
+      "receptor_rows": 1,
+      "settle_ms": 32.0,
+      "topology_seed": 41,
+      "width": 8
+    },
+    "burst": {
+      "min_spikes": 4,
+      "min_units": 3,
+      "window_ms": 8.0
+    },
+    "cascade": {
+      "max_gap_ms": 6.0,
+      "min_spikes": 2,
+      "temporal_bin_ms": 2.0
+    },
+    "field": {
+      "adaptation_increment": 0.16,
+      "adaptation_tau_ms": 90.0,
+      "input_gain": 1.35,
+      "max_events_per_run": 120000,
+      "max_sources_per_unit": 16,
+      "max_spikes_per_run": 20000,
+      "membrane_tau_ms": 18.0,
+      "novelty_gain": 0.2,
+      "prediction_error_gain": 0.34,
+      "receptor_fanout": 2,
+      "refractory_ms": 3.0,
+      "reset_potential": 0.0
+    },
+    "homeostasis": {
+      "dead_windows_before_flag": 6,
+      "learning_rate": 0.004,
+      "max_threshold": 2.8,
+      "min_threshold": 0.35,
+      "rate_decay": 0.88,
+      "runaway_spikes_per_window": 800,
+      "target_spikes_per_window": 0.35
+    },
+    "ignition": {
+      "diversity_weight": 1.0,
+      "min_spikes": 4,
+      "min_units": 3,
+      "novelty_weight": 0.55,
+      "prediction_error_weight": 0.9,
+      "recurrence_weight": 0.8,
+      "size_weight": 1.25,
+      "spread_weight": 0.25,
+      "threshold": 4.0
+    },
+    "plasticity": {
+      "delay_learning_rate": 0.004,
+      "depression_ratio": 0.75,
+      "eligibility_decay": 0.9,
+      "enable_delay_learning": true,
+      "enable_weight_learning": true,
+      "learning_rate": 0.001,
+      "max_delay_ms": 30.0,
+      "max_updates_per_step": 2000,
+      "max_weight": 1.4,
+      "min_delay_ms": 0.5,
+      "min_weight": -1.4,
+      "tau_minus_ms": 24.0,
+      "tau_plus_ms": 18.0
+    },
+    "receptor": {
+      "derivative_gain": 0.42,
+      "direct_gain": 0.95,
+      "emission_threshold": 0.08,
+      "fast_tau_ms": 5.0,
+      "gain_tau_ms": 180.0,
+      "max_gain": 2.4,
+      "medium_tau_ms": 22.0,
+      "min_gain": 1.0,
+      "novelty_gain": 0.28,
+      "output_cap": 2.0,
+      "prediction_error_gain": 0.45,
+      "slow_tau_ms": 120.0,
+      "target_abs_input": 1.2
+    }
+  },
+  "reserves": {
+    "address_space_bytes": 33554432,
+    "cpu_seconds": 30,
+    "output_bytes": 16777216,
+    "wall_seconds": 45
+  },
+  "resource_contract": {
+    "ancillary_stdlib_rngs": "record separately; not classified as model-owned",
+    "constructor_counts": "passively verify before-body; unexpected births/calls poison whole attempt",
+    "final_disposal_order": [
+      12,
+      9,
+      2,
+      1
+    ],
+    "hard_kill_limitation": "SIGKILL/OOM may prevent terminal closure; retain partial files",
+    "native_rollback_reconstructions": 1,
+    "native_save_validation_reconstructions": 9,
+    "retained_predecessors": [
+      1,
+      2,
+      9,
+      12
+    ],
+    "strict_serial": true,
+    "temporary_disposal": "reverse allocation order"
+  },
+  "schema": "g0-joint-eligibility-protocol-v1",
+  "scientific_credit": 0,
+  "source_base_commit": "b9caed4797c9cd8217361b6e523864aabdd4cbcc",
+  "source_materialization": {
+    "approval_path": "artifacts/research/assembly_m1_g0_v1_20261002/independent-execution-approval.json",
+    "external_raw_and_canonical_approval_pins_required": true,
+    "kind": "independently_verified_published_tree",
+    "launcher": "scripts/launch_g0_joint_eligibility.py",
+    "local_git_head_is_source_authority": false,
+    "published_commit_and_source_inventory_independently_checked": true
+  },
+  "status": "PROSPECTIVE_UNEXECUTED"
+}
