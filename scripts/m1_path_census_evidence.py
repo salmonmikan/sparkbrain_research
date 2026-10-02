@@ -10,7 +10,6 @@ from __future__ import annotations
 
 import ast
 import re
-import sysconfig
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -212,6 +211,7 @@ def _validate_raw_census_evidence(root: Path, freeze: dict, contract: dict, cens
         _read_binding,
         _relative,
         _require,
+        _validate_environment_schema,
         canonical,
         parse_json,
     )
@@ -266,20 +266,23 @@ def _validate_raw_census_evidence(root: Path, freeze: dict, contract: dict, cens
         CLONE in functions and DECODE in functions and LOAD in functions,
         "reviewed shell allocation functions are missing",
     )
-    stdlib = profile["stdlib_sources"]
-    _require(
-        type(stdlib) is dict
-        and {"enum.py", "random.py", "threading.py", "dataclasses.py", "copy.py", "copyreg.py"}
-        <= stdlib.keys(),
-        "complete constructor stdlib source bindings missing",
+    # AST-only inspection uses the reviewed execution environment's bytes, not
+    # this inspecting host's stdlib (whose Enum initializer may differ on 3.14+).
+    declared_stdlib = _validate_environment_schema(freeze["environment"])["stdlib"]
+    stdlib = _keys(
+        profile["stdlib_sources"],
+        set(declared_stdlib["sources_sha256"]),
+        "complete constructor stdlib source bindings",
     )
-    stdlib_root = source_root(Path(sysconfig.get_path("stdlib")))
+    stdlib_root = source_root(Path(declared_stdlib["root"]))
     for relative, binding in stdlib.items():
         _relative(relative, "stdlib route source")
         _keys(binding, {"path", "sha256"}, "stdlib route source")
         expected = confined_path(stdlib_root, relative, "stdlib route source")
         _require(
-            binding.get("path") == str(expected), "stdlib binding is not the current frozen root"
+            binding.get("path") == str(expected)
+            and binding.get("sha256") == declared_stdlib["sources_sha256"][relative],
+            "stdlib binding differs from the declared frozen environment",
         )
         raw = _read_absolute_binding(binding, "stdlib route source")
         tree = ast.parse(raw, filename=str(expected))

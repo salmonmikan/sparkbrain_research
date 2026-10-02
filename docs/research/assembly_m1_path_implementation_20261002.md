@@ -37,6 +37,10 @@ admission until a new reviewed allocator binding exists. This research-specific 
 does not change the repository core's general Python 3.11+ requirement. Static source
 checks remain portable; instrumented fixtures skip unsupported newer interpreters and
 a separate rejection regression verifies the closed boundary.
+Pure evidence inspection reads only the declared frozen CPython 3.11–3.13 stdlib
+root and exact route-source hashes, rather than borrowing the inspecting host's
+`enum.py` or other stdlib files. Native admission separately verifies that binding
+against the actual supported interpreter before instrumentation or model work.
 
 ## Exact literal selection
 

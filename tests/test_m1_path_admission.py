@@ -69,6 +69,10 @@ def freeze():
             "sys_path": ["/synthetic"],
             "environment_sha256": SHA,
             "dependency_roots": ["/synthetic/lib"],
+            "stdlib": {
+                "root": "/synthetic/lib",
+                "sources_sha256": dict.fromkeys(admission.STDLIB_ROUTE_SOURCES, SHA),
+            },
             "dependency_inventory_sha256": SHA,
             "dependency_files": 1,
             "native_code_sha256": {},
@@ -242,8 +246,41 @@ def write_json(root, name, value):
     return {"path": name, "sha256": admission.digest(raw)}
 
 
+def bind_stdlib_fixture(value, directory):
+    """Bind explicit fixture/host files without representing a real environment snapshot."""
+    value["environment"]["dependency_roots"] = [str(directory)]
+    value["environment"]["stdlib"] = {
+        "root": str(directory),
+        "sources_sha256": {
+            name: admission.digest((directory / name).read_bytes())
+            for name in admission.STDLIB_ROUTE_SOURCES
+        },
+    }
+
+
+def synthetic_stdlib_fixture(root, value):
+    """Source-shaped supported-version ASTs, never imported or executed."""
+    sources = {
+        "enum.py": "class Enum:\n    def __init__(self, *args, **kwargs): pass\n",
+        "random.py": "class Random:\n    def __init__(self, x=None): pass\n",
+        "threading.py": "def RLock(*args, **kwargs): pass\n",
+        "dataclasses.py": "def _init_fn(*args, **kwargs): pass\n",
+        "copy.py": "def deepcopy(x, memo=None): pass\n"
+        "def _reconstruct(x, memo, func, args): pass\n"
+        "def _deepcopy_dict(x, memo): pass\n",
+        "copyreg.py": "def __newobj__(cls, *args): pass\n",
+        "tempfile.py": "class _RandomNameSequence:\n    def rng(self): pass\n",
+    }
+    directory = root / "declared-stdlib"
+    directory.mkdir()
+    for name, source in sources.items():
+        (directory / name).write_text(source)
+    bind_stdlib_fixture(value, directory)
+
+
 def gate_fixture(root):
     value = freeze()
+    synthetic_stdlib_fixture(root, value)
     raw = write_json(root, "raw.json", {"synthetic": True})
     terminal = write_json(
         root, "terminal.json", {"identity": "assembly-m1-g0-v1-20261002", "status": "SUCCESS"}
@@ -952,18 +989,10 @@ def refresh_profiler_evidence(root, value, census, *, events=None, snapshot=None
         "failure": None,
     }
     terminal_binding = write_json(root, "profile/terminal.json", terminal)
-    stdlib = Path(sysconfig.get_path("stdlib"))
+    declared = value["environment"]["stdlib"]
     stdlib_sources = {
-        name: {"path": str(stdlib / name), "sha256": admission.digest((stdlib / name).read_bytes())}
-        for name in (
-            "enum.py",
-            "random.py",
-            "threading.py",
-            "dataclasses.py",
-            "tempfile.py",
-            "copy.py",
-            "copyreg.py",
-        )
+        name: {"path": str(Path(declared["root"]) / name), "sha256": sha}
+        for name, sha in declared["sources_sha256"].items()
     }
     census["profiler_evidence"] = {
         "schema": "m1-path-passive-census-evidence-v1",
@@ -1285,6 +1314,7 @@ def test_real_passive_census_standin_dataclass_enum_recording_validates(tmp_path
         {"type": key[0], "path": key[1], "qualname": key[2], "kind": key[3], "count": count}
         for key, count in routes.items()
     ]
+    bind_stdlib_fixture(value, Path(sysconfig.get_path("stdlib")))
     refresh_profiler_evidence(tmp_path, value, census, events=snapshot["events"], snapshot=snapshot)
     save_census(tmp_path, value, census)
     _validate_raw_census_evidence(tmp_path, value, contract, census)
@@ -1615,3 +1645,178 @@ def test_type_only_recording_is_not_a_probe_even_when_raw_events_are_valid(tmp_p
         admission.AdmissionError, match="complete exact eligibility native call map"
     ):
         validate_census_evidence(tmp_path, value, contract, census)
+
+
+@pytest.mark.parametrize("declared_version", ["3.11.9", "3.12.7", "3.13.0"])
+def test_static_declared_stdlib_inspection_is_independent_of_host_314(
+    tmp_path, monkeypatch, declared_version
+):
+    import enum
+
+    from scripts.m1_path_census import PassiveCensus
+
+    value, contract, gates = gate_fixture(tmp_path)
+    value["environment"]["version"] = declared_version + " (synthetic AST-only fixture)"
+    with monkeypatch.context() as patch:
+        patch.setattr(sys, "version_info", (3, 14, 0))
+        patch.setattr(enum.Enum, "__init__", object.__init__)
+        patch.setattr(
+            sysconfig, "get_path", lambda *_: pytest.fail("static inspection used host sysconfig")
+        )
+        report = admission._inspect_gates(tmp_path, value, contract)
+        assert report["mandatory_unmet_obligations"]
+        with pytest.raises(admission.AdmissionError, match="fixed mandatory unmet obligations"):
+            admission._verify_gates(tmp_path, value, contract)
+        with pytest.raises(admission.AdmissionError, match="CPython 3.11 through 3.13"):
+            admission.environment_snapshot(tmp_path)
+        with pytest.raises(ValueError, match="CPython 3.11 through 3.13"):
+            PassiveCensus(
+                tmp_path,
+                targets={},
+                call_caps={},
+                type_caps={},
+                allowed_functions=set(),
+                budget=None,
+                writer=None,
+            )
+        # Host portability must not bypass the static route checks on that host.
+        census = gates["constructor_census"]
+        replace_observed_route(
+            census, "sparkbrain.example:Example", "init", "stdlib/enum.py", "Enum.__init__"
+        )
+        refresh_profiler_evidence(tmp_path, value, census)
+        save_census(tmp_path, value, census)
+        with pytest.raises(admission.AdmissionError, match="outside exact source support"):
+            admission._inspect_gates(tmp_path, value, contract)
+    assert admission.APPROVED_FREEZE_SHA256 is None
+
+
+@pytest.mark.parametrize(
+    "change",
+    [
+        "missing_binding",
+        "missing_root",
+        "missing_hash_map",
+        "extra_binding_field",
+        "missing_enum_source",
+        "missing_ancillary_source",
+        "extra_source",
+        "traversal_source",
+        "bad_hash",
+        "relative_root",
+        "traversal_root",
+        "noncanonical_root",
+        "double_slash_root",
+        "uninventoried_root",
+        "environment_hash_rebound",
+        "profile_hash_rebound",
+        "profile_path_rebound",
+        "profile_path_traversal",
+        "extra_profile_source",
+        "missing_profile_ancillary_source",
+        "stale_source_bytes",
+        "root_symlink",
+        "source_symlink",
+        "missing_python_enum_init",
+        "declared_314",
+        "declared_other_implementation",
+    ],
+)
+def test_declared_stdlib_bindings_fail_closed_before_event_acceptance(tmp_path, change):
+    from scripts.m1_path_census_evidence import _validate_raw_census_evidence
+
+    value, contract, gates = gate_fixture(tmp_path)
+    census = gates["constructor_census"]
+    environment = value["environment"]
+    declared = environment["stdlib"]
+    hashes = declared["sources_sha256"]
+    profile = census["profiler_evidence"]["stdlib_sources"]
+    directory = Path(declared["root"])
+    if change == "missing_binding":
+        del environment["stdlib"]
+    elif change == "missing_root":
+        del declared["root"]
+    elif change == "missing_hash_map":
+        del declared["sources_sha256"]
+    elif change == "extra_binding_field":
+        declared["host_fallback"] = True
+    elif change == "missing_enum_source":
+        del hashes["enum.py"]
+    elif change == "missing_ancillary_source":
+        del hashes["tempfile.py"]
+    elif change == "extra_source":
+        hashes["unreviewed.py"] = SHA
+    elif change == "traversal_source":
+        hashes["../enum.py"] = hashes.pop("enum.py")
+    elif change == "bad_hash":
+        hashes["enum.py"] = True
+    elif change in {"relative_root", "traversal_root", "noncanonical_root", "double_slash_root"}:
+        declared["root"] = {
+            "relative_root": "declared-stdlib",
+            "traversal_root": str(directory / ".." / directory.name),
+            "noncanonical_root": str(directory) + "/",
+            "double_slash_root": "/" + str(directory),
+        }[change]
+        environment["dependency_roots"] = [declared["root"]]
+    elif change == "uninventoried_root":
+        environment["dependency_roots"] = [str(tmp_path)]
+    elif change == "environment_hash_rebound":
+        hashes["enum.py"] = SHA
+    elif change == "profile_hash_rebound":
+        profile["enum.py"]["sha256"] = SHA
+    elif change == "profile_path_rebound":
+        alternate = tmp_path / "enum.py"
+        alternate.write_bytes((directory / "enum.py").read_bytes())
+        profile["enum.py"]["path"] = str(alternate)
+    elif change == "profile_path_traversal":
+        profile["enum.py"]["path"] = str(directory / ".." / directory.name / "enum.py")
+    elif change == "extra_profile_source":
+        profile["unreviewed.py"] = dict(profile["enum.py"])
+    elif change == "missing_profile_ancillary_source":
+        del profile["tempfile.py"]
+    elif change == "stale_source_bytes":
+        (directory / "enum.py").write_text("class Enum: pass\n")
+    elif change == "root_symlink":
+        alias = tmp_path / "stdlib-alias"
+        alias.symlink_to(directory, target_is_directory=True)
+        declared["root"] = str(alias)
+        environment["dependency_roots"] = [str(alias)]
+        for name, binding in profile.items():
+            binding["path"] = str(alias / name)
+    elif change == "source_symlink":
+        target = directory / "enum.py"
+        alternate = tmp_path / "aliased-enum.py"
+        target.rename(alternate)
+        target.symlink_to(alternate)
+    elif change == "missing_python_enum_init":
+        (directory / "enum.py").write_text("class Enum: pass\n")
+        hashes["enum.py"] = admission.digest((directory / "enum.py").read_bytes())
+        profile["enum.py"]["sha256"] = hashes["enum.py"]
+    elif change == "declared_314":
+        environment["version"] = "3.14.0"
+    elif change == "declared_other_implementation":
+        environment["implementation"] = "PyPy"
+    with pytest.raises(ValueError):
+        _validate_raw_census_evidence(tmp_path, value, contract, census)
+
+
+def test_live_snapshot_binds_exact_stdlib_sources_from_full_inventory(tmp_path, monkeypatch):
+    value = freeze()
+    synthetic_stdlib_fixture(tmp_path, value)
+    expected = value["environment"]["stdlib"]
+    inventory = {**expected["sources_sha256"], "other_dependency.py": SHA}
+    monkeypatch.setattr(sys, "version_info", (3, 13, 0))
+    monkeypatch.setattr(sys, "path", [expected["root"]])
+    monkeypatch.setattr(admission.platform, "python_implementation", lambda: "CPython")
+    monkeypatch.setattr(sysconfig, "get_path", lambda _: expected["root"])
+    monkeypatch.setattr(admission, "_tree_inventory", lambda _: inventory)
+    monkeypatch.setattr(admission, "mapped_code_snapshot", lambda: {"/synthetic/python": SHA})
+    snapshot = admission.environment_snapshot(tmp_path)
+    assert snapshot["stdlib"] == expected
+    assert snapshot["dependency_files"] == len(inventory)
+    assert snapshot["dependency_inventory_sha256"] == admission.digest(
+        admission.canonical({expected["root"]: inventory})
+    )
+    del inventory["enum.py"]
+    with pytest.raises(admission.AdmissionError, match="stdlib route sources are missing"):
+        admission.environment_snapshot(tmp_path)

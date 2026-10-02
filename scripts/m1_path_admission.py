@@ -34,6 +34,13 @@ SOURCE_COMMIT = "46bbd9b8b28c2404c73f028f8736ed83c3b5c3fe"
 ARTIFACT_ROOT = "artifacts/research/assembly_m1_path_v1_20261002"
 APPROVED_FREEZE_SHA256: str | None = None
 RESOURCE_KEYS = {"cpu_seconds", "wall_seconds", "address_space_bytes", "output_bytes"}
+# Exact source routes supported by the passive profiler, including ancillary RNGs.
+STDLIB_ROUTE_SOURCES = frozenset(
+    {
+        "enum.py", "random.py", "threading.py", "dataclasses.py",
+        "copy.py", "copyreg.py", "tempfile.py",
+    }
+)
 # These are proposed source-route totals, NOT observed census results or budgets.
 PROSPECTIVE_SUCCESS_COUNTS = {
     "facade_init": 58,
@@ -91,6 +98,7 @@ ENVIRONMENT_KEYS = {
     "sys_path",
     "environment_sha256",
     "dependency_roots",
+    "stdlib",
     "dependency_inventory_sha256",
     "dependency_files",
     "native_code_sha256",
@@ -213,36 +221,13 @@ def _evidence_files(root: Path, values: Any, label: str) -> None:
     _require(len(names) == len(set(names)), label + " duplicates evidence")
 
 
-def validate_freeze_schema(freeze: Any) -> dict:
-    """Pure schema validation, with no defaults, authority or eligibility inference."""
-    freeze = primitive(freeze)
-    _keys(freeze, FREEZE_KEYS, "execution freeze")
-    _require(
-        freeze["schema"] == "m1-path-execution-freeze-v1"
-        and freeze["identity"] == IDENTITY
-        and freeze["source_commit"] == SOURCE_COMMIT
-        and freeze["runtime_execution_authorized"] is False,
-        "freeze identity/source-only boundary differs",
-    )
-    _hash_map(freeze["source_files_sha256"], "complete source")
-    for name, path in (("source_contract", CONTRACT), ("inputs", ARTIFACT_ROOT + "/inputs.jsonl")):
-        _binding(freeze[name], name)
-        _require(freeze[name]["path"] == path, name + " canonical path differs")
-    teaching = _keys(freeze["teaching"], {"evaluator", "subset_sha256"}, "teaching")
-    _binding(teaching["evaluator"], "evaluator")
-    _require(
-        teaching["evaluator"]["path"] == ARTIFACT_ROOT + "/evaluator.json",
-        "evaluator canonical path differs",
-    )
-    _sha(teaching["subset_sha256"], "truth-minimized teaching subset")
-    _keys(freeze["gates"], GATE_NAMES, "required gates")
-    for name, binding in freeze["gates"].items():
-        _binding(binding, name)
-    _require(
-        type(freeze["configuration"]) is dict and bool(freeze["configuration"]),
-        "source configuration missing",
-    )
-    environment = _keys(freeze["environment"], ENVIRONMENT_KEYS, "full execution environment")
+def _validate_environment_schema(environment: Any) -> dict:
+    """Inspect the declared supported environment without consulting the host.
+
+    The explicit stdlib subset supports portable AST-only evidence inspection.
+    Live admission separately compares the entire snapshot, including this map.
+    """
+    environment = _keys(primitive(environment), ENVIRONMENT_KEYS, "full execution environment")
     _require(
         environment["schema"] == "m1-path-python-environment-v1"
         and environment["implementation"] == "CPython"
@@ -292,6 +277,53 @@ def validate_freeze_schema(freeze: Any) -> dict:
     _require(bool(environment["mapped_code_sha256"]), "no native mapping inventory")
     if environment["venv_configuration_sha256"] is not None:
         _sha(environment["venv_configuration_sha256"], "venv configuration")
+    stdlib = _keys(environment["stdlib"], {"root", "sources_sha256"}, "declared stdlib")
+    directory = stdlib["root"]
+    _require(
+        type(directory) is str
+        and Path(directory).is_absolute()
+        and not directory.startswith("//")
+        and str(Path(directory)) == directory
+        and ".." not in Path(directory).parts
+        and directory in environment["dependency_roots"],
+        "declared stdlib root is not a canonical inventoried dependency root",
+    )
+    sources = _keys(stdlib["sources_sha256"], set(STDLIB_ROUTE_SOURCES), "declared stdlib sources")
+    for name, sha in sources.items():
+        _sha(sha, "declared stdlib source " + name)
+    return environment
+
+
+def validate_freeze_schema(freeze: Any) -> dict:
+    """Pure schema validation, with no defaults, authority or eligibility inference."""
+    freeze = primitive(freeze)
+    _keys(freeze, FREEZE_KEYS, "execution freeze")
+    _require(
+        freeze["schema"] == "m1-path-execution-freeze-v1"
+        and freeze["identity"] == IDENTITY
+        and freeze["source_commit"] == SOURCE_COMMIT
+        and freeze["runtime_execution_authorized"] is False,
+        "freeze identity/source-only boundary differs",
+    )
+    _hash_map(freeze["source_files_sha256"], "complete source")
+    for name, path in (("source_contract", CONTRACT), ("inputs", ARTIFACT_ROOT + "/inputs.jsonl")):
+        _binding(freeze[name], name)
+        _require(freeze[name]["path"] == path, name + " canonical path differs")
+    teaching = _keys(freeze["teaching"], {"evaluator", "subset_sha256"}, "teaching")
+    _binding(teaching["evaluator"], "evaluator")
+    _require(
+        teaching["evaluator"]["path"] == ARTIFACT_ROOT + "/evaluator.json",
+        "evaluator canonical path differs",
+    )
+    _sha(teaching["subset_sha256"], "truth-minimized teaching subset")
+    _keys(freeze["gates"], GATE_NAMES, "required gates")
+    for name, binding in freeze["gates"].items():
+        _binding(binding, name)
+    _require(
+        type(freeze["configuration"]) is dict and bool(freeze["configuration"]),
+        "source configuration missing",
+    )
+    _validate_environment_schema(freeze["environment"])
     limits = _keys(freeze["limits"], RESOURCE_KEYS, "fixed limits")
     reserves = _keys(freeze["finalization_reserves"], RESOURCE_KEYS, "finalization reserves")
     for key, cap in limits.items():
@@ -456,6 +488,17 @@ def environment_snapshot(root: Path) -> dict:
             else None
         )
     inventories = {directory: _tree_inventory(Path(directory)) for directory in roots}
+    stdlib_root = str(source_root(Path(sysconfig.get_path("stdlib"))))
+    _require(
+        STDLIB_ROUTE_SOURCES <= inventories[stdlib_root].keys(),
+        "supported interpreter stdlib route sources are missing",
+    )
+    stdlib = {
+        "root": stdlib_root,
+        "sources_sha256": {
+            name: inventories[stdlib_root][name] for name in sorted(STDLIB_ROUTE_SOURCES)
+        },
+    }
     native = {
         str(Path(directory) / name): sha
         for directory, files in inventories.items()
@@ -484,6 +527,7 @@ def environment_snapshot(root: Path) -> dict:
         "sys_path": imports,
         "environment_sha256": digest(canonical(dict(os.environ))),
         "dependency_roots": roots,
+        "stdlib": stdlib,
         "dependency_inventory_sha256": digest(canonical(inventories)),
         "dependency_files": sum(len(files) for files in inventories.values()),
         "native_code_sha256": native,

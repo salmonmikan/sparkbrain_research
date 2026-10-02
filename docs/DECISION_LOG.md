@@ -1373,3 +1373,8 @@ shell route; preserve all unknown-class/route rejections and require same-thread
 census construction/installation. Registry-birth binding, complete resource caps,
 actual arm graphs, unsupported endpoint coverage, launcher and execution authority
 remain unmet. Source-only approval is not empirical eligibility or experiment clearance.
+
+**Static inspection portability (2026-10-02):** Bind the declared supported
+interpreter's exact stdlib route-source bytes for pure census-evidence inspection.
+Do not silently substitute the inspecting host's stdlib. Keep actual native
+admission restricted to CPython 3.11–3.13 and verify its live bindings separately.
