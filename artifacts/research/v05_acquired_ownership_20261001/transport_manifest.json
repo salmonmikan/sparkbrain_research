@@ -1,0 +1,34 @@
+{
+  "archive_bytes": 136964,
+  "archive_files": 169,
+  "archive_sha256": "632088e5618a035aec5a6b2fb6ba7ab1dd34510de53bac3b17fd681546ce7e0b",
+  "empty_runtime_bytecode_directory_excluded": true,
+  "encoding": "base64-then-xz-tar",
+  "model_execution_for_packaging": false,
+  "parts": [
+    {
+      "bytes": 48632,
+      "path": "evidence-000.b64",
+      "sha256": "03ef61e3124bd68f894e5b349a2e12d298eda215a959ccd2b52949d90b3ae966"
+    },
+    {
+      "bytes": 48632,
+      "path": "evidence-001.b64",
+      "sha256": "e3d73cc18a473e53dca7b5259c608cb75871dd1e1da183cd7d7afd5fcc745f57"
+    },
+    {
+      "bytes": 48632,
+      "path": "evidence-002.b64",
+      "sha256": "49f20bbb876c92cbe09afd42dffa1fa747f96893d7140622ce698c7ba4c34da9"
+    },
+    {
+      "bytes": 39129,
+      "path": "evidence-003.b64",
+      "sha256": "1675682baed6dc8e29d33d7c24d7bbed046d3ab3455bc095f66ec5c8e28d1246"
+    }
+  ],
+  "raw_bytes": 5812592,
+  "raw_files": 160,
+  "schema": "v05-acquired-ownership-transport-1",
+  "source_commit": "6dd7e8a014d66232509355687b14579c03838962"
+}
