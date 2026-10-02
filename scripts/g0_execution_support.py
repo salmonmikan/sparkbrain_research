@@ -697,8 +697,9 @@ def verify_timeout_parent(expected_executable_sha256: str,
 def preflight_runtime_limits() -> dict[str, Any]:
     """Read inherited limits before identity consumption; never shrink the frozen envelope.
 
-    All resources are checked before the caller may reserve a one-shot identity or
-    change any OS limit. Cgroups/OOM remain a separate documented platform limitation.
+    Both soft and hard limits must already cover the frozen envelope before any
+    one-shot identity or evidence write. This read-only check never raises limits.
+    Cgroups/OOM remain a separate documented platform limitation.
     """
     import resource
 
@@ -708,11 +709,22 @@ def preflight_runtime_limits() -> dict[str, Any]:
                     ("core_bytes", resource.RLIMIT_CORE, 0))
     observed = []
     for key, identifier, required in requirements:
-        soft, hard = resource.getrlimit(identifier)
-        if type(soft) is not int or type(hard) is not int:
+        try:
+            inherited = resource.getrlimit(identifier)
+        except (OSError, TypeError, ValueError):
+            raise AdmissionError(f"inherited resource limits are unavailable: {key}") from None
+        if type(inherited) is not tuple or len(inherited) != 2:
+            raise AdmissionError(f"unsupported inherited resource limit metadata: {key}")
+        soft, hard = inherited
+        if (type(soft) is not int or type(hard) is not int
+                or any(value < 0 and value != resource.RLIM_INFINITY for value in inherited)):
             raise AdmissionError(f"unsupported inherited resource limit metadata: {key}")
         if hard != resource.RLIM_INFINITY and hard < required:
             raise AdmissionError(f"inherited hard limit cannot support frozen envelope: {key}")
+        if soft != resource.RLIM_INFINITY and soft < required:
+            raise AdmissionError(f"inherited soft limit cannot support frozen envelope: {key}")
+        if hard != resource.RLIM_INFINITY and (soft == resource.RLIM_INFINITY or soft > hard):
+            raise AdmissionError(f"inconsistent inherited resource limit metadata: {key}")
         observed.append({"resource": key, "resource_id": identifier,
                          "inherited_soft": soft, "inherited_hard": hard,
                          "required_soft": required, "required_hard": required})

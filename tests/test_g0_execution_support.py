@@ -736,7 +736,7 @@ def test_limit_preflight_keeps_exact_frozen_pairs_without_installing(monkeypatch
             hard += 1000
         elif inherited == "unlimited":
             hard = resource.RLIM_INFINITY
-        return 0, hard
+        return hard, hard
 
     installed = []
     monkeypatch.setattr(resource, "getrlimit", getrlimit)
@@ -886,7 +886,8 @@ def test_limit_installation_uses_exact_pairs_with_only_synthetic_os_backends(mon
     installed, hooks = [], []
     monkeypatch.setattr(support, "require_execution_permit", lambda permit: None)
     monkeypatch.setattr(support, "verify_timeout_parent", lambda *args: {"synthetic": True})
-    monkeypatch.setattr(resource, "getrlimit", lambda identifier: (0, resource.RLIM_INFINITY))
+    monkeypatch.setattr(resource, "getrlimit", lambda identifier:
+                        (resource.RLIM_INFINITY, resource.RLIM_INFINITY))
     monkeypatch.setattr(resource, "setrlimit", lambda identifier, pair: installed.append(
         (identifier, pair)))
     monkeypatch.setattr(support, "sys", SimpleNamespace(
@@ -900,3 +901,251 @@ def test_limit_installation_uses_exact_pairs_with_only_synthetic_os_backends(mon
                          (resource.RLIMIT_CORE, (0, 0))]
     assert len(hooks) == 1
     assert result["inherited_limits"]["frozen_envelope_preserved"] is True
+
+
+@pytest.mark.parametrize("resource_name,key,required", [
+    ("RLIMIT_CPU", "cpu_seconds", 600),
+    ("RLIMIT_AS", "address_space_bytes", 1 << 30),
+    ("RLIMIT_FSIZE", "output_bytes", 256 << 20),
+])
+@pytest.mark.parametrize("shortfall", ["zero", "just_below"])
+def test_insufficient_soft_limits_never_consume_or_charge_identity(
+        tmp_path, monkeypatch, resource_name, key, required, shortfall):
+    import resource
+
+    target = getattr(resource, resource_name)
+    soft = 0 if shortfall == "zero" else required - 1
+    monkeypatch.setattr(resource, "getrlimit", lambda name: (
+        (soft, resource.RLIM_INFINITY) if name == target else
+        (resource.RLIM_INFINITY, resource.RLIM_INFINITY)))
+    installed = []
+    monkeypatch.setattr(resource, "setrlimit", lambda *args: installed.append(args))
+    monkeypatch.setattr(support, "require_execution_permit", lambda *args: None)
+    permit = object.__new__(support.ExecutionPermit)
+    reservation = tmp_path / "synthetic-reservation"
+    output = tmp_path / "synthetic-output"
+    support._PERMITS[permit] = {"consumed": False, "identity_reservation": reservation}
+    evidence_budget = budget()
+    with pytest.raises(support.AdmissionError, match="inherited soft limit.*" + key):
+        support.consume_execution_permit(permit, output, budget=evidence_budget)
+    assert support._PERMITS[permit]["consumed"] is False
+    assert evidence_budget.output_bytes == 0
+    assert not reservation.exists() and not output.exists()
+    assert installed == []
+
+
+@pytest.mark.parametrize("resource_name,required", [
+    ("RLIMIT_CPU", 600), ("RLIMIT_AS", 1 << 30), ("RLIMIT_FSIZE", 256 << 20),
+])
+@pytest.mark.parametrize("boundary", ["exact", "soft_exact_hard_unlimited", "unlimited"])
+def test_each_healthy_soft_hard_boundary_is_read_only(
+        monkeypatch, resource_name, required, boundary):
+    import resource
+
+    target = getattr(resource, resource_name)
+    pair = {"exact": (required, required),
+            "soft_exact_hard_unlimited": (required, resource.RLIM_INFINITY),
+            "unlimited": (resource.RLIM_INFINITY, resource.RLIM_INFINITY)}[boundary]
+    monkeypatch.setattr(resource, "getrlimit", lambda name: pair if name == target else
+                        (resource.RLIM_INFINITY, resource.RLIM_INFINITY))
+    installed = []
+    monkeypatch.setattr(resource, "setrlimit", lambda *args: installed.append(args))
+    result = support.preflight_runtime_limits()
+    row = next(row for row in result["resources"] if row["resource_id"] == target)
+    assert (row["inherited_soft"], row["inherited_hard"]) == pair
+    assert (row["required_soft"], row["required_hard"]) == (required, required)
+    assert installed == []
+
+
+@pytest.mark.parametrize("bad", ["boolean", "float", "negative", "wrong_shape", "list_pair",
+                                 "soft_above_hard", "soft_unlimited_hard_finite", "read_error"])
+def test_invalid_or_unavailable_limit_metadata_never_consumes_identity(tmp_path, monkeypatch, bad):
+    import resource
+
+    pairs = {"boolean": (True, resource.RLIM_INFINITY),
+             "float": (600.0, resource.RLIM_INFINITY),
+             "negative": (-2, resource.RLIM_INFINITY), "wrong_shape": (600,),
+             "list_pair": [600, 600], "soft_above_hard": (601, 600),
+             "soft_unlimited_hard_finite": (resource.RLIM_INFINITY, 600)}
+
+    def getrlimit(identifier):
+        if bad == "read_error":
+            raise OSError("synthetic getrlimit failure")
+        return pairs[bad]
+
+    monkeypatch.setattr(resource, "getrlimit", getrlimit)
+    installed = []
+    monkeypatch.setattr(resource, "setrlimit", lambda *args: installed.append(args))
+    monkeypatch.setattr(support, "require_execution_permit", lambda *args: None)
+    permit = object.__new__(support.ExecutionPermit)
+    reservation = tmp_path / "synthetic-reservation"
+    output = tmp_path / "synthetic-output"
+    support._PERMITS[permit] = {"consumed": False, "identity_reservation": reservation}
+    evidence_budget = budget()
+    with pytest.raises(support.AdmissionError, match="metadata|unavailable"):
+        support.consume_execution_permit(permit, output, budget=evidence_budget)
+    assert support._PERMITS[permit]["consumed"] is False
+    assert evidence_budget.output_bytes == 0
+    assert not reservation.exists() and not output.exists()
+    assert installed == []
+
+
+@pytest.mark.parametrize("resource_name,required", [
+    ("RLIMIT_CPU", 600), ("RLIMIT_AS", 1 << 30),
+    ("RLIMIT_FSIZE", 256 << 20), ("RLIMIT_CORE", 0),
+])
+@pytest.mark.parametrize("soft_boundary", ["below", "exact", "above", "unlimited"])
+@pytest.mark.parametrize("hard_boundary", ["below", "exact", "above", "unlimited"])
+def test_complete_inherited_limit_matrix_before_reservation_and_exact_mock_install(
+        tmp_path, monkeypatch, resource_name, required, soft_boundary, hard_boundary):
+    import resource
+    from types import SimpleNamespace
+
+    # Core's lowest finite valid value is zero. Its "below" case is invalid metadata,
+    # not a negative usable limit; -1 is reserved by this backend for unlimited.
+    values = {"below": required - 1 if required else -2, "exact": required,
+              "above": required + 1, "unlimited": resource.RLIM_INFINITY}
+    soft, hard = values[soft_boundary], values[hard_boundary]
+    target = getattr(resource, resource_name)
+    monkeypatch.setattr(resource, "getrlimit", lambda identifier: (soft, hard)
+                        if identifier == target else
+                        (resource.RLIM_INFINITY, resource.RLIM_INFINITY))
+    installed = []
+    monkeypatch.setattr(resource, "setrlimit", lambda identifier, pair:
+                        installed.append((identifier, pair)))
+    monkeypatch.setattr(support, "require_execution_permit", lambda permit: None)
+    permit = object.__new__(support.ExecutionPermit)
+    reservation = tmp_path / "synthetic-reservation"
+    output = tmp_path / "synthetic-output"
+    support._PERMITS[permit] = {"consumed": False, "identity_reservation": reservation}
+    evidence_budget = budget()
+    infinity = resource.RLIM_INFINITY
+    healthy = (
+        (soft == infinity or soft >= required)
+        and (hard == infinity or hard >= required)
+        and (hard == infinity or (soft != infinity and soft <= hard))
+    )
+    if not healthy:
+        with pytest.raises(support.AdmissionError):
+            support.consume_execution_permit(permit, output, budget=evidence_budget)
+        assert support._PERMITS[permit]["consumed"] is False
+        assert evidence_budget.output_bytes == 0
+        assert not reservation.exists() and not output.exists()
+        assert installed == []
+        return
+    admitted = support.preflight_runtime_limits()
+    row = next(row for row in admitted["resources"] if row["resource_id"] == target)
+    assert (row["inherited_soft"], row["inherited_hard"]) == (soft, hard)
+    assert installed == []
+    hooks = []
+    monkeypatch.setattr(support, "verify_timeout_parent", lambda *args: {"synthetic": True})
+    monkeypatch.setattr(support, "sys", SimpleNamespace(
+        dont_write_bytecode=True, flags=SimpleNamespace(no_user_site=1),
+        addaudithook=lambda hook: hooks.append(hook)))
+    fake = SimpleNamespace(freeze={"timeout_executable_sha256": "SYNTHETIC_NOT_AUTHORITY"})
+    support.install_runtime_limits(fake)
+    assert installed == [(resource.RLIMIT_CPU, (600, 600)),
+                         (resource.RLIMIT_AS, (1 << 30, 1 << 30)),
+                         (resource.RLIMIT_FSIZE, (256 << 20, 256 << 20)),
+                         (resource.RLIMIT_CORE, (0, 0))]
+    assert len(hooks) == 1
+    assert not reservation.exists() and not output.exists()
+    assert evidence_budget.output_bytes == 0
+
+
+def synthetic_reservation_fixture(tmp_path, monkeypatch):
+    import resource
+
+    monkeypatch.setattr(support, "require_execution_permit", lambda permit: None)
+    monkeypatch.setattr(resource, "getrlimit", lambda identifier:
+                        (resource.RLIM_INFINITY, resource.RLIM_INFINITY))
+    ledger = tmp_path / "synthetic-ledger.json"
+    ledger.write_bytes(support.canonical({"synthetic": True}))
+    reservation = tmp_path / "synthetic-reservation.json"
+    output = tmp_path / "synthetic-output"
+    permit = object.__new__(support.ExecutionPermit)
+    support._PERMITS[permit] = {
+        "root": tmp_path, "output_directory": output, "consumed": False,
+        "identity_ledger_path": ledger,
+        "identity_ledger_sha256": support.digest(ledger.read_bytes()),
+        "identity_reservation": reservation, "execution_nonce": "SYNTHETIC_TEST_ONLY",
+        "approval_sha256": "synthetic_not_authority",
+        "verified": {"freeze_sha256": "synthetic_not_authority"},
+    }
+    return permit, budget(), output, reservation
+
+
+def test_exclusive_reservation_open_failure_does_not_consume_identity(tmp_path, monkeypatch):
+    permit, evidence_budget, output, reservation = synthetic_reservation_fixture(
+        tmp_path, monkeypatch)
+    original_open = support.os.open
+
+    def denied_open(path, flags, mode):
+        if Path(path) == reservation:
+            raise PermissionError("synthetic exclusive open failure")
+        return original_open(path, flags, mode)
+
+    monkeypatch.setattr(support.os, "open", denied_open)
+    with pytest.raises(PermissionError, match="synthetic exclusive open"):
+        support.consume_execution_permit(permit, output, budget=evidence_budget)
+    assert support._PERMITS[permit]["consumed"] is False
+    assert not reservation.exists() and not output.exists()
+    # Conservatively charged attempted bytes are not an identity reservation.
+    assert evidence_budget.output_bytes > 0
+
+
+@pytest.mark.parametrize("stage", ["write", "flush", "fsync"])
+def test_postcreate_marker_failure_is_consumed_and_partial_marker_cannot_be_reused(
+        tmp_path, monkeypatch, stage):
+    permit, evidence_budget, output, reservation = synthetic_reservation_fixture(
+        tmp_path, monkeypatch)
+    original_fdopen = support.os.fdopen
+    handles = []
+
+    class FailedHandle:
+        def __init__(self, descriptor, mode):
+            self.handle = original_fdopen(descriptor, mode)
+            handles.append(self.handle)
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            self.handle.close()
+
+        def write(self, data):
+            if stage == "write":
+                self.handle.write(data[:7])
+                raise OSError("synthetic marker write failure")
+            return self.handle.write(data)
+
+        def flush(self):
+            self.handle.flush()
+            if stage == "flush":
+                raise OSError("synthetic marker flush failure")
+
+        def fileno(self):
+            return self.handle.fileno()
+
+    monkeypatch.setattr(support.os, "fdopen", FailedHandle)
+    if stage == "fsync":
+        def failed_fsync(descriptor):
+            raise OSError("synthetic marker fsync failure")
+        monkeypatch.setattr(support.os, "fsync", failed_fsync)
+    with pytest.raises(OSError, match="synthetic marker " + stage):
+        support.consume_execution_permit(permit, output, budget=evidence_budget)
+    assert support._PERMITS[permit]["consumed"] is True
+    assert handles and all(handle.closed for handle in handles)
+    raw = reservation.read_bytes()
+    assert raw and not output.exists()
+    assert evidence_budget.output_bytes >= len(raw)
+    with pytest.raises(support.AdmissionError, match="already consumed"):
+        support.consume_execution_permit(permit, output, budget=evidence_budget)
+    other = object.__new__(support.ExecutionPermit)
+    other_output = tmp_path / "synthetic-other-output"
+    support._PERMITS[other] = {**support._PERMITS[permit], "consumed": False,
+                              "output_directory": other_output}
+    with pytest.raises(FileExistsError):
+        support.consume_execution_permit(other, other_output, budget=budget())
+    assert reservation.read_bytes() == raw
+    assert not other_output.exists()

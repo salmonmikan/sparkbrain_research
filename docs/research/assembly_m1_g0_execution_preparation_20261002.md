@@ -74,8 +74,12 @@ mutations must leave every owner and retained predecessor unchanged.
 
 ## Native call and constructor accounting
 
-Insufficient inherited CPU, address-space or file-size hard limits are rejected
+Insufficient inherited CPU, address-space or file-size soft or hard limits are rejected
 before the one-shot reservation; no smaller effective envelope is silently used.
+Malformed, unavailable or inconsistent limit metadata also rejects before any
+reservation byte charge. Exclusive-open failure leaves the identity unconsumed;
+any failure after exclusive creation retains its consumed marker and cannot be
+retried through a new permit or output path.
 
 The top-level ceiling is 70 producer calls, 5 M1 observations, 6 M1 outcomes,
 4 predictive feedback calls, 3 scope steps and 14 ownership clones. Producer
