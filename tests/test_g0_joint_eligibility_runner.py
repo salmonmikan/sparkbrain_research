@@ -393,6 +393,8 @@ class G0RunnerTests(unittest.TestCase):
     def test_synthetic_driver_failure_and_writer_failure_cleanup_and_one_shot(self):
         # SYNTHETIC ADMISSION ONLY: no real permit is minted, no actual native loader,
         # no resource limits or native profile hooks are installed by this test.
+        from contextlib import nullcontext
+
         from scripts import g0_execution_support as support
         from scripts import run_g0_joint_eligibility as runner
 
@@ -405,14 +407,17 @@ class G0RunnerTests(unittest.TestCase):
 
         class SyntheticMonitor:
             complete_counts = False
+            active = False
 
             def __init__(self, root, caps, budget, writer):
                 self.budget = budget
 
             def __enter__(self):
+                type(self).active = True
                 return self
 
             def __exit__(self, *args):
+                type(self).active = False
                 return None
 
             def check(self):
@@ -436,7 +441,7 @@ class G0RunnerTests(unittest.TestCase):
                     raise OSError("synthetic publication evidence failure")
                 return super().raw_json(name, value)
 
-        for fault in ("model", "writer", "late_mapping", "lifecycle"):
+        for fault in ("model", "writer", "late_mapping", "lifecycle", "final_integrity"):
             with self.subTest(fault=fault), tempfile.TemporaryDirectory() as directory:
                 output = Path(directory) / "synthetic-only"
                 source_files = {ARTIFACT_ROOT + "/" + name: hashlib.sha256(
@@ -449,7 +454,9 @@ class G0RunnerTests(unittest.TestCase):
                                                  "source_files_sha256": source_files})
                 reservation = {"consumed": 0}
                 mapping_calls = {"count": 0}
-                SyntheticMonitor.complete_counts = fault in {"late_mapping", "lifecycle"}
+                SyntheticMonitor.complete_counts = fault in {
+                    "late_mapping", "lifecycle", "final_integrity"}
+                validation_calls = []
                 observed_owner_closed = []
                 original_cleanup = ExecutionEngine.abort_cleanup
 
@@ -472,7 +479,8 @@ class G0RunnerTests(unittest.TestCase):
                     observed_owner_closed.append(engine.resources.owner._closed)
                     return original_cleanup(engine)
 
-                def synthetic_mapping_check(environment, calls=mapping_calls, fault=fault):
+                def synthetic_mapping_check(environment, calls=mapping_calls,
+                                            fault=fault, **kwargs):
                     calls["count"] += 1
                     if fault == "late_mapping" and calls["count"] == 2:
                         raise support.AdmissionError("synthetic late mapped-library drift")
@@ -484,13 +492,24 @@ class G0RunnerTests(unittest.TestCase):
                         raise support.AdmissionError("synthetic incomplete lifecycle")
                     return {"synthetic_lifecycle_admission_only": True}
 
+                def synthetic_validation(value, *, checkpoint, fault=fault,
+                                         calls=validation_calls, permit=permit):
+                    self.assertIs(value, permit)
+                    self.assertFalse(SyntheticMonitor.active)
+                    checkpoint()
+                    calls.append("unprofiled validation")
+                    if fault == "final_integrity" and len(calls) == 2:
+                        raise support.AdmissionError("synthetic final environment drift")
+
                 runtime = (SyntheticModelFailure(resources=True) if fault == "model"
                            else ModelFreeRuntime(resources=True))
                 writer_class = (SyntheticFailingWriter if fault == "writer"
                                 else support.ExclusiveEvidenceWriter)
                 with patch.object(sys, "pycache_prefix", None), \
-                        patch.object(support, "require_execution_permit", return_value=None), \
+                        patch.object(support, "require_execution_permit", synthetic_validation), \
                         patch.object(support, "consume_execution_permit", synthetic_consume), \
+                        patch.object(support, "runtime_admission",
+                                     side_effect=lambda *args: nullcontext(object())), \
                         patch.object(support, "install_runtime_limits", return_value={
                             "synthetic_no_limits_installed": True,
                             "started_monotonic_seconds": time.monotonic()}), \
@@ -505,15 +524,18 @@ class G0RunnerTests(unittest.TestCase):
                         patch.object(runner, "native_resource_boundary", boundary), \
                         patch.object(ExecutionEngine, "abort_cleanup", cleanup):
                     terminal = execute_reviewed(permit, output)
+                    validations_before_retry = len(validation_calls)
                     with self.assertRaisesRegex(support.AdmissionError, "already consumed"):
                         execute_reviewed(permit, output)
                 self.assertIsNotNone(terminal["failure"])
                 self.assertIsNone(terminal["result"])
                 saved = json.loads((output / "TERMINAL.json").read_text())
                 self.assertEqual(saved["status"], "STOPPED")
-                if fault in {"late_mapping", "lifecycle"}:
+                if fault in {"late_mapping", "lifecycle", "final_integrity"}:
                     self.assertEqual(mapping_calls["count"], 2 if fault == "late_mapping" else 1)
-                    expected = "mapped-library drift" if fault == "late_mapping" else "lifecycle"
+                    expected = {"late_mapping": "mapped-library drift",
+                                "lifecycle": "lifecycle",
+                                "final_integrity": "final environment drift"}[fault]
                     self.assertIn(expected, terminal["failure"]["message"])
                     self.assertTrue(json.loads((output / "final-cleanup.json").read_text())[
                         "all_live_roots_released"])
@@ -525,6 +547,8 @@ class G0RunnerTests(unittest.TestCase):
                     self.assertEqual(saved_cleanup["status"], "verified")
                     self.assertTrue(saved_cleanup["all_runner_strong_roots_released"])
                     self.assertEqual(observed_owner_closed, [False])
+                self.assertEqual(validations_before_retry,
+                                 2 if fault in {"late_mapping", "final_integrity"} else 1)
                 self.assertFalse(ModelFreeFacade.registry)
                 self.assertEqual(reservation["consumed"], 1)
                 self.assertFalse((output / "engineering-verdict.json").exists())

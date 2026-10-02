@@ -1,0 +1,41 @@
+{
+  "classification": "SOURCE_ONLY_SYNTHETIC_NON_EVIDENTIARY",
+  "combined_twelve_suites": {
+    "native_import_tripwire": "PASS",
+    "passed": 855,
+    "subtests_passed": 13
+  },
+  "execution_authorized": false,
+  "files_sha256": {
+    "scripts/g0_execution_support.py": "674a6c16bddad19df571d27b2ac4084bb4c55595025aba31e4261181d15334c7",
+    "scripts/run_g0_joint_eligibility.py": "8b9b91edce01275ed1ddddf58eb58cb823afe7b5a1cc050677a9b52b005ea047",
+    "tests/test_g0_execution_support.py": "7bb70d1fc151829941cd12140c7e39659461bd6cc3749461d849c11cc6abb6bf",
+    "tests/test_g0_joint_eligibility_runner.py": "3c3016bfa99fc520c1ca6421fb2655352eace4db57712a1372cd8f01751a5bb6"
+  },
+  "full_local_runtime_suite": "not run: source-only scope; ordinary CI required separately",
+  "g0_six_suites": {
+    "passed": 463,
+    "subtests_passed": 13
+  },
+  "historical_freeze_rejects_changed_current_source": true,
+  "historical_verifier_and_runtime_unchanged": true,
+  "independent_review": "no unresolved findings in exact four code/test files; includes token lifecycle, cache identity/unknown routes, reserve checks and callback cleanup",
+  "limitations": [
+    "Trusted quiescent process/source-tree boundary, not atomic concurrent-mutation prevention",
+    "Historical source audit remains coarse, bracketed by checks; individual reads/traversal not newly checkpointed",
+    "Final unprofiled dependency check detects persistent end-state drift only",
+    "PR192 pointer/claim delta remains separate and must be explicitly reconciled in any future experiment",
+    "Software validation establishes no native execution eligibility or model benefit"
+  ],
+  "new_execution_freeze_created": false,
+  "new_identity_created": false,
+  "original_base": "f75f89f2734862dced6fc97bc23fd65a90089fb6",
+  "pr191_nonoverlapping_files_verified": 21,
+  "real_model_constructors": 0,
+  "real_model_transitions": 0,
+  "real_native_imports": 0,
+  "reconciled_base": "5479f2bd8c2c0ee692f4757b50b231bc4db35d2b",
+  "ruff": "full tree PASS",
+  "schema": "g0-admission-remediation-software-validation-v1",
+  "scientific_credit": 0
+}
