@@ -32,7 +32,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 PREPARATION = ROOT / "artifacts/research/plasticity_retention_preparation_20261001"
 PROTOCOL = ROOT / "protocols/plasticity_retention_bounded_v1.json"
-FREEZE = ROOT / "artifacts/research/plasticity_retention_execution_20261001/freeze-v4"
+FREEZE = ROOT / "artifacts/research/plasticity_retention_execution_20261001/freeze-v4-r2"
 PUBLISHED_PREFIX = ROOT / "artifacts/research/temporal_reuse_loop_20261001"
 ARCHIVE_SHA = "2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082"
 PREP_PINS = {

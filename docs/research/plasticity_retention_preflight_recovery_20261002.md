@@ -54,18 +54,27 @@ both absolute and equivalent relative paths and require identical bindings with
 model admission disabled. Changing a command-line flag alone is insufficient.
 
 The new identity is `plasticity-retention-v4-20261002`, with output root
-`/workspace/shared/plasticity-retention-run-v4-20261002` and `freeze-v4/`.
+`/workspace/shared/plasticity-retention-run-v4-20261002` and `freeze-v4-r2/`.
 It requires fresh exact-source review, source publication and execution approval;
 the original three authority records cannot authorize this identity. The original
 attempt admitted 0 pairs and the prospective attempt has a maximum of 768, so the
 combined model allocation remains 768. The runner independently pins the prior
 failure bytes and records this boundary in its new manifest and terminal.
 
-The source-only v4 manifest SHA-256 is
-`23f9b2f646268926793b01b9bb0e8b712c72115cb0c2bae5341469ff2c809b86`.
+The current source-only v4-r2 manifest SHA-256 is
+`05165533ee6e1c5fda7fedcfc4a7c932659c7c095405041be245531490d37ed5`.
 It pins 198 source files and the unchanged 918-file interpreter/dependency
 inventory, whose SHA-256 remains
 `4415be4c41f48275151ce266f517d75765d66f8b6b2e53a500ca335ae4aaff48`.
+
+The initial, unexecuted v4 snapshot is retained at `freeze-v4/` with SHA-256
+`23f9b2f646268926793b01b9bb0e8b712c72115cb0c2bae5341469ff2c809b86`.
+It is superseded because a synthetic freeze test needed to isolate its planned
+output path under the test's temporary directory. Otherwise a real retained run
+could make the unrelated fixture fail. Revision 2 changes only that fixture line
+and the runner's default freeze location; it changes no experiment behavior,
+output identity, allocation, inputs or scientific parameters. This prospective
+source revision is not another execution attempt.
 
 The [protocol](plasticity_retention_protocol_20261001.md), input bytes, labels,
 jobs, seeds, C/L/G/Fw/H/R definitions, margins and resource limits are unchanged.

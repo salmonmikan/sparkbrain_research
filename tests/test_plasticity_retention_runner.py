@@ -299,6 +299,7 @@ def test_dummy_subprocess_wall_timeout_is_failure(monkeypatch, tmp_path):
 def test_freeze_test_mode_does_not_import_model(monkeypatch, tmp_path):
     monkeypatch.setattr(R.S, "validate_execution_environment", lambda: None)
     monkeypatch.setattr(R.S, "dependency_inventory", lambda: {"synthetic": True})
+    monkeypatch.setattr(R.S, "PLANNED_OUTPUT", tmp_path / "planned-output")
     source = tmp_path / "source.txt"
     source.write_text("frozen synthetic source")
     monkeypatch.setattr(R, "ROOT", tmp_path)
