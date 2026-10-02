@@ -566,3 +566,12 @@ nor weight-learning benefit is established. This is exploratory, fixed-delay,
 exposed-prefix evidence with scientific credit 0. See the
 [complete negative result and comparisons](research/plasticity_retention_results_20261002.md).
 The preparation section above records its earlier, unexecuted status.
+
+## Independent retained-concept codec compatibility (2026-10-02)
+
+The direct-checkpoint exact registry now includes the observer's `_MutableConcept`
+dataclass. Twenty-one synthetic fixture-only codec regressions cover the narrow
+compatibility change and its rejection/graph limits. This is software validation
+with scientific credit 0, not a longer live continuation or efficacy result.
+Schema versions, historical snapshots and prospective G0 source pins are unchanged.
+See the [compatibility note](research/mutable_concept_checkpoint_compatibility_20261002.md).

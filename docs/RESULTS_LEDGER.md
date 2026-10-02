@@ -1348,3 +1348,18 @@ mutation records. This entry changes no prior result, claim grade or role-owned 
   [full preservation transport](../artifacts/research/plasticity_retention_results_20261002/transport_manifest.json),
   [independent data-only audit](../artifacts/research/plasticity_retention_results_20261002/independent_audit.json).
   Original failed v3 and unexecuted v4 history remain preserved. No retry.
+
+## 2026-10-02 — Retained-concept codec software regression
+
+- A synthetic `_MutableConcept` fixture reproduced the missing exact-registry
+  entry without observer construction or dynamics. The one-line registry addition
+  changes the focused suite from 19 failures / 2 passes to 21 passes.
+- Exact class/field shape, valid type preservation, rejection boundaries, cycle
+  rejection and alias splitting are covered. Annotation types and semantic values
+  are not generally validated; no topology or hostile-input safety is claimed.
+- This is software compatibility evidence, scientific credit 0. Ordinary existing
+  regression/CI model activity is separate; no reserved research run, prefix/suffix,
+  new G0 execution or efficacy execution is authorized or reported by this patch.
+- [Change, reproduction commands and limits](research/mutable_concept_checkpoint_compatibility_20261002.md).
+  Historical evidence and schema versions remain unchanged. Updated-runtime
+  research would require a prospective exact-source/dependency pin and review.

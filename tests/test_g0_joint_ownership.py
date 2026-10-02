@@ -523,8 +523,10 @@ def test_interrupted_factory_performs_cleanup_proof(monkeypatch):
         assert len(owner.call(boundary.ledger).bindings) == 1
 
 
-def test_verified_source_binder_does_not_load_runtime_and_rejects_unknown_classes():
-    repo = Path(__file__).resolve().parents[1]
+def test_verified_source_binder_does_not_load_runtime_and_rejects_unknown_classes(
+    historical_sources,
+):
+    repo = historical_sources
     before = set(sys.modules)
     bound = SourceRegistry.from_verified_source(repo, (random.Random,))
     assert bound.domain == "VERIFIED_SOURCE_PREPARATION"
@@ -544,8 +546,8 @@ def test_verified_source_binder_rejects_tampered_contract(tmp_path):
         SourceRegistry.from_verified_source(tmp_path, ())
 
 
-def test_verified_source_mode_rejects_lookalike_registry_binding():
-    repo = Path(__file__).resolve().parents[1]
+def test_verified_source_mode_rejects_lookalike_registry_binding(historical_sources):
+    repo = historical_sources
     bound = SourceRegistry.from_verified_source(repo, ())
     with resource_fixture() as (owner, root, _, boundary, _, _, _):
         with pytest.raises(OwnershipError, match="exact runtime module bindings"):
@@ -554,9 +556,11 @@ def test_verified_source_mode_rejects_lookalike_registry_binding():
 
 @pytest.mark.parametrize("kind", ["not_class", "missing_module", "wrong_identity", "nested_name",
                                  "wrong_path"])
-def test_verified_source_binder_rejects_loaded_identity_impostors(kind, monkeypatch, tmp_path):
+def test_verified_source_binder_rejects_loaded_identity_impostors(
+    kind, monkeypatch, tmp_path, historical_sources,
+):
     # These are metadata-only impostors, never imported/executed production classes.
-    repo = Path(__file__).resolve().parents[1]
+    repo = historical_sources
     module_name = "sparkbrain.v032.runtime"
     impostor = type("IntegratedV032Brain", (), {"__module__": module_name})
     module = ModuleType(module_name)
@@ -669,3 +673,9 @@ def test_noninterference_rejects_symmetric_mutable_identity_swap(target_kind):
         if retained is not None:
             del target
             owner.call(retained.discard_and_verify)
+
+
+def test_verified_binder_rejects_changed_current_runtime():
+    repo = Path(__file__).resolve().parents[1]
+    with pytest.raises(OwnershipError, match="runtime dependency inventory mismatch"):
+        SourceRegistry.from_verified_source(repo, ())

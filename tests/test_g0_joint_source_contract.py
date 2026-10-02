@@ -24,18 +24,12 @@ SPEC.loader.exec_module(AUDIT)
 
 
 @pytest.fixture
-def copied_sources(tmp_path):
-    contract = json.loads((ROOT / AUDIT.CONTRACT).read_text())
-    for path in [AUDIT.CONTRACT, *contract["runtime_sources_sha256"],
-                 *contract["runtime_schema_sha256"], *contract["reuse_sources_sha256"]]:
-        target = tmp_path / path
-        target.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(ROOT / path, target)
-    return tmp_path
+def copied_sources(historical_sources):
+    return historical_sources
 
 
-def test_exact_static_source_inventory():
-    result = AUDIT.verify()
+def test_exact_static_source_inventory(historical_sources):
+    result = AUDIT.verify(historical_sources)
     assert result["source_files"] == 28
     assert result["class_witnesses"] == 101
     assert result["runtime_python_files"] == 157
@@ -222,7 +216,7 @@ class Dict:
     assert AUDIT.class_spec(classes[1])["dict_fields"] == ["one", "two"]
 
 
-def test_all_source_auditing_forbids_sparkbrain_import():
+def test_all_source_auditing_forbids_sparkbrain_import(historical_sources):
     program = """
 import importlib.abc, runpy, sys
 class Block(importlib.abc.MetaPathFinder):
@@ -232,6 +226,13 @@ class Block(importlib.abc.MetaPathFinder):
 sys.meta_path.insert(0, Block())
 runpy.run_path(sys.argv[1], run_name='__main__')
 """
-    result = subprocess.run([sys.executable, "-B", "-c", program, str(SOURCE)],
+    source = historical_sources / "scripts/verify_g0_joint_source_contract.py"
+    result = subprocess.run([sys.executable, "-B", "-c", program, str(source)],
                             capture_output=True, text=True, check=True)
     assert json.loads(result.stdout)["runtime_execution_authorized"] is False
+
+
+def test_current_runtime_is_not_silently_accepted_as_historical_source():
+    # A current repaired codec is deliberately outside this immutable old freeze.
+    with pytest.raises(ValueError, match="runtime dependency inventory mismatch"):
+        AUDIT.verify(ROOT)

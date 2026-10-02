@@ -25,6 +25,14 @@ from types import SimpleNamespace
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
+CURRENT_ROOT = ROOT
+# File loading keeps standalone and import-isolation tests independent of sys.path.
+_FIXTURE_SPEC = importlib.util.spec_from_file_location(
+    "historical_source_fixture", Path(__file__).with_name("historical_source_fixture.py")
+)
+_fixture_helper = importlib.util.module_from_spec(_FIXTURE_SPEC)
+_FIXTURE_SPEC.loader.exec_module(_fixture_helper)
+historical_source_root = _fixture_helper.historical_source_root
 RUNNER = ROOT / "scripts/v05_acquired_ownership_probe.py"
 
 
@@ -111,6 +119,17 @@ class RunnerModelFreeTests(unittest.TestCase):
     def setUp(self):
         self.preexisting_modules = sparkbrain_modules()
         self.enterContext(model_import_guard())
+        root = self.enterContext(historical_source_root())
+        path = root / RUNNER.relative_to(ROOT)
+        spec = importlib.util.spec_from_file_location("historical_test_runner", path)
+        historical_runner = importlib.util.module_from_spec(spec)
+        self.enterContext(patch.dict(sys.modules, {spec.name: historical_runner}))
+        spec.loader.exec_module(historical_runner)
+        self.enterContext(patch.dict(globals(), ROOT=root, RUNNER=path, runner=historical_runner))
+
+    def test_changed_current_runtime_is_not_a_historical_source(self):
+        with self.assertRaises(runner.BindingError):
+            runner.read_protocol(CURRENT_ROOT)
 
     def tearDown(self):
         self.assertEqual(sparkbrain_modules(), self.preexisting_modules)

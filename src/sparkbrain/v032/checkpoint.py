@@ -36,6 +36,7 @@ _CLASSES = frozenset(
         "sparkbrain.v03_seed.coalition:CoalitionGateConfig",
         "sparkbrain.v03_seed.concepts:ConceptFormationConfig",
         "sparkbrain.v03_seed.concepts:OnlineConceptFormer",
+        "sparkbrain.v03_seed.concepts:_MutableConcept",
         "sparkbrain.v03_seed.contracts:BeliefActivation",
         "sparkbrain.v03_seed.contracts:CoalitionState",
         "sparkbrain.v03_seed.contracts:EvidenceAuditRow",

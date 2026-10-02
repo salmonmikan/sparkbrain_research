@@ -5,6 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
+from historical_source_fixture import materialize_historical_sources
 
 SCIENTIFIC_MODULES = {
     "test_c15_revision.py",
@@ -67,3 +68,9 @@ def pytest_collection_modifyitems(items: list[pytest.Item]) -> None:
         filename = Path(str(item.fspath)).name
         for marker in classify_filename(filename, item.name):
             item.add_marker(getattr(pytest.mark, marker))
+
+
+@pytest.fixture
+def historical_sources(tmp_path: Path) -> Path:
+    """A fresh, hash-verified old runtime for historical source-guard tests only."""
+    return materialize_historical_sources(tmp_path / "historical-source")
