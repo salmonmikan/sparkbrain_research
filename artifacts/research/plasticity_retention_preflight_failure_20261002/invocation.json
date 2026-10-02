@@ -1,0 +1,21 @@
+{
+  "classification": "NONCANONICAL_NON_EVIDENTIARY",
+  "command": "PYTHONHASHSEED=0 python -S -P -B scripts/run_plasticity_retention.py run --output /workspace/shared/plasticity-retention-run-20261001 --freeze artifacts/research/plasticity_retention_execution_20261001/freeze-v3 --review /workspace/shared/retention-execution-authority-20261002/review.json --publication /workspace/shared/retention-execution-authority-20261002/publication.json --approval /workspace/shared/retention-execution-authority-20261002/approval.json",
+  "cwd": "/workspace/shared/sparkbrain-retention-runner-20261001",
+  "evidence_note": "Exact terminal bytes retained; invocation fields transcribed from the original command/result. No runner retry or post-failure model call.",
+  "freeze_manifest_sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834",
+  "invocation_utc_window": [
+    "2026-10-02T01:56:10Z",
+    "2026-10-02T01:56:21Z"
+  ],
+  "merge_commit": "2682b895435f79c9723934e2c116e440719304d8",
+  "original_output": "/workspace/shared/plasticity-retention-run-20261001",
+  "original_result_mtime_utc": "2026-10-02T01:56:20.833751+00:00",
+  "original_result_sha256": "70a54d6f1c6b23809853e14901561bbda4aede73a885422e55a7ab6964caf223",
+  "schema": "retention-failed-preflight-invocation-1",
+  "scientific_credit": 0,
+  "source_commit": "2977aefc06d80291bb65c36b4b3bac0499084d0f",
+  "tool_exit_code": 1,
+  "tool_output_text": "",
+  "tool_reported_wall_time_seconds": 0.732524462
+}

@@ -527,8 +527,12 @@ def synthetic_gate_records(monkeypatch, tmp_path):
     return directory, paths
 
 
-def test_gate_binds_original_authority_bytes_not_reserialized_json(monkeypatch, tmp_path):
+@pytest.mark.parametrize("relative", [False, True])
+def test_gate_binds_original_authority_bytes_not_reserialized_json(monkeypatch, tmp_path, relative):
     directory, paths = synthetic_gate_records(monkeypatch, tmp_path)
+    if relative:
+        monkeypatch.chdir(tmp_path)
+        directory = directory.relative_to(tmp_path)
     binding = R.gate(directory, *paths)
     assert set(binding["record_files"]) == {"review", "publication", "approval"}
     for kind, path in zip(("review", "publication", "approval"), paths, strict=True):
@@ -558,3 +562,23 @@ def test_gate_rejects_ambiguous_authority_fields(monkeypatch, tmp_path, key, val
     paths[2].write_text(json.dumps(record))
     with pytest.raises(RuntimeError):
         R.gate(directory, *paths)
+
+
+def test_absolute_and_relative_freeze_paths_produce_identical_gate_binding(monkeypatch, tmp_path):
+    directory, paths = synthetic_gate_records(monkeypatch, tmp_path)
+    absolute = R.gate(directory, *paths)
+    monkeypatch.chdir(tmp_path)
+    relative = R.gate(directory.relative_to(tmp_path), *paths)
+    assert absolute == relative
+    assert R._MODEL_ADMISSION is False
+
+
+def test_published_prefix_extraction_is_data_only_and_byte_exact(tmp_path, monkeypatch):
+    _, _, _, prefixes = R.check_preparation()
+    writer = R.C.OutputWriter(tmp_path, terminal_limit=131072)
+    R.extract_prefixes(tmp_path, writer, prefixes)
+    for name, record in prefixes["prefixes"].items():
+        for member in record["checkpoint_members"]:
+            path = tmp_path / "prefixes" / name / Path(member).name
+            assert R.S.sha(path) == record["files_sha256"][member]
+    assert R._MODEL_ADMISSION is False

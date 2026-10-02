@@ -29,7 +29,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 RUNNER = ROOT / "scripts/run_plasticity_retention.py"
 VENDOR = ROOT / "scripts/temporal_reuse_loop_probe.py"
-PLANNED_OUTPUT = Path("/workspace/shared/plasticity-retention-run-20261001")
+PLANNED_OUTPUT = Path("/workspace/shared/plasticity-retention-run-v4-20261002")
 MIB = 1024 * 1024
 
 

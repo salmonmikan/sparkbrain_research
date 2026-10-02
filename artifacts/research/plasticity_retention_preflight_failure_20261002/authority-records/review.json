@@ -1,0 +1,9 @@
+{
+  "ceiling_pairs": 768,
+  "manifest_sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834",
+  "output_root": "/workspace/shared/plasticity-retention-run-20261001",
+  "record_url": "https://github.com/salmonmikan/sparkbrain_research/pull/181#issuecomment-5944032371",
+  "recorded_by": "Codex exact-head review and independent source audit",
+  "source_commit": "2977aefc06d80291bb65c36b4b3bac0499084d0f",
+  "source_review_approved": true
+}

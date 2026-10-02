@@ -1283,3 +1283,22 @@ contract correction only.
   source-backed observations. No M1, learned predictor/action ownership, general
   snapshot, crash recovery or task benefit is established. PR176's original
   block/skipped P5/P6 and PR177's separate fixture result remain unchanged.
+
+
+## 2026-10-02 — Retention admission failure and prospective v4 recovery
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`; scientific credit 0.
+  The sole approved v3 invocation failed on a relative freeze-path calculation
+  before gate return and any worker or model admission. No retention hypothesis
+  result was obtained; the independently audited model allocation consumed was 0.
+- Original terminal bytes, command, authority records and all 193 frozen sources
+  are retained in a checksum-bound 204-file archive. Resource samples precede
+  terminal closure and do not certify complete process-lifetime cost.
+- A narrow path-normalization repair and absolute/relative dummy regressions
+  prepare a new v4 identity. Original 0 plus prospective maximum 768 retains the
+  same total model allocation. Parameters, inputs and scientific margins are
+  unchanged; fresh exact-source review and execution approval are required.
+- Evidence: [failure, limits and prospective recovery](research/plasticity_retention_preflight_recovery_20261002.md),
+  [independent admission audit](../artifacts/research/plasticity_retention_preflight_failure_20261002/independent_audit.md),
+  and [complete preservation transport](../artifacts/research/plasticity_retention_preflight_failure_20261002/transport_manifest.json).
+  The consumed original attempt is not retried or erased.

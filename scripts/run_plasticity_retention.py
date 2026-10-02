@@ -32,7 +32,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 PREPARATION = ROOT / "artifacts/research/plasticity_retention_preparation_20261001"
 PROTOCOL = ROOT / "protocols/plasticity_retention_bounded_v1.json"
-FREEZE = ROOT / "artifacts/research/plasticity_retention_execution_20261001/freeze-v3"
+FREEZE = ROOT / "artifacts/research/plasticity_retention_execution_20261001/freeze-v4"
 PUBLISHED_PREFIX = ROOT / "artifacts/research/temporal_reuse_loop_20261001"
 ARCHIVE_SHA = "2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082"
 PREP_PINS = {
@@ -43,6 +43,9 @@ PREP_PINS = {
 }
 PROTOCOL_SHA = "79a37f24eda0a5b82bb6f6e3428f48442a593f10dcb729dc3d67b30014ec0fb3"
 VENDOR_SHA = "28ea3207cc5b9a2cce2219df7754a22cd8f05c83915eb4962630450dc0e220ae"
+ATTEMPT_ID = "plasticity-retention-v4-20261002"
+PRIOR_FAILURE = ROOT / "artifacts/research/plasticity_retention_preflight_failure_20261002"
+PRIOR_RESULT_SHA = "70a54d6f1c6b23809853e14901561bbda4aede73a885422e55a7ab6964caf223"
 _MODEL_ADMISSION = False
 
 
@@ -70,6 +73,15 @@ def check_preparation() -> tuple[dict, dict, dict, dict]:
     for name, value in PREP_PINS.items():
         require(S.sha(PREPARATION / name) == value, "independent preparation pin changed: " + name)
     require(S.sha(S.VENDOR) == VENDOR_SHA, "published wrapper source changed")
+    require(S.sha(PRIOR_FAILURE / "result.json") == PRIOR_RESULT_SHA, "prior failure bytes changed")
+    prior = S.read(PRIOR_FAILURE / "result.json")
+    require(
+        prior["status"] == "failed"
+        and prior["reserved_pairs"] == 0
+        and prior["jobs_completed"] == 0
+        and prior["job_costs"] == [],
+        "prior allocation boundary",
+    )
     p = S.read(PROTOCOL)
     inputs, jobs, prefixes = (
         S.read(PREPARATION / name) for name in ("inputs.json", "jobs.json", "prefix_sources.json")
@@ -85,14 +97,19 @@ def sources() -> list[Path]:
         ROOT / "scripts/plasticity_retention_support.py",
         ROOT / "scripts/plasticity_retention_contract.py",
         ROOT / "scripts/verify_plasticity_retention_run.py",
+        ROOT / "scripts/verify_retention_preflight_failure.py",
         ROOT / "scripts/prepare_plasticity_retention_inputs.py",
         S.VENDOR,
         PROTOCOL,
+        PRIOR_FAILURE / "result.json",
+        PRIOR_FAILURE / "invocation.json",
+        PRIOR_FAILURE / "independent_audit.json",
         ROOT / "docs/research/plasticity_retention_design_20261001.md",
         ROOT / "docs/research/plasticity_retention_protocol_20261001.md",
         ROOT / "tests/test_plasticity_retention_runner.py",
         ROOT / "tests/test_plasticity_retention_contract.py",
         ROOT / "tests/test_plasticity_retention_verifier.py",
+        ROOT / "tests/test_retention_preflight_failure.py",
         ROOT / "AGENTS.md",
         ROOT / "pyproject.toml",
         *[PREPARATION / name for name in PREP_PINS],
@@ -123,6 +140,15 @@ def freeze(destination: Path) -> dict[str, Any]:
     files = {"dependencies.json": prepared_bytes(S.dependency_inventory())}
     manifest = {
         "schema": "retention-execution-freeze-1",
+        "attempt_id": ATTEMPT_ID,
+        "previous_attempt": {
+            "source_commit": "2977aefc06d80291bb65c36b4b3bac0499084d0f",
+            "manifest_sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834",
+            "result_sha256": PRIOR_RESULT_SHA,
+            "classification": "FAILED_BEFORE_WORKER_AND_MODEL_ADMISSION",
+            "audited_model_pairs": 0,
+        },
+        "combined_model_allocation_ceiling": 768,
         "status": "UNEXECUTED",
         "scientific_credit": 0,
         "preparation_commit": "4c57cbfae78c4c3299e2936fe82c3750afd5cd83",
@@ -151,6 +177,10 @@ def verify_freeze(directory: Path) -> dict:
     manifest = S.read(directory / "manifest.json")
     require(
         manifest["schema"] == "retention-execution-freeze-1"
+        and manifest["attempt_id"] == ATTEMPT_ID
+        and manifest["previous_attempt"]["result_sha256"] == PRIOR_RESULT_SHA
+        and manifest["previous_attempt"]["audited_model_pairs"] == 0
+        and manifest["combined_model_allocation_ceiling"] == 768
         and manifest["status"] == "UNEXECUTED"
         and manifest["ceiling_pairs"] == 768,
         "execution freeze identity",
@@ -216,6 +246,7 @@ def git(*args: str) -> bytes:
 
 
 def gate(directory: Path, review: Path, publication: Path, approval: Path) -> dict:
+    directory = directory.resolve()
     verify_freeze(directory)
     head = git("rev-parse", "HEAD").decode().strip()
     pin = S.sha(directory / "manifest.json")
@@ -862,6 +893,8 @@ def driver(args: argparse.Namespace) -> int:
     results, costs = {}, []
     terminal: dict[str, Any] = {
         "schema": "retention-run-1",
+        "attempt_id": ATTEMPT_ID,
+        "prior_attempt_audited_model_pairs": 0,
         "status": "failed",
         "scientific_credit": 0,
         "reserved_pairs": 0,
