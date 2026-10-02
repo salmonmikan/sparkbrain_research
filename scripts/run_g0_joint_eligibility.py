@@ -814,12 +814,26 @@ class ExecutionEngine:
         pending = self.pointer[0]
         teaching = self.receipts["teach"]
         before = self.preserve("fault-source")
+        fault_pointer = self.pointer
         self.clone(10, pending)
         self.expected_failure("fault-real-after-predictive", lambda: self.outcome(
             self.candidates[10].root, teaching, fault=True), RuntimeError,
             "injected after predictive revision")
         self.unchanged("fault-retained", before)
+        owner_unchanged = (self.pointer is fault_pointer
+                           and self.pointer[0] is pending
+                           and self.pointer[1] == fault_pointer[1])
+        self.write("fault-owner-boundary", {
+            "before_owner_pointer": id(fault_pointer[0]),
+            "before_owner_generation": fault_pointer[1],
+            "exact_owner_pointer_and_generation_preserved": owner_unchanged,
+            "native_rollback_equivalence": "not_tested",
+            "required_candidate_disposition": "discard_entire_candidate"})
+        require(owner_unchanged, "fault changed owner pointer or generation", InvariantError)
+        # Only the outer transaction is required here. The failed candidate's native
+        # rollback graph is not compared or certified, and is discarded in full.
         self.discard(10)
+        del fault_pointer
         reference_graph = None
         for number in (11, 12):
             before = self.preserve(f"outcome-{number}-source")
@@ -863,7 +877,8 @@ class ExecutionEngine:
                   "owner_generation": self.pointer[1], "case_count": 14,
                   "runtime_domain": self.registry.domain,
                   "efficacy": "not_tested", "acquisition_necessity": "not_tested",
-                  "learned_benefit": "not_tested", "max_continuation_observes": 2}
+                  "learned_benefit": "not_tested", "max_continuation_observes": 2,
+                  "native_rollback_equivalence": "not_tested"}
         self.write("plan-complete-before-cleanup", result)
         # Retained committed predecessors were deliberately live throughout the proof.
         self.pointer = None

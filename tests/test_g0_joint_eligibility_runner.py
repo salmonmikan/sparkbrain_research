@@ -375,6 +375,99 @@ class G0RunnerTests(unittest.TestCase):
             engine.call("m1.observe", lambda: calls.append(True))
         self.assertEqual(calls, [])
 
+    def test_fault_candidate_local_corruption_is_discarded_without_equivalence_claim(self):
+        class LocallyCorruptRollback(ModelFreeRuntime):
+            def __init__(self, mode):
+                super().__init__()
+                self.mode = mode
+                self.corruption_applied = False
+
+            def outcome(self, root, receipt, *, fault=False):
+                try:
+                    return super().outcome(root, receipt, fault=fault)
+                except RuntimeError:
+                    if not fault:
+                        raise
+                    if self.mode == "state":
+                        root["m1"]["history"][0]["sensory"]["signal"] = -123.0
+                    else:
+                        # Equal values, changed alias topology, wholly inside candidate 10.
+                        root["m1"]["pending"] = copy.deepcopy(root["m1"]["pending"])
+                    self.corruption_applied = True
+                    raise
+
+        for mode in ("state", "topology"):
+            with self.subTest(mode=mode):
+                runtime = LocallyCorruptRollback(mode)
+                engine = self.make_engine(runtime=runtime)
+                result = engine.execute()
+                self.assertTrue(runtime.corruption_applied)
+                self.assertEqual(result["actual"], EXPECTED)
+                self.assertEqual(result["native_rollback_equivalence"], "not_tested")
+                rows = engine.writer.rows
+                # Only test-side inspection of existing model-free raw captures. The
+                # runner adds no native candidate-equivalence comparison or pass gate.
+                cloned = rows[rows["candidate-10-cloned-witness.json"]["graph_file"]]
+                discarded = rows[rows["candidate-10-before-disposal-witness.json"]["graph_file"]]
+                self.assertNotEqual(cloned, discarded)
+                boundary = rows["fault-owner-boundary.json"]
+                self.assertTrue(boundary["exact_owner_pointer_and_generation_preserved"])
+                self.assertEqual(boundary["native_rollback_equivalence"], "not_tested")
+                self.assertTrue(rows["candidate-10-disposed.json"]["lifo_cleanup_verified"])
+                self.assertNotIn("candidate-10-publication.json", rows)
+                self.assertLess(list(rows).index("candidate-10-disposed.json"),
+                                list(rows).index("candidate-11-cloned-witness.json"))
+                self.assertEqual(result["owner_generation"], 4)
+                self.assertFalse(engine.live)
+                self.assertFalse(engine.candidates)
+
+    def test_fault_retained_or_owner_pointer_corruption_rejects_before_next_candidate(self):
+        class CorruptOuterBoundary(ModelFreeRuntime):
+            def __init__(self):
+                super().__init__()
+                self.mutate_outer = None
+
+            def outcome(self, root, receipt, *, fault=False):
+                try:
+                    return super().outcome(root, receipt, fault=fault)
+                except RuntimeError:
+                    if fault:
+                        self.mutate_outer()
+                    raise
+
+        for mode in ("retained_state", "retained_identity", "owner_root", "generation",
+                     "pointer_identity"):
+            with self.subTest(mode=mode):
+                runtime = CorruptOuterBoundary()
+                engine = self.make_engine(runtime=runtime)
+
+                def corrupt(engine=engine, mode=mode):
+                    if mode == "retained_state":
+                        engine.live["initial"]["clock"]["decision_ms"] = -1.0
+                    elif mode == "retained_identity":
+                        pulses = engine.live["initial"]["producer"]["pulses"]
+                        pulses[0]["metadata"], pulses[1]["metadata"] = (
+                            pulses[1]["metadata"], pulses[0]["metadata"])
+                    elif mode == "owner_root":
+                        engine.pointer = (engine.live["candidate-02"], engine.pointer[1])
+                    elif mode == "generation":
+                        engine.pointer = (engine.pointer[0], engine.pointer[1] + 1)
+                    else:
+                        engine.pointer = tuple([engine.pointer[0], engine.pointer[1]])
+
+                runtime.mutate_outer = corrupt
+                message = ("retained graph/identity" if mode.startswith("retained")
+                           else "owner pointer")
+                with self.assertRaisesRegex(InvariantError, message):
+                    engine.execute()
+                self.assertEqual(engine.counts["clone_joint"], 10)
+                self.assertEqual(engine.counts["m1.apply_outcome"], 2)
+                self.assertNotIn("candidate-11-cloned-witness.json", engine.writer.rows)
+                self.assertNotIn("plan-complete-before-cleanup.json", engine.writer.rows)
+                cleanup = engine.abort_cleanup()
+                self.assertEqual(cleanup["status"], "verified")
+                self.assertTrue(cleanup["all_runner_strong_roots_released"])
+
     def test_budget_failure_never_counts_as_expected_fault(self):
         engine = self.make_engine()
         def fail():

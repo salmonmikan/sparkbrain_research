@@ -199,7 +199,8 @@
     "no efficacy or learned-weight/locality/acquisition-necessity claim",
     "no longer teaching or mature-concept checkpoint certification",
     "no cold-restart or arbitrary-state or concurrency claim",
-    "no retries,resume,top-up or outcome-responsive configuration/seed change"
+    "no retries,resume,top-up or outcome-responsive configuration/seed change",
+    "native candidate checkpoint rollback graph equivalence is not certified; case 10 requires outer owner/pointer/generation isolation and complete failed-candidate disposal"
   ],
   "classification": "EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY",
   "constructor_count_proof": {
