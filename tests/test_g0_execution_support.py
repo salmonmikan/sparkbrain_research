@@ -4,6 +4,7 @@ from __future__ import annotations
 import gc
 import json
 import random
+import stat
 import subprocess
 import sys
 import threading
@@ -1080,7 +1081,7 @@ def test_exclusive_reservation_open_failure_does_not_consume_identity(tmp_path, 
         tmp_path, monkeypatch)
     original_open = support.os.open
 
-    def denied_open(path, flags, mode):
+    def denied_open(path, flags, mode=0o777):
         if Path(path) == reservation:
             raise PermissionError("synthetic exclusive open failure")
         return original_open(path, flags, mode)
@@ -1113,6 +1114,9 @@ def test_postcreate_marker_failure_is_consumed_and_partial_marker_cannot_be_reus
         def __exit__(self, *args):
             self.handle.close()
 
+        def close(self):
+            self.handle.close()
+
         def write(self, data):
             if stage == "write":
                 self.handle.write(data[:7])
@@ -1129,8 +1133,12 @@ def test_postcreate_marker_failure_is_consumed_and_partial_marker_cannot_be_reus
 
     monkeypatch.setattr(support.os, "fdopen", FailedHandle)
     if stage == "fsync":
+        original_fsync = support.os.fsync
+
         def failed_fsync(descriptor):
-            raise OSError("synthetic marker fsync failure")
+            if stat.S_ISREG(support.os.fstat(descriptor).st_mode):
+                raise OSError("synthetic marker fsync failure")
+            return original_fsync(descriptor)
         monkeypatch.setattr(support.os, "fsync", failed_fsync)
     with pytest.raises(OSError, match="synthetic marker " + stage):
         support.consume_execution_permit(permit, output, budget=evidence_budget)
@@ -1149,3 +1157,470 @@ def test_postcreate_marker_failure_is_consumed_and_partial_marker_cannot_be_reus
         support.consume_execution_permit(other, other_output, budget=budget())
     assert reservation.read_bytes() == raw
     assert not other_output.exists()
+
+
+class SyntheticDurabilityProbe:
+    """Real temporary descriptors with bounded, local fault injection; never model code."""
+
+    def __init__(self, monkeypatch, target, stage=None, consumed=None):
+        self.target, self.stage, self.consumed = target, stage, consumed
+        self.events, self.opened = [], set()
+        self.descriptors = {}
+        self.created = False
+        self.file_closed = False
+        original_open = support.os.open
+        original_close = support.os.close
+        original_fsync = support.os.fsync
+        original_fdopen = support.os.fdopen
+        probe = self
+
+        def fail(label):
+            if probe.stage == label:
+                raise OSError("synthetic durability failure: " + label)
+
+        def phase():
+            return "after" if probe.file_closed else "before"
+
+        def opened(path, flags, mode=0o777):
+            is_directory = bool(flags & support.os.O_DIRECTORY)
+            if is_directory and probe.created:
+                if probe.consumed is not None:
+                    assert probe.consumed() is True
+                fail("dir_open_" + phase())
+            descriptor = original_open(path, flags, mode)
+            kind = "dir" if is_directory else "file"
+            probe.descriptors[descriptor] = kind
+            probe.opened.add(descriptor)
+            probe.events.append((kind + "_open", str(path)))
+            if Path(path) == probe.target:
+                probe.created = True
+            return descriptor
+
+        def closed(descriptor):
+            kind = probe.descriptors[descriptor]
+            original_close(descriptor)
+            probe.opened.discard(descriptor)
+            probe.events.append((kind + "_close", None))
+            if kind == "dir" and probe.created:
+                fail("dir_close_" + phase())
+
+        def synced(descriptor):
+            kind = probe.descriptors[descriptor]
+            probe.events.append((kind + "_fsync", None))
+            if kind == "dir" and probe.created:
+                fail("dir_fsync_" + phase())
+            if kind == "file":
+                fail("file_fsync")
+            original_fsync(descriptor)
+
+        class Handle:
+            def __init__(self, descriptor, mode):
+                probe.events.append(("fdopen", None))
+                fail("fdopen")
+                self.descriptor = descriptor
+                self.handle = original_fdopen(descriptor, mode)
+
+            def write(self, raw):
+                probe.events.append(("file_write", None))
+                if probe.stage in {"write", "short_write"}:
+                    size = self.handle.write(raw[:7])
+                    fail("write")
+                    return size
+                return self.handle.write(raw)
+
+            def flush(self):
+                probe.events.append(("file_flush", None))
+                self.handle.flush()
+                fail("flush")
+
+            def fileno(self):
+                return self.handle.fileno()
+
+            def close(self):
+                self.handle.close()
+                probe.opened.discard(self.descriptor)
+                probe.file_closed = True
+                probe.events.append(("file_close", None))
+                fail("file_close")
+
+        monkeypatch.setattr(support.os, "open", opened)
+        monkeypatch.setattr(support.os, "close", closed)
+        monkeypatch.setattr(support.os, "fsync", synced)
+        monkeypatch.setattr(support.os, "fdopen", Handle)
+
+
+@pytest.mark.parametrize("kind", ["reservation", "evidence"])
+@pytest.mark.parametrize("stage", ["dir_open_before", "dir_fsync_before", "dir_close_before",
+                                   "fdopen", "write", "short_write", "flush", "file_fsync",
+                                   "file_close", "dir_open_after", "dir_fsync_after",
+                                   "dir_close_after"])
+def test_postcreate_durability_failures_close_descriptors_and_never_acknowledge(
+        tmp_path, monkeypatch, kind, stage):
+    if kind == "reservation":
+        permit, b, output, target = synthetic_reservation_fixture(tmp_path, monkeypatch)
+        consumed = lambda: support._PERMITS[permit]["consumed"]  # noqa: E731
+        operation = lambda: support.consume_execution_permit(permit, output, budget=b)  # noqa: E731
+        writer = None
+    else:
+        writer = support.ExclusiveEvidenceWriter(tmp_path / "evidence", support.IDENTITY, budget())
+        target = writer.path / "incomplete.raw"
+        consumed = None
+        operation = lambda: writer.raw_bytes(target.name, b"synthetic primitive bytes")  # noqa: E731
+    probe = SyntheticDurabilityProbe(monkeypatch, target, stage, consumed)
+    with pytest.raises(OSError, match="durability failure|short durable evidence write"):
+        operation()
+    assert target.exists()
+    assert probe.opened == set()
+    if kind == "reservation":
+        assert support._PERMITS[permit]["consumed"] is True
+        assert not output.exists()
+        with pytest.raises(support.AdmissionError, match="already consumed"):
+            operation()
+    else:
+        assert not any(row["name"] == target.name for row in writer.records)
+        assert writer.write_attempts[-1]["complete"] is False
+        with pytest.raises(support.AdmissionError, match="durable raw"):
+            writer.verdict("forbidden-verdict.json", {"synthetic": True}, raw_names=[target.name])
+        with pytest.raises(FileExistsError):
+            operation()
+    assert probe.opened == set()
+
+
+@pytest.mark.parametrize("kind", ["reservation", "evidence"])
+def test_directory_is_durable_before_payload_and_after_file_sync(tmp_path, monkeypatch, kind):
+    if kind == "reservation":
+        permit, b, output, target = synthetic_reservation_fixture(tmp_path, monkeypatch)
+        consumed = lambda: support._PERMITS[permit]["consumed"]  # noqa: E731
+        operation = lambda: support.consume_execution_permit(permit, output, budget=b)  # noqa: E731
+    else:
+        writer = support.ExclusiveEvidenceWriter(tmp_path / "evidence", support.IDENTITY, budget())
+        target = writer.path / "durable.raw"
+        consumed = None
+        operation = lambda: writer.raw_bytes(target.name, b"synthetic bytes")  # noqa: E731
+    probe = SyntheticDurabilityProbe(monkeypatch, target, consumed=consumed)
+    operation()
+    start = next(index for index, event in enumerate(probe.events)
+                 if event == ("file_open", str(target)))
+    sequence = [event[0] for event in probe.events[start:]]
+    assert sequence == ["file_open", "dir_open", "dir_fsync", "dir_close", "fdopen",
+                        "file_write", "file_flush", "file_fsync", "file_close",
+                        "dir_open", "dir_fsync", "dir_close"]
+    assert target.read_bytes()
+    assert probe.opened == set()
+
+
+@pytest.mark.parametrize("stage", ["open", "fsync", "close"])
+def test_provisioning_failure_precedes_reservation_and_byte_charge(tmp_path, monkeypatch, stage):
+    permit, b, output, target = synthetic_reservation_fixture(tmp_path, monkeypatch)
+    original_open, original_fsync, original_close = (
+        support.os.open, support.os.fsync, support.os.close)
+    opened = set()
+
+    def open_directory(path, flags, mode=0o777):
+        if flags & support.os.O_DIRECTORY and stage == "open":
+            raise OSError("synthetic provisioning open")
+        descriptor = original_open(path, flags, mode)
+        opened.add(descriptor)
+        return descriptor
+
+    def sync_directory(descriptor):
+        if stage == "fsync":
+            raise OSError("synthetic provisioning fsync")
+        original_fsync(descriptor)
+
+    def close_directory(descriptor):
+        original_close(descriptor)
+        opened.discard(descriptor)
+        if stage == "close":
+            raise OSError("synthetic provisioning close")
+
+    monkeypatch.setattr(support.os, "open", open_directory)
+    monkeypatch.setattr(support.os, "fsync", sync_directory)
+    monkeypatch.setattr(support.os, "close", close_directory)
+    with pytest.raises(OSError, match="synthetic provisioning " + stage):
+        support.consume_execution_permit(permit, output, budget=b)
+    assert support._PERMITS[permit]["consumed"] is False
+    assert b.output_bytes == 0
+    assert not target.exists() and not output.exists()
+    assert opened == set()
+
+
+def test_provisioning_syncs_only_directory_and_parent_under_declared_boundary(
+        tmp_path, monkeypatch):
+    directory = tmp_path / "new-reservation-directory"
+    directory.mkdir()
+    synchronized = []
+    monkeypatch.setattr(support, "fsync_directory", lambda path: synchronized.append(path))
+    support.fsync_directory_provisioning(directory)
+    assert synchronized == [directory.parent, directory]
+    assert "Older directory ancestors are trusted" in support.FILESYSTEM_DURABILITY_BOUNDARY
+    assert "ephemeral-storage loss" in support.FILESYSTEM_DURABILITY_BOUNDARY
+    assert "not permission to retry" in support.FILESYSTEM_DURABILITY_BOUNDARY
+
+
+@pytest.mark.parametrize("directory_kind", ["parent", "output"])
+@pytest.mark.parametrize("stage", ["open", "fsync", "close"])
+def test_new_evidence_directory_sync_failure_is_retained_and_never_started(
+        tmp_path, monkeypatch, directory_kind, stage):
+    output = tmp_path / "synthetic-new-output"
+    target_directory = tmp_path if directory_kind == "parent" else output
+    state = {"created": False}
+    opened, targeted = set(), set()
+    original_mkdir, original_open = support.os.mkdir, support.os.open
+    original_close, original_fsync = support.os.close, support.os.fsync
+    b = budget()
+
+    def mkdir(path, mode=0o777, **kwargs):
+        original_mkdir(path, mode, **kwargs)
+        if Path(path) == output:
+            state["created"] = True
+
+    def open_directory(path, flags, mode=0o777):
+        applies = state["created"] and Path(path) == target_directory
+        if applies and stage == "open":
+            raise OSError("synthetic new directory open")
+        descriptor = original_open(path, flags, mode)
+        opened.add(descriptor)
+        if applies:
+            targeted.add(descriptor)
+        return descriptor
+
+    def sync_directory(descriptor):
+        if descriptor in targeted and stage == "fsync":
+            raise OSError("synthetic new directory fsync")
+        original_fsync(descriptor)
+
+    def close_directory(descriptor):
+        applies = descriptor in targeted
+        original_close(descriptor)
+        opened.discard(descriptor)
+        targeted.discard(descriptor)
+        if applies and stage == "close":
+            raise OSError("synthetic new directory close")
+
+    monkeypatch.setattr(support.os, "mkdir", mkdir)
+    monkeypatch.setattr(support.os, "open", open_directory)
+    monkeypatch.setattr(support.os, "fsync", sync_directory)
+    monkeypatch.setattr(support.os, "close", close_directory)
+    with pytest.raises(OSError, match="synthetic new directory " + stage):
+        support.ExclusiveEvidenceWriter(output, support.IDENTITY, b)
+    assert output.is_dir()
+    assert not (output / "STARTED.json").exists()
+    assert b.output_bytes == 0
+    assert opened == set()
+    state["created"] = False
+    with pytest.raises(FileExistsError):
+        support.ExclusiveEvidenceWriter(output, support.IDENTITY, b)
+    assert opened == set()
+
+
+@pytest.mark.parametrize("stage", ["file_close", "dir_open_after",
+                                   "dir_fsync_after", "dir_close_after"])
+def test_complete_looking_success_bytes_do_not_acknowledge_failed_terminal_sync(
+        tmp_path, monkeypatch, stage):
+    writer = support.ExclusiveEvidenceWriter(tmp_path / "evidence", support.IDENTITY, budget())
+    writer.raw_bytes("earlier.raw", b"durable synthetic raw evidence")
+    target = writer.path / "TERMINAL.json"
+    probe = SyntheticDurabilityProbe(monkeypatch, target, stage)
+    with pytest.raises(OSError, match="synthetic durability failure"):
+        writer.terminal("SUCCESS", {"synthetic_only": True, "real_g0_executed": False})
+    manifest = json.loads(target.read_bytes())
+    assert manifest["status"] == "SUCCESS"
+    assert "launcher status" in manifest["terminal_acknowledgment"]
+    assert writer.closed is False
+    assert writer.write_attempts[-1]["complete"] is False
+    assert not any(row["kind"] == "terminal" for row in writer.records)
+    assert (writer.path / "earlier.raw").read_bytes() == b"durable synthetic raw evidence"
+    assert probe.opened == set()
+    with pytest.raises(FileExistsError):
+        writer.terminal("SUCCESS", {"synthetic_only": True})
+    assert writer.closed is False
+    assert probe.opened == set()
+
+
+class SyntheticBudgetAdvancingWriter:
+    """Simulate a charged durable write that crosses a soft cap before returning."""
+
+    def __init__(self, b, current, key, advance_when):
+        self.budget, self.current, self.key = b, current, key
+        self.advance_when = advance_when
+        self.records = []
+
+    def log(self, name, raw, value=None):
+        self.budget.reserve_output(len(raw))
+        self.records.append({"name": name, "bytes": len(raw), "value": value})
+        if self.advance_when(name, value):
+            boundary = self.budget.limits[self.key] - self.budget.reserves[self.key]
+            if self.key == "output_bytes":
+                self.budget.output_bytes = boundary
+            else:
+                self.current[self.key] = boundary
+
+    def raw_json(self, name, value):
+        self.log(name, support.canonical(value), support.primitive(value))
+
+    def raw_bytes(self, name, raw):
+        self.log(name, raw)
+
+
+@pytest.mark.parametrize("key", list(support.LIMITS))
+def test_manual_before_rechecks_after_durable_attempt_logging(tmp_path, key):
+    current = sample()
+    b = support.ResourceBudget(sampler=lambda: current)
+    writer = SyntheticBudgetAdvancingWriter(
+        b, current, key, lambda name, value: value is not None and value["kind"] == "call_attempt")
+    monitor = support.PassiveCallMonitor(tmp_path, {"act": 1}, b, writer,
+                                        targets={}, allowed_functions=set())
+    following = []
+    with pytest.raises(support.BudgetExceeded):
+        monitor.before("act")
+        following.append("mock dynamics")
+    assert following == []
+    assert monitor.counts["act"] == 1
+    assert writer.records[0]["value"]["kind"] == "call_attempt"
+    assert b.failure is not None
+
+
+@pytest.mark.parametrize("key", list(support.LIMITS))
+def test_predecode_raw_capture_cannot_cross_budget_then_enter_decoder(tmp_path, key):
+    current, steps = sample(), []
+    b = support.ResourceBudget(sampler=lambda: current)
+    writer = SyntheticBudgetAdvancingWriter(
+        b, current, key, lambda name, value: name.startswith("native-load-input-"))
+    decode = synthetic_function(tmp_path, "mock.py",
+                                "def decode(raw):\n    steps.append('decode body')\n    return 1\n",
+                                "decode", {"steps": steps})
+    monitor = support.PassiveCallMonitor(
+        tmp_path, {"direct_checkpoint_load_bytes": 1}, b, writer,
+        targets={"direct_checkpoint_load_bytes": ("mock.py", "decode")}, allowed_functions=set())
+    with pytest.raises(support.BudgetExceeded):
+        with monitor:
+            decode(b"synthetic checkpoint input")
+    assert steps == []
+    assert any(row["name"].startswith("native-load-input-") for row in writer.records)
+    assert monitor.counts["direct_checkpoint_load_bytes"] == 1
+    assert monitor.returned["direct_checkpoint_load_bytes"] == 0
+    assert b.failure is not None
+
+
+@pytest.mark.parametrize("key", list(support.LIMITS))
+@pytest.mark.parametrize("phase", ["return_event", "checkpoint_capture"])
+def test_return_logging_cannot_cross_budget_then_resume_caller_dynamics(tmp_path, key, phase):
+    current, steps = sample(), []
+    b = support.ResourceBudget(sampler=lambda: current)
+
+    def advance(name, value):
+        if phase == "checkpoint_capture":
+            return name.startswith("native-checkpoint-")
+        return value is not None and value["kind"] == "call_return"
+
+    writer = SyntheticBudgetAdvancingWriter(b, current, key, advance)
+    save = synthetic_function(
+        tmp_path, "mock.py", "def save(path):\n    steps.append('save body')\n"
+        "    path.write_bytes(b'synthetic checkpoint bytes')\n    return 'synthetic digest'\n",
+        "save", {"steps": steps})
+    target = tmp_path / "temporary-checkpoint.json"
+    monitor = support.PassiveCallMonitor(tmp_path, {"direct_checkpoint_save": 1}, b, writer,
+                                        targets={"direct_checkpoint_save": ("mock.py", "save")},
+                                        allowed_functions=set())
+    with pytest.raises(support.BudgetExceeded):
+        with monitor:
+            save(target)
+            steps.append("following caller dynamics")
+    assert steps == ["save body"]
+    assert target.read_bytes() == b"synthetic checkpoint bytes"
+    assert monitor.returned["direct_checkpoint_save"] == 1
+    assert b.failure is not None
+
+
+def test_shell_return_trace_logging_rechecks_before_next_caller_line(tmp_path):
+    current, steps = sample(), []
+    b = support.ResourceBudget(sampler=lambda: current)
+    writer = SyntheticBudgetAdvancingWriter(
+        b, current, "wall_seconds",
+        lambda name, value: value is not None and value["kind"] == "resource_birth")
+    cls = type("IntegratedV03Brain", (), {"__module__": "sparkbrain.v03.runtime"})
+    construct = synthetic_function(
+        tmp_path, "scripts/g0_joint_ownership.py", "def _construct(cls):\n"
+        "    clone = object.__new__(cls)\n    steps.append('following shell dynamics')\n"
+        "    return clone\n", "_construct", {"steps": steps})
+    monitor = support.PassiveCallMonitor(tmp_path, {"rawbrain_shell": 1}, b, writer, targets={})
+    with pytest.raises(support.BudgetExceeded):
+        with monitor:
+            construct(cls)
+    assert steps == []
+    assert monitor.returned["rawbrain_shell"] == 1
+    assert len(monitor.births) == 1
+    assert b.failure is not None
+
+
+def test_uncharged_profile_and_trace_callbacks_do_not_resample_budget(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    sampled = []
+
+    def sampler():
+        sampled.append(1)
+        return sample()
+
+    b = support.ResourceBudget(sampler=sampler)
+    monitor = support.PassiveCallMonitor(tmp_path, {}, b, targets={}, allowed_functions=set())
+    monkeypatch.setattr(monitor, "_profile_inner", lambda *args: None)
+    monitor._profile(object(), "call", None)
+    frame = SimpleNamespace(f_code=SimpleNamespace(
+        co_filename=str(tmp_path / "scripts/g0_joint_ownership.py"), co_qualname="_construct"))
+    monitor._trace(frame, "line", None)
+    assert sampled == []
+
+
+def test_postlog_admission_check_is_finite_and_does_not_log_recursively(tmp_path):
+    sampled, current = [], sample()
+
+    def sampler():
+        sampled.append(1)
+        return current
+
+    b = support.ResourceBudget(sampler=sampler)
+    writer = SyntheticBudgetAdvancingWriter(
+        b, current, "wall_seconds", lambda name, value: value["kind"] == "call_attempt")
+    monitor = support.PassiveCallMonitor(tmp_path, {"act": 1}, b, writer,
+                                        targets={}, allowed_functions=set())
+    with pytest.raises(support.BudgetExceeded):
+        monitor.before("act")
+    assert len(sampled) == 3  # initial admission, writer byte charge, one post-log admission
+    assert len(writer.records) == len(monitor.events) == 1
+
+
+@pytest.mark.parametrize("key", list(support.LIMITS))
+@pytest.mark.parametrize("terminal", [False, True])
+def test_post_io_budget_exhaustion_leaves_complete_bytes_unacknowledged(
+        tmp_path, monkeypatch, key, terminal):
+    current = sample()
+    b = support.ResourceBudget(sampler=lambda: current)
+    writer = support.ExclusiveEvidenceWriter(tmp_path / "evidence", support.IDENTITY, b)
+    target = writer.path / ("TERMINAL.json" if terminal else "unacknowledged.raw")
+    original = support.exclusive_durable_write
+
+    def durable_then_exhausted(path, raw, **kwargs):
+        original(path, raw, **kwargs)
+        boundary = b.limits[key] if terminal else b.limits[key] - b.reserves[key]
+        if key == "output_bytes":
+            b.output_bytes = boundary
+        else:
+            current[key] = boundary
+
+    monkeypatch.setattr(support, "exclusive_durable_write", durable_then_exhausted)
+    with pytest.raises(support.BudgetExceeded):
+        if terminal:
+            writer.terminal("SUCCESS", {"synthetic_only": True, "real_g0_executed": False})
+        else:
+            writer.raw_bytes(target.name, b"complete synthetic bytes")
+    assert target.exists()
+    if terminal:
+        assert json.loads(target.read_bytes())["status"] == "SUCCESS"
+    else:
+        assert target.read_bytes() == b"complete synthetic bytes"
+    assert writer.closed is False
+    assert writer.write_attempts[-1]["complete"] is False
+    assert not any(row["name"] == target.name for row in writer.records)
+    assert b.failure is not None

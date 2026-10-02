@@ -205,3 +205,32 @@ Real-run launcher mode emits only an exit status. It does not print terminal JSO
 or post-admission exception traces after output accounting is finalized. Inspect
 the durable terminal/partial evidence instead; missing terminal evidence remains
 a failed or incomplete attempt, never a successful result.
+
+
+## Local filesystem durability boundary
+
+The reservation's exclusive directory entry is synchronized before fallible marker
+payload work. After creation, every failure remains consumed, including directory
+synchronization and descriptor-close failures. The reservation/output directory
+and its immediate parent are synchronized before depending on newly created
+names; older ancestors require trusted durable provisioning. Each acknowledged
+evidence file requires its payload and directory entry to be synchronized. No partial marker or evidence file is deleted or retried.
+
+These guarantees depend on the mounted filesystem honoring successful fsync and
+on retaining that storage. They do not survive deliberate deletion, loss of the
+cloud volume, or a storage service violating its durability contract. Missing or
+uncertain identity history never authorizes a rerun of a consumed identity.
+
+A complete-looking SUCCESS terminal file is not sufficient by itself. A late
+close or directory-sync failure can leave those bytes while the writer has not
+acknowledged durable completion. Eligibility requires both complete validated
+terminal evidence and successful launcher exit status 0; exit 2, missing exit
+confirmation or interrupted finalization remains failed/uncertain even when some
+SUCCESS bytes are visible. The launcher adds no uncharged console output.
+
+Durable observer logging can consume budget too. The implementation rechecks after
+attempt logging and after profile/allocation-trace callbacks that charged output,
+before returning control to model code. Unchanged callbacks do not trigger broad
+resource polling, and these checks do not recursively log. These finite admission
+checks work alongside the configured hard OS limits and timeout; they do not claim
+an impossible zero-gap real-time guarantee inside arbitrary in-flight operations.

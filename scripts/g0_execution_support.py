@@ -35,6 +35,13 @@ from scripts.verify_g0_joint_source_contract import (
 
 IDENTITY = "assembly-m1-g0-v1-20261002"
 ARTIFACT_ROOT = "artifacts/research/assembly_m1_g0_v1_20261002"
+FILESYSTEM_DURABILITY_BOUNDARY = (
+    "Acknowledged evidence requires file and directory fsync on this mounted filesystem. "
+    "Older directory ancestors are trusted durably provisioned storage. "
+    "A crash before reservation-directory fsync completes leaves consumption uncertain; "
+    "an absent marker is not permission to retry. Storage deletion, ephemeral-storage loss, "
+    "and a filesystem that does not honor successful fsync are outside this guarantee."
+)
 LIMITS = {"cpu_seconds": 600, "wall_seconds": 900,
           "address_space_bytes": 1 << 30, "output_bytes": 256 << 20}
 RESERVES = {"cpu_seconds": 30, "wall_seconds": 45,
@@ -636,6 +643,63 @@ def require_execution_permit(permit: ExecutionPermit, root: Path | None = None) 
         raise AdmissionError("approval changed after admission")
 
 
+def fsync_directory(path: Path) -> None:
+    """Synchronize one guarded directory; always release its descriptor, never retry."""
+    directory = source_root(path)
+    descriptor = os.open(directory, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
+    try:
+        os.fsync(descriptor)
+    finally:
+        os.close(descriptor)
+
+
+def fsync_directory_provisioning(path: Path) -> None:
+    """Persist this directory's name and contents before creating one-shot evidence.
+
+    The immediate parent contains this directory's name; synchronize both. Older
+    ancestors are a trusted durable-provisioning boundary, not newly created here.
+    No fsync can promise persistence after cloud/ephemeral storage is deleted.
+    """
+    directory = source_root(path)
+    fsync_directory(directory.parent)
+    fsync_directory(directory)
+
+
+def exclusive_durable_write(path: Path, data: bytes,
+                            *, on_created: Callable[[], None] | None = None) -> None:
+    """Create once, persist its name before bytes, then acknowledge only full durability.
+
+    The caller first admits the parent directory provisioning. Every post-create failure
+    retains the marker/file. The raw descriptor remains ours until fdopen succeeds;
+    afterward the handle owns it, including all write/flush/fsync/close failures.
+    """
+    parent = source_root(path.parent)
+    if type(data) is not bytes or Path(path.name).name != path.name:
+        raise AdmissionError("durable evidence requires a confined leaf and exact bytes")
+    descriptor = os.open(parent / path.name,
+                         os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
+    try:
+        if on_created is not None:
+            on_created()
+        # Even an empty consumed marker must be in the durable directory namespace
+        # before buffer setup/writes can fail or models can execute.
+        fsync_directory(parent)
+        handle = os.fdopen(descriptor, "wb")
+        descriptor = None  # Ownership transferred only after successful fdopen.
+        try:
+            if handle.write(data) != len(data):
+                raise OSError("short durable evidence write")
+            handle.flush()
+            os.fsync(handle.fileno())
+        finally:
+            handle.close()
+        # Persist namespace metadata again after the file's complete data/inode sync.
+        fsync_directory(parent)
+    finally:
+        if descriptor is not None:
+            os.close(descriptor)
+
+
 def consume_execution_permit(permit: ExecutionPermit, output_directory: Path,
                              *, budget: ResourceBudget) -> Path:
     """Consume once before the exclusive STARTED directory; never reset after failure."""
@@ -655,19 +719,18 @@ def consume_execution_permit(permit: ExecutionPermit, output_directory: Path,
     if digest(checked.read_bytes()) != record["identity_ledger_sha256"]:
         raise AdmissionError("identity ledger changed after admission")
     reservation = record["identity_reservation"]
-    source_root(reservation.parent)
+    fsync_directory_provisioning(reservation.parent)
     raw = canonical({"identity": IDENTITY, "execution_nonce": record["execution_nonce"],
                      "approval_sha256": record["approval_sha256"],
                      "freeze_sha256": record["verified"]["freeze_sha256"],
-                     "output_directory": str(candidate), "state": "STARTED"})
+                     "output_directory": str(candidate), "state": "STARTED",
+                     "filesystem_durability_boundary": FILESYSTEM_DURABILITY_BOUNDARY})
     budget.reserve_output(len(raw))
-    descriptor = os.open(reservation, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
-    # Consumption occurs immediately after exclusive creation; write failure cannot reset it.
-    record["consumed"] = True
-    with os.fdopen(descriptor, "wb") as handle:
-        handle.write(raw)
-        handle.flush()
-        os.fsync(handle.fileno())
+    def consumed() -> None:
+        # O_EXCL has succeeded. Every later failure leaves this identity consumed.
+        record["consumed"] = True
+
+    exclusive_durable_write(reservation, raw, on_created=consumed)
     return candidate
 
 
@@ -849,14 +912,19 @@ class ExclusiveEvidenceWriter:
         if output_dir.name in {"", ".", ".."}:
             raise AdmissionError("invalid output directory")
         self.path = parent / output_dir.name
+        budget.check()
+        fsync_directory_provisioning(parent)
         self.path.mkdir(mode=0o700, exist_ok=False)
+        fsync_directory(parent)  # The new output-directory name must be durable.
+        fsync_directory(self.path)
         self.budget = budget
         self.records: list[dict[str, Any]] = []
         self.write_attempts: list[dict[str, Any]] = []
         self.closed = False
         self._lock = threading.RLock()
         self._write("STARTED.json", canonical({"identity": identity, "state": "STARTED",
-                    "real_g0_completed": False, "scientific_credit": 0}), "start")
+                    "real_g0_completed": False, "scientific_credit": 0,
+                    "filesystem_durability_boundary": FILESYSTEM_DURABILITY_BOUNDARY}), "start")
 
     def _write(self, name: str, data: bytes, kind: str) -> dict[str, Any]:
         if (type(name) is not str or Path(name).name != name or name in {"", ".", ".."}
@@ -870,16 +938,11 @@ class ExclusiveEvidenceWriter:
             attempt = {"name": name, "kind": kind, "planned_bytes": len(data),
                        "complete": False}
             self.write_attempts.append(attempt)
-            descriptor = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
-            try:
-                with os.fdopen(descriptor, "wb") as handle:
-                    handle.write(data)
-                    handle.flush()
-                    os.fsync(handle.fileno())
-            except BaseException:
-                # Existing partial bytes are retained; no replacement or retry occurs.
-                raise
+            exclusive_durable_write(path, data)
             record = {"name": name, "kind": kind, "bytes": len(data), "sha256": digest(data)}
+            # Include durable IO/hash work before acknowledging this record. During
+            # terminal finalization this checks the same fixed hard envelope.
+            self.budget.check()
             self.records.append(record)
             attempt["complete"] = True
             return primitive(record)
@@ -903,6 +966,10 @@ class ExclusiveEvidenceWriter:
             "records": primitive(self.records), "write_attempts": primitive(self.write_attempts),
             "resources_before_terminal": self.budget.sample(),
             "partial_evidence_retained": status != "SUCCESS", "scientific_credit": 0,
+            "filesystem_durability_boundary": FILESYSTEM_DURABILITY_BOUNDARY,
+            "terminal_acknowledgment": (
+                "Complete-looking bytes alone are not a successful terminal acknowledgment; "
+                "writer completion and successful launcher status are both required."),
             "limitation": ("SIGKILL, OOM, disk failure or exhausted hard caps "
                            "can prevent finalization"),
         }), "terminal")
@@ -935,6 +1002,7 @@ class PassiveCallMonitor:
     No model method is replaced. Only scalar identifiers/counters are retained.
     A failed profile poisons the budget. The runner must check at every owner dispatch,
     including after an expected exception; Python disables a callback that raises.
+    Finite admission checks plus hard OS limits do not promise zero-gap real-time enforcement.
     """
 
     def __init__(self, root: Path, call_plan: Mapping[str, int] | None, budget: ResourceBudget,
@@ -1008,6 +1076,8 @@ class PassiveCallMonitor:
             self.counts[name] += 1
             self._thread_ids.add(threading.get_ident())
             self._event("call_attempt", name, attempt=self.counts[name])
+            # Durable logging can consume the soft reserve before this body starts.
+            self.budget.check()
 
     def _event(self, kind: str, name: str, **details: Any) -> None:
         value = primitive({"sequence": len(self.events) + 1, "kind": kind, "name": name,
@@ -1065,7 +1135,12 @@ class PassiveCallMonitor:
 
     def _profile(self, frame: Any, event: str, arg: Any) -> None:
         try:
+            output_before = self.budget.output_bytes
             self._profile_inner(frame, event, arg)
+            # Only instrumentation that charged output needs a post-log sample.
+            # Ordinary profile events do not incur an extra /proc/resource poll.
+            if self.budget.output_bytes != output_before:
+                self.budget.check()
         except BudgetExceeded:
             raise
         except BaseException as exc:
@@ -1204,6 +1279,7 @@ class PassiveCallMonitor:
                 or self._key(frame) not in self._allocation_keys):
             return None
         try:
+            output_before = self.budget.output_bytes
             token = (threading.get_ident(), id(frame))
             pending = self._pending_shells.get(token)
             if pending and pending["returned"] and event in {"line", "return"}:
@@ -1215,6 +1291,8 @@ class PassiveCallMonitor:
                             source_route=pending["source_route"])
                 self._record_birth(pending["name"], value, tuple(pending["source_route"]))
                 del self._pending_shells[token]
+            if self.budget.output_bytes != output_before:
+                self.budget.check()
         except BudgetExceeded:
             raise
         except BaseException as exc:
