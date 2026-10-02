@@ -1,0 +1,876 @@
+{
+  "archive_bytes": 530100,
+  "archive_files": 204,
+  "archive_sha256": "407a1d81cf2161e32c93be57c2eecabba54d178a3bcd0fd723606aaf6d2b57b6",
+  "classification": "FAILED_BEFORE_WORKER_AND_MODEL_ADMISSION",
+  "files": {
+    "audit/audit.json": {
+      "bytes": 14058,
+      "sha256": "a42de8e456a23d7fe3cbcbe215b943fbd2b014c3a5c365fc9cf57b6e8a986e82"
+    },
+    "audit/report.md": {
+      "bytes": 4020,
+      "sha256": "478202671f076e442041e2faed666953033127eb97bdb9172628c2f67b7df90d"
+    },
+    "authority-records/approval.json": {
+      "bytes": 449,
+      "sha256": "231fdb8848e6c805dbd0195cb2e328d52318cbf3f4365ae0efa4d456220f1603"
+    },
+    "authority-records/original-record-pins.json": {
+      "bytes": 250,
+      "sha256": "8a7f8cc340d96ee78bd71355cd84a6f5c5c02fa1e4adf299b508c2195faa923c"
+    },
+    "authority-records/publication.json": {
+      "bytes": 461,
+      "sha256": "6a5de5098c1768a3dcbc9b1c8dc63f17862ce4e9835b2cb57d1438002cec490f"
+    },
+    "authority-records/review.json": {
+      "bytes": 461,
+      "sha256": "97d2f255d21f61ea199d788fc5fd6f0da00e0ced2553e9f716c92d1acfdaf37e"
+    },
+    "invocation.json": {
+      "bytes": 1488,
+      "sha256": "feefb0565c415a9645ca76d93293cc0361d3a07fcd9bf7db63ee9efd9c38d3e4"
+    },
+    "preservation-manifest.json": {
+      "bytes": 33403,
+      "sha256": "f30da91298a35b6e60e07ebc09220a61889c50335d6313bf253ec18489c59006"
+    },
+    "run/result.json": {
+      "bytes": 752,
+      "sha256": "70a54d6f1c6b23809853e14901561bbda4aede73a885422e55a7ab6964caf223"
+    },
+    "source/AGENTS.md": {
+      "bytes": 9718,
+      "sha256": "ceb4a6b2f14b0efa25148cf0f652f75133e00d11360a020ef6aa6adcdb34a002"
+    },
+    "source/artifacts/research/plasticity_retention_execution_20261001/freeze-v3/dependencies.json": {
+      "bytes": 93068,
+      "sha256": "4415be4c41f48275151ce266f517d75765d66f8b6b2e53a500ca335ae4aaff48"
+    },
+    "source/artifacts/research/plasticity_retention_execution_20261001/freeze-v3/manifest.json": {
+      "bytes": 22461,
+      "sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834"
+    },
+    "source/artifacts/research/plasticity_retention_preparation_20261001/inputs.json": {
+      "bytes": 329517,
+      "sha256": "6e9ae9652cf4593e4401e9ce149d1ff178007065c732c2950e904efb523b3773"
+    },
+    "source/artifacts/research/plasticity_retention_preparation_20261001/jobs.json": {
+      "bytes": 11517,
+      "sha256": "e67c82326a43856aa4628c45d21ebd5cd8d9edf7b09c76c232982052544db1d6"
+    },
+    "source/artifacts/research/plasticity_retention_preparation_20261001/prefix_sources.json": {
+      "bytes": 4181,
+      "sha256": "d9bc263106921a4c862e540795fb56c02565b8d8f370a88b570814448ee33dc9"
+    },
+    "source/artifacts/research/plasticity_retention_preparation_20261001/preparation_manifest.json": {
+      "bytes": 21383,
+      "sha256": "bf084391b2a7e43cde63c2c8f95c0389e32bc09cce3333b15f930c5888d257a9"
+    },
+    "source/docs/research/plasticity_retention_design_20261001.md": {
+      "bytes": 17801,
+      "sha256": "d3cf80b829e422f17f96685803f0d4a5fad1bd09bb17582084318cec871e9b70"
+    },
+    "source/docs/research/plasticity_retention_protocol_20261001.md": {
+      "bytes": 8646,
+      "sha256": "a84cd9ddc386faf8804ea0b9f557f96336a7424ba1779bd8064765ab80a901c7"
+    },
+    "source/protocols/plasticity_retention_bounded_v1.json": {
+      "bytes": 12842,
+      "sha256": "79a37f24eda0a5b82bb6f6e3428f48442a593f10dcb729dc3d67b30014ec0fb3"
+    },
+    "source/pyproject.toml": {
+      "bytes": 1828,
+      "sha256": "b1af7a52f8f1af01d328d37b0f397ec0f2cd156068be23f7aa754d2e0daf1805"
+    },
+    "source/schemas/baseline-experiment-v0.1.schema.json": {
+      "bytes": 1498,
+      "sha256": "ce5635f9761a4b02b99ead820dc1b957f879b71a9ad3d012e003f2d84d3016cc"
+    },
+    "source/schemas/benchmark-v0.2.schema.json": {
+      "bytes": 487,
+      "sha256": "1a1857bae374b1a420aca8c89018b9e4fff65467f843a5fea59e777b48d09e3a"
+    },
+    "source/schemas/checkpoint-v0.3.schema.json": {
+      "bytes": 3382,
+      "sha256": "83b37515f6bb4b8c4b2e60035afc7d6ff2d32b36f84ef25fa7e9e47cc22a6348"
+    },
+    "source/schemas/config-document-v0.2.schema.json": {
+      "bytes": 398,
+      "sha256": "862f9c9bd745451deccea2a8b9368860c0d241139ea65daa7a57fcc8fd573b82"
+    },
+    "source/schemas/config-v0.2.schema.json": {
+      "bytes": 1782,
+      "sha256": "62e872e3db67eb2c2b47ce3f1c28e713f015d24ff10d03df164d6d9af191ef80"
+    },
+    "source/schemas/episode-v0.2.schema.json": {
+      "bytes": 974,
+      "sha256": "e3fd925fc0934f630041f30a9c3ef09a49a36187a39530689318b44be90ba215"
+    },
+    "source/schemas/external-evaluation-v0.2.schema.json": {
+      "bytes": 1267,
+      "sha256": "d8e4ff68039962e582826429dc50800e194bf86567f1617bc48474e1083e566b"
+    },
+    "source/schemas/observation-v0.2.schema.json": {
+      "bytes": 975,
+      "sha256": "b01b900734af358c8578bd8d08df886767eea404bf2d17c85b099924fa47c655"
+    },
+    "source/schemas/phase1-results-v0.2.schema.json": {
+      "bytes": 489,
+      "sha256": "dc57ad7323a7d5d8b78993378e6a17bd1e6e04c83025eaba39844220847bf046"
+    },
+    "source/schemas/phase1-run-manifest-v0.2.schema.json": {
+      "bytes": 828,
+      "sha256": "c4459919b72667da5de4b2a9c2511c16464641ccf6309d8e402a278ee90e21f3"
+    },
+    "source/schemas/release-evidence-map-v1.schema.json": {
+      "bytes": 1072,
+      "sha256": "778c754dd48ab26930873290bc92273640f95f380c9249f4a9fbfce3e33499ec"
+    },
+    "source/schemas/state-v0.2.schema.json": {
+      "bytes": 4662,
+      "sha256": "d3b88a885a1009be336a70df8545ff16b5c2239c5fa7eb103c8afa92e6e7c6e0"
+    },
+    "source/schemas/summary-v0.2.schema.json": {
+      "bytes": 550,
+      "sha256": "797065235e66360de4cab377c2929debe89d8c71091667242cfc434307ae76d9"
+    },
+    "source/schemas/trace-v0.2.schema.json": {
+      "bytes": 2166,
+      "sha256": "2eed3249effbe5fea09a3e60143142673de434efbeae70187bf8e3598bbeb0f7"
+    },
+    "source/schemas/trace-v0.3.schema.json": {
+      "bytes": 2221,
+      "sha256": "ff3ac72b84c6e17c6badc583bbf570760cf663a08220afc34634cbc1ee5897a0"
+    },
+    "source/scripts/plasticity_retention_contract.py": {
+      "bytes": 15452,
+      "sha256": "bca67e065b28facea3e07978d3d644a0d26b33f672cf037527afaf8e1e876e00"
+    },
+    "source/scripts/plasticity_retention_support.py": {
+      "bytes": 15085,
+      "sha256": "08999a716fff36631cbd03b2f8902007bbbec233ad092b4b075f28d8d090bb40"
+    },
+    "source/scripts/prepare_plasticity_retention_inputs.py": {
+      "bytes": 17611,
+      "sha256": "08e5eb3d3d6ea4fe717edf7448254d66d8b1784f043370ca758642e81bf79d6c"
+    },
+    "source/scripts/run_plasticity_retention.py": {
+      "bytes": 45287,
+      "sha256": "cb6c79daf5811514e2dd10f769d88292bec0d07a7f0099892c3104e6a4e9d87f"
+    },
+    "source/scripts/temporal_reuse_loop_probe.py": {
+      "bytes": 44890,
+      "sha256": "28ea3207cc5b9a2cce2219df7754a22cd8f05c83915eb4962630450dc0e220ae"
+    },
+    "source/scripts/verify_plasticity_retention_run.py": {
+      "bytes": 42795,
+      "sha256": "b89fe0e2c7e2e9669ce62ec68b938db6a8861acaf49d43eb11723175af0b9e6b"
+    },
+    "source/src/sparkbrain/__init__.py": {
+      "bytes": 913,
+      "sha256": "c3d4ccc1ed07e0984e4cd1e37bcd88c6f6bb692d76ebda41c14046f0e2be8b32"
+    },
+    "source/src/sparkbrain/baselines/__init__.py": {
+      "bytes": 520,
+      "sha256": "18fb90a6ef88ba5c3281b0001a3ad5084096d89ce32b8039be6b1084023c2a17"
+    },
+    "source/src/sparkbrain/baselines/bounds.py": {
+      "bytes": 1667,
+      "sha256": "ab03ff63a2322fd086678caa49ffcdb8c1c63b33102cabe68eccfe7b3f05d54d"
+    },
+    "source/src/sparkbrain/baselines/classic.py": {
+      "bytes": 3821,
+      "sha256": "e1b84d6ac3816ae826ab5c5d20712d4bd1c406f4db0f2d2b648ab42dd1a128d7"
+    },
+    "source/src/sparkbrain/baselines/neural/__init__.py": {
+      "bytes": 612,
+      "sha256": "0e2eb5e7ae4372b4b68d81d843b8c63026cd97eec8d72872fad5cd253083733b"
+    },
+    "source/src/sparkbrain/baselines/neural/common.py": {
+      "bytes": 9679,
+      "sha256": "df1689d43c07242b41406cd85bd4099a9ed1046fb6ca017878440c80aef528e8"
+    },
+    "source/src/sparkbrain/baselines/neural/models.py": {
+      "bytes": 6133,
+      "sha256": "abec147e9eec6d538db9bcd89eb5099f76da9b29f78b945b82ceee6380fd1103"
+    },
+    "source/src/sparkbrain/baselines/probabilistic.py": {
+      "bytes": 5769,
+      "sha256": "dda8c119504665f04539d91b505c3cddac75890c6820d764f0c343921f7e3f67"
+    },
+    "source/src/sparkbrain/baselines/protocol.py": {
+      "bytes": 406,
+      "sha256": "898641d50e59f20a6482a8f51434165d5b9359cc9c9242cfa7956345ddd0580f"
+    },
+    "source/src/sparkbrain/benchmark.py": {
+      "bytes": 9161,
+      "sha256": "f5a20a79662c162b80dd2948bdec06017bc4b36679d1415ed28a9d36129b9371"
+    },
+    "source/src/sparkbrain/engine.py": {
+      "bytes": 32529,
+      "sha256": "1c4d3a63567cd9b3eeb8e8f037bf88468a75a0f760c9d933fa896d5d3395db07"
+    },
+    "source/src/sparkbrain/evaluation/__init__.py": {
+      "bytes": 111,
+      "sha256": "f890fb886f7534338f8066b8ea126da853a9d9e90629ce07c717fcfd720643f8"
+    },
+    "source/src/sparkbrain/evaluation/ablations.py": {
+      "bytes": 2539,
+      "sha256": "60112d94eba3099a5f9d6a7ef0a700ae820105b17d14cc8bf1f770a8819704e1"
+    },
+    "source/src/sparkbrain/evaluation/baseline_data.py": {
+      "bytes": 1435,
+      "sha256": "720b551b18628d68b58fc6ced20eb31d04d6df4a120aaab511a54f37b36cedc7"
+    },
+    "source/src/sparkbrain/evaluation/baseline_profiler.py": {
+      "bytes": 1046,
+      "sha256": "8326718d75a35910b93b06ef2d5b6d985a77d66f04a7b0269235a67c71682ede"
+    },
+    "source/src/sparkbrain/evaluation/baseline_report.py": {
+      "bytes": 1533,
+      "sha256": "edd3315cc2b88d031f95f10a547807994b6f409823977e5dd306d6af62e22479"
+    },
+    "source/src/sparkbrain/evaluation/baseline_trainer.py": {
+      "bytes": 1662,
+      "sha256": "7b3047e32d25ae141f40ae45b8da70169ff6cf187f97f384725e31de02f7739d"
+    },
+    "source/src/sparkbrain/evaluation/bootstrap.py": {
+      "bytes": 450,
+      "sha256": "c9afdae51d5957232e1e3059be7aba530b9e2ec53bafbb1ee78a2946afd8fcd3"
+    },
+    "source/src/sparkbrain/evaluation/metrics.py": {
+      "bytes": 2565,
+      "sha256": "87371b7fdb4a4d8abf8feafb778991630837196bfe76a522cf2725a495735620"
+    },
+    "source/src/sparkbrain/evaluation/profile_suite.py": {
+      "bytes": 2585,
+      "sha256": "b02ce0465e712957971ed66b20652cc2143d8ff8f4735107dd8657663fe6a7e4"
+    },
+    "source/src/sparkbrain/evaluation/run_baselines.py": {
+      "bytes": 18254,
+      "sha256": "efb5544ddf4d2387a4d2cb4007d33a8ffe75b3ceb55f87d88a83932f88169988"
+    },
+    "source/src/sparkbrain/evaluation/run_suite.py": {
+      "bytes": 13175,
+      "sha256": "4174d141df487281afce2ce2d383bb24084ee4b30d0bfda999c95ef0ba6b9880"
+    },
+    "source/src/sparkbrain/evaluation/runner.py": {
+      "bytes": 11897,
+      "sha256": "f1a2975498e0eb9d84a33b4dd68782c8bedeeff1643326dc8bb48dc5eed051f6"
+    },
+    "source/src/sparkbrain/external_validation/__init__.py": {
+      "bytes": 669,
+      "sha256": "e69fc6a6be35d990c4bdece9a1e7c2f21255a3212466c8f512fd32fd2f28c8c0"
+    },
+    "source/src/sparkbrain/external_validation/adapters.py": {
+      "bytes": 12213,
+      "sha256": "8d59bc142c16aa7233772178c71716cedcc2f0961deb48f155862de61ea425b2"
+    },
+    "source/src/sparkbrain/external_validation/belief_r.py": {
+      "bytes": 12879,
+      "sha256": "9a2637605025e397cf35721e58c8c52da7905a22002793e120527c17937992e4"
+    },
+    "source/src/sparkbrain/external_validation/evaluation.py": {
+      "bytes": 27259,
+      "sha256": "f20091e06288ae1d8b4d7547c820c02451942cf1e3fee99fd7addb5f87766b57"
+    },
+    "source/src/sparkbrain/external_validation/gate.py": {
+      "bytes": 644,
+      "sha256": "37d1af1fc3370eae5b4c61e8ae07f62f570069daa593acac3cf62e8c152eaea7"
+    },
+    "source/src/sparkbrain/external_validation/interventions.py": {
+      "bytes": 2481,
+      "sha256": "cc583c5b92c8dcaedd34d9b3a6be3e8336f825aa1f2bf7faac8bc8a982619d01"
+    },
+    "source/src/sparkbrain/external_validation/metrics.py": {
+      "bytes": 6202,
+      "sha256": "15598c7ab441d9d775c47ff72687d249b3ca32864764a7eb832dfe13e03b181a"
+    },
+    "source/src/sparkbrain/external_validation/schema.py": {
+      "bytes": 1504,
+      "sha256": "bcd409a97f322c1ed619ed6591d475f5670f6865531a52805f36740a9029963a"
+    },
+    "source/src/sparkbrain/external_validation/symbolic.py": {
+      "bytes": 10718,
+      "sha256": "b38044ee8bc5217166691ab6cb9067311df7fee3cc548b2547aff4da8304f63a"
+    },
+    "source/src/sparkbrain/external_validation/transforms.py": {
+      "bytes": 7571,
+      "sha256": "b10f9eb633a2d038526909a97030783113fc6e0b93da77e336ab3d93f997b3d2"
+    },
+    "source/src/sparkbrain/lab/__init__.py": {
+      "bytes": 141,
+      "sha256": "8aa5d393393676159f141e1bf069ba796bf694561ce7869f06b284ea3824b051"
+    },
+    "source/src/sparkbrain/lab/app.py": {
+      "bytes": 7972,
+      "sha256": "b00145ce7da1656462404450d9355f22931650da7f1337947e0451fbe1ba3128"
+    },
+    "source/src/sparkbrain/lab/models.py": {
+      "bytes": 2843,
+      "sha256": "272ada415db3298698a35db0701dd0c8802fcb07a15ae5cc62bc01b0597b17b9"
+    },
+    "source/src/sparkbrain/lab/service.py": {
+      "bytes": 20858,
+      "sha256": "3a363aab3a1b85909f7f0cae0e6325ed1c169cc5a4c5cc223225420936618d4c"
+    },
+    "source/src/sparkbrain/lab/static/app.js": {
+      "bytes": 9172,
+      "sha256": "1d8d7f91938338e3cba9ab0dad5865660212f4d347f0e5f9de78ae53d62ab603"
+    },
+    "source/src/sparkbrain/lab/static/index.html": {
+      "bytes": 5187,
+      "sha256": "2b035799fbb6b32c6729fa599af491767b8561a6f6621c565dbd7f0fa690d675"
+    },
+    "source/src/sparkbrain/lab/static/styles.css": {
+      "bytes": 1819,
+      "sha256": "ab304f413fcaa708a8a12103af465310f141dab81e3d08f712b6d7de9020c6c0"
+    },
+    "source/src/sparkbrain/lab/v03_service.py": {
+      "bytes": 8948,
+      "sha256": "35217f0dc325bcaf8704fb5ec46459ae06fa81ab59789939385b098d4dd84ada"
+    },
+    "source/src/sparkbrain/learned/__init__.py": {
+      "bytes": 504,
+      "sha256": "60b099f42e649d4c8142ee22a55b6ca3558dd0d407efe244cb690839f0e35010"
+    },
+    "source/src/sparkbrain/learned/backend.py": {
+      "bytes": 13472,
+      "sha256": "03b0a27345e3f7c461153dc140f18690325ee9c68655e88ec81024098217057c"
+    },
+    "source/src/sparkbrain/learned/checkpoint.py": {
+      "bytes": 1226,
+      "sha256": "e1b5002955768eade3778871114de65f59ef3de6875d48bc8a48229cc9a3f691"
+    },
+    "source/src/sparkbrain/learned/config.py": {
+      "bytes": 2127,
+      "sha256": "75a7a7d84a5bcba0bd120317a747326a33e5df98ff50b38f8bfda64e3dc0b61c"
+    },
+    "source/src/sparkbrain/learned/contracts.py": {
+      "bytes": 1806,
+      "sha256": "c6c6c01898a6a020de5b0e589e9716ca5f50f3e0e024d32c43366ef74ac315ed"
+    },
+    "source/src/sparkbrain/learned/experiment.py": {
+      "bytes": 16754,
+      "sha256": "3646a0bd09eb87f85cbdc5c51a114230ef3a38c3412ca9512b2d7d6f1d1b93e5"
+    },
+    "source/src/sparkbrain/learned/model.py": {
+      "bytes": 6330,
+      "sha256": "5613bc3bf85472f4565023ce2e3a761f583589ef734bafb84dda5b4dba868c8e"
+    },
+    "source/src/sparkbrain/learned/training.py": {
+      "bytes": 11770,
+      "sha256": "889c7659314dc2d5a3a9117658cf49e86cb00a7a1523bcf84cb646fa61115cb5"
+    },
+    "source/src/sparkbrain/metrics.py": {
+      "bytes": 5046,
+      "sha256": "4013a0b5c642b3bbec89722a17d5972a9b14108d9aff4c626c1b4b10b15d8b3d"
+    },
+    "source/src/sparkbrain/model.py": {
+      "bytes": 4284,
+      "sha256": "434d38226de4036cf6efa0d92ed06db5b5a3ea4e2fa17af72ad5ebde182b88fc"
+    },
+    "source/src/sparkbrain/protocols.py": {
+      "bytes": 1320,
+      "sha256": "04a5ab475518af3ab4bda61009c5bc65cd97543f978b69b8b5ca3317395974a8"
+    },
+    "source/src/sparkbrain/release.py": {
+      "bytes": 49003,
+      "sha256": "43247263343bb02c5a21154713886bc011ef6685a8a7e5a944a3414f2c485dfb"
+    },
+    "source/src/sparkbrain/release_artifacts.py": {
+      "bytes": 19735,
+      "sha256": "772a6153f344744fbf793d777d8ff538f24d83683cdbbb97515855eaf5fa7cbc"
+    },
+    "source/src/sparkbrain/release_atomic.py": {
+      "bytes": 3576,
+      "sha256": "80bddf14ea95a8a68d79c956d585d726a0027b7e16a3eba8c36d6a0a325bb1a6"
+    },
+    "source/src/sparkbrain/release_candidate.py": {
+      "bytes": 39975,
+      "sha256": "93aa7fe45a7a315feafd37f6f5575b4d3f6a13ddc1856da80fdd370c84226929"
+    },
+    "source/src/sparkbrain/release_v03.py": {
+      "bytes": 20474,
+      "sha256": "d10267af52dd6ffb1a3ef90518db9d274df8de2dc215354b4afff106fcb7f0b2"
+    },
+    "source/src/sparkbrain/release_v03_artifacts.py": {
+      "bytes": 30068,
+      "sha256": "561f50fde76d8c92bde28390858e7d77c01629300e77ed08a29c071ebbd3aea7"
+    },
+    "source/src/sparkbrain/replay.py": {
+      "bytes": 1122,
+      "sha256": "bf5086bc2f9adbe10995c0c8b0c08779ff6fd673b489fc73b4721b17c9632742"
+    },
+    "source/src/sparkbrain/serialization.py": {
+      "bytes": 2777,
+      "sha256": "8d857351d279ec3a11fdd7a1c1c5a8c322144a4e61abea2a38aeaf77e1c04751"
+    },
+    "source/src/sparkbrain/spiking.py": {
+      "bytes": 12245,
+      "sha256": "fe8cfe90622186f81c7905f3cb9b9f1ba3c564d8423d548c6fbc785617dcaadf"
+    },
+    "source/src/sparkbrain/structural/__init__.py": {
+      "bytes": 362,
+      "sha256": "69567a15e1dd659173ddc0af05a1c1ccc035696eaf6f71e9ad9b8be4b21b3065"
+    },
+    "source/src/sparkbrain/structural/backend.py": {
+      "bytes": 8979,
+      "sha256": "ea63eefa87dedd7ccbc89d2f0b3b04f41bdf80bd46c2e153856e67cced57ffe6"
+    },
+    "source/src/sparkbrain/structural/config.py": {
+      "bytes": 2486,
+      "sha256": "49406656de09c564986dafd902c037efd66228c48f30f46f6c8d1d407bb66c78"
+    },
+    "source/src/sparkbrain/structural/contracts.py": {
+      "bytes": 1656,
+      "sha256": "edc5363d9d00c5d8c7fc85bb4122462ceefb2283d884a924e67c9b5352390465"
+    },
+    "source/src/sparkbrain/structural/controller.py": {
+      "bytes": 15376,
+      "sha256": "5528c1ba8399c840273460c7bd2553d036a4b6f4d5e4f5e3715e1f8c3faa95b9"
+    },
+    "source/src/sparkbrain/structural/experiment.py": {
+      "bytes": 25990,
+      "sha256": "1b8c31a5df5cac95d8d1211c18409988673eba0ff5d9c9c81d39a9139ef2c55b"
+    },
+    "source/src/sparkbrain/structural/model.py": {
+      "bytes": 6974,
+      "sha256": "930a92bbcefd6150b718ad1941d1eac5db442070d996d6e153a1620ab8377d87"
+    },
+    "source/src/sparkbrain/system_build/__init__.py": {
+      "bytes": 1962,
+      "sha256": "3208395466e34eb1497a4076db4c2719f5a65fb461fcd2e816623be48c2dd4aa"
+    },
+    "source/src/sparkbrain/system_build/acceptance.py": {
+      "bytes": 2506,
+      "sha256": "b7be754558c7364367740f425ad483a48b0f3d17edbbd7c5a66808bfa9d145e1"
+    },
+    "source/src/sparkbrain/system_build/causal_scope_revision.py": {
+      "bytes": 36324,
+      "sha256": "5a613f8a0cc4a98545e7aed8d5ebabbe31eb3e40a80adfd8ebd86f0fcaf53ad3"
+    },
+    "source/src/sparkbrain/system_build/integrated_m1.py": {
+      "bytes": 30638,
+      "sha256": "019032c043ac598c4696da0438f190553f757c2018144e1c0b2c7251d09a5837"
+    },
+    "source/src/sparkbrain/system_build/predictive_revision.py": {
+      "bytes": 24536,
+      "sha256": "686e1b0df7b489de626d5f16b61a2be6da0628f79db20d9d33eb077af0181f44"
+    },
+    "source/src/sparkbrain/tasks/__init__.py": {
+      "bytes": 307,
+      "sha256": "a44765f387646f1d7301eb42245c9f18e8d1c5ef4ed9feb89faa919ce5eb0009"
+    },
+    "source/src/sparkbrain/tasks/contradiction_world.py": {
+      "bytes": 92,
+      "sha256": "7441369a9265fa6869cee9defdf8ecbe791b2979ae7cf400539625832423ffb3"
+    },
+    "source/src/sparkbrain/tasks/delayed_evidence_world.py": {
+      "bytes": 95,
+      "sha256": "dab1088740b2bb25461e6b705236f9b13e20c3048d7f649505dd0fe55066d393"
+    },
+    "source/src/sparkbrain/tasks/goal_conflict_world.py": {
+      "bytes": 92,
+      "sha256": "574040755ec34e388e577e141da4568ac835114e46dae882fecbb4fb7424ba61"
+    },
+    "source/src/sparkbrain/tasks/multi_object_world.py": {
+      "bytes": 91,
+      "sha256": "534625086094eeda2688d7f5a71fa6a5096bdb19e806f5ca3d93e4e00e1aaa66"
+    },
+    "source/src/sparkbrain/tasks/reliability_world.py": {
+      "bytes": 90,
+      "sha256": "9a12642b44d027ae7a4eb247833e1ffb067f803e4d2f68f9f1d3b435d3c2f803"
+    },
+    "source/src/sparkbrain/tasks/schema.py": {
+      "bytes": 5114,
+      "sha256": "d639d0956243a405289835457b51a04db95915cbc2a4fa6826a31500a4ac3c28"
+    },
+    "source/src/sparkbrain/tasks/switchworld.py": {
+      "bytes": 84,
+      "sha256": "4631d423a900c72c505e7b454656acd56172b76974b394661e2f1273bfb8ffff"
+    },
+    "source/src/sparkbrain/tasks/worlds.py": {
+      "bytes": 9784,
+      "sha256": "4c6e1df46dbbb860bf05b5378184c56c79f46ec7c08d1d706926e33115b28af1"
+    },
+    "source/src/sparkbrain/v03/__init__.py": {
+      "bytes": 722,
+      "sha256": "75a49fee6c79ad147791f4eb86338ed6aa269a2e7a46462219ab6cd60ce1639b"
+    },
+    "source/src/sparkbrain/v03/evaluation.py": {
+      "bytes": 26594,
+      "sha256": "6f20efd4a656b6d50e9c39f4e2f4c16608cdeb110af11f78112d471a1eea0857"
+    },
+    "source/src/sparkbrain/v03/runtime.py": {
+      "bytes": 50726,
+      "sha256": "74374965dbf7989505cc50f6dedc0741677159a5261940747dbbdea225071ea1"
+    },
+    "source/src/sparkbrain/v032/__init__.py": {
+      "bytes": 1213,
+      "sha256": "0459307eef8ab8a5d9f0a4dcdad536cacc9ab5a461877a8d5380ef6b9c3cc6cb"
+    },
+    "source/src/sparkbrain/v032/checkpoint.py": {
+      "bytes": 16351,
+      "sha256": "7a7f597ad7698a55ebe5e32c31062dd81ad06e93d06192a6c117c915b0e1d25b"
+    },
+    "source/src/sparkbrain/v032/contracts.py": {
+      "bytes": 1351,
+      "sha256": "51eaa1f082187ef64a507ecf1776fbcc00291a1a4b734ac2d6faaf4b709f7458"
+    },
+    "source/src/sparkbrain/v032/input_semantics.py": {
+      "bytes": 4873,
+      "sha256": "611d13e05c342716251ddea45d2a1b4890d13b7798f31d3586cd4f8a0fd9cb59"
+    },
+    "source/src/sparkbrain/v032/jsonsafe.py": {
+      "bytes": 2666,
+      "sha256": "878c6d5911666393e4c0dd503a77aad7451e5c6f5b9aef3fc5cebea48b93c2f6"
+    },
+    "source/src/sparkbrain/v032/metrics.py": {
+      "bytes": 6389,
+      "sha256": "bcd2689f9ecbc038942a82247378924d8226a28e429784871dddb6f3abe20cf0"
+    },
+    "source/src/sparkbrain/v032/residual.py": {
+      "bytes": 2733,
+      "sha256": "2af172831386a7d2dc78cfef28aa70304acdb986ac0a560b98c77554d2361a67"
+    },
+    "source/src/sparkbrain/v032/runtime.py": {
+      "bytes": 6262,
+      "sha256": "66fc7ae494ba37396fdf99eb1625239c7b8d910ff7a2e00b323748facff9114e"
+    },
+    "source/src/sparkbrain/v03_concepts/__init__.py": {
+      "bytes": 80,
+      "sha256": "ea60de5f452c74528902304177861ff831d13dfaa9df5ed2933c30677d1a1a7c"
+    },
+    "source/src/sparkbrain/v03_concepts/bank.py": {
+      "bytes": 24940,
+      "sha256": "26bdc07812ee0d89962e467187093181285df8d2a01338e3a351aa9d80760ca4"
+    },
+    "source/src/sparkbrain/v03_concepts/evaluation.py": {
+      "bytes": 79792,
+      "sha256": "0bb4ab245e0edcdcbf3e27fe87b15df861722c9ece9079edb91a887e4ef885fc"
+    },
+    "source/src/sparkbrain/v03_concepts/learning.py": {
+      "bytes": 4392,
+      "sha256": "81e630f0831e5703f0df918d755f4b42b140eb6cd8bddef78756f0c54a2666f1"
+    },
+    "source/src/sparkbrain/v03_concepts/worlds.py": {
+      "bytes": 7092,
+      "sha256": "b7549152758137b46c9863930487fb591d33cfad117ad64149f2ce5ba70168eb"
+    },
+    "source/src/sparkbrain/v03_external_validation/__init__.py": {
+      "bytes": 812,
+      "sha256": "6361d20ea7a0c718fc09579261dbb85594483f2cdb511551f8bd3d24cdf52c03"
+    },
+    "source/src/sparkbrain/v03_external_validation/contracts.py": {
+      "bytes": 13515,
+      "sha256": "7a8609ff643c35a06cfce84e9d51fc46fae78eaa9d791c4c49ffa8713f335287"
+    },
+    "source/src/sparkbrain/v03_external_validation/proxy.py": {
+      "bytes": 4031,
+      "sha256": "fd1984d2c6ac11c24db0356bacb2c7c15837fcf691987be1a11cfde4c80f7ef6"
+    },
+    "source/src/sparkbrain/v03_external_validation/readiness.py": {
+      "bytes": 20372,
+      "sha256": "a812c22c380a7317a910c8a8d966747d6a0068dfe8f6911922cc3dd2364c7f48"
+    },
+    "source/src/sparkbrain/v03_integration/__init__.py": {
+      "bytes": 611,
+      "sha256": "f819ccdcd9865df5e5dce2cdd2ee1c29cd61807fd33fa1228f35e1f010678bde"
+    },
+    "source/src/sparkbrain/v03_integration/contracts.py": {
+      "bytes": 17707,
+      "sha256": "567724ab1088e5e9259c9bb2151ae513eb0ef579fbce6b287c3f6850ed328df8"
+    },
+    "source/src/sparkbrain/v03_integration/replay.py": {
+      "bytes": 3180,
+      "sha256": "b87946219fc341ae515b130c8ae2e00978a2fecd3cf012007b9e922f72876bd9"
+    },
+    "source/src/sparkbrain/v03_learned/__init__.py": {
+      "bytes": 1668,
+      "sha256": "27029ff283a105276e25abcbd45aef3aebc0b6ba9a7bd3515453fe1c224dd641"
+    },
+    "source/src/sparkbrain/v03_learned/model.py": {
+      "bytes": 9300,
+      "sha256": "34688c2e23df943c7a6436e2d4d5ffd63fb26dd531be78dfebc67fd67f39e038"
+    },
+    "source/src/sparkbrain/v03_learned/objectives.py": {
+      "bytes": 14069,
+      "sha256": "765f80d7838ed8ada8dc19e3cc4005aeda0af86292b39edc0a293d2994cb28bd"
+    },
+    "source/src/sparkbrain/v03_learned/training.py": {
+      "bytes": 15750,
+      "sha256": "897b58d2eccd597bd72f6c4920e187baf3bdb9de5fbdaa10d8bde043ab622d84"
+    },
+    "source/src/sparkbrain/v03_organs/__init__.py": {
+      "bytes": 396,
+      "sha256": "dab2fbf37e52dc65150cadfd53e4c501cd539276bcf33fcb53a82702b5e0bfd4"
+    },
+    "source/src/sparkbrain/v03_organs/contracts.py": {
+      "bytes": 2983,
+      "sha256": "71ae38a75267a8558c4940b3888286286f19711d527e9a5b8c724eff21b2d7ca"
+    },
+    "source/src/sparkbrain/v03_organs/discovery.py": {
+      "bytes": 17206,
+      "sha256": "0a550352416676f9e9f55e5e0c2cd7d18546673f41960736d4cda4548aa5fb5a"
+    },
+    "source/src/sparkbrain/v03_organs/evaluation.py": {
+      "bytes": 107995,
+      "sha256": "97fcbeb2a51531484617ddfea74f39ba85f02cc4c8d87203790355b05d603ded"
+    },
+    "source/src/sparkbrain/v03_organs/worlds.py": {
+      "bytes": 7161,
+      "sha256": "d9d1da249cc64dfc922cbbc77d1432d1383e45fc67208657213eb2a023619e67"
+    },
+    "source/src/sparkbrain/v03_seed/__init__.py": {
+      "bytes": 5969,
+      "sha256": "c9acba2e46722b9fba7377ade79e15d1f79834ea08e75a77d80a7a37c18aa6dc"
+    },
+    "source/src/sparkbrain/v03_seed/belief.py": {
+      "bytes": 3974,
+      "sha256": "324d800d6e190de80f4c41f4e2edb26d9dd073d80d8998780b0885c90074a8b4"
+    },
+    "source/src/sparkbrain/v03_seed/coalition.py": {
+      "bytes": 15849,
+      "sha256": "7c33d6335d3efea61cc76f494b9aac69617477cdc04999bde1b3a4aa4eab55bd"
+    },
+    "source/src/sparkbrain/v03_seed/concepts.py": {
+      "bytes": 6323,
+      "sha256": "d63739bd5762ff55f9449250e6333ff384f5a37680384c2a3b77c875600e49c4"
+    },
+    "source/src/sparkbrain/v03_seed/contracts.py": {
+      "bytes": 27907,
+      "sha256": "18c2d86425f16096f87a5b1ce00dd0c33ecd00e75ca57ad6bd7ad9b8614d9c99"
+    },
+    "source/src/sparkbrain/v03_seed/entity_binding.py": {
+      "bytes": 6232,
+      "sha256": "7a0d737cb98214ab591c71e7779d4703fe2d48985e87b46a0c5f186dde2b5db1"
+    },
+    "source/src/sparkbrain/v03_seed/evidence.py": {
+      "bytes": 31990,
+      "sha256": "68e244fc0a631db54aad8fd578f4bc0a94d8be92f09092344325fe3f464f50c6"
+    },
+    "source/src/sparkbrain/v03_seed/evidence_reasoning.py": {
+      "bytes": 3018,
+      "sha256": "bc43481b4db1b174fa90b793e502f9102a26def2cd38d2e6af6f04945e14299b"
+    },
+    "source/src/sparkbrain/v03_seed/evidence_worlds.py": {
+      "bytes": 3332,
+      "sha256": "b9a9fdd27ca7e8940cd37d86e9f48e49ea4d77b46cc7de5f908378b1d48807b0"
+    },
+    "source/src/sparkbrain/v03_seed/input_diagnosis.py": {
+      "bytes": 7931,
+      "sha256": "9324babe9c51ae8c9e2462a3a66cb5f0c19942d01e6d12ba65f1ca5b123e214e"
+    },
+    "source/src/sparkbrain/v03_seed/loop.py": {
+      "bytes": 8172,
+      "sha256": "df0279924a6239e6cfd04d2742a3b7f6c4adba92a117804cd09eb1002aa14553"
+    },
+    "source/src/sparkbrain/v03_seed/organs.py": {
+      "bytes": 2553,
+      "sha256": "912db1f3d4c7e6715f4af38984d0495918bad24c020ea1018efec74188586bee"
+    },
+    "source/src/sparkbrain/v03_seed/revision.py": {
+      "bytes": 29935,
+      "sha256": "774449938512d74929bf294eddb30a0629e76e8f95bb584c5d48d5cce3069521"
+    },
+    "source/src/sparkbrain/v03_seed/revision_worlds.py": {
+      "bytes": 17098,
+      "sha256": "81ba3a36ad0a5bebf0b071e39c7f21ccff7eeb816befd63a7e09bd105d3d108d"
+    },
+    "source/src/sparkbrain/v03_seed/sensory_field.py": {
+      "bytes": 19889,
+      "sha256": "3adff490b9b4c3abe1ae47f8a33539ee8f0e5e9d9fd8beaf7443c12b3ccd8851"
+    },
+    "source/src/sparkbrain/v03_seed/sensory_worlds.py": {
+      "bytes": 6490,
+      "sha256": "9d6f2d16181bfd2f7d533b2ff7fab14a33113e1ab26a0fc9e39066e7dd246090"
+    },
+    "source/src/sparkbrain/v03_seed/text_frontend.py": {
+      "bytes": 4049,
+      "sha256": "3f7ae9b7d71117c8a0af16c3474bd2248145c125b813ced58f9e158035634276"
+    },
+    "source/src/sparkbrain/v04/__init__.py": {
+      "bytes": 1824,
+      "sha256": "662b361d7df0fbdc4cdc2cc08a90feb0ad78386a3247a515e02e920bf1fde074"
+    },
+    "source/src/sparkbrain/v04/action.py": {
+      "bytes": 1612,
+      "sha256": "abe5148050dd11e11358716f43842409bac49c960a9704cca253f90583e992ff"
+    },
+    "source/src/sparkbrain/v04/brain.py": {
+      "bytes": 12617,
+      "sha256": "e731ea237eb7cdd6826d04a030f46770b5e2606c8f9e56aaaf810f7d6e7d6593"
+    },
+    "source/src/sparkbrain/v04/contracts.py": {
+      "bytes": 5656,
+      "sha256": "551490fa3cb25bd2723ee5e02d1b2a10a58a992b759c3ff953d754847e18439b"
+    },
+    "source/src/sparkbrain/v04/dynamics.py": {
+      "bytes": 8606,
+      "sha256": "840b2fcfa318c4a0cfec2e7525ffaf8a768f610cb13bb8ed00fc704aaad87c75"
+    },
+    "source/src/sparkbrain/v04/evaluation.py": {
+      "bytes": 8439,
+      "sha256": "adc2b0113976b2e8a281063506866b61940177ca4bb7bdda7aabac95e700647c"
+    },
+    "source/src/sparkbrain/v04/field.py": {
+      "bytes": 14470,
+      "sha256": "6f36f27d84bf6721fd62f21cd6c06a9d550d88aafd8ed4051dc5b14a4014a97c"
+    },
+    "source/src/sparkbrain/v04/plasticity.py": {
+      "bytes": 3127,
+      "sha256": "faad5033cd36236965d48ebd5e43ae9beb31f9488a10d3b11cce7b47f7646fc7"
+    },
+    "source/src/sparkbrain/v04/topology.py": {
+      "bytes": 4684,
+      "sha256": "6194e4094a1e6ee0f4c09041720ca35a8b751a0e5fb7a13d49a2d8220a73906c"
+    },
+    "source/src/sparkbrain/v04/transduction.py": {
+      "bytes": 7564,
+      "sha256": "198d2a2818b06c49be9c212793457a9ef3012e032893c06127d44404a33c9298"
+    },
+    "source/src/sparkbrain/v04/visualizer.py": {
+      "bytes": 3606,
+      "sha256": "105d3cb0f184402851544f4e29d14dd91484d8607a977ee21d9cdcc4bea719bf"
+    },
+    "source/src/sparkbrain/v04/worlds.py": {
+      "bytes": 4085,
+      "sha256": "d5da295e691ee8f972ebe61a4e73beab65b6148a75877118edc765d54bb90ac6"
+    },
+    "source/src/sparkbrain/v05/__init__.py": {
+      "bytes": 2221,
+      "sha256": "4265bc98707e75e243e663f52efd3bc671cd4db94086d60ae8f5572c1adb5512"
+    },
+    "source/src/sparkbrain/v05/action.py": {
+      "bytes": 3346,
+      "sha256": "ce75b7508301bf477a47b306e9f2909fe1a2f12c43c9aa36646fd941286383a6"
+    },
+    "source/src/sparkbrain/v05/assemblies.py": {
+      "bytes": 12214,
+      "sha256": "f2dc1b7bbe71fb70ea27bb661111dca2d68ebfeb3e6044e4ec221120d7d12394"
+    },
+    "source/src/sparkbrain/v05/brain.py": {
+      "bytes": 15715,
+      "sha256": "d11680e60ebd7d3301a81a1e0e6ffddf39f2d1707843892c241b0865734439c9"
+    },
+    "source/src/sparkbrain/v05/checkpoint.py": {
+      "bytes": 323,
+      "sha256": "02176243f907ce468f7db6c275a783d198e1b35d2690030df50c9dec6e8f1984"
+    },
+    "source/src/sparkbrain/v05/contracts.py": {
+      "bytes": 3536,
+      "sha256": "f363728e9d574a5274cb6b20fcbd82d6d183cfad695718260b94f78b588e17c8"
+    },
+    "source/src/sparkbrain/v05/evaluation.py": {
+      "bytes": 26978,
+      "sha256": "f5b0b5db558d649f14d9141fa0ff10a453ce4ee21345be49605a0921e89c4a84"
+    },
+    "source/src/sparkbrain/v05/homeostasis.py": {
+      "bytes": 3730,
+      "sha256": "0026eeb202a5720263c094474615c907285f7cd06181e67652a2d04e9d68dd91"
+    },
+    "source/src/sparkbrain/v05/plasticity.py": {
+      "bytes": 4560,
+      "sha256": "3729e6f9556382988441116240ca0fa36897048b56e7e789a7ff453b444c3429"
+    },
+    "source/src/sparkbrain/v05/prediction.py": {
+      "bytes": 1763,
+      "sha256": "dcd8f45ba4cd1a0478685bf7f8f9764aeed135820f29d5b3381111631345e169"
+    },
+    "source/src/sparkbrain/v05/receptors.py": {
+      "bytes": 5701,
+      "sha256": "4071d0d5d2f0ab487e3324528053997ecbdeb65953bfa211312d0da918c75942"
+    },
+    "source/src/sparkbrain/v05/topology.py": {
+      "bytes": 3849,
+      "sha256": "8e4347700e36a042bf4dda02cab769d513c02764e86348e5996994a7fa904182"
+    },
+    "source/src/sparkbrain/v05/visualizer.py": {
+      "bytes": 3375,
+      "sha256": "feee2f29d906146fb1a2145dfe607ba2c84388c03d8b92cb72279bb1f5562b9e"
+    },
+    "source/src/sparkbrain/v05/worlds.py": {
+      "bytes": 6502,
+      "sha256": "cde958aee23279c29d67473e8e1b5b798bcbb4d4b1574c89654b38774be6df43"
+    },
+    "source/src/sparkbrain/validation.py": {
+      "bytes": 14504,
+      "sha256": "c3186a3c64174a9fae015a65f1c56a0bd3d624fc979923a816e156385138a14a"
+    },
+    "source/src/sparkbrain/visualizer.py": {
+      "bytes": 10644,
+      "sha256": "9a92d0384f9f84e3abc2ddb2e528df481cf87cdeadfd53dec91a51ad318c3594"
+    },
+    "source/src/sparkbrain/worlds.py": {
+      "bytes": 6452,
+      "sha256": "aab2f22d729bc277ec24bc76f318773ae6a35054f06c73cdc5a8a38a0ade276f"
+    },
+    "source/tests/test_plasticity_retention_contract.py": {
+      "bytes": 34171,
+      "sha256": "c1b81649c3cd488bf50aa8d0afc2ada9ecbb456453f1c90b330cf1d21f865278"
+    },
+    "source/tests/test_plasticity_retention_runner.py": {
+      "bytes": 20561,
+      "sha256": "667d04db105dc3fdd56aeb414987aca4c7aef6934c607329d01db89bd3491afe"
+    },
+    "source/tests/test_plasticity_retention_verifier.py": {
+      "bytes": 75372,
+      "sha256": "55f9e3d770ee862ee805deb3485c3d1873feada88992ff08a269911e5dc66564"
+    }
+  },
+  "freeze_manifest_sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834",
+  "gzip_header": "filename empty;mtime0;OS255;level9",
+  "model_pairs": 0,
+  "original_result_sha256": "70a54d6f1c6b23809853e14901561bbda4aede73a885422e55a7ab6964caf223",
+  "parts": [
+    {
+      "decoded_bytes": 98304,
+      "decoded_sha256": "cea8c09e837059b9527f56d249ce75a50d39546d14954d476b39210048a3b7bc",
+      "encoded_bytes": 131073,
+      "encoded_sha256": "07caa96024eb4ad478d132bc23310bb9989949431eaada3e34b05cdd3f52f449",
+      "path": "evidence.part000.b64"
+    },
+    {
+      "decoded_bytes": 98304,
+      "decoded_sha256": "31fa38c78fc07c2cf1b813d5b99f00eaef0e317cff7f4a3699a12b7bb21b2bc3",
+      "encoded_bytes": 131073,
+      "encoded_sha256": "3c7f815ac0e3e9793e5ad2bbe382ca2f39347d7f530d9788ca801582c92f278f",
+      "path": "evidence.part001.b64"
+    },
+    {
+      "decoded_bytes": 98304,
+      "decoded_sha256": "6da4b99165fd6abefba984d3564d74c13ea729596672ebf01c14941faacdbca0",
+      "encoded_bytes": 131073,
+      "encoded_sha256": "42ff3205b83952372f5334bb2748d686158bacb6c1106d2ff4c13eea10e6b3c9",
+      "path": "evidence.part002.b64"
+    },
+    {
+      "decoded_bytes": 98304,
+      "decoded_sha256": "8e1650e5106ebc3526d6623fe591a06e9a5304684b37cbcb3e0ac6d8548d24a3",
+      "encoded_bytes": 131073,
+      "encoded_sha256": "225205f6ffc5433689bb734589ea583821a1ad96fbd54d1ee1078237883b55c6",
+      "path": "evidence.part003.b64"
+    },
+    {
+      "decoded_bytes": 98304,
+      "decoded_sha256": "c819d10659bfe820440cd631b2fda84fe4a1d9d560b86026e43a6d9ee0290add",
+      "encoded_bytes": 131073,
+      "encoded_sha256": "e126c9d6e12b5136f36ba403a30a0a833f6cb2a78ec82eae924e247b55c1add3",
+      "path": "evidence.part004.b64"
+    },
+    {
+      "decoded_bytes": 38580,
+      "decoded_sha256": "1d0aab6b5f01b3094f27794aa5fd0dbc7fc5a9d73b53b806c68f05633e7e39e8",
+      "encoded_bytes": 51441,
+      "encoded_sha256": "f7e5cef9e83a2d19d75a6eb65463317890f055320f8024afa3ec88c1b087a268",
+      "path": "evidence.part005.b64"
+    }
+  ],
+  "schema": "retention-preflight-failure-transport-1",
+  "scientific_credit": 0,
+  "source_commit": "2977aefc06d80291bb65c36b4b3bac0499084d0f",
+  "tar_format": "PAX;sorted names;mtime0;uid/gid0;mode0644;empty user/group names"
+}

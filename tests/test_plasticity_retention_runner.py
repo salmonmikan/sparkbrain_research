@@ -299,10 +299,10 @@ def test_dummy_subprocess_wall_timeout_is_failure(monkeypatch, tmp_path):
 def test_freeze_test_mode_does_not_import_model(monkeypatch, tmp_path):
     monkeypatch.setattr(R.S, "validate_execution_environment", lambda: None)
     monkeypatch.setattr(R.S, "dependency_inventory", lambda: {"synthetic": True})
+    monkeypatch.setattr(R.S, "PLANNED_OUTPUT", tmp_path / "planned-output")
     source = tmp_path / "source.txt"
     source.write_text("frozen synthetic source")
     monkeypatch.setattr(R, "ROOT", tmp_path)
-    monkeypatch.setattr(R.S, "PLANNED_OUTPUT", tmp_path / "planned-output")
     monkeypatch.setattr(R, "sources", lambda: [source])
     result = R.freeze(tmp_path / "freeze")
     assert result["model_calls"] == 0
@@ -311,6 +311,25 @@ def test_freeze_test_mode_does_not_import_model(monkeypatch, tmp_path):
     source.write_text("changed")
     with pytest.raises(RuntimeError, match="source inventory"):
         R.verify_freeze(tmp_path / "freeze")
+
+
+@pytest.mark.parametrize("changed_field", ["execution_source_root", "planned_output"])
+def test_synthetic_freeze_rejects_silent_path_relocation(monkeypatch, tmp_path, changed_field):
+    monkeypatch.setattr(R.S, "validate_execution_environment", lambda: None)
+    monkeypatch.setattr(R.S, "dependency_inventory", lambda: {"synthetic": True})
+    monkeypatch.setattr(R.S, "PLANNED_OUTPUT", tmp_path / "planned-output")
+    source = tmp_path / "source.txt"
+    source.write_text("frozen synthetic source")
+    monkeypatch.setattr(R, "ROOT", tmp_path)
+    monkeypatch.setattr(R, "sources", lambda: [source])
+    directory = tmp_path / "freeze"
+    R.freeze(directory)
+    manifest_path = directory / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest[changed_field] = str(tmp_path / "unapproved-relocation")
+    manifest_path.write_text(json.dumps(manifest))
+    with pytest.raises(RuntimeError, match="freeze output/source identity"):
+        R.verify_freeze(directory)
 
 
 def test_first_observables_ignore_only_nonobservable_whole_state_hash():
@@ -528,8 +547,12 @@ def synthetic_gate_records(monkeypatch, tmp_path):
     return directory, paths
 
 
-def test_gate_binds_original_authority_bytes_not_reserialized_json(monkeypatch, tmp_path):
+@pytest.mark.parametrize("relative", [False, True])
+def test_gate_binds_original_authority_bytes_not_reserialized_json(monkeypatch, tmp_path, relative):
     directory, paths = synthetic_gate_records(monkeypatch, tmp_path)
+    if relative:
+        monkeypatch.chdir(tmp_path)
+        directory = directory.relative_to(tmp_path)
     binding = R.gate(directory, *paths)
     assert set(binding["record_files"]) == {"review", "publication", "approval"}
     for kind, path in zip(("review", "publication", "approval"), paths, strict=True):
@@ -559,3 +582,23 @@ def test_gate_rejects_ambiguous_authority_fields(monkeypatch, tmp_path, key, val
     paths[2].write_text(json.dumps(record))
     with pytest.raises(RuntimeError):
         R.gate(directory, *paths)
+
+
+def test_absolute_and_relative_freeze_paths_produce_identical_gate_binding(monkeypatch, tmp_path):
+    directory, paths = synthetic_gate_records(monkeypatch, tmp_path)
+    absolute = R.gate(directory, *paths)
+    monkeypatch.chdir(tmp_path)
+    relative = R.gate(directory.relative_to(tmp_path), *paths)
+    assert absolute == relative
+    assert R._MODEL_ADMISSION is False
+
+
+def test_published_prefix_extraction_is_data_only_and_byte_exact(tmp_path, monkeypatch):
+    _, _, _, prefixes = R.check_preparation()
+    writer = R.C.OutputWriter(tmp_path, terminal_limit=131072)
+    R.extract_prefixes(tmp_path, writer, prefixes)
+    for name, record in prefixes["prefixes"].items():
+        for member in record["checkpoint_members"]:
+            path = tmp_path / "prefixes" / name / Path(member).name
+            assert R.S.sha(path) == record["files_sha256"][member]
+    assert R._MODEL_ADMISSION is False

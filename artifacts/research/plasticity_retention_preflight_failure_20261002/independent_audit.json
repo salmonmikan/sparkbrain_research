@@ -1,0 +1,280 @@
+{
+  "audited_at_utc": "2026-10-02T02:02:47.661737+00:00",
+  "authenticity_limits": [
+    "The external commit, manifest and authority-record SHA pins were supplied by the research coordinator and matched against local bytes.",
+    "Authority links were recorded but not independently fetched or authenticated in this data-only audit.",
+    "Source and artifact consistency establish the stated conditional call-order conclusions; they do not independently attest the host or every historical process."
+  ],
+  "authority_records": {
+    "approval": {
+      "bytes": 449,
+      "external_pin_matches": true,
+      "original_path": "/workspace/shared/retention-execution-authority-20261002/approval.json",
+      "record": {
+        "approved_for_execution": true,
+        "ceiling_pairs": 768,
+        "manifest_sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834",
+        "output_root": "/workspace/shared/plasticity-retention-run-20261001",
+        "record_url": "https://github.com/salmonmikan/sparkbrain_research/pull/181#issuecomment-5944138356",
+        "recorded_by": "exploratory research coordination review",
+        "source_commit": "2977aefc06d80291bb65c36b4b3bac0499084d0f"
+      },
+      "scope_and_flag_valid": true,
+      "sha256": "231fdb8848e6c805dbd0195cb2e328d52318cbf3f4365ae0efa4d456220f1603"
+    },
+    "publication": {
+      "bytes": 461,
+      "external_pin_matches": true,
+      "original_path": "/workspace/shared/retention-execution-authority-20261002/publication.json",
+      "record": {
+        "ceiling_pairs": 768,
+        "manifest_sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834",
+        "output_root": "/workspace/shared/plasticity-retention-run-20261001",
+        "record_url": "https://github.com/salmonmikan/sparkbrain_research/commit/2682b895435f79c9723934e2c116e440719304d8",
+        "recorded_by": "source publication and main-tree readback",
+        "source_commit": "2977aefc06d80291bb65c36b4b3bac0499084d0f",
+        "verified_published": true
+      },
+      "scope_and_flag_valid": true,
+      "sha256": "6a5de5098c1768a3dcbc9b1c8dc63f17862ce4e9835b2cb57d1438002cec490f"
+    },
+    "review": {
+      "bytes": 461,
+      "external_pin_matches": true,
+      "original_path": "/workspace/shared/retention-execution-authority-20261002/review.json",
+      "record": {
+        "ceiling_pairs": 768,
+        "manifest_sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834",
+        "output_root": "/workspace/shared/plasticity-retention-run-20261001",
+        "record_url": "https://github.com/salmonmikan/sparkbrain_research/pull/181#issuecomment-5944032371",
+        "recorded_by": "Codex exact-head review and independent source audit",
+        "source_commit": "2977aefc06d80291bb65c36b4b3bac0499084d0f",
+        "source_review_approved": true
+      },
+      "scope_and_flag_valid": true,
+      "sha256": "97d2f255d21f61ea199d788fc5fd6f0da00e0ced2553e9f716c92d1acfdaf37e"
+    }
+  },
+  "cause": {
+    "explanation": "The CLI converts --freeze to Path without resolving it (line 1007). driver passes that relative Path into gate at line 871. gate combines absolute sources() entries with relative directory.iterdir() entries at line 252 and calls path.relative_to(absolute ROOT) at line 253. The relative dependencies.json entry cannot be made relative to that absolute root, producing the retained ValueError.",
+    "failure_site": "scripts/run_plasticity_retention.py:253",
+    "preceding_work": "verify_freeze, preparation/source/dependency byte checks, authority-record reads/validation, Git HEAD and committed-source checks precede this site. This is nonzero driver and Git computation.",
+    "unreached_work": [
+      {
+        "site": "driver:872-883",
+        "work": "post-gate preparation and authority/gate/job-plan retention"
+      },
+      {
+        "site": "driver:898",
+        "work": "published prefix extraction"
+      },
+      {
+        "site": "driver:917-929",
+        "work": "pair reservation and worker launch"
+      },
+      {
+        "site": "worker_body:430-432",
+        "work": "model admission and predecessor/runtime import"
+      },
+      {
+        "site": "worker_body:437-467",
+        "work": "model classes, wrapper/native construction or checkpoint loading"
+      },
+      {
+        "site": "driver:930-946",
+        "work": "row validation and scoring"
+      }
+    ]
+  },
+  "identity": {
+    "all_195_paths_match_HEAD_blobs": true,
+    "all_source_hashes_match_manifest": true,
+    "critical_source_sha256": {
+      "protocols/plasticity_retention_bounded_v1.json": "79a37f24eda0a5b82bb6f6e3428f48442a593f10dcb729dc3d67b30014ec0fb3",
+      "scripts/plasticity_retention_contract.py": "bca67e065b28facea3e07978d3d644a0d26b33f672cf037527afaf8e1e876e00",
+      "scripts/plasticity_retention_support.py": "08999a716fff36631cbd03b2f8902007bbbec233ad092b4b075f28d8d090bb40",
+      "scripts/run_plasticity_retention.py": "cb6c79daf5811514e2dd10f769d88292bec0d07a7f0099892c3104e6a4e9d87f",
+      "scripts/verify_plasticity_retention_run.py": "b89fe0e2c7e2e9669ce62ec68b938db6a8861acaf49d43eb11723175af0b9e6b"
+    },
+    "dependencies_sha256": "4415be4c41f48275151ce266f517d75765d66f8b6b2e53a500ca335ae4aaff48",
+    "expected_manifest_sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834",
+    "expected_source_commit": "2977aefc06d80291bb65c36b4b3bac0499084d0f",
+    "git_status_porcelain": "",
+    "manifest_bytes": 22461,
+    "observed_head": "2977aefc06d80291bb65c36b4b3bac0499084d0f",
+    "observed_manifest_sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834",
+    "source_entries_checked": 193,
+    "source_generated_manifest_paths_checked": 195
+  },
+  "invocation": {
+    "command": "PYTHONHASHSEED=0 python -S -P -B scripts/run_plasticity_retention.py run --output /workspace/shared/plasticity-retention-run-20261001 --freeze artifacts/research/plasticity_retention_execution_20261001/freeze-v3 --review /workspace/shared/retention-execution-authority-20261002/review.json --publication /workspace/shared/retention-execution-authority-20261002/publication.json --approval /workspace/shared/retention-execution-authority-20261002/approval.json",
+    "evidence": "Exact invocation supplied by the research coordinator; this audit did not observe its launch, exit status, or complete process lifetime.",
+    "single_attempt_reported_by_research_coordinator": true
+  },
+  "no_retry": {
+    "audit_performed_retry": false,
+    "disposition": "Preserve this failed attempt and its original output. No path normalization, output deletion/rename, alternate-output run, replacement freeze or rerun is authorized by this audit.",
+    "history_limit": "The research coordinator reports a single approved invocation. This output package alone cannot prove absence of a separate invocation outside its scope.",
+    "manifest_status_note": "The unchanged freeze manifest says UNEXECUTED as a source-freeze field. It must not erase the fact that this approved execution attempt failed.",
+    "output_root_currently_exists": true,
+    "protocol": "protocols/plasticity_retention_bounded_v1.json resources.failure says no retry and no clean rerun.",
+    "same_output_reentry_block": "driver:855-857 rejects an existing output root before gate or worker launch.",
+    "source_or_original_output_modified": false
+  },
+  "resources": {
+    "closure_limitations": "Both CPU/wall fields are captured before writer.total, deadline setup, JSON serialization, write/flush/fsync, timer teardown and interpreter shutdown. The terminal write is subject to its deadline, but the retained JSON contains no final post-closure sample. Full process closure timing/RSS bounds cannot be independently certified from this artifact alone.",
+    "cpu_sample_scope": "time.process_time plus RUSAGE_CHILDREN user/system CPU of already-waited descendants; includes Git work.",
+    "observation": "Retained pre-terminal samples and current byte total are below the registered limits; measurement_failed is false. This does not upgrade configured limits into independently measured complete-lifetime bounds.",
+    "observed_retained_bytes_after_terminal": 752,
+    "prospective_limits": {
+      "address_space_bytes_per_process": 536870912,
+      "aggregate_cpu_seconds": 360,
+      "driver_terminal_bytes": 524288,
+      "ordinary_output_bytes": 264241152,
+      "output_total_bytes": 268435456,
+      "wall_seconds": 480
+    },
+    "retained_pre_terminal_samples": {
+      "aggregate_cpu_seconds": 0.858863051,
+      "driver_peak_rss_kib": 25536,
+      "output_bytes_before_terminal": 0,
+      "wall_seconds": 0.7888285939989146
+    },
+    "rss_sample_scope": "Driver peak RSS sampled before terminal serialization; no worker RSS exists and this is not aggregate subprocess RSS or final post-closure peak.",
+    "sample_plus_nominal_reserve": {
+      "cpu_seconds": 2.858863051,
+      "meaning": "Arithmetic showing ample configured closure headroom; not measured end-to-end totals or certified process upper bounds.",
+      "wall_seconds": 5.788828593998915
+    },
+    "terminal_write_deadline": {
+      "clamped_to_remaining_aggregate_headroom": true,
+      "max_cpu_seconds": 2,
+      "max_wall_seconds": 5,
+      "source": "driver:986-992 and support.deadline:113-139"
+    },
+    "wall_sample_scope": "Monotonic elapsed from BOOT_WALL captured shortly after importing time, before most stdlib imports. It is not an external process-launch-to-exit measurement."
+  },
+  "retained_output": {
+    "inventory": [
+      {
+        "bytes": 752,
+        "path": "result.json",
+        "regular_file": true,
+        "sha256": "70a54d6f1c6b23809853e14901561bbda4aede73a885422e55a7ab6964caf223",
+        "symlink": false
+      }
+    ],
+    "no_execution_gate_job_plan_prefix_reservation_worker_or_score_artifacts": true,
+    "terminal": {
+      "aggregate_cpu_seconds": 0.858863051,
+      "driver_peak_rss_kib": 25536,
+      "error": "'artifacts/research/plasticity_retention_execution_20261001/freeze-v3/dependencies.json' is not in the subpath of '/workspace/shared/sparkbrain-retention-runner-20261001'",
+      "error_type": "ValueError",
+      "incomplete_job_methods": "Inspect intent/return journals; no zero assumption",
+      "job_costs": [],
+      "jobs_completed": 0,
+      "measurement_failed": false,
+      "ordinary_plus_reserved_bytes_before_terminal": 0,
+      "pairs_completed_lower_bound": 0,
+      "quota_kind": "projected write admission; not instantaneous filesystem quota",
+      "reserved_pairs": 0,
+      "schema": "retention-run-1",
+      "scientific_credit": 0,
+      "status": "failed",
+      "terminal_closure_reserve": {
+        "cpu_seconds": 2,
+        "wall_seconds": 5
+      },
+      "wall_seconds": 0.7888285939989146
+    },
+    "total_file_bytes": 752
+  },
+  "schema": "retention-failed-admission-independent-audit-1",
+  "scientific_result": "No suffix outcome, baseline prediction, comparison, or retention conclusion was produced by the audited invocation; scientific credit remains zero.",
+  "scope": {
+    "completed_run_verifier_executed": false,
+    "fixes_applied": false,
+    "freeze_directory": "/workspace/shared/sparkbrain-retention-runner-20261001/artifacts/research/plasticity_retention_execution_20261001/freeze-v3",
+    "method": "Read-only filesystem and Git identity checks, SHA-256 hashing, JSON parsing, AST inspection and static call-order review; no repository Python module was imported or executed. Reports written only to the separate audit directory.",
+    "ordinary_memory_rows_reconstructed_during_audit": 0,
+    "output_root": "/workspace/shared/plasticity-retention-run-20261001",
+    "runner_or_worker_executed_by_audit": false,
+    "runtime_model_method_calls_during_audit": 0,
+    "source_root": "/workspace/shared/sparkbrain-retention-runner-20261001",
+    "v05_apply_rows_recomputed_during_audit": 0
+  },
+  "static_imports": {
+    "plasticity_retention_contract.py": [
+      "__future__",
+      "collections",
+      "collections.abc",
+      "hashlib",
+      "json",
+      "math",
+      "os",
+      "pathlib",
+      "typing"
+    ],
+    "plasticity_retention_support.py": [
+      "__future__",
+      "contextlib",
+      "ctypes",
+      "dataclasses",
+      "hashlib",
+      "json",
+      "math",
+      "os",
+      "pathlib",
+      "platform",
+      "resource",
+      "select",
+      "signal",
+      "stat",
+      "sys",
+      "sysconfig",
+      "time",
+      "typing"
+    ],
+    "run_plasticity_retention.py": [
+      "__future__",
+      "argparse",
+      "base64",
+      "contextlib",
+      "dataclasses",
+      "hashlib",
+      "importlib.util",
+      "io",
+      "json",
+      "os",
+      "pathlib",
+      "resource",
+      "selectors",
+      "signal",
+      "subprocess",
+      "sys",
+      "tarfile",
+      "time",
+      "types",
+      "typing",
+      "unittest.mock"
+    ]
+  },
+  "verdict": "FAILED_BEFORE_WORKER_AND_MODEL_ADMISSION",
+  "zero_work_conclusions": {
+    "baseline_reconstructions_in_this_audit": 0,
+    "evidence_basis": "Static reachability from the supplied invocation under the verified frozen source, corroborated by the retained error and one-file inventory. The zero lower-bound counter or absence of journals alone would not prove zero calls.",
+    "not_claimed": [
+      "Zero total computation or zero subprocesses: Git children run before this failure.",
+      "Zero historical work in the published prefixes or elsewhere.",
+      "Cryptographic proof of an entire process trace or global invocation history.",
+      "A negative scientific result about retention or relative arm quality."
+    ],
+    "ordinary_memory_H_R_prediction_or_update_rows_for_this_invocation": 0,
+    "runtime_model_method_calls_for_this_invocation": 0,
+    "runtime_or_predecessor_imports_for_this_invocation": 0,
+    "suffix_prediction_outcome_pairs_for_this_invocation": 0,
+    "v05_apply_calls_for_this_invocation": 0,
+    "worker_launches_for_this_invocation": 0,
+    "wrapper_or_v05_constructions_or_loads_for_this_invocation": 0
+  }
+}

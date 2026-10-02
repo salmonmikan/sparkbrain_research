@@ -546,3 +546,12 @@ history also distinguishes them. See the [bounded report](research/v05_history_e
 and [Results Ledger](RESULTS_LEDGER.md). This records a representation prerequisite with
 scientific credit 0, not M1 contribution, comparative benefit, joint atomicity or build
 acceptance. Prior scientific, build and diagnostic entries remain unchanged.
+
+## Independent retention execution preparation (2026-10-02)
+
+The sole original retention invocation failed before worker/model admission and
+its consumed identity and complete preservation archive remain retained. The
+fresh prospective v5 path-only revision uses a writable cloud source/output root
+with unchanged inputs, protocol, parameters, scientific margins and 768-pair ceiling.
+It is unexecuted and grants no scientific credit. See the
+[preparation and execution gates](research/plasticity_retention_v5_path_refresh_20261002.md).

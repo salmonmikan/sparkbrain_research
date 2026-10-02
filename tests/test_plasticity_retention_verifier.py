@@ -1191,6 +1191,9 @@ def synthetic_retained_run(tmp_path_factory, request):
         {
             "synthetic_validator_fixture": True,
             "execution_source_root": str(auditor_root),
+            "attempt_id": "synthetic-test-attempt",
+            "previous_attempt": {"audited_model_pairs": 0},
+            "combined_model_allocation_ceiling": 768,
             "planned_output": str(output),
             "sources": source_pins,
             "generated": {"dependencies.json": dep_pin},
@@ -1391,6 +1394,8 @@ def synthetic_retained_run(tmp_path_factory, request):
         output / "result.json",
         {
             "synthetic_validator_fixture": True,
+            "attempt_id": "synthetic-test-attempt",
+            "prior_attempt_audited_model_pairs": 0,
             "status": "complete",
             "jobs_completed": 26,
             "pairs_completed": 768,
@@ -1413,12 +1418,48 @@ def test_synthetic_retained_run_verifies_data_consistency_without_running_models
 ):
     result = TOOL.verify(*synthetic_retained_run)
     assert result["valid_completion"] is True
+    assert result["attempt_id"] == "synthetic-test-attempt"
+    assert result["prior_attempt_audited_model_pairs"] == 0
+    assert result["combined_model_allocation_ceiling"] == 768
     assert result["pairs"] == 768 and result["runtime_model_method_calls_during_audit"] == 0
     assert result["ordinary_memory_rows_reconstructed"] == 256
     assert result["v05_apply_rows_recomputed"] == 512
     assert result["calls"]["predict"] == result["calls"]["outcome"] == 768
     assert result["calls"]["v05_init"] == 36
     assert "not rerun fidelity" in result["scope"]
+
+
+@pytest.mark.parametrize(
+    "field,value,remove",
+    [
+        ("attempt_id", None, True),
+        ("attempt_id", "changed-attempt", False),
+        ("attempt_id", None, False),
+        ("attempt_id", 0, False),
+        ("prior_attempt_audited_model_pairs", None, True),
+        ("prior_attempt_audited_model_pairs", 1, False),
+        ("prior_attempt_audited_model_pairs", -1, False),
+        ("prior_attempt_audited_model_pairs", False, False),
+        ("prior_attempt_audited_model_pairs", 0.0, False),
+        ("prior_attempt_audited_model_pairs", "0", False),
+    ],
+)
+def test_terminal_attempt_accounting_is_bound_to_pinned_freeze(
+    synthetic_retained_run, field, value, remove
+):
+    path = synthetic_retained_run[0] / "result.json"
+    original = path.read_bytes()
+    try:
+        terminal = TOOL.read(path)
+        if remove:
+            terminal.pop(field)
+        else:
+            terminal[field] = value
+        write_json(path, terminal)
+        with pytest.raises(RuntimeError, match="terminal attempt/accounting mismatch"):
+            TOOL.verify(*synthetic_retained_run)
+    finally:
+        path.write_bytes(original)
 
 
 @pytest.mark.parametrize(
