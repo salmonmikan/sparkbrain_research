@@ -313,6 +313,25 @@ def test_freeze_test_mode_does_not_import_model(monkeypatch, tmp_path):
         R.verify_freeze(tmp_path / "freeze")
 
 
+@pytest.mark.parametrize("changed_field", ["execution_source_root", "planned_output"])
+def test_synthetic_freeze_rejects_silent_path_relocation(monkeypatch, tmp_path, changed_field):
+    monkeypatch.setattr(R.S, "validate_execution_environment", lambda: None)
+    monkeypatch.setattr(R.S, "dependency_inventory", lambda: {"synthetic": True})
+    monkeypatch.setattr(R.S, "PLANNED_OUTPUT", tmp_path / "planned-output")
+    source = tmp_path / "source.txt"
+    source.write_text("frozen synthetic source")
+    monkeypatch.setattr(R, "ROOT", tmp_path)
+    monkeypatch.setattr(R, "sources", lambda: [source])
+    directory = tmp_path / "freeze"
+    R.freeze(directory)
+    manifest_path = directory / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest[changed_field] = str(tmp_path / "unapproved-relocation")
+    manifest_path.write_text(json.dumps(manifest))
+    with pytest.raises(RuntimeError, match="freeze output/source identity"):
+        R.verify_freeze(directory)
+
+
 def test_first_observables_ignore_only_nonobservable_whole_state_hash():
     row = {
         "p1": 0.5,

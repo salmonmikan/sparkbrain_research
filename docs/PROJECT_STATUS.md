@@ -535,3 +535,23 @@ and isolated nine caller/output metadata mutations. See the
 scientific credit 0; it establishes no general snapshot support, native restoration,
 M1 contribution, learned task benefit or build acceptance. Earlier coverage-blocked
 and acquisition-fixture results remain separate; existing status entries are unchanged.
+
+
+## Independent native history-export diagnostic (2026-10-02)
+
+One fixed `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY` producer-only run observed
+distinct three-coordinate native exports for two past histories with the same current Q,
+with exact repeats and the specified acquired-state ownership checks. The ordinary raw
+history also distinguishes them. See the [bounded report](research/v05_history_export_results_20261002.md)
+and [Results Ledger](RESULTS_LEDGER.md). This records a representation prerequisite with
+scientific credit 0, not M1 contribution, comparative benefit, joint atomicity or build
+acceptance. Prior scientific, build and diagnostic entries remain unchanged.
+
+## Independent retention execution preparation (2026-10-02)
+
+The sole original retention invocation failed before worker/model admission and
+its consumed identity and complete preservation archive remain retained. The
+fresh prospective v5 path-only revision uses a writable cloud source/output root
+with unchanged inputs, protocol, parameters, scientific margins and 768-pair ceiling.
+It is unexecuted and grants no scientific credit. See the
+[preparation and execution gates](research/plasticity_retention_v5_path_refresh_20261002.md).

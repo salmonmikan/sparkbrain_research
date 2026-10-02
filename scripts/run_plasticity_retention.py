@@ -32,7 +32,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 PREPARATION = ROOT / "artifacts/research/plasticity_retention_preparation_20261001"
 PROTOCOL = ROOT / "protocols/plasticity_retention_bounded_v1.json"
-FREEZE = ROOT / "artifacts/research/plasticity_retention_execution_20261001/freeze-v4-r3"
+FREEZE = ROOT / "artifacts/research/plasticity_retention_execution_20261001/freeze-v5"
 PUBLISHED_PREFIX = ROOT / "artifacts/research/temporal_reuse_loop_20261001"
 ARCHIVE_SHA = "2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082"
 PREP_PINS = {
@@ -43,7 +43,7 @@ PREP_PINS = {
 }
 PROTOCOL_SHA = "79a37f24eda0a5b82bb6f6e3428f48442a593f10dcb729dc3d67b30014ec0fb3"
 VENDOR_SHA = "28ea3207cc5b9a2cce2219df7754a22cd8f05c83915eb4962630450dc0e220ae"
-ATTEMPT_ID = "plasticity-retention-v4-20261002"
+ATTEMPT_ID = "plasticity-retention-v5-20261002"
 PRIOR_FAILURE = ROOT / "artifacts/research/plasticity_retention_preflight_failure_20261002"
 PRIOR_RESULT_SHA = "70a54d6f1c6b23809853e14901561bbda4aede73a885422e55a7ab6964caf223"
 _MODEL_ADMISSION = False
