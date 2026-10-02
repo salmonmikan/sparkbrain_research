@@ -10,8 +10,8 @@ five independent branches. No consumed research identity is resumed or rerun.
 
 ## Scope and source selection
 
-This is a bounded ownership, isolation, publication and rollback eligibility
-probe for one joint producer/M1 owner. It is not an efficacy, acquisition-necessity,
+This is a bounded ownership, isolation, publication and failed-candidate disposal
+eligibility probe for one joint producer/M1 owner. It is not an efficacy, acquisition-necessity,
 locality, or long-continuation experiment. The acquisition literals are exposed
 engineering inputs from the earlier history-export study, not a new holdout.
 
@@ -58,6 +58,16 @@ The exact 14 candidates are enumerated in `protocol.json`:
 12. Identical successful outcome; compare full graph and publish
 13. Identical receipt replay without duplicate credit or graph changes
 14. Conflicting receipt identity, rejected without graph changes
+
+Case 10 tests the outer transaction boundary: the published owner pointer and
+generation, and every retained predecessor graph and identity, must remain exact;
+the entire faulted candidate and its replacement resources must be disposed.
+It does not certify native checkpoint rollback equivalence inside that candidate.
+Candidate-local state or alias-topology changes are allowed only because the
+candidate is never published or reused. Its cloned and pre-disposal full graphs
+remain raw evidence; neither their equality nor native rollback success is claimed.
+This is the fail-dispose contract already specified by case 6 of
+`g0_joint_ownership_preparation_20261002.md`, not a relaxed equality gate.
 
 Published predecessor candidates 1, 2, 9 and 12 stay declared and live throughout
 the comparisons, then dispose in reverse order 12, 9, 2, 1. All retained roots
