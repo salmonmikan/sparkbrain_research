@@ -20,7 +20,8 @@ import threading
 import time
 import types
 import weakref
-from collections.abc import Callable, Mapping
+from collections.abc import Callable, Iterator, Mapping
+from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
@@ -46,6 +47,9 @@ LIMITS = {"cpu_seconds": 600, "wall_seconds": 900,
           "address_space_bytes": 1 << 30, "output_bytes": 256 << 20}
 RESERVES = {"cpu_seconds": 30, "wall_seconds": 45,
             "address_space_bytes": 32 << 20, "output_bytes": 16 << 20}
+HASH_CHUNK_BYTES = 1 << 20
+PROFILE_CHECK_INTERVAL = 4096
+CODE_KEY_CACHE_LIMIT = 8192
 CALL_CAPS = {
     "clone_joint": 14, "v05_init": 1, "v03_init": 1, "m1_init": 1,
     "v05_process_episode": 70, "m1_observe": 5, "m1_apply_outcome": 6,
@@ -292,22 +296,47 @@ def read_json(path: Path) -> Any:
     return primitive(json.loads(checked.read_bytes(), object_pairs_hook=_pairs))
 
 
-def source_inventory(root: Path, paths: list[str]) -> dict[str, str]:
+def file_digest(path: Path, *, checkpoint: Callable[[], Any] | None = None) -> str:
+    """Bound hash work between reserve samples; never log from a checkpoint."""
+    value = hashlib.sha256()
+    with path.open("rb") as stream:
+        while True:
+            if checkpoint is not None:
+                checkpoint()
+            chunk = stream.read(HASH_CHUNK_BYTES)
+            if not chunk:
+                break
+            value.update(chunk)
+    return value.hexdigest()
+
+
+def source_inventory(root: Path, paths: list[str], *,
+                     checkpoint: Callable[[], Any] | None = None) -> dict[str, str]:
     root = source_root(root)
     if len(set(paths)) != len(paths):
         raise AdmissionError("duplicate source inventory path")
-    return {name: digest(confined_path(root, name, "frozen source").read_bytes())
-            for name in sorted(paths)}
+    result = {}
+    for name in sorted(paths):
+        if checkpoint is not None:
+            checkpoint()
+        result[name] = file_digest(confined_path(root, name, "frozen source"),
+                                   checkpoint=checkpoint)
+    return result
 
 
-def _walk_importable(directory: Path) -> dict[str, str]:
+def _walk_importable(directory: Path, *,
+                     checkpoint: Callable[[], Any] | None = None) -> dict[str, str]:
     """Hash importable code and package metadata; never arbitrary user documents."""
     root = source_root(directory)
     pending = [root]
     result = {}
     while pending:
+        if checkpoint is not None:
+            checkpoint()
         current = pending.pop()
         for path in sorted(current.iterdir()):
+            if checkpoint is not None:
+                checkpoint()
             info = path_metadata(path, "environment dependency")
             if stat.S_ISDIR(info.st_mode):
                 if current == root and path.name in {"site-packages", "dist-packages"}:
@@ -319,16 +348,19 @@ def _walk_importable(directory: Path) -> dict[str, str]:
                   or (path.parent.name.endswith((".dist-info", ".egg-info"))
                       and path.name in {"METADATA", "PKG-INFO", "RECORD", "WHEEL",
                                         "entry_points.txt", "top_level.txt"})):
-                result[path.relative_to(root).as_posix()] = digest(path.read_bytes())
+                result[path.relative_to(root).as_posix()] = file_digest(
+                    path, checkpoint=checkpoint)
     return result
 
 
-def mapped_code_snapshot() -> dict[str, str]:
+def mapped_code_snapshot(*, checkpoint: Callable[[], Any] | None = None) -> dict[str, str]:
     """Hash only actual executable file mappings, never anonymous memory or broad trees."""
     if sys.platform != "linux":
         raise AdmissionError("native library admission requires Linux /proc")
     result = {}
     for line in Path("/proc/self/maps").read_text().splitlines():
+        if checkpoint is not None:
+            checkpoint()
         fields = line.split(maxsplit=5)
         if len(fields) != 6 or "x" not in fields[1] or not fields[5].startswith("/"):
             continue
@@ -337,24 +369,27 @@ def mapped_code_snapshot() -> dict[str, str]:
             raise AdmissionError("deleted executable mapping is outside the frozen environment")
         path = Path(name)
         checked = confined_path(source_root(path.parent), path.name, "mapped executable library")
-        raw = checked.read_bytes()
-        if not raw.startswith(b"\x7fELF"):
+        with checked.open("rb") as stream:
+            header = stream.read(4)
+        if header != b"\x7fELF":
             raise AdmissionError("non-ELF executable mapping is outside the frozen environment")
-        result[name] = digest(raw)
+        result[name] = file_digest(checked, checkpoint=checkpoint)
     return result
 
 
-def verify_mapped_libraries(environment: dict[str, Any]) -> dict[str, str]:
+def verify_mapped_libraries(environment: dict[str, Any], *,
+                            checkpoint: Callable[[], Any] | None = None) -> dict[str, str]:
     declared = {**environment["native_code_sha256"], **environment["system_libraries_sha256"],
                 environment["executable"]: environment["executable_sha256"]}
-    current = mapped_code_snapshot()
+    current = (mapped_code_snapshot() if checkpoint is None
+               else mapped_code_snapshot(checkpoint=checkpoint))
     if any(declared.get(name) != sha for name, sha in current.items()):
         raise AdmissionError("new or changed executable mapping is outside the frozen environment")
     # Previously mapped system libraries remain pinned even when a process unloads them.
     for name, sha in environment["system_libraries_sha256"].items():
         path = Path(name)
         checked = confined_path(source_root(path.parent), path.name, "frozen system library")
-        if digest(checked.read_bytes()) != sha:
+        if file_digest(checked, checkpoint=checkpoint) != sha:
             raise AdmissionError("frozen system library changed")
     return current
 
@@ -367,7 +402,8 @@ def require_passive_lock_api() -> None:
         raise AdmissionError("unsupported passive lock allocator API; exact builtin required")
 
 
-def environment_snapshot(root: Path | None = None) -> dict[str, Any]:
+def environment_snapshot(root: Path | None = None, *,
+                         checkpoint: Callable[[], Any] | None = None) -> dict[str, Any]:
     """Source-only interpreter/dependency snapshot. No package imports or secrets."""
     if platform.python_implementation() != "CPython" or sys.version_info < (3, 11):
         raise AdmissionError("only reviewed CPython 3.11+ is supported")
@@ -379,6 +415,8 @@ def environment_snapshot(root: Path | None = None) -> dict[str, Any]:
                     for key in ("stdlib", "purelib", "platlib")})
     external_archives = {}
     for entry in sys.path:
+        if checkpoint is not None:
+            checkpoint()
         path = Path(entry or Path.cwd()).absolute()
         if path.is_relative_to(root):
             continue  # Selected source is inventoried by the exact source freeze.
@@ -391,19 +429,19 @@ def environment_snapshot(root: Path | None = None) -> dict[str, Any]:
                 roots.append(str(source_root(path)))
         else:
             checked = confined_path(source_root(path.parent), path.name, "import archive")
-            external_archives[str(path)] = digest(checked.read_bytes())
+            external_archives[str(path)] = file_digest(checked, checkpoint=checkpoint)
     roots = sorted(set(roots))
-    inventories = {item: _walk_importable(Path(item)) for item in roots}
+    inventories = {item: _walk_importable(Path(item), checkpoint=checkpoint) for item in roots}
     native_code = {str(Path(directory) / name): sha
                    for directory, files in inventories.items() for name, sha in files.items()
                    if Path(name).suffix in {".so", ".pyd", ".dll"}}
-    mapped = mapped_code_snapshot()
+    mapped = mapped_code_snapshot(checkpoint=checkpoint)
     system_libraries = {name: sha for name, sha in mapped.items()
                         if name not in native_code and name != str(executable)}
     return {
         "schema": "g0-python-environment-v1", "implementation": platform.python_implementation(),
         "version": sys.version, "executable": str(executable),
-        "executable_sha256": digest(executable.read_bytes()),
+        "executable_sha256": file_digest(executable, checkpoint=checkpoint),
         "native_code_sha256": native_code, "system_libraries_sha256": system_libraries,
         "prefix": sys.prefix, "base_prefix": sys.base_prefix,
         "platform": sys.platform, "machine": platform.machine(),
@@ -436,14 +474,21 @@ def _fixed_envelope(freeze: dict[str, Any]) -> None:
 
 
 def verify_preparation(root: Path, freeze_relative: str,
-                       *, check_environment: bool = True) -> dict[str, Any]:
+                       *, check_environment: bool = True,
+                       checkpoint: Callable[[], Any] | None = None) -> dict[str, Any]:
     """Check exact source/literals/contracts/environment without loading runtime code."""
     root = source_root(root)
     freeze_path = confined_path(root, freeze_relative, "freeze")
     raw = freeze_path.read_bytes()
     freeze = read_json(freeze_path)
     _fixed_envelope(freeze)
+    # Keep the pinned historical verifier unchanged. This coarser audit stage is
+    # bracketed by checks; subordinate reads/traversal are not newly checkpointed.
+    if checkpoint is not None:
+        checkpoint()
     verified = verify(root)
+    if checkpoint is not None:
+        checkpoint()
     inventory = freeze.get("source_files_sha256")
     if type(inventory) is not dict or freeze_relative in inventory:
         raise AdmissionError("invalid or self-referential source inventory")
@@ -491,7 +536,7 @@ def verify_preparation(root: Path, freeze_relative: str,
                         raise AdmissionError("literal row inventory differs")
     if not required <= inventory.keys():
         raise AdmissionError("incomplete runtime/support/literal inventory")
-    if source_inventory(root, list(inventory)) != inventory:
+    if source_inventory(root, list(inventory), checkpoint=checkpoint) != inventory:
         raise AdmissionError("frozen source inventory differs")
     # -B prevents writes, not reads. Reject source bytecode so fresh runtime imports
     # cannot silently consume stale compiled code outside the declared source freeze.
@@ -500,12 +545,15 @@ def verify_preparation(root: Path, freeze_relative: str,
         while pending:
             current = pending.pop()
             for child in current.iterdir():
+                if checkpoint is not None:
+                    checkpoint()
                 info = path_metadata(child, "source bytecode inventory")
                 if stat.S_ISDIR(info.st_mode):
                     pending.append(child)
                 elif child.suffix in {".pyc", ".pyo"}:
                     raise AdmissionError("preexisting source bytecode is unsupported")
-    if check_environment and freeze.get("environment") != environment_snapshot(root):
+    if check_environment and freeze.get("environment") != environment_snapshot(
+            root, checkpoint=checkpoint):
         raise AdmissionError("frozen interpreter/dependency environment differs")
     return {"classification": "SOURCE_ONLY_NON_EVIDENTIARY", "identity": IDENTITY,
             "runtime_execution_authorized": False, "scientific_credit": 0,
@@ -563,7 +611,7 @@ def authorize_execution(root: Path, freeze_relative: str, approval_relative: str
     if any(name == "sparkbrain" or name.startswith("sparkbrain.") for name in sys.modules):
         raise AdmissionError("fresh frozen runtime imports are required")
     root = source_root(root)
-    verified = verify_preparation(root, freeze_relative)
+    verified = verify_preparation(root, freeze_relative, checkpoint=ResourceBudget().check)
     approval_path = confined_path(root, approval_relative, "external approval")
     approval_raw = approval_path.read_bytes()
     if not expected_approval_sha256 or digest(approval_raw) != expected_approval_sha256:
@@ -629,18 +677,103 @@ def authorize_execution(root: Path, freeze_relative: str, approval_relative: str
     return permit
 
 
-def require_execution_permit(permit: ExecutionPermit, root: Path | None = None) -> None:
+def require_execution_permit(permit: ExecutionPermit, root: Path | None = None, *,
+                             checkpoint: Callable[[], Any] | None = None) -> None:
     if type(permit) is not ExecutionPermit or permit not in _PERMITS:
         raise AdmissionError("unissued execution permit")
     record = _PERMITS[permit]
     if root is not None and source_root(root) != record["root"]:
         raise AdmissionError("permit belongs to a different source root")
-    current = verify_preparation(record["root"], record["freeze_relative"])
+    current = verify_preparation(record["root"], record["freeze_relative"],
+                                 checkpoint=checkpoint)
     if current != record["verified"]:
         raise AdmissionError("execution freeze changed after admission")
     approval = confined_path(record["root"], record["approval_relative"], "approval")
     if digest(approval.read_bytes()) != record["approval_sha256"]:
         raise AdmissionError("approval changed after admission")
+
+
+_RUNTIME_ADMISSIONS: weakref.WeakKeyDictionary = weakref.WeakKeyDictionary()
+
+
+class _RuntimeAdmission:
+    """One loader's internal validation receipt, never independent run authority."""
+
+    def __init__(self) -> None:
+        raise AdmissionError("runtime admission requires a consumed execution permit")
+
+
+@contextmanager
+def runtime_admission(permit: ExecutionPermit,
+                       budget: ResourceBudget) -> Iterator[_RuntimeAdmission]:
+    """Validate the whole environment before profiling; invalidate on every exit.
+
+    The source tree/dependency environment remains a trusted dedicated-process
+    boundary, not an in-memory code attestation or concurrent-mutation sandbox.
+    Neither this receipt nor a successful synthetic test can refresh an old freeze.
+    """
+    if type(permit) is not ExecutionPermit or permit not in _PERMITS:
+        raise AdmissionError("unissued execution permit")
+    record = _PERMITS[permit]
+    if record.get("consumed") is not True or record.get("budget") is not budget:
+        raise AdmissionError("runtime admission requires the consumed permit's budget")
+    if record.get("runtime_admission_started"):
+        raise AdmissionError("runtime admission is one-shot, including failed preparation")
+    record["runtime_admission_started"] = True
+    if (sys.getprofile() is not None or threading.getprofile() is not None
+            or sys.gettrace() is not None or threading.gettrace() is not None):
+        raise AdmissionError("runtime validation must precede profiling hooks")
+    if budget.finalizing:
+        raise AdmissionError("finalization cannot admit runtime work")
+    budget.check()
+    require_execution_permit(permit, checkpoint=budget.check)
+    token = object.__new__(_RuntimeAdmission)
+    _RUNTIME_ADMISSIONS[token] = {
+        "permit": permit, "root": record["root"], "budget": budget,
+        "thread": threading.get_ident(), "phase": "prepared",
+        "freeze_sha256": record["verified"]["freeze_sha256"],
+        "approval_sha256": record["approval_sha256"],
+        "source_files_sha256": primitive(record["verified"]["freeze"]["source_files_sha256"]),
+    }
+    try:
+        yield token
+    finally:
+        _RUNTIME_ADMISSIONS.pop(token, None)
+
+
+def advance_runtime_admission(permit: ExecutionPermit, token: _RuntimeAdmission,
+                              budget: ResourceBudget, phase: str) -> None:
+    """Ordered import/import-complete/bind gates; no dependency census under profiling."""
+    transitions = {"importing": "prepared", "loaded": "importing", "bound": "loaded"}
+    admitted = _RUNTIME_ADMISSIONS.get(token) if type(token) is _RuntimeAdmission else None
+    record = _PERMITS.get(permit) if type(permit) is ExecutionPermit else None
+    if (admitted is None or record is None or admitted["permit"] is not permit
+            or admitted["budget"] is not budget or record.get("budget") is not budget
+            or record.get("consumed") is not True or admitted["root"] != record["root"]
+            or admitted["thread"] != threading.get_ident()
+            or transitions.get(phase) != admitted["phase"]):
+        raise AdmissionError("invalid, expired or replayed runtime admission")
+    # Consume the transition before fallible checks: a failed import gate is final.
+    admitted["phase"] = "failed"
+    if budget.finalizing:
+        raise AdmissionError("finalization cannot admit runtime work")
+    budget.check()
+    if (record["verified"]["freeze_sha256"] != admitted["freeze_sha256"]
+            or record["approval_sha256"] != admitted["approval_sha256"]):
+        raise AdmissionError("runtime admission binding changed")
+    if phase in {"importing", "loaded"}:
+        root = admitted["root"]
+        for relative, expected, label in (
+                (record["freeze_relative"], admitted["freeze_sha256"], "freeze"),
+                (record["approval_relative"], admitted["approval_sha256"], "approval")):
+            path = confined_path(root, relative, label)
+            if file_digest(path, checkpoint=budget.check) != expected:
+                raise AdmissionError(f"{label} changed across runtime import boundary")
+        inventory = admitted["source_files_sha256"]
+        if source_inventory(root, list(inventory), checkpoint=budget.check) != inventory:
+            raise AdmissionError("source changed across runtime import boundary")
+    budget.check()
+    admitted["phase"] = phase
 
 
 def fsync_directory(path: Path) -> None:
@@ -703,7 +836,7 @@ def exclusive_durable_write(path: Path, data: bytes,
 def consume_execution_permit(permit: ExecutionPermit, output_directory: Path,
                              *, budget: ResourceBudget) -> Path:
     """Consume once before the exclusive STARTED directory; never reset after failure."""
-    require_execution_permit(permit)
+    require_execution_permit(permit, checkpoint=budget.check)
     preflight_runtime_limits()
     record = _PERMITS[permit]
     candidate = Path(output_directory)
@@ -729,6 +862,7 @@ def consume_execution_permit(permit: ExecutionPermit, output_directory: Path,
     def consumed() -> None:
         # O_EXCL has succeeded. Every later failure leaves this identity consumed.
         record["consumed"] = True
+        record["budget"] = budget
 
     exclusive_durable_write(reservation, raw, on_created=consumed)
     return candidate
@@ -795,9 +929,10 @@ def preflight_runtime_limits() -> dict[str, Any]:
             "read_only": True, "frozen_envelope_preserved": True}
 
 
-def install_runtime_limits(permit: ExecutionPermit) -> dict[str, Any]:
+def install_runtime_limits(permit: ExecutionPermit, *,
+                           budget: ResourceBudget | None = None) -> dict[str, Any]:
     """Only after separately authorized gate: verify timeout, enforce limits/offline IO."""
-    require_execution_permit(permit)
+    require_execution_permit(permit, checkpoint=None if budget is None else budget.check)
     import resource
 
     admitted_limits = preflight_runtime_limits()
@@ -999,7 +1134,7 @@ def _ast_function_keys(path: Path, relative: str) -> set[tuple[str, str]]:
 class PassiveCallMonitor:
     """Before-body profile counters on this thread and subsequently created owners.
 
-    No model method is replaced. Only scalar identifiers/counters are retained.
+    No model method is replaced. Scalar records and a bounded code-key cache are retained.
     A failed profile poisons the budget. The runner must check at every owner dispatch,
     including after an expected exception; Python disables a callback that raises.
     Finite admission checks plus hard OS limits do not promise zero-gap real-time enforcement.
@@ -1021,6 +1156,14 @@ class PassiveCallMonitor:
             raise AdmissionError("duplicate passive target")
         self.counts = dict.fromkeys(self.caps, 0)
         self.budget, self.writer = budget, writer
+        # CodeType equality/hash are structural. Keep an identity witness so equal
+        # but distinct code and recycled ids never share a classification entry.
+        # Trusted source code objects do not retain frames or function globals;
+        # retention is finite and released at exit. Arbitrarily injected process
+        # code is outside this source-bound observer's contract.
+        # A cache hit never bypasses per-event policy.
+        self._code_keys: dict[int, tuple[types.CodeType, tuple[str, str]]] = {}
+        self._events_until_check = PROFILE_CHECK_INTERVAL
         self._active = False
         self._thread_ids: set[int] = set()
         self._capture = 0
@@ -1052,6 +1195,7 @@ class PassiveCallMonitor:
                                          directory=True)]
                 while pending:
                     for path in pending.pop().iterdir():
+                        self.budget.check()
                         info = path_metadata(path, "synthetic profile dependency")
                         if stat.S_ISDIR(info.st_mode):
                             pending.append(path)
@@ -1061,6 +1205,7 @@ class PassiveCallMonitor:
                                         "scripts/run_g0_joint_eligibility.py",
                                         "scripts/g0_execution_support.py"]
             for relative in selected:
+                self.budget.check()
                 path = self.root / relative
                 if path.exists() or path.is_symlink():
                     checked = confined_path(self.root, relative, "profile source")
@@ -1127,24 +1272,46 @@ class PassiveCallMonitor:
         return result
 
     def _key(self, frame: Any) -> tuple[str, str]:
+        code = frame.f_code
+        identity = id(code)
+        cached = self._code_keys.get(identity)
+        if cached is not None:
+            if cached[0] is not code:
+                self.budget.poison("passive code identity changed while retained")
+            return cached[1]
+        if len(self._code_keys) >= CODE_KEY_CACHE_LIMIT:
+            self.budget.poison("passive code-key cache capacity reached")
         try:
-            relative = Path(frame.f_code.co_filename).relative_to(self.root).as_posix()
+            relative = Path(code.co_filename).relative_to(self.root).as_posix()
         except ValueError:
             relative = ""
-        return relative, frame.f_code.co_qualname
+        key = relative, code.co_qualname
+        self._code_keys[identity] = (code, key)
+        return key
 
     def _profile(self, frame: Any, event: str, arg: Any) -> None:
         try:
+            self._events_until_check -= 1
+            if self._events_until_check <= 0:
+                self._events_until_check = PROFILE_CHECK_INTERVAL
+                # Finite, output-independent sampling. Profiling callbacks are
+                # nonrecursive; sampling itself writes no observer evidence.
+                self.budget.check()
             output_before = self.budget.output_bytes
             self._profile_inner(frame, event, arg)
             # Only instrumentation that charged output needs a post-log sample.
-            # Ordinary profile events do not incur an extra /proc/resource poll.
+            # No-output events only use the finite periodic checkpoint above.
             if self.budget.output_bytes != output_before:
                 self.budget.check()
-        except BudgetExceeded:
+        except BudgetExceeded as exc:
+            self.budget.failure = self.budget.failure or str(exc)
+            self._detach_hooks()
             raise
         except BaseException as exc:
-            self.budget.poison("passive instrumentation failed: " + type(exc).__name__)
+            self.budget.failure = (self.budget.failure
+                                   or "passive instrumentation failed: " + type(exc).__name__)
+            self._detach_hooks()
+            raise BudgetExceeded(self.budget.failure) from None
 
     def _profile_inner(self, frame: Any, event: str, arg: Any) -> None:
         key = self._key(frame)
@@ -1275,10 +1442,11 @@ class PassiveCallMonitor:
         # Only exact reviewed allocation callers receive line tracing. C profile
         # c_return reports the allocator, not its result. At the next line the
         # ordinary STORE_FAST has completed; inspect only that source-declared local.
-        if (frame.f_code.co_filename not in self._allocation_files
-                or self._key(frame) not in self._allocation_keys):
+        if frame.f_code.co_filename not in self._allocation_files:
             return None
         try:
+            if self._key(frame) not in self._allocation_keys:
+                return None
             output_before = self.budget.output_bytes
             token = (threading.get_ident(), id(frame))
             pending = self._pending_shells.get(token)
@@ -1293,10 +1461,16 @@ class PassiveCallMonitor:
                 del self._pending_shells[token]
             if self.budget.output_bytes != output_before:
                 self.budget.check()
-        except BudgetExceeded:
+        except BudgetExceeded as exc:
+            self.budget.failure = self.budget.failure or str(exc)
+            self._detach_hooks()
             raise
         except BaseException as exc:
-            self.budget.poison("passive allocation observation failed: " + type(exc).__name__)
+            self.budget.failure = (
+                self.budget.failure
+                or "passive allocation observation failed: " + type(exc).__name__)
+            self._detach_hooks()
+            raise BudgetExceeded(self.budget.failure) from None
         return self._trace
 
     def _capture_file(self, path: Path) -> None:
@@ -1323,9 +1497,16 @@ class PassiveCallMonitor:
         sys.setprofile(self._profile)
         return self
 
-    def __exit__(self, *_: Any) -> None:
+    def _detach_hooks(self) -> None:
+        # A callback can fail on the call event entering __exit__, before its
+        # body runs. Detach here as well as on ordinary context exit. Other
+        # already-running owners still obey the sticky dispatch budget checks.
         sys.setprofile(None)
         threading.setprofile(None)
         sys.settrace(None)
         threading.settrace(None)
         self._active = False
+        self._code_keys.clear()
+
+    def __exit__(self, *_: Any) -> None:
+        self._detach_hooks()

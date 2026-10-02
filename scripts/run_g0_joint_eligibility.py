@@ -881,9 +881,9 @@ class NativeRuntime:
     """Source-pinned native bindings, constructed only by the sealed-gate loader."""
 
     def __init__(self, permit: Any, modules: dict[str, Any], configuration: dict,
-                 m1_configuration: dict) -> None:
-        from scripts.g0_execution_support import require_execution_permit
-        require_execution_permit(permit)
+                 m1_configuration: dict, *, admission: Any, budget: Any) -> None:
+        from scripts.g0_execution_support import advance_runtime_admission
+        advance_runtime_admission(permit, admission, budget, "bound")
         self.permit, self.modules, self.configuration = permit, modules, configuration
         self.m1_configuration = m1_configuration
         self.prepared = {}
@@ -1043,10 +1043,13 @@ def normalize_plan(plan: Any) -> tuple[list[dict], dict]:
     return copy.deepcopy(records), detach(receipts)
 
 
-def load_real_runtime(permit: Any) -> tuple[NativeRuntime, SourceRegistry, dict]:
+def load_real_runtime(permit: Any, *, admission: Any = None,
+                      budget: Any = None) -> tuple[NativeRuntime, SourceRegistry, dict]:
     """The sole dormant native import boundary. No self-issued execution authority."""
-    from scripts.g0_execution_support import require_execution_permit
-    require_execution_permit(permit)
+    from scripts.g0_execution_support import AdmissionError, advance_runtime_admission
+    if admission is None or budget is None:
+        raise AdmissionError("unissued or unprepared runtime admission for native imports")
+    advance_runtime_admission(permit, admission, budget, "importing")
     root = permit.root
     require(not any(n == "sparkbrain" or n.startswith("sparkbrain.") for n in sys.modules),
             "native modules must not be preloaded")
@@ -1063,15 +1066,18 @@ def load_real_runtime(permit: Any) -> tuple[NativeRuntime, SourceRegistry, dict]
     classes = [random.Random]
     sys.path.insert(0, str(root / "src"))
     for relative, record in sorted(contract["files"].items()):
+        budget.check()
         module_name = relative.removeprefix("src/").removesuffix(".py").replace("/", ".")
         module = importlib.import_module(module_name)
         modules[module_name] = module
         classes.extend(getattr(module, name) for name in record["classes"])
     # Config-only modules may be outside the selected class-bearing subset.
     for relative, _ in CONFIG_TYPES.values():
+        budget.check()
         name = "sparkbrain." + relative.removesuffix(".py").replace("/", ".")
         modules[name] = importlib.import_module(name)
     for name, module in tuple(sys.modules.items()):
+        budget.check()
         if name == "sparkbrain" or name.startswith("sparkbrain."):
             require(type(module.__loader__) is importlib.machinery.SourceFileLoader,
                     "native module loader differs from reviewed source loader")
@@ -1082,9 +1088,14 @@ def load_real_runtime(permit: Any) -> tuple[NativeRuntime, SourceRegistry, dict]
                         else expected.with_suffix(".py"))
             require(path == expected and Path(module.__spec__.origin) == expected,
                     "native source origin mismatch")
+    # Deliberately retain the independent post-import source/class audit. Its
+    # scan is profiled cheaply and finite event checks protect no-output work.
+    budget.check()
     registry = SourceRegistry.from_verified_source(root, tuple(classes))
+    budget.check()
+    advance_runtime_admission(permit, admission, budget, "loaded")
     runtime = NativeRuntime(permit, modules, protocol["producer_configuration"],
-                            protocol["m1_configuration"])
+                            protocol["m1_configuration"], admission=admission, budget=budget)
     return runtime, registry, modules
 
 
@@ -1115,16 +1126,17 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
         protocol_call_caps,
         read_json,
         require_execution_permit,
+        runtime_admission,
         validate_completed_lifecycle,
         verify_mapped_libraries,
     )
     from scripts.verify_g0_joint_source_contract import confined_path, source_root
 
-    require_execution_permit(permit)
+    budget = ResourceBudget()
+    require_execution_permit(permit, checkpoint=budget.check)
     root = permit.root
     output = source_root(output.parent) / output.name
     require(output == permit.output_directory, "output differs from independently approved target")
-    budget = ResourceBudget()
     consume_execution_permit(permit, output, budget=budget)
     writer = ExclusiveEvidenceWriter(output, IDENTITY, budget)
     monitor = None
@@ -1133,7 +1145,7 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
     failure = None
     abort_cleanup = None
     try:
-        launch = install_runtime_limits(permit)
+        launch = install_runtime_limits(permit, budget=budget)
         budget.bind_timeout_parent(launch)
         writer.raw_json("launch-environment.json", {
             "hard_timeout": launch, "environment": permit.freeze["environment"],
@@ -1147,6 +1159,7 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
         source_copies = []
         for index, (relative, digest) in enumerate(sorted(
                 permit.freeze["source_files_sha256"].items())):
+            budget.check()
             path = confined_path(root, relative, "frozen execution source")
             raw = path.read_bytes()
             require(hashlib.sha256(raw).hexdigest() == digest, "source changed before copy")
@@ -1168,10 +1181,13 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
         cache.mkdir(mode=0o700, exist_ok=False)
         sys.pycache_prefix = str(cache)
         budget.check()
-        with PassiveCallMonitor(root, CALL_CAPS, budget, writer) as monitor:
-            runtime, registry, modules = load_real_runtime(permit)
+        with runtime_admission(permit, budget) as admission, \
+                PassiveCallMonitor(root, CALL_CAPS, budget, writer) as monitor:
+            runtime, registry, modules = load_real_runtime(
+                permit, admission=admission, budget=budget)
             writer.raw_json("mapped-libraries-after-import.json",
-                            verify_mapped_libraries(permit.freeze["environment"]))
+                            verify_mapped_libraries(permit.freeze["environment"],
+                                                    checkpoint=budget.check))
             monitor.check()
             # Install profiler before SerialOwner creates its dedicated thread.
             with SerialOwner() as owner:
@@ -1196,8 +1212,14 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
             writer.raw_json("actual-calls-and-resources.json", actual)
             lifecycle = validate_completed_lifecycle(actual)
             writer.raw_json("completed-lifecycle-validation.json", lifecycle)
+        # Recheck the full dependency environment only after hooks are removed.
+        # This detects final integrity drift; it is not continuous protection
+        # against concurrent source/dependency mutation during a trusted run.
+        require(not budget.finalizing, "success validation cannot spend terminal reserve")
+        require_execution_permit(permit, checkpoint=budget.check)
         writer.raw_json("mapped-libraries-before-verdict.json",
-                        verify_mapped_libraries(permit.freeze["environment"]))
+                        verify_mapped_libraries(permit.freeze["environment"],
+                                                checkpoint=budget.check))
         writer.verdict("engineering-verdict.json", {
             **result, "completed_lifecycle": lifecycle, "native_lifecycle_expected": CALL_CAPS,
             "native_lifecycle_actual": actual["counts"],

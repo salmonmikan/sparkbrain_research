@@ -378,9 +378,9 @@ def test_gate_rejects_synthetic_approval_even_with_positive_callback(tmp_path, m
     from types import SimpleNamespace
 
     # Isolate this synthetic gate fixture from unrelated full-suite runtime imports.
-    monkeypatch.setattr(support, "sys", SimpleNamespace(modules={}))
+    monkeypatch.setattr(support, "sys", SimpleNamespace(modules={}, platform=sys.platform))
     synthetic = {"freeze": {}, "freeze_sha256": "a" * 64, "source_inventory_sha256": "b" * 64}
-    monkeypatch.setattr(support, "verify_preparation", lambda *args: synthetic)
+    monkeypatch.setattr(support, "verify_preparation", lambda *args, **kwargs: synthetic)
     approval = {"schema": "g0-published-execution-approval-v1", "identity": support.IDENTITY,
                 "freeze_sha256": "a" * 64, "source_inventory_sha256": "b" * 64,
                 "limits": support.LIMITS, "reserves": support.RESERVES,
@@ -502,7 +502,7 @@ def test_public_json_read_rejects_symlink(tmp_path):
 
 def synthetic_freeze(tmp_path, monkeypatch):
     """Explicit synthetic structural fixture; never capable of minting runtime authority."""
-    monkeypatch.setattr(support, "verify", lambda root: {"synthetic": True})
+    monkeypatch.setattr(support, "verify", lambda root, **kwargs: {"synthetic": True})
     paths = {
         support.CONTRACT: support.canonical({"runtime_sources_sha256": {},
                                             "runtime_schema_sha256": {},
@@ -587,7 +587,8 @@ def test_static_gate_rejects_source_inventory_bytecode_and_environment_changes(
     elif change == "bytecode":
         (tmp_path / "src/sparkbrain/rogue.pyc").write_bytes(b"synthetic bytecode")
     else:
-        monkeypatch.setattr(support, "environment_snapshot", lambda root: {"synthetic": "changed"})
+        monkeypatch.setattr(support, "environment_snapshot",
+                            lambda root, **kwargs: {"synthetic": "changed"})
     with pytest.raises(support.AdmissionError):
         support.verify_preparation(tmp_path, "synthetic-freeze.json",
                                    check_environment=change == "environment")
@@ -624,7 +625,7 @@ def test_delayed_admission_includes_timeout_parent_in_terminal_reserve(monkeypat
 
 def test_identity_reservation_is_durable_across_different_output_directories(tmp_path, monkeypatch):
     # Explicit synthetic in-memory harness: bypass admission only, never import runtime.
-    monkeypatch.setattr(support, "require_execution_permit", lambda *args: None)
+    monkeypatch.setattr(support, "require_execution_permit", lambda *args, **kwargs: None)
     ledger = tmp_path / "synthetic-ledger.json"
     ledger.write_bytes(support.canonical({"synthetic": True}))
     reservation = tmp_path / (support.IDENTITY + ".STARTED.json")
@@ -656,7 +657,7 @@ def test_identity_reservation_is_durable_across_different_output_directories(tmp
 
 
 def test_changed_identity_ledger_blocks_reservation(tmp_path, monkeypatch):
-    monkeypatch.setattr(support, "require_execution_permit", lambda *args: None)
+    monkeypatch.setattr(support, "require_execution_permit", lambda *args, **kwargs: None)
     ledger = tmp_path / "synthetic-ledger.json"
     ledger.write_bytes(b"synthetic original ledger")
     old_digest = support.digest(ledger.read_bytes())
@@ -710,7 +711,7 @@ def test_insufficient_inherited_limits_never_consume_identity(
         (resource.RLIM_INFINITY, resource.RLIM_INFINITY)))
     installed = []
     monkeypatch.setattr(resource, "setrlimit", lambda *args: installed.append(args))
-    monkeypatch.setattr(support, "require_execution_permit", lambda *args: None)
+    monkeypatch.setattr(support, "require_execution_permit", lambda *args, **kwargs: None)
     permit = object.__new__(support.ExecutionPermit)
     reservation = tmp_path / "synthetic-reservation"
     output = tmp_path / "synthetic-output"
@@ -885,7 +886,7 @@ def test_limit_installation_uses_exact_pairs_with_only_synthetic_os_backends(mon
     from types import SimpleNamespace
 
     installed, hooks = [], []
-    monkeypatch.setattr(support, "require_execution_permit", lambda permit: None)
+    monkeypatch.setattr(support, "require_execution_permit", lambda permit, **kwargs: None)
     monkeypatch.setattr(support, "verify_timeout_parent", lambda *args: {"synthetic": True})
     monkeypatch.setattr(resource, "getrlimit", lambda identifier:
                         (resource.RLIM_INFINITY, resource.RLIM_INFINITY))
@@ -921,7 +922,7 @@ def test_insufficient_soft_limits_never_consume_or_charge_identity(
         (resource.RLIM_INFINITY, resource.RLIM_INFINITY)))
     installed = []
     monkeypatch.setattr(resource, "setrlimit", lambda *args: installed.append(args))
-    monkeypatch.setattr(support, "require_execution_permit", lambda *args: None)
+    monkeypatch.setattr(support, "require_execution_permit", lambda *args, **kwargs: None)
     permit = object.__new__(support.ExecutionPermit)
     reservation = tmp_path / "synthetic-reservation"
     output = tmp_path / "synthetic-output"
@@ -977,7 +978,7 @@ def test_invalid_or_unavailable_limit_metadata_never_consumes_identity(tmp_path,
     monkeypatch.setattr(resource, "getrlimit", getrlimit)
     installed = []
     monkeypatch.setattr(resource, "setrlimit", lambda *args: installed.append(args))
-    monkeypatch.setattr(support, "require_execution_permit", lambda *args: None)
+    monkeypatch.setattr(support, "require_execution_permit", lambda *args, **kwargs: None)
     permit = object.__new__(support.ExecutionPermit)
     reservation = tmp_path / "synthetic-reservation"
     output = tmp_path / "synthetic-output"
@@ -1014,7 +1015,7 @@ def test_complete_inherited_limit_matrix_before_reservation_and_exact_mock_insta
     installed = []
     monkeypatch.setattr(resource, "setrlimit", lambda identifier, pair:
                         installed.append((identifier, pair)))
-    monkeypatch.setattr(support, "require_execution_permit", lambda permit: None)
+    monkeypatch.setattr(support, "require_execution_permit", lambda permit, **kwargs: None)
     permit = object.__new__(support.ExecutionPermit)
     reservation = tmp_path / "synthetic-reservation"
     output = tmp_path / "synthetic-output"
@@ -1057,7 +1058,7 @@ def test_complete_inherited_limit_matrix_before_reservation_and_exact_mock_insta
 def synthetic_reservation_fixture(tmp_path, monkeypatch):
     import resource
 
-    monkeypatch.setattr(support, "require_execution_permit", lambda permit: None)
+    monkeypatch.setattr(support, "require_execution_permit", lambda permit, **kwargs: None)
     monkeypatch.setattr(resource, "getrlimit", lambda identifier:
                         (resource.RLIM_INFINITY, resource.RLIM_INFINITY))
     ledger = tmp_path / "synthetic-ledger.json"
@@ -1564,8 +1565,9 @@ def test_uncharged_profile_and_trace_callbacks_do_not_resample_budget(tmp_path, 
         return sample()
 
     b = support.ResourceBudget(sampler=sampler)
-    monitor = support.PassiveCallMonitor(tmp_path, {}, b, targets={}, allowed_functions=set())
-    monkeypatch.setattr(monitor, "_profile_inner", lambda *args: None)
+    monitor = support.PassiveCallMonitor(tmp_path, {}, b, targets={},
+                                        allowed_functions=set())
+    monkeypatch.setattr(monitor, "_profile_inner", lambda *args, **kwargs: None)
     monitor._profile(object(), "call", None)
     frame = SimpleNamespace(f_code=SimpleNamespace(
         co_filename=str(tmp_path / "scripts/g0_joint_ownership.py"), co_qualname="_construct"))
@@ -1624,3 +1626,380 @@ def test_post_io_budget_exhaustion_leaves_complete_bytes_unacknowledged(
     assert writer.write_attempts[-1]["complete"] is False
     assert not any(row["name"] == target.name for row in writer.records)
     assert b.failure is not None
+
+
+@pytest.fixture
+def inert_runtime_admission(tmp_path, monkeypatch):
+    """Forged fixture behind a stubbed full gate; never native execution authority."""
+    b = budget()
+    files = {"synthetic.py": b"# inert source, never imported\n"}
+    for name, data in files.items():
+        (tmp_path / name).write_bytes(data)
+    freeze = {"source_files_sha256": {name: support.digest(data) for name, data in files.items()}}
+    freeze_raw = support.canonical(freeze)
+    approval_raw = b"synthetic test fixture, not an execution approval\n"
+    (tmp_path / "freeze.json").write_bytes(freeze_raw)
+    (tmp_path / "approval.json").write_bytes(approval_raw)
+    permit = object.__new__(support.ExecutionPermit)
+    record = {
+        "root": tmp_path, "consumed": True, "budget": b,
+        "freeze_relative": "freeze.json", "approval_relative": "approval.json",
+        "approval_sha256": support.digest(approval_raw),
+        "verified": {"freeze": freeze, "freeze_sha256": support.digest(freeze_raw)},
+    }
+    support._PERMITS[permit] = record
+    validations = []
+
+    def full_gate(value, *, checkpoint):
+        assert value is permit
+        assert sys.getprofile() is None and threading.getprofile() is None
+        assert sys.gettrace() is None and threading.gettrace() is None
+        assert not b.finalizing
+        checkpoint()
+        validations.append("full synthetic validation, no runtime authority")
+
+    monkeypatch.setattr(support, "require_execution_permit", full_gate)
+    return permit, b, record, validations
+
+
+def test_runtime_admission_is_one_shot_ordered_and_scoped(inert_runtime_admission):
+    permit, b, _, validations = inert_runtime_admission
+    with support.runtime_admission(permit, b) as token:
+        for phase in ("importing", "loaded", "bound"):
+            support.advance_runtime_admission(permit, token, b, phase)
+        with pytest.raises(support.AdmissionError, match="replayed"):
+            support.advance_runtime_admission(permit, token, b, "bound")
+        assert len(validations) == 1  # No census at nested import/bind gates.
+    with pytest.raises(support.AdmissionError, match="expired"):
+        support.advance_runtime_admission(permit, token, b, "importing")
+    with pytest.raises(support.AdmissionError, match="one-shot"):
+        with support.runtime_admission(permit, b):
+            pytest.fail("consumed admission was issued twice")
+
+
+@pytest.mark.parametrize("phase", ["importing", "loaded"])
+@pytest.mark.parametrize("name", ["synthetic.py", "freeze.json", "approval.json"])
+def test_runtime_admission_detects_boundary_drift_and_cannot_retry(
+        inert_runtime_admission, name, phase):
+    permit, b, record, _ = inert_runtime_admission
+    with support.runtime_admission(permit, b) as token:
+        if phase == "loaded":
+            support.advance_runtime_admission(permit, token, b, "importing")
+        path = record["root"] / name
+        original = path.read_bytes()
+        path.write_bytes(original + b"# drift\n")
+        with pytest.raises(support.AdmissionError, match="changed"):
+            support.advance_runtime_admission(permit, token, b, phase)
+        path.write_bytes(original)
+        with pytest.raises(support.AdmissionError, match="replayed"):
+            support.advance_runtime_admission(permit, token, b, phase)
+    with pytest.raises(support.AdmissionError, match="one-shot"):
+        with support.runtime_admission(permit, b):
+            pytest.fail("failed import could be retried")
+
+
+@pytest.mark.parametrize("mismatch", ["permit", "root", "budget", "thread"])
+def test_runtime_admission_cannot_cross_bindings(inert_runtime_admission, mismatch):
+    permit, b, record, _ = inert_runtime_admission
+    with support.runtime_admission(permit, b) as token:
+        if mismatch == "root":
+            record["root"] = record["root"].parent
+        other_permit = object.__new__(support.ExecutionPermit) if mismatch == "permit" else permit
+        other_budget = budget() if mismatch == "budget" else b
+
+        def rejected():
+            with pytest.raises(support.AdmissionError, match="invalid"):
+                support.advance_runtime_admission(other_permit, token, other_budget, "importing")
+
+        if mismatch == "thread":
+            failures = []
+
+            def thread_call():
+                try:
+                    rejected()
+                except BaseException as error:
+                    failures.append(error)
+
+            thread = threading.Thread(target=thread_call)
+            thread.start()
+            thread.join()
+            assert failures == []
+        else:
+            rejected()
+
+
+@pytest.mark.parametrize("phase", ["importing", "loaded", "bound"])
+@pytest.mark.parametrize("stop", ["poisoned", "finalizing"])
+def test_runtime_admission_never_spends_terminal_reserve_for_work(
+        inert_runtime_admission, phase, stop):
+    permit, b, _, _ = inert_runtime_admission
+    with support.runtime_admission(permit, b) as token:
+        for previous in ("importing", "loaded", "bound"):
+            if previous == phase:
+                break
+            support.advance_runtime_admission(permit, token, b, previous)
+        if stop == "poisoned":
+            b.failure = "synthetic sticky failure"
+            error, message = support.BudgetExceeded, "sticky"
+        else:
+            b.finish()
+            error, message = support.AdmissionError, "finalization"
+        with pytest.raises(error, match=message):
+            support.advance_runtime_admission(permit, token, b, phase)
+
+
+def test_runtime_admission_failed_full_validation_remains_one_shot(
+        inert_runtime_admission, monkeypatch):
+    permit, b, _, _ = inert_runtime_admission
+
+    def fail(*args, **kwargs):
+        raise support.AdmissionError("synthetic environment drift")
+
+    monkeypatch.setattr(support, "require_execution_permit", fail)
+    with pytest.raises(support.AdmissionError, match="environment drift"):
+        with support.runtime_admission(permit, b):
+            pytest.fail("failed full validation admitted imports")
+    with pytest.raises(support.AdmissionError, match="one-shot"):
+        with support.runtime_admission(permit, b):
+            pytest.fail("failed preparation could be retried")
+
+
+def test_runtime_admission_rejects_unconsumed_wrong_budget_and_hooks(
+        inert_runtime_admission, monkeypatch):
+    permit, b, record, validations = inert_runtime_admission
+    record["consumed"] = False
+    with pytest.raises(support.AdmissionError, match="consumed"):
+        with support.runtime_admission(permit, b):
+            pytest.fail("unconsumed")
+    record["consumed"] = True
+    with pytest.raises(support.AdmissionError, match="budget"):
+        with support.runtime_admission(permit, budget()):
+            pytest.fail("wrong budget")
+    monkeypatch.setattr(support.sys, "getprofile", lambda: object())
+    with pytest.raises(support.AdmissionError, match="precede profiling"):
+        with support.runtime_admission(permit, b):
+            pytest.fail("full census under hooks")
+    assert validations == []
+
+
+def test_code_key_cache_uses_identity_and_releases_code_without_frames(tmp_path):
+    from types import SimpleNamespace
+
+    monitor = support.PassiveCallMonitor(tmp_path, {}, budget(), targets={},
+                                        allowed_functions=set())
+    first = compile("value = 1", str(tmp_path / "inert.py"), "exec")
+    second = first.replace()
+    assert first == second and first is not second
+    one = SimpleNamespace(f_code=first)
+    two = SimpleNamespace(f_code=second)
+    expected = ("inert.py", "<module>")
+    assert monitor._key(one) == monitor._key(two) == expected
+    assert len(monitor._code_keys) == 2
+    ref = weakref.ref(first)
+    del first, one
+    gc.collect()
+    assert ref() is not None
+    monitor.__exit__()
+    gc.collect()
+    assert ref() is None
+    assert monitor._code_keys == {}
+
+
+def test_cached_key_avoids_repeated_path_work(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    monitor = support.PassiveCallMonitor(tmp_path, {}, budget(), targets={},
+                                        allowed_functions=set())
+    frame = SimpleNamespace(f_code=compile("value = 1", str(tmp_path / "inert.py"), "exec"))
+    expected = monitor._key(frame)
+
+    def no_path(*args):
+        pytest.fail("hot cache hit performed pathlib classification")
+
+    monkeypatch.setattr(support, "Path", no_path)
+    for _ in range(10000):
+        assert monitor._key(frame) == expected
+    assert len(monitor._code_keys) == 1
+
+
+def test_code_key_cache_capacity_poison_is_fail_closed(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    monitor = support.PassiveCallMonitor(tmp_path, {}, budget(), targets={},
+                                        allowed_functions=set())
+    monkeypatch.setattr(support, "CODE_KEY_CACHE_LIMIT", 2)
+    original = compile("value = 1", str(tmp_path / "inert.py"), "exec")
+    for code in (original, original.replace()):
+        monitor._key(SimpleNamespace(f_code=code))
+    with pytest.raises(support.BudgetExceeded, match="cache capacity"):
+        monitor._key(SimpleNamespace(f_code=original.replace()))
+    assert len(monitor._code_keys) == 2
+    with pytest.raises(support.BudgetExceeded, match="cache capacity"):
+        monitor.check()
+
+
+def test_unknown_runtime_and_birth_checks_run_even_with_warmed_keys(tmp_path):
+    from types import SimpleNamespace
+
+    native = synthetic_function(tmp_path, "src/sparkbrain/inert.py",
+                                "def unknown():\n    return 1\n", "unknown")
+    monitor = support.PassiveCallMonitor(tmp_path, {}, budget(), targets={},
+                                        allowed_functions=set())
+    monitor._key(SimpleNamespace(f_code=native.__code__))
+    with pytest.raises(support.BudgetExceeded, match="unknown runtime call"):
+        with monitor:
+            native()
+    # A known source-defined route can still make an unknown RNG birth.
+    native = synthetic_function(tmp_path, "src/sparkbrain/inert.py",
+                                "def birth():\n    return random.Random(0)\n", "birth",
+                                {"random": random})
+    monitor = support.PassiveCallMonitor(
+        tmp_path, {"model_rng": 1}, budget(), targets={},
+        allowed_functions={("src/sparkbrain/inert.py", "birth")})
+    monitor._key(SimpleNamespace(f_code=native.__code__))
+    with pytest.raises(support.BudgetExceeded, match="unknown model RNG"):
+        with monitor:
+            native()
+
+
+@pytest.mark.parametrize("key", list(support.LIMITS))
+def test_no_output_profile_work_checks_soft_reserve_at_finite_interval(tmp_path, monkeypatch, key):
+    current, samples = sample(), []
+
+    def sampler():
+        samples.append(1)
+        return current
+
+    b = support.ResourceBudget(sampler=sampler)
+    monitor = support.PassiveCallMonitor(tmp_path, {}, b, targets={},
+                                        allowed_functions=set())
+    monkeypatch.setattr(monitor, "_profile_inner", lambda *args: None)
+    for _ in range(support.PROFILE_CHECK_INTERVAL - 1):
+        monitor._profile(None, "call", None)
+    assert samples == []
+    cap = b.limits[key] - b.reserves[key]
+    if key == "output_bytes":
+        b.output_bytes = cap
+    else:
+        current[key] = cap
+    with pytest.raises(support.BudgetExceeded, match="resource cap"):
+        monitor._profile(None, "call", None)
+    assert len(samples) == 1
+    assert monitor.events == []
+    with pytest.raises(support.BudgetExceeded):
+        monitor.check()
+    b.finish()  # Only finalization can use the already-reserved hard margin.
+    assert b.failure is not None
+
+
+def test_chunked_hash_and_uninteresting_scan_entries_have_finite_checkpoints(tmp_path):
+    raw = b"x" * (support.HASH_CHUNK_BYTES * 2 + 1)
+    source = tmp_path / "inert.py"
+    source.write_bytes(raw)
+    samples = []
+    assert support.file_digest(source, checkpoint=lambda: samples.append(1)) == support.digest(raw)
+    assert len(samples) == 4  # Three bounded chunks, then EOF.
+    for number in range(100):
+        (tmp_path / f"not-imported-{number}.txt").write_bytes(b"not importable")
+    samples.clear()
+    result = support._walk_importable(tmp_path, checkpoint=lambda: samples.append(1))
+    assert result == {"inert.py": support.digest(raw)}
+    assert len(samples) >= 102  # Non-code entries cannot hide a reserve-blind long scan.
+
+
+def test_scan_stops_before_next_hash_and_retains_terminal_reserve(tmp_path):
+    current = sample()
+    b = support.ResourceBudget(sampler=lambda: current)
+    (tmp_path / "one.py").write_bytes(b"# inert\n")
+    observations = []
+
+    def check():
+        observations.append(1)
+        if len(observations) == 3:
+            current["cpu_seconds"] = b.limits["cpu_seconds"] - b.reserves["cpu_seconds"]
+        return b.check()
+
+    with pytest.raises(support.BudgetExceeded, match="cpu_seconds"):
+        support._walk_importable(tmp_path, checkpoint=check)
+    assert len(observations) == 3
+    assert b.output_bytes == 0
+    b.finish()
+    assert b.failure is not None
+
+
+def test_real_profile_events_stop_output_free_inert_work(tmp_path, monkeypatch):
+    observations, steps = [], []
+    monkeypatch.setattr(support, "PROFILE_CHECK_INTERVAL", 64)
+
+    def sampler():
+        observations.append(1)
+        return sample(cpu_seconds=0 if len(observations) == 1 else 570)
+
+    b = support.ResourceBudget(sampler=sampler)
+    work = synthetic_function(tmp_path, "inert.py", "def work():\n    steps.append(1)\n", "work",
+                               {"steps": steps})
+    monitor = support.PassiveCallMonitor(tmp_path, {}, b, targets={},
+                                        allowed_functions=set())
+    with pytest.raises(support.BudgetExceeded, match="cpu_seconds"):
+        with monitor:
+            for _ in range(10000):
+                work()
+    assert 0 < len(steps) < 10000
+    assert len(observations) == 2
+    assert b.output_bytes == 0 and monitor.events == []
+    assert sys.getprofile() is None and threading.getprofile() is None
+
+
+def test_cache_preserves_generated_dataclass_and_source_comprehension_routes(tmp_path):
+    from dataclasses import dataclass
+
+    cls = synthetic_function(
+        tmp_path, "src/sparkbrain/inert.py", "@dataclass\nclass Inert:\n    value: int\n"
+        "    def values(self):\n        return [self.value for _ in range(2)]\n", "Inert",
+        {"dataclass": dataclass, "__name__": __name__})
+    # This is only a namespace label on an inert stdlib-generated constructor;
+    # no SparkBrain module is imported or model instantiated.
+    cls.__init__.__globals__["__name__"] = "sparkbrain.synthetic_model_free"
+    monitor = support.PassiveCallMonitor(tmp_path, {}, budget(), targets={})
+    with monitor:
+        assert cls(3).values() == [3, 3]
+        assert cls(4).values() == [4, 4]
+    assert monitor.events == []
+
+
+def test_failure_on_context_exit_event_still_detaches_every_hook(tmp_path):
+    current = sample()
+    b = support.ResourceBudget(sampler=lambda: current)
+    monitor = support.PassiveCallMonitor(tmp_path, {}, b, targets={},
+                                        allowed_functions=set())
+    hooks = None
+    try:
+        with pytest.raises(support.BudgetExceeded, match="cpu_seconds"):
+            with monitor:
+                current["cpu_seconds"] = b.limits["cpu_seconds"] - b.reserves["cpu_seconds"]
+                monitor._events_until_check = 1
+    finally:
+        hooks = (sys.getprofile(), threading.getprofile(), sys.gettrace(), threading.gettrace())
+        # Keep this regression safe even if a future change breaks hook cleanup.
+        sys.setprofile(None)
+        threading.setprofile(None)
+        sys.settrace(None)
+        threading.settrace(None)
+    assert hooks == (None, None, None, None)
+    assert monitor._code_keys == {} and monitor._active is False
+    assert b.failure is not None
+
+
+def test_allocation_trace_cache_failure_detaches_every_hook(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    monitor = support.PassiveCallMonitor(tmp_path, {}, budget(), targets={},
+                                        allowed_functions=set())
+    code = compile("value = 1", str(tmp_path / "scripts/g0_joint_ownership.py"), "exec")
+    frame = SimpleNamespace(f_code=code)
+    monkeypatch.setattr(support, "CODE_KEY_CACHE_LIMIT", 0)
+    with pytest.raises(support.BudgetExceeded, match="cache capacity"):
+        monitor._trace(frame, "call", None)
+    assert monitor._active is False and monitor._code_keys == {}
+    assert sys.getprofile() is None and threading.getprofile() is None
+    assert sys.gettrace() is None and threading.gettrace() is None
