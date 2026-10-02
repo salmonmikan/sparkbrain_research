@@ -1,0 +1,83 @@
+{
+  "actual_call_or_birth_counts": "NOT_OBSERVED",
+  "authoritative_ledger_or_reservation_created": false,
+  "claim_limits": [
+    "V1 remains consumed with unknown activity; no retry/resume/top-up or rebate",
+    "Engineering-version eligibility only; no scientific evidence renewal",
+    "Two-observation domain only; no populated-concept/three-observation or68-call pilot eligibility",
+    "No efficacy, locality, acquired-weight necessity or native performance claim",
+    "Trusted quiescent source/environment; no hostile-filesystem/import-hook sandbox"
+  ],
+  "class_witnesses": 101,
+  "configuration_and_caps_unchanged": true,
+  "contract_sha256": "61b9025247ff89909e6cf2f2f326f09b1cff050b27c66d3b0dc0ac770cbe9278",
+  "environment": {
+    "dependency_files": 15221,
+    "mapped_system_libraries": 7,
+    "native_code_files": 37
+  },
+  "execution_object_sha256": "f7a84845f580f71f0ffa53d5349d44b6b1c98cdfc94ec801a18df2b08e8b4cf2",
+  "freeze_sha256": "4cf71c52ef6d45338c87849dc5db1f7124d3945961d6b70325ac5b97244aca94",
+  "fresh_statistical_replication": false,
+  "genuine_approval_created": false,
+  "identity": "assembly-m1-g0-v2-20261002",
+  "independent_review": "No unresolved source-only implementation/freeze finding; no execution eligibility conferred",
+  "inputs_byte_identical_to_exposed_v1": true,
+  "native_rollback_equivalence": "NOT_TESTED",
+  "prelaunch_proof_created": false,
+  "real_model_constructors": 0,
+  "real_model_transitions": 0,
+  "real_native_imports": 0,
+  "remaining_gates": [
+    "Exact published-head Codex review and required CI",
+    "Independent exact full published-tree/no-extra-importable pre-target-Python verification including path precedence, aliases/extensions and trusted startup hooks",
+    "Separately pinned per-object execution approval and fresh one-shot allocation decision",
+    "Independent data-only audit and complete terminal evidence plus exit0 after any separately authorized future attempt"
+  ],
+  "reviewed_files_sha256": {
+    "scripts/g0_execution_objects.py": "042019d01c54004f2155e673aa761281ebe47db74c97e99a3d72a3b54074a204",
+    "scripts/g0_execution_support.py": "413966321b6f97fe3d0a657073d85f6d8a4688315a7ef1fe82c277ee3b1efa65",
+    "scripts/launch_g0_joint_eligibility.py": "a630102822d83682ae3be01165813fbd5f2975d93a01db37d596160ad62bdfc9",
+    "scripts/launch_g0_v2_eligibility.py": "e29f967c99bffa8f173c0518fb42cca1e13b9854e0d45fe0d4f8bc16b100f45f",
+    "scripts/run_g0_joint_eligibility.py": "70c9d963b456de0698d9582b1dd03b1bc8b5f1eb08922216dc748495f217caad",
+    "tests/test_g0_execution_objects.py": "607e71c05c4fc11c8233ae6cad8d5deff99df5fed26bd67343ef7c8031c40ce5",
+    "tests/test_g0_execution_support.py": "a74fd2bfacce9998caec9046f9c152a77ef5564fb942b5480b2f91ce2891833f",
+    "tests/test_g0_joint_eligibility_runner.py": "222bd518a1bc5b69b4a1d157c0a80812ef507ff0d34f5668576ec064422cb1c9",
+    "tests/test_g0_joint_launcher.py": "519d21c4b2a5027f027339f121784a83437b5c3206863dfe07c6cd1f7b42ae8f",
+    "tests/test_g0_v2_bindings.py": "e4d49ab068d116a5f1583c1ae87079903664342cdd2b7644fca22bce7f825f33"
+  },
+  "runtime_execution_authorized": false,
+  "runtime_files": 157,
+  "runtime_origin_commit": "d3ad56dce4256634ce62c69acecd1de65fcd9fb7",
+  "runtime_schemas": 15,
+  "schema": "g0-v2-preparation-validation-v1",
+  "scientific_credit": 0,
+  "source_files": 199,
+  "source_inventory_sha256": "05c7d23e27aa8b82e5e4c77e79ca7323bbf8d84148d30d563cb706dcf9eb5e33",
+  "status": "UNAPPROVED_SOURCE_ONLY",
+  "unchanged_pinned_helpers_sha256": {
+    "scripts/g0_joint_ownership.py": "70a607b29773c4318fc43b1206da7afffc3d7c5fc76470889e3c24835db93ecf",
+    "scripts/verify_g0_joint_source_contract.py": "2411f267a76b6932eb2ab1156901dbbb7601ecd63c2e832b899d313b8794f53c"
+  },
+  "validation": {
+    "combined_fourteen_suites": {
+      "native_import_tripwire": "PASS",
+      "passed": 1129,
+      "subtests_passed": 13
+    },
+    "fixed_v2_launcher_source_check": "PASS; inert preparation only",
+    "full_local_runtime_suite": "Not run under source-only scope; ordinary CI is a separate required software gate",
+    "full_tree_ruff": "PASS",
+    "g0_v2_eight_suites": {
+      "passed": 737,
+      "subtests_passed": 13
+    },
+    "independent_inert_origin_checks": 1811,
+    "simulated_ambient_native_namespace": {
+      "passed": 737,
+      "real_native_imports": 0,
+      "sentinel_objects_preserved": true,
+      "subtests_passed": 13
+    }
+  }
+}

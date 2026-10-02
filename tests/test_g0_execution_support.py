@@ -508,6 +508,7 @@ def synthetic_freeze(tmp_path, monkeypatch):
                                             "runtime_schema_sha256": {},
                                             "reuse_sources_sha256": {}}),
         "scripts/g0_execution_support.py": b"# synthetic fixture\n",
+        "scripts/g0_execution_objects.py": b"# synthetic fixture\n",
         "scripts/g0_joint_ownership.py": b"# synthetic fixture\n",
         "scripts/verify_g0_joint_source_contract.py": b"# synthetic fixture\n",
         "scripts/run_g0_joint_eligibility.py": b"# synthetic fixture\n",
@@ -632,7 +633,7 @@ def test_identity_reservation_is_durable_across_different_output_directories(tmp
 
     def synthetic_permit(output):
         permit = object.__new__(support.ExecutionPermit)
-        support._PERMITS[permit] = {
+        support._PERMITS[permit] = {"object_spec": support.HISTORICAL_G0,
             "root": tmp_path, "output_directory": output, "consumed": False,
             "identity_ledger_path": ledger,
             "identity_ledger_sha256": support.digest(ledger.read_bytes()),
@@ -665,7 +666,7 @@ def test_changed_identity_ledger_blocks_reservation(tmp_path, monkeypatch):
     permit = object.__new__(support.ExecutionPermit)
     output = tmp_path / "out"
     reservation = tmp_path / "synthetic-reservation"
-    support._PERMITS[permit] = {
+    support._PERMITS[permit] = {"object_spec": support.HISTORICAL_G0,
         "output_directory": output, "consumed": False,
         "identity_ledger_path": ledger, "identity_ledger_sha256": old_digest,
         "identity_reservation": reservation,
@@ -715,7 +716,8 @@ def test_insufficient_inherited_limits_never_consume_identity(
     permit = object.__new__(support.ExecutionPermit)
     reservation = tmp_path / "synthetic-reservation"
     output = tmp_path / "synthetic-output"
-    support._PERMITS[permit] = {"consumed": False, "identity_reservation": reservation}
+    support._PERMITS[permit] = {"object_spec": support.HISTORICAL_G0,
+                                "consumed": False, "identity_reservation": reservation}
     evidence_budget = budget()
     with pytest.raises(support.AdmissionError, match="inherited hard limit.*" + key):
         support.consume_execution_permit(permit, output, budget=evidence_budget)
@@ -926,7 +928,8 @@ def test_insufficient_soft_limits_never_consume_or_charge_identity(
     permit = object.__new__(support.ExecutionPermit)
     reservation = tmp_path / "synthetic-reservation"
     output = tmp_path / "synthetic-output"
-    support._PERMITS[permit] = {"consumed": False, "identity_reservation": reservation}
+    support._PERMITS[permit] = {"object_spec": support.HISTORICAL_G0,
+                                "consumed": False, "identity_reservation": reservation}
     evidence_budget = budget()
     with pytest.raises(support.AdmissionError, match="inherited soft limit.*" + key):
         support.consume_execution_permit(permit, output, budget=evidence_budget)
@@ -982,7 +985,8 @@ def test_invalid_or_unavailable_limit_metadata_never_consumes_identity(tmp_path,
     permit = object.__new__(support.ExecutionPermit)
     reservation = tmp_path / "synthetic-reservation"
     output = tmp_path / "synthetic-output"
-    support._PERMITS[permit] = {"consumed": False, "identity_reservation": reservation}
+    support._PERMITS[permit] = {"object_spec": support.HISTORICAL_G0,
+                                "consumed": False, "identity_reservation": reservation}
     evidence_budget = budget()
     with pytest.raises(support.AdmissionError, match="metadata|unavailable"):
         support.consume_execution_permit(permit, output, budget=evidence_budget)
@@ -1019,7 +1023,8 @@ def test_complete_inherited_limit_matrix_before_reservation_and_exact_mock_insta
     permit = object.__new__(support.ExecutionPermit)
     reservation = tmp_path / "synthetic-reservation"
     output = tmp_path / "synthetic-output"
-    support._PERMITS[permit] = {"consumed": False, "identity_reservation": reservation}
+    support._PERMITS[permit] = {"object_spec": support.HISTORICAL_G0,
+                                "consumed": False, "identity_reservation": reservation}
     evidence_budget = budget()
     infinity = resource.RLIM_INFINITY
     healthy = (
@@ -1066,7 +1071,7 @@ def synthetic_reservation_fixture(tmp_path, monkeypatch):
     reservation = tmp_path / "synthetic-reservation.json"
     output = tmp_path / "synthetic-output"
     permit = object.__new__(support.ExecutionPermit)
-    support._PERMITS[permit] = {
+    support._PERMITS[permit] = {"object_spec": support.HISTORICAL_G0,
         "root": tmp_path, "output_directory": output, "consumed": False,
         "identity_ledger_path": ledger,
         "identity_ledger_sha256": support.digest(ledger.read_bytes()),
@@ -1642,6 +1647,7 @@ def inert_runtime_admission(tmp_path, monkeypatch):
     (tmp_path / "approval.json").write_bytes(approval_raw)
     permit = object.__new__(support.ExecutionPermit)
     record = {
+        "object_spec": support.HISTORICAL_G0,
         "root": tmp_path, "consumed": True, "budget": b,
         "freeze_relative": "freeze.json", "approval_relative": "approval.json",
         "approval_sha256": support.digest(approval_raw),

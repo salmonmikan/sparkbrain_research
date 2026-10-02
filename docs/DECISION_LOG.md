@@ -1378,3 +1378,23 @@ remain unmet. Source-only approval is not empirical eligibility or experiment cl
 interpreter's exact stdlib route-source bytes for pure census-evidence inspection.
 Do not silently substitute the inspecting host's stdlib. Keep actual native
 admission restricted to CPython 3.11–3.13 and verify its live bindings separately.
+
+## 2026-10-02 — Separate unapproved G0 engineering successor
+
+Preserve the consumed incomplete v1 attempt and its source/authority/evidence unchanged.
+Prepare v2 with the same bounded ownership question, 14 cases, exposed input bytes and
+inclusive resource ceilings, while explicitly reconciling the codec, pointer/disposal
+and admission-instrumentation changes. No evidence renewal or unused-allocation claim.
+
+Use exactly two immutable source-defined object descriptors and a narrow new verifier/
+binder around the unchanged historical source auditor and shared ownership adapter.
+Thread the selected object from the sealed permit through source, lifecycle, evidence
+and launch checks. Keep the digest graph non-self-referential and require an external,
+independently pinned per-object approval record rather than a source-changing enablement
+toggle. No actual approval or execution is part of this source preparation.
+
+Treat exact full-tree materialization, namespace/path precedence, aliases/extensions
+and trusted startup hooks as an independently verified pre-target-Python prerequisite
+under a quiescent-tree assumption. Post-import origin checks do not prove earlier
+startup safety or create a new filesystem/import sandbox. See the
+[prospective proposal](research/assembly_m1_g0_v2_proposal_20261002.md).

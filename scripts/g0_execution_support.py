@@ -25,9 +25,22 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Any
 
+from scripts.g0_execution_objects import (
+    G0_V2,
+    HISTORICAL_G0,
+    ExecutionObject,
+    object_binding,
+    object_digest,
+    require_object,
+    verify_object_source,
+)
 from scripts.verify_g0_joint_source_contract import (
-    CONTRACT,
-    CONTRACT_SHA256,
+    CONTRACT as CONTRACT,
+)
+from scripts.verify_g0_joint_source_contract import (
+    CONTRACT_SHA256 as CONTRACT_SHA256,
+)
+from scripts.verify_g0_joint_source_contract import (
     confined_path,
     path_metadata,
     source_root,
@@ -150,9 +163,13 @@ def lifecycle_birth_routes(name: str) -> tuple[tuple[str, str], ...]:
     raise AdmissionError("unknown resource birth route")
 
 
-def validate_completed_lifecycle(snapshot: dict[str, Any]) -> dict[str, Any]:
+def validate_completed_lifecycle(snapshot: dict[str, Any], *,
+                                 object_spec: ExecutionObject = HISTORICAL_G0,
+                                 ) -> dict[str, Any]:
     """Pure primitive validation; attempted calls alone can never establish completion."""
+    object_spec = require_object(object_spec)
     value = primitive(snapshot)
+    _require_object_binding(value, object_spec)
     required = {"counts", "caps", "returned", "failure", "pending_calls", "pending_shells",
                 "births", "events", "live_resource_ids", "threads_seen", "ancillary_rngs",
                 "counts_before_body", "protocol_counts"}
@@ -245,7 +262,7 @@ def validate_completed_lifecycle(snapshot: dict[str, Any]) -> dict[str, Any]:
             or observed_birth_ids != list(range(1, len(births) + 1))
             or type(value["ancillary_rngs"]) is not int or value["ancillary_rngs"] != ancillary):
         raise AdmissionError("passive events do not reconcile with attempts/returns/births")
-    return {"validated": True, "attempted_counts": dict(CALL_CAPS),
+    return {**object_binding(object_spec), "validated": True, "attempted_counts": dict(CALL_CAPS),
             "normal_returns": returns, "exceptional_exits": expected_exceptions,
             "birth_counts": actual_births, "births": len(births),
             "live_registry_guard_id": guard_id, "model_resources_live": 0}
@@ -457,10 +474,72 @@ def environment_snapshot(root: Path | None = None, *,
     }
 
 
-def _fixed_envelope(freeze: dict[str, Any]) -> None:
-    for key, expected in (("identity", IDENTITY), ("limits", LIMITS), ("reserves", RESERVES),
+def _require_object_binding(value: Any, object_spec: ExecutionObject) -> None:
+    spec = require_object(object_spec)
+    if (type(value) is not dict
+            or ("identity" in value and value["identity"] != spec.identity)
+            or ((spec is G0_V2 or "execution_object_sha256" in value)
+                and value.get("execution_object_sha256") != object_digest(spec))):
+        raise AdmissionError("execution object binding differs or is missing")
+
+
+def verify_prelaunch_materialization(
+    root: Path, approval: dict[str, Any], published_commit: str,
+    source_inventory_sha256: str, *, object_spec: ExecutionObject = HISTORICAL_G0,
+) -> None:
+    """Check a bound external prerequisite, never claim post-import startup attestation.
+
+    The independent caller checks the full published tree, all repository import
+    paths and trusted startup hooks before starting the target Python process.
+    The external proof must cover the enclosing approval's exact freeze/environment
+    and startup command. Its digest is bound by the independently supplied approval
+    pins. Core compares the published commit to its caller's pin; this support gate
+    cross-checks the approval publication record. These local comparisons neither
+    recreate the earlier check nor authorize execution.
+    """
+    spec = require_object(object_spec)
+    if spec is HISTORICAL_G0:
+        return
+    root = source_root(root)
+    for value, length in ((published_commit, 40), (source_inventory_sha256, 64)):
+        if (type(value) is not str or len(value) != length
+                or any(char not in "0123456789abcdef" for char in value)):
+            raise AdmissionError("prelaunch proof requires exact published commit/inventory pins")
+    expected = {
+        "schema": "g0-prelaunch-materialization-attestation-v1",
+        "execution_object_sha256": object_digest(spec), "source_root": str(root),
+        "published_commit": published_commit, "runtime_origin_commit": spec.runtime_origin_commit,
+        "source_inventory_sha256": source_inventory_sha256,
+        "verified_before_target_python_start": True,
+        "full_published_tree_verified": True, "no_undeclared_importables": True,
+        "namespace_and_path_precedence_verified": True,
+        "aliases_and_extensions_verified": True, "trusted_startup_hooks_verified": True,
+        "quiescent_source_and_environment": True,
+    }
+    record = approval.get("prelaunch_materialization")
+    if (type(record) is not dict or set(record) != set(expected) | {"proof_sha256", "reference"}
+            or any(canonical(record.get(key)) != canonical(value)
+                   for key, value in expected.items())):
+        raise AdmissionError("external prelaunch materialization binding differs or is missing")
+    proof, reference = record["proof_sha256"], record["reference"]
+    if (type(proof) is not str or len(proof) != 64
+            or any(char not in "0123456789abcdef" for char in proof)
+            or type(reference) is not str or not reference.strip()):
+        raise AdmissionError("external prelaunch proof requires an exact digest and reference")
+
+
+def _fixed_envelope(freeze: dict[str, Any],
+                    object_spec: ExecutionObject = HISTORICAL_G0) -> None:
+    object_spec = require_object(object_spec)
+    _require_object_binding(freeze, object_spec)
+    if (object_spec is G0_V2
+            and freeze.get("runtime_origin_commit") != object_spec.runtime_origin_commit):
+        raise AdmissionError("frozen runtime source origin differs")
+    for key, expected in (("identity", object_spec.identity),
+                          ("limits", LIMITS), ("reserves", RESERVES),
                           ("call_caps", CALL_CAPS), ("runtime_python_files", 157),
-                          ("runtime_schema_files", 15), ("contract_sha256", CONTRACT_SHA256)):
+                          ("runtime_schema_files", 15),
+                          ("contract_sha256", object_spec.contract_sha256)):
         if canonical(freeze.get(key)) != canonical(expected):
             raise AdmissionError(f"frozen {key} differs from the prospective contract")
     timeout_digest = freeze.get("timeout_executable_sha256")
@@ -475,24 +554,30 @@ def _fixed_envelope(freeze: dict[str, Any]) -> None:
 
 def verify_preparation(root: Path, freeze_relative: str,
                        *, check_environment: bool = True,
-                       checkpoint: Callable[[], Any] | None = None) -> dict[str, Any]:
+                       checkpoint: Callable[[], Any] | None = None,
+                       object_spec: ExecutionObject = HISTORICAL_G0) -> dict[str, Any]:
     """Check exact source/literals/contracts/environment without loading runtime code."""
+    object_spec = require_object(object_spec)
+    if object_spec is G0_V2 and freeze_relative != object_spec.freeze_relative:
+        raise AdmissionError("freeze path differs from execution object")
     root = source_root(root)
     freeze_path = confined_path(root, freeze_relative, "freeze")
     raw = freeze_path.read_bytes()
     freeze = read_json(freeze_path)
-    _fixed_envelope(freeze)
+    _fixed_envelope(freeze, object_spec)
     # Keep the pinned historical verifier unchanged. This coarser audit stage is
     # bracketed by checks; subordinate reads/traversal are not newly checkpointed.
     if checkpoint is not None:
         checkpoint()
-    verified = verify(root)
+    verified = (verify(root) if object_spec is HISTORICAL_G0
+                else verify_object_source(root, object_spec))
     if checkpoint is not None:
         checkpoint()
     inventory = freeze.get("source_files_sha256")
     if type(inventory) is not dict or freeze_relative in inventory:
         raise AdmissionError("invalid or self-referential source inventory")
-    required = {CONTRACT, "scripts/g0_execution_support.py", "scripts/g0_joint_ownership.py",
+    required = {object_spec.contract_relative, "scripts/g0_execution_support.py",
+                "scripts/g0_execution_objects.py", "scripts/g0_joint_ownership.py",
                 "scripts/verify_g0_joint_source_contract.py",
                 "scripts/run_g0_joint_eligibility.py", "scripts/v05_history_export_probe.py",
                 "tests/test_g0_execution_support.py",
@@ -500,7 +585,12 @@ def verify_preparation(root: Path, freeze_relative: str,
                 "tests/test_g0_joint_source_contract.py", "tests/test_g0_execution_protocol.py",
                 "docs/research/assembly_m1_g0_execution_preparation_20261002.md"}
     required.update(("scripts/launch_g0_joint_eligibility.py", "tests/test_g0_joint_launcher.py"))
-    contract = read_json(confined_path(root, CONTRACT, "contract"))
+    if object_spec is G0_V2:
+        required.update({object_spec.launcher_relative,
+                         "tests/test_g0_execution_objects.py", "tests/test_g0_v2_bindings.py",
+                         "docs/research/assembly_m1_g0_v2_proposal_20261002.md",
+                         object_spec.artifact_root + "/proposal.json"})
+    contract = read_json(confined_path(root, object_spec.contract_relative, "contract"))
     required.update(contract["runtime_sources_sha256"])
     required.update(contract["runtime_schema_sha256"])
     required.update(contract["reuse_sources_sha256"])
@@ -508,14 +598,18 @@ def verify_preparation(root: Path, freeze_relative: str,
         binding = freeze.get(key)
         if type(binding) is not dict or set(binding) != {"path", "sha256"}:
             raise AdmissionError(f"invalid frozen {key} binding")
-        if binding["path"] != f"{ARTIFACT_ROOT}/{key}.json":
+        if binding["path"] != f"{object_spec.artifact_root}/{key}.json":
             raise AdmissionError(f"frozen {key} must bind the canonical prospective path")
         required.add(binding["path"])
         if inventory.get(binding["path"]) != binding["sha256"]:
             raise AdmissionError(f"frozen {key} is absent from the source inventory")
         value = read_json(confined_path(root, binding["path"], key))
         if key == "protocol":
-            if (value.get("identity") != IDENTITY
+            _require_object_binding(value, object_spec)
+            if (object_spec is G0_V2
+                    and value.get("runtime_origin_commit") != object_spec.runtime_origin_commit):
+                raise AdmissionError("protocol runtime source origin differs")
+            if (value.get("identity") != object_spec.identity
                     or canonical(value.get("call_caps")) != canonical(protocol_call_caps())
                     or value.get("limits") != LIMITS or value.get("reserves") != RESERVES):
                 raise AdmissionError("protocol identity/counters/resource envelope differs")
@@ -555,7 +649,8 @@ def verify_preparation(root: Path, freeze_relative: str,
     if check_environment and freeze.get("environment") != environment_snapshot(
             root, checkpoint=checkpoint):
         raise AdmissionError("frozen interpreter/dependency environment differs")
-    return {"classification": "SOURCE_ONLY_NON_EVIDENTIARY", "identity": IDENTITY,
+    return {"classification": "SOURCE_ONLY_NON_EVIDENTIARY", "identity": object_spec.identity,
+            **object_binding(object_spec),
             "runtime_execution_authorized": False, "scientific_credit": 0,
             "freeze_sha256": digest(raw), "source_inventory_sha256": digest(canonical(inventory)),
             "source_contract": verified, "freeze": freeze}
@@ -569,6 +664,13 @@ class ExecutionPermit:
 
     def __init__(self) -> None:
         raise AdmissionError("execution permits require separately verified external authority")
+
+    @property
+    def object_spec(self) -> ExecutionObject:
+        try:
+            return require_object(_PERMITS[self]["object_spec"])
+        except (KeyError, ValueError):
+            raise AdmissionError("permit has no exact sealed execution object") from None
 
     @property
     def root(self) -> Path:
@@ -598,7 +700,8 @@ class ExecutionPermit:
 
 def authorize_execution(root: Path, freeze_relative: str, approval_relative: str,
                         expected_approval_sha256: str,
-                        authority_callback: Callable[[dict[str, Any]], bool] | None,
+                        authority_callback: Callable[[dict[str, Any]], bool] | None, *,
+                        object_spec: ExecutionObject = HISTORICAL_G0,
                         ) -> ExecutionPermit:
     """Dormant gate. The caller supplies independently verified publication/authority.
 
@@ -606,18 +709,26 @@ def authorize_execution(root: Path, freeze_relative: str, approval_relative: str
     review, or synthetic fixture is never sufficient. The caller's authority verifier
     belongs to the trusted launch boundary, not to model code or the approval file.
     """
+    object_spec = require_object(object_spec)
+    if object_spec is G0_V2 and (freeze_relative != object_spec.freeze_relative
+                                or approval_relative != object_spec.approval_relative):
+        raise AdmissionError("approval/freeze path differs from execution object")
     if authority_callback is None or not callable(authority_callback):
         raise AdmissionError("independent external approval verifier is required")
     if any(name == "sparkbrain" or name.startswith("sparkbrain.") for name in sys.modules):
         raise AdmissionError("fresh frozen runtime imports are required")
     root = source_root(root)
-    verified = verify_preparation(root, freeze_relative, checkpoint=ResourceBudget().check)
+    verified = verify_preparation(root, freeze_relative, checkpoint=ResourceBudget().check,
+                                  object_spec=object_spec)
     approval_path = confined_path(root, approval_relative, "external approval")
     approval_raw = approval_path.read_bytes()
     if not expected_approval_sha256 or digest(approval_raw) != expected_approval_sha256:
         raise AdmissionError("independently supplied approval digest differs")
     approval = read_json(approval_path)
-    expected = {"schema": "g0-published-execution-approval-v1", "identity": IDENTITY,
+    _require_object_binding(approval, object_spec)
+    if object_spec is G0_V2 and approval.get("execution_object_enabled") is not True:
+        raise AdmissionError("separate independently verified object enablement is required")
+    expected = {"schema": "g0-published-execution-approval-v1", "identity": object_spec.identity,
                 "freeze_sha256": verified["freeze_sha256"],
                 "source_inventory_sha256": verified["source_inventory_sha256"],
                 "limits": LIMITS, "reserves": RESERVES, "call_caps": CALL_CAPS,
@@ -632,6 +743,9 @@ def authorize_execution(root: Path, freeze_relative: str, approval_relative: str
             raise AdmissionError(f"missing independent {key} evidence")
     if approval["publication"].get("exact_source_sha256") != verified["source_inventory_sha256"]:
         raise AdmissionError("published source differs from the frozen inventory")
+    verify_prelaunch_materialization(
+        root, approval, approval["publication"].get("commit"),
+        verified["source_inventory_sha256"], object_spec=object_spec)
     if (approval["review"].get("freeze_sha256") != verified["freeze_sha256"]
             or approval["review"].get("unresolved_findings") != 0):
         raise AdmissionError("review is not clean for the exact freeze")
@@ -654,20 +768,22 @@ def authorize_execution(root: Path, freeze_relative: str, approval_relative: str
                                 "identity ledger")
     if digest(ledger_path.read_bytes()) != ledger_binding["sha256"]:
         raise AdmissionError("authoritative identity ledger digest differs")
-    identity_record = read_json(ledger_path).get("identities", {}).get(IDENTITY, {})
+    identity_record = read_json(ledger_path).get("identities", {}).get(object_spec.identity, {})
+    _require_object_binding(identity_record, object_spec)
     if identity_record.get("state") != "UNCONSUMED":
         raise AdmissionError("identity is absent or already consumed in authoritative ledger")
     reservation_directory = identity_record.get("reservation_directory")
     if type(reservation_directory) is not str or not Path(reservation_directory).is_absolute():
         raise AdmissionError("authoritative identity ledger has no absolute reservation directory")
     reservation_directory = source_root(Path(reservation_directory))
-    reservation = reservation_directory / (IDENTITY + ".STARTED.json")
+    reservation = reservation_directory / (object_spec.identity + ".STARTED.json")
     if reservation.exists() or reservation.is_symlink():
         raise AdmissionError("identity has a durable prior reservation")
     if authority_callback(primitive(approval)) is not True:
         raise AdmissionError("external execution authority was not independently verified")
     permit = object.__new__(ExecutionPermit)
-    _PERMITS[permit] = {"root": root, "freeze_relative": freeze_relative,
+    _PERMITS[permit] = {"root": root, "object_spec": object_spec,
+                        **object_binding(object_spec), "freeze_relative": freeze_relative,
                         "approval_relative": approval_relative,
                         "approval_sha256": expected_approval_sha256, "verified": verified,
                         "output_directory": output_path, "execution_nonce": nonce,
@@ -682,10 +798,12 @@ def require_execution_permit(permit: ExecutionPermit, root: Path | None = None, 
     if type(permit) is not ExecutionPermit or permit not in _PERMITS:
         raise AdmissionError("unissued execution permit")
     record = _PERMITS[permit]
+    object_spec = permit.object_spec
+    _require_object_binding(record, object_spec)
     if root is not None and source_root(root) != record["root"]:
         raise AdmissionError("permit belongs to a different source root")
     current = verify_preparation(record["root"], record["freeze_relative"],
-                                 checkpoint=checkpoint)
+                                 checkpoint=checkpoint, object_spec=object_spec)
     if current != record["verified"]:
         raise AdmissionError("execution freeze changed after admission")
     approval = confined_path(record["root"], record["approval_relative"], "approval")
@@ -730,6 +848,7 @@ def runtime_admission(permit: ExecutionPermit,
     token = object.__new__(_RuntimeAdmission)
     _RUNTIME_ADMISSIONS[token] = {
         "permit": permit, "root": record["root"], "budget": budget,
+        "object_spec": permit.object_spec, **object_binding(permit.object_spec),
         "thread": threading.get_ident(), "phase": "prepared",
         "freeze_sha256": record["verified"]["freeze_sha256"],
         "approval_sha256": record["approval_sha256"],
@@ -755,6 +874,11 @@ def advance_runtime_admission(permit: ExecutionPermit, token: _RuntimeAdmission,
         raise AdmissionError("invalid, expired or replayed runtime admission")
     # Consume the transition before fallible checks: a failed import gate is final.
     admitted["phase"] = "failed"
+    object_spec = permit.object_spec
+    _require_object_binding(record, object_spec)
+    if admitted.get("object_spec") is not object_spec:
+        raise AdmissionError("runtime admission execution object differs")
+    _require_object_binding(admitted, object_spec)
     if budget.finalizing:
         raise AdmissionError("finalization cannot admit runtime work")
     budget.check()
@@ -853,7 +977,9 @@ def consume_execution_permit(permit: ExecutionPermit, output_directory: Path,
         raise AdmissionError("identity ledger changed after admission")
     reservation = record["identity_reservation"]
     fsync_directory_provisioning(reservation.parent)
-    raw = canonical({"identity": IDENTITY, "execution_nonce": record["execution_nonce"],
+    raw = canonical({"identity": permit.object_spec.identity,
+                     **object_binding(permit.object_spec),
+                     "execution_nonce": record["execution_nonce"],
                      "approval_sha256": record["approval_sha256"],
                      "freeze_sha256": record["verified"]["freeze_sha256"],
                      "output_directory": str(candidate), "state": "STARTED",
@@ -1039,8 +1165,10 @@ class ResourceBudget:
 class ExclusiveEvidenceWriter:
     """No reuse, no overwrite, raw evidence first, partial terminal verdict last."""
 
-    def __init__(self, output_dir: Path, identity: str, budget: ResourceBudget) -> None:
-        if identity != IDENTITY:
+    def __init__(self, output_dir: Path, identity: str, budget: ResourceBudget, *,
+                 object_spec: ExecutionObject = HISTORICAL_G0) -> None:
+        self._object_spec = require_object(object_spec)
+        if identity != self._object_spec.identity:
             raise AdmissionError("only the fresh prospective G0 identity is supported")
         output_dir = Path(output_dir)
         parent = source_root(output_dir.parent)
@@ -1058,6 +1186,7 @@ class ExclusiveEvidenceWriter:
         self.closed = False
         self._lock = threading.RLock()
         self._write("STARTED.json", canonical({"identity": identity, "state": "STARTED",
+                    **object_binding(self._object_spec),
                     "real_g0_completed": False, "scientific_credit": 0,
                     "filesystem_durability_boundary": FILESYSTEM_DURABILITY_BOUNDARY}), "start")
 
@@ -1070,11 +1199,13 @@ class ExclusiveEvidenceWriter:
                 raise AdmissionError("terminal evidence is already closed")
             self.budget.reserve_output(len(data))
             path = self.path / name
-            attempt = {"name": name, "kind": kind, "planned_bytes": len(data),
+            attempt = {**object_binding(self._object_spec),
+                       "name": name, "kind": kind, "planned_bytes": len(data),
                        "complete": False}
             self.write_attempts.append(attempt)
             exclusive_durable_write(path, data)
-            record = {"name": name, "kind": kind, "bytes": len(data), "sha256": digest(data)}
+            record = {**object_binding(self._object_spec), "name": name, "kind": kind,
+                      "bytes": len(data), "sha256": digest(data)}
             # Include durable IO/hash work before acknowledging this record. During
             # terminal finalization this checks the same fixed hard envelope.
             self.budget.check()
@@ -1097,7 +1228,8 @@ class ExclusiveEvidenceWriter:
     def terminal(self, status: str, details: dict[str, Any] | None = None) -> dict[str, Any]:
         self.budget.finish()
         result = self._write("TERMINAL.json", canonical({
-            "identity": IDENTITY, "status": status, "details": details or {},
+            "identity": self._object_spec.identity, **object_binding(self._object_spec),
+            "status": status, "details": details or {},
             "records": primitive(self.records), "write_attempts": primitive(self.write_attempts),
             "resources_before_terminal": self.budget.sample(),
             "partial_evidence_retained": status != "SUCCESS", "scientific_credit": 0,
@@ -1143,8 +1275,23 @@ class PassiveCallMonitor:
     def __init__(self, root: Path, call_plan: Mapping[str, int] | None, budget: ResourceBudget,
                  writer: ExclusiveEvidenceWriter | None = None, *,
                  targets: Mapping[str, tuple[str, str]] | None = None,
-                 allowed_functions: set[tuple[str, str]] | None = None) -> None:
+                 allowed_functions: set[tuple[str, str]] | None = None,
+                 object_spec: ExecutionObject = HISTORICAL_G0) -> None:
+        self._object_spec = require_object(object_spec)
+        if (writer is not None
+                and (self._object_spec is G0_V2 or isinstance(writer, ExclusiveEvidenceWriter))
+                and getattr(writer, "_object_spec", None) is not self._object_spec):
+            raise AdmissionError("passive writer belongs to a different execution object")
         self.root = source_root(root)
+        if self._object_spec is G0_V2:
+            if (call_plan is not None and dict(call_plan) != CALL_CAPS
+                    or targets is not None or allowed_functions is not None):
+                raise AdmissionError("v2 passive plan/targets cannot be overridden")
+            contract_path = confined_path(self.root, self._object_spec.contract_relative,
+                                           "profile object contract")
+            if (file_digest(contract_path, checkpoint=budget.check)
+                    != self._object_spec.contract_sha256):
+                raise AdmissionError("profile object contract digest differs")
         self.caps = dict(CALL_CAPS if call_plan is None else call_plan)
         if any(type(v) is not int or v < 0 for v in self.caps.values()):
             raise AdmissionError("invalid passive call cap")
@@ -1184,11 +1331,15 @@ class PassiveCallMonitor:
         self.allowed_functions = allowed_functions
         if allowed_functions is None:
             self.allowed_functions = set()
-            contract_path = self.root / CONTRACT
+            contract_relative = self._object_spec.contract_relative
+            contract_path = self.root / contract_relative
             runtime_paths = []
             if contract_path.exists() or contract_path.is_symlink():
-                contract = read_json(confined_path(self.root, CONTRACT, "profile contract"))
+                contract = read_json(confined_path(self.root, contract_relative,
+                                                   "profile contract"))
                 runtime_paths = list(contract["runtime_sources_sha256"])
+            elif self._object_spec is G0_V2:
+                raise AdmissionError("production execution object contract is missing")
             elif (self.root / "src/sparkbrain").exists():
                 # Explicit source-only stand-in roots may omit the production contract.
                 pending = [confined_path(self.root, "src/sparkbrain", "synthetic runtime",
@@ -1204,6 +1355,8 @@ class PassiveCallMonitor:
             selected = runtime_paths + ["scripts/g0_joint_ownership.py",
                                         "scripts/run_g0_joint_eligibility.py",
                                         "scripts/g0_execution_support.py"]
+            if self._object_spec is G0_V2:
+                selected.append("scripts/g0_execution_objects.py")
             for relative in selected:
                 self.budget.check()
                 path = self.root / relative
@@ -1259,7 +1412,8 @@ class PassiveCallMonitor:
     def snapshot(self) -> dict[str, Any]:
         self._weak_resources = {key: ref for key, ref in self._weak_resources.items()
                                 if ref() is not None}
-        result = {"counts": dict(self.counts), "caps": dict(self.caps),
+        result = {**object_binding(self._object_spec),
+                "counts": dict(self.counts), "caps": dict(self.caps),
                 "threads_seen": sorted(self._thread_ids), "counts_before_body": True,
                 "failure": self.budget.failure, "returned": dict(self.returned),
                 "births": primitive(self.births), "events": primitive(self.events),

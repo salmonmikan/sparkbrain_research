@@ -26,12 +26,22 @@ import json
 import math
 import random
 import sys
+import types
 from pathlib import Path
 from typing import Any
 
 if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).absolute().parents[1]))
 
+from scripts.g0_execution_objects import (  # noqa: E402
+    G0_V2,
+    HISTORICAL_G0,
+    ExecutionObject,
+    bind_object_registry,
+    object_binding,
+    object_digest,
+    require_object,
+)
 from scripts.g0_joint_ownership import (  # noqa: E402
     ResourceBoundary,
     SerialOwner,
@@ -163,8 +173,10 @@ def actual_configuration(brain: Any) -> dict[str, Any]:
 def canonical_content(prototype: Any) -> tuple[Any, ...]:
     return tuple(getattr(prototype, field) for field in CANONICAL_FIELDS)
 
-def freeze_dictionary(bank: Any) -> dict[str, Any]:
+def freeze_dictionary(bank: Any, *,
+                      object_spec: ExecutionObject = HISTORICAL_G0) -> dict[str, Any]:
     """Bind every mature prototype once, preserving collisions and native-ID audit rows."""
+    object_spec = require_object(object_spec)
     rows = [
         (canonical_content(candidate.prototype), identifier)
         for identifier, candidate in bank.candidates.items()
@@ -182,7 +194,8 @@ def freeze_dictionary(bank: Any) -> dict[str, Any]:
             {
                 "binding": {
                     "projection_version": PROJECTION_VERSION,
-                    "source_pin": SOURCE_PIN,
+                    "source_pin": object_spec.runtime_origin_commit,
+                    **object_binding(object_spec),
                     "N": len(contents),
                     "canonical_prototypes": contents,
                     "dictionary_sha256": hashlib.sha256(canonical(contents).encode()).hexdigest(),
@@ -202,12 +215,14 @@ def export_native(
     observation: dict[str, Any],
     dictionary: dict[str, Any],
     similarity: Any,
+    *, object_spec: ExecutionObject = HISTORICAL_G0,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Audit native matching, then detach its actual pending activation without reweighting.
 
     The injected similarity callable is the pinned native pure function in reviewed
     execution. Tests supply plain fake objects/functions and never import that model.
     """
+    object_spec = require_object(object_spec)
     bank = brain.assemblies
     binding = json.loads(canonical(dictionary["binding"]))
     audit: dict[str, Any] = {"patterns": [], "strongest_ties": [], "withheld_reasons": []}
@@ -220,7 +235,7 @@ def export_native(
         issues.add("no_mature_dictionary")
     if dictionary["collisions"]:
         issues.add("canonical_collision")
-    if freeze_dictionary(bank) != dictionary:
+    if freeze_dictionary(bank, object_spec=object_spec) != dictionary:
         issues.add("binding_error")
     expected_activations = []
     for pattern_index, pattern in enumerate(result.patterns):
@@ -458,7 +473,16 @@ class ExecutionEngine:
     """
 
     def __init__(self, runtime: Any, registry: SourceRegistry, resources: ResourceBoundary | None,
-                 writer: Any, budget: Any, records: dict) -> None:
+                 writer: Any, budget: Any, records: dict, *,
+                 object_spec: ExecutionObject = HISTORICAL_G0) -> None:
+        self._object_spec = require_object(object_spec)
+        if object_spec is G0_V2 or hasattr(registry, "execution_object_sha256"):
+            require(getattr(registry, "execution_object_sha256", None)
+                    == object_digest(object_spec),
+                    "registry execution object differs")
+        if object_spec is G0_V2 or hasattr(writer, "_object_spec"):
+            require(getattr(writer, "_object_spec", None) is object_spec,
+                    "writer execution object differs")
         records, self.receipts = normalize_plan(records)
         self.runtime, self.registry, self.resources = runtime, registry, resources
         self.writer, self.budget, self.records = writer, budget, copy.deepcopy(records)
@@ -814,12 +838,26 @@ class ExecutionEngine:
         pending = self.pointer[0]
         teaching = self.receipts["teach"]
         before = self.preserve("fault-source")
+        fault_pointer = self.pointer
         self.clone(10, pending)
         self.expected_failure("fault-real-after-predictive", lambda: self.outcome(
             self.candidates[10].root, teaching, fault=True), RuntimeError,
             "injected after predictive revision")
         self.unchanged("fault-retained", before)
+        owner_unchanged = (self.pointer is fault_pointer
+                           and self.pointer[0] is pending
+                           and self.pointer[1] == fault_pointer[1])
+        self.write("fault-owner-boundary", {
+            "before_owner_pointer": id(fault_pointer[0]),
+            "before_owner_generation": fault_pointer[1],
+            "exact_owner_pointer_and_generation_preserved": owner_unchanged,
+            "native_rollback_equivalence": "not_tested",
+            "required_candidate_disposition": "discard_entire_candidate"})
+        require(owner_unchanged, "fault changed owner pointer or generation", InvariantError)
+        # Only the outer transaction is required here. The failed candidate's native
+        # rollback graph is not compared or certified, and is discarded in full.
         self.discard(10)
+        del fault_pointer
         reference_graph = None
         for number in (11, 12):
             before = self.preserve(f"outcome-{number}-source")
@@ -858,12 +896,14 @@ class ExecutionEngine:
             self.discard(number)
             del candidate
         require(self.counts == EXPECTED, "incomplete fixed schedule", InvariantError)
-        result = {"status": "bounded_plan_complete", "identity": IDENTITY,
+        result = {"status": "bounded_plan_complete", "identity": self._object_spec.identity,
+                  **object_binding(self._object_spec),
                   "scientific_credit": 0, "expected": EXPECTED, "actual": dict(self.counts),
                   "owner_generation": self.pointer[1], "case_count": 14,
                   "runtime_domain": self.registry.domain,
                   "efficacy": "not_tested", "acquisition_necessity": "not_tested",
-                  "learned_benefit": "not_tested", "max_continuation_observes": 2}
+                  "learned_benefit": "not_tested", "max_continuation_observes": 2,
+                  "native_rollback_equivalence": "not_tested"}
         self.write("plan-complete-before-cleanup", result)
         # Retained committed predecessors were deliberately live throughout the proof.
         self.pointer = None
@@ -922,9 +962,9 @@ class NativeRuntime:
         return min(8, root["m1"].scoped.config.maximum_dimensions,
                    root["m1"].predictive.config.max_context_scalars)
 
-    @staticmethod
-    def freeze_dictionary(root: dict) -> dict:
-        return freeze_dictionary(root["producer"].assemblies)
+    def freeze_dictionary(self, root: dict) -> dict:
+        return freeze_dictionary(root["producer"].assemblies,
+                                 object_spec=self.permit.object_spec)
 
     def process(self, root: dict, observation: dict, *, acquisition: bool) -> dict:
         pulse_type = self.modules["sparkbrain.v04.contracts"].SignalPulse
@@ -944,7 +984,8 @@ class NativeRuntime:
         if not acquisition:
             exported, audit = export_native(root["producer"], result, observation,
                                             root["dictionary"], self.modules[
-                                                "sparkbrain.v05.assemblies"].pattern_similarity)
+                                                "sparkbrain.v05.assemblies"].pattern_similarity,
+                                            object_spec=self.permit.object_spec)
             raw["export"], raw["matching"] = detach(exported), json.loads(canonical(audit))
         return {"raw": raw, "caller_pulses": callers, "caller_sensory": None}
 
@@ -1043,6 +1084,28 @@ def normalize_plan(plan: Any) -> tuple[list[dict], dict]:
     return copy.deepcopy(records), detach(receipts)
 
 
+def verify_native_module_origin(root: Path, name: str, module: Any) -> None:
+    """Pure exact-source origin check, including packages and config-only modules."""
+    from scripts.verify_g0_joint_source_contract import confined_path, source_root
+
+    root = source_root(root)
+    require(type(name) is str and (name == "sparkbrain" or name.startswith("sparkbrain.")),
+            "native module name differs")
+    require(type(module) is types.ModuleType, "native binding is not an exact module")
+    expected = root / "src" / Path(*name.split("."))
+    expected = (expected / "__init__.py" if "__path__" in vars(module)
+                else expected.with_suffix(".py"))
+    confined_path(root, expected.relative_to(root).as_posix(), "loaded native source")
+    spec = vars(module).get("__spec__")
+    require(type(spec) is importlib.machinery.ModuleSpec
+            and type(spec.loader) is importlib.machinery.SourceFileLoader
+            and vars(module).get("__name__") == name and spec.name == name
+            and vars(module).get("__loader__") is spec.loader
+            and spec.loader.name == name and spec.loader.path == str(expected)
+            and vars(module).get("__file__") == str(expected) and spec.origin == str(expected),
+            "native source origin mismatch")
+
+
 def load_real_runtime(permit: Any, *, admission: Any = None,
                       budget: Any = None) -> tuple[NativeRuntime, SourceRegistry, dict]:
     """The sole dormant native import boundary. No self-issued execution authority."""
@@ -1056,12 +1119,13 @@ def load_real_runtime(permit: Any, *, admission: Any = None,
     require(sys.dont_write_bytecode, "native execution requires -B")
     # An empty per-attempt cache prefix prevents loading stale .pyc, even under -B.
     from scripts.g0_execution_support import read_json
-    from scripts.verify_g0_joint_source_contract import CONTRACT, confined_path, source_root
+    from scripts.verify_g0_joint_source_contract import confined_path, source_root
     require(sys.pycache_prefix is not None, "dedicated bytecode cache prefix required")
     cache = source_root(Path(sys.pycache_prefix))
     require(not any(cache.iterdir()), "dedicated empty bytecode cache prefix required")
-    contract = read_json(confined_path(root, CONTRACT, "source contract"))
-    protocol = read_json(confined_path(root, ARTIFACT_ROOT + "/protocol.json", "protocol"))
+    object_spec = permit.object_spec
+    contract = read_json(confined_path(root, object_spec.contract_relative, "source contract"))
+    protocol = read_json(confined_path(root, object_spec.protocol_relative, "protocol"))
     modules = {}
     classes = [random.Random]
     sys.path.insert(0, str(root / "src"))
@@ -1079,19 +1143,11 @@ def load_real_runtime(permit: Any, *, admission: Any = None,
     for name, module in tuple(sys.modules.items()):
         budget.check()
         if name == "sparkbrain" or name.startswith("sparkbrain."):
-            require(type(module.__loader__) is importlib.machinery.SourceFileLoader,
-                    "native module loader differs from reviewed source loader")
-            path = Path(module.__file__)
-            confined_path(root, path.relative_to(root).as_posix(), "loaded native source")
-            expected = root / "src" / Path(*name.split("."))
-            expected = (expected / "__init__.py" if hasattr(module, "__path__")
-                        else expected.with_suffix(".py"))
-            require(path == expected and Path(module.__spec__.origin) == expected,
-                    "native source origin mismatch")
+            verify_native_module_origin(root, name, module)
     # Deliberately retain the independent post-import source/class audit. Its
     # scan is profiled cheaply and finite event checks protect no-output work.
     budget.check()
-    registry = SourceRegistry.from_verified_source(root, tuple(classes))
+    registry = bind_object_registry(root, tuple(classes), object_spec)
     budget.check()
     advance_runtime_admission(permit, admission, budget, "loaded")
     runtime = NativeRuntime(permit, modules, protocol["producer_configuration"],
@@ -1134,11 +1190,13 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
 
     budget = ResourceBudget()
     require_execution_permit(permit, checkpoint=budget.check)
+    object_spec = permit.object_spec
     root = permit.root
     output = source_root(output.parent) / output.name
     require(output == permit.output_directory, "output differs from independently approved target")
     consume_execution_permit(permit, output, budget=budget)
-    writer = ExclusiveEvidenceWriter(output, IDENTITY, budget)
+    writer = ExclusiveEvidenceWriter(output, object_spec.identity, budget,
+                                     object_spec=object_spec)
     monitor = None
     engine = None
     result = None
@@ -1149,7 +1207,8 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
         budget.bind_timeout_parent(launch)
         writer.raw_json("launch-environment.json", {
             "hard_timeout": launch, "environment": permit.freeze["environment"],
-            "identity": IDENTITY, "scope": "NON_EVIDENTIARY_ENGINEERING_ONLY",
+            "identity": object_spec.identity, **object_binding(object_spec),
+            "scope": "NON_EVIDENTIARY_ENGINEERING_ONLY",
             "max_continuation_observes": 2, "scientific_credit": 0})
         freeze_path = confined_path(root, permit.freeze_path.relative_to(root).as_posix(), "freeze")
         approval_path = confined_path(root, permit.approval_path.relative_to(root).as_posix(),
@@ -1167,12 +1226,12 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
             writer.raw_bytes(name, raw)
             source_copies.append({"source": relative, "copy": name, "sha256": digest})
         writer.raw_json("source-copy-index.json", source_copies)
-        protocol_path = confined_path(root, ARTIFACT_ROOT + "/protocol.json", "protocol")
-        input_path = confined_path(root, ARTIFACT_ROOT + "/inputs.json", "literal inputs")
+        protocol_path = confined_path(root, object_spec.protocol_relative, "protocol")
+        input_path = confined_path(root, object_spec.inputs_relative, "literal inputs")
         protocol = read_json(protocol_path)
         plan = read_json(input_path)
         normalize_plan(plan)
-        require(protocol["identity"] == IDENTITY, "protocol identity")
+        require(protocol["identity"] == object_spec.identity, "protocol identity")
         require(protocol["call_caps"] == protocol_call_caps(), "protocol/passive call-cap mismatch")
         writer.raw_bytes("literal-inputs.json", input_path.read_bytes())
         writer.raw_json("configuration.json", {"producer": protocol["producer_configuration"],
@@ -1182,7 +1241,8 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
         sys.pycache_prefix = str(cache)
         budget.check()
         with runtime_admission(permit, budget) as admission, \
-                PassiveCallMonitor(root, CALL_CAPS, budget, writer) as monitor:
+                PassiveCallMonitor(root, CALL_CAPS, budget, writer,
+                                   object_spec=object_spec) as monitor:
             runtime, registry, modules = load_real_runtime(
                 permit, admission=admission, budget=budget)
             writer.raw_json("mapped-libraries-after-import.json",
@@ -1193,7 +1253,8 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
             with SerialOwner() as owner:
                 def construct_engine() -> ExecutionEngine:
                     boundary = native_resource_boundary(owner, modules)
-                    return ExecutionEngine(runtime, registry, boundary, writer, budget, plan)
+                    return ExecutionEngine(runtime, registry, boundary, writer, budget, plan,
+                                           object_spec=object_spec)
                 monitor.check()
                 engine = owner.call(construct_engine)
                 monitor.check()
@@ -1210,7 +1271,7 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
                     raise
             actual = monitor.snapshot()
             writer.raw_json("actual-calls-and-resources.json", actual)
-            lifecycle = validate_completed_lifecycle(actual)
+            lifecycle = validate_completed_lifecycle(actual, object_spec=object_spec)
             writer.raw_json("completed-lifecycle-validation.json", lifecycle)
         # Recheck the full dependency environment only after hooks are removed.
         # This detects final integrity drift; it is not continuous protection
@@ -1244,6 +1305,7 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
             else engine.pointer[1], "no_retry_or_resume": True,
             "failure_cleanup": abort_cleanup})
     terminal = {"result": result if failure is None else None, "failure": failure,
+                "identity": object_spec.identity, **object_binding(object_spec),
                 "scientific_credit": 0, "no_retry_or_resume": True,
                 "complete_evidence_required": True}
     # Any failure here propagates: retained STARTED/partial files are not a success.

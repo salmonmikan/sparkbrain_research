@@ -614,3 +614,23 @@ reconciliation, a new prospective exact-source freeze and separate execution
 clearance remain required before any future experiment. No new identity or
 execution freeze was created by this preparation; existing scientific/build
 statuses and scheduler authority are unchanged.
+
+## Independent short G0 v2 source-only proposal (2026-10-02)
+
+A separately bound **UNAPPROVED** successor, `assembly-m1-g0-v2-20261002`, is being
+prepared for the unchanged bounded joint ownership question. It deliberately combines
+PR192's pointer/fail-dispose guard, the current codec registry and PR194's admission/cache
+remediation. The historical verifier and shared ownership adapter remain byte-identical;
+PR191's consumer-pilot contract and its blocked execution state are not replaced.
+
+The proposal keeps the same 14 cases, exposed literal bytes, configuration and inclusive
+resource limits. V1 remains consumed with unknown actual model activity; there is no
+unused-budget rebate, replay authority, fresh statistical replicate or efficacy claim.
+Source-only tests and an independent exact-source review support preparation only.
+
+The [proposal and learning boundaries](research/assembly_m1_g0_v2_proposal_20261002.md)
+and [prospective freeze](../artifacts/research/assembly_m1_g0_v2_20261002/freeze.json)
+require published-head review/CI, independent full-tree/no-extra-importable pre-start
+proof and separately pinned per-object execution approval before any native work.
+No genuine approval, prelaunch proof, execution ledger or reservation is created by
+this preparation. Scientific credit remains 0 and scheduler authority is unchanged.
