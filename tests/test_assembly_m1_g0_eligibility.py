@@ -23,9 +23,9 @@ def contract():
     return json.loads((ROOT / AUDITOR.PROTOCOL).read_text())
 
 
-def test_success_is_source_binding_not_g0_pass():
+def test_success_is_source_binding_not_g0_pass(historical_sources):
     before = {name for name in sys.modules if name.startswith("sparkbrain")}
-    result = AUDITOR.verify(ROOT)
+    result = AUDITOR.verify(historical_sources)
     assert result["source_binding_verified"] is True
     assert result["g0_status"] == "BLOCKED_SOURCE_CONTRACT_GAP"
     assert result["runtime_execution_authorized"] is False
@@ -40,51 +40,51 @@ def test_success_is_source_binding_not_g0_pass():
     ("runtime_execution_authorized", True), ("runtime_execution_authorized", 0),
     ("blockers", {}),
 ])
-def test_rejects_boundary_upgrade(key, value):
+def test_rejects_boundary_upgrade(key, value, historical_sources):
     data = contract()
     data[key] = value
     with pytest.raises(ValueError):
-        AUDITOR.verify(ROOT, data)
+        AUDITOR.verify(historical_sources, data)
 
 
 @pytest.mark.parametrize("path", sorted(contract()["files"]))
-def test_rejects_source_digest_drift(path):
+def test_rejects_source_digest_drift(path, historical_sources):
     data = contract()
     data["files"][path] = "0" * 64
     with pytest.raises(ValueError, match="source drift"):
-        AUDITOR.verify(ROOT, data)
+        AUDITOR.verify(historical_sources, data)
 
 
 @pytest.mark.parametrize("key,value", [
     ("symbol", "Missing.method"), ("required_tokens", ["NEVER_PRESENT_TOKEN"]),
     ("path", "src/absent.py"),
 ])
-def test_rejects_source_fact_drift(key, value):
+def test_rejects_source_fact_drift(key, value, historical_sources):
     data = contract()
     data["facts"][0][key] = value
     with pytest.raises(ValueError):
-        AUDITOR.verify(ROOT, data)
+        AUDITOR.verify(historical_sources, data)
 
 
-def test_rejects_duplicate_and_missing_facts():
+def test_rejects_duplicate_and_missing_facts(historical_sources):
     for facts in ([], [contract()["facts"][0]] * 2):
         data = contract()
         data["facts"] = facts
         with pytest.raises(ValueError):
-            AUDITOR.verify(ROOT, data)
+            AUDITOR.verify(historical_sources, data)
 
 
-def test_rejects_paths_outside_checkout():
+def test_rejects_paths_outside_checkout(historical_sources):
     data = contract()
     data["files"]["../outside.py"] = "0" * 64
     with pytest.raises(ValueError, match="escapes checkout"):
-        AUDITOR.verify(ROOT, data)
+        AUDITOR.verify(historical_sources, data)
 
 
-def test_contract_is_not_mutated():
+def test_contract_is_not_mutated(historical_sources):
     data = contract()
     original = copy.deepcopy(data)
-    AUDITOR.verify(ROOT, data)
+    AUDITOR.verify(historical_sources, data)
     assert data == original
 
 
@@ -94,7 +94,7 @@ def test_symbol_resolution_rejects_ambiguity():
         AUDITOR.resolve_symbol(tree, "a")
 
 
-def test_cli_with_import_guard():
+def test_cli_with_import_guard(historical_sources):
     # Install the guard before importing the audit script, not after a model could run.
     program = '''
 import importlib.abc, runpy, sys
@@ -103,24 +103,24 @@ class DenySparkBrain(importlib.abc.MetaPathFinder):
         if fullname == "sparkbrain" or fullname.startswith("sparkbrain."):
             raise RuntimeError("SparkBrain import forbidden in source-only audit")
 sys.meta_path.insert(0, DenySparkBrain())
-sys.argv = [sys.argv[1]]
+sys.argv = [sys.argv[1], "--root", sys.argv[2]]
 runpy.run_path(sys.argv[0], run_name="__main__")
 assert not any(n == "sparkbrain" or n.startswith("sparkbrain.") for n in sys.modules)
 '''
     result = subprocess.run(
-        [sys.executable, "-B", "-c", program, str(SCRIPT)],
+        [sys.executable, "-B", "-c", program, str(SCRIPT), str(historical_sources)],
         check=True, capture_output=True, text=True,
     )
     report = json.loads(result.stdout)
     assert report["g0_status"] == "BLOCKED_SOURCE_CONTRACT_GAP"
     assert report["real_dynamics_calls_by_this_auditor"] == 0
     formatted = (json.dumps(report, indent=2, sort_keys=True) + "\n").encode()
-    artifact = ROOT / "artifacts/research/assembly_m1_g0_20261002/source_audit.json"
+    artifact = historical_sources / "artifacts/research/assembly_m1_g0_20261002/source_audit.json"
     assert formatted == artifact.read_bytes()
 
 
 @pytest.mark.parametrize("mutation", ["commit", "cases", "subset", "empty_tokens", "metadata"])
-def test_rejects_reduced_or_relabelled_contract(mutation):
+def test_rejects_reduced_or_relabelled_contract(mutation, historical_sources):
     data = contract()
     if mutation == "commit":
         data["source_commit"] = "0" * 40
@@ -133,12 +133,12 @@ def test_rejects_reduced_or_relabelled_contract(mutation):
     else:
         data["facts"][0]["interpretation"] = "G0 passed"
     with pytest.raises(ValueError, match="complete pinned inventory"):
-        AUDITOR.verify(ROOT, data)
+        AUDITOR.verify(historical_sources, data)
 
 
 @pytest.mark.parametrize("mutation", ["authorization", "facts", "nested", "identical"])
-def test_rejects_duplicate_json_keys_before_source_access(tmp_path, mutation):
-    raw = (ROOT / AUDITOR.PROTOCOL).read_text()
+def test_rejects_duplicate_json_keys_before_source_access(tmp_path, mutation, historical_sources):
+    raw = (historical_sources / AUDITOR.PROTOCOL).read_text()
     if mutation == "authorization":
         raw = '{"runtime_execution_authorized":true,' + raw[1:]
     elif mutation == "facts":
@@ -162,3 +162,8 @@ def test_rejects_nonfinite_json_before_hashing(tmp_path, literal):
     path.write_text('{"unknown":' + literal + '}')
     with pytest.raises(ValueError, match="nonfinite JSON"):
         AUDITOR.verify(tmp_path)
+
+
+def test_current_runtime_is_not_silently_accepted_as_historical_source():
+    with pytest.raises(ValueError, match="source drift: src/sparkbrain/v032/checkpoint.py"):
+        AUDITOR.verify(ROOT)

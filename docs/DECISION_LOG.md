@@ -1317,3 +1317,23 @@ Adopt Integrated Prototype Milestone 1 as the current primary SYSTEM_BUILD objec
 Allow Fast Forge and Utility to prepare non-colliding next-step integration primitives/tooling in parallel. Treat the fly-inspired sensorimotor direction initially as a bounded NON_EVIDENTIARY `FLY-0` Forge track comparing structured fly-like, degree-preserving rewired, and random sparse topologies under a matched-as-feasible resource envelope. Do not allocate SB003, claim biological equivalence, mix this work into A01/RV02/H9/C07, or grant scientific credit without later Evidence Analyst allocation and a fresh prospective scientific contract.
 
 **Reason:** The prior scheduler prompts duplicated time-varying directives and allowed a real active-index omission, while fine-grained handoffs were adding avoidable integration latency. Moving dynamic authority back to the active directive stream/main role policy and using bounded rolling engineering contracts reduces stale-policy risk and total integration latency without weakening one-way scientific integrity or turning BUILD/Forge observations into evidence.
+
+## D-CODEC-20261002-0001 — Register retained observer concept values
+
+**Decision (2026-10-02):** Add only the existing `_MutableConcept` dataclass to
+the trusted-local direct-checkpoint exact registry. Keep schema version 1,
+field-name/node validation, tree/alias behavior and historical evidence intact.
+Synthetic fixture-only codec tests establish the narrow software compatibility
+repair, not live long-continuation or efficacy evidence. Older readers reject
+newly supported class payloads. Future research must explicitly pin the changed
+source and dependency manifest rather than silently update an existing freeze.
+
+**Reason:** A retained observer value is reachable from the supported default
+runtime but was absent from its checkpoint registry. A precise allowlist addition
+repairs that omission without broadening arbitrary-class loading or making new
+claims about field semantics, graph topology or scientific support.
+
+Historical source-guard positive tests use hash-verified preserved source bytes
+in isolated temporary roots. Frozen validators and manifests remain unchanged and
+must reject the changed current runtime. This separates software test portability
+from prospective research source eligibility; it never updates an old freeze.

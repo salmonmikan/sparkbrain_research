@@ -587,6 +587,12 @@ file/depth/node counts, an envelope digest, restored state-hash validation, and 
 file publication. This is a trusted-local persistence contract, not a hostile-input loader or an
 authenticity signature. Unsupported learned-runtime object graphs fail closed.
 
+The registry includes the observer's retained `_MutableConcept` dataclass. This
+adds reader support without changing direct-checkpoint schema version 1; older
+readers reject payloads containing that class. The codec preserves values, not
+shared-reference topology, and does not validate all dataclass annotation types.
+See the [compatibility regression and limits](research/mutable_concept_checkpoint_compatibility_20261002.md).
+
 `sparkbrain.release_atomic.atomic_publish_directory_noreplace` dispatches to native no-replace
 rename primitives on Linux, macOS, and Windows. Candidate release groups are fully staged and
 validated before that single publication operation. Post-publication validation failure raises
