@@ -1,0 +1,62 @@
+{
+  "checks": {
+    "broader_model_free_tests_total": 187,
+    "broader_test_exit": 0,
+    "independent_new_tests_under_sparkbrain_import_blocker": 91,
+    "independent_review": "No remaining blocking mechanics finding in declared serial trusted-source domain",
+    "independent_runtime_modules_loaded": 0,
+    "new_adapter_tests": 56,
+    "new_source_audit_tests": 35,
+    "new_test_exit": 0,
+    "repository_ruff_exit": 0
+  },
+  "classification": "SOURCE_ONLY_NONCANONICAL_NON_EVIDENTIARY",
+  "codex_review_repair": "Findings4162884272 and4162917485: shared confinement guard for every validator and binder read, source roots/ancestors, manifest, reuse, inventory and loaded class/module paths; checked traversal; missing/special/unknown/reparse layouts reject. Final-head external review/CI remain separate.",
+  "files_sha256": {
+    "artifacts/research/g0_joint_ownership_preparation_20261002/source_contract.json": "281e71fd1bbc11d9d705e6a02524f4071d39573ce0bc36b040da1de40a04e7c8",
+    "docs/research/g0_joint_ownership_preparation_20261002.md": "35f88305c946941e32ce0a61dd3ca6ee61d725f6bbe482c69a5f41ebcdc6ab47",
+    "scripts/g0_joint_ownership.py": "70a607b29773c4318fc43b1206da7afffc3d7c5fc76470889e3c24835db93ecf",
+    "scripts/verify_g0_joint_source_contract.py": "2411f267a76b6932eb2ab1156901dbbb7601ecd63c2e832b899d313b8794f53c",
+    "tests/test_g0_joint_ownership.py": "3e0901da9e5e4a001bcb015ba27864fb56334bb248c5eabbd88d28b7343694e8",
+    "tests/test_g0_joint_source_contract.py": "cacc5ddd1f53f48e6e777c37cbe26806f49fbddb6313e7935ed321cb4abd7451"
+  },
+  "local_interpreter": "CPython 3.12.14 Linux x86_64",
+  "path_read_review": {
+    "concurrent_mutation_protection_claimed": false,
+    "guarded_reads": [
+      "contract first read and reread",
+      "runtime Python/schema inventories",
+      "reuse source",
+      "selected class sources",
+      "loaded class/module source binding"
+    ],
+    "output_file_reads": 0,
+    "public_entries": [
+      "verify",
+      "SourceRegistry.from_verified_source"
+    ],
+    "windows_metadata_tests": "synthetic only"
+  },
+  "real_g0_executed": false,
+  "reuse_source_files_verified": 1,
+  "review_limits": [
+    "No real M1 or v05 construction or observations",
+    "Native-checkpoint alias topology is not used as the clone oracle",
+    "Source/path/class binding assumes trusted fresh imports; not arbitrary in-memory bytecode attestation",
+    "Exact-head external Codex review and CI remain separate publication gates"
+  ],
+  "runtime_execution_authorized": false,
+  "runtime_python_files_verified": 157,
+  "runtime_schema_files_verified": 15,
+  "schema": "g0-joint-source-preparation-validation-1",
+  "scientific_credit": 0,
+  "source_class_witnesses": 101,
+  "source_closure_amendment": "Before any real G0 execution, add complete runtime Python/schema inventory and prior-auditor binding; class inventory remains28selected files/101witnesses. Initial unexecuted preparation preserved in Git history.",
+  "source_files_verified": 28,
+  "unchanged": [
+    "production runtime source",
+    "consumed identities and retained scientific evidence",
+    "scheduler/control state",
+    "shared claim/status/results ledgers"
+  ]
+}
