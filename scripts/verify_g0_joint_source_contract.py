@@ -10,7 +10,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT = "artifacts/research/g0_joint_ownership_preparation_20261002/source_contract.json"
-CONTRACT_SHA256 = "70fd40a457ee633399cf08bbcecf3f50a47e781faed7f56fe292cbe80b67949c"
+CONTRACT_SHA256 = "281e71fd1bbc11d9d705e6a02524f4071d39573ce0bc36b040da1de40a04e7c8"
 COPY_HOOKS = {
     "__copy__", "__deepcopy__", "__reduce__", "__reduce_ex__",
     "__getstate__", "__setstate__", "__del__",
@@ -64,6 +64,27 @@ def verify(root: Path = ROOT) -> dict[str, Any]:
     contract = json.loads(raw)
     if contract["runtime_execution_authorized"] is not False or contract["scientific_credit"] != 0:
         raise ValueError("source-only boundary changed")
+    for key, directory, pattern in (
+        ("runtime_sources_sha256", "src/sparkbrain", "*.py"),
+        ("runtime_schema_sha256", "schemas", "*.json"),
+    ):
+        actual = {}
+        if any(item.is_symlink() for item in (root / directory).rglob("*")):
+            raise ValueError("runtime dependency symlink is unsupported")
+        for item in sorted((root / directory).rglob(pattern)):
+            resolved = item.resolve(strict=True)
+            if not resolved.is_relative_to(root):
+                raise ValueError("runtime dependency escapes root")
+            digest = hashlib.sha256(item.read_bytes()).hexdigest()
+            actual[item.relative_to(root).as_posix()] = digest
+        if actual != contract[key]:
+            raise ValueError(f"complete runtime dependency inventory mismatch: {key}")
+    for path, expected in contract["reuse_sources_sha256"].items():
+        source = (root / path).resolve(strict=True)
+        if not source.is_relative_to(root):
+            raise ValueError("reuse source escapes root")
+        if hashlib.sha256(source.read_bytes()).hexdigest() != expected:
+            raise ValueError("reuse source digest mismatch")
     count = 0
     for path, record in contract["files"].items():
         source = (root / path).resolve(strict=True)
@@ -88,6 +109,9 @@ def verify(root: Path = ROOT) -> dict[str, Any]:
         "source_commit": contract["source_commit"],
         "source_files": len(contract["files"]),
         "class_witnesses": count,
+        "runtime_python_files": len(contract["runtime_sources_sha256"]),
+        "runtime_schema_files": len(contract["runtime_schema_sha256"]),
+        "reuse_source_files": len(contract["reuse_sources_sha256"]),
         "runtime_execution_authorized": False,
         "scientific_credit": 0,
         "limits": "AST witnesses bind selected source bytes; they do not prove live graph coverage",

@@ -12,13 +12,17 @@ No producer or M1 is imported, constructed, advanced, restored, or replayed by p
 ## Source scope and limits
 
 The [source contract](../../artifacts/research/g0_joint_ownership_preparation_20261002/source_contract.json)
-pins 28 files and 101 selected class declarations at main
+pins 28 class-bearing files and 101 selected class declarations at main
 `a6aa0addfcd8f73b72a796ebd8c5625a0a2347dd` (tree
-`ae2823ae487d9e22c1a21c46e5a2457ab5c6921a`). Its separate AST auditor parses source
-bytes without importing them. It distinguishes dictionary-backed and slot-backed fields
+`ae2823ae487d9e22c1a21c46e5a2457ab5c6921a`). A separate complete inventory also pins all 157 runtime Python files and 15 schema JSON
+files, including the constructor/checkpoint/save/load dependency chain. Added, missing or
+changed dependency files fail closed. Its AST auditor parses source bytes without importing them. It distinguishes dictionary-backed and slot-backed fields
 and excludes handwritten copy/reducer/finalizer hooks. AST field witnesses are a proposed
 allowlist, not proof that a future live graph is fully covered. Any unsupported live field
 or type must stop before candidate dynamics, with no whitelist relaxation within that run.
+The separately pinned prior acquired-ownership auditor supplies attributed graph-audit
+design provenance; it is not imported or invoked by the new adapter. Its original runtime
+results and limitations are unchanged.
 
 Only default I1/E0, no supplied revision model, is proposed. Torch/I3, arbitrary mappings,
 arbitrary subclasses and concurrent access are outside scope. Source-only test fixtures
@@ -166,7 +170,7 @@ G0 producer/M1 activity. Passing ordinary CI cannot be counted as a real G0 exec
 
 ### Local preparation checks
 
-The adapter suite has 56 model-free cases and the static source auditor has nine. The
+The adapter suite has 56 model-free cases and the static source auditor has 14. The
 broader relevant set also includes 18 existing acquired-ownership helper cases and 78
 existing history-export helper/evidence cases. They use stand-ins or already retained
 primitive evidence, not fresh producer/M1 activity. Exact final pass/fail evidence and

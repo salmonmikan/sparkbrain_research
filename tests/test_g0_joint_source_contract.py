@@ -23,7 +23,8 @@ SPEC.loader.exec_module(AUDIT)
 @pytest.fixture
 def copied_sources(tmp_path):
     contract = json.loads((ROOT / AUDIT.CONTRACT).read_text())
-    for path in [AUDIT.CONTRACT, *contract["files"]]:
+    for path in [AUDIT.CONTRACT, *contract["runtime_sources_sha256"],
+                 *contract["runtime_schema_sha256"], *contract["reuse_sources_sha256"]]:
         target = tmp_path / path
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / path, target)
@@ -34,6 +35,9 @@ def test_exact_static_source_inventory():
     result = AUDIT.verify()
     assert result["source_files"] == 28
     assert result["class_witnesses"] == 101
+    assert result["runtime_python_files"] == 157
+    assert result["runtime_schema_files"] > 0
+    assert result["reuse_source_files"] == 1
     assert result["runtime_execution_authorized"] is False
     assert result["scientific_credit"] == 0
 
@@ -58,7 +62,7 @@ def test_contract_cannot_be_reduced_or_promoted(copied_sources, change):
 def test_source_drift_rejected(copied_sources):
     path = copied_sources / "src/sparkbrain/v032/runtime.py"
     path.write_text(path.read_text() + "\n# altered\n")
-    with pytest.raises(ValueError, match="source digest"):
+    with pytest.raises(ValueError, match="runtime dependency inventory"):
         AUDIT.verify(copied_sources)
 
 
@@ -68,7 +72,35 @@ def test_source_symlink_escape_rejected(copied_sources, tmp_path_factory):
     shutil.copyfile(path, external)
     path.unlink()
     path.symlink_to(external)
-    with pytest.raises(ValueError, match="source escapes"):
+    with pytest.raises(ValueError, match="runtime dependency symlink"):
+        AUDIT.verify(copied_sources)
+
+
+def test_runtime_directory_symlink_cannot_hide_uninventoried_python(
+    copied_sources, tmp_path_factory
+):
+    external = tmp_path_factory.mktemp("hidden_module")
+    (external / "__init__.py").write_text("# hidden Python source\n")
+    (copied_sources / "src/sparkbrain/hidden").symlink_to(external, target_is_directory=True)
+    with pytest.raises(ValueError, match="runtime dependency symlink"):
+        AUDIT.verify(copied_sources)
+
+
+@pytest.mark.parametrize(
+    "change", ["helper_drift", "schema_drift", "extra_source", "missing_source"]
+)
+def test_full_dependency_closure_not_only_selected_class_sources(copied_sources, change):
+    if change == "helper_drift":
+        path = copied_sources / "src/sparkbrain/v032/checkpoint.py"
+        path.write_text(path.read_text() + "\n# altered non-class helper\n")
+    elif change == "schema_drift":
+        path = next((copied_sources / "schemas").glob("*.json"))
+        path.write_text(path.read_text() + "\n")
+    elif change == "extra_source":
+        (copied_sources / "src/sparkbrain/unreviewed.py").write_text("# unexpected source\n")
+    else:
+        (copied_sources / "src/sparkbrain/v032/checkpoint.py").unlink()
+    with pytest.raises(ValueError, match="runtime dependency inventory"):
         AUDIT.verify(copied_sources)
 
 
