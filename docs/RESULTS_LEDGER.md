@@ -1332,3 +1332,19 @@ mutation records. This entry changes no prior result, claim grade or role-owned 
   identity to a writable cloud root. Existing v3/v4 freezes remain intact; no
   scientific settings or allocation change and no new result is claimed. See
   [v5 preparation](research/plasticity_retention_v5_path_refresh_20261002.md).
+
+
+## 2026-10-02 — Retention v5 negative bounded result
+
+- One approved execution completed 26 branches and all 768 pairs; independent
+  data-only audit validates completion with zero runtime model calls during audit.
+- Both fixtures fail the required G-minus-L return Brier margin (exact tie).
+  Fixture 910076 also fails stationary Brier preservation: L-minus-C
+  0.0980104657979732 exceeds 0.02. All other predefined gate conditions pass.
+- L matches G/Fw on every return prediction; L matches Fw on every novel
+  prediction despite positive weight writes. No locality-specific or weight-learning
+  advantage follows. Exposed-prefix, fixed-delay exploratory scope only; credit 0.
+- [Results and all registered comparisons](research/plasticity_retention_results_20261002.md),
+  [full preservation transport](../artifacts/research/plasticity_retention_results_20261002/transport_manifest.json),
+  [independent data-only audit](../artifacts/research/plasticity_retention_results_20261002/independent_audit.json).
+  Original failed v3 and unexecuted v4 history remain preserved. No retry.

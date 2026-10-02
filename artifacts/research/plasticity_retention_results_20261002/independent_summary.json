@@ -1,0 +1,2277 @@
+{
+  "schema": "retention-v5-data-only-independent-summary-v1",
+  "verdict": {
+    "valid_completion": true,
+    "bounded_gate": false,
+    "scientific_credit": 0,
+    "interpretation": "Exploratory conditional fixed-delay exposed-prefix result; the predefined support gate fails. No general superiority, unique locality mediation, or scientific promotion follows."
+  },
+  "audit": {
+    "attempt_id": "plasticity-retention-v5-20261002",
+    "authority_record_sha256": {
+      "approval": "7af778f61a311ad3ef405c64e267d2d4a99c997edf8524218276b5bc29347b3b",
+      "publication": "49b7b54c1151366dbf992bd4b52f4357d731ac1227540a15e251a8b8845d8a6c",
+      "review": "3a6c848a0d91bbccd9af96453a1b440ae1e463b247e8d387eb218c09d3899789"
+    },
+    "calls": {
+      "apply": 512,
+      "native_load": 18,
+      "outcome": 768,
+      "predict": 768,
+      "v05_episode": 512,
+      "v05_init": 36,
+      "v05_outcome": 512,
+      "wrapper_init": 26,
+      "wrapper_load": 26
+    },
+    "combined_model_allocation_ceiling": 768,
+    "manifest_sha256": "272ed83bd0a520d8fc80a6e54b6145eaae76333f8866cba0d780bae76746a0b9",
+    "ordinary_memory_rows_reconstructed": 256,
+    "pairs": 768,
+    "prior_attempt_audited_model_pairs": 0,
+    "runtime_model_method_calls_during_audit": 0,
+    "scope": "data/source integrity audit; not rerun fidelity or scientific promotion; retained authority statements require independent authenticity verification",
+    "source_commit": "81088ae386cbc611fb9e6366d8ade1c2ea74b6b7",
+    "v05_apply_rows_recomputed": 512,
+    "valid_completion": true
+  },
+  "terminal": {
+    "aggregate_cpu_seconds": 162.08520759099997,
+    "attempt_id": "plasticity-retention-v5-20261002",
+    "bounded_gate": false,
+    "driver_peak_rss_kib": 41440,
+    "job_costs": [
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.05646927899999998,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-return-C",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 9.423369220006862,
+        "worker_cpu_seconds": 9.417928999999999,
+        "worker_peak_rss_kib": 51248
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.05602917799999996,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-return-L",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 9.390087322011823,
+        "worker_cpu_seconds": 9.380257,
+        "worker_peak_rss_kib": 50788
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.048793596999999966,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-return-G",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 9.250498282999615,
+        "worker_cpu_seconds": 9.24501,
+        "worker_peak_rss_kib": 50788
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.044958657999999985,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-return-Fw",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 9.073927824996645,
+        "worker_cpu_seconds": 9.069697,
+        "worker_peak_rss_kib": 50788
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.008426947000000018,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-return-H",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 0.6459107720002066,
+        "worker_cpu_seconds": 0.64164,
+        "worker_peak_rss_kib": 28376
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.007231957999999983,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-return-R",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 0.5629182199918432,
+        "worker_cpu_seconds": 0.558713,
+        "worker_peak_rss_kib": 27348
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.027087740000000027,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-stationary-C",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 4.456033821988967,
+        "worker_cpu_seconds": 4.451258,
+        "worker_peak_rss_kib": 50372
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.02281042199999994,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-stationary-L",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 4.390945831997669,
+        "worker_cpu_seconds": 4.386006,
+        "worker_peak_rss_kib": 50476
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.05039058699999999,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-novel-C",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 9.438546574994689,
+        "worker_cpu_seconds": 9.431083,
+        "worker_peak_rss_kib": 52012
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.050012475000000056,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-novel-L",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 9.301714557004743,
+        "worker_cpu_seconds": 9.294521,
+        "worker_peak_rss_kib": 51592
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.06997708400000002,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-novel-Fw",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 10.22914718600805,
+        "worker_cpu_seconds": 10.222512,
+        "worker_peak_rss_kib": 50876
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.009424114999999844,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-novel-H",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 0.7591089039924555,
+        "worker_cpu_seconds": 0.7534259999999999,
+        "worker_peak_rss_kib": 28508
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.00999433400000016,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910075-novel-R",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 0.7434641279978678,
+        "worker_cpu_seconds": 0.7379929999999999,
+        "worker_peak_rss_kib": 27484
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.052377180999999995,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-return-C",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 9.886830468007247,
+        "worker_cpu_seconds": 9.879681,
+        "worker_peak_rss_kib": 51276
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.04960371600000002,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-return-L",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 9.571229086999665,
+        "worker_cpu_seconds": 9.563614000000001,
+        "worker_peak_rss_kib": 50732
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.05203877300000004,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-return-G",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 9.7711641430069,
+        "worker_cpu_seconds": 9.763944,
+        "worker_peak_rss_kib": 50736
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.053654649999999915,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-return-Fw",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 9.466368359993794,
+        "worker_cpu_seconds": 9.459264999999998,
+        "worker_peak_rss_kib": 50736
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.00948462300000008,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-return-H",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 0.8367963790078647,
+        "worker_cpu_seconds": 0.829796,
+        "worker_peak_rss_kib": 28376
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.011314154000000132,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-return-R",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 0.7546631089935545,
+        "worker_cpu_seconds": 0.7470979999999999,
+        "worker_peak_rss_kib": 27344
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.028516705000000142,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-stationary-C",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 4.715808220003964,
+        "worker_cpu_seconds": 4.706977999999999,
+        "worker_peak_rss_kib": 50552
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.03803584000000004,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-stationary-L",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 4.682412902009673,
+        "worker_cpu_seconds": 4.667482,
+        "worker_peak_rss_kib": 50552
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.058181024999999886,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-novel-C",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 10.121483733993955,
+        "worker_cpu_seconds": 10.107258,
+        "worker_peak_rss_kib": 52060
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.05468023600000005,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-novel-L",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 10.046527024998795,
+        "worker_cpu_seconds": 10.037636999999998,
+        "worker_peak_rss_kib": 51544
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.074587489,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-novel-Fw",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 10.443745867989492,
+        "worker_cpu_seconds": 10.422991,
+        "worker_peak_rss_kib": 50828
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.014406924999999848,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-novel-H",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 1.0636433940089773,
+        "worker_cpu_seconds": 1.0523259999999999,
+        "worker_peak_rss_kib": 28508
+      },
+      {
+        "capture_consumed_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "capture_retained_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "driver_cpu_seconds": 0.017051254999999932,
+        "driver_peak_rss_kib": 33252,
+        "exit_code": 0,
+        "failure": null,
+        "job_id": "910076-novel-R",
+        "known_discarded_bytes": {
+          "stderr": 0,
+          "stdout": 0
+        },
+        "terminal_cost_reserve_seconds": 0.1,
+        "timed_out": false,
+        "unread_pipe_bytes": 0,
+        "wall_seconds_before_cost": 0.940425316002802,
+        "worker_cpu_seconds": 0.929419,
+        "worker_peak_rss_kib": 27480
+      }
+    ],
+    "jobs_completed": 26,
+    "measurement_failed": false,
+    "ordinary_plus_reserved_bytes_before_terminal": 60146630,
+    "pairs_completed": 768,
+    "prior_attempt_audited_model_pairs": 0,
+    "quota_kind": "projected write admission; not instantaneous filesystem quota",
+    "reserved_pairs": 768,
+    "schema": "retention-run-1",
+    "scientific_credit": 0,
+    "status": "complete",
+    "terminal_closure_reserve": {
+      "cpu_seconds": 2,
+      "wall_seconds": 5
+    },
+    "wall_seconds": 161.2533364950068
+  },
+  "source_freeze": {
+    "source_commit": "81088ae386cbc611fb9e6366d8ade1c2ea74b6b7",
+    "manifest_sha256": "272ed83bd0a520d8fc80a6e54b6145eaae76333f8866cba0d780bae76746a0b9",
+    "verifier_sha256": "8da51b79f974646923255953e22cceef40641502465d4d3fc6f9c6018140d4b8",
+    "terminal_sha256": "5b62860e7c17241c2136817c8f8915cf7099b2422507589277c2e1218d7c7a67",
+    "audit_json_sha256": "73bc2ba9093ffcb51e5e4d8209b7411e26cdc73358394dd33588289b4da6c661"
+  },
+  "integrity": {
+    "preservation_manifest_entries_checked": 520,
+    "preservation_manifest_sha256": "898d222300213136ca590d8acc1c28f5bd79a6d7e453cd587ef572def6bc65a7",
+    "raw_files": 315,
+    "original_raw_matches_preserved_copy": true,
+    "original_raw_unchanged_before_after": true,
+    "preservation_tree_unchanged_before_after": true,
+    "frozen_source_files_verified_after_audit": 198,
+    "primary_pins_unchanged": true,
+    "raw_inventory_file_sha256": "541fb6fa63f7d1349b9bdfe7b8b6da83197e9698a30e7b1b932b84e56f01019f",
+    "authority_pin_origin": "Independently parent-captured originals supplied in the task; not inferred from retained package. Hash checks bind bytes; independent authority provenance remains an external trust boundary.",
+    "verifier_stderr_bytes": 0
+  },
+  "failed_registered_gates": [
+    {
+      "fixture": "910075",
+      "gate": "secondary_return",
+      "criterion": "Brier(G) - Brier(L) >= 0.02",
+      "G_brier": 0.0004998643892488487,
+      "L_brier": 0.0004998643892488487,
+      "observed": 0,
+      "threshold": 0.02,
+      "passed": false
+    },
+    {
+      "fixture": "910076",
+      "gate": "secondary_return",
+      "criterion": "Brier(G) - Brier(L) >= 0.02",
+      "G_brier": 0.0004998643892488487,
+      "L_brier": 0.0004998643892488487,
+      "observed": 0,
+      "threshold": 0.02,
+      "passed": false
+    },
+    {
+      "fixture": "910076",
+      "gate": "stationary_preservation_brier",
+      "criterion": "Brier(L) - Brier(C) <= 0.02",
+      "L_brier": 0.12426372409809272,
+      "C_brier": 0.026253258300119514,
+      "observed": 0.0980104657979732,
+      "threshold": 0.02,
+      "passed": false,
+      "other_stationary_requirements": {
+        "L_correct": 14,
+        "C_correct": 15,
+        "required_minimum": 14,
+        "correct_pass": true,
+        "L_coverage": 1.0,
+        "C_coverage": 0.9375,
+        "coverage_pass": true
+      }
+    }
+  ],
+  "registered_scores": {
+    "910075": {
+      "bounded_gate": false,
+      "claim_limit": "conditional exposed-fixture comparison; no general or unique-mediation claim",
+      "metrics": {
+        "novel": {
+          "C": {
+            "abstain": 5,
+            "brier": 0.3243371013354494,
+            "calibration": [
+              {
+                "count": 0,
+                "lower": 0.0,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 11,
+                "lower": 0.5,
+                "mean_probability": 0.5799387604265653,
+                "outcome_fraction": 0.45454545454545453,
+                "upper": 0.75
+              },
+              {
+                "count": 21,
+                "lower": 0.75,
+                "mean_probability": 0.8594618789697064,
+                "outcome_fraction": 0.5238095238095238,
+                "upper": 1.0
+              }
+            ],
+            "correct": 14,
+            "correct_per_nonabstaining": 0.5185185185185185,
+            "correct_per_total": 0.4375,
+            "coverage": 0.84375,
+            "first": {
+              "native": null,
+              "outcome": 0,
+              "p1": 0.5
+            },
+            "n": 32,
+            "wrong": 13
+          },
+          "Fw": {
+            "abstain": 5,
+            "brier": 0.04919156490683648,
+            "calibration": [
+              {
+                "count": 9,
+                "lower": 0.0,
+                "mean_probability": 0.11089967131633799,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 2,
+                "lower": 0.25,
+                "mean_probability": 0.29166666666666663,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 5,
+                "lower": 0.5,
+                "mean_probability": 0.5,
+                "outcome_fraction": 0.0,
+                "upper": 0.75
+              },
+              {
+                "count": 16,
+                "lower": 0.75,
+                "mean_probability": 0.9704798068479191,
+                "outcome_fraction": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 27,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 0.84375,
+            "coverage": 0.84375,
+            "first": {
+              "native": null,
+              "outcome": 0,
+              "p1": 0.5
+            },
+            "n": 32,
+            "wrong": 0
+          },
+          "H": {
+            "abstain": 0,
+            "brier": 0.07625,
+            "calibration": [
+              {
+                "count": 13,
+                "lower": 0.0,
+                "mean_probability": 0.2,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 1,
+                "lower": 0.25,
+                "mean_probability": 0.4,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 2,
+                "lower": 0.5,
+                "mean_probability": 0.6,
+                "outcome_fraction": 0.5,
+                "upper": 0.75
+              },
+              {
+                "count": 16,
+                "lower": 0.75,
+                "mean_probability": 0.8,
+                "outcome_fraction": 0.9375,
+                "upper": 1.0
+              }
+            ],
+            "correct": 30,
+            "correct_per_nonabstaining": 0.9375,
+            "correct_per_total": 0.9375,
+            "coverage": 1.0,
+            "first": {
+              "native": 1,
+              "outcome": 0,
+              "p1": 0.8
+            },
+            "n": 32,
+            "wrong": 2
+          },
+          "L": {
+            "abstain": 5,
+            "brier": 0.04919156490683648,
+            "calibration": [
+              {
+                "count": 9,
+                "lower": 0.0,
+                "mean_probability": 0.11089967131633799,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 2,
+                "lower": 0.25,
+                "mean_probability": 0.29166666666666663,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 5,
+                "lower": 0.5,
+                "mean_probability": 0.5,
+                "outcome_fraction": 0.0,
+                "upper": 0.75
+              },
+              {
+                "count": 16,
+                "lower": 0.75,
+                "mean_probability": 0.9704798068479191,
+                "outcome_fraction": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 27,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 0.84375,
+            "coverage": 0.84375,
+            "first": {
+              "native": null,
+              "outcome": 0,
+              "p1": 0.5
+            },
+            "n": 32,
+            "wrong": 0
+          },
+          "R": {
+            "abstain": 10,
+            "brier": 0.12770589746315192,
+            "calibration": [
+              {
+                "count": 4,
+                "lower": 0.0,
+                "mean_probability": 0.15863095238095237,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 7,
+                "lower": 0.25,
+                "mean_probability": 0.29761904761904756,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 15,
+                "lower": 0.5,
+                "mean_probability": 0.5555555555555556,
+                "outcome_fraction": 0.6666666666666666,
+                "upper": 0.75
+              },
+              {
+                "count": 6,
+                "lower": 0.75,
+                "mean_probability": 0.7805555555555556,
+                "outcome_fraction": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 22,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 0.6875,
+            "coverage": 0.6875,
+            "first": {
+              "native": null,
+              "outcome": 0,
+              "p1": 0.5
+            },
+            "n": 32,
+            "wrong": 0
+          }
+        },
+        "return": {
+          "C": {
+            "abstain": 0,
+            "brier": 0.322681328552009,
+            "calibration": [
+              {
+                "count": 14,
+                "lower": 0.0,
+                "mean_probability": 0.02626449429391443,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 10,
+                "lower": 0.5,
+                "mean_probability": 0.6617413474975347,
+                "outcome_fraction": 0.0,
+                "upper": 0.75
+              },
+              {
+                "count": 8,
+                "lower": 0.75,
+                "mean_probability": 0.8573183912487592,
+                "outcome_fraction": 0.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 14,
+            "correct_per_nonabstaining": 0.4375,
+            "correct_per_total": 0.4375,
+            "coverage": 1.0,
+            "first": {
+              "native": 0,
+              "outcome": 0,
+              "p1": 0.03125
+            },
+            "n": 32,
+            "wrong": 18
+          },
+          "Fw": {
+            "abstain": 0,
+            "brier": 0.0004998643892488487,
+            "calibration": [
+              {
+                "count": 32,
+                "lower": 0.0,
+                "mean_probability": 0.021906897133414028,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 0,
+                "lower": 0.5,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.75
+              },
+              {
+                "count": 0,
+                "lower": 0.75,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 1.0
+              }
+            ],
+            "correct": 32,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 1.0,
+            "coverage": 1.0,
+            "first": {
+              "native": 0,
+              "outcome": 0,
+              "p1": 0.03125
+            },
+            "n": 32,
+            "wrong": 0
+          },
+          "G": {
+            "abstain": 0,
+            "brier": 0.0004998643892488487,
+            "calibration": [
+              {
+                "count": 32,
+                "lower": 0.0,
+                "mean_probability": 0.021906897133414028,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 0,
+                "lower": 0.5,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.75
+              },
+              {
+                "count": 0,
+                "lower": 0.75,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 1.0
+              }
+            ],
+            "correct": 32,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 1.0,
+            "coverage": 1.0,
+            "first": {
+              "native": 0,
+              "outcome": 0,
+              "p1": 0.03125
+            },
+            "n": 32,
+            "wrong": 0
+          },
+          "H": {
+            "abstain": 0,
+            "brier": 0.07250000000000001,
+            "calibration": [
+              {
+                "count": 29,
+                "lower": 0.0,
+                "mean_probability": 0.2,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 1,
+                "lower": 0.25,
+                "mean_probability": 0.4,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 1,
+                "lower": 0.5,
+                "mean_probability": 0.6,
+                "outcome_fraction": 0.0,
+                "upper": 0.75
+              },
+              {
+                "count": 1,
+                "lower": 0.75,
+                "mean_probability": 0.8,
+                "outcome_fraction": 0.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 30,
+            "correct_per_nonabstaining": 0.9375,
+            "correct_per_total": 0.9375,
+            "coverage": 1.0,
+            "first": {
+              "native": 1,
+              "outcome": 0,
+              "p1": 0.8
+            },
+            "n": 32,
+            "wrong": 2
+          },
+          "L": {
+            "abstain": 0,
+            "brier": 0.0004998643892488487,
+            "calibration": [
+              {
+                "count": 32,
+                "lower": 0.0,
+                "mean_probability": 0.021906897133414028,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 0,
+                "lower": 0.5,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.75
+              },
+              {
+                "count": 0,
+                "lower": 0.75,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 1.0
+              }
+            ],
+            "correct": 32,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 1.0,
+            "coverage": 1.0,
+            "first": {
+              "native": 0,
+              "outcome": 0,
+              "p1": 0.03125
+            },
+            "n": 32,
+            "wrong": 0
+          },
+          "R": {
+            "abstain": 5,
+            "brier": 0.07821990753341097,
+            "calibration": [
+              {
+                "count": 17,
+                "lower": 0.0,
+                "mean_probability": 0.1382613829845664,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 10,
+                "lower": 0.25,
+                "mean_probability": 0.29166666666666663,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 5,
+                "lower": 0.5,
+                "mean_probability": 0.5,
+                "outcome_fraction": 0.0,
+                "upper": 0.75
+              },
+              {
+                "count": 0,
+                "lower": 0.75,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 1.0
+              }
+            ],
+            "correct": 27,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 0.84375,
+            "coverage": 0.84375,
+            "first": {
+              "native": null,
+              "outcome": 0,
+              "p1": 0.5
+            },
+            "n": 32,
+            "wrong": 0
+          }
+        },
+        "stationary": {
+          "C": {
+            "abstain": 2,
+            "brier": 0.15510455988774627,
+            "calibration": [
+              {
+                "count": 2,
+                "lower": 0.0,
+                "mean_probability": 0.045928030303030304,
+                "outcome_fraction": 1.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 2,
+                "lower": 0.5,
+                "mean_probability": 0.5,
+                "outcome_fraction": 1.0,
+                "upper": 0.75
+              },
+              {
+                "count": 12,
+                "lower": 0.75,
+                "mean_probability": 0.891883695008695,
+                "outcome_fraction": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 12,
+            "correct_per_nonabstaining": 0.8571428571428571,
+            "correct_per_total": 0.75,
+            "coverage": 0.875,
+            "first": {
+              "native": 0,
+              "outcome": 1,
+              "p1": 0.03125
+            },
+            "n": 16,
+            "wrong": 2
+          },
+          "L": {
+            "abstain": 0,
+            "brier": 0.12426372409809272,
+            "calibration": [
+              {
+                "count": 2,
+                "lower": 0.0,
+                "mean_probability": 0.045928030303030304,
+                "outcome_fraction": 1.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 0,
+                "lower": 0.5,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.75
+              },
+              {
+                "count": 14,
+                "lower": 0.75,
+                "mean_probability": 0.8991589467955015,
+                "outcome_fraction": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 14,
+            "correct_per_nonabstaining": 0.875,
+            "correct_per_total": 0.875,
+            "coverage": 1.0,
+            "first": {
+              "native": 0,
+              "outcome": 1,
+              "p1": 0.03125
+            },
+            "n": 16,
+            "wrong": 2
+          }
+        }
+      },
+      "novel_acquisition": true,
+      "novel_ceiling_inconclusive": false,
+      "novel_early": {
+        "abstain": 5,
+        "brier": 0.09202243787224167,
+        "calibration": [
+          {
+            "count": 1,
+            "lower": 0.0,
+            "mean_probability": 0.2,
+            "outcome_fraction": 0.0,
+            "upper": 0.25
+          },
+          {
+            "count": 2,
+            "lower": 0.25,
+            "mean_probability": 0.29166666666666663,
+            "outcome_fraction": 0.0,
+            "upper": 0.5
+          },
+          {
+            "count": 5,
+            "lower": 0.5,
+            "mean_probability": 0.5,
+            "outcome_fraction": 0.0,
+            "upper": 0.75
+          },
+          {
+            "count": 8,
+            "lower": 0.75,
+            "mean_probability": 0.9670262157212016,
+            "outcome_fraction": 1.0,
+            "upper": 1.0
+          }
+        ],
+        "correct": 11,
+        "correct_per_nonabstaining": 1.0,
+        "correct_per_total": 0.6875,
+        "coverage": 0.6875,
+        "first": {
+          "native": null,
+          "outcome": 0,
+          "p1": 0.5
+        },
+        "n": 16,
+        "wrong": 0
+      },
+      "novel_late": {
+        "abstain": 0,
+        "brier": 0.006360691941431284,
+        "calibration": [
+          {
+            "count": 8,
+            "lower": 0.0,
+            "mean_probability": 0.09976213023088024,
+            "outcome_fraction": 0.0,
+            "upper": 0.25
+          },
+          {
+            "count": 0,
+            "lower": 0.25,
+            "mean_probability": null,
+            "outcome_fraction": null,
+            "upper": 0.5
+          },
+          {
+            "count": 0,
+            "lower": 0.5,
+            "mean_probability": null,
+            "outcome_fraction": null,
+            "upper": 0.75
+          },
+          {
+            "count": 8,
+            "lower": 0.75,
+            "mean_probability": 0.9739333979746367,
+            "outcome_fraction": 1.0,
+            "upper": 1.0
+          }
+        ],
+        "correct": 16,
+        "correct_per_nonabstaining": 1.0,
+        "correct_per_total": 1.0,
+        "coverage": 1.0,
+        "first": {
+          "native": 1,
+          "outcome": 1,
+          "p1": 0.9714285714285714
+        },
+        "n": 16,
+        "wrong": 0
+      },
+      "novel_preserved": true,
+      "paired_return_native_C_to_L": {
+        "abstain_to_abstain": 0,
+        "abstain_to_correct": 0,
+        "abstain_to_wrong": 0,
+        "correct_to_abstain": 0,
+        "correct_to_correct": 14,
+        "correct_to_wrong": 0,
+        "wrong_to_abstain": 0,
+        "wrong_to_correct": 18,
+        "wrong_to_wrong": 0
+      },
+      "primary_C_L": true,
+      "return_only_wrong_to_abstain": false,
+      "scientific_credit": 0,
+      "secondary_G_L": false,
+      "stationary_preserved": true
+    },
+    "910076": {
+      "bounded_gate": false,
+      "claim_limit": "conditional exposed-fixture comparison; no general or unique-mediation claim",
+      "metrics": {
+        "novel": {
+          "C": {
+            "abstain": 6,
+            "brier": 0.3033568184325168,
+            "calibration": [
+              {
+                "count": 2,
+                "lower": 0.0,
+                "mean_probability": 0.030776515151515152,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 1,
+                "lower": 0.25,
+                "mean_probability": 0.3333333333333333,
+                "outcome_fraction": 1.0,
+                "upper": 0.5
+              },
+              {
+                "count": 15,
+                "lower": 0.5,
+                "mean_probability": 0.5704689754689755,
+                "outcome_fraction": 0.6,
+                "upper": 0.75
+              },
+              {
+                "count": 14,
+                "lower": 0.75,
+                "mean_probability": 0.8804740101116911,
+                "outcome_fraction": 0.42857142857142855,
+                "upper": 1.0
+              }
+            ],
+            "correct": 14,
+            "correct_per_nonabstaining": 0.5384615384615384,
+            "correct_per_total": 0.4375,
+            "coverage": 0.8125,
+            "first": {
+              "native": null,
+              "outcome": 0,
+              "p1": 0.5
+            },
+            "n": 32,
+            "wrong": 12
+          },
+          "Fw": {
+            "abstain": 3,
+            "brier": 0.03226338630406153,
+            "calibration": [
+              {
+                "count": 11,
+                "lower": 0.0,
+                "mean_probability": 0.06689287754760595,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 2,
+                "lower": 0.25,
+                "mean_probability": 0.29166666666666663,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 3,
+                "lower": 0.5,
+                "mean_probability": 0.5,
+                "outcome_fraction": 0.0,
+                "upper": 0.75
+              },
+              {
+                "count": 16,
+                "lower": 0.75,
+                "mean_probability": 0.9704798068479191,
+                "outcome_fraction": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 29,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 0.90625,
+            "coverage": 0.90625,
+            "first": {
+              "native": null,
+              "outcome": 0,
+              "p1": 0.5
+            },
+            "n": 32,
+            "wrong": 0
+          },
+          "H": {
+            "abstain": 0,
+            "brier": 0.07625,
+            "calibration": [
+              {
+                "count": 13,
+                "lower": 0.0,
+                "mean_probability": 0.2,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 1,
+                "lower": 0.25,
+                "mean_probability": 0.4,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 2,
+                "lower": 0.5,
+                "mean_probability": 0.6,
+                "outcome_fraction": 0.5,
+                "upper": 0.75
+              },
+              {
+                "count": 16,
+                "lower": 0.75,
+                "mean_probability": 0.8,
+                "outcome_fraction": 0.9375,
+                "upper": 1.0
+              }
+            ],
+            "correct": 30,
+            "correct_per_nonabstaining": 0.9375,
+            "correct_per_total": 0.9375,
+            "coverage": 1.0,
+            "first": {
+              "native": 1,
+              "outcome": 0,
+              "p1": 0.8
+            },
+            "n": 32,
+            "wrong": 2
+          },
+          "L": {
+            "abstain": 3,
+            "brier": 0.03226338630406153,
+            "calibration": [
+              {
+                "count": 11,
+                "lower": 0.0,
+                "mean_probability": 0.06689287754760595,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 2,
+                "lower": 0.25,
+                "mean_probability": 0.29166666666666663,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 3,
+                "lower": 0.5,
+                "mean_probability": 0.5,
+                "outcome_fraction": 0.0,
+                "upper": 0.75
+              },
+              {
+                "count": 16,
+                "lower": 0.75,
+                "mean_probability": 0.9704798068479191,
+                "outcome_fraction": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 29,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 0.90625,
+            "coverage": 0.90625,
+            "first": {
+              "native": null,
+              "outcome": 0,
+              "p1": 0.5
+            },
+            "n": 32,
+            "wrong": 0
+          },
+          "R": {
+            "abstain": 8,
+            "brier": 0.10463365496661628,
+            "calibration": [
+              {
+                "count": 3,
+                "lower": 0.0,
+                "mean_probability": 0.16984126984126982,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 7,
+                "lower": 0.25,
+                "mean_probability": 0.3095238095238095,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 10,
+                "lower": 0.5,
+                "mean_probability": 0.5333333333333333,
+                "outcome_fraction": 0.4,
+                "upper": 0.75
+              },
+              {
+                "count": 12,
+                "lower": 0.75,
+                "mean_probability": 0.8340608465608467,
+                "outcome_fraction": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 24,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 0.75,
+            "coverage": 0.75,
+            "first": {
+              "native": null,
+              "outcome": 0,
+              "p1": 0.5
+            },
+            "n": 32,
+            "wrong": 0
+          }
+        },
+        "return": {
+          "C": {
+            "abstain": 0,
+            "brier": 0.322681328552009,
+            "calibration": [
+              {
+                "count": 14,
+                "lower": 0.0,
+                "mean_probability": 0.02626449429391443,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 10,
+                "lower": 0.5,
+                "mean_probability": 0.6617413474975347,
+                "outcome_fraction": 0.0,
+                "upper": 0.75
+              },
+              {
+                "count": 8,
+                "lower": 0.75,
+                "mean_probability": 0.8573183912487592,
+                "outcome_fraction": 0.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 14,
+            "correct_per_nonabstaining": 0.4375,
+            "correct_per_total": 0.4375,
+            "coverage": 1.0,
+            "first": {
+              "native": 0,
+              "outcome": 0,
+              "p1": 0.03125
+            },
+            "n": 32,
+            "wrong": 18
+          },
+          "Fw": {
+            "abstain": 0,
+            "brier": 0.0004998643892488487,
+            "calibration": [
+              {
+                "count": 32,
+                "lower": 0.0,
+                "mean_probability": 0.021906897133414028,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 0,
+                "lower": 0.5,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.75
+              },
+              {
+                "count": 0,
+                "lower": 0.75,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 1.0
+              }
+            ],
+            "correct": 32,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 1.0,
+            "coverage": 1.0,
+            "first": {
+              "native": 0,
+              "outcome": 0,
+              "p1": 0.03125
+            },
+            "n": 32,
+            "wrong": 0
+          },
+          "G": {
+            "abstain": 0,
+            "brier": 0.0004998643892488487,
+            "calibration": [
+              {
+                "count": 32,
+                "lower": 0.0,
+                "mean_probability": 0.021906897133414028,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 0,
+                "lower": 0.5,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.75
+              },
+              {
+                "count": 0,
+                "lower": 0.75,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 1.0
+              }
+            ],
+            "correct": 32,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 1.0,
+            "coverage": 1.0,
+            "first": {
+              "native": 0,
+              "outcome": 0,
+              "p1": 0.03125
+            },
+            "n": 32,
+            "wrong": 0
+          },
+          "H": {
+            "abstain": 0,
+            "brier": 0.07250000000000001,
+            "calibration": [
+              {
+                "count": 29,
+                "lower": 0.0,
+                "mean_probability": 0.2,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 1,
+                "lower": 0.25,
+                "mean_probability": 0.4,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 1,
+                "lower": 0.5,
+                "mean_probability": 0.6,
+                "outcome_fraction": 0.0,
+                "upper": 0.75
+              },
+              {
+                "count": 1,
+                "lower": 0.75,
+                "mean_probability": 0.8,
+                "outcome_fraction": 0.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 30,
+            "correct_per_nonabstaining": 0.9375,
+            "correct_per_total": 0.9375,
+            "coverage": 1.0,
+            "first": {
+              "native": 1,
+              "outcome": 0,
+              "p1": 0.8
+            },
+            "n": 32,
+            "wrong": 2
+          },
+          "L": {
+            "abstain": 0,
+            "brier": 0.0004998643892488487,
+            "calibration": [
+              {
+                "count": 32,
+                "lower": 0.0,
+                "mean_probability": 0.021906897133414028,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 0,
+                "lower": 0.5,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.75
+              },
+              {
+                "count": 0,
+                "lower": 0.75,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 1.0
+              }
+            ],
+            "correct": 32,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 1.0,
+            "coverage": 1.0,
+            "first": {
+              "native": 0,
+              "outcome": 0,
+              "p1": 0.03125
+            },
+            "n": 32,
+            "wrong": 0
+          },
+          "R": {
+            "abstain": 6,
+            "brier": 0.07288223265737798,
+            "calibration": [
+              {
+                "count": 20,
+                "lower": 0.0,
+                "mean_probability": 0.11023080265340328,
+                "outcome_fraction": 0.0,
+                "upper": 0.25
+              },
+              {
+                "count": 6,
+                "lower": 0.25,
+                "mean_probability": 0.2916666666666667,
+                "outcome_fraction": 0.0,
+                "upper": 0.5
+              },
+              {
+                "count": 6,
+                "lower": 0.5,
+                "mean_probability": 0.5,
+                "outcome_fraction": 0.0,
+                "upper": 0.75
+              },
+              {
+                "count": 0,
+                "lower": 0.75,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 1.0
+              }
+            ],
+            "correct": 26,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 0.8125,
+            "coverage": 0.8125,
+            "first": {
+              "native": null,
+              "outcome": 0,
+              "p1": 0.5
+            },
+            "n": 32,
+            "wrong": 0
+          }
+        },
+        "stationary": {
+          "C": {
+            "abstain": 1,
+            "brier": 0.026253258300119514,
+            "calibration": [
+              {
+                "count": 0,
+                "lower": 0.0,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 1,
+                "lower": 0.5,
+                "mean_probability": 0.5,
+                "outcome_fraction": 1.0,
+                "upper": 0.75
+              },
+              {
+                "count": 15,
+                "lower": 0.75,
+                "mean_probability": 0.9023729117459768,
+                "outcome_fraction": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 15,
+            "correct_per_nonabstaining": 1.0,
+            "correct_per_total": 0.9375,
+            "coverage": 0.9375,
+            "first": {
+              "native": 1,
+              "outcome": 1,
+              "p1": 0.8
+            },
+            "n": 16,
+            "wrong": 0
+          },
+          "L": {
+            "abstain": 0,
+            "brier": 0.12426372409809272,
+            "calibration": [
+              {
+                "count": 2,
+                "lower": 0.0,
+                "mean_probability": 0.045928030303030304,
+                "outcome_fraction": 1.0,
+                "upper": 0.25
+              },
+              {
+                "count": 0,
+                "lower": 0.25,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.5
+              },
+              {
+                "count": 0,
+                "lower": 0.5,
+                "mean_probability": null,
+                "outcome_fraction": null,
+                "upper": 0.75
+              },
+              {
+                "count": 14,
+                "lower": 0.75,
+                "mean_probability": 0.8991589467955015,
+                "outcome_fraction": 1.0,
+                "upper": 1.0
+              }
+            ],
+            "correct": 14,
+            "correct_per_nonabstaining": 0.875,
+            "correct_per_total": 0.875,
+            "coverage": 1.0,
+            "first": {
+              "native": 1,
+              "outcome": 1,
+              "p1": 0.8
+            },
+            "n": 16,
+            "wrong": 2
+          }
+        }
+      },
+      "novel_acquisition": true,
+      "novel_ceiling_inconclusive": false,
+      "novel_early": {
+        "abstain": 3,
+        "brier": 0.058444930875282956,
+        "calibration": [
+          {
+            "count": 3,
+            "lower": 0.0,
+            "mean_probability": 0.030321598336304222,
+            "outcome_fraction": 0.0,
+            "upper": 0.25
+          },
+          {
+            "count": 2,
+            "lower": 0.25,
+            "mean_probability": 0.29166666666666663,
+            "outcome_fraction": 0.0,
+            "upper": 0.5
+          },
+          {
+            "count": 3,
+            "lower": 0.5,
+            "mean_probability": 0.5,
+            "outcome_fraction": 0.0,
+            "upper": 0.75
+          },
+          {
+            "count": 8,
+            "lower": 0.75,
+            "mean_probability": 0.9670262157212016,
+            "outcome_fraction": 1.0,
+            "upper": 1.0
+          }
+        ],
+        "correct": 13,
+        "correct_per_nonabstaining": 1.0,
+        "correct_per_total": 0.8125,
+        "coverage": 0.8125,
+        "first": {
+          "native": null,
+          "outcome": 0,
+          "p1": 0.5
+        },
+        "n": 16,
+        "wrong": 0
+      },
+      "novel_late": {
+        "abstain": 0,
+        "brier": 0.006081841732840104,
+        "calibration": [
+          {
+            "count": 8,
+            "lower": 0.0,
+            "mean_probability": 0.0806071072518441,
+            "outcome_fraction": 0.0,
+            "upper": 0.25
+          },
+          {
+            "count": 0,
+            "lower": 0.25,
+            "mean_probability": null,
+            "outcome_fraction": null,
+            "upper": 0.5
+          },
+          {
+            "count": 0,
+            "lower": 0.5,
+            "mean_probability": null,
+            "outcome_fraction": null,
+            "upper": 0.75
+          },
+          {
+            "count": 8,
+            "lower": 0.75,
+            "mean_probability": 0.9739333979746367,
+            "outcome_fraction": 1.0,
+            "upper": 1.0
+          }
+        ],
+        "correct": 16,
+        "correct_per_nonabstaining": 1.0,
+        "correct_per_total": 1.0,
+        "coverage": 1.0,
+        "first": {
+          "native": 0,
+          "outcome": 0,
+          "p1": 0.2
+        },
+        "n": 16,
+        "wrong": 0
+      },
+      "novel_preserved": true,
+      "paired_return_native_C_to_L": {
+        "abstain_to_abstain": 0,
+        "abstain_to_correct": 0,
+        "abstain_to_wrong": 0,
+        "correct_to_abstain": 0,
+        "correct_to_correct": 14,
+        "correct_to_wrong": 0,
+        "wrong_to_abstain": 0,
+        "wrong_to_correct": 18,
+        "wrong_to_wrong": 0
+      },
+      "primary_C_L": true,
+      "return_only_wrong_to_abstain": false,
+      "scientific_credit": 0,
+      "secondary_G_L": false,
+      "stationary_preserved": false
+    }
+  },
+  "registered_decision_thresholds": {
+    "Fw": "Separate assembly/readout acquisition from weights/delays. Fw prediction success does not prove field-learning benefit.",
+    "memory_baselines": "Report H/R return and novel comparisons; no general superiority gate or stationary comparator claim.",
+    "novel": {
+      "L_actual_absolute_weight_change_positive": true,
+      "L_early_minus_late_brier_at_least": 0.02,
+      "L_late_correct_at_least": 12,
+      "L_late_correct_minus_early_correct_at_least": 2,
+      "L_late_correct_per_label_at_least": 6,
+      "L_late_coverage_at_least_early": true,
+      "ceiling_outcome": "acquisition_inconclusive; overall supported gate cannot pass; never alter inputs or thresholds after outcomes",
+      "early_ceiling_if_brier_below": 0.02,
+      "early_ceiling_if_correct_at_least": 15,
+      "early_indices": [
+        0,
+        15
+      ],
+      "late_L_correct_at_least_C_minus": 1,
+      "late_L_coverage_at_least_C": true,
+      "late_L_minus_C_brier_at_most": 0.02,
+      "late_indices": [
+        16,
+        31
+      ],
+      "per_block_label_counts": [
+        8,
+        8
+      ]
+    },
+    "overall": "Primary return AND secondary return AND stationary preservation AND informative novel acquisition/preservation for each fixture. Missing/incomplete/invalid rows cannot pass.",
+    "primary_return": {
+      "C_equals_L": "fail",
+      "C_minus_L_brier_at_least": 0.02,
+      "L_correct_at_least_C": true,
+      "L_coverage_at_least_C": true
+    },
+    "scope": "Each fixture separately; both must meet gates. No significance/population claim.",
+    "secondary_return": {
+      "G_minus_L_brier_at_least": 0.02,
+      "residual_gain_confound": "Single analytic steady-state control does not remove all finite-horizon/history-dependent gain explanations."
+    },
+    "stationary": {
+      "L_correct_at_least_C_minus": 1,
+      "L_coverage_at_least_C": true,
+      "L_minus_C_brier_at_most": 0.02,
+      "rows": 16
+    }
+  },
+  "descriptive_full_row_checks": {
+    "scope": "All allocated return and novel rows; no selection/tuned filtering",
+    "return_L_G_Fw_prediction_outcome_vectors_equal_both_fixtures": true,
+    "novel_L_Fw_prediction_outcome_vectors_equal_both_fixtures": true,
+    "novel_L_actual_weight_change_positive_every_row_both_fixtures": true,
+    "novel_L_late_correct_per_label_both_fixtures": {
+      "0": "8/8",
+      "1": "8/8"
+    }
+  },
+  "comparison_interpretation": [
+    "On return, L improves over C, but G and Fw exactly match L on every retained probability/native prediction row, so the required superiority to the single lower-gain control fails.",
+    "On stationary, L improves Brier and coverage in fixture 910075, but harms Brier in fixture 910076 beyond the allowed 0.02 even though count and coverage conditions pass.",
+    "On novel, L meets predefined acquisition and preservation gates with positive actual weight writes. Fw matches L on every retained prediction row, so those predictions do not establish benefit from weight learning.",
+    "H has more correct novel predictions and full coverage but worse Brier than L/Fw; R has worse Brier and more abstentions. Comparisons apply only to registered return/novel arms, with no H/R stationary superiority claim."
+  ],
+  "consumed_prior_attempt": {
+    "audited_model_pairs": 0,
+    "classification": "FAILED_BEFORE_WORKER_AND_MODEL_ADMISSION",
+    "manifest_sha256": "cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834",
+    "result_sha256": "70a54d6f1c6b23809853e14901561bbda4aede73a885422e55a7ab6964caf223",
+    "source_commit": "2977aefc06d80291bb65c36b4b3bac0499084d0f"
+  },
+  "allocation": {
+    "combined_model_ceiling": 768,
+    "completed_current_pairs": 768,
+    "prior_audited_model_pairs": 0,
+    "no_new_model_calls_in_audit": true,
+    "previous_failed_identity_still_consumed": true
+  },
+  "execution_boundary": {
+    "runtime_imported_or_run": false,
+    "runner_imported_or_run": false,
+    "prefix_regeneration": false,
+    "baseline_rerun": false,
+    "original_raw_modified": false,
+    "source_modified": false,
+    "external_publication": false,
+    "pr_changes": false,
+    "scheduler_changes": false,
+    "desktop_changes": false
+  },
+  "method": "Ran only the pinned base-interpreter verifier with explicit source/freeze/independent authority hashes. Other commands were shell hash/inventory checks and jq retained-data extraction; no model execution or replay. All scoring gates are the frozen gates, not post-outcome selections."
+}

@@ -1,0 +1,29 @@
+{
+  "attempt_id": "plasticity-retention-v5-20261002",
+  "authority_record_sha256": {
+    "approval": "7af778f61a311ad3ef405c64e267d2d4a99c997edf8524218276b5bc29347b3b",
+    "publication": "49b7b54c1151366dbf992bd4b52f4357d731ac1227540a15e251a8b8845d8a6c",
+    "review": "3a6c848a0d91bbccd9af96453a1b440ae1e463b247e8d387eb218c09d3899789"
+  },
+  "calls": {
+    "apply": 512,
+    "native_load": 18,
+    "outcome": 768,
+    "predict": 768,
+    "v05_episode": 512,
+    "v05_init": 36,
+    "v05_outcome": 512,
+    "wrapper_init": 26,
+    "wrapper_load": 26
+  },
+  "combined_model_allocation_ceiling": 768,
+  "manifest_sha256": "272ed83bd0a520d8fc80a6e54b6145eaae76333f8866cba0d780bae76746a0b9",
+  "ordinary_memory_rows_reconstructed": 256,
+  "pairs": 768,
+  "prior_attempt_audited_model_pairs": 0,
+  "runtime_model_method_calls_during_audit": 0,
+  "scope": "data/source integrity audit; not rerun fidelity or scientific promotion; retained authority statements require independent authenticity verification",
+  "source_commit": "81088ae386cbc611fb9e6366d8ade1c2ea74b6b7",
+  "v05_apply_rows_recomputed": 512,
+  "valid_completion": true
+}

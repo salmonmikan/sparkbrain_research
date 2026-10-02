@@ -555,3 +555,14 @@ fresh prospective v5 path-only revision uses a writable cloud source/output root
 with unchanged inputs, protocol, parameters, scientific margins and 768-pair ceiling.
 It is unexecuted and grants no scientific credit. See the
 [preparation and execution gates](research/plasticity_retention_v5_path_refresh_20261002.md).
+
+## Retention v5 completed with a negative support gate (2026-10-02)
+
+The separately approved v5 invocation completed 26 branches / 768 pairs and passed
+independent data-only integrity audit. Both fixtures failed the predefined
+secondary G/L return criterion; one also failed stationary preservation. L/G/Fw
+return predictions and L/Fw novel predictions tie, so neither locality-specific
+nor weight-learning benefit is established. This is exploratory, fixed-delay,
+exposed-prefix evidence with scientific credit 0. See the
+[complete negative result and comparisons](research/plasticity_retention_results_20261002.md).
+The preparation section above records its earlier, unexecuted status.
