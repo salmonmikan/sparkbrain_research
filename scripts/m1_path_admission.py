@@ -15,6 +15,7 @@ import json
 import math
 import os
 import platform
+import re
 import stat
 import sys
 import sysconfig
@@ -254,6 +255,8 @@ def validate_freeze_schema(freeze: Any) -> dict:
         type(environment["dependency_files"]) is int and environment["dependency_files"] > 0,
         "missing complete dependency inventory",
     )
+    _require(re.match(r"^3\.(?:11|12|13)\.[0-9]+(?:\D|$)", str(environment["version"])) is not None,
+             "declared environment requires CPython 3.11 through 3.13")
     for key in ("version", "machine", "cache_tag"):
         _require(
             type(environment[key]) is str and bool(environment[key]), "missing environment " + key
@@ -416,8 +419,9 @@ def environment_snapshot(root: Path) -> dict:
     """
     root = source_root(root)
     _require(
-        platform.python_implementation() == "CPython" and sys.version_info >= (3, 11),
-        "reviewed CPython 3.11+ required",
+        platform.python_implementation() == "CPython"
+        and (3, 11) <= sys.version_info < (3, 14),
+        "M1 path admission requires reviewed CPython 3.11 through 3.13",
     )
     executable = Path(sys.executable).resolve(strict=True)
     executable = confined_path(source_root(executable.parent), executable.name, "interpreter")

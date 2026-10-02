@@ -179,7 +179,11 @@ def raster(observation: dict[str, Any]) -> list[float]:
         values[at + lower] += pulse["magnitude"] * (1 - fraction)
         if fraction:
             values[at + lower + 1] += pulse["magnitude"] * fraction
-    total = sum(values)
+    # Fix binary64 addition order; Python 3.12 changed builtin sum's float algorithm.
+    # This audit raster never supplies the seven-coordinate raw M1 representation.
+    total = 0.0
+    for value in values:
+        total += value
     if not math.isfinite(total) or total <= 0:
         raise InputContractError("malformed_input", "raster requires finite positive mass")
     return [value / total for value in values]
@@ -358,6 +362,7 @@ def make_evaluator(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "channel_order": list(CHANNELS),
             "bins_per_channel": 41,
             "construction": "floor_ceil_linear_interpolation_then_total_mass_normalization",
+            "mass_sum": "left_to_right_binary64_across_410_slots",
             "input_rows": [
                 {
                     "input_index": index,

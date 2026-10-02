@@ -294,7 +294,7 @@ def test_empty_and_multiple_cues_never_choose_first_last(observation):
     assert TOOL.encode_raw_order(observation) == {"status": "out_of_domain", "vector": None}
 
 
-def test_raster_retains_exact_historical_interpolation(prepared, rows):
+def test_raster_retains_interpolation_with_fixed_mass_order(prepared, rows):
     retained = json.loads(prepared["evaluator.json"])["raster_retention"]
     assert retained["channel_order"] == list("ACFHIJKLMQ")
     assert retained["bins_per_channel"] == 41
@@ -309,7 +309,9 @@ def test_raster_retains_exact_historical_interpolation(prepared, rows):
             expected[offset + floor] += pulse["magnitude"] * (1 - fraction)
             if fraction:
                 expected[offset + math.ceil(relative)] += pulse["magnitude"] * fraction
-        total = sum(expected)
+        total = 0.0
+        for component in expected:
+            total = total + component
         expected = [value / total for value in expected]
         assert stored["input_index"] == index
         assert stored["observation_sha256"] == TOOL.sha(TOOL.canonical(row))
@@ -455,3 +457,13 @@ def test_teaching_schedule_rejects_undeclared_receipts(prepared, change):
         row["outcome"] = True
     with pytest.raises(ValueError, match="frozen teaching row"):
         TOOL.teaching_schedule(evaluator)
+
+
+def test_audit_raster_does_not_depend_on_interpreter_builtin_sum(monkeypatch):
+    import builtins
+    observations = [json.loads(line) for line in TOOL.build()["inputs.jsonl"].splitlines()]
+    before = [TOOL.raster(row) for row in observations]
+    def unsupported_sum(*args, **kwargs):
+        raise AssertionError("audit raster must use its explicit addition order")
+    monkeypatch.setattr(builtins, "sum", unsupported_sum)
+    assert [TOOL.raster(row) for row in observations] == before

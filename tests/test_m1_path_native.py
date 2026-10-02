@@ -140,6 +140,8 @@ def observation():
 
 
 def test_source_defaults_and_projection_provenance_are_separate():
+    before = {name for name in sys.modules
+              if name == "sparkbrain" or name.startswith("sparkbrain.")}
     frozen = native.source_configuration(ROOT)
     assert frozen["m1"]["v03"]["input_track"] == "I1_local_compositional"
     assert frozen["m1"]["v03"]["entity_track"] == "E0_global"
@@ -150,7 +152,9 @@ def test_source_defaults_and_projection_provenance_are_separate():
     for key in ("enable_prediction", "enable_action", "enable_reward_modulation"):
         assert frozen["producer"]["brain"][key] is False
     assert frozen["projection_origin_source_pin"] != frozen["execution_source_commit"]
-    assert not any(name == "sparkbrain" or name.startswith("sparkbrain.") for name in sys.modules)
+    after = {name for name in sys.modules
+             if name == "sparkbrain" or name.startswith("sparkbrain.")}
+    assert after == before
 
 
 def test_defaults_ast_rejects_factories_and_unknown_constants(tmp_path):

@@ -31,6 +31,12 @@ registry addition. Source verification is necessary but does not certify a live 
 The fixture backend is deliberately invented software. Its actions are not native M1
 results. Passing a fixture schedule establishes only schedule and interface behavior.
 The native backend has not been constructed, imported or exercised in this preparation.
+This prospective admission/census is limited to **CPython 3.11–3.13**. Python 3.14
+changed enum initialization hooks; it is rejected before instrumentation or native
+admission until a new reviewed allocator binding exists. This research-specific limit
+does not change the repository core's general Python 3.11+ requirement. Static source
+checks remain portable; instrumented fixtures skip unsupported newer interpreters and
+a separate rejection regression verifies the closed boundary.
 
 ## Exact literal selection
 
@@ -52,6 +58,11 @@ is swapped. Both teaching arms receive +0.8 then −0.8 under distinct receipt I
 The runtime observation contains only occurrence ID, start time and raw pulses.
 `teaching_schedule()` projects only teaching receipts; query targets stay evaluator-only.
 No native vector, native prediction or observed dictionary is precomputed here.
+The retained audit raster preserves the inherited floor/ceil interpolation and fixes
+mass normalization to left-to-right binary64 addition across its 410 slots. This
+prospective rounding convention avoids Python 3.11/3.12+ builtin-sum differences;
+the raster is audit-only and does not feed the raw-order M1 features. Historical
+raster artifacts and all 68 raw producer-input bytes remain unchanged.
 
 The raw encoder counts every A/C pulse, accepts exactly one of each with positive
 magnitude and +1 polarity, and uses exact time order. Ties yield `ambiguous_order`.

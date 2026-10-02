@@ -16,7 +16,9 @@ class Deny(importlib.abc.MetaPathFinder):
 
 
 @pytest.fixture(autouse=True)
-def no_models():
+def no_models(request):
+    if sys.version_info >= (3, 14) and request.node.name != "test_unsupported_python_is_rejected":
+        pytest.skip("prospective census is reviewed only on CPython 3.11 through 3.13")
     blocker = Deny()
     sys.meta_path.insert(0, blocker)
     yield
@@ -242,3 +244,14 @@ def test_dataclass_generated_initializer_has_declared_source_route(tmp_path, mon
     assert len(births) == 1
     assert births[0]["route"] == [relative, "Data.__init__[dataclass-generated]"]
     assert births[0]["type"] == "sparkbrain.fixture:Data"
+
+
+def test_unsupported_python_is_rejected(tmp_path, monkeypatch):
+    import scripts.m1_path_census as module
+    with monkeypatch.context() as patch:
+        patch.setattr(module.sys, "version_info", (3, 14, 0))
+        with pytest.raises(ValueError, match="CPython 3.11 through 3.13"):
+            PassiveCensus(tmp_path, targets={}, call_caps={},
+                          type_caps={"fixture:Type": {"init": 0, "shell": 0}},
+                          allowed_functions=set(), budget=Budget(), writer=Writer())
+    assert sys.getprofile() is None and sys.gettrace() is None

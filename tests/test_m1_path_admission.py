@@ -55,7 +55,7 @@ def freeze():
         "environment": {
             "schema": "m1-path-python-environment-v1",
             "implementation": "CPython",
-            "version": "synthetic",
+            "version": "3.11.0 (synthetic source-only fixture)",
             "executable": "/synthetic/python",
             "executable_sha256": SHA,
             "prefix": "/synthetic",
@@ -556,6 +556,8 @@ def test_binder_rejects_incomplete_duplicate_or_changed_classes(tmp_path, monkey
         admission.bind_source_registry(permit, classes)
 
 
+@pytest.mark.skipif(sys.version_info >= (3, 14),
+                    reason="research admission supports CPython 3.11–3.13")
 def test_unknown_import_root_never_scans_private_tree(tmp_path, monkeypatch):
     admission.sysconfig.get_paths()  # Resolve interpreter metadata before isolating sys.path.
     monkeypatch.setattr(sys, "path", [str(tmp_path / "private")])
@@ -654,3 +656,18 @@ def test_failed_owner_claim_cannot_be_retried(tmp_path, monkeypatch):
 def test_arbitrary_callbacks_are_not_independent_authority(tmp_path):
     with pytest.raises(admission.AdmissionError, match="exact reviewed binding"):
         admission._verify_callback(tmp_path, freeze(), lambda _: True, "authority_verifier")
+
+
+@pytest.mark.parametrize("version", ["3.10.9", "3.14.0", "4.0.0"])
+def test_declared_unreviewed_python_version_is_rejected(version):
+    proposal = freeze()
+    proposal["environment"]["version"] = version
+    with pytest.raises(admission.AdmissionError, match="CPython 3.11 through 3.13"):
+        admission.validate_freeze_schema(proposal)
+
+
+def test_actual_unreviewed_interpreter_rejected_before_environment_scan(monkeypatch):
+    with monkeypatch.context() as patch:
+        patch.setattr(admission.sys, "version_info", (3, 14, 0))
+        with pytest.raises(admission.AdmissionError, match="CPython 3.11 through 3.13"):
+            admission.environment_snapshot(ROOT)

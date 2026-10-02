@@ -9,6 +9,7 @@ from __future__ import annotations
 import ast
 import dis
 import inspect
+import platform
 import sys
 import sysconfig
 import threading
@@ -16,6 +17,12 @@ from pathlib import Path
 from typing import Any
 
 from scripts.verify_g0_joint_source_contract import confined_path, source_root
+
+
+def require_supported_runtime() -> None:
+    """This prospective instrument is reviewed only on CPython 3.11 through 3.13."""
+    if platform.python_implementation() != "CPython" or not (3, 11) <= sys.version_info < (3, 14):
+        raise ValueError("M1 path census requires reviewed CPython 3.11 through 3.13")
 
 
 class CensusError(BaseException):
@@ -71,6 +78,7 @@ class PassiveCensus:
     def __init__(self, root: Path, *, targets: dict[str, tuple[str, str]],
                  call_caps: dict[str, int], type_caps: dict[str, dict[str, int]],
                  allowed_functions: set[tuple[str, str]], budget: Any, writer: Any) -> None:
+        require_supported_runtime()
         self.root = source_root(root)
         self.stdlib = Path(sysconfig.get_path("stdlib")).resolve(strict=True)
         self.targets = {tuple(route): key for key, route in targets.items()}
