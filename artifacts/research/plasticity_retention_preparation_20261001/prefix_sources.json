@@ -1,0 +1,114 @@
+{
+  "archive_sha256": "2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082",
+  "prefixes": {
+    "910071-H": {
+      "checkpoint_members": [
+        "run/910071-H-prefix/checkpoint/wrapper.json"
+      ],
+      "files_sha256": {
+        "run/910071-H-prefix/checkpoint/wrapper.json": "950602f68a5a42665ecd5935250902accfec2d58a115af611db06ee742cd59de",
+        "run/910071-H-prefix/result.json": "d4a6485f7f71d87ba93667a6ad76c88edb1979ade0752e29b57313e0c8f802bb"
+      },
+      "recorded_eligibility": {
+        "eligible": true
+      },
+      "wrapper_pending": null,
+      "wrapper_receipts": 64
+    },
+    "910071-R": {
+      "checkpoint_members": [
+        "run/910071-R-prefix/checkpoint/wrapper.json"
+      ],
+      "files_sha256": {
+        "run/910071-R-prefix/checkpoint/wrapper.json": "55229665d721cd0483bd8400f4ca77aa2307798e32f6a8957d5f501ccd755ec7",
+        "run/910071-R-prefix/result.json": "8c02bbb51cbe53a92bf075be92795b6d92c979467d5444a7190e5a739ffb1463"
+      },
+      "recorded_eligibility": {
+        "eligible": true
+      },
+      "wrapper_pending": null,
+      "wrapper_receipts": 64
+    },
+    "910071-S": {
+      "checkpoint_members": [
+        "run/910071-S-prefix/checkpoint/wrapper.json",
+        "run/910071-S-prefix/checkpoint/brain.json"
+      ],
+      "files_sha256": {
+        "run/910071-S-prefix/checkpoint/brain.json": "4bd50dd9f5c47316a68c72b64f14938178730b02c6f71a735a22e7bd2485e68a",
+        "run/910071-S-prefix/checkpoint/wrapper.json": "5123df59f7b5ad6315fd44c9a2dfb50521b6cf81f7afc967911e58e4431c1c35",
+        "run/910071-S-prefix/result.json": "6611a23ff21460b0922831f1b8c44dd6ab339b928a3ca7e0680698491288cbdd"
+      },
+      "recorded_eligibility": {
+        "burst_times": [
+          12640.0,
+          12640.0
+        ],
+        "burst_window_ms": 8.0,
+        "eligible": true,
+        "max_emitted_key_ms": 12616.992,
+        "next_start_ms": 12800,
+        "noncanonical_outgoing_sources": [],
+        "pending_cascade_spikes": 0,
+        "queue_length": 0
+      },
+      "wrapper_pending": null,
+      "wrapper_receipts": 64
+    },
+    "910072-H": {
+      "checkpoint_members": [
+        "run/910072-H-prefix/checkpoint/wrapper.json"
+      ],
+      "files_sha256": {
+        "run/910072-H-prefix/checkpoint/wrapper.json": "01496d1c4d48cb6992ad6c2e6e15bdc102049cc61584c9c78df018a291fb80ec",
+        "run/910072-H-prefix/result.json": "b7878b0a258c809f5ec53094e0ba588f6c5b785630c24da46c27c36c06b99e2b"
+      },
+      "recorded_eligibility": {
+        "eligible": true
+      },
+      "wrapper_pending": null,
+      "wrapper_receipts": 64
+    },
+    "910072-R": {
+      "checkpoint_members": [
+        "run/910072-R-prefix/checkpoint/wrapper.json"
+      ],
+      "files_sha256": {
+        "run/910072-R-prefix/checkpoint/wrapper.json": "a0e40d3a5ce6eace4a7bd5dbe53ecdff5ea0033fe299305347344c7b258127ab",
+        "run/910072-R-prefix/result.json": "4acff45aebc6cf3ae4d114376fb2221dbb5488912cf5e4d386ba343deacb4290"
+      },
+      "recorded_eligibility": {
+        "eligible": true
+      },
+      "wrapper_pending": null,
+      "wrapper_receipts": 64
+    },
+    "910072-S": {
+      "checkpoint_members": [
+        "run/910072-S-prefix/checkpoint/wrapper.json",
+        "run/910072-S-prefix/checkpoint/brain.json"
+      ],
+      "files_sha256": {
+        "run/910072-S-prefix/checkpoint/brain.json": "fe4224e9d6b0b1a6b79e60adbb3f4df8fda75bdac5c4f6668752499e04f825f1",
+        "run/910072-S-prefix/checkpoint/wrapper.json": "5123df59f7b5ad6315fd44c9a2dfb50521b6cf81f7afc967911e58e4431c1c35",
+        "run/910072-S-prefix/result.json": "3cc966f5ca5add09b69818fd34c4437491c8620ab94e873e22fce6dc66c9fa4a"
+      },
+      "recorded_eligibility": {
+        "burst_times": [
+          12640.0,
+          12640.0
+        ],
+        "burst_window_ms": 8.0,
+        "eligible": true,
+        "max_emitted_key_ms": 12616.992,
+        "next_start_ms": 12800,
+        "noncanonical_outgoing_sources": [],
+        "pending_cascade_spikes": 0,
+        "queue_length": 0
+      },
+      "wrapper_pending": null,
+      "wrapper_receipts": 64
+    }
+  },
+  "scope": "Published restricted native-restore fixtures; no new load/ownership proof"
+}

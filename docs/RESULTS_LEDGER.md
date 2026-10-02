@@ -1261,3 +1261,25 @@ contract correction only.
   [prospective protocol](research/v05_paired_coverage_protocol_20261001.md), and
   [all 92 raw files plus frozen sources](../artifacts/research/v05_paired_coverage_20261001/transport_manifest.json).
   Any ownership execution requires a separate finite contract and source freeze.
+
+
+## 2026-10-02 — Restricted acquired v0.5 ownership observation
+
+- Status: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`; scientific credit 0.
+  This bounded engineering pointer changes no prior scientific disposition.
+- Sole run at frozen source `6dd7e8a014d66232509355687b14579c03838962`:
+  one acquired root, four copies, seven process attempts, fourteen pulses,
+  six process returns, two aborted transactions and one owner commit.
+- Both specified faults traversed the owner transaction and left the original
+  complete supported typed/reference graph unchanged. The genuine event-cap
+  error changed private receptor/arrival state beyond its config replacement.
+- Successful candidate graph/output matched the direct reference; mature
+  four-episode state and all nine caller/output mutation controls passed.
+  The strategy abandons private candidates; native restoration was not tested.
+- Evidence: [bounded result and limits](research/v05_acquired_ownership_results_20261001.md),
+  [prospective contract](research/v05_acquired_ownership_protocol_20261001.md), and
+  [all 160 raw files with frozen sources](../artifacts/research/v05_acquired_ownership_20261001/transport_manifest.json).
+- Limits: single fixture/configuration/process; live identities rely on reviewed
+  source-backed observations. No M1, learned predictor/action ownership, general
+  snapshot, crash recovery or task benefit is established. PR176's original
+  block/skipped P5/P6 and PR177's separate fixture result remain unchanged.
