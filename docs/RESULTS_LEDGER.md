@@ -1283,3 +1283,28 @@ contract correction only.
   source-backed observations. No M1, learned predictor/action ownership, general
   snapshot, crash recovery or task benefit is established. PR176's original
   block/skipped P5/P6 and PR177's separate fixture result remain unchanged.
+
+
+## 2026-10-02 — Restricted native history-export separation
+
+Classification: `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY`; scientific credit **0**.
+Diagnostic `v05-history-export-20261002`, frozen protocol `46472830` and independently
+reviewed implementation `1d5b6de3`, completed one bounded run with 2 roots, 128 acquisition
+plus 8 query calls, 816 pulses, 8 whole-brain copies and 64 external-object mutations.
+Both fixed inherited nuisance-seed fixtures acquired three mature canonical prototypes and
+exported distinct native A/B vectors for the same current Q. Exact repeats, complete
+supported graph comparisons, frozen learning/dictionary checks and the specified ownership
+checks passed. All three prototypes share one unit set and differ in order/timing.
+
+The ordinary raw410 representation also distinguishes the histories. This establishes no
+assembly superiority, M1 prediction/action benefit, joint atomicity, general snapshot
+support or scientific acceptance. No outcome, native load, M1 call, commit or research
+retry occurred. The prospective coordinate-count amendment does not retroactively satisfy
+PR174; PR169's negative comparative result and PR176/177/180 boundaries remain unchanged.
+
+See the [bounded result](research/v05_history_export_results_20261002.md),
+[prospective protocol](research/v05_history_export_protocol_20261002.md) and
+[unchanged raw-evidence transport](../artifacts/research/v05_history_export_20261002/transport_manifest.json).
+All 1,856 raw files (47,357,199 bytes) are retained; independent saved-data audit confirmed
+source/config/input bindings, 279 typed graphs, 620 pointers, native matching, repeat and
+mutation records. This entry changes no prior result, claim grade or role-owned status.

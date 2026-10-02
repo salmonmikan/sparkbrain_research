@@ -302,6 +302,7 @@ def test_freeze_test_mode_does_not_import_model(monkeypatch, tmp_path):
     source = tmp_path / "source.txt"
     source.write_text("frozen synthetic source")
     monkeypatch.setattr(R, "ROOT", tmp_path)
+    monkeypatch.setattr(R.S, "PLANNED_OUTPUT", tmp_path / "planned-output")
     monkeypatch.setattr(R, "sources", lambda: [source])
     result = R.freeze(tmp_path / "freeze")
     assert result["model_calls"] == 0
