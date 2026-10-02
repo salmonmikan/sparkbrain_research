@@ -191,7 +191,7 @@ records, and derived the reported vectors from retained graph values/references.
 The [standalone verifier](../../scripts/verify_v05_history_export_evidence.py) pins the
 transport and parts before base64 decoding, then pins the compressed archive before tar
 parsing. It checks source/raw inventories and typed graphs,
-and reconstructs the fixed counts, native exports, repeats and mutation records. Its 27
+and reconstructs the fixed counts, native exports, repeats and mutation records. Its 30
 model-free tests pass, in addition to the 48 runner helper tests. These include corrupted
 transport, graph/reference and semantic tampering, import denial and arithmetic portability.
 
@@ -202,6 +202,19 @@ summation for raster normalization and raw L1, following
 Every archive byte and graph/export comparison remains exact; no tolerance or altered metric
 was introduced. An emulated older-sum test passes. Actual Python 3.11 execution is a CI check,
 not something performed by that local emulation.
+
+Final review identified a separate potential dependency on the host's `math.exp` rounding
+when reconstructing native timing scores. The data-only verifier now evaluates the exact
+binary64 input in an isolated 100-digit Decimal context and accepts the result only when
+both adjacent Decimal bounds round to the same binary64 value. Python documents
+[`Decimal.exp` as correctly rounded](https://docs.python.org/3.12/library/decimal.html#decimal.Decimal.exp).
+All 24 retained evaluations, over eight distinct inputs, still match the saved native
+scores exactly. Tests make host `math.exp` unusable or incorrect, alter the ambient Decimal
+context, and reject one-ULP tampering in saved scores/exports. This removes the host-libm
+dependency for this fixed archive; it does not change the recorded runtime or establish
+general native-runtime portability. No intact-archive rejection was observed on the
+existing CI platforms. Initial result head `fa5bf287` passed Python 3.11/3.13 CI
+`36959457973`; the repaired final head still requires its own checks and review.
 
 ```bash
 python -B scripts/verify_v05_history_export_evidence.py

@@ -25,6 +25,7 @@ import math
 import random
 import tarfile
 from collections.abc import Iterable
+from decimal import ROUND_HALF_EVEN, Context, Decimal
 from pathlib import Path, PurePosixPath
 from typing import Any
 
@@ -717,6 +718,29 @@ def _dictionary(bank: dict) -> dict:
     }
 
 
+def _recorded_exp(value: float) -> float:
+    """Certify binary64 exp rounding for this archive's bounded timing arguments.
+
+    All 24 checked query-score evaluations (eight distinct arguments in [-4, 0])
+    agree with correctly rounded exp. Preserve the rounded binary64 argument exactly;
+    do not replace it with the original rational timing error. Decimal.exp is
+    correctly rounded to ROUND_HALF_EVEN, independently of the platform's libm:
+    https://docs.python.org/3.12/library/decimal.html#decimal.Decimal.exp
+    Its adjacent context values enclose the exact result. Accept only if both
+    endpoints round to the same binary64 value; no tolerance or fallback is used.
+    This certifies only the fixed archive, not general native-runtime portability.
+    """
+    check(
+        type(value) is float and math.isfinite(value) and -4.0 <= value <= 0.0,
+        "recorded exp input outside bounded domain",
+    )
+    context = Context(prec=100, rounding=ROUND_HALF_EVEN, Emin=-999, Emax=999, traps=[])
+    result = context.exp(Decimal.from_float(value))
+    lower, upper = float(context.next_minus(result)), float(context.next_plus(result))
+    check(lower == upper, "recorded exp lacks unique binary64 rounding")
+    return lower
+
+
 def _similarity(left: dict, right: dict) -> float:
     """Pinned native arithmetic on saved primitive patterns; no model code executes."""
     a, b = left["ordered_units"], right["ordered_units"]
@@ -735,7 +759,9 @@ def _similarity(left: dict, right: dict) -> float:
     if not la or not lb:
         timing = 1.0 if not la and not lb else 0.0
     elif len(la) == len(lb):
-        timing = math.exp(-sum(abs(x - y) for x, y in zip(la, lb, strict=True)) / len(la) / 2.0)
+        timing = _recorded_exp(
+            -sum(abs(x - y) for x, y in zip(la, lb, strict=True)) / len(la) / 2.0
+        )
     else:
         short, long = (left, right) if len(a) < len(b) else (right, left)
         timing = 0.0
@@ -749,7 +775,7 @@ def _similarity(left: dict, right: dict) -> float:
                 selected = [x - selected[0] for x in selected]
                 short_bins = [x - short["relative_bins"][0] for x in short["relative_bins"]]
                 error = sum(abs(x - y) for x, y in zip(selected, short_bins, strict=True))
-                timing = max(timing, math.exp(-error / len(short_bins) / 4.0))
+                timing = max(timing, _recorded_exp(-error / len(short_bins) / 4.0))
     return 0.55 * edit + 0.25 * jaccard + 0.20 * timing
 
 
@@ -1493,6 +1519,7 @@ def verify(artifact: Path = ARTIFACT) -> dict[str, Any]:
         "comparison_scope": "raw410 L1 and native L2 are not comparable advantage metrics",
         "portable_arithmetic": (
             "Explicit CPython 3.12.14 finite-float sum for raster normalization and raw410 L1; "
+            "certified Decimal exp rounding for the fixed archive's native timing scores; "
             "saved values and exact equality unchanged"
         ),
         **result,

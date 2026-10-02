@@ -7,10 +7,13 @@ import copy
 import importlib.util
 import io
 import json
+import math
 import shutil
 import tarfile
 import tempfile
 import unittest
+from collections import Counter
+from decimal import ROUND_DOWN, Context, localcontext
 from pathlib import Path
 from unittest.mock import patch
 
@@ -69,7 +72,10 @@ class EvidenceTests(unittest.TestCase):
                 )
             return original_import(name, *args, **kwargs)
 
-        with patch.object(builtins, "__import__", guarded_import):
+        with (
+            patch.object(builtins, "__import__", guarded_import),
+            patch.object(math, "exp", side_effect=AssertionError("host libm exp forbidden")),
+        ):
             module = importlib.util.module_from_spec(SPEC)
             SPEC.loader.exec_module(module)
             result = module.verify()
@@ -213,6 +219,61 @@ class EvidenceTests(unittest.TestCase):
             with self.subTest(values=values), self.assertRaisesRegex(ValueError, "float sum"):
                 VERIFY._recorded_float_sum(values)
 
+    def test_recorded_exp_matches_every_saved_score_without_host_arithmetic(self):
+        # Exact inputs and correctly rounded outputs for all 24 query-score evaluations.
+        expected = {
+            "-0x1.0000000000000p+2": (2, "0x1.2c155b8213cf4p-6"),
+            "-0x1.c000000000000p+1": (2, "0x1.eec1018e4ff66p-6"),
+            "-0x1.8000000000000p+1": (2, "0x1.97db0ccceb0afp-5"),
+            "-0x1.2aaaaaaaaaaabp+1": (2, "0x1.8d327a69b3be5p-4"),
+            "-0x1.8000000000000p+0": (2, "0x1.c8f87724b5c1dp-3"),
+            "-0x1.5555555555555p+0": (2, "0x1.0dec687e1adf1p-2"),
+            "-0x1.aaaaaaaaaaaabp-1": (6, "0x1.bd075011c09aap-2"),
+            "-0x1.5555555555555p-2": (6, "0x1.6edd3122f2ea5p-1"),
+        }
+        observed = Counter()
+        recorded_exp = VERIFY._recorded_exp
+
+        def capture(value):
+            result = recorded_exp(value)
+            self.assertEqual(result.hex(), expected[value.hex()][1])
+            observed[value.hex()] += 1
+            return result
+
+        with (
+            localcontext() as context,
+            patch.object(VERIFY, "_recorded_exp", capture),
+            patch.object(math, "exp", return_value=-1.0) as host_exp,
+        ):
+            context.prec, context.rounding = 2, ROUND_DOWN
+            context.Emin, context.Emax = -1, 1
+            for signal in context.traps:
+                context.traps[signal] = True
+            result = VERIFY._verify_semantics(self.rows, self.graphs, self.protocol)
+        host_exp.assert_not_called()
+        self.assertEqual(observed, {key: count for key, (count, _) in expected.items()})
+        self.assertEqual(result["seed_results"], self.rows["terminal.json"]["seed_results"])
+
+    def test_recorded_exp_rejects_out_of_domain_and_uncertified_rounding(self):
+        for value in (float("nan"), float("inf"), -math.inf, -4.01, 0.01, -1, False):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, "exp input"):
+                VERIFY._recorded_exp(value)
+        # Insufficient decimal precision must fail closed rather than silently
+        # choose one binary64 value from an interval spanning several values.
+        with patch.object(VERIFY, "Context", return_value=Context(prec=1)):
+            with self.assertRaisesRegex(ValueError, "unique binary64 rounding"):
+                VERIFY._recorded_exp(-1.0)
+
+    def test_subsequence_similarity_also_avoids_libm(self):
+        short = {"ordered_units": [1, 3], "unit_ids": [1, 3], "relative_bins": [0, 0]}
+        long = {"ordered_units": [1, 2, 3], "unit_ids": [1, 2, 3], "relative_bins": [0, 1, 4]}
+        expected = 0.55 * (1.0 - 1 / 3) + 0.25 * (2 / 3) + 0.20 * float.fromhex(
+            "0x1.368b2fc6f960ap-1"
+        )
+        with patch.object(math, "exp", side_effect=AssertionError("host libm exp forbidden")):
+            self.assertEqual(VERIFY._similarity(short, long), expected)
+            self.assertEqual(VERIFY._similarity(long, short), expected)
+
     def test_source_and_configuration_bindings(self):
         for filename, field, value, message in (
             ("preflight.json", "source_pin", "0" * 40, "runtime source"),
@@ -331,7 +392,8 @@ class EvidenceTests(unittest.TestCase):
                 matching = copy.deepcopy(self.rows[prefix + "-matching.json"])
                 exported = copy.deepcopy(self.rows[prefix + "-export.json"])
                 if kind == "score":
-                    matching["patterns"][0]["scores"][0]["score"] = 1.0
+                    score = matching["patterns"][0]["scores"][0]
+                    score["score"] = math.nextafter(score["score"], math.inf)
                 elif kind == "best_tie":
                     matching["patterns"][0]["best_ties"].append("assembly-0002")
                 elif kind == "strongest_tie":
@@ -341,7 +403,7 @@ class EvidenceTests(unittest.TestCase):
                 elif kind == "accepted_type":
                     exported["accepted"] = 1
                 else:
-                    exported["features"][1] = 1.0
+                    exported["features"][1] = math.nextafter(exported["features"][1], math.inf)
                 with self.assertRaisesRegex(ValueError, "matching audit|detached native export"):
                     VERIFY._verify_export(graph, dictionary, observation, exported, matching)
 
