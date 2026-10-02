@@ -16,10 +16,13 @@ from __future__ import annotations
 import argparse
 import importlib.machinery
 import sys
+import types
 from pathlib import Path
 from typing import Any
 
+from scripts import g0_execution_objects as objects
 from scripts import g0_execution_support as support
+from scripts import g0_joint_ownership as ownership
 from scripts import verify_g0_joint_source_contract as source_contract
 
 LAUNCHER_RELATIVE = "scripts/launch_g0_joint_eligibility.py"
@@ -36,20 +39,46 @@ def _hex_pin(value: str, length: int, label: str) -> None:
 
 def _module_origin(root: Path, module: Any, relative: str) -> Path:
     expected = support.confined_path(root, relative, "loaded launch source")
-    spec = module.__spec__
-    if (spec is None or type(spec.loader) is not importlib.machinery.SourceFileLoader
-            or module.__file__ != str(expected) or spec.origin != str(expected)):
+    if type(module) is not types.ModuleType:
+        raise support.AdmissionError("loaded launch source must be an exact module")
+    spec = vars(module).get("__spec__")
+    if (type(spec) is not importlib.machinery.ModuleSpec
+            or type(spec.loader) is not importlib.machinery.SourceFileLoader
+            or vars(module).get("__file__") != str(expected) or spec.origin != str(expected)
+            or vars(module).get("__loader__") is not spec.loader
+            or spec.loader.path != str(expected)
+            or spec.name != relative.removesuffix(".py").replace("/", ".")
+            or spec.loader.name != spec.name
+            or (vars(module).get("__name__") != spec.name
+                and not (relative in (LAUNCHER_RELATIVE, objects.G0_V2.launcher_relative)
+                         and vars(module).get("__name__") == "__main__"
+                         and sys.modules.get("__main__") is module))):
         raise support.AdmissionError("loaded launch source origin differs from guarded root")
     return expected
 
 
-def _guarded_root(value: str) -> Path:
+def _guarded_root(value: str, *,
+                  object_spec: objects.ExecutionObject = objects.HISTORICAL_G0,
+                  entry_module: Any = None, require_active: bool = False) -> Path:
+    object_spec = objects.require_object(object_spec)
     if type(value) is not str or not Path(value).is_absolute() or str(Path(value)) != value:
         raise support.AdmissionError("root requires its exact absolute source path")
     root = support.source_root(Path(value))
     if str(root) != value:
         raise support.AdmissionError("root differs from its guarded absolute source path")
-    _module_origin(root, sys.modules[__name__], LAUNCHER_RELATIVE)
+    core = sys.modules[__name__]
+    _module_origin(root, core, LAUNCHER_RELATIVE)
+    if object_spec is objects.G0_V2:
+        if entry_module is None:
+            raise support.AdmissionError("fixed v2 wrapper is required")
+        _module_origin(root, entry_module, object_spec.launcher_relative)
+        if require_active and (sys.modules.get("__main__") is not entry_module
+                               or entry_module.__name__ != "__main__"):
+            raise support.AdmissionError("v2 reviewed launch requires its active fixed wrapper")
+    elif entry_module is not None and entry_module is not core:
+        raise support.AdmissionError("historical launcher entry differs")
+    _module_origin(root, objects, "scripts/g0_execution_objects.py")
+    _module_origin(root, ownership, "scripts/g0_joint_ownership.py")
     _module_origin(root, support, "scripts/g0_execution_support.py")
     _module_origin(root, source_contract, "scripts/verify_g0_joint_source_contract.py")
     return root
@@ -57,19 +86,31 @@ def _guarded_root(value: str) -> Path:
 
 def _verify_launch_bindings(
     root: Path, approval: dict[str, Any], published_commit: str, inventory_sha256: str,
+    *, object_spec: objects.ExecutionObject = objects.HISTORICAL_G0,
 ) -> None:
     """Compare externally pinned attestations with the actual materialized source."""
-    launcher = support.confined_path(root, LAUNCHER_RELATIVE, "launcher")
+    object_spec = objects.require_object(object_spec)
+    launcher_relative = object_spec.launcher_relative
+    freeze_relative = object_spec.freeze_relative
+    approval_relative = object_spec.approval_relative
+    support._require_object_binding(approval, object_spec)
+    launcher = support.confined_path(root, launcher_relative, "launcher")
     launcher_hash = support.digest(launcher.read_bytes())
-    if approval.get("launcher") != {"path": LAUNCHER_RELATIVE, "sha256": launcher_hash}:
+    if approval.get("launcher") != {"path": launcher_relative, "sha256": launcher_hash}:
         raise support.AdmissionError("approval launcher binding differs")
-    freeze_path = support.confined_path(root, FREEZE_RELATIVE, "freeze")
+    freeze_path = support.confined_path(root, freeze_relative, "freeze")
     freeze_raw = freeze_path.read_bytes()
     freeze = support.read_json(freeze_path)
+    support._require_object_binding(freeze, object_spec)
     inventory = freeze.get("source_files_sha256")
-    if (type(inventory) is not dict or inventory.get(LAUNCHER_RELATIVE) != launcher_hash
-            or FREEZE_RELATIVE in inventory or APPROVAL_RELATIVE in inventory):
+    if (type(inventory) is not dict or inventory.get(launcher_relative) != launcher_hash
+            or freeze_relative in inventory or approval_relative in inventory):
         raise support.AdmissionError("launcher missing from non-self-referential frozen inventory")
+    if object_spec is objects.G0_V2 and not {
+            LAUNCHER_RELATIVE, "scripts/g0_execution_support.py",
+            "scripts/g0_execution_objects.py", "scripts/g0_joint_ownership.py",
+            "scripts/verify_g0_joint_source_contract.py"} <= inventory.keys():
+        raise support.AdmissionError("complete fixed launch chain is absent from inventory")
     if (support.digest(support.canonical(inventory)) != inventory_sha256
             or support.source_inventory(root, list(inventory)) != inventory):
         raise support.AdmissionError("materialized source inventory differs from external pin")
@@ -94,9 +135,14 @@ def _verify_launch_bindings(
     if (type(publication) is not dict or publication.get("commit") != published_commit
             or publication.get("exact_source_sha256") != inventory_sha256):
         raise support.AdmissionError("publication differs from materialized-source provenance")
+    support.verify_prelaunch_materialization(
+        root, approval, published_commit, inventory_sha256, object_spec=object_spec)
 
 
-def _run_reviewed(args: argparse.Namespace) -> dict[str, Any]:
+def _run_reviewed(args: argparse.Namespace, *,
+                  object_spec: objects.ExecutionObject = objects.HISTORICAL_G0,
+                  entry_module: Any = None) -> dict[str, Any]:
+    object_spec = objects.require_object(object_spec)
     for value, label in (
         (args.approval_sha256, "raw approval"),
         (args.approval_object_sha256, "canonical approval object"),
@@ -104,27 +150,31 @@ def _run_reviewed(args: argparse.Namespace) -> dict[str, Any]:
     ):
         _hex_pin(value, 64, label)
     _hex_pin(args.published_commit, 40, "published commit")
-    root = _guarded_root(args.root)
-    approval_path = support.confined_path(root, APPROVAL_RELATIVE, "external approval")
+    root = _guarded_root(args.root, object_spec=object_spec, entry_module=entry_module,
+                         require_active=True)
+    approval_relative = object_spec.approval_relative
+    approval_path = support.confined_path(root, approval_relative, "external approval")
     if support.digest(approval_path.read_bytes()) != args.approval_sha256:
         raise support.AdmissionError("raw approval differs from independently supplied digest")
     approval = support.read_json(approval_path)
     if (type(approval) is not dict
             or support.digest(support.canonical(approval)) != args.approval_object_sha256):
         raise support.AdmissionError("canonical approval object differs from external digest")
-    _verify_launch_bindings(root, approval, args.published_commit, args.source_inventory_sha256)
+    _verify_launch_bindings(root, approval, args.published_commit, args.source_inventory_sha256,
+                            object_spec=object_spec)
 
     def independently_pinned_record(candidate: dict[str, Any]) -> bool:
         # The two pins come from the parent, never from fields inside the record.
         return (
             support.digest(support.canonical(candidate)) == args.approval_object_sha256
             and support.digest(support.confined_path(
-                root, APPROVAL_RELATIVE, "external approval").read_bytes()) == args.approval_sha256
+                root, approval_relative, "external approval").read_bytes()) == args.approval_sha256
         )
 
+    keyword = {} if object_spec is objects.HISTORICAL_G0 else {"object_spec": object_spec}
     permit = support.authorize_execution(
-        root, FREEZE_RELATIVE, APPROVAL_RELATIVE, args.approval_sha256,
-        independently_pinned_record,
+        root, object_spec.freeze_relative, approval_relative, args.approval_sha256,
+        independently_pinned_record, **keyword,
     )
     from scripts import run_g0_joint_eligibility as runner
 
@@ -132,7 +182,10 @@ def _run_reviewed(args: argparse.Namespace) -> dict[str, Any]:
     return runner.execute_reviewed(permit, permit.output_directory)
 
 
-def main(argv: list[str] | None = None) -> int:
+def main(argv: list[str] | None = None, *,
+         object_spec: objects.ExecutionObject = objects.HISTORICAL_G0,
+         entry_module: Any = None) -> int:
+    object_spec = objects.require_object(object_spec)
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--check-source", action="store_true")
@@ -151,12 +204,14 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("--run-reviewed requires all four independently supplied pins")
     try:
         if args.run_reviewed:
-            terminal = _run_reviewed(args)
+            terminal = _run_reviewed(args, object_spec=object_spec, entry_module=entry_module)
             # Evidence is already finalized and charged. Real-run mode emits no
             # additional stdout/stderr bytes outside the inclusive output envelope.
             return 0 if terminal.get("failure") is None else 1
         if args.check_source:
-            result = support.verify_preparation(_guarded_root(args.root), FREEZE_RELATIVE)
+            root = _guarded_root(args.root, object_spec=object_spec, entry_module=entry_module)
+            result = support.verify_preparation(root, object_spec.freeze_relative,
+                                                object_spec=object_spec)
             print(support.canonical(result).decode(), end="")
         else:
             parser.print_help()

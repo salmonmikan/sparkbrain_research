@@ -17,7 +17,8 @@ APPROVAL = ARTIFACT + "/independent-execution-approval.json"
 FREEZE = ARTIFACT + "/freeze.json"
 LAUNCHER = "scripts/launch_g0_joint_eligibility.py"
 SOURCES = (
-    LAUNCHER, "scripts/g0_execution_support.py", "scripts/verify_g0_joint_source_contract.py",
+    LAUNCHER, "scripts/g0_execution_objects.py", "scripts/g0_execution_support.py",
+    "scripts/verify_g0_joint_source_contract.py",
     "scripts/run_g0_joint_eligibility.py", "scripts/g0_joint_ownership.py",
 )
 

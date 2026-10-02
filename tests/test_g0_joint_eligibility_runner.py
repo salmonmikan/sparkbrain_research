@@ -409,7 +409,8 @@ class G0RunnerTests(unittest.TestCase):
             complete_counts = False
             active = False
 
-            def __init__(self, root, caps, budget, writer):
+            def __init__(self, root, caps, budget, writer, *, object_spec):
+                assert object_spec is support.HISTORICAL_G0
                 self.budget = budget
 
             def __enter__(self):
@@ -448,6 +449,7 @@ class G0RunnerTests(unittest.TestCase):
                     (ROOT / ARTIFACT_ROOT / name).read_bytes()).hexdigest()
                     for name in ("protocol.json", "inputs.json")}
                 permit = SimpleNamespace(root=ROOT, output_directory=output,
+                                         object_spec=support.HISTORICAL_G0,
                                          freeze_path=ROOT / ARTIFACT_ROOT / "inputs.json",
                                          approval_path=ROOT / ARTIFACT_ROOT / "protocol.json",
                                          freeze={"environment": {"synthetic_test_only": True},
@@ -486,7 +488,8 @@ class G0RunnerTests(unittest.TestCase):
                         raise support.AdmissionError("synthetic late mapped-library drift")
                     return {"synthetic_mapping_check": "no_native_library_admission"}
 
-                def synthetic_lifecycle_check(snapshot, fault=fault):
+                def synthetic_lifecycle_check(snapshot, fault=fault, *, object_spec):
+                    self.assertIs(object_spec, support.HISTORICAL_G0)
                     self.assertTrue(snapshot["synthetic"])
                     if fault == "lifecycle":
                         raise support.AdmissionError("synthetic incomplete lifecycle")

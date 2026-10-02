@@ -1,0 +1,61 @@
+{
+  "approval_record_created": false,
+  "case_count": 14,
+  "execution_authorized": false,
+  "execution_object_sha256": "f7a84845f580f71f0ffa53d5349d44b6b1c98cdfc94ec801a18df2b08e8b4cf2",
+  "identity": "assembly-m1-g0-v2-20261002",
+  "inputs_exposure": "Byte-identical already exposed engineering literals; no fresh statistical replicate or evidence renewal",
+  "inputs_sha256": {
+    "inputs.json": "edbdf26c0479c6adfc26f2cdb87f8fd616712d8f5b1c351867ac3847f3bee624",
+    "inputs.jsonl": "41b08e4b8b6f174253cd9ee75f9660b26faf0cb818f9c7cdd9358bb1f404f999"
+  },
+  "ledger_or_reservation_created": false,
+  "limits": {
+    "address_space_bytes": 1073741824,
+    "cpu_seconds": 600,
+    "output_bytes": 268435456,
+    "wall_seconds": 900
+  },
+  "next_gates": [
+    "Complete source-only implementation and mixed-binding tests",
+    "Independent source/enforcement review",
+    "Exact prospective source/runtime/dependency/input/lifecycle/resource/evidence freeze",
+    "Published exact-head review and required CI",
+    "Independent exact full-tree/no-extra-importable prelaunch verification before target Python starts, bound by externally pinned attestation",
+    "Separate independently pinned parent execution decision; no record issued during preparation"
+  ],
+  "ownership_contract_sha256": "61b9025247ff89909e6cf2f2f326f09b1cff050b27c66d3b0dc0ac770cbe9278",
+  "planned_calls": {
+    "clone_joint": 14,
+    "m1_observe": 5,
+    "m1_outcome": 6,
+    "predictive_feedback": 4,
+    "producer": 70,
+    "scope_step": 3
+  },
+  "previous_actual_model_counts": "UNKNOWN; no allocation rebate",
+  "previous_consumed_identity": "assembly-m1-g0-v1-20261002",
+  "question": "Exact bounded joint producer/M1 ownership, retained-owner isolation, candidate disposal and publication eligibility",
+  "required_deltas": [
+    "Restore PR192 exact pointer/root/generation guard and fail-dispose wording",
+    "Select current codec registry explicitly; no three-observation claim",
+    "Retain PR194 pre-profile admission, identity cache, periodic checks and cleanup",
+    "Thread exact immutable object binding through every authority/source/evidence/launcher gate"
+  ],
+  "reserves_included": {
+    "address_space_bytes": 33554432,
+    "cpu_seconds": 30,
+    "output_bytes": 16777216,
+    "wall_seconds": 45
+  },
+  "schema": "g0-successor-proposal-v1",
+  "scientific_credit": 0,
+  "separate_unestablished_questions": [
+    "Native checkpoint rollback equivalence",
+    "Populated-concept/three-observation checkpoint eligibility",
+    "68-call native/raw consumer pilot",
+    "Learned feature utility or acquisition-time weight necessity"
+  ],
+  "source_origin_baseline": "d3ad56dce4256634ce62c69acecd1de65fcd9fb7",
+  "status": "UNAPPROVED_SOURCE_ONLY_PROPOSAL"
+}
