@@ -1363,3 +1363,25 @@ mutation records. This entry changes no prior result, claim grade or role-owned 
 - [Change, reproduction commands and limits](research/mutable_concept_checkpoint_compatibility_20261002.md).
   Historical evidence and schema versions remain unchanged. Updated-runtime
   research would require a prospective exact-source/dependency pin and review.
+
+
+## 2026-10-02 — Short G0 v1 incomplete consumed attempt
+
+- Identity `assembly-m1-g0-v1-20261002` had one authorized attempt at historical
+  source `0a9a5123b1645fc462f95de8caddb8170b1020c5` (intentionally non-merging PR192).
+  The process exited 137 without a runner terminal manifest or engineering verdict.
+- Eligibility, actual model-call counts and furthest execution phase are not
+  established. Exit 137 is consistent with SIGKILL; the causal resource trigger
+  remains unproven. Repeated admission scans under profiling are a source-level
+  overhead hazard and diagnosis hypothesis, not a measured cause.
+- The durable STARTED reservation consumes this identity permanently: no retry,
+  resume or budget top-up. The archived prospective ledger's UNCONSUMED entry is
+  preserved historical input, not permission to reuse the reserved identity.
+- All 199 original output files (2,727,225 bytes), including all 192 frozen source
+  copies, are unchanged. The audited 206-file archive also retains original
+  authority records and explicitly separate external observations/audit records.
+- [Failure report and limits](research/assembly_m1_g0_v1_failed_20261002.md) and
+  [complete checksum-bound evidence transport](../artifacts/research/assembly_m1_g0_v1_failed_20261002/transport_manifest.json).
+  No ownership success, native rollback equivalence or learned benefit is claimed;
+  scientific credit 0. Any remediation requires separate prospective review and
+  fresh execution authority; this entry changes no previous result or scheduler.
