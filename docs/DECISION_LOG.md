@@ -1337,3 +1337,17 @@ Historical source-guard positive tests use hash-verified preserved source bytes
 in isolated temporary roots. Frozen validators and manifests remain unchanged and
 must reject the changed current runtime. This separates software test portability
 from prospective research source eligibility; it never updates an old freeze.
+
+## D-M1-PATH-20261002-0001 — Prepare the repaired-source temporal inlet path
+
+**Decision (2026-10-02):** Add a new source-only implementation candidate for PR188's
+68-call native-history/raw-order → M1 path. Select repaired runtime
+`46bbd9b8b28c2404c73f028f8736ed83c3b5c3fe` in a new source contract. Preserve all historical
+freezes/evidence and leave execution disabled pending actual G0 reconciliation,
+three-observation eligibility, complete constructor/resource accounting, reviewed
+launcher and separate clearance. Model-free schedule/native-port fixture tests are
+software evidence only; they do not construct a real producer or M1.
+
+**Reason:** Exact literals, two-inlet controls, sham identity and native checkpoint
+wiring must be independently reviewable before research execution. Nested scope rollback
+and data-dependent object shells require explicit accounting beyond facade totals.
