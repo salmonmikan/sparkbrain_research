@@ -699,6 +699,13 @@ def _verify_gates(root: Path, freeze: dict, contract: dict) -> None:
                 census[field][name]["init"] >= count,
                 "import enum initialization coverage is below its source-derived floor: " + name,
             )
+    for name in sorted(expected_classes):
+        for kind in ("init", "shell"):
+            _require(
+                census["observed_eligibility_per_type"][name][kind]
+                <= census["prospective_type_caps"][name][kind],
+                "observed eligibility count exceeds prospective type cap: " + name + ":" + kind,
+            )
     routes = census["observed_routes"]
     _require(type(routes) is list and bool(routes), "actual observed constructor routes missing")
     totals = {name: {"init": 0, "shell": 0} for name in expected_classes}

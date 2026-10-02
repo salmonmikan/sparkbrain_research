@@ -368,6 +368,59 @@ def test_synthetic_gate_validation_does_not_issue_permit(tmp_path):
     assert admission.APPROVED_FREEZE_SHA256 is None
 
 
+def set_synthetic_observed_count(census, name, kind, count):
+    """Keep synthetic raw-route totals consistent so cap checks are isolated."""
+    census["observed_eligibility_per_type"][name][kind] = count
+    census["observed_routes"] = [
+        row for row in census["observed_routes"] if (row["type"], row["kind"]) != (name, kind)
+    ]
+    if count:
+        census["observed_routes"].append(
+            {
+                "type": name,
+                "path": "synthetic/census.py",
+                "qualname": "synthetic_route",
+                "kind": kind,
+                "count": count,
+            }
+        )
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "sparkbrain.example:Example",
+        "sparkbrain.v032.contracts:V032StepResult",
+        "random:Random",
+        "_thread:RLock",
+        "_thread:lock",
+    ],
+)
+@pytest.mark.parametrize("kind", ["init", "shell"])
+def test_observed_count_above_prospective_type_cap_fails_closed(tmp_path, name, kind):
+    value, contract, gates = gate_fixture(tmp_path)
+    census = gates["constructor_census"]
+    set_synthetic_observed_count(census, name, kind, 2)
+    census["prospective_type_caps"][name][kind] = 1
+    value["gates"]["constructor_census"] = write_json(tmp_path, "constructor_census.json", census)
+    with pytest.raises(admission.AdmissionError, match="exceeds prospective type cap") as error:
+        admission._verify_gates(tmp_path, value, contract)
+    assert name + ":" + kind in str(error.value)
+
+
+@pytest.mark.parametrize("kind", ["init", "shell"])
+@pytest.mark.parametrize("count", [0, 1])
+def test_observed_count_equal_to_prospective_type_cap_is_accepted(tmp_path, kind, count):
+    value, contract, gates = gate_fixture(tmp_path)
+    census = gates["constructor_census"]
+    name = "sparkbrain.example:Example"
+    set_synthetic_observed_count(census, name, kind, count)
+    census["prospective_type_caps"][name][kind] = count
+    value["gates"]["constructor_census"] = write_json(tmp_path, "constructor_census.json", census)
+    admission._verify_gates(tmp_path, value, contract)
+    assert admission.APPROVED_FREEZE_SHA256 is None
+
+
 @pytest.mark.parametrize("transient", ["SensoryChannelDecision", "V032StepResult"])
 @pytest.mark.parametrize("field", ["observed_eligibility_per_type", "prospective_type_caps"])
 def test_allocation_caps_include_transient_nonretained_types(tmp_path, transient, field):

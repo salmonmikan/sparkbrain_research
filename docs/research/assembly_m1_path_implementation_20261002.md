@@ -141,6 +141,8 @@ These are not all allocations. Native topology units/connections, config objects
 receptor states, queue events, spikes, patterns, assemblies, concept/evidence records
 and checkpoint tree duplication have data-dependent counts. Every exact registered
 type must have explicit init/shell caps and an actual census, including failed calls.
+Each observed eligibility count must fit its corresponding frozen prospective
+per-type init/shell cap; internally consistent route totals do not excuse a cap overrun.
 Neither 58 facades nor an ordinary `__init__` profiler covers those shells.
 The six prepared native configurations are recreated through explicit dataclass
 constructors; an unreviewed native `copyreg` shell route is rejected before allocation.

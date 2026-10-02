@@ -1351,3 +1351,8 @@ software evidence only; they do not construct a real producer or M1.
 **Reason:** Exact literals, two-inlet controls, sham identity and native checkpoint
 wiring must be independently reviewable before research execution. Nested scope rollback
 and data-dependent object shells require explicit accounting beyond facade totals.
+
+**Review refinement (2026-10-02):** Require each independently observed eligibility
+init/shell count to be no greater than its frozen prospective per-type cap. Exact
+route-total reconciliation alone cannot admit evidence that exceeds that budget.
+Model-free boundary regressions cover equality and single-count overruns.
