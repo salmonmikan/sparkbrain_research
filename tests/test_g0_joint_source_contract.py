@@ -1,0 +1,103 @@
+"""Model-free tests for the prospective G0 static source registry."""
+
+from __future__ import annotations
+
+import ast
+import importlib.util
+import json
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+import pytest
+
+ROOT = Path(__file__).resolve().parents[1]
+SOURCE = ROOT / "scripts/verify_g0_joint_source_contract.py"
+SPEC = importlib.util.spec_from_file_location("g0_source_contract", SOURCE)
+assert SPEC and SPEC.loader
+AUDIT = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(AUDIT)
+
+
+@pytest.fixture
+def copied_sources(tmp_path):
+    contract = json.loads((ROOT / AUDIT.CONTRACT).read_text())
+    for path in [AUDIT.CONTRACT, *contract["files"]]:
+        target = tmp_path / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / path, target)
+    return tmp_path
+
+
+def test_exact_static_source_inventory():
+    result = AUDIT.verify()
+    assert result["source_files"] == 28
+    assert result["class_witnesses"] == 101
+    assert result["runtime_execution_authorized"] is False
+    assert result["scientific_credit"] == 0
+
+
+@pytest.mark.parametrize("change", ["remove_class", "remove_file", "authorize", "credit"])
+def test_contract_cannot_be_reduced_or_promoted(copied_sources, change):
+    path = copied_sources / AUDIT.CONTRACT
+    contract = json.loads(path.read_text())
+    if change == "remove_class":
+        next(iter(contract["files"].values()))["classes"].popitem()
+    elif change == "remove_file":
+        contract["files"].popitem()
+    elif change == "authorize":
+        contract["runtime_execution_authorized"] = True
+    else:
+        contract["scientific_credit"] = 1
+    path.write_text(json.dumps(contract))
+    with pytest.raises(ValueError, match="contract digest"):
+        AUDIT.verify(copied_sources)
+
+
+def test_source_drift_rejected(copied_sources):
+    path = copied_sources / "src/sparkbrain/v032/runtime.py"
+    path.write_text(path.read_text() + "\n# altered\n")
+    with pytest.raises(ValueError, match="source digest"):
+        AUDIT.verify(copied_sources)
+
+
+def test_source_symlink_escape_rejected(copied_sources, tmp_path_factory):
+    path = copied_sources / "src/sparkbrain/v032/runtime.py"
+    external = tmp_path_factory.mktemp("outside") / "runtime.py"
+    shutil.copyfile(path, external)
+    path.unlink()
+    path.symlink_to(external)
+    with pytest.raises(ValueError, match="source escapes"):
+        AUDIT.verify(copied_sources)
+
+
+def test_ast_distinguishes_dict_and_slot_fields():
+    classes = ast.parse("""
+@dataclass(slots=True)
+class Slot:
+    one: int
+class Dict:
+    def __init__(self):
+        self.one = 1
+    def reset(self):
+        self.two = 2
+""").body
+    assert AUDIT.class_spec(classes[0])["slot_fields"] == ["one"]
+    assert AUDIT.class_spec(classes[0])["dict_fields"] == []
+    assert AUDIT.class_spec(classes[1])["dict_fields"] == ["one", "two"]
+
+
+def test_all_source_auditing_forbids_sparkbrain_import():
+    program = """
+import importlib.abc, runpy, sys
+class Block(importlib.abc.MetaPathFinder):
+    def find_spec(self, fullname, *args):
+        if fullname == 'sparkbrain' or fullname.startswith('sparkbrain.'):
+            raise AssertionError('model import forbidden: ' + fullname)
+sys.meta_path.insert(0, Block())
+runpy.run_path(sys.argv[1], run_name='__main__')
+"""
+    result = subprocess.run([sys.executable, "-B", "-c", program, str(SOURCE)],
+                            capture_output=True, text=True, check=True)
+    assert json.loads(result.stdout)["runtime_execution_authorized"] is False

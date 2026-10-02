@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "broader_model_free_tests_total": 161,
+    "broader_test_exit": 0,
+    "independent_new_tests_under_sparkbrain_import_blocker": 65,
+    "independent_review": "No remaining blocking mechanics finding in declared serial trusted-source domain",
+    "independent_runtime_modules_loaded": 0,
+    "new_adapter_tests": 56,
+    "new_source_audit_tests": 9,
+    "new_test_exit": 0,
+    "repository_ruff_exit": 0
+  },
+  "classification": "SOURCE_ONLY_NONCANONICAL_NON_EVIDENTIARY",
+  "files_sha256": {
+    "artifacts/research/g0_joint_ownership_preparation_20261002/source_contract.json": "70fd40a457ee633399cf08bbcecf3f50a47e781faed7f56fe292cbe80b67949c",
+    "docs/research/g0_joint_ownership_preparation_20261002.md": "6ed9a85c7bab5de4e833cac0f4b5904e42d890e8a6e13e8e4cc5179d5ff62006",
+    "scripts/g0_joint_ownership.py": "c5d721b9c849f5262c5c8bd16cc0249617b258b66d109f9417545d0d9fa8684b",
+    "scripts/verify_g0_joint_source_contract.py": "7c00df47af3914cf19c7b294546ebdbcd8ef54a65147b0b3b610089f0b1ad748",
+    "tests/test_g0_joint_ownership.py": "3e0901da9e5e4a001bcb015ba27864fb56334bb248c5eabbd88d28b7343694e8",
+    "tests/test_g0_joint_source_contract.py": "70417e11ab99b075368929d9812243eaf9735185ec9d9a56f4e0dc950f5ea0d8"
+  },
+  "local_interpreter": "CPython 3.12.14 Linux x86_64",
+  "real_g0_executed": false,
+  "review_limits": [
+    "No real M1 or v05 construction or observations",
+    "Native-checkpoint alias topology is not used as the clone oracle",
+    "Source/path/class binding assumes trusted fresh imports; not arbitrary in-memory bytecode attestation",
+    "Exact-head external Codex review and CI remain separate publication gates"
+  ],
+  "runtime_execution_authorized": false,
+  "schema": "g0-joint-source-preparation-validation-1",
+  "scientific_credit": 0,
+  "source_class_witnesses": 101,
+  "source_files_verified": 28,
+  "unchanged": [
+    "production runtime source",
+    "consumed identities and retained scientific evidence",
+    "scheduler/control state",
+    "shared claim/status/results ledgers"
+  ]
+}
