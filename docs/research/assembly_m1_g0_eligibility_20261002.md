@@ -35,7 +35,7 @@ The [machine source contract](../../artifacts/research/assembly_m1_g0_20261002/s
 binds five files, nine inspected symbols, their exact SHA-256 values, four blockers
 and eight future case IDs. The auditor reads files as data and parses ASTs; it does
 not import the inspected modules. Hashes bind the selected bytes; token checks and
-AST ranges are only narrow source witnesses, not a whole-program proof. Duplicate JSON keys and nonfinite JSON constants reject before source access. The complete
+AST ranges are only narrow source witnesses, not a whole-program proof. Duplicate JSON keys, nonfinite constants and overflowed numbers reject before source access. The complete
 logical contract is itself digest-pinned to reject reduced/relabelled fact inventories.
 The source commit is declared provenance checked during preparation; the auditor does
 not query Git or independently prove commit membership.
@@ -185,7 +185,7 @@ matched ablations; PR169's negative comparison and PR182's producer-only boundar
 
 The source auditor bound five source files and nine symbol-level facts. Its successful
 exit means the selected source bindings matched; reported G0 status remains blocked.
-Thirty-two focused model-free tests passed, including source drift, boundary corruption,
+Thirty-seven focused model-free tests passed, including source drift, boundary corruption,
 path escape, missing/ambiguous symbols, reduced/relabelled contracts, contract non-mutation
 and a subprocess import
 finder that rejects every SparkBrain import. Scoped Ruff passed. No fake sentinel was
@@ -215,3 +215,9 @@ Five added tests reject conflicting/identical root keys, nested duplicates and N
 source-file access. This is a source-auditor parsing repair; no runtime or experiment
 semantics changed and no G0 execution occurred. Initial-head CI passed; latest-head CI
 and Codex re-review are required before merge.
+
+Review of head `d42f7490fd89a7f96352e7a762a380bf5a3e6488` additionally identified
+that standard JSON numeric literals such as `1e400` bypass `parse_constant` and become
+infinity through default float parsing. A finite-checking `parse_float` hook now rejects
+those values during parsing. The nonfinite test covers NaN, signed Infinity and three
+positive/negative overflow literals, bringing the suite to 37 tests.

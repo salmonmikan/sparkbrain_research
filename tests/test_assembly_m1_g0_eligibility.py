@@ -152,9 +152,10 @@ def test_rejects_duplicate_json_keys_before_source_access(tmp_path, mutation):
         AUDITOR.verify(tmp_path)
 
 
-def test_rejects_nonfinite_json_before_hashing(tmp_path):
+@pytest.mark.parametrize("literal", ["NaN", "Infinity", "-Infinity", "1e400", "-1e400", "1e309"])
+def test_rejects_nonfinite_json_before_hashing(tmp_path, literal):
     path = tmp_path / AUDITOR.PROTOCOL
     path.parent.mkdir(parents=True)
-    path.write_text('{"unknown":NaN}')
-    with pytest.raises(ValueError, match="nonfinite JSON constant"):
+    path.write_text('{"unknown":' + literal + '}')
+    with pytest.raises(ValueError, match="nonfinite JSON"):
         AUDITOR.verify(tmp_path)

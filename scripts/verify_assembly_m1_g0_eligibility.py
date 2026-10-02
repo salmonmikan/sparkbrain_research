@@ -8,6 +8,7 @@ import argparse
 import ast
 import hashlib
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -40,11 +41,19 @@ def _reject_constant(value: str) -> None:
     raise ValueError(f"nonfinite JSON constant: {value}")
 
 
+def _finite_float(value: str) -> float:
+    result = float(value)
+    if not math.isfinite(result):
+        raise ValueError(f"nonfinite JSON number: {value}")
+    return result
+
+
 def read_contract(path: Path) -> dict[str, Any]:
     value = json.loads(
         path.read_text(encoding="utf-8"),
         object_pairs_hook=_unique_object,
         parse_constant=_reject_constant,
+        parse_float=_finite_float,
     )
     if not isinstance(value, dict):
         raise ValueError("contract must be a JSON object")
