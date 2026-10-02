@@ -195,6 +195,13 @@ Commands:
 
 ```bash
 python -B scripts/verify_assembly_m1_g0_eligibility.py
+# Bash: reproduce the exact committed pretty-printed audit bytes without replacing them.
+set -o pipefail
+python -B scripts/verify_assembly_m1_g0_eligibility.py \
+  | python -c 'import json, sys; print(json.dumps(json.load(sys.stdin), indent=2, sort_keys=True))' \
+  > /tmp/assembly-m1-g0-source-audit.json
+cmp /tmp/assembly-m1-g0-source-audit.json \
+  artifacts/research/assembly_m1_g0_20261002/source_audit.json
 python -B -m pytest -q tests/test_assembly_m1_g0_eligibility.py
 ruff check scripts/verify_assembly_m1_g0_eligibility.py tests/test_assembly_m1_g0_eligibility.py
 ```
@@ -230,3 +237,9 @@ M1 default-component constructor, predictive facade constructor and predictive c
 save/load paths. This prevents the missing connection from drifting undetected; it still
 is not a whole-program or runtime ownership proof. Source-drift tests expand over the
 complete inventory; there are 190 focused model-free tests.
+
+Review of head `3cfba4110c09533bca0269fb5c8fe82abe63c4ad` requested the exact
+artifact-generation command, because the CLI emits compact JSON while the saved audit
+is pretty-printed. The Bash pipeline above specifies the exact formatting and newline;
+`cmp` verifies the retained file bytes. The CLI import-guard test now checks those exact
+pretty-printed bytes against the saved artifact. The artifact itself is unchanged.

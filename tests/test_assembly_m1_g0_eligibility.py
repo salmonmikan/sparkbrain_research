@@ -114,6 +114,9 @@ assert not any(n == "sparkbrain" or n.startswith("sparkbrain.") for n in sys.mod
     report = json.loads(result.stdout)
     assert report["g0_status"] == "BLOCKED_SOURCE_CONTRACT_GAP"
     assert report["real_dynamics_calls_by_this_auditor"] == 0
+    formatted = (json.dumps(report, indent=2, sort_keys=True) + "\n").encode()
+    artifact = ROOT / "artifacts/research/assembly_m1_g0_20261002/source_audit.json"
+    assert formatted == artifact.read_bytes()
 
 
 @pytest.mark.parametrize("mutation", ["commit", "cases", "subset", "empty_tokens", "metadata"])
