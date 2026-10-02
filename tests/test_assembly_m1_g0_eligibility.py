@@ -30,7 +30,7 @@ def test_success_is_source_binding_not_g0_pass():
     assert result["g0_status"] == "BLOCKED_SOURCE_CONTRACT_GAP"
     assert result["runtime_execution_authorized"] is False
     assert result["scientific_credit"] == 0
-    assert len(result["facts"]) == 9
+    assert len(result["facts"]) == 13
     assert before == {name for name in sys.modules if name.startswith("sparkbrain")}
 
 

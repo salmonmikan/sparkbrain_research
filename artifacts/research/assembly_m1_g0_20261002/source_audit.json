@@ -78,9 +78,41 @@
       "path": "scripts/v05_acquired_ownership_probe.py",
       "start_line": 387,
       "symbol": "GraphAudit.inspect"
+    },
+    {
+      "end_line": 274,
+      "id": "m1-default-components",
+      "interpretation": "The default real M1 uses the source-bound predictive wrapper and scope pilot.",
+      "path": "src/sparkbrain/system_build/integrated_m1.py",
+      "start_line": 261,
+      "symbol": "IntegratedM1Pilot.__init__"
+    },
+    {
+      "end_line": 203,
+      "id": "predictive-reference-facade",
+      "interpretation": "The predictive wrapper owns the real v0.3.2 facade rather than an unspecified reference object.",
+      "path": "src/sparkbrain/system_build/predictive_revision.py",
+      "start_line": 187,
+      "symbol": "PredictiveRevisionPilot.__init__"
+    },
+    {
+      "end_line": 615,
+      "id": "predictive-save-route",
+      "interpretation": "Predictive checkpoint save reaches the direct reference-brain tree serializer.",
+      "path": "src/sparkbrain/system_build/predictive_revision.py",
+      "start_line": 600,
+      "symbol": "PilotCheckpointManager.save"
+    },
+    {
+      "end_line": 635,
+      "id": "predictive-load-route",
+      "interpretation": "Predictive checkpoint load reconstructs and requires the v0.3.2 facade.",
+      "path": "src/sparkbrain/system_build/predictive_revision.py",
+      "start_line": 618,
+      "symbol": "PilotCheckpointManager.load"
     }
   ],
-  "file_count": 5,
+  "file_count": 158,
   "g0_status": "BLOCKED_SOURCE_CONTRACT_GAP",
   "limitations": "Hashes, AST ranges and literal source tokens are inspected. The commit ID is declared provenance; this auditor does not query Git. This is not a whole-program proof, runtime graph inventory, checkpoint certificate or G0 pass.",
   "real_dynamics_calls_by_this_auditor": 0,

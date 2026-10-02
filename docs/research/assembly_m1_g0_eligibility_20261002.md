@@ -32,7 +32,7 @@ hide the exact problem G0 is intended to test.
 
 Source snapshot: `main@2682b895435f79c9723934e2c116e440719304d8`.
 The [machine source contract](../../artifacts/research/assembly_m1_g0_20261002/source_contract.json)
-binds five files, nine inspected symbols, their exact SHA-256 values, four blockers
+binds all 157 runtime Python files plus the producer auditor, thirteen inspected symbols, their exact SHA-256 values, four blockers
 and eight future case IDs. The auditor reads files as data and parses ASTs; it does
 not import the inspected modules. Hashes bind the selected bytes; token checks and
 AST ranges are only narrow source witnesses, not a whole-program proof. Duplicate JSON keys, nonfinite constants and overflowed numbers reject before source access. The complete
@@ -183,9 +183,9 @@ matched ablations; PR169's negative comparison and PR182's producer-only boundar
 
 ## Verification performed
 
-The source auditor bound five source files and nine symbol-level facts. Its successful
+The source auditor bound 158 source files and thirteen symbol-level facts. Its successful
 exit means the selected source bindings matched; reported G0 status remains blocked.
-Thirty-seven focused model-free tests passed, including source drift, boundary corruption,
+One hundred ninety focused model-free tests passed, including source drift, boundary corruption,
 path escape, missing/ambiguous symbols, reduced/relabelled contracts, contract non-mutation
 and a subprocess import
 finder that rejects every SparkBrain import. Scoped Ruff passed. No fake sentinel was
@@ -221,3 +221,12 @@ that standard JSON numeric literals such as `1e400` bypass `parse_constant` and 
 infinity through default float parsing. A finite-checking `parse_float` hook now rejects
 those values during parsing. The nonfinite test covers NaN, signed Infinity and three
 positive/negative overflow literals, bringing the suite to 37 tests.
+
+The ready-for-review Codex pass identified a missing source binding: the predictive
+wrapper was not inventoried even though it connects real M1 to the facade and direct
+checkpoint manager. The corrected source contract now freezes all 157 runtime Python
+files (including package exports) plus the producer auditor, and explicitly audits the
+M1 default-component constructor, predictive facade constructor and predictive checkpoint
+save/load paths. This prevents the missing connection from drifting undetected; it still
+is not a whole-program or runtime ownership proof. Source-drift tests expand over the
+complete inventory; there are 190 focused model-free tests.

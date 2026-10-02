@@ -15,7 +15,7 @@ from typing import Any
 CLASSIFICATION = "SOURCE_ONLY_NONCANONICAL_NON_EVIDENTIARY"
 PROTOCOL = "artifacts/research/assembly_m1_g0_20261002/source_contract.json"
 # Pin the entire logical contract, including its fact inventory and future-case metadata.
-CONTRACT_SHA256 = "079605ca4f42f8229d54052ebfe7058da137d98e36cc299f0593ea5031d8e26c"
+CONTRACT_SHA256 = "52377cb2edda4f40e021757fbf5d04a3a19742c2b23c04000e3501d20c288fb9"
 REQUIRED_BLOCKERS = {
     "producer_oracle_missing_m1_types",
     "facade_lock_and_global_registry",
