@@ -101,7 +101,7 @@
     "venv_configuration_sha256": "40ba65a3880771fcb6e9e1ee8f281d37ecd8b1d01825e1ecf29893b7f5051b75",
     "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
   },
-  "execution_source_selection": "Exact reviewed prospective PR-head checkout, never advancing main implicitly",
+  "execution_source_selection": "Independently Git-blob-verified materialized source tree of exact reviewed published commit; local Git HEAD is not source authority",
   "identity": "assembly-m1-g0-v1-20261002",
   "inputs": {
     "path": "artifacts/research/assembly_m1_g0_v1_20261002/inputs.json",
@@ -115,7 +115,7 @@
   },
   "protocol": {
     "path": "artifacts/research/assembly_m1_g0_v1_20261002/protocol.json",
-    "sha256": "a1671220976b36769a7acfec9157c757b8498a514ae2b50648f8610c6884e4f9"
+    "sha256": "bd40727441b749a5949e67d9ba95f712db92e568ef5a4335829308fbe58a19c8"
   },
   "reserves": {
     "address_space_bytes": 33554432,
@@ -133,10 +133,10 @@
   "source_files_sha256": {
     "artifacts/research/assembly_m1_g0_v1_20261002/inputs.json": "edbdf26c0479c6adfc26f2cdb87f8fd616712d8f5b1c351867ac3847f3bee624",
     "artifacts/research/assembly_m1_g0_v1_20261002/inputs.jsonl": "41b08e4b8b6f174253cd9ee75f9660b26faf0cb818f9c7cdd9358bb1f404f999",
-    "artifacts/research/assembly_m1_g0_v1_20261002/protocol.json": "a1671220976b36769a7acfec9157c757b8498a514ae2b50648f8610c6884e4f9",
+    "artifacts/research/assembly_m1_g0_v1_20261002/protocol.json": "bd40727441b749a5949e67d9ba95f712db92e568ef5a4335829308fbe58a19c8",
     "artifacts/research/g0_joint_ownership_preparation_20261002/source_contract.json": "281e71fd1bbc11d9d705e6a02524f4071d39573ce0bc36b040da1de40a04e7c8",
     "artifacts/research/v05_history_export_20261002/inputs.jsonl": "69a25de3c3aef84743d45494a1193df0eac695b4d0c8a0beb8f07fad5129ee39",
-    "docs/research/assembly_m1_g0_execution_preparation_20261002.md": "eaddb2ac455c2b45eca4854a83985946811b798bc86fadec77891f58502e4545",
+    "docs/research/assembly_m1_g0_execution_preparation_20261002.md": "0448cd6af2fdb11b49855a689cb23c706756ed4d21c87582d62b6004b646ae88",
     "docs/research/g0_joint_ownership_preparation_20261002.md": "35f88305c946941e32ce0a61dd3ca6ee61d725f6bbe482c69a5f41ebcdc6ab47",
     "schemas/baseline-experiment-v0.1.schema.json": "ce5635f9761a4b02b99ead820dc1b957f879b71a9ad3d012e003f2d84d3016cc",
     "schemas/benchmark-v0.2.schema.json": "1a1857bae374b1a420aca8c89018b9e4fff65467f843a5fea59e777b48d09e3a",
@@ -153,9 +153,10 @@
     "schemas/summary-v0.2.schema.json": "797065235e66360de4cab377c2929debe89d8c71091667242cfc434307ae76d9",
     "schemas/trace-v0.2.schema.json": "2eed3249effbe5fea09a3e60143142673de434efbeae70187bf8e3598bbeb0f7",
     "schemas/trace-v0.3.schema.json": "ff3ac72b84c6e17c6badc583bbf570760cf663a08220afc34634cbc1ee5897a0",
-    "scripts/g0_execution_support.py": "117a6e4500628544c4a49be865fab6eb5a6bf4b8bf28bfb6225c0c8a3b7f54ea",
+    "scripts/g0_execution_support.py": "13616e8e4e9c42fe1d53a28cc59ac5b765c30cea7db60b5ffcdf9b0f2cdc54b9",
     "scripts/g0_joint_ownership.py": "70a607b29773c4318fc43b1206da7afffc3d7c5fc76470889e3c24835db93ecf",
-    "scripts/run_g0_joint_eligibility.py": "e490da9535255957e4dbf1d892b1c1310a4b372bfb27609e4d7607f0108681f8",
+    "scripts/launch_g0_joint_eligibility.py": "e4a69800ceadf7ae46c6ec1f4115171535d3baa15a2b51ac93c611ad9a4c71f1",
+    "scripts/run_g0_joint_eligibility.py": "2c7d8311bdbbd9e09f10194687d61065cd6ae1e504712ff37736088e7547baa4",
     "scripts/v05_acquired_ownership_probe.py": "d24730db318749deba4428ea7d26d283181bc3a91353d268eb2528f23db2bc7d",
     "scripts/v05_history_export_probe.py": "1035374574a1528f76d8b6e7aefafb80265b37414322f6d3b675aafc045e671a",
     "scripts/verify_g0_joint_source_contract.py": "2411f267a76b6932eb2ab1156901dbbb7601ecd63c2e832b899d313b8794f53c",
@@ -317,11 +318,13 @@
     "src/sparkbrain/visualizer.py": "9a92d0384f9f84e3abc2ddb2e528df481cf87cdeadfd53dec91a51ad318c3594",
     "src/sparkbrain/worlds.py": "aab2f22d729bc277ec24bc76f318773ae6a35054f06c73cdc5a8a38a0ade276f",
     "tests/test_g0_execution_protocol.py": "2a98ce108aa87019a9bfc5bc3ca890bee2e10f38839a405d754f4130631f5a0c",
-    "tests/test_g0_execution_support.py": "50aeb0d38274c2ebe2bcc02a6c9366e781588da660c517b94765667280b362dd",
-    "tests/test_g0_joint_eligibility_runner.py": "7619423dc8b7c5f977a289b909944ddb350643e31a040d1e08a27625f2467dd4",
+    "tests/test_g0_execution_support.py": "9238df2fef0fbd2b962cec2c555a3bf363addeb63314a14b6390756e949e09de",
+    "tests/test_g0_joint_eligibility_runner.py": "815e6d4b6ebad73ce7bf1697fe72daa87a1f9d49e28cbec2fc3c0a4abfdb02d1",
+    "tests/test_g0_joint_launcher.py": "ab1555022f8ecaeda1efdae76ef9567d96b89b9acfe97f2d6504b0ad4f3966fe",
     "tests/test_g0_joint_ownership.py": "3e0901da9e5e4a001bcb015ba27864fb56334bb248c5eabbd88d28b7343694e8",
     "tests/test_g0_joint_source_contract.py": "cacc5ddd1f53f48e6e777c37cbe26806f49fbddb6313e7935ed321cb4abd7451"
   },
+  "supersedes_unexecuted_freeze_sha256": "16e43c0c69e7d7117a4b38a3fd4e6ac9365147ca73c7b30b957f9bb694fec626",
   "timeout_executable_sha256": "6ca1891dfc0b05d7680770c2884c0391b92467c7bb6500a5c84677e6481739f1",
   "timeout_implementation": "GNU coreutils 9.7"
 }

@@ -19,8 +19,11 @@ The selected source is the runtime preserved at merged adapter commit
 `b9caed4797c9cd8217361b6e523864aabdd4cbcc`. The adapter was reviewed at
 `40f3ccd61164208bdc7aba29eac5a807d38e1dcf`. Its historical ownership contract is
 SHA-256 `281e71fd1bbc11d9d705e6a02524f4071d39573ce0bc36b040da1de40a04e7c8`.
-Execution uses the exact reviewed prospective PR-head checkout even if main later
-advances; merging does not select current main as the execution source.
+Execution uses a materialized source tree whose complete execution-relevant byte
+inventory is independently matched to the exact reviewed prospective PR commit.
+The local preparation Git metadata is scaffolding and is not source authority.
+Advancing main is never selected implicitly; the externally verified published
+commit and content inventory, together with bound launcher bytes, are required.
 A final prospective execution freeze must bind all runtime Python files, runtime
 schemas, adapter and runner/support source, tests, protocol, literal inputs and
 interpreter/dependency inventory. Publication and source-only tests do not grant
@@ -71,6 +74,9 @@ mutations must leave every owner and retained predecessor unchanged.
 
 ## Native call and constructor accounting
 
+Insufficient inherited CPU, address-space or file-size hard limits are rejected
+before the one-shot reservation; no smaller effective envelope is silently used.
+
 The top-level ceiling is 70 producer calls, 5 M1 observations, 6 M1 outcomes,
 4 predictive feedback calls, 3 scope steps and 14 ownership clones. Producer
 outcome learning has a zero ceiling. These are fixed ceilings, not allowances
@@ -88,6 +94,11 @@ initializations (including the intermediate restored-pilot router). These child
 constructor caps add accounting, not experimental calls. Ancillary standard-library RNGs must be distinguished from
 model-owned RNGs. These counts are prospective source deductions; no real birth
 counts have been observed in this preparation.
+
+Success also requires exact completed return and birth ledgers, no pending calls
+or shells, and no live model resources after cleanup. The single process-global
+registry guard has an explicit persistent lifetime. The six M1 outcome attempts
+have four normal returns and two deliberately expected exceptional exits.
 
 Passive before-body accounting must enforce all relevant counts, record attempts
 and returns, audit actual new resources, and reject unexpected births before extra
@@ -131,7 +142,7 @@ Any future F0 or longer consumer requires its own prospective design and authori
 ## Preparation check
 
 From the selected exact checkout, use the frozen interpreter with `-B -s` and
-invoke `python -B -s -m scripts.run_g0_joint_eligibility --check-source`.
+invoke `python -B -s -m scripts.launch_g0_joint_eligibility --check-source`.
 This verifies source and environment only and cannot execute the experiment.
 The independently reviewed callable `execute_reviewed` requires an externally
 issued exact-freeze permit, an approved output path, and an exclusive authoritative
@@ -139,3 +150,54 @@ identity reservation. No real approval or reservation is included here. Its
 launcher must use the pinned GNU timeout with `--signal=KILL 900s`; admission time
 counts toward both the CPU and wall envelope. Later imports must remain within
 the hashed native-extension and mapped-system-library boundary.
+
+
+## Bound launcher and independently verified materialization
+
+The only proposed launch command uses the frozen launcher module under the pinned
+hard timeout. Every placeholder below must be replaced with an independently
+verified value after fresh exact execution clearance:
+
+```sh
+PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 /usr/bin/timeout --signal=KILL 900s \
+  /workspace/shared/sparkbrain-event-clock-venv/bin/python -B -s \
+  -m scripts.launch_g0_joint_eligibility --run-reviewed \
+  --root <exact-absolute-materialized-source-root> \
+  --approval-sha256 <externally-verified-raw-approval-SHA256> \
+  --approval-object-sha256 <externally-verified-canonical-approval-SHA256> \
+  --published-commit <exact-reviewed-published-commit> \
+  --source-inventory-sha256 <externally-verified-source-inventory-SHA256>
+```
+
+The fixed approval path is
+`artifacts/research/assembly_m1_g0_v1_20261002/independent-execution-approval.json`.
+No such real approval is bundled. The record must include all existing source,
+freeze, publication/review, clearance, limits, nonce, output and ledger bindings,
+plus the following independently checked fields:
+
+- `launcher`: exact relative launcher path and SHA-256, also present in the freeze
+- `publication.commit`: the same externally supplied published commit
+- `materialized_source`: schema `g0-materialized-source-provenance-v1`, exact
+  absolute `source_root`, `published_commit`, `source_inventory_sha256`, external
+  verification `reference`, `materialization: independently_verified_published_tree`,
+  and `local_git_head_is_source_authority: false`
+
+The canonical approval hash uses the support module's strict canonical JSON,
+including its final newline. Raw-file and canonical-object pins come from the
+independent caller, never from fields inside the approval. The launcher checks
+its own source bytes, loaded module origins, actual complete source inventory and
+all cross-bindings before invoking the sealed admission path. It cannot verify
+GitHub or user authority by itself: those checks must already have been performed
+outside the offline model process. A caller-supplied commit label alone is never
+the source verification evidence.
+
+The passive observer also requires the pinned interpreter's supported lock API.
+In particular, the changed class-based `threading.Lock` API is rejected before
+runtime imports rather than silently missing a registry-guard birth. This object
+binds the reviewed CPython 3.12 environment, not a portability claim across every
+Python version supported by ordinary repository CI.
+
+Real-run launcher mode emits only an exit status. It does not print terminal JSON
+or post-admission exception traces after output accounting is finalized. Inspect
+the durable terminal/partial evidence instead; missing terminal evidence remains
+a failed or incomplete attempt, never a successful result.

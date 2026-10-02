@@ -1115,6 +1115,7 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
         protocol_call_caps,
         read_json,
         require_execution_permit,
+        validate_completed_lifecycle,
         verify_mapped_libraries,
     )
     from scripts.verify_g0_joint_source_contract import confined_path, source_root
@@ -1193,19 +1194,20 @@ def execute_reviewed(permit: Any, output: Path) -> dict:
                     raise
             actual = monitor.snapshot()
             writer.raw_json("actual-calls-and-resources.json", actual)
-            require(actual["counts"] == CALL_CAPS, "actual lifecycle calls differ from frozen plan",
-                    InvariantError)
+            lifecycle = validate_completed_lifecycle(actual)
+            writer.raw_json("completed-lifecycle-validation.json", lifecycle)
         writer.raw_json("mapped-libraries-before-verdict.json",
                         verify_mapped_libraries(permit.freeze["environment"]))
         writer.verdict("engineering-verdict.json", {
-            **result, "native_lifecycle_expected": CALL_CAPS,
+            **result, "completed_lifecycle": lifecycle, "native_lifecycle_expected": CALL_CAPS,
             "native_lifecycle_actual": actual["counts"],
             "scope": "bounded_owner_isolation_and_publication_only",
             "longer_continuation_compatibility": "not_tested",
             "canonical_scientific_evidence": False},
             raw_names=["plan-complete-before-cleanup.json", "final-cleanup.json",
                        "actual-calls-and-resources.json", "literal-inputs.json",
-                       "source-copy-index.json", "mapped-libraries-after-import.json",
+                       "source-copy-index.json", "completed-lifecycle-validation.json",
+                       "mapped-libraries-after-import.json",
                        "mapped-libraries-before-verdict.json"])
     except BaseException as error:
         failure = exception_record(error)

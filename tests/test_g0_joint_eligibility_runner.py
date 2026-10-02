@@ -8,6 +8,7 @@ import hashlib
 import importlib
 import json
 import random
+import subprocess
 import sys
 import tempfile
 import threading
@@ -421,13 +422,21 @@ class G0RunnerTests(unittest.TestCase):
                 return {"synthetic": True, "counts": (dict(support.CALL_CAPS)
                         if self.complete_counts else dict.fromkeys(support.CALL_CAPS, 0))}
 
+        class SyntheticBudget(support.ResourceBudget):
+            def __init__(self):
+                # A shared full-suite process can legitimately exceed the real G0
+                # envelope. This driver test uses stand-in resource observations.
+                super().__init__(sampler=lambda: {"cpu_seconds": 0.0,
+                                                 "wall_seconds": 0.0,
+                                                 "address_space_bytes": 0})
+
         class SyntheticFailingWriter(support.ExclusiveEvidenceWriter):
             def raw_json(self, name, value):
                 if name == "candidate-09-publication.json":
                     raise OSError("synthetic publication evidence failure")
                 return super().raw_json(name, value)
 
-        for fault in ("model", "writer", "late_mapping"):
+        for fault in ("model", "writer", "late_mapping", "lifecycle"):
             with self.subTest(fault=fault), tempfile.TemporaryDirectory() as directory:
                 output = Path(directory) / "synthetic-only"
                 source_files = {ARTIFACT_ROOT + "/" + name: hashlib.sha256(
@@ -440,7 +449,7 @@ class G0RunnerTests(unittest.TestCase):
                                                  "source_files_sha256": source_files})
                 reservation = {"consumed": 0}
                 mapping_calls = {"count": 0}
-                SyntheticMonitor.complete_counts = fault == "late_mapping"
+                SyntheticMonitor.complete_counts = fault in {"late_mapping", "lifecycle"}
                 observed_owner_closed = []
                 original_cleanup = ExecutionEngine.abort_cleanup
 
@@ -469,6 +478,12 @@ class G0RunnerTests(unittest.TestCase):
                         raise support.AdmissionError("synthetic late mapped-library drift")
                     return {"synthetic_mapping_check": "no_native_library_admission"}
 
+                def synthetic_lifecycle_check(snapshot, fault=fault):
+                    self.assertTrue(snapshot["synthetic"])
+                    if fault == "lifecycle":
+                        raise support.AdmissionError("synthetic incomplete lifecycle")
+                    return {"synthetic_lifecycle_admission_only": True}
+
                 runtime = (SyntheticModelFailure(resources=True) if fault == "model"
                            else ModelFreeRuntime(resources=True))
                 writer_class = (SyntheticFailingWriter if fault == "writer"
@@ -480,6 +495,9 @@ class G0RunnerTests(unittest.TestCase):
                             "synthetic_no_limits_installed": True,
                             "started_monotonic_seconds": time.monotonic()}), \
                         patch.object(support, "verify_mapped_libraries", synthetic_mapping_check), \
+                        patch.object(support, "ResourceBudget", SyntheticBudget), \
+                        patch.object(support, "validate_completed_lifecycle",
+                                     synthetic_lifecycle_check), \
                         patch.object(support, "PassiveCallMonitor", SyntheticMonitor), \
                         patch.object(support, "ExclusiveEvidenceWriter", writer_class), \
                         patch.object(runner, "load_real_runtime", return_value=(
@@ -493,9 +511,10 @@ class G0RunnerTests(unittest.TestCase):
                 self.assertIsNone(terminal["result"])
                 saved = json.loads((output / "TERMINAL.json").read_text())
                 self.assertEqual(saved["status"], "STOPPED")
-                if fault == "late_mapping":
-                    self.assertEqual(mapping_calls["count"], 2)
-                    self.assertIn("mapped-library drift", terminal["failure"]["message"])
+                if fault in {"late_mapping", "lifecycle"}:
+                    self.assertEqual(mapping_calls["count"], 2 if fault == "late_mapping" else 1)
+                    expected = "mapped-library drift" if fault == "late_mapping" else "lifecycle"
+                    self.assertIn(expected, terminal["failure"]["message"])
                     self.assertTrue(json.loads((output / "final-cleanup.json").read_text())[
                         "all_live_roots_released"])
                     self.assertFalse((output / "failure-owner-cleanup.json").exists())
@@ -547,8 +566,18 @@ class G0RunnerTests(unittest.TestCase):
                         runner.main()
 
     def test_module_import_does_not_import_runtime(self):
-        self.assertFalse(any(n == "sparkbrain" or n.startswith("sparkbrain.")
-                             for n in sys.modules))
+        code = """import sys
+class BlockNative:
+    def find_spec(self, name, path=None, target=None):
+        if name == 'sparkbrain' or name.startswith('sparkbrain.'):
+            raise AssertionError('native runtime imported by source-only runner')
+sys.meta_path.insert(0, BlockNative())
+from scripts import run_g0_joint_eligibility
+assert not any(n == 'sparkbrain' or n.startswith('sparkbrain.') for n in sys.modules)
+"""
+        result = subprocess.run([sys.executable, "-B", "-s", "-c", code], cwd=ROOT,
+                                capture_output=True, text=True, check=False)
+        self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(EXPECTED["clone_joint"], 14)
 
 

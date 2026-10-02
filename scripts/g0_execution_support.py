@@ -18,6 +18,7 @@ import sys
 import sysconfig
 import threading
 import time
+import types
 import weakref
 from collections.abc import Callable, Mapping
 from pathlib import Path
@@ -96,6 +97,147 @@ def protocol_call_caps(counts: Mapping[str, int] | None = None) -> dict[str, int
                    "v03_allocations": values["rawbrain_shell"] + values["v03_init"],
                    "v05_allocations": values["v05_shell"] + values["v05_init"]})
     return result
+
+
+BIRTH_TYPES = {
+    "v03_init": "sparkbrain.v03.runtime.IntegratedV03Brain",
+    "rawbrain_shell": "sparkbrain.v03.runtime.IntegratedV03Brain",
+    "v05_init": "sparkbrain.v05.brain.IntegratedV05Brain",
+    "v05_shell": "sparkbrain.v05.brain.IntegratedV05Brain",
+    "facade_init": "sparkbrain.v032.runtime.IntegratedV032Brain",
+    "m1_init": "sparkbrain.system_build.integrated_m1.IntegratedM1Pilot",
+    "predictive_init": "sparkbrain.system_build.predictive_revision.PredictiveRevisionPilot",
+    "scope_init": "sparkbrain.system_build.causal_scope_revision.CausalScopeRevisionPilot",
+    "scope_router_init": "sparkbrain.system_build.causal_scope_revision.CausalScopeRouter",
+    "model_rng": "random.Random", "topology_rng": "random.Random",
+    "model_lock": "_thread.RLock", "registry_guard": "_thread.lock",
+}
+
+
+def expected_lifecycle_returns() -> dict[str, int]:
+    return {**CALL_CAPS, "m1_apply_outcome": 4}
+
+
+def expected_lifecycle_birth_counts() -> dict[str, int]:
+    return {name: CALL_CAPS[name] for name in BIRTH_TYPES}
+
+
+def lifecycle_birth_routes(name: str) -> tuple[tuple[str, str], ...]:
+    if name in CALL_TARGETS:
+        return (CALL_TARGETS[name],)
+    if name == "rawbrain_shell":
+        return (("scripts/g0_joint_ownership.py", "_construct"),
+                ("src/sparkbrain/v032/checkpoint.py", "DirectCheckpointManager._load_bytes"))
+    if name == "v05_shell":
+        return (("scripts/g0_joint_ownership.py", "_construct"),)
+    if name in {"model_rng", "topology_rng"}:
+        return (("", "Random.__init__"),)
+    if name == "model_lock":
+        return (("", "RLock"),)
+    if name == "registry_guard":
+        return (("src/sparkbrain/v032/runtime.py", "<module>"),)
+    raise AdmissionError("unknown resource birth route")
+
+
+def validate_completed_lifecycle(snapshot: dict[str, Any]) -> dict[str, Any]:
+    """Pure primitive validation; attempted calls alone can never establish completion."""
+    value = primitive(snapshot)
+    required = {"counts", "caps", "returned", "failure", "pending_calls", "pending_shells",
+                "births", "events", "live_resource_ids", "threads_seen", "ancillary_rngs",
+                "counts_before_body", "protocol_counts"}
+    if type(value) is not dict or not required <= value.keys():
+        raise AdmissionError("lifecycle completion evidence is missing required fields")
+    returns = expected_lifecycle_returns()
+    expected_births = expected_lifecycle_birth_counts()
+    if (value["failure"] is not None or value["counts_before_body"] is not True
+            or canonical(value["counts"]) != canonical(CALL_CAPS)
+            or canonical(value["caps"]) != canonical(CALL_CAPS)
+            or canonical(value["protocol_counts"]) != canonical(protocol_call_caps())
+            or canonical(value["returned"]) != canonical(returns)):
+        raise AdmissionError("lifecycle attempts/returns/failure differ from the frozen completion")
+    if value["pending_calls"] != [] or value["pending_shells"] != []:
+        raise AdmissionError("lifecycle completion has pending calls or shell allocations")
+    threads = value["threads_seen"]
+    if (type(threads) is not list or not threads
+            or any(type(item) is not int or item <= 0 for item in threads)
+            or len(set(threads)) != len(threads)):
+        raise AdmissionError("lifecycle thread identifiers are invalid")
+    births, events = value["births"], value["events"]
+    if type(births) is not list or type(events) is not list:
+        raise AdmissionError("lifecycle birth/event ledgers must be complete lists")
+    actual_births = dict.fromkeys(expected_births, 0)
+    birth_by_id = {}
+    guard_id = None
+    birth_fields = {"birth_id", "name", "runtime_id", "type", "source_route", "thread"}
+    for index, birth in enumerate(births, 1):
+        if type(birth) is not dict or set(birth) != birth_fields:
+            raise AdmissionError("resource birth ledger schema differs")
+        name = birth["name"]
+        route = birth["source_route"]
+        if (type(birth["birth_id"]) is not int or birth["birth_id"] != index
+                or type(name) is not str or name not in expected_births
+                or type(birth["runtime_id"]) is not int
+                or birth["runtime_id"] <= 0 or type(birth["thread"]) is not int
+                or birth["thread"] not in threads
+                or birth["type"] != BIRTH_TYPES[name]
+                or type(route) is not list or tuple(route) not in lifecycle_birth_routes(name)):
+            raise AdmissionError("resource birth identity/type/source route is inconsistent")
+        actual_births[name] += 1
+        birth_by_id[index] = birth
+        if name == "registry_guard":
+            guard_id = birth["runtime_id"]
+    if actual_births != expected_births:
+        raise AdmissionError("resource birth counts differ from the frozen completion")
+    if (canonical(value["live_resource_ids"]) != canonical([guard_id])
+            or sum(birth["runtime_id"] == guard_id for birth in births) != 1):
+        raise AdmissionError("model resources remain live or registry guard lifetime differs")
+    attempts = dict.fromkeys(CALL_CAPS, 0)
+    normal = dict.fromkeys(CALL_CAPS, 0)
+    exceptional = dict.fromkeys(CALL_CAPS, 0)
+    observed_birth_ids = []
+    ancillary = 0
+    for index, event in enumerate(events, 1):
+        if (type(event) is not dict or type(event.get("sequence")) is not int
+                or event["sequence"] != index or type(event.get("thread")) is not int
+                or event.get("thread") not in threads):
+            raise AdmissionError("passive event ledger sequence/thread differs")
+        kind, name = event.get("kind"), event.get("name")
+        if kind == "ancillary_rng":
+            if name != "stdlib_rng":
+                raise AdmissionError("unrecognized ancillary resource event")
+            ancillary += 1
+            continue
+        if type(name) is not str or name not in CALL_CAPS:
+            raise AdmissionError("passive event names an unplanned model call")
+        if kind == "call_attempt":
+            attempts[name] += 1
+            if type(event.get("attempt")) is not int or event["attempt"] != attempts[name]:
+                raise AdmissionError("passive attempt sequence differs")
+        elif kind == "call_return":
+            normal[name] += 1
+            if normal[name] + exceptional[name] > attempts[name]:
+                raise AdmissionError("passive return precedes its attempted call")
+        elif kind == "call_exception":
+            exceptional[name] += 1
+            if normal[name] + exceptional[name] > attempts[name]:
+                raise AdmissionError("passive exception precedes its attempted call")
+        elif kind == "resource_birth":
+            birth = {key: item for key, item in event.items() if key not in {"sequence", "kind"}}
+            birth_id = birth.get("birth_id")
+            if canonical(birth) != canonical(birth_by_id.get(birth_id)):
+                raise AdmissionError("passive resource event differs from the actual birth ledger")
+            observed_birth_ids.append(birth_id)
+        else:
+            raise AdmissionError("unrecognized passive lifecycle event")
+    expected_exceptions = {name: CALL_CAPS[name] - returns[name] for name in CALL_CAPS}
+    if (attempts != CALL_CAPS or normal != returns or exceptional != expected_exceptions
+            or observed_birth_ids != list(range(1, len(births) + 1))
+            or type(value["ancillary_rngs"]) is not int or value["ancillary_rngs"] != ancillary):
+        raise AdmissionError("passive events do not reconcile with attempts/returns/births")
+    return {"validated": True, "attempted_counts": dict(CALL_CAPS),
+            "normal_returns": returns, "exceptional_exits": expected_exceptions,
+            "birth_counts": actual_births, "births": len(births),
+            "live_registry_guard_id": guard_id, "model_resources_live": 0}
 
 
 class AdmissionError(ValueError):
@@ -210,10 +352,19 @@ def verify_mapped_libraries(environment: dict[str, Any]) -> dict[str, str]:
     return current
 
 
+def require_passive_lock_api() -> None:
+    """Fail before execution on an allocator shape without reviewed passive events."""
+    if (type(threading.Lock) is not types.BuiltinFunctionType
+            or threading.Lock.__module__ != "_thread"
+            or threading.Lock.__name__ != "allocate_lock"):
+        raise AdmissionError("unsupported passive lock allocator API; exact builtin required")
+
+
 def environment_snapshot(root: Path | None = None) -> dict[str, Any]:
     """Source-only interpreter/dependency snapshot. No package imports or secrets."""
     if platform.python_implementation() != "CPython" or sys.version_info < (3, 11):
         raise AdmissionError("only reviewed CPython 3.11+ is supported")
+    require_passive_lock_api()
     root = source_root(Path.cwd() if root is None else root)
     executable = Path(sys.executable).resolve(strict=True)
     path_metadata(executable, "interpreter binary")
@@ -296,6 +447,7 @@ def verify_preparation(root: Path, freeze_relative: str,
                 "tests/test_g0_joint_eligibility_runner.py", "tests/test_g0_joint_ownership.py",
                 "tests/test_g0_joint_source_contract.py", "tests/test_g0_execution_protocol.py",
                 "docs/research/assembly_m1_g0_execution_preparation_20261002.md"}
+    required.update(("scripts/launch_g0_joint_eligibility.py", "tests/test_g0_joint_launcher.py"))
     contract = read_json(confined_path(root, CONTRACT, "contract"))
     required.update(contract["runtime_sources_sha256"])
     required.update(contract["runtime_schema_sha256"])
@@ -488,6 +640,7 @@ def consume_execution_permit(permit: ExecutionPermit, output_directory: Path,
                              *, budget: ResourceBudget) -> Path:
     """Consume once before the exclusive STARTED directory; never reset after failure."""
     require_execution_permit(permit)
+    preflight_runtime_limits()
     record = _PERMITS[permit]
     candidate = Path(output_directory)
     candidate = source_root(candidate.parent) / candidate.name
@@ -541,23 +694,45 @@ def verify_timeout_parent(expected_executable_sha256: str,
             "limitation": "SIGKILL/OOM can prevent terminal manifest creation"}
 
 
+def preflight_runtime_limits() -> dict[str, Any]:
+    """Read inherited limits before identity consumption; never shrink the frozen envelope.
+
+    All resources are checked before the caller may reserve a one-shot identity or
+    change any OS limit. Cgroups/OOM remain a separate documented platform limitation.
+    """
+    import resource
+
+    requirements = (("cpu_seconds", resource.RLIMIT_CPU, LIMITS["cpu_seconds"]),
+                    ("address_space_bytes", resource.RLIMIT_AS, LIMITS["address_space_bytes"]),
+                    ("output_bytes", resource.RLIMIT_FSIZE, LIMITS["output_bytes"]),
+                    ("core_bytes", resource.RLIMIT_CORE, 0))
+    observed = []
+    for key, identifier, required in requirements:
+        soft, hard = resource.getrlimit(identifier)
+        if type(soft) is not int or type(hard) is not int:
+            raise AdmissionError(f"unsupported inherited resource limit metadata: {key}")
+        if hard != resource.RLIM_INFINITY and hard < required:
+            raise AdmissionError(f"inherited hard limit cannot support frozen envelope: {key}")
+        observed.append({"resource": key, "resource_id": identifier,
+                         "inherited_soft": soft, "inherited_hard": hard,
+                         "required_soft": required, "required_hard": required})
+    return {"schema": "g0-inherited-limit-preflight-v1", "resources": observed,
+            "read_only": True, "frozen_envelope_preserved": True}
+
+
 def install_runtime_limits(permit: ExecutionPermit) -> dict[str, Any]:
     """Only after separately authorized gate: verify timeout, enforce limits/offline IO."""
     require_execution_permit(permit)
     import resource
 
+    admitted_limits = preflight_runtime_limits()
     timeout_sha = permit.freeze.get("timeout_executable_sha256", "")
     launch = verify_timeout_parent(timeout_sha, LIMITS["wall_seconds"])
     if not sys.dont_write_bytecode or not sys.flags.no_user_site:
         raise AdmissionError("execution requires -B and -s for fresh pinned imports")
-    for name, value in ((resource.RLIMIT_CPU, LIMITS["cpu_seconds"]),
-                        (resource.RLIMIT_AS, LIMITS["address_space_bytes"]),
-                        (resource.RLIMIT_FSIZE, LIMITS["output_bytes"]),
-                        (resource.RLIMIT_CORE, 0)):
-        _, hard = resource.getrlimit(name)
-        if hard != resource.RLIM_INFINITY:
-            value = min(value, hard)
-        resource.setrlimit(name, (value, value))
+    for row in admitted_limits["resources"]:
+        resource.setrlimit(row["resource_id"], (row["required_soft"], row["required_hard"]))
+    launch["inherited_limits"] = admitted_limits
 
     def offline(event: str, args: tuple) -> None:
         if event.startswith("socket.") or event in {"subprocess.Popen", "os.system", "os.exec",
@@ -1046,6 +1221,8 @@ class PassiveCallMonitor:
         self.writer.raw_bytes(name, checked.read_bytes())
 
     def __enter__(self) -> PassiveCallMonitor:
+        if "registry_guard" in self.caps:
+            require_passive_lock_api()
         if (self._active or sys.getprofile() is not None or threading.getprofile() is not None
                 or sys.gettrace() is not None or threading.gettrace() is not None):
             raise AdmissionError("existing profiling hooks are outside the dedicated-runner scope")

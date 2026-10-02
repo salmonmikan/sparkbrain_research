@@ -154,9 +154,15 @@ def test_every_call_ceiling_blocks_before_next_mock_body(tmp_path, name, cap):
                                         targets={name: ("mock.py", "act")},
                                         allowed_functions=set())
     with pytest.raises(support.BudgetExceeded, match="before body"):
-        with monitor:
+        if name == "registry_guard":
+            # Abstract counter behavior, separate from the native allocator feature test.
             for _ in range(cap + 1):
+                monitor.before(name)
                 model(SyntheticResource())
+        else:
+            with monitor:
+                for _ in range(cap + 1):
+                    model(SyntheticResource())
     assert len(steps) == cap
     assert monitor.counts[name] == cap
     with pytest.raises(support.BudgetExceeded):
@@ -368,6 +374,10 @@ def test_unsupported_and_forged_permits_reject_without_limits(tmp_path, monkeypa
 
 
 def test_gate_rejects_synthetic_approval_even_with_positive_callback(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    # Isolate this synthetic gate fixture from unrelated full-suite runtime imports.
+    monkeypatch.setattr(support, "sys", SimpleNamespace(modules={}))
     synthetic = {"freeze": {}, "freeze_sha256": "a" * 64, "source_inventory_sha256": "b" * 64}
     monkeypatch.setattr(support, "verify_preparation", lambda *args: synthetic)
     approval = {"schema": "g0-published-execution-approval-v1", "identity": support.IDENTITY,
@@ -444,6 +454,14 @@ def test_source_bound_class_bodies_and_registry_guard_are_admitted(tmp_path):
     spec = importlib.util.spec_from_file_location("synthetic_model_free_import", target)
     module = importlib.util.module_from_spec(spec)
     monitor = support.PassiveCallMonitor(tmp_path, {"registry_guard": 1}, budget(), targets={})
+    try:
+        support.require_passive_lock_api()
+    except support.AdmissionError:
+        with pytest.raises(support.AdmissionError, match="unsupported passive lock allocator"):
+            with monitor:
+                spec.loader.exec_module(module)
+        assert not hasattr(module, "Synthetic")
+        return
     with monitor:
         spec.loader.exec_module(module)
     assert module.Synthetic.marker == 1
@@ -492,6 +510,8 @@ def synthetic_freeze(tmp_path, monkeypatch):
         "scripts/g0_joint_ownership.py": b"# synthetic fixture\n",
         "scripts/verify_g0_joint_source_contract.py": b"# synthetic fixture\n",
         "scripts/run_g0_joint_eligibility.py": b"# synthetic fixture\n",
+        "scripts/launch_g0_joint_eligibility.py": b"# synthetic fixture\n",
+        "tests/test_g0_joint_launcher.py": b"# synthetic fixture\n",
         "scripts/v05_history_export_probe.py": b"# synthetic fixture\n",
         "tests/test_g0_execution_support.py": b"# synthetic fixture\n",
         "tests/test_g0_joint_eligibility_runner.py": b"# synthetic fixture\n",
@@ -573,18 +593,22 @@ def test_static_gate_rejects_source_inventory_bytecode_and_environment_changes(
 
 
 def test_synthetic_static_validation_never_mints_authority(tmp_path, monkeypatch):
+    before = {name for name in sys.modules
+              if name == "sparkbrain" or name.startswith("sparkbrain.")}
     synthetic_freeze(tmp_path, monkeypatch)
     result = support.verify_preparation(tmp_path, "synthetic-freeze.json", check_environment=False)
     assert result["runtime_execution_authorized"] is False
     assert result["source_contract"] == {"synthetic": True}
-    assert not any(name == "sparkbrain" or name.startswith("sparkbrain.") for name in sys.modules)
+    after = {name for name in sys.modules
+             if name == "sparkbrain" or name.startswith("sparkbrain.")}
+    assert after == before
 
 
 def test_delayed_admission_includes_timeout_parent_in_terminal_reserve(monkeypatch):
     # No actual timeout is launched. A synthetic verified-parent clock starts earlier.
     b = budget()
-    b._sampler = None
     b._wall_start = 900.0
+    b._sampler = lambda: sample(wall_seconds=support.time.monotonic() - b._wall_start)
     monkeypatch.setattr(support.time, "monotonic", lambda: 1000.0)
     b.bind_timeout_parent({"started_monotonic_seconds": 200.0})
     assert b.sample()["wall_seconds"] == 800.0
@@ -668,3 +692,211 @@ def test_late_native_mappings_must_be_covered_by_frozen_code(tmp_path, monkeypat
     system_library.write_bytes(b"changed synthetic system library")
     with pytest.raises(support.AdmissionError, match="system library changed"):
         support.verify_mapped_libraries(environment)
+
+
+@pytest.mark.parametrize("resource_name,key,required", [
+    ("RLIMIT_CPU", "cpu_seconds", 600),
+    ("RLIMIT_AS", "address_space_bytes", 1 << 30),
+    ("RLIMIT_FSIZE", "output_bytes", 256 << 20),
+])
+def test_insufficient_inherited_limits_never_consume_identity(
+        tmp_path, monkeypatch, resource_name, key, required):
+    import resource
+
+    target = getattr(resource, resource_name)
+    monkeypatch.setattr(resource, "getrlimit", lambda name: (
+        (required - 1, required - 1) if name == target else
+        (resource.RLIM_INFINITY, resource.RLIM_INFINITY)))
+    installed = []
+    monkeypatch.setattr(resource, "setrlimit", lambda *args: installed.append(args))
+    monkeypatch.setattr(support, "require_execution_permit", lambda *args: None)
+    permit = object.__new__(support.ExecutionPermit)
+    reservation = tmp_path / "synthetic-reservation"
+    output = tmp_path / "synthetic-output"
+    support._PERMITS[permit] = {"consumed": False, "identity_reservation": reservation}
+    evidence_budget = budget()
+    with pytest.raises(support.AdmissionError, match="inherited hard limit.*" + key):
+        support.consume_execution_permit(permit, output, budget=evidence_budget)
+    assert support._PERMITS[permit]["consumed"] is False
+    assert evidence_budget.output_bytes == 0
+    assert not reservation.exists() and not output.exists()
+    assert installed == []
+
+
+@pytest.mark.parametrize("inherited", ["exact", "higher", "unlimited"])
+def test_limit_preflight_keeps_exact_frozen_pairs_without_installing(monkeypatch, inherited):
+    import resource
+
+    exact = {resource.RLIMIT_CPU: 600, resource.RLIMIT_AS: 1 << 30,
+             resource.RLIMIT_FSIZE: 256 << 20, resource.RLIMIT_CORE: 0}
+
+    def getrlimit(identifier):
+        hard = exact[identifier]
+        if inherited == "higher":
+            hard += 1000
+        elif inherited == "unlimited":
+            hard = resource.RLIM_INFINITY
+        return 0, hard
+
+    installed = []
+    monkeypatch.setattr(resource, "getrlimit", getrlimit)
+    monkeypatch.setattr(resource, "setrlimit", lambda *args: installed.append(args))
+    result = support.preflight_runtime_limits()
+    assert result["read_only"] is True
+    assert installed == []
+    assert {row["resource_id"]: row["required_hard"] for row in result["resources"]} == exact
+    assert all(row["required_soft"] == row["required_hard"] for row in result["resources"])
+
+
+def test_present_launcher_and_test_must_both_be_frozen(tmp_path, monkeypatch):
+    freeze = synthetic_freeze(tmp_path, monkeypatch)
+    del freeze["source_files_sha256"]["scripts/launch_g0_joint_eligibility.py"]
+    (tmp_path / "synthetic-freeze.json").write_bytes(support.canonical(freeze))
+    with pytest.raises(support.AdmissionError, match="incomplete"):
+        support.verify_preparation(tmp_path, "synthetic-freeze.json", check_environment=False)
+
+
+def synthetic_completed_lifecycle():
+    """Pure invented primitive ledger for completion validation; no runtime observations."""
+    returns = support.expected_lifecycle_returns()
+    births = []
+    for name, count in support.expected_lifecycle_birth_counts().items():
+        for _ in range(count):
+            index = len(births) + 1
+            births.append({"birth_id": index, "name": name, "runtime_id": 1000 + index,
+                           "type": support.BIRTH_TYPES[name],
+                           "source_route": list(support.lifecycle_birth_routes(name)[0]),
+                           "thread": 1})
+    guard = next(row["runtime_id"] for row in births if row["name"] == "registry_guard")
+    events = []
+
+    def event(kind, name, **data):
+        events.append({"sequence": len(events) + 1, "kind": kind, "name": name,
+                       "thread": 1, **data})
+
+    for name, count in support.CALL_CAPS.items():
+        for attempt in range(1, count + 1):
+            event("call_attempt", name, attempt=attempt)
+            event("call_return" if attempt <= returns[name] else "call_exception", name)
+    for row in births:
+        event("resource_birth", row["name"],
+              **{key: value for key, value in row.items() if key != "name"})
+    return {"counts": dict(support.CALL_CAPS), "caps": dict(support.CALL_CAPS),
+            "returned": returns, "failure": None, "pending_calls": [], "pending_shells": [],
+            "births": births, "events": events, "live_resource_ids": [guard], "threads_seen": [1],
+            "ancillary_rngs": 0, "counts_before_body": True,
+            "protocol_counts": support.protocol_call_caps()}
+
+
+def test_primitive_completed_lifecycle_reconciles_returns_births_and_lifetimes():
+    result = support.validate_completed_lifecycle(synthetic_completed_lifecycle())
+    assert result["validated"] is True
+    assert result["normal_returns"]["m1_apply_outcome"] == 4
+    assert result["exceptional_exits"]["m1_apply_outcome"] == 2
+    assert result["birth_counts"] == support.expected_lifecycle_birth_counts()
+    assert result["model_resources_live"] == 0
+
+
+@pytest.mark.parametrize("change", [
+    "missing_returns", "short_return", "extra_return", "missing_births", "duplicate_birth_id",
+    "nonmonotonic_birth_id", "wrong_resource_type", "unknown_birth_route", "model_still_live",
+    "guard_dead", "sticky_failure", "pending_call", "pending_shell", "missing_events",
+    "missing_attempt_event", "wrong_attempt_sequence", "missing_return_event", "extra_exception",
+    "changed_birth_event", "wrong_birth_count", "unknown_event", "wrong_event_sequence",
+    "boolean_count", "invalid_thread", "wrong_ancillary_count",
+])
+def test_malformed_completion_ledgers_cannot_pass(change):
+    value = synthetic_completed_lifecycle()
+    if change == "missing_returns":
+        del value["returned"]
+    elif change == "short_return":
+        value["returned"]["facade_init"] -= 1
+    elif change == "extra_return":
+        value["returned"]["m1_apply_outcome"] += 1
+    elif change == "missing_births":
+        del value["births"]
+    elif change == "duplicate_birth_id":
+        value["births"][1]["birth_id"] = value["births"][0]["birth_id"]
+    elif change == "nonmonotonic_birth_id":
+        value["births"][0]["birth_id"] = 2
+    elif change == "wrong_resource_type":
+        value["births"][0]["type"] = "synthetic.unknown"
+    elif change == "unknown_birth_route":
+        value["births"][0]["source_route"] = ["synthetic.py", "unknown"]
+    elif change == "model_still_live":
+        value["live_resource_ids"].append(value["births"][0]["runtime_id"])
+    elif change == "guard_dead":
+        value["live_resource_ids"] = []
+    elif change == "sticky_failure":
+        value["failure"] = "synthetic profiler failure"
+    elif change == "pending_call":
+        value["pending_calls"] = [{"name": "synthetic"}]
+    elif change == "pending_shell":
+        value["pending_shells"] = [{"name": "synthetic"}]
+    elif change == "missing_events":
+        del value["events"]
+    elif change in {"missing_attempt_event", "missing_return_event"}:
+        kind = "call_attempt" if change == "missing_attempt_event" else "call_return"
+        index = next(i for i, row in enumerate(value["events"]) if row["kind"] == kind)
+        del value["events"][index]
+        for index, row in enumerate(value["events"], 1):
+            row["sequence"] = index
+    elif change == "wrong_attempt_sequence":
+        value["events"][0]["attempt"] += 1
+    elif change == "extra_exception":
+        row = next(row for row in value["events"] if row["kind"] == "call_return")
+        row["kind"] = "call_exception"
+    elif change == "changed_birth_event":
+        row = next(row for row in value["events"] if row["kind"] == "resource_birth")
+        row["runtime_id"] += 1
+    elif change == "wrong_birth_count":
+        value["births"].pop()
+    elif change == "unknown_event":
+        value["events"][0]["kind"] = "invented"
+    elif change == "wrong_event_sequence":
+        value["events"][0]["sequence"] = 2
+    elif change == "boolean_count":
+        value["returned"]["v03_init"] = True
+    elif change == "invalid_thread":
+        value["threads_seen"] = [["invalid"]]
+    elif change == "wrong_ancillary_count":
+        value["ancillary_rngs"] = 1
+    with pytest.raises(support.AdmissionError):
+        support.validate_completed_lifecycle(value)
+
+
+def test_unreviewed_lock_allocator_rejects_before_synthetic_module_execution(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    # Simulate the changed allocator API without replacing the process's threading module.
+    monitor = support.PassiveCallMonitor(tmp_path, {"registry_guard": 1}, budget(),
+                                        targets={}, allowed_functions=set())
+    monkeypatch.setattr(support, "threading", SimpleNamespace(Lock=type("UnreviewedLock", (), {})))
+    reached = []
+    with pytest.raises(support.AdmissionError, match="unsupported passive lock allocator"):
+        with monitor:
+            reached.append("body")
+    assert reached == []
+
+
+def test_limit_installation_uses_exact_pairs_with_only_synthetic_os_backends(monkeypatch):
+    import resource
+    from types import SimpleNamespace
+
+    installed, hooks = [], []
+    monkeypatch.setattr(support, "require_execution_permit", lambda permit: None)
+    monkeypatch.setattr(support, "verify_timeout_parent", lambda *args: {"synthetic": True})
+    monkeypatch.setattr(resource, "getrlimit", lambda identifier: (0, resource.RLIM_INFINITY))
+    monkeypatch.setattr(resource, "setrlimit", lambda identifier, pair: installed.append(
+        (identifier, pair)))
+    monkeypatch.setattr(support, "sys", SimpleNamespace(
+        dont_write_bytecode=True, flags=SimpleNamespace(no_user_site=1),
+        addaudithook=lambda hook: hooks.append(hook)))
+    permit = SimpleNamespace(freeze={"timeout_executable_sha256": "SYNTHETIC_NOT_AUTHORITY"})
+    result = support.install_runtime_limits(permit)
+    assert installed == [(resource.RLIMIT_CPU, (600, 600)),
+                         (resource.RLIMIT_AS, (1 << 30, 1 << 30)),
+                         (resource.RLIMIT_FSIZE, (256 << 20, 256 << 20)),
+                         (resource.RLIMIT_CORE, (0, 0))]
+    assert len(hooks) == 1
+    assert result["inherited_limits"]["frozen_envelope_preserved"] is True

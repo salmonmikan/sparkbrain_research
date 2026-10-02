@@ -1,7 +1,16 @@
 {
   "classification": "SOURCE_ONLY_NON_EVIDENTIARY",
+  "corrective_review": {
+    "additional_parent_requirement": "Bind launcher bytes and independently verified materialized-source provenance",
+    "ci_fixture_corrections": "Isolate synthetic resource samples and prior module state; reject unsupported passive lock API before runtime imports",
+    "findings": [
+      "Reject insufficient inherited hard limits before identity reservation",
+      "Require completed return/birth/event/cleanup evidence before verdict"
+    ],
+    "initial_head": "95d21bd9bd5edd5de187c04f1ac2e9989185948b"
+  },
   "diff_check": "clean",
-  "freeze_sha256": "16e43c0c69e7d7117a4b38a3fd4e6ac9365147ca73c7b30b957f9bb694fec626",
+  "freeze_sha256": "9d422165649e05c7156d8e222cb37ea218db051739623a74034f379efc1b8345",
   "full_runtime_local_suite": "Not run in this source-only preparation scope; ordinary CI is separate and cannot grant research execution authority",
   "identity": "assembly-m1-g0-v1-20261002",
   "independent_review": {
@@ -10,14 +19,16 @@
     "status": "no_unresolved_source_only_findings"
   },
   "next_gate": "Publish exact source, obtain latest-head clean Codex/required CI, then request separate exact-freeze one-shot parent execution clearance",
-  "preparation_check": "python -B -s -m scripts.run_g0_joint_eligibility --check-source",
+  "preparation_check": "python -B -s -m scripts.launch_g0_joint_eligibility --check-source",
   "real_g0_executed": false,
   "reviewed_files_sha256": {
-    "scripts/g0_execution_support.py": "117a6e4500628544c4a49be865fab6eb5a6bf4b8bf28bfb6225c0c8a3b7f54ea",
-    "scripts/run_g0_joint_eligibility.py": "e490da9535255957e4dbf1d892b1c1310a4b372bfb27609e4d7607f0108681f8",
+    "scripts/g0_execution_support.py": "13616e8e4e9c42fe1d53a28cc59ac5b765c30cea7db60b5ffcdf9b0f2cdc54b9",
+    "scripts/launch_g0_joint_eligibility.py": "e4a69800ceadf7ae46c6ec1f4115171535d3baa15a2b51ac93c611ad9a4c71f1",
+    "scripts/run_g0_joint_eligibility.py": "2c7d8311bdbbd9e09f10194687d61065cd6ae1e504712ff37736088e7547baa4",
     "tests/test_g0_execution_protocol.py": "2a98ce108aa87019a9bfc5bc3ca890bee2e10f38839a405d754f4130631f5a0c",
-    "tests/test_g0_execution_support.py": "50aeb0d38274c2ebe2bcc02a6c9366e781588da660c517b94765667280b362dd",
-    "tests/test_g0_joint_eligibility_runner.py": "7619423dc8b7c5f977a289b909944ddb350643e31a040d1e08a27625f2467dd4"
+    "tests/test_g0_execution_support.py": "9238df2fef0fbd2b962cec2c555a3bf363addeb63314a14b6390756e949e09de",
+    "tests/test_g0_joint_eligibility_runner.py": "815e6d4b6ebad73ce7bf1697fe72daa87a1f9d49e28cbec2fc3c0a4abfdb02d1",
+    "tests/test_g0_joint_launcher.py": "ab1555022f8ecaeda1efdae76ef9567d96b89b9acfe97f2d6504b0ad4f3966fe"
   },
   "ruff": "entire local source tree clean",
   "runtime_execution_authorized": false,
@@ -28,22 +39,26 @@
   "selected_base_files_git_blob_verified": 180,
   "selected_source_commit": "b9caed4797c9cd8217361b6e523864aabdd4cbcc",
   "selected_source_tree": "6ec2b75c725bedd067a1f2a1d9c9e4ba74f025fc",
-  "source_files": 190,
-  "source_inventory_sha256": "39eee3fb1f08e342b6aa17f748e0d1951a60b34f2d80fce8cb4b2e540cf727de",
+  "source_files": 192,
+  "source_inventory_sha256": "ae613e21dc0ce5fa52e6dddbfe871502e6e2cf562d0c58ced5a0f43d0a76839b",
+  "source_materialization": "All execution-relevant bytes independently matched to published Git tree; local scaffold HEAD is not authority",
+  "superseded_unexecuted_freeze_sha256": "16e43c0c69e7d7117a4b38a3fd4e6ac9365147ca73c7b30b957f9bb694fec626",
   "tests": {
     "native_import_tripwire": true,
-    "passed": 199,
+    "passed": 270,
     "real_constructors": 0,
     "real_model_transitions": 0,
     "real_native_imports": 0,
-    "subtests_passed": 11,
+    "simulated_ambient_preloaded_module_and_large_memory": "pass without native imports or actual memory allocation",
+    "subtests_passed": 12,
     "suites": [
       "tests/test_g0_execution_support.py",
       "tests/test_g0_joint_eligibility_runner.py",
       "tests/test_g0_execution_protocol.py",
       "tests/test_g0_joint_ownership.py",
-      "tests/test_g0_joint_source_contract.py"
+      "tests/test_g0_joint_source_contract.py",
+      "tests/test_g0_joint_launcher.py"
     ]
   },
-  "validation_command": "PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 python -B -s with SparkBrain import tripwire; pytest -q -p no:cacheprovider on the five listed suites"
+  "validation_command": "PYTHONPATH=src PYTHONDONTWRITEBYTECODE=1 python -B -s with SparkBrain import tripwire; pytest -q -p no:cacheprovider on the six listed suites"
 }

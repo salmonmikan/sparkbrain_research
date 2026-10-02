@@ -444,5 +444,13 @@
   "schema": "g0-joint-eligibility-protocol-v1",
   "scientific_credit": 0,
   "source_base_commit": "b9caed4797c9cd8217361b6e523864aabdd4cbcc",
+  "source_materialization": {
+    "approval_path": "artifacts/research/assembly_m1_g0_v1_20261002/independent-execution-approval.json",
+    "external_raw_and_canonical_approval_pins_required": true,
+    "kind": "independently_verified_published_tree",
+    "launcher": "scripts/launch_g0_joint_eligibility.py",
+    "local_git_head_is_source_authority": false,
+    "published_commit_and_source_inventory_independently_checked": true
+  },
   "status": "PROSPECTIVE_UNEXECUTED"
 }
