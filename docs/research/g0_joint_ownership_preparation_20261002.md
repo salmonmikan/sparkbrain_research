@@ -41,6 +41,16 @@ package after source/environment admission, excluding stale bytecode, custom imp
 process monkeypatching and externally supplied class implementations. Class files being
 correct on disk alone cannot prove arbitrary preexisting process memory is correct.
 
+Every filesystem read in the validator and binder uses one confinement policy: reject
+symlinks at the supplied source root, all absolute/root-relative ancestors, manifest,
+inventory, selected-source, reuse and loaded-module/class paths before resolution.
+Directory inventory uses checked non-following traversal. Junctions/unknown Windows
+reparse metadata and special file kinds reject; missing or unsupported paths fail closed.
+Windows metadata rejection is covered with synthetic records, not a claimed Windows run.
+There are no output-file reads in these preparation validators. This is a static trusted
+source-tree contract, not protection against concurrent filesystem mutation or malicious
+already-running code. The source-only preparation remains separate from execution authority.
+
 ## Construction strategy
 
 Use one fresh memo for the complete joint producer, M1, clock, immutable-coordinate
@@ -170,7 +180,7 @@ G0 producer/M1 activity. Passing ordinary CI cannot be counted as a real G0 exec
 
 ### Local preparation checks
 
-The adapter suite has 56 model-free cases and the static source auditor has 17. The
+The adapter suite has 56 model-free cases and the static source auditor has 35. The
 broader relevant set also includes 18 existing acquired-ownership helper cases and 78
 existing history-export helper/evidence cases. They use stand-ins or already retained
 primitive evidence, not fresh producer/M1 activity. Exact final pass/fail evidence and

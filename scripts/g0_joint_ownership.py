@@ -131,12 +131,17 @@ class SourceRegistry:
         path must all match. It does not attest arbitrary monkey-patching of Python
         process memory; that remains excluded by the dedicated runner contract.
         """
-        from scripts.verify_g0_joint_source_contract import CONTRACT, verify
+        from scripts.verify_g0_joint_source_contract import (
+            CONTRACT,
+            confined_path,
+            source_root,
+            verify,
+        )
 
-        root = Path(root).resolve(strict=True)
         try:
+            root = source_root(root)
             verified = verify(root)
-            raw_contract = (root / CONTRACT).read_bytes()
+            raw_contract = confined_path(root, CONTRACT, "contract").read_bytes()
             if hashlib.sha256(raw_contract).hexdigest() != verified["contract_sha256"]:
                 raise ValueError("source contract changed after verification")
             contract = json.loads(raw_contract)
@@ -160,11 +165,13 @@ class SourceRegistry:
             record = contract["files"].get(relative)
             if record is None or loaded.__name__ not in record["classes"]:
                 raise OwnershipError("loaded class is absent from the pinned source contract")
-            expected_path = (root / relative).resolve(strict=True)
             try:
-                module_path = Path(vars(module)["__file__"]).resolve(strict=True)
-                class_path = Path(inspect.getsourcefile(loaded)).resolve(strict=True)
-            except (KeyError, OSError, TypeError):
+                expected_path = confined_path(root, relative, "source")
+                module_relative = Path(vars(module)["__file__"]).relative_to(root).as_posix()
+                class_relative = Path(inspect.getsourcefile(loaded)).relative_to(root).as_posix()
+                module_path = confined_path(root, module_relative, "loaded module source")
+                class_path = confined_path(root, class_relative, "loaded class source")
+            except (KeyError, OSError, TypeError, ValueError):
                 raise OwnershipError("loaded class source path is unavailable") from None
             if module_path != expected_path or class_path != expected_path:
                 raise OwnershipError("loaded class source path differs from verified root")

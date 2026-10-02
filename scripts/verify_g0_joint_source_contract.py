@@ -5,6 +5,8 @@ from __future__ import annotations
 import ast
 import hashlib
 import json
+import os
+import stat
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +17,67 @@ COPY_HOOKS = {
     "__copy__", "__deepcopy__", "__reduce__", "__reduce_ex__",
     "__getstate__", "__setstate__", "__del__",
 }
+
+
+def reject_alias_metadata(info: Any, label: str, platform: str = os.name) -> None:
+    """Reject links, junctions and unknown Windows reparse layouts without following them."""
+    if stat.S_ISLNK(info.st_mode):
+        raise ValueError(f"{label} symlink is unsupported")
+    attributes = getattr(info, "st_file_attributes", None)
+    tag = getattr(info, "st_reparse_tag", 0)
+    if ((attributes is not None and (type(attributes) is not int or attributes < 0))
+            or type(tag) is not int or tag < 0):
+        raise ValueError(f"{label} unsupported path metadata")
+    if platform == "nt" and attributes is None:
+        raise ValueError(f"{label} unsupported path metadata")
+    if (attributes is not None and attributes & 0x400) or tag:
+        raise ValueError(f"{label} reparse point is unsupported")
+    if not (stat.S_ISREG(info.st_mode) or stat.S_ISDIR(info.st_mode)):
+        raise ValueError(f"{label} unsupported path kind")
+
+
+def path_metadata(path: Path, label: str) -> os.stat_result:
+    try:
+        info = path.lstat()
+    except OSError:
+        raise ValueError(f"{label} unavailable") from None
+    reject_alias_metadata(info, label)
+    return info
+
+
+def source_root(root: Path) -> Path:
+    """Require an ordinary source directory with no aliased absolute ancestors."""
+    try:
+        absolute = Path(root).absolute()
+    except (TypeError, ValueError):
+        raise ValueError("source root unsupported path") from None
+    if ".." in absolute.parts:
+        raise ValueError("source root parent traversal is unsupported")
+    for component in (*reversed(absolute.parents), absolute):
+        if not stat.S_ISDIR(path_metadata(component, "source root").st_mode):
+            raise ValueError("source root unsupported path kind")
+    return absolute.resolve(strict=True)
+
+
+def confined_path(root: Path, relative: str, label: str, *, directory: bool = False) -> Path:
+    """Resolve a dependency only after rejecting symlink aliases at every component."""
+    root = source_root(root)
+    if type(relative) is not str:
+        raise ValueError(f"{label} unsupported path")
+    path = Path(relative)
+    if path.is_absolute() or ".." in path.parts:
+        raise ValueError(f"{label} escapes root")
+    candidate = root
+    for name in path.parts:
+        candidate /= name
+        path_metadata(candidate, label)
+    resolved = candidate.resolve(strict=True)
+    if not resolved.is_relative_to(root):
+        raise ValueError(f"{label} escapes root")
+    mode = path_metadata(resolved, label).st_mode
+    if (directory and not stat.S_ISDIR(mode)) or (not directory and not stat.S_ISREG(mode)):
+        raise ValueError(f"{label} unsupported path kind")
+    return resolved
 
 
 def class_spec(node: ast.ClassDef) -> dict[str, Any]:
@@ -54,47 +117,39 @@ def class_spec(node: ast.ClassDef) -> dict[str, Any]:
 
 
 def verify(root: Path = ROOT) -> dict[str, Any]:
-    root = root.resolve(strict=True)
-    contract_path = (root / CONTRACT).resolve(strict=True)
-    if not contract_path.is_relative_to(root):
-        raise ValueError("contract escapes root")
+    root = source_root(root)
+    contract_path = confined_path(root, CONTRACT, "contract")
     raw = contract_path.read_bytes()
     if hashlib.sha256(raw).hexdigest() != CONTRACT_SHA256:
         raise ValueError("source contract digest mismatch")
     contract = json.loads(raw)
     if contract["runtime_execution_authorized"] is not False or contract["scientific_credit"] != 0:
         raise ValueError("source-only boundary changed")
-    for key, directory, pattern in (
-        ("runtime_sources_sha256", "src/sparkbrain", "*.py"),
-        ("runtime_schema_sha256", "schemas", "*.json"),
+    for key, directory, suffix in (
+        ("runtime_sources_sha256", "src/sparkbrain", ".py"),
+        ("runtime_schema_sha256", "schemas", ".json"),
     ):
         actual = {}
-        component = root
-        for name in Path(directory).parts:
-            component /= name
-            if component.is_symlink():
-                raise ValueError("runtime dependency symlink is unsupported")
-        if any(item.is_symlink() for item in (root / directory).rglob("*")):
-            raise ValueError("runtime dependency symlink is unsupported")
-        for item in sorted((root / directory).rglob(pattern)):
-            resolved = item.resolve(strict=True)
-            if not resolved.is_relative_to(root):
-                raise ValueError("runtime dependency escapes root")
-            digest = hashlib.sha256(item.read_bytes()).hexdigest()
-            actual[item.relative_to(root).as_posix()] = digest
+        pending = [confined_path(root, directory, "runtime dependency", directory=True)]
+        while pending:
+            current = pending.pop()
+            for item in sorted(current.iterdir()):
+                info = path_metadata(item, "runtime dependency")
+                if stat.S_ISDIR(info.st_mode):
+                    pending.append(item)
+                elif item.name.endswith(suffix):
+                    relative = item.relative_to(root).as_posix()
+                    source = confined_path(root, relative, "runtime dependency")
+                    actual[relative] = hashlib.sha256(source.read_bytes()).hexdigest()
         if actual != contract[key]:
             raise ValueError(f"complete runtime dependency inventory mismatch: {key}")
     for path, expected in contract["reuse_sources_sha256"].items():
-        source = (root / path).resolve(strict=True)
-        if not source.is_relative_to(root):
-            raise ValueError("reuse source escapes root")
+        source = confined_path(root, path, "reuse source")
         if hashlib.sha256(source.read_bytes()).hexdigest() != expected:
             raise ValueError("reuse source digest mismatch")
     count = 0
     for path, record in contract["files"].items():
-        source = (root / path).resolve(strict=True)
-        if not source.is_relative_to(root):
-            raise ValueError("source escapes root")
+        source = confined_path(root, path, "source")
         data = source.read_bytes()
         if hashlib.sha256(data).hexdigest() != record["sha256"]:
             raise ValueError(f"source digest mismatch: {path}")
