@@ -47,6 +47,12 @@ any outcome is observed; no numerical margin or input changes.
   exact source/freeze pins, independently pins the published inputs, reconstructs
   current STDP sums from raw spikes, and cross-checks trace carry, actual clipped
   writes, configuration, readout receipts, final state, method journals and costs.
+  The three original review/publication/execution record files are retained
+  byte-for-byte and audited against independently supplied SHA-256 pins. Those
+  expected pins must come from the verified original records, never from the
+  package currently being checked. H/R probability, native decisions and memory
+  updates are reconstructed from retained inputs and prefix state. Unit tests
+  for these rules use wholly synthetic non-study states and observations.
 
 L takes effect at the one existing `apply` call in each occurrence. The runner
 changes only the declared brain/plasticity configuration fields after native
@@ -113,7 +119,7 @@ retained at `freeze/`. The planned output was absent and model calls remained ze
 plain dummy subprocesses and synthetic retained-data fixtures, not dynamics
 execution or a full default runtime-test run.
 
-The current `freeze-v2/` manifest is `aea34059f16562ee8242c195517c938afa89edb261852080c6fdb3e4f1a33b56`
+The second, unexecuted `freeze-v2/` manifest is `aea34059f16562ee8242c195517c938afa89edb261852080c6fdb3e4f1a33b56`
 and binds 193 source files, including the published design/protocol prose.
 All 230 focused model-free tests pass, repository-wide Ruff passes, and the
 immutable input and execution-freeze readbacks match. The repairs cover paired
@@ -121,7 +127,22 @@ native-transition exclusion, complete fixed-prototype history, child CPU
 reservation before admission, interruption-safe reaping, and bounded terminal
 closure. Independent model-free review found no remaining blocker in those
 paths. New exact-head Codex review and CI are required before merge; separate
-exact-freeze approval is required before execution.
+exact-freeze approval is required before execution. A subsequent review found
+missing retained-authority and ordinary-memory semantic audit checks; freeze-v2
+is also superseded for execution while those checks are repaired.
+
+The current `freeze-v3/` manifest is
+`cc4dffcea78d8d82d3f5a6fc42d5474e97387b0dbcbab0377c9895233cb41834`.
+All 317 focused model-free tests pass, repository-wide Ruff passes, and input /
+freeze readbacks match. H/R test fixtures use toy data and test-only pins; guards
+reject reserved observation fingerprints and published H/R prefix digests before
+arithmetic. No reserved baseline combination was evaluated during preparation.
+The audit requires exact interpreter version/executable agreement and external
+SHA-256 pins for each original authority record. It reports zero runtime method
+calls separately from its 256 ordinary-memory row reconstructions and 512 apply
+row recomputations over a complete retained run. Those checks are verification
+work, not additional independent evidence. Both prior freezes remain unexecuted
+and retained. Current review/CI and separate execution approval remain required.
 
 The preparation commands are model-free:
 
@@ -130,6 +151,13 @@ PYTHONHASHSEED=0 python -S -P -B scripts/run_plasticity_retention.py freeze
 PYTHONHASHSEED=0 python -S -P -B scripts/run_plasticity_retention.py check-freeze
 python -B -m pytest -q tests/test_plasticity_retention_contract.py tests/test_plasticity_retention_runner.py tests/test_plasticity_retention_verifier.py
 python -B -m ruff check scripts/plasticity_retention_contract.py scripts/plasticity_retention_support.py scripts/run_plasticity_retention.py scripts/verify_plasticity_retention_run.py tests/test_plasticity_retention_contract.py tests/test_plasticity_retention_runner.py tests/test_plasticity_retention_verifier.py
+```
+
+After an authorized run, the audit command requires the independent original
+record pins, rather than taking them from the retained package:
+
+```sh
+python -S -P -B scripts/verify_plasticity_retention_run.py --output RUN_DIRECTORY --freeze artifacts/research/plasticity_retention_execution_20261001/freeze-v3 --expected-source-commit REVIEWED_COMMIT --expected-manifest-sha256 REVIEWED_MANIFEST_SHA256 --expected-review-sha256 ORIGINAL_REVIEW_SHA256 --expected-publication-sha256 ORIGINAL_PUBLICATION_SHA256 --expected-approval-sha256 ORIGINAL_APPROVAL_SHA256
 ```
 
 The run command additionally requires separate exact reviewed publication and

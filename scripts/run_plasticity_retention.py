@@ -32,7 +32,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 PREPARATION = ROOT / "artifacts/research/plasticity_retention_preparation_20261001"
 PROTOCOL = ROOT / "protocols/plasticity_retention_bounded_v1.json"
-FREEZE = ROOT / "artifacts/research/plasticity_retention_execution_20261001/freeze-v2"
+FREEZE = ROOT / "artifacts/research/plasticity_retention_execution_20261001/freeze-v3"
 PUBLISHED_PREFIX = ROOT / "artifacts/research/temporal_reuse_loop_20261001"
 ARCHIVE_SHA = "2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082"
 PREP_PINS = {
@@ -219,11 +219,15 @@ def gate(directory: Path, review: Path, publication: Path, approval: Path) -> di
     verify_freeze(directory)
     head = git("rev-parse", "HEAD").decode().strip()
     pin = S.sha(directory / "manifest.json")
-    records = {
-        "review": S.read(review),
-        "publication": S.read(publication),
-        "approval": S.read(approval),
-    }
+    records, record_files = {}, {}
+    for kind, path in (("review", review), ("publication", publication), ("approval", approval)):
+        raw = path.read_bytes()
+        records[kind] = json.loads(raw)
+        record_files[kind] = {
+            "path": "authority-records/" + kind + ".json",
+            "sha256": hashlib.sha256(raw).hexdigest(),
+            "bytes": len(raw),
+        }
     require(records["review"].get("source_review_approved") is True, "source review missing")
     require(records["publication"].get("verified_published") is True, "publication unverified")
     require(records["approval"].get("approved_for_execution") is True, "execution not approved")
@@ -234,11 +238,15 @@ def gate(directory: Path, review: Path, publication: Path, approval: Path) -> di
         )
         require(
             record.get("output_root") == str(S.PLANNED_OUTPUT)
+            and type(record.get("ceiling_pairs")) is int
             and record.get("ceiling_pairs") == 768,
             kind + " scope mismatch",
         )
         require(
-            bool(record.get("record_url")) and bool(record.get("recorded_by")),
+            all(
+                type(record.get(key)) is str and bool(record[key].strip())
+                for key in ("record_url", "recorded_by")
+            ),
             kind + " provenance missing",
         )
     for path in [*sources(), *directory.iterdir()]:
@@ -248,6 +256,7 @@ def gate(directory: Path, review: Path, publication: Path, approval: Path) -> di
         "source_commit": head,
         "manifest_sha256": pin,
         "records": records,
+        "record_files": record_files,
         "authority_limit": "records are externally supplied; freeze never mints approval",
     }
 
@@ -861,6 +870,15 @@ def driver(args: argparse.Namespace) -> int:
         with S.deadline(358 - S.cpu_clock(), 475 - (time.monotonic() - started_wall)):
             binding = gate(args.freeze, args.review, args.publication, args.approval)
             p, inputs, jobs, prefixes = check_preparation()
+            for kind, item in binding["record_files"].items():
+                raw = getattr(args, kind).read_bytes()
+                require(
+                    hashlib.sha256(raw).hexdigest() == item["sha256"]
+                    and len(raw) == item["bytes"]
+                    and json.loads(raw) == binding["records"][kind],
+                    "authority record changed before retention",
+                )
+                writer.raw(output / item["path"], raw)
             writer.json(output / "execution-gate.json", binding)
             writer.json(output / "job-plan.json", jobs)
             writer.json(
@@ -879,9 +897,9 @@ def driver(args: argparse.Namespace) -> int:
             )
             extract_prefixes(output, writer, prefixes)
             record_paths = {
-                k: str(getattr(args, k).resolve()) for k in ("review", "publication", "approval")
+                kind: str(output / item["path"]) for kind, item in binding["record_files"].items()
             }
-            record_sha = {k: S.sha(Path(v)) for k, v in record_paths.items()}
+            record_sha = {kind: item["sha256"] for kind, item in binding["record_files"].items()}
             for plan in jobs["jobs"]:
                 require(
                     S.cpu_clock() < 358 and time.monotonic() - started_wall < 475,

@@ -483,3 +483,78 @@ def test_failed_driver_closure_uses_only_remaining_budget(monkeypatch, tmp_path,
     else:
         assert admitted[-1] == pytest.approx((0.2, 0.3))
         assert R.S.read(output / "result.json")["error_type"] == "ResourceClosureBudget"
+
+
+def synthetic_gate_records(monkeypatch, tmp_path):
+    """Nonexistent commit and fake freeze; these cannot authorize a study run."""
+    directory = tmp_path / "synthetic-freeze"
+    directory.mkdir()
+    (directory / "manifest.json").write_text("{}")
+    pin = R.S.sha(directory / "manifest.json")
+    monkeypatch.setattr(R, "ROOT", tmp_path)
+    monkeypatch.setattr(R, "sources", lambda: [])
+    monkeypatch.setattr(R, "verify_freeze", lambda path: {})
+
+    def fake_git(*args):
+        if args == ("rev-parse", "HEAD"):
+            return ("a" * 40 + "\n").encode()
+        return (tmp_path / args[1].split(":", 1)[1]).read_bytes()
+
+    monkeypatch.setattr(R, "git", fake_git)
+    paths = []
+    for kind, flag in (
+        ("review", "source_review_approved"),
+        ("publication", "verified_published"),
+        ("approval", "approved_for_execution"),
+    ):
+        path = tmp_path / ("synthetic-" + kind + ".json")
+        path.write_text(
+            json.dumps(
+                {
+                    flag: True,
+                    "source_commit": "a" * 40,
+                    "manifest_sha256": pin,
+                    "output_root": str(R.S.PLANNED_OUTPUT),
+                    "ceiling_pairs": 768,
+                    "record_url": "synthetic://pytest-only",
+                    "recorded_by": "SYNTHETIC TEST: NO EXECUTION AUTHORITY",
+                },
+                indent=3,
+            )
+            + "\n\n"
+        )
+        paths.append(path)
+    return directory, paths
+
+
+def test_gate_binds_original_authority_bytes_not_reserialized_json(monkeypatch, tmp_path):
+    directory, paths = synthetic_gate_records(monkeypatch, tmp_path)
+    binding = R.gate(directory, *paths)
+    assert set(binding["record_files"]) == {"review", "publication", "approval"}
+    for kind, path in zip(("review", "publication", "approval"), paths, strict=True):
+        item = binding["record_files"][kind]
+        assert item == {
+            "path": "authority-records/" + kind + ".json",
+            "sha256": R.S.sha(path),
+            "bytes": path.stat().st_size,
+        }
+        assert item["sha256"] != R.C.digest(binding["records"][kind])
+    assert R._MODEL_ADMISSION is False
+
+
+@pytest.mark.parametrize(
+    "key,value",
+    [
+        ("record_url", {}),
+        ("recorded_by", "  "),
+        ("ceiling_pairs", 768.0),
+        ("approved_for_execution", 1),
+    ],
+)
+def test_gate_rejects_ambiguous_authority_fields(monkeypatch, tmp_path, key, value):
+    directory, paths = synthetic_gate_records(monkeypatch, tmp_path)
+    record = json.loads(paths[2].read_text())
+    record[key] = value
+    paths[2].write_text(json.dumps(record))
+    with pytest.raises(RuntimeError):
+        R.gate(directory, *paths)

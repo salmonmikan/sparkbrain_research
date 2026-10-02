@@ -8,6 +8,7 @@ import hashlib
 import importlib.util
 import json
 import math
+import sys
 from collections import Counter
 from itertools import combinations
 from pathlib import Path
@@ -42,6 +43,190 @@ def digest(value, *, newline=False) -> str:
 
 def lines(path: Path) -> list[dict]:
     return [json.loads(line) for line in path.read_text().splitlines()]
+
+
+def verify_audit_interpreter(dependencies: dict) -> None:
+    require(
+        dependencies.get("python_version") == sys.version
+        and dependencies.get("executable_sha256") == sha(Path(sys.executable).resolve()),
+        "audit interpreter differs from frozen execution interpreter",
+    )
+
+
+def verify_authority_records(
+    gate: dict, expected_commit: str, expected_manifest: str, output_root: str
+) -> None:
+    """Check retained authority statements; their authenticity is externally established."""
+    flags = {
+        "review": "source_review_approved",
+        "publication": "verified_published",
+        "approval": "approved_for_execution",
+    }
+    require(
+        gate.get("source_commit") == expected_commit
+        and gate.get("manifest_sha256") == expected_manifest,
+        "run is not bound to expected source publication",
+    )
+    records = gate.get("records")
+    require(isinstance(records, dict) and set(records) == set(flags), "authority record inventory")
+    for kind, flag in flags.items():
+        record = records[kind]
+        require(isinstance(record, dict) and record.get(flag) is True, kind + " authority flag")
+        require(
+            record.get("source_commit") == expected_commit
+            and record.get("manifest_sha256") == expected_manifest
+            and record.get("output_root") == output_root
+            and type(record.get("ceiling_pairs")) is int
+            and record["ceiling_pairs"] == 768,
+            kind + " authority scope binding",
+        )
+        require(
+            all(
+                type(record.get(key)) is str and bool(record[key].strip())
+                for key in ("record_url", "recorded_by")
+            ),
+            kind + " authority provenance",
+        )
+
+
+def verify_retained_records(
+    output: Path,
+    gate: dict,
+    expected_commit: str,
+    expected_manifest: str,
+    output_root: str,
+    expected_record_hashes: dict,
+) -> tuple[dict, dict]:
+    verify_authority_records(gate, expected_commit, expected_manifest, output_root)
+    require(Path(output_root).is_absolute(), "authority output root must be absolute")
+    files = gate.get("record_files")
+    require(
+        isinstance(files, dict) and set(files) == {"review", "publication", "approval"},
+        "retained authority file inventory",
+    )
+    paths, hashes = {}, {}
+    for kind, record in files.items():
+        relative = "authority-records/" + kind + ".json"
+        require(
+            isinstance(record, dict)
+            and set(record) == {"path", "sha256", "bytes"}
+            and record["path"] == relative
+            and type(record["bytes"]) is int,
+            "retained authority file descriptor",
+        )
+        path = output / relative
+        require(
+            sha(path) == expected_record_hashes[kind], "independent authority record pin: " + kind
+        )
+        require(
+            path.stat().st_size == record["bytes"]
+            and sha(path) == record["sha256"]
+            and read(path) == gate["records"][kind],
+            "retained authority bytes/record binding",
+        )
+        paths[kind] = str(Path(output_root) / relative)
+        hashes[kind] = record["sha256"]
+    return paths, hashes
+
+
+def memory_raster(supplied: dict) -> list[float]:
+    """Recalculate the public wrapper's fixed normalized time/channel representation."""
+    channels = "ACFHIJKLMQ"
+    values = [0.0] * (41 * len(channels))
+    for pulse in supplied["pulses"]:
+        relative = pulse["time_ms"] - supplied["start_ms"]
+        require(0 <= relative <= 40, "memory raster time bound")
+        offset = channels.index(pulse["channel"]) * 41
+        lower = math.floor(relative)
+        fraction = relative - lower
+        values[offset + lower] += pulse["magnitude"] * (1 - fraction)
+        if fraction:
+            values[offset + lower + 1] += pulse["magnitude"] * fraction
+    total = sum(values)
+    require(total > 0, "empty memory raster")
+    return [value / total for value in values]
+
+
+def verify_memory_history(
+    arm: str,
+    rows: list[dict],
+    receipts: list[dict],
+    observations: list[dict],
+    prefix: dict,
+    final: dict,
+) -> None:
+    """Recalculate H/R dictionary arithmetic only; never load or invoke a model."""
+    require(arm in ("H", "R") and prefix["arm"] == arm, "ordinary-memory arm binding")
+    state = json.loads(json.dumps(prefix))
+    for row, receipt, supplied in zip(rows, receipts, observations, strict=True):
+        occurrence = supplied["occurrence_id"]
+        require(
+            state["pending"] is None and occurrence not in state["receipts"],
+            "memory occurrence is not fresh",
+        )
+        x = memory_raster(supplied)
+        state["pending"] = {"id": occurrence, "x": x}
+        if arm == "H":
+            nearest = sorted(
+                enumerate(state["memory"]),
+                key=lambda pair: (
+                    sum(abs(a - b) for a, b in zip(x, pair[1]["x"], strict=True)),
+                    pair[0],
+                ),
+            )[:3]
+            p1 = (1 + sum(item["y"] for _, item in nearest)) / (2 + len(nearest))
+            comparisons = slots = len(state["memory"])
+        else:
+            prototypes = state["prototypes"]
+            comparisons = len(prototypes) + int(bool(prototypes))
+            distances = [
+                sum(abs(a - b) for a, b in zip(x, item["x"], strict=True)) for item in prototypes
+            ]
+            nearest_id = min(range(len(prototypes)), key=lambda i: (distances[i], i), default=None)
+            if nearest_id is None or (distances[nearest_id] > 0.25 and len(prototypes) < 32):
+                nearest_id = len(prototypes)
+                prototypes.append({"x": x.copy(), "n": 0, "counts": [0, 0]})
+            proto = prototypes[nearest_id]
+            p1 = (1 + proto["counts"][1]) / (2 + sum(proto["counts"]))
+            state["pending"]["prototype"] = nearest_id
+            slots = len(prototypes)
+        native = None if p1 == 0.5 else int(p1 > 0.5)
+        require(
+            row["p1"] == p1
+            and row["native"] == native
+            and row["prototype_comparisons"] == comparisons
+            and row["representation_slots"] == slots
+            and row["actual_weight_abs_change"] == 0,
+            "ordinary-memory prediction/accounting mismatch",
+        )
+        require(
+            row["operational_sha256"] == digest({"wrapper": state, "brain": None})
+            and row["live_state_bytes"]
+            == len(
+                (
+                    json.dumps(state, sort_keys=True, separators=(",", ":"), allow_nan=False) + "\n"
+                ).encode()
+            ),
+            "ordinary-memory pending state binding",
+        )
+        outcome = supplied["outcome"]
+        if arm == "H":
+            state["memory"] = (state["memory"] + [{"x": x, "y": outcome}])[-32:]
+        else:
+            proto = state["prototypes"][state["pending"]["prototype"]]
+            n = proto["n"]
+            proto["x"] = [(a * n + b) / (n + 1) for a, b in zip(proto["x"], x, strict=True)]
+            proto["n"] += 1
+            proto["counts"][outcome] += 1
+        state["receipts"][occurrence] = outcome
+        state["pending"] = None
+        require(
+            receipt["wrapper_sha256"] == digest(state, newline=True)
+            and receipt["brain_sha256"] is None
+            and receipt["readout_counts_after_receipt"] is None,
+            "ordinary-memory receipt state binding",
+        )
+    require(final == state, "ordinary-memory final state mismatch")
 
 
 def count_calls(events: list[dict], limits: dict) -> dict:
@@ -397,10 +582,27 @@ def verify_prototype_history(
     require(final == state, "final assembly/prototype history mismatch")
 
 
-def verify(output: Path, freeze: Path, expected_manifest: str, expected_commit: str) -> dict:
+def verify(
+    output: Path,
+    freeze: Path,
+    expected_manifest: str,
+    expected_commit: str,
+    expected_record_hashes: dict,
+) -> dict:
     # Caller pins must come from independently read-back reviewed publication records.
     # The retained run's own manifest is never accepted as its authority.
     require(len(expected_manifest) == 64 and len(expected_commit) == 40, "explicit authority pins")
+    require(
+        isinstance(expected_record_hashes, dict)
+        and set(expected_record_hashes) == {"review", "publication", "approval"}
+        and all(
+            type(value) is str
+            and len(value) == 64
+            and all(char in "0123456789abcdef" for char in value)
+            for value in expected_record_hashes.values()
+        ),
+        "independent authority record pins required",
+    )
     require(sha(freeze / "manifest.json") == expected_manifest, "authoritative freeze pin")
     frozen = read(freeze / "manifest.json")
     require(
@@ -408,6 +610,7 @@ def verify(output: Path, freeze: Path, expected_manifest: str, expected_commit: 
         "dependency authority pin",
     )
     dependencies = read(freeze / "dependencies.json")
+    verify_audit_interpreter(dependencies)
     for name, value in frozen["sources"].items():
         require(sha(ROOT / name) == value, "frozen audit/source mismatch: " + name)
     for name, value in PINS.items():
@@ -421,9 +624,13 @@ def verify(output: Path, freeze: Path, expected_manifest: str, expected_commit: 
     )
     require(not any(p.is_symlink() for p in output.rglob("*")), "retained output symlink")
     terminal, gate = read(output / "result.json"), read(output / "execution-gate.json")
-    require(
-        gate["source_commit"] == expected_commit and gate["manifest_sha256"] == expected_manifest,
-        "run is not bound to expected source publication",
+    authority_paths, authority_hashes = verify_retained_records(
+        output,
+        gate,
+        expected_commit,
+        expected_manifest,
+        frozen["planned_output"],
+        expected_record_hashes,
     )
     require(
         terminal["status"] == "complete"
@@ -497,10 +704,17 @@ def verify(output: Path, freeze: Path, expected_manifest: str, expected_commit: 
     )
     groups: dict[str, dict] = {}
     totals = Counter()
+    memory_rows_reconstructed = 0
+    apply_rows_recomputed = 0
     for job, cost in zip(jobs, costs, strict=True):
         work = output / "jobs" / job["job_id"]
         envelope, result = read(work / "job.json"), read(work / "result.json")
         require(envelope["plan"] == job and envelope["binding"] == gate, "job source/input binding")
+        require(
+            envelope.get("record_paths") == authority_paths
+            and envelope.get("record_sha256") == authority_hashes,
+            "job retained authority binding",
+        )
         require(
             result["job_sha256"] == digest(envelope)
             and result["status"] == "complete"
@@ -584,7 +798,8 @@ def verify(output: Path, freeze: Path, expected_manifest: str, expected_commit: 
             )
         final_state = read(work / "final-state.json")
         final_wrapper = final_state["wrapper"]
-        expected_receipts = dict(read(prefix / "wrapper.json")["receipts"])
+        prefix_wrapper = read(prefix / "wrapper.json")
+        expected_receipts = dict(prefix_wrapper["receipts"])
         expected_receipts.update({r["occurrence_id"]: r["outcome"] for r in rows})
         require(
             final_wrapper["pending"] is None
@@ -592,6 +807,12 @@ def verify(output: Path, freeze: Path, expected_manifest: str, expected_commit: 
             and receipts[-1]["wrapper_sha256"] == digest(final_wrapper, newline=True),
             "final wrapper/receipt closure",
         )
+        if not v05:
+            require(final_state["brain"] is None, "ordinary-memory final brain must be absent")
+            verify_memory_history(
+                job["arm"], rows, receipts, inputs[job["stream"]], prefix_wrapper, final_wrapper
+            )
+            memory_rows_reconstructed += len(rows)
         if v05:
             require(
                 receipts[-1]["brain_sha256"] == digest(final_state["brain"], newline=True),
@@ -675,6 +896,7 @@ def verify(output: Path, freeze: Path, expected_manifest: str, expected_commit: 
                     digest(delays, newline=True),
                 )
                 eligibility = audit["post_eligibility"]
+            apply_rows_recomputed += len(audits)
             final = read(work / "final-state.json")["brain"]
             require(
                 final["config"] == expected_state["config"]
@@ -726,10 +948,14 @@ def verify(output: Path, freeze: Path, expected_manifest: str, expected_commit: 
         "valid_completion": True,
         "pairs": 768,
         "calls": dict(totals),
-        "model_calls_during_audit": 0,
+        "runtime_model_method_calls_during_audit": 0,
+        "ordinary_memory_rows_reconstructed": memory_rows_reconstructed,
+        "v05_apply_rows_recomputed": apply_rows_recomputed,
         "manifest_sha256": expected_manifest,
         "source_commit": expected_commit,
-        "scope": "data/source integrity audit; not rerun fidelity or scientific promotion",
+        "authority_record_sha256": expected_record_hashes,
+        "scope": "data/source integrity audit; not rerun fidelity or scientific promotion; "
+        "retained authority statements require independent authenticity verification",
     }
 
 
@@ -739,11 +965,26 @@ def main() -> None:
     parser.add_argument("--freeze", type=Path, required=True)
     parser.add_argument("--expected-manifest-sha256", required=True)
     parser.add_argument("--expected-source-commit", required=True)
+    for kind in ("review", "publication", "approval"):
+        parser.add_argument(
+            "--expected-" + kind + "-sha256",
+            required=True,
+            help="SHA-256 of the independently verified original "
+            + kind
+            + " record; never obtain this authority pin from the retained package",
+        )
     args = parser.parse_args()
     print(
         json.dumps(
             verify(
-                args.output, args.freeze, args.expected_manifest_sha256, args.expected_source_commit
+                args.output,
+                args.freeze,
+                args.expected_manifest_sha256,
+                args.expected_source_commit,
+                {
+                    kind: getattr(args, "expected_" + kind + "_sha256")
+                    for kind in ("review", "publication", "approval")
+                },
             ),
             indent=2,
             sort_keys=True,

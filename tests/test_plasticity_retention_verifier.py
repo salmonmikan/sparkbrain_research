@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import ast
 import base64
+import contextlib
 import copy
 import hashlib
 import importlib.util
@@ -24,6 +25,69 @@ SPEC = importlib.util.spec_from_file_location("retention_verifier_tests", SOURCE
 assert SPEC is not None and SPEC.loader is not None
 TOOL = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(TOOL)
+AUTHORITY_KINDS = ("review", "publication", "approval")
+DUMMY_RECORD_PINS = {kind: "c" * 64 for kind in AUTHORITY_KINDS}
+RESERVED_OBSERVATIONS = set()
+RESERVED_MEMORY_PREFIXES = set()
+
+
+def observation_fingerprint(value):
+    return TOOL.digest({"start_ms": value["start_ms"], "pulses": value["pulses"]})
+
+
+@pytest.fixture(scope="module", autouse=True)
+def prevent_reserved_baseline_exposure():
+    """Hash-only guards; never feed reserved inputs or states to baseline arithmetic."""
+    preparation = ROOT / "artifacts/research/plasticity_retention_preparation_20261001"
+    streams = json.loads((preparation / "inputs.json").read_bytes())["streams"]
+    reserved_rows = [row for rows in streams.values() for row in rows]
+    RESERVED_OBSERVATIONS.update(observation_fingerprint(row) for row in reserved_rows)
+    prefixes = json.loads((preparation / "prefix_sources.json").read_bytes())["prefixes"]
+    transport = ROOT / "artifacts/research/temporal_reuse_loop_20261001"
+    parts = json.loads((transport / "transport_manifest.json").read_bytes())["parts"]
+    archive = b"".join(base64.b64decode((transport / part["path"]).read_bytes()) for part in parts)
+    reserved_prefixes = []
+    with tarfile.open(fileobj=io.BytesIO(archive), mode="r:gz") as stream:
+        for name, record in prefixes.items():
+            if not name.endswith(("-H", "-R")):
+                continue
+            member = next(
+                value for value in record["checkpoint_members"] if value.endswith("wrapper.json")
+            )
+            source = stream.extractfile(member)
+            assert source is not None
+            raw = source.read()
+            assert hashlib.sha256(raw).hexdigest() == record["files_sha256"][member]
+            value = json.loads(raw)
+            reserved_prefixes.append(value)
+            RESERVED_MEMORY_PREFIXES.add(TOOL.digest(value, newline=True))
+    raster, history = TOOL.memory_raster, TOOL.verify_memory_history
+
+    def guarded_raster(supplied):
+        assert observation_fingerprint(supplied) not in RESERVED_OBSERVATIONS, (
+            "reserved study observation"
+        )
+        return raster(supplied)
+
+    def guarded_history(arm, rows, receipts, observations, prefix, final):
+        assert TOOL.digest(prefix, newline=True) not in RESERVED_MEMORY_PREFIXES, (
+            "reserved study prefix"
+        )
+        return history(arm, rows, receipts, observations, prefix, final)
+
+    with pytest.MonkeyPatch.context() as patch:
+        patch.setattr(TOOL, "memory_raster", guarded_raster)
+        patch.setattr(TOOL, "verify_memory_history", guarded_history)
+        yield reserved_rows[0], reserved_prefixes[0]
+
+
+def interpreter_record():
+    return {
+        "python_version": sys.version,
+        "executable_sha256": hashlib.sha256(
+            Path(sys.executable).resolve().read_bytes()
+        ).hexdigest(),
+    }
 
 
 def write_json(path, value):
@@ -708,7 +772,7 @@ def test_verify_requires_both_independent_pins_before_reading_artifacts(
 
     monkeypatch.setattr(TOOL, "sha", forbidden_read)
     with pytest.raises(RuntimeError, match="explicit authority pins"):
-        TOOL.verify(tmp_path / "output", tmp_path / "freeze", manifest, commit)
+        TOOL.verify(tmp_path / "output", tmp_path / "freeze", manifest, commit, DUMMY_RECORD_PINS)
 
 
 def test_verify_rejects_tampered_freeze_against_caller_pin(tmp_path):
@@ -716,7 +780,7 @@ def test_verify_rejects_tampered_freeze_against_caller_pin(tmp_path):
     expected = write_json(freeze / "manifest.json", {"schema": "reviewed"})
     write_json(freeze / "manifest.json", {"schema": "altered"})
     with pytest.raises(RuntimeError, match="authoritative freeze pin"):
-        TOOL.verify(tmp_path / "output", freeze, expected, "a" * 40)
+        TOOL.verify(tmp_path / "output", freeze, expected, "a" * 40, DUMMY_RECORD_PINS)
 
 
 def test_verify_rejects_tampered_dependencies_against_frozen_pin(tmp_path):
@@ -731,12 +795,12 @@ def test_verify_rejects_tampered_dependencies_against_frozen_pin(tmp_path):
     )
     write_json(freeze / "dependencies.json", {"stdlib": "altered"})
     with pytest.raises(RuntimeError, match="dependency authority pin"):
-        TOOL.verify(tmp_path / "output", freeze, expected, "a" * 40)
+        TOOL.verify(tmp_path / "output", freeze, expected, "a" * 40, DUMMY_RECORD_PINS)
 
 
 def test_verify_rejects_auditor_source_changes_even_with_intact_freeze(tmp_path, monkeypatch):
     freeze, root = tmp_path / "freeze", tmp_path / "source"
-    dependency_pin = write_json(freeze / "dependencies.json", {})
+    dependency_pin = write_json(freeze / "dependencies.json", interpreter_record())
     source_pin = write_json(root / "audit.json", {"reviewed": True})
     expected = write_json(
         freeze / "manifest.json",
@@ -748,12 +812,12 @@ def test_verify_rejects_auditor_source_changes_even_with_intact_freeze(tmp_path,
     write_json(root / "audit.json", {"reviewed": False})
     monkeypatch.setattr(TOOL, "ROOT", root)
     with pytest.raises(RuntimeError, match="frozen audit/source mismatch"):
-        TOOL.verify(tmp_path / "output", freeze, expected, "a" * 40)
+        TOOL.verify(tmp_path / "output", freeze, expected, "a" * 40, DUMMY_RECORD_PINS)
 
 
 def test_verify_rejects_preparation_changes_against_independent_input_pins(tmp_path, monkeypatch):
     freeze, preparation = tmp_path / "freeze", tmp_path / "preparation"
-    dependency_pin = write_json(freeze / "dependencies.json", {})
+    dependency_pin = write_json(freeze / "dependencies.json", interpreter_record())
     expected = write_json(
         freeze / "manifest.json",
         {
@@ -766,16 +830,26 @@ def test_verify_rejects_preparation_changes_against_independent_input_pins(tmp_p
     monkeypatch.setattr(TOOL, "PINS", {"inputs.json": expected_input})
     monkeypatch.setattr(TOOL, "PREPARATION", preparation)
     with pytest.raises(RuntimeError, match="published input authority pin"):
-        TOOL.verify(tmp_path / "output", freeze, expected, "a" * 40)
+        TOOL.verify(tmp_path / "output", freeze, expected, "a" * 40, DUMMY_RECORD_PINS)
 
 
-@pytest.mark.parametrize("omitted", ["--expected-manifest-sha256", "--expected-source-commit"])
+@pytest.mark.parametrize(
+    "omitted",
+    [
+        "--expected-manifest-sha256",
+        "--expected-source-commit",
+        "--expected-review-sha256",
+        "--expected-publication-sha256",
+        "--expected-approval-sha256",
+    ],
+)
 def test_verifier_cli_cannot_infer_missing_authority_pin(tmp_path, omitted):
     arguments = {
         "--output": str(tmp_path / "output"),
         "--freeze": str(tmp_path / "freeze"),
         "--expected-manifest-sha256": "a" * 64,
         "--expected-source-commit": "b" * 40,
+        **{"--expected-" + kind + "-sha256": pin for kind, pin in DUMMY_RECORD_PINS.items()},
     }
     arguments.pop(omitted)
     command = [sys.executable, "-B", str(SOURCE)]
@@ -843,68 +917,292 @@ def synthetic_calls(v05, pairs):
     return events, dict(counts)
 
 
+def synthetic_memory_step(state, supplied):
+    """Make toy baseline records only; callers must supply non-study dictionaries."""
+    assert observation_fingerprint(supplied) not in RESERVED_OBSERVATIONS, (
+        "reserved study observation"
+    )
+    assert TOOL.digest(state, newline=True) not in RESERVED_MEMORY_PREFIXES, "reserved study prefix"
+    vector = [0.0 for _ in range(410)]
+    for pulse in supplied["pulses"]:
+        t = pulse["time_ms"] - supplied["start_ms"]
+        lo = int(t)
+        frac = t - lo
+        base = "ACFHIJKLMQ".index(pulse["channel"]) * 41
+        vector[base + lo] += pulse["magnitude"] * (1 - frac)
+        if frac:
+            vector[base + lo + 1] += pulse["magnitude"] * frac
+    denominator = sum(vector)
+    vector = [v / denominator for v in vector]
+    state["pending"] = {"id": supplied["occurrence_id"], "x": vector}
+    if state["arm"] == "H":
+        ranked = sorted(
+            (sum(abs(v - x) for v, x in zip(vector, item["x"], strict=True)), i)
+            for i, item in enumerate(state["memory"])
+        )
+        neighbors = [state["memory"][i] for _, i in ranked[:3]]
+        probability = (1 + sum(item["y"] for item in neighbors)) / (2 + len(neighbors))
+        comparisons = slots = len(state["memory"])
+    else:
+        comparisons = len(state["prototypes"]) + int(bool(state["prototypes"]))
+        distances = [
+            sum(abs(v - x) for v, x in zip(vector, item["x"], strict=True))
+            for item in state["prototypes"]
+        ]
+        at = min(range(len(distances)), key=lambda i: (distances[i], i), default=None)
+        if at is None or (distances[at] > 0.25 and len(distances) < 32):
+            at = len(distances)
+            state["prototypes"].append({"x": list(vector), "n": 0, "counts": [0, 0]})
+        state["pending"]["prototype"] = at
+        selected = state["prototypes"][at]
+        probability = (1 + selected["counts"][1]) / (2 + sum(selected["counts"]))
+        slots = len(state["prototypes"])
+    fields = {
+        "p1": probability,
+        "native": None if probability == 0.5 else int(probability > 0.5),
+        "prototype_comparisons": comparisons,
+        "representation_slots": slots,
+        "operational_sha256": TOOL.digest({"wrapper": state, "brain": None}),
+        "live_state_bytes": len(
+            (json.dumps(state, sort_keys=True, separators=(",", ":")) + "\n").encode()
+        ),
+        "actual_weight_abs_change": 0,
+    }
+    if state["arm"] == "H":
+        state["memory"].append({"x": vector, "y": supplied["outcome"]})
+        state["memory"] = state["memory"][-32:]
+    else:
+        selected = state["prototypes"][state["pending"]["prototype"]]
+        count = selected["n"]
+        selected["x"] = [
+            (old * count + value) / (count + 1)
+            for old, value in zip(selected["x"], vector, strict=True)
+        ]
+        selected["n"] += 1
+        selected["counts"][supplied["outcome"]] += 1
+    state["receipts"][supplied["occurrence_id"]] = supplied["outcome"]
+    state["pending"] = None
+    return fields
+
+
+def synthetic_authority_gate(commit, manifest, output):
+    gate = {
+        "source_commit": commit,
+        "manifest_sha256": manifest,
+        "synthetic_validator_fixture": True,
+        "records": {},
+        "record_files": {},
+    }
+    for kind, flag in (
+        ("review", "source_review_approved"),
+        ("publication", "verified_published"),
+        ("approval", "approved_for_execution"),
+    ):
+        value = {
+            "synthetic_validator_fixture": True,
+            flag: True,
+            "source_commit": commit,
+            "manifest_sha256": manifest,
+            "output_root": str(output),
+            "ceiling_pairs": 768,
+            "record_url": "https://example.invalid/synthetic-validator/" + kind,
+            "recorded_by": "synthetic pytest fixture, never an operational approval",
+        }
+        relative = "authority-records/" + kind + ".json"
+        pin = write_json(output / relative, value)
+        gate["records"][kind] = value
+        gate["record_files"][kind] = {
+            "path": relative,
+            "sha256": pin,
+            "bytes": (output / relative).stat().st_size,
+        }
+    return gate
+
+
 @pytest.fixture(scope="module")
-def synthetic_retained_run(tmp_path_factory):
+def synthetic_retained_run(tmp_path_factory, request):
     """A fabricated validator fixture, never a retention execution or result.
 
-    Only the already-published prefix JSON is decoded. Subsequent dictionaries
-    contain synthetic no-spike/no-selection rows; no checkpoint loader or model
-    is imported. This tests consistency checks, not authenticity or run fidelity.
+    Every prefix, observation and authority record is synthetic. Test-only pins
+    replace production paths before verify() can read anything. H/R calculations
+    never see published study prefixes or reserved suffix inputs.
     """
     root = tmp_path_factory.mktemp("synthetic-retention-validator")
     output, freeze = root / "synthetic-output", root / "synthetic-freeze"
     output.mkdir()
-    jobs_record = TOOL.read(TOOL.PREPARATION / "jobs.json")
-    jobs = jobs_record["jobs"]
-    inputs = TOOL.read(TOOL.PREPARATION / "inputs.json")["streams"]
-    prefix_records = TOOL.read(TOOL.PREPARATION / "prefix_sources.json")
     protocol = TOOL.read(ROOT / "protocols/plasticity_retention_bounded_v1.json")
-    transport = ROOT / "artifacts/research/temporal_reuse_loop_20261001"
-    parts = TOOL.read(transport / "transport_manifest.json")["parts"]
-    archive = b"".join(base64.b64decode((transport / part["path"]).read_bytes()) for part in parts)
-    assert hashlib.sha256(archive).hexdigest() == prefix_records["archive_sha256"]
-    with tarfile.open(fileobj=io.BytesIO(archive), mode="r:gz") as stream:
-        for name, prefix in prefix_records["prefixes"].items():
+    protocol["synthetic_validator_fixture"] = True
+    auditor_root, preparation = root / "synthetic-source", root / "synthetic-preparation"
+    inputs, jobs, prefix_records = {}, [], {"prefixes": {}}
+    for fixture in (100001, 100002):
+        for family in ("S", "H", "R"):
+            name = f"synthetic-{fixture}-{family}"
             destination = output / "prefixes" / name
-            destination.mkdir(parents=True)
-            for member in prefix["checkpoint_members"]:
-                source = stream.extractfile(member)
-                assert source is not None
-                raw = source.read()
-                assert hashlib.sha256(raw).hexdigest() == prefix["files_sha256"][member]
-                (destination / Path(member).name).write_bytes(raw)
+            vector = [1.0] + [0.0] * 409
+            wrapper = {
+                "arm": family,
+                "counts": [0, 0],
+                "memory": [],
+                "prototypes": [],
+                "pending": None,
+                "receipts": {},
+            }
+            if family == "H":
+                wrapper["memory"] = [{"x": vector, "y": 0}]
+            elif family == "R":
+                wrapper["prototypes"] = [{"x": vector, "n": 2, "counts": [1, 1]}]
+            members = {"wrapper.json": wrapper}
+            if family == "S":
+                prototype = assembly_pattern()
+                members["brain.json"] = {
+                    "payload": {
+                        "config": {
+                            "enable_weight_learning": True,
+                            "enable_delay_learning": True,
+                            "enable_assembly": True,
+                            "min_pattern_spikes": 2,
+                        },
+                        "plasticity": {
+                            "config": {
+                                **protocol["arms"]["C"],
+                                "max_updates_per_step": 2,
+                                "tau_plus_ms": 18.0,
+                                "tau_minus_ms": 24.0,
+                                "depression_ratio": 0.75,
+                                "enable_delay_learning": True,
+                            },
+                            "reward_trace": 1.0,
+                            "eligibility": {"1:2": 0.25},
+                        },
+                        "base": {
+                            "payload": {
+                                "field": {
+                                    "connections": [
+                                        {
+                                            "source_id": 1,
+                                            "target_id": 2,
+                                            "weight": 0.3,
+                                            "delay_ms": 2.0,
+                                            "plastic": True,
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        "predictor": {"counts": {"assembly-0001": {"0": 2}}},
+                        "assemblies": assembly_state(
+                            {
+                                "assembly-0001": assembly_candidate(
+                                    prototype, episodes=("toy-prefix-1", "toy-prefix-2")
+                                )
+                            }
+                        ),
+                        "episode_index": 0,
+                    }
+                }
+            prefix = {"checkpoint_members": [], "files_sha256": {}}
+            for filename, content in members.items():
+                member = name + "/" + filename
+                prefix["checkpoint_members"].append(member)
+                prefix["files_sha256"][member] = write_json(destination / filename, content)
+            prefix_records["prefixes"][name] = prefix
+        for condition, count, arms in (
+            ("return", 32, ("C", "L", "G", "Fw", "H", "R")),
+            ("stationary", 16, ("C", "L")),
+            ("novel", 32, ("C", "L", "Fw", "H", "R")),
+        ):
+            stream = f"{fixture}-{condition}"
+            rows = []
+            for index in range(count):
+                outcome = index % 2 if condition == "novel" else int(condition == "stationary")
+                start = 1000.0 + 100 * index
+                rows.append(
+                    {
+                        "occurrence_id": f"synthetic-occ-{index:06d}",
+                        "start_ms": start,
+                        "pulses": [
+                            {
+                                "channel": "A" if outcome == 0 else "C",
+                                "magnitude": 1.0,
+                                "time_ms": start + (index % 3) * 0.25,
+                            },
+                            {"channel": "Q", "magnitude": 1.0, "time_ms": start + 40},
+                        ],
+                        "outcome": outcome,
+                        "receipt_time_ms": start + 80,
+                    }
+                )
+            inputs[stream] = rows
+            for arm in arms:
+                v05 = arm not in ("H", "R")
+                jobs.append(
+                    {
+                        "arm": arm,
+                        "condition": condition,
+                        "cpu_seconds": 16 if v05 else 3,
+                        "wall_seconds": 20 if v05 else 5,
+                        "family": "v05" if v05 else "ordinary_memory",
+                        "pairs": count,
+                        "job_id": stream + "-" + arm,
+                        "stream": stream,
+                        "prefix": f"synthetic-{fixture}-" + ("S" if v05 else arm),
+                    }
+                )
+    jobs_record = {"synthetic_validator_fixture": True, "execution_authorized": False, "jobs": jobs}
+    pins = {
+        "inputs.json": write_json(preparation / "inputs.json", {"streams": inputs}),
+        "jobs.json": write_json(preparation / "jobs.json", jobs_record),
+        "prefix_sources.json": write_json(preparation / "prefix_sources.json", prefix_records),
+    }
+    protocol_pin = write_json(
+        auditor_root / "protocols/plasticity_retention_bounded_v1.json", protocol
+    )
+    patch = pytest.MonkeyPatch()
+    request.addfinalizer(patch.undo)
+    patch.setattr(TOOL, "ROOT", auditor_root)
+    patch.setattr(TOOL, "PREPARATION", preparation)
+    patch.setattr(TOOL, "PINS", pins)
+    patch.setattr(TOOL, "PROTOCOL_SHA", protocol_pin)
     modules = {
         "sparkbrain.v05.brain": "src/sparkbrain/v05/brain.py",
         "sparkbrain.v05.plasticity": "src/sparkbrain/v05/plasticity.py",
         "retention_published_predecessor": "scripts/temporal_reuse_loop_probe.py",
         "retention_contract": "scripts/plasticity_retention_contract.py",
     }
-    source_pins = {path: TOOL.sha(ROOT / path) for path in modules.values()}
+    source_pins = {}
+    for path in modules.values():
+        target = auditor_root / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if path == "scripts/plasticity_retention_contract.py":
+            target.write_bytes((ROOT / path).read_bytes())
+        else:
+            target.write_text("# Synthetic origin artifact; never imported or executed.\n")
+        source_pins[path] = TOOL.sha(target)
     dep_pin = write_json(
         freeze / "dependencies.json",
         {
             "stdlib_path": str(root / "synthetic-stdlib"),
             "stdlib_files": {},
+            **interpreter_record(),
         },
     )
     manifest_pin = write_json(
         freeze / "manifest.json",
         {
             "synthetic_validator_fixture": True,
-            "execution_source_root": str(ROOT),
+            "execution_source_root": str(auditor_root),
+            "planned_output": str(output),
             "sources": source_pins,
             "generated": {"dependencies.json": dep_pin},
         },
     )
     source_commit = "a" * 40
-    gate = {
-        "source_commit": source_commit,
-        "manifest_sha256": manifest_pin,
-        "synthetic_validator_fixture": True,
-    }
+    gate = synthetic_authority_gate(source_commit, manifest_pin, output)
     write_json(output / "execution-gate.json", gate)
     write_json(output / "job-plan.json", jobs_record)
-    loaded = {name: str(ROOT / path) + ":" + source_pins[path] for name, path in modules.items()}
+    loaded = {
+        name: str(auditor_root / path) + ":" + source_pins[path] for name, path in modules.items()
+    }
     groups, reservations, costs = {}, [], []
     cumulative = 0
     for job in jobs:
@@ -916,6 +1214,10 @@ def synthetic_retained_run(tmp_path_factory):
             "binding": gate,
             "cpu_limit": job["cpu_seconds"],
             "wall_limit": job["wall_seconds"],
+            "record_paths": {
+                kind: str(output / item["path"]) for kind, item in gate["record_files"].items()
+            },
+            "record_sha256": {kind: item["sha256"] for kind, item in gate["record_files"].items()},
         }
         write_json(work / "job.json", envelope)
         events, calls = synthetic_calls(v05, job["pairs"])
@@ -1011,6 +1313,8 @@ def synthetic_retained_run(tmp_path_factory):
                         },
                     }
                 )
+            if not v05:
+                row.update(synthetic_memory_step(wrapper, supplied))
             rows.append(row)
             wrapper["receipts"][supplied["occurrence_id"]] = supplied["outcome"]
             receipts.append(
@@ -1100,7 +1404,8 @@ def synthetic_retained_run(tmp_path_factory):
         },
     )
     seal_fixture(output)
-    return output, freeze, manifest_pin, source_commit
+    independent_record_pins = {kind: item["sha256"] for kind, item in gate["record_files"].items()}
+    return output, freeze, manifest_pin, source_commit, independent_record_pins
 
 
 def test_synthetic_retained_run_verifies_data_consistency_without_running_models(
@@ -1108,7 +1413,9 @@ def test_synthetic_retained_run_verifies_data_consistency_without_running_models
 ):
     result = TOOL.verify(*synthetic_retained_run)
     assert result["valid_completion"] is True
-    assert result["pairs"] == 768 and result["model_calls_during_audit"] == 0
+    assert result["pairs"] == 768 and result["runtime_model_method_calls_during_audit"] == 0
+    assert result["ordinary_memory_rows_reconstructed"] == 256
+    assert result["v05_apply_rows_recomputed"] == 512
     assert result["calls"]["predict"] == result["calls"]["outcome"] == 768
     assert result["calls"]["v05_init"] == 36
     assert "not rerun fidelity" in result["scope"]
@@ -1139,7 +1446,7 @@ def test_resealed_synthetic_tampering_fails_semantic_audit(
     synthetic_retained_run, corruption, message
 ):
     output = synthetic_retained_run[0]
-    work = output / "jobs" / "910075-return-C"
+    work = output / "jobs" / "100001-return-C"
     changed = {}
 
     def retain(path):
@@ -1218,9 +1525,320 @@ def test_resealed_synthetic_tampering_fails_semantic_audit(
             value["aggregate_cpu_seconds"] = 1
             write_json(retain(path), value)
         seal_fixture(output)
+
         with pytest.raises(RuntimeError, match=message):
             TOOL.verify(*synthetic_retained_run)
     finally:
         for path, raw in changed.items():
             path.write_bytes(raw)
         seal_fixture(output)
+
+
+@pytest.mark.parametrize("kind", AUTHORITY_KINDS)
+@pytest.mark.parametrize("value", [False, 1, "true", None])
+def test_authority_flags_require_exact_true(tmp_path, kind, value):
+    gate = synthetic_authority_gate("a" * 40, "b" * 64, tmp_path)
+    flag = {
+        "review": "source_review_approved",
+        "publication": "verified_published",
+        "approval": "approved_for_execution",
+    }[kind]
+    gate["records"][kind][flag] = value
+    with pytest.raises(RuntimeError, match="authority flag"):
+        TOOL.verify_authority_records(gate, "a" * 40, "b" * 64, str(tmp_path))
+
+
+@pytest.mark.parametrize("kind", AUTHORITY_KINDS)
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("source_commit", "c" * 40),
+        ("manifest_sha256", "c" * 64),
+        ("output_root", "/other"),
+        ("ceiling_pairs", 769),
+        ("ceiling_pairs", 768.0),
+        ("record_url", " "),
+        ("record_url", True),
+        ("recorded_by", ""),
+        ("recorded_by", 7),
+    ],
+)
+def test_authority_scope_and_provenance_are_bound_to_external_expectations(
+    tmp_path, kind, field, value
+):
+    gate = synthetic_authority_gate("a" * 40, "b" * 64, tmp_path)
+    gate["records"][kind][field] = value
+    with pytest.raises(RuntimeError, match="authority (scope|provenance)"):
+        TOOL.verify_authority_records(gate, "a" * 40, "b" * 64, str(tmp_path))
+
+
+@pytest.mark.parametrize(
+    "pins", [None, {}, {"review": "c" * 64}, dict.fromkeys(AUTHORITY_KINDS, "not a hash")]
+)
+def test_external_authority_record_pins_are_required_before_artifact_reads(
+    tmp_path, monkeypatch, pins
+):
+    monkeypatch.setattr(TOOL, "sha", lambda _: pytest.fail("must reject before artifact reads"))
+    with pytest.raises(RuntimeError, match="independent authority record pins required"):
+        TOOL.verify(tmp_path, tmp_path, "a" * 64, "b" * 40, pins)
+
+
+def toy_memory_case(arm, *, memory=None, prototypes=None):
+    prefix = {
+        "arm": arm,
+        "counts": [0, 0],
+        "memory": memory or [],
+        "prototypes": prototypes or [],
+        "pending": None,
+        "receipts": {},
+    }
+    supplied = {
+        "occurrence_id": "toy-only-1",
+        "start_ms": 100.0,
+        "pulses": [{"channel": "A", "time_ms": 100.0, "magnitude": 1.0}],
+        "outcome": 0,
+    }
+    final = copy.deepcopy(prefix)
+    row = synthetic_memory_step(final, supplied)
+    receipt = {
+        "wrapper_sha256": TOOL.digest(final, newline=True),
+        "brain_sha256": None,
+        "readout_counts_after_receipt": None,
+    }
+    return row, receipt, supplied, prefix, final
+
+
+def test_memory_raster_interpolates_channel_bins_and_normalizes_without_mutation():
+    supplied = {
+        "start_ms": 100.0,
+        "pulses": [
+            {"channel": "A", "time_ms": 100.25, "magnitude": 2.0},
+            {"channel": "C", "time_ms": 101.0, "magnitude": 1.0},
+        ],
+    }
+    original = copy.deepcopy(supplied)
+    expected = [0.0] * 410
+    expected[0], expected[1], expected[42] = 0.5, 1 / 6, 1 / 3
+    assert TOOL.memory_raster(supplied) == expected
+    assert supplied == original
+
+
+def test_h_nearest_three_breaks_equal_distance_by_memory_index():
+    vector = [1.0] + [0.0] * 409
+    memory = [{"x": vector, "y": value} for value in (0, 1, 1, 0)]
+    row, receipt, supplied, prefix, final = toy_memory_case("H", memory=memory)
+    assert row["p1"] == 0.6 and row["native"] == 1
+    assert row["prototype_comparisons"] == row["representation_slots"] == 4
+    TOOL.verify_memory_history("H", [row], [receipt], [supplied], prefix, final)
+    assert final["memory"][-1] == {"x": vector, "y": 0}
+
+
+def test_h_retains_only_latest_32_receipts():
+    vector = [1.0] + [0.0] * 409
+    memory = [{"x": vector, "y": index % 2} for index in range(32)]
+    row, receipt, supplied, prefix, final = toy_memory_case("H", memory=memory)
+    TOOL.verify_memory_history("H", [row], [receipt], [supplied], prefix, final)
+    assert final["memory"] == prefix["memory"][1:] + [{"x": vector, "y": 0}]
+
+
+def test_r_nearest_tie_updates_first_prototype_only():
+    vector = [1.0] + [0.0] * 409
+    prototypes = [{"x": vector, "n": 2, "counts": [0, 2]}, {"x": vector, "n": 4, "counts": [4, 0]}]
+    row, receipt, supplied, prefix, final = toy_memory_case("R", prototypes=prototypes)
+    assert row["p1"] == 0.75 and row["native"] == 1
+    TOOL.verify_memory_history("R", [row], [receipt], [supplied], prefix, final)
+    assert final["prototypes"][0]["counts"] == [1, 2]
+    assert final["prototypes"][1] == prefix["prototypes"][1]
+
+
+@pytest.mark.parametrize(
+    "offset,capacity,creates", [(0.125, 1, False), (0.126, 1, True), (1.0, 32, False)]
+)
+def test_r_allocation_threshold_capacity_and_running_centroid(offset, capacity, creates):
+    vector = [1.0 - offset, offset] + [0.0] * 408
+    prototypes = [{"x": vector, "n": 2, "counts": [1, 1]} for _ in range(capacity)]
+    row, receipt, supplied, prefix, final = toy_memory_case("R", prototypes=prototypes)
+    TOOL.verify_memory_history("R", [row], [receipt], [supplied], prefix, final)
+    assert len(final["prototypes"]) == capacity + int(creates)
+    selected = final["prototypes"][-1] if creates else final["prototypes"][0]
+    if creates:
+        assert selected == {"x": [1.0] + [0.0] * 409, "n": 1, "counts": [1, 0]}
+    else:
+        assert selected["x"][0] == ((1 - offset) * 2 + 1) / 3
+        assert selected["x"][1] == offset * 2 / 3
+        assert selected["counts"] == [2, 1] and selected["n"] == 3
+
+
+@pytest.mark.parametrize("arm", ["H", "R"])
+@pytest.mark.parametrize("corruption", ["p1", "native", "pending", "bytes", "receipt", "final"])
+def test_memory_reconstruction_rejects_disconnected_predictions_and_states(arm, corruption):
+    row, receipt, supplied, prefix, final = toy_memory_case(arm)
+    if corruption == "p1":
+        row["p1"] = 0.75
+    elif corruption == "native":
+        row["native"] = 1
+    elif corruption == "pending":
+        row["operational_sha256"] = "0" * 64
+    elif corruption == "bytes":
+        row["live_state_bytes"] += 1
+    elif corruption == "receipt":
+        receipt["wrapper_sha256"] = "0" * 64
+    else:
+        final["counts"][0] += 1
+    with pytest.raises(RuntimeError, match="ordinary-memory"):
+        TOOL.verify_memory_history(arm, [row], [receipt], [supplied], prefix, final)
+
+
+def test_real_preparation_pins_are_checked_only_as_bytes_without_evaluating_rows():
+    real_pins = {
+        "inputs.json": "6e9ae9652cf4593e4401e9ce149d1ff178007065c732c2950e904efb523b3773",
+        "jobs.json": "e67c82326a43856aa4628c45d21ebd5cd8d9edf7b09c76c232982052544db1d6",
+        "prefix_sources.json": "d9bc263106921a4c862e540795fb56c02565b8d8f370a88b570814448ee33dc9",
+    }
+    preparation = ROOT / "artifacts/research/plasticity_retention_preparation_20261001"
+    for name, pin in real_pins.items():
+        assert hashlib.sha256((preparation / name).read_bytes()).hexdigest() == pin
+
+
+def test_reserved_case_tripwires_stop_before_reconstruction(prevent_reserved_baseline_exposure):
+    observation, prefix = prevent_reserved_baseline_exposure
+    with pytest.raises(AssertionError, match="reserved study observation"):
+        TOOL.memory_raster(observation)
+    with pytest.raises(AssertionError, match="reserved study prefix"):
+        TOOL.verify_memory_history(prefix["arm"], [], [], [], prefix, {})
+
+
+@pytest.mark.parametrize("corruption", ["version", "executable"])
+def test_auditor_interpreter_must_match_frozen_arithmetic_environment(corruption):
+    dependencies = interpreter_record()
+    TOOL.verify_audit_interpreter(dependencies)
+    dependencies["python_version" if corruption == "version" else "executable_sha256"] = "changed"
+    with pytest.raises(RuntimeError, match="audit interpreter differs"):
+        TOOL.verify_audit_interpreter(dependencies)
+
+
+@contextlib.contextmanager
+def changed_fixture_files(output):
+    originals = {}
+
+    def remember(path):
+        originals.setdefault(path, path.read_bytes())
+        return path
+
+    try:
+        yield remember
+    finally:
+        for path, raw in originals.items():
+            path.write_bytes(raw)
+        seal_fixture(output)
+
+
+def rewrite_synthetic_scores(output, remember):
+    """Keep derived scores coherent with tampered toy predictions, never study rows."""
+    spec = importlib.util.spec_from_file_location(
+        "toy_resealed_scorer", TOOL.ROOT / "scripts/plasticity_retention_contract.py"
+    )
+    assert spec is not None and spec.loader is not None
+    scorer = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(scorer)
+    groups = {}
+    for job in TOOL.read(output / "job-plan.json")["jobs"]:
+        rows = TOOL.lines(output / "jobs" / job["job_id"] / "predictions.jsonl")
+        assert all(row["synthetic_validator_fixture"] is True for row in rows)
+        groups.setdefault(job["stream"].split("-")[0], {}).setdefault(job["condition"], {})[
+            job["arm"]
+        ] = rows
+    protocol = TOOL.read(TOOL.ROOT / "protocols/plasticity_retention_bounded_v1.json")
+    scores = {seed: scorer.evaluate_fixture(rows, protocol) for seed, rows in groups.items()}
+    write_json(remember(output / "scores.json"), scores)
+    terminal = TOOL.read(output / "result.json")
+    terminal["bounded_gate"] = all(score["bounded_gate"] for score in scores.values())
+    write_json(remember(output / "result.json"), terminal)
+
+
+@pytest.mark.parametrize("kind", AUTHORITY_KINDS)
+def test_coherent_authority_resealing_cannot_replace_external_original_record_pin(
+    synthetic_retained_run, kind
+):
+    output = synthetic_retained_run[0]
+    independent_pins = copy.deepcopy(synthetic_retained_run[4])
+    with changed_fixture_files(output) as remember:
+        gate = TOOL.read(output / "execution-gate.json")
+        record = gate["records"][kind]
+        record["recorded_by"] = "different synthetic origin, never operational approval"
+        path = output / gate["record_files"][kind]["path"]
+        pin = write_json(remember(path), record)
+        gate["record_files"][kind].update(sha256=pin, bytes=path.stat().st_size)
+        write_json(remember(output / "execution-gate.json"), gate)
+        for job in TOOL.read(output / "job-plan.json")["jobs"]:
+            work = output / "jobs" / job["job_id"]
+            envelope = TOOL.read(work / "job.json")
+            envelope["binding"] = gate
+            envelope["record_sha256"][kind] = pin
+            write_json(remember(work / "job.json"), envelope)
+            result = TOOL.read(work / "result.json")
+            result["job_sha256"] = TOOL.digest(envelope)
+            write_json(remember(work / "result.json"), result)
+        seal_fixture(output)
+        assert synthetic_retained_run[4] == independent_pins
+        with pytest.raises(RuntimeError, match="independent authority record pin: " + kind):
+            TOOL.verify(*synthetic_retained_run)
+
+
+@pytest.mark.parametrize("field", ["record_paths", "record_sha256"])
+def test_job_authority_must_match_retained_bytes_even_after_job_hash_resealed(
+    synthetic_retained_run, field
+):
+    output = synthetic_retained_run[0]
+    work = output / "jobs" / "100001-return-C"
+    with changed_fixture_files(output) as remember:
+        envelope = TOOL.read(work / "job.json")
+        envelope[field]["approval"] = (
+            "/different-synthetic-record" if field == "record_paths" else "e" * 64
+        )
+        write_json(remember(work / "job.json"), envelope)
+        result = TOOL.read(work / "result.json")
+        result["job_sha256"] = TOOL.digest(envelope)
+        write_json(remember(work / "result.json"), result)
+        seal_fixture(output)
+        with pytest.raises(RuntimeError, match="job retained authority binding"):
+            TOOL.verify(*synthetic_retained_run)
+
+
+@pytest.mark.parametrize("arm", ["H", "R"])
+@pytest.mark.parametrize("corruption", ["prediction", "receipt", "final", "pending"])
+def test_coherent_toy_memory_resealing_cannot_override_baseline_arithmetic(
+    synthetic_retained_run, arm, corruption
+):
+    output = synthetic_retained_run[0]
+    work = output / "jobs" / ("100001-return-" + arm)
+    with changed_fixture_files(output) as remember:
+        if corruption in ("prediction", "pending"):
+            path = work / "predictions.jsonl"
+            rows = TOOL.lines(path)
+            if corruption == "prediction":
+                rows[0]["p1"] = 0.99
+                rows[0]["native"] = 1
+            else:
+                rows[0]["operational_sha256"] = "0" * 64
+            write_lines(remember(path), rows)
+            rewrite_synthetic_scores(output, remember)
+        else:
+            receipt_path = work / "receipts.jsonl"
+            receipts = TOOL.lines(receipt_path)
+            if corruption == "receipt":
+                receipts[0]["wrapper_sha256"] = "0" * 64
+            else:
+                path = work / "final-state.json"
+                value = TOOL.read(path)
+                if arm == "H":
+                    value["wrapper"]["memory"][0]["y"] ^= 1
+                else:
+                    value["wrapper"]["prototypes"][0]["counts"][0] += 1
+                    value["wrapper"]["prototypes"][0]["n"] += 1
+                write_json(remember(path), value)
+                receipts[-1]["wrapper_sha256"] = TOOL.digest(value["wrapper"], newline=True)
+            write_lines(remember(receipt_path), receipts)
+        seal_fixture(output)
+        with pytest.raises(RuntimeError, match="ordinary-memory"):
+            TOOL.verify(*synthetic_retained_run)
