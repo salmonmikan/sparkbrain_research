@@ -160,8 +160,20 @@ The 16 model-free runner tests, exact source checker and scoped Ruff passed befo
 Independent source/data/archive audit verified all raw bytes, graphs and reference structure,
 actual maturity/count/fault gates, and all nine external mutations. The publication verifier
 independently reconstructs the fixed result from saved graphs/rows rather than only trusting
-terminal booleans. Its 12 unittest methods and the 16 runner methods all pass: **28 model-free
-test methods**, with scoped Ruff and whitespace/link checks passing.
+terminal booleans. Its 12 unittest methods, the 16 original runner methods and two new
+test-isolation methods all pass: **30 model-free test methods**, with scoped Ruff and
+whitespace/link checks passing.
+
+The first publication CI at `65d1c445` exposed a test-harness defect: its collection-time
+import sentinel remained installed, blocking unrelated tests, and its teardown rejected
+modules already loaded by the wider suite. The post-run correction scopes import guards
+to module loading and individual tests, restores them even after failure, and compares
+the pre-existing module inventory. Cached and fresh model import attempts remain rejected.
+Synthetic subprocess regressions cover clean/preloaded inventories and successful/failing
+test cleanup. This changes only the current test harness. The pre-run tests remain intact
+at `6dd7e8a` and as `freeze/tests.py` in the pinned archive; the original implementation
+freeze deliberately continues to bind those historical bytes. Runner, runtime, protocol,
+inputs, raw evidence and archive are unchanged; no research execution was repeated.
 
 Validate the saved evidence without importing a model:
 
@@ -174,8 +186,29 @@ The verifier pins the original archive; checks transport/member/source/raw hashe
 schemas/references and byte comparisons; and derives selected ownership, maturity, count,
 fault and external-control checks. It establishes archive consistency supported by reviewed
 live code, not dynamic reproduction or independent proof of former live object identity.
-Exact-head CI/Codex review remain separate publication gates. Full local runtime/readiness/
-demo/benchmark validation was outside this bounded scope; no model was rerun for publication.
+The subsequent publication review required the standard repository software validation
+sequence. It was run separately from the frozen research experiment on Python 3.12.14,
+using this checkout's `src` via `PYTHONPATH`. Local readiness, the full pytest suite,
+repository-wide Ruff, the canonical demo, the 40-episode/30-step software benchmark and
+bundle validation all passed. Demo/benchmark outputs and the generated validation manifest
+were retained outside this PR. These software checks are not additional research cases or
+scientific evidence; the acquired-ownership probe and historical research probes were not
+rerun. Exact-head CI/Codex review remain separate publication gates.
+
+```bash
+PYTHONPATH=src python scripts/local_readiness_check.py
+PYTHONPATH=src python -m pytest -q
+python -m ruff check .
+PYTHONPATH=src python scripts/run_demo.py --output <software-check-directory>/demo
+PYTHONPATH=src python scripts/run_benchmark.py --episodes 40 --steps 30 \
+  --output <software-check-directory>/benchmark
+PYTHONPATH=src python scripts/validate_bundle.py
+```
+
+The minimal [Project Status](../PROJECT_STATUS.md) pointer preserves all 38,275 previous
+bytes from `4c57cbf`. PR164's existing status patch at `16e5b3f` still applies cleanly both
+to that main version and to the appended version. The result adds no scientific or build
+acceptance authority.
 
 ## Consequence for the interface
 

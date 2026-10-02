@@ -8,6 +8,7 @@ repository tests for this source-only implementation review.
 from __future__ import annotations
 
 import ast
+import builtins
 import copy
 import dataclasses
 import hashlib
@@ -18,6 +19,7 @@ import sys
 import tempfile
 import unittest
 from collections import deque
+from contextlib import contextmanager
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
@@ -34,11 +36,57 @@ class RejectSparkBrain:
 
 
 SENTINEL = RejectSparkBrain()
-sys.meta_path.insert(0, SENTINEL)
-SPEC = importlib.util.spec_from_file_location("acquired_ownership_runner", RUNNER)
-runner = importlib.util.module_from_spec(SPEC)
-sys.modules[SPEC.name] = runner
-SPEC.loader.exec_module(runner)
+
+
+@contextmanager
+def model_import_guard():
+    original_import = builtins.__import__
+    original_import_module = importlib.import_module
+
+    def guarded_import(name, globals=None, locals=None, fromlist=(), level=0):
+        absolute_name = name
+        if level:
+            namespace = globals or {}
+            package = namespace.get("__package__")
+            if package is None:
+                spec = namespace.get("__spec__")
+                if spec is not None:
+                    package = spec.parent
+                else:
+                    package = namespace.get("__name__", "")
+                    if "__path__" not in namespace:
+                        package = package.rpartition(".")[0]
+            absolute_name = importlib.util.resolve_name("." * level + name, package)
+        SENTINEL.find_spec(absolute_name)
+        return original_import(name, globals, locals, fromlist, level)
+
+    def guarded_import_module(name, package=None):
+        SENTINEL.find_spec(importlib.util.resolve_name(name, package))
+        return original_import_module(name, package)
+
+    sys.meta_path.insert(0, SENTINEL)
+    try:
+        with (
+            patch.object(builtins, "__import__", guarded_import),
+            patch.object(importlib, "import_module", guarded_import_module),
+        ):
+            yield
+    finally:
+        sys.meta_path.remove(SENTINEL)
+
+
+with model_import_guard():
+    SPEC = importlib.util.spec_from_file_location("acquired_ownership_runner", RUNNER)
+    runner = importlib.util.module_from_spec(SPEC)
+    sys.modules[SPEC.name] = runner
+    SPEC.loader.exec_module(runner)
+
+
+def sparkbrain_modules():
+    return {
+        name: module for name, module in sys.modules.items()
+        if name == "sparkbrain" or name.startswith("sparkbrain.")
+    }
 
 
 @dataclasses.dataclass
@@ -60,10 +108,12 @@ class FakePulse:
 
 
 class RunnerModelFreeTests(unittest.TestCase):
+    def setUp(self):
+        self.preexisting_modules = sparkbrain_modules()
+        self.enterContext(model_import_guard())
+
     def tearDown(self):
-        self.assertFalse(
-            any(name == "sparkbrain" or name.startswith("sparkbrain.") for name in sys.modules)
-        )
+        self.assertEqual(sparkbrain_modules(), self.preexisting_modules)
 
     @staticmethod
     def audit():
@@ -402,6 +452,86 @@ runpy.run_path(sys.argv[0], run_name='__main__')
         self.assertEqual(limits.call_args.args, (runner.resource.RLIMIT_CPU, (60, 60)))
         self.assertGreater(timer.call_args.args[1], 0)
         self.assertLessEqual(timer.call_args.args[1], 120)
+
+
+class HarnessIsolationTests(unittest.TestCase):
+    def test_collection_restores_import_hooks_with_or_without_preloaded_modules(self):
+        code = """
+import builtins, importlib.util, sys, types
+if sys.argv[2] == 'preloaded':
+    sys.modules['sparkbrain'] = types.ModuleType('sparkbrain')
+    sys.modules['sparkbrain.preloaded'] = types.ModuleType('sparkbrain.preloaded')
+before = list(sys.meta_path)
+before_import = builtins.__import__
+before_import_module = importlib.import_module
+modules = dict(sys.modules)
+spec = importlib.util.spec_from_file_location('isolated_harness', sys.argv[1])
+module = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = module
+spec.loader.exec_module(module)
+assert sys.meta_path == before
+assert builtins.__import__ is before_import
+assert importlib.import_module is before_import_module
+assert module.sparkbrain_modules() == {
+    name: value for name, value in modules.items()
+    if name == 'sparkbrain' or name.startswith('sparkbrain.')
+}
+"""
+        for state in ("clean", "preloaded"):
+            with self.subTest(state=state):
+                subprocess.run(
+                    [sys.executable, "-B", "-c", code, __file__, state],
+                    check=True, capture_output=True, text=True,
+                )
+
+    def test_per_test_guard_rejects_import_and_cleans_up_even_after_failure(self):
+        code = """
+import builtins, importlib.util, sys, types, unittest
+sys.modules['sparkbrain'] = types.ModuleType('sparkbrain')
+sys.modules['sparkbrain.preloaded'] = types.ModuleType('sparkbrain.preloaded')
+before = list(sys.meta_path)
+before_import = builtins.__import__
+before_import_module = importlib.import_module
+spec = importlib.util.spec_from_file_location('isolated_harness', sys.argv[1])
+module = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = module
+spec.loader.exec_module(module)
+class LifecycleCase(module.RunnerModelFreeTests):
+    def test_lifecycle(self):
+        for call in (
+            lambda: __import__('sparkbrain'),
+            lambda: importlib.import_module('sparkbrain'),
+            lambda: importlib.import_module('.preloaded', 'sparkbrain'),
+            lambda: __import__('preloaded', {'__package__': 'sparkbrain'}, fromlist=['x'], level=1),
+            lambda: __import__(
+                'preloaded', {'__spec__': types.SimpleNamespace(parent='sparkbrain')},
+                fromlist=['x'], level=1),
+            lambda: __import__(
+                'preloaded', {'__name__': 'sparkbrain.caller'}, fromlist=['x'], level=1),
+            lambda: __import__(
+                'preloaded', {'__name__': 'sparkbrain', '__path__': []},
+                fromlist=['x'], level=1),
+            lambda: module.SENTINEL.find_spec('sparkbrain.forbidden'),
+        ):
+            with self.assertRaisesRegex(AssertionError, 'MODEL IMPORT FORBIDDEN'):
+                call()
+        if sys.argv[2] == 'failure':
+            self.fail('synthetic test failure')
+result = unittest.TestResult()
+LifecycleCase('test_lifecycle').run(result)
+assert len(result.failures) == (1 if sys.argv[2] == 'failure' else 0)
+assert not result.errors
+assert sys.meta_path == before
+assert builtins.__import__ is before_import
+assert importlib.import_module is before_import_module
+assert set(module.sparkbrain_modules()) == {'sparkbrain', 'sparkbrain.preloaded'}
+"""
+        for outcome in ("success", "failure"):
+            with self.subTest(outcome=outcome):
+                subprocess.run(
+                    [sys.executable, "-B", "-c", code, __file__, outcome],
+                    check=True, capture_output=True, text=True,
+                )
 
 
 if __name__ == "__main__":

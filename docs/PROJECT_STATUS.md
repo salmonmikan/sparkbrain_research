@@ -522,3 +522,16 @@ seven invalid schema/config cases rejected, and outer `true` normalized to integ
 and [Results Ledger](RESULTS_LEDGER.md). This records engineering completion only,
 with scientific credit 0; it adds no build acceptance, scientific authority,
 security claim or general compatibility guarantee. Existing status entries are unchanged.
+
+
+## Independent acquired v0.5 ownership diagnostic (2026-10-02)
+
+One fixed `EXPLORATORY_NONCANONICAL_NON_EVIDENTIARY` acquired-state diagnostic
+observed that two specified precommit faults left the supported original graph
+unchanged, while the successful private-owner commit matched its direct reference
+and isolated nine caller/output metadata mutations. See the
+[bounded report](research/v05_acquired_ownership_results_20261001.md) and
+[Results Ledger](RESULTS_LEDGER.md). This is restricted engineering evidence with
+scientific credit 0; it establishes no general snapshot support, native restoration,
+M1 contribution, learned task benefit or build acceptance. Earlier coverage-blocked
+and acquisition-fixture results remain separate; existing status entries are unchanged.
