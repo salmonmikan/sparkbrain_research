@@ -1,23 +1,24 @@
 {
   "checks": {
-    "broader_model_free_tests_total": 166,
+    "broader_model_free_tests_total": 169,
     "broader_test_exit": 0,
-    "independent_new_tests_under_sparkbrain_import_blocker": 70,
+    "independent_new_tests_under_sparkbrain_import_blocker": 73,
     "independent_review": "No remaining blocking mechanics finding in declared serial trusted-source domain",
     "independent_runtime_modules_loaded": 0,
     "new_adapter_tests": 56,
-    "new_source_audit_tests": 14,
+    "new_source_audit_tests": 17,
     "new_test_exit": 0,
     "repository_ruff_exit": 0
   },
   "classification": "SOURCE_ONLY_NONCANONICAL_NON_EVIDENTIARY",
+  "codex_review_repair": "P2 inventory-root symlink finding4162884272: check all root-relative directory components before recursion; src/sparkbrain,src,schemas alias regressions pass. Final-head Codex and CI remain separate.",
   "files_sha256": {
     "artifacts/research/g0_joint_ownership_preparation_20261002/source_contract.json": "281e71fd1bbc11d9d705e6a02524f4071d39573ce0bc36b040da1de40a04e7c8",
-    "docs/research/g0_joint_ownership_preparation_20261002.md": "5fbdeca0eb49417cd0f71dc8b809314ae2656751cbe64b84fb9fc0970e0f9cea",
+    "docs/research/g0_joint_ownership_preparation_20261002.md": "a15e284a309ef372cd11423fedc162884258962474df005cbb2f32007f03483c",
     "scripts/g0_joint_ownership.py": "c5d721b9c849f5262c5c8bd16cc0249617b258b66d109f9417545d0d9fa8684b",
-    "scripts/verify_g0_joint_source_contract.py": "fa46f9be46e948e645ab2ac4c9bd95b81a9f4991e03dc1339ecd6c5266f5b2be",
+    "scripts/verify_g0_joint_source_contract.py": "12da55f0b208fc69c96670d273642764241e96c43543ad85985233bb554630ff",
     "tests/test_g0_joint_ownership.py": "3e0901da9e5e4a001bcb015ba27864fb56334bb248c5eabbd88d28b7343694e8",
-    "tests/test_g0_joint_source_contract.py": "1cf87be12b0fe73e8ee9da49e1f7cdbcb5c04991ba89ecd1d41472b0b80956bd"
+    "tests/test_g0_joint_source_contract.py": "118e64c63adac9fa9eb776624a9af02f259124792056e836930c1eece3cf5779"
   },
   "local_interpreter": "CPython 3.12.14 Linux x86_64",
   "real_g0_executed": false,

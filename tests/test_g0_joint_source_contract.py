@@ -86,6 +86,16 @@ def test_runtime_directory_symlink_cannot_hide_uninventoried_python(
         AUDIT.verify(copied_sources)
 
 
+@pytest.mark.parametrize("directory", ["src/sparkbrain", "src", "schemas"])
+def test_inventory_roots_and_ancestors_cannot_be_aliased(copied_sources, directory):
+    original = copied_sources / directory
+    relocated = copied_sources / "relocated_source"
+    original.rename(relocated)
+    original.symlink_to(relocated, target_is_directory=True)
+    with pytest.raises(ValueError, match="runtime dependency symlink"):
+        AUDIT.verify(copied_sources)
+
+
 @pytest.mark.parametrize(
     "change", ["helper_drift", "schema_drift", "extra_source", "missing_source"]
 )

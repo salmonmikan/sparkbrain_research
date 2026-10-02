@@ -69,6 +69,11 @@ def verify(root: Path = ROOT) -> dict[str, Any]:
         ("runtime_schema_sha256", "schemas", "*.json"),
     ):
         actual = {}
+        component = root
+        for name in Path(directory).parts:
+            component /= name
+            if component.is_symlink():
+                raise ValueError("runtime dependency symlink is unsupported")
         if any(item.is_symlink() for item in (root / directory).rglob("*")):
             raise ValueError("runtime dependency symlink is unsupported")
         for item in sorted((root / directory).rglob(pattern)):

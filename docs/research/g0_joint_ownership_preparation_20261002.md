@@ -170,7 +170,7 @@ G0 producer/M1 activity. Passing ordinary CI cannot be counted as a real G0 exec
 
 ### Local preparation checks
 
-The adapter suite has 56 model-free cases and the static source auditor has 14. The
+The adapter suite has 56 model-free cases and the static source auditor has 17. The
 broader relevant set also includes 18 existing acquired-ownership helper cases and 78
 existing history-export helper/evidence cases. They use stand-ins or already retained
 primitive evidence, not fresh producer/M1 activity. Exact final pass/fail evidence and
