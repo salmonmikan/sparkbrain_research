@@ -1363,3 +1363,13 @@ constructor/allocation/resource routes, event ordering, the complete snapshot an
 closed-session terminal manifest. Reconcile attempted allocations separately from
 successful births and call returns. Synthetic source-shaped fixtures validate this
 software boundary without creating native eligibility or execution authority.
+
+**Nonvacuous call-plan refinement (2026-10-02):** Bind the separately reviewed
+three-observation proposal's exact 35 native routes and successful count vector,
+plus resource counters, rather than accepting caller-selected target subsets.
+Keep its 67-call probe identity and limits separate from the unchanged 68-call
+pilot. Also count only the precisely attributed internal `_FeatureState` deepcopy
+shell route; preserve all unknown-class/route rejections and require same-thread
+census construction/installation. Registry-birth binding, complete resource caps,
+actual arm graphs, unsupported endpoint coverage, launcher and execution authority
+remain unmet. Source-only approval is not empirical eligibility or experiment clearance.

@@ -9,6 +9,7 @@ self-consistent JSON is not a substitute for its separate execution authority.
 from __future__ import annotations
 
 import ast
+import re
 import sysconfig
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -21,6 +22,9 @@ DECODE = ("src/sparkbrain/v032/checkpoint.py", "_decode")
 LOAD = ("src/sparkbrain/v032/checkpoint.py", "DirectCheckpointManager._load_bytes")
 RAW_TYPE = "sparkbrain.v03.runtime:IntegratedV03Brain"
 FACADE_TYPE = "sparkbrain.v032.runtime:IntegratedV032Brain"
+FEATURE_TYPE = "sparkbrain.v03_seed.sensory_field:_FeatureState"
+SENSORY_SOURCE = "src/sparkbrain/v03_seed/sensory_field.py"
+FEATURE_COPY = ("stdlib/copyreg.py", "__newobj__")
 RESOURCE_ROUTES = {
     "model_rng": {
         ("src/sparkbrain/v03/runtime.py", "IntegratedV03Brain._initialize_runtime"),
@@ -125,13 +129,79 @@ def _codec_types(tree, require):
     return registry, objects
 
 
-def validate_census_evidence(root: Path, freeze: dict, contract: dict, census: dict) -> None:
+def _feature_copy_witness(tree: ast.Module, node: ast.ClassDef, require) -> None:
+    """Only the frozen default-allocation _states transaction supports copyreg shells.
+
+    The frozen PassiveCensus implementation separately checks the live stdlib
+    stack, exact class/function identities, source line, memo and _states values.
+    This read-only witness never treats a generic copyreg route as that proof.
+    """
+    hooks = {
+        "__new__",
+        "__reduce__",
+        "__reduce_ex__",
+        "__getstate__",
+        "__setstate__",
+        "__copy__",
+        "__deepcopy__",
+        "__del__",
+    }
+    require(
+        not node.bases
+        and _dataclass(node)
+        and not any(
+            isinstance(member, (ast.FunctionDef, ast.AsyncFunctionDef)) and member.name in hooks
+            for member in node.body
+        ),
+        "feature-state copy route requires default allocation without custom hooks",
+    )
+    require(
+        any(
+            isinstance(item, ast.Import)
+            and any(alias.name == "copy" and alias.asname is None for alias in item.names)
+            for item in tree.body
+        ),
+        "sensory copy module binding differs",
+    )
+    owners = [
+        item
+        for item in tree.body
+        if isinstance(item, ast.ClassDef) and item.name == "AdaptiveSensoryField"
+    ]
+    require(len(owners) == 1, "sensory transaction source class missing")
+    methods = [
+        item
+        for item in owners[0].body
+        if isinstance(item, ast.FunctionDef) and item.name == "observe_with_trace"
+    ]
+    require(len(methods) == 1, "sensory transaction source method missing")
+    assignments = [
+        item
+        for item in methods[0].body
+        if isinstance(item, ast.Assign)
+        and any(
+            isinstance(target, ast.Name) and target.id == "working_states"
+            for target in item.targets
+        )
+    ]
+    expected = ast.parse("copy.deepcopy(self._states)", mode="eval").body
+    require(
+        len(assignments) == 1
+        and len(assignments[0].targets) == 1
+        and ast.dump(assignments[0].value, include_attributes=False)
+        == ast.dump(expected, include_attributes=False),
+        "sensory copy route differs from exact working_states deepcopy(_states) callsite",
+    )
+
+
+def _validate_raw_census_evidence(root: Path, freeze: dict, contract: dict, census: dict) -> None:
     """Derive counts/routes from complete source-bound raw attempts and successes.
 
-    ``profiler_evidence`` has exactly schema/census_implementation/stdlib_sources/
-    call_targets/call_caps/events/snapshot/terminal. The terminal has exactly
-    schema/status/source_contract_sha256/snapshot/events/event_count/final_sequence/
-    closed/pending_calls/pending_shells/failure. Its event list and snapshot binding
+    ``profiler_evidence`` has exactly schema/census_implementation/eligibility_plan/
+    stdlib_sources/call_targets/call_caps/events/snapshot/terminal. The terminal has
+    exactly schema/status/source_contract_sha256/eligibility_call_plan/snapshot/
+    events/event_count/final_sequence/closed/pending_calls/pending_shells/failure.
+    Its event list, reviewed plan and snapshot binding
     must match the gate, and every referenced file is in ``raw_evidence`` exactly once.
     Exception, poisoned, open and pending sessions cannot prove positive eligibility.
     """
@@ -152,6 +222,7 @@ def validate_census_evidence(root: Path, freeze: dict, contract: dict, census: d
         {
             "schema",
             "census_implementation",
+            "eligibility_plan",
             "stdlib_sources",
             "call_targets",
             "call_caps",
@@ -198,7 +269,8 @@ def validate_census_evidence(root: Path, freeze: dict, contract: dict, census: d
     stdlib = profile["stdlib_sources"]
     _require(
         type(stdlib) is dict
-        and {"enum.py", "random.py", "threading.py", "dataclasses.py"} <= stdlib.keys(),
+        and {"enum.py", "random.py", "threading.py", "dataclasses.py", "copy.py", "copyreg.py"}
+        <= stdlib.keys(),
         "complete constructor stdlib source bindings missing",
     )
     stdlib_root = source_root(Path(sysconfig.get_path("stdlib")))
@@ -268,6 +340,23 @@ def validate_census_evidence(root: Path, freeze: dict, contract: dict, census: d
             allowed[name]["shell"].add(DECODE)
         if name == RAW_TYPE:
             allowed[name]["shell"].add(LOAD)
+        if name == FEATURE_TYPE:
+            _require(
+                path == SENSORY_SOURCE and name in retained,
+                "feature-state copy class lacks its exact retained source binding",
+            )
+            _feature_copy_witness(tree, node, _require)
+            _require(
+                {
+                    FEATURE_COPY,
+                    ("stdlib/copy.py", "_reconstruct"),
+                    ("stdlib/copy.py", "deepcopy"),
+                    ("stdlib/copy.py", "_deepcopy_dict"),
+                }
+                <= functions,
+                "frozen stdlib feature-copy source functions are missing",
+            )
+            allowed[name]["shell"].add(FEATURE_COPY)
     for resource, routes in RESOURCE_ROUTES.items():
         name, kind = RESOURCE_TYPES[resource]
         for route in routes:
@@ -329,6 +418,7 @@ def validate_census_evidence(root: Path, freeze: dict, contract: dict, census: d
             "schema",
             "status",
             "source_contract_sha256",
+            "eligibility_call_plan",
             "snapshot",
             "events",
             "event_count",
@@ -344,6 +434,7 @@ def validate_census_evidence(root: Path, freeze: dict, contract: dict, census: d
         "schema": "m1-path-passive-census-terminal-v1",
         "status": "SUCCESS",
         "source_contract_sha256": freeze["source_contract"]["sha256"],
+        "eligibility_call_plan": profile["eligibility_plan"],
         "snapshot": profile["snapshot"],
         "events": bindings,
         "event_count": len(events),
@@ -539,3 +630,233 @@ def validate_census_evidence(root: Path, freeze: dict, contract: dict, census: d
         and claimed_routes == type_routes,
         "claimed census totals/routes differ from raw attempts",
     )
+
+
+CALL_PLAN = (
+    "artifacts/research/assembly_m1_path_v1_20261002/three_observation_call_plan.json"
+)
+PROPOSAL = "docs/research/assembly_m1_three_observation_eligibility_proposal_20261002.md"
+PROPOSAL_SHA256 = "a4cb26b00b803176bd3c338f10da861466454ae95c69b5ad0065da330d279ebb"
+PROBE_IDENTITY = "assembly-m1-three-observation-eligibility-v1-20261002"
+MANDATORY_UNMET = (
+    "successful_G0_and_repaired_source_reconciliation",
+    "separate_probe_authority_and_dedicated_owner_launcher",
+    "weak_registry_object_birth_census",
+    "complete_reviewed_finite_per_type_caps",
+    "arm_bound_predecessor_graph_and_checkpoint_evidence",
+    "fixed_resource_environment_and_finalization_envelope",
+)
+CONDITIONAL_UNMET = (
+    "third_B_endpoint_if_required",
+    "AB_BA_AA_control_endpoints_if_required",
+    "nonempty_integrated_concept_subtree_if_required",
+)
+RESOURCE_SUCCESS = {"model_rng": 28, "topology_rng": 1, "model_lock": 28, "registry_guard": 1}
+RESOURCE_ROUTE_SUCCESS = (
+    ("model_rng", "src/sparkbrain/v03/runtime.py", "IntegratedV03Brain._initialize_runtime", 2),
+    ("model_rng", "scripts/g0_joint_ownership.py", "_construct", 12),
+    ("model_rng", "src/sparkbrain/v032/checkpoint.py", "_decode", 14),
+    ("topology_rng", "src/sparkbrain/v05/topology.py", "layered_reservoir_topology", 1),
+    ("model_lock", "src/sparkbrain/v032/runtime.py", "_shared_step_lock", 28),
+    ("registry_guard", "src/sparkbrain/v032/runtime.py", "<module>", 1),
+)
+
+
+def _validate_eligibility_plan(root: Path, freeze: dict, contract: dict, census: dict) -> dict:
+    """Bind the separately parent-reviewed source proposal, never caller-selected floors."""
+    from scripts.m1_path_admission import (
+        SOURCE_COMMIT,
+        _binding,
+        _keys,
+        _read_binding,
+        _require,
+        canonical,
+        digest,
+        parse_json,
+    )
+    from scripts.m1_path_inputs import teaching_schedule
+
+    bound = _binding(contract.get("eligibility_call_plan"), "contract eligibility call plan")
+    profile = census["profiler_evidence"]
+    _require(
+        bound["path"] == CALL_PLAN and profile.get("eligibility_plan") == bound,
+        "profiler eligibility plan differs from exact source-contract binding",
+    )
+    for item in (bound, {"path": PROPOSAL, "sha256": PROPOSAL_SHA256}):
+        _require(
+            contract["preparation_sources_sha256"].get(item["path"]) == item["sha256"]
+            and freeze["source_files_sha256"].get(item["path"]) == item["sha256"],
+            "eligibility plan/proposal is absent from complete frozen preparation inventory",
+        )
+    plan = parse_json(_read_binding(root, bound, "reviewed prospective call plan"))
+    _keys(
+        plan,
+        {
+            "schema",
+            "identity",
+            "classification",
+            "runtime_execution_authorized",
+            "scientific_credit",
+            "proposal",
+            "runtime_source_commit",
+            "runtime_sources_sha256",
+            "support_sources_sha256",
+            "inputs",
+            "teaching",
+            "configuration",
+            "call_targets",
+            "successful_calls",
+            "resource_route_success_calls",
+            "planned_endpoints",
+            "mandatory_unmet_obligations",
+            "conditional_unmet_coverage",
+            "emergency_ceilings",
+        },
+        "reviewed prospective call plan",
+    )
+    _require(
+        plan["schema"] == "m1-three-observation-prospective-call-plan-v1"
+        and plan["identity"] == PROBE_IDENTITY
+        and plan["classification"] == "SOURCE_ONLY_UNEXECUTED_NON_EVIDENTIARY"
+        and plan["runtime_execution_authorized"] is False
+        and type(plan["scientific_credit"]) is int
+        and plan["scientific_credit"] == 0
+        and plan["runtime_source_commit"] == SOURCE_COMMIT,
+        "eligibility plan source-only identity/scope differs",
+    )
+    _require(
+        plan["proposal"] == {"path": PROPOSAL, "sha256": PROPOSAL_SHA256},
+        "eligibility plan does not bind the parent-reviewed proposal",
+    )
+    proposal = _read_binding(root, plan["proposal"], "parent-reviewed proposal").decode("utf-8")
+    targets, success = {}, {}
+    for line in proposal.splitlines():
+        match = re.fullmatch(
+            r"\| ([a-z0-9_]+) \| ((?:src/|scripts/)[^ ]+) \| ([^ ]+) \| ([0-9]+) \|", line
+        )
+        if match:
+            name, path, qualname, count = match.groups()
+            _require(name not in targets, "duplicate native call in approved proposal")
+            targets[name] = [path, qualname]
+            success[name] = int(count)
+    _require(len(targets) == 35, "approved native call table is incomplete")
+    success.update(RESOURCE_SUCCESS)
+    _require(
+        canonical(plan["call_targets"]) == canonical(targets)
+        and canonical(plan["successful_calls"]) == canonical(success),
+        "eligibility call map/vector differs from the approved 35+4-key proposal",
+    )
+    expected_routes = [
+        {"name": name, "route": [path, qualname], "count": count}
+        for name, path, qualname, count in RESOURCE_ROUTE_SUCCESS
+    ]
+    _require(
+        canonical(plan["resource_route_success_calls"]) == canonical(expected_routes),
+        "eligibility resource route vector differs from the source derivation",
+    )
+    _require(
+        plan["mandatory_unmet_obligations"] == list(MANDATORY_UNMET)
+        and plan["conditional_unmet_coverage"] == list(CONDITIONAL_UNMET)
+        and plan["planned_endpoints"]
+        == ["S:C5:third_A", "S:C6:unadvanced_clone", "R:C5:third_A", "R:C6:unadvanced_clone"]
+        and plan["emergency_ceilings"] == "REQUIRE_SEPARATE_REVIEWED_FREEZE_NOT_DERIVED_HERE",
+        "fixed unmet obligations/coverage or emergency boundary cannot be erased or broadened",
+    )
+    _require(
+        plan["runtime_sources_sha256"] == contract["runtime_sources_sha256"],
+        "eligibility plan refers to different repaired runtime sources",
+    )
+    support = plan["support_sources_sha256"]
+    expected_support = {path for path, _ in targets.values() if path.startswith("scripts/")}
+    expected_support.update({"scripts/m1_path_inputs.py", "scripts/m1_path_native.py"})
+    _keys(support, expected_support, "eligibility support source witnesses")
+    for path, sha in support.items():
+        _require(
+            contract["preparation_sources_sha256"].get(path) == sha
+            and freeze["source_files_sha256"].get(path) == sha,
+            "eligibility support source is outside exact freeze",
+        )
+        _read_binding(root, {"path": path, "sha256": sha}, "eligibility support source")
+    inputs = _keys(
+        plan["inputs"],
+        {"path", "sha256", "selected_indices", "selected_rows_sha256", "row_hash_encoding"},
+        "eligibility inputs",
+    )
+    _require(
+        {key: inputs[key] for key in ("path", "sha256")} == freeze["inputs"]
+        and canonical(inputs["selected_indices"]) == canonical(list(range(67)))
+        and inputs["row_hash_encoding"] == "exact_input_line_plus_LF",
+        "eligibility exposure differs from first 67 unchanged input rows",
+    )
+    rows = _read_binding(root, freeze["inputs"], "eligibility input file").splitlines()
+    _require(
+        len(rows) == 68
+        and inputs["selected_rows_sha256"] == [digest(row + b"\n") for row in rows[:67]],
+        "eligibility selected literal row hashes differ",
+    )
+    _require(plan["teaching"] == freeze["teaching"], "eligibility teaching binding differs")
+    evaluator = parse_json(
+        _read_binding(root, plan["teaching"]["evaluator"], "eligibility evaluator")
+    )
+    _require(
+        digest(canonical(teaching_schedule(evaluator))) == plan["teaching"]["subset_sha256"],
+        "eligibility teaching receipts differ",
+    )
+    _require(
+        canonical(plan["configuration"]) == canonical(freeze["configuration"]),
+        "eligibility source configuration differs",
+    )
+    _require(
+        canonical(profile["call_targets"]) == canonical(targets),
+        "raw census requires the complete exact eligibility native call map",
+    )
+    caps = _keys(profile["call_caps"], set(success), "complete eligibility call/resource caps")
+    _require(
+        all(type(cap) is int and cap >= success[name] for name, cap in caps.items()),
+        "eligibility caps cannot cover the required successful exposure",
+    )
+    return plan
+
+
+def validate_census_evidence(root: Path, freeze: dict, contract: dict, census: dict) -> dict:
+    """Check exact reviewed probe exposure and raw consistency, report unmet gates.
+
+    This is a software consistency result only. In particular the guard's single
+    allocation does not attest the uninstrumented weak registry object birth.
+    Positive native eligibility is separately denied by admission while the fixed
+    mandatory obligations remain unresolved. Conditional endpoint/concept coverage
+    remains unobserved whenever that coverage is required by a later approval.
+    """
+    from scripts.m1_path_admission import _read_binding, _require, canonical, parse_json
+
+    plan = _validate_eligibility_plan(root, freeze, contract, census)
+    _validate_raw_census_evidence(root, freeze, contract, census)
+    profile = census["profiler_evidence"]
+    snapshot = parse_json(_read_binding(root, profile["snapshot"], "raw eligibility snapshot"))
+    _require(
+        canonical(snapshot["call_attempts"]) == canonical(plan["successful_calls"])
+        and canonical(snapshot["call_returns"]) == canonical(plan["successful_calls"]),
+        "raw attempts/normal returns do not equal exact successful eligibility call vector",
+    )
+    resources = Counter(
+        (event["name"], *event["route"])
+        for event in snapshot["events"]
+        if event["kind"] == "call_attempt" and event["name"] in RESOURCE_ROUTES
+    )
+    _require(
+        resources
+        == Counter(
+            {
+                (name, path, qualname): count
+                for name, path, qualname, count in RESOURCE_ROUTE_SUCCESS
+            }
+        ),
+        "raw resource routes do not equal exact successful eligibility resource vector",
+    )
+    return {
+        "status": "SOURCE_BOUND_CENSUS_SOFTWARE_VALIDATION_ONLY",
+        "runtime_execution_authorized": False,
+        "scientific_credit": 0,
+        "mandatory_unmet_obligations": list(MANDATORY_UNMET),
+        "conditional_unmet_coverage": list(CONDITIONAL_UNMET),
+    }

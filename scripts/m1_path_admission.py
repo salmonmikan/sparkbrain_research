@@ -255,8 +255,10 @@ def validate_freeze_schema(freeze: Any) -> dict:
         type(environment["dependency_files"]) is int and environment["dependency_files"] > 0,
         "missing complete dependency inventory",
     )
-    _require(re.match(r"^3\.(?:11|12|13)\.[0-9]+(?:\D|$)", str(environment["version"])) is not None,
-             "declared environment requires CPython 3.11 through 3.13")
+    _require(
+        re.match(r"^3\.(?:11|12|13)\.[0-9]+(?:\D|$)", str(environment["version"])) is not None,
+        "declared environment requires CPython 3.11 through 3.13",
+    )
     for key in ("version", "machine", "cache_tag"):
         _require(
             type(environment[key]) is str and bool(environment[key]), "missing environment " + key
@@ -419,8 +421,7 @@ def environment_snapshot(root: Path) -> dict:
     """
     root = source_root(root)
     _require(
-        platform.python_implementation() == "CPython"
-        and (3, 11) <= sys.version_info < (3, 14),
+        platform.python_implementation() == "CPython" and (3, 11) <= sys.version_info < (3, 14),
         "M1 path admission requires reviewed CPython 3.11 through 3.13",
     )
     executable = Path(sys.executable).resolve(strict=True)
@@ -506,7 +507,7 @@ def verify_mapped_libraries(environment: dict) -> None:
         _require(declared.get(name) == sha, "new or changed native executable mapping")
 
 
-def _verify_gates(root: Path, freeze: dict, contract: dict) -> None:
+def _inspect_gates(root: Path, freeze: dict, contract: dict) -> dict:
     common = {
         "schema",
         "status",
@@ -733,7 +734,16 @@ def _verify_gates(root: Path, freeze: dict, contract: dict) -> None:
     )
     from scripts.m1_path_census_evidence import validate_census_evidence
 
-    validate_census_evidence(root, freeze, contract, census)
+    return validate_census_evidence(root, freeze, contract, census)
+
+
+def _verify_gates(root: Path, freeze: dict, contract: dict) -> None:
+    report = _inspect_gates(root, freeze, contract)
+    _require(
+        not report["mandatory_unmet_obligations"],
+        "positive native eligibility blocked by fixed mandatory unmet obligations: "
+        + ", ".join(report["mandatory_unmet_obligations"]),
+    )
 
 
 def verify_preparation(root: Path, freeze_relative: str, *, check_environment: bool = True) -> dict:

@@ -153,6 +153,21 @@ and source-shaped fixtures do not supply actual native eligibility evidence.
 Neither 58 facades nor an ordinary `__init__` profiler covers those shells.
 The six prepared native configurations are recreated through explicit dataclass
 constructors; an unreviewed native `copyreg` shell route is rejected before allocation.
+The single reviewed internal exception is `_FeatureState` reconstruction at
+`stdlib/copyreg.py:__newobj__`, reached only through the source-bound
+`working_states = copy.deepcopy(self._states)` operation in
+`AdaptiveSensoryField.observe_with_trace`. Exact class/default hooks, stdlib stack,
+source line, owner thread, original state map, memo and fresh return are checked.
+Its shells are charged before allocation and successful births separately. Other
+classes, call sites, reducers and `__newobj_ex__` remain rejected. The full pilot's
+14 observations require 96 such internal shells; the separate six-observation
+eligibility proposal requires 32. These are source-derived obligations, not observations.
+For the full successful pilot, `_FeatureState` also has 112 eager initializations
+and 512 total shells: 128 joint-clone, 288 native-codec and 96 internal-copy shells.
+The separate probe has 48 initializations and 208 shells. Emergency rollback is
+outside both success ledgers and requires its own retained-state-derived reserve.
+Census construction and hook installation must occur on the same dedicated owner
+thread; a cross-thread install fails before changing hooks.
 Inherited-constructor classes without an explicit Python `__init__` are conservatively
 excluded from the admitted allocation scope: both prospective and observed caps must
 remain zero. The source-line guard rejects the direct `_RevisionRejected` constructor
@@ -168,6 +183,27 @@ fixture verifies that the profiler records member initializations; no real runti
 module or native enum was imported for that test. Other inherited constructor types
 remain excluded pending a source-reviewed supported allocation route.
 The schedule alone cannot establish resource fit or complete live graph eligibility.
+
+## Separate three-observation call-plan binding
+
+The [prospective eligibility proposal](assembly_m1_three_observation_eligibility_proposal_20261002.md)
+has a fresh proposed identity and a separate fixed first-67-row schedule. Its two
+third-A endpoints are each jointly cloned and predictively saved/read back once.
+The bound success vector is 67 producer calls, 6 M1 observations, 4 receipts,
+12 joint clones, 12 save validations, 2 readbacks and 28 facade births. Its exact
+35 native call routes and four resource counters are distinct from the 68-call
+pilot's counts. Raw attempt/return counts must satisfy that reviewed plan; empty,
+partial or type-only traces cannot establish the corresponding call coverage.
+
+This preparation binds a prospective plan, not an executable probe freeze or
+successful eligibility. Mandatory unresolved items include the clean import's
+WeakKeyDictionary birth binding, complete finite data-dependent allocation/resource
+caps, arm-bound graph evidence, a separate probe launcher and execution clearance.
+Third-B/control endpoints and nonempty integrated concept paths remain unobserved;
+where mandatory, they continue to block admission. A reached empty concept map must
+be reported honestly and cannot stand in for a nonempty concept witness. The
+original proposal's UNAPPROVED heading records its pre-execution status; source-only
+review and binding do not approve an experiment or mint a permit.
 
 ## Remaining admission gates
 

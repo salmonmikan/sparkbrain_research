@@ -47,6 +47,24 @@ def test_old_contract_keeps_rejecting_new_repaired_runtime():
         historical_verify(ROOT)
 
 
+@pytest.mark.parametrize("mutation", ["path", "sha256", "missing_inventory"])
+def test_eligibility_call_plan_has_exact_separate_source_binding(copied, monkeypatch, mutation):
+    import scripts.verify_m1_path_source as verifier
+
+    path = copied / CONTRACT
+    contract = json.loads(path.read_text())
+    if mutation == "missing_inventory":
+        contract["preparation_sources_sha256"].pop(contract["eligibility_call_plan"]["path"])
+    else:
+        contract["eligibility_call_plan"][mutation] = (
+            "scripts/m1_path_pilot.py" if mutation == "path" else "0" * 64
+        )
+    path.write_text(json.dumps(contract))
+    monkeypatch.setattr(verifier, "CONTRACT_SHA256", verifier.digest(path))
+    with pytest.raises(ValueError, match="eligibility call plan binding changed"):
+        verifier.verify(copied)
+
+
 @pytest.mark.parametrize("kind", ["runtime", "extra", "input", "script", "manifest"])
 def test_source_input_and_scope_drift_fail_closed(copied, kind):
     relative = {

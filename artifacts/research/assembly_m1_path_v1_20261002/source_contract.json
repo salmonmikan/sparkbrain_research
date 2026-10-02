@@ -5273,6 +5273,10 @@
     },
     "projection_origin_source_pin": "9b1179aa18060436e4a05f2ff21f4cffc098f79d"
   },
+  "eligibility_call_plan": {
+    "path": "artifacts/research/assembly_m1_path_v1_20261002/three_observation_call_plan.json",
+    "sha256": "db96445c0d6dd502f19f905569f2cabf27a22d6bd6b76ea0b782f463a9bdf180"
+  },
   "excluded_constructor_types": [
     "sparkbrain.baselines.classic:HardWinnerTakeAll",
     "sparkbrain.baselines.classic:InstantClassifier",
@@ -7004,23 +7008,25 @@
   "preparation_sources_sha256": {
     "artifacts/research/assembly_m1_path_v1_20261002/evaluator.json": "7d7849ab8fb98d35ede7eb7980ad7c2d8cae78a7b83dbb7d78fb30f46e6be6ec",
     "artifacts/research/assembly_m1_path_v1_20261002/inputs.jsonl": "e5fbaabf3787ca6f006d3d2f60f620945ba0c9525d87a0322ff05d8876f94c85",
+    "artifacts/research/assembly_m1_path_v1_20261002/three_observation_call_plan.json": "db96445c0d6dd502f19f905569f2cabf27a22d6bd6b76ea0b782f463a9bdf180",
     "artifacts/research/v05_history_export_20261002/protocol.json": "48b2925fac2fb56200e59a9fb88df60c18868d5553e4390fe6c47864b6ac9c82",
     "docs/research/assembly_m1_path_pilot_protocol_20261002.md": "e81d1bce01d863ecf6a67c5f02dc4a6530dfb8d6afece2fc36866d3d820ad4b4",
+    "docs/research/assembly_m1_three_observation_eligibility_proposal_20261002.md": "a4cb26b00b803176bd3c338f10da861466454ae95c69b5ad0065da330d279ebb",
     "scripts/g0_joint_ownership.py": "70a607b29773c4318fc43b1206da7afffc3d7c5fc76470889e3c24835db93ecf",
-    "scripts/m1_path_admission.py": "afaf68bd3cc0b3cfd12082fe6a2480b02d02b8918f60c2bd835ba6082f5753b4",
-    "scripts/m1_path_census.py": "6f3a2f063264b067b5129652b28b6bf684e4fdd4cf041013c8c102016ef383c5",
-    "scripts/m1_path_census_evidence.py": "0b891d2d6157c91fb2e2ba93702827d85b6956fcffbb58ff21f009b7157347f7",
+    "scripts/m1_path_admission.py": "af1b880a96a6b2c91280e957220bbd82ebcc9f0ea3dbcae34d134af5897513ec",
+    "scripts/m1_path_census.py": "c5d074240095138d94e525f278f2a0081354959157ff472728c27e18529bd0e5",
+    "scripts/m1_path_census_evidence.py": "b8f1f614bbd4f52d9c57fdcbe97d1ac304e7efb6f8dcff463d4fcd829b9d3f6a",
     "scripts/m1_path_inputs.py": "f49bef97b68288c8e6a93d83f429a33a35b550963549b7de0e0671791cbd9020",
     "scripts/m1_path_native.py": "34f1ab41d5a38d2afc3086b9e6d15d3ed6666f71468f306902035c5bf4d314d1",
     "scripts/m1_path_pilot.py": "9c8758835f2aa67a4d1371d30297f3db8d6c1358caaf3ae30e23c5fa5eaa50e9",
     "scripts/v05_history_export_probe.py": "1035374574a1528f76d8b6e7aefafb80265b37414322f6d3b675aafc045e671a",
     "scripts/verify_g0_joint_source_contract.py": "2411f267a76b6932eb2ab1156901dbbb7601ecd63c2e832b899d313b8794f53c",
-    "tests/test_m1_path_admission.py": "f218ac5972f49d773d84b2e801e60c8220c3829951c9766437c88a10c968e723",
-    "tests/test_m1_path_census.py": "aa5efc10360e3b628a7e93b86e6abbad7ea3ffad110978f17cd4e28fe96329b2",
+    "tests/test_m1_path_admission.py": "d65e7a04a35ae1eacb0d96db7c924b39c8592d534bda5a004bd980406bb5774a",
+    "tests/test_m1_path_census.py": "f284aa7f9203ed6c02c97a1c83b87b7ee39b7df9dd49080aaf4bc8cbe3b29242",
     "tests/test_m1_path_inputs.py": "b68e77c553ad250fb59561b7f2b19d49df92a12933e71b51f3f037e530e1058a",
     "tests/test_m1_path_native.py": "6d7728fa1bd684f53a437554fd7fc08484e53bb9d0a6a59914b5a7a021a0ba90",
     "tests/test_m1_path_pilot.py": "5472571705e2c34eb9ecb84c5cf5b37e6fd834dd9934ce68222da93c5907e497",
-    "tests/test_m1_path_source.py": "c839f154d24d880c967065088bd60b2c364ace32d0212cddb9891a6a0bd8472c"
+    "tests/test_m1_path_source.py": "893ef067bde9a3d9fd482e74fdecc4a381cfbe60ec6fe131bb4e07f6289a1abc"
   },
   "runtime_execution_authorized": false,
   "runtime_schema_sha256": {
@@ -7205,6 +7211,9 @@
     "executed_G0_and_source_delta_reconciliation",
     "exact_repaired_three_observation_graph_and_checkpoint_eligibility",
     "approved_dynamic_type_caps_and_constructor_census_derivation",
+    "registry_object_birth_binding",
+    "arm_bound_endpoint_graph_evidence",
+    "mandatory_unobserved_endpoint_or_nonempty_concept_coverage",
     "reviewed_dedicated_launcher_and_one_shot_reservation",
     "exact_environment_and_native_mapping_freeze",
     "fixed_resource_limits_and_finalization_reserves",

@@ -16,7 +16,7 @@ from scripts.verify_g0_joint_source_contract import (
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT = "artifacts/research/assembly_m1_path_v1_20261002/source_contract.json"
-CONTRACT_SHA256 = "a9f7d5cb19879333b02b3fc8de61127e0bd2399bf033661ef293330669a05301"
+CONTRACT_SHA256 = "1a5d78b52f006262d352f335ddf61584669fae38f5ba9c53bf78aab02bb77edd"
 
 
 def digest(path: Path) -> str:
@@ -54,6 +54,14 @@ def verify(root: Path = ROOT) -> dict:
     for name, sha in contract["preparation_sources_sha256"].items():
         if digest(confined_path(root, name, "preparation input/source")) != sha:
             raise ValueError("preparation input/source changed: " + name)
+    plan_path = (
+        "artifacts/research/assembly_m1_path_v1_20261002/"
+        "three_observation_call_plan.json"
+    )
+    if contract.get("eligibility_call_plan") != {
+        "path": plan_path, "sha256": contract["preparation_sources_sha256"].get(plan_path)
+    } or plan_path not in contract["preparation_sources_sha256"]:
+        raise ValueError("separate prospective eligibility call plan binding changed")
     witnesses = 0
     for name, row in contract["files"].items():
         path = confined_path(root, name, "class source")

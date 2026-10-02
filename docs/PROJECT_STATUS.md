@@ -584,3 +584,9 @@ and A/A sham. Local verification is model-free software-only. Actual G0 source-d
 reconciliation, repaired three-observation graph/checkpoint eligibility, complete
 allocation/resource binding, a reviewed launcher and separate execution clearance remain
 required. No native producer/M1 construction or research execution is reported here.
+
+Review additionally bound a separate prospective three-observation eligibility
+call plan and a narrowly attributed sensory feature-state deepcopy census route.
+The call plan rejects vacuous target subsets; it does not provide observed graphs,
+complete resource bounds, registry-birth coverage, a launcher or execution clearance.
+The original 68-call pilot remains unchanged and disabled.

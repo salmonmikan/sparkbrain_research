@@ -7,12 +7,15 @@ there are deliberately no inferred numeric caps for data-dependent graph nodes.
 from __future__ import annotations
 
 import ast
+import copy
+import copyreg
 import dis
 import inspect
 import platform
 import sys
 import sysconfig
 import threading
+import types
 from pathlib import Path
 from typing import Any
 
@@ -63,6 +66,14 @@ class PassiveCensus:
         ("src/sparkbrain/v032/checkpoint.py", "DirectCheckpointManager._load_bytes"):
             ("brain_class", "brain"),
     }
+    # The sole admitted copyreg route is the existing sensory transaction's
+    # detached working-state copy. It does not relax joint-clone/checkpoint routes.
+    FEATURE_COPY = ("src/sparkbrain/v03_seed/sensory_field.py",
+                    "AdaptiveSensoryField.observe_with_trace")
+    FEATURE_TYPE = "sparkbrain.v03_seed.sensory_field:_FeatureState"
+    FEATURE_SLOTS = ("prediction", "variability", "habituation", "threshold",
+                     "initialized", "last_value", "last_time")
+    COPYREG_ROUTE = ("stdlib/copyreg.py", "__newobj__")
     GUARD = ("src/sparkbrain/v032/runtime.py", "<module>")
     MODEL_RNG_PARENTS = {
         ("src/sparkbrain/v03/runtime.py", "IntegratedV03Brain._initialize_runtime"),
@@ -80,6 +91,7 @@ class PassiveCensus:
                  allowed_functions: set[tuple[str, str]], budget: Any, writer: Any) -> None:
         require_supported_runtime()
         self.root = source_root(root)
+        self.owner_thread = threading.get_ident()
         self.stdlib = Path(sysconfig.get_path("stdlib")).resolve(strict=True)
         self.targets = {tuple(route): key for key, route in targets.items()}
         resources = {"model_rng", "topology_rng", "model_lock", "registry_guard"}
@@ -104,6 +116,29 @@ class PassiveCensus:
                 if isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
                     self.constructor_sites.setdefault((relative, node.lineno), set()).add(
                         node.func.id)
+        self.feature_copy_line = None
+        if self.FEATURE_COPY in self.allowed:
+            path = confined_path(self.root, self.FEATURE_COPY[0], "sensory copy callsite")
+            tree = ast.parse(path.read_bytes())
+            sites = []
+            for node in tree.body:
+                if not isinstance(node, ast.ClassDef) or node.name != "AdaptiveSensoryField":
+                    continue
+                for method in node.body:
+                    if (not isinstance(method, ast.FunctionDef)
+                            or method.name != "observe_with_trace"):
+                        continue
+                    for statement in method.body:
+                        if (isinstance(statement, ast.Assign)
+                                and len(statement.targets) == 1
+                                and isinstance(statement.targets[0], ast.Name)
+                                and statement.targets[0].id == "working_states"
+                                and ast.dump(statement.value) == ast.dump(ast.parse(
+                                    "copy.deepcopy(self._states)", mode="eval").body)):
+                            sites.append(statement.lineno)
+            if len(sites) != 1:
+                raise ValueError("sensory deepcopy requires one exact reviewed assignment")
+            self.feature_copy_line = sites[0]
         self.runtime_trace_files = {path for path, _ in self.constructor_sites}
         self.budget, self.writer = budget, writer
         self.attempts = dict.fromkeys(call_caps, 0)
@@ -193,21 +228,96 @@ class PassiveCensus:
         except BaseException as error:
             self.poison("census callback failed: " + type(error).__name__)
 
+    def _feature_copy_route(self, frame, cls) -> tuple[str, str]:
+        """Bind one exact CPython deepcopy stack without retaining model/frame refs.
+
+        The memo makes repeated feature references yield one shell, preserves those
+        aliases inside the copied dictionary and isolates them from the input graph.
+        New shells have no __init__ call. Return observation counts the object before
+        stdlib restores its seven scalar slots; full graph validation remains separate.
+        """
+        if threading.get_ident() != self.owner_thread:
+            self.poison("sensory copy allocation requires census owner thread")
+        module = sys.modules.get("sparkbrain.v03_seed.sensory_field")
+        if (self.feature_copy_line is None or type(module) is not types.ModuleType
+                or type(cls) is not type or self.typename(cls) != self.FEATURE_TYPE
+                or vars(module).get("_FeatureState") is not cls
+                or cls.__bases__ != (object,) or cls.__new__ is not object.__new__
+                or cls.__reduce_ex__ is not object.__reduce_ex__
+                or cls.__reduce__ is not object.__reduce__
+                or cls.__getstate__ is not object.__getstate__
+                or tuple(getattr(cls, "__slots__", ())) != self.FEATURE_SLOTS
+                or set(getattr(cls, "__dataclass_fields__", {})) != set(self.FEATURE_SLOTS)
+                or any(type(vars(cls).get(name)) is not types.MemberDescriptorType
+                       for name in self.FEATURE_SLOTS)
+                or any(hasattr(cls, name) for name in (
+                    "__deepcopy__", "__copy__", "__getnewargs__", "__getnewargs_ex__",
+                    "__setstate__"))):
+            self.poison("unreviewed copyreg native shell type/hooks")
+        chain = []
+        current = frame
+        for function in (copyreg.__newobj__, copy._reconstruct, copy.deepcopy,
+                         copy._deepcopy_dict, copy.deepcopy):
+            if (current is None or current.f_code is not function.__code__
+                    or current.f_globals is not function.__globals__):
+                self.poison("unreviewed copyreg native shell stdlib route")
+            chain.append(current)
+            current = current.f_back
+        if (self.key(frame) != self.COPYREG_ROUTE or frame.f_locals.get("args") != ()
+                or current is None or self.key(current) != self.FEATURE_COPY
+                or current.f_lineno != self.feature_copy_line):
+            self.poison("unreviewed copyreg native shell callsite")
+        owner = current.f_locals.get("self")
+        owner_cls = vars(module).get("AdaptiveSensoryField")
+        if (type(owner_cls) is not type or type(owner) is not owner_cls
+                or current.f_code is not owner_cls.observe_with_trace.__code__):
+            self.poison("unreviewed copyreg native shell owner")
+        states = object.__getattribute__(owner, "_states")
+        reconstruct, item_copy, dict_copy, root_copy = chain[1:]
+        feature = reconstruct.f_locals.get("x")
+        memo = root_copy.f_locals.get("memo")
+        state = reconstruct.f_locals.get("state")
+        if (type(states) is not dict or type(feature) is not cls
+                or root_copy.f_locals.get("x") is not states
+                or dict_copy.f_locals.get("x") is not states
+                or item_copy.f_locals.get("x") is not feature
+                or not any(value is feature for value in states.values())
+                or type(memo) is not dict
+                or any(row.f_locals.get("memo") is not memo for row in chain[1:])
+                or type(memo.get(id(states))) is not dict
+                or id(feature) in memo
+                or reconstruct.f_locals.get("func") is not copyreg.__newobj__
+                or reconstruct.f_locals.get("listiter") is not None
+                or reconstruct.f_locals.get("dictiter") is not None
+                or type(state) is not tuple or len(state) != 2 or state[0] is not None
+                or type(state[1]) is not dict or set(state[1]) != set(self.FEATURE_SLOTS)):
+            self.poison("unreviewed copyreg native shell input/memo binding")
+        if any(type(value) not in (float, bool) or value != getattr(feature, name)
+               for name, value in state[1].items()):
+            self.poison("unreviewed copyreg native shell slot state")
+        return self.COPYREG_ROUTE
+
     def _profile(self, frame, event, arg) -> None:
         route = self.key(frame)
         token = (threading.get_ident(), id(frame))
         if event == "call":
+            pending = []
             if (frame.f_globals.get("__name__") == "copyreg"
                     and frame.f_code.co_name in {"__newobj__", "__newobj_ex__"}):
                 copied_cls = frame.f_locals.get("cls")
                 if type(copied_cls) is type and copied_cls.__module__.startswith("sparkbrain."):
-                    self.poison("unreviewed copyreg native shell allocation")
+                    if frame.f_code.co_name != "__newobj__":
+                        self.poison("unreviewed copyreg native shell allocation")
+                    shell_route = self._feature_copy_route(frame, copied_cls)
+                    self.charge_type(self.FEATURE_TYPE, "shell", shell_route)
+                    pending.append({"kind": "copyreg_shell", "name": self.FEATURE_TYPE,
+                                    "route": shell_route, "class_id": id(copied_cls),
+                                    "original_id": id(frame.f_back.f_locals["x"])})
             if (route[0].startswith("src/sparkbrain/") and route not in self.allowed
                     and frame.f_code.co_name not in self.COMPILER_NAMES
                     and not (frame.f_code.co_filename == "<string>"
                              and route[1].endswith(".__init__[dataclass-generated]"))):
                 self.poison("unreviewed runtime call: " + str(route))
-            pending = []
             if route in self.targets:
                 name = self.targets[route]
                 self.charge_call(name, route)
@@ -304,10 +414,18 @@ class PassiveCensus:
             normal = dis.opname[frame.f_code.co_code[frame.f_lasti]].startswith("RETURN_")
             for row in self.pending.pop(token):
                 if not normal:
-                    self.event(row["kind"] + "_exception", name=row["name"])
+                    if row["kind"] == "copyreg_shell":
+                        self.event("type_exception", type=row["name"], allocation="shell",
+                                   route=list(row["route"]))
+                    else:
+                        self.event(row["kind"] + "_exception", name=row["name"])
                 elif row["kind"] == "call":
                     self.returns[row["name"]] += 1
                     self.event("call_return", name=row["name"])
+                elif row["kind"] == "copyreg_shell":
+                    if id(type(arg)) != row["class_id"] or id(arg) == row["original_id"]:
+                        self.poison("sensory copy shell return is not exact fresh allocation")
+                    self.birth(arg, row["name"], "shell", row["route"])
                 elif row["kind"] == "resource":
                     self.birth(arg if row["return_value"] else frame.f_locals["self"],
                                row["name"], "init", row["route"])
@@ -345,6 +463,8 @@ class PassiveCensus:
         return self.trace
 
     def install(self) -> None:
+        if threading.get_ident() != self.owner_thread:
+            raise ValueError("census installation requires its construction owner thread")
         if self.active or any((sys.getprofile(), sys.gettrace(), threading.getprofile(),
                                threading.gettrace())):
             raise ValueError("exclusive instrumentation required")
