@@ -9,6 +9,7 @@ import importlib.util
 import json
 import math
 from collections import Counter
+from itertools import combinations
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -247,6 +248,155 @@ def first_observables(row: dict) -> dict:
     }
 
 
+def pattern_score(left: dict, right: dict) -> float:
+    """Recalculate retained-pattern similarity from data, without a runtime import."""
+    a, b = left["ordered_units"], right["ordered_units"]
+    previous = list(range(len(b) + 1))
+    for i, unit in enumerate(a, start=1):
+        current = [i]
+        for j, other in enumerate(b, start=1):
+            current.append(min(current[-1] + 1, previous[j] + 1, previous[j - 1] + (unit != other)))
+        previous = current
+    edit = 1.0 - previous[-1] / max(len(a), len(b)) if a or b else 1.0
+    units_a, units_b = set(left["unit_ids"]), set(right["unit_ids"])
+    overlap = len(units_a & units_b) / max(1, len(units_a | units_b))
+    if not units_a and not units_b:
+        overlap = 1.0
+    bins_a, bins_b = left["relative_bins"], right["relative_bins"]
+    timing = 0.0
+    if not bins_a and not bins_b:
+        timing = 1.0
+    elif bins_a and bins_b:
+        if len(bins_a) == len(bins_b):
+            error = sum(abs(x - y) for x, y in zip(bins_a, bins_b, strict=True)) / len(bins_a)
+            timing = math.exp(-error / 2.0)
+        else:
+            short, long = (left, right) if len(a) < len(b) else (right, left)
+            if len(short["ordered_units"]) >= 2:
+                for indices in combinations(
+                    range(len(long["ordered_units"])), len(short["ordered_units"])
+                ):
+                    if [long["ordered_units"][i] for i in indices] != short["ordered_units"]:
+                        continue
+                    selected = [long["relative_bins"][i] for i in indices]
+                    selected = [value - selected[0] for value in selected]
+                    short_bins = [
+                        value - short["relative_bins"][0] for value in short["relative_bins"]
+                    ]
+                    error = sum(
+                        abs(x - y) for x, y in zip(selected, short_bins, strict=True)
+                    ) / len(short_bins)
+                    timing = max(timing, math.exp(-error / 4.0))
+    return 0.55 * edit + 0.25 * overlap + 0.20 * timing
+
+
+def verify_prototype_history(
+    rows: list[dict], prefix: dict, final: dict, brain_config: dict
+) -> None:
+    """Bind fixed prototypes and assembly bookkeeping to retained creation patterns.
+
+    This recalculates data-level matching/allocation/pruning only. It does not
+    regenerate spikes or establish that the supplied patterns came from a run.
+    """
+    state = json.loads(json.dumps(prefix))
+    config, candidates = state["config"], state["candidates"]
+    suppressed = set(state["suppressed"])
+    for row in rows:
+        activations = []
+        patterns = row["raw_result"]["patterns"] if brain_config["enable_assembly"] else []
+        for pattern in patterns:
+            require(
+                all(
+                    key in pattern
+                    for key in (
+                        "pattern_id",
+                        "spike_count",
+                        "end_ms",
+                        "ordered_units",
+                        "relative_bins",
+                        "unit_ids",
+                    )
+                ),
+                "prototype creation pattern incomplete",
+            )
+            if pattern["spike_count"] < brain_config["min_pattern_spikes"]:
+                continue
+            scored = [
+                (pattern_score(candidate["prototype"], pattern), aid)
+                for aid, candidate in candidates.items()
+            ]
+            similarity, aid = (
+                min(scored, key=lambda pair: (-pair[0], pair[1])) if scored else (0, None)
+            )
+            time_ms = pattern["end_ms"]
+            if aid is None or similarity < config["similarity_threshold"]:
+                # Pruning is permitted only on a failed match at capacity, at
+                # that pattern's time. Staleness alone never removes a row.
+                if len(candidates) >= config["max_candidates"]:
+                    removable = [
+                        key
+                        for key, candidate in candidates.items()
+                        if candidate["episode_count"] <= config["immature_stale_episodes"]
+                        and time_ms - candidate["last_seen_ms"] > config["stale_after_ms"]
+                    ]
+                    for key in removable:
+                        del candidates[key]
+                        suppressed.discard(key)
+                if len(candidates) >= config["max_candidates"]:
+                    continue
+                aid = f"assembly-{state['next_id']:04d}"
+                state["next_id"] += 1
+                require(aid not in candidates, "assembly identifier reused")
+                candidate = {
+                    "assembly_id": aid,
+                    "prototype": json.loads(json.dumps(pattern)),
+                    "occurrences": 1,
+                    "episode_ids": [row["occurrence_id"]],
+                    "episode_count": 1,
+                    "first_seen_ms": time_ms,
+                    "last_seen_ms": time_ms,
+                    "similarity_sum": 1.0,
+                    "mean_similarity": 1.0,
+                }
+                candidates[aid] = candidate
+                similarity = 1.0
+            else:
+                candidate = candidates[aid]
+                candidate["occurrences"] += 1
+                candidate["episode_ids"] = sorted(
+                    set(candidate["episode_ids"]) | {row["occurrence_id"]}
+                )
+                candidate["episode_count"] = len(candidate["episode_ids"])
+                candidate["last_seen_ms"] = time_ms
+                candidate["similarity_sum"] += similarity
+                candidate["mean_similarity"] = (
+                    candidate["similarity_sum"] / candidate["occurrences"]
+                )
+            activations.append(
+                {
+                    "assembly_id": aid,
+                    "pattern_id": pattern["pattern_id"],
+                    "time_ms": time_ms,
+                    "similarity": similarity,
+                    "occurrences": candidate["occurrences"],
+                    "episode_count": candidate["episode_count"],
+                    "mature": candidate["episode_count"] >= config["mature_episodes"],
+                    "unit_ids": candidate["prototype"]["unit_ids"],
+                    "suppressed": aid in suppressed,
+                }
+            )
+        require(
+            row["raw_result"]["assembly_activations"] == activations,
+            "assembly activation/prototype history mismatch",
+        )
+        require(
+            row["candidate_prototypes"] == {aid: c["prototype"] for aid, c in candidates.items()},
+            "candidate prototype history mismatch",
+        )
+    state["suppressed"] = sorted(suppressed)
+    require(final == state, "final assembly/prototype history mismatch")
+
+
 def verify(output: Path, freeze: Path, expected_manifest: str, expected_commit: str) -> dict:
     # Caller pins must come from independently read-back reviewed publication records.
     # The retained run's own manifest is never accepted as its authority.
@@ -461,6 +611,12 @@ def verify(output: Path, freeze: Path, expected_manifest: str, expected_commit: 
                 and config_record["brain_config"] == expected_state["config"]
                 and config_record["plasticity_config"] == expected_state["plasticity"]["config"],
                 "configuration intervention binding",
+            )
+            verify_prototype_history(
+                rows,
+                payload["assemblies"],
+                final_state["brain"]["assemblies"],
+                expected_state["config"],
             )
             edges = payload["base"]["payload"]["field"]["connections"]
             weights = {f"{e['source_id']}:{e['target_id']}": e["weight"] for e in edges}

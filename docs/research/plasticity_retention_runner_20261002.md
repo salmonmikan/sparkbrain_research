@@ -24,7 +24,13 @@ Return, stationary-B and balanced novel suffixes start independently from
 published prefix copies. The primary comparison is C versus L; novel
 acquisition and preservation are required, including abstention, coverage,
 unrounded Brier loss and per-label late accuracy. A novel ceiling makes the
-acquisition question inconclusive.
+acquisition question inconclusive. All nine paired C-to-L native transition
+counts are reported. The overall gate rejects a return gain whose only favorable
+native transition is wrong-to-abstain: at least one such transition and no
+wrong-to-correct or abstain-to-correct transition. Probability-only gains with
+unchanged native decisions are still subject to the original Brier, correct-count
+and coverage gates. This operationalizes the published prose exclusion before
+any outcome is observed; no numerical margin or input changes.
 
 ## Implementation and evidence boundaries
 
@@ -68,8 +74,12 @@ trace, retained prefix and final-state records remain separately available.
 Each v05 worker has a 16 CPU-second/20 wall-second allowance; H/R workers have
 3/5 seconds. The whole driver, its child processes, imports, file hashing,
 observation and scoring consume the 360 CPU-second/480 wall-second budget.
-The driver keeps a 2 CPU-second/5 wall-second terminal closure reserve inside
-that budget. Linux RLIMIT_AS bounds each process to 512 MiB; `wait4` records
+The driver reserves each child's complete CPU allowance before spawn, then
+refunds only the measured unused portion after reaping it. Git gate subprocesses
+also reserve CPU and have an OS CPU ceiling. Timer interrupts cannot bypass
+post-spawn kill/reap cleanup. The driver keeps a 2 CPU-second/5 wall-second
+terminal closure reserve inside that budget and clamps any failure write to
+actual remaining headroom; when none remains it makes no emergency write. Linux RLIMIT_AS bounds each process to 512 MiB; `wait4` records
 worker peak RSS separately from driver RSS. CPU and wall timers, parent process
 identity, inherited anonymous-pipe supervision and a parent-death signal prevent
 an unmonitored direct worker invocation from admitting a model.
@@ -90,16 +100,28 @@ system shared libraries. Execution uses `-S -P -B` and `PYTHONHASHSEED=0`.
 
 ## Review and commands
 
-Preparation validation on 2026-10-02: all 197 focused model-free tests passed,
+Initial preparation validation on 2026-10-02: all 197 focused model-free tests passed,
 repository-wide Ruff passed, the immutable input regeneration check matched,
 and freeze readback matched all 191 source files plus 918 interpreter/stdlib
-files. The manifest SHA-256 is
+files. The original, unexecuted manifest SHA-256 was
 `2bf0d222f3527aeb43cfc5ad22978dc8b4bb24409aee4384985192baa1c9fea3`;
 the dependency inventory SHA-256 is
 `4415be4c41f48275151ce266f517d75765d66f8b6b2e53a500ca335ae4aaff48`.
-The planned output was absent and model calls remained zero. These tests include
+The original freeze is superseded for execution after source review found the
+paired-abstention, prototype-audit and CPU-admission gaps. Its bytes remain
+retained at `freeze/`. The planned output was absent and model calls remained zero. These tests include
 plain dummy subprocesses and synthetic retained-data fixtures, not dynamics
 execution or a full default runtime-test run.
+
+The current `freeze-v2/` manifest is `aea34059f16562ee8242c195517c938afa89edb261852080c6fdb3e4f1a33b56`
+and binds 193 source files, including the published design/protocol prose.
+All 230 focused model-free tests pass, repository-wide Ruff passes, and the
+immutable input and execution-freeze readbacks match. The repairs cover paired
+native-transition exclusion, complete fixed-prototype history, child CPU
+reservation before admission, interruption-safe reaping, and bounded terminal
+closure. Independent model-free review found no remaining blocker in those
+paths. New exact-head Codex review and CI are required before merge; separate
+exact-freeze approval is required before execution.
 
 The preparation commands are model-free:
 

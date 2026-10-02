@@ -91,12 +91,14 @@ def scored_rows(outcomes, *, error=0.5, correct_per_label=None):
     result = []
     for outcome in outcomes:
         correct = correct_per_label is None or seen[outcome] < correct_per_label[outcome]
-        result.append({
-            "outcome": outcome,
-            "native": outcome if correct else 1 - outcome,
-            "p1": error if outcome == 0 else 1 - error,
-            "actual_weight_abs_change": 0.001,
-        })
+        result.append(
+            {
+                "outcome": outcome,
+                "native": outcome if correct else 1 - outcome,
+                "p1": error if outcome == 0 else 1 - error,
+                "actual_weight_abs_change": 0.001,
+            }
+        )
         seen[outcome] += 1
     return result
 
@@ -115,9 +117,7 @@ def passing_rows():
             "H": scored_rows([0] * 32),
             "R": scored_rows([0] * 32),
         },
-        "stationary": {
-            arm: scored_rows([1] * 16, error=0.1) for arm in ("C", "L")
-        },
+        "stationary": {arm: scored_rows([1] * 16, error=0.1) for arm in ("C", "L")},
         "novel": {
             "C": scored_rows(balanced * 2, error=0.2, correct_per_label=(12, 12)),
             "L": novel_local,
@@ -149,7 +149,9 @@ runpy.run_path(sys.argv[1])
 assert not any(name.startswith('sparkbrain') for name in sys.modules)
 """
     result = subprocess.run(
-        [sys.executable, "-B", "-c", code, str(SOURCE)], capture_output=True, text=True,
+        [sys.executable, "-B", "-c", code, str(SOURCE)],
+        capture_output=True,
+        text=True,
         timeout=10,
     )
     assert result.returncode == 0, result.stderr
@@ -204,7 +206,7 @@ def test_registered_arm_arithmetic_keeps_reward_and_current_stdp_explicit(arm):
     controller.eligibility = {"1:2": 2.0}
     spikes = [Spike(2, 10.0), Spike(1, 0.0)]
     audit = TOOL.audit_apply_before(field, spikes, controller)
-    row, = audit["updates"]
+    (row,) = audit["updates"]
     carry = 0.0 if arm == "L" else 1.8
     rate = 0.0001 if arm == "G" else 0.001
     eligibility = carry + math.exp(-1)
@@ -230,8 +232,12 @@ def test_frozen_weights_still_audit_eligibility_and_eligible_work() -> None:
         assert row["weight_expected"] == row["weight_before"]
         assert row["unclipped_proposal"] != row["weight_before"]
         assert row["weight_write_enabled"] is False and row["clipped"] is False
-    controller.eligibility = {"1:2": 0.45 + math.exp(-1), "2:1": -0.45 - math.exp(-1),
-                              "4:5": 2.7, "7:8": 1.8}
+    controller.eligibility = {
+        "1:2": 0.45 + math.exp(-1),
+        "2:1": -0.45 - math.exp(-1),
+        "4:5": 2.7,
+        "7:8": 1.8,
+    }
     controller.update_count = 13
     result = TOOL.audit_apply_after(audit, field, controller, 2)
     assert result["eligible_edge_work"] == 2
@@ -259,9 +265,14 @@ def test_equal_time_and_cancelled_pairs_decay_but_do_not_write_weights() -> None
 
 @pytest.mark.parametrize(
     "corruption,message",
-    [("eligibility", "eligibility observer"), ("returned", "apply/work count"),
-     ("count", "apply/work count"), ("weight", "weight writes"),
-     ("inactive_weight", "weight writes"), ("delay", "delay write")],
+    [
+        ("eligibility", "eligibility observer"),
+        ("returned", "apply/work count"),
+        ("count", "apply/work count"),
+        ("weight", "weight writes"),
+        ("inactive_weight", "weight writes"),
+        ("delay", "delay write"),
+    ],
 )
 def test_apply_audit_rejects_mismatched_actual_observations(corruption, message) -> None:
     field, controller, spikes = fake_apply_state()
@@ -320,9 +331,20 @@ def test_all_abstention_and_empty_bins_remain_undefined() -> None:
 
 @pytest.mark.parametrize(
     "key,value",
-    [("outcome", True), ("outcome", 1.0), ("outcome", 2), ("native", False),
-     ("native", 0.0), ("native", -1), ("p1", True), ("p1", "0.5"),
-     ("p1", float("nan")), ("p1", float("inf")), ("p1", -0.01), ("p1", 1.01)],
+    [
+        ("outcome", True),
+        ("outcome", 1.0),
+        ("outcome", 2),
+        ("native", False),
+        ("native", 0.0),
+        ("native", -1),
+        ("p1", True),
+        ("p1", "0.5"),
+        ("p1", float("nan")),
+        ("p1", float("inf")),
+        ("p1", -0.01),
+        ("p1", 1.01),
+    ],
 )
 def test_invalid_score_values_fail_closed(key, value) -> None:
     row = {"p1": 0.5, "outcome": 0, "native": 0, key: value}
@@ -398,9 +420,7 @@ def test_stationary_preservation_is_required(passing_rows, regression):
 
 
 def test_novel_total_accuracy_cannot_hide_failure_of_one_label(passing_rows):
-    passing_rows["novel"]["L"][16:] = scored_rows(
-        [0, 1] * 8, error=0.1, correct_per_label=(8, 5)
-    )
+    passing_rows["novel"]["L"][16:] = scored_rows([0, 1] * 8, error=0.1, correct_per_label=(8, 5))
     result = TOOL.evaluate_fixture(passing_rows, PROTOCOL)
     assert result["novel_late"]["correct"] == 13
     assert result["novel_late"]["coverage"] == 1.0
@@ -533,8 +553,10 @@ def test_output_is_no_clobber_and_failure_preserves_terminal_channel(tmp_path):
 
 def test_output_flush_failure_latches_after_partial_bytes_without_retry(tmp_path, monkeypatch):
     writer = TOOL.OutputWriter(tmp_path, terminal_limit=20)
+
     def fail(_fd):
         raise OSError("synthetic fsync failure")
+
     with monkeypatch.context() as patch:
         patch.setattr(os, "fsync", fail)
         with pytest.raises(OSError, match="synthetic"):
@@ -572,6 +594,7 @@ def test_nonfinite_json_is_rejected_and_latches_measurement_failure(tmp_path):
 def test_liveness_failure_precedes_ordinary_write_but_allows_terminal_metadata(tmp_path):
     def expired():
         raise RuntimeError("synthetic deadline expired")
+
     writer = TOOL.OutputWriter(tmp_path, terminal_limit=20, live=expired)
     with pytest.raises(RuntimeError, match="deadline expired"):
         writer.json(tmp_path / "ordinary.json", {"value": 1})
@@ -584,11 +607,13 @@ def test_liveness_failure_precedes_ordinary_write_but_allows_terminal_metadata(t
 def test_call_ledger_intent_precedes_function_and_completion_counts_are_separate():
     emitted = []
     ledger = TOOL.CallLedger(emitted.append, {"prediction": 1})
+
     def method(value, *, extra):
         assert ledger.intents == {"prediction": 1}
         assert ledger.returns == {}
         assert emitted == [{"kind": "prediction", "phase": "intent", "number": 1}]
         return value + extra
+
     assert ledger.call("prediction", method, 3, extra=4) == 7
     ledger.require_observed()
     assert ledger.summary()["intents"] == ledger.summary()["returns"] == {"prediction": 1}
@@ -604,6 +629,7 @@ def test_call_ledger_intent_precedes_function_and_completion_counts_are_separate
 def test_failed_top_level_intent_never_enters_method():
     def fail(_event):
         raise OSError("intent observation unavailable")
+
     ledger = TOOL.CallLedger(fail, {"prediction": 1})
     with pytest.raises(OSError, match="intent observation"):
         ledger.call("prediction", lambda: pytest.fail("unadmitted method entered"))
@@ -617,14 +643,18 @@ def test_failed_top_level_intent_never_enters_method():
 @pytest.mark.parametrize("method_fails", [False, True])
 def test_failed_completion_observation_preserves_original_result_or_error(method_fails):
     failure = ValueError("model-free method error")
+
     def emit(event):
         if event["phase"] != "intent":
             raise OSError("completion observation unavailable")
+
     ledger = TOOL.CallLedger(emit, {"prediction": 2})
+
     def method():
         if method_fails:
             raise failure
         return "original result"
+
     if method_fails:
         with pytest.raises(ValueError) as caught:
             ledger.call("prediction", method)
@@ -644,22 +674,27 @@ def test_failed_completion_observation_preserves_original_result_or_error(method
 def test_nested_observation_failure_finishes_admitted_outer_method(failed_phase):
     executed = []
     unavailable = False
+
     def emit(event):
         nonlocal unavailable
         if event["kind"] == "apply" and event["phase"] == failed_phase:
             unavailable = True
         if unavailable:
             raise OSError("all later observation writes fail")
+
     ledger = TOOL.CallLedger(emit, {"prediction": 2, "apply": 1, "readout": 1})
     failure = ValueError("nested method error")
+
     def apply():
         executed.append("apply")
         if failed_phase == "error":
             raise failure
         return 3
+
     def readout():
         executed.append("readout")
         return 4
+
     def prediction():
         try:
             ledger.call("apply", apply)
@@ -668,6 +703,7 @@ def test_nested_observation_failure_finishes_admitted_outer_method(failed_phase)
         value = ledger.call("readout", readout)
         executed.append("prediction completed")
         return value
+
     assert ledger.call("prediction", prediction) == 4
     assert executed == ["apply", "readout", "prediction completed"]
     assert ledger.intents == {"prediction": 1, "apply": 1, "readout": 1}
@@ -675,9 +711,12 @@ def test_nested_observation_failure_finishes_admitted_outer_method(failed_phase)
     assert ledger.returns["apply"] == int(failed_phase != "error")
     assert ledger.errors["apply"] == int(failed_phase == "error")
     assert [(event["kind"], event["phase"]) for event in ledger.events] == [
-        ("prediction", "intent"), ("apply", "intent"),
+        ("prediction", "intent"),
+        ("apply", "intent"),
         ("apply", "error" if failed_phase == "error" else "return"),
-        ("readout", "intent"), ("readout", "return"), ("prediction", "return"),
+        ("readout", "intent"),
+        ("readout", "return"),
+        ("prediction", "return"),
     ]
     with pytest.raises(RuntimeError, match="observation failed"):
         ledger.require_observed()
@@ -690,10 +729,13 @@ def test_nested_observation_failure_does_not_waive_method_limit():
     def emit(event):
         if event["kind"] == "apply" and event["phase"] == "return":
             raise OSError("observation failed")
+
     ledger = TOOL.CallLedger(emit, {"prediction": 1, "apply": 1})
+
     def prediction():
         ledger.call("apply", lambda: None)
         ledger.call("apply", lambda: pytest.fail("over-budget nested method entered"))
+
     with pytest.raises(RuntimeError, match="method limit"):
         ledger.call("prediction", prediction)
     assert ledger.intents == {"prediction": 1, "apply": 1}
@@ -702,13 +744,17 @@ def test_nested_observation_failure_does_not_waive_method_limit():
 
 def test_nested_failure_retains_outer_exception_and_bounded_error_record():
     failure = ValueError("x" * 5000)
+
     def emit(event):
         if event["phase"] != "intent":
             raise OSError("observation unavailable")
+
     ledger = TOOL.CallLedger(emit, {"prediction": 2, "apply": 1})
+
     def prediction():
         ledger.call("apply", lambda: None)
         raise failure
+
     with pytest.raises(ValueError) as caught:
         ledger.call("prediction", prediction)
     assert caught.value is failure
@@ -722,16 +768,64 @@ def test_nested_failure_retains_outer_exception_and_bounded_error_record():
 @pytest.mark.parametrize("error_type", [TimeoutError, MemoryError])
 def test_resource_failure_interrupts_admitted_outer_method(error_type):
     failure = error_type("synthetic resource limit")
+
     def emit(event):
         if event["kind"] == "apply" and event["phase"] == "return":
             raise failure
+
     ledger = TOOL.CallLedger(emit, {"prediction": 1, "apply": 1})
+
     def prediction():
         ledger.call("apply", lambda: None)
         pytest.fail("resource failure must stop the outer method immediately")
+
     with pytest.raises(error_type) as caught:
         ledger.call("prediction", prediction)
     assert caught.value is failure
     assert ledger.intents == {"prediction": 1, "apply": 1}
     assert ledger.returns == {"apply": 1}
     assert ledger.errors == {"prediction": 1}
+
+
+def test_paired_wrong_to_abstain_swap_cannot_pass_overall(passing_rows):
+    control = scored_rows([0] * 32)
+    local = scored_rows([0] * 32)
+    for i in range(32):
+        control[i].update(native=1 if i < 16 else None, p1=0.9 if i < 16 else 0.5)
+        local[i].update(native=None if i < 16 else 1, p1=0.5 if i < 16 else 0.51)
+    passing_rows["return"].update(C=control, L=local, G=scored_rows([0] * 32, error=0.9))
+    result = TOOL.evaluate_fixture(passing_rows, PROTOCOL)
+    assert result["primary_C_L"] is result["secondary_G_L"] is True
+    assert (
+        result["metrics"]["return"]["C"]["correct"]
+        == result["metrics"]["return"]["L"]["correct"]
+        == 0
+    )
+    assert (
+        result["metrics"]["return"]["C"]["coverage"]
+        == result["metrics"]["return"]["L"]["coverage"]
+        == 0.5
+    )
+    assert result["paired_return_native_C_to_L"]["wrong_to_abstain"] == 16
+    assert result["paired_return_native_C_to_L"]["abstain_to_wrong"] == 16
+    assert result["return_only_wrong_to_abstain"] is True
+    assert result["bounded_gate"] is False
+
+
+@pytest.mark.parametrize("corrected_index", [0, 31])
+def test_actual_native_correction_is_distinct_from_abstention_only(passing_rows, corrected_index):
+    control = scored_rows([0] * 32)
+    local = scored_rows([0] * 32)
+    for i in range(32):
+        control[i].update(native=1 if i < 16 else None, p1=0.9 if i < 16 else 0.5)
+        local[i].update(native=None if i < 16 else 1, p1=0.5 if i < 16 else 0.51)
+    local[corrected_index].update(native=0, p1=0.1)
+    passing_rows["return"].update(C=control, L=local, G=scored_rows([0] * 32, error=0.9))
+    result = TOOL.evaluate_fixture(passing_rows, PROTOCOL)
+    assert result["return_only_wrong_to_abstain"] is False
+    assert result["bounded_gate"] is True
+
+
+def test_paired_native_transitions_reject_misaligned_targets():
+    with pytest.raises(RuntimeError, match="target mismatch"):
+        TOOL.paired_native_transitions([{"native": 0, "outcome": 0}], [{"native": 0, "outcome": 1}])

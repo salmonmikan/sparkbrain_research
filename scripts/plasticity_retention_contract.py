@@ -296,6 +296,25 @@ def metrics(rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def paired_native_transitions(control: list[dict], local: list[dict]) -> dict[str, int]:
+    require(len(control) == len(local), "paired native row count")
+
+    def state(row: dict) -> str:
+        if row["native"] is None:
+            return "abstain"
+        return "correct" if row["native"] == row["outcome"] else "wrong"
+
+    counts = {
+        a + "_to_" + b: 0
+        for a in ("correct", "wrong", "abstain")
+        for b in ("correct", "wrong", "abstain")
+    }
+    for left, right in zip(control, local, strict=True):
+        require(left["outcome"] == right["outcome"], "paired native target mismatch")
+        counts[state(left) + "_to_" + state(right)] += 1
+    return counts
+
+
 def evaluate_fixture(
     rows: dict[str, dict[str, list[dict[str, Any]]]], protocol: dict[str, Any]
 ) -> dict:
@@ -308,6 +327,12 @@ def evaluate_fixture(
         c["brier"] - local["brier"] >= 0.02
         and local["correct"] >= c["correct"]
         and local["coverage"] >= c["coverage"]
+    )
+    transitions = paired_native_transitions(rows["return"]["C"], rows["return"]["L"])
+    only_wrong_to_abstain = (
+        transitions["wrong_to_abstain"] > 0
+        and transitions["wrong_to_correct"] == 0
+        and transitions["abstain_to_correct"] == 0
     )
     secondary = gain["brier"] - local["brier"] >= 0.02
     c, local = (values["stationary"][arm] for arm in ("C", "L"))
@@ -351,12 +376,20 @@ def evaluate_fixture(
         "novel_late": late,
         "primary_C_L": primary,
         "secondary_G_L": secondary,
+        "paired_return_native_C_to_L": transitions,
+        "return_only_wrong_to_abstain": only_wrong_to_abstain,
         "stationary_preserved": stationary,
         "novel_ceiling_inconclusive": ceiling,
         "novel_acquisition": acquisition,
         "novel_preserved": preservation,
         "bounded_gate": bool(
-            primary and secondary and stationary and acquisition and preservation and not ceiling
+            primary
+            and secondary
+            and stationary
+            and acquisition
+            and preservation
+            and not ceiling
+            and not only_wrong_to_abstain
         ),
         "scientific_credit": protocol["scientific_credit"],
         "claim_limit": (

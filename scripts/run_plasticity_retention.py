@@ -32,7 +32,7 @@ from unittest.mock import patch
 ROOT = Path(__file__).resolve().parents[1]
 PREPARATION = ROOT / "artifacts/research/plasticity_retention_preparation_20261001"
 PROTOCOL = ROOT / "protocols/plasticity_retention_bounded_v1.json"
-FREEZE = ROOT / "artifacts/research/plasticity_retention_execution_20261001/freeze"
+FREEZE = ROOT / "artifacts/research/plasticity_retention_execution_20261001/freeze-v2"
 PUBLISHED_PREFIX = ROOT / "artifacts/research/temporal_reuse_loop_20261001"
 ARCHIVE_SHA = "2dfbe4f3afb8b046c1b465dcb52461daa027f72939dd85cf7dfad15670947082"
 PREP_PINS = {
@@ -88,6 +88,8 @@ def sources() -> list[Path]:
         ROOT / "scripts/prepare_plasticity_retention_inputs.py",
         S.VENDOR,
         PROTOCOL,
+        ROOT / "docs/research/plasticity_retention_design_20261001.md",
+        ROOT / "docs/research/plasticity_retention_protocol_20261001.md",
         ROOT / "tests/test_plasticity_retention_runner.py",
         ROOT / "tests/test_plasticity_retention_contract.py",
         ROOT / "tests/test_plasticity_retention_verifier.py",
@@ -174,12 +176,43 @@ def verify_freeze(directory: Path) -> dict:
 
 
 def git(*args: str) -> bytes:
-    before = S.child_cpu()
-    remaining = signal.getitimer(signal.ITIMER_REAL)[0]
-    try:
-        return subprocess.check_output(["git", *args], cwd=ROOT, timeout=remaining or None)
-    finally:
-        S.charge_child_cpu(S.child_cpu() - before)
+    # Git work is also charged before admission. Its OS CPU ceiling is below
+    # the reservation to cover process/termination granularity conservatively.
+    with S.reserve_child_cpu(2):
+        remaining = signal.getitimer(signal.ITIMER_REAL)[0]
+        require(remaining > 0, "Git requires active bounded driver")
+        proc = None
+        previous_mask = signal.pthread_sigmask(signal.SIG_BLOCK, {signal.SIGPROF, signal.SIGALRM})
+        try:
+            try:
+                proc = subprocess.Popen(
+                    ["git", *args],
+                    cwd=ROOT,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    preexec_fn=lambda: (
+                        signal.pthread_sigmask(signal.SIG_SETMASK, previous_mask),
+                        S.process_limits(1),
+                    ),
+                )
+            finally:
+                signal.pthread_sigmask(signal.SIG_SETMASK, previous_mask)
+            output, error = proc.communicate(timeout=remaining)
+            require(
+                proc.returncode == 0, "Git gate failure: " + error.decode(errors="replace")[:2048]
+            )
+            return output
+        finally:
+            cleanup_mask = signal.pthread_sigmask(
+                signal.SIG_BLOCK, {signal.SIGPROF, signal.SIGALRM}
+            )
+            try:
+                if proc is not None:
+                    if proc.poll() is None:
+                        proc.kill()
+                    proc.communicate()
+            finally:
+                signal.pthread_sigmask(signal.SIG_SETMASK, cleanup_mask)
 
 
 def gate(directory: Path, review: Path, publication: Path, approval: Path) -> dict:
@@ -561,7 +594,7 @@ def worker_body(job: dict, directory: Path, writer: Any, ledger: Any, primary: d
 
 
 def worker(job_path: Path, supervisor_fd: int | None) -> int:
-    started_wall, started_cpu = time.monotonic(), S.cpu_clock()
+    started_wall, started_cpu = BOOT_WALL, S.cpu_clock()
     job = S.read(job_path)
     directory = job_path.parent
     supervisor = S.accept_supervision(supervisor_fd, job, directory)
@@ -620,42 +653,46 @@ def launch_worker(job: dict, output: Path, writer: Any, costs: list[dict]) -> di
     }
     raw = C.canonical(envelope)
     require(len(raw) <= 4096 and os.write(write_fd, raw) == len(raw), "supervisor write")
-    try:
-        proc = subprocess.Popen(
-            [
-                sys.executable,
-                "-S",
-                "-P",
-                "-B",
-                str(Path(__file__).resolve()),
-                "worker",
-                "--job",
-                str(work / "job.json"),
-                "--supervisor-fd",
-                str(read_fd),
-            ],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            pass_fds=(read_fd,),
-            env=dict(os.environ),
-            preexec_fn=lambda: S.process_limits(job["cpu_limit"]),
-        )
-    except BaseException:
-        os.close(write_fd)
-        raise
-    finally:
-        os.close(read_fd)
+    proc = None
     usage = None
     failure = None
     captures = {"stdout": bytearray(), "stderr": bytearray()}
     consumed = {"stdout": 0, "stderr": 0}
     timed_out = False
-    with selectors.DefaultSelector() as selector:
-        for name, stream in (("stdout", proc.stdout), ("stderr", proc.stderr)):
-            require(stream is not None, "missing worker capture")
-            os.set_blocking(stream.fileno(), False)
-            selector.register(stream, selectors.EVENT_READ, name)
+    # Arm cleanup before creation and defer timer delivery until proc is assigned.
+    # The child restores the previous signal mask before exec.
+    previous_mask = signal.pthread_sigmask(signal.SIG_BLOCK, {signal.SIGPROF, signal.SIGALRM})
+    try:
         try:
+            proc = subprocess.Popen(
+                [
+                    sys.executable,
+                    "-S",
+                    "-P",
+                    "-B",
+                    str(Path(__file__).resolve()),
+                    "worker",
+                    "--job",
+                    str(work / "job.json"),
+                    "--supervisor-fd",
+                    str(read_fd),
+                ],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                pass_fds=(read_fd,),
+                env=dict(os.environ),
+                preexec_fn=lambda: (
+                    signal.pthread_sigmask(signal.SIG_SETMASK, previous_mask),
+                    S.process_limits(job["cpu_limit"]),
+                ),
+            )
+        finally:
+            signal.pthread_sigmask(signal.SIG_SETMASK, previous_mask)
+        with selectors.DefaultSelector() as selector:
+            for name, stream in (("stdout", proc.stdout), ("stderr", proc.stderr)):
+                require(stream is not None, "missing worker capture")
+                os.set_blocking(stream.fileno(), False)
+                selector.register(stream, selectors.EVENT_READ, name)
             while proc.returncode is None or selector.get_map():
                 if time.monotonic() >= envelope["wall_stop_monotonic"]:
                     timed_out = True
@@ -674,20 +711,29 @@ def launch_worker(job: dict, output: Path, writer: Any, costs: list[dict]) -> di
                     pid, status, use = os.wait4(proc.pid, os.WNOHANG)
                     if pid:
                         proc.returncode, usage = os.waitstatus_to_exitcode(status), use
-        except BaseException as exc:
-            failure = exc
-        finally:
-            if proc.returncode is None:
+    except BaseException as exc:
+        failure = exc
+    finally:
+        cleanup_mask = signal.pthread_sigmask(signal.SIG_BLOCK, {signal.SIGPROF, signal.SIGALRM})
+        try:
+            if proc is not None and proc.returncode is None:
                 try:
                     os.kill(proc.pid, signal.SIGKILL)
                 except ProcessLookupError:
                     pass
                 _, status, usage = os.wait4(proc.pid, 0)
                 proc.returncode = os.waitstatus_to_exitcode(status)
+            os.close(read_fd)
             os.close(write_fd)
-            for stream in (proc.stdout, proc.stderr):
-                if stream is not None:
-                    stream.close()
+            if proc is not None:
+                for stream in (proc.stdout, proc.stderr):
+                    if stream is not None:
+                        stream.close()
+        finally:
+            signal.pthread_sigmask(signal.SIG_SETMASK, cleanup_mask)
+    if proc is None:
+        require(failure is not None, "worker creation returned no process")
+        raise failure
     require(usage is not None, "worker resource accounting missing")
     for name, data in captures.items():
         try:
@@ -713,7 +759,6 @@ def launch_worker(job: dict, output: Path, writer: Any, costs: list[dict]) -> di
     costs.append(cost)
     with S.deadline(0.1, 0.1):
         writer.json(output / "job-costs.jsonl", cost, append=True, terminal=True)
-    S.charge_child_cpu(cost["worker_cpu_seconds"])
     if failure:
         raise failure
     require(
@@ -862,7 +907,8 @@ def driver(args: argparse.Namespace) -> int:
                     },
                     append=True,
                 )
-                results[plan["job_id"]] = launch_worker(job, output, writer, costs)
+                with S.reserve_child_cpu(plan["cpu_seconds"]):
+                    results[plan["job_id"]] = launch_worker(job, output, writer, costs)
             scored = {}
             for fixture in p["fixtures"]:
                 groups: dict[str, dict] = {}
@@ -919,8 +965,13 @@ def driver(args: argparse.Namespace) -> int:
                 error_type="ResourceClosureBudget",
                 error="terminal closure reserve exceeds aggregate ceiling",
             )
-        with S.deadline(2, 5):
-            writer.json(output / "result.json", terminal, terminal=True)
+        closure_cpu = min(2, 360 - S.cpu_clock())
+        closure_wall = min(5, 480 - (time.monotonic() - started_wall))
+        if closure_cpu <= 0 or closure_wall <= 0:
+            terminal["status"] = "failed"  # No unbudgeted write; absence means incomplete.
+        else:
+            with S.deadline(closure_cpu, closure_wall):
+                writer.json(output / "result.json", terminal, terminal=True)
     return 0 if terminal["status"] == "complete" else 1
 
 

@@ -86,6 +86,30 @@ def charge_child_cpu(seconds: float) -> None:
 
 
 @contextlib.contextmanager
+def reserve_child_cpu(allowance: float):
+    """Reserve child CPU before admission; refund only measured unused CPU afterward.
+
+    ITIMER_PROF does not tick while the child consumes CPU. Subtracting the
+    complete child allowance first prevents concurrent driver work plus the
+    admitted child from exhausting the aggregate budget before wait4 returns.
+    """
+    require(math.isfinite(allowance) and 0 < allowance <= 16, "invalid child CPU allowance")
+    remaining = signal.getitimer(signal.ITIMER_PROF)[0]
+    require(remaining > allowance, "resource_limit: no child-inclusive CPU headroom")
+    before = child_cpu()
+    signal.setitimer(signal.ITIMER_PROF, remaining - allowance)
+    try:
+        yield
+    finally:
+        actual = child_cpu() - before
+        require(0 <= actual <= allowance, "resource_limit: child exceeded reserved CPU")
+        current = signal.getitimer(signal.ITIMER_PROF)[0]
+        # Do not revive a timer that already expired during an interrupted job.
+        if current > 0:
+            signal.setitimer(signal.ITIMER_PROF, current + allowance - actual)
+
+
+@contextlib.contextmanager
 def deadline(cpu: float, wall: float):
     def stop(signum: int, frame: Any) -> None:
         raise TimeoutError(f"resource_limit: signal {signum}")
@@ -290,6 +314,8 @@ def accept_supervision(
 
 
 def validate_execution_environment() -> None:
+    blocked = signal.pthread_sigmask(signal.SIG_BLOCK, set())
+    require(not ({signal.SIGPROF, signal.SIGALRM} & blocked), "budget timer signals are blocked")
     require(os.environ.get("PYTHONHASHSEED") == "0", "execution requires PYTHONHASHSEED=0")
     require(sys.flags.no_site == 1 and sys.flags.safe_path, "execution requires python -S -P")
     require(sys.dont_write_bytecode, "execution requires python -B")

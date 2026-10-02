@@ -350,3 +350,136 @@ def test_os_limits_match_registered_resources(monkeypatch):
         (R.S.resource.RLIMIT_CORE, (0, 0)),
         (R.S.resource.RLIMIT_CPU, (3, 3)),
     ]
+
+
+@pytest.mark.parametrize("remaining", [0, 3, 15.9, 16])
+def test_child_admission_requires_full_cpu_headroom(monkeypatch, remaining):
+    monkeypatch.setattr(R.S.signal, "getitimer", lambda kind: (remaining, 0))
+    with pytest.raises(RuntimeError, match="headroom"):
+        with R.S.reserve_child_cpu(16):
+            raise AssertionError("child must not be admitted")
+
+
+def test_child_cpu_reserved_before_launch_then_unused_portion_refunded(monkeypatch):
+    remaining, calls = [20.0], []
+    child = [10.0]
+    monkeypatch.setattr(R.S.signal, "getitimer", lambda kind: (remaining[0], 0))
+
+    def set_timer(kind, value):
+        remaining[0] = value
+        calls.append(value)
+
+    monkeypatch.setattr(R.S.signal, "setitimer", set_timer)
+    monkeypatch.setattr(R.S, "child_cpu", lambda: child[0])
+    with R.S.reserve_child_cpu(16):
+        assert remaining[0] == 4
+        remaining[0] -= 0.5  # Concurrent driver work is still charged.
+        child[0] += 8
+    assert calls == [4, 11.5]
+    assert remaining[0] == 20 - 0.5 - 8
+
+
+def test_expired_parent_timer_is_not_revived_by_child_refund(monkeypatch):
+    remaining = [20.0]
+    monkeypatch.setattr(R.S.signal, "getitimer", lambda kind: (remaining[0], 0))
+    monkeypatch.setattr(
+        R.S.signal, "setitimer", lambda kind, value: remaining.__setitem__(0, value)
+    )
+    monkeypatch.setattr(R.S, "child_cpu", lambda: 0)
+    with pytest.raises(TimeoutError):
+        with R.S.reserve_child_cpu(16):
+            remaining[0] = 0
+            raise TimeoutError("parent timer expired")
+    assert remaining[0] == 0
+
+
+def test_selector_setup_interrupt_reaps_before_cpu_refund(monkeypatch, tmp_path):
+    events, remaining, waited_cpu = [], [20.0], [0.0]
+
+    class FakeStream:
+        def fileno(self):
+            return 100
+
+        def close(self):
+            events.append("close")
+
+    fake = SimpleNamespace(pid=12345, returncode=None, stdout=FakeStream(), stderr=FakeStream())
+
+    class BrokenSelector:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+        def register(self, *args):
+            raise TimeoutError("selector setup interrupted")
+
+    def reap(pid, options):
+        events.append("wait4")
+        waited_cpu[0] = 8
+        return pid, 9, SimpleNamespace(ru_utime=8, ru_stime=0, ru_maxrss=100)
+
+    monkeypatch.setattr(R.subprocess, "Popen", lambda *args, **kwargs: fake)
+    monkeypatch.setattr(R.selectors, "DefaultSelector", BrokenSelector)
+    monkeypatch.setattr(R.os, "set_blocking", lambda *args: None)
+    monkeypatch.setattr(R.os, "kill", lambda *args: events.append("kill"))
+    monkeypatch.setattr(R.os, "wait4", reap)
+    monkeypatch.setattr(R.S, "deadline", lambda *args: R.contextlib.nullcontext())
+    monkeypatch.setattr(R.S, "child_cpu", lambda: waited_cpu[0])
+    monkeypatch.setattr(R.S.signal, "getitimer", lambda kind: (remaining[0], 0))
+    monkeypatch.setattr(
+        R.S.signal, "setitimer", lambda kind, value: remaining.__setitem__(0, value)
+    )
+    writer = R.C.OutputWriter(tmp_path, terminal_limit=524288)
+    costs = []
+    with pytest.raises(TimeoutError, match="selector setup"):
+        with R.S.reserve_child_cpu(16):
+            R.launch_worker(
+                {
+                    "plan": {"job_id": "synthetic-setup-interrupt"},
+                    "cpu_limit": 16,
+                    "wall_limit": 20,
+                },
+                tmp_path,
+                writer,
+                costs,
+            )
+    assert events == ["kill", "wait4", "close", "close"]
+    assert remaining[0] == 12
+    assert costs[0]["worker_cpu_seconds"] == 8
+
+
+@pytest.mark.parametrize("exhausted", [False, True])
+def test_failed_driver_closure_uses_only_remaining_budget(monkeypatch, tmp_path, exhausted):
+    clocks = {"cpu": 0.0, "wall": 100.0}
+    admitted = []
+    output = tmp_path / "synthetic-driver"
+    monkeypatch.setattr(R, "BOOT_WALL", 100.0)
+    monkeypatch.setattr(R.S, "validate_execution_environment", lambda: None)
+    monkeypatch.setattr(R.S, "validate_output_roots", lambda *args, **kwargs: None)
+    monkeypatch.setattr(R.S, "process_limits", lambda *args: None)
+    monkeypatch.setattr(R.sys, "addaudithook", lambda *args: None)
+    monkeypatch.setattr(R.S, "cpu_clock", lambda: clocks["cpu"])
+    monkeypatch.setattr(R.time, "monotonic", lambda: clocks["wall"])
+
+    def deadline(cpu, wall):
+        admitted.append((cpu, wall))
+        return R.contextlib.nullcontext()
+
+    def failed_gate(*args):
+        clocks.update(cpu=361.0 if exhausted else 359.8, wall=581.0 if exhausted else 579.7)
+        raise RuntimeError("synthetic pre-model gate failure")
+
+    monkeypatch.setattr(R.S, "deadline", deadline)
+    monkeypatch.setattr(R, "gate", failed_gate)
+    args = SimpleNamespace(
+        output=output, freeze=tmp_path, review=tmp_path, publication=tmp_path, approval=tmp_path
+    )
+    assert R.driver(args) == 1
+    if exhausted:
+        assert len(admitted) == 1
+        assert not (output / "result.json").exists()
+    else:
+        assert admitted[-1] == pytest.approx((0.2, 0.3))
+        assert R.S.read(output / "result.json")["error_type"] == "ResourceClosureBudget"
