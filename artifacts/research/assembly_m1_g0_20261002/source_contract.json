@@ -1,0 +1,132 @@
+{
+  "blockers": {
+    "checkpoint_loses_reference_topology": "Do not treat native checkpoint bytes/hash equality as complete heap/alias equivalence.",
+    "facade_lock_and_global_registry": "Define exclusive serial access and an explicit synchronization-resource inventory; do not deepcopy, omit or pretend to restore a lock.",
+    "joint_commit_and_rollback_unverified": "No real joined owner/candidate/receipt transaction has been tested.",
+    "producer_oracle_missing_m1_types": "Add exact source-bound support for M1, nested runtime, RNG, counters and observed containers before any live clone. Unknown fields remain rejection."
+  },
+  "classification": "SOURCE_ONLY_NONCANONICAL_NON_EVIDENTIARY",
+  "facts": [
+    {
+      "id": "m1-observe-transaction",
+      "interpretation": "Real observe snapshots and restores its existing components; it does not include v0.5 or an adapter.",
+      "path": "src/sparkbrain/system_build/integrated_m1.py",
+      "required_tokens": [
+        "PilotCheckpointManager.save",
+        "self.predictive.observe",
+        "self.scoped.query",
+        "self._restore_components"
+      ],
+      "symbol": "IntegratedM1Pilot.observe"
+    },
+    {
+      "id": "m1-outcome-transaction",
+      "interpretation": "Outcome faults can occur after predictive revision; existing rollback is component reconstruction.",
+      "path": "src/sparkbrain/system_build/integrated_m1.py",
+      "required_tokens": [
+        "self.predictive.feedback",
+        "self.scoped.step",
+        "after_predictive_revision",
+        "self._restore_components"
+      ],
+      "symbol": "IntegratedM1Pilot.apply_outcome"
+    },
+    {
+      "id": "m1-restore-replaces",
+      "interpretation": "Internal M1 rollback can replace object graphs, so retained references need an explicit policy.",
+      "path": "src/sparkbrain/system_build/integrated_m1.py",
+      "required_tokens": [
+        "self.predictive = PilotCheckpointManager.load",
+        "self.scoped._restore_payload",
+        "self._restore_own_payload"
+      ],
+      "symbol": "IntegratedM1Pilot._restore_components"
+    },
+    {
+      "id": "facade-lock",
+      "interpretation": "The real facade owns a synchronization handle, not an ordinary copied state field.",
+      "path": "src/sparkbrain/v032/runtime.py",
+      "required_tokens": [
+        "self._step_lock = _shared_step_lock(self._brain)"
+      ],
+      "symbol": "IntegratedV032Brain.__init__"
+    },
+    {
+      "id": "global-lock-registry",
+      "interpretation": "Lock ownership reaches a module-global weak registry outside a producer-only graph.",
+      "path": "src/sparkbrain/v032/runtime.py",
+      "required_tokens": [
+        "_LOCK_REGISTRY_GUARD",
+        "_LOCK_REGISTRY.get(brain)",
+        "threading.RLock()",
+        "_LOCK_REGISTRY[brain] = lock"
+      ],
+      "symbol": "_shared_step_lock"
+    },
+    {
+      "id": "reference-rng",
+      "interpretation": "The nested reference runtime owns RNG and retained state omitted by a v0.5-only class registry.",
+      "path": "src/sparkbrain/v03/runtime.py",
+      "required_tokens": [
+        "self._rng = random.Random",
+        "self._results",
+        "self.trace"
+      ],
+      "symbol": "IntegratedV03Brain._initialize_runtime"
+    },
+    {
+      "id": "checkpoint-tree-encoding",
+      "interpretation": "Encoding uses a recursion stack and canonicalized mappings, not an alias-preserving reference-node table.",
+      "path": "src/sparkbrain/v032/checkpoint.py",
+      "required_tokens": [
+        "stack.add(object_id)",
+        "stack.remove(object_id)",
+        "items.sort(key=lambda item: _canonical(item[0]))",
+        "value.getstate()"
+      ],
+      "symbol": "_encode"
+    },
+    {
+      "id": "checkpoint-tree-decoding",
+      "interpretation": "Mapping reconstruction alone is not proof of original concrete mapping type, order or aliases.",
+      "path": "src/sparkbrain/v032/checkpoint.py",
+      "required_tokens": [
+        "if kind == \"mapping\"",
+        "result: dict[Any, Any] = {}",
+        "result[key] = child(pair[1])"
+      ],
+      "symbol": "_decode"
+    },
+    {
+      "id": "producer-exact-type-oracle",
+      "interpretation": "The existing producer oracle correctly fails closed on unsupported types/fields; it must not be weakened by omission.",
+      "path": "scripts/v05_acquired_ownership_probe.py",
+      "required_tokens": [
+        "kind in (dict, list, tuple, set, deque) or kind in self.allowed",
+        "names == self.allowed[kind]"
+      ],
+      "symbol": "GraphAudit.inspect"
+    }
+  ],
+  "files": {
+    "scripts/v05_acquired_ownership_probe.py": "d24730db318749deba4428ea7d26d283181bc3a91353d268eb2528f23db2bc7d",
+    "src/sparkbrain/system_build/integrated_m1.py": "019032c043ac598c4696da0438f190553f757c2018144e1c0b2c7251d09a5837",
+    "src/sparkbrain/v03/runtime.py": "74374965dbf7989505cc50f6dedc0741677159a5261940747dbbdea225071ea1",
+    "src/sparkbrain/v032/checkpoint.py": "7a7f597ad7698a55ebe5e32c31062dd81ad06e93d06192a6c117c915b0e1d25b",
+    "src/sparkbrain/v032/runtime.py": "66fc7ae494ba37396fdf99eb1625239c7b8d910ff7a2e00b323748facff9114e"
+  },
+  "future_case_ids": [
+    "G0-01-preflight",
+    "G0-02-copy-isolation",
+    "G0-03-producer-abort",
+    "G0-04-m1-observe-abort",
+    "G0-05-outcome-abort",
+    "G0-06-owner-commit",
+    "G0-07-receipt-replay",
+    "G0-08-external-mutation"
+  ],
+  "runtime_execution_authorized": false,
+  "schema": 1,
+  "scientific_credit": 0,
+  "source_commit": "2682b895435f79c9723934e2c116e440719304d8"
+}
