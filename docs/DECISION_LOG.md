@@ -1337,3 +1337,44 @@ Historical source-guard positive tests use hash-verified preserved source bytes
 in isolated temporary roots. Frozen validators and manifests remain unchanged and
 must reject the changed current runtime. This separates software test portability
 from prospective research source eligibility; it never updates an old freeze.
+
+## D-M1-PATH-20261002-0001 — Prepare the repaired-source temporal inlet path
+
+**Decision (2026-10-02):** Add a new source-only implementation candidate for PR188's
+68-call native-history/raw-order → M1 path. Select repaired runtime
+`46bbd9b8b28c2404c73f028f8736ed83c3b5c3fe` in a new source contract. Preserve all historical
+freezes/evidence and leave execution disabled pending actual G0 reconciliation,
+three-observation eligibility, complete constructor/resource accounting, reviewed
+launcher and separate clearance. Model-free schedule/native-port fixture tests are
+software evidence only; they do not construct a real producer or M1.
+
+**Reason:** Exact literals, two-inlet controls, sham identity and native checkpoint
+wiring must be independently reviewable before research execution. Nested scope rollback
+and data-dependent object shells require explicit accounting beyond facade totals.
+
+**Review refinement (2026-10-02):** Require each independently observed eligibility
+init/shell count to be no greater than its frozen prospective per-type cap. Exact
+route-total reconciliation alone cannot admit evidence that exceeds that budget.
+Model-free boundary regressions cover equality and single-count overruns.
+
+**Evidence-binding refinement (2026-10-02):** Derive the admission census from bound
+raw profiler events, not self-reported route totals alone. Bind exact source-supported
+constructor/allocation/resource routes, event ordering, the complete snapshot and a
+closed-session terminal manifest. Reconcile attempted allocations separately from
+successful births and call returns. Synthetic source-shaped fixtures validate this
+software boundary without creating native eligibility or execution authority.
+
+**Nonvacuous call-plan refinement (2026-10-02):** Bind the separately reviewed
+three-observation proposal's exact 35 native routes and successful count vector,
+plus resource counters, rather than accepting caller-selected target subsets.
+Keep its 67-call probe identity and limits separate from the unchanged 68-call
+pilot. Also count only the precisely attributed internal `_FeatureState` deepcopy
+shell route; preserve all unknown-class/route rejections and require same-thread
+census construction/installation. Registry-birth binding, complete resource caps,
+actual arm graphs, unsupported endpoint coverage, launcher and execution authority
+remain unmet. Source-only approval is not empirical eligibility or experiment clearance.
+
+**Static inspection portability (2026-10-02):** Bind the declared supported
+interpreter's exact stdlib route-source bytes for pure census-evidence inspection.
+Do not silently substitute the inspecting host's stdlib. Keep actual native
+admission restricted to CPython 3.11–3.13 and verify its live bindings separately.
