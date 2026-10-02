@@ -590,3 +590,27 @@ call plan and a narrowly attributed sensory feature-state deepcopy census route.
 The call plan rejects vacuous target subsets; it does not provide observed graphs,
 complete resource bounds, registry-birth coverage, a launcher or execution clearance.
 The original 68-call pilot remains unchanged and disabled.
+
+
+## Independent G0 admission instrumentation preparation (2026-10-02)
+
+The one-shot `assembly-m1-g0-v1-20261002` attempt is consumed and incomplete:
+exit 137 with no terminal manifest or eligibility verdict. Its cause, furthest
+execution phase and actual model-call counts remain unestablished. The
+[failure report and immutable evidence](research/assembly_m1_g0_v1_failed_20261002.md)
+and Results Ledger preserve that no-reuse boundary; no retry or top-up occurred.
+
+A separate [source-only admission remediation](research/g0_admission_remediation_preparation_20261002.md)
+now prepares strict pre-profile validation, a scoped one-shot admission context,
+bounded identity-cached route classification and finite no-output reserve checks.
+Independent review of the four changed code/test files found no unresolved issue;
+855 combined G0/path-pilot model-free tests and 13 subtests passed with a native-import
+tripwire. This is software preparation with scientific credit 0, not a native
+eligibility, performance, causal-diagnosis or learned-benefit result.
+
+Historical runtime, freeze, approval, ledger and output bytes remain unchanged.
+PR192 stays intentionally unmerged. Deliberate pointer/codec/source-delta
+reconciliation, a new prospective exact-source freeze and separate execution
+clearance remain required before any future experiment. No new identity or
+execution freeze was created by this preparation; existing scientific/build
+statuses and scheduler authority are unchanged.
