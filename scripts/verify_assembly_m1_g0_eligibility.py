@@ -27,6 +27,30 @@ def canonical(value: Any) -> str:
     return json.dumps(value, allow_nan=False, sort_keys=True, separators=(",", ":"))
 
 
+def _unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate JSON key: {key}")
+        result[key] = value
+    return result
+
+
+def _reject_constant(value: str) -> None:
+    raise ValueError(f"nonfinite JSON constant: {value}")
+
+
+def read_contract(path: Path) -> dict[str, Any]:
+    value = json.loads(
+        path.read_text(encoding="utf-8"),
+        object_pairs_hook=_unique_object,
+        parse_constant=_reject_constant,
+    )
+    if not isinstance(value, dict):
+        raise ValueError("contract must be a JSON object")
+    return value
+
+
 def resolve_symbol(tree: ast.Module, dotted: str) -> ast.AST:
     current: ast.AST = tree
     for name in dotted.split("."):
@@ -44,7 +68,7 @@ def resolve_symbol(tree: ast.Module, dotted: str) -> ast.AST:
 def verify(root: Path, contract: dict[str, Any] | None = None) -> dict[str, Any]:
     root = root.resolve()
     if contract is None:
-        contract = json.loads((root / PROTOCOL).read_text())
+        contract = read_contract(root / PROTOCOL)
     if set(contract) != {
         "schema", "classification", "scientific_credit", "runtime_execution_authorized",
         "source_commit", "files", "facts", "blockers", "future_case_ids",

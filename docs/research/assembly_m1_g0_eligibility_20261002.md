@@ -35,7 +35,7 @@ The [machine source contract](../../artifacts/research/assembly_m1_g0_20261002/s
 binds five files, nine inspected symbols, their exact SHA-256 values, four blockers
 and eight future case IDs. The auditor reads files as data and parses ASTs; it does
 not import the inspected modules. Hashes bind the selected bytes; token checks and
-AST ranges are only narrow source witnesses, not a whole-program proof. The complete
+AST ranges are only narrow source witnesses, not a whole-program proof. Duplicate JSON keys and nonfinite JSON constants reject before source access. The complete
 logical contract is itself digest-pinned to reject reduced/relabelled fact inventories.
 The source commit is declared provenance checked during preparation; the auditor does
 not query Git or independently prove commit membership.
@@ -185,7 +185,7 @@ matched ablations; PR169's negative comparison and PR182's producer-only boundar
 
 The source auditor bound five source files and nine symbol-level facts. Its successful
 exit means the selected source bindings matched; reported G0 status remains blocked.
-Twenty-seven focused model-free tests passed, including source drift, boundary corruption,
+Thirty-two focused model-free tests passed, including source drift, boundary corruption,
 path escape, missing/ambiguous symbols, reduced/relabelled contracts, contract non-mutation
 and a subprocess import
 finder that rejects every SparkBrain import. Scoped Ruff passed. No fake sentinel was
@@ -205,3 +205,13 @@ current-head Codex review and CI remain separate gates. Independent source-only 
 found no publication blocker and identified contract-hardening improvements; the final
 auditor now pins the complete logical contract and adds five corruption tests. No G0 pass or runtime readiness
 is claimed by this preparation.
+
+### Codex source-auditor correction
+
+Review of initial head `2f29900a09733122c085c6f948a39f1d92719fbe` identified that
+ordinary JSON loading silently accepts duplicate keys before logical contract hashing.
+The corrected loader rejects duplicates at every object depth and nonfinite constants.
+Five added tests reject conflicting/identical root keys, nested duplicates and NaN before
+source-file access. This is a source-auditor parsing repair; no runtime or experiment
+semantics changed and no G0 execution occurred. Initial-head CI passed; latest-head CI
+and Codex re-review are required before merge.

@@ -131,3 +131,30 @@ def test_rejects_reduced_or_relabelled_contract(mutation):
         data["facts"][0]["interpretation"] = "G0 passed"
     with pytest.raises(ValueError, match="complete pinned inventory"):
         AUDITOR.verify(ROOT, data)
+
+
+@pytest.mark.parametrize("mutation", ["authorization", "facts", "nested", "identical"])
+def test_rejects_duplicate_json_keys_before_source_access(tmp_path, mutation):
+    raw = (ROOT / AUDITOR.PROTOCOL).read_text()
+    if mutation == "authorization":
+        raw = '{"runtime_execution_authorized":true,' + raw[1:]
+    elif mutation == "facts":
+        raw = '{"facts":[],' + raw[1:]
+    elif mutation == "nested":
+        raw = raw.replace('"required_tokens": [', '"required_tokens": [], "required_tokens": [', 1)
+    else:
+        raw = '{"schema":1,' + raw[1:]
+    path = tmp_path / AUDITOR.PROTOCOL
+    path.parent.mkdir(parents=True)
+    path.write_text(raw)
+    # Source files are deliberately absent: malformed contract must reject first.
+    with pytest.raises(ValueError, match="duplicate JSON key"):
+        AUDITOR.verify(tmp_path)
+
+
+def test_rejects_nonfinite_json_before_hashing(tmp_path):
+    path = tmp_path / AUDITOR.PROTOCOL
+    path.parent.mkdir(parents=True)
+    path.write_text('{"unknown":NaN}')
+    with pytest.raises(ValueError, match="nonfinite JSON constant"):
+        AUDITOR.verify(tmp_path)
