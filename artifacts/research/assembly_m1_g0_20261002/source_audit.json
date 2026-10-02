@@ -1,0 +1,125 @@
+{
+  "blockers": {
+    "checkpoint_loses_reference_topology": "Do not treat native checkpoint bytes/hash equality as complete heap/alias equivalence.",
+    "facade_lock_and_global_registry": "Define exclusive serial access and an explicit synchronization-resource inventory; do not deepcopy, omit or pretend to restore a lock.",
+    "joint_commit_and_rollback_unverified": "No real joined owner/candidate/receipt transaction has been tested.",
+    "producer_oracle_missing_m1_types": "Add exact source-bound support for M1, nested runtime, RNG, counters and observed containers before any live clone. Unknown fields remain rejection."
+  },
+  "classification": "SOURCE_ONLY_NONCANONICAL_NON_EVIDENTIARY",
+  "facts": [
+    {
+      "end_line": 450,
+      "id": "m1-observe-transaction",
+      "interpretation": "Real observe snapshots and restores its existing components; it does not include v0.5 or an adapter.",
+      "path": "src/sparkbrain/system_build/integrated_m1.py",
+      "start_line": 391,
+      "symbol": "IntegratedM1Pilot.observe"
+    },
+    {
+      "end_line": 526,
+      "id": "m1-outcome-transaction",
+      "interpretation": "Outcome faults can occur after predictive revision; existing rollback is component reconstruction.",
+      "path": "src/sparkbrain/system_build/integrated_m1.py",
+      "start_line": 452,
+      "symbol": "IntegratedM1Pilot.apply_outcome"
+    },
+    {
+      "end_line": 389,
+      "id": "m1-restore-replaces",
+      "interpretation": "Internal M1 rollback can replace object graphs, so retained references need an explicit policy.",
+      "path": "src/sparkbrain/system_build/integrated_m1.py",
+      "start_line": 380,
+      "symbol": "IntegratedM1Pilot._restore_components"
+    },
+    {
+      "end_line": 105,
+      "id": "facade-lock",
+      "interpretation": "The real facade owns a synchronization handle, not an ordinary copied state field.",
+      "path": "src/sparkbrain/v032/runtime.py",
+      "start_line": 94,
+      "symbol": "IntegratedV032Brain.__init__"
+    },
+    {
+      "end_line": 28,
+      "id": "global-lock-registry",
+      "interpretation": "Lock ownership reaches a module-global weak registry outside a producer-only graph.",
+      "path": "src/sparkbrain/v032/runtime.py",
+      "start_line": 22,
+      "symbol": "_shared_step_lock"
+    },
+    {
+      "end_line": 297,
+      "id": "reference-rng",
+      "interpretation": "The nested reference runtime owns RNG and retained state omitted by a v0.5-only class registry.",
+      "path": "src/sparkbrain/v03/runtime.py",
+      "start_line": 256,
+      "symbol": "IntegratedV03Brain._initialize_runtime"
+    },
+    {
+      "end_line": 229,
+      "id": "checkpoint-tree-encoding",
+      "interpretation": "Encoding uses a recursion stack and canonicalized mappings, not an alias-preserving reference-node table.",
+      "path": "src/sparkbrain/v032/checkpoint.py",
+      "start_line": 146,
+      "symbol": "_encode"
+    },
+    {
+      "end_line": 312,
+      "id": "checkpoint-tree-decoding",
+      "interpretation": "Mapping reconstruction alone is not proof of original concrete mapping type, order or aliases.",
+      "path": "src/sparkbrain/v032/checkpoint.py",
+      "start_line": 232,
+      "symbol": "_decode"
+    },
+    {
+      "end_line": 468,
+      "id": "producer-exact-type-oracle",
+      "interpretation": "The existing producer oracle correctly fails closed on unsupported types/fields; it must not be weakened by omission.",
+      "path": "scripts/v05_acquired_ownership_probe.py",
+      "start_line": 387,
+      "symbol": "GraphAudit.inspect"
+    },
+    {
+      "end_line": 274,
+      "id": "m1-default-components",
+      "interpretation": "The default real M1 uses the source-bound predictive wrapper and scope pilot.",
+      "path": "src/sparkbrain/system_build/integrated_m1.py",
+      "start_line": 261,
+      "symbol": "IntegratedM1Pilot.__init__"
+    },
+    {
+      "end_line": 203,
+      "id": "predictive-reference-facade",
+      "interpretation": "The predictive wrapper owns the real v0.3.2 facade rather than an unspecified reference object.",
+      "path": "src/sparkbrain/system_build/predictive_revision.py",
+      "start_line": 187,
+      "symbol": "PredictiveRevisionPilot.__init__"
+    },
+    {
+      "end_line": 615,
+      "id": "predictive-save-route",
+      "interpretation": "Predictive checkpoint save reaches the direct reference-brain tree serializer.",
+      "path": "src/sparkbrain/system_build/predictive_revision.py",
+      "start_line": 600,
+      "symbol": "PilotCheckpointManager.save"
+    },
+    {
+      "end_line": 635,
+      "id": "predictive-load-route",
+      "interpretation": "Predictive checkpoint load reconstructs and requires the v0.3.2 facade.",
+      "path": "src/sparkbrain/system_build/predictive_revision.py",
+      "start_line": 618,
+      "symbol": "PilotCheckpointManager.load"
+    }
+  ],
+  "file_count": 158,
+  "g0_status": "BLOCKED_SOURCE_CONTRACT_GAP",
+  "limitations": "Hashes, AST ranges and literal source tokens are inspected. The commit ID is declared provenance; this auditor does not query Git. This is not a whole-program proof, runtime graph inventory, checkpoint certificate or G0 pass.",
+  "real_dynamics_calls_by_this_auditor": 0,
+  "real_model_constructions_by_this_auditor": 0,
+  "real_model_imports_by_this_auditor": 0,
+  "runtime_execution_authorized": false,
+  "scientific_credit": 0,
+  "source_binding_verified": true,
+  "source_commit": "2682b895435f79c9723934e2c116e440719304d8"
+}
