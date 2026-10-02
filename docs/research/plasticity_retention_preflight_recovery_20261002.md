@@ -54,15 +54,15 @@ both absolute and equivalent relative paths and require identical bindings with
 model admission disabled. Changing a command-line flag alone is insufficient.
 
 The new identity is `plasticity-retention-v4-20261002`, with output root
-`/workspace/shared/plasticity-retention-run-v4-20261002` and `freeze-v4-r2/`.
+`/workspace/shared/plasticity-retention-run-v4-20261002` and `freeze-v4-r3/`.
 It requires fresh exact-source review, source publication and execution approval;
 the original three authority records cannot authorize this identity. The original
 attempt admitted 0 pairs and the prospective attempt has a maximum of 768, so the
 combined model allocation remains 768. The runner independently pins the prior
 failure bytes and records this boundary in its new manifest and terminal.
 
-The current source-only v4-r2 manifest SHA-256 is
-`05165533ee6e1c5fda7fedcfc4a7c932659c7c095405041be245531490d37ed5`.
+The current source-only v4-r3 manifest SHA-256 is
+`7ecbf934df4ee25f65f196c732bfadcd1497a6a8a3ac8ff28193085b0facf1f3`.
 It pins 198 source files and the unchanged 918-file interpreter/dependency
 inventory, whose SHA-256 remains
 `4415be4c41f48275151ce266f517d75765d66f8b6b2e53a500ca335ae4aaff48`.
@@ -75,6 +75,15 @@ could make the unrelated fixture fail. Revision 2 changes only that fixture line
 and the runner's default freeze location; it changes no experiment behavior,
 output identity, allocation, inputs or scientific parameters. This prospective
 source revision is not another execution attempt.
+
+Revision 2 remains retained with SHA-256
+`05165533ee6e1c5fda7fedcfc4a7c932659c7c095405041be245531490d37ed5`.
+Review identified that the completed-run auditor did not check the new terminal
+attempt/accounting fields. Revision 3 binds both fields to the independently
+pinned freeze, requires exact string/integer types, and returns the audited
+accounting values. Ten synthetic corruption cases cover deletion, replacement,
+and false/float/string aliases. This changes data auditing only; no runtime,
+input, parameter, allocation or scientific margin changes.
 
 The [protocol](plasticity_retention_protocol_20261001.md), input bytes, labels,
 jobs, seeds, C/L/G/Fw/H/R definitions, margins and resource limits are unchanged.
@@ -100,7 +109,7 @@ python -S -P -B scripts/prepare_plasticity_retention_inputs.py --check
 PYTHONHASHSEED=0 python -S -P -B scripts/run_plasticity_retention.py check-freeze
 ```
 
-All 324 focused tests pass with Python 3.12.14, along with repository-wide Ruff,
+All 334 focused tests pass with Python 3.12.14, along with repository-wide Ruff,
 the unchanged preparation check, preservation verifier and freeze readback.
 Pytest/Ruff use the existing development virtual environment; freeze commands use
 the pinned base interpreter with `-S -P -B`. The broader model-running local

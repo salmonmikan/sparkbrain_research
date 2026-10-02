@@ -624,6 +624,25 @@ def verify(
     )
     require(not any(p.is_symlink() for p in output.rglob("*")), "retained output symlink")
     terminal, gate = read(output / "result.json"), read(output / "execution-gate.json")
+    attempt = frozen.get("attempt_id")
+    prior_pairs = frozen.get("previous_attempt", {}).get("audited_model_pairs")
+    allocation = frozen.get("combined_model_allocation_ceiling")
+    require(
+        type(attempt) is str
+        and bool(attempt)
+        and type(prior_pairs) is int
+        and prior_pairs == 0
+        and type(allocation) is int
+        and allocation == 768,
+        "pinned prospective attempt accounting",
+    )
+    require(
+        type(terminal.get("attempt_id")) is str
+        and terminal["attempt_id"] == attempt
+        and type(terminal.get("prior_attempt_audited_model_pairs")) is int
+        and terminal["prior_attempt_audited_model_pairs"] == prior_pairs,
+        "terminal attempt/accounting mismatch",
+    )
     authority_paths, authority_hashes = verify_retained_records(
         output,
         gate,
@@ -946,6 +965,9 @@ def verify(
     )
     return {
         "valid_completion": True,
+        "attempt_id": attempt,
+        "prior_attempt_audited_model_pairs": prior_pairs,
+        "combined_model_allocation_ceiling": allocation,
         "pairs": 768,
         "calls": dict(totals),
         "runtime_model_method_calls_during_audit": 0,
