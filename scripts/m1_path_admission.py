@@ -538,6 +538,7 @@ def _verify_gates(root: Path, freeze: dict, contract: dict) -> None:
                 "derivation_reference",
                 "observed_routes",
                 "unobserved_routes",
+                "profiler_evidence",
             },
         }[name]
         _keys(gate, common | extra, name + " evidence")
@@ -730,6 +731,9 @@ def _verify_gates(root: Path, freeze: dict, contract: dict) -> None:
         totals == census["observed_eligibility_per_type"],
         "route counts do not equal complete observed eligibility census",
     )
+    from scripts.m1_path_census_evidence import validate_census_evidence
+
+    validate_census_evidence(root, freeze, contract, census)
 
 
 def verify_preparation(root: Path, freeze_relative: str, *, check_environment: bool = True) -> dict:
@@ -752,6 +756,7 @@ def verify_preparation(root: Path, freeze_relative: str, *, check_environment: b
         "scripts/m1_path_pilot.py",
         "scripts/m1_path_inputs.py",
         "scripts/m1_path_census.py",
+        "scripts/m1_path_census_evidence.py",
         "scripts/verify_m1_path_source.py",
         "scripts/g0_joint_ownership.py",
         "scripts/verify_g0_joint_source_contract.py",

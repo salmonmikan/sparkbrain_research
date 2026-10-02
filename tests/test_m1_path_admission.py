@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import ast
 import builtins
 import copy
 import hashlib
@@ -9,6 +10,7 @@ import os
 import random
 import subprocess
 import sys
+import sysconfig
 import threading
 import types
 from pathlib import Path
@@ -246,44 +248,8 @@ def gate_fixture(root):
     terminal = write_json(
         root, "terminal.json", {"identity": "assembly-m1-g0-v1-20261002", "status": "SUCCESS"}
     )
-    contract = {
-        "runtime_sources_sha256": {"src/sparkbrain/example.py": SHA},
-        "files": {"src/sparkbrain/example.py": {"classes": {"Example": {}}}},
-        "allocation_type_sources": {
-            "sparkbrain.example:Example": {
-                "path": "src/sparkbrain/example.py",
-                "sha256": SHA,
-                "witness": {},
-            },
-            "sparkbrain.example:InheritedOnly": {
-                "path": "src/sparkbrain/example.py",
-                "sha256": SHA,
-                "witness": {},
-            },
-            "sparkbrain.v032.contracts:SensoryChannelDecision": {
-                "path": "src/sparkbrain/v032/contracts.py",
-                "sha256": SHA,
-                "witness": {},
-            },
-            "sparkbrain.v032.contracts:V032StepResult": {
-                "path": "src/sparkbrain/v032/contracts.py",
-                "sha256": SHA,
-                "witness": {},
-            },
-        },
-        "excluded_constructor_types": ["sparkbrain.example:InheritedOnly"],
-        "import_enum_initializations": {
-            "sparkbrain.model:SparkKind": 7,
-            "sparkbrain.model:EventKind": 5,
-            "sparkbrain.v03_seed.revision:TransitionKind": 4,
-        },
-    }
-    for name in contract["import_enum_initializations"]:
-        contract["allocation_type_sources"][name] = {
-            "path": "src/" + name.split(":")[0].replace(".", "/") + ".py",
-            "sha256": SHA,
-            "witness": {},
-        }
+    contract = source_shaped_census_contract(root, value)
+    old_runtime = {**contract["runtime_sources_sha256"], "src/sparkbrain/example.py": "b" * 64}
     per_type = {
         name: {"init": 0, "shell": 0}
         for name in set(contract["allocation_type_sources"])
@@ -301,12 +267,12 @@ def gate_fixture(root):
     gates = {
         "g0": {
             "status": "SUCCESS",
-            "runtime_sources_sha256": {"src/sparkbrain/example.py": "b" * 64},
+            "runtime_sources_sha256": old_runtime,
             "terminal": terminal,
         },
         "source_delta_reconciliation": {
             "status": "RECONCILED",
-            "from_runtime_sources_sha256": {"src/sparkbrain/example.py": "b" * 64},
+            "from_runtime_sources_sha256": old_runtime,
             "to_runtime_sources_sha256": contract["runtime_sources_sha256"],
             "changed_paths": ["src/sparkbrain/example.py"],
             "g0_evidence_sha256": None,
@@ -356,6 +322,8 @@ def gate_fixture(root):
     for name, gate in gates.items():
         gate.update(common)
         gate["schema"] = "m1-path-" + name.replace("_", "-") + "-v1"
+        if name == "constructor_census":
+            refresh_profiler_evidence(root, value, gate)
         if name == "source_delta_reconciliation":
             gate["g0_evidence_sha256"] = value["gates"]["g0"]["sha256"]
         value["gates"][name] = write_json(root, name + ".json", gate)
@@ -378,8 +346,12 @@ def set_synthetic_observed_count(census, name, kind, count):
         census["observed_routes"].append(
             {
                 "type": name,
-                "path": "synthetic/census.py",
-                "qualname": "synthetic_route",
+                "path": (
+                    "src/sparkbrain/example.py"
+                    if kind == "init"
+                    else "scripts/g0_joint_ownership.py"
+                ),
+                "qualname": ("Example.__init__" if kind == "init" else "_construct"),
                 "kind": kind,
                 "count": count,
             }
@@ -416,6 +388,7 @@ def test_observed_count_equal_to_prospective_type_cap_is_accepted(tmp_path, kind
     name = "sparkbrain.example:Example"
     set_synthetic_observed_count(census, name, kind, count)
     census["prospective_type_caps"][name][kind] = count
+    refresh_profiler_evidence(tmp_path, value, census)
     value["gates"]["constructor_census"] = write_json(tmp_path, "constructor_census.json", census)
     admission._verify_gates(tmp_path, value, contract)
     assert admission.APPROVED_FREEZE_SHA256 is None
@@ -609,8 +582,9 @@ def test_binder_rejects_incomplete_duplicate_or_changed_classes(tmp_path, monkey
         admission.bind_source_registry(permit, classes)
 
 
-@pytest.mark.skipif(sys.version_info >= (3, 14),
-                    reason="research admission supports CPython 3.11–3.13")
+@pytest.mark.skipif(
+    sys.version_info >= (3, 14), reason="research admission supports CPython 3.11–3.13"
+)
 def test_unknown_import_root_never_scans_private_tree(tmp_path, monkeypatch):
     admission.sysconfig.get_paths()  # Resolve interpreter metadata before isolating sys.path.
     monkeypatch.setattr(sys, "path", [str(tmp_path / "private")])
@@ -724,3 +698,502 @@ def test_actual_unreviewed_interpreter_rejected_before_environment_scan(monkeypa
         patch.setattr(admission.sys, "version_info", (3, 14, 0))
         with pytest.raises(admission.AdmissionError, match="CPython 3.11 through 3.13"):
             admission.environment_snapshot(ROOT)
+
+
+def source_shaped_census_contract(root, value):
+    from scripts.verify_g0_joint_source_contract import class_spec
+
+    sources = {
+        "src/sparkbrain/example.py": """
+class Example:
+    def __init__(self):
+        self.value = 1
+class InheritedOnly(ValueError):
+    pass
+""",
+        "src/sparkbrain/v032/contracts.py": """
+from dataclasses import dataclass
+@dataclass
+class SensoryChannelDecision:
+    value: int = 1
+@dataclass
+class V032StepResult:
+    value: int = 1
+""",
+        "src/sparkbrain/model.py": "from enum import StrEnum\n"
+        + "\n".join(
+            "class "
+            + name
+            + "(StrEnum):\n"
+            + "\n".join(f'    MEMBER_{index} = "member-{index}"' for index in range(count))
+            for name, count in (("SparkKind", 7), ("EventKind", 5))
+        ),
+        "src/sparkbrain/v03_seed/revision.py": "from enum import StrEnum\n"
+        "class TransitionKind(StrEnum):\n"
+        + "\n".join(f'    MEMBER_{i} = "member-{i}"' for i in range(4)),
+        "src/sparkbrain/v03/runtime.py": """
+class IntegratedV03Brain:
+    def __init__(self):
+        self.value = 1
+    def _initialize_runtime(self):
+        return None
+""",
+        "src/sparkbrain/v032/runtime.py": """
+class IntegratedV032Brain:
+    def __init__(self):
+        self.value = 1
+def _shared_step_lock():
+    return None
+""",
+        "src/sparkbrain/v05/topology.py": "def layered_reservoir_topology():\n    return None\n",
+        "src/sparkbrain/v032/checkpoint.py": """
+_BRAIN = "sparkbrain.v03.runtime:IntegratedV03Brain"
+_CLASSES = frozenset({_BRAIN, "sparkbrain.example:Example",
+                     "sparkbrain.v032.contracts:SensoryChannelDecision"})
+_OBJECT_ATTRS = {"sparkbrain.example:Example": frozenset({"value"})}
+def _decode(node):
+    return node
+class DirectCheckpointManager:
+    @staticmethod
+    def _load_bytes(raw):
+        return raw
+""",
+        "scripts/g0_joint_ownership.py": "def _construct(value):\n    return value\n",
+        "scripts/m1_path_census.py": (ROOT / "scripts/m1_path_census.py").read_text(),
+    }
+    runtime, preparation, allocations, graph = {}, {}, {}, {}
+    for path, text in sources.items():
+        file = root / path
+        file.parent.mkdir(parents=True, exist_ok=True)
+        file.write_text(text)
+        sha = admission.digest(file.read_bytes())
+        (runtime if path.startswith("src/") else preparation)[path] = sha
+        if not path.startswith("src/"):
+            continue
+        for node in ast.parse(text).body:
+            if isinstance(node, ast.ClassDef):
+                name = path[4:-3].replace("/", ".") + ":" + node.name
+                allocations[name] = {"path": path, "sha256": sha, "witness": class_spec(node)}
+                if node.name in {"Example", "IntegratedV03Brain", "IntegratedV032Brain"}:
+                    graph.setdefault(path, {"sha256": sha, "classes": {}})["classes"][node.name] = (
+                        class_spec(node)
+                    )
+    value["source_files_sha256"].update({**runtime, **preparation})
+    return {
+        "runtime_sources_sha256": runtime,
+        "preparation_sources_sha256": preparation,
+        "files": graph,
+        "allocation_type_sources": allocations,
+        "excluded_constructor_types": ["sparkbrain.example:InheritedOnly"],
+        "import_enum_initializations": {
+            "sparkbrain.model:SparkKind": 7,
+            "sparkbrain.model:EventKind": 5,
+            "sparkbrain.v03_seed.revision:TransitionKind": 4,
+        },
+    }
+
+
+def refresh_profiler_evidence(root, value, census, *, events=None, snapshot=None):
+    """Package source-shaped synthetic records; never represent them as native observations."""
+    from scripts.m1_path_census_evidence import RESOURCE_ROUTES, RESOURCE_TYPES
+
+    caps = dict.fromkeys(RESOURCE_ROUTES, 0)
+    if events is None:
+        events = []
+        type_counts = {
+            name: {"init": 0, "shell": 0} for name in census["observed_eligibility_per_type"]
+        }
+        births = 0
+
+        def event(kind, **details):
+            events.append({"sequence": len(events) + 1, "kind": kind, "thread": 17, **details})
+
+        for row in census["observed_routes"]:
+            name, kind, route = row["type"], row["kind"], [row["path"], row["qualname"]]
+            resource = next(
+                (
+                    key
+                    for key, pair in RESOURCE_TYPES.items()
+                    if pair == (name, kind) and tuple(route) in RESOURCE_ROUTES[key]
+                ),
+                None,
+            )
+            for _ in range(row["count"]):
+                if resource:
+                    caps[resource] += 1
+                    event("call_attempt", name=resource, route=route, count=caps[resource])
+                type_counts[name][kind] += 1
+                event(
+                    "type_attempt",
+                    type=name,
+                    allocation=kind,
+                    route=route,
+                    count=type_counts[name][kind],
+                )
+                if resource:
+                    event("call_return", name=resource)
+                births += 1
+                event(
+                    "type_birth",
+                    type=name,
+                    allocation=kind,
+                    route=route,
+                    birth=births,
+                    runtime_id=123,
+                )  # Deliberate legal address reuse.
+        snapshot = {
+            "call_attempts": caps,
+            "call_returns": caps,
+            "types": {
+                name: {**row, "init_return": row["init"], "shell_return": row["shell"]}
+                for name, row in type_counts.items()
+            },
+            "pending_calls": 0,
+            "pending_shells": 0,
+            "failure": None,
+            "events": events,
+        }
+    else:
+        caps = dict(snapshot["call_attempts"])
+    event_bindings = [
+        write_json(root, f"profile/census-{i:07d}.json", row) for i, row in enumerate(events, 1)
+    ]
+    snapshot_binding = write_json(root, "profile/snapshot.json", snapshot)
+    terminal = {
+        "schema": "m1-path-passive-census-terminal-v1",
+        "status": "SUCCESS",
+        "source_contract_sha256": value["source_contract"]["sha256"],
+        "snapshot": snapshot_binding,
+        "events": event_bindings,
+        "event_count": len(events),
+        "final_sequence": len(events),
+        "closed": True,
+        "pending_calls": 0,
+        "pending_shells": 0,
+        "failure": None,
+    }
+    terminal_binding = write_json(root, "profile/terminal.json", terminal)
+    stdlib = Path(sysconfig.get_path("stdlib"))
+    stdlib_sources = {
+        name: {"path": str(stdlib / name), "sha256": admission.digest((stdlib / name).read_bytes())}
+        for name in ("enum.py", "random.py", "threading.py", "dataclasses.py", "tempfile.py")
+    }
+    census["profiler_evidence"] = {
+        "schema": "m1-path-passive-census-evidence-v1",
+        "census_implementation": {
+            "path": "scripts/m1_path_census.py",
+            "sha256": value["source_files_sha256"]["scripts/m1_path_census.py"],
+        },
+        "stdlib_sources": stdlib_sources,
+        "call_targets": {},
+        "call_caps": caps,
+        "events": event_bindings,
+        "snapshot": snapshot_binding,
+        "terminal": terminal_binding,
+    }
+    census["raw_evidence"] = [*event_bindings, snapshot_binding, terminal_binding]
+
+
+def replace_observed_route(census, name, kind, path, qualname, count=1):
+    set_synthetic_observed_count(census, name, kind, count)
+    for row in census["observed_routes"]:
+        if (row["type"], row["kind"]) == (name, kind):
+            row.update(path=path, qualname=qualname)
+    census["prospective_type_caps"][name][kind] = count
+
+
+def save_census(root, value, census):
+    value["gates"]["constructor_census"] = write_json(root, "constructor_census.json", census)
+
+
+@pytest.mark.parametrize(
+    "name,kind,path,qualname",
+    [
+        ("sparkbrain.example:Example", "init", "src/sparkbrain/example.py", "Example.__init__"),
+        (
+            "sparkbrain.v032.contracts:SensoryChannelDecision",
+            "init",
+            "src/sparkbrain/v032/contracts.py",
+            "SensoryChannelDecision.__init__[dataclass-generated]",
+        ),
+        ("sparkbrain.example:Example", "shell", "scripts/g0_joint_ownership.py", "_construct"),
+        ("sparkbrain.example:Example", "shell", "src/sparkbrain/v032/checkpoint.py", "_decode"),
+        (
+            "sparkbrain.v032.contracts:SensoryChannelDecision",
+            "shell",
+            "src/sparkbrain/v032/checkpoint.py",
+            "_decode",
+        ),
+        (
+            "sparkbrain.v03.runtime:IntegratedV03Brain",
+            "shell",
+            "src/sparkbrain/v032/checkpoint.py",
+            "DirectCheckpointManager._load_bytes",
+        ),
+        ("random:Random", "init", "scripts/g0_joint_ownership.py", "_construct"),
+        ("random:Random", "init", "src/sparkbrain/v032/checkpoint.py", "_decode"),
+        (
+            "random:Random",
+            "init",
+            "src/sparkbrain/v03/runtime.py",
+            "IntegratedV03Brain._initialize_runtime",
+        ),
+        ("random:Random", "init", "src/sparkbrain/v05/topology.py", "layered_reservoir_topology"),
+        ("_thread:RLock", "init", "src/sparkbrain/v032/runtime.py", "_shared_step_lock"),
+        ("_thread:lock", "shell", "src/sparkbrain/v032/runtime.py", "<module>"),
+    ],
+)
+def test_raw_census_accepts_exact_supported_source_routes(tmp_path, name, kind, path, qualname):
+    value, contract, gates = gate_fixture(tmp_path)
+    census = gates["constructor_census"]
+    replace_observed_route(census, name, kind, path, qualname)
+    refresh_profiler_evidence(tmp_path, value, census)
+    save_census(tmp_path, value, census)
+    admission._verify_gates(tmp_path, value, contract)
+
+
+@pytest.mark.parametrize(
+    "name,kind,path,qualname",
+    [
+        (
+            "sparkbrain.v032.contracts:V032StepResult",
+            "init",
+            "src/sparkbrain/example.py",
+            "Example.__init__",
+        ),
+        ("sparkbrain.example:Example", "shell", "src/sparkbrain/example.py", "Example.__init__"),
+        (
+            "sparkbrain.example:Example",
+            "init",
+            "src/sparkbrain/v05/topology.py",
+            "layered_reservoir_topology",
+        ),
+        ("sparkbrain.example:Example", "init", "synthetic/census.py", "fabricated"),
+        ("sparkbrain.example:Example", "init", "src/sparkbrain/example.py", "Missing.__init__"),
+        (
+            "sparkbrain.example:Example",
+            "init",
+            "src/sparkbrain/example.py",
+            "Example.__init__[dataclass-generated]",
+        ),
+        (
+            "sparkbrain.v03.runtime:IntegratedV03Brain",
+            "shell",
+            "src/sparkbrain/v032/checkpoint.py",
+            "_decode",
+        ),
+        (
+            "sparkbrain.v032.runtime:IntegratedV032Brain",
+            "shell",
+            "scripts/g0_joint_ownership.py",
+            "_construct",
+        ),
+        (
+            "sparkbrain.v032.contracts:V032StepResult",
+            "shell",
+            "src/sparkbrain/v032/checkpoint.py",
+            "_decode",
+        ),
+        ("random:Random", "shell", "scripts/g0_joint_ownership.py", "_construct"),
+    ],
+)
+def test_fabricated_route_totals_cannot_attest_unsupported_sources(
+    tmp_path, name, kind, path, qualname
+):
+    value, contract, gates = gate_fixture(tmp_path)
+    census = gates["constructor_census"]
+    replace_observed_route(census, name, kind, path, qualname)
+    refresh_profiler_evidence(tmp_path, value, census)
+    save_census(tmp_path, value, census)
+    with pytest.raises(admission.AdmissionError, match="outside exact source support"):
+        admission._verify_gates(tmp_path, value, contract)
+
+
+def read_profile(root, census):
+    profile = census["profiler_evidence"]
+    snapshot = admission.parse_json((root / profile["snapshot"]["path"]).read_bytes())
+    return copy.deepcopy(snapshot["events"]), snapshot
+
+
+@pytest.mark.parametrize(
+    "change",
+    [
+        "sequence_gap",
+        "sequence_duplicate",
+        "cumulative_count",
+        "birth_without_attempt",
+        "birth_sequence",
+        "unexpected_field",
+        "exception",
+        "unknown_kind",
+        "wrong_thread",
+        "missing_tail",
+        "snapshot_pending",
+        "snapshot_failure",
+        "snapshot_totals",
+        "raw_summary_route",
+        "resource_ancillary",
+        "unbound_ancillary",
+        "terminal_pending",
+    ],
+)
+def test_raw_profiler_event_and_terminal_integrity_fail_closed(tmp_path, change):
+    value, contract, gates = gate_fixture(tmp_path)
+    census = gates["constructor_census"]
+    events, snapshot = read_profile(tmp_path, census)
+    if change == "sequence_gap":
+        events[0]["sequence"] = 2
+    elif change == "sequence_duplicate":
+        events[1]["sequence"] = 1
+    elif change == "cumulative_count":
+        events[0]["count"] = 2
+    elif change == "birth_without_attempt":
+        events[0] = {**events[1], "sequence": 1}
+    elif change == "birth_sequence":
+        events[1]["birth"] = 2
+    elif change == "unexpected_field":
+        events[0]["unexpected"] = True
+    elif change == "exception":
+        events[0] = {"sequence": 1, "thread": 17, "kind": "init_exception", "name": "Example"}
+    elif change == "unknown_kind":
+        events[0]["kind"] = "made_up"
+    elif change == "wrong_thread":
+        events[1]["thread"] = 18
+    elif change == "missing_tail":
+        events.pop()
+    elif change == "snapshot_pending":
+        snapshot["pending_calls"] = 1
+    elif change == "snapshot_failure":
+        snapshot["failure"] = "poisoned"
+    elif change == "snapshot_totals":
+        snapshot["types"]["sparkbrain.example:Example"]["init_return"] = 0
+    elif change == "raw_summary_route":
+        events[0]["route"] = events[1]["route"] = ["scripts/g0_joint_ownership.py", "_construct"]
+        events[0]["allocation"] = events[1]["allocation"] = "shell"
+        snapshot["types"]["sparkbrain.example:Example"] = {
+            "init": 0,
+            "shell": 1,
+            "init_return": 0,
+            "shell_return": 1,
+        }
+    elif change in {"resource_ancillary", "unbound_ancillary"}:
+        route = (
+            ["scripts/g0_joint_ownership.py", "_construct"]
+            if change == "resource_ancillary"
+            else ["synthetic/census.py", "unknown"]
+        )
+        events.append(
+            {"sequence": len(events) + 1, "thread": 17, "kind": "ancillary_rng", "route": route}
+        )
+    if change != "missing_tail":
+        snapshot["events"] = events
+    refresh_profiler_evidence(tmp_path, value, census, events=events, snapshot=snapshot)
+    if change == "terminal_pending":
+        profile = census["profiler_evidence"]
+        terminal = admission.parse_json((tmp_path / profile["terminal"]["path"]).read_bytes())
+        terminal["pending_shells"] = 1
+        profile["terminal"] = write_json(tmp_path, "profile/terminal.json", terminal)
+        census["raw_evidence"][-1] = profile["terminal"]
+    save_census(tmp_path, value, census)
+    with pytest.raises(admission.AdmissionError):
+        admission._verify_gates(tmp_path, value, contract)
+
+
+def test_raw_event_hash_and_source_hash_are_both_bound(tmp_path):
+    value, contract, gates = gate_fixture(tmp_path)
+    census = gates["constructor_census"]
+    event = tmp_path / census["profiler_evidence"]["events"][0]["path"]
+    original = event.read_bytes()
+    event.write_bytes(original + b" ")
+    with pytest.raises(admission.AdmissionError, match="bytes differ"):
+        admission._verify_gates(tmp_path, value, contract)
+    event.write_bytes(original)
+    source = tmp_path / "src/sparkbrain/example.py"
+    source.write_text(source.read_text() + "# stale source\n")
+    with pytest.raises(admission.AdmissionError, match="bytes differ"):
+        admission._verify_gates(tmp_path, value, contract)
+
+
+def test_duplicate_or_truncated_event_manifest_cannot_override_terminal(tmp_path):
+    value, contract, gates = gate_fixture(tmp_path)
+    census = gates["constructor_census"]
+    census["profiler_evidence"]["events"].pop()
+    save_census(tmp_path, value, census)
+    with pytest.raises(admission.AdmissionError, match="terminal"):
+        admission._verify_gates(tmp_path, value, contract)
+
+
+@pytest.mark.skipif(sys.version_info >= (3, 14), reason="PassiveCensus supports CPython 3.11–3.13")
+def test_real_passive_census_standin_dataclass_enum_recording_validates(tmp_path, monkeypatch):
+    from scripts.m1_path_census import PassiveCensus, source_functions
+
+    value, contract, gates = gate_fixture(tmp_path)
+    census = gates["constructor_census"]
+    names = census["prospective_type_caps"]
+    names["sparkbrain.v032.contracts:SensoryChannelDecision"]["init"] = 1
+
+    class Budget:
+        def check(self):
+            return {}
+
+        def poison(self, reason):
+            raise AssertionError(reason)
+
+    class Writer:
+        def raw_json(self, name, row):
+            return None
+
+        def raw_bytes(self, name, row):
+            raise AssertionError("no checkpoint/model execution in this fixture")
+
+    modules = {}
+    for name in (
+        "sparkbrain.model",
+        "sparkbrain.v03_seed.revision",
+        "sparkbrain.example",
+        "sparkbrain.v032.contracts",
+    ):
+        module = types.ModuleType(name)
+        monkeypatch.setitem(sys.modules, name, module)
+        modules[name] = module
+    profile = PassiveCensus(
+        tmp_path,
+        targets={},
+        call_caps=dict.fromkeys(("model_rng", "topology_rng", "model_lock", "registry_guard"), 0),
+        type_caps=names,
+        allowed_functions=source_functions(tmp_path, list(contract["runtime_sources_sha256"])),
+        budget=Budget(),
+        writer=Writer(),
+    )
+    profile.install()
+    try:
+        for name, module in modules.items():
+            path = tmp_path / ("src/" + name.replace(".", "/") + ".py")
+            exec(compile(path.read_bytes(), str(path), "exec"), module.__dict__)
+        modules["sparkbrain.example"].Example()
+        modules["sparkbrain.v032.contracts"].SensoryChannelDecision()
+    finally:
+        profile.close()
+    snapshot = profile.snapshot()
+    census["observed_eligibility_per_type"] = {
+        name: {"init": row["init"], "shell": row["shell"]}
+        for name, row in snapshot["types"].items()
+    }
+    from collections import Counter
+
+    routes = Counter(
+        (event["type"], *event["route"], event["allocation"])
+        for event in snapshot["events"]
+        if event["kind"] == "type_attempt"
+    )
+    census["observed_routes"] = [
+        {"type": key[0], "path": key[1], "qualname": key[2], "kind": key[3], "count": count}
+        for key, count in routes.items()
+    ]
+    refresh_profiler_evidence(tmp_path, value, census, events=snapshot["events"], snapshot=snapshot)
+    save_census(tmp_path, value, census)
+    admission._verify_gates(tmp_path, value, contract)
+    assert any(
+        row["qualname"].endswith("[dataclass-generated]") for row in census["observed_routes"]
+    )
+    assert any(row["path"] == "stdlib/enum.py" for row in census["observed_routes"])

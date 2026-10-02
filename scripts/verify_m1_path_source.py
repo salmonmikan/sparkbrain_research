@@ -16,7 +16,7 @@ from scripts.verify_g0_joint_source_contract import (
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT = "artifacts/research/assembly_m1_path_v1_20261002/source_contract.json"
-CONTRACT_SHA256 = "2df5a2384d516b6675dc7bf9125cd5c08f35d9c5454b2688c0de0ddd89260595"
+CONTRACT_SHA256 = "a9f7d5cb19879333b02b3fc8de61127e0bd2399bf033661ef293330669a05301"
 
 
 def digest(path: Path) -> str:

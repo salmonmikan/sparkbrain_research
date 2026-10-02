@@ -1356,3 +1356,10 @@ and data-dependent object shells require explicit accounting beyond facade total
 init/shell count to be no greater than its frozen prospective per-type cap. Exact
 route-total reconciliation alone cannot admit evidence that exceeds that budget.
 Model-free boundary regressions cover equality and single-count overruns.
+
+**Evidence-binding refinement (2026-10-02):** Derive the admission census from bound
+raw profiler events, not self-reported route totals alone. Bind exact source-supported
+constructor/allocation/resource routes, event ordering, the complete snapshot and a
+closed-session terminal manifest. Reconcile attempted allocations separately from
+successful births and call returns. Synthetic source-shaped fixtures validate this
+software boundary without creating native eligibility or execution authority.

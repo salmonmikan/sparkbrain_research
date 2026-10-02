@@ -143,6 +143,13 @@ and checkpoint tree duplication have data-dependent counts. Every exact register
 type must have explicit init/shell caps and an actual census, including failed calls.
 Each observed eligibility count must fit its corresponding frozen prospective
 per-type init/shell cap; internally consistent route totals do not excuse a cap overrun.
+The future census gate must bind the exact profiler implementation, source-derived
+constructor/allocation/resource routes, ordered raw event files, the unmodified
+`PassiveCensus.snapshot()` payload and a closed-session terminal manifest. Admission
+derives attempts and successful births/returns from those raw events and reconciles
+the route, per-type and call summaries. Missing, duplicate, unknown-route, pending or
+failed evidence cannot establish positive eligibility. The prepared pure validator
+and source-shaped fixtures do not supply actual native eligibility evidence.
 Neither 58 facades nor an ordinary `__init__` profiler covers those shells.
 The six prepared native configurations are recreated through explicit dataclass
 constructors; an unreviewed native `copyreg` shell route is rejected before allocation.
