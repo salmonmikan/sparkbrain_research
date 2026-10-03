@@ -162,7 +162,7 @@ class RecoveryTests(unittest.TestCase):
     def test_deadline_interrupts_trickling_read(self):
         started = time.monotonic()
         with self.assertRaisesRegex(recovery.RecoveryError, "deadline"):
-            with recovery.timed_acquisition(started + 0.05):
+            with recovery.timed_restore(started + 0.05):
                 # A read that never returns to the per-chunk deadline check.
                 time.sleep(1)
         self.assertLess(time.monotonic() - started, 0.5)
@@ -427,11 +427,56 @@ class RecoveryTests(unittest.TestCase):
         self.assertNotIn("PIP_INDEX_URL", child)
 
     def test_subprocess_timeout_is_sanitized(self):
-        with patch.object(
-            recovery.subprocess, "run", side_effect=subprocess.TimeoutExpired(["secret"], 1)
-        ):
+        with patch.object(recovery.subprocess, "Popen") as factory:
+            process = factory.return_value
+            process.wait.side_effect = [subprocess.TimeoutExpired(["secret"], 1), 0]
             with self.assertRaisesRegex(recovery.RecoveryError, "deadline"):
                 recovery.run([sys.executable], time.monotonic() + 1)
+            process.kill.assert_called_once()
+
+    def test_outer_deadline_interrupt_terminates_child(self):
+        with patch.object(recovery.subprocess, "Popen") as factory:
+            process = factory.return_value
+            process.wait.side_effect = [recovery.RecoveryError("synthetic deadline"), 0]
+            with self.assertRaisesRegex(recovery.RecoveryError, "synthetic deadline"):
+                recovery.run([sys.executable], time.monotonic() + 1)
+            process.kill.assert_called_once()
+            self.assertEqual(process.wait.call_count, 2)
+
+    @unittest.skipUnless(sys.platform == "linux", "requires elapsed timer")
+    def test_final_identity_check_cannot_overrun_and_emit_ready(self):
+        root = self.synthetic_source()
+        prefix = self.path / "slow-final-validation"
+        original = recovery.source_identity
+        calls = 0
+
+        def delayed_final(source):
+            nonlocal calls
+            calls += 1
+            if calls == 2:
+                time.sleep(1.2)
+            return original(source)
+
+        with patch.object(recovery, "source_identity", side_effect=delayed_final):
+            with self.assertRaisesRegex(recovery.RecoveryError, "deadline"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 1)
+        self.assertEqual(json.loads((prefix / recovery.MARKER).read_text())["status"], "incomplete")
+
+    @unittest.skipUnless(sys.platform == "linux", "requires elapsed timer")
+    def test_initial_identity_check_is_deadline_bounded_before_writes(self):
+        root = self.synthetic_source()
+        prefix = self.path / "slow-preflight"
+        original = recovery.source_identity
+
+        def delayed(source):
+            time.sleep(1.2)
+            return original(source)
+
+        with patch.object(recovery, "source_identity", side_effect=delayed):
+            with self.assertRaisesRegex(recovery.RecoveryError, "deadline"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 1)
+        self.assertFalse(prefix.exists())
+        self.assertFalse((self.path / "cache").exists())
 
 
 if __name__ == "__main__":

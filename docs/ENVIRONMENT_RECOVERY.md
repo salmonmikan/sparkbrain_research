@@ -42,14 +42,19 @@ python -I -B scripts/recover_environment.py --offline \
 python -B -m unittest discover -s tests -p test_environment_recovery.py -v
 ```
 
-The default deadline is 300 seconds (`--seconds 1..900`). Linux acquisition has an
-elapsed timer that interrupts even a trickling response, at most a 15-second socket
+The default deadline is 300 seconds (`--seconds 1..900`). POSIX main-thread restores
+use one elapsed timer across preflight, acquisition, setup and final identity checks.
+It interrupts even a trickling response; requests have at most a 15-second socket
 timeout, and up to three total attempts with 1/2 second backoff for recognized
 transient failures. TLS failures, HTTP permissions, redirects, unknown errors and
 integrity mismatches stop without retry or alternate transport. The existing
 platform proxy and CA are honored; no credential logging, mirror, direct-IP route
 or security/network-setting change is attempted. Failure messages retain safe
 error classes/status codes instead of raw proxy-bearing exception strings.
+Child processes are terminated and reaped if the outer timer interrupts them.
+On platforms without an elapsed signal timer, subprocess timeouts and checks before
+readiness still reject expired work, but cannot interrupt blocked filesystem calls.
+This is a setup deadline, not an OS resource sandbox or real-time guarantee.
 
 Downloads are size/hash checked before atomic cache promotion. Every reused wheel
 is checked again. Corrupt entries and partial downloads remain for diagnosis and

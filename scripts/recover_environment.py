@@ -157,12 +157,16 @@ def network_error(exc: Exception) -> tuple[str, bool]:
 
 
 @contextlib.contextmanager
-def timed_acquisition(deadline: float):
-    """Interrupt even a slow trickling TLS response on the supported Linux tools path."""
+def timed_restore(deadline: float):
+    """Cover acquisition, local validation and setup with one POSIX elapsed timer."""
     def stop(_signum, _frame):
-        raise RecoveryError("recovery deadline exhausted during acquisition")
+        raise RecoveryError("recovery deadline exhausted")
 
     budget = remaining(deadline)
+    if not hasattr(signal, "setitimer"):
+        yield
+        remaining(deadline)
+        return
     old_handler = signal.signal(signal.SIGALRM, stop)
     previous_timer = signal.getitimer(signal.ITIMER_REAL)
     try:
@@ -263,12 +267,21 @@ def child_env() -> dict[str, str]:
 
 
 def run(command: list[str], deadline: float) -> None:
+    process = subprocess.Popen(command, env=child_env())
     try:
-        subprocess.run(command, env=child_env(), check=True, timeout=remaining(deadline))
+        returncode = process.wait(timeout=remaining(deadline))
     except subprocess.TimeoutExpired:
+        process.kill()
+        process.wait()
         raise RecoveryError("offline setup/check deadline exhausted") from None
-    except subprocess.CalledProcessError as exc:
-        raise RecoveryError(f"offline setup/check failed (exit {exc.returncode})") from None
+    except BaseException:
+        # The outer elapsed timer can interrupt wait independently of its timeout.
+        # Never leave an installer running after its supervising restore has stopped.
+        process.kill()
+        process.wait()
+        raise
+    if returncode:
+        raise RecoveryError(f"offline setup/check failed (exit {returncode})")
 
 
 def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, seconds: int) -> dict:
@@ -279,6 +292,12 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
         raise RecoveryError("CPython 3.11+ is required")
     started = time.monotonic()
     deadline = started + seconds
+    with timed_restore(deadline):
+        return _restore(root, prefix, cache, core, offline, started, deadline)
+
+
+def _restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool,
+             started: float, deadline: float) -> dict:
     root, prefix, cache = root.resolve(), prefix.absolute(), cache.absolute()
     if any("\n" in str(p) or "\r" in str(p) for p in (root, prefix, cache)):
         raise RecoveryError("newline in recovery path")
@@ -324,9 +343,8 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
         wheels: dict[str, Path] = {}
         if not core:
             cache.mkdir(parents=True, exist_ok=True)
-            with timed_acquisition(deadline):
-                for package in lock["packages"]:
-                    wheels[package["name"]] = acquire(package, cache, offline, deadline)
+            for package in lock["packages"]:
+                wheels[package["name"]] = acquire(package, cache, offline, deadline)
         # No prefix is allocated until every required download has been verified.
         if previous is not None:
             # pip uninstall cannot remove untracked modules/startup hooks, and an
@@ -354,7 +372,8 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
                  "--force-reinstall",
                  "--only-binary=:all:", "--no-cache-dir", "--disable-pip-version-check",
                  "--find-links", str(cache), "-r", str(requirements)], deadline)
-            run([str(executable), "-I", "-m", "pip", "--isolated", "check"], deadline)
+            run([str(executable), "-I", "-m", "pip", "--isolated",
+                 "--disable-pip-version-check", "--no-cache-dir", "check"], deadline)
         # A plain path file replaces an unpinned editable build. No setuptools hook runs.
         attach = (
             "import pathlib,sys,sysconfig;"
@@ -384,12 +403,14 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
             raise RecoveryError("dependency lock changed during recovery; use a stable lock")
         if runtime_identity() != runtime:
             raise RecoveryError("runtime changed during recovery; preserve it and use a new prefix")
+        remaining(deadline)
         result = {
             "binding": binding, "status": "ready", "source": source_after,
             "elapsed_seconds": round(time.monotonic() - started, 3),
             "reused_prefix": previous is not None, "offline_requested": offline,
             "experiment_execution": False, "scientific_admission": False,
         }
+        remaining(deadline)
         write_json(marker, result)
         return result
     finally:
