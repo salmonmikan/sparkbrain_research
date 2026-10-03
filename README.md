@@ -288,3 +288,9 @@ scaffoldを追加します。release directoryのpublicationはOS nativeのno-cl
 これはengineering development境界です。意味理解、residual superiority、機能的概念・器官形成、
 外部一般化の科学的主張を更新しません。詳細は
 `docs/V032_IMPLEMENTATION_STATUS.md` と `docs/CLAIMS_REGISTER_v0.3_ADDENDUM.md` を参照してください。
+
+### Recover a disposable development environment
+
+See [environment recovery](docs/ENVIRONMENT_RECOVERY.md) for a one-command,
+hash-locked developer-tools setup, offline rebuilds and durable research handoff
+requirements. Restoration does not authorize replay of an experiment.
