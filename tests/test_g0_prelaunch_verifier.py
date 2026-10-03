@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import importlib.util
 import os
 import tempfile
@@ -383,10 +384,11 @@ class MaterializationTests(unittest.TestCase):
             receipt = v.verify_approval_overlay(
                 observation,
                 self.request,
-                self.binding,
+                self.raw,
                 path,
                 v.sha256(raw),
                 v.sha256(v.target_approval_canonical(approval)),
+                externally_trusted_binding_sha256=self.pin,
             )
         self.assertEqual(reads, [path])
         self.assertFalse(receipt["execution_authorized"])
@@ -402,7 +404,13 @@ class MaterializationTests(unittest.TestCase):
         self.put(path, raw)
         with self.assertRaisesRegex(v.Rejected, "canonical approval overlay"):
             v.verify_approval_overlay(
-                observation, self.request, self.binding, path, v.sha256(raw), "0" * 64
+                observation,
+                self.request,
+                self.raw,
+                path,
+                v.sha256(raw),
+                "0" * 64,
+                externally_trusted_binding_sha256=self.pin,
             )
 
     def test_pinned_pyvenv_configuration_validated(self) -> None:
@@ -450,7 +458,13 @@ class MaterializationTests(unittest.TestCase):
         self.put(path, raw)
         with self.assertRaisesRegex(v.Rejected, "canonical approval overlay"):
             v.verify_approval_overlay(
-                observation, self.request, self.binding, path, v.sha256(raw), v.sha256(raw)
+                observation,
+                self.request,
+                self.raw,
+                path,
+                v.sha256(raw),
+                v.sha256(raw),
+                externally_trusted_binding_sha256=self.pin,
             )
 
     def test_exact_runtime_cache_bytes_are_allowed_and_checked(self) -> None:
@@ -529,7 +543,13 @@ class MaterializationTests(unittest.TestCase):
         raw = b'{"fixture":true}'
         self.put(approval, raw, 0o600)
         v.verify_approval_overlay(
-            observation, self.request, self.binding, approval, v.sha256(raw), v.sha256(raw + b"\n")
+            observation,
+            self.request,
+            self.raw,
+            approval,
+            v.sha256(raw),
+            v.sha256(raw + b"\n"),
+            externally_trusted_binding_sha256=self.pin,
         )
         self.binding["source"]["dynamic_data_exceptions"] = [
             {
@@ -555,6 +575,120 @@ class MaterializationTests(unittest.TestCase):
 
     def test_finite_json_float_unchanged(self) -> None:
         self.assertEqual(v.decode_json(b'{"number":1.25}'), {"number": 1.25})
+
+    def synthetic_overlay(self, observation, binding_raw=None, binding_pin=None):
+        approval_path = self.base / "SYNTHETIC-ONLY-overlay-approval.json"
+        approval_raw = b'{"fixture":true}'
+        self.put(approval_path, approval_raw, 0o600)
+        return v.verify_approval_overlay(
+            observation,
+            self.request,
+            self.raw if binding_raw is None else binding_raw,
+            approval_path,
+            v.sha256(approval_raw),
+            v.sha256(approval_raw + b"\n"),
+            externally_trusted_binding_sha256=self.pin if binding_pin is None else binding_pin,
+        )
+
+    def test_overlay_rejects_same_argv_different_binding(self) -> None:
+        observation = self.verify()
+        mutations = [
+            (("bindings", "execution_object_sha256"), "0" * 64),
+            (("bindings", "environment_freeze_sha256"), "0" * 64),
+            (("bindings", "source_inventory_sha256"), "0" * 64),
+            (("bindings", "runtime_origin_commit"), "0" * 40),
+            (("runtime", "import_roots", 1, "files", 0, "sha256"), "0" * 64),
+            (("runtime", "import_roots", 1, "files", 1, "sha256"), "0" * 64),
+            (("runtime", "native_closure_review", "sha256"), "0" * 64),
+            (("runtime", "native_closure_review", "reference"), "DIFFERENT SYNTHETIC REVIEW"),
+            (("source", "files", 0, "sha256"), "0" * 64),
+            (("source", "published_tree"), "0" * 40),
+            (("source", "publication_reference"), "https://example.invalid/different-publication"),
+            (("source", "dynamic_data_exceptions"), [{"different": True}]),
+        ]
+        for path, value in mutations:
+            with self.subTest(path=path):
+                candidate = copy.deepcopy(self.binding)
+                parent = candidate
+                for key in path[:-1]:
+                    parent = parent[key]
+                parent[path[-1]] = value
+                self.assertEqual(v.make_launch_request(candidate), self.request)
+                raw = v.canonical(candidate) + b"\n"
+                with self.assertRaisesRegex(v.Rejected, "raw binding digest differs"):
+                    self.synthetic_overlay(observation, raw)
+                with self.assertRaisesRegex(v.Rejected, "observation authority binding differs"):
+                    self.synthetic_overlay(observation, raw, v.sha256(raw))
+
+    def test_overlay_rejects_raw_whitespace_rebinding(self) -> None:
+        observation = self.verify()
+        raw = self.raw + b" "
+        self.assertEqual(v.decode_json(raw), v.decode_json(self.raw))
+        with self.assertRaisesRegex(v.Rejected, "raw binding digest differs"):
+            self.synthetic_overlay(observation, raw)
+        with self.assertRaisesRegex(v.Rejected, "observation authority binding differs"):
+            self.synthetic_overlay(observation, raw, v.sha256(raw))
+
+    def test_overlay_rejects_unbound_dictionary(self) -> None:
+        with self.assertRaisesRegex(v.Rejected, "requires raw binding bytes"):
+            self.synthetic_overlay(self.verify(), self.binding)
+
+    def test_overlay_rejects_malformed_observation_fields(self) -> None:
+        original = self.verify()
+        mutations = {
+            "schema": "wrong",
+            "status": "authorized",
+            "verifier_version": "old",
+            "published_commit": "0" * 40,
+            "published_tree": "0" * 40,
+            "source_root": str(self.base),
+            "full_tree_inventory_sha256": "0" * 64,
+            "launch_template_sha256": "0" * 64,
+            "identity": "wrong-object",
+            "bindings": {**original["bindings"], "execution_object_sha256": "0" * 64},
+            "native_closure_review": {**original["native_closure_review"], "sha256": "0" * 64},
+            "dynamic_data_exceptions": [{"different": True}],
+            "requires_external_prestart_sequencing": False,
+            "requires_quiescent_source_environment": 1,
+            "execution_authorized": True,
+        }
+        for key, value in mutations.items():
+            with self.subTest(key=key):
+                changed = copy.deepcopy(original)
+                changed[key] = value
+                with self.assertRaisesRegex(v.Rejected, "observation content differs"):
+                    self.synthetic_overlay(changed)
+        for changed in ({}, [], None, {**original, "authority_binding_sha256": "0" * 64}):
+            with self.subTest(changed=type(changed).__name__):
+                with self.assertRaises(v.Rejected):
+                    self.synthetic_overlay(changed)
+        for changed in (
+            {k: val for k, val in original.items() if k != "bindings"},
+            {**original, "extra": True},
+            {**original, "bindings": float("nan")},
+        ):
+            with self.assertRaises(v.Rejected):
+                self.synthetic_overlay(changed)
+
+    def test_overlay_checks_metadata_even_with_matching_template(self) -> None:
+        observation = self.verify()
+        candidate = copy.deepcopy(self.binding)
+        candidate["bindings"]["environment_freeze_sha256"] = "0" * 64
+        raw = v.canonical(candidate) + b"\n"
+        pin = v.sha256(raw)
+        observation["authority_binding_sha256"] = pin
+        self.assertEqual(v.make_launch_request(candidate), self.request)
+        with self.assertRaisesRegex(v.Rejected, "observation content differs"):
+            self.synthetic_overlay(observation, raw, pin)
+
+    def test_overlay_does_not_rescan_or_import_target(self) -> None:
+        observation = self.verify()
+        with mock.patch.object(v, "verify_directory", side_effect=AssertionError("no rescan")):
+            with mock.patch.object(v, "file_record", side_effect=AssertionError("no source read")):
+                receipt = self.synthetic_overlay(observation)
+        self.assertEqual(receipt["authority_binding_sha256"], self.pin)
+        self.assertFalse(receipt["execution_authorized"])
+        self.assertFalse(receipt["target_started"])
 
     def test_runtime_must_have_independent_closure_review(self) -> None:
         self.binding["runtime"]["native_closure_review"]["assertion"] = "self-asserted"

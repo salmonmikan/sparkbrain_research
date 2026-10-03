@@ -14,7 +14,7 @@ source. A final v3 source commit/tree and environment freeze do not yet exist.
 
 - `materialization_verifier.py`: stdlib-only checker and future authority-facing API
 - `published_baseline_inventory.json`: exact **source inventory**, not an attestation
-- `test_materialization_verifier.py`: 48 inert synthetic filesystem tests
+- `test_materialization_verifier.py`: 54 inert synthetic filesystem tests
 - `test_results.txt`: focused test output only
 - `format_validation.json`: lint/AST-change accounting
 - `_prepare_inventory.py`: reproducible read-only baseline-inventory reconstruction
@@ -156,11 +156,18 @@ known system/venv startup hooks and resources are covered by the closed inventor
    can later issue its own proof/approval under the separate execution policy.
    The new observation is **not** a drop-in legacy-v1 attestation or authorization
 4. Only after genuine external approval exists,
-   `verify_approval_overlay(observation, template, binding, approval_path,
-   externally_trusted_raw_sha256, externally_trusted_canonical_sha256)` checks
-   the single exact approval byte buffer, substitutes only the typed hash slots,
+   `verify_approval_overlay(observation, template, binding_raw, approval_path,
+   externally_trusted_raw_sha256, externally_trusted_canonical_sha256,
+   externally_trusted_binding_sha256=...)` first authenticates the exact raw binding
+   bytes against the independently trusted digest, requires that digest to equal
+   `observation.authority_binding_sha256`, and parses that same buffer. It compares
+   the entire observation (including object/source/environment pins, publication
+   identity, full-tree inventory digest, native-closure review and dynamic exceptions)
+   to a projection of the authenticated binding. Only then does it check the single
+   exact approval byte buffer and substitute the typed hash slots,
    and returns a detached `g0-prelaunch-overlay-observation-v3`. This receipt
-   references both the closure observation and approval hashes and final argv.
+   references the authenticated raw binding, closure observation, approval hashes
+   and final argv.
    Its digest is not fed back into the proof or approval. It never executes argv
 
 Approval-object hashing uses `target_approval_canonical`: sorted, compact,
@@ -233,3 +240,24 @@ The standalone test here uses its adjacent checker. All synthetic fixture
 files are created in `tempfile.TemporaryDirectory` under the system's temporary
 directory (honoring a configured validation TMPDIR), never under published source.
 They are cleaned up after each test. No verifier behavior changes are needed.
+
+## Patch 3.0.1: detached overlay cross-association repair
+
+The initial 3.0.0 overlay checked only launch-template agreement, allowing a caller
+to associate an observation for binding A with a bare binding B whose argv happened
+to match while its object/environment/resource metadata differed. Version 3.0.1
+removes the bare-dictionary API: immutable raw binding bytes and an independently
+trusted raw-binding SHA-256 are required. The same buffer is hashed then parsed,
+the observation must carry that identical authority digest, and every observation
+field must match the shared projection used by full verification. Raw whitespace
+rebinding also rejects. The patch additionally records the binding digest in the
+detached receipt and rejects malformed/extra/missing observation fields.
+
+This is a mechanical association repair only. It does not rerun source scans,
+start/import the target, prove unchanged filesystem state after an earlier check,
+validate approval semantics, or authenticate a prior observation's provenance.
+The trusted supervisor must still authenticate the prior observation and external
+binding pin, retain quiescence, and apply all independent proof/approval gates.
+Tests cover same-argv changes to object/environment pins, source and dependency
+inventories, native review, publication metadata and dynamic exceptions, malformed
+observations, exact raw-byte association, and valid LF-canonical approval overlays.

@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-VERSION = "g0-external-materialization-verifier-3.0.0"
+VERSION = "g0-external-materialization-verifier-3.0.1"
 BASELINE_COMMIT = "16dba8f28a88134c57603d4f0c90d2edc39e4e49"
 BASELINE_TREE = "cbb897ed74a1f0b9f40c77e534c794dc82c7a962"
 BASELINE_FILES = 1323
@@ -755,21 +755,28 @@ def verify_final(
         canonical(request) == canonical(make_launch_request(binding)),
         "fixed launch template differs",
     )
+    return _observation_record(binding, externally_trusted_sha256, request)
+
+
+def _observation_record(
+    binding: dict[str, Any], binding_sha256: str, template: dict[str, Any]
+) -> dict[str, Any]:
+    """Pure projection shared by full verification and detached association checks."""
     return {
         "schema": "g0-prelaunch-observation-v3",
         "verifier_version": VERSION,
         "status": "checked-not-authorized",
-        "authority_binding_sha256": externally_trusted_sha256,
+        "authority_binding_sha256": binding_sha256,
         "published_commit": binding["source"]["published_commit"],
         "published_tree": binding["source"]["published_tree"],
-        "source_root": str(root),
-        "full_tree_inventory_sha256": sha256(canonical(source_records)),
-        "launch_template_sha256": sha256(canonical(request)),
-        "bindings": pins,
+        "source_root": binding["source"]["root"],
+        "full_tree_inventory_sha256": sha256(canonical(binding["source"]["files"])),
+        "launch_template_sha256": sha256(canonical(template)),
+        "bindings": binding["bindings"],
         "identity": IDENTITY,
         "requires_external_prestart_sequencing": True,
         "requires_quiescent_source_environment": True,
-        "native_closure_review": review,
+        "native_closure_review": binding["runtime"]["native_closure_review"],
         "dynamic_data_exceptions": binding["source"]["dynamic_data_exceptions"],
         "execution_authorized": False,
     }
@@ -778,27 +785,55 @@ def verify_final(
 def verify_approval_overlay(
     observation: dict[str, Any],
     template: dict[str, Any],
-    binding: dict[str, Any],
+    binding_raw: bytes,
     approval_path: Path,
     externally_trusted_raw_sha256: str,
     externally_trusted_canonical_sha256: str,
+    *,
+    externally_trusted_binding_sha256: str,
 ) -> dict[str, Any]:
     """Detached, non-authorizing receipt. Does not certify approval semantics.
+
+    Authenticate/hash/parse the SAME raw binding buffer and require the complete
+    observation projection, not merely matching argv. The supervisor separately
+    authenticates both the binding digest and the prior observation's provenance.
+    This check does not rescan target/source files or rerun the target.
 
     Independent authority must bind the canonical observation digest in the approval;
     this overlay then references both, without feeding its digest back into either.
     Read/hash/parse the SAME approval byte buffer; never hash then reopen.
     """
+    require(type(binding_raw) is bytes, "overlay requires raw binding bytes")
+    require(len(binding_raw) <= MAX_JSON_BYTES, "JSON input too large")
+    hex_digest(externally_trusted_binding_sha256, 64, "externally trusted binding digest")
     require(
-        observation.get("schema") == "g0-prelaunch-observation-v3"
-        and observation.get("status") == "checked-not-authorized",
-        "invalid closure observation",
+        sha256(binding_raw) == externally_trusted_binding_sha256,
+        "overlay raw binding digest differs",
     )
     require(
-        observation["launch_template_sha256"] == sha256(canonical(template))
-        and canonical(template) == canonical(make_launch_request(binding)),
-        "overlay template differs",
+        type(observation) is dict
+        and observation.get("authority_binding_sha256") == externally_trusted_binding_sha256,
+        "observation authority binding differs",
     )
+    binding = decode_json(binding_raw)
+    try:
+        exact_keys(
+            binding, {"schema", "source", "runtime", "target_arguments", "bindings"}, "binding"
+        )
+        require(binding["schema"] == "g0-external-prelaunch-binding-v3", "binding schema differs")
+        exact_keys(template, {"argv_template", "cwd", "env"}, "fixed launch template")
+        require(
+            canonical(template) == canonical(make_launch_request(binding)),
+            "overlay template differs",
+        )
+        expected = _observation_record(binding, externally_trusted_binding_sha256, template)
+        exact_keys(observation, set(expected), "closure observation")
+        require(
+            canonical(observation) == canonical(expected),
+            "observation content differs from authenticated binding",
+        )
+    except (KeyError, TypeError, ValueError, RecursionError) as exc:
+        raise Rejected(f"invalid overlay association: {exc}") from exc
     absolute(str(approval_path))
     info = regular(approval_path, private_data=True)
     require(info.st_size <= MAX_DYNAMIC_BYTES, "approval overlay exceeds byte bound")
@@ -821,6 +856,7 @@ def verify_approval_overlay(
         "schema": "g0-prelaunch-overlay-observation-v3",
         "execution_authorized": False,
         "closure_observation_sha256": sha256(canonical(observation)),
+        "authority_binding_sha256": externally_trusted_binding_sha256,
         "approval_overlay": overlay,
         "actual_launch_request": actual,
         "actual_launch_request_sha256": sha256(canonical(actual)),

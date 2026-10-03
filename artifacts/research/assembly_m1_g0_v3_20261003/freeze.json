@@ -143,8 +143,8 @@
     "scripts/g0_execution_objects.py": "6200d40d79ee514392d616a5e7d1d08b6024df023231f7e09a0c70f078da9af7",
     "scripts/g0_execution_support.py": "fc7d849f4a3ae88c60e53604243870a6dfbad6793fc9e279bcdc437eb1cb4e65",
     "scripts/g0_joint_ownership.py": "70a607b29773c4318fc43b1206da7afffc3d7c5fc76470889e3c24835db93ecf",
-    "scripts/g0_prelaunch/README.md": "5a4f84575f3eca76685352f58d8c59b46fc460eb9d6ec23cdd9a48ff3b92ebf8",
-    "scripts/g0_prelaunch/materialization_verifier.py": "06d4289e58b07ecda02c81fa1041dfb9f9c4bf83e4b0618b99867e0a2727204d",
+    "scripts/g0_prelaunch/README.md": "4a00f13798b85e53290b1c07eefdcab28d13956b9a764b2ad94ee65118f6e946",
+    "scripts/g0_prelaunch/materialization_verifier.py": "34c603f878644b3fe1ec82c863991d4bccaf3426bd44f8631710bb0ac134a6d6",
     "scripts/g0_prelaunch/published_baseline_inventory.json": "1dbe162e7b015193c9de9f8c25b1363b889feb9e1fb6d7f5b5e28f9289ee343f",
     "scripts/launch_g0_joint_eligibility.py": "5f528b2fe9901b272675a5fe16410d91c9a7292140bbf8e255eef6319bc2d2cf",
     "scripts/launch_g0_v2_eligibility.py": "e29f967c99bffa8f173c0518fb42cca1e13b9854e0d45fe0d4f8bc16b100f45f",
@@ -317,12 +317,14 @@
     "tests/test_g0_joint_launcher.py": "519d21c4b2a5027f027339f121784a83437b5c3206863dfe07c6cd1f7b42ae8f",
     "tests/test_g0_joint_ownership.py": "0b45cb3dadf3424df40c6e99dfd108b47f62eff9098889f3d7916c61dd24f175",
     "tests/test_g0_joint_source_contract.py": "5d5afc2fff99d7a84e5f4ebfd095fbfc8f4c3fe1743be8365779a4d5fd415954",
-    "tests/test_g0_prelaunch_verifier.py": "ba002564d0f9d96c7e5fc3425374471158da203267c4aa205a0712bde544309a",
+    "tests/test_g0_prelaunch_verifier.py": "0512101291834033ab2aee0d7122f96c6cd16dc2628e7bf5eaa923be9f42bea1",
     "tests/test_g0_v2_bindings.py": "e4d49ab068d116a5f1583c1ae87079903664342cdd2b7644fca22bce7f825f33",
     "tests/test_g0_v3_bindings.py": "03a1672b517cbf426215424a1f315d7db6b9a82a071d01c40f2ec109ccd663d4",
     "tests/test_g0_v3_environment.py": "a081248055e8e4547d995746893ef33905782e40001ceda45e37275cf68551a8",
     "tests/test_g0_v3_environment_regressions.py": "a40d364f971c5b7d5a5221d68a649d9ec625457b8ac518e1d27836b4962c95e8"
   },
+  "supersedes_unapproved_freeze_sha256": "3d0c097c28fa5e3013b305d08b0b605a9f4c064582d1a1955c0707b6bffdc007",
   "timeout_executable_sha256": "6ca1891dfc0b05d7680770c2884c0391b92467c7bb6500a5c84677e6481739f1",
-  "timeout_implementation": "GNU coreutils 9.7"
+  "timeout_implementation": "GNU coreutils 9.7",
+  "unapproved_revision_reason": "Codex P2 source-only overlay binding repair: authenticate exact raw closure binding and compare complete observation projection; no model execution, authority, identity reservation or experimental/input/budget/runtime change"
 }
