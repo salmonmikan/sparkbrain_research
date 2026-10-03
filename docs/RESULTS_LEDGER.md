@@ -1385,3 +1385,11 @@ mutation records. This entry changes no prior result, claim grade or role-owned 
   No ownership success, native rollback equivalence or learned benefit is claimed;
   scientific credit 0. Any remediation requires separate prospective review and
   fresh execution authority; this entry changes no previous result or scheduler.
+
+## 2026-10-03 — G0 v3 environment revision: no new scientific result
+
+Source-only preparation for the same bounded fourteen-case ownership question in
+a separately inventoried environment. No native producer/M1 execution or successful
+eligibility is recorded here. Retention v5's failed support conjunction and all
+historical learning-utility limitations remain unchanged. See the
+[prospective revision](research/assembly_m1_g0_v3_proposal_20261003.md).

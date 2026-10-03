@@ -634,3 +634,12 @@ require published-head review/CI, independent full-tree/no-extra-importable pre-
 proof and separately pinned per-object execution approval before any native work.
 No genuine approval, prelaunch proof, execution ledger or reservation is created by
 this preparation. Scientific credit remains 0 and scheduler authority is unchanged.
+
+## 2026-10-03: new-environment G0 v3 preparation
+
+The [new-environment proposal](research/assembly_m1_g0_v3_proposal_20261003.md)
+preserves consumed G0 v1 and the unexecuted historical v2 freeze. It prepares a
+third fixed execution object with the same fourteen cases, inputs and resource
+ceilings, plus complete dependency-resource inventory and new external prelaunch
+verification. It is source preparation, not a G0 pass or learning result. The
+three-observation eligibility and 68-call M1 path pilot remain unexecuted.

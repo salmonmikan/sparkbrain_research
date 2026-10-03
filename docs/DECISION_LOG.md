@@ -1398,3 +1398,13 @@ and trusted startup hooks as an independently verified pre-target-Python prerequ
 under a quiescent-tree assumption. Post-import origin checks do not prove earlier
 startup safety or create a new filesystem/import sandbox. See the
 [prospective proposal](research/assembly_m1_g0_v2_proposal_20261002.md).
+
+## 2026-10-03 — Preserve historical G0 while preparing a new environment revision
+
+The old v2 runtime/source paths were lost; retaining the interpreter binary does
+not restore its environment. Prepare fixed object `assembly-m1-g0-v3-20261003`
+with unchanged v2 cases, literals, runtime contract and budget. Preserve v1
+consumption, all historical evidence and v2 freeze bytes. Add a complete
+resource-file census and independently reimplement the lost external prelaunch
+verifier. No source-only preparation, CI or publication authorizes native work;
+separate exact parent clearance remains required.

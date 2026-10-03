@@ -1,4 +1,4 @@
-"""Two fixed G0 source objects; imports and source checks confer no run authority.
+"""Fixed G0 source objects; imports and source checks confer no run authority.
 
 Tuple-backed descriptors contain only immutable strings. Their digest excludes the
 protocol/freeze/approval and this module's bytes, avoiding every back-edge in the
@@ -57,10 +57,16 @@ G0_V2 = ExecutionObject(
     "61b9025247ff89909e6cf2f2f326f09b1cff050b27c66d3b0dc0ac770cbe9278",
     "d3ad56dce4256634ce62c69acecd1de65fcd9fb7", "scripts/launch_g0_v2_eligibility.py",
 )
+G0_V3 = ExecutionObject(
+    "assembly-m1-g0-v3-20261003", "artifacts/research/assembly_m1_g0_v3_20261003",
+    G0_V2.contract_relative, G0_V2.contract_sha256,
+    G0_V2.runtime_origin_commit, "scripts/launch_g0_v3_eligibility.py",
+)
 
 
 def require_object(object_spec: ExecutionObject) -> ExecutionObject:
-    if object_spec is not HISTORICAL_G0 and object_spec is not G0_V2:
+    if (object_spec is not HISTORICAL_G0 and object_spec is not G0_V2
+            and object_spec is not G0_V3):
         raise ValueError("execution object must be an exact source-defined singleton")
     return object_spec
 

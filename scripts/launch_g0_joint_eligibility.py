@@ -50,7 +50,8 @@ def _module_origin(root: Path, module: Any, relative: str) -> Path:
             or spec.name != relative.removesuffix(".py").replace("/", ".")
             or spec.loader.name != spec.name
             or (vars(module).get("__name__") != spec.name
-                and not (relative in (LAUNCHER_RELATIVE, objects.G0_V2.launcher_relative)
+                and not (relative in (LAUNCHER_RELATIVE, objects.G0_V2.launcher_relative,
+                                        objects.G0_V3.launcher_relative)
                          and vars(module).get("__name__") == "__main__"
                          and sys.modules.get("__main__") is module))):
         raise support.AdmissionError("loaded launch source origin differs from guarded root")
@@ -68,13 +69,15 @@ def _guarded_root(value: str, *,
         raise support.AdmissionError("root differs from its guarded absolute source path")
     core = sys.modules[__name__]
     _module_origin(root, core, LAUNCHER_RELATIVE)
-    if object_spec is objects.G0_V2:
+    if object_spec is not objects.HISTORICAL_G0:
         if entry_module is None:
-            raise support.AdmissionError("fixed v2 wrapper is required")
+            label = "v2" if object_spec is objects.G0_V2 else "successor"
+            raise support.AdmissionError(f"fixed {label} wrapper is required")
         _module_origin(root, entry_module, object_spec.launcher_relative)
         if require_active and (sys.modules.get("__main__") is not entry_module
                                or entry_module.__name__ != "__main__"):
-            raise support.AdmissionError("v2 reviewed launch requires its active fixed wrapper")
+            raise support.AdmissionError(
+                "successor reviewed launch requires its active fixed wrapper")
     elif entry_module is not None and entry_module is not core:
         raise support.AdmissionError("historical launcher entry differs")
     _module_origin(root, objects, "scripts/g0_execution_objects.py")
@@ -106,7 +109,7 @@ def _verify_launch_bindings(
     if (type(inventory) is not dict or inventory.get(launcher_relative) != launcher_hash
             or freeze_relative in inventory or approval_relative in inventory):
         raise support.AdmissionError("launcher missing from non-self-referential frozen inventory")
-    if object_spec is objects.G0_V2 and not {
+    if object_spec is not objects.HISTORICAL_G0 and not {
             LAUNCHER_RELATIVE, "scripts/g0_execution_support.py",
             "scripts/g0_execution_objects.py", "scripts/g0_joint_ownership.py",
             "scripts/verify_g0_joint_source_contract.py"} <= inventory.keys():
