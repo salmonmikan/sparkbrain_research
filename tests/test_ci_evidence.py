@@ -146,6 +146,34 @@ class CiEvidenceTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 MODULE.git_identity(self.root)
 
+    def test_preexisting_output_cannot_signal_collector_success(self) -> None:
+        output, step_output = self.root / "record.json", self.root / "step-output"
+        output.write_text("private-preexisting-bytes", encoding="utf-8")
+        with self.assertRaises(FileExistsError):
+            MODULE.publish_record(self.record(), output, step_output)
+        self.assertEqual(output.read_text(encoding="utf-8"), "private-preexisting-bytes")
+        self.assertFalse(step_output.exists())
+
+    def test_created_success_and_failure_records_have_separate_check_status(self) -> None:
+        for status, expected in (("success", "true"), ("failure", "false")):
+            with self.subTest(status=status):
+                self.steps["tests"] = status
+                output = self.root / f"record-{status}.json"
+                step_output = self.root / f"step-output-{status}"
+                MODULE.publish_record(self.record(), output, step_output)
+                self.assertTrue(output.is_file())
+                self.assertEqual(
+                    step_output.read_text(encoding="utf-8"),
+                    f"configured_checks_passed={expected}\n",
+                )
+
+    def test_output_error_does_not_signal_creation(self) -> None:
+        output, step_output = self.root / "existing-directory", self.root / "step-output"
+        output.mkdir()
+        with self.assertRaises(OSError):
+            MODULE.publish_record(self.record(), output, step_output)
+        self.assertFalse(step_output.exists())
+
 
 if __name__ == "__main__":
     unittest.main()

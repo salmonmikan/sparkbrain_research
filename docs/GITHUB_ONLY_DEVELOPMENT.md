@@ -96,11 +96,16 @@ stdout, local paths, test fixtures, or raw research files. It hashes the known
 validation manifest but does not publish its contents. GitHub context values
 are passed through environment variables, not interpolated into shell source.
 
-Failure or skipped checks produce a record with a false configured-check result
-and make the recording step fail. A pre-existing manifest is not mistaken for
-new evidence when bundle validation was skipped. Both recording and upload use
-`always()`, but a missing checkout/interpreter, a hard termination, or an
-unavailable Actions service may prevent any artifact; absence is never a pass.
+Failure or skipped checks produce a valid negative record with a false
+configured-check result. Collector creation success is separate from that check
+result: upload requires the collector step itself to have succeeded, and a
+separate final step fails the job when the recorded checks did not all pass.
+If an install hook or test pre-created the output file, the exclusive collector
+write fails and upload is skipped; those pre-existing bytes are never published.
+A pre-existing validation manifest is not mistaken for new evidence when bundle
+validation was skipped. Recording is attempted with `always()`, but a missing
+checkout/interpreter, a hard termination, or an unavailable Actions service may
+prevent any artifact; absence is never a pass.
 
 The pinned official `actions/upload-artifact` v4.6.2 commit is
 `ea165f8d65b6e75b540449e92b4886f43607fa02`. The workflow has explicit

@@ -40,6 +40,7 @@ jobs:
         id: validate_bundle
         run: python scripts/validate_bundle.py
       - name: Record configured CI verification
+        id: evidence
         if: always()
         env:
           CI_EVIDENCE_REPOSITORY: ${{ github.repository }}
@@ -59,10 +60,15 @@ jobs:
              "validate_bundle":"${{ steps.validate_bundle.outcome }}"}
         run: python scripts/write_ci_evidence.py --output "$RUNNER_TEMP/ci-evidence.json"
       - name: Upload configured CI verification
-        if: always()
+        if: always() && steps.evidence.outcome == 'success'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: ci-verification-${{ github.run_id }}-${{ github.run_attempt }}-py${{ matrix.python-version }}
           path: ${{ runner.temp }}/ci-evidence.json
           if-no-files-found: error
           retention-days: 30
+      - name: Require passing configured verification
+        if: >-
+          always() && steps.evidence.outcome == 'success' &&
+          steps.evidence.outputs.configured_checks_passed != 'true'
+        run: exit 1

@@ -142,6 +142,18 @@ def git_identity(root: Path) -> tuple[str, str, bool]:
     return commit, tree, result.returncode == 0
 
 
+def publish_record(record: dict[str, Any], output: Path, step_output: Path) -> None:
+    """Signal creation only after our own exclusive write and close have succeeded."""
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open("x", encoding="utf-8", newline="\n") as handle:
+        handle.write(json.dumps(record, indent=2, sort_keys=True) + "\n")
+    # A failed/skipped original check is valid negative evidence, not a collector failure.
+    # The workflow separately enforces this result after conditionally uploading our file.
+    passed = "true" if record["configured_checks_passed"] else "false"
+    with step_output.open("a", encoding="utf-8") as handle:
+        handle.write(f"configured_checks_passed={passed}\n")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", required=True, type=Path)
@@ -159,12 +171,7 @@ def main() -> None:
             "machine": platform.machine(),
         },
     )
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    # An existing record is never silently replaced.
-    with args.output.open("x", encoding="utf-8", newline="\n") as handle:
-        handle.write(json.dumps(record, indent=2, sort_keys=True) + "\n")
-    if not record["configured_checks_passed"]:
-        raise SystemExit("CI record saved; configured checks did not all pass")
+    publish_record(record, args.output, Path(os.environ["GITHUB_OUTPUT"]))
 
 
 if __name__ == "__main__":
