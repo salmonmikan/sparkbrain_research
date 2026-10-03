@@ -48,13 +48,17 @@ def build_record(
     checkout_tree: str,
     tracked_source_unchanged: bool,
     runtime: dict[str, str],
+    *,
+    reported_manifest_sha256: str | None = None,
 ) -> dict[str, Any]:
     """Build engineering metadata from explicit fields, not arbitrary environment/stdout."""
     if set(context) != set(CONTEXT_NAMES) or any(
         not isinstance(value, str) for value in context.values()
     ):
         raise ValueError("context must contain exactly the declared string fields")
-    if set(steps) != set(STEP_NAMES) or any(value not in STATUSES for value in steps.values()):
+    if set(steps) != set(STEP_NAMES) or any(
+        not isinstance(value, str) or value not in STATUSES for value in steps.values()
+    ):
         raise ValueError("step outcomes must contain exactly the configured checks")
     if re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", context["repository"]) is None:
         raise ValueError("invalid repository")
@@ -63,7 +67,7 @@ def build_record(
     for name in ("run_id", "run_attempt"):
         if re.fullmatch(r"[1-9][0-9]*", context[name]) is None:
             raise ValueError(f"invalid {name}")
-    if re.fullmatch(r"3\.[0-9]+", context["matrix_python"]) is None:
+    if context["matrix_python"] not in {"3.11", "3.13"}:
         raise ValueError("invalid matrix Python")
     event_sha = _sha(context["event_sha"], "event_sha")
     head_sha = context["pull_request_head_sha"]
@@ -76,14 +80,27 @@ def build_record(
         for value in runtime.values()
     ):
         raise ValueError("invalid runtime metadata")
+    if (
+        runtime["implementation"] != "CPython"
+        or runtime["system"] != "Linux"
+        or runtime["machine"] != "x86_64"
+        or re.fullmatch(r"3\.(11|13)\.[0-9]{1,3}", runtime["python"]) is None
+    ):
+        raise ValueError("runtime must match the configured Linux CPython matrix")
     if type(tracked_source_unchanged) is not bool:
         raise ValueError("tracked source state must be boolean")
     checkout_matches_event = _sha(checkout_sha, "checkout_sha") == event_sha
     python_matches_matrix = ".".join(runtime["python"].split(".")[:2]) == context["matrix_python"]
     checks_passed = all(steps[name] == "success" for name in STEP_NAMES)
-    manifest_hash = (
-        _file_hash(root, MANIFEST_PATH) if steps["validate_bundle"] == "success" else None
-    )
+    if reported_manifest_sha256 is not None and (
+        not isinstance(reported_manifest_sha256, str)
+        or re.fullmatch(r"[0-9a-f]{64}", reported_manifest_sha256) is None
+        or steps["validate_bundle"] != "success"
+    ):
+        raise ValueError("invalid reported validation manifest hash")
+    manifest_hash = None
+    if steps["validate_bundle"] == "success":
+        manifest_hash = reported_manifest_sha256 or _file_hash(root, MANIFEST_PATH)
     return {
         "schema_version": 1,
         "kind": "ci_engineering_verification",
@@ -154,24 +171,87 @@ def publish_record(record: dict[str, Any], output: Path, step_output: Path) -> N
         handle.write(f"configured_checks_passed={passed}\n")
 
 
+def emit_job_record(record: dict[str, Any], step_output: Path) -> None:
+    """Transfer JSON data only; never expose a producer-runner file for upload."""
+    key = {"3.11": "py311", "3.13": "py313"}[record["matrix_python"]]
+    encoded = json.dumps(record, separators=(",", ":"), sort_keys=True)
+    if len(encoded.encode("utf-8")) > 8192:
+        raise ValueError("record exceeds the transfer limit")
+    passed = "true" if record["configured_checks_passed"] else "false"
+    with step_output.open("a", encoding="utf-8") as handle:
+        handle.write(f"{key}={encoded}\nconfigured_checks_passed={passed}\n")
+
+
+def _unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError("duplicate JSON key")
+        result[key] = value
+    return result
+
+
+def validate_transferred_record(
+    raw: str,
+    root: Path,
+    context: dict[str, str],
+    checkout_sha: str,
+    checkout_tree: str,
+) -> dict[str, Any]:
+    """Rebuild untrusted job data against this fresh job's event and source checkout."""
+    if not isinstance(raw, str) or not raw or len(raw.encode("utf-8")) > 8192:
+        raise ValueError("missing or oversized transferred record")
+    record = json.loads(raw, object_pairs_hook=_unique_object)
+    if not isinstance(record, dict):
+        raise ValueError("record must be an object")
+    source = record.get("source")
+    steps = record.get("step_outcomes")
+    runtime = record.get("runtime")
+    if not all(isinstance(value, dict) for value in (source, steps, runtime)):
+        raise ValueError("missing structured metadata")
+    reported_hash = record.get("generated_validation_manifest_sha256")
+    if steps.get("validate_bundle") == "success" and reported_hash is None:
+        raise ValueError("successful validation requires its reported hash")
+    expected = build_record(
+        root, context, steps, checkout_sha, checkout_tree,
+        source.get("tracked_source_unchanged_except_validation_manifest"),
+        runtime, reported_manifest_sha256=reported_hash,
+    )
+    # Canonical bytes also distinguish booleans from numbers (True is not a schema-valid 1).
+    # Extra keys, changed context, source identities, input hashes and claim flags all fail.
+    if json.dumps(record, sort_keys=True) != json.dumps(expected, sort_keys=True):
+        raise ValueError("transferred schema/context/source/hash does not match")
+    return expected
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", required=True, type=Path)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--github-output", action="store_true")
+    mode.add_argument("--output", type=Path)
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     context = {name: os.environ[f"CI_EVIDENCE_{name.upper()}"] for name in CONTEXT_NAMES}
-    steps = json.loads(os.environ["CI_EVIDENCE_STEPS"])
     checkout_sha, tree, clean = git_identity(root)
-    record = build_record(
-        root, context, steps, checkout_sha, tree, clean,
-        {
-            "implementation": platform.python_implementation(),
-            "python": platform.python_version(),
-            "system": platform.system(),
-            "machine": platform.machine(),
-        },
-    )
-    publish_record(record, args.output, Path(os.environ["GITHUB_OUTPUT"]))
+    if args.github_output:
+        steps = json.loads(os.environ["CI_EVIDENCE_STEPS"])
+        record = build_record(
+            root, context, steps, checkout_sha, tree, clean,
+            {
+                "implementation": platform.python_implementation(),
+                "python": platform.python_version(),
+                "system": platform.system(),
+                "machine": platform.machine(),
+            },
+        )
+        emit_job_record(record, Path(os.environ["GITHUB_OUTPUT"]))
+    else:
+        if not clean:
+            raise ValueError("fresh evidence job checkout must be clean")
+        record = validate_transferred_record(
+            os.environ["CI_EVIDENCE_RECORD"], root, context, checkout_sha, tree,
+        )
+        publish_record(record, args.output, Path(os.environ["GITHUB_OUTPUT"]))
 
 
 if __name__ == "__main__":

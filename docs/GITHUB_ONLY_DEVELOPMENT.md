@@ -70,13 +70,17 @@ actual cold/offline outcomes rather than relabeling this CI as that proof.
 
 ## Downloadable verification record
 
-After the existing checks, each matrix job attempts to write one JSON file with:
+After the existing checks, each test matrix job emits one bounded JSON job output
+under its unique `py311` or `py313` name. It never uploads a producer-runner file.
+Two lightweight `evidence` matrix jobs start on fresh standard hosted runners,
+check out the exact event commit, and reconstruct one JSON file per version with:
 
 - the run ID and attempt, event type, repository, and run URL;
 - the actual checkout commit/tree from Git and the event commit;
 - the PR head separately, because a pull-request job normally tests a generated
   merge checkout rather than the head commit alone;
-- the actual Python implementation/version, OS name, and machine architecture;
+- the test runner's reported Python implementation/version, OS name, and machine
+  architecture (not the later evidence runner's interpreter);
 - each original step's outcome, retaining failure, cancellation, and skip states;
 - hashes of exactly `pyproject.toml`, `.github/workflows/ci.yml`, and, only when
   bundle validation succeeded, `artifacts/validation_manifest.json`;
@@ -90,22 +94,41 @@ remain unchanged except for the generated validation manifest. It is not the
 final job conclusion, a full test inventory, a security attestation, or scientific
 evidence. The upload happens afterward and must be verified separately.
 
-The collector accepts only the declared context/outcome/runtime fields. It does
-not copy the process environment, credentials, package-index URLs, arbitrary
-stdout, local paths, test fixtures, or raw research files. It hashes the known
-validation manifest but does not publish its contents. GitHub context values
-are passed through environment variables, not interpolated into shell source.
+The collector accepts only the declared context/outcome/runtime fields. The fresh
+consumer treats job outputs as untrusted data: it caps each JSON input at 8 KiB,
+rejects duplicate and extra keys, enforces exact field types and outcome/runtime
+enums, and rebuilds the record against its own workflow/run context and clean
+event checkout. Commit/tree identities and source-input hashes must match the
+fresh checkout. The generated validation-manifest hash is only a well-formed
+producer assertion; the consumer does not receive that manifest or revalidate
+its contents.
 
-Failure or skipped checks produce a valid negative record with a false
-configured-check result. Collector creation success is separate from that check
-result: upload requires the collector step itself to have succeeded, and a
-separate final step fails the job when the recorded checks did not all pass.
-If an install hook or test pre-created the output file, the exclusive collector
-write fails and upload is skipped; those pre-existing bytes are never published.
+The fresh job runs no package install, test hook, experiment, or model. It uses
+isolated Python (`-I -B`) and does not carry files or background processes from
+the test runner. This removes the concrete producer-file replacement window
+between collection and upload. It does not defend against a maliciously changed
+workflow or collector, prove that repository-controlled tests are truthful, or
+provide an independent attestation. Those remain review/trust boundaries.
+
+No process environment, credentials, package-index URLs, arbitrary stdout, local
+paths, test fixtures, or raw research files are copied. GitHub context values and
+job-output JSON are passed through environment variables, never interpolated into
+shell source or executed as code.
+
+Failure or skipped original checks can produce a valid negative record with a
+false configured-check result. Consumer creation success is separate from that
+result: upload requires the fresh collector step itself to have succeeded, and a
+separate final step fails the evidence job when the recorded checks did not all
+pass. An existing consumer output makes its exclusive write fail and upload skip.
+Producer-side files are never read by the upload action.
+
 A pre-existing validation manifest is not mistaken for new evidence when bundle
-validation was skipped. Recording is attempted with `always()`, but a missing
-checkout/interpreter, a hard termination, or an unavailable Actions service may
-prevent any artifact; absence is never a pass.
+validation was skipped. Source/context/hash mismatches, malformed or missing job
+outputs, unavailable checkout/interpreter, hard termination, or an unavailable
+Actions service may prevent an artifact; absence is never a pass. A producer
+record from an earlier run attempt cannot be relabeled as a new attempt. If
+GitHub suppresses an output as potentially secret, the consumer also fails
+closed instead of falling back to a producer file.
 
 The pinned official `actions/upload-artifact` v4.6.2 commit is
 `ea165f8d65b6e75b540449e92b4886f43607fa02`. The workflow has explicit
@@ -145,8 +168,9 @@ python -m ruff check scripts/write_ci_evidence.py tests/test_ci_evidence.py
 The standard pytest suite also discovers these tests. Follow the full applicable
 local validation sequence from `AGENTS.md` before claiming local completion.
 These commands are provided, not asserted to have run locally by a GitHub-only
-author. The collector itself expects genuine Actions run metadata; do not invent
-run IDs or local values to manufacture a CI record.
+author. The producer mode is `--github-output`; only the fresh consumer uses `--output`.
+Both modes expect genuine Actions run metadata; do not invent run IDs or local
+values to manufacture a CI record.
 
 ## References
 

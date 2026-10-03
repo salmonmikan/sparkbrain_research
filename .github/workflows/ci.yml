@@ -9,6 +9,9 @@ permissions:
 
 jobs:
   test:
+    outputs:
+      py311: ${{ steps.evidence.outputs.py311 }}
+      py313: ${{ steps.evidence.outputs.py313 }}
     strategy:
       fail-fast: false
       matrix:
@@ -58,7 +61,46 @@ jobs:
              "local_readiness":"${{ steps.local_readiness.outcome }}",
              "tests":"${{ steps.tests.outcome }}",
              "validate_bundle":"${{ steps.validate_bundle.outcome }}"}
-        run: python scripts/write_ci_evidence.py --output "$RUNNER_TEMP/ci-evidence.json"
+        run: python -I -B scripts/write_ci_evidence.py --github-output
+      - name: Require passing configured verification
+        if: >-
+          always() && steps.evidence.outcome == 'success' &&
+          steps.evidence.outputs.configured_checks_passed != 'true'
+        run: exit 1
+
+  evidence:
+    name: evidence (${{ matrix.python-version }})
+    needs: test
+    if: always()
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - python-version: "3.11"
+            output-name: py311
+          - python-version: "3.13"
+            output-name: py313
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Rebuild allowlisted record on fresh runner
+        id: evidence
+        env:
+          CI_EVIDENCE_REPOSITORY: ${{ github.repository }}
+          CI_EVIDENCE_EVENT_NAME: ${{ github.event_name }}
+          CI_EVIDENCE_EVENT_SHA: ${{ github.sha }}
+          CI_EVIDENCE_PULL_REQUEST_HEAD_SHA: ${{ github.event.pull_request.head.sha || '' }}
+          CI_EVIDENCE_RUN_ID: ${{ github.run_id }}
+          CI_EVIDENCE_RUN_ATTEMPT: ${{ github.run_attempt }}
+          CI_EVIDENCE_MATRIX_PYTHON: ${{ matrix.python-version }}
+          CI_EVIDENCE_RECORD: ${{ needs.test.outputs[matrix.output-name] }}
+        run: python -I -B scripts/write_ci_evidence.py --output "$RUNNER_TEMP/ci-evidence.json"
       - name: Upload configured CI verification
         if: always() && steps.evidence.outcome == 'success'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import importlib.util
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -173,6 +174,70 @@ class CiEvidenceTests(unittest.TestCase):
         with self.assertRaises(OSError):
             MODULE.publish_record(self.record(), output, step_output)
         self.assertFalse(step_output.exists())
+
+    def transfer(self, record: dict[str, object]) -> dict[str, object]:
+        return MODULE.validate_transferred_record(
+            json.dumps(record), self.root, self.context, "a" * 40, "b" * 40,
+        )
+
+    def test_transferred_success_and_negative_records_round_trip(self) -> None:
+        for status in ("success", "failure"):
+            with self.subTest(status=status):
+                self.steps["tests"] = status
+                self.assertEqual(self.transfer(self.record()), self.record())
+
+    def test_matrix_job_outputs_have_distinct_keys_and_no_file_transfer(self) -> None:
+        for minor, key in (("3.11", "py311"), ("3.13", "py313")):
+            with self.subTest(minor=minor):
+                self.context["matrix_python"] = minor
+                self.runtime["python"] = f"{minor}.9"
+                output = self.root / f"job-output-{key}"
+                MODULE.emit_job_record(self.record(), output)
+                line, status = output.read_text(encoding="utf-8").splitlines()
+                name, raw = line.split("=", 1)
+                self.assertEqual(name, key)
+                self.assertEqual(status, "configured_checks_passed=true")
+                # A producer-side replacement file is irrelevant to consumer reconstruction.
+                (self.root / "ci-evidence.json").write_text("private-bytes", encoding="utf-8")
+                self.assertEqual(
+                    MODULE.validate_transferred_record(
+                        raw, self.root, self.context, "a" * 40, "b" * 40,
+                    ),
+                    self.record(),
+                )
+
+    def test_transfer_rejects_unknown_fields_wrong_identity_and_claim_changes(self) -> None:
+        updates = (
+            {"secret": "private"},
+            {"repository": "other/repository"},
+            {"run_id": "456"},
+            {"matrix_python": "3.13"},
+            {"schema_version": True},
+            {"scope": {**self.record()["scope"], "local_reproduction_verified": True}},
+            {"source": {**self.record()["source"], "checkout_sha": "c" * 40}},
+            {"source": {**self.record()["source"], "secret": "private"}},
+            {"input_sha256": dict.fromkeys(MODULE.INPUT_PATHS, "c" * 64)},
+            {"generated_validation_manifest_sha256": "private-data"},
+            {"generated_validation_manifest_sha256": None},
+            {"runtime": {**self.runtime, "machine": "private-data"}},
+            {"step_outcomes": {**self.steps, "tests": ["success"]}},
+        )
+        for update in updates:
+            with self.subTest(update=update), self.assertRaises(ValueError):
+                self.transfer({**self.record(), **update})
+
+    def test_transfer_requires_matching_input_hashes(self) -> None:
+        record = self.record()
+        (self.root / "pyproject.toml").write_text("# source changed\n", encoding="utf-8")
+        with self.assertRaises(ValueError):
+            self.transfer(record)
+
+    def test_transfer_rejects_empty_oversized_duplicate_and_nonobject_json(self) -> None:
+        for raw in ("", " " * 8193, "[]", '{"run_id":"1","run_id":"2"}'):
+            with self.subTest(raw_length=len(raw)), self.assertRaises(ValueError):
+                MODULE.validate_transferred_record(
+                    raw, self.root, self.context, "a" * 40, "b" * 40,
+                )
 
 
 if __name__ == "__main__":
