@@ -267,8 +267,31 @@ def child_env() -> dict[str, str]:
 
 
 def run(command: list[str], deadline: float) -> None:
-    process = subprocess.Popen(command, env=child_env())
+    remaining(deadline)
+    previous_handler = None
+    deferred = []
+    if hasattr(signal, "SIGALRM"):
+        handler = signal.getsignal(signal.SIGALRM)
+        if callable(handler):
+            previous_handler = handler
+
+            def defer_alarm(signum, frame):
+                deferred.append((signum, frame))
+
+            # Defer rather than mask: children must not inherit a blocked alarm.
+            # Do not raise during Popen before its started child has a captured handle.
+            signal.signal(signal.SIGALRM, defer_alarm)
     try:
+        process = subprocess.Popen(command, env=child_env())
+    except BaseException:
+        if previous_handler is not None:
+            signal.signal(signal.SIGALRM, previous_handler)
+        raise
+    try:
+        if previous_handler is not None:
+            signal.signal(signal.SIGALRM, previous_handler)
+            if deferred:
+                previous_handler(*deferred[0])
         returncode = process.wait(timeout=remaining(deadline))
     except subprocess.TimeoutExpired:
         process.kill()

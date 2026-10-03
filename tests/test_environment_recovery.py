@@ -443,6 +443,30 @@ class RecoveryTests(unittest.TestCase):
             process.kill.assert_called_once()
             self.assertEqual(process.wait.call_count, 2)
 
+    def test_expired_deadline_does_not_start_child(self):
+        with patch.object(recovery.subprocess, "Popen") as factory:
+            with self.assertRaisesRegex(recovery.RecoveryError, "deadline"):
+                recovery.run([sys.executable], time.monotonic() - 1)
+            factory.assert_not_called()
+
+    @unittest.skipUnless(sys.platform == "linux", "requires elapsed timer")
+    def test_alarm_during_spawn_waits_for_handle_then_terminates_child(self):
+        with patch.object(recovery.subprocess, "Popen") as factory:
+            process = factory.return_value
+            process.wait.return_value = 0
+
+            def delayed_spawn(*args, **kwargs):
+                time.sleep(0.1)
+                return process
+
+            factory.side_effect = delayed_spawn
+            deadline = time.monotonic() + 0.05
+            with recovery.timed_restore(deadline):
+                with self.assertRaisesRegex(recovery.RecoveryError, "deadline"):
+                    recovery.run([sys.executable], deadline)
+            process.kill.assert_called_once()
+            process.wait.assert_called_once_with()
+
     @unittest.skipUnless(sys.platform == "linux", "requires elapsed timer")
     def test_final_identity_check_cannot_overrun_and_emit_ready(self):
         root = self.synthetic_source()

@@ -52,6 +52,9 @@ platform proxy and CA are honored; no credential logging, mirror, direct-IP rout
 or security/network-setting change is attempted. Failure messages retain safe
 error classes/status codes instead of raw proxy-bearing exception strings.
 Child processes are terminated and reaped if the outer timer interrupts them.
+Alarm delivery is briefly deferred during process creation until its handle is
+captured; spawn/cleanup latency can extend a failing call's wall time. An already
+expired operation does not start another child.
 On platforms without an elapsed signal timer, subprocess timeouts and checks before
 readiness still reject expired work, but cannot interrupt blocked filesystem calls.
 This is a setup deadline, not an OS resource sandbox or real-time guarantee.
