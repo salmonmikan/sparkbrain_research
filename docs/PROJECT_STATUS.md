@@ -634,3 +634,13 @@ require published-head review/CI, independent full-tree/no-extra-importable pre-
 proof and separately pinned per-object execution approval before any native work.
 No genuine approval, prelaunch proof, execution ledger or reservation is created by
 this preparation. Scientific credit remains 0 and scheduler authority is unchanged.
+
+## Disposable developer-environment recovery (2026-10-03)
+
+A [one-command recovery path](ENVIRONMENT_RECOVERY.md) adds a dependency-free core
+venv and an exact official-wheel Linux/CPython 3.12.14 developer-tools lock. It
+preserves incomplete attempts, validates cache integrity and supports clean-prefix
+offline restoration. Model-free recovery tests and a separate CI workflow exercise
+this infrastructure. Full optional stacks, cold-host/container reconstruction and
+scientific environment admission are separate verification stages; no research
+identity, source freeze, execution authority or claim is changed.

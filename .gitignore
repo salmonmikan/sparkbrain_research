@@ -23,3 +23,9 @@ artifacts/benchmarks/benchmark_results.json
 data/external/
 .cache/external/
 .cache/pytest-*/
+
+# Disposable developer recovery state; never durable research evidence.
+.venv-recovery/
+.venv-recovery.recovery-lock/
+.venv-recovery.incomplete-*/
+.cache/recovery-wheels/

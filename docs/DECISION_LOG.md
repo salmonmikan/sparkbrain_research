@@ -1398,3 +1398,16 @@ and trusted startup hooks as an independently verified pre-target-Python prerequ
 under a quiescent-tree assumption. Post-import origin checks do not prove earlier
 startup safety or create a new filesystem/import sandbox. See the
 [prospective proposal](research/assembly_m1_g0_v2_proposal_20261002.md).
+
+## D-ENV-20261003-0001 — Make developer environments disposable
+
+**Decision (2026-10-03):** Commit an explicit runtime/wheel tooling contract and
+stdlib-only restore command, retaining official SHA-256-pinned packages in a
+reusable verified cache. Preserve interrupted owned environments before rebuilding,
+stop on integrity/permission failures, and bound transient acquisition retry.
+
+Developer restoration never allocates, resumes or reruns an experiment. Require
+separate source/environment admission and durable read-back-verified identity,
+status and checkpoint bytes before research can rely on restoration. A local
+manifest or same-host venv rebuild is not external preservation or a pinned OS.
+Historical scientific records and consumed identities remain unchanged.
