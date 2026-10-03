@@ -644,3 +644,12 @@ offline restoration. Model-free recovery tests and a separate CI workflow exerci
 this infrastructure. Full optional stacks, cold-host/container reconstruction and
 scientific environment admission are separate verification stages; no research
 identity, source freeze, execution authority or claim is changed.
+
+## 2026-10-03: new-environment G0 v3 preparation
+
+The [new-environment proposal](research/assembly_m1_g0_v3_proposal_20261003.md)
+preserves consumed G0 v1 and the unexecuted historical v2 freeze. It prepares a
+third fixed execution object with the same fourteen cases, inputs and resource
+ceilings, plus complete dependency-resource inventory and new external prelaunch
+verification. It is source preparation, not a G0 pass or learning result. The
+three-observation eligibility and 68-call M1 path pilot remain unexecuted.

@@ -26,7 +26,7 @@ from pathlib import Path
 from typing import Any
 
 from scripts.g0_execution_objects import (
-    G0_V2,
+    G0_V3,
     HISTORICAL_G0,
     ExecutionObject,
     object_binding,
@@ -370,6 +370,38 @@ def _walk_importable(directory: Path, *,
     return result
 
 
+def _walk_resources(directory: Path, *,
+                    checkpoint: Callable[[], Any] | None = None) -> dict[str, str]:
+    """Bind all bytes in an explicit interpreter/package root, including data files.
+
+    V3 additionally pins resources such as jsonschema-specifications' JSON schemas.
+    This is a trusted, quiescent directory census, not an adversarial-filesystem lock.
+    Active site-packages are explicit roots rather than implicitly scanning other
+    installations under the base stdlib.
+    """
+    root = source_root(directory)
+    pending = [root]
+    result = {}
+    while pending:
+        if checkpoint is not None:
+            checkpoint()
+        current = pending.pop()
+        for path in sorted(current.iterdir()):
+            if checkpoint is not None:
+                checkpoint()
+            info = path_metadata(path, "environment resource")
+            if stat.S_ISDIR(info.st_mode):
+                if current == root and path.name in {"site-packages", "dist-packages"}:
+                    continue
+                pending.append(path)
+            elif stat.S_ISREG(info.st_mode):
+                result[path.relative_to(root).as_posix()] = file_digest(
+                    path, checkpoint=checkpoint)
+            else:
+                raise AdmissionError("non-regular environment resource")
+    return result
+
+
 def mapped_code_snapshot(*, checkpoint: Callable[[], Any] | None = None) -> dict[str, str]:
     """Hash only actual executable file mappings, never anonymous memory or broad trees."""
     if sys.platform != "linux":
@@ -419,7 +451,8 @@ def require_passive_lock_api() -> None:
         raise AdmissionError("unsupported passive lock allocator API; exact builtin required")
 
 
-def environment_snapshot(root: Path | None = None, *,
+def environment_snapshot(root: Path | None = None, *, include_resources: bool = False,
+                         declared_system_libraries: dict[str, str] | None = None,
                          checkpoint: Callable[[], Any] | None = None) -> dict[str, Any]:
     """Source-only interpreter/dependency snapshot. No package imports or secrets."""
     if platform.python_implementation() != "CPython" or sys.version_info < (3, 11):
@@ -442,7 +475,8 @@ def environment_snapshot(root: Path | None = None, *,
             continue
         info = path_metadata(path, "import search path")
         if stat.S_ISDIR(info.st_mode):
-            if not any(path.is_relative_to(Path(item)) for item in roots):
+            if (include_resources
+                    or not any(path.is_relative_to(Path(item)) for item in roots)):
                 roots.append(str(source_root(path)))
         else:
             checked = confined_path(source_root(path.parent), path.name, "import archive")
@@ -455,7 +489,7 @@ def environment_snapshot(root: Path | None = None, *,
     mapped = mapped_code_snapshot(checkpoint=checkpoint)
     system_libraries = {name: sha for name, sha in mapped.items()
                         if name not in native_code and name != str(executable)}
-    return {
+    snapshot = {
         "schema": "g0-python-environment-v1", "implementation": platform.python_implementation(),
         "version": sys.version, "executable": str(executable),
         "executable_sha256": file_digest(executable, checkpoint=checkpoint),
@@ -472,13 +506,36 @@ def environment_snapshot(root: Path | None = None, *,
             .read_bytes()) if sys.prefix != sys.base_prefix else None,
         "dont_write_bytecode_required": True, "user_site_disabled_required": True,
     }
+    if include_resources:
+        resources = {item: _walk_resources(Path(item), checkpoint=checkpoint) for item in roots}
+        snapshot["complete_resource_inventory_sha256"] = digest(canonical(resources))
+        snapshot["complete_resource_files"] = sum(len(items) for items in resources.values())
+    if declared_system_libraries is not None:
+        if not include_resources or type(declared_system_libraries) is not dict:
+            raise AdmissionError("explicit system catalog requires complete-resource snapshot")
+        for name, expected in declared_system_libraries.items():
+            if (type(name) is not str or not Path(name).is_absolute()
+                    or str(Path(name)) != name or type(expected) is not str
+                    or len(expected) != 64
+                    or any(char not in "0123456789abcdef" for char in expected)):
+                raise AdmissionError("invalid explicit system-library binding")
+            path = Path(name)
+            checked = confined_path(source_root(path.parent), path.name, "system library catalog")
+            with checked.open("rb") as stream:
+                if stream.read(4) != b"\x7fELF":
+                    raise AdmissionError("system catalog member is not ELF")
+            if file_digest(checked, checkpoint=checkpoint) != expected:
+                raise AdmissionError("system library catalog bytes changed")
+        snapshot["system_libraries_sha256"] = dict(declared_system_libraries)
+        verify_mapped_libraries(snapshot, checkpoint=checkpoint)
+    return snapshot
 
 
 def _require_object_binding(value: Any, object_spec: ExecutionObject) -> None:
     spec = require_object(object_spec)
     if (type(value) is not dict
             or ("identity" in value and value["identity"] != spec.identity)
-            or ((spec is G0_V2 or "execution_object_sha256" in value)
+            or ((spec is not HISTORICAL_G0 or "execution_object_sha256" in value)
                 and value.get("execution_object_sha256") != object_digest(spec))):
         raise AdmissionError("execution object binding differs or is missing")
 
@@ -532,7 +589,7 @@ def _fixed_envelope(freeze: dict[str, Any],
                     object_spec: ExecutionObject = HISTORICAL_G0) -> None:
     object_spec = require_object(object_spec)
     _require_object_binding(freeze, object_spec)
-    if (object_spec is G0_V2
+    if (object_spec is not HISTORICAL_G0
             and freeze.get("runtime_origin_commit") != object_spec.runtime_origin_commit):
         raise AdmissionError("frozen runtime source origin differs")
     for key, expected in (("identity", object_spec.identity),
@@ -558,7 +615,7 @@ def verify_preparation(root: Path, freeze_relative: str,
                        object_spec: ExecutionObject = HISTORICAL_G0) -> dict[str, Any]:
     """Check exact source/literals/contracts/environment without loading runtime code."""
     object_spec = require_object(object_spec)
-    if object_spec is G0_V2 and freeze_relative != object_spec.freeze_relative:
+    if object_spec is not HISTORICAL_G0 and freeze_relative != object_spec.freeze_relative:
         raise AdmissionError("freeze path differs from execution object")
     root = source_root(root)
     freeze_path = confined_path(root, freeze_relative, "freeze")
@@ -585,11 +642,19 @@ def verify_preparation(root: Path, freeze_relative: str,
                 "tests/test_g0_joint_source_contract.py", "tests/test_g0_execution_protocol.py",
                 "docs/research/assembly_m1_g0_execution_preparation_20261002.md"}
     required.update(("scripts/launch_g0_joint_eligibility.py", "tests/test_g0_joint_launcher.py"))
-    if object_spec is G0_V2:
+    if object_spec is not HISTORICAL_G0:
         required.update({object_spec.launcher_relative,
                          "tests/test_g0_execution_objects.py", "tests/test_g0_v2_bindings.py",
                          "docs/research/assembly_m1_g0_v2_proposal_20261002.md",
                          object_spec.artifact_root + "/proposal.json"})
+    if object_spec is G0_V3:
+        required.update({"tests/test_g0_v3_bindings.py", "tests/test_g0_v3_environment.py",
+                         "tests/test_g0_v3_environment_regressions.py",
+                         "scripts/g0_prelaunch/materialization_verifier.py",
+                         "scripts/g0_prelaunch/published_baseline_inventory.json",
+                         "scripts/g0_prelaunch/README.md",
+                         "tests/test_g0_prelaunch_verifier.py",
+                         "docs/research/assembly_m1_g0_v3_proposal_20261003.md"})
     contract = read_json(confined_path(root, object_spec.contract_relative, "contract"))
     required.update(contract["runtime_sources_sha256"])
     required.update(contract["runtime_schema_sha256"])
@@ -606,7 +671,7 @@ def verify_preparation(root: Path, freeze_relative: str,
         value = read_json(confined_path(root, binding["path"], key))
         if key == "protocol":
             _require_object_binding(value, object_spec)
-            if (object_spec is G0_V2
+            if (object_spec is not HISTORICAL_G0
                     and value.get("runtime_origin_commit") != object_spec.runtime_origin_commit):
                 raise AdmissionError("protocol runtime source origin differs")
             if (value.get("identity") != object_spec.identity
@@ -646,8 +711,18 @@ def verify_preparation(root: Path, freeze_relative: str,
                     pending.append(child)
                 elif child.suffix in {".pyc", ".pyo"}:
                     raise AdmissionError("preexisting source bytecode is unsupported")
+    environment_kwargs = {}
+    if object_spec is G0_V3:
+        environment = freeze.get("environment")
+        if (type(environment) is not dict
+                or type(environment.get("system_libraries_sha256")) is not dict):
+            raise AdmissionError("v3 requires an explicit exact system library catalog")
+        environment_kwargs = {
+            "include_resources": True,
+            "declared_system_libraries": environment["system_libraries_sha256"],
+        }
     if check_environment and freeze.get("environment") != environment_snapshot(
-            root, checkpoint=checkpoint):
+            root, checkpoint=checkpoint, **environment_kwargs):
         raise AdmissionError("frozen interpreter/dependency environment differs")
     return {"classification": "SOURCE_ONLY_NON_EVIDENTIARY", "identity": object_spec.identity,
             **object_binding(object_spec),
@@ -710,7 +785,7 @@ def authorize_execution(root: Path, freeze_relative: str, approval_relative: str
     belongs to the trusted launch boundary, not to model code or the approval file.
     """
     object_spec = require_object(object_spec)
-    if object_spec is G0_V2 and (freeze_relative != object_spec.freeze_relative
+    if object_spec is not HISTORICAL_G0 and (freeze_relative != object_spec.freeze_relative
                                 or approval_relative != object_spec.approval_relative):
         raise AdmissionError("approval/freeze path differs from execution object")
     if authority_callback is None or not callable(authority_callback):
@@ -726,7 +801,7 @@ def authorize_execution(root: Path, freeze_relative: str, approval_relative: str
         raise AdmissionError("independently supplied approval digest differs")
     approval = read_json(approval_path)
     _require_object_binding(approval, object_spec)
-    if object_spec is G0_V2 and approval.get("execution_object_enabled") is not True:
+    if object_spec is not HISTORICAL_G0 and approval.get("execution_object_enabled") is not True:
         raise AdmissionError("separate independently verified object enablement is required")
     expected = {"schema": "g0-published-execution-approval-v1", "identity": object_spec.identity,
                 "freeze_sha256": verified["freeze_sha256"],
@@ -1279,14 +1354,15 @@ class PassiveCallMonitor:
                  object_spec: ExecutionObject = HISTORICAL_G0) -> None:
         self._object_spec = require_object(object_spec)
         if (writer is not None
-                and (self._object_spec is G0_V2 or isinstance(writer, ExclusiveEvidenceWriter))
+                and (self._object_spec is not HISTORICAL_G0
+                     or isinstance(writer, ExclusiveEvidenceWriter))
                 and getattr(writer, "_object_spec", None) is not self._object_spec):
             raise AdmissionError("passive writer belongs to a different execution object")
         self.root = source_root(root)
-        if self._object_spec is G0_V2:
+        if self._object_spec is not HISTORICAL_G0:
             if (call_plan is not None and dict(call_plan) != CALL_CAPS
                     or targets is not None or allowed_functions is not None):
-                raise AdmissionError("v2 passive plan/targets cannot be overridden")
+                raise AdmissionError("successor passive plan/targets cannot be overridden")
             contract_path = confined_path(self.root, self._object_spec.contract_relative,
                                            "profile object contract")
             if (file_digest(contract_path, checkpoint=budget.check)
@@ -1338,7 +1414,7 @@ class PassiveCallMonitor:
                 contract = read_json(confined_path(self.root, contract_relative,
                                                    "profile contract"))
                 runtime_paths = list(contract["runtime_sources_sha256"])
-            elif self._object_spec is G0_V2:
+            elif self._object_spec is not HISTORICAL_G0:
                 raise AdmissionError("production execution object contract is missing")
             elif (self.root / "src/sparkbrain").exists():
                 # Explicit source-only stand-in roots may omit the production contract.
@@ -1355,7 +1431,7 @@ class PassiveCallMonitor:
             selected = runtime_paths + ["scripts/g0_joint_ownership.py",
                                         "scripts/run_g0_joint_eligibility.py",
                                         "scripts/g0_execution_support.py"]
-            if self._object_spec is G0_V2:
+            if self._object_spec is not HISTORICAL_G0:
                 selected.append("scripts/g0_execution_objects.py")
             for relative in selected:
                 self.budget.check()

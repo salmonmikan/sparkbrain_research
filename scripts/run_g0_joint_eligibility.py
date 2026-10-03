@@ -34,7 +34,6 @@ if __package__ in (None, ""):
     sys.path.insert(0, str(Path(__file__).absolute().parents[1]))
 
 from scripts.g0_execution_objects import (  # noqa: E402
-    G0_V2,
     HISTORICAL_G0,
     ExecutionObject,
     bind_object_registry,
@@ -476,11 +475,11 @@ class ExecutionEngine:
                  writer: Any, budget: Any, records: dict, *,
                  object_spec: ExecutionObject = HISTORICAL_G0) -> None:
         self._object_spec = require_object(object_spec)
-        if object_spec is G0_V2 or hasattr(registry, "execution_object_sha256"):
+        if object_spec is not HISTORICAL_G0 or hasattr(registry, "execution_object_sha256"):
             require(getattr(registry, "execution_object_sha256", None)
                     == object_digest(object_spec),
                     "registry execution object differs")
-        if object_spec is G0_V2 or hasattr(writer, "_object_spec"):
+        if object_spec is not HISTORICAL_G0 or hasattr(writer, "_object_spec"):
             require(getattr(writer, "_object_spec", None) is object_spec,
                     "writer execution object differs")
         records, self.receipts = normalize_plan(records)

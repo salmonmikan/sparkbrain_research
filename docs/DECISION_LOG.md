@@ -1411,3 +1411,13 @@ separate source/environment admission and durable read-back-verified identity,
 status and checkpoint bytes before research can rely on restoration. A local
 manifest or same-host venv rebuild is not external preservation or a pinned OS.
 Historical scientific records and consumed identities remain unchanged.
+
+## 2026-10-03 — Preserve historical G0 while preparing a new environment revision
+
+The old v2 runtime/source paths were lost; retaining the interpreter binary does
+not restore its environment. Prepare fixed object `assembly-m1-g0-v3-20261003`
+with unchanged v2 cases, literals, runtime contract and budget. Preserve v1
+consumption, all historical evidence and v2 freeze bytes. Add a complete
+resource-file census and independently reimplement the lost external prelaunch
+verifier. No source-only preparation, CI or publication authorizes native work;
+separate exact parent clearance remains required.
