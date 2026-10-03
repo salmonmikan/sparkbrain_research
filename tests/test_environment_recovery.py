@@ -191,6 +191,14 @@ class RecoveryTests(unittest.TestCase):
         with self.assertRaisesRegex(recovery.RecoveryError, "runtime mismatch"):
             recovery.check_runtime(value, actual)
 
+    def test_old_python_fails_before_runtime_probe_or_filesystem_change(self):
+        with patch.object(recovery.sys, "version_info", (3, 10)):
+            with patch.object(recovery, "runtime_identity", side_effect=AssertionError):
+                with self.assertRaisesRegex(recovery.RecoveryError, "3.11"):
+                    recovery.restore(self.path, self.path / "env", self.path / "cache",
+                                     True, True, 30)
+        self.assertEqual(list(self.path.iterdir()), [])
+
     def synthetic_source(self):
         root = self.path / "source"
         (root / "src/sparkbrain").mkdir(parents=True)

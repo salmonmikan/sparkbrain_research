@@ -253,6 +253,9 @@ def run(command: list[str], deadline: float) -> None:
 
 
 def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, seconds: int) -> dict:
+    # This bootstrap runs before installation can enforce pyproject.requires-python.
+    if sys.version_info < (3, 11):  # noqa: UP036
+        raise RecoveryError("CPython 3.11+ is required")
     started = time.monotonic()
     deadline = started + seconds
     root, prefix, cache = root.resolve(), prefix.absolute(), cache.absolute()
@@ -264,8 +267,6 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
     if prefix == root or prefix in root.parents or prefix == cache or prefix in cache.parents:
         raise RecoveryError("prefix must not contain the source tree or wheel cache")
     runtime = runtime_identity()
-    if sys.version_info < (3, 11):
-        raise RecoveryError("CPython 3.11+ is required")
     lock = load_lock(root / "environments/tools-linux-cp312.lock.json")
     if not core:
         check_runtime(lock, runtime)
