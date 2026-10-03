@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import http.client
 import importlib.util
+import io
 import json
 import socket
 import ssl
@@ -64,6 +65,45 @@ class RecoveryTests(unittest.TestCase):
         value = recovery.load_lock(recovery.LOCK)
         self.assertEqual(len(value["packages"]), 13)
         self.assertEqual(sum(p["bytes"] for p in value["packages"]), 14512956)
+
+    def test_lock_rejects_non_object_top_levels_and_entries(self):
+        for invalid in (None, [], 1, True, "not an object"):
+            with self.subTest(invalid=invalid):
+                with self.assertRaises(recovery.RecoveryError):
+                    recovery.parse_lock(json.dumps(invalid).encode())
+                lock = json.loads(recovery.LOCK.read_text())
+                lock["packages"][0] = invalid
+                with self.assertRaises(recovery.RecoveryError):
+                    recovery.parse_lock(json.dumps(lock).encode())
+
+    def test_lock_rejects_invalid_runtime_and_field_types(self):
+        for invalid in (None, [], 1, True, "not a runtime"):
+            lock = json.loads(recovery.LOCK.read_text())
+            lock["runtime"] = invalid
+            with self.assertRaises(recovery.RecoveryError):
+                recovery.parse_lock(json.dumps(lock).encode())
+        for field in ("name", "version", "filename", "url", "sha256"):
+            lock = json.loads(recovery.LOCK.read_text())
+            lock["packages"][0][field] = []
+            with self.assertRaises(recovery.RecoveryError):
+                recovery.parse_lock(json.dumps(lock).encode())
+        for field in ("implementation", "python", "system", "machine", "glibc_minimum"):
+            lock = json.loads(recovery.LOCK.read_text())
+            lock["runtime"][field] = []
+            with self.assertRaises(recovery.RecoveryError):
+                recovery.parse_lock(json.dumps(lock).encode())
+
+    def test_malformed_lock_cli_failure_is_sanitized(self):
+        root = self.synthetic_source()
+        (root / "environments/tools-linux-cp312.lock.json").write_text("[]\n")
+        with patch.object(recovery, "ROOT", root):
+            with patch.object(sys, "argv", ["recover_environment.py", "--core", "--offline"]):
+                with patch.object(sys, "stderr", new_callable=io.StringIO) as error:
+                    self.assertEqual(recovery.main(), 1)
+        self.assertIn("RECOVERY STOPPED: unsupported dependency lock", error.getvalue())
+        self.assertNotIn("Traceback", error.getvalue())
+        self.assertNotIn(str(root), error.getvalue())
+        self.assertFalse((root / ".venv-recovery").exists())
 
     def test_cached_wheel_is_reverified_without_network(self):
         destination = self.path / self.package["filename"]
@@ -242,6 +282,16 @@ class RecoveryTests(unittest.TestCase):
         with self.assertRaisesRegex(recovery.RecoveryError, "unowned"):
             recovery.restore(root, prefix, self.path / "cache", True, True, 30)
         self.assertEqual((prefix / "sentinel").read_text(), "keep")
+
+    def test_malformed_existing_marker_is_rejected_without_changes(self):
+        root = self.synthetic_source()
+        prefix = self.path / "malformed-marker"
+        prefix.mkdir()
+        marker = prefix / recovery.MARKER
+        marker.write_text("[]\n")
+        with self.assertRaisesRegex(recovery.RecoveryError, "invalid prefix ownership"):
+            recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual(marker.read_text(), "[]\n")
 
     def test_prefix_below_source_is_rejected_before_writes(self):
         root = self.synthetic_source()

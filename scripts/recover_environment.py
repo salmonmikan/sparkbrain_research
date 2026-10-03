@@ -62,11 +62,23 @@ def load_lock(path: Path) -> dict:
 
 def parse_lock(raw: bytes) -> dict:
     value = json.loads(raw)
-    if value.get("schema") != 1 or not isinstance(value.get("packages"), list):
+    if (not isinstance(value, dict) or type(value.get("schema")) is not int
+            or value["schema"] != 1 or not isinstance(value.get("packages"), list)):
         raise RecoveryError("unsupported dependency lock")
+    runtime = value.get("runtime")
+    runtime_keys = ("implementation", "python", "system", "machine", "glibc_minimum")
+    if not isinstance(runtime, dict) or any(
+        not isinstance(runtime.get(key), str) or not runtime[key] for key in runtime_keys
+    ):
+        raise RecoveryError("invalid dependency lock runtime")
     names: set[str] = set()
     filenames: set[str] = set()
     for package in value["packages"]:
+        if not isinstance(package, dict) or any(
+            not isinstance(package.get(key), str)
+            for key in ("name", "version", "filename", "url", "sha256")
+        ):
+            raise RecoveryError("invalid dependency lock entry")
         name, version, filename = (package.get(k, "") for k in ("name", "version", "filename"))
         parsed = urllib.parse.urlsplit(package.get("url", ""))
         if (
@@ -407,6 +419,8 @@ def _restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool,
         if not marker.is_file():
             raise RecoveryError("refusing an unowned existing prefix; select a new --prefix")
         previous = json.loads(marker.read_text())
+        if not isinstance(previous, dict) or previous.get("status") not in ("ready", "incomplete"):
+            raise RecoveryError("invalid prefix ownership marker; inspect before reuse")
         if previous.get("binding") != binding:
             raise RecoveryError(
                 "prefix runtime/lock changed; preserve it and select a new --prefix"
