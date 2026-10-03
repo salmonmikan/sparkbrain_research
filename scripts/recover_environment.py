@@ -56,7 +56,11 @@ def write_json(path: Path, value: object) -> None:
 
 
 def load_lock(path: Path) -> dict:
-    value = json.loads(path.read_text())
+    return parse_lock(path.read_bytes())
+
+
+def parse_lock(raw: bytes) -> dict:
+    value = json.loads(raw)
     if value.get("schema") != 1 or not isinstance(value.get("packages"), list):
         raise RecoveryError("unsupported dependency lock")
     names: set[str] = set()
@@ -288,12 +292,14 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
         raise RecoveryError("prefix must not be inside the developer source tree")
     source_before = source_identity(root)
     runtime = runtime_identity()
-    lock = load_lock(root / "environments/tools-linux-cp312.lock.json")
+    lock_path = root / "environments/tools-linux-cp312.lock.json"
+    lock_bytes = lock_path.read_bytes()
+    lock = parse_lock(lock_bytes)
     if not core:
         check_runtime(lock, runtime)
     binding = {
         "schema": 1, "profile": "core" if core else "tools",
-        "dependency_lock_sha256": digest(root / "environments/tools-linux-cp312.lock.json"),
+        "dependency_lock_sha256": hashlib.sha256(lock_bytes).hexdigest(),
         "runtime": runtime,
     }
     prefix.parent.mkdir(parents=True, exist_ok=True)
@@ -374,6 +380,10 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
         source_after = source_identity(root)
         if source_after != source_before:
             raise RecoveryError("developer source changed during recovery; retry a stable checkout")
+        if lock_path.read_bytes() != lock_bytes:
+            raise RecoveryError("dependency lock changed during recovery; use a stable lock")
+        if runtime_identity() != runtime:
+            raise RecoveryError("runtime changed during recovery; preserve it and use a new prefix")
         result = {
             "binding": binding, "status": "ready", "source": source_after,
             "elapsed_seconds": round(time.monotonic() - started, 3),

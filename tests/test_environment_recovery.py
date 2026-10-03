@@ -307,6 +307,42 @@ class RecoveryTests(unittest.TestCase):
                 recovery.restore(root, prefix, self.path / "cache", True, True, 30)
         self.assertEqual(json.loads((prefix / recovery.MARKER).read_text())["status"], "incomplete")
 
+    def test_lock_digest_binds_the_parsed_snapshot_when_file_is_replaced(self):
+        root = self.synthetic_source()
+        prefix = self.path / "lock-snapshot-race"
+        lock = root / "environments/tools-linux-cp312.lock.json"
+        before = lock.read_bytes()
+        original_parse = recovery.parse_lock
+
+        def replace_after_parse(raw):
+            parsed = original_parse(raw)
+            lock.write_bytes(raw + b" ")
+            return parsed
+
+        with patch.object(recovery, "parse_lock", side_effect=replace_after_parse):
+            with self.assertRaisesRegex(recovery.RecoveryError, "lock changed"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        marker = json.loads((prefix / recovery.MARKER).read_text())
+        self.assertEqual(marker["status"], "incomplete")
+        self.assertEqual(marker["binding"]["dependency_lock_sha256"],
+                         hashlib.sha256(before).hexdigest())
+
+    def test_lock_mutation_during_restore_cannot_emit_ready_receipt(self):
+        root = self.synthetic_source()
+        prefix = self.path / "changing-lock"
+        lock = root / "environments/tools-linux-cp312.lock.json"
+        before = lock.read_bytes()
+        original_run = recovery.run
+
+        def change_after_child(command, deadline):
+            original_run(command, deadline)
+            lock.write_bytes(before + b"\n")
+
+        with patch.object(recovery, "run", side_effect=change_after_child):
+            with self.assertRaisesRegex(recovery.RecoveryError, "lock changed"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual(json.loads((prefix / recovery.MARKER).read_text())["status"], "incomplete")
+
     def test_interrupted_owned_install_is_resumable(self):
         root = self.synthetic_source()
         prefix = self.path / "interrupted"
@@ -334,6 +370,16 @@ class RecoveryTests(unittest.TestCase):
         with patch.object(recovery, "runtime_identity", return_value=changed):
             with self.assertRaisesRegex(recovery.RecoveryError, "runtime/lock changed"):
                 recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+
+    def test_runtime_drift_during_restore_cannot_emit_ready_receipt(self):
+        root = self.synthetic_source()
+        prefix = self.path / "runtime-drift"
+        before = recovery.runtime_identity()
+        after = dict(before, interpreter_sha256="0" * 64)
+        with patch.object(recovery, "runtime_identity", side_effect=[before, after]):
+            with self.assertRaisesRegex(recovery.RecoveryError, "runtime changed"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual(json.loads((prefix / recovery.MARKER).read_text())["status"], "incomplete")
 
     def test_same_version_shadow_package_is_preserved_outside_clean_prefix(self):
         root = self.synthetic_source()
