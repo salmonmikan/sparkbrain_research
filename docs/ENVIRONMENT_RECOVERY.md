@@ -70,6 +70,9 @@ untracked tool modules and startup hooks from surviving reinstall. Review and
 remove old snapshots when no longer needed; repeated restores use additional disk.
 An unowned existing directory is not overwritten. Prefixes below `src` are rejected
 so installed dependencies cannot contaminate the developer-source digest.
+All symlinks in `src`, including directory links and the source root itself, are
+rejected before setup. The Python-source identity is checked again before the
+ready receipt; changes during restoration fail instead of receiving a stale digest.
 Concurrent restores to one prefix are rejected. After a killed process, remove
 its `.recovery-lock` directory only after confirming that process has stopped.
 Runtime/lock changes require a new prefix. Extra distributions or a shadow package

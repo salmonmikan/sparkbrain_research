@@ -261,6 +261,52 @@ class RecoveryTests(unittest.TestCase):
             recovery.restore(root, root / "src/env", self.path / "cache", True, True, 30)
         self.assertFalse((target / "env").exists())
 
+    @unittest.skipUnless(sys.platform == "linux", "requires symlink support")
+    def test_source_identity_rejects_directory_file_and_dangling_symlinks(self):
+        root = self.synthetic_source()
+        external = self.path / "external"
+        external.mkdir()
+        (external / "module.py").write_text("value = 1\n")
+        for name, target in [
+            ("components", external), ("alias.py", external / "module.py"),
+            ("dangling", external / "absent"),
+        ]:
+            with self.subTest(name=name):
+                link = root / "src/sparkbrain" / name
+                link.symlink_to(target, target_is_directory=target.is_dir())
+                with self.assertRaisesRegex(recovery.RecoveryError, "source symlinks"):
+                    recovery.source_identity(root)
+                link.unlink()
+
+    @unittest.skipUnless(sys.platform == "linux", "requires symlink support")
+    def test_symlinked_source_root_stops_before_prefix_creation(self):
+        root = self.synthetic_source()
+        target = self.path / "source-bytes"
+        (root / "src").rename(target)
+        (root / "src").symlink_to(target, target_is_directory=True)
+        with self.assertRaisesRegex(recovery.RecoveryError, "source symlinks"):
+            recovery.restore(root, self.path / "env", self.path / "cache", True, True, 30)
+        self.assertFalse((self.path / "env").exists())
+        self.assertFalse((self.path / "cache").exists())
+
+    def test_source_mutation_during_restore_cannot_emit_ready_receipt(self):
+        root = self.synthetic_source()
+        prefix = self.path / "changing-source"
+        original_run = recovery.run
+        changed = False
+
+        def change_after_first_child(command, deadline):
+            nonlocal changed
+            original_run(command, deadline)
+            if not changed:
+                (root / "src/sparkbrain/added.py").write_text("value = 1\n")
+                changed = True
+
+        with patch.object(recovery, "run", side_effect=change_after_first_child):
+            with self.assertRaisesRegex(recovery.RecoveryError, "source changed"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual(json.loads((prefix / recovery.MARKER).read_text())["status"], "incomplete")
+
     def test_interrupted_owned_install_is_resumable(self):
         root = self.synthetic_source()
         prefix = self.path / "interrupted"

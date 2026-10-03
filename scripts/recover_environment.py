@@ -224,11 +224,26 @@ def acquire(package: dict, cache: Path, offline: bool, deadline: float, attempts
 
 def source_identity(root: Path) -> dict:
     """Bind developer Python sources, not a claim of a complete research source freeze."""
-    files = sorted((root / "src").rglob("*.py"))
+    source = root / "src"
+    if source.is_symlink():
+        raise RecoveryError("source symlinks are unsupported")
+
+    def unreadable(_error):
+        raise RecoveryError("source tree traversal failed") from None
+
+    files = []
+    # rglob('*.py') does not visit directory symlinks. Inspect every entry without
+    # following links so executable modules cannot disappear from this inventory.
+    for directory, directories, filenames in os.walk(source, followlinks=False, onerror=unreadable):
+        for name in directories + filenames:
+            path = Path(directory) / name
+            if path.is_symlink():
+                raise RecoveryError("source symlinks are unsupported")
+        files.extend(Path(directory) / name for name in filenames if name.endswith(".py"))
     if not files:
         raise RecoveryError("source tree has no Python files")
     entries = []
-    for path in files:
+    for path in sorted(files):
         if path.is_symlink():
             raise RecoveryError("source symlinks are unsupported")
         entries.append([path.relative_to(root).as_posix(), digest(path)])
@@ -271,6 +286,7 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
     source_root = (root / "src").resolve()
     if prefix == source_root or source_root in prefix.parents:
         raise RecoveryError("prefix must not be inside the developer source tree")
+    source_before = source_identity(root)
     runtime = runtime_identity()
     lock = load_lock(root / "environments/tools-linux-cp312.lock.json")
     if not core:
@@ -355,8 +371,11 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
         )
         run([str(executable), "-I", "-c", smoke, json.dumps([] if core else lock["packages"]),
              str(root / "src/sparkbrain/__init__.py")], deadline)
+        source_after = source_identity(root)
+        if source_after != source_before:
+            raise RecoveryError("developer source changed during recovery; retry a stable checkout")
         result = {
-            "binding": binding, "status": "ready", "source": source_identity(root),
+            "binding": binding, "status": "ready", "source": source_after,
             "elapsed_seconds": round(time.monotonic() - started, 3),
             "reused_prefix": previous is not None, "offline_requested": offline,
             "experiment_execution": False, "scientific_admission": False,
