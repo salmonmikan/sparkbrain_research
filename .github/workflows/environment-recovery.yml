@@ -1,0 +1,40 @@
+name: environment-recovery
+
+on:
+  push:
+    paths:
+      - 'scripts/recover_environment.py'
+      - 'tests/test_environment_recovery.py'
+      - 'environments/**'
+      - '.github/workflows/environment-recovery.yml'
+  pull_request:
+    paths:
+      - 'scripts/recover_environment.py'
+      - 'tests/test_environment_recovery.py'
+      - 'environments/**'
+      - '.github/workflows/environment-recovery.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  restore:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.14'
+          # No package cache: exercise acquisition from the committed exact lock.
+      - name: Synthetic infrastructure tests
+        run: python -B -m unittest discover -s tests -p test_environment_recovery.py -v
+      - name: Acquire and restore locked developer tools
+        run: python -I -B scripts/recover_environment.py --prefix "$RUNNER_TEMP/env-a" --cache "$RUNNER_TEMP/wheels"
+      - name: Restore another empty prefix offline
+        run: python -I -B scripts/recover_environment.py --offline --prefix "$RUNNER_TEMP/env-b" --cache "$RUNNER_TEMP/wheels"
+      - name: Repeat restore and check changed infrastructure
+        run: |
+          python -I -B scripts/recover_environment.py --offline --prefix "$RUNNER_TEMP/env-b" --cache "$RUNNER_TEMP/wheels"
+          "$RUNNER_TEMP/env-b/bin/python" -B -m unittest discover -s tests -p test_environment_recovery.py -v
+          "$RUNNER_TEMP/env-b/bin/python" -m ruff check scripts/recover_environment.py tests/test_environment_recovery.py
