@@ -58,6 +58,11 @@ expired operation does not start another child.
 On platforms without an elapsed signal timer, subprocess timeouts and checks before
 readiness still reject expired work, but cannot interrupt blocked filesystem calls.
 This is a setup deadline, not an OS resource sandbox or real-time guarantee.
+The prefix lock remains held through readiness publication and its deadline check.
+Caught publication interruptions restore this attempt's incomplete marker before
+unlocking. If invalidation itself fails, the command reports an unverified receipt
+and retains the lock for inspection. Preflight failures do not alter a prior receipt.
+Reported elapsed time is sampled before ready-marker serialization, not at delivery.
 
 Downloads are size/hash checked before atomic cache promotion. Every reused wheel
 is checked again. Corrupt entries and partial downloads remain for diagnosis and
@@ -78,6 +83,13 @@ untracked tool modules and startup hooks from surviving reinstall. Review and
 remove old snapshots when no longer needed; repeated restores use additional disk.
 An unowned existing directory is not overwritten. Prefixes below `src` are rejected
 so installed dependencies cannot contaminate the developer-source digest.
+The initial ownership marker is completed in an `.initial-<suffix>` staging
+directory before that marker-only directory becomes the final prefix. Interrupted
+staging is preserved separately, leaving the final prefix absent or already owned
+and retryable. The virtual environment itself is built only at its final path.
+Directory publication uses the existing stdlib-only OS-native no-replace primitive
+from `src/sparkbrain/release_atomic.py`, loaded without importing the package.
+Unsupported no-replace operations fail rather than using a racy rename fallback.
 All symlinks in `src`, including directory links and the source root itself, are
 rejected before setup. The Python-source identity is checked again before the
 ready receipt; changes during restoration fail instead of receiving a stale digest.

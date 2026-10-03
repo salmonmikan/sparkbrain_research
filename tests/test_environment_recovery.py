@@ -362,14 +362,82 @@ class RecoveryTests(unittest.TestCase):
         self.assertEqual(len(preserved), 1)
         self.assertTrue((preserved[0] / "broken.dist-info/METADATA").is_file())
 
+    def test_initial_marker_failure_leaves_final_prefix_absent_and_retryable(self):
+        root = self.synthetic_source()
+        prefix = self.path / "initial-marker-error"
+
+        def partial_marker(path, value):
+            path.with_name(path.name + ".tmp").write_text("synthetic partial marker")
+            raise OSError("synthetic initial marker failure")
+
+        with patch.object(recovery, "write_json", side_effect=partial_marker):
+            with self.assertRaises(OSError):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertFalse(prefix.exists())
+        self.assertFalse(prefix.with_name(prefix.name + ".recovery-lock").exists())
+        self.assertEqual(len(list(self.path.glob("initial-marker-error.initial-*"))), 1)
+        result = recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual(result["status"], "ready")
+
+    def test_interruption_after_initial_rename_retains_owned_retryable_prefix(self):
+        root = self.synthetic_source()
+        prefix = self.path / "initial-rename-interrupt"
+        original = recovery.publish_directory_noreplace
+
+        def rename_then_interrupt(path, target):
+            result = original(path, target)
+            if target == prefix:
+                raise recovery.RecoveryError("synthetic interruption after initial publication")
+            return result
+
+        with patch.object(recovery, "publish_directory_noreplace", new=rename_then_interrupt):
+            with self.assertRaisesRegex(recovery.RecoveryError, "synthetic interruption"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual(json.loads((prefix / recovery.MARKER).read_text())["status"], "incomplete")
+        result = recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual(result["status"], "ready")
+
+    def test_unowned_prefix_appearing_during_staging_is_preserved(self):
+        root = self.synthetic_source()
+        prefix = self.path / "new-unowned-prefix"
+        original = recovery.write_json
+
+        def create_unowned_during_marker_write(path, value):
+            original(path, value)
+            prefix.mkdir()
+
+        with patch.object(recovery, "write_json", side_effect=create_unowned_during_marker_write):
+            with self.assertRaisesRegex(recovery.RecoveryError, "prefix appeared"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertTrue(prefix.is_dir())
+        self.assertEqual(list(prefix.iterdir()), [])
+
+    def test_atomic_publication_preserves_target_created_after_last_check(self):
+        root = self.synthetic_source()
+        prefix = self.path / "atomic-target-race"
+        original = recovery.publish_directory_noreplace
+
+        def appear_immediately_before_publish(source, destination):
+            destination.mkdir()
+            original(source, destination)
+
+        with patch.object(recovery, "publish_directory_noreplace",
+                          side_effect=appear_immediately_before_publish):
+            with self.assertRaises(FileExistsError):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertTrue(prefix.is_dir())
+        self.assertEqual(list(prefix.iterdir()), [])
+
     def test_changed_runtime_rejects_existing_prefix(self):
         root = self.synthetic_source()
         prefix = self.path / "old"
         recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        previous_marker = (prefix / recovery.MARKER).read_bytes()
         changed = dict(recovery.runtime_identity(), python="3.99.0")
         with patch.object(recovery, "runtime_identity", return_value=changed):
             with self.assertRaisesRegex(recovery.RecoveryError, "runtime/lock changed"):
                 recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual((prefix / recovery.MARKER).read_bytes(), previous_marker)
 
     def test_runtime_drift_during_restore_cannot_emit_ready_receipt(self):
         root = self.synthetic_source()
@@ -501,6 +569,66 @@ class RecoveryTests(unittest.TestCase):
                 recovery.restore(root, prefix, self.path / "cache", True, True, 1)
         self.assertFalse(prefix.exists())
         self.assertFalse((self.path / "cache").exists())
+
+    def delayed_publication(self, root, prefix, seconds):
+        original = recovery.write_json
+
+        def publish_then_delay(path, value):
+            original(path, value)
+            if value.get("status") == "ready":
+                time.sleep(1.2)
+
+        with patch.object(recovery, "write_json", side_effect=publish_then_delay):
+            with self.assertRaisesRegex(recovery.RecoveryError, "deadline"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, seconds)
+        self.assertEqual(json.loads((prefix / recovery.MARKER).read_text())["status"], "incomplete")
+        self.assertFalse(prefix.with_name(prefix.name + ".recovery-lock").exists())
+
+    @unittest.skipUnless(sys.platform == "linux", "requires elapsed timer")
+    def test_alarm_after_ready_write_rolls_back_before_unlock(self):
+        self.delayed_publication(self.synthetic_source(), self.path / "late-publication", 1)
+
+    def test_expired_publication_without_signal_timer_rolls_back(self):
+        with patch.object(recovery, "signal", SimpleNamespace()):
+            self.delayed_publication(self.synthetic_source(), self.path / "late-fallback", 1)
+
+    def test_publication_error_rolls_back_while_guard_is_held(self):
+        root = self.synthetic_source()
+        prefix = self.path / "publication-error"
+        guard = prefix.with_name(prefix.name + ".recovery-lock")
+        original = recovery.write_json
+
+        def publish_then_fail(path, value):
+            self.assertTrue(guard.is_dir())
+            original(path, value)
+            if value.get("status") == "ready":
+                raise OSError("synthetic publication interruption")
+
+        with patch.object(recovery, "write_json", side_effect=publish_then_fail):
+            with self.assertRaises(OSError):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual(json.loads((prefix / recovery.MARKER).read_text())["status"], "incomplete")
+        self.assertFalse(guard.exists())
+
+    def test_failed_invalidation_retains_guard_and_reports_unverified_receipt(self):
+        root = self.synthetic_source()
+        prefix = self.path / "failed-invalidation"
+        original = recovery.write_json
+        published = False
+
+        def publish_but_prevent_invalidation(path, value):
+            nonlocal published
+            if published:
+                raise OSError("synthetic rollback failure")
+            original(path, value)
+            if value.get("status") == "ready":
+                published = True
+                raise OSError("synthetic publication interruption")
+
+        with patch.object(recovery, "write_json", side_effect=publish_but_prevent_invalidation):
+            with self.assertRaisesRegex(recovery.RecoveryError, "could not be invalidated"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertTrue(prefix.with_name(prefix.name + ".recovery-lock").is_dir())
 
 
 if __name__ == "__main__":

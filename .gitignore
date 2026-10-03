@@ -29,4 +29,5 @@ data/external/
 .venv-recovery.recovery-lock/
 .venv-recovery.incomplete-*/
 .venv-recovery.previous-*/
+.venv-recovery.initial-*/
 .cache/recovery-wheels/

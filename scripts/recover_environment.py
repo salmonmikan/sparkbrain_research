@@ -11,6 +11,7 @@ import argparse
 import contextlib
 import hashlib
 import http.client
+import importlib.util
 import json
 import os
 import platform
@@ -307,6 +308,36 @@ def run(command: list[str], deadline: float) -> None:
         raise RecoveryError(f"offline setup/check failed (exit {returncode})")
 
 
+class _RestoreAttempt:
+    """Own the guard through publication and invalidate only this attempt's marker."""
+
+    def __init__(self) -> None:
+        self.guard: Path | None = None
+        self.marker: Path | None = None
+        self.incomplete: dict | None = None
+
+    def invalidate(self) -> None:
+        if self.marker is not None and self.incomplete is not None:
+            write_json(self.marker, self.incomplete)
+
+    def release(self) -> None:
+        if self.guard is not None:
+            self.guard.rmdir()
+            self.guard = None
+
+
+def publish_directory_noreplace(source: Path, destination: Path) -> None:
+    """Reuse the stdlib-only OS primitive without importing the SparkBrain package."""
+    spec = importlib.util.spec_from_file_location(
+        "_sparkbrain_recovery_atomic", ROOT / "src/sparkbrain/release_atomic.py"
+    )
+    if spec is None or spec.loader is None:
+        raise RecoveryError("atomic directory publication helper is unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    module.atomic_publish_directory_noreplace(source, destination)
+
+
 def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, seconds: int) -> dict:
     # This bootstrap runs before installation can enforce pyproject.requires-python.
     if sys.implementation.name != "cpython":
@@ -315,12 +346,29 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
         raise RecoveryError("CPython 3.11+ is required")
     started = time.monotonic()
     deadline = started + seconds
-    with timed_restore(deadline):
-        return _restore(root, prefix, cache, core, offline, started, deadline)
+    attempt = _RestoreAttempt()
+    retain_guard = False
+    try:
+        with timed_restore(deadline):
+            result = _restore(root, prefix, cache, core, offline, started, deadline, attempt)
+            remaining(deadline)
+        return result
+    except BaseException:
+        try:
+            attempt.invalidate()
+        except Exception:
+            retain_guard = True
+            raise RecoveryError(
+                "interrupted receipt could not be invalidated; inspect prefix and retained lock"
+            ) from None
+        raise
+    finally:
+        if not retain_guard:
+            attempt.release()
 
 
 def _restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool,
-             started: float, deadline: float) -> dict:
+             started: float, deadline: float, attempt: _RestoreAttempt) -> dict:
     root, prefix, cache = root.resolve(), prefix.absolute(), cache.absolute()
     if any("\n" in str(p) or "\r" in str(p) for p in (root, prefix, cache)):
         raise RecoveryError("newline in recovery path")
@@ -352,92 +400,101 @@ def _restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool,
         raise RecoveryError(
             "another restore may be active; inspect the prefix lock before retrying"
         ) from None
-    try:
-        marker = prefix / MARKER
-        previous = None
-        if prefix.exists():
-            if not marker.is_file():
-                raise RecoveryError("refusing an unowned existing prefix; select a new --prefix")
-            previous = json.loads(marker.read_text())
-            if previous.get("binding") != binding:
-                raise RecoveryError(
-                    "prefix runtime/lock changed; preserve it and select a new --prefix"
-                )
-        wheels: dict[str, Path] = {}
-        if not core:
-            cache.mkdir(parents=True, exist_ok=True)
-            for package in lock["packages"]:
-                wheels[package["name"]] = acquire(package, cache, offline, deadline)
-        # No prefix is allocated until every required download has been verified.
-        if previous is not None:
-            # pip uninstall cannot remove untracked modules/startup hooks, and an
-            # interrupted install can lack RECORD. Rebuild every owned prefix cleanly.
-            state = "incomplete" if previous.get("status") == "incomplete" else "previous"
-            prefix.rename(prefix.with_name(f"{prefix.name}.{state}-{time.time_ns()}"))
-        prefix.mkdir(exist_ok=True)
-        write_json(marker, {
-            "binding": binding, "status": "incomplete", "experiment_execution": False,
-        })
-        venv.EnvBuilder(with_pip=False).create(prefix)
-        executable = prefix / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
-        if not core:
-            requirements = prefix / "recovery-requirements.txt"
-            requirements.write_text("".join(
-                f"{p['name']}=={p['version']} --hash=sha256:{p['sha256']}\n"
-                for p in lock["packages"]
-            ))
-            bootstrap = (
-                "import runpy,sys;sys.path.insert(0,sys.argv.pop(1));"
-                "runpy.run_module('pip',run_name='__main__')"
+    attempt.guard = guard
+    marker = prefix / MARKER
+    previous = None
+    if prefix.exists():
+        if not marker.is_file():
+            raise RecoveryError("refusing an unowned existing prefix; select a new --prefix")
+        previous = json.loads(marker.read_text())
+        if previous.get("binding") != binding:
+            raise RecoveryError(
+                "prefix runtime/lock changed; preserve it and select a new --prefix"
             )
-            run([str(executable), "-I", "-c", bootstrap, str(wheels["pip"]),
-                 "--isolated", "install", "--no-index", "--no-deps", "--require-hashes",
-                 "--force-reinstall",
-                 "--only-binary=:all:", "--no-cache-dir", "--disable-pip-version-check",
-                 "--find-links", str(cache), "-r", str(requirements)], deadline)
-            run([str(executable), "-I", "-m", "pip", "--isolated",
-                 "--disable-pip-version-check", "--no-cache-dir", "check"], deadline)
-        # A plain path file replaces an unpinned editable build. No setuptools hook runs.
-        attach = (
-            "import pathlib,sys,sysconfig;"
-            "p=pathlib.Path(sysconfig.get_path('purelib'))/'sparkbrain-recovery.pth';"
-            "p.write_text(sys.argv[1]+'\\n',encoding='utf-8')"
+    wheels: dict[str, Path] = {}
+    if not core:
+        cache.mkdir(parents=True, exist_ok=True)
+        for package in lock["packages"]:
+            wheels[package["name"]] = acquire(package, cache, offline, deadline)
+    # No prefix is allocated until every required download has been verified.
+    if previous is not None:
+        # pip uninstall cannot remove untracked modules/startup hooks, and an
+        # interrupted install can lack RECORD. Rebuild every owned prefix cleanly.
+        state = "incomplete" if previous.get("status") == "incomplete" else "previous"
+        publish_directory_noreplace(
+            prefix, prefix.with_name(f"{prefix.name}.{state}-{time.time_ns()}")
         )
-        run([str(executable), "-I", "-c", attach, str(root / "src")], deadline)
-        smoke = (
-            "import importlib.metadata as m,json,pathlib,re,sparkbrain,sys;"
-            "expected=json.loads(sys.argv[1]);"
-            "assert pathlib.Path(sparkbrain.__file__).resolve()"
-            "==pathlib.Path(sys.argv[2]).resolve(),'source import origin mismatch';"
-            "norm=lambda n:re.sub(r'[-_.]+','-',n).lower();"
-            "assert {norm(d.metadata['Name']) for d in m.distributions()}"
-            "=={p['name'] for p in expected},'unexpected installed distributions';"
-            "assert {p['name']:m.version(p['name']) for p in expected}"
-            "=={p['name']:p['version'] for p in expected};"
-            "assert sparkbrain.__version__=='0.3.2.dev0';"
-            "print('Recovery import/version check: PASS (no model constructed)')"
+    attempt.incomplete = {
+        "binding": binding, "status": "incomplete", "experiment_execution": False,
+    }
+    # Publish ownership before exposing the final prefix. Only a marker directory
+    # moves here; the venv is later created at its final, non-relocatable path.
+    staging = Path(tempfile.mkdtemp(prefix=f"{prefix.name}.initial-", dir=prefix.parent))
+    write_json(staging / MARKER, attempt.incomplete)
+    if prefix.exists() or prefix.is_symlink():
+        raise RecoveryError("prefix appeared during setup; preserve it and choose a new prefix")
+    publish_directory_noreplace(staging, prefix)
+    attempt.marker = marker
+    venv.EnvBuilder(with_pip=False).create(prefix)
+    executable = prefix / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+    if not core:
+        requirements = prefix / "recovery-requirements.txt"
+        requirements.write_text("".join(
+            f"{p['name']}=={p['version']} --hash=sha256:{p['sha256']}\n"
+            for p in lock["packages"]
+        ))
+        bootstrap = (
+            "import runpy,sys;sys.path.insert(0,sys.argv.pop(1));"
+            "runpy.run_module('pip',run_name='__main__')"
         )
-        run([str(executable), "-I", "-c", smoke, json.dumps([] if core else lock["packages"]),
-             str(root / "src/sparkbrain/__init__.py")], deadline)
-        source_after = source_identity(root)
-        if source_after != source_before:
-            raise RecoveryError("developer source changed during recovery; retry a stable checkout")
-        if lock_path.read_bytes() != lock_bytes:
-            raise RecoveryError("dependency lock changed during recovery; use a stable lock")
-        if runtime_identity() != runtime:
-            raise RecoveryError("runtime changed during recovery; preserve it and use a new prefix")
-        remaining(deadline)
-        result = {
-            "binding": binding, "status": "ready", "source": source_after,
-            "elapsed_seconds": round(time.monotonic() - started, 3),
-            "reused_prefix": previous is not None, "offline_requested": offline,
-            "experiment_execution": False, "scientific_admission": False,
-        }
-        remaining(deadline)
-        write_json(marker, result)
-        return result
-    finally:
-        guard.rmdir()
+        run([str(executable), "-I", "-c", bootstrap, str(wheels["pip"]),
+             "--isolated", "install", "--no-index", "--no-deps", "--require-hashes",
+             "--force-reinstall",
+             "--only-binary=:all:", "--no-cache-dir", "--disable-pip-version-check",
+             "--find-links", str(cache), "-r", str(requirements)], deadline)
+        run([str(executable), "-I", "-m", "pip", "--isolated",
+             "--disable-pip-version-check", "--no-cache-dir", "check"], deadline)
+    # A plain path file replaces an unpinned editable build. No setuptools hook runs.
+    attach = (
+        "import pathlib,sys,sysconfig;"
+        "p=pathlib.Path(sysconfig.get_path('purelib'))/'sparkbrain-recovery.pth';"
+        "p.write_text(sys.argv[1]+'\\n',encoding='utf-8')"
+    )
+    run([str(executable), "-I", "-c", attach, str(root / "src")], deadline)
+    smoke = (
+        "import importlib.metadata as m,json,pathlib,re,sparkbrain,sys;"
+        "expected=json.loads(sys.argv[1]);"
+        "assert pathlib.Path(sparkbrain.__file__).resolve()"
+        "==pathlib.Path(sys.argv[2]).resolve(),'source import origin mismatch';"
+        "norm=lambda n:re.sub(r'[-_.]+','-',n).lower();"
+        "assert {norm(d.metadata['Name']) for d in m.distributions()}"
+        "=={p['name'] for p in expected},'unexpected installed distributions';"
+        "assert {p['name']:m.version(p['name']) for p in expected}"
+        "=={p['name']:p['version'] for p in expected};"
+        "assert sparkbrain.__version__=='0.3.2.dev0';"
+        "print('Recovery import/version check: PASS (no model constructed)')"
+    )
+    run([str(executable), "-I", "-c", smoke, json.dumps([] if core else lock["packages"]),
+         str(root / "src/sparkbrain/__init__.py")], deadline)
+    source_after = source_identity(root)
+    if source_after != source_before:
+        raise RecoveryError("developer source changed during recovery; retry a stable checkout")
+    if lock_path.read_bytes() != lock_bytes:
+        raise RecoveryError("dependency lock changed during recovery; use a stable lock")
+    if runtime_identity() != runtime:
+        raise RecoveryError("runtime changed during recovery; preserve it and use a new prefix")
+    remaining(deadline)
+    result = {
+        "binding": binding, "status": "ready", "source": source_after,
+        "elapsed_seconds": round(time.monotonic() - started, 3),
+        "reused_prefix": previous is not None, "offline_requested": offline,
+        "experiment_execution": False, "scientific_admission": False,
+    }
+    remaining(deadline)
+    write_json(marker, result)
+    remaining(deadline)
+    return result
+
 
 
 def main() -> int:
