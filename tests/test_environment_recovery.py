@@ -15,6 +15,7 @@ import time
 import unittest
 import urllib.error
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -199,6 +200,14 @@ class RecoveryTests(unittest.TestCase):
                                      True, True, 30)
         self.assertEqual(list(self.path.iterdir()), [])
 
+    def test_non_cpython_fails_before_runtime_probe_or_filesystem_change(self):
+        with patch.object(recovery.sys, "implementation", SimpleNamespace(name="pypy")):
+            with patch.object(recovery, "runtime_identity", side_effect=AssertionError):
+                with self.assertRaisesRegex(recovery.RecoveryError, "CPython"):
+                    recovery.restore(self.path, self.path / "env", self.path / "cache",
+                                     True, True, 30)
+        self.assertEqual(list(self.path.iterdir()), [])
+
     def synthetic_source(self):
         root = self.path / "source"
         (root / "src/sparkbrain").mkdir(parents=True)
@@ -234,6 +243,24 @@ class RecoveryTests(unittest.TestCase):
             recovery.restore(root, prefix, self.path / "cache", True, True, 30)
         self.assertEqual((prefix / "sentinel").read_text(), "keep")
 
+    def test_prefix_below_source_is_rejected_before_writes(self):
+        root = self.synthetic_source()
+        for prefix in (root / "src", root / "src/recovery-env"):
+            with self.assertRaisesRegex(recovery.RecoveryError, "inside.*source"):
+                recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertFalse((root / "src/recovery-env").exists())
+        self.assertFalse((self.path / "cache").exists())
+
+    @unittest.skipUnless(sys.platform == "linux", "requires symlink support")
+    def test_prefix_below_aliased_source_is_rejected(self):
+        root = self.synthetic_source()
+        target = self.path / "actual-source"
+        (root / "src").rename(target)
+        (root / "src").symlink_to(target, target_is_directory=True)
+        with self.assertRaisesRegex(recovery.RecoveryError, "inside.*source"):
+            recovery.restore(root, root / "src/env", self.path / "cache", True, True, 30)
+        self.assertFalse((target / "env").exists())
+
     def test_interrupted_owned_install_is_resumable(self):
         root = self.synthetic_source()
         prefix = self.path / "interrupted"
@@ -262,7 +289,7 @@ class RecoveryTests(unittest.TestCase):
             with self.assertRaisesRegex(recovery.RecoveryError, "runtime/lock changed"):
                 recovery.restore(root, prefix, self.path / "cache", True, True, 30)
 
-    def test_same_version_shadow_package_is_rejected(self):
+    def test_same_version_shadow_package_is_preserved_outside_clean_prefix(self):
         root = self.synthetic_source()
         prefix = self.path / "shadowed"
         recovery.restore(root, prefix, self.path / "cache", True, True, 30)
@@ -272,8 +299,31 @@ class RecoveryTests(unittest.TestCase):
         shadow = sites[0] / "sparkbrain"
         shadow.mkdir()
         (shadow / "__init__.py").write_text("__version__='0.3.2.dev0'\n")
-        with self.assertRaisesRegex(recovery.RecoveryError, "offline setup/check failed"):
-            recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        result = recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual(result["status"], "ready")
+        self.assertFalse(shadow.exists())
+        previous = list(self.path.glob("shadowed.previous-*"))
+        self.assertEqual(len(previous), 1)
+        self.assertTrue((previous[0] / shadow.relative_to(prefix)).is_dir())
+
+    def test_ready_prefix_never_reuses_untracked_tool_or_startup_hook(self):
+        root = self.synthetic_source()
+        prefix = self.path / "stale-tools"
+        recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        sites = list(prefix.glob("lib/python*/site-packages"))
+        if not sites:
+            sites = [prefix / "Lib/site-packages"]
+        stray_module = sites[0] / "pytest.py"
+        stray_module.write_text("raise RuntimeError('untracked shadow must never run')\n")
+        hook_marker = self.path / "startup-hook-ran"
+        hook = sites[0] / "stale.pth"
+        hook.write_text(f"import pathlib; pathlib.Path({str(hook_marker)!r}).touch()\n")
+        result = recovery.restore(root, prefix, self.path / "cache", True, True, 30)
+        self.assertEqual(result["status"], "ready")
+        self.assertFalse(stray_module.exists())
+        self.assertFalse(hook.exists())
+        self.assertFalse(hook_marker.exists())
+        self.assertEqual(len(list(self.path.glob("stale-tools.previous-*"))), 1)
 
     def test_offline_child_does_not_inherit_credentials(self):
         with patch.dict("os.environ", {

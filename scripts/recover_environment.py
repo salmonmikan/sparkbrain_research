@@ -254,6 +254,8 @@ def run(command: list[str], deadline: float) -> None:
 
 def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, seconds: int) -> dict:
     # This bootstrap runs before installation can enforce pyproject.requires-python.
+    if sys.implementation.name != "cpython":
+        raise RecoveryError("CPython 3.11+ is required")
     if sys.version_info < (3, 11):  # noqa: UP036
         raise RecoveryError("CPython 3.11+ is required")
     started = time.monotonic()
@@ -266,6 +268,9 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
     prefix, cache = prefix.resolve(), cache.resolve()
     if prefix == root or prefix in root.parents or prefix == cache or prefix in cache.parents:
         raise RecoveryError("prefix must not contain the source tree or wheel cache")
+    source_root = (root / "src").resolve()
+    if prefix == source_root or source_root in prefix.parents:
+        raise RecoveryError("prefix must not be inside the developer source tree")
     runtime = runtime_identity()
     lock = load_lock(root / "environments/tools-linux-cp312.lock.json")
     if not core:
@@ -301,10 +306,11 @@ def restore(root: Path, prefix: Path, cache: Path, core: bool, offline: bool, se
                 for package in lock["packages"]:
                     wheels[package["name"]] = acquire(package, cache, offline, deadline)
         # No prefix is allocated until every required download has been verified.
-        if previous is not None and previous.get("status") == "incomplete":
-            # Interrupted pip can leave METADATA without RECORD, which cannot be safely
-            # uninstalled in place. Preserve the whole failed prefix, then build cleanly.
-            prefix.rename(prefix.with_name(f"{prefix.name}.incomplete-{time.time_ns()}"))
+        if previous is not None:
+            # pip uninstall cannot remove untracked modules/startup hooks, and an
+            # interrupted install can lack RECORD. Rebuild every owned prefix cleanly.
+            state = "incomplete" if previous.get("status") == "incomplete" else "previous"
+            prefix.rename(prefix.with_name(f"{prefix.name}.{state}-{time.time_ns()}"))
         prefix.mkdir(exist_ok=True)
         write_json(marker, {
             "binding": binding, "status": "incomplete", "experiment_execution": False,

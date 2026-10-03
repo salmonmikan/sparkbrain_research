@@ -62,9 +62,14 @@ Offline children omit inherited Python/pip/proxy configuration. No build backend
 runs and no editable-build dependencies are fetched. A plain local path file
 attaches the source; the imported package origin must match the requested checkout.
 
-An interrupted owned prefix is preserved as `.incomplete-<timestamp>` on retry,
-then rebuilt cleanly at the original path. This avoids pip uninstall failures from
-half-written package metadata. An unowned existing directory is not overwritten.
+Every repeated restore rebuilds the owned prefix cleanly at its original path.
+The old directory is preserved as `.incomplete-<timestamp>` after an interrupted
+attempt, or `.previous-<timestamp>` after a ready result. These are diagnostic
+snapshots, not relocatable environments. This prevents half-written metadata,
+untracked tool modules and startup hooks from surviving reinstall. Review and
+remove old snapshots when no longer needed; repeated restores use additional disk.
+An unowned existing directory is not overwritten. Prefixes below `src` are rejected
+so installed dependencies cannot contaminate the developer-source digest.
 Concurrent restores to one prefix are rejected. After a killed process, remove
 its `.recovery-lock` directory only after confirming that process has stopped.
 Runtime/lock changes require a new prefix. Extra distributions or a shadow package
