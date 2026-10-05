@@ -92,6 +92,7 @@ component state and final integrated state hash.
 ```bash
 python -m pytest -q tests/test_system_build_causal_scope_revision.py
 python -m pytest -q tests/test_system_build_integrated_m1.py
+python -m pytest -q tests/test_system_build_m1_robustness.py
 python -m pytest -q tests/test_system_build*.py
 python scripts/local_readiness_check.py
 python -m pytest -q
@@ -115,3 +116,7 @@ causal composition contribution, biological equivalence, energy efficiency or no
 limited to two routing components, eight routing dimensions, sixteen predictive hypotheses,
 sixty-four context scalars, fixed thresholds and at most 64 fixture cycles per scenario. FLY-0 is
 not a dependency, is not mixed into this build and has no SB003 allocation here.
+
+The separately allocated post-integration robustness harness is documented in
+`docs/SYSTEM_BUILD_M1_ROBUSTNESS.md`. It extends deterministic verification only and does not
+change this runtime or claim boundary.
