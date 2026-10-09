@@ -2,6 +2,8 @@ name: ci
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c12-runtime-capture-20261009T1236Z'
   pull_request:
 
 permissions:

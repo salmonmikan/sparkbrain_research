@@ -1,0 +1,78 @@
+{
+  "status": "PROSPECTIVE_SOURCE_ONLY_NOT_TRUSTED_RUNTIME_PINS",
+  "native_admission": false,
+  "scientific_execution": false,
+  "trusted_pins_approved": false,
+  "files": [
+    {
+      "local_path": "capture.py",
+      "repository_path": "research/c12_runtime_capture_20261009/capture.py",
+      "mode": "100644",
+      "bytes": 23231,
+      "sha256": "19aa6a51850df546583827f80eda0e02a18831c283589e590f3d85e792ca0e3b"
+    },
+    {
+      "local_path": "supervise.py",
+      "repository_path": "research/c12_runtime_capture_20261009/supervise.py",
+      "mode": "100644",
+      "bytes": 9188,
+      "sha256": "25cc2fcae42d49ff741da9513ac685584a5d79332c0e6bfe732c325d8d485bdc"
+    },
+    {
+      "local_path": "test_capture.py",
+      "repository_path": "research/c12_runtime_capture_20261009/test_capture.py",
+      "mode": "100644",
+      "bytes": 5210,
+      "sha256": "fb49a0c2b0559994b9e9e8053cb78ec727c1fd19ed6aa25cd14214b50cd3da79"
+    },
+    {
+      "local_path": "README.md",
+      "repository_path": "research/c12_runtime_capture_20261009/README.md",
+      "mode": "100644",
+      "bytes": 4939,
+      "sha256": "01a12c998c6a3ed6041946e7fe0038074eccb65474bd4eccc55ba67b184bce48"
+    },
+    {
+      "local_path": "WORKFLOW.md",
+      "repository_path": "research/c12_runtime_capture_20261009/WORKFLOW.md",
+      "mode": "100644",
+      "bytes": 4649,
+      "sha256": "5c0500591176b01afcd13732a08648790cc681f5c522c724b4fd65dbfe806d92"
+    },
+    {
+      "local_path": "PUBLIC_PAYLOAD_PLAN.md",
+      "repository_path": "research/c12_runtime_capture_20261009/PUBLIC_PAYLOAD_PLAN.md",
+      "mode": "100644",
+      "bytes": 1509,
+      "sha256": "98c45af55c766df54e9eae59721ead6f14fe50f8f70a2736e183a6342d806351"
+    },
+    {
+      "local_path": "ACTION_PROVENANCE.json",
+      "repository_path": "research/c12_runtime_capture_20261009/ACTION_PROVENANCE.json",
+      "mode": "100644",
+      "bytes": 601,
+      "sha256": "6ae599827e934766f072874eaa67b11c81665db1481b7ca01f03f4b96130db13"
+    },
+    {
+      "local_path": "workflow.yml.proposed",
+      "repository_path": ".github/workflows/c12_runtime_capture_20261009.yml",
+      "mode": "100644",
+      "bytes": 2146,
+      "sha256": "72ec1fe281397e451642986620d2dd4bce404e49da5fdf650b604665021b76b5"
+    },
+    {
+      "local_path": "ci.yml.branch-only.proposed",
+      "repository_path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "bytes": 4284,
+      "sha256": "ec887f5c01c4dd30d846b4f49febb76be192a0c367d4777329bf14101307bdc5"
+    },
+    {
+      "local_path": "environment-recovery.yml.branch-only.proposed",
+      "repository_path": ".github/workflows/environment-recovery.yml",
+      "mode": "100644",
+      "bytes": 1712,
+      "sha256": "ce2131ae0d5ae50a843639a69cfa44958534140bdb5cb0a66d8ba85fbc177f59"
+    }
+  ]
+}
