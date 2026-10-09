@@ -2,6 +2,8 @@ name: ci
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c12-bootstrap-diagnostic-20261009T1335Z'
   pull_request:
 
 permissions:

@@ -1,0 +1,55 @@
+{
+  "status": "FROZEN_SOURCE_CANDIDATE_TESTS_PENDING_PREFLIGHT_NOT_RUNTIME_PINS",
+  "files": [
+    {
+      "path": "capture.py",
+      "bytes": 25611,
+      "sha256": "297850e0975b2084debe92b92515546709aa720d4ce634a0830e4bb9e0fd6a1d"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 9188,
+      "sha256": "25cc2fcae42d49ff741da9513ac685584a5d79332c0e6bfe732c325d8d485bdc"
+    },
+    {
+      "path": "test_bootstrap_diagnostic.py",
+      "bytes": 6575,
+      "sha256": "0a4b30992ff9199ffc9c1e3504027295c8ec0aa885839b3886c5b37f38d2ae0b"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2706,
+      "sha256": "2d7794d676f57817f1669f49e4085e5e4417d9936f3335d8fdcf0adde2fd6b55"
+    },
+    {
+      "path": "WORKFLOW.md",
+      "bytes": 1938,
+      "sha256": "7ed8e8520d2975d5df910bfa0da251794ccadf315f0f9a8656675e9aad2f081b"
+    },
+    {
+      "path": "PUBLIC_PAYLOAD_PLAN.md",
+      "bytes": 1085,
+      "sha256": "4be3dc6e8d516b3a75f8c8c04372af6434c64aa7d889ca3e627871a246a450ee"
+    },
+    {
+      "path": "ACTION_PROVENANCE.json",
+      "bytes": 601,
+      "sha256": "6ae599827e934766f072874eaa67b11c81665db1481b7ca01f03f4b96130db13"
+    },
+    {
+      "path": "workflow.yml.proposed",
+      "bytes": 2180,
+      "sha256": "2b8ac675785ad71827667e5af52cedfc6fba66ef04440f9a53ab1a28eb24d6fb"
+    },
+    {
+      "path": "ci.yml.branch-only.proposed",
+      "bytes": 4289,
+      "sha256": "0dd9791c2a5df0e7e061a20bb2a8b9b36fca04626dc6642abf8972d5857261c9"
+    },
+    {
+      "path": "environment-recovery.yml.branch-only.proposed",
+      "bytes": 1717,
+      "sha256": "9fe6135f3fee439fe23bc0ee0a61a801b7d9e1ec2ec0c33346f445157efd9c19"
+    }
+  ]
+}
