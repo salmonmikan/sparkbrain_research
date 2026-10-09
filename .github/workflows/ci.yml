@@ -2,6 +2,8 @@ name: ci
 
 on:
   push:
+    branches-ignore:
+      - 'probe/nativecompat-3148-20261009T0949Z'
   pull_request:
 
 permissions:
