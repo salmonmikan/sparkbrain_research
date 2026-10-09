@@ -2,6 +2,8 @@ name: ci
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c7compat-3148-20261009T1008Z'
   pull_request:
 
 permissions:

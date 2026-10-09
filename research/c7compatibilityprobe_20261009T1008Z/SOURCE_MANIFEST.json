@@ -1,0 +1,11 @@
+{
+  "payload/c7/annotation_policy.py": "2e8a3f3feb189f5d16a6a91306e39c1081d34e1674dde8c157bd6c9c5432268e",
+  "payload/c7/live_bindings.py": "10bb1437196c0f491873f3c9f854fb2e61aeac82581b90b592c1f70585bf3696",
+  "payload/c7/native_capture.py": "ccaa65b62125f7f5478f526cd6db1bff26a617d65b19ee2762309fcaf2115116",
+  "payload/c7/operation_boundary.py": "f7ae10f79f2368a6f4715c305879257650d492b4520983c37a418e22dd292323",
+  "payload/c7/synthetic_annotation_adapter.py": "bfcf30497b9dffb2731d2bb22058ae56a4de865d2da7bca30d9bc5f3b012c12a",
+  "payload/c7/synthetic_dataclass_fixture.py": "027f043837913226f726d23f76ee7b72f03007cf68cb167a37f3ee58f7b9d035",
+  "payload/c7/test_dataclass_integration.py": "473e71ac85f1520c3defacf4705337b065580876f8979491cefd4f0c171134d1",
+  "probe.py": "28c049cc9aab00274b22b806058e2683525cc6cfb40196f46de541de510b968e",
+  "supervise.py": "e62646fd186acfbba6a66092c69cba107158bd813429311d31c83cecfcf012fd"
+}
