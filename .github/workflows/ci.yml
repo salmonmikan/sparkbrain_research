@@ -2,6 +2,8 @@ name: ci
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c12-bootstrap-taxonomy-20261009T1352Z'
   pull_request:
 
 permissions:

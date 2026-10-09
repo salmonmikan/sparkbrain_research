@@ -1,0 +1,55 @@
+{
+  "status": "SOURCE_REVIEWED_NINE_MOCK_TESTS_PASSED_PUBLICATION_HELD_NOT_RUNTIME_PINS",
+  "files": [
+    {
+      "path": "capture.py",
+      "bytes": 27518,
+      "sha256": "421669629145b63ce0b622dd7fb59a973d8022ae8ee63529ee76623ba2bb9d12"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 9188,
+      "sha256": "25cc2fcae42d49ff741da9513ac685584a5d79332c0e6bfe732c325d8d485bdc"
+    },
+    {
+      "path": "test_mapping_taxonomy.py",
+      "bytes": 10072,
+      "sha256": "241745d0137ac65143ba38e38bf9e899ac4b9dfa934b90fe17ff73a7d90d9e84"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3232,
+      "sha256": "e909e5e6b0a9bef609ba484aac2f66c7a1e46b80215b76da6615643cca559cc4"
+    },
+    {
+      "path": "WORKFLOW.md",
+      "bytes": 2013,
+      "sha256": "176a008c252707870c0c49bdc49300b9e9b90877cd46cd75bd0c11e734e9cf73"
+    },
+    {
+      "path": "PUBLIC_PAYLOAD_PLAN.md",
+      "bytes": 1148,
+      "sha256": "84293cbe6bfe9d47d8086e35187ca79ca5959c4b237226975b9dd10fbe02c7ac"
+    },
+    {
+      "path": "ACTION_PROVENANCE.json",
+      "bytes": 601,
+      "sha256": "6ae599827e934766f072874eaa67b11c81665db1481b7ca01f03f4b96130db13"
+    },
+    {
+      "path": "workflow.yml.proposed",
+      "bytes": 2158,
+      "sha256": "ae0be193bde09db1093306870d62bf8884c1dc833bc05e301b9e7fa4fcba7d1b"
+    },
+    {
+      "path": "ci.yml.branch-only.proposed",
+      "bytes": 4287,
+      "sha256": "b4e68c0b24ec75eceec7f47da87307ea1028178c6b72e920afe892494e06205a"
+    },
+    {
+      "path": "environment-recovery.yml.branch-only.proposed",
+      "bytes": 1715,
+      "sha256": "2c48691d3216815751d2e852994ef0aca1a29f4441ca6da95caad0221fe9eb77"
+    }
+  ]
+}

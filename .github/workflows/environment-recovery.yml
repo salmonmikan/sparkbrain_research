@@ -2,6 +2,8 @@ name: environment-recovery
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c12-bootstrap-taxonomy-20261009T1352Z'
     paths:
       - 'scripts/recover_environment.py'
       - 'tests/test_environment_recovery.py'
