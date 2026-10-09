@@ -1,0 +1,49 @@
+# SOURCE CANDIDATE: publication and the sole remaining attempt require root gate.
+name: C12 Phase A exact mapped locale
+on:
+  push:
+    branches: ['probe/c12-locale-exact-20261009T1713Z']
+    paths:
+      - 'research/c12_locale_exact_20261009/**'
+      - '.github/workflows/c12_locale_exact_20261009.yml'
+permissions:
+  contents: read
+concurrency:
+  group: c12-locale-exact-20261009T1713Z
+  cancel-in-progress: false
+jobs:
+  capture:
+    if: >-
+      github.repository == 'salmonmikan/sparkbrain_research' &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/probe/c12-locale-exact-20261009T1713Z' &&
+      github.event.head_commit.message == 'probe: c12-locale-exact-20261009T1713Z ONE_SHOT OBSERVATION_ONLY' &&
+      github.run_attempt == 1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 1
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout: research/c12_locale_exact_20261009
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.14.8'
+          architecture: x64
+          check-latest: false
+      - name: One bounded observation process
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          prefix="$(realpath "$pythonLocation")"
+          target="$(realpath "$pythonLocation/bin/python3.14")"
+          source="$GITHUB_WORKSPACE/research/c12_locale_exact_20261009"
+          printf '%s  %s\n' '25cc2fcae42d49ff741da9513ac685584a5d79332c0e6bfe732c325d8d485bdc' "$source/supervise.py" | sha256sum --check --status
+          timeout --signal=TERM --kill-after=2s 35s \
+            /usr/bin/python3 -I -S -B "$source/supervise.py" \
+            --bootstrap "$target" "$prefix" "$source/capture.py" \
+            "$RUNNER_TEMP/c12-phase-a-one-attempt" 'c12-locale-exact-20261009T1713Z' \
+            '67b7a5ca6a69a00bfcef0ac5e21b552eaa57a5aee185430fe83bbe10b633d8f6'

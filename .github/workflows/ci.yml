@@ -2,6 +2,8 @@ name: ci
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c12-locale-exact-20261009T1713Z'
   pull_request:
 
 permissions:

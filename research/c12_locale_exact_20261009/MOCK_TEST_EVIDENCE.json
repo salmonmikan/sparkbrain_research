@@ -1,0 +1,18 @@
+{
+  "status": "PASSED",
+  "source_sha256": "67b7a5ca6a69a00bfcef0ac5e21b552eaa57a5aee185430fe83bbe10b633d8f6",
+  "test_sha256": "516b5e734778da7a583b355feff40d4cdb251494a70482ca2fb550fcbda76456",
+  "command": "timeout 15s python -I -S -B candidate/test_exact_locale.py",
+  "executed_at_utc": "2026-10-09T17:12:48Z",
+  "exit_code": 0,
+  "tests": 30,
+  "distinct_test_method_bodies": 21,
+  "elapsed_reported_seconds": 0.101,
+  "stdout": "",
+  "stderr": "..............................\n----------------------------------------------------------------------\nRan 30 tests in 0.101s\n\nOK\n",
+  "collector_executed": false,
+  "supervisor_executed": false,
+  "target_runtime_executed": false,
+  "science_executed": false,
+  "actual_locale_or_proc_reads": false
+}
