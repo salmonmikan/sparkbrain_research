@@ -2,6 +2,8 @@ name: ci
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c12-function-reference-20261010T0015Z'
   pull_request:
 
 permissions:

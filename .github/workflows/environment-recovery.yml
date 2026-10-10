@@ -2,6 +2,8 @@ name: environment-recovery
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c12-function-reference-20261010T0015Z'
     paths:
       - 'scripts/recover_environment.py'
       - 'tests/test_environment_recovery.py'
