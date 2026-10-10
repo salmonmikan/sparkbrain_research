@@ -2,6 +2,8 @@ name: ci
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c12-closure-diagnostic-20261010T1454Z'
   pull_request:
 
 permissions:
