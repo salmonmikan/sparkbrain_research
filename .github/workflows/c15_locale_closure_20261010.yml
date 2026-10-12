@@ -1,0 +1,49 @@
+# SOURCE CANDIDATE: publication and the one approved environment-check attempt require root gate.
+name: C15 model-free locale dependency verification
+on:
+  push:
+    branches: ['probe/c15-locale-closure-20261010T1531Z']
+    paths:
+      - 'research/c15_locale_closure_20261010/**'
+      - '.github/workflows/c15_locale_closure_20261010.yml'
+permissions:
+  contents: read
+concurrency:
+  group: c15-locale-closure-20261010T1531Z
+  cancel-in-progress: false
+jobs:
+  capture:
+    if: >-
+      github.repository == 'salmonmikan/sparkbrain_research' &&
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/probe/c15-locale-closure-20261010T1531Z' &&
+      github.event.head_commit.message == 'probe: c15-locale-closure-20261010T1531Z ONE_SHOT OBSERVATION_ONLY' &&
+      github.run_attempt == 1
+    runs-on: ubuntu-24.04
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+          sparse-checkout: research/c15_locale_closure_20261010
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.14.8'
+          architecture: x64
+          check-latest: false
+      - name: One bounded observation process
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          prefix="$(realpath "$pythonLocation")"
+          target="$(realpath "$pythonLocation/bin/python3.14")"
+          source="$GITHUB_WORKSPACE/research/c15_locale_closure_20261010"
+          printf '%s  %s\n' '6d08cc8efafd407a63f30b98da106a8780e27e234a728fb9d65f89c9f8288ff3' "$source/supervise.py" | sha256sum --check --status
+          timeout --signal=TERM --kill-after=2s 35s \
+            /usr/bin/python3 -I -S -B "$source/supervise.py" \
+            --bootstrap "$target" "$prefix" "$source/verify_locale.py" \
+            "$RUNNER_TEMP/c15-locale-closure-one-attempt" 'c15-locale-closure-20261010T1531Z' \
+            '3639e4a8d0dbeca412a644ec2986592cb1b361d469b3488e1a412ca5e8346f79'

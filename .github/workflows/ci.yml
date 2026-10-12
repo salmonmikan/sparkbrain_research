@@ -2,6 +2,8 @@ name: ci
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c15-locale-closure-20261010T1531Z'
   pull_request:
 
 permissions:

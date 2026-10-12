@@ -2,6 +2,8 @@ name: environment-recovery
 
 on:
   push:
+    branches-ignore:
+      - 'probe/c15-locale-closure-20261010T1531Z'
     paths:
       - 'scripts/recover_environment.py'
       - 'tests/test_environment_recovery.py'

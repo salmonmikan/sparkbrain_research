@@ -1,0 +1,331 @@
+{
+  "approved_runtime_policy": false,
+  "native_admission": false,
+  "rows": [
+    {
+      "bytes": 17752,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/bin/python3.14",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "a5230d8adbd26c2185d77fb003597c4ee9c44c2369fc179122ff7c3a3a58ae59"
+    },
+    {
+      "bytes": 32414720,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/libpython3.14.so.1.0",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "ce19367f84f6a9f096c0ccd2047aba8197101e5637e065471235aed8df7cbb3c"
+    },
+    {
+      "bytes": 10115,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/_opcode_metadata.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "d9badc5ab19a66415e230bf8f4299491b2207d584981a92b6e7c447cfa1aeac3"
+    },
+    {
+      "bytes": 3962,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/_weakrefset.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "2dd7cb459d654fe78b00c5c47ee8e786c037ee77763304603f5e976dd62cbf81"
+    },
+    {
+      "bytes": 44420,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/annotationlib.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "1cce29393714b91e3f71571ffbedacc7f73f11ad26be10701debeb86ec059a32"
+    },
+    {
+      "bytes": 25479,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/ast.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "5ea9a796353544bea0d706153516f04ef3d92be305d15a73238403837d77e34c"
+    },
+    {
+      "bytes": 3423,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/bisect.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "f1cf7b85fc36b5da249813fc5ab97d9464f8cc1bc817f7146206fa2713e35999"
+    },
+    {
+      "bytes": 53021,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/collections/__init__.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "cb8367b8edd188662143ea2e3942d360c2deae51c72fd779ec898f5076d2c2b9"
+    },
+    {
+      "bytes": 8582,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/copy.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "15154fde290d6e65b5007905689a47a9a5a724822c5e06eec35d9ffbb2a3aa69"
+    },
+    {
+      "bytes": 7716,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/copyreg.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "6376eb5722806396f5842997ac18add369ea9ac3ff4fcfe1460c41a088cac425"
+    },
+    {
+      "bytes": 71537,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/dataclasses.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "e8439c8b111856645a8b31e0dbbba532b494426399bad456079c0e5730ad322e"
+    },
+    {
+      "bytes": 45533,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/dis.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "17d4d9a9195c9ee5aa27a96f3e0871f9363fd501e3a64ef20cb1cc876d7ad553"
+    },
+    {
+      "bytes": 5945,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/encodings/__init__.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "2b708410495acf12a6fad9d2de928dd89e567537c253eaa2b51aaae578e96c59"
+    },
+    {
+      "bytes": 16255,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/encodings/aliases.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "1ee993f8eb4986999b6501381e53947be9a04443626cb48b4190bcff2e87d3b4"
+    },
+    {
+      "bytes": 1005,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/encodings/utf_8.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "ba0cac060269583523ca9506473a755203037c57d466a11aa89a30a5f6756f3d"
+    },
+    {
+      "bytes": 85450,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/enum.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "fd23a7598fa1104ef892abcd4154d3627283e6361eb7a91cd11dc4a7b6fb3a93"
+    },
+    {
+      "bytes": 43564,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/functools.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "9db56d38172c4c9e689b21cc58c8538008b09d86b682faf4dd193b529cdd79d5"
+    },
+    {
+      "bytes": 9459,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/hashlib.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "88fa624821fbdee7eb2ef87c2437b207afe328cf117c7463367e2db5eb1af492"
+    },
+    {
+      "bytes": 4767,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/importlib/__init__.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "72b07de4133a7e39b2f6a7920465669aa04626f217e800779587bc0713fe002e"
+    },
+    {
+      "bytes": 128112,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/inspect.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "6daf297029d8971703b344de5cd485d71d4d935c72b85591493d8abc8512bdf7"
+    },
+    {
+      "bytes": 14132,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/json/__init__.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "2dd10f1bf4c9ea5478e589216805e7f279d0e4bce134a19efa297404fb87407d"
+    },
+    {
+      "bytes": 12877,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/json/decoder.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "dc98d3e677612ea7311303f06a144cec6b91ebadc7ec037d1777501647578a07"
+    },
+    {
+      "bytes": 16990,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/json/encoder.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "d68a4d04d2cfd95897498307f29349058b42c3f48ea6aa6739714a09200a7d01"
+    },
+    {
+      "bytes": 2434,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/json/scanner.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "572958017eae8842eeddd0e3d18d3c56cc0a197348224915e1d87ce937841764"
+    },
+    {
+      "bytes": 1073,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/keyword.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "18c2be738c04ad20ad375f6a71db34b3823c7f40b0340f5294d0e89f3c9b093b"
+    },
+    {
+      "bytes": 97208,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/lib-dynload/_bisect.cpython-314-x86_64-linux-gnu.so",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "7b1a98e752b2e37528e8f8c066114348c2c86f2c5cb01aca1866b54d826148b1"
+    },
+    {
+      "bytes": 1705672,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/lib-dynload/_blake2.cpython-314-x86_64-linux-gnu.so",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "27f5117c356ebc44e823a7027174c1db6929ab5949ffa871d564bf4e31aa4faa"
+    },
+    {
+      "bytes": 337032,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/lib-dynload/_hashlib.cpython-314-x86_64-linux-gnu.so",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "2abe527b9cc50ffe7e363b068a499ad7b344ce7ed815ff92cffe9c80bd5de272"
+    },
+    {
+      "bytes": 342328,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/lib-dynload/_json.cpython-314-x86_64-linux-gnu.so",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "dd1230c15ef4c470131a34a8dac45190dade4b2759e1e5c5c59d33a0b3a82a68"
+    },
+    {
+      "bytes": 60072,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/lib-dynload/_random.cpython-314-x86_64-linux-gnu.so",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "2838acd7040a5de39155eb79bfd4df7dd12c789cc2930e4977381b135fb522ee"
+    },
+    {
+      "bytes": 258560,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/lib-dynload/_struct.cpython-314-x86_64-linux-gnu.so",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "82bb2522e04548ebf382d454dfe406200b12330af750cb43ed3fd9c16e90f5ca"
+    },
+    {
+      "bytes": 429880,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/lib-dynload/math.cpython-314-x86_64-linux-gnu.so",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "abd6228819f15f9d2ea5b861f54dfb59c902da51465f472cb0c9b1e839757fef"
+    },
+    {
+      "bytes": 8044,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/linecache.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "692daec68e2a419adf46bafc0eb2f8a2fb36c482183fa1ac47e00fec440f7d7e"
+    },
+    {
+      "bytes": 3152,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/opcode.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "1036d90c917bb27c540ac3205d22896ee747214df1f2682458ab915758e4fdf2"
+    },
+    {
+      "bytes": 11158,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/operator.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "a9f9910965c31f841caad0447ee47299ac539a371422aefe200c86c60f3b4697"
+    },
+    {
+      "bytes": 37553,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/random.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "cf8e72f887d838e273c274b79758b2bf8630a0927112b8876fa3a9e4b9b1756b"
+    },
+    {
+      "bytes": 17876,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/re/__init__.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "741a9de729ed8207bfa19db990f8826f1bf3661f33d0970a80c08cd1338ebc35"
+    },
+    {
+      "bytes": 5444,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/re/_casefix.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "1b12d9136f23db6c3f6f26053fefc15ca964b886838c7b9c1fabf8d2efc1e5c8"
+    },
+    {
+      "bytes": 26855,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/re/_compiler.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "d49f30cf9a1dbae33b200ed8befd9d0ce3ac612783a10ac35196536f98923e91"
+    },
+    {
+      "bytes": 6036,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/re/_constants.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "42253b3181b81aad6c46392f44a0ab26dcfa31feea411296f43ba16616a1ab0b"
+    },
+    {
+      "bytes": 40353,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/re/_parser.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "e57bd194a2d42398355ae7c1ccc2ddfb78421dd431eb81e3809dbe8ca9057dc4"
+    },
+    {
+      "bytes": 8064,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/reprlib.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "b04872e10d76252e44eae50cc785eb0fe478491afc4d7f0825a93f82b2eaba5f"
+    },
+    {
+      "bytes": 285,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/struct.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "50c14e55f94957804c1e45e975fedbe8e86f7e1dbb745b150370ff681155370a"
+    },
+    {
+      "bytes": 2584,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/token.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "61d4270311099c8a0c0b2e45fb363fd1c4e347a720bcc25f682b63dc28c34234"
+    },
+    {
+      "bytes": 21849,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/tokenize.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "65ba1bacdc42e768382208ff27f3001ee77d9d61aafba686c67652d22b84b330"
+    },
+    {
+      "bytes": 11464,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/types.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "8c54d3d5ffc1d1204237e6c69b25c27c7b05b483128f185eeed9ba7ef2229ac2"
+    },
+    {
+      "bytes": 17771,
+      "path": "/opt/hostedtoolcache/Python/3.14.8/x64/lib/python3.14/weakref.py",
+      "reference": "official-python-asset-fa74abc70a55c10f6631967784878704eef81bbde9b8ec27469534f6ba997cb3",
+      "sha256": "5e5f727a19a858cb4c56dbaf3e0a138ded02fb954a9a58a840a0764216ae9522"
+    },
+    {
+      "bytes": 360460,
+      "path": "/usr/lib/locale/C.utf8/LC_CTYPE",
+      "reference": "libc-bin_2.39-0ubuntu8.9_amd64.deb",
+      "sha256": "59015993b1b671273461ef1167d7a9ad76dc090d521c91102e962217ed6b6dba"
+    },
+    {
+      "bytes": 27028,
+      "path": "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache",
+      "reference": "libc6_2.39-0ubuntu8.9_amd64.deb",
+      "sha256": "52c227df9d53248238602c1ddaccd2c8ddc4cc6a61aa45d7c425af590b8806a5"
+    },
+    {
+      "bytes": 236616,
+      "path": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+      "reference": "libc6_2.39-0ubuntu8.9_amd64.deb",
+      "sha256": "c20a2dc8917c755f02b94049356320fe1f62ac7d9f8994731f807d9df39302da"
+    },
+    {
+      "bytes": 2129424,
+      "path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "reference": "libc6_2.39-0ubuntu8.9_amd64.deb",
+      "sha256": "3a15d66867d83762c7f2f1e37359cb8f6c5743edb369c65285cb0b1c4f7498bf"
+    },
+    {
+      "bytes": 5309400,
+      "path": "/usr/lib/x86_64-linux-gnu/libcrypto.so.3",
+      "reference": "libssl3t64_3.0.13-0ubuntu3.16_amd64.deb",
+      "sha256": "6866ed711dab8927e1bf82bf1cd30e828bdfc34f3cc1e83b1c9eb01ce6c37d9a"
+    },
+    {
+      "bytes": 952616,
+      "path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+      "reference": "libc6_2.39-0ubuntu8.9_amd64.deb",
+      "sha256": "fce00b6f25f459cf4ae0b7fae4257909a1a8a86f9149e7c029a5d617baf1ccd0"
+    }
+  ],
+  "schema": "prospective-official-byte-reference-v1",
+  "sources": [
+    "https://api.github.com/repos/actions/python-versions/releases/tags/3.14.8-36806082737",
+    "https://packages.ubuntu.com/ja/noble/amd64/libc6/download",
+    "https://packages.ubuntu.com/noble/amd64/libc-bin/download",
+    "https://packages.ubuntu.com/noble-updates/amd64/libssl3t64/download"
+  ]
+}
