@@ -261,3 +261,20 @@ binding pin, retain quiescence, and apply all independent proof/approval gates.
 Tests cover same-argv changes to object/environment pins, source and dependency
 inventories, native review, publication metadata and dynamic exceptions, malformed
 observations, exact raw-byte association, and valid LF-canonical approval overlays.
+
+## Option R ? G0 v3 observation link
+
+The independently pinned v3 approval's prelaunch materialization record includes
+an exact absolute observation_path outside the materialized source root. Its
+proof_sha256 covers the raw observation bytes, including any final newline.
+The linkage check limits the observation read to 64 MiB, the verifier's JSON bound.
+The launcher and admission gate already compare the approval's freeze_sha256
+with the raw freeze.json digest. The observation must repeat that digest as
+bindings.environment_freeze_sha256, with the same source inventory, execution
+object, runtime origin, published commit and source root. The detached overlay's
+canonical observation digest has a separate purpose.
+
+Independent review still establishes the observation's provenance, complete
+source/environment materialization and prestart sequencing. This candidate
+checks the linkage locally. A final target environment and authority remain
+prerequisites for execution.

@@ -61,6 +61,7 @@ LIMITS = {"cpu_seconds": 600, "wall_seconds": 900,
 RESERVES = {"cpu_seconds": 30, "wall_seconds": 45,
             "address_space_bytes": 32 << 20, "output_bytes": 16 << 20}
 HASH_CHUNK_BYTES = 1 << 20
+MAX_PRELAUNCH_OBSERVATION_BYTES = 64 << 20
 PROFILE_CHECK_INTERVAL = 4096
 CODE_KEY_CACHE_LIMIT = 8192
 CALL_CAPS = {
@@ -574,7 +575,10 @@ def verify_prelaunch_materialization(
         "quiescent_source_and_environment": True,
     }
     record = approval.get("prelaunch_materialization")
-    if (type(record) is not dict or set(record) != set(expected) | {"proof_sha256", "reference"}
+    fields = set(expected) | {"proof_sha256", "reference"}
+    if spec is G0_V3:
+        fields.add("observation_path")
+    if (type(record) is not dict or set(record) != fields
             or any(canonical(record.get(key)) != canonical(value)
                    for key, value in expected.items())):
         raise AdmissionError("external prelaunch materialization binding differs or is missing")
@@ -583,6 +587,60 @@ def verify_prelaunch_materialization(
             or any(char not in "0123456789abcdef" for char in proof)
             or type(reference) is not str or not reference.strip()):
         raise AdmissionError("external prelaunch proof requires an exact digest and reference")
+    if spec is G0_V3:
+        _verify_prelaunch_observation(root, approval.get("freeze_sha256"), record,
+                                      expected, spec)
+
+
+def _verify_prelaunch_observation(
+    root: Path, freeze_sha: Any, record: dict[str, Any], pins: dict[str, Any],
+    spec: ExecutionObject,
+) -> None:
+    """Mechanically associate the observation with the independently pinned approval."""
+    if (type(freeze_sha) is not str or len(freeze_sha) != 64
+            or any(char not in "0123456789abcdef" for char in freeze_sha)):
+        raise AdmissionError("prelaunch observation requires a verified 64-hex freeze SHA")
+
+    value = record["observation_path"]
+    if type(value) is not str or not Path(value).is_absolute() or str(Path(value)) != value:
+        raise AdmissionError("prelaunch observation requires an exact absolute path")
+    path = Path(value)
+    if path.is_relative_to(root):
+        raise AdmissionError("prelaunch observation must live outside the source root")
+    try:
+        checked_path = confined_path(path.parent, path.name, "prelaunch observation")
+        with checked_path.open("rb") as stream:
+            raw = stream.read(MAX_PRELAUNCH_OBSERVATION_BYTES + 1)
+    except (OSError, ValueError, RuntimeError) as exc:
+        raise AdmissionError(f"prelaunch observation unreadable: {exc}") from None
+    if len(raw) > MAX_PRELAUNCH_OBSERVATION_BYTES:
+        raise AdmissionError("prelaunch observation exceeds byte bound")
+    if digest(raw) != record["proof_sha256"]:
+        raise AdmissionError("prelaunch proof digest differs from observation bytes")
+    try:
+        observation = primitive(json.loads(raw, object_pairs_hook=_pairs))
+    except (ValueError, RecursionError) as exc:
+        raise AdmissionError(f"prelaunch observation invalid: {exc}") from None
+    expected = {
+        "schema": "g0-prelaunch-observation-v3",
+        "status": "checked-not-authorized",
+        "execution_authorized": False,
+        "requires_external_prestart_sequencing": True,
+        "requires_quiescent_source_environment": True,
+        "identity": spec.identity,
+        "published_commit": pins["published_commit"],
+        "source_root": str(root),
+        "bindings": {
+            "execution_object_sha256": pins["execution_object_sha256"],
+            "source_inventory_sha256": pins["source_inventory_sha256"],
+            "environment_freeze_sha256": freeze_sha,
+            "runtime_origin_commit": pins["runtime_origin_commit"],
+        },
+    }
+    if (type(observation) is not dict
+            or any(canonical(observation.get(key)) != canonical(value)
+                   for key, value in expected.items())):
+        raise AdmissionError("prelaunch observation differs from exact launch pins")
 
 
 def _fixed_envelope(freeze: dict[str, Any],

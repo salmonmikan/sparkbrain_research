@@ -799,7 +799,7 @@ def verify_approval_overlay(
     authenticates both the binding digest and the prior observation's provenance.
     This check does not rescan target/source files or rerun the target.
 
-    Independent authority must bind the canonical observation digest in the approval;
+    For Option R, independent authority binds the raw observation digest in the approval;
     this overlay then references both, without feeding its digest back into either.
     Read/hash/parse the SAME approval byte buffer; never hash then reopen.
     """
