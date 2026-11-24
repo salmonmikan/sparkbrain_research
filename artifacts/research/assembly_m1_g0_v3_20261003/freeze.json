@@ -29,49 +29,49 @@
   "classification": "PROSPECTIVE_UNAPPROVED_ENVIRONMENT_REVISION",
   "contract_sha256": "61b9025247ff89909e6cf2f2f326f09b1cff050b27c66d3b0dc0ac770cbe9278",
   "environment": {
-    "base_prefix": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python",
+    "base_prefix": "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14",
     "cache_tag": "cpython-312",
-    "complete_resource_files": 1130,
-    "complete_resource_inventory_sha256": "63c7e8ae3295caff274ee9b5210e536f9f105f555542a9f9d9b39ce1d615cdb3",
-    "dependency_files": 1016,
-    "dependency_inventory_sha256": "5b3e640bc581629edb915d6b1e0537666a321529c343493af881bfb14672317a",
+    "complete_resource_files": 904,
+    "complete_resource_inventory_sha256": "6f13e968c01fca381aee64816480f69b42d398747abe86c80644485aad5b5bdd",
+    "dependency_files": 790,
+    "dependency_inventory_sha256": "a81f09c114200934716f0d5d22a2b1dbd9bed96fb62f2657d2759f13d0f77206",
     "dependency_roots": [
-      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12",
-      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload",
-      "/workspace/scratch/f7f920cdcc9a/sparkbrain-learning-path-20261003/runtime-v3/lib/python3.12/site-packages"
+      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python3.12",
+      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python3.12/lib-dynload",
+      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/runtime-v3/lib/python3.12/site-packages"
     ],
     "dont_write_bytecode_required": true,
-    "executable": "/workspace/scratch/f7f920cdcc9a/sparkbrain-learning-path-20261003/runtime-v3/bin/python",
-    "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+    "executable": "/var/tmp/sparkbrain-g0-v3-option-r-20261125/runtime-v3/bin/python",
+    "executable_sha256": "b1c1dd9933ae6d5f749f2ed06879ce103913a2fa1f2ddd2b0448f6a101538c21",
     "external_import_archives": {
-      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python312.zip": null
+      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python312.zip": null
     },
     "implementation": "CPython",
     "machine": "x86_64",
     "native_code_sha256": {
-      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload/_crypt.cpython-312-x86_64-linux-gnu.so": "9c5d92b7106b046c87eba58d87324a83c4c8da7c7e430b6323ac6720677aad38",
-      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload/_dbm.cpython-312-x86_64-linux-gnu.so": "34baeee365d99044660cf8e34ffab7a1c8d930f7beb8a5f5fa2536f393b3e68e",
-      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/lib-dynload/_tkinter.cpython-312-x86_64-linux-gnu.so": "1e01ab445d909465cb154985f9d091ba70f9ec1deb487de8eea6f95060f2beaa",
-      "/workspace/scratch/f7f920cdcc9a/sparkbrain-learning-path-20261003/runtime-v3/lib/python3.12/site-packages/rpds/rpds.cpython-312-x86_64-linux-gnu.so": "8022895ab80b26f9e40fd5160223cfdfb41d421d6fecbc93ef49199c750a45ab"
+      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python3.12/lib-dynload/_crypt.cpython-312-x86_64-linux-gnu.so": "a92187849912b618439299a2fc174768d76ad83828f5dfcc42b907c05d3ecf5c",
+      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python3.12/lib-dynload/_dbm.cpython-312-x86_64-linux-gnu.so": "94054ee69a105a32696e9d9766a079225dd0a8e29c2c3efb307732f06f61948d",
+      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python3.12/lib-dynload/_tkinter.cpython-312-x86_64-linux-gnu.so": "a643d8e080714189685101eb5db5fc90de7f3f5499e822de30aa03c7aa2e383e",
+      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/runtime-v3/lib/python3.12/site-packages/rpds/rpds.cpython-312-x86_64-linux-gnu.so": "8022895ab80b26f9e40fd5160223cfdfb41d421d6fecbc93ef49199c750a45ab"
     },
     "platform": "linux",
-    "prefix": "/workspace/scratch/f7f920cdcc9a/sparkbrain-learning-path-20261003/runtime-v3",
+    "prefix": "/var/tmp/sparkbrain-g0-v3-option-r-20261125/runtime-v3",
     "schema": "g0-python-environment-v1",
     "system_libraries_sha256": {
-      "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2": "c8438e4fde1934e61c88311633f00949ff645d5c04cdb8671fa3d78164d2f307",
-      "/usr/lib/x86_64-linux-gnu/libc.so.6": "9792e3cbb541c8f44c7acf5f14f4022ea62998ecc787d326bed4d8b6547dfd92",
-      "/usr/lib/x86_64-linux-gnu/libdl.so.2": "295fa521a03cd2faa99974f378c9e23dd622021ec7d32bcad4f8ea61aec8a872",
-      "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1": "30c61ab012a4241bed033725a09b61f5fdd3bb7df95ee852d0b096520524c7af",
-      "/usr/lib/x86_64-linux-gnu/libm.so.6": "6d567d53e895273ca14a1f9dc164fc6c8d39aed2f60aa46a733c2784228915f3",
-      "/usr/lib/x86_64-linux-gnu/libpthread.so.0": "85e21f7dba0394411d00959176fd18b470e575b0b05f1f4f41e5636802ce0500",
-      "/usr/lib/x86_64-linux-gnu/librt.so.1": "7b7b84d1aedda0e0b2bdfc68844362782132180b8f02be1300e21e77572e514b",
-      "/usr/lib/x86_64-linux-gnu/libutil.so.1": "e3981d10efd152a53f083e38f5f9ddde7a049c85d0ab388a5eec91b52fc98a11"
+      "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2": "c0b20d6e1ced12abfe0b1ef2b5b68017950beaaea3df69eb6949d73e0ecf7b40",
+      "/usr/lib/x86_64-linux-gnu/libc.so.6": "9941dc28e68bc5fd788d9cd024c69e68c791d63799e7538a97b6040dd9f50fb6",
+      "/usr/lib/x86_64-linux-gnu/libdl.so.2": "403a5f4b5fb7468b8e59dcfaa290d3bccf89722b482c5a0e1802f62fca0a7a15",
+      "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1": "9d339ecb409578d6a5d587e6c537a8f9589b8a13fefba30d167433a4b5758bee",
+      "/usr/lib/x86_64-linux-gnu/libm.so.6": "37b9e6c977b2a0b02a110d93eb8f01b643c9848653f18bd51682c5279ac88f54",
+      "/usr/lib/x86_64-linux-gnu/libpthread.so.0": "e059c2f9742c5de70a7f813501069ea85bab210b365f8b37fc5c205fc1c097e9",
+      "/usr/lib/x86_64-linux-gnu/librt.so.1": "3e5e3a0bfbad2c6784dec26e8528839ffc14afe43f2b7311882ec30541f7188b",
+      "/usr/lib/x86_64-linux-gnu/libutil.so.1": "b2ebde950d4a4147992e93d48307ef0944edca50df5095bbd9d6331783e754cd"
     },
     "user_site_disabled_required": true,
-    "venv_configuration_sha256": "ba12b474e6d23adea73456c3ace96cfbd8263bd5a703f25c139e04525c06b7fc",
+    "venv_configuration_sha256": "3e4da3c9368f085bfd1b0e51fcacca8089be11797d055522f59233674694ddfc",
     "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
   },
-  "environment_revision_note": "New exact copy-mode CPython venv and current system library/resource inventory; not historical byte equivalence; same fourteen cases, literal data, runtime source contract and budget",
+  "environment_revision_note": "Exact WSL2 copy-mode CPython 3.12.14 environment and GNU timeout resnapshot. The fourteen cases, literal inputs, runtime source contract and budget are unchanged.",
   "execution_object_sha256": "c62b43f241f7fc1aa76978de3e7a20eed073e6729332fd2500dafd1717d9257e",
   "execution_source_selection": "Exact published full tree independently materialized; outer execution-byte inventory and external pre-target-Python import-closure attestation required; local Git metadata is not source authority",
   "external_prelaunch_materialization_attestation_required": true,
@@ -141,10 +141,10 @@
     "schemas/trace-v0.2.schema.json": "2eed3249effbe5fea09a3e60143142673de434efbeae70187bf8e3598bbeb0f7",
     "schemas/trace-v0.3.schema.json": "ff3ac72b84c6e17c6badc583bbf570760cf663a08220afc34634cbc1ee5897a0",
     "scripts/g0_execution_objects.py": "6200d40d79ee514392d616a5e7d1d08b6024df023231f7e09a0c70f078da9af7",
-    "scripts/g0_execution_support.py": "fc7d849f4a3ae88c60e53604243870a6dfbad6793fc9e279bcdc437eb1cb4e65",
+    "scripts/g0_execution_support.py": "9c7a45da3b0392ac0089d5cd2265c4323d006e46f3a0291b29500e08b0ddcd1e",
     "scripts/g0_joint_ownership.py": "70a607b29773c4318fc43b1206da7afffc3d7c5fc76470889e3c24835db93ecf",
-    "scripts/g0_prelaunch/README.md": "4a00f13798b85e53290b1c07eefdcab28d13956b9a764b2ad94ee65118f6e946",
-    "scripts/g0_prelaunch/materialization_verifier.py": "34c603f878644b3fe1ec82c863991d4bccaf3426bd44f8631710bb0ac134a6d6",
+    "scripts/g0_prelaunch/README.md": "6ae56158fb11514cbbe867fbd57f6f9596101a9cbfeb31cbef1581e75e6d6880",
+    "scripts/g0_prelaunch/materialization_verifier.py": "1a63423c853b0baed01c910f003e38b554b70ac31e3188a6e39652ce6647c6b0",
     "scripts/g0_prelaunch/published_baseline_inventory.json": "1dbe162e7b015193c9de9f8c25b1363b889feb9e1fb6d7f5b5e28f9289ee343f",
     "scripts/launch_g0_joint_eligibility.py": "5f528b2fe9901b272675a5fe16410d91c9a7292140bbf8e255eef6319bc2d2cf",
     "scripts/launch_g0_v2_eligibility.py": "e29f967c99bffa8f173c0518fb42cca1e13b9854e0d45fe0d4f8bc16b100f45f",
@@ -319,12 +319,12 @@
     "tests/test_g0_joint_source_contract.py": "5d5afc2fff99d7a84e5f4ebfd095fbfc8f4c3fe1743be8365779a4d5fd415954",
     "tests/test_g0_prelaunch_verifier.py": "0512101291834033ab2aee0d7122f96c6cd16dc2628e7bf5eaa923be9f42bea1",
     "tests/test_g0_v2_bindings.py": "e4d49ab068d116a5f1583c1ae87079903664342cdd2b7644fca22bce7f825f33",
-    "tests/test_g0_v3_bindings.py": "03a1672b517cbf426215424a1f315d7db6b9a82a071d01c40f2ec109ccd663d4",
+    "tests/test_g0_v3_bindings.py": "837a9f605f5f6ed9317489d28fadc6181e9007f032a4028afc0efc36de0b00f2",
     "tests/test_g0_v3_environment.py": "a081248055e8e4547d995746893ef33905782e40001ceda45e37275cf68551a8",
     "tests/test_g0_v3_environment_regressions.py": "a40d364f971c5b7d5a5221d68a649d9ec625457b8ac518e1d27836b4962c95e8"
   },
-  "supersedes_unapproved_freeze_sha256": "3d0c097c28fa5e3013b305d08b0b605a9f4c064582d1a1955c0707b6bffdc007",
-  "timeout_executable_sha256": "6ca1891dfc0b05d7680770c2884c0391b92467c7bb6500a5c84677e6481739f1",
+  "supersedes_unapproved_freeze_sha256": "cb24fab98baa1a0d061ec92eaad24b759e7765e09adefbe918bb9281e8ca994e",
+  "timeout_executable_sha256": "1ba715580334044dbd32873bddd7f8a19687cda1cf5e9f44be7266af6c048766",
   "timeout_implementation": "GNU coreutils 9.7",
-  "unapproved_revision_reason": "Codex P2 source-only overlay binding repair: authenticate exact raw closure binding and compare complete observation projection; no model execution, authority, identity reservation or experimental/input/budget/runtime change"
+  "unapproved_revision_reason": "Option R source-only revision: independently checked WSL2 environment and timeout pins, and bound the raw prelaunch observation to the v3 freeze and launch pins. No execution authority or identity reservation."
 }

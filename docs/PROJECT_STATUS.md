@@ -653,3 +653,13 @@ third fixed execution object with the same fourteen cases, inputs and resource
 ceilings, plus complete dependency-resource inventory and new external prelaunch
 verification. It is source preparation, not a G0 pass or learning result. The
 three-observation eligibility and 68-call M1 path pilot remain unexecuted.
+
+The 2026-11-25 Option R source candidate adds a v3 admission check for the
+approval-pinned raw prelaunch observation and its exact freeze/source linkage.
+The prospective freeze binds the WSL2 copy-mode CPython 3.12.14 environment
+with 904 dependency resources and GNU timeout 9.7. On a Linux-filesystem
+verification copy, all 213 source hashes matched, the environment snapshot
+matched exactly, and 1,241 model-free tests and 59 subtests passed. The
+independent review led to a bounded observation read. These checks record
+source and environment readiness. Published-tree materialization, independent
+prestart proof and per-object execution clearance remain pending.

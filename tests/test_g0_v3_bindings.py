@@ -78,22 +78,52 @@ def forbid(*args, **kwargs):
     pytest.fail("crossed a forbidden native/authority/reservation boundary")
 
 
-def inert_prelaunch_shape(root, commit, inventory):
+def inert_prelaunch_shape(root, commit, inventory, freeze_sha, *, spec=V3):
     """Invented structural metadata; no pre-startup verification was performed."""
-    return {
-        "schema": "g0-prelaunch-materialization-attestation-v1", **BINDING,
+    proof = {
+        "schema": "g0-prelaunch-materialization-attestation-v1",
+        **objects.object_binding(spec),
         "source_root": str(root), "published_commit": commit,
-        "runtime_origin_commit": V3.runtime_origin_commit,
+        "runtime_origin_commit": spec.runtime_origin_commit,
         "source_inventory_sha256": inventory,
         "proof_sha256": support.digest(b"SYNTHETIC SHAPE ONLY, NO EXTERNAL ATTESTATION"),
         "reference": "SYNTHETIC SHAPE ONLY, NOT A GENUINE PRELAUNCH PROOF",
         **dict.fromkeys(PRELAUNCH_FLAGS, True),
     }
+    if spec is V3:
+        from scripts.g0_prelaunch import materialization_verifier as verifier
+
+        directory = root.parent / "obs"
+        directory.mkdir(exist_ok=True)
+        observation = verifier._observation_record({
+            "source": {"root": str(root), "published_commit": commit, "published_tree": "1" * 40,
+                       "files": [], "dynamic_data_exceptions": []},
+            "runtime": {"native_closure_review": {}},
+            "bindings": {
+                "execution_object_sha256": objects.object_digest(spec),
+                "source_inventory_sha256": inventory,
+                "environment_freeze_sha256": freeze_sha,
+                "runtime_origin_commit": spec.runtime_origin_commit,
+            },
+        }, "2" * 64, {})
+        raw = verifier.canonical(observation) + b"\n"
+        path = directory / "synthetic-observation.json"
+        path.write_bytes(raw)
+        proof.update(observation_path=str(path), proof_sha256=support.digest(raw))
+    return proof
 
 
 @pytest.fixture
-def prepared_tree(tmp_path, monkeypatch):
+def prelaunch_root(tmp_path):
+    root = tmp_path / "root"
+    root.mkdir()
+    return root
+
+
+@pytest.fixture
+def prepared_tree(prelaunch_root, monkeypatch):
     """Structural fixture only: source verification is deliberately replaced."""
+    tmp_path = prelaunch_root
     monkeypatch.setattr(support, "verify_object_source", lambda root, object_spec: {
         "synthetic": True, "runtime_execution_authorized": False,
         "contract_sha256": object_spec.contract_sha256,
@@ -199,8 +229,9 @@ def test_preparation_rejects_historical_freeze_path_before_reads(tmp_path):
 
 
 @pytest.fixture
-def negative_authority(tmp_path, monkeypatch):
+def negative_authority(prelaunch_root, monkeypatch):
     """Admission-shaped negative fixtures; final authority is unconditionally denied."""
+    tmp_path = prelaunch_root
     # Exercise downstream synthetic gates in an explicitly fresh fixture namespace.
     # Full-suite collection may already have native modules; never remove or mutate
     # those ambient objects, and never relax the production preload rejection.
@@ -239,7 +270,7 @@ def negative_authority(tmp_path, monkeypatch):
         "identity_ledger": {"path": str(ledger_path), "sha256": ledger_sha,
                             "reference": "SYNTHETIC_NOT_AUTHORITATIVE"},
         "prelaunch_materialization": inert_prelaunch_shape(
-            tmp_path, "c" * 40, verified["source_inventory_sha256"]),
+            tmp_path, "c" * 40, verified["source_inventory_sha256"], verified["freeze_sha256"]),
     }
     permits_before = set(support._PERMITS)
     yield tmp_path, approval, ledger, calls
@@ -922,16 +953,17 @@ def test_native_origin_rejects_inert_package_config_and_module_aliases(tmp_path,
 @pytest.mark.parametrize("field", [
     "schema", "execution_object_sha256", "source_root", "published_commit",
     "runtime_origin_commit", "source_inventory_sha256", "proof_sha256", "reference",
-    *PRELAUNCH_FLAGS,
+    "observation_path", *PRELAUNCH_FLAGS,
 ])
-def test_prelaunch_exact_schema_rejects_every_missing_field_without_authority(tmp_path, field):
-    proof = inert_prelaunch_shape(tmp_path, "c" * 40, "b" * 64)
+def test_prelaunch_exact_schema_rejects_every_missing_field(prelaunch_root, field):
+    proof = inert_prelaunch_shape(prelaunch_root, "c" * 40, "b" * 64, "f" * 64)
     proof.pop(field)
-    with pytest.raises(support.AdmissionError, match="prelaunch"):
+    with pytest.raises(support.AdmissionError,
+                       match="external prelaunch materialization binding differs"):
         support.verify_prelaunch_materialization(
-            tmp_path, {"prelaunch_materialization": proof}, "c" * 40, "b" * 64,
-            object_spec=V3)
-    assert list(tmp_path.iterdir()) == []
+            prelaunch_root, {"prelaunch_materialization": proof, "freeze_sha256": "f" * 64},
+            "c" * 40, "b" * 64, object_spec=V3)
+    assert list(prelaunch_root.iterdir()) == []
 
 
 @pytest.mark.parametrize("field,value", [
@@ -946,26 +978,30 @@ def test_prelaunch_exact_schema_rejects_every_missing_field_without_authority(tm
     ("reference", ""), ("reference", " \t\n"), ("reference", 7),
     ("unreviewed_extra_field", True),
 ])
-def test_prelaunch_rejects_crossbindings_or_malformed_proof(tmp_path, field, value):
-    proof = inert_prelaunch_shape(tmp_path, "c" * 40, "b" * 64)
+def test_prelaunch_rejects_crossbindings_or_malformed_proof(prelaunch_root, field, value):
+    proof = inert_prelaunch_shape(prelaunch_root, "c" * 40, "b" * 64, "f" * 64)
     proof[field] = value
-    with pytest.raises(support.AdmissionError, match="prelaunch"):
+    reason = ("external prelaunch proof requires an exact digest and reference"
+              if field in {"proof_sha256", "reference"}
+              else "external prelaunch materialization binding differs")
+    with pytest.raises(support.AdmissionError, match=reason):
         support.verify_prelaunch_materialization(
-            tmp_path, {"prelaunch_materialization": proof}, "c" * 40, "b" * 64,
-            object_spec=V3)
-    assert list(tmp_path.iterdir()) == []
+            prelaunch_root, {"prelaunch_materialization": proof, "freeze_sha256": "f" * 64},
+            "c" * 40, "b" * 64, object_spec=V3)
+    assert list(prelaunch_root.iterdir()) == []
 
 
 @pytest.mark.parametrize("flag", PRELAUNCH_FLAGS)
 @pytest.mark.parametrize("value", [False, 1, "true"])
-def test_prelaunch_requires_exact_true_for_every_external_prerequisite(tmp_path, flag, value):
-    proof = inert_prelaunch_shape(tmp_path, "c" * 40, "b" * 64)
+def test_prelaunch_requires_exact_true_for_every_external_prerequisite(prelaunch_root, flag, value):
+    proof = inert_prelaunch_shape(prelaunch_root, "c" * 40, "b" * 64, "f" * 64)
     proof[flag] = value
-    with pytest.raises(support.AdmissionError, match="prelaunch"):
+    with pytest.raises(support.AdmissionError,
+                       match="external prelaunch materialization binding differs"):
         support.verify_prelaunch_materialization(
-            tmp_path, {"prelaunch_materialization": proof}, "c" * 40, "b" * 64,
-            object_spec=V3)
-    assert list(tmp_path.iterdir()) == []
+            prelaunch_root, {"prelaunch_materialization": proof, "freeze_sha256": "f" * 64},
+            "c" * 40, "b" * 64, object_spec=V3)
+    assert list(prelaunch_root.iterdir()) == []
 
 
 @pytest.mark.parametrize("commit,inventory", [
@@ -973,34 +1009,36 @@ def test_prelaunch_requires_exact_true_for_every_external_prerequisite(tmp_path,
     ("c" * 40, "B" * 64), ("c" * 40, "b" * 63), ("c" * 40, None),
 ])
 def test_prelaunch_rejects_malformed_external_pins_even_when_record_matches(
-        tmp_path, commit, inventory):
-    proof = inert_prelaunch_shape(tmp_path, commit, inventory)
+        prelaunch_root, commit, inventory):
+    proof = inert_prelaunch_shape(prelaunch_root, commit, inventory, "f" * 64)
     with pytest.raises(support.AdmissionError, match="exact published commit/inventory pins"):
         support.verify_prelaunch_materialization(
-            tmp_path, {"prelaunch_materialization": proof}, commit, inventory, object_spec=V3)
-    assert list(tmp_path.iterdir()) == []
+            prelaunch_root, {"prelaunch_materialization": proof, "freeze_sha256": "f" * 64},
+            commit, inventory, object_spec=V3)
+    assert list(prelaunch_root.iterdir()) == []
 
 
 @pytest.mark.parametrize("value", [MISSING, None, [], "SYNTHETIC_NOT_ATTESTATION"])
-def test_v3_missing_prelaunch_record_never_inherits_historical_exemption(tmp_path, value):
+def test_v3_missing_prelaunch_record_never_inherits_historical_exemption(prelaunch_root, value):
     approval = {} if value is MISSING else {"prelaunch_materialization": value}
-    with pytest.raises(support.AdmissionError, match="prelaunch"):
+    with pytest.raises(support.AdmissionError,
+                       match="external prelaunch materialization binding differs"):
         support.verify_prelaunch_materialization(
-            tmp_path, approval, "c" * 40, "b" * 64, object_spec=V3)
-    support.verify_prelaunch_materialization(tmp_path, approval, "c" * 40, "b" * 64)
-    assert list(tmp_path.iterdir()) == []
+            prelaunch_root, approval, "c" * 40, "b" * 64, object_spec=V3)
+    support.verify_prelaunch_materialization(prelaunch_root, approval, "c" * 40, "b" * 64)
+    assert list(prelaunch_root.iterdir()) == []
 
 
-def test_prelaunch_inert_shape_validation_does_not_create_authority(tmp_path):
+def test_prelaunch_inert_shape_validation_does_not_create_authority(prelaunch_root):
     before = set(support._PERMITS)
-    proof = inert_prelaunch_shape(tmp_path, "c" * 40, "b" * 64)
+    proof = inert_prelaunch_shape(prelaunch_root, "c" * 40, "b" * 64, "f" * 64)
     assert support.verify_prelaunch_materialization(
-        tmp_path, {"prelaunch_materialization": proof}, "c" * 40, "b" * 64,
-        object_spec=V3) is None
-    assert set(support._PERMITS) == before and list(tmp_path.iterdir()) == []
+        prelaunch_root, {"prelaunch_materialization": proof, "freeze_sha256": "f" * 64},
+        "c" * 40, "b" * 64, object_spec=V3) is None
+    assert set(support._PERMITS) == before and list(prelaunch_root.iterdir()) == []
 
 
-@pytest.mark.parametrize("change", ["missing", "object", "root", "commit", "inventory"])
+@pytest.mark.parametrize("change", ["missing", "object", "root", "commit", "inventory", "digest"])
 def test_authorize_checks_prelaunch_before_ledger_or_callback(
         negative_authority, monkeypatch, change):
     root, approval, _, _ = negative_authority
@@ -1013,8 +1051,10 @@ def test_authorize_checks_prelaunch_before_ledger_or_callback(
         proof["source_root"] = str(root / "wrong")
     elif change == "commit":
         proof["published_commit"] = "d" * 40
-    else:
+    elif change == "inventory":
         proof["source_inventory_sha256"] = "d" * 64
+    else:
+        proof["proof_sha256"] = "d" * 64
     original = support.confined_path
 
     def guarded(source, relative, label, **kwargs):
@@ -1023,21 +1063,24 @@ def test_authorize_checks_prelaunch_before_ledger_or_callback(
         return original(source, relative, label, **kwargs)
 
     monkeypatch.setattr(support, "confined_path", guarded)
-    with pytest.raises(support.AdmissionError, match="prelaunch"):
+    reason = ("proof digest differs from observation bytes" if change == "digest"
+              else "external prelaunch materialization binding differs")
+    with pytest.raises(support.AdmissionError, match=reason):
         reject_fixture(negative_authority)
 
 
-@pytest.mark.parametrize("change", ["missing", "object", "root", "commit", "inventory"])
+@pytest.mark.parametrize("change", ["missing", "object", "root", "commit", "inventory", "freeze"])
 def test_launch_binding_checks_prelaunch_against_exact_external_pins(prepared_tree, change):
     root, freeze, _ = prepared_tree
     inventory = freeze["source_files_sha256"]
     inventory_sha = support.digest(support.canonical(inventory))
     commit = "c" * 40
-    proof = inert_prelaunch_shape(root, commit, inventory_sha)
+    freeze_sha = support.digest((root / V3.freeze_relative).read_bytes())
+    proof = inert_prelaunch_shape(root, commit, inventory_sha, freeze_sha)
     approval = {
         "classification": "SYNTHETIC_NOT_APPROVAL", **BINDING,
         "launcher": {"path": V3.launcher_relative, "sha256": inventory[V3.launcher_relative]},
-        "freeze_sha256": support.digest((root / V3.freeze_relative).read_bytes()),
+        "freeze_sha256": freeze_sha,
         "source_inventory_sha256": inventory_sha,
         "publication": {"commit": commit, "exact_source_sha256": inventory_sha},
         "materialized_source": {
@@ -1058,9 +1101,16 @@ def test_launch_binding_checks_prelaunch_against_exact_external_pins(prepared_tr
         proof["source_root"] = str(root / "wrong")
     elif change == "commit":
         proof["published_commit"] = "d" * 40
-    else:
+    elif change == "inventory":
         proof["source_inventory_sha256"] = "d" * 64
-    with pytest.raises(support.AdmissionError, match="prelaunch"):
+    else:
+        path = Path(proof["observation_path"])
+        observation = json.loads(path.read_bytes())
+        observation["bindings"]["environment_freeze_sha256"] = "d" * 64
+        proof["proof_sha256"] = save(path.parent, path.name, observation)
+    reason = ("observation differs from exact launch pins" if change == "freeze"
+              else "external prelaunch materialization binding differs")
+    with pytest.raises(support.AdmissionError, match=reason):
         launcher._verify_launch_bindings(root, approval, commit, inventory_sha, object_spec=V3)
     assert not list(root.glob("*.STARTED.json"))
 
@@ -1138,3 +1188,118 @@ def test_sibling_v2_wrapper_cannot_launch_v3():
     with pytest.raises(support.AdmissionError, match="origin"):
         launcher._guarded_root(str(ROOT), object_spec=V3, entry_module=sibling_wrapper,
                                require_active=True)
+
+
+@pytest.fixture
+def observation_link(prelaunch_root):
+    root = prelaunch_root
+    commit, inventory, freeze_sha = "c" * 40, "b" * 64, "f" * 64
+    proof = inert_prelaunch_shape(root, commit, inventory, freeze_sha)
+    approval = {"freeze_sha256": freeze_sha, "prelaunch_materialization": proof}
+
+    def verify():
+        return support.verify_prelaunch_materialization(root, approval, commit, inventory,
+                                                        object_spec=V3)
+
+    return root, approval, proof, Path(proof["observation_path"]), verify
+
+
+@pytest.mark.parametrize("value", [
+    MISSING, None, True, 123, "f" * 63, "f" * 65, "F" * 64, "g" * 64,
+])
+def test_observation_link_requires_exact_freeze_sha(observation_link, value):
+    _, approval, _, _, verify = observation_link
+    if value is MISSING:
+        del approval["freeze_sha256"]
+    else:
+        approval["freeze_sha256"] = value
+    with pytest.raises(support.AdmissionError, match="requires a verified 64-hex freeze SHA"):
+        verify()
+
+
+def test_observation_link_rejects_changed_raw_bytes(observation_link):
+    _, _, _, path, verify = observation_link
+    path.write_bytes(path.read_bytes() + b" ")
+    with pytest.raises(support.AdmissionError, match="proof digest differs from observation bytes"):
+        verify()
+
+
+def test_observation_link_enforces_read_bound_before_digest(observation_link, monkeypatch):
+    _, _, _, path, verify = observation_link
+    size = path.stat().st_size
+    monkeypatch.setattr(support, "MAX_PRELAUNCH_OBSERVATION_BYTES", size)
+    assert verify() is None
+    path.write_bytes(path.read_bytes() + b"\n")
+    with pytest.raises(support.AdmissionError, match="observation exceeds byte bound"):
+        verify()
+
+
+@pytest.mark.parametrize("field,value", [
+    ("schema", "wrong-schema"), ("status", "wrong-status"), ("execution_authorized", 0),
+    ("identity", OLD.identity), ("published_commit", "d" * 40), ("source_root", "/wrong"),
+    ("requires_external_prestart_sequencing", False),
+    ("requires_quiescent_source_environment", False),
+    ("execution_object_sha256", "0" * 64), ("source_inventory_sha256", "0" * 64),
+    ("environment_freeze_sha256", "0" * 64), ("runtime_origin_commit", "0" * 40),
+])
+def test_observation_link_rejects_cross_binding_with_matching_digest(
+        observation_link, field, value):
+    _, _, proof, path, verify = observation_link
+    observation = json.loads(path.read_bytes())
+    target = observation["bindings"] if field in observation["bindings"] else observation
+    target[field] = value
+    proof["proof_sha256"] = save(path.parent, path.name, observation)
+    with pytest.raises(support.AdmissionError, match="observation differs from exact launch pins"):
+        verify()
+
+
+@pytest.mark.parametrize("raw,reason", [
+    (b'{"a": 1, "a": 2}', "duplicate JSON key"),
+    (b'{"a": NaN}', "exact finite JSON primitives"),
+    (b'{"a": 1e400}', "exact finite JSON primitives"),
+    (b'{invalid', "Expecting property name"),
+    (b'{"a": "\xff"}', "invalid start byte"),
+])
+def test_observation_link_rejects_invalid_json_after_digest_matches(observation_link, raw, reason):
+    _, _, proof, path, verify = observation_link
+    path.write_bytes(raw)
+    proof["proof_sha256"] = support.digest(raw)
+    with pytest.raises(support.AdmissionError, match=f"observation invalid: .*{reason}"):
+        verify()
+
+
+@pytest.mark.parametrize("kind,reason", [
+    ("relative", "requires an exact absolute path"),
+    ("inside", "must live outside the source root"),
+    ("traversal", "unreadable: source root parent traversal"),
+    ("missing", "unreadable: prelaunch observation unavailable"),
+    ("symlink", "unreadable: prelaunch observation symlink is unsupported"),
+])
+def test_observation_link_rejects_invalid_paths(observation_link, kind, reason):
+    root, _, proof, path, verify = observation_link
+    bad_path = {
+        "relative": Path("relative.json"), "inside": root / path.name,
+        "traversal": path.parent / "subdir" / ".." / path.name,
+        "missing": path.with_name("missing.json"), "symlink": path.with_name("link.json"),
+    }[kind]
+    if kind == "inside":
+        bad_path.write_bytes(path.read_bytes())
+    if kind == "symlink":
+        bad_path.symlink_to(path)
+    proof["observation_path"] = str(bad_path)
+    with pytest.raises(support.AdmissionError, match=reason):
+        verify()
+
+
+def test_prelaunch_v2_shape_excludes_observation_path(prelaunch_root):
+    root = prelaunch_root
+    commit, inventory = "c" * 40, "b" * 64
+    proof = inert_prelaunch_shape(root, commit, inventory, None, spec=objects.G0_V2)
+    approval = {"prelaunch_materialization": proof}
+    assert support.verify_prelaunch_materialization(
+        root, approval, commit, inventory, object_spec=objects.G0_V2) is None
+    proof["observation_path"] = str(root.parent / "obs" / "unused.json")
+    with pytest.raises(support.AdmissionError,
+                       match="external prelaunch materialization binding differs"):
+        support.verify_prelaunch_materialization(root, approval, commit, inventory,
+                                                 object_spec=objects.G0_V2)
