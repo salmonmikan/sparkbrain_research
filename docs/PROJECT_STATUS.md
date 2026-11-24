@@ -663,3 +663,12 @@ matched exactly, and 1,241 model-free tests and 59 subtests passed. The
 independent review led to a bounded observation read. These checks record
 source and environment readiness. Published-tree materialization, independent
 prestart proof and per-object execution clearance remain pending.
+
+The subsequent 2026-11-25 Option R candidate binds a curated WSL2 runtime with
+900 complete resources and 786 importable files. The new copy omits the unused
+optional `_crypt` and `_tkinter` extensions and uses normalized file modes. The
+preparation inventory covers three import roots, 17 trusted startup files and
+12 ELF files with no unmatched static dependency edges. The 213 source pins,
+protocol inputs, limits and GNU timeout 9.7 pin are unchanged. Execution remains
+unapproved. Independent native and startup authority and published-tree checks
+remain pending.

@@ -29,33 +29,31 @@
   "classification": "PROSPECTIVE_UNAPPROVED_ENVIRONMENT_REVISION",
   "contract_sha256": "61b9025247ff89909e6cf2f2f326f09b1cff050b27c66d3b0dc0ac770cbe9278",
   "environment": {
-    "base_prefix": "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14",
+    "base_prefix": "/var/tmp/sparkbrain-g0-v3-option-r-minimal-20261125/cpython-3.12.14",
     "cache_tag": "cpython-312",
-    "complete_resource_files": 904,
-    "complete_resource_inventory_sha256": "6f13e968c01fca381aee64816480f69b42d398747abe86c80644485aad5b5bdd",
-    "dependency_files": 790,
-    "dependency_inventory_sha256": "a81f09c114200934716f0d5d22a2b1dbd9bed96fb62f2657d2759f13d0f77206",
+    "complete_resource_files": 900,
+    "complete_resource_inventory_sha256": "d6b91d063b71a83106e943714ffc2af96a8436f5d71922e667af45ee6d4cedaf",
+    "dependency_files": 786,
+    "dependency_inventory_sha256": "1fab41005660f3cf777e9ca1fb5e9cc023ea26178cd5cefedfc4ae0f21e7b557",
     "dependency_roots": [
-      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python3.12",
-      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python3.12/lib-dynload",
-      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/runtime-v3/lib/python3.12/site-packages"
+      "/var/tmp/sparkbrain-g0-v3-option-r-minimal-20261125/cpython-3.12.14/lib/python3.12",
+      "/var/tmp/sparkbrain-g0-v3-option-r-minimal-20261125/cpython-3.12.14/lib/python3.12/lib-dynload",
+      "/var/tmp/sparkbrain-g0-v3-option-r-minimal-20261125/runtime-v3/lib/python3.12/site-packages"
     ],
     "dont_write_bytecode_required": true,
-    "executable": "/var/tmp/sparkbrain-g0-v3-option-r-20261125/runtime-v3/bin/python",
+    "executable": "/var/tmp/sparkbrain-g0-v3-option-r-minimal-20261125/runtime-v3/bin/python",
     "executable_sha256": "b1c1dd9933ae6d5f749f2ed06879ce103913a2fa1f2ddd2b0448f6a101538c21",
     "external_import_archives": {
-      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python312.zip": null
+      "/var/tmp/sparkbrain-g0-v3-option-r-minimal-20261125/cpython-3.12.14/lib/python312.zip": null
     },
     "implementation": "CPython",
     "machine": "x86_64",
     "native_code_sha256": {
-      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python3.12/lib-dynload/_crypt.cpython-312-x86_64-linux-gnu.so": "a92187849912b618439299a2fc174768d76ad83828f5dfcc42b907c05d3ecf5c",
-      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python3.12/lib-dynload/_dbm.cpython-312-x86_64-linux-gnu.so": "94054ee69a105a32696e9d9766a079225dd0a8e29c2c3efb307732f06f61948d",
-      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/cpython-3.12.14/lib/python3.12/lib-dynload/_tkinter.cpython-312-x86_64-linux-gnu.so": "a643d8e080714189685101eb5db5fc90de7f3f5499e822de30aa03c7aa2e383e",
-      "/var/tmp/sparkbrain-g0-v3-option-r-20261125/runtime-v3/lib/python3.12/site-packages/rpds/rpds.cpython-312-x86_64-linux-gnu.so": "8022895ab80b26f9e40fd5160223cfdfb41d421d6fecbc93ef49199c750a45ab"
+      "/var/tmp/sparkbrain-g0-v3-option-r-minimal-20261125/cpython-3.12.14/lib/python3.12/lib-dynload/_dbm.cpython-312-x86_64-linux-gnu.so": "94054ee69a105a32696e9d9766a079225dd0a8e29c2c3efb307732f06f61948d",
+      "/var/tmp/sparkbrain-g0-v3-option-r-minimal-20261125/runtime-v3/lib/python3.12/site-packages/rpds/rpds.cpython-312-x86_64-linux-gnu.so": "8022895ab80b26f9e40fd5160223cfdfb41d421d6fecbc93ef49199c750a45ab"
     },
     "platform": "linux",
-    "prefix": "/var/tmp/sparkbrain-g0-v3-option-r-20261125/runtime-v3",
+    "prefix": "/var/tmp/sparkbrain-g0-v3-option-r-minimal-20261125/runtime-v3",
     "schema": "g0-python-environment-v1",
     "system_libraries_sha256": {
       "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2": "c0b20d6e1ced12abfe0b1ef2b5b68017950beaaea3df69eb6949d73e0ecf7b40",
@@ -68,10 +66,10 @@
       "/usr/lib/x86_64-linux-gnu/libutil.so.1": "b2ebde950d4a4147992e93d48307ef0944edca50df5095bbd9d6331783e754cd"
     },
     "user_site_disabled_required": true,
-    "venv_configuration_sha256": "3e4da3c9368f085bfd1b0e51fcacca8089be11797d055522f59233674694ddfc",
+    "venv_configuration_sha256": "55e816a4f62156864a6668b40c7a2101853a634d464afa57ec94b57eaf9e15cf",
     "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
   },
-  "environment_revision_note": "Exact WSL2 copy-mode CPython 3.12.14 environment and GNU timeout resnapshot. The fourteen cases, literal inputs, runtime source contract and budget are unchanged.",
+  "environment_revision_note": "Curated WSL2 copy-mode CPython 3.12.14 environment with 900 complete resources and 786 importable files. The new copy omits unused optional _crypt and _tkinter extensions and uses normalized file modes. The GNU timeout 9.7 pin, fourteen cases, literal inputs, runtime source contract and budgets are unchanged. Execution remains unapproved.",
   "execution_object_sha256": "c62b43f241f7fc1aa76978de3e7a20eed073e6729332fd2500dafd1717d9257e",
   "execution_source_selection": "Exact published full tree independently materialized; outer execution-byte inventory and external pre-target-Python import-closure attestation required; local Git metadata is not source authority",
   "external_prelaunch_materialization_attestation_required": true,
